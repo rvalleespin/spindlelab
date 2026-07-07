@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpindleLab — SEO técnico y visibilidad en IA para empresas en Chile</title>
+<meta name="description" content="Consultoría de SEO técnico y visibilidad en motores de IA (ChatGPT, Gemini, Perplexity) para empresas B2B y financieras en Chile. Pide tu mini-diagnóstico gratis.">
+<link rel="canonical" href="https://spindlelab.cl/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpindleLab">
+<meta property="og:title" content="SpindleLab — SEO técnico y visibilidad en IA para empresas en Chile">
+<meta property="og:description" content="Sé encontrado —y citado— en Google y en las respuestas de ChatGPT, Gemini y Perplexity. Mini-diagnóstico gratis en 48 horas.">
+<meta property="og:url" content="https://spindlelab.cl/">
+<meta property="og:locale" content="es_CL">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "SpindleLab",
+  "url": "https://spindlelab.cl/",
+  "email": "hola@spindlelab.cl",
+  "description": "Consultoría de SEO técnico y visibilidad en motores de IA (AEO/GEO) para empresas B2B y financieras en Chile.",
+  "areaServed": {"@type": "Country", "name": "Chile"},
+  "address": {"@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL"},
+  "knowsAbout": ["SEO técnico", "AEO", "GEO", "Visibilidad en IA", "E-E-A-T", "Datos estructurados"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Paleta de confianza */
+    --navy:#0E2A47;      /* azul marino: solidez, confianza */
+    --teal:#0F766E;      /* petróleo: modernidad, calma */
+    --gold:#C9A227;      /* dorado: premium, precisión */
+    --paper:#F7F5F0;     /* papel cálido: cercanía */
+    --ink:#131A22;       /* tinta */
+    --muted:#5B6470;
+    --line:#E2DDD3;
+    --serif:'Fraunces', Georgia, serif;
+    --sans:'Inter', -apple-system, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+  a{color:inherit}
+  img{display:block;max-width:100%}
+
+  /* Header */
+  header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(247,245,240,.93);backdrop-filter:blur(8px);z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{font-family:var(--serif);font-weight:600;font-size:25px;letter-spacing:.02em;text-decoration:none;color:var(--navy)}
+  .logo span{color:var(--gold)}
+  nav.links{display:flex;gap:36px;font-size:14px;font-weight:500}
+  nav.links a{text-decoration:none;color:var(--muted);transition:color .2s}
+  nav.links a:hover{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;padding:15px 30px;font-size:15px;font-weight:500;border-radius:3px;transition:background .2s}
+  .btn:hover{background:var(--teal)}
+  .btn.small{padding:10px 20px;font-size:13px}
+  .btn.gold{background:var(--gold);color:var(--navy);font-weight:600}
+  .btn.gold:hover{background:#dcb52f}
+  .btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+  .btn.ghost:hover{background:var(--navy);color:#fff}
+
+  /* Hero */
+  .hero{padding:96px 0 88px}
+  .hero .cols{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+  .kicker{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:26px}
+  h1{font-family:var(--serif);font-weight:300;font-size:clamp(36px,4.8vw,58px);line-height:1.13;letter-spacing:-.01em;color:var(--navy)}
+  h1 em{font-style:italic;font-weight:400;color:var(--teal)}
+  .hero p.lead{margin:28px 0 40px;font-size:18px;color:var(--muted);max-width:50ch}
+  .hero .actions{display:flex;gap:16px;flex-wrap:wrap}
+  .hero .note{margin-top:18px;font-size:13px;color:var(--muted)}
+  .hero .photo{position:relative}
+  .hero .photo img{width:100%;height:520px;object-fit:cover;border-radius:4px}
+  .hero .photo::after{content:"";position:absolute;inset:0;border-radius:4px;background:linear-gradient(180deg,rgba(14,42,71,0) 55%,rgba(14,42,71,.45))}
+  .hero .photo .frame{position:absolute;top:18px;left:18px;right:-18px;bottom:-18px;border:1px solid var(--gold);border-radius:4px;z-index:-1}
+
+  /* Question band */
+  .band{background:var(--navy);color:var(--paper);padding:76px 0}
+  .band p{font-family:var(--serif);font-weight:300;font-size:clamp(24px,3.4vw,34px);line-height:1.35;max-width:32ch;font-style:italic}
+  .band p strong{font-style:normal;font-weight:600;color:var(--gold)}
+
+  /* Sections */
+  section{padding:96px 0}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:56px;flex-wrap:wrap}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.6vw,40px);line-height:1.2;color:var(--navy)}
+  .sec-head .tag{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+
+  /* Services */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:4px;padding:36px 30px;transition:transform .2s, box-shadow .2s}
+  .svc:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(14,42,71,.08)}
+  .svc .num{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--gold);border-top:2px solid var(--teal);padding-top:16px;display:block;margin-bottom:14px}
+  .svc h3{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:12px;line-height:1.3;color:var(--navy)}
+  .svc p{font-size:15px;color:var(--muted)}
+
+  /* Method */
+  .method{background:var(--navy);color:var(--paper)}
+  .method h2{color:var(--paper)}
+  .method .tag{color:var(--gold)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;counter-reset:step}
+  .step{border-top:1px solid rgba(247,245,240,.22);padding-top:20px}
+  .step::before{counter-increment:step;content:"0" counter(step);font-family:var(--serif);font-style:italic;font-size:16px;color:var(--gold);display:block;margin-bottom:10px}
+  .step h3{font-size:16px;font-weight:600;margin-bottom:8px}
+  .step p{font-size:14px;color:#AEB9C6}
+
+  /* Why */
+  .why .grid2{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .why .photo{position:relative}
+  .why .photo img{width:100%;height:440px;object-fit:cover;border-radius:4px}
+  .why .photo .frame{position:absolute;top:-18px;left:-18px;right:18px;bottom:18px;border:1px solid var(--teal);border-radius:4px;z-index:-1}
+  .why p.big{font-family:var(--serif);font-weight:300;font-size:clamp(22px,2.8vw,28px);line-height:1.4;color:var(--navy);margin-bottom:36px}
+  .why ul{list-style:none;display:grid;gap:22px}
+  .why li{border-top:1px solid var(--line);padding-top:16px;font-size:15px;color:var(--muted)}
+  .why li strong{display:block;color:var(--navy);font-weight:600;margin-bottom:4px;font-size:16px}
+  .why li strong::before{content:"— ";color:var(--gold)}
+
+  /* CTA */
+  .cta{background:linear-gradient(160deg,var(--teal),#0A5652);color:#fff;text-align:center}
+  .cta h2{color:#fff;max-width:24ch;margin:0 auto 20px}
+  .cta p{color:#D4E5E3;max-width:48ch;margin:0 auto 40px}
+  .cta .note{margin-top:18px;font-size:13px;color:#BFD8D5}
+
+  footer{background:var(--navy);color:#8FA1B5;padding:36px 0;font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer .brand{color:var(--paper);font-family:var(--serif)}
+  footer .brand span{color:var(--gold)}
+
+  @media(max-width:880px){
+    .grid3,.steps,.why .grid2,.hero .cols{grid-template-columns:1fr}
+    nav.links{display:none}
+    section{padding:64px 0}
+    .hero{padding:64px 0 56px}
+    .hero .photo img{height:320px}
+    .why .photo{order:-1}
+    .why .photo img{height:300px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">SpindleLab<span>.</span></a>
+    <nav class="links">
+      <a href="#servicios">Servicios</a>
+      <a href="#metodo">Método</a>
+      <a href="#porque">Por qué SpindleLab</a>
+    </nav>
+    <a class="btn small gold" href="#contacto">Diagnóstico gratis</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="cols">
+      <div>
+        <p class="kicker">SEO técnico · Visibilidad en IA · Chile</p>
+        <h1>Tu empresa ya no compite solo en Google. Compite en las <em>respuestas de la IA</em>.</h1>
+        <p class="lead">Ayudo a empresas B2B y financieras a ser encontradas —y citadas— tanto en buscadores como en ChatGPT, Gemini y Perplexity. SEO técnico riguroso, con foco en lo que viene.</p>
+        <div class="actions">
+          <a class="btn" href="#contacto">Pide tu mini-diagnóstico gratis</a>
+          <a class="btn ghost" href="#metodo">Cómo trabajo</a>
+        </div>
+        <p class="note">Sin costo · Sin compromiso · Respuesta en 48 horas</p>
+      </div>
+      <div class="photo">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Edificios corporativos vistos desde abajo, símbolo de solidez y crecimiento">
+        <div class="frame"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <p>Cuando un cliente le pregunta a una IA por un servicio como el tuyo, <strong>¿apareces tú o tu competencia?</strong></p>
+    </div>
+  </div>
+
+  <section id="servicios">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Servicios</h2>
+        <span class="tag">Qué hago</span>
+      </div>
+      <div class="grid3">
+        <div class="svc">
+          <span class="num">01</span>
+          <h3>Auditoría SEO técnica</h3>
+          <p>Rendimiento, indexación, arquitectura, enlaces rotos y señales de confianza (E-E-A-T). No un volcado de datos: un informe priorizado por impacto en tu negocio, con plan de acción claro.</p>
+        </div>
+        <div class="svc">
+          <span class="num">02</span>
+          <h3>Visibilidad en IA (AEO/GEO)</h3>
+          <p>Analizo cómo te describen y citan los motores de IA, y optimizo tu contenido y datos estructurados para que las respuestas generativas te recomienden a ti.</p>
+        </div>
+        <div class="svc">
+          <span class="num">03</span>
+          <h3>Acompañamiento mensual</h3>
+          <p>Implementación de las mejoras, contenido optimizado para búsqueda e IA, y medición continua. Calidad de agencia, trato directo de consultor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="method" id="metodo">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Un método, no improvisación</h2>
+        <span class="tag">Workflow de Auditoría SEO + Visibilidad en IA</span>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>Diagnóstico gratis</h3>
+          <p>Reviso tu sitio y te envío un mini-diagnóstico de una página con los hallazgos más relevantes.</p>
+        </div>
+        <div class="step">
+          <h3>Intake</h3>
+          <p>Conversamos 20 minutos sobre tu negocio, tus clientes y las búsquedas que te importan.</p>
+        </div>
+        <div class="step">
+          <h3>Auditoría en capas</h3>
+          <p>Análisis técnico completo y, en paralelo, evaluación de tu presencia en las respuestas de IA.</p>
+        </div>
+        <div class="step">
+          <h3>Entregable accionable</h3>
+          <p>Informe priorizado por impacto y esfuerzo, con código y datos estructurados listos para implementar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="porque">
+    <div class="wrap grid2">
+      <div>
+        <p class="big">La mayoría de las agencias sigue optimizando para el Google de 2020. Yo optimizo para donde tus clientes buscan hoy.</p>
+        <ul>
+          <li><strong>Especialización en sectores de confianza</strong>Finanzas, salud, legal: rubros donde Google y las IA exigen señales de autoridad reales (E-E-A-T) para recomendarte.</li>
+          <li><strong>SEO técnico + IA, juntos</strong>No son dos servicios separados: la misma base técnica que te posiciona en Google es la que hace que las IA te citen.</li>
+          <li><strong>Trato directo, sin intermediarios</strong>Trabajas con quien hace el análisis. Informes en lenguaje de negocio, no jerga.</li>
+        </ul>
+      </div>
+      <div class="photo">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80" alt="Mesa de trabajo con análisis y planificación estratégica">
+        <div class="frame"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contacto">
+    <div class="wrap">
+      <h2>Empecemos con un diagnóstico sin costo</h2>
+      <p>Envíame la URL de tu sitio y en 48 horas recibes un mini-diagnóstico de una página: qué está bien, qué está frenando tu visibilidad y qué haría primero.</p>
+      <a class="btn gold" href="mailto:hola@spindlelab.cl?subject=Mini-diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20">Pedir mi mini-diagnóstico</a>
+      <p class="note">O escríbeme directo: hola@spindlelab.cl</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand">SpindleLab<span>.</span> — Santiago, Chile</span>
+    <span>SEO técnico · AEO/GEO · Consultoría independiente · © 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
