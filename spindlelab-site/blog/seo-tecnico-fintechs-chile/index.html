@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO técnico para fintechs chilenas: los 7 problemas que más se repiten — SpindleLab</title>
+<meta name="description" content="Los 7 problemas de SEO técnico más comunes en fintechs y financieras chilenas: renderizado JS, indexación descontrolada, E-E-A-T débil y más — con su solución práctica.">
+<link rel="canonical" href="https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SpindleLab">
+<meta property="og:title" content="SEO técnico para fintechs chilenas: los 7 problemas que más se repiten">
+<meta property="og:description" content="Lo que encontramos una y otra vez al auditar sitios financieros en Chile — y cómo corregirlo sin rehacer la plataforma.">
+<meta property="og:url" content="https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/">
+<meta property="og:image" content="https://spindlelab.cl/assets/img/og.jpg">
+<meta property="og:locale" content="es_CL">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/#article",
+      "headline": "SEO técnico para fintechs chilenas: los 7 problemas que más se repiten",
+      "description": "Los siete problemas de SEO técnico más comunes en sitios financieros chilenos y cómo corregirlos sin rehacer la plataforma.",
+      "inLanguage": "es-CL",
+      "datePublished": "2026-07-07",
+      "dateModified": "2026-07-07",
+      "author": {"@id": "https://spindlelab.cl/#org"},
+      "publisher": {"@id": "https://spindlelab.cl/#org"},
+      "mainEntityOfPage": "https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://spindlelab.cl/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://spindlelab.cl/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "SEO técnico para fintechs chilenas", "item": "https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/"}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="SpindleLab — inicio">SpindleLab<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span class="bars"></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/servicios/">Servicios</a></li>
+      <li><a href="/metodo/">Método</a></li>
+      <li><a href="/blog/" aria-current="page">Blog</a></li>
+      <li><a href="/contacto/">Contacto</a></li>
+    </ul>
+    <a class="btn gold small nav-cta" href="/contacto/">Diagnóstico gratis</a>
+  </div>
+</header>
+
+<main>
+  <article class="article">
+    <div class="wrap inner">
+      <nav class="crumbs" aria-label="Miga de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li>SEO técnico para fintechs</li>
+        </ol>
+      </nav>
+      <h1>SEO técnico para fintechs chilenas: los 7 problemas que más se repiten</h1>
+      <p class="byline"><b>SEO Técnico</b><span>7 de julio, 2026</span><span>Lectura: 7 min</span></p>
+
+      <div class="prose">
+        <p>Las fintechs chilenas suelen tener equipos de producto sofisticados, plataformas modernas — y sitios que Google apenas entiende. No es contradicción: las mismas decisiones que hacen ágil a una aplicación (frameworks JavaScript, despliegues continuos, foco absoluto en producto) generan deuda de visibilidad si nadie la vigila. Estos son los siete problemas que más se repiten en las auditorías de sitios financieros, con su corrección práctica.</p>
+
+        <h2>1. La aplicación renderiza; el contenido, no</h2>
+        <p>El sitio corre en React, Vue o similar con renderizado en el cliente (CSR): el HTML que recibe un bot llega casi vacío y el contenido aparece después, vía JavaScript. Google lo procesa <em>a veces</em> — con retraso y sin garantías —; varios bots de IA, directamente no. Resultado: páginas comerciales enteras que para los motores no dicen nada.</p>
+        <p><strong>Corrección:</strong> renderizado en servidor (SSR) o pre-renderizado estático para las rutas públicas — la aplicación privada puede seguir como está. Verifícalo viendo el "código fuente" de tu página: si tu propuesta de valor no está en ese HTML, tampoco está para los bots.</p>
+
+        <h2>2. Indexación descontrolada</h2>
+        <p>Parámetros de campaña generando miles de URLs duplicadas, ambientes de staging indexados (sí, con datos de prueba visibles en Google), versiones antiguas del sitio conviviendo con la nueva. Cada duplicado diluye la autoridad y gasta presupuesto de rastreo que tus páginas importantes necesitan.</p>
+        <p><strong>Corrección:</strong> inventario de URLs indexadas en Search Console, canonicals coherentes, <code>noindex</code> en lo que sobra y bloqueo de staging por autenticación (no solo robots.txt, que es una sugerencia — no una cerradura).</p>
+
+        <h2>3. Core Web Vitals sacrificados a los scripts de terceros</h2>
+        <p>Chat de soporte, tres píxeles de marketing, mapas de calor, A/B testing, tag manager con etiquetas huérfanas de campañas de 2023. Cada uno "pesa poco"; juntos duplican el tiempo de carga en móvil. En un rubro donde la confianza se juzga en segundos, un sitio lento cobra doble peaje: posiciones y conversión.</p>
+        <p><strong>Corrección:</strong> auditoría de scripts con datos reales (qué usa cada área, qué se puede cargar diferido, qué murió hace años), presupuesto de rendimiento y un dueño técnico de esa cifra.</p>
+
+        <h2>4. Datos estructurados ausentes o inválidos</h2>
+        <p>La mayoría de los sitios financieros que auditamos no tiene schema.org de <code>Organization</code> completo — y sin él, buscadores y modelos de IA arman tu identidad adivinando desde fragmentos. Peor: schema inválido copiado de una plantilla, con datos de otra empresa.</p>
+        <p><strong>Corrección:</strong> <code>Organization</code> con identidad completa y consistente, <code>FAQPage</code> donde de verdad respondes preguntas, y validación como parte del despliegue — el schema roto no debería llegar a producción.</p>
+
+        <h2>5. Señales E-E-A-T débiles para un rubro YMYL</h2>
+        <p>Finanzas es territorio YMYL (<em>Your Money or Your Life</em>): Google y los modelos de IA exigen señales de confianza reforzadas antes de recomendar. Contenido sin autor, un "quiénes somos" de dos líneas, sin políticas visibles, sin dirección física ni regulador mencionado — cada omisión es un punto menos de confiabilidad algorítmica.</p>
+        <p><strong>Corrección:</strong> páginas institucionales serias (equipo, regulación, políticas), autoría visible con credenciales en el contenido educativo, y consistencia entre lo que declara tu sitio y lo que dicen los registros públicos (CMF, prensa, directorios).</p>
+
+        <h2>6. Arquitectura plana: todo cuelga de la home</h2>
+        <p>Veinte páginas al mismo nivel, sin agrupación temática. Los motores no logran inferir qué eres <em>principalmente</em>, y las búsquedas específicas ("crédito para pymes", "inversión en dólares") no tienen página que las responda — las responde tu competencia o un comparador.</p>
+        <p><strong>Corrección:</strong> arquitectura de clusters — una página pilar por línea de negocio y contenido de apoyo enlazado. Es también la estructura que los modelos de IA citan mejor: páginas que responden una cosa, bien.</p>
+
+        <h2>7. Migraciones y rebrandings sin redirecciones</h2>
+        <p>Las fintechs cambian: de nombre, de dominio, de plataforma. Cada migración sin plan de redirecciones 301 quema años de autoridad acumulada — los enlaces que apuntaban a las URLs viejas mueren en un 404 y esa historia no vuelve.</p>
+        <p><strong>Corrección:</strong> mapa completo URL vieja → URL nueva <em>antes</em> del cambio, redirecciones uno-a-uno (no todo a la home), y monitoreo de errores 404 las semanas siguientes.</p>
+
+        <div class="nota"><strong>El patrón común:</strong> ninguno de estos problemas se ve a simple vista — el sitio "funciona" para quien lo visita. Se ven con datos de rastreo, Search Console y pruebas de renderizado. Por eso la primera etapa de cualquier trabajo serio es una <a href="/servicios/auditoria-seo-tecnica/">auditoría técnica</a>, no una lluvia de ideas de contenido.</div>
+
+        <h2>Autodiagnóstico en 10 minutos</h2>
+        <ol>
+          <li>Abre el código fuente de tu página comercial principal: ¿está tu propuesta de valor en el HTML?</li>
+          <li>Busca en Google <code>site:tudominio.cl</code>: ¿cuántos resultados hay y cuáles no deberían estar?</li>
+          <li>Corre tu home por PageSpeed Insights en móvil: ¿pasas los Core Web Vitals?</li>
+          <li>Valida tu schema en validator.schema.org: ¿existe? ¿es correcto?</li>
+          <li>Pregúntale a una IA quién es tu empresa: ¿la descripción es correcta y completa?</li>
+        </ol>
+        <p>Si alguna respuesta te incomodó, ese es exactamente el tipo de hallazgo que documentamos — con prioridad y solución — en el <a href="/contacto/">mini-diagnóstico gratuito</a>.</p>
+      </div>
+    </div>
+  </article>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="wrap">
+      <span class="eyebrow teal">Hablemos</span>
+      <h2 id="cta-title">¿Cuántos de los 7 tiene tu sitio?</h2>
+      <p>En 48 horas te lo decimos, gratis y sin compromiso.</p>
+      <a class="btn gold" href="mailto:hola@spindlelab.cl?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20">Agenda tu diagnóstico gratis</a>
+      <br>
+      <a class="email" href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="wordmark">SpindleLab<span>.</span></p>
+    <div class="cols">
+      <nav aria-label="Servicios">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="/servicios/auditoria-seo-tecnica/">Auditoría SEO Técnica</a></li>
+          <li><a href="/servicios/visibilidad-en-ia/">Optimización AEO/GEO</a></li>
+          <li><a href="/servicios/acompanamiento-mensual/">Consultoría Mensual</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Sitio">
+        <h4>Sitio</h4>
+        <ul>
+          <li><a href="/metodo/">Nuestro Método</a></li>
+          <li><a href="/blog/">Blog Técnico</a></li>
+          <li><a href="/contacto/">Contacto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>Santiago, Chile</li>
+          <li><a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 SpindleLab. Todos los derechos reservados.</span>
+      <span>SEO técnico · AEO/GEO · Chile</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.menu-btn'),links=document.getElementById('nav-links');
+  if(btn){btn.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });}
+})();
+</script>
+</body>
+</html>

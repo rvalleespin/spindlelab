@@ -1,0 +1,29 @@
+# SpindleLab — spindlelab.cl
+# Los bots de IA son bienvenidos: nuestro negocio es la visibilidad en IA.
+
+User-agent: *
+Allow: /
+
+# Bots de IA — permitidos explícitamente (decisión deliberada)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+Sitemap: https://spindlelab.cl/sitemap.xml
