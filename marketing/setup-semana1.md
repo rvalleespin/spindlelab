@@ -62,9 +62,10 @@ Verificación final: en https://toolbox.googleapps.com/apps/checkmx/ ingresar sp
 - [x] Search Console verificado + sitemap enviado ✅ estado «Correcto», 11 páginas descubiertas (confirmado 8 jul)
 - [ ] Bing Webmaster Tools: importar desde Search Console (1 clic en bing.com/webmasters — alimenta a ChatGPT)
 - [ ] Web Analytics de Cloudflare activo
-- [x] Sistema de marca v1.2 aplicado al sitio (Gabarito, favicon monograma, 4ª línea de servicio Desarrollo Web) ✅ 8 jul — ver `brand/manual-de-marca.md` §08
-- [~] Email a SimpleTrust — **en pausa hasta nuevo aviso**, reemplazado en prioridad por la cotización de Bernardo (ver `analisis-cotizacion-fotografo.md` y el checklist «listo para enviar» ahí mismo)
-- [ ] Página LinkedIn creada
+- [x] Sistema de marca v1.2 aplicado al sitio (Gabarito, favicon monograma, 4ª línea de servicio Desarrollo Web) ✅ 8 jul — nota: el sitio siguió evolucionando en otra sesión (fotografía real vía Figma); ver `brand/manual-de-marca.md` §08
+- [x] Cotización a Bernardo — **enviada y aprobada** ✅ 8 jul (proyecto ganado; primer caso real de la línea Desarrollo Web)
+- [x] Página de Instagram creada, perfil configurado y primera publicación (carrusel 01) subida ✅ 8 jul
+- [ ] Página LinkedIn creada — textos y banner listos, falta ejecutar
 - [ ] Línea base del test de menciones IA (5 prompts en marketing/metricas/)
 
-**Siguiente hito:** cerrar el checklist «listo para enviar a Bernardo» en `analisis-cotizacion-fotografo.md`. Después: lote 1 de outbound — 15 asesoras del Frente A (pedir «prepara el lote 1»).
+**Siguiente hito:** LinkedIn (única pieza de marca pendiente) y luego retomar el motor de outbound — lote 1 de Frente A ya redactado, falta enviarlo (`marketing/outbound/semana-02/lote-1-frente-a.md`).
