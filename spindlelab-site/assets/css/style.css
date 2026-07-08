@@ -187,7 +187,7 @@ h1 .ia{color:var(--teal)}
 .services{padding:104px 0;background:var(--paper)}
 .sec-head{margin-bottom:52px;display:grid;gap:14px}
 .sec-head h2{font-family:var(--headline);font-size:clamp(26px,2.6vw,34px);font-weight:600;letter-spacing:-.015em;color:var(--ink)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .card{
   position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);
   padding:34px 30px 30px;display:flex;flex-direction:column;gap:14px;text-decoration:none;
@@ -402,9 +402,10 @@ h1 .ia{color:var(--teal)}
 }
 
 /* tabla comparativa servicios */
-.compare{width:100%;border-collapse:collapse;font-size:14px;background:var(--white)}
+.compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.compare{width:100%;min-width:760px;border-collapse:collapse;font-size:14px;background:var(--white)}
 .compare th,.compare td{border:1px solid var(--line);padding:14px 16px;text-align:left;vertical-align:top}
-.compare thead th{background:var(--navy);color:var(--paper);font-weight:800;font-size:13px}
+.compare thead th{background:var(--navy);color:var(--paper);font-weight:800;font-size:13px;white-space:nowrap}
 .compare td b{font-weight:800}
 
 /* 404 */
