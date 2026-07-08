@@ -1,7 +1,16 @@
 /* ============================================================
    SpindleLab — sistema v3 (traducción fiel del diseño Figma)
-   Tipografía: Manrope · Paleta: papel/tinta/navy/dorado/petróleo
+   Tipografía: Gabarito (titulares/cifras) + Inter/Manrope (cuerpo)
+   Paleta: papel/tinta/navy/dorado/petróleo — manual de marca v1.1
    ============================================================ */
+
+@font-face{
+  font-family:'Gabarito';
+  src:url('/assets/fonts/Gabarito.woff2') format('woff2');
+  font-weight:600;
+  font-style:normal;
+  font-display:swap;
+}
 
 :root{
   --paper:#F7F5F0;
@@ -17,6 +26,7 @@
   --paper-70:rgba(247,245,240,.7);
   --paper-25:rgba(247,245,240,.25);
   --sans:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --headline:'Gabarito','Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   --wrap:1200px;
   --r-card:10px;
   --r-pill:999px;
@@ -104,8 +114,8 @@ a{color:inherit}
   margin-bottom:36px;
 }
 h1{
-  font-size:clamp(44px,5.6vw,80px);font-weight:800;line-height:1.06;
-  letter-spacing:-.025em;color:var(--ink);max-width:20ch;
+  font-family:var(--headline);font-size:clamp(44px,5.6vw,80px);font-weight:600;line-height:1.06;
+  letter-spacing:-.015em;color:var(--ink);max-width:20ch;
 }
 h1 .ia{color:var(--teal)}
 .hero .lead{
@@ -126,7 +136,7 @@ h1 .ia{color:var(--teal)}
 .split-band{display:grid;grid-template-columns:1fr 1fr;background:var(--navy);color:var(--paper)}
 .split-copy{padding:72px 64px;display:flex;flex-direction:column;justify-content:center;gap:28px}
 .split-copy h2{
-  font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-.015em;line-height:1.15;color:var(--paper);max-width:16ch;
+  font-family:var(--headline);font-size:clamp(28px,3vw,40px);font-weight:600;letter-spacing:-.015em;line-height:1.15;color:var(--paper);max-width:16ch;
 }
 .chat{display:grid;gap:14px;max-width:480px}
 .chat .q{
@@ -176,7 +186,7 @@ h1 .ia{color:var(--teal)}
 /* ---------- Servicios ---------- */
 .services{padding:104px 0;background:var(--paper)}
 .sec-head{margin-bottom:52px;display:grid;gap:14px}
-.sec-head h2{font-size:clamp(26px,2.6vw,34px);font-weight:800;letter-spacing:-.015em;color:var(--ink)}
+.sec-head h2{font-family:var(--headline);font-size:clamp(26px,2.6vw,34px);font-weight:600;letter-spacing:-.015em;color:var(--ink)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .card{
   position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);
@@ -206,7 +216,7 @@ h1 .ia{color:var(--teal)}
 .metric{padding-left:20px;border-left:1.5px solid var(--gold)}
 .metric:first-child{padding-left:0;border-left:0}
 .metric .value{
-  font-size:clamp(36px,3.8vw,56px);font-weight:800;letter-spacing:-.02em;
+  font-family:var(--headline);font-size:clamp(36px,3.8vw,56px);font-weight:600;letter-spacing:-.02em;
   color:var(--gold);line-height:1.1;white-space:nowrap;
 }
 .metric .label{
@@ -227,7 +237,7 @@ h1 .ia{color:var(--teal)}
 .cta{padding:120px 0;background:var(--paper);text-align:center}
 .cta .eyebrow{display:block;margin-bottom:20px}
 .cta h2{
-  font-size:clamp(30px,3.4vw,44px);font-weight:800;letter-spacing:-.02em;
+  font-family:var(--headline);font-size:clamp(30px,3.4vw,44px);font-weight:600;letter-spacing:-.01em;
   color:var(--ink);max-width:24ch;margin:0 auto 18px;
 }
 .cta p{font-size:15px;color:var(--ink-70);max-width:50ch;margin:0 auto 36px}
@@ -236,8 +246,8 @@ h1 .ia{color:var(--teal)}
 /* ---------- Footer ---------- */
 .site-footer{background:var(--ink);color:#8A94A3;padding:80px 0 36px}
 .site-footer .wordmark{
-  font-family:'Playfair Display',Georgia,serif;
-  font-size:clamp(44px,5.5vw,80px);font-weight:800;letter-spacing:-.01em;
+  font-family:var(--headline);
+  font-size:clamp(44px,5.5vw,80px);font-weight:600;letter-spacing:-.015em;
   color:var(--paper);margin-bottom:56px;
 }
 .site-footer .wordmark span{color:var(--gold)}
