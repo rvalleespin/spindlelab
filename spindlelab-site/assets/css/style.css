@@ -140,8 +140,35 @@ h1 .ia{color:var(--teal)}
 }
 .chat .a b{color:var(--gold);font-weight:800}
 .split-copy .disclaimer{font-size:11px;color:rgba(247,245,240,.45);letter-spacing:.04em}
-.split-photo{position:relative;min-height:520px}
-.split-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.split-doc{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+  padding:56px 48px;background:linear-gradient(160deg,#1B1F27,#14171D);
+}
+.doc{
+  background:var(--paper);border-radius:10px;max-width:430px;width:100%;
+  padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);position:relative;
+}
+.doc::before{content:"";position:absolute;top:0;left:26px;right:26px;height:3px;background:var(--gold)}
+.doc-head{
+  display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+  padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:16px;
+}
+.doc-head b{font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--teal);text-transform:uppercase}
+.doc-head span{font-size:11px;color:var(--ink-50);font-weight:700}
+.doc ul{list-style:none;display:grid;gap:12px}
+.doc li{display:flex;gap:10px;font-size:12.5px;line-height:1.55;color:var(--ink)}
+.doc li::before{content:"";width:8px;height:8px;border-radius:50%;flex:none;margin-top:5px}
+.doc li.crit::before{background:#B3402F}
+.doc li.med::before{background:var(--gold)}
+.doc li.ok::before{background:var(--teal)}
+.doc li b{font-weight:800}
+.doc-foot{
+  margin-top:18px;padding-top:14px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:10px;
+  font-size:10.5px;font-weight:800;color:var(--ink-50);letter-spacing:.1em;text-transform:uppercase;
+}
+.doc-foot b{color:var(--gold)}
+.split-doc .caption{font-size:11.5px;color:var(--paper-70);letter-spacing:.04em}
 
 /* ---------- Servicios ---------- */
 .services{padding:104px 0;background:var(--paper)}
