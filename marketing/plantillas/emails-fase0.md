@@ -103,6 +103,47 @@ SpindleLab · spindlelab.cl
 
 ---
 
+## Frente C (experimental) — Salud visual / oftalmología y ópticas
+
+### F-C · Toque 1 — «Hice la prueba por ti»
+**Asunto:** Le pregunté a ChatGPT por [SERVICIO] en [COMUNA] — [EMPRESA] no aparece
+
+Hola [NOMBRE]:
+
+Hice una prueba real: le pregunté a ChatGPT «[pregunta real, ej.: ¿qué clínica oftalmológica en Santiago recomiendas para cirugía refractiva?]».
+
+[EVIDENCIA — ej.: «Recomendó a X e Y. [EMPRESA] no apareció.»]
+
+Cada vez más pacientes investigan así antes de agendar hora — primero Google, ahora también un chat de IA. En salud, donde la confianza pesa más que en casi cualquier otro rubro, no aparecer en esa respuesta tiene un costo directo en consultas que nunca llegan.
+
+Me dedico al SEO técnico y la visibilidad en motores de IA. ¿Te preparo un mini-diagnóstico de 1 página de [EMPRESA] en 48 horas? Gratis, sin compromiso, y te quedas con el documento.
+
+SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
+
+### F-C · Toque 2 — el costo de no aparecer
+**Asunto:** Re: Le pregunté a ChatGPT por [SERVICIO] en [COMUNA]
+
+Hola [NOMBRE]:
+
+Un dato del rubro: en salud (lo que Google llama YMYL — *your money, your life*) los motores de IA exigen señales de confianza más estrictas que en cualquier otra categoría — autores identificables, datos estructurados, coherencia entre lo que dice el sitio y lo que se puede verificar de la clínica. Casi ningún centro oftalmológico o de óptica en Chile las tiene implementadas todavía.
+
+El mini-diagnóstico gratis sigue disponible. Un «ok» basta para que te lo envíe en 48 h.
+
+SpindleLab · spindlelab.cl
+
+### F-C · Toque 3 — cierre limpio
+**Asunto:** Cierro el tema
+
+Hola [NOMBRE]:
+
+Último correo. Si esto no es prioridad ahora, ningún problema — te dejo el blog por si sirve más adelante: spindlelab.cl/blog.
+
+Si en algún momento quieres el diagnóstico, la puerta queda abierta.
+
+SpindleLab · spindlelab.cl
+
+---
+
 ## Respuestas tipo (para ir rápido)
 
 **Interesado →** «Perfecto. Para el diagnóstico solo necesito confirmar el sitio ([URL]). Te lo envío en 48 h. Si después quieres, lo revisamos en una llamada de 20 minutos — sin costo.»
