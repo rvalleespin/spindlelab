@@ -12,3 +12,6 @@
 
 /assets/css/*
   Cache-Control: public, max-age=600, must-revalidate
+
+/favicon.ico
+  Cache-Control: public, max-age=3600, must-revalidate
