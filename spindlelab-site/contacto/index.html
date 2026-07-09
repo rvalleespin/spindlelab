@@ -11,9 +11,9 @@
 <meta property="og:title" content="Contacto — SpindleLab">
 <meta property="og:description" content="Pide tu mini-diagnóstico gratuito: envíanos tu URL y en 48 horas tienes el informe.">
 <meta property="og:url" content="https://spindlelab.cl/contacto/">
-<meta property="og:image" content="https://spindlelab.cl/assets/img/og-marca.jpg">
+<meta property="og:image" content="https://spindlelab.cl/assets/img/og-marca.jpg?v=2">
 <meta property="og:locale" content="es_CL">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png"><link rel="icon" type="image/png" sizes="512x512" href="/assets/img/favicon-512.png"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=4"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -46,13 +46,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css?v=7">
+<link rel="stylesheet" href="/assets/css/style.css?v=8">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="logo" href="/" aria-label="SpindleLab — inicio"><img src="/assets/img/logo-spindlelab.png" alt="SpindleLab" width="116" height="34"></a>
+    <a class="logo" href="/" aria-label="SpindleLab — inicio"><img src="/assets/img/logo-spindlelab.png?v=2" alt="SpindleLab" width="116" height="34"></a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span class="bars"></span></button>
     <ul class="nav-links" id="nav-links">
       <li><a href="/servicios/">Servicios</a></li>
@@ -78,7 +78,8 @@
         <h1>Un correo. Tu URL. 48 horas.</h1>
         <p class="lead">Así de simple es empezar: escríbenos con la dirección de tu sitio y en 48 horas tienes el mini-diagnóstico — una página con lo que está bien, lo que frena tu visibilidad y qué haríamos primero. Gratis y sin compromiso.</p>
         <div class="actions">
-          <a class="btn gold" href="mailto:hola@spindlelab.cl?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20">Escribir a hola@spindlelab.cl →</a>
+          <a class="btn gold" href="#contacto-form">Completar formulario ↓</a>
+          <span class="note">O escríbenos directo a <a href="mailto:hola@spindlelab.cl?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20" style="color:inherit">hola@spindlelab.cl</a></span>
         </div>
       </div>
       <div class="hero-media reveal">
@@ -162,12 +163,49 @@
     </div>
   </section>
 
-  <section class="cta" aria-labelledby="cta-title">
+  <section class="cta" id="contacto-form" aria-labelledby="cta-title">
     <div class="wrap">
       <span class="eyebrow teal">El primer paso</span>
-      <h2 id="cta-title">hola@spindlelab.cl</h2>
-      <p>Copia tu URL, cuéntanos en dos líneas qué hace tu empresa, y envía. Nosotros hacemos el resto.</p>
-      <a class="btn gold" href="mailto:hola@spindlelab.cl?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20">Abrir mi correo →</a>
+      <h2 id="cta-title">Cuéntanos de tu proyecto</h2>
+      <p>Completa el formulario y te escribimos dentro de 48 horas hábiles con el mini-diagnóstico o los siguientes pasos.</p>
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="f3a309f5-cbe6-4cf1-b77f-cfd0ee92685f">
+        <input type="hidden" name="subject" value="Nuevo contacto desde spindlelab.cl">
+        <input type="hidden" name="from_name" value="Formulario spindlelab.cl">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field">
+          <label for="f-nombre">Nombre</label>
+          <input type="text" id="f-nombre" name="Nombre" autocomplete="name" required>
+        </div>
+        <div class="field row2">
+          <div>
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="Email" autocomplete="email" required>
+          </div>
+          <div>
+            <label for="f-sitio">Sitio web <span class="opt">(opcional)</span></label>
+            <input type="text" id="f-sitio" name="Sitio web" placeholder="tuempresa.cl" autocomplete="url">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-servicio">Qué te interesa</label>
+          <select id="f-servicio" name="Servicio de interés" required>
+            <option value="">Selecciona una opción</option>
+            <option>Auditoría SEO Técnica</option>
+            <option>Visibilidad en IA (AEO/GEO)</option>
+            <option>Desarrollo Web</option>
+            <option>Acompañamiento Mensual</option>
+            <option>No estoy seguro todavía</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-mensaje">Cuéntanos brevemente <span class="opt">(opcional)</span></label>
+          <textarea id="f-mensaje" name="Mensaje" rows="3" placeholder="Qué hace tu empresa, qué te preocupa de tu sitio..."></textarea>
+        </div>
+        <button type="submit" class="btn gold">Enviar →</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+      <p class="form-note">¿Prefieres ir directo? Escríbenos a <a href="mailto:hola@spindlelab.cl?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20">hola@spindlelab.cl</a></p>
     </div>
   </section>
 
@@ -224,6 +262,32 @@
   }else{
     document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
   }
+})();
+(function(){
+  var form=document.querySelector('.contact-form');
+  if(!form) return;
+  var status=form.querySelector('.form-status');
+  var btn=form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    btn.disabled=true; btn.textContent='Enviando…';
+    status.className='form-status';
+    fetch(form.action, {
+      method:'POST',
+      headers:{'Accept':'application/json'},
+      body:new FormData(form)
+    }).then(function(r){return r.json();}).then(function(data){
+      if(!data.success) throw new Error(data.message||'Error');
+      form.reset();
+      status.textContent='Listo — te escribimos dentro de 48 horas hábiles.';
+      status.className='form-status show ok';
+    }).catch(function(){
+      status.textContent='Algo falló al enviar. Escríbenos directo a hola@spindlelab.cl mientras lo revisamos.';
+      status.className='form-status show err';
+    }).finally(function(){
+      btn.disabled=false; btn.textContent='Enviar →';
+    });
+  });
 })();
 </script>
 </body>
