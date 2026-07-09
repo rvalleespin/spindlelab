@@ -425,6 +425,38 @@ h1 .ia{color:var(--teal)}
   .sec{padding:64px 0}
 }
 
+/* ---------- Formulario de contacto ---------- */
+.contact-form{
+  max-width:560px;margin:0 auto;text-align:left;
+  background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);
+  padding:36px 40px;
+}
+.contact-form .field{margin-bottom:20px}
+.contact-form .field.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-form label{
+  display:block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--ink-70);margin-bottom:7px;
+}
+.contact-form label .opt{text-transform:none;font-weight:600;letter-spacing:0;color:var(--ink-50)}
+.contact-form input,.contact-form select,.contact-form textarea{
+  width:100%;font-family:var(--sans);font-size:15px;color:var(--ink);
+  background:var(--paper);border:1.5px solid var(--line);border-radius:8px;
+  padding:12px 14px;transition:border-color .2s;
+}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{
+  outline:none;border-color:var(--teal);
+}
+.contact-form textarea{resize:vertical;min-height:88px;font-family:var(--sans)}
+.contact-form button[type="submit"]{width:100%;justify-content:center;border:none;cursor:pointer;font:inherit}
+.contact-form button[type="submit"]:disabled{opacity:.6;cursor:default}
+.contact-form .form-status{margin:16px 0 0;font-size:13.5px;text-align:center;display:none}
+.contact-form .form-status.show{display:block}
+.contact-form .form-status.ok{color:var(--teal)}
+.contact-form .form-status.err{color:#B3402F}
+.contact-form [name="botcheck"]{display:none}
+.form-note{margin-top:22px;font-size:13px;color:var(--ink-70)}
+.form-note a{color:var(--teal);font-weight:700}
+
 /* ---------- Animación de entrada ---------- */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
@@ -453,4 +485,6 @@ h1 .ia{color:var(--teal)}
   .nav-links.open{display:flex}
   .nav-links li{width:100%}
   .nav-links a{display:block;padding:13px 0;font-size:13px}
+  .contact-form{padding:28px 22px}
+  .contact-form .field.row2{grid-template-columns:1fr}
 }
