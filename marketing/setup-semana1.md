@@ -66,6 +66,6 @@ Verificación final: en https://toolbox.googleapps.com/apps/checkmx/ ingresar sp
 - [x] Cotización a Bernardo — **enviada y aprobada** ✅ 8 jul (proyecto ganado; primer caso real de la línea Desarrollo Web)
 - [x] Página de Instagram creada, perfil configurado y primera publicación (carrusel 01) subida ✅ 8 jul
 - [ ] Página LinkedIn creada — textos y banner listos, falta ejecutar
-- [ ] Línea base del test de menciones IA (5 prompts en marketing/metricas/)
+- [x] Línea base del test de menciones IA ✅ 10 jul — SpindleLab no aparece en ninguna de las 15 combinaciones (esperado); detalle y competencia detectada en `metricas/test-menciones-ia.md`
 
 **Siguiente hito:** LinkedIn (única pieza de marca pendiente) y luego retomar el motor de outbound — lote 1 de Frente A ya redactado, falta enviarlo (`marketing/outbound/semana-02/lote-1-frente-a.md`).
