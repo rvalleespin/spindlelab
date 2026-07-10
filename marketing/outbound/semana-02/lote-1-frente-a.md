@@ -15,12 +15,17 @@
 
 | # | Empresa | Email decisor | Enviado | Respuesta | Diagnóstico |
 |---|---|---|---|---|---|
-| 1-15 | (completar al enviar) | | | | |
+| 1 | Vicapital | dinfante@vicapital.cl | | | |
+| 2 | Dorco | contacto@dorcocapital.com ⚠️ sin confirmar — Apollo no tiene registro de esta empresa | | | |
+| 3 | Vision Global Investments | camila.bernat@vision.cl | | | |
+| 4 | Altis | girarrazaval@altis.cl | | | |
+| 5 | Paragon Advisors | alberto.bezanilla@paragonadvisors.cl | | | |
+| 6-15 | (aún sin investigar / sin enviar) | | | | |
 
 ---
 
 ## 1. Vicapital — vicapital.cl
-**Decisor:** Daniela Infante (socia fundadora) o Guillermo Villaseca (fundador).
+**Decisor:** Daniela Infante Stewart (Partner) — confirmada en Apollo, `dinfante@vicapital.cl`. Nota: "Guillermo Villaseca" no existe en Apollo; el único Villaseca registrado es Emiliano Villaseca (Partner, `evillaseca@vicapital.cl`) — usar solo si Daniela no responde.
 **Hallazgo verificado:** el sitio es una aplicación JavaScript (Vue.js): el HTML que reciben los bots llega prácticamente vacío, y su sitemap expone rutas internas sin resolver (`/equipo/:id`). Los crawlers de ChatGPT/Perplexity no ejecutan JavaScript → el sitio es invisible para ellos.
 **Pregunta ChatGPT:** «¿Qué family office independiente en Chile, sin vínculos con bancos ni corredoras, me recomiendas para administrar el patrimonio de mi familia?»
 
@@ -41,7 +46,7 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 2. Dorco — dorco.cl
-**Decisor:** sin nombre público; en Apollo buscar gerencia general (referencia: Jorge Morgado, Senior VP, vía LinkedIn).
+**Decisor:** sin nombre confirmado. Apollo no tiene registro alguno de esta empresa (ni cuenta ni contactos) — consistente con el propio hallazgo técnico. Único email disponible, encontrado por búsqueda pública: `contacto@dorcocapital.com` (dominio duplicado sin canonical, no un email personal de decisor) — enviar solo si se decide no esperar más y usar como último recurso.
 **Hallazgo verificado:** su página de equipo (dorco.cl/nuestro-equipo.html) devuelve error 404, y Google tiene indexada una página de error con el nombre de OTRA empresa («DOPPER: Expertos en Software»). Dominio duplicado dorcocapital.com sin canonical.
 **Pregunta ChatGPT:** «¿Qué family offices boutique en Santiago manejan patrimonio familiar y también finanzas corporativas?»
 
@@ -60,13 +65,13 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 3. Vision Global Investments — vision.cl
-**Decisor:** Boris Garafulic (fundador).
+**Decisor:** ~~Boris Garafulic (fundador)~~ → **Camila Bernat (CEO)** — Apollo no tiene registrado a Boris Garafulic; Camila es el cargo más alto disponible con email verificado.
 **Hallazgo verificado:** vision.cl responde error 503 a los lectores automatizados (lo probé directamente) — los crawlers que alimentan a ChatGPT y Perplexity no pueden leer el sitio. Además la marca «Vision» es imposible de desambiguar sin señales de entidad fuertes.
 **Pregunta ChatGPT:** «¿Qué asesoras independientes en Chile distribuyen fondos internacionales a inversionistas institucionales?»
 
 **Asunto:** vision.cl está bloqueando a los bots de ChatGPT — lo comprobé
 
-Estimado Boris:
+Estimada Camila:
 
 Hice una prueba técnica antes de escribirle: intenté leer vision.cl con las mismas herramientas automatizadas que usan los motores de IA, y el sitio responde error 503 — bloqueado. Es decir: 30 años de trayectoria y los acuerdos internacionales que Vision ha construido son ilegibles para ChatGPT y Perplexity, justo cuando los clientes de alto patrimonio empezaron a investigar preguntándole a la IA.
 
@@ -79,13 +84,13 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 4. Altis — altis.cl
-**Decisor:** Alejandro Puentes B. (gerente general) o Tomás Müller B. (socio fundador).
+**Decisor:** ~~Alejandro Puentes B. (gerente general) o Tomás Müller B. (socio fundador)~~ → **Guillermo Irarrazaval Ossa (Investment Banking Director)** — Apollo no tiene registrados ni a Puentes ni a Müller; Guillermo es el cargo más alto disponible con email verificado.
 **Hallazgo verificado:** el title de la home es solo «Altis», sin meta description, sin datos estructurados, sin blog; la portada casi no tiene texto indexable.
 **Pregunta ChatGPT:** «¿Cuáles son los multi family offices más reconocidos en Chile para administrar un patrimonio familiar tras la venta de una empresa?»
 
 **Asunto:** Para Google, altis.cl es una página casi en blanco
 
-Estimado Alejandro:
+Estimado Guillermo:
 
 Revisé altis.cl antes de escribirle: el título de la página principal es una sola palabra («Altis»), no hay descripción para buscadores y la portada prácticamente no tiene texto que Google o ChatGPT puedan leer. Un family office con el pedigrí de IM Trust y 20 años de historia que, para los motores de búsqueda y de IA, es una página casi en blanco.
 
@@ -100,7 +105,7 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 5. Paragon Advisors — paragonadvisors.cl
-**Decisor:** Alberto Bezanilla D. (socio) u otro de los seis socios.
+**Decisor:** Alberto Bezanilla D. (socio) — confirmado en Apollo, `alberto.bezanilla@paragonadvisors.cl`. Alternativa más senior si no responde: Santiago Crichton Subercaseaux (Managing Partner), `santiago.crichton@paragonadvisors.cl`.
 **Hallazgo verificado:** title de home = «Paragon» a secas; la meta description es una lista de palabras en mayúsculas («INVERSIONES, FINANCIERA, LEGAL, EMPRESAS FAMILIARES») — práctica que Google dejó de premiar hace más de una década. Sin contenido editorial.
 **Pregunta ChatGPT:** «¿Quién puede asesorar a mi empresa familiar en Chile en gobierno corporativo familiar, inversiones y temas legales-tributarios, todo integrado?»
 
