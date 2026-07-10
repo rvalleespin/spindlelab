@@ -60,12 +60,12 @@ Verificación final: en https://toolbox.googleapps.com/apps/checkmx/ ingresar sp
 - [x] Remitente cambiado a «SpindleLab» (Gmail «Enviar como» + perfil de la cuenta)
 - [x] Token de API de Cloudflare revocado (verificado: «Invalid API Token»)
 - [x] Search Console verificado + sitemap enviado ✅ estado «Correcto», 11 páginas descubiertas (confirmado 8 jul)
-- [ ] Bing Webmaster Tools: importar desde Search Console (1 clic en bing.com/webmasters — alimenta a ChatGPT)
-- [ ] Web Analytics de Cloudflare activo
+- [x] Bing Webmaster Tools ✅ 10 jul — importado desde Search Console, sitemap enviado
+- [x] Web Analytics de Cloudflare activo ✅ 10 jul — ya recogiendo datos reales (Core Web Vitals en verde)
 - [x] Sistema de marca v1.2 aplicado al sitio (Gabarito, favicon monograma, 4ª línea de servicio Desarrollo Web) ✅ 8 jul — nota: el sitio siguió evolucionando en otra sesión (fotografía real vía Figma); ver `brand/manual-de-marca.md` §08
 - [x] Cotización a Bernardo — **enviada y aprobada** ✅ 8 jul (proyecto ganado; primer caso real de la línea Desarrollo Web)
 - [x] Página de Instagram creada, perfil configurado y primera publicación (carrusel 01) subida ✅ 8 jul
 - [ ] Página LinkedIn creada — textos y banner listos, falta ejecutar
 - [x] Línea base del test de menciones IA ✅ 10 jul — SpindleLab no aparece en ninguna de las 15 combinaciones (esperado); detalle y competencia detectada en `metricas/test-menciones-ia.md`
 
-**Siguiente hito:** LinkedIn (única pieza de marca pendiente) y luego retomar el motor de outbound — lote 1 de Frente A ya redactado, falta enviarlo (`marketing/outbound/semana-02/lote-1-frente-a.md`).
+**Siguiente hito:** LinkedIn es el único pendiente del checklist de arranque (textos y banner ya listos). En paralelo, el motor de outbound: lote 1 de Frente A ya redactado, falta completar 4 emails de decisor y enviarlo (`marketing/outbound/semana-02/lote-1-frente-a.md`).
