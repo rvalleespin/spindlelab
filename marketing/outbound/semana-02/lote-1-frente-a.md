@@ -15,12 +15,14 @@
 
 | # | Empresa | Email decisor | Enviado | Respuesta | Diagnóstico |
 |---|---|---|---|---|---|
-| 1 | Vicapital | dinfante@vicapital.cl | | | |
-| 2 | Dorco | contacto@dorcocapital.com ⚠️ sin confirmar — Apollo no tiene registro de esta empresa | | | |
-| 3 | Vision Global Investments | camila.bernat@vision.cl | | | |
-| 4 | Altis | girarrazaval@altis.cl | | | |
-| 5 | Paragon Advisors | alberto.bezanilla@paragonadvisors.cl | | | |
+| 1 | Vicapital | dinfante@vicapital.cl | 10 jul (mañana) | | |
+| 2 | Dorco | contacto@dorcocapital.com ⚠️ sin confirmar — Apollo no tiene registro de esta empresa | 10 jul (mañana) | | |
+| 3 | Vision Global Investments | camila.bernat@vision.cl | 10 jul (mañana) | | |
+| 4 | Altis | girarrazaval@altis.cl | 10 jul (mañana) | | |
+| 5 | Paragon Advisors | alberto.bezanilla@paragonadvisors.cl | 10 jul (mañana) | | |
 | 6-15 | (aún sin investigar / sin enviar) | | | | |
+
+**Próximo hito:** tanda 2 (contactos 6-10) el próximo día hábil de calentamiento (regla: 3 tandas de 5, no todo junto). Revisar bandeja de entrada de hola@spindlelab.cl a diario por respuestas — regla sagrada: mini-diagnóstico en ≤48h a quien responda.
 
 ---
 
