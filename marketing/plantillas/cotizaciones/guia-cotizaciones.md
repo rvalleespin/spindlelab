@@ -41,6 +41,7 @@ Aplica la voz general de `manual-de-marca.md` §07, con estas reglas propias de 
 - [ ] Sin promesas técnicas que se contradicen entre sí
 - [ ] Firma final con el wordmark de marca vigente (ver `manual-de-marca.md`)
 - [ ] Validez de 30 días desde la fecha de emisión
+- [ ] Si el servicio es Auditoría o Acompañamiento Mensual (no Desarrollo Web): al cerrar, seguir el checklist de accesos de `marketing/onboarding-cliente.md` antes del primer entregable
 
 ## 4. Cómo usar la plantilla
 

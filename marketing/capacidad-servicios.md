@@ -43,14 +43,14 @@ Auditoría honesta de las acciones que cada servicio promete (tomadas directo de
 | Informe quincenal | ✅ | Redacción/formato — sin brecha, una vez que los datos de arriba existen. |
 | Reunión mensual (45 min) | — | 100% humano, no aplica automatización. |
 
-**Conclusión:** este es el servicio con más brechas reales, y es justo el que la estrategia prioriza económicamente (retainer por sobre auditorías one-shot). Antes de vender el primer Acompañamiento Mensual, conviene resolver dos cosas: (1) pedir acceso a Search Console del cliente como paso de onboarding estándar, (2) decidir el modelo de implementación técnica (acceso directo vs. tickets).
+**Conclusión:** este es el servicio con más brechas reales, y es justo el que la estrategia prioriza económicamente (retainer por sobre auditorías one-shot). Antes de vender el primer Acompañamiento Mensual, conviene resolver dos cosas: (1) pedir acceso a Search Console del cliente como paso de onboarding estándar, (2) decidir el modelo de implementación técnica (acceso directo vs. tickets). **Ambas resueltas en `onboarding-cliente.md`.**
 
 ---
 
 ## Resumen — qué conviene resolver, en orden de prioridad
 
-1. **Search Console del cliente como paso de onboarding obligatorio** (gratis, 2 min del cliente) — cierra la brecha más grande de Auditoría y Acompañamiento de una sola vez (indexación real + posiciones reales).
-2. **API key de PageSpeed Insights** (gratis, Google Cloud) — mejora la velocidad y consistencia de la sección de Core Web Vitals. No bloqueante, pero barato de resolver.
-3. **Definir el modelo de implementación técnica** para Acompañamiento Mensual (acceso directo vs. tickets al equipo del cliente) — decisión de proceso, no de herramienta, pero hay que tenerla clara antes del primer cliente de este servicio.
+1. ✅ **Search Console del cliente como paso de onboarding obligatorio** — resuelto en `onboarding-cliente.md` §2, junto con el resto de los accesos por servicio.
+2. **API key de PageSpeed Insights** (gratis, Google Cloud) — mejora la velocidad y consistencia de la sección de Core Web Vitals. No bloqueante, pero barato de resolver. Pendiente.
+3. ✅ **Modelo de implementación técnica** para Acompañamiento Mensual — resuelto en `onboarding-cliente.md` §1 (acceso directo si SpindleLab construyó el sitio, acceso CMS acotado si es externo, tickets para lo que exceda el CMS).
 4. **Crawler propio reusable** (bash/curl) para arquitectura/enlazado interno — construible sin costo externo, queda pendiente como un Skill más (mismo patrón que `/mini-diagnostico`).
 5. **Herramienta de share-of-voice en IA** — solo se justifica con 2+ clientes de Acompañamiento simultáneos corriendo el monitoreo quincenal; hasta entonces, manual funciona.
