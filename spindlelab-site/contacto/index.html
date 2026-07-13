@@ -2,6 +2,14 @@
 <html lang="es-CL">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J40VW9E0TW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-J40VW9E0TW");
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contacto — pide tu diagnóstico gratis — SpindleLab</title>
 <meta name="description" content="Escríbenos a hola@spindlelab.cl con la URL de tu sitio y en 48 horas recibes un mini-diagnóstico gratuito de SEO técnico y presencia en IA. Sin compromiso.">
@@ -46,7 +54,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css?v=8">
+<link rel="stylesheet" href="/assets/css/style.css?v=13">
 </head>
 <body>
 
@@ -57,7 +65,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="/servicios/">Servicios</a></li>
       <li><a href="/metodo/">Método</a></li>
-      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/blog/">El Taller</a></li>
       <li><a href="/contacto/" aria-current="page">Contacto</a></li>
     </ul>
     <a class="btn gold small nav-cta" href="mailto:hola@spindlelab.cl">Escribir ahora</a>
@@ -199,12 +207,31 @@
           </select>
         </div>
         <div class="field">
+          <label for="f-origen">¿Cómo nos encontraste? <span class="opt">(opcional)</span></label>
+          <select id="f-origen" name="Cómo nos encontró">
+            <option value="">Selecciona una opción</option>
+            <option>Búsqueda en Google</option>
+            <option>Anuncio de Google (Ads)</option>
+            <option>LinkedIn</option>
+            <option>Instagram</option>
+            <option>Recomendación de alguien</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="field">
           <label for="f-mensaje">Cuéntanos brevemente <span class="opt">(opcional)</span></label>
           <textarea id="f-mensaje" name="Mensaje" rows="3" placeholder="Qué hace tu empresa, qué te preocupa de tu sitio..."></textarea>
         </div>
+        <input type="hidden" name="UTM Source" id="f-utm-source">
+        <input type="hidden" name="UTM Medium" id="f-utm-medium">
+        <input type="hidden" name="UTM Campaign" id="f-utm-campaign">
         <button type="submit" class="btn gold">Enviar →</button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </form>
+      <div class="form-success" role="status" aria-live="polite" hidden>
+        <h3>Listo.</h3>
+        <p>Te escribimos dentro de 48 horas hábiles con tu mini-diagnóstico.</p>
+      </div>
       <p class="form-note">¿Prefieres ir directo? Escríbenos a <a href="mailto:hola@spindlelab.cl?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20">hola@spindlelab.cl</a></p>
     </div>
   </section>
@@ -228,7 +255,7 @@
         <h4>Sitio</h4>
         <ul>
           <li><a href="/metodo/">Nuestro Método</a></li>
-          <li><a href="/blog/">Blog Técnico</a></li>
+          <li><a href="/blog/">El Taller</a></li>
           <li><a href="/contacto/">Contacto</a></li>
         </ul>
       </nav>
@@ -264,27 +291,45 @@
   }
 })();
 (function(){
+  // Captura UTM de la URL actual y los persiste en sessionStorage para que
+  // sobrevivan si el visitante llega a otra página antes de completar el
+  // formulario (ej. anuncio -> home -> contacto).
+  var params=new URLSearchParams(window.location.search);
+  ['utm_source','utm_medium','utm_campaign'].forEach(function(key){
+    var val=params.get(key);
+    if(val){ try{ sessionStorage.setItem(key,val); }catch(e){} }
+  });
   var form=document.querySelector('.contact-form');
   if(!form) return;
+  try{
+    form.querySelector('#f-utm-source').value=sessionStorage.getItem('utm_source')||'';
+    form.querySelector('#f-utm-medium').value=sessionStorage.getItem('utm_medium')||'';
+    form.querySelector('#f-utm-campaign').value=sessionStorage.getItem('utm_campaign')||'';
+  }catch(e){}
+})();
+(function(){
+  var form=document.querySelector('.contact-form');
+  if(!form) return;
+  var success=document.querySelector('.form-success');
   var status=form.querySelector('.form-status');
   var btn=form.querySelector('button[type="submit"]');
   form.addEventListener('submit', function(e){
     e.preventDefault();
     btn.disabled=true; btn.textContent='Enviando…';
     status.className='form-status';
+    var serviceInterest=form.elements['Servicio de interés'].value;
     fetch(form.action, {
       method:'POST',
       headers:{'Accept':'application/json'},
       body:new FormData(form)
     }).then(function(r){return r.json();}).then(function(data){
       if(!data.success) throw new Error(data.message||'Error');
-      form.reset();
-      status.textContent='Listo — te escribimos dentro de 48 horas hábiles.';
-      status.className='form-status show ok';
+      form.hidden=true;
+      success.hidden=false;
+      gtag('event','generate_lead',{form_id:'contacto',service_interest:serviceInterest});
     }).catch(function(){
       status.textContent='Algo falló al enviar. Escríbenos directo a hola@spindlelab.cl mientras lo revisamos.';
       status.className='form-status show err';
-    }).finally(function(){
       btn.disabled=false; btn.textContent='Enviar →';
     });
   });
