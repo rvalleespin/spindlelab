@@ -207,9 +207,24 @@
           </select>
         </div>
         <div class="field">
+          <label for="f-origen">¿Cómo nos encontraste? <span class="opt">(opcional)</span></label>
+          <select id="f-origen" name="Cómo nos encontró">
+            <option value="">Selecciona una opción</option>
+            <option>Búsqueda en Google</option>
+            <option>Anuncio de Google (Ads)</option>
+            <option>LinkedIn</option>
+            <option>Instagram</option>
+            <option>Recomendación de alguien</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="field">
           <label for="f-mensaje">Cuéntanos brevemente <span class="opt">(opcional)</span></label>
           <textarea id="f-mensaje" name="Mensaje" rows="3" placeholder="Qué hace tu empresa, qué te preocupa de tu sitio..."></textarea>
         </div>
+        <input type="hidden" name="UTM Source" id="f-utm-source">
+        <input type="hidden" name="UTM Medium" id="f-utm-medium">
+        <input type="hidden" name="UTM Campaign" id="f-utm-campaign">
         <button type="submit" class="btn gold">Enviar →</button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </form>
@@ -274,6 +289,23 @@
   }else{
     document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
   }
+})();
+(function(){
+  // Captura UTM de la URL actual y los persiste en sessionStorage para que
+  // sobrevivan si el visitante llega a otra página antes de completar el
+  // formulario (ej. anuncio -> home -> contacto).
+  var params=new URLSearchParams(window.location.search);
+  ['utm_source','utm_medium','utm_campaign'].forEach(function(key){
+    var val=params.get(key);
+    if(val){ try{ sessionStorage.setItem(key,val); }catch(e){} }
+  });
+  var form=document.querySelector('.contact-form');
+  if(!form) return;
+  try{
+    form.querySelector('#f-utm-source').value=sessionStorage.getItem('utm_source')||'';
+    form.querySelector('#f-utm-medium').value=sessionStorage.getItem('utm_medium')||'';
+    form.querySelector('#f-utm-campaign').value=sessionStorage.getItem('utm_campaign')||'';
+  }catch(e){}
 })();
 (function(){
   var form=document.querySelector('.contact-form');
