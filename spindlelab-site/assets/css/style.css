@@ -150,13 +150,15 @@ h1 .ia{color:var(--teal)}
   font-size:13px;line-height:1.6;color:#C4CFDC;
 }
 .chat .a b{color:var(--gold);font-weight:800}
-.split-copy .disclaimer{font-size:11px;color:rgba(247,245,240,.45);letter-spacing:.04em}
+.split-story{font-size:15.5px;line-height:1.75;color:#C4CFDC;max-width:42ch}
+.split-story b{color:var(--paper);font-weight:800}
+.split-band .disclaimer{font-size:11px;color:rgba(247,245,240,.45);letter-spacing:.04em}
 .split-photo{overflow:hidden}
 .split-photo img{display:block;width:100%;height:100%;min-height:520px;object-fit:cover}
 
 /* mockup de chat ampliado (reemplaza foto de stock en home) */
 .chat-mockup{
-  display:flex;align-items:center;justify-content:center;min-height:520px;padding:48px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;min-height:520px;padding:48px;
   background:radial-gradient(120% 120% at 20% 15%,rgba(15,118,110,.18),transparent 60%),linear-gradient(160deg,#1B1F27,#14171D);
 }
 .chat-window{
