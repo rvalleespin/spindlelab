@@ -6,6 +6,19 @@ Auditoría honesta de las acciones que cada servicio promete (tomadas directo de
 
 ---
 
+## 0. Validación de precios vs. competencia real (12 jul 2026)
+
+Antes de aprobar la propuesta de precios, se verificó contra el mercado chileno 2026 con datos más específicos que la primera pasada (auditoría puntual y AEO/GEO por separado, no SEO genérico):
+
+| Servicio | Rango de mercado Chile 2026 | Propuesta SpindleLab | Posición |
+|---|---|---|---|
+| Auditoría SEO — básica | $200k–$500k CLP (proyecto único) | Esencial: $232k oferta / $290k lista | Dentro del rango, mitad inferior |
+| Auditoría SEO — avanzada | $850k–$2,5M CLP | Profunda: $600k oferta / $750k lista | Bajo el piso de "avanzada" — deliberado |
+| Visibilidad en IA (AEO/GEO), diagnóstico puntual | **Nitten** (competidor chileno real): $350.000 CLP | Completa: $360k oferta / $450k lista | Prácticamente calzado con un competidor nombrado |
+| Acompañamiento mensual (con GEO incluido) | **Maqui** (competidor chileno real), plan Scale: $1.690.000/mes | Avanzado: $900.000/mes · Recomendado: $550.000/mes | Bien bajo el techo premium; Recomendado cae dentro del rango general de agencias ($500k–$1,5M/mes) |
+
+**Conclusión:** los montos propuestos no se ajustaron — quedan validados como competitivos y deliberadamente posicionados bajo el techo del mercado, mismo criterio ya usado en Desarrollo Web.
+
 ## 1. Auditoría SEO Técnica
 
 | Acción prometida en el sitio | ¿Es posible hoy? | Detalle |
