@@ -2,6 +2,8 @@
 
 **Para:** la sesión que mantiene `spindlelab-site/` · **De:** sesión de marketing · **Fecha:** 13 jul 2026
 
+**✅ Resuelto — 13 jul 2026.** Aplicado en `main` (commit `61e5aec`), y la otra sesión fue más allá: agregó GA4 (`G-J40VW9E0TW`) y un evento `generate_lead` al enviar el formulario (commit `e9a491d`). Esto cambia el paso pendiente de Google Ads: ya no hace falta pegar un tag de conversión manual — cuando exista la cuenta de Ads, se vincula a GA4 y se importa `generate_lead` directo como conversión (unos clics en la consola de Ads, sin tocar código). Sigue faltando solo: **crear la cuenta de Google Ads.**
+
 ## Contexto
 
 La estrategia de marketing (`marketing/estrategia-marketing-spindlelab.md` §6.4) define el criterio de éxito de la futura campaña de Google Ads como "≥2 mini-diagnósticos solicitados desde ads en 60 días, **medido con parámetro UTM + pregunta «¿cómo nos encontraste?»**". Revisé `spindlelab-site/contacto/index.html` y ninguna de las dos piezas existe todavía en el formulario.
