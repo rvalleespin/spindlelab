@@ -31,7 +31,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 ### Semana 2 (14–20 jul)
 - [~] [CC] Evidencia personalizada + borradores para el lote 1 Frente A → [TÚ] revisar y **enviar 15 contactos** ← **hecho = avanzamos** — **tanda 1 (5/15) enviada 10 jul**, adelantada respecto al calendario original. Faltan tandas 2 y 3.
 - [~] [CC] Frente C experimental (salud visual/oftalmología y ópticas) — surgió de una búsqueda de Apollo no planificada, no pasó por el estudio de categorías. Lista + lote 1 de 5 contactos verificados listos en `listas/frente-c-salud-visual-optica.md` y `outbound/semana-02/lote-1-frente-c.md`. **Pendiente decisión [TÚ]:** ¿se suma como tercer frente permanente o se descarta? No enviar hasta decidir — no mezclar con el calentamiento de Frente A.
-- [ ] [CC] Artículo 2: «¿Cómo elige ChatGPT qué empresas recomendar?» → [TÚ] editar y publicar
+- [~] [CC] Artículo 2 — **tema cambiado**: «¿Cómo elige ChatGPT qué empresas recomendar?» ya está cubierto por el artículo publicado *«¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?»* (otra sesión). Reemplazado por **«¿Cuánto cuesta el SEO técnico en Chile?»**, redactado 12 jul en `articulos/2026-07-articulo-02-cuanto-cuesta-el-seo-tecnico-en-chile.md` → [TÚ] editar y publicar
 - [ ] [CC] Lote semanal de 3 posts LinkedIn → [TÚ] aprobar y publicar
 - [ ] [TÚ] Contratar Apollo pagado
 
