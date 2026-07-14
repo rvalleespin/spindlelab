@@ -20,7 +20,7 @@
 | 3 | Vision Global Investments | camila.bernat@vision.cl | ✅ 10 jul | | |
 | 4 | Altis | girarrazaval@altis.cl | ✅ 10 jul | | |
 | 5 | Paragon Advisors | alberto.bezanilla@paragonadvisors.cl | ✅ 10 jul | | |
-| 6 | Addwise | ~~jose.hernandezmela@addwise.cl~~ ❌ rebotó (dirección inexistente) → reintentar con contacto@addwise.cl | ✅ 14 jul (rebotado) | | |
+| 6 | Addwise | ~~jose.hernandezmela@addwise.cl~~ ❌ rebotó (dirección inexistente) → ✅ reenviado a contacto@addwise.cl | ✅ 14 jul (reenviado tras rebote) | | |
 | 7 | Grey Capital | cruz@greycapital.cl | ✅ 14 jul | | |
 | 8 | Noosa Capital | rs@noosa.cl | ✅ 14 jul | | |
 | 9 | Abaqus | gonzalo@abaqus.cl | ✅ 14 jul | | |
