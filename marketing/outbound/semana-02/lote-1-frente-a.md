@@ -20,16 +20,16 @@
 | 3 | Vision Global Investments | camila.bernat@vision.cl | ✅ 10 jul | | |
 | 4 | Altis | girarrazaval@altis.cl | ✅ 10 jul | | |
 | 5 | Paragon Advisors | alberto.bezanilla@paragonadvisors.cl | ✅ 10 jul | | |
-| 6 | Addwise | jose.hernandezmela@addwise.cl | | | |
-| 7 | Grey Capital | cruz@greycapital.cl | | | |
-| 8 | Noosa Capital | rs@noosa.cl | | | |
-| 9 | Abaqus | gonzalo@abaqus.cl | | | |
-| 10 | Tempus | cdiaz@tempus.cl | | | |
+| 6 | Addwise | ~~jose.hernandezmela@addwise.cl~~ ❌ rebotó (dirección inexistente) → reintentar con contacto@addwise.cl | ✅ 14 jul (rebotado) | | |
+| 7 | Grey Capital | cruz@greycapital.cl | ✅ 14 jul | | |
+| 8 | Noosa Capital | rs@noosa.cl | ✅ 14 jul | | |
+| 9 | Abaqus | gonzalo@abaqus.cl | ✅ 14 jul | | |
+| 10 | Tempus | cdiaz@tempus.cl | ✅ 14 jul | | |
 | 11-15 | (aún sin investigar / sin enviar) | | | | |
 
 **Nota 14 jul (corrección de una corrección):** hubo confusión momentánea sobre si la tanda 1 se había enviado — se confirmó por error que no, luego se confirmó correctamente que **sí se envió el 10 de julio**, verificado directamente en Gmail web (hola@spindlelab.cl → Enviados). La falsa alarma vino de que la herramienta de Gmail de esta sesión está conectada a la cuenta personal de Ramón, no a hola@spindlelab.cl, así que las búsquedas automáticas fallaban. Sigue en pie: 0 respuestas hasta ahora, dentro de lo normal para una muestra de 5 emails fríos.
 
-**Tanda 2 (contactos 6-10):** emails verificados en Apollo 14 jul, contactos y correcciones de decisor ya reflejados abajo (Addwise → Jose Hernandez Mela; Grey Capital → Catherine Ruz; Abaqus → Gonzalo Reyes; Noosa y Tempus sin cambio). **Lista para enviar** — falta el paso [TÚ]: revisar y enviar los 5 desde hola@spindlelab.cl.
+**Tanda 2 (contactos 6-10):** enviada 14 jul desde hola@spindlelab.cl. 4/5 salieron bien (Grey Capital, Noosa, Abaqus, Tempus). **Addwise rebotó** — la dirección `jose.hernandezmela@addwise.cl` que Apollo marcaba como "Verified" no existe. Reintentar con `contacto@addwise.cl` (ver detalle en el ítem 6 abajo).
 
 **Próximo hito:** tanda 3 (contactos 11-15) el próximo día hábil de calentamiento después de tanda 2 (regla: 3 tandas de 5, no todo junto). Revisar bandeja de entrada de hola@spindlelab.cl a diario por respuestas — regla sagrada: mini-diagnóstico en ≤48h a quien responda.
 
@@ -135,13 +135,13 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 6. Addwise — addwise.cl
-**Decisor:** ~~Pablo Recio (gerente general)~~ → **José Hernández Mela (Director Ejecutivo y Socio Fundador)** — Apollo no tiene registrado a Pablo Recio; José es el cargo más alto disponible con email verificado, `jose.hernandezmela@addwise.cl`.
+**Decisor:** ~~Pablo Recio (gerente general)~~ → ~~José Hernández Mela (Director Ejecutivo y Socio Fundador)~~ — Apollo no tiene registrado a Pablo Recio; José era el cargo más alto disponible, pero su email `jose.hernandezmela@addwise.cl` (marcado "Verified" por Apollo) **rebotó 14 jul: "no se encontró la dirección"** — dato de Apollo desactualizado o mal escrito. **Fallback:** `contacto@addwise.cl`, email genérico encontrado directamente en la home de addwise.cl (curl 14 jul). Alternativa de decisor si se prefiere seguir buscando: Mauricio López, mencionado como socio fundador en `listas/frente-a-wealth-asesoras.md` junto a Pablo Recio.
 **Hallazgo verificado:** title de home = «Addwise» a secas y sin meta description; sin blog; prensa (El Mercurio, DF) desactualizada en el sitio.
 **Pregunta ChatGPT:** «¿Cuáles son los multi family offices más consolidados y con más trayectoria en Chile?»
 
 **Asunto:** Addwise no aparece cuando se pregunta por los MFO con más trayectoria de Chile
 
-Estimado José:
+Estimados:
 
 Addwise se presenta como pionero del multi family office en Chile, y la trayectoria de sus socios lo respalda. Revisando addwise.cl encontré un problema puntual: el título de la página es solo «Addwise», sin descripción para buscadores. Para Google y para ChatGPT ese liderazgo es invisible. Cuando alguien pregunta por los MFO con más trayectoria de Chile, la respuesta se arma con lo que se puede leer, y de ustedes casi no se puede leer nada.
 
