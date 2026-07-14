@@ -1,6 +1,8 @@
 # ¿Cuánto cuesta el SEO técnico en el mercado chileno en 2026?
 
-> **Estado: BORRADOR para tu edición.** Reemplaza al "Artículo 2" original del plan operativo (*"¿Cómo elige ChatGPT qué empresas recomendar?"*) porque esa pregunta ya la responde el artículo publicado *"¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?"* — escribirlo de nuevo habría sido duplicar contenido. Este toma su lugar en el pipeline. **Reescrito 14 jul:** menos foco en el modelo de negocio y las tablas de precio, más foco en por qué esto es cada vez más urgente y qué es lo que realmente se está pagando. Los números que quedan son los mínimos necesarios para responder bien la pregunta del título (y por SEO/AEO: es literalmente lo que alguien busca al escribir esa pregunta). Marca con [ ] lo que quieras cambiar.
+> **Estado: APROBADO 14 jul, encargo enviado a la otra sesión para publicar.** Ver `marketing/encargos-otras-sesiones/publicar-articulo-cuanto-cuesta-seo.md` para el HTML completo y los 3 pasos de integración (archivo nuevo, tarjeta en `blog/index.html`, línea en `sitemap.xml`).
+
+> **Historial de edición (mantener por trazabilidad):** Reemplaza al "Artículo 2" original del plan operativo (*"¿Cómo elige ChatGPT qué empresas recomendar?"*) porque esa pregunta ya la responde el artículo publicado *"¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?"* — escribirlo de nuevo habría sido duplicar contenido. Este toma su lugar en el pipeline. **Reescrito 14 jul:** menos foco en el modelo de negocio y las tablas de precio, más foco en por qué esto es cada vez más urgente y qué es lo que realmente se está pagando. Los números que quedan son los mínimos necesarios para responder bien la pregunta del título (y por SEO/AEO: es literalmente lo que alguien busca al escribir esa pregunta). Marca con [ ] lo que quieras cambiar.
 
 ---
 
