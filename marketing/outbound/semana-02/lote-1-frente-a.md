@@ -15,12 +15,14 @@
 
 | # | Empresa | Email decisor | Enviado | Respuesta | Diagnóstico |
 |---|---|---|---|---|---|
-| 1 | Vicapital | dinfante@vicapital.cl | 10 jul (mañana) | | |
-| 2 | Dorco | contacto@dorcocapital.com ⚠️ sin confirmar — Apollo no tiene registro de esta empresa | 10 jul (mañana) | | |
-| 3 | Vision Global Investments | camila.bernat@vision.cl | 10 jul (mañana) | | |
-| 4 | Altis | girarrazaval@altis.cl | 10 jul (mañana) | | |
-| 5 | Paragon Advisors | alberto.bezanilla@paragonadvisors.cl | 10 jul (mañana) | | |
+| 1 | Vicapital | dinfante@vicapital.cl | ⚠️ **CORRECCIÓN 14 jul: nunca se envió, quedó como borrador en Gmail desde el 10 jul.** Borrador confirmado vía API, pendiente de revisión y envío real. | | |
+| 2 | Dorco | contacto@dorcocapital.com ⚠️ sin confirmar — Apollo no tiene registro de esta empresa | ⚠️ Mismo caso — borrador sin enviar | | |
+| 3 | Vision Global Investments | camila.bernat@vision.cl | ⚠️ Mismo caso — borrador sin enviar | | |
+| 4 | Altis | girarrazaval@altis.cl | ⚠️ Mismo caso — borrador sin enviar | | |
+| 5 | Paragon Advisors | alberto.bezanilla@paragonadvisors.cl | ⚠️ Mismo caso — borrador sin enviar | | |
 | 6-15 | (aún sin investigar / sin enviar) | | | | |
+
+**Nota 14 jul:** se creía que la tanda 1 estaba enviada y sin respuestas — en realidad nunca salió de Borradores. El "0 respuestas" reportado no era una señal de entregabilidad, era que no había nada enviado. Los 5 borradores existen en Gmail (confirmados vía API `list_drafts`), solo falta que un humano los revise y los envíe manualmente desde la bandeja de Borradores.
 
 **Próximo hito:** tanda 2 (contactos 6-10) el próximo día hábil de calentamiento (regla: 3 tandas de 5, no todo junto). Revisar bandeja de entrada de hola@spindlelab.cl a diario por respuestas — regla sagrada: mini-diagnóstico en ≤48h a quien responda.
 
