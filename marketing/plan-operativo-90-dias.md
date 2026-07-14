@@ -31,8 +31,8 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 ### Semana 2 (14–20 jul)
 - [x] [CC] Evidencia personalizada + borradores para el lote 1 Frente A → [TÚ] revisar y **enviar 15 contactos** ← **hecho = avanzamos** — **completo 14 jul: 15/15 enviados.** Tanda 1 (10 jul), tanda 2 (14 jul, Addwise rebotó y se reenvió con éxito a `contacto@addwise.cl`), tanda 3 (14 jul, 5/5 a la primera). Sumado a Frente C, van 20 emails fríos en curso.
 - [x] [TÚ] **Frente C decidido: SE SUMA** como frente activo — 14 jul. Lote 1 (5 contactos) enviado el mismo día, confirmado en Gmail web. Ver `outbound/semana-02/lote-1-frente-c.md`.
-- [~] [CC] Artículo 2 — **tema cambiado**: «¿Cómo elige ChatGPT qué empresas recomendar?» ya está cubierto por el artículo publicado *«¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?»* (otra sesión). Reemplazado por **«¿Cuánto cuesta el SEO técnico en Chile?»**, aprobado 14 jul, encargo de publicación enviado a la otra sesión (`encargos-otras-sesiones/publicar-articulo-cuanto-cuesta-seo.md`) → falta que lo apliquen y confirmen en vivo
-- [~] [CC] Lote semanal de 3 posts LinkedIn — borrador listo 14 jul en `outbound/semana-02/posts-linkedin-semana-02.md` → [TÚ] aprobar y publicar (requiere tener creada la página de empresa primero)
+- [x] [CC] Artículo 2 — **tema cambiado**: «¿Cómo elige ChatGPT qué empresas recomendar?» ya está cubierto por el artículo publicado *«¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?»* (otra sesión). Reemplazado por **«¿Cuánto cuesta el SEO técnico en Chile?»**, aprobado y **publicado ✅ 14 jul** (la otra sesión aplicó el encargo)
+- [~] [CC] Lote semanal de 3 posts LinkedIn — **Post 1 publicado ✅ 14 jul** (primera publicación de la página). Posts 2 y 3 en `outbound/semana-02/posts-linkedin-semana-02.md` → [TÚ] publicar según cadencia
 - [ ] [TÚ] Contratar Apollo pagado
 
 ### Semana 3 (21–27 jul)

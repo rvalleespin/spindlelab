@@ -1,6 +1,6 @@
 # Lote semanal — 3 posts LinkedIn (semana 2, 14–20 jul)
 
-**Estado:** los 3 posts se reescribieron 14 jul con un pase de tono (menos "escrito", más hablado — frases cortas, sin guiones largos ni frases de impacto forzadas). Post 1 es la primera publicación de la página → [TÚ] publicar según cadencia (martes/jueves, `plantillas/linkedin-posts.md`).
+**Estado:** los 3 posts se reescribieron 14 jul con un pase de tono (menos "escrito", más hablado — frases cortas, sin guiones largos ni frases de impacto forzadas). **Post 1 publicado ✅ 14 jul** (primera publicación de la página). Posts 2 (jueves) y 3 (semana siguiente) siguen pendientes → [TÚ] publicar según cadencia (`plantillas/linkedin-posts.md`).
 **Base:** hallazgos reales y genéricos de las auditorías hechas para Frente A y Frente C — sin nombrar ninguna empresa (regla de anonimato y de no exponer prospectos sin permiso).
 
 ---

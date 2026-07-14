@@ -1,5 +1,7 @@
 # Encargo: publicar artículo "¿Cuánto cuesta el SEO técnico en el mercado chileno?"
 
+**✅ Resuelto — 14 jul 2026.** La otra sesión aplicó el encargo y el artículo está publicado en vivo.
+
 **Para:** la sesión que mantiene `spindlelab-site/` · **De:** sesión de marketing · **Fecha:** 14 jul 2026
 
 Ramón aprobó el contenido y el enfoque de este artículo y pidió publicarlo. Como con el encargo del formulario de contacto, esta sesión no toca directamente `spindlelab-site/` — dejo todo listo para que lo apliques tú. El contenido fuente completo (con historial de revisión) está en `marketing/articulos/2026-07-articulo-02-cuanto-cuesta-el-seo-tecnico-en-chile.md`.
