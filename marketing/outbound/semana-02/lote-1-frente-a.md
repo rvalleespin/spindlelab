@@ -25,13 +25,19 @@
 | 8 | Noosa Capital | rs@noosa.cl | ✅ 14 jul | | |
 | 9 | Abaqus | gonzalo@abaqus.cl | ✅ 14 jul | | |
 | 10 | Tempus | cdiaz@tempus.cl | ✅ 14 jul | | |
-| 11-15 | (aún sin investigar / sin enviar) | | | | |
+| 11 | Lakpa | mcorrea@lakpa.cl | | | |
+| 12 | Criteria Wealth Management | hnavarro@criterialatam.com | | | |
+| 13 | Laroche Capital | eric.vanbelle@larochecapital.com | | | |
+| 14 | MFO Advisors | carlos.vial@mfo.cl | | | |
+| 15 | Alfredo Cruz y Cía | acruz@alfredocruz.cl | | | |
 
 **Nota 14 jul (corrección de una corrección):** hubo confusión momentánea sobre si la tanda 1 se había enviado — se confirmó por error que no, luego se confirmó correctamente que **sí se envió el 10 de julio**, verificado directamente en Gmail web (hola@spindlelab.cl → Enviados). La falsa alarma vino de que la herramienta de Gmail de esta sesión está conectada a la cuenta personal de Ramón, no a hola@spindlelab.cl, así que las búsquedas automáticas fallaban. Sigue en pie: 0 respuestas hasta ahora, dentro de lo normal para una muestra de 5 emails fríos.
 
 **Tanda 2 (contactos 6-10):** enviada 14 jul desde hola@spindlelab.cl. 4/5 salieron bien (Grey Capital, Noosa, Abaqus, Tempus). **Addwise rebotó** — la dirección `jose.hernandezmela@addwise.cl` que Apollo marcaba como "Verified" no existe. Reintentar con `contacto@addwise.cl` (ver detalle en el ítem 6 abajo).
 
-**Próximo hito:** tanda 3 (contactos 11-15) el próximo día hábil de calentamiento después de tanda 2 (regla: 3 tandas de 5, no todo junto). Revisar bandeja de entrada de hola@spindlelab.cl a diario por respuestas — regla sagrada: mini-diagnóstico en ≤48h a quien responda.
+**Tanda 3 (contactos 11-15):** emails verificados en Apollo 14 jul, los 5 nombres solicitados coinciden exactamente (sin correcciones de decisor esta vez). Único detalle a confirmar antes de enviar: Criteria usa el dominio `criterialatam.com` en vez de `criteriawm.cl` (mismo grupo, según Apollo). Se limpiaron los placeholders de evidencia sin completar y los guiones largos de los 5 emails. **Lista para enviar** — falta el paso [TÚ]: revisar y enviar desde hola@spindlelab.cl, respetando el intervalo de calentamiento desde tanda 2.
+
+**Con esto, Frente A tiene sus 15 contactos originales completamente investigados y verificados.** Próximo hito después de tanda 3: evaluar si conviene ampliar la lista o esperar respuestas antes de seguir. Revisar bandeja de entrada de hola@spindlelab.cl a diario por respuestas — regla sagrada: mini-diagnóstico en ≤48h a quien responda.
 
 ---
 
@@ -228,26 +234,24 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 11. Lakpa — lakpa.cl
-**Decisor:** Matías Correa (CEO, ex LarrainVial) o Diego Tirado (CCO).
-**Hallazgo verificado:** title de home = «Inicio - Lakpa» (cero keywords), sin meta description, blog aparentemente detenido desde 2024. Tienen JSON-LD y sitio moderno — base técnica decente.
+**Decisor:** Matías Correa (Co-Founder / CEO) — confirmado en Apollo, `mcorrea@lakpa.cl` (el nombre solicitado coincide).
+**Hallazgo verificado:** title de home = «Inicio - Lakpa» (cero keywords), sin meta description, blog aparentemente detenido desde 2024. Tienen JSON-LD y sitio moderno, base técnica decente.
 **Pregunta ChatGPT:** «Soy asesor financiero en Chile y quiero independizarme del banco: ¿qué plataformas para asesores independientes existen?»
 
 **Asunto:** Los asesores que quieren independizarse no encuentran a Lakpa en ChatGPT
 
 Estimado Matías:
 
-Lakpa quiere ser la comunidad de asesores independientes más grande de LatAm — y su crecimiento depende de que cada asesor que sueña con independizarse los encuentre. Revisé lakpa.cl: el título de la home es literalmente «Inicio - Lakpa», sin descripción para buscadores, y el blog aparece detenido desde 2024. Cuando un asesor le pregunta a ChatGPT qué plataformas existen para independizarse (y ya lo hacen), la respuesta la ocupan otros.
+Lakpa quiere ser la comunidad de asesores independientes más grande de LatAm, y su crecimiento depende de que cada asesor que sueña con independizarse los encuentre. Revisé lakpa.cl: el título de la home es literalmente «Inicio - Lakpa», sin descripción para buscadores, y el blog aparece detenido desde 2024. Cuando un asesor le pregunta a ChatGPT qué plataformas existen para independizarse, y ya lo hacen, la respuesta la ocupan otros.
 
-[+EVIDENCIA: Hice la prueba: ChatGPT mencionó a (X e Y); Lakpa no apareció.]
-
-La base técnica de su sitio es buena — falta la capa de contenido y señales que los motores citan. Me dedico a eso. ¿Les preparo un mini-diagnóstico de 1 página en 48 horas, gratis?
+La base técnica de su sitio es buena. Falta la capa de contenido y señales que los motores citan. Me dedico a eso. ¿Les preparo un mini-diagnóstico de 1 página en 48 horas, gratis?
 
 SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 
 ---
 
 ## 12. Criteria Wealth Management — criteriawm.cl
-**Decisor:** Héctor Navarro (managing partner Chile) o Miguel Gross (socio y director ejecutivo Chile).
+**Decisor:** Héctor Navarro (Managing Partner) — confirmado en Apollo, `hnavarro@criterialatam.com` (el nombre solicitado coincide; Apollo registra el dominio corporativo `criterialatam.com` en vez de `criteriawm.cl` — misma entidad, oficina Chile, según su propia nota. Vale la pena confirmar visualmente que el dominio del email es real antes de enviar).
 **Hallazgo verificado:** invierten en contenido (sección Publicaciones) y sus ejecutivos aparecen en Citywire y RankiaPro, pero el sitio no menciona al equipo de Chile — cero señal de autoridad personal (E-E-A-T) que conecte esa presencia en prensa con criteriawm.cl.
 **Pregunta ChatGPT:** «¿Qué multi family offices en Chile me permiten mantener mis activos a mi nombre en un custodio internacional?»
 
@@ -255,7 +259,7 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 
 Estimado Héctor:
 
-Algo que noté revisando criteriawm.cl: ustedes ya hacen la parte difícil — publican contenido propio y su equipo aparece en Citywire y RankiaPro. Pero el sitio no menciona a ninguna persona del equipo chileno, y esa desconexión tiene un costo concreto: los motores de IA (y Google, vía E-E-A-T) no pueden vincular la autoridad de esa prensa con su dominio. El resultado es que la credibilidad existe, pero no se les acredita donde se decide una recomendación.
+Algo que noté revisando criteriawm.cl: ustedes ya hacen la parte difícil, publican contenido propio y su equipo aparece en Citywire y RankiaPro. Pero el sitio no menciona a ninguna persona del equipo chileno, y esa desconexión tiene un costo concreto: los motores de IA (y Google, vía E-E-A-T) no pueden vincular la autoridad de esa prensa con su dominio. El resultado es que la credibilidad existe, pero no se les acredita donde se decide una recomendación.
 
 Es una corrección más simple de lo que parece, y con USD 2.5B asesorados, el retorno de aparecer en las respuestas correctas es evidente.
 
@@ -266,7 +270,7 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 13. Laroche Capital — larochecapital.com
-**Decisor:** Eric Van Belle (fundador y CEO) o Joel Vainstein (partner).
+**Decisor:** Eric Van Belle (Founder & CEO) — confirmado en Apollo, `eric.vanbelle@larochecapital.com` (el nombre solicitado coincide).
 **Hallazgo verificado:** publican bios completas de sus socios (buena base E-E-A-T, rara en el rubro), pero no hay una sola pieza de contenido en el sitio — nada que los motores de IA puedan citar.
 **Pregunta ChatGPT:** «¿Qué multi family office en Chile combina asesoría financiera, tributaria y legal para planificar la sucesión de mi patrimonio familiar?»
 
@@ -285,7 +289,7 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 14. MFO Advisors — mfo.cl
-**Decisor:** Carlos Vial (socio y gerente general) o Katherine Boragk (socia y gerente de inversiones).
+**Decisor:** Carlos Vial (Partner) — confirmado en Apollo, `carlos.vial@mfo.cl` (el nombre solicitado coincide; Apollo registra el cargo como Partner, no socio y gerente general).
 **Hallazgo verificado:** el sitio mejor optimizado del grupo (title correcto, meta completa, datos estructurados presentes) — pero sin contenido que responda preguntas. La ventaja técnica está a medio capitalizar. Detalle: title residual «MFO» duplicado en el HTML.
 **Pregunta ChatGPT:** «¿Qué multi family office en Chile me recomiendas que además de inversiones se haga cargo de lo tributario, contable y legal?»
 
@@ -293,9 +297,7 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 
 Estimado Carlos:
 
-Les escribo con un diagnóstico distinto al habitual: revisé mfo.cl y es de los pocos sitios de MFO chilenos técnicamente bien construidos — título correcto, descripción completa, datos estructurados presentes. Están a un paso de algo que casi nadie en el rubro tiene: aparecer en las respuestas de ChatGPT cuando una familia pregunta quién puede hacerse cargo del patrimonio completo (inversiones + tributario + legal). Ese paso es contenido que responda esas preguntas exactas — hoy su sitio no lo tiene, y la ventaja técnica se queda a medio capitalizar.
-
-[+EVIDENCIA: Hice la prueba: ChatGPT recomendó a (X e Y).]
+Les escribo con un diagnóstico distinto al habitual: revisé mfo.cl y es de los pocos sitios de MFO chilenos técnicamente bien construidos, título correcto, descripción completa, datos estructurados presentes. Están a un paso de algo que casi nadie en el rubro tiene: aparecer en las respuestas de ChatGPT cuando una familia pregunta quién puede hacerse cargo del patrimonio completo (inversiones + tributario + legal). Ese paso es contenido que responda esas preguntas exactas. Hoy su sitio no lo tiene, y la ventaja técnica se queda a medio capitalizar.
 
 ¿Les preparo un mini-diagnóstico de 1 página en 48 horas mostrando exactamente qué falta? Gratis, sin compromiso.
 
@@ -304,7 +306,7 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 15. Alfredo Cruz y Cía — alfredocruz.cl
-**Decisor:** Alfredo Cruz Parot (gerente general).
+**Decisor:** Alfredo Cruz Parot (General Manager) — confirmado en Apollo, `acruz@alfredocruz.cl` (el nombre solicitado coincide).
 **Hallazgo verificado:** buen SEO básico (title, meta, datos estructurados, sección de noticias), pero el «Quiénes Somos» no nombra a ninguna persona y la cifra estrella de la home es de 2018 — sin autoridad personal ni frescura, las dos señales que los motores de IA pesan más en asesoría financiera/previsional.
 **Pregunta ChatGPT:** «Estoy a 2 años de jubilarme en Chile: ¿qué asesor previsional independiente me conviene contratar?»
 
@@ -312,9 +314,7 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 
 Estimado Alfredo:
 
-Revisé alfredocruz.cl y la base técnica está bien resuelta — mejor que la mayoría del rubro. Lo que encontré es otra cosa: su «Quiénes Somos» no nombra a ningún asesor, y la cifra principal de la home sigue siendo de 2018. Para una persona a punto de jubilar que investiga —cada vez más preguntándole a ChatGPT— las dos señales que más pesan son autoridad personal verificable y vigencia. Hoy su sitio no entrega ninguna de las dos, con 30 años de trayectoria real detrás.
-
-[+EVIDENCIA: Hice la prueba: ChatGPT recomendó (X e Y) para asesoría previsional en Chile.]
+Revisé alfredocruz.cl y la base técnica está bien resuelta, mejor que la mayoría del rubro. Lo que encontré es otra cosa: su «Quiénes Somos» no nombra a ningún asesor, y la cifra principal de la home sigue siendo de 2018. Para una persona a punto de jubilar que investiga, cada vez más preguntándole a ChatGPT, las dos señales que más pesan son autoridad personal verificable y vigencia. Hoy su sitio no entrega ninguna de las dos, con 30 años de trayectoria real detrás.
 
 ¿Le preparo un mini-diagnóstico de 1 página en 48 horas? Gratis, y se queda con el documento.
 
