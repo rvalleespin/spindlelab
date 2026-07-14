@@ -52,8 +52,8 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 ## Fase 3 — Doble frente + ads (semanas 5–8)
 
 ### Semana 5 (4–10 ago)
-- [ ] [TÚ] **Encender Google Ads** ($45k/mes, solo búsqueda de alta intención, Chile) ← **hecho = avanzamos**
-- [ ] [TÚ] Añadir «¿cómo nos encontraste?» al flujo de contacto/llamada
+- [x] [TÚ] **Encender Google Ads** — adelantado, activado 14 jul (antes de lo previsto). Campaña de Búsqueda, $1.500 CLP/día (~$45k/mes), 4 keywords en frase exacta («auditoría SEO», «consultor SEO técnico», «aparecer en ChatGPT empresa», «SEO clínicas dentales»), Display y Socios de búsqueda desactivados, 4 sitelinks, URL final con UTM (`utm_source=google&utm_medium=cpc&utm_campaign=auditoria-seo`). Verificado campo por campo contra los defaults de Google (que intentaron colar Máximo rendimiento, Display, y presupuesto ~15x más alto).
+- [x] [TÚ] Añadir «¿cómo nos encontraste?» al flujo de contacto/llamada — resuelto junto con la captura UTM del formulario (ver `encargos-otras-sesiones/formulario-contacto-utm-google-ads.md`)
 - [ ] [TÚ] Outbound: 50 contactos · [CC] evidencia y borradores
 - [ ] [CC] Artículo 5: «¿Cuánto cuesta el SEO técnico en Chile?» → [TÚ] editar y publicar
 
