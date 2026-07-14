@@ -139,13 +139,13 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 **Hallazgo verificado:** title de home = «Addwise» a secas y sin meta description; sin blog; prensa (El Mercurio, DF) desactualizada en el sitio.
 **Pregunta ChatGPT:** «¿Cuáles son los multi family offices más consolidados y con más trayectoria en Chile?»
 
-**Asunto:** Los «pioneros del MFO en Chile» no aparecen cuando se pregunta por pioneros
+**Asunto:** Addwise no aparece cuando se pregunta por los MFO con más trayectoria de Chile
 
 Estimado José:
 
-Addwise se presenta como pionero del multi family office en Chile — y la trayectoria de sus socios lo respalda. El problema que encontré al revisar addwise.cl: el título de la página es solo «Addwise», sin descripción para buscadores. Para Google y para ChatGPT, ese liderazgo es invisible: cuando alguien pregunta por los MFO con más trayectoria de Chile, la respuesta la construyen con lo que pueden leer, y de ustedes casi no pueden leer nada.
+Addwise se presenta como pionero del multi family office en Chile, y la trayectoria de sus socios lo respalda. Revisando addwise.cl encontré un problema puntual: el título de la página es solo «Addwise», sin descripción para buscadores. Para Google y para ChatGPT ese liderazgo es invisible. Cuando alguien pregunta por los MFO con más trayectoria de Chile, la respuesta se arma con lo que se puede leer, y de ustedes casi no se puede leer nada.
 
-Me dedico al SEO técnico y la visibilidad en motores de IA para servicios financieros; hace poco trabajé con una asesora de inversiones chilena. ¿Les preparo un mini-diagnóstico de 1 página en 48 horas, gratis?
+Me dedico al SEO técnico y la visibilidad en motores de IA para servicios financieros. Hace poco trabajé con una asesora de inversiones chilena en esto mismo. ¿Les preparo un mini-diagnóstico de 1 página en 48 horas, gratis?
 
 SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 
@@ -160,9 +160,9 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 
 Estimada Catherine:
 
-Grey Capital fue la primera entidad aprobada por la CMF como Enrutador de Órdenes bajo la Ley Fintech — un hito que debería aparecer cada vez que alguien le pregunta a una IA por asesoras reguladas e independientes en Chile. Revisé greycapital.cl y hoy eso no ocurre: el título de la home tiene la marca duplicada («Grey CapitalGrey Capital»), la descripción está vacía, y el sitio responde en blanco a los lectores automatizados que alimentan a ChatGPT.
+Grey Capital fue la primera entidad aprobada por la CMF como Enrutador de Órdenes bajo la Ley Fintech, un hito que debería aparecer cada vez que alguien le pregunta a una IA por asesoras reguladas e independientes en Chile. Revisé greycapital.cl y hoy eso no ocurre: el título de la home tiene la marca duplicada («Grey CapitalGrey Capital»), la descripción está vacía y el sitio responde en blanco a los lectores automatizados que alimentan a ChatGPT.
 
-Lo valioso: ustedes ya publican contenido (el blog está activo). La base está; falta la capa técnica que la hace legible y citable.
+Ya publican contenido, el blog está activo. Tienen la base; falta la capa técnica que la hace legible y citable.
 
 ¿Les preparo un mini-diagnóstico de 1 página en 48 horas? Gratis, sin compromiso.
 
@@ -179,11 +179,11 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 
 Estimado Ramón:
 
-Un detalle que encontré revisando noosa.cl: la descripción que Google muestra de ustedes en los resultados de búsqueda termina cortada a mitad de frase («...de manera de»). Es lo primero que ve cualquier familia que los googlea antes de una reunión — y es también parte de lo que los motores de IA leen para decidir a quién recomendar.
+Un detalle que encontré revisando noosa.cl: la descripción que Google muestra de ustedes en los resultados de búsqueda termina cortada a mitad de frase («...de manera de»). Es lo primero que ve cualquier familia que los googlea antes de una reunión, y también parte de lo que los motores de IA leen para decidir a quién recomendar.
 
-Con el legado de los fundadores (MCC, USD 3.500 MM administrados antes de la venta a Itaú), Noosa tiene una historia mucho más potente que contar en buscadores y en las respuestas de IA de lo que su sitio hoy transmite.
+Con el legado de los fundadores (MCC, USD 3.500 MM administrados antes de la venta a Itaú), Noosa tiene una historia mucho más potente que contar en buscadores y en las respuestas de IA de la que su sitio hoy transmite.
 
-Me dedico a eso, en servicios financieros. ¿Les preparo un mini-diagnóstico de 1 página en 48 horas, gratis y sin compromiso?
+Me dedico a esto en servicios financieros. ¿Les preparo un mini-diagnóstico de 1 página en 48 horas, gratis y sin compromiso?
 
 SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 
@@ -198,9 +198,9 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 
 Estimado Gonzalo:
 
-Ironía que encontré investigando abaqus.cl: son de las pocas boutiques chilenas que usan IA en la gestión de inversiones (Wealth IQ), pero la IA no los conoce a ustedes. Al preguntar por «Abaqus», los motores responden con el software de simulación de Dassault Systèmes — y su sitio no les da herramientas para desambiguar: el título de la home es «Abaqus Home» y la propuesta de valor está enterrada en subpáginas que los bots apenas recorren.
+Encontré algo irónico investigando abaqus.cl: son de las pocas boutiques chilenas que usan IA en la gestión de inversiones (Wealth IQ), pero la IA no los conoce a ustedes. Al preguntar por «Abaqus», los motores responden con el software de simulación de Dassault Systèmes, y su sitio no da herramientas para desambiguar: el título de la home es «Abaqus Home» y la propuesta de valor está enterrada en subpáginas que los bots apenas recorren.
 
-Ese problema (señales de entidad para que la IA sepa quién eres) tiene solución técnica concreta, y en un rubro YMYL como el financiero, vale oro.
+Ese problema, dar señales claras de quién es la empresa para que la IA los reconozca, tiene solución técnica concreta. Y en un rubro financiero donde la confianza lo es todo, vale oro.
 
 ¿Les preparo un mini-diagnóstico de 1 página en 48 horas? Gratis, sin compromiso.
 
@@ -213,15 +213,15 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 **Hallazgo verificado:** publican análisis económico con regularidad (sección activa hasta 2026), pero la marca «Tempus» es capturada por homónimos globales (Tempus AI de Nasdaq, relojes, software) y el sitio no tiene señales de entidad que desambigüen.
 **Pregunta ChatGPT:** «¿Qué gestoras independientes de patrimonio en Chile atienden tanto a familias como a clientes institucionales?»
 
-**Asunto:** Publican todos los meses — y el mérito se lo lleva Tempus AI
+**Asunto:** Publican todos los meses y el mérito se lo lleva Tempus AI
 
 Estimado Claudio:
 
-Tempus hace algo que casi ningún wealth manager chileno hace: publicar análisis económico con regularidad. El problema que encontré al revisar tempus.cl: cuando un motor de IA procesa «Tempus», responde con Tempus AI (la farmacéutica del Nasdaq) o con software homónimo — y sin datos estructurados ni señales de entidad en su sitio, todo ese contenido que producen no se les atribuye a ustedes.
+Tempus tiene algo que casi ningún wealth manager chileno tiene: publican análisis económico con regularidad. Lo que encontré al revisar tempus.cl: cuando un motor de IA procesa «Tempus», responde con Tempus AI (la farmacéutica del Nasdaq) o con software homónimo. Sin datos estructurados ni señales de entidad en su sitio, todo ese contenido que producen no se les atribuye a ustedes.
 
 Es el tipo de problema que no se ve en el día a día pero define quién aparece en las respuestas cuando un cliente institucional o una familia investiga con IA.
 
-¿Le preparo un mini-diagnóstico de 1 página en 48 horas? Gratis, y se quedan con el documento.
+¿Le preparo un mini-diagnóstico de 1 página en 48 horas? Gratis y se quedan con el documento.
 
 SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 
