@@ -12,8 +12,8 @@ Dicho eso, aquí va una orientación real de precios del mercado chileno 2026, p
 
 "SEO técnico" en Chile se compra bajo dos lógicas distintas, y conviene tenerlas claras antes de mirar cualquier número:
 
-1. **Un diagnóstico puntual:** te dice, con evidencia concreta, qué le impide a Google y a los motores de IA leer y confiar en tu sitio. Un entregable, un plazo cerrado. No implementa nada por sí solo.
-2. **Un acompañamiento continuo:** toma esos hallazgos y los sostiene en el tiempo, mes a mes, mientras se suma contenido y se ajusta lo que va cambiando. Esto es lo que convierte un hallazgo puntual en una posición ganada.
+1. **Un [diagnóstico puntual](/servicios/auditoria-seo-tecnica/):** te dice, con evidencia concreta, qué le impide a Google y a los motores de IA leer y confiar en tu sitio. Un entregable, un plazo cerrado. No implementa nada por sí solo.
+2. **Un [acompañamiento continuo](/servicios/visibilidad-en-ia/):** toma esos hallazgos y los sostiene en el tiempo, mes a mes, mientras se suma contenido y se ajusta lo que va cambiando. Esto es lo que convierte un hallazgo puntual en una posición ganada.
 
 Confundir estas dos cosas es el error más común al comparar cotizaciones: una auditoría de $400.000 y un acompañamiento de $500.000 al mes no compiten entre sí, resuelven preguntas distintas.
 
@@ -21,7 +21,7 @@ Confundir estas dos cosas es el error más común al comparar cotizaciones: una 
 
 Como orientación, no como tarifa fija: una auditoría técnica puntual se mueve entre **$200.000 y $2.500.000 CLP** según el tamaño del sitio, y un acompañamiento mensual entre **$80.000 y $1.500.000 CLP** según la profundidad del trabajo y quién lo hace.
 
-La visibilidad en motores de IA (AEO/GEO) es la categoría más nueva y todavía no tiene un rango tan asentado como el SEO clásico, pero ya hay referencias concretas: un diagnóstico puntual ronda los $350.000 CLP, y un plan mensual que integra esto junto con SEO tradicional puede llegar a $1.700.000 CLP en las agencias más completas del rubro.
+La visibilidad en motores de IA (AEO/GEO) es la categoría más nueva y todavía no tiene un rango tan asentado como el SEO clásico, pero ya hay referencias concretas en el mercado: Nitten cobra alrededor de $350.000 CLP por un diagnóstico puntual de AEO, y Maqui ofrece un plan mensual que integra GEO con SEO tradicional desde cerca de $1.700.000 CLP en su nivel más completo.
 
 Lo que mueve el precio de un extremo a otro del rango no es el proveedor, es tu sitio: su tamaño, si el trabajo incluye implementación o solo diagnóstico, y si el rubro exige señales de confianza reforzadas (finanzas y salud, por ejemplo, requieren más que un sitio informativo simple).
 
@@ -50,4 +50,58 @@ Un diagnóstico puntual ronda los $350.000 CLP; como parte de un acompañamiento
 
 ---
 
-*Notas para la integración (no publicar): slug propuesto `/blog/cuanto-cuesta-seo-tecnico-chile/` · JSON-LD FAQPage con las 3 preguntas frecuentes · CTA mailto igual al resto del sitio · enlazar desde este artículo a `/servicios/auditoria-seo-tecnica/` y `/servicios/visibilidad-en-ia/`. Fuentes de mercado citadas (verificar antes de publicar si se quieren linkear): rangos generales de agencias SEO Chile 2026 (múltiples fuentes cruzadas), Nitten (nittenmkt.cl) para el diagnóstico AEO de $350k, Maqui (somosmaqui.com) para el plan Scale con GEO a $1,69M/mes, mismos datos usados para validar los precios internos en `marketing/capacidad-servicios.md`.*
+## Notas para la integración (no publicar)
+
+**Validación SEO/AEO 14 jul — qué se revisó y qué se corrigió:**
+- ✅ El título responde una pregunta de búsqueda real y transaccional ("cuánto cuesta SEO técnico Chile") — buen fit de intención.
+- ✅ **Corregido:** las 2 menciones a servicios ahora son enlaces internos reales en el cuerpo (`/servicios/auditoria-seo-tecnica/`, `/servicios/visibilidad-en-ia/`), no solo una nota aparte. El enlazado interno es señal de rastreo tanto para Google como para que un LLM entienda la relación entre páginas del sitio.
+- ✅ **Corregido:** las cifras de AEO/GEO ahora nombran la fuente en el propio texto (Nitten, Maqui) en vez de solo en la nota oculta — un artículo sobre ser citable debía, primero que nada, citar sus propias fuentes. Mejora la confianza del lector y la citabilidad del artículo mismo.
+- ⚠️ **Pendiente de decisión tuya:** el artículo no menciona casos ni testimonios propios (SimpleTrust sigue en pausa, Bernardo es de otra línea de servicio) — es la limitación real hasta que haya un caso público que citar.
+
+**Slug propuesto:** `/blog/cuanto-cuesta-seo-tecnico-chile/`
+
+**Meta title sugerido** (58 car.): `¿Cuánto cuesta el SEO técnico en Chile? — SpindleLab`
+
+**Meta description sugerida** (156 car.): `Rangos reales de precio para auditoría SEO técnica y visibilidad en IA en el mercado chileno 2026, y por qué esperar sale más caro que decidir ahora.`
+
+**JSON-LD listo para pegar** (mismo patrón que `/blog/que-es-aeo-geo/`, mismo autor y organización):
+
+```json
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://spindlelab.cl/blog/cuanto-cuesta-seo-tecnico-chile/#article",
+      "headline": "¿Cuánto cuesta el SEO técnico en el mercado chileno en 2026?",
+      "description": "Rangos reales de precio para auditoría SEO técnica y visibilidad en IA en el mercado chileno 2026, y por qué esperar sale más caro que decidir ahora.",
+      "inLanguage": "es-CL",
+      "datePublished": "2026-07-14",
+      "dateModified": "2026-07-14",
+      "author": {"@id": "https://spindlelab.cl/#autor-ramon"},
+      "publisher": {"@id": "https://spindlelab.cl/#org"},
+      "mainEntityOfPage": "https://spindlelab.cl/blog/cuanto-cuesta-seo-tecnico-chile/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://spindlelab.cl/"},
+        {"@type": "ListItem", "position": 2, "name": "El Taller", "item": "https://spindlelab.cl/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "Cuánto cuesta el SEO técnico", "item": "https://spindlelab.cl/blog/cuanto-cuesta-seo-tecnico-chile/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "¿Cuánto cuesta una auditoría SEO técnica en el mercado chileno?", "acceptedAnswer": {"@type": "Answer", "text": "Entre $200.000 y $2.500.000 CLP como proyecto único, según el tamaño del sitio y la profundidad del análisis. La mayoría de las PyME caen en el rango de $300.000 a $800.000."}},
+        {"@type": "Question", "name": "¿Conviene más un proyecto único o un acompañamiento mensual?", "acceptedAnswer": {"@type": "Answer", "text": "La auditoría te dice qué está mal; el acompañamiento lo sostiene en el tiempo. Si nunca has hecho una auditoría, ese es el punto de partida lógico."}},
+        {"@type": "Question", "name": "¿Cuánto cuesta optimizar para que ChatGPT y otros motores de IA me recomienden (AEO/GEO)?", "acceptedAnswer": {"@type": "Answer", "text": "Un diagnóstico puntual ronda los $350.000 CLP; como parte de un acompañamiento mensual integrado con SEO, puede sumar varios cientos de miles de pesos adicionales al mes, según la agencia."}}
+      ]
+    }
+  ]
+}
+```
+
+**CTA:** mailto igual al resto del sitio.
+
+**Fuentes citadas en el cuerpo (verificar vigencia antes de publicar):** Nitten (nittenmkt.cl) — diagnóstico AEO ~$350k. Maqui (somosmaqui.com) — plan Scale con GEO ~$1,69M/mes. Mismos datos usados para validar los precios internos en `marketing/capacidad-servicios.md`.
