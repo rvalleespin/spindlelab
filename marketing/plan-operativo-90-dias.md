@@ -54,6 +54,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 ### Semana 5 (4–10 ago)
 - [x] [TÚ] **Encender Google Ads** — adelantado, activado 14 jul (antes de lo previsto). Campaña de Búsqueda, $1.500 CLP/día (~$45k/mes), 4 keywords en frase exacta («auditoría SEO», «consultor SEO técnico», «aparecer en ChatGPT empresa», «SEO clínicas dentales»), Display y Socios de búsqueda desactivados, 4 sitelinks, URL final con UTM (`utm_source=google&utm_medium=cpc&utm_campaign=auditoria-seo`). Verificado campo por campo contra los defaults de Google (que intentaron colar Máximo rendimiento, Display, y presupuesto ~15x más alto).
 - [x] [TÚ] Añadir «¿cómo nos encontraste?» al flujo de contacto/llamada — resuelto junto con la captura UTM del formulario (ver `encargos-otras-sesiones/formulario-contacto-utm-google-ads.md`)
+- [x] [TÚ] Importar `generate_lead` (GA4) como conversión principal en Google Ads — 14 jul. Categoría «Enviar formulario de clientes potenciales», fuente Spindlelab Consultoria (545003546), marcada como Principal. Cierra el último pendiente de `capacidad-servicios.md` sobre medición real de conversiones.
 - [ ] [TÚ] Outbound: 50 contactos · [CC] evidencia y borradores
 - [ ] [CC] Artículo 5: «¿Cuánto cuesta el SEO técnico en Chile?» → [TÚ] editar y publicar
 
