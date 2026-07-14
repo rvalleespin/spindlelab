@@ -1,6 +1,6 @@
 # Lote semanal — 3 posts LinkedIn (semana 2, 14–20 jul)
 
-**Estado:** [CC] borrador listo → [TÚ] revisar, ajustar y publicar (martes/jueves según cadencia de `plantillas/linkedin-posts.md`).
+**Estado:** Post 1 aprobado ✅ 14 jul, primera publicación de la página. Posts 2 y 3 siguen en borrador → [TÚ] publicar según cadencia (martes/jueves, `plantillas/linkedin-posts.md`).
 **Base:** hallazgos reales y genéricos de las auditorías hechas para Frente A y Frente C — sin nombrar ninguna empresa (regla de anonimato y de no exponer prospectos sin permiso).
 
 ---
