@@ -20,11 +20,18 @@
 | 3 | Vision Global Investments | camila.bernat@vision.cl | ✅ 10 jul | | |
 | 4 | Altis | girarrazaval@altis.cl | ✅ 10 jul | | |
 | 5 | Paragon Advisors | alberto.bezanilla@paragonadvisors.cl | ✅ 10 jul | | |
-| 6-15 | (aún sin investigar / sin enviar) | | | | |
+| 6 | Addwise | jose.hernandezmela@addwise.cl | | | |
+| 7 | Grey Capital | cruz@greycapital.cl | | | |
+| 8 | Noosa Capital | rs@noosa.cl | | | |
+| 9 | Abaqus | gonzalo@abaqus.cl | | | |
+| 10 | Tempus | cdiaz@tempus.cl | | | |
+| 11-15 | (aún sin investigar / sin enviar) | | | | |
 
 **Nota 14 jul (corrección de una corrección):** hubo confusión momentánea sobre si la tanda 1 se había enviado — se confirmó por error que no, luego se confirmó correctamente que **sí se envió el 10 de julio**, verificado directamente en Gmail web (hola@spindlelab.cl → Enviados). La falsa alarma vino de que la herramienta de Gmail de esta sesión está conectada a la cuenta personal de Ramón, no a hola@spindlelab.cl, así que las búsquedas automáticas fallaban. Sigue en pie: 0 respuestas hasta ahora, dentro de lo normal para una muestra de 5 emails fríos.
 
-**Próximo hito:** tanda 2 (contactos 6-10) el próximo día hábil de calentamiento (regla: 3 tandas de 5, no todo junto). Revisar bandeja de entrada de hola@spindlelab.cl a diario por respuestas — regla sagrada: mini-diagnóstico en ≤48h a quien responda.
+**Tanda 2 (contactos 6-10):** emails verificados en Apollo 14 jul, contactos y correcciones de decisor ya reflejados abajo (Addwise → Jose Hernandez Mela; Grey Capital → Catherine Ruz; Abaqus → Gonzalo Reyes; Noosa y Tempus sin cambio). **Lista para enviar** — falta el paso [TÚ]: revisar y enviar los 5 desde hola@spindlelab.cl.
+
+**Próximo hito:** tanda 3 (contactos 11-15) el próximo día hábil de calentamiento después de tanda 2 (regla: 3 tandas de 5, no todo junto). Revisar bandeja de entrada de hola@spindlelab.cl a diario por respuestas — regla sagrada: mini-diagnóstico en ≤48h a quien responda.
 
 ---
 
@@ -128,13 +135,13 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 6. Addwise — addwise.cl
-**Decisor:** Pablo Recio (gerente general).
+**Decisor:** ~~Pablo Recio (gerente general)~~ → **Jose Hernandez Mela (Director Ejecutivo y Socio Fundador)** — Apollo no tiene registrado a Pablo Recio; Jose es el cargo más alto disponible con email verificado, `jose.hernandezmela@addwise.cl`.
 **Hallazgo verificado:** title de home = «Addwise» a secas y sin meta description; sin blog; prensa (El Mercurio, DF) desactualizada en el sitio.
 **Pregunta ChatGPT:** «¿Cuáles son los multi family offices más consolidados y con más trayectoria en Chile?»
 
 **Asunto:** Los «pioneros del MFO en Chile» no aparecen cuando se pregunta por pioneros
 
-Estimado Pablo:
+Estimado Jose:
 
 Addwise se presenta como pionero del multi family office en Chile — y la trayectoria de sus socios lo respalda. El problema que encontré al revisar addwise.cl: el título de la página es solo «Addwise», sin descripción para buscadores. Para Google y para ChatGPT, ese liderazgo es invisible: cuando alguien pregunta por los MFO con más trayectoria de Chile, la respuesta la construyen con lo que pueden leer, y de ustedes casi no pueden leer nada.
 
@@ -147,13 +154,13 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 7. Grey Capital — greycapital.cl
-**Decisor:** Nicolás Bacarreza (CEO y cofundador) o Catherine Ruz (socia fundadora y presidenta).
+**Decisor:** ~~Nicolás Bacarreza (CEO y cofundador)~~ → **Catherine Ruz Parada (Director)** — confirmada en Apollo, `cruz@greycapital.cl` (el nombre solicitado coincide).
 **Hallazgo verificado:** title de home con marca duplicada («Home - Grey CapitalGrey Capital | Protección Patrimonial»), meta description vacía, y el sitio responde vacío a lectores automatizados (los crawlers de IA podrían no leerlo). Tienen blog activo — hay base que aprovechar.
 **Pregunta ChatGPT:** «¿Qué asesoras financieras independientes reguladas por la CMF me recomiendas en Chile para gestionar mi patrimonio como ejecutivo?»
 
 **Asunto:** El hito CMF de Grey Capital es invisible para ChatGPT
 
-Estimado Nicolás:
+Estimada Catherine:
 
 Grey Capital fue la primera entidad aprobada por la CMF como Enrutador de Órdenes bajo la Ley Fintech — un hito que debería aparecer cada vez que alguien le pregunta a una IA por asesoras reguladas e independientes en Chile. Revisé greycapital.cl y hoy eso no ocurre: el título de la home tiene la marca duplicada («Grey CapitalGrey Capital»), la descripción está vacía, y el sitio responde en blanco a los lectores automatizados que alimentan a ChatGPT.
 
@@ -166,7 +173,7 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 8. Noosa Capital — noosa.cl
-**Decisor:** Ramón Suárez (director general) o Andrés Correa (socio fundador).
+**Decisor:** Ramón Suárez (Socio Fundador) — confirmado en Apollo, `rs@noosa.cl` (el nombre solicitado coincide; cargo real es Socio Fundador, no director general).
 **Hallazgo verificado:** la meta description de la home es texto cortado a mitad de frase («...de manera de») — autogenerada sin revisión. Sin blog; imágenes placeholder en algunas secciones.
 **Pregunta ChatGPT:** «¿Qué asesor de inversiones independiente en Chile, sin conflictos de interés con bancos, me recomiendas para un patrimonio familiar alto?»
 
@@ -185,13 +192,13 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 9. Abaqus — abaqus.cl
-**Decisor:** José Ignacio Villarroel o Gonzalo Reyes (socios fundadores).
+**Decisor:** ~~José Ignacio Villarroel~~ → **Gonzalo Reyes (Co-founder)** — confirmado en Apollo, `gonzalo@abaqus.cl` (el nombre solicitado coincide).
 **Hallazgo verificado:** title de home = «Abaqus Home»; el contenido de valor está enterrado en subpáginas; y la marca compite contra el software de simulación Abaqus de Dassault Systèmes, que domina búsquedas e IA para ese nombre.
 **Pregunta ChatGPT:** «¿Qué boutiques de asesoría patrimonial independiente en Chile usan tecnología propia o IA para gestionar inversiones?»
 
 **Asunto:** ChatGPT confunde a Abaqus con un software de simulación
 
-Estimado José Ignacio:
+Estimado Gonzalo:
 
 Ironía que encontré investigando abaqus.cl: son de las pocas boutiques chilenas que usan IA en la gestión de inversiones (Wealth IQ), pero la IA no los conoce a ustedes. Al preguntar por «Abaqus», los motores responden con el software de simulación de Dassault Systèmes — y su sitio no les da herramientas para desambiguar: el título de la home es «Abaqus Home» y la propuesta de valor está enterrada en subpáginas que los bots apenas recorren.
 
@@ -204,7 +211,7 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 10. Tempus — tempus.cl
-**Decisor:** Claudio Díaz (CEO & managing partner).
+**Decisor:** Claudio Díaz Cuevas (CEO) — confirmado en Apollo, `cdiaz@tempus.cl` (el nombre solicitado coincide).
 **Hallazgo verificado:** publican análisis económico con regularidad (sección activa hasta 2026), pero la marca «Tempus» es capturada por homónimos globales (Tempus AI de Nasdaq, relojes, software) y el sitio no tiene señales de entidad que desambigüen.
 **Pregunta ChatGPT:** «¿Qué gestoras independientes de patrimonio en Chile atienden tanto a familias como a clientes institucionales?»
 
