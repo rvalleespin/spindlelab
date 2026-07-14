@@ -25,19 +25,19 @@
 | 8 | Noosa Capital | rs@noosa.cl | ✅ 14 jul | | |
 | 9 | Abaqus | gonzalo@abaqus.cl | ✅ 14 jul | | |
 | 10 | Tempus | cdiaz@tempus.cl | ✅ 14 jul | | |
-| 11 | Lakpa | mcorrea@lakpa.cl | | | |
-| 12 | Criteria Wealth Management | hnavarro@criterialatam.com | | | |
-| 13 | Laroche Capital | eric.vanbelle@larochecapital.com | | | |
-| 14 | MFO Advisors | carlos.vial@mfo.cl | | | |
-| 15 | Alfredo Cruz y Cía | acruz@alfredocruz.cl | | | |
+| 11 | Lakpa | mcorrea@lakpa.cl | ✅ 14 jul | | |
+| 12 | Criteria Wealth Management | hnavarro@criterialatam.com | ✅ 14 jul | | |
+| 13 | Laroche Capital | eric.vanbelle@larochecapital.com | ✅ 14 jul | | |
+| 14 | MFO Advisors | carlos.vial@mfo.cl | ✅ 14 jul | | |
+| 15 | Alfredo Cruz y Cía | acruz@alfredocruz.cl | ✅ 14 jul | | |
 
 **Nota 14 jul (corrección de una corrección):** hubo confusión momentánea sobre si la tanda 1 se había enviado — se confirmó por error que no, luego se confirmó correctamente que **sí se envió el 10 de julio**, verificado directamente en Gmail web (hola@spindlelab.cl → Enviados). La falsa alarma vino de que la herramienta de Gmail de esta sesión está conectada a la cuenta personal de Ramón, no a hola@spindlelab.cl, así que las búsquedas automáticas fallaban. Sigue en pie: 0 respuestas hasta ahora, dentro de lo normal para una muestra de 5 emails fríos.
 
 **Tanda 2 (contactos 6-10):** enviada 14 jul desde hola@spindlelab.cl. 4/5 salieron bien (Grey Capital, Noosa, Abaqus, Tempus). **Addwise rebotó** — la dirección `jose.hernandezmela@addwise.cl` que Apollo marcaba como "Verified" no existe. Reintentar con `contacto@addwise.cl` (ver detalle en el ítem 6 abajo).
 
-**Tanda 3 (contactos 11-15):** emails verificados en Apollo 14 jul, los 5 nombres solicitados coinciden exactamente (sin correcciones de decisor esta vez). Único detalle a confirmar antes de enviar: Criteria usa el dominio `criterialatam.com` en vez de `criteriawm.cl` (mismo grupo, según Apollo). Se limpiaron los placeholders de evidencia sin completar y los guiones largos de los 5 emails. **Lista para enviar** — falta el paso [TÚ]: revisar y enviar desde hola@spindlelab.cl, respetando el intervalo de calentamiento desde tanda 2.
+**Tanda 3 (contactos 11-15):** enviada 14 jul desde hola@spindlelab.cl. 5/5 salieron bien.
 
-**Con esto, Frente A tiene sus 15 contactos originales completamente investigados y verificados.** Próximo hito después de tanda 3: evaluar si conviene ampliar la lista o esperar respuestas antes de seguir. Revisar bandeja de entrada de hola@spindlelab.cl a diario por respuestas — regla sagrada: mini-diagnóstico en ≤48h a quien responda.
+**Con esto, Frente A completa sus 15 contactos originales, todos enviados: tanda 1 (10 jul), tanda 2 (14 jul, 4/5 a la primera + 1 reenvío exitoso a Addwise), tanda 3 (14 jul).** Sumado a Frente C (5 enviados 14 jul), el total de outbound frío en curso es de 20 emails. Próximo hito: evaluar si conviene ampliar la lista de Frente A o esperar respuestas antes de seguir — revisar bandeja de entrada de hola@spindlelab.cl a diario, regla sagrada: mini-diagnóstico en ≤48h a quien responda.
 
 ---
 
