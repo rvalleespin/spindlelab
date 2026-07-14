@@ -16,7 +16,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - [x] [CC/TÚ] Google Search Console verificado + sitemap enviado ✅ 8 jul (estado «Correcto», 11 páginas) · Bing Webmaster Tools y Cloudflare Web Analytics ✅ 10 jul (ver `setup-semana1.md`)
 - [x] [CC] Sistema de marca v1.2 aplicado al sitio ✅ 8 jul — Gabarito, favicon monograma, 4ª línea de servicio Desarrollo Web (el sitio siguió evolucionando en otra sesión con fotografía real; ver `brand/manual-de-marca.md`)
 - [x] [CC/TÚ] Instagram: perfil configurado + primer carrusel publicado ✅ 8 jul
-- [ ] [TÚ] Crear página de empresa SpindleLab en LinkedIn (textos y banner listos en `plantillas/linkedin-posts.md` y `brand/redes/banner-linkedin.png`) — **único pendiente de marca**
+- [x] [TÚ] Crear página de empresa SpindleLab en LinkedIn ✅ 14 jul — con esto se cierra el último pendiente de marca
 - [~] Solicitud de testimonio/permiso a SimpleTrust — sigue en pausa; ahora hay una alternativa mejor: **pedirle el caso a Bernardo desde ya** (cliente nuevo, sin la espera que tuvimos con SimpleTrust)
 - [x] [CC] Lista Frente A ✅ 7 jul — 31 asesoras/MFO boutique verificadas en `listas/frente-a-wealth-asesoras.md`
 - [x] [CC] Lista Frente B ✅ 7 jul — 35 clínicas dental/estética premium en `listas/frente-b-dental-estetica.md`
