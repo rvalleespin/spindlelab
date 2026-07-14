@@ -11,7 +11,7 @@ No hay un número único, y cualquiera que te lo dé sin conocer tu sitio está 
 Antes de mirar números, conviene entender que "SEO" en Chile se vende bajo dos lógicas distintas:
 
 1. **Proyecto único (auditoría o diagnóstico):** un entregable, un plazo cerrado, un precio fijo. Te dice qué está mal y qué priorizar. No incluye implementación continua.
-2. **Acompañamiento mensual (retainer):** trabajo continuo — implementación, contenido, monitoreo — con permanencia mínima habitual de 3 meses. Es lo que sostiene resultados en el tiempo.
+2. **Acompañamiento mensual (retainer):** trabajo continuo (implementación, contenido, monitoreo) con permanencia mínima habitual de 3 meses. Es lo que sostiene resultados en el tiempo.
 
 Comparar el precio de una auditoría de $400.000 contra un retainer de $500.000/mes como si fueran la misma cosa es el error más común al cotizar — son categorías distintas de compra.
 
@@ -31,9 +31,9 @@ Es reciente y todavía no tiene un rango tan establecido como el SEO clásico, p
 
 ## Por qué varía tanto — 3 factores reales
 
-1. **Tamaño del sitio.** Auditar 8 páginas no es lo mismo que auditar un e-commerce con miles de productos indexados — el tiempo de análisis escala con el sitio, no con una tarifa plana.
+1. **Tamaño del sitio.** Auditar 8 páginas no es lo mismo que auditar un e-commerce con miles de productos indexados. El tiempo de análisis escala con el sitio, no con una tarifa plana.
 2. **¿Incluye implementación o solo diagnóstico?** Un informe que dice qué arreglar cuesta menos que un servicio que además lo arregla. Antes de comparar dos cotizaciones, confirma si ambas incluyen lo mismo.
-3. **Rubro y exigencia de confianza (YMYL).** Sitios de finanzas o salud requieren una capa adicional de señales de confianza (autoría, datos estructurados, consistencia de entidad) que un sitio informativo simple no necesita — eso mueve el precio hacia arriba, con razón.
+3. **Rubro y exigencia de confianza (YMYL).** Sitios de finanzas o salud requieren una capa adicional de señales de confianza (autoría, datos estructurados, consistencia de entidad) que un sitio informativo simple no necesita. Eso mueve el precio hacia arriba, con razón.
 
 ## Cómo evitar pagar de más (o de menos)
 
