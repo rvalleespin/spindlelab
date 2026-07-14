@@ -135,17 +135,15 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ---
 
 ## 6. Addwise — addwise.cl
-**Decisor:** ~~Pablo Recio (gerente general)~~ → **Jose Hernandez Mela (Director Ejecutivo y Socio Fundador)** — Apollo no tiene registrado a Pablo Recio; Jose es el cargo más alto disponible con email verificado, `jose.hernandezmela@addwise.cl`.
+**Decisor:** ~~Pablo Recio (gerente general)~~ → **José Hernández Mela (Director Ejecutivo y Socio Fundador)** — Apollo no tiene registrado a Pablo Recio; José es el cargo más alto disponible con email verificado, `jose.hernandezmela@addwise.cl`.
 **Hallazgo verificado:** title de home = «Addwise» a secas y sin meta description; sin blog; prensa (El Mercurio, DF) desactualizada en el sitio.
 **Pregunta ChatGPT:** «¿Cuáles son los multi family offices más consolidados y con más trayectoria en Chile?»
 
 **Asunto:** Los «pioneros del MFO en Chile» no aparecen cuando se pregunta por pioneros
 
-Estimado Jose:
+Estimado José:
 
 Addwise se presenta como pionero del multi family office en Chile — y la trayectoria de sus socios lo respalda. El problema que encontré al revisar addwise.cl: el título de la página es solo «Addwise», sin descripción para buscadores. Para Google y para ChatGPT, ese liderazgo es invisible: cuando alguien pregunta por los MFO con más trayectoria de Chile, la respuesta la construyen con lo que pueden leer, y de ustedes casi no pueden leer nada.
-
-[+EVIDENCIA: Hice la prueba: ChatGPT recomendó a (X e Y). Addwise no apareció.]
 
 Me dedico al SEO técnico y la visibilidad en motores de IA para servicios financieros; hace poco trabajé con una asesora de inversiones chilena. ¿Les preparo un mini-diagnóstico de 1 página en 48 horas, gratis?
 
