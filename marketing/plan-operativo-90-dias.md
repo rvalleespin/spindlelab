@@ -13,7 +13,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 ### Semana 1 (7–13 jul)
 - [x] [TÚ] Cotización a Bernardo (desarrollo web) — **enviada y APROBADA** ✅ 8 jul. Primer cliente cerrado, primer caso de la línea Desarrollo Web.
 - [x] [CC] SPF, DKIM y DMARC de spindlelab.cl ✅ 8 jul — Google Workspace activo, hola@ envía/recibe, remitente «SpindleLab» (detalle en `setup-semana1.md`)
-- [x] [CC/TÚ] Google Search Console verificado + sitemap enviado ✅ 8 jul (estado «Correcto», 11 páginas) · Pendiente: Bing Webmaster Tools + Cloudflare Web Analytics
+- [x] [CC/TÚ] Google Search Console verificado + sitemap enviado ✅ 8 jul (estado «Correcto», 11 páginas) · Bing Webmaster Tools y Cloudflare Web Analytics ✅ 10 jul (ver `setup-semana1.md`)
 - [x] [CC] Sistema de marca v1.2 aplicado al sitio ✅ 8 jul — Gabarito, favicon monograma, 4ª línea de servicio Desarrollo Web (el sitio siguió evolucionando en otra sesión con fotografía real; ver `brand/manual-de-marca.md`)
 - [x] [CC/TÚ] Instagram: perfil configurado + primer carrusel publicado ✅ 8 jul
 - [ ] [TÚ] Crear página de empresa SpindleLab en LinkedIn (textos y banner listos en `plantillas/linkedin-posts.md` y `brand/redes/banner-linkedin.png`) — **único pendiente de marca**
@@ -21,7 +21,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - [x] [CC] Lista Frente A ✅ 7 jul — 31 asesoras/MFO boutique verificadas en `listas/frente-a-wealth-asesoras.md`
 - [x] [CC] Lista Frente B ✅ 7 jul — 35 clínicas dental/estética premium en `listas/frente-b-dental-estetica.md`
 - [x] [CC] Artículo 1 redactado ✅ 7 jul en `articulos/` → [TÚ] pendiente: editar y aprobar para publicación
-- [ ] [TÚ] Línea base del test de menciones en IA (prompts listos en `metricas/test-menciones-ia.md` — falta ejecutarlos en ChatGPT/Perplexity/Gemini y registrar)
+- [x] [TÚ] Línea base del test de menciones en IA ✅ 10 jul — SpindleLab no aparece en ninguna de las 15 combinaciones (esperado); ver `metricas/test-menciones-ia.md`
 - [x] [CC] Plantilla de cotizaciones creada a partir del modelo aprobado ✅ 8 jul — `plantillas/cotizaciones/`
 
 ---
