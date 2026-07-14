@@ -15,14 +15,14 @@
 
 | # | Empresa | Email decisor | Enviado | Respuesta | Diagnóstico |
 |---|---|---|---|---|---|
-| 1 | Vicapital | dinfante@vicapital.cl | ⚠️ **CORRECCIÓN 14 jul: nunca se envió, quedó como borrador en Gmail desde el 10 jul.** Borrador confirmado vía API, pendiente de revisión y envío real. | | |
-| 2 | Dorco | contacto@dorcocapital.com ⚠️ sin confirmar — Apollo no tiene registro de esta empresa | ⚠️ Mismo caso — borrador sin enviar | | |
-| 3 | Vision Global Investments | camila.bernat@vision.cl | ⚠️ Mismo caso — borrador sin enviar | | |
-| 4 | Altis | girarrazaval@altis.cl | ⚠️ Mismo caso — borrador sin enviar | | |
-| 5 | Paragon Advisors | alberto.bezanilla@paragonadvisors.cl | ⚠️ Mismo caso — borrador sin enviar | | |
+| 1 | Vicapital | dinfante@vicapital.cl | ✅ 10 jul | | |
+| 2 | Dorco | contacto@dorcocapital.com ⚠️ sin confirmar — Apollo no tiene registro de esta empresa | ✅ 10 jul | | |
+| 3 | Vision Global Investments | camila.bernat@vision.cl | ✅ 10 jul | | |
+| 4 | Altis | girarrazaval@altis.cl | ✅ 10 jul | | |
+| 5 | Paragon Advisors | alberto.bezanilla@paragonadvisors.cl | ✅ 10 jul | | |
 | 6-15 | (aún sin investigar / sin enviar) | | | | |
 
-**Nota 14 jul:** se creía que la tanda 1 estaba enviada y sin respuestas — en realidad nunca salió de Borradores. El "0 respuestas" reportado no era una señal de entregabilidad, era que no había nada enviado. Los 5 borradores existen en Gmail (confirmados vía API `list_drafts`), solo falta que un humano los revise y los envíe manualmente desde la bandeja de Borradores.
+**Nota 14 jul (corrección de una corrección):** hubo confusión momentánea sobre si la tanda 1 se había enviado — se confirmó por error que no, luego se confirmó correctamente que **sí se envió el 10 de julio**, verificado directamente en Gmail web (hola@spindlelab.cl → Enviados). La falsa alarma vino de que la herramienta de Gmail de esta sesión está conectada a la cuenta personal de Ramón, no a hola@spindlelab.cl, así que las búsquedas automáticas fallaban. Sigue en pie: 0 respuestas hasta ahora, dentro de lo normal para una muestra de 5 emails fríos.
 
 **Próximo hito:** tanda 2 (contactos 6-10) el próximo día hábil de calentamiento (regla: 3 tandas de 5, no todo junto). Revisar bandeja de entrada de hola@spindlelab.cl a diario por respuestas — regla sagrada: mini-diagnóstico en ≤48h a quien responda.
 

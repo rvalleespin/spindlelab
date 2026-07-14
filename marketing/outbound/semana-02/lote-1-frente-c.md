@@ -16,11 +16,13 @@
 
 | # | Empresa | Email decisor | Enviado | Respuesta | Diagnóstico |
 |---|---|---|---|---|---|
-| 1 | HK Centro Visual | crado@hkcentrovisual.cl | | | |
-| 2 | Centro Europeo Oftalmología | jose.assadi@ceof.cl | | | |
-| 3 | Redlaser | scastillo@redlaser.cl | | | |
-| 4 | COP - Clínica Oftalmológica Providencia | joaquin.vicuna@cop.cl | | | |
-| 5 | Óptica Roccelli | claudia@opticaroccelli.com | | | |
+| 1 | HK Centro Visual | crado@hkcentrovisual.cl | ✅ 14 jul | | |
+| 2 | Centro Europeo Oftalmología | jose.assadi@ceof.cl | ✅ 14 jul | | |
+| 3 | Redlaser | scastillo@redlaser.cl | ✅ 14 jul | | |
+| 4 | COP - Clínica Oftalmológica Providencia | joaquin.vicuna@cop.cl | ✅ 14 jul | | |
+| 5 | Óptica Roccelli | claudia@opticaroccelli.com | ✅ 14 jul | | |
+
+**Nota:** enviados directo desde hola@spindlelab.cl (confirmado en Gmail web), no vía la herramienta de esta sesión — el conector de Gmail de este chat resultó estar apuntando a la cuenta personal de Ramón, no a hola@spindlelab.cl. Los 5 borradores que esa herramienta alcanzó a crear quedaron huérfanos en la cuenta personal y no se usaron.
 
 ---
 
