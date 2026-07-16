@@ -1,6 +1,8 @@
 # Lote semanal — 3 posts LinkedIn (semana 2, 14–20 jul)
 
-**Estado:** los 3 posts se reescribieron 14 jul con un pase de tono (menos "escrito", más hablado — frases cortas, sin guiones largos ni frases de impacto forzadas). **Post 1 publicado ✅ 14 jul** (primera publicación de la página). Posts 2 (jueves) y 3 (semana siguiente) siguen pendientes → [TÚ] publicar según cadencia (`plantillas/linkedin-posts.md`).
+**Estado:** los 3 posts se reescribieron 14 jul con un pase de tono (menos "escrito", más hablado — frases cortas, sin guiones largos ni frases de impacto forzadas). **Post 1 publicado ✅ 14 jul, Post 2 publicado ✅ 16 jul.** Post 3 (semana siguiente) pendiente → [TÚ] publicar según cadencia (`plantillas/linkedin-posts.md`).
+
+**⚠️ Nota 16 jul — a revisar:** el post 2 se publicó en la página de empresa; Ramón reporta que también subió un post de texto en su **cuenta personal** el mismo día. La regla de anonimato (`plantillas/linkedin-posts.md` §"Reglas del perfil personal") dice que el perfil personal nunca comparte/comenta/reacciona contenido de la página SpindleLab — pendiente confirmar si el post personal fue un contenido genuinamente distinto (sin problema) o una republicación/eco del post de la empresa (rompe la regla, revisar si conviene bajarlo).
 **Base:** hallazgos reales y genéricos de las auditorías hechas para Frente A y Frente C — sin nombrar ninguna empresa (regla de anonimato y de no exponer prospectos sin permiso).
 
 ---
