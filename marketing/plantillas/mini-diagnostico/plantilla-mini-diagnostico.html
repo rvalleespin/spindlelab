@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<title>[[N.º DOCUMENTO]] — Mini-diagnóstico SpindleLab</title>
+<style>
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); font-weight:400 800; }
+@font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:400 700; }
+
+:root{
+  --tinta:#131A22;
+  --papel:#F7F5F0;
+  --blanco:#FFFFFF;
+  --dorado:#C9A227;
+  --gris:#5D6673;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+body{
+  font-family:'Inter', sans-serif;
+  color:var(--tinta);
+  background:var(--papel);
+  width:794px; /* A4 @ 96dpi */
+  padding:48px 56px;
+  font-size:13.5px;
+  line-height:1.5;
+}
+
+.wordmark{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:22px;
+  letter-spacing:-0.01em;
+}
+.wordmark .punto{ color:var(--dorado); }
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  border-bottom:2px solid var(--tinta);
+  padding-bottom:16px;
+  margin-bottom:24px;
+}
+
+.encabezado-derecha{ text-align:right; }
+.tagline{ font-size:10.5px; color:var(--gris); margin-top:4px; }
+
+.meta-box{
+  margin-top:10px;
+  font-size:10.5px;
+  color:var(--gris);
+  line-height:1.6;
+}
+.meta-box b{ color:var(--tinta); }
+
+h1.titulo-doc{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:20px;
+  margin-bottom:4px;
+}
+.subtitulo-doc{
+  font-size:12px;
+  color:var(--gris);
+  margin-bottom:24px;
+}
+
+section.bloque{
+  margin-bottom:18px;
+  break-inside:avoid;
+}
+
+.num-etiqueta{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--gris);
+  margin-bottom:6px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.num-etiqueta .num{
+  width:20px; height:20px;
+  border:1.5px solid var(--tinta);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:10.5px;
+  color:var(--tinta);
+  flex-shrink:0;
+}
+
+.bloque p{ margin-bottom:6px; }
+.bloque p:last-child{ margin-bottom:0; }
+
+.hallazgo{
+  background:var(--blanco);
+  border:1px solid rgba(19,26,34,0.12);
+  border-radius:8px;
+  padding:12px 16px;
+  margin-top:6px;
+}
+
+/* La corrección de mayor impacto — único uso del dorado en la pieza */
+.bloque-impacto{
+  background:var(--tinta);
+  color:var(--papel);
+  border-radius:10px;
+  padding:20px 22px;
+  margin-top:22px;
+  position:relative;
+}
+.bloque-impacto .num-etiqueta{ color:var(--dorado); }
+.bloque-impacto .num-etiqueta .num{ border-color:var(--dorado); color:var(--dorado); }
+.bloque-impacto h2{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:15px;
+  margin-bottom:8px;
+}
+.bloque-impacto p{ margin-bottom:0; font-size:13px; }
+.bloque-impacto .punto-final{ color:var(--dorado); }
+
+footer{
+  margin-top:26px;
+  padding-top:16px;
+  border-top:1px solid rgba(19,26,34,0.15);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.cta{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:13.5px;
+}
+.cta .punto{ color:var(--tinta); }
+.contacto{
+  font-size:11px;
+  color:var(--gris);
+  text-align:right;
+}
+.footnote{
+  font-size:9.5px;
+  color:var(--gris);
+  margin-top:14px;
+  font-style:italic;
+}
+
+@media print{
+  @page{ size:A4; margin:0; }
+  body{ width:auto; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="wordmark">SpindleLab<span class="punto">.</span></div>
+    <div class="tagline">SEO técnico · Visibilidad en IA (AEO/GEO) · Desarrollo web</div>
+  </div>
+  <div class="encabezado-derecha">
+    <div class="meta-box">
+      <div><b>Documento</b> [[N.º DOCUMENTO — SPL-DIAG-AAAA-NNN]]</div>
+      <div><b>Empresa</b> [[NOMBRE EMPRESA]]</div>
+      <div><b>Sitio</b> [[DOMINIO]]</div>
+      <div><b>Fecha</b> [[FECHA]]</div>
+    </div>
+  </div>
+</header>
+
+<h1 class="titulo-doc">Mini-diagnóstico de visibilidad</h1>
+<p class="subtitulo-doc">Cómo ve [[NOMBRE EMPRESA]] un buscador y un motor de IA hoy — y la única corrección que más impacto tendría.</p>
+
+<section class="bloque">
+  <div class="num-etiqueta"><span class="num">1</span> Estado técnico esencial</div>
+  <div class="hallazgo">
+    <p>[[HALLAZGO TÉCNICO VERIFICADO — título/meta description/datos estructurados/errores HTTP/bloqueos, con el detalle exacto encontrado. Nunca una afirmación genérica.]]</p>
+  </div>
+</section>
+
+<section class="bloque">
+  <div class="num-etiqueta"><span class="num">2</span> Visibilidad en motores de IA</div>
+  <div class="hallazgo">
+    <p>[[RESULTADO REAL de preguntarle a ChatGPT/Perplexity/Gemini la pregunta de categoría — quién aparece, si aparece o no la empresa. Si no se ejecutó la prueba, describir el riesgo en términos generales sin inventar un resultado.]]</p>
+  </div>
+</section>
+
+<section class="bloque">
+  <div class="num-etiqueta"><span class="num">3</span> Señales de confianza</div>
+  <div class="hallazgo">
+    <p>[[E-E-A-T / YMYL si aplica al rubro — autoría, prensa, certificaciones, datos de contacto verificables. Qué existe y qué falta.]]</p>
+  </div>
+</section>
+
+<div class="bloque-impacto">
+  <div class="num-etiqueta"><span class="num">4</span> La corrección de mayor impacto</div>
+  <h2>[[TÍTULO CORTO DE LA CORRECCIÓN]]</h2>
+  <p>[[1-2 frases: si solo pudieran arreglar una cosa este mes, cuál y por qué — la síntesis de un especialista, no una lista de tareas.]]<span class="punto-final">.</span></p>
+</div>
+
+<footer>
+  <div class="cta">¿Conversamos 20 minutos, sin costo<span class="punto">?</span></div>
+  <div class="contacto">hola@spindlelab.cl · spindlelab.cl</div>
+</footer>
+
+<p class="footnote">Este documento es un diagnóstico inicial elaborado desde información pública — no reemplaza una auditoría técnica completa. Válido como fotografía del estado del sitio al [[FECHA]].</p>
+
+</body>
+</html>
