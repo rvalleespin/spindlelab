@@ -32,7 +32,8 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - [x] [CC] Evidencia personalizada + borradores para el lote 1 Frente A → [TÚ] revisar y **enviar 15 contactos** ← **hecho = avanzamos** — **completo 14 jul: 15/15 enviados.** Tanda 1 (10 jul), tanda 2 (14 jul, Addwise rebotó y se reenvió con éxito a `contacto@addwise.cl`), tanda 3 (14 jul, 5/5 a la primera). Sumado a Frente C, van 20 emails fríos en curso.
 - [x] [TÚ] **Frente C decidido: SE SUMA** como frente activo — 14 jul. Lote 1 (5 contactos) enviado el mismo día, confirmado en Gmail web. Ver `outbound/semana-02/lote-1-frente-c.md`.
 - [x] [CC] Artículo 2 — **tema cambiado**: «¿Cómo elige ChatGPT qué empresas recomendar?» ya está cubierto por el artículo publicado *«¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?»* (otra sesión). Reemplazado por **«¿Cuánto cuesta el SEO técnico en Chile?»**, aprobado y **publicado ✅ 14 jul** (la otra sesión aplicó el encargo)
-- [~] [CC] Lote semanal de 3 posts LinkedIn — **Post 1 publicado ✅ 14 jul** (primera publicación de la página). Posts 2 y 3 en `outbound/semana-02/posts-linkedin-semana-02.md` → [TÚ] publicar según cadencia
+- [~] [CC] Lote semanal de 3 posts LinkedIn — **Post 1 publicado ✅ 14 jul, Post 2 publicado ✅ 16 jul.** Post 3 pendiente en `outbound/semana-02/posts-linkedin-semana-02.md` → [TÚ] publicar según cadencia. Nota pendiente de revisar: posible repost en cuenta personal (ver el archivo).
+- [x] [TÚ] Instagram: carrusel publicado ✅ 16 jul — retoma la cadencia tras la pausa desde semana 1
 - [ ] [TÚ] Contratar Apollo pagado
 
 ### Semana 3 (21–27 jul)
