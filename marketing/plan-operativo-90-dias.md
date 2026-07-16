@@ -57,7 +57,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - [x] [TÚ] Añadir «¿cómo nos encontraste?» al flujo de contacto/llamada — resuelto junto con la captura UTM del formulario (ver `encargos-otras-sesiones/formulario-contacto-utm-google-ads.md`)
 - [x] [TÚ] Importar `generate_lead` (GA4) como conversión principal en Google Ads — 14 jul. Categoría «Enviar formulario de clientes potenciales», fuente Spindlelab Consultoria (545003546), marcada como Principal. Cierra el último pendiente de `capacidad-servicios.md` sobre medición real de conversiones.
 - [ ] [TÚ] Outbound: 50 contactos · [CC] evidencia y borradores
-- [ ] [CC] Artículo 5: «¿Cuánto cuesta el SEO técnico en Chile?» → [TÚ] editar y publicar
+- [ ] [CC] Artículo 5: «SEO técnico para asesoras de inversión y family offices en Chile: los errores que se repiten» (título original duplicaba el Artículo 2, ya publicado 14 jul — corregido 15 jul; usa hallazgos reales y anonimizados de los 15 audits de Frente A) → [TÚ] editar y publicar
 
 ### Semana 6 (11–17 ago)
 - [ ] [TÚ] Outbound: 50 contactos
@@ -68,7 +68,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 ### Semana 7 (18–24 ago)
 - [ ] [TÚ] Outbound: 50 contactos
 - [ ] [CC] Revisar términos de búsqueda en Ads y proponer negativas → [TÚ] aprobar
-- [ ] [CC] Artículo 7 (variante por nicho: estética o wealth) → [TÚ] editar y publicar
+- [ ] [CC] Artículo 7 (variante por nicho: estética — wealth ya cubierto por el Artículo 5) → [TÚ] editar y publicar
 - [ ] [TÚ] **Meta de control: al día 45 debería haber ≥1 cliente cerrado.** Si no: sesión de diagnóstico con el árbol de decisión de §8 de la estrategia
 
 ### Semana 8 (25–31 ago)
