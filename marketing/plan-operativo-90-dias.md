@@ -34,7 +34,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - [x] [CC] Artículo 2 — **tema cambiado**: «¿Cómo elige ChatGPT qué empresas recomendar?» ya está cubierto por el artículo publicado *«¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?»* (otra sesión). Reemplazado por **«¿Cuánto cuesta el SEO técnico en Chile?»**, aprobado y **publicado ✅ 14 jul** (la otra sesión aplicó el encargo)
 - [~] [CC] Lote semanal de 3 posts LinkedIn — **Post 1 publicado ✅ 14 jul, Post 2 publicado ✅ 16 jul.** Post 3 pendiente en `outbound/semana-02/posts-linkedin-semana-02.md` → [TÚ] publicar según cadencia. Nota pendiente de revisar: posible repost en cuenta personal (ver el archivo).
 - [x] [TÚ] Instagram: carrusel publicado ✅ 16 jul — retoma la cadencia tras la pausa desde semana 1
-- [ ] [TÚ] Contratar Apollo pagado
+- [~] [TÚ] Contratar Apollo pagado — **decisión diferida 16 jul** (no es un olvido, es a propósito): los 20 envíos de Frente A + C se cubrieron con acceso gratuito, y 0 respuestas a los 2-3 días no es señal de nada todavía (muestra chica, normal que tarde 1-2 semanas). Revisar cuando pase lo primero de esto: (1) llegue la primera respuesta real, o (2) toque lanzar Frente B semana del 21 jul (35 clínicas nuevas por investigar, ahí sí puede quedar chico el acceso gratuito).
 
 ### Semana 3 (21–27 jul)
 - [ ] [TÚ] Enviar 30 contactos: 20 Frente A + **10 Frente B (lanzamiento dental/estética)** ← **hecho = avanzamos**
