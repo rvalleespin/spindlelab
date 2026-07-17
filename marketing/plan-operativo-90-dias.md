@@ -20,7 +20,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - [~] Solicitud de testimonio/permiso a SimpleTrust — sigue en pausa; ahora hay una alternativa mejor: **pedirle el caso a Bernardo desde ya** (cliente nuevo, sin la espera que tuvimos con SimpleTrust)
 - [x] [CC] Lista Frente A ✅ 7 jul — 31 asesoras/MFO boutique verificadas en `listas/frente-a-wealth-asesoras.md`
 - [x] [CC] Lista Frente B ✅ 7 jul — 35 clínicas dental/estética premium en `listas/frente-b-dental-estetica.md`
-- [x] [CC] Artículo 1 redactado ✅ 7 jul en `articulos/` → [TÚ] pendiente: editar y aprobar para publicación
+- [x] [CC] Artículo 1 redactado ✅ 7 jul, aprobado y auditado (enlaces internos, sin guiones largos) ✅ 16 jul → encargo de publicación enviado a la otra sesión (`encargos-otras-sesiones/publicar-articulo-mini-diagnostico.md`)
 - [x] [TÚ] Línea base del test de menciones en IA ✅ 10 jul — SpindleLab no aparece en ninguna de las 15 combinaciones (esperado); ver `metricas/test-menciones-ia.md`
 - [x] [CC] Plantilla de cotizaciones creada a partir del modelo aprobado ✅ 8 jul — `plantillas/cotizaciones/`
 
