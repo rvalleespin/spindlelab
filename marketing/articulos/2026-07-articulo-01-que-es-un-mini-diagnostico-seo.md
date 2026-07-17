@@ -1,6 +1,6 @@
 # ¿Qué es un mini-diagnóstico SEO y qué incluye?
 
-> **Estado: APROBADO 16 jul.** Reescrito el mismo día: se quitaron los guiones largos usados como muletilla y se agregaron enlaces internos reales en el cuerpo (antes solo estaban en la nota de integración). Listo para el encargo de publicación — ver `marketing/encargos-otras-sesiones/publicar-articulo-mini-diagnostico.md`.
+> **Estado: PUBLICADO ✅ 16 jul.** La otra sesión aplicó el encargo (`marketing/encargos-otras-sesiones/publicar-articulo-mini-diagnostico.md`) y el artículo está en vivo en spindlelab.cl.
 
 ---
 

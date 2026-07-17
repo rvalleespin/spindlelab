@@ -1,5 +1,7 @@
 # Encargo: publicar artículo "¿Qué es un mini-diagnóstico SEO y qué incluye?"
 
+**✅ Resuelto — 16 jul 2026.** La otra sesión aplicó el encargo y el artículo está publicado en vivo.
+
 **Para:** la sesión que mantiene `spindlelab-site/` · **De:** sesión de marketing · **Fecha:** 16 jul 2026
 
 Ramón aprobó este artículo (el primero redactado, 7 jul, revisado y aprobado recién ahora). Mismo patrón que el encargo anterior (`publicar-articulo-cuanto-cuesta-seo.md`, ya resuelto): esta sesión no toca `spindlelab-site/` directamente, dejo todo listo para copiar. Fuente completa con historial en `marketing/articulos/2026-07-articulo-01-que-es-un-mini-diagnostico-seo.md`.
