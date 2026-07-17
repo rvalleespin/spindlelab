@@ -1,6 +1,8 @@
 # Lote semanal — 3 posts LinkedIn (semana 2, 14–20 jul)
 
-**Estado:** los 3 posts se reescribieron 14 jul con un pase de tono (menos "escrito", más hablado — frases cortas, sin guiones largos ni frases de impacto forzadas). **Corrección 16 jul:** el "Post 1 publicado ✅ 14 jul" quedó mal registrado — lo que se publicó ese día fue en la cuenta **personal** de Ramón, no en la página de empresa. La página de empresa sigue sin ningún post propio. Los 3 posts de este lote (incluido el 1) siguen disponibles sin usar para la página → [TÚ] publicar según cadencia (`plantillas/linkedin-posts.md`), a partir de ahora que la cuenta de empresa está lista para arrancar.
+**Estado:** los 3 posts se reescribieron 14 jul con un pase de tono (menos "escrito", más hablado — frases cortas, sin guiones largos ni frases de impacto forzadas). **Corrección 16 jul:** el "Post 1 publicado ✅ 14 jul" quedó mal registrado — lo que se publicó ese día fue en la cuenta **personal** de Ramón, no en la página de empresa. **Post 2 publicado ✅ 16 jul** en la página de empresa — es, en la práctica, el primer post real de la página. Post 1 y Post 3 siguen disponibles sin usar → [TÚ] publicar según cadencia (`plantillas/linkedin-posts.md`).
+
+**⚠️ Nota 16 jul — a revisar:** el mismo día que se publicó el Post 2 en la página de empresa, Ramón reporta que también subió un post de texto en su **cuenta personal**. La regla de anonimato (`plantillas/linkedin-posts.md` §"Reglas del perfil personal") dice que el perfil personal nunca comparte/comenta/reacciona contenido de la página SpindleLab — pendiente confirmar si el post personal fue un contenido genuinamente distinto (sin problema) o una republicación/eco del post de la empresa (rompe la regla, revisar si conviene bajarlo).
 **Base:** hallazgos reales y genéricos de las auditorías hechas para Frente A y Frente C — sin nombrar ninguna empresa (regla de anonimato y de no exponer prospectos sin permiso).
 
 ---

@@ -25,6 +25,7 @@ LinkedIn (canal principal, página de empresa creada 14 jul 2026) e Instagram (s
 - No repetir la misma muletilla entre piezas (ej. "donde la confianza lo es todo" apareció de más una vez — comparar contra lo último publicado antes de reusar una frase).
 - El hallazgo técnico sostiene el post solo — no forzar una moraleja al cierre.
 - **Nunca publicar un placeholder sin completar** (tipo `[+EVIDENCIA: ... (X e Y) ...]`). O se completa con una prueba real en ChatGPT, o se elimina la línea entera.
+- **Tono directo, no párrafo corrido.** Preferir frases cortas de 1-2 líneas con salto de línea entre ideas, en vez de un bloque de texto continuo. Cortar frases de transición que no aportan información nueva (ej. "Esta página existe para eso:", "Dicho esto", "Cabe destacar que"). Cada línea debe poder leerse sola y decir algo.
 
 ## Formatos validados (`marketing/plantillas/linkedin-posts.md`)
 
