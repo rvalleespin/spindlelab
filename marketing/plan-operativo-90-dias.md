@@ -61,6 +61,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - [x] [TÚ] Importar `generate_lead` (GA4) como conversión principal en Google Ads — 14 jul. Categoría «Enviar formulario de clientes potenciales», fuente Spindlelab Consultoria (545003546), marcada como Principal. Cierra el último pendiente de `capacidad-servicios.md` sobre medición real de conversiones.
 - [ ] [TÚ] Outbound: 50 contactos · [CC] evidencia y borradores
 - [ ] [CC] Artículo 5: «SEO técnico para asesoras de inversión y family offices en Chile: los errores que se repiten» (título original duplicaba el Artículo 2, ya publicado 14 jul — corregido 15 jul; usa hallazgos reales y anonimizados de los 15 audits de Frente A) → [TÚ] editar y publicar
+- [ ] [TÚ] **Nuevo frente decidido 20 jul: Meta Ads (Facebook + Instagram)**, sesión dedicada con `/persona-meta-ads`. Enfoque acotado a remarketing de visitantes del sitio (no prospección fría por interés — Meta no tiene buen targeting para B2B/decisores, a diferencia de la intención explícita que sí captura Google Search). Requisitos previos sin resolver: Página de Facebook, cuenta de Instagram a modo profesional, Business Manager, cuenta publicitaria, Pixel instalado en `spindlelab-site/` (nuevo encargo pendiente). No encender nada hasta tener suficiente tráfico acumulado para un Custom Audience útil.
 
 ### Semana 6 (11–17 ago)
 - [ ] [TÚ] Outbound: 50 contactos
