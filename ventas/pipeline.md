@@ -15,7 +15,7 @@
 
 | Nombre / Empresa | Rubro | Fuente | Etapa | Próximo paso | Último contacto | Notas |
 |---|---|---|---|---|---|---|
-| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅** | Iniciar Fase 1 (Descubrimiento) del proyecto | 8 jul 2026 | Cotización SPL-COT-2026-014 aprobada. Plan Portafolio Pro. **Pendiente: pedir permiso de caso público desde el día 1** (no repetir la espera de SimpleTrust). |
+| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅** | **Pedir permiso de caso público AHORA (acordado 21 jul, no esperar a la entrega)** + iniciar Fase 1 (Descubrimiento) | 8 jul 2026 | Cotización SPL-COT-2026-014 aprobada. Plan Portafolio Pro. |
 
 ## Casos en pausa (no forman parte del pipeline activo)
 
