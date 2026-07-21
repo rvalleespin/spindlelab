@@ -40,9 +40,29 @@ grep -c "application/ld+json" /tmp/sitio.html
 
 Documentar solo lo verificado: status HTTP, título, meta description (presente/ausente), conteo de datos estructurados, bloqueos (403/503), blog/contenido presente o no.
 
-## Paso 2 — Visibilidad en motores de IA (requiere al humano)
+### Chequeos de alto impacto (validados con searchfit-seo el 20 jul 2026)
 
-Claude no puede consultar ChatGPT, Perplexity o Gemini directamente. Pedir a Ramón que pegue el resultado real de la "pregunta ChatGPT" ya definida para ese prospecto (reusar la del lote de outbound si existe; si no, definir una pregunta natural que un cliente real haría). Si no se ejecuta la prueba a tiempo para cumplir el plazo de 48h, redactar la sección en términos de riesgo general, sin inventar qué apareció o no.
+No basta con revisar solo la home. La prueba mostró que lo más valioso aparece al mirar varias páginas y señales específicas — cosas que a mano se saltan por tiempo:
+
+1. **Estado HTTP de las páginas del menú + una muestra del sitemap, no solo la home.** El hallazgo crítico de la prueba fue una página "Nosotros" caída (HTTP 500) — justo la de mayor peso para autoridad de marca (E-E-A-T) ante Google y la IA. Muestrear:
+   ```bash
+   curl -s "https://[dominio]/sitemap.xml" | grep -o '<loc>[^<]*</loc>' | sed 's/<[^>]*>//g' | head -40 | \
+     while read u; do echo "$(curl -s -o /dev/null -w '%{http_code}' -A 'Mozilla/5.0' --max-time 10 "$u") $u"; done
+   ```
+   Cualquier 500/404 en una página importante (Nosotros/Quiénes somos, Servicios, Contacto) es hallazgo de primera prioridad.
+2. **Schema `FAQPage`.** Si hay página de preguntas frecuentes pero NO emite `FAQPage`/`Question`, es una oportunidad grande: ese es el formato que ChatGPT/Perplexity/Google citan textual. `grep -o 'FAQPage' /tmp/sitio.html`.
+3. **Imágenes sin `alt` en la home.** Comparar `grep -c 'alt=""'` contra el total de `<img>`. Pérdida de SEO de imágenes, accesibilidad y contexto para la IA.
+4. **Teléfono / NAP.** Verificar que el teléfono esté en texto rastreable Y como `telephone` en el schema de negocio local. Si está solo en imagen/JS, debilita el SEO local y las respuestas de IA tipo "cómo contacto a…".
+5. **Rendimiento:** el juicio por cabeceras (`cache-control`, `cf-cache-status`, peso del HTML) es indirecto. Cuando el plazo lo permita, adjuntar una medida **real** de Core Web Vitals (PageSpeed Insights / Lighthouse: LCP, CLS, INP) — es mucho más defendible ante el cliente que "se ve lento".
+
+⚠️ **Antes de declarar que algo "falta", verificar con el DOM renderizado, no solo con `curl`.** `curl` trae el HTML crudo; contenido inyectado por JS (a veces el teléfono, o un bloque FAQ) puede no aparecer. Renderizar con el Chromium headless del Paso 5 y revisar ahí antes de reportar una ausencia como hallazgo.
+
+## Paso 2 — Visibilidad en motores de IA
+
+Separar dos cosas — la prueba confirmó que se confunden fácil:
+
+- **Preparación para IA (esto SÍ se evalúa solo, sin humano):** contenido en texto real y no solo imágenes; propuesta de valor con **diferenciadores verificables** (años, zonas, nº de X) que la IA pueda repetir, no genéricos tipo "atención personalizada"; schema de negocio; y que la página de autoridad ("Nosotros") cargue 200. Estas señales ya dan una sección sólida por sí solas.
+- **Citación real (esto SÍ requiere la prueba en vivo — es el diferencial que SpindleLab vende):** si la marca efectivamente aparece cuando un cliente pregunta. Claude no puede consultar ChatGPT, Perplexity o Gemini directamente. Pedir a Ramón que pegue el resultado real de la "pregunta ChatGPT" ya definida para ese prospecto (reusar la del lote de outbound si existe; si no, definir una pregunta natural que un cliente real haría). Si no se ejecuta la prueba a tiempo para cumplir el plazo de 48h, redactar en términos de riesgo general, sin inventar qué apareció o no.
 
 ## Paso 3 — Señales de confianza
 
