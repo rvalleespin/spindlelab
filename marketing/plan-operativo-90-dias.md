@@ -2,7 +2,7 @@
 
 Del 7 de julio al 5 de octubre de 2026. Meta comercial: **1–2 clientes cerrados al día 60**; semanas 9–13 = entrega y escala.
 Presupuesto de horas humanas: **6–10 h/semana de supervisión** (original) — la producción la ejecutan agentes de Claude Code (división de trabajo en §6.5 de la estrategia).
-**Nota 21 jul:** Ramón comenzó un trabajo de tiempo completo esta semana. El presupuesto de horas reales disponibles baja respecto al supuesto original — ajustar expectativas de ritmo en consecuencia, priorizando lo de mayor apalancamiento por sobre lo que simplemente suma actividad (ver diagnóstico del mismo día más abajo).
+**Nota 21 jul:** Ramón pasó a dedicarse a SpindleLab a tiempo completo — el presupuesto de horas reales disponibles sube respecto al supuesto original, no baja. Ajustar expectativas de ritmo en consecuencia: hay más margen para sumar iniciativas (como contenido en video) sin que compitan entre sí.
 
 Convención de los checklists: **[CC]** = lo produce Claude Code (tú revisas/apruebas) · **[TÚ]** = solo humano.
 Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa semana, que sea esa.
@@ -47,7 +47,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - Bandeja de hola@spindlelab.cl revisada personalmente: **0 respuestas confirmado**, no era un problema de no revisar.
 - El ángulo de los emails sigue generando confianza — no se cambia el mensaje.
 - Sin interacción en LinkedIn más allá de publicar (falta comentar en posts de terceros del rubro, regla ya escrita en `plantillas/linkedin-posts.md` que no se está aplicando).
-- Interés nuevo en contenido de video (LinkedIn + Meta Ads) — con la alerta de que es la actividad de mayor costo en tiempo, justo cuando el ancho de banda bajó (ver nota de capacidad arriba). Pendiente decidir si se hace una versión liviana (clip corto sin producción) antes de comprometerse a video producido.
+- Interés nuevo en contenido de video (LinkedIn + Meta Ads) — con la dedicación de tiempo completo confirmada (ver nota de capacidad arriba), hay margen real para esto. Sigue siendo sensato arrancar con una versión liviana (clip corto sin producción) para probar el formato antes de invertir en producción, pero ya no es una limitación de tiempo, es solo secuenciación.
 - Decisión Apollo pagado: se cumplió el segundo criterio del diferimiento (lanzamiento de Frente B) — pendiente que Ramón decida si contrata ahora.
 - Permiso de caso público de Bernardo: se acordó pedirlo ahora (al iniciar Fase 1), no esperar a la entrega — evita repetir la espera de SimpleTrust.
 
