@@ -1,7 +1,8 @@
 # Plan operativo 90 días — SpindleLab (ejecución asistida con Claude Code)
 
 Del 7 de julio al 5 de octubre de 2026. Meta comercial: **1–2 clientes cerrados al día 60**; semanas 9–13 = entrega y escala.
-Presupuesto de horas humanas: **6–10 h/semana de supervisión** — la producción la ejecutan agentes de Claude Code (división de trabajo en §6.5 de la estrategia).
+Presupuesto de horas humanas: **6–10 h/semana de supervisión** (original) — la producción la ejecutan agentes de Claude Code (división de trabajo en §6.5 de la estrategia).
+**Nota 21 jul:** Ramón pasó a dedicarse a SpindleLab a tiempo completo — el presupuesto de horas reales disponibles sube respecto al supuesto original, no baja. Ajustar expectativas de ritmo en consecuencia: hay más margen para sumar iniciativas (como contenido en video) sin que compitan entre sí.
 
 Convención de los checklists: **[CC]** = lo produce Claude Code (tú revisas/apruebas) · **[TÚ]** = solo humano.
 Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa semana, que sea esa.
@@ -37,10 +38,18 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - [~] [TÚ] Contratar Apollo pagado — **decisión diferida 16 jul** (no es un olvido, es a propósito): los 20 envíos de Frente A + C se cubrieron con acceso gratuito, y 0 respuestas a los 2-3 días no es señal de nada todavía (muestra chica, normal que tarde 1-2 semanas). Revisar cuando pase lo primero de esto: (1) llegue la primera respuesta real, o (2) toque lanzar Frente B semana del 21 jul (35 clínicas nuevas por investigar, ahí sí puede quedar chico el acceso gratuito).
 
 ### Semana 3 (21–27 jul)
-- [ ] [TÚ] Enviar 30 contactos: 20 Frente A + **10 Frente B (lanzamiento dental/estética)** ← **hecho = avanzamos**
+- [~] [TÚ] Enviar 30 contactos: 20 Frente A + **10 Frente B (lanzamiento dental/estética)** ← **hecho = avanzamos** — Frente A ya está en 15/15 (falta ampliar más allá de la lista original si se decide). **Frente B: lanzamiento iniciado 21 jul**, prompt de Apollo entregado para los 10 primeros contactos (Dra. Zaror, Ortodoncia De La Fuente, DentSalud, AMA, AS Odontología Digital, Leguía, Terré, Cara Bonita, Beladent, Onsen) → falta traer el CSV verificado y armar los emails.
 - [ ] [TÚ] Regla sagrada: todo interesado recibe su mini-diagnóstico en ≤48 h ([CC] produce el borrador en horas; apuntar a entregar en 24)
 - [ ] [CC] Artículo 3: «SEO para clínicas dentales en Chile: lo que cambió con la IA» → [TÚ] editar y publicar
 - [ ] [CC] Panel semanal de métricas (rebotes <3 %, tasa de respuesta) → [TÚ] leer 15 min
+
+**Diagnóstico 21 jul (día 15 del plan, 0 leads todavía):** revisado con Ramón antes del checkpoint formal de día 30 (`estrategia-marketing-spindlelab.md` §8), a petición suya. Hallazgos:
+- Bandeja de hola@spindlelab.cl revisada personalmente: **0 respuestas confirmado**, no era un problema de no revisar.
+- El ángulo de los emails sigue generando confianza — no se cambia el mensaje.
+- Sin interacción en LinkedIn más allá de publicar (falta comentar en posts de terceros del rubro, regla ya escrita en `plantillas/linkedin-posts.md` que no se está aplicando).
+- Interés nuevo en contenido de video (LinkedIn + Meta Ads) — con la dedicación de tiempo completo confirmada (ver nota de capacidad arriba), hay margen real para esto. Sigue siendo sensato arrancar con una versión liviana (clip corto sin producción) para probar el formato antes de invertir en producción, pero ya no es una limitación de tiempo, es solo secuenciación.
+- Decisión Apollo pagado: se cumplió el segundo criterio del diferimiento (lanzamiento de Frente B) — pendiente que Ramón decida si contrata ahora.
+- Permiso de caso público de Bernardo: se acordó pedirlo ahora (al iniciar Fase 1), no esperar a la entrega — evita repetir la espera de SimpleTrust.
 
 ### Semana 4 (28 jul–3 ago)
 - [ ] [TÚ] **Régimen pleno: 50 contactos/semana** repartidos entre frentes según respuesta ← **hecho = avanzamos**
