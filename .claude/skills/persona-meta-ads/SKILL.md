@@ -24,14 +24,14 @@ Google Ads captura **intención explícita** (alguien busca "auditoría SEO"). M
 
 **Caveat importante de tráfico:** SpindleLab es un sitio nuevo con tráfico todavía bajo. Un Custom Audience de visitantes del sitio puede ser demasiado chico al principio (Meta entrega mal con audiencias diminutas). Antes de encender nada, revisar cuántas visitas reales acumula el sitio — si son muy pocas, puede convenir esperar 2-3 semanas más de tráfico (Google Ads + outbound + contenido ya están generando algo) antes de que el remarketing tenga a quién mostrarle algo.
 
-## Requisitos previos — nada de esto existe todavía, hacerlo en este orden
+## Requisitos previos — estado real (no reconstruir desde cero)
 
-1. **Página de Facebook de SpindleLab.** No existe (solo se configuró Instagram en semana 1). Crearla es requisito para casi todo lo demás.
-2. **Cuenta de Instagram a modo profesional/business.** El perfil ya existe (`marketing/brand/redes/perfil-instagram.md`) pero según esa misma nota, falta pasarla a cuenta profesional — hacerlo y vincularla a la Página de Facebook.
-3. **Meta Business Manager** (business.facebook.com) — crear la cuenta de negocio, agregar la Página y la cuenta de Instagram.
-4. **Cuenta publicitaria** dentro del Business Manager, con método de pago.
-5. **Meta Pixel** — crear uno nuevo y pedir su instalación en `spindlelab-site/` (esto es un encargo a la sesión que mantiene el sitio, mismo patrón que `marketing/encargos-otras-sesiones/formulario-contacto-utm-google-ads.md` — el pixel base va en todas las páginas, y un evento de conversión específico en `/contacto/` al enviar el formulario, análogo al `generate_lead` de GA4).
-6. Solo después de 1-5: dejar correr unos días para que el Pixel acumule visitantes reales, y recién ahí crear el Custom Audience y la campaña.
+1. ✅ **Página de Facebook de SpindleLab** — creada 20 jul (ID `61592147941168`), en el portafolio propio de SpindleLab (`1025351160247165`), separado de otro negocio existente en la misma Business Manager.
+2. ✅ **Cuenta de Instagram a modo profesional** — `@spindle.lab` (ID `17841414909841532`), vinculada a la Página.
+3. ✅ **Meta Business Manager** — resuelto junto con el portafolio propio del punto 1.
+4. ✅ **Cuenta publicitaria** — creada 20 jul, moneda CLP, ubicación Santiago (ID `2050319242539058`). **Falta:** confirmar método de pago al momento de lanzar (no antes).
+5. ✅ **Meta Pixel** — creado 20 jul (ID `2885353628478565`, sin Conversions API todavía). Pixel base + evento `Lead` en `/contacto/` ya integrados en las 15 páginas del sitio, verificado en local (GA4 intacto). **Falta:** fusionar y desplegar en `spindlelab-site/` para que quede en vivo — sin esto, el Pixel no está recibiendo tráfico real todavía.
+6. ⬜ **Bloqueado hasta acumular tráfico real** (después del deploy del punto 5): recién ahí crear el Custom Audience y evaluar si ya hay volumen suficiente para la primera campaña.
 
 ## Primera campaña (cuando los requisitos previos estén listos)
 
