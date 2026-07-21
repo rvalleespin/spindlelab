@@ -35,7 +35,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - [x] [CC] Artículo 2 — **tema cambiado**: «¿Cómo elige ChatGPT qué empresas recomendar?» ya está cubierto por el artículo publicado *«¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?»* (otra sesión). Reemplazado por **«¿Cuánto cuesta el SEO técnico en Chile?»**, aprobado y **publicado ✅ 14 jul** (la otra sesión aplicó el encargo)
 - [~] [CC] Lote semanal de 3 posts LinkedIn — **Corrección 17 jul:** el "Post 1" que se marcó publicado el 14 jul en realidad salió en la cuenta **personal** de Ramón, no en la página de empresa. **Post 2 publicado ✅ 16 jul en la página de empresa** es, en la práctica, el primer post real de la página. Post 1 y Post 3 siguen disponibles sin usar en `outbound/semana-02/posts-linkedin-semana-02.md` → [TÚ] publicar según cadencia.
 - [x] [TÚ] Instagram: carrusel publicado ✅ 16 jul — retoma la cadencia tras la pausa desde semana 1
-- [~] [TÚ] Contratar Apollo pagado — **decisión diferida 16 jul** (no es un olvido, es a propósito): los 20 envíos de Frente A + C se cubrieron con acceso gratuito, y 0 respuestas a los 2-3 días no es señal de nada todavía (muestra chica, normal que tarde 1-2 semanas). Revisar cuando pase lo primero de esto: (1) llegue la primera respuesta real, o (2) toque lanzar Frente B semana del 21 jul (35 clínicas nuevas por investigar, ahí sí puede quedar chico el acceso gratuito).
+- [x] [TÚ] Contratar Apollo pagado — **decisión diferida 16 jul, contratado 21 jul**: se cumplió el segundo criterio del diferimiento (lanzamiento de Frente B, que requiere investigar 35 clínicas nuevas y hacía chico el acceso gratuito). Ramón confirmó la contratación el 21 jul.
 
 ### Semana 3 (21–27 jul)
 - [~] [TÚ] Enviar 30 contactos: 20 Frente A + **10 Frente B (lanzamiento dental/estética)** ← **hecho = avanzamos** — Frente A ya está en 15/15 (falta ampliar más allá de la lista original si se decide). **Frente B: lanzamiento iniciado 21 jul**, prompt de Apollo entregado para los 10 primeros contactos (Dra. Zaror, Ortodoncia De La Fuente, DentSalud, AMA, AS Odontología Digital, Leguía, Terré, Cara Bonita, Beladent, Onsen) → falta traer el CSV verificado y armar los emails.
@@ -48,8 +48,10 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - El ángulo de los emails sigue generando confianza — no se cambia el mensaje.
 - Sin interacción en LinkedIn más allá de publicar (falta comentar en posts de terceros del rubro, regla ya escrita en `plantillas/linkedin-posts.md` que no se está aplicando).
 - Interés nuevo en contenido de video (LinkedIn + Meta Ads) — con la dedicación de tiempo completo confirmada (ver nota de capacidad arriba), hay margen real para esto. Sigue siendo sensato arrancar con una versión liviana (clip corto sin producción) para probar el formato antes de invertir en producción, pero ya no es una limitación de tiempo, es solo secuenciación.
-- Decisión Apollo pagado: se cumplió el segundo criterio del diferimiento (lanzamiento de Frente B) — pendiente que Ramón decida si contrata ahora.
+- Decisión Apollo pagado: se cumplió el segundo criterio del diferimiento (lanzamiento de Frente B) — **contratado 21 jul**.
 - Permiso de caso público de Bernardo: se acordó pedirlo ahora (al iniciar Fase 1), no esperar a la entrega — evita repetir la espera de SimpleTrust.
+
+**Seguimiento 21 jul (mismo día, tras confirmar con Ramón):** Apollo pagado ✅ contratado. Frente B con lanzamiento activo (Ramón trabajando en la sesión dedicada de Apollo). Meta Pixel: en implementación, despliegue a `spindlelab-site/` a pedir/cerrar esta semana. Bandeja de hola@spindlelab.cl: 0 respuestas, reconfirmado.
 
 ### Semana 4 (28 jul–3 ago)
 - [ ] [TÚ] **Régimen pleno: 50 contactos/semana** repartidos entre frentes según respuesta ← **hecho = avanzamos**
@@ -73,7 +75,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - [~] [TÚ] **Nuevo frente decidido 20 jul: Meta Ads (Facebook + Instagram)**, sesión dedicada con `/persona-meta-ads`. Enfoque acotado a remarketing de visitantes del sitio (no prospección fría por interés — Meta no tiene buen targeting para B2B/decisores, a diferencia de la intención explícita que sí captura Google Search).
   - **Infraestructura creada ✅ 20 jul** (en portafolio propio de SpindleLab, separado de otro negocio existente en la misma Business Manager): Página de Facebook, Instagram profesional @spindle.lab, cuenta publicitaria (CLP, Santiago), Meta Pixel (sin Conversions API todavía). Pixel base + evento Lead en `/contacto/` ya integrados en las 15 páginas del sitio y verificados en local (GA4 intacto) — **pendiente: fusionar y desplegar para que quede en vivo.**
   - Custom Audience + campaña de remarketing siguen bloqueados hasta acumular tráfico suficiente — decisión correcta, no encender nada todavía.
-  - Pendientes de Ramón: mergear y desplegar el Pixel, confirmar método de pago al momento de lanzar, y definir el umbral/fecha de corte del canal (mismo criterio que se fijó para Google Ads).
+  - Pendientes de Ramón: mergear y desplegar el Pixel (**en implementación 21 jul, meta: cerrarlo esta semana**), confirmar método de pago al momento de lanzar, y definir el umbral/fecha de corte del canal (mismo criterio que se fijó para Google Ads).
 
 ### Semana 6 (11–17 ago)
 - [ ] [TÚ] Outbound: 50 contactos

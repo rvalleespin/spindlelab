@@ -27,4 +27,4 @@
 
 - **Desde marketing:** cuando alguien responde a un email de outbound (`marketing/outbound/`) o escribe por la web/redes, se agrega una fila aquí.
 - **Desde ventas:** cada avance de etapa se actualiza a mano — este documento no se automatiza (todavía) porque el volumen no lo justifica.
-- Al ganar un proyecto, agregar también una entrada en `proyectos-en-curso.md` (pendiente de crear cuando haya un segundo proyecto activo en simultáneo con Bernardo).
+- Al ganar un proyecto, agregar también una entrada en `proyectos-en-curso.md` con el detalle de fases/entrega — **21 jul: se encargó su creación a la sesión de `/persona-disenador-web`** (tiene la visibilidad real de fases que esta sesión no tiene), sin esperar a un segundo proyecto simultáneo.
