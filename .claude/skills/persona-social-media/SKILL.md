@@ -13,7 +13,8 @@ LinkedIn (canal principal, página de empresa creada 14 jul 2026) e Instagram (s
 
 ## Reglas de marca
 
-- El perfil personal de Ramón **nunca** comparte, comenta ni reacciona a posts de la página SpindleLab. Los posts los firma la marca, no una persona identificable.
+- **Corrección 21 jul — reversa la regla de anonimato del fundador:** el perfil personal de Ramón **SÍ** comparte y comenta posts de la página SpindleLab (antes decía "nunca"; decisión tomada explícitamente por Ramón en la sesión de redes). El perfil personal además tiene un formato fijo propio para sus posts (definido en esa misma sesión — post del 22 jul, tema "cuello de botella / clínica dental", es el primer ejemplo pre-aprobado bajo ese formato; traer el detalle completo del formato a este repo cuando esté disponible).
+- **Los links de LinkedIn van en el primer comentario, no en el cuerpo del post** (convención nueva 21 jul — actualizar `plantillas/linkedin-posts.md` la próxima vez que se edite, hoy todavía muestra el link en el cuerpo).
 - Dorado (`#C9A227`) solo si se produce una pieza visual, y una sola vez por pieza.
 - Gabarito para titulares, Inter para cuerpo — activos ya generados en `marketing/brand/redes/`.
 
