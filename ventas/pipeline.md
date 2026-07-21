@@ -15,7 +15,7 @@
 
 | Nombre / Empresa | Rubro | Fuente | Etapa | Próximo paso | Último contacto | Notas |
 |---|---|---|---|---|---|---|
-| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅** | Iniciar Fase 1 (Descubrimiento) del proyecto | 8 jul 2026 | Cotización SPL-COT-2026-014 aprobada. Plan Portafolio Pro. **Pendiente: pedir permiso de caso público desde el día 1** (no repetir la espera de SimpleTrust). |
+| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅ — en ejecución** | Ver entrega en `proyectos-en-curso.md` (Fase 3 pagada, rumbo a Lanzamiento) | 14 jul 2026 (pago Fase 3) | Cotización SPL-COT-2026-014 aprobada. **Plan Esencial** ($392.000), no Portafolio Pro — corregido según el abono del 14 jul. **Pendiente: pedir permiso de caso público desde el día 1** (no repetir la espera de SimpleTrust). |
 
 ## Casos en pausa (no forman parte del pipeline activo)
 
