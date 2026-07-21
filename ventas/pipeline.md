@@ -15,7 +15,7 @@
 
 | Nombre / Empresa | Rubro | Fuente | Etapa | Próximo paso | Último contacto | Notas |
 |---|---|---|---|---|---|---|
-| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅ — en ejecución** | Ver entrega en `proyectos-en-curso.md` (Fase 3 pagada, rumbo a Lanzamiento) | 14 jul 2026 (pago Fase 3) | Cotización SPL-COT-2026-014 aprobada. **Plan Esencial** ($392.000), no Portafolio Pro — corregido según el abono del 14 jul. **Pendiente: pedir permiso de caso público desde el día 1** (no repetir la espera de SimpleTrust). |
+| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅ — Lanzamiento** | Conectar dominio y salir a producción — **meta: viernes 24 jul**. Detalle de fases en `proyectos-en-curso.md` | 20 jul 2026 (reunión de entrega + compra de dominio) | Cotización SPL-COT-2026-014 aprobada. **Plan Esencial** ($392.000). Sitio y panel de administración presentados a Bernardo el 20 jul, dio el OK y quedó probando la plataforma. Compró `bernardocombeau.cl` (NIC Chile) el mismo día. **Pagos (corregido con evidencia bancaria):** Fase 3 (40%, $156.800) pagada 14 jul; Fase 1 y Fase 5 siguen pendientes ($235.200 en total) — no se cobró Fase 1 a inicios de julio como decía una versión anterior de esta fila. **Permiso de caso público: aún no pedido** pese al acuerdo de pedirlo desde el día 1 — con el cliente ya aprobando el sitio, es buen momento para pedirlo ahora. |
 
 ## Casos en pausa (no forman parte del pipeline activo)
 

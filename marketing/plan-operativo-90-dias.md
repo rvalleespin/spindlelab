@@ -73,9 +73,10 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - [ ] [TÚ] Outbound: 50 contactos · [CC] evidencia y borradores
 - [ ] [CC] Artículo 5: «SEO técnico para asesoras de inversión y family offices en Chile: los errores que se repiten» (título original duplicaba el Artículo 2, ya publicado 14 jul — corregido 15 jul; usa hallazgos reales y anonimizados de los 15 audits de Frente A) → [TÚ] editar y publicar
 - [~] [TÚ] **Nuevo frente decidido 20 jul: Meta Ads (Facebook + Instagram)**, sesión dedicada con `/persona-meta-ads`. Enfoque acotado a remarketing de visitantes del sitio (no prospección fría por interés — Meta no tiene buen targeting para B2B/decisores, a diferencia de la intención explícita que sí captura Google Search).
-  - **Infraestructura creada ✅ 20 jul** (en portafolio propio de SpindleLab, separado de otro negocio existente en la misma Business Manager): Página de Facebook, Instagram profesional @spindle.lab, cuenta publicitaria (CLP, Santiago), Meta Pixel (sin Conversions API todavía). Pixel base + evento Lead en `/contacto/` ya integrados en las 15 páginas del sitio y verificados en local (GA4 intacto) — **pendiente: fusionar y desplegar para que quede en vivo.**
+  - **Infraestructura creada ✅ 20 jul** (en portafolio propio de SpindleLab, separado de otro negocio existente en la misma Business Manager): Página de Facebook, Instagram profesional @spindle.lab, cuenta publicitaria (CLP, Santiago), Meta Pixel (sin Conversions API todavía).
+  - **Pixel desplegado en vivo ✅ 21 jul** — instalado en las 15 páginas de `spindlelab-site/` (tras el bloque de GA4), evento `Lead` en `/contacto/` junto al `generate_lead` existente. Verificado: `fbevents.js` carga, `PageView` dispara, GA4 intacto, sin errores de consola. Desde ahora empieza a acumular audiencia real.
   - Custom Audience + campaña de remarketing siguen bloqueados hasta acumular tráfico suficiente — decisión correcta, no encender nada todavía.
-  - Pendientes de Ramón: mergear y desplegar el Pixel (**en implementación 21 jul, meta: cerrarlo esta semana**), confirmar método de pago al momento de lanzar, y definir el umbral/fecha de corte del canal (mismo criterio que se fijó para Google Ads).
+  - Pendientes de Ramón: confirmar método de pago al momento de lanzar, y definir el umbral/fecha de corte del canal (mismo criterio que se fijó para Google Ads).
 
 ### Semana 6 (11–17 ago)
 - [ ] [TÚ] Outbound: 50 contactos
