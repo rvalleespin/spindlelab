@@ -33,7 +33,7 @@ Fuente completa: `marketing/brand/manual-de-marca.md`. Resumen:
 ## Convenciones de proyectos de clientes
 
 - Cotizaciones: `marketing/plantillas/cotizaciones/`, numeración `SPL-COT-AAAA-NNN`.
-- Todo cliente ganado se registra en `ventas/pipeline.md`; si hay más de un proyecto activo en simultáneo, también en `proyectos-en-curso.md`.
+- Todo cliente ganado se registra en `ventas/pipeline.md`. El detalle de fases/entrega de cada proyecto va en `ventas/proyectos-en-curso.md` — esta sesión es quien lo crea y mantiene (tiene la visibilidad real de fases que la sesión troncal de marketing no tiene); repórtalo a `/agente-troncal-marketing` cuando haya avances para que quede reflejado en `ventas/pipeline.md`.
 - Pedir permiso de caso público **desde el día 1** con cualquier cliente nuevo (aprendido de la espera con SimpleTrust — no repetir ese error).
 
 ## Estándar de calidad antes de dar algo por terminado

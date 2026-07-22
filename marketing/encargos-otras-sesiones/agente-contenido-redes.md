@@ -16,7 +16,8 @@ Hasta ahora, los posts de LinkedIn se producían dentro de la sesión principal 
 
 Fuente completa: `marketing/brand/manual-de-marca.md`. Lo esencial para redes:
 
-- **Anonimato del fundador:** el perfil personal de Ramón NO comparte, comenta ni reacciona a posts de la página SpindleLab. Los posts los firma la marca, nunca una persona con nombre y apellido visible en LinkedIn (el sitio web sí usa "Ramón" como autor de artículos — eso es una excepción ya decidida en otra sesión, no la repliques en redes sociales).
+- **Anonimato del fundador — revertido 21 jul:** el perfil personal de Ramón ahora SÍ comparte y comenta posts de la página SpindleLab (regla anterior decía "nunca"; cambio decidido explícitamente por Ramón). El perfil personal tiene además un formato fijo propio para sus posts, distinto del de la página (post del 22 jul, tema "cuello de botella / clínica dental", primer ejemplo bajo ese formato — traer el detalle completo cuando esté disponible).
+- **Links de LinkedIn:** van en el primer comentario del post, no en el cuerpo (convención nueva 21 jul — pendiente actualizar `plantillas/linkedin-posts.md`, que hoy todavía pone el link en el cuerpo).
 - **Acento dorado con escasez:** si se produce cualquier pieza visual (carrusel, imagen), el dorado (`#C9A227`) aparece UNA sola vez por pieza. Nunca como color de texto corrido ni en viñetas de lista.
 - **Tipografía:** Gabarito para titulares/wordmark, Inter para cuerpo de texto. Activos ya generados en `brand/redes/` y `brand/logo/`.
 - **Tono — esto se aprendió a pulso esta semana, léelo con cuidado:**
