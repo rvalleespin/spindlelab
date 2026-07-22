@@ -16,6 +16,7 @@
 | Nombre / Empresa | Rubro | Fuente | Etapa | Próximo paso | Último contacto | Notas |
 |---|---|---|---|---|---|---|
 | Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅ — en ejecución** | Ver entrega en `proyectos-en-curso.md` (Fase 3 pagada, rumbo a Lanzamiento) | 14 jul 2026 (pago Fase 3) | Cotización SPL-COT-2026-014 aprobada. **Plan Esencial** ($392.000), no Portafolio Pro — corregido según el abono del 14 jul. **Pendiente: pedir permiso de caso público desde el día 1** (no repetir la espera de SimpleTrust). |
+| Revista Chef &amp; Hotel | Medio gastronomía/hotelería | Contacto directo (URL entregada por Ramón) | **Contactado** | Enviar mini-diagnóstico SPL-DIAG-2026-002 desde hola@spindlelab.cl (→ pasa a etapa 2 al enviar) | 21 jul 2026 | Diagnóstico listo en `marketing/diagnosticos/SPL-DIAG-2026-002-chefandhotel/`. Hallazgo eje: artículos sin schema Article ni meta description. **Sección 2 (IA) redactada en términos de riesgo** — se puede reforzar si Ramón corre la prueba ChatGPT. |
 
 ## Casos en pausa (no forman parte del pipeline activo)
 
