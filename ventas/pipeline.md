@@ -15,7 +15,7 @@
 
 | Nombre / Empresa | Rubro | Fuente | Etapa | Próximo paso | Último contacto | Notas |
 |---|---|---|---|---|---|---|
-| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅ — en ejecución** | Ver entrega en `proyectos-en-curso.md` (Fase 3 pagada, rumbo a Lanzamiento) | 14 jul 2026 (pago Fase 3) | Cotización SPL-COT-2026-014 aprobada. **Plan Esencial** ($392.000), no Portafolio Pro — corregido según el abono del 14 jul. **Pendiente: pedir permiso de caso público desde el día 1** (no repetir la espera de SimpleTrust). |
+| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅ — Lanzamiento** | Conectar dominio y salir a producción — **meta: viernes 24 jul**. Detalle de fases en `proyectos-en-curso.md` | 20 jul 2026 (reunión de entrega + compra de dominio) | Cotización SPL-COT-2026-014 aprobada. **Plan Esencial** ($392.000). Sitio y panel de administración presentados a Bernardo el 20 jul, dio el OK y quedó probando la plataforma. Compró `bernardocombeau.cl` (NIC Chile) el mismo día. **Pagos (corregido con evidencia bancaria):** Fase 3 (40%, $156.800) pagada 14 jul; Fase 1 y Fase 5 siguen pendientes ($235.200 en total) — no se cobró Fase 1 a inicios de julio como decía una versión anterior de esta fila. **Permiso de caso público: aún no pedido** pese al acuerdo de pedirlo desde el día 1 — con el cliente ya aprobando el sitio, es buen momento para pedirlo ahora. |
 | Revista Chef &amp; Hotel | Medio gastronomía/hotelería | Contacto directo (URL entregada por Ramón) | **Contactado** | Enviar mini-diagnóstico SPL-DIAG-2026-002 desde hola@spindlelab.cl (→ pasa a etapa 2 al enviar) | 21 jul 2026 | Diagnóstico listo en `marketing/diagnosticos/SPL-DIAG-2026-002-chefandhotel/`. Hallazgo eje: artículos sin schema Article ni meta description. **Sección 2 (IA) redactada en términos de riesgo** — se puede reforzar si Ramón corre la prueba ChatGPT. |
 
 ## Casos en pausa (no forman parte del pipeline activo)
@@ -28,4 +28,4 @@
 
 - **Desde marketing:** cuando alguien responde a un email de outbound (`marketing/outbound/`) o escribe por la web/redes, se agrega una fila aquí.
 - **Desde ventas:** cada avance de etapa se actualiza a mano — este documento no se automatiza (todavía) porque el volumen no lo justifica.
-- Al ganar un proyecto, agregar también una entrada en `proyectos-en-curso.md` (pendiente de crear cuando haya un segundo proyecto activo en simultáneo con Bernardo).
+- Al ganar un proyecto, agregar también una entrada en `proyectos-en-curso.md` con el detalle de fases/entrega — **21 jul: se encargó su creación a la sesión de `/persona-disenador-web`** (tiene la visibilidad real de fases que esta sesión no tiene), sin esperar a un segundo proyecto simultáneo.

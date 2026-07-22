@@ -14,6 +14,7 @@ LinkedIn (canal principal, página de empresa creada 14 jul 2026) e Instagram (s
 ## Reglas de marca
 
 - **El perfil personal de Ramón SÍ puede compartir, comentar y reaccionar a los posts de la página SpindleLab** (convención nueva, confirmada por Ramón el 21 jul 2026). La regla vieja de "nunca compartir" venía del anonimato, que se relajó el 12 jul; ahora que Ramón puede asociarse públicamente a la marca, compartir desde su perfil personal le da a la página el empujón inicial de alcance/seguidores que más le cuesta conseguir sola. Al compartir, el "comentario" (texto que va arriba de la publicación) se escribe en su voz personal (primera persona singular). Los posts de la página los sigue firmando la marca, no la persona.
+- **Los links de LinkedIn van en el primer comentario, no en el cuerpo del post** (convención nueva 21 jul — actualizar `plantillas/linkedin-posts.md` la próxima vez que se edite, hoy todavía muestra el link en el cuerpo).
 - Dorado (`#C9A227`) solo si se produce una pieza visual, y una sola vez por pieza.
 - Gabarito para titulares, Inter para cuerpo — activos ya generados en `marketing/brand/redes/`.
 

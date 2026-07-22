@@ -19,6 +19,7 @@ Fuente completa: `marketing/brand/manual-de-marca.md`. Lo esencial para redes:
 - **Anonimato del fundador (actualizado 21 jul 2026):** los posts de la página los firma la marca, no una persona con nombre y apellido visible. Pero el anonimato se relajó el 12 jul, así que:
   - El perfil personal de Ramón **sí puede publicar posts propios** que mencionen su rol en SpindleLab, con su nombre de pila (sin apellido visible ni foto real todavía). Ver `marketing/redes/2026-07-15-post-empresa-y-personal.md`.
   - El perfil personal **sí puede compartir, comentar y reaccionar a los posts de la página** (convención nueva confirmada por Ramón el 21 jul). Sirve para darle a la página el empujón inicial de alcance/seguidores. Al compartir, el "comentario" que va arriba se escribe en su voz personal (primera persona singular).
+- **Links de LinkedIn:** van en el primer comentario del post, no en el cuerpo (convención nueva 21 jul — pendiente actualizar `plantillas/linkedin-posts.md`, que hoy todavía pone el link en el cuerpo).
 - **Acento dorado con escasez:** si se produce cualquier pieza visual (carrusel, imagen), el dorado (`#C9A227`) aparece UNA sola vez por pieza. Nunca como color de texto corrido ni en viñetas de lista.
 - **Tipografía:** Gabarito para titulares/wordmark, Inter para cuerpo de texto. Activos ya generados en `brand/redes/` y `brand/logo/`.
 - **Tono — esto se aprendió a pulso esta semana, léelo con cuidado:**
