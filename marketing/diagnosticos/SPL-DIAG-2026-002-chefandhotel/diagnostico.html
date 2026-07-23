@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<title>[[N.º DOCUMENTO]] — Mini-diagnóstico SpindleLab</title>
+<style>
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); font-weight:400 800; }
+@font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:400 700; }
+
+:root{
+  --tinta:#131A22;
+  --papel:#F7F5F0;
+  --blanco:#FFFFFF;
+  --dorado:#C9A227;
+  --gris:#5D6673;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+body{
+  font-family:'Inter', sans-serif;
+  color:var(--tinta);
+  background:var(--papel);
+  width:794px; /* A4 @ 96dpi */
+  padding:48px 56px;
+  font-size:13.5px;
+  line-height:1.5;
+}
+
+.wordmark{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:22px;
+  letter-spacing:-0.01em;
+}
+.wordmark .punto{ color:var(--dorado); }
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  border-bottom:2px solid var(--tinta);
+  padding-bottom:16px;
+  margin-bottom:24px;
+}
+
+.encabezado-derecha{ text-align:right; }
+.tagline{ font-size:10.5px; color:var(--gris); margin-top:4px; }
+
+.meta-box{
+  margin-top:10px;
+  font-size:10.5px;
+  color:var(--gris);
+  line-height:1.6;
+}
+.meta-box b{ color:var(--tinta); }
+
+h1.titulo-doc{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:20px;
+  margin-bottom:4px;
+}
+.subtitulo-doc{
+  font-size:12px;
+  color:var(--gris);
+  margin-bottom:24px;
+}
+
+section.bloque{
+  margin-bottom:18px;
+  break-inside:avoid;
+}
+
+.num-etiqueta{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--gris);
+  margin-bottom:6px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.num-etiqueta .num{
+  width:20px; height:20px;
+  border:1.5px solid var(--tinta);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:10.5px;
+  color:var(--tinta);
+  flex-shrink:0;
+}
+
+.bloque p{ margin-bottom:6px; }
+.bloque p:last-child{ margin-bottom:0; }
+
+.hallazgo{
+  background:var(--blanco);
+  border:1px solid rgba(19,26,34,0.12);
+  border-radius:8px;
+  padding:12px 16px;
+  margin-top:6px;
+}
+
+/* La corrección de mayor impacto — único uso del dorado en la pieza */
+.bloque-impacto{
+  background:var(--tinta);
+  color:var(--papel);
+  border-radius:10px;
+  padding:20px 22px;
+  margin-top:22px;
+  position:relative;
+}
+.bloque-impacto .num-etiqueta{ color:var(--dorado); }
+.bloque-impacto .num-etiqueta .num{ border-color:var(--dorado); color:var(--dorado); }
+.bloque-impacto h2{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:15px;
+  margin-bottom:8px;
+}
+.bloque-impacto p{ margin-bottom:0; font-size:13px; }
+.bloque-impacto .punto-final{ color:var(--dorado); }
+
+footer{
+  margin-top:26px;
+  padding-top:16px;
+  border-top:1px solid rgba(19,26,34,0.15);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.cta{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:13.5px;
+}
+.cta .punto{ color:var(--tinta); }
+.contacto{
+  font-size:11px;
+  color:var(--gris);
+  text-align:right;
+}
+.footnote{
+  font-size:9.5px;
+  color:var(--gris);
+  margin-top:14px;
+  font-style:italic;
+}
+
+@media print{
+  @page{ size:A4; margin:0; }
+  body{ width:auto; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="wordmark">SpindleLab<span class="punto">.</span></div>
+    <div class="tagline">SEO técnico · Visibilidad en IA (AEO/GEO) · Desarrollo web</div>
+  </div>
+  <div class="encabezado-derecha">
+    <div class="meta-box">
+      <div><b>Documento</b> SPL-DIAG-2026-002</div>
+      <div><b>Empresa</b> Revista Chef &amp; Hotel</div>
+      <div><b>Sitio</b> chefandhotel.cl</div>
+      <div><b>Fecha</b> 21 de julio de 2026</div>
+    </div>
+  </div>
+</header>
+
+<h1 class="titulo-doc">Mini-diagnóstico de visibilidad</h1>
+<p class="subtitulo-doc">Cómo ve Revista Chef &amp; Hotel un buscador y un motor de IA hoy — y la única corrección que más impacto tendría.</p>
+
+<section class="bloque">
+  <div class="num-etiqueta"><span class="num">1</span> Estado técnico esencial</div>
+  <div class="hallazgo">
+    <p>El sitio responde bien (HTTPS correcto, HTTP 200, sitemap completo con notas, ediciones y autores). El problema está en lo que un buscador <i>no</i> encuentra: la portada no tiene <b>meta description</b> ni etiquetas <b>Open Graph</b>, y su título es solo «Chef &amp; Hotel» —sin descriptor de rubro ni país.</p>
+    <p>Revisamos además una nota interna (Casa Bosque, sección Hotelería): tampoco tiene meta description ni Open Graph, y su único dato estructurado es <b>BreadcrumbList</b> —falta el schema <b>Article/NewsArticle</b>. En la práctica, cada artículo se comparte en redes o WhatsApp sin previsualización, y Google arma el fragmento de resultado a ciegas.</p>
+  </div>
+</section>
+
+<section class="bloque">
+  <div class="num-etiqueta"><span class="num">2</span> Visibilidad en motores de IA</div>
+  <div class="hallazgo">
+    <p>La prueba de categoría es preguntarle a ChatGPT/Perplexity/Gemini algo que un lector real haría —por ejemplo: <i>«¿cuáles son los principales medios de gastronomía y hotelería en Chile?»</i>— y ver si Chef &amp; Hotel aparece citado o si el motor recomienda a otros.</p>
+    <p>Aquí hay un riesgo concreto y medible: los motores de IA citan sobre todo fuentes que declaran <b>autor, fecha y medio</b> de forma legible por máquina. Como los artículos de Chef &amp; Hotel hoy no llevan ese marcado (ver punto 1), un archivo editorial extenso y con años de trayectoria queda difícil de atribuir —y por tanto de citar— aunque el contenido sea de calidad.</p>
+  </div>
+</section>
+
+<section class="bloque">
+  <div class="num-etiqueta"><span class="num">3</span> Señales de confianza</div>
+  <div class="hallazgo">
+    <p>Como medio, Chef &amp; Hotel tiene la materia prima de autoridad que muchos sitios no tienen: página de equipo, autores firmados, ediciones de revista y un historial largo (todo visible en el sitemap). Esa es una ventaja real frente a la competencia.</p>
+    <p>Lo que falta es <b>hacerla legible para las máquinas</b>: hoy la firma del autor y la fecha viven solo en el texto visible, no en datos estructurados. Sin ese puente, Google y los motores de IA no pueden conectar cada nota con quién la escribió ni con la trayectoria del medio —justo la señal que más pesa para ser tratado como fuente confiable.</p>
+  </div>
+</section>
+
+<div class="bloque-impacto">
+  <div class="num-etiqueta"><span class="num">4</span> La corrección de mayor impacto</div>
+  <h2>Marcar cada artículo con schema Article (autor, fecha, medio) + meta description</h2>
+  <p>Es el único cambio que convierte todo el archivo existente en contenido citable: activa previsualizaciones al compartir, fragmentos ricos en Google y —lo más valioso— vuelve a Chef &amp; Hotel una fuente atribuible para los motores de IA, sin escribir una sola nota nueva<span class="punto-final">.</span></p>
+</div>
+
+<footer>
+  <div class="cta">¿Conversamos 20 minutos, sin costo<span class="punto">?</span></div>
+  <div class="contacto">hola@spindlelab.cl · spindlelab.cl</div>
+</footer>
+
+<p class="footnote">Este documento es un diagnóstico inicial elaborado desde información pública — no reemplaza una auditoría técnica completa. Válido como fotografía del estado del sitio al 21 de julio de 2026.</p>
+
+</body>
+</html>

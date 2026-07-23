@@ -16,7 +16,9 @@ Hasta ahora, los posts de LinkedIn se producían dentro de la sesión principal 
 
 Fuente completa: `marketing/brand/manual-de-marca.md`. Lo esencial para redes:
 
-- **Anonimato del fundador — revertido 21 jul:** el perfil personal de Ramón ahora SÍ comparte y comenta posts de la página SpindleLab (regla anterior decía "nunca"; cambio decidido explícitamente por Ramón). El perfil personal tiene además un formato fijo propio para sus posts, distinto del de la página (post del 22 jul, tema "cuello de botella / clínica dental", primer ejemplo bajo ese formato — traer el detalle completo cuando esté disponible).
+- **Anonimato del fundador (actualizado 21 jul 2026):** los posts de la página los firma la marca, no una persona con nombre y apellido visible. Pero el anonimato se relajó el 12 jul, así que:
+  - El perfil personal de Ramón **sí puede publicar posts propios** que mencionen su rol en SpindleLab, con su nombre de pila (sin apellido visible ni foto real todavía). Ver `marketing/redes/2026-07-15-post-empresa-y-personal.md`.
+  - El perfil personal **sí puede compartir, comentar y reaccionar a los posts de la página** (convención nueva confirmada por Ramón el 21 jul). Sirve para darle a la página el empujón inicial de alcance/seguidores. Al compartir, el "comentario" que va arriba se escribe en su voz personal (primera persona singular).
 - **Links de LinkedIn:** van en el primer comentario del post, no en el cuerpo (convención nueva 21 jul — pendiente actualizar `plantillas/linkedin-posts.md`, que hoy todavía pone el link en el cuerpo).
 - **Acento dorado con escasez:** si se produce cualquier pieza visual (carrusel, imagen), el dorado (`#C9A227`) aparece UNA sola vez por pieza. Nunca como color de texto corrido ni en viñetas de lista.
 - **Tipografía:** Gabarito para titulares/wordmark, Inter para cuerpo de texto. Activos ya generados en `brand/redes/` y `brand/logo/`.
@@ -48,10 +50,11 @@ La regla de oro: **nunca inventar hallazgos.** Todo post basado en "encontré qu
 - **Regla de anonimato de prospectos:** se puede usar el hallazgo técnico (es genérico y educativo), pero **nunca el nombre de la empresa** sin su permiso explícito. Generalizar: "una boutique de wealth management" en vez de "Vicapital".
 - A medida que haya clientes reales con permiso de caso público (Bernardo ya lo tiene pendiente de pedir, ver `ventas/pipeline.md`), esos casos sí pueden nombrarse — Formato 5.
 
-## 5. Estado actual (15 jul 2026, snapshot al momento de escribir este encargo)
+## 5. Estado actual (actualizado 16 jul 2026 — corrige el snapshot original del 15 jul)
 
-- LinkedIn: página creada 14 jul. **Post 1 publicado** (formato 1, sobre asesoras de inversión). Posts 2 y 3 de la semana 2 están redactados y listos en `marketing/outbound/semana-02/posts-linkedin-semana-02.md`, pendientes de publicar (jueves y semana siguiente respectivamente).
-- Instagram: perfil configurado, un carrusel publicado en semana 1 (`brand/redes/carrusel-01/`). Sin cadencia activa desde entonces — a criterio del nuevo agente si retomarlo o mantenerlo en pausa mientras LinkedIn es el foco.
+- **Corrección 16 jul (confirmado por Ramón):** LinkedIn página de empresa creada 14 jul, pero **sigue sin ningún post propio**. Lo que este encargo registró como "Post 1 publicado" en realidad salió en la cuenta **personal** de Ramón, no en la página — de ahora en adelante hay que llevar el seguimiento de ambas cuentas por separado para no repetir la confusión. Posts 1, 2 y 3 de `marketing/outbound/semana-02/posts-linkedin-semana-02.md` siguen disponibles sin usar: son el inventario listo para arrancar la página.
+- Cuenta personal de Ramón: primer post propio publicado 16 jul (reflexión sobre AEO/GEO en Chile, ver `marketing/redes/2026-07-15-post-empresa-y-personal.md`), bajo la regla nueva que permite mencionar su rol en SpindleLab (actualización en `.claude/skills/persona-social-media/SKILL.md`, §Reglas de marca).
+- Instagram: perfil configurado, un carrusel publicado en semana 1 (`brand/redes/carrusel-01/`). Sin cadencia activa desde entonces — confirmado por Ramón el 16 jul que ya pasó demasiado tiempo sin publicar, retomarlo es ahora prioridad.
 
 ## 6. Cómo reportar de vuelta
 
