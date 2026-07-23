@@ -13,7 +13,8 @@ LinkedIn (canal principal, página de empresa creada 14 jul 2026) e Instagram (s
 
 ## Reglas de marca
 
-- El perfil personal de Ramón **nunca** comparte, comenta ni reacciona a posts de la página SpindleLab. Los posts los firma la marca, no una persona identificable.
+- **El perfil personal de Ramón SÍ puede compartir, comentar y reaccionar a los posts de la página SpindleLab** (convención nueva, confirmada por Ramón el 21 jul 2026). La regla vieja de "nunca compartir" venía del anonimato, que se relajó el 12 jul; ahora que Ramón puede asociarse públicamente a la marca, compartir desde su perfil personal le da a la página el empujón inicial de alcance/seguidores que más le cuesta conseguir sola. Al compartir, el "comentario" (texto que va arriba de la publicación) se escribe en su voz personal (primera persona singular). Los posts de la página los sigue firmando la marca, no la persona.
+- **Los links de LinkedIn van en el primer comentario, no en el cuerpo del post** (convención nueva 21 jul — actualizar `plantillas/linkedin-posts.md` la próxima vez que se edite, hoy todavía muestra el link en el cuerpo).
 - Dorado (`#C9A227`) solo si se produce una pieza visual, y una sola vez por pieza.
 - Gabarito para titulares, Inter para cuerpo — activos ya generados en `marketing/brand/redes/`.
 
@@ -35,7 +36,20 @@ LinkedIn (canal principal, página de empresa creada 14 jul 2026) e Instagram (s
 4. Detrás del método (autoridad sin cliente nombrado)
 5. Caso con nombre — **solo con permiso explícito**, hoy nadie lo ha dado
 
-Cadencia: 2 posts/semana (martes y jueves).
+Cadencia página de empresa: 2 posts/semana (martes y jueves).
+
+## Cuenta personal de Ramón — formato propio (definido 20 jul 2026)
+
+La cuenta personal publica ~1 post/semana, en día distinto a los de la página de empresa (por defecto miércoles). NO es reciclaje del post de empresa. Sigue esta estructura fija, en este orden:
+1. **Problema / cuello de botella del cliente** — abrir desde el lado del cliente, con un caso concreto en una categoría (ej. clínica dental de Frente B, asesora de Frente A). El caso puede ser un escenario plausible ("imagina que…"), no hace falta que sea un cliente real, pero NUNCA presentarlo como un hallazgo real inventado.
+2. **Por qué importa AHORA** — la importancia y el timing del cambio, NO cifras ni precios (Ramón: las estrofas con valores "suenan robóticas").
+3. **La solución, sin vender** — explicar la salida antes del CTA. Estrategia explícita "no vender, presentar solución".
+4. **Storytelling con arco** — escena → giro → insight → salida. Nunca lista de tips.
+5. **CTA suave a un servicio de SpindleLab** — invita a mirar/revisar, no a comprar. El cierre del primer post lo ejemplifica: "más que venderte algo, quiero que veas dónde estás parado hoy".
+
+**Errores de apertura a evitar (feedback de Ramón, 20 jul):** no abrir con "revisé el sitio de…" / "le pregunté a ChatGPT…" — esa lógica de inicio ("yo hice X") ya se repitió en varios posts y cansa. Abrir desde el problema del cliente, no desde lo que hizo Ramón. Y no meter una estrofa de precios/cifras solo para aportar un "dato"; es preferible el porqué-ahora bien contado.
+
+Primera persona singular (es cuenta personal, ya puede mencionar su rol en SpindleLab — ver §Reglas de marca). Cada borrador se guarda en `marketing/redes/AAAA-MM-DD-post-personal-linkedin.md` con la receta arriba replicada en el encabezado. Primer post aprobado de esta cadencia (buen ejemplo del formato): `marketing/redes/2026-07-22-post-personal-linkedin.md`.
 
 ## De dónde sacar contenido real
 
