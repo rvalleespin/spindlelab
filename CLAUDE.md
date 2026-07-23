@@ -17,8 +17,21 @@ Most work is **content and marketing operations**, not coding. The `contexto-age
 Several Claude Code sessions run in parallel against the same local checkout, each playing a **role defined by a skill** in `.claude/skills/`:
 
 - `agente-troncal-marketing` — the trunk/coordinator session.
-- `persona-social-media`, `persona-paid-media`, `persona-meta-ads`, `persona-disenador-web` — role personas (each encodes hard-won conventions; **read the whole skill before acting in that role**).
-- `mini-diagnostico`, `buscar-leads` — recurring task workflows.
+- `persona-social-media`, `persona-paid-media`, `persona-meta-ads`, `persona-disenador-web`, `persona-director-creativo` — role personas (each encodes hard-won conventions; **read the whole skill before acting in that role**).
+- `mini-diagnostico`, `buscar-leads`, `agente-outbound`, `agente-crm` — recurring task workflows.
+
+The full org chart of these agents (who does what, their working folder, memory, and the open vacancies) is in **`marketing/oficina/organigrama-oficina.md`**; per-agent memory lives in `marketing/oficina/memoria/`.
+
+### Skills live in TWO places — and that bites (jul 23)
+
+Every skill is duplicated: the versioned copy in `.claude/skills/` (this repo) **and** a copy in `~/.claude/skills/` (global). Consequences, learned the hard way:
+
+- **Repo-only skills are invisible outside this folder.** A skill that exists only in `.claude/skills/` won't show up in a session started anywhere else. That is why `/persona-director-creativo` seemed to "disappear". All 9 are now in both places.
+- **The two copies silently diverge.** On 23 jul the global copies of `persona-social-media` and `persona-disenador-web` still carried *superseded rules* (e.g. "the personal profile never shares page posts", reversed on 21 jul), and `persona-paid-media` had diverged in both directions. **The repo copy is the source of truth**; when in doubt, re-copy repo → global. Verify with:
+  ```bash
+  for s in .claude/skills/*/; do n=$(basename "$s"); diff -q "$s/SKILL.md" "$HOME/.claude/skills/$n/SKILL.md" >/dev/null 2>&1 || echo "DIVERGE: $n"; done
+  ```
+- **Skills are scanned once, at session startup.** A skill created or copied while a session is open will NOT appear in it — `/clear` does not rescan. Fully exit Claude Code and reopen it (or start a new session).
 
 Coordination happens through files, not chat:
 - **`marketing/encargos-otras-sesiones/`** — tasks handed from one session to another. If your work was requested by another session, the brief is here.
