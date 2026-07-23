@@ -21,6 +21,17 @@ The defining structure here is that **multiple Claude Code sessions work on this
 - `persona-paid-media` (Google Ads) / `persona-meta-ads` (Meta Ads) — paid channels. Browser access differs per session/environment (see below) — never assume one has it just because another does.
 - `persona-disenador-web` — `spindlelab-site/` and client web-dev delivery.
 - `mini-diagnostico` — generates the 1-page SEO/AI-visibility audit promised to prospects within 48h.
+- `buscar-leads`, `agente-outbound`, `agente-crm` — recurring task workflows (lead sourcing, outbound sequencing, pipeline updates).
+
+The full org chart of these agents (who does what, their working folder, memory, and open vacancies) is in **`marketing/oficina/organigrama-oficina.md`**; per-agent memory lives in `marketing/oficina/memoria/`.
+
+### Skills live in TWO places — and that bites (jul 23)
+
+Every skill is duplicated: the versioned copy in `.claude/skills/` (this repo) **and** a copy in `~/.claude/skills/` (global, local-Mac-session only). Consequences, learned the hard way:
+
+- **Repo-only skills are invisible outside this folder.** A skill that exists only in `.claude/skills/` won't show up in a session started anywhere else — this is why `/persona-director-creativo` seemed to "disappear" for one session.
+- **The two copies silently diverge.** On 23 jul the global copies of `persona-social-media` and `persona-disenador-web` still carried *superseded rules* (e.g. "the personal profile never shares page posts", reversed on 21 jul). **The repo copy (`.claude/skills/`) is the source of truth** — if a local session's behavior contradicts what's documented here, re-copy repo → global rather than trusting the global copy.
+- **Skills are scanned once, at session startup.** A skill created or copied while a session is open will not appear in it — `/clear` does not rescan; a fresh session is needed.
 
 **This is not one working tree shared by everyone** — some of these sessions run as local Claude Code CLI sessions on Ramón's Mac (in git worktrees under his iCloud Drive folder, with real browser access via a Chrome extension), others run as Claude Code Remote cloud sessions (like the trunk, no local filesystem, no browser by default). Treat any environment-specific instruction below as scoped to that kind of session, not universal — e.g. a browser-extension connection that works interactively in a local session does not survive a headless/backgrounded re-invocation of that same session, and cloud sessions can't be "given" that browser connection just by copying instructions.
 
