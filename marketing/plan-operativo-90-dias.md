@@ -34,7 +34,23 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - [x] [TÚ] **Frente C decidido: SE SUMA** como frente activo — 14 jul. Lote 1 (5 contactos) enviado el mismo día, confirmado en Gmail web. Ver `outbound/semana-02/lote-1-frente-c.md`.
 - [x] [CC] Artículo 2 — **tema cambiado**: «¿Cómo elige ChatGPT qué empresas recomendar?» ya está cubierto por el artículo publicado *«¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?»* (otra sesión). Reemplazado por **«¿Cuánto cuesta el SEO técnico en Chile?»**, aprobado y **publicado ✅ 14 jul** (la otra sesión aplicó el encargo)
 - [~] [CC] Lote semanal de 3 posts LinkedIn — **Corrección 17 jul:** el "Post 1" que se marcó publicado el 14 jul en realidad salió en la cuenta **personal** de Ramón, no en la página de empresa. **Post 2 publicado ✅ 16 jul en la página de empresa** es, en la práctica, el primer post real de la página. Post 1 y Post 3 siguen disponibles sin usar en `outbound/semana-02/posts-linkedin-semana-02.md` → [TÚ] publicar según cadencia.
-  - **Handoff 21 jul de la sesión de redes:** 4 posts nuevos escritos y con recordatorio en Calendar (21 evidencia, 23 método, 28 mito, 30 precios). **El de 21 jul (evidencia) no se publica como post orgánico — se usó como creativo para armar la campaña de Meta Ads** (ver más abajo). Pendiente confirmar si 23/28/30 son contenido nuevo o los Post 1/3 de `semana-02` reprogramados — no traído a un archivo todavía, aclarar antes de publicar.
+  - **Handoff 21 jul de la sesión de redes:** 4 posts nuevos escritos y con recordatorio en Calendar (21 evidencia, 23 método, 28 mito, 30 precios) — **confirmado en `redes/grilla-julio-2026.md`: son los Post 1/2/3 de `semana-02` reprogramados**, no contenido nuevo (queda cerrada la duda). **El de 21 jul (evidencia) no se publicó como post orgánico — se usó como creativo para la campaña de Meta Ads** (ver más abajo). Sin confirmación de publicación para 23 (hoy) — verificar con Ramón.
+  - **Calendario de agosto desarrollado ✅ 21 jul** (encargo cumplido, `redes/reporte-agosto-para-troncal.md` + texto completo en `redes/grilla-agosto-2026.md`). Tema del mes: **"Lo que la IA ve (y no ve) de tu negocio"**, 8 posts de empresa + 4 personales, evidencia real de Frente A y B (incluye el hallazgo de OPIA — robots.txt bloqueando crawlers de IA). Recordatorios ya creados en Calendar (9:00 hora Chile, 4–27 ago).
+
+    | Fecha | Canal | Formato | Ángulo |
+    |---|---|---|---|
+    | 4 ago | Empresa | Evidencia/video | robots.txt bloquea a la IA (hallazgo estrella) |
+    | 5 ago | Personal | Storytelling | reputación offline vs. lo que lee la IA |
+    | 6 ago | Empresa | Detrás del método | sitio JS que llega vacío a los bots |
+    | 11 ago | Empresa | Detrás del método | los 5 chequeos de una auditoría — **si Bernardo ya dio permiso de caso, reemplazar por Formato 5 (caso con nombre)** |
+    | 12 ago | Personal | Storytelling | colisión de marca con homónimos |
+    | 13 ago | Empresa | Detrás del método | schema genérico / fundador ausente |
+    | 18 ago | Empresa | Mito vs. realidad | rankear en Google ≠ aparecer en IA (checkpoint día 45) |
+    | 19 ago | Personal | Storytelling | checkpoint en tono de autoridad, no urgencia |
+    | 20 ago | Empresa | Evidencia | autoridad/prensa no conectada (E-E-A-T) |
+    | 25 ago | Empresa | Precios/objeciones | "¿cuánto cuesta arreglarlo?" |
+    | 26 ago | Personal | Storytelling | cierre: ser entendible > gritar más |
+    | 27 ago | Empresa | Cierre honesto | la promesa que NO hago |
   - **LinkedIn personal:** cadencia y formato fijo propio definidos 21 jul (distinto del de la página, ver `.claude/skills/persona-social-media/SKILL.md`) — primer post bajo este formato: 22 jul, tema "cuello de botella / clínica dental", pre-aprobado.
   - **Convención nueva 21 jul:** el perfil personal de Ramón ahora SÍ comparte/comenta posts de la página (antes era "nunca") — decisión explícita de Ramón, actualizada en la skill y en el encargo. Los links de LinkedIn van en el primer comentario, no en el cuerpo del post.
 - [x] [TÚ] Instagram: carrusel publicado ✅ 16 jul — retoma la cadencia tras la pausa desde semana 1
@@ -57,6 +73,12 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - Permiso de caso público de Bernardo: se acordó pedirlo ahora (al iniciar Fase 1), no esperar a la entrega — evita repetir la espera de SimpleTrust.
 
 **Seguimiento 21 jul (mismo día, tras confirmar con Ramón):** Apollo pagado ✅ contratado. Frente B con lanzamiento activo (Ramón trabajando en la sesión dedicada de Apollo). Meta Pixel: en implementación, despliegue a `spindlelab-site/` a pedir/cerrar esta semana. Bandeja de hola@spindlelab.cl: 0 respuestas, reconfirmado.
+
+**Primeros contactos reales 21 jul (fuera del flujo de outbound frío de Frente A/B/C):**
+- **Revista Chef & Hotel** — contacto directo (URL entregada por Ramón), mini-diagnóstico SPL-DIAG-2026-002 listo, **aún sin enviar** → agregado en `ventas/pipeline.md`, etapa "Contactado". Regla de 48h corre desde el 21 jul.
+- **Clínica Dental Augusto Leguía** — mini-diagnóstico SPL-DIAG-2026-001 generado, pero **no está registrado en `ventas/pipeline.md`** ni quedó claro si hubo un contacto/respuesta real o si se preparó de forma preventiva. Aclarar con Ramón antes de tratarlo como lead.
+
+**Nuevo piloto de prospección en frío (`ventas/pipeline-prospeccion.md`, decidido 9 jul, comiteado recién el 22 jul):** dimensiona el mercado chileno de finanzas/legal/consultoría (11-200 empleados, ~2.750 empresas) vía Apollo, y explora aparte el sub-nicho de oftalmología (SSL vencido en 2/2 sitios muestreados — fricción máxima). **Se superpone con Frente A** (asesoras/wealth ya es el mismo segmento) y agrega oftalmología como nicho nuevo fuera del alcance actual de Frente B (solo dental/estética). Sin contactos enviados todavía (tabla de seguimiento vacía) — aclarar con Ramón si esto reemplaza/complementa a Frente A o es un esfuerzo duplicado antes de activarlo.
 
 ### Semana 4 (28 jul–3 ago)
 - [ ] [TÚ] **Régimen pleno: 50 contactos/semana** repartidos entre frentes según respuesta ← **hecho = avanzamos**
