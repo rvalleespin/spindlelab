@@ -4,76 +4,68 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo actually is
 
-This is **not a software project** — it is the operations repository for **SpindleLab**, a solo consultancy (SEO técnico + visibilidad en motores de IA / AEO/GEO) run by Ramón for Chilean B2B and YMYL companies. It holds three distinct things:
+This is **not a software project** — it is the operations repository for **SpindleLab**, a solo consultancy (SEO técnico + visibilidad en motores de IA / AEO/GEO) run by Ramón Vallejos Espíndola for Chilean B2B and YMYL companies. It holds three distinct things:
 
 - **`spindlelab-site/`** — the public marketing website (static HTML, deployed to Cloudflare Pages).
 - **`marketing/`** — the brand system, 90-day strategy, content production (LinkedIn/Instagram), cold-outbound material, and cross-session coordination docs.
-- **`ventas/`** — sales pipeline and client-delivery playbooks (the separate "Desarrollo Web" service line; the actual client site code lives in a sibling repo `PORTAFOLIO/`, not here).
+- **`ventas/`** — sales pipeline (`pipeline.md`) and delivered-project tracking (`proyectos-en-curso.md` — deliberately a separate document: pipeline tracks a prospect until won/lost, proyectos-en-curso tracks delivery phases of an already-won project). The "Desarrollo Web" client-site work itself (e.g. Bernardo Combeau's site) is reported to live in a sibling repo, not here.
 
-Most work is **content and marketing operations**, not coding. The `contexto-agente-spindlelab.md` at the root is the founding brief; read it plus `marketing/brand/manual-de-marca.md` before producing anything public.
+Most work is **content and marketing operations**, not coding. `contexto-agente-spindlelab.md` at the root is the founding brief; read it plus `marketing/brand/manual-de-marca.md` before producing anything public. `marketing/estrategia-marketing-spindlelab.md` is the strategy itself — §8 defines the day-30/45/60 decision checkpoints and kill-criteria for paid channels; `marketing/como-ejecutar.md` is the original operating manual and explains the `marketing/` subfolder conventions (`listas/`, `outbound/semana-XX/`, `diagnosticos/`, `metricas/`, `articulos/`).
 
-## Multiple Claude Code sessions share this working tree
+## Architecture: a trunk session + specialized persona sessions, running in different environments
 
-Several Claude Code sessions run in parallel against the same local checkout, each playing a **role defined by a skill** in `.claude/skills/`:
+The defining structure here is that **multiple Claude Code sessions work on this repo in parallel, in genuinely different environments**, each playing a role defined by a skill in `.claude/skills/`:
 
-- `agente-troncal-marketing` — the trunk/coordinator session.
-- `persona-social-media`, `persona-paid-media`, `persona-meta-ads`, `persona-disenador-web` — role personas (each encodes hard-won conventions; **read the whole skill before acting in that role**).
-- `mini-diagnostico`, `buscar-leads` — recurring task workflows.
+- `agente-troncal-marketing` — the trunk/coordinator. The **only** session meant to write the shared tracking docs (`marketing/plan-operativo-90-dias.md`, `ventas/pipeline.md`, the outbound trackers). Runs in the cloud (Claude Code Remote).
+- `persona-social-media`, `persona-director-creativo` — LinkedIn/Instagram content and visual production (carousels, Reels, Stories, banners).
+- `persona-paid-media` (Google Ads) / `persona-meta-ads` (Meta Ads) — paid channels. Browser access differs per session/environment (see below) — never assume one has it just because another does.
+- `persona-disenador-web` — `spindlelab-site/` and client web-dev delivery.
+- `mini-diagnostico` — generates the 1-page SEO/AI-visibility audit promised to prospects within 48h.
 
-Coordination happens through files, not chat:
-- **`marketing/encargos-otras-sesiones/`** — tasks handed from one session to another. If your work was requested by another session, the brief is here.
-- **`marketing/plan-operativo-90-dias.md`** — the tracked week-by-week plan (`[x]`/`[~]`/`[ ]` per task, dated). Report finished work back here / via a handoff file so the trunk can register it.
-- Because sessions share the tree, **`git fetch` and check `git status` / `git stash list` before assuming state** — another session may have committed or moved things since you last looked.
+**This is not one working tree shared by everyone** — some of these sessions run as local Claude Code CLI sessions on Ramón's Mac (in git worktrees under his iCloud Drive folder, with real browser access via a Chrome extension), others run as Claude Code Remote cloud sessions (like the trunk, no local filesystem, no browser by default). Treat any environment-specific instruction below as scoped to that kind of session, not universal — e.g. a browser-extension connection that works interactively in a local session does not survive a headless/backgrounded re-invocation of that same session, and cloud sessions can't be "given" that browser connection just by copying instructions.
 
-## Git workflow (important, non-obvious)
+**Coordination happens through committed files, not shared memory:**
+- **`marketing/encargos-otras-sesiones/`** — tasks or reports handed from one session to another (e.g. a paid-media review the trunk needs to reconcile). If your work was requested by or is meant for another session, look here first.
+- **`marketing/plan-operativo-90-dias.md`** — the week-by-week plan (`[x]`/`[~]`/`[ ]`, `[CC]` vs `[TÚ]` per task). Specialized sessions report progress via a handoff document; only the trunk edits this file directly, and only after verifying the report (see next point).
+- **Never accept another session's "ya está hecho" without verifying it.** This protocol exists because of a real incident (17-20 jul): two sessions edited the plan and an outbound tracker in parallel without syncing, producing a contradictory record about which LinkedIn account a post went out on. If a claim rests on a commit, read the actual diff (`git show`/`git log`), not just the message; if it rests on external state (a live site, an ad account, a social post), ask for a screenshot or other verifiable evidence before recording it as fact.
+- Before editing a shared tracking doc, sync first: `git fetch origin main && git diff origin/main HEAD -- marketing/plan-operativo-90-dias.md ventas/pipeline.md`.
 
-- **`git push` does not work from the Bash tool** in this environment (Keychain credential unreachable). Do not retry it — walk Ramón through **GitHub Desktop** instead (he has it installed, signed in as `rvalleespin`).
-- **GitHub Desktop auto-stashes everything (tracked + untracked) when switching branches.** Untracked files "vanish from disk" but are recoverable: check `git stash list`, then `git stash apply` (not `pop`, so the stash survives a redo). A stale `stash@{0}: On main: !!GitHub_Desktop<main>` currently holds old cruft (`bernardo-site/`, `RRSS/`) — **do not pop it**, it would re-add folders that were intentionally removed.
-- **Verify `git diff --cached --stat` right before any commit** — the index can already hold unrelated staged changes from before your session (deleted files, other sessions' work).
-- Direct-to-`main` pushes are this repo's actual norm (per commit history), not PR review, unless Ramón asks for a review step. Marketing work historically lived on `claude/spindlelab-marketing-strategy-v98w8h` but is periodically merged to `main`.
+## Git workflow
 
-## Environment gotchas (this checkout lives in iCloud Drive)
-
-- The repo path is under `~/Library/Mobile Documents/com~apple~CloudDocs/` (iCloud Drive). This causes real problems:
-  - **The Browser-pane preview/dev-server tools cannot read files here** (`Operation not permitted`). Use plain `python3 -m http.server` via Bash for local serving; the in-app preview will fail on iCloud paths.
-  - The browser `file_upload` tool only accepts files the browser session already shares — a locally-generated file at an iCloud path is rejected. Uploads to sites (e.g. a Facebook cover) must be done by Ramón, or the file attached to chat first.
-  - iCloud "Optimize Mac Storage" can evict file contents to `dataless` stubs; `brctl download <path>` or simply reading the file re-materializes it.
-  - iCloud sync also creates conflict duplicates named `"<name> 2.ext"` / `"<dir> 2/"` (visible throughout, e.g. `spindlelab-site/blog 2/`, `README 2.md`). These are junk, not intentional variants — ignore them and clean up when safe.
-- `gh` CLI is not installed. Clone/fetch with plain `git` + the HTTPS URL.
+- Feature branches are named `claude/<description>`. **Use `merge_method: "merge"` when merging a PR, not squash** — squashing has repeatedly broken git ancestry here and caused spurious "added in both" conflicts on later PRs touching the same files.
+- Never merge a PR without the user explicitly confirming in that same turn.
+- Sessions have lost work to unpushed local commits before (a branch or commit another session references may not actually be on `origin` — verify with `git ls-remote`/the GitHub API rather than assuming, especially if a `git fetch` for it comes back empty).
+- **Local Mac sessions specifically** have hit `git push` failing from their Bash tool (Keychain credential unreachable) — GitHub Desktop or the user's own terminal (with his credentials) works there instead. This is not a general repo rule; a cloud session's Bash `git push` works normally.
 
 ## Commands
 
-There is **no build, lint, or test suite** — the site is hand-written static HTML with inline/linked CSS, no framework, no build step.
+There is **no build, lint, or test suite** — `spindlelab-site/` is hand-written static HTML with inline/linked CSS, no framework, no package.json.
 
-- **Preview the public site locally** (config in `.claude/launch.json`):
-  ```
-  python3 -m http.server --directory spindlelab-site 8000
-  ```
-- **Render a brand/social asset (HTML → PNG)** — the standard production pipeline for carousels, Reels, Stories, banners. Each asset lives in its own folder with `Gabarito.woff2` + `inter.woff2` copied in and referenced relatively:
-  ```
-  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu --hide-scrollbars \
-    --force-device-scale-factor=1 --window-size=1080,1920 \
-    --screenshot="<abs-path>/out.png" "file://<abs-path>/in.html"
-  ```
-  Feed sizes: 1080×1080 (carousel/feed), 1080×1920 (Reel/Story). Add `--default-background-color=00000000` for **transparent overlays** (verify alpha: PNG color-type byte should be 6).
-- Video b-roll for Reels is generated via the Higgsfield MCP; there is **no `ffmpeg`** locally, so text cannot be composited onto video here — deliver clips + transparent text overlays for the user to assemble in CapCut.
+- **Preview the site locally:** serve the folder with any static server, e.g. `python3 -m http.server --directory spindlelab-site 8000`.
+- **Verify a visual/site change before calling it done:** render with headless Chromium rather than trusting the markup by eye.
+  - In this cloud environment: `find /opt/pw-browsers -iname "chrome"` to locate the binary, then run with `--headless --no-sandbox --disable-gpu --screenshot=...`.
+  - In a local Mac session: the real Chrome binary works the same way (`/Applications/Google Chrome.app/Contents/MacOS/Google Chrome --headless=new --disable-gpu --screenshot=...`).
+- **Render a brand/social asset (HTML → PNG)** — the production pipeline for carousels, Reels, Stories, banners: each asset lives in its own folder with `Gabarito.woff2` + `inter.woff2` copied alongside and referenced relatively, then screenshotted at 1080×1080 (feed) or 1080×1920 (Reel/Story). Add a transparent background flag for overlay assets and verify the output actually has an alpha channel.
+- Video b-roll is generated via the Higgsfield MCP; there's no local video compositor, so text overlays are delivered as separate transparent PNGs for assembly in CapCut rather than baked into the clip.
+- **Deploy** is Cloudflare Pages connected to this repo's `main` branch — pushing to `main` is what ships the site.
 
 ## The public site (`spindlelab-site/`)
 
-- Single-file HTML pages (`index.html` per route), Spanish (es-CL), deployed by drag-and-drop / Git to Cloudflare Pages. `_headers` sets the cache policy.
-- **Cache-poisoning trap:** assets served `immutable` (fonts) or long-lived are cached hard by the CDN/browser. When you overwrite `style.css`, `favicon.svg`, `og.jpg`, or an image at the same path, bump a version query string (`?v=N`) on every reference, and after a deploy wait ~20-30s before first-checking a freshly versioned URL (a CDN node in transition can "burn" a `?v=N`; go to `?v=N+1`, don't retry the same).
-- Blog-post structure and the required JSON-LD (`@graph`: Article + BreadcrumbList + FAQPage, fixed author `#autor-ramon`), meta-tag rules, and "publishing a post updates three places (the file, `blog/index.html`, `sitemap.xml`)" are all specified in the `persona-disenador-web` skill — follow it for any site edit.
+- One HTML file per route, Spanish (es-CL). `_headers` sets cache policy (fonts/images cached hard and long).
+- **Cache-poisoning trap:** because assets are cached aggressively, overwriting a CSS/image/favicon at the same path needs a bumped version query string (`?v=N`) on every reference, or visitors and even your own checks can keep seeing the stale asset.
+- Blog posts need the same `@graph` JSON-LD (Article + BreadcrumbList + FAQPage, fixed author `#autor-ramon`) and meta-tag structure as existing posts, and publishing one updates three places: the new file, the card in `blog/index.html`, and `sitemap.xml`. Full detail in `.claude/skills/persona-disenador-web/SKILL.md`.
 
 ## Brand & content rules (non-negotiable)
 
-Source of truth: `marketing/brand/manual-de-marca.md` (currently v1.3). The persona skills restate the operational parts. Key rules that are easy to get wrong:
+Source of truth: `marketing/brand/manual-de-marca.md`. Rules easy to get wrong:
 
-- **Voice:** first-person **singular** for observational/evidential claims ("le pregunté a ChatGPT", "revisé el sitio"); first-person **plural** for what the business delivers ("entregamos", "lo revisamos"). Personal LinkedIn account is always singular.
-- **Gold accent (`#C9A227`) is scarce:** exactly **one** gold use per visual piece (usually the wordmark's final dot). Never gold in body text, bullets, or backgrounds.
-- **Typography:** Gabarito (headlines/wordmark), Inter (body). Wordmark is `SpindleLab.` with the final dot always gold.
-- **Zero fabricated social proof** — no invented client counts, testimonials, stats, or case studies. Content is built only from *real* audit findings (see `marketing/outbound/semana-*/lote-*.md`), and prospect companies are **generalized, never named** without explicit permission.
-- **Everything public gets a human review pass before publishing** — the brand sells expert judgment; AI-smelling copy is anti-credibility here. No em-dash used as an impact crutch (the most common tell).
+- **Voice:** first-person singular for observational claims ("le pregunté a ChatGPT", "revisé el sitio"); first-person plural for what the business delivers ("entregamos"). The personal LinkedIn account is always singular.
+- **Gold accent (`#C9A227`) is scarce:** exactly one gold use per visual piece (usually the wordmark's final dot). Never in body text, bullets, or backgrounds.
+- **Typography:** Gabarito (headlines/wordmark), Inter (body).
+- **Zero fabricated social proof.** Content is built only from real audit findings (`marketing/outbound/semana-*/lote-*.md`); prospect companies are generalized, never named without explicit permission.
+- **No em-dash used as an impact crutch** — the most common AI-writing tell, and specifically flagged as such in this project's own tone rules.
+- Everything public gets a human review pass before publishing — nothing generated is sent or posted straight from a draft.
 
 ## `.gitignore` note
 
-`.claude/*` is ignored **except `.claude/skills/`** (skills are versioned and shared across sessions). `COTIZACIONES/`, `LOGOS/`, and a couple of personal notes are also ignored. A new `CLAUDE.md` at the root is tracked normally.
+`.claude/*` is ignored **except `.claude/skills/`** (skills are versioned and shared across sessions/environments on purpose). A few personal/local files (`COTIZACIONES/`, `LOGOS/`, some personal notes) are also ignored.
