@@ -18,6 +18,8 @@ No tienes acceso a navegador. Guías a Ramón paso a paso: le dices exactamente 
 
 **Por qué lo recurrente/programado NO usa navegador (nota 23 jul):** existe una sesión local de Claude Code en el Mac de Ramón con conexión a Chrome vía extensión (mismo mecanismo que `/persona-meta-ads`). Se probó resumirla en modo headless (`claude -p --resume`) para automatizar la revisión sin depender de Ramón, y **la conexión al navegador se cae**: la extensión necesita una ventana de Chrome abierta e interactiva, no sobrevive una ejecución en segundo plano. Conclusión: la revisión semanal automática (Routine) se queda en modo guiado; el trabajo con navegador real solo pasa cuando Ramón abre esa sesión local él mismo.
 
+**Actualización 23 jul:** en la sesión equivalente de Meta Ads sí funcionó `CronCreate` (programa el siguiente disparo dentro de la misma sesión, sin reiniciarla, así que Chrome no se desconecta) — condicionado a que la ventana quede abierta y a reprogramar el job cada 7 días. Vale la pena probarlo también acá con el mismo patrón, en vez de descartar del todo la automatización con navegador.
+
 ### Modo con navegador (solo sesión local que abre Ramón) — Claude en Chrome
 Cuando la sesión SÍ tiene navegador (`mcp__claude-in-chrome__*`, usa el Chrome real de Ramón con sus sesiones iniciadas), la regla dura es la separación entre leer y escribir:
 
@@ -45,12 +47,12 @@ Campaña activa desde el 14 jul 2026 (ver `marketing/plan-operativo-90-dias.md`,
 - Presupuesto: $1.500 CLP/día (~$45k/mes).
 - 4 keywords en frase exacta: «auditoría SEO», «consultor SEO técnico», «aparecer en ChatGPT empresa», «SEO clínicas dentales».
 - Display y Socios de búsqueda desactivados explícitamente.
-- 6 sitelinks configurados (subió de 4 a 6 el 20 jul: se sumaron "Desarrollo Web" y "Visibilidad en IA", ambos con UTM propio).
+- **7 sitelinks asociados** (actualizado 23 jul — cubren los 4 servicios reales: Auditoría SEO Técnica, Nuestro Método, Blog Técnico, Servicios, Visibilidad en IA, Desarrollo Web, Acompañamiento Mensual. "Visibilidad en IA" y "Desarrollo Web", creados el 20 jul, nunca se habían asociado a la campaña hasta el 23 jul — existían en la biblioteca pero no servían).
 - URL final con UTM: `utm_source=google&utm_medium=cpc&utm_campaign=auditoria-seo`.
 - Conversión: `generate_lead` importada desde GA4 (categoría "Enviar formulario de clientes potenciales", fuente "Spindlelab Consultoria", marcada Principal), 14 jul 2026.
-- Calidad del anuncio responsivo: **Excelente** (subió de "Promedio" el 20 jul, agregando títulos que faltaban para 2 keywords y diversificando el mensaje — el puntaje sube por diversidad temática, no por repetir "gratis/48h/diagnóstico" en todos los títulos).
+- **Calidad del anuncio responsivo: "Buena"** (actualizado 23 jul — bajó a "Promedio" porque 4 títulos del 20 jul no habían quedado guardados; se recuperó a "Buena" con 6 títulos nuevos, 15 en total. Sumar sitelinks casi no mueve este puntaje — depende sobre todo de diversidad de títulos/descripciones. "Excelente" sigue sin lograrse).
 - 1 palabra clave negativa activa: `"seoptimer"` (herramienta de la competencia, concordancia de frase, agregada 20 jul).
-- Nivel de optimización de la cuenta: 91,9% (subió de 82,7% el 20 jul).
+- Nivel de optimización de la cuenta: 94% (23 jul; era 91,9% el 20 jul).
 
 ### Cambios del 20 jul 2026 (historial)
 - Anuncio responsivo llevado de calidad "Promedio" a **"Excelente"**: se agregaron títulos que faltaban para las keywords «consultor SEO técnico» y «SEO clínicas dentales» (no tenían ninguno), más un ángulo de dolor y uno con verbo de acción. Las 4 descripciones ya estaban óptimas y no se tocaron. Lección: el puntaje no sube por **cantidad** de títulos sino por **diversidad temática** (había 4 títulos repitiendo "gratis/48h/diagnóstico").
