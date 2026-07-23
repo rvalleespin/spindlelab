@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); }
+@font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:100 900; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1080px; height:1080px; overflow:hidden; font-family:'Inter',sans-serif; }
+.post { width:1080px; height:1080px; position:relative; display:flex; flex-direction:column; }
+.split { flex:1; display:flex; }
+.col { flex:1; position:relative; overflow:hidden; }
+.pad { position:relative; z-index:2; height:100%; padding:70px 60px; display:flex; flex-direction:column; }
+.photo { position:absolute; inset:0; z-index:0; background:url('bg.png') center/cover; }
+.veil-paper { position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(247,245,240,0.88) 0%, rgba(247,245,240,0.55) 45%, rgba(247,245,240,0.28) 100%); }
+.label { font-size:22px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; }
+.coltitle { font-family:'Gabarito'; font-weight:600; font-size:46px; line-height:1.15; letter-spacing:-0.5px; margin-top:20px; }
+.mono { font-family:'Inter'; font-size:26px; line-height:1.7; margin-top:auto; }
+.code { color:#8A93A0; }
+.err { color:#F7F5F0; background:#5D6673; display:inline-block; padding:3px 12px; border-radius:6px; font-weight:600; margin-top:6px; }
+.foot { background:#131A22; color:#F7F5F0; padding:56px 70px; display:flex; flex-direction:column; gap:14px; }
+.footline { font-family:'Gabarito'; font-weight:600; font-size:44px; line-height:1.2; letter-spacing:-0.5px; }
+.wmrow { display:flex; justify-content:space-between; align-items:flex-end; }
+.wm { font-family:'Gabarito'; font-weight:600; font-size:34px; }
+.pt { color:#C9A227; }
+.dom { font-size:22px; color:#8A93A0; }
+</style></head><body>
+<div class="post">
+  <div class="split">
+    <div class="col">
+      <div class="photo"></div>
+      <div class="veil-paper"></div>
+      <div class="pad" style="color:#131A22;">
+        <span class="label" style="color:#5D6673;">Lo que ve una persona</span>
+        <div class="coltitle">Un sitio ordenado, bonito, rápido.</div>
+      </div>
+    </div>
+    <div class="col" style="background:#131A22;">
+      <div class="pad" style="color:#F7F5F0;">
+        <span class="label" style="color:#8A93A0;">Lo que lee una máquina</span>
+        <div class="coltitle" style="color:#F7F5F0;">Etiquetas, estructura... o nada.</div>
+        <div class="mono">
+          <div class="code">&lt;title&gt; (vacío)</div>
+          <div class="code">&lt;meta description&gt; —</div>
+          <div class="code">datos estructurados: 0</div>
+          <div class="err">HTTP 403 · acceso denegado</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="footline">Tu sitio puede verse impecable y ser ilegible para la IA al mismo tiempo.</div>
+    <div class="wmrow">
+      <div class="wm">SpindleLab<span class="pt">.</span></div>
+      <div class="dom">Mini-diagnóstico gratis · spindlelab.cl</div>
+    </div>
+  </div>
+</div>
+</body></html>
