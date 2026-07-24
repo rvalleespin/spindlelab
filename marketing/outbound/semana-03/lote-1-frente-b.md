@@ -4,7 +4,9 @@
 
 **Nota sobre el alcance:** el pedido original era acotado a los 10 primeros priorizados de `listas/frente-b-dental-estetica.md` (marca personal del fundador + comunas premium). Apollo devolvió una búsqueda más amplia: solo 3 de esos 10 vinieron (Zaror, Terré, Beladent) y los otros 7 no aparecen; a cambio llegaron ~37 clínicas nuevas fuera de la lista semilla, varias en comunas fuera del perfil de ticket alto original (Peñaflor, Melipilla, Maipú, Quilicura, La Florida, Pedro Aguirre Cerda, Calama, Talagante). **Decisión (Ramón, 21 jul): usar los 42 tal cual** — se prioriza el envío por señal de decisor (fundador/dueño + comuna premium primero) sin excluir a nadie del lote.
 
-**Regla de calentamiento:** dominio `hola@spindlelab.cl` ya tiene historial de envío (20 emails entre Frente A y C desde el 10 jul) — se puede enviar en tandas más grandes que las de Frente A (5), pero igual por tandas, no los 42 de una vez. Tanda 1 = 8.
+**Regla de calentamiento:** dominio `hola@spindlelab.cl` ya tiene historial de envío (20 emails entre Frente A y C desde el 10 jul) — se puede enviar en tandas más grandes que las de Frente A (5), pero igual por tandas, no los 42 de una vez. Tanda 1 = 7 (Huinganal salió a 2ª ola por dominio catch-all — decisión Ramón, 23 jul 2026).
+
+**Estado (23 jul 2026):** 7 correos de Tanda 1 listos para envío manual desde `hola@spindlelab.cl` (Gmail web — la herramienta de Gmail de la sesión apunta a la cuenta personal, no a hola@). Tope semanal confirmado: nos quedamos en la Tanda 1 esta semana (no llegar a 15). Pendiente: confirmación de envío de Ramón para marcar la columna "Enviado".
 
 ## Antes de enviar — proceso por prospecto
 
@@ -23,7 +25,7 @@
 | 5 | Alberto Rosenberg | Clínica Dental Alberto Rosenberg | alberto@clinicarosenberg.com | Las Condes | 1 | |
 | 6 | Claudia Avaria | Clínica Avaria | claudia@clinicaavaria.cl | Providencia | 1 | |
 | 7 | Francisca Daza | Clínica OPIA (estética) | fdaza@clinicaopia.cl | Las Condes | 1 | |
-| 8 | Juan Pablo Sepúlveda Olmos | Clínica Huinganal (cirugía/estética) | jpablo.sepulveda@clinicahuinganal.cl | Lo Barnechea | 1 | |
+| 8 | Juan Pablo Sepúlveda Olmos | Clínica Huinganal (cirugía/estética) | jpablo.sepulveda@clinicahuinganal.cl | Lo Barnechea | 2a ola | ⚠️ CATCH-ALL |
 | 9 | Doris Alarcón | Clínica Santiago Estética | d.alarcon@clinicasantiagoestetica.cl | Santiago | 2 | |
 | 10 | Sergio Correa Bengochea | Bollëk Dental Studio | sergio@bollek.cl | Santiago | 2 | |
 | 11 | Andrés Reyes Nannig | SmileBoost | andres@smileboost.cl | Santiago | 2 | |
@@ -58,11 +60,11 @@
 | 40 | Jaime Acuña | Clínica R-nueva | jaime.acuna@r-nueva.cl | Providencia | 2a ola | ⚠️ CATCH-ALL |
 | 41 | Sylvia Salas | Clínica Syal | dra.sylviasalas@clinicasyal.cl | Las Condes | 2a ola | ⚠️ CATCH-ALL |
 
-*(Fila 42 del CSV era un header de tanda, no un contacto nuevo — quedan 41 contactos reales repartidos en tanda 1 (8), tanda 2 (10), tanda 3 (14) y 2ª ola de dominios catch-all (7).)*
+*(Fila 42 del CSV era un header de tanda, no un contacto nuevo — quedan 41 contactos reales repartidos en tanda 1 (7), tanda 2 (10), tanda 3 (14) y 2ª ola de dominios catch-all (8, incluye Huinganal reubicado el 23 jul).)*
 
 ---
 
-## Tanda 1 — 8 contactos (enviar primero)
+## Tanda 1 — 7 contactos (enviar primero)
 
 ### 1. Dra. Giselle Zaror — clinicadrazaror.cl
 **Decisora:** Dra. Giselle Zaror (Directora/Fundadora) — confirmada en el CSV, `dra@clinicadrazaror.cl`.
@@ -184,7 +186,9 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 
 ---
 
-### 8. Juan Pablo Sepúlveda Olmos — clinicahuinganal.cl
+### (Reubicado a 2ª ola — dominio catch-all) Juan Pablo Sepúlveda Olmos — clinicahuinganal.cl
+**⚠️ NO enviar en Tanda 1.** El CSV marca clinicahuinganal.cl como CATCH-ALL: Apollo no puede confirmar que la casilla exista, y un rebote en pleno warm-up daña la reputación del dominio. Decisión Ramón (23 jul 2026): va con la 2ª ola junto a los otros catch-all, monitoreando rebotes. El borrador de abajo queda listo para cuando llegue esa ola.
+
 **Decisor:** Juan Pablo Sepúlveda Olmos (Socio - Gerente General) — confirmado en el CSV, `jpablo.sepulveda@clinicahuinganal.cl`.
 **Hallazgo verificado:** el sitio tiene blog activo (contenido real, no de relleno) pero **cero datos estructurados** (sin JSON-LD) y sin meta description en la portada. Hay inversión real en contenido que no está empaquetada en el formato que los motores de búsqueda e IA necesitan para entenderlo y citarlo.
 
@@ -203,4 +207,4 @@ SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 ## Pendiente
 
 - **Tanda 2 (contactos 9-18)** y **tanda 3 (19-34)**: mismo proceso de verificación técnica antes de redactar — no enviar sin el hallazgo real de cada sitio.
-- **2ª ola (dominios catch-all, 35-41):** enviar solo después de las tandas 1-3, y monitorear rebotes de cerca — Apollo no puede confirmar que estas casillas existen de verdad.
+- **2ª ola (dominios catch-all, 35-41 + Huinganal):** enviar solo después de las tandas 1-3, y monitorear rebotes de cerca — Apollo no puede confirmar que estas casillas existen de verdad.

@@ -9,13 +9,17 @@ Formato: 1 lámina, 1080×1080, plantilla tipográfica de la marca (`brand/redes
 Archivo: `brand/redes/post-2026-07-24/post.png`
 
 **Copy del post:**
-> Le pregunté a ChatGPT por una asesora de inversiones en Chile. Recomendó tres. Las tres se parecían en algo: una página que un motor de IA puede leer sin problemas.
+> Le preguntamos a ChatGPT por una asesora de inversiones en Chile. Recomendó tres. Las tres se parecían en algo: una página que un motor de IA puede leer sin problemas.
 >
 > No es casualidad. Estos modelos no citan al que más gasta en marketing. Citan al que pueden entender.
+>
+> Abre tu sitio y mira el título de la portada. ¿Dice a qué te dedicas, o solo el nombre de la empresa?
 >
 > spindlelab.cl
 >
 > #SEO #InteligenciaArtificial #InversionesChile #Chile
+
+**Corrección 23 jul:** la pieza y el copy estaban en 1ª persona singular ("LO QUE ENCONTRÉ / Le pregunté"), escritos antes de la decisión de voz de marca del 23 jul. Se reescribieron en plural y el PNG se volvió a renderizar.
 
 ---
 

@@ -1,12 +1,18 @@
 # Grilla de publicación — agosto 2026 (LinkedIn + Instagram)
 
+> **Para programar, usa `calendario-carga-jul-ago-2026.md`** (23 jul): mismo copy, más hora, canal,
+> archivo de la pieza y primer comentario de cada publicación. Esta grilla queda como el documento
+> donde se razonó el mes (fuentes, formatos, condicionales a vigilar).
+
 **Armada:** 21 jul 2026, desarrollando el encargo `encargos-otras-sesiones/tema-mensual-agosto-linkedin.md`.
 **Tema del mes:** **"Lo que la IA ve (y no ve) de tu negocio."** Hilo narrativo del ángulo de siempre (SEO técnico + visibilidad en IA), sostenido con evidencia real acumulada de las auditorías de Frente A (financiero, 15) y Frente B (dental/estética, tanda 1).
 **Hallazgo estrella del mes:** una clínica de estética cuyo `robots.txt` bloquea explícitamente a los rastreadores de ChatGPT, Claude, Gemini, Perplexity y Meta AI (probable default de Cloudflare "Block AI Bots" activado sin evaluar el efecto). Generalizable sin nombrar la empresa.
 **Cadencia:** página de empresa 2/semana (martes y jueves) + cuenta personal 1/semana (miércoles). Total agosto: 8 empresa + 4 personal = 12 posts.
 **Estado:** texto completo desarrollado, pendiente revisión de Ramón. Recordatorios en Google Calendar (9:00 hora Chile).
 
-**Reglas aplicadas:** sin guion largo como muletilla · voz de marca (1ª persona singular para lo observacional "revisé/le pregunté", plural/impersonal para la oferta "revisamos/mini-diagnóstico gratis") · personal siempre en 1ª persona singular · cero prueba social o cifra inventada (los agregados tipo "más de 20 sitios" son reales) · anonimato de prospectos (hallazgo sí, nombre no) · link de LinkedIn al primer comentario, no en el cuerpo.
+**Pasada de ganchos (23 jul, `/persona-social-media`):** los 8 posts de empresa quedaron sincronizados con el sistema de `estrategia-ganchos-agosto.md`. Tres cambios en cada uno: (1) la primera línea es ahora el gancho, porque LinkedIn corta en dos líneas y antes el gancho llegaba en la tercera; (2) el cierre es una acción de fricción cero que el lector puede hacer solo, no una moraleja; (3) el copy se cotejó contra el texto de la pieza gráfica para que no se contradigan. Los cuatro posts personales no se tocaron: son cuenta personal y siguen su propia receta.
+
+**Reglas aplicadas:** sin guion largo como muletilla · voz de marca: **la página de empresa habla siempre en plural** ("revisamos/encontramos") — decisión de Ramón del 23 jul 2026, reemplaza la regla anterior de 1ª persona singular para lo observacional · personal siempre en 1ª persona singular · cero prueba social o cifra inventada (los agregados tipo "más de 20 sitios" son reales) · anonimato de prospectos (hallazgo sí, nombre no) · link de LinkedIn al primer comentario, no en el cuerpo.
 
 ---
 
@@ -15,13 +21,17 @@
 ### Mar 4 ago · LinkedIn empresa · Formato 1 (evidencia) — pensado como video/Reel corto
 **Fuente:** hallazgo estrella (robots.txt bloqueando crawlers de IA, Frente B).
 
-> Revisé el sitio de una clínica y encontré algo que no esperaba: su propio sitio le estaba diciendo a ChatGPT que no lo leyera.
+> ¿Sabías lo que le pasa a una clínica cuando su propio sitio le pide a ChatGPT que no la lea?
 >
-> En el archivo que controla qué robots pueden entrar (el robots.txt), estaban bloqueados uno por uno los rastreadores de ChatGPT, Claude, Gemini y Perplexity. Casi seguro sin querer, un ajuste de seguridad activado por defecto.
+> Nada. Y ese es exactamente el problema: para ese sistema deja de existir.
 >
-> El resultado es el mismo de todos modos: por muy buena que sea la clínica, para esos sistemas no existe.
+> Nos pasó revisando el sitio de una clínica. En el archivo que controla qué robots pueden entrar (el robots.txt) estaban bloqueados uno por uno los rastreadores de ChatGPT, Claude, Gemini y Perplexity. Casi seguro sin querer: es un ajuste de seguridad que viene activado por defecto en varios servicios.
 >
-> Lo que la IA ve de tu negocio empieza por lo que tu sitio le deja ver. Este mes voy a mostrar, con casos reales, la diferencia entre las dos cosas.
+> El resultado es el mismo igual. Por muy buena que sea esa clínica, cuando un paciente le pregunta a la IA por su comuna, ella no aparece.
+>
+> Escribe tu dominio, barra, robots.txt, y mira qué dice el tuyo. Toma cinco segundos.
+>
+> Este mes vamos a mostrar, con casos reales, la diferencia entre lo que la IA ve y lo que no ve de un negocio.
 >
 > #SEO #IA #Chile
 
@@ -30,13 +40,17 @@
 ### Jue 6 ago · LinkedIn empresa · Formato 4 (detrás del método, refuerzo del tema)
 **Fuente:** sitio Vue.js / app JS que llega vacía a los bots (Frente A, generalizado).
 
-> Un sitio puede verse perfecto para ti y llegarle en blanco a la IA.
+> Tu sitio se ve impecable. Esto es lo que recibe ChatGPT cuando entra.
 >
-> Me pasó revisando el sitio de una asesora financiera: moderno, rápido, impecable. Pero está construido como una aplicación de JavaScript, donde el contenido se arma recién en el navegador. Los rastreadores que alimentan a ChatGPT y Perplexity no ejecutan eso, así que reciben una página casi vacía.
+> Un div vacío. Nada más.
 >
-> Toda la trayectoria, los premios, la prensa: invisibles para la IA.
+> Nos pasó revisando el sitio de una asesora financiera: moderno, rápido, impecable de mirar. Pero está construido como una aplicación de JavaScript, donde el contenido se arma recién en el navegador de la persona. Los rastreadores que alimentan a ChatGPT y Perplexity no ejecutan eso, así que reciben una página en blanco.
 >
-> No es un problema de contenido. Es cómo está construido el sitio. Y tiene arreglo.
+> Toda la trayectoria, los premios, la prensa. Invisibles.
+>
+> No es un problema de contenido. Es cómo está construido el sitio, y tiene arreglo.
+>
+> ¿Quieres ver el tuyo como lo ve un rastreador? Abre tu portada, clic derecho, "ver código fuente de la página". Si ahí no aparece tu texto, la IA tampoco lo está viendo.
 >
 > #SEO #IA #Chile
 
@@ -62,7 +76,9 @@
 ### Mar 11 ago · LinkedIn empresa · Formato 4 (detrás del método)
 **Fuente:** el proceso real de auditoría (síntesis de los 5 chequeos, sin nombrar sitios).
 
-> Cuando reviso un sitio para ver si la IA puede "leerlo", miro cinco cosas concretas:
+> Cinco cosas que puedes revisar hoy en tu propio sitio, sin saber nada técnico.
+>
+> Son las mismas cinco, en el mismo orden, que miramos nosotros cuando revisamos un sitio para ver si la IA puede leerlo.
 >
 > 1. El título de la página. ¿Dice qué hace la empresa y dónde, o solo el nombre?
 > 2. La descripción. ¿Existe, o está vacía o cortada a la mitad?
@@ -72,6 +88,8 @@
 >
 > Ninguna requiere rehacer el sitio. Todas definen si apareces cuando alguien pregunta por tu rubro.
 >
+> El carrusel trae el "así no" y el "así sí" de cada una. Parte por la 4, que es la que más sorprende.
+>
 > #SEO #AEO #Chile
 
 **Reuso Meta Ads:** para ad, usar versión corta (solo los 5 puntos en imagen).
@@ -79,13 +97,17 @@
 ### Jue 13 ago · LinkedIn empresa · Formato 4 (hallazgo específico: datos estructurados mal puestos)
 **Fuente:** clínicas con schema genérico "Organization" / fundadora ausente del schema (Frente B).
 
-> "Somos una organización." Eso es, literalmente, lo que el sitio de varias clínicas le dice a Google.
+> ¿Sabías que hay clínicas que le dicen a Google, literalmente, que son "una organización"?
 >
-> Los datos estructurados son la ficha que un sitio le entrega a los buscadores y a la IA para explicar qué es. Revisando clínicas este mes encontré varias que sí la tienen, pero mal puesta: se declaran como "Organización" genérica en vez de "Clínica dental". Otras no incluyen el nombre de su fundadora, aunque toda la marca sea personal.
+> Ni dental, ni médica, ni dónde quedan. Y así compiten por aparecer.
 >
-> Para un motor de IA que arma respuestas por categorías, esa diferencia decide si te incluye o no.
+> Los datos estructurados son la ficha que un sitio le entrega a los buscadores y a la IA para explicar qué es. Revisando clínicas este mes encontramos varias que sí la tienen, pero mal puesta: se declaran como "Organization" genérica en vez de "Dentist". Otras no incluyen el nombre de su fundadora, aunque toda la marca sea su nombre.
+>
+> Para un motor que arma respuestas por categoría, esa diferencia decide si te incluye o no cuando alguien pregunta por clínicas dentales en su comuna.
 >
 > Es un arreglo técnico chico con efecto grande.
+>
+> Si tu sitio lo hizo una agencia, pregúntales qué tipo declara tu ficha. La respuesta te va a decir bastante.
 >
 > #SEO #AEO #Chile
 
@@ -111,11 +133,13 @@
 ### Mar 18 ago · LinkedIn empresa · Formato 3 (mito vs realidad, con evidencia acumulada)
 **Fuente:** agregado real del mes (más de 20 sitios revisados entre Frente A y B).
 
-> Mito: "si mi sitio aparece en Google, también aparece en ChatGPT."
+> Tu competencia no te gana por presupuesto. Te gana porque a ella sí la pueden leer.
 >
-> Realidad: son dos cosas distintas. Este mes revisé más de 20 sitios de empresas chilenas, asesoras financieras y clínicas, y varios rankean bien en Google pero son ilegibles para los motores de IA: bloqueados por su propio robots.txt, construidos como apps que llegan vacías, o sin señales para desambiguar quiénes son.
+> Este mes revisamos más de 20 sitios de empresas chilenas, entre asesoras financieras y clínicas. Varios rankean bien en Google y son ilegibles para los motores de IA: bloqueados por su propio robots.txt, construidos como apps que llegan vacías, o sin señales para desambiguar quiénes son.
 >
-> Google indexa páginas. La IA sintetiza una respuesta y cita 2 o 3 fuentes que pueda entender con claridad. Estar en el primer juego no te mete en el segundo.
+> Google indexa páginas. La IA arma una respuesta y cita dos o tres fuentes que pueda entender con claridad. Estar en el primer juego no te mete en el segundo.
+>
+> Búscate en Google y después hazle la misma pregunta a ChatGPT. Compara las dos respuestas. Esa distancia es la que estamos hablando.
 >
 > #SEO #IA #Chile
 
@@ -124,11 +148,15 @@
 ### Jue 20 ago · LinkedIn empresa · Formato 1 (evidencia: autoridad no conectada, E-E-A-T)
 **Fuente:** empresas con prensa/premios no conectados al dominio (Frente A: Criteria, Laroche, etc., generalizado).
 
-> Tienes prensa, premios, un equipo reconocido. Y la IA no los conecta contigo.
+> Si tu reputación vive en la prensa y no en tu sitio, para la IA no es tuya.
 >
-> Es uno de los patrones que más vi este mes: empresas cuya reputación vive en Diario Financiero, Citywire o la prensa del rubro, pero cuyo sitio no menciona a las personas detrás ni enlaza esa autoridad. Para Google y para los motores de IA, esa credibilidad existe en el aire, sin dueño verificable.
+> Es uno de los patrones que más vimos este mes. Empresas con premios, entrevistas y un equipo reconocido, cuya credibilidad está publicada en Diario Financiero, Citywire o la prensa del rubro, pero cuyo sitio no menciona a las personas detrás ni enlaza nada de eso.
 >
-> En rubros donde la confianza lo decide todo, finanzas y salud, esa desconexión es cara. Y se arregla conectando lo que ya construiste.
+> Para Google y para los motores de IA, esa autoridad existe en el aire, sin dueño verificable.
+>
+> En finanzas y en salud, donde nadie contrata a ciegas, esa desconexión sale cara. Y se arregla conectando lo que ya construiste, no construyendo algo nuevo.
+>
+> Cuenta cuántos enlaces hay en tu sitio a la prensa que te ha nombrado. Si la cuenta da cero, ahí tienes trabajo ya hecho que nadie te está atribuyendo.
 >
 > #SEO #AEO #Chile
 
@@ -152,11 +180,15 @@
 ### Mar 25 ago · LinkedIn empresa · Formato 2 (precios / objeciones)
 **Fuente:** rangos reales del artículo de precios + síntesis de hallazgos del mes.
 
-> "¿Y esto cuánto cuesta arreglarlo?" Es la pregunta que más me hacen, y la respuesta honesta es: depende, pero casi siempre menos de lo que cuesta no hacerlo.
+> Lo que arreglamos casi nunca es rehacer el sitio.
 >
-> La mayoría de los problemas que encontré este mes no son rehacer el sitio. Son correcciones puntuales: un título que diga qué haces, datos estructurados bien puestos, desbloquear a los rastreadores de IA, conectar tu autoridad con tu dominio.
+> "¿Y esto cuánto cuesta?" es la pregunta que más nos hacen. La respuesta honesta es que depende de qué esté fallando, pero casi siempre son cuatro señales técnicas:
 >
-> Como referencia de mercado, un diagnóstico técnico en Chile parte desde ~$200.000 y un acompañamiento mensual desde ~$80.000. Pero el mini-diagnóstico que te muestra dónde estás parado es gratis, en 48 horas.
+> Un título que diga qué haces y dónde. Datos estructurados bien puestos. Desbloquear a los rastreadores de IA. Conectar tu autoridad con tu dominio.
+>
+> Nada de eso es un rediseño. Como referencia de mercado, un diagnóstico técnico en Chile parte desde unos $200.000 y un acompañamiento mensual desde unos $80.000.
+>
+> El mini-diagnóstico que te muestra en qué estado estás es gratis y llega en 48 horas. Pídelo, míralo, y decides después.
 >
 > #SEO #Chile
 
@@ -165,11 +197,15 @@
 ### Jue 27 ago · LinkedIn empresa · cierre honesto (manejo de expectativas)
 **Fuente:** principio del método (sin promesas mágicas).
 
-> Cerrando el mes, una promesa que NO te voy a hacer: que vas a aparecer primero en ChatGPT si trabajas conmigo.
+> Nadie puede garantizarte que vas a aparecer primero en ChatGPT. Quien te lo prometa, miente.
 >
-> Nadie puede garantizar eso, y quien lo promete miente. Lo que sí se puede: hacer que tu sitio sea legible, citable y esté bien identificado, que es la condición para siquiera entrar en la conversación. El resto lo decide el motor, con señales que se construyen, no se compran.
+> Cerramos el mes con la promesa que no te vamos a hacer.
 >
-> Este mes mostré, con casos reales, la diferencia entre lo que la IA ve y lo que no ve de un negocio. Si quieres saber de qué lado está el tuyo, el mini-diagnóstico es gratis.
+> Lo que sí se puede: que tu sitio sea legible, citable y esté bien identificado. Esa es la condición para siquiera entrar en la conversación. El resto lo decide el motor, con señales que se construyen, no que se compran.
+>
+> Este mes mostramos, con casos reales, la diferencia entre lo que la IA ve y lo que no ve de un negocio: un robots.txt que bloqueaba a todos los rastreadores, sitios que llegan vacíos, clínicas declaradas como "una organización", reputación sin dueño verificable.
+>
+> Si quieres saber de qué lado está el tuyo, el mini-diagnóstico es gratis.
 >
 > #SEO #IA #Chile
 
