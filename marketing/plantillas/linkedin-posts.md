@@ -1,8 +1,10 @@
 # Plantillas LinkedIn — página de empresa SpindleLab
 
 Cadencia: 2 posts/semana (martes y jueves, horario laboral).
-Voz: primera persona singular, sobria, sin clichés de IA (nada de robots ni cerebros), coherente con «solidez cercana».
-Regla de anonimato: los posts los firma la marca; el perfil personal **no** comparte ni comenta posts de SpindleLab.
+Voz: **primera persona plural, siempre** (decisión de Ramón, 23 jul 2026 — reemplaza el "primera persona singular" que decía antes). "Cuando revisamos", "encontramos", "te mostramos". El plural da seriedad y autoridad de empresa; el singular suena a freelance. La cuenta **personal** de Ramón sigue en singular, sin cambios.
+Sobria, sin clichés de IA (nada de robots ni cerebros), coherente con «solidez cercana».
+Los links van en el **primer comentario**, no en el cuerpo (convención 21 jul: un enlace externo en el cuerpo baja el alcance).
+Regla de anonimato de prospectos: se usa el hallazgo, nunca el nombre de la empresa sin permiso.
 
 ---
 

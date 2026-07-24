@@ -1,0 +1,18 @@
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); }
+@font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:100 900; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1080px; height:1920px; background:transparent; overflow:hidden; font-family:'Inter',sans-serif; }
+.f { width:1080px; height:1920px; padding:110px; display:flex; flex-direction:column; justify-content:flex-end; padding-bottom:460px; }
+.big { font-family:'Gabarito'; font-weight:600; letter-spacing:-2px; color:#F7F5F0;
+  text-shadow:0 2px 6px rgba(0,0,0,0.75), 0 8px 40px rgba(0,0,0,0.55); }
+.lbl { font-size:26px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:#F7F5F0; opacity:.82;
+  text-shadow:0 2px 6px rgba(0,0,0,0.8); margin-bottom:28px; }
+.panel { background:rgba(19,26,34,0.90); border-radius:12px; padding:44px 48px;
+  box-shadow:0 18px 60px rgba(0,0,0,0.45); }
+.mono { font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:29px; line-height:2; color:#8A93A0; white-space:nowrap; }
+.mono b { color:#F7F5F0; font-weight:600; }
+.wm { font-family:'Gabarito'; font-weight:600; font-size:52px; color:#F7F5F0;
+  text-shadow:0 2px 6px rgba(0,0,0,0.75); }
+.pt { color:#C9A227; }
+.url { font-size:30px; font-weight:500; color:#F7F5F0; opacity:.9; letter-spacing:.5px;
+  text-shadow:0 2px 6px rgba(0,0,0,0.8); margin-top:14px; }

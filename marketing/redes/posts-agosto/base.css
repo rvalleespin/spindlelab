@@ -1,0 +1,32 @@
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); }
+@font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:100 900; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1080px; height:1080px; overflow:hidden; font-family:'Inter',sans-serif; }
+.post { width:1080px; height:1080px; position:relative; }
+
+/* ---- Dirección A: ficha tipográfica ---- */
+.a { padding:80px; display:flex; flex-direction:column; background:#F7F5F0; color:#131A22; }
+.eyebrow { font-size:21px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#8A93A0; }
+.rule { height:1px; background:#DFDBD2; margin-top:26px; }
+.a.dark { background:#131A22; color:#F7F5F0; }
+.a.dark .rule { background:#2A333E; }
+.h { font-family:'Gabarito'; font-weight:600; letter-spacing:-1.4px; line-height:1.12; }
+.sub { font-size:30px; line-height:1.55; color:#5D6673; max-width:860px; margin-top:26px; }
+.a.dark .sub { color:#8A93A0; }
+.foot { position:absolute; bottom:80px; left:80px; right:80px; display:flex; align-items:flex-end; justify-content:space-between; }
+.wm { font-family:'Gabarito'; font-weight:600; font-size:42px; }
+.pt { color:#C9A227; }
+.cta { font-size:24px; color:#5D6673; text-align:right; }
+.a.dark .cta { color:#8A93A0; }
+
+/* dispositivo de código */
+.code { margin-top:44px; background:#FFFFFF; border:1px solid #E3DFD6; border-radius:10px; padding:30px 34px;
+  font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:26px; line-height:1.7; color:#5D6673; }
+.a.dark .code { background:rgba(255,255,255,0.05); border-color:#2A333E; color:#8A93A0; }
+.code b { color:#131A22; font-weight:600; }
+.a.dark .code b { color:#F7F5F0; }
+
+/* ---- Dirección B: ventana (foto + banda) ---- */
+.b .ph { width:1080px; height:648px; object-fit:cover; display:block; }
+.b .band { position:absolute; left:0; right:0; bottom:0; height:432px; background:#131A22; color:#F7F5F0; padding:56px 80px 0; }
+.b .band .h { font-size:56px; }
