@@ -4,6 +4,8 @@ Del 7 de julio al 5 de octubre de 2026. Meta comercial: **1–2 clientes cerrado
 Presupuesto de horas humanas: **6–10 h/semana de supervisión** (original) — la producción la ejecutan agentes de Claude Code (división de trabajo en §6.5 de la estrategia).
 **Nota 21 jul:** Ramón pasó a dedicarse a SpindleLab a tiempo completo — el presupuesto de horas reales disponibles sube respecto al supuesto original, no baja. Ajustar expectativas de ritmo en consecuencia: hay más margen para sumar iniciativas (como contenido en video) sin que compitan entre sí.
 
+**Hito 24 jul — SpindleLab se constituyó formalmente como SpA.** RUT 78.474.925-8, Providencia, capital $1.000.000 (1.000 acciones, Ramón único accionista y Gerente General). Detalle completo en `ventas/constitucion-empresa.md`. Pendiente de confirmar con Ramón si esto cambia el membrete/RUT de `marketing/plantillas/cotizaciones/` hacia adelante.
+
 Convención de los checklists: **[CC]** = lo produce Claude Code (tú revisas/apruebas) · **[TÚ]** = solo humano.
 Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa semana, que sea esa.
 
