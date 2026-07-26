@@ -507,6 +507,7 @@ h1 .ia{color:var(--teal)}
   background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);
   padding:48px 40px;display:grid;gap:10px;
 }
+.form-success[hidden]{display:none}
 .form-success h3{font-family:var(--headline);font-size:23px;font-weight:600;color:var(--ink)}
 .form-success p{font-size:14.5px;color:var(--ink-70);line-height:1.6}
 .form-note{margin-top:22px;font-size:13px;color:var(--ink-70)}
