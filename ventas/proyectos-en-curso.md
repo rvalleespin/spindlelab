@@ -21,6 +21,8 @@ Plan **Esencial**, oferta de lanzamiento **$392.000** (IVA incl.). Esquema origi
 > **Hubo un cambio en el orden de cobro:** se pagó primero la Fase 3 (40%); las Fases 1 y 5 quedaron pendientes. El esquema de montos por fase se mantiene; cambió la secuencia en que se cobra.
 >
 > **Decisión 22 jul 2026 — Fases 1 y 5 se cobran juntas en un solo pago contra entrega.** En vez de emitir la Fase 1 ahora por separado, Ramón juntará ambas pendientes ($117.600 + $117.600 = **$235.200**) en un único cobro al momento de la entrega. No enviar la Fase 1 aparte.
+>
+> **Decisión 25 jul 2026 — este contrato se cobra COMPLETO como persona natural, NO por SpindleLab SpA.** Cerrado, no es un pendiente a reevaluar. El lanzamiento técnico se hizo el 24 jul, así que el cobro de los $235.200 está habilitado y sale a los mismos datos bancarios personales con que llegó la Fase 3. Motivos: (a) el servicio se contrató y se prestó antes de que existiera la SpA (constituida el 24 jul 2026, RUT 78.474.925-8), y partir un mismo contrato entre dos contribuyentes es peor que dejarlo entero; (b) la SpA todavía no puede emitir documentos — el inicio de actividades está enviado pero bloqueado por documentos que dependen de terceros, y faltan Certificado Digital SII, facturación electrónica y cuenta corriente empresa; (c) como la cotización pactó "IVA incluido", facturar desde la SpA regalaría ~$37.553 de IVA débito sobre el mismo precio. **La SpA estrena facturación con la mantención mensual ($50.000/mes) y con clientes nuevos.** La Fase 3 llegó íntegra, sin retención aplicada: mismo criterio acá, se piden los $235.200 completos. Regla general que queda: contrato prestado antes del 24-jul-2026 → persona natural; contrato nuevo → SpA.
 
 | Fase | Concepto | Monto (30/40/30) | Estado | Evidencia |
 |---|---|---|---|---|
@@ -31,7 +33,7 @@ Plan **Esencial**, oferta de lanzamiento **$392.000** (IVA incl.). Esquema origi
 Notas:
 - **21 jun 2026 — transferencia de $10.000** del mismo remitente, sin clasificar (probable transferencia de prueba). No corresponde a ninguna cuota del esquema; verificar con Bernardo.
 - Total verificado recibido vía BICE: **$166.800** ($10.000 + $156.800).
-- **Pendiente por cobrar: $235.200** — Fase 1 ($117.600) + Fase 5 ($117.600), en **un solo cobro contra entrega** (decisión 22 jul 2026).
+- **Pendiente por cobrar: $235.200** — Fase 1 ($117.600) + Fase 5 ($117.600), en **un solo cobro contra entrega** (decisión 22 jul 2026), **como persona natural** (decisión 25 jul 2026). Entrega técnica realizada el 24 jul → el cobro está habilitado.
 
 ## Proyectos entregados
 
