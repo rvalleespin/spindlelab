@@ -16,6 +16,6 @@
 
 ## Por qué importa para la operación
 
-- SpindleLab deja de operar como actividad de persona natural/boletas y pasa a ser una **persona jurídica formal (SpA)** — cotizaciones, contratos y facturación futuras deberían emitirse a nombre de SpindleLab SpA (RUT 78.474.925-8), no a nombre personal de Ramón.
-- Revisar si esto cambia algo en `marketing/plantillas/cotizaciones/` (razón social/RUT en el membrete) — pendiente de confirmar con Ramón, no asumir el formato hasta que él lo determine.
-- No cambia nada de lo ya cobrado a Bernardo (facturado/cotizado antes de esta fecha).
+- **Regla de corte definida (decisión 25 jul, ver `ventas/proyectos-en-curso.md`): contrato prestado antes del 24 jul 2026 → se factura como persona natural; contrato nuevo (firmado desde ahora) → SpindleLab SpA.** No es retroactivo — el caso Bernardo (contratado y entregado antes de la constitución) se cobra íntegro como persona natural, sin partirlo entre los dos contribuyentes.
+- **La SpA aún no puede emitir documentos**: inicio de actividades enviado pero bloqueado por documentos que dependen de terceros; faltan Certificado Digital SII, facturación electrónica y cuenta corriente de la empresa. Hasta que eso se resuelva, cualquier cliente nuevo tampoco podría facturarse por la SpA en la práctica, más allá de la regla de corte.
+- **La SpA estrena facturación con la mantención mensual ($50.000/mes) y con clientes nuevos** — no con nada ya contratado antes del 24 jul.
