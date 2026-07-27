@@ -256,6 +256,7 @@ h1 .ia{color:var(--teal)}
 
 /* ---------- CTA final ---------- */
 .cta{padding:120px 0;background:var(--paper);text-align:center}
+#contacto-form{scroll-margin-top:112px}
 .cta .eyebrow{display:block;margin-bottom:20px}
 .cta h2{
   font-family:var(--headline);font-size:clamp(30px,3.4vw,44px);font-weight:600;letter-spacing:-.01em;
