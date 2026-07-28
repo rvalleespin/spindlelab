@@ -421,7 +421,8 @@ h1 .ia{color:var(--teal)}
 
 /* ---------- CTA final ---------- */
 .cta{padding:104px 0;background:var(--paper);text-align:center}
-.cta .eyebrow{display:inline-flex;margin-bottom:20px}
+#contacto-form{scroll-margin-top:112px}
+.cta .eyebrow{display:block;margin-bottom:20px}
 .cta h2{
   font-family:var(--headline);font-size:clamp(28px,3.2vw,40px);font-weight:600;letter-spacing:0;
   color:var(--ink);max-width:24ch;margin:0 auto 16px;
