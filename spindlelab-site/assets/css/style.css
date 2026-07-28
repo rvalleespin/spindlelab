@@ -123,11 +123,22 @@ a{color:inherit}
 .menu-btn[aria-expanded="true"] .bars::after{opacity:0}
 
 /* ---------- Hero ---------- */
-.hero{padding:96px 0 88px;background:var(--paper)}
+/* cinematográfico: foto real a pantalla completa + velo oscuro + titular encima.
+   Patrón "compositor-safe" ya usado en .hero-media: la imagen queda en flujo normal
+   con su propia altura, y todo lo demás (velo, texto) se superpone con position:absolute
+   dentro de un contenedor position:relative — nunca la imagen misma en absolute. */
+.hero{padding:0;background:var(--navy)}
+.hero-photo-frame{position:relative;overflow:hidden}
+.hero-photo-frame img{display:block;width:100%;height:min(82vh,760px);object-fit:cover}
+.hero-photo-scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(15,24,29,.95) 0%,rgba(15,24,29,.72) 34%,rgba(15,24,29,.28) 64%,rgba(15,24,29,0) 100%);
+}
+.hero-photo-content{position:absolute;left:0;right:0;bottom:0;padding-bottom:64px}
 .hero .chip-kicker{
   display:inline-flex;padding:9px 18px;border-radius:var(--r-pill);
-  background:var(--card-mint);border:1px solid var(--seafoam);
-  color:var(--teal);font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);
+  color:var(--white);font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
   margin-bottom:32px;
 }
 h1{
@@ -135,21 +146,23 @@ h1{
   letter-spacing:0;color:var(--ink);max-width:20ch;
 }
 h1 .ia{color:var(--teal);font-style:italic}
+.hero h1{color:var(--white);max-width:22ch;font-size:clamp(36px,4.6vw,58px)}
+.hero h1 .ia{color:var(--rose)}
 .hero .lead{
-  margin:28px 0 40px;font-size:18px;line-height:1.6;color:var(--ink-70);max-width:52ch;
+  margin-top:24px;font-size:18px;line-height:1.6;color:rgba(255,255,255,.82);max-width:42ch;
 }
-.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
-.hero .platforms{margin-top:56px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.hero .platforms .eyebrow{color:var(--ink-50)}
-.hero .platforms .eyebrow::before{background:var(--ink-50)}
-.hero .duo-hero{align-items:center}
-.hero-illustration{position:relative;overflow:visible}
-.hero-illustration img{display:block;width:100%;height:auto}
-.hero-illustration .deco{position:absolute;display:block;line-height:0}
-.hero-illustration .deco svg{display:block;width:100%;height:100%}
-.hero-illustration .deco-star{top:-20px;right:26px;width:34px;height:34px;color:var(--sage)}
-.hero-illustration .deco-plus{bottom:18px;left:-22px;width:24px;height:24px;color:var(--rose)}
-.hero-illustration .deco-arrow{top:34%;left:-36px;width:42px;height:42px;color:var(--teal);transform:scaleX(-1)}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.hero .btn.gold{background:var(--white);color:var(--navy);border-color:var(--white)}
+.hero .btn.gold:hover{background:var(--card-mint);border-color:var(--card-mint)}
+.hero .btn.outline{border-color:rgba(255,255,255,.5);color:var(--white)}
+.hero .btn.outline:hover{background:rgba(255,255,255,.14);color:var(--white)}
+
+.hero-platforms-bar{background:var(--navy);padding:28px 0}
+.hero-platforms-bar .platforms{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.hero-platforms-bar .eyebrow{color:rgba(255,255,255,.65)}
+.hero-platforms-bar .eyebrow::before{background:rgba(255,255,255,.65)}
+.hero-platforms-bar .chip{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:var(--white)}
+.hero-platforms-bar .chip::before{background:var(--rose)}
 .chip{
   display:inline-flex;align-items:center;gap:8px;
   padding:8px 18px;border-radius:var(--r-pill);
@@ -347,10 +360,8 @@ h1 .ia{color:var(--teal);font-style:italic}
 @media(max-width:900px){
   .duo-hero{grid-template-columns:1fr;gap:36px}
   .hero-media img{height:280px}
-  .hero-illustration{overflow:hidden;padding:20px 16px 0}
-  .hero-illustration .deco-star{top:0;right:8px}
-  .hero-illustration .deco-plus{left:8px;bottom:8px}
-  .hero-illustration .deco-arrow{display:none}
+  .hero-photo-frame img{height:min(92vh,700px)}
+  .hero h1{max-width:none}
 }
 
 .sec{padding:88px 0}
@@ -414,15 +425,25 @@ h1 .ia{color:var(--teal);font-style:italic}
 .step-row .facts div{border-left:2px solid var(--sage);padding-left:14px}
 .step-row .facts b{display:block;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--teal)}
 
-/* blog */
+/* blog — tarjeta editorial: foto real + etiqueta superpuesta (inspirado en las tarjetas
+   de clientes "Proof? We've got proof." de Vanta, adaptado con foto+tema en vez de foto+logo) */
 .post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .post-card{
-  background:var(--card-mint);border:1px solid var(--line);border-radius:var(--r-card);
-  padding:30px 26px;display:flex;flex-direction:column;gap:12px;text-decoration:none;
-  transition:transform .22s,box-shadow .22s,border-color .22s;position:relative;
+  background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);
+  overflow:hidden;display:flex;flex-direction:column;text-decoration:none;
+  transition:transform .22s,box-shadow .22s,border-color .22s;
 }
 .post-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(22,50,90,.1);border-color:var(--teal)}
-.post-card .meta{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--teal)}
+.post-card-media{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--card-mint)}
+.post-card-media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.post-card:hover .post-card-media img{transform:scale(1.04)}
+.post-card-tag{
+  position:absolute;top:14px;left:14px;background:var(--white);color:var(--ink);
+  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  padding:6px 12px;border-radius:var(--r-pill);
+}
+.post-card-body{padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.post-card .meta{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-50)}
 .post-card h3{font-family:var(--headline);font-size:19px;font-weight:400;line-height:1.3;letter-spacing:0;color:var(--ink)}
 .post-card p{font-size:13.5px;color:var(--ink-70);line-height:1.65;flex:1}
 .post-card .more{font-size:13px;font-weight:600;color:var(--teal)}
@@ -509,6 +530,11 @@ h1 .ia{color:var(--teal);font-style:italic}
   .step-row{grid-template-columns:1fr;gap:16px}
   .post-grid{grid-template-columns:1fr}
   .sec{padding:64px 0}
+  .hero .chip-kicker{margin-bottom:20px;font-size:11px;padding:7px 14px}
+  .hero h1{font-size:clamp(30px,8vw,40px)}
+  .hero .lead{margin-top:16px;font-size:16px}
+  .hero .actions{margin-top:20px}
+  .hero-photo-content{padding-bottom:36px}
 }
 
 /* ---------- Formulario de contacto ---------- */
