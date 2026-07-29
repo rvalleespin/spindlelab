@@ -4,7 +4,7 @@
 > un empleado con **nombre, rol, memoria y carpeta de trabajo** — igual que una
 > oficina real, pero cada empleado es una sesión de Claude Code activada por una
 > *skill*. Este documento es el único lugar donde se ve la oficina completa de un
-> vistazo. Última actualización: 2026-07-23.
+> vistazo. Última actualización: 2026-07-29.
 >
 > **Nomenclatura híbrida.** Cada agente tiene un nombre humano (para hablar de él
 > como "empleado") y, entre paréntesis, la skill técnica real que lo activa. El
@@ -20,43 +20,21 @@
 ## Organigrama
 
 ```
-                        ┌─────────────────────────────┐
-                        │  DIRECCIÓN                   │
-                        │  Tomás (agente-troncal-       │
-                        │  marketing) — el gerente     │
-                        │  · dueño del estado compartido│
-                        │  · orquesta todos los frentes │
-                        └──────────────┬───────────────┘
-                                       │
-   ┌───────────────┬───────────────┬───┴───────────┬───────────────┬──────────────┐
-   │               │               │               │               │              │
-┌──┴────────┐ ┌────┴──────┐ ┌──────┴─────┐ ┌───────┴────┐ ┌────────┴───┐ ┌────────┴────┐
-│ CAPTACIÓN │ │  VENTAS   │ │  MARCA &   │ │ PAID MEDIA │ │  ENTREGA   │ │ ADMIN &     │
-│           │ │           │ │ CONTENIDO  │ │            │ │            │ │ FINANZAS    │
-├───────────┤ ├───────────┤ ├────────────┤ ├────────────┤ ├────────────┤ ├─────────────┤
-│ Dereck    │ │ Raquel ★  │ │ Cata       │ │ Gonzalo    │ │ Diego      │ │ Monse ○     │
-│ (buscar-  │ │ (agente-  │ │ (persona-  │ │ (persona-  │ │ (persona-  │ │ (agente-    │
-│  leads)   │ │  crm) NEW │ │  social-   │ │  paid-     │ │  disenador-│ │  finanzas)  │
-│           │ │           │ │  media)    │ │  media)    │ │  web)      │ │  VACANTE    │
-│ Valen     │ │           │ │            │ │            │ │            │ │             │
-│ (mini-    │ │           │ │ Bruno      │ │ Fran       │ │            │ │             │
-│  diag-    │ │           │ │ (persona-  │ │ (persona-  │ │            │ │             │
-│  nostico) │ │           │ │  director- │ │  meta-ads) │ │            │ │             │
-│           │ │           │ │  creativo) │ │            │ │            │ │             │
-│ Emilia ★  │ │           │ │            │ │            │ │            │ │             │
-│ (agente-  │ │           │ │ Marta ○    │ │            │ │            │ │             │
-│  outbound)│ │           │ │ (calendario│ │            │ │            │ │             │
-│  NEW      │ │           │ │  editorial)│ │            │ │            │ │             │
-│           │ │           │ │  VACANTE   │ │            │ │            │ │             │
-└───────────┘ └───────────┘ └────────────┘ └────────────┘ └────────────┘ └─────────────┘
+DIRECCIÓN
+  └─ Tomás (agente-troncal-marketing) — gerente · dueño del estado compartido · orquesta los frentes
 
-        ┌──────────────────────────────────────────────────────────────┐
-        │  SUPERVISIÓN (capa meta, transversal a todo el stack)          │
-        │  El Sueño (dream / ~/.motor-agentico) — audita 24h de          │
-        │  actividad y prescribe las 4 mejoras de mayor impacto/día.     │
-        └──────────────────────────────────────────────────────────────┘
+CAPTACIÓN           Dereck (buscar-leads) · Valen (mini-diagnostico) · Emilia (agente-outbound) ★
+VENTAS              Raquel (agente-crm) ★
+MARCA & CONTENIDO   Cata (persona-social-media) · Bruno (persona-director-creativo) · Renata (agente-copywriter) ★ · Marta (calendario editorial) ○
+PAID MEDIA          Gonzalo (persona-paid-media) · Fran (persona-meta-ads)
+ENTREGA             Diego (persona-disenador-web) · Simón (agente-seo-aeo) ★  ← el servicio core que se cobra
+PRODUCTO & DISEÑO   Nadia (producto-ui-ux) ★ · Pía (agente-growth-producto) ★   (cross-proyecto: Praxi + web)
+DATOS & MEDICIÓN    Nora (agente-analitica) ★  ← cierra el loop: mide qué produjo cada frente
+ADMIN & FINANZAS    Monse (agente-finanzas) ○
 
-★ = construido en esta pasada (motor de captación)     ○ = vacante priorizada
+SUPERVISIÓN         El Sueño (dream / motor-agentico) — audita 24h y prescribe las 4 mejoras de mayor impacto/día
+
+★ = nuevo (creado en esta ronda)     ○ = vacante priorizada
 ```
 
 ---
@@ -74,12 +52,24 @@ Estado: **✅ trabajando** · **★ nuevo (esta pasada)** · **○ vacante** · 
 | **Raquel** ★ | Ventas | `agente-crm` | `ventas/pipeline.md`, `ventas/proyectos-en-curso.md` | `oficina/memoria/raquel-crm.md` | Respuestas/avances → CRM al día + follow-ups pendientes | ★ nuevo |
 | **Cata** | Marca & Contenido | `persona-social-media` | `marketing/outbound/semana-*/posts-*.md`, RRSS | `oficina/memoria/cata-social.md` | Tema/hallazgo real → post LinkedIn/IG con pase de tono | ✅ |
 | **Bruno** | Marca & Contenido | `persona-director-creativo` | assets HTML→PNG por carpeta, Higgsfield | `oficina/memoria/bruno-creativo.md` | Concepto → carrusel/Reel/key visual (1080×1080 / 1080×1920) | ✅ |
+| **Renata** ★ | Marca & Contenido | `agente-copywriter` | `marketing/redes/`, `marketing/blog-borradores/` (a crear) | `oficina/memoria/renata-copy.md` (a crear) | Tema → artículo long-form / ad copy / guion de Reel / copy de email (entrega texto, no publica) | ★ nuevo |
 | **Marta** ○ | Marca & Contenido | `agente-calendario-editorial` | `marketing/calendario-editorial.md` (a crear) | — | Estrategia mensual → calendario de contenido de ambas cuentas | ○ vacante |
 | **Gonzalo** | Paid Media | `persona-paid-media` | Google Ads (navegador) + cron semanal | `oficina/memoria/gonzalo-google-ads.md` | Presupuesto/objetivo → campañas Google (nunca escribe sin OK) | ✅ |
 | **Fran** | Paid Media | `persona-meta-ads` | Meta Ads Manager (navegador) | `oficina/memoria/fran-meta-ads.md` | Presupuesto/objetivo → campañas Meta (nunca escribe sin OK) | ✅ |
 | **Diego** | Entrega | `persona-disenador-web` | `spindlelab-site/`, sitios de clientes | `oficina/memoria/diego-web.md` | Encargo → sitio/blog publicado (JSON-LD, versionado de assets) | ✅ |
+| **Simón** ★ | Entrega | `agente-seo-aeo` | `ventas/entregas/<cliente>/`, plugins searchfit | `oficina/memoria/simon-seo-aeo.md` (a crear) | Cliente ganado → auditoría técnica + visibilidad en IA + plan implementado (el servicio core) | ★ nuevo |
+| **Nora** ★ | Datos & Medición | `agente-analitica` | `marketing/reportes/`, GA4 / Search Console | `oficina/memoria/nora-analitica.md` (a crear) | Actividad de todos los frentes → atribución + reporte mensual (agencia y producto) | ★ nuevo |
+| **Nadia** ★ | Producto & Diseño | `producto-ui-ux` | cross-proyecto (Praxi + web SpindleLab); vive **solo en global** | `oficina/memoria/nadia-producto.md` (a crear) | Pantalla/flujo/feature → diseño UI/UX + arquitectura frontend; sistema anti-slop (brand.json + voice.json, gate en CI) | ★ nuevo |
+| **Pía** ★ | Producto & Diseño | `agente-growth-producto` | repo del producto (Praxi); `oficina/growth-producto/` | `oficina/memoria/pia-growth.md` (a crear) | Producto → onboarding, activación, lifecycle, retención (cross-proyecto) | ★ nuevo |
 | **Monse** ○ | Admin & Finanzas | `agente-finanzas` | `ventas/cobros.md` (a crear), COTIZACIONES/ | — | Proyecto ganado → seguimiento de cobros/fases/facturación | ○ vacante |
 | **El Sueño** | Supervisión | `dream` | `~/.motor-agentico/dreams/` | `state.json` (propio) | 24h de actividad → 4 prescripciones/día | ✅ |
+
+> **Nota sobre Nadia (`producto-ui-ux`).** No es un rol de agencia-para-cliente:
+> es **oficio de diseño de producto**, y es **cross-proyecto** (la usas en Praxi y
+> en el trabajo web de SpindleLab). Por eso vive en `~/.claude/skills/` (global) y
+> no en el repo — así la ves desde cualquier proyecto. La herramienta instalada
+> **`refero-design`** (metodología de diseño con MCP de Refero) es parte de su caja
+> de herramientas, no un empleado.
 
 > **Nota sobre Raquel y Emilia (protocolo, importante).** Captación y Ventas son
 > dominios que el troncal (Tomás) ya gobierna "directo en su sesión". Por eso
@@ -92,49 +82,61 @@ Estado: **✅ trabajando** · **★ nuevo (esta pasada)** · **○ vacante** · 
 
 ---
 
-## Los huecos (vacantes priorizadas)
+## Cobertura del proceso — qué está cubierto y qué falta
 
-El objetivo declarado es **hacer más sólida la búsqueda de nuevos clientes**. Por
-eso el orden de contratación prioriza el embudo de captación → ventas antes que
-el resto.
+Mirando SpindleLab como **agencia de medios/marketing/creativa** *y* como estudio
+que **lanza sus propios productos** (Praxi, etc.). ✅ cubierto · ◐ parcial · ○ hueco.
 
-| Prioridad | Vacante | Depto | Por qué duele hoy | Qué destraba |
-|---|---|---|---|---|
-| **1** | **Emilia** (outbound) ★ | Captación | Dereck genera el CSV de leads pero nadie arma la campaña: los leads se enfrían en un CSV | Convierte leads en secuencia de emails lista para que Ramón apruebe y envíe. **Cubierto en esta pasada.** |
-| **2** | **Raquel** (CRM) ★ | Ventas | El pipeline se actualiza a mano y se queda atrás; follow-ups se pierden (ej. permiso de caso de Bernardo sin pedir) | Mantiene el CRM vivo y lista los follow-ups pendientes cada vez. **Cubierto en esta pasada.** |
-| 3 | **Marta** (calendario editorial) | Marca & Contenido | Cata y Bruno ejecutan piezas sueltas; falta el calendario que las ordene por mes/tema | Un plan editorial mensual de ambas cuentas del que Cata/Bruno tomen encargos |
-| 4 | **Monse** (finanzas) | Admin & Finanzas | Cobros por fase se rastrean a mano en notas del pipeline; ya hubo un error de "Fase 1 cobrada" que no era | Seguimiento de cobros/fases/facturación separado del CRM comercial |
+### Cadena de agencia (para clientes)
+
+| Etapa del proceso | Quién lo cubre | Estado |
+|---|---|---|
+| Estrategia & media planning | Tomás (orquesta, no planifica medios) | ◐ |
+| Prospección | Dereck | ✅ |
+| Outbound | Emilia | ✅ |
+| Producto de entrada (diagnóstico) | Valen | ✅ |
+| Ventas / CRM | Raquel | ✅ |
+| Contenido social | Cata | ✅ |
+| Calendario editorial | Marta | ○ vacante |
+| Copy long-form / guion / ad copy | Renata | ✅ ★ |
+| Creatividad visual | Bruno | ✅ |
+| Paid — Google / Meta | Gonzalo / Fran | ✅ |
+| **Entrega SEO/AEO (el servicio core)** | Simón | ✅ ★ |
+| Entrega web | Diego | ✅ |
+| **Medición & analítica / reporte a cliente** | Nora | ✅ ★ |
+| Admin / finanzas | Monse | ○ vacante |
+
+### Cadena de producto (lo tuyo — Praxi y lo que saques)
+
+| Etapa del proceso | Quién lo cubre | Estado |
+|---|---|---|
+| Diseño de producto / UX / frontend | Nadia | ✅ |
+| Growth / activación / retención / lifecycle | Pía | ✅ ★ |
+| Analítica de producto (funnels, cohortes) | Nora | ✅ ★ |
+| Marca / voz del producto | Cata + Bruno adaptados | ◐ |
 
 ---
 
-## Ruta a ~20 agentes (por fases, no de golpe)
+## Los puestos que cerraron el proceso (ronda 2026-07-29)
 
-La contadora del post apunta a 20. SpindleLab **no necesita 20 para vender más** —
-necesita el embudo completo y sin fugas. La ruta:
+Se construyeron los cuatro puestos de mayor impacto. Cada uno siguió el protocolo
+de "abrir un frente nuevo" del troncal: se fundamentó, se escribió la skill, quedó
+disponible (repo + global).
 
-**Fase 1 — Cerrar el embudo de captación (AHORA).**
-`Dereck → Emilia → Valen → Raquel`. Con esto, un lead entra, recibe secuencia,
-pide diagnóstico, y queda trackeado hasta ganar/perder sin que nada se caiga.
-*Emilia y Raquel se construyen en esta pasada; el embudo queda cerrado.*
+| # | Puesto | Skill | Qué cerró | Estado |
+|---|---|---|---|---|
+| 1 | **Nora — Medición & Analítica** | `agente-analitica` | GA4, atribución, reporte mensual. Cierra el loop: mide qué produjo cada frente. Sirve a agencia **y** a los productos. | ★ construido |
+| 2 | **Simón — Entrega SEO/AEO** | `agente-seo-aeo` | La entrega del servicio core al cliente ganado (no solo el diagnóstico de Valen). Apalanca `searchfit`. Es lo que se cobra. | ★ construido |
+| 3 | **Renata — Copy & Guion** | `agente-copywriter` | Long-form, ad copy, guiones, email. Descarga a Tomás, que redactaba a mano. | ★ construido |
+| 4 | **Pía — Growth de producto** | `agente-growth-producto` | Onboarding, activación, lifecycle, retención de los productos propios (Praxi). | ★ construido |
 
-**Fase 2 — Ordenar la fábrica de contenido.**
-Contratar a **Marta** (calendario editorial) para que Cata y Bruno dejen de
-producir suelto. Agregar variantes: **agente-guionista-reels**, **agente-blog**
-(long-form SEO propio) — hoy los artículos los redacta el troncal a mano.
+**Quedan en cola (vacantes ya identificadas):**
+- **Marta** (`agente-calendario-editorial`) — ordena a Cata/Bruno/Renata por mes y tema.
+- **Monse** (`agente-finanzas`) — cobros por fase separados del CRM (hubo el error "Fase 1 cobrada").
 
-**Fase 3 — Escalar captación.**
-**agente-enrichment** (validar/limpiar emails antes de que Emilia secuencie),
-**agente-referidos** (activar la red de clientes ganados), un segundo canal de
-prospección además de Apollo (LinkedIn Sales Nav / directorios gremiales).
-
-**Fase 4 — Delivery y admin.**
-**Monse** (finanzas/cobros), **agente-onboarding-cliente** (kickoff de proyecto
-ganado), **agente-reporte-cliente** (informe mensual de resultados a clientes),
-**agente-auditoria-tecnica** (el core SEO técnico, hoy dentro de Valen/Diego).
-
-Cada agente nuevo se crea con el protocolo de "abrir un frente nuevo" del troncal:
-se fundamenta primero en Dirección, luego se escribe su skill, luego arranca. No
-se improvisa una persona en blanco.
+**Extras de escala (más adelante):** `agente-enrichment` (limpiar emails antes de
+Emilia), `agente-referidos` (activar la red de clientes ganados), `agente-community`
+(engagement/DMs), paid en LinkedIn/TikTok.
 
 ---
 
