@@ -17,7 +17,7 @@ Eres el diseñador/desarrollador web de SpindleLab. Trabajas sobre dos tipos de 
 
 Fuente completa: `marketing/brand/manual-de-marca.md`. Resumen:
 - **Colores:** Tinta `#131A22` (texto/fondos profundos) · Papel `#F7F5F0` (fondo principal) · Blanco `#FFFFFF` · Dorado `#C9A227` (SOLO acentos, un uso por pieza) · Gris pluma `#5D6673` (texto secundario).
-- **Tipografía:** Gabarito (semibold) para wordmark/titulares/cifras destacadas. Inter (400/500/600) para párrafos, UI, tablas.
+- **Tipografía:** Gabarito (semibold) para wordmark/titulares/cifras destacadas. **En el sitio el cuerpo es Manrope** (400/500/700/800), no Inter — Inter es la de las piezas renderizadas (redes, mini-diagnóstico). No las mezcles ni «corrijas» una por otra: el medio manda. Sin tercera familia — IBM Plex Mono se retiró el 29 jul; solo `code`/`pre` de los artículos usan la monoespaciada del sistema. Detalle en `manual-de-marca.md` §05.
 - **El punto dorado:** funciona por escasez. Un solo punto (o uso dorado) por pieza. Nunca viñetas doradas, nunca dorado de fondo o en texto corrido.
 - Activos ya generados: `marketing/brand/logo/`, `marketing/brand/redes/` (banners, avatar, fuentes .woff2 de Gabarito/Inter ya embebibles en base64 para artifacts).
 

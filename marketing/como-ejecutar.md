@@ -70,5 +70,5 @@ Todo lo demás es delegable a las sesiones de Claude Code.
 
 - Tope de **50 emails/semana** aunque el agente pueda producir 500 — el límite es la reputación del dominio.
 - **Nada** producido por IA se envía o publica sin tu pasada.
-- La promesa «mini-diagnóstico en 48 h» no se rompe jamás (estándar interno: 24 h).
+- La promesa «mini-diagnóstico en **menos de 24 h**» no se rompe jamás (estándar interno: **12 h**). Actualizado el 29 jul 2026 — antes se prometían 48 h con entrega en 24.
 - Con 2 clientes activos, el outbound se pausa; con 1, baja a 25/semana.

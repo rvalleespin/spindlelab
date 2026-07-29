@@ -1,5 +1,14 @@
 # Carrusel 01 — "No apareciste" — copy para publicar
 
+> ⚠️ **COPY SUPERADO — NO REUTILIZAR TAL CUAL (29 jul 2026).**
+> La lámina 6 y el caption prometen **«48 horas»**. Desde el 28 jul la promesa pública
+> es **«menos de 24 horas»** (ver `marketing/redes/_planificacion/cambio-oferta-24h.md`).
+> **El texto de abajo se conserva sin tocar a propósito:** es el registro de lo que se
+> publicó en Instagram en la semana 1. No lo reescribas — falsearía el historial.
+>
+> **Acción pendiente:** antes de reutilizar esta pieza (repost, ad, LinkedIn), editar
+> `lamina-6.html` y **re-renderizar `lamina-6.png`** a 1080×1080.
+
 **Formato:** 6 láminas, 1080×1080 (sirve para Instagram feed y LinkedIn carrusel/documento).
 **Orden de subida:** lamina-1.png → lamina-6.png (en ese orden exacto).
 

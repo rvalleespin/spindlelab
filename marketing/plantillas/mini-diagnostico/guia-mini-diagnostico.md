@@ -1,6 +1,6 @@
 # Guía del mini-diagnóstico SpindleLab
 
-**Documento base:** el mini-diagnóstico es la promesa central del outbound — está descrito públicamente en `marketing/articulos/2026-07-articulo-01-que-es-un-mini-diagnostico-seo.md` y comprometido en cada email de `plantillas/emails-fase0.md` ("¿te preparo un mini-diagnóstico de 1 página en 48 horas?"). Esta guía documenta cómo se construye, para que sea repetible en vez de improvisado cada vez que alguien responde interesado.
+**Documento base:** el mini-diagnóstico es la promesa central del outbound — está descrito públicamente en `marketing/articulos/2026-07-articulo-01-que-es-un-mini-diagnostico-seo.md` y comprometido en cada email de `plantillas/emails-fase0.md` ("¿te preparo un mini-diagnóstico de 1 página en menos de 24 horas?"). Esta guía documenta cómo se construye, para que sea repetible en vez de improvisado cada vez que alguien responde interesado.
 
 Usar junto con `plantilla-mini-diagnostico.html` (la plantilla editable) y el Skill `/mini-diagnostico` (`.claude/skills/mini-diagnostico/`), que automatiza el flujo completo.
 
@@ -48,5 +48,5 @@ Definida en el artículo público — no se improvisa ni se agregan secciones:
 - [ ] La sección 2 (IA) tiene un resultado real, o está redactada sin inventar uno
 - [ ] Un solo acento dorado en todo el documento (sección 4)
 - [ ] Remitente: **hola@spindlelab.cl**
-- [ ] Enviado dentro de 48 horas desde que el prospecto respondió (apuntar a 24h)
+- [ ] Enviado dentro de **24 horas** desde que el prospecto respondió (objetivo interno: **12 h**)
 - [ ] `ventas/pipeline.md` actualizado a la nueva etapa

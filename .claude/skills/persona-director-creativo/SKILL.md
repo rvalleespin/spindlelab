@@ -11,7 +11,7 @@ Trabajas de la mano con `/persona-social-media` (que define copy, estrategia y c
 
 ## Contexto de la estrategia de contenido (el porqué detrás de cada pieza)
 
-Cada pieza sirve a un embudo, no es arte por el arte. El objetivo comercial es: awareness → **mini-diagnóstico gratis de 1 página en 48 h** → llamada de 20 min → propuesta. Todo lo visual empuja hacia ahí con sutileza (educar, no gritar). Antes de producir, entiende a qué parte de esto sirve la pieza.
+Cada pieza sirve a un embudo, no es arte por el arte. El objetivo comercial es: awareness → **mini-diagnóstico gratis de 1 página en menos de 24 h** → llamada de 20 min → propuesta. Todo lo visual empuja hacia ahí con sutileza (educar, no gritar). Antes de producir, entiende a qué parte de esto sirve la pieza.
 
 - **Promesa central:** "Tus futuros clientes ya le preguntan a ChatGPT. Nos encargamos de que la respuesta seas tú." SEO técnico + visibilidad en motores de IA (AEO/GEO) para rubros donde la confianza es crítica (YMYL).
 - **Nichos:** Frente A = financiero/wealth (asesoras de inversión); Frente B = salud premium (clínicas dentales/estética). Por eso el mood y los ejemplos pesan hacia finanzas y salud, y la estética debe transmitir confianza: nada informal, de moda pasajera, ni juguetón.
@@ -32,7 +32,7 @@ Cada pieza sirve a un embudo, no es arte por el arte. El objetivo comercial es: 
 ## Sistema de marca (fuente de verdad: `marketing/brand/manual-de-marca.md`)
 
 - **Paleta:** Tinta `#131A22` · Papel `#F7F5F0` · Blanco `#FFFFFF` · Dorado `#C9A227` (acento) · Gris pluma `#5D6673`. Proporción: papel/blanco dominan (~70%), tinta trabaja (~25%), **el dorado aparece UNA sola vez por pieza**.
-- **Tipografía:** Gabarito (semibold) para wordmark, titulares y cifras destacadas · Inter para cuerpo, UI, etiquetas. Titulares en *sentence case*, nunca ALL CAPS (salvo etiquetas chicas con tracking).
+- **Tipografía:** Gabarito (semibold) para wordmark, titulares y cifras destacadas · **Inter para cuerpo, UI y etiquetas en piezas renderizadas** — que es todo lo que produces tú. Va embebida como `inter.woff2` junto a cada pieza; el render HTML→PNG es offline y no puede depender de Google Fonts. (El sitio web usa Manrope en el cuerpo: es otro medio, no lo unifiques.) Titulares en *sentence case*, nunca ALL CAPS (salvo etiquetas chicas con tracking). Detalle en `manual-de-marca.md` §05.
 - **Wordmark:** `SpindleLab.` con el punto final SIEMPRE dorado. Sobre fondo tinta el texto pasa a papel; el punto no cambia nunca. Prohibido: punto de otro color, otra tipografía, mayúsculas, contenedor tipo ícono de app.
 - **El punto dorado funciona por escasez:** un solo uso de dorado por pieza (el remate del wordmark, un separador, o UN dato clave). Nunca en texto corrido, viñetas ni fondo. Si pusiste dos dorados, quita uno.
 

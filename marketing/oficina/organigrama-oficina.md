@@ -69,7 +69,7 @@ Estado: **✅ trabajando** · **★ nuevo (esta pasada)** · **○ vacante** · 
 |---|---|---|---|---|---|---|
 | **Tomás** | Dirección | `agente-troncal-marketing` | `marketing/plan-operativo-90-dias.md`, `marketing/encargos-otras-sesiones/` | `oficina/memoria/tomas-troncal.md` | Reportes de todos los frentes → estado compartido verificado, encargos | ✅ |
 | **Dereck** | Captación | `buscar-leads` | `marketing/listas/frente-*.md`, `ventas/leads-*.csv` | `oficina/memoria/dereck-buscar-leads.md` | Frente/ICP → CSV de leads (`nombre,cargo,empresa,email,estado`) | ✅ |
-| **Valen** | Captación | `mini-diagnostico` | `marketing/diagnosticos/SPL-DIAG-*/` | `oficina/memoria/valen-mini-diagnostico.md` | Prospecto interesado + URL → diagnóstico 1 pág (48h) | ✅ |
+| **Valen** | Captación | `mini-diagnostico` | `marketing/diagnosticos/SPL-DIAG-*/` | `oficina/memoria/valen-mini-diagnostico.md` | Prospecto interesado + URL → diagnóstico 1 pág (&lt;24h) | ✅ |
 | **Emilia** ★ | Captación | `agente-outbound` | `marketing/outbound/semana-*/` | `oficina/memoria/emilia-outbound.md` | CSV de Dereck → secuencia de emails redactada + tracker (NO envía) | ★ nuevo |
 | **Raquel** ★ | Ventas | `agente-crm` | `ventas/pipeline.md`, `ventas/proyectos-en-curso.md` | `oficina/memoria/raquel-crm.md` | Respuestas/avances → CRM al día + follow-ups pendientes | ★ nuevo |
 | **Cata** | Marca & Contenido | `persona-social-media` | `marketing/outbound/semana-*/posts-*.md`, RRSS | `oficina/memoria/cata-social.md` | Tema/hallazgo real → post LinkedIn/IG con pase de tono | ✅ |
