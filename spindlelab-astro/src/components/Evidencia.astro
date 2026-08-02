@@ -1,0 +1,70 @@
+---
+import Icon from './Icon.astro';
+
+const PROTOCOLO = [
+  {
+    icon: 'bot',
+    titulo: 'Menciones en IA',
+    desc: 'Le preguntamos a ChatGPT, Gemini y Perplexity lo mismo que preguntaría tu cliente, y registramos si apareces y cómo.',
+  },
+  {
+    icon: 'lineChart',
+    titulo: 'Share of voice vs. competencia',
+    desc: 'Cuántas veces te nombran a ti frente a los otros actores de tu categoría, con el detalle de cada respuesta.',
+  },
+  {
+    icon: 'sparkles',
+    titulo: 'Citabilidad y E-E-A-T',
+    desc: 'Qué señales de autoridad, datos estructurados y contenido te hacen (o no) una fuente citable para un modelo.',
+  },
+  {
+    icon: 'scanSearch',
+    titulo: 'Base técnica',
+    desc: 'Rastreo, indexación y Core Web Vitals: lo que debe estar sano para competir, medido y priorizado.',
+  },
+];
+---
+
+<section id="evidencia" class="relative bg-[#0E1712] py-24 md:py-32 px-4 sm:px-6 scroll-mt-20">
+  <div class="max-w-6xl mx-auto">
+    <div data-reveal class="max-w-2xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#85AB8B] mb-4">
+        Mostramos, no prometemos
+      </p>
+      <h2 class="text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-[#EAF1EA]" style="letter-spacing:-0.03em">
+        Rigor que puedes verificar.
+      </h2>
+      <p class="mt-6 text-[#9FB2A0] text-base md:text-lg leading-relaxed max-w-xl">
+        Antes de contratar nada, te entregamos el diagnóstico real. Y este es exactamente el protocolo
+        con el que medimos tu visibilidad en IA, sin cajas negras.
+      </p>
+    </div>
+
+    <div class="mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {
+        PROTOCOLO.map((p, i) => (
+          <div data-reveal style={`transition-delay:${i * 90}ms`}>
+            <div class="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-7">
+              <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#85AB8B]/12 text-[#85AB8B] mb-5">
+                <Icon name={p.icon} class="w-5 h-5" />
+              </span>
+              <h3 class="text-base md:text-lg font-semibold text-[#EAF1EA] mb-2.5">{p.titulo}</h3>
+              <p class="text-sm text-[#9FB2A0] leading-relaxed">{p.desc}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Slot reservado para el primer caso real con datos (cuando un cliente autorice mostrar sus números) -->
+    <div data-reveal style="transition-delay:120ms">
+      <div class="mt-8 md:mt-10 rounded-2xl border border-dashed border-[#85AB8B]/25 bg-[#85AB8B]/[0.03] px-6 py-6 md:px-8 md:py-7">
+        <p class="text-sm md:text-base text-[#C7D2C6] leading-relaxed max-w-3xl">
+          <span class="font-semibold text-[#EAF1EA]">Caso real con datos, en camino.</span>
+          Publicaremos el primero apenas un cliente nos autorice a mostrar sus números. Hasta entonces
+          no inventamos resultados: te mostramos el método y lo comprobamos en tu propio diagnóstico.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
