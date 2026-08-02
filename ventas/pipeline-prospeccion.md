@@ -82,7 +82,7 @@ A pedido de Ramón, se exploró si vale la pena abrir el piloto a clínicas chic
 >
 > [Observación real y específica sobre su sitio — completar tras revisión manual de 2 minutos, nunca un dato inventado].
 >
-> Hacemos auditorías de SEO técnico y visibilidad en IA (AEO/GEO) para empresas de rubros donde la confianza es crítica — finanzas, legal, consultoría B2B. El diagnóstico inicial es gratis y toma 48 horas.
+> Hacemos auditorías de SEO técnico y visibilidad en IA (AEO/GEO) para empresas de rubros donde la confianza es crítica — finanzas, legal, consultoría B2B. El diagnóstico inicial es gratis y toma menos de 24 horas.
 >
 > Si te sirve, te lo envío esta semana.
 >

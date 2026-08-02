@@ -20,7 +20,7 @@ The defining structure here is that **multiple Claude Code sessions work on this
 - `persona-social-media`, `persona-director-creativo` — LinkedIn/Instagram content and visual production (carousels, Reels, Stories, banners).
 - `persona-paid-media` (Google Ads) / `persona-meta-ads` (Meta Ads) — paid channels. Browser access differs per session/environment (see below) — never assume one has it just because another does.
 - `persona-disenador-web` — `spindlelab-site/` and client web-dev delivery.
-- `mini-diagnostico` — generates the 1-page SEO/AI-visibility audit promised to prospects within 48h.
+- `mini-diagnostico` — generates the 1-page SEO/AI-visibility audit promised to prospects in **under 24h** (public promise since 29 jul 2026; internal target is **12h**). The old "48h" figure is superseded everywhere — if you find it in a doc, it's stale.
 - `buscar-leads`, `agente-outbound`, `agente-crm` — recurring task workflows (lead sourcing, outbound sequencing, pipeline updates).
 
 The full org chart of these agents (who does what, their working folder, memory, and open vacancies) is in **`marketing/oficina/organigrama-oficina.md`**; per-agent memory lives in `marketing/oficina/memoria/`.
@@ -31,6 +31,7 @@ Every skill is duplicated: the versioned copy in `.claude/skills/` (this repo) *
 
 - **Repo-only skills are invisible outside this folder.** A skill that exists only in `.claude/skills/` won't show up in a session started anywhere else — this is why `/persona-director-creativo` seemed to "disappear" for one session.
 - **The two copies silently diverge.** On 23 jul the global copies of `persona-social-media` and `persona-disenador-web` still carried *superseded rules* (e.g. "the personal profile never shares page posts", reversed on 21 jul). **The repo copy (`.claude/skills/`) is the source of truth** — if a local session's behavior contradicts what's documented here, re-copy repo → global rather than trusting the global copy.
+  - **But diff before you copy — the rule is not universal.** On 29 jul the *global* copy of `persona-social-media` was the newer one: it held two permanent 23 jul decisions (the company page always speaks in plural; "chileno/a" by context, not by rule) that the repo copy never received. Blindly copying repo → global would have destroyed them. They were merged up into the repo instead. **Always `diff` both copies and read what differs; whichever holds the later decision wins, direction be damned.** Only copy blind when the diff is empty.
 - **Skills are scanned once, at session startup.** A skill created or copied while a session is open will not appear in it — `/clear` does not rescan; a fresh session is needed.
 
 **This is not one working tree shared by everyone** — some of these sessions run as local Claude Code CLI sessions on Ramón's Mac (in git worktrees under his iCloud Drive folder, with real browser access via a Chrome extension), others run as Claude Code Remote cloud sessions (like the trunk, no local filesystem, no browser by default). Treat any environment-specific instruction below as scoped to that kind of session, not universal — e.g. a browser-extension connection that works interactively in a local session does not survive a headless/backgrounded re-invocation of that same session, and cloud sessions can't be "given" that browser connection just by copying instructions.
@@ -72,7 +73,7 @@ Source of truth: `marketing/brand/manual-de-marca.md`. Rules easy to get wrong:
 
 - **Voice:** first-person singular for observational claims ("le pregunté a ChatGPT", "revisé el sitio"); first-person plural for what the business delivers ("entregamos"). The personal LinkedIn account is always singular.
 - **Gold accent (`#C9A227`) is scarce:** exactly one gold use per visual piece (usually the wordmark's final dot). Never in body text, bullets, or backgrounds.
-- **Typography:** Gabarito (headlines/wordmark), Inter (body).
+- **Typography:** Gabarito (headlines/wordmark/figures) everywhere, no exception. **Body text is split by medium and this is deliberate:** `spindlelab-site/` uses **Manrope** (Google Fonts); rendered pieces — social carousels/Reels/Stories, the mini-diagnóstico, signatures — use **Inter**, embedded as `inter.woff2` next to each piece because HTML→PNG rendering is offline and can't depend on a CDN. Never mix the two inside one file. No third family: IBM Plex Mono was removed 29 jul; only `code`/`pre` in blog articles use the system monospace stack. Full rule in `marketing/brand/manual-de-marca.md` §05.
 - **Zero fabricated social proof.** Content is built only from real audit findings (`marketing/outbound/semana-*/lote-*.md`); prospect companies are generalized, never named without explicit permission.
 - **No em-dash used as an impact crutch** — the most common AI-writing tell, and specifically flagged as such in this project's own tone rules.
 - Everything public gets a human review pass before publishing — nothing generated is sent or posted straight from a draft.

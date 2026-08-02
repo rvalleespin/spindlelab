@@ -1,5 +1,16 @@
 # Carrusel 02 — "3 mitos sobre las respuestas de ChatGPT" — copy para publicar
 
+> ⚠️ **COPY SUPERADO — NO REUTILIZAR TAL CUAL (29 jul 2026).**
+> La lámina 6 y el caption prometen **«48 horas»**. Desde el 28 jul la promesa pública
+> es **«menos de 24 horas»** (ver `marketing/redes/_planificacion/cambio-oferta-24h.md`).
+> **El texto de abajo se conserva sin tocar a propósito:** es el registro de lo que
+> realmente se publicó el 16 jul. No lo reescribas — falsearía el historial.
+>
+> **Acción pendiente:** este carrusel figura como creativo en Meta Ads
+> (`marketing/redes/handoff-2026-07-21-redes.md`, línea 30). Si sigue activo, está
+> pagando tráfico con una promesa que **contradice al sitio**. Antes de volver a usarlo
+> hay que editar `lamina-6.html` y **re-renderizar `lamina-6.png`** a 1080×1080.
+
 **Estado: ✅ publicado en Instagram el 16 jul 2026.**
 **Formato:** 6 láminas, 1080×1080 (sirve para Instagram feed y LinkedIn carrusel/documento).
 **Orden de subida:** lamina-1.png → lamina-6.png (en ese orden exacto).

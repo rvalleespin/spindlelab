@@ -24,7 +24,7 @@ Los patrimonios altos investigan en privado antes de la primera reunión — y c
 
 A eso me dedico: SEO técnico y visibilidad en motores de IA para servicios financieros. Hace poco trabajé con una asesora de inversiones chilena en exactamente esto.
 
-Si te interesa, te preparo un mini-diagnóstico de 1 página de [EMPRESA] en 48 horas, gratis y sin compromiso. ¿Te lo envío?
+Si te interesa, te preparo un mini-diagnóstico de 1 página de [EMPRESA] en menos de 24 horas, gratis y sin compromiso. ¿Te lo envío?
 
 SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 
@@ -71,7 +71,7 @@ Los pacientes de tratamientos de alto valor comparan clínicas exactamente así 
 
 Me dedico al SEO técnico y la visibilidad en motores de IA para rubros donde la confianza es crítica, como la salud.
 
-¿Te preparo un mini-diagnóstico de 1 página de [EMPRESA] en 48 horas? Gratis, sin compromiso, y te quedas con el documento.
+¿Te preparo un mini-diagnóstico de 1 página de [EMPRESA] en menos de 24 horas? Gratis, sin compromiso, y te quedas con el documento.
 
 SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 
@@ -84,7 +84,7 @@ Números simples: un paciente de [TRATAMIENTO] vale [rango razonable del ticket]
 
 Lo bueno: en salud casi nadie en Chile está trabajando la visibilidad en IA todavía. Ser el primero del barrio es una ventaja concreta.
 
-El mini-diagnóstico gratis sigue disponible. Basta un «ok» para que te lo envíe en 48 h.
+El mini-diagnóstico gratis sigue disponible. Basta un «ok» para que te lo envíe en menos de 24 h.
 
 SpindleLab · spindlelab.cl
 
@@ -116,7 +116,7 @@ Hice una prueba real: le pregunté a ChatGPT «[pregunta real, ej.: ¿qué clín
 
 Cada vez más pacientes investigan así antes de agendar hora — primero Google, ahora también un chat de IA. En salud, donde la confianza pesa más que en casi cualquier otro rubro, no aparecer en esa respuesta tiene un costo directo en consultas que nunca llegan.
 
-Me dedico al SEO técnico y la visibilidad en motores de IA. ¿Te preparo un mini-diagnóstico de 1 página de [EMPRESA] en 48 horas? Gratis, sin compromiso, y te quedas con el documento.
+Me dedico al SEO técnico y la visibilidad en motores de IA. ¿Te preparo un mini-diagnóstico de 1 página de [EMPRESA] en menos de 24 horas? Gratis, sin compromiso, y te quedas con el documento.
 
 SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl
 
@@ -127,7 +127,7 @@ Hola [NOMBRE]:
 
 Un dato del rubro: en salud (lo que Google llama YMYL — *your money, your life*) los motores de IA exigen señales de confianza más estrictas que en cualquier otra categoría — autores identificables, datos estructurados, coherencia entre lo que dice el sitio y lo que se puede verificar de la clínica. Casi ningún centro oftalmológico o de óptica en Chile las tiene implementadas todavía.
 
-El mini-diagnóstico gratis sigue disponible. Un «ok» basta para que te lo envíe en 48 h.
+El mini-diagnóstico gratis sigue disponible. Un «ok» basta para que te lo envíe en menos de 24 h.
 
 SpindleLab · spindlelab.cl
 
@@ -146,7 +146,7 @@ SpindleLab · spindlelab.cl
 
 ## Respuestas tipo (para ir rápido)
 
-**Interesado →** «Perfecto. Para el diagnóstico solo necesito confirmar el sitio ([URL]). Te lo envío en 48 h. Si después quieres, lo revisamos en una llamada de 20 minutos — sin costo.»
+**Interesado →** «Perfecto. Para el diagnóstico solo necesito confirmar el sitio ([URL]). Te lo envío en menos de 24 h. Si después quieres, lo revisamos en una llamada de 20 minutos — sin costo.»
 
 **"¿Cuánto cuesta?" →** «El mini-diagnóstico es gratis. Si después hace sentido avanzar, los alcances y valores dependen del estado del sitio — por eso mismo el diagnóstico primero: en la llamada de 20 min te doy números concretos.»
 

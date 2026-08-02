@@ -14,9 +14,12 @@ LinkedIn (canal principal, página de empresa creada 14 jul 2026) e Instagram (s
 ## Reglas de marca
 
 - **El perfil personal de Ramón SÍ puede compartir, comentar y reaccionar a los posts de la página SpindleLab** (convención nueva, confirmada por Ramón el 21 jul 2026). La regla vieja de "nunca compartir" venía del anonimato, que se relajó el 12 jul; ahora que Ramón puede asociarse públicamente a la marca, compartir desde su perfil personal le da a la página el empujón inicial de alcance/seguidores que más le cuesta conseguir sola. Al compartir, el "comentario" (texto que va arriba de la publicación) se escribe en su voz personal (primera persona singular). Los posts de la página los sigue firmando la marca, no la persona.
-- **Los links de LinkedIn van en el primer comentario, no en el cuerpo del post** (convención nueva 21 jul — actualizar `plantillas/linkedin-posts.md` la próxima vez que se edite, hoy todavía muestra el link en el cuerpo).
+- **La página de empresa habla SIEMPRE en plural** (decisión de Ramón, 23 jul 2026, permanente). "Cuando revisamos un sitio", "encontramos", "lo revisamos y te mostramos". Nunca "revisé", "encontré", "lo que arreglo". El motivo es de posicionamiento: el plural da seriedad y autoridad de empresa, el singular suena a freelance. **Reemplaza la convención anterior** (observación en 1ª persona singular, plural solo para la oferta). La cuenta personal de Ramón no cambia: sigue en primera persona singular.
+  - Consecuencia a vigilar: un video **a cámara** publicado en la página tiene que resolver el plural sin sonar falso. La fórmula que funciona es narrar el hallazgo en plural ("revisando el sitio de una clínica nos encontramos con esto") en vez de forzar un "nosotros" en cada frase.
+- **"Chileno/a" se usa por contexto, no por regla** (criterio de Ramón, 23 jul 2026). Se mantiene cuando aporta y fluye ("revisamos más de 20 sitios de empresas chilenas" — ancla el dato en algo real y acotado). Se saca cuando encierra el planteamiento sin necesidad, sobre todo al describir el problema en general. Ante la duda: si suena forzado o achica el tema, fuera.
+- **Los links de LinkedIn van en el primer comentario, no en el cuerpo del post** (convención nueva 21 jul — ya aplicada en `plantillas/linkedin-posts.md`).
 - Dorado (`#C9A227`) solo si se produce una pieza visual, y una sola vez por pieza.
-- Gabarito para titulares, Inter para cuerpo — activos ya generados en `marketing/brand/redes/`.
+- Gabarito para titulares, **Inter para cuerpo en piezas renderizadas** (lo tuyo) — activos ya generados en `marketing/brand/redes/`. El sitio web usa Manrope en el cuerpo; es otro medio y no se unifica. Detalle en `manual-de-marca.md` §05.
 
 ## Reglas de tono — la parte que más costó aprender
 

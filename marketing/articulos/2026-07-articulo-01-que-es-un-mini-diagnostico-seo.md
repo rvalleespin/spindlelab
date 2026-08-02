@@ -4,7 +4,7 @@
 
 ---
 
-Un mini-diagnóstico SEO es una revisión profesional y acotada de un sitio web: una página, entregada en 48 horas, que responde tres preguntas: **qué le impide a tu sitio aparecer en Google, qué le impide aparecer en las respuestas de motores de IA como ChatGPT, y cuál es la única corrección que más impacto tendría hoy.** No es una [auditoría completa](/servicios/auditoria-seo-tecnica/) ni un informe automático de herramienta: es el juicio de un especialista aplicado a tu caso concreto.
+Un mini-diagnóstico SEO es una revisión profesional y acotada de un sitio web: una página, entregada en menos de 24 horas, que responde tres preguntas: **qué le impide a tu sitio aparecer en Google, qué le impide aparecer en las respuestas de motores de IA como ChatGPT, y cuál es la única corrección que más impacto tendría hoy.** No es una [auditoría completa](/servicios/auditoria-seo-tecnica/) ni un informe automático de herramienta: es el juicio de un especialista aplicado a tu caso concreto.
 
 ## ¿En qué se diferencia de una auditoría SEO completa?
 
@@ -25,13 +25,13 @@ Una página, sin relleno, con cuatro secciones:
 
 No incluye la implementación de las correcciones, ni el análisis de palabras clave, ni la revisión de campañas pagadas, ni un plan de contenidos. Todo eso pertenece a la [auditoría completa](/servicios/auditoria-seo-tecnica/) o al [acompañamiento mensual](/servicios/acompanamiento-mensual/), y solo tiene sentido después de la radiografía.
 
-## ¿Por qué gratis y en 48 horas?
+## ¿Por qué gratis y en menos de 24 horas?
 
-Porque es la mejor manera de demostrar [cómo trabajo](/metodo/) sin pedirte un acto de fe. En 48 horas tienes en tu correo un documento útil por sí mismo: si decides no seguir, te quedas con la radiografía y una prioridad clara. Si decides seguir, la conversación parte con datos de tu sitio, no con una presentación genérica.
+Porque es la mejor manera de demostrar [cómo trabajo](/metodo/) sin pedirte un acto de fe. En menos de 24 horas tienes en tu correo un documento útil por sí mismo: si decides no seguir, te quedas con la radiografía y una prioridad clara. Si decides seguir, la conversación parte con datos de tu sitio, no con una presentación genérica.
 
 ## ¿Cómo se pide?
 
-Escribiendo a **hola@spindlelab.cl** con la dirección de tu sitio. En 48 horas recibes el diagnóstico y, si te hace sentido, lo revisamos juntos en una llamada de 20 minutos.
+Escribiendo a **hola@spindlelab.cl** con la dirección de tu sitio. En menos de 24 horas recibes el diagnóstico y, si te hace sentido, lo revisamos juntos en una llamada de 20 minutos.
 
 ---
 
@@ -52,7 +52,7 @@ Empresas chilenas en rubros donde la confianza es crítica: servicios financiero
 
 **Meta title sugerido** (56 car.): `¿Qué es un mini-diagnóstico SEO? — SpindleLab`
 
-**Meta description sugerida** (149 car.): `Qué es, qué incluye y qué no un mini-diagnóstico SEO gratuito de SpindleLab: una radiografía de 1 página en 48 horas, sin acceso a tu sitio.`
+**Meta description sugerida** (155 car., idéntica a la publicada): `Qué es, qué incluye y qué no un mini-diagnóstico SEO gratuito de SpindleLab: una radiografía de 1 página en menos de 24 horas, sin acceso a tu sitio.`
 
 **JSON-LD listo para pegar** (mismo patrón que el resto del blog):
 
@@ -64,7 +64,7 @@ Empresas chilenas en rubros donde la confianza es crítica: servicios financiero
       "@type": "Article",
       "@id": "https://spindlelab.cl/blog/que-es-un-mini-diagnostico-seo/#article",
       "headline": "¿Qué es un mini-diagnóstico SEO y qué incluye?",
-      "description": "Qué es, qué incluye y qué no un mini-diagnóstico SEO gratuito de SpindleLab: una radiografía de 1 página en 48 horas, sin acceso a tu sitio.",
+      "description": "Qué es, qué incluye y qué no un mini-diagnóstico SEO gratuito de SpindleLab: una radiografía de 1 página en menos de 24 horas, sin acceso a tu sitio.",
       "inLanguage": "es-CL",
       "datePublished": "2026-07-16",
       "dateModified": "2026-07-16",

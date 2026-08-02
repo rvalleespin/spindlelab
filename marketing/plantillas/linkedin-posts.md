@@ -19,7 +19,7 @@ SpindleLab es una consultoría especializada en SEO técnico y visibilidad en mo
 
 Método propio, trabajo directo con un consultor senior, sin humo: auditoría técnica → plan de visibilidad en IA → implementación medible.
 
-Mini-diagnóstico gratuito de 1 página en 48 horas → spindlelab.cl
+Mini-diagnóstico gratuito de 1 página en menos de 24 horas → spindlelab.cl
 
 ---
 
@@ -65,7 +65,7 @@ Mini-diagnóstico gratuito de 1 página en 48 horas → spindlelab.cl
 >
 > Ninguna requiere rehacer el sitio. Todas afectan lo que Google —y ahora ChatGPT— entienden de tu empresa.
 >
-> Mini-diagnóstico gratis en 48 h: spindlelab.cl
+> Mini-diagnóstico gratis en menos de 24 h: spindlelab.cl
 
 ## Formato 5 — Caso (usar SOLO con permiso de SimpleTrust)
 

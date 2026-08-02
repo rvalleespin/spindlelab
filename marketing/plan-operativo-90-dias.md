@@ -61,7 +61,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 
 ### Semana 3 (21–27 jul)
 - [~] [TÚ] Enviar 30 contactos: 20 Frente A + **Frente B (lanzamiento dental/estética)** ← **hecho = avanzamos** — Frente A ya está en 15/15 (falta ampliar más allá de la lista original si se decide). **Frente B: CSV de Apollo recibido 21 jul** — vino más amplio de lo pedido (42 contactos en vez de los 10 priorizados; solo 3 de esos 10 llegaron — Zaror, Terré, Beladent). Decisión: usar los 42 tal cual. **Tanda 1 (8 contactos) ya redactada** con hallazgo técnico real por sitio en `outbound/semana-03/lote-1-frente-b.md` (incluye un hallazgo fuerte: Clínica OPIA bloquea explícitamente a GPTBot/ClaudeBot/etc. en su robots.txt) → falta que Ramón revise y envíe. Tandas 2 y 3 (26 contactos) y 2ª ola de dominios catch-all (7) pendientes del mismo proceso.
-- [ ] [TÚ] Regla sagrada: todo interesado recibe su mini-diagnóstico en ≤48 h ([CC] produce el borrador en horas; apuntar a entregar en 24)
+- [ ] [TÚ] Regla sagrada: todo interesado recibe su mini-diagnóstico en **<24 h** ([CC] produce el borrador en horas; objetivo interno **12 h**) — actualizado 29 jul 2026, antes era ≤48 h
 - [ ] [CC] Artículo 3: «SEO para clínicas dentales en Chile: lo que cambió con la IA» → [TÚ] editar y publicar
 - [ ] [CC] Panel semanal de métricas (rebotes <3 %, tasa de respuesta) → [TÚ] leer 15 min
 
@@ -177,5 +177,5 @@ El centro de gravedad cambia: entregar impecable a los clientes cerrados (Claude
 **Reglas fijas (las que evitan el colapso):**
 - Tope duro de 50 contactos/semana **aunque los agentes puedan producir más** — el límite es la reputación del dominio, no la producción.
 - 2 clientes activos → outbound en pausa · 1 cliente → 25/semana · 0 clientes → 50/semana.
-- La promesa «mini-diagnóstico en 48 h» nunca se rompe (apuntar a 24 h como estándar interno).
+- La promesa «mini-diagnóstico en **menos de 24 h**» nunca se rompe (objetivo interno: **12 h**). Actualizado 29 jul 2026.
 - Nada producido por IA se publica ni se envía sin pasada humana. Sin excepciones: la marca vende criterio experto.

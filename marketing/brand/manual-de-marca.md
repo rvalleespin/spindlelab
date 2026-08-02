@@ -41,8 +41,17 @@
 
 ## 05 · Tipografía
 
-- **Gabarito** (semibold): wordmark, titulares, cifras destacadas — geométrica amable, la calidez está en los trazos. *La voz.*
-- **Inter** (400/500/600): párrafos, UI, tablas, etiquetas. *El trabajo.*
+- **Gabarito** (semibold): wordmark, titulares, cifras destacadas — geométrica amable, la calidez está en los trazos. *La voz.* **En todos los medios, sin excepción.** Es la fuente del wordmark: es lo que hace reconocible a la marca.
+- **El cuerpo de texto cambia según el medio.** Es deliberado, no una inconsistencia:
+
+| Medio | Cuerpo | Por qué |
+|---|---|---|
+| `spindlelab-site/` | **Manrope** (400/500/700/800) | Se sirve desde Google Fonts; es la que se aprobó en el rediseño de julio |
+| Piezas renderizadas (redes, mini-diagnóstico, firmas) | **Inter** (400/500/600) | Va embebida como `inter.woff2` junto a cada pieza — el render HTML→PNG es offline y no puede depender de un CDN |
+
+- **Las dos nunca conviven en la misma pieza.** Son neo-grotescas casi indistinguibles a tamaño de cuerpo; el medio decide y no se mezcla dentro de un mismo archivo.
+- **No existe `Manrope.woff2` en el repo.** Si algún día se quiere unificar todo en Manrope, hay que conseguirla y re-renderizar las 23 carpetas de piezas — incluidas las ya publicadas. Decisión evaluada y descartada el 29 jul 2026.
+- **Ninguna tercera familia.** IBM Plex Mono estuvo en el sitio y se retiró (29 jul). Única excepción: los bloques `code`/`pre` de los artículos usan la monoespaciada del sistema, sin cargar webfont.
 - Reglas: titulares en *sentence case* (nunca Title Case ni ALL CAPS) · mayúsculas solo en etiquetas pequeñas con tracking (≥1.4px) · texto corrido ≤ 68 caracteres/línea.
 
 ## 06 · El punto dorado
@@ -86,6 +95,7 @@ Afirmaciones verificables, ejemplos concretos, valentía de decir «esto no lo n
 
 ## Historial
 
+- **v1.4 (29 jul 2026):** §05 reescrito. Se codifica que el cuerpo de texto se parte por medio — **Manrope en el sitio, Inter en piezas renderizadas** — porque así funcionaba de hecho desde el rediseño de julio y el manual seguía diciendo «Inter» para todo. Gabarito queda explícita como única fuente transversal. Se retira IBM Plex Mono del sistema. Unificar todo en Manrope se evaluó y se descartó: exigiría re-renderizar 23 carpetas de piezas, varias ya publicadas.
 - **v1.3 (8 jul 2026):** regla de voz refinada — plural («entregamos», «revisamos») para todo lo que la empresa ofrece o hace como servicio; singular se reserva para lo observacional («le pregunté a ChatGPT»). Aplicado al carrusel 01; pendiente revisar `plantillas/emails-fase0.md` y `plantillas/linkedin-posts.md` para consistencia.
 - **v1.2 (8 jul 2026):** sistema aplicado a spindlelab-site — tipografía, favicon, 4ª línea de servicio (Desarrollo Web) con página propia. Corrección: el sitio nunca usó Fraunces, usaba Manrope.
 - **v1.1 (8 jul 2026):** tipografía de marca pasa de Fraunces Display a **Gabarito** (feedback: la serif era demasiado solemne). Kit de logo en `logo/`: horizontal, apilada y monograma, en positivo e invertido (PNG transparente).

@@ -1,11 +1,11 @@
 ---
 name: mini-diagnostico
-description: Genera el mini-diagnóstico de 1 página (SEO técnico + visibilidad en IA) que SpindleLab promete en 48h a cualquier prospecto que responda interesado a un email de outbound. Usar cuando un prospecto de Frente A, B o C (o cualquier contacto directo) dice "sí" / "ok" / pide el diagnóstico.
+description: Genera el mini-diagnóstico de 1 página (SEO técnico + visibilidad en IA) que SpindleLab promete en menos de 24h a cualquier prospecto que responda interesado a un email de outbound. Usar cuando un prospecto de Frente A, B o C (o cualquier contacto directo) dice "sí" / "ok" / pide el diagnóstico.
 ---
 
 # Mini-diagnóstico SpindleLab
 
-Tarea recurrente: cada vez que un prospecto responde con interés a un email de outbound, SpindleLab se compromete a entregar un diagnóstico de 1 página en 48 horas (apuntar a 24h — regla sagrada del plan operativo, nunca se rompe). Este skill produce ese documento de forma consistente, sin reconstruir el proceso cada vez.
+Tarea recurrente: cada vez que un prospecto responde con interés a un email de outbound, SpindleLab se compromete a entregar un diagnóstico de 1 página en **menos de 24 horas** (objetivo interno: **12 h** — regla sagrada del plan operativo, nunca se rompe). Actualizado el 29 jul 2026: el sitio dejó de prometer 48 h porque *«para una empresa IA es mucho tiempo»*; el colchón de seguridad bajó de 24 h a 12 h y el proceso **sigue siendo manual**, así que el riesgo de incumplir subió — priorizar `marketing/propuesta-automatizacion-mini-diagnostico.md`. Este skill produce ese documento de forma consistente, sin reconstruir el proceso cada vez.
 
 Referencias que este skill asume ya leídas o a leer si hace falta detalle:
 - `marketing/plantillas/mini-diagnostico/guia-mini-diagnostico.md` — estructura fija, reglas de contenido y checklist completo.
@@ -42,7 +42,7 @@ Documentar solo lo verificado: status HTTP, título, meta description (presente/
 
 ## Paso 2 — Visibilidad en motores de IA (requiere al humano)
 
-Claude no puede consultar ChatGPT, Perplexity o Gemini directamente. Pedir a Ramón que pegue el resultado real de la "pregunta ChatGPT" ya definida para ese prospecto (reusar la del lote de outbound si existe; si no, definir una pregunta natural que un cliente real haría). Si no se ejecuta la prueba a tiempo para cumplir el plazo de 48h, redactar la sección en términos de riesgo general, sin inventar qué apareció o no.
+Claude no puede consultar ChatGPT, Perplexity o Gemini directamente. Pedir a Ramón que pegue el resultado real de la "pregunta ChatGPT" ya definida para ese prospecto (reusar la del lote de outbound si existe; si no, definir una pregunta natural que un cliente real haría). Si no se ejecuta la prueba a tiempo para cumplir el plazo de **menos de 24 h**, redactar la sección en términos de riesgo general, sin inventar qué apareció o no. Con el plazo nuevo esta situación es más probable: pedirle el pegado a Ramón apenas entra el prospecto, no al final.
 
 ## Paso 3 — Señales de confianza
 
@@ -79,7 +79,7 @@ Ver checklist completo en la guía. Resumen:
 - [ ] Sección 2 con resultado real o redactada sin inventar uno
 - [ ] Un solo acento dorado (sección 4)
 - [ ] Remitente hola@spindlelab.cl
-- [ ] Dentro de 48h desde la respuesta del prospecto (apuntar a 24h)
+- [ ] Dentro de **24h** desde la respuesta del prospecto (objetivo interno: **12h**)
 - [ ] Actualizar `ventas/pipeline.md` → etapa "Diagnóstico/propuesta enviada"
 
 ## Después de entregar
