@@ -7,7 +7,14 @@
 
 - Rol creado el 2026-08-02 a pedido de Ramón: estudiar la ola de "agencias con IA"
   que aparece en Instagram y ubicar a SpindleLab frente a ella.
-- Aún sin estudios cerrados. El primero pendiente: panorama de agencias IA (foco IG).
+- **Primer estudio cerrado (2026-08-02):** `marketing/inteligencia-mercado/2026-08-estudio-agencias-ia.md`.
+  Conclusión: SpindleLab apunta al cuadrante correcto (AEO/GEO, 42,9% CAGR); el
+  riesgo no es la ola IG (otro cuadrante, comoditizándose) sino el campo directo
+  chileno de AEO, más poblado y "legible" de lo asumido (Best Solution, Nitten).
+  Recomendación de servicios: potenciar AEO+retainer+mini-diagnóstico, reencuadrar
+  auditoría one-shot y Desarrollo Web (no como pilar), agregar autoridad de entidad
+  (GEO estratégico), y NO volverse agencia de automatización genérica.
+- Fichas en `marketing/inteligencia-mercado/competidores.md`.
 
 ## Gotchas de investigación (aprendidos / heredados)
 
@@ -24,5 +31,15 @@
 
 ## Competidores conocidos
 
-Ninguno fichado todavía. El registro vivo va en
-`marketing/inteligencia-mercado/competidores.md`.
+Registro vivo en `marketing/inteligencia-mercado/competidores.md`. Los directos
+más relevantes hoy: **Best Solution** (el más peligroso, misma esquina AEO-B2B) y
+**Nitten** (método propio SAGEO + índice público IViA — la referencia en "proof
+legible"). El grueso del campo (ROI, etc.) tiene servicio real pero cero proof
+visible: ahí SpindleLab gana solo con mostrar un caso con datos.
+
+## Pendientes que dejé
+
+- [ ] Deep-dive a 3-5 cuentas de Instagram chilenas/LatAm de "agencia de IA" con
+  capturas — requiere sesión local del Mac con Chrome logueado.
+- [ ] Cotización espejo para confirmar precios de Best Solution / ROI / Seonet (no
+  publican tarifas).
