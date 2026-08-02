@@ -1,0 +1,15 @@
+# Cloudflare Pages — políticas de caché
+# Assets con hash de Astro: inmutables y cache largo.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Imágenes de marca (favicons, OG): cache moderado.
+/assets/*
+  Cache-Control: public, max-age=604800
+
+# Video del hero.
+/*.mp4
+  Cache-Control: public, max-age=2592000
