@@ -1,0 +1,87 @@
+---
+import Icon from './Icon.astro';
+
+const SERVICIOS = [
+  {
+    icon: 'scanSearch',
+    titulo: 'Auditoría SEO Técnica',
+    desc: 'Diagnóstico profundo de tu arquitectura web: rastreo, indexación, Core Web Vitals, datos estructurados y señales de autoridad.',
+  },
+  {
+    icon: 'bot',
+    titulo: 'Visibilidad en IA (AEO/GEO)',
+    desc: 'Optimizamos tu contenido y estructura para que los modelos de lenguaje te citen como fuente confiable en ChatGPT, Gemini y Perplexity.',
+  },
+  {
+    icon: 'lineChart',
+    titulo: 'Acompañamiento Mensual',
+    desc: 'Monitoreo continuo, informes quincenales y ajustes tácticos para mantener tu ventaja competitiva en SEO e IA.',
+  },
+  {
+    icon: 'code',
+    titulo: 'Desarrollo Web',
+    desc: 'Sitios 100% a medida, sin plantillas ni WordPress, con SEO técnico incorporado desde el primer commit. Construcción asistida por IA, supervisión humana en cada fase.',
+    nuevo: true,
+  },
+];
+
+const CIFRAS = [
+  { valor: '48 h', label: 'Entrega del diagnóstico inicial' },
+  { valor: '1 sitio', label: 'Para dominar tu nicho en IA' },
+  { valor: '20 min', label: 'Reunión de alineación estratégica' },
+  { valor: '3 capas', label: 'SEO técnico, contenido y autoridad' },
+];
+---
+
+<section id="servicios" class="relative bg-[#0E1712] py-24 md:py-32 px-4 sm:px-6 scroll-mt-20">
+  <div class="max-w-6xl mx-auto">
+    <div data-reveal class="max-w-2xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#85AB8B] mb-4">
+        Nuestros servicios
+      </p>
+      <h2 class="text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-[#EAF1EA]" style="letter-spacing:-0.03em">
+        Especialistas en la infraestructura del nuevo SEO
+      </h2>
+    </div>
+
+    <div class="mt-12 md:mt-16 grid sm:grid-cols-2 gap-5">
+      {
+        SERVICIOS.map((s, i) => (
+          <div data-reveal style={`transition-delay:${i * 90}ms`}>
+            <div class="group h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-7 transition-colors duration-300 hover:border-[#85AB8B]/40 hover:bg-white/[0.05]">
+              <div class="flex items-center justify-between mb-5">
+                <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#85AB8B]/12 text-[#85AB8B]">
+                  <Icon name={s.icon} class="w-5 h-5" />
+                </span>
+                {s.nuevo && (
+                  <span class="text-[10px] font-semibold uppercase tracking-wider text-[#85AB8B] border border-[#85AB8B]/30 rounded-full px-2.5 py-1">
+                    Nuevo
+                  </span>
+                )}
+              </div>
+              <h3 class="text-lg md:text-xl font-semibold text-[#EAF1EA] mb-2.5">{s.titulo}</h3>
+              <p class="text-sm text-[#9FB2A0] leading-relaxed">{s.desc}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div data-reveal style="transition-delay:120ms">
+      <div class="mt-14 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 rounded-2xl border border-white/10 bg-[#0B120E]/60 px-6 py-8 md:py-10">
+        {
+          CIFRAS.map((c) => (
+            <div class="text-center">
+              <div class="text-2xl md:text-3xl font-semibold text-[#EAF1EA]" style="letter-spacing:-0.02em">
+                {c.valor}
+              </div>
+              <div class="mt-1.5 text-xs text-[#9FB2A0] leading-snug max-w-[18ch] mx-auto">
+                {c.label}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
