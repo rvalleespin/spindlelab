@@ -73,6 +73,17 @@
 - **Realidad del modelo (2026):** la demanda es real y sube, pero **maduró** — los clientes ya no pagan por "explorar IA", quieren un proceso automatizado con antes/después. **Los precios cayeron ~35% (2024→2026)** por modelos open-source y competencia. Los talleres especializados sacan 25-35% de margen neto vs 11-18% de los generalistas.
 - **Debilidad explotable:** promesa > entrega, comoditización de precio, saturación. SpindleLab **no debe competir aquí**; debe usarlos como contraste ("nosotros mostramos, no prometemos").
 
+#### Especímenes reales de Instagram (deep-dive con Chrome logueado, 2026-08-02)
+Se ficharon cuentas reales chilenas/LatAm de la ola. El patrón es **nítido y repetido**:
+
+| Cuenta | Seguidores / posts | Oferta y promesa (textual) | Señal de proof |
+|---|---|---|---|
+| **@autonomia.cl** (Chile) | 64 / 8 | "Automatiza tu negocio con IA · Dashboards · CRM · Chatbots · Soluciones listas en días · Agenda tu demo" (landing en Vercel gratis) | Post "CASO REAL · MÉXICO — 14 días" en una cuenta de **64 seguidores** → proof prestado/aspiracional |
+| **@vantika.ai** | 113 / 7 | "Ayudamos a negocios que agendan citas · Sistema de leads y tráfico automático" (widget de booking) | Recién nacida |
+| **@tairoai** | 16,5 mil / 16 | "Tu negocio en piloto automático 24/7 🚀 · sistemas de IA que atraen, agendan y **venden por ti**" | 16,5k seguidores con solo **16 posts** → crecimiento pagado/viral, no orgánico sostenido |
+
+**La fórmula compartida** (repetida en las tres): handle `<marca>.ai` · bio de promesa de ingresos en automático ("venden por ti", "piloto automático", "tráfico automático") + lista de entregables (chatbots/CRM/leads) + CTA "agenda tu demo/cita" → widget de booking o landing en Vercel. Contenido: Reels talking-head + mockups de WhatsApp/dashboard + lifestyle aspiracional. **Barrera de entrada casi cero** (cuentas de 64-113 seguidores ya "vendiendo") — es literalmente el output del curso "monta tu agencia de IA en 60 minutos". **Ninguna** mostró un caso de cliente verificable con nombre y datos. Evidencia: handles + métricas al 2026-08-02.
+
 ---
 
 ## 3. Análisis transversal
@@ -149,6 +160,6 @@
 
 ## 5. Pendientes / no verificado
 
-- **Instagram, nivel cuenta:** esta pasada caracterizó el **modelo** de la ola "AAA" con fuentes web públicas y citables, pero **no** se hizo el deep-dive a cuentas de IG chilenas/LatAm específicas (perfiles, Reels, cadencia, ganchos, precios en carruseles). Eso requiere **Chrome logueado** y una sesión local del Mac (ver gotcha de la skill). Queda como el siguiente paso natural: fichar 3-5 cuentas IG reales de "agencia de IA" chilenas con capturas.
+- **Instagram, nivel cuenta:** ✅ hecho el 2026-08-02 (Chrome logueado) — ver §2, especímenes reales (@autonomia.cl, @vantika.ai, @tairoai). Confirmó el patrón y la ausencia de proof verificable. *Pendiente menor:* si se quiere, medir engagement real (likes/comentarios por post) para confirmar la hipótesis de crecimiento pagado en @tairoai.
 - **Precios de competidores directos:** Best Solution, ROI y Seonet **no publican tarifas** — los rangos son inferidos o vienen de benchmarks previos (Nitten, Maqui). Confirmar con cotización espejo si se quiere precisión.
 - **Casos de éxito de la competencia:** no verificados con nombre/datos; se documentó la *ausencia* visible de proof, no su inexistencia.

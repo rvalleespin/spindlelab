@@ -37,9 +37,21 @@ más relevantes hoy: **Best Solution** (el más peligroso, misma esquina AEO-B2B
 legible"). El grueso del campo (ROI, etc.) tiene servicio real pero cero proof
 visible: ahí SpindleLab gana solo con mostrar un caso con datos.
 
+## Deep-dive Instagram (2026-08-02, Chrome logueado)
+
+- Búsqueda que sí funciona para encontrar la ola: **"automatizacion con ia"** en el
+  buscador de cuentas de IG. ("agencia de ia" trae agencias de **viajes** — matchea
+  "via-jes"; inútil.)
+- Especímenes fichados: **@autonomia.cl** (Chile, 64 seg), **@vantika.ai** (113 seg),
+  **@tairoai** (16,5k seg / 16 posts). Patrón repetido: handle `<marca>.ai`, bio de
+  promesa "venden por ti / piloto automático 24/7", entregables chatbots/CRM/leads,
+  CTA a demo/booking, cero caso verificable. Barrera de entrada casi nula.
+- Gotcha operativo: si se conecta un 2º Chrome a mitad de sesión, hay que
+  re-seleccionar el navegador (AskUserQuestion → select_browser). El de Ramón con IG
+  logueado fue "Browser 2" (deviceId 1c3897e5-...).
+
 ## Pendientes que dejé
 
-- [ ] Deep-dive a 3-5 cuentas de Instagram chilenas/LatAm de "agencia de IA" con
-  capturas — requiere sesión local del Mac con Chrome logueado.
 - [ ] Cotización espejo para confirmar precios de Best Solution / ROI / Seonet (no
   publican tarifas).
+- [ ] Engagement real (likes/comentarios) de @tairoai para confirmar crecimiento pagado.
