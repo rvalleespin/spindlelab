@@ -4,7 +4,7 @@
 > un empleado con **nombre, rol, memoria y carpeta de trabajo** — igual que una
 > oficina real, pero cada empleado es una sesión de Claude Code activada por una
 > *skill*. Este documento es el único lugar donde se ve la oficina completa de un
-> vistazo. Última actualización: 2026-07-23.
+> vistazo. Última actualización: 2026-08-02.
 >
 > **Nomenclatura híbrida.** Cada agente tiene un nombre humano (para hablar de él
 > como "empleado") y, entre paréntesis, la skill técnica real que lo activa. El
@@ -26,6 +26,10 @@
                         │  marketing) — el gerente     │
                         │  · dueño del estado compartido│
                         │  · orquesta todos los frentes │
+                        │  Marco (agente-inteligencia-  │
+                        │  mercado) — asesor de mercado │
+                        │  & competencia (informa, no   │
+                        │  edita el estado compartido)  │
                         └──────────────┬───────────────┘
                                        │
    ┌───────────────┬───────────────┬───┴───────────┬───────────────┬──────────────┐
@@ -68,6 +72,7 @@ Estado: **✅ trabajando** · **★ nuevo (esta pasada)** · **○ vacante** · 
 | Empleado | Depto | Skill (rol) | Carpeta de trabajo | Memoria | Entradas → Salidas | Estado |
 |---|---|---|---|---|---|---|
 | **Tomás** | Dirección | `agente-troncal-marketing` | `marketing/plan-operativo-90-dias.md`, `marketing/encargos-otras-sesiones/` | `oficina/memoria/tomas-troncal.md` | Reportes de todos los frentes → estado compartido verificado, encargos | ✅ |
+| **Marco** ★ | Dirección (asesoría) | `agente-inteligencia-mercado` | `marketing/inteligencia-mercado/` | `oficina/memoria/marco-inteligencia-mercado.md` | Foco/decisión → estudio de mercado y competencia (informa a Tomás, no edita el estado compartido) | ★ nuevo |
 | **Dereck** | Captación | `buscar-leads` | `marketing/listas/frente-*.md`, `ventas/leads-*.csv` | `oficina/memoria/dereck-buscar-leads.md` | Frente/ICP → CSV de leads (`nombre,cargo,empresa,email,estado`) | ✅ |
 | **Valen** | Captación | `mini-diagnostico` | `marketing/diagnosticos/SPL-DIAG-*/` | `oficina/memoria/valen-mini-diagnostico.md` | Prospecto interesado + URL → diagnóstico 1 pág (48h) | ✅ |
 | **Emilia** ★ | Captación | `agente-outbound` | `marketing/outbound/semana-*/` | `oficina/memoria/emilia-outbound.md` | CSV de Dereck → secuencia de emails redactada + tracker (NO envía) | ★ nuevo |
