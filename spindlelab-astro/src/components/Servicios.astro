@@ -1,7 +1,14 @@
 ---
 import Icon from './Icon.astro';
+import { CONTACTO } from '../consts';
 
 const SERVICIOS = [
+  {
+    icon: 'lineChart',
+    titulo: 'Acompañamiento Mensual',
+    desc: 'Monitoreo continuo, informes quincenales y ajustes tácticos para sostener tu ventaja en buscadores y en IA. Es nuestro formato de trabajo principal.',
+    destacado: true,
+  },
   {
     icon: 'scanSearch',
     titulo: 'Auditoría SEO Técnica',
@@ -11,17 +18,6 @@ const SERVICIOS = [
     icon: 'bot',
     titulo: 'Visibilidad en IA (AEO/GEO)',
     desc: 'Optimizamos tu contenido y estructura para que los modelos de lenguaje te citen como fuente confiable en ChatGPT, Gemini y Perplexity.',
-  },
-  {
-    icon: 'lineChart',
-    titulo: 'Acompañamiento Mensual',
-    desc: 'Monitoreo continuo, informes quincenales y ajustes tácticos para mantener tu ventaja competitiva en SEO e IA.',
-  },
-  {
-    icon: 'code',
-    titulo: 'Desarrollo Web',
-    desc: 'Sitios 100% a medida, sin plantillas ni WordPress, con SEO técnico incorporado desde el primer commit. Construcción asistida por IA, supervisión humana en cada fase.',
-    nuevo: true,
   },
 ];
 
@@ -44,18 +40,25 @@ const CIFRAS = [
       </h2>
     </div>
 
-    <div class="mt-12 md:mt-16 grid sm:grid-cols-2 gap-5">
+    <div class="mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {
         SERVICIOS.map((s, i) => (
           <div data-reveal style={`transition-delay:${i * 90}ms`}>
-            <div class="group h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-7 transition-colors duration-300 hover:border-[#85AB8B]/40 hover:bg-white/[0.05]">
+            <div
+              class:list={[
+                'group h-full rounded-2xl border p-6 md:p-7 transition-colors duration-300',
+                s.destacado
+                  ? 'border-[#85AB8B]/45 bg-[#85AB8B]/[0.07] hover:border-[#85AB8B]/70'
+                  : 'border-white/10 bg-white/[0.03] hover:border-[#85AB8B]/40 hover:bg-white/[0.05]',
+              ]}
+            >
               <div class="flex items-center justify-between mb-5">
                 <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#85AB8B]/12 text-[#85AB8B]">
                   <Icon name={s.icon} class="w-5 h-5" />
                 </span>
-                {s.nuevo && (
-                  <span class="text-[10px] font-semibold uppercase tracking-wider text-[#85AB8B] border border-[#85AB8B]/30 rounded-full px-2.5 py-1">
-                    Nuevo
+                {s.destacado && (
+                  <span class="text-[10px] font-semibold uppercase tracking-wider text-[#0E1712] bg-[#85AB8B] rounded-full px-2.5 py-1">
+                    Plan recomendado
                   </span>
                 )}
               </div>
@@ -81,6 +84,28 @@ const CIFRAS = [
             </div>
           ))
         }
+      </div>
+    </div>
+
+    <!-- Cross-sell secundario: Desarrollo Web (fuera de los pilares) -->
+    <div data-reveal style="transition-delay:150ms">
+      <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 rounded-2xl border border-white/10 bg-white/[0.02] px-6 py-5 md:px-7">
+        <span class="flex items-center justify-center w-10 h-10 shrink-0 rounded-xl bg-white/[0.05] text-[#9FB2A0]">
+          <Icon name="code" class="w-5 h-5" />
+        </span>
+        <div class="flex-1">
+          <p class="text-sm font-semibold text-[#C7D2C6]">¿Además necesitas el sitio? Lo construimos.</p>
+          <p class="text-sm text-[#9FB2A0] leading-relaxed mt-1">
+            Desarrollo web 100% a medida, sin plantillas ni WordPress, con el SEO técnico incorporado
+            desde el primer commit. Para quienes parten de cero o rehacen su plataforma.
+          </p>
+        </div>
+        <a
+          href={CONTACTO}
+          class="shrink-0 text-sm font-semibold text-[#85AB8B] hover:text-[#a9c8ad] transition-colors"
+        >
+          Conversemos →
+        </a>
       </div>
     </div>
   </div>
