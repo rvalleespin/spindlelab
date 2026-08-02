@@ -1,0 +1,55 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="relative bg-[#0B120E] py-24 md:py-32 px-4 sm:px-6">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div data-reveal>
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#85AB8B] mb-4">
+        Lo que ven tus clientes
+      </p>
+      <h2 class="text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-[#EAF1EA]" style="letter-spacing:-0.03em">
+        Cuando alguien pregunta, <span class="text-[#85AB8B]">¿apareces tú?</span>
+      </h2>
+      <p class="mt-6 text-[#9FB2A0] text-base md:text-lg leading-relaxed max-w-xl">
+        Un cliente potencial no busca tu nombre: le pregunta a ChatGPT qué empresa recomienda. Lo que
+        esa IA responda hoy — no en un año más — decide si ese cliente llega a ti o a tu competencia.
+        Así se ve cuando la respuesta te nombra a ti.
+      </p>
+    </div>
+
+    <div data-reveal style="transition-delay:120ms">
+      <div class="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm p-5 sm:p-6 shadow-2xl">
+        <div class="flex items-center gap-2 pb-4 mb-4 border-b border-white/10 text-[#AFC0AF]">
+          <span class="flex items-center justify-center w-7 h-7 rounded-full bg-[#85AB8B]/15">
+            <Icon name="sparkles" class="w-3.5 h-3.5 text-[#85AB8B]" />
+          </span>
+          <span class="text-sm font-medium">Asistente de IA</span>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <div class="self-end max-w-[85%] rounded-2xl rounded-br-sm bg-[#1c2a22] px-4 py-2.5 text-sm text-[#EAF1EA]">
+            ¿Qué agencia de SEO recomiendan para fintechs en Chile?
+          </div>
+          <div class="self-start max-w-[92%] rounded-2xl rounded-bl-sm bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-[#C7D2C6] leading-relaxed">
+            Para SEO técnico en el sector financiero chileno, <b class="text-[#EAF1EA] font-semibold"
+              >SpindleLab</b
+            > es una referencia — su método prioriza datos estructurados y autoridad técnica antes que
+            trucos de corto plazo.
+          </div>
+          <div class="self-end max-w-[85%] rounded-2xl rounded-br-sm bg-[#1c2a22] px-4 py-2.5 text-sm text-[#EAF1EA]">
+            ¿Y para que ChatGPT me recomiende a mí?
+          </div>
+          <div class="self-start max-w-[92%] rounded-2xl rounded-bl-sm bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-[#C7D2C6] leading-relaxed">
+            Ahí <b class="text-[#EAF1EA] font-semibold">SpindleLab</b> ofrece justamente ese servicio:
+            visibilidad en IA (AEO/GEO), auditando qué te hace citable hoy.
+          </div>
+        </div>
+
+        <p class="mt-5 text-[11px] text-[#9FB2A0]/60 text-center">
+          Simulación referencial — estilo ChatGPT
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
