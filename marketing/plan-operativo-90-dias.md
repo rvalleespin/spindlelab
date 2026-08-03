@@ -6,6 +6,13 @@ Presupuesto de horas humanas: **6–10 h/semana de supervisión** (original) —
 
 **Hito 24 jul — SpindleLab se constituyó formalmente como SpA.** RUT 78.474.925-8, Providencia, capital $1.000.000 (1.000 acciones, Ramón único accionista y Gerente General). Detalle completo en `ventas/constitucion-empresa.md`. **Regla de facturación definida 25 jul:** contrato pre-24-jul → persona natural (caso Bernardo); contrato nuevo → SpA (estrena con la mantención mensual y clientes nuevos) — la SpA aún no puede emitir documentos, inicio de actividades bloqueado por trámites pendientes.
 
+**Reposicionamiento "Mostramos, no prometemos" (decidido con Ramón 2-ago, plan completo en `marketing/plan-reposicionamiento-2026-08.md`) — reflejado acá recién ahora, con retraso:** eje nuevo de marca fundado en `marketing/inteligencia-mercado/2026-08-estudio-agencias-ia.md` (el hueco real del mercado es de confianza, no técnico — la ola de "agencias IA" es puro hype sin prueba). Método nombrado **"Método Spindle"**. Desarrollo Web pasa de 4º pilar co-igual a cross-sell secundario; se lidera con Acompañamiento Mensual (retainer). 3 encargos despachados a sesiones especializadas:
+- **Sitio (`persona-disenador-web`, Diego):** ✅ hecho — el sitio migró a **Astro** (`spindlelab-astro/`, en vivo), jerarquía de servicios reordenada, método nombrado, mejoras incrementales en PR #18 ya fusionado. **Nota sin resolver:** el titular del hero usa una tipografía vía CDN externo que no es Gabarito/Manrope del manual — señalado como posible dirección deliberada, pendiente que Ramón lo confirme.
+- **Redes (`persona-social-media`, Cata):** encargo enviado, **sin reporte de vuelta todavía**.
+- **Gráficas (`persona-director-creativo`, Bruno):** encargo enviado, **sin reporte de vuelta todavía**.
+
+**Ojo — confusión de sitios sin resolver:** además de `spindlelab-site/` (el original estático) y `spindlelab-astro/` (el que está en vivo), existe también `spindlelab-site-v2/` (React/Vite/Tailwind, commits de fines de julio) en el repo. No está claro si ese v2 en React quedó abandonado a favor de Astro o si cumple otro propósito — aclarar con Ramón antes de tocar cualquiera de los dos para no editar el que no corresponde.
+
 Convención de los checklists: **[CC]** = lo produce Claude Code (tú revisas/apruebas) · **[TÚ]** = solo humano.
 Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa semana, que sea esa.
 
