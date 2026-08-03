@@ -4,7 +4,7 @@
 > un empleado con **nombre, rol, memoria y carpeta de trabajo** — igual que una
 > oficina real, pero cada empleado es una sesión de Claude Code activada por una
 > *skill*. Este documento es el único lugar donde se ve la oficina completa de un
-> vistazo. Última actualización: 2026-07-29.
+> vistazo. Última actualización: 2026-08-02.
 >
 > **Nomenclatura híbrida.** Cada agente tiene un nombre humano (para hablar de él
 > como "empleado") y, entre paréntesis, la skill técnica real que lo activa. El
@@ -29,7 +29,7 @@ MARCA & CONTENIDO   Cata (persona-social-media) · Bruno (persona-director-creat
 PAID MEDIA          Gonzalo (persona-paid-media) · Fran (persona-meta-ads)
 ENTREGA             Diego (persona-disenador-web) · Simón (agente-seo-aeo) ★  ← el servicio core que se cobra
 PRODUCTO & DISEÑO   Nadia (producto-ui-ux) ★ · Pía (agente-growth-producto) ★   (cross-proyecto: Praxi + web)
-DATOS & MEDICIÓN    Nora (agente-analitica) ★  ← cierra el loop: mide qué produjo cada frente
+INTELIGENCIA & DATOS  Vera (agente-inteligencia-mercado) ★ ← mira el mercado ANTES de decidir · Nora (agente-analitica) ★ ← mide qué produjo cada frente DESPUÉS
 ADMIN & FINANZAS    Monse (agente-finanzas) ○
 
 SUPERVISIÓN         El Sueño (dream / motor-agentico) — audita 24h y prescribe las 4 mejoras de mayor impacto/día
@@ -58,7 +58,8 @@ Estado: **✅ trabajando** · **★ nuevo (esta pasada)** · **○ vacante** · 
 | **Fran** | Paid Media | `persona-meta-ads` | Meta Ads Manager (navegador) | `oficina/memoria/fran-meta-ads.md` | Presupuesto/objetivo → campañas Meta (nunca escribe sin OK) | ✅ |
 | **Diego** | Entrega | `persona-disenador-web` | `spindlelab-site/`, sitios de clientes | `oficina/memoria/diego-web.md` | Encargo → sitio/blog publicado (JSON-LD, versionado de assets) | ✅ |
 | **Simón** ★ | Entrega | `agente-seo-aeo` | `ventas/entregas/<cliente>/`, plugins searchfit | `oficina/memoria/simon-seo-aeo.md` (a crear) | Cliente ganado → auditoría técnica + visibilidad en IA + plan implementado (el servicio core) | ★ nuevo |
-| **Nora** ★ | Datos & Medición | `agente-analitica` | `marketing/reportes/`, GA4 / Search Console | `oficina/memoria/nora-analitica.md` (a crear) | Actividad de todos los frentes → atribución + reporte mensual (agencia y producto) | ★ nuevo |
+| **Vera** ★ | Inteligencia & Datos | `agente-inteligencia-mercado` | `marketing/oficina/inteligencia-mercado/` (clientes); `docs/` del producto (Praxi) | `oficina/memoria/vera-inteligencia.md` (a crear) | Decisión cara (precio, posicionamiento, nuevo mercado, competidor) → informe de mercado/competencia (cross-proyecto) | ★ nuevo |
+| **Nora** ★ | Inteligencia & Datos | `agente-analitica` | `marketing/reportes/`, GA4 / Search Console | `oficina/memoria/nora-analitica.md` | Actividad de todos los frentes → atribución + reporte mensual (agencia y producto) | ★ nuevo |
 | **Nadia** ★ | Producto & Diseño | `producto-ui-ux` | cross-proyecto (Praxi + web SpindleLab); vive **solo en global** | `oficina/memoria/nadia-producto.md` (a crear) | Pantalla/flujo/feature → diseño UI/UX + arquitectura frontend; sistema anti-slop (brand.json + voice.json, gate en CI) | ★ nuevo |
 | **Pía** ★ | Producto & Diseño | `agente-growth-producto` | repo del producto (Praxi); `oficina/growth-producto/` | `oficina/memoria/pia-growth.md` (a crear) | Producto → onboarding, activación, lifecycle, retención (cross-proyecto) | ★ nuevo |
 | **Monse** ○ | Admin & Finanzas | `agente-finanzas` | `ventas/cobros.md` (a crear), COTIZACIONES/ | — | Proyecto ganado → seguimiento de cobros/fases/facturación | ○ vacante |
@@ -67,9 +68,16 @@ Estado: **✅ trabajando** · **★ nuevo (esta pasada)** · **○ vacante** · 
 > **Nota sobre Nadia (`producto-ui-ux`).** No es un rol de agencia-para-cliente:
 > es **oficio de diseño de producto**, y es **cross-proyecto** (la usas en Praxi y
 > en el trabajo web de SpindleLab). Por eso vive en `~/.claude/skills/` (global) y
-> no en el repo — así la ves desde cualquier proyecto. La herramienta instalada
-> **`refero-design`** (metodología de diseño con MCP de Refero) es parte de su caja
-> de herramientas, no un empleado.
+> no en el repo — así la ves desde cualquier proyecto. Las herramientas instaladas
+> **`refero-design`** y **`frontend-design`** (metodologías de diseño visual) son
+> parte de su caja de herramientas, no empleados.
+
+> **Nota sobre Vera (`agente-inteligencia-mercado`) y Nora.** Forman el par de
+> inteligencia: **Vera mira AFUERA** (mercado, competencia, precios, tamaño de la
+> torta) *antes* de una decisión cara; **Nora mide ADENTRO** (qué produjo cada
+> frente) *después*. Vera es cross-proyecto (sirve a Praxi y a clientes). No
+> inventa cifras: cita fuentes; sus hallazgos se contrastan con los datos internos
+> de Nora.
 
 > **Nota sobre Raquel y Emilia (protocolo, importante).** Captación y Ventas son
 > dominios que el troncal (Tomás) ya gobierna "directo en su sesión". Por eso
@@ -91,6 +99,7 @@ que **lanza sus propios productos** (Praxi, etc.). ✅ cubierto · ◐ parcial �
 
 | Etapa del proceso | Quién lo cubre | Estado |
 |---|---|---|
+| **Inteligencia de mercado / competencia** | Vera | ✅ ★ |
 | Estrategia & media planning | Tomás (orquesta, no planifica medios) | ◐ |
 | Prospección | Dereck | ✅ |
 | Outbound | Emilia | ✅ |
@@ -110,6 +119,7 @@ que **lanza sus propios productos** (Praxi, etc.). ✅ cubierto · ◐ parcial �
 
 | Etapa del proceso | Quién lo cubre | Estado |
 |---|---|---|
+| **Inteligencia de mercado / pricing / competencia** | Vera | ✅ ★ |
 | Diseño de producto / UX / frontend | Nadia | ✅ |
 | Growth / activación / retención / lifecycle | Pía | ✅ ★ |
 | Analítica de producto (funnels, cohortes) | Nora | ✅ ★ |
