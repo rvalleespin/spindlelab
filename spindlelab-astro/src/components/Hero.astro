@@ -1,0 +1,115 @@
+---
+import Icon from './Icon.astro';
+import { CONTACTO } from '../consts';
+---
+
+<section id="top" class="relative w-full min-h-screen overflow-hidden bg-[#0B120E] flex flex-col">
+  <video
+    id="hero-video"
+    class="absolute inset-0 z-0 w-full h-full object-cover"
+    src="/hero-hilo-de-oro.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"></video>
+
+  <!-- Velo oscuro para legibilidad -->
+  <div
+    class="absolute inset-0 z-[1] pointer-events-none"
+    style="background:linear-gradient(to bottom, rgba(11,18,14,0.74) 0%, rgba(11,18,14,0.38) 26%, rgba(11,18,14,0.38) 54%, rgba(11,18,14,0.92) 100%)"
+  >
+  </div>
+
+  <!-- Texto del hero -->
+  <div class="relative z-10 flex flex-col items-center text-center pt-28 sm:pt-32 md:pt-36 px-4 sm:px-6">
+    <h1
+      class="font-normal leading-[0.95] text-[#EAF1EA] text-[2rem] sm:text-4xl md:text-5xl lg:text-[4.75rem] xl:text-[5.25rem] max-w-5xl"
+      style='font-family:"Neue Haas Grotesk Display Pro 55 Roman","Neue Haas Grotesk Text Pro","Helvetica Neue",Helvetica,Arial,sans-serif; letter-spacing:-0.035em'
+    >
+      No compites solo en Google.{' '}
+      <span class="text-[#85AB8B]">
+        Compites en las<br class="hidden sm:block" /> respuestas de la IA.
+      </span>
+    </h1>
+    <p class="mt-6 sm:mt-8 text-[#9FB2A0] text-sm sm:text-base md:text-lg leading-relaxed max-w-md px-2">
+      SEO técnico y visibilidad en IA para que los motores te recomienden antes que a tu competencia.
+    </p>
+    <p class="mt-4 text-[#9FB2A0]/70 text-xs sm:text-sm font-medium tracking-wide">
+      Optimizamos para ChatGPT · Gemini · Perplexity · Google SGE
+    </p>
+  </div>
+
+  <!-- Espaciador flexible: empuja la barra inferior al fondo sin solaparse con el título -->
+  <div class="relative z-10 flex-1 min-h-[2rem]"></div>
+
+  <!-- Barra inferior en flujo: CTA (izq) + método (der) -->
+  <div class="relative z-10 px-4 sm:px-6 md:px-10 pb-6 sm:pb-8 md:pb-10">
+    <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+      <!-- Bloque CTA -->
+      <div class="max-w-sm">
+        <div class="flex items-center gap-2 text-[#EAF1EA] mb-3">
+          <Icon name="sparkles" />
+          <span class="text-sm font-semibold">Diagnóstico en 48 h</span>
+        </div>
+        <p class="text-[#C7D2C6]/85 text-xs leading-relaxed mb-6 max-w-xs">
+          Reviso tu sitio, tu competencia y tu presencia en IA, y te entrego en una página qué te
+          frena y qué mueve la aguja. Sin costo, sin compromiso.
+        </p>
+        <div class="flex items-center gap-4 flex-wrap">
+          <a
+            href={CONTACTO}
+            class="bg-[#F4F6F3] hover:bg-white text-[#12201A] text-sm font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-colors shadow-sm"
+          >
+            Agenda tu diagnóstico
+          </a>
+          <a href="#servicios" class="text-[#C7D2C6] text-sm font-semibold hover:text-white transition-colors">
+            Ver servicios
+          </a>
+        </div>
+      </div>
+
+      <!-- Enlace al método -->
+      <a
+        href="#metodo"
+        class="hidden sm:flex items-center gap-2 text-white/85 text-sm hover:text-white transition-colors"
+      >
+        <span class="flex items-center justify-center w-6 h-6 rounded-full bg-white/15 backdrop-blur-sm hover:bg-white/25 transition-colors">
+          <Icon name="play" class="w-3 h-3 ml-0.5" fill="currentColor" />
+        </span>
+        <span class="font-medium">Método Spindle</span>
+        <span class="text-white/50">4 pasos</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const v = document.getElementById('hero-video') as HTMLVideoElement | null;
+  if (v) {
+    v.muted = true;
+    let started = false;
+    const cleanup = () => {
+      v.removeEventListener('canplay', start);
+      window.removeEventListener('pointerdown', start);
+      window.removeEventListener('keydown', start);
+      window.removeEventListener('touchstart', start);
+      window.removeEventListener('scroll', start);
+    };
+    function start() {
+      if (started || !v) return;
+      v.play()
+        .then(() => {
+          started = true;
+          cleanup();
+        })
+        .catch(() => {});
+    }
+    start();
+    v.addEventListener('canplay', start);
+    window.addEventListener('pointerdown', start);
+    window.addEventListener('keydown', start);
+    window.addEventListener('touchstart', start, { passive: true });
+    window.addEventListener('scroll', start, { passive: true });
+  }
+</script>
