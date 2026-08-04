@@ -6,6 +6,17 @@
 **Skill:** .claude/skills/agente-troncal-marketing/SKILL.md
 
 ## Estado actual
+- **2026-08-04 — Sitio nuevo (v2 Astro) EN VIVO en `spindlelab.cl`.** Mapa completo en
+  `marketing/estado-del-sitio-nuevo.md` (leer eso primero). Resumen: bajada del estudio
+  de mercado → estrategia "Mostramos, no prometemos". Cambios shipeados: "Método Spindle",
+  3 pilares con Acompañamiento líder + autoridad de entidad, Desarrollo Web a cross-sell,
+  sección Evidencia, blog+servicios migrados preservando las 14 URLs (cero soft-404),
+  404 real, Blog en el menú. Nuevos docs: estudio (`inteligencia-mercado/`), plan
+  (`plan-reposicionamiento-2026-08.md`), encargos (`reposicionamiento-*`, `migracion-*`),
+  skill nueva **Marco** (`agente-inteligencia-mercado`).
+- **Deploy del sitio:** Cloudflare Pages, proyecto **`spindlelab-v2`** sirve `spindlelab.cl`
+  (construye `spindlelab-astro/`). Mergear a `main` = publicar. El proyecto viejo
+  `spindlelab` quedó sin dominios (rollback).
 - 2026-07-23 — Oficina reorganizada como organigrama (ver `oficina/organigrama-oficina.md`).
   Motor de captación cerrado: se sumaron **Emilia** (outbound) y **Raquel** (CRM).
   Vacantes priorizadas siguientes: **Marta** (calendario editorial), **Monse** (finanzas).
@@ -16,7 +27,14 @@
   contradictorio (un post marcado en cuenta de empresa cuando salió en la personal).
   De ahí nace el protocolo: un solo dueño del estado, verificar antes de marcar,
   sincronizar con `main` antes de tocar.
-- `git push` no funciona desde Bash aquí (Keychain) → guiar a Ramón por GitHub Desktop.
+- `git push` desde Bash: falla en algunas sesiones (Keychain) → GitHub Desktop; pero
+  el **2026-08-04 SÍ funcionó** desde Bash en la sesión local — probar antes de asumir.
+- **Sesiones paralelas sobre el MISMO encargo = lío.** El 2026-08-04 dos sesiones
+  hicieron el mismo reposicionamiento del sitio en dos ramas distintas; hubo que
+  comparar diffs y reconciliar. Regla: paralelo solo entre **frentes distintos**.
+- **Cloudflare del sitio:** dos proyectos Pages (`spindlelab` viejo, `spindlelab-v2`
+  nuevo). Mover un dominio entre proyectos exige quitarlo del viejo primero (Cloudflare
+  no lo mueve solo) → hay un parpadeo de minutos; es reversible.
 - GitHub Desktop auto-stashea todo al cambiar de rama; hay un stash viejo que **no
   se debe hacer `pop`** (re-agregaría `bernardo-site/`, `RRSS/` eliminados a propósito).
 
