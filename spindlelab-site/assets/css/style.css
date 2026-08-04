@@ -154,14 +154,22 @@ a{color:inherit}
    Patrón "compositor-safe" ya usado en .hero-media: la imagen queda en flujo normal
    con su propia altura, y todo lo demás (velo, texto) se superpone con position:absolute
    dentro de un contenedor position:relative — nunca la imagen misma en absolute. */
-.hero{padding:0;background:var(--navy)}
-.hero-photo-frame{position:relative;overflow:hidden}
-.hero-photo-frame img{display:block;width:100%;height:min(82vh,760px);object-fit:cover}
-.hero-photo-scrim{
-  position:absolute;inset:0;
-  background:linear-gradient(0deg,rgba(15,24,29,.95) 0%,rgba(15,24,29,.72) 34%,rgba(15,24,29,.28) 64%,rgba(15,24,29,0) 100%);
+/* ---------- Hero — dirección "instrumento técnico": el hero abre con el propio
+   entregable (tarjeta .doc, ya construida y probada en /contacto/) en vez de fotografía
+   de stock genérica. Fondo navy + trama de puntos, mismo lenguaje ya usado en
+   .chat-mockup/.metrics, para que el sitio hable de "auditoría" desde el primer segundo
+   en vez de "agencia corporativa". ---------- */
+.hero{padding:0;background:var(--navy);position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.08) 1.5px,transparent 1.5px);
+  background-size:22px 22px;
 }
-.hero-photo-content{position:absolute;left:0;right:0;bottom:0;padding-bottom:64px}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:108px 0 84px}
+.hero-copy{max-width:560px}
+.hero-doc{position:relative}
+.hero-doc .doc{max-width:420px;box-shadow:0 30px 70px rgba(0,0,0,.4);transform:rotate(-1.2deg)}
+.hero-doc-caption{margin-top:16px;font-family:var(--sans);font-size:11.5px;color:rgba(255,255,255,.55);letter-spacing:.04em}
 .hero .chip-kicker{
   display:inline-flex;padding:9px 18px;border-radius:var(--r-pill);
   background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);
@@ -401,21 +409,22 @@ h1 .ia{color:var(--teal)}
 
 /* ---------- Segundo momento cine — dirección 2 (K72/Exo Ape): repite el lenguaje
    foto+velo+titular del hero una vez más antes del cierre, no solo al abrir. ---------- */
-.cine-moment{background:var(--navy)}
-.cine-photo-frame{position:relative;overflow:hidden}
-.cine-photo-frame img{display:block;width:100%;height:min(56vh,460px);object-fit:cover}
-.cine-scrim{
-  position:absolute;inset:0;
-  background:linear-gradient(100deg,rgba(14,29,42,.92) 0%,rgba(14,29,42,.66) 42%,rgba(14,29,42,.22) 74%,rgba(14,29,42,0) 100%);
+/* mismo lenguaje de trama navy que .hero — segundo momento oscuro, ahora puramente
+   tipográfico (se retiró la foto de stock "equipo-creativo", genérica). */
+.cine-moment{background:var(--navy);position:relative;overflow:hidden;padding:120px 0}
+.cine-moment::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.08) 1.5px,transparent 1.5px);
+  background-size:22px 22px;
 }
-.cine-content{position:absolute;inset:0;display:flex;align-items:center}
+.cine-content{position:relative;text-align:center}
 .cine-line{
   font-family:var(--headline);font-weight:600;color:var(--white);
-  font-size:clamp(26px,3.4vw,44px);line-height:1.2;letter-spacing:-.01em;max-width:16ch;
+  font-size:clamp(26px,3.4vw,44px);line-height:1.2;letter-spacing:-.01em;max-width:16ch;margin:0 auto;
 }
 .cine-line .ia{color:var(--teal-tint)}
 @media(max-width:680px){
-  .cine-photo-frame img{height:min(64vh,420px)}
+  .cine-moment{padding:88px 0}
   .cine-line{font-size:clamp(24px,7vw,32px);max-width:13ch}
 }
 
@@ -492,7 +501,8 @@ h1 .ia{color:var(--teal)}
     -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 22%);
     mask-image:linear-gradient(to bottom,transparent 0%,#000 22%);
   }
-  .hero-photo-frame img{height:min(92vh,700px)}
+  .hero-grid{grid-template-columns:1fr;gap:40px;padding:88px 0 64px}
+  .hero-doc{justify-self:start}
   .hero h1{max-width:none}
 }
 
@@ -707,7 +717,7 @@ h1 .ia{color:var(--teal)}
   .hero h1{font-size:clamp(30px,8vw,40px)}
   .hero .lead{margin-top:16px;font-size:16px}
   .hero .actions{margin-top:20px}
-  .hero-photo-content{padding-bottom:36px}
+  .hero-doc .doc{max-width:none}
 }
 
 /* ---------- Formulario de contacto ---------- */
@@ -763,7 +773,7 @@ h1 .ia{color:var(--teal)}
   .fit-cards{grid-template-columns:1fr 1fr}
 }
 @media(max-width:680px){
-  .hero{padding:64px 0 56px}
+  .hero-grid{padding:64px 0 56px}
   .cards.showcase{grid-template-columns:1fr}
   .cards,.metrics .row,.steps,.site-footer .cols,.fit-cards{grid-template-columns:1fr}
   .metric{padding-left:0;border-left:0}
