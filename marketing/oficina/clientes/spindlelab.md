@@ -36,6 +36,12 @@ defecto — verificar el número antes de diagnosticar. Acceso:
 Búsqueda activa (14 jul), $1.500 CLP/día, conversión `generate_lead` desde GA4.
 Criterio de corte: semana 12, ≥2 mini-diagnósticos originados en ads.
 
+**Prospección (Dereck):** cuenta de Apollo **`manuvalleespin@gmail.com`** (Plan
+Básico, ~2.500 créditos/mes) — la cuenta `hola@spindlelab.cl` es Gratis y no sirve.
+Segmentos (frentes): A = financiero/wealth · B = salud premium (dental/estética) ·
+C = salud visual. Búsquedas guardadas y reglas de ICP en `ventas/pipeline-prospeccion.md`.
+Los CSV caen en `ventas/leads-*.csv`.
+
 **Meta Ads (Fran):** Página FB `61592147941168` (portafolio propio `1025351160247165`);
 IG profesional `@spindle.lab` (`17841414909841532`); cuenta publicitaria
 `2050319242539058` (CLP, Santiago); **Meta Pixel `2885353628478565`** (evento `Lead`
