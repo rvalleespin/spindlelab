@@ -20,3 +20,24 @@
   con olor a IA es anti-credibilidad).
 - **Quién aprueba:** Ramón.
 - **Estado:** activo.
+
+---
+
+## Estado operacional — Paid media (para Gonzalo/Fran)
+
+*Datos de cuenta de SpindleLab. Las skills de paid media son agnósticas del
+cliente; su estado por cuenta vive acá.*
+
+**Google Ads (Gonzalo):** cuenta correcta `597-527-6690` ("Spindlelab"), login
+`hola@spindlelab.cl` (`authuser=1`). Existe una 2ª cuenta **vacía** en
+`manuvalleespin@gmail.com` (`497-377-4579`, `authuser=0`) que Chrome abre por
+defecto — verificar el número antes de diagnosticar. Acceso:
+`https://ads.google.com/aw/campaigns?ocid=8402723510&authuser=1`. Campaña de
+Búsqueda activa (14 jul), $1.500 CLP/día, conversión `generate_lead` desde GA4.
+Criterio de corte: semana 12, ≥2 mini-diagnósticos originados en ads.
+
+**Meta Ads (Fran):** Página FB `61592147941168` (portafolio propio `1025351160247165`);
+IG profesional `@spindle.lab` (`17841414909841532`); cuenta publicitaria
+`2050319242539058` (CLP, Santiago); **Meta Pixel `2885353628478565`** (evento `Lead`
+en `/contacto/`; falta desplegar el Pixel en vivo + acumular tráfico antes de la 1ª
+campaña). Primer uso previsto: **remarketing** de visitantes, no interés frío.
