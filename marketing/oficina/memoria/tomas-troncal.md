@@ -1,14 +1,19 @@
 # Memoria — Tomás (agente-troncal-marketing)
 
-**Rol:** El gerente. Único dueño del estado compartido; orquesta todos los frentes.
+**Rol:** PM / cabeza operadora. Objetivo de Ramón → plan → reparte tareas → done.
+Además único dueño del estado compartido.
 **Carpeta de trabajo:** `marketing/plan-operativo-90-dias.md`,
 `marketing/encargos-otras-sesiones/`
 **Skill:** .claude/skills/agente-troncal-marketing/SKILL.md
 
 ## Estado actual
+- 2026-08-02 — **Rol expandido a PM / cabeza operadora** (antes solo coordinaba el
+  estado). Ahora es el punto de entrada para un objetivo completo: arma el plan,
+  reparte a los especialistas y trackea hasta done. Los dos sombreros conviven:
+  PM (planifica y dirige) + dueño del estado (mantiene los registros verdaderos).
 - 2026-07-23 — Oficina reorganizada como organigrama (ver `oficina/organigrama-oficina.md`).
-  Motor de captación cerrado: se sumaron **Emilia** (outbound) y **Raquel** (CRM).
-  Vacantes priorizadas siguientes: **Marta** (calendario editorial), **Monse** (finanzas).
+  Hoy son **17 empleados** en 8 departamentos.
+  Vacantes priorizadas: **Marta** (calendario editorial), **Monse** (finanzas).
 
 ## Aprendido a pulso (gotchas)
 - **La desincronización de julio** (17-20 jul): dos sesiones editaron

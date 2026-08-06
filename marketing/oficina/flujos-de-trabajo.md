@@ -10,8 +10,10 @@
 Nombre humano · `skill` — labor en una línea.
 
 **Dirección**
-- **Tomás** · `agente-troncal-marketing` — el gerente. Único que escribe el estado
-  compartido; reconcilia lo que reportan los demás. Orquesta todos los frentes.
+- **Tomás** · `agente-troncal-marketing` — **PM / cabeza operadora.** Le das un
+  objetivo y arma el plan, reparte las tareas a los especialistas y lo lleva hasta
+  done. Además es el único que escribe el estado compartido y reconcilia lo que
+  reportan los demás. Es tu punto de entrada para cualquier proyecto.
 
 **Captación**
 - **Dereck** · `buscar-leads` — prospección en Apollo → CSV de decisores con email.
@@ -112,10 +114,16 @@ anti-slop)              y retención                si hace falta    por cohorte
 Corre **en el repo del producto** (Praxi = repo EL COACH BOT), no en el de la
 agencia. Nadia y Pía viven en global (cross-proyecto).
 
-### 6. Coordinación (transversal, siempre encendida)
-**Tomás** es el gerente: reconcilia lo que todos reportan y es el único que escribe
-el estado compartido. **El Sueño** audita las últimas 24h del stack completo y deja
-las 4 prescripciones de mayor impacto del día.
+### 6. Dirección (transversal, siempre encendida)
+**Tomás** es la cabeza operadora: toma el objetivo de Ramón, arma el plan, reparte
+las tareas (encargos) a los especialistas, trackea hasta done, y mantiene al día el
+estado compartido reconciliando lo que todos reportan. **El Sueño** audita las
+últimas 24h del stack completo y deja las 4 prescripciones de mayor impacto del día.
+
+```
+Ramón: "quiero lograr X"  →  Tomás arma el plan  →  reparte a los especialistas
+   →  trackea y reconcilia  →  reporta a Ramón (con lo que necesita su OK)
+```
 
 ---
 
