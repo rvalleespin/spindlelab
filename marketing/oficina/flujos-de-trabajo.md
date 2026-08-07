@@ -42,7 +42,7 @@ Nombre humano · `skill` — labor en una línea.
 - **Pía** · `agente-growth-producto` — onboarding, activación, lifecycle, retención.
 
 **Inteligencia & Datos**
-- **Vera** · `agente-inteligencia-mercado` — investiga el mercado y la competencia *antes* de una decisión cara (precio, posicionamiento, nuevo mercado).
+- **Marco** · `agente-inteligencia-mercado` — investiga el mercado y la competencia *antes* de una decisión cara (precio, posicionamiento, nuevo mercado).
 - **Nora** · `agente-analitica` — mide qué produjo cada frente *después*; reporte mensual.
 
 **Admin & Finanzas**
@@ -57,12 +57,12 @@ Nombre humano · `skill` — labor en una línea.
 
 ### 0. Antes de decidir algo caro (precio, posicionamiento, nuevo mercado)
 ```
-Vera                        [contraste]           decisión
+Marco                        [contraste]           decisión
 investiga el mercado   →   con datos internos  →  fijar precio / reposicionar /
 y la competencia           de Nora                reescribir landing / entrar a
 (precios, torta, hueco)                           un mercado nuevo
 ```
-Corre **antes** de los otros flujos. **Vera mira afuera, Nora mira adentro**: sus
+Corre **antes** de los otros flujos. **Marco mira afuera, Nora mira adentro**: sus
 hallazgos se cruzan. Sirve a productos propios y a clientes. No inventa cifras —
 cita fuentes y entrega lo incómodo si el mercado lo dice.
 

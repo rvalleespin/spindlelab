@@ -31,7 +31,7 @@ cuando quieres llamar directo a un especialista para una tarea puntual.
 
 | Necesito… | Empleado | Comando |
 |---|---|---|
-| Investigar mercado/competencia **antes** de decidir precio o posicionamiento | Vera | `/agente-inteligencia-mercado` |
+| Investigar mercado/competencia **antes** de decidir precio o posicionamiento | Marco | `/agente-inteligencia-mercado` |
 | Encontrar clientes / armar lista de leads | Dereck | `/buscar-leads` |
 | Convertir esa lista en emails listos para enviar | Emilia | `/agente-outbound` |
 | Un diagnóstico gratis que enganche a un prospecto | Valen | `/mini-diagnostico` |
@@ -53,16 +53,16 @@ cuando quieres llamar directo a un especialista para una tarea puntual.
 ## Secuencias típicas (elige según lo que estés haciendo)
 
 **A · Conseguir un cliente nuevo (agencia)**
-`Vera` (¿vale la pena el nicho? ¿qué cobran?) → `Dereck` (leads) → `Emilia`
+`Marco` (¿vale la pena el nicho? ¿qué cobran?) → `Dereck` (leads) → `Emilia`
 (secuencia) → **tú apruebas y envías** → `Raquel` (pipeline) → `Valen`
 (diagnóstico) → cierre → `Simón` (entrega) → `Nora` (mide).
 
 **B · Lanzar o crecer un producto propio (Praxi y lo que venga)**
-`Vera` (mercado, precio, hueco) → `Nadia` (diseño) → `Pía` (activación/retención)
+`Marco` (mercado, precio, hueco) → `Nadia` (diseño) → `Pía` (activación/retención)
 → `Renata` (copy de lifecycle) → `Nora` (analítica de producto).
 
 **C · Campaña de contenido**
-`Vera`/tema → `Renata` (escribe) → publica: `Diego` (blog) / `Cata` (redes) /
+`Marco`/tema → `Renata` (escribe) → publica: `Diego` (blog) / `Cata` (redes) /
 `Bruno` (visual) → `Nora` (mide qué trae tráfico).
 
 **D · Campaña paga**
@@ -70,7 +70,7 @@ cuando quieres llamar directo a un especialista para una tarea puntual.
 `Nora` (atribuye: leads de ads, CPL).
 
 **E · Antes de una decisión cara (precio, posicionamiento, entrar a un mercado)**
-`Vera` (mira afuera) → `Nora` (contrasta con datos internos) → decisión.
+`Marco` (mira afuera) → `Nora` (contrasta con datos internos) → decisión.
 
 ---
 
@@ -83,7 +83,7 @@ cuando quieres llamar directo a un especialista para una tarea puntual.
 3. **Commitea antes de cambiar de rama** en GitHub Desktop, o el trabajo sin
    guardar se va al stash (ya nos pasó dos veces).
 4. **Reinicia Claude Code** para que aparezca una skill recién creada.
-5. **Cero datos inventados.** Nora y Vera citan fuentes; Renata no fabrica prueba
+5. **Cero datos inventados.** Nora y Marco citan fuentes; Renata no fabrica prueba
    social; los prospectos/clientes no se nombran sin permiso.
 6. **El repo manda.** Las skills viven en el repo (versionadas) y en global (para
    verlas en todos lados). Si divergen, la del repo es la buena.
@@ -93,7 +93,7 @@ cuando quieres llamar directo a un especialista para una tarea puntual.
 ## Cross-proyecto vs. agencia
 
 - **Sirven a TUS productos (viven en global, se ven desde cualquier repo):**
-  Vera (mercado), Nadia (diseño de producto), Pía (growth). El producto tiene su
+  Marco (mercado), Nadia (diseño de producto), Pía (growth). El producto tiene su
   propio repo y su propia marca — leer su `CLAUDE.md` antes de tocar.
 - **Son de la agencia (viven en el repo de SpindleLab):** Dereck, Emilia, Valen,
   Raquel, Simón, Renata, Cata, Bruno, Gonzalo, Fran, Diego, Tomás.
