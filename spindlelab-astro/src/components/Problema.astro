@@ -2,8 +2,22 @@
 import Icon from './Icon.astro';
 ---
 
-<section class="relative bg-bg py-24 md:py-32 px-4 sm:px-6">
-  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+<section class="relative overflow-hidden bg-bg py-24 md:py-32 px-4 sm:px-6">
+  <video
+    data-lazyvideo
+    class="absolute inset-0 w-full h-full object-cover"
+    src="/video/problema.mp4"
+    poster="/video/problema.jpg"
+    muted
+    loop
+    playsinline
+    preload="none"></video>
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background:linear-gradient(to bottom, rgba(14,20,27,0.87) 0%, rgba(14,20,27,0.8) 42%, rgba(14,20,27,0.83) 70%, rgba(14,20,27,0.93) 100%)"
+  >
+  </div>
+  <div class="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
     <div data-reveal>
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">
         Lo que ven tus clientes
