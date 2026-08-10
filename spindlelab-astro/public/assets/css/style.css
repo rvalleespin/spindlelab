@@ -314,11 +314,13 @@ h1 .ia{color:var(--teal)}
 /* hero de página con imagen (con velo de tinta) */
 .duo-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .hero-media{position:relative}
-.hero-media img{display:block;width:100%;height:400px;object-fit:cover;border-radius:14px}
+.hero-media img,.hero-media video{display:block;width:100%;height:400px;object-fit:cover;border-radius:14px}
 .hero-media::after{
   content:"";position:absolute;inset:0;border-radius:14px;pointer-events:none;
   background:linear-gradient(180deg,rgba(14,20,27,.35),rgba(14,20,27,.6));
 }
+/* Cuando el media es video (hilo de oro), velo más suave para que se note. */
+.hero-media.is-video::after{background:linear-gradient(180deg,rgba(14,20,27,.12),rgba(14,20,27,.42))}
 .hero-media .media-tag{
   position:absolute;left:18px;bottom:18px;z-index:1;
   background:rgba(14,20,27,.82);color:var(--paper);
@@ -329,7 +331,7 @@ h1 .ia{color:var(--teal)}
 .hero-media .media-tag b{color:var(--gold)}
 @media(max-width:900px){
   .duo-hero{grid-template-columns:1fr;gap:36px}
-  .hero-media img{height:280px}
+  .hero-media img,.hero-media video{height:280px}
 }
 
 .sec{padding:88px 0}
