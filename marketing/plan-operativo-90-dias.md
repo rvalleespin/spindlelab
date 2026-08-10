@@ -60,7 +60,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - [x] [TÚ] Contratar Apollo pagado — **decisión diferida 16 jul, contratado 21 jul**: se cumplió el segundo criterio del diferimiento (lanzamiento de Frente B, que requiere investigar 35 clínicas nuevas y hacía chico el acceso gratuito). Ramón confirmó la contratación el 21 jul.
 
 ### Semana 3 (21–27 jul)
-- [~] [TÚ] Enviar 30 contactos: 20 Frente A + **Frente B (lanzamiento dental/estética)** ← **hecho = avanzamos** — Frente A ya está en 15/15 (falta ampliar más allá de la lista original si se decide). **Frente B: CSV de Apollo recibido 21 jul** — vino más amplio de lo pedido (42 contactos en vez de los 10 priorizados; solo 3 de esos 10 llegaron — Zaror, Terré, Beladent). Decisión: usar los 42 tal cual. **Tanda 1 (8 contactos) ya redactada** con hallazgo técnico real por sitio en `outbound/semana-03/lote-1-frente-b.md` (incluye un hallazgo fuerte: Clínica OPIA bloquea explícitamente a GPTBot/ClaudeBot/etc. en su robots.txt) → falta que Ramón revise y envíe. Tandas 2 y 3 (26 contactos) y 2ª ola de dominios catch-all (7) pendientes del mismo proceso.
+- [~] [TÚ] Enviar 30 contactos: 20 Frente A + **Frente B (lanzamiento dental/estética)** ← **hecho = avanzamos** — Frente A ya está en 15/15 (falta ampliar más allá de la lista original si se decide). **Frente B: CSV de Apollo recibido 21 jul** — vino más amplio de lo pedido (42 contactos en vez de los 10 priorizados; solo 3 de esos 10 llegaron — Zaror, Terré, Beladent). Decisión: usar los 42 tal cual. **Tanda 1 (7 contactos) redactada 23 jul, Tanda 2 (9 contactos) regenerada 25 jul** (verificación técnica re-hecha con `curl` el mismo día, hallazgos confirmados) — ambas en `outbound/semana-03/lote-1-frente-b.md` y `.../lote-frente-b-2026-07-25/`. **Estado real al 10 ago: nada de esto se ha enviado** — las 16 (7+9) siguen en `Listo`/`Redactado` esperando revisión y envío de Ramón. Ver seguimiento de reconciliación más abajo.
 - [ ] [TÚ] Regla sagrada: todo interesado recibe su mini-diagnóstico en ≤48 h ([CC] produce el borrador en horas; apuntar a entregar en 24)
 - [ ] [CC] Artículo 3: «SEO para clínicas dentales en Chile: lo que cambió con la IA» → [TÚ] editar y publicar
 - [ ] [CC] Panel semanal de métricas (rebotes <3 %, tasa de respuesta) → [TÚ] leer 15 min
@@ -80,6 +80,26 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 - **Clínica Dental Augusto Leguía** — mini-diagnóstico SPL-DIAG-2026-001 generado, pero **no está registrado en `ventas/pipeline.md`** ni quedó claro si hubo un contacto/respuesta real o si se preparó de forma preventiva (probablemente también ejercicio de práctica, igual que Chef & Hotel, pero sin confirmar). Sigue sin aclarar — preguntado dos veces, sin respuesta todavía.
 
 **Nuevo piloto de prospección en frío (`ventas/pipeline-prospeccion.md`, decidido 9 jul, comiteado recién el 22 jul):** dimensiona el mercado chileno de finanzas/legal/consultoría (11-200 empleados, ~2.750 empresas) vía Apollo, y explora aparte el sub-nicho de oftalmología (SSL vencido en 2/2 sitios muestreados — fricción máxima). **Se superpone con Frente A** (asesoras/wealth ya es el mismo segmento) y agrega oftalmología como nicho nuevo fuera del alcance actual de Frente B (solo dental/estética). Sin contactos enviados todavía (tabla de seguimiento vacía) — aclarar con Ramón si esto reemplaza/complementa a Frente A o es un esfuerzo duplicado antes de activarlo.
+
+---
+
+## Reconciliación troncal — 10 ago (este documento no se tocaba desde el 23 jul)
+
+**Por qué el salto:** entre el 24 jul y el 7 ago el esfuerzo de varias sesiones se fue casi entero a un frente que no estaba en este plan — el reposicionamiento del sitio — y a una reestructuración interna. Ninguno de los dos es malo, pero dejaron **18 días sin actualizar el plan operativo** y el motor de outbound detenido. Esto es una reconciliación verificada (diffs reales, no reportes de palabra), no una reescritura del plan.
+
+**Lo que sí avanzó, verificado, aunque no estaba en este plan:**
+- **Reposicionamiento completo del sitio a v2 (Astro), "Mostramos, no prometemos"** — Método Spindle, Acompañamiento Mensual como pilar líder, Desarrollo Web baja a cross-sell, sección Evidencia, blog+servicios migrados preservando las 14 URLs indexadas. **Ya está en vivo en `spindlelab.cl`.** Detalle completo y verificado en `marketing/estado-del-sitio-nuevo.md` — no se duplica acá.
+- **Reestructuración de la oficina a "multicliente"** (PRs #23/#24): todas las skills de rol se reescribieron para ser agnósticas de cliente, con una ficha por cliente en `marketing/oficina/clientes/`. Aparece **Praxi**, un producto propio nuevo de Ramón (coach de hipertrofia, repo y marca propios) — **activo y en lanzamiento, fuera del alcance de este plan** (que es específicamente el motor comercial de SpindleLab agencia). No requiere acción acá, solo quedar registrado para no confundirlo con un frente de este documento.
+- Formulario de contacto: CTA afinado y bug de mensaje de éxito en carga inicial corregido (24-25 jul).
+
+**Lo que NO avanzó (verificado — esto es lo que importa):**
+- **Outbound lleva 16 días parado.** Los 16 borradores de Frente B (7 Tanda 1 + 9 Tanda 2) siguen sin enviar, esperando revisión de Ramón desde el 23-25 jul. Frente A sigue en 15/15 sin ampliar. **Semana 4 completa (régimen pleno 50 contactos/semana, artículo 4, llamadas de 20 min) no arrancó** — todas sus tareas siguen `[ ]`.
+- **Sin leads nuevos desde el diagnóstico del 21 jul** (0 respuestas entonces) — no hay evidencia de cambio, porque no ha salido outbound nuevo que pudiera generarlos.
+
+**Dónde se necesita a Ramón (no lo puede resolver Claude Code):**
+1. **Revisar y enviar los 16 borradores de Frente B acumulados** (`outbound/semana-03/lote-1-frente-b.md` + `.../lote-frente-b-2026-07-25/`) — es el bloqueo único de todo el funnel comercial ahora mismo.
+2. **Cobrar a Bernardo Combeau los $235.200 pendientes** (Fases 1+5) — la entrega técnica fue el 24 jul, el cobro está habilitado hace 16 días sin evidencia de gestión (detalle en `ventas/proyectos-en-curso.md`).
+3. **Decidir si se retoma el ritmo original del plan tal cual** o si, dado que el pivot de posicionamiento consumió gran parte de las semanas 4-5, conviene **correr el calendario** (artículos 3-4, régimen de 50 contactos, checkpoint de día 45) en vez de darlos por atrasados.
 
 ### Semana 4 (28 jul–3 ago)
 - [ ] [TÚ] **Régimen pleno: 50 contactos/semana** repartidos entre frentes según respuesta ← **hecho = avanzamos**
