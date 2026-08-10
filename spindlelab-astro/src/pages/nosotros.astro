@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+import { CONTACTO } from '../consts';
+
+const url = 'https://spindlelab.cl/nosotros/';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': 'https://spindlelab.cl/#autor-ramon',
+      name: 'Ramón Vallejos',
+      jobTitle: 'Consultor de SEO técnico y visibilidad en IA (AEO/GEO)',
+      worksFor: { '@id': 'https://spindlelab.cl/#org' },
+      knowsAbout: [
+        'SEO técnico',
+        'AEO',
+        'GEO',
+        'Visibilidad en motores de IA',
+        'Datos estructurados',
+        'E-E-A-T',
+      ],
+      url,
+    },
+    {
+      '@type': 'AboutPage',
+      '@id': `${url}#aboutpage`,
+      url,
+      name: 'Nosotros — SpindleLab',
+      mainEntity: { '@id': 'https://spindlelab.cl/#autor-ramon' },
+      isPartOf: { '@id': 'https://spindlelab.cl/#website' },
+    },
+  ],
+};
+
+const PUNTOS = [
+  {
+    titulo: 'Diagnóstico antes que contrato',
+    desc: 'Antes de cobrarte nada, reviso tu sitio y tu presencia en IA y te muestro los hallazgos en una página. Gratis, en 24 horas.',
+  },
+  {
+    titulo: 'Arreglo lo técnico y lo legible',
+    desc: 'SEO técnico, datos estructurados y contenido que la IA pueda citar. No hay que rehacer tu sitio. Hay que hacerlo legible.',
+  },
+  {
+    titulo: 'Mido si te recomiendan',
+    desc: 'Registro si ChatGPT, Gemini y Perplexity te nombran ante las preguntas de tus clientes. Con fecha, no de memoria. Nada de métricas de vanidad.',
+  },
+  {
+    titulo: 'Sin humo',
+    desc: 'No prometo primeros lugares. Nadie puede garantizarlos. Te digo qué se puede mover y qué no, y me hago cargo de lo que sí.',
+  },
+];
+---
+
+<Layout
+  title="Nosotros — SpindleLab"
+  description="SpindleLab es un laboratorio de SEO técnico y visibilidad en IA llevado por Ramón Vallejos. Trabajo directo, método documentado y evidencia antes que promesas."
+>
+  <Nav />
+  <main>
+    <article class="px-4 sm:px-6 pt-28 sm:pt-36 pb-24">
+      <div class="max-w-3xl mx-auto">
+        <nav class="flex items-center gap-2 text-xs text-fg-muted mb-6" aria-label="Migas de pan">
+          <a href="/" class="hover:text-fg transition-colors">Inicio</a>
+          <span>/</span>
+          <span class="text-fg">Nosotros</span>
+        </nav>
+
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">Quiénes somos</p>
+        <h1
+          class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.08] text-fg"
+          style="letter-spacing:-0.03em"
+        >
+          No te prometo. Te muestro.
+        </h1>
+
+        <div class="mt-10 flex items-center gap-5">
+          <!-- Retrato. Placeholder hasta la foto real de Ramón: reemplazar por
+               <img src="/assets/img/ramon-vallejos.jpg" alt="Ramón Vallejos" ... /> -->
+          <div
+            class="shrink-0 w-20 h-20 rounded-2xl border border-white/10 bg-surface flex items-center justify-center"
+          >
+            <span class="font-display text-4xl leading-none text-fg-muted/70">R<span class="text-gold">.</span></span>
+          </div>
+          <div>
+            <p class="text-base font-semibold text-fg">Ramón Vallejos</p>
+            <p class="text-sm text-fg-muted">Consultor de SEO técnico y visibilidad en IA · Chile</p>
+          </div>
+        </div>
+
+        <div class="mt-10 space-y-5 text-fg-muted leading-relaxed text-[1.05rem]">
+          <p class="text-fg text-lg">
+            Soy Ramón Vallejos. Reviso sitios y arreglo lo que impide que Google y los motores de IA
+            los lean, los entiendan y los recomienden.
+          </p>
+          <p>
+            Empecé SpindleLab porque me tocó ver lo mismo muchas veces: una empresa que hace bien su
+            trabajo, pero con un sitio que la IA no logra leer. Así, cuando un cliente le pregunta a
+            ChatGPT por un servicio, la IA termina recomendando a la competencia.
+          </p>
+          <p>
+            Lo primero siempre es un diagnóstico. Reviso lo técnico de tu sitio, tu contenido y si los
+            motores de IA te nombran, y te entrego en una página qué te frena y qué mueve la aguja.
+            Gratis, en 24 horas. Con eso decides con información, no a ciegas. Si seguimos, implemento
+            los cambios y medimos si la IA empieza a recomendarte más.
+          </p>
+        </div>
+
+        <div class="mt-12 grid sm:grid-cols-2 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+          {
+            PUNTOS.map((p) => (
+              <div class="bg-surface p-6 md:p-7">
+                <h2 class="text-base font-semibold text-fg mb-1.5">{p.titulo}</h2>
+                <p class="text-sm text-fg-muted leading-relaxed">{p.desc}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-14 rounded-2xl border border-white/10 bg-surface-2 p-8 text-center">
+          <p class="font-display text-2xl text-fg" style="letter-spacing:-0.02em">
+            ¿Apareces cuando tus clientes preguntan?
+          </p>
+          <p class="mt-2 text-sm text-fg-muted">
+            Te lo mostramos. Diagnóstico real, gratis, en 24 horas. Antes de que pagues nada.
+          </p>
+          <a
+            href={CONTACTO}
+            class="mt-6 inline-flex items-center gap-2 bg-paper hover:bg-white text-bg text-sm font-semibold px-6 py-3 rounded-full transition-colors"
+          >
+            Agenda tu diagnóstico
+            <Icon name="arrowRight" />
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+  <Footer />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+</Layout>

@@ -5,33 +5,34 @@ import { CONTACTO, EMAIL } from '../consts';
 
 <section
   id="contacto"
-  class="relative bg-[#0E1712] py-24 md:py-32 px-4 sm:px-6 scroll-mt-20 overflow-hidden"
+  class="relative bg-surface-2 py-24 md:py-32 px-4 sm:px-6 scroll-mt-20 overflow-hidden"
 >
   <div
     class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[560px] h-[560px] rounded-full opacity-60"
-    style="background:radial-gradient(circle, rgba(133,171,139,0.14) 0%, rgba(133,171,139,0) 70%)"
+    style="background:radial-gradient(circle, rgba(47,169,155,0.06) 0%, rgba(47,169,155,0) 70%)"
   >
   </div>
   <div class="relative max-w-3xl mx-auto text-center">
     <div data-reveal>
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#85AB8B] mb-4">Hablemos</p>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl leading-[1.05] text-[#EAF1EA]" style="letter-spacing:-0.03em">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">Hablemos</p>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] text-fg" style="letter-spacing:-0.03em">
         Empecemos con un diagnóstico sin costo.
       </h2>
-      <p class="mt-6 text-[#9FB2A0] text-base md:text-lg leading-relaxed max-w-xl mx-auto">
-        Revisamos tu sitio, tu competencia y tu presencia en IA. Sin compromiso.
+      <p class="mt-6 text-fg-muted text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+        Reviso tu sitio, tu competencia y tu presencia en IA, y te entrego los hallazgos en una
+        página. En 24 horas, sin compromiso.
       </p>
       <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
           href={CONTACTO}
-          class="inline-flex items-center gap-2 bg-[#F4F6F3] hover:bg-white text-[#12201A] text-sm font-semibold px-7 py-3.5 rounded-full transition-colors shadow-sm"
+          class="inline-flex items-center gap-2 bg-paper hover:bg-white text-bg text-sm font-semibold px-7 py-3.5 rounded-full transition-colors shadow-sm"
         >
           Agenda tu diagnóstico gratis
           <Icon name="arrowRight" />
         </a>
         <a
           href={`mailto:${EMAIL}`}
-          class="inline-flex items-center gap-2 text-[#C7D2C6] text-sm font-medium hover:text-white transition-colors"
+          class="inline-flex items-center gap-2 text-fg-muted text-sm font-medium hover:text-white transition-colors"
         >
           <Icon name="mail" />
           {EMAIL}

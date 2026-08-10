@@ -23,11 +23,11 @@ const PASOS = [
 ];
 ---
 
-<section id="metodo" class="relative bg-[#0B120E] py-24 md:py-32 px-4 sm:px-6 scroll-mt-20">
+<section id="metodo" class="relative bg-bg py-24 md:py-32 px-4 sm:px-6 scroll-mt-20">
   <div class="max-w-6xl mx-auto">
     <div data-reveal class="max-w-2xl">
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#85AB8B] mb-4">Método Spindle</p>
-      <h2 class="text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-[#EAF1EA]" style="letter-spacing:-0.03em">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">Método Spindle</p>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-fg" style="letter-spacing:-0.03em">
         Cuatro pasos. Resultados medibles.
       </h2>
     </div>
@@ -36,12 +36,12 @@ const PASOS = [
       {
         PASOS.map((p, i) => (
           <div data-reveal style={`transition-delay:${i * 90}ms`}>
-            <div class="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-7">
-              <div class="text-4xl md:text-5xl font-semibold text-[#85AB8B]/70 mb-5" style="letter-spacing:-0.03em">
+            <div class="h-full rounded-2xl border border-white/10 bg-surface p-6 md:p-7">
+              <div class={`font-display text-4xl md:text-5xl font-semibold mb-5 ${p.n === '01' ? 'text-gold' : 'text-fg-muted'}`} style="letter-spacing:-0.03em">
                 {p.n}
               </div>
-              <h3 class="text-lg font-semibold text-[#EAF1EA] mb-2.5">{p.titulo}</h3>
-              <p class="text-sm text-[#9FB2A0] leading-relaxed">{p.desc}</p>
+              <h3 class="font-display text-lg font-semibold text-fg mb-2.5">{p.titulo}</h3>
+              <p class="text-sm text-fg-muted leading-relaxed">{p.desc}</p>
             </div>
           </div>
         ))

@@ -5,6 +5,7 @@ export const CONTACTO =
 export const NAV_LINKS = [
   { href: '#servicios', label: 'Servicios' },
   { href: '#metodo', label: 'Método' },
+  { href: '#nosotros', label: 'Nosotros' },
   { href: '#evidencia', label: 'Evidencia' },
   { href: '/blog/', label: 'Blog' },
   { href: '#contacto', label: 'Contacto' },

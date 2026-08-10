@@ -23,15 +23,29 @@ const PRUEBAS = [
 
 <section
   id="evidencia"
-  class="relative bg-[#0B120E] border-t border-white/[0.06] py-24 md:py-32 px-4 sm:px-6 scroll-mt-20"
+  class="relative overflow-hidden bg-bg border-t border-white/10 py-24 md:py-32 px-4 sm:px-6 scroll-mt-20"
 >
-  <div class="max-w-6xl mx-auto">
+  <video
+    data-lazyvideo
+    class="absolute inset-0 w-full h-full object-cover"
+    src="/video/evidencia-oficina.mp4"
+    poster="/video/evidencia-oficina.jpg"
+    muted
+    loop
+    playsinline
+    preload="none"></video>
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background:linear-gradient(to bottom, rgba(14,20,27,0.88) 0%, rgba(14,20,27,0.80) 42%, rgba(14,20,27,0.84) 70%, rgba(14,20,27,0.94) 100%)"
+  >
+  </div>
+  <div class="relative z-10 max-w-6xl mx-auto">
     <div data-reveal class="max-w-2xl">
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#85AB8B] mb-4">Evidencia</p>
-      <h2 class="text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-[#EAF1EA]" style="letter-spacing:-0.03em">
-        Mostramos, no prometemos.
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">Evidencia</p>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-fg" style="letter-spacing:-0.03em">
+        Mostramos, no prometemos<span class="text-gold">.</span>
       </h2>
-      <p class="mt-6 text-[#9FB2A0] text-base md:text-lg leading-relaxed max-w-xl">
+      <p class="mt-6 text-fg-muted text-base md:text-lg leading-relaxed max-w-xl">
         No pedimos que nos creas. Así medimos tu visibilidad en IA, de forma que puedas verificarlo tú
         mismo desde el primer día.
       </p>
@@ -41,12 +55,12 @@ const PRUEBAS = [
       {
         PRUEBAS.map((p, i) => (
           <div data-reveal style={`transition-delay:${i * 90}ms`}>
-            <div class="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-7">
-              <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#85AB8B]/12 text-[#85AB8B] mb-5">
+            <div class="h-full rounded-2xl border border-white/10 bg-surface p-6 md:p-7">
+              <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-support/10 text-support mb-5">
                 <Icon name={p.icon} class="w-5 h-5" />
               </span>
-              <h3 class="text-lg font-semibold text-[#EAF1EA] mb-2.5">{p.titulo}</h3>
-              <p class="text-sm text-[#9FB2A0] leading-relaxed">{p.desc}</p>
+              <h3 class="font-display text-lg font-semibold text-fg mb-2.5">{p.titulo}</h3>
+              <p class="text-sm text-fg-muted leading-relaxed">{p.desc}</p>
             </div>
           </div>
         ))
@@ -55,12 +69,12 @@ const PRUEBAS = [
 
     <!-- Slot reservado para el primer caso real con datos (cuando haya permiso del cliente) -->
     <div data-reveal style="transition-delay:120ms">
-      <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 rounded-2xl border border-dashed border-white/15 bg-white/[0.02] px-6 py-5 md:px-7">
-        <span class="flex items-center justify-center w-10 h-10 shrink-0 rounded-xl bg-[#85AB8B]/12 text-[#85AB8B]">
+      <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 rounded-2xl border border-dashed border-white/15 bg-surface px-6 py-5 md:px-7">
+        <span class="flex items-center justify-center w-10 h-10 shrink-0 rounded-xl bg-support/10 text-support">
           <Icon name="sparkles" class="w-5 h-5" />
         </span>
-        <p class="text-sm text-[#9FB2A0] leading-relaxed">
-          <span class="font-semibold text-[#C7D2C6]">Caso real con datos, en camino.</span>
+        <p class="text-sm text-fg-muted leading-relaxed">
+          <span class="font-semibold text-fg">Caso real con datos, en camino.</span>
           Publicaremos aquí el primero con cifras en cuanto un cliente nos dé permiso. Hasta
           entonces, no verás testimonios ni resultados inventados.
         </p>

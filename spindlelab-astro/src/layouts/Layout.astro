@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title = 'SpindleLab — SEO técnico y visibilidad en IA para empresas en Chile',
-  description = 'Auditamos tu sitio y tu presencia en IA para que ChatGPT, Gemini y Perplexity te recomienden antes que tu competencia. Diagnóstico gratis en 48 horas.',
+  description = 'Auditamos tu sitio y tu presencia en IA para que ChatGPT, Gemini y Perplexity te recomienden antes que tu competencia. Diagnóstico gratis en 24 horas.',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
@@ -99,14 +99,14 @@ const jsonLd = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <meta name="theme-color" content="#0b120e" />
+    <meta name="theme-color" content="#0E141B" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="SpindleLab" />
     <meta property="og:title" content={title} />
     <meta
       property="og:description"
-      content="Tu empresa ya no compite solo en Google. Compite en las respuestas de la IA. Diagnóstico gratis en 48 horas."
+      content="Tu empresa ya no compite solo en Google. Compite en las respuestas de la IA. Diagnóstico gratis en 24 horas."
     />
     <meta property="og:url" content="https://spindlelab.cl/" />
     <meta property="og:image" content="https://spindlelab.cl/assets/img/og-marca.jpg?v=2" />
@@ -125,16 +125,8 @@ const jsonLd = {
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://db.onlinewebfonts.com/c/6e47ef470dd19698c911332a9b4d1cf4?family=Neue+Haas+Grotesk+Text+Pro"
-      rel="stylesheet"
-    />
-    <link
-      href="https://db.onlinewebfonts.com/c/dec0d9b4e22ca588dc20e1e2e09a59b5?family=Neue+Haas+Grotesk+Display+Pro+55+Roman"
-      rel="stylesheet"
-    />
   </head>
-  <body class="bg-[#0B120E]">
+  <body class="bg-bg">
     <!-- Meta Pixel (noscript) -->
     <noscript
       ><img
@@ -169,6 +161,28 @@ const jsonLd = {
           // Red de seguridad: nunca dejar contenido oculto si IO no dispara.
           window.setTimeout(() => reveal(el), 2500);
         });
+      }
+    </script>
+
+    <!-- Videos de sección: reproducir solo en pantalla (carga diferida). -->
+    <script>
+      const lazyVids = document.querySelectorAll('video[data-lazyvideo]');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (lazyVids.length && !reduce && 'IntersectionObserver' in window) {
+        const vio = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              const v = e.target as HTMLVideoElement;
+              if (e.isIntersecting) {
+                v.play().catch(() => {});
+              } else {
+                v.pause();
+              }
+            });
+          },
+          { threshold: 0.25 }
+        );
+        lazyVids.forEach((v) => vio.observe(v));
       }
     </script>
   </body>

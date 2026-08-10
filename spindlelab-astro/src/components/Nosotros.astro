@@ -1,0 +1,90 @@
+---
+import Icon from './Icon.astro';
+import { CONTACTO } from '../consts';
+
+// Concreto: qué hace SpindleLab, no el tamaño del equipo.
+const PUNTOS = [
+  {
+    titulo: 'Diagnóstico antes que contrato',
+    desc: 'Antes de cobrarte nada, reviso tu sitio y tu presencia en IA y te muestro los hallazgos en una página. Gratis, en 24 horas.',
+  },
+  {
+    titulo: 'Arreglo lo técnico y lo legible',
+    desc: 'SEO técnico, datos estructurados y contenido que la IA pueda citar. No hay que rehacer tu sitio. Hay que hacerlo legible.',
+  },
+  {
+    titulo: 'Mido si te recomiendan',
+    desc: 'Registro si ChatGPT, Gemini y Perplexity te nombran ante las preguntas de tus clientes. Con fecha, no de memoria.',
+  },
+];
+---
+
+<section id="nosotros" class="relative bg-surface-2 py-24 md:py-32 px-4 sm:px-6 scroll-mt-20">
+  <div class="max-w-6xl mx-auto">
+    <div data-reveal class="max-w-2xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">Quiénes somos</p>
+      <h2
+        class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-fg"
+        style="letter-spacing:-0.03em"
+      >
+        No te prometo. Te muestro.
+      </h2>
+    </div>
+
+    <div class="mt-12 md:mt-16 grid md:grid-cols-[minmax(0,300px)_1fr] gap-10 md:gap-14 items-start">
+      <!-- Retrato. Placeholder tipográfico hasta tener la foto real de Ramón.
+           Para publicar: reemplazar este bloque por
+           <img src="/assets/img/ramon-vallejos.jpg" alt="Ramón Vallejos, consultor de SpindleLab" ... /> -->
+      <div data-reveal class="md:sticky md:top-28">
+        <div
+          class="aspect-[4/5] w-full rounded-2xl border border-white/10 bg-surface flex items-center justify-center overflow-hidden"
+        >
+          <span class="font-display text-[6rem] leading-none text-fg-muted/70">R<span class="text-gold">.</span></span>
+        </div>
+        <p class="mt-4 text-sm font-semibold text-fg">Ramón Vallejos</p>
+        <p class="text-sm text-fg-muted">Consultor de SEO técnico y visibilidad en IA</p>
+      </div>
+
+      <div data-reveal style="transition-delay:90ms">
+        <p class="text-lg md:text-xl text-fg leading-relaxed">
+          Soy Ramón Vallejos. Reviso sitios y arreglo lo que impide que Google y los motores de IA los
+          lean, los entiendan y los recomienden.
+        </p>
+        <p class="mt-5 text-base text-fg-muted leading-relaxed">
+          Empecé SpindleLab porque me tocó ver lo mismo muchas veces: una empresa que hace bien su
+          trabajo, pero con un sitio que la IA no logra leer. Así, cuando alguien le pregunta a ChatGPT,
+          termina recomendando a la competencia.
+        </p>
+        <p class="mt-5 text-base text-fg-muted leading-relaxed">
+          Lo primero es un diagnóstico. Reviso tu sitio, tu contenido y si la IA te nombra, y te entrego
+          en una página qué te frena y qué mueve la aguja. Gratis, en 24 horas. Con eso decides con
+          información, no a ciegas.
+        </p>
+
+        <div class="mt-10 grid sm:grid-cols-1 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+          {
+            PUNTOS.map((p) => (
+              <div class="bg-surface p-6 md:p-7">
+                <h3 class="text-base font-semibold text-fg mb-1.5">{p.titulo}</h3>
+                <p class="text-sm text-fg-muted leading-relaxed">{p.desc}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-10 flex flex-wrap items-center gap-5">
+          <a
+            href={CONTACTO}
+            class="inline-flex items-center gap-2 bg-paper hover:bg-white text-bg text-sm font-semibold px-6 py-3 rounded-full transition-colors"
+          >
+            Agenda tu diagnóstico
+            <Icon name="arrowRight" />
+          </a>
+          <a href="/nosotros/" class="text-sm font-semibold text-support hover:text-fg transition-colors">
+            Cómo trabajo →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
