@@ -7,23 +7,20 @@ import { NAV_LINKS, CONTACTO, EMAIL } from '../consts';
   id="nav"
   class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-10 py-4 bg-transparent"
 >
-  <a href="#top" class="flex items-center gap-2 text-[#F4F6F3]">
-    <span
-      class="text-xl sm:text-2xl font-bold tracking-tight leading-none"
-      style="font-family:'Gabarito','Manrope',sans-serif"
-    >
-      SpindleLab<span class="text-[#C9A227]">.</span>
+  <a href="#top" class="flex items-center gap-2 text-fg">
+    <span class="font-display text-xl sm:text-2xl font-bold tracking-tight leading-none">
+      SpindleLab<span class="text-gold">.</span>
     </span>
   </a>
 
   <div
-    class="hidden lg:flex items-center gap-1 bg-white/[0.06] backdrop-blur-md rounded-full pl-6 pr-1 py-1 shadow-sm border border-white/10"
+    class="hidden lg:flex items-center gap-1 bg-white/[0.05] backdrop-blur-md rounded-full pl-6 pr-1 py-1 shadow-sm border border-white/10"
   >
     {
       NAV_LINKS.map((link) => (
         <a
           href={link.href}
-          class="text-sm px-3 py-2 font-medium text-[#AFC0AF] hover:text-white transition-colors"
+          class="text-sm px-3 py-2 font-medium text-fg-muted hover:text-fg transition-colors"
         >
           {link.label}
         </a>
@@ -31,16 +28,16 @@ import { NAV_LINKS, CONTACTO, EMAIL } from '../consts';
     }
     <a
       href={CONTACTO}
-      class="ml-2 bg-[#F4F6F3] hover:bg-white text-[#12201A] text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+      class="ml-2 bg-paper hover:bg-white text-bg text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
     >
       Diagnóstico gratis
     </a>
   </div>
 
-  <div class="flex items-center gap-3 sm:gap-6 text-[#C7D2C6]">
+  <div class="flex items-center gap-3 sm:gap-6 text-fg-muted">
     <a
       href={CONTACTO}
-      class="hidden sm:flex lg:hidden items-center gap-2 text-sm font-medium hover:text-white transition-colors"
+      class="hidden sm:flex lg:hidden items-center gap-2 text-sm font-medium hover:text-fg transition-colors"
     >
       <Icon name="mail" />
       Contacto
@@ -48,7 +45,7 @@ import { NAV_LINKS, CONTACTO, EMAIL } from '../consts';
     <button
       id="menu-btn"
       type="button"
-      class="lg:hidden relative flex items-center justify-center w-10 h-10 rounded-full bg-white/[0.06] backdrop-blur-md border border-white/10 text-white transition-all duration-300 hover:bg-white/10"
+      class="lg:hidden relative flex items-center justify-center w-10 h-10 rounded-full bg-white/[0.05] backdrop-blur-md border border-white/10 text-fg transition-all duration-300 hover:bg-white/10"
       aria-label="Abrir menú"
       aria-expanded="false"
     >
@@ -66,13 +63,13 @@ import { NAV_LINKS, CONTACTO, EMAIL } from '../consts';
   id="menu-overlay"
   class="lg:hidden fixed inset-0 z-40 opacity-0 pointer-events-none transition-opacity duration-300"
 >
-  <div class="absolute inset-0 bg-[#050807]/70 backdrop-blur-sm"></div>
+  <div class="absolute inset-0 bg-surface-3/70 backdrop-blur-sm"></div>
 </div>
 
 <!-- Cajón del menú móvil -->
 <div
   id="menu-drawer"
-  class="lg:hidden fixed top-0 right-0 bottom-0 z-40 w-[85%] max-w-sm bg-[#0E1712]/95 backdrop-blur-xl shadow-2xl border-l border-white/10 translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+  class="lg:hidden fixed top-0 right-0 bottom-0 z-40 w-[85%] max-w-sm bg-surface-2/95 backdrop-blur-xl shadow-2xl border-l border-white/10 translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
 >
   <div class="flex flex-col h-full pt-24 px-8 pb-8">
     <div class="flex flex-col gap-1">
@@ -81,7 +78,7 @@ import { NAV_LINKS, CONTACTO, EMAIL } from '../consts';
           <a
             href={link.href}
             data-menu-link
-            class="text-2xl font-semibold text-white py-4 border-b border-white/10"
+            class="text-2xl font-semibold text-fg py-4 border-b border-white/10"
           >
             {link.label}
           </a>
@@ -89,14 +86,14 @@ import { NAV_LINKS, CONTACTO, EMAIL } from '../consts';
       }
     </div>
     <div class="mt-8 flex flex-col gap-4">
-      <a href={CONTACTO} class="flex items-center gap-2 text-sm font-medium text-[#C7D2C6]">
+      <a href={CONTACTO} class="flex items-center gap-2 text-sm font-medium text-fg-muted">
         <Icon name="mail" />
         {EMAIL}
       </a>
       <a
         href={CONTACTO}
         data-menu-link
-        class="mt-2 bg-[#F4F6F3] hover:bg-white text-[#12201A] text-sm font-semibold px-5 py-3 rounded-full transition-colors text-center"
+        class="mt-2 bg-paper hover:bg-white text-bg text-sm font-semibold px-5 py-3 rounded-full transition-colors text-center"
       >
         Diagnóstico gratis
       </a>

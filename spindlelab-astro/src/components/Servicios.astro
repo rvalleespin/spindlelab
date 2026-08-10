@@ -6,7 +6,7 @@ const SERVICIOS = [
   {
     icon: 'lineChart',
     titulo: 'Acompañamiento Mensual',
-    desc: 'El programa continuo y nuestro formato de trabajo principal: monitoreo de tus menciones en IA, informes quincenales y trabajo sostenido sobre tu autoridad de entidad, la capa estratégica donde se gana la visibilidad (no solo el ajuste técnico puntual).',
+    desc: 'Nuestro formato principal, mes a mes. Monitoreamos tus menciones en IA, te entregamos informes quincenales y trabajamos tu autoridad como fuente citable, que es donde de verdad se gana la visibilidad. No solo el arreglo técnico de una vez.',
     destacado: true,
   },
   {
@@ -22,20 +22,34 @@ const SERVICIOS = [
 ];
 
 const CIFRAS = [
-  { valor: '48 h', label: 'Entrega del diagnóstico inicial' },
-  { valor: '1 sitio', label: 'Para dominar tu nicho en IA' },
+  { valor: '24 h', label: 'Entrega del diagnóstico inicial' },
+  { valor: '1 sitio', label: 'Para ser la referencia en tu nicho' },
   { valor: '20 min', label: 'Reunión de alineación estratégica' },
   { valor: '3 capas', label: 'SEO técnico, contenido y autoridad' },
 ];
 ---
 
-<section id="servicios" class="relative bg-[#0E1712] py-24 md:py-32 px-4 sm:px-6 scroll-mt-20">
-  <div class="max-w-6xl mx-auto">
+<section id="servicios" class="relative overflow-hidden bg-surface-2 py-24 md:py-32 px-4 sm:px-6 scroll-mt-20">
+  <video
+    data-lazyvideo
+    class="absolute inset-0 w-full h-full object-cover"
+    src="/video/servicios-oficina.mp4"
+    poster="/video/servicios-oficina.jpg"
+    muted
+    loop
+    playsinline
+    preload="none"></video>
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background:linear-gradient(to bottom, rgba(19,26,34,0.86) 0%, rgba(19,26,34,0.78) 42%, rgba(19,26,34,0.82) 70%, rgba(19,26,34,0.93) 100%)"
+  >
+  </div>
+  <div class="relative z-10 max-w-6xl mx-auto">
     <div data-reveal class="max-w-2xl">
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#85AB8B] mb-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">
         Nuestros servicios
       </p>
-      <h2 class="text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-[#EAF1EA]" style="letter-spacing:-0.03em">
+      <h2 class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-fg" style="letter-spacing:-0.03em">
         Especialistas en la infraestructura del nuevo SEO
       </h2>
     </div>
@@ -48,22 +62,22 @@ const CIFRAS = [
               class:list={[
                 'group h-full rounded-2xl border p-6 md:p-7 transition-colors duration-300',
                 s.destacado
-                  ? 'border-[#85AB8B]/45 bg-[#85AB8B]/[0.07] hover:border-[#85AB8B]/70'
-                  : 'border-white/10 bg-white/[0.03] hover:border-[#85AB8B]/40 hover:bg-white/[0.05]',
+                  ? 'border-support/40 bg-support/[0.07] hover:border-support/70'
+                  : 'border-white/10 bg-surface hover:border-support/40 hover:bg-white/[0.05]',
               ]}
             >
               <div class="flex items-center justify-between mb-5">
-                <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#85AB8B]/12 text-[#85AB8B]">
+                <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-support/12 text-support">
                   <Icon name={s.icon} class="w-5 h-5" />
                 </span>
                 {s.destacado && (
-                  <span class="text-[10px] font-semibold uppercase tracking-wider text-[#0E1712] bg-[#85AB8B] rounded-full px-2.5 py-1">
+                  <span class="text-[10px] font-semibold uppercase tracking-wider text-bg bg-support rounded-full px-2.5 py-1">
                     Plan recomendado
                   </span>
                 )}
               </div>
-              <h3 class="text-lg md:text-xl font-semibold text-[#EAF1EA] mb-2.5">{s.titulo}</h3>
-              <p class="text-sm text-[#9FB2A0] leading-relaxed">{s.desc}</p>
+              <h3 class="font-display text-lg md:text-xl font-semibold text-fg mb-2.5">{s.titulo}</h3>
+              <p class="text-sm text-fg-muted leading-relaxed">{s.desc}</p>
             </div>
           </div>
         ))
@@ -71,14 +85,20 @@ const CIFRAS = [
     </div>
 
     <div data-reveal style="transition-delay:120ms">
-      <div class="mt-14 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 rounded-2xl border border-white/10 bg-[#0B120E]/60 px-6 py-8 md:py-10">
+      <div class="mt-14 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 rounded-2xl border border-white/10 bg-bg/60 px-6 py-8 md:py-10">
         {
           CIFRAS.map((c) => (
             <div class="text-center">
-              <div class="text-2xl md:text-3xl font-semibold text-[#EAF1EA]" style="letter-spacing:-0.02em">
+              <div
+                class:list={[
+                  'text-2xl md:text-3xl font-display font-semibold',
+                  c.valor === '1 sitio' ? 'text-gold' : 'text-fg',
+                ]}
+                style="letter-spacing:-0.02em"
+              >
                 {c.valor}
               </div>
-              <div class="mt-1.5 text-xs text-[#9FB2A0] leading-snug max-w-[18ch] mx-auto">
+              <div class="mt-1.5 text-xs text-fg-muted leading-snug max-w-[18ch] mx-auto">
                 {c.label}
               </div>
             </div>
@@ -90,19 +110,19 @@ const CIFRAS = [
     <!-- Cross-sell secundario: Desarrollo Web (fuera de los pilares) -->
     <div data-reveal style="transition-delay:150ms">
       <div id="desarrollo-web" class="mt-8 scroll-mt-24 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 rounded-2xl border border-white/10 bg-white/[0.02] px-6 py-5 md:px-7">
-        <span class="flex items-center justify-center w-10 h-10 shrink-0 rounded-xl bg-white/[0.05] text-[#9FB2A0]">
+        <span class="flex items-center justify-center w-10 h-10 shrink-0 rounded-xl bg-white/[0.05] text-fg-muted">
           <Icon name="code" class="w-5 h-5" />
         </span>
         <div class="flex-1">
-          <p class="text-sm font-semibold text-[#C7D2C6]">¿Además necesitas el sitio? Lo construimos.</p>
-          <p class="text-sm text-[#9FB2A0] leading-relaxed mt-1">
+          <p class="text-sm font-semibold text-fg-muted">¿Además necesitas el sitio? Lo construimos.</p>
+          <p class="text-sm text-fg-muted leading-relaxed mt-1">
             Desarrollo web 100% a medida, sin plantillas ni WordPress, con el SEO técnico incorporado
             desde el primer commit. Para quienes parten de cero o rehacen su plataforma.
           </p>
         </div>
         <a
           href={CONTACTO}
-          class="shrink-0 text-sm font-semibold text-[#85AB8B] hover:text-[#a9c8ad] transition-colors"
+          class="shrink-0 text-sm font-semibold text-support hover:text-support/80 transition-colors"
         >
           Conversemos →
         </a>
