@@ -323,6 +323,13 @@ h1 .ia{color:var(--teal)}
    del video (16:9) en vez de recortarlo a una franja fija, y velo más suave. */
 .hero-media.is-video video{height:auto;aspect-ratio:16/9}
 .hero-media.is-video::after{background:linear-gradient(180deg,rgba(14,20,27,.12),rgba(14,20,27,.42))}
+
+/* Hero de página full-bleed con video de fondo (como el home). */
+.page-hero-video{position:relative;overflow:hidden;padding:132px 0 108px;border-bottom:0}
+.page-hero-video .ph-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.page-hero-video .ph-veil{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(14,20,27,.72) 0%,rgba(14,20,27,.5) 42%,rgba(14,20,27,.88) 100%)}
+.page-hero-video>.wrap{position:relative;z-index:1}
+@media(max-width:680px){.page-hero-video{padding:92px 0 72px}}
 .hero-media .media-tag{
   position:absolute;left:18px;bottom:18px;z-index:1;
   background:rgba(14,20,27,.82);color:var(--paper);
