@@ -114,6 +114,18 @@ a{color:inherit}
 .menu-btn[aria-expanded="true"] .bars::before{transform:rotate(-90deg) translateX(-7px)}
 .menu-btn[aria-expanded="true"] .bars::after{opacity:0}
 
+/* Menú estilo píldora (igual que el home). */
+@media(min-width:681px){
+  .nav-pill{display:flex;align-items:center;gap:2px;background:rgba(247,245,240,.05);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:var(--r-pill);padding:4px 5px 4px 10px}
+  .nav-pill .nav-links{gap:2px}
+  .nav-pill .nav-links a{text-transform:none;letter-spacing:0;font-weight:500;font-size:13.5px;color:var(--ink-70);padding:8px 14px;border-radius:var(--r-pill);box-shadow:none}
+  .nav-pill .nav-links a:hover{color:var(--ink)}
+  .nav-pill .nav-links a[aria-current="page"]{color:var(--ink);background:rgba(247,245,240,.07);box-shadow:none}
+  .nav-pill .nav-cta{margin-left:6px;text-transform:none;letter-spacing:0;font-weight:600;font-size:13px;padding:9px 18px}
+}
+/* En móvil la píldora desaparece: links vuelven a ser hijos directos (dropdown). */
+@media(max-width:680px){.nav-pill{display:contents}}
+
 /* ---------- Hero ---------- */
 .hero{padding:120px 0 96px;background:var(--bg)}
 .hero .chip-kicker{
