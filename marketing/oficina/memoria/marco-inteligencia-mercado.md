@@ -15,6 +15,17 @@
   auditoría one-shot y Desarrollo Web (no como pilar), agregar autoridad de entidad
   (GEO estratégico), y NO volverse agencia de automatización genérica.
 - Fichas en `marketing/inteligencia-mercado/competidores.md`.
+- **Segundo estudio cerrado (2026-08-14):** primer estudio para **otro cliente** (Chef&Hotel,
+  medio del canal HORECA) — `marketing/inteligencia-mercado/chefandhotel/2026-08-estudio-posicionamiento.md`.
+  Decisión: posicionamiento. Conclusión: su directo real es **Canal Horeca** (mismo ICP, se
+  deslizó a directorio/media-group); el cuadrante **"autoridad editorial B2B con datos" (modelo
+  Hosteltur) está vacío en Chile** y Chef&Hotel es el único con activos para ocuparlo. Movimiento
+  #1: informe/benchmark propio por trimestre. Ficha de cliente creada (`clientes/chefandhotel.md`,
+  Estado por confirmar). Registro de competidores **propio del cliente** en
+  `inteligencia-mercado/chefandhotel/competidores.md` (separado del de SpindleLab).
+- **Aprendido:** cada cliente lleva su **propia carpeta de inteligencia y su propio
+  `competidores.md`** — no mezclar campos distintos (agencias AEO vs. medios HORECA) en un
+  registro. IG quedó pendiente otra vez (sesión cloud sin Chrome).
 
 ## Gotchas de investigación (aprendidos / heredados)
 
