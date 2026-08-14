@@ -15,7 +15,7 @@
 
 | Nombre / Empresa | Rubro | Fuente | Etapa | Próximo paso | Último contacto | Notas |
 |---|---|---|---|---|---|---|
-| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅ — Entregado** | **Cobrar $235.200 (Fases 1+5)** como persona natural — habilitado desde el 24 jul, decisión de encuadre 25 jul. Pedir permiso de caso público (sigue sin pedirse, ahora es el mejor momento). Detalle en `proyectos-en-curso.md` | 24 jul 2026 (lanzamiento técnico) | Cotización SPL-COT-2026-014 aprobada. **Plan Esencial** ($392.000). **Sitio lanzado 24 jul.** **Cobro (decisión 25 jul):** este contrato se factura completo como persona natural, no por SpindleLab SpA (se contrató y prestó antes de que existiera la SpA, constituida 24 jul; la SpA aún no puede emitir documentos — inicio de actividades bloqueado por trámites pendientes). Regla general: contrato pre-24-jul → persona natural, contrato nuevo → SpA. **Permiso de caso público: aún no pedido.** |
+| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅ — Entregado, cobro completo** | **Pedir permiso de caso público** (sigue sin pedirse — único pendiente real ahora). Detalle en `proyectos-en-curso.md` | 28 jul 2026 (cobro de Fases 1+5) | Cotización SPL-COT-2026-014 aprobada. **Plan Esencial** ($392.000), **cobrado completo**: Fase 3 el 14 jul, Fases 1+5 ($235.200) el 28 jul, confirmado por Ramón — sin comprobante bancario adjunto todavía. **Sitio lanzado 24 jul.** Cobro como persona natural, no SpA (decisión 25 jul: contrato pre-24-jul → persona natural, contrato nuevo → SpA). **Permiso de caso público: aún no pedido.** |
 
 ## Casos en pausa (no forman parte del pipeline activo)
 

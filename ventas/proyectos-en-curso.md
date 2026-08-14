@@ -26,14 +26,14 @@ Plan **Esencial**, oferta de lanzamiento **$392.000** (IVA incl.). Esquema origi
 
 | Fase | Concepto | Monto (30/40/30) | Estado | Evidencia |
 |---|---|---|---|---|
-| 1. Descubrimiento | 30% | $117.600 | ⏳ **Pendiente — se cobra contra entrega** (junto con Fase 5) | Cobro aún no realizado. |
+| 1. Descubrimiento | 30% | $117.600 | ✅ **Pagado 28 jul 2026** (junto con Fase 5) | Confirmado por Ramón 28 jul. Sin detalle de comprobante bancario registrado todavía (fecha exacta/monto por transferencia) — agregar si aparece, mismo estándar que la Fase 3. |
 | 3. Desarrollo IA | 40% (aprobar staging) | $156.800 | ✅ **Pagado 14 jul 2026** | Transferencia BICE de "Bernardo Combeau Oyarzún" → BancoChile, 14 jul 12:35. Monto exacto = 40% de $392.000. |
-| 5. Lanzamiento | 30% (contra entrega) | $117.600 | ⏳ **Pendiente — se cobra contra entrega** (junto con Fase 1) | Cobro aún no realizado. |
+| 5. Lanzamiento | 30% (contra entrega) | $117.600 | ✅ **Pagado 28 jul 2026** (junto con Fase 1) | Confirmado por Ramón 28 jul. Sin detalle de comprobante bancario registrado todavía. |
 
 Notas:
 - **21 jun 2026 — transferencia de $10.000** del mismo remitente, sin clasificar (probable transferencia de prueba). No corresponde a ninguna cuota del esquema; verificar con Bernardo.
-- Total verificado recibido vía BICE: **$166.800** ($10.000 + $156.800).
-- **Pendiente por cobrar: $235.200** — Fase 1 ($117.600) + Fase 5 ($117.600), en **un solo cobro contra entrega** (decisión 22 jul 2026), **como persona natural** (decisión 25 jul 2026). Entrega técnica realizada el 24 jul → el cobro está habilitado.
+- Total verificado recibido vía BICE (con comprobante): **$166.800** ($10.000 + $156.800). Los $235.200 de Fases 1+5 quedan confirmados por Ramón (28 jul) pero sin comprobante bancario adjunto todavía.
+- **Cobro completo: $392.000 recibidos** — Fase 3 (14 jul) + Fases 1+5 en un solo pago (28 jul, decisión 22 jul de juntarlas), **como persona natural** (decisión 25 jul 2026). No queda saldo pendiente de este contrato.
 
 ## Proyectos entregados
 
