@@ -1,13 +1,13 @@
 # Mensaje de presentación — correo a Chef & Hotel
 
-Acompaña el envío de `SPL-PROP-2026-001-propuesta.pdf`. Reemplazar `[Nombre]` antes de enviar.
+Acompaña el envío de `SPL-PROP-2026-001-propuesta.pdf`. Destinatario: Ricardo (Chef & Hotel).
 
 **Asunto:** Propuesta para trabajar juntos — SpindleLab
 *(alternativo: Lo que conversamos, aterrizado)*
 
 ---
 
-Hola [Nombre]:
+Hola Ricardo:
 
 Gracias por la conversación del otro día. Me quedé dando vueltas a algo que dijiste: que Chef & Hotel, más que una revista, es la red donde el mundo HORECA hace negocios. Sobre esa idea armé la propuesta que te adjunto.
 
