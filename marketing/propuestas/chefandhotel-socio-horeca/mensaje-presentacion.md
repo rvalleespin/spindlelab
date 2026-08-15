@@ -9,7 +9,7 @@ Acompaña el envío de `SPL-PROP-2026-001-propuesta.pdf`. Destinatario: Ricardo 
 
 Hola Ricardo:
 
-Gracias por la conversación del otro día. Me quedé dando vueltas a algo que dijiste: que Chef & Hotel, más que una revista, es la red donde el mundo HORECA hace negocios. Sobre esa idea armé la propuesta que te adjunto.
+Gracias por la conversación de hoy. Me quedé dando vueltas a algo que dijiste: que Chef & Hotel, más que una revista, es la red donde el mundo HORECA hace negocios. Sobre esa idea armé la propuesta que te adjunto.
 
 Es simple: sumo a lo que ya hacen la parte que hoy no cubren para sus socios. Que aparezcan en Google y en los motores de IA cuando un comprador del rubro busca a quién contratar, y pauta que los ponga frente a quien toma la decisión. Yo trabajo detrás de tu marca y tú mantienes la relación con el socio.
 
