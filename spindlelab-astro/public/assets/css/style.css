@@ -373,6 +373,27 @@ h1 .ia{color:var(--teal)}
 }
 .check-list li b{font-weight:700}
 
+/* lista "fuera de la cartera" — marcador atenuado (contrasta con el check teal) */
+.excl-list{list-style:none;display:grid;gap:13px}
+.excl-list li{padding-left:30px;position:relative;font-size:14.5px;line-height:1.6;color:var(--ink-70)}
+.excl-list li::before{content:"";position:absolute;left:1px;top:4px;width:15px;height:15px;border:1.5px solid var(--ink-50);border-radius:50%}
+.excl-list li::after{content:"";position:absolute;left:5.5px;top:11px;width:6px;height:1.5px;background:var(--ink-50)}
+.excl-list li b{color:var(--paper);font-weight:700}
+/* fila de 3 tarjetas (piezas del motor) */
+.cards.three{grid-template-columns:repeat(3,1fr)}
+@media(max-width:680px){.cards.three{grid-template-columns:1fr}}
+/* etiqueta de grupo (el filo / el resto del motor) */
+.group-label{display:flex;align-items:baseline;gap:12px;margin-bottom:22px;flex-wrap:wrap}
+.group-label .n{font-family:var(--headline);font-size:15px;font-weight:600;color:var(--teal)}
+.group-label h3{font-family:var(--headline);font-size:clamp(20px,2.2vw,26px);font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.group-label p{font-size:14px;color:var(--ink-70);flex-basis:100%;max-width:64ch}
+/* bloque dentro/fuera de la cartera */
+.cartera{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.cartera .col h3{font-family:var(--headline);font-size:18px;font-weight:600;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.cartera .partner-note{margin-top:26px;font-size:14px;line-height:1.6;color:var(--ink-70);border-top:1px solid var(--line);padding-top:20px}
+.cartera .partner-note b{color:var(--paper);font-weight:700}
+@media(max-width:760px){.cartera{grid-template-columns:1fr;gap:32px}}
+
 /* panel lateral */
 .aside-panel{
   background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);
