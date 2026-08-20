@@ -109,7 +109,7 @@ const jsonLd = {
       content="Tu empresa ya no compite solo en Google. Compite en las respuestas de la IA. Diagnóstico gratis en 24 horas."
     />
     <meta property="og:url" content="https://spindlelab.cl/" />
-    <meta property="og:image" content="https://spindlelab.cl/assets/img/og-marca.jpg?v=2" />
+    <meta property="og:image" content="https://spindlelab.cl/assets/img/og-marca.jpg?v=3" />
     <meta property="og:locale" content="es_CL" />
     <meta name="twitter:card" content="summary_large_image" />
 
@@ -168,7 +168,10 @@ const jsonLd = {
     <script>
       const lazyVids = document.querySelectorAll('video[data-lazyvideo]');
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (lazyVids.length && !reduce && 'IntersectionObserver' in window) {
+      const small = window.matchMedia('(max-width: 680px)').matches;
+      const saveData = (navigator as any).connection && (navigator as any).connection.saveData === true;
+      const blockVideo = reduce || small || saveData;
+      if (lazyVids.length && !blockVideo && 'IntersectionObserver' in window) {
         const vio = new IntersectionObserver(
           (entries) => {
             entries.forEach((e) => {

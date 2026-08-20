@@ -8,11 +8,12 @@ import { CONTACTO } from '../consts';
     id="hero-video"
     class="absolute inset-0 z-0 w-full h-full object-cover"
     src="/hero-hilo-de-oro.mp4"
+    poster="/video/hero-hilo-de-oro.jpg"
     autoplay
     muted
     loop
     playsinline
-    preload="auto"></video>
+    preload="metadata"></video>
 
   <!-- Velo oscuro para legibilidad -->
   <div
@@ -86,7 +87,13 @@ import { CONTACTO } from '../consts';
 
 <script>
   const v = document.getElementById('hero-video') as HTMLVideoElement | null;
-  if (v) {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const saveData = (navigator as any).connection && (navigator as any).connection.saveData === true;
+  if (v && (reduceMotion || saveData)) {
+    // Modo Bajo Consumo / Ahorro de Datos: solo el poster, cero descarga del mp4.
+    v.removeAttribute('autoplay');
+    v.preload = 'none';
+  } else if (v) {
     v.muted = true;
     let started = false;
     const cleanup = () => {
