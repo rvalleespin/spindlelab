@@ -42,10 +42,13 @@
 
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{max-width:100%;overflow-x:clip}
+/* Transiciones suaves entre páginas (cross-document): navegar se siente continuo. */
+@view-transition{navigation:auto}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
 }
 body{
   background:var(--bg);
