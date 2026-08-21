@@ -92,7 +92,11 @@ a{color:inherit}
   border-bottom:0;
   display:flex;align-items:center;
 }
-.site-header .wrap{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.site-header .wrap{width:100%;max-width:none;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+@media(min-width:768px){.site-header .wrap{padding:0 40px}}
+/* Header full-width + píldora centrada, coherente con el home (Nav.astro):
+   un spacer de ancho 0 a la derecha hace que la píldora quede centrada como 3er hijo. */
+@media(min-width:681px){.site-header .wrap::after{content:"";width:0;flex:0 0 auto}}
 .logo{font-size:21px;font-weight:700;letter-spacing:-.01em;text-decoration:none;color:var(--ink);display:flex;align-items:center;font-family:var(--headline)}
 .logo span{color:var(--gold)}
 .logo img{display:block;height:34px;width:auto}
