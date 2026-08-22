@@ -2,22 +2,27 @@
 import Icon from './Icon.astro';
 import { CONTACTO } from '../consts';
 
-const SERVICIOS = [
+// El motor de adquisición: el filo (Visibilidad SEO+IA) va destacado arriba;
+// las otras 3 piezas conectadas van en la fila de abajo.
+const PIEZAS = [
   {
-    icon: 'lineChart',
-    titulo: 'Acompañamiento Mensual',
-    desc: 'Nuestro formato principal, mes a mes. Monitoreamos tus menciones en IA, te entregamos informes quincenales y trabajamos tu autoridad como fuente citable, que es donde de verdad se gana la visibilidad. No solo el arreglo técnico de una vez.',
-    destacado: true,
+    icon: 'users',
+    titulo: 'Gestión de redes sociales',
+    desc: 'Estrategia, pauta, comunidad y reportes para aparecer donde tu cliente ya pasa el día. El contenido creativo lo sumamos con partners.',
+    href: '/servicios/redes-sociales/',
   },
   {
-    icon: 'scanSearch',
-    titulo: 'Auditoría SEO Técnica',
-    desc: 'Diagnóstico profundo de tu arquitectura web: rastreo, indexación, Core Web Vitals, datos estructurados y señales de autoridad.',
+    icon: 'target',
+    titulo: 'Paid media (Google y Meta)',
+    desc: 'Estrategia y manejo de cuenta optimizado con IA: pauta que llega a quien puede comprarte, con el presupuesto bajo control.',
+    href: '/servicios/paid-media/',
   },
   {
-    icon: 'bot',
-    titulo: 'Visibilidad en IA (AEO/GEO)',
-    desc: 'Optimizamos tu contenido y estructura para que los modelos de lenguaje te citen como fuente confiable en ChatGPT, Gemini y Perplexity.',
+    icon: 'code',
+    titulo: 'Desarrollo web',
+    desc: 'La base donde todo aterriza. Sitios a medida con panel de administración y SEO técnico desde el primer commit.',
+    href: '/servicios/desarrollo-web/',
+    id: 'desarrollo-web',
   },
 ];
 
@@ -25,7 +30,7 @@ const CIFRAS = [
   { valor: '24 h', label: 'Entrega del diagnóstico inicial' },
   { valor: '1 sitio', label: 'Para ser la referencia en tu nicho' },
   { valor: '20 min', label: 'Reunión de alineación estratégica' },
-  { valor: '3 capas', label: 'SEO técnico, contenido y autoridad' },
+  { valor: '4 piezas', label: 'Un motor de adquisición conectado' },
 ];
 ---
 
@@ -45,47 +50,71 @@ const CIFRAS = [
   >
   </div>
   <div class="relative z-10 max-w-6xl mx-auto">
-    <div data-reveal class="max-w-2xl">
+    <div data-reveal class="max-w-3xl">
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">
-        Nuestros servicios
+        Motor de adquisición digital
       </p>
       <h2 class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-fg" style="letter-spacing:-0.03em">
-        Especialistas en la infraestructura del nuevo SEO
+        Cuatro piezas conectadas. Un solo motor.
       </h2>
+      <p class="mt-5 text-fg-muted text-[15px] md:text-base leading-relaxed">
+        No una agencia que hace de todo. SpindleLab es un motor de adquisición orquestado por un
+        especialista con agentes de IA: lidera con el filo de SEO y visibilidad en IA, y conecta
+        redes, publicidad y desarrollo como piezas del mismo sistema. Del que te encuentren al que
+        te contacten.
+      </p>
     </div>
 
-    <div class="mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <!-- El filo: pieza destacada -->
+    <div data-reveal class="mt-12 md:mt-14">
+      <div class="rounded-2xl border border-support/40 bg-support/[0.07] p-7 md:p-9">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-support/12 text-support">
+            <Icon name="scanSearch" class="w-5 h-5" />
+          </span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider text-bg bg-support rounded-full px-2.5 py-1">
+            El filo del motor
+          </span>
+        </div>
+        <h3 class="font-display text-xl md:text-2xl font-semibold text-fg" style="letter-spacing:-0.02em">
+          Visibilidad: SEO técnico + IA (AEO/GEO)
+        </h3>
+        <p class="mt-3 text-sm md:text-[15px] text-fg-muted leading-relaxed max-w-2xl">
+          Que te encuentren en Google y en las respuestas de ChatGPT, Gemini y Perplexity. Es donde
+          ganamos la pelea, y la puerta de entrada al resto del motor. Tres formas de trabajarla,
+          según tu momento.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2.5 text-sm font-semibold">
+          <a href="/servicios/auditoria-seo-tecnica/" class="text-support hover:text-support/80 transition-colors">Auditoría SEO Técnica →</a>
+          <a href="/servicios/visibilidad-en-ia/" class="text-support hover:text-support/80 transition-colors">Visibilidad en IA →</a>
+          <a href="/servicios/acompanamiento-mensual/" class="text-support hover:text-support/80 transition-colors">Acompañamiento mensual →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Las otras 3 piezas del motor -->
+    <div class="mt-5 grid sm:grid-cols-3 gap-5">
       {
-        SERVICIOS.map((s, i) => (
-          <div data-reveal style={`transition-delay:${i * 90}ms`}>
-            <div
-              class:list={[
-                'group h-full rounded-2xl border p-6 md:p-7 transition-colors duration-300',
-                s.destacado
-                  ? 'border-support/40 bg-support/[0.07] hover:border-support/70'
-                  : 'border-white/10 bg-surface hover:border-support/40 hover:bg-white/[0.05]',
-              ]}
+        PIEZAS.map((p, i) => (
+          <div data-reveal id={p.id} class="scroll-mt-24" style={`transition-delay:${i * 90}ms`}>
+            <a
+              href={p.href}
+              class="group flex h-full flex-col rounded-2xl border border-white/10 bg-surface p-6 md:p-7 transition-colors duration-300 hover:border-support/40 hover:bg-white/[0.05]"
             >
-              <div class="flex items-center justify-between mb-5">
-                <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-support/12 text-support">
-                  <Icon name={s.icon} class="w-5 h-5" />
-                </span>
-                {s.destacado && (
-                  <span class="text-[10px] font-semibold uppercase tracking-wider text-bg bg-support rounded-full px-2.5 py-1">
-                    Plan recomendado
-                  </span>
-                )}
-              </div>
-              <h3 class="font-display text-lg md:text-xl font-semibold text-fg mb-2.5">{s.titulo}</h3>
-              <p class="text-sm text-fg-muted leading-relaxed">{s.desc}</p>
-            </div>
+              <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-support/12 text-support mb-5">
+                <Icon name={p.icon} class="w-5 h-5" />
+              </span>
+              <h3 class="font-display text-lg font-semibold text-fg mb-2.5">{p.titulo}</h3>
+              <p class="text-sm text-fg-muted leading-relaxed flex-1">{p.desc}</p>
+              <span class="mt-4 text-sm font-semibold text-support">Ver detalle →</span>
+            </a>
           </div>
         ))
       }
     </div>
 
     <div data-reveal style="transition-delay:120ms">
-      <div class="mt-14 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 rounded-2xl border border-white/10 bg-bg/60 px-6 py-8 md:py-10">
+      <div class="mt-12 md:mt-14 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 rounded-2xl border border-white/10 bg-bg/60 px-6 py-8 md:py-10">
         {
           CIFRAS.map((c) => (
             <div class="text-center">
@@ -107,24 +136,25 @@ const CIFRAS = [
       </div>
     </div>
 
-    <!-- Cross-sell secundario: Desarrollo Web (fuera de los pilares) -->
+    <!-- Fuera de la cartera: el contenido creativo va con partners -->
     <div data-reveal style="transition-delay:150ms">
-      <div id="desarrollo-web" class="mt-8 scroll-mt-24 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 rounded-2xl border border-white/10 bg-white/[0.02] px-6 py-5 md:px-7">
+      <div class="mt-6 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-5 rounded-2xl border border-white/10 bg-white/[0.02] px-6 py-5 md:px-7">
         <span class="flex items-center justify-center w-10 h-10 shrink-0 rounded-xl bg-white/[0.05] text-fg-muted">
-          <Icon name="code" class="w-5 h-5" />
+          <Icon name="sparkles" class="w-5 h-5" />
         </span>
         <div class="flex-1">
-          <p class="text-sm font-semibold text-fg-muted">¿Además necesitas el sitio? Lo construimos.</p>
+          <p class="text-sm font-semibold text-fg">El contenido creativo va por separado, y está bien.</p>
           <p class="text-sm text-fg-muted leading-relaxed mt-1">
-            Desarrollo web 100% a medida, sin plantillas ni WordPress, con el SEO técnico incorporado
-            desde el primer commit. Para quienes parten de cero o rehacen su plataforma.
+            Las piezas gráficas y el video no entran en el motor: los coordinamos con partners cuando
+            los necesitas. Nosotros orquestamos la máquina de adquisición; tú sumas la creatividad sin
+            multiplicar interlocutores.
           </p>
         </div>
         <a
-          href={CONTACTO}
+          href="/servicios/"
           class="shrink-0 text-sm font-semibold text-support hover:text-support/80 transition-colors"
         >
-          Conversemos →
+          Ver el motor completo →
         </a>
       </div>
     </div>

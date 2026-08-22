@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Transiciones suaves entre páginas (cross-document, mismo origen).
+   Hace que navegar entre home y las internas se sienta continuo, no un "salto". */
+@view-transition {
+  navigation: auto;
+}
+
 /* Tipografías de marca. Gabarito = "la voz" (titulares); Inter = "el trabajo" (cuerpo). */
 @font-face {
   font-family: 'Gabarito';
@@ -72,5 +78,10 @@ body {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }
