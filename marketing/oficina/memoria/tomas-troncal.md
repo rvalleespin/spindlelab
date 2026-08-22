@@ -6,6 +6,13 @@
 **Skill:** .claude/skills/agente-troncal-marketing/SKILL.md
 
 ## Estado actual
+- **2026-08-22 — Sitio v2 pulido (Diego + Renata).** Coherencia de menú interno↔home,
+  transiciones de página, revisión completa de copy en voz de Renata (sin tells de IA),
+  y **decisión de servicios**: separadas Redes y Paid para que no se pisen —
+  **Redes = todo lo social** (LinkedIn + Meta, orgánico + pauta social);
+  **Paid Media = SOLO Google** (búsqueda de alta intención). La pauta de IG/FB vive en
+  Redes; Google Ads en Paid. Encoded en fichas/hub/home/schema para que copy y ads no
+  vuelvan a mezclarlo. Memoria nueva: `diego-web.md`.
 - **2026-08-04 — Sitio nuevo (v2 Astro) EN VIVO en `spindlelab.cl`.** Mapa completo en
   `marketing/estado-del-sitio-nuevo.md` (leer eso primero). Resumen: bajada del estudio
   de mercado → estrategia "Mostramos, no prometemos". Cambios shipeados: "Método Spindle",
@@ -37,6 +44,10 @@
   no lo mueve solo) → hay un parpadeo de minutos; es reversible.
 - GitHub Desktop auto-stashea todo al cambiar de rama; hay un stash viejo que **no
   se debe hacer `pop`** (re-agregaría `bernardo-site/`, `RRSS/` eliminados a propósito).
+- **2026-08-22 — Workflow local + sueño del Mac = agentes colgados.** Un Workflow de
+  fondo perdió 3/7 agentes por "computer went to sleep" mid-response. Antes de un
+  workflow largo en la sesión local: `caffeinate -i -t <seg>` en background.
+  Resume-from-runId recupera solo los agentes fallidos (los OK vuelven de caché) — barato.
 
 ## Pendientes que dejé
 - [ ] Registrar en `plan-operativo-90-dias.md` la creación de Emilia y Raquel
