@@ -15,6 +15,18 @@
   auditoría one-shot y Desarrollo Web (no como pilar), agregar autoridad de entidad
   (GEO estratégico), y NO volverse agencia de automatización genérica.
 - Fichas en `marketing/inteligencia-mercado/competidores.md`.
+- **Segundo estudio cerrado (2026-08-25):** `marketing/inteligencia-mercado/2026-08-mapa-citaciones-ia.md`,
+  disparado por el test de menciones Mes 1 (SpindleLab 0/15). **Hallazgo central:** los
+  motores no evalúan los sitios, **citan rankings-listicle que las agencias se
+  auto-publican** (BigBudá, Milimetrix, Best Solution), cada una #1. Los nombres que la
+  IA "recomienda" salen literalmente de esos listicles; SpindleLab no está en ninguno →
+  esa **ausencia**, no el servicio, es la causa de la invisibilidad. Palanca #1 = publicar
+  **evidencia pública verificable** en el sitio (la mayoría de esos rankings puntúan el
+  contenido del sitio, **sin formulario**). Recomendación: artefacto de autoridad propio
+  **como evaluador que NO se auto-rankea** (guía-estándar + "Índice de visibilidad en IA"
+  con datos reales), copiando la ingeniería de BigBudá (schema/FAQ/`llms.txt`/tabla) pero
+  sin el corazón deshonesto de coronarse. 3 movimientos → Renata/Cata (contenido citable),
+  outbound (Sortlist/AgenciasB2B/Clutch), Simón/Diego (autoridad de entidad en el sitio).
 
 ## Gotchas de investigación (aprendidos / heredados)
 
@@ -52,6 +64,21 @@ visible: ahí SpindleLab gana solo con mostrar un caso con datos.
 
 ## Pendientes que dejé
 
+- [ ] **PGAS**: apareció en el test de menciones IA pero es **no verificable** (6 búsquedas → 0
+  resultados). Probable alucinación / nombre mal transcrito. Confirmar con Ramón antes de fichar.
+- [ ] Deep-dive Instagram de los nuevos directos (Focus Ads, Loup, SmartGrowth) — necesita Chrome logueado.
 - [ ] Cotización espejo para confirmar precios de Best Solution / ROI / Seonet (no
   publican tarifas).
 - [ ] Engagement real (likes/comentarios) de @tairoai para confirmar crecimiento pagado.
+
+## Aprendizajes clave (2026-08-25)
+
+- **La visibilidad en IA se gana en fuentes de terceros, no en el propio sitio a secas.** Los
+  motores citan listicles/tablas (formato ~2,5× más citable). Medir el share-of-voice = leer de
+  qué fuentes salen los nombres, no solo si apareces.
+- **La táctica "publica tu propio ranking y auto-ránkate #1"** ya la corren ≥4 chilenas (BigBudá,
+  Best Solution, Milimetrix). Para SpindleLab es **veneno de marca** copiarla igual; el cuadrante
+  vacío y defendible es "**el evaluador que no se corona**".
+- **Focus Ads** es el competidor nuevo a vigilar: es el único del lote con proof dura (métrica
+  "Share of Answer" + benchmark publicado + casos con cifras). Referencia de "cómo se ve el rigor
+  hecho legible".
