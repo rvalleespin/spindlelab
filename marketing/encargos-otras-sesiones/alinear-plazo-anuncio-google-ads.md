@@ -1,3 +1,8 @@
+> ⚠️ **REEMPLAZADO (25-ago-2026)** por `google-ads-alinear-pausar-preparar-relanzamiento.md`,
+> que absorbe esta alineación de plazo y agrega: alinear discurso/extensiones/UTM al sitio
+> nuevo, **pausar** la campaña y dejar un plan de relanzamiento AEO/GEO. Usa ese; este queda
+> como historia.
+
 # Encargo → persona-paid-media (Gonzalo): alinear el plazo del anuncio de Google Ads a "24 horas"
 
 **De:** Diego (persona-disenador-web), a pedido de Ramón · **Fecha:** 2026-08-22
