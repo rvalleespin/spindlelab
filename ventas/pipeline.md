@@ -15,7 +15,7 @@
 
 | Nombre / Empresa | Rubro | Fuente | Etapa | Próximo paso | Último contacto | Notas |
 |---|---|---|---|---|---|---|
-| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅ — Lanzamiento** | Conectar dominio y salir a producción — **meta: viernes 24 jul**. Ramón afinando detalles de entrega, 23 jul. Detalle de fases en `proyectos-en-curso.md` | 23 jul 2026 (revisiones de afinamiento previas a la entrega) | Cotización SPL-COT-2026-014 aprobada. **Plan Esencial** ($392.000). Sitio y panel de administración presentados a Bernardo el 20 jul, dio el OK y quedó probando la plataforma. Compró `bernardocombeau.cl` (NIC Chile) el mismo día. **Pagos (corregido con evidencia bancaria):** Fase 3 (40%, $156.800) pagada 14 jul; Fase 1 y Fase 5 siguen pendientes ($235.200 en total) — no se cobró Fase 1 a inicios de julio como decía una versión anterior de esta fila. **Permiso de caso público: aún no pedido** pese al acuerdo de pedirlo desde el día 1 — con el cliente ya aprobando el sitio, es buen momento para pedirlo ahora. |
+| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅ — Entregado, cobro completo** | **Pedir permiso de caso público** (sigue sin pedirse — único pendiente real ahora). Detalle en `proyectos-en-curso.md` | 28 jul 2026 (cobro de Fases 1+5) | Cotización SPL-COT-2026-014 aprobada. **Plan Esencial** ($392.000), **cobrado completo**: Fase 3 el 14 jul, Fases 1+5 ($235.200) el 28 jul, confirmado por Ramón — sin comprobante bancario adjunto todavía. **Sitio lanzado 24 jul.** Cobro como persona natural, no SpA (decisión 25 jul: contrato pre-24-jul → persona natural, contrato nuevo → SpA). **Permiso de caso público: aún no pedido.** |
 
 ## Casos en pausa (no forman parte del pipeline activo)
 

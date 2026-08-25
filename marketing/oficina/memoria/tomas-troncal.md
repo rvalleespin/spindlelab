@@ -1,5 +1,16 @@
 # Memoria — Tomás (agente-troncal-marketing)
 
+> **25-ago-2026 — Cierre de sesión duplicada.** Esta rama de troncal
+> (`claude/spindlelab-marketing-strategy-v98w8h`, sesión `session_01CUMYJajNAYeF3gUddWmigQ`)
+> se cierra porque Ramón confirmó que hay **otra sesión con la skill `agente-troncal-marketing`
+> activa** y prefiere dejar esa como la única. Motivo: el protocolo de este mismo documento
+> ("un solo dueño del estado compartido") ya se rompió dos veces por tener dos troncales en
+> paralelo — el commit huérfano del 5-ago (`79ed5d3`, nunca mergeado, reconciliado a mano el
+> 10-ago) y, el 25-ago, dos sesiones trabajando el mismo encargo de Google Ads (`alinear-plazo-anuncio-google-ads.md`)
+> al mismo tiempo. Todo lo de esta sesión está commiteado y pusheado a `main` vía PRs
+> normales — no hay trabajo suelto que se pierda. Ver "Estado al cierre" más abajo para lo
+> que queda abierto y debe recogerlo la sesión que continúa.
+
 **Rol:** El gerente. Único dueño del estado compartido; orquesta todos los frentes.
 **Carpeta de trabajo:** `marketing/plan-operativo-90-dias.md`,
 `marketing/encargos-otras-sesiones/`
@@ -52,6 +63,32 @@
 ## Pendientes que dejé
 - [ ] Registrar en `plan-operativo-90-dias.md` la creación de Emilia y Raquel
 - [ ] Fundamentar el frente de **Marta** (calendario editorial) antes de crear su skill
+
+## Estado al cierre (25-ago-2026, para quien retome)
+- **`plan-operativo-90-dias.md` en `main` está desactualizado** — esta sesión lo mantuvo al
+  día en su propia rama (`claude/spindlelab-marketing-strategy-v98w8h`, sin mergear vía PR
+  todavía). Antes de seguir editándolo, comparar esa rama contra `main` y traer lo que falte
+  (reconciliación del 10-ago, corrección de Meta Ads, cobro de Bernardo).
+- **Bernardo Combeau: cobro completo** ($392.000, Fase 3 el 14-jul + Fases 1+5 el 28-jul,
+  confirmado por Ramón pero sin comprobante bancario adjunto). Único pendiente real: pedir
+  permiso de caso público, sigue sin pedirse.
+- **Outbound Frente B: 16 correos (7+9) llevan ~1 mes redactados sin registro de envío** en
+  `outbound/semana-03/lote-frente-b-2026-07-25/envios.csv` (todo en `Listo`/`Redactado`). Ramón
+  dijo en un momento que ya se habían enviado, pero nunca llegó el detalle (qué tandas, qué
+  respuestas) para actualizar el tracker — quedó sin cerrar.
+- **Frente C:** Ramón mencionó "se envía esta semana" (10-ago) pero el único lote de Frente C
+  registrado (5 contactos) ya se había enviado completo el 14-jul — nunca se aclaró si se
+  refería a follow-ups, una ampliación nueva, o confusión con Frente B.
+- **Encargo de Ads sin cerrar de este lado:** `alinear-plazo-anuncio-google-ads.md` (24-ago,
+  alinear el copy del anuncio de Google Ads de "48h" a "24 horas"). Otra sesión ya lo estaba
+  trabajando en paralelo el 25-ago (rama `claude/jolly-fermi-f2799a`) — verificar si lo cerró
+  antes de retomarlo.
+- **Revisión semanal de Ads (Gonzalo):** quedó a medio camino dos viernes seguidos (10-ago y
+  21-ago) esperando una captura de pantalla de la cuenta `597-527-6690` que nunca llegó.
+- **Dos triggers automáticos** (`SpindleLab — checklist diario`, 9:00 hora UTC L-V; `SpindleLab
+  — revisión semanal Google Ads`, viernes 9:30 UTC) estaban atados a esta sesión
+  (`session_01CUMYJajNAYeF3gUddWmigQ`) — repuntarlos a la sesión que continúa (o dejarlos
+  aquí si esta sesión no se archiva) para que no queden huérfanos.
 
 ## Protocolo para abrir un empleado nuevo
 1. Fundamentar el rol acá (Dirección): por qué, para qué frente, con qué criterio.
