@@ -1,3 +1,9 @@
+> ✅ **COMPLETADO (25-ago-2026)** por Gonzalo. Cuenta `597-527-6690` alineada (plazo 48h→24h en el
+> RSA, UTM 7/7) y **pausada** (sin gasto). Plan de relanzamiento AEO/GEO en
+> `marketing/paid-media/2026-08-plan-relanzamiento-google-ads.md`. Commit `137bfcb`. Verificado por
+> Tomás. **Pendiente de Ramón antes de relanzar:** confirmar presupuesto real ($1.500 vs CLP 3.000/día)
+> y verificar/quitar el teléfono (3 números rechazados). El relanzamiento no se enciende sin su OK.
+
 # Encargo → Gonzalo (persona-paid-media): alinear la cuenta al sitio nuevo, pausar y dejar listo el relanzamiento
 
 **De:** Tomás (troncal), a pedido de Ramón · **Fecha:** 2026-08-25
