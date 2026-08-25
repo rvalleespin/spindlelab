@@ -36,17 +36,88 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
 <meta property="og:title" content="El Taller — SpindleLab">
 <meta property="og:description" content="Guías claras sobre SEO técnico, AEO/GEO y visibilidad en motores de IA para empresas chilenas.">
 <meta property="og:url" content="https://spindlelab.cl/blog/">
-<meta property="og:image" content="https://spindlelab.cl/assets/img/og-marca.jpg?v=3">
+<meta property="og:image" content="https://spindlelab.cl/assets/img/og-marca.jpg?v=4">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="SpindleLab — SEO técnico y visibilidad en IA">
 <meta property="og:locale" content="es_CL">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=4"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://spindlelab.cl/"},
-    {"@type": "ListItem", "position": 2, "name": "El Taller", "item": "https://spindlelab.cl/blog/"}
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://spindlelab.cl/#org",
+      "name": "SpindleLab",
+      "url": "https://spindlelab.cl/",
+      "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Chile"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/spindlelab/",
+        "https://www.instagram.com/spindle.lab/"
+      ]
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://spindlelab.cl/blog/#blog",
+      "name": "El Taller — SpindleLab",
+      "description": "Guías claras sobre SEO técnico y visibilidad en motores de IA (AEO/GEO) para empresas en Chile.",
+      "url": "https://spindlelab.cl/blog/",
+      "inLanguage": "es-CL",
+      "publisher": {
+        "@id": "https://spindlelab.cl/#org"
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "¿Qué es un mini-diagnóstico SEO y qué incluye?",
+          "url": "https://spindlelab.cl/blog/que-es-un-mini-diagnostico-seo/"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "¿Cuánto cuesta el SEO técnico en el mercado chileno en 2026?",
+          "url": "https://spindlelab.cl/blog/cuanto-cuesta-seo-tecnico-chile/"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?",
+          "url": "https://spindlelab.cl/blog/como-aparecer-en-chatgpt/"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "SEO técnico para fintechs chilenas: los 7 problemas que más se repiten",
+          "url": "https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "AEO y GEO explicados para gerentes que no son técnicos",
+          "url": "https://spindlelab.cl/blog/que-es-aeo-geo/"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://spindlelab.cl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "El Taller",
+          "item": "https://spindlelab.cl/blog/"
+        }
+      ]
+    }
   ]
 }
 </script>
@@ -130,7 +201,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <!-- Plantilla "Research" — usar cuando se publique un post con datos propios
              (ej. benchmark de visibilidad en IA en Chile). Descomentar y editar dentro
              de este .post-grid; se distingue a propósito del resto de posts:
-        <a class="research-card reveal" href="/blog/slug-del-post/">
+        <a class="research-card reveal" href="#TODO-slug-del-post">
           <span class="rc-tag">Research</span>
           <span class="rc-figure">42%</span>
           <h3>Título corto del hallazgo</h3>
