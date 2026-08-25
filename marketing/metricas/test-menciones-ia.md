@@ -33,7 +33,25 @@ Para cada prompt se registra: ¿aparece SpindleLab? (sí/no) · ¿quién aparece
 - Ningún motor mencionó boutiques de wealth management ni clínicas dentales/estéticas/oftalmológicas específicas por nombre en las respuestas — es decir, el problema que Frente A, B y C atacan (invisibilidad de negocios reales en respuestas de IA) se confirma también desde el lado de "quién sí aparece": son agencias de marketing genéricas, no los negocios mismos.
 - Perplexity conocía el perfil de Ramón (SEO técnico, AEO/GEO, workflows con IA) y aun así no mencionó SpindleLab — dato interesante pero no comparable 1:1 con una búsqueda de un desconocido; a considerar en el diseño del mes 1.
 
-### Mes 1 — (primer viernes de agosto)
+### Mes 1 — ejecutado 25 ago 2026 (tarde: el primer viernes de agosto no se corrió)
+
+> **Método:** igual que Mes 0 — los 5 prompts pegados juntos en un solo mensaje por herramienta (ChatGPT, Gemini, Perplexity). Comparable con la línea base. (Sigue pendiente la decisión de pasar a 5 sesiones incógnito separadas y fijarlo.)
+
+| # · prompt | ChatGPT | Perplexity | Gemini | ¿SpindleLab? |
+|---|---|---|---|---|
+| 1 · Consultor/agencia SEO técnico | Adinfluence, Bigbuda, Focus Ads (top SEO+IA); contraste Luis Vesga, SEO Austral | Ana Fernández, Punto Rojo, Bigbuda, BluCactus, Sustenta Web, Agencia SEO Chile | Bigbuda, Adinfluence, Focus Ads; + Edwin Ruiz (indep., fintech) | No |
+| 2 · Cómo aparecer en respuestas de ChatGPT | Pasos genéricos (rastreo IA, autoridad, schema, menciones), sin agencia | Pasos AEO/GEO + remite a la lista de P1/P3 | Pasos (robots+GPTBot, autoridad tópica, schema, reseñas), sin agencia | No |
+| 3 · Servicios financieros, Google + IA | Misma lista, énfasis YMYL/E-E-A-T | Punto Rojo, BluCactus, Sustenta Web, Agencia SEO Chile | Edwin Ruiz (fintech) | No |
+| 4 · Qué es AEO/GEO y quién lo ofrece en Chile | Adinfluence, Bigbuda, Focus Ads, SmartGrowth, Nitten (SAGEO), PGAS | **Bigbuda (lidera ranking), Focus Ads, Loup, Innoweb, AMD/Agencia SEO Chile, Best Solution, Seonet, Milimetrix** | Bigbuda, Adinfluence, Focus Ads | No |
+| 5 · Clínica dental, pacientes vía IA | SEO local + GBP + reseñas, sin agencia | Bigbuda, Ana Fernández, ClientesYA | SEO local + GBP, sin agencia | No |
+
+**Observaciones Mes 1 (25 ago):**
+
+- **SpindleLab sigue en 0/15.** Consistente con la línea base. Esperado: el dominio tiene semanas y la optimización de entidad/AEO del sitio (25 ago) aún no la rastrean los motores. El punto de comparación real es septiembre/octubre.
+- **Bigbuda escaló a dominar los 3 motores** (en Mes 0 solo aparecía en ChatGPT-P1). Perplexity lo cita como "líder del ranking AEO/GEO Chile", pero **la fuente es la propia página de Bigbuda** (`bigbuda.cl/insights/mejores-agencias-aeo-geo-chile`): publican el ranking donde se ponen #1 y los motores lo citan. Jugada de contenido+autoridad a estudiar (no copiar).
+- **Los motores citan listicles de terceros** (bigbuda insights, `blucactus.cl/mejores-agencias`, `estudioideas.cl`, `agenciasb2b.com`). Aparecer depende de **estar mencionado en esas fuentes externas**, no solo de tener buen sitio propio — refuerza el hallazgo del audit (sameAs / menciones externas).
+- **El set competidor de AEO/GEO se amplió** vs Mes 0: además de Focus Ads y AMD (los repetidores de julio), ahora Adinfluence, SmartGrowth, PGAS, Loup, Innoweb, Seonet, Milimetrix, Ana Fernández, Punto Rojo. La ventana sigue abierta pero se está llenando.
+- Ningún motor nombró negocios finales (clínicas/fintech) por su nombre — confirma otra vez que quien aparece son agencias, no los negocios mismos (la brecha que ataca el outbound).
 
 ### Mes 2 — (primer viernes de septiembre)
 
