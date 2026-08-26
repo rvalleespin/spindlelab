@@ -11,7 +11,7 @@ const servePublicDirIndex = {
     server.middlewares.use((req, _res, next) => {
       const url = req.url || '';
       const [path, query] = url.split('?');
-      if (/^\/(blog|servicios|metodo|contacto)(\/.*)?\/$/.test(path)) {
+      if (/^\/(blog|servicios|metodo|contacto|indice)(\/.*)?\/$/.test(path)) {
         req.url = path + 'index.html' + (query ? '?' + query : '');
       }
       next();

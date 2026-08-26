@@ -4,6 +4,16 @@
 
 SpindleLab es una agencia de marketing con IA especializada: el eje es el SEO técnico, la visibilidad en motores de IA (AEO/GEO) y el desarrollo web. Google y Meta Ads completan la ruta. Trabajamos midiendo primero (línea base real), sin prometer el "#1" y sin prueba social inventada. La medición de presencia en IA es reproducible: mismas consultas, mismos motores, misma cadencia.
 
+## Índice de Citabilidad
+
+El **Índice de Citabilidad** es un instrumento creado por SpindleLab (Santiago, Chile) para medir si los motores de respuesta con IA citan a una empresa cuando alguien pregunta por su categoría. Se publica bajo licencia CC BY 4.0 y es de uso libre citando la fuente.
+
+- **Definición:** cada combinación de pregunta y motor se puntúa de 0 a 3 (0 = no aparece, 1 = mención al pasar, 2 = mención con descripción correcta, 3 = entre las primeras opciones). El índice es (puntos obtenidos ÷ puntos posibles) × 100, en escala 0 a 100.
+- **Escala:** 0-10 Invisible · 11-30 Presencia marginal · 31-60 Presencia establecida · 61-85 Referente de categoría · 86-100 Dominancia de categoría.
+- **Protocolo:** cinco preguntas fijas, tres motores (ChatGPT, Gemini, Perplexity), una sesión limpia por pregunta, cadencia mensual, y publicación de la corrida completa.
+- **Definición completa y protocolo:** [Índice de Citabilidad](https://spindlelab.cl/indice/)
+- **Puntaje vigente de SpindleLab:** 0 de 45 (medición del 25 de agosto de 2026), publicado en [la medición de agosto](https://spindlelab.cl/blog/indice-de-citabilidad-agosto-2026/) junto a las 15 observaciones crudas y sus [datos abiertos en JSON](https://spindlelab.cl/indice/corridas-2026-08-25.json).
+
 ## Soluciones
 - [Auditoría SEO Técnica](https://spindlelab.cl/servicios/auditoria-seo-tecnica/): revisión de la base técnica del sitio (rastreo, velocidad, datos estructurados) que sostiene tanto el posicionamiento en Google como la citabilidad por la IA.
 - [Visibilidad en IA (AEO/GEO)](https://spindlelab.cl/servicios/visibilidad-en-ia/): medir y mejorar qué responden ChatGPT, Gemini y Perplexity sobre tu categoría, para entrar en esas respuestas.
@@ -11,6 +21,9 @@ SpindleLab es una agencia de marketing con IA especializada: el eje es el SEO t�
 - [Gestión de Redes Sociales](https://spindlelab.cl/servicios/redes-sociales/): presencia, comunidad y pauta social en LinkedIn y Meta.
 - [Paid Media (Google)](https://spindlelab.cl/servicios/paid-media/): Google Ads de alta intención, optimizado con IA.
 - [Desarrollo Web](https://spindlelab.cl/servicios/desarrollo-web/): sitios a medida con panel de administración y SEO técnico desde el primer commit.
+
+## Research (mediciones publicadas)
+- [Medimos nuestro propio sitio y sacamos 0 de 45](https://spindlelab.cl/blog/indice-de-citabilidad-agosto-2026/): primera medición pública del Índice de Citabilidad, aplicada al propio sitio de SpindleLab. Incluye las 15 observaciones crudas y el análisis de por qué un sitio técnicamente correcto puede no ser citado por la IA.
 
 ## El Taller (guías)
 - [Cómo elegir (y verificar) una agencia de AEO/GEO en Chile](https://spindlelab.cl/blog/como-elegir-verificar-agencia-aeo-geo-chile/): guía de compra honesta con los seis criterios que exigir y cómo comprobar cada uno. No es un ranking.

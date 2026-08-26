@@ -82,6 +82,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         "@type": "OfferCatalog",
         "name": "Packs de Desarrollo Web",
         "itemListElement": [
+          {"@type": "Offer", "name": "Página de Campaña", "description": "Una página a medida (landing page) pensada para una campaña y una oferta, con SEO técnico y medición desde el primer día. Entrega en ~1 semana.", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 390000, "priceCurrency": "CLP", "valueAddedTaxIncluded": false}},
           {"@type": "Offer", "name": "Sitio Esencial", "description": "Home y hasta 5 páginas, SEO técnico base, un idioma. Entrega en ~3 semanas.", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 690000, "priceCurrency": "CLP", "valueAddedTaxIncluded": false}},
           {"@type": "Offer", "name": "Sitio Completo", "description": "Home y hasta 12 páginas, blog/CMS, SEO técnico y puesta a punto AEO/GEO. Entrega en ~4 a 6 semanas.", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 1190000, "priceCurrency": "CLP", "valueAddedTaxIncluded": false}},
           {"@type": "Offer", "name": "Plataforma a Medida", "description": "Todo lo del Sitio Completo y más: páginas sin tope, integraciones a medida (CRM, reservas, pagos), arquitectura y funcionalidades propias, multi-idioma. Se cotiza tras una reunión."}
@@ -100,7 +101,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       "@type": "FAQPage",
       "mainEntity": [
         {"@type": "Question", "name": "¿Usan plantillas o WordPress?", "acceptedAnswer": {"@type": "Answer", "text": "No. Cada sitio se construye con código propio, a medida. Sin temas genéricos ni page builders: control total sobre rendimiento, diseño y SEO técnico."}},
-        {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Cada pack tiene un precio de partida (\"desde\"): Sitio Esencial desde 690.000 CLP + IVA y Sitio Completo desde 1.190.000 CLP + IVA; la Plataforma a Medida se cotiza tras una reunión. El valor final se cierra tras el diagnóstico gratuito, según las páginas y funcionalidades que necesites. Sin sorpresas."}},
+        {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Cada pack tiene un precio de partida (\"desde\"): Página de Campaña desde 390.000 CLP + IVA, Sitio Esencial desde 690.000 CLP + IVA y Sitio Completo desde 1.190.000 CLP + IVA; la Plataforma a Medida se cotiza tras una reunión. El valor final se cierra tras el diagnóstico gratuito, según las páginas y funcionalidades que necesites. Sin sorpresas."}},
         {"@type": "Question", "name": "¿Cómo afecta el desarrollo con IA a la calidad?", "acceptedAnswer": {"@type": "Answer", "text": "La ejecución asistida por IA reduce tiempos, no supervisión: cada fase pasa por revisión humana antes de avanzar a la siguiente. La velocidad se traduce en plazos más cortos, no en menos control de calidad."}},
         {"@type": "Question", "name": "¿El sitio incluye SEO?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, de base: rendimiento, datos estructurados y arquitectura pensados desde el diseño. Si además necesitas visibilidad en motores de IA, ese trabajo se profundiza con el servicio de Visibilidad en IA."}}
       ]
@@ -113,7 +114,8 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css?v=29">
 <style>
-  .packs-grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr);align-items:stretch}
+  .packs-grid{display:grid;gap:18px;grid-template-columns:repeat(4,1fr);align-items:stretch}
+  @media(max-width:1120px){.packs-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:860px){.packs-grid{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
   .pack{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px}
   .pack.featured{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
@@ -168,7 +170,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       <p class="lead">A veces el problema no es lo que se audita: es lo que hay que reconstruir. Diseñamos y construimos sitios 100% a medida, sin plantillas ni WordPress, con el agente de desarrollo de SpindleLab y supervisión humana en cada fase. SEO técnico incorporado desde el diseño, no parchado al final.</p>
       <div class="actions">
         <a class="btn gold" href="#planes">Ver packs y precios →</a>
-        <span class="note">3 packs · desde $690.000 + IVA</span>
+        <span class="note">4 packs · desde $390.000 + IVA</span>
       </div>
     </div>
   </section>
@@ -197,6 +199,20 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <h2 id="planes-title">Elige por dónde partir</h2>
       </div>
       <div class="packs-grid">
+        <div class="pack reveal">
+          <span class="tag">Campaña</span>
+          <h3>Página de Campaña</h3>
+          <p class="tagline">Una página hecha para convertir la pauta que ya estás pagando.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$390.000</span> <span class="iva">+ IVA</span></div>
+          <ul>
+            <li>Una página, para una campaña y una oferta</li>
+            <li>Diseño a medida, sin plantilla</li>
+            <li>SEO técnico y medición desde el primer día</li>
+            <li>Entrega en ~1 semana</li>
+            <li>Ideal si estás corriendo Google o Meta Ads</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Agenda tu diagnóstico</a>
+        </div>
         <div class="pack reveal">
           <span class="tag">Esencial</span>
           <h3>Sitio Esencial</h3>
@@ -240,7 +256,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
           <a class="btn gold" href="/contacto/">Conversemos tu proyecto</a>
         </div>
       </div>
-      <p class="pack-note"><b>Los precios no incluyen IVA (19%).</b> El valor final se cierra tras el diagnóstico gratuito y una conversación de 20 minutos, según las páginas y funcionalidades que necesites. Sin sorpresas. El contenido (textos e imágenes) lo pones tú; si no lo tienes, te orientamos.</p>
+      <p class="pack-note"><b>Los precios no incluyen IVA (19%).</b> ¿Necesitas más de una página? El Sitio Esencial parte en $690.000. El valor final se cierra tras el diagnóstico gratuito y una conversación de 20 minutos, según las páginas y funcionalidades que necesites. Sin sorpresas. El contenido (textos e imágenes) lo pones tú; si no lo tienes, te orientamos.</p>
     </div>
   </section>
 
@@ -318,7 +334,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         </details>
         <details>
           <summary>¿Cuánto cuesta?</summary>
-          <p class="faq-a">Sí. Cada pack tiene un precio de partida ("desde"): el Sitio Esencial desde $690.000 + IVA y el Sitio Completo desde $1.190.000 + IVA; la Plataforma a Medida se cotiza tras una reunión. El valor final se cierra tras el diagnóstico gratuito, según las páginas y funcionalidades que necesites. Sin sorpresas.</p>
+          <p class="faq-a">Sí. Cada pack tiene un precio de partida ("desde"): la Página de Campaña desde $390.000 + IVA, el Sitio Esencial desde $690.000 + IVA y el Sitio Completo desde $1.190.000 + IVA; la Plataforma a Medida se cotiza tras una reunión. El valor final se cierra tras el diagnóstico gratuito, según las páginas y funcionalidades que necesites. Sin sorpresas.</p>
         </details>
         <details>
           <summary>¿Cómo afecta el desarrollo con IA a la calidad?</summary>
@@ -364,6 +380,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <h4>Sitio</h4>
         <ul>
           <li><a href="/metodo/">Nuestro Método</a></li><li><a href="/nosotros/">Nosotros</a></li>
+          <li><a href="/indice/">Índice de Citabilidad</a></li>
           <li><a href="/blog/">El Taller</a></li>
           <li><a href="/contacto/">Contacto</a></li>
         </ul>

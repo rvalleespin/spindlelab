@@ -1,0 +1,138 @@
+{
+  "instrumento": "Índice de Citabilidad",
+  "instrumento_url": "https://spindlelab.cl/indice/",
+  "version_protocolo": "1.0",
+  "sujeto_medido": "SpindleLab",
+  "fecha_medicion": "2026-08-25",
+  "motores": ["ChatGPT", "Gemini", "Perplexity"],
+  "observaciones_totales": 15,
+  "puntos_obtenidos": 0,
+  "puntos_posibles": 45,
+  "indice": 0,
+  "banda": "Invisible",
+  "licencia": "https://creativecommons.org/licenses/by/4.0/",
+  "nota_metodo": "Esta corrida usó una variante simplificada del protocolo: las cinco preguntas se pegaron en un solo mensaje por motor, en vez de abrir una sesión limpia por pregunta. Desde la medición de septiembre de 2026 se usa una sesión nueva por pregunta.",
+  "observaciones": [
+    {
+      "prompt_id": 1,
+      "prompt": "¿Qué consultor o agencia de SEO técnico me recomiendas en Chile?",
+      "motor": "ChatGPT",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": ["Adinfluence", "Bigbuda", "Focus Ads"]
+    },
+    {
+      "prompt_id": 1,
+      "prompt": "¿Qué consultor o agencia de SEO técnico me recomiendas en Chile?",
+      "motor": "Gemini",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": ["Bigbuda", "Adinfluence", "Focus Ads"]
+    },
+    {
+      "prompt_id": 1,
+      "prompt": "¿Qué consultor o agencia de SEO técnico me recomiendas en Chile?",
+      "motor": "Perplexity",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": ["Ana Fernández", "Punto Rojo", "Bigbuda", "BluCactus", "Sustenta Web", "Agencia SEO Chile"]
+    },
+    {
+      "prompt_id": 2,
+      "prompt": "¿Cómo hago que mi empresa aparezca en las respuestas de ChatGPT cuando alguien pregunta por mi rubro?",
+      "motor": "ChatGPT",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": []
+    },
+    {
+      "prompt_id": 2,
+      "prompt": "¿Cómo hago que mi empresa aparezca en las respuestas de ChatGPT cuando alguien pregunta por mi rubro?",
+      "motor": "Gemini",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": []
+    },
+    {
+      "prompt_id": 2,
+      "prompt": "¿Cómo hago que mi empresa aparezca en las respuestas de ChatGPT cuando alguien pregunta por mi rubro?",
+      "motor": "Perplexity",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": []
+    },
+    {
+      "prompt_id": 3,
+      "prompt": "Tengo una empresa de servicios financieros en Chile y quiero mejorar mi presencia en Google y en los buscadores de IA. ¿Quién puede ayudarme?",
+      "motor": "ChatGPT",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": ["Adinfluence", "Bigbuda", "Focus Ads"]
+    },
+    {
+      "prompt_id": 3,
+      "prompt": "Tengo una empresa de servicios financieros en Chile y quiero mejorar mi presencia en Google y en los buscadores de IA. ¿Quién puede ayudarme?",
+      "motor": "Gemini",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": ["Edwin Ruiz"]
+    },
+    {
+      "prompt_id": 3,
+      "prompt": "Tengo una empresa de servicios financieros en Chile y quiero mejorar mi presencia en Google y en los buscadores de IA. ¿Quién puede ayudarme?",
+      "motor": "Perplexity",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": ["Punto Rojo", "BluCactus", "Sustenta Web", "Agencia SEO Chile"]
+    },
+    {
+      "prompt_id": 4,
+      "prompt": "¿Qué es AEO o GEO en marketing digital y quién ofrece ese servicio en Chile?",
+      "motor": "ChatGPT",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": ["Adinfluence", "Bigbuda", "Focus Ads", "SmartGrowth", "Nitten"],
+      "nota": "La respuesta incluyó además un nombre de agencia que no fue posible verificar como empresa existente. Se omite del registro."
+    },
+    {
+      "prompt_id": 4,
+      "prompt": "¿Qué es AEO o GEO en marketing digital y quién ofrece ese servicio en Chile?",
+      "motor": "Gemini",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": ["Bigbuda", "Adinfluence", "Focus Ads"]
+    },
+    {
+      "prompt_id": 4,
+      "prompt": "¿Qué es AEO o GEO en marketing digital y quién ofrece ese servicio en Chile?",
+      "motor": "Perplexity",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": ["Bigbuda", "Focus Ads", "Loup", "Innoweb", "AMD", "Best Solution", "Seonet", "Milimetrix"]
+    },
+    {
+      "prompt_id": 5,
+      "prompt": "Tengo una clínica dental en Santiago. ¿Cómo consigo que ChatGPT y Google me recomienden a pacientes nuevos?",
+      "motor": "ChatGPT",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": []
+    },
+    {
+      "prompt_id": 5,
+      "prompt": "Tengo una clínica dental en Santiago. ¿Cómo consigo que ChatGPT y Google me recomienden a pacientes nuevos?",
+      "motor": "Gemini",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": []
+    },
+    {
+      "prompt_id": 5,
+      "prompt": "Tengo una clínica dental en Santiago. ¿Cómo consigo que ChatGPT y Google me recomienden a pacientes nuevos?",
+      "motor": "Perplexity",
+      "aparece_sujeto": false,
+      "puntos": 0,
+      "empresas_mencionadas": ["Bigbuda", "Ana Fernández", "ClientesYA"]
+    }
+  ]
+}
