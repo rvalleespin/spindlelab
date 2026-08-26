@@ -64,7 +64,16 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       "serviceType": "Gestión de redes sociales para empresas",
       "provider": {"@id": "https://spindlelab.cl/#org"},
       "areaServed": {"@type": "Country", "name": "Chile"},
-      "description": "Estrategia, calendario, gestión de pauta social, comunidad y reportes quincenales en redes para empresas. SpindleLab orquesta la estrategia y la ejecución; las piezas gráficas y el video los pone el cliente o un partner de producción."
+      "description": "Estrategia, calendario, gestión de pauta social, comunidad y reportes quincenales en redes para empresas. SpindleLab orquesta la estrategia y la ejecución; las piezas gráficas y el video los pone el cliente o un partner de producción.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Planes de Gestión de Redes Sociales",
+        "itemListElement": [
+          {"@type": "Offer", "name": "Orgánico", "description": "Estrategia y calendario, publicación, comunidad y reporte quincenal en una plataforma (LinkedIn o Meta). Sin pauta.", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": 390000, "priceCurrency": "CLP", "unitText": "MES", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "Orgánico + Pauta", "description": "Todo lo del Orgánico en LinkedIn y Meta más la gestión de pauta social (audiencias, campañas y ajustes). La inversión publicitaria va aparte.", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": 590000, "priceCurrency": "CLP", "unitText": "MES", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "A medida", "description": "Multi-plataforma y mayor volumen: todo lo anterior con plataformas y cadencia a definir, integrado con el resto del motor de adquisición. Se cotiza tras una reunión."}
+        ]
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -80,7 +89,8 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         {"@type": "Question", "name": "¿Ustedes crean el contenido (gráficas y video)?", "acceptedAnswer": {"@type": "Answer", "text": "No los producimos. Las piezas gráficas y el video los pones tú; si no los tienes, te conectamos con partners de producción. SpindleLab orquesta la estrategia, la pauta, la comunidad y los reportes, y hace que ese contenido salga con criterio y llegue a la gente correcta."}},
         {"@type": "Question", "name": "¿Qué plataformas manejan?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn y el ecosistema Meta (Facebook e Instagram). Elegimos dónde vale la pena estar según tu cliente y tu tipo de negocio, no por estar en todas."}},
         {"@type": "Question", "name": "¿Incluye pauta pagada?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La gestión de la pauta social (social ads) es parte del servicio: definimos audiencias, montamos las campañas y las ajustamos. El manejo de Google Ads y la pauta de alta intención en buscadores viven en su propia pieza: Paid Media (Google)."}},
-        {"@type": "Question", "name": "¿Cómo miden resultados?", "acceptedAnswer": {"@type": "Answer", "text": "Con reportes quincenales de las métricas que importan para tu negocio (alcance útil, conversación, clics y contactos), no métricas de vanidad. Cada quincena revisamos qué funcionó y ajustamos el plan."}}
+        {"@type": "Question", "name": "¿Cómo miden resultados?", "acceptedAnswer": {"@type": "Answer", "text": "Con reportes quincenales de las métricas que importan para tu negocio (alcance útil, conversación, clics y contactos), no métricas de vanidad. Cada quincena revisamos qué funcionó y ajustamos el plan."}},
+        {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "El plan Orgánico parte en 390.000 CLP/mes + IVA y el Orgánico + Pauta en 590.000 CLP/mes + IVA; el plan a medida se cotiza tras una reunión. Los precios no incluyen la inversión en pauta, que la defines tú. Se dimensiona tras el diagnóstico gratuito."}}
       ]
     }
   ]
@@ -90,6 +100,28 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css?v=29">
+<style>
+  .packs-grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr);align-items:stretch}
+  @media(max-width:860px){.packs-grid{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
+  .pack{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px}
+  .pack.featured{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
+  .pack .tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+  .pack h3{font-family:var(--headline);font-size:20px;font-weight:600;color:var(--ink);letter-spacing:-.02em;margin:0}
+  .pack .tagline{font-size:13.5px;color:var(--ink-70);line-height:1.5;margin:8px 0 0}
+  .pack .price{margin:18px 0 2px;font-family:var(--headline)}
+  .pack .price .from{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-50);margin-bottom:2px}
+  .pack .price .amount{font-size:30px;font-weight:700;color:var(--paper);letter-spacing:-.02em}
+  .pack .price .iva{font-size:12px;color:var(--ink-50);font-weight:400}
+  .pack .price .quote{font-size:18px;font-weight:600;color:var(--paper)}
+  .pack ul{list-style:none;display:grid;gap:11px;margin:20px 0 24px;padding:20px 0 0;border-top:1px solid var(--line)}
+  .pack ul li{position:relative;padding-left:26px;font-size:13.5px;line-height:1.5;color:var(--ink)}
+  .pack ul li::before{content:"";position:absolute;left:2px;top:5px;width:12px;height:7px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+  .pack .btn{margin-top:auto;justify-content:center;width:100%}
+  .pack-note{margin-top:26px;font-size:12.5px;color:var(--ink-50);line-height:1.75;max-width:760px}
+  .pack-note b{color:var(--ink-70);font-weight:600}
+  .pack-common{max-width:680px;margin:0 0 36px;color:var(--ink-70);font-size:14.5px;line-height:1.6}
+  .pack-common b{color:var(--paper);font-weight:600}
+</style>
 </head>
 <body>
 
@@ -125,36 +157,77 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       <h1>Gestión de Redes Sociales</h1>
       <p class="lead">Tus clientes ya pasan el día en redes. Esta pieza pone tu marca ahí con estrategia: calendario, pauta, comunidad y reportes claros, no improvisación. Las piezas gráficas y el video los pones tú; si no los tienes, te conectamos con partners. SpindleLab orquesta la estrategia y la ejecución. Es una de las cuatro piezas del motor de adquisición: el filo lo ponen el <a href="/servicios/auditoria-seo-tecnica/">SEO técnico</a> y la <a href="/servicios/visibilidad-en-ia/">visibilidad en IA</a>.</p>
       <div class="actions">
-        <a class="btn gold" href="/contacto/">Agenda tu diagnóstico →</a>
-        <span class="note">Empieza gratis: mini-diagnóstico en 24 h</span>
+        <a class="btn gold" href="#planes">Ver planes y precios →</a>
+        <span class="note">Desde $390.000/mes · el creativo lo pones tú</span>
       </div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="wrap duo">
-      <div>
-        <div class="sec-head">
-          <span class="eyebrow teal">Qué incluye</span>
-          <h2>Estrategia y ejecución, no publicar por publicar</h2>
-        </div>
-        <ul class="check-list">
-          <li><b>Estrategia y calendario editorial</b>: definimos de qué habla tu marca, en qué formato y con qué cadencia, alineado a tu cliente y a tus objetivos de negocio.</li>
-          <li><b>Gestión de la pauta social (social ads)</b>: armamos y ajustamos las campañas en Meta (Facebook e Instagram): audiencias, presupuesto y creatividades, sin encender gasto sin tu confirmación.</li>
-          <li><b>Comunidad y respuesta de mensajes</b>: moderamos comentarios y respondemos mensajes con tu tono, para que ninguna consulta de un posible cliente quede sin contestar.</li>
-          <li><b>Reportes quincenales con métricas que importan</b>: alcance útil, conversación, clics y contactos generados. Nada de métricas de vanidad ni capturas sueltas.</li>
-          <li><b>El contenido creativo lo pones tú</b>: las piezas gráficas y el video los produces tú o un partner de confianza; nosotros orquestamos el brief, la revisión y la salida.</li>
-        </ul>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Qué incluye</span>
+        <h2>Estrategia y ejecución, no publicar por publicar</h2>
       </div>
-      <aside class="aside-panel reveal">
-        <h3>Ficha del servicio</h3>
-        <p>Una pieza del motor de adquisición, orquestada por un especialista con agentes de IA.</p>
-        <div class="fact"><span>Formato</span><b>Mensual (mín. 3 meses)</b></div>
-        <div class="fact"><span>Plataformas</span><b>LinkedIn · Meta (IG/FB)</b></div>
-        <div class="fact"><span>Enfoque</span><b>Estrategia + ejecución, el creativo lo pones tú</b></div>
-        <div class="fact"><span>Punto de partida</span><b>Diagnóstico gratis 24 h</b></div>
-        <a class="btn gold" href="/contacto/" style="justify-content:center">Empezar ahora</a>
-      </aside>
+      <ul class="check-list" style="max-width:760px">
+        <li><b>Estrategia y calendario editorial</b>: definimos de qué habla tu marca, en qué formato y con qué cadencia, alineado a tu cliente y a tus objetivos de negocio.</li>
+        <li><b>Gestión de la pauta social (social ads)</b>: armamos y ajustamos las campañas en Meta (Facebook e Instagram): audiencias, presupuesto y creatividades, sin encender gasto sin tu confirmación.</li>
+        <li><b>Comunidad y respuesta de mensajes</b>: moderamos comentarios y respondemos mensajes con tu tono, para que ninguna consulta de un posible cliente quede sin contestar.</li>
+        <li><b>Reportes quincenales con métricas que importan</b>: alcance útil, conversación, clics y contactos generados. Nada de métricas de vanidad ni capturas sueltas.</li>
+        <li><b>El contenido creativo lo pones tú</b>: las piezas gráficas y el video los produces tú o un partner de confianza; nosotros orquestamos el brief, la revisión y la salida.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="planes" aria-labelledby="planes-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Planes</span>
+        <h2 id="planes-title">Elige la cobertura</h2>
+      </div>
+      <p class="pack-common">Todos incluyen <b>estrategia, calendario, comunidad y reporte quincenal</b>, y en todos <b>el creativo lo pones tú</b> (o te conectamos con un partner). La gestión de pauta social entra desde el plan con Pauta; la inversión publicitaria va aparte.</p>
+      <div class="packs-grid">
+        <div class="pack reveal">
+          <span class="tag">Orgánico</span>
+          <h3>Orgánico</h3>
+          <p class="tagline">Presencia con criterio en una plataforma, sin pauta.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$390.000</span> <span class="iva">/mes + IVA</span></div>
+          <ul>
+            <li>Estrategia y calendario editorial</li>
+            <li>Publicación y gestión de comunidad</li>
+            <li>Una plataforma (LinkedIn o Meta)</li>
+            <li>Reporte quincenal</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+        <div class="pack featured reveal">
+          <span class="tag">Más elegido</span>
+          <h3>Orgánico + Pauta</h3>
+          <p class="tagline">Presencia y pauta social para llegar más lejos.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$590.000</span> <span class="iva">/mes + IVA</span></div>
+          <ul>
+            <li>Todo lo del Orgánico, y más</li>
+            <li>Gestión de pauta social en Meta (audiencias y campañas)</li>
+            <li>LinkedIn + Meta (Facebook e Instagram)</li>
+            <li>La inversión publicitaria va aparte</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+        <div class="pack reveal">
+          <span class="tag">A medida</span>
+          <h3>A medida</h3>
+          <p class="tagline">Más plataformas y volumen, integrado al resto del motor.</p>
+          <div class="price"><span class="quote">Se cotiza tras una reunión</span></div>
+          <ul>
+            <li>Todo lo anterior, y más</li>
+            <li>Plataformas y cadencia a definir</li>
+            <li>Mayor volumen de publicación y pauta</li>
+            <li>Integrado con SEO, IA y Paid Media</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+      </div>
+      <p class="pack-note"><b>Los precios no incluyen IVA (19%)</b> y no incluyen la inversión en pauta (esa la defines tú). El plan se dimensiona tras el diagnóstico gratuito. Recuerda: <b>las piezas gráficas y el video los pones tú</b>; si no los tienes, te conectamos con partners de producción.</p>
     </div>
   </section>
 
@@ -211,6 +284,10 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <details>
           <summary>¿Cómo miden resultados?</summary>
           <p class="faq-a">Con reportes quincenales de las métricas que importan para tu negocio (alcance útil, conversación, clics y contactos), no métricas de vanidad. Cada quincena revisamos qué funcionó y ajustamos el plan.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto cuesta?</summary>
+          <p class="faq-a">El plan <a href="#planes">Orgánico</a> parte en $390.000/mes + IVA y el Orgánico + Pauta en $590.000/mes + IVA; el plan a medida se cotiza tras una reunión. Los precios no incluyen la inversión en pauta, que la defines tú. Se dimensiona tras el diagnóstico gratuito.</p>
         </details>
       </div>
     </div>

@@ -64,7 +64,16 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       "serviceType": "Gestión de campañas de Google Ads (búsqueda de alta intención)",
       "provider": {"@id": "https://spindlelab.cl/#org"},
       "areaServed": {"@type": "Country", "name": "Chile"},
-      "description": "Estrategia y manejo de cuenta de Google Ads optimizado con agentes de IA: pauta de búsqueda de alta intención con el presupuesto bajo control, integrada con el resto del motor de adquisición (SEO, redes y sitio)."
+      "description": "Estrategia y manejo de cuenta de Google Ads optimizado con agentes de IA: pauta de búsqueda de alta intención con el presupuesto bajo control, integrada con el resto del motor de adquisición (SEO, redes y sitio).",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Planes de Paid Media (Google)",
+        "itemListElement": [
+          {"@type": "Offer", "name": "Gestión Esencial", "description": "Manejo de una campaña de búsqueda de alta intención: estrategia, estructura de cuenta, optimización con IA y reporte mensual. La inversión publicitaria va aparte.", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": 350000, "priceCurrency": "CLP", "unitText": "MES", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "Gestión Pro", "description": "Varias campañas y objetivos con optimización avanzada, seguimiento de conversiones e integración con el resto del motor. La inversión publicitaria va aparte.", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": 550000, "priceCurrency": "CLP", "unitText": "MES", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "A medida", "description": "Cuentas grandes o multi-campaña: todo lo del Pro con volumen y objetivos a definir. Se cotiza tras una reunión."}
+        ]
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -80,7 +89,8 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         {"@type": "Question", "name": "¿Manejan ustedes el presupuesto de pauta?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Nosotros definimos la estrategia y gestionamos la cuenta día a día, pero el presupuesto lo fijas tú y lo respetamos al peso. Nunca subimos la inversión sin tu confirmación: verás en todo momento cuánto se gasta y en qué."}},
         {"@type": "Question", "name": "¿Y la publicidad en Instagram y Facebook?", "acceptedAnswer": {"@type": "Answer", "text": "La pauta en Instagram y Facebook vive junto a la gestión de tus redes, porque comparte contenido, audiencia y comunidad: la manejamos en Gestión de Redes Sociales. Esta pieza se enfoca en Google, donde capturamos a quien ya está buscando lo que ofreces: la intención de compra más alta."}},
         {"@type": "Question", "name": "¿Cómo optimizan con IA?", "acceptedAnswer": {"@type": "Answer", "text": "Usamos agentes de IA para revisar el rendimiento a diario, detectar los ajustes que la plataforma activa contra el interés de tu cuenta y priorizar dónde mover el presupuesto. La IA acelera el análisis; las decisiones de inversión siempre pasan por criterio humano."}},
-        {"@type": "Question", "name": "¿Se integra con el SEO y la visibilidad en IA?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, y ahí está la diferencia. La pauta acelera un motor que ya gira con el orgánico: enviamos el tráfico pagado a páginas trabajadas para convertir y lo medimos todo junto. Si quieres ver el filo del motor, mira Visibilidad en IA."}}
+        {"@type": "Question", "name": "¿Se integra con el SEO y la visibilidad en IA?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, y ahí está la diferencia. La pauta acelera un motor que ya gira con el orgánico: enviamos el tráfico pagado a páginas trabajadas para convertir y lo medimos todo junto. Si quieres ver el filo del motor, mira Visibilidad en IA."}},
+        {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "El fee de gestión parte en 350.000 CLP/mes + IVA (Gestión Esencial) y 550.000 CLP/mes + IVA (Gestión Pro); el plan a medida se cotiza tras una reunión. Ese fee no incluye la inversión en pauta, que la defines tú y va a tu tarjeta."}}
       ]
     }
   ]
@@ -90,6 +100,28 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css?v=29">
+<style>
+  .packs-grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr);align-items:stretch}
+  @media(max-width:860px){.packs-grid{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
+  .pack{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px}
+  .pack.featured{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
+  .pack .tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+  .pack h3{font-family:var(--headline);font-size:20px;font-weight:600;color:var(--ink);letter-spacing:-.02em;margin:0}
+  .pack .tagline{font-size:13.5px;color:var(--ink-70);line-height:1.5;margin:8px 0 0}
+  .pack .price{margin:18px 0 2px;font-family:var(--headline)}
+  .pack .price .from{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-50);margin-bottom:2px}
+  .pack .price .amount{font-size:30px;font-weight:700;color:var(--paper);letter-spacing:-.02em}
+  .pack .price .iva{font-size:12px;color:var(--ink-50);font-weight:400}
+  .pack .price .quote{font-size:18px;font-weight:600;color:var(--paper)}
+  .pack ul{list-style:none;display:grid;gap:11px;margin:20px 0 24px;padding:20px 0 0;border-top:1px solid var(--line)}
+  .pack ul li{position:relative;padding-left:26px;font-size:13.5px;line-height:1.5;color:var(--ink)}
+  .pack ul li::before{content:"";position:absolute;left:2px;top:5px;width:12px;height:7px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+  .pack .btn{margin-top:auto;justify-content:center;width:100%}
+  .pack-note{margin-top:26px;font-size:12.5px;color:var(--ink-50);line-height:1.75;max-width:760px}
+  .pack-note b{color:var(--ink-70);font-weight:600}
+  .pack-common{max-width:680px;margin:0 0 36px;color:var(--ink-70);font-size:14.5px;line-height:1.6}
+  .pack-common b{color:var(--paper);font-weight:600}
+</style>
 </head>
 <body>
 
@@ -125,36 +157,77 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       <h1>Paid Media <span style="color:var(--teal)">(Google)</span></h1>
       <p class="lead">Publicidad para capturar a quien ya está buscando lo que ofreces, con la intención de compra más alta. Manejamos tu cuenta de Google Ads optimizada con agentes de IA, con el presupuesto siempre bajo control: la pieza que acelera cuando el motor orgánico ya gira.</p>
       <div class="actions">
-        <a class="btn gold" href="/contacto/">Agenda tu diagnóstico →</a>
-        <span class="note">Empieza gratis: mini-diagnóstico en 24 h</span>
+        <a class="btn gold" href="#planes">Ver planes y precios →</a>
+        <span class="note">Gestión desde $350.000/mes · inversión aparte</span>
       </div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="wrap duo">
-      <div>
-        <div class="sec-head">
-          <span class="eyebrow teal">Qué incluye</span>
-          <h2>Todo lo que ponemos a trabajar</h2>
-        </div>
-        <ul class="check-list">
-          <li><b>Estrategia de campañas y objetivos</b>: qué buscas (leads, ventas, llamadas), con qué oferta y en qué orden. La estrategia primero, el gasto después.</li>
-          <li><b>Estructura de cuenta y segmentación</b>: campañas y audiencias ordenadas para llegar a quien puede comprarte, no a todo el mundo.</li>
-          <li><b>Optimización continua asistida con IA</b>: revisión diaria del rendimiento con agentes de IA para mover el presupuesto hacia lo que convierte.</li>
-          <li><b>Reportes claros de inversión y resultados</b>: cuánto se invirtió, en qué y qué generó, en lenguaje de negocio y sin letra chica.</li>
-          <li><b>Integración con el resto del motor (SEO, redes, sitio)</b>: la pauta aterriza en un <a href="/servicios/desarrollo-web/">sitio</a> trabajado para convertir y se mide junto a la <a href="/servicios/visibilidad-en-ia/">visibilidad orgánica</a>, el filo del motor.</li>
-        </ul>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Qué incluye</span>
+        <h2>Todo lo que ponemos a trabajar</h2>
       </div>
-      <aside class="aside-panel reveal">
-        <h3>Ficha del servicio</h3>
-        <p>Gestión mensual de tus campañas pagadas, con la estrategia y la cuenta a nuestro cargo, de principio a fin.</p>
-        <div class="fact"><span>Formato</span><b>Mensual (mín. 3 meses)</b></div>
-        <div class="fact"><span>Plataformas</span><b>Google Ads (búsqueda)</b></div>
-        <div class="fact"><span>Enfoque</span><b>Alta intención, presupuesto controlado</b></div>
-        <div class="fact"><span>Punto de partida</span><b>Diagnóstico gratis 24 h</b></div>
-        <a class="btn gold" href="/contacto/" style="justify-content:center">Empezar ahora</a>
-      </aside>
+      <ul class="check-list" style="max-width:760px">
+        <li><b>Estrategia de campañas y objetivos</b>: qué buscas (leads, ventas, llamadas), con qué oferta y en qué orden. La estrategia primero, el gasto después.</li>
+        <li><b>Estructura de cuenta y segmentación</b>: campañas y audiencias ordenadas para llegar a quien puede comprarte, no a todo el mundo.</li>
+        <li><b>Optimización continua asistida con IA</b>: revisión diaria del rendimiento con agentes de IA para mover el presupuesto hacia lo que convierte.</li>
+        <li><b>Reportes claros de inversión y resultados</b>: cuánto se invirtió, en qué y qué generó, en lenguaje de negocio y sin letra chica.</li>
+        <li><b>Integración con el resto del motor (SEO, redes, sitio)</b>: la pauta aterriza en un <a href="/servicios/desarrollo-web/">sitio</a> trabajado para convertir y se mide junto a la <a href="/servicios/visibilidad-en-ia/">visibilidad orgánica</a>, el filo del motor.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="planes" aria-labelledby="planes-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Planes</span>
+        <h2 id="planes-title">Elige la cobertura</h2>
+      </div>
+      <p class="pack-common">El precio es el <b>fee de gestión</b>: estrategia, manejo de la cuenta, optimización con IA y reportes. <b>La inversión en pauta la pones tú y la respetamos al peso</b>, nunca la subimos sin tu confirmación. Mínimo 3 meses.</p>
+      <div class="packs-grid">
+        <div class="pack reveal">
+          <span class="tag">Esencial</span>
+          <h3>Gestión Esencial</h3>
+          <p class="tagline">Una campaña de búsqueda de alta intención, bien hecha.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$350.000</span> <span class="iva">/mes + IVA</span></div>
+          <ul>
+            <li>Una campaña de búsqueda (Google Ads)</li>
+            <li>Estrategia y estructura de cuenta</li>
+            <li>Optimización con IA + reporte mensual</li>
+            <li>Inversión publicitaria aparte, bajo tu control</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+        <div class="pack featured reveal">
+          <span class="tag">Más elegido</span>
+          <h3>Gestión Pro</h3>
+          <p class="tagline">Varias campañas y optimización avanzada, integrada al motor.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$550.000</span> <span class="iva">/mes + IVA</span></div>
+          <ul>
+            <li>Todo lo de la Esencial, y más</li>
+            <li>Varias campañas y objetivos</li>
+            <li>Seguimiento de conversiones y optimización avanzada</li>
+            <li>Integración con SEO, redes y sitio</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+        <div class="pack reveal">
+          <span class="tag">A medida</span>
+          <h3>A medida</h3>
+          <p class="tagline">Cuentas grandes o multi-campaña, con volumen alto.</p>
+          <div class="price"><span class="quote">Se cotiza tras una reunión</span></div>
+          <ul>
+            <li>Todo lo del Pro, y más</li>
+            <li>Volumen de campañas y objetivos a definir</li>
+            <li>Presupuestos de inversión mayores</li>
+            <li>Prioridad y reuniones acordadas</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+      </div>
+      <p class="pack-note"><b>Los precios son el fee de gestión y no incluyen IVA (19%)</b> ni la inversión en pauta (esa la defines tú y va a tu tarjeta). La pauta en Instagram y Facebook vive en <a href="/servicios/redes-sociales/">Gestión de Redes Sociales</a>; esta pieza es solo Google.</p>
     </div>
   </section>
 
@@ -211,6 +284,10 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <details>
           <summary>¿Se integra con el SEO y la visibilidad en IA?</summary>
           <p class="faq-a">Sí, y ahí está la diferencia. La pauta acelera un motor que ya gira con el orgánico: enviamos el tráfico pagado a páginas trabajadas para convertir y lo medimos todo junto. Si quieres ver el filo del motor, mira <a href="/servicios/visibilidad-en-ia/">Visibilidad en IA</a>.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto cuesta?</summary>
+          <p class="faq-a">El fee de gestión parte en $350.000/mes + IVA (<a href="#planes">Gestión Esencial</a>) y $550.000/mes + IVA (Gestión Pro); el plan a medida se cotiza tras una reunión. Ese fee no incluye la inversión en pauta, que la defines tú y va a tu tarjeta.</p>
         </details>
       </div>
     </div>

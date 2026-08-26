@@ -64,7 +64,16 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       "serviceType": "Auditoría SEO técnica",
       "provider": {"@id": "https://spindlelab.cl/#org"},
       "areaServed": {"@type": "Country", "name": "Chile"},
-      "description": "Diagnóstico profundo de arquitectura web: rastreo, indexación, Core Web Vitals, datos estructurados y señales de autoridad E-E-A-T, con informe priorizado por impacto."
+      "description": "Diagnóstico profundo de arquitectura web: rastreo, indexación, Core Web Vitals, datos estructurados y señales de autoridad E-E-A-T, con informe priorizado por impacto.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Planes de Auditoría SEO Técnica",
+        "itemListElement": [
+          {"@type": "Offer", "name": "Mini-diagnóstico", "description": "Radiografía de una página con los hallazgos técnicos más relevantes y una corrección de mayor impacto. Gratis, en 24 horas.", "price": 0, "priceCurrency": "CLP"},
+          {"@type": "Offer", "name": "Auditoría Completa", "description": "Las cinco capas a fondo (rastreo, rendimiento, arquitectura, datos estructurados, E-E-A-T), informe priorizado, código y schema listos, y sesión de traspaso.", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 490000, "priceCurrency": "CLP", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "Auditoría + Visibilidad IA", "description": "Todo lo de la Auditoría Completa más la capa de citabilidad en IA: medición de presencia en ChatGPT, Gemini y Perplexity y plan de citabilidad.", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 690000, "priceCurrency": "CLP", "valueAddedTaxIncluded": false}}
+        ]
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -80,7 +89,8 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         {"@type": "Question", "name": "¿Cuánto demora una auditoría SEO técnica?", "acceptedAnswer": {"@type": "Answer", "text": "Entre dos y tres semanas desde el acceso a los datos, dependiendo del tamaño del sitio. El mini-diagnóstico inicial se entrega gratis en 24 horas."}},
         {"@type": "Question", "name": "¿Qué necesitan de nuestra parte para auditar?", "acceptedAnswer": {"@type": "Answer", "text": "Acceso de lectura a Google Search Console y Analytics, y una conversación de 20 minutos sobre tu negocio. No necesitamos acceso al código ni al servidor."}},
         {"@type": "Question", "name": "¿La auditoría incluye la implementación de los cambios?", "acceptedAnswer": {"@type": "Answer", "text": "La auditoría entrega el plan priorizado con código y datos estructurados listos para implementar por tu equipo. Si prefieres que implementemos nosotros, ese es el servicio de acompañamiento mensual."}},
-        {"@type": "Question", "name": "¿En qué se diferencia de una auditoría SEO tradicional?", "acceptedAnswer": {"@type": "Answer", "text": "Además de lo técnico clásico (rastreo, indexación, velocidad), evaluamos las señales que los motores de IA usan para citar fuentes: datos estructurados, claridad de entidad y autoridad E-E-A-T."}}
+        {"@type": "Question", "name": "¿En qué se diferencia de una auditoría SEO tradicional?", "acceptedAnswer": {"@type": "Answer", "text": "Además de lo técnico clásico (rastreo, indexación, velocidad), evaluamos las señales que los motores de IA usan para citar fuentes: datos estructurados, claridad de entidad y autoridad E-E-A-T."}},
+        {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "El mini-diagnóstico es gratis (pago único de 0). La Auditoría Completa parte en 490.000 CLP + IVA y la Auditoría + Visibilidad IA en 690.000 CLP + IVA. El valor final se cierra tras el mini-diagnóstico gratuito, según el tamaño del sitio."}}
       ]
     }
   ]
@@ -90,6 +100,28 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css?v=29">
+<style>
+  .packs-grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr);align-items:stretch}
+  @media(max-width:860px){.packs-grid{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
+  .pack{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px}
+  .pack.featured{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
+  .pack .tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+  .pack h3{font-family:var(--headline);font-size:20px;font-weight:600;color:var(--ink);letter-spacing:-.02em;margin:0}
+  .pack .tagline{font-size:13.5px;color:var(--ink-70);line-height:1.5;margin:8px 0 0}
+  .pack .price{margin:18px 0 2px;font-family:var(--headline)}
+  .pack .price .from{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-50);margin-bottom:2px}
+  .pack .price .amount{font-size:30px;font-weight:700;color:var(--paper);letter-spacing:-.02em}
+  .pack .price .iva{font-size:12px;color:var(--ink-50);font-weight:400}
+  .pack .price .quote{font-size:24px;font-weight:700;color:var(--paper);letter-spacing:-.02em}
+  .pack ul{list-style:none;display:grid;gap:11px;margin:20px 0 24px;padding:20px 0 0;border-top:1px solid var(--line)}
+  .pack ul li{position:relative;padding-left:26px;font-size:13.5px;line-height:1.5;color:var(--ink)}
+  .pack ul li::before{content:"";position:absolute;left:2px;top:5px;width:12px;height:7px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+  .pack .btn{margin-top:auto;justify-content:center;width:100%}
+  .pack-note{margin-top:26px;font-size:12.5px;color:var(--ink-50);line-height:1.75;max-width:760px}
+  .pack-note b{color:var(--ink-70);font-weight:600}
+  .pack-common{max-width:680px;margin:0 0 36px;color:var(--ink-70);font-size:14.5px;line-height:1.6}
+  .pack-common b{color:var(--paper);font-weight:600}
+</style>
 </head>
 <body>
 
@@ -125,36 +157,77 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       <h1>Auditoría SEO Técnica</h1>
       <p class="lead">Sabemos que tu sitio "funciona". La pregunta es si Google y los motores de IA pueden rastrearlo, entenderlo y confiar en él. Esta auditoría responde eso con evidencia y entrega un plan priorizado por impacto, no un volcado de 200 hallazgos sin jerarquía.</p>
       <div class="actions">
-        <a class="btn gold" href="/contacto/">Agenda tu diagnóstico →</a>
-        <span class="note">Empieza gratis: mini-diagnóstico en 24 h</span>
+        <a class="btn gold" href="#planes">Ver planes y precios →</a>
+        <span class="note">Mini-diagnóstico gratis · auditoría desde $490.000</span>
       </div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="wrap duo">
-      <div>
-        <div class="sec-head">
-          <span class="eyebrow teal">Qué revisamos</span>
-          <h2>Las cinco capas del análisis</h2>
-        </div>
-        <ul class="check-list">
-          <li><b>Rastreo e indexación</b>: qué puede ver Google de tu sitio, qué está indexado que no debería, y qué páginas valiosas quedaron fuera. Presupuesto de rastreo, robots.txt, sitemaps y canonicals.</li>
-          <li><b>Rendimiento y Core Web Vitals</b>: velocidad real de carga en móvil y escritorio, scripts de terceros que frenan tu sitio, y qué corregir primero para pasar los umbrales de Google.</li>
-          <li><b>Arquitectura y enlazado interno</b>: cómo fluye la autoridad entre tus páginas, profundidad de clics, contenido huérfano y estructura de URLs.</li>
-          <li><b>Datos estructurados</b>: qué schema.org tienes, cuál está inválido y cuál falta para que buscadores y motores de IA entiendan quién eres y qué ofreces.</li>
-          <li><b>Señales de confianza (E-E-A-T)</b>: autoría, políticas, transparencia corporativa y consistencia de entidad. En sectores financieros y de salud, esto define si te recomiendan o no.</li>
-        </ul>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Qué revisamos</span>
+        <h2>Las cinco capas del análisis</h2>
       </div>
-      <aside class="aside-panel reveal">
-        <h3>Ficha del servicio</h3>
-        <p>Proyecto único con entrega final presentada en una reunión de trabajo.</p>
-        <div class="fact"><span>Plazo</span><b>2–3 semanas</b></div>
-        <div class="fact"><span>Formato</span><b>Informe + código listo</b></div>
-        <div class="fact"><span>Accesos requeridos</span><b>Search Console (lectura)</b></div>
-        <div class="fact"><span>Punto de partida</span><b>Diagnóstico gratis 24 h</b></div>
-        <a class="btn gold" href="/contacto/" style="justify-content:center">Empezar ahora</a>
-      </aside>
+      <ul class="check-list" style="max-width:760px">
+        <li><b>Rastreo e indexación</b>: qué puede ver Google de tu sitio, qué está indexado que no debería, y qué páginas valiosas quedaron fuera. Presupuesto de rastreo, robots.txt, sitemaps y canonicals.</li>
+        <li><b>Rendimiento y Core Web Vitals</b>: velocidad real de carga en móvil y escritorio, scripts de terceros que frenan tu sitio, y qué corregir primero para pasar los umbrales de Google.</li>
+        <li><b>Arquitectura y enlazado interno</b>: cómo fluye la autoridad entre tus páginas, profundidad de clics, contenido huérfano y estructura de URLs.</li>
+        <li><b>Datos estructurados</b>: qué schema.org tienes, cuál está inválido y cuál falta para que buscadores y motores de IA entiendan quién eres y qué ofreces.</li>
+        <li><b>Señales de confianza (E-E-A-T)</b>: autoría, políticas, transparencia corporativa y consistencia de entidad. En sectores financieros y de salud, esto define si te recomiendan o no.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="planes" aria-labelledby="planes-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Planes</span>
+        <h2 id="planes-title">Del diagnóstico gratis a la auditoría a fondo</h2>
+      </div>
+      <p class="pack-common">Toda auditoría pagada entrega lo mismo: <b>un informe priorizado por impacto</b>, código y datos estructurados listos para pegar, y una sesión de traspaso con tu equipo. Nada de un volcado de 200 hallazgos sin jerarquía.</p>
+      <div class="packs-grid">
+        <div class="pack reveal">
+          <span class="tag">Gratis</span>
+          <h3>Mini-diagnóstico</h3>
+          <p class="tagline">La radiografía de una página, en 24 horas.</p>
+          <div class="price"><span class="quote">Gratis</span></div>
+          <ul>
+            <li>Los hallazgos técnicos más relevantes de tu sitio</li>
+            <li>Una corrección de mayor impacto para partir</li>
+            <li>Sin costo ni compromiso</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Pídelo gratis</a>
+        </div>
+        <div class="pack featured reveal">
+          <span class="tag">Más elegido</span>
+          <h3>Auditoría Completa</h3>
+          <p class="tagline">Las cinco capas a fondo, con plan y código listos.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$490.000</span> <span class="iva">+ IVA · una vez</span></div>
+          <ul>
+            <li>Rastreo, indexación y Core Web Vitals</li>
+            <li>Arquitectura, enlazado interno y datos estructurados</li>
+            <li>Señales de confianza (E-E-A-T)</li>
+            <li>Informe priorizado + código y schema listos</li>
+            <li>Sesión de traspaso con tu equipo</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Agenda tu diagnóstico</a>
+        </div>
+        <div class="pack reveal">
+          <span class="tag">Técnica + IA</span>
+          <h3>Auditoría + Visibilidad IA</h3>
+          <p class="tagline">La auditoría técnica más la capa de citabilidad en IA.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$690.000</span> <span class="iva">+ IVA · una vez</span></div>
+          <ul>
+            <li>Todo lo de la Auditoría Completa, y más</li>
+            <li>Medición de tu presencia en ChatGPT, Gemini y Perplexity</li>
+            <li>Plan de citabilidad: claridad de entidad y contenido citable</li>
+            <li>Quién gana hoy esas respuestas (tu competencia)</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Agenda tu diagnóstico</a>
+        </div>
+      </div>
+      <p class="pack-note"><b>Los precios no incluyen IVA (19%).</b> El valor final se cierra tras el mini-diagnóstico gratuito, según el tamaño del sitio. Si prefieres que implementemos los cambios, eso es el <a href="/servicios/acompanamiento-mensual/">acompañamiento mensual</a>.</p>
     </div>
   </section>
 
@@ -211,6 +284,10 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <details>
           <summary>¿En qué se diferencia de una auditoría SEO tradicional?</summary>
           <p class="faq-a">Además de lo técnico clásico, evaluamos las señales que los motores de IA usan para decidir a quién citar: claridad de entidad, datos estructurados y autoridad E-E-A-T. Es una auditoría pensada para el buscador de hoy y el de los próximos años. Si te interesa esa capa en profundidad, mira <a href="/servicios/visibilidad-en-ia/">Visibilidad en IA</a>.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto cuesta?</summary>
+          <p class="faq-a">El <a href="#planes">mini-diagnóstico</a> es gratis. La Auditoría Completa parte en $490.000 + IVA y la Auditoría + Visibilidad IA en $690.000 + IVA. El valor final se cierra tras el mini-diagnóstico, según el tamaño del sitio.</p>
         </details>
       </div>
     </div>

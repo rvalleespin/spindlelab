@@ -64,7 +64,16 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       "serviceType": "Consultoría mensual de SEO y visibilidad en IA",
       "provider": {"@id": "https://spindlelab.cl/#org"},
       "areaServed": {"@type": "Country", "name": "Chile"},
-      "description": "Implementación continua de mejoras SEO/AEO, contenido optimizado para búsqueda e IA, monitoreo quincenal y ajustes tácticos."
+      "description": "Implementación continua de mejoras SEO/AEO, contenido optimizado para búsqueda e IA, monitoreo quincenal y ajustes tácticos.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Planes de Acompañamiento Mensual",
+        "itemListElement": [
+          {"@type": "Offer", "name": "Esencial", "description": "Retainer mensual sobre una capa (SEO técnico o visibilidad en IA): implementación priorizada, ~10 consultas medidas al mes, informe quincenal y reunión mensual.", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": 590000, "priceCurrency": "CLP", "unitText": "MES", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "Pro", "description": "Las dos capas juntas (SEO técnico + visibilidad en IA): ~20 consultas medidas al mes con AI Overviews, contenido citable mensual y share-of-voice vs competidores.", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": 790000, "priceCurrency": "CLP", "unitText": "MES", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "A medida", "description": "Equipo dedicado y multi-servicio: todo lo del Pro más volumen de contenido a definir, desarrollo web y mantención, con prioridad. Se cotiza tras una reunión."}
+        ]
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -80,7 +89,8 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         {"@type": "Question", "name": "¿Por qué el mínimo es de 3 meses?", "acceptedAnswer": {"@type": "Answer", "text": "Porque el SEO y la visibilidad en IA se mueven en ciclos de semanas: rastreo, re-indexación y actualización de los modelos. En menos de tres meses no hay señal suficiente para evaluar con seriedad."}},
         {"@type": "Question", "name": "¿Qué incluye el mes a mes?", "acceptedAnswer": {"@type": "Answer", "text": "Implementación priorizada, contenido optimizado para búsqueda e IA, monitoreo de posiciones y menciones en IA, informes quincenales en lenguaje de negocio y una reunión mensual de decisiones."}},
         {"@type": "Question", "name": "¿Trabajan con nuestra agencia o equipo interno?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, nos integramos con quien ejecute hoy: damos las especificaciones, revisamos lo implementado y coordinamos prioridades. También podemos ejecutar directamente los cambios técnicos y de contenido."}},
-        {"@type": "Question", "name": "¿Puedo salir antes si no veo valor?", "acceptedAnswer": {"@type": "Answer", "text": "Cumplido el mínimo de tres meses, el servicio es mes a mes y puedes pausar o salir avisando con 30 días. Sin permanencias largas ni letra chica."}}
+        {"@type": "Question", "name": "¿Puedo salir antes si no veo valor?", "acceptedAnswer": {"@type": "Answer", "text": "Cumplido el mínimo de tres meses, el servicio es mes a mes y puedes pausar o salir avisando con 30 días. Sin permanencias largas ni letra chica."}},
+        {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "El plan Esencial parte en 590.000 CLP/mes + IVA y el Pro en 790.000 CLP/mes + IVA; el plan a medida se cotiza tras una reunión. El plan se dimensiona tras el diagnóstico gratuito, según el tamaño del sitio y tus objetivos."}}
       ]
     }
   ]
@@ -90,6 +100,28 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css?v=29">
+<style>
+  .packs-grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr);align-items:stretch}
+  @media(max-width:860px){.packs-grid{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
+  .pack{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px}
+  .pack.featured{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
+  .pack .tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+  .pack h3{font-family:var(--headline);font-size:20px;font-weight:600;color:var(--ink);letter-spacing:-.02em;margin:0}
+  .pack .tagline{font-size:13.5px;color:var(--ink-70);line-height:1.5;margin:8px 0 0}
+  .pack .price{margin:18px 0 2px;font-family:var(--headline)}
+  .pack .price .from{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-50);margin-bottom:2px}
+  .pack .price .amount{font-size:30px;font-weight:700;color:var(--paper);letter-spacing:-.02em}
+  .pack .price .iva{font-size:12px;color:var(--ink-50);font-weight:400}
+  .pack .price .quote{font-size:18px;font-weight:600;color:var(--paper)}
+  .pack ul{list-style:none;display:grid;gap:11px;margin:20px 0 24px;padding:20px 0 0;border-top:1px solid var(--line)}
+  .pack ul li{position:relative;padding-left:26px;font-size:13.5px;line-height:1.5;color:var(--ink)}
+  .pack ul li::before{content:"";position:absolute;left:2px;top:5px;width:12px;height:7px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+  .pack .btn{margin-top:auto;justify-content:center;width:100%}
+  .pack-note{margin-top:26px;font-size:12.5px;color:var(--ink-50);line-height:1.75;max-width:760px}
+  .pack-note b{color:var(--ink-70);font-weight:600}
+  .pack-common{max-width:680px;margin:0 0 36px;color:var(--ink-70);font-size:14.5px;line-height:1.6}
+  .pack-common b{color:var(--paper);font-weight:600}
+</style>
 </head>
 <body>
 
@@ -125,36 +157,77 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       <h1>Acompañamiento Mensual</h1>
       <p class="lead">Una auditoría te dice qué hacer; este servicio lo hace y lo sostiene. Implementación continua, contenido que posiciona en Google y en las respuestas de IA, y medición quincenal para que cada mes sepas exactamente qué avanzó. Calidad de agencia, trato directo de consultor.</p>
       <div class="actions">
-        <a class="btn gold" href="/contacto/">Agenda tu diagnóstico →</a>
-        <span class="note">Mensual · mínimo 3 meses · sin permanencias largas</span>
+        <a class="btn gold" href="#planes">Ver planes y precios →</a>
+        <span class="note">Desde $590.000/mes · mínimo 3 meses · sin permanencias largas</span>
       </div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="wrap duo">
-      <div>
-        <div class="sec-head">
-          <span class="eyebrow teal">Qué incluye cada mes</span>
-          <h2>Ejecución, contenido y medición</h2>
-        </div>
-        <ul class="check-list">
-          <li><b>Implementación priorizada</b>: trabajamos la lista de mejoras técnicas por impacto: indexación, velocidad, datos estructurados, enlazado interno. Directamente o con tu equipo.</li>
-          <li><b>Contenido optimizado para búsqueda e IA</b>: piezas pensadas para posicionar en Google y ser citadas por los modelos: estructura de respuesta, datos verificables y schema correcto.</li>
-          <li><b>Monitoreo doble</b>: posiciones clásicas y presencia en respuestas de IA, medidas quincenalmente con protocolo repetible.</li>
-          <li><b>Informe quincenal en lenguaje de negocio</b>: qué se hizo, qué se movió y qué sigue. Una página, sin jerga, lista para reenviar a gerencia.</li>
-          <li><b>Reunión mensual de decisiones</b>: 45 minutos para revisar resultados y priorizar el mes siguiente.</li>
-        </ul>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Incluido cada mes</span>
+        <h2>Ejecución, contenido y medición</h2>
       </div>
-      <aside class="aside-panel reveal">
-        <h3>Ficha del servicio</h3>
-        <p>Servicio recurrente. Ideal como continuidad de la auditoría o del proyecto de visibilidad en IA.</p>
-        <div class="fact"><span>Formato</span><b>Mensual</b></div>
-        <div class="fact"><span>Compromiso mínimo</span><b>3 meses</b></div>
-        <div class="fact"><span>Salida posterior</span><b>Aviso 30 días</b></div>
-        <div class="fact"><span>Informes</span><b>Quincenales</b></div>
-        <a class="btn gold" href="/contacto/" style="justify-content:center">Conversar mi caso</a>
-      </aside>
+      <ul class="check-list" style="max-width:760px">
+        <li><b>Implementación priorizada</b>: trabajamos la lista de mejoras técnicas por impacto: indexación, velocidad, datos estructurados, enlazado interno. Directamente o con tu equipo.</li>
+        <li><b>Contenido optimizado para búsqueda e IA</b>: piezas pensadas para posicionar en Google y ser citadas por los modelos: estructura de respuesta, datos verificables y schema correcto.</li>
+        <li><b>Monitoreo doble</b>: posiciones clásicas y presencia en respuestas de IA, medidas quincenalmente con protocolo repetible.</li>
+        <li><b>Informe quincenal en lenguaje de negocio</b>: qué se hizo, qué se movió y qué sigue. Una página, sin jerga, lista para reenviar a gerencia.</li>
+        <li><b>Reunión mensual de decisiones</b>: 45 minutos para revisar resultados y priorizar el mes siguiente.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="planes" aria-labelledby="planes-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Planes</span>
+        <h2 id="planes-title">Elige la cobertura</h2>
+      </div>
+      <p class="pack-common">Todos los planes traen <b>lo de arriba</b> (implementación, contenido, monitoreo doble, informe quincenal y reunión mensual). Se diferencian en <b>cuánta cobertura y volumen</b>. Mínimo 3 meses; después, mes a mes con aviso de 30 días.</p>
+      <div class="packs-grid">
+        <div class="pack reveal">
+          <span class="tag">Esencial</span>
+          <h3>Esencial</h3>
+          <p class="tagline">Sostener y mejorar un frente: técnico o visibilidad en IA.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$590.000</span> <span class="iva">/mes + IVA</span></div>
+          <ul>
+            <li>Foco en una capa (técnica o visibilidad)</li>
+            <li>~10 consultas medidas al mes en IA</li>
+            <li>Hasta 8 keywords o páginas prioritarias</li>
+            <li>Informe quincenal + reunión mensual</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+        <div class="pack featured reveal">
+          <span class="tag">Más elegido</span>
+          <h3>Pro</h3>
+          <p class="tagline">Las dos capas juntas, con más cobertura y contenido.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$790.000</span> <span class="iva">/mes + IVA</span></div>
+          <ul>
+            <li>SEO técnico + visibilidad en IA</li>
+            <li>~20 consultas medidas al mes (+ AI Overviews)</li>
+            <li>Hasta 15 keywords + contenido citable mensual</li>
+            <li>Share-of-voice frente a tus competidores</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+        <div class="pack reveal">
+          <span class="tag">A medida</span>
+          <h3>A medida</h3>
+          <p class="tagline">Equipo dedicado y varios frentes a la vez.</p>
+          <div class="price"><span class="quote">Se cotiza tras una reunión</span></div>
+          <ul>
+            <li>Todo lo del Pro, y más</li>
+            <li>Volumen de contenido y páginas a definir</li>
+            <li>Integra desarrollo web y mantención</li>
+            <li>Prioridad y tiempos acordados</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+      </div>
+      <p class="pack-note"><b>Los precios no incluyen IVA (19%).</b> El plan se dimensiona tras el diagnóstico gratuito, según el tamaño de tu sitio y tus objetivos. El acompañamiento ejecuta un plan; ese plan sale de la <a href="/servicios/auditoria-seo-tecnica/">auditoría</a> o del proyecto de <a href="/servicios/visibilidad-en-ia/">visibilidad en IA</a>.</p>
     </div>
   </section>
 
@@ -211,6 +284,10 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <details>
           <summary>¿Necesito una auditoría antes?</summary>
           <p class="faq-a">Es lo recomendable: el acompañamiento ejecuta un plan, y el plan sale de la <a href="/servicios/auditoria-seo-tecnica/">auditoría técnica</a> o del proyecto de <a href="/servicios/visibilidad-en-ia/">visibilidad en IA</a>. El diagnóstico gratuito te orienta por dónde partir.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto cuesta?</summary>
+          <p class="faq-a">El plan <a href="#planes">Esencial</a> parte en $590.000/mes + IVA y el Pro en $790.000/mes + IVA; el plan a medida se cotiza tras una reunión. Se dimensiona tras el diagnóstico gratuito, según el tamaño del sitio y tus objetivos.</p>
         </details>
       </div>
     </div>
