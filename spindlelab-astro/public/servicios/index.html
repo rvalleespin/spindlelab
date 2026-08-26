@@ -49,6 +49,28 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "ProfessionalService",
+      "@id": "https://spindlelab.cl/#org",
+      "name": "SpindleLab",
+      "url": "https://spindlelab.cl/",
+      "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
+      "email": "hola@spindlelab.cl",
+      "description": "SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B y financieras en Chile.",
+      "address": {"@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL"},
+      "areaServed": {"@type": "Country", "name": "Chile"},
+      "sameAs": ["https://www.linkedin.com/company/spindlelab/", "https://www.instagram.com/spindle.lab/"],
+      "founder": {"@id": "https://spindlelab.cl/#autor-ramon"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://spindlelab.cl/#autor-ramon",
+      "name": "Ramón Vallejos",
+      "jobTitle": "Consultor de SEO técnico y visibilidad en IA (AEO/GEO)",
+      "image": "https://spindlelab.cl/assets/img/ramon-vallejos.jpg",
+      "url": "https://spindlelab.cl/nosotros/",
+      "worksFor": {"@id": "https://spindlelab.cl/#org"}
+    },
+    {
       "@type": "BreadcrumbList",
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://spindlelab.cl/"},
@@ -58,13 +80,14 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
     {
       "@type": "ItemList",
       "name": "Soluciones de SpindleLab",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Auditoría SEO Técnica", "url": "https://spindlelab.cl/servicios/auditoria-seo-tecnica/"},
-        {"@type": "ListItem", "position": 2, "name": "Visibilidad en IA (AEO/GEO)", "url": "https://spindlelab.cl/servicios/visibilidad-en-ia/"},
-        {"@type": "ListItem", "position": 3, "name": "Acompañamiento Mensual", "url": "https://spindlelab.cl/servicios/acompanamiento-mensual/"},
-        {"@type": "ListItem", "position": 4, "name": "Gestión de Redes Sociales", "url": "https://spindlelab.cl/servicios/redes-sociales/"},
-        {"@type": "ListItem", "position": 5, "name": "Paid Media (Google)", "url": "https://spindlelab.cl/servicios/paid-media/"},
-        {"@type": "ListItem", "position": 6, "name": "Desarrollo Web", "url": "https://spindlelab.cl/servicios/desarrollo-web/"}
+        {"@type": "ListItem", "position": 1, "name": "Auditoría SEO Técnica", "item": {"@id": "https://spindlelab.cl/servicios/auditoria-seo-tecnica/#service"}},
+        {"@type": "ListItem", "position": 2, "name": "Visibilidad en IA (AEO/GEO)", "item": {"@id": "https://spindlelab.cl/servicios/visibilidad-en-ia/#service"}},
+        {"@type": "ListItem", "position": 3, "name": "Acompañamiento Mensual", "item": {"@id": "https://spindlelab.cl/servicios/acompanamiento-mensual/#service"}},
+        {"@type": "ListItem", "position": 4, "name": "Gestión de Redes Sociales", "item": {"@id": "https://spindlelab.cl/servicios/redes-sociales/#service"}},
+        {"@type": "ListItem", "position": 5, "name": "Paid Media (Google)", "item": {"@id": "https://spindlelab.cl/servicios/paid-media/#service"}},
+        {"@type": "ListItem", "position": 6, "name": "Desarrollo Web", "item": {"@id": "https://spindlelab.cl/servicios/desarrollo-web/#service"}}
       ]
     }
   ]
