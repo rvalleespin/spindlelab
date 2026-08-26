@@ -64,7 +64,16 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       "serviceType": "Desarrollo web a medida",
       "provider": {"@id": "https://spindlelab.cl/#org"},
       "areaServed": {"@type": "Country", "name": "Chile"},
-      "description": "Diseño y desarrollo de sitios web 100% a medida, sin plantillas ni WordPress, con SEO técnico incorporado desde el diseño y construcción asistida por IA bajo supervisión humana."
+      "description": "Diseño y desarrollo de sitios web 100% a medida, sin plantillas ni WordPress, con SEO técnico incorporado desde el diseño y construcción asistida por IA bajo supervisión humana.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Packs de Desarrollo Web",
+        "itemListElement": [
+          {"@type": "Offer", "name": "Sitio Esencial", "description": "Home y hasta 5 páginas, SEO técnico base, un idioma. Entrega en ~3 semanas.", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 690000, "priceCurrency": "CLP", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "Sitio Completo", "description": "Home y hasta 12 páginas, blog/CMS, SEO técnico y puesta a punto AEO/GEO. Entrega en ~4 a 6 semanas.", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 1190000, "priceCurrency": "CLP", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "Plataforma a Medida", "description": "Home y páginas a medida, integraciones (CRM, reservas, pagos), multi-idioma. Se cotiza tras una reunión."}
+        ]
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -78,7 +87,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       "@type": "FAQPage",
       "mainEntity": [
         {"@type": "Question", "name": "¿Usan plantillas o WordPress?", "acceptedAnswer": {"@type": "Answer", "text": "No. Cada sitio se construye con código propio, a medida. Sin temas genéricos ni page builders: control total sobre rendimiento, diseño y SEO técnico."}},
-        {"@type": "Question", "name": "¿Publican precios?", "acceptedAnswer": {"@type": "Answer", "text": "No, porque el alcance varía según páginas, funcionalidades y contenido. Después del diagnóstico gratuito conversamos 20 minutos y enviamos una cotización cerrada, sin sorpresas."}},
+        {"@type": "Question", "name": "¿Publican precios?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Cada pack tiene un precio de partida (\"desde\"): Sitio Esencial desde 690.000 CLP + IVA y Sitio Completo desde 1.190.000 CLP + IVA; la Plataforma a Medida se cotiza tras una reunión. El valor final se cierra tras el diagnóstico gratuito, según las páginas y funcionalidades que necesites. Sin sorpresas."}},
         {"@type": "Question", "name": "¿Cómo afecta el desarrollo con IA a la calidad?", "acceptedAnswer": {"@type": "Answer", "text": "La ejecución asistida por IA reduce tiempos, no supervisión: cada fase pasa por revisión humana antes de avanzar a la siguiente. La velocidad se traduce en plazos más cortos, no en menos control de calidad."}},
         {"@type": "Question", "name": "¿El sitio incluye SEO?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, de base: rendimiento, datos estructurados y arquitectura pensados desde el diseño. Si además necesitas visibilidad en motores de IA, ese trabajo se profundiza con el servicio de Visibilidad en IA."}}
       ]
@@ -90,6 +99,26 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css?v=29">
+<style>
+  .packs-grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr);align-items:stretch}
+  @media(max-width:860px){.packs-grid{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
+  .pack{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px}
+  .pack.featured{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
+  .pack .tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+  .pack h3{font-family:var(--headline);font-size:20px;font-weight:600;color:var(--ink);letter-spacing:-.02em;margin:0}
+  .pack .tagline{font-size:13.5px;color:var(--ink-70);line-height:1.5;margin:8px 0 0}
+  .pack .price{margin:18px 0 2px;font-family:var(--headline)}
+  .pack .price .from{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-50);margin-bottom:2px}
+  .pack .price .amount{font-size:30px;font-weight:700;color:var(--paper);letter-spacing:-.02em}
+  .pack .price .iva{font-size:12px;color:var(--ink-50);font-weight:400}
+  .pack .price .quote{font-size:18px;font-weight:600;color:var(--paper)}
+  .pack ul{list-style:none;display:grid;gap:11px;margin:20px 0 24px;padding:20px 0 0;border-top:1px solid var(--line)}
+  .pack ul li{position:relative;padding-left:26px;font-size:13.5px;line-height:1.5;color:var(--ink)}
+  .pack ul li::before{content:"";position:absolute;left:2px;top:5px;width:12px;height:7px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+  .pack .btn{margin-top:auto;justify-content:center;width:100%}
+  .pack-note{margin-top:26px;font-size:12.5px;color:var(--ink-50);line-height:1.75;max-width:760px}
+  .pack-note b{color:var(--ink-70);font-weight:600}
+</style>
 </head>
 <body>
 
@@ -125,36 +154,79 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       <h1>Desarrollo Web</h1>
       <p class="lead">A veces el problema no es lo que se audita: es lo que hay que reconstruir. Diseñamos y construimos sitios 100% a medida, sin plantillas ni WordPress, con el agente de desarrollo de SpindleLab y supervisión humana en cada fase. SEO técnico incorporado desde el diseño, no parchado al final.</p>
       <div class="actions">
-        <a class="btn gold" href="/contacto/">Agenda tu diagnóstico →</a>
-        <span class="note">Proyecto único · cotización según alcance</span>
+        <a class="btn gold" href="#packs">Ver packs y precios →</a>
+        <span class="note">3 packs · desde $690.000 + IVA</span>
       </div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="wrap duo">
-      <div>
-        <div class="sec-head">
-          <span class="eyebrow teal">Qué incluye</span>
-          <h2>Código propio, de principio a fin</h2>
-        </div>
-        <ul class="check-list">
-          <li><b>Diseño 100% a medida</b>: sin plantillas ni WordPress. Construimos sobre el lenguaje visual que tu marca necesita, con referentes concretos de tu rubro, no un tema genérico adaptado.</li>
-          <li><b>Construcción asistida por IA, supervisión humana</b>: el agente de desarrollo de SpindleLab acelera la construcción; cada decisión de diseño y cada avance pasa por revisión humana antes de continuar.</li>
-          <li><b>SEO técnico desde el diseño</b>: datos estructurados, rendimiento y arquitectura pensados desde el día uno, con la misma disciplina que aplicamos en nuestras auditorías.</li>
-          <li><b>Fases con aprobación</b>: nada avanza a la siguiente etapa sin tu visto bueno: descubrimiento, diseño, desarrollo, QA y lanzamiento.</li>
-          <li><b>Producción con garantía</b>: dominio, SSL, analítica y 30 días de garantía post-lanzamiento para corregir errores de funcionamiento.</li>
-        </ul>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Incluido en todo sitio</span>
+        <h2>Todo parte con esto</h2>
       </div>
-      <aside class="aside-panel reveal">
-        <h3>Ficha del servicio</h3>
-        <p>Proyecto único. Ideal si necesitas un sitio nuevo o una reconstrucción completa, no un ajuste.</p>
-        <div class="fact"><span>Plazo</span><b>2–6 semanas</b></div>
-        <div class="fact"><span>Formato</span><b>Proyecto único</b></div>
-        <div class="fact"><span>Código</span><b>100% propio</b></div>
-        <div class="fact"><span>Punto de partida</span><b>Diagnóstico gratis 24 h</b></div>
-        <a class="btn gold" href="/contacto/" style="justify-content:center">Cotizar mi proyecto</a>
-      </aside>
+      <ul class="check-list" style="max-width:680px">
+        <li><b>Diseño 100% a medida</b>, sin plantillas ni WordPress.</li>
+        <li><b>Código propio</b>, con control total del rendimiento.</li>
+        <li><b>Panel para editar el contenido tú mismo</b>, sin depender de nadie.</li>
+        <li><b>SEO técnico desde el primer commit</b>: schema, velocidad e indexación.</li>
+        <li><b>Construcción con IA, revisión humana</b> en cada fase antes de avanzar.</li>
+        <li><b>Dominio, SSL, analítica</b> y 30 días de garantía post-lanzamiento.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="packs" aria-labelledby="packs-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Packs</span>
+        <h2 id="packs-title">Elige por dónde partir</h2>
+      </div>
+      <div class="packs-grid">
+        <div class="pack reveal">
+          <span class="tag">Esencial</span>
+          <h3>Sitio Esencial</h3>
+          <p class="tagline">Un sitio a medida, listo para funcionar.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$690.000</span> <span class="iva">+ IVA</span></div>
+          <ul>
+            <li>Home y hasta 5 páginas</li>
+            <li>SEO técnico base: schema, velocidad, indexación</li>
+            <li>Un idioma</li>
+            <li>Entrega en ~3 semanas</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Agenda tu diagnóstico</a>
+        </div>
+        <div class="pack featured reveal">
+          <span class="tag">Más elegido</span>
+          <h3>Sitio Completo</h3>
+          <p class="tagline">Más páginas y puesto a punto para que la IA te lea.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$1.190.000</span> <span class="iva">+ IVA</span></div>
+          <ul>
+            <li>Home y hasta 12 páginas</li>
+            <li>Blog o CMS que administras tú</li>
+            <li>SEO técnico y puesta a punto AEO/GEO</li>
+            <li>Uno o dos idiomas</li>
+            <li>Entrega en ~4 a 6 semanas</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Agenda tu diagnóstico</a>
+        </div>
+        <div class="pack reveal">
+          <span class="tag">A medida</span>
+          <h3>Plataforma a Medida</h3>
+          <p class="tagline">Para proyectos con integraciones o lógica propia.</p>
+          <div class="price"><span class="quote">Se cotiza tras una reunión</span></div>
+          <ul>
+            <li>Home y páginas a medida</li>
+            <li>Integraciones: CRM, reservas, pagos</li>
+            <li>Multi-idioma</li>
+            <li>Arquitectura y funciones a medida</li>
+            <li>Plazo a calcular contigo</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversemos tu proyecto</a>
+        </div>
+      </div>
+      <p class="pack-note"><b>Los precios no incluyen IVA (19%).</b> El valor final se cierra tras el diagnóstico gratuito y una conversación de 20 minutos, según las páginas y funcionalidades que necesites. Sin sorpresas. El contenido (textos e imágenes) lo pones tú; si no lo tienes, te orientamos.</p>
     </div>
   </section>
 
@@ -232,7 +304,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         </details>
         <details>
           <summary>¿Publican precios?</summary>
-          <p class="faq-a">No, porque el alcance varía según páginas, funcionalidades y contenido. Después del diagnóstico gratuito conversamos 20 minutos y te enviamos una cotización cerrada, sin sorpresas.</p>
+          <p class="faq-a">Sí. Cada pack tiene un precio de partida ("desde"): el Sitio Esencial desde $690.000 + IVA y el Sitio Completo desde $1.190.000 + IVA; la Plataforma a Medida se cotiza tras una reunión. El valor final se cierra tras el diagnóstico gratuito, según las páginas y funcionalidades que necesites. Sin sorpresas.</p>
         </details>
         <details>
           <summary>¿Cómo afecta el desarrollo con IA a la calidad?</summary>
