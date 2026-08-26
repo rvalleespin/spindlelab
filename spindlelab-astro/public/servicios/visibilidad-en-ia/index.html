@@ -64,7 +64,16 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       "serviceType": "Optimización para motores de respuesta (AEO/GEO)",
       "provider": {"@id": "https://spindlelab.cl/#org"},
       "areaServed": {"@type": "Country", "name": "Chile"},
-      "description": "Análisis y optimización de la presencia de una empresa en las respuestas de ChatGPT, Gemini y Perplexity: claridad de entidad, contenido citable y datos estructurados."
+      "description": "Análisis y optimización de la presencia de una empresa en las respuestas de ChatGPT, Gemini y Perplexity: claridad de entidad, contenido citable y datos estructurados.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Planes de Visibilidad en IA (AEO/GEO)",
+        "itemListElement": [
+          {"@type": "Offer", "name": "Auditoría de Visibilidad en IA", "description": "Radiografía única: medición en ChatGPT, Gemini y Perplexity, quién gana esas respuestas, y plan de citabilidad priorizado. Entrega en ~2 semanas.", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 400000, "priceCurrency": "CLP", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "Acompañamiento Esencial", "description": "Retainer mensual: ~10 consultas medidas al mes en 3 motores, hasta 8 keywords, contenido citable e informe mensual.", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": 590000, "priceCurrency": "CLP", "unitText": "MES", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "Acompañamiento Pro", "description": "Retainer mensual: ~20 consultas medidas al mes en 4 motores (incluye AI Overviews), hasta 15 keywords, share-of-voice vs competidores y autoridad de entidad.", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": 790000, "priceCurrency": "CLP", "unitText": "MES", "valueAddedTaxIncluded": false}}
+        ]
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -80,7 +89,8 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         {"@type": "Question", "name": "¿Se puede realmente influir en lo que responde ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, dentro de límites honestos. Los motores de IA eligen fuentes según claridad de entidad, autoridad y contenido citable. Optimizar esas señales aumenta de forma medible la probabilidad de ser citado; nadie puede garantizar una respuesta específica."}},
         {"@type": "Question", "name": "¿Qué es AEO y GEO?", "acceptedAnswer": {"@type": "Answer", "text": "AEO (Answer Engine Optimization) es optimizar para motores de respuesta como ChatGPT o Perplexity. GEO (Generative Engine Optimization) es el término académico para lo mismo: aumentar la visibilidad de una marca en respuestas generadas por IA."}},
         {"@type": "Question", "name": "¿Cómo miden la presencia en IA?", "acceptedAnswer": {"@type": "Answer", "text": "Con un protocolo de consultas repetibles: las preguntas que haría tu cliente ideal, ejecutadas periódicamente en los principales motores, registrando si apareces, cómo te describen y a quién citan."}},
-        {"@type": "Question", "name": "¿Conviene bloquear los bots de IA en robots.txt?", "acceptedAnswer": {"@type": "Answer", "text": "Si tu negocio depende de ser encontrado, bloquear GPTBot o Google-Extended te saca de las respuestas. Recomendamos permitirlos de forma deliberada, salvo contenido que necesites proteger."}}
+        {"@type": "Question", "name": "¿Conviene bloquear los bots de IA en robots.txt?", "acceptedAnswer": {"@type": "Answer", "text": "Si tu negocio depende de ser encontrado, bloquear GPTBot o Google-Extended te saca de las respuestas. Recomendamos permitirlos de forma deliberada, salvo contenido que necesites proteger."}},
+        {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "La Auditoría de Visibilidad parte en 400.000 CLP + IVA (pago único). El acompañamiento mensual parte en 590.000 CLP/mes + IVA (Esencial) y 790.000 CLP/mes (Pro). El valor final se cierra tras el diagnóstico gratuito, según el tamaño de tu sitio y las consultas a cubrir."}}
       ]
     }
   ]
@@ -90,6 +100,27 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css?v=29">
+<style>
+  .packs-grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr);align-items:stretch}
+  @media(max-width:860px){.packs-grid{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
+  .pack{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px}
+  .pack.featured{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
+  .pack .tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+  .pack h3{font-family:var(--headline);font-size:20px;font-weight:600;color:var(--ink);letter-spacing:-.02em;margin:0}
+  .pack .tagline{font-size:13.5px;color:var(--ink-70);line-height:1.5;margin:8px 0 0}
+  .pack .price{margin:18px 0 2px;font-family:var(--headline)}
+  .pack .price .from{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-50);margin-bottom:2px}
+  .pack .price .amount{font-size:30px;font-weight:700;color:var(--paper);letter-spacing:-.02em}
+  .pack .price .iva{font-size:12px;color:var(--ink-50);font-weight:400}
+  .pack ul{list-style:none;display:grid;gap:11px;margin:20px 0 24px;padding:20px 0 0;border-top:1px solid var(--line)}
+  .pack ul li{position:relative;padding-left:26px;font-size:13.5px;line-height:1.5;color:var(--ink)}
+  .pack ul li::before{content:"";position:absolute;left:2px;top:5px;width:12px;height:7px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+  .pack .btn{margin-top:auto;justify-content:center;width:100%}
+  .pack-note{margin-top:26px;font-size:12.5px;color:var(--ink-50);line-height:1.75;max-width:760px}
+  .pack-note b{color:var(--ink-70);font-weight:600}
+  .pack-common{max-width:680px;margin:0 0 36px;color:var(--ink-70);font-size:14.5px;line-height:1.6}
+  .pack-common b{color:var(--paper);font-weight:600}
+</style>
 </head>
 <body>
 
@@ -125,35 +156,79 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       <h1>Visibilidad en IA <span style="color:var(--teal)">(AEO/GEO)</span></h1>
       <p class="lead">Cada día más decisiones de compra B2B empiezan en un chat, no en una lista de resultados. Este servicio analiza cómo te describen ChatGPT, Gemini y Perplexity, y optimiza tu contenido, estructura y señales de autoridad para que te citen a ti como fuente confiable.</p>
       <div class="actions">
-        <a class="btn gold" href="/contacto/">Agenda tu diagnóstico →</a>
-        <span class="note">Incluye análisis de tu presencia actual en IA</span>
+        <a class="btn gold" href="#planes">Ver planes y precios →</a>
+        <span class="note">3 planes · desde $400.000 + IVA</span>
       </div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="wrap duo">
-      <div>
-        <div class="sec-head">
-          <span class="eyebrow teal">Qué hacemos</span>
-          <h2>De invisible a citable, en cuatro frentes</h2>
-        </div>
-        <ul class="check-list">
-          <li><b>Línea base de presencia</b>: ejecutamos las preguntas que haría tu cliente ideal en los principales motores de IA y documentamos si apareces, cómo te describen y quién está ganando esas respuestas hoy.</li>
-          <li><b>Claridad de entidad</b>: alineamos quién eres, qué haces y dónde operas en todo el ecosistema: tu sitio, datos estructurados, directorios y perfiles. Los modelos citan lo que entienden sin ambigüedad.</li>
-          <li><b>Contenido citable</b>: reestructuramos tus páginas clave para que respondan preguntas concretas con definiciones, datos y formato que los modelos pueden extraer y citar con confianza.</li>
-          <li><b>Acceso y medición</b>: configuramos el acceso correcto para los bots de IA (robots.txt, políticas) y dejamos instalado un protocolo de medición repetible para seguir tu evolución mes a mes.</li>
-        </ul>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Qué hacemos</span>
+        <h2>De invisible a citable, en cuatro frentes</h2>
       </div>
-      <aside class="aside-panel reveal">
-        <h3>Ficha del servicio</h3>
-        <p>Proyecto único. Puede ejecutarse solo o como capa 2 de la auditoría técnica.</p>
-        <div class="fact"><span>Plazo</span><b>2–3 semanas</b></div>
-        <div class="fact"><span>Motores analizados</span><b>ChatGPT · Gemini · Perplexity · SGE</b></div>
-        <div class="fact"><span>Entregable</span><b>Informe + plan de citabilidad</b></div>
-        <div class="fact"><span>Punto de partida</span><b>Diagnóstico gratis 24 h</b></div>
-        <a class="btn gold" href="/contacto/" style="justify-content:center">Empezar ahora</a>
-      </aside>
+      <ul class="check-list" style="max-width:760px">
+        <li><b>Línea base de presencia</b>: ejecutamos las preguntas que haría tu cliente ideal en los principales motores de IA y documentamos si apareces, cómo te describen y quién está ganando esas respuestas hoy.</li>
+        <li><b>Claridad de entidad</b>: alineamos quién eres, qué haces y dónde operas en todo el ecosistema: tu sitio, datos estructurados, directorios y perfiles. Los modelos citan lo que entienden sin ambigüedad.</li>
+        <li><b>Contenido citable</b>: reestructuramos tus páginas clave para que respondan preguntas concretas con definiciones, datos y formato que los modelos pueden extraer y citar con confianza.</li>
+        <li><b>Acceso y medición</b>: configuramos el acceso correcto para los bots de IA (robots.txt, políticas) y dejamos instalado un protocolo de medición repetible para seguir tu evolución mes a mes.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="planes" aria-labelledby="planes-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Planes</span>
+        <h2 id="planes-title">Elige por dónde partir</h2>
+      </div>
+      <p class="pack-common">Incluido en todo plan: <b>medición real de menciones en IA</b> con protocolo reproducible (mismas consultas, mismos motores, misma cadencia), informe en lenguaje de negocio y cero prueba inventada. Solo lo que la IA de verdad responde.</p>
+      <div class="packs-grid">
+        <div class="pack reveal">
+          <span class="tag">Auditoría</span>
+          <h3>Auditoría de Visibilidad</h3>
+          <p class="tagline">La radiografía: qué dice la IA de ti hoy, y qué falta.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$400.000</span> <span class="iva">+ IVA · una vez</span></div>
+          <ul>
+            <li>Medición en ChatGPT, Gemini y Perplexity</li>
+            <li>Quién gana hoy esas respuestas (tu competencia)</li>
+            <li>Revisión de claridad de entidad y contenido citable</li>
+            <li>Plan de citabilidad priorizado por impacto</li>
+            <li>Entrega en ~2 semanas</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Agenda tu diagnóstico</a>
+        </div>
+        <div class="pack featured reveal">
+          <span class="tag">Más elegido</span>
+          <h3>Acompañamiento Esencial</h3>
+          <p class="tagline">Medimos y optimizamos mes a mes para que te empiecen a citar.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$590.000</span> <span class="iva">/mes + IVA</span></div>
+          <ul>
+            <li>Todo lo de la Auditoría, y más</li>
+            <li>~10 consultas medidas al mes, en 3 motores</li>
+            <li>Hasta 8 keywords trabajadas</li>
+            <li>Contenido citable y claridad de entidad</li>
+            <li>Informe mensual en lenguaje de negocio</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Agenda tu diagnóstico</a>
+        </div>
+        <div class="pack reveal">
+          <span class="tag">Cobertura total</span>
+          <h3>Acompañamiento Pro</h3>
+          <p class="tagline">Cobertura completa y share-of-voice contra tu competencia.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$790.000</span> <span class="iva">/mes + IVA</span></div>
+          <ul>
+            <li>Todo lo del Esencial, y más</li>
+            <li>~20 consultas medidas al mes, en 4 motores (+ AI Overviews)</li>
+            <li>Hasta 15 keywords</li>
+            <li>Share-of-voice frente a tus competidores</li>
+            <li>Autoridad de entidad y menciones externas</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Agenda tu diagnóstico</a>
+        </div>
+      </div>
+      <p class="pack-note"><b>Los precios no incluyen IVA (19%).</b> Los acompañamientos son mensuales; el valor final se cierra tras el diagnóstico gratuito, según el tamaño de tu sitio y las consultas que quieras cubrir. Sin sorpresas.</p>
     </div>
   </section>
 
@@ -210,6 +285,10 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <details>
           <summary>¿Y si mi sitio tiene problemas técnicos de base?</summary>
           <p class="faq-a">La citabilidad se construye sobre un sitio rastreable y rápido. Si el diagnóstico muestra problemas técnicos graves, te recomendaremos partir por la <a href="/servicios/auditoria-seo-tecnica/">auditoría técnica</a>, o abordar ambas capas juntas.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto cuesta?</summary>
+          <p class="faq-a">La <a href="#planes">Auditoría de Visibilidad</a> parte en $400.000 + IVA (pago único). El acompañamiento mensual parte en $590.000/mes + IVA (Esencial) y $790.000/mes (Pro). El valor final se cierra tras el diagnóstico gratuito, según el tamaño de tu sitio y las consultas a cubrir.</p>
         </details>
       </div>
     </div>
