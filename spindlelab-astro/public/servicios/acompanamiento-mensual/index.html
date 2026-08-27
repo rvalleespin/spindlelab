@@ -135,6 +135,14 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
   .pack-note b{color:var(--ink-70);font-weight:600}
   .pack-common{max-width:680px;margin:0 0 36px;color:var(--ink-70);font-size:14.5px;line-height:1.6}
   .pack-common b{color:var(--paper);font-weight:600}
+  /* --- densidad: menos aire vertical y listas a 2 columnas en desktop --- */
+  .sec{padding:64px 0}
+  .band-navy{padding:64px 0}
+  .sec-head{margin-bottom:34px}
+  @media(min-width:900px){
+    .check-list{grid-template-columns:1fr 1fr;gap:16px 44px}
+    .check-list li{font-size:14px}
+  }
 </style>
 </head>
 <body>
@@ -183,7 +191,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <span class="eyebrow teal">Incluido cada mes</span>
         <h2>Ejecución, contenido y medición</h2>
       </div>
-      <ul class="check-list" style="max-width:760px">
+      <ul class="check-list">
         <li><b>Implementación priorizada</b>: trabajamos la lista de mejoras técnicas por impacto: indexación, velocidad, datos estructurados, enlazado interno. Directamente o con tu equipo.</li>
         <li><b>Contenido optimizado para búsqueda e IA</b>: piezas pensadas para posicionar en Google y ser citadas por los modelos: estructura de respuesta, datos verificables y schema correcto.</li>
         <li><b>Monitoreo doble</b>: posiciones clásicas y presencia en respuestas de IA, medidas quincenalmente con el <a href="/indice/">Índice de Citabilidad</a>, nuestro protocolo público.</li>

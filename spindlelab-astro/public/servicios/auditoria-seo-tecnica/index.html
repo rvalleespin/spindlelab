@@ -134,6 +134,14 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
   .pack-note b{color:var(--ink-70);font-weight:600}
   .pack-common{max-width:680px;margin:0 0 36px;color:var(--ink-70);font-size:14.5px;line-height:1.6}
   .pack-common b{color:var(--paper);font-weight:600}
+  /* --- densidad: menos aire vertical y listas a 2 columnas en desktop --- */
+  .sec{padding:64px 0}
+  .band-navy{padding:64px 0}
+  .sec-head{margin-bottom:34px}
+  @media(min-width:900px){
+    .check-list{grid-template-columns:1fr 1fr;gap:16px 44px}
+    .check-list li{font-size:14px}
+  }
 </style>
 </head>
 <body>
@@ -182,7 +190,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <span class="eyebrow teal">Qué revisamos</span>
         <h2>Las cinco capas del análisis</h2>
       </div>
-      <ul class="check-list" style="max-width:760px">
+      <ul class="check-list">
         <li><b>Rastreo e indexación</b>: qué puede ver Google de tu sitio, qué está indexado que no debería, y qué páginas valiosas quedaron fuera. Presupuesto de rastreo, robots.txt, sitemaps y canonicals.</li>
         <li><b>Rendimiento y Core Web Vitals</b>: velocidad real de carga en móvil y escritorio, scripts de terceros que frenan tu sitio, y qué corregir primero para pasar los umbrales de Google.</li>
         <li><b>Arquitectura y enlazado interno</b>: cómo fluye la autoridad entre tus páginas, profundidad de clics, contenido huérfano y estructura de URLs.</li>

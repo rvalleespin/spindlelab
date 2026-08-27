@@ -134,6 +134,14 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
   .pack-note b{color:var(--ink-70);font-weight:600}
   .pack-common{max-width:680px;margin:0 0 36px;color:var(--ink-70);font-size:14.5px;line-height:1.6}
   .pack-common b{color:var(--paper);font-weight:600}
+  /* --- densidad: menos aire vertical y listas a 2 columnas en desktop --- */
+  .sec{padding:64px 0}
+  .band-navy{padding:64px 0}
+  .sec-head{margin-bottom:34px}
+  @media(min-width:900px){
+    .check-list{grid-template-columns:1fr 1fr;gap:16px 44px}
+    .check-list li{font-size:14px}
+  }
 </style>
 </head>
 <body>
@@ -182,7 +190,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <span class="eyebrow teal">Qué incluye</span>
         <h2>Todo lo que ponemos a trabajar</h2>
       </div>
-      <ul class="check-list" style="max-width:760px">
+      <ul class="check-list">
         <li><b>Estrategia de campañas y objetivos</b>: qué buscas (leads, ventas, llamadas), con qué oferta y en qué orden. La estrategia primero, el gasto después.</li>
         <li><b>Estructura de cuenta y segmentación</b>: campañas y audiencias ordenadas para llegar a quien puede comprarte, no a todo el mundo.</li>
         <li><b>Optimización continua asistida con IA</b>: revisión diaria del rendimiento con agentes de IA para mover el presupuesto hacia lo que convierte.</li>

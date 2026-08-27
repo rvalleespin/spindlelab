@@ -133,6 +133,14 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
   .pack .btn{margin-top:auto;justify-content:center;width:100%}
   .pack-note{margin-top:26px;font-size:12.5px;color:var(--ink-50);line-height:1.75;max-width:760px}
   .pack-note b{color:var(--ink-70);font-weight:600}
+  /* --- densidad: menos aire vertical y listas a 2 columnas en desktop --- */
+  .sec{padding:64px 0}
+  .band-navy{padding:64px 0}
+  .sec-head{margin-bottom:34px}
+  @media(min-width:900px){
+    .check-list{grid-template-columns:1fr 1fr;gap:16px 44px}
+    .check-list li{font-size:14px}
+  }
 </style>
 </head>
 <body>
@@ -181,7 +189,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <span class="eyebrow teal">Incluido en todo sitio</span>
         <h2>Todo parte con esto</h2>
       </div>
-      <ul class="check-list" style="max-width:680px">
+      <ul class="check-list">
         <li><b>Diseño 100% a medida</b>, sin plantillas ni WordPress.</li>
         <li><b>Código propio</b>, con control total del rendimiento.</li>
         <li><b>Un panel para editar textos e imágenes</b> tú mismo, sin depender de nadie.</li>
