@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J40VW9E0TW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-J40VW9E0TW");
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2885353628478565');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Índice de Citabilidad: cómo medimos si la IA te cita — SpindleLab</title>
+<meta name="description" content="El instrumento con que medimos si ChatGPT, Gemini y Perplexity citan a una empresa. Fórmula, escala y protocolo públicos, de uso libre.">
+<link rel="canonical" href="https://spindlelab.cl/indice/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpindleLab">
+<meta property="og:title" content="Índice de Citabilidad — SpindleLab">
+<meta property="og:description" content="Fórmula, escala y protocolo públicos para medir si los motores de IA citan a una empresa. De uso libre.">
+<meta property="og:url" content="https://spindlelab.cl/indice/">
+<meta property="og:image" content="https://spindlelab.cl/assets/img/og-marca.jpg?v=4">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="SpindleLab — SEO técnico y visibilidad en IA">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=4"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://spindlelab.cl/#org",
+      "name": "SpindleLab",
+      "url": "https://spindlelab.cl/",
+      "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
+      "email": "hola@spindlelab.cl",
+      "description": "SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B y financieras en Chile.",
+      "address": {"@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL"},
+      "areaServed": {"@type": "Country", "name": "Chile"},
+      "sameAs": ["https://www.linkedin.com/company/spindlelab/", "https://www.instagram.com/spindle.lab/"],
+      "founder": {"@id": "https://spindlelab.cl/#autor-ramon"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://spindlelab.cl/#autor-ramon",
+      "name": "Ramón Vallejos",
+      "jobTitle": "Consultor de SEO técnico y visibilidad en IA (AEO/GEO)",
+      "image": "https://spindlelab.cl/assets/img/ramon-vallejos.jpg",
+      "url": "https://spindlelab.cl/nosotros/",
+      "worksFor": {"@id": "https://spindlelab.cl/#org"}
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://spindlelab.cl/indice/#indice-citabilidad",
+      "name": "Índice de Citabilidad",
+      "alternateName": "Índice de Citabilidad en IA",
+      "description": "Instrumento creado por SpindleLab para medir si los motores de respuesta con inteligencia artificial (ChatGPT, Gemini y Perplexity) citan a una empresa cuando alguien pregunta por su categoría. Cada combinación de pregunta y motor se puntúa de 0 a 3 y el índice es el porcentaje de puntos obtenidos sobre los posibles, en una escala de 0 a 100.",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "@id": "https://spindlelab.cl/indice/#set",
+        "name": "Instrumentos de medición de visibilidad en IA de SpindleLab",
+        "url": "https://spindlelab.cl/indice/"
+      },
+      "url": "https://spindlelab.cl/indice/",
+      "inLanguage": "es-CL",
+      "creator": {"@id": "https://spindlelab.cl/#org"},
+      "publisher": {"@id": "https://spindlelab.cl/#org"}
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://spindlelab.cl/indice/#protocolo",
+      "name": "Cómo se calcula el Índice de Citabilidad",
+      "description": "Protocolo de medición: cinco preguntas fijas, tres motores de IA, una sesión limpia por pregunta y una puntuación de 0 a 3 por observación.",
+      "inLanguage": "es-CL",
+      "author": {"@id": "https://spindlelab.cl/#autor-ramon"},
+      "publisher": {"@id": "https://spindlelab.cl/#org"},
+      "about": {"@id": "https://spindlelab.cl/indice/#indice-citabilidad"},
+      "step": [
+        {"@type": "HowToStep", "position": 1, "name": "Fijar las preguntas", "text": "Se define un set de cinco preguntas que un cliente real haría sobre la categoría. Las preguntas no cambian entre mediciones: esa es la condición para que la comparación mes a mes sea válida."},
+        {"@type": "HowToStep", "position": 2, "name": "Correr cada pregunta en sesión limpia", "text": "Cada pregunta se ejecuta en una sesión nueva, sin memoria ni historial, en ChatGPT, Gemini y Perplexity. Una sesión por pregunta y por motor, para que las respuestas no se contaminen entre sí."},
+        {"@type": "HowToStep", "position": 3, "name": "Puntuar cada observación de 0 a 3", "text": "0 si la empresa no aparece; 1 si la mencionan al pasar; 2 si la mencionan con una descripción correcta de lo que hace; 3 si la nombran entre las primeras opciones o como recomendación principal."},
+        {"@type": "HowToStep", "position": 4, "name": "Calcular el índice", "text": "El índice es el total de puntos obtenidos dividido por los puntos posibles, multiplicado por cien. Con cinco preguntas y tres motores hay quince observaciones y cuarenta y cinco puntos posibles."},
+        {"@type": "HowToStep", "position": 5, "name": "Publicar la corrida completa", "text": "Se registra y publica la fecha, la pregunta exacta, el motor y qué respondió cada uno. Sin la corrida cruda, el número no es verificable por un tercero."}
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://spindlelab.cl/indice/#webpage",
+      "url": "https://spindlelab.cl/indice/",
+      "name": "Índice de Citabilidad",
+      "inLanguage": "es-CL",
+      "mainEntity": {"@id": "https://spindlelab.cl/indice/#indice-citabilidad"},
+      "publisher": {"@id": "https://spindlelab.cl/#org"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://spindlelab.cl/"},
+        {"@type": "ListItem", "position": 2, "name": "Índice de Citabilidad", "item": "https://spindlelab.cl/indice/"}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css?v=29">
+<style>
+  .formula{font-family:var(--headline);font-size:clamp(16px,2.2vw,21px);font-weight:600;color:var(--paper);background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:24px 0;text-align:center}
+  .prompt-list{list-style:none;display:grid;gap:14px;counter-reset:p;max-width:760px}
+  .prompt-list li{position:relative;padding-left:44px;font-size:15px;line-height:1.6;color:var(--ink)}
+  .prompt-list li::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:-1px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border:1px solid var(--teal);border-radius:50%;font-size:12px;font-weight:700;color:var(--teal)}
+  /* .nota solo existe dentro de .prose; esta página no lo es */
+  .nota-std{border-left:3px solid var(--teal);background:var(--surface);padding:20px 24px;border-radius:0 12px 12px 0;font-size:14px;line-height:1.7;color:var(--ink-70)}
+  .nota-std strong{color:var(--paper)}
+  .compare-wrap:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+  .compare.escala{min-width:520px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="SpindleLab — inicio">SpindleLab<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span class="bars"></span></button>
+    <div class="nav-pill"><ul class="nav-links" id="nav-links">
+      <li><a href="/servicios/">Soluciones</a></li>
+      <li><a href="/metodo/">Método</a></li>
+      <li><a href="/nosotros/">Nosotros</a></li>
+      <li><a href="/#evidencia">Evidencia</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contacto/">Contacto</a></li>
+    </ul>
+    <a class="btn gold small nav-cta" href="/contacto/">Diagnóstico gratis</a></div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero page-hero-video">
+    <video class="ph-bg" src="/video/evidencia-medicion.mp4" poster="/video/evidencia-medicion.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+    <div class="ph-veil"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Miga de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li>Índice de Citabilidad</li>
+        </ol>
+      </nav>
+      <h1>Índice de Citabilidad</h1>
+      <p class="lead">Un número entre 0 y 100 que responde una sola pregunta: cuando alguien le pregunta a la IA por tu categoría, ¿te nombra a ti? Publicamos la fórmula, la escala y el protocolo completo para que cualquiera pueda reproducir la medición. Incluido el nuestro.</p>
+      <div class="actions">
+        <a class="btn gold" href="/contacto/">Medir mi sitio gratis →</a>
+        <span class="note">Se mide todos los meses · uso libre</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="calculo-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Cómo se calcula</span>
+        <h2 id="calculo-title">Cada respuesta vale de 0 a 3</h2>
+      </div>
+      <p style="max-width:680px;color:var(--ink-70);font-size:15px;line-height:1.7;margin-bottom:26px">Se le hace la misma pregunta a cada motor y se puntúa lo que responde. No basta con aparecer: importa si te describen bien y en qué lugar te ponen.</p>
+      <div class="compare-wrap" tabindex="0" role="region" aria-label="Tabla de puntuación del Índice de Citabilidad">
+        <table class="compare escala">
+          <thead>
+            <tr><th scope="col">Puntos</th><th scope="col">Qué significa</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>0</b></td><td>No apareces</td></tr>
+            <tr><td><b>1</b></td><td>Te mencionan al pasar: el nombre suelto, sin contexto</td></tr>
+            <tr><td><b>2</b></td><td>Te mencionan con una descripción correcta de lo que haces</td></tr>
+            <tr><td><b>3</b></td><td>Te nombran entre las primeras opciones o como recomendación principal</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="formula">Índice = (puntos obtenidos ÷ puntos posibles) × 100</p>
+      <p style="max-width:680px;color:var(--ink-70);font-size:14.5px;line-height:1.7">Con cinco preguntas en tres motores hay <b style="color:var(--paper)">15 observaciones</b> y <b style="color:var(--paper)">45 puntos posibles</b>. La cuenta se puede rehacer a mano: esa es la idea.</p>
+    </div>
+  </section>
+
+  <section class="band-navy" aria-labelledby="escala-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow gold">La escala</span>
+        <h2 id="escala-title">Qué significa el número que te sale</h2>
+      </div>
+      <div class="steps" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+        <div class="step reveal">
+          <span class="num">0–10</span>
+          <h3>Invisible</h3>
+          <p>La IA no te nombra. Para tu categoría, no existes.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">11–30</span>
+          <h3>Presencia marginal</h3>
+          <p>Apareces de vez en cuando, casi siempre al pasar.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">31–60</span>
+          <h3>Presencia establecida</h3>
+          <p>Te nombran con regularidad y saben describir lo que haces.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">61–85</span>
+          <h3>Referente</h3>
+          <p>Estás entre los primeros nombres de tu categoría.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">86+</span>
+          <h3>Dominancia</h3>
+          <p>Eres la respuesta por defecto en casi toda consulta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="protocolo-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">El protocolo</span>
+        <h2 id="protocolo-title">Las reglas que lo hacen comparable</h2>
+      </div>
+      <ul class="check-list" style="max-width:760px;margin-bottom:34px">
+        <li><b>Cinco preguntas fijas</b>: las que haría un cliente real de la categoría. No se cambian entre mediciones, porque cambiarlas rompe la comparación.</li>
+        <li><b>Tres motores</b>: ChatGPT, Gemini y Perplexity. Se miden por separado, porque responden distinto.</li>
+        <li><b>Una sesión limpia por pregunta</b>: sin memoria ni historial, y sin pegar varias preguntas juntas. Un modelo que ve las cinco preguntas a la vez se contamina entre ellas.</li>
+        <li><b>Cadencia mensual</b>: la misma medición, el mismo día de cada mes.</li>
+        <li><b>La corrida se publica entera</b>: fecha, pregunta exacta, motor y qué respondió. Sin eso, el número no lo puede verificar nadie.</li>
+      </ul>
+
+      <h3 style="font-family:var(--headline);font-size:19px;font-weight:600;color:var(--ink);margin-bottom:18px">Las cinco preguntas que usamos para nuestra propia categoría</h3>
+      <ol class="prompt-list">
+        <li>¿Qué consultor o agencia de SEO técnico me recomiendas en Chile?</li>
+        <li>¿Cómo hago que mi empresa aparezca en las respuestas de ChatGPT cuando alguien pregunta por mi rubro?</li>
+        <li>Tengo una empresa de servicios financieros en Chile y quiero mejorar mi presencia en Google y en los buscadores de IA. ¿Quién puede ayudarme?</li>
+        <li>¿Qué es AEO o GEO en marketing digital y quién ofrece ese servicio en Chile?</li>
+        <li>Tengo una clínica dental en Santiago. ¿Cómo consigo que ChatGPT y Google me recomienden a pacientes nuevos?</li>
+      </ol>
+
+      <div class="nota-std" style="margin-top:32px;max-width:760px"><strong>Nota de método:</strong> nuestras dos primeras mediciones (julio y agosto de 2026) se corrieron con una variante simplificada: las cinco preguntas pegadas en un solo mensaje por motor, en vez de una sesión limpia por pregunta. Sirve para comparar entre sí, pero es un método más débil. Desde la medición de septiembre usamos sesiones limpias, y lo dejamos dicho acá para que nadie tenga que adivinarlo.</div>
+    </div>
+  </section>
+
+  <section class="sec alt" aria-labelledby="uso-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Uso libre</span>
+        <h2 id="uso-title">Tómalo y úsalo</h2>
+      </div>
+      <p style="max-width:680px;color:var(--ink-70);font-size:15px;line-height:1.7">El Índice de Citabilidad se puede usar, copiar y adaptar libremente, incluso para medirnos a nosotros. Solo pedimos que cites la fuente. Un instrumento que solo puede usar quien lo inventó no es un instrumento: es un argumento de venta.</p>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="wrap">
+      <span class="eyebrow teal">Hablemos</span>
+      <h2 id="cta-title">¿Cuál es tu número?</h2>
+      <p>Envíanos tu URL y medimos tu Índice de Citabilidad. Gratis, en 24 horas, con la corrida completa a la vista.</p>
+      <a class="btn gold" href="mailto:hola@spindlelab.cl?subject=%C3%8Dndice%20de%20Citabilidad&body=Hola%2C%20mi%20sitio%20es%3A%20">Medir mi sitio gratis</a>
+      <br>
+      <a class="email" href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="wordmark">SpindleLab<span>.</span></p>
+    <div class="cols">
+      <nav aria-label="Soluciones">
+        <h4>Soluciones</h4>
+        <ul>
+          <li><a href="/servicios/auditoria-seo-tecnica/">Auditoría SEO Técnica</a></li>
+          <li><a href="/servicios/visibilidad-en-ia/">Visibilidad en IA (AEO/GEO)</a></li>
+          <li><a href="/servicios/acompanamiento-mensual/">Acompañamiento Mensual</a></li>
+          <li><a href="/servicios/redes-sociales/">Gestión de Redes Sociales</a></li>
+          <li><a href="/servicios/paid-media/">Paid Media (Google)</a></li>
+          <li><a href="/servicios/desarrollo-web/">Desarrollo Web</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Sitio">
+        <h4>Sitio</h4>
+        <ul>
+          <li><a href="/metodo/">Nuestro Método</a></li><li><a href="/nosotros/">Nosotros</a></li>
+          <li><a href="/indice/">Índice de Citabilidad</a></li>
+          <li><a href="/blog/">El Taller</a></li>
+          <li><a href="/contacto/">Contacto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>Santiago, Chile</li>
+          <li><a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 SpindleLab. Todos los derechos reservados.</span>
+      <span>SEO técnico · AEO/GEO · Chile</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.menu-btn'),links=document.getElementById('nav-links');
+  if(btn){btn.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
+})();
+</script>
+<script src="/assets/js/hero-bg-video.js" defer></script>
+<script src="/assets/js/site-header.js" defer></script>
+</body>
+</html>

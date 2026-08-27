@@ -1,5 +1,30 @@
 # Test mensual de menciones en IA — prompts fijos y registro
 
+> ## ⚠️ Este test ahora es un instrumento público: el **Índice de Citabilidad**
+>
+> Desde el 26-ago-2026 el test tiene nombre, fórmula, escala y protocolo publicados en
+> **https://spindlelab.cl/indice/** (uso libre, CC BY 4.0), y cada corrida se publica
+> completa en el blog como pieza de *Research*.
+>
+> - **Fórmula:** cada combinación prompt × motor puntúa **0–3** (0 no apareces · 1 mención
+>   al pasar · 2 mención con descripción correcta · 3 entre las primeras opciones).
+>   **Índice = (obtenidos ÷ posibles) × 100.** Con 5 prompts × 3 motores = 15 observaciones
+>   y **45 puntos posibles**.
+> - **Escala:** 0-10 Invisible · 11-30 Presencia marginal · 31-60 Presencia establecida ·
+>   61-85 Referente de categoría · 86-100 Dominancia.
+> - **Puntaje de SpindleLab (25-ago-2026): 0 / 45 = 0 → Invisible.** Publicado en
+>   `/blog/indice-de-citabilidad-agosto-2026/` con las 15 observaciones crudas y sus datos
+>   abiertos en `/indice/corridas-2026-08-25.json`.
+>
+> ### 🔴 CAMBIO DE MÉTODO — decisión tomada el 26-ago-2026
+> La decisión que estaba pendiente ya se tomó: **desde Mes 2 (septiembre) se corre una
+> sesión limpia por prompt** (sin memoria ni historial), no los 5 prompts pegados en un
+> mensaje. Mes 0 y Mes 1 usaron la variante simplificada y **eso está declarado
+> públicamente** en la página del índice y en el reporte. Al comparar septiembre contra
+> agosto, dejar constancia de que cambió el método.
+>
+> **Compromiso público:** la medición es mensual y se publica salga como salga.
+
 Los 5 prompts son **fijos**: se repiten idénticos cada mes para que la comparación sea válida. Se ejecutan en ChatGPT (sesión nueva, sin memoria), Perplexity y Gemini, el mismo día de cada mes (primer viernes).
 
 Para cada prompt se registra: ¿aparece SpindleLab? (sí/no) · ¿quién aparece? (top 3) · observaciones.

@@ -78,6 +78,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       "provider": {"@id": "https://spindlelab.cl/#org"},
       "areaServed": {"@type": "Country", "name": "Chile"},
       "description": "Análisis y optimización de la presencia de una empresa en las respuestas de ChatGPT, Gemini y Perplexity: claridad de entidad, contenido citable y datos estructurados.",
+      "serviceOutput": {"@type": "CreativeWork", "name": "Índice de Citabilidad medido", "url": "https://spindlelab.cl/indice/"},
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Planes de Visibilidad en IA (AEO/GEO)",
@@ -133,6 +134,14 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
   .pack-note b{color:var(--ink-70);font-weight:600}
   .pack-common{max-width:680px;margin:0 0 36px;color:var(--ink-70);font-size:14.5px;line-height:1.6}
   .pack-common b{color:var(--paper);font-weight:600}
+  /* --- densidad: menos aire vertical y listas a 2 columnas en desktop --- */
+  .sec{padding:64px 0}
+  .band-navy{padding:64px 0}
+  .sec-head{margin-bottom:34px}
+  @media(min-width:900px){
+    .check-list{grid-template-columns:1fr 1fr;gap:16px 44px}
+    .check-list li{font-size:14px}
+  }
 </style>
 </head>
 <body>
@@ -181,7 +190,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <span class="eyebrow teal">Qué hacemos</span>
         <h2>De invisible a citable, en cuatro frentes</h2>
       </div>
-      <ul class="check-list" style="max-width:760px">
+      <ul class="check-list">
         <li><b>Línea base de presencia</b>: ejecutamos las preguntas que haría tu cliente ideal en los principales motores de IA y documentamos si apareces, cómo te describen y quién está ganando esas respuestas hoy.</li>
         <li><b>Claridad de entidad</b>: alineamos quién eres, qué haces y dónde operas en todo el ecosistema: tu sitio, datos estructurados, directorios y perfiles. Los modelos citan lo que entienden sin ambigüedad.</li>
         <li><b>Contenido citable</b>: reestructuramos tus páginas clave para que respondan preguntas concretas con definiciones, datos y formato que los modelos pueden extraer y citar con confianza.</li>
@@ -196,7 +205,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <span class="eyebrow teal">Planes</span>
         <h2 id="planes-title">Elige por dónde partir</h2>
       </div>
-      <p class="pack-common">Incluido en todo plan: <b>medición real de menciones en IA</b> con protocolo reproducible (mismas consultas, mismos motores, misma cadencia), informe en lenguaje de negocio y cero prueba inventada. Solo lo que la IA de verdad responde.</p>
+      <p class="pack-common">Incluido en todo plan: <b>medición real de menciones en IA</b> con el <a href="/indice/" style="color:var(--teal)">Índice de Citabilidad</a>, nuestro protocolo público y reproducible (mismas consultas, mismos motores, misma cadencia), informe en lenguaje de negocio y cero prueba inventada. Solo lo que la IA de verdad responde.</p>
       <div class="packs-grid">
         <div class="pack reveal">
           <span class="tag">Auditoría</span>
@@ -339,6 +348,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <h4>Sitio</h4>
         <ul>
           <li><a href="/metodo/">Nuestro Método</a></li><li><a href="/nosotros/">Nosotros</a></li>
+          <li><a href="/indice/">Índice de Citabilidad</a></li>
           <li><a href="/blog/">El Taller</a></li>
           <li><a href="/contacto/">Contacto</a></li>
         </ul>
