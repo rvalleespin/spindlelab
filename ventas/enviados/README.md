@@ -3,6 +3,9 @@
 **Actualizado:** 26-ago-2026 · **Fuente:** Gmail `hola@spindlelab.cl` (el estado real de un prospecto vive en Gmail, no en los CSV de leads).
 **Archivo:** [`REGISTRO-enviados.csv`](REGISTRO-enviados.csv) — 141 contactos, con rubro, fecha del primer toque, nº de toques, estado y acción recomendada.
 
+> ⛔ **Regla de dedup (28-ago):** ningún CSV nuevo pasa a redacción sin cruzarse
+> antes contra este registro. Canon de envíos: 3 toques máx · 10/día · 50/semana.
+
 ## Foto rápida
 | | |
 |---|---|

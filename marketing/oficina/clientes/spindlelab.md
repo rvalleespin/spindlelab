@@ -36,11 +36,20 @@ defecto — verificar el número antes de diagnosticar. Acceso:
 Búsqueda activa (14 jul), $1.500 CLP/día, conversión `generate_lead` desde GA4.
 Criterio de corte: semana 12, ≥2 mini-diagnósticos originados en ads.
 
-**Prospección (Dereck):** cuenta de Apollo **`manuvalleespin@gmail.com`** (Plan
-Básico, ~2.500 créditos/mes) — la cuenta `hola@spindlelab.cl` es Gratis y no sirve.
-Segmentos (frentes): A = financiero/wealth · B = salud premium (dental/estética) ·
-C = salud visual. Búsquedas guardadas y reglas de ICP en `ventas/pipeline-prospeccion.md`.
-Los CSV caen en `ventas/leads-*.csv`.
+**Prospección (Dereck):** **Apollo está CANCELADO** (decisión de Ramón, 26-ago-2026,
+tras el fallo de pago; los créditos se pierden — no reactivar sin su OK). Fuente
+vigente: **Google Maps + curl** (validado 26-ago: JS extrae nombre+dominio → curl a
+home y /contacto por email público + gancho técnico; ~65-74% usable, gratis, buzones
+reales). Frentes: A = financiero/wealth · B = salud premium (dental/estética) ·
+C = salud visual · D = estudios de abogados (validado 13-ago). Reglas de ICP en
+`ventas/pipeline-prospeccion.md`. Los CSV caen en `ventas/contactos-*.csv` y el
+**dedup contra `ventas/enviados/REGISTRO-enviados.csv` es obligatorio** antes de
+pasar cualquier lista a Emilia.
+
+**Canon de envíos (28-ago, decisión de Ramón):** máx **3 toques** por prospecto ·
+**10/día** · tope duro **50/semana** (con 1 cliente activo: 25/sem; con 2: pausa).
+2ª ola catch-all solo en lotes de 10-15/semana midiendo rebote: **si el rebote
+supera el 5%, se corta**. Semana de Fiestas Patrias: cero lotes.
 
 **Meta Ads (Fran):** Página FB `61592147941168` (portafolio propio `1025351160247165`);
 IG profesional `@spindle.lab` (`17841414909841532`); cuenta publicitaria

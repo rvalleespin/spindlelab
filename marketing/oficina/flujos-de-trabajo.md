@@ -16,7 +16,7 @@ Nombre humano · `skill` — labor en una línea.
   reportan los demás. Es tu punto de entrada para cualquier proyecto.
 
 **Captación**
-- **Dereck** · `buscar-leads` — prospección en Apollo → CSV de decisores con email.
+- **Dereck** · `buscar-leads` — prospección (Google Maps + curl; Apollo cancelado 26-ago) → CSV de contactos con email.
 - **Emilia** · `agente-outbound` — convierte ese CSV en secuencia de emails lista para aprobar.
 - **Valen** · `mini-diagnostico` — el diagnóstico gratis de 1 página (48h) que engancha.
 

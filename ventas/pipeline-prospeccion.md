@@ -99,3 +99,15 @@ A pedido de Ramón, se exploró si vale la pena abrir el piloto a clínicas chic
 | Empresa | Contacto | Rubro | 1er contacto | Estado | Próxima acción |
 |---|---|---|---|---|---|
 | | | | | | |
+
+
+---
+
+## Canon de envíos (fijado por Ramón, 28-ago-2026 — reemplaza las 3 versiones en conflicto)
+
+- **Máx 3 toques** por prospecto (cadencia 0/3/7). Después del 3º: guardar y reactivar en 4-6 semanas con gancho nuevo.
+- **10 envíos/día · tope duro 50/semana.** Regla de capacidad: 1 cliente activo = 25/sem; 2 = pausa.
+- **Catch-all = 2ª ola**, solo en lotes de 10-15/semana midiendo rebote; **si el rebote supera el 5%, se corta la ola**.
+- **Dedup obligatorio** contra `ventas/enviados/REGISTRO-enviados.csv` antes de redactar.
+- Semana de Fiestas Patrias (15-21 sep 2026): cero lotes.
+- **Apollo cancelado (26-ago)** — fuente vigente: Google Maps + curl. Este doc conserva las búsquedas guardadas solo como referencia histórica.
