@@ -4,14 +4,13 @@
 
 SpindleLab es una agencia de marketing con IA especializada: el eje es el SEO técnico, la visibilidad en motores de IA (AEO/GEO) y el desarrollo web. Google y Meta Ads completan la ruta. Trabajamos midiendo primero (línea base real), sin prometer el "#1" y sin prueba social inventada. La medición de presencia en IA es reproducible: mismas consultas, mismos motores, misma cadencia.
 
-## Índice de Citabilidad
+## Chequeo de visibilidad en IA
 
-El **Índice de Citabilidad** es un instrumento creado por SpindleLab (Santiago, Chile) para medir si los motores de respuesta con IA citan a una empresa cuando alguien pregunta por su categoría. Se publica bajo licencia CC BY 4.0 y es de uso libre citando la fuente.
+SpindleLab publica una herramienta gratuita y sin registro que revisa si un sitio está preparado para los motores de respuesta con IA: https://spindlelab.cl/diagnostico/
 
-- **Definición:** cada combinación de pregunta y motor se puntúa de 0 a 3 (0 = no aparece, 1 = mención al pasar, 2 = mención con descripción correcta, 3 = entre las primeras opciones). El índice es (puntos obtenidos ÷ puntos posibles) × 100, en escala 0 a 100.
-- **Escala:** 0-10 Invisible · 11-30 Presencia marginal · 31-60 Presencia establecida · 61-85 Referente de categoría · 86-100 Dominancia de categoría.
-- **Protocolo:** cinco preguntas fijas, tres motores (ChatGPT, Gemini, Perplexity), una sesión limpia por pregunta, cadencia mensual, y publicación de la corrida completa.
-- **Definición completa y protocolo:** [Índice de Citabilidad](https://spindlelab.cl/indice/)
+Corre 21 chequeos verificables sobre el sitio público, agrupados en tres bloques con peso declarado: acceso de los bots de IA (30 puntos: GPTBot, ClaudeBot, PerplexityBot, Google-Extended y HTTPS), comprensión de la entidad (40 puntos: JSON-LD, Organization, dirección y contacto, sameAs, autor con credenciales, título, meta description, H1) y citabilidad (30 puntos: llms.txt, FAQPage, sitemap, canonical, idioma, títulos en forma de pregunta, fechas y volumen de texto). Devuelve un puntaje de 0 a 100 y las tres prioridades a corregir. La metodología completa está publicada en la misma página.
+
+En esa página también está el protocolo de la medición mensual de menciones: cinco preguntas fijas por tres motores (ChatGPT, Gemini y Perplexity), una vez al mes, con fecha y fuente registradas.
 
 ## Soluciones
 - [Auditoría SEO Técnica](https://spindlelab.cl/servicios/auditoria-seo-tecnica/): revisión de la base técnica del sitio (rastreo, velocidad, datos estructurados) que sostiene tanto el posicionamiento en Google como la citabilidad por la IA.
