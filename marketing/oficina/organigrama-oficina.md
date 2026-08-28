@@ -4,7 +4,7 @@
 > un empleado con **nombre, rol, memoria y carpeta de trabajo** — igual que una
 > oficina real, pero cada empleado es una sesión de Claude Code activada por una
 > *skill*. Este documento es el único lugar donde se ve la oficina completa de un
-> vistazo. Última actualización: 2026-08-02.
+> vistazo. Última actualización: 2026-08-28.
 >
 > **Nomenclatura híbrida.** Cada agente tiene un nombre humano (para hablar de él
 > como "empleado") y, entre paréntesis, la skill técnica real que lo activa. El
@@ -25,7 +25,7 @@ DIRECCIÓN
 
 CAPTACIÓN           Dereck (buscar-leads) · Valen (mini-diagnostico) · Emilia (agente-outbound) ★
 VENTAS              Raquel (agente-crm) ★
-MARCA & CONTENIDO   Cata (persona-social-media) · Bruno (persona-director-creativo) · Renata (agente-copywriter) ★ · Marta (calendario editorial) ○
+MARCA & CONTENIDO   Cata (persona-social-media) · Bruno (persona-director-creativo) · Renata (agente-copywriter) ★ · Marta (agente-calendario-editorial) ★
 PAID MEDIA          Gonzalo (persona-paid-media) · Fran (persona-meta-ads)
 ENTREGA             Diego (persona-disenador-web) · Simón (agente-seo-aeo) ★  ← el servicio core que se cobra
 PRODUCTO & DISEÑO   Nadia (producto-ui-ux) ★ · Pía (agente-growth-producto) ★   (cross-proyecto: Praxi + web)
@@ -53,7 +53,7 @@ Estado: **✅ trabajando** · **★ nuevo (esta pasada)** · **○ vacante** · 
 | **Cata** | Marca & Contenido | `persona-social-media` | `marketing/outbound/semana-*/posts-*.md`, RRSS | `oficina/memoria/cata-social.md` | Tema/hallazgo real → post LinkedIn/IG con pase de tono | ✅ |
 | **Bruno** | Marca & Contenido | `persona-director-creativo` | assets HTML→PNG por carpeta, Higgsfield | `oficina/memoria/bruno-creativo.md` | Concepto → carrusel/Reel/key visual (1080×1080 / 1080×1920) | ✅ |
 | **Renata** ★ | Marca & Contenido | `agente-copywriter` | `marketing/redes/`, `marketing/blog-borradores/` (a crear) | `oficina/memoria/renata-copy.md` (a crear) | Tema → artículo long-form / ad copy / guion de Reel / copy de email (entrega texto, no publica) | ★ nuevo |
-| **Marta** ○ | Marca & Contenido | `agente-calendario-editorial` | `marketing/calendario-editorial.md` (a crear) | — | Estrategia mensual → calendario de contenido de ambas cuentas | ○ vacante |
+| **Marta** ★ | Marca & Contenido | `agente-calendario-editorial` | `marketing/calendario-editorial.md` | `oficina/memoria/marta-calendario.md` | Estrategia mensual → calendario de contenido de ambas cuentas + tandas de revisión humana | ★ nuevo |
 | **Gonzalo** | Paid Media | `persona-paid-media` | Google Ads (navegador) + cron semanal | `oficina/memoria/gonzalo-google-ads.md` | Presupuesto/objetivo → campañas Google (nunca escribe sin OK) | ✅ |
 | **Fran** | Paid Media | `persona-meta-ads` | Meta Ads Manager (navegador) | `oficina/memoria/fran-meta-ads.md` | Presupuesto/objetivo → campañas Meta (nunca escribe sin OK) | ✅ |
 | **Diego** | Entrega | `persona-disenador-web` | `spindlelab-site/`, sitios de clientes | `oficina/memoria/diego-web.md` | Encargo → sitio/blog publicado (JSON-LD, versionado de assets) | ✅ |
@@ -106,7 +106,7 @@ que **lanza sus propios productos** (Praxi, etc.). ✅ cubierto · ◐ parcial �
 | Producto de entrada (diagnóstico) | Valen | ✅ |
 | Ventas / CRM | Raquel | ✅ |
 | Contenido social | Cata | ✅ |
-| Calendario editorial | Marta | ○ vacante |
+| Calendario editorial | Marta | ✅ ★ |
 | Copy long-form / guion / ad copy | Renata | ✅ ★ |
 | Creatividad visual | Bruno | ✅ |
 | Paid — Google / Meta | Gonzalo / Fran | ✅ |
@@ -141,8 +141,11 @@ disponible (repo + global).
 | 4 | **Pía — Growth de producto** | `agente-growth-producto` | Onboarding, activación, lifecycle, retención de los productos propios (Praxi). | ★ construido |
 
 **Quedan en cola (vacantes ya identificadas):**
-- **Marta** (`agente-calendario-editorial`) — ordena a Cata/Bruno/Renata por mes y tema.
 - **Monse** (`agente-finanzas`) — cobros por fase separados del CRM (hubo el error "Fase 1 cobrada").
+
+**Contratada el 28-ago-2026:** **Marta** (`agente-calendario-editorial`) — ordena a
+Cata/Bruno/Renata por mes y tema; nació con el relanzamiento del motor (su
+fundamentación vive en el encargo `relanzamiento-motor-y-cierre-plan-operativo.md`).
 
 **Extras de escala (más adelante):** `agente-enrichment` (limpiar emails antes de
 Emilia), `agente-referidos` (activar la red de clientes ganados), `agente-community`

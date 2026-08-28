@@ -27,7 +27,7 @@ Nombre humano · `skill` — labor en una línea.
 - **Renata** · `agente-copywriter` — escribe: artículos, ad copy, guiones, email.
 - **Cata** · `persona-social-media` — tono y cadencia de LinkedIn + Instagram.
 - **Bruno** · `persona-director-creativo` — carruseles, Reels, key visuals.
-- **Marta** · `agente-calendario-editorial` — *(vacante)* el calendario que ordena a los tres.
+- **Marta** · `agente-calendario-editorial` — el calendario que ordena a los tres.
 
 **Paid Media**
 - **Gonzalo** · `persona-paid-media` — Google Ads. Lee libre, escribe solo con OK.
