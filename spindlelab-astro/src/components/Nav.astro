@@ -1,6 +1,6 @@
 ---
 import Icon from './Icon.astro';
-import { NAV_LINKS, CONTACTO, EMAIL } from '../consts';
+import { NAV_LINKS, MAILTO, EMAIL } from '../consts';
 ---
 
 <nav
@@ -27,16 +27,16 @@ import { NAV_LINKS, CONTACTO, EMAIL } from '../consts';
       ))
     }
     <a
-      href={CONTACTO}
+      href="/diagnostico/"
       class="ml-2 bg-paper hover:bg-white text-bg text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
     >
-      Diagnóstico gratis
+      Chequea tu sitio
     </a>
   </div>
 
   <div class="flex items-center gap-3 sm:gap-6 text-fg-muted">
     <a
-      href={CONTACTO}
+      href={MAILTO}
       class="hidden sm:flex lg:hidden items-center gap-2 text-sm font-medium hover:text-fg transition-colors"
     >
       <Icon name="mail" />
@@ -86,16 +86,16 @@ import { NAV_LINKS, CONTACTO, EMAIL } from '../consts';
       }
     </div>
     <div class="mt-8 flex flex-col gap-4">
-      <a href={CONTACTO} class="flex items-center gap-2 text-sm font-medium text-fg-muted">
+      <a href={MAILTO} class="flex items-center gap-2 text-sm font-medium text-fg-muted">
         <Icon name="mail" />
         {EMAIL}
       </a>
       <a
-        href={CONTACTO}
+        href="/diagnostico/"
         data-menu-link
         class="mt-2 bg-paper hover:bg-white text-bg text-sm font-semibold px-5 py-3 rounded-full transition-colors text-center"
       >
-        Diagnóstico gratis
+        Chequea tu sitio
       </a>
     </div>
   </div>

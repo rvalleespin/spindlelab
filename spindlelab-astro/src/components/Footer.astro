@@ -1,6 +1,6 @@
 ---
 import Icon from './Icon.astro';
-import { CONTACTO, EMAIL } from '../consts';
+import { MAILTO, EMAIL } from '../consts';
 
 const COLUMNAS = [
   {
@@ -66,7 +66,7 @@ const COLUMNAS = [
             Santiago, Chile
           </li>
           <li>
-            <a href={CONTACTO} class="flex items-center gap-2 hover:text-fg transition-colors">
+            <a href={MAILTO} class="flex items-center gap-2 hover:text-fg transition-colors">
               <Icon name="mail" class="w-4 h-4 text-fg-muted" />
               {EMAIL}
             </a>

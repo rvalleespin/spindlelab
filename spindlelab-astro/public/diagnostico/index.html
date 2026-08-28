@@ -119,7 +119,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         {"@type": "Question", "name": "¿Guardan mi dominio?",
          "acceptedAnswer": {"@type": "Answer", "text": "No guardamos el dominio consultado ni te pedimos datos. El chequeo lee únicamente páginas públicas de tu sitio, las mismas que lee cualquier buscador."}},
         {"@type": "Question", "name": "¿En qué se diferencia del diagnóstico completo?",
-         "acceptedAnswer": {"@type": "Answer", "text": "El chequeo es automático y revisa tu sitio. El diagnóstico completo lo hago yo: le pregunto a ChatGPT, Gemini y Perplexity por tu categoría, veo quién aparece en tu lugar y qué fuentes citan, y te entrego en una página qué te frena y qué mueve la aguja. Gratis, en 24 horas."}}
+         "acceptedAnswer": {"@type": "Answer", "text": "El chequeo es automático y revisa tu sitio. El diagnóstico completo lo hacemos a mano: le preguntamos a ChatGPT, Gemini y Perplexity por tu categoría, vemos quién aparece en tu lugar y qué fuentes citan, y te entregamos en una página qué te frena y qué mueve la aguja. Gratis, en 24 horas."}}
       ]
     },
     {
@@ -164,7 +164,9 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
   .chq-bloque h3{font-family:var(--headline);font-size:19px;font-weight:600;letter-spacing:-.02em;color:var(--paper);margin:0 0 3px}
   .chq-bloque p.sub{font-size:14px;color:var(--ink-50);margin:0 0 16px}
   .chq-list{list-style:none;margin:0;padding:0;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  .chq-list li{background:var(--surface);padding:14px 18px;display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
+  .chq-list li{background:var(--surface);padding:13px 18px;display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
+  .chq-list li.ok{padding:9px 18px;align-items:center}
+  .chq-bloque{margin-top:26px}
   .chq-mark{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:1px}
   .chq-si{border:1px solid var(--teal);color:var(--teal)}
   .chq-no{border:1px solid #d98c8c;color:#d98c8c}
@@ -180,9 +182,22 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
   .chq-r1:hover{background:#fff}
   .chq-r2{border:1px solid var(--line);color:var(--paper)}
   .chq-r2:hover{border-color:var(--teal)}
+  .metodo-det{border:1px solid var(--line);border-radius:14px;padding:0 24px;background:var(--surface)}
+  .metodo-det[open]{padding-bottom:26px}
+  .metodo-det summary{cursor:pointer;padding:18px 0;font-size:15px;font-weight:600;color:var(--paper);list-style:none}
+  .metodo-det summary::-webkit-details-marker{display:none}
+  .metodo-det summary::after{content:'+';float:right;color:var(--teal);font-size:19px;line-height:1}
+  .metodo-det[open] summary::after{content:'\2212'}
+  .metodo-det summary:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
   .peso-list{list-style:none;margin:0;padding:0;display:grid;gap:14px;max-width:780px}
   .peso-list li{border-left:2px solid var(--teal);padding:2px 0 2px 16px;font-size:15px;line-height:1.65;color:var(--ink-70)}
   .peso-list b{color:var(--paper);font-weight:600}
+  /* densidad: esta página compite con el scroll, no puede diluirse */
+  .sec{padding:56px 0}
+  .band-navy{padding:56px 0}
+  .page-hero{padding:64px 0 44px}
+  .sec-head{margin-bottom:26px}
+  .peso-list{gap:12px}
   .nota-std{border-left:3px solid var(--teal);background:var(--surface);padding:20px 24px;border-radius:0 12px 12px 0;font-size:14px;line-height:1.7;color:var(--ink-70);max-width:780px}
   .nota-std strong{color:var(--paper)}
   @media(prefers-reduced-motion:reduce){.chq-form button{transition:none}}
@@ -202,7 +217,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       <li><a href="/blog/">Blog</a></li>
       <li><a href="/contacto/">Contacto</a></li>
     </ul>
-    <a class="btn gold small nav-cta" href="/contacto/">Diagnóstico gratis</a></div>
+    <a class="btn gold small nav-cta" href="/diagnostico/">Chequea tu sitio</a></div>
   </div>
 </header>
 
@@ -239,35 +254,27 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       <h2>Los 21 chequeos, publicados.</h2>
       <p>Ninguna herramienta del rubro publica su metodología. Acá está la nuestra completa, con el peso de cada bloque, para que puedas repetir el chequeo a mano si quieres.</p>
     </div>
+    <details class="metodo-det">
+      <summary>Ver los 21 chequeos y cuánto pesa cada bloque</summary>
     <ul class="peso-list">
       <li><b>¿Te pueden leer? · 30 puntos.</b> Leemos tu robots.txt y verificamos que GPTBot (ChatGPT), ClaudeBot (Claude), PerplexityBot y Google-Extended (Gemini) no estén bloqueados, y que el sitio responda 200 por HTTPS. Si los bots no entran, nada de lo demás importa.</li>
       <li><b>¿Te entienden? · 40 puntos.</b> Revisamos tus datos estructurados: si declaras tu negocio como entidad, si esa entidad tiene dirección y contacto, si te conectas con al menos tres perfiles externos, y si hay una persona con credenciales detrás del contenido. Más el título, la meta description y el H1.</li>
       <li><b>¿Te pueden citar? · 30 puntos.</b> Comprobamos llms.txt, preguntas frecuentes marcadas con FAQPage, sitemap.xml, URL canónica, idioma declarado, títulos escritos como pregunta, fechas en el schema y cantidad de texto visible en tu portada.</li>
     </ul>
     <div class="nota-std" style="margin-top:28px">
-      <strong>Lo que este chequeo no mide.</strong> No mide si hoy te citan. Eso depende de que te mencionen en fuentes que la IA lee, y no se puede saber leyendo tu sitio: hay que preguntarle a los motores. Eso es el diagnóstico completo, y lo hago yo a mano.
+      <strong>Lo que este chequeo no mide.</strong> No mide si hoy te citan. Eso depende de que te mencionen en fuentes que la IA lee, y no se puede saber leyendo tu sitio: hay que preguntarle a los motores. Eso es el diagnóstico completo, y lo hacemos a mano.
     </div>
+    <div style="margin-top:46px;padding-top:38px;border-top:1px solid var(--line)" id="medicion-mensual">
+      <h3 style="font-family:var(--headline);font-size:clamp(19px,2.6vw,23px);font-weight:600;letter-spacing:-.02em;color:var(--paper);margin:0 0 8px">Y cómo medimos si la IA te nombra.</h3>
+      <p style="font-size:15px;line-height:1.7;color:var(--ink-70);max-width:70ch;margin:0 0 20px">El chequeo de arriba lee tu sitio. Esto le pregunta a los motores. Es la medición que corremos cada mes en los planes con acompañamiento: <b style="color:var(--paper);font-weight:600">cinco preguntas fijas</b> por <b style="color:var(--paper);font-weight:600">tres motores</b> (ChatGPT, Gemini y Perplexity), siempre las mismas, con fecha y con la fuente de cada respuesta registrada. Cambiar las preguntas rompería la comparación entre meses.</p>
+      <div class="nota-std"><strong>Lo que muestran las corridas.</strong> Quienes aparecen recomendados casi nunca lo consiguen desde su propio sitio: los motores los citan desde rankings, directorios y artículos de terceros. Sin saber de dónde sale la recomendación, no hay nada que trabajar.</div>
+    </div>
+    </details>
+
   </div>
 </section>
 
-<section class="sec" id="medicion-mensual">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">La otra mitad</span>
-      <h2>Cómo medimos si la IA te nombra.</h2>
-      <p>El chequeo de arriba lee tu sitio. Esto le pregunta a los motores. Es la medición que corremos cada mes en los planes con acompañamiento, y el protocolo está acá para que cualquiera lo repita.</p>
-    </div>
-    <ul class="peso-list">
-      <li><b>Cinco preguntas fijas.</b> Las que haría un cliente tuyo antes de contratar, escritas una vez y congeladas. Cambiarlas rompería la comparación entre meses.</li>
-      <li><b>Tres motores.</b> ChatGPT, Gemini y Perplexity. Quince observaciones por corrida.</li>
-      <li><b>Una vez al mes, con fecha.</b> Se registra qué respondió cada motor, quién apareció y de qué fuente lo sacó.</li>
-      <li><b>Se registra la fuente, no solo el nombre.</b> Saber quién apareció no sirve si no sabes qué página lo puso ahí.</li>
-    </ul>
-    <div class="nota-std" style="margin-top:28px">
-      <strong>Lo que muestran las corridas.</strong> Quienes aparecen recomendados casi nunca lo consiguen desde su propio sitio: los motores los citan desde rankings, directorios y artículos de terceros. Por eso la medición registra la fuente de cada respuesta. Sin saber de dónde sale la recomendación, no hay nada que trabajar.
-    </div>
-  </div>
-</section>
+
 
 <section class="band-navy">
   <div class="wrap">
@@ -284,26 +291,21 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       <div class="step reveal">
         <span class="num">02</span>
         <h3>El diagnóstico completo</h3>
-        <p>Lo hago yo. Le pregunto a ChatGPT, Gemini y Perplexity por tu categoría, veo quién aparece en tu lugar y qué fuentes citan. Una página, gratis, en 24 horas.</p>
+        <p>Lo hacemos a mano. Le preguntamos a ChatGPT, Gemini y Perplexity por tu categoría, y vemos quién aparece en tu lugar y qué fuentes citan. Una página, gratis, en 24 horas.</p>
       </div>
-      <div class="step reveal">
-        <span class="num">03</span>
-        <h3>Si decides seguir</h3>
-        <p>Implementamos los cambios y medimos si la IA empieza a nombrarte. Con fecha, no de memoria. <a href="/servicios/">Mira las soluciones y sus precios</a>.</p>
       </div>
-    </div>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Preguntas</span><h2>Lo que suelen preguntarme.</h2></div>
+    <div class="sec-head"><span class="eyebrow">Preguntas</span><h2>Lo que solemos responder.</h2></div>
     <div class="faq">
       <details><summary>¿El chequeo es realmente gratis?</summary><p class="faq-a">Sí, y no pedimos tu correo. Escribes el dominio y ves el resultado completo en pantalla, con el detalle de cada chequeo.</p></details>
       <details><summary>¿Qué mide exactamente el puntaje?</summary><p class="faq-a">Mide si tu sitio está técnicamente preparado para que los motores de IA lo lean, lo entiendan y lo puedan citar. No mide si hoy te citan: eso depende de menciones en fuentes externas y se revisa en el diagnóstico completo.</p></details>
       <details><summary>¿Un puntaje alto significa que ChatGPT me va a recomendar?</summary><p class="faq-a">No. Este chequeo mide si tu sitio está preparado, no si hoy te citan. Los motores arman sus respuestas con fuentes de terceros (rankings, directorios, artículos), no solo con tu sitio. Puedes estar impecable por dentro y aun así no aparecer. Qué fuentes te faltan es justo lo que revisa el diagnóstico completo.</p></details>
       <details><summary>¿Guardan mi dominio?</summary><p class="faq-a">No guardamos el dominio consultado ni te pedimos datos. El chequeo lee únicamente páginas públicas de tu sitio, las mismas que lee cualquier buscador.</p></details>
-      <details><summary>¿En qué se diferencia del diagnóstico completo?</summary><p class="faq-a">El chequeo es automático y revisa tu sitio. El diagnóstico completo lo hago yo: le pregunto a ChatGPT, Gemini y Perplexity por tu categoría, veo quién aparece en tu lugar y qué fuentes citan, y te entrego en una página qué te frena y qué mueve la aguja. Gratis, en 24 horas.</p></details>
+      <details><summary>¿En qué se diferencia del diagnóstico completo?</summary><p class="faq-a">El chequeo es automático y revisa tu sitio. El diagnóstico completo lo hacemos a mano: le preguntamos a ChatGPT, Gemini y Perplexity por tu categoría, vemos quién aparece en tu lugar y qué fuentes citan, y te entregamos en una página qué te frena y qué mueve la aguja. Gratis, en 24 horas.</p></details>
     </div>
   </div>
 </section>
@@ -311,8 +313,8 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
 <section class="cta" aria-labelledby="cta-title">
   <div class="wrap">
     <span class="eyebrow teal">Hablemos</span>
-    <h2 id="cta-title">¿Prefieres que lo revise yo?</h2>
-    <p>Te entrego el diagnóstico completo en una página. Gratis, en 24 horas, sin compromiso.</p>
+    <h2 id="cta-title">¿Prefieres que lo revisemos nosotros?</h2>
+    <p>Te entregamos el diagnóstico completo en una página. Gratis, en 24 horas, sin compromiso.</p>
     <a class="btn gold" href="/contacto/">Agenda tu diagnóstico gratis</a>
     <br>
     <a class="email" href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a>
@@ -413,12 +415,13 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       if(!items.length) return;
       h += '<div class="chq-bloque"><h3>' + esc(b.titulo) + '</h3><p class="sub">' + esc(b.sub) + '</p><ul class="chq-list">';
       items.forEach(function(i){
-        h += '<li><span class="chq-mark ' + (i.ok ? 'chq-si' : 'chq-no') + '" aria-hidden="true">' +
+        h += '<li' + (i.ok ? ' class="ok"' : '') + '><span class="chq-mark ' + (i.ok ? 'chq-si' : 'chq-no') + '" aria-hidden="true">' +
              (i.ok ? '\u2713' : '\u2715') + '</span><div>' +
              '<span class="sr-only">' + (i.ok ? 'Cumple: ' : 'No cumple: ') + '</span>' +
              '<div class="chq-t">' + esc(i.titulo) + '</div>' +
-             '<div class="chq-d">' + esc(i.detalle) + '</div>' +
-             (i.arreglo ? '<div class="chq-fix">' + esc(i.arreglo) + '</div>' : '') +
+             (i.ok ? '' :
+               '<div class="chq-d">' + esc(i.detalle) + '</div>' +
+               (i.arreglo ? '<div class="chq-fix">' + esc(i.arreglo) + '</div>' : '')) +
              '</div></li>';
       });
       h += '</ul></div>';
@@ -426,7 +429,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
 
     h += '<div class="chq-remate"><h3>Esto es la mitad técnica.</h3>' +
          '<p>El chequeo revisa tu sitio. El diagnóstico completo te dice quién aparece hoy cuando alguien pregunta por tu rubro en ChatGPT, Gemini y Perplexity, ' +
-         'y de qué fuentes lo están sacando. Lo hago yo, en una página, gratis, en 24 horas.</p>' +
+         'y de qué fuentes lo están sacando. Te lo entregamos en una página, gratis, en 24 horas.</p>' +
          '<div class="chq-ramas"><a class="chq-r1" href="/contacto/">Quiero el análisis completo</a>' +
          '<a class="chq-r2" href="/contacto/">Prefiero hablarlo contigo</a></div></div>';
 
