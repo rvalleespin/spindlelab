@@ -33,7 +33,7 @@ Por qué guardar en vez de insistir:
    - `gzamora@corteszamora.cl` (abogados) — conversación viva.
    - `vtagle@bhabogados.cl` (abogados) — respondió 25-ago.
    - `pcalvache@dentimagen.cl` (dental) — intercambios previos.
-   - ⚠️ `cdelacruz@clinicahunza.cl` (dental) — **respondió el 19-ago y el hilo figura SIN LEER**. Revisar si quedó sin contestar.
+   - `cdelacruz@clinicahunza.cl` (dental) — respondió el 19-ago **rechazando el servicio** (confirmado por Ramón, 28-ago). Cerrado, no recontactar.
    - `revista@chefandhotel.cl` — es una **revista/medio**, no un cliente típico; sirve para prensa/visibilidad, tratar aparte.
 2. **Abogados nuevos, sin respuesta (36) → EN CURSO.** No tocar a mano: el copiloto les manda el toque 2 solo. Después de eso, pasan a "guardar".
 3. **Resto sin respuesta (96) → GUARDAR.** Ya tienen sus 2 toques. Archivar y reactivar en 4-6 semanas con gancho nuevo.

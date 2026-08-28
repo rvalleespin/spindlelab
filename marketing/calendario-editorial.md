@@ -55,7 +55,7 @@ comprobarlo tú mismo" (brief v2). **Gancho central:** el chequeo → spindlelab
 
 | Tanda | Fecha propuesta | Contenido | Duración est. |
 |---|---|---|---|
-| **Pase 1** | vie 29 ago | Brief v2 + línea editorial + este calendario + etiqueta de serie + R7 (permiso a Bernardo, correo lo envía él) + R8 (video, opcional) | ~30 min |
+| **Pase 1** | vie 29 ago | Brief v2 + línea editorial + este calendario + etiqueta de serie + R8 (video, opcional). R7 resuelto: caso con nombre EN RESERVA hasta ≥3 clientes verificables | ~30 min |
 | **Pase 2** | lun 1 sep | Ventana 1 completa (4 piezas) + blog #1 + lote 1 de outbound | ~60–90 min |
 | **Pase 3** | vie 5 sep | Ventana 2 completa + blog #2 + lote 2 de outbound + checkpoint día 60 (lo corre Tomás el 4-sep) | ~60 min |
 | **Pase 4** | vie 19 sep (liviano, post-fiestas) | Ventanas 3–4 (todo reciclado) + tanda 2 del blog | ~45 min |

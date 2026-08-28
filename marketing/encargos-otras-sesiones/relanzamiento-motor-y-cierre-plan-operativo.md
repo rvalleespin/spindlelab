@@ -40,8 +40,9 @@ y los diffs, no este resumen, como fuente de verdad.
       (decisión de Ramón 28-ago).
 - [ ] **Meta Ads:** el estado sigue sin levantarse desde julio (la alerta del 23-jul sigue vigente).
       Déjalo como pendiente explícito de `persona-meta-ads`, no lo des por resuelto.
-- [ ] **SimpleTrust → Bernardo:** el caso público se pide a Bernardo (permiso AÚN no pedido; Ramón
-      decide en su Pase 1 si lo pide ya). SimpleTrust queda en pausa formal.
+- [ ] **Caso público con nombre: EN RESERVA** (decisión de Ramón, 28-ago): no se pide permiso a
+      Bernardo ni a nadie hasta tener **al menos 3 clientes con datos verificables**. SimpleTrust
+      queda en pausa formal. El contenido de caso sale anonimizado mientras tanto.
 - [ ] **Artículos 3–8 del plan viejo:** márcalos "reemplazados por la línea editorial v2"
       (`marketing/linea-editorial-blog-v2.md`). Los temas 3, 4 y 5 sobreviven ahí reciclados (posts #4,
       #1 y #5 de la v2).
@@ -64,8 +65,9 @@ en el plan. Insumo: los 6 respondedores nunca se cargaron al pipeline (punto 5).
 ## 5. Coordinar a Raquel (CRM)
 
 Los 6 respondedores del outbound de agosto no existen en `ventas/pipeline.md`: Grupo Altum, Cortés
-Zamora, BH Abogados, Dentimagen, Clínica Hunza (⚠️ su respuesta del 19-ago figura sin leer en Gmail)
-y Chef&Hotel (medio, no cliente). Que Raquel los cargue levantando el estado real desde Gmail
+Zamora, BH Abogados, Dentimagen, Clínica Hunza (**rechazó el servicio** — confirmado por Ramón el
+28-ago; cargarla como Perdido, no recontactar) y Chef&Hotel (medio, no cliente). Que Raquel los
+cargue levantando el estado real desde Gmail
 (`search_threads` por dominio), no desde los CSV.
 
 ## 6. Qué NO hacer

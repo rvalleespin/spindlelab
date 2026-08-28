@@ -83,7 +83,8 @@ Mini-diagnóstico completo en 24 horas: spindlelab.cl/contacto
 >
 > El método completo: spindlelab.cl/metodo
 >
-> *Nota: el candidato natural es Bernardo (Desarrollo Web); su permiso aún no se pide. SimpleTrust sigue en pausa desde julio.*
+> *Nota (28-ago, decisión de Ramón): el caso con nombre queda EN RESERVA hasta tener al menos 3
+> clientes con datos verificables. Mientras tanto, todo caso sale anonimizado (Formato 4).*
 
 ## Formato 6 — El chequeo como gancho (nuevo, 28-ago)
 
