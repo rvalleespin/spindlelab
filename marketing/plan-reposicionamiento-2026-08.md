@@ -93,7 +93,7 @@ La home actual ya trae mucho de esto — el plan es **cerrar la brecha**, no par
 
 ## 5. Decisiones abiertas (de Ramón, antes de ejecutar)
 
-1. **Nombre del método.** ✅ **DECIDIDO (2026-08-02): «Método Spindle».** (El sitio v2 lo había nombrado «Método Señal»; se renombra a Spindle en el encargo de sitio.)
+1. **Nombre del método.** ✅ **CANON VIGENTE (2026-08-28): «Método SpindleLab»** — es el nombre que quedó en el sitio en vivo (Hero y /metodo/) tras el reposicionamiento al motor, y el que usa todo lo nuevo (brief v2, plantillas, calendario). Historia: «Método Señal» (sitio v2) → «Método Spindle» (decisión 2-ago) → «Método SpindleLab» (shipeado 20–28 ago).
 2. **Artefacto público de evidencia #1.** ¿Cuál sale primero? (a) el método nombrado como página verificable; (b) el protocolo de medición de visibilidad IA abierto; (c) el primer caso real con datos — **requiere permiso de un cliente** (p. ej. pedirlo formalmente, pendiente histórico del CRM).
 3. **Autoridad de entidad como servicio.** ¿Se anuncia ya como "próximamente" o se espera a tener el primer entregable?
 
