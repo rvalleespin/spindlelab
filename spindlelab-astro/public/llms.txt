@@ -8,9 +8,9 @@ SpindleLab es una agencia de marketing con IA especializada: el eje es el SEO t�
 
 SpindleLab publica una herramienta gratuita y sin registro que revisa si un sitio está preparado para los motores de respuesta con IA: https://spindlelab.cl/diagnostico/
 
-Corre 20 chequeos verificables sobre el sitio público, agrupados en tres bloques con peso declarado: acceso de los bots de IA (35 puntos: GPTBot, ClaudeBot, PerplexityBot, Google-Extended y HTTPS), comprensión de la entidad (42 puntos: JSON-LD, Organization, dirección y contacto, sameAs, autor con credenciales, título, meta description, H1) y citabilidad (33 puntos: llms.txt, FAQPage, sitemap, canonical, idioma, títulos en forma de pregunta, fechas y volumen de texto). Devuelve un puntaje de 0 a 100 y las tres prioridades a corregir. La metodología completa está publicada en la misma página.
+Corre 21 chequeos verificables sobre el sitio público, agrupados en tres bloques con peso declarado: acceso de los bots de IA (30 puntos: GPTBot, ClaudeBot, PerplexityBot, Google-Extended y HTTPS), comprensión de la entidad (40 puntos: JSON-LD, Organization, dirección y contacto, sameAs, autor con credenciales, título, meta description, H1) y citabilidad (30 puntos: llms.txt, FAQPage, sitemap, canonical, idioma, títulos en forma de pregunta, fechas y volumen de texto). Devuelve un puntaje de 0 a 100 y las tres prioridades a corregir. La metodología completa está publicada en la misma página.
 
-En esa página también está el protocolo de la medición mensual de menciones: cinco preguntas fijas por tres motores (ChatGPT, Gemini y Perplexity), una vez al mes, con fecha y fuente registradas. SpindleLab publica su propio resultado: en la corrida del 25 de agosto de 2026 obtuvo 0 de 15.
+En esa página también está el protocolo de la medición mensual de menciones: cinco preguntas fijas por tres motores (ChatGPT, Gemini y Perplexity), una vez al mes, con fecha y fuente registradas.
 
 ## Soluciones
 - [Auditoría SEO Técnica](https://spindlelab.cl/servicios/auditoria-seo-tecnica/): revisión de la base técnica del sitio (rastreo, velocidad, datos estructurados) que sostiene tanto el posicionamiento en Google como la citabilidad por la IA.

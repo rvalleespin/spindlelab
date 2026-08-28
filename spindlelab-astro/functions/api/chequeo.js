@@ -259,7 +259,7 @@ export async function chequear(entrada, fetchImpl = fetch) {
   for (const [ua, motor] of bots) {
     const bloqueado = bloqueaBot(robotsTxt, ua);
     add(
-      'acceso', `bot-${ua}`, `${motor} puede leer tu sitio`, !bloqueado, 7,
+      'acceso', `bot-${ua}`, `${motor} puede leer tu sitio`, !bloqueado, 6,
       bloqueado
         ? `Tu robots.txt bloquea a ${ua}.`
         : robotsTxt
@@ -270,14 +270,14 @@ export async function chequear(entrada, fetchImpl = fetch) {
   }
   const httpsOk = home.url.startsWith('https://') && home.status === 200;
   add(
-    'acceso', 'https', 'El sitio responde por HTTPS', httpsOk, 7,
+    'acceso', 'https', 'El sitio responde por HTTPS', httpsOk, 6,
     httpsOk ? `Respondió ${home.status} sobre HTTPS.` : `Respondió ${home.status}.`,
     'Asegura que el dominio sirva por HTTPS y devuelva 200.'
   );
 
   // --- Bloque 2: ¿te entienden? ---
   add(
-    'entidad', 'jsonld', 'Tienes datos estructurados', nodos.length > 0, 10,
+    'entidad', 'jsonld', 'Tienes datos estructurados', nodos.length > 0, 6,
     nodos.length ? `Encontramos ${nodos.length} nodo(s) de JSON-LD.` : 'No encontramos JSON-LD válido.',
     'Agrega JSON-LD. Es la forma en que le explicas a la IA qué es tu negocio.'
   );
@@ -287,19 +287,19 @@ export async function chequear(entrada, fetchImpl = fetch) {
     'Declara un nodo Organization (o LocalBusiness) con nombre, dirección y contacto.'
   );
   add(
-    'entidad', 'entidad-completa', 'Tu entidad tiene dirección y contacto', entidadCompleta, 6,
+    'entidad', 'entidad-completa', 'Tu entidad tiene dirección y contacto', entidadCompleta, 5,
     entidadCompleta
       ? 'Tu schema declara dirección y forma de contacto.'
       : 'Tu entidad existe pero le falta dirección o contacto.',
     'Suma address y telephone/email al nodo de tu negocio. La IA los usa para confiar en que existes.'
   );
   add(
-    'entidad', 'sameas', 'Te conectas con al menos 3 perfiles externos', sameAsN >= 3, 8,
+    'entidad', 'sameas', 'Te conectas con al menos 3 perfiles externos', sameAsN >= 3, 6,
     sameAsN ? `Tu schema declara ${sameAsN} perfil(es) en sameAs.` : 'Tu schema no tiene sameAs.',
     'Suma sameAs con tus perfiles reales (LinkedIn, Instagram, Google Business). Uno solo no basta.'
   );
   add(
-    'entidad', 'autor', 'Hay una persona con credenciales detrás', conAutor, 6,
+    'entidad', 'autor', 'Hay una persona con credenciales detrás', conAutor, 5,
     conAutor
       ? 'Tu schema declara una persona con cargo o especialidad.'
       : 'No hay un Person con cargo, especialidad o formación.',
@@ -307,18 +307,18 @@ export async function chequear(entrada, fetchImpl = fetch) {
   );
   const titleOk = title.length >= 15 && title.length <= 65;
   add(
-    'entidad', 'title', 'El título dice qué haces y dónde', titleOk, 5,
+    'entidad', 'title', 'El título dice qué haces y dónde', titleOk, 4,
     title ? `${title.length} caracteres.` : 'La página no tiene título.',
     'Deja el título entre 15 y 65 caracteres, con el servicio y el país.'
   );
   const descOk = desc.length >= 50 && desc.length <= 165;
   add(
-    'entidad', 'desc', 'Tienes meta description útil', descOk, 5,
+    'entidad', 'desc', 'Tienes meta description útil', descOk, 4,
     desc ? `${desc.length} caracteres.` : 'No hay meta description.',
     'Escribe una meta description de 50 a 165 caracteres.'
   );
   add(
-    'entidad', 'h1', 'Hay un solo H1', h1s.length === 1, 4,
+    'entidad', 'h1', 'Hay un solo H1', h1s.length === 1, 2,
     `Encontramos ${h1s.length} H1.`,
     'Deja exactamente un H1 por página.'
   );
@@ -326,47 +326,47 @@ export async function chequear(entrada, fetchImpl = fetch) {
   // --- Bloque 3: ¿te pueden citar? ---
   const llmsOk = !!llms && llms.status === 200 && llms.texto.trim().length > 0;
   add(
-    'citabilidad', 'llms', 'Tienes llms.txt', llmsOk, 6,
+    'citabilidad', 'llms', 'Tienes llms.txt', llmsOk, 4,
     llmsOk ? 'Encontramos /llms.txt.' : 'No encontramos /llms.txt.',
     'Publica un llms.txt: le dice a los motores qué eres y qué páginas importan.'
   );
   add(
-    'citabilidad', 'faq', 'Tienes preguntas frecuentes marcadas', conFaq, 7,
+    'citabilidad', 'faq', 'Tienes preguntas frecuentes marcadas', conFaq, 6,
     conFaq ? 'Encontramos FAQPage en tu schema.' : 'No hay FAQPage en tu schema.',
     'Marca tus preguntas frecuentes con FAQPage. Es el formato que la IA cita textual.'
   );
   const sitemapOk = !!sitemap && sitemap.status === 200 && /<urlset|<sitemapindex/i.test(sitemap.texto);
   add(
-    'citabilidad', 'sitemap', 'Tienes sitemap.xml', sitemapOk, 6,
+    'citabilidad', 'sitemap', 'Tienes sitemap.xml', sitemapOk, 4,
     sitemapOk ? 'Encontramos un sitemap válido.' : 'No encontramos /sitemap.xml.',
     'Publica un sitemap.xml y decláralo en robots.txt.'
   );
   const canonicalOk = /<link[^>]+rel=["']canonical["']/i.test(html);
   add(
-    'citabilidad', 'canonical', 'Declaras la URL canónica', canonicalOk, 3,
+    'citabilidad', 'canonical', 'Declaras la URL canónica', canonicalOk, 2,
     canonicalOk ? 'La home declara canonical.' : 'No hay canonical.',
     'Agrega <link rel="canonical"> en cada página.'
   );
   const langOk = /<html[^>]+lang=["'][a-z]{2}/i.test(html);
   add(
-    'citabilidad', 'lang', 'Declaras el idioma', langOk, 3,
+    'citabilidad', 'lang', 'Declaras el idioma', langOk, 2,
     langOk ? 'El <html> declara lang.' : 'El <html> no declara lang.',
     'Agrega lang="es-CL" al <html>.'
   );
   add(
-    'citabilidad', 'preguntas', 'Respondes preguntas en tus títulos', preguntas >= 2, 6,
+    'citabilidad', 'preguntas', 'Respondes preguntas en tus títulos', preguntas >= 2, 5,
     preguntas
       ? `Encontramos ${preguntas} título(s) con forma de pregunta.`
       : 'Ningún H2 o H3 está escrito como pregunta.',
     'Escribe subtítulos con la pregunta que hace tu cliente. La IA cita el párrafo que responde una pregunta.'
   );
   add(
-    'citabilidad', 'fecha', 'Tu contenido tiene fecha', conFecha, 5,
+    'citabilidad', 'fecha', 'Tu contenido tiene fecha', conFecha, 4,
     conFecha ? 'Tu schema declara fecha de publicación o actualización.' : 'No hay fechas en tu schema.',
     'Declara datePublished y dateModified. Sin fecha, la IA no sabe si tu información sigue vigente.'
   );
   add(
-    'citabilidad', 'sustancia', 'Tu portada tiene contenido suficiente', palabras >= 300, 5,
+    'citabilidad', 'sustancia', 'Tu portada tiene contenido suficiente', palabras >= 300, 3,
     `Contamos alrededor de ${palabras} palabras de texto visible.`,
     'Una portada con poco texto no le da a la IA nada que citar. Explica qué haces, para quién y dónde.'
   );
