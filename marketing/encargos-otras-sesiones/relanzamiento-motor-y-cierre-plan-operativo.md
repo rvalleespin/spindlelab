@@ -17,7 +17,7 @@ y los diffs, no este resumen, como fuente de verdad.
 - Ramón decidió el relanzamiento: **orgánico primero** (blog + LinkedIn/IG + outbound), pauta = fase 2.
 - Se creó a **Marta** (`agente-calendario-editorial`) — tu pendiente "[ ] Fundamentar el frente de Marta"
   queda cerrado: la fundamentación es este encargo + su skill + el plan aprobado por Ramón (28-ago).
-- Línea editorial v2 del blog: `marketing/linea-editorial-blog-v2.md`. Calendario sep (borrador):
+- Línea editorial v2 del blog: `marketing/linea-editorial-blog-v2.md`. Calendario sep (formalizado por Marta el 28-ago):
   `marketing/calendario-editorial.md`. Brief de comunicación v2: `marketing/rebranding-2026-08-brief-comunicacion.md`.
 - Prospección: **Apollo cancelado (26-ago)**; fuente vigente Google Maps + curl; canon de envíos nuevo
   (3 toques · 10/día · 50/sem); banco de leads de agosto rescatado a `ventas/` (estaba untracked en un worktree).
@@ -53,8 +53,9 @@ y los diffs, no este resumen, como fuente de verdad.
 - [ ] El relanzamiento como fase: campaña orgánica 1–12 sep (calendario en
       `marketing/calendario-editorial.md`), blog 1/semana según línea v2, outbound GMaps con canon nuevo,
       semana 11 vetada (Fiestas Patrias), pauta = fase 2 pendiente de OK.
-- [ ] Los pases de Ramón como hitos del plan: Pase 1 (vie 29-ago), Pase 2 (lun 1-sep), Pase 3 (vie 5-sep),
-      Pase 4 (vie 19-sep).
+- [ ] Los pases de Ramón como hitos del plan, **con las fechas corregidas por Marta el 28-ago**
+      (las del borrador caían en sábado y una en Fiestas Patrias): **Pase 1+2 lun 31-ago ·
+      Pase 3 vie 4-sep · Pase 4 vie 11-sep**. Fuente: `marketing/calendario-editorial.md`.
 
 ## 4. Checkpoint día 60 — córrelo tú el 4-sep
 
