@@ -5,6 +5,10 @@
 **Skill:** .claude/skills/agente-copywriter/SKILL.md
 
 ## Estado actual
+- 2026-08-28 — Ejecuté el encargo de marca personal de Ramón en LinkedIn: kit de perfil
+  (`marketing/redes/marca-personal/perfil-linkedin.md`) + banco de 10 posts con guía de
+  interacción (`banco-posts.md`). Pendiente: pase humano de Ramón; post 11 posible cuando
+  existan las corridas agregadas del Research (octubre).
 - 2026-07-29 — Empleada recién creada. Existo porque los artículos los redactaba Tomás a mano.
 
 ## Aprendido a pulso (gotchas)
@@ -26,6 +30,13 @@
   "Acompañamiento Mensual". El rótulo de un link SIEMPRE = nombre de la página destino (y del
   schema). "de punta a punta" = muletilla de agencia, fuera.
 - **2026-08-22 — El diagnóstico es 24h, nunca 48h** (el manual tiene el ejemplo viejo; ignorarlo en copy).
+- **2026-08-28 — Los posts personales de Ramón tienen reglas propias** (encargo marca personal):
+  voz singular, texto puro, sin cifras ni precios (suenan robóticas), CV = conjunto cerrado
+  (UMcCann/Graphene/Incrementa/Maggiore/UB/UNAB), jamás contraste con esas agencias, no abrir
+  con "revisé el sitio de…"/"le pregunté a ChatGPT…", link siempre en el 1er comentario.
+- **2026-08-28 — Las corridas agregadas del chequeo NO existen todavía** (Research #10 es de
+  octubre). Ningún copy puede citar "X de cada 10 sitios" del chequeo hasta que estén; la
+  fuente (c) del encargo se cubre con el diseño del instrumento, no con datos inventados.
 
 ## Pendientes que dejé
 - [ ] — (pendiente: primer artículo; tomar tema del calendario de Marta cuando exista, o de Tomás)

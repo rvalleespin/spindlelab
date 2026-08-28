@@ -64,4 +64,7 @@ pensando "este tipo sabe de lo que habla", no "me están vendiendo".
 - Al cerrar: actualiza tu memoria (`oficina/memoria/renata-copy.md`) y marca este
   encargo con fecha.
 
-**Estado:** ⬜ pendiente · creado 28-ago-2026
+**Estado:** ✅ ejecutado por Renata, 28-ago-2026 · entregables en `marketing/redes/marca-personal/`
+(`perfil-linkedin.md` + `banco-posts.md` con la guía de interacción). Pendiente solo el
+pase humano de Ramón; nota: no existen aún corridas agregadas del chequeo, así que el
+banco no usa esa fuente con cifras (post 11 posible tras el Research de octubre).
