@@ -34,4 +34,9 @@
 - Publicación manual (sin Metricool este mes). Nada sale sin pase de Ramón.
 - No editas plan-operativo ni pipeline (eso corre por el encargo a Tomás, ya emitido).
 
-**Estado:** ⬜ pendiente · creado 28-ago-2026
+**Estado:** ✅ ejecutado por Marta, 28-ago-2026. Calendario formalizado; 5 encargos emitidos
+(`relanzamiento-sep-{copy-renata,visual-bruno,social-cata,leads-dereck,outbound-emilia}.md`).
+**Nota sobre el punto 3:** las tandas del borrador estaban mal calendarizadas (asumían 1-sep =
+lunes; es **martes** — el "vie 5-sep" y el "vie 19-sep" caían sábado, el 19 encima en Fiestas
+Patrias). Quedaron: Pase 1+2 **lun 31-ago** · Pase 3 **vie 4-sep** · Pase 4 **vie 11-sep**
+(antes de la semana vetada). Mismo presupuesto de horas (~3h45). Ramón las ratifica en el Pase 1.
