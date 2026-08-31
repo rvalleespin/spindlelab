@@ -70,7 +70,6 @@ async function traer(url, fetchImpl) {
     const r = await fetchImpl(url, {
       signal: ctrl.signal,
       redirect: 'follow',
-      cache: 'no-store',
       cf: { cacheTtl: 0, cacheEverything: false },
       headers: {
         'User-Agent': 'SpindleLabChequeo/1.0 (+https://spindlelab.cl/diagnostico/)',
