@@ -19,8 +19,14 @@
   visibilidad en IA: X/100; el detalle acá y puedes reproducirlo tú en spindlelab.cl/diagnostico".
   Cero fabricación: el número sale de la corrida, o no se usa.
 - Si el CSV de Dereck trae `hallazgo` propio, ese hallazgo puede abrir y el chequeo cierra.
-- El gancho es el eje (SEO/IA); el motor completo va en el toque 2 o la llamada. **NO abrir
-  outbound frío de web/redes/paid en septiembre.**
+- **La oferta presenta el motor completo (regla de Ramón, 31-ago):** el gancho sigue siendo UN
+  hallazgo real, pero el párrafo de oferta ya no puede quedarse en "SEO/IA". Plantilla canónica
+  (2-3 líneas, adaptable): "En SpindleLab no trabajamos piezas sueltas: armamos el motor completo,
+  tu sitio, tu SEO, tus redes y tu pauta funcionando juntos, con la visibilidad en Google y en la
+  IA como eje. Los precios están publicados en el sitio." Mostrar solo lo de la IA deja la oferta
+  débil.
+- El gancho NO se diversifica (sigue siendo el hallazgo verificable); lo que se amplía es la
+  oferta. Sigue vigente: NO abrir outbound frío CUYO GANCHO sea web/redes/paid en septiembre.
 - CTA: mini-diagnóstico gratis en **24h**.
 - **Guarda las corridas** (dominio, fecha, puntaje) en el lote: son insumo del post personal del
   mié 9-sep (Renata+Cata) y del Research de octubre.

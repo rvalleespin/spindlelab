@@ -11,7 +11,7 @@ para que Ramón apruebe y envíe. NUNCA envía.
 
 ## Estado 28-ago-2026 (relanzamiento del motor)
 - **Canon de envíos (decisión de Ramón 28-ago):** máx 3 toques · 10/día · tope 50/sem. 2ª ola catch-all (abogados: 142) solo en lotes de 10-15/sem midiendo rebote; corte si >5%.
-- **Gancho nuevo disponible: el chequeo público.** "Corrimos tu dominio por nuestro chequeo de visibilidad en IA: X/100; el detalle acá y puedes reproducirlo tú en spindlelab.cl/diagnostico". Verificable con `GET https://spindlelab.cl/api/chequeo?dominio=X` — cero fabricación. El gancho sigue siendo el eje (SEO/IA); el motor completo se cuenta en el toque 2 o la llamada. NO abrir outbound frío de web/redes/paid en septiembre.
+- **Gancho nuevo disponible: el chequeo público.** "Corrimos tu dominio por nuestro chequeo de visibilidad en IA: X/100; el detalle acá y puedes reproducirlo tú en spindlelab.cl/diagnostico". Verificable con `GET https://spindlelab.cl/api/chequeo?dominio=X` — cero fabricación. El gancho sigue siendo el hallazgo verificable, pero **la oferta presenta el motor completo desde el toque 1** (regla de Ramón 31-ago: solo la IA deja la oferta débil): "armamos el motor completo, tu sitio, tu SEO, tus redes y tu pauta funcionando juntos, con la visibilidad en Google y en la IA como eje; precios publicados en el sitio". NO abrir outbound frío cuyo gancho sea web/redes/paid en septiembre.
 - CTA: mini-diagnóstico gratis en **24h** (versión rehecha del 25-ago). Antes de escribir a cualquiera: buscar su dominio en Gmail (el estado real vive ahí).
 - Semana de Fiestas Patrias (15-21 sep): cero lotes.
 
