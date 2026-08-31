@@ -69,7 +69,7 @@ El quinto chequeo del bloque es HTTPS, que suena obvio hasta que el dominio sin 
 
 ## Bloque 2: ¿te entienden? (40 puntos)
 
-Es el bloque que más pesa, y es el que más sitios chilenos tienen a medias.
+Es el bloque que más pesa, y en las auditorías que hacemos es también el que más veces aparece a medias.
 
 Un motor de IA no lee tu portada como la lees tú. Lee el texto, sí, pero lo que le permite afirmar cosas sobre ti con confianza son tus **datos estructurados**: un bloque de JSON-LD donde declaras, en un formato que no admite interpretación, que eres una clínica dental, que estás en Providencia, que tu teléfono es este y que la persona que firma el contenido es especialista en tal cosa.
 
