@@ -44,3 +44,9 @@
 
 ## A quién le entrego
 - El CSV pasa a **Emilia** (agente-outbound) para armar la secuencia.
+
+- 2026-08-31 (nota de la coordinación) — **Los CSV de la entrega 2 quedaron solo en el worktree
+  gitignoreado** (`.claude/worktrees/chile-dental-clinic-leads-100b3b/`): el reporte llegó a `main`
+  pero los datos no, segunda vez con esa carpeta. Rescatados y commiteados por la coordinación el
+  mismo día. Regla: commitear y pushear `ventas/` en la rama de la sesión ANTES de reportar;
+  verificar con `git log -- ventas/`.

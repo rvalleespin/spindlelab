@@ -47,4 +47,20 @@ Lotes en `marketing/outbound/` (tu convención `semana-*/lote-*`). Si un prospec
 Raquel (CRM); si pide diagnóstico → Valen. Registro de enviados: lo mantienes contra
 `ventas/enviados/REGISTRO-enviados.csv` tras cada envío aprobado.
 
-**Estado:** ⬜ pendiente · creado 28-ago-2026 por Marta
+**Estado:** ⬜ pendiente · creado 28-ago-2026 por Marta — **ERES LA ÚNICA ENTREGA QUE FALTA para
+el Pase de Ramón** (todo lo demás de la campaña está listo y mergeado).
+
+## Insumos nuevos (31-ago, sesión coordinadora) — te ahorran la mitad del trabajo
+
+1. **Los 70 leads limpios de Dereck YA ESTÁN en `main`**: `ventas/contactos-google-maps-inmobiliarias.csv`
+   (38) y `ventas/contactos-google-maps-contadores.csv` (32), todos con hallazgo verificado y marca
+   de dedup del 31-ago. No re-chequees dedup.
+2. **Las corridas del chequeo YA ESTÁN HECHAS para los 70** (misma fecha):
+   `marketing/metricas/corridas-chequeo-2026-08-31.md` trae el puntaje por dominio; los `.jsonl`
+   de esa carpeta traen el detalle de los 21 chequeos por sitio. Úsalas para el gancho
+   ("corrimos tu dominio por nuestro chequeo público: X/100…") sin re-correr la API. Si un lote
+   sale más de ~10 días después de la corrida, re-corre solo esos dominios.
+3. **Caveat**: si el gancho cita un chequeo de ACCESO (robots/bots de IA) y el sitio está tras
+   Cloudflare, confírmalo contra el robots.txt directo antes de escribirlo (regla de Valen).
+4. El bug de destinatario del Copiloto (28-ago) quedó parchado el 31-ago y los 3 follow-ups
+   afectados ya salieron a sus destinatarios reales. El REGISTRO está al día.

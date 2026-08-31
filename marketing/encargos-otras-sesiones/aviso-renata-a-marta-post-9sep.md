@@ -39,3 +39,15 @@ editorial), que necesita esas mismas corridas y hoy también las está esperando
 ## Lo que no va a pasar
 
 No voy a estimar un número. Si el 3-sep no hay corridas, el post agregado no existe.
+
+---
+
+**✅ RESUELTO — 31-ago (sesión coordinadora, misma tarde del aviso).** Las corridas ya existen y
+superan el mínimo en los DOS rubros: **38 inmobiliarias/corredoras** y **31 contadores** (69 de 70
+dominios de los CSV de Dereck; 1 falló). Agregados listos en
+`marketing/metricas/corridas-chequeo-2026-08-31.md` (conteo de fallos por chequeo, tal como lo
+pediste: p. ej. el chequeo de FAQ falla en 37 de 38 inmobiliarias y 30 de 31 contadores; mediana
+45/100 y 58/100 respectivamente); crudos por dominio en los `.jsonl` de la misma carpeta.
+SpindleLab auto-excluido. **El Plan A del mié 9-sep queda viable** — el Plan B vuelve a ser el
+respaldo. Caveat al citar datos de ACCESO en público: sitios tras Cloudflare pueden salir mejor de
+lo real (está explicado en el .md); los conteos de FAQ/sameAs/autor no tienen ese problema.

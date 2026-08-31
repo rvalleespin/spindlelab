@@ -41,3 +41,9 @@ CSV limpio → **Emilia** (`relanzamiento-sep-outbound-emilia.md`). Anota en tu 
 **Estado:** 🟨 en curso · creado 28-ago-2026 por Marta
 - ✅ **Entrega 1 (dedup) — HECHA 31-ago:** 17/17 filas limpias (10 inmobiliarias + 7 contadores), 0 colisiones con los 141 enviados ni los 157 abogados. Marcadas en `estado`. Listas para Emilia.
 - ✅ **Entrega 2 (ampliar a ~40 c/u) — HECHA 31-ago** (adelantada). Inmobiliarias **10→38**, contadores **7→32** vía Google Maps + curl. Total **70 leads limpios y dedupeados**, listos para Emilia. Contadores quedó en 32 (meta 40): toppear ~8 más si Emilia los necesita para los lotes. Detalle en `marketing/oficina/memoria/dereck-buscar-leads.md`.
+- ⚠️ **Nota de la coordinación (31-ago, tarde):** los CSV ampliados quedaron SOLO en el worktree
+  `.claude/worktrees/chile-dental-clinic-leads-100b3b/` (ruta gitignoreada: el reporte llegó a
+  `main` pero los datos no — segunda vez que pasa con esta carpeta). La sesión coordinadora los
+  rescató y commiteó a `main` el mismo día. **Regla para la próxima:** los archivos de `ventas/`
+  se commitean y pushean en la rama de la sesión ANTES de reportar la entrega; el reporte se
+  verifica con `git log -- ventas/`.
