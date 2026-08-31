@@ -31,9 +31,23 @@ diagnóstico con un hallazgo inventado destruye la credibilidad que busca constr
    prensa, certificaciones, contacto verificable — qué existe y qué falta.
 4. **La corrección de mayor impacto:** si el prospecto solo pudiera arreglar **una**
    cosa este mes, cuál y por qué. **Una** idea, no una lista. Es el único acento de
-   la pieza.
-5. **Genera el documento** desde la plantilla del cliente, **renderiza y míralo**
-   antes de entregar. Numeración correlativa.
+   la pieza. **Se elige por jerarquía del oficio, no por orden de aparición:**
+   acceso (¿pueden entrar los rastreadores? robots.txt, errores HTTP) → entidad
+   (¿entienden quién es?) → citabilidad. **Un bloqueo de entrada SIEMPRE gana**: si
+   los bots no pueden leer el sitio, ningún arreglo de schema o contenido cuenta.
+5. **El orden narrativo vende:** el hallazgo mayor abre el documento; lo que está
+   sano se dice breve y al final. **Jamás abrir con lo que NO se hizo** (la
+   honestidad metodológica va en la letra chica del pie, no de apertura).
+6. **Ancla verificable:** el hallazgo clave cierra con dónde puede comprobarlo el
+   prospecto por sí mismo (su propio /robots.txt, su HTML, una herramienta pública).
+   Si un instrumento automático contradice tu verificación manual, **cita la fuente
+   directa, no el instrumento**.
+7. **El cierre presenta la oferta completa del cliente** (lo que el negocio vende
+   entero, no solo la especialidad del hallazgo) + el paso siguiente concreto.
+8. **Genera el documento** desde la plantilla del cliente, **renderiza y míralo**
+   antes de entregar (¿cabe en 1 página?). Numeración correlativa **verificada
+   contra `git log --all`**, no contra la carpeta (hay correlativos que solo
+   existen en el historial).
 
 ## Criterios de calidad (bueno vs. aceptable)
 - **Hallazgos:** reales, verificados, específicos de ese prospecto. ⚠️ observaciones
@@ -55,6 +69,11 @@ diagnóstico con un hallazgo inventado destruye la credibilidad que busca constr
   sin que nadie haya corrido la prueba.
 - **Una lista en vez de una corrección de impacto.** **Señal:** el bloque de mayor
   impacto tiene viñetas.
+- **Elegir la corrección de mayor impacto por orden de aparición y no por
+  jerarquía.** **Señal:** recomiendas schema o contenido cuando el robots.txt
+  está bloqueando la entrada de los rastreadores.
+- **Abrir el documento disculpándose** ("no corrí X, así que no afirmaré Y").
+  **Señal:** la primera frase de una sección habla de lo que no se hizo.
 - **Entregar sin mirar el render.**
 
 ## Límite del rol
@@ -96,3 +115,17 @@ Produzco el diagnóstico de entrada. **No** hago la entrega completa del servici
 > ✅ **Principio:** *la corrección de mayor impacto es UNA, no una lista; una idea
 > priorizada mueve más que diez sugerencias.* **Respaldo:** formato del
 > mini-diagnóstico SpindleLab.
+
+> ✅ **Principio:** *la corrección de mayor impacto se elige por jerarquía del
+> oficio (acceso → entidad → citabilidad), y el hallazgo mayor abre el documento;
+> lo sano se dice breve al final. Un diagnóstico que recomienda arreglar el schema
+> mientras el robots.txt bloquea a los rastreadores recomienda pintar la casa con
+> la puerta soldada.* **Respaldo:** SpindleLab, 31-ago-2026 — SPL-DIAG-2026-006
+> (estudio jurídico): la v1 eligió schema como corrección con GPTBot/Claude/Gemini
+> bloqueados por Disallow; Ramón la devolvió y se reformuló entera.
+
+> ✅ **Principio:** *si el instrumento automático del cliente contradice tu
+> verificación manual, el ancla verificable es la fuente directa del prospecto y
+> el número del instrumento NO se cita.* **Respaldo:** SpindleLab, 31-ago-2026 —
+> el chequeo público no ve reglas de borde de Cloudflare (limitación
+> arquitectural) y daba 65/100 donde el robots.txt real bloqueaba 3 motores.
