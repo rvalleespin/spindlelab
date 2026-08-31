@@ -2,7 +2,16 @@
 
 **Pieza 2 del encargo `piezas-visuales-agosto.md`.** Formato educativo ya validado (carrusel-01, carrusel-02).
 **Doble uso:** LinkedIn (documento / carrusel nativo) + Instagram (carrusel).
-**Estado:** 7 láminas renderizadas y revisadas. Pendiente tu revisión.
+**Estado:** 7 láminas renderizadas y revisadas. **No se publicó en agosto.**
+
+> **Re-apuntado a septiembre (31-ago-2026, Cata).** Esta pieza se recicla para **Instagram, vie
+> 4-sep**, dentro de la campaña del relanzamiento. El copy vigente ya **no** es el de abajo: el
+> caption y el primer comentario listos para pegar están en
+> `marketing/redes/2026-09-septiembre/copys-ventana-1.md`. El cambio de fondo: los 5 chequeos
+> dejan de presentarse como "lo que miramos nosotros" y pasan a ser "5 de los 21 que puedes
+> correr tú, gratis". El CTA es el chequeo (`spindlelab.cl/diagnostico`), no el mini-diagnóstico.
+> Las láminas 1 y 7 (y cualquiera con la firma vieja "Mini-diagnóstico gratis · spindlelab.cl")
+> las re-renderiza Bruno. El copy de agosto queda abajo como registro.
 
 ## Estructura
 
@@ -27,7 +36,7 @@ cae siempre en el mismo lugar al deslizar.
 `ad-resumen.png` — 1080×1080 con los 5 chequeos en una sola imagen y poco texto, como pide el
 encargo para el reuso publicitario. Sirve como creativo suelto sin necesidad del carrusel.
 
-## Copy del post (texto completo en la grilla, Semana 6, Mar 11)
+## Copy del post de agosto (registro; superado por el de septiembre)
 
 > Cuando revisamos un sitio para ver si la IA puede "leerlo", miramos cinco cosas concretas:
 >

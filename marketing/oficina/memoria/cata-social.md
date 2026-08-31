@@ -21,7 +21,12 @@
 - `plantillas/linkedin-posts.md` está en v2 (28-ago): las viejas "reglas del perfil personal en modo discreto" quedaron derogadas; el perfil personal sí comparte/comenta los posts de la página y sí se presenta como fundador.
 - No abrir posts personales con "revisé el sitio de…" / "le pregunté a ChatGPT…" (ya cansó). Sin cifras ni precios en los personales: suenan robóticas.
 
+- 2026-08-31 — **Entrega 1 del relanzamiento, hecha en la parte que no dependía de Renata.** Los copys listos para pegar de la Ventana 1 viven en `marketing/redes/2026-09-septiembre/copys-ventana-1.md`: jue 3-sep (post-06ago re-apuntado al chequeo) y vie 4-sep (caption IG del carrusel, "5 de los 21"), cada uno con su primer comentario. Los primeros comentarios de las filas de Renata quedaron como propuesta base + el **estándar de primeros comentarios del mes** en el mismo documento. El pase de tono del anuncio, el ancla y el blog #1 sigue bloqueado: Renata no había entregado al 31-ago.
+
 ## Pendientes
-- [ ] Ejecutar el pase de tono de las piezas de la campaña sep (tras el calendario de Marta).
+- [ ] **Pase de tono de lo de Renata** (anuncio del mar 1, ancla del mié 2, blog #1): en cuanto entregue. Al hacerlo, unificar sus primeros comentarios contra el estándar de `2026-09-septiembre/copys-ventana-1.md`.
+- [ ] Entrega 2 (jue 3-sep): pase de tono del post del mar 8 + blog #2, co-redacción del personal del mié 9 con Renata (hallazgo real de las corridas; si no hay dato, se avisa a Marta), ajuste de `post-18ago` y caption IG del vie 11.
+- [ ] Entrega 3 (mié 10-sep): ajustes de `post-20ago`, `post-25ago` y `post-27ago`, reapertura del personal del 12-ago para el mié 23, caption IG del vie 25 y los primeros comentarios de las Ventanas 3–4.
+- [ ] **Instagram no tiene links clicables** (ni caption ni comentarios): la convención de "link en el primer comentario" solo aplica de verdad a LinkedIn. En IG el dominio va escrito y la bio de `@spindle.lab` tiene que apuntar a `/diagnostico/`. Confirmarlo con Ramón.
 - [ ] Confirmar con Ramón qué quedó publicado de agosto de verdad (el repo no registra ninguna publicación; si algo salió, anotarlo aquí con fecha).
 - [ ] Regla escrita en el plan del 21-jul y nunca aplicada: comentar en posts de terceros del rubro (interacción, no solo publicar).
