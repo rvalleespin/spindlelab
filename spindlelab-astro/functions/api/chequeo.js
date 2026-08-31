@@ -64,12 +64,18 @@ async function traer(url, fetchImpl) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
   try {
+    // cache:'no-store' + cacheTtl 0: sin esto, el edge puede servir una copia vieja
+    // del recurso (visto en vivo: un robots.txt cacheado SIN los bloqueos de bots de IA
+    // que el archivo real ya tenia, y el chequeo daba un falso "todo pasa").
     const r = await fetchImpl(url, {
       signal: ctrl.signal,
       redirect: 'follow',
+      cache: 'no-store',
+      cf: { cacheTtl: 0, cacheEverything: false },
       headers: {
         'User-Agent': 'SpindleLabChequeo/1.0 (+https://spindlelab.cl/diagnostico/)',
         Accept: 'text/html,text/plain,application/xml;q=0.9,*/*;q=0.8',
+        'Cache-Control': 'no-cache',
       },
     });
     const largo = Number(r.headers.get('content-length') || 0);
