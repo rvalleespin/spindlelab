@@ -1,6 +1,16 @@
 # SPL-DIAG-2026-006 — Legal Prisma (legalprisma.cl)
 
-**Fecha:** 31-ago-2026 · **Estado:** ⏳ **LISTO, NO ENVIADO** (falta el pase de Ramón).
+**Fecha:** 31-ago-2026 · **Estado:** ⏳ **v2 LISTA, NO ENVIADA** (falta el pase de Ramón).
+
+> **v2 (31-ago, tarde):** Ramón revisó la v1 y pidió reformularla. Cambios: el hallazgo mayor
+> (robots.txt bloquea a los bots de IA) abre el documento y ES la corrección de mayor impacto
+> (jerarquía del propio chequeo: si no entran, nada más cuenta); las señales de confianza pasan
+> al bloque 2; "lo demás está sano" queda en 3 líneas; fuera la apertura "no corrí la consulta"
+> (la honestidad va al pie); tagline al motor; cierre con la oferta del motor + precios
+> publicados + link al chequeo. ⚠️ El puntaje del chequeo público NO se cita en este caso: el
+> chequeo no ve las reglas de borde de Cloudflare para este dominio (limitación arquitectural,
+> documentada en la ficha de Valen) y diría 65 cuando lo real es 47; el ancla verificable es el
+> propio legalprisma.cl/robots.txt.
 
 ## Situación del prospecto (ojo antes de mandarlo)
 

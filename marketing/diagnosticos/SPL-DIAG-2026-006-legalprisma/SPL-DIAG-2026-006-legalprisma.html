@@ -22,9 +22,9 @@ body{
   color:var(--tinta);
   background:var(--papel);
   width:794px; /* A4 @ 96dpi */
-  padding:44px 56px;
-  font-size:13px;
-  line-height:1.5;
+  padding:36px 56px;
+  font-size:12.5px;
+  line-height:1.45;
 }
 
 .wordmark{
@@ -41,7 +41,7 @@ header{
   align-items:flex-start;
   border-bottom:2px solid var(--tinta);
   padding-bottom:16px;
-  margin-bottom:24px;
+  margin-bottom:18px;
 }
 
 .encabezado-derecha{ text-align:right; }
@@ -68,7 +68,7 @@ h1.titulo-doc{
 }
 
 section.bloque{
-  margin-bottom:9px;
+  margin-bottom:7px;
   break-inside:avoid;
 }
 
@@ -101,8 +101,8 @@ section.bloque{
   background:var(--blanco);
   border:1px solid rgba(19,26,34,0.12);
   border-radius:8px;
-  padding:10px 15px;
-  margin-top:5px;
+  padding:9px 14px;
+  margin-top:4px;
 }
 
 /* La corrección de mayor impacto — único uso del dorado en la pieza */
@@ -110,8 +110,8 @@ section.bloque{
   background:var(--tinta);
   color:var(--papel);
   border-radius:10px;
-  padding:17px 22px;
-  margin-top:14px;
+  padding:14px 20px;
+  margin-top:10px;
   position:relative;
 }
 .bloque-impacto .num-etiqueta{ color:var(--dorado); }
@@ -126,8 +126,8 @@ section.bloque{
 .bloque-impacto .punto-final{ color:var(--dorado); }
 
 footer{
-  margin-top:16px;
-  padding-top:12px;
+  margin-top:10px;
+  padding-top:9px;
   border-top:1px solid rgba(19,26,34,0.15);
   display:flex;
   justify-content:space-between;
@@ -147,13 +147,13 @@ footer{
 .footnote{
   font-size:9.5px;
   color:var(--gris);
-  margin-top:11px;
+  margin-top:7px;
   font-style:italic;
 }
 
 @media print{
   @page{ size:A4; margin:0; }
-  body{ width:794px; padding:36px 52px; }
+  body{ width:794px; padding:30px 52px; }
 }
 </style>
 </head>
@@ -181,7 +181,7 @@ footer{
   <div class="num-etiqueta"><span class="num">1</span> El hallazgo mayor: la puerta está cerrada para la IA</div>
   <div class="hallazgo">
     <p><b>El robots.txt de legalprisma.cl les prohíbe la entrada por nombre a los rastreadores de IA.</b> Hay un <i>Disallow: /</i> para GPTBot (OpenAI), ClaudeBot (Anthropic), Google-Extended (Gemini), meta-externalagent (Meta AI), Applebot-Extended, CCBot, Bytespider y Amazonbot. En simple: los 246 artículos del sitio están bajo llave para ChatGPT, Claude y Gemini.</p>
-    <p>No es un apagón total: Googlebot, Bingbot y PerplexityBot siguen permitidos, así que Google clásico funciona. Pero cuando un gerente le pregunta a ChatGPT por un estudio laboral en Santiago, Legal Prisma no puede estar en esa respuesta: el propio sitio se lo impide. La regla la pone Cloudflare, así que vale confirmar si fue una decisión o quedó activada por defecto. No hace falta creernos: está a la vista en legalprisma.cl/robots.txt, en el bloque "Cloudflare Managed content".</p>
+    <p>Googlebot, Bingbot y PerplexityBot siguen permitidos, así que Google clásico funciona. Pero cuando un gerente le pregunta a ChatGPT por un estudio laboral en Santiago, Legal Prisma no puede estar en esa respuesta: el propio sitio se lo impide. La regla la pone Cloudflare, así que vale confirmar si fue una decisión o quedó activada por defecto. No hace falta creernos: está a la vista en legalprisma.cl/robots.txt, en el bloque "Cloudflare Managed content".</p>
   </div>
 </section>
 
@@ -196,7 +196,7 @@ footer{
 <section class="bloque">
   <div class="num-etiqueta"><span class="num">3</span> Lo demás está sano</div>
   <div class="hallazgo">
-    <p>La base técnica está bien hecha y conviene decirlo: portada respondiendo en 0,6 s, redirecciones correctas, 12 páginas internas con título, meta description y canonical propios, sin duplicados, y un sitemap que declara 246 artículos. El problema de Legal Prisma no es el sitio: es lo que el sitio no le cuenta a las máquinas, y a quiénes no deja entrar.</p>
+    <p>La base técnica está bien hecha: portada respondiendo en 0,6 s, redirecciones correctas, 12 páginas internas con título, meta description y canonical propios, y un sitemap con 246 artículos. El problema de Legal Prisma no es el sitio: es lo que el sitio no les cuenta a las máquinas, y a quiénes no deja entrar.</p>
   </div>
 </section>
 
@@ -206,7 +206,7 @@ footer{
   <p>Si este mes solo pudieran arreglar una cosa, sería esta: quitar el <i>Disallow</i> a los rastreadores de IA (un ajuste en el panel de Cloudflare, minutos, sin tocar el sitio). Con la puerta cerrada, nada de lo demás cuenta: 246 artículos y cuatro currículums que ChatGPT no puede leer. Abierta la puerta, la siguiente jugada natural es declarar en datos quién es el estudio y quiénes son sus abogados, y ahí sí competir por aparecer en las respuestas<span class="punto-final">.</span></p>
 </div>
 
-<p style="margin-top:12px;font-size:12px;color:var(--gris)">Nosotros trabajamos exactamente eso: el motor completo, el sitio, el SEO, las redes y la pauta funcionando juntos, con la visibilidad en Google y en la IA como eje. Los precios están publicados en spindlelab.cl.</p>
+<p style="margin-top:9px;font-size:11.5px;color:var(--gris)">Nosotros trabajamos exactamente eso: el motor completo, el sitio, el SEO, las redes y la pauta funcionando juntos, con la visibilidad en Google y en la IA como eje. Los precios están publicados en spindlelab.cl.</p>
 
 <footer>
   <div class="cta">¿Conversamos 20 minutos, sin costo<span class="punto">?</span></div>
