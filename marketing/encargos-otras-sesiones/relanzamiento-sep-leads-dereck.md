@@ -38,4 +38,6 @@ El canon de envíos de septiembre es 10/día · tope 50/semana · 3 toques máx.
 CSV limpio → **Emilia** (`relanzamiento-sep-outbound-emilia.md`). Anota en tu memoria
 (`marketing/oficina/memoria/dereck-buscar-leads.md`) cuántos leads usables salieron por búsqueda.
 
-**Estado:** ⬜ pendiente · creado 28-ago-2026 por Marta
+**Estado:** 🟨 en curso · creado 28-ago-2026 por Marta
+- ✅ **Entrega 1 (dedup) — HECHA 31-ago:** 17/17 filas limpias (10 inmobiliarias + 7 contadores), 0 colisiones con los 141 enviados ni los 157 abogados. Marcadas en `estado`. Listas para Emilia.
+- ✅ **Entrega 2 (ampliar a ~40 c/u) — HECHA 31-ago** (adelantada). Inmobiliarias **10→38**, contadores **7→32** vía Google Maps + curl. Total **70 leads limpios y dedupeados**, listos para Emilia. Contadores quedó en 32 (meta 40): toppear ~8 más si Emilia los necesita para los lotes. Detalle en `marketing/oficina/memoria/dereck-buscar-leads.md`.

@@ -78,9 +78,10 @@ async function traer(url, fetchImpl) {
       },
     });
     const largo = Number(r.headers.get('content-length') || 0);
-    if (largo > MAX_BYTES) return { status: r.status, url: r.url, texto: '', truncado: true };
+    const servidor = (r.headers.get('server') || '').toLowerCase();
+    if (largo > MAX_BYTES) return { status: r.status, url: r.url, texto: '', truncado: true, servidor };
     const texto = (await r.text()).slice(0, MAX_BYTES);
-    return { status: r.status, url: r.url, texto };
+    return { status: r.status, url: r.url, texto, servidor };
   } catch {
     return null;
   } finally {
@@ -256,6 +257,12 @@ export async function chequear(entrada, fetchImpl = fetch) {
     ['Google-Extended', 'Gemini'],
   ];
 
+  // Limitación real, verificada en vivo: si el sitio está tras Cloudflare, las reglas de
+  // bots que Cloudflare inyecta en el borde (robots.txt gestionado / content signals)
+  // pueden no llegar a este chequeo (el fetch Worker→Cloudflare rutea interno y recibe
+  // el robots.txt del origen). Se declara, no se adivina.
+  const trasCloudflare = (home.servidor || '').includes('cloudflare');
+
   const items = [];
   const add = (bloque, id, titulo, ok, peso, detalle, arregloSiFalla) =>
     items.push({ bloque, id, titulo, ok, peso, detalle, arreglo: ok ? null : arregloSiFalla });
@@ -268,7 +275,9 @@ export async function chequear(entrada, fetchImpl = fetch) {
       bloqueado
         ? `Tu robots.txt bloquea a ${ua}.`
         : robotsTxt
-          ? `${ua} no está bloqueado en tu robots.txt.`
+          ? trasCloudflare
+            ? `${ua} no está bloqueado en el robots.txt que recibimos. Tu sitio usa Cloudflare: si activaste sus reglas de bots de IA en el borde, este chequeo no las ve; confírmalo abriendo tu propio /robots.txt.`
+            : `${ua} no está bloqueado en tu robots.txt.`
           : 'No tienes robots.txt, así que nada está bloqueado.',
       `Quita la regla que bloquea a ${ua} en tu robots.txt.`
     );

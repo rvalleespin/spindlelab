@@ -111,6 +111,33 @@ secundario). Convenciones vigentes:
 
 ---
 
+## Estado operacional — Mini-diagnóstico (Valen)
+
+Reglas vigentes del documento (fijadas el 31-ago-2026, tras la revisión de Ramón del
+SPL-DIAG-2026-006):
+
+- **El ancla verificable es el chequeo público… cuando coincide con lo verificado a mano**: correr
+  `GET https://spindlelab.cl/api/chequeo?dominio=X` y citar el puntaje invitando a reproducirlo.
+  ⚠️ **Excepción conocida (31-ago)**: en sitios tras Cloudflare el chequeo puede NO ver las reglas
+  de bots que Cloudflare inyecta en el borde (limitación arquitectural, declarada en el propio
+  chequeo). Si el chequeo contradice lo que viste con curl, **el número NO se cita** y el ancla
+  pasa a ser la fuente directa del prospecto (su propio /robots.txt, su HTML).
+- **La corrección de mayor impacto se elige con la jerarquía del propio chequeo**: acceso >
+  entidad > citabilidad. Si los bots de IA no pueden entrar (robots.txt), ESA es la corrección,
+  siempre; el schema viene después. "Si los bots no entran, nada más importa" es doctrina
+  publicada de la casa.
+- **El orden narrativo vende**: primero el hallazgo mayor, después las señales de confianza,
+  al final "lo demás está sano" en 3 líneas. Nunca abrir con lo que NO se hizo (la honestidad
+  metodológica va en la letra chica del pie, no como apertura).
+- **El cierre presenta el motor** (regla de Ramón 31-ago): 2 líneas con el motor completo +
+  "precios publicados en el sitio" + CTA de 20 minutos + el link del chequeo.
+- Tagline del encabezado: "Un motor de adquisición · SEO técnico y visibilidad en IA como eje"
+  (la vieja "SEO técnico · Visibilidad en IA · Desarrollo web" quedó atrás).
+- Sigue igual: cero hallazgos inventados, todo verificado con curl, UNA corrección (no lista),
+  render mirado antes de entregar, numeración correlativa **verificada contra `git log --all`**
+  (las carpetas 003-005 existen solo en historial; no reutilizar esos números).
+- Plantilla de referencia: `marketing/diagnosticos/SPL-DIAG-2026-006-legalprisma/` (v2).
+
 ## Estado operacional — Entrega SEO/AEO (Simón)
 
 Servicio core que se cobra. Apalanca los plugins de **searchfit** (`ai-visibility` =
