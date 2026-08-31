@@ -1,0 +1,18 @@
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); }
+@font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:100 900; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1080px; height:1080px; overflow:hidden; font-family:'Inter',sans-serif; }
+.slide { width:1080px; height:1080px; position:relative; padding:80px; display:flex; flex-direction:column; }
+.eyebrow { font-size:22px; font-weight:700; letter-spacing:3px; text-transform:uppercase; }
+.pager { position:absolute; bottom:56px; right:80px; font-size:20px; font-weight:500; letter-spacing:1px; color:#8A93A0; }
+.pt { color:#C9A227; }
+.num { font-family:'Gabarito'; font-weight:600; font-size:112px; color:#C9A227; line-height:1; }
+.tit { font-family:'Gabarito'; font-weight:600; font-size:62px; line-height:1.14; letter-spacing:-1px; color:#131A22; margin-top:14px; }
+.q { font-size:28px; line-height:1.55; color:#5D6673; max-width:840px; margin-top:18px; }
+.card { position:absolute; left:80px; right:80px; top:620px; background:#FFFFFF; border:1px solid #E3DFD6; border-radius:10px; padding:32px 36px; }
+.card .row + .row { margin-top:22px; padding-top:22px; border-top:1px solid #EFEBE3; }
+.card .tag { font-size:17px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#8A93A0; margin-bottom:10px; }
+.card .tag.si { color:#131A22; }
+.mono { font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:24px; line-height:1.5; color:#5D6673; word-break:break-word; }
+.mono.si { color:#131A22; font-weight:600; }
+.wm { font-family:'Gabarito'; font-weight:600; font-size:40px; color:#F7F5F0; }
