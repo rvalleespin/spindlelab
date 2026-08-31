@@ -2,6 +2,13 @@
 
 **Fecha:** 31-ago-2026 · **Estado:** ⏳ **v2 LISTA, NO ENVIADA** (falta el pase de Ramón).
 
+> **v3 (31-ago, más tarde):** Ramón subió la vara con la pregunta correcta: "ponte en el lugar
+> del abogado: ¿por qué me contrataría?". La v3 abre con lo que está en juego en el negocio
+> (quien aparece en la respuesta se lleva la consulta), convierte los hallazgos en las 3 razones
+> por las que no aparece, agrega la TABLA DE RUTA (4 pasos con estado real) y reencuadra el
+> regalo: el paso 1 gratis, "los que traen clientes son los otros tres". Sebastián respondió el
+> 31-ago pidiendo el informe; el borrador de respuesta está en Gmail (falta adjuntar el PDF).
+>
 > **v2 (31-ago, tarde):** Ramón revisó la v1 y pidió reformularla. Cambios: el hallazgo mayor
 > (robots.txt bloquea a los bots de IA) abre el documento y ES la corrección de mayor impacto
 > (jerarquía del propio chequeo: si no entran, nada más cuenta); las señales de confianza pasan

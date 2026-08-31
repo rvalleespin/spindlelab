@@ -23,8 +23,8 @@ body{
   background:var(--papel);
   width:794px; /* A4 @ 96dpi */
   padding:36px 56px;
-  font-size:12.5px;
-  line-height:1.45;
+  font-size:12px;
+  line-height:1.42;
 }
 
 .wordmark{
@@ -110,8 +110,8 @@ section.bloque{
   background:var(--tinta);
   color:var(--papel);
   border-radius:10px;
-  padding:14px 20px;
-  margin-top:10px;
+  padding:12px 18px;
+  margin-top:8px;
   position:relative;
 }
 .bloque-impacto .num-etiqueta{ color:var(--dorado); }
@@ -125,6 +125,34 @@ section.bloque{
 .bloque-impacto p{ margin-bottom:0; font-size:12.5px; }
 .bloque-impacto .punto-final{ color:var(--dorado); }
 
+table.ruta{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:4px;
+  background:var(--blanco);
+  border:1px solid rgba(19,26,34,0.12);
+  border-radius:8px;
+  overflow:hidden;
+  font-size:11.5px;
+}
+table.ruta th{
+  font-family:'Gabarito', sans-serif;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--gris);
+  text-align:left;
+  padding:6px 10px;
+  border-bottom:1px solid rgba(19,26,34,0.12);
+}
+table.ruta td{
+  padding:5px 10px;
+  border-bottom:1px solid rgba(19,26,34,0.07);
+  vertical-align:top;
+  line-height:1.35;
+}
+table.ruta tr:last-child td{ border-bottom:none; }
+table.ruta td.paso{ font-family:'Gabarito', sans-serif; font-weight:700; white-space:nowrap; }
 footer{
   margin-top:10px;
   padding-top:9px;
@@ -153,7 +181,7 @@ footer{
 
 @media print{
   @page{ size:A4; margin:0; }
-  body{ width:794px; padding:30px 52px; }
+  body{ width:794px; padding:26px 50px; }
 }
 </style>
 </head>
@@ -175,41 +203,45 @@ footer{
 </header>
 
 <h1 class="titulo-doc">Mini-diagnóstico de visibilidad</h1>
-<p class="subtitulo-doc">Cómo ven hoy a Legal Prisma un buscador y un motor de IA, y la única corrección que más impacto tendría.</p>
+<p class="subtitulo-doc">Por qué Legal Prisma no aparece cuando alguien pregunta por un abogado, y la ruta para que sí.</p>
 
 <section class="bloque">
-  <div class="num-etiqueta"><span class="num">1</span> El hallazgo mayor: la puerta está cerrada para la IA</div>
+  <div class="num-etiqueta"><span class="num">1</span> Lo que está en juego</div>
   <div class="hallazgo">
-    <p><b>El robots.txt de legalprisma.cl les prohíbe la entrada por nombre a los rastreadores de IA.</b> Hay un <i>Disallow: /</i> para GPTBot (OpenAI), ClaudeBot (Anthropic), Google-Extended (Gemini), meta-externalagent (Meta AI), Applebot-Extended, CCBot, Bytespider y Amazonbot. En simple: los 246 artículos del sitio están bajo llave para ChatGPT, Claude y Gemini.</p>
-    <p>Googlebot, Bingbot y PerplexityBot siguen permitidos, así que Google clásico funciona. Pero cuando un gerente le pregunta a ChatGPT por un estudio laboral en Santiago, Legal Prisma no puede estar en esa respuesta: el propio sitio se lo impide. La regla la pone Cloudflare, así que vale confirmar si fue una decisión o quedó activada por defecto. No hace falta creernos: está a la vista en legalprisma.cl/robots.txt, en el bloque "Cloudflare Managed content".</p>
+    <p>Un cliente nuevo llega hoy de dos maneras: busca en Google, o le pregunta directo a ChatGPT ("¿qué estudio me recomiendas para un tema laboral en Santiago?"). <b>Quien aparece en esa respuesta se lleva la consulta; el resto no se entera de que existió.</b> Hoy Legal Prisma no puede aparecer ahí, y no es por calidad: son tres cosas del sitio, las tres corregibles.</p>
   </div>
 </section>
 
 <section class="bloque">
-  <div class="num-etiqueta"><span class="num">2</span> Señales de confianza: existen, pero solo para humanos</div>
+  <div class="num-etiqueta"><span class="num">2</span> Por qué no aparece: tres razones, todas verificables</div>
   <div class="hallazgo">
-    <p>Existe lo difícil: los cuatro abogados con nombre, cargo y currículum real en la portada (universidad, magíster, diplomados, docencia), la dirección en Vitacura, el teléfono y perfiles en LinkedIn, Instagram y YouTube. En una categoría YMYL como la legal, eso es exactamente lo que piden Google y los motores de IA.</p>
-    <p><b>Falta que sea legible por una máquina.</b> El JSON-LD de la portada no declara ningún Organization ni LegalService: nunca dice qué es Legal Prisma, dónde está, ni vincula los perfiles. De las nueve áreas de práctica, una sola declara LegalService (y triplicado). Los currículums no tienen Person: para un motor, esos cuatro abogados no existen.</p>
+    <p><b>1 · La puerta está cerrada.</b> El robots.txt del sitio les prohíbe la entrada a los rastreadores de OpenAI (ChatGPT), Anthropic (Claude) y Google-Extended (Gemini), entre otros. Los 246 artículos que el estudio ha escrito no existen para esos motores. Está a la vista en legalprisma.cl/robots.txt; lo puso Cloudflare, posiblemente por defecto.</p>
+    <p><b>2 · Para una máquina, el estudio no existe.</b> Los cuatro abogados tienen currículum real en la portada, dirección y perfiles activos, pero todo eso solo lo puede leer un humano: el sitio nunca declara en datos qué es Legal Prisma ni quiénes responden. Un motor que no puede confirmar quién es usted, no lo recomienda; en lo legal, menos.</p>
+    <p><b>3 · No hay nada fácil de citar.</b> De las nueve áreas de práctica, una sola está marcada para máquinas, y con errores. La IA arma sus respuestas citando fuentes que responden preguntas concretas; hoy el sitio no le ofrece ninguna.</p>
   </div>
 </section>
 
 <section class="bloque">
-  <div class="num-etiqueta"><span class="num">3</span> Lo demás está sano</div>
-  <div class="hallazgo">
-    <p>La base técnica está bien hecha: portada respondiendo en 0,6 s, redirecciones correctas, 12 páginas internas con título, meta description y canonical propios, y un sitemap con 246 artículos. El problema de Legal Prisma no es el sitio: es lo que el sitio no les cuenta a las máquinas, y a quiénes no deja entrar.</p>
-  </div>
+  <div class="num-etiqueta"><span class="num">3</span> La ruta completa, con el estado de cada paso</div>
+  <table class="ruta">
+    <tr><th style="width:25%">Paso</th><th>Qué logra</th><th style="width:34%">Estado hoy</th></tr>
+    <tr><td class="paso">1 · Abrir la puerta</td><td>Los motores de IA pueden volver a leer el sitio</td><td><b>Cerrada</b> (bloqueo en robots.txt)</td></tr>
+    <tr><td class="paso">2 · Ser entendible</td><td>La IA puede confirmar quién es el estudio y quiénes responden</td><td><b>Invisible</b> para las máquinas</td></tr>
+    <tr><td class="paso">3 · Ser citable</td><td>Las 9 áreas y los 246 artículos pasan a ser material que la IA puede usar al recomendar</td><td><b>1 de 9</b> áreas, con errores</td></tr>
+    <tr><td class="paso">4 · Medir entero</td><td>Saber cada mes si Google y la IA los nombran, y cuántas consultas llegan</td><td><b>Sin medición</b></td></tr>
+  </table>
 </section>
 
 <div class="bloque-impacto">
   <div class="num-etiqueta"><span class="num">4</span> La corrección de mayor impacto</div>
-  <h2>Abrirle la puerta a la IA: quitar el bloqueo del robots.txt</h2>
-  <p>Si este mes solo pudieran arreglar una cosa, sería esta: quitar el <i>Disallow</i> a los rastreadores de IA (un ajuste en el panel de Cloudflare, minutos, sin tocar el sitio). Con la puerta cerrada, nada de lo demás cuenta: 246 artículos y cuatro currículums que ChatGPT no puede leer. Abierta la puerta, la siguiente jugada natural es declarar en datos quién es el estudio y quiénes son sus abogados, y ahí sí competir por aparecer en las respuestas<span class="punto-final">.</span></p>
+  <h2>El paso 1 va regalado. Los que traen clientes son los otros tres</h2>
+  <p>Quitar el bloqueo es un ajuste en el panel de Cloudflare, minutos, y lo pueden hacer ustedes mismos: háganlo esta semana. Pero abrir la puerta solo deja entrar a los motores a un sitio que aún no les dice quién es Legal Prisma ni les da qué citar. Los pasos 2 al 4 son nuestro trabajo: auditoría completa del sitio, el estudio y sus abogados declarados en datos, las áreas y los 246 artículos convertidos en material citable, y medición mensual. El resultado que importa: <b>que cuando alguien pregunte por un abogado de su especialidad, Legal Prisma esté en la respuesta</b><span class="punto-final">.</span></p>
 </div>
 
-<p style="margin-top:9px;font-size:11.5px;color:var(--gris)">Nosotros trabajamos exactamente eso: el motor completo, el sitio, el SEO, las redes y la pauta funcionando juntos, con la visibilidad en Google y en la IA como eje. Los precios están publicados en spindlelab.cl.</p>
+<p style="margin-top:9px;font-size:11.5px;color:var(--gris)">Trabajamos el motor completo: el sitio, el SEO, las redes y la pauta funcionando juntos, con la visibilidad en Google y en la IA como eje. Los planes y precios están publicados en spindlelab.cl.</p>
 
 <footer>
-  <div class="cta">¿Conversamos 20 minutos, sin costo<span class="punto">?</span></div>
+  <div class="cta">¿Revisamos la ruta en 20 minutos, sin costo<span class="punto">?</span></div>
   <div class="contacto">hola@spindlelab.cl · spindlelab.cl<br>chequeo gratis: spindlelab.cl/diagnostico</div>
 </footer>
 

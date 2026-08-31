@@ -35,9 +35,17 @@ diagnóstico con un hallazgo inventado destruye la credibilidad que busca constr
    acceso (¿pueden entrar los rastreadores? robots.txt, errores HTTP) → entidad
    (¿entienden quién es?) → citabilidad. **Un bloqueo de entrada SIEMPRE gana**: si
    los bots no pueden leer el sitio, ningún arreglo de schema o contenido cuenta.
-5. **El orden narrativo vende:** el hallazgo mayor abre el documento; lo que está
-   sano se dice breve y al final. **Jamás abrir con lo que NO se hizo** (la
-   honestidad metodológica va en la letra chica del pie, no de apertura).
+5. **El documento responde la pregunta del dueño, no la del técnico:** "¿por qué
+   te contrataría YO?". Abre con **lo que está en juego en SU negocio** (cómo le
+   llega hoy un cliente nuevo y quién se lo está llevando); los hallazgos técnicos
+   son la **evidencia** de ese problema, no la historia. El cierre dice **qué gana**
+   en sus términos (consultas, pacientes, casos), no en los nuestros (schema,
+   robots). **Jamás abrir con lo que NO se hizo** (la honestidad metodológica va en
+   la letra chica del pie).
+5b. **Regala el paso 1 y haz visible la ruta completa.** Si la corrección regalada
+   es la única necesidad visible, el prospecto la arregla solo y la venta muere.
+   El documento lleva un mapa de 3-4 pasos con el ESTADO real de cada uno: el
+   paso 1 se regala (credibilidad), los siguientes son el trabajo que se contrata.
 6. **Ancla verificable:** el hallazgo clave cierra con dónde puede comprobarlo el
    prospecto por sí mismo (su propio /robots.txt, su HTML, una herramienta pública).
    Si un instrumento automático contradice tu verificación manual, **cita la fuente
@@ -129,3 +137,11 @@ Produzco el diagnóstico de entrada. **No** hago la entrega completa del servici
 > el número del instrumento NO se cita.* **Respaldo:** SpindleLab, 31-ago-2026 —
 > el chequeo público no ve reglas de borde de Cloudflare (limitación
 > arquitectural) y daba 65/100 donde el robots.txt real bloqueaba 3 motores.
+
+> ✅ **Principio:** *el gancho que resuelve la única necesidad visible mata la
+> venta. El diagnóstico regala el primer paso y deja el mapa completo a la vista,
+> con el estado de cada paso; y todo el documento habla el idioma del dueño (de
+> dónde llegan sus clientes y quién se los lleva), no el del técnico.*
+> **Respaldo:** SpindleLab, 31-ago-2026 — SPL-DIAG-2026-006 v2→v3: la v2 regalaba
+> el fix de robots.txt sin ruta ("gracias, lo arreglé" y fin); la v3 abre con "quien
+> aparece en esa respuesta se lleva la consulta" y tabla de 4 pasos con estado.

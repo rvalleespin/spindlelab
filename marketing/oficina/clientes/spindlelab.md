@@ -126,9 +126,13 @@ SPL-DIAG-2026-006):
   entidad > citabilidad. Si los bots de IA no pueden entrar (robots.txt), ESA es la corrección,
   siempre; el schema viene después. "Si los bots no entran, nada más importa" es doctrina
   publicada de la casa.
-- **El orden narrativo vende**: primero el hallazgo mayor, después las señales de confianza,
-  al final "lo demás está sano" en 3 líneas. Nunca abrir con lo que NO se hizo (la honestidad
-  metodológica va en la letra chica del pie, no como apertura).
+- **El documento habla el idioma del dueño, no el del técnico** (regla de Ramón, 31-ago): abre
+  con lo que está en juego en SU negocio (cómo le llega un cliente nuevo y quién se lo está
+  llevando), los hallazgos técnicos son la evidencia, y el cierre dice qué gana en sus términos.
+  Nunca abrir con lo que NO se hizo (eso va en la letra chica).
+- **Regala el paso 1 y haz visible la ruta completa** (tabla de 4 pasos con estado real:
+  abrir la puerta → ser entendible → ser citable → medir entero). Si lo regalado es la única
+  necesidad visible, el prospecto lo arregla solo y la venta muere. Molde: SPL-DIAG-2026-006 v3.
 - **El cierre presenta el motor** (regla de Ramón 31-ago): 2 líneas con el motor completo +
   "precios publicados en el sitio" + CTA de 20 minutos + el link del chequeo.
 - Tagline del encabezado: "Un motor de adquisición · SEO técnico y visibilidad en IA como eje"
