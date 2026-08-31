@@ -42,4 +42,36 @@ es link en el 1er comentario, nunca en el cuerpo.
 - Publicación **manual de Ramón** este mes: tu entregable por fila es texto final + 1er
   comentario listos para pegar. Los CSV de Metricool siguen en pausa.
 
-**Estado:** ⬜ pendiente · creado 28-ago-2026 por Marta
+**Estado:** 🟡 Entrega 1 parcial (31-ago, Cata) · creado 28-ago-2026 por Marta · ver bitácora al final
+
+---
+
+## Bitácora de Cata
+
+### 31-ago-2026 — Entrega 1, parte que no dependía de Renata
+
+Entregado en `marketing/redes/2026-09-septiembre/copys-ventana-1.md` (texto final + primer
+comentario, listos para pegar):
+
+- ✅ **Punto 2** — copy del **jue 3-sep** (base `post-06ago`, grilla de agosto jue 6) re-apuntado
+  al chequeo. Voz plural, familia de gancho C intacta (la prueba en pantalla es el `<div id="app">`
+  de la pieza, así que la regla de la familia se cumple). El cierre pasó de "ver código fuente" a
+  secas a esa misma acción conectada con las 21 señales publicadas; el mini-diagnóstico no aparece.
+- ✅ **Punto 3** — caption de IG del **vie 4-sep** con el carrusel re-apuntado ("5 de los 21 que
+  puedes correr tú"). `carrusel-03-cinco-chequeos/copy-post.md` quedó con el puntero al copy
+  vigente y su copy de agosto marcado como registro.
+- 🟡 **Punto 4** — primeros comentarios: los de mis dos filas (jue 3 y vie 4) están listos. Los de
+  las filas de Renata (mar 1 y mié 2) van como **propuesta base**; se unifican cuando ella entregue.
+  El estándar de primeros comentarios del mes quedó escrito en el mismo documento.
+- ⬜ **Punto 1** — pase de tono del anuncio, el post ancla y el blog #1: **bloqueado**, Renata aún
+  no entrega (su encargo sigue ⬜ pendiente al 31-ago). Se hace apenas llegue.
+
+Dos cosas que Ramón necesita saber en el Pase 1+2, y que no son de copy:
+
+1. **Instagram no tiene links clicables** ni en el caption ni en los comentarios. La convención de
+   "link en el primer comentario" solo se cumple de verdad en LinkedIn. Para la fila del vie 4-sep
+   el dominio va escrito en el caption y el comentario remite a la bio, así que **el link de la bio
+   de `@spindle.lab` tiene que apuntar a `/diagnostico/`** antes de publicar.
+2. No cambié ninguna familia de gancho, así que la alternancia que verificó Marta sigue en pie.
+
+**Estado del encargo:** 🟡 Entrega 1 parcial (2, 3 y 4 hechos; 1 esperando a Renata).
