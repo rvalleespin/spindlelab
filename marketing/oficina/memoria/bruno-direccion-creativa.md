@@ -6,12 +6,36 @@ Defino el "cómo se ve"; el "qué decir" es de Renata/Cata.
 **Skill:** .claude/skills/persona-director-creativo/SKILL.md
 
 ## Estado actual
+- 2026-08-31 — **SpindleLab, relanzamiento de septiembre.** Encargo de Marta entregado
+  completo (las 3 entregas en una tanda, para el Pase 1+2 del 31-ago): anuncio del motor
+  en 3 direcciones, 5 re-renders de agosto, carrusel del chequeo, stories y la pieza del
+  8-sep con copy provisional. Todo en `marketing/redes/2026-09-septiembre/` (su README
+  tiene el detalle). Créditos Higgsfield: 0. Falta el pase de Ramón.
 - 2026-08-07 — **Praxi, campaña de lanzamiento (20-ago).** Reencuadrada al eje
   memoria · evidencia · ejecución. Piezas 01, 02 y los overlays del reel rehechos;
   carrusel v2 a medias; las 5 piezas de siembra bloqueadas por falta de `ffmpeg`.
   Detalle y estado por pieza: `marketing/oficina/clientes/praxi.md`.
 
 ## Aprendido a pulso (gotchas)
+
+- **En sesión cloud, Chrome headless pinta ~85 px menos que el `--window-size` pedido:**
+  un `--window-size=1080,1080` deja una franja blanca abajo y el PNG sale mutilado, no
+  corto. Se renderiza con holgura y se recorta. Script listo:
+  `marketing/redes/_tools/render.sh <html> <ancho> <alto>` (sirve igual en Mac). El
+  defecto NO se ve en el HTML: solo mirando el PNG. (31-ago)
+- **Reciclar una pieza NO es sobrescribirla.** El mes viejo se deja intacto y el
+  re-render sale con el nombre de su nueva fecha, en la carpeta del mes nuevo. Si no,
+  se pierde el original y nadie puede comparar qué cambió. (31-ago)
+- **Al reciclar, auditar la pieza contra el estado ACTUAL del negocio, no solo cambiar
+  la firma.** La lámina 7 del carrusel prometía "gratis en 48 horas" cuando la promesa
+  ya era 24 y la oferta ya no era un diagnóstico nuestro sino un chequeo autoservicio.
+  Nadie lo había pedido; se ve leyendo la pieza al lado del sitio vigente. (31-ago)
+- **Un defecto heredado sigue siendo un defecto.** El titular de 3 líneas del 18-ago ya
+  chocaba con el wordmark en agosto. Re-renderizar "fiel" lo habría republicado. Se
+  arregla y se declara el cambio, no se arrastra. (31-ago)
+- **Si falta el copy, se entrega la maqueta marcada, no se traba la entrega.** El dato
+  puede salir de una fuente real (el sitio); la redacción se marca como provisional y de
+  quién es. Un re-render son segundos. (31-ago)
 
 - **Revisar el titular CONTRA el cuerpo, no cada uno por su lado.** Una pieza puede
   argumentar una cosa y firmarse con otra sin que nadie lo note: la 01 de Praxi

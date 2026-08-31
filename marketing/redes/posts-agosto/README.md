@@ -1,5 +1,13 @@
 # Sistema visual de posts de empresa — agosto 2026
 
+> ⚠️ **31-ago-2026 — estas piezas NO se publican tal cual.** Todas llevan la etiqueta
+> "Lo que la IA ve de tu negocio · Agosto" y la firma "Mini-diagnóstico gratis · spindlelab.cl"
+> **quemadas en el HTML**, y las dos cambiaron en septiembre. Las versiones vigentes,
+> re-renderizadas por Bruno con la etiqueta y la firma nuevas, están en
+> **`marketing/redes/2026-09-septiembre/`** (06ago→`post-03sep`, 18ago→`post-10sep`,
+> 20ago→`post-22sep`, 25ago→`post-24sep`, 27ago→`post-29sep`).
+> Esta carpeta queda como archivo: no se sobrescribió nada. `post-13ago` sigue **en reserva**.
+
 **Pieza 3 del encargo `piezas-visuales-agosto.md`.** Un mismo sistema para los posts de empresa
 del mes, para que agosto se lea como un bloque y cada pieza sirva además como creativo de Meta Ads.
 **Estado:** dos direcciones renderizadas + los 4 posts aplicados. Pendiente tu elección y revisión.

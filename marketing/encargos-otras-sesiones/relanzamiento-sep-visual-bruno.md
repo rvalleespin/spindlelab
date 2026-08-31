@@ -55,4 +55,24 @@ Piezas nuevas del mes en `marketing/redes/2026-09-septiembre/` (créala tú, con
 - Vetos duros: 0/15 propio en ninguna pieza · `/indice/` no existe · cero competidores por nombre.
 - Nada se publica desde tu sesión: entregas PNG verificados; publica Ramón tras su pase.
 
-**Estado:** ⬜ pendiente · creado 28-ago-2026 por Marta
+**Estado:** ✅ **ENTREGADO por Bruno el 31-ago-2026** (las tres entregas, adelantadas a una sola
+tanda para el Pase 1+2). Todo en `marketing/redes/2026-09-septiembre/`; la nota de uso, las
+decisiones de dirección y lo que queda pendiente están en el `README.md` de esa carpeta.
+
+| # | Encargo | Entregado |
+|---|---|---|
+| 1 | Pieza nueva: anuncio del motor (mar 1-sep) | `anuncio-01sep-v1-cartera` (recomendada) + `-v2-motor` + `-v3-ventana` — **Ramón elige una** |
+| 2 | Re-render post-06ago (jue 3-sep) | `post-03sep` |
+| 3 | Carrusel del chequeo (vie 4-sep) | `carrusel-chequeo/` — láminas 1 y 7 re-apuntadas; 2-6 sin cambios (no llevaban firma, CTA ni etiqueta vieja) |
+| 4 | Pieza nueva del mar 8-sep | `post-08sep` ⚠️ **con copy provisional**: Renata no había entregado el texto. El dato (bloques 30/40/30) es real, la redacción es mía y hay que reemplazarla |
+| 5 | Re-render post-18ago (jue 10-sep) | `post-10sep` (banda 432→480 px: el titular de 3 líneas ya chocaba con la firma en el original) |
+| 6 | Adaptación IG + stories (vie 11-sep) | `post-10sep.png` sirve tal cual para el feed IG; `stories-11sep/` con el frame 4 rehecho (decía "48 horas") |
+| 7 | Re-render 20/25/27-ago | `post-22sep`, `post-24sep`, `post-29sep` |
+| 8 | Adaptación IG de post-25ago (vie 25-sep) | `post-24sep.png` sirve tal cual para el feed IG |
+
+**No se tocó** `post-13ago`, `carrusel-linkedin.pdf` ni `ad-resumen.png` (reserva). **No se
+sobrescribió ninguna pieza de agosto.** Créditos de Higgsfield gastados: **0**.
+
+**Bloqueos que quedan para el Pase 1+2:** (a) confirmar la etiqueta de serie — se produjo con la
+propuesta y el re-render de las 10 piezas son ~20 segundos si cambia; (b) elegir v1/v2/v3 del
+anuncio; (c) el copy definitivo del 8-sep, que es de Renata.
