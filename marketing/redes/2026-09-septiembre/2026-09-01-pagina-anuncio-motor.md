@@ -1,0 +1,56 @@
+# Anuncio del motor — página de empresa LinkedIn
+
+**Sale:** mar 1-sep-2026, 09:00 (hora Chile) · **Canal:** página de empresa · **Voz:** plural
+**Escribe:** Renata · **Pase de tono:** Cata · **Aprueba:** Ramón (Pase 1+2, lun 31-ago) · **Publica:** Ramón (manual)
+**Visual:** pieza nueva de Bruno (`relanzamiento-sep-visual-bruno.md`)
+**Estado:** ⬜ borrador para pase de tono y aprobación. **No publicar sin el visto de Ramón.**
+
+**Fuentes:** brief v2 §3 y §4 (`marketing/rebranding-2026-08-brief-comunicacion.md`) ·
+plantillas v2 (`marketing/plantillas/linkedin-posts.md`) · sitio en vivo
+(`spindlelab-astro/public/diagnostico/`, `/metodo/`, `/servicios/`).
+
+---
+
+## Cuerpo del post
+
+Nuestro sitio dejó de ser una lista de servicios.
+
+Ahora cuenta cómo se conectan. El SEO técnico y la visibilidad en motores de IA son el eje; alrededor están el desarrollo web, las redes y la pauta. Un motor de adquisición, no cuatro servicios sueltos.
+
+Con el cambio publicamos tres cosas que antes no estaban:
+
+**1. Los precios.** Las seis soluciones con su "desde" y el desglose de qué incluye cada plan. Preguntar cuánto cuesta algo no debería costar una reunión.
+
+**2. El método, con nombre y pasos.** Método SpindleLab: diagnóstico, estrategia AEO/GEO, implementación y monitoreo. Se puede leer completo antes de contratarnos.
+
+**3. Un chequeo que corres tú.** Escribes tu dominio y en segundos ves si ChatGPT, Gemini y Perplexity pueden leer tu sitio, entenderlo y citarlo. Son 21 chequeos y la metodología está publicada, con el peso de cada uno. Gratis, sin registro y sin dejarnos tu correo.
+
+El tercero es el que más nos importa. Auditamos sitios para vivir; lo mínimo era dejar que cualquiera audite el suyo sin pedirle nada a cambio.
+
+Chequea el tuyo. El enlace va en el primer comentario.
+
+#SEO #IA #AEO #Chile
+
+---
+
+## Primer comentario (lo publica Ramón junto con el post)
+
+Acá está el chequeo: https://spindlelab.cl/diagnostico/
+
+Corre en segundos sobre tu dominio, no pide registro y no guardamos lo que consultas. Cada chequeo que no pasas viene con qué hacer para arreglarlo, aunque decidas hacerlo por tu cuenta.
+
+---
+
+## Verificación de Renata
+
+- Voz **plural** en todo el cuerpo (plantillas v2). ✅
+- Link **solo en el primer comentario**, no en el cuerpo. ✅
+- CTA de gancho → `/diagnostico/` (brief §4.5). ✅
+- Sin "rebranding" ni "nueva imagen": el post habla de cómo mostramos lo que hacemos, no de lo visual (brief §6). ✅
+- Sin el puntaje propio del test de menciones (0/15). ✅
+- Sin `/indice/` ni "Índice de Citabilidad". ✅
+- Sin competidores nombrados; el contraste se hace describiendo el patrón ("preguntar cuánto cuesta no debería costar una reunión"). ✅
+- Sin urgencia fabricada, sin prueba social inventada, sin em-dash de muletilla. ✅
+- Datos verificados contra el sitio: 6 soluciones con precio "desde", 21 chequeos, metodología y pesos publicados, sin registro, no se guarda el dominio (FAQ de `/diagnostico/`). ✅
+
+**Qué falta para estar listo:** pase de tono de Cata y visto bueno de Ramón. Si Bruno cambia la etiqueta de serie, el cuerpo no se toca (la etiqueta vive en la pieza, no en el copy).

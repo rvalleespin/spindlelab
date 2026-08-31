@@ -52,4 +52,19 @@ todo pasa por pase de tono de Cata y por la tanda de Ramón indicada por pieza.
 Los ajustes de copy de las piezas recicladas (06/18/20/25/27-ago y carrusel) son de **Cata**.
 Las piezas visuales, de **Bruno**. Publicar, de **Ramón** (redes) y **Diego** (blog).
 
-**Estado:** ⬜ pendiente · creado 28-ago-2026 por Marta
+**Estado:** ✅ **ejecutado por Renata, 31-ago-2026.** Las 6 piezas redactadas y entregadas.
+
+| # | Pieza | Archivo | Estado |
+|---|---|---|---|
+| 1 | Anuncio del motor (página, mar 1-sep) | `marketing/redes/2026-09-septiembre/2026-09-01-pagina-anuncio-motor.md` | listo para pase de tono + Ramón |
+| 2 | Post ancla (perfil, mié 2-sep) | `marketing/redes/2026-09-septiembre/2026-09-02-personal-post-ancla.md` | listo para pase de tono + Ramón |
+| 3 | Blog #1, los 21 chequeos (jue 3-sep) | `marketing/articulos/2026-09-articulo-03-los-21-chequeos-de-visibilidad-en-ia.md` | listo para edición de Ramón + montaje de Diego |
+| 4 | Blog #2, el motor (jue 10-sep) | `marketing/articulos/2026-09-articulo-04-un-motor-de-adquisicion.md` | listo para Pase 3 |
+| 5 | Reciclaje del blog #1 (página, mar 8-sep) | `marketing/redes/2026-09-septiembre/2026-09-08-pagina-reciclaje-blog-1.md` | listo para Pase 3; depende de que el blog #1 esté en vivo |
+| 6 | Hallazgo del chequeo (perfil, mié 9-sep) | `marketing/redes/2026-09-septiembre/2026-09-09-personal-hallazgo-chequeo.md` | ⚠️ **bloqueado por dato**; Plan B redactado. Aviso a Marta en `aviso-renata-a-marta-post-9sep.md` |
+
+Los primeros comentarios de las piezas 1, 2, 5 y 6 van redactados en el mismo archivo de cada pieza.
+Ninguna pieza se publica sin pase de tono de Cata y visto de Ramón. Reporte completo de la entrega
+en `marketing/encargos-otras-sesiones/relanzamiento-sep-copy-RENATA-REPORTE.md`.
+
+*Creado 28-ago-2026 por Marta.*
