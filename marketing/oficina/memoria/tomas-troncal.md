@@ -66,3 +66,12 @@
   vista única de decisión para los pases, y el matiz del insumo compartido que destraba a
   varios roles. Contexto de la jornada: `marketing/encargos-otras-sesiones/coordinacion-cierre-31ago.md`.
   Recuerda: una skill editada solo aparece en sesiones NUEVAS.
+
+- 2026-09-03 (regla nueva, de un enojo justificado de Ramón) — **UN archivo por pieza, cero
+  cadenas la mañana de publicar.** El jue 3 la pieza estaba lista pero el copy quedó repartido
+  entre un publicar.md con advertencias, un copy viejo "de respaldo" y un encargo a otra sesión:
+  Ramón llegó a publicar y no había texto que pegar. Reglas: (1) el `publicar.md` del día es LA
+  única fuente y jamás guarda copys viejos adentro (git es el respaldo); (2) si a las 20:00 del
+  día anterior falta el copy de una pieza aprobada, la coordinación LO ESCRIBE (deadline mata
+  cadena de especialistas) y el especialista refina el molde después; (3) las advertencias de
+  "documento a medio actualizar" se resuelven el mismo día, nunca se heredan a la mañana siguiente.

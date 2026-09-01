@@ -69,3 +69,8 @@ Ahí está el hueco. Detalle en
    quieres que lo hagamos nosotros. Dos ofertas en secuencia, no en competencia.
 3. El concepto ya está canonizado en `marketing/brand/manual-de-marca.md` §06b — cítalo
    de ahí si necesitas la formulación exacta.
+
+**Estado: ✅ CERRADO por la coordinación (3-sep, mañana).** El copy lo escribió la coordinación
+sobre la hora (Ramón necesitaba publicar y la cadena Renata→Cata no alcanzaba); está en el
+`publicar.md` del día, bajo el concepto y con el "+ IVA" y el recorrido chequeo→desde resueltos.
+Renata/Cata: no rehacer; sí aplicar este molde a las piezas siguientes del concepto.
