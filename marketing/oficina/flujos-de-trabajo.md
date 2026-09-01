@@ -39,11 +39,11 @@ Nombre humano · `skill` — labor en una línea.
 
 **Producto & Diseño** (para los productos propios — Praxi)
 - **Nadia** · `producto-ui-ux` — diseño de producto, UI/UX, arquitectura frontend.
-- **Pía** · `agente-growth-producto` — onboarding, activación, lifecycle, retención.
+- **Pía** · `agente-growth-producto` — onboarding, activación, lifecycle, retención. **Skill en reserva** (`oficina/skills-en-reserva/`) hasta que haya un caso real de Praxi.
 
 **Inteligencia & Datos**
 - **Vera** · `agente-inteligencia-mercado` — investiga el mercado y la competencia *antes* de una decisión cara (precio, posicionamiento, nuevo mercado).
-- **Nora** · `agente-analitica` — mide qué produjo cada frente *después*; reporte mensual.
+- **Nora** · `agente-analitica` — mide qué produjo cada frente *después*; reporte mensual. **Skill en reserva** (`oficina/skills-en-reserva/`) hasta el primer reporte con datos suficientes.
 
 **Admin & Finanzas**
 - **Monse** · `agente-finanzas` — *(vacante)* cobros por fase, facturación.

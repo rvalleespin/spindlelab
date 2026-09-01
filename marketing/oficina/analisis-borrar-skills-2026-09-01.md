@@ -59,23 +59,33 @@ dorado escaso, singular vs. plural por cuenta), las rutas y fichas de cliente, l
 decisiones ya tomadas (Metricool manual, el 0/15 no se publica, semana 11 intocable),
 los límites de rol. Nada de eso lo puede adivinar el modelo.
 
-**No pasan hoy (fallan la R de repetible: no se han usado ni una vez):**
-- `agente-analitica` — su memoria dice "sin reportes propios aún"; no hay cliente con GA4 medible.
-- `agente-growth-producto` — "sin primer flujo de onboarding"; Praxi vive en otro repo con su propio `CLAUDE.md`.
-- `agente-seo-aeo` — "sin entregas propias aún"; **no hay ningún cliente ganado de SEO/AEO** (el único ganado es Bernardo Combeau, Desarrollo Web).
-- `frontend-design` — la única importada, en inglés, y **ya viene como skill nativa de la sesión**: está duplicada.
+**No pasan hoy (fallan la R de repetible y no tienen un caso real que ejecutar):**
+- `agente-analitica` — su memoria dice "sin reportes propios aún"; no hay todavía volumen
+  que reportar. Sus datos duros (conversión ancla `generate_lead`, umbral de semana 12)
+  quedan igual en `oficina/memoria/nora-analitica.md`.
+- `agente-growth-producto` — "sin primer flujo de onboarding"; Praxi vive en otro repo con
+  su propio `CLAUDE.md` y su propio contrato de marca.
+- `frontend-design` — la única importada, en inglés, con `LICENSE.txt`, y **ya viene como
+  skill nativa de la sesión**: estaba duplicada. Es la única que falla las tres R.
 
-**Riesgo real de dejarlas:** no es el gasto de contexto (son ~250 palabras entre las cuatro),
-es el sesgo. Una skill que existe se invoca, y arrastra criterios escritos antes de tener
-un solo caso real.
+**Corrección al ejecutar (1-sep):** `agente-seo-aeo` iba en esta lista y **se devolvió**.
+La premisa era falsa: su memoria dice "sin entregas propias aún", pero el 22-ago produjo la
+auditoría SEO/AEO completa del sitio de la casa
+(`encargos-otras-sesiones/auditoria-seo-sitio-2026-08.md`). Pasa **requisito** (guarda el
+diferencial de visibilidad en IA, `searchfit`, el límite "no soy Valen") y **repartible**
+(se ejecuta vía encargo a Diego). El filtro archiva lo que no pasa **ninguna** de las tres.
+
+**Riesgo real de archivar/no archivar:** no es el gasto de contexto (son ~200 palabras entre
+las tres), es el sesgo. Una skill que aparece en el índice se invoca, y arrastra criterios
+escritos antes de tener un solo caso real con el que calibrarlos.
 
 ## 4. Decisión
 
 1. **No** borrar CLAUDE.md ni el grueso de los skills. Reevaluar por **evento**
    (próximo modelo mayor), no por calendario.
-2. **Sí** archivar las cuatro sin tracción a una carpeta de reserva, con nota de por qué,
-   para reactivarlas cuando exista el caso real (primer cliente SEO ganado, primer reporte,
-   primer flujo de Praxi).
+2. **Sí** archivar a `oficina/skills-en-reserva/` las que no tienen caso real, con nota de
+   por qué y cómo reactivarlas (primer reporte con datos, primer flujo de Praxi). Los roles
+   y sus memorias se quedan: lo que se pausa es el manual, no el empleado.
 3. **Sí** hacer la pasada anti-hobbling en las skills que sí se usan a diario
    (`persona-social-media`, `persona-director-creativo`, `persona-disenador-web`,
    `agente-troncal-marketing`): convertir los bloques "Método 1..5" en **guardrails +

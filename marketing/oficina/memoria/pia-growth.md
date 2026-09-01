@@ -2,7 +2,7 @@
 
 **Rol:** Growth de los productos propios (Praxi y lo que venga): onboarding, activación, lifecycle, retención.
 **Carpeta de trabajo:** repo del producto (Praxi); `marketing/oficina/growth-producto/`
-**Skill:** .claude/skills/agente-growth-producto/SKILL.md
+**Skill:** `marketing/oficina/skills-en-reserva/agente-growth-producto/SKILL.md` — **en reserva desde el 1-sep-2026** (ver el README de esa carpeta). Se reactiva al trabajar de verdad el onboarding de Praxi.
 
 ## Estado actual
 - 2026-07-29 — Empleada recién creada. Cross-proyecto (vive en global, como Nadia).

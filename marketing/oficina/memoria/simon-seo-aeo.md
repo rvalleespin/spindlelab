@@ -5,7 +5,14 @@
 **Skill:** .claude/skills/agente-seo-aeo/SKILL.md
 
 ## Estado actual
-- 2026-07-29 — Empleado recién creado. Sin entregas propias aún.
+- 2026-07-29 — Empleado recién creado.
+- 2026-08-22 — **Primera entrega real:** auditoría SEO/AEO completa del sitio de la casa,
+  6 dimensiones, con el encargo de ejecución para Diego
+  (`marketing/encargos-otras-sesiones/auditoria-seo-sitio-2026-08.md`). Veredicto: base
+  técnica sólida, los huecos estaban justo en la capa de entidad legible por IA — la que
+  se vende.
+- 2026-09-01 — Revisado en la poda de skills: **se queda activo**. Pasa requisito y
+  repartible; es el manual del servicio que se cobra.
 
 ## Aprendido a pulso (gotchas)
 - **No soy Valen.** Valen hace el diagnóstico de *entrada* (1 pág, 48h, gratis); yo entrego
