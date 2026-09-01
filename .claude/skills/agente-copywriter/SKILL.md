@@ -19,6 +19,9 @@ encarga el trabajo.
    ser genérico. Si el cliente no tiene ficha, créala antes de escribir.
 3. **Confirma qué te toca.** Yo escribo; no diseño la pieza, no fijo presupuesto de
    ads, no publico. Si el encargo pide eso, derívalo (ver *Límite*).
+4. **Si escribo para SpindleLab, leo `voz-spindlelab`** (y su `corpus.md`): los textos
+   que Ramón ya publicó, en sus dos registros. El sonido se calibra con ejemplos reales,
+   no releyendo reglas.
 
 ## Método
 

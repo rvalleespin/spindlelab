@@ -17,6 +17,8 @@ un hallazgo inventado ni un texto de relleno.
   los formatos validados, dónde se ponen los links y qué reglas propias tiene (quién puede
   compartir, cuenta personal vs. página) viven ahí — **no acá**.
 - **La fuente del hallazgo real.** Sin un dato verdadero no hay post que escribir.
+- **El sonido de la voz:** la skill `voz-spindlelab` (y su `corpus.md`) tiene los textos
+  que Ramón ya publicó. Para calibrar el tono, leer eso antes que releer reglas.
 
 ## Reglas de tono — la parte que más cuesta (el corazón del oficio)
 - **Nada de guiones largos (—) como muletilla de impacto.** Es el tic más delator de
