@@ -33,3 +33,10 @@ Comenta CIRCUITO y te mando el link del chequeo por DM, gratis y sin registro. (
 Trazabilidad: concepto "el eje y el circuito" (manual §06b) · precio cotejado contra el sitio
 vivo · gancho de comentarios = decisión de Ramón del 1-sep (keyword del mes: CIRCUITO) · esta
 pieza reemplazó al anuncio v2-motor como apertura; el anuncio pasó al JUE 3.
+
+---
+**✅ PUBLICADO — mar 1-sep, confirmado por Ramón (canal: Instagram @spindle.lab).**
+Primera pieza de la campaña del circuito en el aire. Pendientes operativos del día:
+bio → /diagnostico · responder los "CIRCUITO" por DM (plantilla arriba; ManyChat lo
+automatiza en IG apenas Ramón lo conecte) · evaluar subirlo también a la página de
+LinkedIn (canal B2B principal).
