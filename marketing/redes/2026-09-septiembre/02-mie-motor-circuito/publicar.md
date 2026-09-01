@@ -1,7 +1,7 @@
 # Publicar — El motor (pieza nueva, mundo dominó)
 
 **Cuándo:** MIÉRCOLES 2-sep · Instagram 19:00 (principal) · LinkedIn página 09:00 (cross opcional: si prefieres no llevar 3 posts de página esta semana, va solo en IG)
-**Pieza:** `pieza.png` (en esta carpeta)
+**Pieza:** `pieza.png` — fondo: dominó NUEVO (curva conectada, generado 1-sep, 0,1 créditos aprox). Decisión de Ramón: esta semana TODO dominó para coherencia de feed; la próxima semana cambia el elemento (el hilo de oro queda listo en esta carpeta como alternativa: `hilos-1.png` vive en `_reserva/sprint-concepto-02sep/`).
 **Checklist:** ☐ pase de Ramón · ☐ IG: sumar el post al trigger CIRCUITO en ManyChat · ☐ 1er comentario al tiro
 
 ## Caption / cuerpo (copiar y pegar)
