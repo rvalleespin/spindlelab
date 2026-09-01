@@ -32,10 +32,18 @@ Restricciones: audience-first (qué gana él mirando esto antes que qué hicimos
 sin em-dash de muletilla · sin prueba social inventada · sin nombrar prospectos ·
 dato duro disponible: las corridas del 31-ago (`marketing/metricas/`).
 
-**Fricción a resolver en el cuerpo:** la pieza lleva un "desde $400.000" **y** CTA a
-chequeo gratis. Si el cuerpo no las ordena como recorrido (mira gratis qué te falta →
-arreglarlo parte en X), compiten. **Pendiente de Ramón:** confirmar que el $400.000
-sigue vigente (lo tomé de `../_reserva/anuncio-v1-cartera.html`).
+**El "desde" va — decisión de Ramón (1-sep):** se muestra "desde qué valores trabajo".
+Reencuadra el addendum del 31-ago: la regla era **sin CARTERA de precios**; un "desde" es
+un umbral de entrada, no la cartera. Queda para canonizar.
+
+⚠️ **Lo que Ramón aprobó es el recurso, no el monto.** El `$400.000` lo tomé de
+`../_reserva/anuncio-v1-cartera.html` (la v1 que quedó en reserva el 31-ago) y **nadie lo
+ha cotejado contra la cartera vigente.** Antes de publicar hay que confirmar la cifra;
+si cambia, se re-renderiza en segundos (`post-domino.html`, bloque `.desde`).
+
+**Fricción a resolver en el cuerpo:** la pieza lleva el "desde" **y** CTA a chequeo
+gratis. Si el cuerpo no las ordena como recorrido (mira gratis qué te falta → arreglarlo
+parte en X), compiten.
 
 ---
 ---
