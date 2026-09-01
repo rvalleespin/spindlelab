@@ -1,0 +1,121 @@
+# Sprint de concepto rector — 3 rutas (Bruno, 2-sep-2026)
+
+Propuestas para el sprint en vivo con Ramón. **Los copys de las piezas son
+provisionales míos** (maqueta para ver el concepto en pie): si una ruta gana,
+la redacción es de Renata y el tono lo pasa Cata.
+
+Key visual de cada ruta = la pieza del jue 3 rediseñada bajo el concepto.
+Todas renderizadas y miradas. Estilo live v2 intacto (tokens de `_sistema/base.css`,
+Gabarito+Manrope, verde petróleo en etiquetas, un solo dorado: el punto del wordmark).
+
+---
+
+## RUTA A — "La respuesta ya se está dando"  ⭐ recomendada
+
+**Concepto en una frase:** la IA ya está contestando por tu rubro todos los días;
+lo único que está en juego es si tu nombre sale en esa respuesta.
+
+**Insight del dueño:** no me quita el sueño el HTML. Me quita el sueño que un
+cliente pregunte por mi rubro y le recomienden a otro, y yo ni me entere.
+
+**Key visual:** `kv-A-respuesta.png` — el sujeto de la pieza deja de ser el sitio y
+pasa a ser LA RESPUESTA. Tres slots ocupados (anonimizados, no son nombres reales) y
+un cuarto vacío con la línea punteada en petróleo: el asiento que te tocaba. El punto
+dorado del wordmark queda justo debajo del hueco y lo remata.
+
+**Cómo escala:**
+- Carrusel: la respuesta se construye lámina a lámina (pregunta real → los que salen →
+  el hueco → por qué no sales → qué mirar hoy).
+- Story: una pregunta real por story y el hueco.
+- Texto puro (perfil personal, primera persona singular): "le pregunté a ChatGPT qué
+  asesor financiero recomendaba en Santiago. Salieron tres nombres." Es el formato
+  donde MÁS rinde, no el que sufre.
+- Pieza de dato: 37 de 38 inmobiliarias fallan la FAQ citable (corridas 31-ago).
+
+**Mini-manifiesto:**
+> Alguien ya está contestando por tu rubro.
+> La IA no se pregunta si responde: responde siempre.
+> Lo único que está en juego es si sales tú.
+
+---
+
+## RUTA B — "El hilo"
+
+**Concepto en una frase:** entre tu cliente y tú hay un hilo, y hoy se corta antes de
+llegar; nuestro trabajo es dejarlo entero.
+
+**Insight del dueño:** mis clientes me buscan y no me encuentran. El camino existe,
+pero no pasa por mí.
+
+**Key visual:** `kv-B-hilo.png` — el hilo de oro deja de ser textura de fondo y pasa a
+ser el protagonista: dibujado, vivo, y **cortado** a dos tercios; el tramo que seguía
+queda como una línea apagada hacia el borde. Le da por fin significado escrito al
+activo más distintivo que tenemos (hero del sitio + fondo de las 20 piezas).
+
+**Cómo escala:**
+- Cuadrícula de Instagram: cada pieza es un tramo del mismo hilo (entra por la
+  izquierda, sale por la derecha) → el mes se lee como UNA campaña por construcción.
+  Es la ruta que gana el test de serie sin esfuerzo.
+- Story: el hilo vertical que baja y se corta.
+- Texto puro: es su punto débil. Un hilo no se escribe; en texto queda como metáfora.
+
+**Mini-manifiesto:**
+> Entre tu cliente y tú hay un hilo.
+> No lo teje la suerte: lo teje cómo está hecho tu sitio.
+> Nosotros lo dejamos entero.
+
+---
+
+## RUTA C — "La brecha"
+
+**Concepto en una frase:** tu sitio tiene dos lectores —una persona y una máquina— y
+solo cuidaste a uno.
+
+**Insight del dueño:** pagué por un sitio bonito y nadie me dijo que por dentro
+estaba vacío. Miedo a que la plata ya gastada no esté trabajando.
+
+**Key visual:** `kv-C-brecha.png` — la pieza partida en dos: a la izquierda lo que ve
+una persona (maqueta abstracta, sin marcas ni datos inventados), a la derecha lo que
+recibe ChatGPT: el div vacío y un panel negro. El vacío de la derecha es el mensaje.
+
+**Cómo escala:**
+- Carrusel: un par de láminas (ve / recibe) por señal chequeada.
+- Story: la partición en swipe.
+- Texto puro: es el que mejor sobrevive (dos párrafos enfrentados).
+
+**Mini-manifiesto:**
+> Tu sitio tiene dos lectores y solo cuidaste a uno.
+> Lo que a una persona la deja impresionada, a la máquina la deja en blanco.
+> Tiene arreglo, pero primero hay que verlo.
+
+---
+
+## Mi recomendación: A, con B como sistema y C como uno de sus capítulos
+
+- **A es la única que pone al dueño en el centro.** B y C hablan del sitio; A habla de
+  él perdiendo el negocio. El encargo pide que un desconocido SIENTA algo en 3
+  segundos: "salieron tres nombres, ninguno era el tuyo" se siente; "el mismo sitio
+  leído dos veces" se entiende, que no es lo mismo.
+- **A no inventa marca nueva: activa la que ya está escrita.** "El punto donde te
+  encuentran" es la idea rectora oficial (`manual-de-marca.md:10`) y ninguna pieza la
+  dramatiza. A es esa frase puesta en escena.
+- **A tiene evidencia propia detrás.** La respuesta sin ti no es una metáfora: es lo
+  que muestran las 69 corridas del 31-ago.
+- **Dónde A es débil:** el test de serie. Piezas distintas con la misma idea pueden
+  seguir viéndose sueltas. **Ahí entra el hilo de B**, no como concepto sino como
+  sistema de continuidad: el hilo cruza todas las piezas del mes y las cose.
+- **C no se bota:** la brecha es un capítulo de A (por qué no sales), no una campaña
+  entera. Como concepto rector se desgasta: es un dispositivo, y a la cuarta pieza
+  partida en dos ya es una plantilla.
+
+## Punto que el concepto tensiona (decisión de Ramón, no mía)
+
+Bajo la ruta A, la ejecución más fuerte pondría el **dorado en el punto donde
+deberías estar** (el hueco), no en el wordmark. El manual lo prohíbe: dorado solo en
+el punto del wordmark o en UN dato, y el punto del wordmark "no cambia nunca"
+(`manual-de-marca.md` §02 y §06). Las salidas:
+- **(a)** como está renderizado: el dorado se queda en el wordmark y la ausencia se
+  marca por ausencia (línea punteada petróleo). Respeta el canon.
+- **(b)** declarar que en las piezas donde el punto CARGA el concepto, el dorado se
+  muda al hueco y el wordmark va sin él. Es más potente y **obliga a tocar el
+  manual** — eso es nivel Marca: lo baja la coordinación con tu OK, no yo.
