@@ -129,3 +129,27 @@ igual (detecta el binario solo).
 - **Ramón:** elegir v1/v2/v3 del anuncio · confirmar la etiqueta de serie · pase de las 10 piezas.
 - **Renata/Cata:** copy definitivo de `post-08sep` · captions y primeros comentarios de todo.
 - **Bruno (yo):** re-render inmediato si cambia la etiqueta, la dirección elegida o el copy del 8-sep.
+
+---
+
+## v2 — Migración al estilo live (31-ago, noche; sesión coordinadora, pedido de Ramón)
+
+Ramón revisó las piezas y detectó que la v1 heredaba el sistema de AGOSTO (papel/tinta
+`#131A22` + Inter), no el rebranding del sitio. Se migraron las 20 piezas (9 feed + 7
+láminas + 4 stories) esa misma noche:
+
+- **Tokens del CSS de producción** de spindlelab.cl (no inventados): bg `#0e141b`,
+  fg `#f2efe8`, muted `#9aa4b0`, hairlines `rgba(247,245,240,.1)`.
+- **Fondo:** `fondo-hilo.jpg` (poster real del hero, `/video/hero-hilo-de-oro.jpg`)
+  bajo velo `rgba(14,20,27,.86–.96)` en todas las piezas.
+- **Etiquetas de serie y kickers → verde petróleo `#2fa99b`** (antes gris).
+- **Cuerpo → Manrope** (el sitio dejó Inter); Gabarito sigue en títulos.
+- **La dirección "clara" quedó derogada**: `.a` ya no tiene variante papel; las
+  familias se diferencian por dispositivo (ficha / foto-ventana / código / cartera).
+- Dorado: solo el punto del wordmark o UN dato (los números del carrusel).
+- Assets nuevos por carpeta (autocontención): `fondo-hilo.jpg` + `manrope.woff2`
+  en la raíz, en `carrusel-chequeo/` y en `stories-11sep/`.
+- Re-render de las 20 piezas con `_tools/render.sh`; PNGs mirados.
+
+Regla desde ahora: toda pieza nueva parte de ESTE `base.css`. Mapa de la carpeta:
+`marketing/redes/README.md`.

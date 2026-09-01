@@ -30,3 +30,11 @@
 - [ ] **Instagram no tiene links clicables** (ni caption ni comentarios): la convención de "link en el primer comentario" solo aplica de verdad a LinkedIn. En IG el dominio va escrito y la bio de `@spindle.lab` tiene que apuntar a `/diagnostico/`. Confirmarlo con Ramón.
 - [ ] Confirmar con Ramón qué quedó publicado de agosto de verdad (el repo no registra ninguna publicación; si algo salió, anotarlo aquí con fecha).
 - [ ] Regla escrita en el plan del 21-jul y nunca aplicada: comentar en posts de terceros del rubro (interacción, no solo publicar).
+
+- 2026-08-31 (nota de la coordinación) — **Carpeta `marketing/redes/` reordenada y estilo v2 aplicado.**
+  Referencias que cambiaron: `PLAN-AGOSTO-PIEZAS.md`, `estrategia-ganchos-agosto.md` y
+  `_carga-metricool/` viven ahora en `marketing/redes/_archivo/2026-jul-ago/`. Las familias de
+  ganchos A–D siguen vigentes como doctrina (el doc está en el archivo). El "48 horas" de
+  `grilla-agosto-2026.md` quedó corregido a 24. TODAS las piezas de septiembre se migraron al
+  estilo live del sitio (fondo #0e141b + hilo del hero + etiquetas verde petróleo + Manrope):
+  el mapa completo está en `marketing/redes/README.md`.

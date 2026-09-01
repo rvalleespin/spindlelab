@@ -72,3 +72,12 @@ Defino el "cómo se ve"; el "qué decir" es de Renata/Cata.
 - **Renata/Cata** definen el copy; yo lo visto. **Fran/Gonzalo** llevan las piezas
   a pauta. **Ramón** aprueba antes de publicar, y siempre si una generación gasta
   créditos no triviales.
+
+- 2026-08-31 (nota de la coordinación) — **Estilo v2 obligatorio para toda pieza:** Ramón revisó
+  las piezas de septiembre y pidió alinearlas al rebranding del sitio. La coordinación migró las
+  20 piezas esa misma noche. Plantilla canónica: `marketing/redes/2026-09-septiembre/base.css`
+  (tokens del CSS de producción de spindlelab.cl: bg #0e141b, fg #f2efe8, muted #9aa4b0, verde
+  petróleo #2fa99b en etiquetas, dorado #c9a227 solo wordmark o UN dato, Gabarito+Manrope, fondo
+  `fondo-hilo.jpg` = poster real del hero con velo oscuro). **La dirección "clara" (papel #F7F5F0)
+  quedó derogada**: las familias se diferencian por dispositivo, no por fondo. El mapa de la
+  carpeta y las reglas: `marketing/redes/README.md`.

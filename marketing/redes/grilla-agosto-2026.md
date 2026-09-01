@@ -188,7 +188,7 @@
 >
 > Nada de eso es un rediseño. Como referencia de mercado, un diagnóstico técnico en Chile parte desde unos $200.000 y un acompañamiento mensual desde unos $80.000.
 >
-> El mini-diagnóstico que te muestra en qué estado estás es gratis y llega en 48 horas. Pídelo, míralo, y decides después.
+> El mini-diagnóstico que te muestra en qué estado estás es gratis y llega en 24 horas. Pídelo, míralo, y decides después.
 >
 > #SEO #Chile
 
