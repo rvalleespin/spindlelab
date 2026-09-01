@@ -1,8 +1,8 @@
 # Publicar — Carrusel del chequeo (7 láminas)
 
-**Cuándo:** VIERNES 4-sep · 19:00 (hora Chile) · **Canal:** Instagram @spindle.lab · **Voz:** plural
+**Cuándo:** VIERNES 4-sep · 19:00 (hora Chile) · **Canal:** Instagram @spindlelab.cl · **Voz:** plural
 **Piezas:** `laminas/lamina-1.png` … `lamina-7.png`, en orden
-**Checklist:** ☐ bio de @spindle.lab apuntando a spindlelab.cl/diagnostico · ☐ subir las 7 láminas + caption · ☐ 1er comentario · ☐ responder los "CIRCUITO" por DM (ManyChat si ya está conectado; a mano si no — ver abajo)
+**Checklist:** ☐ subir las 7 láminas + caption · ☐ 1er comentario · ☐ responder los "CIRCUITO" por DM (ManyChat si ya está conectado; a mano si no — ver abajo)
 
 ## Caption (copiar y pegar)
 
@@ -29,17 +29,10 @@ Comenta CIRCUITO y te llega el link del chequeo al DM. También está en la bio.
 > ¡Hola! Acá está el chequeo: spindlelab.cl/diagnostico
 > Corre en segundos sobre tu dominio, gratis y sin registro. Cada chequeo que no pases viene con la instrucción de cómo arreglarlo. Si algo te sale raro y no cachas qué hacer, escríbenos por acá y lo miramos.
 
-## ManyChat — pasos de Ramón (una vez, ~10 min; mientras tanto los DM van a mano)
+## ManyChat — YA CONECTADO (1-sep, sobre el post del dominó). Para esta pieza:
 
-1. manychat.com → crear cuenta con el correo del negocio → conectar Instagram
-   (@spindle.lab debe ser cuenta profesional vinculada a la página de Facebook del
-   portafolio: ya lo es).
-2. Automation → New Automation → trigger "User comments on your post" → post del
-   carrusel → keyword `CIRCUITO`.
-3. Acción 1: responder el comentario (público, opcional): "¡Te lo mandamos al DM!".
-   Acción 2: enviar DM con la plantilla de arriba, tal cual.
-4. Plan gratis alcanza para partir. La misma automatización se reutiliza en cada post
-   con gancho de comentarios (cambia solo el post; la keyword del mes es CIRCUITO).
+Un solo paso al publicar el carrusel: en ManyChat → Automation → agregar ESTE post al
+trigger existente de la keyword `CIRCUITO` (un clic). Nada más.
 
 ## Regla de interacción (vale para LinkedIn también, desde hoy)
 

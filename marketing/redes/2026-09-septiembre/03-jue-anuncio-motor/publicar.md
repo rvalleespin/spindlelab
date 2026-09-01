@@ -26,15 +26,13 @@ Con el cambio publicamos tres cosas que antes no estaban:
 
 El tercero es el que más nos importa. Auditamos sitios para vivir; lo mínimo era dejar que cualquiera audite el suyo sin pedirle nada a cambio.
 
-Chequea el tuyo. El enlace va en el primer comentario.
+¿Quieres correrlo sobre tu propio sitio? Comenta CIRCUITO y te mando el link por mensaje directo.
 
 #SEO #IA #AEO #Chile
 
 ## Primer comentario (copiar y pegar)
 
-Acá está el chequeo: https://spindlelab.cl/diagnostico/
-
-Corre en segundos sobre tu dominio, no pide registro y no guardamos lo que consultas. Cada chequeo que no pasas viene con qué hacer para arreglarlo, aunque decidas hacerlo por tu cuenta.
+Comenta CIRCUITO y te mando el link del chequeo por DM, gratis y sin registro. (Si prefieres directo, está en spindlelab.cl)
 
 ---
 Escribió Renata (31-ago) · pase de tono de Cata pendiente (la edición de Ramón cubre) · su verificación:

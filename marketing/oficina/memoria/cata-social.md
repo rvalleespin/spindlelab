@@ -27,7 +27,7 @@
 - [ ] **Pase de tono de lo de Renata** (anuncio del mar 1, ancla del mié 2, blog #1): en cuanto entregue. Al hacerlo, unificar sus primeros comentarios contra el estándar de `2026-09-septiembre/copys-ventana-1.md`.
 - [ ] Entrega 2 (jue 3-sep): pase de tono del post del mar 8 + blog #2, co-redacción del personal del mié 9 con Renata (hallazgo real de las corridas; si no hay dato, se avisa a Marta), ajuste de `post-18ago` y caption IG del vie 11.
 - [ ] Entrega 3 (mié 10-sep): ajustes de `post-20ago`, `post-25ago` y `post-27ago`, reapertura del personal del 12-ago para el mié 23, caption IG del vie 25 y los primeros comentarios de las Ventanas 3–4.
-- [ ] **Instagram no tiene links clicables** (ni caption ni comentarios): la convención de "link en el primer comentario" solo aplica de verdad a LinkedIn. En IG el dominio va escrito y la bio de `@spindle.lab` tiene que apuntar a `/diagnostico/`. Confirmarlo con Ramón.
+- [ ] **Instagram no tiene links clicables** (ni caption ni comentarios): la convención de "link en el primer comentario" solo aplica de verdad a LinkedIn. En IG el dominio va escrito y la bio de `@spindlelab.cl` tiene que apuntar a `/diagnostico/`. Confirmarlo con Ramón.
 - [ ] Confirmar con Ramón qué quedó publicado de agosto de verdad (el repo no registra ninguna publicación; si algo salió, anotarlo aquí con fecha).
 - [ ] Regla escrita en el plan del 21-jul y nunca aplicada: comentar en posts de terceros del rubro (interacción, no solo publicar).
 

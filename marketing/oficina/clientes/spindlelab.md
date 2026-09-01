@@ -52,7 +52,7 @@ pasar cualquier lista a Emilia.
 supera el 5%, se corta**. Semana de Fiestas Patrias: cero lotes.
 
 **Meta Ads (Fran):** Página FB `61592147941168` (portafolio propio `1025351160247165`);
-IG profesional `@spindle.lab` (`17841414909841532`); cuenta publicitaria
+IG profesional `@spindlelab.cl` (`17841414909841532`); cuenta publicitaria
 `2050319242539058` (CLP, Santiago); **Meta Pixel `2885353628478565`** (evento `Lead`
 en `/contacto/`; falta desplegar el Pixel en vivo + acumular tráfico antes de la 1ª
 campaña). Primer uso previsto: **remarketing** de visitantes, no interés frío.
@@ -94,7 +94,7 @@ Auditoría SEO Técnica · Visibilidad en IA · Acompañamiento Mensual · Desar
 
 ## Estado operacional — Redes (Cata)
 
-Canales: **LinkedIn** (principal, página de empresa) e **Instagram** (`@spindle.lab`,
+Canales: **LinkedIn** (principal, página de empresa) e **Instagram** (`@spindlelab.cl`,
 secundario). Convenciones vigentes:
 - Los **links van en el primer comentario**, no en el cuerpo del post.
 - El **perfil personal de Ramón sí puede compartir/comentar** los posts de la página
@@ -193,3 +193,14 @@ cierre de mes.
   se trabaja DIRECTO en la sesión troncal con los moldes de los especialistas; las sesiones
   aparte quedan para trabajos gruesos (concepto, mes completo de piezas, blogs largos, lotes).
   Origen: dos mañanas seguidas de enredo por cadenas de archivos/sesiones para piezas ya listas.
+
+### Actualizaciones del 1-sep (Ramón, tarde)
+- **Handle de Instagram cambiado: `@spindlelab.cl`** (antes @spindle.lab) — mejor recordación,
+  calca el dominio. Bio apuntando a `spindlelab.cl/diagnostico` ✅.
+- **ManyChat CONECTADO** ✅: keyword `CIRCUITO`, activo sobre el post del dominó (1-sep). Para
+  cada post nuevo con gancho: Automation → agregar el post al trigger existente (un clic).
+  Regla intacta: solo Instagram; en LinkedIn los DM van a mano.
+- **Metricool ADOPTADO para programar** (revierte la decisión del 28-ago de publicación 100%
+  manual — decisión de Ramón, 1-sep). Flujo: los `publicar.md` de las carpetas-día son la
+  fuente; Ramón copia, programa en Metricool y listo. El pase humano sigue: nada entra a
+  Metricool sin que él lo haya leído.
