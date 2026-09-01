@@ -85,3 +85,8 @@ Defino el "cómo se ve"; el "qué decir" es de Renata/Cata.
 - 2026-08-31 (noche) — Ramón resolvió el anuncio del 1-sep: **v2-motor** (tu contraargumento
   a la v1 pesó más que tu ⭐: precios quemados en imagen, marca aún poco conocida). Regla
   desde ahora: piezas gráficas SIN precios propios; la v1-cartera queda en reserva.
+
+- 2026-08-31 (más tarde) — **Convención de estructura mensual** (pedido de Ramón): carpeta
+  del mes = carpetas por día de publicación (`DD-dia-pieza/`) con pieza + assets +
+  `publicar.md`; masters del sistema en `_sistema/`; descartes/alternativas en `_reserva/`.
+  Ver `2026-09-septiembre/README.md` (v3). Este es el molde para octubre.

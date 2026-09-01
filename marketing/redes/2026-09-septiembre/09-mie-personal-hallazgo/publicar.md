@@ -1,24 +1,14 @@
-# Post personal del mié 9-sep — hallazgo real de las corridas del chequeo
+# Publicar — Hallazgo real de las corridas del chequeo
 
-**Sale:** mié 9-sep-2026, 12:30 (hora Chile) · **Canal:** perfil personal de Ramón · **Voz:** singular
-**Formato:** texto puro, reglas del perfil personal v2
-**Escribe:** Renata + Cata · **Aprueba:** Ramón (Pase 3, vie 4-sep) · **Publica:** Ramón
+**Cuándo:** MIÉRCOLES 9-sep · 12:30 (hora Chile) · **Canal:** perfil personal de Ramón · **Voz:** singular
+**Pieza:** TEXTO PURO, sin imagen · **Se aprueba en:** Pase 3 (vie 4-sep)
 
-> ## ⚠️ Estado al 31-ago: BLOQUEADO POR DATO. Ninguna versión de este post se publica todavía.
->
-> El insumo que pide el encargo son **corridas reales del chequeo** sobre los lotes de Emilia
-> (`marketing/encargos-otras-sesiones/relanzamiento-sep-outbound-emilia.md`, que le pide guardar
-> dominio, fecha y puntaje de cada corrida). **Al 31-ago ese encargo sigue en estado ⬜ pendiente y
-> no hay ni una corrida guardada** en `marketing/outbound/` ni en `marketing/metricas/`. Verificado
-> archivo por archivo.
->
-> **Punto de corte: jue 3-sep**, como fija el encargo. Aviso enviado a Marta en
-> `marketing/encargos-otras-sesiones/aviso-renata-a-marta-post-9sep.md`.
->
-> **Cero cifras inventadas.** Si el 3-sep no hay corridas suficientes, se usa el Plan B de abajo o
-> la fila se reprograma. Lo que no puede pasar es que salga un número estimado.
-
----
+> ## ✅ Estado al 31-ago (noche): DATO RESUELTO — va el Plan A, falta escribirlo.
+> La coordinación corrió el chequeo sobre 69 dominios (38 inmobiliarias + 31 contadores) el
+> 31-ago: `marketing/metricas/corridas-chequeo-2026-08-31.md` trae exactamente el conteo que
+> pedía Renata (p. ej. la FAQ citable falla en 67 de 69 sitios; mediana 45/100 y 58/100).
+> SpindleLab auto-excluido. **Renata escribe el Plan A con ese dato; el Plan B queda de
+> respaldo.** El texto final se pega acá cuando pase el tono y el visto de Ramón (Pase 3).
 
 ## Plan A — el post que corresponde (pendiente del dato)
 

@@ -1,17 +1,10 @@
-# Anuncio del motor — página de empresa LinkedIn
+# Publicar — Anuncio del motor
 
-**Sale:** mar 1-sep-2026, 09:00 (hora Chile) · **Canal:** página de empresa · **Voz:** plural
-**Escribe:** Renata · **Pase de tono:** Cata · **Aprueba:** Ramón (Pase 1+2, lun 31-ago) · **Publica:** Ramón (manual)
-**Visual:** pieza nueva de Bruno (`relanzamiento-sep-visual-bruno.md`)
-**Estado:** ⬜ borrador para pase de tono y aprobación. **No publicar sin el visto de Ramón.**
+**Cuándo:** MARTES 1-sep · 09:00 (hora Chile) · **Canal:** página de empresa LinkedIn · **Voz:** plural
+**Pieza:** `anuncio-v2-motor.png` (en esta carpeta) — decisión de Ramón 31-ago: sin precios en la imagen; v1/v3 en `../_reserva/`
+**Checklist:** ☐ visto de Ramón · ☐ subir el PNG con el cuerpo · ☐ publicar el 1er comentario AL TIRO (trae el link)
 
-**Fuentes:** brief v2 §3 y §4 (`marketing/rebranding-2026-08-brief-comunicacion.md`) ·
-plantillas v2 (`marketing/plantillas/linkedin-posts.md`) · sitio en vivo
-(`spindlelab-astro/public/diagnostico/`, `/metodo/`, `/servicios/`).
-
----
-
-## Cuerpo del post
+## Cuerpo del post (copiar y pegar)
 
 Nuestro sitio dejó de ser una lista de servicios.
 
@@ -31,18 +24,16 @@ Chequea el tuyo. El enlace va en el primer comentario.
 
 #SEO #IA #AEO #Chile
 
----
-
-## Primer comentario (lo publica Ramón junto con el post)
+## Primer comentario (copiar y pegar)
 
 Acá está el chequeo: https://spindlelab.cl/diagnostico/
 
 Corre en segundos sobre tu dominio, no pide registro y no guardamos lo que consultas. Cada chequeo que no pasas viene con qué hacer para arreglarlo, aunque decidas hacerlo por tu cuenta.
 
 ---
+Escribió Renata (31-ago) · pase de tono de Cata pendiente (la edición de Ramón cubre) · su verificación:
 
 ## Verificación de Renata
-
 - Voz **plural** en todo el cuerpo (plantillas v2). ✅
 - Link **solo en el primer comentario**, no en el cuerpo. ✅
 - CTA de gancho → `/diagnostico/` (brief §4.5). ✅

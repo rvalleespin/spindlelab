@@ -25,7 +25,7 @@ sería una impresión disfrazada de dato, y eso no sale.
 
 ## Qué dejé listo para que la fila no se caiga
 
-En `marketing/redes/2026-09-septiembre/2026-09-09-personal-hallazgo-chequeo.md` hay dos caminos:
+En `marketing/redes/2026-09-septiembre/09-mie-personal-hallazgo/publicar.md` (movido el 31-ago a la estructura por día) hay dos caminos:
 
 - **Plan A:** el post agregado, pendiente del conteo. Lo escribo en el día si el dato llega el 3-sep.
 - **Plan B:** ya redactado y verificado, listo para pase de tono. Usa un hallazgo real y documentado

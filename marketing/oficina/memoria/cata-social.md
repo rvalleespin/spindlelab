@@ -44,3 +44,10 @@
   en v2-motor. Pendiente tuyo: barrer los copys/captions de septiembre por cifras propias en
   imagen o caption (los precios DE MERCADO como referencia en texto siguen ok; la historia
   "publicamos nuestros precios" con link al sitio también).
+
+- 2026-08-31 (más tarde) — **La carpeta del mes ahora es una cola de publicación por día**
+  (pedido de Ramón): tus copys de la Entrega 1 se repartieron a `01-…/publicar.md`,
+  `03-…`, `04-…` y el estándar a `estandar-primeros-comentarios.md` (el archivo
+  `copys-ventana-1.md` ya no existe; historia en git). **Tus Entregas 2 y 3 se pegan
+  directo en el `publicar.md` de cada carpeta-día** (10, 11, 22, 23, 24, 25, 29 traen
+  stub con fuente y checklist), no en archivos nuevos.

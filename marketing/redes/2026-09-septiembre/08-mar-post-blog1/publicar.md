@@ -1,17 +1,11 @@
-# Reciclaje del blog #1 — página de empresa LinkedIn (Formato 2)
+# Publicar — Reciclaje del blog #1 (pregunta + respuesta corta)
 
-**Sale:** mar 8-sep-2026, 09:00 (hora Chile) · **Canal:** página de empresa · **Voz:** plural
-**Formato:** 2 de las plantillas v2 (reciclaje de artículo: pregunta tal cual, respuesta corta, link en el primer comentario)
-**Escribe:** Renata · **Pase de tono:** Cata · **Aprueba:** Ramón (Pase 3, vie 4-sep) · **Publica:** Ramón
-**Visual:** pieza nueva de Bruno, dirección distinta a la del jue 10
-**Estado:** ⬜ borrador para pase de tono y aprobación.
+**Cuándo:** MARTES 8-sep · 09:00 (hora Chile) · **Canal:** página de empresa LinkedIn · **Voz:** plural
+**Pieza:** `post.png` (en esta carpeta) — ⚠️ titular del visual provisional; Cata lo alinea en su Entrega 2 (jue 3)
+**Se aprueba en:** Pase 3 (vie 4-sep)
+**Checklist:** ☐ blog #1 EN VIVO desde el jue 3 (dependencia dura: si al lun 7 no está online, este post no sale — avisar a Marta) · ☐ visto de Ramón · ☐ 1er comentario al tiro
 
-> **Dependencia dura:** el artículo tiene que estar en vivo antes de este post. Diego lo publica el
-> jue 3-sep. Si al lun 7 no está online, este post no sale: se corre o se reemplaza. Avisar a Marta.
-
----
-
-## Cuerpo del post
+## Cuerpo del post (copiar y pegar)
 
 ¿Cómo se mide si ChatGPT, Gemini y Perplexity pueden citar tu sitio?
 
@@ -23,18 +17,16 @@ El artículo y el chequeo van en el primer comentario.
 
 #SEO #AEO #IA #Chile
 
----
-
-## Primer comentario (lo publica Ramón junto con el post)
+## Primer comentario (copiar y pegar)
 
 Los 21 chequeos explicados uno por uno: https://spindlelab.cl/blog/21-chequeos-visibilidad-ia/
 
 Y el chequeo para correrlo sobre tu propio sitio, sin registro: https://spindlelab.cl/diagnostico/
 
 ---
+Escribió Renata (31-ago) · su verificación y nota para Cata:
 
 ## Verificación de Renata
-
 - Formato 2 respetado: pregunta tal cual, respuesta corta de tres líneas, link en el primer comentario. ✅
 - Voz plural. ✅
 - Los pesos (30 / 40 / 30) están publicados en `/diagnostico/` y en el artículo. Cero cifras sin fuente. ✅

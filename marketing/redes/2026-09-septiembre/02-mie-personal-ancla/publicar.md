@@ -1,16 +1,10 @@
-# Post ancla — perfil personal de Ramón
+# Publicar — Post ancla (el porqué, en primera persona)
 
-**Sale:** mié 2-sep-2026, 12:30 (hora Chile) · **Canal:** perfil personal de Ramón · **Voz:** singular
-**Formato:** texto puro, sin imagen (reglas del perfil personal v2, punto 3)
-**Escribe:** Renata · **Pase de tono:** Cata · **Aprueba:** Ramón · **Publica:** Ramón
-**Estado:** ⬜ borrador para pase de tono y aprobación. **No publicar sin el visto de Ramón.**
+**Cuándo:** MIÉRCOLES 2-sep · 12:30 (hora Chile) · **Canal:** perfil personal de Ramón · **Voz:** singular
+**Pieza:** TEXTO PURO, sin imagen (regla del perfil personal)
+**Checklist:** ☐ visto de Ramón · ☐ publicar el 1er comentario al tiro
 
-**Fuentes:** brief v2 §4 (reparto "LinkedIn personal") y §4.5 (regla de autoridad) ·
-plantillas v2, "Reglas del perfil personal" · ficha `oficina/clientes/spindlelab.md`.
-
----
-
-## Cuerpo del post
+## Cuerpo del post (copiar y pegar)
 
 Soy fundador de SpindleLab y hace unos días publiqué mis precios. Me habían advertido que no lo hiciera.
 
@@ -34,18 +28,16 @@ Trabajo en un rubro que vende resultados difíciles de probar. Prefiero mostrar 
 
 Dejo el chequeo en el primer comentario, por si quieres ver qué le muestra tu sitio a la IA.
 
----
-
-## Primer comentario (lo publica Ramón junto con el post)
+## Primer comentario (copiar y pegar)
 
 Acá está: https://spindlelab.cl/diagnostico/
 
 Escribes tu dominio y listo. No pide correo ni registro, y lo que no pasa viene con la instrucción de cómo arreglarlo. Si te sale algo raro y no cachas qué hacer con eso, escríbeme por acá y lo miramos.
 
 ---
+Escribió Renata (31-ago) · su verificación y una decisión de tono pendiente al final:
 
 ## Verificación de Renata
-
 - Voz **singular** en todo el cuerpo, texto puro, sin imagen. ✅
 - Se presenta como fundador (regla 1 del perfil personal v2). ✅
 - **No** abre con "revisé el sitio de…" ni "le pregunté a ChatGPT…" (regla 5). ✅

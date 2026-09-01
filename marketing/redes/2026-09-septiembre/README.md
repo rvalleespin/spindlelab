@@ -153,3 +153,28 @@ láminas + 4 stories) esa misma noche:
 
 Regla desde ahora: toda pieza nueva parte de ESTE `base.css`. Mapa de la carpeta:
 `marketing/redes/README.md`.
+
+---
+
+## v3 — Estructura por día de publicación (31-ago, pedido de Ramón)
+
+La carpeta se reorganizó como **cola de publicación**: una carpeta por día, con TODO lo
+del día adentro (pieza + `publicar.md` con hora, texto listo para pegar, primer
+comentario y checklist). El día de publicar: abrir la carpeta del día y nada más.
+
+| Carpeta | Día · canal | Estado del copy |
+|---|---|---|
+| `01-mar-anuncio-motor/` | mar 1 · página | ✅ listo (v2-motor, decisión 31-ago) |
+| `02-mie-personal-ancla/` | mié 2 · personal | ✅ listo |
+| `03-jue-post-chatgpt/` | jue 3 · página | ✅ listo (+ ese día Diego publica blog #1) |
+| `04-vie-carrusel-ig/` | vie 4 · IG | ✅ listo (⚠️ bio → /diagnostico antes) |
+| `08-mar-post-blog1/` | mar 8 · página | ✅ listo (visual: titular provisional) |
+| `09-mie-personal-hallazgo/` | mié 9 · personal | 🟡 dato resuelto, Renata escribe Plan A |
+| `10/11/22/23/24/25/29-*` | resto del mes | ⬜ copy de Cata (Entregas 2 y 3) |
+| `_sistema/` | — | masters del estilo v2 (base.css, fuentes, fondo) |
+| `_reserva/` | — | anuncio v1-cartera y v3-ventana (no publicar) |
+
+Convenciones: cada carpeta con HTML lleva su copia de los assets (autocontención para
+`render.sh`); el copy pendiente se pega en el `publicar.md` del día, nunca en archivos
+sueltos en la raíz; el estándar de primeros comentarios vive en
+`estandar-primeros-comentarios.md`. **Esta estructura es el molde para octubre.**
