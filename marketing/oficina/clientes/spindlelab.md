@@ -222,3 +222,9 @@ cierre de mes.
   Objetivo: credibilidad de agencia nueva. Y regla de crecimiento: los captions de IG de la
   serie cierran invitando a seguir la cuenta ("todo septiembre…"); pedir seguir es legítimo,
   prometer resultados no.
+
+- **⚠️ Pendiente operacional con plazo (1-sep):** Google Workspace (el correo
+  hola@spindlelab.cl) tiene problema de facturación; **suspensión ~1-oct** si no se paga.
+  Ramón lo paga apenas le depositen. Si al **vie 12-sep** no está resuelto, recordárselo en
+  cualquier pase (después viene Fiestas y se olvida). Cuando la SpA tenga banco: mover este
+  cobro a la tarjeta de empresa.
