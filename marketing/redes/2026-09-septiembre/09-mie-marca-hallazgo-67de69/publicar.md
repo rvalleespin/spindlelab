@@ -1,4 +1,4 @@
-# Publicar — 67 de 69 sitios, el mismo hueco (pieza de MARCA)
+# Publicar — 67 de 69 sitios, el mismo problema (pieza de MARCA)
 
 **Cuándo:** MIÉRCOLES 9-sep · LinkedIn página 09:00 · IG 19:00 · **Voz: PLURAL**
 **Decisión de Ramón (1-sep, noche):** esta salida es de la marca, no del perfil personal
@@ -10,7 +10,7 @@ el dato manda: 67/69 + medianas 45 y 58). PRIORIDAD 1 del encargo de re-vestido.
 
 ## Cuerpo (LinkedIn e IG, copiar y pegar)
 
-De 69 sitios que pasamos por nuestro chequeo la semana pasada, 67 comparten el mismo hueco.
+De 69 sitios que pasamos por nuestro chequeo la semana pasada, 67 comparten el mismo problema.
 
 No es el título, ni la velocidad, ni el diseño: no tienen ni una pregunta respondida en un formato que una IA pueda citar.
 

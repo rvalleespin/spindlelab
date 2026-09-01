@@ -238,3 +238,6 @@ cierre de mes.
 - Banco post-Fiestas (`redes/2026-09-septiembre/_banco-post-fiestas/`): cifra 45/100, post
   presupuesto, documento 21 chequeos, stories archivadas. Marta re-formaliza el calendario
   del 22-sep en adelante con la estructura nueva.
+
+- **Regla de copy (Ramón, 1-sep noche):** la palabra **"hueco" no se usa en copy comercial**
+  (suena feo); en su lugar: problema, vacío, falla, necesidad. Corregido en la pieza del mié 9.
