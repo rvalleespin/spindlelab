@@ -178,3 +178,16 @@ Convenciones: cada carpeta con HTML lleva su copia de los assets (autocontenció
 `render.sh`); el copy pendiente se pega en el `publicar.md` del día, nunca en archivos
 sueltos en la raíz; el estándar de primeros comentarios vive en
 `estandar-primeros-comentarios.md`. **Esta estructura es el molde para octubre.**
+
+---
+
+## v4 — Semana 1 intensificada (1-sep, pedido de Ramón: cadencia agresiva)
+
+La ventana 1-12 sep pasó de 5 a ~17 toques sin bajar calidad: cross-posting a IG (casi
+gratis), stories ya producidas repartidas (mié/vie/mar/jue), dos piezas nuevas con datos
+reales (07-lun cifra 45/100 · 12-vie documento PDF de los 21 chequeos) y el gancho
+CIRCUITO en todo. La ancla personal pasó al JUE 3 12:30 (el dominó abrió el perfil
+personal el mar 1). Programación en Metricool (decisión 1-sep); primeros comentarios a
+mano si el plan no los soporta. Carpetas nuevas: `07-lun-cifra-corredoras/`,
+`12-vie-documento-linkedin/`, más `caption-ig-cross.md` en el 03 y
+`plan-stories-semana.md` en el 11.
