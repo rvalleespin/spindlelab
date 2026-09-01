@@ -1,4 +1,4 @@
-# Qué corre la competencia en Meta — capturas reales (2-sep-2026)
+# Qué corre la competencia en Meta — capturas reales (1-sep-2026)
 
 Capturado desde esta sesión cloud con Chrome headless contra la Ad Library.
 Los PNG de esta carpeta son las capturas; abajo lo que se lee en ellas.

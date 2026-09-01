@@ -1,6 +1,6 @@
 # REPORTE — sprint de dirección creativa (concepto rector de septiembre)
 
-**Quién:** Bruno (dirección creativa), en dupla con Ramón en vivo · **Cuándo:** 2-sep-2026
+**Quién:** Bruno (dirección creativa), en dupla con Ramón en vivo · **Cuándo:** martes 1-sep-2026 (el encargo lo planificaba para el mié 2; se adelantó un día)
 **Encargo de origen:** `direccion-creativa-campana-sep.md` · **Rama:** `claude/creative-direction-september-xttmfi`
 **Para:** el troncal, que dirige de acá en adelante.
 
@@ -43,7 +43,7 @@ siente.
   `fondo-domino.png` — **la pieza del jue 3, lista salvo copy.** Ya está en la carpeta del
   día. `post.png` (la vieja) se dejó intacta al lado; no se borró nada.
 - Todo el sprint (rutas, key visuals descartados, exploración de imagen, capturas de la
-  competencia): `redes/2026-09-septiembre/_reserva/sprint-concepto-02sep/`.
+  competencia): `redes/2026-09-septiembre/_reserva/sprint-concepto-01sep/`.
 - `exploracion-imagen/domino-3.png` tiene el relato más exacto (ficha caída fuera de la
   línea, resto intacto) pero está subexpuesta para feed: **reservada para el carrusel del vie 4.**
 
@@ -51,7 +51,7 @@ siente.
 
 ## 4. Inteligencia competitiva que salió del sprint (sirve más allá de lo visual)
 
-Detalle y capturas: `redes/2026-09-septiembre/_reserva/sprint-concepto-02sep/competencia-adlib/hallazgos.md`
+Detalle y capturas: `redes/2026-09-septiembre/_reserva/sprint-concepto-01sep/competencia-adlib/hallazgos.md`
 
 1. **La categoría corre VIDEO, no piezas gráficas** (3 de 5 anunciantes).
 2. **En Chile el territorio está vacío en pauta:** el único anunciante activo (Referent,
@@ -83,4 +83,4 @@ desbloquear la Ad Library desde una sesión cloud (era Chrome, no la política d
 `competencia-adlib/hallazgos.md`.
 
 ---
-**Estado:** ✅ sprint cerrado · 2-sep-2026 · Bruno. **Nada publicado**: la pieza espera copy y pase de Ramón.
+**Estado:** ✅ sprint cerrado · 1-sep-2026 · Bruno. **Nada publicado**: la pieza espera copy y pase de Ramón.

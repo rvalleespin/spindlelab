@@ -1,4 +1,4 @@
-# Sprint de concepto rector — 3 rutas (Bruno, 2-sep-2026)
+# Sprint de concepto rector — 3 rutas (Bruno, 1-sep-2026)
 
 Propuestas para el sprint en vivo con Ramón. **Los copys de las piezas son
 provisionales míos** (maqueta para ver el concepto en pie): si una ruta gana,
@@ -122,7 +122,7 @@ el punto del wordmark o en UN dato, y el punto del wordmark "no cambia nunca"
 
 ---
 
-# ADENDA (2-sep, en vivo) — lo que encontré en la biblioteca de anuncios de Meta
+# ADENDA (1-sep, en vivo) — lo que encontré en la biblioteca de anuncios de Meta
 
 Ramón pidió mirar qué corre la competencia antes de cerrar el concepto. Búsqueda en la
 Ad Library vía MCP de Meta: Chile (1 anuncio activo) y ES/MX/AR/CO (39 activos).
@@ -194,7 +194,7 @@ sesión de fotos. Story: encuadre vertical del mismo material. Texto puro: no lo
 
 ---
 
-# CIERRE DEL SPRINT (2-sep) — el concepto que quedó
+# CIERRE DEL SPRINT (1-sep) — el concepto que quedó
 
 **"El eje y el circuito"** (formulación de Ramón). SpindleLab no es solo el eje del
 negocio: es **el circuito que lo enciende**. El argumento deja de ser "no apareces en la

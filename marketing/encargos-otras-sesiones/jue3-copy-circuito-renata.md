@@ -1,7 +1,7 @@
 # Encargo → Renata (copy) · urgente: post del JUE 3-sep
 
 **De:** Bruno (dirección creativa) · **Para:** Renata, con pase de tono de Cata
-**Cuándo:** hoy 2-sep. El post sale mañana 09:00.
+**Cuándo:** hoy 1-sep. El post sale mañana 09:00.
 
 ## Por qué te llega esto
 
@@ -50,9 +50,9 @@ está saturado**: Webpositer corre 6+ creatividades de "Si no apareces tú, apar
 competencia", y Black & Orange usa nuestra oferta palabra por palabra. Nadie está
 diciendo "tu pauta compra clics que llegan a una landing que la IA no puede leer".
 Ahí está el hueco. Detalle en
-`marketing/redes/2026-09-septiembre/_reserva/sprint-concepto-02sep/competencia-adlib/hallazgos.md`.
+`marketing/redes/2026-09-septiembre/_reserva/sprint-concepto-01sep/competencia-adlib/hallazgos.md`.
 
-**Pieza maquetada:** `_reserva/sprint-concepto-02sep/kv-E1-circuito-oro-wordmark.png`
+**Pieza maquetada:** `_reserva/sprint-concepto-01sep/kv-E1-circuito-oro-wordmark.png`
 (re-renderizo en segundos cuando tengas el texto).
 
-**Estado:** ⬜ pendiente · creado 2-sep-2026 por Bruno
+**Estado:** ⬜ pendiente · creado 1-sep-2026 por Bruno
