@@ -7,7 +7,7 @@ en la raíz vive SOLO lo que la campaña activa usa; lo superado va a `_archivo/
 
 | Carpeta / archivo | Qué es | Estado |
 |---|---|---|
-| `2026-09-septiembre/` | **Campaña activa** (relanzamiento del motor): 3 anuncios, 6 posts de feed, carrusel de 7 láminas, 4 stories, copys de Renata y Cata | VIGENTE ⭐ |
+| `2026-09-septiembre/` | **Campaña activa**, organizada como cola de publicación: una carpeta por día (`01-mar-anuncio-motor/` … `29-mar-post-cierre/`) con pieza + `publicar.md` (hora, texto, 1er comentario, checklist); masters en `_sistema/`, alternativas en `_reserva/`. Molde para los meses siguientes | VIGENTE ⭐ |
 | `posts-agosto/` | Fuente de los re-renders de septiembre (los HTML se siguen usando); `post-13ago` EN RESERVA para octubre | FUENTE — no mover |
 | `carrusel-03-cinco-chequeos/` | Fuente del carrusel de septiembre; `carrusel-linkedin.pdf` y `ad-resumen.png` EN RESERVA | FUENTE — no mover |
 | `stories-01/` | Fuente de las stories del 11-sep | FUENTE — no mover |
