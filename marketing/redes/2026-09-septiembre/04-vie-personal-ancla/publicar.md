@@ -1,8 +1,9 @@
 # Publicar — Post ancla (el porqué, en primera persona)
 
-**Cuándo:** JUEVES 3-sep · 12:30 (hora Chile) · **Canal:** perfil personal de Ramón · **Voz:** singular
-> Movido del mié 2 al jue 3 (1-sep): el dominó ya salió HOY en el perfil personal; dos posts
-> personales en menos de 24 h se pisan. El jue 3 el ancla acompaña al anuncio de la página (09:00).
+**Cuándo:** VIERNES 4-sep · 12:30 (hora Chile) · **Canal:** perfil personal de Ramón · **Voz:** singular
+> Reprogramado al VIE 4 (1-sep, tarde): llena el hueco de cadencia entre el carrusel del jue 3
+> y el video del lun 7, es texto puro (cero producción) y le da aire al perfil personal
+> respecto del dominó del mar 1.
 **Pieza:** TEXTO PURO, sin imagen (regla del perfil personal)
 **Checklist:** ☐ visto de Ramón · ☐ publicar el 1er comentario al tiro
 

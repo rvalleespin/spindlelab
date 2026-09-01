@@ -216,3 +216,9 @@ cierre de mes.
 3. **LinkedIn (empresa y personal) ya recibieron su apertura** con el dominó el mar 1.
    El anuncio v2-motor y el post ancla quedan EN RESERVA, listos, para reprogramar cuando
    Ramón lo decida — no se re-sirve un slot ya cubierto.
+
+- **1-sep (noche):** R8 ACTIVADO — video de presentación con la cara de Ramón, lun 7 (guion en
+  `redes/2026-09-septiembre/07-lun-video-presentacion/guion.md`; utilería: dominó físico).
+  Objetivo: credibilidad de agencia nueva. Y regla de crecimiento: los captions de IG de la
+  serie cierran invitando a seguir la cuenta ("todo septiembre…"); pedir seguir es legítimo,
+  prometer resultados no.
