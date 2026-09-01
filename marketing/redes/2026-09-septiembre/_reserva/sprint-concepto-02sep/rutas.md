@@ -119,3 +119,75 @@ el punto del wordmark o en UN dato, y el punto del wordmark "no cambia nunca"
 - **(b)** declarar que en las piezas donde el punto CARGA el concepto, el dorado se
   muda al hueco y el wordmark va sin él. Es más potente y **obliga a tocar el
   manual** — eso es nivel Marca: lo baja la coordinación con tu OK, no yo.
+
+---
+
+# ADENDA (2-sep, en vivo) — lo que encontré en la biblioteca de anuncios de Meta
+
+Ramón pidió mirar qué corre la competencia antes de cerrar el concepto. Búsqueda en la
+Ad Library vía MCP de Meta: Chile (1 anuncio activo) y ES/MX/AR/CO (39 activos).
+**No pude ver las creatividades**: `facebook.com` está bloqueado desde esta sesión cloud
+(`ERR_CONNECTION_RESET` en el proxy). Solo tuve los titulares. Bastaron.
+
+## Hallazgo que invalida mi recomendación anterior
+
+**El territorio verbal está saturado y la ruta A es su lugar común.**
+
+| Anunciante | País | Titular activo |
+|---|---|---|
+| Webpositer | ES | "Si no apareces tú, aparece tu competencia" — **6+ creatividades activas** |
+| Honoralia | ES | "¿ChatGPT recomienda tu clínica?" |
+| Referent | **CL** (único) | "El tráfico de IA convierte 4.4x más que el orgánico… cómo te ven los LLMs" |
+| Black & Orange | MX | **"Diagnóstico AEO gratis"** — literal nuestro CTA |
+| Josep Deulofeu | ES | "Curso GEO gratis: aparece en ChatGPT" |
+| Tbeo | CO | "🤖 La IA recomienda tu negocio" |
+
+"Salieron tres nombres, ninguno era el tuyo" es una variante de lo que Webpositer ya
+corre en seis versiones. **El mensaje no nos puede diferenciar: ya lo dicen todos.**
+Toda la categoría además vive DENTRO de la pantalla (UI de chat, código, gradientes
+tech, emojis de robot).
+
+## Ruta D — "El oficio" (nace de este hallazgo)
+
+**Concepto:** si todos dicen lo mismo, el carácter tiene que estar en la imagen. Salimos
+de la pantalla y entramos en lo físico: **el huso y el hilo son el nombre de la marca**,
+y ninguna agencia de IA puede copiarlos sin dejar de ser ella misma.
+
+- Mundo de imagen: macro editorial, luz rasante, objeto real, un solo hilo encendido
+  entre miles apagados. Es "solidez cercana" hecha materia: un objeto tiene peso, una
+  pantalla no.
+- Generado con Higgsfield `soul_location`. **Gasto: 0,12 créditos** (4 variantes).
+  Exploración en `exploracion-imagen/`; la #2 es la que tiene el concepto adentro.
+- `kv-D-oficio.png`: la copy YA APROBADA del jue 3 montada sobre ese mundo, para aislar
+  la variable. El hilo encendido hace de filete de la composición, no de textura.
+
+**Cómo escala:** la foto es el sistema. Cada pieza es otro encuadre del mismo material
+(hilo tenso, hilo cortado, hilo enrollado); la cuadrícula del mes se lee como una sola
+sesión de fotos. Story: encuadre vertical del mismo material. Texto puro: no lo necesita.
+
+## Estado de las otras rutas tras el hallazgo
+
+- **A** — el concepto sigue siendo correcto y sigue siendo el de la idea rectora oficial,
+  pero **como titular está quemado**. Sirve como eje interno, no como la frase de la pieza.
+- **B** — sube: el hilo deja de ser metáfora dibujada y pasa a ser materia fotografiada
+  (la ruta D es, en rigor, la B resuelta con imagen en vez de con SVG).
+- **C** — sin cambios: capítulo, no campaña.
+
+## Decisiones que quedan para Ramón
+
+1. **¿El mundo de imagen físico es la dirección?** (si sí, todo septiembre se re-fotografía
+   desde ahí, carpeta-día por carpeta-día, solo donde mejora).
+2. **El dorado.** La foto trae su propio dorado (el hilo encendido) y el wordmark trae el
+   suyo: **son dos**. O el hilo fotográfico cuenta como "el dato dorado" y el wordmark va
+   sin punto en estas piezas, o se acepta que la luz fotográfica no cuenta como acento
+   gráfico. Toca el manual (§02/§06) → lo baja la coordinación con su OK.
+
+## Video: no alcanza el presupuesto (preflight, no gastado)
+
+- Saldo Higgsfield: **11,67 créditos** (plan plus).
+- `seedance_2_5`, 5 s vertical: **32,5** → imposible hoy.
+- `kling3_0_turbo`, 5 s vertical: **7,5** → alcanza para UN clip y deja 4 créditos.
+- Recordatorio: sin `ffmpeg` no se entrega un MP4 con texto quemado; serían clip +
+  overlays transparentes + receta de CapCut.
+
+**Gasto total del sprint hasta acá: 0,12 créditos.**
