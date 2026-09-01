@@ -38,3 +38,9 @@
   `grilla-agosto-2026.md` quedó corregido a 24. TODAS las piezas de septiembre se migraron al
   estilo live del sitio (fondo #0e141b + hilo del hero + etiquetas verde petróleo + Manrope):
   el mapa completo está en `marketing/redes/README.md`.
+
+- 2026-08-31 (noche) — **Regla nueva de Ramón: precios propios NUNCA quemados en piezas de
+  redes** (etapa inicial; el detalle en el addendum del brief v2). El anuncio del 1-sep sale
+  en v2-motor. Pendiente tuyo: barrer los copys/captions de septiembre por cifras propias en
+  imagen o caption (los precios DE MERCADO como referencia en texto siguen ok; la historia
+  "publicamos nuestros precios" con link al sitio también).

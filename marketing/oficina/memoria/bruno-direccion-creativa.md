@@ -81,3 +81,7 @@ Defino el "cómo se ve"; el "qué decir" es de Renata/Cata.
   `fondo-hilo.jpg` = poster real del hero con velo oscuro). **La dirección "clara" (papel #F7F5F0)
   quedó derogada**: las familias se diferencian por dispositivo, no por fondo. El mapa de la
   carpeta y las reglas: `marketing/redes/README.md`.
+
+- 2026-08-31 (noche) — Ramón resolvió el anuncio del 1-sep: **v2-motor** (tu contraargumento
+  a la v1 pesó más que tu ⭐: precios quemados en imagen, marca aún poco conocida). Regla
+  desde ahora: piezas gráficas SIN precios propios; la v1-cartera queda en reserva.

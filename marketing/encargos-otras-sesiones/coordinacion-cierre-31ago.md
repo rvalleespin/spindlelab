@@ -47,7 +47,10 @@
 
 ## Decisiones que esperan a Ramón (su Pase 1+2)
 
-1. Visual del anuncio del mar 1: **v1-cartera (⭐ Bruno) / v2-motor / v3-ventana**.
+1. ~~Visual del anuncio del mar 1~~ **RESUELTA (Ramón, 31-ago noche): sale la v2-motor.**
+   Razón: en etapa inicial los precios no se queman en imágenes de redes; viven en el sitio,
+   junto a su plan. La v1-cartera queda en reserva (no se publica). Regla canonizada en el
+   brief de comunicación v2 (addendum 31-ago).
 2. Ratificar etiqueta de serie "Chequea tu sitio · Septiembre" (ya producida así).
 3. Cambiar el link de la bio de `@spindle.lab` a `spindlelab.cl/diagnostico` (hallazgo de Cata:
    IG no tiene links clicables en captions/comentarios).

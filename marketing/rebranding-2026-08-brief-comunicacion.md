@@ -69,3 +69,16 @@ En un rubro donde las agencias esconden el precio tras un "reserva tu reunión" 
 
 ## Siguiente paso sugerido
 Renata redacta el post ancla del perfil de Ramón (ángulo transparencia) + Cata define la cadencia. Bruno arma el carrusel de "precios legibles". Todo a pase humano.
+
+---
+
+## Addendum 31-ago (decisión de Ramón, en vivo con la coordinación)
+
+**Los precios viven en el sitio, no se queman en piezas de redes.** Mientras SpindleLab esté
+en etapa inicial (marca poco conocida), ninguna pieza gráfica de redes lleva precios propios
+en la imagen: el precio sin la propuesta de valor al lado ancla más riesgo que beneficio.
+Sí se puede *contar la historia* de que los precios están publicados (p. ej. el post ancla)
+y mandar al sitio, que es donde el precio aparece junto a su plan. Consecuencias inmediatas:
+el anuncio del 1-sep sale en su versión **v2-motor** (la v1-cartera queda en reserva);
+Cata barre los copys del mes por menciones de cifras propias en piezas. Los precios de
+referencia DE MERCADO en textos siguen permitidos. Revisión de la regla: cierre de mes.
