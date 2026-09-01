@@ -191,3 +191,29 @@ sesión de fotos. Story: encuadre vertical del mismo material. Texto puro: no lo
   overlays transparentes + receta de CapCut.
 
 **Gasto total del sprint hasta acá: 0,12 créditos.**
+
+---
+
+# CIERRE DEL SPRINT (2-sep) — el concepto que quedó
+
+**"El eje y el circuito"** (formulación de Ramón). SpindleLab no es solo el eje del
+negocio: es **el circuito que lo enciende**. El argumento deja de ser "no apareces en la
+IA" —territorio saturado, ver `competencia-adlib/hallazgos.md`— y pasa a **por qué tu
+sitio no convierte**: pagas Meta, pagas Google, los dos empujan a una landing que la
+máquina no puede leer. El circuito se corta justo donde se cobra.
+
+**La ejecución la resolvió Ramón, no yo.** Mi lazo elíptico (`kv-E1`) era un diagrama;
+él propuso el **dominó**: alguien empuja la primera ficha, caen dos o tres, una se
+tuerce y el resto queda en pie. Un diagrama se lee; una consecuencia se siente.
+
+- **Pieza del jue 3: `kv-F-domino.png`** ⭐ — foto de dominó generada con `soul_location`
+  (0,12 créditos), velo solo donde hay texto para que la foto se vea nítida.
+- `exploracion-imagen/domino-3.png` tiene el relato MÁS exacto (la ficha caída fuera de
+  la línea, el resto intacto) pero está subexpuesta para feed. **Reservada para el
+  carrusel del vie 4**, donde se puede levantar exposición y dar aire.
+- `kv-E1/E2` (el lazo) quedan descartadas como pieza; el diagrama sirve para el carrusel
+  si hace falta explicar el recorrido paso a paso.
+
+**Pendiente y bloqueante para publicar:** el titular y el cuerpo son de Renata
+(`encargos-otras-sesiones/jue3-copy-circuito-renata.md`), y el precio del "desde" lo
+confirma Ramón. **Gasto total del sprint: 0,24 créditos.**
