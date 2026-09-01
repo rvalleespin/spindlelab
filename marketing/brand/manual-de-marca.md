@@ -62,7 +62,7 @@ Prohibido: viñetas doradas en listas, varios elementos dorados compitiendo, dor
 
 ## 06b · Territorio creativo de campaña — «el eje y el circuito» (desde sep-2026)
 
-Cerrado por Ramón el 1-sep-2026 en sprint (los documentos del sprint dicen 2-sep por un error de fecha de esa sesión) de dirección creativa (reporte:
+Cerrado por Ramón el 1-sep-2026 en el sprint de dirección creativa (reporte, con fechas corridas a "2-sep" por un error de esa sesión:
 `marketing/encargos-otras-sesiones/direccion-creativa-campana-sep-REPORTE.md`).
 
 > SpindleLab no es solo el eje del negocio: es **el circuito que lo enciende**. El
@@ -91,7 +91,7 @@ convierte. Después del corte no pasa energía.
 Afirmaciones verificables, ejemplos concretos, valentía de decir «esto no lo necesitas». La persona gramatical es híbrida, y la regla es precisa — no es una preferencia de estilo, cambia el significado:
 
 - **Primera persona singular** para lo observacional/evidencial: probar algo, revisar, investigar. Es el gesto que hace creíble el gancho («hice la prueba yo mismo»). Ej.: *«Le pregunté a ChatGPT por tu negocio.»*
-- **Primera persona plural** para todo lo que la empresa entrega, ofrece o hace como servicio — «entregamos», «revisamos», «buscamos», «conversemos», «trabajamos». Es la voz de negocio, no de individuo. Ej.: *«Te lo entregamos gratis, en 48 horas.»*
+- **Primera persona plural** para todo lo que la empresa entrega, ofrece o hace como servicio — «entregamos», «revisamos», «buscamos», «conversemos», «trabajamos». Es la voz de negocio, no de individuo. Ej.: *«Te lo entregamos gratis, en 24 horas.»*
 
 | Sí | No |
 |---|---|
