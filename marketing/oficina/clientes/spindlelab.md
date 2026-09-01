@@ -178,3 +178,18 @@ mismo turno, con fecha, porqué y fecha de revisión.)
 Decisión vigente de ejemplo (31-ago): **los precios propios no se queman en piezas de
 redes durante la etapa inicial** — vive en el addendum del brief v2, con revisión al
 cierre de mes.
+
+## Estado operacional — Interacción y tráfico (decisión de Ramón, 3-sep-2026)
+
+- **Objetivo del mes: tráfico al chequeo.** Las piezas invitan a interactuar, no solo a mirar.
+- **Instagram: gancho de comentarios** ("Comenta CIRCUITO y te mandamos el link por DM").
+  Herramienta: **ManyChat** (partner oficial de Meta; keyword del mes: CIRCUITO). Mientras
+  Ramón no conecte la cuenta, los DM se responden a mano con la plantilla del publicar.md
+  del día. En IG esto no es fricción artificial: los links no son clicables y el DM es la
+  entrega real.
+- **LinkedIn: JAMÁS automatizar DMs** (viola los términos, arriesga la cuenta). El juego ahí:
+  link en el primer comentario + pregunta genuina al cierre del post; DMs a mano si los piden.
+- **Modelo de trabajo del contenido (misma fecha):** el día a día (copys, ajustes, publicar)
+  se trabaja DIRECTO en la sesión troncal con los moldes de los especialistas; las sesiones
+  aparte quedan para trabajos gruesos (concepto, mes completo de piezas, blogs largos, lotes).
+  Origen: dos mañanas seguidas de enredo por cadenas de archivos/sesiones para piezas ya listas.

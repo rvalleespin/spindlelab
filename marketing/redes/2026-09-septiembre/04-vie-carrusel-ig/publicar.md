@@ -2,44 +2,49 @@
 
 **Cuándo:** VIERNES 4-sep · 19:00 (hora Chile) · **Canal:** Instagram @spindle.lab · **Voz:** plural
 **Piezas:** `laminas/lamina-1.png` … `lamina-7.png`, en orden
-**Checklist:** ☐ visto de Ramón · ☐ **ANTES: bio de @spindle.lab apuntando a spindlelab.cl/diagnostico** · ☐ subir las 7 láminas + caption · ☐ 1er comentario
+**Checklist:** ☐ bio de @spindle.lab apuntando a spindlelab.cl/diagnostico · ☐ subir las 7 láminas + caption · ☐ 1er comentario · ☐ responder los "CIRCUITO" por DM (ManyChat si ya está conectado; a mano si no — ver abajo)
 
-**Pieza:** `redes/carrusel-03-cinco-chequeos/` (7 láminas), re-render de Bruno en la 1, la 7 y
-toda lámina con firma vieja. **Base:** `copy-post.md` (11-ago), re-apuntado al chequeo.
-**Qué cambió:** los 5 chequeos dejan de ser "lo que miramos nosotros" y pasan a ser "5 de los 21
-que puedes correr tú". Ese es el mensaje del mes.
+## Caption (copiar y pegar)
 
-**Caption:**
-> Estos son 5 de los 21 chequeos que definen si la IA puede leer tu sitio.
->
-> 1. El título de la página. ¿Dice qué hace la empresa y dónde, o solo el nombre?
-> 2. La descripción. ¿Existe, o está vacía o cortada a la mitad?
-> 3. Los datos estructurados. ¿El sitio se identifica bien (clínica dental, asesora financiera) o de forma genérica?
-> 4. El robots.txt. ¿Deja pasar a los rastreadores de IA, o los bloquea sin querer?
-> 5. Las señales de entidad. ¿Hay forma de que un motor sepa que esta empresa es distinta de otra con nombre parecido?
->
-> Ninguno requiere rehacer el sitio. Todos definen si apareces cuando alguien le pregunta a la IA por tu rubro.
->
-> Estos 5 y los 16 que faltan los puedes correr tú sobre tu dominio, gratis y sin dejar tu correo, en spindlelab.cl/diagnostico. La metodología está publicada completa, con el peso de cada bloque, así que también puedes repetir el chequeo a mano.
->
-> #SEO #AEO #IA #Chile
+Estos son 5 de los 21 chequeos que definen si la IA puede leer tu sitio.
 
-**Primer comentario:**
-> El chequeo está en spindlelab.cl/diagnostico, y el link directo en la bio.
+1. El título de la página. ¿Dice qué hace la empresa y dónde, o solo el nombre?
+2. La descripción. ¿Existe, o está vacía o cortada a la mitad?
+3. Los datos estructurados. ¿El sitio se identifica bien (clínica dental, asesora financiera) o de forma genérica?
+4. El robots.txt. ¿Deja pasar a los rastreadores de IA, o los bloquea sin querer?
+5. Las señales de entidad. ¿Hay forma de que un motor sepa que esta empresa es distinta de otra con nombre parecido?
 
-> ⚠️ **Mecánica de IG, para no fingir la convención:** en Instagram no hay links clicables ni en
-> el caption ni en los comentarios. Por eso acá el dominio va escrito en el caption (se puede
-> tipear) y el primer comentario remite a la bio. **Antes de publicar esta fila hay que dejar
-> spindlelab.cl/diagnostico como link de la bio de `@spindle.lab`** (desde esta sesión no puedo
-> verificar a qué apunta hoy; lo confirma Ramón al publicar). Es lo único de esta fila que no
-> depende del copy.
+Ninguno requiere rehacer el sitio. Todos definen si apareces cuando alguien le pregunta a la IA por tu rubro.
 
-> **Nota para Bruno (lámina 1):** el caption re-encuadra la pieza como "5 de los 21". El titular
-> de la portada hoy dice "Los 5 chequeos que definen si la IA puede leerte", que sigue siendo
-> cierto y no contradice el caption, así que no es un bloqueo. Si al re-renderizar quieres
-> alinearlos, el subtítulo de la portada es el lugar barato para hacerlo ("5 de los 21 que
-> publicamos"), y el actual "Ninguno requiere rehacer tu sitio" se puede mover a la lámina 7.
-> Es tu decisión visual, no un cambio de copy.
+¿Quieres correr los 21 sobre tu propio sitio? Comenta CIRCUITO y te mandamos el link directo por DM. Gratis, sin registro, y con la metodología publicada. También está en el link de la bio.
 
----
-Copy de Cata (31-ago, Entrega 1), listo para pegar.
+#SEO #AEO #IA #Chile
+
+## Primer comentario (copiar y pegar)
+
+Comenta CIRCUITO y te llega el link del chequeo al DM. También está en la bio.
+
+## Plantilla del DM (la manda ManyChat, o tú a mano mientras no esté conectado)
+
+> ¡Hola! Acá está el chequeo: spindlelab.cl/diagnostico
+> Corre en segundos sobre tu dominio, gratis y sin registro. Cada chequeo que no pases viene con la instrucción de cómo arreglarlo. Si algo te sale raro y no cachas qué hacer, escríbenos por acá y lo miramos.
+
+## ManyChat — pasos de Ramón (una vez, ~10 min; mientras tanto los DM van a mano)
+
+1. manychat.com → crear cuenta con el correo del negocio → conectar Instagram
+   (@spindle.lab debe ser cuenta profesional vinculada a la página de Facebook del
+   portafolio: ya lo es).
+2. Automation → New Automation → trigger "User comments on your post" → post del
+   carrusel → keyword `CIRCUITO`.
+3. Acción 1: responder el comentario (público, opcional): "¡Te lo mandamos al DM!".
+   Acción 2: enviar DM con la plantilla de arriba, tal cual.
+4. Plan gratis alcanza para partir. La misma automatización se reutiliza en cada post
+   con gancho de comentarios (cambia solo el post; la keyword del mes es CIRCUITO).
+
+## Regla de interacción (vale para LinkedIn también, desde hoy)
+
+- **Instagram:** el gancho de comentarios es la vía principal (los links no son clicables;
+  el DM ES la entrega). Bio siempre como respaldo.
+- **LinkedIn:** NUNCA automatizar DMs (viola los términos y arriesga la cuenta). Ahí:
+  link en el primer comentario + una pregunta genuina al cierre del post; si alguien
+  comenta pidiendo el link, Ramón se lo manda a mano (y ese ida y vuelta empuja el alcance).
