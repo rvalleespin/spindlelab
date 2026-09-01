@@ -96,8 +96,10 @@ HECHA** (manual §06b + proporciones reconciliadas) · **#4 regla de precios →
 jue 3) · #7 reel (decisión de Ramón, sin fecha).
 
 **Encargo derivado (1-sep tarde, coordinación → Bruno, punto #6 de tu tabla):** re-vestir al
-mundo dominó las piezas restantes del mes ANTES de que entren a la grilla: cifra 45/100,
-post del blog #1 (mar 8), post-presupuesto (jue 10) y el documento de los 21 chequeos
-(las láminas de agosto quedaron fuera de estética). Molde nuevo:
+mundo dominó, EN ESTE ORDEN (estructura nueva de Ramón: LUN reel · MIÉ carrusel · JUE post):
+(1) PRIORIDAD: visual del 67/69 para el MIÉ 9 (pieza de marca, plural; pieza única o
+mini-carrusel, el dato manda); (2) visual del reciclaje del blog #1 para el JUE 10.
+La cifra 45/100, el post-presupuesto y el documento de los 21 chequeos pasan al banco
+post-Fiestas (los re-vistes con calma para el calendario que arme Marta). Molde nuevo:
 `redes/2026-09-septiembre/03-jue-carrusel-perder-clientes/` (fotografía física + velo +
 Gabarito; base.css propio). Fin de semana 5-6 sep, para el pase del lun 7.

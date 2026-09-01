@@ -228,3 +228,13 @@ cierre de mes.
   Ramón lo paga apenas le depositen. Si al **vie 12-sep** no está resuelto, recordárselo en
   cualquier pase (después viene Fiestas y se olvida). Cuando la SpA tenga banco: mover este
   cobro a la tarjeta de empresa.
+
+### Estructura semanal de publicación (decisión de Ramón, 1-sep noche — REEMPLAZA la cadencia anterior)
+- **3 publicaciones de marca por semana: LUN reel · MIÉ carrusel o pieza de dato · JUE post.**
+- **VIERNES NO SE PUBLICA** (B2B: viernes tarde muerto; lectura de Metricool + criterio de Ramón).
+- El LinkedIn personal de Ramón va intercalado (~1/semana) y NO cuenta dentro de las 3 de marca.
+- Todo bajo el mundo dominó; todo con gancho CIRCUITO; cross LinkedIn página + IG por defecto.
+- Semana del 7-sep: LUN video presentación · MIÉ 67/69 (marca, plural) · JUE reciclaje blog #1.
+- Banco post-Fiestas (`redes/2026-09-septiembre/_banco-post-fiestas/`): cifra 45/100, post
+  presupuesto, documento 21 chequeos, stories archivadas. Marta re-formaliza el calendario
+  del 22-sep en adelante con la estructura nueva.
