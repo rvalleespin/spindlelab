@@ -99,7 +99,27 @@ escritos antes de tener un solo caso real con el que calibrarlos.
    de término) en vez de dictar pasos. Cuesta cero y es donde está la mayor parte del valor
    del video.
 
-## 5. Lo que el video no ve y acá pesa
+## 5. Estado de ejecución (1-sep-2026, todo commiteado)
+
+- **Paso 1 — poda 3R.** 3 skills a `oficina/skills-en-reserva/` con README de reactivación
+  (`agente-analitica`, `agente-growth-producto`, `frontend-design`). `agente-seo-aeo` se
+  devolvió al comprobar que sí tenía una entrega real. Rutas actualizadas en organigrama,
+  guía de uso, flujos y memorias.
+- **Paso 2 — anti-hobbling.** Cata, Bruno, Diego y Tomás: "Método 1..5" reemplazado por
+  guardrails + criterio de término; los checklists pasaron a llamarse *criterio de término*,
+  que es lo que son. Se conservaron las líneas de "carga la ficha X". Los archivos crecieron
+  un poco: el objetivo no era acortar, era dejar de dictar pasos.
+- **Paso 3 — `voz-spindlelab`.** Skill nueva, sin pasos, con los dos textos publicados el
+  1-sep íntegros en `corpus.md`.
+
+**Resultado:** 15 skills activas (antes 17), 1.013 palabras de frontmatter siempre cargadas.
+
+**Hallazgo lateral que salió de esto:** el blog vivo tiene **68 guiones largos** en sus 5
+artículos, varios como golpe de efecto, más alguna transición de relleno. Son de julio,
+previos al endurecimiento de la regla. Quedan marcados como no imitables en `corpus.md`;
+pasar el blog por la regla es un pendiente aparte.
+
+## 6. Lo que el video no ve y acá pesa
 
 - Sus skills eran **muletas de prompting**; varias de las nuestras son **memoria operativa
   compartida** entre sesiones que no se ven entre sí. Borrarlas no libera al modelo:
