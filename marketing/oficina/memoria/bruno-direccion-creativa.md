@@ -46,6 +46,11 @@ Defino el "cómo se ve"; el "qué decir" es de Renata/Cata.
 - **Un relato visual mal armado se anula solo.** La v1 del circuito dejaba encendido el
   tramo posterior al corte: si igual pasa energía, el corte no significa nada. **Revisar
   que la pieza no se contradiga a sí misma, no solo que se vea bien.** (2-sep)
+- **Una foto generada trae elementos que contradicen el relato; se arreglan con el
+  ENCUADRE, no regenerando.** En el dominó, una ficha del fondo caía en dirección
+  contraria y ensuciaba la inercia de la corrida. Reencuadrar costó cero créditos y
+  segundos. **Antes de gastar en regenerar, preguntarse si sobra algo que se puede
+  sacar del cuadro.** Lo cazó Ramón, no yo: yo miré el PNG y no lo vi. (2-sep)
 - **La idea del cliente puede ganarle a la mía, y hay que decirlo.** Yo llevaba una elipse
   tipo constelación; Ramón dijo "dominó" y era mejor: un diagrama se lee, una consecuencia
   se siente. (2-sep)

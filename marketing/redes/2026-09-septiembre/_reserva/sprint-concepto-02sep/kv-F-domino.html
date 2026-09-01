@@ -1,9 +1,12 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
 <style>
 /* JUE 3-sep · concepto "el eje y el circuito" contado con DOMINO (idea de Ramon).
-   La foto se ve NITIDA: el velo solo cae donde hay texto, no sobre las fichas. */
+   La foto se ve NITIDA: el velo solo cae donde hay texto, no sobre las fichas.
+   ENCUADRE (2-sep, nota de Ramon): reencuadrado a 30% 62%/140% para dejar FUERA la
+   ficha del fondo derecho, que caia en direccion contraria y contradecia la inercia
+   de la corrida. Era defecto de encuadre, no de imagen: se arregla moviendo el cuadro. */
 .post.dm { padding:0; background:#05070a; }
-.foto { position:absolute; inset:0; background:url('fondo-domino.png') center 62%/118% no-repeat, #05070a; }
+.foto { position:absolute; inset:0; background:url('fondo-domino.png') 30% 62%/140% no-repeat, #05070a; }
 .velo { position:absolute; inset:0; background:
   linear-gradient(180deg, rgba(5,7,10,0.90) 0%, rgba(5,7,10,0.72) 24%, rgba(5,7,10,0) 40%),
   linear-gradient(0deg, rgba(5,7,10,0.94) 0%, rgba(5,7,10,0.66) 14%, rgba(5,7,10,0) 26%); }
