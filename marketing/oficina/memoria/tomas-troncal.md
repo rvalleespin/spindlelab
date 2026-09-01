@@ -58,3 +58,11 @@
 2. Escribir su skill en `.claude/skills/<skill>/SKILL.md` (no en blanco).
 3. Crear su memoria en `oficina/memoria/`.
 4. Registrarlo en el organigrama y en el plan operativo.
+
+- 2026-08-31 (noche) — **Skill robustecida por decisión de Ramón** (optó por fortalecer al
+  troncal en vez de crear un rol coordinador aparte): se sumaron al oficio la canonización
+  de decisiones en el mismo turno (fecha + porqué + revisión), la verificación de DATOS y
+  no solo reportes (`git log -- <ruta>`; dos rescates del mismo worktree lo respaldan), la
+  vista única de decisión para los pases, y el matiz del insumo compartido que destraba a
+  varios roles. Contexto de la jornada: `marketing/encargos-otras-sesiones/coordinacion-cierre-31ago.md`.
+  Recuerda: una skill editada solo aparece en sesiones NUEVAS.

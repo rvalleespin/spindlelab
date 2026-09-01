@@ -159,3 +159,22 @@ vivo `competidores.md`). ICP por defecto: B2B y YMYL chileno. Directos más rele
 **Best Solution** (misma esquina AEO-B2B) y **Nitten** (método SAGEO + índice público
 IViA). Instagram solo desde Chrome logueado; el término útil para la ola IG es
 "automatizacion con ia" (no "agencia de ia", que trae agencias de viajes).
+
+## La jerarquía documental de SpindleLab (dónde vive cada verdad)
+
+Cuando Ramón decide algo, se escribe en el nivel que corresponde; toda sesión nueva
+hereda leyendo de arriba hacia abajo. (Regla de la skill del troncal: canonizar en el
+mismo turno, con fecha, porqué y fecha de revisión.)
+
+| Nivel | Documento | Qué define |
+|---|---|---|
+| 1. Fundación | `contexto-agente-spindlelab.md` (raíz del repo) | Qué es SpindleLab y a quién vende |
+| 2. Marca | `marketing/brand/manual-de-marca.md` | Voz, visual, lo prohibido |
+| 3. Estrategia | `marketing/estrategia-marketing-spindlelab.md` | Plan 90 días, checkpoints, kill-criteria |
+| 4. Estado vivo | esta ficha | Reglas operacionales vigentes por área |
+| 5. Campaña | `marketing/rebranding-2026-08-brief-comunicacion.md` (v2 + addendums) + `marketing/calendario-editorial.md` | Mensaje y grilla del mes |
+| 6. Tarea | `marketing/encargos-otras-sesiones/` | Qué hace cada rol esta semana |
+
+Decisión vigente de ejemplo (31-ago): **los precios propios no se queman en piezas de
+redes durante la etapa inicial** — vive en el addendum del brief v2, con revisión al
+cierre de mes.
