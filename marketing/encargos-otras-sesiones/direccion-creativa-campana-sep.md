@@ -104,4 +104,8 @@ Encontrar el **concepto rector**: una idea central que
 > `marketing/encargos-otras-sesiones/direccion-creativa-campana-sep.md` y tu memoria.
 > Yo dirijo, tú propones: partamos por las 2-3 rutas conceptuales con tu recomendación.
 
-**Estado:** ⬜ pendiente · creado 31-ago-2026 (noche) por la coordinación
+**Estado:** ✅ **HECHO** — sprint corrido el 2-sep-2026 con Ramón en vivo.
+Concepto elegido: **"el eje y el circuito"**, ejecutado con el dominó.
+Reporte: `direccion-creativa-campana-sep-REPORTE.md`. Pieza del jue 3 en
+`redes/2026-09-septiembre/03-jue-post-chatgpt/post-domino.png`, pendiente de copy (Renata)
+y de confirmación del precio (Ramón).

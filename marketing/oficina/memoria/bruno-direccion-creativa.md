@@ -6,6 +6,14 @@ Defino el "cómo se ve"; el "qué decir" es de Renata/Cata.
 **Skill:** .claude/skills/persona-director-creativo/SKILL.md
 
 ## Estado actual
+- 2026-09-02 — **SpindleLab, sprint de dirección creativa con Ramón en vivo.** Concepto
+  rector cerrado: **"el eje y el circuito"** — SpindleLab no es solo el eje del negocio,
+  es el circuito que lo enciende; el argumento pasa de "no apareces en la IA" (territorio
+  saturado) a **"por qué tu sitio no convierte"**. Pieza del jue 3 producida con el dominó
+  (idea de Ramón): `_reserva/sprint-concepto-02sep/kv-F-domino.png`. Lleva un **"desde"**
+  de precio, decisión suya que reencuadra el addendum del 31-ago (la regla era sin
+  CARTERA, un "desde" es umbral de entrada). Copy encargado a Renata: el aprobado quedó
+  fuera de concepto. **Créditos gastados: 0,24** (dos tandas de `soul_location`).
 - 2026-08-31 — **SpindleLab, relanzamiento de septiembre.** Encargo de Marta entregado
   completo (las 3 entregas en una tanda, para el Pase 1+2 del 31-ago): anuncio del motor
   en 3 direcciones, 5 re-renders de agosto, carrusel del chequeo, stories y la pieza del
@@ -17,6 +25,35 @@ Defino el "cómo se ve"; el "qué decir" es de Renata/Cata.
   Detalle y estado por pieza: `marketing/oficina/clientes/praxi.md`.
 
 ## Aprendido a pulso (gotchas)
+
+- **"Facebook está bloqueado" era diagnóstico falso.** `curl` a facebook.com devuelve 200
+  por el proxy; lo que fallaba era **Chrome**: no hereda `HTTPS_PROXY` (hay que pasarle
+  `--proxy-server`) y su ClientHello post-cuántico moría en el túnel — el síntoma delator
+  fue que **también fallaba google.com**, no solo el host "bloqueado". Receta completa en
+  `2026-09-septiembre/_reserva/sprint-concepto-02sep/competencia-adlib/hallazgos.md`.
+  **Principio: antes de reportar un host como bloqueado, probarlo con `curl` y con OTRO
+  host; si los dos caen, el problema es mi herramienta, no la política.** (2-sep)
+- **Cambiar el fondo NO es rediseñar la pieza.** Entregué la misma ficha con otra textura
+  y Ramón lo cazó al toque. Si el titular, la estructura y la jerarquía son los mismos,
+  cambió el papel, no el diseño. (2-sep)
+- **Mirar la biblioteca de anuncios ANTES de proponer concepto.** Mi ruta "recomendada"
+  resultó ser el anuncio más corrido de la categoría (Webpositer, 6+ variantes de "Si no
+  apareces tú, aparece tu competencia"). Media hora de Ad Library habría ahorrado el
+  sprint entero. (2-sep)
+- **La Ad Library dice qué SOSTIENEN, no qué rinde.** Se mide por antigüedad del ángulo y
+  reposición de creatividades (Honoralia: 43 días, 15 piezas), nunca por "está activo".
+  Ojo con "total active time <1 hr" en creatividades sueltas: rotan muchísimo. (2-sep)
+- **Un relato visual mal armado se anula solo.** La v1 del circuito dejaba encendido el
+  tramo posterior al corte: si igual pasa energía, el corte no significa nada. **Revisar
+  que la pieza no se contradiga a sí misma, no solo que se vea bien.** (2-sep)
+- **Una foto generada trae elementos que contradicen el relato; se arreglan con el
+  ENCUADRE, no regenerando.** En el dominó, una ficha del fondo caía en dirección
+  contraria y ensuciaba la inercia de la corrida. Reencuadrar costó cero créditos y
+  segundos. **Antes de gastar en regenerar, preguntarse si sobra algo que se puede
+  sacar del cuadro.** Lo cazó Ramón, no yo: yo miré el PNG y no lo vi. (2-sep)
+- **La idea del cliente puede ganarle a la mía, y hay que decirlo.** Yo llevaba una elipse
+  tipo constelación; Ramón dijo "dominó" y era mejor: un diagrama se lee, una consecuencia
+  se siente. (2-sep)
 
 - **En sesión cloud, Chrome headless pinta ~85 px menos que el `--window-size` pedido:**
   un `--window-size=1080,1080` deja una franja blanca abajo y el PNG sale mutilado, no

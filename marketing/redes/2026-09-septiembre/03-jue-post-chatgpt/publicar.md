@@ -1,3 +1,15 @@
+> ⚠️ **2-sep — CAMBIÓ EL CONCEPTO. Este documento está a medio actualizar.**
+> Ramón cerró el concepto rector de la campaña ("el eje y el circuito") en el sprint con
+> Bruno. **La pieza vigente es `post-domino.png`**, no `post.png`.
+> **El copy de más abajo (Cata, 31-ago) quedó fuera de concepto** — sigue siendo verdadero,
+> pero ya no es lo que dice la campaña. Se conserva intacto acá como respaldo, NO se publica
+> tal cual. El texto nuevo lo escribe Renata:
+> `encargos-otras-sesiones/jue3-copy-circuito-renata.md`.
+> **Pendiente de Ramón:** confirmar el "desde $400.000" que lleva la pieza.
+> Bruno re-renderiza en segundos cuando llegue el copy definitivo.
+
+---
+
 # Publicar — "Tu sitio se ve impecable. Esto recibe ChatGPT"
 
 **Cuándo:** JUEVES 3-sep · 09:00 (hora Chile) · **Canal:** página de empresa LinkedIn · **Voz:** plural
