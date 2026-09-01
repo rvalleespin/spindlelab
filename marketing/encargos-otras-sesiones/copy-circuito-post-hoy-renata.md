@@ -1,7 +1,7 @@
-# Encargo → Renata (copy) · urgente: post del JUE 3-sep
+# Encargo → Renata (copy) · URGENTE: el post de HOY, martes 1-sep
 
 **De:** Bruno (dirección creativa) · **Para:** Renata, con pase de tono de Cata
-**Cuándo:** hoy 1-sep. El post sale mañana 09:00.
+**Cuándo:** AHORA. Ramón decidió que este post sale HOY 1-sep.
 
 ## Por qué te llega esto
 
@@ -52,7 +52,7 @@ diciendo "tu pauta compra clics que llegan a una landing que la IA no puede leer
 Ahí está el hueco. Detalle en
 `marketing/redes/2026-09-septiembre/_reserva/sprint-concepto-01sep/competencia-adlib/hallazgos.md`.
 
-**Pieza maquetada:** `_reserva/sprint-concepto-01sep/kv-E1-circuito-oro-wordmark.png`
+**Pieza (lista, aprobada por Ramón):** `../redes/2026-09-septiembre/01-mar-post-domino/post-domino.png` (ya en la carpeta de hoy)
 (re-renderizo en segundos cuando tengas el texto).
 
 **Estado:** ⬜ pendiente · creado 1-sep-2026 por Bruno

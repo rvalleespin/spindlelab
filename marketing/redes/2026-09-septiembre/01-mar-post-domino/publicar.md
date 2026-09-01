@@ -1,8 +1,49 @@
-# Publicar — Anuncio del motor
+# Publicar — MARTES 1-sep · post del dominó
 
-**Cuándo:** MARTES 1-sep · 09:00 (hora Chile) · **Canal:** página de empresa LinkedIn · **Voz:** plural
-**Pieza:** `anuncio-v2-motor.png` (en esta carpeta) — decisión de Ramón 31-ago: sin precios en la imagen; v1/v3 en `../_reserva/`
-**Checklist:** ☐ visto de Ramón · ☐ subir el PNG con el cuerpo · ☐ publicar el 1er comentario AL TIRO (trae el link)
+**Cuándo:** MARTES 1-sep · **Canal:** página de empresa LinkedIn · **Voz:** plural
+**Pieza:** `post-domino.png` ✅ lista y aprobada por Ramón (visual)
+**Checklist:** ☐ **cuerpo del post (falta)** · ☐ visto final de Ramón · ☐ subir PNG + cuerpo · ☐ 1er comentario al tiro
+
+## Qué cambió (decisión de Ramón, 1-sep)
+
+En el sprint de dirección creativa de anoche se cerró el concepto rector de la campaña:
+**"el eje y el circuito"** — SpindleLab no es solo el eje del negocio, es el circuito que
+lo enciende. El argumento pasa de *"no apareces en la IA"* (territorio saturado en la
+categoría) a **"por qué tu sitio no convierte"**: se paga Meta, se paga Google, los dos
+empujan a una landing que la máquina no puede leer. El circuito se corta justo donde se
+cobra. Ejecución visual: el dominó.
+
+**Ramón decidió que este post sale HOY** (era el trabajo de anoche). Reemplaza en este
+slot al anuncio del motor v2, que queda acá mismo sin tocar (`anuncio-v2-motor.png` + su
+cuerpo al final de este documento) para que Marta y el troncal le den nueva fecha.
+
+## Titular de la pieza (validado por Ramón)
+
+> Pagas para que lleguen.
+> El circuito se corta antes.
+
+## Lo único que falta: el cuerpo del post
+
+**No lo escribo yo** (es de Renata, con pase de tono de Cata). Encargo:
+`encargos-otras-sesiones/copy-circuito-post-hoy-renata.md`.
+Ramón validó el titular, así que el camino corto es conservarlo y que Cata solo pase tono.
+
+Restricciones: audience-first (qué gana él mirando esto antes que qué hicimos nosotros) ·
+sin em-dash de muletilla · sin prueba social inventada · sin nombrar prospectos ·
+dato duro disponible: las corridas del 31-ago (`marketing/metricas/`).
+
+**Fricción a resolver en el cuerpo:** la pieza lleva un "desde $400.000" **y** CTA a
+chequeo gratis. Si el cuerpo no las ordena como recorrido (mira gratis qué te falta →
+arreglarlo parte en X), compiten. **Pendiente de Ramón:** confirmar que el $400.000
+sigue vigente (lo tomé de `../_reserva/anuncio-v1-cartera.html`).
+
+---
+---
+
+# ⏸ REPROGRAMADO — Anuncio del motor v2 (era el slot de hoy)
+
+Pieza `anuncio-v2-motor.png`, lista y con copy aprobado. **Sin fecha nueva: la asignan
+Marta y el troncal.** Nada de esto se borró.
 
 ## Cuerpo del post (copiar y pegar)
 

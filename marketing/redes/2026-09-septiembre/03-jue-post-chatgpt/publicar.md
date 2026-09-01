@@ -1,12 +1,8 @@
-> ⚠️ **2-sep — CAMBIÓ EL CONCEPTO. Este documento está a medio actualizar.**
-> Ramón cerró el concepto rector de la campaña ("el eje y el circuito") en el sprint con
-> Bruno. **La pieza vigente es `post-domino.png`**, no `post.png`.
-> **El copy de más abajo (Cata, 31-ago) quedó fuera de concepto** — sigue siendo verdadero,
-> pero ya no es lo que dice la campaña. Se conserva intacto acá como respaldo, NO se publica
-> tal cual. El texto nuevo lo escribe Renata:
-> `encargos-otras-sesiones/jue3-copy-circuito-renata.md`.
-> **Pendiente de Ramón:** confirmar el "desde $400.000" que lleva la pieza.
-> Bruno re-renderiza en segundos cuando llegue el copy definitivo.
+> ℹ️ **1-sep — sin cambios en esta pieza, pero OJO con el concepto.**
+> El concepto rector de la campaña cambió ("el eje y el circuito") y el post del dominó
+> pasó a publicarse HOY 1-sep, en `../01-mar-post-domino/`. Este slot del jue 3 queda
+> **abierto**: Marta y el troncal deciden qué va acá. La pieza y el copy de más abajo
+> siguen intactos como estaban; si se reutilizan, hay que revisarlos contra el concepto nuevo.
 
 ---
 

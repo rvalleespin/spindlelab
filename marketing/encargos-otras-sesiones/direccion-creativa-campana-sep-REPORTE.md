@@ -39,9 +39,11 @@ siente.
 
 ## 3. Piezas producidas
 
-- ⭐ **`redes/2026-09-septiembre/03-jue-post-chatgpt/post-domino.png`** + su HTML y su
-  `fondo-domino.png` — **la pieza del jue 3, lista salvo copy.** Ya está en la carpeta del
-  día. `post.png` (la vieja) se dejó intacta al lado; no se borró nada.
+- ⭐ **`redes/2026-09-septiembre/01-mar-post-domino/post-domino.png`** + su HTML y su
+  `fondo-domino.png` — **el post de HOY (mar 1-sep), listo salvo el cuerpo.**
+  **Decisión de Ramón:** este post sale hoy, no el jue 3. Reemplaza en el slot de hoy al
+  **anuncio del motor v2**, que queda en esa misma carpeta sin tocar y **necesita fecha
+  nueva de Marta y el troncal**. El slot del jue 3 queda **abierto**.
 - Todo el sprint (rutas, key visuals descartados, exploración de imagen, capturas de la
   competencia): `redes/2026-09-septiembre/_reserva/sprint-concepto-01sep/`.
 - `exploracion-imagen/domino-3.png` tiene el relato más exacto (ficha caída fuera de la
@@ -64,15 +66,18 @@ Detalle y capturas: `redes/2026-09-septiembre/_reserva/sprint-concepto-01sep/com
 
 ## 5. Lo que el troncal tiene que dirigir
 
+> **Lo primero: el post del dominó sale HOY** (mar 1-sep), no el jue 3. Falta solo el cuerpo.
+
 | # | Qué | De quién | Cuándo |
 |---|---|---|---|
-| 1 | **Copy del jue 3** — el de Cata (31-ago) quedó fuera de concepto. Encargo escrito: `jue3-copy-circuito-renata.md`. Ramón dijo que las frases de maquetación le funcionan: **si las conserva, basta pase de tono de Cata en vez de reescritura** | Renata → Cata | mañana 3-sep, antes de publicar |
-| 2 | **Confirmar el "desde $400.000"** que lleva la pieza (lo tomé de `_reserva/anuncio-v1-cartera.html`, no lo di por vigente) | Ramón | mañana |
+| 1 | **Cuerpo del post de HOY** — el de Cata (31-ago) quedó fuera de concepto. Encargo escrito: `copy-circuito-post-hoy-renata.md`. Ramón dijo que las frases de maquetación le funcionan: **si las conserva, basta pase de tono de Cata en vez de reescritura** | Renata → Cata | **HOY, antes de publicar** |
+| 2 | **Confirmar el "desde $400.000"** que lleva la pieza (lo tomé de `_reserva/anuncio-v1-cartera.html`, no lo di por vigente) | Ramón | **hoy** |
 | 3 | **Canonizar el concepto** en `manual-de-marca.md` (nivel 2 · Marca). No me corresponde. De paso, la sección de proporciones papel/tinta sigue siendo del sistema claro derogado | coordinación, con OK de Ramón | esta semana |
 | 4 | **Regla de precios: declararla.** El addendum del 31-ago dice "sin precios propios en piezas". Ramón la reencuadró: la regla era **sin CARTERA**; un "desde" es umbral de entrada. Hay que dejarlo escrito o el próximo que lea el addendum va a contradecir la pieza | coordinación | esta semana |
 | 5 | **Fricción abierta:** la pieza lleva precio **y** CTA a chequeo gratis. Son dos ofertas en el mismo pie. Se resuelve si el cuerpo las ordena como recorrido; si no, compiten | Renata / Ramón | con el copy |
-| 6 | **Aplicar el concepto al resto del mes** (vie 4 en adelante), solo donde mejora | Bruno, cuando el troncal lo encargue | tras el pase del jue 3 |
-| 7 | **Reel con la cara de Ramón** — él lo levantó como idea para contenido educacional diferenciador. No es de este sprint | Ramón decide cuándo | más adelante |
+| 6 | **Recolocar la cola de septiembre**: dar fecha nueva al anuncio del motor v2 y decidir qué va en el slot del jue 3, que quedó abierto | Marta + troncal | hoy/mañana |
+| 7 | **Aplicar el concepto al resto del mes**, solo donde mejora | Bruno, cuando el troncal lo encargue | tras el pase de hoy |
+| 8 | **Reel con la cara de Ramón** — él lo levantó como idea para contenido educacional diferenciador. No es de este sprint | Ramón decide cuándo | más adelante |
 
 ## 6. Nota de método (para que no se repita)
 
