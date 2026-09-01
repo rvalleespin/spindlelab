@@ -75,3 +75,11 @@
   día anterior falta el copy de una pieza aprobada, la coordinación LO ESCRIBE (deadline mata
   cadena de especialistas) y el especialista refina el molde después; (3) las advertencias de
   "documento a medio actualizar" se resuelven el mismo día, nunca se heredan a la mañana siguiente.
+
+- 2026-09-01 (tarde; segunda lección del día) — **Un concepto cerrado re-viste TODO, o no se
+  cerró.** Tras el sprint del dominó llené la grilla agresiva con piezas del estilo anterior
+  (fichas tipográficas) y material viejo (stories, carrusel de agosto): Ramón lo cazó al
+  primer vistazo, y era exactamente el miedo que había verbalizado la noche anterior. Regla:
+  después de un cambio de concepto, NINGUNA pieza pre-concepto entra a una grilla sin
+  re-vestirse al mundo nuevo; volumen sin mundo = volumen en contra. Y verificar SIEMPRE
+  contra lo ya publicado antes de proponer slots (el dominó ya había abierto los 3 canales).

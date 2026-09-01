@@ -204,3 +204,15 @@ cierre de mes.
   manual — decisión de Ramón, 1-sep). Flujo: los `publicar.md` de las carpetas-día son la
   fuente; Ramón copia, programa en Metricool y listo. El pase humano sigue: nada entra a
   Metricool sin que él lo haya leído.
+
+### Reglas de Ramón del 1-sep (tarde) — correcciones al plan de la semana
+1. **Stories sueltas: NO por ahora.** Con pocos seguidores no mueven la aguja. Solo se usan
+   para re-compartir publicaciones del feed (gesto manual de Ramón). El plan de stories
+   independientes queda archivado hasta tener base de seguidores.
+2. **TODA pieza nueva se produce bajo el MUNDO del concepto** (fotografía física del
+   dominó/consecuencias, manual §06b). Las fichas tipográficas planas del sistema v2 SOLAS
+   ya no pasan el pase: son sistema, no campaña. Piezas pre-concepto se RE-VISTEN antes de
+   entrar a cualquier grilla.
+3. **LinkedIn (empresa y personal) ya recibieron su apertura** con el dominó el mar 1.
+   El anuncio v2-motor y el post ancla quedan EN RESERVA, listos, para reprogramar cuando
+   Ramón lo decida — no se re-sirve un slot ya cubierto.

@@ -94,3 +94,10 @@ HECHA** (manual §06b + proporciones reconciliadas) · **#4 regla de precios →
 (addendum 2-sep del brief). Quedan vivos: **#1 copy del jue 3 (Renata+Cata, antes de las
 09:00)** · #5 se resuelve dentro del copy · #6 resto del mes (Bruno, tras el pase del
 jue 3) · #7 reel (decisión de Ramón, sin fecha).
+
+**Encargo derivado (1-sep tarde, coordinación → Bruno, punto #6 de tu tabla):** re-vestir al
+mundo dominó las piezas restantes del mes ANTES de que entren a la grilla: cifra 45/100,
+post del blog #1 (mar 8), post-presupuesto (jue 10) y el documento de los 21 chequeos
+(las láminas de agosto quedaron fuera de estética). Molde nuevo:
+`redes/2026-09-septiembre/03-jue-carrusel-perder-clientes/` (fotografía física + velo +
+Gabarito; base.css propio). Fin de semana 5-6 sep, para el pase del lun 7.
