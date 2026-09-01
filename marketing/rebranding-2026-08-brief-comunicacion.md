@@ -82,3 +82,19 @@ y mandar al sitio, que es donde el precio aparece junto a su plan. Consecuencias
 el anuncio del 1-sep sale en su versión **v2-motor** (la v1-cartera queda en reserva);
 Cata barre los copys del mes por menciones de cifras propias en piezas. Los precios de
 referencia DE MERCADO en textos siguen permitidos. Revisión de la regla: cierre de mes.
+
+---
+
+## Addendum 2-sep (sprint de dirección creativa, Ramón en vivo)
+
+1. **La campaña ya tiene concepto rector: «el eje y el circuito»**, ejecutado con
+   consecuencias físicas (el dominó). La formulación canónica vive en el manual de marca
+   §06b (nivel 2); el proceso y las rutas descartadas, en
+   `encargos-otras-sesiones/direccion-creativa-campana-sep-REPORTE.md`. Toda pieza nueva
+   del mes se produce bajo ese territorio.
+2. **Regla de precios REENCUADRADA por Ramón (2-sep):** lo vetado el 31-ago es la
+   **CARTERA completa de precios** en una imagen (la lista de las 6 soluciones). **UN
+   "desde" como umbral de entrada SÍ puede ir en pieza** cuando la pieza lo pide
+   (validado con la pieza del dominó del jue 3). Condición: el copy que la acompaña
+   porta "+ IVA / el detalle en el sitio". El resto del addendum del 31-ago sigue
+   vigente; revisión de todo al cierre de mes.

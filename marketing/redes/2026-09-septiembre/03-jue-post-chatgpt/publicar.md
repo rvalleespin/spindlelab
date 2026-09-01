@@ -5,7 +5,10 @@
 > pero ya no es lo que dice la campaña. Se conserva intacto acá como respaldo, NO se publica
 > tal cual. El texto nuevo lo escribe Renata:
 > `encargos-otras-sesiones/jue3-copy-circuito-renata.md`.
-> **Pendiente de Ramón:** confirmar el "desde $400.000" que lleva la pieza.
+> **Precio CONFIRMADO** (Ramón, 2-sep; cotejado por la coordinación contra el sitio
+> vivo: `/servicios/visibilidad-en-ia/` dice "desde $400.000 + IVA"). Único matiz: la
+> pieza no dice "+ IVA" → el cuerpo o el 1er comentario lleva "valores + IVA, detalle
+> en el sitio". Ya está pedido en el encargo de Renata.
 > Bruno re-renderiza en segundos cuando llegue el copy definitivo.
 
 ---

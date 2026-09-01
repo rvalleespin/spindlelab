@@ -56,3 +56,16 @@ Ahí está el hueco. Detalle en
 (re-renderizo en segundos cuando tengas el texto).
 
 **Estado:** ⬜ pendiente · creado 2-sep-2026 por Bruno
+
+---
+
+**Nota de la coordinación (2-sep, noche):**
+1. **El precio quedó CONFIRMADO por Ramón** y cotejado contra el sitio vivo
+   (`/servicios/visibilidad-en-ia/`: "desde $400.000 + IVA"). La pieza no dice "+ IVA":
+   **el cuerpo o el primer comentario debe llevar "valores + IVA, el detalle en el sitio"**
+   para no prometer de menos.
+2. La fricción precio-vs-chequeo (punto 5 del reporte del sprint) se resuelve ordenando
+   el pie como recorrido: el chequeo es el primer paso gratis, el "desde" es el umbral si
+   quieres que lo hagamos nosotros. Dos ofertas en secuencia, no en competencia.
+3. El concepto ya está canonizado en `marketing/brand/manual-de-marca.md` §06b — cítalo
+   de ahí si necesitas la formulación exacta.

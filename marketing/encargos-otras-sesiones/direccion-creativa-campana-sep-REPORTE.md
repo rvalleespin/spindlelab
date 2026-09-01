@@ -84,3 +84,13 @@ desbloquear la Ad Library desde una sesión cloud (era Chrome, no la política d
 
 ---
 **Estado:** ✅ sprint cerrado · 2-sep-2026 · Bruno. **Nada publicado**: la pieza espera copy y pase de Ramón.
+
+---
+
+**Descargo de la coordinación (2-sep, noche):** rama mergeada a `main` (verificada: pieza
+mirada, precio cotejado contra el sitio vivo, reglas de marca intactas). De la tabla §5:
+**#2 precio → CONFIRMADO por Ramón** (con matiz "+ IVA" al copy) · **#3 canonización →
+HECHA** (manual §06b + proporciones reconciliadas) · **#4 regla de precios → REESCRITA**
+(addendum 2-sep del brief). Quedan vivos: **#1 copy del jue 3 (Renata+Cata, antes de las
+09:00)** · #5 se resuelve dentro del copy · #6 resto del mes (Bruno, tras el pase del
+jue 3) · #7 reel (decisión de Ramón, sin fecha).

@@ -51,3 +51,10 @@
   `copys-ventana-1.md` ya no existe; historia en git). **Tus Entregas 2 y 3 se pegan
   directo en el `publicar.md` de cada carpeta-día** (10, 11, 22, 23, 24, 25, 29 traen
   stub con fuente y checklist), no en archivos nuevos.
+
+- 2026-09-02 (noche) — **La campaña tiene concepto rector: «el eje y el circuito»**
+  (manual de marca §06b). Tu copy del jue 3 (el del div vacío) quedó FUERA DE CONCEPTO:
+  se conserva como respaldo en el publicar.md del día, pero lo que sale lo escribe
+  Renata (`jue3-copy-circuito-renata.md`) y tú le pasas el tono ANTES de las 09:00 del
+  jue 3. Regla de precios reencuadrada: cartera vetada, UN "desde" en pieza sí (con
+  "+ IVA" en el copy). Tus Entregas 2-3 se producen bajo el concepto nuevo.

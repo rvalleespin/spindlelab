@@ -35,7 +35,13 @@
 | Dorado | `#C9A227` | SOLO acentos: el punto, separadores ·, un dato clave |
 | Gris pluma | `#5D6673` | Texto secundario, pies, etiquetas |
 
-**Proporción:** papel/blanco dominan (~70 %), tinta trabaja (~25 %), gris apoya, **el dorado aparece una vez** (~1-2 %).
+**Proporción (documentos y papelería):** papel/blanco dominan (~70 %), tinta trabaja (~25 %), gris apoya, **el dorado aparece una vez** (~1-2 %).
+
+> **En piezas de REDES rige el sistema live v2** (aprobado 12-ago-2026, aplicado a todo
+> el inventario el 31-ago): fondo oscuro `#0e141b` con los tokens del sitio en producción,
+> el frame del hero (hilo de oro) como fondo, verde petróleo `#2fa99b` en etiquetas y
+> Manrope de texto. La proporción papel-dominante de arriba queda para documentos
+> (mini-diagnósticos, papelería). Reglas completas: `marketing/redes/README.md`.
 
 **Soporte web (heredados, bajan de rango):** navy `#0E2A47` = fondos profundos de secciones del sitio; petróleo `#0F766E` = color funcional (enlaces, hover). Ninguno vuelve a aparecer en logo ni papelería.
 
@@ -53,6 +59,32 @@ Significa *el punto donde te encuentran*. Funciona por escasez — **un solo pun
 3. Destacado de UN dato clave.
 
 Prohibido: viñetas doradas en listas, varios elementos dorados compitiendo, dorado de fondo o en texto corrido.
+
+## 06b · Territorio creativo de campaña — «el eje y el circuito» (desde sep-2026)
+
+Cerrado por Ramón el 2-sep-2026 en sprint de dirección creativa (reporte:
+`marketing/encargos-otras-sesiones/direccion-creativa-campana-sep-REPORTE.md`).
+
+> SpindleLab no es solo el eje del negocio: es **el circuito que lo enciende**. El
+> argumento deja de ser "no apareces en la IA" y pasa a **por qué tu sitio no
+> convierte**: el dueño ya paga Meta y ya paga Google; los dos empujan a su landing,
+> escrita para personas y no para la máquina que hoy responde por su rubro. **El
+> circuito existe entero y se corta en el último tramo, justo donde se cobra.**
+
+Recorrido que dibuja la campaña: te preguntan → el motor busca → ✂ → tu landing →
+convierte. Después del corte no pasa energía.
+
+- **Ejecución visual: consecuencias físicas, no diagramas.** El dominó (la ficha
+  torcida que deja el resto en pie) es el molde: algo que se SIENTE en 3 segundos.
+  La prohibición del §01 sigue intacta: "circuito" es metáfora NARRATIVA — jamás
+  placas, chips ni circuitos dibujados.
+- **Cómo conversa con la marca:** la idea rectora sigue siendo *el punto donde te
+  encuentran* (§06). El circuito es el territorio de CAMPAÑA que la activa: **el hilo
+  de oro del hero es la corriente que recorre el circuito, y el punto dorado, el lugar
+  donde esa energía llega — donde te encuentran.** (Primera definición escrita del
+  hilo de oro.)
+- **Sostén del nombre:** *spindle* = eje/husillo, la pieza que gira y transmite el
+  movimiento. El concepto activa la marca que ya existe; no inventa otra.
 
 ## 07 · Voz
 
