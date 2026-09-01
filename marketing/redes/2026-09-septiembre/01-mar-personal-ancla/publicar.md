@@ -1,11 +1,9 @@
-# Publicar — Post ancla (el porqué, en primera persona)
+# ✅ PUBLICADO — Post ancla (mar 1-sep, LinkedIn personal)
 
-**Cuándo:** VIERNES 4-sep · 12:30 (hora Chile) · **Canal:** perfil personal de Ramón · **Voz:** singular
-> Reprogramado al VIE 4 (1-sep, tarde): llena el hueco de cadencia entre el carrusel del jue 3
-> y el video del lun 7, es texto puro (cero producción) y le da aire al perfil personal
-> respecto del dominó del mar 1.
-**Pieza:** TEXTO PURO, sin imagen (regla del perfil personal)
-**Checklist:** ☐ visto de Ramón · ☐ publicar el 1er comentario al tiro
+**Confirmado por Ramón (tres veces; la coordinación tardó en registrarlo — error nuestro).**
+El mar 1 salieron: dominó en IG (ManyChat activo) + dominó en LinkedIn empresa + ESTE post
+ancla en el LinkedIn personal. El carrusel del jue 3 quedó programado en Metricool ese mismo día.
+Texto publicado, para referencia:
 
 ## Cuerpo del post (copiar y pegar)
 

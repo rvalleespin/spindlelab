@@ -83,3 +83,9 @@
   después de un cambio de concepto, NINGUNA pieza pre-concepto entra a una grilla sin
   re-vestirse al mundo nuevo; volumen sin mundo = volumen en contra. Y verificar SIEMPRE
   contra lo ya publicado antes de proponer slots (el dominó ya había abierto los 3 canales).
+
+- 2026-09-01 (noche; tercera lección del día, la más cara) — **Cuando Ramón dice "ya está
+  publicado", se marca EN EL ARCHIVO DEL DÍA en ese mismo turno, ANTES de proponer nada más.**
+  Dijo tres veces que el ancla ya había salido en su LinkedIn personal y yo la reprogramé dos
+  veces (jue, vie) porque nunca registré su primera confirmación. El estado que no se escribe
+  no existe, y hacerle repetir estado al dueño es el peor uso posible de su tiempo.
