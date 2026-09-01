@@ -59,7 +59,7 @@ Ahí está el hueco. Detalle en
 
 ---
 
-**Nota de la coordinación (2-sep, noche):**
+**Nota de la coordinación (1-sep):**
 1. **El precio quedó CONFIRMADO por Ramón** y cotejado contra el sitio vivo
    (`/servicios/visibilidad-en-ia/`: "desde $400.000 + IVA"). La pieza no dice "+ IVA":
    **el cuerpo o el primer comentario debe llevar "valores + IVA, el detalle en el sitio"**
@@ -70,7 +70,7 @@ Ahí está el hueco. Detalle en
 3. El concepto ya está canonizado en `marketing/brand/manual-de-marca.md` §06b — cítalo
    de ahí si necesitas la formulación exacta.
 
-**Estado: ✅ CERRADO por la coordinación (3-sep, mañana).** El copy lo escribió la coordinación
+**Estado: ✅ CERRADO por la coordinación (1-sep).** El copy lo escribió la coordinación
 sobre la hora (Ramón necesitaba publicar y la cadena Renata→Cata no alcanzaba); está en el
 `publicar.md` del día, bajo el concepto y con el "+ IVA" y el recorrido chequeo→desde resueltos.
 Renata/Cata: no rehacer; sí aplicar este molde a las piezas siguientes del concepto.

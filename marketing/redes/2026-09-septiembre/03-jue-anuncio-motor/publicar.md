@@ -1,6 +1,12 @@
-# Publicar — Anuncio del motor
+# Publicar — Anuncio del motor (movido del mar 1 al JUE 3)
 
-**Cuándo:** MARTES 1-sep · 09:00 (hora Chile) · **Canal:** página de empresa LinkedIn · **Voz:** plural
+> **Reordenado el 1-sep por Ramón:** la campaña abrió el MAR 1 con el dominó (concepto).
+> Este anuncio (qué publicamos: precios, método, chequeo) sale el JUE 3 como segunda pieza.
+> Antes de publicar: agregar al cierre una pregunta genuina o el gancho "Comenta CIRCUITO
+> y te mando el link por DM" para empujar comentarios (regla de interacción, ficha 1-sep).
+> Ese mismo día Diego publica el blog #1 (lo necesita el post del mar 8).
+
+**Cuándo:** JUEVES 3-sep · 09:00 (hora Chile) · **Canal:** página de empresa LinkedIn · **Voz:** plural
 **Pieza:** `anuncio-v2-motor.png` (en esta carpeta) — decisión de Ramón 31-ago: sin precios en la imagen; v1/v3 en `../_reserva/`
 **Checklist:** ☐ visto de Ramón · ☐ subir el PNG con el cuerpo · ☐ publicar el 1er comentario AL TIRO (trae el link)
 

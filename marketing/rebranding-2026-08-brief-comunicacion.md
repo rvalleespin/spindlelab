@@ -85,14 +85,14 @@ referencia DE MERCADO en textos siguen permitidos. Revisión de la regla: cierre
 
 ---
 
-## Addendum 2-sep (sprint de dirección creativa, Ramón en vivo)
+## Addendum 1-sep (sprint de dirección creativa, Ramón en vivo; los docs del sprint dicen 2-sep por error de fecha de esa sesión)
 
 1. **La campaña ya tiene concepto rector: «el eje y el circuito»**, ejecutado con
    consecuencias físicas (el dominó). La formulación canónica vive en el manual de marca
    §06b (nivel 2); el proceso y las rutas descartadas, en
    `encargos-otras-sesiones/direccion-creativa-campana-sep-REPORTE.md`. Toda pieza nueva
    del mes se produce bajo ese territorio.
-2. **Regla de precios REENCUADRADA por Ramón (2-sep):** lo vetado el 31-ago es la
+2. **Regla de precios REENCUADRADA por Ramón (1-sep):** lo vetado el 31-ago es la
    **CARTERA completa de precios** en una imagen (la lista de las 6 soluciones). **UN
    "desde" como umbral de entrada SÍ puede ir en pieza** cuando la pieza lo pide
    (validado con la pieza del dominó del jue 3). Condición: el copy que la acompaña

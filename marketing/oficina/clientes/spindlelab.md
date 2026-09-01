@@ -179,7 +179,7 @@ Decisión vigente de ejemplo (31-ago): **los precios propios no se queman en pie
 redes durante la etapa inicial** — vive en el addendum del brief v2, con revisión al
 cierre de mes.
 
-## Estado operacional — Interacción y tráfico (decisión de Ramón, 3-sep-2026)
+## Estado operacional — Interacción y tráfico (decisión de Ramón, 1-sep-2026)
 
 - **Objetivo del mes: tráfico al chequeo.** Las piezas invitan a interactuar, no solo a mirar.
 - **Instagram: gancho de comentarios** ("Comenta CIRCUITO y te mandamos el link por DM").

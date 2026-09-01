@@ -62,7 +62,7 @@ Prohibido: viñetas doradas en listas, varios elementos dorados compitiendo, dor
 
 ## 06b · Territorio creativo de campaña — «el eje y el circuito» (desde sep-2026)
 
-Cerrado por Ramón el 2-sep-2026 en sprint de dirección creativa (reporte:
+Cerrado por Ramón el 1-sep-2026 en sprint (los documentos del sprint dicen 2-sep por un error de fecha de esa sesión) de dirección creativa (reporte:
 `marketing/encargos-otras-sesiones/direccion-creativa-campana-sep-REPORTE.md`).
 
 > SpindleLab no es solo el eje del negocio: es **el circuito que lo enciende**. El

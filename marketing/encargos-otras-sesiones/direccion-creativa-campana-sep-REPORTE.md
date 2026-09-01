@@ -87,7 +87,7 @@ desbloquear la Ad Library desde una sesión cloud (era Chrome, no la política d
 
 ---
 
-**Descargo de la coordinación (2-sep, noche):** rama mergeada a `main` (verificada: pieza
+**Descargo de la coordinación (1-sep):** ⚠️ Las fechas "2-sep" de este reporte vienen corridas (error de la sesión del sprint; corrió la noche del lun 31-ago al mar 1-sep). Hoy es mar 1-sep. rama mergeada a `main` (verificada: pieza
 mirada, precio cotejado contra el sitio vivo, reglas de marca intactas). De la tabla §5:
 **#2 precio → CONFIRMADO por Ramón** (con matiz "+ IVA" al copy) · **#3 canonización →
 HECHA** (manual §06b + proporciones reconciliadas) · **#4 regla de precios → REESCRITA**

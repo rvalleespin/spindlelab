@@ -52,14 +52,14 @@
   directo en el `publicar.md` de cada carpeta-día** (10, 11, 22, 23, 24, 25, 29 traen
   stub con fuente y checklist), no en archivos nuevos.
 
-- 2026-09-02 (noche) — **La campaña tiene concepto rector: «el eje y el circuito»**
+- 2026-09-01 (los docs del sprint dicen 2-sep por error de fecha de esa sesión) — **La campaña tiene concepto rector: «el eje y el circuito»**
   (manual de marca §06b). Tu copy del jue 3 (el del div vacío) quedó FUERA DE CONCEPTO:
   se conserva como respaldo en el publicar.md del día, pero lo que sale lo escribe
   Renata (`jue3-copy-circuito-renata.md`) y tú le pasas el tono ANTES de las 09:00 del
   jue 3. Regla de precios reencuadrada: cartera vetada, UN "desde" en pieza sí (con
   "+ IVA" en el copy). Tus Entregas 2-3 se producen bajo el concepto nuevo.
 
-- 2026-09-03 — **Gancho de comentarios adoptado (decisión de Ramón):** en IG los captions
+- 2026-09-01 — **Gancho de comentarios adoptado (decisión de Ramón):** en IG los captions
   cierran con "Comenta CIRCUITO y te mandamos el link por DM" (ManyChat o a mano); en
   LinkedIn los posts cierran con una pregunta genuina y el link sigue en el 1er comentario
   (DM automatizado PROHIBIDO en LinkedIn). Molde en `04-vie-carrusel-ig/publicar.md`.

@@ -67,7 +67,7 @@
   varios roles. Contexto de la jornada: `marketing/encargos-otras-sesiones/coordinacion-cierre-31ago.md`.
   Recuerda: una skill editada solo aparece en sesiones NUEVAS.
 
-- 2026-09-03 (regla nueva, de un enojo justificado de Ramón) — **UN archivo por pieza, cero
+- 2026-09-01 (regla nueva, de un enojo justificado de Ramón) — **UN archivo por pieza, cero
   cadenas la mañana de publicar.** El jue 3 la pieza estaba lista pero el copy quedó repartido
   entre un publicar.md con advertencias, un copy viejo "de respaldo" y un encargo a otra sesión:
   Ramón llegó a publicar y no había texto que pegar. Reglas: (1) el `publicar.md` del día es LA
