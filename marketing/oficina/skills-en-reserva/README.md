@@ -7,6 +7,10 @@ Salieron de `.claude/skills/` el **1-sep-2026** tras el análisis en
 
 **No están borradas ni obsoletas: están esperando su primer encargo real.**
 
+> ⚠️ **Al auditar skills, no las trates como error.** La regla correcta es: no deben estar
+> en `.claude/skills/` ni en `~/.claude/skills/`; **sí deben seguir acá**. Una auditoría que
+> asuma "no existen en la rama" se las lleva del repo.
+
 ## Por qué se archivaron
 
 El costo de dejarlas cargadas no es el contexto (~200 palabras de descripción entre las
@@ -36,6 +40,14 @@ reactivarlas contra un caso concreto y corregirlas con lo aprendido en él.
 Una sesión cloud **no puede tocar** `~/.claude/skills/` del Mac: hay que correrlo a mano
 allá, con el repo ya actualizado (`git pull` primero, o se copian las versiones viejas).
 
+> **Cuál es el clon bueno (1-sep-2026, dicho por Ramón):** `~/Projects/spindlelab`.
+> **El repo en iCloud está corrupto — no usarlo.** `CLAUDE.md` todavía describe worktrees
+> bajo iCloud Drive; esa parte quedó desactualizada.
+>
+> **Y la referencia de skills es esta rama** (`claude/video-suggestion-analysis-bwwcxo`,
+> commit `908f08f`), **no `main`**: la poda no está fusionada, así que `main` muestra las
+> 17 skills viejas.
+
 ```bash
 cd ~/.claude/skills
 
@@ -43,7 +55,7 @@ cd ~/.claude/skills
 rm -rf agente-analitica agente-growth-producto frontend-design
 
 # 2. copiar la nueva de voz + las que cambiaron en la pasada anti-hobbling
-REPO=~/Library/Mobile\ Documents/com~apple~CloudDocs/SPINDLELAB   # ajustar si la ruta cambió
+REPO=~/Projects/spindlelab   # el clon bueno (1-sep-2026). NO usar el de iCloud: está corrupto.
 for s in voz-spindlelab persona-social-media persona-director-creativo \
          persona-disenador-web agente-troncal-marketing agente-copywriter; do
   rm -rf "$s" && cp -R "$REPO/.claude/skills/$s" .
