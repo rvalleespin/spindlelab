@@ -2,7 +2,7 @@
 
 **Rol:** Medición y analítica. Atribución por canal, reporte mensual, analítica de producto.
 **Carpeta de trabajo:** `marketing/reportes/`, GA4 / Search Console
-**Skill:** .claude/skills/agente-analitica/SKILL.md
+**Skill:** `marketing/oficina/skills-en-reserva/agente-analitica/SKILL.md` — **en reserva desde el 1-sep-2026** (ver el README de esa carpeta). Se reactiva con el primer reporte real.
 
 ## Estado actual
 - 2026-07-29 — Empleada recién creada. Sin reportes propios aún.

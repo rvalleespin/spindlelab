@@ -72,6 +72,22 @@ Estado: **✅ trabajando** · **★ nuevo (esta pasada)** · **○ vacante** · 
 > **`refero-design`** y **`frontend-design`** (metodologías de diseño visual) son
 > parte de su caja de herramientas, no empleados.
 
+> **Nota — `voz-spindlelab` (1-sep-2026).** Skill nueva, y es la excepción a todo lo demás
+> de esta oficina: **no tiene rol, no tiene método y no tiene pasos.** Es puro corpus — los
+> textos que Ramón publicó de verdad, en sus dos registros (singular personal / plural
+> marca), con su procedencia. La cargan Renata y Cata (y quien escriba algo de cara al
+> público) para calibrar el tono con ejemplos en vez de reglas. Crece solo con piezas
+> **publicadas**, nunca con borradores ni ejemplos inventados.
+
+> **Nota — skills en reserva (1-sep-2026).** Tras la poda documentada en
+> `oficina/analisis-borrar-skills-2026-09-01.md`, tres manuales salieron de
+> `.claude/skills/` a **`oficina/skills-en-reserva/`**: `agente-analitica` (Nora),
+> `agente-growth-producto` (Pía) y la importada `frontend-design`. **Los roles siguen
+> existiendo** y sus memorias siguen en `oficina/memoria/`: lo que está en pausa es el
+> manual, porque todavía no tiene un caso real que ejecutar. Si una skill "desapareció"
+> de tu sesión, mira ahí antes de darla por perdida — y recuerda que `frontend-design`
+> ya viene nativa en las sesiones, estaba duplicada.
+
 > **Nota sobre Marco (`agente-inteligencia-mercado`) y Nora.** Forman el par de
 > inteligencia: **Marco mira AFUERA** (mercado, competencia, precios, tamaño de la
 > torta) *antes* de una decisión cara; **Nora mide ADENTRO** (qué produjo cada

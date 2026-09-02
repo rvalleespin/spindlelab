@@ -44,8 +44,8 @@ cuando quieres llamar directo a un especialista para una tarea puntual.
 | Montar/gestionar Meta Ads | Fran | `/persona-meta-ads` |
 | Tocar el sitio web o publicar un blog | Diego | `/persona-disenador-web` |
 | Diseñar una pantalla / flujo / feature de un producto | Nadia | `/producto-ui-ux` |
-| Onboarding / activación / retención de un producto | Pía | `/agente-growth-producto` |
-| Medir resultados / armar un reporte / atribución | Nora | `/agente-analitica` |
+| Onboarding / activación / retención de un producto | Pía | `/agente-growth-producto` — **en reserva** (`oficina/skills-en-reserva/`) |
+| Medir resultados / armar un reporte / atribución | Nora | `/agente-analitica` — **en reserva** (`oficina/skills-en-reserva/`) |
 | **Lograr un objetivo completo** (que alguien arme el plan y dirija a los demás) | Tomás (PM) | `/agente-troncal-marketing` |
 
 ---
