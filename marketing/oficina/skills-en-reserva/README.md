@@ -41,12 +41,11 @@ Una sesión cloud **no puede tocar** `~/.claude/skills/` del Mac: hay que correr
 allá, con el repo ya actualizado (`git pull` primero, o se copian las versiones viejas).
 
 > **Cuál es el clon bueno (1-sep-2026, dicho por Ramón):** `~/Projects/spindlelab`.
-> **El repo en iCloud está corrupto — no usarlo.** `CLAUDE.md` todavía describe worktrees
-> bajo iCloud Drive; esa parte quedó desactualizada.
+> **El repo en iCloud está corrupto — no usarlo.** `CLAUDE.md` ya quedó corregido en su
+> línea 36.
 >
-> **Y la referencia de skills es esta rama** (`claude/video-suggestion-analysis-bwwcxo`,
-> commit `908f08f`), **no `main`**: la poda no está fusionada, así que `main` muestra las
-> 17 skills viejas.
+> **La referencia es `main`.** La poda se fusionó el 1-sep, así que `main` ya muestra las
+> 15 skills y esta carpeta de reserva. No hace falta buscar ninguna rama.
 
 ```bash
 cd ~/.claude/skills
