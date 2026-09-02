@@ -48,13 +48,18 @@ Comenta CIRCUITO y te mando el link del chequeo por DM. (Si prefieres directo, e
 y la primera línea deben darse la mano. Secuencia nueva: la ficha que falla (lo que se VE) →
 el motor como solución (lo que se nombra).
 
-**Formato:** VIDEO — **`clip-corte.mp4` (LISTO: Kling 2.6, 5 seg, 1:1, 5 créditos; verificado
-frame a frame: dedo real empuja, caen las primeras y quedan fuera de línea, el RESTO DE LA FILA
-DE PIE hasta el final; sin fuego ni humo)** + `overlay-texto-v2.png` encima ("Una ficha fallando
-corta toda la venta.").
-**Montaje CapCut (5 min):** importar clip → capa `overlay-texto-v2.png` toda la duración,
-pantalla completa → exportar 1080×1080 → programar en Metricool HOY MIÉ 19:00 como video.
-Al salir: 1 clic en ManyChat (trigger CIRCUITO).
+**Formato:** VIDEO — **`clip-cascada.mp4`** (Seedance 1.5 Pro, 720p 1:1; la coreografía exacta
+de Ramón: dedo desde la izquierda da la inercia → 1ª bota 2ª → 2ª bota 3ª → la 3ª NO alcanza
+la 4ª → toda la fila queda de pie; cero fuego). ⚠️ **Usable de 0 a ~2,8 seg** — después la
+mano vuelve a entrar a ordenar fichas: SE CORTA.
+**Montaje CapCut (5 min):**
+1. Importar `clip-cascada.mp4` → recortar en ~2,8 s (justo antes de que la mano reaparezca).
+2. Opcional que suma: velocidad 0.7x (la cascada gana drama) y/o congelar el último cuadro
+   1,5-2 s (la cadena muerta + el texto = el remate perfecto).
+3. Capa `overlay-texto-v2.png` toda la duración, pantalla completa.
+4. Exportar 1080×1080 → Metricool HOY MIÉ 19:00 como video → 1 clic en ManyChat (CIRCUITO).
+Clips descartados renombrados en la carpeta (2 Kling con fuego/dirección, 1 Seedance saca-fichas
+como alternativa).
 
 **Caption v3 (DEFINITIVA, copiar y pegar):**
 
