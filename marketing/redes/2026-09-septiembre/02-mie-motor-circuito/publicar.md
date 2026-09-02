@@ -39,3 +39,30 @@ Estamos publicando la serie del circuito todo septiembre. Síguenos para no perd
 ## Primer comentario
 
 Comenta CIRCUITO y te mando el link del chequeo por DM. (Si prefieres directo, está en spindlelab.cl)
+
+---
+
+## v3 PROPUESTA (2-sep, madrugada) — lógica invertida por Ramón: LA FICHA primero, el motor después
+
+**Crítica de Ramón (correcta):** abrir con "motor" sobre imagen de dominós confunde: la imagen
+y la primera línea deben darse la mano. Secuencia nueva: la ficha que falla (lo que se VE) →
+el motor como solución (lo que se nombra).
+
+**Formato:** VIDEO — clip del corte de cadena (dedo empuja → caen 2 → una cae fuera → el resto
+queda de pie) + `overlay-texto-v2.png` ("Una ficha fallando corta toda la venta.").
+
+**Caption v3 (pendiente OK de Ramón):**
+
+Todas las fichas puestas: web, redes, pauta. Y la venta igual no llega.
+
+Porque basta una ficha fallando para que la cadena se corte. Y hoy la ficha que más falla es la que nadie está mirando: si la IA puede leer tu sitio, entenderlo y citarlo cuando alguien pregunta por tu rubro.
+
+Por eso no trabajamos piezas sueltas: armamos el motor completo, con esa ficha al centro. El método y los precios están publicados en el sitio, y el chequeo te muestra en segundos cuál de tus fichas está fallando.
+
+Comenta CIRCUITO y te lo mandamos por DM. Gratis y sin registro.
+
+La serie del circuito sigue todo septiembre. Síguenos.
+
+#SEO #IA #Chile
+
+**Primer comentario:** igual al estándar (CIRCUITO + spindlelab.cl).
