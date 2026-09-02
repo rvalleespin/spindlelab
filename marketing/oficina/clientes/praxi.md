@@ -111,10 +111,11 @@ los frames con ese filtro puesto. Si se rechaza, Meta no dice por qué.
 - **⚠️ Los PNG de `brand/lanzamiento/` están en `.gitignore`** (el repo se limpió
   de 341 MB a 18 MB). Al repo van **las fuentes HTML**; los renders se entregan a
   iCloud, en `PRAXI siembra/`.
-- **⚠️ Trabajar SIEMPRE en un worktree propio.** La carpeta de Praxi vive en
-  iCloud y hay otra sesión trabajando encima: si cambian de rama mientras
-  commiteas, tu trabajo aterriza en la rama de ellos y `git push origin main`
-  reporta éxito **sin haber empujado nada**. Ya pasó dos veces.
+- **⚠️ Trabajar SIEMPRE en un worktree propio.** El repo de Praxi vive en
+  `~/Projects/` (movido desde iCloud el 1-sep-2026) y hay otra sesión trabajando
+  encima: si cambian de rama mientras commiteas, tu trabajo aterriza en la rama de
+  ellos y `git push origin main` reporta éxito **sin haber empujado nada**. Ya pasó
+  dos veces. **El motivo de esta regla es la concurrencia, no iCloud: sigue vigente.**
 
 ### Aprendido a golpes
 
@@ -139,8 +140,10 @@ los frames con ese filtro puesto. Si se rechaza, Meta no dice por qué.
 > por qué / regla / producto / cta*). **El sitio tenía más vida que la campaña que
 > iba a venderlo.** La referencia buena ya existía: los cinco clips del login.
 
-> **El proyecto vive en iCloud y los archivos cambian bajo tus pies.** Si algo no
-> cuadra, vuelve a leer el archivo antes de concluir que está mal.
+> **Los archivos pueden cambiar bajo tus pies: si algo no cuadra, vuelve a leer el
+> archivo antes de concluir que está mal.** Nació de la sincronización de iCloud, y
+> esa causa desapareció con el traslado a `~/Projects/` (1-sep-2026). El hábito
+> queda igual, porque la otra causa sigue viva: hay más de una sesión encima.
 
 ### Estado de las piezas (7-ago-2026)
 
