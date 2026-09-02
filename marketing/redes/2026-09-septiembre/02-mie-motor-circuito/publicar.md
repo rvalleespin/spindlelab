@@ -42,16 +42,21 @@ Comenta CIRCUITO y te mando el link del chequeo por DM. (Si prefieres directo, e
 
 ---
 
-## v3 PROPUESTA (2-sep, madrugada) — lógica invertida por Ramón: LA FICHA primero, el motor después
+## ✅ v3 DEFINITIVA (2-sep; video generado y verificado, OK de Ramón) — LA FICHA primero, el motor después
 
 **Crítica de Ramón (correcta):** abrir con "motor" sobre imagen de dominós confunde: la imagen
 y la primera línea deben darse la mano. Secuencia nueva: la ficha que falla (lo que se VE) →
 el motor como solución (lo que se nombra).
 
-**Formato:** VIDEO — clip del corte de cadena (dedo empuja → caen 2 → una cae fuera → el resto
-queda de pie) + `overlay-texto-v2.png` ("Una ficha fallando corta toda la venta.").
+**Formato:** VIDEO — **`clip-corte.mp4` (LISTO: Kling 2.6, 5 seg, 1:1, 5 créditos; verificado
+frame a frame: dedo real empuja, caen las primeras y quedan fuera de línea, el RESTO DE LA FILA
+DE PIE hasta el final; sin fuego ni humo)** + `overlay-texto-v2.png` encima ("Una ficha fallando
+corta toda la venta.").
+**Montaje CapCut (5 min):** importar clip → capa `overlay-texto-v2.png` toda la duración,
+pantalla completa → exportar 1080×1080 → programar en Metricool HOY MIÉ 19:00 como video.
+Al salir: 1 clic en ManyChat (trigger CIRCUITO).
 
-**Caption v3 (pendiente OK de Ramón):**
+**Caption v3 (DEFINITIVA, copiar y pegar):**
 
 Todas las fichas puestas: web, redes, pauta. Y la venta igual no llega.
 
