@@ -83,3 +83,19 @@ para regenerar o variar):
 Regla del clip: la fila NUNCA cae (es "el motor funcionando", la antítesis del carrusel del
 jueves). Usos: corte de b-roll en el video de presentación · versión animada del post del
 mié para story/reel corto. Imagen fuente: `../02-mie-motor-circuito/domino-curva.png`.
+
+## B-roll 2 (idea de Ramón, 1-sep): el circuito cortado
+
+> A human fingertip enters the frame and gently pushes the first black domino in the curved
+> row. The first two or three dominoes topple in sequence, but then the chain reaction STOPS:
+> one domino tips sideways and falls out of the line, breaking the chain, and all the
+> remaining dominoes stay perfectly standing, untouched. The fallen pieces lie still. Camera
+> holds nearly static at a low three-quarter angle, shallow depth of field, warm amber side
+> light, fine dust drifting in the light beam, dark moody photorealistic atmosphere, no text.
+> 6 seconds.
+
+Con esto el arco queda completo: B-roll 2 = el problema (la energía no llega) · B-roll 1 =
+el motor encendido (la fila completa se ilumina). Nota de producción: la causalidad en pasos
+les cuesta a los modelos; máximo 2 intentos y si no sale, esta toma se GRABA con el dominó
+real (dejar un espacio entre fichas) — para el video del lunes la mano real de Ramón vale
+más que la de la IA.
