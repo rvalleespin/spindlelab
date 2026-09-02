@@ -12,6 +12,11 @@
 2. Selección: checkbox del header → diálogo **"Máx personas por empresa = 1"** → Aplicar (1 contacto por empresa, no se queman créditos en 5 personas del mismo lugar).
 3. Revelar: **Exportar → "solo correos verificados"** (revela en bloque server-side, NO congela la cuenta). NO revelar de a uno en ráfaga (congela).
 4. El CSV descarga en el **Mac donde corre Chrome (el iMac)** → Ramón lo mueve a la carpeta iCloud SPINDLELAB → se lee con Bash/Read (**puente iCloud**).
+   > **El puente iCloud sigue vigente (confirmado por Ramón, 1-sep-2026). No lo "corrijas".**
+   > El 1-sep se documentó que **el repo** de SpindleLab en iCloud está corrupto y que el clon
+   > bueno es `~/Projects/spindlelab`. Eso **no afecta a este paso**: acá iCloud se usa como
+   > carpeta de traspaso del CSV entre el iMac y la sesión, no como repositorio. Las menciones
+   > a iCloud de este documento se dejan tal cual a propósito.
 5. Curar: descartar soporte (secretaria/RRHH/admin/contable interno), off-ICP (proveedores, retail, cadenas grandes), y dedup contra lo ya contactado.
 
 **Truco de industria:** el autocompletado en español es finicky; mejor navegar por URL con `organizationIndustryTagIds[]=<TAG>`. Tags conocidos: Medical Practice `5567d0467369645dbc200000`, Law Practice `5567ce1f7369644d391c0000`, Veterinary `5567ce9673696439d5c10000`. Los demás se buscan en la sesión (autocomplete o inspeccionando una empresa conocida).
