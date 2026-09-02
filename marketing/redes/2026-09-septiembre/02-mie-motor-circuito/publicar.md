@@ -2,6 +2,15 @@
 
 **Cuándo:** MIÉRCOLES 2-sep · Instagram 19:00 (principal) · LinkedIn página 09:00 (cross opcional: si prefieres no llevar 3 posts de página esta semana, va solo en IG)
 **Pieza:** `pieza.png` — fondo: dominó NUEVO (curva conectada, generado 1-sep, 0,1 créditos aprox). Decisión de Ramón: esta semana TODO dominó para coherencia de feed; la próxima semana cambia el elemento (el hilo de oro queda listo en esta carpeta como alternativa: `hilos-1.png` vive en `_reserva/sprint-concepto-02sep/`).
+**FORMATO — dos opciones (decide al programar):**
+- **Opción A · VIDEO (recomendada, más alcance):** el clip animado del dominó (Higgsfield, el
+  del pulso de luz que enciende la fila) + `overlay-texto.png` encima. Montaje CapCut, 5 min:
+  importar clip → agregar `overlay-texto.png` como capa (dura todo el clip, 100% del cuadro) →
+  exportar 1080×1080 → publicar como video/reel con el caption de abajo.
+  ⚠️ El clip correcto para ESTA pieza es el de la fila ENCENDIÉNDOSE (motor funcionando);
+  el del dedo que corta la cadena es para otra historia (guion del lunes, b-roll 2).
+- **Opción B · imagen estática:** `pieza.png`, lista tal cual.
+
 **Checklist:** ☐ pase de Ramón · ☐ IG: sumar el post al trigger CIRCUITO en ManyChat · ☐ 1er comentario al tiro
 
 ## Caption / cuerpo (copiar y pegar)
