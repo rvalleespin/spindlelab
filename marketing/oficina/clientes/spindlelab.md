@@ -229,6 +229,28 @@ cierre de mes.
   cualquier pase (después viene Fiestas y se olvida). Cuando la SpA tenga banco: mover este
   cobro a la tarjeta de empresa.
 
+- **⚠️ Umbral con fecha — comunidad Imperio Agéntico (decisión de Ramón, 1-sep):**
+  **corte el 30-sep.** Se mantiene la membresía **un mes más, en modo participación**, no
+  consumo. Se evalúa así: *si al 30-sep no salió ni una conversación que haya cambiado algo
+  concreto en la propuesta, el precio o la forma de prospectar, se cancela.*
+  - **El porqué:** el catálogo de clases no le sirve (temas fuera de su contexto, cosas que ya
+    hace, material de junio sobre herramientas que no usa). Lo que nunca probó es la parte
+    viva y la gente, que es el único trabajo que justificaría la cuota. Se cancela por foco,
+    no por veredicto sobre la comunidad; eso permite volver sin desdecirse.
+  - **Cambio de comportamiento que hace válido el test:** cero clases del catálogo (el 12 % de
+    avance se queda en 12 %) · prioridad al **soporte de dudas del jueves 17:00**, que es el
+    formato que sí calza; las clases en vivo del martes y miércoles 14:00 solo si lleva un
+    caso propio que preguntar · **un post propio en el canal de Logros** (material ya
+    existente: precios y método publicados, el chequeo de 21 señales gratis; voz singular,
+    cero prospectos nombrados) · **tres conversaciones** con gente que muestre ventas
+    repetidas, sobre mecánica comercial (cómo prospectan, cobran y cierran), no sobre técnica.
+  - **Prioridad:** los DM esperan a la semana del 15. Si choca con un pase de Ramón, gana el pase.
+  - **Antes de cancelar:** preguntar si el precio se congela para antiguos (si volver costara
+    el doble, esa diferencia es el precio real de la opción) y bajar el material descargable
+    que sirva mientras haya acceso.
+  - **No va en §8 de la estrategia:** no es un canal de marketing, es gasto de formación y red.
+    Se anota acá, con el mismo criterio de umbral con fecha que se le exige a los canales.
+
 ### Estructura semanal de publicación (decisión de Ramón, 1-sep noche — REEMPLAZA la cadencia anterior)
 - **3 publicaciones de marca por semana: LUN reel · MIÉ carrusel o pieza de dato · JUE post.**
 - **VIERNES NO SE PUBLICA** (B2B: viernes tarde muerto; lectura de Metricool + criterio de Ramón).
