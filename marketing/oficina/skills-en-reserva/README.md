@@ -31,6 +31,27 @@ reactivarlas contra un caso concreto y corregirlas con lo aprendido en él.
    re-copiar al reactivar. La copia global no se entera de este `git mv`; el repo es la
    fuente de verdad.
 
+## Sincronizar el Mac con esta poda (1-sep-2026)
+
+Una sesión cloud **no puede tocar** `~/.claude/skills/` del Mac: hay que correrlo a mano
+allá, con el repo ya actualizado (`git pull` primero, o se copian las versiones viejas).
+
+```bash
+cd ~/.claude/skills
+
+# 1. borrar las tres que pasaron a reserva
+rm -rf agente-analitica agente-growth-producto frontend-design
+
+# 2. copiar la nueva de voz + las que cambiaron en la pasada anti-hobbling
+REPO=~/Library/Mobile\ Documents/com~apple~CloudDocs/SPINDLELAB   # ajustar si la ruta cambió
+for s in voz-spindlelab persona-social-media persona-director-creativo \
+         persona-disenador-web agente-troncal-marketing agente-copywriter; do
+  rm -rf "$s" && cp -R "$REPO/.claude/skills/$s" .
+done
+```
+
+Después, **sesión nueva**: las skills se escanean al arrancar y `/clear` no las re-escanea.
+
 ## Lo que NO se archivó, y por qué
 
 `agente-seo-aeo` (Simón) entró a esta carpeta y **volvió a `.claude/skills/` el mismo día**.
