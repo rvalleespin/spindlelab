@@ -127,3 +127,9 @@ Defino el "cómo se ve"; el "qué decir" es de Renata/Cata.
   del mes = carpetas por día de publicación (`DD-dia-pieza/`) con pieza + assets +
   `publicar.md`; masters del sistema en `_sistema/`; descartes/alternativas en `_reserva/`.
   Ver `2026-09-septiembre/README.md` (v3). Este es el molde para octubre.
+
+- 2026-09-02 — **Física causal de contacto = rodaje real, jamás video-IA** (6 intentos fallidos
+  lo respaldan: fuego espontáneo, dirección invertida, fichas aglutinadas). Tope de 2 intentos
+  por escena ES DURO. Video-IA solo para atmósfera/cámara/luz. Y toda pieza con objetos
+  repetidos (fichas, productos): pedir explícito variedad realista (el "todas 5|5" se coló en
+  la primera imagen).

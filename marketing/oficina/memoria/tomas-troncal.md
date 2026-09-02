@@ -89,3 +89,11 @@
   Dijo tres veces que el ancla ya había salido en su LinkedIn personal y yo la reprogramé dos
   veces (jue, vie) porque nunca registré su primera confirmación. El estado que no se escribe
   no existe, y hacerle repetir estado al dueño es el peor uso posible de su tiempo.
+
+- 2026-09-02 (madrugada) — **REGLA DURA de video-IA: máximo 2 intentos por escena, y las
+  secuencias de física causal de contacto (una pieza empuja a otra) NO se piden a modelos de
+  video: se graban en la realidad.** Quemé ~26 créditos de Ramón en 6 intentos (Kling metía
+  fuego; Seedance invertía dirección o aglutinaba fichas) violando el tope de 2 que el propio
+  guion ya fijaba. Además: la verificación por tiras de fotogramas NO detecta artefactos de
+  movimiento (aglutinación entre cuadros) — un clip solo se da por bueno cuando RAMÓN lo ve en
+  movimiento. Lo que sí rinde en video-IA: atmósfera, cámara, luz (movimientos sin causalidad).

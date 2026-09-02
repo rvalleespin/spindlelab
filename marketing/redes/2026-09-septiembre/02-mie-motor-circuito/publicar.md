@@ -42,26 +42,19 @@ Comenta CIRCUITO y te mando el link del chequeo por DM. (Si prefieres directo, e
 
 ---
 
-## ✅ v3 DEFINITIVA (2-sep; video generado y verificado, OK de Ramón) — LA FICHA primero, el motor después
+## ✅ FORMATO FINAL (2-sep, madrugada): ESTÁTICA `pieza.png` — re-renderizada con fichas variadas
 
-**Crítica de Ramón (correcta):** abrir con "motor" sobre imagen de dominós confunde: la imagen
-y la primera línea deben darse la mano. Secuencia nueva: la ficha que falla (lo que se VE) →
-el motor como solución (lo que se nombra).
+**Decisión de Ramón tras 6 intentos de video en 2 modelos:** la física causal de contacto
+(ficha bota ficha) es la debilidad estructural de los modelos de video; los clips salieron con
+fuego, dirección invertida o fichas aglutinadas. TODOS descartados (renombrados en la carpeta).
+**La escena se graba con dominó real el fin de semana** (espacio entre fichas y listo): servirá
+de versión video re-publicable de esta pieza + b-roll del video del lunes.
+La estática sale HOY MIÉ 19:00 en IG; ya usa la imagen nueva de fichas variadas (el defecto
+"todas 5|5" quedó corregido). Overlay `overlay-texto-v2.png` queda listo para el montaje del
+video real. Gasto de la escena: ~26,6 créditos (quedan ~57,3); las 2 imágenes generadas sí
+quedaron como activos.
 
-**Formato:** VIDEO — **`clip-cascada.mp4`** (Seedance 1.5 Pro, 720p 1:1; la coreografía exacta
-de Ramón: dedo desde la izquierda da la inercia → 1ª bota 2ª → 2ª bota 3ª → la 3ª NO alcanza
-la 4ª → toda la fila queda de pie; cero fuego). ⚠️ **Usable de 0 a ~2,8 seg** — después la
-mano vuelve a entrar a ordenar fichas: SE CORTA.
-**Montaje CapCut (5 min):**
-1. Importar `clip-cascada.mp4` → recortar en ~2,8 s (justo antes de que la mano reaparezca).
-2. Opcional que suma: velocidad 0.7x (la cascada gana drama) y/o congelar el último cuadro
-   1,5-2 s (la cadena muerta + el texto = el remate perfecto).
-3. Capa `overlay-texto-v2.png` toda la duración, pantalla completa.
-4. Exportar 1080×1080 → Metricool HOY MIÉ 19:00 como video → 1 clic en ManyChat (CIRCUITO).
-Clips descartados renombrados en la carpeta (2 Kling con fuego/dirección, 1 Seedance saca-fichas
-como alternativa).
-
-**Caption v3 (DEFINITIVA, copiar y pegar):**
+**Caption (DEFINITIVA, copiar y pegar — funciona igual con la estática):**
 
 Todas las fichas puestas: web, redes, pauta. Y la venta igual no llega.
 
