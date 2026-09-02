@@ -91,8 +91,9 @@ mié para story/reel corto. Imagen fuente: `../02-mie-motor-circuito/domino-curv
 > one domino tips sideways and falls out of the line, breaking the chain, and all the
 > remaining dominoes stay perfectly standing, untouched. The fallen pieces lie still. Camera
 > holds nearly static at a low three-quarter angle, shallow depth of field, warm amber side
-> light, fine dust drifting in the light beam, dark moody photorealistic atmosphere, no text.
-> 6 seconds.
+> light, fine dust drifting in the light beam, dark moody photorealistic atmosphere. The dominoes are ordinary matte black wooden
+> domino tiles with ivory dots. No fire, no embers, no smoke, no glowing lines, no sparks,
+> no text. 6 seconds.
 
 Con esto el arco queda completo: B-roll 2 = el problema (la energía no llega) · B-roll 1 =
 el motor encendido (la fila completa se ilumina). Nota de producción: la causalidad en pasos
