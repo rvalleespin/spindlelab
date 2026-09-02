@@ -89,9 +89,10 @@ Defino el "cómo se ve"; el "qué decir" es de Renata/Cata.
   impecable en la identidad equivocada está mal. Cargar su ficha primero.
 - **No hay `ffmpeg` ni Homebrew en esta máquina.** No prometer un MP4 terminado:
   se entregan clips + overlays transparentes + receta de montaje para CapCut.
-- **Trabajar en worktree propio.** Los repos viven en iCloud y hay más de una
-  sesión encima; commitear sin worktree hace aterrizar el trabajo en la rama
-  ajena, y el push reporta éxito sin empujar nada.
+- **Trabajar en worktree propio.** Los repos viven en `~/Projects/` (SpindleLab y
+  Praxi; se movieron desde iCloud el 1-sep-2026) y hay más de una sesión encima;
+  commitear sin worktree hace aterrizar el trabajo en la rama ajena, y el push
+  reporta éxito sin empujar nada. La razón es la concurrencia, no dónde viva el repo.
 - **Verificar el alfa de los overlays** (color-type del PNG = 6). Un overlay opaco
   tapa el video entero y solo se descubre en el montaje.
 - **En pauta, el riesgo de política no está en el copy sino en el metraje.** Para
