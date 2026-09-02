@@ -62,8 +62,7 @@ diferencial que vende el negocio (visibilidad en IA, el límite "no soy Valen", 
 y se reparte a Diego por encargo: pasa **requisito** y **repartible**. Solo falla
 *repetible*, y el filtro archiva lo que no pasa **ninguna** de las tres.
 
-**Pendiente derivado:** corregir la línea "sin entregas propias aún" en
-`marketing/oficina/memoria/simon-seo-aeo.md`.
+Su memoria ya quedó corregida con esa entrega (`oficina/memoria/simon-seo-aeo.md`).
 
 ## Memorias
 
