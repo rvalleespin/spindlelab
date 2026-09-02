@@ -65,3 +65,21 @@ Comenta CIRCUITO y te mando el chequeo por DM. Gratis, sin registro.
 
 **Primer comentario:** Comenta CIRCUITO y te mando el link del chequeo por DM. (Si prefieres directo, está en spindlelab.cl)
 **ManyChat:** sumar el post al trigger al publicar (IG).
+
+---
+
+## B-roll generado (1-sep): la fila encendiéndose
+
+Ramón animó la foto del dominó en curva (la del mié 2) en Higgsfield. Prompt usado (guardar
+para regenerar o variar):
+
+> Slow cinematic dolly along the curved line of black dominoes, camera gliding from the first
+> piece toward the far end of the row. Shallow depth of field, focus traveling smoothly piece
+> by piece down the line. A warm amber glow pulses gently along the dominoes, as if energy is
+> flowing through the row and lighting it up. Fine dust particles drift in the light beam.
+> All dominoes remain perfectly still and standing — nothing falls, no collapse. Dark moody
+> atmosphere, photorealistic, subtle motion only, no text. 5 seconds.
+
+Regla del clip: la fila NUNCA cae (es "el motor funcionando", la antítesis del carrusel del
+jueves). Usos: corte de b-roll en el video de presentación · versión animada del post del
+mié para story/reel corto. Imagen fuente: `../02-mie-motor-circuito/domino-curva.png`.
