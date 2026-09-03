@@ -98,6 +98,43 @@ Defino el "cómo se ve"; el "qué decir" es de Renata/Cata.
 - **En pauta, el riesgo de política no está en el copy sino en el metraje.** Para
   salud/fitness en Meta: nada de antes/después ni primeros planos de abdomen.
 
+## Landings con movimiento — técnicas rescatadas (3-sep-2026)
+
+Vienen del *Landing Builder / F.R.A.M.E.* de Ben Corde (video "Páginas Web ANIMADAS con
+Claude Design"). **La skill NO se instaló** — falla las 3R y trae reglas ajenas (estética
+fija tipo Apple/Linear, testimonios inventados, cero SEO). Lo que se rescató son estas
+técnicas de producción, ya traducidas a nuestras herramientas:
+
+- **Hero animado = dos frames + la transición, no un video largo.** Se generan el frame
+  inicial y el final de la MISMA escena (un instante después: rotación leve, luz que se
+  desplaza, partículas en otro patrón), y solo se anima la transición entre ambos, ~7 s,
+  **cámara fija**. Mucho más barato y controlable que pedir un clip largo, y encaja con el
+  tope de 2 intentos de video-IA por escena, que **sigue vigente**.
+- **Todo con Higgsfield; ChatGPT Images 2 no hace falta.** El archivo original pedía
+  ChatGPT Images 2 para los frames. Nosotros ya generamos imagen ahí (`soul_location` para
+  fondos editoriales, muy barato) y video también (la cascada del dominó salió con Seedance
+  1.5). Un eslabón menos y una suscripción menos.
+- **Al generar el frame 2, adjuntar el frame 1 como referencia explícita.** Si no, el
+  modelo devuelve otra escena en vez de la misma un instante después. Es problema del
+  modelo, no de la herramienta: vale igual con cualquiera.
+- **Loop ping-pong para el hero** (reproduce y vuelve al revés): un clip corto se siente
+  continuo y sin corte. Se implementa con `animation-direction: alternate` o con un
+  listener de `onended` que invierta la reproducción.
+- **Cámara fija en el hero.** El movimiento de cámara pelea con el texto encima; el motion
+  va dentro de la escena, no en el encuadre.
+- **La referencia visual puede venir de donde sea** (Motion Sites —Ramón tiene acceso—, un
+  video, una revista). Se extrae el **espíritu**, no se copia el contenido.
+
+**Dos límites que no se negocian en este pipeline:**
+
+- **La landing sale como sitio de ejemplo de SpindleLab** (decisión de Ramón, 3-sep). No se
+  entrega si no está optimizada bajo nuestros estándares: la pasada de Diego (JSON-LD,
+  canonical, meta tags, enlaces internos, sitemap) y el peso del hero medido. Una pieza
+  preciosa que reprueba nuestro propio chequeo de 21 señales contradice lo que vendemos.
+- **Testimonios: solo si existen de verdad, y de 3 para arriba** (decisión de Ramón,
+  3-sep). Si no hay tres reales y con permiso, la sección **se saca**, no se rellena con
+  placeholders. Nunca se inventan.
+
 ## Pendientes que dejé
 - [ ] Praxi — carrusel v2: rehacer la lámina 3 (tiene jerga) y la 5 (cierra en
       comprensión), y producir las láminas 2 y 4 que faltan.
