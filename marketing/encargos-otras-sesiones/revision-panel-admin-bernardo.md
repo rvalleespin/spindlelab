@@ -9,6 +9,26 @@ estructura y diseño."
 (3-sep-2026, sesión troncal) revisó el **sitio público**. Ese documento no tocó el panel — esta
 es su contraparte para `/admin`, una superficie que nadie había revisado todavía.
 
+> **Actualización 3-sep-2026 — ejecutado.** Ramón pidió invocar a Diego (`persona-disenador-web`)
+> ya mismo para lo que no dependía de ninguna decisión de dirección, del bug de Estudio de este
+> documento y de la Parte 1 de `revision-sitio-bernardo-combeau.md`. Como esta sesión venía de
+> Bruno (marketing), no de la sesión dueña del repo, Diego trabajó según su propio protocolo de
+> sesión ajena: rama nueva, no push a `main`. Todo quedó en
+> `rvalleespin/bernardo-combeau` rama **`claude/correcciones-panel-y-sitio`** (commit `72c4220`,
+> confirmada en remoto), pendiente de que Ramón la revise y mergee — nada se desplegó.
+>
+> Hecho: los 23 alt text reales (6 entradas), limpieza de los 6 bloques `publication: "."`, los
+> dos slugs renombrados con redirect (`nombre-de-la-serie`→`actores`,
+> `aquí-estoy-creando-algo-nuevo`→`la-caida`), año normalizado a raya en Retratos, hero con
+> `loading="eager"`, JSON-LD Person+ProfessionalService en `Layout.astro` (sourced 100% de
+> `contacto.json`/`estudio.json`, nada inventado), el `inputtedWidth` inválido (breakpoints
+> ajustados a 828/1920), y el bug de este documento (`fotos[i].src` → `fotos[i]` en
+> `EstudioPreview`). Verificado con build limpio y render real en Chromium headless, incluida la
+> vista previa de Estudio en el panel antes/después del fix.
+>
+> **No incluido, sigue pendiente de dirección:** la Parte 2-3 de `revision-sitio-bernardo-combeau.md`
+> (rediseño) y la Parte 3 de este documento (opciones de diseño del panel — Direcciones A-D).
+
 ---
 
 ## Cómo se hizo esta revisión, y su límite
