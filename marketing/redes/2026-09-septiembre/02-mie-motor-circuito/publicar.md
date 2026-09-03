@@ -71,5 +71,5 @@ La serie del circuito sigue todo septiembre. Síguenos.
 **Primer comentario:** igual al estándar (CIRCUITO + spindlelab.cl).
 
 ---
-**✅ PUBLICADO — mié 2-sep en Instagram (confirmado por Ramón).** LinkedIn página: cross en
-evaluación por Ramón el mismo día (mismo caption y pieza si lo sube).
+**✅ PUBLICADO — mié 2-sep en Instagram Y en LinkedIn página (ambos confirmados por Ramón).**
+Día completo: la pieza del motor salió en los dos canales con el mismo caption.

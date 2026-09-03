@@ -20,3 +20,9 @@ Y si quieres saber cuáles de las cinco te están pasando a ti: comenta CIRCUITO
 ## Primer comentario
 
 Comenta CIRCUITO y te mando el link del chequeo por DM. (Si prefieres directo, está en spindlelab.cl)
+
+---
+**✅ PUBLICADO — jue 3-sep en AMBAS plataformas (confirmado por Ramón):** LinkedIn (documento)
+e Instagram (carrusel). Semana 1 de campaña: 3 días de publicación, 7 salidas totales.
+Nota: el rodaje con dominó real aún no se hace — el video del mié quedó en estática (como se
+decidió) y las tomas reales siguen pendientes para cuando Ramón consiga el set.
