@@ -27,7 +27,31 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > vista previa de Estudio en el panel antes/después del fix.
 >
 > **No incluido, sigue pendiente de dirección:** la Parte 2-3 de `revision-sitio-bernardo-combeau.md`
-> (rediseño) y la Parte 3 de este documento (opciones de diseño del panel — Direcciones A-D).
+> (rediseño del sitio público).
+
+> **Actualización 2 (3-sep-2026) — Direcciones A-D + fix de mobile, ejecutadas.** Iniciativa de
+> Ramón: entregar esta optimización **sin cobro**, para que el panel deje de sentirse "primera
+> versión". Diego hizo las 4 direcciones de la Parte 3 (capturas `07`-`10`) más el bug de mobile
+> de la Parte 1 #3 (no estaba en el plan original, se sumó porque es la mejora de usabilidad más
+> grande del lote y calza directo con el pedido). Mismo commit en
+> `claude/correcciones-panel-y-sitio` (ahora `c81e66b`), sigue sin mergear.
+>
+> - **A** — chrome vestido: fuera el logo rosa de Decap, wordmark "Bernardo Combeau" en el login,
+>   acento cálido (`#98433e`, muestreado de piel real en `beto3.jpg`, no inventado) en botones,
+>   sidebar activa y pestaña activa del header.
+> - **B** — separador visual entre "páginas" y "galerías" en la sidebar. Confirmado por
+>   investigación (no solo supuesto) que Decap no soporta agrupación nativa de colecciones — se
+>   hizo lo que sí es real sin fingir una feature que no existe.
+> - **C** — "Modelo" (8 formularios sin preview y sin contenido) sale de la sidebar, comentada
+>   (no borrada) para reactivarla en un minuto cuando haya algo que mostrar.
+> - **D** — checkerboard de Medios reemplazado por el tono papel/stage del sitio.
+> - **Bonus, Parte 1 #3** — el editor de una entrada no se adaptaba a celular (Decap trae
+>   `min-width:800px` fijo en el layout de dos columnas). Se apila en una columna bajo 800px,
+>   la barra superior envuelve sus botones en vez de cortarlos fuera de pantalla, y los toggles
+>   de vista dividida (sin sentido ya apilado) se ocultan.
+>
+> Verificado con el panel corriendo local, desktop y mobile (390px), antes/después de cada
+> cambio — sin regresión en la vista previa de Estudio del fix anterior.
 
 ---
 
