@@ -74,13 +74,54 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 >   (cero impacto en los ~15 registros existentes). Confirmado en el sitio real con un valor de
 >   prueba (revertido antes de commitear).
 
+> **Actualización 4 (3-sep-2026) — por qué el panel en vivo no mostraba nada de esto, y
+> reconciliación con lo que avanzó en paralelo.** Ramón mandó una captura de Retratos → Actores →
+> Catherine Mazoyer preguntando por qué esa foto no tenía sección de "editar foto". Motivo
+> confirmado, no supuesto: esa captura es del panel **en producción** (`main`), y las tres
+> actualizaciones anteriores llevan desde el 3-sep en `claude/correcciones-panel-y-sitio` **sin
+> mergear** — ni el encuadre ni el fix del damero (Dirección D) estaban en `main` todavía, así
+> que la captura mostraba exactamente lo esperable, no un hueco nuevo.
+>
+> Mientras esta rama esperaba revisión, `main` avanzó bastante en paralelo (otra sesión, y/o
+> Ramón trabajando directo con Bernardo probando el sitio en vivo):
+> - Una rama distinta (`claude/revision-parte-1-correcciones`, fusión a su vez de dos sesiones en
+>   paralelo) rehizo la misma Parte 1 de `revision-sitio-bernardo-combeau.md` y ya está en `main`.
+> - Otra rama (`claude/modelo-publicar-y-ajustes`, luego `claude/zoom-y-espaciado`) agregó su
+>   **propio** mecanismo de encuadre — un selector "Encuadre dentro del cuadrado" más un campo
+>   "Zoom de la miniatura" — pero solo para la sección **Modelo** (Book/Selected Work/Polaroids),
+>   una colección aparte (`src/data/modelo/*.json`) de Retratos/Proyectos. Ya está en `main`
+>   también.
+>
+> Ninguno de los dos mecanismos de encuadre pisa al otro (colecciones distintas, bloques de
+> config distintos), pero el contenido de la Parte 1 sí se hizo dos veces por separado. Se
+> fusionó `main` dentro de `claude/correcciones-panel-y-sitio` y se reconcilió archivo por
+> archivo (mismo criterio que ya usó la reconciliación de las dos sesiones paralelas en `main`):
+> el contenido (alt text, `publication`, el rename a `la-caida`) se adoptó de `main` — ya había
+> pasado por una ronda extra de reconciliación entre dos sesiones, y ninguna versión inventaba
+> nada que la otra no tuviera —; el JSON-LD de `Layout.astro` también se adoptó de `main` (más
+> completo: dirección parseada una sola vez en vez de hardcodeada, y un prop `jsonLd` reusable
+> por página que esta rama no tenía); el fix de ancho de imagen (`width` 828/1920) coincidía en
+> ambas ramas; y el `style={--focus}` de esta rama se reaplicó sobre esa base. `public/admin/index.html`
+> fusionó sin conflicto: el CSS de Direcciones A-D y el widget `focuspoint` viven en el bloque de
+> Retratos/Proyectos, el encuadre/zoom de `main` vive en el bloque de Modelo. Verificado con
+> `astro build` limpio y con el panel corriendo local: la ficha de Catherine Mazoyer muestra el
+> widget de encuadre completo, sin damero de fondo. Rama actualizada y empujada, ahora en
+> `c1be4ff`, todavía sin mergear a `main` — falta la confirmación de Ramón para ese paso.
+>
+> **Queda abierto, no decidido:** Retratos/Proyectos usan encuadre visual (arrastrar un punto,
+> elegido por Ramón en la Actualización 3) y Modelo usa un selector de posiciones + zoom aparte.
+> Ambos resuelven el mismo problema con distinta interacción porque se construyeron por
+> separado. No se unificó de oficio — es una decisión de Ramón, no algo para decidir en silencio.
+
 ---
 
 **Estado a 3-sep-2026, fin del día:** las Partes 1-3 de este documento (bug de Estudio,
-Direcciones A-D, fix de mobile) y el encuadre de fotos están todas en
-`claude/correcciones-panel-y-sitio` (commit `f9aba9e`), sin mergear. Lo único que sigue
+Direcciones A-D, fix de mobile), el encuadre de fotos, y la reconciliación con el trabajo que
+avanzó en paralelo en `main` están todas en `claude/correcciones-panel-y-sitio` (commit
+`c1be4ff`, sin conflictos con `main`, build verificado), sin mergear. Lo único que sigue
 pendiente de decisión de Ramón es la Parte 2-3 de `revision-sitio-bernardo-combeau.md`
-(rediseño del sitio público) — todo lo demás de ambos documentos ya se ejecutó.
+(rediseño del sitio público) más si mergear esta rama ahora — todo lo demás de ambos documentos
+ya se ejecutó.
 
 ---
 
