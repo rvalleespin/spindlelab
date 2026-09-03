@@ -48,4 +48,4 @@ otra sesión está tocando lo mismo. Ya pasó dos veces en este repo.
 
 | # | Proyecto | Estado | Umbral / fecha |
 |---|---|---|---|
-| 01 | [Cumplimiento web Ley 21.719](01-cumplimiento-ley-21719/brief.md) | brief escrito, sin construir | **1-dic-2026** (entrada en vigencia) |
+| 01 | [Cumplimiento web Ley 21.719](01-cumplimiento-ley-21719/brief.md) | en construcción (`laboratorio/ley-21719`) — landing `verificaycumple` | **1-dic-2026** (entrada en vigencia) |

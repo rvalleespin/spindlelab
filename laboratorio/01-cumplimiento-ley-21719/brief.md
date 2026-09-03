@@ -1,10 +1,9 @@
 # Brief — Cumplimiento web de la Ley 21.719
 
-**Abierto:** 3-sep-2026 · **Pedido por:** Ramón · **Estado:** decisiones de marca, alcance y
-dominio tomadas (§6, §4) — Camino B, lanzamiento liviano, `verificaycumple`. Secuencia
-acordada: landing (idea 1, el chequeo gratis) primero, monetización (idea 2) después. Arranca
-gratis en `verificaycumple.pages.dev` (Cloudflare Pages) — el `.cl` se descartó por costo,
-queda para cuando la idea genere ingresos. Nada construido todavía.
+**Abierto:** 3-sep-2026 · **Pedido por:** Ramón · **Estado:** en construcción, en
+`laboratorio/ley-21719`. Primera versión de la landing lista y verificada (código, no
+desplegada todavía — falta conectar el proyecto a Cloudflare Pages, ver §8). Camino B,
+lanzamiento liviano, `verificaycumple.pages.dev` (gratis, el `.cl` sigue pendiente).
 **Fecha que manda todo:** **1 de diciembre de 2026** (entrada en plena vigencia)
 
 ---
@@ -358,3 +357,4 @@ negocio permanente. Tratarlo como sprint desde el día uno evita la decepción d
 | 2026-09-03 | **Nombre y dominio: `verificaycumple.cl`** — verificado disponible por Vercel, $64.99 USD/año, compra sin ejecutar (pendiente de confirmación explícita de Ramón, es gasto real). **Secuencia acordada: landing (idea 1, el chequeo gratis) primero, monetización (idea 2, el kit) después.** Sigue sin construirse nada. |
 | 2026-09-03 | Ramón preguntó si la landing podía salir del propio `spindlelab.cl` para generar autoridad. Se evaluaron subruta, subdominio y dominio separado con enlace cruzado — **confirmó dominio separado con enlace cruzado**: `verificaycumple.cl` se mantiene (Camino B sigue en pie), y se suma al alcance de la landing una página/post en `spindlelab.cl` que lo enlace. Compra del dominio sigue sin confirmarse. Sigue sin construirse nada. |
 | 2026-09-03 | Ramón no puede asumir los US$64.99/año del `.cl` ahora. **Se descarta comprar dominio por el momento** — arranca gratis en `verificaycumple.pages.dev` (subdominio sin costo de Cloudflare Pages, misma plataforma que `chequeo.js`). El `.cl` queda para cuando la idea genere ingresos, y ahí cotizar directo con un registrador chileno (~CLP 10.000-20.000/año) en vez de Vercel. Camino B y el enlace cruzado con `spindlelab.cl` siguen en pie. Sigue sin construirse nada. |
+| 2026-09-03 | **Arrancó la construcción**, en `laboratorio/ley-21719` (abierta desde esta rama, regla 3). Primera versión de `verificaycumple/`: `functions/api/chequeo.js` (checklist liviana de §4 categoría A — política de privacidad enlazada y accesible, HTTPS, idioma, gestor de consentimiento conocido; proveedores externos/Consent Mode/casilla van sin puntuar, como informativos) e `index.html` (hero + resultado, explicador de qué revisa y qué no, aviso de que no es asesoría legal, enlace a `spindlelab.cl` en el footer). Probado end-to-end con Node (lógica del chequeo) y Playwright/Chromium headless (flujo completo contra `spindlelab.cl` real, desktop/mobile/dark/foco de teclado) — un bug de layout encontrado y corregido en esa verificación. Paleta y tipografía propias, sin gold ni Gabarito/Inter de SpindleLab. **Pendiente:** desplegar en Cloudflare Pages (necesita acceso a la cuenta, que esta sesión no tiene) y construir la página de enlace cruzado en `spindlelab.cl` (el lado `spindlelab → verificaycumple` — el inverso ya está en el footer). |
