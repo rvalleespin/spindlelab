@@ -69,3 +69,7 @@ La serie del circuito sigue todo septiembre. Síguenos.
 #SEO #IA #Chile
 
 **Primer comentario:** igual al estándar (CIRCUITO + spindlelab.cl).
+
+---
+**✅ PUBLICADO — mié 2-sep en Instagram (confirmado por Ramón).** LinkedIn página: cross en
+evaluación por Ramón el mismo día (mismo caption y pieza si lo sube).
