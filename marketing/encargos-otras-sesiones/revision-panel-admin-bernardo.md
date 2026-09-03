@@ -133,14 +133,26 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > previa en vivo (`CMS.registerPreviewTemplate`) — el gap ya señalado en el diagnóstico original
 > (Parte 2). No se construyó de oficio; es trabajo aparte si Ramón lo pide.
 
+> **Actualización 6 (3-sep-2026) — "Publicación externa" obligaba a completar dos campos que su
+> propia etiqueta dice que son opcionales.** Ramón mandó una captura: "Nombre del medio" y "URL"
+> en rojo con "es obligatorio", en una sección marcada "(OPCIONAL)" cuyo propio hint dice
+> explícitamente que se dejen vacíos si no hay link todavía. Causa: en Decap, `required: false`
+> en el campo objeto (`publication`) exime al objeto completo, pero no se propaga a sus campos
+> hijos — "name" y "url" no tenían su propio `required: false`, así que Decap los seguía
+> validando como obligatorios, contradiciendo la etiqueta y el hint. Mismo bug en Retratos y
+> Proyectos (estructura idéntica). Corregido en los 2 campos × 2 colecciones. Verificado con el
+> panel corriendo local: ambas etiquetas ahora muestran "(OPCIONAL)" (mismo patrón que el resto
+> del panel) y no queda ningún error en pantalla con la sección vacía. Rama en `2cd6ec5`.
+
 ---
 
 **Estado a 3-sep-2026, fin del día:** las Partes 1-3 de este documento (bug de Estudio,
 Direcciones A-D, fix de mobile), el encuadre de fotos, la reconciliación con el trabajo que
-avanzó en paralelo en `main`, y la corrección de la sidebar (Modelo) están todas en
-`claude/correcciones-panel-y-sitio` (commit `ab22454`, sin conflictos con `main`, build
-verificado), sin mergear. Lo único que sigue pendiente de decisión de Ramón es la Parte 2-3 de
-`revision-sitio-bernardo-combeau.md` (rediseño del sitio público) más si mergear esta rama ahora
+avanzó en paralelo en `main`, la corrección de la sidebar (Modelo), y el fix de "Publicación
+externa" están todas en `claude/correcciones-panel-y-sitio` (commit `2cd6ec5`, sin conflictos
+con `main`, build verificado), sin mergear. Lo único que sigue pendiente de decisión de Ramón es
+la Parte 2-3 de `revision-sitio-bernardo-combeau.md` (rediseño del sitio público) más si mergear
+esta rama ahora
 — todo lo demás de ambos documentos ya se ejecutó.
 
 ---
