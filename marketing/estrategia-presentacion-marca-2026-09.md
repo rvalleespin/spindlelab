@@ -164,6 +164,8 @@ son propuestas para que el troncal las reparta.
 | No usar "hueco" | Reemplazado por "problema" en el mazo y en este documento. |
 | Tiempos de los escenarios demasiado largos para una agencia con IA | Escenario A pasa de 12 semanas a 30 días (día 1 diagnóstico, días 2 a 5 auditoría y línea base, semanas 2 y 3 implementación, semana 4 contenido y primer informe). Escenario B pasa de 90 a 60 días. El método (lámina 7) queda en 24 horas / 5 días hábiles / 2 a 3 semanas / quincenal, con la frase "semanas, no trimestres". |
 
-**Pendiente derivado del último punto:** la página /metodo/ del sitio todavía dice "1 semana la versión completa", "1 a 2 semanas" y "2 a 6 semanas". Si el mazo promete 5 días hábiles y 2 a 3 semanas, el sitio tiene que decir lo mismo. Encargo para Diego, con OK de Ramón.
+**Hecho (3-sep, pedido de Ramón):** /metodo/ y las FAQ de auditoría y visibilidad en IA quedaron alineadas al mazo en la misma rama (24 horas · 5 días hábiles · 2 a 3 semanas · entrega de visibilidad en IA en ~1 semana). Va en vivo al mergear a main.
+
+**Benchmark v3 (3-sep):** la tabla con nombres pasó a anexo (lámina 19) y la lámina 9 es ahora un mapa de posicionamiento con dos ejes que son la marca misma: horizontal "promete ↔ muestra" (puntaje 0 a 4 sobre los cinco hechos verificados por agencia) y vertical "IA como módulo ↔ IA como eje del negocio" (lectura de la oferta publicada). SpindleLab queda sola en el cuadrante superior derecho; Nitten es la más cercana y se dice. Al lado, tres diferenciadores y la casilla débil declarada (sin caso público aún).
 
 **Lo que no cambió a propósito:** los escenarios siguen etiquetados como ilustrativos (ver §1). Los tiempos más cortos son un compromiso operativo real, no un adorno: si se comunican, se cumplen.

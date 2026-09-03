@@ -28,7 +28,7 @@ campañas para gerencias de marketing y negocio.
 
 ## v2 (3-sep-2026): ajustes de Ramón aplicados
 
-Situación actual con cifras de fuente primaria (Barómetro Digital Chile 2026, Forrester 2026, Bain, Semrush), idea madre del motor frente a servicios sueltos, benchmark con nombres, textos resumidos, "hueco" fuera, escenarios en 30 y 60 días. Detalle en `marketing/estrategia-presentacion-marca-2026-09.md` §8. **Nuevo pendiente:** el sitio (/metodo/) promete plazos más largos que el mazo; hay que alinear (Diego, con OK de Ramón).
+Situación actual con cifras de fuente primaria (Barómetro Digital Chile 2026, Forrester 2026, Bain, Semrush), idea madre del motor frente a servicios sueltos, benchmark con nombres, textos resumidos, "hueco" fuera, escenarios en 30 y 60 días. Detalle en `marketing/estrategia-presentacion-marca-2026-09.md` §8. **Sitio alineado en esta rama (3-sep, pedido de Ramón):** `spindlelab-astro/public/metodo/index.html` (24 horas · 5 días hábiles · 2 a 3 semanas), FAQ de `servicios/auditoria-seo-tecnica/` (cinco días hábiles) y entrega de `servicios/visibilidad-en-ia/` (~1 semana, visible y JSON-LD). Sale en vivo al mergear a main; verificar con curl después del deploy. v3 del mazo: benchmark como mapa de posicionamiento (lámina 9) + tabla en anexo (19).
 
 ## Lo que pide el mazo hacia el resto de la oficina (propuesta, sin encargar)
 
