@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verifica y Cumple — Chequeo técnico Ley 21.719</title>
+<meta name="description" content="Revisa gratis si tu sitio web tiene las señales técnicas que exige la Ley 21.719 de protección de datos personales, vigente desde el 1 de diciembre de 2026. Sin registro, en segundos.">
+<link rel="canonical" href="https://verificaycumple.pages.dev/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Verifica y Cumple — Chequeo técnico Ley 21.719">
+<meta property="og:description" content="Revisa gratis si tu sitio web tiene las señales técnicas que exige la Ley 21.719, vigente desde el 1 de diciembre de 2026.">
+<meta property="og:url" content="https://verificaycumple.pages.dev/">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Verifica y Cumple — Chequeo técnico Ley 21.719">
+<meta name="twitter:description" content="Revisa gratis si tu sitio web tiene las señales técnicas que exige la Ley 21.719, vigente desde el 1 de diciembre de 2026.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Verifica y Cumple",
+  "url": "https://verificaycumple.pages.dev/",
+  "description": "Chequeo técnico gratuito de señales relacionadas con la Ley 21.719 de protección de datos personales en Chile.",
+  "founder": {
+    "@type": "Person",
+    "name": "Ramón Vallejos Espíndola"
+  }
+}
+</script>
+
+<style>
+  :root {
+    --bg: #f8fafc;
+    --panel: #ffffff;
+    --texto: #0f172a;
+    --texto-suave: #475569;
+    --borde: #e2e8f0;
+    --acento: #0f766e;
+    --acento-oscuro: #115e59;
+    --ok: #15803d;
+    --ok-bg: #f0fdf4;
+    --pendiente: #b45309;
+    --pendiente-bg: #fffbeb;
+    --info-bg: #f1f5f9;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--texto);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  a { color: var(--acento-oscuro); }
+  a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 3px solid var(--acento);
+    outline-offset: 2px;
+  }
+  .envoltura { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+  header.sitio {
+    border-bottom: 1px solid var(--borde);
+    padding: 18px 0;
+  }
+  header.sitio .envoltura {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .marca {
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+  .marca .punto { color: var(--acento); }
+  .fecha-limite {
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    white-space: nowrap;
+  }
+  .fecha-limite strong { color: var(--texto); }
+
+  main { padding: 48px 0 64px; }
+
+  .hero h1 {
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+    line-height: 1.25;
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+  }
+  .hero p.sub {
+    font-size: 1.05rem;
+    color: var(--texto-suave);
+    margin: 0 0 28px;
+    max-width: 58ch;
+  }
+
+  form.chequeo {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  form.chequeo input[type="text"] {
+    flex: 1 1 240px;
+    padding: 13px 14px;
+    font-size: 1rem;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    background: var(--panel);
+    color: var(--texto);
+  }
+  form.chequeo button {
+    padding: 13px 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--acento);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  form.chequeo button:hover { background: var(--acento-oscuro); }
+  form.chequeo button:disabled { background: #94a3b8; cursor: wait; }
+  .nota-privacidad {
+    font-size: 0.8rem;
+    color: var(--texto-suave);
+    margin: 0 0 40px;
+  }
+
+  #resultado { display: none; }
+  #resultado.visible { display: block; }
+
+  .error-caja {
+    background: var(--pendiente-bg);
+    border: 1px solid #fde68a;
+    color: #92400e;
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+  }
+
+  .puntaje-caja {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    margin-bottom: 28px;
+  }
+  .puntaje-numero {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--acento);
+    line-height: 1;
+  }
+  .puntaje-texto { font-size: 0.92rem; color: var(--texto-suave); }
+
+  .bloque { margin-bottom: 28px; }
+  .bloque h2 { font-size: 1.05rem; margin: 0 0 2px; }
+  .bloque .sub-bloque { font-size: 0.85rem; color: var(--texto-suave); margin: 0 0 12px; }
+
+  ul.items { list-style: none; margin: 0; padding: 0; }
+  ul.items li {
+    display: flex;
+    gap: 10px;
+    padding: 12px 0;
+    border-top: 1px solid var(--borde);
+  }
+  ul.items li:first-child { border-top: none; }
+  .marca-estado {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+  .marca-estado.ok { background: var(--ok-bg); color: var(--ok); }
+  .marca-estado.pendiente { background: var(--pendiente-bg); color: var(--pendiente); }
+  .item-texto strong { display: block; font-size: 0.95rem; }
+  .item-texto .detalle { display: block; font-size: 0.87rem; color: var(--texto-suave); margin-top: 2px; }
+  .item-texto .arreglo {
+    display: block;
+    font-size: 0.87rem;
+    color: var(--acento-oscuro);
+    margin-top: 6px;
+    padding-left: 10px;
+    border-left: 2px solid var(--acento);
+  }
+
+  .informativos {
+    background: var(--info-bg);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-top: 8px;
+  }
+  .informativos h2 { font-size: 0.95rem; margin: 0 0 4px; }
+  .informativos .sub-bloque { margin-bottom: 14px; }
+  .informativos .item-info { margin-bottom: 14px; }
+  .informativos .item-info:last-child { margin-bottom: 0; }
+  .informativos .item-info strong { display: block; font-size: 0.9rem; margin-bottom: 2px; }
+  .informativos .item-info p { margin: 0; font-size: 0.87rem; color: var(--texto-suave); }
+
+  section.explicador {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--borde);
+  }
+  section.explicador h2 { font-size: 1.2rem; }
+  section.explicador h3 { font-size: 1rem; margin-top: 24px; }
+  section.explicador p { color: var(--texto-suave); }
+  section.explicador ul { color: var(--texto-suave); padding-left: 20px; }
+
+  .aviso-legal {
+    margin-top: 32px;
+    padding: 16px 18px;
+    background: var(--info-bg);
+    border-radius: 10px;
+    font-size: 0.87rem;
+    color: var(--texto-suave);
+  }
+  .aviso-legal strong { color: var(--texto); }
+
+  footer.sitio {
+    border-top: 1px solid var(--borde);
+    padding: 28px 0 40px;
+  }
+  footer.sitio p {
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    margin: 0 0 6px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1220;
+      --panel: #131c2e;
+      --texto: #e2e8f0;
+      --texto-suave: #94a3b8;
+      --borde: #253248;
+      --acento: #2dd4bf;
+      --acento-oscuro: #5eead4;
+      --ok: #4ade80;
+      --ok-bg: #052e16;
+      --pendiente: #fbbf24;
+      --pendiente-bg: #451a03;
+      --info-bg: #131c2e;
+    }
+    .error-caja { border-color: #92400e; }
+  }
+</style>
+</head>
+<body>
+
+<header class="sitio">
+  <div class="envoltura">
+    <div class="marca">Verifica y Cumple<span class="punto">.</span></div>
+    <div class="fecha-limite">Ley 21.719 entra en plena vigencia el <strong>1-dic-2026</strong></div>
+  </div>
+</header>
+
+<main>
+  <div class="envoltura">
+    <section class="hero">
+      <h1>¿Tu sitio tiene las señales técnicas que exige la Ley 21.719?</h1>
+      <p class="sub">
+        Escribe tu dominio y revisamos, en segundos, si tu sitio publica lo básico que exige la
+        ley de protección de datos personales — sin registrarte, sin guardar tu dominio.
+      </p>
+
+      <form class="chequeo" id="form-chequeo">
+        <label for="dominio" class="visually-hidden" style="position:absolute;left:-9999px;">Dominio a revisar</label>
+        <input type="text" id="dominio" name="dominio" placeholder="tuempresa.cl" autocomplete="off" required>
+        <button type="submit" id="boton-chequeo">Revisar mi sitio</button>
+      </form>
+      <p class="nota-privacidad">Solo leemos tu sitio público. No pedimos correo ni guardamos el dominio que revisas.</p>
+
+      <div id="resultado" aria-live="polite"></div>
+    </section>
+
+    <section class="explicador">
+      <h2>Qué es esto, y qué no es</h2>
+      <p>
+        La Ley 21.719 regula el tratamiento de datos personales en Chile y entra en plena
+        vigencia el 1 de diciembre de 2026. Aplica a toda organización que trate datos
+        personales — un formulario de contacto ya cuenta. Buena parte de lo que exige la ley
+        es técnico y vive en el sitio web: si existe una política de privacidad publicada, si
+        hay un mecanismo de consentimiento, si el idioma está declarado.
+      </p>
+      <p>Este chequeo revisa exactamente eso: el HTML público de tu sitio, sin ejecutar nada, sin acceder a nada privado.</p>
+
+      <h3>Lo que sí revisa</h3>
+      <ul>
+        <li>Si hay una política de privacidad enlazada desde tu portada y si esa página responde.</li>
+        <li>Si el sitio sirve por HTTPS y declara el idioma.</li>
+        <li>Si detectamos un gestor de consentimiento (banner de cookies) de un proveedor conocido.</li>
+        <li>Qué proveedores externos (Google Analytics, Meta Pixel, etc.) detectamos cargados en tu portada.</li>
+      </ul>
+
+      <h3>Lo que no revisa</h3>
+      <p>
+        No podemos saber si un rastreador dispara antes o después de que el visitante da su
+        consentimiento — eso requiere observar el comportamiento del sitio en un navegador
+        real, no solo leer el HTML. Tampoco podemos ver formularios que vienen embebidos de un
+        tercero (HubSpot, Typeform, Google Forms) ni los que arma un framework de JavaScript en
+        el navegador del visitante. Cuando no podemos verificar algo, este chequeo lo dice —
+        nunca asume que está bien.
+      </p>
+
+      <div class="aviso-legal">
+        <strong>Esto no es asesoría legal.</strong> Este chequeo describe señales técnicas
+        presentes o ausentes en tu sitio — nunca certifica que tu empresa "cumple" con la ley.
+        El contenido de tu política de privacidad y la evaluación de tu caso corresponden a un
+        abogado.
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="sitio">
+  <div class="envoltura">
+    <p>Verifica y Cumple es un proyecto de Ramón Vallejos Espíndola, quien también dirige <a href="https://spindlelab.cl">SpindleLab</a> (SEO técnico y visibilidad en motores de IA).</p>
+    <p>Este chequeo no almacena los dominios que revisas ni requiere registro.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const form = document.getElementById('form-chequeo');
+  const input = document.getElementById('dominio');
+  const boton = document.getElementById('boton-chequeo');
+  const resultado = document.getElementById('resultado');
+
+  function escapar(s) {
+    const d = document.createElement('div');
+    d.textContent = s == null ? '' : String(s);
+    return d.innerHTML;
+  }
+
+  function renderError(mensaje) {
+    resultado.innerHTML = '<div class="error-caja">' + escapar(mensaje) + '</div>';
+    resultado.classList.add('visible');
+  }
+
+  function renderResultado(data) {
+    let html = '';
+
+    html += '<div class="puntaje-caja">';
+    html += '<div class="puntaje-numero">' + escapar(data.puntaje) + '</div>';
+    html += '<div class="puntaje-texto">de 100 en las señales técnicas que revisamos para <strong>' + escapar(data.dominio) + '</strong>. No es una nota de cumplimiento legal — ver más abajo qué no revisamos.</div>';
+    html += '</div>';
+
+    for (const bloque of data.bloques) {
+      const items = data.items.filter((i) => i.bloque === bloque.id);
+      if (!items.length) continue;
+      html += '<div class="bloque">';
+      html += '<h2>' + escapar(bloque.titulo) + '</h2>';
+      html += '<p class="sub-bloque">' + escapar(bloque.sub) + '</p>';
+      html += '<ul class="items">';
+      for (const item of items) {
+        html += '<li>';
+        html += '<span class="marca-estado ' + (item.ok ? 'ok' : 'pendiente') + '">' + (item.ok ? '✓' : '!') + '</span>';
+        html += '<span class="item-texto">';
+        html += '<strong>' + escapar(item.titulo) + '</strong>';
+        html += '<span class="detalle">' + escapar(item.detalle) + '</span>';
+        if (!item.ok && item.arreglo) {
+          html += '<span class="arreglo">' + escapar(item.arreglo) + '</span>';
+        }
+        html += '</span></li>';
+      }
+      html += '</ul></div>';
+    }
+
+    if (data.informativos && data.informativos.length) {
+      html += '<div class="informativos">';
+      html += '<h2>Lo que detectamos, sin puntuar</h2>';
+      html += '<p class="sub-bloque">Esto no suma ni resta del puntaje — no lo podemos verificar con certeza desde afuera, así que lo mostramos como información, no como nota.</p>';
+      for (const info of data.informativos) {
+        html += '<div class="item-info"><strong>' + escapar(info.titulo) + '</strong><p>' + escapar(info.detalle) + '</p></div>';
+      }
+      html += '</div>';
+    }
+
+    resultado.innerHTML = html;
+    resultado.classList.add('visible');
+  }
+
+  form.addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    const dominio = input.value.trim();
+    if (!dominio) return;
+
+    boton.disabled = true;
+    boton.textContent = 'Revisando…';
+    resultado.classList.remove('visible');
+    resultado.innerHTML = '';
+
+    try {
+      const resp = await fetch('/api/chequeo?dominio=' + encodeURIComponent(dominio));
+      const data = await resp.json();
+      if (!data.ok) {
+        renderError(data.error || 'No pudimos revisar ese dominio.');
+      } else {
+        renderResultado(data);
+      }
+    } catch (err) {
+      renderError('No pudimos completar el chequeo. Inténtalo de nuevo.');
+    } finally {
+      boton.disabled = false;
+      boton.textContent = 'Revisar mi sitio';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
