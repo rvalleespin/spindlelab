@@ -110,6 +110,10 @@ sirven para productos sin material propio. Acá hay material real, y ese es el a
   el permiso de caso público, que siguen pendientes.
 - La **Parte 2-3** es rediseño y **no está en el Plan Esencial** que Bernardo contrató. Va
   como fase aparte que se cobra.
-- **Quedan $235.200 por cobrar** (Fases 1 y 5, en un solo cobro contra entrega). Recomendación
-  de Ramón: cobrar eso **antes** de abrir la conversación del rediseño. No mezclar un
-  rediseño con una entrega que todavía no se paga.
+- **El proyecto está PAGADO.** Ramón confirmó el 3-sep que el cobro de las Fases 1 y 5
+  ($235.200) se hizo "hace mucho tiempo". La versión anterior de este encargo decía que
+  seguía pendiente y recomendaba cobrar antes de abrir el rediseño: **eso era falso**, salía
+  de `ventas/pipeline.md` y `ventas/proyectos-en-curso.md`, que están desactualizados.
+  No hay nada que cobrar antes de conversar el rediseño.
+  **Pendiente separado, para el troncal:** actualizar los dos documentos de ventas con la
+  fecha real del pago (Ramón no la precisó).
