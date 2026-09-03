@@ -167,21 +167,36 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > Proyectos tienen Encuadre + Zoom + Volteo — más capacidad de ajuste que Modelo, que solo tiene
 > Encuadre + Zoom.
 >
-> **Nota aparte, sin resolver:** `main` volvió a avanzar (Ramón borró la entrada "Actores" en
-> producción) mientras se hacía este cambio — la rama todavía no se resincronizó con ese borrado
-> específico (un conflicto de merge trivial, `actores.md` modificado en la rama vs. borrado en
-> `main`). No bloquea nada de lo anterior; se resuelve en la próxima sincronización.
+> **Actualización 9 (3-sep-2026) — MERGEADO A MAIN, en producción.** Ramón confirmó
+> explícitamente "mergea a main". Antes de mergear: última resincronización con `main`
+> (`2aa508b` en la rama — respeta el borrado de "Actores" que Ramón hizo directo en producción,
+> más el trabajo ajeno de Motion/Commercials que avanzó mientras tanto), build verificado.
+> Mergeado con `git merge --no-ff` (commit `ba33b5c`) y empujado directo a `main` — este repo no
+> usa PRs, todos los merges anteriores de otras sesiones se hicieron así. Deploy de producción
+> disparado automáticamente por Vercel.
+>
+> **Nota de reconciliación:** al mergear se perdieron 3 bloques `publication: {name: ".", url:
+> "https://bernardocombeau.cl"}` que habían reaparecido en `main` (Actores — ya borrada —,
+> Corporativos, La séptima, Orejas de conejo) — el mismo patrón placeholder que la Parte 1
+> original ya había limpiado. Muy probablemente Ramón los generó probando el bug de "Publicación
+> externa" en producción (antes de que el fix llegara ahí) para poder guardar pese al error falso
+> de "obligatorio". Contenido inerte de cualquier forma — el propio `hasRealPublication` del
+> sitio ya los trataba como no-publicados —, así que se dejó que ganara la versión limpia de la
+> rama en vez de reintroducirlos. Avisado a Ramón por transparencia, no por indecisión.
+>
+> **Aparte:** existe una rama `claude/merge-panel-correcciones` (de otra sesión o del propio
+> Ramón) que había intentado el mismo merge minutos antes — nunca llegó a `main`, quedó
+> reemplazada por este merge directo. No requiere limpieza urgente.
 
 ---
 
 **Estado a 3-sep-2026, fin del día:** las Partes 1-3 de este documento (bug de Estudio,
 Direcciones A-D, fix de mobile), el encuadre de fotos con su rediseño a botón + Zoom + Volteo, la
 reconciliación con el trabajo que avanzó en paralelo en `main`, la corrección de la sidebar
-(Modelo), y el fix de "Publicación externa" están todas en `claude/correcciones-panel-y-sitio`
-(commit `f005652`, build verificado; pendiente resincronizar el borrado de "Actores" en `main`),
-sin mergear. Lo único que sigue pendiente de decisión de Ramón es la Parte 2-3 de
-`revision-sitio-bernardo-combeau.md` (rediseño del sitio público) y si mergear esta rama ahora
-— todo lo demás de ambos documentos ya se ejecutó.
+(Modelo), y el fix de "Publicación externa" están **mergeadas a `main` y en producción** (commit
+`ba33b5c`). Lo único que sigue pendiente de decisión de Ramón es la Parte 2-3 de
+`revision-sitio-bernardo-combeau.md` (rediseño del sitio público) — todo lo demás de ambos
+documentos ya se ejecutó y está en producción.
 
 ---
 
