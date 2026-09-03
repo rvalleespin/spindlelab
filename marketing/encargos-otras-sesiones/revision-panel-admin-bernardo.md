@@ -157,9 +157,15 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > panel local, y el efecto de zoom confirmado renderizando `/retratos` con un valor de prueba
 > (revertido antes de commitear). Rama en `3cf06cb`.
 >
-> **Pendiente de que Ramón aclare:** también pidió "sentido de la foto" — no se construyó por no
-> tener claro si se refiere a voltear la imagen en espejo o a otra cosa; preguntado directo en el
-> chat antes de invertir tiempo en la interpretación equivocada.
+> **Actualización 8 (3-sep-2026) — "sentido de la foto" = volteo horizontal, confirmado y
+> hecho.** Ramón respondió: quería un botón para voltear la miniatura en espejo (para cuando la
+> persona queda mirando hacia afuera de la grilla). Agregado como toggle "Voltear en espejo
+> (horizontal)" junto a Encuadre/Zoom (portada y galería, ambas colecciones) — mismo criterio:
+> solo afecta la miniatura, no la foto original ni la del visor. CSS: `scaleX(-1)` sumado al
+> mismo transform de Zoom. Verificado de punta a punta igual que Zoom (valor de prueba,
+> renderizado real, revertido antes de commitear). Rama en `f005652`. Con esto, Retratos/
+> Proyectos tienen Encuadre + Zoom + Volteo — más capacidad de ajuste que Modelo, que solo tiene
+> Encuadre + Zoom.
 >
 > **Nota aparte, sin resolver:** `main` volvió a avanzar (Ramón borró la entrada "Actores" en
 > producción) mientras se hacía este cambio — la rama todavía no se resincronizó con ese borrado
@@ -169,13 +175,12 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 ---
 
 **Estado a 3-sep-2026, fin del día:** las Partes 1-3 de este documento (bug de Estudio,
-Direcciones A-D, fix de mobile), el encuadre de fotos con su rediseño a botón + Zoom, la
+Direcciones A-D, fix de mobile), el encuadre de fotos con su rediseño a botón + Zoom + Volteo, la
 reconciliación con el trabajo que avanzó en paralelo en `main`, la corrección de la sidebar
 (Modelo), y el fix de "Publicación externa" están todas en `claude/correcciones-panel-y-sitio`
-(commit `3cf06cb`, build verificado; pendiente resincronizar el borrado de "Actores" en `main`),
+(commit `f005652`, build verificado; pendiente resincronizar el borrado de "Actores" en `main`),
 sin mergear. Lo único que sigue pendiente de decisión de Ramón es la Parte 2-3 de
-`revision-sitio-bernardo-combeau.md` (rediseño del sitio público), su respuesta sobre "sentido de
-la foto", y si mergear esta rama ahora
+`revision-sitio-bernardo-combeau.md` (rediseño del sitio público) y si mergear esta rama ahora
 — todo lo demás de ambos documentos ya se ejecutó.
 
 ---
