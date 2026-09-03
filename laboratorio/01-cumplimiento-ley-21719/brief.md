@@ -319,6 +319,18 @@ confirme explícitamente.
 checklist de §4 y el lanzamiento liviano ya decidido), monetización después (idea 2 de §3, el
 kit de implementación a precio fijo).
 
+**Arquitectura respecto a SpindleLab (3-sep-2026), confirmada tras revisar tres opciones:**
+Ramón preguntó si convenía que la landing saliera del propio `spindlelab.cl` para generar
+autoridad de dominio. Se evaluaron tres caminos — subruta (`spindlelab.cl/ley-21719`, hereda
+autoridad directa pero revierte la decisión de marca aparte y vuelve a exponer el riesgo de
+diluir el posicionamiento SEO/AEO de Camino A), subdominio (`cumplimiento.spindlelab.cl`, ni
+la autoridad limpia de una subruta ni la separación limpia de un dominio propio), y **dominio
+separado con enlace cruzado** — y Ramón confirmó el tercero. `verificaycumple.cl` se mantiene
+como dominio propio (Camino B sigue en pie), y se suma una pieza nueva: **una página o post en
+`spindlelab.cl` que mencione y enlace a `verificaycumple.cl`**, para capturar algo de
+autoridad cruzada en las dos direcciones sin mezclar los temas ni los posicionamientos. Esa
+página se agrega al alcance de "landing" en la secuencia de arriba — no es un paso aparte.
+
 Cuando arranque la construcción, corresponde abrir `laboratorio/ley-21719` a partir de esta
 rama (regla 3 de `laboratorio/README.md`) para no mezclar el trabajo del proyecto con el resto
 del laboratorio.
@@ -337,3 +349,4 @@ negocio permanente. Tratarlo como sprint desde el día uno evita la decepción d
 | 2026-09-03 | Verificación contra el texto oficial hecha (BCN/Ley Chile, idNorma=1209272) — 6 correcciones encontradas, la más importante: "72 horas" para brechas no existe en el texto (es RGPD) y "20.000 UTM o 4%" no son techos paralelos desde la primera infracción. Factibilidad técnica del chequeo señal por señal hecha contra `chequeo.js` real — el diferencial estrella (GA4/Meta disparando antes del consentimiento) no cae en la arquitectura actual, necesita navegador real. Los dos caminos de la decisión de marca (§6) desarrollados con el mismo detalle. Nada construido todavía; decisión de marca sigue pendiente de Ramón. |
 | 2026-09-03 | **Decisión de Ramón: Camino B** (§6) — marca aparte, dominio propio, firmada por Ramón, no bajo SpindleLab. **Y lanzamiento liviano** (§4) — el chequeo gratuito sale con fetch+regex, sin navegador real; Browser Rendering queda descartado para esta versión. Falta: nombre y dominio de la marca nueva. Sigue sin construirse nada; cuando arranque la construcción, abrir `laboratorio/ley-21719` desde esta rama. |
 | 2026-09-03 | **Nombre y dominio: `verificaycumple.cl`** — verificado disponible por Vercel, $64.99 USD/año, compra sin ejecutar (pendiente de confirmación explícita de Ramón, es gasto real). **Secuencia acordada: landing (idea 1, el chequeo gratis) primero, monetización (idea 2, el kit) después.** Sigue sin construirse nada. |
+| 2026-09-03 | Ramón preguntó si la landing podía salir del propio `spindlelab.cl` para generar autoridad. Se evaluaron subruta, subdominio y dominio separado con enlace cruzado — **confirmó dominio separado con enlace cruzado**: `verificaycumple.cl` se mantiene (Camino B sigue en pie), y se suma al alcance de la landing una página/post en `spindlelab.cl` que lo enlace. Compra del dominio sigue sin confirmarse. Sigue sin construirse nada. |
