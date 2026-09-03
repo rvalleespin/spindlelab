@@ -113,15 +113,35 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > Ambos resuelven el mismo problema con distinta interacción porque se construyeron por
 > separado. No se unificó de oficio — es una decisión de Ramón, no algo para decidir en silencio.
 
+> **Actualización 5 (3-sep-2026) — regresión real encontrada al probar la rama: "Modelo" había
+> desaparecido de la sidebar.** Ramón probó el link de preview (`/admin` de
+> `claude/correcciones-panel-y-sitio`) y no le aparecía Modelo. No era percepción — era un bug
+> real, causado por esta misma rama. La Dirección C (Actualización 2) sacó "Modelo" de la sidebar
+> el 3-sep porque en ese momento la sección estaba sin contenido real y sin publicar (`nav.json`
+> traía `"modelo": ""`) — condición explícitamente reversible, documentada como tal. Esa condición
+> cambió mientras la rama esperaba revisión: `main` publicó Modelo y se ha seguido desarrollando
+> activamente ahí (encuadre, zoom, restauración de Motion, grilla de comerciales — ver
+> Actualización 4). Mergear la rama tal como estaba habría **des**publicado Modelo del panel de
+> Bernardo, escondiéndole una sección que él mismo (o quien la esté cargando) sigue usando.
+>
+> Corregido: la colección "modelo" vuelve a la sidebar, y el separador de la Dirección B (que
+> dependía por CSS de la posición fija de las colecciones) se recalculó para el nuevo orden.
+> Verificado con el panel corriendo local — captura de la sidebar con Modelo visible y el
+> separador antes de Retratos. Rama en `ab22454`, sigue sin mergear.
+>
+> **Sigue sin resolver, aparte de esto:** "Modelo" sigue siendo la única colección sin vista
+> previa en vivo (`CMS.registerPreviewTemplate`) — el gap ya señalado en el diagnóstico original
+> (Parte 2). No se construyó de oficio; es trabajo aparte si Ramón lo pide.
+
 ---
 
 **Estado a 3-sep-2026, fin del día:** las Partes 1-3 de este documento (bug de Estudio,
-Direcciones A-D, fix de mobile), el encuadre de fotos, y la reconciliación con el trabajo que
-avanzó en paralelo en `main` están todas en `claude/correcciones-panel-y-sitio` (commit
-`c1be4ff`, sin conflictos con `main`, build verificado), sin mergear. Lo único que sigue
-pendiente de decisión de Ramón es la Parte 2-3 de `revision-sitio-bernardo-combeau.md`
-(rediseño del sitio público) más si mergear esta rama ahora — todo lo demás de ambos documentos
-ya se ejecutó.
+Direcciones A-D, fix de mobile), el encuadre de fotos, la reconciliación con el trabajo que
+avanzó en paralelo en `main`, y la corrección de la sidebar (Modelo) están todas en
+`claude/correcciones-panel-y-sitio` (commit `ab22454`, sin conflictos con `main`, build
+verificado), sin mergear. Lo único que sigue pendiente de decisión de Ramón es la Parte 2-3 de
+`revision-sitio-bernardo-combeau.md` (rediseño del sitio público) más si mergear esta rama ahora
+— todo lo demás de ambos documentos ya se ejecutó.
 
 ---
 
