@@ -53,6 +53,35 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > Verificado con el panel corriendo local, desktop y mobile (390px), antes/después de cada
 > cambio — sin regresión en la vista previa de Estudio del fix anterior.
 
+> **Actualización 3 (3-sep-2026) — encuadre de fotos, ejecutado.** Ramón notó el hueco que
+> quedaba tras el rediseño: subir una foto no dejaba elegir dónde cae el recorte cuadrado de la
+> home/grillas, así que una foto mal encuadrada podía cortar cabezas sin que Bernardo pudiera
+> evitarlo. Pidió el encuadre visual (arrastrar/tocar un punto), no un selector de posiciones,
+> para la Portada. Mismo commit en `claude/correcciones-panel-y-sitio` (ahora `f9aba9e`).
+>
+> - **Portada** de cada Retrato/Proyecto: widget custom nuevo (`focuspoint`) — toca la foto
+>   completa para marcar el punto, recuadro punteado en vivo muestra el recorte exacto. Costó
+>   investigación real: Decap no documenta bien el contrato de sus widgets custom; se probó
+>   contra el panel corriendo local antes de construir (`entry`+`getAsset` sí están disponibles
+>   en el mount y son confiables; `onOpenMediaLibrary`+`mediaPaths` NO se pudo hacer disparar de
+>   forma reproducible en este panel — el shim de widgets no dispara `componentDidUpdate`).
+> - **Fotos de la galería** (`images[]`): selector de 5 posiciones (mismo patrón ya en Modelo →
+>   Polaroids) en vez del encuadre visual — un focuspoint interactivo ahí necesitaría saber en
+>   qué posición de la lista está cada foto, y Decap no expone eso de forma confiable a un
+>   widget custom (probado con 3 mecanismos distintos, ninguno funcionó). Mismo resultado para
+>   Bernardo (elige el encuadre, se aplica solo), interacción más simple para esa lista.
+> - Se guarda como `"X% Y%"` — el mismo formato de `object-position` CSS — sin valor = centrado
+>   (cero impacto en los ~15 registros existentes). Confirmado en el sitio real con un valor de
+>   prueba (revertido antes de commitear).
+
+---
+
+**Estado a 3-sep-2026, fin del día:** las Partes 1-3 de este documento (bug de Estudio,
+Direcciones A-D, fix de mobile) y el encuadre de fotos están todas en
+`claude/correcciones-panel-y-sitio` (commit `f9aba9e`), sin mergear. Lo único que sigue
+pendiente de decisión de Ramón es la Parte 2-3 de `revision-sitio-bernardo-combeau.md`
+(rediseño del sitio público) — todo lo demás de ambos documentos ya se ejecutó.
+
 ---
 
 ## Cómo se hizo esta revisión, y su límite
