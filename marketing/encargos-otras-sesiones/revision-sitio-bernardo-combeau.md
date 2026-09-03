@@ -1,4 +1,19 @@
-> **Actualización 2026-09-03 (Diego, persona-disenador-web) — Parte 1 hecha.** Ejecutada
+> **Actualización 2026-09-03 (Diego) — CORRECCIÓN: la rama troncal para Parte 1 es
+> `claude/revision-parte-1-correcciones`, no la de abajo.** Este encargo se ejecutó dos
+> veces en paralelo, por dos sesiones distintas sin saberlo (yo, y una sesión aparte con
+> el git identity de Ramón — probablemente su sesión local). Confirmado con
+> `git ls-remote --heads origin` sobre `rvalleespin/bernardo-combeau`: ambas ramas parten
+> del mismo commit y ninguna llegó a `main`. Comparadas línea a línea, la otra rama es más
+> completa — en particular encontró el root-cause real del punto 5 (`inputtedWidth`, un
+> artefacto de `@astrojs/vercel` cuando `width` no es un ancho válido del adaptador; la
+> causa era `width={800}` en 8 componentes, varios fuera de lo que yo revisé) y agregó
+> `llms.txt` + una medición de LCP más rigurosa (mobile throttled vía CDP). Ramón confirmó:
+> **`claude/revision-parte-1-correcciones` queda como troncal**, la rama de abajo
+> (`claude/parte-1-correcciones-sitio`, mía) no se usa. El resto de esta nota describe MI
+> ejecución, que quedó superseded — se deja como registro, no como la versión vigente.
+>
+> **Actualización 2026-09-03 (Diego, persona-disenador-web) — Parte 1 hecha (superseded,
+> ver corrección arriba).** Ejecutada
 > en el repo separado `rvalleespin/bernardo-combeau`, rama `claude/parte-1-correcciones-sitio`
 > (push hecho, sin PR — no se pidió explícitamente en esta sesión). Detalle completo en
 > `marketing/oficina/memoria/diego-web.md`. Resumen: varios de los 7 puntos no calzaban

@@ -5,8 +5,31 @@
 **Skill:** .claude/skills/persona-disenador-web/SKILL.md
 
 ## Estado actual
+- **2026-09-03 — CORRECCIÓN sobre la entrada de más abajo: mi rama quedó
+  superseded, no es la troncal.** Al terminar, Ramón detectó (y yo verifiqué con
+  `git ls-remote`) que **otra sesión** — con su propio git identity, casi seguro su
+  sesión local en el Mac — había trabajado la misma Parte 1 en paralelo, en la rama
+  `claude/revision-parte-1-correcciones` de `rvalleespin/bernardo-combeau`, empujada
+  ANTES que la mía. Comparé ambas rama-a-rama: en lo mecánico (años, rename de los 2
+  slugs) convergimos en el mismo resultado exacto. Pero la de ellos es más completa:
+  **encontraron el root-cause real del punto 5 (`inputtedWidth`)** que yo descarté
+  ("no existe en el repo" — cierto para el string literal, pero es un artefacto que
+  el adaptador `@astrojs/vercel` inyecta en runtime cuando el `width` de `<Image>` no
+  está en su lista de anchos válidos; `width={800}`, que usé sin tocar, es la causa
+  real, y ellos lo corrigieron en 8 componentes que yo no vi, incluyendo `/estudio`,
+  `/modelo` y los índices de Retratos/Proyectos). También agregaron `llms.txt` y
+  midieron LCP con throttling móvil real, más riguroso que mi medición en localhost.
+  **Decisión (confirmada por Ramón):** `claude/revision-parte-1-correcciones` queda
+  como la rama troncal del proyecto Bernardo para este trabajo. Mi rama
+  `claude/parte-1-correcciones-sitio` queda sin usar — no se mezcla, no se sigue
+  trabajando sobre ella. Lección para la próxima: antes de dar un encargo por
+  cerrado en un repo de cliente, correr `git ls-remote --heads origin` para ver si
+  otra sesión ya está (o ya estuvo) tocando el mismo repo — no asumo que soy la
+  única sesión trabajando ahí solo porque a mí me llegó el encargo.
+
 - **2026-09-03 — Bernardo Combeau (repo separado `rvalleespin/bernardo-combeau`),
-  Parte 1 del encargo hecha.** Encargo en
+  Parte 1 del encargo hecha (ver corrección arriba: esta rama quedó superseded).**
+  Encargo en
   `marketing/encargos-otras-sesiones/revision-sitio-bernardo-combeau.md`, ejecutado en
   rama `claude/parte-1-correcciones-sitio` de ese repo (push hecho, sin PR — no se pidió
   explícitamente). Diff real, no solo la lista del encargo: varios ítems del encargo no
