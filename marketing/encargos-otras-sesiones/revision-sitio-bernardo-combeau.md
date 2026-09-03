@@ -1,3 +1,29 @@
+> **Actualización 2026-09-03 (Diego, persona-disenador-web) — Parte 1 hecha.** Ejecutada
+> en el repo separado `rvalleespin/bernardo-combeau`, rama `claude/parte-1-correcciones-sitio`
+> (push hecho, sin PR — no se pidió explícitamente en esta sesión). Detalle completo en
+> `marketing/oficina/memoria/diego-web.md`. Resumen: varios de los 7 puntos no calzaban
+> 1:1 con el código fuente (como el propio encargo advertía) — se verificó cada uno
+> contra el repo real antes de tocar nada, y el diff terminó siendo más específico que
+> la lista original:
+> - Alts: eran 9 con `.` literal (no 5) más ~15 numéricos/dash — todos reescritos viendo
+>   la foto real.
+> - Los "2 placeholders" tenían contenido real detrás (proyecto "La caída" y retratos
+>   "Actores") — se renombraron los slugs con redirect 301, no se despublicaron.
+> - El descalce de "La caída" era la misma entrada de arriba — corregido junto con eso.
+> - `inputtedWidth="800"` no existe en el repo actual — nada que corregir.
+> - Hero: no había `loading="lazy"` explícito, es el default de Astro sin `loading` —
+>   corregido a `eager`+`fetchpriority="high"`, verificado con Chromium headless que la
+>   prioridad de red pasa de "Low" a "High" en la primera request.
+> - JSON-LD: Person + LocalBusiness (grafo compartido, en todas las páginas) +
+>   ImageObject por foto real en cada galería — datos 100% reales del propio sitio.
+> - Años: normalizados a raya en las 3 entradas con guion.
+> - Bonus fuera de la lista: `sobremi.json` tenía un `"."` suelto renderizándose en la
+>   página Sobre-mí — corregido con el mismo patrón guard que ya usa el código.
+>
+> Verificado con render (Chromium headless), no solo leyendo código. Build de producción
+> sin errores. Parte 2-3 (rediseño) y Parte 5 (regla IA) no tocadas — quedan para cuando
+> Ramón decida abrir esa conversación, después del cobro pendiente (Parte 6).
+
 # Encargo — Revisión del sitio de Bernardo Combeau: corregir, y después darle vida
 
 **Fecha:** 2026-09-03 · **Para:** la sesión que mantiene el repo de Bernardo Combeau
