@@ -11,20 +11,24 @@ campañas para gerencias de marketing y negocio.
   visual v2, fuentes y fondo con ruta relativa. Las 18 se renderizaron a PNG y se miraron.
 - `marketing/brand/presentacion-marca/README.md`: cómo regenerar, qué dato es real y cuál
   es ilustrativo, checklist antes de enviar.
-- `marketing/estrategia-presentacion-marca-2026-09.md`: lectura estratégica, benchmark por
-  patrones, y 7 mejoras propuestas con dueño sugerido.
+- `marketing/estrategia-presentacion-marca-2026-09.md`: lectura estratégica, benchmark con
+  nombres verificados, 7 mejoras propuestas con dueño sugerido y el registro de la v2.
 
 ## Decisiones tomadas que Ramón debe confirmar
 
 1. **Las campañas NO se presentan como reales.** Van como escenarios ilustrativos etiquetados
    (láminas 12 a 14), sobre datos reales (mediana del chequeo, CPC del plan de Ads). Motivo:
-   regla de cero prueba social inventada y el hueco de confianza del benchmark.
-2. **Competidores por patrón, sin nombres** (brief de comunicación §5).
+   regla de cero prueba social inventada y el problema de confianza que muestra el benchmark.
+2. **v2 (3-sep): competidores CON nombre**, por pedido de Ramón. Contradice el brief de comunicación §5; se aplica solo a este material comercial de mano a mano, con hechos verificados en vivo el 2-sep y fecha en la lámina. Si el troncal quiere extender o acotar la regla, es decisión suya.
 3. **El 0/15 propio del test de menciones no aparece** (decisión del 28-ago).
 4. **Sí aparecen los precios "desde"** del sitio: es material comercial de mano a mano,
    no una pieza de redes; el addendum del 31-ago aplica a redes.
 5. **Dato nuevo publicado en el mazo:** spindlelab.cl obtiene 85/100 en su propio chequeo
    (corrido el 2-sep-2026 vía `/api/chequeo`). Volver a correr antes de cada envío.
+
+## v2 (3-sep-2026): ajustes de Ramón aplicados
+
+Situación actual con cifras de fuente primaria (Barómetro Digital Chile 2026, Forrester 2026, Bain, Semrush), idea madre del motor frente a servicios sueltos, benchmark con nombres, textos resumidos, "hueco" fuera, escenarios en 30 y 60 días. Detalle en `marketing/estrategia-presentacion-marca-2026-09.md` §8. **Nuevo pendiente:** el sitio (/metodo/) promete plazos más largos que el mazo; hay que alinear (Diego, con OK de Ramón).
 
 ## Lo que pide el mazo hacia el resto de la oficina (propuesta, sin encargar)
 

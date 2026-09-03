@@ -1,6 +1,6 @@
 # Presentación de marca ante clientes: lectura estratégica y mejoras (sep-2026)
 
-**Origen:** reunión de revisión de marca del 2-sep-2026. Salieron sugerencias para la
+**Origen:** reunión de revisión de marca del 2-sep-2026. **v2 (3-sep):** ajustes de Ramón aplicados, ver §8. Salieron sugerencias para la
 presentación de SpindleLab ante potenciales clientes: hacía falta un mazo con benchmark,
 gráficas de alcance, campañas ejecutadas y todo lo que una gerencia de marketing o de
 negocio necesita ver para contratar.
@@ -20,7 +20,7 @@ como reales**, por tres razones que pesan más que la comodidad:
 1. La promesa de marca es literalmente "Mostramos, no prometemos" y "cero prueba social
    inventada" (manual §07, plan de reposicionamiento §1). Un caso ficticio presentado como
    real es la única cosa que puede destruir ese posicionamiento en una sola reunión.
-2. El benchmark de agosto muestra que el hueco del mercado es de **confianza**, no técnico:
+2. El benchmark de agosto muestra que el problema del mercado es de **confianza**, no técnico:
    la competencia infla casos y se auto-rankea. Copiar eso nos mete en el cuadrante del que
    queremos diferenciarnos.
 3. Un gerente de marketing pregunta "¿puedo hablar con ese cliente?". Sin respuesta, la
@@ -74,18 +74,24 @@ del presupuesto que ya existe, no de un presupuesto nuevo. Eso lo entiende geren
 Fuente: los dos estudios de Marco (agencias IA del 2-ago y mapa de citaciones del 25-ago)
 y el estudio de precios del 25-ago. Veinte fichas con URL y fecha.
 
-- **Por patrón, no por nombre.** El brief de comunicación prohíbe nombrar competidores en
-  lo público. El mazo compara cinco patrones (agencia 360 con módulo AEO, boutique con
-  índice, agencia con benchmark propio, "agencias de IA" en redes, SpindleLab) en cinco
+- **Con nombre (v2, 3-sep).** La v1 comparaba por patrón, por la regla del brief de
+  comunicación. Ramón pidió nombres reales, y el mazo compara nueve agencias (Bigbuda, Best
+  Solution, Nitten, Focus Ads, Maqui, Milimetrix, Loup, Seonet, Agencia ROI) en cinco
   criterios: precios publicados, metodología publicada, herramienta pública gratis, casos
-  con datos, y si se ponen #1 en su propio ranking.
+  con datos, y si se ponen #1 en su propio ranking. Cada casilla se verificó en vivo el
+  2-sep-2026; el detalle por agencia (URL, fecha, cita textual) quedó en el registro de
+  competidores y en el journal de la investigación. Regla: solo hechos verificables en el
+  sitio de la agencia, sin adjetivos.
 - **Honestidad en la casilla débil.** En "casos con datos" SpindleLab marca "el primero, con
   permiso, en curso". Es la casilla donde un competidor (el de benchmark propio) nos gana
   hoy. Ocultarlo sería contradecir la lámina siguiente.
-- **Precios.** Rangos de mercado (piso, típico, techo) frente al "desde" propio: la
-  auditoría en la mitad inferior del rango, el retainer a la par del único plan real
-  publicado por un competidor, el proyecto de visibilidad en IA en una categoría sin ancla
-  pública en Chile. La lectura para el gerente: bajo el techo, y publicado.
+- **Precios, con nombre.** Acompañamiento mensual con visibilidad en IA, verificado el
+  2-sep: Innoweb $189.900 (agencia WordPress) · SpindleLab $590.000 a $790.000 · Best
+  Solution $650.000 · Nitten $750.000 (baja a $450.000 desde el mes 5) · Bigbuda $890.000
+  (el copy de su sitio dice "desde $590.000", pero ese plan es solo SEO) · Maqui $1.690.000
+  (incluye Ads) · Loup piso de $3.100.000 en su formulario. Siete de dieciséis no publican
+  tarifa. La lectura para el gerente: a la par de las boutiques serias, muy por debajo de
+  las agencias 360, y publicado.
 
 ## 5. Gráficas de alcance: qué se pudo hacer con datos reales y qué no
 
@@ -106,7 +112,7 @@ por decisión de Ramón. Por eso el mazo separa:
 Ordenadas por impacto en la conversión de una reunión comercial. Ninguna está ejecutada;
 son propuestas para que el troncal las reparta.
 
-1. **Conseguir el primer caso público con permiso.** Es el hueco más visible del mazo (tres
+1. **Conseguir el primer caso público con permiso.** Es el problema más visible del mazo (tres
    láminas ilustrativas lo cubren). Candidatos: el fotógrafo (sitio entregado, permiso nunca
    pedido pese al acuerdo del día 1) y la asesora de inversiones (solicitud de testimonio
    sin enviar desde julio). Un solo caso con antes/después reemplaza las láminas 12 a 14 y
@@ -146,3 +152,18 @@ son propuestas para que el troncal las reparta.
   etiquetas, un dorado por lámina). Un cambio en `marketing/redes/README.md` aplica aquí.
 - Un mazo por rubro se hace copiando el HTML y cambiando solo las láminas 12 a 14 y la
   lámina de puntaje del prospecto. No se toca el resto.
+
+## 8. Versión 2 (3-sep-2026): qué cambió con los comentarios de Ramón
+
+| Comentario | Qué se hizo en el mazo |
+|---|---|
+| Situación actual más consolidada, que haga sentir la urgencia | Lámina 2 nueva: cuatro cifras con fuente primaria verificada (76 % de chilenos usa IA y su uso #1 es buscar; 94 % de compradores B2B usó IA en su última compra; 60 % de búsquedas sin clic; visitante desde IA vale 4,4×), tres consecuencias para la empresa y el bloque "la ventana" (por qué el que entra primero se queda). |
+| Trabajar la idea madre: el motor mueve los servicios sueltos, resultados creíbles | Lámina 6 rehecha como contraste: "servicios sueltos" (cada uno con su informe y su métrica, nadie responde por el conjunto) frente a "un motor con eje" (una landing, una medición, un informe, un responsable). Tres verbos: mueve, conecta, se puede creer. La credibilidad viene de la medición única con protocolo público. |
+| Benchmark con nombres reales | Láminas 9 y 10 con nombres: Bigbuda, Best Solution, Nitten, Focus Ads, Maqui, Milimetrix, Loup, Seonet, Agencia ROI (tabla) e Innoweb, Loup y Maqui además en el gráfico de precios. Cada casilla se verificó en vivo en el sitio de la agencia el 2-sep-2026 por 15 agentes de investigación; el detalle con URL por casilla está en el registro de competidores. **Esto contradice el brief de comunicación (§5, "no nombrar competidores en lo público")**: se aplica porque el mazo es material comercial de mano a mano y por decisión explícita de Ramón. Regla que queda: solo hechos verificables en el sitio de cada agencia, sin adjetivos, y con fecha de verificación en la lámina. |
+| Textos más claros y resumidos, pensados para la conversación de 20 minutos | Leads de una o dos líneas, bullets de una frase, fuentes en una línea. Guion de 20 minutos en el README de la carpeta (qué lámina en qué minuto). |
+| No usar "hueco" | Reemplazado por "problema" en el mazo y en este documento. |
+| Tiempos de los escenarios demasiado largos para una agencia con IA | Escenario A pasa de 12 semanas a 30 días (día 1 diagnóstico, días 2 a 5 auditoría y línea base, semanas 2 y 3 implementación, semana 4 contenido y primer informe). Escenario B pasa de 90 a 60 días. El método (lámina 7) queda en 24 horas / 5 días hábiles / 2 a 3 semanas / quincenal, con la frase "semanas, no trimestres". |
+
+**Pendiente derivado del último punto:** la página /metodo/ del sitio todavía dice "1 semana la versión completa", "1 a 2 semanas" y "2 a 6 semanas". Si el mazo promete 5 días hábiles y 2 a 3 semanas, el sitio tiene que decir lo mismo. Encargo para Diego, con OK de Ramón.
+
+**Lo que no cambió a propósito:** los escenarios siguen etiquetados como ilustrativos (ver §1). Los tiempos más cortos son un compromiso operativo real, no un adorno: si se comunican, se cumplen.

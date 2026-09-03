@@ -10,9 +10,9 @@
 @font-face { font-family:'Manrope'; src:url('manrope.woff2') format('woff2'); font-weight:400 800; }
 @font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:100 900; }
 :root{
-  --bg:#0e141b; --surface:#161d26; --surface-2:#1c2530;
+  --bg:#0e141b; --surface:#161d26;
   --fg:#f2efe8; --muted:#9aa4b0; --faint:#6b7580;
-  --gold:#c9a227; --teal:#2fa99b; --teal-2:#7cc9be; --teal-3:#bfe4de;
+  --gold:#c9a227; --teal:#2fa99b; --teal-2:#7cc9be;
   --hair:rgba(247,245,240,.12); --hair-2:rgba(247,245,240,.2);
   --font-h:'Gabarito','Manrope','Inter',sans-serif;
   --font-b:'Manrope','Inter',system-ui,sans-serif;
@@ -32,80 +32,82 @@ body{background:var(--bg);color:var(--fg);font-family:var(--font-b);font-size:26
 .kicker{font-size:20px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:22px}
 h1,h2,h3{font-family:var(--font-h);font-weight:600;letter-spacing:-.02em;line-height:1.08;text-wrap:balance;color:var(--fg)}
 h1{font-size:112px;letter-spacing:-.03em}
-h2{font-size:68px;max-width:1500px}
-h3{font-size:34px;letter-spacing:-.01em}
-.lead{font-size:32px;line-height:1.5;color:var(--muted);max-width:1240px;margin-top:26px}
-.body{margin-top:44px;flex:1;display:flex;flex-direction:column;min-height:0}
+h2{font-size:64px;max-width:1560px}
+h3{font-size:32px;letter-spacing:-.01em}
+.lead{font-size:30px;line-height:1.45;color:var(--muted);max-width:1500px;margin-top:22px}
+.body{margin-top:40px;flex:1;display:flex;flex-direction:column;min-height:0}
 .foot{position:absolute;left:112px;right:112px;bottom:56px;display:flex;align-items:flex-end;justify-content:space-between;color:var(--faint);font-size:19px}
 .wm{font-family:var(--font-h);font-weight:600;font-size:32px;color:var(--fg);letter-spacing:-.01em}
 .wm .pt{color:var(--gold)}
-.src{font-size:19px;line-height:1.45;color:var(--faint);max-width:1240px}
+.src{font-size:18px;line-height:1.4;color:var(--faint);max-width:1700px}
 .num{font-variant-numeric:tabular-nums}
 .gold{color:var(--gold)}
 .teal{color:var(--teal)}
 .muted{color:var(--muted)}
-.grid{display:grid;gap:36px}
+.grid{display:grid;gap:32px}
 .g2{grid-template-columns:1fr 1fr}
 .g3{grid-template-columns:repeat(3,1fr)}
 .g4{grid-template-columns:repeat(4,1fr)}
-.card{background:rgba(22,29,38,.78);border:1px solid var(--hair);border-radius:12px;padding:36px 40px}
-.card h3{margin-bottom:12px}
-.card p{color:var(--muted);font-size:24px;line-height:1.5}
-.stat{font-family:var(--font-h);font-weight:600;font-size:96px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.stat small{display:block;font-family:var(--font-b);font-weight:500;font-size:24px;letter-spacing:0;color:var(--muted);margin-top:14px;line-height:1.4}
-.label{font-size:18px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--teal)}
-.tag{display:inline-block;font-size:17px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--bg);background:var(--teal-2);padding:6px 12px;border-radius:4px}
-.tag.ill{background:transparent;color:var(--teal-2);border:1px solid var(--teal-2)}
-table{border-collapse:collapse;width:100%;font-size:24px}
-th{font-size:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);text-align:left;padding:0 20px 16px 0;border-bottom:1px solid var(--hair-2)}
-td{padding:18px 20px 18px 0;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--fg)}
+.card{background:rgba(22,29,38,.78);border:1px solid var(--hair);border-radius:12px;padding:30px 34px}
+.card h3{margin-bottom:10px}
+.card p{color:var(--muted);font-size:22px;line-height:1.45}
+.sit .card{padding:24px 28px}.sit .stat{font-size:72px}.sit .card p{font-size:20px;margin-top:10px !important}
+.stat{font-family:var(--font-h);font-weight:600;font-size:88px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.label{font-size:17px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--teal)}
+.tag{display:inline-block;font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal-2);border:1px solid var(--teal-2);padding:6px 12px;border-radius:4px}
+table{border-collapse:collapse;width:100%;font-size:22px}
+th{font-size:17px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--hair-2)}
+td{padding:12px 16px 12px 0;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--fg)}
 td.m{color:var(--muted)}
-.cart td{padding:11px 20px 11px 0}
 td.r,th.r{text-align:right;padding-right:0;white-space:nowrap;font-variant-numeric:tabular-nums}
-.code{background:rgba(22,29,38,.82);border:1px solid var(--hair);border-radius:10px;padding:22px 28px;font-family:var(--mono);font-size:20px;line-height:1.6;color:var(--muted)}
+.code{background:rgba(22,29,38,.82);border:1px solid var(--hair);border-radius:10px;padding:20px 26px;font-family:var(--mono);font-size:19px;line-height:1.6;color:var(--muted)}
 .code b{color:var(--fg);font-weight:600}
 ul.clean{list-style:none}
-ul.clean li{position:relative;padding-left:34px;margin-bottom:16px;color:var(--muted);font-size:26px}
+ul.clean li{position:relative;padding-left:32px;margin-bottom:12px;color:var(--muted);font-size:24px;line-height:1.4}
 ul.clean li::before{content:'';position:absolute;left:0;top:.62em;width:16px;height:1px;background:var(--teal)}
 ul.clean li b{color:var(--fg);font-weight:600}
 svg text{font-family:var(--font-b);font-variant-numeric:tabular-nums}
-.legend{display:flex;gap:28px;font-size:21px;color:var(--muted);margin-top:8px}
+.legend{display:flex;gap:28px;font-size:20px;color:var(--muted);margin-top:8px}
 .legend i{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-1px;margin-right:10px}
-.flow{display:flex;align-items:stretch;gap:0;margin-top:40px}
-.flow .node{flex:1;border:1px solid var(--hair);border-radius:12px;background:rgba(22,29,38,.7);padding:28px 30px;display:flex;flex-direction:column;gap:8px;min-height:190px}
-.flow .node .n{font-family:var(--font-h);font-size:30px;font-weight:600;line-height:1.15}
-.flow .node .d{color:var(--muted);font-size:21px;line-height:1.4}
-.flow .link{width:64px;display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:28px}
+.flow{display:flex;align-items:stretch;gap:0;margin-top:30px}
+.flow .node{flex:1;border:1px solid var(--hair);border-radius:12px;background:rgba(22,29,38,.7);padding:24px 28px;display:flex;flex-direction:column;gap:8px;min-height:170px}
+.flow .node .n{font-family:var(--font-h);font-size:29px;font-weight:600;line-height:1.15}
+.flow .node .d{color:var(--muted);font-size:20px;line-height:1.4}
+.flow .link{width:60px;display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:28px}
 .flow .node.dark{opacity:.42}
 .flow .node.cut{border-color:var(--gold)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
-.step{border-top:1px solid var(--hair-2);padding-top:22px}
-.step .k{font-family:var(--font-h);font-size:22px;color:var(--teal);font-weight:600;letter-spacing:.06em}
-.step h3{margin:10px 0 12px}
-.step p{color:var(--muted);font-size:22px;line-height:1.45}
-.step dl{margin-top:18px;font-size:20px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px}
-.step dt{color:var(--faint);text-transform:uppercase;letter-spacing:1.6px;font-size:15px;font-weight:700;padding-top:4px}
+.step{border-top:1px solid var(--hair-2);padding-top:20px}
+.step .k{font-family:var(--font-h);font-size:21px;color:var(--teal);font-weight:600;letter-spacing:.06em}
+.step h3{margin:8px 0 10px}
+.step p{color:var(--muted);font-size:21px;line-height:1.45}
+.step dl{margin-top:14px;font-size:20px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px}
+.step dt{color:var(--faint);text-transform:uppercase;letter-spacing:1.6px;font-size:14px;font-weight:700;padding-top:4px}
 .step dd{color:var(--fg)}
-.report{background:#f2efe8;color:#131a22;border-radius:14px;padding:32px 42px;font-family:var(--font-b);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.report{background:#f2efe8;color:#131a22;border-radius:14px;padding:30px 40px;font-family:var(--font-b);box-shadow:0 30px 80px rgba(0,0,0,.45)}
 .report .rh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(19,26,34,.15);padding-bottom:12px;margin-bottom:16px}
-.report .rh .t{font-family:var(--font-h);font-weight:600;font-size:30px;letter-spacing:-.01em}
+.report .rh .t{font-family:var(--font-h);font-weight:600;font-size:28px;letter-spacing:-.01em;white-space:nowrap}
 .report .rh .t .pt{color:var(--gold)}
-.report .rh .m{color:#5d6673;font-size:18px}
-.report h4{font-size:15px;letter-spacing:2px;text-transform:uppercase;color:#0f766e;font-weight:700;margin-bottom:10px}
+.report .rh .m{color:#5d6673;font-size:17px;text-align:right}
+.report h4{font-size:14px;letter-spacing:2px;text-transform:uppercase;color:#0f766e;font-weight:700;margin-bottom:8px}
 .report p,.report li{font-size:18px;line-height:1.4;color:#131a22}
-.report .cols{display:grid;grid-template-columns:1.1fr 1fr;gap:36px}
+.report .cols{display:grid;grid-template-columns:1.1fr 1fr;gap:32px}
 .report ul{padding-left:20px}
-.casos .card{padding:26px 32px}.casos .card p{font-size:22px}.casos .card h3{font-size:30px;margin-top:8px !important}
-.matrix{font-size:22px}.matrix td,.matrix th{text-align:center;padding:11px 12px}.matrix th{padding-bottom:12px}
-.matrix td:first-child,.matrix th:first-child{text-align:left;padding-left:0;width:470px}
-.matrix tr.us td{background:rgba(47,169,155,.08)}
-.matrix tr.us td:first-child{font-weight:700}
+.bm{font-size:20px}
+.bm td,.bm th{text-align:center;padding:9px 10px}
+.bm td:first-child,.bm th:first-child{text-align:left;padding-left:0;width:250px}
+.bm tr.us td{background:rgba(47,169,155,.08)}
+.bm tr.us td:first-child{font-weight:700}
 .yes{color:var(--teal-2);font-weight:700}
 .no{color:var(--faint)}
 .part{color:var(--muted)}
-.pricebar{display:grid;grid-template-columns:420px 1fr;gap:18px 36px;align-items:center;font-size:24px}
-.pricebar .nm{color:var(--fg);font-weight:600}
-.pricebar .nm small{display:block;font-weight:400;color:var(--faint);font-size:19px}
+.vs{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:stretch}
+.vs .box{border:1px solid var(--hair);border-radius:12px;padding:28px 32px;background:rgba(22,29,38,.6)}
+.vs .box.motor{border-color:rgba(47,169,155,.55);background:rgba(47,169,155,.07)}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+.chip{border:1px solid var(--hair-2);border-radius:8px;padding:10px 16px;font-size:20px;color:var(--muted)}
+.chip b{color:var(--fg);font-weight:600;display:block;font-size:21px}
+.chip.eje{border-color:var(--teal);color:var(--fg)}
 @media print{
   @page{size:1920px 1080px;margin:0}
   html{scroll-snap-type:none}
@@ -114,7 +116,6 @@ svg text{font-family:var(--font-b);font-variant-numeric:tabular-nums}
   .hint{display:none}
 }
 .hint{position:fixed;right:24px;bottom:18px;font-size:14px;color:var(--faint);z-index:9}
-@media (prefers-reduced-motion:no-preference){ .slide{transition:none} }
 </style>
 </head>
 <body>
@@ -122,45 +123,47 @@ svg text{font-family:var(--font-b);font-variant-numeric:tabular-nums}
 
 <!-- 01 · Portada -->
 <section class="slide cover">
-  <div class="kicker">Presentación de marca y servicios · septiembre 2026</div>
+  <div class="kicker">Presentación para gerencias de marketing y de negocio · septiembre 2026</div>
   <div style="margin-top:auto">
     <h1 style="font-size:168px">SpindleLab<span class="gold">.</span></h1>
-    <p class="lead" style="font-size:44px;color:var(--fg);max-width:1300px;margin-top:20px;line-height:1.25;font-family:var(--font-h);font-weight:500">El punto donde te encuentran.</p>
-    <p class="lead" style="margin-top:28px">SEO técnico y visibilidad en motores de IA para empresas chilenas donde la confianza decide la compra. Un motor de adquisición completo, con un eje que no se apaga cuando cortas el presupuesto.</p>
+    <p style="font-size:46px;color:var(--fg);margin-top:16px;line-height:1.2;font-family:var(--font-h);font-weight:500">El punto donde te encuentran.</p>
+    <p class="lead" style="margin-top:24px;max-width:1300px">Un motor de adquisición para empresas chilenas donde la confianza decide la compra. Con un eje que sigue girando cuando cortas la pauta, y una medición que puedes comprobar tú mismo.</p>
   </div>
-  <div class="foot"><span>Para gerencias de marketing y de negocio</span><span>spindlelab.cl · hola@spindlelab.cl</span></div>
+  <div class="foot"><span>Mostramos, no prometemos</span><span>spindlelab.cl · hola@spindlelab.cl</span></div>
 </section>
 
-<!-- 02 · Por qué ahora -->
+<!-- 02 · Situación actual -->
 <section class="slide">
-  <div class="kicker">El cambio</div>
-  <h2>Tus clientes ya no solo buscan. Preguntan.</h2>
-  <p class="lead">Le preguntan a Google, y también a ChatGPT, a Gemini y a Perplexity. Cuando alguien pregunta por lo que tú haces, aparece una respuesta con tres o cuatro nombres. La pregunta es si uno de esos nombres es el tuyo.</p>
-  <div class="body">
-    <div class="grid g3" style="margin-top:8px">
-      <div class="card">
-        <div class="stat num" style="font-size:78px">2,5×</div>
-        <p style="margin-top:18px">Las páginas con tablas y listas estructuradas se citan hasta 2,5 veces más que el texto corrido. La IA premia lo que puede leer, entender y copiar.</p>
-      </div>
-      <div class="card">
-        <div class="stat num" style="font-size:78px;white-space:nowrap">25 % <span class="muted" style="font-size:40px">vs</span> 11 %</div>
-        <p style="margin-top:18px">Tasa de citación de rankings y listas frente a columnas de opinión. Los motores no evalúan tu sitio: extraen nombres de fuentes de terceros.</p>
-      </div>
-      <div class="card">
-        <div class="stat num" style="font-size:78px">0</div>
-        <p style="margin-top:18px">Negocios finales (clínicas, corredoras, estudios) nombrados por los tres motores en nuestra medición mensual sobre cinco preguntas de compra en Chile. Aparecen agencias, no las empresas.</p>
-      </div>
+  <div class="kicker">Situación actual · septiembre 2026</div>
+  <h2>Tus clientes ya preguntan. La respuesta ya se está dando, con o sin ti.</h2>
+  <div class="body" style="margin-top:28px">
+    <div class="grid g4 sit" style="gap:24px">
+      <div class="card"><div class="stat num">76 %</div><p style="margin-top:14px">de los chilenos ya usa IA. El uso número uno: buscar y resumir información (41 %). Las plataformas: ChatGPT y Gemini.</p></div>
+      <div class="card"><div class="stat num">94 %</div><p style="margin-top:14px">de los compradores B2B usó IA en su última compra. La IA generativa ya pesa más que el sitio del proveedor y que el vendedor como fuente.</p></div>
+      <div class="card"><div class="stat num">60 %</div><p style="margin-top:14px">de las búsquedas termina sin un clic. Se responden en la misma página. El tráfico orgánico cae entre 15 y 25 %.</p></div>
+      <div class="card"><div class="stat num">4,4×</div><p style="margin-top:14px">vale un visitante que llega desde una respuesta de IA frente a uno de Google, medido en conversión. Llega decidido.</p></div>
     </div>
-    <p class="src" style="margin-top:auto">Fuentes: patrones de citación reportados por quickseo.ai (acceso ago-2026) y medición mensual de menciones en IA de SpindleLab (jul y ago 2026, protocolo público en spindlelab.cl/diagnostico). Rangos de terceros, no cifras propias.</p>
+    <div class="grid" style="grid-template-columns:1.4fr 1fr;gap:56px;margin-top:28px;align-items:start">
+      <div>
+        <h3 style="font-size:28px">Lo que esto significa para tu empresa</h3>
+        <ul class="clean" style="margin-top:10px;font-size:21px">
+          <li><b>La pregunta de tu cliente ya tiene respuesta:</b> tres o cuatro nombres, elegidos por una máquina que lee fuentes de terceros, no tu sitio.</li>
+          <li><b>Los motores repiten las fuentes que ya citan.</b> El primero del rubro que entra en la respuesta se queda con ella. En dos rubros chilenos que medimos, ninguno de 69 sitios estaba listo.</li>
+          <li><b>Y el que llega desde ahí compra más:</b> ya comparó, ya se convenció, viene a cerrar.</li>
+        </ul>
+      </div>
+      <div class="card" style="border-color:rgba(47,169,155,.5);padding:22px 28px"><div class="label">La ventana</div><p style="font-size:22px;color:var(--fg);margin-top:8px">Está abierta porque casi nadie del rubro la ocupa. No se queda abierta: cada mes que tu competencia entra a la respuesta, sale más caro desplazarla.</p></div>
+    </div>
+    <p class="src" style="margin-top:auto">Fuentes: Barómetro Digital de Chile 2026 (Nativo Digital y Movistar, n&gt;1.400, may-2026) · Forrester, Buyers' Journey Survey 2026 (~18.000 compradores, ene-2026) · Bain &amp; Company, zero-click search (feb-2025) · Semrush, AI search traffic (jun-2025) · chequeo de SpindleLab sobre 69 sitios chilenos (ago-2026).</p>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">02</span></div>
 </section>
 
-<!-- 03 · La idea madre -->
+<!-- 03 · El circuito -->
 <section class="slide">
-  <div class="kicker">La idea madre · el eje y el circuito</div>
+  <div class="kicker">El problema en tus términos</div>
   <h2>Ya pagas Meta y ya pagas Google. El circuito se corta en el último tramo, justo donde se cobra.</h2>
-  <p class="lead">Los dos empujan al mismo lugar: tu landing, escrita para que la lea una persona y no la máquina que hoy responde por tu rubro. Después del corte no pasa energía.</p>
+  <p class="lead">Los dos empujan al mismo lugar: tu sitio, escrito para personas. Pero cada vez más, el primero en llegar es la máquina que responde por tu rubro. Si no puede leerte, la energía no pasa.</p>
   <div class="body">
     <div class="flow">
       <div class="node"><span class="label">1</span><div class="n">Te preguntan</div><div class="d">Un cliente describe su problema en Google o en un motor de IA.</div></div>
@@ -171,9 +174,9 @@ svg text{font-family:var(--font-b);font-variant-numeric:tabular-nums}
       <div class="link">→</div>
       <div class="node dark"><span class="label">4</span><div class="n">Convierte</div><div class="d">El formulario que ya pagaste con pauta se queda a oscuras.</div></div>
     </div>
-    <div class="grid g2" style="margin-top:44px">
-      <div><h3>Qué hacemos con eso</h3><p class="muted" style="font-size:24px;margin-top:10px">Tomamos el eje de tu operación (SEO técnico y visibilidad en IA) y conectamos las piezas que ya tienes: sitio, redes y pauta, en un solo sistema medido junto. <b style="color:var(--fg)">Spindle</b> es el husillo: la pieza que gira y transmite el movimiento.</p></div>
-      <div><h3>Por qué el orgánico es el eje</h3><p class="muted" style="font-size:24px;margin-top:10px">Es lo único que sigue trabajando cuando cortas el presupuesto de pauta. La pauta acelera; el eje sostiene.</p></div>
+    <div class="grid g2" style="margin-top:40px;gap:56px">
+      <div><h3>No es un problema de presupuesto</h3><p class="muted" style="font-size:23px;margin-top:8px">Es el último tramo del circuito. Se arregla una vez, con trabajo técnico concreto, y queda arreglado. La misma inversión de pauta empieza a rendir.</p></div>
+      <div><h3>Por eso el eje es el orgánico</h3><p class="muted" style="font-size:23px;margin-top:8px">Es lo único que sigue trabajando cuando cortas la pauta. La pauta acelera; el eje sostiene. <b style="color:var(--fg)">Spindle</b> es el husillo: la pieza que gira y transmite el movimiento.</p></div>
     </div>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">03</span></div>
@@ -181,22 +184,16 @@ svg text{font-family:var(--font-b);font-variant-numeric:tabular-nums}
 
 <!-- 04 · Evidencia: 69 sitios -->
 <section class="slide">
-  <div class="kicker">Evidencia · lo que muestran 69 sitios chilenos</div>
-  <h2>Corrimos nuestro chequeo sobre dos rubros completos. La mediana no llega a 60 sobre 100.</h2>
+  <div class="kicker">Evidencia · 69 sitios chilenos medidos con nuestro chequeo</div>
+  <h2>Dos rubros completos. La mediana no llega a 60 sobre 100.</h2>
   <div class="body">
     <div class="grid" style="grid-template-columns:1.35fr 1fr;gap:56px;align-items:start">
       <div>
         <svg viewBox="0 0 1040 470" width="1040" height="470" role="img" aria-label="Distribución de puntajes del chequeo por rubro">
-          <!-- grid -->
-          <g stroke="rgba(247,245,240,.1)" stroke-width="1">
-            <line x1="90" y1="60" x2="1020" y2="60"/><line x1="90" y1="150" x2="1020" y2="150"/><line x1="90" y1="240" x2="1020" y2="240"/><line x1="90" y1="330" x2="1020" y2="330"/>
-          </g>
+          <g stroke="rgba(247,245,240,.1)" stroke-width="1"><line x1="90" y1="60" x2="1020" y2="60"/><line x1="90" y1="150" x2="1020" y2="150"/><line x1="90" y1="240" x2="1020" y2="240"/><line x1="90" y1="330" x2="1020" y2="330"/></g>
           <line x1="90" y1="420" x2="1020" y2="420" stroke="rgba(247,245,240,.3)"/>
-          <g fill="#6b7580" font-size="17" text-anchor="end">
-            <text x="76" y="426">0</text><text x="76" y="336">5</text><text x="76" y="246">10</text><text x="76" y="156">15</text><text x="76" y="66">20</text>
-          </g>
+          <g fill="#6b7580" font-size="17" text-anchor="end"><text x="76" y="426">0</text><text x="76" y="336">5</text><text x="76" y="246">10</text><text x="76" y="156">15</text><text x="76" y="66">20</text></g>
           <text x="20" y="30" fill="#6b7580" font-size="17">Sitios</text>
-          <!-- bins: x centers 175, 330, 485, 640, 795, 950; bar w 56; scale 18px/sitio -->
           <g>
             <rect x="143" y="312" width="56" height="108" fill="#2fa99b" rx="4"/><rect x="203" y="366" width="56" height="54" fill="#9aa4b0" rx="4"/>
             <rect x="298" y="96" width="56" height="324" fill="#2fa99b" rx="4"/><rect x="358" y="258" width="56" height="162" fill="#9aa4b0" rx="4"/>
@@ -206,27 +203,20 @@ svg text{font-family:var(--font-b);font-variant-numeric:tabular-nums}
             <rect x="918" y="402" width="56" height="18" fill="#2fa99b" rx="4"/><rect x="978" y="419" width="56" height="1" fill="#9aa4b0"/>
           </g>
           <g fill="#f2efe8" font-size="19" text-anchor="middle" font-weight="600">
-            <text x="171" y="300">6</text><text x="231" y="354">3</text>
-            <text x="326" y="84">18</text><text x="386" y="246">9</text>
-            <text x="481" y="336">4</text><text x="541" y="336">4</text>
-            <text x="636" y="300">6</text><text x="696" y="246">9</text>
-            <text x="791" y="354">3</text><text x="851" y="300">6</text>
-            <text x="946" y="390">1</text><text x="1006" y="408">0</text>
+            <text x="171" y="300">6</text><text x="231" y="354">3</text><text x="326" y="84">18</text><text x="386" y="246">9</text><text x="481" y="336">4</text><text x="541" y="336">4</text><text x="636" y="300">6</text><text x="696" y="246">9</text><text x="791" y="354">3</text><text x="851" y="300">6</text><text x="946" y="390">1</text><text x="1006" y="408">0</text>
           </g>
-          <g fill="#9aa4b0" font-size="18" text-anchor="middle">
-            <text x="201" y="452">30–39</text><text x="356" y="452">40–49</text><text x="511" y="452">50–59</text><text x="666" y="452">60–69</text><text x="821" y="452">70–79</text><text x="976" y="452">80–89</text>
-          </g>
+          <g fill="#9aa4b0" font-size="18" text-anchor="middle"><text x="201" y="452">30–39</text><text x="356" y="452">40–49</text><text x="511" y="452">50–59</text><text x="666" y="452">60–69</text><text x="821" y="452">70–79</text><text x="976" y="452">80–89</text></g>
           <text x="1020" y="30" fill="#6b7580" font-size="17" text-anchor="end">Puntaje del chequeo (0 a 100)</text>
         </svg>
-        <div class="legend"><span><i style="background:#2fa99b"></i>Inmobiliarias y corredoras (38 sitios)</span><span><i style="background:#9aa4b0"></i>Estudios contables (31 sitios)</span></div>
+        <div class="legend"><span><i style="background:#2fa99b"></i>Inmobiliarias y corredoras (38)</span><span><i style="background:#9aa4b0"></i>Estudios contables (31)</span></div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:30px">
-        <div><div class="stat num">45<span class="muted" style="font-size:40px">/100</span></div><small class="muted" style="font-size:22px;display:block;margin-top:10px">Mediana en inmobiliarias. 24 de 38 sitios quedan bajo 50 puntos.</small></div>
-        <div><div class="stat num">58<span class="muted" style="font-size:40px">/100</span></div><small class="muted" style="font-size:22px;display:block;margin-top:10px">Mediana en estudios contables. 12 de 31 bajo 50.</small></div>
-        <div><div class="stat num gold">85<span class="muted" style="font-size:40px">/100</span></div><small class="muted" style="font-size:22px;display:block;margin-top:10px">spindlelab.cl en el mismo chequeo, 2 de septiembre de 2026. Auditamos sitios para vivir; el nuestro pasa la auditoría y cualquiera puede comprobarlo.</small></div>
+      <div style="display:flex;flex-direction:column;gap:26px">
+        <div><div class="stat num">45<span class="muted" style="font-size:38px">/100</span></div><p class="muted" style="font-size:22px;margin-top:8px">Mediana en inmobiliarias. 24 de 38 bajo 50.</p></div>
+        <div><div class="stat num">58<span class="muted" style="font-size:38px">/100</span></div><p class="muted" style="font-size:22px;margin-top:8px">Mediana en estudios contables. 12 de 31 bajo 50.</p></div>
+        <div><div class="stat num gold">85<span class="muted" style="font-size:38px">/100</span></div><p class="muted" style="font-size:22px;margin-top:8px">spindlelab.cl en el mismo chequeo, 2 de septiembre. Auditamos sitios para vivir; el nuestro pasa la auditoría, y cualquiera puede comprobarlo.</p></div>
       </div>
     </div>
-    <p class="src" style="margin-top:auto">Fuente: corridas del chequeo público de SpindleLab (spindlelab.cl/diagnostico), 31 de agosto de 2026, sobre 69 sitios de dos rubros. Las empresas no se nombran. El puntaje mide si un sitio está preparado para que la IA lo lea, lo entienda y lo cite; no mide si hoy lo citan.</p>
+    <p class="src" style="margin-top:auto">Corridas del chequeo público (spindlelab.cl/diagnostico), 31 de agosto de 2026. Empresas no nombradas. El puntaje mide si un sitio está listo para que la IA lo lea, lo entienda y lo cite.</p>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">04</span></div>
 </section>
@@ -234,72 +224,67 @@ svg text{font-family:var(--font-b);font-variant-numeric:tabular-nums}
 <!-- 05 · Lo que más falla -->
 <section class="slide">
   <div class="kicker">Evidencia · dónde se corta el circuito</div>
-  <h2>No son problemas de diseño ni de presupuesto. Son ocho cosas que casi nadie tiene puestas.</h2>
+  <h2>No es diseño ni presupuesto. Son ocho cosas que casi nadie tiene puestas.</h2>
   <div class="body">
-    <div class="grid" style="grid-template-columns:1.25fr 1fr;gap:64px;align-items:start;margin-top:4px">
+    <div class="grid" style="grid-template-columns:1.25fr 1fr;gap:64px;align-items:start">
       <svg viewBox="0 0 1100 560" width="960" height="489" role="img" aria-label="Chequeos que más fallan en 69 sitios">
-        <!-- scale: 69 sitios = 640px, from x=420 -->
         <g font-size="22" fill="#f2efe8">
-          <text x="0" y="40">Preguntas frecuentes (FAQPage)</text>
-          <text x="0" y="104">Persona con credenciales detrás</text>
-          <text x="0" y="168">Títulos que responden preguntas</text>
-          <text x="0" y="232">3 perfiles externos (sameAs)</text>
-          <text x="0" y="296">Entidad con dirección y contacto</text>
-          <text x="0" y="360">Contenido con fecha</text>
-          <text x="0" y="424">Archivo llms.txt</text>
-          <text x="0" y="488">Negocio declarado como entidad</text>
+          <text x="0" y="40">Preguntas frecuentes (FAQPage)</text><text x="0" y="104">Persona con credenciales detrás</text><text x="0" y="168">Títulos que responden preguntas</text><text x="0" y="232">3 perfiles externos (sameAs)</text><text x="0" y="296">Entidad con dirección y contacto</text><text x="0" y="360">Contenido con fecha</text><text x="0" y="424">Archivo llms.txt</text><text x="0" y="488">Negocio declarado como entidad</text>
         </g>
         <g fill="#2fa99b">
-          <rect x="420" y="18" width="621" height="30" rx="4"/>
-          <rect x="420" y="82" width="594" height="30" rx="4"/>
-          <rect x="420" y="146" width="594" height="30" rx="4"/>
-          <rect x="420" y="210" width="584" height="30" rx="4"/>
-          <rect x="420" y="274" width="556" height="30" rx="4"/>
-          <rect x="420" y="338" width="473" height="30" rx="4"/>
-          <rect x="420" y="402" width="454" height="30" rx="4"/>
-          <rect x="420" y="466" width="399" height="30" rx="4"/>
+          <rect x="420" y="18" width="621" height="30" rx="4"/><rect x="420" y="82" width="594" height="30" rx="4"/><rect x="420" y="146" width="594" height="30" rx="4"/><rect x="420" y="210" width="584" height="30" rx="4"/><rect x="420" y="274" width="556" height="30" rx="4"/><rect x="420" y="338" width="473" height="30" rx="4"/><rect x="420" y="402" width="454" height="30" rx="4"/><rect x="420" y="466" width="399" height="30" rx="4"/>
         </g>
-        <g font-size="21" fill="#f2efe8" font-weight="600" text-anchor="start">
-          <text x="1051" y="41">67</text><text x="1024" y="105">64</text><text x="1024" y="169">64</text><text x="1014" y="233">63</text><text x="986" y="297">60</text><text x="903" y="361">51</text><text x="884" y="425">49</text><text x="829" y="489">43</text>
-        </g>
+        <g font-size="21" fill="#f2efe8" font-weight="600"><text x="1051" y="41">67</text><text x="1024" y="105">64</text><text x="1024" y="169">64</text><text x="1014" y="233">63</text><text x="986" y="297">60</text><text x="903" y="361">51</text><text x="884" y="425">49</text><text x="829" y="489">43</text></g>
         <line x1="420" y1="6" x2="420" y2="510" stroke="rgba(247,245,240,.3)"/>
         <text x="420" y="545" fill="#6b7580" font-size="17">0</text><text x="1060" y="545" fill="#6b7580" font-size="17" text-anchor="end">69 sitios</text>
       </svg>
       <div>
         <div class="stat num gold" style="font-size:80px">67 <span class="muted" style="font-size:36px">de 69</span></div>
-        <p class="muted" style="font-size:22px;margin-top:10px">sitios no tienen ni una pregunta frecuente marcada para que la IA la copie. Es el arreglo más barato de la lista y el que más se repite.</p>
-        <h3 style="margin-top:32px">Qué significa para un gerente</h3>
-        <ul class="clean" style="margin-top:12px;font-size:21px">
-          <li>Cada uno de estos puntos tiene un arreglo técnico concreto y verificable. No dependen de "producir más contenido".</li>
-          <li>Se corrigen una vez y quedan. Es trabajo de eje, no de pauta.</li>
-          <li>Lo que nadie del rubro tiene puesto es, por definición, ventaja para el primero que lo ponga.</li>
+        <p class="muted" style="font-size:22px;margin-top:10px">sitios no tienen ni una pregunta frecuente marcada para que la IA la copie. Es el arreglo más barato de la lista.</p>
+        <h3 style="margin-top:30px">Para un gerente</h3>
+        <ul class="clean" style="margin-top:12px;font-size:22px">
+          <li>Cada punto tiene un arreglo técnico concreto y verificable. No depende de producir más contenido.</li>
+          <li>Se corrige una vez y queda. Es trabajo de eje, no de pauta.</li>
+          <li>Lo que nadie del rubro tiene puesto es ventaja para el primero que lo ponga.</li>
         </ul>
       </div>
     </div>
-    <p class="src" style="margin-top:auto;max-width:1700px">Fuente: mismas 69 corridas del 31 de agosto de 2026. Cada barra cuenta los sitios que fallan ese chequeo, sumando ambos rubros.</p>
+    <p class="src" style="margin-top:auto">Mismas 69 corridas del 31 de agosto de 2026. Cada barra cuenta los sitios que fallan ese chequeo.</p>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">05</span></div>
 </section>
 
-<!-- 06 · Qué hacemos: el motor -->
+<!-- 06 · Idea madre: el motor -->
 <section class="slide">
-  <div class="kicker">Qué hacemos</div>
-  <h2>Un motor de adquisición. No cuatro servicios sueltos.</h2>
-  <p class="lead" style="max-width:1700px">El eje es el SEO técnico y la visibilidad en IA. Las demás piezas amplían y convierten, conectadas al eje y medidas junto con él.</p>
-  <div class="body">
-    <div class="grid" style="grid-template-columns:1.15fr 1fr 1fr 1fr;gap:28px;margin-top:6px">
-      <div class="card" style="border-color:rgba(47,169,155,.55);background:rgba(47,169,155,.08)">
-        <div class="label">01 · El eje</div>
-        <h3 style="margin-top:12px">Visibilidad: SEO técnico + IA (AEO/GEO)</h3>
-        <p style="font-size:22px">Que Google y los motores generativos te encuentren, te entiendan y te citen. Auditoría, proyecto de visibilidad en IA o acompañamiento mensual.</p>
+  <div class="kicker">La idea madre</div>
+  <h2>Un motor mueve lo que hoy tienes suelto. Y por eso sus resultados se pueden creer.</h2>
+  <div class="body" style="margin-top:34px">
+    <div class="vs">
+      <div class="box">
+        <div class="label" style="color:var(--faint)">Lo que hoy tienes: servicios sueltos</div>
+        <p class="muted" style="font-size:22px;margin-top:10px">Uno hizo el sitio, otro lleva las redes, otro la pauta. Cada uno con su informe, su métrica y su explicación. Nadie mira si la IA te nombra, y nadie responde por el conjunto.</p>
+        <div class="chips">
+          <div class="chip"><b>Sitio</b>una agencia, sin medición</div>
+          <div class="chip"><b>Redes</b>alcance, likes</div>
+          <div class="chip"><b>Pauta</b>clics, CPC</div>
+          <div class="chip"><b>SEO</b>posiciones</div>
+        </div>
       </div>
-      <div class="card"><div class="label">02 · Amplía</div><h3 style="margin-top:12px">Redes sociales</h3><p style="font-size:22px">Presencia, comunidad y pauta social en LinkedIn y Meta, donde tu cliente ya pasa el día.</p></div>
-      <div class="card"><div class="label">02 · Acelera</div><h3 style="margin-top:12px">Paid media (Google)</h3><p style="font-size:22px">Búsqueda de alta intención, presupuesto controlado, sin los defaults que la plataforma activa en tu contra.</p></div>
-      <div class="card"><div class="label">02 · Convierte</div><h3 style="margin-top:12px">Desarrollo web</h3><p style="font-size:22px">La base donde todo aterriza: sitio a medida con panel y SEO técnico desde el primer commit.</p></div>
+      <div class="box motor">
+        <div class="label">Lo que proponemos: un motor con eje</div>
+        <p style="font-size:22px;margin-top:10px;color:var(--fg)">El eje es el SEO técnico y la visibilidad en IA: la parte que sigue girando cuando cortas la pauta. Sitio, redes y pauta se conectan a ese eje. Una landing, una medición, un informe, un responsable.</p>
+        <div class="chips">
+          <div class="chip eje"><b>Eje · SEO técnico + visibilidad en IA</b>que te encuentren, te entiendan y te citen</div>
+          <div class="chip"><b>Sitio</b>donde aterriza todo</div>
+          <div class="chip"><b>Redes</b>amplía</div>
+          <div class="chip"><b>Pauta</b>acelera</div>
+        </div>
+      </div>
     </div>
-    <div class="grid g2" style="margin-top:30px;gap:56px">
-      <div><h3 style="font-size:26px">Dentro del motor</h3><p class="muted" style="font-size:21px;margin-top:6px">Estrategia, auditoría, implementación técnica, pauta, comunidad, desarrollo y medición. Todo lo que hace que el contenido funcione.</p></div>
-      <div><h3 style="font-size:26px">Fuera (lo pones tú)</h3><p class="muted" style="font-size:21px;margin-top:6px">Redacción de piezas, diseño gráfico, producción de video. Si no tienes quién lo produzca, te conectamos con partners de confianza.</p></div>
+    <div class="grid g3" style="margin-top:34px;gap:40px">
+      <div><div class="label">Mueve</div><p class="muted" style="font-size:22px;margin-top:6px">Un eje que trabaja aunque cortes la inversión. Todo lo demás se cuelga de él.</p></div>
+      <div><div class="label">Conecta</div><p class="muted" style="font-size:22px;margin-top:6px">La misma landing recibe la pauta, el orgánico y la cita de la IA. Se mide junto, no por partes.</p></div>
+      <div><div class="label">Se puede creer</div><p class="muted" style="font-size:22px;margin-top:6px">Una sola medición, con protocolo público, fecha y fuente. No hay tres informes que se contradigan.</p></div>
     </div>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">06</span></div>
@@ -308,18 +293,19 @@ svg text{font-family:var(--font-b);font-variant-numeric:tabular-nums}
 <!-- 07 · Método -->
 <section class="slide">
   <div class="kicker">Cómo trabajamos · Método SpindleLab</div>
-  <h2>Cuatro fases, publicadas completas antes de que nos escribas.</h2>
+  <h2>Cuatro fases, publicadas completas. Semanas, no trimestres.</h2>
+  <p class="lead">Trabajamos con agentes de IA que hacen el trabajo pesado: auditar, medir, redactar el código y el contenido. El criterio y la conversación contigo siguen siendo humanos.</p>
   <div class="body">
-    <div class="steps" style="margin-top:10px">
-      <div class="step"><div class="k">FASE 01</div><h3>Diagnóstico técnico</h3><p>Todo parte con tu URL. Auditamos rastreo, indexación, velocidad, datos estructurados y señales de confianza, y sintetizamos en una página.</p><dl><dt>Dura</dt><dd>24 h el mini-diagnóstico · 1 semana la versión completa</dd><dt>Recibes</dt><dd>Hallazgos priorizados por impacto</dd></dl></div>
-      <div class="step"><div class="k">FASE 02</div><h3>Estrategia AEO/GEO</h3><p>Medimos tu presencia en ChatGPT, Gemini y Perplexity con las preguntas que haría tu cliente, documentamos quién gana hoy y diseñamos la hoja de ruta.</p><dl><dt>Dura</dt><dd>1 a 2 semanas</dd><dt>Recibes</dt><dd>Línea base en IA + plan de citabilidad</dd></dl></div>
-      <div class="step"><div class="k">FASE 03</div><h3>Implementación</h3><p>Ejecutamos los cambios técnicos y de contenido con tu equipo o directamente: indexación, velocidad, schema listo para pegar, páginas que responden preguntas.</p><dl><dt>Dura</dt><dd>2 a 6 semanas según alcance</dd><dt>Recibes</dt><dd>Cambios implementados y verificados</dd></dl></div>
-      <div class="step"><div class="k">FASE 04</div><h3>Monitoreo</h3><p>Cada quince días medimos menciones en IA con protocolo público, más posiciones en Google y tráfico orgánico. Informe de una página en lenguaje de negocio.</p><dl><dt>Ritmo</dt><dd>Informes quincenales · reunión mensual</dd><dt>Recibes</dt><dd>Evolución medible contra la línea base</dd></dl></div>
+    <div class="steps">
+      <div class="step"><div class="k">FASE 01</div><h3>Diagnóstico</h3><p>Tu URL, y en 24 horas una página con lo que te frena y lo que mueve la aguja. Luego 20 minutos de conversación.</p><dl><dt>Dura</dt><dd>24 horas · gratis</dd><dt>Recibes</dt><dd>Hallazgos priorizados por impacto</dd></dl></div>
+      <div class="step"><div class="k">FASE 02</div><h3>Línea base y plan</h3><p>Auditoría de las cinco capas y medición en ChatGPT, Gemini y Perplexity con las preguntas que hace tu cliente. Quién gana hoy y con qué fuentes.</p><dl><dt>Dura</dt><dd>5 días hábiles</dd><dt>Recibes</dt><dd>Línea base en IA + plan de citabilidad</dd></dl></div>
+      <div class="step"><div class="k">FASE 03</div><h3>Implementación</h3><p>Entidad, autor, FAQ, llms.txt, títulos, fechas, velocidad. Código listo para pegar o ejecución directa nuestra.</p><dl><dt>Dura</dt><dd>2 a 3 semanas</dd><dt>Recibes</dt><dd>Cambios implementados y verificados</dd></dl></div>
+      <div class="step"><div class="k">FASE 04</div><h3>Monitoreo</h3><p>Cada quince días: menciones en IA con protocolo público, posiciones y tráfico. Una página en lenguaje de negocio.</p><dl><dt>Ritmo</dt><dd>Quincenal · reunión mensual</dd><dt>Recibes</dt><dd>Evolución contra la línea base</dd></dl></div>
     </div>
-    <div class="grid g3" style="margin-top:52px">
-      <div><div class="label">Regla I</div><h3 style="margin-top:8px">Priorizado por impacto</h3><p class="muted" style="font-size:22px">Nunca 200 hallazgos sin jerarquía. Primero lo que mueve resultados.</p></div>
-      <div><div class="label">Regla II</div><h3 style="margin-top:8px">Lenguaje de negocio</h3><p class="muted" style="font-size:22px">Informes que un gerente entiende sin traductor. La jerga se queda en nuestras herramientas.</p></div>
-      <div><div class="label">Regla III</div><h3 style="margin-top:8px">Sin promesas mágicas</h3><p class="muted" style="font-size:22px">Nadie puede garantizar respuestas exactas de una IA. Prometemos señales medibles y trabajo verificable.</p></div>
+    <div class="grid g3" style="margin-top:44px;gap:40px">
+      <div><div class="label">Regla I</div><p class="muted" style="font-size:22px;margin-top:6px"><b style="color:var(--fg)">Priorizado por impacto.</b> Nunca 200 hallazgos sin jerarquía.</p></div>
+      <div><div class="label">Regla II</div><p class="muted" style="font-size:22px;margin-top:6px"><b style="color:var(--fg)">Lenguaje de negocio.</b> Informes que un gerente entiende sin traductor.</p></div>
+      <div><div class="label">Regla III</div><p class="muted" style="font-size:22px;margin-top:6px"><b style="color:var(--fg)">Sin promesas mágicas.</b> Señales medibles y trabajo verificable.</p></div>
     </div>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">07</span></div>
@@ -327,265 +313,253 @@ svg text{font-family:var(--font-b);font-variant-numeric:tabular-nums}
 
 <!-- 08 · Cómo medimos -->
 <section class="slide">
-  <div class="kicker">Cómo medimos · el diferencial verificable</div>
-  <h2>Publicamos la metodología completa. Puedes repetir el chequeo a mano si quieres.</h2>
+  <div class="kicker">Cómo medimos · lo que puedes comprobar tú mismo</div>
+  <h2>Publicamos la metodología completa. Nadie más del rubro lo hace.</h2>
   <div class="body">
-    <div class="grid" style="grid-template-columns:1fr 1fr;gap:56px;margin-top:6px;align-items:start">
+    <div class="grid g2" style="gap:56px;align-items:start">
       <div>
-        <h3>El chequeo público: 21 verificaciones, con peso declarado</h3>
-        <div class="code" style="margin-top:20px">
+        <h3>El chequeo público: 21 verificaciones con peso declarado</h3>
+        <div class="code" style="margin-top:16px">
 <b>¿Te pueden leer?</b> · 30 puntos<br>GPTBot · ClaudeBot · PerplexityBot · Google-Extended · HTTPS<br><br>
 <b>¿Te entienden?</b> · 40 puntos<br>JSON-LD · Organization · dirección y contacto · sameAs<br>autor con credenciales · título · meta description · H1<br><br>
 <b>¿Te pueden citar?</b> · 30 puntos<br>llms.txt · FAQPage · sitemap · canonical · idioma<br>títulos en pregunta · fechas · texto visible
         </div>
-        <p class="muted" style="font-size:22px;margin-top:18px">Gratis, sin registro, sin dejar el correo. Lee solo páginas públicas. Devuelve un puntaje de 0 a 100 y las tres prioridades a corregir.</p>
+        <p class="muted" style="font-size:21px;margin-top:14px">Gratis, sin registro, sin dejar el correo. Puntaje de 0 a 100 y las tres prioridades a corregir.</p>
       </div>
       <div>
         <h3>La medición mensual: le preguntamos a los motores</h3>
-        <ul class="clean" style="margin-top:18px;font-size:22px">
-          <li><b>Cinco preguntas fijas por tres motores</b> (ChatGPT, Gemini y Perplexity), siempre las mismas. Cambiarlas rompería la comparación entre meses.</li>
-          <li><b>Cada respuesta con fecha y fuente registrada.</b> Se anota quién aparece en tu lugar y de qué ranking, directorio o artículo lo sacó el motor.</li>
-          <li><b>Escala publicada</b> de 0 a 100: invisible, presencia marginal, presencia establecida, referente de categoría, dominancia.</li>
-          <li><b>Nos excluimos de nuestras propias muestras.</b> Medimos; no nos puntuamos.</li>
+        <ul class="clean" style="margin-top:16px;font-size:22px">
+          <li><b>Cinco preguntas fijas por tres motores,</b> siempre las mismas. Cambiarlas rompería la comparación.</li>
+          <li><b>Cada respuesta con fecha y fuente.</b> Quién aparece en tu lugar y de qué ranking o directorio lo sacó el motor.</li>
+          <li><b>Escala publicada de 0 a 100,</b> de invisible a dominancia.</li>
+          <li><b>Nos excluimos de nuestras muestras.</b> Medimos; no nos puntuamos.</li>
         </ul>
-        <div class="card" style="margin-top:18px;padding:22px 28px"><p style="font-size:21px"><b style="color:var(--fg)">Lo que el chequeo no mide:</b> si hoy te citan. Eso depende de fuentes externas y se revisa a mano en el diagnóstico completo. Decirlo es parte del método.</p></div>
+        <div class="card" style="margin-top:16px;padding:20px 26px"><p style="font-size:21px"><b style="color:var(--fg)">Lo que el chequeo no mide:</b> si hoy te citan. Eso depende de fuentes externas y se revisa a mano en el diagnóstico. Decirlo es parte del método.</p></div>
       </div>
     </div>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">08</span></div>
 </section>
 
-<!-- 09 · Benchmark de mercado -->
+<!-- 09 · Benchmark con nombres -->
 <section class="slide">
-  <div class="kicker">Benchmark · cómo se compara con el mercado chileno</div>
-  <h2>El hueco del mercado no es técnico. Es de confianza.</h2>
-  <p class="lead" style="margin-top:14px;max-width:1700px">Fichamos 20 agencias que venden "visibilidad en IA" en Chile. Casi ninguna publica precio ni metodología.</p>
-  <div class="body">
-    <table class="matrix" style="margin-top:10px">
-      <thead><tr><th>Patrón de competidor</th><th>Publica precios</th><th>Publica metodología</th><th>Herramienta pública gratis</th><th>Casos con datos</th><th>Se pone #1 en su propio ranking</th></tr></thead>
+  <div class="kicker">Benchmark · nueve agencias chilenas que venden visibilidad en IA</div>
+  <h2 style="font-size:56px">El problema del mercado no es técnico. Es de confianza: precio escondido, método sin publicar, rankings propios.</h2>
+  <div class="body" style="margin-top:28px">
+    <table class="bm">
+      <thead><tr><th>Agencia</th><th>Publica precios</th><th>Publica metodología</th><th>Herramienta pública gratis</th><th>Casos con datos</th><th>Ranking propio con ella #1</th></tr></thead>
       <tbody>
-        <tr><td>Agencia 360 con módulo AEO/GEO añadido</td><td class="part">A veces</td><td class="no">No</td><td class="no">No</td><td class="part">Pocos</td><td class="yes">Sí, varias</td></tr>
-        <tr><td>Boutique AEO con método e índice propio</td><td class="part">Solo el diagnóstico</td><td class="part">Parcial</td><td class="part">Índice, sin chequeo</td><td class="part">Pocos</td><td class="part">Algunas</td></tr>
-        <tr><td>Agencia con benchmark y métrica propia</td><td class="no">No (fee + comisión)</td><td class="part">Parcial</td><td class="no">No</td><td class="yes">Sí</td><td class="no">No consta</td></tr>
-        <tr><td>"Agencias de IA" en redes (piloto automático)</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="no">No verificables</td><td class="no">No aplica</td></tr>
-        <tr class="us"><td>SpindleLab<span class="gold">.</span></td><td class="yes">Sí, las 6 soluciones</td><td class="yes">Sí, 21 chequeos con pesos</td><td class="yes">Sí, sin registro</td><td class="part">El primero, con permiso, en curso</td><td class="yes">No. Nos excluimos</td></tr>
+        <tr><td>Bigbuda</td><td class="yes">Sí · $890k/mes con IA</td><td class="part">Parcial · 4 fases</td><td class="no">No (solo CRO)</td><td class="no">Ninguno de IA</td><td class="yes">Sí · 93/100</td></tr>
+        <tr><td>Best Solution</td><td class="yes">Sí · $350k a $1,2M/mes</td><td class="part">Parcial</td><td class="yes">Sí · simulador</td><td class="part">Con nombre, sin línea base</td><td class="yes">Sí · en 4 listas</td></tr>
+        <tr><td>Nitten</td><td class="yes">Sí · tarifario completo</td><td class="yes">Sí · SAGEO + índice</td><td class="yes">Sí · Radar IA</td><td class="part">Sin nombre de cliente</td><td class="yes">Sí</td></tr>
+        <tr><td>Focus Ads</td><td class="no">No · fee + 3 a 10 % del revenue</td><td class="part">Parcial · sin fórmula</td><td class="no">"Pronto"</td><td class="yes">Sí · autorreportados</td><td class="part">Parcial</td></tr>
+        <tr><td>Maqui</td><td class="yes">Sí · $490k a $1,69M/mes</td><td class="part">Parcial</td><td class="yes">Sí · por correo</td><td class="part">2, ninguno de IA</td><td class="no">No</td></tr>
+        <tr><td>Milimetrix</td><td class="no">No</td><td class="part">Parcial · 6 pasos</td><td class="no">No</td><td class="part">2, sin método de medición</td><td class="yes">Sí · 97/100</td></tr>
+        <tr><td>Loup</td><td class="no">No · piso $3,1M/mes</td><td class="part">Parcial</td><td class="no">No</td><td class="part">2 anónimos</td><td class="yes">Sí · en 3 listas</td></tr>
+        <tr><td>Seonet</td><td class="no">No</td><td class="part">Parcial · 7 fases</td><td class="no">No</td><td class="no">Solo logos</td><td class="no">No</td></tr>
+        <tr><td>Agencia ROI</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="no">Solo logos</td><td class="no">No</td></tr>
+        <tr class="us"><td>SpindleLab<span class="gold">.</span></td><td class="yes">Sí · 6 soluciones</td><td class="yes">Sí · 21 chequeos + protocolo</td><td class="yes">Sí · sin registro</td><td class="part">El primero, con permiso, en curso</td><td class="yes">No. Nos excluimos</td></tr>
       </tbody>
     </table>
-    <p class="src" style="margin-top:auto;max-width:1700px">Fuente: registro de competidores de SpindleLab (agosto de 2026, 20 fichas con URL y fecha). Se describen patrones, no nombres. El primer caso público con datos requiere permiso del cliente y está en curso.</p>
+    <p class="src" style="margin-top:auto">Verificado en los sitios de cada agencia el 2 de septiembre de 2026 (detalle y URL por casilla en el registro de competidores de SpindleLab). Precios netos de IVA. "Ranking propio": la agencia publica una lista de "mejores agencias" y se ubica primera.</p>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">09</span></div>
 </section>
 
-<!-- 10 · Benchmark de precios -->
+<!-- 10 · Precios con nombres -->
 <section class="slide">
-  <div class="kicker">Benchmark · precios de mercado frente a los nuestros</div>
-  <h2>Deliberadamente bajo el techo del mercado, y publicados.</h2>
-  <p class="lead">Casi ninguna agencia chilena publica tarifario. Estos rangos salen de planes reales publicados y de artículos del propio rubro; el "desde" de SpindleLab es el precio de partida vigente en el sitio.</p>
-  <div class="body">
-    <svg viewBox="0 0 1700 420" width="1700" height="420" role="img" aria-label="Rangos de precio de mercado y precio de partida de SpindleLab">
-      <!-- scale: 0..2.600.000 CLP over x 470..1660 (1190px) => 0.0004577 px/CLP -->
-      <g fill="#6b7580" font-size="17">
-        <text x="470" y="400">$0</text><text x="699" y="400" text-anchor="middle">$500k</text><text x="928" y="400" text-anchor="middle">$1,0M</text><text x="1156" y="400" text-anchor="middle">$1,5M</text><text x="1385" y="400" text-anchor="middle">$2,0M</text><text x="1614" y="400" text-anchor="middle">$2,5M</text>
+  <div class="kicker">Benchmark · cuánto cuesta un acompañamiento mensual con visibilidad en IA</div>
+  <h2>Publicado, y bajo el techo del mercado.</h2>
+  <div class="body" style="margin-top:30px">
+    <svg viewBox="0 0 1700 430" width="1700" height="430" role="img" aria-label="Precio mensual publicado por agencia">
+      <g stroke="rgba(247,245,240,.09)"><line x1="656" y1="10" x2="656" y2="392"/><line x1="842" y1="10" x2="842" y2="392"/><line x1="1028" y1="10" x2="1028" y2="392"/><line x1="1214" y1="10" x2="1214" y2="392"/><line x1="1400" y1="10" x2="1400" y2="392"/><line x1="1586" y1="10" x2="1586" y2="392"/></g>
+      <g fill="#6b7580" font-size="17"><text x="470" y="420">$0</text><text x="656" y="420" text-anchor="middle">$500k</text><text x="842" y="420" text-anchor="middle">$1,0M</text><text x="1028" y="420" text-anchor="middle">$1,5M</text><text x="1214" y="420" text-anchor="middle">$2,0M</text><text x="1400" y="420" text-anchor="middle">$2,5M</text><text x="1586" y="420" text-anchor="middle">$3,0M</text></g>
+      <line x1="470" y1="10" x2="470" y2="392" stroke="rgba(247,245,240,.3)"/>
+      <g font-size="23" fill="#f2efe8" font-weight="600"><text x="0" y="46">Innoweb</text><text x="0" y="98">SpindleLab</text><text x="0" y="150">Best Solution</text><text x="0" y="202">Nitten</text><text x="0" y="254">Bigbuda</text><text x="0" y="306">Maqui</text><text x="0" y="358">Loup</text></g>
+      <g font-size="17" fill="#6b7580"><text x="0" y="70">plan Autoridad IA, agencia WordPress</text><text x="0" y="122">Esencial y Pro, + IVA</text><text x="0" y="174">plan SGE &amp; Topical Authority</text><text x="0" y="226">Starter; baja a $450k desde el mes 5</text><text x="0" y="278">SEO + AEO + GEO</text><text x="0" y="330">Scale, incluye Google y Meta Ads</text><text x="0" y="382">piso de presupuesto en su formulario</text></g>
+      <g fill="#9aa4b0">
+        <circle cx="541" cy="40" r="10"/><circle cx="712" cy="144" r="10"/><circle cx="749" cy="196" r="10"/><circle cx="801" cy="248" r="10"/><circle cx="1098" cy="300" r="10"/>
       </g>
-      <g stroke="rgba(247,245,240,.09)"><line x1="699" y1="10" x2="699" y2="372"/><line x1="928" y1="10" x2="928" y2="372"/><line x1="1156" y1="10" x2="1156" y2="372"/><line x1="1385" y1="10" x2="1385" y2="372"/><line x1="1614" y1="10" x2="1614" y2="372"/></g>
-      <!-- rows -->
-      <g font-size="24" fill="#f2efe8" font-weight="600"><text x="0" y="52">Auditoría SEO técnica</text><text x="0" y="140">Acompañamiento mensual</text><text x="0" y="228">Visibilidad en IA (proyecto)</text><text x="0" y="316">Sitio web a medida</text></g>
-      <g font-size="18" fill="#6b7580"><text x="0" y="80">pago único</text><text x="0" y="168">por mes, con visibilidad en IA</text><text x="0" y="256">pago único</text><text x="0" y="344">multipágina, con SEO técnico</text></g>
-      <!-- market ranges (muted) -->
-      <g fill="rgba(154,164,176,.32)">
-        <rect x="539" y="40" width="389" height="22" rx="4"/>
-        <rect x="653" y="128" width="590" height="22" rx="4"/>
-        <rect x="928" y="304" width="686" height="22" rx="4"/>
-      </g>
-      <text x="930" y="234" fill="#6b7580" font-size="19" font-style="italic">Sin precio público en Chile: un solo competidor lo vende integrado al retainer</text>
-      <!-- range labels -->
-      <g font-size="18" fill="#9aa4b0"><text x="539" y="30">$150k</text><text x="928" y="30" text-anchor="end">$1,0M+</text><text x="653" y="118">$400k</text><text x="1243" y="118" text-anchor="end">$1,69M</text><text x="928" y="294">$1,0M</text><text x="1614" y="294" text-anchor="end">$2,5M</text></g>
-      <!-- SpindleLab desde markers -->
-      <g>
-        <circle cx="694" cy="51" r="11" fill="#2fa99b" stroke="#0e141b" stroke-width="3"/><text x="716" y="58" fill="#2fa99b" font-size="20" font-weight="700">desde $490.000</text>
-        <circle cx="740" cy="139" r="11" fill="#2fa99b" stroke="#0e141b" stroke-width="3"/><text x="762" y="146" fill="#2fa99b" font-size="20" font-weight="700">desde $590.000 / mes</text>
-        <circle cx="653" cy="227" r="11" fill="#2fa99b" stroke="#0e141b" stroke-width="3"/><text x="675" y="234" fill="#2fa99b" font-size="20" font-weight="700">desde $400.000</text>
-        <circle cx="786" cy="315" r="11" fill="#2fa99b" stroke="#0e141b" stroke-width="3"/><text x="808" y="322" fill="#2fa99b" font-size="20" font-weight="700">desde $690.000</text>
-      </g>
-      <line x1="470" y1="10" x2="470" y2="372" stroke="rgba(247,245,240,.3)"/>
+      <g><line x1="1623" y1="352" x2="1660" y2="352" stroke="#9aa4b0" stroke-width="3"/><circle cx="1623" cy="352" r="10" fill="#9aa4b0"/></g>
+      <g><line x1="689" y1="92" x2="764" y2="92" stroke="#2fa99b" stroke-width="4"/><circle cx="689" cy="92" r="11" fill="#2fa99b" stroke="#0e141b" stroke-width="3"/><circle cx="764" cy="92" r="11" fill="#2fa99b" stroke="#0e141b" stroke-width="3"/></g>
+      <g font-size="20" fill="#9aa4b0" font-weight="600"><text x="562" y="47">$189.900</text><text x="733" y="151">$650.000</text><text x="770" y="203">$750.000</text><text x="822" y="255">$890.000</text><text x="1119" y="307">$1.690.000</text><text x="1600" y="382" text-anchor="end">desde $3.100.000</text></g>
+      <text x="786" y="99" fill="#2fa99b" font-size="20" font-weight="700">$590.000 a $790.000</text>
     </svg>
-    <div class="legend" style="margin-top:2px"><span><i style="background:rgba(154,164,176,.5)"></i>Rango de mercado Chile 2026</span><span><i style="background:#2fa99b;border-radius:50%"></i>Precio de partida SpindleLab (+ IVA)</span></div>
-    <p class="src" style="margin-top:auto">Fuente: estudio de precios de SpindleLab (corte 25 de agosto de 2026): dos planes reales publicados por competidores y tres artículos de "cuánto cuesta" del rubro; evidencia media, sesgada al alza. Precios propios vigentes en spindlelab.cl/servicios. El alcance final se cierra tras el diagnóstico gratuito.</p>
+    <div class="grid g2" style="gap:56px;margin-top:10px">
+      <p class="muted" style="font-size:22px"><b style="color:var(--fg)">No publican tarifa:</b> Focus Ads (fee + 3 a 10 % del revenue), Milimetrix, Seonet, Agencia ROI, SmartGrowth, Futture y AMD. Siete de las dieciséis agencias revisadas.</p>
+      <p class="muted" style="font-size:22px"><b style="color:var(--fg)">Lectura:</b> a la par de las boutiques serias, muy por debajo de las agencias 360, y con la metodología y el chequeo publicados. El plan Pro incluye share of voice frente a tus competidores.</p>
+    </div>
+    <p class="src" style="margin-top:auto">Precios mensuales netos de IVA, verificados en el sitio de cada agencia el 2 de septiembre de 2026. Los planes no son equivalentes uno a uno: se comparan los que incluyen visibilidad en IA. Precios de SpindleLab vigentes en spindlelab.cl/servicios.</p>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">10</span></div>
 </section>
 
-<!-- 11 · Soluciones y precios -->
+<!-- 11 · Soluciones -->
 <section class="slide">
   <div class="kicker">Soluciones · la cartera, sin letra chica</div>
-  <h2>Seis soluciones con precio de partida publicado.</h2>
-  <div class="body">
-    <table style="margin-top:6px;font-size:22px" class="cart">
-      <thead><tr><th style="width:400px">Solución</th><th>Qué resuelve</th><th style="width:330px">Formato</th><th class="r" style="width:300px">Desde (+ IVA)</th></tr></thead>
+  <h2>Seis soluciones. Todas parten por el mismo diagnóstico gratuito.</h2>
+  <div class="body" style="margin-top:30px">
+    <table>
+      <thead><tr><th style="width:380px">Solución</th><th>Qué resuelve</th><th style="width:330px">Formato</th><th class="r" style="width:260px">Desde (+ IVA)</th></tr></thead>
       <tbody>
-        <tr><td><b>Auditoría SEO técnica</b><br><span class="muted" style="font-size:20px">El eje</span></td><td class="m">Las cinco capas a fondo (rastreo, indexación, velocidad, datos estructurados, confianza) con plan y código listos. Con citabilidad en IA, desde $690.000.</td><td class="m">Pago único · 1 a 2 semanas</td><td class="r num">$490.000</td></tr>
-        <tr><td><b>Visibilidad en IA (AEO/GEO)</b><br><span class="muted" style="font-size:20px">El eje</span></td><td class="m">Qué dice la IA de ti hoy, quién aparece en tu lugar y de qué fuentes lo sacó, con plan de citabilidad.</td><td class="m">Pago único · 1 a 2 semanas</td><td class="r num">$400.000</td></tr>
-        <tr><td><b>Acompañamiento mensual</b><br><span class="muted" style="font-size:20px">El eje · formato principal</span></td><td class="m">Implementación continua, contenido citable, monitoreo doble quincenal y reunión mensual. Plan Pro con share of voice frente a competidores desde $790.000.</td><td class="m">Mensual · mínimo 3 meses, luego mes a mes</td><td class="r num">$590.000 / mes</td></tr>
+        <tr><td><b>Auditoría SEO técnica</b><br><span class="muted" style="font-size:19px">El eje</span></td><td class="m">Las cinco capas a fondo, con plan y código listos. Con citabilidad en IA, desde $690.000.</td><td class="m">Pago único · 1 semana</td><td class="r num">$490.000</td></tr>
+        <tr><td><b>Visibilidad en IA (AEO/GEO)</b><br><span class="muted" style="font-size:19px">El eje</span></td><td class="m">Qué dice la IA de ti hoy, quién aparece en tu lugar y de qué fuentes lo sacó, con plan de citabilidad.</td><td class="m">Pago único · 1 semana</td><td class="r num">$400.000</td></tr>
+        <tr><td><b>Acompañamiento mensual</b><br><span class="muted" style="font-size:19px">El eje · formato principal</span></td><td class="m">Implementación continua, contenido citable, monitoreo quincenal y reunión mensual. Pro con share of voice desde $790.000.</td><td class="m">Mensual · mínimo 3 meses, luego mes a mes</td><td class="r num">$590.000 / mes</td></tr>
         <tr><td><b>Redes sociales</b></td><td class="m">Estrategia, calendario y comunidad en LinkedIn y Meta. Con pauta social desde $590.000.</td><td class="m">Mensual · el creativo lo pones tú</td><td class="r num">$390.000 / mes</td></tr>
-        <tr><td><b>Paid media (Google)</b></td><td class="m">Búsqueda de alta intención con presupuesto controlado. Gestión avanzada integrada al motor desde $550.000.</td><td class="m">Mensual · inversión publicitaria aparte</td><td class="r num">$350.000 / mes</td></tr>
-        <tr><td><b>Desarrollo web</b></td><td class="m">Sitio a medida con panel y SEO técnico desde el primer commit. Página de campaña desde $390.000; con blog o CMS desde $1.190.000.</td><td class="m">Proyecto · 4 packs</td><td class="r num">$690.000</td></tr>
+        <tr><td><b>Paid media (Google)</b></td><td class="m">Búsqueda de alta intención con presupuesto controlado. Gestión avanzada desde $550.000.</td><td class="m">Mensual · inversión aparte</td><td class="r num">$350.000 / mes</td></tr>
+        <tr><td><b>Desarrollo web</b></td><td class="m">Sitio a medida con panel y SEO técnico desde el primer commit. Página de campaña desde $390.000.</td><td class="m">Proyecto · 4 packs</td><td class="r num">$690.000</td></tr>
       </tbody>
     </table>
-    <p class="src" style="margin-top:auto;max-width:1700px">Precios vigentes en spindlelab.cl/servicios al 2 de septiembre de 2026, netos de IVA. Todo parte por el mismo diagnóstico gratuito; nadie está obligado a contratar el motor completo.</p>
+    <p class="src" style="margin-top:auto">Precios vigentes en spindlelab.cl/servicios al 2 de septiembre de 2026. Nadie está obligado a contratar el motor completo: el diagnóstico dice por dónde partir.</p>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">11</span></div>
 </section>
 
-<!-- 12 · Escenario A -->
+<!-- 12 · Escenario A: 30 días -->
 <section class="slide">
-  <div class="kicker">Cómo se ve un encargo · escenario A</div>
-  <div style="display:flex;align-items:center;gap:22px;margin-bottom:14px"><span class="tag ill">Escenario ilustrativo · no es un cliente real</span><span class="muted" style="font-size:20px">Punto de partida tomado de la mediana real del rubro.</span></div>
+  <div class="kicker">Cómo se ve un encargo · escenario A · 30 días</div>
+  <div style="display:flex;align-items:center;gap:20px;margin-bottom:12px"><span class="tag">Escenario ilustrativo · no es un cliente real</span><span class="muted" style="font-size:19px">Punto de partida: la mediana real del rubro.</span></div>
   <h2 style="font-size:54px">Corredora de propiedades. Paga pauta y no aparece cuando le preguntan a la IA por su comuna.</h2>
-  <div class="body">
-    <div class="grid" style="grid-template-columns:1fr 1.1fr;gap:56px;align-items:start;margin-top:4px">
+  <div class="body" style="margin-top:30px">
+    <div class="grid" style="grid-template-columns:1fr 1.1fr;gap:56px;align-items:start">
       <div>
-        <h3 style="font-size:28px">Encargo: Auditoría + Visibilidad en IA, luego Acompañamiento Esencial</h3>
-        <ul class="clean" style="margin-top:16px;font-size:21px">
-          <li><b>Semanas 1 y 2.</b> Diagnóstico gratuito, auditoría de las cinco capas y línea base en los tres motores con las preguntas de un comprador de su comuna.</li>
-          <li><b>Semanas 3 a 6.</b> Implementación: entidad con dirección y contacto, autor con credenciales, FAQPage, llms.txt, títulos en pregunta, fechas en el schema.</li>
-          <li><b>Semanas 7 a 12.</b> Una guía citable por tipo de operación, ficha en tres directorios que los motores citan, informe quincenal.</li>
-          <li><b>Landing de pauta reescrita</b> para persona y máquina: la misma inversión aterriza en una página que la IA puede leer.</li>
+        <h3 style="font-size:27px">Encargo: Auditoría + Visibilidad en IA, luego Acompañamiento</h3>
+        <ul class="clean" style="margin-top:14px;font-size:21px">
+          <li><b>Día 1.</b> Chequeo y diagnóstico gratuito. Conversación de 20 minutos.</li>
+          <li><b>Días 2 a 5.</b> Auditoría de las cinco capas y línea base en los tres motores con las preguntas de un comprador de su comuna.</li>
+          <li><b>Semanas 2 y 3.</b> Implementación: entidad con dirección y contacto, autor con credenciales, FAQPage, llms.txt, títulos en pregunta, fechas. Landing de pauta reescrita para persona y máquina.</li>
+          <li><b>Semana 4.</b> Una guía citable por tipo de operación, ficha en tres directorios que los motores citan, primer informe quincenal.</li>
         </ul>
       </div>
       <div>
-        <div class="label" style="margin-bottom:12px">Proyección del puntaje del chequeo, semana a semana</div>
-        <svg viewBox="0 0 900 380" width="820" height="346" role="img" aria-label="Proyección ilustrativa del puntaje del chequeo en 12 semanas">
-          <g stroke="rgba(247,245,240,.1)"><line x1="70" y1="40" x2="880" y2="40"/><line x1="70" y1="115" x2="880" y2="115"/><line x1="70" y1="190" x2="880" y2="190"/><line x1="70" y1="265" x2="880" y2="265"/></g>
-          <line x1="70" y1="340" x2="880" y2="340" stroke="rgba(247,245,240,.3)"/>
-          <g fill="#6b7580" font-size="17" text-anchor="end"><text x="56" y="346">0</text><text x="56" y="271">25</text><text x="56" y="196">50</text><text x="56" y="121">75</text><text x="56" y="46">100</text></g>
-          <g fill="#6b7580" font-size="17" text-anchor="middle"><text x="70" y="372">S1</text><text x="217" y="372">S3</text><text x="364" y="372">S5</text><text x="511" y="372">S7</text><text x="658" y="372">S9</text><text x="806" y="372">S11</text><text x="880" y="372">S12</text></g>
-          <!-- y = 340 - v*3 ; x = 70 + (s-1)*73.6 -->
-          <path d="M70,205 L143.6,205 L217.2,205 L290.8,169 L364.4,133 L438,100 L511.6,79 L585.2,73 L658.8,70 L732.4,67 L806,64 L880,64" fill="none" stroke="#2fa99b" stroke-width="3" stroke-linejoin="round"/>
-          <path d="M70,205 L143.6,205 L217.2,205 L290.8,169 L364.4,133 L438,100 L511.6,79 L585.2,73 L658.8,70 L732.4,67 L806,64 L880,64 L880,340 L70,340 Z" fill="rgba(47,169,155,.12)"/>
-          <circle cx="70" cy="205" r="7" fill="#2fa99b" stroke="#0e141b" stroke-width="3"/><text x="86" y="200" fill="#f2efe8" font-size="19" font-weight="600">45 · mediana real del rubro</text>
-          <circle cx="880" cy="64" r="7" fill="#2fa99b" stroke="#0e141b" stroke-width="3"/><text x="866" y="56" fill="#f2efe8" font-size="19" font-weight="600" text-anchor="end">92 · meta a la semana 12</text>
-          <rect x="217" y="40" width="221" height="300" fill="rgba(247,245,240,.03)"/><text x="327" y="330" fill="#6b7580" font-size="16" text-anchor="middle">implementación</text>
+        <div class="label" style="margin-bottom:10px">Proyección del puntaje del chequeo, semana a semana</div>
+        <svg viewBox="0 0 900 340" width="820" height="310" role="img" aria-label="Proyección ilustrativa del puntaje del chequeo en 4 semanas">
+          <g stroke="rgba(247,245,240,.1)"><line x1="70" y1="40" x2="880" y2="40"/><line x1="70" y1="105" x2="880" y2="105"/><line x1="70" y1="170" x2="880" y2="170"/><line x1="70" y1="235" x2="880" y2="235"/></g>
+          <line x1="70" y1="300" x2="880" y2="300" stroke="rgba(247,245,240,.3)"/>
+          <g fill="#6b7580" font-size="17" text-anchor="end"><text x="56" y="306">0</text><text x="56" y="241">25</text><text x="56" y="176">50</text><text x="56" y="111">75</text><text x="56" y="46">100</text></g>
+          <g fill="#6b7580" font-size="17" text-anchor="middle"><text x="70" y="332">Día 1</text><text x="340" y="332">Semana 2</text><text x="610" y="332">Semana 3</text><text x="895" y="332" text-anchor="end">Semana 4</text></g>
+          <path d="M70,183 L340,123 L610,82 L880,71" fill="none" stroke="#2fa99b" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M70,183 L340,123 L610,82 L880,71 L880,300 L70,300 Z" fill="rgba(47,169,155,.12)"/>
+          <circle cx="70" cy="183" r="7" fill="#2fa99b" stroke="#0e141b" stroke-width="3"/><text x="86" y="176" fill="#f2efe8" font-size="19" font-weight="600">45 · mediana real del rubro</text>
+          <circle cx="340" cy="123" r="6" fill="#2fa99b" stroke="#0e141b" stroke-width="3"/><text x="340" y="112" fill="#9aa4b0" font-size="17" text-anchor="middle">68</text>
+          <circle cx="610" cy="82" r="6" fill="#2fa99b" stroke="#0e141b" stroke-width="3"/><text x="610" y="71" fill="#9aa4b0" font-size="17" text-anchor="middle">84</text>
+          <circle cx="880" cy="71" r="7" fill="#2fa99b" stroke="#0e141b" stroke-width="3"/><text x="866" y="62" fill="#f2efe8" font-size="19" font-weight="600" text-anchor="end">88 · meta al día 30</text>
         </svg>
-        <div class="grid g3" style="gap:20px;margin-top:6px">
-          <div><div class="label">Inversión</div><p class="muted" style="font-size:19px;margin-top:4px">$690.000 una vez + $590.000/mes por 3 meses (+ IVA).</p></div>
+        <div class="grid g3" style="gap:20px;margin-top:8px">
+          <div><div class="label">Inversión</div><p class="muted" style="font-size:19px;margin-top:4px">$690.000 una vez + $590.000/mes (+ IVA).</p></div>
           <div><div class="label">Qué se mide</div><p class="muted" style="font-size:19px;margin-top:4px">Puntaje del chequeo, menciones en IA, posiciones y formularios.</p></div>
-          <div><div class="label">Qué no prometemos</div><p class="muted" style="font-size:19px;margin-top:4px">Posiciones fijas ni respuestas exactas de la IA. Sí, señales medibles.</p></div>
+          <div><div class="label">Qué no prometemos</div><p class="muted" style="font-size:19px;margin-top:4px">Posiciones fijas ni respuestas exactas de la IA.</p></div>
         </div>
       </div>
     </div>
-    <p class="src" style="margin-top:auto;max-width:1700px">El punto de partida (45) es la mediana real de 38 corredoras chilenas medidas el 31 de agosto de 2026. La curva es una proyección de trabajo: sube por chequeos concretos que se corrigen, no por una estimación de tráfico. Las menciones en IA dependen de fuentes externas y se reportan como observación, no como meta garantizada.</p>
+    <p class="src" style="margin-top:auto">El 45 es la mediana real de 38 corredoras chilenas (31 de agosto de 2026). La curva sube por chequeos concretos que se corrigen, no por una estimación de tráfico. Las menciones en IA dependen de fuentes externas y se reportan como observación, no como meta garantizada.</p>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">12</span></div>
 </section>
 
-<!-- 13 · Escenario B: alcance -->
+<!-- 13 · Escenario B: alcance 60 días -->
 <section class="slide">
-  <div class="kicker">Cómo se ve un encargo · escenario B · el motor completo</div>
-  <div style="display:flex;align-items:center;gap:22px;margin-bottom:14px"><span class="tag ill">Escenario ilustrativo · proyección, no resultados</span><span class="muted" style="font-size:20px">Supuestos declarados al pie.</span></div>
-  <h2 style="font-size:54px">Clínica dental de alto ticket. Eje + Google Ads + landing: alcance proyectado a 90 días.</h2>
-  <div class="body">
-    <div class="grid g3" style="gap:36px;margin-top:6px">
-      <div class="card" style="padding:28px 32px">
+  <div class="kicker">Cómo se ve un encargo · escenario B · el motor completo en 60 días</div>
+  <div style="display:flex;align-items:center;gap:20px;margin-bottom:12px"><span class="tag">Escenario ilustrativo · proyección, no resultados</span><span class="muted" style="font-size:19px">Supuestos declarados al pie.</span></div>
+  <h2 style="font-size:54px">Clínica dental de alto ticket. Eje + Google Ads + landing.</h2>
+  <div class="body" style="margin-top:30px">
+    <div class="grid g3" style="gap:32px">
+      <div class="card" style="padding:26px 30px">
         <div class="label">Clics de búsqueda pagada / mes</div>
         <div class="stat num" style="font-size:52px;margin-top:8px">60 a 90</div>
         <svg viewBox="0 0 460 150" width="100%" height="118" style="margin-top:8px" aria-label="Clics de pauta proyectados por mes">
           <line x1="20" y1="120" x2="440" y2="120" stroke="rgba(247,245,240,.3)"/>
-          <rect x="60" y="66" width="80" height="54" rx="4" fill="#2fa99b"/><rect x="190" y="52" width="80" height="68" rx="4" fill="#2fa99b"/><rect x="320" y="44" width="80" height="76" rx="4" fill="#2fa99b"/>
-          <g fill="#f2efe8" font-size="18" font-weight="600" text-anchor="middle"><text x="100" y="56">60</text><text x="230" y="42">75</text><text x="360" y="34">85</text></g>
-          <g fill="#6b7580" font-size="16" text-anchor="middle"><text x="100" y="142">Mes 1</text><text x="230" y="142">Mes 2</text><text x="360" y="142">Mes 3</text></g>
+          <rect x="100" y="66" width="100" height="54" rx="4" fill="#2fa99b"/><rect x="260" y="44" width="100" height="76" rx="4" fill="#2fa99b"/>
+          <g fill="#f2efe8" font-size="18" font-weight="600" text-anchor="middle"><text x="150" y="56">60</text><text x="310" y="34">85</text></g>
+          <g fill="#6b7580" font-size="16" text-anchor="middle"><text x="150" y="142">Mes 1</text><text x="310" y="142">Mes 2</text></g>
         </svg>
-        <p style="font-size:20px;margin-top:8px">Con $50.000/mes de inversión y un costo por clic de $500 a $900 en búsqueda de alta intención en Chile.</p>
+        <p style="font-size:19px;margin-top:6px">Desde la semana 1. $50.000/mes de inversión, costo por clic de $500 a $900 en búsqueda de alta intención.</p>
       </div>
-      <div class="card" style="padding:28px 32px">
-        <div class="label">Sesiones orgánicas / mes (índice, mes 1 = 100)</div>
-        <div class="stat num" style="font-size:52px;margin-top:8px">100 → 140</div>
-        <svg viewBox="0 0 460 150" width="100%" height="118" style="margin-top:8px" aria-label="Índice de sesiones orgánicas proyectado">
+      <div class="card" style="padding:26px 30px">
+        <div class="label">Formularios / mes desde la landing</div>
+        <div class="stat num" style="font-size:52px;margin-top:8px">4 → 9</div>
+        <svg viewBox="0 0 460 150" width="100%" height="118" style="margin-top:8px" aria-label="Formularios proyectados por mes">
           <line x1="20" y1="120" x2="440" y2="120" stroke="rgba(247,245,240,.3)"/>
-          <path d="M60,90 L190,84 L320,66 L420,50" fill="none" stroke="#2fa99b" stroke-width="3"/>
-          <path d="M60,90 L190,84 L320,66 L420,50 L420,120 L60,120 Z" fill="rgba(47,169,155,.12)"/>
-          <circle cx="420" cy="50" r="6" fill="#2fa99b" stroke="#0e141b" stroke-width="3"/>
-          <g fill="#6b7580" font-size="16" text-anchor="middle"><text x="60" y="142">Mes 1</text><text x="190" y="142">Mes 2</text><text x="320" y="142">Mes 3</text><text x="420" y="142">Mes 4</text></g>
-          <text x="410" y="40" fill="#f2efe8" font-size="18" font-weight="600" text-anchor="end">140</text>
+          <rect x="100" y="84" width="100" height="36" rx="4" fill="#2fa99b"/><rect x="260" y="39" width="100" height="81" rx="4" fill="#2fa99b"/>
+          <g fill="#f2efe8" font-size="18" font-weight="600" text-anchor="middle"><text x="150" y="74">4</text><text x="310" y="29">9</text></g>
+          <g fill="#6b7580" font-size="16" text-anchor="middle"><text x="150" y="142">Mes 1</text><text x="310" y="142">Mes 2</text></g>
         </svg>
-        <p style="font-size:20px;margin-top:8px">El orgánico responde con rezago: rastreo y reindexación toman semanas. Por eso el mínimo es de tres meses.</p>
+        <p style="font-size:19px;margin-top:6px">La landing reescrita para persona y máquina convierte mejor los mismos clics. Es la conversión ancla del informe.</p>
       </div>
-      <div class="card" style="padding:28px 32px">
-        <div class="label">Menciones en IA (de 15 observaciones/mes)</div>
-        <div class="stat num" style="font-size:52px;margin-top:8px">0 → 3</div>
+      <div class="card" style="padding:26px 30px">
+        <div class="label">Menciones en IA (de 15 observaciones)</div>
+        <div class="stat num" style="font-size:52px;margin-top:8px">0 → 2</div>
         <svg viewBox="0 0 460 150" width="100%" height="118" style="margin-top:8px" aria-label="Menciones en IA proyectadas">
           <line x1="20" y1="120" x2="440" y2="120" stroke="rgba(247,245,240,.3)"/>
-          <rect x="60" y="119" width="80" height="1" fill="#9aa4b0"/><rect x="190" y="100" width="80" height="20" rx="4" fill="#2fa99b"/><rect x="320" y="60" width="80" height="60" rx="4" fill="#2fa99b"/>
-          <g fill="#f2efe8" font-size="18" font-weight="600" text-anchor="middle"><text x="100" y="110">0</text><text x="230" y="90">1</text><text x="360" y="50">3</text></g>
-          <g fill="#6b7580" font-size="16" text-anchor="middle"><text x="100" y="142">Línea base</text><text x="230" y="142">Mes 2</text><text x="360" y="142">Mes 3</text></g>
+          <rect x="60" y="119" width="90" height="1" fill="#9aa4b0"/><rect x="185" y="92" width="90" height="28" rx="4" fill="#2fa99b"/><rect x="310" y="64" width="90" height="56" rx="4" fill="#2fa99b"/>
+          <g fill="#f2efe8" font-size="18" font-weight="600" text-anchor="middle"><text x="105" y="110">0</text><text x="230" y="82">1</text><text x="355" y="54">2</text></g>
+          <g fill="#6b7580" font-size="16" text-anchor="middle"><text x="105" y="142">Día 1</text><text x="230" y="142">Día 30</text><text x="355" y="142">Día 60</text></g>
         </svg>
-        <p style="font-size:20px;margin-top:8px">Cinco preguntas por tres motores. La meta es entrar en las respuestas; el ritmo lo fijan las fuentes externas que logremos.</p>
+        <p style="font-size:19px;margin-top:6px">Cinco preguntas por tres motores. El ritmo lo fijan las fuentes externas que logremos; el orgánico responde con rezago.</p>
       </div>
     </div>
     <div class="grid g2" style="margin-top:26px;gap:56px">
-      <div><h3 style="font-size:28px">Lo que conecta las tres curvas</h3><p class="muted" style="font-size:21px;margin-top:6px">Una sola landing, legible para persona y máquina, donde aterrizan la pauta, el orgánico y la cita de la IA. Un solo informe quincenal que las mide juntas.</p></div>
-      <div><h3 style="font-size:28px">Inversión del escenario</h3><p class="muted" style="font-size:21px;margin-top:6px">Acompañamiento Pro $790.000/mes + gestión de Google Ads $350.000/mes + inversión publicitaria $50.000/mes. Página de campaña desde $390.000 una vez. Todo + IVA.</p></div>
+      <div><h3 style="font-size:27px">Lo que conecta las tres curvas</h3><p class="muted" style="font-size:21px;margin-top:6px">Una landing donde aterrizan la pauta, el orgánico y la cita de la IA. Un solo informe quincenal que las mide juntas.</p></div>
+      <div><h3 style="font-size:27px">Inversión del escenario</h3><p class="muted" style="font-size:21px;margin-top:6px">Acompañamiento Pro $790.000/mes + gestión de Google Ads $350.000/mes + inversión $50.000/mes. Página de campaña $390.000 una vez. Todo + IVA.</p></div>
     </div>
-    <p class="src" style="margin-top:auto">Supuestos: costo por clic y presupuesto tomados de la planificación real de búsqueda de SpindleLab para Chile (2026); índice orgánico y menciones son metas de trabajo, no resultados históricos. Ningún dato de esta lámina proviene de un cliente.</p>
+    <p class="src" style="margin-top:auto">Supuestos: costo por clic y presupuesto tomados de la planificación real de búsqueda de SpindleLab para Chile (2026); formularios y menciones son metas de trabajo, no resultados históricos. Ningún dato de esta lámina proviene de un cliente.</p>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">13</span></div>
 </section>
 
-<!-- 14 · Informe quincenal (simulación) -->
+<!-- 14 · Informe quincenal -->
 <section class="slide">
   <div class="kicker">Qué recibes cada quince días</div>
-  <div style="display:flex;align-items:center;gap:22px;margin-bottom:14px"><span class="tag ill">Simulación del formato · datos de ejemplo</span></div>
-  <h2 style="font-size:56px">Una página, sin jerga, lista para reenviar a gerencia.</h2>
-  <div class="body">
-    <div class="grid" style="grid-template-columns:1.25fr 1fr;gap:56px;align-items:start;margin-top:4px">
+  <div style="display:flex;align-items:center;gap:20px;margin-bottom:12px"><span class="tag">Simulación del formato · datos de ejemplo</span></div>
+  <h2 style="font-size:54px">Una página, sin jerga, lista para reenviar a gerencia.</h2>
+  <div class="body" style="margin-top:30px">
+    <div class="grid" style="grid-template-columns:1.25fr 1fr;gap:56px;align-items:start">
       <div class="report">
-        <div class="rh"><span class="t" style="white-space:nowrap">SpindleLab<span class="pt">.</span> · Informe quincenal</span><span class="m" style="text-align:right">Clínica ejemplo · quincena 4 de 6<br>datos simulados</span></div>
+        <div class="rh"><span class="t">SpindleLab<span class="pt">.</span> · Informe quincenal</span><span class="m">Clínica ejemplo · quincena 4 de 6<br>datos simulados</span></div>
         <div class="cols">
           <div>
             <h4>Qué se hizo</h4>
             <ul><li>Entidad Organization con dirección, RUT y 4 perfiles externos.</li><li>FAQPage en implantes, ortodoncia y blanqueamiento.</li><li>Página de campaña reescrita: 1 H1, títulos en pregunta, fecha visible.</li></ul>
-            <h4 style="margin-top:18px">Qué se movió</h4>
+            <h4 style="margin-top:16px">Qué se movió</h4>
             <ul><li>Chequeo: 52 → 81 sobre 100.</li><li>Formularios desde pauta: 9 → 14 en la quincena.</li><li>ChatGPT nombra la clínica en 1 de 5 preguntas (antes 0). Fuente citada: directorio de salud X.</li></ul>
           </div>
           <div>
             <h4>Share of voice en IA · esta quincena</h4>
-            <svg viewBox="0 0 420 200" width="100%" height="200" aria-label="Share of voice simulado">
+            <svg viewBox="0 0 420 200" width="100%" height="190" aria-label="Share of voice simulado">
               <g font-size="15" fill="#131a22"><text x="0" y="30">Competidor A</text><text x="0" y="72">Competidor B</text><text x="0" y="114">Tu clínica</text><text x="0" y="156">Competidor C</text></g>
               <g><rect x="130" y="16" width="200" height="18" rx="3" fill="#9aa4b0"/><rect x="130" y="58" width="150" height="18" rx="3" fill="#9aa4b0"/><rect x="130" y="100" width="75" height="18" rx="3" fill="#0f766e"/><rect x="130" y="142" width="50" height="18" rx="3" fill="#9aa4b0"/></g>
               <g font-size="15" fill="#131a22" font-weight="600"><text x="338" y="30">8/15</text><text x="288" y="72">6/15</text><text x="213" y="114">3/15</text><text x="188" y="156">2/15</text></g>
               <text x="0" y="190" fill="#5d6673" font-size="13">5 preguntas × 3 motores, sesión limpia, con fecha y fuente.</text>
             </svg>
-            <h4 style="margin-top:6px">Qué sigue</h4>
+            <h4 style="margin-top:4px">Qué sigue</h4>
             <ul><li>Ficha en los 2 directorios que citan a A y B.</li><li>Guía "cuánto cuesta un implante en Santiago" con datos propios.</li></ul>
           </div>
         </div>
       </div>
-      <div>
-        <ul class="clean" style="font-size:24px">
-          <li><b>Tres bloques fijos:</b> qué se hizo, qué se movió, qué sigue. Siempre en ese orden, para que se compare quincena contra quincena.</li>
-          <li><b>Cada cifra con su fuente:</b> el chequeo, Search Console, el formulario o la corrida en los motores, con fecha.</li>
-          <li><b>Reunión mensual de 45 minutos</b> para decidir las prioridades del ciclo siguiente. Tú apruebas el foco; nosotros ejecutamos.</li>
-          <li><b>Nuestra retención depende del informe, no del contrato.</b> Cumplido el mínimo de tres meses, mes a mes con aviso de 30 días.</li>
-        </ul>
-      </div>
+      <ul class="clean" style="font-size:23px">
+        <li><b>Tres bloques fijos:</b> qué se hizo, qué se movió, qué sigue. Siempre en ese orden, para comparar quincena contra quincena.</li>
+        <li><b>Cada cifra con su fuente:</b> el chequeo, Search Console, el formulario o la corrida en los motores, con fecha.</li>
+        <li><b>Reunión mensual de 45 minutos.</b> Tú apruebas el foco; nosotros ejecutamos.</li>
+        <li><b>Nuestra retención depende del informe, no del contrato.</b> Tras el mínimo de tres meses, mes a mes con aviso de 30 días.</li>
+      </ul>
     </div>
-    <p class="src" style="margin-top:auto">Cifras de ejemplo, sin cliente detrás. En un informe real los competidores se nombran completos; acá van como A, B y C.</p>
+    <p class="src" style="margin-top:auto">Cifras de ejemplo, sin cliente detrás. En un informe real los competidores se nombran completos.</p>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">14</span></div>
 </section>
 
-<!-- 15 · Lo que ya hicimos -->
+<!-- 15 · Trayectoria -->
 <section class="slide">
-  <div class="kicker">Trayectoria · lo que ya hicimos, sin inventar nada</div>
+  <div class="kicker">Trayectoria · sin inventar nada</div>
   <h2>Casos reales, generalizados hasta tener permiso para nombrarlos.</h2>
-  <p class="lead" style="max-width:1700px;margin-top:14px">No publicamos logos ni testimonios sin autorización escrita. Sí podemos mostrar el trabajo, el método y los datos abiertos.</p>
-  <div class="body">
-    <div class="grid g2 casos" style="margin-top:0;gap:22px">
-      <div class="card"><div class="label">Sector financiero regulado</div><h3 style="margin-top:10px">Una asesora de inversiones chilena</h3><p>Auditoría técnica completa y plan de visibilidad en IA implementado. El caso que validó el método en un rubro donde Google y los motores exigen pruebas de quién está detrás.</p></div>
-      <div class="card"><div class="label">Desarrollo web</div><h3 style="margin-top:10px">Un fotógrafo profesional</h3><p>Sitio a medida con panel de administración y SEO técnico incorporado, cotizado en tres niveles, con pagos atados a entregables y entregado en julio de 2026.</p></div>
-      <div class="card"><div class="label">Mini-diagnósticos entregados</div><h3 style="margin-top:10px">Una clínica dental, una empresa de hotelería y un estudio legal</h3><p>Una página cada uno, en menos de 24 horas, con hallazgos priorizados y un juicio que solo aporta un consultor: qué puede esperar y qué no.</p></div>
-      <div class="card"><div class="label">Datos abiertos</div><h3 style="margin-top:10px">69 sitios medidos, protocolo publicado, sitio propio con 85/100</h3><p>El chequeo, su metodología y la medición mensual son públicos. Nuestro propio sitio corre el mismo chequeo que le corremos a cualquiera.</p></div>
+  <div class="body" style="margin-top:34px">
+    <div class="grid g2" style="gap:22px">
+      <div class="card"><div class="label">Sector financiero regulado</div><h3 style="margin-top:8px">Una asesora de inversiones chilena</h3><p>Auditoría técnica completa y plan de visibilidad en IA implementado. El caso que validó el método donde Google y los motores exigen pruebas de quién está detrás.</p></div>
+      <div class="card"><div class="label">Desarrollo web</div><h3 style="margin-top:8px">Un fotógrafo profesional</h3><p>Sitio a medida con panel y SEO técnico, cotizado en tres niveles con pagos atados a entregables. Entregado en julio de 2026.</p></div>
+      <div class="card"><div class="label">Mini-diagnósticos entregados</div><h3 style="margin-top:8px">Una clínica dental, una empresa de hotelería y un estudio legal</h3><p>Una página cada uno, en menos de 24 horas, con hallazgos priorizados y un juicio que solo aporta un consultor: qué esperar y qué no.</p></div>
+      <div class="card"><div class="label">Datos abiertos</div><h3 style="margin-top:8px">69 sitios medidos, protocolo publicado, sitio propio con 85/100</h3><p>El chequeo, su metodología y la medición mensual son públicos. Nuestro sitio corre el mismo chequeo que le corremos a cualquiera.</p></div>
     </div>
-    <p class="src" style="margin-top:auto">Los casos con nombre, cifras y testimonio se publican solo con permiso escrito del cliente. Está en curso la solicitud para el primero.</p>
+    <p class="src" style="margin-top:auto">Los casos con nombre, cifras y testimonio se publican solo con permiso escrito del cliente. La solicitud del primero está en curso.</p>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">15</span></div>
 </section>
@@ -597,12 +571,12 @@ svg text{font-family:var(--font-b);font-variant-numeric:tabular-nums}
     <div class="grid" style="grid-template-columns:1fr 1.2fr;gap:80px;align-items:center">
       <div>
         <h2 style="font-size:88px">No te prometo.<br>Te muestro.</h2>
-        <p class="lead" style="margin-top:24px">Ramón Vallejos · consultor de SEO técnico y visibilidad en IA · Santiago, Chile</p>
+        <p class="lead" style="margin-top:20px">Ramón Vallejos · consultor de SEO técnico y visibilidad en IA · Santiago</p>
       </div>
       <div>
-        <p style="font-size:26px;line-height:1.55;color:var(--fg)">SpindleLab soy yo al frente, orquestando el motor, con agentes de IA a mi lado y partners para lo que no hacemos en casa.</p>
-        <p class="muted" style="font-size:24px;margin-top:22px">Antes pasé más de cinco años en agencias: producción para ocho marcas nacionales en Universal McCann; la cuenta de LATAM Airlines en Graphene IPG, con campañas en Chile, Perú, Ecuador y Colombia; pauta de retail y B2B en Incrementa; contenido y SEO de una cartera B2B en Maggiore. Comunicación Publicitaria en la Universidad Andrés Bello y máster en Marketing Digital y E-commerce en la Universidad de Barcelona.</p>
-        <p class="muted" style="font-size:24px;margin-top:22px">En las empresas que reviso pasa casi siempre lo mismo: uno hizo el sitio, otro lleva las redes, otro la pauta, y ninguno mira si la IA te nombra. Con esa experiencia puedo hacerme cargo del eje y poner el motor a funcionar entero, no por partes.</p>
+        <p style="font-size:25px;line-height:1.5;color:var(--fg)">SpindleLab soy yo al frente, orquestando el motor, con agentes de IA a mi lado y partners para lo que no hacemos en casa.</p>
+        <p class="muted" style="font-size:23px;margin-top:18px">Más de cinco años en agencias: producción para ocho marcas nacionales en Universal McCann; la cuenta de LATAM Airlines en Graphene IPG, con campañas en Chile, Perú, Ecuador y Colombia; pauta de retail y B2B en Incrementa; contenido y SEO de una cartera B2B en Maggiore. Comunicación Publicitaria en la Universidad Andrés Bello y máster en Marketing Digital y E-commerce en la Universidad de Barcelona.</p>
+        <p class="muted" style="font-size:23px;margin-top:18px">En las empresas que reviso pasa casi siempre lo mismo: uno hizo el sitio, otro lleva las redes, otro la pauta, y ninguno mira si la IA te nombra. Con esa experiencia me hago cargo del eje y pongo el motor a funcionar entero.</p>
       </div>
     </div>
   </div>
@@ -613,33 +587,33 @@ svg text{font-family:var(--font-b);font-variant-numeric:tabular-nums}
 <section class="slide">
   <div class="kicker">Lo que no prometemos</div>
   <h2>Nadie puede garantizarte el primer lugar en ChatGPT. Quien te lo prometa, miente.</h2>
-  <div class="body">
-    <div class="grid g3" style="margin-top:10px">
-      <div class="card"><h3>No prometemos posiciones</h3><p>Ni el #1 en Google ni una respuesta exacta de una IA. Los motores cambian sus fuentes y sus modelos; prometemos señales medibles y trabajo verificable.</p></div>
-      <div class="card"><h3>No inventamos prueba social</h3><p>Sin clientes ficticios, sin cifras que no leímos en una fuente, sin rankings donde nos pongamos primeros. Si algo de este documento es un ejemplo, lo dice.</p></div>
-      <div class="card"><h3>No vendemos lo que no necesitas</h3><p>El diagnóstico gratuito puede terminar en "esto puede esperar; lo urgente es lo otro". Preferimos no vender expectativas que los datos no puedan respaldar.</p></div>
+  <div class="body" style="margin-top:34px">
+    <div class="grid g3">
+      <div class="card"><h3>No prometemos posiciones</h3><p>Ni el #1 en Google ni una respuesta exacta de una IA. Prometemos señales medibles y trabajo verificable.</p></div>
+      <div class="card"><h3>No inventamos prueba social</h3><p>Sin clientes ficticios, sin cifras sin fuente, sin rankings donde nos pongamos primeros. Si algo de este documento es un ejemplo, lo dice.</p></div>
+      <div class="card"><h3>No vendemos lo que no necesitas</h3><p>El diagnóstico puede terminar en "esto puede esperar; lo urgente es lo otro". Preferimos no vender expectativas que los datos no respalden.</p></div>
     </div>
-    <div style="margin-top:56px"><h3>A cambio, sí prometemos</h3><p class="muted" style="font-size:25px;margin-top:10px;max-width:1500px">Medir primero, con línea base real y con fecha. Priorizar por impacto. Informar en lenguaje de negocio cada quince días. Decir qué se movió y qué no, salga como salga. Y publicar cómo medimos, para que cualquiera pueda comprobarlo.</p></div>
+    <div style="margin-top:44px"><h3>A cambio, sí prometemos</h3><p class="muted" style="font-size:24px;margin-top:8px;max-width:1500px">Medir primero, con línea base real y con fecha. Priorizar por impacto. Informar en lenguaje de negocio cada quince días, salga como salga. Y publicar cómo medimos, para que cualquiera pueda comprobarlo.</p></div>
   </div>
   <div class="foot"><span class="wm">SpindleLab<span class="pt">.</span></span><span class="num">17</span></div>
 </section>
 
 <!-- 18 · Cómo empezar -->
 <section class="slide section">
-  <div class="kicker">Cómo empezar · ninguno de los dos primeros pasos te cobra</div>
+  <div class="kicker">Cómo empezar · los dos primeros pasos no te cobran</div>
   <h2>El paso 01 es gratis. Empecemos ahí.</h2>
   <div class="body">
-    <div class="flow" style="margin-top:20px">
+    <div class="flow" style="margin-top:14px">
       <div class="node"><span class="label">Hoy · 30 segundos</span><div class="n">Corre el chequeo</div><div class="d">spindlelab.cl/diagnostico. Tu dominio, sin registro. Puntaje y tres prioridades al instante.</div></div>
       <div class="link">→</div>
-      <div class="node"><span class="label">24 horas · gratis</span><div class="n">Diagnóstico completo</div><div class="d">Le preguntamos a los tres motores por tu categoría y te entregamos en una página qué te frena y qué mueve la aguja.</div></div>
+      <div class="node"><span class="label">24 horas · gratis</span><div class="n">Diagnóstico completo</div><div class="d">Le preguntamos a los tres motores por tu categoría. Una página con qué te frena y qué mueve la aguja.</div></div>
       <div class="link">→</div>
       <div class="node"><span class="label">20 minutos</span><div class="n">Conversación</div><div class="d">Tu negocio, tus clientes y qué significa "ganar" para ti.</div></div>
       <div class="link">→</div>
-      <div class="node"><span class="label">Propuesta</span><div class="n">Sin sorpresas</div><div class="d">Tres niveles, pagos atados a entregables, alcance y límites por escrito. Nada avanza sin tu aprobación.</div></div>
+      <div class="node"><span class="label">Propuesta</span><div class="n">Sin sorpresas</div><div class="d">Alcance, límites y pagos atados a entregables, por escrito. Nada avanza sin tu aprobación.</div></div>
     </div>
-    <div class="grid g2" style="margin-top:52px;gap:64px">
-      <div><h3>Qué necesitamos de ti</h3><ul class="clean" style="margin-top:14px;font-size:23px"><li><b>Tu URL.</b> Con eso parte todo.</li><li><b>Acceso de lectura</b> a Search Console y Analytics para la auditoría completa. Nunca pedimos accesos de administrador.</li><li><b>Una contraparte</b> que responda dudas y apruebe prioridades.</li></ul></div>
+    <div class="grid g2" style="margin-top:48px;gap:64px">
+      <div><h3>Qué necesitamos de ti</h3><ul class="clean" style="margin-top:12px;font-size:22px"><li><b>Tu URL.</b> Con eso parte todo.</li><li><b>Acceso de lectura</b> a Search Console y Analytics. Nunca pedimos accesos de administrador.</li><li><b>Una contraparte</b> que responda dudas y apruebe prioridades.</li></ul></div>
       <div style="align-self:end"><div class="wm" style="font-size:72px">SpindleLab<span class="pt">.</span></div><p class="muted" style="font-size:26px;margin-top:10px">hola@spindlelab.cl · spindlelab.cl · Santiago, Chile</p></div>
     </div>
   </div>
