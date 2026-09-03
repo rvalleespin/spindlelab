@@ -117,13 +117,36 @@ técnicas de producción, ya traducidas a nuestras herramientas:
 - **Al generar el frame 2, adjuntar el frame 1 como referencia explícita.** Si no, el
   modelo devuelve otra escena en vez de la misma un instante después. Es problema del
   modelo, no de la herramienta: vale igual con cualquiera.
-- **Loop ping-pong para el hero** (reproduce y vuelve al revés): un clip corto se siente
-  continuo y sin corte. Se implementa con `animation-direction: alternate` o con un
-  listener de `onended` que invierta la reproducción.
+- **Dos formas de lograr el loop, y la más simple es la que se usa en la práctica.**
+  (a) **Mismo frame de inicio y de fin:** en Higgsfield se sube *la misma imagen* como
+  start y end frame, y se agrega al prompt `make it perfectly loopable`. Loop perfecto,
+  movimiento sutil, cero trabajo en el reproductor. **Esta es la que hace el video.**
+  (b) **Dos frames distintos + ping-pong** (reproduce y vuelve al revés), con
+  `animation-direction: alternate` o un listener de `onended` que invierta la
+  reproducción. Permite más cambio visible, pero es más difícil de acertar.
+  *Corrección del 3-sep: la primera versión de esta nota solo traía la variante (b),
+  que es la que describe el archivo de la skill; en el video la práctica real es (a).*
 - **Cámara fija en el hero.** El movimiento de cámara pelea con el texto encima; el motion
   va dentro de la escena, no en el encuadre.
 - **La referencia visual puede venir de donde sea** (Motion Sites —Ramón tiene acceso—, un
   video, una revista). Se extrae el **espíritu**, no se copia el contenido.
+
+**Economía de sesión — el argumento real del video, y sirve para cualquier trabajo en un
+constructor visual.** El framework existe porque improvisar dentro de Claude Design se come
+la sesión semanal en 20 minutos. La planificación se hace en el chat, que es prácticamente
+ilimitado, y al constructor se llega con todo resuelto para gastar un solo one-shot.
+Tácticas concretas:
+
+- **Un mensaje con todos los cambios**, no diez mensajes con uno cada uno.
+- **Los tweaks del canvas** (los sliders) para colores y estilo, en vez de pedirlos por
+  prompt.
+- **Dibujar sobre el diseño y dejar comentarios** en lugar de describir el cambio en texto.
+- Si el resultado no convence, **refinar con tweaks antes que con prompts nuevos**.
+
+**La entrega (lo que el archivo de la skill omitía):** desde el constructor sale un zip o
+un handoff a Claude Code. De ahí a GitHub **primero** (versiones e historial, no se rompe
+la página viva) y recién después a producción. Nosotros ya estamos en Cloudflare Pages, y
+el video confirma que Cloudflare resuelve dominio y DNS de una.
 
 **Dos límites que no se negocian en este pipeline:**
 
@@ -136,6 +159,11 @@ técnicas de producción, ya traducidas a nuestras herramientas:
   placeholders. Nunca se inventan.
 
 ## Pendientes que dejé
+- [ ] **Verificar qué permite la licencia de Motion Sites de Ramón antes del primer sitio
+      cobrado.** El autor del video dice explícitamente que compró el **plan de agencia**
+      "para tener los derechos de reventa y no meternos en ningún tipo de problema". Usar
+      un prompt de Motion Sites como base de un sitio que se le cobra a un cliente es uso
+      comercial. Verificar el plan **antes**, no después. (3-sep-2026)
 - [ ] Praxi — carrusel v2: rehacer la lámina 3 (tiene jerga) y la 5 (cierra en
       comprensión), y producir las láminas 2 y 4 que faltan.
 - [ ] Praxi — montar el reel A2 en CapCut (lo hace Ramón) eligiendo frames que

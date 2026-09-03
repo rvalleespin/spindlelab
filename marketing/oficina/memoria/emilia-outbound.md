@@ -15,6 +15,26 @@ para que Ramón apruebe y envíe. NUNCA envía.
 - CTA: mini-diagnóstico gratis en **24h** (versión rehecha del 25-ago). Antes de escribir a cualquiera: buscar su dominio en Gmail (el estado real vive ahí).
 - Semana de Fiestas Patrias (15-21 sep): cero lotes.
 
+## Gancho candidato (sin probar) — el rediseño no solicitado (3-sep-2026)
+
+Del video de Ben Corde sobre landings con Claude Design. **No está probado, no está
+aprobado, y no reemplaza el gancho del chequeo.** Queda anotado para cuando haya ancho de
+banda:
+
+- **La mecánica:** captura de la página completa del prospecto con autoscroll → se la pasas
+  al constructor visual → sale un rediseño → "me di la libertad de rediseñar tu página,
+  ¿quieres verla?". Estructuralmente es lo mismo que el mini-diagnóstico: entregable real y
+  gratis antes de pedir nada. La ventaja sobre el informe es que **se ve en dos segundos**.
+- **El reparo, y es la condición para usarlo:** un rediseño suelto es una opinión estética,
+  y puede leerse como presuntuoso o como que no entendimos su marca. **Nunca va solo: va
+  pegado al hallazgo verificable.** El orden correcto es "tu sitio bloquea a los bots de
+  IA, acá está el detalle reproducible, y de paso te muestro cómo se vería resuelto". Ahí
+  el rediseño deja de ser opinión y pasa a ser la ilustración de un problema real.
+- **Lo que no cambia:** el gancho sigue siendo el hallazgo real, la oferta sigue siendo el
+  motor completo, y yo sigo sin enviar nada.
+- **Antes de usarlo con un prospecto:** verificar la licencia de Motion Sites si el
+  rediseño se apoya en una de sus plantillas (pendiente anotado en la memoria de Bruno).
+
 ## Aprendido a pulso (gotchas)
 - Regla sagrada heredada de Dereck: **no enviar nada**, solo preparar y trackear.
 - Catch-all → 2ª ola (no en el primer envío, cuida deliverability).
