@@ -1,10 +1,10 @@
 # Brief — Cumplimiento web de la Ley 21.719
 
 **Abierto:** 3-sep-2026 · **Pedido por:** Ramón · **Estado:** decisiones de marca, alcance y
-dominio tomadas (§6, §4) — Camino B, lanzamiento liviano, `verificaycumple.cl`. Secuencia
-acordada: landing (idea 1, el chequeo gratis) primero, monetización (idea 2) después. Dominio
-disponible ($64.99 USD/año, Vercel), compra pendiente de confirmación de Ramón. Nada
-construido todavía.
+dominio tomadas (§6, §4) — Camino B, lanzamiento liviano, `verificaycumple`. Secuencia
+acordada: landing (idea 1, el chequeo gratis) primero, monetización (idea 2) después. Arranca
+gratis en `verificaycumple.pages.dev` (Cloudflare Pages) — el `.cl` se descartó por costo,
+queda para cuando la idea genere ingresos. Nada construido todavía.
 **Fecha que manda todo:** **1 de diciembre de 2026** (entrada en plena vigencia)
 
 ---
@@ -311,9 +311,16 @@ caminos, con el mismo nivel de detalle, para que Ramón elija:
 **Decisión de Ramón (3-sep-2026): Camino B.** Marca aparte, dominio propio, firmada por
 Ramón — no bajo SpindleLab.
 
-**Nombre y dominio (3-sep-2026): `verificaycumple.cl`.** Verificado disponible por Vercel,
-$64.99 USD/año. **Compra sin ejecutar** — es un gasto real, pendiente de que Ramón la
-confirme explícitamente.
+**Nombre y dominio (3-sep-2026, revisado):** `verificaycumple` se mantiene como nombre, pero
+**sin comprar el `.cl`** — a US$64.99/año vía Vercel, Ramón lo marcó como gasto que no puede
+asumir ahora. **Arranca gratis en `verificaycumple.pages.dev`**, el subdominio que Cloudflare
+Pages entrega sin costo al crear el proyecto — misma plataforma donde ya vive `chequeo.js`,
+sin tecnología nueva, y sigue siendo un dominio propio y separado de `spindlelab.cl` (Camino B
+intacto). Es menos "sitio chileno profesional" a primera vista que un `.cl`, pero sirve para
+validar sin gastar nada. **Si la idea empieza a generar ingresos, ahí se justifica pagar el
+`.cl`** — y conviene cotizarlo directo con un registrador chileno (NIC Chile o un revendedor
+local) en vez de Vercel: un `.cl` ahí suele salir CLP 10.000-20.000/año (~US$10-20), bastante
+menos que el precio que cotizó Vercel.
 
 **Secuencia acordada (3-sep-2026):** landing primero (idea 1 de §3, el chequeo gratis, con la
 checklist de §4 y el lanzamiento liviano ya decidido), monetización después (idea 2 de §3, el
@@ -350,3 +357,4 @@ negocio permanente. Tratarlo como sprint desde el día uno evita la decepción d
 | 2026-09-03 | **Decisión de Ramón: Camino B** (§6) — marca aparte, dominio propio, firmada por Ramón, no bajo SpindleLab. **Y lanzamiento liviano** (§4) — el chequeo gratuito sale con fetch+regex, sin navegador real; Browser Rendering queda descartado para esta versión. Falta: nombre y dominio de la marca nueva. Sigue sin construirse nada; cuando arranque la construcción, abrir `laboratorio/ley-21719` desde esta rama. |
 | 2026-09-03 | **Nombre y dominio: `verificaycumple.cl`** — verificado disponible por Vercel, $64.99 USD/año, compra sin ejecutar (pendiente de confirmación explícita de Ramón, es gasto real). **Secuencia acordada: landing (idea 1, el chequeo gratis) primero, monetización (idea 2, el kit) después.** Sigue sin construirse nada. |
 | 2026-09-03 | Ramón preguntó si la landing podía salir del propio `spindlelab.cl` para generar autoridad. Se evaluaron subruta, subdominio y dominio separado con enlace cruzado — **confirmó dominio separado con enlace cruzado**: `verificaycumple.cl` se mantiene (Camino B sigue en pie), y se suma al alcance de la landing una página/post en `spindlelab.cl` que lo enlace. Compra del dominio sigue sin confirmarse. Sigue sin construirse nada. |
+| 2026-09-03 | Ramón no puede asumir los US$64.99/año del `.cl` ahora. **Se descarta comprar dominio por el momento** — arranca gratis en `verificaycumple.pages.dev` (subdominio sin costo de Cloudflare Pages, misma plataforma que `chequeo.js`). El `.cl` queda para cuando la idea genere ingresos, y ahí cotizar directo con un registrador chileno (~CLP 10.000-20.000/año) en vez de Vercel. Camino B y el enlace cruzado con `spindlelab.cl` siguen en pie. Sigue sin construirse nada. |
