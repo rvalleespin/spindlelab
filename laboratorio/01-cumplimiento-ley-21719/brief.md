@@ -1,7 +1,10 @@
 # Brief — Cumplimiento web de la Ley 21.719
 
-**Abierto:** 3-sep-2026 · **Pedido por:** Ramón · **Estado:** decisiones de marca y de alcance
-tomadas (§6, §4) — Camino B, lanzamiento liviano. Nada construido todavía.
+**Abierto:** 3-sep-2026 · **Pedido por:** Ramón · **Estado:** decisiones de marca, alcance y
+dominio tomadas (§6, §4) — Camino B, lanzamiento liviano, `verificaycumple.cl`. Secuencia
+acordada: landing (idea 1, el chequeo gratis) primero, monetización (idea 2) después. Dominio
+disponible ($64.99 USD/año, Vercel), compra pendiente de confirmación de Ramón. Nada
+construido todavía.
 **Fecha que manda todo:** **1 de diciembre de 2026** (entrada en plena vigencia)
 
 ---
@@ -306,10 +309,19 @@ caminos, con el mismo nivel de detalle, para que Ramón elija:
   de diluir el posicionamiento que SpindleLab recién afiló.
 
 **Decisión de Ramón (3-sep-2026): Camino B.** Marca aparte, dominio propio, firmada por
-Ramón — no bajo SpindleLab. Queda pendiente, aparte de este documento: el nombre y el dominio.
-Cuando eso se resuelva y arranque la construcción, corresponde abrir `laboratorio/ley-21719`
-a partir de esta rama (regla 3 de `laboratorio/README.md`) para no mezclar el trabajo del
-proyecto con el resto del laboratorio.
+Ramón — no bajo SpindleLab.
+
+**Nombre y dominio (3-sep-2026): `verificaycumple.cl`.** Verificado disponible por Vercel,
+$64.99 USD/año. **Compra sin ejecutar** — es un gasto real, pendiente de que Ramón la
+confirme explícitamente.
+
+**Secuencia acordada (3-sep-2026):** landing primero (idea 1 de §3, el chequeo gratis, con la
+checklist de §4 y el lanzamiento liviano ya decidido), monetización después (idea 2 de §3, el
+kit de implementación a precio fijo).
+
+Cuando arranque la construcción, corresponde abrir `laboratorio/ley-21719` a partir de esta
+rama (regla 3 de `laboratorio/README.md`) para no mezclar el trabajo del proyecto con el resto
+del laboratorio.
 
 ## 7. Reparo de fondo, escrito para que no se olvide
 
@@ -324,3 +336,4 @@ negocio permanente. Tratarlo como sprint desde el día uno evita la decepción d
 | 2026-09-03 | Brief abierto. Nada construido. Pendiente: decisión de marca (§6) y verificación contra el texto oficial de la ley (§2). |
 | 2026-09-03 | Verificación contra el texto oficial hecha (BCN/Ley Chile, idNorma=1209272) — 6 correcciones encontradas, la más importante: "72 horas" para brechas no existe en el texto (es RGPD) y "20.000 UTM o 4%" no son techos paralelos desde la primera infracción. Factibilidad técnica del chequeo señal por señal hecha contra `chequeo.js` real — el diferencial estrella (GA4/Meta disparando antes del consentimiento) no cae en la arquitectura actual, necesita navegador real. Los dos caminos de la decisión de marca (§6) desarrollados con el mismo detalle. Nada construido todavía; decisión de marca sigue pendiente de Ramón. |
 | 2026-09-03 | **Decisión de Ramón: Camino B** (§6) — marca aparte, dominio propio, firmada por Ramón, no bajo SpindleLab. **Y lanzamiento liviano** (§4) — el chequeo gratuito sale con fetch+regex, sin navegador real; Browser Rendering queda descartado para esta versión. Falta: nombre y dominio de la marca nueva. Sigue sin construirse nada; cuando arranque la construcción, abrir `laboratorio/ley-21719` desde esta rama. |
+| 2026-09-03 | **Nombre y dominio: `verificaycumple.cl`** — verificado disponible por Vercel, $64.99 USD/año, compra sin ejecutar (pendiente de confirmación explícita de Ramón, es gasto real). **Secuencia acordada: landing (idea 1, el chequeo gratis) primero, monetización (idea 2, el kit) después.** Sigue sin construirse nada. |
