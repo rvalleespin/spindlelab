@@ -1,7 +1,7 @@
 # Brief — Cumplimiento web de la Ley 21.719
 
-**Abierto:** 3-sep-2026 · **Pedido por:** Ramón · **Estado:** verificación legal y factibilidad
-técnica hechas, nada construido. Pendiente: decisión de marca (§6, de Ramón).
+**Abierto:** 3-sep-2026 · **Pedido por:** Ramón · **Estado:** decisiones de marca y de alcance
+tomadas (§6, §4) — Camino B, lanzamiento liviano. Nada construido todavía.
 **Fecha que manda todo:** **1 de diciembre de 2026** (entrada en plena vigencia)
 
 ---
@@ -230,6 +230,13 @@ definitiva. Dos caminos honestos, no excluyentes:
   no en el chequeo gratuito — ahí sí se puede ofrecer una medición más fuerte como parte de lo
   que se cobra, sin comprometer la velocidad del gancho gratuito.
 
+**Decisión de Ramón (3-sep-2026): (a), lanzamiento liviano.** El chequeo gratuito sale con
+fetch+regex sobre el mismo patrón de `chequeo.js` — sin navegador real, sin ejecutar JS. La
+detección de scripts de terceros se comunica como "qué tienes instalado", no como "si dispara
+antes o después del consentimiento". Navegador real (Browser Rendering) queda descartado para
+esta primera versión; solo vuelve a la mesa si el kit de implementación (idea 2) lo justifica
+más adelante.
+
 ## 5. Guardrails (no negociables)
 
 - **No se da asesoría legal.** El texto de la política de privacidad y la evaluación jurídica
@@ -298,9 +305,11 @@ caminos, con el mismo nivel de detalle, para que Ramón elija:
 - **Costo de atención:** más alto al arrancar (construir marca desde cero), más bajo el riesgo
   de diluir el posicionamiento que SpindleLab recién afiló.
 
-**Recomendación previa de esta línea de trabajo (sin cambios en esta sesión):** marca aparte
-con dominio propio, firmada por Ramón. Sigue siendo una recomendación, no una decisión — la
-decisión es de Ramón.
+**Decisión de Ramón (3-sep-2026): Camino B.** Marca aparte, dominio propio, firmada por
+Ramón — no bajo SpindleLab. Queda pendiente, aparte de este documento: el nombre y el dominio.
+Cuando eso se resuelva y arranque la construcción, corresponde abrir `laboratorio/ley-21719`
+a partir de esta rama (regla 3 de `laboratorio/README.md`) para no mezclar el trabajo del
+proyecto con el resto del laboratorio.
 
 ## 7. Reparo de fondo, escrito para que no se olvide
 
@@ -314,3 +323,4 @@ negocio permanente. Tratarlo como sprint desde el día uno evita la decepción d
 |---|---|
 | 2026-09-03 | Brief abierto. Nada construido. Pendiente: decisión de marca (§6) y verificación contra el texto oficial de la ley (§2). |
 | 2026-09-03 | Verificación contra el texto oficial hecha (BCN/Ley Chile, idNorma=1209272) — 6 correcciones encontradas, la más importante: "72 horas" para brechas no existe en el texto (es RGPD) y "20.000 UTM o 4%" no son techos paralelos desde la primera infracción. Factibilidad técnica del chequeo señal por señal hecha contra `chequeo.js` real — el diferencial estrella (GA4/Meta disparando antes del consentimiento) no cae en la arquitectura actual, necesita navegador real. Los dos caminos de la decisión de marca (§6) desarrollados con el mismo detalle. Nada construido todavía; decisión de marca sigue pendiente de Ramón. |
+| 2026-09-03 | **Decisión de Ramón: Camino B** (§6) — marca aparte, dominio propio, firmada por Ramón, no bajo SpindleLab. **Y lanzamiento liviano** (§4) — el chequeo gratuito sale con fetch+regex, sin navegador real; Browser Rendering queda descartado para esta versión. Falta: nombre y dominio de la marca nueva. Sigue sin construirse nada; cuando arranque la construcción, abrir `laboratorio/ley-21719` desde esta rama. |
