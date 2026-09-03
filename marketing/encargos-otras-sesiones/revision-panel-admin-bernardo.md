@@ -144,15 +144,38 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > panel corriendo local: ambas etiquetas ahora muestran "(OPCIONAL)" (mismo patrón que el resto
 > del panel) y no queda ningún error en pantalla con la sección vacía. Rama en `2cd6ec5`.
 
+> **Actualización 7 (3-sep-2026) — encuadre convertido a botón "Editar foto", más Zoom.**
+> Probando el link de preview, Ramón vio el encuadre funcionando pero pidió que el control fuera
+> un botón junto a "Elige una imagen diferente" en vez de un panel siempre abierto, y agregar
+> ajuste de tamaño. Se rediseñó: la Portada de Retratos/Proyectos ahora muestra un botón "Editar
+> foto (encuadre y zoom)" con el mismo estilo que los botones nativos de Decap — al tocarlo se
+> abre la herramienta de arrastrar el punto, con un botón para volver a cerrarla. Se agregó
+> "Zoom de la miniatura" (portada y galería, ambas colecciones) reusando el mismo campo/mecanismo
+> que ya vive en Modelo (`zoomField()`, compartido en el archivo) — esto además acerca el
+> comportamiento de Retratos/Proyectos al de Modelo, reduciendo la diferencia notada en la
+> Actualización 4. Verificado de punta a punta: build limpio, botón colapsa/expande contra el
+> panel local, y el efecto de zoom confirmado renderizando `/retratos` con un valor de prueba
+> (revertido antes de commitear). Rama en `3cf06cb`.
+>
+> **Pendiente de que Ramón aclare:** también pidió "sentido de la foto" — no se construyó por no
+> tener claro si se refiere a voltear la imagen en espejo o a otra cosa; preguntado directo en el
+> chat antes de invertir tiempo en la interpretación equivocada.
+>
+> **Nota aparte, sin resolver:** `main` volvió a avanzar (Ramón borró la entrada "Actores" en
+> producción) mientras se hacía este cambio — la rama todavía no se resincronizó con ese borrado
+> específico (un conflicto de merge trivial, `actores.md` modificado en la rama vs. borrado en
+> `main`). No bloquea nada de lo anterior; se resuelve en la próxima sincronización.
+
 ---
 
 **Estado a 3-sep-2026, fin del día:** las Partes 1-3 de este documento (bug de Estudio,
-Direcciones A-D, fix de mobile), el encuadre de fotos, la reconciliación con el trabajo que
-avanzó en paralelo en `main`, la corrección de la sidebar (Modelo), y el fix de "Publicación
-externa" están todas en `claude/correcciones-panel-y-sitio` (commit `2cd6ec5`, sin conflictos
-con `main`, build verificado), sin mergear. Lo único que sigue pendiente de decisión de Ramón es
-la Parte 2-3 de `revision-sitio-bernardo-combeau.md` (rediseño del sitio público) más si mergear
-esta rama ahora
+Direcciones A-D, fix de mobile), el encuadre de fotos con su rediseño a botón + Zoom, la
+reconciliación con el trabajo que avanzó en paralelo en `main`, la corrección de la sidebar
+(Modelo), y el fix de "Publicación externa" están todas en `claude/correcciones-panel-y-sitio`
+(commit `3cf06cb`, build verificado; pendiente resincronizar el borrado de "Actores" en `main`),
+sin mergear. Lo único que sigue pendiente de decisión de Ramón es la Parte 2-3 de
+`revision-sitio-bernardo-combeau.md` (rediseño del sitio público), su respuesta sobre "sentido de
+la foto", y si mergear esta rama ahora
 — todo lo demás de ambos documentos ya se ejecutó.
 
 ---
