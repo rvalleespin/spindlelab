@@ -188,13 +188,43 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > Ramón) que había intentado el mismo merge minutos antes — nunca llegó a `main`, quedó
 > reemplazada por este merge directo. No requiere limpieza urgente.
 
+> **Actualización 10 (3-sep-2026) — Ramón pidió probar en el sitio real antes de avisarle a
+> Bernardo; encontró la vista previa de Modelo → Motion/Commercials rota.** Probé
+> `bernardocombeau.cl` directo por HTTP (no pude sacarle captura visual — el navegador headless
+> de este entorno no llega a dominios externos, mismo límite documentado antes; sí pude leer el
+> HTML real servido): home, Retratos, Proyectos, Modelo, Corporativos, Retratos masculinos, todo
+> 200; `/retratos/actores` da 404 y ya no está en el sitemap (el borrado de Ramón se respetó);
+> los 4 fixes del día (Modelo en la sidebar, Publicación externa, Editar foto, Voltear en
+> espejo) están en el HTML servido. Antes de avisarle a Bernardo, Ramón mandó una captura:
+> Modelo → "5. Motion / Commercials" mostraba la vista previa genérica de Decap (texto plano,
+> fondo negro) — "se ve extraña".
+>
+> Causa confirmada, no nueva: Modelo entero nunca tuvo vista previa registrada
+> (`CMS.registerPreviewTemplate`) — gap señalado desde el diagnóstico original (Parte 2) y
+> repetido en cada actualización de este documento. Sin plantilla registrada, Decap cae a su
+> propio dump de campos.
+>
+> Agregada una vista previa real solo para "Motion / Commercials" (el archivo que Ramón estaba
+> mirando) — reconstruye la grilla de 3 columnas del sitio real (VideoGrid.astro): título en
+> serif itálica, miniatura de YouTube por video (mismo mecanismo que `gridDeVideos()` en
+> `src/lib/modelo.js`, reescrito porque el panel corre en el navegador sin acceso a ese módulo),
+> nombre debajo. El resto de Modelo (Portada, Identity, Selected Work, Polaroids, Details,
+> Booking) sigue sin vista previa — mismo gap, sin tocar, trabajo aparte si se pide. Verificado
+> contra el DOM real del iframe de vista previa (no solo por pantalla): las 10 tarjetas de
+> Motion arman el `<img>` correcto con el ID de YouTube extraído de cada URL real. Mergeado
+> directo a `main` (commit `81196de`), en producción — confirmado en el HTML real servido desde
+> `bernardocombeau.cl`.
+
 ---
 
 **Estado a 3-sep-2026, fin del día:** las Partes 1-3 de este documento (bug de Estudio,
 Direcciones A-D, fix de mobile), el encuadre de fotos con su rediseño a botón + Zoom + Volteo, la
 reconciliación con el trabajo que avanzó en paralelo en `main`, la corrección de la sidebar
-(Modelo), y el fix de "Publicación externa" están **mergeadas a `main` y en producción** (commit
-`ba33b5c`). Lo único que sigue pendiente de decisión de Ramón es la Parte 2-3 de
+(Modelo), el fix de "Publicación externa", y la vista previa real de Modelo → Motion/Commercials
+están **mergeadas a `main` y en producción** (commit `81196de`). Modelo sigue sin vista previa
+para el resto de sus secciones (Portada, Identity, Selected Work, Polaroids, Details, Booking) —
+mismo gap del diagnóstico original, sin tocar. Lo único que sigue pendiente de decisión de Ramón
+es la Parte 2-3 de
 `revision-sitio-bernardo-combeau.md` (rediseño del sitio público) — todo lo demás de ambos
 documentos ya se ejecutó y está en producción.
 
