@@ -215,18 +215,62 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > directo a `main` (commit `81196de`), en producción — confirmado en el HTML real servido desde
 > `bernardocombeau.cl`.
 
+> **Actualización 11 (4-sep-2026) — la vista previa de Motion/Commercials seguía rota para
+> Ramón; causa real: mi propia forma de probarlo en la ronda anterior, no el fix.** Ramón avisó
+> dos veces que seguía viéndose mal, la segunda ya después de un hard refresh — eso descartaba
+> caché de navegador. Primero confirmé que no era caché de borde de Vercel ni deploy atrasado: el
+> HTML servido en `bernardocombeau.cl` tenía byte a byte el fix de la Actualización 10. El
+> problema estaba en cómo yo mismo había verificado ese fix la vez anterior: para navegar rápido
+> entre entradas usé `location.hash = ...` por JavaScript directo en vez de clics reales o una
+> carga de página nueva. Parchando temporalmente una copia local de `decap-cms.js` (solo para
+> diagnóstico, nunca tocó el repo) para loguear qué props le llegan de verdad al componente de
+> vista previa, quedó confirmado: saltar el hash así deja a Decap con la entrada vieja y la
+> colección nueva mezcladas (props desincronizados) — un artefacto de mi método de prueba, no un
+> bug del sitio. Repetí la prueba con navegación real (clic en la sidebar hasta Motion/Commercials,
+> y por separado una carga de página nueva con el hash ya puesto en la URL, que es exactamente lo
+> que hace un hard refresh) y ahí sí: la vista previa arma sus 20 tarjetas (10 Motion + 10
+> Commercials) con los títulos reales. Las miniaturas de YouTube no se ven en mis capturas locales
+> porque el Chromium headless de este entorno no llega a `img.youtube.com` (mismo límite de
+> siempre) — en un navegador real sí cargan.
+>
+> De todos modos, mientras investigaba until esto, encontré una duda real (documentada en el
+> propio código de Decap, no una sospecha mía): para colecciones de varios archivos como "Modelo",
+> no hay ejemplo previo en este repo de si `registerPreviewTemplate` debe usar el nombre del
+> archivo (`"modelo_motion"`) o el de la colección (`"modelo"`) — la documentación oficial y el
+> código fuente de Decap dicen que es el del archivo, y así estaba desde la Actualización 10, pero
+> para no apostar a una sola lectura, ahora el mismo componente (renombrado `MotionPreview` →
+> `ModeloPreview`) queda registrado bajo los dos nombres. De regalo: el resto de Modelo sin vista
+> previa propia (Portada, Identity, Selected Work, Polaroids, Details, Booking) ahora muestra un
+> aviso claro ("todavía no tiene vista previa en vivo") en vez del dump genérico de Decap — mismo
+> gap de siempre, pero ya no confunde.
+>
+> Mergeado directo a `main` (commit `b64f8d2`), confirmado en producción vía curl a
+> `bernardocombeau.cl/admin`. Con todo, no tengo forma de reproducir exactamente el navegador/sesión
+> de Ramón, así que aunque esta ronda de verificación es mucho más sólida que la anterior (navegación
+> real, no el atajo con hash que resultó con fallas), le pedí que confirme de nuevo — reforzando
+> pedirle esta vez un hard refresh de verdad (Ctrl+Shift+R / Cmd+Shift+R) o probar en una ventana
+> privada, para descartar cualquier resto de caché de su lado.
+>
+> **Aparte, sin resolver todavía:** Ramón aclaró que "Motion son fotos y Commercials son los
+> videos de YouTube" — contradice cómo está construida hoy la sección (ambas listas son de links
+> de YouTube, ver `motion.json` y `gridDeVideos()` en `src/lib/modelo.js`), y ese código no es mío,
+> lo construyó otra sesión en paralelo. No lo toqué todavía porque implica un cambio de estructura
+> (Motion pasaría de lista de videos a galería de fotos) que vale la pena confirmar con Ramón antes
+> de tocar trabajo reciente de otra sesión.
+
 ---
 
-**Estado a 3-sep-2026, fin del día:** las Partes 1-3 de este documento (bug de Estudio,
-Direcciones A-D, fix de mobile), el encuadre de fotos con su rediseño a botón + Zoom + Volteo, la
-reconciliación con el trabajo que avanzó en paralelo en `main`, la corrección de la sidebar
-(Modelo), el fix de "Publicación externa", y la vista previa real de Modelo → Motion/Commercials
-están **mergeadas a `main` y en producción** (commit `81196de`). Modelo sigue sin vista previa
-para el resto de sus secciones (Portada, Identity, Selected Work, Polaroids, Details, Booking) —
-mismo gap del diagnóstico original, sin tocar. Lo único que sigue pendiente de decisión de Ramón
-es la Parte 2-3 de
-`revision-sitio-bernardo-combeau.md` (rediseño del sitio público) — todo lo demás de ambos
-documentos ya se ejecutó y está en producción.
+**Estado a 4-sep-2026:** las Partes 1-3 de este documento (bug de Estudio, Direcciones A-D, fix de
+mobile), el encuadre de fotos con su rediseño a botón + Zoom + Volteo, la reconciliación con el
+trabajo que avanzó en paralelo en `main`, la corrección de la sidebar (Modelo), el fix de
+"Publicación externa", y la vista previa real de Modelo → Motion/Commercials (con su segunda
+ronda, Actualización 11, tras el primer intento fallido) están **mergeadas a `main` y en
+producción** (último commit `b64f8d2`). El resto de las secciones de Modelo (Portada, Identity,
+Selected Work, Polaroids, Details, Booking) sigue sin una vista previa construida — pero ya no cae
+en el dump genérico de Decap, ahora muestra un aviso claro. Pendiente: confirmar con Ramón el
+alcance de "Motion son fotos, Commercials son videos" antes de tocar la estructura de datos
+(Actualización 11), y la Parte 2-3 de `revision-sitio-bernardo-combeau.md` (rediseño del sitio
+público) — todo lo demás de ambos documentos ya se ejecutó y está en producción.
 
 ---
 
