@@ -258,19 +258,51 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > (Motion pasaría de lista de videos a galería de fotos) que vale la pena confirmar con Ramón antes
 > de tocar trabajo reciente de otra sesión.
 
+> **Actualización 12 (4-sep-2026) — Ramón confirmó el alcance: Motion como galería de fotos,
+> Commercials queda igual.** Ejecutado. Sin pérdida de datos: los 10 "videos" que estaban bajo
+> Motion ya vivían idénticos bajo Commercials (`comerciales`), así que borrar la lista vieja de
+> Motion no pierde nada real — solo el duplicado mal etiquetado.
+>
+> - `motion.json`: `videos` (links de YouTube) → `fotos` (vacío, listo para que Bernardo suba
+>   fotos reales — nada inventado).
+> - `src/lib/modelo.js`: `motionFotos` reemplaza `motionVideos`; de paso, `conVisor()` y
+>   `encuadreStyle()` (el visor de tamaño completo y el encuadre/zoom) se mudaron acá desde
+>   `index.astro` para poder compartirlos con la nueva página de Motion.
+> - Nuevo componente `components/modelo/Visor.astro`: el diálogo de tamaño completo, que antes
+>   vivía solo en la portada, se extrajo a un componente compartido — ahora también lo usa
+>   Motion. Riesgo real acá: tocar una página que ya estaba en producción y funcionando (Book,
+>   Selected Work, Polaroids). Verificado explícitamente que no hubo regresión: las tres siguen
+>   abriendo el visor igual que antes.
+> - `motion.astro`: grilla de fotos de 3 columnas (mismo ritmo visual que Commercials, su página
+>   hermana) en vez de la grilla de videos.
+> - Panel: el campo "Motion" pasa de lista de links de YouTube a lista de fotos, mismo patrón
+>   que Galería/Polaroids (imagen + alt + encuadre + zoom). La vista previa (`ModeloPreview`)
+>   arma ambas ramas por separado — fotos para Motion, videos para Commercials, cada una con su
+>   propio criterio de "vacío todavía".
+>
+> Verificado en `local_backend` con 3 fotos de prueba reales (nunca commiteadas): la grilla en
+> `/modelo/motion`, el visor completo (abrir, cerrar, flecha siguiente), el nav y el botón de la
+> franja de Motion apareciendo/desapareciendo solos según haya contenido, la vista previa del
+> panel mostrando la grilla real, y un build de Astro limpio de punta a punta. Mergeado directo a
+> `main` (commit `b4a8939` — sobre `b64f8d2`, reconciliado con dos commits que Bernardo mismo
+> subió mientras tanto desde el panel real: subió una foto nueva a Portada y otra a Polaroids,
+> señal independiente de que la Actualización 11 sí le resolvió el problema). En producción.
+
 ---
 
 **Estado a 4-sep-2026:** las Partes 1-3 de este documento (bug de Estudio, Direcciones A-D, fix de
 mobile), el encuadre de fotos con su rediseño a botón + Zoom + Volteo, la reconciliación con el
 trabajo que avanzó en paralelo en `main`, la corrección de la sidebar (Modelo), el fix de
-"Publicación externa", y la vista previa real de Modelo → Motion/Commercials (con su segunda
-ronda, Actualización 11, tras el primer intento fallido) están **mergeadas a `main` y en
-producción** (último commit `b64f8d2`). El resto de las secciones de Modelo (Portada, Identity,
-Selected Work, Polaroids, Details, Booking) sigue sin una vista previa construida — pero ya no cae
-en el dump genérico de Decap, ahora muestra un aviso claro. Pendiente: confirmar con Ramón el
-alcance de "Motion son fotos, Commercials son videos" antes de tocar la estructura de datos
-(Actualización 11), y la Parte 2-3 de `revision-sitio-bernardo-combeau.md` (rediseño del sitio
-público) — todo lo demás de ambos documentos ya se ejecutó y está en producción.
+"Publicación externa", la vista previa real de Modelo → Motion/Commercials (segunda ronda,
+Actualización 11) y el cambio de Motion a galería de fotos (Actualización 12, confirmado por
+Ramón) están **mergeadas a `main` y en producción** (último commit `b4a8939`). Bernardo ya está
+usando el panel de verdad — dos commits propios (`bern.combeau@gmail.com`) subieron una foto
+nueva a Portada y otra a Polaroids mientras se hacía esta ronda, señal independiente de que el
+panel funciona para él. El resto de las secciones de Modelo (Identity, Selected Work, Details,
+Booking) sigue sin una vista previa construida — pero ya no cae en el dump genérico de Decap,
+ahora muestra un aviso claro. Pendiente: la Parte 2-3 de `revision-sitio-bernardo-combeau.md`
+(rediseño del sitio público) — todo lo demás de ambos documentos ya se ejecutó y está en
+producción.
 
 ---
 
