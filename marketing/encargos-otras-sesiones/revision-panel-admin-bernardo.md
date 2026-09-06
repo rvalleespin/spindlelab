@@ -288,21 +288,49 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > subió mientras tanto desde el panel real: subió una foto nueva a Portada y otra a Polaroids,
 > señal independiente de que la Actualización 11 sí le resolvió el problema). En producción.
 
+> **Actualización 13 (4-sep-2026) — Ramón mandó capturas: Galería, Identity y Selected Work
+> mostraban la vista previa "desconfigurada"** (una foto gigante sin recortar; en Identity,
+> texto crudo sobre fondo negro). Causa raíz encontrada leyendo el propio código fuente de Decap:
+> para una colección de varios archivos, `registerPreviewTemplate()` usa el nombre del ARCHIVO
+> individual como clave — nunca el de la colección completa. El registro a nivel de colección que
+> dejé en la Actualización 11 "por si acaso" nunca se consultaba, para ninguna ficha. Solo
+> `modelo_motion` tenía su propio registro; las otras 7 fichas (Portada, Galería, Identity,
+> Selected Work, Polaroids, Details, Booking) caían directo en el dump genérico de Decap, aunque
+> el componente ya sabía mostrarles un aviso — nunca llegaba a ejecutarse para ellas.
+>
+> De paso apareció un segundo bug real, que este arreglo habría introducido si no lo agarraba:
+> la forma en que el componente decidía "¿esta ficha es Motion?" miraba si el entry tenía un
+> campo llamado `fotos` — pero Galería *también* tiene un campo `fotos` (su lista de 12 fotos),
+> así que las hubiera confundido. Ahora decide por el slug real de la entrada
+> (`entry.get("slug") === "modelo_motion"`), confirmado distinto para cada una de las 8 fichas
+> antes de confiar en él.
+>
+> Verificación con una complicación propia: probar las 8 fichas reutilizando la misma pestaña
+> con recargas sucesivas rápidas daba **falsos negativos incluso en Motion** — un artefacto del
+> entorno de prueba local (`decap-server`), no del código real. Se detectó porque un chequeo
+> aislado del slug (proceso nuevo por ficha, con su propio login) sí daba el valor correcto en
+> las 8; solo repitiendo ESE mismo patrón para ver la vista previa completa se pudo confirmar de
+> verdad: Galería, Identity, Selected Work y Portada muestran el aviso sobre fondo blanco;
+> Motion sigue mostrando su grilla real de fotos + los 10 videos de Commercials.
+>
+> Mergeado directo a `main` (commit `61027df`), confirmado en producción.
+
 ---
 
 **Estado a 4-sep-2026:** las Partes 1-3 de este documento (bug de Estudio, Direcciones A-D, fix de
 mobile), el encuadre de fotos con su rediseño a botón + Zoom + Volteo, la reconciliación con el
 trabajo que avanzó en paralelo en `main`, la corrección de la sidebar (Modelo), el fix de
-"Publicación externa", la vista previa real de Modelo → Motion/Commercials (segunda ronda,
-Actualización 11) y el cambio de Motion a galería de fotos (Actualización 12, confirmado por
-Ramón) están **mergeadas a `main` y en producción** (último commit `b4a8939`). Bernardo ya está
-usando el panel de verdad — dos commits propios (`bern.combeau@gmail.com`) subieron una foto
-nueva a Portada y otra a Polaroids mientras se hacía esta ronda, señal independiente de que el
-panel funciona para él. El resto de las secciones de Modelo (Identity, Selected Work, Details,
-Booking) sigue sin una vista previa construida — pero ya no cae en el dump genérico de Decap,
-ahora muestra un aviso claro. Pendiente: la Parte 2-3 de `revision-sitio-bernardo-combeau.md`
-(rediseño del sitio público) — todo lo demás de ambos documentos ya se ejecutó y está en
-producción.
+"Publicación externa", la vista previa real de Modelo → Motion/Commercials (Actualización 11), el
+cambio de Motion a galería de fotos (Actualización 12) y el arreglo de la vista previa del resto
+de Modelo — Galería, Identity, Selected Work, Portada, Polaroids, Details, Booking, cada una con
+su propio registro en vez de uno a nivel de colección que nunca se usaba (Actualización 13) —
+están **mergeadas a `main` y en producción** (último commit `61027df`). Bernardo ya está usando
+el panel de verdad — dos commits propios (`bern.combeau@gmail.com`) subieron una foto nueva a
+Portada y otra a Polaroids durante esta ronda, señal independiente de que el panel funciona para
+él. Ninguna de las 7 fichas de Modelo sin vista previa propia cae ya en el dump genérico de
+Decap — todas muestran un aviso claro sobre fondo blanco. Pendiente: la Parte 2-3 de
+`revision-sitio-bernardo-combeau.md` (rediseño del sitio público) — todo lo demás de ambos
+documentos ya se ejecutó y está en producción.
 
 ---
 
