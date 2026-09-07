@@ -315,20 +315,38 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 >
 > Mergeado directo a `main` (commit `61027df`), confirmado en producción.
 
+> **Actualización 14 (4-sep-2026) — Ramón: "el cliente quiere ver la vista previa del trabajo
+> que está haciendo en el sitio".** El aviso prolijo de la Actualización 13 evitaba el dump
+> genérico de Decap, pero no era lo que Bernardo pedía — quería ver su contenido de verdad,
+> reflejado como en el sitio. Construida la vista previa real para las 7 fichas que solo tenían
+> el aviso: Portada (foto hero + línea de datos), Galería (grilla Book de 2 columnas), Identity
+> (texto), Selected Work (nombre + detalle + portada de campaña + conteo de fotos), Polaroids
+> (grilla de 4), Details (las tres agrupaciones de medidas) y Booking (región + Instagram — sin
+> email/WhatsApp, que viven en la ficha "Contacto", una colección aparte sin acceso desde acá).
+> Cada una reconstruye SOLO su propia sección con el CSS real de `index.astro`, no la página
+> `/modelo/` completa entera — técnicamente no es posible: una vista previa de Decap no tiene
+> acceso en vivo a los datos de las OTRAS 7 fichas mientras se edita una, cada una es su propio
+> archivo/entry.
+>
+> Verificado con el contenido real de Bernardo — las 8 fichas ya tenían datos cargados, no hizo
+> falta inventar nada de prueba — confirmando visualmente (no solo por texto) que las 8 vistas
+> previas se ven fieles al sitio: fotos reales bien recortadas, tipografía y espaciado
+> correctos. Mergeado directo a `main` (commit `f57b493`), confirmado en producción.
+
 ---
 
 **Estado a 4-sep-2026:** las Partes 1-3 de este documento (bug de Estudio, Direcciones A-D, fix de
 mobile), el encuadre de fotos con su rediseño a botón + Zoom + Volteo, la reconciliación con el
 trabajo que avanzó en paralelo en `main`, la corrección de la sidebar (Modelo), el fix de
 "Publicación externa", la vista previa real de Modelo → Motion/Commercials (Actualización 11), el
-cambio de Motion a galería de fotos (Actualización 12) y el arreglo de la vista previa del resto
-de Modelo — Galería, Identity, Selected Work, Portada, Polaroids, Details, Booking, cada una con
-su propio registro en vez de uno a nivel de colección que nunca se usaba (Actualización 13) —
-están **mergeadas a `main` y en producción** (último commit `61027df`). Bernardo ya está usando
-el panel de verdad — dos commits propios (`bern.combeau@gmail.com`) subieron una foto nueva a
-Portada y otra a Polaroids durante esta ronda, señal independiente de que el panel funciona para
-él. Ninguna de las 7 fichas de Modelo sin vista previa propia cae ya en el dump genérico de
-Decap — todas muestran un aviso claro sobre fondo blanco. Pendiente: la Parte 2-3 de
+cambio de Motion a galería de fotos (Actualización 12), el arreglo del registro de vista previa
+por ficha (Actualización 13) y la construcción de la vista previa real para las 7 fichas que
+solo tenían un aviso — Portada, Galería, Identity, Selected Work, Polaroids, Details, Booking
+(Actualización 14) — están **mergeadas a `main` y en producción** (último commit `f57b493`). Las
+8 fichas de Modelo tienen ahora vista previa real, con el contenido de Bernardo reflejado como se
+ve en el sitio. Bernardo ya está usando el panel de verdad — dos commits propios
+(`bern.combeau@gmail.com`) subieron una foto nueva a Portada y otra a Polaroids durante esta
+ronda, señal independiente de que el panel funciona para él. Pendiente: la Parte 2-3 de
 `revision-sitio-bernardo-combeau.md` (rediseño del sitio público) — todo lo demás de ambos
 documentos ya se ejecutó y está en producción.
 
