@@ -52,6 +52,34 @@ impacto y memoria **sin perder la esencia**.
 > y el tamaño real (48×48px) de los tres controles del lightbox. Mergeado directo a
 > `main` (commit `058dbf6`), confirmado en producción.
 
+> **Actualización 2 (7-sep-2026) — Ramón corrige: "me equivoqué en separar los
+> sitios", fondo negro permanente para todo Bernardo-fotógrafo.** Instrucción directa:
+> el sitio de fotografía (Home, Retratos, Proyectos, Estudio, Servicios, Sobre mí,
+> Contacto) va en fondo negro, y **solo** la sección Modelo queda en blanco. Antes de
+> tocar nada confirmé en el propio código que hoy no existe ningún mecanismo activo
+> que fuerce un tema — el sitio solo se veía oscuro si el visitante tenía dark mode
+> activado en su sistema operativo (`prefers-color-scheme`), y los selectores
+> `[data-theme]` que ya estaban escritos en el CSS nunca se activaban desde ningún
+> `.astro` (código muerto).
+>
+> Ejecutado: el fondo oscuro pasa a ser **fijo**, no condicional al tema del sistema —
+> se usa la misma paleta oscura que ya vivía en el CSS (nunca se inventó un color
+> nuevo), y se retiró el `@media(prefers-color-scheme)` más los `[data-theme]`
+> muertos. La sección Modelo no se tocó — tiene sus propios tokens
+> (`--mp`/`--mi`/`--mm`/`--ml`), siempre claros, completamente aislados de los del
+> sitio principal (`--paper`/`--ink`/etc.), así que sigue blanca sin que hiciera falta
+> ningún cambio ahí. Confirmé además que ningún archivo de página tiene un color
+> "a mano" (grep sin resultados fuera de `global.css`) — todo el sitio ya dependía de
+> estos tokens, por eso el cambio fue de una sola pieza del CSS.
+>
+> Verificado con Chromium headless local, forzando el color-scheme del navegador a
+> "dark" y a "light" por separado en las mismas páginas — el sitio principal se ve
+> **idéntico** en ambos casos (ya no depende del sistema del visitante), con buen
+> contraste en cada página (Servicios, Contacto, Retratos + lightbox, Estudio, Sobre
+> mí); Modelo (portada y Work) se ve sin ningún cambio, blanca, con el trabajo de
+> rondas anteriores (grilla de 2 columnas, flechas, tipografía) intacto. Mergeado
+> directo a `main` (commit `00b134c`), confirmado en producción.
+
 ---
 
 ## PARTE 1 — Correcciones (esto no es gusto, está roto o falta)
