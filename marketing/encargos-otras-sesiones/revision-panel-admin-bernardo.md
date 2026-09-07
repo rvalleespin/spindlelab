@@ -333,20 +333,41 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > previas se ven fieles al sitio: fotos reales bien recortadas, tipografía y espaciado
 > correctos. Mergeado directo a `main` (commit `f57b493`), confirmado en producción.
 
+> **Actualización 15 (7-sep-2026) — Ramón agregó una campaña nueva en Selected Work
+> ("Nuevas marcas") y el clic para abrirla no hacía nada.** No era un bug puntual: Selected Work
+> vivía embebida dentro de la portada, así que "abrir esa categoría" no llevaba a ningún lado
+> nuevo — el clic solo intentaba abrir el visor sobre la misma página. El árbol que describió
+> Ramón (Home → Selected Work con una foto de portada → cada campaña) pedía la misma estructura
+> que ya tienen Motion y Commercials: página propia. Confirmado con él antes de tocar nada.
+>
+> - Nueva página `/modelo/work`: la lista completa de campañas (antes embebida en la portada),
+>   con su visor de fotos.
+> - La portada (`/modelo/`) ahora muestra solo una foto de portada de Selected Work, que lleva a
+>   `/modelo/work`. Campo nuevo en el panel para elegirla a propósito; si se deja vacío, usa la
+>   primera foto de la primera campaña — así nunca queda vacía apenas se carga una campaña nueva
+>   (exactamente el estado en el que estaba "Nuevas marcas").
+>
+> Verificado en local que el clic en la foto de "Nuevas marcas" (una sola foto, el caso concreto
+> que reportó Ramón) abre el visor bien, sin flechas de más; que ALTOCONCEPTO (4 fotos) sigue
+> sin regresión; y que la vista previa del panel muestra tanto la portada como la lista completa,
+> ya que un solo archivo alimenta las dos partes del sitio. Mergeado directo a `main` (commit
+> `33a284e`), confirmado en producción.
+
 ---
 
-**Estado a 4-sep-2026:** las Partes 1-3 de este documento (bug de Estudio, Direcciones A-D, fix de
+**Estado a 7-sep-2026:** las Partes 1-3 de este documento (bug de Estudio, Direcciones A-D, fix de
 mobile), el encuadre de fotos con su rediseño a botón + Zoom + Volteo, la reconciliación con el
 trabajo que avanzó en paralelo en `main`, la corrección de la sidebar (Modelo), el fix de
 "Publicación externa", la vista previa real de Modelo → Motion/Commercials (Actualización 11), el
 cambio de Motion a galería de fotos (Actualización 12), el arreglo del registro de vista previa
-por ficha (Actualización 13) y la construcción de la vista previa real para las 7 fichas que
-solo tenían un aviso — Portada, Galería, Identity, Selected Work, Polaroids, Details, Booking
-(Actualización 14) — están **mergeadas a `main` y en producción** (último commit `f57b493`). Las
-8 fichas de Modelo tienen ahora vista previa real, con el contenido de Bernardo reflejado como se
-ve en el sitio. Bernardo ya está usando el panel de verdad — dos commits propios
-(`bern.combeau@gmail.com`) subieron una foto nueva a Portada y otra a Polaroids durante esta
-ronda, señal independiente de que el panel funciona para él. Pendiente: la Parte 2-3 de
+por ficha (Actualización 13), la construcción de la vista previa real para las 7 fichas que solo
+tenían un aviso (Actualización 14) y el paso de Selected Work a página propia con su foto de
+portada en Home (Actualización 15) están **mergeadas a `main` y en producción** (último commit
+`33a284e`). Las 8 fichas de Modelo tienen vista previa real, con el contenido de Bernardo
+reflejado como se ve en el sitio; Motion, Commercials y ahora Work son páginas propias, cada una
+con su URL. Bernardo ya está usando el panel de verdad — commits propios
+(`bern.combeau@gmail.com`) subiendo fotos nuevas a Portada, Polaroids y Selected Work durante
+estas rondas, señal independiente de que el panel funciona para él. Pendiente: la Parte 2-3 de
 `revision-sitio-bernardo-combeau.md` (rediseño del sitio público) — todo lo demás de ambos
 documentos ya se ejecutó y está en producción.
 
