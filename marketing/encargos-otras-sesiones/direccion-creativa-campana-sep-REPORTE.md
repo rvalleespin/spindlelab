@@ -77,7 +77,9 @@ Detalle y capturas: `redes/2026-09-septiembre/_reserva/sprint-concepto-01sep/com
 | 5 | **Fricción abierta:** la pieza lleva precio **y** CTA a chequeo gratis. Son dos ofertas en el mismo pie. Se resuelve si el cuerpo las ordena como recorrido; si no, compiten | Renata / Ramón | con el copy |
 | 6 | **Recolocar la cola de septiembre**: dar fecha nueva al anuncio del motor v2 y decidir qué va en el slot del jue 3, que quedó abierto | Marta + troncal | hoy/mañana |
 | 7 | **Aplicar el concepto al resto del mes**, solo donde mejora | Bruno, cuando el troncal lo encargue | tras el pase de hoy |
-| 8 | **Reel con la cara de Ramón** — él lo levantó como idea para contenido educacional diferenciador. No es de este sprint | Ramón decide cuándo | más adelante |
+| 8 | **Comparativa para Instagram** (`_reserva/ig-comparativa-01sep/`): pieza lista, pendiente de titular + caption (encargo ya sumado a `copy-circuito-post-hoy-renata.md`) y de revisar las celdas sobre terceros | Renata + Cata + Ramón | hoy |
+| 9 | ⚠️ **Video de presentación de marca para Instagram, mié 2-sep.** Ramón lo anunció y declaró que **no tiene guion, no lo ha ensayado ni grabado**. Si sale mañana, el guion tiene que encargarse HOY | Renata (guion) + Ramón (grabar) | **hoy, o se cae** |
+| 10 | **Reel con la cara de Ramón** como línea de contenido educacional — idea suya, distinta del video del mié. No es de este sprint | Ramón decide cuándo | más adelante |
 
 ## 6. Nota de método (para que no se repita)
 
