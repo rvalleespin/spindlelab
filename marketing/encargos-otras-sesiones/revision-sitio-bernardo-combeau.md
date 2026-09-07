@@ -193,6 +193,51 @@ impacto y memoria **sin perder la esencia**.
 > Redes sociales (9:16), cada link apuntando al Short real correspondiente.
 > Mergeado directo a `main` (commit `bac7af6`), confirmado en producción.
 
+> **Actualización 7 (7-sep-2026) — auditoría de fricción sobre todo lo hecho esta
+> sesión.** Ramón pidió revisar el conjunto y resolver lo que generara fricción,
+> no solo lo puntual que se había ido reportando. Encontré un hallazgo real y
+> dos menores.
+>
+> **El hallazgo real: el lightbox de Retratos/Proyectos no se podía cerrar con
+> teclado.** Es un mecanismo viejo (CSS `:target`, sin JavaScript a propósito) —
+> confirmado con una prueba concreta, no una sospecha: Escape no lo cerraba (el
+> hash se quedaba fijo) y el foco no se movía adentro al abrirlo. El Visor de
+> Modelo (`<dialog>` + `showModal()`, construido en esta misma sesión) ya
+> resolvía exactamente esto — foco atrapado, Escape, gestos de swipe — pero
+> Retratos/Proyectos se quedaron con el mecanismo original.
+>
+> Unifiqué los dos: Retratos y Proyectos ahora usan el mismo `<Visor />`
+> compartido que Modelo. Al componente le costó una generalización real (antes
+> buscaba específicamente `button.photo`, el nombre de clase de Modelo; ahora
+> busca por el atributo `data-lb`, así no le importa qué CSS use cada sección) y
+> un soporte nuevo de caption opcional (lugar/año/crédito, separado del `alt`
+> real de la foto — sin eso, sigue mostrando el alt, cero cambio para Modelo).
+> **Encontré y corregí en el camino un bug propio de esta misma unificación**
+> antes de subir nada: al generalizar el selector de clic olvidé actualizar el
+> que arma el grupo de fotos navegables, y quedó buscando `button.photo` en vez
+> de `button[data-lb]` — cero fotos encontradas, error de JS al abrir. Lo agarró
+> la propia prueba (Playwright reportó 0 fotos y un error real), no quedó en
+> producción.
+>
+> **Los dos menores:** `.serie-nav` (← serie anterior / siguiente →) y el pie de
+> página no tenían ningún estado de hover/focus — `.serie-nav` ni eso: era
+> `color:inherit` puro, se leía como texto plano sin ninguna pista de que lleva
+> a otra página. Mismo criterio ya usado en el resto del sitio esta sesión
+> (oscurece hacia `--ink` al pasar el mouse o tabular).
+>
+> **Revisado y descartado como fricción real:** integridad de todos los links
+> de navegación (sin 404 en ninguna ruta actual); contraste del tema oscuro
+> permanente (Actualización 2) calculado con la fórmula real de WCAG —
+> `--ink`/`--paper` en 17.6:1, `--mute`/`--paper` en 5.7:1, ambos superan el
+> mínimo AA de 4.5:1 sin ningún ajuste necesario.
+>
+> Verificado con Chromium headless local: clic abre el visor y atrapa el foco,
+> flechas navegan la misma serie, Escape cierra y devuelve el foco a la
+> miniatura correcta, en Retratos, Proyectos y (sin regresión) en Modelo → Work;
+> probado también en viewport de celular (abre con tap) y con datos de prueba
+> temporales revertidos para el caption combinado. Mergeado directo a `main`
+> (commits `e198bf9` y `4df3f70`), confirmado en producción.
+
 ---
 
 ## PARTE 1 — Correcciones (esto no es gusto, está roto o falta)
