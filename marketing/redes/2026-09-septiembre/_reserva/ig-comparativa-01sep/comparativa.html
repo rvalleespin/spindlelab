@@ -1,26 +1,28 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
 <style>
-/* IG feed 4:5 (1080x1350) — tabla comparativa.
-   REGLA RESPETADA: no se nombra ni una sola marca de la competencia
-   (reposicionamiento-redes.md:13 "contraste honesto, sin nombrar cuentas ni competidores").
-   Se comparan FORMAS DE CONTRATAR, no empresas. Ninguna celda afirma nada que no
-   se sostenga estructuralmente; donde no hay dato, dice lo que de verdad pasa. */
+/* IG feed 4:5 (1080x1350) — comparativa v2.
+   Columnas en lenguaje de la calle (pedido de Ramon: "en Instagram todos lo tienen que
+   entender"). NO se nombra ninguna marca de la competencia: "una agencia" y "un
+   freelance" son categorias, no empresas (regla reposicionamiento-redes.md:13).
+   NOTA DE MARCA: "SpindleLab" como encabezado de columna va en Gabarito petroleo SIN
+   punto: es el nombre usado como texto, no el wordmark (el wordmark firma abajo, con
+   su punto dorado, que sigue siendo el unico dorado de la pieza). */
 html,body { width:1080px; height:1350px; }
-.post { width:1080px; height:1350px; padding:76px 62px 70px; display:flex; flex-direction:column; color:#f2efe8;
+.post { width:1080px; height:1350px; padding:76px 58px 70px; display:flex; flex-direction:column; color:#f2efe8;
   background:linear-gradient(rgba(14,20,27,0.90), rgba(14,20,27,0.97)), url('fondo-hilo.jpg') center/cover, #0e141b; }
-.h2 { font-family:'Gabarito'; font-weight:600; font-size:64px; line-height:1.1; letter-spacing:-1.2px; margin-top:22px; }
+.h2 { font-family:'Gabarito'; font-weight:600; font-size:66px; line-height:1.08; letter-spacing:-1.4px; margin-top:24px; }
 .h2 em { font-style:normal; color:#2fa99b; }
-.baja { font-size:26px; line-height:1.5; color:#9aa4b0; margin-top:22px; max-width:900px; }
-table { width:100%; border-collapse:collapse; margin-top:40px; }
-th,td { padding:20px 8px; text-align:center; font-size:21px; color:#9aa4b0; vertical-align:middle;
+.baja { font-size:26px; line-height:1.5; color:#9aa4b0; margin-top:20px; max-width:900px; }
+table { width:100%; border-collapse:collapse; margin-top:46px; }
+th,td { padding:25px 6px; text-align:center; font-size:21px; color:#9aa4b0; vertical-align:middle;
   border-bottom:1px solid rgba(247,245,240,0.09); }
-th { font-size:19px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color:#6b7580; padding-bottom:20px; }
-td.q, th.q { text-align:left; font-size:25px; color:#f2efe8; font-weight:500; width:340px; padding-left:2px; line-height:1.25; }
+th { font-size:20px; font-weight:700; color:#8a939d; padding-bottom:22px; line-height:1.25; }
+td.q, th.q { text-align:left; font-size:25px; color:#f2efe8; font-weight:500; width:352px; padding-left:2px; line-height:1.25; }
 .col-1 { background:rgba(47,169,155,0.10); }
-th.col-1 { color:#2fa99b; font-size:21px; }
-td.col-1 { color:#f2efe8; font-weight:600; font-size:25px; }
-.si { color:#2fa99b; font-size:27px; }
-.no { color:#5c6570; font-size:24px; }
+th.col-1 { font-family:'Gabarito'; font-weight:600; font-size:28px; color:#2fa99b; letter-spacing:-0.4px; }
+td.col-1 { color:#f2efe8; font-weight:600; }
+.si { color:#2fa99b; font-size:28px; }
+.no { color:#5c6570; font-size:25px; }
 tr.precio td { border-bottom:none; padding-top:26px; font-size:22px; }
 tr.precio td.col-1 { font-family:'Gabarito'; font-weight:600; font-size:31px; color:#f2efe8; }
 .pie { margin-top:auto; display:flex; align-items:flex-end; justify-content:space-between; }
@@ -28,46 +30,46 @@ tr.precio td.col-1 { font-family:'Gabarito'; font-weight:600; font-size:31px; co
 <div class="post">
   <div class="eyebrow">Chequea tu sitio · Septiembre</div>
   <div class="rule"></div>
-  <div class="h2">Un motor.<br><em>No cuatro cuentas por pagar.</em></div>
-  <div class="baja">Las formas de resolverlo, puestas una al lado de la otra.</div>
+  <div class="h2">Un solo motor.<br><em>No cuatro proveedores.</em></div>
+  <div class="baja">Lo que estás evaluando, puesto una al lado de la otra.</div>
 
   <table>
     <tr>
       <th class="q"></th>
-      <th class="col-1">El motor</th>
-      <th>Por servicio<br>suelto</th>
-      <th>Equipo<br>interno</th>
+      <th class="col-1">SpindleLab</th>
+      <th>Una<br>agencia</th>
+      <th>Un<br>freelance</th>
       <th>Dejarlo<br>como está</th>
     </tr>
     <tr>
       <td class="q">Te encuentran en Google</td>
       <td class="col-1"><span class="si">✓</span></td><td><span class="si">✓</span></td>
-      <td>según el perfil</td><td><span class="no">✗</span></td>
+      <td>a veces</td><td><span class="no">✗</span></td>
     </tr>
     <tr>
       <td class="q">Te encuentran en ChatGPT y Gemini</td>
       <td class="col-1"><span class="si">✓</span></td><td>rara vez</td>
-      <td>rara vez</td><td><span class="no">✗</span></td>
+      <td><span class="no">✗</span></td><td><span class="no">✗</span></td>
     </tr>
     <tr>
-      <td class="q">Arregla el sitio, no solo lo informa</td>
-      <td class="col-1"><span class="si">✓</span></td><td>otro presupuesto</td>
-      <td>si hay quien lo haga</td><td><span class="no">✗</span></td>
+      <td class="q">Te arregla el sitio, no solo te dice qué falla</td>
+      <td class="col-1"><span class="si">✓</span></td><td>otro cobro</td>
+      <td>a veces</td><td><span class="no">✗</span></td>
     </tr>
     <tr>
-      <td class="q">Sitio, redes y pauta tiran del mismo eje</td>
-      <td class="col-1"><span class="si">✓</span></td><td><span class="no">✗</span></td>
-      <td>si alguien coordina</td><td><span class="no">✗</span></td>
+      <td class="q">Tu web, tus redes y tu pauta van juntas</td>
+      <td class="col-1"><span class="si">✓</span></td><td>por área</td>
+      <td><span class="no">✗</span></td><td><span class="no">✗</span></td>
     </tr>
     <tr>
-      <td class="q">Una sola persona responde por el conjunto</td>
+      <td class="q">Hablas siempre con quien hace el trabajo</td>
       <td class="col-1"><span class="si">✓</span></td><td><span class="no">✗</span></td>
       <td><span class="si">✓</span></td><td><span class="no">✗</span></td>
     </tr>
     <tr class="precio">
-      <td class="q">Para partir</td>
-      <td class="col-1">desde $400.000</td>
-      <td>3 o 4 cobros</td><td>un sueldo</td><td>lo que no entra</td>
+      <td class="q">Empiezas desde</td>
+      <td class="col-1">$400.000</td>
+      <td>3 o 4 cobros</td><td>varía</td><td>lo que no vendes</td>
     </tr>
   </table>
 
