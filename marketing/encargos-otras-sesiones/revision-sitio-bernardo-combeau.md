@@ -14,6 +14,46 @@ impacto y memoria **sin perder la esencia**.
 
 ---
 
+> **Actualización 1 (7-sep-2026) — primera corrección de botones/UI-UX del sitio
+> público, ejecutada.** A pedido de Ramón conecté el MCP de Refero (referencias de
+> diseño real) e hice un inventario completo de cada botón/link del sitio — con
+> Chromium headless corriendo local y capturas, no solo lectura de código. Encontré 5
+> gaps reales; los primeros 4 son correcciones (Parte 1, no rediseño):
+>
+> - **Servicios → "Otros proyectos" decía "Conversemos →" pero era un `<div>` sin
+>   acción** — un visitante no podía hacer clic ahí. Ahora es un link real a
+>   `/contacto`.
+> - **El CTA del hero y los 3 botones de Contacto** (WhatsApp/Email/Instagram) no
+>   tenían ningún estado hover ni focus-visible — cero feedback de que son
+>   interactivos, ni para mouse ni para teclado.
+> - **El tag "Publicado en" de las fichas de Retratos** tampoco tenía hover/focus —
+>   mismo bug, mismo arreglo.
+> - **Los controles del lightbox de Retratos/Proyectos** (cerrar/anterior/siguiente)
+>   tenían menos área de toque que el Visor nuevo de Modelo — parejados a 48×48px.
+>
+> El quinto punto sí toca el look, no solo la corrección — respaldado en 8 referencias
+> de sitios editoriales de fotografía en Refero (Atelier Deux-Cé, Julia Krantz,
+> Christopher Ireland, Artandcommerce, Bibliothèque, Simone Sniekers, Jakub Reis, Laura
+> Monin) más 3 sitios con CTA real (Sequel, Handhold, Medium): **el único CTA "duro"
+> del sitio (el pill del hero y el WhatsApp de Contacto) pasó de solo-contorno a
+> relleno sólido** — invierte a fantasma en hover para dar feedback, sin sumar ningún
+> color nuevo a la paleta. Email e Instagram siguen fantasma; nada más cambió.
+>
+> **Este último punto es exactamente el tipo de cambio que la Parte 3 de este
+> documento (punto 4, "un acento cálido... usado en el CTA") dejó como rediseño pagado
+> aparte (Parte 6).** Antes de tocarlo le pregunté a Ramón directamente si ya se
+> habían cobrado los $235.200 de Fases 1 y 5 — confirmó que sí, así que lo hice.
+> **Sigue pendiente y sin tocar:** el resto de la Parte 2-3 completa (romper la grilla
+> cuadrada, aparición al scroll, movimiento en el hero, etc.) — esto no fue eso, fue
+> solo el relleno del botón.
+>
+> Verificado con Chromium headless local: estados hover/focus por color computado (no
+> solo por ojo), el link de Servicios navegando de verdad a `/contacto` al hacer clic,
+> y el tamaño real (48×48px) de los tres controles del lightbox. Mergeado directo a
+> `main` (commit `058dbf6`), confirmado en producción.
+
+---
+
 ## PARTE 1 — Correcciones (esto no es gusto, está roto o falta)
 
 Prioridad sobre lo creativo. Varias son exactamente el servicio que vende SpindleLab, así
