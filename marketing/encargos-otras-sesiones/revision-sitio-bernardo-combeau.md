@@ -141,6 +141,34 @@ impacto y memoria **sin perder la esencia**.
 > extrayendo el script real servido: ya no queda ningún `matchMedia` de ancho de
 > pantalla, solo el de `prefers-reduced-motion`.
 
+> **Actualización 5 (7-sep-2026) — Commercials se divide en Spot TV y Redes
+> sociales.** Ramón pidió la subcategoría porque un spot de TV y un video hecho
+> para redes no miden lo mismo. Antes TODO Commercials forzaba la miniatura a
+> 16:9 (horizontal), sin importar la forma real del video.
+>
+> - **Dato:** cada comercial en `motion.json` suma `categoria`
+>   (`spot-tv`/`redes-sociales`), elegible desde un campo nuevo en el panel.
+> - **Sitio:** la página `/modelo/commercials` pasa a un solo `<h1>Commercials</h1>`
+>   con dos subgrupos (`<h2>`) — Spot TV en cuadros 16:9, Redes sociales en
+>   cuadros 9:16 (vertical) — cada uno visible solo si tiene contenido real.
+> - **Panel:** vista previa dividida igual que el sitio real, con la misma
+>   proporción por grupo.
+>
+> **Sobre los 10 comerciales que ya existían:** los dejé todos por defecto en
+> "Spot TV" al principio (no tenía forma de saber la categoría real de cada
+> uno sin inventarla), y lo dejé anotado así en el primer commit. Ramón avisó
+> en el momento que ese lote completo está subido al canal de YouTube como
+> **Shorts** — o sea, contenido vertical de redes, no spots de TV — así que
+> corregí los 10 a "redes-sociales" antes de subir nada a producción. Quedan
+> re-categorizables uno por uno desde el panel cuando Bernardo cargue contenido
+> nuevo de cualquiera de los dos tipos.
+>
+> Verificado con Chromium headless local (sitio real desktop/mobile, y el
+> panel completo corriendo en `local_backend`: el campo categoría en el
+> formulario, el resumen de cada item reflejándolo, y la vista previa en vivo
+> mostrando "Redes sociales" con las 10 miniaturas en 9:16). Mergeado directo
+> a `main` (commit `352361f`), confirmado en producción.
+
 ---
 
 ## PARTE 1 — Correcciones (esto no es gusto, está roto o falta)
