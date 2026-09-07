@@ -353,6 +353,45 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > ya que un solo archivo alimenta las dos partes del sitio. Mergeado directo a `main` (commit
 > `33a284e`), confirmado en producción.
 
+> **Actualización 16 (7-sep-2026) — primera revisión de Ramón sobre `/modelo/work` (la página
+> nueva de la Actualización 15), tres ajustes puntuales.** Mensaje de voz de Ramón, tres pedidos
+> concretos sobre lo que acababa de ver:
+>
+> - **Tipografía del título "Selected Work" no coincidía con "Polaroids".** En la Actualización 15
+>   el teaser de Home quedó con una tipografía distinta (sans-serif versalitas) a la de las demás
+>   secciones. Corregido: `.work-teaser-name` (Home) y el `<h1>` de `/modelo/work` ahora usan
+>   exactamente la misma familia/estilo/tamaño que `.mgallery h2` (Polaroids) — Georgia itálica,
+>   1.45rem. Verificado con `getComputedStyle` de las tres, no solo por ojo: `fontFamily`,
+>   `fontStyle` y `fontSize` idénticos entre los tres títulos.
+> - **Las campañas de Selected Work se apilaban en una sola columna, alargando el scroll.** Pidió
+>   2 columnas ("alto concepto, cuadrito al lado izquierdo, el otro cuadro, nuevas marcas") para
+>   que agregar campañas no siga estirando la página verticalmente. `.work-list` pasó de columna
+>   única a grilla de 2 columnas desde 640px (celular sigue en 1 columna — a ese ancho 2 columnas
+>   quedarían demasiado angostas).
+> - **Sin ninguna señal de que una campaña tiene más de una foto.** El caso concreto que notó:
+>   ALTOCONCEPTO tiene 4 fotos, pero la portada no daba ninguna pista — el clic sí abría el visor
+>   con las 4, pero nada indicaba que hubiera más antes de tocarla. Pidió una flecha a cada lado de
+>   la portada (derecha = hay más adelante, izquierda = volver), mismo criterio con el que ya
+>   funciona. Agregadas dos flechas (dibujadas en CSS, mismo mecanismo que el triángulo de play de
+>   Commercials — sin ícono ni SVG externo) sobre la portada de cada campaña con más de 1 foto;
+>   son puramente informativas, el clic sigue abriendo el mismo visor de siempre, que ya trae su
+>   propia navegación funcional entre fotos. Campañas de 1 sola foto (ej. "Nuevas marcas") no
+>   muestran flechas — no hay nada más que recorrer.
+>
+> Los tres cambios tocan tanto el sitio real (`index.astro`, `work.astro`) como la vista previa
+> del panel (`ModeloPreview` en `admin/index.html`), para que Bernardo vea en el panel lo mismo
+> que ve un visitante. Verificado con Playwright en ambos: capturas de escritorio (grilla de 2
+> columnas + flechas) y celular (1 columna, sin regresión) del sitio real, comparación de
+> tipografía computada entre los tres títulos, vista previa del panel mostrando la misma grilla de
+> 2 columnas y las mismas flechas, y una repetición de la prueba de clic-abre-visor (con las
+> flechas ya agregadas) para confirmar que no quedó ninguna regresión de interacción. Mergeado
+> directo a `main` (commit `49f066f`), confirmado en producción — verificado con curl que
+> `bernardocombeau.cl` sirve la tipografía nueva del teaser, la grilla de 2 columnas en
+> `/modelo/work` y las flechas tanto en el sitio como en el panel de administración.
+>
+> Ramón señaló que esta es la primera revisión de esta sección y que, con esto resuelto, se la
+> manda a Bernardo — no descarto una segunda ronda de ajustes una vez que él la vea.
+
 ---
 
 **Estado a 7-sep-2026:** las Partes 1-3 de este documento (bug de Estudio, Direcciones A-D, fix de
@@ -361,10 +400,11 @@ trabajo que avanzó en paralelo en `main`, la corrección de la sidebar (Modelo)
 "Publicación externa", la vista previa real de Modelo → Motion/Commercials (Actualización 11), el
 cambio de Motion a galería de fotos (Actualización 12), el arreglo del registro de vista previa
 por ficha (Actualización 13), la construcción de la vista previa real para las 7 fichas que solo
-tenían un aviso (Actualización 14) y el paso de Selected Work a página propia con su foto de
-portada en Home (Actualización 15) están **mergeadas a `main` y en producción** (último commit
-`33a284e`). Las 8 fichas de Modelo tienen vista previa real, con el contenido de Bernardo
-reflejado como se ve en el sitio; Motion, Commercials y ahora Work son páginas propias, cada una
+tenían un aviso (Actualización 14), el paso de Selected Work a página propia con su foto de
+portada en Home (Actualización 15) y su primera ronda de ajustes — tipografía, grilla de 2
+columnas, flechas de "más fotos" (Actualización 16) — están **mergeadas a `main` y en producción**
+(último commit `49f066f`). Las 8 fichas de Modelo tienen vista previa real, con el contenido de
+Bernardo reflejado como se ve en el sitio; Motion, Commercials y Work son páginas propias, cada una
 con su URL. Bernardo ya está usando el panel de verdad — commits propios
 (`bern.combeau@gmail.com`) subiendo fotos nuevas a Portada, Polaroids y Selected Work durante
 estas rondas, señal independiente de que el panel funciona para él. Pendiente: la Parte 2-3 de
