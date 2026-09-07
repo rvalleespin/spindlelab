@@ -80,6 +80,35 @@ impacto y memoria **sin perder la esencia**.
 > rondas anteriores (grilla de 2 columnas, flechas, tipografía) intacto. Mergeado
 > directo a `main` (commit `00b134c`), confirmado en producción.
 
+> **Actualización 3 (7-sep-2026) — "la franja de video del home está estática en el
+> teléfono".** Ramón reportó que la franja de Motion/Commercials (la sección con
+> video de fondo en `/modelo/`) no se movía en su celular. Causa encontrada en el
+> código, no es un bug nuevo — es una decisión de una sesión anterior, explícita en
+> un comentario del propio archivo: el video solo arranca solo al hacer scroll en
+> pantallas ≥768px (dato móvil + autoplay poco confiable en celular). El problema
+> real es que en pantallas chicas el botón Play **tampoco se mostraba** — quedaba la
+> franja fija sin absolutamente ninguna forma de hacerla andar.
+>
+> Corregido sin tocar la lógica de autoplay automático (que sigue siendo solo
+> desktop, respetando datos y `prefers-reduced-motion`, como ya estaba pensado): el
+> botón Play/Pause ahora aparece siempre que haya video, en cualquier pantalla. Un
+> tap es un gesto real del usuario, así que reproduce de forma confiable incluso
+> donde el autoplay automático no corre — el propio código ya advertía que el modo
+> de bajo consumo de iOS bloquea el autoplay "aun con muted + playsinline, y no es
+> detectable", así que forzar autoplay en todo celular no habría sido una solución
+> confiable; un botón que sí depende de un gesto del usuario, sí lo es.
+>
+> Verificado con Chromium headless local en viewport de celular (390×844, con
+> touch): antes del tap el botón ya está visible y el video no cargó nada
+> (`videoSrc:""`, cero costo de datos); después del tap el video carga y reproduce
+> de verdad (`paused:false`). En desktop, sin tocar nada, el autoplay automático
+> sigue exactamente igual que antes. Mergeado directo a `main` (commit `02cc02a`).
+> Confirmado en producción de forma indirecta pero concluyente: extraje el script
+> minificado real que sirve `bernardocombeau.cl/modelo/` y confirmé que
+> `botón.hidden=false` y su listener de clic ya no dependen del ancho de pantalla —
+> solo el arranque automático por `IntersectionObserver` sigue condicionado a
+> desktop, exactamente como quedó en el commit.
+
 ---
 
 ## PARTE 1 — Correcciones (esto no es gusto, está roto o falta)
