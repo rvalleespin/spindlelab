@@ -169,6 +169,30 @@ impacto y memoria **sin perder la esencia**.
 > mostrando "Redes sociales" con las 10 miniaturas en 9:16). Mergeado directo
 > a `main` (commit `352361f`), confirmado en producción.
 
+> **Actualización 6 (7-sep-2026) — la categorización de la Actualización 5 estaba
+> al revés; Ramón la corrigió, y trajo el contenido real de redes.** Los 10
+> comerciales que ya existían (Claro, Mennt, Skyrizi, Ketchup, Watts, Canada Dry,
+> Ramazzotti, Banco Internacional, Kit Kat, Jumbo Circo) son avisos de marca de
+> verdad, no Shorts — Ramón entró al panel él mismo y los corrigió de vuelta a
+> "spot-tv" (commit propio `ae86354`, verificado leyendo el diff real antes de
+> tocar nada más, no solo el mensaje). Después señaló dónde está el contenido de
+> redes sociales real: `youtube.com/@berncombeau/shorts`.
+>
+> Entré a esa página (el HTML público trae los datos de YouTube embebidos, no
+> hizo falta navegador) y extraje los **11 Shorts reales** que hay ahí — título y
+> ID de video de cada uno, nada inventado. Los agregué a `comerciales` con
+> `categoria:"redes-sociales"`: Kano Outdoor Parkas 2026, Cielo Milano 2025,
+> Comercial Santander 2025, Sastrería Cielo Milano, Opticas GMO, Comercial
+> Loncoleche 2025, Nolk Chile mountain wear, Jumbo Navidad 2024, Comercial Mall
+> Plaza 2024, Mall Plaza, y Viol Mati Bern. De regalo, la miniatura real de cada
+> uno confirma 720×1280 px — exactamente 9:16, la proporción vertical que ya se
+> había elegido para este grupo en la Actualización 5 sin todavía tener contenido
+> real para probarla.
+>
+> Verificado con Chromium headless local: 10 tiles en Spot TV (16:9) + 11 en
+> Redes sociales (9:16), cada link apuntando al Short real correspondiente.
+> Mergeado directo a `main` (commit `bac7af6`), confirmado en producción.
+
 ---
 
 ## PARTE 1 — Correcciones (esto no es gusto, está roto o falta)
