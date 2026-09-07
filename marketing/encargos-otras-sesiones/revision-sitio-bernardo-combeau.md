@@ -109,6 +109,38 @@ impacto y memoria **sin perder la esencia**.
 > solo el arranque automático por `IntersectionObserver` sigue condicionado a
 > desktop, exactamente como quedó en el commit.
 
+> **Actualización 4 (7-sep-2026) — Ramón corrige de nuevo: quiere que arranque sola
+> también en el teléfono, no solo con el botón.** La Actualización 3 resolvió "no hay
+> forma de hacerla andar" con un botón siempre disponible, pero la idea de Ramón era
+> que se reprodujera **automáticamente**, igual que en desktop.
+>
+> Se sacó la restricción de "solo pantallas ≥768px" del arranque automático — el
+> video ya iba `muted+playsinline`, que es justo el caso que los navegadores móviles
+> sí dejan autoplayear sin que el visitante toque nada (la restricción real de los
+> navegadores es sobre autoplay CON sonido, no sobre autoplay silenciado). Se
+> mantienen sin tocar las dos preferencias que sí son del visitante, no del tamaño de
+> su pantalla: `prefers-reduced-motion` y ahorro de datos (Data Saver) — si alguien
+> pidió explícitamente menos movimiento o cuidar sus datos, el video sigue sin
+> arrancar solo. El botón Play/Pause de la Actualización 3 se mantiene, siempre
+> visible, como respaldo: el propio código ya advertía que el modo de bajo consumo de
+> iPhone puede bloquear cualquier autoplay, muted o no, sin que haya forma de
+> detectarlo de antemano — si eso pasa, el botón sigue ahí para arrancarla a mano en
+> vez de quedar sin ninguna salida.
+>
+> Verificado con Chromium headless local, viewport de celular, sin tocar nada: el
+> `<video>` pasa a `paused:false` solo, con `muted:true` y `playsInline:true` (las
+> condiciones que los navegadores móviles exigen para autoplay sin gesto). No se
+> pudo confirmar el avance visual de los fotogramas en este entorno de prueba — el
+> Chromium headless de esta sesión no llega al CDN real del video (mismo límite de
+> red ya documentado antes para YouTube y unpkg.com; confirmado aparte que ese mismo
+> archivo SÍ es alcanzable por HTTP normal, o sea es un límite del navegador de
+> prueba, no del video ni del sitio). Verificado también que con
+> `prefers-reduced-motion` activado el video NO arranca solo (sigue mostrando el
+> póster) pero el botón Play sigue disponible, y que desktop no tuvo ninguna
+> regresión. Mergeado directo a `main` (commit `1f0a021`), confirmado en producción
+> extrayendo el script real servido: ya no queda ningún `matchMedia` de ancho de
+> pantalla, solo el de `prefers-reduced-motion`.
+
 ---
 
 ## PARTE 1 — Correcciones (esto no es gusto, está roto o falta)
