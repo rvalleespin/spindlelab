@@ -392,24 +392,71 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > Ramón señaló que esta es la primera revisión de esta sección y que, con esto resuelto, se la
 > manda a Bernardo — no descarto una segunda ronda de ajustes una vez que él la vea.
 
+> **Actualización 17 (8-sep-2026) — unificado el encuadre de Retratos/Proyectos con el de Modelo,
+> priorizando el rostro.** Pedido de Ramón (mensaje de voz): la galería de Retratos/Proyectos
+> seguía con el mecanismo original de la Actualización 3 (4 direcciones + volteo horizontal) y
+> preguntó si convenía simplificarla al patrón más simple que ya usa Modelo — pero con un cuidado
+> explícito: "hay que privilegiar el rostro del modelo, más que el look, cuando hay que hacer una
+> miniatura". Antes de tocar nada confirmé con datos reales (no supuesto): **ninguna** foto real
+> de Retratos/Proyectos usa nunca izquierda/derecha ni volteo — todos los ~15 registros existentes
+> están en el valor por defecto o en una de las 3 opciones verticales.
+>
+> - **Retratos y Proyectos** (`images[].focus`): las 5 opciones pasan a ser las mismas verticales
+>   que ya usa Modelo (Centrado / Todo arriba / Un poco arriba / Un poco abajo / Todo abajo) — se
+>   quitan las 4 direcciones + volteo, que nunca se usaron. El valor se sigue guardando como
+>   `"X% Y%"` (mismo formato `object-position`, X fijo en 50%), así que **no hubo que tocar el
+>   esquema de contenido ni el sitio público** — cero riesgo para las subidas futuras de Bernardo.
+>   La **Portada** de cada Retrato/Proyecto (el widget `focuspoint` 2D de la Actualización 3) no
+>   cambia — sigue con su propio encuadre libre + volteo, fuera del alcance de este pedido.
+> - **Las 6 ubicaciones con campo "Encuadre..."** (Retratos, Proyectos, y en Modelo: galería,
+>   motion, portada de Selected Work, polaroids) suman la misma frase al hint: *"Prioriza que se
+>   vea el ROSTRO completo por sobre el resto del look — si te queda cortada la cabeza/cara, elegí
+>   una opción más arriba."* — así Bernardo ve la misma indicación en cualquier parte del panel
+>   donde tenga que encuadrar una miniatura.
+>
+> Probado en local_backend (con `decap-server@3.11.0` — la versión `3.11.1`, recién publicada,
+> tiene un bug real de empaquetado que impide instalarla: declara sus dependencias con `catalog:`,
+> un protocolo de pnpm sin resolver, así que `npx decap-server` sin fijar versión falla; quedó
+> anotado por si se repite). Las 6 ubicaciones se revisaron una por una en el panel real —
+> incluyendo agregar una foto de prueba sin guardar en Motion, ya que ese campo está vacío en
+> producción (Bernardo aún no subió fotos ahí) — confirmando las 5 opciones nuevas y el hint nuevo
+> en cada una, sin romper el valor ya elegido en Selected Work (`"Todo arriba"`, dato real,
+> preservado). Build limpio (`astro build`), sin errores de consola en ningún caso. `git status`
+> limpio tras revertir todo lo de la prueba (`local_backend`, script local de Decap).
+>
+> Mergeado directo a `main` (`origin/main` traía 5 commits nuevos de Bernardo/Ramón subiendo
+> contenido real a Selected Work — sin superposición con este cambio, fast-forward limpio). Commit
+> `0b063dd`.
+>
+> **Pendiente de confirmar en producción:** al verificar el deploy, `bernardocombeau.cl` está
+> devolviendo **HTTP 402 / `DEPLOYMENT_DISABLED`** en *todas* las rutas (`/` y `/admin/` incluidos)
+> — no solo la nueva. No es este cambio: el mismo error aparece en la portada del sitio, que no se
+> tocó. Por el formato del error (región `iad1`, código `DEPLOYMENT_DISABLED`) parece un tema de
+> facturación/plan en la cuenta de Vercel del proyecto, no un fallo de build. Esta sesión no tiene
+> credenciales de esa cuenta de Vercel para confirmarlo desde adentro — hay que revisarlo
+> directamente en el dashboard de Vercel. El código ya está en `main`, listo para servirse en
+> cuanto el deploy se reactive.
+
 ---
 
-**Estado a 7-sep-2026:** las Partes 1-3 de este documento (bug de Estudio, Direcciones A-D, fix de
+**Estado a 8-sep-2026:** las Partes 1-3 de este documento (bug de Estudio, Direcciones A-D, fix de
 mobile), el encuadre de fotos con su rediseño a botón + Zoom + Volteo, la reconciliación con el
 trabajo que avanzó en paralelo en `main`, la corrección de la sidebar (Modelo), el fix de
 "Publicación externa", la vista previa real de Modelo → Motion/Commercials (Actualización 11), el
 cambio de Motion a galería de fotos (Actualización 12), el arreglo del registro de vista previa
 por ficha (Actualización 13), la construcción de la vista previa real para las 7 fichas que solo
 tenían un aviso (Actualización 14), el paso de Selected Work a página propia con su foto de
-portada en Home (Actualización 15) y su primera ronda de ajustes — tipografía, grilla de 2
-columnas, flechas de "más fotos" (Actualización 16) — están **mergeadas a `main` y en producción**
-(último commit `49f066f`). Las 8 fichas de Modelo tienen vista previa real, con el contenido de
-Bernardo reflejado como se ve en el sitio; Motion, Commercials y Work son páginas propias, cada una
-con su URL. Bernardo ya está usando el panel de verdad — commits propios
-(`bern.combeau@gmail.com`) subiendo fotos nuevas a Portada, Polaroids y Selected Work durante
-estas rondas, señal independiente de que el panel funciona para él. Pendiente: la Parte 2-3 de
-`revision-sitio-bernardo-combeau.md` (rediseño del sitio público) — todo lo demás de ambos
-documentos ya se ejecutó y está en producción.
+portada en Home (Actualización 15), su primera ronda de ajustes (Actualización 16) y la
+unificación del encuadre de Retratos/Proyectos con Modelo (Actualización 17) — todo está
+**mergeado a `main`** (último commit `0b063dd`), aunque el deploy en Vercel está caído por lo que
+parece un tema de cuenta/facturación ajeno al código (ver Actualización 17) y falta confirmarlo en
+vivo. Las 8 fichas de Modelo tienen vista previa real, con el contenido de Bernardo reflejado como
+se ve en el sitio; Motion, Commercials y Work son páginas propias, cada una con su URL. Bernardo ya
+está usando el panel de verdad — commits propios (`bern.combeau@gmail.com`) subiendo fotos nuevas a
+Portada, Polaroids y Selected Work durante estas rondas, señal independiente de que el panel
+funciona para él. Pendiente: la Parte 2-3 de `revision-sitio-bernardo-combeau.md` (rediseño del
+sitio público) — todo lo demás de ambos documentos ya se ejecutó, y está en `main` a la espera de
+que el deploy de Vercel vuelva a estar activo.
 
 ---
 
