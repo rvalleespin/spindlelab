@@ -64,4 +64,4 @@ bloqueo no borra citas hoy (los que sí: OAI-SearchBot/ChatGPT-User/etc.). Dónd
 3. La revisión de narrativa (⚠️) va junto al punto 1: mismo vocabulario en motor, piezas
    y ficha de Valen.
 
-**Estado:** ⬜ esperando OK de Ramón para la secuencia · creado 4-sep por la coordinación
+**Estado:** ✅ APROBADO por Ramón (4-sep): secuencia confirmada — motor v2 + landing lunes 8; fase IA post-Fiestas
