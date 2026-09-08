@@ -32,18 +32,23 @@
 
 <style>
   :root {
-    --bg: #f8fafc;
-    --panel: #ffffff;
-    --texto: #0f172a;
-    --texto-suave: #475569;
-    --borde: #e2e8f0;
-    --acento: #0f766e;
-    --acento-oscuro: #115e59;
-    --ok: #15803d;
-    --ok-bg: #f0fdf4;
-    --pendiente: #b45309;
-    --pendiente-bg: #fffbeb;
-    --info-bg: #f1f5f9;
+    --bg: #f7f2ea;
+    --bg-alt: #efe6d3;
+    --panel: #fffdf9;
+    --texto: #221b13;
+    --texto-suave: #6f6151;
+    --borde: #e2d6bf;
+    --acento: #0d6d61;
+    --acento-oscuro: #094f46;
+    --sello: #b5502c;
+    --sello-oscuro: #8f3d20;
+    --sello-contraste: #fffdf9;
+    --ok: #0d6d61;
+    --ok-bg: #e7f2ef;
+    --pendiente: #a8560f;
+    --pendiente-bg: #fbead9;
+    --info-bg: #efe6d3;
+    --sombra: 0 1px 2px rgba(34,27,19,.04), 0 8px 24px -12px rgba(34,27,19,.18);
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -53,31 +58,59 @@
     color: var(--texto);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
   }
   a { color: var(--acento-oscuro); }
   a:focus-visible, button:focus-visible, input:focus-visible {
-    outline: 3px solid var(--acento);
+    outline: 3px solid var(--sello);
     outline-offset: 2px;
   }
-  .envoltura { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  .envoltura { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sello-oscuro);
+    margin: 0 0 14px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--sello);
+    display: inline-block;
+  }
+
+  /* --- El sello: el motivo visual propio, sin imágenes ni fuentes externas --- */
+  .sello-mini { width: 26px; height: 26px; flex: 0 0 auto; }
+  .sello-mini .sello-anillo { fill: none; stroke: var(--texto); stroke-width: 3.5; stroke-dasharray: 4.2 5; opacity: .55; }
+  .sello-mini .sello-nucleo { fill: var(--sello); }
+  .sello-mini .sello-check { fill: none; stroke: var(--sello-contraste); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
 
   header.sitio {
     border-bottom: 1px solid var(--borde);
     padding: 18px 0;
+    background: var(--panel);
   }
   header.sitio .envoltura {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     gap: 12px;
     flex-wrap: wrap;
   }
   .marca {
-    font-weight: 700;
-    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 1.08rem;
     letter-spacing: -0.01em;
   }
-  .marca .punto { color: var(--acento); }
   .fecha-limite {
     font-size: 0.85rem;
     color: var(--texto-suave);
@@ -85,19 +118,44 @@
   }
   .fecha-limite strong { color: var(--texto); }
 
-  main { padding: 48px 0 64px; }
+  main { display: block; }
 
+  section.hero {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle, var(--borde) 1px, transparent 1px) 0 0 / 26px 26px,
+      linear-gradient(180deg, var(--bg-alt), var(--bg) 65%);
+    padding: 52px 0 44px;
+    border-bottom: 1px solid var(--borde);
+  }
+  .sello-marca-agua {
+    position: absolute;
+    top: -70px;
+    right: -90px;
+    width: 380px;
+    height: 380px;
+    opacity: .5;
+    transform: rotate(-9deg);
+    pointer-events: none;
+  }
+  .sello-marca-agua .sello-anillo { fill: none; stroke: var(--texto); stroke-width: 1.4; stroke-dasharray: 3.5 4.5; opacity: .28; }
+  .sello-marca-agua .sello-nucleo { fill: none; stroke: var(--sello); stroke-width: 1.6; opacity: .38; }
+  .sello-marca-agua .sello-check { fill: none; stroke: var(--sello); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; opacity: .45; }
+
+  .hero-contenido { position: relative; max-width: 62ch; }
   .hero h1 {
-    font-size: clamp(1.6rem, 4vw, 2.3rem);
-    line-height: 1.25;
-    margin: 0 0 14px;
-    letter-spacing: -0.01em;
+    font-size: clamp(1.9rem, 4.6vw, 2.7rem);
+    line-height: 1.16;
+    margin: 0 0 16px;
+    letter-spacing: -0.025em;
+    font-weight: 800;
   }
   .hero p.sub {
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     color: var(--texto-suave);
-    margin: 0 0 28px;
-    max-width: 58ch;
+    margin: 0 0 30px;
+    max-width: 56ch;
   }
 
   form.chequeo {
@@ -105,80 +163,109 @@
     gap: 10px;
     flex-wrap: wrap;
     margin-bottom: 10px;
+    position: relative;
   }
   form.chequeo input[type="text"] {
     flex: 1 1 240px;
-    padding: 13px 14px;
+    padding: 14px 16px;
     font-size: 1rem;
-    border: 1px solid var(--borde);
-    border-radius: 8px;
+    border: 1.5px solid var(--borde);
+    border-radius: 10px;
     background: var(--panel);
     color: var(--texto);
+    box-shadow: var(--sombra);
   }
+  form.chequeo input[type="text"]::placeholder { color: #9c8f7c; }
   form.chequeo button {
-    padding: 13px 22px;
+    padding: 14px 24px;
     font-size: 1rem;
-    font-weight: 600;
-    color: #fff;
-    background: var(--acento);
+    font-weight: 700;
+    color: var(--sello-contraste);
+    background: var(--sello);
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
+    box-shadow: var(--sombra);
+    transition: background .15s ease, transform .1s ease;
   }
-  form.chequeo button:hover { background: var(--acento-oscuro); }
-  form.chequeo button:disabled { background: #94a3b8; cursor: wait; }
+  form.chequeo button:hover { background: var(--sello-oscuro); }
+  form.chequeo button:active { transform: translateY(1px); }
+  form.chequeo button:disabled { background: #a89a86; cursor: wait; }
   .nota-privacidad {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: var(--texto-suave);
-    margin: 0 0 40px;
+    margin: 0;
   }
 
-  #resultado { display: none; }
+  #resultado { display: none; margin-top: 34px; }
   #resultado.visible { display: block; }
 
   .error-caja {
     background: var(--pendiente-bg);
-    border: 1px solid #fde68a;
-    color: #92400e;
+    border: 1px solid var(--pendiente);
+    color: var(--pendiente);
     padding: 14px 16px;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-bottom: 24px;
   }
 
   .puntaje-caja {
     display: flex;
     align-items: center;
-    gap: 18px;
-    padding: 20px;
+    gap: 22px;
+    padding: 22px 24px;
     background: var(--panel);
     border: 1px solid var(--borde);
-    border-radius: 12px;
-    margin-bottom: 28px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    box-shadow: var(--sombra);
   }
-  .puntaje-numero {
-    font-size: 2.4rem;
+  .anillo-wrap { position: relative; width: 84px; height: 84px; flex: 0 0 auto; }
+  .anillo-wrap svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .anillo-fondo { fill: none; stroke: var(--borde); stroke-width: 10; }
+  .anillo-progreso {
+    fill: none;
+    stroke: var(--acento);
+    stroke-width: 10;
+    stroke-linecap: round;
+    transition: stroke-dashoffset .6s ease;
+  }
+  .anillo-numero {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
     font-weight: 800;
-    color: var(--acento);
-    line-height: 1;
+    color: var(--texto);
   }
   .puntaje-texto { font-size: 0.92rem; color: var(--texto-suave); }
+  .puntaje-texto strong { color: var(--texto); }
 
   .bloque { margin-bottom: 28px; }
-  .bloque h2 { font-size: 1.05rem; margin: 0 0 2px; }
+  .bloque h2 { font-size: 1.08rem; margin: 0 0 2px; letter-spacing: -0.01em; }
   .bloque .sub-bloque { font-size: 0.85rem; color: var(--texto-suave); margin: 0 0 12px; }
 
-  ul.items { list-style: none; margin: 0; padding: 0; }
+  ul.items {
+    list-style: none; margin: 0; padding: 0;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+  }
   ul.items li {
     display: flex;
-    gap: 10px;
-    padding: 12px 0;
+    gap: 12px;
+    padding: 14px 18px;
     border-top: 1px solid var(--borde);
   }
   ul.items li:first-child { border-top: none; }
   .marca-estado {
     flex: 0 0 auto;
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -195,48 +282,76 @@
     display: block;
     font-size: 0.87rem;
     color: var(--acento-oscuro);
-    margin-top: 6px;
+    margin-top: 8px;
     padding-left: 10px;
-    border-left: 2px solid var(--acento);
+    border-left: 2px solid var(--sello);
   }
 
   .informativos {
     background: var(--info-bg);
-    border-radius: 12px;
-    padding: 18px 20px;
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 20px 22px;
     margin-top: 8px;
   }
   .informativos h2 { font-size: 0.95rem; margin: 0 0 4px; }
-  .informativos .sub-bloque { margin-bottom: 14px; }
+  .informativos .sub-bloque { margin-bottom: 16px; }
   .informativos .item-info { margin-bottom: 14px; }
   .informativos .item-info:last-child { margin-bottom: 0; }
   .informativos .item-info strong { display: block; font-size: 0.9rem; margin-bottom: 2px; }
   .informativos .item-info p { margin: 0; font-size: 0.87rem; color: var(--texto-suave); }
 
   section.explicador {
-    margin-top: 56px;
-    padding-top: 32px;
+    background: var(--bg-alt);
     border-top: 1px solid var(--borde);
+    border-bottom: 1px solid var(--borde);
+    padding: 52px 0;
   }
-  section.explicador h2 { font-size: 1.2rem; }
-  section.explicador h3 { font-size: 1rem; margin-top: 24px; }
-  section.explicador p { color: var(--texto-suave); }
-  section.explicador ul { color: var(--texto-suave); padding-left: 20px; }
+  section.explicador h2 { font-size: 1.5rem; margin: 0 0 16px; letter-spacing: -0.02em; }
+  section.explicador > .envoltura > p { color: var(--texto-suave); max-width: 62ch; }
+
+  .comparacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 28px 0 30px;
+  }
+  .comp-card {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 22px 22px 20px;
+    box-shadow: var(--sombra);
+  }
+  .comp-card h3 { margin: 0 0 12px; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+  .comp-si h3::before { content: "✓"; color: var(--ok); font-weight: 800; }
+  .comp-no h3::before { content: "＋"; color: var(--texto-suave); font-weight: 800; transform: rotate(45deg); display: inline-block; }
+  .comp-card ul { margin: 0; padding-left: 18px; color: var(--texto-suave); font-size: 0.92rem; }
+  .comp-card li { margin-bottom: 8px; }
+  .comp-card li:last-child { margin-bottom: 0; }
+  .comp-card p { margin: 0; color: var(--texto-suave); font-size: 0.92rem; }
+
+  @media (max-width: 640px) {
+    .comparacion { grid-template-columns: 1fr; }
+  }
 
   .aviso-legal {
-    margin-top: 32px;
-    padding: 16px 18px;
-    background: var(--info-bg);
-    border-radius: 10px;
-    font-size: 0.87rem;
+    margin-top: 8px;
+    padding: 18px 20px;
+    background: var(--panel);
+    border: 1px dashed var(--borde);
+    border-radius: 12px;
+    font-size: 0.88rem;
     color: var(--texto-suave);
   }
   .aviso-legal strong { color: var(--texto); }
 
   footer.sitio {
     border-top: 1px solid var(--borde);
-    padding: 28px 0 40px;
+    padding: 30px 0 40px;
+    background: var(--bg);
   }
+  footer.sitio .envoltura { display: flex; align-items: flex-start; gap: 12px; }
   footer.sitio p {
     font-size: 0.85rem;
     color: var(--texto-suave);
@@ -245,20 +360,25 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0b1220;
-      --panel: #131c2e;
-      --texto: #e2e8f0;
-      --texto-suave: #94a3b8;
-      --borde: #253248;
-      --acento: #2dd4bf;
-      --acento-oscuro: #5eead4;
-      --ok: #4ade80;
-      --ok-bg: #052e16;
-      --pendiente: #fbbf24;
-      --pendiente-bg: #451a03;
-      --info-bg: #131c2e;
+      --bg: #17130e;
+      --bg-alt: #1e1912;
+      --panel: #221c14;
+      --texto: #f4ecdd;
+      --texto-suave: #b6a892;
+      --borde: #3c3324;
+      --acento: #2bbfa8;
+      --acento-oscuro: #7fe9d8;
+      --sello: #e08150;
+      --sello-oscuro: #f2a678;
+      --sello-contraste: #17130e;
+      --ok: #2bbfa8;
+      --ok-bg: #17322c;
+      --pendiente: #e0a862;
+      --pendiente-bg: #362512;
+      --info-bg: #201a12;
+      --sombra: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
     }
-    .error-caja { border-color: #92400e; }
+    .sello-mini .sello-anillo, .sello-marca-agua .sello-anillo { stroke: var(--texto-suave); }
   }
 </style>
 </head>
@@ -266,58 +386,78 @@
 
 <header class="sitio">
   <div class="envoltura">
-    <div class="marca">Verifica y Cumple<span class="punto">.</span></div>
-    <div class="fecha-limite">Ley 21.719 entra en plena vigencia el <strong>1-dic-2026</strong></div>
+    <div class="marca">
+      <svg class="sello-mini" viewBox="0 0 100 100" aria-hidden="true">
+        <circle class="sello-anillo" cx="50" cy="50" r="45"></circle>
+        <circle class="sello-nucleo" cx="50" cy="50" r="36"></circle>
+        <path class="sello-check" d="M32 52 L44 64 L70 36"></path>
+      </svg>
+      <span>Verifica y Cumple</span>
+    </div>
+    <div class="fecha-limite">Ley 21.719 entra en plena vigencia el <strong>1 dic 2026</strong></div>
   </div>
 </header>
 
 <main>
-  <div class="envoltura">
-    <section class="hero">
-      <h1>¿Tu sitio tiene las señales técnicas que exige la Ley 21.719?</h1>
-      <p class="sub">
-        Escribe tu dominio y revisamos, en segundos, si tu sitio publica lo básico que exige la
-        ley de protección de datos personales — sin registrarte, sin guardar tu dominio.
-      </p>
+  <section class="hero">
+    <svg class="sello-marca-agua" viewBox="0 0 100 100" aria-hidden="true">
+      <circle class="sello-anillo" cx="50" cy="50" r="45"></circle>
+      <circle class="sello-nucleo" cx="50" cy="50" r="36"></circle>
+      <path class="sello-check" d="M32 52 L44 64 L70 36"></path>
+    </svg>
+    <div class="envoltura">
+      <div class="hero-contenido">
+        <p class="eyebrow">Chequeo técnico gratuito</p>
+        <h1>¿Tu sitio tiene las señales que exige la Ley 21.719?</h1>
+        <p class="sub">
+          Escribe tu dominio y revisamos, en segundos, si tu sitio publica lo básico que exige la
+          ley de protección de datos personales — sin registrarte, sin guardar tu dominio.
+        </p>
 
-      <form class="chequeo" id="form-chequeo">
-        <label for="dominio" class="visually-hidden" style="position:absolute;left:-9999px;">Dominio a revisar</label>
-        <input type="text" id="dominio" name="dominio" placeholder="tuempresa.cl" autocomplete="off" required>
-        <button type="submit" id="boton-chequeo">Revisar mi sitio</button>
-      </form>
-      <p class="nota-privacidad">Solo leemos tu sitio público. No pedimos correo ni guardamos el dominio que revisas.</p>
+        <form class="chequeo" id="form-chequeo">
+          <label for="dominio" class="visually-hidden" style="position:absolute;left:-9999px;">Dominio a revisar</label>
+          <input type="text" id="dominio" name="dominio" placeholder="tuempresa.cl" autocomplete="off" required>
+          <button type="submit" id="boton-chequeo">Revisar mi sitio</button>
+        </form>
+        <p class="nota-privacidad">Solo leemos tu sitio público. No pedimos correo ni guardamos el dominio que revisas.</p>
 
-      <div id="resultado" aria-live="polite"></div>
-    </section>
+        <div id="resultado" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
 
-    <section class="explicador">
+  <section class="explicador">
+    <div class="envoltura">
+      <p class="eyebrow">Cómo funciona</p>
       <h2>Qué es esto, y qué no es</h2>
       <p>
         La Ley 21.719 regula el tratamiento de datos personales en Chile y entra en plena
         vigencia el 1 de diciembre de 2026. Aplica a toda organización que trate datos
         personales — un formulario de contacto ya cuenta. Buena parte de lo que exige la ley
-        es técnico y vive en el sitio web: si existe una política de privacidad publicada, si
-        hay un mecanismo de consentimiento, si el idioma está declarado.
+        es técnico y vive en el sitio web. Este chequeo revisa exactamente eso: el HTML público
+        de tu sitio, sin ejecutar nada, sin acceder a nada privado.
       </p>
-      <p>Este chequeo revisa exactamente eso: el HTML público de tu sitio, sin ejecutar nada, sin acceder a nada privado.</p>
 
-      <h3>Lo que sí revisa</h3>
-      <ul>
-        <li>Si hay una política de privacidad enlazada desde tu portada y si esa página responde.</li>
-        <li>Si el sitio sirve por HTTPS y declara el idioma.</li>
-        <li>Si detectamos un gestor de consentimiento (banner de cookies) de un proveedor conocido.</li>
-        <li>Qué proveedores externos (Google Analytics, Meta Pixel, etc.) detectamos cargados en tu portada.</li>
-      </ul>
-
-      <h3>Lo que no revisa</h3>
-      <p>
-        No podemos saber si un rastreador dispara antes o después de que el visitante da su
-        consentimiento — eso requiere observar el comportamiento del sitio en un navegador
-        real, no solo leer el HTML. Tampoco podemos ver formularios que vienen embebidos de un
-        tercero (HubSpot, Typeform, Google Forms) ni los que arma un framework de JavaScript en
-        el navegador del visitante. Cuando no podemos verificar algo, este chequeo lo dice —
-        nunca asume que está bien.
-      </p>
+      <div class="comparacion">
+        <div class="comp-card comp-si">
+          <h3>Lo que sí revisa</h3>
+          <ul>
+            <li>Si hay una política de privacidad enlazada desde tu portada y si esa página responde.</li>
+            <li>Si el sitio sirve por HTTPS y declara el idioma.</li>
+            <li>Si detectamos un gestor de consentimiento de un proveedor conocido.</li>
+            <li>Qué proveedores externos (Analytics, Meta Pixel, etc.) detectamos en tu portada.</li>
+          </ul>
+        </div>
+        <div class="comp-card comp-no">
+          <h3>Lo que no revisa</h3>
+          <p>
+            Si un rastreador dispara antes o después del consentimiento (requiere un navegador
+            real, no solo el HTML), formularios embebidos de terceros, o los que arma un
+            framework de JavaScript. Cuando no podemos verificar algo, lo decimos — nunca
+            asumimos que está bien.
+          </p>
+        </div>
+      </div>
 
       <div class="aviso-legal">
         <strong>Esto no es asesoría legal.</strong> Este chequeo describe señales técnicas
@@ -325,14 +465,21 @@
         El contenido de tu política de privacidad y la evaluación de tu caso corresponden a un
         abogado.
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </main>
 
 <footer class="sitio">
   <div class="envoltura">
-    <p>Verifica y Cumple es un proyecto de Ramón Vallejos Espíndola, quien también dirige <a href="https://spindlelab.cl">SpindleLab</a> (SEO técnico y visibilidad en motores de IA).</p>
-    <p>Este chequeo no almacena los dominios que revisas ni requiere registro.</p>
+    <svg class="sello-mini" viewBox="0 0 100 100" aria-hidden="true" style="opacity:.6">
+      <circle class="sello-anillo" cx="50" cy="50" r="45"></circle>
+      <circle class="sello-nucleo" cx="50" cy="50" r="36"></circle>
+      <path class="sello-check" d="M32 52 L44 64 L70 36"></path>
+    </svg>
+    <div>
+      <p>Verifica y Cumple es un proyecto de Ramón Vallejos Espíndola, quien también dirige <a href="https://spindlelab.cl">SpindleLab</a> (SEO técnico y visibilidad en motores de IA).</p>
+      <p>Este chequeo no almacena los dominios que revisas ni requiere registro.</p>
+    </div>
   </div>
 </footer>
 
@@ -342,6 +489,7 @@
   const input = document.getElementById('dominio');
   const boton = document.getElementById('boton-chequeo');
   const resultado = document.getElementById('resultado');
+  const CIRCUNFERENCIA = 2 * Math.PI * 52;
 
   function escapar(s) {
     const d = document.createElement('div');
@@ -357,8 +505,12 @@
   function renderResultado(data) {
     let html = '';
 
+    const offset = CIRCUNFERENCIA * (1 - Math.max(0, Math.min(100, data.puntaje)) / 100);
     html += '<div class="puntaje-caja">';
-    html += '<div class="puntaje-numero">' + escapar(data.puntaje) + '</div>';
+    html += '<div class="anillo-wrap"><svg viewBox="0 0 120 120">' +
+            '<circle class="anillo-fondo" cx="60" cy="60" r="52"></circle>' +
+            '<circle class="anillo-progreso" cx="60" cy="60" r="52" style="stroke-dasharray:' + CIRCUNFERENCIA + ';stroke-dashoffset:' + offset + '"></circle>' +
+            '</svg><div class="anillo-numero">' + escapar(data.puntaje) + '</div></div>';
     html += '<div class="puntaje-texto">de 100 en las señales técnicas que revisamos para <strong>' + escapar(data.dominio) + '</strong>. No es una nota de cumplimiento legal — ver más abajo qué no revisamos.</div>';
     html += '</div>';
 
