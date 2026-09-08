@@ -1,10 +1,9 @@
 # Brief — Cumplimiento web de la Ley 21.719
 
-**Abierto:** 3-sep-2026 · **Pedido por:** Ramón · **Estado:** **desplegado y vivo** en
-`https://verificaycumple.pages.dev` (8-sep-2026), con el enlace cruzado en `spindlelab.cl`
-armado y a la espera de merge (rama `claude/verificaycumple-mencion-diagnostico`). Camino B,
-lanzamiento liviano, `.cl` sigue pendiente para cuando genere ingresos. Falta: que Ramón
-confirme ese merge y que Cata publique el post (ver §8, ya no está bloqueado por el deploy).
+**Abierto:** 3-sep-2026 · **Pedido por:** Ramón · **Estado:** **alcance planeado completo**
+(8-sep-2026) — chequeo desplegado y vivo en `https://verificaycumple.pages.dev`, enlace
+cruzado en ambas direcciones ya en vivo (incluido en `spindlelab.cl/diagnostico/`). Camino B,
+lanzamiento liviano, `.cl` propio sigue pausado por costo. Abierto: el post de Cata (ver §8).
 **Fecha que manda todo:** **1 de diciembre de 2026** (entrada en plena vigencia)
 
 ---
@@ -363,3 +362,4 @@ negocio permanente. Tratarlo como sprint desde el día uno evita la decepción d
 | 2026-09-08 | **Desplegado.** Ramón creó un token de API de Cloudflare acotado (solo `Cloudflare Pages: Edit`, 1 día de vigencia) y esta sesión creó el proyecto por API — sin dashboard, apuntando al repo `rvalleespin/spindlelab`, rama `laboratorio/ley-21719`, root directory `verificaycumple`. Deploy disparado y verificado en producción: `https://verificaycumple.pages.dev` responde 200 y `/api/chequeo?dominio=spindlelab.cl` da el mismo resultado (36/100) que en las pruebas locales. Token recomendado revocar apenas terminó, no esperar a que expire solo. **Pendiente:** la página de enlace cruzado en `spindlelab.cl` (el sentido inverso) y el post de Cata, que ya puede salir de su bloqueo porque el sitio ya está vivo. |
 | 2026-09-08 | **Enlace cruzado del lado `spindlelab.cl` armado.** Ramón pidió explícitamente que esta sesión lo construyera. Se detectó que la copia local de `diagnostico/index.html` estaba desactualizada (otra sesión había desplegado "MOTOR v2" ahí mismo) — se partió de `origin/main` fresco para no pisar ese trabajo. Sección nueva entre "Dos caminos, y ninguno te cobra" y el FAQ, dejando explícito que no es un servicio de SpindleLab sino un proyecto aparte de Ramón; sin dorado (escaso, ya en uso en esa página). Verificado con Playwright, desktop y mobile. **No se hizo push directo a `main`** — por la regla de límite de sesión de `persona-disenador-web` y porque hay evidencia de edición concurrente reciente en `spindlelab-astro`, quedó en la rama `claude/verificaycumple-mencion-diagnostico`, pendiente de que Ramón revise y confirme el merge. |
 | 2026-09-08 | **PR abierto:** [rvalleespin/spindlelab#34](https://github.com/rvalleespin/spindlelab/pull/34), a pedido de Ramón. Contiene la sección de enlace cruzado de la fila anterior. Pendiente de que Ramón lo revise y confirme el merge a `main`. |
+| 2026-09-08 | **Ramón revisó y confirmó — PR #34 fusionado a `main`** (merge commit, no squash), verificado en vivo en `https://spindlelab.cl/diagnostico/`. **Con esto, el alcance planeado del proyecto queda completo:** verificación legal (§2), chequeo técnico desplegado (`verificaycumple.pages.dev`), y el enlace cruzado en ambas direcciones. Queda abierto: el post de Cata (encargado, esperando su pase de tono) y el dominio `.cl` propio (pausado por costo, para cuando genere ingresos). Sin fecha de cierre — sigue siendo el sprint hasta el 1-dic-2026 de §7. |
