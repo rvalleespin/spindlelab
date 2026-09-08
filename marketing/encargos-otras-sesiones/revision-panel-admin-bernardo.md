@@ -437,6 +437,55 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > directamente en el dashboard de Vercel. El código ya está en `main`, listo para servirse en
 > cuanto el deploy se reactive.
 
+> **Actualización 18 (8-sep-2026) — investigado el porqué de la caída, y preparado (no mergeado)
+> el cambio de casa a Netlify.** Ramón: "hay una forma de migrar el proyecto a un lugar que sea
+> gratis, cien por ciento gratis, porque sale cuarenta mil pesos el mes en Vercel" — pidiendo
+> explícitamente un cambio de casa, no un sitio nuevo ("no busco crear un sitio nuevo").
+>
+> Primero se confirmó el porqué de la Actualización 17: con acceso real a la cuenta de Vercel
+> (mismo dueño que esta sesión), el proyecto `bernardo-combeau` tiene `"live": false` — pausado a
+> nivel de cuenta, no un fallo de build (el último deploy real, de Bernardo subiendo contenido,
+> quedó `READY` y bien alias-eado). Hay una herramienta para reactivarlo desde acá con un clic, pero
+> no se usó — no correspondía decidir por Ramón si la pausa fue a propósito por el costo.
+>
+> Se evaluó primero Cloudflare Pages (ancho de banda gratis ilimitado, mismo proveedor que ya usa
+> el sitio de SpindleLab) pero se descartó al investigar en profundidad: el adaptador de Astro para
+> Cloudflare **dejó de soportar el Pages clásico** (conectar el repo y listo) — ahora exige
+> `wrangler deploy` vía CLI o GitHub Actions, bastante más fricción para Ramón que administrar. Se
+> pasó a Netlify: plan gratis real (ancho de banda ilimitado, sin tope de builds relevante para este
+> tamaño de sitio), mismo flujo de "conectar el repo en el dashboard y listo" que Vercel, y además
+> es el hogar natural de Decap CMS (con quien nació).
+>
+> El cambio de código en sí fue chico — adaptador `@astrojs/vercel` → `@astrojs/netlify`, sin tocar
+> `output`, `redirects` ni el sitemap; el login del panel (`/api/auth`, `/api/callback`) no
+> necesitó ningún cambio, ya usaba Web APIs estándar, nada específico de Vercel. Lo que sí fue un
+> hallazgo real, no cosmético: Astro exige un alto (`height`) explícito para cualquier foto que no
+> sea un import estático del código — y **todas** las fotos de este sitio vienen de JSON (subidas
+> por el panel), así que ninguna lo es. El adaptador de Vercel no lo pedía (resolvía el tamaño de
+> otra forma en su propio servicio de imágenes); con Netlify quedó al descubierto de inmediato, en
+> los 15 lugares del sitio donde se muestra una foto sin alto fijo (portadas, galerías, hero,
+> Sobre mí, Estudio). La solución real (no inferSize — eso solo sirve para URLs remotas de verdad,
+> y estas son rutas locales de `/uploads/`): una función nueva en `src/lib/modelo.js` que lee el
+> tamaño real del archivo en `public/` una vez por foto y calcula el alto proporcional al ancho que
+> pide cada página — así ninguna imagen queda estirada ni distorsionada.
+>
+> Probado a fondo antes de tocar nada de `main`: build limpio con las mismas 21 rutas que generaba
+> Vercel, el alto calculado comparado contra el archivo real (fotos cuadradas y no-cuadradas, todas
+> exactas), recorrido con Playwright de las 10 páginas con fotos sin imágenes rotas ni errores de
+> consola, y el visor (lightbox) de punta a punta — abre, pasa a la siguiente foto con su propio
+> alto real, cierra con Escape. Todo quedó en la rama `claude/migrar-netlify` (commit `59851b3`),
+> **sin mergear a `main`** a propósito: `main` sigue apuntando a Vercel (pausado) hasta que el sitio
+> nuevo esté armado y confirmado en Netlify de verdad.
+>
+> **Lo que falta no es código — son 3 pasos en dashboards que solo Ramón puede hacer:**
+> 1. Crear el sitio en Netlify apuntando a este repo (detecta `netlify.toml` solo, sin campos
+>    manuales que llenar).
+> 2. Copiar `GITHUB_OAUTH_CLIENT_ID`/`GITHUB_OAUTH_CLIENT_SECRET` a las variables de entorno del
+>    sitio nuevo en Netlify (para que el login del panel siga funcionando).
+> 3. Cuando todo esté probado en la URL de prueba (`*.netlify.app`), cambiar los nameservers de
+>    `bernardocombeau.cl` — hoy apuntan a Vercel (`ns1/ns2.vercel-dns.com`) — en el registrador del
+>    dominio (NIC Chile, probablemente).
+
 ---
 
 **Estado a 8-sep-2026:** las Partes 1-3 de este documento (bug de Estudio, Direcciones A-D, fix de
@@ -448,15 +497,15 @@ por ficha (Actualización 13), la construcción de la vista previa real para las
 tenían un aviso (Actualización 14), el paso de Selected Work a página propia con su foto de
 portada en Home (Actualización 15), su primera ronda de ajustes (Actualización 16) y la
 unificación del encuadre de Retratos/Proyectos con Modelo (Actualización 17) — todo está
-**mergeado a `main`** (último commit `0b063dd`), aunque el deploy en Vercel está caído por lo que
-parece un tema de cuenta/facturación ajeno al código (ver Actualización 17) y falta confirmarlo en
-vivo. Las 8 fichas de Modelo tienen vista previa real, con el contenido de Bernardo reflejado como
-se ve en el sitio; Motion, Commercials y Work son páginas propias, cada una con su URL. Bernardo ya
-está usando el panel de verdad — commits propios (`bern.combeau@gmail.com`) subiendo fotos nuevas a
-Portada, Polaroids y Selected Work durante estas rondas, señal independiente de que el panel
-funciona para él. Pendiente: la Parte 2-3 de `revision-sitio-bernardo-combeau.md` (rediseño del
-sitio público) — todo lo demás de ambos documentos ya se ejecutó, y está en `main` a la espera de
-que el deploy de Vercel vuelva a estar activo.
+**mergeado a `main`** (último commit `0b063dd`), aunque el deploy en Vercel sigue pausado por un
+tema de cuenta/facturación (ver Actualización 17). Las 8 fichas de Modelo tienen vista previa real,
+con el contenido de Bernardo reflejado como se ve en el sitio; Motion, Commercials y Work son
+páginas propias, cada una con su URL. Bernardo ya está usando el panel de verdad — commits propios
+(`bern.combeau@gmail.com`) subiendo fotos nuevas a Portada, Polaroids y Selected Work durante estas
+rondas, señal independiente de que el panel funciona para él. El cambio de casa a Netlify
+(Actualización 18) está listo y probado en la rama `claude/migrar-netlify`, a la espera de que
+Ramón cree el sitio en Netlify y mueva el dominio — recién ahí se mergea a `main`. Pendiente
+aparte: la Parte 2-3 de `revision-sitio-bernardo-combeau.md` (rediseño del sitio público).
 
 ---
 
