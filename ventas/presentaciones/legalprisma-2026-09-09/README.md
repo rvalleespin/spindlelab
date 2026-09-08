@@ -58,6 +58,13 @@ en pantalla.
 - Estilo documento (tinta editorial): papel `#F7F5F0`, tinta `#131A22`, dorado `#C9A227`
   escaso (punto del wordmark + UN dato). Gabarito títulos, Inter cuerpo. Igual que el
   informe del mini-diagnóstico, a propósito: cliente ve UNA marca.
+- **La vida de la pieza es el mundo del concepto (§06b del manual):** portada y cierre
+  llevan la foto del hilo de oro con velo de tinta (`fondo-hilo.jpg`, el frame del hero),
+  y el hilo recorre la base de las slides interiores como la corriente del circuito:
+  entero en bio/preguntas, **CORTADO en las slides del problema (4 y 5)**, entero de
+  nuevo desde la ventaja (6) en adelante. Al clonar, mantener esa narrativa: el corte
+  va donde se cuenta el problema del cliente. Las entradas animadas son solo pantalla
+  (el PDF imprime el estado final).
 - Voz: singular en la bio (Ramón), plural en lo que entrega el negocio. Sin superlativos,
   sin garantías de ranking; la línea de garantía honesta de la slide 8 no se quita.
 - Precios: siempre "desde" + IVA, siempre los publicados en el sitio.
