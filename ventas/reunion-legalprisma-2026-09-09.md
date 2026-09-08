@@ -4,11 +4,21 @@
 esta hora. Viene tibio-caliente. Objetivo de la llamada: **decidir si va propuesta formal,
 no cerrar en la llamada.** Es mapa, no jaula: si una frase no te sale natural, dila a tu manera.
 
+## La mecánica: la llamada corre SOBRE EL INFORME, compartido en pantalla
+El informe 006 v3 ES la presentación (fue diseñado como pieza de venta): §1 lo que está en
+juego → §2 las tres razones → §3 la tabla de la ruta → §4 el regalo y el resultado. Compartes
+pantalla con el PDF y recorres sus secciones en este orden; el speech de abajo es lo que dices
+sobre cada una. Ventaja doble: él ya lo conoce (cero sorpresa incómoda) y la tabla de la ruta
+queda a la vista justo cuando hablas de propuesta.
+
 ## Antes (5 min)
 - [ ] Mañana temprano: confirmar por correo "¿seguimos a las 17:00? Usamos este link" (rechazó
-  la invitación de calendario — casi seguro por el link duplicado, pero confírmalo).
-- [ ] Releer el informe 006 v3 (1 página) y abrir legalprisma.cl al lado.
-- [ ] Tener abierto spindlelab.cl/servicios por si pregunta precios.
+  la invitación de calendario — casi seguro por el link duplicado, pero confírmalo). En el
+  mismo correo: "te reenvío el informe para tenerlo a mano en la llamada".
+- [ ] PDF abierto y listo para compartir: `marketing/diagnosticos/SPL-DIAG-2026-006-legalprisma/`.
+- [ ] Pestañas de respaldo: legalprisma.cl · spindlelab.cl/servicios (precios) · spindlelab.cl/diagnostico.
+- [ ] NO correr el chequeo público sobre legalprisma.cl en vivo (regla de la ficha: su
+  Cloudflare distorsiona el número desde nuestro instrumento; los hallazgos van por el informe).
 
 ## 1 · Apertura (0–2 min) — textual
 
@@ -30,7 +40,9 @@ Y una pregunta de enganche que además te dice cuánto leyó:
 **Escucha de verdad acá.** Lo que diga de los artículos es oro: han invertido AÑOS en
 contenido que hoy las máquinas no pueden usar. Ese es su dolor, dicho por él.
 
-## 3 · La ruta, contada (8–14 min) — 90 segundos, en tus palabras
+## 3 · La ruta, contada (8–14 min) — con el informe EN PANTALLA, sección por sección
+*(§1 en pantalla al abrir este bloque; bajas a §2 con las tres razones; terminas con la tabla
+de §3 a la vista — ahí se queda hasta el cierre.)*
 
 > «Te resumo lo que vi, porque el orden importa. Un cliente nuevo hoy llega de dos maneras:
 > busca en Google o le pregunta directo a ChatGPT. Y quien aparece en esa respuesta se lleva
@@ -56,7 +68,8 @@ contenido que hoy las máquinas no pueden usar. Ese es su dolor, dicho por él.
 > está vendiendo humo. Lo que sí se puede: quitar todas las razones técnicas por las que hoy
 > no aparecen, y medir todos los meses si Google y la IA los nombran. Eso es lo que hacemos.»
 
-## 4 · La oferta y el precio (14–18 min)
+## 4 · La oferta y el precio (14–18 min) — la tabla de la ruta sigue en pantalla
+*(Señala la columna "Estado hoy" al decir "el trabajo concreto es esta ruta".)*
 
 Primero el qué, después el cuánto:
 
