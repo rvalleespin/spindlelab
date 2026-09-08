@@ -4,9 +4,10 @@
 **Decisión de Ramón (1-sep, noche):** esta salida es de la marca, no del perfil personal
 (el personal ya tuvo dominó + ancla esta semana). La versión personal en singular queda en
 git como respaldo.
-**Visual:** lo produce Bruno el finde bajo el mundo dominó (pieza única o mini-carrusel;
-el dato manda: 67/69 + medianas 45 y 58). PRIORIDAD 1 del encargo de re-vestido.
-**Checklist:** ☐ visual de Bruno (pase lun 7) · ☐ programar en Metricool · ☐ IG: sumar al trigger CIRCUITO
+**Visual:** ✅ `pieza.png` LISTA (coordinación, 8-sep) — abre el MUNDO HILO DE ORO de la
+semana 2 (decisión de la semana 1: "la siguiente semana, otro elemento"). El 67 en dorado
+es el único dato dorado; el hilo fotográfico cruza detrás.
+**Checklist:** ☐ pase de Ramón · ☐ programar en Metricool (LI 09:00 + IG 19:00) · ☐ IG: sumar al trigger CIRCUITO
 
 ## Cuerpo (LinkedIn e IG, copiar y pegar)
 

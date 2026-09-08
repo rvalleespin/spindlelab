@@ -263,3 +263,9 @@ cierre de mes.
 
 - **Regla de copy (Ramón, 1-sep noche):** la palabra **"hueco" no se usa en copy comercial**
   (suena feo); en su lugar: problema, vacío, falla, necesidad. Corregido en la pieza del mié 9.
+
+- **8-sep:** semana 2 de campaña = **mundo HILO DE ORO** (el elemento rota por semana, decisión
+  de Ramón 1-sep: dominó → hilo). Lunes 7 quedó sin salida (el video de presentación no se
+  grabó: sin dominó aún); **video reprogramado al LUN 14** (última ventana antes de Fiestas);
+  si no se graba, pasa al lun 22. Piezas del mié 9 (67/69) y jue 10 (blog) producidas por la
+  coordinación en mundo hilo.
