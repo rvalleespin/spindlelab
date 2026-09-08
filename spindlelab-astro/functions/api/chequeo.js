@@ -60,7 +60,7 @@ export function normalizarDominio(entrada) {
  * Descarga acotada: timeout y tope de bytes en las dos direcciones.   *
  * ------------------------------------------------------------------ */
 
-async function traer(url, fetchImpl) {
+async function traer(url, fetchImpl, opts = {}) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
   try {
@@ -72,11 +72,12 @@ async function traer(url, fetchImpl) {
       redirect: 'follow',
       cf: { cacheTtl: 0, cacheEverything: false },
       headers: {
-        'User-Agent': 'SpindleLabChequeo/1.0 (+https://spindlelab.cl/diagnostico/)',
+        'User-Agent': opts.ua || 'SpindleLabChequeo/1.0 (+https://spindlelab.cl/diagnostico/)',
         Accept: 'text/html,text/plain,application/xml;q=0.9,*/*;q=0.8',
         'Cache-Control': 'no-cache',
       },
     });
+    if (opts.soloStatus) return { status: r.status, url: r.url, texto: '', servidor: (r.headers.get('server') || '').toLowerCase() };
     const largo = Number(r.headers.get('content-length') || 0);
     const servidor = (r.headers.get('server') || '').toLowerCase();
     if (largo > MAX_BYTES) return { status: r.status, url: r.url, texto: '', truncado: true, servidor };
@@ -195,11 +196,17 @@ export async function chequear(entrada, fetchImpl = fetch) {
   if (v.error) return { ok: false, error: v.error };
   const { dominio } = v;
 
-  const [home, robots, llms, sitemap] = await Promise.all([
+  const [home, robots, llms, sitemap, sondaOAI, sondaChatGPT, sondaPerplexity] = await Promise.all([
     traer(`https://${dominio}/`, fetchImpl),
     traer(`https://${dominio}/robots.txt`, fetchImpl),
     traer(`https://${dominio}/llms.txt`, fetchImpl),
     traer(`https://${dominio}/sitemap.xml`, fetchImpl),
+    // Sondas de suplantación: pedimos la portada presentándonos como robots de IA en vivo,
+    // para detectar servidores/CDN que expulsan por nombre de agente (el robots.txt puede
+    // estar impecable y el sitio seguir cerrado).
+    traer(`https://${dominio}/`, fetchImpl, { soloStatus: true, ua: 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot' }),
+    traer(`https://${dominio}/`, fetchImpl, { soloStatus: true, ua: 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot' }),
+    traer(`https://${dominio}/`, fetchImpl, { soloStatus: true, ua: 'Mozilla/5.0 (compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)' }),
   ]);
 
   if (!home || home.status >= 400) {
@@ -250,12 +257,12 @@ export async function chequear(entrada, fetchImpl = fetch) {
     .trim();
   const palabras = texto ? texto.split(' ').length : 0;
 
-  const bots = [
-    ['GPTBot', 'ChatGPT'],
-    ['ClaudeBot', 'Claude'],
-    ['PerplexityBot', 'Perplexity'],
-    ['Google-Extended', 'Gemini'],
-  ];
+  // v2 (8-sep-2026): los robots se separan por lo que DECIDEN.
+  // En vivo = deciden si te citan hoy. Entrenamiento = deciden si los modelos futuros
+  // te conocen; bloquearlos NO borra citas hoy (decisión legítima de PI).
+  const botsIndices = ['OAI-SearchBot', 'Claude-SearchBot', 'PerplexityBot'];
+  const botsAsistentes = ['ChatGPT-User', 'Claude-User', 'Perplexity-User'];
+  const botsEntrenamiento = ['GPTBot', 'ClaudeBot', 'Google-Extended', 'CCBot'];
 
   // Limitación real, verificada en vivo: si el sitio está tras Cloudflare, las reglas de
   // bots que Cloudflare inyecta en el borde (robots.txt gestionado / content signals)
@@ -267,21 +274,56 @@ export async function chequear(entrada, fetchImpl = fetch) {
   const add = (bloque, id, titulo, ok, peso, detalle, arregloSiFalla) =>
     items.push({ bloque, id, titulo, ok, peso, detalle, arreglo: ok ? null : arregloSiFalla });
 
-  // --- Bloque 1: ¿te pueden leer? ---
-  for (const [ua, motor] of bots) {
-    const bloqueado = bloqueaBot(robotsTxt, ua);
-    add(
-      'acceso', `bot-${ua}`, `${motor} puede leer tu sitio`, !bloqueado, 6,
-      bloqueado
-        ? `Tu robots.txt bloquea a ${ua}.`
-        : robotsTxt
-          ? trasCloudflare
-            ? `${ua} no está bloqueado en el robots.txt que recibimos. Tu sitio usa Cloudflare: si activaste sus reglas de bots de IA en el borde, este chequeo no las ve; confírmalo abriendo tu propio /robots.txt.`
-            : `${ua} no está bloqueado en tu robots.txt.`
-          : 'No tienes robots.txt, así que nada está bloqueado.',
-      `Quita la regla que bloquea a ${ua} en tu robots.txt.`
-    );
-  }
+  // --- Bloque 1: ¿te pueden leer? (v2: en-vivo pesa, entrenamiento informa) ---
+  const caveatCf = trasCloudflare
+    ? ' Tu sitio usa Cloudflare: si activaste sus reglas de bots de IA en el borde, este chequeo no las ve; confírmalo abriendo tu propio /robots.txt.'
+    : '';
+  const sinRobots = !robotsTxt ? 'No tienes robots.txt, así que nada está bloqueado.' : null;
+
+  const bloqIdx = botsIndices.filter((b) => bloqueaBot(robotsTxt, b));
+  add(
+    'acceso', 'bots-indices', 'Los índices de búsqueda de IA pueden entrar', bloqIdx.length === 0, 7,
+    bloqIdx.length
+      ? `Tu robots.txt bloquea a ${bloqIdx.join(', ')}. Estos robots construyen los índices con los que ChatGPT, Claude y Perplexity buscan en la web: con ellos cerrados, no puedes aparecer como fuente en sus respuestas de hoy.`
+      : (sinRobots || `OAI-SearchBot, Claude-SearchBot y PerplexityBot no están bloqueados en tu robots.txt.${caveatCf}`),
+    `Quita la regla que bloquea a ${bloqIdx.join(', ')} en tu robots.txt. Es un cambio de una línea y el efecto es inmediato.`
+  );
+
+  const bloqAsis = botsAsistentes.filter((b) => bloqueaBot(robotsTxt, b));
+  add(
+    'acceso', 'bots-asistentes', 'Los asistentes de IA pueden visitarte en vivo', bloqAsis.length === 0, 7,
+    bloqAsis.length
+      ? `Tu robots.txt bloquea a ${bloqAsis.join(', ')}. Estos agentes entran a tu sitio en el momento en que alguien le hace una pregunta a la IA: con ellos cerrados, el asistente no puede leerte aunque quiera citarte.`
+      : (sinRobots || `ChatGPT-User, Claude-User y Perplexity-User no están bloqueados en tu robots.txt.${caveatCf}`),
+    `Quita la regla que bloquea a ${bloqAsis.join(', ')} en tu robots.txt.`
+  );
+
+  const sondas = [
+    ['OAI-SearchBot', sondaOAI],
+    ['ChatGPT-User', sondaChatGPT],
+    ['PerplexityBot', sondaPerplexity],
+  ];
+  const expulsados = sondas.filter(([, r]) => r && home.status === 200 && r.status >= 400);
+  const sinDato = sondas.every(([, r]) => !r);
+  add(
+    'acceso', 'servidor-ua', 'El servidor no expulsa a los robots de IA', expulsados.length === 0, 8,
+    expulsados.length
+      ? `Pedimos tu portada presentándonos como cada robot: ${expulsados.map(([n, r]) => `${n} recibió un ${r.status}`).join('; ')}. Un navegador normal recibe la página. Esto no está en el robots.txt: lo hace el servidor o el CDN, normalmente una regla de seguridad que alguien activó sin saber qué apagaba.`
+      : sinDato
+        ? 'No pudimos completar las sondas de agente (el sitio no respondió a tiempo); este chequeo no descuenta puntaje en ese caso.'
+        : `Pedimos tu portada presentándonos como OAI-SearchBot, ChatGPT-User y PerplexityBot, y todas recibieron la página. Ojo: nuestras peticiones salen de nuestro servidor, no de los de OpenAI o Perplexity, así que un filtro por dirección de origen no lo veríamos.${trasCloudflare ? ' Y tu sitio usa Cloudflare: una regla del borde podría tratar distinto al robot real.' : ''}`,
+    'Pídele a quien administre el hosting o el CDN que permita el paso a estos agentes. En Cloudflare suele estar en la regla de bots o en el modo "Bloquear rastreadores de IA".'
+  );
+
+  const bloqEnt = botsEntrenamiento.filter((b) => bloqueaBot(robotsTxt, b));
+  add(
+    'acceso', 'bots-entrenamiento', 'Robots de entrenamiento: decisión consciente', bloqEnt.length === 0, 2,
+    bloqEnt.length
+      ? `Bloqueas a ${bloqEnt.join(', ')}. Esto NO te quita citas hoy: estos robots recogen texto para entrenar modelos futuros, y es una decisión legítima sobre tu propiedad intelectual. Solo conviene que sea una decisión tomada, no una casilla que alguien marcó pensando que protegía la visibilidad.`
+      : (sinRobots || `GPTBot, ClaudeBot, Google-Extended y CCBot pueden recoger tu texto para modelos futuros.${caveatCf}`),
+    'Si fue a propósito, déjalo así. Si no sabías que estaba, decide: a cambio de nada hoy, renuncias a que los modelos de dentro de dos años sepan de ti sin buscarte.'
+  );
+
   const httpsOk = home.url.startsWith('https://') && home.status === 200;
   add(
     'acceso', 'https', 'El sitio responde por HTTPS', httpsOk, 6,

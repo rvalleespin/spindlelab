@@ -83,7 +83,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       "inLanguage": "es-CL",
       "provider": {"@id": "https://spindlelab.cl/#org"},
       "featureList": [
-        "Verifica si GPTBot, ClaudeBot, PerplexityBot y Google-Extended pueden acceder al sitio",
+        "Verifica si los robots de búsqueda de IA en vivo (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User) pueden acceder al sitio, si el servidor no los expulsa por nombre, y si el bloqueo de los robots de entrenamiento es una decisión consciente",
         "Revisa los datos estructurados que declaran la entidad del negocio",
         "Comprueba llms.txt, FAQPage, sitemap y canonical",
         "Entrega un puntaje de 0 a 100 y las tres prioridades a corregir"
@@ -99,7 +99,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       "totalTime": "PT20S",
       "step": [
         {"@type": "HowToStep", "position": 1, "name": "¿Te pueden leer?",
-         "text": "Leemos el robots.txt y verificamos que GPTBot, ClaudeBot, PerplexityBot y Google-Extended no estén bloqueados, y que el sitio responda 200 por HTTPS. Vale 30 de los 100 puntos."},
+         "text": "Leemos el robots.txt y verificamos que los robots de búsqueda de IA en vivo (los que deciden si te citan hoy: OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot y Perplexity-User) no estén bloqueados; pedimos la portada presentándonos como esos robots para detectar bloqueos del servidor o CDN; revisamos que el bloqueo de robots de entrenamiento (GPTBot, ClaudeBot, Google-Extended, CCBot) sea una decisión consciente, porque no afecta las citas de hoy; y que el sitio responda 200 por HTTPS. Vale 30 de los 100 puntos."},
         {"@type": "HowToStep", "position": 2, "name": "¿Te entienden?",
          "text": "Revisamos el JSON-LD: si hay un nodo de entidad, si declara dirección y contacto, si tiene al menos tres perfiles en sameAs, si hay una persona con credenciales, y el título, la meta description y el H1. Vale 40 puntos."},
         {"@type": "HowToStep", "position": 3, "name": "¿Te pueden citar?",
@@ -257,7 +257,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
     <details class="metodo-det">
       <summary>Ver los 21 chequeos y cuánto pesa cada bloque</summary>
     <ul class="peso-list">
-      <li><b>¿Te pueden leer? · 30 puntos.</b> Leemos tu robots.txt y verificamos que GPTBot (ChatGPT), ClaudeBot (Claude), PerplexityBot y Google-Extended (Gemini) no estén bloqueados, y que el sitio responda 200 por HTTPS. Si los bots no entran, nada de lo demás importa.</li>
+      <li><b>¿Te pueden leer? · 30 puntos.</b> No todos los robots de IA hacen lo mismo: unos <b>buscan en vivo</b> cuando alguien pregunta (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User) y otros <b>recogen texto para entrenar modelos futuros</b> (GPTBot, ClaudeBot, Google-Extended, CCBot). Bloquear a los primeros te borra de las respuestas de hoy; bloquear a los segundos no te quita ni una cita y es una decisión legítima. Verificamos ambos por separado, probamos si tu servidor expulsa a los robots por su nombre, y que el sitio responda 200 por HTTPS. Si los bots en vivo no entran, nada de lo demás importa.</li>
       <li><b>¿Te entienden? · 40 puntos.</b> Revisamos tus datos estructurados: si declaras tu negocio como entidad, si esa entidad tiene dirección y contacto, si te conectas con al menos tres perfiles externos, y si hay una persona con credenciales detrás del contenido. Más el título, la meta description y el H1.</li>
       <li><b>¿Te pueden citar? · 30 puntos.</b> Comprobamos llms.txt, preguntas frecuentes marcadas con FAQPage, sitemap.xml, URL canónica, idioma declarado, títulos escritos como pregunta, fechas en el schema y cantidad de texto visible en tu portada.</li>
     </ul>
