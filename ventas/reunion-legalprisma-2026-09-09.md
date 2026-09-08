@@ -4,23 +4,27 @@
 esta hora. Viene tibio-caliente. Objetivo de la llamada: **decidir si va propuesta formal,
 no cerrar en la llamada.** Es mapa, no jaula: si una frase no te sale natural, dila a tu manera.
 
-## La mecánica: la llamada corre SOBRE EL INFORME, compartido en pantalla
-El informe 006 v3 ES la presentación (fue diseñado como pieza de venta): §1 lo que está en
-juego → §2 las tres razones → §3 la tabla de la ruta → §4 el regalo y el resultado. Compartes
-pantalla con el PDF y recorres sus secciones en este orden; el speech de abajo es lo que dices
-sobre cada una. Ventaja doble: él ya lo conoce (cero sorpresa incómoda) y la tabla de la ruta
-queda a la vista justo cuando hablas de propuesta.
+## La mecánica: la llamada corre SOBRE LA PRESENTACIÓN, compartida en pantalla
+Hay una presentación de 9 slides hecha para esta llamada:
+`ventas/presentaciones/legalprisma-2026-09-09/presentacion.html` (abrir en Chrome, pantalla
+completa, avanzar con flecha/espacio; PDF de respaldo al lado). Mismo estilo y mismo
+contenido que el informe 006, más dos slides nuevas: **quién soy** (slide 2, tu bio) y las
+**3 preguntas de escucha a la vista** (slide 3). El mapa slide↔bloque está en el README de
+esa carpeta. El informe 006 no desaparece: es lo que reenvías por correo y tu respaldo si
+la presentación falla.
 
 ## Antes (5 min)
 - [ ] Mañana temprano: confirmar por correo "¿seguimos a las 17:00? Usamos este link" (rechazó
   la invitación de calendario — casi seguro por el link duplicado, pero confírmalo). En el
   mismo correo: "te reenvío el informe para tenerlo a mano en la llamada".
-- [ ] PDF abierto y listo para compartir: `marketing/diagnosticos/SPL-DIAG-2026-006-legalprisma/`.
+- [ ] Presentación abierta en Chrome y probada (las 9 slides pasan): 
+  `ventas/presentaciones/legalprisma-2026-09-09/presentacion.html`.
+- [ ] PDF del informe a mano como respaldo: `marketing/diagnosticos/SPL-DIAG-2026-006-legalprisma/`.
 - [ ] Pestañas de respaldo: legalprisma.cl · spindlelab.cl/servicios (precios) · spindlelab.cl/diagnostico.
 - [ ] NO correr el chequeo público sobre legalprisma.cl en vivo (regla de la ficha: su
   Cloudflare distorsiona el número desde nuestro instrumento; los hallazgos van por el informe).
 
-## 1 · Apertura (0–2 min) — textual
+## 1 · Apertura (0–2 min) — slides 1 y 2 (la portada al saludar; tu bio en 90 segundos)
 
 > «Sebastián, gracias por los 20 minutos. La idea es simple: repasar lo que encontré en el
 > sitio, entender un poco más cómo les llegan los clientes hoy, y ver si tiene sentido
@@ -30,7 +34,7 @@ Y una pregunta de enganche que además te dice cuánto leyó:
 
 > «¿Alcanzaste a ver el informe con calma? ¿Algo te sorprendió, o ya lo sabían?»
 
-## 2 · Escuchar (2–8 min) — preguntas, no monólogo
+## 2 · Escuchar (2–8 min) — slide 3 (las preguntas quedan a la vista; tú solo escuchas)
 
 - «¿Cómo les llegan los clientes nuevos hoy? ¿Recomendación, Google, otra cosa?»
 - «¿Qué te hizo responder mi correo? ¿Pasó algo puntual o es una inquietud de hace rato?»
@@ -40,9 +44,9 @@ Y una pregunta de enganche que además te dice cuánto leyó:
 **Escucha de verdad acá.** Lo que diga de los artículos es oro: han invertido AÑOS en
 contenido que hoy las máquinas no pueden usar. Ese es su dolor, dicho por él.
 
-## 3 · La ruta, contada (8–14 min) — con el informe EN PANTALLA, sección por sección
-*(§1 en pantalla al abrir este bloque; bajas a §2 con las tres razones; terminas con la tabla
-de §3 a la vista — ahí se queda hasta el cierre.)*
+## 3 · La ruta, contada (8–14 min) — slides 4 a 7 EN PANTALLA
+*(Slide 4 al abrir este bloque; slide 5 con las tres razones; slide 6 al llegar a los 246
+artículos; terminas con la tabla de la slide 7 a la vista — ahí se queda hasta la oferta.)*
 
 > «Te resumo lo que vi, porque el orden importa. Un cliente nuevo hoy llega de dos maneras:
 > busca en Google o le pregunta directo a ChatGPT. Y quien aparece en esa respuesta se lleva
@@ -68,8 +72,9 @@ de §3 a la vista — ahí se queda hasta el cierre.)*
 > está vendiendo humo. Lo que sí se puede: quitar todas las razones técnicas por las que hoy
 > no aparecen, y medir todos los meses si Google y la IA los nombran. Eso es lo que hacemos.»
 
-## 4 · La oferta y el precio (14–18 min) — la tabla de la ruta sigue en pantalla
-*(Señala la columna "Estado hoy" al decir "el trabajo concreto es esta ruta".)*
+## 4 · La oferta y el precio (14–18 min) — slide 8
+*(Con la tabla de la slide 7 aún en pantalla, señala la columna "Estado hoy" al decir "el
+trabajo concreto es esta ruta"; pasas a la slide 8 al hablar de qué incluye y cuánto.)*
 
 Primero el qué, después el cuánto:
 

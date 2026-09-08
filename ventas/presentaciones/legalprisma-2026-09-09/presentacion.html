@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpindleLab × Legal Prisma — presentación</title>
+<style>
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); font-weight:400 800; }
+@font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:400 700; }
+
+:root{
+  --tinta:#131A22;
+  --papel:#F7F5F0;
+  --blanco:#FFFFFF;
+  --dorado:#C9A227;
+  --gris:#5D6673;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+html,body{ height:100%; background:#0b0f14; overflow:hidden; }
+body{ font-family:'Inter', sans-serif; color:var(--tinta); }
+
+/* Escenario fijo 1280×720, escalado a la ventana */
+#escenario{
+  width:1280px; height:720px;
+  position:absolute; top:50%; left:50%;
+  transform-origin:center center;
+}
+
+.slide{
+  position:absolute; inset:0;
+  width:1280px; height:720px;
+  background:var(--papel);
+  padding:64px 88px;
+  display:none;
+  flex-direction:column;
+}
+.slide.activa{ display:flex; }
+
+/* ——— piezas comunes ——— */
+.wordmark{ font-family:'Gabarito', sans-serif; font-weight:700; letter-spacing:-0.01em; }
+.wordmark .punto{ color:var(--dorado); }
+
+.barra-sup{
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-size:15px; color:var(--gris);
+  margin-bottom:40px;
+}
+.barra-sup .wordmark{ font-size:22px; color:var(--tinta); }
+
+.kicker{
+  font-family:'Gabarito', sans-serif; font-weight:700;
+  font-size:15px; text-transform:uppercase; letter-spacing:.09em;
+  color:var(--gris); margin-bottom:14px;
+}
+
+h1{ font-family:'Gabarito', sans-serif; font-weight:700; line-height:1.06; letter-spacing:-0.015em; }
+h2.titulo{ font-family:'Gabarito', sans-serif; font-weight:700; font-size:44px; line-height:1.08; letter-spacing:-0.015em; margin-bottom:30px; }
+
+.cuerpo{ flex:1; display:flex; flex-direction:column; justify-content:center; }
+
+.pie{
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:13px; color:var(--gris);
+  margin-top:auto; padding-top:24px;
+}
+
+.tarjeta{
+  background:var(--blanco);
+  border:1px solid rgba(19,26,34,0.12);
+  border-radius:12px;
+  padding:22px 26px;
+}
+
+/* ——— 1 · portada ——— */
+.s-portada{ justify-content:space-between; }
+.s-portada .centro{ flex:1; display:flex; flex-direction:column; justify-content:center; }
+.s-portada .wordmark-grande{ font-size:34px; }
+.s-portada h1{ font-size:58px; max-width:980px; margin-bottom:22px; }
+.s-portada .sub{ font-size:21px; color:var(--gris); max-width:820px; line-height:1.45; }
+.s-portada .meta{ font-size:15px; color:var(--gris); line-height:1.7; }
+.s-portada .meta b{ color:var(--tinta); }
+
+/* ——— 2 · quién soy ——— */
+.s-bio .cuerpo{ flex-direction:row; gap:56px; align-items:center; }
+.s-bio img{
+  width:300px; height:380px; object-fit:cover;
+  border-radius:14px; border:1px solid rgba(19,26,34,0.15);
+  flex-shrink:0;
+}
+.s-bio .texto h2{ font-family:'Gabarito', sans-serif; font-weight:700; font-size:40px; margin-bottom:6px; }
+.s-bio .cargo{ font-size:17px; color:var(--gris); margin-bottom:22px; }
+.s-bio p{ font-size:18.5px; line-height:1.55; margin-bottom:14px; max-width:680px; }
+.s-bio ul{ list-style:none; margin:0 0 16px; }
+.s-bio li{ font-size:17px; line-height:1.5; padding-left:20px; position:relative; margin-bottom:8px; color:var(--tinta); }
+.s-bio li::before{ content:''; position:absolute; left:0; top:10px; width:8px; height:8px; border-radius:50%; background:var(--tinta); }
+.s-bio .puente{ font-weight:600; }
+
+/* ——— 3 · preguntas ——— */
+.s-preguntas .lista{ display:flex; flex-direction:column; gap:18px; max-width:960px; }
+.s-preguntas .tarjeta{ font-size:22px; line-height:1.45; display:flex; gap:18px; align-items:baseline; }
+.s-preguntas .n{
+  font-family:'Gabarito', sans-serif; font-weight:700; font-size:16px;
+  width:30px; height:30px; border:1.5px solid var(--tinta); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  transform:translateY(4px);
+}
+
+/* ——— 4 · lo que está en juego ——— */
+.s-juego .caminos{ display:flex; gap:24px; margin-bottom:28px; }
+.s-juego .tarjeta{ flex:1; }
+.s-juego .tarjeta .como{ font-family:'Gabarito', sans-serif; font-weight:700; font-size:21px; margin-bottom:8px; }
+.s-juego .tarjeta p{ font-size:17px; color:var(--gris); line-height:1.5; }
+.s-juego .remate{ font-size:25px; line-height:1.45; max-width:940px; }
+.s-juego .remate b{ font-weight:700; }
+
+/* ——— 5 · tres razones ——— */
+.s-razones .grid{ display:flex; gap:22px; }
+.s-razones .tarjeta{ flex:1; display:flex; flex-direction:column; }
+.s-razones .tarjeta h3{ font-family:'Gabarito', sans-serif; font-weight:700; font-size:21px; margin-bottom:10px; line-height:1.2; }
+.s-razones .tarjeta p{ font-size:15.5px; line-height:1.5; color:var(--gris); }
+.s-razones .nota{ font-size:16px; color:var(--gris); margin-top:24px; }
+
+/* ——— 6 · la ventaja ——— */
+.s-ventaja .cifra{
+  font-family:'Gabarito', sans-serif; font-weight:700;
+  font-size:150px; line-height:1; letter-spacing:-0.02em;
+  color:var(--dorado);
+  margin-bottom:10px;
+}
+.s-ventaja .que{ font-family:'Gabarito', sans-serif; font-weight:700; font-size:34px; margin-bottom:22px; }
+.s-ventaja p{ font-size:21px; line-height:1.5; max-width:880px; color:var(--tinta); margin-bottom:12px; }
+
+/* ——— 7 · la ruta ——— */
+table.ruta{
+  width:100%; border-collapse:collapse;
+  background:var(--blanco);
+  border:1px solid rgba(19,26,34,0.12);
+  border-radius:12px; overflow:hidden;
+  font-size:17px;
+}
+table.ruta th{
+  font-family:'Gabarito', sans-serif; font-size:13px; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--gris); text-align:left; padding:14px 20px;
+  border-bottom:1px solid rgba(19,26,34,0.12);
+}
+table.ruta td{ padding:14px 20px; border-bottom:1px solid rgba(19,26,34,0.07); vertical-align:top; line-height:1.4; }
+table.ruta tr:last-child td{ border-bottom:none; }
+table.ruta td.paso{ font-family:'Gabarito', sans-serif; font-weight:700; white-space:nowrap; }
+
+/* ——— 8 · el trabajo ——— */
+.s-oferta .regalo{ font-size:19px; line-height:1.5; margin-bottom:26px; max-width:960px; }
+.s-oferta .servicios{ display:flex; gap:22px; margin-bottom:24px; }
+.s-oferta .tarjeta{ flex:1; }
+.s-oferta .tarjeta h3{ font-family:'Gabarito', sans-serif; font-weight:700; font-size:20px; margin-bottom:6px; }
+.s-oferta .tarjeta .precio{ font-size:16px; color:var(--tinta); font-weight:600; margin-bottom:8px; }
+.s-oferta .tarjeta p{ font-size:14.5px; color:var(--gris); line-height:1.45; }
+.s-oferta .honesta{ font-size:16.5px; color:var(--gris); line-height:1.5; max-width:980px; }
+
+/* ——— 9 · próximo paso ——— */
+.s-cierre{ background:var(--tinta); color:var(--papel); }
+.s-cierre .barra-sup .wordmark{ color:var(--papel); }
+.s-cierre h2.titulo{ color:var(--papel); }
+.s-cierre .pasos{ display:flex; flex-direction:column; gap:20px; max-width:900px; }
+.s-cierre .paso-c{ display:flex; gap:18px; align-items:baseline; font-size:22px; line-height:1.45; }
+.s-cierre .n{
+  font-family:'Gabarito', sans-serif; font-weight:700; font-size:16px;
+  width:30px; height:30px; border:1.5px solid var(--dorado); border-radius:50%; color:var(--dorado);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  transform:translateY(4px);
+}
+.s-cierre .pie{ color:rgba(247,245,240,0.65); }
+
+/* contador */
+#contador{
+  position:fixed; right:18px; bottom:14px;
+  font-family:'Inter', sans-serif; font-size:12px; color:rgba(247,245,240,0.5);
+  z-index:10;
+}
+
+@media print{
+  @page{ size:1280px 720px; margin:0; }
+  html,body{ background:var(--papel); overflow:visible; height:auto; }
+  #escenario{ position:static; transform:none !important; width:auto; height:auto; }
+  .slide{ display:flex !important; position:relative; page-break-after:always; break-inside:avoid; }
+  #contador{ display:none; }
+}
+</style>
+</head>
+<body>
+
+<div id="escenario">
+
+<!-- 1 · PORTADA -->
+<section class="slide s-portada activa">
+  <div class="barra-sup">
+    <div class="wordmark wordmark-grande">SpindleLab<span class="punto">.</span></div>
+    <div>Conversación de 20 minutos</div>
+  </div>
+  <div class="centro">
+    <h1>La ruta para que Legal Prisma aparezca cuando alguien pregunta por un abogado.</h1>
+    <p class="sub">Repasamos lo que encontramos en el sitio, entendemos cómo les llegan los clientes hoy, y vemos si tiene sentido seguir. Sin compromiso.</p>
+  </div>
+  <div class="pie">
+    <div class="meta"><b>Sebastián Escudero</b> · Legal Prisma · legalprisma.cl</div>
+    <div class="meta">9 de septiembre de 2026 · sobre el diagnóstico SPL-DIAG-2026-006</div>
+  </div>
+</section>
+
+<!-- 2 · QUIÉN SOY -->
+<section class="slide s-bio">
+  <div class="barra-sup">
+    <div class="wordmark">SpindleLab<span class="punto">.</span></div>
+    <div>Quién está al otro lado</div>
+  </div>
+  <div class="cuerpo">
+    <img src="ramon-vallejos.jpg" alt="Ramón Vallejos">
+    <div class="texto">
+      <h2>Ramón Vallejos</h2>
+      <p class="cargo">Consultor de SEO técnico y visibilidad en IA · Fundador de SpindleLab</p>
+      <ul>
+        <li>Más de cinco años en agencias antes de independizarme.</li>
+        <li>Producción para ocho marcas nacionales en Universal McCann.</li>
+        <li>La cuenta de LATAM Airlines en Graphene IPG: campañas en Chile, Perú, Ecuador y Colombia.</li>
+        <li>Pauta retail y B2B en Incrementa; contenido y SEO de una cartera B2B en Maggiore.</li>
+        <li>Comunicación Publicitaria (UNAB) · Máster en Marketing Digital y E-commerce (U. de Barcelona).</li>
+      </ul>
+      <p class="puente">Te lo cuento porque con esa experiencia puedo hacerme cargo del eje de tu operación y poner el motor a funcionar entero, no por partes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · PRIMERO, USTEDES -->
+<section class="slide s-preguntas">
+  <div class="barra-sup">
+    <div class="wordmark">SpindleLab<span class="punto">.</span></div>
+    <div>Primero, ustedes</div>
+  </div>
+  <div class="cuerpo">
+    <h2 class="titulo">Antes de mostrarte nada, cuéntame.</h2>
+    <div class="lista">
+      <div class="tarjeta"><span class="n">1</span>¿Cómo les llegan los clientes nuevos hoy? ¿Recomendación, Google, otra cosa?</div>
+      <div class="tarjeta"><span class="n">2</span>¿Qué te hizo responder el correo? ¿Pasó algo puntual o es una inquietud de hace rato?</div>
+      <div class="tarjeta"><span class="n">3</span>Los 246 artículos que tienen publicados: ¿quién los escribe, y sienten que traen consultas?</div>
+    </div>
+  </div>
+  <div class="pie"><div>SpindleLab × Legal Prisma</div><div>3 / 9</div></div>
+</section>
+
+<!-- 4 · LO QUE ESTÁ EN JUEGO -->
+<section class="slide s-juego">
+  <div class="barra-sup">
+    <div class="wordmark">SpindleLab<span class="punto">.</span></div>
+    <div>Lo que está en juego</div>
+  </div>
+  <div class="cuerpo">
+    <h2 class="titulo">Un cliente nuevo llega hoy de dos maneras.</h2>
+    <div class="caminos">
+      <div class="tarjeta">
+        <div class="como">Busca en Google</div>
+        <p>«abogado laboral santiago» y compara los primeros resultados que entiende.</p>
+      </div>
+      <div class="tarjeta">
+        <div class="como">Le pregunta a ChatGPT</div>
+        <p>«¿Qué estudio me recomiendas para un tema laboral en Santiago?» y recibe dos o tres nombres.</p>
+      </div>
+    </div>
+    <p class="remate"><b>Quien aparece en esa respuesta se lleva la consulta; el resto no se entera de que existió.</b> Hoy Legal Prisma no puede aparecer ahí. Y no es por calidad: son tres cosas del sitio, las tres corregibles.</p>
+  </div>
+  <div class="pie"><div>SpindleLab × Legal Prisma</div><div>4 / 9</div></div>
+</section>
+
+<!-- 5 · TRES RAZONES -->
+<section class="slide s-razones">
+  <div class="barra-sup">
+    <div class="wordmark">SpindleLab<span class="punto">.</span></div>
+    <div>Por qué no aparece</div>
+  </div>
+  <div class="cuerpo">
+    <h2 class="titulo">Tres razones, todas verificables.</h2>
+    <div class="grid">
+      <div class="tarjeta">
+        <h3>1 · La puerta está cerrada</h3>
+        <p>El robots.txt les prohíbe la entrada a los robots que responden preguntas en vivo. Los 246 artículos no existen para esos motores. Lo puso Cloudflare, posiblemente por defecto.</p>
+      </div>
+      <div class="tarjeta">
+        <h3>2 · Para una máquina, el estudio no existe</h3>
+        <p>Los cuatro abogados tienen currículum real a la vista, pero solo un humano puede leerlo. El sitio nunca declara en datos qué es Legal Prisma ni quiénes responden. Y en lo legal, la máquina no recomienda a quien no puede verificar.</p>
+      </div>
+      <div class="tarjeta">
+        <h3>3 · No hay nada fácil de citar</h3>
+        <p>De las nueve áreas de práctica, una sola está marcada para máquinas, y con errores. La IA cita fuentes que responden preguntas concretas; hoy el sitio no le ofrece ninguna.</p>
+      </div>
+    </div>
+    <p class="nota">Todo está a la vista: se puede comprobar en legalprisma.cl/robots.txt y en el código de cada página.</p>
+  </div>
+  <div class="pie"><div>SpindleLab × Legal Prisma</div><div>5 / 9</div></div>
+</section>
+
+<!-- 6 · LA VENTAJA -->
+<section class="slide s-ventaja">
+  <div class="barra-sup">
+    <div class="wordmark">SpindleLab<span class="punto">.</span></div>
+    <div>La ventaja que casi nadie tiene</div>
+  </div>
+  <div class="cuerpo">
+    <div class="cifra">246</div>
+    <div class="que">artículos ya escritos. Ese trabajo ya está pagado.</div>
+    <p>Hoy la IA no los puede citar porque están en un formato que no puede usar. Lo que falta no es escribir: es convertir lo escrito en material citable.</p>
+    <p><b>La mayoría de los estudios tendría que partir de cero. Ustedes no.</b></p>
+  </div>
+  <div class="pie"><div>SpindleLab × Legal Prisma</div><div>6 / 9</div></div>
+</section>
+
+<!-- 7 · LA RUTA -->
+<section class="slide s-ruta">
+  <div class="barra-sup">
+    <div class="wordmark">SpindleLab<span class="punto">.</span></div>
+    <div>La ruta completa</div>
+  </div>
+  <div class="cuerpo">
+    <h2 class="titulo">Cuatro pasos, con el estado de cada uno.</h2>
+    <table class="ruta">
+      <tr><th style="width:24%">Paso</th><th>Qué logra</th><th style="width:30%">Estado hoy</th></tr>
+      <tr><td class="paso">1 · Abrir la puerta</td><td>Los motores de IA pueden volver a leer el sitio</td><td><b>Cerrada</b> (bloqueo en robots.txt)</td></tr>
+      <tr><td class="paso">2 · Ser entendible</td><td>La IA puede confirmar quién es el estudio y quiénes responden</td><td><b>Invisible</b> para las máquinas</td></tr>
+      <tr><td class="paso">3 · Ser citable</td><td>Las 9 áreas y los 246 artículos pasan a ser material que la IA puede usar al recomendar</td><td><b>1 de 9</b> áreas, con errores</td></tr>
+      <tr><td class="paso">4 · Medir entero</td><td>Saber cada mes si Google y la IA los nombran, y cuántas consultas llegan</td><td><b>Sin medición</b></td></tr>
+    </table>
+  </div>
+  <div class="pie"><div>SpindleLab × Legal Prisma</div><div>7 / 9</div></div>
+</section>
+
+<!-- 8 · EL TRABAJO -->
+<section class="slide s-oferta">
+  <div class="barra-sup">
+    <div class="wordmark">SpindleLab<span class="punto">.</span></div>
+    <div>Cómo lo trabajamos</div>
+  </div>
+  <div class="cuerpo">
+    <h2 class="titulo">El paso 1 va regalado. Los que traen clientes son los otros tres.</h2>
+    <p class="regalo">Quitar el bloqueo es un ajuste en el panel de Cloudflare y lo puede hacer tu equipo esta semana. Los pasos 2 al 4 son nuestro oficio:</p>
+    <div class="servicios">
+      <div class="tarjeta">
+        <h3>Auditoría SEO técnica</h3>
+        <div class="precio">desde $490.000 + IVA</div>
+        <p>El sitio completo revisado: qué frena a Google y a la IA, priorizado por impacto.</p>
+      </div>
+      <div class="tarjeta">
+        <h3>Visibilidad en IA</h3>
+        <div class="precio">desde $400.000 + IVA</div>
+        <p>El estudio y sus abogados declarados en datos verificables; las áreas y los artículos convertidos en material citable.</p>
+      </div>
+      <div class="tarjeta">
+        <h3>Acompañamiento mensual</h3>
+        <div class="precio">desde $590.000/mes + IVA</div>
+        <p>Medición mensual de si Google y la IA los nombran, y el motor ajustándose con datos.</p>
+      </div>
+    </div>
+    <p class="honesta">Nadie puede garantizar aparecer primero en ChatGPT. Lo que sí: quitar todas las razones técnicas por las que hoy no aparecen, y medirlo todos los meses. Los precios están publicados en spindlelab.cl, para que no dependan de cómo caiga esta reunión.</p>
+  </div>
+  <div class="pie"><div>SpindleLab × Legal Prisma</div><div>8 / 9</div></div>
+</section>
+
+<!-- 9 · PRÓXIMO PASO -->
+<section class="slide s-cierre">
+  <div class="barra-sup">
+    <div class="wordmark">SpindleLab<span class="punto">.</span></div>
+    <div style="color:rgba(247,245,240,0.65)">Próximo paso</div>
+  </div>
+  <div class="cuerpo">
+    <h2 class="titulo">Esto es lo que haría.</h2>
+    <div class="pasos">
+      <div class="paso-c"><span class="n">1</span>Mañana te mando la propuesta formal: alcance exacto para Legal Prisma, precio cerrado y plazos.</div>
+      <div class="paso-c"><span class="n">2</span>La revisas con tus socios, con calma. Me dices cuándo les acomoda una respuesta.</div>
+      <div class="paso-c"><span class="n">3</span>El paso 1 háganlo igual esta semana: es gratis, es de ustedes, y les sirve decidan lo que decidan.</div>
+    </div>
+  </div>
+  <div class="pie">
+    <div>hola@spindlelab.cl · spindlelab.cl</div>
+    <div>chequeo gratis: spindlelab.cl/diagnostico</div>
+  </div>
+</section>
+
+</div>
+
+<div id="contador">1 / 9</div>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total = slides.length;
+  var i = 0;
+
+  function irA(n){
+    n = Math.max(0, Math.min(total - 1, n));
+    slides[i].classList.remove('activa');
+    i = n;
+    slides[i].classList.add('activa');
+    document.getElementById('contador').textContent = (i + 1) + ' / ' + total;
+    if (history.replaceState) history.replaceState(null, '', '#' + (i + 1));
+  }
+
+  function escalar(){
+    var e = document.getElementById('escenario');
+    var s = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+    e.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+  }
+
+  document.addEventListener('keydown', function(ev){
+    if (ev.key === 'ArrowRight' || ev.key === ' ' || ev.key === 'PageDown') { ev.preventDefault(); irA(i + 1); }
+    if (ev.key === 'ArrowLeft' || ev.key === 'PageUp') { ev.preventDefault(); irA(i - 1); }
+    if (ev.key === 'Home') irA(0);
+    if (ev.key === 'End') irA(total - 1);
+  });
+  document.addEventListener('click', function(ev){
+    irA(ev.clientX < window.innerWidth * 0.25 ? i - 1 : i + 1);
+  });
+
+  var h = parseInt(location.hash.replace('#',''), 10);
+  if (h >= 1 && h <= total) irA(h - 1);
+  window.addEventListener('resize', escalar);
+  escalar();
+})();
+</script>
+
+</body>
+</html>
