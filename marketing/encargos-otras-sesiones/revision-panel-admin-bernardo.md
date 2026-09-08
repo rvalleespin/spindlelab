@@ -580,6 +580,15 @@ un cliente (ese es el rol de Diego, `persona-disenador-web`). Lo que sigue:
    decisión de dirección; puede salir ya.
 3. Nada de esto toca el sitio público — `revision-sitio-bernardo-combeau.md` sigue vigente para
    esa superficie, y sus dos partes (corrección / rediseño) tienen su propia nota comercial ahí
-   (Fases 1 y 5 por cobrar antes de abrir esa conversación). Esta revisión del panel es una
-   superficie nueva, sin nota comercial propia todavía — si el panel entra en alcance de cobro
-   adicional o queda dentro del Plan Esencial ya contratado, esa decisión es de Ramón, no mía.
+   (Fases 1 y 5 por cobrar antes de abrir esa conversación — **actualización 7-sep-2026: Ramón
+   confirmó que ya están cobradas**, ver Actualización 1 de ese documento). Esta revisión del
+   panel es una superficie nueva, sin nota comercial propia todavía — si el panel entra en
+   alcance de cobro adicional o queda dentro del Plan Esencial ya contratado, esa decisión es de
+   Ramón, no mía.
+
+> **Nota (7-sep-2026):** este apartado ("no escribo código en el repo de un cliente") describe el
+> rol original de esta sesión como diagnóstico puro, entregado a Diego para ejecutar. Desde
+> entonces el propio hilo de este documento (Actualizaciones 1-16 más arriba) sí pasó a ejecutar
+> directamente sobre el repo de Bernardo, a pedido explícito de Ramón en cada ronda. Se deja el
+> texto original sin reescribir — es el registro real de cómo empezó este encargo — pero no
+> describe cómo se trabajó después.

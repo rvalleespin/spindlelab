@@ -339,3 +339,9 @@ sirven para productos sin material propio. Acá hay material real, y ese es el a
 - **Quedan $235.200 por cobrar** (Fases 1 y 5, en un solo cobro contra entrega). Recomendación
   de Ramón: cobrar eso **antes** de abrir la conversación del rediseño. No mezclar un
   rediseño con una entrega que todavía no se paga.
+
+> **Nota (7-sep-2026):** Ramón confirmó directamente, durante la Actualización 1 de más
+> arriba, que Fases 1 y 5 **ya están cobradas**. Se deja el punto original sin borrar (es el
+> registro de la condición que se puso en su momento), pero la condición ya está cumplida —
+> nada impide, por esa razón, abrir la conversación del rediseño (Parte 2-3) cuando Ramón
+> quiera. Sigue pendiente, eso sí, pedir el testimonio y el permiso de caso público.
