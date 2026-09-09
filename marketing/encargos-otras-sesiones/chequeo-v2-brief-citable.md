@@ -65,3 +65,45 @@ bloqueo no borra citas hoy (los que sí: OAI-SearchBot/ChatGPT-User/etc.). Dónd
    y ficha de Valen.
 
 **Estado:** ✅ APROBADO por Ramón (4-sep): secuencia confirmada — motor v2 + landing lunes 8; fase IA post-Fiestas
+**Motor v2:** ✅ desplegado 8-sep (ideas 1+2). Pendientes: idea 4 (informe de ejemplo en la
+landing), idea 5 (print CSS), idea 3 (fase IA).
+
+---
+
+## Segunda lectura, 9-sep: lo que Citable resuelve NO es técnico, es comercial
+
+Ramón volvió a traer este sitio, esta vez apuntando a **acortar el servicio y simplificar la
+monetización**. El análisis del 4-sep fue de features; este es el de modelo, y cambia la
+prioridad de las ideas pendientes.
+
+**Dato primero: Citable no vende nada.** Se recorrió entero el 9-sep: no tiene precios, ni
+formulario de contacto, ni CTA comercial. Termina en el informe y en una línea de marca.
+Nació de un reto de construcción de apps, no de un embudo. **Así que el modelo no se copia
+de ellos: la pieza que sirve es un mecanismo dentro del informe, no su negocio.**
+
+**El mecanismo: «Para qué preguntas servirías, y para cuáles no».** Dos listas. La primera
+halaga; la segunda es la que vende, porque cada línea tiene esta forma:
+
+> **¿Qué opinan los clientes de Vantia Asesores?** · Falta: testimonios o valoraciones
+> reales de clientes, que no aparecen en el texto.
+
+**Por qué esto acorta el servicio.** Hoy la oferta es "visibilidad en IA desde $400.000,
+varios meses, el resultado se ve con el tiempo" — cara de decidir y lenta de sentir. Con la
+lista de huecos, la misma venta se vuelve: **"tu sitio no puede responder estas cuatro
+preguntas que tus clientes hacen; te las escribo y las dejo citables"**. Alcance visible,
+plazo corto, precio fijo, y el prospecto ya vio el problema con sus propias preguntas antes
+de que nadie le cotice. El diagnóstico deja de ser un informe y pasa a ser **una cotización
+con el alcance ya dibujado**.
+
+**Y por eso también simplifica la búsqueda de clientes:** el chequeo autoservicio genera el
+lead, le muestra su hueco y produce el argumento, sin llamada previa.
+
+### El paso siguiente, calibrado a "ir con calma" (Ramón, 9-sep)
+
+**No construir todavía. Probar el mecanismo a mano, una vez, con un cliente real:** en la
+reunión con Legal Prisma del vie 11 hay una ocasión perfecta para preguntarle a Sebastián qué
+le preguntan sus clientes y mostrarle cuáles su sitio no puede responder. Si ese argumento
+mueve la conversación mejor que la ruta de 4 pasos, entonces vale automatizarlo (idea 3, con
+tope de costo). Si no la mueve, nos ahorramos construir un motor con LLM por corrida.
+
+Costo de la prueba: cero. Es una pregunta más en una reunión que ya está agendada.
