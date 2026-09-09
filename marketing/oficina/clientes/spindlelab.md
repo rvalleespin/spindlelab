@@ -251,12 +251,22 @@ cierre de mes.
   - **No va en §8 de la estrategia:** no es un canal de marketing, es gasto de formación y red.
     Se anota acá, con el mismo criterio de umbral con fecha que se le exige a los canales.
 
-### Estructura semanal de publicación (decisión de Ramón, 1-sep noche — REEMPLAZA la cadencia anterior)
-- **3 publicaciones de marca por semana: LUN reel · MIÉ carrusel o pieza de dato · JUE post.**
+### Estructura semanal de publicación — VIGENTE desde el 9-sep-2026 (decisión de Ramón)
+- **2 publicaciones de marca por semana: MIÉ (carrusel o pieza de dato) · JUE (post).**
+  Bajó de 3 a 2 el 9-sep. **El lunes deja de ser slot fijo.**
+- **Por qué:** Ramón está estudiando y con otros frentes abiertos; el cuello de botella
+  nunca fue producir (las piezas del 9 y del 10 estaban listas con días de anticipación),
+  fue apretar publicar. **Dos cumplidas construyen más que tres prometidas y falladas**, y
+  sacan el peso de encima cada lunes. Él lo pidió textual: "mejor ir con calma".
+- **El video/reel pierde fecha fija:** entra cuando esté grabado, en el miércoles o el jueves
+  de esa semana, desplazando la pieza que tocaba (que vuelve al banco, no se pierde). Nunca
+  se agenda un reel que todavía no existe: ese fue el error del lun 7 y del lun 14.
 - **VIERNES NO SE PUBLICA** (B2B: viernes tarde muerto; lectura de Metricool + criterio de Ramón).
-- El LinkedIn personal de Ramón va intercalado (~1/semana) y NO cuenta dentro de las 3 de marca.
-- Todo bajo el mundo dominó; todo con gancho CIRCUITO; cross LinkedIn página + IG por defecto.
-- Semana del 7-sep: LUN video presentación · MIÉ 67/69 (marca, plural) · JUE reciclaje blog #1.
+- El LinkedIn personal de Ramón va intercalado (~1/semana) y NO cuenta dentro de las 2 de marca.
+- Todo bajo el mundo del concepto de esa semana (sem 1 dominó → sem 2 hilo de oro); todo con
+  gancho CIRCUITO; cross LinkedIn página + IG por defecto.
+- Semana del 7-sep, como quedó: LUN sin salida (asumido) · MIÉ 67/69 (marca, plural) ·
+  JUE reciclaje blog #1.
 - Banco post-Fiestas (`redes/2026-09-septiembre/_banco-post-fiestas/`): cifra 45/100, post
   presupuesto, documento 21 chequeos, stories archivadas. Marta re-formaliza el calendario
   del 22-sep en adelante con la estructura nueva.
@@ -266,9 +276,12 @@ cierre de mes.
 
 - **8-sep:** semana 2 de campaña = **mundo HILO DE ORO** (el elemento rota por semana, decisión
   de Ramón 1-sep: dominó → hilo). Lunes 7 quedó sin salida (el video de presentación no se
-  grabó: sin dominó aún); **video reprogramado al LUN 14** (última ventana antes de Fiestas);
-  si no se graba, pasa al lun 22. Piezas del mié 9 (67/69) y jue 10 (blog) producidas por la
+  grabó: sin dominó aún). Piezas del mié 9 (67/69) y jue 10 (blog) producidas por la
   coordinación en mundo hilo.
+  **Actualización 9-sep:** el video ya NO está agendado al lun 14 — con la cadencia de 2/semana
+  perdió fecha fija y entra cuando esté grabado (guion y B-rolls listos en
+  `redes/2026-09-septiembre/07-lun-video-presentacion/`). Deja de aparecer como tarea vencida
+  cada lunes.
 
 ### Narrativa de bots CORREGIDA (motor v2, 8-sep) — para Valen, Emilia y toda pieza
 - **En vivo** (deciden si te citan HOY): OAI-SearchBot, ChatGPT-User, Claude-SearchBot,
