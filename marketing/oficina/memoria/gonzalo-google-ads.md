@@ -56,6 +56,21 @@ por defecto → verificar el número antes de diagnosticar.
   (propuestos en el plan).
 - [ ] El plan de relanzamiento vive en `claude/jolly-fermi-f2799a` — falta commit/merge a `main`.
 
+## Consultas comerciales fuera de Google
+
+- **Campañas con landing para Spotify (9-sep-2026).** Consulta entrante: captar oyentes vía
+  landing. Alcance, capacidades y precio armados sobre el catálogo publicado en
+  `marketing/paid-media/2026-09-spotify-landing-alcance-y-precio.md`. Tres cosas que no hay
+  que volver a derivar:
+  - **Spotify no da píxel ni API de conversión a un anunciante externo**, y no acepta UTM
+    legibles. La landing propia es el único punto de medición posible: el evento "clic a
+    Spotify" es lo que la campaña optimiza y lo que arma retargeting y similares.
+  - **La filosofía de alta intención de la casa no aplica en música.** Nadie busca a un
+    artista que no conoce: es Meta e interrupción, y el interés frío sí rinde. Lidera Fran.
+  - **Hueco de catálogo:** el sitio dice que Paid Media es solo Google y la pauta Meta va
+    empaquetada con orgánico en Redes ($590k/mes). No existe SKU de pauta Meta sola →
+    cotizar por el nivel "A medida" de Paid Media, con $350k/mes como piso equivalente.
+
 ## Con quién trabajo
 - Reporto a **Tomás** (troncal). Con **Nora** (mide `generate_lead`), **Diego** (URLs/rutas
   del sitio) y **Fran** (Meta). Encargos entran por `marketing/encargos-otras-sesiones/`.
