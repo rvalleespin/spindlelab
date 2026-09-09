@@ -97,10 +97,22 @@ artículos; terminas con la tabla de la slide 7 a la vista — ahí se queda has
 > el cliente hace antes de elegir. La mayoría de los estudios tendría que partir de cero.
 > Ustedes no.»
 
-**Si pide el detalle técnico o quiere mostrárselo a su equipo:** está el panel de estado
-(`dashboard.html` en la carpeta, y su PDF). Ahí sale la tabla de qué recibió cada robot con el
-caveat de honestidad, el activo que ya existe y las 4 correcciones por orden de impacto. Es
-buen material para dejarle después de la llamada.
+### ⭐ El momento fuerte: la pieza interactiva (opcional, pero es lo que más pega)
+`ventas/presentaciones/legalprisma-2026-09-11/dashboard.html` — se abre en Chrome y se comparte
+pantalla. En vez de contarle el 403, **se lo muestras pasando en vivo**: aprietas «Probar la
+puerta» y los ocho agentes van tocando uno por uno; el hilo dorado llega hasta el sitio en el
+navegador, Google y Bing, y se corta a medio camino en los cuatro buscadores de IA.
+
+> «Déjame mostrarte algo, porque suena abstracto hasta que se ve. Cada línea es un robot
+> tocando la puerta de su sitio, ahora. Mira lo que pasa.» *(apretar el botón y callarse
+> mientras corre)*
+
+Después, en la misma pieza, las 12 preguntas de sus clientes: abres las que calcen con lo que
+él dijo en el bloque 2. Y al final el conmutador **Hoy / Con la puerta abierta**, que enciende
+el circuito completo — ese es el momento para pasar a la oferta.
+
+**Si prefieres no depender de que funcione**, las slides 5, 6 y 7 cuentan lo mismo, y el
+`anexo-tecnico.pdf` es la versión imprimible para adjuntar a la propuesta.
 
 **El reencuadre si menciona a la competencia o el escepticismo:**
 > «Mira, nadie te puede garantizar aparecer primero en ChatGPT, y quien te lo garantice te

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel de estado — Legal Prisma · SpindleLab</title>
+<style>
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); font-weight:400 800; }
+@font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:400 700; }
+
+:root{
+  /* marca */
+  --tinta:#131A22;
+  --papel:#F7F5F0;
+  --blanco:#FFFFFF;
+  --dorado:#C9A227;
+  --gris:#5D6673;
+  --linea:rgba(19,26,34,0.12);
+  --linea-suave:rgba(19,26,34,0.07);
+  /* estado (validados sobre #F7F5F0: contraste >=3:1; siempre con simbolo + palabra) */
+  --ok:#127a52;
+  --falla:#b8402c;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+body{
+  font-family:'Inter', sans-serif;
+  color:var(--tinta);
+  background:var(--papel);
+  width:1280px;
+  margin:0 auto;
+  padding:52px 72px 64px;
+  font-size:14px;
+  line-height:1.5;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+
+/* ——— cabecera ——— */
+header{
+  display:flex; justify-content:space-between; align-items:flex-start;
+  border-bottom:2px solid var(--tinta);
+  padding-bottom:18px; margin-bottom:26px;
+}
+.wordmark{ font-family:'Gabarito',sans-serif; font-weight:700; font-size:24px; letter-spacing:-0.01em; }
+.wordmark .punto{ color:var(--dorado); }
+.tagline{ font-size:12px; color:var(--gris); margin-top:4px; }
+.meta{ text-align:right; font-size:12px; color:var(--gris); line-height:1.7; }
+.meta b{ color:var(--tinta); }
+
+h1{ font-family:'Gabarito',sans-serif; font-weight:700; font-size:30px; letter-spacing:-0.02em; margin-bottom:6px; }
+.bajada{ font-size:15px; color:var(--gris); max-width:900px; margin-bottom:30px; }
+
+h2.seccion{
+  font-family:'Gabarito',sans-serif; font-weight:700; font-size:12px;
+  text-transform:uppercase; letter-spacing:.1em; color:var(--gris);
+  margin:36px 0 14px; display:flex; align-items:center; gap:12px;
+}
+h2.seccion::after{ content:''; flex:1; height:1px; background:var(--linea); }
+
+/* ——— fila de indicadores ——— */
+.kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.kpi{
+  background:var(--blanco); border:1px solid var(--linea);
+  border-radius:10px; padding:18px 20px 16px;
+  display:flex; flex-direction:column;
+}
+.kpi .cifra{
+  font-family:'Gabarito',sans-serif; font-weight:700;
+  font-size:46px; line-height:1; letter-spacing:-0.02em;
+  margin-bottom:2px;
+}
+.kpi .cifra .de{ font-size:24px; color:var(--gris); font-weight:400; }
+.kpi .rotulo{ font-size:13.5px; font-weight:600; margin-bottom:4px; }
+.kpi .nota{ font-size:12px; color:var(--gris); line-height:1.45; }
+/* el unico dorado de la pieza: la regla del activo que ya existe */
+.kpi.activo{ border-top:3px solid var(--dorado); }
+
+/* ——— badges de estado: color + simbolo + palabra ——— */
+.badge{
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:11.5px; font-weight:700; letter-spacing:.03em;
+  padding:3px 9px; border-radius:999px; white-space:nowrap;
+  border:1px solid currentColor;
+}
+.badge .ic{ font-size:11px; line-height:1; }
+.b-ok{ color:var(--ok); background:rgba(18,122,82,0.07); }
+.b-falla{ color:var(--falla); background:rgba(184,64,44,0.07); }
+
+/* ——— tablas ——— */
+table{
+  width:100%; border-collapse:collapse;
+  background:var(--blanco); border:1px solid var(--linea);
+  border-radius:10px; overflow:hidden; font-size:13.5px;
+}
+th{
+  font-family:'Gabarito',sans-serif; font-size:11px; text-transform:uppercase;
+  letter-spacing:.06em; color:var(--gris); text-align:left;
+  padding:11px 16px; border-bottom:1px solid var(--linea); font-weight:700;
+}
+td{ padding:11px 16px; border-bottom:1px solid var(--linea-suave); vertical-align:middle; }
+tr:last-child td{ border-bottom:none; }
+td.agente{ font-family:'Gabarito',sans-serif; font-weight:700; white-space:nowrap; }
+td.quien{ color:var(--gris); }
+
+.caveat{
+  font-size:12px; color:var(--gris); line-height:1.5;
+  margin-top:10px; padding-left:14px; border-left:2px solid var(--linea);
+  max-width:1000px;
+}
+
+/* ——— dos columnas: existe / falta ——— */
+.dos{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.panel{ background:var(--blanco); border:1px solid var(--linea); border-radius:10px; padding:18px 20px; }
+.panel h3{
+  font-family:'Gabarito',sans-serif; font-size:15px; font-weight:700;
+  margin-bottom:12px; display:flex; align-items:center; gap:9px;
+}
+.panel ul{ list-style:none; }
+.panel li{
+  font-size:13.5px; line-height:1.45; padding:7px 0 7px 22px;
+  position:relative; border-bottom:1px solid var(--linea-suave);
+}
+.panel li:last-child{ border-bottom:none; }
+.panel li::before{
+  position:absolute; left:0; top:7px; font-size:12px; font-weight:700;
+}
+.panel.si li::before{ content:'✓'; color:var(--ok); }
+.panel.no li::before{ content:'✕'; color:var(--falla); }
+.panel li b{ font-weight:600; }
+
+/* ——— prioridades ——— */
+td.paso{ font-family:'Gabarito',sans-serif; font-weight:700; white-space:nowrap; }
+td.quienlo{ white-space:nowrap; font-size:12.5px; }
+.prio{
+  display:inline-block; font-family:'Gabarito',sans-serif; font-weight:700;
+  font-size:11px; letter-spacing:.05em; padding:2px 8px; border-radius:4px;
+  border:1px solid currentColor;
+}
+.p-alta{ color:var(--falla); background:rgba(184,64,44,0.07); }
+.p-media{ color:var(--gris); background:rgba(19,26,34,0.05); }
+
+footer{
+  margin-top:34px; padding-top:16px; border-top:1px solid var(--linea);
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:12px; color:var(--gris);
+}
+.footnote{ font-size:11px; color:var(--gris); font-style:italic; margin-top:12px; line-height:1.5; }
+
+@media print{
+  @page{ size:1280px auto; margin:0; }
+  body{ padding:40px 60px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="wordmark">SpindleLab<span class="punto">.</span></div>
+    <div class="tagline">Un motor de adquisición · SEO técnico y visibilidad en IA como eje</div>
+  </div>
+  <div class="meta">
+    <div><b>Panel de estado</b> · anexo de SPL-DIAG-2026-006</div>
+    <div><b>Empresa</b> Legal Prisma · legalprisma.cl</div>
+    <div><b>Verificado</b> 9 de septiembre de 2026</div>
+  </div>
+</header>
+
+<h1>Qué está frenando hoy la visibilidad de Legal Prisma</h1>
+<p class="bajada">
+  Cuatro hechos comprobados el 9 de septiembre pidiendo el sitio directamente: como lo pide un
+  navegador y como lo pide cada buscador de IA. Nada de esto es una estimación, y todo se puede
+  volver a comprobar en cualquier momento.
+</p>
+
+<div class="kpis">
+  <div class="kpi activo">
+    <div class="cifra">257</div>
+    <div class="rotulo">artículos publicados</div>
+    <div class="nota">Y sigue creciendo: el último es del 7 de septiembre, uno cada 3 o 4 días. El trabajo caro ya está hecho y pagado.</div>
+  </div>
+  <div class="kpi">
+    <div class="cifra" style="color:var(--falla)">4 <span class="de">de 6</span></div>
+    <div class="rotulo">buscadores de IA reciben un 403</div>
+    <div class="nota">El servidor les cierra la puerta por su nombre. Google y Bing sí entran. No está en el robots.txt: lo hace el CDN.</div>
+  </div>
+  <div class="kpi">
+    <div class="cifra" style="color:var(--falla)">0 <span class="de">de 9</span></div>
+    <div class="rotulo">áreas con preguntas marcadas</div>
+    <div class="nota">Revisadas 5 de las 9 páginas de práctica: ninguna declara una sola pregunta y respuesta que una IA pueda citar.</div>
+  </div>
+  <div class="kpi">
+    <div class="cifra" style="color:var(--falla)">0</div>
+    <div class="rotulo">datos de identidad del estudio</div>
+    <div class="nota">La portada no declara qué es Legal Prisma ni quiénes son sus 9 profesionales. Para una máquina, el estudio no está.</div>
+  </div>
+</div>
+
+<h2 class="seccion">Lo que casi nadie comprueba: qué recibe cada robot de verdad</h2>
+
+<table>
+  <tr>
+    <th style="width:22%">Se presenta como</th>
+    <th style="width:34%">Quién es</th>
+    <th style="width:24%">Qué recibió</th>
+    <th style="width:20%">Veredicto</th>
+  </tr>
+  <tr>
+    <td class="agente">Navegador</td>
+    <td class="quien">Una persona cualquiera entrando al sitio</td>
+    <td>200, la página completa</td>
+    <td><span class="badge b-ok"><span class="ic">✓</span> PASA</span></td>
+  </tr>
+  <tr>
+    <td class="agente">OAI-SearchBot</td>
+    <td class="quien">Construye el índice con el que ChatGPT busca en la web</td>
+    <td>403</td>
+    <td><span class="badge b-falla"><span class="ic">✕</span> BLOQUEADO</span></td>
+  </tr>
+  <tr>
+    <td class="agente">ChatGPT-User</td>
+    <td class="quien">Entra en vivo cuando alguien pregunta algo en ChatGPT</td>
+    <td>403</td>
+    <td><span class="badge b-falla"><span class="ic">✕</span> BLOQUEADO</span></td>
+  </tr>
+  <tr>
+    <td class="agente">PerplexityBot</td>
+    <td class="quien">Indexa para las respuestas con fuentes de Perplexity</td>
+    <td>403</td>
+    <td><span class="badge b-falla"><span class="ic">✕</span> BLOQUEADO</span></td>
+  </tr>
+  <tr>
+    <td class="agente">Claude-SearchBot</td>
+    <td class="quien">Construye el índice con el que Claude busca en la web</td>
+    <td>403</td>
+    <td><span class="badge b-falla"><span class="ic">✕</span> BLOQUEADO</span></td>
+  </tr>
+  <tr>
+    <td class="agente">Googlebot</td>
+    <td class="quien">De su índice salen los resúmenes de IA de Google</td>
+    <td>200, la página completa</td>
+    <td><span class="badge b-ok"><span class="ic">✓</span> PASA</span></td>
+  </tr>
+  <tr>
+    <td class="agente">Bingbot</td>
+    <td class="quien">Alimenta a Copilot y parte de lo que ChatGPT encuentra</td>
+    <td>200, la página completa</td>
+    <td><span class="badge b-ok"><span class="ic">✓</span> PASA</span></td>
+  </tr>
+</table>
+
+<p class="caveat">
+  <b>El robots.txt del sitio les da permiso</b> — declara <i>search=yes</i> y no bloquea a
+  ninguno de estos — <b>y el servidor igual los rechaza.</b> Los únicos que el robots.txt sí
+  bloquea son los robots de entrenamiento (GPTBot, ClaudeBot, Google-Extended y otros), lo que
+  es una decisión legítima sobre propiedad intelectual y no le quita ni una cita hoy.
+  <br><br>
+  <b>Lo que esta prueba puede y no puede ver:</b> nuestras peticiones salen de nuestro servidor,
+  no de los de OpenAI o Perplexity. Que el sitio responda 403 al nombre del agente prueba que
+  filtra por nombre, y eso afecta igual al robot real. Lo que no podemos descartar desde afuera
+  es que además filtre por dirección de origen.
+</p>
+
+<h2 class="seccion">El activo que ya existe, y lo que le falta para que la máquina lo use</h2>
+
+<div class="dos">
+  <div class="panel si">
+    <h3><span class="badge b-ok"><span class="ic">✓</span> YA ESTÁ</span> No hay que rehacerlo</h3>
+    <ul>
+      <li><b>257 artículos</b> que responden preguntas reales de cliente, con cadencia de uno cada 3-4 días.</li>
+      <li>Los artículos <b>ya llevan marcado de preguntas y respuestas</b> (FAQ) que una IA puede citar.</li>
+      <li><b>64 artículos de derecho laboral</b>, 32 de constitución de empresa, 23 de litigios: profundidad real por área.</li>
+      <li><b>9 profesionales con currículum verificable</b>: universidad, magíster, años y trayectoria.</li>
+      <li><b>Google y Bing entran sin problema</b>: el SEO tradicional no está roto.</li>
+      <li>Dirección, teléfono y horario de atención publicados y correctos.</li>
+    </ul>
+  </div>
+  <div class="panel no">
+    <h3><span class="badge b-falla"><span class="ic">✕</span> FALTA</span> Y es lo que cuesta consultas</h3>
+    <ul>
+      <li><b>La puerta abierta para los buscadores de IA</b>: hoy 4 de 6 reciben un 403 y no leen ni un artículo.</li>
+      <li><b>La identidad del estudio declarada en datos</b>: sin ella, la máquina no puede verificar quién responde.</li>
+      <li><b>Preguntas y respuestas en las 9 páginas de práctica</b>, que son las páginas donde se cobra.</li>
+      <li><b>Precios o rangos de honorarios</b>: no hay ni una referencia en todo el sitio.</li>
+      <li><b>Plazos</b>: cuánto demora una posesión efectiva, un juicio laboral, una constitución.</li>
+      <li><b>Clientes y casos legibles</b>: los logos son imágenes sin nombre («eo», «eo (1)»). Para una máquina, esa sección está en blanco.</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="seccion">Qué arreglar, por orden de impacto</h2>
+
+<table>
+  <tr>
+    <th style="width:6%">#</th>
+    <th style="width:30%">Qué</th>
+    <th style="width:38%">Qué cambia</th>
+    <th style="width:12%">Urgencia</th>
+    <th style="width:14%">Quién lo hace</th>
+  </tr>
+  <tr>
+    <td class="paso">1</td>
+    <td class="paso">Abrir la puerta en el CDN</td>
+    <td>Los 257 artículos pasan a ser legibles para ChatGPT, Perplexity y Claude. Sin esto, nada de lo demás sirve.</td>
+    <td><span class="prio p-alta">AHORA</span></td>
+    <td class="quienlo">Su equipo, en minutos</td>
+  </tr>
+  <tr>
+    <td class="paso">2</td>
+    <td class="paso">Declarar al estudio y a sus abogados</td>
+    <td>La máquina puede confirmar qué es Legal Prisma y quién responde. En materias legales, no recomienda a quien no puede verificar.</td>
+    <td><span class="prio p-alta">ALTA</span></td>
+    <td class="quienlo">SpindleLab</td>
+  </tr>
+  <tr>
+    <td class="paso">3</td>
+    <td class="paso">Convertir las 9 áreas en respuestas</td>
+    <td>Las páginas donde se cobra empiezan a responder lo que el cliente pregunta antes de elegir estudio: qué cuesta, cuánto demora, cómo es el proceso.</td>
+    <td><span class="prio p-alta">ALTA</span></td>
+    <td class="quienlo">SpindleLab</td>
+  </tr>
+  <tr>
+    <td class="paso">4</td>
+    <td class="paso">Medir cada mes</td>
+    <td>Saber si Google y la IA los nombran, y cuántas consultas llegan por ahí. Con fecha, no de memoria.</td>
+    <td><span class="prio p-media">CONTINUA</span></td>
+    <td class="quienlo">SpindleLab</td>
+  </tr>
+</table>
+
+<footer>
+  <div><b>hola@spindlelab.cl</b> · spindlelab.cl</div>
+  <div>Anexo del mini-diagnóstico SPL-DIAG-2026-006 · 9 de septiembre de 2026</div>
+</footer>
+
+<p class="footnote">
+  Verificación del 9 de septiembre de 2026 sobre www.legalprisma.cl: HTML público, robots.txt,
+  datos estructurados JSON-LD, índice de contenidos del sitio y una ronda de peticiones
+  presentándose como cada robot. No incluye auditoría de rendimiento ni revisión de contenido
+  jurídico. Este panel describe señales técnicas presentes o ausentes; no certifica ni evalúa la
+  calidad profesional del estudio.
+</p>
+
+</body>
+</html>

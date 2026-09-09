@@ -11,7 +11,14 @@ posterior al mini-diagnóstico. Primera instancia: Sebastián Escudero / Legal P
 |---|---|---|
 | `presentacion.html` / `.pdf` | Las 9 slides que se comparten en pantalla | Durante la llamada |
 | `preguntas-y-hallazgos.md` | Las dos listas (para qué preguntas serviría y para cuáles no) + los hallazgos verificados el 9-sep + las dos correcciones al informe 006 | **Leerlo antes**; la lista B se muestra en el bloque 2 |
-| `dashboard.html` / `.pdf` | Panel de estado: 4 indicadores, la tabla de qué recibió cada robot, el activo que existe vs lo que falta, y las 4 correcciones por impacto | Si pide detalle técnico, y como anexo de la propuesta |
+| **`dashboard.html`** | **La pieza interactiva.** Tres momentos: (1) «Probar la puerta» anima los 8 agentes tocando la puerta y muestra quién recibe 403; (2) las 12 preguntas de cliente, que se abren de a una con la cita textual o con lo que falta; (3) el circuito con conmutador «Hoy / Con la puerta abierta» | **El momento fuerte de la llamada.** Se comparte pantalla y se maneja en vivo |
+| `anexo-tecnico.html` / `.pdf` | La misma información en formato documento imprimible (la versión estática) | Para adjuntar por correo con la propuesta, donde lo interactivo no funciona |
+
+### Cómo se maneja la pieza interactiva
+Se abre en Chrome (doble clic). **No se toca nada hasta el momento:** el botón «Probar la
+puerta» es el golpe, y conviene apretarlo mientras se habla, no antes. Las preguntas se abren
+de a una, eligiendo según lo que él haya dicho. `dashboard.html?auto` arranca sola (sirve para
+dejarla proyectada o para grabar un video). Funciona sin internet: todo está en la carpeta.
 
 **Los datos de estos tres archivos se verificaron a mano el 9-sep-2026** contra
 www.legalprisma.cl (HTML, robots.txt, JSON-LD, índice de contenidos y sonda de user-agent).
