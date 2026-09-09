@@ -45,11 +45,28 @@ Y una pregunta de enganche que además te dice cuánto leyó:
 
 - «¿Cómo les llegan los clientes nuevos hoy? ¿Recomendación, Google, otra cosa?»
 - «¿Qué te hizo responder mi correo? ¿Pasó algo puntual o es una inquietud de hace rato?»
-- «Los 246 artículos que tienen publicados: ¿quién los escribe? ¿Sienten que les traen consultas?»
+- «Los **257** artículos que tienen publicados: ¿quién los escribe? ¿Sienten que les traen consultas?»
+- **«¿Qué es lo que más te preguntan los clientes antes de contratarlos?»** ← la nueva, y la
+  que abre el mecanismo de abajo.
 - «¿Esto lo decides tú, o hay socios que tienen que estar de acuerdo?»
 
 **Escucha de verdad acá.** Lo que diga de los artículos es oro: han invertido AÑOS en
 contenido que hoy las máquinas no pueden usar. Ese es su dolor, dicho por él.
+
+**El momento nuevo — la lista de preguntas (solo DESPUÉS de que él conteste la 4ª).**
+Documento completo con las dos listas y las citas textuales:
+`ventas/presentaciones/legalprisma-2026-09-11/preguntas-y-hallazgos.md`.
+
+> «Te muestro algo: estas son las preguntas que su sitio hoy no puede responder. No es que
+> estén mal escritas: no están. Y son justo las que alguien hace antes de elegir un estudio.»
+
+Las cuatro que más pegan, todas verificadas el 9-sep: **cuánto cobran** (cero cifras en todo el
+sitio) · **cuánto demora** un trámite (ningún plazo declarado) · **qué opinan sus clientes**
+(cero testimonios) · **con qué empresas han trabajado** (los logos son imágenes con el alt
+vacío o `eo (1)`: para una máquina esa sección está en blanco).
+
+Si el orden se invierte y la lista sale antes que su respuesta, es una presentación. Después de
+su respuesta, es un espejo.
 
 ## 3 · La ruta, contada (8–14 min) — slides 4 a 7 EN PANTALLA
 *(Slide 4 al abrir este bloque; slide 5 con las tres razones; slide 6 al llegar a los 246
@@ -59,20 +76,31 @@ artículos; terminas con la tabla de la slide 7 a la vista — ahí se queda has
 > busca en Google o le pregunta directo a ChatGPT. Y quien aparece en esa respuesta se lleva
 > la consulta.
 >
-> En el caso de ustedes hay tres cosas, y las tres tienen arreglo. La primera te la regalé
-> en el informe: la puerta está cerrada. Parte es configuración de Cloudflare que deja fuera
-> a los robots que responden las preguntas en vivo, y eso lo puede destrabar tu equipo esta
-> semana. ¿Alcanzaron a mirarlo?
+> En el caso de ustedes hay tres cosas, y las tres tienen arreglo. La primera te la regalé en
+> el informe, y ayer la volví a comprobar con más detalle: **pedí su portada presentándome
+> como cada robot.** Un navegador normal recibe la página completa. Google y Bing también. Pero
+> el buscador de ChatGPT, el de Perplexity y el de Claude reciben un 403: la puerta cerrada en
+> la cara. Y lo curioso es que su robots.txt les da permiso; el que los rechaza es el servidor,
+> por una regla del CDN que alguien activó sin saber qué apagaba. Es de las cosas que menos se
+> detectan, y su equipo lo puede destrabar esta semana. ¿Alcanzaron a mirarlo?
 >
 > Pero abrir la puerta solo deja entrar a las máquinas a un sitio que todavía no les dice
-> quiénes son ustedes. Ahí está lo segundo: los cuatro abogados tienen currículum real a la
-> vista, pero solo un humano puede leerlo. Para una máquina, Legal Prisma no existe como
-> estudio. Y en lo legal, la máquina no recomienda a quien no puede verificar.
+> quiénes son ustedes. Ahí está lo segundo: los nueve profesionales tienen currículum real a la
+> vista, pero solo un humano puede leerlo. El sitio nunca declara en datos qué es Legal Prisma
+> ni quién responde. Y en lo legal, la máquina no recomienda a quien no puede verificar.
 >
-> Y lo tercero es donde ustedes tienen una ventaja que casi nadie tiene: 246 artículos ya
-> escritos. Hoy la IA no los puede citar porque están en un formato que no puede usar. Ese
-> trabajo ya está pagado; lo que falta es convertirlo en material citable. La mayoría de los
-> estudios tendría que partir de cero. Ustedes no.»
+> Y lo tercero es donde ustedes tienen una ventaja que casi nadie tiene: 257 artículos ya
+> escritos, uno cada tres días, y bien hechos: **ya vienen con las preguntas y respuestas
+> marcadas para que una IA los pueda citar.** El trabajo caro está hecho y pagado. Lo que pasa
+> es que con la puerta cerrada da lo mismo lo bueno que sea: no lo pueden leer. Y las páginas
+> donde ustedes cobran, las nueve áreas de práctica, no responden ninguna de las preguntas que
+> el cliente hace antes de elegir. La mayoría de los estudios tendría que partir de cero.
+> Ustedes no.»
+
+**Si pide el detalle técnico o quiere mostrárselo a su equipo:** está el panel de estado
+(`dashboard.html` en la carpeta, y su PDF). Ahí sale la tabla de qué recibió cada robot con el
+caveat de honestidad, el activo que ya existe y las 4 correcciones por orden de impacto. Es
+buen material para dejarle después de la llamada.
 
 **El reencuadre si menciona a la competencia o el escepticismo:**
 > «Mira, nadie te puede garantizar aparecer primero en ChatGPT, y quien te lo garantice te

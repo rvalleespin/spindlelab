@@ -5,6 +5,20 @@ posterior al mini-diagnóstico. Primera instancia: Sebastián Escudero / Legal P
 **Es también el molde reutilizable** para cualquier cliente que venga del mini-diagnóstico
 (ver "Cómo clonar" abajo).
 
+## Qué hay en esta carpeta
+
+| Archivo | Qué es | Cuándo se usa |
+|---|---|---|
+| `presentacion.html` / `.pdf` | Las 9 slides que se comparten en pantalla | Durante la llamada |
+| `preguntas-y-hallazgos.md` | Las dos listas (para qué preguntas serviría y para cuáles no) + los hallazgos verificados el 9-sep + las dos correcciones al informe 006 | **Leerlo antes**; la lista B se muestra en el bloque 2 |
+| `dashboard.html` / `.pdf` | Panel de estado: 4 indicadores, la tabla de qué recibió cada robot, el activo que existe vs lo que falta, y las 4 correcciones por impacto | Si pide detalle técnico, y como anexo de la propuesta |
+
+**Los datos de estos tres archivos se verificaron a mano el 9-sep-2026** contra
+www.legalprisma.cl (HTML, robots.txt, JSON-LD, índice de contenidos y sonda de user-agent).
+Si la llamada se corre de fecha, **vale la pena re-verificar el 403**: si su equipo destraba
+Cloudflare antes del viernes, el hallazgo principal cambia y hay que felicitarlos, no
+insistir con él.
+
 ## Cómo usarla en la llamada
 
 1. Abrir `presentacion.html` en Chrome (doble clic) y poner pantalla completa (fn+F o
