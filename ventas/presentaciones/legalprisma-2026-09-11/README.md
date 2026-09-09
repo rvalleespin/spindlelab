@@ -1,4 +1,4 @@
-# Presentación de venta — llamada de 20 minutos (Legal Prisma, mié 9-sep-2026)
+# Presentación de venta — llamada de 20 minutos (Legal Prisma, vie 11-sep-2026, 10:00)
 
 **Qué es:** la presentación que se comparte en pantalla durante la llamada de 20 minutos
 posterior al mini-diagnóstico. Primera instancia: Sebastián Escudero / Legal Prisma.

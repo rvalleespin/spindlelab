@@ -1,4 +1,10 @@
-# Speech — llamada con Sebastián Escudero (Legal Prisma) · mié 9-sep, 17:00–17:20
+# Speech — llamada con Sebastián Escudero (Legal Prisma) · vie 11-sep, 10:00–10:20
+
+> ⚠️ **Reprogramada.** Era el mié 9 a las 17:00; Sebastián tenía una reunión con cliente que
+> no pudo mover y propuso el **viernes 11 a las 10:00**. Ramón aceptó por correo el 8-sep y él
+> reaccionó 👍. **Link vigente y único: `meet.google.com/noz-bfum-uyv`** (ya no hay ambigüedad
+> de links: el de calendario que rechazó es este mismo, y en el correo se le dijo que no
+> necesita aceptar nada). Verificado en Gmail el 9-sep.
 
 **Contexto:** él pidió el informe, lo recibió (006 v3, la ruta de 4 pasos), y ÉL propuso
 esta hora. Viene tibio-caliente. Objetivo de la llamada: **decidir si va propuesta formal,
@@ -6,7 +12,7 @@ no cerrar en la llamada.** Es mapa, no jaula: si una frase no te sale natural, d
 
 ## La mecánica: la llamada corre SOBRE LA PRESENTACIÓN, compartida en pantalla
 Hay una presentación de 9 slides hecha para esta llamada:
-`ventas/presentaciones/legalprisma-2026-09-09/presentacion.html` (abrir en Chrome, pantalla
+`ventas/presentaciones/legalprisma-2026-09-11/presentacion.html` (abrir en Chrome, pantalla
 completa, avanzar con flecha/espacio; PDF de respaldo al lado). Mismo estilo y mismo
 contenido que el informe 006, más dos slides nuevas: **quién soy** (slide 2, tu bio) y las
 **3 preguntas de escucha a la vista** (slide 3). El mapa slide↔bloque está en el README de
@@ -14,11 +20,12 @@ esa carpeta. El informe 006 no desaparece: es lo que reenvías por correo y tu r
 la presentación falla.
 
 ## Antes (5 min)
-- [ ] Mañana temprano: confirmar por correo "¿seguimos a las 17:00? Usamos este link" (rechazó
-  la invitación de calendario — casi seguro por el link duplicado, pero confírmalo). En el
-  mismo correo: "te reenvío el informe para tenerlo a mano en la llamada".
+- [ ] **Jueves 10 en la tarde** (no el mismo viernes temprano): correo corto de recordatorio
+  con el informe adjunto de nuevo — "nos vemos mañana a las 10:00 en meet.google.com/noz-bfum-uyv,
+  te dejo el informe a mano para la llamada". La hora ya está confirmada; el correo es para
+  que llegue con el documento abierto, no para re-preguntar.
 - [ ] Presentación abierta en Chrome y probada (las 9 slides pasan): 
-  `ventas/presentaciones/legalprisma-2026-09-09/presentacion.html`.
+  `ventas/presentaciones/legalprisma-2026-09-11/presentacion.html`.
 - [ ] PDF del informe a mano como respaldo: `marketing/diagnosticos/SPL-DIAG-2026-006-legalprisma/`.
 - [ ] Pestañas de respaldo: legalprisma.cl · spindlelab.cl/servicios (precios) · spindlelab.cl/diagnostico.
 - [ ] NO correr el chequeo público sobre legalprisma.cl en vivo (regla de la ficha: su
@@ -103,13 +110,17 @@ en IA desde $400.000 · Acompañamiento Mensual desde $590.000/mes. Todos + IVA,
 - **«Está caro».** → «Lo entiendo. Piénsalo contra lo que ya invirtieron: 246 artículos que
   hoy no compiten. Esto es hacer que ese activo trabaje.»
 - **«Lo tengo que conversar con mis socios».** → «Perfecto. Te mando la propuesta por escrito
-  mañana para que la revisen juntos, y me dices cuándo les acomoda una respuesta.»
+  el lunes para que la revisen juntos, y me dices cuándo les acomoda una respuesta.»
 
 ## 6 · Cierre (18–20 min) — nunca sin próximo paso
 
-> «Sebastián, esto es lo que haría: te mando mañana la propuesta formal con el alcance para
+> «Sebastián, esto es lo que haría: te mando el lunes la propuesta formal con el alcance para
 > Legal Prisma, precio cerrado y plazos. La revisas con quien tengas que revisarla, y me
 > dices. ¿Te parece?»
+
+*(La llamada es viernes: prometer "mañana" cae en sábado. **Lunes 14** es el compromiso
+cumplible; si alcanzas a mandarla el mismo viernes en la tarde, mejor todavía — llegar antes
+de lo prometido juega a favor, prometer y llegar tarde no.)*
 
 Si duda: «¿Qué necesitarías ver en esa propuesta para que la decisión sea fácil?» — y anotas.
 Si no hay fit real (no decide, no hay interés): «Prefiero decírtelo derecho: si esto no es
