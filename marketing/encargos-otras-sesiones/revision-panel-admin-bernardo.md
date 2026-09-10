@@ -486,26 +486,92 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 >    `bernardocombeau.cl` — hoy apuntan a Vercel (`ns1/ns2.vercel-dns.com`) — en el registrador del
 >    dominio (NIC Chile, probablemente).
 
+> **Actualización 19 (8/9-sep-2026) — cambio de casa a Netlify completado: dominio activo,
+> certificado propio, sitio operativo de punta a punta. Un pendiente real para cerrar del todo
+> (login OAuth).** Retomando la Actualización 18: Ramón creó el sitio en Netlify (cuenta propia
+> `rvalleespin` por ahora — transferencia a la cuenta de Bernardo queda para más adelante),
+> conectó el repo (GitHub App de Netlify escopeada solo a `bernardo-combeau`, corregida tras un
+> primer intento por error con "todos los repositorios"), y se mergeó `claude/migrar-netlify` a
+> `main`.
+>
+> **Dos hallazgos de configuración, resueltos antes de que el sitio sirviera nada real:** el primer
+> intento de Netlify auto-detectó Astro pero publicó el árbol de fuente crudo en vez de correr
+> `npm run build` — `netlify.toml` necesitaba `command`/`publish` explícitos, no solo `base`. Y el
+> proyecto nació con "Edge Access" (visitor login-wall, default nuevo de Netlify en proyectos de
+> crédito) — cambiado a público en Project configuration → Visitor access.
+>
+> **DNS — la parte que más costó, con un susto real de por medio.** Mientras se armaba esto,
+> Bernardo pidió reactivar su sitio urgente (seguía en Vercel, cuenta con saldo pendiente → HTTP
+> 402/`DEPLOYMENT_DISABLED` en todas las rutas, Actualización 17). Se intentó primero solo
+> restaurar el nameserver de Vercel en NIC Chile, para volver al estado "pausado" conocido
+> mientras se preparaba el cambio real — un primer guardado no quedó aplicado (NIC Chile mostró
+> los campos vacíos después), y al despejarlos para reintentar el dominio quedó en NXDOMAIN total
+> (peor que el estado pausado original). Corregido con un segundo guardado más cuidadoso,
+> verificado contra el correo de confirmación real de NIC Chile a Bernardo antes de seguir. Con el
+> sitio de vuelta al estado pausado conocido, recién ahí se hizo el cambio de verdad: los 4
+> nameservers propios de Netlify (`dns1-4.p07.nsone.net`, obtenidos desde Netlify → Domain
+> management → "Set up Netlify DNS", específicos de esta cuenta) reemplazaron a
+> `ns1/ns2.vercel-dns.com` — necesario porque, aunque el nameserver de Vercel resolviera, los
+> registros DNS reales viven adentro de Vercel, y esa cuenta sigue bloqueada por facturación
+> (confirmado: editar un registro ahí muestra el mismo error de saldo pendiente). Con Netlify como
+> nameserver, el certificado SSL propio (Let's Encrypt) se emitió solo, un rato después de que el
+> DNS verificó. `bernardocombeau.cl` sirve el sitio real con candado válido, sin ningún vínculo con
+> Vercel.
+>
+> **Bug real encontrado y corregido: los commits de Bernardo dejaron de desplegarse.** Ya con todo
+> arriba, Bernardo entró a `/admin` (acceso que venía funcionando desde antes de que Netlify
+> quedara del todo activo) y subió fotos + una campaña nueva ("Habitat") a Selected Work. Los
+> commits llegaron bien a GitHub, pero el sitio en vivo no los reflejaba. Causa confirmada en el
+> propio log de deploy de Netlify: el plan gratis solo permite 1 colaborador de Git reconocido en
+> repos **privados** — Bernardo comitea con su propia cuenta de GitHub (necesario para loguearse en
+> `/admin`), así que Netlify bloqueaba cada build suyo con "unrecognized Git contributor". Fix
+> real, no workaround: se hizo público el repo `rvalleespin/bernardo-combeau` (verificado antes que
+> no hay ningún secreto comiteado — ni `.env`, ni client secrets, solo `.env.example` con valores
+> vacíos), condición que levanta esa restricción. El primer reintento sobre el commit ya existente
+> siguió fallando (Netlify parecía tener la visibilidad vieja en caché); un push genuino nuevo sí
+> lo resolvió — de paso se corrigieron 2 strings de error que seguían diciendo "en Vercel" en vez
+> de "en Netlify" (`api/auth.ts`, `api/callback.ts`, commit `1140ab5`). Verificado con curl
+> saltando todo caché (`fwd=miss` contra el origen real): "Habitat" y las fotos nuevas, en vivo.
+> También se sacó el badge "Powered by Netlify" que trae por defecto el plan gratis.
+>
+> **Pendiente real, sin resolver todavía — login OAuth del panel en el dominio nuevo.** El sitio
+> público y el panel en sí (lectura, navegación) ya funcionan de punta a punta, gratis. Lo único
+> que falta para que Bernardo pueda volver a **loguearse** y editar:
+> 1. La app de OAuth en GitHub ("Bernardo Combeau CMS", Client ID `0v23liAvKegJ3yyZFfBt`, propiedad
+>    de `rvalleespin`, 2 usuarios registrados — Ramón y Bernardo) tiene su "Authorization callback
+>    URL" apuntando todavía a `bernardo-combeau.vercel.app` — hay que cambiarla a
+>    `bernardocombeau.cl`. Quedó a medio camino localizando ese campo en la UI nueva de GitHub
+>    Developer Settings (se movió de donde solía estar) cuando se pidió este resumen.
+> 2. El Client Secret original no está disponible (GitHub solo lo muestra una vez, al crearlo; hoy
+>    solo se ve enmascarado) — hay que generar uno nuevo desde esa misma pantalla.
+> 3. Ambos valores (`GITHUB_OAUTH_CLIENT_ID`, `GITHUB_OAUTH_CLIENT_SECRET`) van como variables de
+>    entorno en Netlify → Environment variables — hoy el proyecto tiene **cero** configuradas
+>    (confirmado en pantalla).
+>
+> El código del login (`/api/auth`, `/api/callback`) no necesita ningún cambio — deriva su propia
+> `redirect_uri` del dominio que lo sirve, nunca estuvo hardcodeado a Vercel. Los 3 puntos de
+> arriba son trabajo de dashboard, misma naturaleza que el resto de esta migración, no código.
+
 ---
 
-**Estado a 8-sep-2026:** las Partes 1-3 de este documento (bug de Estudio, Direcciones A-D, fix de
+**Estado a 9-sep-2026:** las Partes 1-3 de este documento (bug de Estudio, Direcciones A-D, fix de
 mobile), el encuadre de fotos con su rediseño a botón + Zoom + Volteo, la reconciliación con el
 trabajo que avanzó en paralelo en `main`, la corrección de la sidebar (Modelo), el fix de
 "Publicación externa", la vista previa real de Modelo → Motion/Commercials (Actualización 11), el
 cambio de Motion a galería de fotos (Actualización 12), el arreglo del registro de vista previa
 por ficha (Actualización 13), la construcción de la vista previa real para las 7 fichas que solo
 tenían un aviso (Actualización 14), el paso de Selected Work a página propia con su foto de
-portada en Home (Actualización 15), su primera ronda de ajustes (Actualización 16) y la
-unificación del encuadre de Retratos/Proyectos con Modelo (Actualización 17) — todo está
-**mergeado a `main`** (último commit `0b063dd`), aunque el deploy en Vercel sigue pausado por un
-tema de cuenta/facturación (ver Actualización 17). Las 8 fichas de Modelo tienen vista previa real,
-con el contenido de Bernardo reflejado como se ve en el sitio; Motion, Commercials y Work son
-páginas propias, cada una con su URL. Bernardo ya está usando el panel de verdad — commits propios
-(`bern.combeau@gmail.com`) subiendo fotos nuevas a Portada, Polaroids y Selected Work durante estas
-rondas, señal independiente de que el panel funciona para él. El cambio de casa a Netlify
-(Actualización 18) está listo y probado en la rama `claude/migrar-netlify`, a la espera de que
-Ramón cree el sitio en Netlify y mueva el dominio — recién ahí se mergea a `main`. Pendiente
-aparte: la Parte 2-3 de `revision-sitio-bernardo-combeau.md` (rediseño del sitio público).
+portada en Home (Actualización 15), su primera ronda de ajustes (Actualización 16), la
+unificación del encuadre de Retratos/Proyectos con Modelo (Actualización 17) y el cambio de casa
+completo de Vercel a Netlify (Actualizaciones 18-19) — todo está **mergeado a `main`** y **en
+producción real en `bernardocombeau.cl`**, gratis, con certificado propio y sin ningún vínculo con
+Vercel. Las 8 fichas de Modelo tienen vista previa real; Motion, Commercials y Work son páginas
+propias. Bernardo ya volvió a usar el panel tras la migración — su campaña "Habitat" y fotos
+nuevas están en vivo, confirmado por HTTP directo. **Único cabo suelto de toda esta migración:**
+el login OAuth de `/admin` en el dominio nuevo todavía no funciona (ver los 3 puntos de la
+Actualización 19) — el sitio se ve y navega perfecto, pero Bernardo no puede entrar a editar hasta
+que eso se termine. Pendiente aparte, sin relación con esto: la Parte 2-3 de
+`revision-sitio-bernardo-combeau.md` (rediseño del sitio público).
 
 ---
 
