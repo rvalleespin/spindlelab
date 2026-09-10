@@ -84,3 +84,4 @@ mirar el conjunto y el rol se pierde.
 | # | Proyecto | Estado | Umbral / fecha |
 |---|---|---|---|
 | 01 | [Cumplimiento web Ley 21.719](01-cumplimiento-ley-21719/brief.md) | vivo — `verificaycumple.pages.dev`, enlace cruzado en ambas direcciones | **1-dic-2026** (entrada en vigencia) |
+| 02 | [Agente de agendamiento por WhatsApp](02-agente-agendamiento-whatsapp/brief.md) | brief abierto, **nada validado** | sin fecha — no tiene ventana |
