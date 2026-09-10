@@ -1,0 +1,382 @@
+<title>Sigue el clic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --tinta:#0e141b;
+    --superficie:#161f29;
+    --borde:#243141;
+    --texto:#e9edf1;
+    --secundario:#8b98a8;
+    --apagado:#5d6673;
+    --petroleo:#2fa99b;
+    --oro:#c9a227;
+    --display:"Gabarito","Trebuchet MS",system-ui,sans-serif;
+    --cuerpo:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    background:var(--tinta);
+    color:var(--texto);
+    font-family:var(--cuerpo);
+    font-size:16px;
+    line-height:1.6;
+    margin:0;
+    padding-block:32px 56px;
+    padding-left:20px;
+    padding-right:20px;
+  }
+  .envoltura{max-width:1020px;margin:0 auto;display:flex;flex-direction:column;gap:56px}
+
+  .marca{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .wordmark{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-0.01em}
+  .fecha{font-size:12px;color:var(--apagado);letter-spacing:1.4px;text-transform:uppercase}
+
+  .etiqueta{
+    font-size:11px;letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--petroleo);font-weight:600;margin:0 0 10px
+  }
+  h1{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(30px,5.2vw,50px);line-height:1.08;letter-spacing:-0.02em;
+    margin:0 0 14px;text-wrap:balance;max-width:17ch
+  }
+  h2{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(21px,3vw,28px);line-height:1.2;letter-spacing:-0.015em;
+    margin:0 0 8px;text-wrap:balance
+  }
+  .bajada{color:var(--secundario);max-width:62ch;margin:0}
+  section{display:flex;flex-direction:column;gap:22px}
+
+  /* ---- recorrido ---- */
+  .conmutador{display:flex;gap:6px;background:var(--superficie);border:1px solid var(--borde);border-radius:999px;padding:4px;align-self:flex-start}
+  .conmutador button{
+    font:inherit;font-weight:600;font-size:14px;color:var(--secundario);
+    background:none;border:0;border-radius:999px;padding:8px 18px;cursor:pointer;
+    transition:background .25s,color .25s
+  }
+  .conmutador button[aria-pressed="true"]{background:var(--tinta);color:var(--texto);box-shadow:inset 0 0 0 1px var(--borde)}
+  .conmutador button:focus-visible{outline:2px solid var(--petroleo);outline-offset:2px}
+
+  .recorrido{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding-top:34px}
+  .riel{position:absolute;top:12px;left:6%;right:6%;height:2px;background:var(--borde);border-radius:2px}
+  .corriente{
+    position:absolute;top:12px;left:6%;height:2px;border-radius:2px;
+    background:linear-gradient(90deg,rgba(201,162,39,.15),var(--oro));
+    width:42%;transition:width .9s cubic-bezier(.22,.61,.36,1)
+  }
+  .parada{display:flex;flex-direction:column;gap:6px;position:relative}
+  .nodo{
+    position:absolute;top:-28px;left:calc(50% - 6px);width:12px;height:12px;border-radius:50%;
+    background:var(--tinta);border:2px solid var(--borde);transition:border-color .5s,background .5s,box-shadow .5s
+  }
+  .parada.viva .nodo{border-color:var(--oro)}
+  .parada.destino .nodo{background:var(--oro);border-color:var(--oro);box-shadow:0 0 0 6px rgba(201,162,39,.15)}
+  .paso{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--apagado);font-weight:600}
+  .parada strong{font-family:var(--display);font-weight:600;font-size:16px;line-height:1.25;letter-spacing:-0.01em}
+  .parada span{font-size:13px;color:var(--secundario);line-height:1.45}
+  .parada.muerta strong,.parada.muerta span{color:var(--apagado)}
+  .corte{
+    display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;
+    color:var(--apagado);border:1px dashed var(--borde);border-radius:6px;padding:5px 10px;align-self:flex-start
+  }
+  .lectura{
+    border-left:2px solid var(--petroleo);padding:2px 0 2px 16px;
+    font-size:15px;color:var(--secundario);max-width:62ch;min-height:52px
+  }
+  .lectura b{color:var(--texto);font-weight:600}
+
+  /* ---- calculadora ---- */
+  .calculo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:28px;align-items:start}
+  .mandos{display:flex;flex-direction:column;gap:24px}
+  .mando{display:flex;flex-direction:column;gap:8px}
+  .mando .fila{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .mando label{font-size:13px;font-weight:600}
+  .mando output{font-family:var(--display);font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+  .mando small{font-size:12px;color:var(--apagado)}
+  input[type=range]{width:100%;accent-color:var(--petroleo);height:22px}
+  input[type=range]:focus-visible{outline:2px solid var(--petroleo);outline-offset:4px}
+  .resultado{background:var(--superficie);border:1px solid var(--borde);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:6px}
+  .resultado .cifra{font-family:var(--display);font-weight:700;font-size:clamp(38px,7vw,54px);line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+  .resultado .pie{font-size:13px;color:var(--secundario)}
+  .estado{margin-top:12px;padding-top:12px;border-top:1px solid var(--borde);font-size:13px;font-weight:500}
+  .estado.ok{color:var(--petroleo)}
+  .estado.bajo{color:var(--apagado)}
+  .aviso{font-size:13px;color:var(--apagado);max-width:62ch;margin:0}
+  .aviso b{color:var(--secundario);font-weight:600}
+
+  /* ---- comparación ---- */
+  .comparacion{width:100%;border-collapse:collapse;font-size:15px}
+  .comparacion th{
+    text-align:left;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+    color:var(--apagado);font-weight:600;padding:0 0 10px;border-bottom:1px solid var(--borde)
+  }
+  .comparacion th:first-child{width:34%}
+  .comparacion td{padding:14px 0;border-bottom:1px solid var(--borde);vertical-align:top;padding-right:18px}
+  .comparacion td:first-child{font-weight:600;color:var(--secundario)}
+  .comparacion .hoy{color:var(--apagado)}
+  .comparacion tr:last-child td{border-bottom:0}
+
+  /* ---- pregunta IA ---- */
+  .prompt-fila{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .prompt-fila input[type=text]{
+    font:inherit;background:var(--tinta);color:var(--texto);
+    border:1px solid var(--borde);border-radius:8px;padding:10px 14px;min-width:200px;flex:1 1 200px
+  }
+  .prompt-fila input[type=text]:focus-visible{outline:2px solid var(--petroleo);outline-offset:1px}
+  .prompt-fila button{
+    font:inherit;font-weight:600;font-size:14px;background:var(--petroleo);color:#08120f;
+    border:0;border-radius:8px;padding:11px 18px;cursor:pointer
+  }
+  .prompt-fila button:focus-visible{outline:2px solid var(--texto);outline-offset:2px}
+  .pregunta{
+    background:var(--superficie);border:1px solid var(--borde);border-radius:12px;padding:22px 24px;
+    font-family:var(--display);font-weight:500;font-size:clamp(18px,2.6vw,23px);line-height:1.35;
+    letter-spacing:-0.01em;overflow-wrap:break-word
+  }
+  .cierre{border-top:1px solid var(--borde);padding-top:26px;display:flex;flex-direction:column;gap:6px}
+  .cierre p{margin:0;max-width:62ch}
+  .cierre .fuerte{font-family:var(--display);font-size:19px;font-weight:600;letter-spacing:-0.01em}
+  .cierre .fino{font-size:14px;color:var(--apagado)}
+
+  @media (max-width:820px){
+    .calculo{grid-template-columns:1fr}
+    .recorrido{grid-template-columns:1fr;padding-top:0;gap:20px}
+    .riel,.corriente,.nodo{display:none}
+    .parada{border-left:2px solid var(--borde);padding-left:16px}
+    .parada.viva{border-left-color:var(--oro)}
+    .parada.destino{border-left-color:var(--oro)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+  }
+</style>
+
+<div class="envoltura">
+
+  <header class="marca">
+    <div class="wordmark">SpindleLab</div>
+    <div class="fecha">Conversación · 10 sep 2026</div>
+  </header>
+
+  <section>
+    <div>
+      <p class="etiqueta">El recorrido de un oyente pagado</p>
+      <h1>Sigue el clic hasta donde se corta.</h1>
+      <p class="bajada">Cada peso que pones en publicidad empuja a alguien hacia tu música. El problema no es que no lleguen: es que después del clic, hoy, no queda ningún rastro. Aprieta el conmutador.</p>
+    </div>
+
+    <div class="conmutador" role="group" aria-label="Ver el recorrido">
+      <button id="btn-hoy" type="button" aria-pressed="true">Hoy</button>
+      <button id="btn-pagina" type="button" aria-pressed="false">Con página propia</button>
+    </div>
+
+    <div class="recorrido" id="recorrido">
+      <div class="riel"></div>
+      <div class="corriente" id="corriente"></div>
+    </div>
+
+    <p class="lectura" id="lectura"></p>
+  </section>
+
+  <section>
+    <div>
+      <p class="etiqueta">Lo que hoy nadie sabe</p>
+      <h2>¿Cuánto te cuesta una persona que entra a escucharte?</h2>
+      <p class="bajada">Mueve los dos controles. La respuesta cambia entera según el segundo, y ese número hoy no existe para ti: no se estima, se mide.</p>
+    </div>
+
+    <div class="calculo">
+      <div class="mandos">
+        <div class="mando">
+          <div class="fila">
+            <label for="presupuesto">Lo que pones al mes en publicidad</label>
+            <output id="out-presupuesto" for="presupuesto"></output>
+          </div>
+          <input type="range" id="presupuesto" min="100000" max="1500000" step="50000" value="400000">
+          <small>Va a tu tarjeta, a tu nombre. Sin comisión nuestra sobre ese gasto.</small>
+        </div>
+
+        <div class="mando">
+          <div class="fila">
+            <label for="costo">Lo que te costaría cada clic a Spotify</label>
+            <output id="out-costo" for="costo"></output>
+          </div>
+          <input type="range" id="costo" min="50" max="900" step="25" value="300">
+          <small>Este es el dato que no tienes. Depende de tu música, tu video y tu público.</small>
+        </div>
+      </div>
+
+      <div class="resultado">
+        <div class="cifra" id="cifra">0</div>
+        <div class="pie">personas al mes entrando a escucharte, contadas una por una</div>
+        <div class="estado" id="estado"></div>
+      </div>
+    </div>
+
+    <p class="aviso"><b>Esto no es una proyección ni una promesa.</b> Es la forma del cálculo, para que se vea de qué depende. Tu número real sale de dos semanas de prueba con tu música, y con ese número recién se decide cuánto conviene poner.</p>
+  </section>
+
+  <section>
+    <div>
+      <p class="etiqueta">El día que apagas la campaña</p>
+      <h2>Qué se queda cada uno.</h2>
+    </div>
+
+    <div style="overflow-x:auto">
+      <table class="comparacion">
+        <thead>
+          <tr><th scope="col">Se queda con</th><th scope="col">Hoy</th><th scope="col">Con página propia</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Spotify</td>
+            <td class="hoy">El oyente y el dato de dónde vino</td>
+            <td>El oyente, igual. Eso no cambia</td>
+          </tr>
+          <tr>
+            <td>Instagram</td>
+            <td class="hoy">Todo el registro de a quién le funcionó</td>
+            <td>El registro vive en tu cuenta publicitaria, no en la nuestra</td>
+          </tr>
+          <tr>
+            <td>Tú</td>
+            <td class="hoy">Nada. Al próximo tema partes de cero otra vez</td>
+            <td>Una audiencia armada, los correos de quienes quisieron más, y una página que ya sabe convertir</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <p class="etiqueta">La puerta que se abrió hace poco</p>
+      <h2>Cada vez más gente pide música preguntando.</h2>
+      <p class="bajada">Escribe tu género y hagamos la prueba ahora mismo, en vivo. Si no apareces en la respuesta, eso se trabaja: es exactamente lo que hacemos.</p>
+    </div>
+
+    <div class="prompt-fila">
+      <input type="text" id="genero" value="rock alternativo" aria-label="Tu género musical" autocomplete="off">
+      <button type="button" id="copiar">Copiar la pregunta</button>
+    </div>
+
+    <p class="pregunta" id="pregunta"></p>
+  </section>
+
+  <div class="cierre">
+    <p class="fuerte">No prometemos oyentes. Hacemos que sepas cuánto te cuesta cada uno, y que algo quede a tu nombre.</p>
+    <p class="fino">Quien te promete un número de oyentes está comprando tráfico falso, y eso hoy termina con el tema retirado de la plataforma.</p>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var PASOS = {
+    hoy: [
+      {paso:"01", titulo:"Ve tu video",   detalle:"Le aparece entre los Reels", estado:"viva"},
+      {paso:"02", titulo:"Toca el anuncio", detalle:"Sale de Instagram", estado:"viva"},
+      {paso:"03", titulo:"Abre Spotify", detalle:"Acá se corta el registro", estado:"corte"},
+      {paso:"04", titulo:"¿Te escuchó?", detalle:"Sin dato", estado:"muerta"},
+      {paso:"05", titulo:"¿Volverá?", detalle:"Sin dato", estado:"muerta"}
+    ],
+    pagina: [
+      {paso:"01", titulo:"Ve tu video", detalle:"Le aparece entre los Reels", estado:"viva"},
+      {paso:"02", titulo:"Entra a tu página", detalle:"Tu música, tu nombre, tu dominio", estado:"viva"},
+      {paso:"03", titulo:"Clic a Spotify", detalle:"Queda registrado como una persona real", estado:"viva"},
+      {paso:"04", titulo:"Entra a tu audiencia", detalle:"La campaña aprende a buscar gente parecida", estado:"viva"},
+      {paso:"05", titulo:"Vuelve al próximo tema", detalle:"Ya no partes de cero", estado:"destino"}
+    ]
+  };
+  var LECTURAS = {
+    hoy: "<b>El circuito se corta en el tercer paso.</b> Spotify no le devuelve nada a la plataforma donde pagaste, así que la campaña termina comprando el clic más barato, que casi nunca es alguien que se queda a escuchar.",
+    pagina: "<b>El recorrido llega hasta el final.</b> Una página tuya en el medio convierte ese clic en algo contable, y cada persona que pasa deja a la campaña un poco más afinada que el día anterior."
+  };
+
+  var recorrido = document.getElementById("recorrido");
+  var corriente = document.getElementById("corriente");
+  var lectura = document.getElementById("lectura");
+  var btnHoy = document.getElementById("btn-hoy");
+  var btnPagina = document.getElementById("btn-pagina");
+
+  function pintar(modo){
+    recorrido.querySelectorAll(".parada").forEach(function(n){ n.remove(); });
+    PASOS[modo].forEach(function(p){
+      var d = document.createElement("div");
+      d.className = "parada" + (p.estado === "muerta" ? " muerta" : "") +
+                    (p.estado === "viva" || p.estado === "corte" ? " viva" : "") +
+                    (p.estado === "destino" ? " viva destino" : "");
+      var extra = p.estado === "corte" ? '<span class="corte">Aquí se corta</span>' : "";
+      d.innerHTML = '<div class="nodo"></div><div class="paso">' + p.paso + '</div>' +
+                    '<strong>' + p.titulo + '</strong><span>' + p.detalle + '</span>' + extra;
+      recorrido.appendChild(d);
+    });
+    corriente.style.width = modo === "hoy" ? "42%" : "88%";
+    lectura.innerHTML = LECTURAS[modo];
+    btnHoy.setAttribute("aria-pressed", modo === "hoy" ? "true" : "false");
+    btnPagina.setAttribute("aria-pressed", modo === "pagina" ? "true" : "false");
+  }
+  btnHoy.addEventListener("click", function(){ pintar("hoy"); });
+  btnPagina.addEventListener("click", function(){ pintar("pagina"); });
+  pintar("hoy");
+
+  var presupuesto = document.getElementById("presupuesto");
+  var costo = document.getElementById("costo");
+  var outP = document.getElementById("out-presupuesto");
+  var outC = document.getElementById("out-costo");
+  var cifra = document.getElementById("cifra");
+  var estado = document.getElementById("estado");
+
+  function pesos(n){ return "$" + Math.round(n).toLocaleString("es-CL"); }
+
+  function calcular(){
+    var p = Number(presupuesto.value), c = Number(costo.value);
+    outP.textContent = pesos(p);
+    outC.textContent = pesos(c);
+    var personas = Math.floor(p / c);
+    cifra.textContent = personas.toLocaleString("es-CL");
+    var semanales = personas / 4.33;
+    if (semanales >= 50) {
+      estado.className = "estado ok";
+      estado.textContent = "Con este ritmo la campaña aprende sola: pasa el mínimo de 50 personas por semana que necesita para afinarse.";
+    } else {
+      estado.className = "estado bajo";
+      estado.textContent = "Con este ritmo la campaña se queda a medio aprender: van " + Math.floor(semanales) + " personas por semana y necesita 50 para afinarse.";
+    }
+  }
+  presupuesto.addEventListener("input", calcular);
+  costo.addEventListener("input", calcular);
+  calcular();
+
+  var genero = document.getElementById("genero");
+  var pregunta = document.getElementById("pregunta");
+  var copiar = document.getElementById("copiar");
+
+  function texto(){
+    var g = genero.value.trim() || "tu género";
+    return "¿Qué artistas chilenos de " + g + " me recomiendas escuchar?";
+  }
+  function refrescar(){ pregunta.textContent = texto(); }
+  genero.addEventListener("input", refrescar);
+  refrescar();
+
+  copiar.addEventListener("click", function(){
+    var previo = copiar.textContent;
+    try {
+      navigator.clipboard.writeText(texto()).then(function(){
+        copiar.textContent = "Copiada";
+        setTimeout(function(){ copiar.textContent = previo; }, 1600);
+      }, function(){
+        copiar.textContent = "Selecciónala y cópiala";
+        setTimeout(function(){ copiar.textContent = previo; }, 2200);
+      });
+    } catch (e) {
+      copiar.textContent = "Selecciónala y cópiala";
+      setTimeout(function(){ copiar.textContent = previo; }, 2200);
+    }
+  });
+})();
+</script>
