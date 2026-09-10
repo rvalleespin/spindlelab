@@ -18,6 +18,8 @@ copiado se desactualiza y nadie se entera.
 - **`spindlelab.md`** — la casa (un cliente más).
 - **`praxi.md`** — producto propio, marca distinta, repo propio.
 - **`bernardo-combeau.md`** — cliente de Desarrollo Web.
+- **`sr-soya.md`** — artista musical, prospecto en conversación. Ficha abierta e
+  incompleta a propósito: marca en reconstrucción, sin contrato de voz todavía.
 
 ## Plantilla de ficha
 ```markdown
