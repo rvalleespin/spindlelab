@@ -44,6 +44,35 @@ otra sesión está tocando lo mismo. Ya pasó dos veces en este repo.
 > deja de tener sentido que viva acá: se muda a su propio repositorio, como Praxi. La rama es
 > para incubar, no para alojar una empresa.
 
+## Cómo se trabaja: partes en paralelo + una troncal
+
+Decisión de Ramón (10-sep-2026), después de que el proyecto 01 creciera hasta tener sitio
+desplegado, rediseños y un PR fusionado en otro repo: **el laboratorio se opera igual que la
+oficina de marketing**, porque el problema es el mismo — varias sesiones tocando lo mismo sin
+verse entre ellas.
+
+**Las sesiones de parte** hacen **una** cosa puntual y acotada (una verificación, una landing,
+un rediseño, un sondeo). Trabajan en la rama del proyecto (`laboratorio/<proyecto>`), no en
+`laboratorio/ideas`. Al terminar **escriben una fila en el registro del brief** con lo que
+hicieron, con qué lo verificaron y qué quedó pendiente. No dan nada por cerrado sin evidencia.
+
+**La sesión troncal** hace lo que ninguna sesión de parte puede hacer:
+- **Revisa coherencia.** Que el sitio, el brief, los encargos y lo que está en vivo digan lo
+  mismo. Las partes optimizan su pedazo; nadie mira el conjunto.
+- **Persigue lo pegado.** Lo que aparece tres veces en el registro y nunca se cierra (hoy:
+  reconectar Cloudflare Pages por dashboard, el post de Cata, el Figma de referencia).
+- **Es la única que fusiona a `laboratorio/ideas`** y la única que escribe el estado
+  consolidado.
+- **Verifica antes de registrar.** Si una parte dice "ya está", se lee el diff o se pide
+  evidencia externa (una URL que responda, una captura). Es la misma regla que existe en
+  `marketing/` y que nació de un incidente real.
+
+**Antes de cerrar cualquier cosa: `git ls-remote --heads origin`.** Ya hubo dos episodios de
+sesiones trabajando lo mismo en paralelo sin saberlo.
+
+**Lo que la troncal NO hace:** el trabajo fino de cada parte. Si se pone a rediseñar, deja de
+mirar el conjunto y el rol se pierde.
+
 ## Herramientas
 
 | Herramienta | Para qué | Estado |
