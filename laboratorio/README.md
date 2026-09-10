@@ -44,6 +44,12 @@ otra sesión está tocando lo mismo. Ya pasó dos veces en este repo.
 > deja de tener sentido que viva acá: se muda a su propio repositorio, como Praxi. La rama es
 > para incubar, no para alojar una empresa.
 
+## Herramientas
+
+| Herramienta | Para qué | Estado |
+|---|---|---|
+| [El radar](herramientas/radar-de-ideas.md) | Detectar ideas: dónde mirar, qué preguntar, cómo verificar y cuándo descartar | **v1 sin probar** |
+
 ## Proyectos
 
 | # | Proyecto | Estado | Umbral / fecha |
