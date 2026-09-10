@@ -9,27 +9,27 @@ Al cerrar uno: marcarlo acá **y** escribir la fila en el registro del brief que
 
 ## Orden recomendado
 
-E8 desbloquea a E1 y E2. E2 abarata todo lo que venga después. E9 y E10 son lo único que mueve
-la aguja de ingreso, y tienen 82 días de ventana.
+E8 está resuelto — ya no bloquea nada. E2 abarata todo lo que venga después y es lo único que
+falta para que E9/E10 se vean en vivo. E9 y E10 tienen el código listo, ventana de 82 días.
 
 | # | Encargo | Para quién | Estado |
 |---|---|---|---|
-| E8 | Resolver dónde se trabaja (el clon que no existe) | Ramón | **abierto — bloquea E1, E9, E10** |
-| E2 | Reconectar `verificaycumple` en el dashboard de Cloudflare | Ramón | **abierto** |
-| E9 | Construir la sección del kit de precio fijo | parte del laboratorio | **abierto — es la ruta de ingreso** |
-| E10 | Aplicar el título nuevo del hero | parte del laboratorio | **abierto** |
+| E2 | Reconectar `verificaycumple` en el dashboard de Cloudflare | Ramón | **abierto — es lo único que falta para que E9/E10 se vean en vivo** |
+| E9 | Construir la sección del kit de precio fijo | parte del laboratorio | **cerrado 10-sep** — código en `laboratorio/ley-21719`, falta desplegar (ver E2) |
+| E10 | Aplicar el título nuevo del hero | parte del laboratorio | **cerrado 10-sep** — código en `laboratorio/ley-21719`, falta desplegar (ver E2) |
 | E3 | Desbloquear el post de Cata | parte de marketing | **abierto — pegado desde el 8-sep** |
-| E11 | Corregir una afirmación de la ficha de venta | parte de marketing/ventas | **abierto — es un guardrail** |
 | E1 | Devolver `laboratorio/ley-21719` sin apagar el sitio | parte del laboratorio | **abierto — depende de E2** |
 | E4 | Poner a `spindlelab.cl` en regla con la Ley 21.719 | parte de la agencia | **abierto** |
 | E5 | Darle su política de privacidad a `verificaycumple` | parte del laboratorio | **abierto** |
 | E12 | Declarar el costo de atención semanal del proyecto 01 | Ramón | **abierto — incumple el filtro 3** |
 | E6 | Decidir el Figma de referencia (Community) | Ramón | **abierto** (el otro Figma ya se resolvió) |
 | E7 | Alinear el encabezado del brief con su registro | — | **cerrado 9-sep** por la sesión de parte |
+| E11 | Corregir una afirmación de la ficha de venta | parte de marketing/ventas | **cerrado 10-sep** por la sesión de parte |
+| E8 | Resolver dónde se trabaja (el clon que no existe) | Ramón | **cerrado 10-sep** — Ramón confirmó: se trabaja en la copia de iCloud; `CLAUDE.md` corregido |
 
 ---
 
-## E8 — Resolver dónde se trabaja · *Ramón* · **bloquea E1, E9, E10**
+## E8 — Resolver dónde se trabaja · *Ramón* · **cerrado 10-sep**
 `CLAUDE.md:37` dice que el clon bueno es `~/Projects/spindlelab` y que la copia de iCloud está
 corrupta y no debe usarse. **Verificado el 10-sep: `~/Projects/spindlelab` no existe en la
 máquina**, y la copia de iCloud pasa `git fsck --connectivity-only` limpia (solo objetos
@@ -45,6 +45,10 @@ local queda en el aire.
 **Cierre:** el directorio existe y `git -C ~/Projects/spindlelab status` responde, o `CLAUDE.md`
 ya no manda a un lugar inexistente.
 
+**Resuelto el 10-sep:** Ramón eligió la segunda opción — se trabaja en la copia de iCloud, no
+se crea el clon nuevo. `CLAUDE.md:37` corregido para no mandar más a un directorio que no
+existe (queda registrado que la advertencia de "corrupta" ya no aplicaba).
+
 ## E2 — Reconectar `verificaycumple` en el dashboard de Cloudflare · *Ramón*
 El proyecto se creó por API y quedó sin webhook de auto-deploy. Cada cambio exige un token
 nuevo de Ramón más un disparo manual: ya consumió tres tokens en un día. **Este pendiente
@@ -52,24 +56,30 @@ encarece todos los demás** — E9 y E10 tocan el sitio y hoy no pueden desplega
 Al conectarlo, fijar y anotar en el brief cuál es la rama de producción (ver E1).
 **Cierre:** un push a la rama de producción dispara deploy sin token.
 
-## E9 — Construir la sección del kit de precio fijo · *parte del laboratorio* · **la ruta de ingreso**
+## E9 — Construir la sección del kit de precio fijo · *parte del laboratorio* · **cerrado 10-sep**
 Decidido por Ramón el 9-sep: **$149.000 + IVA, una vez**, con el formato "Desde $X + IVA" que
 usan las páginas de `servicios/` y la nota de que el valor final se ajusta según lo que el
 chequeo muestre (mismo espíritu de la garantía honesta: no se promete resultado, se promete
 transparencia). **Incluye:** instalación y configuración de gestor de consentimiento, ajustes
 técnicos según lo que detecte el chequeo, y una plantilla de política de privacidad para que la
 revise un abogado. **No incluye asesoría legal** — guardrail de §5 del brief.
-Es lo único del proyecto que produce ingreso, y hoy no existe ni una línea. Ventana: 82 días.
-**Cierre:** la sección está en vivo en `verificaycumple.pages.dev` y hay una forma de que
-alguien diga "lo quiero".
+**Construido el 10-sep** (sesión de parte, worktree aislado sobre `laboratorio/ley-21719`):
+tarjeta de precio en `section.ayuda`, mismos tokens de color del sitio (funciona en modo claro
+y oscuro, verificado con Chrome headless antes de subir), CTA cambiado a "Quiero el kit".
+Commit `c718c74`, pusheado a `origin/laboratorio/ley-21719`. **No está en vivo todavía** — el
+proyecto de Cloudflare sigue sin auto-deploy (E2), necesita un token o la reconexión por
+dashboard para que el commit se sirva.
+**Cierre real:** la sección responde en `verificaycumple.pages.dev` (pendiente de E2).
 
-## E10 — Aplicar el título nuevo del hero · *parte del laboratorio*
+## E10 — Aplicar el título nuevo del hero · *parte del laboratorio* · **cerrado 10-sep**
 Elegido por Ramón el 9-sep entre cuatro variantes: **"¿Estás seguro?"** con la bajada *"En 40
-segundos sabes si tu sitio cumple lo básico de la Ley 21.719, sin registro."* Reemplaza el
+segundos sabes si tu sitio publica lo básico que exige la Ley 21.719 de protección de datos
+personales. Sin registrarte, sin que guardemos tu dominio."* Reemplaza el
 `<h1>¿Tu sitio tiene las señales que exige la Ley 21.719?` que Ramón calificó de "muy fome".
-Verificado el 10-sep: **el H1 viejo sigue en vivo**, nada aplicado. Pase de tono antes de subir.
-Quien tome E9 puede aplicar ambos en el mismo cambio.
-**Cierre:** el H1 nuevo responde en `curl` sobre el sitio en vivo.
+**Aplicado el 10-sep** en el mismo commit que E9 (`c718c74`, `laboratorio/ley-21719`),
+verificado con Chrome headless antes de subir. **No está en vivo todavía** — mismo bloqueo
+de despliegue que E9 (ver E2).
+**Cierre real:** el H1 nuevo responde en `curl` sobre el sitio en vivo (pendiente de E2).
 
 ## E3 — Desbloquear el post de Cata · *parte de marketing, toca `main`* · **pegado desde el 8-sep**
 `marketing/encargos-otras-sesiones/verificaycumple-post-personal-cata.md` tiene un solo commit
@@ -82,7 +92,7 @@ Ojo: ahora hay **dos** borradores de post sobre esto — el de Cata y el de
 `ventas/casos-de-exito/verifica-y-cumple.md`. Elegir uno, no publicar los dos.
 **Cierre:** el encargo ya no declara un bloqueo falso, y queda solo esperando pase de tono.
 
-## E11 — Corregir una afirmación de la ficha de venta · *parte de marketing/ventas* · **guardrail**
+## E11 — Corregir una afirmación de la ficha de venta · *parte de marketing/ventas* · **cerrado 10-sep**
 `ventas/casos-de-exito/verifica-y-cumple.md`, sección "Cómo usarlo en la llamada", punto 3,
 afirma: *"La primera infracción de una empresa pequeña es amonestación escrita, no la multa de
 20.000 UTM."* Dicho así es falso, y es exactamente lo que corrige el brief §2 punto 5: es el

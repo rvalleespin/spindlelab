@@ -56,9 +56,12 @@ movimiento que ya funcionó con el chequeo de visibilidad en IA (publicar precio
 1. Si el prospecto trata datos de clientes (estudio de abogados, clínica, cualquiera con
    formulario): mencionar la fecha como hecho, no como amenaza.
 2. Ofrecer correr el chequeo ahí mismo, en vivo, sobre su propio dominio.
-3. Si sale con hallazgos: no vender el arreglo con miedo a la multa máxima. La primera
-   infracción de una empresa pequeña es amonestación escrita, no la multa de 20.000 UTM.
-   Nombrar la multa máxima como si fuera lo que le va a pasar es alarmismo, y se nota.
+3. Si sale con hallazgos: no vender el arreglo con miedo a la multa máxima. Durante el
+   primer año desde la entrada en vigencia, la Agencia **puede** aplicar amonestación en
+   vez de multa a una empresa pequeña, a su criterio (Art. sexto transitorio) — es
+   discrecional y tiene fecha de vencimiento, no una garantía. Nombrar la multa máxima como
+   si fuera lo que le va a pasar es alarmismo, y se nota; prometer que nunca va a pasar
+   también es un error, por la razón contraria.
 4. Si el momento lo permite, cerrar con el 36/100 de SpindleLab — genera más confianza que
    cualquier testimonio, porque no es un testimonio: es una auto-auditoría publicada.
 
