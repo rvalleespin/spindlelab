@@ -19,12 +19,15 @@ Son cuatro momentos y se manejan en vivo, no se leen de corrido.
 1. **El recorrido.** Arranca en «Hoy» y la corriente muere en el paso 03. Aprieta
    **«Con página propia»** mientras hablas, no antes: el momento es ver la línea llegar
    hasta el final y encenderse el punto. Es el golpe de la reunión.
-2. **La proyección a seis meses.** Que mueva él los controles. Las dos curvas se separan
-   por un motivo que hay que decir en voz alta: en el mes uno le mostramos a gente que no
-   lo conoce, y en el mes cuatro a gente parecida a la que ya entró a escucharlo. El
-   supuesto de mejora (8% mensual) está escrito en la propia pieza, y el aviso de las 50
-   personas por semana aparece solo cuando el presupuesto no alcanza para que la campaña
-   aprenda. Ahí entra el argumento del piloto de dos semanas.
+2. **La proyección a seis meses.** Los dos controles son cosas que solo él sabe: cuánto
+   puede poner y a cuánta gente quiere llegar. **Que los mueva él.** Puestos juntos dan el
+   número que nadie conoce, que es lo que tendría que costar cada persona para que su meta
+   se cumpla, y ahí entra la frase: el tuyo puede ser la mitad de eso o el doble, y eso
+   decide si llegas o te quedas a medio camino. Las dos curvas se separan por un motivo
+   que hay que decir en voz alta: en el mes uno le mostramos a gente que no lo conoce, y
+   en el mes cuatro a gente parecida a la que ya entró a escucharlo. El supuesto de mejora
+   (8% mensual) está escrito en la propia pieza, y el aviso de las 50 personas por semana
+   aparece solo cuando la meta es tan chica que la campaña no alcanza a aprender.
 3. **Qué se queda cada uno.** Es el argumento del activo: hoy, cuando apaga, no le queda
    nada. Se lee de corrido, sin adornar.
 4. **La pregunta a la IA.** Escribe su género real en el campo, lee la pregunta en voz

@@ -98,6 +98,16 @@
   input[type=range]{width:100%;accent-color:var(--petroleo);height:22px}
   input[type=range]:focus-visible{outline:2px solid var(--petroleo);outline-offset:4px}
 
+  .deduccion{
+    margin:0;font-size:17px;line-height:1.5;color:var(--secundario);
+    border-left:2px solid var(--petroleo);padding:4px 0 4px 16px;max-width:68ch
+  }
+  .deduccion b{
+    font-family:var(--display);font-weight:600;font-size:22px;color:var(--texto);
+    font-variant-numeric:tabular-nums
+  }
+  .deduccion span{display:block;margin-top:4px;font-size:14px;color:var(--apagado)}
+
   .grafico{position:relative;background:var(--superficie);border:1px solid var(--borde);border-radius:12px;padding:20px 20px 14px}
   .leyenda{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:6px}
   .leyenda span{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--secundario)}
@@ -197,7 +207,7 @@
     <div>
       <p class="etiqueta">Lo que hoy nadie sabe</p>
       <h2>¿Hasta dónde puedes llegar en seis meses?</h2>
-      <p class="bajada">Mueve los dos controles. El de arriba lo decides tú; el de abajo es el dato que hoy no existe y que solo se sabe midiendo. Los dos juntos deciden si la campaña alcanza a aprender, y de eso depende toda la curva.</p>
+      <p class="bajada">Dos cosas que solo tú sabes: cuánto puedes poner y a cuánta gente quieres llegar. Puestas juntas dan el número que hoy nadie conoce, que es lo que tendría que costarte cada persona para que eso pase.</p>
     </div>
 
     <div class="mandos">
@@ -212,13 +222,16 @@
 
       <div class="mando">
         <div class="fila">
-          <label for="costo">Lo que te cuesta cada oyente el primer mes</label>
-          <output id="out-costo" for="costo"></output>
+          <label for="meta">Personas nuevas al mes a las que quieres llegar</label>
+          <output id="out-meta" for="meta"></output>
         </div>
-        <input type="range" id="costo" min="50" max="900" step="25" value="300">
-        <small>El único número que se mide de verdad, y sale en las dos primeras semanas.</small>
+        <input type="range" id="meta" min="200" max="5000" step="100" value="1500">
+        <small>Gente que entra a escucharte por primera vez, no seguidores ni me gusta.</small>
       </div>
     </div>
+
+    <p class="deduccion">Para que eso pase, cada persona tendría que costarte <b id="costo-objetivo"></b>.
+      <span id="veredicto"></span></p>
 
     <div class="grafico">
       <div class="leyenda">
@@ -241,12 +254,12 @@
     <div class="cierre-calculo">
       <div class="total">
         <div class="cifra" id="cifra">0</div>
-        <div class="pie">personas distintas entrando a escucharte en seis meses, contadas una por una. <span id="delta"></span></div>
+        <div class="pie">personas de más en seis meses, <b>con la misma plata</b>. <span id="delta"></span></div>
       </div>
       <div class="estado" id="estado"></div>
     </div>
 
-    <p class="aviso"><b>Esto no es una promesa, es la forma del cálculo.</b> El único número real es el del primer mes, y sale de dos semanas de prueba con tu música. De ahí en adelante la curva se abre por un motivo concreto: en el mes uno le mostramos a gente que no te conoce, y en el mes cuatro le mostramos a gente parecida a la que ya entró a escucharte. El supuesto dibujado acá es que ese costo baja un 8% cada mes cuando hay audiencia propia acumulando, y que se queda plano cuando no la hay.</p>
+    <p class="aviso"><b>Esto no es una promesa, es la forma del cálculo.</b> El único número real es el del primer mes, y sale de dos semanas de prueba con tu música. De ahí en adelante la curva se abre por un motivo concreto: en el mes uno le mostramos a gente que no te conoce, y en el mes cuatro le mostramos a gente parecida a la que ya entró a escucharte. El supuesto dibujado acá es que ese costo baja un 8% cada mes cuando hay audiencia propia acumulando, y que se queda plano cuando no la hay. La línea gris es tu meta repetida seis veces; la verde es la misma meta cuando cada mes cuesta menos que el anterior.</p>
   </section>
 
   <section>
@@ -356,9 +369,11 @@
   var MEJORA = 0.08, MESES = 6;
   var W = 900, H = 320, ML = 16, MR = 132, MT = 26, MB = 34;
   var presupuesto = document.getElementById("presupuesto");
-  var costo = document.getElementById("costo");
+  var meta = document.getElementById("meta");
   var outP = document.getElementById("out-presupuesto");
-  var outC = document.getElementById("out-costo");
+  var outM = document.getElementById("out-meta");
+  var costoObjetivo = document.getElementById("costo-objetivo");
+  var veredicto = document.getElementById("veredicto");
   var cifra = document.getElementById("cifra");
   var delta = document.getElementById("delta");
   var estado = document.getElementById("estado");
@@ -377,9 +392,12 @@
   function vaciar(id){ var g = document.getElementById(id); while (g.firstChild) g.removeChild(g.firstChild); return g; }
 
   function calcular(){
-    var p = Number(presupuesto.value), c = Number(costo.value);
+    var p = Number(presupuesto.value), objetivo = Number(meta.value);
+    var c = p / objetivo;
     outP.textContent = pesos(p);
-    outC.textContent = pesos(c);
+    outM.textContent = miles(objetivo);
+    costoObjetivo.textContent = pesos(c);
+    veredicto.textContent = "El tuyo puede ser la mitad de eso o el doble, y de eso depende si llegas a tu meta o te quedas a medio camino. Hoy nadie lo sabe: sale en las dos primeras semanas de prueba, con tu música y tu público.";
 
     serieCon = []; serieSin = [];
     var accCon = 0, accSin = 0;
@@ -392,10 +410,10 @@
     }
 
     var totalCon = serieCon[MESES-1].acc, totalSin = serieSin[MESES-1].acc;
-    cifra.textContent = miles(totalCon);
-    delta.textContent = "Son " + miles(totalCon - totalSin) + " más que sin medir nada.";
+    cifra.textContent = miles(totalCon - totalSin);
+    delta.textContent = "En total serían " + miles(totalCon) + " personas, contra " + miles(totalSin) + " si nada mejora.";
 
-    var semanales = (p / c) / 4.33;
+    var semanales = objetivo / 4.33;
     if (semanales >= 50){
       estado.className = "estado ok";
       estado.textContent = "Con este ritmo la campaña alcanza a aprender: pasa las 50 personas por semana que necesita para afinar a quién le muestra. Por eso la curva verde se separa.";
@@ -472,7 +490,7 @@
   }
 
   presupuesto.addEventListener("input", calcular);
-  costo.addEventListener("input", calcular);
+  meta.addEventListener("input", calcular);
   calcular();
   window.addEventListener("resize", function(){ globo.style.opacity = 0; });
 
