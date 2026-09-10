@@ -47,6 +47,7 @@ table.doc-table tr:nth-child(even) td { background:#FAF9F6; }
 table.precios { width:100%; border-collapse:collapse; margin-top:8px; }
 table.precios th { padding:12px; font-size:13px; text-align:center; background:var(--tinta); color:var(--papel); font-weight:700; }
 table.precios th.recomendado { background:var(--dorado); color:var(--tinta); position:relative; }
+table.precios th.esquina { background:transparent; width:110px; padding:0; }
 table.precios td { padding:10px 12px; border:1px solid var(--linea); font-size:12.5px; vertical-align:top; }
 table.precios td.recomendado-col { border-left:2px solid var(--dorado); border-right:2px solid var(--dorado); background:#FBF7EC; }
 table.precios td.row-label { font-weight:600; color:var(--gris); background:#FAF9F6; width:110px; }
@@ -121,6 +122,7 @@ footer.firma .pt { color:var(--dorado); font-weight:700; }
   <h2>Opciones de inversión</h2>
   <table class="precios">
     <tr>
+      <th class="esquina"></th>
       <th>[[NIVEL 1]]</th>
       <th class="recomendado">[[NIVEL 2]] ★</th>
       <th>[[NIVEL 3]]</th>

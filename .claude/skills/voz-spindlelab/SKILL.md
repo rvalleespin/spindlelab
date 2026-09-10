@@ -44,6 +44,26 @@ cuenta la historia personal de Ramón.
 - **Cierra bajo, no arriba.** *"Dejo el chequeo en el primer comentario, por si quieres
   ver qué le muestra tu sitio a la IA."* Nada de "¡No te lo pierdas!".
 
+## ⚠️ El reencuadre se gasta: uno por pieza, no seis
+
+El movimiento *"no es X, es Y"* es de la marca y funciona. **Pero es el que más rápido se
+convierte en tic**, y cuando se repite deja de sonar a criterio y empieza a sonar a IA.
+Ramón lo cazó él mismo en la cotización de SR.SOYA (10-sep-2026): *"haces una oración,
+punto, y después una comparación con algo… se nota que es IA"*. El documento traía seis.
+
+**La regla, entonces:** **un solo reencuadre por pieza**, puesto donde de verdad cambia el
+sentido de lo que se está vendiendo. Todo lo demás se escribe en afirmativo.
+
+La familia completa a vigilar, porque es el mismo tic con otra ropa: *"no es X, es Y"* ·
+*"X, no Y"* al final de una frase (*"…que funciona, no una corazonada"*) · *"no solo X,
+también Y"* · *"no publicamos por publicar"* · negación seguida de punto y afirmación
+(*"Esto no es un diagnóstico de venta. Son cosas verificables"*).
+
+**Cómo se arregla sin perder fuerza:** decir directamente lo que sí es, y dejar que el
+contraste lo saque el lector. *"Cumple bien ese papel. Recibir una campaña pagada pide
+otra cosa: una sola página, una sola acción y medición"* dice lo mismo que *"no es el
+lugar para una campaña"*, y no suena a máquina.
+
 ## Lo que no aparece nunca en el texto aprobado
 
 Guion largo (—) como golpe de efecto · transiciones de relleno ("Dicho eso", "Cabe
