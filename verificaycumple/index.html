@@ -474,6 +474,15 @@
     transition: background .15s ease;
   }
   .boton-ayuda:hover { background: var(--sello-oscuro); }
+  .kit-precio { text-align: left; background: var(--bg-alt); border: 1px solid var(--borde); border-radius: 14px; padding: 22px 24px; max-width: 420px; margin: 0 auto 22px; }
+  .kit-etiqueta { margin: 0 0 4px; font-size: 0.75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--texto-suave); font-weight: 700; }
+  .kit-monto { margin: 0 0 14px; font-size: 1.5rem; font-weight: 700; color: var(--sello); }
+  .kit-monto span { font-size: 0.85rem; font-weight: 400; color: var(--texto-suave); }
+  .kit-incluye { list-style: none; margin: 0 0 14px; padding: 0; font-size: 0.9rem; }
+  .kit-incluye li { padding: 6px 0 6px 22px; position: relative; color: var(--texto-suave); border-top: 1px solid var(--borde); }
+  .kit-incluye li:first-child { border-top: none; }
+  .kit-incluye li::before { content: "✓"; position: absolute; left: 0; color: var(--ok); font-weight: 700; }
+  .kit-nota { margin: 0; font-size: 0.78rem; color: var(--texto-suave); max-width: none; text-align: left; }
 
   footer.sitio {
     border-top: 1px solid var(--borde);
@@ -539,10 +548,10 @@
       <div class="hero-grid">
         <div class="hero-contenido">
           <p class="eyebrow">Chequeo técnico gratuito</p>
-          <h1>¿Tu sitio tiene las señales que exige la Ley 21.719?</h1>
+          <h1>¿Estás seguro?</h1>
           <p class="sub">
-            Escribe tu dominio y revisamos, en segundos, si tu sitio publica lo básico que exige la
-            ley de protección de datos personales — sin registrarte, sin guardar tu dominio.
+            En 40 segundos sabes si tu sitio publica lo básico que exige la Ley 21.719 de
+            protección de datos personales. Sin registrarte, sin que guardemos tu dominio.
           </p>
 
           <form class="chequeo" id="form-chequeo">
@@ -664,8 +673,19 @@
     <div class="envoltura">
       <div class="ayuda-caja reveal">
         <h2>¿Tu chequeo salió con señales pendientes?</h2>
-        <p>Puedo ayudarte a corregirlas — política de privacidad, consentimiento, lo que pide el Art. 14 ter. Escríbeme y lo revisamos juntos.</p>
-        <a class="boton-ayuda" href="mailto:hola@spindlelab.cl?subject=Ayuda%20con%20la%20Ley%2021.719">Escríbeme</a>
+        <p>Puedo ayudarte a corregirlas — política de privacidad, consentimiento, lo que pide el Art. 14 ter.</p>
+        <div class="kit-precio">
+          <p class="kit-etiqueta">Kit de implementación</p>
+          <p class="kit-monto">Desde $149.000 <span>+ IVA · una vez</span></p>
+          <ul class="kit-incluye">
+            <li>Instalación y configuración de un gestor de consentimiento</li>
+            <li>Ajustes técnicos según lo que tu chequeo detecte</li>
+            <li>Plantilla de política de privacidad, para que la revise tu abogado</li>
+            <li>Verificación final con el mismo chequeo</li>
+          </ul>
+          <p class="kit-nota">No incluye asesoría legal — el texto final y la evaluación de tu caso son de abogado. El valor se ajusta según lo que tu chequeo muestre.</p>
+        </div>
+        <a class="boton-ayuda" href="mailto:hola@spindlelab.cl?subject=Quiero%20el%20kit%20de%20Verifica%20y%20Cumple">Quiero el kit</a>
       </div>
     </div>
   </section>
