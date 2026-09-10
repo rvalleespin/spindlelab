@@ -1,6 +1,6 @@
 # SR.SOYA · cómo cobrar esto sin regalarlo
 
-- **Fecha:** 10-sep-2026 · **Estado:** propuesta. **Los montos los aprueba Ramón.**
+- **Fecha:** 10-sep-2026 · **Estado:** ✅ **aprobado por Ramón el 10-sep.** Los tres montos quedaron firmes y ya están en la cotización `SPL-COT-2026-015`.
 - **Restricción real:** SR.SOYA tiene **$300.000/mes en total**, pauta incluida. Si $100.000
   van a Meta, quedan **$200.000** de honorario.
 - **Lo que Ramón necesita:** no bajar de $200.000, que lo tengan como un servicio y no como
@@ -164,8 +164,10 @@ la pena, y la respuesta es **sí, con una condición: que el alcance quede escri
 
 ## 8. Qué falta antes de mandar la cotización
 
-- [ ] Que Ramón apruebe los tres números: **$65.000 por pieza**, **$200.000/mes**, y el
-      mínimo de **$130.000** por encargo puntual.
+- [x] ~~Que Ramón apruebe los tres números~~ → **aprobados el 10-sep**: $65.000 por pieza,
+      $200.000/mes, mínimo $130.000 por encargo puntual.
+- [x] ~~Rehacer la cotización~~ → emitida:
+      `ventas/cotizaciones/SPL-COT-2026-015-srsoya-gestion-redes.html` (+ PDF).
 - [ ] Verificar el plan de WordPress.com para saber si el píxel se puede instalar ahí.
 - [ ] Pedir el permiso de caso público **en la misma conversación** del precio.
 - [ ] Con eso, se rehace `SPL-COT-2026-015` con estos montos, o se emite una nueva.

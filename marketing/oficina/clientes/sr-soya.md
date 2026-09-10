@@ -19,7 +19,7 @@
 - **Repo y ramas:** no tiene. Sitio propio: **srsoya.com**, en **WordPress.com**.
   Spotify: artista `732kUzXCveitCpGdUAhyni`.
 - **Quién aprueba:** Sr. Soya de su lado. Ramón del nuestro.
-- **Estado:** prospecto activo, en conversación comercial.
+- **Estado:** prospecto activo. **Cotización `SPL-COT-2026-015` emitida el 10-sep**, pendiente de enviar y de respuesta.
 
 ---
 
@@ -112,6 +112,7 @@ evidentemente no explica bien el modelo. Ese es el arreglo pendiente.
 | Qué | Dónde |
 |---|---|
 | Alcance y precio del servicio | `marketing/paid-media/2026-09-spotify-landing-alcance-y-precio.md` |
-| Cotización | `ventas/cotizaciones/SPL-COT-2026-015-gestion-redes-artista.html` |
+| Cotización vigente | `ventas/cotizaciones/SPL-COT-2026-015-srsoya-gestion-redes.html` |
+| Modelo de cobro y frases de venta | `ventas/sr-soya-modelo-de-cobro.md` |
 | Guion de reunión y resumen | `ventas/reunion-artista-spotify-2026-09-10.md` y su `-RESUMEN.md` |
 | Piezas de la reunión | `ventas/presentaciones/artista-spotify-2026-09-10/` |
