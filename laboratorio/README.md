@@ -48,7 +48,7 @@ compuertas existen para que el laboratorio no acumule proyectos vivos que no cob
 | # | Idea | Etapa | Ruta de ingreso | Fecha que manda | Costo de atención semanal | Rama |
 |---|---|---|---|---|---|---|
 | 01 | [Cumplimiento web Ley 21.719](01-cumplimiento-ley-21719/brief.md) | **4 — lanzada a medias** | Kit de implementación **$149.000 + IVA, una vez** (precio decidido 9-sep, **sin construir**) | **1-dic-2026** — 82 días | **sin declarar** (incumple el filtro 3) | `laboratorio/ley-21719` — *y es la rama de producción* |
-| 02 | [Agente de agendamiento por WhatsApp](02-agente-agendamiento-whatsapp/brief.md) | **1 — nace**, con **propuesta de muerte a la troncal** (sondeo 10-sep) | ninguna — el mercado está tomado por los dueños del software (Dentalink, Medilink, AgendaPro ya venden el agente) | sin fecha — no tiene ventana | **sin declarar** (incumple el filtro 3) | sin rama propia todavía |
+| 02 | [Agente de agendamiento por WhatsApp](02-agente-agendamiento-whatsapp/brief.md) | ☠️ **muerta — 10-sep-2026** (nació y murió el mismo día) | ninguna — el mercado está tomado por los dueños del software (Dentalink, Medilink y AgendaPro ya venden el agente) | — | — | nunca abrió rama |
 
 **Cómo leer la fila 01:** el gancho gratuito está vivo y verificado
 (`verificaycumple.pages.dev`), con enlace cruzado en las dos direcciones. Pero **no hay nada
@@ -59,12 +59,13 @@ abiertas, con 82 días de ventana. Eso, y no el diseño, es lo que decide si la 
 El detalle verificado y lo que hay que hacer: [estado consolidado](estado-consolidado.md) ·
 [encargos abiertos](encargos.md).
 
-**Cómo leer la fila 02:** el §3 del brief se respondió entero el 10-sep con fuentes abiertas, y la
-respuesta fue que **el incumbente de cada vertical ya lanzó el mismo producto**. Una sesión de
-parte no mueve compuertas, así que la idea queda formalmente en etapa 1 con la muerte propuesta y
-fundada en su brief: **la troncal decide y le pone fecha**. Lo único que sobrevivió es un hueco de
-precio (los incumbentes cobran ~5,7x el costo real del mensaje de WhatsApp), que es un argumento
-de venta, no un producto.
+**Cómo leer la fila 02:** nació y murió el 10-sep-2026, y eso es un buen resultado, no un
+fracaso. El §3 se respondió entero con fuentes abiertas y la respuesta fue que **el incumbente de
+cada vertical ya lanzó el mismo producto**. Costó una tarde en vez de un trimestre. Lo único que
+sobrevivió es un hueco de precio (los incumbentes cobran ~5,7x el costo real del mensaje de
+WhatsApp), que es un argumento de venta y no un producto. **De acá salen dos cosas que sí se
+quedan:** el radar corregido (§8 del radar) y el [encargo E13](encargos-otras-sesiones/E13-sesion-analisis-de-videos.md) a la sesión que analiza videos, para
+que la próxima idea de esa fuente no cueste una sesión entera en descubrir lo mismo.
 
 ---
 

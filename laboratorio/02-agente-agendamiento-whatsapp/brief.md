@@ -1,7 +1,11 @@
 # Brief 02 — Agente de agendamiento por WhatsApp
 
 **Abierto:** 10-sep-2026 · **Pedido por:** Ramón ("probemos el caso Emma")
-**Estado:** brief. **Nada construido, nada validado.**
+**Estado:** ☠️ **MUERTA — 10-sep-2026, por decisión de Ramón.** Nada construido, nada vendido.
+**Motivo:** el mercado está tomado por los dueños del software que la clínica ya usa (Dentalink,
+Medilink y AgendaPro venden hoy el mismo agente). Ver §3-bis(a). No reabrir sin que cambie ese
+hecho — y el hecho solo cambia si un incumbente se retira, no si aparece una idea nueva de
+funcionalidad.
 
 ---
 
@@ -236,7 +240,7 @@ Con cinco clientes en producción son cinco contratos y cinco responsabilidades 
 > XML que descargué no incluye el título sancionatorio. **Tratarlas como heredadas, no como
 > verificadas acá.**
 
-### El veredicto
+### El veredicto (aceptado por Ramón el 10-sep-2026)
 
 **El mercado está bien servido, y la idea tal como está escrita no pasa el descarte 1 del radar.**
 Matar esto hoy es el resultado correcto. Lo único que sobrevivió al sondeo es un hueco angosto y
@@ -298,3 +302,4 @@ primero conviene saber si ese es el negocio que se quiere.
 |---|---|
 | 2026-09-10 | Brief abierto a pedido de Ramón. Nada construido, nada validado. Pendiente: §3 completo y las diez llamadas del §5. |
 | 2026-09-10 | **Sondeo del §3 completo (sesión de parte).** (a) Mercado **tomado**: Dentalink y Medilink (Healthatom) y AgendaPro ya venden agente de IA que contesta WhatsApp y agenda; Dentipilot vende el producto exacto sobre Dentalink a $299.990–$759.990/mes + IVA. Precios de AgendaPro verificados en su página de planes. Quejas repetidas: 5 reseñistas de Capterra por el cobro de WhatsApp. (b) Costo real Meta Chile, del tarifario oficial CLP: utility **$17,6584**, marketing **$78,4917**, servicio gratis, cobro **por mensaje desde 1-jul-2025** (el §3(b) decía por conversación: corregido). ~$14.000/mes para 400 citas. AgendaPro cobra $100/mensaje = **~5,7x**. Verificación Meta: 250 destinatarios/día sin verificar. (c) Vertical: ninguna de las tres; si acaso veterinaria, pero **la tesis de reutilización del §2 no se sostiene** (la integración con el software incumbente es el producto). (d) Ley 21.719 verificada contra el texto BCN: salud = dato sensible (Art. 2 g), consentimiento expreso (Art. 16), y **Art. 15 bis**: contrato obligatorio, prohibición de subcontratar sin autorización escrita, **responsabilidad solidaria indelegable**, borrado o devolución al terminar. **Veredicto: matar la idea tal como está escrita.** Pendiente y no hecho: las diez llamadas del §5. Multas por tramo heredadas del proyecto 01, no re-verificadas acá. |
+| 2026-09-10 | ☠️ **Idea desechada por Ramón**, mismo día, con el sondeo del §3-bis a la vista. **Motivo:** el incumbente de cada vertical ya vende el producto; no hay ruta de ingreso que no sea competirle al dueño de la agenda, la ficha y el cobro del cliente. **Las diez llamadas del §5 no se hicieron y ya no se hacen.** Lo que sobrevive no es el proyecto sino dos piezas reutilizables: el tarifario real de WhatsApp en Chile (§3-bis b) y el mapa del Art. 15 bis (§3-bis d), que sirven a cualquier idea futura que toque WhatsApp o datos de terceros. El radar queda corregido en su propio archivo. **Cerrada. No reabrir sin hecho nuevo.** |
