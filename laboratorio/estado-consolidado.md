@@ -1,211 +1,148 @@
 # Estado consolidado del laboratorio
 
-**Sesión troncal · 9-sep-2026.** Escrito según el rol de §"Cómo se trabaja" del
-[README](README.md): revisar coherencia entre lo escrito y lo desplegado, perseguir lo
-pegado, y no hacer el trabajo fino de las partes.
+**Sesión troncal · 10-sep-2026.** La auditoría de la etapa 3 del pipeline: qué está verificado
+en vivo, y dónde lo escrito no calza con lo que existe. La cola de trabajo no vive acá — vive
+en [`encargos.md`](encargos.md). Este archivo se reescribe en cada pasada de la troncal; la
+historia queda en el registro de cada brief.
 
-Todo lo de abajo se verificó contra la realidad (URL que responde, respuesta de API, `git`),
+Todo lo de abajo se comprobó contra la realidad (URL que responde, respuesta de API, `git`),
 no contra lo que dice el brief. Cada afirmación lleva con qué se comprobó.
 
 ---
 
-## 1. Lo que está realmente en vivo
+## 1. Dónde está el laboratorio, en una línea
+
+Una sola idea viva. **Etapa 4 — lanzada a medias:** el gancho gratuito está vivo y verificado,
+pero de las tres condiciones de la compuerta de lanzamiento (vivo · algo comprable · canal
+activo) **solo se cumple la primera**, con 82 días de ventana. Lo que falta no es diseño: es
+la sección de precio que no existe y el post que lleva una semana pegado.
+
+## 2. Lo que está realmente en vivo
 
 | Qué | Estado | Con qué se verificó |
 |---|---|---|
-| `verificaycumple.pages.dev` | **vivo**, HTTP 200, 33.6 KB, 0,15 s | `curl -sIL` + lectura del HTML: `<title>Verifica y Cumple — Chequeo técnico Ley 21.719`, `<h1>¿Tu sitio tiene las señales que exige la Ley 21.719?` |
+| `verificaycumple.pages.dev` | **vivo**, HTTP 200, 33,6 KB, 0,15 s | `curl -sIL` + lectura del HTML |
 | API `/api/chequeo` | **funciona**, HTTP 200, 0,11 s | `curl "…/api/chequeo?dominio=spindlelab.cl"` → JSON completo, **36/100**, el mismo puntaje que registró el despliegue del 8-sep |
-| Rediseño "más vendible" desplegado | **sí**, es lo que está servido | En el HTML vivo: "ejemplo ilustrativo" ×1, sección `<h2>Los 12 puntos del Art. 14 ter` presente, `<h2>Qué es esto, y qué no es`, CTA a `hola@spindlelab.cl` |
-| Enlace cruzado → `verificaycumple` | **vivo** en `spindlelab.cl/diagnostico/` | `curl` de la página: 2 apariciones, `href="https://verificaycumple.pages.dev/"`, en la sección "Aparte de esto — Un chequeo distinto, para la Ley 21.719", ubicada entre "Dos caminos, y ninguno te cobra" y el FAQ, tal como dice el registro |
-| Enlace cruzado inverso | **vivo** | `href="https://spindlelab.cl"` en el HTML de `verificaycumple.pages.dev` |
-| Commit desplegado = HEAD de la rama | **sí**, sin deriva | `git ls-remote` → `laboratorio/ley-21719` = `4267d39`, exactamente el commit que el registro dice haber desplegado. No hay código sin desplegar |
+| Rediseño "más vendible" | **es lo que está servido** | En el HTML vivo: "ejemplo ilustrativo", `<h2>Los 12 puntos del Art. 14 ter`, `<h2>Qué es esto, y qué no es`, CTA a `hola@spindlelab.cl` |
+| Enlace cruzado → `verificaycumple` | **vivo** en `spindlelab.cl/diagnostico/` | 2 apariciones, `href="https://verificaycumple.pages.dev/"`, en la sección "Aparte de esto", entre "Dos caminos" y el FAQ |
+| Enlace cruzado inverso | **vivo** | `href="https://spindlelab.cl"` en el HTML |
+| Deriva código↔despliegue | **ninguna** | `4267d39` (el commit desplegado) sigue siendo el HEAD de `laboratorio/ley-21719` |
+| Lo decidido el 9-sep | **nada aplicado** | Re-verificado el 10-sep: el H1 sigue siendo el viejo ("¿Tu sitio tiene las señales…"), y `149.000`, `precio` y `Estás seguro` aparecen **0 veces** en el HTML vivo |
 
-**Los guardrails de §5 se sostienen en producción** (esto también se verificó, no se asumió):
+**Los guardrails de §5 se sostienen en producción**, esto también verificado y no asumido:
+`"72 horas"` aparece **0 veces** en el HTML vivo; el bloque `informativos` de la API dice
+literalmente que no puede saber si los trackers disparan antes o después del consentimiento
+(la decisión (a) "lanzamiento liviano" de §4, honrada en el texto que ve el usuario); y el
+aviso de que no es asesoría legal está presente.
 
-- `"72 horas"` aparece **0 veces** en el HTML vivo — la corrección de §2 punto 2 llegó al producto.
-- El bloque `informativos` de la API dice literalmente *"No podemos saber si disparan antes o
-  después del consentimiento… eso requiere revisar el comportamiento en un navegador real"* —
-  la decisión (a) "lanzamiento liviano" de §4 está honrada en el texto que ve el usuario.
-- El aviso de que no es asesoría legal está presente.
+## 3. Dónde lo escrito no calza con lo que existe
 
-## 2. Dónde el brief no calza con la realidad
+### 3.1 El proyecto está declarado "alcance planeado completo" y no tiene ruta de ingreso construida
+El brief cierra el alcance el 8-sep. Pero el alcance planeado era **solo el gancho gratuito**
+(idea 1 de §3). La idea 2 —el kit de implementación a precio fijo, que es la única que cobra—
+tiene **precio decidido el 9-sep ($149.000 + IVA) y cero construido**: no hay archivo, ni
+sección, ni rama. Y §7 del propio brief avisa que esto es un sprint de tres meses, no un
+negocio permanente.
 
-### 2.1 El código y su registro viven en ramas distintas, y ninguna tiene las dos cosas
+Verificado: `149.000` y `precio` aparecen 0 veces en el HTML vivo; no hay ningún archivo con
+"kit" o "precio" en `laboratorio/ley-21719`; ninguna rama de `git ls-remote` menciona kit,
+precio ni monetización.
 
-Es el hallazgo estructural de esta revisión.
+**Por qué importa más que todo lo demás:** "alcance completo" es cierto de la landing y falso
+del negocio, y es la frase que hace que el proyecto se sienta terminado cuando le falta lo
+único que produce ingreso. Quedan **82 días**.
 
-- `laboratorio/ley-21719` contiene **el producto** (`verificaycumple/index.html`,
-  `verificaycumple/functions/api/chequeo.js`) y **una copia del brief congelada el 3-sep**: su
-  registro termina en la fila "descarta comprar el `.cl`". No sabe que se construyó, ni que se
-  desplegó, ni que hubo dos rediseños.
-- `laboratorio/ideas` contiene **el registro completo** (12 filas) y **nada del producto**.
-- Verificado: `git merge-base --is-ancestor origin/laboratorio/ley-21719 origin/laboratorio/ideas`
-  → **falso**. `git rev-list --count` → ley-21719 está **42 commits detrás de `ideas`** y
-  **24 detrás de `main`**. Se separó el 3-sep en `d15c21c` y nunca volvió.
+### 3.2 El código y su registro viven en ramas distintas, y ninguna tiene las dos cosas
+`laboratorio/ley-21719` tiene el producto (`verificaycumple/index.html`,
+`functions/api/chequeo.js`) y una copia del brief **congelada el 3-sep**: no sabe que se
+construyó, ni que se desplegó, ni que hubo tres rediseños. `laboratorio/ideas` tiene el
+registro completo y **nada del producto**. Verificado con `git merge-base --is-ancestor`
+(falso) y `git rev-list --count`: **42 commits detrás de `ideas`, 24 detrás de `main`**. Se
+separó el 3-sep en `d15c21c` y nunca volvió — rompe las reglas 1 y 3 del README a la vez.
 
-Esto rompe dos reglas del README a la vez: la regla 1 (*"sale de `main` y vuelve a traer de
-`main`"* — ley-21719 nunca lo hizo) y la regla 3 (*"vuelve acá al cerrar"* — el proyecto está
-declarado "alcance planeado completo" y la rama no volvió).
+**Y tiene una trampa:** Cloudflare construye producción **desde esa rama**. Cerrarla con el
+movimiento normal de la regla 3 —fusionar y borrar— **apaga el sitio**.
 
-**Y tiene una trampa operativa:** Cloudflare Pages construye producción **desde
-`laboratorio/ley-21719`**. Cerrar esa rama con el movimiento normal de la regla 3 — fusionar a
-`ideas` y borrarla — **apaga el sitio**. Una sesión de parte que lea solo el README puede hacer
-exactamente eso creyendo que ordena.
+### 3.3 El encargo de Cata está bloqueado por una condición que caducó hace nueve días
+Un solo commit (`ef5b670`, 3-sep). Sigue diciendo *"el sitio todavía no está desplegado…
+manda a un link roto"*. Está vivo desde el 8-sep. **Cata lee su encargo y ve una pieza
+bloqueada** — esa es la razón de la semana pegado, no un pase de tono. Y ahora hay dos
+borradores del mismo post (el de Cata y el de `ventas/casos-de-exito/`) sin que nadie haya
+elegido cuál sale.
 
-### 2.2 El encabezado del brief se contradice con su propia última fila
+### 3.4 SpindleLab no pasa el chequeo que ahora promociona
+`spindlelab.cl/diagnostico/` enlaza públicamente el chequeo. Corrido contra `spindlelab.cl`:
+**36/100**. Sin política de privacidad —404 en `/privacidad/`, `/politica-de-privacidad/`,
+`/legal/` y `/cookies/`, las cuatro—, sin gestor de consentimiento, con GA4 + GTM + Meta Pixel
+(`gtag` ×5, `googletagmanager`, `fbevents`), y `/contacto/` recolectando `Nombre`, `Email`,
+`Sitio web` y UTMs hacia `action="https://api.web3forms.com/submit"` sin checkbox de
+consentimiento (el único `type="checkbox"` es un honeypot `botcheck`). En los términos del
+propio brief: encargado del tratamiento y transferencia internacional (Art. 27-28), sin
+política publicada (Art. 14 ter) ni acto afirmativo previo (Art. 12).
 
-El **Estado** (línea 3) dice: *"alcance planeado completo (8-sep-2026) … Abierto: el post de
-Cata (ver §8)"* — un solo pendiente. La **última fila del registro**, del mismo día, cierra
-con dos pendientes más: reconectar Cloudflare por dashboard y decidir cómo ver el Figma. El
-encabezado es lo primero que lee cualquier sesión nueva, y subdeclara lo abierto.
+**Un nivel más incómodo:** `/api/chequeo?dominio=verificaycumple.pages.dev` → **36/100**
+también. El sitio que dice "publica tu política del Art. 14 ter" no tiene la suya.
 
-### 2.3 El encargo de Cata quedó bloqueado por una condición que ya no existe
+### 3.5 La ficha de venta nueva ya trae un guardrail roto
+`ventas/casos-de-exito/verifica-y-cumple.md` (escrita el 9-sep, rescatada en el commit
+`3791ca9`) afirma en "Cómo usarlo en la llamada": *"La primera infracción de una empresa
+pequeña es amonestación escrita, no la multa de 20.000 UTM."* El brief §2 punto 5 dice lo
+contrario: es el Art. sexto transitorio, la Agencia **"podrá"** —no "deberá"—, y solo durante
+los primeros 12 meses. Dicho como regla en una llamada es el mismo error que el proyecto
+existe para no cometer. Todo el resto del documento está verificado y limpio.
 
-`marketing/encargos-otras-sesiones/verificaycumple-post-personal-cata.md` (en `main`) tiene un
-solo commit, `ef5b670`, del 3-sep. Sigue diciendo:
+### 3.6 El clon que las reglas de la casa mandan usar no existe
+`CLAUDE.md:37`: *"the good clone is `~/Projects/spindlelab` — the older copy under iCloud Drive
+is corrupt and must not be used"* (1-sep). Verificado el 10-sep: **`~/Projects/spindlelab` no
+existe**, y la copia de iCloud pasa `git fsck --connectivity-only` con exit 0 y solo objetos
+colgantes normales —sin objetos faltantes ni enlaces rotos—, sin marcadores `.icloud` sin
+descargar. El único árbol adicional (`~/spindlelab-oficina-wt`) es un worktree *de esa misma
+copia*. Tres filas del registro del 9-sep encargan trabajo "desde el clon bueno": quien las
+tome no encuentra el directorio.
 
-> **1. El sitio todavía no está desplegado.** … Publicar este post antes de eso manda a un
-> link roto.
+### 3.7 Dos sesiones escribieron en paralelo, otra vez
+El 9-sep, después de la pasada anterior de la troncal, una sesión de parte escribió tres filas
+del registro y la ficha de venta completa **y las dejó sin commitear** en el árbol de trabajo.
+No existían para nadie más. Esta sesión las commiteó tal cual (`3791ca9`), sin editarlas.
+Es el tercer episodio de este tipo en el repo; ahora está escrito como regla en el README y
+como riesgo conocido.
 
-El sitio está desplegado desde el 8-sep. Y el pie del post todavía dice *"o el `.cl` si ya está
-comprado — confirmar cuál URL está viva"*, cuando la compra ya está descartada por costo.
-**Cata lee su encargo y ve una pieza bloqueada.** Esta es la explicación más probable de por
-qué el post lleva seis días pegado: no está esperando un pase de tono, está esperando que
-alguien le levante un bloqueo caducado.
+### 3.8 El proyecto 01 entró sin cumplir el filtro 3
+El filtro de entrada exige **costo de atención semanal declarado** y dice *"si no se puede
+estimar, no entra"*. No hay número en ninguna parte del brief — solo menciones cualitativas
+("el más bajo de los dos caminos", "más alto al arrancar"). Con la agencia con prioridad por
+guardrail, ese número es justamente lo que decide si el kit se construye.
 
-### 2.4 Lo que el brief no vio: SpindleLab no pasa el chequeo que ahora promociona
-
-`spindlelab.cl/diagnostico/` enlaza públicamente a un chequeo de Ley 21.719. Corrido contra el
-propio `spindlelab.cl`, ese chequeo da **36/100**:
-
-- **No tiene política de privacidad.** Verificado dos veces: el chequeo no encuentra el enlace,
-  y `/privacidad/`, `/politica-de-privacidad/`, `/legal/` y `/cookies/` devuelven **404** las cuatro.
-- **No tiene gestor de consentimiento.**
-- **Sí tiene GA4, Google Tag Manager y Meta Pixel** (`gtag` ×5, `googletagmanager`, `fbevents`
-  en el HTML).
-- **`/contacto/` recolecta datos personales** — `Nombre`, `Email`, `Sitio web` más UTMs — y los
-  envía por `action="https://api.web3forms.com/submit"`, un tercero extranjero. Sin checkbox de
-  consentimiento (el único `type="checkbox"` es un honeypot `botcheck`). Eso es, en los términos
-  del propio brief §2, un encargado del tratamiento y una transferencia internacional (Art.
-  27-28), sin política publicada (Art. 14 ter) ni acto afirmativo previo (Art. 12).
-
-No es un problema de marca del laboratorio — es de SpindleLab. Pero lo detecta el laboratorio y
-nadie más lo está mirando. La ventana es la misma: 1-dic-2026.
-
-### 2.5 Lo mismo, un nivel más incómodo: el chequeo tampoco se pasa a sí mismo
-
-`/api/chequeo?dominio=verificaycumple.pages.dev` → **36/100**, sin política de privacidad y sin
-gestor de consentimiento. El sitio que le dice a las pymes "publica tu política del Art. 14 ter"
-no tiene la suya. Trata muchos menos datos que `spindlelab.cl` (no pide correo ni registro),
-así que el riesgo legal es menor — pero el riesgo de credibilidad es directo y es lo primero que
-va a probar cualquier persona técnica que lo visite.
-
-### 2.6 Menor, y a favor del brief
-
+### 3.9 Menor, y a favor del brief
 - El `.cl` sigue sin registrar: `dig +short verificaycumple.cl` no devuelve nada. (El WHOIS de
   NIC Chile no respondió desde acá, así que "libre para comprar" queda **sin verificar del
   todo** — solo está confirmado que nadie lo tiene en uso.)
-- La tabla de Proyectos del README describe bien el estado real.
-- El radar (`herramientas/radar-de-ideas.md`) sigue marcado **v1 sin probar** y efectivamente
-  no hay rastro de que se haya usado. Coherente.
+- El encabezado del brief ya fue corregido por la sesión de parte el 9-sep: ahora lista los
+  pendientes numerados en vez de uno solo. Era el encargo E7; queda cerrado.
+- El radar sigue **v1 sin probar** y no hay rastro de uso. Coherente con lo declarado.
 
-## 3. Lo pegado — los tres pendientes que se repiten
-
-### (a) Reconectar `verificaycumple` por el dashboard de Cloudflare
-**Aparece en:** filas del 8-sep ×3 (rediseño visual, token revocado, rediseño vendible).
-**Qué pasa:** el proyecto se creó por API, quedó sin webhook de auto-deploy. Cada cambio exige
-un token nuevo de Ramón + disparo manual. Ya consumió tres tokens en un día.
-**No verificable desde afuera:** sin token, la conexión del proyecto no se puede inspeccionar.
-La última evidencia registrada (8-sep) dice que no está conectado, y no hay nada posterior.
-**Recomendación: hacerlo ahora y que lo haga Ramón, no una sesión.** Es la única de las tres que
-solo él puede ejecutar (requiere su dashboard), toma minutos, y mientras siga así **cada
-iteración futura del sitio cuesta un token nuevo** — es decir, este pendiente encarece todos
-los demás. Al conectarlo hay que dejar la rama de producción explícita en el proyecto, por §2.1.
-
-### (b) El post de Cata
-**Aparece en:** 3-sep (encargado y bloqueado), 8-sep (*"ya puede salir de su bloqueo"*), y en
-el README como uno de los tres pegados.
-**Por qué sigue pegado:** §2.3 — el archivo del encargo nunca se actualizó. El brief anotó que
-el bloqueo cayó; el encargo, que es lo único que Cata lee, no se enteró.
-**Recomendación: desbloquearlo editando el encargo, no volviendo a escribir el post.** El
-borrador ya está calibrado y el hallazgo de las "72 horas" sigue siendo verdadero y verificado.
-Basta reemplazar el bloqueo 1 por "desplegado y vivo desde el 8-sep", fijar
-`verificaycumple.pages.dev` como la URL del primer comentario y borrar la duda del `.cl`. Es un
-encargo a una sesión de parte de marketing (toca `main`), no trabajo de la troncal.
-
-### (c) El Figma de referencia
-**Aparece en:** 8-sep (bloqueado por la API de Community), y en el README como el tercer pegado.
-**Recomendación: matarlo, o convertirlo en algo que no dependa de la API de Figma.** Es el único
-de los tres que no bloquea nada — el sitio ya tuvo dos rediseños y está desplegado sin él. Si
-Ramón todavía lo quiere, la vía barata es que mande **una captura**; duplicar el archivo a sus
-borradores es la vía completa pero es trabajo suyo. Mientras no elija, no debería seguir
-ocupando un renglón de "pendiente": aplica la regla del registro del README — *una idea sin
-fecha de revisión es una idea que va a seguir dando vueltas en la cabeza*.
-
-## 4. Ramas vivas del laboratorio
+## 4. Ramas
 
 `git ls-remote --heads origin` → **45 ramas**. Del laboratorio:
 
 | Rama | Último commit | ¿En `main`? | ¿En `ideas`? | Estado |
 |---|---|---|---|---|
-| `laboratorio/ideas` | 10-sep | no (+26) | — | **Troncal, viva y al día con `main`** (contiene `origin/main`, 0 detrás) |
-| `laboratorio/ley-21719` | 8-sep | no (+11/−24) | **no** | **Viva y huérfana** — ver §2.1. Es además la rama de producción |
-| `claude/verificaycumple-mencion-diagnostico` | 8-sep | **sí** (+0) | sí | **Huérfana benigna** — era el PR #34, ya fusionado. Sin commits propios. Borrable |
+| `laboratorio/ideas` | 10-sep | no (+28) | — | **Troncal, viva y al día con `main`** |
+| `laboratorio/ley-21719` | 8-sep | no (+11/−24) | **no** | **Viva y huérfana** (§3.2). Es además la rama de producción |
+| `claude/verificaycumple-mencion-diagnostico` | 8-sep | **sí** (+0) | sí | **Huérfana inofensiva** — era el PR #34, ya fusionado. Borrable |
 
-**Huérfanas, en los dos sentidos del término:**
+`laboratorio/ley-21719` es la huérfana que importa: nadie la trajo de vuelta, no recibe `main`,
+su brief está congelado hace una semana, y está sirviendo producción. Está viva por accidente.
 
-- `laboratorio/ley-21719` es la huérfana **que importa**: nadie la ha traído de vuelta, no
-  recibe `main`, su copia del brief está congelada hace seis días, y está sirviendo
-  producción. Está viva por accidente, no por decisión.
-- `claude/verificaycumple-mencion-diagnostico` es huérfana **inofensiva**: cumplió su función.
-  No es un caso aislado — **26 de las 45 ramas del repo están totalmente fusionadas a `main`
-  con cero commits propios**. Es higiene del repo entero, no del laboratorio, y no urge.
+`claude/verificaycumple-mencion-diagnostico` no es un caso aislado: **26 de las 45 ramas están
+totalmente fusionadas a `main` con cero commits propios**. Es higiene del repo entero, no del
+laboratorio, y no urge.
 
-**No hay señal de otra sesión trabajando el laboratorio en paralelo.** Ninguna rama nueva toca
-`laboratorio/` ni `verificaycumple/`. La única rama creada desde el último `fetch`
-(`claude/spotify-landing-page-campaigns-a4pvct`, 9-sep) es de la agencia.
+**Sin señal de otra sesión trabajando el laboratorio en paralelo** — ninguna rama nueva toca
+`laboratorio/` ni `verificaycumple/`. Sí hay una sesión de la agencia trabajando ahora mismo
+(archivos sin commitear de una auditoría de cliente, 10-sep): no se tocaron.
 
 ---
 
-## Encargos abiertos para sesiones de parte
-
-La troncal no los ejecuta. Cada uno es acotado y verificable.
-
-### E1 — Devolver `laboratorio/ley-21719` sin apagar el sitio · *bloquea el orden del proyecto*
-Fusionar `ley-21719` → `ideas` para que el código y su registro queden juntos, y traer `main` a
-`ley-21719`. **Condición dura: no borrar `laboratorio/ley-21719`** mientras Cloudflare Pages
-construya producción desde ella. El orden correcto depende de (E2): si el proyecto queda
-reconectado por dashboard, ahí se decide con qué rama se queda producción y recién entonces se
-puede retirar la otra. Verificar al terminar con un `curl` a `verificaycumple.pages.dev` que
-siga en 200 y con `git merge-base --is-ancestor` en las dos direcciones.
-
-### E2 — Reconectar `verificaycumple` en el dashboard de Cloudflare · *solo Ramón*
-Dejar auto-deploy en push, como `spindlelab-astro`. Fijar y anotar en el brief cuál es la rama
-de producción. Cierra el pendiente (a) y desbloquea E1.
-
-### E3 — Desbloquear el post de Cata · *sesión de marketing, toca `main`*
-Editar `marketing/encargos-otras-sesiones/verificaycumple-post-personal-cata.md`: quitar el
-bloqueo 1 (el sitio está vivo desde el 8-sep, verificado hoy en 200), fijar
-`verificaycumple.pages.dev` como URL del primer comentario y eliminar el condicional del `.cl`.
-El borrador y el hallazgo no se tocan — solo queda el pase de tono de Cata y la revisión de
-Ramón, que es como debía estar desde el 8-sep.
-
-### E4 — Poner a `spindlelab.cl` en regla con la Ley 21.719 · *sesión de la agencia*
-No es del laboratorio, pero lo encontró el laboratorio. `spindlelab.cl` da 36/100 en su propio
-chequeo enlazado: sin política de privacidad (404 en las cuatro rutas probables), sin gestor de
-consentimiento, con GA4 + GTM + Meta Pixel, y `/contacto/` mandando nombre y correo a
-`api.web3forms.com`. Es exposición real antes del 1-dic-2026 y, además, la agencia está
-enlazando un chequeo que la reprueba. Requiere abogado para el texto (guardrail de §5: acá se
-hace la capa técnica, no la legal).
-
-### E5 — Darle su política de privacidad a `verificaycumple` · *sesión de parte del laboratorio*
-36/100 en su propio chequeo. Es el caso más chico (no pide correo ni registro) pero el más
-visible: es lo primero que va a probar cualquier visitante técnico. Mismo guardrail: el texto
-es de abogado, la publicación es de acá.
-
-### E6 — Decidir el Figma, o matarlo · *decisión de Ramón, no de una sesión*
-Captura, duplicado del archivo, o descartarlo. Sin fecha de revisión, sale del registro.
-
-### E7 — Alinear el encabezado del brief con su registro · *sesión de parte, trivial*
-El **Estado** de la línea 3 declara un solo pendiente abierto (el post de Cata) cuando la
-última fila del registro deja tres. Es lo primero que lee una sesión nueva. Una línea.
+**Todo lo que hay que hacer está en [`encargos.md`](encargos.md), E1 a E12.** Esta pasada no
+construyó ni rediseñó nada.
