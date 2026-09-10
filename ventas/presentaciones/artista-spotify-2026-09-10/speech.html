@@ -1,0 +1,323 @@
+<title>Cómo cerrar al artista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --papel:#f7f5f0;
+    --tarjeta:#ffffff;
+    --tinta:#131a22;
+    --secundario:#4a5462;
+    --apagado:#78828f;
+    --linea:#e2ded4;
+    --linea-fuerte:#131a22;
+    --petroleo:#0f766e;
+    --oro:#c9a227;
+    --display:"Gabarito","Trebuchet MS",system-ui,sans-serif;
+    --cuerpo:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --papel:#12181f;
+      --tarjeta:#1a222b;
+      --tinta:#eceff3;
+      --secundario:#a7b1bd;
+      --apagado:#7c8794;
+      --linea:#2a3542;
+      --linea-fuerte:#5f6d7d;
+      --petroleo:#3fbcac;
+    }
+  }
+  :root[data-theme="dark"]{
+    --papel:#12181f;
+    --tarjeta:#1a222b;
+    --tinta:#eceff3;
+    --secundario:#a7b1bd;
+    --apagado:#7c8794;
+    --linea:#2a3542;
+    --linea-fuerte:#5f6d7d;
+    --petroleo:#3fbcac;
+  }
+  *{box-sizing:border-box}
+  body{
+    background:var(--papel);color:var(--tinta);font-family:var(--cuerpo);
+    font-size:16px;line-height:1.6;margin:0;
+    padding-block:28px 60px;padding-left:20px;padding-right:20px
+  }
+  .hoja{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:38px}
+
+  .cabecera{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;
+    border-bottom:1px solid var(--linea);padding-bottom:14px}
+  .wordmark{font-family:var(--display);font-weight:600;font-size:17px}
+  .wordmark .pt{color:var(--oro)}
+  .cabecera .dato{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--apagado)}
+
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(28px,5vw,40px);line-height:1.1;
+    letter-spacing:-0.02em;margin:0 0 10px;text-wrap:balance}
+  .intro{color:var(--secundario);margin:0;max-width:62ch}
+
+  h2{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:-0.01em;margin:0 0 4px}
+  section{display:flex;flex-direction:column;gap:16px}
+  .etiqueta{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--petroleo);
+    font-weight:600;margin:0}
+
+  /* las cuatro reglas que no se olvidan */
+  .reglas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;
+    background:var(--linea);border:1px solid var(--linea);border-radius:10px;overflow:hidden}
+  .regla{background:var(--tarjeta);padding:16px 18px;display:flex;flex-direction:column;gap:4px}
+  .regla b{font-family:var(--display);font-size:15px;font-weight:600}
+  .regla span{font-size:13px;color:var(--secundario);line-height:1.45}
+
+  /* frases para decir */
+  .decir{background:var(--tarjeta);border:1px solid var(--linea);border-left:3px solid var(--linea-fuerte);
+    border-radius:0 10px 10px 0;padding:16px 20px;margin:0;
+    font-family:var(--display);font-weight:500;font-size:17px;line-height:1.45;letter-spacing:-0.01em}
+  .decir small{display:block;font-family:var(--cuerpo);font-weight:600;font-size:11px;
+    letter-spacing:1.4px;text-transform:uppercase;color:var(--apagado);margin-bottom:8px}
+
+  /* bloques con minuto */
+  .bloques{display:flex;flex-direction:column;gap:1px;background:var(--linea);
+    border:1px solid var(--linea);border-radius:10px;overflow:hidden}
+  .bloque{background:var(--tarjeta);display:grid;grid-template-columns:74px 1fr;gap:16px;padding:15px 18px}
+  .bloque .min{font-family:var(--display);font-weight:600;font-size:14px;color:var(--petroleo);
+    font-variant-numeric:tabular-nums;padding-top:1px}
+  .bloque b{font-family:var(--display);font-size:16px;font-weight:600;display:block;margin-bottom:2px}
+  .bloque p{margin:0;font-size:14px;color:var(--secundario);line-height:1.5}
+
+  ol.preguntas{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:11px}
+  ol.preguntas li{font-size:15px;padding-left:4px}
+  ol.preguntas li b{font-weight:600}
+  ol.preguntas li em{display:block;font-style:normal;font-size:13px;color:var(--apagado);margin-top:2px}
+  li.clave b::after{content:"clave";font-family:var(--cuerpo);font-size:10px;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--petroleo);border:1px solid var(--petroleo);
+    border-radius:20px;padding:1px 7px;margin-left:8px;vertical-align:2px}
+
+  ul.lista{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px}
+  ul.lista li{font-size:15px}
+  ul.lista li b{font-weight:600}
+
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  th{text-align:left;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--apagado);
+    font-weight:600;padding:0 12px 9px 0;border-bottom:1px solid var(--linea)}
+  td{padding:12px 12px 12px 0;border-bottom:1px solid var(--linea);vertical-align:top}
+  tr:last-child td{border-bottom:0}
+  td.destaca{font-family:var(--display);font-weight:600;font-variant-numeric:tabular-nums}
+
+  .objecion{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;padding:14px 0;border-bottom:1px solid var(--linea)}
+  .objecion:last-child{border-bottom:0}
+  .objecion .dice{font-size:14px;color:var(--apagado);font-style:italic}
+  .objecion .respondes{font-size:15px}
+
+  /* hoja de notas */
+  .notas{display:flex;flex-direction:column;gap:10px}
+  .campo{display:flex;flex-direction:column;gap:5px}
+  .campo label{font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--apagado);font-weight:600}
+  .campo input,.campo textarea{
+    font:inherit;font-size:15px;background:var(--tarjeta);color:var(--tinta);
+    border:1px solid var(--linea);border-radius:8px;padding:10px 12px;width:100%;resize:vertical
+  }
+  .campo input:focus-visible,.campo textarea:focus-visible{outline:2px solid var(--petroleo);outline-offset:1px}
+  .guardado{font-size:12px;color:var(--apagado);min-height:18px}
+
+  .pie{border-top:1px solid var(--linea);padding-top:18px;font-size:13px;color:var(--apagado)}
+  .pie a{color:var(--petroleo)}
+
+  @media (max-width:560px){
+    .reglas{grid-template-columns:minmax(0,1fr)}
+    .bloque{grid-template-columns:1fr;gap:4px}
+    .bloque .min{font-size:12px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition-duration:.01ms !important}}
+</style>
+
+<div class="hoja">
+
+  <header class="cabecera">
+    <div class="wordmark">SpindleLab<span class="pt">.</span></div>
+    <div class="dato">Uso interno · 10 sep 2026</div>
+  </header>
+
+  <div>
+    <h1>Cómo cerrar al artista</h1>
+    <p class="intro">Quiere que le manejen las redes. La IA no le interesa por ahora. Ya tiene una landing. Esto es para leer antes de entrar y tener abierto en el teléfono durante la reunión.</p>
+  </div>
+
+  <section>
+    <p class="etiqueta">Lo que no se te puede olvidar</p>
+    <div class="reglas">
+      <div class="regla">
+        <b>El precio no se mueve más</b>
+        <span>Los $290.000 fueron por la página. La gestión mensual es otro servicio, con precio publicado.</span>
+      </div>
+      <div class="regla">
+        <b>Si cedes, cede alcance</b>
+        <span>Una plataforma en vez de dos. Ocho piezas en vez de doce. Nunca el valor por hora.</span>
+      </div>
+      <div class="regla">
+        <b>Cero promesas de oyentes</b>
+        <span>Se compromete tráfico medido y el costo por persona. Nada más.</span>
+      </div>
+      <div class="regla">
+        <b>No sales sin fecha</b>
+        <span>Propuesta mañana, revisión el lunes. Nunca un «te aviso».</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="etiqueta">Tres minutos antes de entrar</p>
+    <h2>Míralo tú, no se lo preguntes</h2>
+    <ul class="lista">
+      <li><b>Su Spotify.</b> Cuántos temas, cuándo fue el último, si el perfil está armado.</li>
+      <li><b>Su Instagram.</b> Con qué frecuencia publica, si hay video propio, y <b>a dónde va el enlace de la bio</b>.</li>
+      <li><b>Su landing.</b> Ábrela sin wifi. Es la que vas a revisar delante de él.</li>
+    </ul>
+    <p class="decir"><small>Con eso abres</small>«Revisé tu perfil antes de venir.»</p>
+  </section>
+
+  <section>
+    <p class="etiqueta">El encuadre</p>
+    <h2>Nombra el problema, no ofrezcas el servicio</h2>
+    <p class="decir"><small>La apertura, casi literal</small>«Hoy la plata que pones en publicidad termina en un clic que no deja rastro. No sabes cuánto te cuesta un oyente, y cuando apagas la campaña no te queda nada: los oyentes son de Spotify, los seguidores son de Instagram. Lo que te propongo es que quede medido y que quede algo tuyo.»</p>
+    <p class="decir"><small>Y esto, que baja la guardia</small>«Vengo a entender qué necesitas antes de proponerte nada. Al final te digo derecho si te conviene trabajar conmigo o no.»</p>
+  </section>
+
+  <section>
+    <p class="etiqueta">La reunión</p>
+    <h2>Seis bloques</h2>
+    <div class="bloques">
+      <div class="bloque"><div class="min">0 a 4</div><div><b>Apertura</b><p>El hallazgo del reconocimiento y las dos frases de arriba.</p></div></div>
+      <div class="bloque"><div class="min">4 a 12</div><div><b>Escuchas</b><p>Las cuatro preguntas de abajo. Él habla el 70% del tiempo.</p></div></div>
+      <div class="bloque"><div class="min">12 a 22</div><div><b>Diagnóstico en vivo</b><p>Su landing en pantalla, y la pieza del recorrido del clic.</p></div></div>
+      <div class="bloque"><div class="min">22 a 30</div><div><b>Qué le propones</b><p>Las cinco cosas, dichas como mecanismos y no como adjetivos.</p></div></div>
+      <div class="bloque"><div class="min">30 a 35</div><div><b>Precio</b><p>La tabla. Sin descuentos nuevos.</p></div></div>
+      <div class="bloque"><div class="min">35 a 40</div><div><b>Cierre</b><p>Próximo paso con fecha, y los tres datos que tienes que salir teniendo.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="etiqueta">Bloque 2</p>
+    <h2>Lo que preguntas</h2>
+    <ol class="preguntas">
+      <li><b>¿Qué esperas que pase en tres meses?</b><em>Si responde «llenar una fecha» o «vender merch», el servicio cambia y vale más: ahí se puede medir hasta la venta.</em></li>
+      <li><b>¿Quién te lleva las redes hoy y qué no te gusta de eso?</b><em>Te dice contra qué compites y qué no puedes repetir.</em></li>
+      <li class="clave"><b>¿Has pagado publicidad antes? ¿Cuánto y qué pasó?</b><em>Presupuesto real, expectativa y si ya lo quemaron con alguien. Anota la respuesta literal.</em></li>
+      <li class="clave"><b>¿Quién más está en esto contigo? ¿Mánager, sello, alguien que grabe?</b><em>El mejor indicador de tamaño. Si dice «nosotros», hay estructura y hay presupuesto.</em></li>
+    </ol>
+  </section>
+
+  <section>
+    <p class="etiqueta">Bloque 3</p>
+    <h2>Su landing, delante de él</h2>
+    <p class="intro">Tres cosas, ninguna es opinión, y casi seguro fallan las tres.</p>
+    <ul class="lista">
+      <li><b>¿Tiene píxel?</b> Si no, todo lo que ya pagó se perdió sin dejar audiencia acumulada.</li>
+      <li><b>¿Captura correo o WhatsApp?</b> Si no, la gente pasa y no queda nadie.</li>
+      <li><b>¿Cuánto demora con datos móviles?</b> Si demora, ahí se caen los que ya pagó por traer.</li>
+    </ul>
+    <p class="decir"><small>La frase que más pega</small>«Todo lo que has pagado hasta hoy no dejó nada acumulado.»</p>
+  </section>
+
+  <section>
+    <p class="etiqueta">Bloque 4</p>
+    <h2>Las cinco cosas que casi nadie le ofrece</h2>
+    <ul class="lista">
+      <li><b>Cada tema es una campaña de seis semanas, no un posteo.</b> Dos antes, la del estreno, tres después.</li>
+      <li><b>Prueba de ganchos.</b> Varios cortes de seis segundos del mismo tema compitiendo. Deja de adivinar qué parte poner en el Reel.</li>
+      <li><b>Lo orgánico decide, la pauta amplifica.</b> No se inventa creativo para publicidad: se pone plata detrás del que ya se movió solo.</li>
+      <li><b>Un tablero, no capturas.</b> Cuánta gente entró a escuchar, cuánto costó cada una, qué corte enganchó.</li>
+      <li><b>Su lista.</b> Correos o WhatsApp a cambio de algo real. Es lo único que se queda con él.</li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="etiqueta">Bloque 5</p>
+    <h2>El precio</h2>
+    <table>
+      <tr><th>Plan</th><th>Qué es</th><th>Valor</th></tr>
+      <tr><td>Presencia</td><td>Una plataforma, sin pauta</td><td class="destaca">$390.000/mes</td></tr>
+      <tr><td>Lanzamiento ★</td><td>Instagram y Facebook, con pauta y tablero</td><td class="destaca">$590.000/mes</td></tr>
+      <tr><td>Página</td><td>Nueva o puesta a punto de la que tiene</td><td class="destaca">$290.000 única vez</td></tr>
+    </table>
+    <p class="intro">Todo + IVA. La pauta va aparte, a su tarjeta, sin comisión. Mínimo tres meses.</p>
+    <p class="decir"><small>Para amarrar el número sin que parezca que sube</small>«El número que te di era por la página. Lo que me estás pidiendo es la gestión mensual, que es otra cosa y tiene su propio precio publicado en mi sitio. Te muestro las dos y decides.»</p>
+  </section>
+
+  <section>
+    <p class="etiqueta">Si aprieta</p>
+    <h2>Objeciones, en quince segundos</h2>
+    <div class="objecion">
+      <div class="dice">«Está caro / ¿no me puedes hacer un precio?»</div>
+      <div class="respondes">No bajas. Ofreces el piloto: dos semanas con lo que pueda poner, y al final el número real de cuánto cuesta un oyente suyo. Si no le cierra, se apaga y le queda la página.</div>
+    </div>
+    <div class="objecion">
+      <div class="dice">«¿Cuántos oyentes me garantizas?»</div>
+      <div class="respondes">Ninguno, y ese es el punto. Se garantiza tráfico real medido. El que te promete un número está comprando tráfico falso.</div>
+    </div>
+    <div class="objecion">
+      <div class="dice">«¿Y las playlists pagadas?»</div>
+      <div class="respondes">Es el camino corto y termina con el tema retirado y las regalías retenidas. Spotify detecta el tráfico artificial.</div>
+    </div>
+    <div class="objecion">
+      <div class="dice">«¿Ustedes me hacen los videos?»</div>
+      <div class="respondes">El material lo pones tú, aunque sea del celular. Nosotros ponemos el brief, el montaje del texto, la pauta y el reporte. Si no tienes, te decimos qué grabar o te conectamos con alguien.</div>
+    </div>
+  </section>
+
+  <section>
+    <p class="etiqueta">Bloque 6</p>
+    <h2>No sales sin esto</h2>
+    <ul class="lista">
+      <li>Su correo.</li>
+      <li>El nombre exacto de su proyecto en Spotify.</li>
+      <li>Quién decide, si hay alguien más.</li>
+      <li>Una fecha comprometida para la propuesta.</li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="etiqueta">Durante</p>
+    <h2>Anota acá</h2>
+    <div class="notas">
+      <div class="campo"><label for="n1">Nombre y proyecto</label><input type="text" id="n1" autocomplete="off"></div>
+      <div class="campo"><label for="n2">Qué espera en tres meses</label><textarea id="n2" rows="2"></textarea></div>
+      <div class="campo"><label for="n3">Publicidad anterior: cuánto y qué pasó</label><textarea id="n3" rows="2"></textarea></div>
+      <div class="campo"><label for="n4">Quién más está en esto</label><input type="text" id="n4" autocomplete="off"></div>
+      <div class="campo"><label for="n5">Qué encontré en su landing</label><textarea id="n5" rows="2"></textarea></div>
+      <div class="campo"><label for="n6">Próximo paso y fecha</label><input type="text" id="n6" autocomplete="off"></div>
+      <p class="guardado" id="guardado"></p>
+    </div>
+  </section>
+
+  <div class="pie">
+    La pieza para compartir en pantalla es otra: <a href="https://claude.ai/code/artifact/fe128322-df2f-4d0f-b675-bad1ba987b6b">Sigue el clic</a>. Esta hoja es tuya, no se comparte. Tus notas quedan guardadas solo en este dispositivo.
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var campos = ["n1","n2","n3","n4","n5","n6"];
+  var aviso = document.getElementById("guardado");
+  var reloj;
+
+  campos.forEach(function(id){
+    var el = document.getElementById(id);
+    if (!el) return;
+    try {
+      var guardado = localStorage.getItem("reunion-artista-" + id);
+      if (guardado) el.value = guardado;
+    } catch (e) {}
+    el.addEventListener("input", function(){
+      try {
+        localStorage.setItem("reunion-artista-" + id, el.value);
+        aviso.textContent = "Guardado en este dispositivo.";
+        clearTimeout(reloj);
+        reloj = setTimeout(function(){ aviso.textContent = ""; }, 1800);
+      } catch (e) {
+        aviso.textContent = "No se pudo guardar acá. Copia tus notas antes de cerrar.";
+      }
+    });
+  });
+})();
+</script>

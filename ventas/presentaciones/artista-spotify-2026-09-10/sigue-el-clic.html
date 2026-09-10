@@ -88,9 +88,8 @@
   }
   .lectura b{color:var(--texto);font-weight:600}
 
-  /* ---- calculadora ---- */
-  .calculo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:28px;align-items:start}
-  .mandos{display:flex;flex-direction:column;gap:24px}
+  /* ---- proyección ---- */
+  .mandos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px}
   .mando{display:flex;flex-direction:column;gap:8px}
   .mando .fila{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
   .mando label{font-size:13px;font-weight:600}
@@ -98,13 +97,26 @@
   .mando small{font-size:12px;color:var(--apagado)}
   input[type=range]{width:100%;accent-color:var(--petroleo);height:22px}
   input[type=range]:focus-visible{outline:2px solid var(--petroleo);outline-offset:4px}
-  .resultado{background:var(--superficie);border:1px solid var(--borde);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:6px}
-  .resultado .cifra{font-family:var(--display);font-weight:700;font-size:clamp(38px,7vw,54px);line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
-  .resultado .pie{font-size:13px;color:var(--secundario)}
-  .estado{margin-top:12px;padding-top:12px;border-top:1px solid var(--borde);font-size:13px;font-weight:500}
-  .estado.ok{color:var(--petroleo)}
+
+  .grafico{position:relative;background:var(--superficie);border:1px solid var(--borde);border-radius:12px;padding:20px 20px 14px}
+  .leyenda{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:6px}
+  .leyenda span{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--secundario)}
+  .leyenda i{width:14px;height:3px;border-radius:2px;display:inline-block}
+  .grafico svg{display:block;width:100%;height:auto;max-width:100%;overflow:visible}
+  .globo{
+    position:absolute;pointer-events:none;opacity:0;transition:opacity .15s;
+    background:var(--tinta);border:1px solid var(--borde);border-radius:8px;padding:9px 12px;
+    font-size:12px;line-height:1.5;white-space:nowrap;transform:translate(-50%,-100%);z-index:2
+  }
+  .globo b{font-family:var(--display);font-size:14px;font-variant-numeric:tabular-nums}
+
+  .cierre-calculo{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px 32px;align-items:start}
+  .total .cifra{font-family:var(--display);font-weight:700;font-size:clamp(34px,6vw,48px);line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+  .total .pie{font-size:13px;color:var(--secundario);margin-top:6px}
+  .estado{font-size:13px;font-weight:500;border-left:2px solid var(--borde);padding-left:14px}
+  .estado.ok{color:var(--petroleo);border-left-color:var(--petroleo)}
   .estado.bajo{color:var(--apagado)}
-  .aviso{font-size:13px;color:var(--apagado);max-width:62ch;margin:0}
+  .aviso{font-size:13px;color:var(--apagado);max-width:66ch;margin:0}
   .aviso b{color:var(--secundario);font-weight:600}
 
   /* ---- comparación ---- */
@@ -184,39 +196,57 @@
   <section>
     <div>
       <p class="etiqueta">Lo que hoy nadie sabe</p>
-      <h2>¿Cuánto te cuesta una persona que entra a escucharte?</h2>
-      <p class="bajada">Mueve los dos controles. La respuesta cambia entera según el segundo, y ese número hoy no existe para ti: no se estima, se mide.</p>
+      <h2>¿Hasta dónde puedes llegar en seis meses?</h2>
+      <p class="bajada">Mueve los dos controles. El de arriba lo decides tú; el de abajo es el dato que hoy no existe y que solo se sabe midiendo. Los dos juntos deciden si la campaña alcanza a aprender, y de eso depende toda la curva.</p>
     </div>
 
-    <div class="calculo">
-      <div class="mandos">
-        <div class="mando">
-          <div class="fila">
-            <label for="presupuesto">Lo que pones al mes en publicidad</label>
-            <output id="out-presupuesto" for="presupuesto"></output>
-          </div>
-          <input type="range" id="presupuesto" min="100000" max="1500000" step="50000" value="400000">
-          <small>Va a tu tarjeta, a tu nombre. Sin comisión nuestra sobre ese gasto.</small>
+    <div class="mandos">
+      <div class="mando">
+        <div class="fila">
+          <label for="presupuesto">Lo que pones al mes en publicidad</label>
+          <output id="out-presupuesto" for="presupuesto"></output>
         </div>
-
-        <div class="mando">
-          <div class="fila">
-            <label for="costo">Lo que te costaría cada clic a Spotify</label>
-            <output id="out-costo" for="costo"></output>
-          </div>
-          <input type="range" id="costo" min="50" max="900" step="25" value="300">
-          <small>Este es el dato que no tienes. Depende de tu música, tu video y tu público.</small>
-        </div>
+        <input type="range" id="presupuesto" min="100000" max="1500000" step="50000" value="400000">
+        <small>Va a tu tarjeta, a tu nombre. Sin comisión nuestra sobre ese gasto.</small>
       </div>
 
-      <div class="resultado">
+      <div class="mando">
+        <div class="fila">
+          <label for="costo">Lo que te cuesta cada oyente el primer mes</label>
+          <output id="out-costo" for="costo"></output>
+        </div>
+        <input type="range" id="costo" min="50" max="900" step="25" value="300">
+        <small>El único número que se mide de verdad, y sale en las dos primeras semanas.</small>
+      </div>
+    </div>
+
+    <div class="grafico">
+      <div class="leyenda">
+        <span><i style="background:#2fa99b"></i> Con medición</span>
+        <span><i style="background:#5d6673"></i> Sin medición</span>
+      </div>
+      <svg id="svg" viewBox="0 0 900 320" role="img" aria-labelledby="titulo-grafico">
+        <title id="titulo-grafico">Personas acumuladas que entran a escucharte, mes uno a mes seis, con y sin medición</title>
+        <g id="grid"></g>
+        <path id="brecha" fill="#2fa99b" fill-opacity="0.10"></path>
+        <path id="linea-sin" fill="none" stroke="#5d6673" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+        <path id="linea-con" fill="none" stroke="#2fa99b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+        <g id="marcas"></g>
+        <g id="ejes"></g>
+        <g id="bandas"></g>
+      </svg>
+      <div class="globo" id="globo"></div>
+    </div>
+
+    <div class="cierre-calculo">
+      <div class="total">
         <div class="cifra" id="cifra">0</div>
-        <div class="pie">personas al mes entrando a escucharte, contadas una por una</div>
-        <div class="estado" id="estado"></div>
+        <div class="pie">personas distintas entrando a escucharte en seis meses, contadas una por una. <span id="delta"></span></div>
       </div>
+      <div class="estado" id="estado"></div>
     </div>
 
-    <p class="aviso"><b>Esto no es una proyección ni una promesa.</b> Es la forma del cálculo, para que se vea de qué depende. Tu número real sale de dos semanas de prueba con tu música, y con ese número recién se decide cuánto conviene poner.</p>
+    <p class="aviso"><b>Esto no es una promesa, es la forma del cálculo.</b> El único número real es el del primer mes, y sale de dos semanas de prueba con tu música. De ahí en adelante la curva se abre por un motivo concreto: en el mes uno le mostramos a gente que no te conoce, y en el mes cuatro le mostramos a gente parecida a la que ya entró a escucharte. El supuesto dibujado acá es que ese costo baja un 8% cada mes cuando hay audiencia propia acumulando, y que se queda plano cuando no la hay.</p>
   </section>
 
   <section>
@@ -323,33 +353,128 @@
   btnPagina.addEventListener("click", function(){ pintar("pagina"); });
   pintar("hoy");
 
+  var MEJORA = 0.08, MESES = 6;
+  var W = 900, H = 320, ML = 16, MR = 132, MT = 26, MB = 34;
   var presupuesto = document.getElementById("presupuesto");
   var costo = document.getElementById("costo");
   var outP = document.getElementById("out-presupuesto");
   var outC = document.getElementById("out-costo");
   var cifra = document.getElementById("cifra");
+  var delta = document.getElementById("delta");
   var estado = document.getElementById("estado");
+  var globo = document.getElementById("globo");
+  var NS = "http://www.w3.org/2000/svg";
+  var serieCon = [], serieSin = [];
 
   function pesos(n){ return "$" + Math.round(n).toLocaleString("es-CL"); }
+  function miles(n){ return Math.round(n).toLocaleString("es-CL"); }
+  function nodo(tipo, attrs, texto){
+    var e = document.createElementNS(NS, tipo);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (texto !== undefined) e.textContent = texto;
+    return e;
+  }
+  function vaciar(id){ var g = document.getElementById(id); while (g.firstChild) g.removeChild(g.firstChild); return g; }
 
   function calcular(){
     var p = Number(presupuesto.value), c = Number(costo.value);
     outP.textContent = pesos(p);
     outC.textContent = pesos(c);
-    var personas = Math.floor(p / c);
-    cifra.textContent = personas.toLocaleString("es-CL");
-    var semanales = personas / 4.33;
-    if (semanales >= 50) {
+
+    serieCon = []; serieSin = [];
+    var accCon = 0, accSin = 0;
+    for (var m = 1; m <= MESES; m++){
+      var costoMes = c * Math.pow(1 - MEJORA, m - 1);
+      accCon += p / costoMes;
+      accSin += p / c;
+      serieCon.push({mes:m, acc:accCon, mes_personas:p/costoMes, costo:costoMes});
+      serieSin.push({mes:m, acc:accSin, mes_personas:p/c, costo:c});
+    }
+
+    var totalCon = serieCon[MESES-1].acc, totalSin = serieSin[MESES-1].acc;
+    cifra.textContent = miles(totalCon);
+    delta.textContent = "Son " + miles(totalCon - totalSin) + " más que sin medir nada.";
+
+    var semanales = (p / c) / 4.33;
+    if (semanales >= 50){
       estado.className = "estado ok";
-      estado.textContent = "Con este ritmo la campaña aprende sola: pasa el mínimo de 50 personas por semana que necesita para afinarse.";
+      estado.textContent = "Con este ritmo la campaña alcanza a aprender: pasa las 50 personas por semana que necesita para afinar a quién le muestra. Por eso la curva verde se separa.";
     } else {
       estado.className = "estado bajo";
-      estado.textContent = "Con este ritmo la campaña se queda a medio aprender: van " + Math.floor(semanales) + " personas por semana y necesita 50 para afinarse.";
+      estado.textContent = "Con este ritmo la campaña no alcanza a aprender: van " + Math.floor(semanales) + " personas por semana y necesita 50. Por debajo de ese piso las dos curvas se parecen, porque no hay con qué afinar.";
+    }
+    dibujar();
+  }
+
+  function x(mes){ return ML + (mes - 1) * (W - ML - MR) / (MESES - 1); }
+  function escalaY(max){
+    var tope = max * 1.12 || 1;
+    return function(v){ return MT + (H - MT - MB) * (1 - v / tope); };
+  }
+  function ruta(serie, y){
+    return serie.map(function(d, i){ return (i ? "L" : "M") + x(d.mes).toFixed(1) + " " + y(d.acc).toFixed(1); }).join(" ");
+  }
+
+  function dibujar(){
+    var y = escalaY(serieCon[MESES-1].acc);
+    var g = vaciar("grid");
+    [0, 0.25, 0.5, 0.75, 1].forEach(function(f){
+      var yy = MT + (H - MT - MB) * f;
+      g.appendChild(nodo("line", {x1:ML, x2:W-MR, y1:yy, y2:yy, stroke:"#243141", "stroke-width":1}));
+    });
+
+    document.getElementById("linea-con").setAttribute("d", ruta(serieCon, y));
+    document.getElementById("linea-sin").setAttribute("d", ruta(serieSin, y));
+    document.getElementById("brecha").setAttribute("d",
+      ruta(serieCon, y) + " L" + x(MESES).toFixed(1) + " " + y(serieSin[MESES-1].acc).toFixed(1) + " " +
+      serieSin.slice().reverse().map(function(d){ return "L" + x(d.mes).toFixed(1) + " " + y(d.acc).toFixed(1); }).join(" ") + " Z");
+
+    var marcas = vaciar("marcas");
+    [{s:serieCon, color:"#2fa99b", txt:"Con medición"}, {s:serieSin, color:"#5d6673", txt:"Sin medición"}].forEach(function(it){
+      var fin = it.s[MESES-1];
+      marcas.appendChild(nodo("circle", {cx:x(fin.mes), cy:y(fin.acc), r:5, fill:it.color, stroke:"#161f29", "stroke-width":2}));
+      marcas.appendChild(nodo("text", {x:x(fin.mes)+12, y:y(fin.acc)-2, fill:"#e9edf1", "font-size":17,
+        "font-family":"Gabarito, sans-serif", "font-weight":600}, miles(fin.acc)));
+      marcas.appendChild(nodo("text", {x:x(fin.mes)+12, y:y(fin.acc)+14, fill:"#8b98a8", "font-size":11,
+        "font-family":"Inter, sans-serif"}, it.txt));
+    });
+
+    var ejes = vaciar("ejes");
+    for (var m = 1; m <= MESES; m++){
+      ejes.appendChild(nodo("text", {x:x(m), y:H-12, fill:"#5d6673", "font-size":11, "text-anchor":"middle",
+        "font-family":"Inter, sans-serif"}, "Mes " + m));
+    }
+
+    var bandas = vaciar("bandas");
+    var ancho = (W - ML - MR) / (MESES - 1);
+    for (var k = 1; k <= MESES; k++){
+      (function(mes){
+        var r = nodo("rect", {x:x(mes) - ancho/2, y:MT - 10, width:ancho, height:H - MT - MB + 10, fill:"transparent"});
+        r.style.cursor = "crosshair";
+        r.addEventListener("mouseenter", function(){ mostrar(mes, y); });
+        r.addEventListener("mouseleave", function(){ globo.style.opacity = 0; });
+        bandas.appendChild(r);
+      })(k);
     }
   }
+
+  function mostrar(mes, y){
+    var c = serieCon[mes-1], s = serieSin[mes-1];
+    globo.innerHTML = "Mes " + mes + "<br><b>" + miles(c.acc) + "</b> con medición" +
+                      "<br><b>" + miles(s.acc) + "</b> sin medición" +
+                      "<br><span style='color:#8b98a8'>cada oyente te cuesta " + pesos(c.costo) + "</span>";
+    var svg = document.getElementById("svg");
+    var caja = svg.getBoundingClientRect();
+    var escala = caja.width / W;
+    globo.style.left = (x(mes) * escala) + "px";
+    globo.style.top = (y(c.acc) * escala + 12) + "px";
+    globo.style.opacity = 1;
+  }
+
   presupuesto.addEventListener("input", calcular);
   costo.addEventListener("input", calcular);
   calcular();
+  window.addEventListener("resize", function(){ globo.style.opacity = 0; });
 
   var genero = document.getElementById("genero");
   var pregunta = document.getElementById("pregunta");
