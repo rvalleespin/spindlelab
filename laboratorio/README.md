@@ -73,6 +73,12 @@ sesiones trabajando lo mismo en paralelo sin saberlo.
 **Lo que la troncal NO hace:** el trabajo fino de cada parte. Si se pone a rediseñar, deja de
 mirar el conjunto y el rol se pierde.
 
+## Estado
+
+El [estado consolidado](estado-consolidado.md) es lo que escribe la sesión troncal: qué está
+verificado en vivo, dónde lo escrito no calza con lo desplegado, y los encargos abiertos para
+las sesiones de parte. Última revisión: **9-sep-2026**.
+
 ## Herramientas
 
 | Herramienta | Para qué | Estado |
