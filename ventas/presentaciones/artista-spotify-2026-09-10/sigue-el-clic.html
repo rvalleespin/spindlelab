@@ -141,23 +141,22 @@
   .comparacion .hoy{color:var(--apagado)}
   .comparacion tr:last-child td{border-bottom:0}
 
-  /* ---- pregunta IA ---- */
-  .prompt-fila{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-  .prompt-fila input[type=text]{
-    font:inherit;background:var(--tinta);color:var(--texto);
-    border:1px solid var(--borde);border-radius:8px;padding:10px 14px;min-width:200px;flex:1 1 200px
-  }
-  .prompt-fila input[type=text]:focus-visible{outline:2px solid var(--petroleo);outline-offset:1px}
-  .prompt-fila button{
-    font:inherit;font-weight:600;font-size:14px;background:var(--petroleo);color:#08120f;
-    border:0;border-radius:8px;padding:11px 18px;cursor:pointer
-  }
-  .prompt-fila button:focus-visible{outline:2px solid var(--texto);outline-offset:2px}
-  .pregunta{
-    background:var(--superficie);border:1px solid var(--borde);border-radius:12px;padding:22px 24px;
-    font-family:var(--display);font-weight:500;font-size:clamp(18px,2.6vw,23px);line-height:1.35;
-    letter-spacing:-0.01em;overflow-wrap:break-word
-  }
+  /* ---- ritmo de trabajo ---- */
+  .ritmo{display:flex;flex-direction:column;gap:1px;background:var(--borde);
+    border:1px solid var(--borde);border-radius:12px;overflow:hidden}
+  .tramo{background:var(--superficie);display:grid;grid-template-columns:190px 1fr;gap:20px;padding:20px 22px}
+  .tramo .cuando{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:-0.01em;
+    color:var(--petroleo);line-height:1.3}
+  .tramo p{margin:0;font-size:15px;color:var(--secundario);line-height:1.55;max-width:66ch}
+  .tramo p b{color:var(--texto);font-weight:600}
+
+  .reparto{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+  .parte h3{font-family:var(--display);font-weight:600;font-size:15px;margin:0 0 10px;
+    letter-spacing:1.4px;text-transform:uppercase;font-size:11px;color:var(--apagado)}
+  .parte ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px}
+  .parte li{font-size:15px;color:var(--secundario)}
+  .parte li b{color:var(--texto);font-weight:600}
+
   .cierre{border-top:1px solid var(--borde);padding-top:26px;display:flex;flex-direction:column;gap:6px}
   .cierre p{margin:0;max-width:62ch}
   .cierre .fuerte{font-family:var(--display);font-size:19px;font-weight:600;letter-spacing:-0.01em}
@@ -187,7 +186,7 @@
     <div>
       <p class="etiqueta">El recorrido de un oyente pagado</p>
       <h1>Sigue el clic hasta donde se corta.</h1>
-      <p class="bajada">Cada peso que pones en publicidad empuja a alguien hacia tu música. El problema no es que no lleguen: es que después del clic, hoy, no queda ningún rastro. Aprieta el conmutador.</p>
+      <p class="bajada">Estás pagando para que te escuchen. Instagram empuja, el clic sale, y ahí se corta: después de ese clic no queda registro de nadie. No es un problema de presupuesto. Es el último tramo, justo donde se decide si alguien se queda.</p>
     </div>
 
     <div class="conmutador" role="group" aria-label="Ver el recorrido">
@@ -296,22 +295,53 @@
 
   <section>
     <div>
-      <p class="etiqueta">La puerta que se abrió hace poco</p>
-      <h2>Cada vez más gente pide música preguntando.</h2>
-      <p class="bajada">Escribe tu género y hagamos la prueba ahora mismo, en vivo. Si no apareces en la respuesta, eso se trabaja: es exactamente lo que hacemos.</p>
+      <p class="etiqueta">Lo que hacemos</p>
+      <h2>Cómo se ve esto un mes cualquiera.</h2>
+      <p class="bajada">No es publicar tres veces por semana y mandarte capturas de pantalla. Es un ciclo que se repite, y lo puedes seguir sin entender nada de publicidad.</p>
     </div>
 
-    <div class="prompt-fila">
-      <input type="text" id="genero" value="rock alternativo" aria-label="Tu género musical" autocomplete="off">
-      <button type="button" id="copiar">Copiar la pregunta</button>
+    <div class="ritmo">
+      <div class="tramo">
+        <div class="cuando">La primera semana</div>
+        <p>Revisamos tus cuentas y tu página con la misma lista con la que partimos cualquier trabajo: si el enlace de tu bio deja registro de quién pasa, cuánto demora tu página en un teléfono con datos, y qué contenido tuyo <b>ya se movió solo</b> sin que pagaras nada. De ahí sale el plan del primer mes, y lo apruebas tú antes de que salga una sola publicación.</p>
+      </div>
+      <div class="tramo">
+        <div class="cuando">Cada tema, seis semanas</div>
+        <p>Dos semanas antes del estreno, la semana del estreno y tres después. <b>Nadie descubre una canción el día que sale</b>: la descubre la tercera o cuarta vez que se la cruza. Publicar el día del lanzamiento y parar ahí es regalar cinco semanas.</p>
+      </div>
+      <div class="tramo">
+        <div class="cuando">Cada semana</div>
+        <p>Tres o cuatro cortes distintos del mismo tema compitiendo entre ellos. A los siete días los números dicen cuál retiene: ese pasa a pauta y los otros se apagan. <b>Deja de ser una corazonada</b>, y de paso te dice qué parte de la canción sirve para todo lo demás que publiques.</p>
+      </div>
+      <div class="tramo">
+        <div class="cuando">Cada quincena</div>
+        <p>Un reporte con cuatro cosas: cuánta gente entró a escucharte, cuánto costó cada una, qué corte enganchó y <b>qué vamos a hacer distinto</b> la quincena siguiente. Nada de capturas de alcance.</p>
+      </div>
     </div>
 
-    <p class="pregunta" id="pregunta"></p>
+    <div class="reparto">
+      <div class="parte">
+        <h3>Tú pones</h3>
+        <ul>
+          <li>La música.</li>
+          <li>El material grabado, <b>aunque sea del teléfono</b>.</li>
+          <li>La última palabra sobre qué sale y qué no.</li>
+        </ul>
+      </div>
+      <div class="parte">
+        <h3>Nosotros ponemos</h3>
+        <ul>
+          <li>El plan de cada ciclo y el calendario.</li>
+          <li>Los textos, la programación y la conversación con quien te escribe.</li>
+          <li>La pauta, la medición y el reporte.</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <div class="cierre">
-    <p class="fuerte">No prometemos oyentes. Hacemos que sepas cuánto te cuesta cada uno, y que algo quede a tu nombre.</p>
-    <p class="fino">Quien te promete un número de oyentes está comprando tráfico falso, y eso hoy termina con el tema retirado de la plataforma.</p>
+    <p class="fuerte">No te vamos a prometer oyentes. Te vamos a decir cuánto te cuesta cada uno, que es algo que hoy no puedes saber.</p>
+    <p class="fino">El que te promete un número lo está comprando. Spotify detecta ese tráfico y el tema termina fuera. Acá la cuenta, la página y la gente que se junte quedan a tu nombre: si algún día esto se termina, te lo llevas completo.</p>
   </div>
 
 </div>
@@ -320,23 +350,23 @@
 (function(){
   var PASOS = {
     hoy: [
-      {paso:"01", titulo:"Ve tu video",   detalle:"Le aparece entre los Reels", estado:"viva"},
-      {paso:"02", titulo:"Toca el anuncio", detalle:"Sale de Instagram", estado:"viva"},
-      {paso:"03", titulo:"Abre Spotify", detalle:"Acá se corta el registro", estado:"corte"},
-      {paso:"04", titulo:"¿Te escuchó?", detalle:"Sin dato", estado:"muerta"},
-      {paso:"05", titulo:"¿Volverá?", detalle:"Sin dato", estado:"muerta"}
+      {paso:"01", titulo:"Ve tu video", detalle:"Le aparece entre los Reels, sin haberte buscado", estado:"viva"},
+      {paso:"02", titulo:"Toca el anuncio", detalle:"Sale de Instagram, y con eso sale de tu vista", estado:"viva"},
+      {paso:"03", titulo:"Abre Spotify", detalle:"Hasta acá llega todo lo que puedes saber", estado:"corte"},
+      {paso:"04", titulo:"¿Te escuchó?", detalle:"Nadie lo registró", estado:"muerta"},
+      {paso:"05", titulo:"¿Volverá?", detalle:"Tampoco", estado:"muerta"}
     ],
     pagina: [
-      {paso:"01", titulo:"Ve tu video", detalle:"Le aparece entre los Reels", estado:"viva"},
-      {paso:"02", titulo:"Entra a tu página", detalle:"Tu música, tu nombre, tu dominio", estado:"viva"},
-      {paso:"03", titulo:"Clic a Spotify", detalle:"Queda registrado como una persona real", estado:"viva"},
-      {paso:"04", titulo:"Entra a tu audiencia", detalle:"La campaña aprende a buscar gente parecida", estado:"viva"},
-      {paso:"05", titulo:"Vuelve al próximo tema", detalle:"Ya no partes de cero", estado:"destino"}
+      {paso:"01", titulo:"Ve tu video", detalle:"El mismo corte que ya funcionó solo", estado:"viva"},
+      {paso:"02", titulo:"Entra a tu página", detalle:"Tu música y tu nombre, en un lugar tuyo", estado:"viva"},
+      {paso:"03", titulo:"Clic a Spotify", detalle:"Queda contado: una persona real, con fecha", estado:"viva"},
+      {paso:"04", titulo:"Entra a tu audiencia", detalle:"La campaña aprende a buscar más gente como ella", estado:"viva"},
+      {paso:"05", titulo:"Vuelve al próximo tema", detalle:"Con tu próximo tema ya no partes de cero", estado:"destino"}
     ]
   };
   var LECTURAS = {
-    hoy: "<b>El circuito se corta en el tercer paso.</b> Spotify no le devuelve nada a la plataforma donde pagaste, así que la campaña termina comprando el clic más barato, que casi nunca es alguien que se queda a escuchar.",
-    pagina: "<b>El recorrido llega hasta el final.</b> Una página tuya en el medio convierte ese clic en algo contable, y cada persona que pasa deja a la campaña un poco más afinada que el día anterior."
+    hoy: "<b>Se corta en el tercer paso.</b> Spotify no le devuelve nada a la plataforma donde pagaste. La campaña se queda sin saber quién se quedó escuchando, así que hace lo único que puede: comprar el clic más barato. El clic más barato casi nunca es un oyente.",
+    pagina: "<b>El recorrido llega hasta el final.</b> Una página tuya en el medio convierte ese clic en una persona contada. Cada una deja la campaña un poco mejor apuntada que el día anterior, y eso es lo que hace que el mes tres te cueste menos que el mes uno."
   };
 
   var recorrido = document.getElementById("recorrido");
@@ -494,32 +524,5 @@
   calcular();
   window.addEventListener("resize", function(){ globo.style.opacity = 0; });
 
-  var genero = document.getElementById("genero");
-  var pregunta = document.getElementById("pregunta");
-  var copiar = document.getElementById("copiar");
-
-  function texto(){
-    var g = genero.value.trim() || "tu género";
-    return "¿Qué artistas chilenos de " + g + " me recomiendas escuchar?";
-  }
-  function refrescar(){ pregunta.textContent = texto(); }
-  genero.addEventListener("input", refrescar);
-  refrescar();
-
-  copiar.addEventListener("click", function(){
-    var previo = copiar.textContent;
-    try {
-      navigator.clipboard.writeText(texto()).then(function(){
-        copiar.textContent = "Copiada";
-        setTimeout(function(){ copiar.textContent = previo; }, 1600);
-      }, function(){
-        copiar.textContent = "Selecciónala y cópiala";
-        setTimeout(function(){ copiar.textContent = previo; }, 2200);
-      });
-    } catch (e) {
-      copiar.textContent = "Selecciónala y cópiala";
-      setTimeout(function(){ copiar.textContent = previo; }, 2200);
-    }
-  });
 })();
 </script>
