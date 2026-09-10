@@ -9,16 +9,17 @@ Al cerrar uno: marcarlo acá **y** escribir la fila en el registro del brief que
 
 ## Orden recomendado
 
-E8 está resuelto — ya no bloquea nada. E2 abarata todo lo que venga después y es lo único que
-falta para que E9/E10 se vean en vivo. E9 y E10 tienen el código listo, ventana de 82 días.
+E8, E2, E9 y E10 quedaron cerrados el 10-sep — el kit y el título nuevo ya están en vivo. Lo que
+sigue con más impacto: E1 (ya sin bloqueo) para que el código y el registro dejen de vivir en
+ramas separadas, y E3 para destrabar el post de Cata.
 
 | # | Encargo | Para quién | Estado |
 |---|---|---|---|
-| E2 | Reconectar `verificaycumple` en el dashboard de Cloudflare | Ramón | **abierto — es lo único que falta para que E9/E10 se vean en vivo** |
-| E9 | Construir la sección del kit de precio fijo | parte del laboratorio | **cerrado 10-sep** — código en `laboratorio/ley-21719`, falta desplegar (ver E2) |
-| E10 | Aplicar el título nuevo del hero | parte del laboratorio | **cerrado 10-sep** — código en `laboratorio/ley-21719`, falta desplegar (ver E2) |
+| E2 | Reconectar `verificaycumple` en el dashboard de Cloudflare | Ramón | **cerrado 10-sep** — reconectado, auto-deploy confirmado (deployó `c718c74` solo, sin token) |
+| E9 | Construir la sección del kit de precio fijo | parte del laboratorio | **cerrado 10-sep** — verificado en vivo, `verificaycumple.pages.dev` responde `149.000` |
+| E10 | Aplicar el título nuevo del hero | parte del laboratorio | **cerrado 10-sep** — verificado en vivo, `<h1>¿Estás seguro?</h1>` responde en `curl` |
 | E3 | Desbloquear el post de Cata | parte de marketing | **abierto — pegado desde el 8-sep** |
-| E1 | Devolver `laboratorio/ley-21719` sin apagar el sitio | parte del laboratorio | **abierto — depende de E2** |
+| E1 | Devolver `laboratorio/ley-21719` sin apagar el sitio | parte del laboratorio | **abierto — E2 ya no lo bloquea, puede tomarse** |
 | E4 | Poner a `spindlelab.cl` en regla con la Ley 21.719 | parte de la agencia | **abierto** |
 | E5 | Darle su política de privacidad a `verificaycumple` | parte del laboratorio | **abierto** |
 | E12 | Declarar el costo de atención semanal del proyecto 01 | Ramón | **abierto — incumple el filtro 3** |
@@ -49,12 +50,17 @@ ya no manda a un lugar inexistente.
 se crea el clon nuevo. `CLAUDE.md:37` corregido para no mandar más a un directorio que no
 existe (queda registrado que la advertencia de "corrupta" ya no aplicaba).
 
-## E2 — Reconectar `verificaycumple` en el dashboard de Cloudflare · *Ramón*
-El proyecto se creó por API y quedó sin webhook de auto-deploy. Cada cambio exige un token
-nuevo de Ramón más un disparo manual: ya consumió tres tokens en un día. **Este pendiente
-encarece todos los demás** — E9 y E10 tocan el sitio y hoy no pueden desplegarse solos.
+## E2 — Reconectar `verificaycumple` en el dashboard de Cloudflare · *Ramón* · **cerrado 10-sep**
+El proyecto se creó por API y quedó sin webhook de auto-deploy. Cada cambio exigía un token
+nuevo de Ramón más un disparo manual: ya había consumido tres tokens en un día.
 Al conectarlo, fijar y anotar en el brief cuál es la rama de producción (ver E1).
 **Cierre:** un push a la rama de producción dispara deploy sin token.
+
+**Resuelto el 10-sep:** Ramón reconectó el proyecto por el dashboard (Settings → Builds &
+deployments → Connect to Git), con **production branch `laboratorio/ley-21719`** y **root
+directory `verificaycumple`**, tal como estaba encargado. Confirmado con captura del
+dashboard: "Implementaciones automáticas habilitadas", y el commit `c718c74` (E9/E10) se
+desplegó solo, sin token. La rama de producción queda anotada acá para E1.
 
 ## E9 — Construir la sección del kit de precio fijo · *parte del laboratorio* · **cerrado 10-sep**
 Decidido por Ramón el 9-sep: **$149.000 + IVA, una vez**, con el formato "Desde $X + IVA" que
@@ -66,10 +72,9 @@ revise un abogado. **No incluye asesoría legal** — guardrail de §5 del brief
 **Construido el 10-sep** (sesión de parte, worktree aislado sobre `laboratorio/ley-21719`):
 tarjeta de precio en `section.ayuda`, mismos tokens de color del sitio (funciona en modo claro
 y oscuro, verificado con Chrome headless antes de subir), CTA cambiado a "Quiero el kit".
-Commit `c718c74`, pusheado a `origin/laboratorio/ley-21719`. **No está en vivo todavía** — el
-proyecto de Cloudflare sigue sin auto-deploy (E2), necesita un token o la reconexión por
-dashboard para que el commit se sirva.
-**Cierre real:** la sección responde en `verificaycumple.pages.dev` (pendiente de E2).
+Commit `c718c74`, pusheado a `origin/laboratorio/ley-21719`. **En vivo desde el 10-sep**
+(E2 resuelto): `curl https://verificaycumple.pages.dev` responde `149.000` y "Quiero el kit".
+**Cierre real: cumplido.**
 
 ## E10 — Aplicar el título nuevo del hero · *parte del laboratorio* · **cerrado 10-sep**
 Elegido por Ramón el 9-sep entre cuatro variantes: **"¿Estás seguro?"** con la bajada *"En 40
@@ -77,9 +82,9 @@ segundos sabes si tu sitio publica lo básico que exige la Ley 21.719 de protecc
 personales. Sin registrarte, sin que guardemos tu dominio."* Reemplaza el
 `<h1>¿Tu sitio tiene las señales que exige la Ley 21.719?` que Ramón calificó de "muy fome".
 **Aplicado el 10-sep** en el mismo commit que E9 (`c718c74`, `laboratorio/ley-21719`),
-verificado con Chrome headless antes de subir. **No está en vivo todavía** — mismo bloqueo
-de despliegue que E9 (ver E2).
-**Cierre real:** el H1 nuevo responde en `curl` sobre el sitio en vivo (pendiente de E2).
+verificado con Chrome headless antes de subir. **En vivo desde el 10-sep** (E2 resuelto):
+`curl https://verificaycumple.pages.dev` responde `<h1>¿Estás seguro?</h1>`.
+**Cierre real: cumplido.**
 
 ## E3 — Desbloquear el post de Cata · *parte de marketing, toca `main`* · **pegado desde el 8-sep**
 `marketing/encargos-otras-sesiones/verificaycumple-post-personal-cata.md` tiene un solo commit
