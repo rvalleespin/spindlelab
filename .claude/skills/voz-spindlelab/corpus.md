@@ -7,7 +7,8 @@
 Índice:
 1. [Registro singular — LinkedIn personal, 1-sep-2026](#1-singular)
 2. [Registro plural — Instagram / página, 1-sep-2026](#2-plural)
-3. [Dónde hay más material](#3-mas)
+3. [Registro plural — página de LinkedIn, 21-sep-2026](#3-plural-linkedin)
+4. [Dónde hay más material](#4-mas)
 
 ---
 
@@ -86,7 +87,48 @@ Comenta CIRCUITO y te mando el link del chequeo por DM, gratis y sin registro. (
 
 ---
 
-## <a id="3-mas"></a>3. Dónde hay más material
+## <a id="3-plural-linkedin"></a>3. Registro plural — la marca, página de LinkedIn (dom 21-sep-2026)
+
+**Estado:** ✅ publicado, `urn:li:activity:7507924615218823168`. Texto puro, sin imagen,
+con el link en el primer comentario (también como página).
+**Fuente:** `ventas/casos-de-exito/verifica-y-cumple.md`
+**Por qué es buena referencia:** es el registro plural contando algo que salió **mal en
+casa** sin volverse una confesión personal. La marca dice "nuestro sitio sacó 36 de 100" y
+"no tenemos cómo saber cuántos correos se perdieron" en primera persona del plural, sin
+una sola frase de venta y sin nombrar la multa. Es la prueba de que "decir la parte
+incómoda" no obliga a cambiar al singular.
+
+### Cuerpo
+
+Publicamos un chequeo gratuito para la Ley 21.719, la nueva ley de protección de datos de Chile.
+
+Antes de publicarlo lo corrimos sobre nuestro propio sitio.
+
+spindlelab.cl sacó 36 de 100.
+
+Sin política de privacidad. Sin gestor de consentimiento. Con Analytics y el Pixel de Meta corriendo antes de que nadie diera permiso.
+
+Y revisando el formulario de contacto para arreglar eso apareció algo peor, sin relación con la ley: un error en el código dejaba el botón "Enviando…" pegado para siempre. El mensaje no llegaba a ninguna parte. No tenemos cómo saber cuántos correos se perdieron así, en silencio, antes de que lo encontráramos.
+
+Pasamos el día arreglando todo: el formulario, el consentimiento antes de pedir datos, la política de privacidad, los rastreadores bloqueados hasta que alguien dice que sí.
+
+spindlelab.cl ahora saca 73.
+
+No lo contamos para presumir un número. Lo contamos porque así funciona esto: construyes el instrumento, lo apuntas primero a ti mismo, y arreglas lo que encuentra. No lo que se ve mejor en una reunión de ventas.
+
+Si tienes un formulario de contacto, ya estás tratando datos personales. La ley no distingue tamaño de empresa, y entra en plena vigencia el 1 de diciembre de 2026.
+
+Dejamos el chequeo en el primer comentario, por si quieres ver qué encuentra en el tuyo.
+
+### Primer comentario
+
+Acá está: https://verificaycumple.pages.dev
+
+Escribes tu dominio y en segundos sabes qué te falta. Gratis, sin registro, y no guardamos el dominio que revisas. Cada señal que no pases viene con la instrucción de cómo corregirla.
+
+---
+
+## <a id="4-mas"></a>4. Dónde hay más material
 
 - **Piezas listas y pasadas por revisión, aún no publicadas:**
   `marketing/redes/2026-09-septiembre/*/publicar.md`. Útiles para ver la intención y el

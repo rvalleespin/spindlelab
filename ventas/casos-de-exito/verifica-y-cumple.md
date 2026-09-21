@@ -95,12 +95,14 @@ SpindleLab) — no hace falta cotizar en la llamada, solo confirmar el alcance.
 
 ---
 
-## Borrador de post público (LinkedIn, página de SpindleLab — voz plural)
+## Post público (LinkedIn, página de SpindleLab — voz plural)
 
-**Estado:** borrador v3 (21-sep). Reescrito en registro plural después de que Ramón
-decidiera que Verifica y Cumple es un servicio de SpindleLab, no un proyecto suyo aparte.
-Calibrado contra `voz-spindlelab/corpus.md` (pieza plural del 1-sep). **Sin pase de tono de
-Ramón. No publicar tal cual.**
+**Estado: ✅ publicado el 21-sep-2026** por la página de SpindleLab
+(`urn:li:activity:7507924615218823168`), con el link del chequeo en el primer comentario,
+también como página. Texto v3, reescrito en registro plural después de que Ramón decidiera
+que Verifica y Cumple es un servicio de SpindleLab, no un proyecto suyo aparte. Calibrado
+contra `voz-spindlelab/corpus.md` (pieza plural del 1-sep). Queda transcrito acá tal como
+salió; el canon de voz está en el corpus.
 
 ### Cuerpo
 
@@ -142,11 +144,13 @@ Escribes tu dominio y en segundos sabes qué te falta. Gratis, sin registro, y n
       correos perdidos sin saber cuántos.
 - [x] Cifras reales y verificadas: 36 (9-sep) y 73 (21-sep), medidas con el chequeo público.
 - [x] Sin alarmismo: no menciona la multa máxima, no dice "cumples" ni "no cumples".
-- [ ] **Falta: pase de tono de Ramón antes de publicar.**
+- [x] Pase de tono de Ramón: dado el 21-sep ("sí, reescríbelo para la voz de SpindleLab"
+      → "dale, súbelo a la página de SpindleLab").
 
-### Nota para cuando se publique
+### Pendiente: qué hace el perfil personal de Ramón
 
-Si sale por la página de SpindleLab, el post personal de Ramón no debería repetir el mismo
-texto en singular: o se comparte el de la página, o se escribe otro con un ángulo distinto.
-Repetir la misma historia en los dos registros es lo que el manual de marca llama mezclar
-las voces.
+Salió por la página, así que el post personal **no** debe repetir el mismo texto en
+singular: o se comparte el de la página, o se escribe otro con un ángulo distinto (el
+ángulo personal disponible es el que la v2 ya tenía: que el instrumento lo delató a él
+primero). Repetir la misma historia en los dos registros es lo que el manual de marca
+llama mezclar las voces. **Sin decidir todavía.**
