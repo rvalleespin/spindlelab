@@ -184,7 +184,7 @@
     color: var(--texto-suave);
     white-space: nowrap;
   }
-  .fecha-limite strong { color: var(--texto); font-family: var(--serif); }
+  .fecha-limite strong { color: var(--texto); font-family: "Archivo Black", Impact, var(--serif); font-weight: 400; }
   .header-derecha { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
   .nav-planes { font-size: 0.85rem; font-weight: 700; color: var(--sello-oscuro); text-decoration: none; white-space: nowrap; }
   .nav-planes:hover { color: var(--sello); }
@@ -203,12 +203,20 @@
     border-bottom: 4px solid var(--vivo-tinta);
   }
   .hero-envoltura { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; }
+  /* Mismo tratamiento tipográfico que .etiqueta-seccion: es la misma pieza, solo que
+     en el hero. Llevaba serif, herencia del diseño descartado, y era el único serif
+     visible de la portada. */
   .hero-badge {
     display: inline-flex; align-items: center; width: fit-content;
     background: var(--vivo-verde); color: var(--vivo-tinta);
-    font-family: var(--serif); font-weight: 700; font-size: 0.78rem;
-    letter-spacing: 0.05em; text-transform: uppercase;
-    padding: 8px 14px; border-radius: 999px; margin: 0 0 18px;
+    font-family: "Archivo Black", Impact, var(--serif); font-weight: 400;
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 6px 12px; border-radius: 999px; margin: 0 0 18px;
+  }
+  /* Archivo Black es bastante más ancha que la serif que había antes: en móvil el
+     rótulo se partía en dos líneas y dejaba "21.719" solo. Se aprieta, no se acorta. */
+  @media (max-width: 600px) {
+    .hero-badge { font-size: 0.62rem; letter-spacing: 0.05em; padding: 6px 10px; }
   }
   .titulo-absurdo {
     font-family: "Archivo Black", Impact, var(--serif);
@@ -309,7 +317,7 @@
   .ejemplo-anillo-num { display: none; }
   .ejemplo-dominio { color: #fff; opacity: .92; }
   .ejemplo-dominio strong { color: var(--vivo-verde); }
-  .ejemplo-delta { font-family: var(--serif); font-weight: 700; color: var(--vivo-verde); margin-left: 4px; }
+  .ejemplo-delta { font-family: "Archivo Black", Impact, var(--serif); font-weight: 400; color: var(--vivo-verde); margin-left: 4px; }
   .ejemplo-items { display: none; }
   .ejemplo-link { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
   .ejemplo-link:hover { color: var(--vivo-verde); }
@@ -358,9 +366,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--serif);
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-family: "Archivo Black", Impact, var(--serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
     color: var(--texto);
   }
   .puntaje-texto { font-size: 0.92rem; color: var(--texto-suave); }
@@ -427,7 +436,7 @@
   .panel-resolucion { background: var(--texto); color: var(--panel); border-radius: 0; border-top: 4px solid var(--sello); padding: 22px 24px; margin: 26px 0 6px; }
   .panel-resolucion .kicker { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; margin: 0 0 8px; color: var(--panel); opacity: .75; }
   .panel-resolucion p { margin: 0 0 16px; font-size: 0.95rem; line-height: 1.5; }
-  .panel-resolucion .monto { font-family: var(--serif); font-weight: 700; }
+  .panel-resolucion .monto { font-family: "Archivo Black", Impact, var(--serif); font-weight: 400; }
   .panel-resolucion .boton-ayuda { background: var(--sello); }
   .panel-resolucion .boton-ayuda:hover { background: var(--sello-oscuro); }
 
@@ -678,7 +687,7 @@
 <main>
   <section class="hero">
     <div class="hero-envoltura">
-      <p class="hero-badge">Chequeo técnico gratuito — Ley 21.719</p>
+      <p class="hero-badge">Chequeo técnico gratuito · Ley 21.719</p>
       <h1 class="titulo-absurdo"><span class="t-blanco">¿Estás</span> <span class="t-verde">seguro?</span></h1>
 
       <div class="hero-imagen-centro">
