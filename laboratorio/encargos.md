@@ -20,7 +20,7 @@ ramas separadas, y E3 para destrabar el post de Cata.
 | E10 | Aplicar el título nuevo del hero | parte del laboratorio | **cerrado 10-sep** — verificado en vivo, `<h1>¿Estás seguro?</h1>` responde en `curl` |
 | E3 | Desbloquear el post de Cata | parte de marketing | **abierto — pegado desde el 8-sep** |
 | E1 | Devolver `laboratorio/ley-21719` sin apagar el sitio | parte del laboratorio | **abierto — E2 ya no lo bloquea, puede tomarse** |
-| E4 | Poner a `spindlelab.cl` en regla con la Ley 21.719 | parte de la agencia | **abierto** |
+| E4 | Poner a `spindlelab.cl` en regla con la Ley 21.719 | parte de la agencia | **avanzado 21-sep** — 36→73, falta CMP real (nuevo encargo, sin número) |
 | E5 | Darle su política de privacidad a `verificaycumple` | parte del laboratorio | **cerrado 21-sep** — verificado en vivo, puntaje subió de 36 a 73 |
 | E12 | Declarar el costo de atención semanal del proyecto 01 | Ramón | **abierto — incumple el filtro 3** |
 | E6 | Decidir el Figma de referencia (Community) | Ramón | **abierto** (el otro Figma ya se resolvió) |
@@ -118,7 +118,7 @@ puede retirar la otra.
 **Cierre:** `curl` al sitio sigue en 200 y `git merge-base --is-ancestor` da verdadero en las
 dos direcciones.
 
-## E4 — Poner a `spindlelab.cl` en regla con la Ley 21.719 · *parte de la agencia*
+## E4 — Poner a `spindlelab.cl` en regla con la Ley 21.719 · *parte de la agencia* · **73/100, CMP pendiente**
 No es del laboratorio, pero lo encontró el laboratorio. Verificado el 9 y el 10-sep:
 `spindlelab.cl` da **36/100** en el chequeo que ahora enlaza desde `/diagnostico/` — sin
 política de privacidad (404 en `/privacidad/`, `/politica-de-privacidad/`, `/legal/`,
@@ -128,6 +128,26 @@ enviando nombre, correo y sitio a `api.web3forms.com` sin checkbox de consentimi
 (Art. 27-28) sin política publicada (Art. 14 ter) ni acto afirmativo previo (Art. 12). Misma
 fecha límite: 1-dic-2026. El texto legal es de abogado; acá se hace la capa técnica.
 **Cierre:** el chequeo sube de 36/100 y `/contacto/` pide consentimiento.
+
+**Avanzado el 21-sep** (Ramón: "arreglemos la casa primero"), commit `fdae9c4` en `main`,
+verificado en vivo, **puntaje 36 → 73**:
+- **Hallazgo no relacionado pero más urgente, arreglado de paso:** el submit handler de
+  `/contacto/` referenciaba un campo de formulario que ya no existe (`'Servicio de interés'`),
+  así que cada envío lanzaba un `TypeError` antes del `fetch()` — el botón quedaba pegado en
+  "Enviando…" para siempre y el mensaje **nunca llegaba**. Confirmado en producción antes de
+  tocar nada (mismo bug en el sitio real). Arreglado en el mismo commit.
+- Checkbox de consentimiento requerido, sin premarcar, agregado al formulario (Art. 12).
+- El evento de conversión de GA4/Meta Pixel del formulario ya no dispara si no se marcó.
+- Página nueva `/privacidad/`, con los datos reales que procesa el sitio (formulario vía
+  web3forms.com, GA4, Meta Pixel), enlazada desde el footer de las 20 páginas del sitio.
+- **Sin cerrar del todo — a propósito, y dicho en la propia política:** GA4 y Meta Pixel
+  siguen cargando sin pedir consentimiento primero en *todas* las páginas (no solo el
+  formulario). Eso es un gestor de cookies real (CMP) gateando esos scripts — un trabajo más
+  grande, no hecho hoy. La política nueva lo declara como "aviso honesto", no lo esconde.
+**Queda como encargo nuevo:** un gestor de cookies real (Google Consent Mode v2 o equivalente)
+que gatee GA4/Meta Pixel en las ~20 páginas donde se cargan hoy sin condición
+(`Layout.astro` + copias a mano en cada HTML estático). Es lo único que falta para que el
+chequeo suba del 73.
 
 ## E5 — Darle su política de privacidad a `verificaycumple` · *parte del laboratorio* · **cerrado 21-sep**
 El sitio da **36/100 en su propio chequeo** (verificado 10-sep). Trata muchos menos datos que
