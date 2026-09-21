@@ -1,7 +1,9 @@
 # Respuesta a Carlos: el giro a Terapias 5D
 
-- **Fecha:** 21-sep-2026 · **Estado:** ✅ borrador creado en el buzón de hola@spindlelab.cl,
-  dentro del hilo con Carlos, con el anexo adjunto. **Sin enviar: lo envía Ramón.**
+- **Fecha:** 21-sep-2026 · **Estado:** 📤 **ENVIADO** el 21-sep a las 21:21 UTC desde
+  hola@spindlelab.cl, dentro del hilo con Carlos. **Salió sin el PDF adjunto**, pese a que
+  el texto lo menciona. Se resuelve con `ventas/sr-soya-seguimiento-adjunto.md`.
+  Verificado sin placeholders antes de salir.
 - **Remitente:** `hola@spindlelab.cl` · **Firma:** a nombre de Ramón.
 - **Registro:** singular. Él escribe de usted por momentos; se mantiene el tuteo que ya
   venían usando, que además refuerza que trabaja directo contigo.

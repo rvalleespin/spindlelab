@@ -117,7 +117,9 @@ servicio de coaching espiritual basado en *A Course in Miracles*, **en Estados U
 dejar los meses 2 y 3 para el disco. Quiere medición de performance completa, de anuncio a
 reserva pagada.
 
-**Estado:** respuesta redactada y dejada como borrador en el buzón, sin enviar. El
+**Estado:** respuesta **enviada** el 21-sep 21:21 UTC, en el hilo. Salió sin el anexo PDF
+que el propio texto menciona, así que queda pendiente mandarlo en un correo corto de
+seguimiento (`ventas/sr-soya-seguimiento-adjunto.md`). El
 diagnóstico es que con $100.000 mensuales de pauta ese mercado no se puede validar, y la
 propuesta de salida es que las primeras ventas financien la campaña del mes 2. Detalle en
 `ventas/sr-soya-estrategia-autofinanciada.md`.
