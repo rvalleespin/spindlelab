@@ -1,6 +1,7 @@
 # Respuesta a Carlos: el giro a Terapias 5D
 
-- **Fecha:** 21-sep-2026 · **Estado:** borrador para revisión humana. **No enviado.**
+- **Fecha:** 21-sep-2026 · **Estado:** ✅ borrador creado en el buzón de hola@spindlelab.cl,
+  dentro del hilo con Carlos, con el anexo adjunto. **Sin enviar: lo envía Ramón.**
 - **Remitente:** `hola@spindlelab.cl` · **Firma:** a nombre de Ramón.
 - **Registro:** singular. Él escribe de usted por momentos; se mantiene el tuteo que ya
   venían usando, que además refuerza que trabaja directo contigo.
@@ -11,79 +12,50 @@
 ## Versión corta (la que va con el anexo adjunto). **Usa esta.**
 
 **Asunto:** Sobre mover el mes 1 a Terapias 5D
-**Adjunto:** `SPL-NT-2026-001-srsoya-piloto-eeuu.pdf`
+**Adjunto:** `SPL-NT-2026-001-srsoya-piloto-eeuu.pdf` · **Para:** soyamusicbooking@gmail.com
 
 ```
 Hola Carlos,
 
-Me gusta el razonamiento y estoy de acuerdo con el fondo. Un servicio que cobra
-por sesión es mejor sujeto de campaña que un disco, porque cada conversión deja
-plata y el recorrido se puede medir entero, desde el anuncio hasta la reserva
-pagada. Con música se mide hasta el clic y ahí se acaba.
+Gracias por la confianza, y me alegra que llegues con una propuesta así en vez de esperar a que empecemos. Estoy de acuerdo con el fondo: un servicio que cobra por sesión es mejor sujeto de campaña que un disco, porque cada conversión deja plata y el recorrido se puede medir entero, desde el anuncio hasta la reserva pagada. Con música se mide hasta el clic y ahí se acaba.
 
-Antes de entrar en la estrategia, una aclaración de números para que no nos pase
-una sorpresa después. Los $900.000 de los tres meses no son todos honorarios: son
-$200.000 mensuales de trabajo ($600.000) más $100.000 mensuales de publicidad
-($300.000), que van a tu tarjeta y sobre los que no cobro comisión.
+Como partimos el 12 de octubre, tenemos tres semanas para dejar esto bien armado antes de que corra el primer peso.
 
-Eso importa por lo que viene. Con $100.000 mensuales de pauta, Estados Unidos no
-se puede validar, y prefiero decírtelo antes de que gastemos el mes. La cuenta es
-corta: Meta necesita unas 50 conversiones por semana para optimizar, así que con
-ese presupuesto cada reserva tendría que costarte menos de $460, más o menos medio
-dólar. Eso no pasa en ningún mercado, y menos allá. Si el resultado sale malo, no
-vas a saber si tu oferta no funciona o si simplemente faltó presupuesto.
+Primero una aclaración de números, para que no nos pase una sorpresa en el camino. De los $300.000 mensuales, $200.000 son mi trabajo y $100.000 son la inversión publicitaria. Esa inversión no la cobro yo: va completa a la campaña, sin comisión de mi parte. Lo ideal es que la tarjeta cargada en la cuenta publicitaria sea la tuya, así ves el gasto en tiempo real y la cuenta queda a tu nombre desde el primer día. Si prefieres depositarme los $300.000 y que yo administre esa parte también se puede, pero quería decirte cuál me parece mejor para ti.
 
-Ahora, la parte buena: no hace falta que esa plata salga de tu bolsillo.
+Ahora, sobre el mercado que elegiste. Con $100.000 mensuales de pauta, Estados Unidos no se puede validar, y prefiero decírtelo antes de que gastemos el mes. La cuenta es corta: Meta necesita unas 50 conversiones por semana para optimizar una campaña, así que con ese presupuesto cada reserva tendría que costarte menos de $460, más o menos medio dólar. Eso no pasa en ningún mercado, y menos allá, que es de los lugares más caros para anunciar.
 
-Tienes algo que casi nadie tiene al lanzar un servicio, que es gente que te sigue
-porque le haces sentido. Son pocas para vender un disco y son suficientes para
-vender las primeras sesiones de acompañamiento, porque esto no necesita miles de
-personas. Necesita unas cuantas que ya te crean.
+Lo grave no es gastar esa plata. Es que si el resultado sale malo no vas a saber si tu oferta no funciona o si simplemente faltó presupuesto.
+
+La parte buena: no hace falta que esa plata salga de tu bolsillo.
+
+Tienes algo que casi nadie tiene al lanzar un servicio, que es gente que te sigue porque le haces sentido. Son pocas para vender un disco y son suficientes para vender las primeras sesiones de acompañamiento, porque esto no necesita miles de personas. Necesita unas cuantas que ya te crean.
 
 Así que te propongo dar vuelta el orden:
 
-Mes 1, empaquetamos la oferta, montamos la página y la medición, y salimos a
-conseguir los primeros clientes en tu propia audiencia. Casi sin pauta.
+Mes 1, empaquetamos la oferta, montamos la página y la medición, y salimos a conseguir los primeros clientes en tu propia audiencia. Casi sin pauta.
 
-Mes 2, con lo que facturaste el mes 1 compramos publicidad de verdad, y entramos
-con testimonios reales y sabiendo qué objeción aparece primero.
+Mes 2, con lo que hayas facturado el mes 1 compramos publicidad de verdad, y entramos con testimonios reales y sabiendo qué objeción aparece primero.
 
-Mes 3, escalamos lo que haya rendido, o volvemos al disco con el sistema ya
-andando.
+Mes 3, escalamos lo que haya rendido, o volvemos al disco con el sistema ya andando.
 
-Al mes 2 la campaña parte con tres cosas que hoy no existen: plata, testimonios y
-objeciones reales. Las dos últimas no las compra ningún presupuesto, y son las que
-hacen que un anuncio funcione.
+Al mes 2 la campaña parte con tres cosas que hoy no existen: plata, testimonios y objeciones reales. Las dos últimas no las compra ningún presupuesto, y son justamente las que hacen que un anuncio funcione.
 
-Y hay una cosa más que te quiero plantear, que pesa más que cualquier ajuste de
-campaña: te conviene vender un programa y no sesiones sueltas. Cuatro o seis
-sesiones con un recorrido y un resultado que se pueda nombrar. El trabajo por
-sesión es el mismo que ya haces, pero el valor de cada cliente se multiplica, y
-con eso sube en la misma proporción lo que puedes gastar en conseguirlo. Un
-programa se vende una vez y te deja trabajando varias semanas.
+Y hay algo más que te quiero plantear, que pesa más que cualquier ajuste de campaña: te conviene vender un programa y no sesiones sueltas. Cuatro o seis sesiones con un recorrido y un resultado que se pueda nombrar. El trabajo por sesión es el mismo que ya haces, pero el valor de cada cliente se multiplica, y con eso sube en la misma proporción lo que puedes gastar en conseguirlo. Un programa se vende una vez y te deja trabajando varias semanas.
 
-En el anexo va todo el detalle: la aritmética completa, el plan de los tres meses,
-por dónde entrar en Estados Unidos (tengo una idea sobre eso que te puede ahorrar
-bastante), y tus cuatro preguntas respondidas una por una.
+En el anexo va todo el detalle: la aritmética completa, el plan de los tres meses, por dónde entrar en Estados Unidos (tengo una idea sobre eso que te puede ahorrar bastante) y tus cuatro preguntas respondidas una por una.
 
-Sobre el orden que propones: me parece bien y lo tomo. Lo único que quiero dejar
-dicho es que ese mes se va completo a esto, así que durante ese mes no corre la
-gestión de redes del proyecto musical. El mes tiene un tamaño y prefiero que esté
-claro entre los dos desde ahora. Y las conversaciones de venta del mes 1 las tienes
-tú: en un servicio así, quien vende eres tú, y no conviene que sea de otra manera.
+Sobre el orden que propones, me parece bien y lo tomo. Dos cosas que quiero dejar dichas para que estemos igual de claros los dos: ese mes se va completo a esto, así que durante ese mes no corre la gestión de redes del proyecto musical. Y las conversaciones de venta del mes 1 las tienes tú, porque en un servicio de acompañamiento quien vende eres tú y no conviene que sea de otra manera. Yo pongo el plan, la oferta escrita, la página, la medición, el contenido y la campaña.
 
 Para armarte el plan con números necesito tres respuestas:
 
 1. ¿A qué precio venderías, y estarías dispuesto a empaquetarlo en un programa?
 2. ¿Terapias 5D ya tiene página, agenda y forma de cobrar, o hay que construirlo?
-3. ¿Cuánto es lo máximo que podrías poner en publicidad si esto te convence,
-   aunque hoy no sea mucho?
+3. ¿Cuánto es lo máximo que podrías poner en publicidad si esto te convence, aunque hoy no sea mucho?
 
-La primera es la que más pesa. Sin ese número no se puede saber cuánto puede
-costar conseguir un cliente y que igual te quede ganancia.
+La primera es la que más pesa. Sin ese número no se puede saber cuánto puede costar conseguir un cliente y que igual te quede ganancia.
 
-Léelo con calma y me dices. Si prefieres lo conversamos por llamada y te respondo
-ahí mismo lo que salga.
+Léelo con calma y me dices. Con tus respuestas te mando el plan del trimestre con números y lo dejamos cerrado antes del 12, para que el primer día ya sepamos exactamente qué hacer.
 
 Ramón
 ```

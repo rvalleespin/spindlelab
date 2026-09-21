@@ -19,7 +19,10 @@
 - **Repo y ramas:** no tiene. Sitio propio: **srsoya.com**, en **WordPress.com**.
   Spotify: artista `732kUzXCveitCpGdUAhyni`.
 - **Quién aprueba:** Sr. Soya de su lado. Ramón del nuestro.
-- **Estado:** prospecto activo. **Cotización `SPL-COT-2026-015` emitida el 10-sep**, pendiente de enviar y de respuesta.
+- **Estado:** ✅ **GANADO.** Aceptó el Plan Arranque el 15-sep. Primer depósito de $300.000
+  el **12 de octubre de 2026**, por tres meses. Confirmado por correo por ambas partes.
+- **Correo:** `soyamusicbooking@gmail.com` (firma como Carlos Soya). El hilo vivo con él es
+  «Re: Reunión mañana a las 12:00».
 
 ---
 
@@ -106,6 +109,22 @@ evidentemente no explica bien el modelo. Ese es el arreglo pendiente.
   la imagen, no en el texto, y un rechazo no viene explicado. Se revisa el material con
   ese filtro puesto antes de subirlo, no después.
 - Sin promesas de oyentes ni reproducciones, igual que con cualquier otro cliente.
+
+## Lo que pasó después de cerrar (21-sep)
+
+Carlos propone **reorganizar el trimestre**: usar el mes 1 para validar **Terapias 5D**, un
+servicio de coaching espiritual basado en *A Course in Miracles*, **en Estados Unidos**, y
+dejar los meses 2 y 3 para el disco. Quiere medición de performance completa, de anuncio a
+reserva pagada.
+
+**Estado:** respuesta redactada y dejada como borrador en el buzón, sin enviar. El
+diagnóstico es que con $100.000 mensuales de pauta ese mercado no se puede validar, y la
+propuesta de salida es que las primeras ventas financien la campaña del mes 2. Detalle en
+`ventas/sr-soya-estrategia-autofinanciada.md`.
+
+⚠️ **Punto operativo sin resolver:** Carlos habla de «depositar 300 mil». Hay que dejar
+claro si la pauta se carga a **su** tarjeta (lo recomendado, y lo que dice la cotización) o
+si deposita el total y SpindleLab administra esa parte. Va planteado en el borrador.
 
 ## Documentos relacionados
 
