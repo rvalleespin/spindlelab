@@ -28,6 +28,19 @@
   sin el corazón deshonesto de coronarse. 3 movimientos → Renata/Cata (contenido citable),
   outbound (Sortlist/AgenciasB2B/Clutch), Simón/Diego (autoridad de entidad en el sitio).
 
+- **Tercer estudio cerrado (2026-09-21):** `marketing/inteligencia-mercado/2026-09-estudio-temas-x-ganchos-linkedin.md`,
+  barrido de temas tendencia en **X** (Chrome logueado) como gancho para los posts personales
+  de LinkedIn. X como **fuente de temas, no canal**. 177 posts revisados, 12 búsquedas.
+  **Hallazgos centrales:** (1) Google declaró en **mayo/junio 2026** que no hay canal GEO
+  separado del SEO ("Good SEO is good GEO", Brendon Kraham) y el rubro recién lo discutió en
+  septiembre; (2) **se cayó `llms.txt` con datos**: Ahrefs, 137.000 dominios, 97% sin una sola
+  petición en mayo-2026, y la guía de Google dice ignorarlo — **el chequeo público de
+  SpindleLab le da 4 puntos**, así que toca al propio instrumento; (3) **no hay conversación
+  viva de AEO/GEO en español ligada a LatAm en X**: 5 resultados en 7 semanas, y los reales son
+  una masterclass y una autocoronación ("TOP #2 agencia GEO en LATAM"). Confirma en otra
+  plataforma el patrón del estudio del 25-ago. Recomendé 2 ángulos: corregir el peso de
+  `llms.txt` en público, y contrastar "GEO es SEO" contra el Índice de Citabilidad propio.
+
 ## Gotchas de investigación (aprendidos / heredados)
 
 - **Instagram requiere Chrome logueado.** Solo la sesión local del Mac de Ramón
@@ -40,6 +53,16 @@
   prospectos, que nunca se nombran sin permiso. Ser factual, no difamar.
 - La distinción **prueba social real vs inflada** es el eje que más separa a
   SpindleLab de la ola IG — clasificarla siempre, no asumirla.
+- **Barrido en X (2026-09-21):** buscar `GEO` a secas es inservible por homonimia
+  (geografía, geoingeniería, Neo Geo, satélites, el juego "GeoWare"): cruzar siempre con
+  un término del rubro. `min_faves:` sesga a cuentas grandes en inglés — en las búsquedas
+  en español correrlo **sin** ese filtro o se pierde lo interesante. La pestaña
+  *Destacado* devuelve posts de hace un año: usar `since:` siempre.
+- **Cómo extraer de X sin perder nada:** X virtualiza el DOM (borra los tweets que salen
+  de pantalla), así que scrollear y leer después no funciona. Lo que sirve: `javascript_tool`
+  acumulando en un `Map` mientras scrollea, persistido en `localStorage` para que sobreviva
+  a cada navegación, y el volcado final inyectado en un `<article>` sobre `x.com/robots.txt`
+  para leerlo de una con `get_page_text` (la salida directa de JS se trunca a ~1.200 caracteres).
 
 ## Competidores conocidos
 
