@@ -309,6 +309,7 @@ export async function chequear(entrada, fetchImpl = fetch) {
 const CORS = {
   'Content-Type': 'application/json; charset=utf-8',
   'Cache-Control': 'public, max-age=300',
+  'Access-Control-Allow-Origin': '*',
 };
 
 export async function onRequestGet({ request }) {
