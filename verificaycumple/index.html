@@ -64,12 +64,13 @@
     --info-bg: #efe6d3;
     --sombra: 0 1px 2px rgba(34,27,19,.04), 0 8px 24px -12px rgba(34,27,19,.18);
     --serif: Georgia, "Times New Roman", Times, serif;
-    --vivo-naranja: #ff5a1f;
-    --vivo-naranja-osc: #c93f10;
-    --vivo-mostaza: #ffcb3b;
-    --vivo-tinta: #1a1510;
+    --vivo-azul: #2e5bff;
+    --vivo-rosa: #ff3ea0;
+    --vivo-rosa-osc: #c21e78;
+    --vivo-verde: #d6ff3d;
+    --vivo-tinta: #17163a;
     --vivo-panel: #fffaf0;
-    --vivo-suave: #6b5c30;
+    --vivo-suave: #56547a;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -168,7 +169,7 @@
   section.hero {
     position: relative;
     overflow: hidden;
-    background: var(--vivo-mostaza);
+    background: var(--vivo-verde);
     padding: 0;
     border-bottom: 4px solid var(--vivo-tinta);
   }
@@ -177,7 +178,7 @@
   .hero-texto-block { display: flex; flex-direction: column; justify-content: center; padding: 48px 24px 40px 20px; position: relative; z-index: 2; }
   .hero-badge {
     display: inline-flex; align-items: center; width: fit-content;
-    background: var(--vivo-tinta); color: var(--vivo-mostaza);
+    background: var(--vivo-tinta); color: var(--vivo-verde);
     font-family: var(--serif); font-weight: 700; font-size: 0.78rem;
     letter-spacing: 0.05em; text-transform: uppercase;
     padding: 8px 14px; border-radius: 999px; margin: 0 0 20px;
@@ -190,9 +191,9 @@
     margin: 0 0 22px; color: var(--vivo-tinta);
     position: relative;
     text-shadow:
-      2px 2px 0 var(--vivo-mostaza), -2px -2px 0 var(--vivo-mostaza),
-      2px -2px 0 var(--vivo-mostaza), -2px 2px 0 var(--vivo-mostaza),
-      4px 4px 0 var(--vivo-mostaza);
+      2px 2px 0 var(--vivo-verde), -2px -2px 0 var(--vivo-verde),
+      2px -2px 0 var(--vivo-verde), -2px 2px 0 var(--vivo-verde),
+      4px 4px 0 var(--vivo-verde);
   }
   @media (min-width: 901px) {
     .titulo-absurdo {
@@ -227,14 +228,14 @@
     font-size: 1rem;
     font-weight: 700;
     color: #fff;
-    background: var(--vivo-naranja);
+    background: var(--vivo-rosa);
     border: 2px solid var(--vivo-tinta);
     border-radius: 0;
     cursor: pointer;
     box-shadow: 5px 5px 0 var(--vivo-tinta);
     transition: background .15s ease, transform .1s ease, box-shadow .1s ease;
   }
-  form.chequeo button:hover { background: var(--vivo-naranja-osc); }
+  form.chequeo button:hover { background: var(--vivo-rosa-osc); }
   form.chequeo button:active { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--vivo-tinta); }
   form.chequeo button:disabled { background: #a89a86; cursor: wait; }
   .hero-texto-block .nota-privacidad {
@@ -245,7 +246,7 @@
   }
   .hero-texto-block #resultado { color: var(--vivo-tinta); }
 
-  .hero-imagen-block { position: relative; min-height: 320px; background: var(--vivo-naranja); overflow: hidden; }
+  .hero-imagen-block { position: relative; min-height: 320px; background: var(--vivo-azul); overflow: hidden; }
   .hero-foto { width: 100%; height: 100%; object-fit: cover; object-position: center 32%; display: block; }
 
   /* --- Mockup de ejemplo: producto a la vista en el hero, etiquetado sin ambigüedad ---
@@ -264,12 +265,12 @@
     transform: rotate(-1.5deg);
   }
   .ejemplo-delta { font-family: var(--serif); font-weight: 700; color: var(--vivo-tinta); margin-left: 6px; }
-  .ejemplo-link { display: inline-block; margin-top: 14px; font-size: 0.82rem; font-weight: 700; color: var(--vivo-naranja-osc); text-decoration: none; border-bottom: 1.5px solid var(--vivo-naranja); }
-  .ejemplo-link:hover { color: var(--vivo-naranja); }
+  .ejemplo-link { display: inline-block; margin-top: 14px; font-size: 0.82rem; font-weight: 700; color: var(--vivo-rosa-osc); text-decoration: none; border-bottom: 1.5px solid var(--vivo-rosa); }
+  .ejemplo-link:hover { color: var(--vivo-rosa); }
   .ejemplo-etiqueta {
     position: absolute;
     top: -11px; left: 16px;
-    background: var(--vivo-naranja);
+    background: var(--vivo-rosa);
     color: #fff;
     font-size: 0.68rem;
     font-weight: 700;
