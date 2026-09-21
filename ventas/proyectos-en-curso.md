@@ -12,7 +12,7 @@
 
 | Cliente | Línea de servicio | Proceso de referencia | Fase actual | Próximo hito | Último contacto | Notas |
 |---|---|---|---|---|---|---|
-| Bernardo Combeau | Desarrollo Web (**Plan Esencial**, oferta $392.000) | `ventas/proceso-desarrollo-web-cliente.md` | 5. Lanzamiento — cliente aprobó el sitio en reunión (20 jul); armando checklist técnico de salida | Conectar dominio `bernardocombeau.cl` (comprado 20 jul en NIC Chile) — DNS y OAuth callback en curso. Meta tope: **viernes 24 jul**. Cobros pendientes: Fase 1 ($117.600) + Fase 5 ($117.600) = $235.200, en **un solo cobro contra entrega** (decisión 22 jul) | 20 jul 2026 (reunión: cliente dio OK, quedó probando el panel) | Cotización SPL-COT-2026-014 aprobada. Plan Esencial (no Portafolio Pro) — el abono de $156.800 = 40% de $392.000 lo confirma. **Cambió el orden de cobro**: se pagó primero la Fase 3; Fases 1 y 5 quedan pendientes. Proyecto en `bernardo-combeau` (Vercel) — los fallos de deploy del 14-16 jul ya se resolvieron (bug de configuración, no de código). Bernardo ya es colaborador en GitHub y está usando el panel de administración directamente (creó series de prueba él mismo). **Sigue pendiente pedir permiso de caso público — no se ha pedido todavía**, pese al acuerdo de pedirlo desde el día 1; dado que el cliente ya aprobó y está en fase de lanzamiento, es buen momento para pedirlo ahora. Checklist técnico restante: registros DNS en NIC Chile, actualizar callback de la OAuth App de GitHub, apuntar `site` del proyecto al dominio real — nada de esto bloquea el pago, son tareas en paralelo. Ver "Estado de pagos" abajo. |
+| Bernardo Combeau | Desarrollo Web (**Plan Esencial**, oferta $392.000) | `ventas/proceso-desarrollo-web-cliente.md` | 5. Lanzamiento — cliente aprobó el sitio en reunión (20 jul); armando checklist técnico de salida | Conectar dominio `bernardocombeau.cl` (comprado 20 jul en NIC Chile) — DNS y OAuth callback en curso. Meta tope: **viernes 24 jul**. Cobros pendientes: Fase 1 ($117.600) + Fase 5 ($117.600) = $235.200, en **un solo cobro contra entrega** (decisión 22 jul) | 20 jul 2026 (reunión: cliente dio OK, quedó probando el panel) | Cotización SPL-COT-2026-014 aprobada. Plan Esencial (no Portafolio Pro) — el abono de $156.800 = 40% de $392.000 lo confirma. **Cambió el orden de cobro**: se pagó primero la Fase 3; Fases 1 y 5 quedan pendientes. Proyecto en `bernardo-combeau` (Vercel) — los fallos de deploy del 14-16 jul ya se resolvieron (bug de configuración, no de código). Bernardo ya es colaborador en GitHub y está usando el panel de administración directamente (creó series de prueba él mismo). **Sigue pendiente pedir permiso de caso público — no se ha pedido todavía** (21-sep: ya no hay saldo pendiente, así que la conversación está despejada), pese al acuerdo de pedirlo desde el día 1; dado que el cliente ya aprobó y está en fase de lanzamiento, es buen momento para pedirlo ahora. Checklist técnico restante: registros DNS en NIC Chile, actualizar callback de la OAuth App de GitHub, apuntar `site` del proyecto al dominio real — nada de esto bloquea el pago, son tareas en paralelo. Ver "Estado de pagos" abajo. |
 
 ## Estado de pagos — Bernardo Combeau
 
@@ -26,14 +26,17 @@ Plan **Esencial**, oferta de lanzamiento **$392.000** (IVA incl.). Esquema origi
 
 | Fase | Concepto | Monto (30/40/30) | Estado | Evidencia |
 |---|---|---|---|---|
-| 1. Descubrimiento | 30% | $117.600 | ⏳ **Pendiente — se cobra contra entrega** (junto con Fase 5) | Cobro aún no realizado. |
+| 1. Descubrimiento | 30% | $117.600 | ✅ **Pagado** (cobrado junto con Fase 5) | Confirmado por Ramón el 21-sep-2026. |
 | 3. Desarrollo IA | 40% (aprobar staging) | $156.800 | ✅ **Pagado 14 jul 2026** | Transferencia BICE de "Bernardo Combeau Oyarzún" → BancoChile, 14 jul 12:35. Monto exacto = 40% de $392.000. |
-| 5. Lanzamiento | 30% (contra entrega) | $117.600 | ⏳ **Pendiente — se cobra contra entrega** (junto con Fase 1) | Cobro aún no realizado. |
+| 5. Lanzamiento | 30% (contra entrega) | $117.600 | ✅ **Pagado** (cobrado junto con Fase 1) | Confirmado por Ramón el 21-sep-2026. |
 
 Notas:
 - **21 jun 2026 — transferencia de $10.000** del mismo remitente, sin clasificar (probable transferencia de prueba). No corresponde a ninguna cuota del esquema; verificar con Bernardo.
 - Total verificado recibido vía BICE: **$166.800** ($10.000 + $156.800).
-- **Pendiente por cobrar: $235.200** — Fase 1 ($117.600) + Fase 5 ($117.600), en **un solo cobro contra entrega** (decisión 22 jul 2026), **como persona natural** (decisión 25 jul 2026). Entrega técnica realizada el 24 jul → el cobro está habilitado.
+- **21-sep-2026 — COBRADO. Nada pendiente.** Los $235.200 (Fases 1 + 5) se cobraron en un solo pago, como persona natural según la decisión del 25 jul. Proyecto pagado al 100% ($392.000). Fuente: confirmación directa de Ramón el 21-sep-2026; no se pidió comprobante bancario.
+- **Ampliación cobrada y entregada:** el cliente pidió una sección adicional dentro del mismo sitio; **se cobró $120.000 y ya está entregada** (confirmado por Ramón el 21-sep-2026).
+- **Ticket real del proyecto: $512.000** ($392.000 del Plan Esencial + $120.000 de la ampliación). Usar esta cifra, no los $392.000, como referencia de lo que rinde un cliente de Desarrollo Web. Ramón lo considera equivalente al servicio completo.
+- **Es la mejor evidencia comercial que existe hoy en la cartera:** un cliente que pagó, recibió, volvió a pedir y pagó de nuevo. Ampliación de +31% sobre el contrato original. Sirve para la conversación de "subir el valor por cliente" mucho más que un testimonio.
 
 ## Proyectos entregados
 
