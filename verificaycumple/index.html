@@ -185,9 +185,20 @@
   }
   .titulo-absurdo {
     font-family: var(--serif); font-weight: 700;
-    font-size: clamp(2.8rem, 7.5vw, 5.6rem);
-    line-height: 0.94; letter-spacing: -0.02em;
+    font-size: clamp(3.4rem, 11vw, 9rem);
+    line-height: 0.86; letter-spacing: -0.02em;
     margin: 0 0 22px; color: var(--vivo-tinta);
+    position: relative;
+    text-shadow:
+      2px 2px 0 var(--vivo-mostaza), -2px -2px 0 var(--vivo-mostaza),
+      2px -2px 0 var(--vivo-mostaza), -2px 2px 0 var(--vivo-mostaza),
+      4px 4px 0 var(--vivo-mostaza);
+  }
+  @media (min-width: 901px) {
+    .titulo-absurdo {
+      margin-right: -120px;
+      z-index: 5;
+    }
   }
   .hero-texto-block p.sub-absurdo {
     font-size: 1.05rem; font-weight: 500; color: var(--vivo-tinta); opacity: .82;
