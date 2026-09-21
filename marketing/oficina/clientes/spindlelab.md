@@ -291,3 +291,30 @@ cierre de mes.
 - **PROHIBIDO desde hoy** decir "bloqueas GPTBot ⇒ invisible en ChatGPT". El argumento correcto:
   el bloqueo del servidor/CDN por nombre (la sonda nueva lo detecta) o el bloqueo de los agentes
   EN VIVO. En diagnósticos: citar el robot correcto según su categoría.
+
+### Cortes del §8 activados — decisión de Ramón, 21-sep-2026 (día 77 de 90)
+Corridos contra datos reales en `marketing/metricas/checkpoint-dia77-2026-09-21.md`. Los tres
+tenían criterio escrito de antes y ninguno se había activado. **Ramón aprobó los tres.**
+
+1. **Google Ads: NO REACTIVAR** (verificado en la cuenta el 21-sep, cambió respecto de
+   «apagar»). La campaña **ya estaba detenida**: Google la frenó por forma de pago sin validar
+   —el pendiente que el plan arrastra desde el 20-jul—. Números reales: **CLP 100.411 gastados,
+   648 impresiones, 104 clics, CTR 16,05 %, 0 conversiones.** Presupuesto real **CLP 3.000/día**,
+   el doble de lo documentado. **Lectura:** el anuncio captaba excelente y el sitio no convirtió;
+   es la tercera fuente que señala el mismo cuello. **Regla: no arreglar la forma de pago hasta
+   que la conversión del sitio esté resuelta y medida.** No borrar la campaña: se reenciende con
+   ventaja. Detalle: `encargos-otras-sesiones/encargo-gonzalo-apagar-ads.md`.
+2. **Frente EE.UU.: CERRADO.** Abierto el 4-ago con una ventana de 4 semanas desde el primer
+   Loom; **nunca se envió ninguno**, así que la ventana jamás empezó. No es que no rindiera: no
+   se ejecutó. El material vivía en un worktree gitignoreado y se rescató a `main` el 21-sep.
+   **Para reabrirlo:** exige el primer Loom enviado en la misma semana en que se reabre, o no se
+   abre. Revisión: solo si aparece una razón nueva, no por impulso.
+3. **Nicho: ABOGADOS pasa a principal · SALUD se pausa.** Desglose que §8 pedía y nunca se
+   corrió: Abogados 4/69 = **5,8 %** con cero rebotes y cero rechazos; Salud 1/72 = **1,4 %**
+   con 3 rebotes y el único rechazo explícito. Mismo volumen, cuatro veces la tasa. No se envían
+   más lotes a Salud hasta tener una hipótesis nueva de por qué no responde. Las conversaciones
+   vivas de Salud (Dentimagen) se cierran, no se abandonan.
+
+**Lo que NO se hace, y quedó decidido:** subir el volumen de outbound. La tasa de respuesta
+cumple el umbral; el corte del embudo está aguas abajo (0 llamadas). Más entrada no arregla un
+problema de salida. *(Revisión de esta regla: al cerrar el plan, el 5-oct.)*

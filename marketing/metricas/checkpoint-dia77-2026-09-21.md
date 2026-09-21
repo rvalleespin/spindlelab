@@ -49,19 +49,45 @@ validado con 4.522 contactos y ~100 % de verificación.
 
 ## 3 · Los cortes que corresponde activar
 
-### CORTE 1 — Google Ads: apagar ⚠️ requiere verificación de Ramón
-- **Criterio escrito** (estrategia §Google Ads): *«≥2 mini-diagnósticos solicitados desde ads
-  en 60 días… Si no, se apaga sin duelo y el presupuesto vuelve a herramientas/contenido.»*
-- **Encendida el 14-jul**, $1.500 CLP/día. Hoy lleva **69 días corriendo**; el corte vencía el
-  **11-sep, hace 10 días**.
-- **Diagnósticos originados en ads: 0.** Los 3 que existen vienen de outbound o sin origen
-  registrado. Ninguno tiene UTM de ads asociado.
-- **Si sigue encendida, el gasto acumulado es ~$103.500 CLP** a ese ritmo.
-- ⚠️ **No pude verificar el estado real de la cuenta desde esta sesión** (sin acceso a Google
-  Ads). Cuenta correcta: **597-527-6690** (`hola@spindlelab.cl`); la de manuvalleespin está
-  vacía y confunde. **Verificar antes de dar por cierto el gasto.**
-- **Recomendación:** apagar. El criterio se cumplió, la fecha venció, y el presupuesto rinde
-  más en el nicho que ya responde.
+### CORTE 1 — Google Ads ✅ VERIFICADO EN LA CUENTA (21-sep, después de la aprobación)
+Ramón aprobó apagar. **Al entrar a la cuenta 597-527-6690 resultó que no había nada que apagar,
+y el motivo cambia la conclusión.**
+
+**Los números reales de la campaña «Campaign #1» (Búsqueda):**
+
+| Dato | Valor real | Lo que decía el repo |
+|---|---|---|
+| Estado | **Detenida** | «activa» |
+| Presupuesto | **CLP 3.000/día** | CLP 1.500/día (la mitad) |
+| Costo total | **CLP 100.411** | estimado ~$103.500 (coincide por casualidad: doble presupuesto, la mitad de días) |
+| Impresiones | 648 | — |
+| Clics | **104** | — |
+| **CTR** | **16,05 %** | — |
+| **Conversiones** | **0,00** | 0 (confirmado) |
+
+**Por qué está detenida, y esto importa:** Google la frenó con el aviso *«No se están publicando
+sus anuncios. Para reanudar la publicación, verifique su forma de pago.»* No se detuvo por
+decisión: se detuvo sola, alrededor del 24-ago (última fecha con datos). **Es el mismo pendiente
+que el plan operativo arrastra sin resolver desde el 20-jul** («confirmar método de pago… y
+verificación de correo de la cuenta publicitaria»).
+
+**El hallazgo que vale más que el corte:** un **CTR de 16,05 %** es excepcional en Búsqueda
+(lo normal ronda 3-5 %). El anuncio y las keywords funcionaban muy bien. **104 personas de alta
+intención llegaron al sitio y ninguna dejó sus datos.** No es que Ads no sirva: es que el
+tráfico llegó y el sitio no convirtió.
+
+**Tercera fuente independiente que apunta al mismo lugar.** El outbound cumple su umbral de
+respuesta y se cae después; Ads trae clics con CTR excelente y convierte cero. El cuello no está
+en generar demanda, está donde el visitante tiene que dar el paso.
+
+**Qué corresponde ahora (cambia respecto de «apagar»):**
+1. **No reactivar.** Concretamente: **no arreglar la forma de pago** hasta que la conversión del
+   sitio esté resuelta. Reactivarla hoy sería volver a comprar clics que ya sabemos que no
+   convierten.
+2. **Dejarla detenida, no borrarla.** La configuración costó trabajo y el CTR demuestra que la
+   parte de captación está bien resuelta. Cuando la conversión funcione, esto se reenciende con
+   ventaja.
+3. **Corregir el repo:** el presupuesto real era el doble del documentado.
 
 ### CORTE 2 — Frente EE.UU.: cerrar formalmente
 - **Criterio escrito** (`marketing/frente-eeuu/fundamento-frente-eeuu.md`): ventana de
@@ -97,7 +123,7 @@ llamada*).
 Cinco decisiones. Las tres primeras son los cortes de arriba; las dos últimas son las que
 definen si hay trimestre 2 con rumbo o se repite el patrón.
 
-1. **Google Ads:** ¿se apaga? (verificar gasto real primero)
+1. ~~**Google Ads:** ¿se apaga?~~ **RESUELTO el 21-sep:** ya estaba detenida por forma de pago. La decisión viva pasa a ser **no reactivarla** hasta que la conversión del sitio funcione.
 2. **Frente EE.UU.:** ¿se cierra formalmente?
 3. **Nicho:** ¿Abogados pasa a principal y Salud se pausa?
 4. **El producto recurrente:** el acompañamiento mensual **no se ha vendido nunca**. Es el

@@ -152,7 +152,7 @@ El centro de gravedad cambia: entregar impecable a los clientes cerrados (Claude
 - [ ] [CC] Dejar preparados artículos 11–12 y posts de las semanas siguientes
 
 ### Semana 12 (22–28 sep)
-- [~] [TÚ] **Decisión Google Ads** — el dato ya está (0 diagnósticos desde ads en 69 días → corresponde apagar). **Esperando el OK de Ramón** y la verificación del gasto real en la cuenta 597-527-6690. Ver checkpoint del 21-sep.
+- [x] [TÚ] **Decisión Google Ads: APAGAR — decidida por Ramón el 21-sep-2026.** 0 diagnósticos originados en ads en 69 días; el criterio escrito («≥2 o se apaga sin duelo») se cumplió y venció el 11-sep. **Ejecución pendiente y bloqueada técnicamente:** la cuenta 597-527-6690 vive bajo `hola@spindlelab.cl` y no es alcanzable desde el Chrome logueado con manuvalleespin (verificado 21-sep: su selector solo lista la 497-377-4579, y aparece **Cerrada**). Lo ejecuta Ramón o una sesión con esa sesión iniciada. Encargo: `marketing/encargos-otras-sesiones/encargo-gonzalo-apagar-ads.md`
 - [ ] [CC] Artículo 11 → [TÚ] editar y publicar
 - [ ] [TÚ] Outbound según capacidad
 
