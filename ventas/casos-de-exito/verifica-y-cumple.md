@@ -58,6 +58,22 @@ método, 1-sep-2026) — mostrar el instrumento en vez de prometer el resultado.
 - Marca aparte de SpindleLab, firmada personalmente por Ramón — mismo estándar de "no vendo
   humo", sin diluir el posicionamiento de SEO técnico de la agencia.
 
+## Cómo se cobra
+
+Ambos precios están publicados en el sitio (mismo estándar de transparencia que el resto de
+SpindleLab) — no hace falta cotizar en la llamada, solo confirmar el alcance.
+
+- **Kit de implementación — desde $149.000 + IVA, una vez.** Instalación y configuración de
+  un gestor de consentimiento, ajustes técnicos según lo que el chequeo detecte, plantilla de
+  política de privacidad (para que la revise su abogado) y verificación final con el mismo
+  chequeo. No incluye asesoría legal; el valor se ajusta según lo que el chequeo real
+  muestre.
+- **Suscripción de vigilancia — desde $39.000 + IVA al mes, mínimo 2 trimestres.**
+  Re-chequeo trimestral automático, alerta si el puntaje baja (alguien agregó un tracker o
+  algo del banner se rompió sin que nadie lo note) y el registro de actividades de
+  tratamiento al día. **No reemplaza el kit — lo sostiene.** El cumplimiento no es
+  instalar y olvidar: un sitio cambia, y las señales se pueden volver a romper.
+
 ## Cómo usarlo en la llamada
 
 1. Si el prospecto trata datos de clientes (estudio de abogados, clínica, cualquiera con
@@ -72,6 +88,9 @@ método, 1-sep-2026) — mostrar el instrumento en vez de prometer el resultado.
 4. Si el momento lo permite, cerrar con el antes y después de SpindleLab (36 → 73) — genera
    más confianza que cualquier testimonio, porque no es un testimonio: es una auto-auditoría
    publicada, con el arreglo real detrás.
+5. La suscripción se ofrece **después** de cerrar el kit, no antes — es el paso siguiente
+   ("esto lo deja arreglado hoy; la suscripción es para que se mantenga así"), no una venta
+   aparte que compite por atención con el arreglo puntual.
 
 ---
 
