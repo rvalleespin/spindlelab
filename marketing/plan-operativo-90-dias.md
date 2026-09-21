@@ -141,7 +141,7 @@ El centro de gravedad cambia: entregar impecable a los clientes cerrados (Claude
 ### Semana 9 (1–7 sep)
 - [ ] [TÚ] Entrega a clientes con apoyo [CC] · outbound según regla de capacidad (0 clientes = 50, 1 = 25, 2 = pausa)
 - [ ] [CC] Artículo 9 → [TÚ] editar y publicar
-- [ ] [CC] Panel semanal + primera evaluación seria de Ads (sin decidir aún)
+- [x] [CC] Panel semanal + primera evaluación seria de Ads — **hecha el 21-sep** (con atraso): `marketing/metricas/checkpoint-dia77-2026-09-21.md`. Resultado: 0 mini-diagnósticos originados en ads en 69 días de campaña; el criterio de apagado se cumplió y venció el 11-sep.
 
 ### Semana 10 (8–14 sep)
 - [ ] [CC] Artículo 10 → [TÚ] editar y publicar
@@ -152,7 +152,7 @@ El centro de gravedad cambia: entregar impecable a los clientes cerrados (Claude
 - [ ] [CC] Dejar preparados artículos 11–12 y posts de las semanas siguientes
 
 ### Semana 12 (22–28 sep)
-- [ ] [TÚ] **Decisión Google Ads** con el umbral definido: ≥2 mini-diagnósticos originados en ads → continúa; si no → se apaga
+- [~] [TÚ] **Decisión Google Ads** — el dato ya está (0 diagnósticos desde ads en 69 días → corresponde apagar). **Esperando el OK de Ramón** y la verificación del gasto real en la cuenta 597-527-6690. Ver checkpoint del 21-sep.
 - [ ] [CC] Artículo 11 → [TÚ] editar y publicar
 - [ ] [TÚ] Outbound según capacidad
 

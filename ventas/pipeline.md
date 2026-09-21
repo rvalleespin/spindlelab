@@ -13,9 +13,16 @@
 
 ## Pipeline activo
 
+> ⚠️ **En reconstrucción (21-sep-2026).** Esta tabla estuvo congelada desde el 23-jul con una
+> sola fila, mientras agosto y septiembre sumaban 6 conversaciones vivas que nunca entraron.
+> **No la tomes como la realidad todavía.** Las preguntas para reconstruirla están en
+> `ventas/pipeline-reconstruccion-preguntas-2026-09-21.md`; en cuanto Ramón las responda, la
+> troncal escribe acá una fila por prospecto con etapa real y próximo paso con fecha.
+
+
 | Nombre / Empresa | Rubro | Fuente | Etapa | Próximo paso | Último contacto | Notas |
 |---|---|---|---|---|---|---|
-| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅ — Lanzamiento** | Conectar dominio y salir a producción — **meta: viernes 24 jul**. Ramón afinando detalles de entrega, 23 jul. Detalle de fases en `proyectos-en-curso.md` | 23 jul 2026 (revisiones de afinamiento previas a la entrega) | Cotización SPL-COT-2026-014 aprobada. **Plan Esencial** ($392.000). Sitio y panel de administración presentados a Bernardo el 20 jul, dio el OK y quedó probando la plataforma. Compró `bernardocombeau.cl` (NIC Chile) el mismo día. **Pagos (corregido con evidencia bancaria):** Fase 3 (40%, $156.800) pagada 14 jul; Fase 1 y Fase 5 siguen pendientes ($235.200 en total) — no se cobró Fase 1 a inicios de julio como decía una versión anterior de esta fila. **Permiso de caso público: aún no pedido** pese al acuerdo de pedirlo desde el día 1 — con el cliente ya aprobando el sitio, es buen momento para pedirlo ahora. |
+| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅ — Lanzamiento** | Conectar dominio y salir a producción — **meta: viernes 24 jul**. Ramón afinando detalles de entrega, 23 jul. Detalle de fases en `proyectos-en-curso.md` | 23 jul 2026 (revisiones de afinamiento previas a la entrega) | Cotización SPL-COT-2026-014 aprobada. **Plan Esencial** ($392.000). Sitio y panel de administración presentados a Bernardo el 20 jul, dio el OK y quedó probando la plataforma. Compró `bernardocombeau.cl` (NIC Chile) el mismo día. **Pagos (actualizado 21-sep-2026):** proyecto **pagado al 100 %**. Fase 3 ($156.800) el 14-jul; Fases 1 y 5 ($235.200) cobradas juntas y confirmadas por Ramón el 21-sep. **Ampliación adicional cobrada y entregada: $120.000.** **Ticket real: $512.000** — usar esta cifra como referencia de lo que rinde un cliente de Desarrollo Web, no los $392.000. **Permiso de caso público: aún no pedido** desde julio; ahora sin saldo pendiente la conversación está despejada, es el momento. |
 
 ## Casos en pausa (no forman parte del pipeline activo)
 
