@@ -1,7 +1,11 @@
 # Correo de seguimiento: mandar el anexo que faltó
 
-- **Fecha:** 21-sep-2026 · **Motivo:** el correo de respuesta salió sin el PDF adjunto, y su
-  texto dice «En el anexo va todo el detalle».
+- **Fecha:** 21-sep-2026 · **Estado:** Ramón reporta haberlo **enviado**.
+  ⚠️ **No confirmado en el hilo:** al revisar el buzón después de su aviso, el último
+  mensaje seguía siendo el de las 21:21 UTC (34 KB, sin adjunto). Puede ser retraso de
+  indexación de Gmail. **Confirmar que el correo con el PDF efectivamente salió.**
+- **Motivo:** el correo de respuesta salió sin el PDF adjunto, y su texto dice «En el anexo
+  va todo el detalle».
 - **Adjuntar:** `ventas/anexos/SPL-NT-2026-001-srsoya-piloto-eeuu.pdf`
 - **Para:** soyamusicbooking@gmail.com · **En el mismo hilo.**
 

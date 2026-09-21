@@ -118,8 +118,8 @@ dejar los meses 2 y 3 para el disco. Quiere medición de performance completa, d
 reserva pagada.
 
 **Estado:** respuesta **enviada** el 21-sep 21:21 UTC, en el hilo. Salió sin el anexo PDF
-que el propio texto menciona, así que queda pendiente mandarlo en un correo corto de
-seguimiento (`ventas/sr-soya-seguimiento-adjunto.md`). El
+que el propio texto menciona; Ramón reporta haber enviado el anexo después, pendiente de
+confirmar en el buzón. El
 diagnóstico es que con $100.000 mensuales de pauta ese mercado no se puede validar, y la
 propuesta de salida es que las primeras ventas financien la campaña del mes 2. Detalle en
 `ventas/sr-soya-estrategia-autofinanciada.md`.
@@ -127,6 +127,23 @@ propuesta de salida es que las primeras ventas financien la campaña del mes 2. 
 ⚠️ **Punto operativo sin resolver:** Carlos habla de «depositar 300 mil». Hay que dejar
 claro si la pauta se carga a **su** tarjeta (lo recomendado, y lo que dice la cotización) o
 si deposita el total y SpindleLab administra esa parte. Va planteado en el borrador.
+
+## Próximo paso (al 21-sep-2026)
+
+**La pelota está en la cancha de Carlos.** Se le pidieron tres respuestas y de ellas
+depende todo el plan del trimestre:
+
+1. **A qué precio vende y si empaqueta en un programa.** La que más pesa: define cuánto se
+   puede pagar por conseguir un cliente.
+2. Si Terapias 5D ya tiene página, agenda y forma de cobrar.
+3. Cuánto es lo máximo que podría invertir en pauta.
+
+**Sin resolver, además:** si la pauta se carga a su tarjeta o deposita el total.
+
+**Fecha que manda:** el trabajo parte el **12 de octubre** con su primer depósito. Con sus
+respuestas se arma el plan del trimestre con números y umbral de corte, y se cierra antes
+de esa fecha. Si no responde en unos días, conviene escribirle, porque quedan tres semanas
+y el mes 1 depende de tener la oferta empaquetada antes de arrancar.
 
 ## Documentos relacionados
 
