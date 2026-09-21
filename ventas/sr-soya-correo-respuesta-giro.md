@@ -8,6 +8,66 @@
 
 ---
 
+## Versión corta (la que va con el anexo adjunto). **Usa esta.**
+
+**Asunto:** Sobre mover el mes 1 a Terapias 5D
+**Adjunto:** `SPL-NT-2026-001-srsoya-piloto-eeuu.pdf`
+
+```
+Hola Carlos,
+
+Me gusta el razonamiento y estoy de acuerdo con el fondo. Un servicio que cobra
+por sesión es mejor sujeto de campaña que un disco, porque cada conversión deja
+plata y el recorrido se puede medir entero, desde el anuncio hasta la reserva
+pagada. Con música se mide hasta el clic y ahí se acaba.
+
+Antes de entrar en la estrategia, una aclaración de números para que no nos pase
+una sorpresa después. Los $900.000 de los tres meses no son todos honorarios: son
+$200.000 mensuales de trabajo ($600.000) más $100.000 mensuales de publicidad
+($300.000), que van a tu tarjeta y sobre los que no cobro comisión.
+
+Eso importa porque hay un problema con el mercado que elegiste, y prefiero
+decírtelo antes de que gastemos el mes: con $100.000 mensuales de pauta, Estados
+Unidos no se puede validar. La cuenta es corta. Meta necesita unas 50 conversiones
+por semana para optimizar, y con ese presupuesto cada reserva tendría que costarte
+menos de $460, más o menos medio dólar. Eso no pasa en ningún mercado, y menos
+allá.
+
+Lo grave no es gastar esa plata. Es que si el resultado sale malo no vas a saber
+si tu oferta no funciona o si simplemente faltó presupuesto.
+
+Te adjunto una nota técnica con todo el detalle: la aritmética completa, los tres
+caminos que veo (incluido uno que sí funciona con la inversión actual), y tus
+cuatro preguntas respondidas una por una, con el objetivo de campaña, la
+segmentación y cómo probaría el contenido en inglés.
+
+Sobre el orden que propones: me parece bien y lo tomo. Lo único que quiero dejar
+dicho es que ese mes se va completo al piloto, así que durante ese mes no corre la
+gestión de redes del proyecto musical. El mes tiene un tamaño y prefiero que esté
+claro entre los dos desde ahora.
+
+Para armarte el plan con números necesito tres respuestas, que también están al
+final del anexo:
+
+1. ¿Cuánto es lo máximo que podrías poner en publicidad para esta línea?
+2. ¿Terapias 5D ya tiene página, agenda y forma de cobrar, o hay que construirlo?
+3. ¿A qué precio piensas vender la sesión?
+
+La tercera es la que más pesa: sin ese número no se puede saber cuánto puede
+costar conseguir un cliente y que igual te quede ganancia.
+
+Léelo con calma y me dices. Si prefieres lo conversamos por llamada y te respondo
+ahí mismo lo que salga.
+
+Ramón
+```
+
+---
+
+## Versión larga (sin anexo, todo en el cuerpo)
+
+Úsala solo si decides no mandar el PDF.
+
 **Asunto:** Sobre mover el mes 1 a Terapias 5D
 
 ```
