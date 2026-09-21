@@ -168,6 +168,18 @@ Dejo el chequeo en el primer comentario, por si quieres ver qué te muestra del 
 Acá está: https://verificaycumple.pages.dev
 Escribes tu dominio y corre ahí mismo. Si te aparece algo raro y no cachas qué hacer, escríbeme y lo vemos.
 
+### Anexo: el texto con que compartió el post de la página (mismo día)
+
+Media hora después, Ramón compartió desde su perfil el post plural de la sección 3.
+`urn:li:activity:7507939759005298689`. **Es el formato más corto del registro singular y el
+menos documentado**, así que vale tenerlo acá: al compartir, la línea propia no resume el
+post de abajo ni repite el post propio. Elige **un solo hilo** del post compartido y lo dice
+en primera persona.
+
+> Lo comparto porque la parte incómoda no es el puntaje.
+>
+> El formulario de contacto llevaba quién sabe cuánto tiempo tragándose los mensajes, y lo encontré arreglando otra cosa. Si no corro el chequeo sobre mi propio sitio, sigue roto.
+
 ---
 
 ## <a id="5-mas"></a>5. Dónde hay más material
