@@ -166,147 +166,120 @@
 
   main { display: block; }
 
+  /* Hero — calcado de la composición de la referencia (Behance, "Creative Course Landing
+     Page"): fondo azul a sangre completa, titular gigante a todo el ancho arriba, la foto
+     grande y centrada rompiendo sobre el texto, sin tarjetas con borde/sombra dura. */
   section.hero {
     position: relative;
     overflow: hidden;
-    background: var(--vivo-verde);
-    padding: 0;
+    background: var(--vivo-azul);
+    padding: 44px 0 56px;
     border-bottom: 4px solid var(--vivo-tinta);
   }
-  .hero-envoltura { max-width: 1400px; margin: 0 auto; padding: 0; }
-  .hero-grid { position: relative; display: grid; grid-template-columns: minmax(320px, 520px) 1fr; align-items: stretch; gap: 0; min-height: 560px; }
-  .hero-texto-block { display: flex; flex-direction: column; justify-content: center; padding: 48px 24px 40px 20px; position: relative; z-index: 2; }
+  .hero-envoltura { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; }
   .hero-badge {
     display: inline-flex; align-items: center; width: fit-content;
-    background: var(--vivo-tinta); color: var(--vivo-verde);
+    background: var(--vivo-verde); color: var(--vivo-tinta);
     font-family: var(--serif); font-weight: 700; font-size: 0.78rem;
     letter-spacing: 0.05em; text-transform: uppercase;
-    padding: 8px 14px; border-radius: 999px; margin: 0 0 20px;
-    transform: rotate(-2deg);
+    padding: 8px 14px; border-radius: 999px; margin: 0 0 18px;
   }
   .titulo-absurdo {
     font-family: var(--serif); font-weight: 700;
-    font-size: clamp(3.4rem, 11vw, 9rem);
-    line-height: 0.86; letter-spacing: -0.02em;
-    margin: 0 0 22px; color: var(--vivo-tinta);
+    font-size: clamp(3.6rem, 12vw, 8.8rem);
+    line-height: 0.84; letter-spacing: -0.02em;
+    margin: 0; text-align: center;
+  }
+  .titulo-absurdo .t-blanco { color: #fff; }
+  .titulo-absurdo .t-verde { color: var(--vivo-verde); }
+
+  .hero-imagen-centro {
     position: relative;
-    text-shadow:
-      2px 2px 0 var(--vivo-verde), -2px -2px 0 var(--vivo-verde),
-      2px -2px 0 var(--vivo-verde), -2px 2px 0 var(--vivo-verde),
-      4px 4px 0 var(--vivo-verde);
+    max-width: 640px;
+    margin: -18px auto -20px;
+    z-index: 4;
+  }
+  .hero-foto { width: 100%; height: auto; display: block; border-radius: 18px; }
+  @media (min-width: 640px) {
+    .hero-imagen-centro { max-width: 760px; margin: -32px auto -20px; }
   }
   @media (min-width: 901px) {
-    .titulo-absurdo {
-      margin-right: -120px;
-      z-index: 5;
-    }
+    .hero-imagen-centro { max-width: 880px; margin: -46px auto -20px; }
   }
-  .hero-texto-block p.sub-absurdo {
-    font-size: 1.05rem; font-weight: 500; color: var(--vivo-tinta); opacity: .82;
-    margin: 0 0 28px; max-width: 44ch;
+
+  .hero-accion { max-width: 560px; margin: 32px auto 0; text-align: center; position: relative; z-index: 2; }
+  .hero-accion p.sub-absurdo {
+    font-size: 1.08rem; font-weight: 500; color: #fff; opacity: .92;
+    margin: 0 0 24px;
   }
 
   form.chequeo {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 10px;
     position: relative;
   }
   form.chequeo input[type="text"] {
-    flex: 1 1 220px;
-    padding: 14px 16px;
+    flex: 1 1 240px;
+    padding: 15px 20px;
     font-size: 1rem;
-    border: 2px solid var(--vivo-tinta);
-    border-radius: 0;
+    border: none;
+    border-radius: 999px;
     background: var(--vivo-panel);
     color: var(--vivo-tinta);
   }
-  form.chequeo input[type="text"]::placeholder { color: var(--vivo-suave); opacity: .7; }
+  form.chequeo input[type="text"]::placeholder { color: var(--vivo-suave); opacity: .8; }
   form.chequeo button {
-    padding: 14px 24px;
+    padding: 15px 28px;
     font-size: 1rem;
     font-weight: 700;
     color: #fff;
     background: var(--vivo-rosa);
-    border: 2px solid var(--vivo-tinta);
-    border-radius: 0;
+    border: none;
+    border-radius: 999px;
     cursor: pointer;
-    box-shadow: 5px 5px 0 var(--vivo-tinta);
-    transition: background .15s ease, transform .1s ease, box-shadow .1s ease;
+    transition: background .15s ease, transform .1s ease;
   }
   form.chequeo button:hover { background: var(--vivo-rosa-osc); }
-  form.chequeo button:active { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--vivo-tinta); }
+  form.chequeo button:active { transform: scale(.97); }
   form.chequeo button:disabled { background: #a89a86; cursor: wait; }
-  .hero-texto-block .nota-privacidad {
+  .hero-accion .nota-privacidad {
     font-size: 0.82rem;
-    color: var(--vivo-tinta);
+    color: #fff;
     opacity: .75;
     margin: 0;
   }
-  .hero-texto-block #resultado { color: var(--vivo-tinta); }
+  .hero-accion #resultado { color: var(--vivo-tinta); text-align: left; }
 
-  .hero-imagen-block { position: relative; min-height: 320px; background: var(--vivo-azul); overflow: hidden; }
-  .hero-foto { width: 100%; height: 100%; object-fit: cover; object-position: center 32%; display: block; }
-
-  /* --- Mockup de ejemplo: producto a la vista en el hero, etiquetado sin ambigüedad ---
-     El hero es un tratamiento fijo (mismos colores en claro y oscuro), así que todo acá
-     usa los tokens --vivo-* en vez de --texto/--panel/--borde, que sí cambian por tema. */
+  /* --- Caso real: una línea, sin tarjeta — coherente con el aire limpio de la referencia --- */
   .ejemplo-resultado {
-    background: var(--vivo-panel);
-    border: 2px solid var(--vivo-tinta);
-    border-radius: 0;
-    box-shadow: 6px 6px 0 var(--vivo-tinta);
-    padding: 16px 18px;
-    position: absolute;
-    left: 18px; bottom: 18px;
-    z-index: 3;
-    max-width: 260px;
-    transform: rotate(-1.5deg);
-  }
-  .ejemplo-delta { font-family: var(--serif); font-weight: 700; color: var(--vivo-tinta); margin-left: 6px; }
-  .ejemplo-link { display: inline-block; margin-top: 14px; font-size: 0.82rem; font-weight: 700; color: var(--vivo-rosa-osc); text-decoration: none; border-bottom: 1.5px solid var(--vivo-rosa); }
-  .ejemplo-link:hover { color: var(--vivo-rosa); }
-  .ejemplo-etiqueta {
-    position: absolute;
-    top: -11px; left: 16px;
-    background: var(--vivo-rosa);
+    display: flex; align-items: center; gap: 12px;
+    justify-content: center;
+    margin: 22px auto 0;
+    max-width: 480px;
     color: #fff;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 999px;
+    font-size: 0.92rem;
   }
-  .ejemplo-fila { display: flex; align-items: center; gap: 14px; margin: 10px 0 16px; }
-  .ejemplo-anillo { position: relative; width: 58px; height: 58px; flex: 0 0 auto; }
-  .ejemplo-anillo svg { width: 100%; height: 100%; transform: rotate(-90deg); }
-  .ejemplo-anillo-num {
-    position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--serif); font-weight: 700; font-size: 1.05rem;
-    color: var(--vivo-tinta);
+  .ejemplo-etiqueta {
+    background: var(--vivo-verde); color: var(--vivo-tinta);
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 999px; flex: 0 0 auto;
   }
-  .ejemplo-dominio { font-size: 0.85rem; color: var(--vivo-suave); }
-  .ejemplo-dominio strong { color: var(--vivo-tinta); display: block; font-size: 0.95rem; }
-  .ejemplo-items { list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
-  .ejemplo-items li { display: flex; gap: 8px; padding: 7px 0; border-top: 1px solid #e8ddb8; color: var(--vivo-suave); }
-  .ejemplo-items li:first-child { border-top: none; }
-  .ejemplo-marca { flex: 0 0 auto; width: 17px; height: 17px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 700; }
-  .ejemplo-marca.ok { background: #e7f2ef; color: #0d6d61; }
-  .ejemplo-marca.pendiente { background: #fbead9; color: #a8560f; }
+  .ejemplo-fila { display: contents; }
+  .ejemplo-anillo { display: none; }
+  .ejemplo-anillo-num { display: none; }
+  .ejemplo-dominio { color: #fff; opacity: .92; }
+  .ejemplo-dominio strong { color: var(--vivo-verde); }
+  .ejemplo-delta { font-family: var(--serif); font-weight: 700; color: var(--vivo-verde); margin-left: 4px; }
+  .ejemplo-items { display: none; }
+  .ejemplo-link { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  .ejemplo-link:hover { color: var(--vivo-verde); }
 
-  @media (max-width: 900px) {
-    .hero-grid { grid-template-columns: 1fr; min-height: 0; }
-    .hero-imagen-block { order: -1; min-height: 300px; }
-    .hero-texto-block { padding: 32px 20px 40px; }
-    .ejemplo-resultado {
-      position: static;
-      max-width: none;
-      margin: -32px 20px 0;
-      transform: rotate(-1deg);
-    }
+  @media (max-width: 640px) {
+    .titulo-absurdo { text-align: left; }
+    .ejemplo-resultado { flex-wrap: wrap; justify-content: flex-start; text-align: left; }
   }
 
   #resultado { display: none; margin-top: 34px; }
@@ -619,47 +592,46 @@
 <main>
   <section class="hero">
     <div class="hero-envoltura">
-      <div class="hero-grid">
-        <div class="hero-texto-block">
-          <p class="hero-badge">Chequeo técnico gratuito — Ley 21.719</p>
-          <h1 class="titulo-absurdo">¿Estás<br>seguro?</h1>
-          <p class="sub-absurdo">
-            En 40 segundos sabes si tu sitio publica lo básico que exige la Ley 21.719 de
-            protección de datos personales. Sin registrarte, sin que guardemos tu dominio.
-          </p>
+      <p class="hero-badge">Chequeo técnico gratuito — Ley 21.719</p>
+      <h1 class="titulo-absurdo"><span class="t-blanco">¿Estás</span> <span class="t-verde">seguro?</span></h1>
 
-          <form class="chequeo" id="form-chequeo">
-            <label for="dominio" class="visually-hidden" style="position:absolute;left:-9999px;">Dominio a revisar</label>
-            <input type="text" id="dominio" name="dominio" placeholder="tuempresa.cl" autocomplete="off" required>
-            <button type="submit" id="boton-chequeo">Revisar mi sitio</button>
-          </form>
-          <p class="nota-privacidad">Solo leemos tu sitio público. No pedimos correo ni guardamos el dominio que revisas.</p>
+      <div class="hero-imagen-centro">
+        <img class="hero-foto" src="assets/img/hero-fiscalizador.jpg" alt="Ilustración editorial de un fiscalizador a caballo, sosteniendo un documento sellado — la señal de que tu sitio está siendo revisado." width="1800" height="1344" fetchpriority="high">
+      </div>
 
-          <div id="resultado" aria-live="polite"></div>
-        </div>
+      <div class="hero-accion">
+        <p class="sub-absurdo">
+          En 40 segundos sabes si tu sitio publica lo básico que exige la Ley 21.719 de
+          protección de datos personales. Sin registrarte, sin que guardemos tu dominio.
+        </p>
 
-        <div class="hero-imagen-block">
-          <img class="hero-foto" src="assets/img/hero-fiscalizador.jpg" alt="Ilustración editorial de un fiscalizador a caballo, sosteniendo un documento sellado — la señal de que tu sitio está siendo revisado." width="1800" height="1344" fetchpriority="high">
+        <form class="chequeo" id="form-chequeo">
+          <label for="dominio" class="visually-hidden" style="position:absolute;left:-9999px;">Dominio a revisar</label>
+          <input type="text" id="dominio" name="dominio" placeholder="tuempresa.cl" autocomplete="off" required>
+          <button type="submit" id="boton-chequeo">Revisar mi sitio</button>
+        </form>
+        <p class="nota-privacidad">Solo leemos tu sitio público. No pedimos correo ni guardamos el dominio que revisas.</p>
 
-          <div class="ejemplo-resultado" id="ejemplo-resultado">
-            <span class="ejemplo-etiqueta">Caso real, verificado hoy</span>
-            <div class="ejemplo-fila">
-              <div class="ejemplo-anillo">
-                <svg viewBox="0 0 60 60">
-                  <circle cx="30" cy="30" r="25" fill="none" stroke="#e8ddb8" stroke-width="6"></circle>
-                  <circle cx="30" cy="30" r="25" fill="none" stroke="#0d6d61" stroke-width="6" stroke-linecap="round" stroke-dasharray="157" stroke-dashoffset="42"></circle>
-                </svg>
-                <div class="ejemplo-anillo-num">73</div>
-              </div>
-              <div class="ejemplo-dominio"><strong>spindlelab.cl</strong><span class="ejemplo-delta">36 → 73</span> con el kit</div>
+        <div id="resultado" aria-live="polite"></div>
+
+        <div class="ejemplo-resultado" id="ejemplo-resultado">
+          <span class="ejemplo-etiqueta">Caso real</span>
+          <div class="ejemplo-fila">
+            <div class="ejemplo-anillo">
+              <svg viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#e8ddb8" stroke-width="6"></circle>
+                <circle cx="30" cy="30" r="25" fill="none" stroke="#0d6d61" stroke-width="6" stroke-linecap="round" stroke-dasharray="157" stroke-dashoffset="42"></circle>
+              </svg>
+              <div class="ejemplo-anillo-num">73</div>
             </div>
-            <ul class="ejemplo-items">
-              <li><span class="ejemplo-marca ok">✓</span> Política de privacidad publicada</li>
-              <li><span class="ejemplo-marca ok">✓</span> Banner de consentimiento propio</li>
-              <li><span class="ejemplo-marca ok">✓</span> Formulario de contacto corregido</li>
-            </ul>
-            <a class="ejemplo-link" href="#ayuda">Así lo hicimos →</a>
+            <div class="ejemplo-dominio"><strong>spindlelab.cl</strong><span class="ejemplo-delta">36 → 73</span> con el kit</div>
           </div>
+          <ul class="ejemplo-items">
+            <li><span class="ejemplo-marca ok">✓</span> Política de privacidad publicada</li>
+            <li><span class="ejemplo-marca ok">✓</span> Banner de consentimiento propio</li>
+            <li><span class="ejemplo-marca ok">✓</span> Formulario de contacto corregido</li>
+          </ul>
+          <a class="ejemplo-link" href="#ayuda">Así lo hicimos →</a>
         </div>
       </div>
     </div>
