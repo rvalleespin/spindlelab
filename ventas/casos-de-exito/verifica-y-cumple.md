@@ -28,19 +28,26 @@ verificada contra el texto oficial de la ley, no contra resúmenes de blog.
   de las "72 horas" para notificar brechas no existe en la ley chilena — es una confusión
   con el RGPD europeo, y varios competidores lo repiten sin haber leído el texto.
 
-## El hallazgo incómodo (la parte que vende sola)
+## El hallazgo incómodo — y ya arreglado (la parte que vende sola)
 
-Corrí el chequeo contra mi propio sitio, spindlelab.cl. **Sacó 36 de 100.** Sin política de
-privacidad (404 en las cuatro rutas donde debería estar), sin gestor de consentimiento, con
-GA4 + Google Tag Manager + Meta Pixel corriendo, y el formulario de contacto mandando nombre
-y correo a un formulario de terceros sin checkbox de consentimiento.
+Corrí el chequeo contra mi propio sitio, spindlelab.cl, el 9 de septiembre. **Sacó 36 de
+100.** Sin política de privacidad, sin gestor de consentimiento, con GA4 + Meta Pixel
+corriendo sin pedir permiso, y el formulario de contacto mandando nombre y correo a un
+tercero sin checkbox de consentimiento.
 
-No lo escondí. Lo estoy corrigiendo.
+Revisando el formulario para arreglar eso encontré algo peor, sin relación con la ley: un
+bug real dejaba el botón "Enviando…" pegado para siempre — el mensaje nunca llegaba a
+ningún lado. No hay forma de saber cuántos correos se perdieron así, en silencio, antes de
+encontrarlo.
+
+**Lo arreglé todo el mismo día — 12 días después, el 21 de septiembre, spindlelab.cl saca
+73 de 100.** Política real, formulario funcionando, consentimiento antes de tratar datos,
+Analytics y Meta Pixel bloqueados hasta que alguien dice que sí.
 
 **Por qué contarlo en una llamada:** no es "miren mi herramienta." Es "construí algo tan
-honesto que me delató a mí primero, y así sabes que no te va a mentir a ti." Es el mismo
-movimiento que ya funcionó con el chequeo de visibilidad en IA (publicar precios y método,
-1-sep-2026) — mostrar el instrumento en vez de prometer el resultado.
+honesto que me delató a mí primero, lo arreglé, y acá está el antes y el después." Es el
+mismo movimiento que ya funcionó con el chequeo de visibilidad en IA (publicar precios y
+método, 1-sep-2026) — mostrar el instrumento en vez de prometer el resultado.
 
 ## Cómo se construyó (la prueba técnica)
 
@@ -62,43 +69,47 @@ movimiento que ya funcionó con el chequeo de visibilidad en IA (publicar precio
    discrecional y tiene fecha de vencimiento, no una garantía. Nombrar la multa máxima como
    si fuera lo que le va a pasar es alarmismo, y se nota; prometer que nunca va a pasar
    también es un error, por la razón contraria.
-4. Si el momento lo permite, cerrar con el 36/100 de SpindleLab — genera más confianza que
-   cualquier testimonio, porque no es un testimonio: es una auto-auditoría publicada.
+4. Si el momento lo permite, cerrar con el antes y después de SpindleLab (36 → 73) — genera
+   más confianza que cualquier testimonio, porque no es un testimonio: es una auto-auditoría
+   publicada, con el arreglo real detrás.
 
 ---
 
 ## Borrador de post público (LinkedIn, voz personal singular)
 
-**Estado:** borrador, sin pasar por revisión de tono ni por Ramón. No publicar tal cual.
+**Estado:** borrador v2 (21-sep, actualizado con el arreglo real). Sin pasar por revisión de
+tono ni por Ramón. No publicar tal cual.
 
 ### Cuerpo
 
-Hace unos días construí un chequeo gratuito para la Ley 21.719, la nueva ley de protección
-de datos de Chile, vigente desde el 1 de diciembre de 2026.
+Hace unas semanas construí un chequeo gratuito para la Ley 21.719, la nueva ley de
+protección de datos de Chile.
 
 Antes de publicarlo lo corrí sobre mi propio sitio.
 
 spindlelab.cl sacó 36 de 100.
 
-Sin política de privacidad. Sin gestor de consentimiento. Con Google Analytics, Tag Manager
-y Meta Pixel corriendo. Y el formulario de contacto mandando nombre y correo a un tercero
-sin pedir consentimiento.
+Sin política de privacidad. Sin gestor de consentimiento. Con Analytics y Meta Pixel
+corriendo sin pedir permiso.
 
-Lo primero que pensé fue no publicar el chequeo hasta arreglarlo.
+Y revisando el formulario de contacto encontré algo peor, sin relación con la ley: un error
+en el código dejaba el botón "Enviando…" pegado para siempre. El mensaje nunca llegaba a
+ningún lado. No tengo forma de saber cuántos correos se perdieron así, en silencio, antes de
+que lo encontrara.
 
-Pero eso es exactamente lo que no quiero que haga nadie: revisar solo después de construir
-la herramienta que lo delata. Así que lo dejé arriba, con mi propio resultado incluido, y
-ahora estoy corrigiéndolo.
+Pasé el día arreglando todo: el formulario, el consentimiento antes de pedir datos, la
+política de privacidad, los trackers bloqueados hasta que alguien dice que sí.
 
-Una pyme con un simple formulario de contacto ya está tratando datos personales. La ley no
-distingue tamaño.
+spindlelab.cl ahora saca 73.
 
-El chequeo no certifica que cumples. Nunca lo va a decir, porque no es cierto que revisar tu
-HTML pueda saberlo todo. Te dice qué señales técnicas están presentes y cuáles faltan, con
-la instrucción de cómo corregir cada una. Y cuando no puede verificar algo, lo dice: no
-asume que está bien.
+No lo cuento para presumir un número. Lo cuento porque así funciona esto: construyes el
+instrumento, lo apuntas primero a ti mismo, y arreglas lo que encuentra. No lo que se ve
+mejor en una reunión de ventas.
 
-Lo dejo en el primer comentario.
+Si tienes un formulario de contacto, ya estás tratando datos personales. La ley no
+distingue tamaño de empresa.
+
+Lo dejo en el primer comentario, por si quieres ver qué encuentra en el tuyo.
 
 ### Primer comentario
 
@@ -108,7 +119,8 @@ falta. Sin registro, sin guardar lo que revisas.
 ### Verificación de tono (Renata)
 
 - [ ] Sin em-dash de efecto, sin relleno de transición.
-- [ ] Cero cifras sin fuente — el 36/100 es el resultado real, verificado el 9-sep-2026.
+- [ ] Cero cifras sin fuente — 36 y 73 son resultados reales, verificados el 9-sep y el
+      21-sep-2026 respectivamente.
 - [ ] Sin alarmismo — no menciona la multa máxima, no dice "cumples" ni "no cumples".
 - [ ] Voz singular, primera persona — coherente con el corpus (`voz-spindlelab/corpus.md`).
 - [ ] Falta: pase de tono de Ramón antes de publicar. **No está listo para salir.**
