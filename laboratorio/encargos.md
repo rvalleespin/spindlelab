@@ -27,8 +27,21 @@ ramas separadas, y E3 para destrabar el post de Cata.
 | E7 | Alinear el encabezado del brief con su registro | — | **cerrado 9-sep** por la sesión de parte |
 | E11 | Corregir una afirmación de la ficha de venta | parte de marketing/ventas | **cerrado 10-sep** por la sesión de parte |
 | E8 | Resolver dónde se trabaja (el clon que no existe) | Ramón | **cerrado 10-sep** — Ramón confirmó: se trabaja en la copia de iCloud; `CLAUDE.md` corregido |
+| E13 | Protocolo de entrega del kit, como skill | parte del laboratorio | **cerrado 21-sep** — `.claude/skills/entrega-kit-verificaycumple/SKILL.md` creado |
 
 ---
+
+## E13 — Protocolo de entrega del kit, como skill · *parte del laboratorio* · **cerrado 21-sep**
+Ramón: "empecemos con el protocolo de entrega". Faltaba definir cómo se instala el kit
+($149.000, ya prometido en la landing) en el sitio de un cliente real que no es el propio
+repo de Ramón. Se preguntó explícitamente el método de acceso; **Ramón eligió pedir acceso
+real** (hosting/repo/CMS o credenciales temporales), no un snippet autoinstalable ni un
+árbol de decisión por plataforma. `entrega-kit-verificaycumple/SKILL.md` documenta los 8
+pasos (intake → chequeo "antes" → levantar el sitio real → instalar el gestor de
+consentimiento → ajustes técnicos → plantilla de política → chequeo "después" → entrega),
+usando spindlelab.cl (21-sep) como caso de referencia, y deja escrita la limitación conocida
+de `chequeo.js` (no reconoce gestores de cookies caseros) para que no se confunda con un
+arreglo que no funcionó.
 
 ## E8 — Resolver dónde se trabaja · *Ramón* · **cerrado 10-sep**
 `CLAUDE.md:37` dice que el clon bueno es `~/Projects/spindlelab` y que la copia de iCloud está
