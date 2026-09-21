@@ -474,7 +474,8 @@
     transition: background .15s ease;
   }
   .boton-ayuda:hover { background: var(--sello-oscuro); }
-  .kit-precio { text-align: left; background: var(--bg-alt); border: 1px solid var(--borde); border-radius: 14px; padding: 22px 24px; max-width: 420px; margin: 0 auto 22px; }
+  .planes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 880px; margin: 0 auto 22px; }
+  .kit-precio { text-align: left; background: var(--bg-alt); border: 1px solid var(--borde); border-radius: 14px; padding: 22px 24px; max-width: 420px; margin: 0 auto; display: flex; flex-direction: column; }
   .kit-etiqueta { margin: 0 0 4px; font-size: 0.75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--texto-suave); font-weight: 700; }
   .kit-monto { margin: 0 0 14px; font-size: 1.5rem; font-weight: 700; color: var(--sello); }
   .kit-monto span { font-size: 0.85rem; font-weight: 400; color: var(--texto-suave); }
@@ -482,7 +483,11 @@
   .kit-incluye li { padding: 6px 0 6px 22px; position: relative; color: var(--texto-suave); border-top: 1px solid var(--borde); }
   .kit-incluye li:first-child { border-top: none; }
   .kit-incluye li::before { content: "✓"; position: absolute; left: 0; color: var(--ok); font-weight: 700; }
-  .kit-nota { margin: 0; font-size: 0.78rem; color: var(--texto-suave); max-width: none; text-align: left; }
+  .kit-nota { margin: auto 0 0; padding-top: 14px; font-size: 0.78rem; color: var(--texto-suave); max-width: none; text-align: left; }
+  .botones-ayuda { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .boton-secundario { background: transparent; color: var(--sello); border: 1.5px solid var(--sello); box-shadow: none; }
+  .boton-secundario:hover { background: var(--bg-alt); }
+  @media (max-width: 680px) { .planes-grid { grid-template-columns: 1fr; max-width: 420px; } }
 
   footer.sitio {
     border-top: 1px solid var(--borde);
@@ -673,19 +678,34 @@
     <div class="envoltura">
       <div class="ayuda-caja reveal">
         <h2>¿Tu chequeo salió con señales pendientes?</h2>
-        <p>Puedo ayudarte a corregirlas — política de privacidad, consentimiento, lo que pide el Art. 14 ter.</p>
-        <div class="kit-precio">
-          <p class="kit-etiqueta">Kit de implementación</p>
-          <p class="kit-monto">Desde $149.000 <span>+ IVA · una vez</span></p>
-          <ul class="kit-incluye">
-            <li>Instalación y configuración de un gestor de consentimiento</li>
-            <li>Ajustes técnicos según lo que tu chequeo detecte</li>
-            <li>Plantilla de política de privacidad, para que la revise tu abogado</li>
-            <li>Verificación final con el mismo chequeo</li>
-          </ul>
-          <p class="kit-nota">No incluye asesoría legal — el texto final y la evaluación de tu caso son de abogado. El valor se ajusta según lo que tu chequeo muestre.</p>
+        <p>Puedo ayudarte a corregirlas — política de privacidad, consentimiento, lo que pide el Art. 14 ter. Y a que se mantengan corregidas, porque un sitio cambia y las señales se pueden volver a romper.</p>
+        <div class="planes-grid">
+          <div class="kit-precio">
+            <p class="kit-etiqueta">Kit de implementación</p>
+            <p class="kit-monto">Desde $149.000 <span>+ IVA · una vez</span></p>
+            <ul class="kit-incluye">
+              <li>Instalación y configuración de un gestor de consentimiento</li>
+              <li>Ajustes técnicos según lo que tu chequeo detecte</li>
+              <li>Plantilla de política de privacidad, para que la revise tu abogado</li>
+              <li>Verificación final con el mismo chequeo</li>
+            </ul>
+            <p class="kit-nota">No incluye asesoría legal — el texto final y la evaluación de tu caso son de abogado. El valor se ajusta según lo que tu chequeo muestre.</p>
+          </div>
+          <div class="kit-precio">
+            <p class="kit-etiqueta">Suscripción de vigilancia</p>
+            <p class="kit-monto">Desde $39.000 <span>+ IVA · al mes</span></p>
+            <ul class="kit-incluye">
+              <li>Re-chequeo trimestral automático de tu sitio</li>
+              <li>Alerta si tu puntaje baja — algo se rompió o se agregó sin avisar</li>
+              <li>Registro de actividades de tratamiento actualizado</li>
+            </ul>
+            <p class="kit-nota">Mínimo 2 trimestres. No reemplaza el kit — lo sostiene en el tiempo, después de instalado.</p>
+          </div>
         </div>
-        <a class="boton-ayuda" href="mailto:hola@spindlelab.cl?subject=Quiero%20el%20kit%20de%20Verifica%20y%20Cumple">Quiero el kit</a>
+        <div class="botones-ayuda">
+          <a class="boton-ayuda" href="mailto:hola@spindlelab.cl?subject=Quiero%20el%20kit%20de%20Verifica%20y%20Cumple">Quiero el kit</a>
+          <a class="boton-ayuda boton-secundario" href="mailto:hola@spindlelab.cl?subject=Quiero%20la%20suscripci%C3%B3n%20de%20Verifica%20y%20Cumple">Quiero la suscripción</a>
+        </div>
       </div>
     </div>
   </section>
