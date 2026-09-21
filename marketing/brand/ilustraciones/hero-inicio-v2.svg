@@ -1,0 +1,79 @@
+<svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de una persona señalando una ventana de navegador donde una IA responde con una marca de verificación">
+<!-- paleta fija (SVG externo no lee var()): ink #283338 · teal #1C5D5F · sage #65B8A2 · rose #D6AEC1 · seafoam #CAE1E2 · card-mint #E4F0F1 · line #DCE6E5 -->
+
+  <!-- sombra de piso, muy sutil -->
+  <ellipse cx="112" cy="478" rx="78" ry="8" fill="#CAE1E2" opacity=".45"/>
+
+  <!-- hilo conductor: una línea suelta que recorre la composición -->
+  <path d="M243,140 Q300,72 365,88 Q430,106 468,82 Q505,62 535,100" fill="none" stroke="#1C5D5F" stroke-width="2.8" stroke-linecap="round" opacity=".8"/>
+  <path d="M478,300 Q515,325 505,362 Q500,384 470,380" fill="none" stroke="#1C5D5F" stroke-width="2.8" stroke-linecap="round" opacity=".8"/>
+
+  <!-- arcos de señal -->
+  <path d="M525,25 A18,18 0 0 1 543,43" fill="none" stroke="#65B8A2" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+  <path d="M525,11 A32,32 0 0 1 557,43" fill="none" stroke="#65B8A2" stroke-width="3" stroke-linecap="round" opacity=".38"/>
+
+  <!-- confeti disperso, escalas variadas -->
+  <path d="M400,36 Q402,44 410,46 Q402,48 400,56 Q398,48 390,46 Q398,44 400,36 Z" fill="none" stroke="#283338" stroke-width="1.6"/>
+  <circle cx="356" cy="24" r="4" fill="#D6AEC1"/>
+  <circle cx="128" cy="50" r="3" fill="#65B8A2"/>
+  <circle cx="447" cy="410" r="6" fill="none" stroke="#1C5D5F" stroke-width="2"/>
+  <path d="M318,330 L330,330 L324,340 Z" fill="none" stroke="#283338" stroke-width="1.6" stroke-linejoin="round"/>
+  <rect x="497" y="228" width="12" height="12" rx="3" fill="#65B8A2" transform="rotate(-12 503 234)"/>
+  <rect x="245" y="298" width="10" height="10" rx="2.5" fill="#D6AEC1" transform="rotate(10 250 303)"/>
+  <circle cx="558" cy="230" r="3" fill="#283338"/>
+
+  <!-- persona -->
+  <!-- piernas -->
+  <path d="M80,296 Q73,388 71,472 L99,472 Q101,388 103,296 Z" fill="#FFFFFF" stroke="#283338" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M114,296 Q120,388 124,472 L152,472 Q150,388 144,296 Z" fill="#FFFFFF" stroke="#283338" stroke-width="2.5" stroke-linejoin="round"/>
+  <ellipse cx="84" cy="474" rx="17" ry="7" fill="#283338"/>
+  <ellipse cx="138" cy="474" rx="17" ry="7" fill="#283338"/>
+
+  <!-- torso -->
+  <path d="M78,188 Q111,172 142,188 L149,300 L71,300 Z" fill="#FFFFFF" stroke="#283338" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- correa y bolso: único acento de color en la figura -->
+  <path d="M84,190 L138,285" stroke="#D6AEC1" stroke-width="6" stroke-linecap="round"/>
+  <rect x="96" y="255" width="34" height="26" rx="6" fill="#D6AEC1" stroke="#283338" stroke-width="2"/>
+
+  <!-- brazo relajado -->
+  <path d="M80,192 Q60,220 66,252" fill="none" stroke="#283338" stroke-width="21" stroke-linecap="round"/>
+  <path d="M80,192 Q60,220 66,252" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-linecap="round"/>
+  <circle cx="66" cy="255" r="10.5" fill="#FFFFFF" stroke="#283338" stroke-width="2.5"/>
+
+  <!-- brazo señalando -->
+  <path d="M138,192 Q185,168 226,148" fill="none" stroke="#283338" stroke-width="21" stroke-linecap="round"/>
+  <path d="M138,192 Q185,168 226,148" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-linecap="round"/>
+  <circle cx="226" cy="148" r="11" fill="#FFFFFF" stroke="#283338" stroke-width="2.5"/>
+  <path d="M235,141 L250,130" fill="none" stroke="#283338" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- cabeza y cabello -->
+  <circle cx="110" cy="152" r="27" fill="#FFFFFF" stroke="#283338" stroke-width="2.5"/>
+  <path d="M84,150 Q80,116 112,110 Q145,114 140,148 Q135,122 112,120 Q90,121 88,146 Q87,150 84,150 Z" fill="#65B8A2" stroke="#283338" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M96,158 Q99,154 102,158" fill="none" stroke="#283338" stroke-width="2" stroke-linecap="round"/>
+  <path d="M118,158 Q121,154 124,158" fill="none" stroke="#283338" stroke-width="2" stroke-linecap="round"/>
+  <path d="M100,170 Q110,177 120,170" fill="none" stroke="#283338" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- ventana del navegador: marco fino, tipo foto -->
+  <rect x="228" y="58" width="332" height="228" rx="8" fill="#FFFFFF" stroke="#283338" stroke-width="2.5"/>
+  <line x1="228" y1="94" x2="560" y2="94" stroke="#283338" stroke-width="2.5"/>
+  <circle cx="248" cy="76" r="4" fill="#CAE1E2" stroke="#65B8A2" stroke-width="1.4"/>
+  <circle cx="264" cy="76" r="4" fill="#CAE1E2" stroke="#65B8A2" stroke-width="1.4"/>
+  <circle cx="280" cy="76" r="4" fill="#CAE1E2" stroke="#65B8A2" stroke-width="1.4"/>
+
+  <!-- burbuja de respuesta con estrella de señal -->
+  <path d="M259,116 h258 a16,16 0 0 1 16,16 v50 a16,16 0 0 1 -16,16 h-207 l-26,20 v-20 h-25 a16,16 0 0 1 -16,-16 v-50 a16,16 0 0 1 16,-16 z" fill="#E4F0F1" stroke="#283338" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M300,133 Q303,146 317,149 Q303,152 300,165 Q297,152 283,149 Q297,146 300,133 Z" fill="#1C5D5F"/>
+  <path d="M292,168 Q300,172 308,168" fill="none" stroke="#1C5D5F" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>
+  <rect x="332" y="141" width="104" height="7" rx="3.5" fill="#DCE6E5"/>
+  <rect x="332" y="156" width="76" height="7" rx="3.5" fill="#DCE6E5"/>
+
+  <!-- líneas de una segunda respuesta -->
+  <rect x="260" y="228" width="180" height="7" rx="3.5" fill="#DCE6E5"/>
+  <rect x="260" y="243" width="124" height="7" rx="3.5" fill="#DCE6E5"/>
+  <rect x="260" y="258" width="142" height="7" rx="3.5" fill="#DCE6E5"/>
+
+  <!-- lupa flotante -->
+  <circle cx="480" cy="320" r="25" fill="#FFFFFF" stroke="#1C5D5F" stroke-width="3"/>
+  <line x1="498" y1="338" x2="516" y2="358" stroke="#1C5D5F" stroke-width="7" stroke-linecap="round"/>
+  <path d="M469,311 Q473,303 481,301" fill="none" stroke="#65B8A2" stroke-width="2.5" stroke-linecap="round" opacity=".7"/>
+</svg>
