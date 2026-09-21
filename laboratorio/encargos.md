@@ -21,7 +21,7 @@ ramas separadas, y E3 para destrabar el post de Cata.
 | E3 | Desbloquear el post de Cata | parte de marketing | **abierto — pegado desde el 8-sep** |
 | E1 | Devolver `laboratorio/ley-21719` sin apagar el sitio | parte del laboratorio | **abierto — E2 ya no lo bloquea, puede tomarse** |
 | E4 | Poner a `spindlelab.cl` en regla con la Ley 21.719 | parte de la agencia | **abierto** |
-| E5 | Darle su política de privacidad a `verificaycumple` | parte del laboratorio | **abierto** |
+| E5 | Darle su política de privacidad a `verificaycumple` | parte del laboratorio | **cerrado 21-sep** — verificado en vivo, puntaje subió de 36 a 73 |
 | E12 | Declarar el costo de atención semanal del proyecto 01 | Ramón | **abierto — incumple el filtro 3** |
 | E6 | Decidir el Figma de referencia (Community) | Ramón | **abierto** (el otro Figma ya se resolvió) |
 | E7 | Alinear el encabezado del brief con su registro | — | **cerrado 9-sep** por la sesión de parte |
@@ -129,12 +129,21 @@ enviando nombre, correo y sitio a `api.web3forms.com` sin checkbox de consentimi
 fecha límite: 1-dic-2026. El texto legal es de abogado; acá se hace la capa técnica.
 **Cierre:** el chequeo sube de 36/100 y `/contacto/` pide consentimiento.
 
-## E5 — Darle su política de privacidad a `verificaycumple` · *parte del laboratorio*
+## E5 — Darle su política de privacidad a `verificaycumple` · *parte del laboratorio* · **cerrado 21-sep**
 El sitio da **36/100 en su propio chequeo** (verificado 10-sep). Trata muchos menos datos que
 `spindlelab.cl` —no pide correo ni registro— así que el riesgo legal es menor, pero es lo
 primero que va a probar cualquier visitante técnico, y hoy el sitio que pide publicar la
 política del Art. 14 ter no tiene la suya. Texto de abogado, publicación de acá.
 **Cierre:** `/api/chequeo?dominio=verificaycumple.pages.dev` sube de 36/100.
+
+**Resuelto el 21-sep:** página nueva en `/privacidad/`, estructurada contra los 12 puntos del
+Art. 14 ter, con contenido verificado contra el código real de `chequeo.js` antes de afirmar
+nada técnico (la función no tiene estado; no se guarda el dominio ni el resultado). Enlazada
+desde el footer. Commit `51e1988` en `laboratorio/ley-21719`, desplegado solo (E2 ya resuelto).
+**Verificado en vivo:** `puntaje` subió de **36 a 73**. El único ítem que sigue sin marcar
+("gestor de consentimiento reconocible") es honesto dejarlo así — el sitio no usa cookies ni
+rastreadores propios, instalar un banner de consentimiento sin nada que consentir sería un
+teatro, no una mejora real. Sin nueva fila de encargo por eso.
 
 ## E12 — Declarar el costo de atención semanal del proyecto 01 · *Ramón* · **filtro 3**
 El filtro de entrada del laboratorio exige un costo de atención semanal estimado y dice *"si no
