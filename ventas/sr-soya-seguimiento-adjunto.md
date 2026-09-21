@@ -5,14 +5,33 @@
 - **Adjuntar:** `ventas/anexos/SPL-NT-2026-001-srsoya-piloto-eeuu.pdf`
 - **Para:** soyamusicbooking@gmail.com · **En el mismo hilo.**
 
+**Por qué sí conviene mandarlo:** Carlos hizo **cuatro preguntas técnicas concretas**
+(objetivo de campaña, segmentación, contenido en inglés y medición) y el correo enviado no
+las responde: dice que están en el anexo. Sin el PDF, sus preguntas quedan en el aire.
+
+### Versión recomendada (no nombra el olvido)
+
+```
+Carlos, te mando el anexo que te mencionaba, con el detalle de las cuatro
+preguntas que me hiciste: el objetivo de campaña, cómo estructuraría la
+segmentación, cómo probaría el contenido en inglés y la medición completa.
+
+Ahí está también la aritmética que te resumí y el plan de los tres meses.
+
+Ramón
+```
+
+Suena a envío planificado y le recuerda que sus preguntas están respondidas.
+
+### Alternativa directa
+
 ```
 Carlos, se me quedó el adjunto en el correo anterior. Acá va.
 
 Ramón
 ```
 
-Eso es todo. No conviene explicarlo más ni pedir disculpas largas: un adjunto olvidado es
-lo más común del mundo y alargarlo le da un peso que no tiene.
+Sirve igual. No conviene explicarlo más: alargarlo le da al olvido un peso que no tiene.
 
 ## Registro de lo que pasó
 
