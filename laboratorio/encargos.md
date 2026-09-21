@@ -20,7 +20,7 @@ ramas separadas, y E3 para destrabar el post de Cata.
 | E10 | Aplicar el título nuevo del hero | parte del laboratorio | **cerrado 10-sep** — verificado en vivo, `<h1>¿Estás seguro?</h1>` responde en `curl` |
 | E3 | Desbloquear el post de Cata | parte de marketing | **abierto — pegado desde el 8-sep** |
 | E1 | Devolver `laboratorio/ley-21719` sin apagar el sitio | parte del laboratorio | **abierto — E2 ya no lo bloquea, puede tomarse** |
-| E4 | Poner a `spindlelab.cl` en regla con la Ley 21.719 | parte de la agencia | **avanzado 21-sep** — 36→73, falta CMP real (nuevo encargo, sin número) |
+| E4 | Poner a `spindlelab.cl` en regla con la Ley 21.719 | parte de la agencia | **cerrado 21-sep** — 36→73, banner de cookies real en vivo |
 | E5 | Darle su política de privacidad a `verificaycumple` | parte del laboratorio | **cerrado 21-sep** — verificado en vivo, puntaje subió de 36 a 73 |
 | E12 | Declarar el costo de atención semanal del proyecto 01 | Ramón | **abierto — incumple el filtro 3** |
 | E6 | Decidir el Figma de referencia (Community) | Ramón | **abierto** (el otro Figma ya se resolvió) |
@@ -118,7 +118,7 @@ puede retirar la otra.
 **Cierre:** `curl` al sitio sigue en 200 y `git merge-base --is-ancestor` da verdadero en las
 dos direcciones.
 
-## E4 — Poner a `spindlelab.cl` en regla con la Ley 21.719 · *parte de la agencia* · **73/100, CMP pendiente**
+## E4 — Poner a `spindlelab.cl` en regla con la Ley 21.719 · *parte de la agencia* · **cerrado 21-sep**
 No es del laboratorio, pero lo encontró el laboratorio. Verificado el 9 y el 10-sep:
 `spindlelab.cl` da **36/100** en el chequeo que ahora enlaza desde `/diagnostico/` — sin
 política de privacidad (404 en `/privacidad/`, `/politica-de-privacidad/`, `/legal/`,
@@ -144,10 +144,21 @@ verificado en vivo, **puntaje 36 → 73**:
   siguen cargando sin pedir consentimiento primero en *todas* las páginas (no solo el
   formulario). Eso es un gestor de cookies real (CMP) gateando esos scripts — un trabajo más
   grande, no hecho hoy. La política nueva lo declara como "aviso honesto", no lo esconde.
-**Queda como encargo nuevo:** un gestor de cookies real (Google Consent Mode v2 o equivalente)
-que gatee GA4/Meta Pixel en las ~20 páginas donde se cargan hoy sin condición
-(`Layout.astro` + copias a mano en cada HTML estático). Es lo único que falta para que el
-chequeo suba del 73.
+**Resuelto el 21-sep, commit `362b88f` en `main`, verificado en vivo:** banner de cookies
+propio en las 20 páginas + `Layout.astro`. Google Consent Mode v2 arranca en `denied` en
+las 4 señales; Meta Pixel no se inicializa hasta que hay consentimiento (se envolvió en
+`__spindlelabInitMeta()`); se quitó el `<noscript>` del pixel (no se puede pedir
+consentimiento sin JS, tampoco se debía rastrear sin JS). Probado con `astro dev`: consent
+denegado por defecto confirmado en `dataLayer`, `fbq` no carga hasta "Aceptar", la decisión
+persiste entre recargas, responsive en escritorio y móvil.
+
+**El puntaje se queda en 73, y es correcto que así sea — no un problema:** `chequeo.js`
+solo reconoce gestores de cookies de terceros conocidos por nombre (Cookiebot, OneTrust,
+iubenda, etc.); uno propio, hecho a medida, no aparece en esa lista. El bloqueo real de
+GA4/Meta Pixel está verificado directamente en el navegador, no depende de que el chequeo
+lo reconozca. Si en algún momento se quiere que el número también suba, la vía es enseñarle
+a `chequeo.js` a reconocer el patrón `gtag('consent','default'` como señal — no construir
+un banner de un proveedor conocido solo para que el chequeo lo detecte.
 
 ## E5 — Darle su política de privacidad a `verificaycumple` · *parte del laboratorio* · **cerrado 21-sep**
 El sitio da **36/100 en su propio chequeo** (verificado 10-sep). Trata muchos menos datos que
