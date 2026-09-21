@@ -578,6 +578,15 @@ h1 .ia{color:var(--teal)}
 .contact-form .form-status.show{display:block}
 .contact-form .form-status.err{color:#E0755F}
 .contact-form [name="botcheck"]{display:none}
+.contact-form .field.consent{margin-bottom:24px}
+.contact-form .checkbox{
+  display:flex;align-items:flex-start;gap:10px;cursor:pointer;
+  font-size:13px;line-height:1.5;color:var(--ink-70);text-transform:none;font-weight:500;letter-spacing:0;
+}
+.contact-form .checkbox input{
+  flex:none;width:17px;height:17px;margin-top:1px;accent-color:var(--teal);cursor:pointer;
+}
+.contact-form .checkbox a{color:var(--teal);font-weight:600;text-decoration:underline}
 .form-success{
   max-width:560px;margin:0 auto;text-align:center;
   background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);

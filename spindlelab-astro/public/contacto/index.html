@@ -170,6 +170,12 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <input type="hidden" name="UTM Source" id="f-utm-source">
         <input type="hidden" name="UTM Medium" id="f-utm-medium">
         <input type="hidden" name="UTM Campaign" id="f-utm-campaign">
+        <div class="field consent">
+          <label class="checkbox">
+            <input type="checkbox" id="f-consiento" name="Consiento" required>
+            <span>Acepto que estos datos se usen para responder mi solicitud, según la <a href="/privacidad/" target="_blank" rel="noopener">política de privacidad</a>.</span>
+          </label>
+        </div>
         <button type="submit" class="btn gold">Enviar →</button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </form>
@@ -271,6 +277,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
     </div>
     <div class="base">
       <span>© 2026 SpindleLab. Todos los derechos reservados.</span>
+      <nav><a href="/privacidad/">Política de privacidad</a></nav>
       <span>SEO técnico · AEO/GEO · Chile</span>
     </div>
   </div>
@@ -319,7 +326,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
     e.preventDefault();
     btn.disabled=true; btn.textContent='Enviando…';
     status.className='form-status';
-    var serviceInterest=form.elements['Servicio de interés'].value;
+    var consintio=!!form.elements['Consiento'] && form.elements['Consiento'].checked;
     fetch(form.action, {
       method:'POST',
       headers:{'Accept':'application/json'},
@@ -328,8 +335,13 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       if(!data.success) throw new Error(data.message||'Error');
       form.hidden=true;
       success.hidden=false;
-      gtag('event','generate_lead',{form_id:'contacto',service_interest:serviceInterest});
-      if(window.fbq){ fbq('track','Lead',{content_name:'contacto',service_interest:serviceInterest}); }
+      // El evento de conversión solo se dispara si la persona marcó el consentimiento —
+      // no tiene sentido pedirle permiso para tratar sus datos y de todas formas
+      // mandárselos a Google/Meta si dijo que no.
+      if(consintio){
+        gtag('event','generate_lead',{form_id:'contacto'});
+        if(window.fbq){ fbq('track','Lead',{content_name:'contacto'}); }
+      }
     }).catch(function(){
       status.textContent='Algo falló al enviar. Escríbenos directo a hola@spindlelab.cl mientras lo revisamos.';
       status.className='form-status show err';
