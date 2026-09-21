@@ -57,7 +57,9 @@ método, 1-sep-2026) — mostrar el instrumento en vez de prometer el resultado.
   Playwright (desktop, mobile, dark mode, foco de teclado).
 - **Es un servicio de SpindleLab** (decisión de Ramón, 21-sep-2026, que revirtió el "Camino
   B" de marca aparte). El responsable del tratamiento en la política de privacidad es
-  SpindleLab SpA, no Ramón como persona natural.
+  **SpindleLab SpA, RUT 78.474.925-8**, no Ramón como persona natural (confirmado por Ramón
+  el 21-sep). Para la llamada: **tanto el kit como la suscripción se facturan por la SpA** —
+  son ofertas nuevas, así que caen del lado nuevo de la regla de corte del 24-jul.
 
 ## Cómo se cobra
 
