@@ -149,14 +149,13 @@ Escribes tu dominio y en segundos sabes qué te falta. Gratis, sin registro, y n
 - [x] Pase de tono de Ramón: dado el 21-sep ("sí, reescríbelo para la voz de SpindleLab"
       → "dale, súbelo a la página de SpindleLab").
 
-### El perfil personal de Ramón: resuelto, con otro ángulo
+### El perfil personal de Ramón: publicado, con otro ángulo
 
 Salió por la página, así que el post personal no podía repetir el mismo texto en singular.
 Se escribió uno nuevo, con un ángulo distinto: **el chequeo se niega a decir si alguien
 cumple, y esa misma regla le quita a Ramón un punto en su propio sitio que él elige no
-arreglarse.** Borrador en
-`marketing/redes/2026-09-septiembre/24-mie-personal-no-certifico/publicar.md`, para el
-miércoles 24, **pendiente del pase de tono de Ramón**.
+arreglarse.** ✅ Publicado el 21-sep (`urn:li:activity:7507936204286308353`); texto en
+`marketing/redes/2026-09-septiembre/21-dom-personal-no-certifico/publicar.md`.
 
 **Sirve también en la llamada,** aunque no se publique: es la respuesta corta a "¿y esto me
 certifica que cumplo?". No, y el porqué es lo que hace que el resultado valga. **Sin decidir todavía.**

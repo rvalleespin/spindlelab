@@ -8,7 +8,8 @@
 1. [Registro singular — LinkedIn personal, 1-sep-2026](#1-singular)
 2. [Registro plural — Instagram / página, 1-sep-2026](#2-plural)
 3. [Registro plural — página de LinkedIn, 21-sep-2026](#3-plural-linkedin)
-4. [Dónde hay más material](#4-mas)
+4. [Registro singular — LinkedIn personal, 21-sep-2026](#4-singular-nocertifico)
+5. [Dónde hay más material](#5-mas)
 
 ---
 
@@ -128,7 +129,48 @@ Escribes tu dominio y en segundos sabes qué te falta. Gratis, sin registro, y n
 
 ---
 
-## <a id="4-mas"></a>4. Dónde hay más material
+## <a id="4-singular-nocertifico"></a>4. Registro singular — Ramón, LinkedIn personal (dom 21-sep-2026)
+
+**Estado:** ✅ publicado, `urn:li:activity:7507936204286308353`. Texto puro, sin imagen.
+**Fuente:** `marketing/redes/2026-09-septiembre/21-dom-personal-no-certifico/publicar.md`
+**Por qué es buena referencia:** salió el mismo día que la pieza plural de la sección 3, sobre
+el mismo producto, y **no se parecen en nada**. Es el mejor ejemplo disponible de qué
+significa "dos registros, no uno": la marca cuenta lo que entregó, la persona cuenta una
+decisión que tomó. Además la parte incómoda acá no es retórica, es comprobable: su propio
+chequeo le quita un punto y él explica por qué no se hace la excepción. Cualquiera puede
+correrlo y verificarlo. **Cero cifras en el cuerpo** salvo el nombre de la ley, que es un
+nombre y no una métrica.
+
+### Cuerpo
+
+Soy fundador de SpindleLab y construí un chequeo que se niega a decirte si cumples.
+
+Es para la Ley 21.719, la nueva ley de protección de datos, que entra en vigencia a fin de año. Mira un sitio y muestra qué señales están y cuáles faltan, con la instrucción para corregir cada una. Ahí se detiene.
+
+Lo que quiere cualquiera que pregunta por esto es un sí o un no. Lo entiendo. Pero si le digo "cumples" a alguien que no cumple, el que queda expuesto a la multa es él y el que firmó esa frase soy yo.
+
+Mi trabajo es decirle a alguien qué le falta en su propio sitio. Si afirmo más de lo que puedo probar, no me queda mucho más que ofrecerle.
+
+Y hay cosas que no se ven desde afuera. Si un rastreador dispara antes o después de que el visitante dio permiso, por ejemplo: eso no está en el código que uno puede leer. Hay que abrir la página en un navegador y mirar el orden en que ocurren las cosas.
+
+Podría levantar un navegador en cada consulta. Se demora, y aun así daría una sospecha y no una prueba. Lo dejé afuera, y escribí en el sitio una parte que dice qué no revisa.
+
+Esa limitación me pegó a mí. Mi gestor de consentimiento es propio, y el chequeo reconoce por nombre los de proveedores conocidos. El mío no está en esa lista, así que no me da el punto. Lo verifiqué a mano, abriendo mi sitio en el navegador: el rastreador de Meta no se carga si nadie aceptó, y el de Google parte con el permiso denegado.
+
+Agregar la excepción me toma nada. No la agregué. Si me hago una excepción a mí, el resultado de cualquier otro vale menos.
+
+Un sello que diga "listo" se vende mejor que una lista de lo que decidí no mirar. Lo sé. Prefiero la lista.
+
+Dejo el chequeo en el primer comentario, por si quieres ver qué te muestra del tuyo, y qué no.
+
+### Primer comentario
+
+Acá está: https://verificaycumple.pages.dev
+Escribes tu dominio y corre ahí mismo. Si te aparece algo raro y no cachas qué hacer, escríbeme y lo vemos.
+
+---
+
+## <a id="5-mas"></a>5. Dónde hay más material
 
 - **Piezas listas y pasadas por revisión, aún no publicadas:**
   `marketing/redes/2026-09-septiembre/*/publicar.md`. Útiles para ver la intención y el

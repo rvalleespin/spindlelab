@@ -1,6 +1,12 @@
-# Borrador — Post personal (mié 24-sep, LinkedIn personal de Ramón)
+# ✅ PUBLICADO — Post personal (LinkedIn personal de Ramón)
 
-**Estado: borrador, pendiente del pase de tono de Ramón.** No publicar sin su visto bueno.
+**Publicado el dom 21-sep-2026**, no el miércoles 24 como estaba planificado: Ramón dio el
+pase de tono y dijo de subirlo de inmediato. `urn:li:activity:7507936204286308353`, público,
+con el primer comentario abajo, los dos firmados por él (no por la página).
+
+**Ojo con la cadencia:** salió el mismo día que el post de la página (el lanzamiento, por la
+mañana). Son dos piezas distintas y no se pisan en contenido, pero sí se juntan en el tiempo.
+La próxima pieza del perfil personal no debería ser esta semana.
 
 **Por qué existe:** el 21-sep salió por la **página** el lanzamiento de Verifica y Cumple
 (`urn:li:activity:7507924615218823168`), en voz plural. El perfil personal no puede repetir
