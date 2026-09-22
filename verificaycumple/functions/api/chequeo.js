@@ -28,7 +28,47 @@ const MAX_BYTES = 3_000_000;
  * ------------------------------------------------------------------ */
 
 const HOST_PROHIBIDO =
-  /^(localhost|.*\.local|.*\.internal|metadata\.google\.internal)$/i;
+  /^(localhost|.*\.localhost|.*\.local|.*\.internal|metadata\.google\.internal)$/i;
+
+const PUERTOS_OK = new Set(['', '80', '443']);
+const MAX_SALTOS = 4;
+
+// Un host puede ser una dirección IP escrita en muchas notaciones, no solo en el 127.0.0.1
+// de manual. El parser de URL resuelve 127.1, 0177.0.0.1, 0x7f.0.0.1 y 2130706433 a la
+// misma dirección, y la regla con la que lo decide es corta: si la última etiqueta del host
+// es un número (decimal, octal o hexadecimal), el host entero se lee como IPv4. Eso es lo
+// que comprobamos acá, y de paso cubre los literales IPv6 ([::1]).
+//
+// Rechazamos TODAS las IP, públicas y privadas. Es más estricto que mirar rangos y bastante
+// más difícil de equivocar — la versión anterior miraba rangos sobre un regex de cuatro
+// grupos, así que las otras notaciones se le colaban enteras. Ningún sitio real se escribe
+// con su IP, y ningún dominio real termina en una etiqueta numérica, porque ningún TLD lo es.
+function esIpLiteral(host) {
+  if (host.startsWith('[') || host.includes(':')) return true; // IPv6
+  const partes = host.split('.');
+  if (partes.length > 1 && partes[partes.length - 1] === '') partes.pop(); // "1.2.3.4."
+  return /^(0[xX][0-9a-fA-F]*|[0-9]+)$/.test(partes[partes.length - 1]);
+}
+
+// La misma validación, pero sobre una URL completa. Es el único portón por donde sale un
+// fetch, y existe porque antes solo se validaba lo que escribía el visitante: el chequeo
+// hacía después otras peticiones que nadie miraba — la de la política de privacidad, cuya
+// URL la pone el sitio revisado y no nosotros, y la de cada redirección. Cualquier sitio
+// podía apuntarnos a donde quisiera y usar el chequeo como sonda, con nuestro nombre en la
+// petición.
+export function destinoPermitido(u) {
+  let url;
+  try {
+    url = new URL(u);
+  } catch {
+    return false;
+  }
+  if (url.protocol !== 'https:' && url.protocol !== 'http:') return false;
+  if (!PUERTOS_OK.has(url.port)) return false;
+  const host = url.hostname.replace(/\.$/, '').toLowerCase();
+  if (!host || HOST_PROHIBIDO.test(host)) return false;
+  return !esIpLiteral(host);
+}
 
 export function normalizarDominio(entrada) {
   if (typeof entrada !== 'string') return { error: 'Escribe un dominio.' };
@@ -46,18 +86,7 @@ export function normalizarDominio(entrada) {
   if (!host || HOST_PROHIBIDO.test(host)) {
     return { error: 'Ese destino no se puede revisar.' };
   }
-  // IP literal: bloqueamos rangos privados y de loopback.
-  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(host)) {
-    const o = host.split('.').map(Number);
-    if (o.some((n) => n > 255)) return { error: 'Esa dirección no es válida.' };
-    const privada =
-      o[0] === 10 ||
-      o[0] === 127 ||
-      o[0] === 0 ||
-      (o[0] === 192 && o[1] === 168) ||
-      (o[0] === 172 && o[1] >= 16 && o[1] <= 31) ||
-      (o[0] === 169 && o[1] === 254);
-    if (privada) return { error: 'Ese destino no se puede revisar.' };
+  if (esIpLiteral(host)) {
     return { error: 'Escribe un dominio, no una dirección IP.' };
   }
   if (!/^[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)+$/.test(host)) {
@@ -70,13 +99,29 @@ export function normalizarDominio(entrada) {
  * Descarga acotada: timeout y tope de bytes.                          *
  * ------------------------------------------------------------------ */
 
+// Sigue las redirecciones a mano, validando cada salto. Con `redirect: 'follow'` el runtime
+// las seguía solo y nosotros nunca veíamos a dónde: bastaba que el sitio revisado redirigiera
+// a otra parte para que el destino real nunca pasara por el validador. Acá cada salto vuelve
+// a pasar por el mismo portón que la entrada del visitante.
 async function traer(url, fetchImpl) {
+  let actual = url;
+  for (let salto = 0; salto <= MAX_SALTOS; salto++) {
+    if (!destinoPermitido(actual)) return null;
+    const r = await pedirUna(actual, fetchImpl);
+    if (!r) return null;
+    if (!r.redireccion) return r;
+    actual = r.redireccion;
+  }
+  return null; // cadena de redirecciones demasiado larga o en círculo
+}
+
+async function pedirUna(url, fetchImpl) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
   try {
     const r = await fetchImpl(url, {
       signal: ctrl.signal,
-      redirect: 'follow',
+      redirect: 'manual',
       cf: { cacheTtl: 0, cacheEverything: false },
       headers: {
         'User-Agent': 'VerificaYCumple/1.0 (+https://verificaycumple.pages.dev/)',
@@ -84,6 +129,17 @@ async function traer(url, fetchImpl) {
         'Cache-Control': 'no-cache',
       },
     });
+
+    // Una redirección no se puntúa: se devuelve el destino para que `traer` lo valide y la
+    // siga. Si viene un 3xx sin un Location que podamos resolver, preferimos fallar a
+    // inventar: se corta acá y el visitante recibe "no pudimos abrir el sitio", que es
+    // verdad, en vez de un informe armado sobre una página que nunca leímos.
+    if (r.status >= 300 && r.status < 400) {
+      const destino = r.headers.get('location');
+      const siguiente = destino ? resolverUrl(destino, url) : null;
+      return siguiente ? { redireccion: siguiente } : null;
+    }
+
     // Se lee por trozos y se corta la conexión al pasar el tope, en vez de `r.text()`, que
     // materializa el cuerpo entero antes de recortarlo: contra un servidor que responde
     // cientos de MB eso tumbaba el aislado.
@@ -138,7 +194,9 @@ async function traer(url, fetchImpl) {
       else texto = crudo;
     }
 
-    return { status: r.status, url: r.url, texto, completo };
+    // La URL que devolvemos es la que pedimos nosotros, no `r.url`: ahora que seguimos las
+    // redirecciones a mano, `actual` es la única que sabemos validada.
+    return { status: r.status, url, texto, completo };
   } catch {
     return null;
   } finally {
