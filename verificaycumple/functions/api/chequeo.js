@@ -268,7 +268,7 @@ export async function chequear(entrada, fetchImpl = fetch) {
       id: 'proveedores',
       titulo: 'Proveedores externos que detectamos en tu sitio',
       detalle: proveedores.length
-        ? `Encontramos: ${proveedores.join(', ')}. No podemos saber si disparan antes o después del consentimiento del visitante — eso requiere revisar el comportamiento en un navegador real, no solo el HTML. Sí es una lista útil: cada uno de estos proveedores necesita su propio acuerdo de tratamiento de datos (Art. 27-28).`
+        ? `Encontramos: ${proveedores.join(', ')}. No podemos saber si disparan antes o después del consentimiento del visitante. Eso requiere revisar el comportamiento en un navegador real, no solo el HTML. Sí es una lista útil: cada uno de estos proveedores necesita su propio acuerdo de tratamiento de datos (Art. 27-28).`
         : 'No detectamos scripts de los proveedores externos más comunes (GA4, GTM, Meta Pixel, Hotjar, Clarity) en el HTML que recibimos.',
     },
     {
@@ -283,7 +283,7 @@ export async function chequear(entrada, fetchImpl = fetch) {
       titulo: 'Casilla de consentimiento en formularios propios',
       detalle: encontroCasilla
         ? premarcada
-          ? 'Encontramos una casilla de consentimiento premarcada en un formulario de tu sitio. El Art. 12 exige un acto afirmativo — una casilla ya marcada no cumple ese estándar.'
+          ? 'Encontramos una casilla de consentimiento premarcada en un formulario de tu sitio. El Art. 12 exige un acto afirmativo. Una casilla ya marcada no cumple ese estándar.'
           : 'Encontramos una casilla de consentimiento y no viene premarcada.'
         : 'No encontramos un formulario HTML con casilla de consentimiento en la página principal. Si usas un formulario embebido de un tercero (HubSpot, Typeform, Google Forms) o renderizado por JavaScript, este chequeo no lo puede ver.',
     },
