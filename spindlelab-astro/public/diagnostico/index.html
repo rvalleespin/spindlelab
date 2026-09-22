@@ -169,6 +169,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
   .chq-form button[disabled]{opacity:.55;cursor:progress}
   .chq-nota{font-size:13.5px;color:var(--ink-50);max-width:560px;line-height:1.6}
   .chq-error{display:none;margin-top:18px;border-left:3px solid #d98c8c;background:var(--surface);padding:14px 20px;border-radius:0 10px 10px 0;font-size:14.5px;color:var(--ink-70)}
+  .chq-error-codigo{margin:10px 0 0;padding-top:10px;border-top:1px solid rgba(0,0,0,.12);font-size:13px;font-variant-numeric:tabular-nums}
   #chq-out{display:none;margin-top:40px;scroll-margin-top:96px}
   .chq-score{display:flex;align-items:center;gap:26px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px 30px}
   .chq-num{font-family:var(--headline);font-size:clamp(44px,7vw,64px);font-weight:700;line-height:1;letter-spacing:-.03em;color:var(--paper)}
@@ -422,8 +423,11 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
   function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
 
-  function fallar(msg){
-    err.textContent = msg;
+  function fallar(msg, codigo){
+    // El codigo de respuesta baja de categoria: deja de ser el mensaje y pasa a ser el dato
+    // que sirve cuando alguien nos escribe para que lo revisemos a mano.
+    err.innerHTML = '<p style="margin:0">' + esc(msg) + '</p>' +
+      (codigo ? '<p class="chq-error-codigo">Codigo de respuesta de tu sitio: ' + esc(codigo) + '</p>' : '');
     err.style.display = 'block';
     out.style.display = 'none';
   }
@@ -482,7 +486,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
     fetch('/api/chequeo?dominio=' + encodeURIComponent(v))
       .then(function(r){ return r.json(); })
       .then(function(d){
-        if(!d || !d.ok) fallar((d && d.error) || 'No pudimos completar el chequeo.');
+        if(!d || !d.ok) fallar((d && d.error) || 'No pudimos completar el chequeo.', d && d.codigo);
         else pintar(d);
       })
       .catch(function(){ fallar('No pudimos completar el chequeo. Intentalo de nuevo en un momento.'); })

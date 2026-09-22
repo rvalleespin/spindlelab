@@ -11,14 +11,84 @@
  */
 
 const TIMEOUT_MS = 8000;
-const MAX_BYTES = 900_000;
+// Tope de lectura por recurso. Subió de 900 KB a 3 MB porque portadas de más de 1 MB son
+// corrientes y con el tope viejo el chequeo se quedaba corto seguido.
+//
+// NO es el techo de memoria, aunque una versión de este comentario lo afirmaba. El cuerpo se
+// decodifica trozo a trozo y se acumula como texto, así que el pico por recurso es la cadena
+// resultante (UTF-16, hasta el doble de los bytes) más el trozo en curso. Se quitó el paso
+// intermedio que juntaba todos los trozos en un solo Uint8Array antes de decodificar, que
+// agregaba una copia entera de más.
+const MAX_BYTES = 3_000_000;
 
 /* ------------------------------------------------------------------ *
  * Validación del destino. Sin esto, el endpoint es un proxy abierto.  *
  * ------------------------------------------------------------------ */
 
+// Nombres que nunca son un sitio de cliente, más los servicios de DNS comodín que
+// devuelven una dirección privada para cualquier nombre que les pidas (nip.io y compañía
+// resuelven 127.0.0.1.nip.io a 127.0.0.1). Comprobado con dscacheutil: resuelven de verdad.
 const HOST_PROHIBIDO =
-  /^(localhost|.*\.local|.*\.internal|metadata\.google\.internal)$/i;
+  /^(localhost|.*\.localhost|.*\.local|.*\.internal|metadata\.google\.internal|(.*\.)?(nip\.io|sslip\.io|xip\.io|localtest\.me|lvh\.me|vcap\.me|traefik\.me))$/i;
+
+const PUERTOS_OK = new Set(['', '80', '443']);
+const MAX_SALTOS = 8;
+
+// Un host puede ser una dirección IP escrita en muchas notaciones, no solo en el 127.0.0.1
+// de manual. El parser de URL resuelve 127.1, 0177.0.0.1, 0x7f.0.0.1 y 2130706433 a la
+// misma dirección, y la regla con la que lo decide es corta: si la última etiqueta del host
+// es un número (decimal, octal o hexadecimal), el host entero se lee como IPv4. Eso es lo
+// que comprobamos acá, y de paso cubre los literales IPv6 ([::1]).
+//
+// Rechazamos TODAS las IP, públicas y privadas. Es más estricto que mirar rangos y bastante
+// más difícil de equivocar: la versión anterior miraba rangos sobre un regex de cuatro
+// grupos, así que las otras notaciones se le colaban enteras (comprobado contra producción).
+// Ningún sitio real se escribe con su IP, y ningún dominio real termina en una etiqueta
+// numérica, porque ningún TLD lo es.
+// Un host que lleva una IPv4 metida entre sus etiquetas: 127.0.0.1.nip.io, 10.0.0.1.loquesea.
+// El portón validaba el NOMBRE y nunca la dirección, así que estos lo cruzaban enteros. No
+// podemos resolver DNS desde un Worker, así que esto es lo que sí se puede hacer desde acá:
+// rechazar la forma. En producción el borde de Cloudflare además los frena con un 403 (medido),
+// o sea que no había puerta abierta; lo que había era un validador que no hacía su trabajo y
+// un visitante recibiendo "tu sitio nos bloqueó la lectura" en vez de una respuesta clara.
+function llevaIpDentro(host) {
+  const p = host.split('.');
+  for (let i = 0; i + 3 < p.length; i++) {
+    if (p.slice(i, i + 4).every((x) => /^\d{1,3}$/.test(x) && Number(x) <= 255)) return true;
+  }
+  return false;
+}
+
+function esIpLiteral(host) {
+  if (host.startsWith('[') || host.includes(':')) return true; // IPv6
+  const partes = host.split('.');
+  // Se quitan TODAS las etiquetas vacías del final, no una. Con un solo punto final
+  // ("127.0.0.1.") la primera versión acertaba, pero con dos la última etiqueta quedaba
+  // vacía, el regex no calzaba y el host cruzaba el portón: comprobado, "localhost.." y
+  // "metadata.google.internal.." pasaban.
+  while (partes.length > 1 && partes[partes.length - 1] === '') partes.pop();
+  return /^(0[xX][0-9a-fA-F]*|[0-9]+)$/.test(partes[partes.length - 1]);
+}
+
+// La misma validación, pero sobre una URL completa. Es el único portón por donde sale un
+// fetch, y existe porque antes solo se validaba lo que escribía el visitante: las
+// redirecciones las seguía el runtime por su cuenta, así que el destino real nunca pasaba
+// por acá.
+export function destinoPermitido(u) {
+  let url;
+  try {
+    url = new URL(u);
+  } catch {
+    return false;
+  }
+  if (url.protocol !== 'https:' && url.protocol !== 'http:') return false;
+  if (!PUERTOS_OK.has(url.port)) return false;
+  const host = url.hostname.toLowerCase().replace(/\.+$/, '');
+  // Un host con etiquetas vacías en medio no es un host: no existe razón legítima para
+  // "algo..ejemplo.cl", y sí es una forma conocida de despistar a un filtro de nombres.
+  if (!host || host.includes('..') || HOST_PROHIBIDO.test(host)) return false;
+  return !esIpLiteral(host) && !llevaIpDentro(host);
+}
 
 export function normalizarDominio(entrada) {
   if (typeof entrada !== 'string') return { error: 'Escribe un dominio.' };
@@ -36,19 +106,11 @@ export function normalizarDominio(entrada) {
   if (!host || HOST_PROHIBIDO.test(host)) {
     return { error: 'Ese destino no se puede revisar.' };
   }
-  // IP literal: bloqueamos rangos privados y de loopback.
-  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(host)) {
-    const o = host.split('.').map(Number);
-    if (o.some((n) => n > 255)) return { error: 'Esa dirección no es válida.' };
-    const privada =
-      o[0] === 10 ||
-      o[0] === 127 ||
-      o[0] === 0 ||
-      (o[0] === 192 && o[1] === 168) ||
-      (o[0] === 172 && o[1] >= 16 && o[1] <= 31) ||
-      (o[0] === 169 && o[1] === 254);
-    if (privada) return { error: 'Ese destino no se puede revisar.' };
+  if (esIpLiteral(host)) {
     return { error: 'Escribe un dominio, no una dirección IP.' };
+  }
+  if (llevaIpDentro(host)) {
+    return { error: 'Ese destino no se puede revisar.' };
   }
   if (!/^[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)+$/.test(host)) {
     return { error: 'Eso no parece un dominio válido.' };
@@ -60,16 +122,51 @@ export function normalizarDominio(entrada) {
  * Descarga acotada: timeout y tope de bytes en las dos direcciones.   *
  * ------------------------------------------------------------------ */
 
+// Resuelve un Location relativo ("/es/", "otra.html") contra la URL que lo devolvió.
+function resolverUrl(href, base) {
+  try {
+    return new URL(href, base).toString();
+  } catch {
+    return null;
+  }
+}
+
+// Sigue las redirecciones a mano, validando cada salto. Con `redirect: 'follow'` el runtime
+// las seguía solo y nosotros nunca veíamos a dónde: bastaba que el sitio revisado redirigiera
+// a otra parte para que el destino real nunca pasara por el validador.
 async function traer(url, fetchImpl, opts = {}) {
+  // Un solo reloj para toda la cadena. Con un AbortController por salto, cinco saltos de
+  // 8 s daban hasta 40 s de espera al visitante, que es justo lo que el timeout venía a
+  // impedir. El presupuesto es de la petición completa, no de cada tramo.
   const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+  const reloj = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+  try {
+  let actual = url;
+  for (let salto = 0; salto <= MAX_SALTOS; salto++) {
+    if (!destinoPermitido(actual)) return null;
+    const r = await pedirUna(actual, fetchImpl, opts, ctrl.signal);
+    if (!r) return null;
+    if (!r.redireccion) return r;
+    actual = r.redireccion;
+  }
+  // Se acabaron los saltos. Devolver null diría "no pudimos abrir el sitio, revisa el
+  // dominio", y el dominio está bien: el problema es que el sitio manda de una dirección a
+  // otra sin parar. Se devuelve 508 (Loop Detected) para que salga con su propio mensaje,
+  // porque para el dueño esto es un hallazgo, no un error nuestro.
+  return { status: 508, url: actual, texto: '', completo: true, servidor: '' };
+  } finally {
+    clearTimeout(reloj);
+  }
+}
+
+async function pedirUna(url, fetchImpl, opts = {}, signal) {
   try {
     // cache:'no-store' + cacheTtl 0: sin esto, el edge puede servir una copia vieja
     // del recurso (visto en vivo: un robots.txt cacheado SIN los bloqueos de bots de IA
     // que el archivo real ya tenia, y el chequeo daba un falso "todo pasa").
     const r = await fetchImpl(url, {
-      signal: ctrl.signal,
-      redirect: 'follow',
+      signal,
+      redirect: 'manual',
       cf: { cacheTtl: 0, cacheEverything: false },
       headers: {
         'User-Agent': opts.ua || 'SpindleLabChequeo/1.0 (+https://spindlelab.cl/diagnostico/)',
@@ -77,16 +174,86 @@ async function traer(url, fetchImpl, opts = {}) {
         'Cache-Control': 'no-cache',
       },
     });
-    if (opts.soloStatus) return { status: r.status, url: r.url, texto: '', servidor: (r.headers.get('server') || '').toLowerCase() };
-    const largo = Number(r.headers.get('content-length') || 0);
+
+    // Una redirección no se lee: se devuelve el destino para que `traer` lo valide y la siga.
+    // Si viene un 3xx sin un Location que podamos resolver, preferimos fallar a inventar.
+    if (r.status >= 300 && r.status < 400) {
+      const destino = r.headers.get('location');
+      const siguiente = destino ? resolverUrl(destino, url) : null;
+      return siguiente ? { redireccion: siguiente } : null;
+    }
+
     const servidor = (r.headers.get('server') || '').toLowerCase();
-    if (largo > MAX_BYTES) return { status: r.status, url: r.url, texto: '', truncado: true, servidor };
-    const texto = (await r.text()).slice(0, MAX_BYTES);
-    return { status: r.status, url: r.url, texto, servidor };
+    // Las sondas de suplantación solo miran el status, así que ni tocamos el cuerpo.
+    if (opts.soloStatus) return { status: r.status, url, texto: '', completo: true, servidor };
+
+    // Se lee por trozos y se corta al pasar el tope, en vez de `r.text()`, que materializa el
+    // cuerpo entero antes de recortarlo.
+    //
+    // Y sobre todo: se devuelve `completo`. Antes, una portada declarada por encima del tope
+    // devolvía texto VACÍO y el chequeo la puntuaba igual, así que el informe decía que el
+    // sitio no tenía title, ni descripción, ni JSON-LD, ni entidad. Todo presente, todo
+    // reportado como ausente. Medido con la misma página: 56 si pesa 50 KB, 30 si pesa 1,2 MB.
+    let texto = '';
+    let completo = true;
+
+    if (r.body && typeof r.body.getReader === 'function') {
+      const lector = r.body.getReader();
+      const dec = new TextDecoder('utf-8');
+      let acumulado = '';
+      let cabeza = '';
+      let bytes = 0;
+      while (true) {
+        const { done, value } = await lector.read();
+        if (done) break;
+        bytes += value.byteLength;
+        if (bytes > MAX_BYTES) {
+          completo = false;
+          // Cancelar es cortesía hacia el origen, no algo de lo que dependa la respuesta: si
+          // se esperara acá y el cancel rechazara, el catch devolvería null y el visitante
+          // vería "no pudimos abrir el sitio", que es falso.
+          try { lector.cancel().catch(() => {}); } catch {}
+          break;
+        }
+        const trozo = dec.decode(value, { stream: true });
+        if (!cabeza) cabeza = trozo;
+        acumulado += trozo;
+      }
+      if (completo) {
+        texto = acumulado + dec.decode();
+      } else {
+        // Del archivo que reventó el tope nos quedamos con la cabeza. Son unos pocos KB y
+        // bastan para saber qué es: un sitemap.xml declara <urlset en la primera línea. Sin
+        // esto, un sitemap grande de verdad (la norma permite hasta 50 MB) salía informado
+        // como inexistente, que es falso y castiga justo a los sitios más serios. Para el
+        // robots.txt no cambia nada: no poder leerlo entero sigue significando que no
+        // podemos afirmar que no bloquea.
+        texto = cabeza;
+      }
+      acumulado = '';
+      // Lectura corta: el origen declaró un tamaño y entregó menos, o sea que cerró la
+      // conexión a medias. Es seguro compararlo: con gzip el runtime entrega el cuerpo ya
+      // descomprimido, así que `bytes` es mayor que lo declarado y nunca dispara de más; y si
+      // el proxy quita la cabecera, `declarado` queda en 0 y el control se salta solo.
+      const declarado = Number(r.headers.get('content-length') || 0);
+      if (completo && declarado > 0 && bytes < declarado) completo = false;
+    } else {
+      // Sin cuerpo en streaming (Node con un fetch simulado, o una respuesta sin body).
+      const crudo = typeof r.text === 'function' ? await r.text() : '';
+      // Se miden BYTES, no caracteres: `.length` cuenta unidades UTF-16 y con acentos deja
+      // pasar bastante más de lo que dice el tope.
+      const bytes = new TextEncoder().encode(crudo).length;
+      if (bytes > MAX_BYTES) completo = false;
+      else texto = crudo;
+      // Las dos ramas tienen que juzgar igual: también acá una lectura corta (el origen
+      // declaró un tamaño y entregó menos) es HTML incompleto.
+      const declarado = Number(r.headers.get('content-length') || 0);
+      if (completo && declarado > 0 && bytes < declarado) completo = false;
+    }
+
+    return { status: r.status, url, texto, completo, servidor };
   } catch {
     return null;
-  } finally {
-    clearTimeout(t);
   }
 }
 
@@ -191,6 +358,50 @@ function tieneTipo(nodo, lista) {
  * El chequeo                                                          *
  * ------------------------------------------------------------------ */
 
+/* ------------------------------------------------------------------ *
+ * Qué decirle a alguien cuyo sitio no se dejó leer                     *
+ * ------------------------------------------------------------------ */
+
+// Antes esto era una sola línea con el número adentro: "El sitio respondió 526. Revisa el
+// dominio." Para quien escribe su dominio ese número no significa nada, y el consejo estaba
+// equivocado además, porque el dominio estaba bien. El código sigue viajando aparte, en
+// `codigo`, porque a nosotros nos sirve cuando alguien nos escribe.
+export function mensajeDeFallo(status) {
+  if (status === 401 || status === 403) {
+    return 'Tu sitio nos bloqueó la lectura: respondió que no tenemos permiso para ver la ' +
+      'portada. Suele ser un firewall o una regla contra lectores automáticos, y vale la pena ' +
+      'mirarlo, porque lo mismo le puede estar pasando a los robots de IA. Escríbenos a ' +
+      'hola@spindlelab.cl y lo revisamos a mano.';
+  }
+  if (status === 404) {
+    return 'El dominio responde, pero su portada no existe. Revisa que sea la dirección que ' +
+      'usa tu sitio: a veces vive en un subdominio y no en el dominio pelado.';
+  }
+  if (status === 429) {
+    return 'Tu sitio nos pidió bajar el ritmo porque recibió varias peticiones seguidas. ' +
+      'Espera un minuto y vuelve a intentarlo.';
+  }
+  if (status === 525 || status === 526) {
+    return 'El certificado de tu sitio no sirve: está vencido, mal instalado o es de otro ' +
+      'dominio. No pudimos leer ninguna página, así que no hay informe. Eso ya es un hallazgo ' +
+      'en sí: hoy tus visitantes ven una advertencia de seguridad antes de poder entrar.';
+  }
+  if (status === 508) {
+    return 'Tu sitio nos mandó de una dirección a otra tantas veces seguidas que dejamos de ' +
+      'seguirlo. Suele ser un bucle de redirecciones mal configurado, y no es solo un problema ' +
+      'para este chequeo: alguien que entre a tu sitio puede quedarse dando vueltas sin llegar nunca.';
+  }
+  if (status === 530) {
+    return 'No encontramos un sitio publicado en ese dominio. Revisa que esté bien escrito y ' +
+      'que esté apuntando a un hosting.';
+  }
+  if (status >= 500) {
+    return 'Tu sitio respondió con un error de su propio servidor. Suele ser pasajero: ' +
+      'inténtalo en un rato. Si sigue igual, el problema está en tu hosting y no en este chequeo.';
+  }
+  return 'Tu sitio respondió, pero no nos entregó la portada. Revisa el dominio o inténtalo de nuevo.';
+}
+
 export async function chequear(entrada, fetchImpl = fetch) {
   const v = normalizarDominio(entrada);
   if (v.error) return { ok: false, error: v.error };
@@ -210,16 +421,60 @@ export async function chequear(entrada, fetchImpl = fetch) {
   ]);
 
   if (!home || home.status >= 400) {
+    if (!home) {
+      return { ok: false, error: 'No pudimos abrir el sitio. Revisa el dominio o inténtalo de nuevo.' };
+    }
+    return { ok: false, error: mensajeDeFallo(home.status), codigo: home.status };
+  }
+
+  // Si la portada no llegó entera, NO se puntúa. Esto es lo que antes producía el informe
+  // más equivocado posible: una portada por encima del tope devolvía texto vacío y el
+  // chequeo la puntuaba igual, así que decía que el sitio no tenía title, ni descripción, ni
+  // JSON-LD, ni entidad, con todo eso presente. Medido con la misma página: 56 si pesa 50 KB,
+  // 30 si pesa 1,2 MB. Preferimos no dar resultado antes que dar uno inventado.
+  // Decisión tomada a sabiendas, no un descuido: por encima del tope preferimos NO dar
+  // informe, aunque tengamos la cabeza del archivo en la mano. La versión vieja, cuando el
+  // origen no declaraba tamaño, leía todo y se quedaba con el prefijo, así que por encima de
+  // 3 MB este chequeo pasa de contestar a declinar. Lo sabemos y lo elegimos: puntuar sobre
+  // el prefijo y presentarlo como informe completo es exactamente "un resultado a medias",
+  // que es lo que este producto promete no hacer. Las señales que viven abajo saldrían
+  // ausentes sin estarlo. Portadas de más de 3 MB de HTML son raras; un informe equivocado
+  // cuesta más que uno que no se entrega.
+  if (!home.completo) {
     return {
       ok: false,
-      error: home
-        ? `El sitio respondió ${home.status}. Revisa el dominio.`
-        : 'No pudimos abrir el sitio. Revisa el dominio o inténtalo de nuevo.',
+      error:
+        'Tu portada pesa más de lo que este chequeo automático alcanza a leer completo. ' +
+        'Preferimos no darte un resultado a medias: escríbenos a hola@spindlelab.cl y la revisamos a mano.',
+    };
+  }
+
+  // El otro extremo del mismo problema: un 2xx que no trae nada de HTML. Pasa cuando un
+  // firewall le devuelve la página en blanco a un lector automático como el nuestro.
+  // Puntuarlo es inventar igual que truncar.
+  if (!home.texto.trim()) {
+    return {
+      ok: false,
+      error:
+        'Tu sitio respondió, pero no nos entregó HTML que podamos revisar. Suele pasar ' +
+        'cuando un firewall bloquea a los lectores automáticos. Escríbenos a ' +
+        'hola@spindlelab.cl y lo revisamos a mano.',
     };
   }
 
   const html = home.texto;
+  // Del robots.txt usamos lo que SÍ llegó: un bloqueo que leímos es un bloqueo real, y vale
+  // reportarlo. Lo que no se puede es lo contrario. Si no llegó entero, la regla que bloquea
+  // puede estar justo en el pedazo que no alcanzamos a leer, así que no podemos afirmar que
+  // estos robots están libres. Y si ni siquiera respondió, menos.
+  //
+  // La primera versión de esta guardia hacía justo lo que el cambio venía a matar: cuando el
+  // archivo no se podía leer lo sustituía por vacío, que el resto del código lee como "no
+  // tienes robots.txt, así que nada está bloqueado". Un sitio con los índices de IA cerrados
+  // recibía tres señales en verde y 16 puntos de regalo, afirmando que el archivo no existe.
+  // Un robots.txt que no pudimos leer no es un robots.txt que no existe.
   const robotsTxt = robots && robots.status === 200 ? robots.texto : '';
+  const robotsIlegible = !robots || (robots.status === 200 && !robots.completo);
   const nodos = aplanar(bloquesJsonLd(html));
 
   const title = (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [, ''])[1]
@@ -278,24 +533,34 @@ export async function chequear(entrada, fetchImpl = fetch) {
   const caveatCf = trasCloudflare
     ? ' Tu sitio usa Cloudflare: si activaste sus reglas de bots de IA en el borde, este chequeo no las ve; confírmalo abriendo tu propio /robots.txt.'
     : '';
-  const sinRobots = !robotsTxt ? 'No tienes robots.txt, así que nada está bloqueado.' : null;
+  const sinRobots = robotsIlegible || robotsTxt ? null : 'No tienes robots.txt, así que nada está bloqueado.';
+  const noSabemos = !robotsIlegible
+    ? null
+    : !robots
+      ? 'Tu robots.txt no respondió, así que no pudimos comprobar si bloquea a estos robots. Preferimos decírtelo antes que darte un verde que no medimos.'
+      : 'Tu robots.txt no nos llegó entero, así que no podemos afirmar que estos robots estén libres: la regla que los bloquea podría estar en la parte que no alcanzamos a leer.';
+  const arregloIlegible = 'Ábrelo tú en tu-dominio.cl/robots.txt y revisa si hay una línea Disallow para estos robots. Si quieres, escríbenos a hola@spindlelab.cl y lo miramos contigo.';
 
   const bloqIdx = botsIndices.filter((b) => bloqueaBot(robotsTxt, b));
   add(
-    'acceso', 'bots-indices', 'Los índices de búsqueda de IA pueden entrar', bloqIdx.length === 0, 7,
+    'acceso', 'bots-indices', 'Los índices de búsqueda de IA pueden entrar', bloqIdx.length === 0 && !robotsIlegible, 7,
     bloqIdx.length
       ? `Tu robots.txt bloquea a ${bloqIdx.join(', ')}. Estos robots construyen los índices con los que ChatGPT, Claude y Perplexity buscan en la web: con ellos cerrados, no puedes aparecer como fuente en sus respuestas de hoy.`
-      : (sinRobots || `OAI-SearchBot, Claude-SearchBot y PerplexityBot no están bloqueados en tu robots.txt.${caveatCf}`),
-    `Quita la regla que bloquea a ${bloqIdx.join(', ')} en tu robots.txt. Es un cambio de una línea y el efecto es inmediato.`
+      : (noSabemos || sinRobots || `OAI-SearchBot, Claude-SearchBot y PerplexityBot no están bloqueados en tu robots.txt.${caveatCf}`),
+    bloqIdx.length
+      ? `Quita la regla que bloquea a ${bloqIdx.join(', ')} en tu robots.txt. Es un cambio de una línea y el efecto es inmediato.`
+      : arregloIlegible
   );
 
   const bloqAsis = botsAsistentes.filter((b) => bloqueaBot(robotsTxt, b));
   add(
-    'acceso', 'bots-asistentes', 'Los asistentes de IA pueden visitarte en vivo', bloqAsis.length === 0, 7,
+    'acceso', 'bots-asistentes', 'Los asistentes de IA pueden visitarte en vivo', bloqAsis.length === 0 && !robotsIlegible, 7,
     bloqAsis.length
       ? `Tu robots.txt bloquea a ${bloqAsis.join(', ')}. Estos agentes entran a tu sitio en el momento en que alguien le hace una pregunta a la IA: con ellos cerrados, el asistente no puede leerte aunque quiera citarte.`
-      : (sinRobots || `ChatGPT-User, Claude-User y Perplexity-User no están bloqueados en tu robots.txt.${caveatCf}`),
-    `Quita la regla que bloquea a ${bloqAsis.join(', ')} en tu robots.txt.`
+      : (noSabemos || sinRobots || `ChatGPT-User, Claude-User y Perplexity-User no están bloqueados en tu robots.txt.${caveatCf}`),
+    bloqAsis.length
+      ? `Quita la regla que bloquea a ${bloqAsis.join(', ')} en tu robots.txt.`
+      : arregloIlegible
   );
 
   const sondas = [
@@ -317,10 +582,10 @@ export async function chequear(entrada, fetchImpl = fetch) {
 
   const bloqEnt = botsEntrenamiento.filter((b) => bloqueaBot(robotsTxt, b));
   add(
-    'acceso', 'bots-entrenamiento', 'Robots de entrenamiento: decisión consciente', bloqEnt.length === 0, 2,
+    'acceso', 'bots-entrenamiento', 'Robots de entrenamiento: decisión consciente', bloqEnt.length === 0 && !robotsIlegible, 2,
     bloqEnt.length
       ? `Bloqueas a ${bloqEnt.join(', ')}. Esto NO te quita citas hoy: estos robots recogen texto para entrenar modelos futuros, y es una decisión legítima sobre tu propiedad intelectual. Solo conviene que sea una decisión tomada, no una casilla que alguien marcó pensando que protegía la visibilidad.`
-      : (sinRobots || `GPTBot, ClaudeBot, Google-Extended y CCBot pueden recoger tu texto para modelos futuros.${caveatCf}`),
+      : (noSabemos || sinRobots || `GPTBot, ClaudeBot, Google-Extended y CCBot pueden recoger tu texto para modelos futuros.${caveatCf}`),
     'Si fue a propósito, déjalo así. Si no sabías que estaba, decide: a cambio de nada hoy, renuncias a que los modelos de dentro de dos años sepan de ti sin buscarte.'
   );
 
@@ -380,7 +645,8 @@ export async function chequear(entrada, fetchImpl = fetch) {
   );
 
   // --- Bloque 3: ¿te pueden citar? ---
-  const llmsOk = !!llms && llms.status === 200 && llms.texto.trim().length > 0;
+  // Un 200 que no alcanzamos a leer entero igual prueba que el archivo está ahí.
+  const llmsOk = !!llms && llms.status === 200 && (llms.texto.trim().length > 0 || !llms.completo);
   add(
     'citabilidad', 'llms', 'Tienes llms.txt', llmsOk, 4,
     llmsOk ? 'Encontramos /llms.txt.' : 'No encontramos /llms.txt.',
