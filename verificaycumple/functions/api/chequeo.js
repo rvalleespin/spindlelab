@@ -18,9 +18,14 @@
  */
 
 const TIMEOUT_MS = 8000;
-// Tope de lectura. Subió de 900 KB a 3 MB porque portadas de 1 MB son corrientes y con el
-// tope viejo el chequeo se quedaba corto seguido. Con la lectura en streaming de abajo este
-// número es además el techo real de memoria: nunca se materializa más que esto.
+// Tope de lectura por recurso. Subió de 900 KB a 3 MB porque portadas de más de 1 MB son
+// corrientes y con el tope viejo el chequeo se quedaba corto seguido.
+//
+// NO es el techo de memoria, aunque una versión de este comentario lo afirmaba. El cuerpo se
+// decodifica trozo a trozo y se acumula como texto, así que el pico por recurso es la cadena
+// resultante (UTF-16, hasta el doble de los bytes) más el trozo en curso. Se quitó el paso
+// intermedio que juntaba todos los trozos en un solo Uint8Array antes de decodificar, que
+// agregaba una copia entera de más.
 const MAX_BYTES = 3_000_000;
 
 /* ------------------------------------------------------------------ *
@@ -31,7 +36,7 @@ const HOST_PROHIBIDO =
   /^(localhost|.*\.localhost|.*\.local|.*\.internal|metadata\.google\.internal)$/i;
 
 const PUERTOS_OK = new Set(['', '80', '443']);
-const MAX_SALTOS = 4;
+const MAX_SALTOS = 8;
 
 // Un host puede ser una dirección IP escrita en muchas notaciones, no solo en el 127.0.0.1
 // de manual. El parser de URL resuelve 127.1, 0177.0.0.1, 0x7f.0.0.1 y 2130706433 a la
@@ -46,7 +51,11 @@ const MAX_SALTOS = 4;
 function esIpLiteral(host) {
   if (host.startsWith('[') || host.includes(':')) return true; // IPv6
   const partes = host.split('.');
-  if (partes.length > 1 && partes[partes.length - 1] === '') partes.pop(); // "1.2.3.4."
+  // Se quitan TODAS las etiquetas vacías del final, no una. Con un solo punto final
+  // ("127.0.0.1.") la primera versión acertaba, pero con dos la última etiqueta quedaba
+  // vacía, el regex no calzaba y el host cruzaba el portón: comprobado, "localhost.." y
+  // "metadata.google.internal.." pasaban.
+  while (partes.length > 1 && partes[partes.length - 1] === '') partes.pop();
   return /^(0[xX][0-9a-fA-F]*|[0-9]+)$/.test(partes[partes.length - 1]);
 }
 
@@ -65,8 +74,10 @@ export function destinoPermitido(u) {
   }
   if (url.protocol !== 'https:' && url.protocol !== 'http:') return false;
   if (!PUERTOS_OK.has(url.port)) return false;
-  const host = url.hostname.replace(/\.$/, '').toLowerCase();
-  if (!host || HOST_PROHIBIDO.test(host)) return false;
+  const host = url.hostname.toLowerCase().replace(/\.+$/, '');
+  // Un host con etiquetas vacías en medio no es un host: no existe razón legítima para
+  // "algo..ejemplo.cl", y sí es una forma conocida de despistar a un filtro de nombres.
+  if (!host || host.includes('..') || HOST_PROHIBIDO.test(host)) return false;
   return !esIpLiteral(host);
 }
 
@@ -104,23 +115,34 @@ export function normalizarDominio(entrada) {
 // a otra parte para que el destino real nunca pasara por el validador. Acá cada salto vuelve
 // a pasar por el mismo portón que la entrada del visitante.
 async function traer(url, fetchImpl) {
+  // Un solo reloj para toda la cadena. Con un AbortController por salto, cinco saltos de
+  // 8 s daban hasta 40 s de espera al visitante, que es justo lo que el timeout venía a
+  // impedir. El presupuesto es de la petición completa, no de cada tramo.
+  const ctrl = new AbortController();
+  const reloj = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+  try {
   let actual = url;
   for (let salto = 0; salto <= MAX_SALTOS; salto++) {
     if (!destinoPermitido(actual)) return null;
-    const r = await pedirUna(actual, fetchImpl);
+    const r = await pedirUna(actual, fetchImpl, ctrl.signal);
     if (!r) return null;
     if (!r.redireccion) return r;
     actual = r.redireccion;
   }
-  return null; // cadena de redirecciones demasiado larga o en círculo
+  // Se acabaron los saltos. Devolver null diría "no pudimos abrir el sitio, revisa el
+  // dominio", y el dominio está bien: el problema es que el sitio manda de una dirección a
+  // otra sin parar. Se devuelve 508 (Loop Detected) para que salga con su propio mensaje,
+  // porque para el dueño esto es un hallazgo, no un error nuestro.
+  return { status: 508, url: actual, texto: '', completo: true, servidor: '' };
+  } finally {
+    clearTimeout(reloj);
+  }
 }
 
-async function pedirUna(url, fetchImpl) {
-  const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+async function pedirUna(url, fetchImpl, signal) {
   try {
     const r = await fetchImpl(url, {
-      signal: ctrl.signal,
+      signal,
       redirect: 'manual',
       cf: { cacheTtl: 0, cacheEverything: false },
       headers: {
@@ -152,7 +174,9 @@ async function pedirUna(url, fetchImpl) {
 
     if (r.body && typeof r.body.getReader === 'function') {
       const lector = r.body.getReader();
-      const trozos = [];
+      const dec = new TextDecoder('utf-8');
+      let acumulado = '';
+      let cabeza = '';
       let bytes = 0;
       while (true) {
         const { done, value } = await lector.read();
@@ -160,29 +184,32 @@ async function pedirUna(url, fetchImpl) {
         bytes += value.byteLength;
         if (bytes > MAX_BYTES) {
           completo = false;
-          trozos.length = 0; // suelta los MB ya acumulados
-          // Cancelar es una cortesía hacia el origen, no algo de lo que dependa la
-          // respuesta: el veredicto ya está decidido. Si se dejara await acá y el cancel
-          // rechazara (la conexión se cae justo al cortarla), el catch de abajo devolvería
-          // null y el visitante vería "no pudimos abrir el sitio", que es falso, en vez del
-          // mensaje honesto. Y si el cancel no resuelve nunca, la petición queda colgada.
+          // Cancelar es cortesía hacia el origen, no algo de lo que dependa la respuesta: si
+          // se esperara acá y el cancel rechazara, el catch devolvería null y el visitante
+          // vería "no pudimos abrir el sitio", que es falso.
           try { lector.cancel().catch(() => {}); } catch {}
           break;
         }
-        trozos.push(value);
+        const trozo = dec.decode(value, { stream: true });
+        if (!cabeza) cabeza = trozo;
+        acumulado += trozo;
       }
       if (completo) {
-        const todo = new Uint8Array(bytes);
-        let i = 0;
-        for (const t of trozos) { todo.set(t, i); i += t.byteLength; }
-        trozos.length = 0; // suelta una copia entera antes de decodificar
-        texto = new TextDecoder('utf-8').decode(todo);
+        texto = acumulado + dec.decode();
+      } else {
+        // Del archivo que reventó el tope nos quedamos con la cabeza. Son unos pocos KB y
+        // bastan para saber qué es: un sitemap.xml declara <urlset en la primera línea. Sin
+        // esto, un sitemap grande de verdad (la norma permite hasta 50 MB) salía informado
+        // como inexistente, que es falso y castiga justo a los sitios más serios. Para el
+        // robots.txt no cambia nada: no poder leerlo entero sigue significando que no
+        // podemos afirmar que no bloquea.
+        texto = cabeza;
       }
-      // Lectura corta: el origen declaró un tamaño y nos entregó menos, o sea que cerró la
-      // conexión a medias. Eso es HTML incompleto aunque no hayamos topado nuestro límite.
-      // Es seguro compararlo: con gzip el runtime entrega el cuerpo ya descomprimido, así
-      // que `bytes` es mayor que lo declarado y nunca dispara de más; y si el proxy quita
-      // la cabecera, `declarado` queda en 0 y el control se salta solo.
+      acumulado = '';
+      // Lectura corta: el origen declaró un tamaño y entregó menos, o sea que cerró la
+      // conexión a medias. Es seguro compararlo: con gzip el runtime entrega el cuerpo ya
+      // descomprimido, así que `bytes` es mayor que lo declarado y nunca dispara de más; y si
+      // el proxy quita la cabecera, `declarado` queda en 0 y el control se salta solo.
       const declarado = Number(r.headers.get('content-length') || 0);
       if (completo && declarado > 0 && bytes < declarado) completo = false;
     } else {
@@ -199,8 +226,6 @@ async function pedirUna(url, fetchImpl) {
     return { status: r.status, url, texto, completo };
   } catch {
     return null;
-  } finally {
-    clearTimeout(t);
   }
 }
 
@@ -328,6 +353,11 @@ export function mensajeDeFallo(status) {
       'dominio. Por http:// tampoco entrega una página que podamos leer, así que no hay ' +
       'informe. Eso ya es un hallazgo en sí: hoy tus visitantes ven una advertencia de ' +
       'seguridad antes de poder entrar.';
+  }
+  if (status === 508) {
+    return 'Tu sitio nos mandó de una dirección a otra tantas veces seguidas que dejamos de ' +
+      'seguirlo. Suele ser un bucle de redirecciones mal configurado, y no es solo un problema ' +
+      'para este chequeo: alguien que entre a tu sitio puede quedarse dando vueltas sin llegar nunca.';
   }
   if (status === 530) {
     return 'No encontramos un sitio publicado en ese dominio. Revisa que esté bien escrito y ' +
