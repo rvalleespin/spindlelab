@@ -226,7 +226,6 @@
   var recargaPendiente = null;
 
   function aplicar(valor) {
-    var anterior = leer();
     var recordado = guardar(valor);
     banner.hidden = true;
     // Si había una recarga en camino y la persona vuelve a decidir dentro de esos 1,8 s, esa
@@ -264,10 +263,16 @@
     pintarControl();
 
     // Google Consent Mode se apaga en caliente, pero el Pixel de Meta no tiene forma de
-    // desinicializarse una vez que arrancó. Si alguien había aceptado y ahora rechaza, la
-    // única manera honesta de que deje de correr es recargar la página, y se avisa antes
-    // en vez de hacerlo de sorpresa.
-    if (anterior === 'granted' && valor === 'denied' && window.__spindlelabMetaInited) {
+    // desinicializarse una vez que arrancó. Si está corriendo y la persona acaba de
+    // rechazar, la única manera honesta de que deje de correr es recargar la página, y se
+    // avisa antes en vez de hacerlo de sorpresa.
+    //
+    // La condición mira SOLO si el Pixel está vivo, no de dónde venía la decisión. Una
+    // versión anterior exigía además que el estado previo fuera 'granted', y eso sobra: si
+    // fbq arrancó, arrancó, sea porque se aceptó en esta pestaña, en otra, o porque la
+    // página cargó con el permiso ya dado. Preguntar por el estado previo era una forma de
+    // razonar sobre la causa cuando lo único que importa es el hecho.
+    if (valor === 'denied' && window.__spindlelabMetaInited) {
       avisar('Listo, quedaron rechazadas. Recargamos la página para que el Pixel de Meta deje de correr.');
       recargaPendiente = setTimeout(function () {
         location.reload();
