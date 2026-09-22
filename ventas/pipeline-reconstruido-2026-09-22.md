@@ -91,11 +91,46 @@ imponer día y hora), y **recupera el próximo paso sin pedirle permiso para hac
 >
 > Saludos,
 
-### 3. Cortes Zamora — este necesita traer algo nuevo, no un recordatorio
+### 3. Cortes Zamora — ✅ ENVIADO 22-sep, con el hecho verificado primero
 
-Ya recibió dos seguimientos genéricos. El tercero solo sirve si trae información: **su sitio tenía
-un error de WordPress y una vulnerabilidad de fondo**. Lo honesto y lo útil es volver a mirarlo hoy
-y decirle si sigue roto. **Eso hay que verificarlo antes de escribir** — no se afirma sin mirar.
+**Lo que se verificó hoy antes de escribir** (33 días después del primer aviso del 20-ago):
+
+| Ruta | Estado 22-sep |
+|---|---|
+| Portada, `/contacto/`, `/wp-admin/`, `/sitemap_index.xml` | **HTTP 500** · "WordPress › Error. There has been a critical error on this website" |
+| `/robots.txt` | **HTTP 200** (es estático, por eso sobrevive) · sigue declarando **40 Sitemap**, 20 hacia `loggertrait.php` |
+
+**Nada cambió desde agosto.** Siguen sin poder entrar ni ellos a administrar el sitio.
+
+> ⚠️ **Un control que evitó una afirmación falsa.** El borrador iba a decir que el archivo
+> inyectado "sigue vivo" porque responde 500 en vez de 404. Se probó con un `.php` inventado y
+> **también devuelve 500**: WordPress roto enruta todo igual, así que el código de respuesta no
+> prueba que el archivo exista. Se sacó. Lo único afirmable es el `robots.txt`, que se sirve
+> estático y se puede leer entero. **Verificar el control, no solo el caso.**
+
+**Texto enviado:**
+
+> Hola Gabriel:
+>
+> Volví a revisar el sitio hoy. Sigue mostrando el error de WordPress, y ya van 33 días desde que
+> te escribí la primera vez.
+>
+> Lo único que quedó en pie es el robots.txt, el archivo que le indica a Google por dónde recorrer
+> el sitio. Hoy le sigue declarando 40 mapas, y 20 apuntan a loggertrait.php, que no es parte de
+> WordPress. Igual que en agosto, sin cambios.
+>
+> Entiendo que rehacer el sitio sea una decisión que toma tiempo. Lo que no aguanta tanto es estar
+> caído.
+>
+> ¿Te sirve que partamos por la página provisoria que te mencioné? Queda en línea 24 horas después
+> de tener acceso al dominio, y se descuenta del plan que elijan.
+>
+> Saludos,
+
+**Por qué funciona distinto a los dos anteriores:** los seguimientos del 24-ago y el 1-sep pedían
+lo mismo (*"¿alcanzaron a revisar la cotización?"*). Este trae un hecho nuevo verificado hoy, y
+**baja el pedido**: en vez de decidir un plan de $392.000 a $1.192.000, le ofrece dejar de estar
+caído esta semana. **Corte: si no responde al 29-sep, se cierra con motivo silencio.**
 
 ---
 

@@ -8,6 +8,7 @@
 |---|---|---|---|
 | **Legal Prisma** · sebastian@legalprisma.cl | "Re: Un detalle en legalprisma.cl" | Retoma de la llamada que él canceló el 11-sep | Esperando que diga día |
 | **Chef & Hotel** · revista@chefandhotel.cl | "Re: Propuesta para trabajar juntos — SpindleLab" | Retoma tras 36 días de silencio | Esperando respuesta |
+| **Cortes Zamora** · gzamora@corteszamora.cl | "Re: corteszamora.cl está mostrando un error…" | 3er seguimiento, con el estado del sitio verificado hoy | Oferta de página provisoria |
 
 Los dos van **dentro del hilo existente**, no en uno nuevo, y con aprobación explícita de Ramón.
 `REGISTRO-enviados.csv` ya está actualizado con el toque nuevo.
@@ -38,10 +39,6 @@ corregirse y es trabajo de quien lleve el CRM.
 
 ## Pendientes que no toqué
 
-- **Cortes Zamora** pidió cotización el 20-ago (a los 24 minutos del primer correo), la recibió el
-  21-ago, y lleva dos seguimientos genéricos sin respuesta. **El tercero solo sirve si trae algo
-  nuevo**: su sitio tenía un error de WordPress y una vulnerabilidad. Hay que volver a mirarlo hoy
-  y decirle si sigue roto. No escribirle sin verificar eso primero.
 - **Grupo Altum** y **Dentimagen**: diagnóstico enviado, un seguimiento genérico, cero respuesta.
   Decidir entre último toque o cierre con motivo.
 - Preguntas 7 a 10 de `pipeline-reconstruccion-preguntas-2026-09-21.md` siguen sin responder
