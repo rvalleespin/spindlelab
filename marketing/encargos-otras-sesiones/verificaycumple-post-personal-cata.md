@@ -80,4 +80,25 @@ El lado inverso del enlace cruzado (una página o mención en `spindlelab.cl` qu
 
 ## Bitácora
 
-*(vacía — Cata/quien tome el encargo anota acá qué hizo y cuándo)*
+**22-sep-2026 · Renata (copywriter), sesión local.** Encargo **cerrado: el post salió
+publicado** en la cuenta personal de Ramón. El texto final y los dos borradores que rechazó
+quedaron en `.claude/skills/voz-spindlelab/corpus.md` §3.
+
+**El borrador de arriba quedó obsoleto — no publicarlo.** Dos razones de fondo:
+
+1. **La decisión de marca se revirtió.** Este encargo daba por hecho el "Camino B" (marca
+   aparte, §6 del brief). El 21-sep Ramón decidió que **Verifica y Cumple es un servicio de
+   SpindleLab** (commit `e0e9a1e`), y la propia página de diagnóstico se corrigió porque
+   decía literalmente lo contrario. El post publicado va firmado como fundador de
+   SpindleLab, no como proyecto aparte.
+2. **El gancho cambió.** Este borrador colgaba del hallazgo de las "72 horas" que no están
+   en el texto de la ley. Sigue siendo un hallazgo real y verificable, pero el post
+   publicado usa otro, más fuerte porque es propio: **spindlelab.cl sacó 36 de 100 en su
+   propio chequeo y quedó en 73** (cifra ya publicada en `verificaycumple.pages.dev`).
+
+Los dos bloqueos que este encargo dejó anotados están resueltos: el sitio está desplegado y
+vivo, y el pase de tono y la revisión humana ocurrieron antes de publicar.
+
+**Lo que sigue vivo de acá:** el hallazgo de las 72 horas no se ha usado en ninguna pieza y
+sirve para otra. Y sigue pendiente el enlace cruzado desde `spindlelab.cl` (trabajo de
+`persona-disenador-web`, no de este encargo).
