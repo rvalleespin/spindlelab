@@ -202,6 +202,35 @@
     padding: 44px 0 56px;
     border-bottom: 4px solid var(--vivo-tinta);
   }
+  /* Fondo de cielo, como en la referencia, que no usa color plano sino un degradado
+     fotográfico. La foto (Unsplash) va desaturada y remapeada a la banda de azules de la
+     marca, y encima en transparencia sobre el azul plano: así el fondo tiene profundidad
+     sin que ninguna nube se acerque al blanco y se coma el titular. Va autoalojada, no
+     enlazada a Unsplash, porque este sitio no hace ni una petición externa. */
+  section.hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: url("assets/img/hero-nubes.webp") center bottom / cover no-repeat;
+    opacity: .55;
+    z-index: 0;
+  }
+  /* Velo que oscurece arriba, donde vive el titular, y se abre hacia abajo. Es lo que
+     mantiene legible el blanco sobre las nubes más claras. */
+  section.hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    /* Oscurece arriba, donde va el titular, se abre al medio para que el cielo se vea, y
+       vuelve a cerrar abajo, donde viven los enunciados y el formulario: ahí el texto es
+       chico y sobre una foto necesita fondo para pasar el contraste AA. */
+    background: linear-gradient(to bottom,
+      rgba(20,40,140,.42) 0%,
+      rgba(20,40,140,.22) 40%,
+      rgba(20,40,140,.12) 58%,
+      rgba(20,40,140,.40) 76%,
+      rgba(20,40,140,.50) 100%);
+    z-index: 0;
+    pointer-events: none;
+  }
   .hero-envoltura { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
   /* Mismo tratamiento tipográfico que .etiqueta-seccion: es la misma pieza, solo que
      en el hero. Llevaba serif, herencia del diseño descartado, y era el único serif
@@ -225,20 +254,11 @@
   /* Dos capas de nubes a distinta opacidad y escala: la de atrás más chica y más tenue,
      la de adelante más grande y más marcada. Esa diferencia es la que lee el ojo como
      profundidad, sin necesidad de una foto de cielo que pelearía con el recorte. */
-  .hero-nubes {
-    position: absolute; inset: 0; z-index: 0;
-    pointer-events: none; overflow: hidden;
-  }
-  .hero-nubes svg { width: 100%; height: 100%; display: block; }
-  /* La opacidad va en el grupo, no en cada elipse: si no, donde se superponen se nota el
-     borde de cada una y deja de leerse como una nube. */
-  .nube { fill: #fff; }
-  .nube-lejos { opacity: .06; }
-  .nube-cerca { opacity: .10; }
-
+  /* Sin padding lateral: el titular tiene que poder llegar a los bordes. El aire lo pone
+     la burbuja, que lleva el suyo propio. */
   .hero-titular {
     text-align: center;
-    padding: 0 clamp(16px, 2.5vw, 40px);
+    padding: 0;
     position: relative;
     z-index: 1;
   }
@@ -247,17 +267,29 @@
     font-weight: 400;
     /* El tope alto existe para que en pantallas muy anchas el titular siga llegando a los
        bordes, que es el gesto de la referencia; el vw manda hasta ahí. */
-    font-size: clamp(2.9rem, 9.1vw, 13rem);
-    line-height: 0.9; letter-spacing: -0.035em;
+    /* La referencia lleva el titular enorme y lo deja llegar a los dos bordes. Acá son dos
+       palabras de largo distinto, así que cada línea lleva su propio tamaño: medido, "¿ESTÁS"
+       ocupa 4,005em y "SEGURO?" 5,000em, o sea que para que las dos midan lo mismo la de
+       arriba tiene que ir 1,2484 veces más grande. De ahí salen el 24,97vw y el 20vw, y los
+       topes guardan esa misma proporción para que no se desalineen en pantallas muy anchas. */
+    line-height: 0.82; letter-spacing: -0.045em;
     text-transform: uppercase;
     margin: 0; text-align: center;
-    white-space: nowrap;
+    white-space: normal;
+    padding: 0;
   }
+  /* El letter-spacing va acá y no en el padre: en `em` se computa contra el tamaño del
+     elemento donde está escrito, y heredado se congela en píxeles. Si se deja arriba, al
+     crecer cada línea el tracking no escala y el ancho se dispara. */
+  .titulo-absurdo .t-blanco, .titulo-absurdo .t-verde {
+    display: block; white-space: nowrap; letter-spacing: -0.045em;
+  }
+  .titulo-absurdo .t-blanco { font-size: clamp(3.6rem, 24.97vw, 30rem); }
+  .titulo-absurdo .t-verde  { font-size: clamp(2.88rem, 20vw, 24rem); }
   /* En pantallas angostas el titular no cabe en una línea: dejar que parta,
      porque `section.hero` tiene overflow:hidden y si no, se corta la palabra. */
-  @media (max-width: 900px) {
-    .titulo-absurdo { white-space: normal; font-size: clamp(2.6rem, 13vw, 4.4rem); }
-  }
+  /* El titular ya no necesita media query de tamaño: al ir en vw y con las dos líneas en
+     proporción fija, se ajusta solo en cualquier ancho. */
   .titulo-absurdo .t-blanco { color: #fff; }
   .titulo-absurdo .t-verde { color: var(--vivo-verde); }
 
@@ -274,8 +306,39 @@
   @media (min-width: 640px) {
     .hero-imagen-centro { max-width: 640px; margin: -90px auto -10px; }
   }
+  /* El caballo monta bien arriba sobre el titular, como en la referencia, donde el sujeto
+     tapa buena parte de la tipografía. De paso sube todo lo que viene abajo y deja el
+     formulario mucho más cerca del pliegue. */
   @media (min-width: 901px) {
-    .hero-imagen-centro { max-width: 860px; margin: -108px auto -20px; }
+    .hero-imagen-centro { max-width: 800px; margin: -250px auto -40px; }
+  }
+
+  /* Enunciados: la diagramación de la referencia. Etiqueta corta en el acento, párrafo
+     blanco debajo, columnas pegadas a los bordes y con el sujeto respirando al medio.
+     Se suben con margen negativo para que monten sobre la parte baja de la imagen, que
+     es lo que en la referencia hace que el texto y el caballo convivan en la misma capa. */
+  .hero-enunciados {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px clamp(24px, 22vw, 420px);
+    margin: -100px 0 0;
+    position: relative; z-index: 3;
+  }
+  .enunciado p { margin: 0; color: #fff; font-size: 0.98rem; line-height: 1.5; max-width: 34ch; }
+  .enunciado-der { justify-self: end; text-align: right; }
+  .enunciado-der p { margin-left: auto; }
+  .enunciado-titulo {
+    font-family: "Archivo Black", Impact, var(--serif); font-weight: 400;
+    font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--vivo-verde) !important;
+    margin: 0 0 8px !important;
+  }
+  @media (max-width: 760px) {
+    /* En una columna los enunciados van debajo del caballo, no montados: con margen
+       negativo la primera etiqueta quedaba tapada por la pata trasera. */
+    .hero-enunciados { grid-template-columns: 1fr; gap: 22px; margin-top: 14px; text-align: center; }
+    .enunciado-der { justify-self: center; text-align: center; }
+    .enunciado p { max-width: none; margin-inline: auto; }
   }
 
   .hero-accion { max-width: 560px; margin: 32px auto 0; text-align: center; position: relative; z-index: 2; }
@@ -324,34 +387,9 @@
   }
   .hero-accion #resultado { color: var(--vivo-tinta); text-align: left; }
 
-  /* --- Caso real: una línea, sin tarjeta — coherente con el aire limpio de la referencia --- */
-  .ejemplo-resultado {
-    display: flex; align-items: center; gap: 12px;
-    justify-content: center;
-    margin: 22px auto 0;
-    max-width: 480px;
-    color: #fff;
-    font-size: 0.92rem;
-  }
-  .ejemplo-etiqueta {
-    background: var(--vivo-verde); color: var(--vivo-tinta);
-    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
-    padding: 4px 10px; border-radius: 999px; flex: 0 0 auto;
-  }
-  .ejemplo-fila { display: contents; }
-  .ejemplo-anillo { display: none; }
-  .ejemplo-anillo-num { display: none; }
-  .ejemplo-dominio { color: #fff; opacity: .92; }
-  .ejemplo-dominio strong { color: var(--vivo-verde); }
-  .ejemplo-delta { font-family: "Archivo Black", Impact, var(--serif); font-weight: 400; color: var(--vivo-verde); margin-left: 4px; }
-  .ejemplo-items { display: none; }
-  .ejemplo-link { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-  .ejemplo-link:hover { color: var(--vivo-verde); }
-
   @media (max-width: 640px) {
     /* El titular se queda centrado, como la burbuja, el caballo y el formulario.
        Antes iba a la izquierda y con la burbuja ya centrada el hero se veía descuadrado. */
-    .ejemplo-resultado { flex-wrap: wrap; justify-content: flex-start; text-align: left; }
   }
 
   #resultado { display: none; margin-top: 34px; }
@@ -495,13 +533,6 @@
   section.explicador > .envoltura > p.intro { color: var(--vivo-suave); max-width: 58ch; margin: 0 0 48px; font-size: 1.08rem; }
 
   /* --- Franja del caso real: banda verde neón, como la barra de color de la referencia --- */
-  section.franja-caso { background: var(--vivo-verde); padding: 22px 0; }
-  .franja-caso .envoltura { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-  .franja-caso p { margin: 0; color: var(--vivo-tinta); font-size: 1rem; font-weight: 500; }
-  .franja-caso .cifra { font-family: "Archivo Black", Impact, var(--serif); font-size: 1.35rem; }
-  .franja-caso a { margin-left: auto; color: var(--vivo-tinta); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; white-space: nowrap; }
-  .franja-caso a:hover { color: var(--vivo-rosa-osc); }
-  @media (max-width: 480px) { .franja-caso a { margin-left: 0; } }
 
   /* --- Los tres pasos: cifras grandes en rosa, sin tarjeta --- */
   .pasos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-bottom: 64px; }
@@ -713,34 +744,6 @@
 
 <main>
   <section class="hero">
-    <!-- Nubes de fondo: siluetas planas, no una foto de cielo. Dan profundidad sin romper
-         el color plano de la referencia, y al ser SVG en línea no agregan ni una petición
-         externa, que es justo lo que este sitio le exige a los demás. -->
-    <div class="hero-nubes" aria-hidden="true">
-      <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMax slice" focusable="false">
-        <g class="nube nube-lejos">
-          <ellipse cx="250" cy="300" rx="190" ry="72"></ellipse>
-          <ellipse cx="170" cy="318" rx="130" ry="52"></ellipse>
-          <ellipse cx="345" cy="322" rx="150" ry="55"></ellipse>
-        </g>
-        <g class="nube nube-lejos">
-          <ellipse cx="1330" cy="250" rx="220" ry="80"></ellipse>
-          <ellipse cx="1220" cy="272" rx="150" ry="58"></ellipse>
-          <ellipse cx="1450" cy="274" rx="160" ry="56"></ellipse>
-        </g>
-        <g class="nube nube-cerca">
-          <ellipse cx="620" cy="520" rx="300" ry="104"></ellipse>
-          <ellipse cx="450" cy="552" rx="200" ry="76"></ellipse>
-          <ellipse cx="800" cy="556" rx="230" ry="80"></ellipse>
-        </g>
-        <g class="nube nube-cerca">
-          <ellipse cx="1190" cy="580" rx="330" ry="110"></ellipse>
-          <ellipse cx="1000" cy="614" rx="210" ry="80"></ellipse>
-          <ellipse cx="1400" cy="616" rx="250" ry="84"></ellipse>
-        </g>
-      </svg>
-    </div>
-
     <div class="hero-titular">
       <p class="hero-badge">Chequeo técnico gratuito · Ley 21.719</p>
       <h1 class="titulo-absurdo"><span class="t-blanco">¿Estás</span> <span class="t-verde">seguro?</span></h1>
@@ -751,12 +754,21 @@
         <img class="hero-foto" src="assets/img/hero-fiscalizador.png" alt="Una fiscalizadora a caballo, vestida de rosa, sosteniendo en alto un documento timbrado." width="1200" height="1076" fetchpriority="high">
       </div>
 
-      <div class="hero-accion">
-        <p class="sub-absurdo">
-          En 40 segundos sabes si tu sitio publica lo básico que exige la Ley 21.719 de
-          protección de datos personales. Sin registrarte, sin que guardemos tu dominio.
-        </p>
+      <!-- Enunciados al estilo de la referencia: etiqueta corta en el acento, texto
+           blanco debajo, anclados a los bordes y no centrados. Reemplazan al párrafo
+           único que había, y dicen lo mismo repartido en dos ideas. -->
+      <div class="hero-enunciados">
+        <div class="enunciado">
+          <p class="enunciado-titulo">Qué hace</p>
+          <p>En 40 segundos sabes si tu sitio publica lo básico que exige la Ley 21.719 de protección de datos personales.</p>
+        </div>
+        <div class="enunciado enunciado-der">
+          <p class="enunciado-titulo">Qué no hace</p>
+          <p>No pide registro, no guarda tu dominio y nunca dice que cumples. Solo describe lo que encuentra, y lo que no puede ver.</p>
+        </div>
+      </div>
 
+      <div class="hero-accion">
         <form class="chequeo" id="form-chequeo">
           <label for="dominio" class="visually-hidden" style="position:absolute;left:-9999px;">Dominio a revisar</label>
           <input type="text" id="dominio" name="dominio" placeholder="tuempresa.cl" autocomplete="off" required>
@@ -766,25 +778,10 @@
 
         <div id="resultado" aria-live="polite"></div>
 
-        <div class="ejemplo-resultado" id="ejemplo-resultado">
-          <span class="ejemplo-etiqueta">Caso real</span>
-          <div class="ejemplo-fila">
-            <div class="ejemplo-anillo">
-              <svg viewBox="0 0 60 60">
-                <circle cx="30" cy="30" r="25" fill="none" stroke="#e8ddb8" stroke-width="6"></circle>
-                <circle cx="30" cy="30" r="25" fill="none" stroke="#0d6d61" stroke-width="6" stroke-linecap="round" stroke-dasharray="157" stroke-dashoffset="42"></circle>
-              </svg>
-              <div class="ejemplo-anillo-num">73</div>
-            </div>
-            <div class="ejemplo-dominio"><strong>spindlelab.cl</strong><span class="ejemplo-delta">36 → 73</span> con el kit</div>
-          </div>
-          <ul class="ejemplo-items">
-            <li><span class="ejemplo-marca ok">✓</span> Política de privacidad publicada</li>
-            <li><span class="ejemplo-marca ok">✓</span> Banner de consentimiento propio</li>
-            <li><span class="ejemplo-marca ok">✓</span> Formulario de contacto corregido</li>
-          </ul>
-          <a class="ejemplo-link" href="#ayuda">Así lo hicimos →</a>
-        </div>
+        <!-- Acá iba la tarjeta "spindlelab.cl 36 → 73 con el kit". Se quitó junto con la
+             franja, por la misma razón: es la misma prueba social que no prueba nada para
+             quien no conoce la marca, y encima ocupaba el lugar más valioso del hero,
+             justo debajo del formulario. -->
       </div>
     </div>
   </section>
@@ -847,12 +844,10 @@
     </div>
   </section>
 
-  <section class="franja-caso">
-    <div class="envoltura">
-      <p><span class="cifra">36</span> → <span class="cifra">73</span>. Es la puntuación real de spindlelab.cl, antes y después del kit que ofrecemos acá.</p>
-      <a href="#ayuda">Ver el kit →</a>
-    </div>
-  </section>
+  <!-- Acá iba la franja "36 → 73, la puntuación real de spindlelab.cl". Se quitó el
+       22-sep por decisión de Ramón: como prueba social no funciona, porque el visitante
+       no sabe quién es SpindleLab, así que el antes y el después no le dice nada. El
+       caso sigue sirviendo en la llamada, donde sí hay con quién relacionarlo. -->
 
   <section class="referencia">
     <div class="envoltura">
