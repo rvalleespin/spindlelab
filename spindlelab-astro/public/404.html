@@ -84,6 +84,10 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
     <div class="base" style="border-top:0;padding-top:0">
       <span>© 2026 SpindleLab</span>
       <a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a>
+      <!-- Esta página era la única del sitio sin enlace a la política en el pie, y ahora la
+           política dice que el control de cookies está "junto al enlace a esta política".
+           Con el enlace acá, esa frase es cierta en las 21 páginas y no en 20. -->
+      <nav><a href="/privacidad/">Política de privacidad</a></nav>
     </div>
   </div>
 </footer>
@@ -112,6 +116,6 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
     </div>
   </div>
 </div>
-<script src="/assets/js/consent-banner.js" defer></script>
+<script src="/js/consent-banner.js" defer></script>
 </body>
 </html>

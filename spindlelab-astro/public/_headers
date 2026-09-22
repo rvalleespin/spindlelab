@@ -13,3 +13,13 @@
 # Video del hero.
 /*.mp4
   Cache-Control: public, max-age=2592000
+
+# Scripts de comportamiento, fuera de /assets/ a propósito. El de consentimiento vivía en
+# /assets/js/ y ahí heredaba el cache de 7 días: un visitante que vuelve se quedaba con la
+# versión vieja, o sea leyendo una política que promete un control que su navegador no le
+# muestra. Y no se podía arreglar con una regla más específica: en Cloudflare Pages una
+# petición hereda los encabezados de TODAS las reglas que calzan, y dos Cache-Control se unen
+# con una coma en vez de pisarse (documentado en Pages > Configuration > Headers). La única
+# forma limpia de tener otro cache es no solaparse.
+/js/*
+  Cache-Control: public, max-age=300, must-revalidate

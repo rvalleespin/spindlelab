@@ -141,7 +141,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
       <article class="doc-article">
         <span class="doc-eyebrow">Art. 14 ter, punto por punto</span>
         <h1>Qué hacemos con tus datos</h1>
-        <p class="doc-version">Versión 1.1, actualizada el 22 de septiembre de 2026.</p>
+        <p class="doc-version">Versión 1.2, actualizada el 22 de septiembre de 2026.</p>
         <p class="doc-intro">
           Esta página explica, sin rodeos, qué datos procesamos en spindlelab.cl, para qué, y con
           quién los compartimos, siguiendo los mismos 12 puntos que exige la Ley 21.719 para
@@ -151,7 +151,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
         <div class="doc-punto">
           <span class="doc-punto-num">01 · Política de tratamiento</span>
           <h2>Esta política</h2>
-          <p>Versión 1.1, actualizada el 22 de septiembre de 2026. La versión 1.0 es del 21 de septiembre. Si la cambiamos, actualizamos esta fecha.</p>
+          <p>Versión 1.2, actualizada el 22 de septiembre de 2026, cuando el control para cambiar la decisión de cookies pasó de pendiente a existir. La 1.1 es del mismo día y la 1.0 del 21 de septiembre. Si la cambiamos, actualizamos esta fecha.</p>
         </div>
 
         <div class="doc-punto">
@@ -213,17 +213,36 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
           <span class="doc-punto-num">11 · Revocar el consentimiento</span>
           <h2>Sobre pedirte permiso</h2>
           <p>Puedes elegir no marcar la casilla de consentimiento del formulario. En ese caso no vamos a poder procesar tu solicitud, pero puedes escribirnos directo a hola@spindlelab.cl en su lugar.</p>
-          <p>Para Google Analytics y Meta Pixel te preguntamos antes. La primera vez que entras al
-            sitio aparece un aviso abajo con dos opciones, aceptar o rechazar, y hasta que elijas no
-            se carga ninguno de los dos: Analytics arranca con el consentimiento denegado y el Pixel
-            de Meta directamente no se inicializa. Si rechazas, quedan apagados.</p>
+          <p>Para Google Analytics y Meta Pixel te preguntamos antes. La primera vez que entras
+            al sitio aparece un aviso abajo con dos opciones, aceptar o rechazar, y hasta que elijas
+            el Pixel de Meta no se inicializa y Analytics arranca con el consentimiento denegado.</p>
+          <p>Con el consentimiento denegado, y esto queremos decirlo con precisión porque es fácil
+            prometer de más: el Pixel de Meta no corre, no se guarda ninguna cookie de medición en
+            tu navegador, y Analytics no te identifica ni te sigue entre visitas. Lo que sí ocurre
+            es que el archivo de Analytics se carga igual y le manda a Google un aviso de que viste
+            esta página, sin cookies y sin identificador que dure. Ese aviso lleva la dirección de
+            la página, su título, el idioma y el tamaño de tu pantalla. No es "apagado del todo", y
+            preferimos escribirlo así antes que decir que no pasa nada.</p>
+          <p>Puedes cambiar de opinión cuando quieras. Al final de cualquier página, junto al
+            enlace a esta política, hay un control que dice qué elegiste (<em>Cookies: aceptadas</em>
+            o <em>Cookies: rechazadas</em>) y que abre el mismo aviso para que elijas de nuevo.</p>
+          <p>Si pasas de aceptar a rechazar, tres cosas ocurren ahí mismo: Analytics vuelve al
+            estado denegado, borramos del navegador las cookies que dejaron Analytics y el Pixel
+            (<code>_ga</code>, <code>_gid</code>, <code>_fbp</code> y las de su familia), y
+            recargamos la página. Lo último es necesario y lo avisamos antes: el Pixel de Meta no
+            tiene forma de apagarse una vez que arrancó, así que la única manera de que deje de
+            correr es volver a cargar la página sin él.</p>
           <div class="doc-aviso">
-            <strong>Aviso honesto:</strong> tu decisión se guarda en el navegador con el que entraste,
-            y hoy no tenemos un botón para cambiarla después. Si aceptaste y te arrepientes, puedes
-            borrar los datos de este sitio en tu navegador: el aviso vuelve a aparecer y puedes elegir
-            de nuevo. También puedes bloquear los dos con una extensión (por ejemplo uBlock Origin).
-            Ese botón para cambiar de opinión sin dar ese rodeo es un pendiente real, y lo decimos
-            acá en vez de esconderlo.
+            <strong>Aviso honesto:</strong> tu decisión se guarda en el navegador con el que
+            entraste, así que es por navegador y por dispositivo. Si entras desde otro, o si borras
+            los datos del sitio, te vamos a preguntar de nuevo. Y si tu navegador no nos deja
+            guardar nada (modo privado, o el almacenamiento bloqueado del todo), la decisión se
+            aplica pero no se puede recordar: vale en la página donde la tomaste y te la volvemos
+            a preguntar en la siguiente. Te lo decimos en pantalla en vez de fingir que quedó. También puedes
+            bloquear los dos con una extensión, por ejemplo uBlock Origin. Y si tenías otra
+            pestaña de este sitio abierta, ahí aplicamos el cambio al momento pero no la
+            recargamos solos, por si estabas escribiendo algo: te avisamos en pantalla que
+            recargues tú.
           </div>
         </div>
 
@@ -312,6 +331,6 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
     </div>
   </div>
 </div>
-<script src="/assets/js/consent-banner.js" defer></script>
+<script src="/js/consent-banner.js" defer></script>
 </body>
 </html>
