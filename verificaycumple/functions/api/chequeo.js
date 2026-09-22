@@ -32,8 +32,11 @@ const MAX_BYTES = 3_000_000;
  * Validación del destino. Sin esto, el endpoint es un proxy abierto.  *
  * ------------------------------------------------------------------ */
 
+// Nombres que nunca son un sitio de cliente, más los servicios de DNS comodín que
+// devuelven una dirección privada para cualquier nombre que les pidas (nip.io y compañía
+// resuelven 127.0.0.1.nip.io a 127.0.0.1). Comprobado con dscacheutil: resuelven de verdad.
 const HOST_PROHIBIDO =
-  /^(localhost|.*\.localhost|.*\.local|.*\.internal|metadata\.google\.internal)$/i;
+  /^(localhost|.*\.localhost|.*\.local|.*\.internal|metadata\.google\.internal|(.*\.)?(nip\.io|sslip\.io|xip\.io|localtest\.me|lvh\.me|vcap\.me|traefik\.me))$/i;
 
 const PUERTOS_OK = new Set(['', '80', '443']);
 const MAX_SALTOS = 8;
@@ -48,6 +51,20 @@ const MAX_SALTOS = 8;
 // más difícil de equivocar — la versión anterior miraba rangos sobre un regex de cuatro
 // grupos, así que las otras notaciones se le colaban enteras. Ningún sitio real se escribe
 // con su IP, y ningún dominio real termina en una etiqueta numérica, porque ningún TLD lo es.
+// Un host que lleva una IPv4 metida entre sus etiquetas: 127.0.0.1.nip.io, 10.0.0.1.loquesea.
+// El portón validaba el NOMBRE y nunca la dirección, así que estos lo cruzaban enteros. No
+// podemos resolver DNS desde un Worker, así que esto es lo que sí se puede hacer desde acá:
+// rechazar la forma. En producción el borde de Cloudflare además los frena con un 403 (medido),
+// o sea que no había puerta abierta; lo que había era un validador que no hacía su trabajo y
+// un visitante recibiendo "tu sitio nos bloqueó la lectura" en vez de una respuesta clara.
+function llevaIpDentro(host) {
+  const p = host.split('.');
+  for (let i = 0; i + 3 < p.length; i++) {
+    if (p.slice(i, i + 4).every((x) => /^\d{1,3}$/.test(x) && Number(x) <= 255)) return true;
+  }
+  return false;
+}
+
 function esIpLiteral(host) {
   if (host.startsWith('[') || host.includes(':')) return true; // IPv6
   const partes = host.split('.');
@@ -78,7 +95,7 @@ export function destinoPermitido(u) {
   // Un host con etiquetas vacías en medio no es un host: no existe razón legítima para
   // "algo..ejemplo.cl", y sí es una forma conocida de despistar a un filtro de nombres.
   if (!host || host.includes('..') || HOST_PROHIBIDO.test(host)) return false;
-  return !esIpLiteral(host);
+  return !esIpLiteral(host) && !llevaIpDentro(host);
 }
 
 export function normalizarDominio(entrada) {
@@ -99,6 +116,9 @@ export function normalizarDominio(entrada) {
   }
   if (esIpLiteral(host)) {
     return { error: 'Escribe un dominio, no una dirección IP.' };
+  }
+  if (llevaIpDentro(host)) {
+    return { error: 'Ese destino no se puede revisar.' };
   }
   if (!/^[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)+$/.test(host)) {
     return { error: 'Eso no parece un dominio válido.' };
@@ -409,6 +429,14 @@ export async function chequear(entrada, fetchImpl = fetch) {
   // el sitio las tenga. Para un chequeo cuya única defensa es "cuando no podemos verificar
   // algo, lo decimos", entregar ese número sería exactamente lo contrario. Preferimos no dar
   // resultado antes que dar uno inventado.
+  // Decisión tomada a sabiendas, no un descuido: por encima del tope preferimos NO dar
+  // informe, aunque tengamos la cabeza del archivo en la mano. La versión vieja, cuando el
+  // origen no declaraba tamaño, leía todo y se quedaba con el prefijo, así que por encima de
+  // 3 MB este chequeo pasa de contestar a declinar. Lo sabemos y lo elegimos: puntuar sobre
+  // el prefijo y presentarlo como informe completo es exactamente "un resultado a medias",
+  // que es lo que este producto promete no hacer. Las señales que viven abajo saldrían
+  // ausentes sin estarlo. Portadas de más de 3 MB de HTML son raras; un informe equivocado
+  // cuesta más que uno que no se entrega.
   if (!home.completo) {
     return {
       ok: false,
