@@ -8,7 +8,8 @@
 1. [Registro singular — LinkedIn personal, 1-sep-2026](#1-singular)
 2. [Registro plural — Instagram / página, 1-sep-2026](#2-plural)
 3. [Registro singular — LinkedIn personal, 22-sep-2026](#3-singular-ley)
-4. [Dónde hay más material](#3-mas)
+4. [Registro plural — página de empresa, 21-sep-2026](#4-plural-ley)
+5. [Dónde hay más material](#3-mas)
 
 ---
 
@@ -91,8 +92,11 @@ Comenta CIRCUITO y te mando el link del chequeo por DM, gratis y sin registro. (
 
 ## <a id="3-singular-ley"></a>3. Registro singular — Ramón, LinkedIn personal (mar 22-sep-2026)
 
-**Estado:** ✅ publicado y **confirmado por Ramón** (22-sep-2026): salió literal, sin
-cambios respecto de la versión entregada.
+**Estado:** ✅ publicado y confirmado. **Corrección de fecha (verificada en LinkedIn el
+22-sep):** el post **se creó el 21-sep por la noche** y el 22-sep Ramón lo **editó** a esta
+versión — LinkedIn lo muestra como "16 horas • Editado". O sea que el borrador que Ramón trajo a
+revisión **ya estaba publicado** cuando pidió corregirlo; esta es la versión final en el aire, y
+el texto de abajo coincide literal con lo entregado. **58 impresiones · 1 comentario.**
 **Canal:** LinkedIn, cuenta personal. Texto puro + link en el primer comentario.
 **Pieza:** lanzamiento del chequeo de Ley 21.719 (Verifica y Cumple, servicio de SpindleLab).
 
@@ -156,7 +160,63 @@ rápido y sirve:** si hay más de dos en un post, suena a máquina aunque cada f
 
 ---
 
-## <a id="3-mas"></a>4. Dónde hay más material
+---
+
+## <a id="4-plural-ley"></a>4. Registro plural — la marca, página de LinkedIn (lun 21-sep-2026)
+
+**Estado:** ✅ publicado y en el aire. Texto capturado literal desde LinkedIn el 22-sep-2026.
+**Canal:** página de empresa de SpindleLab. Texto puro, sin imagen. **1 reacción · 1 compartido.**
+
+**Por qué es la mejor referencia plural que hay.** Es el registro de marca haciendo lo más difícil
+de su posicionamiento ("Mostramos, no prometemos"): **contar un fallo propio que nadie le pidió
+contar**, y no el fallo cómodo. El puntaje de 36 es la parte vendible; el formulario de contacto
+que llevaba meses tragándose los mensajes es la parte que duele, no tiene nada que ver con la ley,
+y se cuenta igual. La frase que sostiene la pieza —*"construyes el instrumento, lo apuntas primero
+a ti mismo, y arreglas lo que encuentra. No lo que se ve mejor en una reunión de ventas"*— es el
+argumento entero de la marca en dos líneas, sin adjetivos.
+
+### Cuerpo
+
+Publicamos un chequeo gratuito para la Ley 21.719, la nueva ley de protección de datos de Chile.
+
+Antes de publicarlo lo corrimos sobre nuestro propio sitio.
+
+spindlelab.cl sacó 36 de 100.
+
+Sin política de privacidad. Sin gestor de consentimiento. Con Analytics y el Pixel de Meta corriendo antes de que nadie diera permiso.
+
+Y revisando el formulario de contacto para arreglar eso apareció algo peor, sin relación con la ley: un error en el código dejaba el botón "Enviando…" pegado para siempre. El mensaje no llegaba a ninguna parte. No tenemos cómo saber cuántos correos se perdieron así, en silencio, antes de que lo encontráramos.
+
+Pasamos el día arreglando todo: el formulario, el consentimiento antes de pedir datos, la política de privacidad, los rastreadores bloqueados hasta que alguien dice que sí.
+
+spindlelab.cl ahora saca 73.
+
+No lo contamos para presumir un número. Lo contamos porque así funciona esto: construyes el instrumento, lo apuntas primero a ti mismo, y arreglas lo que encuentra. No lo que se ve mejor en una reunión de ventas.
+
+Si tienes un formulario de contacto, ya estás tratando datos personales. La ley no distingue tamaño de empresa, y entra en plena vigencia el 1 de diciembre de 2026.
+
+Dejamos el chequeo en el primer comentario, por si quieres ver qué encuentra en el tuyo.
+
+### El compartir desde el perfil personal (mismo día, registro singular)
+
+**Esta es la plantilla de cómo se comparte un post de la página.** No resume el post: agrega el
+ángulo personal que la marca en plural no puede decir, en tres líneas. **20 impresiones.**
+
+> Lo comparto porque la parte incómoda no es el puntaje.
+>
+> El formulario de contacto llevaba quién sabe cuánto tiempo tragándose los mensajes, y lo
+> encontré arreglando otra cosa. Si no corro el chequeo sobre mi propio sitio, sigue roto.
+
+### Lo que este par enseña sobre los dos registros
+
+El mismo hecho, contado dos veces sin repetirse: **el plural cuenta qué hizo el negocio y por qué,
+el singular cuenta qué le pasó a la persona.** El plural cierra con la regla de oficio; el singular
+cierra con *"si no corro el chequeo sobre mi propio sitio, sigue roto"*, que es la misma idea
+dicha desde adentro. Ninguno de los dos vende, y los dos venden.
+
+---
+
+## <a id="3-mas"></a>5. Dónde hay más material
 
 - **Piezas listas y pasadas por revisión, aún no publicadas:**
   `marketing/redes/2026-09-septiembre/*/publicar.md`. Útiles para ver la intención y el
