@@ -107,8 +107,47 @@ para una pieza aparte dirigida a pares; está guardado en el corpus, §3.
 
 ---
 
-**Estado: ☐ SIN PUBLICAR.** Falta la pieza visual (o la decisión de publicarlo como texto puro)
-y el pase humano de Ramón.
+**Estado: ⛔ PUBLICADO Y RETIRADO el mismo día (22-sep-2026). No volver a sacarlo así.**
 
-*(Cuando salga: anotar acá fecha, canal y confirmación, y copiar el texto íntegro al corpus de
-voz — la regla es literalidad, no "la versión bonita".)*
+Salió en la página a las ~11:45, estuvo unos 40 minutos en el aire (53 impresiones orgánicas) y
+Ramón lo borró. **El motivo no fue el texto: era contenido repetido.** La página ya había
+publicado un post sobre el mismo chequeo el 21-sep, 17 horas antes, y nadie lo sabía porque no
+estaba registrado en ninguna parte de este repo.
+
+### Lo que salió mal, en orden, para que no se repita
+
+1. **El repo no sabía lo que la página ya había publicado.** El post del 21-sep y el compartir de
+   Ramón desde su perfil (también del 21-sep) no estaban en `marketing/redes/`, ni en el plan, ni
+   en el brief. Toda la planificación de esta pieza se hizo a ciegas: se recomendó espaciarla del
+   post personal del 22-sep sin saber que existían otros dos toques antes.
+2. **Resultado:** el mismo producto salió cinco veces en 24 horas a la misma audiencia (página
+   21-sep · compartir personal 21-sep · post personal 22-sep · esta página 22-sep · el compartir
+   que se iba a hacer). Con 4 seguidores en la página, el alcance real es la red personal de
+   Ramón, que vio lo mismo una y otra vez.
+3. **Además, LinkedIn tuvo las escrituras caídas para esta página durante toda la ventana.** La
+   creación del post funcionó, pero después fallaron dos envíos del primer comentario (spinner
+   colgado, sin error) y tres guardados de una edición (*"no hemos podido completar tu
+   solicitud"*). Se descartó que fuera un permiso: el post tenía los comentarios abiertos a
+   "Cualquiera". Por eso el post estuvo esos 40 minutos con un cierre que prometía un link en un
+   primer comentario que nunca se pudo publicar.
+
+### La regla que sale de acá
+
+**Antes de programar o publicar cualquier pieza, mirar qué hay realmente en el canal, no solo qué
+dice el repo.** El registro de `marketing/redes/` está incompleto y no es fuente de verdad sobre
+lo que está en el aire. La vista rápida: `linkedin.com/company/135255820/admin/page-posts/published/`
+para la página, y Actividad → Todo para los compartidos y reacciones.
+
+### Qué sigue sirviendo de este archivo
+
+El texto de arriba **no está quemado**: nunca lo vio casi nadie y sigue siendo el mejor explicador
+plural del servicio. Se puede reusar más adelante, cuando haya distancia del lote del 21/22-sep,
+corrigiendo dos cosas: el cierre (el link en el primer comentario solo si las escrituras de
+LinkedIn funcionan; si no, la URL va en el cuerpo) y **"Quedan diez semanas"**, que era exacto el
+22-sep y hay que recalcular al 1-dic-2026.
+
+### Pendiente de registro (no es de este archivo, pero nace de acá)
+
+Falta capturar en el repo el post de la página del 21-sep y el compartir personal de Ramón del
+mismo día, con su texto íntegro. Los dos existen y están en el aire; solo hay fragmentos, así que
+**no entran al corpus de voz hasta tener el texto completo** (la regla del corpus es literalidad).
