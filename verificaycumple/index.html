@@ -202,7 +202,7 @@
     padding: 44px 0 56px;
     border-bottom: 4px solid var(--vivo-tinta);
   }
-  .hero-envoltura { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; }
+  .hero-envoltura { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
   /* Mismo tratamiento tipográfico que .etiqueta-seccion: es la misma pieza, solo que
      en el hero. Llevaba serif, herencia del diseño descartado, y era el único serif
      visible de la portada. */
@@ -211,20 +211,46 @@
     background: var(--vivo-verde); color: var(--vivo-tinta);
     font-family: "Archivo Black", Impact, var(--serif); font-weight: 400;
     font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-    padding: 6px 12px; border-radius: 999px; margin: 0 0 18px;
+    padding: 6px 12px; border-radius: 999px; margin: 0 auto 18px;
   }
   /* Archivo Black es bastante más ancha que la serif que había antes: en móvil el
      rótulo se partía en dos líneas y dejaba "21.719" solo. Se aprieta, no se acorta. */
   @media (max-width: 600px) {
     .hero-badge { font-size: 0.62rem; letter-spacing: 0.05em; padding: 6px 10px; }
   }
+  /* El titular va a sangre y centrado sobre el viewport, no dentro de la envoltura de
+     1100px. Antes estaba anclado a esa caja pero dimensionado en vw, así que en pantallas
+     anchas se desbordaba hacia la derecha y `overflow:hidden` se lo comía: quedaba un
+     margen enorme a la izquierda y nada a la derecha. */
+  /* Dos capas de nubes a distinta opacidad y escala: la de atrás más chica y más tenue,
+     la de adelante más grande y más marcada. Esa diferencia es la que lee el ojo como
+     profundidad, sin necesidad de una foto de cielo que pelearía con el recorte. */
+  .hero-nubes {
+    position: absolute; inset: 0; z-index: 0;
+    pointer-events: none; overflow: hidden;
+  }
+  .hero-nubes svg { width: 100%; height: 100%; display: block; }
+  /* La opacidad va en el grupo, no en cada elipse: si no, donde se superponen se nota el
+     borde de cada una y deja de leerse como una nube. */
+  .nube { fill: #fff; }
+  .nube-lejos { opacity: .06; }
+  .nube-cerca { opacity: .10; }
+
+  .hero-titular {
+    text-align: center;
+    padding: 0 clamp(16px, 2.5vw, 40px);
+    position: relative;
+    z-index: 1;
+  }
   .titulo-absurdo {
     font-family: "Archivo Black", Impact, var(--serif);
     font-weight: 400;
-    font-size: clamp(2.9rem, 9.6vw, 8.8rem);
+    /* El tope alto existe para que en pantallas muy anchas el titular siga llegando a los
+       bordes, que es el gesto de la referencia; el vw manda hasta ahí. */
+    font-size: clamp(2.9rem, 9.1vw, 13rem);
     line-height: 0.9; letter-spacing: -0.035em;
     text-transform: uppercase;
-    margin: 0; text-align: left;
+    margin: 0; text-align: center;
     white-space: nowrap;
   }
   /* En pantallas angostas el titular no cabe en una línea: dejar que parta,
@@ -323,7 +349,8 @@
   .ejemplo-link:hover { color: var(--vivo-verde); }
 
   @media (max-width: 640px) {
-    .titulo-absurdo { text-align: left; }
+    /* El titular se queda centrado, como la burbuja, el caballo y el formulario.
+       Antes iba a la izquierda y con la burbuja ya centrada el hero se veía descuadrado. */
     .ejemplo-resultado { flex-wrap: wrap; justify-content: flex-start; text-align: left; }
   }
 
@@ -686,10 +713,40 @@
 
 <main>
   <section class="hero">
-    <div class="hero-envoltura">
+    <!-- Nubes de fondo: siluetas planas, no una foto de cielo. Dan profundidad sin romper
+         el color plano de la referencia, y al ser SVG en línea no agregan ni una petición
+         externa, que es justo lo que este sitio le exige a los demás. -->
+    <div class="hero-nubes" aria-hidden="true">
+      <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMax slice" focusable="false">
+        <g class="nube nube-lejos">
+          <ellipse cx="250" cy="300" rx="190" ry="72"></ellipse>
+          <ellipse cx="170" cy="318" rx="130" ry="52"></ellipse>
+          <ellipse cx="345" cy="322" rx="150" ry="55"></ellipse>
+        </g>
+        <g class="nube nube-lejos">
+          <ellipse cx="1330" cy="250" rx="220" ry="80"></ellipse>
+          <ellipse cx="1220" cy="272" rx="150" ry="58"></ellipse>
+          <ellipse cx="1450" cy="274" rx="160" ry="56"></ellipse>
+        </g>
+        <g class="nube nube-cerca">
+          <ellipse cx="620" cy="520" rx="300" ry="104"></ellipse>
+          <ellipse cx="450" cy="552" rx="200" ry="76"></ellipse>
+          <ellipse cx="800" cy="556" rx="230" ry="80"></ellipse>
+        </g>
+        <g class="nube nube-cerca">
+          <ellipse cx="1190" cy="580" rx="330" ry="110"></ellipse>
+          <ellipse cx="1000" cy="614" rx="210" ry="80"></ellipse>
+          <ellipse cx="1400" cy="616" rx="250" ry="84"></ellipse>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-titular">
       <p class="hero-badge">Chequeo técnico gratuito · Ley 21.719</p>
       <h1 class="titulo-absurdo"><span class="t-blanco">¿Estás</span> <span class="t-verde">seguro?</span></h1>
+    </div>
 
+    <div class="hero-envoltura">
       <div class="hero-imagen-centro">
         <img class="hero-foto" src="assets/img/hero-fiscalizador.png" alt="Una fiscalizadora a caballo, vestida de rosa, sosteniendo en alto un documento timbrado." width="1200" height="1076" fetchpriority="high">
       </div>
