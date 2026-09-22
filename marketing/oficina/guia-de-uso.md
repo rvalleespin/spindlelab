@@ -2,7 +2,7 @@
 
 > Para tener a mano al arrancar cualquier proyecto. El organigrama dice quién es
 > quién; los flujos dicen cómo se pasan la posta; **esto dice qué escribir tú**.
-> Última actualización: 2026-08-02.
+> Última actualización: 2026-09-22 (agregadas Marta y voz-spindlelab, que no existían en la versión original).
 
 ---
 
@@ -39,10 +39,12 @@ cuando quieres llamar directo a un especialista para una tarea puntual.
 | Entregarle el servicio a un cliente **ganado** (SEO técnico + IA) | Simón | `/agente-seo-aeo` |
 | Escribir un artículo / ad copy / guion de Reel / email | Renata | `/agente-copywriter` |
 | Un post de redes con el tono y la cadencia correctos | Cata | `/persona-social-media` |
+| Armar/ajustar el calendario editorial | Marta | `/agente-calendario-editorial` |
 | Una pieza visual (carrusel, Reel, key visual) | Bruno | `/persona-director-creativo` |
 | Revisar/ajustar Google Ads | Gonzalo | `/persona-paid-media` |
 | Montar/gestionar Meta Ads | Fran | `/persona-meta-ads` |
 | Tocar el sitio web o publicar un blog | Diego | `/persona-disenador-web` |
+| Revisar si un borrador suena a IA o a otra persona, antes de publicar | — (material de referencia) | `/voz-spindlelab` |
 | Diseñar una pantalla / flujo / feature de un producto | Nadia | `/producto-ui-ux` |
 | Onboarding / activación / retención de un producto | Pía | `/agente-growth-producto` — **en reserva** (`oficina/skills-en-reserva/`) |
 | Medir resultados / armar un reporte / atribución | Nora | `/agente-analitica` — **en reserva** (`oficina/skills-en-reserva/`) |
