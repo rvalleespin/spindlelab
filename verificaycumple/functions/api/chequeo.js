@@ -301,6 +301,46 @@ function buscarCasillaPremarcada(html) {
 }
 
 /* ------------------------------------------------------------------ *
+ * Qué decirle a alguien cuyo sitio no se dejó leer                     *
+ * ------------------------------------------------------------------ */
+
+// Antes esto era una sola línea con el número adentro: "El sitio respondió 526. Revisa el
+// dominio." Para quien escribe su dominio, ese número no significa nada y el consejo estaba
+// equivocado además: el dominio estaba bien. El código sigue viajando aparte, en `codigo`,
+// porque a nosotros nos sirve cuando alguien nos escribe; lo que cambia es que ya no es el
+// mensaje.
+export function mensajeDeFallo(status) {
+  if (status === 401 || status === 403) {
+    return 'Tu sitio nos bloqueó la lectura: respondió que no tenemos permiso para ver la ' +
+      'portada. Suele ser un firewall o una regla contra lectores automáticos. Escríbenos a ' +
+      'hola@spindlelab.cl y lo revisamos a mano.';
+  }
+  if (status === 404) {
+    return 'El dominio responde, pero su portada no existe. Revisa que sea la dirección que ' +
+      'usa tu sitio: a veces vive en un subdominio y no en el dominio pelado.';
+  }
+  if (status === 429) {
+    return 'Tu sitio nos pidió bajar el ritmo porque recibió varias peticiones seguidas. ' +
+      'Espera un minuto y vuelve a intentarlo.';
+  }
+  if (status === 525 || status === 526) {
+    return 'El certificado de tu sitio no sirve: está vencido, mal instalado o es de otro ' +
+      'dominio. Por http:// tampoco entrega una página que podamos leer, así que no hay ' +
+      'informe. Eso ya es un hallazgo en sí: hoy tus visitantes ven una advertencia de ' +
+      'seguridad antes de poder entrar.';
+  }
+  if (status === 530) {
+    return 'No encontramos un sitio publicado en ese dominio. Revisa que esté bien escrito y ' +
+      'que esté apuntando a un hosting.';
+  }
+  if (status >= 500) {
+    return 'Tu sitio respondió con un error de su propio servidor. Suele ser pasajero: ' +
+      'inténtalo en un rato. Si sigue igual, el problema está en tu hosting y no en este chequeo.';
+  }
+  return 'Tu sitio respondió, pero no nos entregó la portada. Revisa el dominio o inténtalo de nuevo.';
+}
+
+/* ------------------------------------------------------------------ *
  * El chequeo                                                          *
  * ------------------------------------------------------------------ */
 
@@ -328,12 +368,10 @@ export async function chequear(entrada, fetchImpl = fetch) {
   if (!home || tlsRoto) home = (await traer(`http://${dominio}/`, fetchImpl)) || home;
 
   if (!home || home.status >= 400) {
-    return {
-      ok: false,
-      error: home
-        ? `El sitio respondió ${home.status}. Revisa el dominio.`
-        : 'No pudimos abrir el sitio. Revisa el dominio o inténtalo de nuevo.',
-    };
+    if (!home) {
+      return { ok: false, error: 'No pudimos abrir el sitio. Revisa el dominio o inténtalo de nuevo.' };
+    }
+    return { ok: false, error: mensajeDeFallo(home.status), codigo: home.status };
   }
 
   // Si la portada no llegó entera, NO se puntúa. Un HTML cortado produce un informe que

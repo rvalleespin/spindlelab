@@ -429,6 +429,89 @@
     border-radius: 10px;
     margin-bottom: 24px;
   }
+  .error-caja p { margin: 0; }
+  /* El código de respuesta no desaparece: baja de categoría. Deja de ser el mensaje y pasa a
+     ser el dato que sirve cuando alguien nos escribe para que lo revisemos a mano. */
+  /* Se distingue por tamaño y por la línea de arriba, no bajándole la opacidad: con .75
+     quedaba en 2,8:1 sobre este fondo, que es ilegible justo para quien más lo necesita. */
+  .error-codigo {
+    margin-top: 10px !important;
+    padding-top: 10px;
+    border-top: 1px solid rgba(154,79,13,.25);
+    font-size: .8rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Esqueleto de carga: toma la forma de lo que viene (el anillo del puntaje y las filas de
+     señales) en vez de un vacío o una rueda girando. No iguala el alto del informe y no
+     pretende hacerlo — medido, son 212 px contra 1109, y el largo real depende de cuántos
+     hallazgos salgan. Lo que resuelve es la espera, no el salto de layout. Solo se anima la
+     opacidad, nunca el tamaño, y se apaga entero con prefers-reduced-motion. */
+  .esqueleto { margin-bottom: 30px; }
+  .esqueleto-caja {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 22px 24px;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+  }
+  .esqueleto-anillo {
+    width: 84px; height: 84px; flex: 0 0 auto;
+    border-radius: 50%;
+    border: 9px solid var(--vivo-tinta);
+    opacity: .12;
+  }
+  .esqueleto-texto { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+  /* El título del bloque va suelto sobre el azul del hero, igual que el h2 de verdad, así
+     que su marca es blanca. La tinta oscura acá se perdía contra el fondo. */
+  .esqueleto-titulo {
+    height: 14px; width: 46%;
+    border-radius: 999px;
+    background: #fff; opacity: .45;
+    margin: 26px 0 12px;
+  }
+  /* Y las filas van dentro de la misma tarjeta blanca que ul.items, no al aire. */
+  .esqueleto-items {
+    list-style: none; margin: 0; padding: 0;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+  }
+  .esqueleto-items li {
+    display: flex; align-items: center; gap: 12px;
+    padding: 17px 18px;
+    border-top: 1px solid var(--borde);
+  }
+  .esqueleto-items li:first-child { border-top: none; }
+  .esqueleto-marca {
+    flex: 0 0 auto;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--vivo-tinta);
+    opacity: .12;
+  }
+  .esqueleto-linea {
+    height: 12px;
+    border-radius: 999px;
+    background: var(--vivo-tinta);
+    opacity: .12;
+    animation: esqueleto-latido 1.4s ease-in-out infinite;
+  }
+  .esqueleto-texto .esqueleto-linea:nth-child(2) { animation-delay: .12s; }
+  .esqueleto-items li:nth-child(2) .esqueleto-linea { animation-delay: .12s; }
+  .esqueleto-items li:nth-child(3) .esqueleto-linea { animation-delay: .24s; }
+  @keyframes esqueleto-latido {
+    0%, 100% { opacity: .10; }
+    50%      { opacity: .22; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .esqueleto-linea { animation: none; }
+  }
 
   .puntaje-caja {
     display: flex;
@@ -784,7 +867,7 @@
       <div class="hero-enunciados">
         <div class="enunciado">
           <p class="enunciado-titulo">Qué hace</p>
-          <p>En 40 segundos sabes si tu sitio publica lo básico que exige la Ley 21.719 de protección de datos personales.</p>
+          <p>En segundos sabes si tu sitio publica lo básico que exige la Ley 21.719 de protección de datos personales.</p>
         </div>
         <div class="enunciado enunciado-der">
           <p class="enunciado-titulo">Qué no hace</p>
@@ -800,7 +883,10 @@
         </form>
         <p class="nota-privacidad">Solo leemos tu sitio público. No pedimos correo ni guardamos el dominio que revisas.</p>
 
-        <div id="resultado" aria-live="polite"></div>
+        <!-- tabindex="-1" para poder llevar el foco acá cuando llega el resultado: sale más
+             abajo del formulario, y quien navega con teclado o lector de pantalla se quedaba
+             en el botón sin saber que ya había algo que leer. -->
+        <div id="resultado" role="region" aria-label="Resultado del chequeo" aria-live="polite" tabindex="-1"></div>
 
         <!-- Acá iba la tarjeta "spindlelab.cl 36 → 73 con el kit". Se quitó junto con la
              franja, por la misma razón: es la misma prueba social que no prueba nada para
@@ -968,8 +1054,44 @@
     return d.innerHTML;
   }
 
-  function renderError(mensaje) {
-    resultado.innerHTML = '<div class="error-caja">' + escapar(mensaje) + '</div>';
+  const menosMovimiento = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Lleva el foco al resultado y lo deja a la vista. Se llama tanto con informe como con
+  // error: en los dos casos hay algo que leer, y estaba quedando fuera de pantalla.
+  function mostrar() {
+    resultado.classList.add('visible');
+    resultado.setAttribute('aria-busy', 'false');
+    resultado.focus({ preventScroll: true });
+    resultado.scrollIntoView({ behavior: menosMovimiento ? 'auto' : 'smooth', block: 'nearest' });
+  }
+
+  function renderError(mensaje, codigo) {
+    let html = '<div class="error-caja"><p>' + escapar(mensaje) + '</p>';
+    if (codigo) html += '<p class="error-codigo">Código de respuesta de tu sitio: ' + escapar(codigo) + '</p>';
+    resultado.innerHTML = html + '</div>';
+    mostrar();
+  }
+
+  // aria-hidden porque es decoración: quien usa lector de pantalla ya recibió el aviso de
+  // aria-busy y no necesita que le lean cinco cajas vacías.
+  function renderEsqueleto() {
+    resultado.innerHTML =
+      '<div class="esqueleto" aria-hidden="true">' +
+        '<div class="esqueleto-caja">' +
+          '<div class="esqueleto-anillo"></div>' +
+          '<div class="esqueleto-texto">' +
+            '<div class="esqueleto-linea" style="width:92%"></div>' +
+            '<div class="esqueleto-linea" style="width:64%"></div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="esqueleto-titulo"></div>' +
+        '<ul class="esqueleto-items">' +
+          '<li><span class="esqueleto-marca"></span><span class="esqueleto-linea" style="width:72%"></span></li>' +
+          '<li><span class="esqueleto-marca"></span><span class="esqueleto-linea" style="width:84%"></span></li>' +
+          '<li><span class="esqueleto-marca"></span><span class="esqueleto-linea" style="width:58%"></span></li>' +
+        '</ul>' +
+      '</div>';
+    resultado.setAttribute('aria-busy', 'true');
     resultado.classList.add('visible');
   }
 
@@ -1026,7 +1148,7 @@
     }
 
     resultado.innerHTML = html;
-    resultado.classList.add('visible');
+    mostrar();
   }
 
   form.addEventListener('submit', async function (ev) {
@@ -1039,17 +1161,24 @@
     resultado.classList.remove('visible');
     resultado.innerHTML = '';
 
+    // Medido en producción, el chequeo tarda entre 0,1 y 0,9 s. Un esqueleto que aparece y
+    // se va en 100 ms no informa: parpadea, y eso se ve peor que no poner nada. Por eso
+    // entra recién si la espera pasa de un cuarto de segundo, que es cuando la persona
+    // empieza a dudar de si su clic hizo algo.
+    const esqueletoTardio = setTimeout(renderEsqueleto, 250);
+
     try {
       const resp = await fetch('/api/chequeo?dominio=' + encodeURIComponent(dominio));
       const data = await resp.json();
       if (!data.ok) {
-        renderError(data.error || 'No pudimos revisar ese dominio.');
+        renderError(data.error || 'No pudimos revisar ese dominio.', data.codigo);
       } else {
         renderResultado(data);
       }
     } catch (err) {
       renderError('No pudimos completar el chequeo. Inténtalo de nuevo.');
     } finally {
+      clearTimeout(esqueletoTardio);
       boton.disabled = false;
       boton.textContent = 'Revisar mi sitio';
     }
