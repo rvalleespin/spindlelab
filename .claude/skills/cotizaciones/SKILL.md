@@ -11,7 +11,7 @@ Todo lo de acá salió de hacer esas dos, no de teoría.
 
 ## Dónde vive cada cosa
 
-- **`COTIZACIONES/`** (raíz del repo, **gitignored**: no viaja a sesiones cloud). Ahí van los PDF,
+- **`COTIZACIONES/`** y **`marketing/cotizaciones/`** (ambas **gitignored**: no viajan a sesiones cloud). Ahí van los PDF,
   los generadores con número, el logo (`logo-spindlelab-nuevo.png`), `MODELO-COTIZACIONES.md` y
   `guiacotizaciones.md`. Esos dos son de julio: **si contradicen esta skill, manda esta skill.**
 - **`plantilla_generador.py`** (en esta carpeta): la 015 completa, que es el punto de partida.
@@ -25,7 +25,11 @@ Todo lo de acá salió de hacer esas dos, no de teoría.
 1. **Aterriza la solicitud.** Quién es (nombre completo), cómo llegó (referido de quién, canal),
    qué pidió de verdad, qué dudas tiene. Si falta algo que cambia el precio (idiomas, panel,
    e-commerce, cantidad de páginas), pregúntalo antes de armar nada.
-2. **Número correlativo.** `ls COTIZACIONES/` y toma el siguiente `SPL-COT-AAAA-NNN`.
+2. **Número correlativo: el máximo de los tres lugares + 1.** Hay cotizaciones en
+   `COTIZACIONES/` (014, 015), en `marketing/cotizaciones/` (016, Cortes Zamora, ago) y otras
+   que solo existen como adjunto enviado (propuesta a Soya, 10-sep). Revisa las dos carpetas
+   **y** Gmail (`search_threads` con `in:sent has:attachment (cotización OR propuesta)`). La 015
+   salió después de la 016 por mirar solo `COTIZACIONES/`; que no se repita.
 3. **Lee los precios del sitio** y mapea la solicitud a **tres planes publicados**, con el ★
    en el que cubre lo pedido (normalmente el del medio). Si ningún plan publicado cubre algo
    (p. ej. una tienda), va como "Se cotiza tras una reunión", igual que en el sitio.
