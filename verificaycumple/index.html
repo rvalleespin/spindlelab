@@ -63,33 +63,84 @@
     src: url("assets/fonts/archivo-black-latin-ext.woff2") format("woff2");
     unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
   }
+  /* --------------------------------------------------------------------------
+     Capa 1, primitivos. Solo nombran un color; no significan nada todavía.
+     Cambiar la marca es cambiar ESTA capa y nada más.
+     -------------------------------------------------------------------------- */
   :root {
-    --bg: #f7f2ea;
-    --bg-alt: #efe6d3;
-    --panel: #fffdf9;
-    --texto: #221b13;
-    --texto-suave: #6f6151;
-    --borde: #e2d6bf;
-    --acento: #0d6d61;
-    --acento-oscuro: #094f46;
-    --acento-bg: #e7f2ef;
-    --sello: #b5502c;
-    --sello-oscuro: #8f3d20;
-    --sello-contraste: #fffdf9;
-    --ok: #0d6d61;
-    --ok-bg: #e7f2ef;
-    --pendiente: #a8560f;
-    --pendiente-bg: #fbead9;
-    --info-bg: #efe6d3;
+    --blanco:      #fff;
+    --azul-600:    #2e5bff;
+    --rosa-500:    #ff3ea0;
+    --rosa-700:    #c21e78;
+    --lima-400:    #d6ff3d;
+    --tinta-900:   #17163a;
+    --tinta-500:   #56547a;
+    --crema-50:    #fffdf9;
+    --crema-100:   #fffaf0;
+    --crema-200:   #f7f2ea;
+    --arena-100:   #efe6d3;
+    --arena-300:   #e2d6bf;
+    --arena-500:   #a89a86;
+    --cafe-500:    #6f6151;
+    --cafe-900:    #221b13;
+    --verde-50:    #e7f2ef;
+    --verde-700:   #0d6d61;
+    --verde-900:   #094f46;
+    --teja-600:    #b5502c;
+    --teja-800:    #8f3d20;
+    --crema-150:   #f5eee0;
+    --verde-100:   #e2f1ed;
+    --verde-950:   #0a5348;
+    --ambar-100:   #fbe8d6;
+    --ambar-800:   #9a4f0d;
+    --ambar-50:    #fbead9;
+    --ambar-700:   #a8560f;
+  }
+
+  /* --------------------------------------------------------------------------
+     Capa 2, semánticos. El propósito, apuntando a la capa 1. Un componente pide
+     "el color de lo pendiente", no un naranjo concreto.
+
+     Esta paleta es FIJA a propósito: no sigue el tema del sistema. Hubo un bloque
+     prefers-color-scheme que invertía estos tokens, y no daba modo oscuro: todas
+     las superficies visibles ya tenían color propio, así que lo único que volteaba
+     era el fondo del <body>, que las secciones tapan. Lo que sí hacía era romper
+     cosas: dejó el resultado del chequeo ilegible una vez, y el texto del pie en
+     2,89:1 sobre un pie que es oscuro en los dos temas. Tinta que sigue al tema
+     sobre una superficie que no lo sigue es la misma trampa las dos veces.
+     -------------------------------------------------------------------------- */
+  :root {
+    --bg: var(--crema-200);
+    --panel: var(--crema-50);
+    --texto: var(--cafe-900);
+    --texto-suave: var(--cafe-500);
+    --borde: var(--arena-300);
+    --acento: var(--verde-700);
+    --acento-oscuro: var(--verde-900);
+    --sello: var(--teja-600);
+    --sello-oscuro: var(--teja-800);
+    --sello-contraste: var(--crema-50);
+    --ok: var(--verde-700);
+    --ok-bg: var(--verde-50);
+    --pendiente: var(--ambar-700);
+    --pendiente-bg: var(--ambar-50);
+    --info-bg: var(--arena-100);
+    --inactivo: var(--arena-500);
     --sombra: 0 1px 2px rgba(34,27,19,.04), 0 8px 24px -12px rgba(34,27,19,.18);
     --serif: Georgia, "Times New Roman", Times, serif;
-    --vivo-azul: #2e5bff;
-    --vivo-rosa: #ff3ea0;
-    --vivo-rosa-osc: #c21e78;
-    --vivo-verde: #d6ff3d;
-    --vivo-tinta: #17163a;
-    --vivo-panel: #fffaf0;
-    --vivo-suave: #56547a;
+    --vivo-azul: var(--azul-600);
+    --vivo-rosa: var(--rosa-500);
+    --vivo-rosa-osc: var(--rosa-700);
+    --vivo-verde: var(--lima-400);
+    --vivo-tinta: var(--tinta-900);
+    --vivo-panel: var(--crema-100);
+    --vivo-suave: var(--tinta-500);
+
+    /* Radios: tres valores y se acaba. El 50% de los círculos y el 0 de los
+       bloques editoriales planos son forma, no radio de tarjeta. */
+    --radio-pill: 999px;
+    --radio-tarjeta: 16px;
+    --radio-chico: 10px;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -102,7 +153,7 @@
     -webkit-font-smoothing: antialiased;
     position: relative;
   }
-  /* Textura de grano sutil, vía filtro SVG en línea — cero imágenes, cero peticiones externas. */
+  /* Textura de grano sutil, vía filtro SVG en línea: cero imágenes, cero peticiones externas. */
   body::before {
     content: "";
     position: fixed; inset: 0;
@@ -111,9 +162,6 @@
     opacity: .045;
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  @media (prefers-color-scheme: dark) {
-    body::before { opacity: .07; mix-blend-mode: overlay; }
   }
   a { color: var(--acento-oscuro); }
   a:focus-visible, button:focus-visible, input:focus-visible {
@@ -156,14 +204,14 @@
     padding: 16px 0;
     background: var(--vivo-azul);
   }
-  header.sitio .marca { color: #fff; font-family: "Archivo Black", var(--serif); letter-spacing: 0; text-transform: uppercase; font-size: 0.98rem; }
+  header.sitio .marca { color: var(--blanco); font-family: "Archivo Black", var(--serif); letter-spacing: 0; text-transform: uppercase; font-size: 0.98rem; }
   header.sitio .fecha-limite { color: rgba(255,255,255,.82); }
-  header.sitio .fecha-limite strong { color: #fff; }
+  header.sitio .fecha-limite strong { color: var(--blanco); }
   header.sitio .nav-planes { color: var(--vivo-verde); }
-  header.sitio .nav-planes:hover { color: #fff; }
-  header.sitio .sello-mini .sello-anillo { stroke: #fff; opacity: .7; }
+  header.sitio .nav-planes:hover { color: var(--blanco); }
+  header.sitio .sello-mini .sello-anillo { stroke: var(--blanco); opacity: .7; }
   header.sitio .sello-mini .sello-nucleo { fill: var(--vivo-rosa); }
-  header.sitio .sello-mini .sello-check { stroke: #fff; }
+  header.sitio .sello-mini .sello-check { stroke: var(--blanco); }
   header.sitio .envoltura {
     display: flex;
     align-items: center;
@@ -192,7 +240,7 @@
 
   main { display: block; }
 
-  /* Hero — calcado de la composición de la referencia (Behance, "Creative Course Landing
+  /* Hero, calcado de la composición de la referencia (Behance, "Creative Course Landing
      Page"): fondo azul a sangre completa, titular gigante a todo el ancho arriba, la foto
      grande y centrada rompiendo sobre el texto, sin tarjetas con borde/sombra dura. */
   section.hero {
@@ -240,7 +288,7 @@
     background: var(--vivo-verde); color: var(--vivo-tinta);
     font-family: "Archivo Black", Impact, var(--serif); font-weight: 400;
     font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-    padding: 6px 12px; border-radius: 999px; margin: 0 auto 18px;
+    padding: 6px 12px; border-radius: var(--radio-pill); margin: 0 auto 18px;
   }
   /* Archivo Black es bastante más ancha que la serif que había antes: en móvil el
      rótulo se partía en dos líneas y dejaba "21.719" solo. Se aprieta, no se acorta. */
@@ -290,7 +338,7 @@
      porque `section.hero` tiene overflow:hidden y si no, se corta la palabra. */
   /* El titular ya no necesita media query de tamaño: al ir en vw y con las dos líneas en
      proporción fija, se ajusta solo en cualquier ancho. */
-  .titulo-absurdo .t-blanco { color: #fff; }
+  .titulo-absurdo .t-blanco { color: var(--blanco); }
   .titulo-absurdo .t-verde { color: var(--vivo-verde); }
 
   /* El recorte (PNG sin fondo) va encima del titular: las letras pasan por detrás del
@@ -324,7 +372,7 @@
     margin: -100px 0 0;
     position: relative; z-index: 3;
   }
-  .enunciado p { margin: 0; color: #fff; font-size: 0.98rem; line-height: 1.5; max-width: 34ch; }
+  .enunciado p { margin: 0; color: var(--blanco); font-size: 0.98rem; line-height: 1.5; max-width: 34ch; }
   .enunciado-der { justify-self: end; text-align: right; }
   .enunciado-der p { margin-left: auto; }
   .enunciado-titulo {
@@ -343,7 +391,7 @@
 
   .hero-accion { max-width: 560px; margin: 32px auto 0; text-align: center; position: relative; z-index: 2; }
   .hero-accion p.sub-absurdo {
-    font-size: 1.08rem; font-weight: 500; color: #fff; opacity: .92;
+    font-size: 1.08rem; font-weight: 500; color: var(--blanco); opacity: .92;
     margin: 0 0 24px;
   }
 
@@ -360,7 +408,7 @@
     padding: 15px 20px;
     font-size: 1rem;
     border: none;
-    border-radius: 999px;
+    border-radius: var(--radio-pill);
     background: var(--vivo-panel);
     color: var(--vivo-tinta);
   }
@@ -369,19 +417,19 @@
     padding: 15px 28px;
     font-size: 1rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--blanco);
     background: var(--vivo-rosa);
     border: none;
-    border-radius: 999px;
+    border-radius: var(--radio-pill);
     cursor: pointer;
     transition: background .15s ease, transform .1s ease;
   }
   form.chequeo button:hover { background: var(--vivo-rosa-osc); }
   form.chequeo button:active { transform: scale(.97); }
-  form.chequeo button:disabled { background: #a89a86; cursor: wait; }
+  form.chequeo button:disabled { background: var(--inactivo); cursor: wait; }
   .hero-accion .nota-privacidad {
     font-size: 0.82rem;
-    color: #fff;
+    color: var(--blanco);
     opacity: .75;
     margin: 0;
   }
@@ -395,30 +443,27 @@
   #resultado { display: none; margin-top: 34px; }
   #resultado.visible { display: block; }
 
-  /* El resultado se dibuja con los tokens viejos (--panel, --texto-suave, --borde), que
-     invierten con el tema del sistema, pero hereda un color fijo de la paleta nueva. En
-     modo oscuro eso dejaba el título de cada ítem en azul marino #17163a sobre un panel
-     casi negro: invisible. Acá se fijan los tokens dentro del resultado para que la
-     tarjeta sea siempre clara con tinta oscura, en los dos temas, igual que el resto de
-     la página, que ya no reacciona al tema. */
+  /* Capa 3, la tarjeta del resultado. Vive sobre el azul del hero, no sobre la
+     crema del resto, así que pide sus propios tonos: un panel un punto más cálido,
+     tinta azul marino en vez de café, y bordes que salen de esa misma tinta. Solo
+     se listan los que DIFIEREN del semántico global; los que coincidían se quitaron
+     para que no haya que leer dos veces lo mismo. */
   #resultado {
-    --panel: #fffaf0;
-    --bg-alt: #f3ecdd;
-    --info-bg: #f5eee0;
+    --panel: var(--crema-100);
+    --info-bg: var(--crema-150);
     --texto: var(--vivo-tinta);
     --texto-suave: var(--vivo-suave);
     --borde: rgba(23,22,58,.16);
-    --ok: #0d6d61;
-    --ok-bg: #e2f1ed;
-    --pendiente: #9a4f0d;
-    --pendiente-bg: #fbe8d6;
-    --acento-oscuro: #0a5348;
+    --ok-bg: var(--verde-100);
+    --pendiente: var(--ambar-800);
+    --pendiente-bg: var(--ambar-100);
+    --acento-oscuro: var(--verde-950);
     --sello: var(--vivo-rosa-osc);
     --sombra: 0 1px 2px rgba(23,22,58,.06), 0 10px 28px -14px rgba(23,22,58,.3);
   }
   /* Estos dos van sueltos sobre el azul del hero, no dentro de la tarjeta blanca, así que
      su tinta es blanca y no la oscura de la tarjeta. */
-  #resultado .bloque h2 { color: #fff; }
+  #resultado .bloque h2 { color: var(--blanco); }
   #resultado .bloque > .sub-bloque { color: rgba(255,255,255,.82); }
 
   .error-caja {
@@ -426,7 +471,7 @@
     border: 1px solid var(--pendiente);
     color: var(--pendiente);
     padding: 14px 16px;
-    border-radius: 10px;
+    border-radius: var(--radio-chico);
     margin-bottom: 24px;
   }
   .error-caja p { margin: 0; }
@@ -444,7 +489,7 @@
 
   /* Esqueleto de carga: toma la forma de lo que viene (el anillo del puntaje y las filas de
      señales) en vez de un vacío o una rueda girando. No iguala el alto del informe y no
-     pretende hacerlo — medido, son 212 px contra 1109, y el largo real depende de cuántos
+     pretende hacerlo: medido, son 212 px contra 1109, y el largo real depende de cuántos
      hallazgos salgan. Lo que resuelve es la espera, no el salto de layout. Solo se anima la
      opacidad, nunca el tamaño, y se apaga entero con prefers-reduced-motion. */
   .esqueleto { margin-bottom: 30px; }
@@ -455,7 +500,7 @@
     padding: 22px 24px;
     background: var(--panel);
     border: 1px solid var(--borde);
-    border-radius: 16px;
+    border-radius: var(--radio-tarjeta);
     box-shadow: var(--sombra);
   }
   .esqueleto-anillo {
@@ -469,8 +514,8 @@
      que su marca es blanca. La tinta oscura acá se perdía contra el fondo. */
   .esqueleto-titulo {
     height: 14px; width: 46%;
-    border-radius: 999px;
-    background: #fff; opacity: .45;
+    border-radius: var(--radio-pill);
+    background: var(--blanco); opacity: .45;
     margin: 26px 0 12px;
   }
   /* Y las filas van dentro de la misma tarjeta blanca que ul.items, no al aire. */
@@ -478,7 +523,7 @@
     list-style: none; margin: 0; padding: 0;
     background: var(--panel);
     border: 1px solid var(--borde);
-    border-radius: 14px;
+    border-radius: var(--radio-tarjeta);
     overflow: hidden;
     box-shadow: var(--sombra);
   }
@@ -497,7 +542,7 @@
   }
   .esqueleto-linea {
     height: 12px;
-    border-radius: 999px;
+    border-radius: var(--radio-pill);
     background: var(--vivo-tinta);
     opacity: .12;
     animation: esqueleto-latido 1.4s ease-in-out infinite;
@@ -520,7 +565,7 @@
     padding: 22px 24px;
     background: var(--panel);
     border: 1px solid var(--borde);
-    border-radius: 16px;
+    border-radius: var(--radio-tarjeta);
     margin-bottom: 30px;
     box-shadow: var(--sombra);
   }
@@ -557,7 +602,7 @@
     list-style: none; margin: 0; padding: 0;
     background: var(--panel);
     border: 1px solid var(--borde);
-    border-radius: 14px;
+    border-radius: var(--radio-tarjeta);
     overflow: hidden;
     box-shadow: var(--sombra);
   }
@@ -596,7 +641,7 @@
   .informativos {
     background: var(--info-bg);
     border: 1px solid var(--borde);
-    border-radius: 14px;
+    border-radius: var(--radio-tarjeta);
     padding: 20px 22px;
     margin-top: 8px;
   }
@@ -615,7 +660,7 @@
   .panel-resolucion .boton-ayuda:hover { background: var(--sello-oscuro); }
 
   /* ============================================================
-     Secciones de abajo — mismo lenguaje que el hero: bloques de
+     Secciones de abajo, mismo lenguaje que el hero: bloques de
      color plano alternados, titulares en Archivo Black, cifras
      grandes en rosa, nada de tarjetas con borde y sombra.
      ============================================================ */
@@ -630,14 +675,14 @@
     display: inline-block;
     font-family: "Archivo Black", Impact, var(--serif);
     font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-    padding: 6px 12px; border-radius: 999px; margin: 0 0 16px;
+    padding: 6px 12px; border-radius: var(--radio-pill); margin: 0 0 16px;
   }
 
   section.explicador {
     background: var(--vivo-panel);
     padding: 76px 0;
   }
-  section.explicador .etiqueta-seccion { background: var(--vivo-rosa); color: #fff; }
+  section.explicador .etiqueta-seccion { background: var(--vivo-rosa); color: var(--blanco); }
   section.explicador h2 { color: var(--vivo-tinta); }
   section.explicador > .envoltura > p.intro { color: var(--vivo-suave); max-width: 58ch; margin: 0 0 48px; font-size: 1.08rem; }
 
@@ -663,7 +708,7 @@
   }
   .comp-card { padding: 30px 32px; border: none; border-radius: 0; box-shadow: none; }
   .comp-si { background: var(--vivo-verde); color: var(--vivo-tinta); }
-  .comp-no { background: var(--vivo-azul); color: #fff; }
+  .comp-no { background: var(--vivo-azul); color: var(--blanco); }
   .comp-card h3 {
     margin: 0 0 16px; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;
     font-family: "Archivo Black", Impact, var(--serif); text-transform: uppercase; letter-spacing: -0.01em;
@@ -686,7 +731,7 @@
     margin-top: 0;
     padding: 20px 24px;
     background: var(--vivo-tinta);
-    color: #fff;
+    color: var(--blanco);
     border: none;
     border-radius: 0;
     font-size: 0.92rem;
@@ -697,7 +742,7 @@
   /* --- Referencia Art. 14 ter: bloque azul, cifras en verde --- */
   section.referencia { padding: 76px 0; background: var(--vivo-azul); }
   section.referencia .etiqueta-seccion { background: var(--vivo-verde); color: var(--vivo-tinta); }
-  section.referencia h2 { color: #fff; }
+  section.referencia h2 { color: var(--blanco); }
   section.referencia > .envoltura > p.intro { color: rgba(255,255,255,.85); max-width: 58ch; margin: 0 0 40px; font-size: 1.05rem; }
   .art14-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 40px; }
   .art14-item { display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.25); }
@@ -707,7 +752,7 @@
     color: var(--vivo-verde); font-size: 1.3rem; flex: 0 0 auto; width: 38px;
   }
   .art14-item p { margin: 0; font-size: 0.92rem; color: rgba(255,255,255,.8); line-height: 1.5; }
-  .art14-item strong { display: block; font-size: 1rem; color: #fff; margin-bottom: 3px; }
+  .art14-item strong { display: block; font-size: 1rem; color: var(--blanco); margin-bottom: 3px; }
   @media (max-width: 700px) {
     .art14-grid { grid-template-columns: 1fr; }
     .art14-item:nth-child(2) { border-top: 1px solid rgba(255,255,255,.25); }
@@ -737,10 +782,10 @@
   .boton-ayuda {
     display: inline-block;
     background: var(--vivo-rosa);
-    color: #fff;
+    color: var(--blanco);
     font-weight: 700;
     padding: 15px 30px;
-    border-radius: 999px;
+    border-radius: var(--radio-pill);
     text-decoration: none;
     transition: background .15s ease, transform .1s ease;
   }
@@ -749,9 +794,9 @@
   .planes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 880px; margin: 0 auto 32px; align-items: stretch; }
   .kit-precio {
     text-align: left; padding: 32px 30px; margin: 0; display: flex; flex-direction: column;
-    position: relative; border: none; border-radius: 22px; box-shadow: none; transform: none;
+    position: relative; border: none; border-radius: var(--radio-tarjeta); box-shadow: none; transform: none;
   }
-  .kit-precio.kit-principal { background: var(--vivo-azul); color: #fff; }
+  .kit-precio.kit-principal { background: var(--vivo-azul); color: var(--blanco); }
   .kit-precio.kit-secundario { background: var(--vivo-verde); color: var(--vivo-tinta); opacity: 1; }
   .kit-sello { display: none; }
   .kit-etiqueta {
@@ -765,7 +810,7 @@
     font-family: "Archivo Black", Impact, var(--serif); font-weight: 400;
     font-size: 2.1rem; line-height: 1; letter-spacing: -0.03em;
   }
-  .kit-principal .kit-monto { color: #fff; }
+  .kit-principal .kit-monto { color: var(--blanco); }
   .kit-secundario .kit-monto { color: var(--vivo-tinta); }
   .kit-monto span { font-size: 0.8rem; font-weight: 400; white-space: nowrap; display: block; margin-top: 8px; font-family: inherit; opacity: .8; }
   .kit-principal .kit-monto span { color: rgba(255,255,255,.85); }
@@ -783,7 +828,7 @@
   .kit-secundario .kit-nota { color: rgba(23,22,58,.7); }
   .botones-ayuda { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .boton-secundario { background: transparent; color: var(--vivo-tinta); border: 2px solid var(--vivo-tinta); box-shadow: none; }
-  .boton-secundario:hover { background: var(--vivo-tinta); color: #fff; }
+  .boton-secundario:hover { background: var(--vivo-tinta); color: var(--blanco); }
   @media (max-width: 680px) {
     .planes-grid { grid-template-columns: 1fr; gap: 18px; max-width: 460px; }
   }
@@ -795,39 +840,18 @@
   }
   footer.sitio p { color: rgba(255,255,255,.75); }
   footer.sitio a { color: var(--vivo-verde); }
-  footer.sitio .sello-mini .sello-anillo { stroke: #fff; opacity: .6; }
+  footer.sitio .sello-mini .sello-anillo { stroke: var(--blanco); opacity: .6; }
   footer.sitio .sello-mini .sello-nucleo { fill: var(--vivo-rosa); }
-  footer.sitio .sello-mini .sello-check { stroke: #fff; }
+  footer.sitio .sello-mini .sello-check { stroke: var(--blanco); }
   footer.sitio .envoltura { display: flex; align-items: flex-start; gap: 12px; }
+  /* Sin color acá: el pie es oscuro siempre, así que la tinta la pone la regla de
+     arriba (blanco al 75%). Cuando esta regla traía color: var(--texto-suave), lo
+     pisaba y dejaba el texto en 2,89:1. */
   footer.sitio p {
     font-size: 0.85rem;
-    color: var(--texto-suave);
     margin: 0 0 6px;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #17130e;
-      --bg-alt: #1e1912;
-      --panel: #221c14;
-      --texto: #f4ecdd;
-      --texto-suave: #b6a892;
-      --borde: #3c3324;
-      --acento: #2bbfa8;
-      --acento-oscuro: #7fe9d8;
-      --acento-bg: #17322c;
-      --sello: #e08150;
-      --sello-oscuro: #f2a678;
-      --sello-contraste: #17130e;
-      --ok: #2bbfa8;
-      --ok-bg: #17322c;
-      --pendiente: #e0a862;
-      --pendiente-bg: #362512;
-      --info-bg: #201a12;
-      --sombra: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
-    }
-    .sello-mini .sello-anillo { stroke: var(--texto-suave); }
-  }
 </style>
 </head>
 <body>
