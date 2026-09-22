@@ -258,10 +258,16 @@ export async function chequear(entrada, fetchImpl = fetch) {
   // todavía anda en http o tiene el certificado vencido, era el único que nunca veía un
   // informe. Leía "no pudimos abrir el sitio, revisa el dominio" y su dominio estaba bien.
   //
-  // Solo se reintenta cuando https no conectó (`null`: certificado inválido, puerto cerrado,
-  // DNS). Si https respondió aunque sea con error, el sitio SÍ sirve por https y reintentar
-  // por http daría un informe que dice lo contrario.
-  if (!home) home = await traer(`http://${dominio}/`, fetchImpl);
+  // Se reintenta cuando https no conectó (`null`) y también cuando el runtime devolvió un
+  // fallo de TLS como status: 525 es handshake fallido y 526 es certificado inválido.
+  // Comprobado contra expired.badssl.com y self-signed.badssl.com, que devuelven 526 en vez
+  // de lanzar, así que sin esto el caso roto MÁS común (el certificado vencido) nunca
+  // llegaba al reintento y esas personas seguían sin ver un informe.
+  //
+  // Cualquier otro status significa que el sitio SÍ sirve por https, aunque esa página dé
+  // error; ahí reintentar por http daría un informe que dice lo contrario.
+  const tlsRoto = home && (home.status === 525 || home.status === 526);
+  if (!home || tlsRoto) home = (await traer(`http://${dominio}/`, fetchImpl)) || home;
 
   if (!home || home.status >= 400) {
     return {
