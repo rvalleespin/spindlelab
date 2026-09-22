@@ -1,9 +1,14 @@
 # Publicar — Ley 21.719: lo que pasa en un sitio que no sabe si cumple
 
-**Cuándo:** JUEVES 24-sep (slot de página) · **Canal:** página de empresa LinkedIn · **Voz:** plural
-**Pieza visual:** ⚠️ **no existe todavía** — ver "Bloqueo" abajo.
+**Cuándo:** MARTES 22-sep (adelantado desde el slot del jue 24, decisión de Ramón)
+**Canales:** página de empresa LinkedIn (cuerpo, plural) **+** perfil personal de Ramón, que
+**comparte** el post de la página con un comentario en su voz singular. No son dos posts: es uno
+y su empujón.
+**Voz:** plural en la página · singular en el compartir
+**Pieza visual:** ⚠️ **no existe** — ver "Bloqueo" abajo.
 **Escribe:** Renata (copywriter) · **Aprueba:** Ramón
-**Checklist:** ☐ pieza visual resuelta · ☐ pase humano de Ramón · ☐ cuerpo · ☐ 1er comentario AL TIRO
+**Checklist:** ☐ pieza visual resuelta (o decisión de texto puro) · ☐ pase humano de Ramón ·
+☐ cuerpo en la página · ☐ 1er comentario AL TIRO · ☐ compartir desde el perfil personal con su comentario
 
 ## Cuerpo del post (copiar y pegar)
 
@@ -39,6 +44,20 @@ Acá está: https://verificaycumple.pages.dev
 
 Gratis, sin registro, y no guarda el dominio que revisas. Si sale con señales pendientes, en la misma página está el detalle del kit y su precio. Si algo te sale raro y no cachas qué hacer, escríbenos por acá y lo miramos.
 
+## Al compartir desde el perfil personal (copiar y pegar)
+
+> El 36 de 100 que sale ahí es mi sitio, antes de arreglarlo. Ya lo conté por acá.
+>
+> Lo que agrega este post es la lista de lo que el chequeo mira, y lo que decidimos dejar afuera
+> porque no se puede verificar leyendo un sitio desde afuera. Si tienes un formulario de
+> contacto, esa lista te sirve aunque no uses el chequeo.
+
+**Por qué un compartir y no un segundo post.** El cuerpo de arriba es plural y el perfil personal
+es singular; el manual marca esa mezcla como la que nunca se hace. Y el post personal del mismo
+22-sep ya contó el formulario, los rastreadores y el "no lo sabía hasta que lo revisé" a la misma
+audiencia: un post propio en su cuenta con este contenido llegaría a un pelo de repetirse. El
+compartir da el alcance sin el choque. Convención vigente desde el 12-jul.
+
 ---
 
 ## Bloqueo antes de publicar: no hay pieza visual
@@ -67,8 +86,8 @@ Dos salidas, decide Ramón:
 - **Nada de multas, Agencia (APDP) ni Registro Nacional de Sanciones.** Es el material más
   llamativo y el único sin verificar contra el texto oficial (brief §2 lo marca como fuentes
   secundarias). Es el mismo camino por el que salieron las "72 horas" que no existen en la ley.
-- **"Quedan diez semanas" hay que ajustarlo el día que salga.** Son 10 semanas exactas contadas
-  desde el 22-sep; el 24-sep son 9 semanas y 5 días, y conviene redondear a "nueve semanas".
+- **"Quedan diez semanas" es exacto si sale el 22-sep** (70 días justos al 1-dic-2026). Si se
+  corre al 24-sep hay que cambiarlo a "nueve semanas".
 - **Hashtags:** sin poner. El único ejemplo aprobado con hashtags (`#SEO #IA #Chile`) era de
   Instagram; no hay referencia de página con ellos. Si Ramón quiere, calzan
   `#Ley21719 #ProtecciónDeDatos #Chile`.
