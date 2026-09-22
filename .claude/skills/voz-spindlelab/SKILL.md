@@ -44,6 +44,31 @@ cuenta la historia personal de Ramón.
 - **Cierra bajo, no arriba.** *"Dejo el chequeo en el primer comentario, por si quieres
   ver qué le muestra tu sitio a la IA."* Nada de "¡No te lo pierdas!".
 
+## El tic que Ramón rechaza, y cuesta ver (22-sep-2026)
+
+**Enunciar algo y, en la frase siguiente, volver a decirlo con una coletilla que lo evalúa.**
+
+> *"El chequeo que publiqué lee tu sitio. **Eso es todo lo que lee, y no alcanza.**"*
+> *"Queda en condiciones de aparecer, **que no es lo mismo**."*
+> *"…con la instrucción para corregir cada una. **Ahí se detiene**."*
+
+Ramón lo rechazó por escrito: *"no me gusta la estructura que siempre usas, se lee demasiado
+extraño"*. Una vez es una decisión de autor; **en cada párrafo es una máquina.** La frase no
+aporta información nueva, solo juzga la anterior, y eso es exactamente lo que la checklist de
+Renata llama relleno.
+
+**Cómo suena él, en cambio.** Sus dos posts en singular **no abren hablando de sí mismo: abren
+en la situación del lector**, y muchas veces con un condicional.
+
+> *"Si te están cobrando «GEO» como una línea aparte del SEO, esto te sirve."*
+> *"Si tu sitio está bien hecho y ChatGPT igual no te menciona, el problema está en otra parte."*
+
+Y sus frases cortas sueltas son **hechos**, no evaluaciones de lo anterior: *"Google diciendo que
+no hay un canal nuevo."* · *"Ninguno de esos lo escribes tú."*
+
+**Chequeo rápido antes de entregar:** lee cada párrafo y pregúntate si la última frase agrega un
+hecho o solo califica al anterior. Si califica, bórrala.
+
 ## Lo que no aparece nunca en el texto aprobado
 
 Guion largo (—) como golpe de efecto · transiciones de relleno ("Dicho eso", "Cabe
