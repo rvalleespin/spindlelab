@@ -1,19 +1,19 @@
-# ✅ PUBLICADO — Post personal (LinkedIn personal de Ramón)
+# ⚠️ REEMPLAZADO — Post personal (LinkedIn personal de Ramón)
 
-**Publicado el dom 21-sep-2026**, no el miércoles 24 como estaba planificado: Ramón dio el
-pase de tono y dijo de subirlo de inmediato. `urn:li:activity:7507936204286308353`, público,
-con el primer comentario abajo, los dos firmados por él (no por la página).
+**Este texto se publicó el 21-sep y Ramón lo reemplazó el 22-sep.** El post sigue vivo en
+`urn:li:activity:7507936204286308353`, pero editado: LinkedIn lo muestra como "Editado" y
+sirve otro cuerpo, de 173 palabras, más el primer comentario también reescrito.
 
-**Ojo con la cadencia:** salió el mismo día que el post de la página (el lanzamiento, por la
-mañana). Son dos piezas distintas y no se pisan en contenido, pero sí se juntan en el tiempo.
-La próxima pieza del perfil personal no debería ser esta semana.
+**Por qué lo rechazó** (queda registrado en `voz-spindlelab/corpus.md` §3, que lo escribió
+otra sesión y es el registro bueno): *"suena extraña la parte de «que no te dice si
+cumples»"*. El chequeo no es una herramienta que se niega a responder; muestra si tu sitio
+publica lo que la ley exige, y él arregla lo que falte. Construir la pieza sobre la paradoja
+hizo que el ingenio pasara a ser el tema y el producto desapareciera.
 
-**Por qué existe:** el 21-sep salió por la **página** el lanzamiento de Verifica y Cumple
-(`urn:li:activity:7507924615218823168`), en voz plural. El perfil personal no puede repetir
-esa misma historia en singular. Este es el otro ángulo.
+**El texto que quedó publicado NO es el de abajo.** Está en el corpus, §3. Lo de acá se
+conserva solo como referencia de lo que no funcionó.
 
-**Ángulo:** construí un chequeo que se niega a decir si alguien cumple, y esa misma regla me
-deja a mí sin un punto que sé que merezco. Podría hacerme la excepción y no la hago.
+---
 
 ## Cuerpo del post (copiar y pegar)
 

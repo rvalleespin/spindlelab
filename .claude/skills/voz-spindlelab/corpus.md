@@ -7,9 +7,9 @@
 Índice:
 1. [Registro singular — LinkedIn personal, 1-sep-2026](#1-singular)
 2. [Registro plural — Instagram / página, 1-sep-2026](#2-plural)
-3. [Registro plural — página de LinkedIn, 21-sep-2026](#3-plural-linkedin)
-4. [Registro singular — LinkedIn personal, 21-sep-2026](#4-singular-nocertifico)
-5. [Dónde hay más material](#5-mas)
+3. [Registro singular — LinkedIn personal, 22-sep-2026](#3-singular-ley)
+4. [Registro plural — página de LinkedIn, 21-sep-2026](#3-plural-linkedin)
+5. [Dónde hay más material](#3-mas)
 
 ---
 
@@ -88,7 +88,74 @@ Comenta CIRCUITO y te mando el link del chequeo por DM, gratis y sin registro. (
 
 ---
 
-## <a id="3-plural-linkedin"></a>3. Registro plural — la marca, página de LinkedIn (dom 21-sep-2026)
+## <a id="3-singular-ley"></a>3. Registro singular — Ramón, LinkedIn personal (mar 22-sep-2026)
+
+**Estado:** ✅ publicado y **confirmado por Ramón** (22-sep-2026): salió literal, sin
+cambios respecto de la versión entregada.
+**Canal:** LinkedIn, cuenta personal. Texto puro + link en el primer comentario.
+**Pieza:** lanzamiento del chequeo de Ley 21.719 (Verifica y Cumple, servicio de SpindleLab).
+
+**Por qué es buena referencia:** es el arco personal en su versión **corta** — 190 palabras,
+la mitad de la pieza del 1-sep. Demuestra que el momento honesto se **muestra** ("mi propio
+sitio sacó 36") en vez de explicarse, y que la oferta cabe en un párrafo sin precio y con su
+límite dicho ("la política la redacta un abogado").
+
+### Cuerpo
+
+Soy fundador de SpindleLab y armé un chequeo gratis para la Ley 21.719, la nueva ley de datos personales. Entra en plena vigencia el 1 de diciembre.
+
+Si tienes un formulario de contacto en tu sitio, ya estás tratando datos personales y la ley te aplica, seas del tamaño que seas.
+
+Lo primero que hice fue correr el chequeo sobre mi propio sitio. Sacó 36 de 100.
+
+El formulario pedía datos sin decir para qué. No había banner de consentimiento. Analytics y el Pixel de Meta cargaban apenas entrabas a la página. Nada de eso lo sabía hasta que lo revisé.
+
+Me tomó unos días dejarlo en orden. Quedó en 73.
+
+Si corres el chequeo en el tuyo y sale con señales pendientes, eso lo puedo arreglar yo: el gestor de consentimiento, y dejar publicado lo que pide el artículo 14 ter. La política de privacidad la tiene que redactar un abogado, esa parte no es mía.
+
+Dejo el chequeo en el primer comentario, por si quieres ver en cuánto sale el tuyo.
+
+### Primer comentario
+
+Acá está: https://verificaycumple.pages.dev
+
+Se llama Verifica y Cumple. Escribes tu dominio y en unos 40 segundos tienes el resultado: gratis, sin registro, y no guarda el dominio que revisas. Cada señal que no pases viene con la instrucción de cómo arreglarla. Si te sale algo raro y no cachas qué hacer, escríbeme por acá y lo miramos.
+
+### Los dos borradores que Ramón rechazó, y por qué
+
+Esta parte vale tanto como el texto. Un corpus con solo aciertos miente, y acá el descarte
+es la lección:
+
+1. **Borrador 1 — construido sobre una paradoja.** Abría con *"construí un chequeo que se
+   niega a decirte si cumples"* y todo el post defendía esa negativa. Veredicto de Ramón:
+   *"suena extraña la parte de «que no te dice si cumples»"*. **El chequeo no es una
+   herramienta que se niega a responder: muestra si tu sitio publica lo que la ley exige, y
+   él arregla lo que falte.** Cuando la pieza se construye sobre el ingenio, el ingenio pasa
+   a ser el tema y el producto desaparece.
+2. **Borrador 2 — honesto pero técnico.** Corregido el eje, quedaban cuatro párrafos
+   explicando la metodología: por qué su gestor de consentimiento hecho a mano no saca el
+   punto, que no se agregó la excepción, y qué no puede ver el chequeo sin un navegador
+   real. Veredicto: *"explicaciones que no sé si van al caso por ser una publicación en
+   LinkedIn"*. Tenía razón: son notas de ingeniería dirigidas a alguien que todavía no
+   decide si va a correr el chequeo, y el párrafo de límites frenaba justo antes del CTA.
+
+**Regla que sale de acá:** el post ya tiene su momento incómodo cuando dice que su propio
+sitio sacó 36. Explicar después por qué no sacó 100 es contar el mismo gesto dos veces, la
+segunda en jerga. *(El material descartado no se tira: "construí el instrumento y el primero
+que salió mal fui yo, y no me hice la excepción" es una pieza aparte, para pares.)*
+
+### El tell de tono que apareció dos veces
+
+Ramón pidió sacar el "tono IA" y el problema **no eran las palabras sino el ritmo**: casi
+todos los párrafos cerraban con un remate — frase larga, concesión de dos palabras, golpe
+corto (*"Lo sé. Prefiero la lista."*). En la pieza publicada del 1-sep hay **dos** remates en
+todo el texto; el resto es explicación plana. **Contar los remates es un chequeo de tono
+rápido y sirve:** si hay más de dos en un post, suena a máquina aunque cada frase esté bien.
+
+---
+
+## <a id="3-plural-linkedin"></a>4. Registro plural — la marca, página de LinkedIn (dom 21-sep-2026)
 
 **Estado:** ✅ publicado, `urn:li:activity:7507924615218823168`. Texto puro, sin imagen,
 con el link en el primer comentario (también como página).
@@ -129,45 +196,6 @@ Escribes tu dominio y en segundos sabes qué te falta. Gratis, sin registro, y n
 
 ---
 
-## <a id="4-singular-nocertifico"></a>4. Registro singular — Ramón, LinkedIn personal (dom 21-sep-2026)
-
-**Estado:** ✅ publicado, `urn:li:activity:7507936204286308353`. Texto puro, sin imagen.
-**Fuente:** `marketing/redes/2026-09-septiembre/21-dom-personal-no-certifico/publicar.md`
-**Por qué es buena referencia:** salió el mismo día que la pieza plural de la sección 3, sobre
-el mismo producto, y **no se parecen en nada**. Es el mejor ejemplo disponible de qué
-significa "dos registros, no uno": la marca cuenta lo que entregó, la persona cuenta una
-decisión que tomó. Además la parte incómoda acá no es retórica, es comprobable: su propio
-chequeo le quita un punto y él explica por qué no se hace la excepción. Cualquiera puede
-correrlo y verificarlo. **Cero cifras en el cuerpo** salvo el nombre de la ley, que es un
-nombre y no una métrica.
-
-### Cuerpo
-
-Soy fundador de SpindleLab y construí un chequeo que se niega a decirte si cumples.
-
-Es para la Ley 21.719, la nueva ley de protección de datos, que entra en vigencia a fin de año. Mira un sitio y muestra qué señales están y cuáles faltan, con la instrucción para corregir cada una. Ahí se detiene.
-
-Lo que quiere cualquiera que pregunta por esto es un sí o un no. Lo entiendo. Pero si le digo "cumples" a alguien que no cumple, el que queda expuesto a la multa es él y el que firmó esa frase soy yo.
-
-Mi trabajo es decirle a alguien qué le falta en su propio sitio. Si afirmo más de lo que puedo probar, no me queda mucho más que ofrecerle.
-
-Y hay cosas que no se ven desde afuera. Si un rastreador dispara antes o después de que el visitante dio permiso, por ejemplo: eso no está en el código que uno puede leer. Hay que abrir la página en un navegador y mirar el orden en que ocurren las cosas.
-
-Podría levantar un navegador en cada consulta. Se demora, y aun así daría una sospecha y no una prueba. Lo dejé afuera, y escribí en el sitio una parte que dice qué no revisa.
-
-Esa limitación me pegó a mí. Mi gestor de consentimiento es propio, y el chequeo reconoce por nombre los de proveedores conocidos. El mío no está en esa lista, así que no me da el punto. Lo verifiqué a mano, abriendo mi sitio en el navegador: el rastreador de Meta no se carga si nadie aceptó, y el de Google parte con el permiso denegado.
-
-Agregar la excepción me toma nada. No la agregué. Si me hago una excepción a mí, el resultado de cualquier otro vale menos.
-
-Un sello que diga "listo" se vende mejor que una lista de lo que decidí no mirar. Lo sé. Prefiero la lista.
-
-Dejo el chequeo en el primer comentario, por si quieres ver qué te muestra del tuyo, y qué no.
-
-### Primer comentario
-
-Acá está: https://verificaycumple.pages.dev
-Escribes tu dominio y corre ahí mismo. Si te aparece algo raro y no cachas qué hacer, escríbeme y lo vemos.
-
 ### Anexo: el texto con que compartió el post de la página (mismo día)
 
 Media hora después, Ramón compartió desde su perfil el post plural de la sección 3.
@@ -182,7 +210,7 @@ en primera persona.
 
 ---
 
-## <a id="5-mas"></a>5. Dónde hay más material
+## <a id="3-mas"></a>5. Dónde hay más material
 
 - **Piezas listas y pasadas por revisión, aún no publicadas:**
   `marketing/redes/2026-09-septiembre/*/publicar.md`. Útiles para ver la intención y el
