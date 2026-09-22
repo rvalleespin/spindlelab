@@ -251,7 +251,17 @@ export async function chequear(entrada, fetchImpl = fetch) {
   if (v.error) return { ok: false, error: v.error };
   const { dominio } = v;
 
-  const home = await traer(`https://${dominio}/`, fetchImpl);
+  let home = await traer(`https://${dominio}/`, fetchImpl);
+
+  // Si no se pudo ni conectar por https, se reintenta por http. Antes no se hacía, y el
+  // resultado era el peor posible para este producto: el sitio que MÁS lo necesita, el que
+  // todavía anda en http o tiene el certificado vencido, era el único que nunca veía un
+  // informe. Leía "no pudimos abrir el sitio, revisa el dominio" y su dominio estaba bien.
+  //
+  // Solo se reintenta cuando https no conectó (`null`: certificado inválido, puerto cerrado,
+  // DNS). Si https respondió aunque sea con error, el sitio SÍ sirve por https y reintentar
+  // por http daría un informe que dice lo contrario.
+  if (!home) home = await traer(`http://${dominio}/`, fetchImpl);
 
   if (!home || home.status >= 400) {
     return {
@@ -327,8 +337,12 @@ export async function chequear(entrada, fetchImpl = fetch) {
   );
   add(
     'basico', 'https', 'El sitio responde por HTTPS', httpsOk, 6,
-    httpsOk ? `Respondió ${home.status} sobre HTTPS.` : `Respondió ${home.status}.`,
-    'Asegura que el dominio sirva por HTTPS y devuelva 200.'
+    httpsOk
+      ? `Respondió ${home.status} sobre HTTPS.`
+      : 'Tu sitio respondió por http://, no por https://. Lo que alguien escriba en tu ' +
+        'formulario viaja sin cifrar, así que cualquiera en la misma red puede leerlo.',
+    'Instala un certificado (Let\'s Encrypt es gratis y casi todos los hosting lo activan ' +
+      'con un clic) y redirige todo el tráfico de http:// a https://.'
   );
   add(
     'basico', 'lang', 'Declaras el idioma del sitio', langOk, 2,
