@@ -18,7 +18,10 @@
  */
 
 const TIMEOUT_MS = 8000;
-const MAX_BYTES = 900_000;
+// Tope de lectura. Subió de 900 KB a 3 MB porque portadas de 1 MB son corrientes y con el
+// tope viejo el chequeo se quedaba corto seguido. Con la lectura en streaming de abajo este
+// número es además el techo real de memoria: nunca se materializa más que esto.
+const MAX_BYTES = 3_000_000;
 
 /* ------------------------------------------------------------------ *
  * Validación del destino. Sin esto, el endpoint es un proxy abierto.  *
@@ -81,10 +84,61 @@ async function traer(url, fetchImpl) {
         'Cache-Control': 'no-cache',
       },
     });
-    const largo = Number(r.headers.get('content-length') || 0);
-    if (largo > MAX_BYTES) return { status: r.status, url: r.url, texto: '', truncado: true };
-    const texto = (await r.text()).slice(0, MAX_BYTES);
-    return { status: r.status, url: r.url, texto };
+    // Se lee por trozos y se corta la conexión al pasar el tope, en vez de `r.text()`, que
+    // materializa el cuerpo entero antes de recortarlo: contra un servidor que responde
+    // cientos de MB eso tumbaba el aislado.
+    //
+    // Y sobre todo: se devuelve `completo`, que dice si el HTML llegó entero. Antes esto no
+    // se sabía, y un HTML cortado se puntuaba igual que uno completo. Una portada pesada
+    // salía con señales en rojo que sí estaban puestas, solo que más abajo del corte.
+    let texto = '';
+    let completo = true;
+
+    if (r.body && typeof r.body.getReader === 'function') {
+      const lector = r.body.getReader();
+      const trozos = [];
+      let bytes = 0;
+      while (true) {
+        const { done, value } = await lector.read();
+        if (done) break;
+        bytes += value.byteLength;
+        if (bytes > MAX_BYTES) {
+          completo = false;
+          trozos.length = 0; // suelta los MB ya acumulados
+          // Cancelar es una cortesía hacia el origen, no algo de lo que dependa la
+          // respuesta: el veredicto ya está decidido. Si se dejara await acá y el cancel
+          // rechazara (la conexión se cae justo al cortarla), el catch de abajo devolvería
+          // null y el visitante vería "no pudimos abrir el sitio", que es falso, en vez del
+          // mensaje honesto. Y si el cancel no resuelve nunca, la petición queda colgada.
+          try { lector.cancel().catch(() => {}); } catch {}
+          break;
+        }
+        trozos.push(value);
+      }
+      if (completo) {
+        const todo = new Uint8Array(bytes);
+        let i = 0;
+        for (const t of trozos) { todo.set(t, i); i += t.byteLength; }
+        trozos.length = 0; // suelta una copia entera antes de decodificar
+        texto = new TextDecoder('utf-8').decode(todo);
+      }
+      // Lectura corta: el origen declaró un tamaño y nos entregó menos, o sea que cerró la
+      // conexión a medias. Eso es HTML incompleto aunque no hayamos topado nuestro límite.
+      // Es seguro compararlo: con gzip el runtime entrega el cuerpo ya descomprimido, así
+      // que `bytes` es mayor que lo declarado y nunca dispara de más; y si el proxy quita
+      // la cabecera, `declarado` queda en 0 y el control se salta solo.
+      const declarado = Number(r.headers.get('content-length') || 0);
+      if (completo && declarado > 0 && bytes < declarado) completo = false;
+    } else {
+      // Sin cuerpo en streaming (Node con un fetch simulado, o una respuesta sin body).
+      const crudo = typeof r.text === 'function' ? await r.text() : '';
+      // Se miden BYTES, no caracteres: `.length` cuenta unidades UTF-16 y con acentos deja
+      // pasar bastante más de lo que dice el tope.
+      if (new TextEncoder().encode(crudo).length > MAX_BYTES) completo = false;
+      else texto = crudo;
+    }
+
+    return { status: r.status, url: r.url, texto, completo };
   } catch {
     return null;
   } finally {
@@ -160,19 +214,29 @@ const RE_CONSENT_MODE = /gtag\(\s*['"]consent['"]\s*,\s*['"]default['"]/i;
 
 // Casilla de consentimiento en un formulario HTML plano (no detecta iframes de terceros ni
 // formularios renderizados por JS — ver brief §4-A, límite declarado, no inferido).
+// Se recorre con indexOf y se toma la posición de cada casilla del propio regex. La versión
+// anterior hacía `form.indexOf(input)` DOS veces por casilla, y cada llamada recorría el
+// formulario entero: con un formulario largo de casillas distintas (lo que arma cualquier
+// constructor de formularios) el costo crecía al cuadrado. Medido: 272 ms de CPU con 1 MB y
+// 1.671 ms con 2,5 MB. Mientras el tope de lectura fueron 900 KB quedaba contenido; al
+// subirlo a 3 MB se volvió un problema real en un endpoint público y sin autenticar.
+const RE_CASILLA = /<input\b[^>]*type=["']checkbox["'][^>]*>/gi;
 function buscarCasillaPremarcada(html) {
-  const formularios = html.match(/<form[\s\S]*?<\/form>/gi) || [];
+  const bajo = html.toLowerCase();
   let encontroCasilla = false;
-  for (const form of formularios) {
-    const inputs = form.match(/<input\b[^>]*type=["']checkbox["'][^>]*>/gi) || [];
-    for (const input of inputs) {
-      const contexto = form.slice(
-        Math.max(0, form.indexOf(input) - 150),
-        form.indexOf(input) + 150
-      );
+  let i = 0;
+  while ((i = bajo.indexOf('<form', i)) !== -1) {
+    const fin = bajo.indexOf('</form>', i);
+    if (fin === -1) break;
+    const form = html.slice(i, fin + 7);
+    i = fin + 7;
+    RE_CASILLA.lastIndex = 0;
+    let c;
+    while ((c = RE_CASILLA.exec(form)) !== null) {
+      const contexto = form.slice(Math.max(0, c.index - 150), c.index + 150);
       if (!/acept|consient|autoriz|consentimiento/i.test(contexto)) continue;
       encontroCasilla = true;
-      if (/\bchecked\b/i.test(input)) return { encontroCasilla, premarcada: true };
+      if (/\bchecked\b/i.test(c[0])) return { encontroCasilla, premarcada: true };
     }
   }
   return { encontroCasilla, premarcada: false };
@@ -195,6 +259,35 @@ export async function chequear(entrada, fetchImpl = fetch) {
       error: home
         ? `El sitio respondió ${home.status}. Revisa el dominio.`
         : 'No pudimos abrir el sitio. Revisa el dominio o inténtalo de nuevo.',
+    };
+  }
+
+  // Si la portada no llegó entera, NO se puntúa. Un HTML cortado produce un informe que
+  // parece bueno y está mal: las señales que viven más abajo del corte salen en rojo aunque
+  // el sitio las tenga. Para un chequeo cuya única defensa es "cuando no podemos verificar
+  // algo, lo decimos", entregar ese número sería exactamente lo contrario. Preferimos no dar
+  // resultado antes que dar uno inventado.
+  if (!home.completo) {
+    return {
+      ok: false,
+      error:
+        'Tu portada pesa más de lo que este chequeo automático alcanza a leer completo. ' +
+        'Preferimos no darte un resultado a medias: escríbenos a hola@spindlelab.cl y la revisamos a mano.',
+    };
+  }
+
+  // El otro extremo del mismo problema, y el más probable de los dos: un 2xx que no trae
+  // nada de HTML. Pasa cuando un firewall le devuelve la página en blanco a un lector
+  // automático como el nuestro. Puntuarlo es inventar igual que truncar: las señales salen
+  // ausentes porque no leímos nada, no porque el sitio no las tenga. Sin esta guardia daba
+  // 27/100 con tres señales en rojo, que es exactamente el informe falso que perseguimos.
+  if (!home.texto.trim()) {
+    return {
+      ok: false,
+      error:
+        'Tu sitio respondió, pero no nos entregó HTML que podamos revisar. Suele pasar ' +
+        'cuando un firewall bloquea a los lectores automáticos. Escríbenos a ' +
+        'hola@spindlelab.cl y lo revisamos a mano.',
     };
   }
 
