@@ -625,8 +625,6 @@
   /* Solo los párrafos sueltos de la sección se centran; los de dentro de las tarjetas
      de precio mantienen su propia alineación. */
   .ayuda-caja > p { margin: 0 auto 26px; color: var(--vivo-suave); max-width: 54ch; font-size: 1.02rem; }
-  .ayuda-caja > p.ayuda-caso { font-size: 1.1rem; color: var(--vivo-tinta); font-weight: 500; }
-  .ayuda-caso .cifra { font-family: "Archivo Black", Impact, var(--serif); color: var(--vivo-rosa); }
   .boton-ayuda {
     display: inline-block;
     background: var(--vivo-rosa);
@@ -878,7 +876,6 @@
     <div class="envoltura">
       <div class="ayuda-caja reveal">
         <h2>¿Tu chequeo salió con señales pendientes?</h2>
-        <p class="ayuda-caso"><span class="cifra">36</span> → <span class="cifra">73</span>. Nuestro propio sitio pasó por este mismo kit.</p>
         <p>Puedo ayudarte a corregirlas: política de privacidad, consentimiento, lo que pide el Art. 14 ter. Y a que se mantengan corregidas, porque un sitio cambia y las señales se pueden volver a romper.</p>
         <div class="planes-grid">
           <div class="kit-precio kit-principal">
@@ -937,7 +934,6 @@
   const input = document.getElementById('dominio');
   const boton = document.getElementById('boton-chequeo');
   const resultado = document.getElementById('resultado');
-  const ejemplo = document.getElementById('ejemplo-resultado');
   const CIRCUNFERENCIA = 2 * Math.PI * 52;
 
   function escapar(s) {
@@ -1016,7 +1012,6 @@
     boton.textContent = 'Revisando…';
     resultado.classList.remove('visible');
     resultado.innerHTML = '';
-    if (ejemplo) ejemplo.style.display = 'none';
 
     try {
       const resp = await fetch('/api/chequeo?dominio=' + encodeURIComponent(dominio));
