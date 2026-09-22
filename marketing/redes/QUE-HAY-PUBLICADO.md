@@ -13,7 +13,7 @@ estaba en el aire, y eso costó un post: el 22-sep se publicó en la página un 
 | Publicado | Pieza | Métricas | Registrado en |
 |---|---|---|---|
 | **21-sep** | Chequeo Ley 21.719: "sacó 36 de 100", el formulario roto, ahora 73 | 1 reacción · 1 compartido | corpus de voz §4 |
-| ~8-sep | "Un motor de adquisición. No cuatro servicios sueltos" | — | ⚠️ sin registrar |
+| ~8-sep | "Un motor de adquisición. No cuatro servicios sueltos" (carrusel, 4 imgs) | — | corpus §6 |
 | ~1-sep | "Estás pagando para que lleguen" (el circuito / dominó) | 1 reacción · 1 comentario · 2 compartidos | corpus §2 + `01-mar-circuito-domino/` |
 | **22-sep** | ⛔ Explicador Ley 21.719 (plural) — **publicado y retirado el mismo día, por repetido** | 53 impresiones en ~40 min | `24-jue-ley-21719/publicar.md` |
 
@@ -23,7 +23,7 @@ estaba en el aire, y eso costó un post: el 22-sep se publicó en la página un 
 |---|---|---|---|
 | **21-sep, editado el 22-sep** | "Soy fundador de SpindleLab y armé un chequeo gratis para la Ley 21.719…" | 58 impresiones · 1 comentario | corpus §3 |
 | **21-sep** | Compartir del post de la página, con comentario propio ("la parte incómoda no es el puntaje") | 20 impresiones | corpus §4 |
-| **21-sep** | "Si te están cobrando GEO como una línea aparte del SEO…" (el VP de Search de Google, junio) | 84 impresiones · 1 comentario | ⚠️ **sin registrar** — es el de mejor alcance del lote |
+| **21-sep** | "Si te están cobrando GEO como una línea aparte del SEO…" (el VP de Search de Google, junio) | **84 impresiones** · 1 comentario — **el de mejor alcance** | corpus §5 |
 | 1-sep | "Publiqué mis precios. Me habían advertido que no lo hiciera." | — | corpus §1 |
 
 ## Lo que este cuadro deja ver
@@ -39,8 +39,7 @@ verificable y sin nada que vender. Vale la pena mirarlo antes de decidir el pró
 
 ## Pendiente
 
-- Capturar el texto íntegro del post de GEO (21-sep) y del de "Un motor de adquisición" (~8-sep),
-  y meterlos al corpus. Los dos están en el aire y no hay copia en el repo.
+- **Ya no falta capturar nada**: los cuatro textos vivos están en el corpus (§1 a §6), literales.
 - El 22-sep, LinkedIn tuvo **las escrituras caídas para la página** durante al menos una hora:
   dos envíos de comentario colgados sin error y tres guardados de edición fallidos
   (*"no hemos podido completar tu solicitud"*). Descartado que fuera un permiso. Si vuelve a

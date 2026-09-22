@@ -9,7 +9,9 @@
 2. [Registro plural — Instagram / página, 1-sep-2026](#2-plural)
 3. [Registro singular — LinkedIn personal, 22-sep-2026](#3-singular-ley)
 4. [Registro plural — página de empresa, 21-sep-2026](#4-plural-ley)
-5. [Dónde hay más material](#3-mas)
+5. [Registro singular — el post de GEO, 21-sep-2026](#5-geo)
+6. [Registro plural — "Un motor de adquisición", ~8-sep-2026](#6-motor)
+7. [Dónde hay más material](#3-mas)
 
 ---
 
@@ -216,7 +218,68 @@ dicha desde adentro. Ninguno de los dos vende, y los dos venden.
 
 ---
 
-## <a id="3-mas"></a>5. Dónde hay más material
+---
+
+## <a id="5-geo"></a>5. Registro singular — el post de GEO (dom 21-sep-2026)
+
+**Estado:** ✅ publicado y en el aire. Texto capturado literal el 22-sep-2026.
+**Canal:** perfil personal. Texto puro. **84 impresiones · 1 comentario — el de mejor alcance
+del lote de septiembre**, por encima de las 58 del post del chequeo.
+
+**Por qué importa que este sea el que más circuló.** No vende nada. No tiene CTA, ni link, ni
+oferta. Es una opinión de oficio sostenida en una fuente verificable, y **se pone en contra del
+propio interés comercial de quien la escribe** ("Lo escribo desde adentro, porque yo vendo esto").
+Antes de planificar el próximo pase de contenido, mirar este resultado: el alcance vino del
+criterio, no de la promoción.
+
+### Cuerpo
+
+Si te están cobrando "GEO" como una línea aparte del SEO, esto te sirve.
+
+En junio, el vicepresidente de Search de Google escribió para gerentes de marketing que el buen SEO es buen GEO, "o AEO, o AI SEO, o como se llame". Textual, paréntesis incluido.
+
+Google diciendo que no hay un canal nuevo.
+
+Lo escribo desde adentro, porque yo vendo esto.
+
+Y lo llamativo es la fecha. Google lo publicó en junio. Mi rubro lo anduvo descubriendo este mes. Tres meses de propuestas vendiendo una sigla que la propia fuente ya había desarmado.
+
+No significa que no haya nada que hacer. Hay bastante, y es trabajo concreto: que los buscadores con IA puedan entrar a tu sitio, entender a qué te dedicas y citarte cuando alguien pregunta por tu rubro. Eso se revisa, se arregla y se mide.
+
+Lo que no existe es el presupuesto aparte.
+
+Así que si te llega una propuesta con GEO como línea nueva, la pregunta no es cuánto cuesta. Es qué van a hacer ahí que no debería estar haciendo ya tu SEO, y cómo te lo van a mostrar medido.
+
+---
+
+## <a id="6-motor"></a>6. Registro plural — "Un motor de adquisición" (~8-sep-2026)
+
+**Estado:** ✅ publicado y en el aire. Texto capturado literal el 22-sep-2026.
+**Canal:** página de empresa. Carrusel (4 imágenes). Sin métricas públicas visibles.
+
+**Por qué sirve de referencia:** es el plural vendiendo **la estructura del servicio** sin
+adjetivos, con la metáfora del dominó sostenida de punta a punta, y con el CTA de palabra clave
+en comentarios que es la convención de la casa para redes.
+
+### Cuerpo
+
+Un motor de adquisición. No cuatro servicios sueltos.
+
+Tu web, tus redes y tu pauta son fichas de la misma fila: si una está torcida, la energía no llega a la venta, da lo mismo cuánto inviertas en las demás.
+
+Y hoy el eje que decide si la fila completa funciona es uno: que la IA pueda leerte, entenderte y citarte. Ahí es donde el circuito de la mayoría se corta.
+
+Así trabajamos nosotros: el motor completo, con ese eje al centro. El método y los precios están publicados en el sitio, y el chequeo te muestra dónde se corta el tuyo.
+
+Comenta CIRCUITO y te lo mandamos por DM. Gratis y sin registro.
+
+Estamos publicando la serie del circuito todo septiembre. Síguenos para no perderte las que vienen.
+
+#SEO #IA #Chile
+
+---
+
+## <a id="3-mas"></a>7. Dónde hay más material
 
 - **Piezas listas y pasadas por revisión, aún no publicadas:**
   `marketing/redes/2026-09-septiembre/*/publicar.md`. Útiles para ver la intención y el
