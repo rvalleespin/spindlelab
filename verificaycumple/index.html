@@ -395,6 +395,32 @@
   #resultado { display: none; margin-top: 34px; }
   #resultado.visible { display: block; }
 
+  /* El resultado se dibuja con los tokens viejos (--panel, --texto-suave, --borde), que
+     invierten con el tema del sistema, pero hereda un color fijo de la paleta nueva. En
+     modo oscuro eso dejaba el título de cada ítem en azul marino #17163a sobre un panel
+     casi negro: invisible. Acá se fijan los tokens dentro del resultado para que la
+     tarjeta sea siempre clara con tinta oscura, en los dos temas, igual que el resto de
+     la página, que ya no reacciona al tema. */
+  #resultado {
+    --panel: #fffaf0;
+    --bg-alt: #f3ecdd;
+    --info-bg: #f5eee0;
+    --texto: var(--vivo-tinta);
+    --texto-suave: var(--vivo-suave);
+    --borde: rgba(23,22,58,.16);
+    --ok: #0d6d61;
+    --ok-bg: #e2f1ed;
+    --pendiente: #9a4f0d;
+    --pendiente-bg: #fbe8d6;
+    --acento-oscuro: #0a5348;
+    --sello: var(--vivo-rosa-osc);
+    --sombra: 0 1px 2px rgba(23,22,58,.06), 0 10px 28px -14px rgba(23,22,58,.3);
+  }
+  /* Estos dos van sueltos sobre el azul del hero, no dentro de la tarjeta blanca, así que
+     su tinta es blanca y no la oscura de la tarjeta. */
+  #resultado .bloque h2 { color: #fff; }
+  #resultado .bloque > .sub-bloque { color: rgba(255,255,255,.82); }
+
   .error-caja {
     background: var(--pendiente-bg);
     border: 1px solid var(--pendiente);
