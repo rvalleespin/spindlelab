@@ -1,4 +1,4 @@
-# Pruebas de los dos chequeos
+# Pruebas de los chequeos y del control de cookies
 
 150 comprobaciones sobre los dos módulos de chequeo, que comparten la lógica de
 validación de destino y de descarga acotada:
@@ -22,6 +22,7 @@ líneas de cada archivo antes de correrlo.
 | `prueba-saltos.mjs` | bucle de redirecciones (508), cadena larga legítima, reloj compartido (8) |
 | `prueba-robots.mjs` | tabla comparativa de los cuatro casos de robots.txt, vieja contra nueva |
 | `medir-cpu.mjs` | costo por tamaño de portada, vieja contra nueva |
+| `prueba-cookies.mjs` | el control de cookies de spindlelab.cl (`public/js/consent-banner.js`), con un DOM de mentira en `vm`: camino normal, almacenamiento bloqueado, sincronía entre pestañas, recarga cancelable, pie sin enlace a la política (28) |
 | `adversario.mjs` | entradas hechas para hacer sufrir al parser (anidamiento extremo, etiqueta sin cerrar, miles de h2, prosa de 2,8 MB) |
 
 ## Por qué existen
