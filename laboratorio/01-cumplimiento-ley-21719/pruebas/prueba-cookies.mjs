@@ -145,5 +145,27 @@ console.log('=== 4. pie sin enlace a la política (el 404) ===');
   eq('el control aparece igual', !!m.control(), true);
 }
 
+console.log('=== 5. el Pixel corriendo manda sobre de dónde venía la decisión ===');
+{
+  // La página cargó con el permiso ya dado, así que el Pixel arrancó desde el <head>. Otra
+  // pestaña rechaza, y recién después esta persona pulsa Rechazar acá. Con la condición
+  // vieja (que exigía estado previo 'granted') no se recargaba y fbq seguía vivo.
+  const m = correr({ guardado: 'granted', metaCorriendo: true });
+  m.oyentes.storage({ key: 'spindlelab_consent', newValue: 'denied' });
+  eq('tras el aviso de la otra pestaña, el estado ya es rechazado', m.control().textContent, 'Cookies: rechazadas');
+  m.control().click();
+  m.rechazar.click();
+  eq('igual avisa que va a recargar', /Recargamos la página/.test(m.aviso().textContent), true);
+  await new Promise((r) => setTimeout(r, 2100));
+  eq('y recarga, porque el Pixel seguía vivo', m.hechos.recargas, 1);
+}
+{
+  // Y al revés: si el Pixel nunca arrancó, rechazar no recarga a nadie.
+  const m = correr({});
+  m.rechazar.click();
+  await new Promise((r) => setTimeout(r, 2100));
+  eq('sin Pixel corriendo no hay recarga', m.hechos.recargas, 0);
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);

@@ -22,7 +22,7 @@ líneas de cada archivo antes de correrlo.
 | `prueba-saltos.mjs` | bucle de redirecciones (508), cadena larga legítima, reloj compartido (8) |
 | `prueba-robots.mjs` | tabla comparativa de los cuatro casos de robots.txt, vieja contra nueva |
 | `medir-cpu.mjs` | costo por tamaño de portada, vieja contra nueva |
-| `prueba-cookies.mjs` | el control de cookies de spindlelab.cl (`public/js/consent-banner.js`), con un DOM de mentira en `vm`: camino normal, almacenamiento bloqueado, sincronía entre pestañas, recarga cancelable, pie sin enlace a la política (28) |
+| `prueba-cookies.mjs` | el control de cookies de spindlelab.cl (`public/js/consent-banner.js`), con un DOM de mentira en `vm`: camino normal, almacenamiento bloqueado, sincronía entre pestañas, recarga cancelable, pie sin enlace a la política, y que la recarga mira si el Pixel está vivo y no de dónde venía la decisión (32) |
 | `adversario.mjs` | entradas hechas para hacer sufrir al parser (anidamiento extremo, etiqueta sin cerrar, miles de h2, prosa de 2,8 MB) |
 
 ## Por qué existen
