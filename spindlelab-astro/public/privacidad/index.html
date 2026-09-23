@@ -155,7 +155,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
       <article class="doc-article">
         <span class="doc-eyebrow">Art. 14 ter, punto por punto</span>
         <h1>Qué hacemos con tus datos</h1>
-        <p class="doc-version">Versión 1.3, actualizada el 22 de septiembre de 2026.</p>
+        <p class="doc-version">Versión 1.4, actualizada el 22 de septiembre de 2026.</p>
         <p class="doc-intro">
           Esta página explica, sin rodeos, qué datos procesamos en spindlelab.cl, para qué, y con
           quién los compartimos, siguiendo los mismos 12 puntos que exige la Ley 21.719 para
@@ -165,7 +165,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
         <div class="doc-punto">
           <span class="doc-punto-num">01 · Política de tratamiento</span>
           <h2>Esta política</h2>
-          <p>Versión 1.3, actualizada el 22 de septiembre de 2026, cuando Google Analytics dejó de cargarse antes de que aceptes. Hasta la 1.2 se cargaba igual con el consentimiento denegado, y le mandaba a Google un aviso sin cookies de cada página vista. La 1.2 (el control para cambiar la decisión) y la 1.1 son del mismo día; la 1.0 es del 21 de septiembre. Si la cambiamos, actualizamos esta fecha.</p>
+          <p>Versión 1.4, actualizada el 22 de septiembre de 2026, cuando sumamos a esta política el conteo de visitas sin cookies de Cloudflare, que funcionaba desde antes y no estaba escrito acá. La 1.3, del mismo día, es cuando Google Analytics dejó de cargarse antes de que aceptes. Hasta la 1.2 se cargaba igual con el consentimiento denegado, y le mandaba a Google un aviso sin cookies de cada página vista. La 1.2 (el control para cambiar la decisión) y la 1.1 son del mismo día; la 1.0 es del 21 de septiembre. Si la cambiamos, actualizamos esta fecha.</p>
         </div>
 
         <div class="doc-punto">
@@ -185,6 +185,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
           <h2>Qué procesamos, y para qué</h2>
           <p>Si escribes el formulario de <a href="/contacto/">contacto</a>: tu nombre, correo, sitio web y el mensaje que escribas, más los parámetros UTM de la campaña que te trajo (si vienes de un anuncio). La base de legitimidad es tu propia solicitud, y te pedimos un acto de consentimiento explícito (una casilla, sin marcar por defecto) antes de que el formulario se pueda enviar.</p>
           <p>Además, si nos das permiso, en todas las páginas del sitio usamos Google Analytics (GA4) y Meta Pixel para entender cómo se usa el sitio. Cómo te lo pedimos y cómo cambiarlo, en el punto 11.</p>
+          <p>Y contamos las visitas con Cloudflare Web Analytics, que no usa cookies ni guarda nada en tu navegador. Registra qué página se vio, desde qué sitio llegaste, el país, el tipo de dispositivo, el navegador y cuánto tardó en cargar, y lo vemos siempre sumado, sin saber quién eres. Este conteo corre aunque rechaces las cookies, justamente porque no las usa.</p>
         </div>
 
         <div class="doc-punto">
@@ -208,13 +209,13 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
         <div class="doc-punto">
           <span class="doc-punto-num">08 · Transferencias internacionales</span>
           <h2>Con qué proveedores externos trabajamos</h2>
-          <p>El formulario de contacto se procesa a través de <strong>web3forms.com</strong>, con infraestructura fuera de Chile. Google Analytics y Meta Pixel también procesan datos de navegación en servidores fuera de Chile, bajo las políticas de privacidad propias de Google y Meta. No compartimos tus datos con nadie más.</p>
+          <p>El formulario de contacto se procesa a través de <strong>web3forms.com</strong>, con infraestructura fuera de Chile. Google Analytics y Meta Pixel también procesan datos de navegación en servidores fuera de Chile, bajo las políticas de privacidad propias de Google y Meta. El sitio se sirve a través de la infraestructura de Cloudflare, con centros de datos fuera de Chile: como con cualquier sitio web, Cloudflare procesa metadatos técnicos de conexión (por ejemplo tu dirección IP) para entregarte la página, y es también quien hace el conteo de visitas. No compartimos tus datos con nadie más.</p>
         </div>
 
         <div class="doc-punto">
           <span class="doc-punto-num">09 · Plazo de conservación</span>
           <h2>Cuánto tiempo se guarda</h2>
-          <p>Los mensajes del formulario se conservan en nuestro correo mientras sean relevantes para la conversación que iniciaste, o hasta que pidas su eliminación. Los datos que procesan Analytics y Meta siguen la retención propia de esos proveedores, no la nuestra.</p>
+          <p>Los mensajes del formulario se conservan en nuestro correo mientras sean relevantes para la conversación que iniciaste, o hasta que pidas su eliminación. Los datos que procesan Analytics, Meta y el conteo de visitas de Cloudflare siguen la retención propia de esos proveedores, no la nuestra.</p>
         </div>
 
         <div class="doc-punto">
@@ -233,7 +234,8 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
             el Pixel de Meta.</p>
           <p>Si rechazas, o mientras no elijas, siguen sin cargarse. Google Analytics y Meta no
             reciben nada de tu visita desde este sitio, y no se guarda ninguna cookie de medición
-            en tu navegador.</p>
+            en tu navegador. Lo único que sigue corriendo es el conteo de visitas de Cloudflare del
+            punto 04, que no usa cookies ni te identifica, y por eso no necesita tu permiso.</p>
           <p>Puedes cambiar de opinión cuando quieras. Al final de cualquier página, junto al
             enlace a esta política, hay un control que dice qué elegiste (<em>Cookies: aceptadas</em>
             o <em>Cookies: rechazadas</em>) y que abre el mismo aviso para que elijas de nuevo.</p>
