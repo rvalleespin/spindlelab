@@ -526,11 +526,24 @@ function otraForma(host) {
 // Lo que no calza con todas se puntúa como siempre: preferimos dejar pasar un bloqueo raro
 // antes que negarle el informe a un sitio chico que sí se dejó leer. Los desafíos de
 // Cloudflare y compañía casi siempre vienen con 403 o 503, y esos ya tienen su propio mensaje.
+// Los dos topes son GEMELOS de los de verificaycumple/functions/api/chequeo.js: una página de
+// hasta 16.000 caracteres y con dos enlaces o menos. El 23-sep cada archivo llevaba números
+// propios (acá 16.000 y 3 enlaces, allá 50.000 y 2), así que la misma página recibía un
+// veredicto distinto en cada chequeo, y los dos sitios se enlazan entre sí. Quedó el par más
+// estrecho de los dos lados: el aviso de firewall más grande que medimos no llega a 16.000
+// caracteres y el que más enlaces trae tiene uno, así que ninguno de los avisos reales se
+// escapa. Bajar el tope de enlaces de 3 a 2 solo puede devolverle el informe a una página que
+// antes se quedaba sin él, nunca quitárselo.
+//
+// Los dos conteos de enlaces no son idénticos, y la diferencia va a favor del sitio: acá se
+// cuenta toda etiqueta <a>, allá solo las que llevan href. Una página con anclas sin href
+// llega antes al tope acá, o sea que la damos por página normal y le entregamos su informe.
 const TOPE_PAGINA_BLOQUEO = 16_000;
-const MAX_ENLACES_BLOQUEO = 3;
+const MAX_ENLACES_BLOQUEO = 2;
 // GEMELA de verificaycumple/functions/api/chequeo.js (su RE_TEXTO_BLOQUEO). Las dos listas
 // son la misma, alternativa por alternativa y en el mismo orden, y los dos topes de arriba
-// también: si una cambia, la otra va detrás en el mismo cambio.
+// también: si una cambia, la otra va detrás en el mismo cambio. El 23-sep se comprobó byte a
+// byte (md5 3f61d331c8c8d16d8b20f8129f7b2ec2 sobre el bloque completo en los dos archivos).
 //
 // Una versión anterior de este comentario daba la alineación por hecha cuando todavía no lo
 // era: el 23-sep los dos archivos decían estar alineados y un reproductor encontró 6
@@ -871,8 +884,8 @@ export async function chequear(entrada, fetchImpl = fetch) {
   // contrato que usa Verifica y Cumple.
   //
   // El tercer argumento acepta también un booleano, que significa lo de siempre ('ok' o
-  // 'pendiente'): los 17 ítems que solo pueden estar bien o mal se siguen escribiendo con la
-  // condición pelada, y solo los cuatro que pueden quedar sin medir nombran su estado.
+  // 'pendiente'): los 15 ítems que solo pueden estar bien o mal se siguen escribiendo con la
+  // condición pelada, y solo los seis que pueden quedar sin medir nombran su estado.
   // `ok` sigue viajando en la respuesta (=== estado 'ok') porque la página lo usa.
   const estadoDe = (x) => (typeof x === 'string' ? x : x ? 'ok' : 'pendiente');
   const add = (bloque, id, titulo, estadoOBool, peso, detalle, arregloSiFalla) => {
@@ -915,7 +928,10 @@ export async function chequear(entrada, fetchImpl = fetch) {
     ? null
     : `${porQueIlegible()}, así que no sabemos si bloquea a estos robots. Esta señal no suma ni ` +
       'resta en tu puntaje: preferimos decírtelo antes que darte un verde que no medimos.';
-  const arregloIlegible = 'Ábrelo tú en tu-dominio.cl/robots.txt y revisa si hay una línea Disallow para estos robots. Si quieres, escríbenos a hola@spindlelab.cl y lo miramos contigo.';
+  // El dominio va escrito, no como marcador de posición: el informe nombra el sitio real más
+  // arriba, así que un "tu-dominio.cl" al lado se lee como una plantilla que no se alcanzó a
+  // rellenar, y cae justo en el ítem cuyo trabajo es ganar confianza diciendo que no sabemos.
+  const arregloIlegible = `Ábrelo tú en ${dominio}/robots.txt y revisa si hay una línea Disallow para estos robots. Si quieres, escríbenos a hola@spindlelab.cl y lo miramos contigo.`;
   // Un bloqueo que SÍ leímos es un bloqueo real y se informa, aunque el archivo haya llegado
   // cortado. Lo que no se puede es lo contrario: sin el archivo completo no hay verde.
   const estadoRobots = (bloqueados) =>
@@ -1041,23 +1057,103 @@ export async function chequear(entrada, fetchImpl = fetch) {
   );
 
   // --- Bloque 3: ¿te pueden citar? ---
-  // Un 200 que no alcanzamos a leer entero igual prueba que el archivo está ahí.
-  const llmsOk = !!llms && llms.status === 200 && (llms.texto.trim().length > 0 || !llms.completo);
+  // Los dos archivos sueltos (llms.txt y sitemap.xml) se leen con el mismo criterio que el
+  // robots.txt: manda lo que llegó, no el código de respuesta.
+  //
+  // El ítem del llms.txt no lo hacía, y ahí estaba el mismo falso verde que el Consent Mode en
+  // Verifica y Cumple: verde porque algo venía declarado (un 200) mientras lo que sí miramos
+  // (el cuerpo) decía lo contrario. Medido en vivo el 23-sep: www.clinicasantamaria.cl
+  // responde a /llms.txt con un 302 a "/", así que recibíamos 1,7 MB del HTML de su propia
+  // portada y le decíamos al dueño "Encontramos /llms.txt", con 4 puntos en verde, por un
+  // archivo que no existe. Lo mismo pasa sin redirección en los hostings que contestan la
+  // portada a cualquier ruta. El ítem del sitemap ya usaba el criterio bueno para esto: pide
+  // ver un <urlset, no un 200.
+  //
+  // Y al otro lado faltaba el tercer estado. Un 403, un 429, un 5xx o un archivo que no
+  // respondió salían como "No encontramos /llms.txt", que es una afirmación que no medimos, y
+  // encima restaban 4 puntos por un límite de lectura nuestro. Es el mismo caso del robots.txt
+  // que se cerró más arriba. Ahora hay tres desenlaces:
+  //   está el archivo                                      -> verde
+  //   el sitio nos dijo que no está, o nos dio su portada   -> rojo, y eso lo medimos
+  //   no nos dejó leerlo                                    -> no lo sabemos: ni suma ni resta
+  //
+  // Cómo se lee uno de esos archivos. Mismo criterio y mismo tono que el del robots.txt, más
+  // arriba. Devuelve null cuando SÍ llegó algo legible en la dirección que pedimos, y cada
+  // ítem decide ahí si eso que llegó le sirve.
+  const archivoNoLlego = (r, ruta, nombre) => {
+    const noSabemos = (motivo) => ({
+      estado: 'sin-confirmar',
+      detalle:
+        `Pedimos tu ${ruta} y ${motivo}, así que no sabemos si lo tienes. Esta señal no suma ` +
+        'ni resta en tu puntaje: preferimos decírtelo antes que darte un verde que no medimos.',
+    });
+    const noEsta = (detalle) => ({ estado: 'pendiente', detalle });
+    if (!r) return noSabemos('no hubo respuesta');
+    if (r.status === 508) return noSabemos('nos mandó de una dirección a otra sin llegar nunca al archivo');
+    if (r.status === 401 || r.status === 403) return noSabemos('tu sitio respondió que no tenemos permiso para leerlo');
+    if (r.status === 429) return noSabemos('tu sitio nos pidió bajar el ritmo en vez de entregárnoslo');
+    if (r.status >= 500) return noSabemos('respondió con un error de tu propio servidor');
+    // Un 404 y un 410 son el sitio diciéndonos que el archivo no está. Eso sí lo medimos.
+    if (r.status === 404 || r.status === 410) return noEsta(`No encontramos ${ruta}.`);
+    if (r.status !== 200) return noSabemos('respondió algo que no pudimos leer');
+    // Con un 200 manda el cuerpo, no el código.
+    const dir = (r.url || '').split('?')[0].split('#')[0].toLowerCase();
+    if (dir.slice(-ruta.length) !== ruta) {
+      return noEsta(`Pedimos ${ruta} y tu sitio nos llevó a otra dirección, así que ahí no está ${nombre}.`);
+    }
+    // La cabeza basta y deja el trabajo acotado: un archivo de texto no empieza con <html.
+    if (/<!doctype\s+html|<html[\s>]/i.test(r.texto.slice(0, 500))) {
+      return noEsta(
+        `Pedimos ${ruta} y lo que llegó es una página web, no el archivo. Es lo que hace un ` +
+        `servidor que responde la portada en cualquier dirección que no existe, así que ${nombre} no está.`
+      );
+    }
+    if (!r.texto.trim()) {
+      // Vacío de verdad es un hallazgo; vacío porque no alcanzamos a leer nada, no. La regla
+      // vieja ("un 200 que no leímos entero igual prueba que el archivo está") daba verde sin
+      // haber visto un solo byte, que es el mismo verde sin medir que vinimos a sacar.
+      return r.completo
+        ? noEsta(`Tu ${ruta} está, pero vacío, así que no le dice nada a nadie.`)
+        : noSabemos('no nos llegó entero y no alcanzamos a ver qué era');
+    }
+    return null;
+  };
+  const abreloTu = (ruta) =>
+    `Ábrelo tú en ${dominio}${ruta} y revisa si está. Si quieres, escríbenos a hola@spindlelab.cl y lo miramos contigo.`;
+
+  // Un 200 que no alcanzamos a leer entero igual prueba que el archivo está ahí, siempre que
+  // lo que alcanzamos a leer se parezca al archivo y no a una página web.
+  const llmsFalla = archivoNoLlego(llms, '/llms.txt', 'tu llms.txt');
   add(
-    'citabilidad', 'llms', 'Tienes llms.txt', llmsOk, 4,
-    llmsOk ? 'Encontramos /llms.txt.' : 'No encontramos /llms.txt.',
-    'Publica un llms.txt: le dice a los motores qué eres y qué páginas importan.'
+    'citabilidad', 'llms', 'Tienes llms.txt',
+    llmsFalla ? llmsFalla.estado : 'ok', 4,
+    llmsFalla ? llmsFalla.detalle : 'Encontramos /llms.txt.',
+    llmsFalla && llmsFalla.estado === 'sin-confirmar'
+      ? abreloTu('/llms.txt')
+      : 'Publica un llms.txt: le dice a los motores qué eres y qué páginas importan.'
   );
   add(
     'citabilidad', 'faq', 'Tienes preguntas frecuentes marcadas', conFaq, 6,
     conFaq ? 'Encontramos FAQPage en tu schema.' : 'No hay FAQPage en tu schema.',
     'Marca tus preguntas frecuentes con FAQPage. Es el formato que la IA cita textual.'
   );
-  const sitemapOk = !!sitemap && sitemap.status === 200 && /<urlset|<sitemapindex/i.test(sitemap.texto);
+  // Acá manda el contenido por encima de la dirección: un sitemap que redirige a su índice
+  // (/sitemap_index.xml, lo que hace Yoast y medio WordPress chileno) es un sitemap que
+  // encontramos, y la redirección no lo puede convertir en ausencia.
+  const sitemapValido = !!sitemap && sitemap.status === 200 && /<urlset|<sitemapindex/i.test(sitemap.texto);
+  const sitemapFalla = sitemapValido
+    ? null
+    : archivoNoLlego(sitemap, '/sitemap.xml', 'tu sitemap') || {
+        estado: 'pendiente',
+        detalle: 'Pedimos /sitemap.xml y lo que llegó no trae la lista de direcciones que declara un sitemap, así que no le sirve a un buscador.',
+      };
   add(
-    'citabilidad', 'sitemap', 'Tienes sitemap.xml', sitemapOk, 4,
-    sitemapOk ? 'Encontramos un sitemap válido.' : 'No encontramos /sitemap.xml.',
-    'Publica un sitemap.xml y decláralo en robots.txt.'
+    'citabilidad', 'sitemap', 'Tienes sitemap.xml',
+    sitemapFalla ? sitemapFalla.estado : 'ok', 4,
+    sitemapFalla ? sitemapFalla.detalle : 'Encontramos un sitemap válido.',
+    sitemapFalla && sitemapFalla.estado === 'sin-confirmar'
+      ? abreloTu('/sitemap.xml')
+      : 'Publica un sitemap.xml y decláralo en robots.txt.'
   );
   const canonicalOk = /<link[^>]+rel=["']canonical["']/i.test(html);
   add(
@@ -1094,11 +1190,11 @@ export async function chequear(entrada, fetchImpl = fetch) {
   // (sería castigar al sitio por un límite de lectura nuestro). Es la misma cuenta que hace
   // Verifica y Cumple con pesoConfirmado/pesoTotal.
   //
-  // Hoy solo cuatro ítems pueden quedar sin confirmar (los tres del robots.txt y el de las
-  // pruebas por nombre de robot), o sea 24 de los 100 puntos, así que el denominador nunca
-  // queda vacío ni baja de la mitad. Si algún día pudieran quedar más, hay que decidir qué
-  // mostrar cuando no quede casi nada que puntuar: el gemelo deja el puntaje en null bajo la
-  // mitad del peso, y acá habría que hacer lo mismo antes de dividir.
+  // Hoy solo seis ítems pueden quedar sin confirmar (los tres del robots.txt, el de las
+  // pruebas por nombre de robot, el llms.txt y el sitemap.xml), o sea 32 de los 100 puntos,
+  // así que el denominador nunca queda vacío ni baja de la mitad. Si algún día pudieran quedar
+  // más, hay que decidir qué mostrar cuando no quede casi nada que puntuar: el gemelo deja el
+  // puntaje en null bajo la mitad del peso, y acá habría que hacer lo mismo antes de dividir.
   const puntuables = items.filter((i) => i.estado !== 'sin-confirmar');
   const pesoTotal = items.reduce((a, i) => a + i.peso, 0);
   const pesoConfirmado = puntuables.reduce((a, i) => a + i.peso, 0);
