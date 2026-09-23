@@ -22,7 +22,7 @@ líneas de cada archivo antes de correrlo.
 | `prueba-saltos.mjs` | bucle de redirecciones (508), cadena larga legítima, reloj compartido (8) |
 | `prueba-robots.mjs` | tabla comparativa de los cuatro casos de robots.txt, vieja contra nueva |
 | `medir-cpu.mjs` | costo por tamaño de portada, vieja contra nueva |
-| `prueba-cookies.mjs` | el control de cookies de spindlelab.cl (`public/js/consent-banner.js`), con un DOM de mentira en `vm`: camino normal, almacenamiento bloqueado, sincronía entre pestañas, recarga cancelable, pie sin enlace a la política, y que la recarga mira si el Pixel está vivo y no de dónde venía la decisión (32) |
+| `prueba-cookies.mjs` | el control de cookies de spindlelab.cl (`public/js/consent-banner.js`) con un DOM de mentira en `vm`: Analytics solo al aceptar, almacenamiento bloqueado, otra pestaña, bfcache con eventos encolados en cualquier orden, el `revoke` del Pixel sin `grant` en caliente, cookies heredadas, `_gcl_` (82) |
 | `adversario.mjs` | entradas hechas para hacer sufrir al parser (anidamiento extremo, etiqueta sin cerrar, miles de h2, prosa de 2,8 MB) |
 
 ## Por qué existen
@@ -40,3 +40,10 @@ runtime:
 
 Cuando una prueba falle, la primera pregunta es si el doble se parece al
 runtime, no si el código está mal.
+
+## Una más, del control de cookies (22-sep)
+
+El `revoke` del Pixel de Meta **no descarta, retiene**: lo que se le pide con el permiso
+retirado sale todo junto cuando se le devuelve. Eso no lo dice ninguna prueba con dobles; se
+midió en un navegador real. Por eso el código nunca le devuelve el permiso en caliente. Si
+alguna vez se toca esa parte, esa medición se repite antes de creerle a la documentación.
