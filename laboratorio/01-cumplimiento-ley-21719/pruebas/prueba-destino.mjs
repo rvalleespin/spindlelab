@@ -871,28 +871,49 @@ const LANDING_RECAPTCHA = '<!DOCTYPE html><html lang="es"><head><title>Dra. Pér
   // Imperva/Incapsula: trae html/head/body, pero el texto es el del bloqueo y no hay enlaces.
   const incapsula = '<html style="height:100%"><head><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"></head><body style="margin:0px;height:100%"><iframe id="main-iframe" src="/_Incapsula_Resource?CWUDNSAI=1" frameborder=0 width="100%" height="100%">Request unsuccessful. Incapsula incident ID: 123-456</iframe></body></html>';
   eq('Incapsula con esqueleto: es bloqueo', esPaginaDeBloqueo(incapsula), true);
-  // AWS WAF responde 202 con un desafío de JavaScript. Su frase es "verify that you're not a
-  // robot", y la lista gemela del 23-sep solo reconoce "verify (that) you are (a) human": la
-  // frase de AWS quedó FUERA a propósito, porque acortar la lista fue lo que dejó de comerse
-  // las landings reales (puerta de edad, "verify your email", "zona restringida").
+  // AWS WAF responde 202 con un desafío de JavaScript, y su frase real dice "verify that
+  // you're not a robot". Estuvo sin reconocerse hasta el 23-sep por la tarde, y el primer
+  // intento de cerrarlo salió mal de una forma que vale escribir: se agregó "verify (that)
+  // you are (not) (a) (human|robot)" y se probó con "you are", que es la redacción inventada
+  // al escribir la prueba. La real lleva apóstrofo, así que seguía escapándose, y la prueba
+  // quedó en verde afirmando lo contrario. El arreglo validaba su propio error.
   //
-  // Consecuencia medida, y por eso queda escrita como prueba: hoy el desafío de AWS SÍ recibe
-  // informe. Lo que no puede pasar nunca es que ese informe puntúe o dé algo por bueno, porque
-  // no leímos el sitio: eso es lo que se exige acá. Cerrar el hueco pide agregar la frase a las
-  // DOS listas en un mismo cambio (ver el informe de cierre del 23-sep).
-  const aws = '<!DOCTYPE html><html lang="en"><head><title></title><script src="https://abc.token.awswaf.com/abc/challenge.js"></script></head><body><noscript><h1>JavaScript is disabled</h1>In order to continue, we need to verify that you\'re not a robot. This requires JavaScript. Enable JavaScript and then reload the page.</noscript></body></html>';
-  const r = await chequear('ejemplo.cl', fakeRed({ 'https://ejemplo.cl/': { status: 202, body: aws } }));
-  eq('desafío de AWS WAF (202): sin puntaje y sin nada que vender',
-     [r.puntaje, r.prioridades.length], [null, 0]);
-  // Lo único que se puede dar por bueno es por dónde entramos; del contenido del sitio no se
-  // afirma nada, porque no lo leímos.
-  eq('desafío de AWS WAF (202): ningún verde sobre el contenido',
-     r.items.filter((i) => i.estado === 'ok').map((i) => i.id), ['https']);
-  // Y el 202 no puede leerse como "respondió por http://": entramos por https.
-  eq('desafío de AWS WAF (202): no inventa que el sitio no tiene certificado',
-     /respondió por http:\/\//.test(item(r, 'https').detalle), false);
-  eq('desafío de AWS WAF (202): no afirma que el sitio no tenga política',
-     r.items.every((i) => !/no vimos ningún enlace a una política/.test(i.detalle)), true);
+  // Por eso el patrón ahora tolera lo que haya entre "you" y "re": los dos chequeos normalizan
+  // distinto (uno borra la puntuación, el otro la conserva), así que "you're", "you&rsquo;re",
+  // "you’re" y "you are" tienen que dar lo mismo en los dos. Las cuatro se prueban acá abajo.
+  const awsCon = (frase) => `<!DOCTYPE html><html lang="en"><head><title></title><script src="https://abc.token.awswaf.com/abc/challenge.js"></script></head><body><noscript><h1>JavaScript is disabled</h1>In order to continue, ${frase}. This requires JavaScript. Enable JavaScript and then reload the page.</noscript></body></html>`;
+  for (const [comoEscribeElApostrofo, frase] of [
+    ['apóstrofo recto', "we need to verify that you're not a robot"],
+    ['entidad HTML', 'we need to verify that you&rsquo;re not a robot'],
+    ['apóstrofo tipográfico', 'we need to verify that you’re not a robot'],
+    // Las dos siguientes las aportó la sesión que revisó el patrón: la entidad numérica es lo
+    // que escupen varios gestores de contenido, y el acento agudo es el error de tipeo típico
+    // en teclado español. Ninguna de las dos se nos habría ocurrido desde acá.
+    ['entidad numérica', 'we need to verify that you&#39;re not a robot'],
+    ['acento agudo', 'we need to verify that you´re not a robot'],
+    ['sin apóstrofo', 'we need to verify that you are not a robot'],
+  ]) {
+    eq(`desafío de AWS WAF, ${comoEscribeElApostrofo}: es bloqueo`, esPaginaDeBloqueo(awsCon(frase)), true);
+  }
+  // Y el chequeo declina: no hay informe sobre un sitio que nunca nos dejó entrar.
+  const r = await chequear('ejemplo.cl', fakeRed({ 'https://ejemplo.cl/': { status: 202, body: awsCon("we need to verify that you're not a robot") } }));
+  eq('desafío de AWS WAF (202): declina, no puntúa', [r.ok, r.tipo], [false, 'sitio']);
+  eq('desafío de AWS WAF (202): el mensaje es el del firewall', r.error, mensajeDeFallo('vacia'));
+  // Portadas reales que hablan de verificar y NO son bloqueos. Las dos primeras las propuso
+  // la sesión revisora, que era la que más dudaba de este patrón.
+  for (const frase of [
+    'We verify that your registration is complete before booking.',
+    'Our team will verify that you qualify for the plan.',
+    'Please verify that you are a patient of ours before booking.',
+    'To verify that you have more requests pending, call us.',
+  ]) {
+    eq(`portada real, "${frase.slice(0, 32)}...": NO es bloqueo`,
+       esPaginaDeBloqueo(`<!doctype html><html lang="en"><head><title>Clinic</title></head><body><h1>Clinic</h1><p>${frase}</p><a href="/a">a</a><a href="/b">b</a></body></html>`), false);
+  }
+  // Límite conocido y aceptado: "you were not a robot" cae en el patrón, porque "you" + " we" +
+  // "re " entra en el hueco tolerado. Para que hiciera daño, una portada real tendría que pesar
+  // menos de 16 KB, tener 2 enlaces o menos y hablar de robots. Apretar más el patrón cuesta
+  // más de lo que vale, y el caso real (el aviso de AWS) ya está cubierto.
   eq('JSON o texto suelto en la portada: tampoco se puntúa', esPaginaDeBloqueo('{"status":"ok"}'), true);
 }
 {
