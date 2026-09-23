@@ -53,17 +53,17 @@ sesión. El `client_id` y `redirect_uri` del redirect actual coinciden exactamen
 así que no es solo "se guardó en el panel de Netlify": el comportamiento del sitio en vivo
 efectivamente cambió.
 
-## Qué NO se verificó
+## Login real — confirmado
 
-El login real — clickear "Login with GitHub", pasar por la pantalla de autorización de GitHub, y
-volver al panel ya autenticado — necesita un navegador humano. Esta sesión no tiene uno (mismo
-límite que ya señaló la revisión original del panel el 9-sep-2026). Falta que Bernardo o Ramón lo
-prueben una vez en vivo para cerrar el ciclo del todo.
+Ramón probó el flujo completo en vivo el mismo 23-sep-2026: entró a
+`https://bernardocombeau.cl/admin`, hizo "Login with GitHub", autorizó la app, y volvió al panel
+ya autenticado. Confirmado por él directamente ("entró bien, ya estoy adentro"), no inferido.
 
 ## Estado
 
-**Resuelto en configuración/infraestructura**, con evidencia externa verificada (no solo "ya
-quedó" de alguien — el comportamiento en vivo del sitio cambió de 500 a 302 con los valores
-correctos). **Pendiente de una prueba de login real por un humano** para confirmar el cierre
-completo del "único cabo suelto" que señalaba la Actualización 19 de
-`revision-panel-admin-bernardo.md`.
+**Resuelto de punta a punta** — configuración/infraestructura verificada por esta sesión (curl
+contra el sitio en vivo, 500→302 con los valores correctos) y login real confirmado por Ramón.
+Con esto se cierra el "único cabo suelto" que señalaba la Actualización 19 de
+`revision-panel-admin-bernardo.md`: la migración completa de `bernardocombeau.cl` de Vercel a
+Netlify queda terminada — sitio público, panel de administración y login, los tres funcionando en
+producción, sin ningún vínculo con Vercel.

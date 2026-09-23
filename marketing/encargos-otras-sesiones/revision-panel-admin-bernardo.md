@@ -552,6 +552,15 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > `redirect_uri` del dominio que lo sirve, nunca estuvo hardcodeado a Vercel. Los 3 puntos de
 > arriba son trabajo de dashboard, misma naturaleza que el resto de esta migración, no código.
 
+> **Actualización 20 (23-sep-2026) — login OAuth resuelto, migración a Netlify cerrada del
+> todo.** Los 3 puntos pendientes de la Actualización 19 quedaron resueltos: callback URL
+> corregida en la OAuth App de GitHub, Client Secret regenerado, y ambas variables cargadas en
+> Netlify con deploy disparado para aplicarlas. Verificado por la sesión cloud contra el sitio en
+> vivo (`/api/auth` pasó de 500 a 302, redirigiendo a GitHub con los valores correctos) y por
+> Ramón con un login real de punta a punta. Detalle completo en
+> `marketing/encargos-otras-sesiones/reporte-login-admin-bernardo-23sep.md`. Con esto ya no queda
+> ningún cabo suelto de la migración Vercel → Netlify.
+
 ---
 
 **Estado a 9-sep-2026:** las Partes 1-3 de este documento (bug de Estudio, Direcciones A-D, fix de
@@ -567,9 +576,10 @@ completo de Vercel a Netlify (Actualizaciones 18-19) — todo está **mergeado a
 producción real en `bernardocombeau.cl`**, gratis, con certificado propio y sin ningún vínculo con
 Vercel. Las 8 fichas de Modelo tienen vista previa real; Motion, Commercials y Work son páginas
 propias. Bernardo ya volvió a usar el panel tras la migración — su campaña "Habitat" y fotos
-nuevas están en vivo, confirmado por HTTP directo. **Único cabo suelto de toda esta migración:**
-el login OAuth de `/admin` en el dominio nuevo todavía no funciona (ver los 3 puntos de la
-Actualización 19) — el sitio se ve y navega perfecto, pero Bernardo no puede entrar a editar hasta
+nuevas están en vivo, confirmado por HTTP directo. **Único cabo suelto de toda esta migración**
+*(resuelto el 23-sep-2026, ver Actualización 20 más abajo)*: el login OAuth de `/admin` en el
+dominio nuevo todavía no funciona (ver los 3 puntos de la Actualización 19) — el sitio se ve y
+navega perfecto, pero Bernardo no puede entrar a editar hasta
 que eso se termine. Pendiente aparte, sin relación con esto: la Parte 2-3 de
 `revision-sitio-bernardo-combeau.md` (rediseño del sitio público).
 
