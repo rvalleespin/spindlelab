@@ -4,39 +4,56 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Verifica y Cumple · Chequeo técnico Ley 21.719</title>
-<meta name="description" content="Revisa gratis si tu sitio web tiene las señales técnicas que exige la Ley 21.719 de protección de datos personales, vigente desde el 1 de diciembre de 2026. Sin registro, en segundos.">
-<link rel="canonical" href="https://verificaycumple.pages.dev/">
+<meta name="description" content="Si tienes un formulario de contacto, ya te aplica la Ley 21.719, la nueva ley de datos personales. Revisa gratis qué le falta a tu sitio antes del 1 de diciembre de 2026. Sin registro y sin dejar tu correo.">
+<link rel="canonical" href="https://verifica.spindlelab.cl/">
+<!-- Ícono de la pestaña: el sello, en línea para no sumar otra petición. Sin él, el navegador
+     pide /favicon.ico, que acá no existe: en local es un error 404 en la consola, y en Pages
+     vuelve la portada entera como si fuera el ícono. Los colores repiten --vivo-rosa y
+     --blanco, escritos a mano porque un ícono no puede leer variables de CSS. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23ff3ea0'/%3E%3Cpath d='M30 52 L44 66 L72 36' fill='none' stroke='%23fff' stroke-width='11' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
+<!-- La tarjeta que muestran LinkedIn y WhatsApp al pegar el enlace. Las URL van absolutas y
+     en el dominio definitivo: los rastreadores de esas redes no resuelven rutas relativas. -->
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Verifica y Cumple">
 <meta property="og:title" content="Verifica y Cumple · Chequeo técnico Ley 21.719">
-<meta property="og:description" content="Revisa gratis si tu sitio web tiene las señales técnicas que exige la Ley 21.719, vigente desde el 1 de diciembre de 2026.">
-<meta property="og:url" content="https://verificaycumple.pages.dev/">
+<meta property="og:description" content="Si tienes un formulario de contacto, ya te aplica la Ley 21.719, la nueva ley de datos personales. Revisa gratis qué le falta a tu sitio antes del 1 de diciembre de 2026.">
+<meta property="og:url" content="https://verifica.spindlelab.cl/">
 <meta property="og:locale" content="es_CL">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://verifica.spindlelab.cl/assets/img/og-verificaycumple.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="Verifica y Cumple, chequeo técnico gratuito para la Ley 21.719. Una fiscalizadora a caballo bajo la pregunta ¿Estás seguro?">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Verifica y Cumple · Chequeo técnico Ley 21.719">
-<meta name="twitter:description" content="Revisa gratis si tu sitio web tiene las señales técnicas que exige la Ley 21.719, vigente desde el 1 de diciembre de 2026.">
+<meta name="twitter:description" content="Si tienes un formulario de contacto, ya te aplica la Ley 21.719, la nueva ley de datos personales. Revisa gratis qué le falta a tu sitio antes del 1 de diciembre de 2026.">
+<meta name="twitter:image" content="https://verifica.spindlelab.cl/assets/img/og-verificaycumple.jpg">
+<meta name="twitter:image:alt" content="Verifica y Cumple, chequeo técnico gratuito para la Ley 21.719.">
 
+<!-- Verifica y Cumple es un servicio de SpindleLab SpA, no una organización aparte: por eso
+     el proveedor apunta al mismo @id que declara spindlelab.cl, con razón social y RUT. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      "@id": "https://verificaycumple.pages.dev/#org",
-      "name": "Verifica y Cumple",
-      "url": "https://verificaycumple.pages.dev/",
-      "description": "Chequeo técnico gratuito de señales relacionadas con la Ley 21.719 de protección de datos personales en Chile.",
-      "parentOrganization": { "@type": "Organization", "name": "SpindleLab", "url": "https://spindlelab.cl" }
-    },
-    {
       "@type": "WebApplication",
-      "@id": "https://verificaycumple.pages.dev/#app",
+      "@id": "https://verifica.spindlelab.cl/#app",
       "name": "Verifica y Cumple",
-      "url": "https://verificaycumple.pages.dev/",
+      "url": "https://verifica.spindlelab.cl/",
+      "description": "Chequeo técnico gratuito de las señales que se ven en tu sitio y que pide la Ley 21.719, la nueva ley de datos personales de Chile.",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Navegador web",
       "inLanguage": "es-CL",
-      "provider": { "@id": "https://verificaycumple.pages.dev/#org" },
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://spindlelab.cl/#org",
+        "name": "SpindleLab",
+        "legalName": "SpindleLab SpA",
+        "taxID": "78.474.925-8",
+        "url": "https://spindlelab.cl"
+      },
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CLP", "description": "Gratis, sin registro." }
     }
   ]
@@ -141,9 +158,27 @@
     --radio-pill: 999px;
     --radio-tarjeta: 16px;
     --radio-chico: 10px;
+
+    /* Alto del header fijo. Todo lo que se lleva a la vista por código (el resultado, el
+       formulario del chequeo, el de pedido) lo usa como margen, porque si no el header lo
+       tapa: pasó con el puntaje, que quedaba escondido justo detrás. El JS lo remide con el
+       header real, porque en móvil se parte en dos líneas y el alto depende de la fuente;
+       estos valores son solo el punto de partida si el JS no corre. */
+    --alto-header: 66px;
   }
+  @media (max-width: 600px) { :root { --alto-header: 99px; } }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  /* Texto solo para lector de pantalla: fuera de la vista, pero no fuera del árbol de
+     accesibilidad, que es lo que haría un display:none. */
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    margin: -1px; padding: 0; border: 0;
+    overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%);
+    white-space: nowrap;
+  }
   body {
     margin: 0;
     background: var(--bg);
@@ -240,8 +275,7 @@
 
   main { display: block; }
 
-  /* Hero, calcado de la composición de la referencia (Behance, "Creative Course Landing
-     Page"): fondo azul a sangre completa, titular gigante a todo el ancho arriba, la foto
+  /* Hero: fondo azul a sangre completa, titular gigante a todo el ancho arriba, la foto
      grande y centrada rompiendo sobre el texto, sin tarjetas con borde/sombra dura. */
   section.hero {
     position: relative;
@@ -294,6 +328,50 @@
      rótulo se partía en dos líneas y dejaba "21.719" solo. Se aprieta, no se acorta. */
   @media (max-width: 600px) {
     .hero-badge { font-size: 0.62rem; letter-spacing: 0.05em; padding: 6px 10px; }
+  }
+
+  /* El botón para ir al chequeo. Existe porque el campo del dominio quedaba entre 1,2 y 1,6
+     pantallas más abajo en todos los tamaños, y en móvil no había nada que apretar arriba.
+     Va en dos lugares y se ve uno solo, para no tocar la composición del hero: desde 601 px,
+     al lado de la etiqueta (el titular y el caballo ocupan todo lo demás hasta el pliegue);
+     en teléfono vertical, justo debajo del caballo, donde todavía entra en la primera
+     pantalla, incluso en el navegador de LinkedIn (390x664). El corte estaba en 699 px, y
+     entre 601 y 699 el botón de abajo caía fuera de la primera pantalla (a 640x800 quedaba
+     en y=855, y en un teléfono apaisado de 667x375, en y=889): ahí el de arriba sí entra. */
+  .hero-arriba {
+    display: flex; align-items: center; justify-content: center;
+    flex-wrap: wrap; gap: 10px 12px;
+    /* Con el botón al lado, la fila mide ~575 px: a 601 px quedaba a 13 px del borde. El
+       padding le da el margen lateral de siempre y, si no cabe, el botón baja a otra línea. */
+    padding: 0 16px;
+    margin: 0 auto 18px;
+    /* Por encima del titular: la caja de texto de "ESTÁS" (no la tinta) sobresale hacia
+       arriba y, pintada después, se comía los clics del botón aunque no lo tapara. */
+    position: relative; z-index: 2;
+  }
+  .hero-arriba .hero-badge { margin: 0; }
+  /* La tilde de "ESTÁS" sobresale por arriba de su línea (el line-height es 0,82) unos
+     3,1vw, y cae entre el 72 y el 80% del ancho. Con la etiqueta sola no molestaba; con el
+     botón al lado, la fila llega hasta ahí en todo ancho menor a ~1290 px y la tilde se le
+     montaba encima. En ese tramo el titular baja lo justo para despejarla; más ancho, la
+     fila ya termina antes de la tilde y el hero queda exactamente como estaba. Empieza en
+     601 px porque desde ahí el botón va arriba (ver .hero-arriba). */
+  @media (min-width: 601px) and (max-width: 1299px) {
+    .hero-arriba { margin-bottom: calc(3.2vw + 8px); }
+  }
+  /* Doble clase a propósito: .boton-ayuda se declara más abajo y, con la misma
+     especificidad, su display y su padding ganarían por orden. */
+  .boton-ayuda.hero-cta { display: inline-flex; align-items: center; gap: 8px; }
+  /* Del mismo alto que la etiqueta (30 px), para que la fila no empuje el titular. */
+  .boton-ayuda.hero-cta-arriba { padding: 5px 18px; font-size: 0.9rem; line-height: 1.4; }
+  .boton-ayuda.hero-cta-abajo { display: none; }
+  @media (max-width: 600px) {
+    .boton-ayuda.hero-cta-arriba { display: none; }
+    .boton-ayuda.hero-cta-abajo { display: flex; width: fit-content; margin: 10px auto 0; position: relative; z-index: 6; }
+    /* Los 20 px que necesita el botón para entrar en la primera pantalla salen de acá arriba,
+       del aire entre el header y la etiqueta, y no del titular ni del caballo. */
+    section.hero { padding-top: 26px; }
+    .hero-arriba { margin-bottom: 16px; }
   }
   /* El titular va a sangre y centrado sobre el viewport, no dentro de la envoltura de
      1100px. Antes estaba anclado a esa caja pero dimensionado en vw, así que en pantallas
@@ -370,7 +448,10 @@
     grid-template-columns: 1fr 1fr;
     gap: 24px clamp(24px, 22vw, 420px);
     margin: -100px 0 0;
-    position: relative; z-index: 3;
+    /* Por encima del caballo (z-index 5): los enunciados montan sobre la parte baja de la
+       imagen, y con el texto debajo la pata tapaba "Qué no hace" y "no guarda tu dominio"
+       en tablet, y la pezuña rozaba "guarda" en escritorio. */
+    position: relative; z-index: 6;
   }
   .enunciado p { margin: 0; color: var(--blanco); font-size: 0.98rem; line-height: 1.5; max-width: 34ch; }
   .enunciado-der { justify-self: end; text-align: right; }
@@ -442,6 +523,14 @@
 
   #resultado { display: none; margin-top: 34px; }
   #resultado.visible { display: block; }
+  /* El resultado y el formulario del chequeo se llevan a la vista por código; el margen
+     deja el header fijo afuera, con un poco de aire. */
+  #resultado, form.chequeo { scroll-margin-top: calc(var(--alto-header) + 16px); }
+
+  /* Aviso de espera larga. Va FUERA de #resultado a propósito: mientras carga, #resultado
+     está con aria-busy, y un lector de pantalla puede callar lo que cambie adentro. */
+  .estado-chequeo { margin: 18px 0 0; color: var(--blanco); font-weight: 600; font-size: 0.95rem; }
+  .estado-chequeo:empty { display: none; }
 
   /* Capa 3, la tarjeta del resultado. Vive sobre el azul del hero, no sobre la
      crema del resto, así que pide sus propios tonos: un panel un punto más cálido,
@@ -475,6 +564,16 @@
     margin-bottom: 24px;
   }
   .error-caja p { margin: 0; }
+  /* El enlace de correo toma el color del aviso; el botón conserva el suyo. */
+  .error-caja a:not(.boton-ayuda) { color: inherit; }
+  /* Cuando el problema es el sitio y no lo que escribiste, no te dejamos solo con el
+     mensaje: hay alguien que lo puede revisar a mano. */
+  .error-acciones {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px;
+    margin-top: 14px !important;
+  }
+  .error-acciones .boton-ayuda { padding: 11px 22px; }
+  .error-caja .error-mano { margin-top: 10px; }
   /* El código de respuesta no desaparece: baja de categoría. Deja de ser el mensaje y pasa a
      ser el dato que sirve cuando alguien nos escribe para que lo revisemos a mano. */
   /* Se distingue por tamaño y por la línea de arriba, no bajándole la opacidad: con .75
@@ -579,6 +678,16 @@
     stroke-linecap: round;
     transition: stroke-dashoffset .6s ease;
   }
+  /* El verde es "bien". Un 27 en verde decía lo contrario que el número. */
+  .anillo-wrap.bajo .anillo-progreso { stroke: var(--pendiente); }
+  /* Nada pendiente, pero con señales que no pudimos confirmar: ese número sale de menos
+     señales, y un 100 en verde se leía como "cumple". Va en el tono neutro del estado sin
+     confirmar, el mismo del borde punteado de su marca. */
+  .anillo-wrap.parcial .anillo-progreso { stroke: var(--texto-suave); }
+  /* Sin puntaje (nada se pudo confirmar desde afuera): anillo punteado, como el estado
+     "sin confirmar", y sin arco de progreso. */
+  .anillo-wrap.sin-puntaje .anillo-fondo { stroke: var(--texto-suave); stroke-dasharray: 6 8; }
+  .anillo-wrap.sin-puntaje .anillo-progreso { display: none; }
   .anillo-numero {
     position: absolute;
     inset: 0;
@@ -591,8 +700,24 @@
     letter-spacing: -0.02em;
     color: var(--texto);
   }
-  .puntaje-texto { font-size: 0.92rem; color: var(--texto-suave); }
+  .puntaje-texto { font-size: 0.92rem; color: var(--texto-suave); min-width: 0; }
   .puntaje-texto strong { color: var(--texto); }
+  .puntaje-texto p { margin: 0; }
+  /* La URL que leímos de verdad, después de las redirecciones. Puede ser larga, así que se
+     corta donde haga falta en vez de empujar la tarjeta hacia el lado. */
+  .puntaje-texto .puntaje-revisado { margin-top: 8px; font-size: 0.85rem; overflow-wrap: anywhere; }
+
+  /* La línea bajo el puntaje: cuántas quedaron pendientes y el botón, sin tener que bajar
+     2,8 pantallas hasta el panel del final. Va suelta sobre el azul, como los títulos. */
+  .resumen-resultado {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 12px 18px;
+    margin: -12px 0 30px;
+    color: var(--blanco);
+  }
+  .resumen-resultado p { margin: 0; font-weight: 600; font-size: 0.95rem; }
+  .resumen-resultado .sin-cortar { white-space: nowrap; }
+  .resumen-resultado .boton-ayuda { padding: 11px 22px; }
 
   .bloque { margin-bottom: 28px; }
   .bloque h2 { font-size: 1.08rem; margin: 0 0 2px; letter-spacing: -0.01em; }
@@ -624,9 +749,32 @@
     font-size: 0.8rem;
     font-weight: 700;
     margin-top: 1px;
+    position: relative;
+    isolation: isolate;
   }
+  /* Cada estado cambia de FORMA además de color, para que no dependa de distinguir el verde
+     del ámbar: círculo lleno (bien), rombo (pendiente, como una señal de advertencia) y
+     círculo punteado (no se puede confirmar desde afuera). El rombo es un ::before girado
+     detrás del signo, para que el "!" quede derecho. */
   .marca-estado.ok { background: var(--ok-bg); color: var(--ok); }
-  .marca-estado.pendiente { background: var(--pendiente-bg); color: var(--pendiente); }
+  .marca-estado.pendiente { color: var(--pendiente); }
+  .marca-estado.pendiente::before {
+    content: ""; position: absolute; inset: 3px; z-index: -1;
+    background: var(--pendiente-bg);
+    border: 1.5px solid var(--pendiente);
+    transform: rotate(45deg);
+  }
+  .marca-estado.sin-confirmar {
+    background: var(--info-bg); color: var(--texto-suave);
+    border: 1.5px dashed var(--texto-suave);
+  }
+  /* El estado también va escrito, chico, sobre el título: el título ahora es neutro y viene
+     de la API, así que sin esto un pendiente se leía igual que uno en orden. */
+  .item-estado { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 2px; }
+  .item-estado.ok { color: var(--ok); }
+  .item-estado.pendiente { color: var(--pendiente); }
+  .item-estado.sin-confirmar { color: var(--texto-suave); }
+  .item-texto { min-width: 0; }
   .item-texto strong { display: block; font-size: 0.95rem; }
   .item-texto .detalle { display: block; font-size: 0.87rem; color: var(--texto-suave); margin-top: 2px; }
   .item-texto .arreglo {
@@ -646,7 +794,9 @@
     margin-top: 8px;
   }
   .informativos h2 { font-size: 0.95rem; margin: 0 0 4px; }
-  .informativos .sub-bloque { margin-bottom: 16px; }
+  /* Mismo tamaño y tinta que el subtítulo de los bloques: como esta caja no es .bloque, el
+     texto salía al tamaño de cuerpo y en tinta plena, más grande que lo que explica. */
+  .informativos .sub-bloque { margin-bottom: 16px; font-size: 0.85rem; color: var(--texto-suave); }
   .informativos .item-info { margin-bottom: 14px; }
   .informativos .item-info:last-child { margin-bottom: 0; }
   .informativos .item-info strong { display: block; font-size: 0.9rem; margin-bottom: 2px; }
@@ -744,6 +894,9 @@
   section.referencia .etiqueta-seccion { background: var(--vivo-verde); color: var(--vivo-tinta); }
   section.referencia h2 { color: var(--blanco); }
   section.referencia > .envoltura > p.intro { color: rgba(255,255,255,.85); max-width: 58ch; margin: 0 0 40px; font-size: 1.05rem; }
+  /* El enlace al texto de la ley va sobre azul: el color de enlace general (verde oscuro)
+     ahí no se lee. */
+  section.referencia a { color: var(--vivo-verde); }
   .art14-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 40px; }
   .art14-item { display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.25); }
   .art14-item:nth-child(1), .art14-item:nth-child(2) { border-top: none; }
@@ -768,8 +921,10 @@
     box-shadow: none;
     text-align: center;
   }
+  /* El tope en em conserva el corte de dos líneas que tenía cuando la sección medía 780 px;
+     sin él, al ensancharla, "PENDIENTES?" quedaba sola en la segunda línea. */
   .ayuda-caja h2 {
-    margin: 0 0 12px;
+    margin: 0 auto 12px; max-width: 15.5em;
     font-family: "Archivo Black", Impact, var(--serif);
     font-weight: 400; text-transform: uppercase;
     font-size: clamp(1.8rem, 4.4vw, 3rem);
@@ -791,10 +946,32 @@
   }
   .boton-ayuda:hover { background: var(--vivo-rosa-osc); }
   .boton-ayuda:active { transform: scale(.97); }
-  .planes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 880px; margin: 0 auto 32px; align-items: stretch; }
+  /* Los planes y el formulario son una sola fila de tres tarjetas, y eso no cabe en los
+     780 px de .envoltura. Esta sección se ensancha; sus párrafos sueltos no se estiran con
+     ella porque ya van limitados en ch. */
+  section.ayuda .envoltura { max-width: 1240px; }
+  /* "Ver el kit y precios" baja hasta acá: sin este margen, con el header en dos líneas el
+     título de la sección quedaba debajo de él. */
+  section.ayuda { scroll-margin-top: var(--alto-header); }
+  /* Tres anchos. Desde 1100 px, tres columnas de igual alto: kit, suscripción y formulario,
+     un poco más ancho porque es el que más lleva adentro. Entre 681 y 1099 las tres no caben
+     sin apretar los precios, así que los dos planes siguen lado a lado y el formulario ocupa
+     el ancho entero debajo. En teléfono, todo en una columna. */
+  .planes-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px; max-width: 880px; margin: 0 auto 32px; align-items: stretch;
+  }
+  /* La celda del formulario es una columna flexible para que la tarjeta que esté a la vista
+     (el formulario o el "Listo") llene el alto de la fila, igual que las otras dos. */
+  .planes-pedido { grid-column: 1 / -1; display: flex; flex-direction: column; min-width: 0; }
+  /* La fila de tres vive en un @media al final de esta sección, después de las reglas de las
+     tarjetas y del formulario, para ganarles por orden sin subir la especificidad. */
   .kit-precio {
     text-align: left; padding: 32px 30px; margin: 0; display: flex; flex-direction: column;
     position: relative; border: none; border-radius: var(--radio-tarjeta); box-shadow: none; transform: none;
+    /* Contenedor de consulta para que el precio se mida contra el ancho de su tarjeta (ver
+       .kit-monto). */
+    container-type: inline-size;
   }
   .kit-precio.kit-principal { background: var(--vivo-azul); color: var(--blanco); }
   .kit-precio.kit-secundario { background: var(--vivo-verde); color: var(--vivo-tinta); opacity: 1; }
@@ -805,10 +982,15 @@
   }
   .kit-principal .kit-etiqueta { color: var(--vivo-verde); }
   .kit-secundario .kit-etiqueta { color: var(--vivo-rosa-osc); }
+  /* "Desde $149.000" mide 8,3 veces su tamaño de letra. En una tarjeta angosta (dos columnas
+     cerca de 700 px, o tres cerca de 1100) no cabía y "$149.000" bajaba solo a otra línea,
+     descuadrado contra "Desde $39.000" al lado. Con cqi la letra se achica justo lo necesario
+     para caber en una línea; donde cqi no existe, queda el 2,1rem de siempre. */
   .kit-monto {
     margin: 0 0 18px;
     font-family: "Archivo Black", Impact, var(--serif); font-weight: 400;
-    font-size: 2.1rem; line-height: 1; letter-spacing: -0.03em;
+    font-size: 2.1rem; font-size: min(2.1rem, 11.4cqi);
+    line-height: 1; letter-spacing: -0.03em;
   }
   .kit-principal .kit-monto { color: var(--blanco); }
   .kit-secundario .kit-monto { color: var(--vivo-tinta); }
@@ -828,13 +1010,18 @@
   .kit-secundario .kit-nota { color: rgba(23,22,58,.7); }
   .botones-ayuda { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-  /* --- Pedir el kit --- */
+  /* --- Pedir el kit: la tercera tarjeta de la fila de planes --- */
+  /* Misma familia que las dos de precio: mismo radio y relleno, plana, sin sombra. Va en
+     blanco sobre la crema de la sección, así que el borde es de tinta y grueso, como el del
+     botón secundario: con el borde arena de antes se leía como un bloque suelto, no como una
+     tarjeta más. El "Listo" usa la misma tarjeta, para aparecer donde estaba el formulario. */
   .pedir, .pedir-listo {
-    max-width: 640px; margin: 44px auto 0; text-align: left;
+    flex: 1 1 auto;
+    margin: 0; padding: 32px 30px; text-align: left;
     background: var(--blanco); color: var(--vivo-tinta);
-    border: 1px solid var(--borde); border-radius: var(--radio-tarjeta);
+    border: 2px solid var(--vivo-tinta); border-radius: var(--radio-tarjeta);
   }
-  .pedir { padding: 28px 28px 24px; scroll-margin-top: 90px; }
+  .pedir { scroll-margin-top: calc(var(--alto-header) + 16px); }
   .pedir-titulo {
     margin: 0 0 6px; font-family: "Archivo Black", Impact, var(--serif); font-weight: 400;
     text-transform: uppercase; font-size: 1.35rem; letter-spacing: -0.02em;
@@ -850,8 +1037,13 @@
   .pedir-ancho { grid-column: 1 / -1; }
   /* El borde del campo va en la tinta suave y no en un gris claro: un borde de campo es un
      límite que hay que ver, y necesita al menos 3:1 contra el blanco. */
+  /* El font-size va después del atajo `font`, que es lo que traía la letra heredada: con
+     `font: inherit` el campo tomaba el 0.9rem de .pedir-campos y quedaba en 14,4 px. Safari
+     de iPhone agranda la página entera al enfocar un campo de menos de 16 px, y después
+     nadie la devuelve a su tamaño. 1rem lo evita, y es el mismo tamaño del campo del
+     chequeo del hero. La etiqueta sigue en 0.9rem: el zoom lo dispara el campo, no ella. */
   .pedir input[type=text], .pedir input[type=email], .pedir textarea {
-    font: inherit; font-weight: 400; color: var(--vivo-tinta); background: var(--blanco);
+    font: inherit; font-size: 1rem; font-weight: 400; color: var(--vivo-tinta); background: var(--blanco);
     border: 1.5px solid var(--vivo-suave); border-radius: var(--radio-chico);
     padding: 11px 12px; width: 100%;
   }
@@ -863,16 +1055,37 @@
   .pedir .boton-ayuda:disabled { background: var(--inactivo); cursor: wait; }
   .pedir-estado { margin: 12px 0 0; font-size: .9rem; color: var(--pendiente); }
   .pedir-estado:empty { display: none; }
-  .pedir-listo { padding: 22px 24px; border-left: 4px solid var(--ok); }
+  .pedir-listo { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+  /* El display:flex de arriba le gana al display:none que el navegador le da a [hidden]. */
+  .pedir-listo[hidden] { display: none; }
+  .pedir-listo .pedir-titulo { margin: 0; }
   .pedir-listo p { margin: 0; }
-  @media (max-width: 680px) {
-    .pedir { padding: 22px 18px 20px; }
-    .pedir-campos { grid-template-columns: 1fr; }
-  }
+  .pedir-listo .boton-ayuda { font: inherit; font-weight: 700; padding: 11px 22px; cursor: pointer; }
   .boton-secundario { background: transparent; color: var(--vivo-tinta); border: 2px solid var(--vivo-tinta); box-shadow: none; }
   .boton-secundario:hover { background: var(--vivo-tinta); color: var(--blanco); }
   @media (max-width: 680px) {
     .planes-grid { grid-template-columns: 1fr; gap: 18px; max-width: 460px; }
+    .pedir, .pedir-listo { padding: 26px 22px; }
+    .pedir-campos { grid-template-columns: 1fr; }
+    /* En tarjeta angosta las cuatro opciones van una debajo de otra: en fila se partían en
+       renglones disparejos. */
+    .pedir-que { flex-direction: column; gap: 8px; }
+  }
+  /* La fila de tres: kit, suscripción y formulario. El formulario va un poco más ancho porque
+     es el que más lleva, y en su columna cada campo ocupa su propia línea.
+     Cada tarjeta mide lo que mide su contenido (align-items: start). Estiradas al alto del
+     formulario, que es la más alta por lejos, al kit le quedaban unos 370 px de azul vacío y
+     a la suscripción otro tanto de verde: leído rápido, parecía una tarjeta rota o un texto
+     que no cargó. Los pies quedan disparejos, que es lo normal en una fila de planes, y la
+     línea sobre la nota se queda: cierra la lista, no tapa un hueco. */
+  @media (min-width: 1100px) {
+    .planes-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.2fr); max-width: 1200px; align-items: start; }
+    .planes-pedido { grid-column: auto; }
+    .kit-incluye { font-size: 1rem; }
+    .kit-incluye li { padding: 12px 0 12px 26px; }
+    .kit-nota { font-size: 0.85rem; border-top: 1px solid color-mix(in srgb, currentColor 35%, transparent); }
+    .pedir-que { flex-direction: column; gap: 6px; }
+    .pedir-campos { grid-template-columns: 1fr; gap: 12px; }
   }
 
   footer.sitio {
@@ -918,7 +1131,10 @@
 <main>
   <section class="hero">
     <div class="hero-titular">
-      <p class="hero-badge">Chequeo técnico gratuito · Ley 21.719</p>
+      <div class="hero-arriba">
+        <p class="hero-badge">Chequeo gratis · Ley 21.719 de datos personales</p>
+        <a class="boton-ayuda hero-cta hero-cta-arriba" href="#form-chequeo" data-ir-chequeo>Revisar mi sitio gratis <span aria-hidden="true">↓</span></a>
+      </div>
       <h1 class="titulo-absurdo"><span class="t-blanco">¿Estás</span> <span class="t-verde">seguro?</span></h1>
     </div>
 
@@ -926,28 +1142,35 @@
       <div class="hero-imagen-centro">
         <img class="hero-foto" src="assets/img/hero-fiscalizador.png" alt="Una fiscalizadora a caballo, vestida de rosa, sosteniendo en alto un documento timbrado." width="1200" height="1076" fetchpriority="high">
       </div>
+      <a class="boton-ayuda hero-cta hero-cta-abajo" href="#form-chequeo" data-ir-chequeo>Revisar mi sitio gratis <span aria-hidden="true">↓</span></a>
 
       <!-- Enunciados al estilo de la referencia: etiqueta corta en el acento, texto
            blanco debajo, anclados a los bordes y no centrados. Reemplazan al párrafo
            único que había, y dicen lo mismo repartido en dos ideas. -->
       <div class="hero-enunciados">
         <div class="enunciado">
-          <p class="enunciado-titulo">Qué hace</p>
-          <p>En segundos sabes si tu sitio publica lo básico que exige la Ley 21.719 de protección de datos personales.</p>
+          <p class="enunciado-titulo">Por qué te aplica</p>
+          <p>Si tienes un formulario de contacto, ya estás tratando datos personales. La ley no distingue tamaño de empresa.</p>
         </div>
         <div class="enunciado enunciado-der">
-          <p class="enunciado-titulo">Qué no hace</p>
-          <p>No pide registro, no guarda tu dominio y nunca dice que cumples. Solo describe lo que encuentra, y lo que no puede ver.</p>
+          <p class="enunciado-titulo">Qué hace el chequeo</p>
+          <p>Te decimos qué está publicado en tu sitio, qué falta y qué no alcanzamos a ver. La parte legal la revisa tu abogado.</p>
         </div>
       </div>
 
       <div class="hero-accion">
         <form class="chequeo" id="form-chequeo">
-          <label for="dominio" class="visually-hidden" style="position:absolute;left:-9999px;">Dominio a revisar</label>
-          <input type="text" id="dominio" name="dominio" placeholder="tuempresa.cl" autocomplete="off" required>
+          <label for="dominio" class="visually-hidden">Dominio a revisar</label>
+          <!-- type="text" y no "url" a propósito: con "url" el navegador rechaza un dominio
+               pelado como tuempresa.cl. inputmode da el teclado con punto y barra en el
+               teléfono, y lo demás evita que el corrector le cambie letras al dominio. -->
+          <input type="text" id="dominio" name="dominio" placeholder="tuempresa.cl" autocomplete="off" inputmode="url" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="go" required>
           <button type="submit" id="boton-chequeo">Revisar mi sitio</button>
         </form>
         <p class="nota-privacidad">Solo leemos tu sitio público. No pedimos correo ni guardamos el dominio que revisas.</p>
+        <!-- Aviso de espera. Va fuera de #resultado porque ese panel está con aria-busy
+             mientras carga, y un lector de pantalla puede callar lo que cambie adentro. -->
+        <p class="estado-chequeo" id="estado-chequeo" role="status" aria-live="polite"></p>
 
         <!-- tabindex="-1" para poder llevar el foco acá cuando llega el resultado: sale más
              abajo del formulario, y quien navega con teclado o lector de pantalla se quedaba
@@ -964,88 +1187,85 @@
 
   <section class="explicador">
     <div class="envoltura">
-      <p class="etiqueta-seccion reveal">Por qué existe esto</p>
-      <h2 class="titulo-seccion reveal">Qué es esto, y qué no es</h2>
+      <p class="etiqueta-seccion reveal">Sin claves ni instalar nada</p>
+      <h2 class="titulo-seccion reveal">Cómo revisamos tu sitio</h2>
       <p class="intro reveal">
-        Buena parte de lo que exige la Ley 21.719 es técnico y vive en el sitio web. Este chequeo
-        revisa exactamente eso: el HTML público de tu sitio, sin ejecutar nada, sin acceder a nada
-        privado.
+        Parte de lo que pide la Ley 21.719 se ve en tu sitio web, a la vista de todos. Este
+        chequeo lee el código con que está escrita tu página, el mismo que recibe cualquier
+        navegador, y busca ahí lo que la ley te pide tener publicado.
       </p>
 
       <div class="pasos">
         <div class="paso reveal">
           <span class="paso-num">01</span>
-          <h3>El problema</h3>
-          <p>Desde el 1 de diciembre de 2026, toda empresa que trate datos personales en Chile debe cumplir la Ley 21.719. Un formulario de contacto ya es tratar datos personales.</p>
+          <h3>La fecha</h3>
+          <p>La Ley 21.719 entra en plena vigencia el 1 de diciembre de 2026. Desde ese día fiscaliza la Agencia de Protección de Datos Personales, que puede partir por su cuenta o porque alguien reclama.</p>
         </div>
         <div class="paso reveal">
           <span class="paso-num">02</span>
-          <h3>Lo que exige</h3>
-          <p>El Art. 14 ter pide tener publicado, entre otras cosas, una política de tratamiento, los derechos del titular y cómo ejercerlos, y las transferencias a terceros países.</p>
+          <h3>Lo que te pide</h3>
+          <p>El artículo 14 ter pide que tu sitio deje publicado qué haces con esos datos. Quién responde por ellos, para qué los usas, cuánto los guardas y qué puede pedirte la persona cuyos datos tienes. Son 12 puntos y están más abajo.</p>
         </div>
         <div class="paso reveal">
           <span class="paso-num">03</span>
-          <h3>Lo que revisamos</h3>
-          <p>Leemos tu sitio y te decimos qué señales están presentes y cuáles faltan, con la instrucción de cómo corregir cada una.</p>
+          <h3>El resultado</h3>
+          <p>Una señal es algo concreto que está o no está en tu sitio, como el enlace a tu política de privacidad o el aviso de cookies. Te decimos cuáles encontramos, y cada una que falte viene con la instrucción de cómo arreglarla. Lo que no alcanzamos a ver lo decimos, en vez de darlo por bueno.</p>
         </div>
       </div>
 
       <div class="comparacion">
         <div class="comp-card comp-si reveal">
-          <h3>Lo que sí revisa</h3>
+          <h3>Lo que sí revisamos</h3>
           <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"></rect><line x1="8" y1="8" x2="16" y2="8"></line><line x1="8" y1="12" x2="16" y2="12"></line><line x1="8" y1="16" x2="13" y2="16"></line></svg> Si hay una política de privacidad enlazada desde tu portada y si esa página responde.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg> Si el sitio sirve por HTTPS y declara el idioma.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg> Si detectamos un gestor de consentimiento de un proveedor conocido.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"></path></svg> Qué proveedores externos (Analytics, Meta Pixel, etc.) detectamos en tu portada.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"></rect><line x1="8" y1="8" x2="16" y2="8"></line><line x1="8" y1="12" x2="16" y2="12"></line><line x1="8" y1="16" x2="13" y2="16"></line></svg> Si desde tu página principal hay un enlace a tu política de privacidad, y si ese enlace lleva a algún lado.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg> Si tu sitio abre por https, el candado del navegador, y en qué idioma dice estar escrito.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg> Si pides permiso antes de cargar rastreadores. Un rastreador le manda datos de tus visitantes a Google o a Meta, y ese permiso se pide con el aviso de cookies.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 12l3 3 5-6"></path></svg> Si algún formulario de tu página principal trae la casilla de "acepto" ya marcada.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"></path></svg> Qué servicios externos aparecen cargando en tu página, como Google Analytics o el Pixel de Meta.</li>
           </ul>
         </div>
         <div class="comp-card comp-no reveal">
-          <h3>Lo que no revisa</h3>
+          <h3>Lo que no vemos</h3>
           <p>
-            Si un rastreador dispara antes o después del consentimiento (requiere un navegador
-            real, no solo el HTML), formularios embebidos de terceros, o los que arma un
-            framework de JavaScript. Cuando no podemos verificar algo, lo decimos. Nunca
-            asumimos que está bien.
+            Qué dice tu política de privacidad. Vemos que existe y que abre, no lo que hay
+            adentro. Tampoco vemos si los rastreadores se disparan antes o después de que la
+            persona dé permiso, porque para eso hay que abrir tu sitio en un navegador y mirarlo
+            andando. Y hay formularios que se nos escapan: los que vienen de otro servicio, y
+            los que aparecen recién cuando la página terminó de cargar.
           </p>
         </div>
       </div>
 
       <div class="aviso-legal reveal">
-        <strong>Esto no es asesoría legal.</strong> Este chequeo describe señales técnicas
-        presentes o ausentes en tu sitio. Nunca certifica que tu empresa "cumple" con la ley.
-        El contenido de tu política de privacidad y la evaluación de tu caso corresponden a un
-        abogado.
+        <strong>Esto no es asesoría legal.</strong> Te decimos qué señales técnicas están en tu
+        sitio y cuáles no. Si tu empresa cumple o no con la ley lo dice un abogado mirando tu
+        caso, no un chequeo automático mirando tu página.
       </div>
     </div>
   </section>
 
-  <!-- Acá iba la franja "36 → 73, la puntuación real de spindlelab.cl". Se quitó el
-       22-sep por decisión de Ramón: como prueba social no funciona, porque el visitante
-       no sabe quién es SpindleLab, así que el antes y el después no le dice nada. El
-       caso sigue sirviendo en la llamada, donde sí hay con quién relacionarlo. -->
-
   <section class="referencia">
     <div class="envoltura">
-      <p class="etiqueta-seccion reveal">Texto oficial</p>
-      <h2 class="titulo-seccion reveal">Los 12 puntos del Art. 14 ter</h2>
+      <p class="etiqueta-seccion reveal">Lo que pide la ley</p>
+      <h2 class="titulo-seccion reveal">Las 12 cosas que tu sitio tiene que dejar publicadas</h2>
       <p class="intro reveal">
-        Es lo que la ley exige tener públicamente disponible en tu sitio. No es un resumen de
-        blog: son las letras del artículo, una por una.
+        Las enumera el artículo 14 ter de la ley. Acá van escritas como se hablan. El texto
+        oficial está en la
+        <a href="https://www.bcn.cl/leychile/navegar?idNorma=1209272" rel="noopener">Ley 21.719, en la Biblioteca del Congreso</a>.
       </p>
       <div class="art14-grid">
-        <div class="art14-item reveal"><span class="art14-num">01</span><p><strong>Política de tratamiento</strong>Con fecha y versión de la misma.</p></div>
-        <div class="art14-item reveal"><span class="art14-num">02</span><p><strong>El responsable</strong>Su identificación y la de su representante legal.</p></div>
-        <div class="art14-item reveal"><span class="art14-num">03</span><p><strong>Medio de contacto</strong>Para que un titular presente solicitudes.</p></div>
-        <div class="art14-item reveal"><span class="art14-num">04</span><p><strong>Categorías de datos</strong>Destinatarios, finalidades y base de legitimidad.</p></div>
-        <div class="art14-item reveal"><span class="art14-num">05</span><p><strong>Medidas de seguridad</strong>Adoptadas para proteger los datos.</p></div>
-        <div class="art14-item reveal"><span class="art14-num">06</span><p><strong>Los cinco derechos</strong>Acceso, rectificación, supresión, oposición y portabilidad, y cómo ejercerlos.</p></div>
-        <div class="art14-item reveal"><span class="art14-num">07</span><p><strong>Recurrir ante la Agencia</strong>Si el responsable no responde a tiempo.</p></div>
-        <div class="art14-item reveal"><span class="art14-num">08</span><p><strong>Transferencias internacionales</strong>Y su nivel de protección.</p></div>
-        <div class="art14-item reveal"><span class="art14-num">09</span><p><strong>Plazo de conservación</strong>De los datos personales.</p></div>
-        <div class="art14-item reveal"><span class="art14-num">10</span><p><strong>Origen de los datos</strong>Si no provienen directamente del titular.</p></div>
-        <div class="art14-item reveal"><span class="art14-num">11</span><p><strong>Revocar el consentimiento</strong>El derecho a hacerlo en cualquier momento.</p></div>
-        <div class="art14-item reveal"><span class="art14-num">12</span><p><strong>Decisiones automatizadas</strong>Su existencia, si las hay.</p></div>
+        <div class="art14-item reveal"><span class="art14-num">01</span><p><strong>Tu política de datos</strong>Publicada, con su fecha y su número de versión.</p></div>
+        <div class="art14-item reveal"><span class="art14-num">02</span><p><strong>Quién responde</strong>Qué empresa responde y quién la representa.</p></div>
+        <div class="art14-item reveal"><span class="art14-num">03</span><p><strong>A quién escribirle</strong>Un correo o formulario para que la persona pida lo suyo.</p></div>
+        <div class="art14-item reveal"><span class="art14-num">04</span><p><strong>Qué datos pides y para qué</strong>Qué recoges, con qué fin, con qué permiso y a quién se los pasas.</p></div>
+        <div class="art14-item reveal"><span class="art14-num">05</span><p><strong>Cómo los cuidas</strong>Qué medidas tomas para que no se filtren.</p></div>
+        <div class="art14-item reveal"><span class="art14-num">06</span><p><strong>Los cinco derechos</strong>Ver sus datos, corregirlos, borrarlos, oponerse a que los uses y llevárselos. Y cómo pedirlo.</p></div>
+        <div class="art14-item reveal"><span class="art14-num">07</span><p><strong>Que puede reclamar</strong>Ante la Agencia de Protección de Datos Personales.</p></div>
+        <div class="art14-item reveal"><span class="art14-num">08</span><p><strong>Si los mandas fuera de Chile</strong>A qué países y con qué nivel de protección.</p></div>
+        <div class="art14-item reveal"><span class="art14-num">09</span><p><strong>Cuánto los guardas</strong>Por cuánto tiempo conservas cada dato.</p></div>
+        <div class="art14-item reveal"><span class="art14-num">10</span><p><strong>De dónde salieron</strong>El origen de los datos que tienes.</p></div>
+        <div class="art14-item reveal"><span class="art14-num">11</span><p><strong>Que puede arrepentirse</strong>Retirar el permiso cuando quiera, y cómo hacerlo.</p></div>
+        <div class="art14-item reveal"><span class="art14-num">12</span><p><strong>Si decide una máquina</strong>Si algo automático decide sobre una persona, hay que decirlo.</p></div>
       </div>
     </div>
   </section>
@@ -1054,7 +1274,7 @@
     <div class="envoltura">
       <div class="ayuda-caja reveal">
         <h2>¿Tu chequeo salió con señales pendientes?</h2>
-        <p>Puedo ayudarte a corregirlas: política de privacidad, consentimiento, lo que pide el Art. 14 ter. Y a que se mantengan corregidas, porque un sitio cambia y las señales se pueden volver a romper.</p>
+        <p>Las corregimos nosotros. El aviso de cookies, el permiso antes de pedir datos, y dejar publicado lo que pide el artículo 14 ter. Y si quieres, las revisamos cada cierto tiempo, porque un sitio cambia y se vuelven a romper.</p>
         <div class="planes-grid">
           <div class="kit-precio kit-principal">
             <svg class="sello-mini kit-sello" viewBox="0 0 100 100" aria-hidden="true">
@@ -1065,71 +1285,84 @@
             <p class="kit-etiqueta">Kit de implementación</p>
             <p class="kit-monto">Desde $149.000 <span>+ IVA · una vez</span></p>
             <ul class="kit-incluye">
-              <li>Instalación y configuración de un gestor de consentimiento</li>
-              <li>Ajustes técnicos según lo que tu chequeo detecte</li>
+              <li>Instalamos el aviso de cookies (el gestor de consentimiento) que pide permiso antes de cargar rastreadores</li>
+              <li>Arreglamos las señales que tu chequeo dejó pendientes</li>
               <li>Plantilla de política de privacidad, para que la revise tu abogado</li>
-              <li>Verificación final con el mismo chequeo</li>
+              <li>Volvemos a correr el chequeo al final, para que veas el cambio</li>
             </ul>
-            <p class="kit-nota">No incluye asesoría legal. El texto final y la evaluación de tu caso son de abogado. El valor se ajusta según lo que tu chequeo muestre.</p>
+            <p class="kit-nota">El valor sube si tu sitio tiene más de lo que el chequeo alcanzó a ver, y te pasamos el monto exacto antes de empezar. No incluye la revisión legal de tu caso, que es de abogado.</p>
           </div>
           <div class="kit-precio kit-secundario">
-            <p class="kit-etiqueta">Suscripción de vigilancia</p>
+            <p class="kit-etiqueta">Revisión trimestral</p>
             <p class="kit-monto">Desde $39.000 <span>+ IVA · al mes</span></p>
             <ul class="kit-incluye">
-              <li>Re-chequeo trimestral automático de tu sitio</li>
-              <li>Alerta si tu puntaje baja: algo se rompió o se agregó sin avisar</li>
-              <li>Registro de actividades de tratamiento actualizado</li>
+              <li>Revisamos tu sitio al cierre de cada trimestre y te mandamos el informe</li>
+              <li>Si una señal se rompió desde la revisión anterior, te avisamos y te decimos cómo corregirla</li>
             </ul>
-            <p class="kit-nota">Mínimo 2 trimestres. No reemplaza el kit. Lo sostiene en el tiempo, después de instalado.</p>
-          </div>
-        </div>
-        <div class="botones-ayuda">
-          <a class="boton-ayuda" href="#pedir" data-pedir="kit" data-desde="Botón del kit">Quiero el kit</a>
-          <a class="boton-ayuda boton-secundario" href="#pedir" data-pedir="suscripcion" data-desde="Botón de la suscripción">Quiero la suscripción</a>
-        </div>
-
-        <!-- Los tres botones de compra eran enlaces mailto:. Quien usa correo web hace clic y
-             no pasa nada: ni error, ni aviso, y el pedido se pierde sin que nadie se entere.
-             Ahora llevan a este formulario, que usa el mismo servicio y la misma clave que el
-             de spindlelab.cl/contacto/, así que el pedido llega al mismo correo. Sin
-             JavaScript igual funciona: los botones bajan hasta acá y el formulario se envía
-             como un formulario común. -->
-        <form id="pedir" class="pedir" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="f3a309f5-cbe6-4cf1-b77f-cfd0ee92685f">
-          <input type="hidden" name="subject" value="Pedido desde Verifica y Cumple">
-          <input type="hidden" name="from_name" value="Verifica y Cumple">
-          <input type="checkbox" name="botcheck" class="pedir-trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <input type="hidden" name="Puntaje del chequeo" value="">
-          <input type="hidden" name="Desde" value="">
-
-          <h3 class="pedir-titulo">Pídelo acá</h3>
-          <p class="pedir-intro">Esto sí te pide datos, y solo para responderte: te escribimos para confirmar el alcance y el valor para tu sitio.</p>
-          <p class="pedir-contexto" hidden></p>
-
-          <!-- Los nombres de campo van sin tildes ni eñes: Web3Forms los rompe (medido con el
-               envío de prueba: "Qué quiere" llegó como "QuÃ© quiere" en el correo). Los
-               valores sí pueden llevarlas. -->
-          <fieldset class="pedir-que">
-            <legend>Qué quieres</legend>
-            <label><input type="radio" name="Pedido" value="Kit de implementación" checked> Kit de implementación</label>
-            <label><input type="radio" name="Pedido" value="Suscripción de vigilancia"> Suscripción de vigilancia</label>
-            <label><input type="radio" name="Pedido" value="Los dos"> Los dos</label>
-          </fieldset>
-
-          <div class="pedir-campos">
-            <label>Nombre <input type="text" name="Nombre" required autocomplete="name"></label>
-            <label>Correo <input type="email" name="Email" required autocomplete="email"></label>
-            <label class="pedir-ancho">Tu sitio <input type="text" name="Sitio web" required placeholder="tuempresa.cl" autocomplete="url"></label>
-            <label class="pedir-ancho"><span>Algo que quieras contarnos <span class="pedir-opcional">(opcional)</span></span> <textarea name="Mensaje" rows="3"></textarea></label>
+            <p class="kit-nota">El mínimo son 2 trimestres, o sea 6 meses. Va después del kit, no en vez del kit.</p>
           </div>
 
-          <label class="pedir-consiento"><input type="checkbox" name="Consiento" value="Sí" required> <span>Acepto que estos datos se usen para responder mi pedido, según la <a href="/privacidad/">política de privacidad</a>.</span></label>
+          <!-- El formulario es la tercera columna de los planes. Antes había dos botones
+               ("Quiero el kit" y "Quiero la suscripción") entre las tarjetas y el formulario,
+               y se sacaron porque repetían lo que ya elige el formulario. Los botones de
+               compra fueron primero enlaces mailto:, y quien usa correo web hacía clic y no
+               pasaba nada. Este formulario usa el mismo servicio y la misma clave que el de
+               spindlelab.cl/contacto/, así que llega al mismo correo. Lo que todavía lleva
+               hasta acá (el botón del resultado, el de revisión a mano cuando el chequeo
+               falla) marca la opción y trae el dominio y el puntaje; sin JavaScript igual
+               baja hasta acá y se envía como un formulario común. El aviso de "Listo" vive en
+               la misma celda, para que aparezca donde estaba el formulario. -->
+          <div class="planes-pedido">
+            <form id="pedir" class="pedir" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="f3a309f5-cbe6-4cf1-b77f-cfd0ee92685f">
+              <input type="hidden" name="subject" value="Pedido desde Verifica y Cumple">
+              <input type="hidden" name="from_name" value="Verifica y Cumple">
+              <input type="checkbox" name="botcheck" class="pedir-trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <input type="hidden" name="Puntaje del chequeo" value="">
+              <input type="hidden" name="Desde" value="">
 
-          <button type="submit" class="boton-ayuda">Enviar pedido</button>
-          <p class="pedir-estado" role="status"></p>
-        </form>
-        <div id="pedir-listo" class="pedir-listo" tabindex="-1" hidden>
-          <p><strong>Listo, llegó.</strong> Te escribimos a <span class="pedir-correo"></span> para confirmar el alcance y el valor para tu sitio.</p>
+              <h3 class="pedir-titulo">Pídelo acá</h3>
+              <p class="pedir-intro">Esto sí te pide datos, y solo para responderte. Si es un pedido, te escribimos con lo que haríamos y cuánto cuesta. Si solo quieres preguntar, marca la última opción.</p>
+              <p class="pedir-contexto" hidden></p>
+
+              <!-- Los nombres de campo van sin tildes ni eñes: Web3Forms los rompe (medido con el
+                   envío de prueba: "Qué quiere" llegó como "QuÃ© quiere" en el correo). Los
+                   valores sí pueden llevarlas. -->
+              <!-- Ninguna opción viene marcada: con el kit premarcado, preguntar empezaba
+                   pareciendo comprar. Por eso van todas con `required`, que es lo que antes
+                   hacía el `checked`. Sin él, quien no elige nada envía igual y el correo
+                   llega sin el campo "Pedido" y con el asunto partido ("Pedido desde Verifica
+                   y Cumple:  · tuempresa.cl", medido). `required` en cada una y no solo en la
+                   primera, para que el lector de pantalla lo anuncie en todas. -->
+              <fieldset class="pedir-que">
+                <legend>Qué quieres</legend>
+                <label><input type="radio" name="Pedido" value="Kit de implementación" required> Kit de implementación</label>
+                <label><input type="radio" name="Pedido" value="Revisión trimestral" required> Revisión trimestral</label>
+                <label><input type="radio" name="Pedido" value="Los dos" required> Los dos</label>
+                <label><input type="radio" name="Pedido" value="Pregunta" required> Tengo una pregunta</label>
+              </fieldset>
+
+              <div class="pedir-campos">
+                <label>Nombre <input type="text" name="Nombre" required autocomplete="name"></label>
+                <label>Correo <input type="email" name="Email" required autocomplete="email"></label>
+                <label class="pedir-ancho">Tu sitio <input type="text" name="Sitio web" required placeholder="tuempresa.cl" autocomplete="url"></label>
+                <label class="pedir-ancho"><span>Algo que quieras contarnos <span class="pedir-opcional">(opcional)</span></span> <textarea name="Mensaje" rows="3"></textarea></label>
+              </div>
+
+              <label class="pedir-consiento"><input type="checkbox" name="Consiento" value="Sí" required> <span>Acepto que estos datos se usen para responder mi pedido o mi pregunta, según la <a href="/privacidad/">política de privacidad</a>.</span></label>
+
+              <button type="submit" class="boton-ayuda">Enviar</button>
+              <p class="pedir-estado" role="status"></p>
+            </form>
+            <!-- Con la tarjeta en la fila de planes, el "Listo" se queda a la vista, así que
+                 no puede ser un callejón sin salida: el botón vuelve a abrir el formulario, ya
+                 limpio, para quien quiere preguntar algo más después de pedir. -->
+            <div id="pedir-listo" class="pedir-listo" tabindex="-1" hidden>
+              <h3 class="pedir-titulo">Listo, llegó</h3>
+              <p class="pedir-listo-texto">Te escribimos a <span class="pedir-correo"></span> con lo que haríamos en tu sitio y cuánto cuesta.</p>
+              <button type="button" class="boton-ayuda boton-secundario pedir-otro">Enviar otro mensaje</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1144,42 +1377,152 @@
       <path class="sello-check" d="M32 52 L44 64 L70 36"></path>
     </svg>
     <div>
-      <p>Verifica y Cumple es un servicio de <a href="https://spindlelab.cl">SpindleLab</a>. Hacemos SEO técnico y visibilidad en motores de IA.</p>
+      <p>Verifica y Cumple es un servicio de <a href="https://spindlelab.cl">SpindleLab</a>. Arreglamos la parte técnica de los sitios web.</p>
+      <!-- Envuelto para Cloudflare: la zona de spindlelab.cl tiene activa la ofuscación de correos de
+           Cloudflare, que cambia la dirección por "[email protected]" y un script. Sin
+           JavaScript, o en un lector que no lo ejecute, el medio de contacto desaparecía. -->
+      <p>SpindleLab SpA · RUT 78.474.925-8 · <!--email_off--><a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a><!--/email_off--></p>
       <p>Este chequeo no almacena los dominios que revisas ni requiere registro. <a href="/privacidad/">Política de privacidad</a>.</p>
     </div>
   </div>
 </footer>
 
+<!-- El script también escribe el correo (en el aviso de error y cuando falla el envío).
+     Cloudflare no debería tocar el código de un script, pero si reescribiera el correo
+     dentro de un texto de JavaScript rompería el código entero, así que va envuelto igual. -->
+<!--email_off-->
 <script>
 (function () {
   const form = document.getElementById('form-chequeo');
   const input = document.getElementById('dominio');
   const boton = document.getElementById('boton-chequeo');
   const resultado = document.getElementById('resultado');
+  const avisoEspera = document.getElementById('estado-chequeo');
+  const header = document.querySelector('header.sitio');
   const CIRCUNFERENCIA = 2 * Math.PI * 52;
+  // El color del anillo sale de los estados, no solo del número: con los pesos que manda la
+  // API, una señal pendiente chica (como la casilla) puede dejar el puntaje sobre 80. Este
+  // umbral queda de red para una respuesta sin estados (una versión anterior de la API).
+  const UMBRAL_BIEN = 80;
+  const CONTACTO = 'hola@spindlelab.cl';
 
   function escapar(s) {
     const d = document.createElement('div');
     d.textContent = s == null ? '' : String(s);
     return d.innerHTML;
   }
-
-  const menosMovimiento = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Lleva el foco al resultado y lo deja a la vista. Se llama tanto con informe como con
-  // error: en los dos casos hay algo que leer, y estaba quedando fuera de pantalla.
-  function mostrar() {
-    resultado.classList.add('visible');
-    resultado.setAttribute('aria-busy', 'false');
-    resultado.focus({ preventScroll: true });
-    resultado.scrollIntoView({ behavior: menosMovimiento ? 'auto' : 'smooth', block: 'nearest' });
+  // Para valores que van dentro de un atributo entre comillas dobles.
+  function attr(x) { return escapar(x).replace(/"/g, '&quot;'); }
+  function plural(n, uno, varios) { return n + ' ' + (n === 1 ? uno : varios); }
+  // Enumera títulos que vienen de la API ("A", "A y B", "A, B y C"), cada uno escapado y en
+  // negrita. Se usa para nombrar lo que sí pudimos confirmar cuando no hay puntaje.
+  function listaTitulos(nombres) {
+    const l = nombres.map(function (n) { return '<strong>' + escapar(n) + '</strong>'; });
+    if (l.length < 2) return l.join('');
+    return l.slice(0, -1).join(', ') + ' y ' + l[l.length - 1];
   }
 
-  function renderError(mensaje, codigo) {
-    let html = '<div class="error-caja"><p>' + escapar(mensaje) + '</p>';
-    if (codigo) html += '<p class="error-codigo">Código de respuesta de tu sitio: ' + escapar(codigo) + '</p>';
+  const menosMovimiento = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const comportamiento = menosMovimiento ? 'auto' : 'smooth';
+
+  // El margen que deja el header fijo afuera (--alto-header) se toma del header real: en
+  // móvil se parte en dos líneas y su alto depende de la fuente del sistema. Se vuelve a
+  // medir si cambia, por ejemplo al girar el teléfono.
+  function medirHeader() {
+    if (header) document.documentElement.style.setProperty('--alto-header', header.offsetHeight + 'px');
+  }
+  medirHeader();
+  if (header && 'ResizeObserver' in window) new ResizeObserver(medirHeader).observe(header);
+  else window.addEventListener('resize', medirHeader);
+
+  // "Revisar mi sitio gratis" del hero: baja hasta el formulario y deja el cursor en el campo.
+  // Sin JavaScript el enlace a #form-chequeo igual baja. El foco se pide dentro del mismo
+  // toque y sin esperar al scroll, porque en iPhone el teclado solo se abre así.
+  document.querySelectorAll('[data-ir-chequeo]').forEach(function (a) {
+    a.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      form.scrollIntoView({ behavior: comportamiento, block: 'start' });
+      input.focus({ preventScroll: true });
+    });
+  });
+
+  // Los tres estados de una señal. El signo es decoración (aria-hidden): el estado se lee
+  // en el texto chico que va sobre el título, que también ven los que no usan lector.
+  const ESTADOS = {
+    ok: { signo: '✓', texto: 'En orden' },
+    pendiente: { signo: '!', texto: 'Pendiente' },
+    'sin-confirmar': { signo: '?', texto: 'No lo pudimos ver' },
+  };
+  // Una respuesta sin "estado" (una versión anterior de la API) solo trae ok verdadero o
+  // falso, y ahí el tercer estado no existe.
+  function estadoDe(item) {
+    return ESTADOS[item.estado] ? item.estado : (item.ok ? 'ok' : 'pendiente');
+  }
+
+  // Botón que lleva al formulario de pedido con el contexto del chequeo. El formulario lo
+  // atiende el script de más abajo, por delegación.
+  function botonPedir(tipo, texto, dominio, puntaje, desde) {
+    return '<a class="boton-ayuda" href="#pedir" data-pedir="' + tipo + '" data-desde="' + attr(desde) +
+      '" data-dominio="' + attr(dominio) + '" data-puntaje="' + attr(puntaje == null ? '' : puntaje) + '">' +
+      escapar(texto) + '</a>';
+  }
+
+  // Lleva el resultado a la vista. El informe sube hasta quedar bajo el header (con el
+  // scroll-margin-top de #resultado), para que lo primero que se vea sea el puntaje: con
+  // 'nearest' quedaba escondido justo detrás del header fijo. Un aviso de error se muestra
+  // entero sin mover más de la cuenta, y si el error es de lo que se escribió, el foco
+  // vuelve al campo, que es lo que hay que corregir.
+  function mostrar(modo) {
+    resultado.classList.add('visible');
+    resultado.setAttribute('aria-busy', 'false');
+    if (modo === 'entrada') {
+      input.focus({ preventScroll: true });
+      resultado.scrollIntoView({ behavior: comportamiento, block: 'nearest' });
+      return;
+    }
+    resultado.focus({ preventScroll: true });
+    resultado.scrollIntoView({ behavior: comportamiento, block: modo === 'informe' ? 'start' : 'nearest' });
+  }
+
+  // De quién es la falla lo dice la API en `tipo`, y lo dice siempre: las seis respuestas de
+  // error de chequeo.js lo traen, y la página y la función se publican juntas, así que no hay
+  // forma de que una hable con la otra vieja. Acá hubo una lista de mensajes que adivinaba el
+  // tipo cuando `tipo` faltaba; nunca corrió, y quedó nombrando dos mensajes que la API ya no
+  // emite. Si alguna vez hubiera corrido, cuatro de las siete erratas de tipeo de hoy habrían
+  // salido como falla del sitio, con la oferta de revisarlo a mano y su precio. El único caso
+  // sin `tipo` que queda es que no lleguemos a hablar con la API (el catch de abajo, que ya
+  // manda 'sitio'), y ahí lo honesto es no decirle a nadie que escribió mal.
+  function tipoDeError(data) {
+    return data && data.tipo === 'entrada' ? 'entrada' : 'sitio';
+  }
+
+  function renderError(data, dominio) {
+    const tipo = tipoDeError(data);
+    const mensaje = (data && typeof data.error === 'string' && data.error) || 'No pudimos revisar ese dominio.';
+    let html = '<div class="error-caja" id="error-chequeo"><p>' + escapar(mensaje) + '</p>';
+    // Si el problema es el sitio y no lo que escribiste, alguien lo puede mirar a mano. El
+    // texto lo dice con todas sus letras: una revisión a mano toma horas y tiene precio. No
+    // basta con no decir "gratis", porque esto aparece en una página que ofrece un chequeo
+    // gratuito y se leía como parte de lo mismo.
+    if (tipo === 'sitio') {
+      html += '<p class="error-mano">Lo podemos mirar a mano. Antes de hacer nada, te contamos cómo lo haríamos y cuánto cuesta.</p>';
+      html += '<p class="error-acciones">' +
+        botonPedir('pregunta', 'Pídenos revisarlo a mano', dominio, null, 'Error del chequeo') +
+        '<a href="mailto:' + CONTACTO + '?subject=' + attr(encodeURIComponent('Revisión a mano: ' + dominio)) + '">o escríbenos a ' + CONTACTO + '</a>' +
+        '</p>';
+    }
+    // El código solo existe cuando es la respuesta real del servidor del sitio. Va al final
+    // y chico: es el dato que sirve si nos escribes, no el mensaje.
+    const codigo = data && data.codigo != null ? Number(data.codigo) : NaN;
+    if (Number.isInteger(codigo) && codigo >= 100 && codigo <= 599) {
+      html += '<p class="error-codigo">Código de respuesta de tu sitio: ' + codigo + '</p>';
+    }
     resultado.innerHTML = html + '</div>';
-    mostrar();
+    if (tipo === 'entrada') {
+      input.setAttribute('aria-invalid', 'true');
+      input.setAttribute('aria-describedby', 'error-chequeo');
+    }
+    mostrar(tipo === 'entrada' ? 'entrada' : 'error');
   }
 
   // aria-hidden porque es decoración: quien usa lector de pantalla ya recibió el aviso de
@@ -1205,64 +1548,197 @@
     resultado.classList.add('visible');
   }
 
+  function renderItems(items) {
+    let html = '<ul class="items">';
+    for (const item of items) {
+      const estado = estadoDe(item);
+      const e = ESTADOS[estado];
+      html += '<li>';
+      html += '<span class="marca-estado ' + estado + '" aria-hidden="true">' + e.signo + '</span>';
+      html += '<span class="item-texto">';
+      html += '<span class="item-estado ' + estado + '">' + e.texto + '</span>';
+      html += '<strong>' + escapar(item.titulo) + '</strong>';
+      if (item.detalle) html += '<span class="detalle">' + escapar(item.detalle) + '</span>';
+      if (estado !== 'ok' && item.arreglo) html += '<span class="arreglo">' + escapar(item.arreglo) + '</span>';
+      html += '</span></li>';
+    }
+    return html + '</ul>';
+  }
+
+  // Todo lo que se muestra (bloques, títulos, detalle) viene de la API; acá solo se dibuja.
+  // Así un cambio de redacción o una señal nueva no obliga a tocar la portada.
   function renderResultado(data) {
+    const items = Array.isArray(data.items) ? data.items : [];
+    const bloques = Array.isArray(data.bloques) ? data.bloques : [];
+    const pendientes = items.filter(function (i) { return estadoDe(i) === 'pendiente'; }).length;
+    const sinConfirmar = items.filter(function (i) { return estadoDe(i) === 'sin-confirmar'; }).length;
+    // Lo que sí pudimos mirar desde afuera: toda señal que no quedó "sin confirmar", esté
+    // bien o pendiente. Se nombra cuando no hay puntaje, que es justo cuando el informe
+    // tiene que decir de qué tamaño fue lo que alcanzamos a ver.
+    const confirmados = items
+      .filter(function (i) { return estadoDe(i) !== 'sin-confirmar'; })
+      .map(function (i) { return i.titulo; })
+      .filter(function (t) { return typeof t === 'string' && t; });
+    const puntaje = typeof data.puntaje === 'number' && isFinite(data.puntaje)
+      ? Math.max(0, Math.min(100, Math.round(data.puntaje))) : null;
+    const dominio = data.dominio || input.value.trim();
+    const revisado = data.revisado || dominio;
     let html = '';
 
-    const offset = CIRCUNFERENCIA * (1 - Math.max(0, Math.min(100, data.puntaje)) / 100);
+    // --- El puntaje ---
+    // Con algo pendiente, el color de lo pendiente. Sin nada pendiente pero con señales que no
+    // pudimos confirmar, el tono neutro: ese número sale de menos señales y en verde se leía
+    // como "cumple". El verde queda para cuando todo lo que miramos salió bien.
+    let claseAnillo = '';
+    if (puntaje === null) claseAnillo = ' sin-puntaje';
+    else if (pendientes > 0 || puntaje < UMBRAL_BIEN) claseAnillo = ' bajo';
+    else if (sinConfirmar > 0) claseAnillo = ' parcial';
+    const offset = CIRCUNFERENCIA * (1 - (puntaje || 0) / 100);
     html += '<div class="puntaje-caja">';
-    html += '<div class="anillo-wrap"><svg viewBox="0 0 120 120">' +
+    html += '<div class="anillo-wrap' + claseAnillo + '"><svg viewBox="0 0 120 120" aria-hidden="true">' +
             '<circle class="anillo-fondo" cx="60" cy="60" r="52"></circle>' +
             '<circle class="anillo-progreso" cx="60" cy="60" r="52" style="stroke-dasharray:' + CIRCUNFERENCIA + ';stroke-dashoffset:' + offset + '"></circle>' +
-            '</svg><div class="anillo-numero">' + escapar(data.puntaje) + '</div></div>';
-    html += '<div class="puntaje-texto">de 100 en las señales técnicas que revisamos para <strong>' + escapar(data.dominio) + '</strong>. No es una nota de cumplimiento legal. Mira más abajo qué no revisamos.</div>';
+            '</svg><div class="anillo-numero"' + (puntaje === null ? ' aria-hidden="true">?' : '>' + puntaje) + '</div></div>';
+    html += '<div class="puntaje-texto">';
+    if (puntaje === null) {
+      // La API deja de mandar número cuando pudo confirmar menos de la mitad del peso: un
+      // número sacado de una o dos señales se lee como si fuera de todas. El texto de antes
+      // decía que no se había podido confirmar ninguna, y era falso apenas una sí se
+      // confirmaba (el HTTPS, por ejemplo). Ahora se nombra lo que sí vimos, sin culpar al
+      // sitio: lo que faltó fue nuestro alcance desde afuera.
+      // "Alcanzamos a revisar" y no "confirmamos": lo que sí pudimos mirar puede estar
+      // pendiente, y "confirmamos X" se leería como que X salió bien. El estado de cada una
+      // va en su fila, abajo.
+      if (confirmados.length === 1) {
+        html += '<p>Esta vez no hay puntaje. De tu sitio alcanzamos a ver muy poco, ' +
+          'y lo único que pudimos revisar fue ' + listaTitulos(confirmados) + '.';
+      } else if (confirmados.length > 1) {
+        html += '<p>Esta vez no hay puntaje. De tu sitio alcanzamos a ver muy poco, ' +
+          'y solo pudimos revisar ' + listaTitulos(confirmados) + '.';
+      } else {
+        html += '<p>Esta vez no hay puntaje. De tu sitio no alcanzamos a ver ninguna de las señales que revisa este chequeo.';
+      }
+      html += ' Abajo te explicamos, señal por señal, qué pasó con cada una.</p>';
+    } else if (sinConfirmar > 0) {
+      // Lo que no pudimos confirmar no suma ni resta, así que el número se dice sobre qué se
+      // calculó. Un 100 a secas, con una señal sin mirar, se leía como que no faltaba nada.
+      html += '<p>de 100, contando solo lo que alcanzamos a ver. ' +
+        (sinConfirmar === 1
+          ? 'Hay 1 señal que no pudimos mirar, así que no entra en ese número.'
+          : 'Hay ' + sinConfirmar + ' señales que no pudimos mirar, así que no entran en ese número.') +
+        ' Esto no dice si cumples la ley. Dice qué encontramos en tu sitio.</p>';
+    } else {
+      html += '<p>de 100 en las señales que revisamos. Cada una pesa distinto, así que una sola pendiente te puede bajar harto el número. Esto no dice si cumples la ley. Dice qué encontramos en tu sitio.</p>';
+    }
+    // La URL que leímos de verdad, después de las redirecciones: si escribiste x.cl y el
+    // sitio vive en www.x.cl, acá se ve.
+    html += '<p class="puntaje-revisado">Revisamos <strong>' + escapar(revisado) + '</strong></p>';
+    html += '</div></div>';
+
+    // --- La cuenta y el siguiente paso, justo bajo el puntaje ---
+    // "Ninguna señal pendiente" a secas solo cuando no quedó nada sin confirmar: con algo sin
+    // mirar, la frase dice sobre qué se afirma.
+    let cuenta;
+    if (puntaje === null) {
+      // Sin puntaje igual puede quedar algo pendiente: la API deja de mandar número cuando
+      // confirmó poco, no cuando confirmó bien. Si eso pendiente no se nombra acá, el botón
+      // de al lado ofrece el kit sin que se entienda por qué.
+      if (pendientes > 0) {
+        cuenta = plural(pendientes, 'señal pendiente', 'señales pendientes');
+        if (sinConfirmar > 0) cuenta += ' <span class="sin-cortar">· ' + sinConfirmar + ' que no pudimos ver</span>';
+      } else {
+        cuenta = plural(sinConfirmar, 'señal que no pudimos ver', 'señales que no pudimos ver');
+      }
+    } else {
+      if (pendientes > 0) cuenta = plural(pendientes, 'señal pendiente', 'señales pendientes');
+      else if (sinConfirmar > 0) cuenta = 'Nada pendiente en lo que vimos';
+      else cuenta = 'Ninguna señal pendiente';
+      // En teléfono la línea se parte: que no deje el número solo al final del primer renglón.
+      if (sinConfirmar > 0) cuenta += ' <span class="sin-cortar">· ' + sinConfirmar + ' que no pudimos ver</span>';
+    }
+    html += '<div class="resumen-resultado"><p>' + cuenta + '</p>';
+    html += pendientes > 0
+      ? botonPedir('kit', 'Quiero el kit →', dominio, puntaje, 'Resultado del chequeo')
+      : botonPedir('pregunta', 'Pregúntanos', dominio, puntaje, 'Resultado del chequeo');
     html += '</div>';
 
-    for (const bloque of data.bloques) {
-      const items = data.items.filter((i) => i.bloque === bloque.id);
-      if (!items.length) continue;
+    // --- Las señales, por bloque y en el orden que manda la API ---
+    const conBloque = {};
+    for (const bloque of bloques) {
+      const suyos = items.filter(function (i) { return i.bloque === bloque.id; });
+      if (!suyos.length) continue;
+      conBloque[bloque.id] = true;
       html += '<div class="bloque">';
       html += '<h2>' + escapar(bloque.titulo) + '</h2>';
-      html += '<p class="sub-bloque">' + escapar(bloque.sub) + '</p>';
-      html += '<ul class="items">';
-      for (const item of items) {
-        html += '<li>';
-        html += '<span class="marca-estado ' + (item.ok ? 'ok' : 'pendiente') + '">' + (item.ok ? '✓' : '!') + '</span>';
-        html += '<span class="item-texto">';
-        html += '<strong>' + escapar(item.titulo) + '</strong>';
-        html += '<span class="detalle">' + escapar(item.detalle) + '</span>';
-        if (!item.ok && item.arreglo) {
-          html += '<span class="arreglo">' + escapar(item.arreglo) + '</span>';
-        }
-        html += '</span></li>';
-      }
-      html += '</ul></div>';
+      if (bloque.sub) html += '<p class="sub-bloque">' + escapar(bloque.sub) + '</p>';
+      html += renderItems(suyos) + '</div>';
     }
+    // Red de seguridad: una señal cuyo bloque no vino en la lista no se pierde en silencio.
+    const sueltos = items.filter(function (i) { return !conBloque[i.bloque]; });
+    if (sueltos.length) html += '<div class="bloque"><h2>Otras señales</h2>' + renderItems(sueltos) + '</div>';
 
-    if (data.informativos && data.informativos.length) {
+    if (Array.isArray(data.informativos) && data.informativos.length) {
       html += '<div class="informativos">';
-      html += '<h2>Lo que detectamos, sin puntuar</h2>';
-      html += '<p class="sub-bloque">Esto no suma ni resta del puntaje. No lo podemos verificar con certeza desde afuera, así que lo mostramos como información, no como nota.</p>';
+      html += '<h2>Además encontramos esto</h2>';
+      html += '<p class="sub-bloque">No entra en el puntaje, pero conviene que lo sepas.</p>';
       for (const info of data.informativos) {
         html += '<div class="item-info"><strong>' + escapar(info.titulo) + '</strong><p>' + escapar(info.detalle) + '</p></div>';
       }
       html += '</div>';
     }
 
-    const pendientes = data.items.filter(function (i) { return !i.ok; }).length;
+    // --- El cierre. Solo ofrece el kit si quedó algo pendiente: venderlo para corregir
+    // nada, o para "corregir" algo que no pudimos ver, era prometer de más. ---
+    html += '<div class="panel-resolucion">';
     if (pendientes > 0) {
-      html += '<div class="panel-resolucion">';
-      html += '<p class="kicker">Esto es lo que corrige el kit</p>';
-      html += '<p>Tu chequeo encontró <strong>' + pendientes + ' señal' + (pendientes === 1 ? '' : 'es') + ' pendiente' + (pendientes === 1 ? '' : 's') + '</strong> en <strong>' + escapar(data.dominio) + '</strong>. El kit de implementación corrige exactamente eso. <span class="monto">Desde $149.000 + IVA</span>, una vez.</p>';
-      // Ya no es un mailto: lleva al formulario y le pasa el dominio y el puntaje, para que el
-      // pedido llegue con el contexto del chequeo que lo motivó.
-      const attr = function (x) { return escapar(x).replace(/"/g, '&quot;'); };
-      html += '<a class="boton-ayuda" href="#pedir" data-pedir="kit" data-desde="Resultado del chequeo" data-dominio="' + attr(data.dominio) + '" data-puntaje="' + attr(data.puntaje) + '">Quiero el kit →</a>';
-      html += '</div>';
+      html += '<p class="kicker">Lo que hace el kit</p>';
+      html += '<p>Tu chequeo encontró <strong>' + plural(pendientes, 'señal pendiente', 'señales pendientes') + '</strong> en <strong>' + escapar(dominio) + '</strong>' +
+        (sinConfirmar > 0 ? ', y ' + sinConfirmar + ' que no pudimos ver' : '') +
+        '. El kit se hace cargo de la parte técnica. El texto final de tu política lo revisa tu abogado. <span class="monto">Desde $149.000 + IVA</span>, una vez.</p>';
+      html += botonPedir('kit', 'Quiero el kit →', dominio, puntaje, 'Resultado del chequeo');
+    } else {
+      // Sin pendientes no se vende nada. Con señales sin confirmar, el cierre no dice "sin
+      // señales pendientes" a secas, y la revisión a mano dice que tiene precio: toma horas,
+      // y en una página que regala el chequeo, callarlo se lee como que también es gratis.
+      let kicker, estadoFinal;
+      if (puntaje === null) {
+        // Acá no quedó nada pendiente, así que todo lo confirmado salió bien: se dice cuál
+        // fue, en vez de cerrar con un "no pudimos confirmar nada" que sería falso.
+        kicker = confirmados.length ? 'Vimos muy poco de tu sitio' : 'No pudimos ver nada de tu sitio';
+        const enDominio = 'En <strong>' + escapar(dominio) + '</strong> ';
+        if (confirmados.length === 1) {
+          estadoFinal = enDominio + 'lo único que pudimos revisar fue ' + listaTitulos(confirmados) +
+            ', y ahí no quedó nada pendiente. Lo demás no lo alcanzamos a ver, así que esta vez no hay puntaje.';
+        } else if (confirmados.length > 1) {
+          estadoFinal = enDominio + 'solo pudimos revisar ' + listaTitulos(confirmados) +
+            ', y ahí no quedó nada pendiente. Lo demás no lo alcanzamos a ver, así que esta vez no hay puntaje.';
+        } else {
+          estadoFinal = enDominio + 'no alcanzamos a ver ninguna de las señales que revisamos, así que esta vez no hay puntaje.';
+        }
+      } else if (sinConfirmar > 0) {
+        kicker = 'Nada pendiente en lo que vimos';
+        estadoFinal = 'En <strong>' + escapar(dominio) + '</strong> no quedó nada pendiente en lo que alcanzamos a ver. ' +
+          (sinConfirmar === 1 ? 'Hay 1 señal que no pudimos mirar.' : 'Hay ' + sinConfirmar + ' señales que no pudimos mirar.');
+      } else {
+        kicker = 'Sin señales pendientes';
+        estadoFinal = 'En <strong>' + escapar(dominio) + '</strong> no quedaron señales pendientes.';
+      }
+      html += '<p class="kicker">' + kicker + '</p>';
+      html += '<p>' + estadoFinal +
+        ' Este chequeo mira la parte técnica, y no lee lo que dice tu política. Eso lo revisa tu abogado. Si quieres que miremos a mano lo que el chequeo no alcanza a ver, escríbenos y te contamos cómo lo haríamos y cuánto cuesta.</p>';
+      html += botonPedir('pregunta', 'Pregúntanos', dominio, puntaje, 'Resultado del chequeo');
     }
+    html += '</div>';
 
     resultado.innerHTML = html;
-    mostrar();
+    mostrar('informe');
   }
+
+  // Si corriges el dominio después de un error de escritura, el campo deja de marcarse.
+  input.addEventListener('input', function () {
+    input.removeAttribute('aria-invalid');
+    input.removeAttribute('aria-describedby');
+  });
 
   form.addEventListener('submit', async function (ev) {
     ev.preventDefault();
@@ -1273,25 +1749,39 @@
     boton.textContent = 'Revisando…';
     resultado.classList.remove('visible');
     resultado.innerHTML = '';
+    avisoEspera.textContent = '';
+    input.removeAttribute('aria-invalid');
+    input.removeAttribute('aria-describedby');
 
     // Medido en producción, el chequeo tarda entre 0,1 y 0,9 s. Un esqueleto que aparece y
     // se va en 100 ms no informa: parpadea, y eso se ve peor que no poner nada. Por eso
     // entra recién si la espera pasa de un cuarto de segundo, que es cuando la persona
     // empieza a dudar de si su clic hizo algo.
     const esqueletoTardio = setTimeout(renderEsqueleto, 250);
+    // Pero un sitio lento, o uno que solo responde con www (el chequeo lo reintenta), puede
+    // tardar hasta unos 25 s. Pasado un segundo y medio ya estamos fuera de lo normal, así
+    // que ahí se dice qué pasa: a los 8 s de antes el aviso no alcanzaba a verlo nadie salvo
+    // en los casos lentos, y hasta entonces la pantalla no decía nada.
+    const esperaLarga = setTimeout(function () {
+      avisoEspera.textContent = 'Está tardando más de lo normal. Seguimos intentando.';
+    }, 1500);
 
     try {
-      const resp = await fetch('/api/chequeo?dominio=' + encodeURIComponent(dominio));
+      // no-store: el resultado es de ahora. Guardado en caché, un error de hace un minuto se
+      // repetía aunque el sitio ya respondiera.
+      const resp = await fetch('/api/chequeo?dominio=' + encodeURIComponent(dominio), { cache: 'no-store' });
       const data = await resp.json();
-      if (!data.ok) {
-        renderError(data.error || 'No pudimos revisar ese dominio.', data.codigo);
+      if (!data || data.ok !== true) {
+        renderError(data, dominio);
       } else {
         renderResultado(data);
       }
     } catch (err) {
-      renderError('No pudimos completar el chequeo. Inténtalo de nuevo.');
+      renderError({ ok: false, tipo: 'sitio', error: 'No pudimos completar el chequeo. Inténtalo de nuevo.' }, dominio);
     } finally {
       clearTimeout(esqueletoTardio);
+      clearTimeout(esperaLarga);
+      avisoEspera.textContent = '';
       boton.disabled = false;
       boton.textContent = 'Revisar mi sitio';
     }
@@ -1312,38 +1802,95 @@
   }
 })();
 
-// Pedir el kit o la suscripción. Los tres botones de compra llevan a #pedir; sin JavaScript
-// eso ya funciona (bajan hasta el formulario y se envía como uno común). Con JavaScript,
-// además se marca lo que se pidió, se trae el dominio y el puntaje si vienes del resultado
-// del chequeo, y se envía sin salir de la página.
+// Pedir el kit, la suscripción o hacer una pregunta. Lo que lleva a #pedir (el botón del
+// resultado, el de revisión a mano cuando el chequeo falla) funciona sin JavaScript: baja
+// hasta el formulario y se envía como uno común. Con JavaScript, además se marca la opción,
+// se trae el dominio y el puntaje si vienes de un chequeo, y se envía sin salir de la página.
 (function () {
   const form = document.getElementById('pedir');
   if (!form) return;
   const listo = document.getElementById('pedir-listo');
   const estado = form.querySelector('.pedir-estado');
   const contexto = form.querySelector('.pedir-contexto');
+  const titulo = form.querySelector('.pedir-titulo');
   const boton = form.querySelector('button[type=submit]');
+  const sitio = form.elements['Sitio web'];
   const menosMovimiento = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const QUE = { kit: 'Kit de implementación', suscripcion: 'Suscripción de vigilancia' };
+  // Los valores tienen que ser los mismos que los del radio de arriba: este mapa es lo que
+  // marca la opción cuando se llega desde un botón del resultado, y lo que arma el asunto.
+  const QUE = { kit: 'Kit de implementación', suscripcion: 'Revisión trimestral', pregunta: 'Pregunta' };
 
-  // Delegado en el documento: el botón del resultado se dibuja después, con innerHTML.
+  function elegido() { return (form.querySelector('input[name="Pedido"]:checked') || {}).value || ''; }
+  function esPregunta() { return elegido() === QUE.pregunta; }
+  // Una pregunta no es un pedido: el botón y el título lo dicen, para que nadie crea que
+  // está comprando algo al preguntar. Mientras no haya nada marcado, el botón dice solo
+  // "Enviar": las opciones ya no vienen premarcadas, así que dar por hecho un pedido antes
+  // de que la persona elija es volver a hacer que preguntar empiece pareciendo comprar.
+  function ajustarTextos() {
+    const que = elegido();
+    boton.textContent = !que ? 'Enviar' : (que === QUE.pregunta ? 'Enviar pregunta' : 'Enviar pedido');
+    if (titulo) titulo.textContent = esPregunta() ? 'Pregúntanos acá' : 'Pídelo acá';
+  }
+  form.addEventListener('change', function (ev) {
+    if (ev.target && ev.target.name === 'Pedido') ajustarTextos();
+  });
+
+  // form.reset() no toca los <input type=hidden>: para ellos, el valor actual ES el valor por
+  // defecto. Sin limpiarlos a mano, lo siguiente que se enviaba en la misma visita salía con
+  // el puntaje y el "Desde" del chequeo anterior, aunque fuera una pregunta sobre otro sitio.
+  function limpiarContexto() {
+    form.elements['Desde'].value = '';
+    form.elements['Puntaje del chequeo'].value = '';
+    contexto.textContent = '';
+    contexto.hidden = true;
+    delete sitio.dataset.auto;
+  }
+
+  // "Enviar otro mensaje", en la tarjeta de "Listo": vuelve el formulario, ya limpio.
+  const otro = listo.querySelector('.pedir-otro');
+  if (otro) {
+    otro.addEventListener('click', function () {
+      form.hidden = false;
+      listo.hidden = true;
+      ajustarTextos();
+      form.elements['Nombre'].focus();
+    });
+  }
+
+  // Delegado en el documento: los botones del resultado se dibujan después, con innerHTML.
   document.addEventListener('click', function (ev) {
     const a = ev.target.closest && ev.target.closest('[data-pedir]');
     if (!a) return;
     ev.preventDefault();
     const valor = QUE[a.getAttribute('data-pedir')] || QUE.kit;
     form.querySelectorAll('input[name="Pedido"]').forEach(function (r) { r.checked = r.value === valor; });
+    ajustarTextos();
     form.elements['Desde'].value = a.getAttribute('data-desde') || '';
     const dominio = a.getAttribute('data-dominio');
     const puntaje = a.getAttribute('data-puntaje');
     if (dominio) {
-      const sitio = form.elements['Sitio web'];
-      if (!sitio.value) sitio.value = dominio;
-      form.elements['Puntaje del chequeo'].value = puntaje + '/100';
-      contexto.textContent = 'Va con tu chequeo: ' + dominio + ', ' + puntaje + '/100.';
+      // El sitio se llena solo si está vacío o si lo llenamos nosotros antes; lo que la
+      // persona escribió a mano no se pisa.
+      if (!sitio.value || sitio.value === sitio.dataset.auto) {
+        sitio.value = dominio;
+        sitio.dataset.auto = dominio;
+      }
+      // Sin puntaje (el chequeo falló, o no hubo nada que puntuar) el campo va vacío: antes
+      // quedaba "null/100", o el puntaje de otro sitio revisado antes.
+      const hayPuntaje = puntaje !== null && puntaje !== '' && !isNaN(Number(puntaje));
+      form.elements['Puntaje del chequeo'].value = hayPuntaje ? puntaje + '/100' : '';
+      contexto.textContent = hayPuntaje
+        ? 'Va con tu chequeo de ' + dominio + ', ' + puntaje + '/100.'
+        : a.getAttribute('data-desde') === 'Error del chequeo'
+          ? 'Va con tu chequeo de ' + dominio + ', que no pudimos completar.'
+          : 'Va con tu chequeo de ' + dominio + '.';
       contexto.hidden = false;
+    } else {
+      // Sin dominio no hay chequeo del que hablar: que no quede el de un botón anterior.
+      form.elements['Puntaje del chequeo'].value = '';
+      contexto.hidden = true;
     }
-    // Si ya se había enviado un pedido en esta visita, se vuelve a mostrar el formulario.
+    // Si ya se había enviado algo en esta visita, se vuelve a mostrar el formulario.
     form.hidden = false;
     listo.hidden = true;
     form.scrollIntoView({ behavior: menosMovimiento ? 'auto' : 'smooth', block: 'start' });
@@ -1354,11 +1901,14 @@
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     if (!form.reportValidity()) return;
-    const que = (form.querySelector('input[name="Pedido"]:checked') || {}).value || '';
-    const sitio = form.elements['Sitio web'].value.trim();
+    const que = elegido();
+    const pregunta = que === QUE.pregunta;
+    const web = sitio.value.trim();
     const pts = form.elements['Puntaje del chequeo'].value;
-    // El asunto dice qué se pidió y de qué sitio, para reconocerlo en la bandeja sin abrirlo.
-    form.elements['subject'].value = 'Pedido desde Verifica y Cumple: ' + que + ' · ' + sitio + (pts ? ' (' + pts + ')' : '');
+    // El asunto dice qué es y de qué sitio, para reconocerlo en la bandeja sin abrirlo.
+    form.elements['subject'].value = pregunta
+      ? 'Pregunta desde Verifica y Cumple · ' + web + (pts ? ' (' + pts + ')' : '')
+      : 'Pedido desde Verifica y Cumple: ' + que + ' · ' + web + (pts ? ' (' + pts + ')' : '');
     boton.disabled = true;
     boton.textContent = 'Enviando…';
     estado.textContent = '';
@@ -1366,12 +1916,20 @@
       .then(function (r) { return r.json(); })
       .then(function (data) {
         if (!data || !data.success) throw new Error((data && data.message) || 'error');
-        listo.querySelector('.pedir-correo').textContent = form.elements['Email'].value.trim();
+        const correo = form.elements['Email'].value.trim();
+        const texto = listo.querySelector('.pedir-listo-texto');
+        if (texto) {
+          texto.textContent = pregunta
+            ? 'Te respondemos a ' + correo + '.'
+            : 'Te escribimos a ' + correo + ' con lo que haríamos en tu sitio y cuánto cuesta.';
+        } else {
+          listo.querySelector('.pedir-correo').textContent = correo;
+        }
         form.hidden = true;
         listo.hidden = false;
         listo.focus();
         form.reset();
-        contexto.hidden = true;
+        limpiarContexto();
       })
       .catch(function () {
         // Si el servicio falla, no hay que perder a quien quería comprar: se le da la
@@ -1380,11 +1938,12 @@
       })
       .finally(function () {
         boton.disabled = false;
-        boton.textContent = 'Enviar pedido';
+        ajustarTextos();
       });
   });
 })();
 </script>
+<!--/email_off-->
 
 </body>
 </html>
