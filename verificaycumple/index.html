@@ -164,7 +164,7 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   a { color: var(--acento-oscuro); }
-  a:focus-visible, button:focus-visible, input:focus-visible {
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
     outline: 3px solid var(--sello);
     outline-offset: 2px;
   }
@@ -827,6 +827,48 @@
   .kit-principal .kit-nota { color: rgba(255,255,255,.72); }
   .kit-secundario .kit-nota { color: rgba(23,22,58,.7); }
   .botones-ayuda { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  /* --- Pedir el kit --- */
+  .pedir, .pedir-listo {
+    max-width: 640px; margin: 44px auto 0; text-align: left;
+    background: var(--blanco); color: var(--vivo-tinta);
+    border: 1px solid var(--borde); border-radius: var(--radio-tarjeta);
+  }
+  .pedir { padding: 28px 28px 24px; scroll-margin-top: 90px; }
+  .pedir-titulo {
+    margin: 0 0 6px; font-family: "Archivo Black", Impact, var(--serif); font-weight: 400;
+    text-transform: uppercase; font-size: 1.35rem; letter-spacing: -0.02em;
+  }
+  .pedir-intro { margin: 0 0 18px; color: var(--vivo-suave); font-size: .95rem; }
+  .pedir-contexto { margin: -8px 0 18px; font-weight: 700; font-size: .95rem; }
+  .pedir-que { border: 0; padding: 0; margin: 0 0 18px; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .pedir-que legend { font-weight: 700; font-size: .9rem; margin-bottom: 8px; padding: 0; }
+  .pedir-que label { display: inline-flex; align-items: center; gap: 8px; font-size: .95rem; cursor: pointer; }
+  .pedir-campos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; }
+  .pedir-campos label { display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: .9rem; }
+  .pedir-opcional { font-weight: 400; color: var(--vivo-suave); }
+  .pedir-ancho { grid-column: 1 / -1; }
+  /* El borde del campo va en la tinta suave y no en un gris claro: un borde de campo es un
+     límite que hay que ver, y necesita al menos 3:1 contra el blanco. */
+  .pedir input[type=text], .pedir input[type=email], .pedir textarea {
+    font: inherit; font-weight: 400; color: var(--vivo-tinta); background: var(--blanco);
+    border: 1.5px solid var(--vivo-suave); border-radius: var(--radio-chico);
+    padding: 11px 12px; width: 100%;
+  }
+  .pedir textarea { resize: vertical; min-height: 84px; }
+  .pedir-consiento { display: flex; gap: 10px; align-items: flex-start; margin: 16px 0 18px; font-size: .9rem; }
+  .pedir-consiento input { margin-top: 3px; flex: none; }
+  .pedir-trampa { display: none; }
+  .pedir .boton-ayuda { border: 0; font: inherit; font-weight: 700; cursor: pointer; }
+  .pedir .boton-ayuda:disabled { background: var(--inactivo); cursor: wait; }
+  .pedir-estado { margin: 12px 0 0; font-size: .9rem; color: var(--pendiente); }
+  .pedir-estado:empty { display: none; }
+  .pedir-listo { padding: 22px 24px; border-left: 4px solid var(--ok); }
+  .pedir-listo p { margin: 0; }
+  @media (max-width: 680px) {
+    .pedir { padding: 22px 18px 20px; }
+    .pedir-campos { grid-template-columns: 1fr; }
+  }
   .boton-secundario { background: transparent; color: var(--vivo-tinta); border: 2px solid var(--vivo-tinta); box-shadow: none; }
   .boton-secundario:hover { background: var(--vivo-tinta); color: var(--blanco); }
   @media (max-width: 680px) {
@@ -1042,8 +1084,49 @@
           </div>
         </div>
         <div class="botones-ayuda">
-          <a class="boton-ayuda" href="mailto:hola@spindlelab.cl?subject=Quiero%20el%20kit%20de%20Verifica%20y%20Cumple">Quiero el kit</a>
-          <a class="boton-ayuda boton-secundario" href="mailto:hola@spindlelab.cl?subject=Quiero%20la%20suscripci%C3%B3n%20de%20Verifica%20y%20Cumple">Quiero la suscripción</a>
+          <a class="boton-ayuda" href="#pedir" data-pedir="kit" data-desde="Botón del kit">Quiero el kit</a>
+          <a class="boton-ayuda boton-secundario" href="#pedir" data-pedir="suscripcion" data-desde="Botón de la suscripción">Quiero la suscripción</a>
+        </div>
+
+        <!-- Los tres botones de compra eran enlaces mailto:. Quien usa correo web hace clic y
+             no pasa nada: ni error, ni aviso, y el pedido se pierde sin que nadie se entere.
+             Ahora llevan a este formulario, que usa el mismo servicio y la misma clave que el
+             de spindlelab.cl/contacto/, así que el pedido llega al mismo correo. Sin
+             JavaScript igual funciona: los botones bajan hasta acá y el formulario se envía
+             como un formulario común. -->
+        <form id="pedir" class="pedir" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="f3a309f5-cbe6-4cf1-b77f-cfd0ee92685f">
+          <input type="hidden" name="subject" value="Pedido desde Verifica y Cumple">
+          <input type="hidden" name="from_name" value="Verifica y Cumple">
+          <input type="checkbox" name="botcheck" class="pedir-trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="Puntaje del chequeo" value="">
+          <input type="hidden" name="Desde" value="">
+
+          <h3 class="pedir-titulo">Pídelo acá</h3>
+          <p class="pedir-intro">Esto sí te pide datos, y solo para responderte: te escribimos para confirmar el alcance y el valor para tu sitio.</p>
+          <p class="pedir-contexto" hidden></p>
+
+          <fieldset class="pedir-que">
+            <legend>Qué quieres</legend>
+            <label><input type="radio" name="Qué quiere" value="Kit de implementación" checked> Kit de implementación</label>
+            <label><input type="radio" name="Qué quiere" value="Suscripción de vigilancia"> Suscripción de vigilancia</label>
+            <label><input type="radio" name="Qué quiere" value="Los dos"> Los dos</label>
+          </fieldset>
+
+          <div class="pedir-campos">
+            <label>Nombre <input type="text" name="Nombre" required autocomplete="name"></label>
+            <label>Correo <input type="email" name="Email" required autocomplete="email"></label>
+            <label class="pedir-ancho">Tu sitio <input type="text" name="Sitio web" required placeholder="tuempresa.cl" autocomplete="url"></label>
+            <label class="pedir-ancho"><span>Algo que quieras contarnos <span class="pedir-opcional">(opcional)</span></span> <textarea name="Mensaje" rows="3"></textarea></label>
+          </div>
+
+          <label class="pedir-consiento"><input type="checkbox" name="Consiento" value="Sí" required> <span>Acepto que estos datos se usen para responder mi pedido, según la <a href="/privacidad/">política de privacidad</a>.</span></label>
+
+          <button type="submit" class="boton-ayuda">Enviar pedido</button>
+          <p class="pedir-estado" role="status"></p>
+        </form>
+        <div id="pedir-listo" class="pedir-listo" tabindex="-1" hidden>
+          <p><strong>Listo, llegó.</strong> Te escribimos a <span class="pedir-correo"></span> para confirmar el alcance y el valor para tu sitio.</p>
         </div>
       </div>
     </div>
@@ -1167,7 +1250,10 @@
       html += '<div class="panel-resolucion">';
       html += '<p class="kicker">Esto es lo que corrige el kit</p>';
       html += '<p>Tu chequeo encontró <strong>' + pendientes + ' señal' + (pendientes === 1 ? '' : 'es') + ' pendiente' + (pendientes === 1 ? '' : 's') + '</strong> en <strong>' + escapar(data.dominio) + '</strong>. El kit de implementación corrige exactamente eso. <span class="monto">Desde $149.000 + IVA</span>, una vez.</p>';
-      html += '<a class="boton-ayuda" href="mailto:hola@spindlelab.cl?subject=' + encodeURIComponent('Quiero el kit: ' + data.dominio + ', ' + data.puntaje + '/100') + '">Quiero el kit →</a>';
+      // Ya no es un mailto: lleva al formulario y le pasa el dominio y el puntaje, para que el
+      // pedido llegue con el contexto del chequeo que lo motivó.
+      const attr = function (x) { return escapar(x).replace(/"/g, '&quot;'); };
+      html += '<a class="boton-ayuda" href="#pedir" data-pedir="kit" data-desde="Resultado del chequeo" data-dominio="' + attr(data.dominio) + '" data-puntaje="' + attr(data.puntaje) + '">Quiero el kit →</a>';
       html += '</div>';
     }
 
@@ -1221,6 +1307,79 @@
   } else {
     document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
   }
+})();
+
+// Pedir el kit o la suscripción. Los tres botones de compra llevan a #pedir; sin JavaScript
+// eso ya funciona (bajan hasta el formulario y se envía como uno común). Con JavaScript,
+// además se marca lo que se pidió, se trae el dominio y el puntaje si vienes del resultado
+// del chequeo, y se envía sin salir de la página.
+(function () {
+  const form = document.getElementById('pedir');
+  if (!form) return;
+  const listo = document.getElementById('pedir-listo');
+  const estado = form.querySelector('.pedir-estado');
+  const contexto = form.querySelector('.pedir-contexto');
+  const boton = form.querySelector('button[type=submit]');
+  const menosMovimiento = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const QUE = { kit: 'Kit de implementación', suscripcion: 'Suscripción de vigilancia' };
+
+  // Delegado en el documento: el botón del resultado se dibuja después, con innerHTML.
+  document.addEventListener('click', function (ev) {
+    const a = ev.target.closest && ev.target.closest('[data-pedir]');
+    if (!a) return;
+    ev.preventDefault();
+    const valor = QUE[a.getAttribute('data-pedir')] || QUE.kit;
+    form.querySelectorAll('input[name="Qué quiere"]').forEach(function (r) { r.checked = r.value === valor; });
+    form.elements['Desde'].value = a.getAttribute('data-desde') || '';
+    const dominio = a.getAttribute('data-dominio');
+    const puntaje = a.getAttribute('data-puntaje');
+    if (dominio) {
+      const sitio = form.elements['Sitio web'];
+      if (!sitio.value) sitio.value = dominio;
+      form.elements['Puntaje del chequeo'].value = puntaje + '/100';
+      contexto.textContent = 'Va con tu chequeo: ' + dominio + ', ' + puntaje + '/100.';
+      contexto.hidden = false;
+    }
+    // Si ya se había enviado un pedido en esta visita, se vuelve a mostrar el formulario.
+    form.hidden = false;
+    listo.hidden = true;
+    form.scrollIntoView({ behavior: menosMovimiento ? 'auto' : 'smooth', block: 'start' });
+    // El foco va al primer campo, para que quien navega con teclado no se quede en el botón.
+    setTimeout(function () { form.elements['Nombre'].focus({ preventScroll: true }); }, menosMovimiento ? 0 : 450);
+  });
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (!form.reportValidity()) return;
+    const que = (form.querySelector('input[name="Qué quiere"]:checked') || {}).value || '';
+    const sitio = form.elements['Sitio web'].value.trim();
+    const pts = form.elements['Puntaje del chequeo'].value;
+    // El asunto dice qué se pidió y de qué sitio, para reconocerlo en la bandeja sin abrirlo.
+    form.elements['subject'].value = 'Pedido desde Verifica y Cumple: ' + que + ' · ' + sitio + (pts ? ' (' + pts + ')' : '');
+    boton.disabled = true;
+    boton.textContent = 'Enviando…';
+    estado.textContent = '';
+    fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (!data || !data.success) throw new Error((data && data.message) || 'error');
+        listo.querySelector('.pedir-correo').textContent = form.elements['Email'].value.trim();
+        form.hidden = true;
+        listo.hidden = false;
+        listo.focus();
+        form.reset();
+        contexto.hidden = true;
+      })
+      .catch(function () {
+        // Si el servicio falla, no hay que perder a quien quería comprar: se le da la
+        // dirección a la vista, escrita, y no solo un enlace que puede no abrir nada.
+        estado.textContent = 'No se pudo enviar. Escríbenos directo a hola@spindlelab.cl y lo vemos.';
+      })
+      .finally(function () {
+        boton.disabled = false;
+        boton.textContent = 'Enviar pedido';
+      });
+  });
 })();
 </script>
 
