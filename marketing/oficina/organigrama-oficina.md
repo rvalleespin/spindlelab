@@ -4,7 +4,7 @@
 > un empleado con **nombre, rol, memoria y carpeta de trabajo** — igual que una
 > oficina real, pero cada empleado es una sesión de Claude Code activada por una
 > *skill*. Este documento es el único lugar donde se ve la oficina completa de un
-> vistazo. Última actualización: 2026-08-28.
+> vistazo. Última actualización: 2026-09-21.
 >
 > **Nomenclatura híbrida.** Cada agente tiene un nombre humano (para hablar de él
 > como "empleado") y, entre paréntesis, la skill técnica real que lo activa. El
@@ -24,6 +24,7 @@ DIRECCIÓN
   └─ Tomás (agente-troncal-marketing) — PM / cabeza operadora: de un objetivo → plan → reparte → done · además dueño del estado compartido
 
 CAPTACIÓN           Dereck (buscar-leads) · Valen (mini-diagnostico) · Emilia (agente-outbound) ★
+RED PRESENCIAL      Inés (agente-red-presencial) ★  ← el canal que empieza caliente: eventos, hubs, alianzas
 VENTAS              Raquel (agente-crm) ★
 MARCA & CONTENIDO   Cata (persona-social-media) · Bruno (persona-director-creativo) · Renata (agente-copywriter) ★ · Marta (agente-calendario-editorial) ★
 PAID MEDIA          Gonzalo (persona-paid-media) · Fran (persona-meta-ads)
@@ -49,6 +50,7 @@ Estado: **✅ trabajando** · **★ nuevo (esta pasada)** · **○ vacante** · 
 | **Dereck** | Captación | `buscar-leads` | `marketing/listas/frente-*.md`, `ventas/leads-*.csv` | `oficina/memoria/dereck-buscar-leads.md` | Frente/ICP → CSV de leads (`nombre,cargo,empresa,email,estado`) | ✅ |
 | **Valen** | Captación | `mini-diagnostico` | `marketing/diagnosticos/SPL-DIAG-*/` | `oficina/memoria/valen-mini-diagnostico.md` | Prospecto interesado + URL → diagnóstico 1 pág (&lt;24h) | ✅ |
 | **Emilia** ★ | Captación | `agente-outbound` | `marketing/outbound/semana-*/` | `oficina/memoria/emilia-outbound.md` | CSV de Dereck → secuencia de emails redactada + tracker (NO envía) | ★ nuevo |
+| **Inés** ★ | Red presencial | `agente-red-presencial` | `marketing/red-presencial/` | `oficina/memoria/ines-red-presencial.md` | Evento/hub/contacto presencial → perfil listo antes + correos de seguimiento en 24 h + contactos entregados al CRM; también evalúa plataformas externas (NO envía) | ★ nuevo |
 | **Raquel** ★ | Ventas | `agente-crm` | `ventas/pipeline.md`, `ventas/proyectos-en-curso.md` | `oficina/memoria/raquel-crm.md` | Respuestas/avances → CRM al día + follow-ups pendientes | ★ nuevo |
 | **Cata** | Marca & Contenido | `persona-social-media` | `marketing/outbound/semana-*/posts-*.md`, RRSS | `oficina/memoria/cata-social.md` | Tema/hallazgo real → post LinkedIn/IG con pase de tono | ✅ |
 | **Bruno** | Marca & Contenido | `persona-director-creativo` | assets HTML→PNG por carpeta, Higgsfield | `oficina/memoria/bruno-direccion-creativa.md` | Concepto → carrusel/Reel/key visual (1080×1080 / 1080×1920) | ✅ |

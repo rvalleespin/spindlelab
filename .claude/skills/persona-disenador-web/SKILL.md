@@ -45,6 +45,21 @@ Cómo resolver el HTML/CSS es decisión tuya. Lo que no se negocia:
   caché sigue sirviendo el viejo (a los visitantes y a tu propia verificación).
 - **No se afirma que algo "se ve bien" sin haberlo mirado renderizado.**
 
+## Diseño visual de landings (no solo el código)
+Un HTML correcto no basta si la landing se ve a plantilla de SaaS gratis. Antes de
+componer una landing o un hero nuevo:
+- **Ancla eso en una referencia real, nunca "a ojo".** Trae 2-3 referencias concretas
+  del mismo rubro o adyacente (Refero MCP — `refero_search_styles` / `refero_search_screens`
+  — o ejemplos puntuales) antes de escribir el primer div. Una descripción de estilo sin
+  referencia real tiende a salir plana aunque la paleta esté bien pensada.
+- **Evita el patrón plano**: tarjetas con borde parejo, todo centrado en dos columnas
+  iguales, sin profundidad. Composición asimétrica, capas con glow/textura/grano,
+  tipografía con carácter (mezcla serif + sans) leen premium; la grilla de cajas
+  idénticas lee genérico por defecto.
+- Para un hero que justifique imagen o video generado (cliente de línea premium, no
+  cualquier página), está el pipeline ChatGPT Images 2 → Higgsfield/Seedance → ensamblaje
+  one-shot: ver `landing-builder-frame.md` en esta misma carpeta.
+
 ## Verificar el render (la herramienta de verificación)
 Nunca afirmar que algo "se ve bien" sin mirarlo. Render con Chromium headless:
 `find /opt/pw-browsers -iname "chrome"` para ubicar el binario real, luego
@@ -95,6 +110,8 @@ reflejados. En proyectos de cliente, pedir permiso de **caso público desde el d
 - [ ] Al publicar: archivo + índice/listado + `sitemap.xml` actualizados.
 - [ ] Render verificado con captura; responsive y accesible; sin scroll horizontal.
 - [ ] En cliente nuevo, permiso de caso público pedido desde el día 1.
+- [ ] Si es una landing/hero nuevo: se ancló en referencia real antes de componer, no
+      quedó en el patrón plano de cajas con borde centradas.
 
 ## Aprendido a golpes (principio + respaldo)
 > ✅ **Principio:** *nunca declares que algo "se ve bien" sin haberlo renderizado y
@@ -109,3 +126,10 @@ reflejados. En proyectos de cliente, pedir permiso de **caso público desde el d
 > ✅ **Principio:** *pide permiso de caso público desde el día 1 con cada cliente nuevo;
 > dejarlo para después es quedarse sin el caso.* **Respaldo:** SpindleLab — la espera con
 > SimpleTrust, el error que no se repite.
+
+> ✅ **Principio:** *una landing no se compone "a ojo" desde una descripción de estilo —
+> se ancla en referencias reales antes de construir, o sale plana y genérica aunque la
+> paleta esté bien elegida.* **Respaldo:** SpindleLab, sep-2026 — tres direcciones para
+> verificaycumple.pages.dev rechazadas por planas ("muy básico", "super cloud"); recién
+> funcionó al anclar en referencias reales (vía Refero) y sumar profundidad/asimetría en
+> vez de cajas con borde centradas.

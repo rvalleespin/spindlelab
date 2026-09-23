@@ -560,6 +560,17 @@ es su contraparte para `/admin`, una superficie que nadie había revisado todav�
 > Ramón con un login real de punta a punta. Detalle completo en
 > `marketing/encargos-otras-sesiones/reporte-login-admin-bernardo-23sep.md`. Con esto ya no queda
 > ningún cabo suelto de la migración Vercel → Netlify.
+>
+> **Corrección (23-sep-2026, misma tarde) — dos afirmaciones de arriba (Actualización 19 y 20)
+> eran falsas, encontradas por una sesión local trabajando en paralelo directo sobre
+> `bernardo-combeau`.** (1) "El código del login no necesita ningún cambio" (Actualización 19):
+> falso — `api/auth.ts`/`api/callback.ts` leían las credenciales con `import.meta.env`, que Vite
+> reemplaza al compilar, así que el client secret quedaba escrito en texto plano dentro del
+> bundle desplegado; se corrigió a `process.env` (PR #1, commit `773d57e`). (2) "Client Secret
+> regenerado" no significaba que el anterior quedara invalidado: había **dos** secrets vivos en
+> la OAuth App (uno del 14-jul), generar uno nuevo no borra los viejos — hubo que eliminarlos a
+> mano. El reporte de la Actualización 20 quedó reescrito con el registro correcto; no se
+> mantienen dos versiones contradictorias.
 
 ---
 

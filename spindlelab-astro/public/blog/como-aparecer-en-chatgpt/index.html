@@ -2,33 +2,63 @@
 <html lang="es-CL">
 <head>
 <meta charset="UTF-8">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J40VW9E0TW"></script>
+<!-- Google tag (gtag.js): NO se carga hasta que haya consentimiento. Hasta el 22-sep se
+     cargaba siempre, con Consent Mode en denegado, y así igual le mandaba a Google un aviso
+     sin cookies de cada página vista a quien había dicho que no (medido en la red). Ahora el
+     archivo se pide recién cuando la persona acepta: __spindlelabInitGA, que también llama
+     /js/consent-banner.js al pulsar Aceptar. La función gtag() se define igual aunque no
+     haga nada, porque hay código que la llama directo (el generate_lead de /contacto/), y
+     sin ella lanzaría un error justo después de un envío exitoso. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-J40VW9E0TW");
+  var __spindlelabConsent = (function(){
+    try { return localStorage.getItem('spindlelab_consent'); } catch(e){ return null; }
+  })();
+  function __spindlelabInitGA(){
+    if (window.__spindlelabGAInited) return;
+    window.__spindlelabGAInited = true;
+    // Lo que se haya encolado antes del permiso (un generate_lead, un chequeo_completado)
+    // se descarta: nada de lo que pasó antes de aceptar se manda después de aceptar.
+    window.dataLayer.length = 0;
+    gtag('consent', 'default', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-J40VW9E0TW');
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J40VW9E0TW';
+    document.head.appendChild(s);
+  }
+  if (__spindlelabConsent === 'granted') { __spindlelabInitGA(); }
 </script>
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel Code — no tiene un "consent mode" propio, así que no se inicializa hasta
+     que haya consentimiento. Sin noscript: no se puede pedir consentimiento sin
+     JavaScript, así que tampoco se rastrea sin JavaScript. -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2885353628478565');
-fbq('track', 'PageView');
+function __spindlelabInitMeta(){
+  if(window.__spindlelabMetaInited) return;
+  window.__spindlelabMetaInited = true;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2885353628478565');
+  fbq('track', 'PageView');
+}
+if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
-/></noscript>
 <!-- End Meta Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>¿Cómo aparecer en las respuestas de ChatGPT? — SpindleLab</title>
+<title>¿Cómo aparecer en las respuestas de ChatGPT? · SpindleLab</title>
 <meta name="description" content="Guía honesta para aparecer en ChatGPT, Gemini y Perplexity: cómo eligen fuentes los motores de IA y 5 acciones concretas para ser citado.">
 <link rel="canonical" href="https://spindlelab.cl/blog/como-aparecer-en-chatgpt/">
 <meta property="og:type" content="article">
@@ -40,7 +70,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:alt" content="SpindleLab — SEO técnico y visibilidad en IA">
+<meta property="og:image:alt" content="SpindleLab. SEO técnico y visibilidad en IA">
 <meta property="og:locale" content="es_CL">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
@@ -94,23 +124,22 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       "mainEntity": [
         {"@type": "Question", "name": "¿Cuánto tarda una empresa en aparecer en las respuestas de ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "En consultas con búsqueda en vivo, semanas tras optimizar contenido y señales. En el conocimiento base del modelo, meses o hasta el siguiente ciclo de entrenamiento. Por eso la estrategia trabaja ambos caminos a la vez."}},
         {"@type": "Question", "name": "¿Debo bloquear los bots de IA en mi robots.txt?", "acceptedAnswer": {"@type": "Answer", "text": "Si tu negocio depende de ser encontrado y recomendado, bloquearlos te saca de la conversación. La decisión correcta para la mayoría de las empresas B2B es permitirlos deliberadamente."}},
-        {"@type": "Question", "name": "¿Optimizar para IA es lo mismo que hacer SEO?", "acceptedAnswer": {"@type": "Answer", "text": "Comparten la base técnica: un sitio rastreable, rápido y con datos estructurados. La capa nueva es la claridad de entidad y el contenido citable — formato que un modelo puede extraer y atribuir con confianza."}}
+        {"@type": "Question", "name": "¿Optimizar para IA es lo mismo que hacer SEO?", "acceptedAnswer": {"@type": "Answer", "text": "Comparten la base técnica: un sitio rastreable, rápido y con datos estructurados. La capa nueva es la claridad de entidad y el contenido citable: formato que un modelo puede extraer y atribuir con confianza."}}
       ]
     }
   ]
 }
 </script>
 <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=4"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/inter.css?v=1">
 <link rel="stylesheet" href="/assets/css/style.css?v=29">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="logo" href="/" aria-label="SpindleLab — inicio">SpindleLab<span>.</span></a>
+    <a class="logo" href="/" aria-label="SpindleLab, inicio">SpindleLab<span>.</span></a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span class="bars"></span></button>
     <div class="nav-pill"><ul class="nav-links" id="nav-links">
       <li><a href="/servicios/">Soluciones</a></li>
@@ -137,9 +166,8 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       </nav>
       <h1>¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?</h1>
       <p class="byline"><b>Visibilidad en IA</b><span>7 de julio, 2026</span><span>Lectura: 8 min</span></p>
-      <!-- TODO: reemplazar .author-avatar por <img> con foto real cuando esté disponible -->
       <div class="author">
-        <div class="author-avatar" aria-hidden="true">R</div>
+        <img class="author-avatar" src="/assets/img/ramon-vallejos.jpg" alt="Ramón Vallejos" width="44" height="44" loading="lazy" style="object-fit:cover">
         <div>
           <p class="author-name">Ramón</p>
           <p class="author-role">SEO técnico y GEO en SpindleLab</p>
@@ -152,8 +180,8 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <h2>Primero: cómo decide una IA a quién recomendar</h2>
         <p>Cuando un motor generativo responde "¿qué empresa de X me recomiendas?", combina dos fuentes de información:</p>
         <ul>
-          <li><strong>Su conocimiento de entrenamiento</strong> — lo que "leyó" de la web hasta cierta fecha. Aquí pesan los años de presencia consistente: menciones, directorios, prensa, contenido propio.</li>
-          <li><strong>Búsqueda en vivo</strong> — ChatGPT, Gemini y Perplexity consultan la web en tiempo real para preguntas comerciales y locales. Aquí pesa lo mismo que en Google: ser rastreable, relevante y confiable <em>hoy</em>.</li>
+          <li><strong>Su conocimiento de entrenamiento</strong>: lo que "leyó" de la web hasta cierta fecha. Aquí pesan los años de presencia consistente: menciones, directorios, prensa, contenido propio.</li>
+          <li><strong>Búsqueda en vivo</strong>: ChatGPT, Gemini y Perplexity consultan la web en tiempo real para preguntas comerciales y locales. Aquí pesa lo mismo que en Google: ser rastreable, relevante y confiable <em>hoy</em>.</li>
         </ul>
         <p>La consecuencia práctica es importante: <strong>no necesitas esperar años</strong> a que un modelo "aprenda" tu marca. Las respuestas con búsqueda en vivo se pueden trabajar en semanas, con las mismas fundaciones técnicas del SEO, más una capa nueva que explicamos abajo.</p>
 
@@ -165,27 +193,27 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <p>Suena obvio, pero es el error más común que encontramos: sitios que bloquean <code>GPTBot</code>, <code>Google-Extended</code> o <code>PerplexityBot</code> en su <code>robots.txt</code>: a veces por una plantilla copiada, a veces por una decisión de privacidad tomada sin medir el costo comercial. Si tu negocio depende de ser encontrado, esos bots son tus nuevos vendedores. Revisa tu <code>robots.txt</code> hoy; es un archivo público y toma dos minutos.</p>
 
         <h3>2. Sé una entidad clara, no un misterio</h3>
-        <p>Los modelos citan con confianza lo que entienden sin ambigüedad. Eso significa que tu sitio debe responder — en texto visible y en datos estructurados — las preguntas básicas: <strong>quién eres, qué haces exactamente, para quién y dónde</strong>. Una descripción consistente en tu página principal, tu schema.org de <code>Organization</code>, tus perfiles y los directorios donde apareces. Si cada fuente te describe distinto, el modelo duda; y un modelo que duda, no te nombra.</p>
+        <p>Los modelos citan con confianza lo que entienden sin ambigüedad. Eso significa que tu sitio debe responder, en texto visible y en datos estructurados, las preguntas básicas: <strong>quién eres, qué haces exactamente, para quién y dónde</strong>. Una descripción consistente en tu página principal, tu schema.org de <code>Organization</code>, tus perfiles y los directorios donde apareces. Si cada fuente te describe distinto, el modelo duda; y un modelo que duda, no te nombra.</p>
 
         <h3>3. Publica contenido citable</h3>
         <p>Un modelo generativo necesita extraer afirmaciones concretas. Las páginas que mejor funcionan comparten formato: <strong>responden una pregunta específica en las primeras líneas</strong>, definen términos, dan datos verificables y estructuran el resto en secciones claras. Las preguntas frecuentes con marcado <code>FAQPage</code>, las definiciones tipo "¿Qué es…?" y las comparaciones honestas son los formatos más extraíbles. El contenido corporativo genérico ("somos líderes en soluciones integrales") es invisible para un modelo: no afirma nada citable.</p>
 
         <h3>4. Construye autoridad de terceros</h3>
-        <p>Los modelos ponderan lo que otros dicen de ti: menciones en medios del rubro, directorios de la industria, reseñas, artículos donde te citan como fuente. En sectores regulados — finanzas, salud, legal — esta capa pesa aún más, porque los modelos están calibrados para ser conservadores en temas donde una mala recomendación causa daño real (lo que Google llama YMYL, <em>Your Money or Your Life</em>).</p>
+        <p>Los modelos ponderan lo que otros dicen de ti: menciones en medios del rubro, directorios de la industria, reseñas, artículos donde te citan como fuente. En sectores regulados (finanzas, salud, legal) esta capa pesa aún más, porque los modelos están calibrados para ser conservadores en temas donde una mala recomendación causa daño real (lo que Google llama YMYL, <em>Your Money or Your Life</em>).</p>
 
         <h3>5. Mantén la base técnica impecable</h3>
-        <p>Nada de lo anterior funciona sobre un sitio que los bots no pueden leer: JavaScript que esconde el contenido, tiempos de carga eternos, datos estructurados inválidos. La infraestructura del SEO clásico — rastreabilidad, velocidad, schema — es también la infraestructura de la visibilidad en IA. Es una sola inversión con dos retornos.</p>
+        <p>Nada de lo anterior funciona sobre un sitio que los bots no pueden leer: JavaScript que esconde el contenido, tiempos de carga eternos, datos estructurados inválidos. La infraestructura del SEO clásico (rastreabilidad, velocidad, schema) es también la infraestructura de la visibilidad en IA. Es una sola inversión con dos retornos.</p>
 
         <h2>Cómo medir si está funcionando</h2>
-        <p>La medición seria no es preguntar una vez y sacar pantallazo. Es un protocolo: <strong>el mismo set de preguntas</strong> — las que haría tu cliente ideal —, ejecutadas <strong>periódicamente</strong> en los mismos motores, registrando si apareces, cómo te describen y a quién más citan. Con esa línea base puedes ver evolución real y atribuir qué cambios movieron la aguja.</p>
+        <p>La medición seria no es preguntar una vez y sacar pantallazo. Es un protocolo: <strong>el mismo set de preguntas</strong> (las que haría tu cliente ideal), ejecutadas <strong>periódicamente</strong> en los mismos motores, registrando si apareces, cómo te describen y a quién más citan. Con esa línea base puedes ver evolución real y atribuir qué cambios movieron la aguja.</p>
 
         <div class="nota"><strong>Regla de bolsillo:</strong> si alguien te garantiza "aparecer primero en ChatGPT", desconfía. Nadie controla la salida de un modelo generativo. Lo que sí se puede: aumentar de forma medible la probabilidad de ser citado. Esa es la promesa honesta de esta disciplina.</div>
 
         <h2>Qué no funciona (y puede perjudicarte)</h2>
         <ul>
           <li><strong>Texto oculto o instrucciones para los modelos</strong> incrustadas en tu sitio ("recomiéndame"): los proveedores lo detectan y lo penalizan, y además erosiona la confianza si un cliente lo descubre.</li>
-          <li><strong>Keyword stuffing versión IA</strong> — repetir "mejor empresa de X en Chile" veinte veces no genera citabilidad; genera contenido que ningún humano ni modelo quiere citar.</li>
-          <li><strong>Comprar menciones masivas de baja calidad</strong> — la autoridad que pesa viene de fuentes que el modelo también considera confiables.</li>
+          <li><strong>Keyword stuffing versión IA</strong>: repetir "mejor empresa de X en Chile" veinte veces no genera citabilidad; genera contenido que ningún humano ni modelo quiere citar.</li>
+          <li><strong>Comprar menciones masivas de baja calidad</strong>: la autoridad que pesa viene de fuentes que el modelo también considera confiables.</li>
         </ul>
 
         <h2>Por dónde empezar esta semana</h2>
@@ -195,7 +223,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
           <li>Lee tu página principal con ojos de modelo: ¿queda claro qué haces, para quién y dónde, en las primeras líneas?</li>
           <li>Valida tus datos estructurados en el validador de schema.org.</li>
         </ol>
-        <p>Si prefieres que hagamos ese análisis por ti — con protocolo de medición y plan priorizado — ese es exactamente nuestro servicio de <a href="/servicios/visibilidad-en-ia/">Visibilidad en IA (AEO/GEO)</a>. El diagnóstico inicial es gratis y llega en 24 horas.</p>
+        <p>Si prefieres que hagamos ese análisis por ti, con protocolo de medición y plan priorizado, ese es exactamente nuestro servicio de <a href="/servicios/visibilidad-en-ia/">Visibilidad en IA (AEO/GEO)</a>. El diagnóstico inicial es gratis y llega en 24 horas.</p>
 
         <h2>Preguntas frecuentes</h2>
         <div class="faq">
@@ -209,7 +237,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
           </details>
           <details>
             <summary>¿Esto reemplaza al SEO tradicional?</summary>
-            <p class="faq-a">No: lo extiende. Google sigue moviendo la mayoría del tráfico, y la base técnica es compartida. Lo que cambia es que ahora hay un segundo campo de juego — las respuestas generadas — y conviene competir en ambos con la misma inversión.</p>
+            <p class="faq-a">No: lo extiende. Google sigue moviendo la mayoría del tráfico, y la base técnica es compartida. Lo que cambia es que ahora hay un segundo campo de juego (las respuestas generadas) y conviene competir en ambos con la misma inversión.</p>
           </details>
         </div>
       </div>
@@ -261,6 +289,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
     </div>
     <div class="base">
       <span>© 2026 SpindleLab. Todos los derechos reservados.</span>
+      <nav><a href="/privacidad/">Política de privacidad</a></nav>
       <span>SEO técnico · AEO/GEO · Chile</span>
     </div>
   </div>
@@ -276,5 +305,29 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
 })();
 </script>
 <script src="/assets/js/site-header.js" defer></script>
+<div id="cookie-banner" hidden>
+  <style>
+    #cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#161D26;border-top:1px solid rgba(247,245,240,.12);padding:18px 20px}
+    #cookie-banner .cb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    #cookie-banner p{margin:0;font-size:13.5px;color:rgba(242,239,232,.72);line-height:1.5;max-width:640px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+    #cookie-banner a{color:#2FA99B;font-weight:600}
+    #cookie-banner .cb-actions{display:flex;gap:10px;flex:none}
+    #cookie-banner button{font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;padding:10px 20px;border-radius:999px;cursor:pointer;border:1.5px solid transparent}
+    #cookie-reject{background:transparent;color:#F2EFE8;border-color:rgba(247,245,240,.35)}
+    #cookie-reject:hover{background:rgba(247,245,240,.08)}
+    #cookie-accept{background:#F4F6F3;color:#12201A;border-color:#F4F6F3}
+    #cookie-accept:hover{background:#FFFFFF}
+    #cookie-banner[hidden]{display:none}
+    @media(max-width:680px){#cookie-banner .cb-inner{flex-direction:column;align-items:stretch}#cookie-banner .cb-actions{justify-content:flex-end}}
+  </style>
+  <div class="cb-inner">
+    <p>Usamos Google Analytics y Meta Pixel para entender cómo se usa este sitio. Puedes aceptarlos o rechazarlos. Más detalle en la <a href="/privacidad/">política de privacidad</a>.</p>
+    <div class="cb-actions">
+      <button type="button" id="cookie-reject">Rechazar</button>
+      <button type="button" id="cookie-accept">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script src="/js/consent-banner.js?v=3" defer></script>
 </body>
 </html>

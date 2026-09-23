@@ -7,7 +7,11 @@
 Índice:
 1. [Registro singular — LinkedIn personal, 1-sep-2026](#1-singular)
 2. [Registro plural — Instagram / página, 1-sep-2026](#2-plural)
-3. [Dónde hay más material](#3-mas)
+3. [Registro singular — LinkedIn personal, 22-sep-2026](#3-singular-ley)
+4. [Registro plural — página de empresa, 21-sep-2026](#4-plural-ley)
+5. [Registro singular — el post de GEO, 21-sep-2026](#5-geo)
+6. [Registro plural — "Un motor de adquisición", ~8-sep-2026](#6-motor)
+7. [Dónde hay más material](#3-mas)
 
 ---
 
@@ -86,7 +90,196 @@ Comenta CIRCUITO y te mando el link del chequeo por DM, gratis y sin registro. (
 
 ---
 
-## <a id="3-mas"></a>3. Dónde hay más material
+---
+
+## <a id="3-singular-ley"></a>3. Registro singular — Ramón, LinkedIn personal (mar 22-sep-2026)
+
+**Estado:** ✅ publicado y confirmado. **Corrección de fecha (verificada en LinkedIn el
+22-sep):** el post **se creó el 21-sep por la noche** y el 22-sep Ramón lo **editó** a esta
+versión — LinkedIn lo muestra como "16 horas • Editado". O sea que el borrador que Ramón trajo a
+revisión **ya estaba publicado** cuando pidió corregirlo; esta es la versión final en el aire, y
+el texto de abajo coincide literal con lo entregado. **58 impresiones · 1 comentario.**
+**Canal:** LinkedIn, cuenta personal. Texto puro + link en el primer comentario.
+**Pieza:** lanzamiento del chequeo de Ley 21.719 (Verifica y Cumple, servicio de SpindleLab).
+
+**Por qué es buena referencia:** es el arco personal en su versión **corta** — 190 palabras,
+la mitad de la pieza del 1-sep. Demuestra que el momento honesto se **muestra** ("mi propio
+sitio sacó 36") en vez de explicarse, y que la oferta cabe en un párrafo sin precio y con su
+límite dicho ("la política la redacta un abogado").
+
+### Cuerpo
+
+Soy fundador de SpindleLab y armé un chequeo gratis para la Ley 21.719, la nueva ley de datos personales. Entra en plena vigencia el 1 de diciembre.
+
+Si tienes un formulario de contacto en tu sitio, ya estás tratando datos personales y la ley te aplica, seas del tamaño que seas.
+
+Lo primero que hice fue correr el chequeo sobre mi propio sitio. Sacó 36 de 100.
+
+El formulario pedía datos sin decir para qué. No había banner de consentimiento. Analytics y el Pixel de Meta cargaban apenas entrabas a la página. Nada de eso lo sabía hasta que lo revisé.
+
+Me tomó unos días dejarlo en orden. Quedó en 73.
+
+Si corres el chequeo en el tuyo y sale con señales pendientes, eso lo puedo arreglar yo: el gestor de consentimiento, y dejar publicado lo que pide el artículo 14 ter. La política de privacidad la tiene que redactar un abogado, esa parte no es mía.
+
+Dejo el chequeo en el primer comentario, por si quieres ver en cuánto sale el tuyo.
+
+### Primer comentario
+
+Acá está: https://verificaycumple.pages.dev
+
+Se llama Verifica y Cumple. Escribes tu dominio y en unos 40 segundos tienes el resultado: gratis, sin registro, y no guarda el dominio que revisas. Cada señal que no pases viene con la instrucción de cómo arreglarla. Si te sale algo raro y no cachas qué hacer, escríbeme por acá y lo miramos.
+
+### Los dos borradores que Ramón rechazó, y por qué
+
+Esta parte vale tanto como el texto. Un corpus con solo aciertos miente, y acá el descarte
+es la lección:
+
+1. **Borrador 1 — construido sobre una paradoja.** Abría con *"construí un chequeo que se
+   niega a decirte si cumples"* y todo el post defendía esa negativa. Veredicto de Ramón:
+   *"suena extraña la parte de «que no te dice si cumples»"*. **El chequeo no es una
+   herramienta que se niega a responder: muestra si tu sitio publica lo que la ley exige, y
+   él arregla lo que falte.** Cuando la pieza se construye sobre el ingenio, el ingenio pasa
+   a ser el tema y el producto desaparece.
+2. **Borrador 2 — honesto pero técnico.** Corregido el eje, quedaban cuatro párrafos
+   explicando la metodología: por qué su gestor de consentimiento hecho a mano no saca el
+   punto, que no se agregó la excepción, y qué no puede ver el chequeo sin un navegador
+   real. Veredicto: *"explicaciones que no sé si van al caso por ser una publicación en
+   LinkedIn"*. Tenía razón: son notas de ingeniería dirigidas a alguien que todavía no
+   decide si va a correr el chequeo, y el párrafo de límites frenaba justo antes del CTA.
+
+**Regla que sale de acá:** el post ya tiene su momento incómodo cuando dice que su propio
+sitio sacó 36. Explicar después por qué no sacó 100 es contar el mismo gesto dos veces, la
+segunda en jerga. *(El material descartado no se tira: "construí el instrumento y el primero
+que salió mal fui yo, y no me hice la excepción" es una pieza aparte, para pares.)*
+
+### El tell de tono que apareció dos veces
+
+Ramón pidió sacar el "tono IA" y el problema **no eran las palabras sino el ritmo**: casi
+todos los párrafos cerraban con un remate — frase larga, concesión de dos palabras, golpe
+corto (*"Lo sé. Prefiero la lista."*). En la pieza publicada del 1-sep hay **dos** remates en
+todo el texto; el resto es explicación plana. **Contar los remates es un chequeo de tono
+rápido y sirve:** si hay más de dos en un post, suena a máquina aunque cada frase esté bien.
+
+---
+
+---
+
+## <a id="4-plural-ley"></a>4. Registro plural — la marca, página de LinkedIn (lun 21-sep-2026)
+
+**Estado:** ✅ publicado y en el aire. Texto capturado literal desde LinkedIn el 22-sep-2026.
+**Canal:** página de empresa de SpindleLab. Texto puro, sin imagen. **1 reacción · 1 compartido.**
+
+**Por qué es la mejor referencia plural que hay.** Es el registro de marca haciendo lo más difícil
+de su posicionamiento ("Mostramos, no prometemos"): **contar un fallo propio que nadie le pidió
+contar**, y no el fallo cómodo. El puntaje de 36 es la parte vendible; el formulario de contacto
+que llevaba meses tragándose los mensajes es la parte que duele, no tiene nada que ver con la ley,
+y se cuenta igual. La frase que sostiene la pieza —*"construyes el instrumento, lo apuntas primero
+a ti mismo, y arreglas lo que encuentra. No lo que se ve mejor en una reunión de ventas"*— es el
+argumento entero de la marca en dos líneas, sin adjetivos.
+
+### Cuerpo
+
+Publicamos un chequeo gratuito para la Ley 21.719, la nueva ley de protección de datos de Chile.
+
+Antes de publicarlo lo corrimos sobre nuestro propio sitio.
+
+spindlelab.cl sacó 36 de 100.
+
+Sin política de privacidad. Sin gestor de consentimiento. Con Analytics y el Pixel de Meta corriendo antes de que nadie diera permiso.
+
+Y revisando el formulario de contacto para arreglar eso apareció algo peor, sin relación con la ley: un error en el código dejaba el botón "Enviando…" pegado para siempre. El mensaje no llegaba a ninguna parte. No tenemos cómo saber cuántos correos se perdieron así, en silencio, antes de que lo encontráramos.
+
+Pasamos el día arreglando todo: el formulario, el consentimiento antes de pedir datos, la política de privacidad, los rastreadores bloqueados hasta que alguien dice que sí.
+
+spindlelab.cl ahora saca 73.
+
+No lo contamos para presumir un número. Lo contamos porque así funciona esto: construyes el instrumento, lo apuntas primero a ti mismo, y arreglas lo que encuentra. No lo que se ve mejor en una reunión de ventas.
+
+Si tienes un formulario de contacto, ya estás tratando datos personales. La ley no distingue tamaño de empresa, y entra en plena vigencia el 1 de diciembre de 2026.
+
+Dejamos el chequeo en el primer comentario, por si quieres ver qué encuentra en el tuyo.
+
+### El compartir desde el perfil personal (mismo día, registro singular)
+
+**Esta es la plantilla de cómo se comparte un post de la página.** No resume el post: agrega el
+ángulo personal que la marca en plural no puede decir, en tres líneas. **20 impresiones.**
+
+> Lo comparto porque la parte incómoda no es el puntaje.
+>
+> El formulario de contacto llevaba quién sabe cuánto tiempo tragándose los mensajes, y lo
+> encontré arreglando otra cosa. Si no corro el chequeo sobre mi propio sitio, sigue roto.
+
+### Lo que este par enseña sobre los dos registros
+
+El mismo hecho, contado dos veces sin repetirse: **el plural cuenta qué hizo el negocio y por qué,
+el singular cuenta qué le pasó a la persona.** El plural cierra con la regla de oficio; el singular
+cierra con *"si no corro el chequeo sobre mi propio sitio, sigue roto"*, que es la misma idea
+dicha desde adentro. Ninguno de los dos vende, y los dos venden.
+
+---
+
+---
+
+## <a id="5-geo"></a>5. Registro singular — el post de GEO (dom 21-sep-2026)
+
+**Estado:** ✅ publicado y en el aire. Texto capturado literal el 22-sep-2026.
+**Canal:** perfil personal. Texto puro. **84 impresiones · 1 comentario — el de mejor alcance
+del lote de septiembre**, por encima de las 58 del post del chequeo.
+
+**Por qué importa que este sea el que más circuló.** No vende nada. No tiene CTA, ni link, ni
+oferta. Es una opinión de oficio sostenida en una fuente verificable, y **se pone en contra del
+propio interés comercial de quien la escribe** ("Lo escribo desde adentro, porque yo vendo esto").
+Antes de planificar el próximo pase de contenido, mirar este resultado: el alcance vino del
+criterio, no de la promoción.
+
+### Cuerpo
+
+Si te están cobrando "GEO" como una línea aparte del SEO, esto te sirve.
+
+En junio, el vicepresidente de Search de Google escribió para gerentes de marketing que el buen SEO es buen GEO, "o AEO, o AI SEO, o como se llame". Textual, paréntesis incluido.
+
+Google diciendo que no hay un canal nuevo.
+
+Lo escribo desde adentro, porque yo vendo esto.
+
+Y lo llamativo es la fecha. Google lo publicó en junio. Mi rubro lo anduvo descubriendo este mes. Tres meses de propuestas vendiendo una sigla que la propia fuente ya había desarmado.
+
+No significa que no haya nada que hacer. Hay bastante, y es trabajo concreto: que los buscadores con IA puedan entrar a tu sitio, entender a qué te dedicas y citarte cuando alguien pregunta por tu rubro. Eso se revisa, se arregla y se mide.
+
+Lo que no existe es el presupuesto aparte.
+
+Así que si te llega una propuesta con GEO como línea nueva, la pregunta no es cuánto cuesta. Es qué van a hacer ahí que no debería estar haciendo ya tu SEO, y cómo te lo van a mostrar medido.
+
+---
+
+## <a id="6-motor"></a>6. Registro plural — "Un motor de adquisición" (~8-sep-2026)
+
+**Estado:** ✅ publicado y en el aire. Texto capturado literal el 22-sep-2026.
+**Canal:** página de empresa. Carrusel (4 imágenes). Sin métricas públicas visibles.
+
+**Por qué sirve de referencia:** es el plural vendiendo **la estructura del servicio** sin
+adjetivos, con la metáfora del dominó sostenida de punta a punta, y con el CTA de palabra clave
+en comentarios que es la convención de la casa para redes.
+
+### Cuerpo
+
+Un motor de adquisición. No cuatro servicios sueltos.
+
+Tu web, tus redes y tu pauta son fichas de la misma fila: si una está torcida, la energía no llega a la venta, da lo mismo cuánto inviertas en las demás.
+
+Y hoy el eje que decide si la fila completa funciona es uno: que la IA pueda leerte, entenderte y citarte. Ahí es donde el circuito de la mayoría se corta.
+
+Así trabajamos nosotros: el motor completo, con ese eje al centro. El método y los precios están publicados en el sitio, y el chequeo te muestra dónde se corta el tuyo.
+
+Comenta CIRCUITO y te lo mandamos por DM. Gratis y sin registro.
+
+Estamos publicando la serie del circuito todo septiembre. Síguenos para no perderte las que vienen.
+
+#SEO #IA #Chile
+
+---
+
+## <a id="3-mas"></a>7. Dónde hay más material
 
 - **Piezas listas y pasadas por revisión, aún no publicadas:**
   `marketing/redes/2026-09-septiembre/*/publicar.md`. Útiles para ver la intención y el

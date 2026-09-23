@@ -3,38 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta charset="UTF-8">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J40VW9E0TW"></script>
+<!-- Google tag (gtag.js): NO se carga hasta que haya consentimiento. Hasta el 22-sep se
+     cargaba siempre, con Consent Mode en denegado, y así igual le mandaba a Google un aviso
+     sin cookies de cada página vista a quien había dicho que no (medido en la red). Ahora el
+     archivo se pide recién cuando la persona acepta: __spindlelabInitGA, que también llama
+     /js/consent-banner.js al pulsar Aceptar. La función gtag() se define igual aunque no
+     haga nada, porque hay código que la llama directo (el generate_lead de /contacto/), y
+     sin ella lanzaría un error justo después de un envío exitoso. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-J40VW9E0TW");
+  var __spindlelabConsent = (function(){
+    try { return localStorage.getItem('spindlelab_consent'); } catch(e){ return null; }
+  })();
+  function __spindlelabInitGA(){
+    if (window.__spindlelabGAInited) return;
+    window.__spindlelabGAInited = true;
+    // Lo que se haya encolado antes del permiso (un generate_lead, un chequeo_completado)
+    // se descarta: nada de lo que pasó antes de aceptar se manda después de aceptar.
+    window.dataLayer.length = 0;
+    gtag('consent', 'default', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-J40VW9E0TW');
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J40VW9E0TW';
+    document.head.appendChild(s);
+  }
+  if (__spindlelabConsent === 'granted') { __spindlelabInitGA(); }
 </script>
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel Code — no tiene un "consent mode" propio, así que no se inicializa hasta
+     que haya consentimiento. Sin noscript: no se puede pedir consentimiento sin
+     JavaScript, así que tampoco se rastrea sin JavaScript. -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2885353628478565');
-fbq('track', 'PageView');
+function __spindlelabInitMeta(){
+  if(window.__spindlelabMetaInited) return;
+  window.__spindlelabMetaInited = true;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2885353628478565');
+  fbq('track', 'PageView');
+}
+if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
-/></noscript>
 <!-- End Meta Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chequeo gratis de visibilidad en IA — ¿te lee ChatGPT? | SpindleLab</title>
+<title>Chequeo gratis de visibilidad en IA: ¿te lee ChatGPT? · SpindleLab</title>
 <meta name="description" content="Pon tu dominio y revisamos al instante si ChatGPT, Gemini y Perplexity pueden leerte, entenderte y citarte. Gratis, sin dejar tu correo, con los 21 chequeos publicados.">
 <link rel="canonical" href="https://spindlelab.cl/diagnostico/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SpindleLab">
-<meta property="og:title" content="Chequeo gratis de visibilidad en IA — SpindleLab">
+<meta property="og:title" content="Chequeo gratis de visibilidad en IA · SpindleLab">
 <meta property="og:description" content="Pon tu dominio y mira en segundos si ChatGPT, Gemini y Perplexity pueden leerte, entenderte y citarte. Sin registro.">
 <meta property="og:url" content="https://spindlelab.cl/diagnostico/">
 <meta property="og:image" content="https://spindlelab.cl/assets/img/og-marca.jpg?v=4">
@@ -43,7 +73,8 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
 <meta property="og:locale" content="es_CL">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/inter.css?v=1">
 <link rel="stylesheet" href="/assets/css/style.css?v=29">
 <script type="application/ld+json">
 {
@@ -83,7 +114,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       "inLanguage": "es-CL",
       "provider": {"@id": "https://spindlelab.cl/#org"},
       "featureList": [
-        "Verifica si GPTBot, ClaudeBot, PerplexityBot y Google-Extended pueden acceder al sitio",
+        "Verifica si los robots de búsqueda de IA en vivo (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User) pueden acceder al sitio, si el servidor no los expulsa por nombre, y si el bloqueo de los robots de entrenamiento es una decisión consciente",
         "Revisa los datos estructurados que declaran la entidad del negocio",
         "Comprueba llms.txt, FAQPage, sitemap y canonical",
         "Entrega un puntaje de 0 a 100 y las tres prioridades a corregir"
@@ -99,7 +130,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
       "totalTime": "PT20S",
       "step": [
         {"@type": "HowToStep", "position": 1, "name": "¿Te pueden leer?",
-         "text": "Leemos el robots.txt y verificamos que GPTBot, ClaudeBot, PerplexityBot y Google-Extended no estén bloqueados, y que el sitio responda 200 por HTTPS. Vale 30 de los 100 puntos."},
+         "text": "Leemos el robots.txt y verificamos que los robots de búsqueda de IA en vivo (los que deciden si te citan hoy: OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot y Perplexity-User) no estén bloqueados; pedimos la portada presentándonos como esos robots para detectar bloqueos del servidor o CDN; revisamos que el bloqueo de robots de entrenamiento (GPTBot, ClaudeBot, Google-Extended, CCBot) sea una decisión consciente, porque no afecta las citas de hoy; y que el sitio responda 200 por HTTPS. Vale 30 de los 100 puntos."},
         {"@type": "HowToStep", "position": 2, "name": "¿Te entienden?",
          "text": "Revisamos el JSON-LD: si hay un nodo de entidad, si declara dirección y contacto, si tiene al menos tres perfiles en sameAs, si hay una persona con credenciales, y el título, la meta description y el H1. Vale 40 puntos."},
         {"@type": "HowToStep", "position": 3, "name": "¿Te pueden citar?",
@@ -154,6 +185,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
   .chq-form button[disabled]{opacity:.55;cursor:progress}
   .chq-nota{font-size:13.5px;color:var(--ink-50);max-width:560px;line-height:1.6}
   .chq-error{display:none;margin-top:18px;border-left:3px solid #d98c8c;background:var(--surface);padding:14px 20px;border-radius:0 10px 10px 0;font-size:14.5px;color:var(--ink-70)}
+  .chq-error-codigo{margin:10px 0 0;padding-top:10px;border-top:1px solid rgba(0,0,0,.12);font-size:13px;font-variant-numeric:tabular-nums}
   #chq-out{display:none;margin-top:40px;scroll-margin-top:96px}
   .chq-score{display:flex;align-items:center;gap:26px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px 30px}
   .chq-num{font-family:var(--headline);font-size:clamp(44px,7vw,64px);font-weight:700;line-height:1;letter-spacing:-.03em;color:var(--paper)}
@@ -207,7 +239,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
 
 <header class="site-header">
   <div class="wrap">
-    <a class="logo" href="/" aria-label="SpindleLab — inicio">SpindleLab<span>.</span></a>
+    <a class="logo" href="/" aria-label="SpindleLab, inicio">SpindleLab<span>.</span></a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span class="bars"></span></button>
     <div class="nav-pill"><ul class="nav-links" id="nav-links">
       <li><a href="/servicios/">Soluciones</a></li>
@@ -257,7 +289,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
     <details class="metodo-det">
       <summary>Ver los 21 chequeos y cuánto pesa cada bloque</summary>
     <ul class="peso-list">
-      <li><b>¿Te pueden leer? · 30 puntos.</b> Leemos tu robots.txt y verificamos que GPTBot (ChatGPT), ClaudeBot (Claude), PerplexityBot y Google-Extended (Gemini) no estén bloqueados, y que el sitio responda 200 por HTTPS. Si los bots no entran, nada de lo demás importa.</li>
+      <li><b>¿Te pueden leer? · 30 puntos.</b> No todos los robots de IA hacen lo mismo: unos <b>buscan en vivo</b> cuando alguien pregunta (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User) y otros <b>recogen texto para entrenar modelos futuros</b> (GPTBot, ClaudeBot, Google-Extended, CCBot). Bloquear a los primeros te borra de las respuestas de hoy; bloquear a los segundos no te quita ni una cita y es una decisión legítima. Verificamos ambos por separado, probamos si tu servidor expulsa a los robots por su nombre, y que el sitio responda 200 por HTTPS. Si los bots en vivo no entran, nada de lo demás importa.</li>
       <li><b>¿Te entienden? · 40 puntos.</b> Revisamos tus datos estructurados: si declaras tu negocio como entidad, si esa entidad tiene dirección y contacto, si te conectas con al menos tres perfiles externos, y si hay una persona con credenciales detrás del contenido. Más el título, la meta description y el H1.</li>
       <li><b>¿Te pueden citar? · 30 puntos.</b> Comprobamos llms.txt, preguntas frecuentes marcadas con FAQPage, sitemap.xml, URL canónica, idioma declarado, títulos escritos como pregunta, fechas en el schema y cantidad de texto visible en tu portada.</li>
     </ul>
@@ -294,6 +326,19 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
         <p>Lo hacemos a mano. Le preguntamos a ChatGPT, Gemini y Perplexity por tu categoría, y vemos quién aparece en tu lugar y qué fuentes citan. Una página, gratis, en 24 horas.</p>
       </div>
       </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Además de esto</span>
+      <h2>Un chequeo distinto, para la Ley 21.719.</h2>
+      <p>Si tu sitio trata datos personales (un formulario de contacto ya cuenta), la Ley 21.719 entra en plena vigencia el 1 de diciembre de 2026. <a href="https://verificaycumple.pages.dev/" rel="noopener">Verifica y Cumple</a>, nuestro chequeo gratuito para esa ley, revisa las señales técnicas básicas: política de privacidad, gestor de consentimiento, y lo que exige el Art. 14 ter.</p>
+    </div>
+    <div class="chq-ramas">
+      <a class="chq-r2" href="https://verificaycumple.pages.dev/" rel="noopener">Revisar mi sitio para la Ley 21.719</a>
+    </div>
   </div>
 </section>
 
@@ -357,6 +402,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
     </div>
     <div class="base">
       <span>© 2026 SpindleLab. Todos los derechos reservados.</span>
+      <nav><a href="/privacidad/">Política de privacidad</a></nav>
       <span>SEO técnico · AEO/GEO · Chile</span>
     </div>
   </div>
@@ -393,8 +439,11 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
   function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
 
-  function fallar(msg){
-    err.textContent = msg;
+  function fallar(msg, codigo){
+    // El codigo de respuesta baja de categoria: deja de ser el mensaje y pasa a ser el dato
+    // que sirve cuando alguien nos escribe para que lo revisemos a mano.
+    err.innerHTML = '<p style="margin:0">' + esc(msg) + '</p>' +
+      (codigo ? '<p class="chq-error-codigo">Codigo de respuesta de tu sitio: ' + esc(codigo) + '</p>' : '');
     err.style.display = 'block';
     out.style.display = 'none';
   }
@@ -436,7 +485,11 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
     out.innerHTML = h;
     out.style.display = 'block';
     err.style.display = 'none';
-    if (window.gtag) gtag('event', 'chequeo_completado', { puntaje: d.puntaje });
+    // Se pregunta por el permiso, no por si gtag existe: gtag() existe siempre, y con eso
+    // solo el evento salía a Google aunque se hubiera rechazado desde otra pestaña.
+    if (window.__spindlelabHayPermiso && window.__spindlelabHayPermiso()) {
+      try { gtag('event', 'chequeo_completado', { puntaje: d.puntaje }); } catch (e) {}
+    }
     out.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
@@ -453,7 +506,7 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
     fetch('/api/chequeo?dominio=' + encodeURIComponent(v))
       .then(function(r){ return r.json(); })
       .then(function(d){
-        if(!d || !d.ok) fallar((d && d.error) || 'No pudimos completar el chequeo.');
+        if(!d || !d.ok) fallar((d && d.error) || 'No pudimos completar el chequeo.', d && d.codigo);
         else pintar(d);
       })
       .catch(function(){ fallar('No pudimos completar el chequeo. Intentalo de nuevo en un momento.'); })
@@ -461,5 +514,29 @@ src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
   });
 })();
 </script>
+<div id="cookie-banner" hidden>
+  <style>
+    #cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#161D26;border-top:1px solid rgba(247,245,240,.12);padding:18px 20px}
+    #cookie-banner .cb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    #cookie-banner p{margin:0;font-size:13.5px;color:rgba(242,239,232,.72);line-height:1.5;max-width:640px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+    #cookie-banner a{color:#2FA99B;font-weight:600}
+    #cookie-banner .cb-actions{display:flex;gap:10px;flex:none}
+    #cookie-banner button{font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;padding:10px 20px;border-radius:999px;cursor:pointer;border:1.5px solid transparent}
+    #cookie-reject{background:transparent;color:#F2EFE8;border-color:rgba(247,245,240,.35)}
+    #cookie-reject:hover{background:rgba(247,245,240,.08)}
+    #cookie-accept{background:#F4F6F3;color:#12201A;border-color:#F4F6F3}
+    #cookie-accept:hover{background:#FFFFFF}
+    #cookie-banner[hidden]{display:none}
+    @media(max-width:680px){#cookie-banner .cb-inner{flex-direction:column;align-items:stretch}#cookie-banner .cb-actions{justify-content:flex-end}}
+  </style>
+  <div class="cb-inner">
+    <p>Usamos Google Analytics y Meta Pixel para entender cómo se usa este sitio. Puedes aceptarlos o rechazarlos. Más detalle en la <a href="/privacidad/">política de privacidad</a>.</p>
+    <div class="cb-actions">
+      <button type="button" id="cookie-reject">Rechazar</button>
+      <button type="button" id="cookie-accept">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script src="/js/consent-banner.js?v=3" defer></script>
 </body>
 </html>

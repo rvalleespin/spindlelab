@@ -13,3 +13,19 @@
 # Video del hero.
 /*.mp4
   Cache-Control: public, max-age=2592000
+
+# Scripts de comportamiento, fuera de /assets/ a propósito. El de consentimiento vivía en
+# /assets/js/ y ahí heredaba el cache de 7 días: un visitante que vuelve se quedaba con la
+# versión vieja, o sea leyendo una política que promete un control que su navegador no le
+# muestra. Y no se podía arreglar con una regla más específica: en Cloudflare Pages una
+# petición hereda los encabezados de TODAS las reglas que calzan, y dos Cache-Control se unen
+# con una coma en vez de pisarse (documentado en Pages > Configuration > Headers). La única
+# forma limpia de tener otro cache es no solaparse.
+#
+# Medido contra el sitio en vivo: sale `public, max-age=14400, must-revalidate`. El
+# must-revalidate es de acá; el max-age lo reescribe el Browser Cache TTL de la zona (4 h),
+# que se cambia en el panel de Cloudflare y no en este archivo. Sirve igual: 4 horas con
+# revalidación en vez de los 7 días de /assets/*. Si algún día hace falta que un cambio de
+# este script llegue al instante, el número a tocar está en el panel, no acá.
+/js/*
+  Cache-Control: public, max-age=300, must-revalidate

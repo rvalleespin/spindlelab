@@ -4,7 +4,9 @@
 > Re-sloteado (1-sep, estructura nueva LUN-MIÉ-JUE): el jueves es el slot de "post" y este
 > empuja el blog #1, que ya estará online desde el jue 3. El post del presupuesto pasó al
 > banco post-Fiestas.
-**Pieza:** `post.png` (en esta carpeta) — ⚠️ titular del visual provisional; Cata lo alinea en su Entrega 2 (jue 3)
+**Pieza:** ✅ `pieza.png` NUEVA (mundo hilo, 8-sep) — la vieja ficha quedó de respaldo
+renombrada. El blog #1 YA ESTÁ ONLINE (dependencia resuelta el vie 5): los links del
+primer comentario funcionan
 **Se aprueba en:** Pase 3 (vie 4-sep)
 **Checklist:** ☐ blog #1 EN VIVO desde el jue 3 (dependencia dura: si al lun 7 no está online, este post no sale — avisar a Marta) · ☐ visto de Ramón · ☐ 1er comentario al tiro
 

@@ -69,3 +69,7 @@ La serie del circuito sigue todo septiembre. Síguenos.
 #SEO #IA #Chile
 
 **Primer comentario:** igual al estándar (CIRCUITO + spindlelab.cl).
+
+---
+**✅ PUBLICADO — mié 2-sep en Instagram Y en LinkedIn página (ambos confirmados por Ramón).**
+Día completo: la pieza del motor salió en los dos canales con el mismo caption.

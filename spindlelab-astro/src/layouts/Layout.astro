@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-  title = 'Agencia de marketing con IA en Chile — SpindleLab',
+  title = 'Agencia de marketing con IA en Chile · SpindleLab',
   description = 'Auditamos tu sitio y tu presencia en IA para que ChatGPT, Gemini y Perplexity te recomienden antes que tu competencia. Diagnóstico gratis en 24 horas.',
 } = Astro.props;
 
@@ -81,37 +81,70 @@ const jsonLd = {
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-J40VW9E0TW"></script>
+    <!-- Google tag (gtag.js): NO se carga hasta que haya consentimiento. Hasta el 22-sep se
+         cargaba siempre, con Consent Mode en denegado, y así igual le mandaba a Google un aviso
+         sin cookies de cada página vista a quien había dicho que no (medido en la red). Ahora el
+         archivo se pide recién cuando la persona acepta: __spindlelabInitGA, que también llama
+         /js/consent-banner.js al pulsar Aceptar. La función gtag() se define igual aunque no
+         haga nada, porque hay código que la llama directo (el generate_lead de /contacto/), y
+         sin ella lanzaría un error justo después de un envío exitoso. -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+      function gtag(){dataLayer.push(arguments);}
+      var __spindlelabConsent = (function(){
+        try { return localStorage.getItem('spindlelab_consent'); } catch(e){ return null; }
+      })();
+      function __spindlelabInitGA(){
+        if (window.__spindlelabGAInited) return;
+        window.__spindlelabGAInited = true;
+        // Lo que se haya encolado antes del permiso (un generate_lead, un chequeo_completado)
+        // se descarta: nada de lo que pasó antes de aceptar se manda después de aceptar.
+        window.dataLayer.length = 0;
+        gtag('consent', 'default', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted'
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-J40VW9E0TW');
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J40VW9E0TW';
+        document.head.appendChild(s);
       }
-      gtag('js', new Date());
-      gtag('config', 'G-J40VW9E0TW');
+      if (__spindlelabConsent === 'granted') { __spindlelabInitGA(); }
     </script>
 
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code — no tiene consent mode propio, así que no se inicializa hasta
+         que haya consentimiento. Sin noscript: no se puede pedir consentimiento sin
+         JavaScript, así que tampoco se rastrea sin JavaScript. -->
     <script is:inline>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '2885353628478565');
-      fbq('track', 'PageView');
+      function __spindlelabInitMeta() {
+        if (window.__spindlelabMetaInited) return;
+        window.__spindlelabMetaInited = true;
+        (function (f, b, e, v, n, t, s) {
+          if (f.fbq) return;
+          n = f.fbq = function () {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+          };
+          if (!f._fbq) f._fbq = n;
+          n.push = n;
+          n.loaded = !0;
+          n.version = '2.0';
+          n.queue = [];
+          t = b.createElement(e);
+          t.async = !0;
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s);
+        })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2885353628478565');
+        fbq('track', 'PageView');
+      }
+      if (__spindlelabConsent === 'granted') {
+        __spindlelabInitMeta();
+      }
     </script>
     <!-- End Meta Pixel Code -->
 
@@ -131,7 +164,7 @@ const jsonLd = {
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:alt" content="SpindleLab — SEO técnico y visibilidad en IA" />
+    <meta property="og:image:alt" content="SpindleLab. SEO técnico y visibilidad en IA" />
     <meta property="og:locale" content="es_CL" />
     <meta name="twitter:card" content="summary_large_image" />
 
@@ -141,23 +174,12 @@ const jsonLd = {
 
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Inter alojada en el sitio (ver /fonts/inter.css): antes venía de Google Fonts, que
+         recibía la IP de cada visitante en cada página, aceptara o no las cookies. -->
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/fonts/inter.css?v=1" />
   </head>
   <body class="bg-bg">
-    <!-- Meta Pixel (noscript) -->
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display:none"
-        src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
-      /></noscript>
-
     <slot />
 
     <!-- Reveal al hacer scroll (con red de seguridad). -->
@@ -210,5 +232,30 @@ const jsonLd = {
         lazyVids.forEach((v) => vio.observe(v));
       }
     </script>
+
+    <div id="cookie-banner" hidden>
+      <style>
+        #cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#161D26;border-top:1px solid rgba(247,245,240,.12);padding:18px 20px}
+        #cookie-banner .cb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+        #cookie-banner p{margin:0;font-size:13.5px;color:rgba(242,239,232,.72);line-height:1.5;max-width:640px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+        #cookie-banner a{color:#2FA99B;font-weight:600}
+        #cookie-banner .cb-actions{display:flex;gap:10px;flex:none}
+        #cookie-banner button{font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;padding:10px 20px;border-radius:999px;cursor:pointer;border:1.5px solid transparent}
+        #cookie-reject{background:transparent;color:#F2EFE8;border-color:rgba(247,245,240,.35)}
+        #cookie-reject:hover{background:rgba(247,245,240,.08)}
+        #cookie-accept{background:#F4F6F3;color:#12201A;border-color:#F4F6F3}
+        #cookie-accept:hover{background:#FFFFFF}
+        #cookie-banner[hidden]{display:none}
+        @media(max-width:680px){#cookie-banner .cb-inner{flex-direction:column;align-items:stretch}#cookie-banner .cb-actions{justify-content:flex-end}}
+      </style>
+      <div class="cb-inner">
+        <p>Usamos Google Analytics y Meta Pixel para entender cómo se usa este sitio. Puedes aceptarlos o rechazarlos. Más detalle en la <a href="/privacidad/">política de privacidad</a>.</p>
+        <div class="cb-actions">
+          <button type="button" id="cookie-reject">Rechazar</button>
+          <button type="button" id="cookie-accept">Aceptar</button>
+        </div>
+      </div>
+    </div>
+    <script is:inline src="/js/consent-banner.js?v=3" defer></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 # Los 21 chequeos de visibilidad en IA, explicados uno por uno (y cómo correrlos gratis en tu sitio)
 
-> **Estado: ⬜ BORRADOR para edición de Ramón (Pase 1+2, lun 31-ago).** Publica Diego el **jue 3-sep**.
+> **Estado: ✅ PUBLICADO (5-sep) y ACTUALIZADO AL MOTOR v2 (8-sep)** — el HTML en vivo es la referencia; este md se mantiene en sincronía de tabla y bloque 1.
 > Tiene que estar en vivo antes del post de página del **mar 8-sep**, que lo enlaza.
 > **Blog #1 de la línea editorial v2** (`marketing/linea-editorial-blog-v2.md`). Pilar: **Pedagogía**.
 > **Fuente real:** la metodología pública de `spindlelab.cl/diagnostico` y el chequeo que la
@@ -28,10 +28,10 @@ Cada chequeo vale un peso fijo. Los tres bloques suman 100: acceso 30, entidad 4
 
 | Chequeo | Bloque | Qué mide | Cómo se arregla | Peso |
 |---|---|---|---|---|
-| ChatGPT puede leer tu sitio | ¿Te pueden leer? | Que tu `robots.txt` no bloquee a **GPTBot** en la raíz del sitio | Quita la regla que bloquea a GPTBot en tu `robots.txt` | 6 |
-| Claude puede leer tu sitio | ¿Te pueden leer? | Que tu `robots.txt` no bloquee a **ClaudeBot** | Quita la regla que bloquea a ClaudeBot | 6 |
-| Perplexity puede leer tu sitio | ¿Te pueden leer? | Que tu `robots.txt` no bloquee a **PerplexityBot** | Quita la regla que bloquea a PerplexityBot | 6 |
-| Gemini puede leer tu sitio | ¿Te pueden leer? | Que tu `robots.txt` no bloquee a **Google-Extended** | Quita la regla que bloquea a Google-Extended | 6 |
+| Los índices de búsqueda de IA pueden entrar | ¿Te pueden leer? | Que tu `robots.txt` no bloquee a **OAI-SearchBot, Claude-SearchBot ni PerplexityBot** | Quita la regla que los bloquea | 7 |
+| Los asistentes de IA pueden visitarte en vivo | ¿Te pueden leer? | Que tu `robots.txt` no bloquee a **ChatGPT-User, Claude-User ni Perplexity-User** | Quita la regla que los bloquea | 7 |
+| El servidor no expulsa a los robots de IA | ¿Te pueden leer? | Pedimos tu portada como cada robot: un 403 por nombre de agente delata al servidor/CDN | Permite el paso en el hosting/CDN | 8 |
+| Robots de entrenamiento: decisión consciente | ¿Te pueden leer? | Que bloquear **GPTBot/ClaudeBot/Google-Extended/CCBot** (no afecta citas de hoy) sea decisión, no descuido | Decide con la información completa | 2 |
 | El sitio responde por HTTPS | ¿Te pueden leer? | Que el dominio devuelva un 200 sobre HTTPS, sin cadenas de redirección rotas | Asegura que el dominio sirva por HTTPS y responda 200 | 6 |
 | Tienes datos estructurados | ¿Te entienden? | Que haya al menos un bloque de JSON-LD **válido** en la portada | Agrega JSON-LD. Es la forma en que le explicas a un motor qué es tu negocio | 6 |
 | Tu negocio está declarado como entidad | ¿Te entienden? | Que exista un nodo `Organization`, `LocalBusiness`, `MedicalOrganization`, `LegalService` o equivalente | Declara un nodo de entidad con nombre, dirección y contacto | 8 |

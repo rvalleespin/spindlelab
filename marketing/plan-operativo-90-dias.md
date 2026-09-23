@@ -141,7 +141,7 @@ El centro de gravedad cambia: entregar impecable a los clientes cerrados (Claude
 ### Semana 9 (1–7 sep)
 - [ ] [TÚ] Entrega a clientes con apoyo [CC] · outbound según regla de capacidad (0 clientes = 50, 1 = 25, 2 = pausa)
 - [ ] [CC] Artículo 9 → [TÚ] editar y publicar
-- [ ] [CC] Panel semanal + primera evaluación seria de Ads (sin decidir aún)
+- [x] [CC] Panel semanal + primera evaluación seria de Ads — **hecha el 21-sep** (con atraso): `marketing/metricas/checkpoint-dia77-2026-09-21.md`. Resultado: 0 mini-diagnósticos originados en ads en 69 días de campaña; el criterio de apagado se cumplió y venció el 11-sep.
 
 ### Semana 10 (8–14 sep)
 - [ ] [CC] Artículo 10 → [TÚ] editar y publicar
@@ -152,7 +152,7 @@ El centro de gravedad cambia: entregar impecable a los clientes cerrados (Claude
 - [ ] [CC] Dejar preparados artículos 11–12 y posts de las semanas siguientes
 
 ### Semana 12 (22–28 sep)
-- [ ] [TÚ] **Decisión Google Ads** con el umbral definido: ≥2 mini-diagnósticos originados en ads → continúa; si no → se apaga
+- [x] [TÚ] **Decisión Google Ads: APAGAR — decidida por Ramón el 21-sep-2026.** 0 diagnósticos originados en ads en 69 días; el criterio escrito («≥2 o se apaga sin duelo») se cumplió y venció el 11-sep. **Ejecución pendiente y bloqueada técnicamente:** la cuenta 597-527-6690 vive bajo `hola@spindlelab.cl` y no es alcanzable desde el Chrome logueado con manuvalleespin (verificado 21-sep: su selector solo lista la 497-377-4579, y aparece **Cerrada**). Lo ejecuta Ramón o una sesión con esa sesión iniciada. Encargo: `marketing/encargos-otras-sesiones/encargo-gonzalo-apagar-ads.md`
 - [ ] [CC] Artículo 11 → [TÚ] editar y publicar
 - [ ] [TÚ] Outbound según capacidad
 

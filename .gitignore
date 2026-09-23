@@ -3,7 +3,9 @@
 .claude/*
 !.claude/skills/
 !.claude/skills/**
-COTIZACIONES/
+!.claude/settings.json
+/COTIZACIONES/
+/marketing/cotizaciones/
 LOGOS/
 linkedin-spindlelab.md
 analisiscotizacionfotografo.md
