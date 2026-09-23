@@ -563,7 +563,7 @@ const RE_TEXTO_BLOQUEO = new RegExp([
   'request (was )?(rejected|blocked|unsuccessful)', 'requested url was rejected',
   'incapsula incident', 'pardon our interruption',
   'checking (your browser|if the site connection is secure)', 'enable javascript and cookies to continue',
-  'verify (that )?you are (a )?human', 'verifica(r)? que eres (un )?humano', '403 forbidden',
+  'verify (that )?you.{0,9}re (not )?(a )?(human|robot)', 'verifica(r)? que eres (un )?humano', '403 forbidden',
   'attention required', 'unusual traffic', 'trafico inusual', 'are you a (human|robot)',
   'demuestra que (no )?eres', 'comprobacion de seguridad', 'security check',
 ].join('|'));
