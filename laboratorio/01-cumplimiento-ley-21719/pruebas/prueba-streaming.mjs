@@ -98,5 +98,48 @@ console.log('=== la rama de streaming, que es la que corre en producción ===');
   const r = await nuevo.chequear('ejemplo.cl', f);
   eq('lectura corta de la portada: sin informe', r.ok, false);
 }
+{
+  // www por la rama de streaming. El host sin www no conecta (el doble lanza por cualquier
+  // ruta que no tenga) y el sitio vive en www: las siete lecturas se rehacen ahí, con cuerpos
+  // de verdad, y el robots.txt que se lee es el de www.
+  const soloWww = {};
+  for (const [u, r] of Object.entries(base())) soloWww[u.replace('https://ejemplo.cl/', 'https://www.ejemplo.cl/')] = r;
+  const f = fake(soloWww);
+  const r = await nuevo.chequear('ejemplo.cl', f);
+  eq('www por streaming: hay informe', r.ok, true);
+  eq('del host que contesta', r.dominio, 'www.ejemplo.cl');
+  eq('con el aviso', /^Revisamos www\.ejemplo\.cl porque ejemplo\.cl/.test(r.aviso || ''), true);
+  eq('el robots.txt de www bloquea y se detecta', r.items.find(i=>i.id==='bots-indices').ok, false);
+  eq('la portada de www se leyó por streaming', (f.estado['https://www.ejemplo.cl/'] || []).length, 4);
+  // Y el camino normal por streaming no toca www.
+  const f2 = fake(base());
+  const r2 = await nuevo.chequear('ejemplo.cl', f2);
+  eq('normal por streaming: sin aviso', r2.aviso, undefined);
+  eq('normal por streaming: nada a www', Object.keys(f2.estado).some(u => u.includes('www.')), false);
+}
+{
+  // Sin www da 530 por streaming (lo que Cloudflare devuelve cuando el nombre no tiene DNS).
+  const rutas = { ...base(), 'https://ejemplo.cl/': { status: 530, body: '' } };
+  for (const [u, r] of Object.entries(base())) rutas[u.replace('https://ejemplo.cl/', 'https://www.ejemplo.cl/')] = r;
+  const r = await nuevo.chequear('ejemplo.cl', fake(rutas));
+  eq('530 sin www por streaming: informe de www', r.dominio, 'www.ejemplo.cl');
+}
+{
+  // Una página de bloqueo con 200 (como la de www.bancoestado.cl, 23-sep), por la rama de
+  // producción y cortada en trozos de 1 KB. La única frase de bloqueo es "no cumple con nuestra
+  // política de seguridad", y la "í" (dos bytes) queda partida justo en el corte entre el
+  // primer y el segundo trozo: la guardia tiene que verla igual. No se puntúa.
+  const antes = '<h2>Advertencia:</h2><p>El navegador no cumple con nuestra pol';
+  const relleno = ' '.repeat(1023 - new TextEncoder().encode(antes).length);
+  const aviso = relleno + antes + 'ítica de seguridad.</p>' +
+    '<div><a href="http://www.ejemplo.cl"><img src="/logo.jpg" alt="Logo"></a></div><div>Reference: 0.1</div>';
+  eq('la "í" empieza en el byte 1023 (queda partida)', new TextEncoder().encode(relleno + antes).length, 1023);
+  const r = await nuevo.chequear('ejemplo.cl', fake(base({ 'https://ejemplo.cl/': { status: 200, body: aviso, trozoKB: 1 } })));
+  eq('página de bloqueo por streaming: sin informe', r.ok, false);
+  eq('página de bloqueo por streaming: lo dice', /no deja entrar a lectores automáticos/.test(r.error || ''), true);
+  // Y una portada chica normal por la misma rama, en los mismos trozos, sigue dando informe.
+  const r2 = await nuevo.chequear('ejemplo.cl', fake(base({ 'https://ejemplo.cl/': { status: 200, body: PORTADA, trozoKB: 1 } })));
+  eq('portada chica normal por streaming: hay informe', r2.ok, true);
+}
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo?1:0);
