@@ -261,22 +261,59 @@ async function pedirUna(url, fetchImpl, opts = {}, signal) {
  * robots.txt: ¿el grupo que aplica a este bot lo bloquea en la raíz?  *
  * ------------------------------------------------------------------ */
 
+// El robots.txt también lo escribe el sitio revisado, y se lee entero (hasta 3 MB), así que
+// todo lo de acá corre en tiempo lineal. Medido el 23-sep con la versión anterior:
+// - cada Disallow guardaba su propia copia de la lista de User-agent, y la búsqueda del bot
+//   recorría esa copia regla por regla. Con miles de User-agent seguidos de miles de Disallow
+//   eran 4,7 s de CPU con 200 KB, y al cuadrado de ahí para arriba. Ahora las reglas de un
+//   grupo comparten la lista (no cambia después de la primera regla: el User-agent siguiente
+//   abre un grupo nuevo) y la búsqueda mira cada lista una vez;
+// - `/#.*$/` y `/^([a-z-]+)\s*:\s*(.*)$/i` retrocedían al cuadrado con un "\r" suelto en la
+//   línea (el fin de línea de los Mac viejos, que `split` no corta): 5,9 y 5,1 s con 100 KB.
+//   `sinComentario` y `campoYValor` hacen lo mismo con indexOf.
+// Y el chequeo lee el archivo una sola vez (`gruposRobots`) para los diez robots, no diez.
 export function bloqueaBot(robotsTxt, bot) {
-  if (!robotsTxt) return false; // sin robots.txt no hay bloqueo
-  const lineas = robotsTxt.split(/\r?\n/).map((l) => l.replace(/#.*$/, '').trim());
-  const objetivo = bot.toLowerCase();
+  return bloqueaEnGrupos(gruposRobots(robotsTxt), bot);
+}
+
+// Lo mismo que `l.replace(/#.*$/, '')`: corta en el primer '#' que no tenga después un fin de
+// línea que `.` no cruce (\r, \u2028, \u2029; los \n ya los cortó el split).
+function sinComentario(l) {
+  const corte = Math.max(l.lastIndexOf('\r'), l.lastIndexOf('\u2028'), l.lastIndexOf('\u2029'));
+  const i = l.indexOf('#', corte + 1);
+  return i === -1 ? l : l.slice(0, i);
+}
+
+// Lo mismo que `l.match(/^([a-z-]+)\s*:\s*(.*)$/i)`, devuelto como [campo, valor] o null. El
+// campo va hasta el primer ':' (ni [a-z-] ni \s lo incluyen), y el valor es lo que sigue sin los
+// espacios del comienzo, siempre que no quede adentro un fin de línea que `.` no cruce.
+function campoYValor(l) {
+  const dosPuntos = l.indexOf(':');
+  if (dosPuntos === -1) return null;
+  const campo = l.slice(0, dosPuntos);
+  if (!/^[a-z-]+\s*$/i.test(campo)) return null;
+  const valor = l.slice(dosPuntos + 1).trimStart();
+  if (/[\n\r\u2028\u2029]/.test(valor)) return null;
+  return [campo.trimEnd(), valor];
+}
+
+// Los grupos del robots.txt, cada uno con su lista de User-agent y sus reglas, en orden.
+function gruposRobots(robotsTxt) {
+  const grupos = [];
+  if (!robotsTxt) return grupos; // sin robots.txt no hay bloqueo
 
   let agentes = [];
   let enGrupo = false;
   let previaEraAgente = false;
-  const grupos = [];
+  let actual = null;
 
-  for (const l of lineas) {
+  for (const linea of robotsTxt.split(/\r?\n/)) {
+    const l = sinComentario(linea).trim();
     if (!l) continue;
-    const m = l.match(/^([a-z-]+)\s*:\s*(.*)$/i);
-    if (!m) continue;
-    const campo = m[1].toLowerCase();
-    const valor = m[2].trim();
+    const par = campoYValor(l);
+    if (!par) continue;
+    const campo = par[0].toLowerCase();
+    const valor = par[1].trim();
 
     if (campo === 'user-agent') {
       if (enGrupo && !previaEraAgente) {
@@ -290,18 +327,25 @@ export function bloqueaBot(robotsTxt, bot) {
     if (campo === 'disallow' || campo === 'allow') {
       previaEraAgente = false;
       enGrupo = true;
-      grupos.push({ agentes: [...agentes], campo, valor });
+      if (!actual || actual.agentes !== agentes) {
+        actual = { agentes, reglas: [] };
+        grupos.push(actual);
+      }
+      actual.reglas.push({ campo, valor });
     }
   }
+  return grupos;
+}
 
-  const aplica = (lista) => lista.includes(objetivo);
-  const reglas = grupos.filter((g) => aplica(g.agentes));
-  const usar = reglas.length ? reglas : grupos.filter((g) => g.agentes.includes('*'));
+function bloqueaEnGrupos(grupos, bot) {
+  const objetivo = bot.toLowerCase();
+  let usar = grupos.filter((g) => g.agentes.includes(objetivo));
+  if (!usar.length) usar = grupos.filter((g) => g.agentes.includes('*'));
   if (!usar.length) return false;
 
   // La regla más específica que matchea la raíz gana; empate lo gana Allow.
   let mejor = null;
-  for (const r of usar) {
+  for (const r of usar.flatMap((g) => g.reglas)) {
     const patron = r.valor;
     if (r.campo === 'disallow' && patron === '') continue; // "Disallow:" vacío = permite todo
     const matchea = patron === '/' || patron === '*' || patron === '/*';
@@ -315,30 +359,223 @@ export function bloqueaBot(robotsTxt, bot) {
 }
 
 /* ------------------------------------------------------------------ *
- * Lectura del HTML. Regex a propósito: no hay DOM en el runtime y     *
- * solo necesitamos presencia/ausencia de señales, no parsear el árbol.*
+ * Lectura del HTML. Sin DOM en el runtime: solo necesitamos          *
+ * presencia/ausencia de señales, no parsear el árbol.                 *
+ *                                                                    *
+ * Todo lo que recorre el HTML lo hace en tiempo lineal, con indexOf   *
+ * y regex de literales. Este endpoint es público y sin autenticar, y  *
+ * el HTML lo escribe el sitio revisado. Medido el 23-sep con Node, las *
+ * regex anteriores (con [^>]+ o [\s\S]*? delante de lo que buscaban):  *
+ * la de la meta description tardaba 5,3 s de CPU con 25 KB de          *
+ * '<meta name="description" ' repetido y más de 20 s con 50 KB; la de  *
+ * los títulos con pregunta, 7,3 s con 100 KB de '?'; la del texto      *
+ * visible, 7 s con 100 KB de '<'; las del canonical, el lang, el       *
+ * JSON-LD y el title, entre 0,3 y 1 s con 100 KB. Todas crecían al     *
+ * cuadrado o peor, y la portada se lee hasta 3 MB: minutos por visita. *
+ *                                                                    *
+ * Cada función de acá devuelve EXACTAMENTE lo que devolvía su regex    *
+ * (comparadas con millones de cadenas al azar y con portadas reales    *
+ * antes del cambio): el arreglo es de costo, no de criterio.           *
  * ------------------------------------------------------------------ */
 
-function bloquesJsonLd(html) {
-  const out = [];
-  const re = /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+// Las etiquetas que empiezan con `re` (una regex /gi de un literal, como /<meta/gi), como
+// [cuerpo, fin): `cuerpo` justo después del nombre y `fin` en el primer '>' que sigue, o en el
+// final del documento si no hay ninguno.
+//
+// La búsqueda siguiente arranca DESPUÉS de `fin`, y eso es lo que la hace lineal: una
+// etiqueta que empieza dentro de otra sin cerrar ('<link <link <link ...') comparte el mismo
+// `fin`, así que su tramo es un pedazo del tramo de la primera, y lo que no apareció en el
+// tramo entero tampoco aparece en un pedazo. Las regex viejas volvían a recorrer ese tramo
+// una vez por cada '<link' de adentro.
+function* aperturas(html, re) {
+  re.lastIndex = 0;
   let m;
   while ((m = re.exec(html))) {
+    const cuerpo = m.index + m[0].length;
+    let fin = html.indexOf('>', cuerpo);
+    if (fin === -1) fin = html.length;
+    yield [cuerpo, fin];
+    re.lastIndex = fin + 1;
+  }
+}
+
+// Lo mismo que `/<nombre[^>]+atributo/i.test(html)`: alguna etiqueta que empiece con
+// `reApertura` lleva `reAtributo` antes de su primer '>'. El tramo arranca un carácter después
+// del nombre porque `[^>]+` pide al menos uno. `reAtributo` no puede contener '>'.
+function hayEtiquetaCon(html, reApertura, reAtributo) {
+  for (const [cuerpo, fin] of aperturas(html, reApertura)) {
+    if (reAtributo.test(html.slice(cuerpo + 1, fin))) return true;
+  }
+  return false;
+}
+
+// Lo mismo que el primer grupo de `/<title[^>]*>([\s\S]*?)<\/title>/i`, o ''. Basta con mirar
+// el primer <title: si a él le falta el '>' o el </title> que viene después, a todos los que
+// siguen también.
+function tituloDe(html) {
+  const abre = /<title/i.exec(html);
+  if (!abre) return '';
+  const fin = html.indexOf('>', abre.index + abre[0].length);
+  if (fin === -1) return '';
+  const reCierre = /<\/title>/gi;
+  reCierre.lastIndex = fin + 1;
+  const cierre = reCierre.exec(html);
+  return cierre ? html.slice(fin + 1, cierre.index) : '';
+}
+
+// Lo mismo que el primer grupo de
+// `/<meta[^>]+name=["']description["'][^>]*content=["']([^"']*)["']/i`, o ''.
+// La regex, con su retroceso, se queda con el ÚLTIMO content= de la etiqueta que venga
+// después de algún name="description", y el valor llega hasta la comilla siguiente, aunque
+// esté pasado el '>'. Si después de ese último content= no queda ninguna comilla en todo el
+// documento, retrocede al penúltimo, cuyo valor termina en la comilla del último.
+const RE_COMILLA = /["']/g;
+function metaDescripcionDe(html) {
+  const reContenido = /content=["']/gi;
+  for (const [cuerpo, fin] of aperturas(html, /<meta/gi)) {
+    const desde = cuerpo + 1;
+    const tag = html.slice(desde, fin);
+    const nombre = /name=["']description["']/i.exec(tag);
+    if (!nombre) continue;
+    let ultimo = -1;
+    let penultimo = -1;
+    reContenido.lastIndex = nombre.index + nombre[0].length;
+    let c;
+    while ((c = reContenido.exec(tag))) {
+      penultimo = ultimo;
+      ultimo = desde + c.index + c[0].length;
+    }
+    if (ultimo === -1) continue;
+    let valor = ultimo;
+    RE_COMILLA.lastIndex = valor;
+    let comilla = RE_COMILLA.exec(html);
+    if (!comilla) {
+      if (penultimo === -1) continue;
+      valor = penultimo;
+      RE_COMILLA.lastIndex = valor;
+      comilla = RE_COMILLA.exec(html);
+    }
+    return html.slice(valor, comilla.index);
+  }
+  return '';
+}
+
+// Lo mismo que contar `/<h[23][^>]*>[^<]*\?[^<]*<\/h[23]>/gi`: un <h2 o <h3 cuyo texto, del
+// '>' al primer '<', tiene un '?', y ese '<' abre un </h2> o </h3>. Si no calza, ningún <h2
+// de adentro de la misma etiqueta calza tampoco, y la búsqueda sigue en ese '<'.
+function preguntasEnTitulos(html) {
+  const reTitulo = /<h[23]/gi;
+  const reCierre = /<\/h[23]>/iy;
+  let n = 0;
+  let m;
+  while ((m = reTitulo.exec(html))) {
+    const fin = html.indexOf('>', m.index + m[0].length);
+    if (fin === -1) break;
+    const menor = html.indexOf('<', fin + 1);
+    if (menor === -1) break;
+    reCierre.lastIndex = menor;
+    if (reCierre.test(html) && html.slice(fin + 1, menor).includes('?')) {
+      n++;
+      reTitulo.lastIndex = menor + 5;
+    } else {
+      reTitulo.lastIndex = menor;
+    }
+  }
+  return n;
+}
+
+// Lo mismo que `s.replace(/<nombre[\s\S]*?<\/nombre>/gi, ' ')`. Si un <nombre no tiene su
+// cierre, los que vienen después tampoco, y ahí se termina: la regex recorría el resto del
+// documento una vez por cada uno.
+function sinBloques(s, nombre) {
+  const reAbre = new RegExp(`<${nombre}`, 'gi');
+  const reCierra = new RegExp(`</${nombre}>`, 'gi');
+  const partes = [];
+  let desde = 0;
+  let m;
+  while ((m = reAbre.exec(s))) {
+    reCierra.lastIndex = m.index + m[0].length;
+    const cierre = reCierra.exec(s);
+    if (!cierre) break;
+    partes.push(s.slice(desde, m.index), ' ');
+    desde = reAbre.lastIndex = cierre.index + cierre[0].length;
+  }
+  partes.push(s.slice(desde));
+  return partes.join('');
+}
+
+// Lo mismo que `s.replace(/<[^>]+>/g, ' ')`: de cada '<' al primer '>' (con al menos un
+// carácter entre medio). Si un '<' no tiene '>' después, ninguno de los siguientes tampoco.
+function sinEtiquetas(s) {
+  const partes = [];
+  let desde = 0;
+  let i = s.indexOf('<');
+  while (i !== -1) {
+    if (i + 1 >= s.length || s[i + 1] === '>') {
+      i = s.indexOf('<', i + 1);
+      continue;
+    }
+    const fin = s.indexOf('>', i + 1);
+    if (fin === -1) break;
+    partes.push(s.slice(desde, i), ' ');
+    desde = fin + 1;
+    i = s.indexOf('<', desde);
+  }
+  partes.push(s.slice(desde));
+  return partes.join('');
+}
+
+function textoVisible(html) {
+  return sinEtiquetas(sinBloques(sinBloques(html, 'script'), 'style'))
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// Los bloques de `/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi`.
+// Un <script sin '>' o un bloque sin </script> termina la búsqueda, igual que en la regex:
+// ninguno de los que siguen podría cerrar.
+function bloquesJsonLd(html) {
+  const out = [];
+  const reScript = /<script/gi;
+  const reTipo = /type=["']application\/ld\+json["']/i;
+  const reFin = /<\/script>/gi;
+  let m;
+  while ((m = reScript.exec(html))) {
+    const cuerpo = m.index + m[0].length;
+    const fin = html.indexOf('>', cuerpo);
+    if (fin === -1) break;
+    if (!reTipo.test(html.slice(cuerpo + 1, fin))) {
+      reScript.lastIndex = fin + 1;
+      continue;
+    }
+    reFin.lastIndex = fin + 1;
+    const cierre = reFin.exec(html);
+    if (!cierre) break;
     try {
-      out.push(JSON.parse(m[1].trim()));
+      out.push(JSON.parse(html.slice(fin + 1, cierre.index).trim()));
     } catch {
       /* bloque inválido: se ignora, y eso ya cuenta como que no aporta */
     }
+    reScript.lastIndex = cierre.index + cierre[0].length;
   }
   return out;
 }
 
-function aplanar(nodo, acc = []) {
-  if (Array.isArray(nodo)) {
-    nodo.forEach((n) => aplanar(n, acc));
-  } else if (nodo && typeof nodo === 'object') {
-    acc.push(nodo);
-    if (nodo['@graph']) aplanar(nodo['@graph'], acc);
+// Los nodos del JSON-LD en el mismo orden que la versión recursiva (primero el nodo, después
+// su @graph, después sus hermanos), pero con una pila propia. La recursiva reventaba con un
+// RangeError, y el visitante recibía un error en vez de un informe, con arreglos anidados unos
+// cientos de miles de niveles: '[[[[...]]]]' de 1 MB bastaba.
+function aplanar(raiz) {
+  const acc = [];
+  const pila = [raiz];
+  while (pila.length) {
+    const nodo = pila.pop();
+    if (Array.isArray(nodo)) {
+      for (let i = nodo.length - 1; i >= 0; i--) pila.push(nodo[i]);
+    } else if (nodo && typeof nodo === 'object') {
+      acc.push(nodo);
+      if (nodo['@graph']) pila.push(nodo['@graph']);
+    }
   }
   return acc;
 }
@@ -475,23 +712,23 @@ export async function chequear(entrada, fetchImpl = fetch) {
   // Un robots.txt que no pudimos leer no es un robots.txt que no existe.
   const robotsTxt = robots && robots.status === 200 ? robots.texto : '';
   const robotsIlegible = !robots || (robots.status === 200 && !robots.completo);
+  // Se lee una vez y se pregunta por cada uno de los diez robots.
+  const gruposDelRobots = gruposRobots(robotsTxt);
+  const bloquea = (bot) => bloqueaEnGrupos(gruposDelRobots, bot);
   const nodos = aplanar(bloquesJsonLd(html));
 
-  const title = (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [, ''])[1]
-    .replace(/\s+/g, ' ')
-    .trim();
-  const desc = (html.match(
-    /<meta[^>]+name=["']description["'][^>]*content=["']([^"']*)["']/i
-  ) || [, ''])[1].trim();
+  const title = tituloDe(html).replace(/\s+/g, ' ').trim();
+  const desc = metaDescripcionDe(html).trim();
   const h1s = html.match(/<h1[\s>]/gi) || [];
   const entidad = nodos.find((n) => tieneTipo(n, TIPOS_ENTIDAD));
-  const sameAsN = Math.max(
-    0,
-    ...nodos.map((n) => {
-      const s = n.sameAs;
-      return Array.isArray(s) ? s.length : typeof s === 'string' && s ? 1 : 0;
-    })
-  );
+  // Con un for y no con Math.max(0, ...nodos.map(...)): pasar cientos de miles de nodos como
+  // argumentos revienta la pila, y un @graph de 2 MB con 700.000 nodos vacíos lo lograba.
+  let sameAsN = 0;
+  for (const n of nodos) {
+    const s = n.sameAs;
+    const cuantos = Array.isArray(s) ? s.length : typeof s === 'string' && s ? 1 : 0;
+    if (cuantos > sameAsN) sameAsN = cuantos;
+  }
   const conFaq = nodos.some((n) => tieneTipo(n, ['faqpage', 'qapage']));
 
   // Señales que separan un sitio citable de uno meramente correcto.
@@ -503,13 +740,8 @@ export async function chequear(entrada, fetchImpl = fetch) {
     (n) => tieneTipo(n, ['person']) && (n.jobTitle || n.knowsAbout || n.alumniOf || n.worksFor)
   );
   const conFecha = nodos.some((n) => n.dateModified || n.datePublished);
-  const preguntas = (html.match(/<h[23][^>]*>[^<]*\?[^<]*<\/h[23]>/gi) || []).length;
-  const texto = html
-    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
+  const preguntas = preguntasEnTitulos(html);
+  const texto = textoVisible(html);
   const palabras = texto ? texto.split(' ').length : 0;
 
   // v2 (8-sep-2026): los robots se separan por lo que DECIDEN.
@@ -541,7 +773,7 @@ export async function chequear(entrada, fetchImpl = fetch) {
       : 'Tu robots.txt no nos llegó entero, así que no podemos afirmar que estos robots estén libres: la regla que los bloquea podría estar en la parte que no alcanzamos a leer.';
   const arregloIlegible = 'Ábrelo tú en tu-dominio.cl/robots.txt y revisa si hay una línea Disallow para estos robots. Si quieres, escríbenos a hola@spindlelab.cl y lo miramos contigo.';
 
-  const bloqIdx = botsIndices.filter((b) => bloqueaBot(robotsTxt, b));
+  const bloqIdx = botsIndices.filter(bloquea);
   add(
     'acceso', 'bots-indices', 'Los índices de búsqueda de IA pueden entrar', bloqIdx.length === 0 && !robotsIlegible, 7,
     bloqIdx.length
@@ -552,7 +784,7 @@ export async function chequear(entrada, fetchImpl = fetch) {
       : arregloIlegible
   );
 
-  const bloqAsis = botsAsistentes.filter((b) => bloqueaBot(robotsTxt, b));
+  const bloqAsis = botsAsistentes.filter(bloquea);
   add(
     'acceso', 'bots-asistentes', 'Los asistentes de IA pueden visitarte en vivo', bloqAsis.length === 0 && !robotsIlegible, 7,
     bloqAsis.length
@@ -580,7 +812,7 @@ export async function chequear(entrada, fetchImpl = fetch) {
     'Pídele a quien administre el hosting o el CDN que permita el paso a estos agentes. En Cloudflare suele estar en la regla de bots o en el modo "Bloquear rastreadores de IA".'
   );
 
-  const bloqEnt = botsEntrenamiento.filter((b) => bloqueaBot(robotsTxt, b));
+  const bloqEnt = botsEntrenamiento.filter(bloquea);
   add(
     'acceso', 'bots-entrenamiento', 'Robots de entrenamiento: decisión consciente', bloqEnt.length === 0 && !robotsIlegible, 2,
     bloqEnt.length
@@ -663,13 +895,13 @@ export async function chequear(entrada, fetchImpl = fetch) {
     sitemapOk ? 'Encontramos un sitemap válido.' : 'No encontramos /sitemap.xml.',
     'Publica un sitemap.xml y decláralo en robots.txt.'
   );
-  const canonicalOk = /<link[^>]+rel=["']canonical["']/i.test(html);
+  const canonicalOk = hayEtiquetaCon(html, /<link/gi, /rel=["']canonical["']/i);
   add(
     'citabilidad', 'canonical', 'Declaras la URL canónica', canonicalOk, 2,
     canonicalOk ? 'La home declara canonical.' : 'No hay canonical.',
     'Agrega <link rel="canonical"> en cada página.'
   );
-  const langOk = /<html[^>]+lang=["'][a-z]{2}/i.test(html);
+  const langOk = hayEtiquetaCon(html, /<html/gi, /lang=["'][a-z]{2}/i);
   add(
     'citabilidad', 'lang', 'Declaras el idioma', langOk, 2,
     langOk ? 'El <html> declara lang.' : 'El <html> no declara lang.',
