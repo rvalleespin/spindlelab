@@ -2,24 +2,39 @@
 <html lang="es-CL">
 <head>
 <meta charset="UTF-8">
-<!-- Google tag (gtag.js) — Consent Mode v2: arranca denegado salvo que ya haya
-     una decisión guardada. Este bloque tiene que correr ANTES de que consent-banner.js
-     cargue (diferido), y ANTES de gtag('config',...). -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J40VW9E0TW"></script>
+<!-- Google tag (gtag.js): NO se carga hasta que haya consentimiento. Hasta el 22-sep se
+     cargaba siempre, con Consent Mode en denegado, y así igual le mandaba a Google un aviso
+     sin cookies de cada página vista a quien había dicho que no (medido en la red). Ahora el
+     archivo se pide recién cuando la persona acepta: __spindlelabInitGA, que también llama
+     /js/consent-banner.js al pulsar Aceptar. La función gtag() se define igual aunque no
+     haga nada, porque hay código que la llama directo (el generate_lead de /contacto/), y
+     sin ella lanzaría un error justo después de un envío exitoso. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   var __spindlelabConsent = (function(){
     try { return localStorage.getItem('spindlelab_consent'); } catch(e){ return null; }
   })();
-  gtag('consent', 'default', {
-    ad_storage: __spindlelabConsent === 'granted' ? 'granted' : 'denied',
-    ad_user_data: __spindlelabConsent === 'granted' ? 'granted' : 'denied',
-    ad_personalization: __spindlelabConsent === 'granted' ? 'granted' : 'denied',
-    analytics_storage: __spindlelabConsent === 'granted' ? 'granted' : 'denied'
-  });
-  gtag("js", new Date());
-  gtag("config", "G-J40VW9E0TW");
+  function __spindlelabInitGA(){
+    if (window.__spindlelabGAInited) return;
+    window.__spindlelabGAInited = true;
+    // Lo que se haya encolado antes del permiso (un generate_lead, un chequeo_completado)
+    // se descarta: nada de lo que pasó antes de aceptar se manda después de aceptar.
+    window.dataLayer.length = 0;
+    gtag('consent', 'default', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-J40VW9E0TW');
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J40VW9E0TW';
+    document.head.appendChild(s);
+  }
+  if (__spindlelabConsent === 'granted') { __spindlelabInitGA(); }
 </script>
 <!-- Meta Pixel Code — no tiene un "consent mode" propio, así que no se inicializa hasta
      que haya consentimiento. Sin noscript: no se puede pedir consentimiento sin
@@ -466,6 +481,6 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
     </div>
   </div>
 </div>
-<script src="/js/consent-banner.js" defer></script>
+<script src="/js/consent-banner.js?v=3" defer></script>
 </body>
 </html>
