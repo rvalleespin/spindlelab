@@ -1,6 +1,6 @@
 # Pruebas de los chequeos y del control de cookies
 
-150 comprobaciones sobre los dos módulos de chequeo, que comparten la lógica de
+Comprobaciones sobre los dos módulos de chequeo, que comparten la lógica de
 validación de destino y de descarga acotada:
 
 - `verificaycumple/functions/api/chequeo.js` (rama `laboratorio/ley-21719`)
@@ -24,6 +24,8 @@ líneas de cada archivo antes de correrlo.
 | `medir-cpu.mjs` | costo por tamaño de portada, vieja contra nueva |
 | `prueba-cookies.mjs` | el control de cookies de spindlelab.cl (`public/js/consent-banner.js`) con un DOM de mentira en `vm`: Analytics solo al aceptar, almacenamiento bloqueado, otra pestaña, bfcache con eventos encolados en cualquier orden, el `revoke` del Pixel sin `grant` en caliente, cookies heredadas, `_gcl_` (82) |
 | `adversario.mjs` | entradas hechas para hacer sufrir al parser (anidamiento extremo, etiqueta sin cerrar, miles de h2, prosa de 2,8 MB) |
+| `prueba-cpu-hostil.mjs` | spindlelab.cl: portadas y robots.txt de 2,9 MB armados para gastar CPU, con tope de tiempo por caso (68) |
+| `prueba-equivalencia-lineal.mjs` | spindlelab.cl: que la lectura lineal del HTML y del robots.txt devuelva lo mismo que las regex que reemplazó (73.562) |
 
 ## Por qué existen
 
