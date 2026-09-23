@@ -69,6 +69,26 @@ no hay un canal nuevo."* · *"Ninguno de esos lo escribes tú."*
 **Chequeo rápido antes de entregar:** lee cada párrafo y pregúntate si la última frase agrega un
 hecho o solo califica al anterior. Si califica, bórrala.
 
+## El segundo tic: el texto que se anuncia a sí mismo (23-sep-2026)
+
+Distinto del anterior y Ramón lo rechazó aparte: *"mucho x: y. mucho de «lo práctico...»"*.
+
+**Dos puntos usados como anuncio-remate, párrafo tras párrafo**, y **secciones rotuladas**
+("Lo práctico...", "Una precisión...", "Dos cosas más"). Cada párrafo avisa de qué va y después
+lo entrega. Se lee como informe, no como alguien hablando.
+
+> ❌ *"Hay una parte que casi nadie mira: la consulta que optimizas no es la que se ejecuta."*
+> ❌ *"Una precisión: esto es sobre Google."* · ❌ *"Lo práctico, si quieres entrar al fan-out:"*
+
+**Ojo: los dos puntos no están prohibidos.** Su post de mejor alcance usa uno
+(*"es trabajo concreto: que los buscadores con IA puedan entrar a tu sitio"*). El problema es
+usarlos como **motor de cada párrafo**.
+
+**Lo que a Ramón le falta cuando el texto suena a informe es tejido conectivo hablado.** Sus
+transiciones reales: *"Y lo llamativo es la fecha."* · *"Así que si te llega una propuesta…"* ·
+*"No significa que no haya nada que hacer."* · *"Piensa lo que significa."* Eso es lo que hace
+que un análisis técnico se lea como conversación.
+
 ## Lo que no aparece nunca en el texto aprobado
 
 Guion largo (—) como golpe de efecto · transiciones de relleno ("Dicho eso", "Cabe
