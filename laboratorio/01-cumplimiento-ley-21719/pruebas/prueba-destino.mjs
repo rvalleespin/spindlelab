@@ -32,13 +32,23 @@ for (const [entrada, salida] of [
 ]) eq(`acepta ${entrada}`, normalizarDominio(entrada).dominio, salida);
 
 console.log('=== 3. normalizarDominio: lo que ya rechazaba, sigue rechazado ===');
-eq('localhost', normalizarDominio('localhost').error, 'Ese destino no se puede revisar.');
-eq('algo.internal', normalizarDominio('algo.internal').error, 'Ese destino no se puede revisar.');
-eq('metadata.google.internal', normalizarDominio('metadata.google.internal').error, 'Ese destino no se puede revisar.');
-eq('puerto raro', normalizarDominio('ejemplo.cl:8080').error, 'No podemos revisar puertos personalizados.');
+// 23-sep: los tres textos de arriba se reescribieron para que digan qué pasó, no solo que no
+// se puede. Lo que se prueba sigue siendo lo mismo: que estas entradas NO pasen.
+const RED_INTERNA = 'Esa dirección apunta a una red interna, no a un sitio público, así que no hay nada que revisar.';
+eq('localhost', normalizarDominio('localhost').error, RED_INTERNA);
+eq('algo.internal', normalizarDominio('algo.internal').error, RED_INTERNA);
+eq('metadata.google.internal', normalizarDominio('metadata.google.internal').error, RED_INTERNA);
+eq('puerto raro', normalizarDominio('ejemplo.cl:8080').error, 'Escribe solo el dominio, sin el número que va después de los dos puntos.');
 eq('correo', normalizarDominio('hola@spindlelab.cl').error, 'Escribe un dominio, no un correo.');
 eq('vacío', normalizarDominio('   ').error, 'Escribe un dominio.');
-eq('sin punto', normalizarDominio('ejemplo').error, 'Eso no parece un dominio válido.');
+eq('sin punto', normalizarDominio('ejemplo').error, 'Eso no parece un dominio. Escríbelo como tuempresa.cl, sin https:// ni barras.');
+// Y ninguno de los tres rechazos le repite al visitante lo que escribió ni le habla de redes,
+// puertos o IP como si supiera qué son.
+for (const entrada of ['localhost', 'ejemplo.cl:8080', 'ejemplo', '127.0.0.1']) {
+  const e = normalizarDominio(entrada).error;
+  eq(`rechazo de ${entrada}: sin raya larga`, /—/.test(e), false);
+  eq(`rechazo de ${entrada}: sin correo`, /@/.test(e), false);
+}
 
 console.log('=== 4. destinoPermitido ===');
 for (const [u, esperado] of [
@@ -174,7 +184,7 @@ console.log('=== 7. los errores ya no son un código crudo ===');
   eq('403 no lleva el correo en el texto', /@/.test(r.error), false);
   eq('403 es falla del sitio', r.tipo, 'sitio');
 }
-for (const [status, debeDecir] of [[404, /portada no existe/], [429, /bajar el ritmo/],
+for (const [status, debeDecir] of [[404, /su página de inicio no existe/], [429, /bajar el ritmo/],
                                    [526, /certificado/], [530, /no encontramos un sitio/i],
                                    [503, /su propio servidor/], [418, /no nos entreg/]]) {
   const m = mensajeDeFallo(status);
@@ -267,12 +277,15 @@ async function conCuerpo(extra) {
   eq('y no suma ni resta: 14 de 14', [r.puntaje, r.pendientes, r.sinConfirmar], [100, 0, 1]);
   eq('no va a prioridades (no se le vende el kit)', r.prioridades.length, 0);
   eq('ya no dice que no hay nada que bloquear', /no hay nada que bloquear/.test(cmp.detalle), false);
-  eq('dice por qué no lo sabemos', /Muchos sitios los cargan después con JavaScript, y eso no lo vemos desde acá/.test(cmp.detalle), true);
-  eq('arreglo: la prueba de incógnito', /ventana de incógnito, no aceptes nada/.test(cmp.arreglo), true);
-  eq('arreglo: dónde se miran las cookies (LC-7)', /En Chrome: clic derecho, Inspeccionar, pestaña Aplicación, Cookies\./.test(cmp.arreglo), true);
+  eq('dice por qué no lo sabemos', /Muchos sitios los cargan después con JavaScript, y eso no aparece en el código que recibimos/.test(cmp.detalle), true);
+  // 23-sep: la prueba casera dejó de mandar a las herramientas de desarrollador (eso es una
+  // instrucción para quien programa) y pide lo único que cualquiera ve con sus propios ojos.
+  eq('arreglo: la prueba de incógnito', /abre tu sitio en una ventana de incógnito y no toques nada/i.test(cmp.arreglo), true);
+  eq('arreglo: ya no manda a mirar cookies en el inspector', /Inspeccionar|pestaña Aplicación|_ga\b/.test(cmp.arreglo), false);
   // I2-3: y además dice que la revisión a mano tiene un costo, que se conversa antes.
   eq('arreglo: la revisión a mano sin prometerla gratis y con el costo dicho (LC-11, I2-3)',
-     cmp.arreglo.endsWith('Si quieres, lo miramos a mano en un navegador: pregúntanos y te decimos cuánto cuesta.'), true);
+     cmp.arreglo.endsWith('Eso lo miramos a mano, aparte de este chequeo. Escríbenos y te decimos cuánto cuesta antes de hacer nada.'), true);
+  eq('arreglo: no promete que sea gratis', /gratis|sin costo|incluido/i.test(cmp.arreglo), false);
   eq('título neutro', cmp.titulo, 'Permiso antes de cargar rastreadores');
 }
 {
@@ -283,11 +296,11 @@ async function conCuerpo(extra) {
   const cmp = item(r, 'cmp');
   eq('rastreadores como script normal + CMP reconocido: sin-confirmar, no ok (I2-1)', [cmp.estado, cmp.ok], ['sin-confirmar', false]);
   eq('y lo dice sin culpar al sitio (I2-1)',
-     cmp.detalle, 'Detectamos Cookiebot, un gestor de consentimiento conocido, y también Google Analytics (GA4) ' +
-     'en tu portada. Desde afuera no podemos confirmar que tu gestor los bloquee hasta que la persona acepta, ' +
-     'así que esto no suma ni resta.');
+     cmp.detalle, 'Detectamos Cookiebot, que es el programa que muestra el aviso de cookies, y también ' +
+     'Google Analytics cargando sin nada que lo frene. Desde afuera no vemos si tu aviso los detiene hasta ' +
+     'que la persona acepta. No lo contamos ni a favor ni en contra.');
   eq('y el arreglo es la prueba de incógnito (I2-1)',
-     /Para salir de la duda, abre tu sitio en una ventana de incógnito.*Si aparecen, tu gestor no está bloqueando los rastreadores\./.test(cmp.arreglo), true);
+     /ventana de incógnito y no toques nada\..*Y si aparece, falta saber si de verdad los frena\./.test(cmp.arreglo), true);
   eq('no suma ni resta: 14 de 14, y no va a prioridades', [r.puntaje, r.pendientes, r.sinConfirmar, r.prioridades.length], [100, 0, 1, 0]);
 }
 {
@@ -300,16 +313,53 @@ async function conCuerpo(extra) {
   const retenido = '<script type="text/plain" data-cookieconsent="statistics" src="https://www.googletagmanager.com/gtag/js?id=G-X"></script>';
   const r = await conCuerpo(retenido + '<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="abc"></script>');
   eq('CMP + todos los rastreadores retenidos: ok', [item(r, 'cmp').estado, r.sinConfirmar], ['ok', 0]);
-  eq('y el proveedor igual se informa', r.informativos.find((i) => i.id === 'proveedores').detalle.startsWith('Encontramos: Google Analytics (GA4).'), true);
+  // Con todo retenido, el informativo NO puede decir "también llegan": todavía no salieron.
+  eq('y el proveedor igual se informa',
+     r.informativos.find((i) => i.id === 'proveedores').detalle
+       .startsWith('Cuando esos rastreadores se carguen, los datos de quien entra a tu sitio van a llegar a Google Analytics'), true);
+  // Y el verde no puede decir "no vimos rastreadores" cuando el informativo de la misma
+  // respuesta los lista (V1-1, 23-sep).
+  eq('el verde no niega lo que el informativo afirma',
+     [/no vimos ningún rastreador/.test(item(r, 'cmp').detalle),
+      /los vimos marcado|lo vimos marcado/.test(item(r, 'cmp').detalle)], [false, true]);
   // Uno retenido y otro como script normal: el normal manda.
   const r2 = await conCuerpo(retenido + PIXEL + '<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="abc"></script>');
   eq('CMP + uno retenido y otro normal: sin-confirmar, y solo nombra el normal',
-     [item(r2, 'cmp').estado, /y también Meta Pixel en tu portada/.test(item(r2, 'cmp').detalle)], ['sin-confirmar', true]);
+     [item(r2, 'cmp').estado, /y también el Pixel de Meta cargando sin nada que lo frene/.test(item(r2, 'cmp').detalle)], ['sin-confirmar', true]);
+  eq('y no nombra al retenido como si estuviera suelto', /Google Analytics cargando/.test(item(r2, 'cmp').detalle), false);
+
+  // 23-sep, el falso verde por la puerta de al lado: una marca de retención rota abría un tramo
+  // que se tragaba el resto del documento, así que un rastreador vivo de más abajo se contaba
+  // como retenido. El informe afirmaba "lo vimos marcado para no cargar" sobre un Google
+  // Analytics que sí cargaba. Los dos casos salieron de un reproductor, no de una idea.
+  const marcaRota = '<script type="text/plain" data-cookieyes="cookieyes-analytics">var a=1;';
+  const cookiebot = '<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="abc"></script>';
+  const r3 = await conCuerpo(marcaRota + GA + cookiebot);
+  eq('marca de retención sin cerrar: NO retiene lo que viene después',
+     [item(r3, 'cmp').estado, /lo vimos marcado|los vimos marcado/.test(item(r3, 'cmp').detalle)], ['sin-confirmar', false]);
+  const r4 = await conCuerpo('<!-- ' + marcaRota + ' -->' + GA + cookiebot);
+  eq('marca de retención dentro de un comentario: el navegador no la ve, nosotros tampoco',
+     [item(r4, 'cmp').estado, /lo vimos marcado|los vimos marcado/.test(item(r4, 'cmp').detalle)], ['sin-confirmar', false]);
+  // Y el caso legítimo sigue reconociéndose: cerrado, fuera de comentario, retiene de verdad.
+  const r5 = await conCuerpo('<script type="text/plain" data-cookieyes="cookieyes-analytics" src="https://www.googletagmanager.com/gtag/js?id=G-X"></script>' + cookiebot);
+  eq('CookieYes reteniendo de verdad sigue en ok', item(r5, 'cmp').estado, 'ok');
 }
 {
+  // V1-1, 23-sep: una sola línea de Consent Mode daba 100/100 con Google Analytics, el Pixel de
+  // Meta y Clarity cargando como scripts normales. Consent Mode solo le habla a las etiquetas
+  // de Google, y la línea que circula en Chile trae "region" con países europeos, donde Chile
+  // no está. Declarar Consent Mode NO abre el verde: lo más que hace es dejarlo sin confirmar.
   const r = await conCuerpo(GA + "<script>gtag('consent', 'default', { analytics_storage: 'denied' });</script>" +
     '<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="abc"></script>');
-  eq('CMP + Consent Mode declarado: ok', item(r, 'cmp').estado, 'ok');
+  eq('CMP + Consent Mode declarado: NO es verde (V1-1)', [item(r, 'cmp').estado, item(r, 'cmp').ok], ['sin-confirmar', false]);
+  eq('CMP + Consent Mode: no suma ni resta', [r.puntaje, r.pendientes, r.sinConfirmar, r.prioridades.length], [100, 0, 1, 0]);
+  eq('CMP + Consent Mode: el detalle dice que el rastreador carga sin nada que lo frene',
+     /Google Analytics cargando sin nada que lo frene/.test(item(r, 'cmp').detalle), true);
+  // Y la línea real que se ve en los sitios chilenos, con "region" y sin Chile, tampoco.
+  const conRegion = await conCuerpo(GA + PIXEL +
+    `<script>gtag('consent','default',{"ad_storage":"denied","analytics_storage":"denied","region":["AT","BE","BG","CH","DE","ES"]});</script>` +
+    '<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="abc"></script>');
+  eq('Consent Mode con "region" sin Chile: tampoco es verde', item(conRegion, 'cmp').estado, 'sin-confirmar');
 }
 {
   const r = await conCuerpo(GA + "<script>gtag('consent', 'default', { analytics_storage: 'denied' });</script>");
@@ -321,11 +371,11 @@ async function conCuerpo(extra) {
   // LC-4: una declaración de Consent Mode no prueba que haya aviso (spindlelab.cl la declara en
   // "granted" dentro del cargador post-aceptación).
   eq('Consent Mode: "suele ir con" un aviso, no "es" uno (LC-4)',
-     /una declaración de Google Consent Mode en tu HTML, que suele ir con un aviso de permiso hecho a medida\./.test(item(r, 'cmp').detalle), true);
+     /la declaración de Google Consent Mode, que suele ir con un aviso de permiso hecho a medida\./.test(item(r, 'cmp').detalle), true);
   eq('ya no dice "configuración de permiso hecha a medida"', /configuración de permiso hecha a medida/.test(item(r, 'cmp').detalle), false);
-  eq('y dice cómo salir de la duda, con dónde mirar', /incógnito.*clic derecho, Inspeccionar, pestaña Aplicación, Cookies/.test(item(r, 'cmp').arreglo), true);
+  eq('y dice cómo salir de la duda', /ventana de incógnito y no toques nada\..*Y si aparece, falta saber si de verdad los frena\./.test(item(r, 'cmp').arreglo), true);
   // LC-11: la revisión a mano no se ofrece como si fuera gratis.
-  eq('revisión a mano: "pregúntanos", no "lo podemos revisar"', [/lo podemos revisar a mano/.test(item(r, 'cmp').arreglo), /Si quieres, lo miramos a mano en un navegador: pregúntanos y te decimos cuánto cuesta\./.test(item(r, 'cmp').arreglo)], [false, true]);
+  eq('revisión a mano: se dice que cuesta y que se conversa antes', [/lo podemos revisar a mano/.test(item(r, 'cmp').arreglo), /Escríbenos y te decimos cuánto cuesta antes de hacer nada\.$/.test(item(r, 'cmp').arreglo)], [false, true]);
 }
 {
   const r = await conCuerpo(GA + '<script type="text/plain" data-category="analytics">cargarPixel()</script>');
@@ -341,12 +391,18 @@ async function conCuerpo(extra) {
   // LC-8 b: con las palabras del brief §2.4, no solo "un acto afirmativo".
   eq('arreglo: previo e inequívoco (brief §2.4)', /consentimiento sea previo e inequívoco, y que se manifieste mediante un acto afirmativo/.test(cmp.arreglo), true);
   eq('arreglo: no le atribuye casilla ni silencio al artículo', /premarcad|silencio|casilla/i.test(cmp.arreglo), false);
-  eq('arreglo: el banner es la forma habitual, no la ley', /forma habitual/.test(cmp.arreglo), true);
+  // El aviso es la forma habitual de cumplir, no algo que la ley nombre: el texto lo presenta
+  // así y la cita del Art. 12 va aparte, sin atribuirle "casilla" ni "banner".
+  eq('arreglo: el banner es la forma habitual, no la ley',
+     cmp.arreglo.startsWith('Lo habitual es poner un aviso que frene los rastreadores hasta que la persona acepta.'), true);
+  eq('arreglo: no dice "la ley te obliga a poner un banner"', /la ley (te )?(obliga|exige|pide).{0,20}(banner|aviso de cookies)/i.test(cmp.arreglo), false);
 }
 {
   const r = await conCuerpo(GA + PIXEL);
   const prov = r.informativos.find((i) => i.id === 'proveedores').detalle;
-  eq('Art. 27-28 solo para transferencias fuera de Chile', /Si alguno procesa datos fuera de Chile.*cláusulas contractuales.*nivel adecuado de protección \(Art\. 27-28\)/.test(prov), true);
+  eq('Art. 27-28 solo para transferencias fuera de Chile', /Cuando los datos salen del país, la ley pide un contrato con cláusulas de protección, o que el país donde van tenga un nivel de protección adecuado \(Art\. 27-28\)\./.test(prov), true);
+  // Y la preposición se contrae: "llegan al Pixel de Meta", no "llegan a el Pixel de Meta".
+  eq('sin "a el" delante del nombre del producto', /\ba el [A-Z]/.test(prov), false);
   eq('ya no dice "su propio acuerdo de tratamiento"', /propio acuerdo/.test(prov), false);
   // LC-8 c: el brief dice "un nivel adecuado de protección", sin "país de destino".
   eq('sin "país de destino" (LC-8 c)', /país de destino/.test(prov), false);
@@ -359,9 +415,9 @@ async function conCuerpo(extra) {
   const cmp = item(r, 'cmp');
   eq('solo GTM: sin-confirmar, no pendiente (I2-6)', [cmp.estado, cmp.ok], ['sin-confirmar', false]);
   eq('solo GTM: no suma ni resta ni va a prioridades', [r.puntaje, r.pendientes, r.sinConfirmar, r.prioridades.length], [100, 0, 1, 0]);
-  eq('solo GTM: dice que no vemos adentro', /Desde afuera no vemos qué carga Tag Manager: ahí adentro puede estar tu aviso de cookies, o rastreadores que parten sin pedir permiso\./.test(cmp.detalle), true);
-  eq('solo GTM: el arreglo es comprobar, no comprar', [/Para salir de la duda, abre tu sitio en una ventana de incógnito/.test(cmp.arreglo), /instala un banner|banner que los bloquea/i.test(cmp.arreglo)], [true, false]);
-  eq('solo GTM: dónde se miran las cookies', /En Chrome: clic derecho, Inspeccionar, pestaña Aplicación, Cookies\./.test(cmp.arreglo), true);
+  eq('solo GTM: dice que no vemos adentro', /Qué carga Tag Manager por dentro no aparece en el código de tu página\. Ahí adentro puede estar tu aviso, o rastreadores que parten sin pedir permiso\./.test(cmp.detalle), true);
+  eq('solo GTM: el arreglo es comprobar, no comprar', [/ventana de incógnito y no toques nada/.test(cmp.arreglo), /instala un banner|banner que los bloquea/i.test(cmp.arreglo)], [true, false]);
+  eq('solo GTM: nombra lo que sigue sin verse', /Lo que sigue sin verse es qué carga Tag Manager por dentro\./.test(cmp.arreglo), true);
 }
 {
   // LC-7: con GTM y algún proveedor más sí hay algo concreto que bloquear, así que sigue
@@ -371,33 +427,61 @@ async function conCuerpo(extra) {
   const cmp = item(r, 'cmp');
   eq('GTM con otro proveedor: pendiente', cmp.estado, 'pendiente');
   eq('GTM con otro proveedor: primero comprobar el aviso que ya tenga',
-     cmp.arreglo.startsWith('Si ya tienes un aviso de cookies cargado desde Tag Manager, compruébalo: abre tu sitio en una ventana de incógnito'), true);
-  eq('GTM con otro proveedor: dónde se miran las cookies', /En Chrome: clic derecho, Inspeccionar, pestaña Aplicación, Cookies\./.test(cmp.arreglo), true);
-  eq('GTM con otro proveedor: si no hay aviso, lo que pide la ley', /Si no tienes aviso: la ley pide que el consentimiento sea previo e inequívoco, y que se manifieste mediante un acto afirmativo \(Art\. 12\)\./.test(cmp.arreglo), true);
+     cmp.arreglo.startsWith('Si ya tienes un aviso cargado desde Tag Manager, compruébalo primero.'), true);
+  eq('GTM con otro proveedor: no le manda comprar lo que ya tiene', /instala un banner|contrata|compra/i.test(cmp.arreglo), false);
+  eq('GTM con otro proveedor: si no hay aviso, lo que pide la ley', /Y si nadie lo está pidiendo, hay que poner uno que los frene hasta que la persona acepte, porque la ley pide que el consentimiento sea previo e inequívoco, y que se manifieste mediante un acto afirmativo \(Art\. 12\)\./.test(cmp.arreglo), true);
 }
 {
   // I2-7: gtag/js sirve a tres productos y el id dice cuál. abogadospyme.cl solo trae
   // id=AW-733918915 (remarketing de Google Ads) y se informaba como Analytics.
   const prov = async (src) => (await conCuerpo(`<script async src="${src}"></script>`))
     .informativos.find((i) => i.id === 'proveedores').detalle;
-  eq('gtag AW-: Google Ads (I2-7)', (await prov('https://www.googletagmanager.com/gtag/js?id=AW-733918915')).startsWith('Encontramos: Google Ads.'), true);
-  eq('gtag DC-: Google Ads', (await prov('https://www.googletagmanager.com/gtag/js?id=DC-1234567')).startsWith('Encontramos: Google Ads.'), true);
-  eq('gtag G-: Google Analytics (GA4)', (await prov('https://www.googletagmanager.com/gtag/js?id=G-J40ABC')).startsWith('Encontramos: Google Analytics (GA4).'), true);
-  eq('gtag UA- u otro: Google (gtag)', (await prov('https://www.googletagmanager.com/gtag/js?id=UA-12345-1')).startsWith('Encontramos: Google (gtag).'), true);
-  eq('gtag sin id: Google (gtag)', (await prov('https://www.googletagmanager.com/gtag/js')).startsWith('Encontramos: Google (gtag).'), true);
+  const nombrado = (detalle) => (detalle.match(/llegan a (.+?), y casi siempre/) || [, null])[1];
+  eq('gtag AW-: Google Ads (I2-7)', nombrado(await prov('https://www.googletagmanager.com/gtag/js?id=AW-733918915')), 'Google Ads');
+  eq('gtag DC-: Google Ads', nombrado(await prov('https://www.googletagmanager.com/gtag/js?id=DC-1234567')), 'Google Ads');
+  // 23-sep: un nombre por proveedor, en castellano y el mismo en todo el informe. El "(GA4)" no
+  // le dice nada a quien lee este informe, y "Google (gtag)" / "un servicio de Google sin
+  // identificar" se leían como si el chequeo se hubiera roto.
+  eq('gtag G-: Google Analytics, sin "(GA4)"', nombrado(await prov('https://www.googletagmanager.com/gtag/js?id=G-J40ABC')), 'Google Analytics');
+  const SIN_ID = 'una etiqueta de Google que no alcanzamos a identificar cuál es';
+  eq('gtag UA- u otro: nombra lo que es y admite el límite', nombrado(await prov('https://www.googletagmanager.com/gtag/js?id=UA-12345-1')), SIN_ID);
+  eq('gtag sin id: lo mismo', nombrado(await prov('https://www.googletagmanager.com/gtag/js')), SIN_ID);
   // Los dos en la misma portada se nombran los dos, sin repetir.
   const dos = await conCuerpo('<script src="https://www.googletagmanager.com/gtag/js?id=G-1"></script>' +
     '<script src="https://www.googletagmanager.com/gtag/js?id=AW-2"></script>' +
     '<script src="https://www.googletagmanager.com/gtag/js?id=G-3"></script>');
   eq('dos productos de gtag: los dos, una vez cada uno',
-     dos.informativos.find((i) => i.id === 'proveedores').detalle.startsWith('Encontramos: Google Analytics (GA4), Google Ads.'), true);
+     nombrado(dos.informativos.find((i) => i.id === 'proveedores').detalle), 'Google Analytics y Google Ads');
+}
+{
+  // Un solo nombre por proveedor, y el mismo en TODO el informe: ni "(GA4)", ni "Meta Pixel",
+  // ni "Microsoft Clarity", ni "Google (gtag)", ni "un servicio de Google sin identificar".
+  const TODOS = GA + PIXEL + '<script src="https://www.googletagmanager.com/gtm.js?id=GTM-1"></script>' +
+    '<script src="https://www.clarity.ms/tag/abc"></script><script src="https://static.hotjar.com/c/hotjar-1.js"></script>';
+  const r = await conCuerpo(TODOS);
+  const texto = JSON.stringify(r);
+  for (const prohibido of ['GA4', 'Meta Pixel', 'Microsoft Clarity', 'Google (gtag)', 'servicio de Google sin identificar']) {
+    eq(`ningún nombre viejo en la respuesta: ${prohibido}`, texto.includes(prohibido), false);
+  }
+  for (const canonico of ['Google Analytics', 'el Pixel de Meta', 'Clarity', 'Google Tag Manager', 'Hotjar']) {
+    eq(`el nombre acordado sí está: ${canonico}`, texto.includes(canonico), true);
+  }
+  // Y la palabra "script" no aparece en nada de lo que lee el visitante: la portada define
+  // "rastreador" sin jerga y el informe no puede reintroducirla.
+  const visible = [...r.items.map((i) => `${i.titulo} ${i.detalle} ${i.arreglo || ''}`),
+                   ...r.informativos.map((i) => `${i.titulo} ${i.detalle}`),
+                   ...r.bloques.map((b) => `${b.titulo} ${b.sub}`)].join(' ');
+  // "script" suelta, no "JavaScript", que sí se nombra donde hace falta.
+  eq('sin la palabra "script" en el texto visible', /\bscripts?\b/i.test(visible), false);
+  eq('sin raya larga en el texto visible', /—/.test(visible), false);
+  eq('sin "HTML" crudo en el texto visible', /\bHTML\b/.test(visible), false);
 }
 {
   // LC-8 d: los 12 puntos tienen que estar disponibles al público; la política es uno de ellos.
   const r = await conCuerpo('');
   const sub = r.bloques.find((b) => b.id === 'politica').sub;
   eq('sub de política: al menos 12 puntos, entre ellos la política (LC-8 d)',
-     sub, 'El Art. 14 ter pide tener disponible al público en tu sitio al menos 12 puntos de información, entre ellos tu política de tratamiento con su fecha y versión.');
+     sub, 'La ley pide que tu sitio publique, a la vista de cualquiera, 12 cosas sobre qué haces con los datos de las personas. Una de ellas es tu política, con su fecha y versión (Art. 14 ter).');
 }
 
 console.log('=== 10. patrones de CMP: el loader, no una mención ni un resto ===');
@@ -465,9 +549,11 @@ eq('un <a> sin cerrar no se come al siguiente',
   });
   const r = await chequear('ejemplo.cl', f);
   eq('enlaces rotos: pendiente', item(r, 'politica').estado, 'pendiente');
-  eq('y el detalle dice que la página no existe', /responde que no existe/.test(item(r, 'politica').detalle), true);
+  eq('y el detalle dice que la página no existe', /lleva a una página que ya no está/.test(item(r, 'politica').detalle), true);
   eq('se prueban como máximo dos', f.vistas.includes('https://ejemplo.cl/politica-de-datos'), false);
-  eq('el arreglo habla del enlace, no de publicar una política', /Revisa el enlace/.test(item(r, 'politica').arreglo), true);
+  eq('el arreglo habla del enlace, no de publicar una política',
+     [/^Arregla el enlace, para que lleve a una página que abra\./.test(item(r, 'politica').arreglo),
+      /hay que escribirla y publicarla/.test(item(r, 'politica').arreglo)], [true, false]);
 }
 {
   const f = fakeRed({
@@ -477,7 +563,7 @@ eq('un <a> sin cerrar no se come al siguiente',
   });
   const r = await chequear('ejemplo.cl', f);
   eq('el primero roto, el segundo abre: ok', item(r, 'politica').estado, 'ok');
-  eq('en verde dice que NO leímos el contenido', /No leímos su contenido/.test(item(r, 'politica').detalle), true);
+  eq('en verde dice que NO leímos el contenido', /No leímos lo que dice adentro\./.test(item(r, 'politica').detalle), true);
   // LC-9: el que abrió es un "Aviso legal", y un aviso legal puede no ser una política de privacidad.
   eq('en verde no afirma más de lo que vimos (LC-9)', /tu política de privacidad o aviso legal, y la página abre/.test(item(r, 'politica').detalle), true);
 }
@@ -487,9 +573,15 @@ eq('un <a> sin cerrar no se come al siguiente',
     'https://ejemplo.cl/politica': { status: 404 },
   });
   const r = await chequear('ejemplo.cl', f);
-  eq('roto también dice "o aviso legal" (LC-9)', /^Encontramos un enlace a tu política de privacidad o aviso legal, pero esa página responde que no existe\.$/.test(item(r, 'politica').detalle), true);
-  eq('no pendiente: se dice "no encontramos" sin inventar el contenido de la política (LC-8 d)',
-     /al menos 12 puntos de información/.test(item(await chequear('ejemplo.cl', fakeRed({ 'https://ejemplo.cl/': { status: 200, body: pagina(MENU) } })), 'politica').arreglo), true);
+  eq('roto también dice "o aviso legal" (LC-9)', /^Encontramos en tu página de inicio un enlace a tu política de privacidad o aviso legal, pero lleva a una página que ya no está\.$/.test(item(r, 'politica').detalle), true);
+  {
+    const sinEnlace = item(await chequear('ejemplo.cl', fakeRed({ 'https://ejemplo.cl/': { status: 200, body: pagina(MENU) } })), 'politica');
+    eq('no pendiente: se dice "no vimos" sin inventar el contenido de la política (LC-8 d)',
+       sinEnlace.detalle, 'En tu página de inicio no vimos ningún enlace a una política de privacidad ni a un aviso de tratamiento de datos.');
+    eq('y el arreglo recuerda que la política es UNA de las 12 cosas, no el lugar donde van las 12',
+       [/Es una de las 12 cosas que tu sitio tiene que mostrar\./.test(sinEnlace.arreglo),
+        /\(Art\. 14 ter\)/.test(sinEnlace.arreglo)], [true, true]);
+  }
 }
 {
   const f = fakeRed({
@@ -497,7 +589,7 @@ eq('un <a> sin cerrar no se come al siguiente',
     'https://ejemplo.cl/privacidad/': { status: 301, location: 'https://ejemplo.cl/' },
   });
   const r = await chequear('ejemplo.cl', f);
-  eq('un enlace que vuelve a la portada no es una política', [item(r, 'politica').estado, /vuelta a tu portada/.test(item(r, 'politica').detalle)], ['pendiente', true]);
+  eq('un enlace que vuelve a la portada no es una política', [item(r, 'politica').estado, /lleva de vuelta a tu página de inicio/.test(item(r, 'politica').detalle)], ['pendiente', true]);
 }
 {
   // Pages sin 404.html devuelve la portada con 200 para cualquier ruta.
@@ -568,7 +660,11 @@ for (const [nombre, pelado] of [
   const f = fakeRed({ 'https://ejemplo.cl/': { status: 301, location: 'https://ejemplo.cl/' }, 'https://www.ejemplo.cl/': { status: 301, location: 'https://www.ejemplo.cl/' } });
   const r = await chequear('ejemplo.cl', f);
   eq('bucle en las dos: sin código inventado', [r.ok, r.tipo, r.codigo], [false, 'sitio', undefined]);
-  eq('y el mensaje habla del bucle sin número', [/bucle de redirecciones/.test(r.error), /508/.test(r.error)], [true, false]);
+  // El texto del bucle se reescribió el 23-sep: ya no dice "bucle de redirecciones" (jerga),
+  // dice qué le pasa a quien entra. Lo que sigue prohibido es el 508, que es un número nuestro.
+  eq('y el mensaje habla del bucle sin número',
+     [/nos mandó de una dirección a otra tantas veces seguidas/.test(r.error), /508/.test(r.error)], [true, false]);
+  eq('y dice que le pasa igual a quien entra desde Google', /le pasa igual a quien entra desde Google/.test(r.error), true);
   eq('ni http:// tras un bucle', f.vistas.includes('http://ejemplo.cl/'), false);
 }
 {
@@ -648,7 +744,13 @@ console.log('=== 14. tiempo lineal con HTML hecho para hacer sufrir ===');
     const ms = performance.now() - t0;
     console.log(`  semilla ${semilla} (2,8 MB): ${ms.toFixed(0)} ms`);
     eq(`semilla ${semilla}: responde`, r.ok, true);
-    eq(`semilla ${semilla}: bajo 250 ms`, ms < 250, true);
+    // El tope era 250 ms y se subió a 1,5 s el 23-sep, el mismo que usa el bloque de arriba.
+    // No es que el código se haya puesto lento: sin carga estas semillas miden entre 20 y
+    // 120 ms. Es que con la máquina ocupada una pasada suelta se iba a 280 o 500 ms y dejaba
+    // la suite en rojo por algo ajeno, que es la peor forma de perder una prueba. Lo que esto
+    // vigila sigue vigilado con holgura de sobra: sin el `{0,160}` esta misma entrada tardaba
+    // 4,6 minutos, o sea 180 veces el tope nuevo.
+    eq(`semilla ${semilla}: bajo 1,5 s`, ms < 1500, true);
   }
   // Y el tope no puede romper las rutas reales de cada plugin.
   for (const [html, esperado] of [
@@ -666,7 +768,8 @@ console.log('=== 14. tiempo lineal con HTML hecho para hacer sufrir ===');
     'https://ejemplo.cl/privacidad/': { status: 200, body: 'p' },
   }));
   eq('la ruta real de Meta Pixel sigue calzando',
-     conPixel.informativos.find((i) => i.id === 'proveedores').detalle.startsWith('Encontramos: Meta Pixel.'), true);
+     /llegan al Pixel de Meta, y casi siempre a servidores fuera de Chile/.test(
+       conPixel.informativos.find((i) => i.id === 'proveedores').detalle), true);
 }
 
 console.log('=== 15. no-store en todas las respuestas ===');
@@ -719,7 +822,9 @@ console.log('=== 17. el peor caso de espera ===');
   // enlace de la política se cuelga. Es la suma más larga que el código permite.
   const lento = fakeRed({
     'https://ejemplo.cl/': { cuelga: true }, 'http://ejemplo.cl/': { cuelga: true },
-    'https://www.ejemplo.cl/': { status: 200, body: pagina('<a href="/privacidad/">Privacidad</a><a href="/aviso-legal">Aviso legal</a>'), retardo: 7500 },
+    // 6,5 s: contesta justo antes del corte de 8 s, con margen para que la máquina ocupada no
+    // tumbe la prueba. A 7,5 s el margen era de medio segundo y se perdía bajo carga.
+    'https://www.ejemplo.cl/': { status: 200, body: pagina('<a href="/privacidad/">Privacidad</a><a href="/aviso-legal">Aviso legal</a>'), retardo: 6500 },
     'https://www.ejemplo.cl/privacidad/': { cuelga: true }, 'https://www.ejemplo.cl/aviso-legal': { cuelga: true },
   });
   const medir = async (f) => { const t0 = Date.now(); const r = await chequear('ejemplo.cl', f); return { r, s: (Date.now() - t0) / 1000 }; };
@@ -728,10 +833,15 @@ console.log('=== 17. el peor caso de espera ===');
   eq('todo colgado: mensaje de tiempo, sin código', [a.r.ok, a.r.error, a.r.codigo], [false, mensajeDeFallo('tiempo'), undefined]);
   eq('todo colgado: se rinde en menos de 17 s', a.s < 17, true);
   eq('peor caso con informe: hay informe', b.r.ok, true);
+  // Sin informe no hay ítems: se dice y se para acá, en vez de reventar con un TypeError que
+  // esconde cuál fue la falla de verdad.
+  if (!b.r.ok) { malo += 2; console.log(`  FALLA peor caso con informe: sin informe, no hay ítems que mirar :: ${b.r.error}`); }
+  else {
   // LC-3: que la política tarde es un límite nuestro (o un sitio lento), no un enlace roto. Antes
   // quedaba pendiente, restaba 8 puntos y el arreglo culpaba al enlace.
-  eq('peor caso con informe: la política colgada queda sin confirmar', [item(b.r, 'politica').estado, /no respondió a tiempo, así que no la pudimos abrir\. No lo contamos ni a favor ni en contra\./.test(item(b.r, 'politica').detalle)], ['sin-confirmar', true]);
-  eq('peor caso con informe: y no culpa al enlace', /Revisa el enlace/.test(item(b.r, 'politica').arreglo), false);
+  eq('peor caso con informe: la política colgada queda sin confirmar', [item(b.r, 'politica').estado, /esa página no respondió a tiempo y no la pudimos abrir\. No lo contamos ni a favor ni en contra\./.test(item(b.r, 'politica').detalle)], ['sin-confirmar', true]);
+  eq('peor caso con informe: y no culpa al enlace', /Arregla el enlace|Revisa el enlace/.test(item(b.r, 'politica').arreglo), false);
+  }
   eq('peor caso con informe: menos de 25 s', b.s < 25, true);
 }
 
@@ -761,10 +871,28 @@ const LANDING_RECAPTCHA = '<!DOCTYPE html><html lang="es"><head><title>Dra. Pér
   // Imperva/Incapsula: trae html/head/body, pero el texto es el del bloqueo y no hay enlaces.
   const incapsula = '<html style="height:100%"><head><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"></head><body style="margin:0px;height:100%"><iframe id="main-iframe" src="/_Incapsula_Resource?CWUDNSAI=1" frameborder=0 width="100%" height="100%">Request unsuccessful. Incapsula incident ID: 123-456</iframe></body></html>';
   eq('Incapsula con esqueleto: es bloqueo', esPaginaDeBloqueo(incapsula), true);
-  // AWS WAF responde 202 con un desafío de JavaScript.
+  // AWS WAF responde 202 con un desafío de JavaScript. Su frase es "verify that you're not a
+  // robot", y la lista gemela del 23-sep solo reconoce "verify (that) you are (a) human": la
+  // frase de AWS quedó FUERA a propósito, porque acortar la lista fue lo que dejó de comerse
+  // las landings reales (puerta de edad, "verify your email", "zona restringida").
+  //
+  // Consecuencia medida, y por eso queda escrita como prueba: hoy el desafío de AWS SÍ recibe
+  // informe. Lo que no puede pasar nunca es que ese informe puntúe o dé algo por bueno, porque
+  // no leímos el sitio: eso es lo que se exige acá. Cerrar el hueco pide agregar la frase a las
+  // DOS listas en un mismo cambio (ver el informe de cierre del 23-sep).
   const aws = '<!DOCTYPE html><html lang="en"><head><title></title><script src="https://abc.token.awswaf.com/abc/challenge.js"></script></head><body><noscript><h1>JavaScript is disabled</h1>In order to continue, we need to verify that you\'re not a robot. This requires JavaScript. Enable JavaScript and then reload the page.</noscript></body></html>';
   const r = await chequear('ejemplo.cl', fakeRed({ 'https://ejemplo.cl/': { status: 202, body: aws } }));
-  eq('desafío de AWS WAF (202): sin informe', [r.ok, r.tipo, r.error], [false, 'sitio', mensajeDeFallo('vacia')]);
+  eq('desafío de AWS WAF (202): sin puntaje y sin nada que vender',
+     [r.puntaje, r.prioridades.length], [null, 0]);
+  // Lo único que se puede dar por bueno es por dónde entramos; del contenido del sitio no se
+  // afirma nada, porque no lo leímos.
+  eq('desafío de AWS WAF (202): ningún verde sobre el contenido',
+     r.items.filter((i) => i.estado === 'ok').map((i) => i.id), ['https']);
+  // Y el 202 no puede leerse como "respondió por http://": entramos por https.
+  eq('desafío de AWS WAF (202): no inventa que el sitio no tiene certificado',
+     /respondió por http:\/\//.test(item(r, 'https').detalle), false);
+  eq('desafío de AWS WAF (202): no afirma que el sitio no tenga política',
+     r.items.every((i) => !/no vimos ningún enlace a una política/.test(i.detalle)), true);
   eq('JSON o texto suelto en la portada: tampoco se puntúa', esPaginaDeBloqueo('{"status":"ok"}'), true);
 }
 {
@@ -780,7 +908,37 @@ const LANDING_RECAPTCHA = '<!DOCTYPE html><html lang="es"><head><title>Dra. Pér
     // formulario calzaba entera con la regla 2 y recibía "tu sitio no nos entregó HTML". Es
     // falso (sí entregó HTML) y le niega el informe justo al cliente que buscamos.
     ['landing de una página con el aviso de reCAPTCHA (2 enlaces)', LANDING_RECAPTCHA],
+    // V2-1, 23-sep: quedaban sueltas `verifica que eres`, `verify (that )?you` y la raíz
+    // `restringid`, que no son frases que solo escriba un firewall. Una viña con puerta de
+    // edad, una tienda en inglés y un club con acceso para socios caían las tres y recibían
+    // "tu sitio no nos entregó HTML", que es falso y le niega el informe a un negocio chico.
+    ['puerta de edad de una viña (es)', '<!doctype html><html lang="es-CL"><head><title>Viña Ejemplo</title></head><body><h1>Viña Ejemplo</h1><p>Verifica que eres mayor de 18 años para entrar. Bebe con moderación.</p><a href="/entrar">Sí, soy mayor de edad</a><a href="https://www.google.cl/">No</a></body></html>'],
+    ['puerta de edad en inglés', '<!doctype html><html lang="es-CL"><head><title>Ejemplo Wines</title></head><body><h1>Ejemplo Wines</h1><p>Please verify you are of legal drinking age.</p><a href="/enter">Entrar</a></body></html>'],
+    ['club con acceso restringido a socios', '<!doctype html><html lang="es-CL"><head><title>Club Ejemplo</title></head><body><h1>Club Ejemplo</h1><p>El acceso a la sala está restringido a socios.</p><a href="/socios">Hazte socio</a></body></html>'],
   ]) eq(`no es bloqueo: ${nombre}`, esPaginaDeBloqueo(html), false);
+  {
+    // Y las tres reciben informe de verdad, que es lo que estaba en juego.
+    for (const [nombre, html] of [
+      ['puerta de edad (es)', '<!doctype html><html lang="es-CL"><head><title>Viña Ejemplo</title></head><body><h1>Viña Ejemplo</h1><p>Verifica que eres mayor de 18 años para entrar.</p><a href="/entrar">Entrar</a><a href="/privacidad/">Privacidad</a></body></html>'],
+      ['puerta de edad (en)', '<!doctype html><html lang="es-CL"><head><title>Ejemplo Wines</title></head><body><h1>Ejemplo Wines</h1><p>Please verify you are of legal drinking age.</p><a href="/enter">Entrar</a><a href="/privacidad/">Privacidad</a></body></html>'],
+    ]) {
+      const rv = await chequear('vina.cl', fakeRed({
+        'https://vina.cl/': { status: 200, body: html },
+        'https://vina.cl/privacidad/': { status: 200, body: '<html>p</html>' },
+      }));
+      eq(`${nombre}: sí hay informe`, [rv.ok, item(rv, 'politica').estado], [true, 'ok']);
+    }
+  }
+  {
+    // Los dos topes de la regla 2, que desde el 23-sep son el más estricto de cada gemelo:
+    // 16.000 caracteres y 2 enlaces. Más allá de cualquiera de los dos ya no es una página de
+    // bloqueo, por mucho que el texto calce: un aviso de firewall es una página mínima.
+    const aviso = '<html><head><title>Bloqueado</title></head><body><h1>Access denied</h1>';
+    eq('bloqueo justo bajo el tope de tamaño', esPaginaDeBloqueo(aviso + '<!--' + 'x'.repeat(15_000) + '-->' + '</body></html>'), true);
+    eq('sobre 16.000 caracteres ya no es bloqueo', esPaginaDeBloqueo(aviso + '<!--' + 'x'.repeat(17_000) + '-->' + '</body></html>'), false);
+    eq('con 2 enlaces sigue siendo bloqueo', esPaginaDeBloqueo(aviso + '<a href="/a">a</a><a href="/b">b</a></body></html>'), true);
+    eq('con 3 enlaces ya no es bloqueo', esPaginaDeBloqueo(aviso + '<a href="/a">a</a><a href="/b">b</a><a href="/c">c</a></body></html>'), false);
+  }
   {
     const r = await chequear('kine.cl', fakeRed({ 'https://kine.cl/': { status: 200, body: LANDING_RECAPTCHA } }));
     eq('la landing con reCAPTCHA sí recibe informe (R3)', [r.ok, item(r, 'politica').estado, item(r, 'casilla').estado], [true, 'pendiente', 'pendiente']);
@@ -830,6 +988,21 @@ const LANDING_RECAPTCHA = '<!DOCTYPE html><html lang="es"><head><title>Dra. Pér
     'https://refresh.cl/es/': { status: 404 },
   }));
   eq('meta refresh a una página que no existe: mensaje propio', [roto.ok, roto.error], [false, mensajeDeFallo('refresco')]);
+  // V1-6, 23-sep: el mismo stub CON esqueleto (o con <title>Redirigiendo</title>) no pasaba
+  // por la guardia del HTML vacío, así que se puntuaba el stub y se le explicaba al dueño una
+  // página que no es la suya, con la política "sin confirmar porque tu menú se arma en el
+  // navegador", que es falso. El hallazgo de verdad es que el destino no abre.
+  for (const [nombre, stub] of [
+    ['con esqueleto', '<html><head><meta http-equiv="refresh" content="0; url=/es/"></head><body></body></html>'],
+    ['con título', '<html><head><title>Redirigiendo</title><meta http-equiv="refresh" content="0; url=/es/"></head><body>Redirigiendo...</body></html>'],
+  ]) {
+    const rr = await chequear('refresh.cl', fakeRed({
+      'https://refresh.cl/': { status: 200, body: stub },
+      'https://refresh.cl/es/': { status: 404 },
+    }));
+    eq(`meta refresh ${nombre} y destino roto: mensaje propio, no informe`, [rr.ok, rr.error], [false, mensajeDeFallo('refresco')]);
+    eq(`meta refresh ${nombre}: no culpa a un firewall ni al menú`, /firewall|se arma en el navegador/.test(rr.error), false);
+  }
   // Lo que NO se sigue: una recarga sola (sin url) y una espera larga.
   for (const [nombre, contenido] of [['sin url', '600'], ['espera larga', '600; url=/es/'], ['vacío', '']]) {
     eq(`meta refresh ${nombre}: no se sigue`, destinoDeMetaRefresh(`<meta http-equiv="refresh" content="${contenido}">`, 'https://refresh.cl/'), null);
@@ -877,6 +1050,22 @@ eq('no: una portada de WordPress', armadoConJavaScript(pagina('<div id="page">' 
     'https://clinica.cl/politica-de-privacidad': { status: 200, body: '<html>p</html>' },
   }));
   eq('render en servidor: los datos del menú no dan verde (R2)', [item(rv, 'politica').estado, rv.puntaje], ['pendiente', 43]);
+  // V1-3, 23-sep: el caso que quedaba abierto es el one-pager de agencia, que es una forma
+  // normal de sitio de pyme: marca de framework, texto de sobra y solo TRES enlaces
+  // navegables. Con la guarda vieja (un O en vez de un Y) una dirección que ningún <a> enlaza
+  // daba verde y 100/100, con el detalle diciendo "tu portada arma sus enlaces con
+  // JavaScript", que es falso porque el menú está en el código que recibimos.
+  const onePager = pagina('<script id="__NEXT_DATA__" type="application/json">{"props":{"paginas":[{"title":"Política de privacidad","path":"/politica-de-privacidad"}]}}</script>' +
+    '<nav><a href="/">Inicio</a><a href="https://wa.me/56900000000">WhatsApp</a><a href="https://instagram.com/x">Instagram</a><a href="#">Ver más</a></nav>' +
+    '<h1>Clínica</h1><p>' + 'Atendemos de lunes a viernes en Providencia. '.repeat(8) + '</p>');
+  const rop = await chequear('clinica.cl', fakeRed({
+    'https://clinica.cl/': { status: 200, body: onePager },
+    'https://clinica.cl/politica-de-privacidad': { status: 200, body: '<html>p</html>' },
+  }));
+  eq('one-pager con marca y 3 enlaces: no queda en verde por una dirección que nadie enlaza (V1-3)',
+     [item(rop, 'politica').estado, item(rop, 'politica').ok, rop.puntaje], ['sin-confirmar', false, null]);
+  eq('y no afirma que el menú se arme en el navegador',
+     /arma sus enlaces con JavaScript|arma el menú con JavaScript/.test(item(rop, 'politica').detalle), false);
 }
 {
   // I2-5, 23-sep: entel.cl tiene cuatro <a>, los cuatro con href="#", y el pie con
@@ -888,7 +1077,8 @@ eq('no: una portada de WordPress', armadoConJavaScript(pagina('<div id="page">' 
   const r = await chequear('entel.cl', fakeRed({ 'https://entel.cl/': { status: 200, body: sinNavegar } }));
   const pol = item(r, 'politica');
   eq('sin enlaces navegables: sin-confirmar, no pendiente', [pol.estado, r.pendientes], ['sin-confirmar', 0]);
-  eq('y dice lo que de verdad vimos', /En tu portada no vimos ningún enlace que lleve a otra página/.test(pol.detalle), true);
+  eq('y dice lo que de verdad vimos', /En tu página de inicio no vimos ningún enlace que lleve a otra página\./.test(pol.detalle), true);
+  eq('y no lo afirma como inferencia nuestra', /Puede que tu menú se arme en el navegador/.test(pol.detalle), true);
   eq('no suma: sin marca de framework, los datos del menú no se miran',
      item(await chequear('entel.cl', fakeRed({
        'https://entel.cl/': { status: 200, body: sinNavegar + '<script type="application/json">{"url":"/politica-de-privacidad"}</script>' },
@@ -908,7 +1098,7 @@ eq('no: una portada de WordPress', armadoConJavaScript(pagina('<div id="page">' 
   const r = await chequear('ejemplo.cl', f);
   const pol = item(r, 'politica');
   eq('datos + la página abre: ok', pol.estado, 'ok');
-  eq('y dice de dónde salió, sin decir que vimos el enlace', /^Tu portada arma sus enlaces con JavaScript, así que no vimos el enlace como tal\. En sus datos aparece la dirección de tu política de privacidad o aviso legal, y la página abre\. No leímos su contenido/.test(pol.detalle), true);
+  eq('y dice de dónde salió, sin decir que vimos el enlace', /^Tu página de inicio arma sus enlaces con JavaScript, así que no vimos el enlace en sí\. En el código aparece la dirección de tu política de privacidad o aviso legal, y la página abre\. No leímos lo que dice adentro\./.test(pol.detalle), true);
 }
 {
   // Como pasa en vivo con clinicasantamaria.cl: la dirección del JSON redirige a la portada.
@@ -919,7 +1109,7 @@ eq('no: una portada de WordPress', armadoConJavaScript(pagina('<div id="page">' 
   }));
   const pol = item(r, 'politica');
   eq('datos + vuelve a la portada: sin confirmar, no pendiente', pol.estado, 'sin-confirmar');
-  eq('y lo explica', /lleva de vuelta a tu portada\. Como no sabemos si ese enlace se muestra en tu sitio, no lo contamos ni a favor ni en contra\./.test(pol.detalle), true);
+  eq('y lo explica', /lleva de vuelta a tu página de inicio\. Como no sabemos si ese enlace aparece de verdad en tu sitio, no lo contamos ni a favor ni en contra\./.test(pol.detalle), true);
   const r404 = await chequear('ejemplo.cl', fakeRed({ 'https://ejemplo.cl/': { status: 200, body: NG(datos) }, 'https://ejemplo.cl/terminos/politica-de-privacidad': { status: 404 } }));
   eq('datos + 404: sin confirmar (el JSON puede traer ítems ocultos)', item(r404, 'politica').estado, 'sin-confirmar');
 }
@@ -966,7 +1156,7 @@ eq('no: una portada de WordPress', armadoConJavaScript(pagina('<div id="page">' 
   const r = await chequear('ejemplo.cl', fakeRed({ 'https://ejemplo.cl/': { status: 200, body: NG('{"menu":[{"title":"Inicio","url":"/"}]}') } }));
   const pol = item(r, 'politica');
   eq('SPA sin nada que se parezca: sin confirmar, no pendiente', pol.estado, 'sin-confirmar');
-  eq('y dice por qué', /no lo pudimos ver porque tu sitio arma el menú con JavaScript/.test(pol.detalle), true);
+  eq('y dice por qué', /^Tu sitio arma el menú con JavaScript y este chequeo no lo ejecuta, así que si tu página de inicio enlaza tu política de privacidad, no la pudimos ver\./.test(pol.detalle), true);
   // I2-2: lo único confirmado es el HTTPS (6 de 20). Antes salía un 100 grande. Un número
   // sacado de una sola señal se lee como si fuera de todas, así que no hay número.
   eq('con solo el HTTPS confirmado: sin puntaje (I2-2)', [r.puntaje, r.pendientes, r.sinConfirmar], [null, 0, 2]);
@@ -997,15 +1187,15 @@ console.log('=== 19 bis. I2-2: sin la mitad del peso confirmada, no hay número 
 
 console.log('=== 20. LC-3: la política que no pudimos leer no resta ===');
 for (const [nombre, ruta, esperadoEstado, patron] of [
-  ['403', { status: 403 }, 'sin-confirmar', /no dejó entrar a nuestro lector automático \(suele ser un firewall\)/],
-  ['401', { status: 401 }, 'sin-confirmar', /no dejó entrar a nuestro lector automático/],
-  ['429', { status: 429 }, 'sin-confirmar', /no dejó entrar a nuestro lector automático/],
+  ['403', { status: 403 }, 'sin-confirmar', /esa página no nos dejó entrar\. No lo contamos ni a favor ni en contra\./],
+  ['401', { status: 401 }, 'sin-confirmar', /esa página no nos dejó entrar\./],
+  ['429', { status: 429 }, 'sin-confirmar', /esa página no nos dejó entrar\./],
   ['sin conexión', null, 'sin-confirmar', /no logramos conectarnos con esa página/],
-  ['404', { status: 404 }, 'pendiente', /responde que no existe/],
-  ['410', { status: 410 }, 'pendiente', /responde que no existe/],
-  ['500', { status: 500 }, 'pendiente', /respondió con un error/],
-  ['503', { status: 503 }, 'pendiente', /respondió con un error/],
-  ['bucle', { status: 302, location: 'https://ejemplo.cl/privacidad/' }, 'pendiente', /redirige de una dirección a otra sin parar/],
+  ['404', { status: 404 }, 'pendiente', /lleva a una página que ya no está\./],
+  ['410', { status: 410 }, 'pendiente', /lleva a una página que ya no está\./],
+  ['500', { status: 500 }, 'pendiente', /esa página devolvió un error\./],
+  ['503', { status: 503 }, 'pendiente', /esa página devolvió un error\./],
+  ['bucle', { status: 302, location: 'https://ejemplo.cl/privacidad/' }, 'pendiente', /esa página redirige de una dirección a otra sin parar\./],
 ]) {
   const rutas = { 'https://ejemplo.cl/': { status: 200, body: conPolitica(GA) } };
   if (ruta) rutas['https://ejemplo.cl/privacidad/'] = ruta;
@@ -1017,7 +1207,7 @@ for (const [nombre, ruta, esperadoEstado, patron] of [
   eq(`política con ${nombre}: puntaje`, r.puntaje, esperadoEstado === 'sin-confirmar' ? 50 : 30);
   if (esperadoEstado === 'sin-confirmar') {
     eq(`política con ${nombre}: no va a prioridades`, r.prioridades.some((p) => p.titulo === pol.titulo), false);
-    eq(`política con ${nombre}: el arreglo no culpa al enlace`, /Revisa el enlace/.test(pol.arreglo), false);
+    eq(`política con ${nombre}: el arreglo no culpa al enlace`, /Arregla el enlace|Revisa el enlace/.test(pol.arreglo), false);
   }
 }
 {
@@ -1027,7 +1217,7 @@ for (const [nombre, ruta, esperadoEstado, patron] of [
       'https://ejemplo.cl/': { status: 200, body: pagina('<a href="/privacidad">Privacidad</a><a href="/aviso-legal">Aviso legal</a>') },
       'https://ejemplo.cl/privacidad': a, 'https://ejemplo.cl/aviso-legal': b,
     }));
-    eq(`${a.status} y ${b.status}: gana la duda`, [item(r, 'politica').estado, /no dejó entrar/.test(item(r, 'politica').detalle)], ['sin-confirmar', true]);
+    eq(`${a.status} y ${b.status}: gana la duda`, [item(r, 'politica').estado, /esa página no nos dejó entrar/.test(item(r, 'politica').detalle)], ['sin-confirmar', true]);
   }
 }
 
@@ -1038,7 +1228,12 @@ console.log('=== 21. LC-6: la casilla del formulario, cuando la vemos, puntúa =
   const c = item(r, 'casilla');
   eq('premarcada: ítem en el bloque del permiso, peso 4', [c.bloque, c.id, c.titulo, c.peso], ['consentimiento', 'casilla', 'Casilla de consentimiento en tu formulario', 4]);
   eq('premarcada: pendiente, con el arreglo', [c.estado, c.arreglo], ['pendiente', 'Deja la casilla sin marcar, para que la persona la marque ella misma.']);
-  eq('premarcada: el acto afirmativo como lectura, no como cita de "casilla"', /\(Art\. 12\)\. Una casilla marcada de antemano no es un acto afirmativo/.test(c.detalle), true);
+  // La ley no dice "casilla": lo que se cita es el acto afirmativo, y la lectura de que una
+  // casilla premarcada no lo es va antes, como razonamiento nuestro.
+  eq('premarcada: el acto afirmativo como lectura, no como cita de "casilla"',
+     [/Si ya viene marcada, no la marcó la persona, y nadie hizo nada para dar ese permiso\./.test(c.detalle),
+      c.detalle.endsWith('La ley pide que el consentimiento sea previo e inequívoco, y que se manifieste mediante un acto afirmativo (Art. 12).')], [true, true]);
+  eq('premarcada: no le atribuye la palabra "casilla" al artículo', /\(Art\. 12\)[^.]*casilla/i.test(c.detalle), false);
   eq('premarcada: ya no termina en "ninguna pendiente"', [r.pendientes, r.puntaje], [1, 78]);
   eq('premarcada: va a prioridades', r.prioridades.map((p) => p.titulo), ['Casilla de consentimiento en tu formulario']);
   eq('premarcada: el informativo no repite lo mismo', r.informativos.some((i) => i.id === 'casilla'), false);

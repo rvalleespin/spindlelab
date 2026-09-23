@@ -1,8 +1,8 @@
 # Pruebas de los chequeos y del control de cookies
 
-712 comprobaciones (conteo del 23-sep-2026, al cierre de la segunda pasada de
-arreglos) sobre los dos módulos de chequeo, que comparten la lógica de validación
-de destino y de descarga acotada, y sobre el control de cookies de spindlelab.cl:
+1198 comprobaciones (medidas el 23-sep-2026, al cierre de la revisión del día)
+sobre los dos módulos de chequeo, que comparten la lógica de validación de
+destino y de descarga acotada, y sobre el control de cookies de spindlelab.cl:
 
 - `verificaycumple/functions/api/chequeo.js` (rama `laboratorio/ley-21719`)
 - `spindlelab-astro/functions/api/chequeo.js` (rama `main`)
@@ -16,12 +16,12 @@ líneas de cada archivo antes de correrlo.
 
 | archivo | qué cubre |
 |---|---|
-| `prueba-destino.mjs` | Verifica y Cumple: validación de dominio, portón de destinos, redirecciones, mensajes de error, contrato de la respuesta, permiso antes de rastreadores, patrones de CMP, enlace a la política, www, tiempo lineal, no-store, el middleware que muda pages.dev a verifica.spindlelab.cl, peor caso de espera, página de bloqueo con 200, sitios armados con JavaScript, política que no se pudo leer, casilla del formulario, el texto de todas las respuestas (396) |
-| `prueba-gemelo-completa.mjs` | spindlelab.cl: el informe inventado, notaciones de IP, redirecciones, sondas de agente, robots.txt ilegible, equivalencia ítem por ítem con la versión anterior, www, peor caso de espera, no-store, y la página de bloqueo que llega con 200 (171) |
+| `prueba-destino.mjs` | Verifica y Cumple: validación de dominio, portón de destinos, redirecciones, mensajes de error, contrato de la respuesta, permiso antes de rastreadores, patrones de CMP, enlace a la política, www, tiempo lineal, no-store, el middleware que muda pages.dev a verifica.spindlelab.cl, peor caso de espera, página de bloqueo con 200, sitios armados con JavaScript, política que no se pudo leer, casilla del formulario, el texto de todas las respuestas, y la marca de retención rota o comentada que no puede retener lo que viene después (530) |
+| `prueba-gemelo-completa.mjs` | spindlelab.cl: el informe inventado, notaciones de IP, redirecciones, sondas de agente, robots.txt ilegible, equivalencia ítem por ítem con la versión anterior, www, peor caso de espera, no-store, la página de bloqueo que llega con 200, llms.txt y sitemap.xml (manda lo que llegó, no el código), y que los dos detectores de bloqueo sean la misma lista (370) |
 | `prueba-streaming.mjs` | la rama de streaming de spindlelab.cl, que es la que corre en producción: cuerpos reales, cancelación de la descarga, sitemap de 4,8 MB, www, página de bloqueo con una tilde partida entre dos trozos (23) |
-| `prueba-vyc-streaming.mjs` | lo mismo para Verifica y Cumple, más la página de bloqueo, los sitios armados con JavaScript y la política que no se pudo leer (22) |
-| `prueba-saltos.mjs` | bucle de redirecciones, cadena larga legítima, reloj compartido, y la política que también sigue los saltos por el portón (14) |
-| `prueba-robots.mjs` | tabla comparativa de los casos de robots.txt, vieja contra nueva, y lo que no puede retroceder (4) |
+| `prueba-vyc-streaming.mjs` | lo mismo para Verifica y Cumple, más la página de bloqueo, los sitios armados con JavaScript y la política que no se pudo leer (23) |
+| `prueba-saltos.mjs` | bucle de redirecciones, cadena larga legítima, reloj compartido, la política que también sigue los saltos por el portón, el presupuesto de 50 subpeticiones por invocación de Cloudflare, el robots.txt ilegible que no puede sumar, y las dos listas de página de bloqueo, que son la misma (55) |
+| `prueba-robots.mjs` | tabla comparativa de los casos de robots.txt, vieja contra nueva, lo que no puede retroceder, y el archivo que no se pudo leer: no baja a verde, queda sin confirmar, sale del denominador y no se afirma que no exista (115) |
 | `medir-cpu.mjs` | costo por tamaño de portada, vieja contra nueva (tabla, sin aserciones) |
 | `prueba-cookies.mjs` | el control de cookies de spindlelab.cl (`public/js/consent-banner.js`) con un DOM de mentira en `vm`: Analytics solo al aceptar, almacenamiento bloqueado, otra pestaña, bfcache con eventos encolados en cualquier orden, el `revoke` del Pixel sin `grant` en caliente, cookies heredadas, `_gcl_` (82) |
 | `adversario.mjs` | entradas hechas para hacer sufrir al parser de spindlelab.cl (anidamiento extremo, etiqueta sin cerrar, miles de h2, prosa de 2,8 MB, miles de "<" sin cerrar) (tabla, sin aserciones) |

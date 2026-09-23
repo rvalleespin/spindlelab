@@ -59,3 +59,30 @@ await medirWww('una < que no cierra nunca, solo en www', cab()+'<body><h1>h</h1>
   const r = await m.chequear('ejemplo.cl', async (url) => { n++; return { status: 302, url, headers: { get: (k) => k.toLowerCase() === 'location' ? url.split('?')[0] + '?p=' + n : null }, text: async () => '' }; });
   console.log('bucle sin repetir dirección, en las dos formas'.padEnd(44), '    -   ', String(Date.now()-t).padStart(7)+' ms', 'ok='+r.ok, 'codigo='+r.codigo, 'peticiones='+n);
 }
+
+// Desde el 23-sep, llms.txt y sitemap.xml se leen mirando lo que llegó (la dirección final y
+// la cabeza del cuerpo), no el código de respuesta. Un sitio hostil podría intentar dos cosas:
+// que la cabeza del cuerpo cueste, o que la redirección se vuelva un bucle. Las dos medidas.
+{
+  const PORTADA = cab() + '<body><h1>h</h1><p>' + 'palabra '.repeat(100) + '</p></body></html>';
+  const medirArchivo = async (nombre, llms) => {
+    let n = 0;
+    const t = Date.now();
+    const f = async (url) => {
+      n++;
+      if (url.split('?')[0].endsWith('/llms.txt')) {
+        if (llms.bucle) return { status: 302, url, headers: { get: (k) => k.toLowerCase() === 'location' ? url.split('?')[0] + '?p=' + n : null }, text: async () => '' };
+        return { status: 200, url, headers: { get: (k) => k.toLowerCase() === 'content-length' ? String(llms.body.length) : null }, text: async () => llms.body };
+      }
+      const cuerpo = url.endsWith('/') ? PORTADA : '';
+      return { status: url.endsWith('/') ? 200 : 404, url,
+        headers: { get: (k) => k.toLowerCase() === 'content-length' ? String(cuerpo.length) : null }, text: async () => cuerpo };
+    };
+    const r = await m.chequear('ejemplo.cl', f);
+    const i = r.items.find((x) => x.id === 'llms');
+    console.log(nombre.padEnd(44), String(Date.now() - t).padStart(7) + ' ms', 'llms=' + (i.estado || '-'), 'peticiones=' + n);
+  };
+  await medirArchivo('/llms.txt con 5 MB de HTML', { body: '<!doctype html>' + '<p>x</p>'.repeat(600000) });
+  await medirArchivo('/llms.txt con 500 KB de "<" sin cerrar', { body: '<'.repeat(500000) });
+  await medirArchivo('/llms.txt en bucle sin repetir dirección', { bucle: true });
+}

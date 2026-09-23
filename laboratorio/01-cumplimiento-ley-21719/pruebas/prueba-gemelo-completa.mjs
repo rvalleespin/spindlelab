@@ -721,5 +721,128 @@ console.log('=== 12. un 200 que es una página de bloqueo no se puntúa ===');
   }
 }
 
+console.log('=== 13. llms.txt y sitemap.xml: manda lo que llegó, no el código ===');
+{
+  // El falso verde que quedaba de la misma clase que el Consent Mode de Verifica y Cumple:
+  // verde porque venía declarado un 200, sin mirar qué llegó. Medido en vivo el 23-sep,
+  // www.clinicasantamaria.cl responde a /llms.txt con un 302 a "/", así que el chequeo leía
+  // 1,7 MB del HTML de su propia portada y le decía al dueño "Encontramos /llms.txt".
+  const LLMS = '# Clínica Ejemplo\n\n> Clínica dental en Providencia.\n\n## Páginas\n- [Inicio](https://ejemplo.cl/)\n';
+  const con = (ruta, r, extra = {}) => fake(rutasNormales({ [`https://ejemplo.cl${ruta}`]: r, ...extra }));
+  const item = (r, id) => r.items.find((i) => i.id === id);
+  const estado = (r, id) => item(r, id).estado;
+
+  // El "antes" de ESTE arreglo no es c2616e9 (esa versión todavía no seguía las redirecciones
+  // a mano, así que ni llegaba al caso): es el árbol commiteado de hoy. Se lee de HEAD.
+  const fuenteHoy = execFileSync('git', ['-C', '/tmp/spl-main-wt', 'show', 'HEAD:spindlelab-astro/functions/api/chequeo.js']);
+  const hoy = await import('data:text/javascript;base64,' + fuenteHoy.toString('base64'));
+  const antes = await hoy.chequear('ejemplo.cl', con('/llms.txt', { status: 302, location: '/' }));
+  eq('ANTES: el 302 a la portada daba verde en llms.txt', item(antes, 'llms').ok, true);
+  eq('ANTES: y afirmaba haberlo encontrado', item(antes, 'llms').detalle, 'Encontramos /llms.txt.');
+
+  const CASOS = [
+    // [ruta, respuesta, estado esperado, frase que tiene que decir]
+    ['/llms.txt', { status: 302, location: '/' }, 'pendiente', /nos llevó a otra dirección/],
+    ['/llms.txt', { status: 200, body: PORTADA }, 'pendiente', /es una página web/],
+    ['/llms.txt', { status: 404, body: '' }, 'pendiente', /No encontramos \/llms\.txt/],
+    ['/llms.txt', { status: 410, body: '' }, 'pendiente', /No encontramos \/llms\.txt/],
+    // Un 200 con el archivo vacío es un hallazgo real, y se dice como lo que es.
+    ['/llms.txt', { status: 200, body: '' }, 'pendiente', /está, pero vacío/],
+    // Un 200 del que no alcanzamos a leer un solo byte no prueba nada: antes daba verde.
+    ['/llms.txt', { status: 200, body: '', largo: 900_000 }, 'sin-confirmar', /no alcanzamos a ver qué era/],
+    // Y una portada gigante servida en esa dirección tampoco es el archivo.
+    ['/llms.txt', { status: 200, body: PORTADA, largo: 900_000 }, 'pendiente', /es una página web/],
+    ['/llms.txt', { status: 403, body: '' }, 'sin-confirmar', /no tenemos permiso para leerlo/],
+    ['/llms.txt', { status: 429, body: '' }, 'sin-confirmar', /bajar el ritmo/],
+    ['/llms.txt', { status: 500, body: '' }, 'sin-confirmar', /error de tu propio servidor/],
+    ['/llms.txt', { status: 200, body: LLMS }, 'ok', /Encontramos \/llms\.txt/],
+    // Un 200 que no alcanzamos a leer entero igual prueba que el archivo está ahí.
+    ['/llms.txt', { status: 200, body: LLMS, largo: 900_000 }, 'ok', /Encontramos \/llms\.txt/],
+    ['/sitemap.xml', { status: 302, location: '/' }, 'pendiente', /nos llevó a otra dirección/],
+    ['/sitemap.xml', { status: 200, body: PORTADA }, 'pendiente', /es una página web/],
+    ['/sitemap.xml', { status: 404, body: '' }, 'pendiente', /No encontramos \/sitemap\.xml/],
+    ['/sitemap.xml', { status: 403, body: '' }, 'sin-confirmar', /no tenemos permiso para leerlo/],
+    ['/sitemap.xml', { status: 503, body: '' }, 'sin-confirmar', /error de tu propio servidor/],
+    ['/sitemap.xml', { status: 200, body: SITEMAP }, 'ok', /Encontramos un sitemap válido/],
+  ];
+  for (const [ruta, r, esp, frase] of CASOS) {
+    const id = ruta === '/llms.txt' ? 'llms' : 'sitemap';
+    const x = await nuevo.chequear('ejemplo.cl', con(ruta, r));
+    const nombre = `${ruta} ${r.status}${r.location ? ' -> ' + r.location : ''}${r.largo ? ' (cortado)' : ''}${r.body === PORTADA ? ' (la portada)' : ''}`;
+    eq(`${nombre}: estado`, estado(x, id), esp);
+    eq(`${nombre}: lo dice`, frase.test(item(x, id).detalle), true);
+    // Un "no lo sabemos" sale de la cuenta y no aparece como algo que corregir.
+    eq(`${nombre}: peso`, x.pesoConfirmado, esp === 'sin-confirmar' ? x.pesoTotal - 4 : x.pesoTotal);
+    if (esp === 'sin-confirmar') {
+      eq(`${nombre}: no se cuela en las prioridades`, x.prioridades.filter((p) => p.titulo === item(x, id).titulo).length, 0);
+      eq(`${nombre}: no afirma que no lo tenga`, /No encontramos/.test(item(x, id).detalle), false);
+    }
+  }
+
+  // araya.cl: el sitemap redirige a /sitemap_index.xml y ahí está el índice de verdad. Eso es
+  // un sitemap que sí encontramos, y la redirección no lo puede convertir en ausencia.
+  const INDICE = '<?xml version="1.0"?><sitemapindex><sitemap><loc>https://ejemplo.cl/post-sitemap.xml</loc></sitemap></sitemapindex>';
+  const araya = await nuevo.chequear('ejemplo.cl', con('/sitemap.xml', { status: 301, location: '/sitemap_index.xml' }, {
+    'https://ejemplo.cl/sitemap_index.xml': { status: 200, body: INDICE },
+  }));
+  eq('sitemap que redirige a su índice: sigue en verde', estado(araya, 'sitemap'), 'ok');
+
+  // Los tres archivos tapados a la vez: 24 de los 100 puntos salen de la cuenta y el informe
+  // se entrega igual, sin un solo verde inventado.
+  const tapado = await nuevo.chequear('ejemplo.cl', fake(rutasNormales({
+    'https://ejemplo.cl/robots.txt': { status: 403, body: '' },
+    'https://ejemplo.cl/llms.txt': { status: 403, body: '' },
+    'https://ejemplo.cl/sitemap.xml': { status: 403, body: '' },
+  })));
+  eq('firewall sobre los tres archivos: hay informe', tapado.ok, true);
+  eq('firewall sobre los tres archivos: 24 puntos fuera de la cuenta', tapado.pesoConfirmado, tapado.pesoTotal - 24);
+  eq('firewall sobre los tres archivos: cinco señales sin confirmar', tapado.sinConfirmar, 5);
+  eq('firewall sobre los tres archivos: ninguna de ellas en verde',
+    tapado.items.filter((i) => i.estado === 'sin-confirmar' && i.ok).length, 0);
+  // Y el denominador nunca baja de la mitad, que es la condición que el archivo declara.
+  eq('firewall sobre los tres archivos: el denominador sigue sobre la mitad', tapado.pesoConfirmado > tapado.pesoTotal / 2, true);
+}
+
+console.log('=== 14. los dos detectores de bloqueo son gemelos, y se comprueba ===');
+{
+  // Tres informes del 23-sep dieron por alineadas las dos listas cuando no lo estaban, y un
+  // reproductor encontró 6 discrepancias sobre 11 páginas. Por eso la alineación deja de ser
+  // una afirmación de un comentario y pasa a ser algo que se mide acá.
+  const { readFileSync } = await import('node:fs');
+  const bloque = (ruta) => {
+    const s = readFileSync(ruta, 'utf-8');
+    const i = s.indexOf('const RE_TEXTO_BLOQUEO = new RegExp([');
+    const j = s.indexOf('].join(', i);
+    return i === -1 || j === -1 ? null : s.slice(i, j);
+  };
+  const mia = bloque('/tmp/spl-main-wt/spindlelab-astro/functions/api/chequeo.js');
+  const suya = bloque('/tmp/vyc-sub-wt/verificaycumple/functions/api/chequeo.js');
+  eq('la lista de frases está en los dos archivos', !!mia && !!suya, true);
+  eq('y es la misma, alternativa por alternativa', mia, suya);
+
+  // Los dos topes, medidos por su efecto y no leyendo el código: un aviso real al que se le
+  // van sumando enlaces y texto. Hasta el 23-sep este chequeo aceptaba 3 enlaces y el gemelo
+  // 2, así que la misma página recibía un veredicto distinto en cada sitio.
+  const aviso = (enlaces, relleno = 0) =>
+    '<html><head><title>Aviso</title></head><body><h1>Acceso denegado</h1>' +
+    '<p>Tu solicitud ha sido bloqueada por razones de seguridad.</p>' +
+    '<a href="/">Volver</a>'.repeat(enlaces) +
+    (relleno ? `<!--${'x'.repeat(relleno)}-->` : '') +
+    '</body></html>';
+  // `<!--` + `-->` son 7 caracteres de sobra que hay que descontar para caer justo en el tope.
+  const avisoDe = (largo) => aviso(0, largo - aviso(0, 1).length + 1);
+  for (const [n, html, esp] of [
+    ['aviso con 0 enlaces', aviso(0), true],
+    ['aviso con 2 enlaces', aviso(2), true],
+    ['aviso con 3 enlaces: ya no es un aviso, es una página', aviso(3), false],
+    ['aviso justo en 16.000 caracteres', avisoDe(16_000), true],
+    ['aviso de 16.001 caracteres: pesa demasiado', avisoDe(16_001), false],
+  ]) {
+    eq(`${n}: el detector`, nuevo.esPaginaDeBloqueo(html), esp);
+  }
+  eq('el aviso de 16.000 mide exactamente eso', avisoDe(16_000).length, 16_000);
+  eq('y el de 16.001, uno más', avisoDe(16_001).length, 16_001);
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);
