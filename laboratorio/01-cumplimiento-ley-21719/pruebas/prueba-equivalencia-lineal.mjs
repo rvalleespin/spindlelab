@@ -26,7 +26,7 @@ const nuevo = await import(RUTA);
 // cualquier worktree, incluido el del iCloud Drive de Ramón: la ruta sale de fileURLToPath y
 // no de URL.pathname, que la deja con %20 y %7E y hace fallar a git. Si este cambio se rebasa
 // sobre otro que toque el chequeo, hay que mover el commit al que quede justo antes.
-const VIEJO = process.env.CHEQUEO_VIEJO_COMMIT || 'e1e8d99';
+const VIEJO = process.env.CHEQUEO_VIEJO_COMMIT || 'a06a928';
 const repo = execFileSync('git', ['-C', fileURLToPath(new URL('.', import.meta.url)), 'rev-parse', '--show-toplevel'], { encoding: 'utf8' }).trim();
 const fuenteVieja = execFileSync('git', ['-C', repo, 'show', `${VIEJO}:spindlelab-astro/functions/api/chequeo.js`]);
 const viejo = await import('data:text/javascript;base64,' + fuenteVieja.toString('base64'));

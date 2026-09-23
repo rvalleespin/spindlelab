@@ -1,5 +1,14 @@
 import * as nuevo from '/tmp/spl-main-wt/spindlelab-astro/functions/api/chequeo.js';
-import * as viejo from './chequeo-viejo.mjs';
+import { execFileSync } from 'node:child_process';
+
+// La versión vieja sale del historial de git (c2616e9, la de antes de "El chequeo de
+// /diagnostico/ deja de inventar informes"), igual que en prueba-gemelo-completa y
+// prueba-robots. El import apuntaba a un ./chequeo-viejo.mjs que vivía en el scratchpad de una
+// sesión y nunca se versionó, así que esta medición no corría en ningún otro lado. Se importa
+// como data: para no escribir nada en disco.
+const VIEJO = 'c2616e9dbe20d05d9e2edd973e76e7b7fdf9b09a';
+const fuenteVieja = execFileSync('git', ['-C', '/tmp/spl-main-wt', 'show', `${VIEJO}:spindlelab-astro/functions/api/chequeo.js`]);
+const viejo = await import('data:text/javascript;base64,' + fuenteVieja.toString('base64'));
 
 // Una portada realista y pesada: mucho marcado repetido, varios bloques JSON-LD,
 // formularios, scripts. Es el perfil de un WordPress grande, no ruido plano.
