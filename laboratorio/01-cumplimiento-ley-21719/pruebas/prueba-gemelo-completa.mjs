@@ -733,8 +733,14 @@ console.log('=== 13. llms.txt y sitemap.xml: manda lo que llegó, no el código 
   const estado = (r, id) => item(r, id).estado;
 
   // El "antes" de ESTE arreglo no es c2616e9 (esa versión todavía no seguía las redirecciones
-  // a mano, así que ni llegaba al caso): es el árbol commiteado de hoy. Se lee de HEAD.
-  const fuenteHoy = execFileSync('git', ['-C', '/tmp/spl-main-wt', 'show', 'HEAD:spindlelab-astro/functions/api/chequeo.js']);
+  // a mano, así que ni llegaba al caso): es el árbol de hoy justo antes del arreglo.
+  //
+  // Va PINCHADO a un commit, no a HEAD. Leyendo HEAD la prueba se rompe sola: apenas se
+  // commitea el arreglo, la "versión de antes" pasa a ser la de después y el caso deja de
+  // reproducirse. Pasó el 23-sep, y el síntoma engaña, porque se ven dos fallas que parecen
+  // una regresión cuando en realidad la prueba se está mirando a sí misma.
+  const ANTES_LLMS = '1857e3e';
+  const fuenteHoy = execFileSync('git', ['-C', '/tmp/spl-main-wt', 'show', `${ANTES_LLMS}:spindlelab-astro/functions/api/chequeo.js`]);
   const hoy = await import('data:text/javascript;base64,' + fuenteHoy.toString('base64'));
   const antes = await hoy.chequear('ejemplo.cl', con('/llms.txt', { status: 302, location: '/' }));
   eq('ANTES: el 302 a la portada daba verde en llms.txt', item(antes, 'llms').ok, true);
