@@ -659,7 +659,14 @@ function letrasVisibles(html, tope) {
 // robot", no "protegido por reCAPTCHA". No se exige además "sin <form>" porque la página de
 // desafío de Cloudflare sí trae uno, y dejaríamos de reconocerla.
 const MAX_BLOQUEO_SIN_ESQUELETO = 3000;
-const MAX_BLOQUEO_CON_TEXTO = 50_000;
+// Los dos topes de la regla 2 son los MISMOS en los dos chequeos, y desde el 23-sep son el más
+// estricto de cada lado: 16.000 caracteres de HTML (acá había 50.000) y 2 enlaces o menos (el
+// gemelo tenía 3). Mientras más ancha la puerta, más fácil es que una landing chica y real
+// reciba el mensaje del firewall, que además de falso le niega el informe justo al cliente que
+// buscamos. Un aviso de bloqueo de verdad es una página mínima: el de www.bancoestado.cl pesa
+// 650 bytes y los de Cloudflare, Akamai e Imperva no llegan a 4 KB.
+const MAX_BLOQUEO_CON_TEXTO = 16_000;
+const MAX_ENLACES_BLOQUEO = 2;
 const MAX_TEXTO_BLOQUEO = 1500;
 const RE_ESQUELETO = /<(?:html|head|body|title)[\s>]/i;
 // Sobre el texto ya pasado por `textoPlano`: minúsculas, sin tildes, solo letras y números.
@@ -699,7 +706,7 @@ export function esPaginaDeBloqueo(html) {
   let enlaces = 0;
   for (const [inicio, fin] of etiquetas(html, 'a')) {
     const tag = html.slice(inicio, Math.min(fin + 1, inicio + MAX_ETIQUETA));
-    if (/\shref\s*=/i.test(tag) && ++enlaces > 2) return false;
+    if (/\shref\s*=/i.test(tag) && ++enlaces > MAX_ENLACES_BLOQUEO) return false;
   }
   return true;
 }
@@ -967,17 +974,55 @@ const MAX_RETENIDOS = 200;
 // literal y fallan en el primer carácter.
 const RE_ATRIBUTO_RETENIDO =
   /\sdata-(?:[a-z-]*(?:consent|categor|service)[a-z-]*|cookieyes|borlabs[a-z-]*|cookiescript|cmplz[a-z-]*|cky[a-z-]*)\s*=/i;
+// Los comentarios HTML del documento, en orden. Se recorren con indexOf, así que el costo es
+// lineal sobre el largo y no depende de cuántos haya.
+function* comentarios(html) {
+  let i = 0;
+  while ((i = html.indexOf('<!--', i)) !== -1) {
+    const fin = html.indexOf('-->', i + 4);
+    if (fin === -1) return yield [i, html.length];
+    yield [i, fin + 3];
+    i = fin + 3;
+  }
+}
+
 function tramosRetenidos(html) {
   const tramos = [];
   const reCierre = /<\/script\s*>/gi;
-  for (const [inicio, fin] of etiquetas(html, 'script')) {
+  // Las dos listas van en orden, así que un solo cursor sobre los comentarios alcanza y el
+  // recorrido total sigue siendo lineal.
+  const coments = comentarios(html);
+  let com = coments.next();
+  // Se recorre a mano para poder mirar la apertura SIGUIENTE sin volver a buscarla: el
+  // generador ya la calculó, así que peek cuesta cero y el recorrido sigue siendo lineal.
+  const aperturas = etiquetas(html, 'script');
+  let act = aperturas.next();
+  while (!act.done) {
+    const [inicio, fin] = act.value;
+    act = aperturas.next();
+    const siguienteApertura = act.done ? -1 : act.value[0];
+    while (!com.done && com.value[1] <= inicio) com = coments.next();
+    // Una etiqueta dentro de un comentario no retiene nada: el navegador nunca la ve. Sin
+    // esto, un <script type="text/plain" data-cookieyes=...> comentado abría un tramo que se
+    // tragaba el resto del documento, y un Google Analytics vivo más abajo se contaba como
+    // retenido: verde, con el informe afirmando que lo vimos marcado para no cargar.
+    if (!com.done && com.value[0] <= inicio) continue;
     const tag = html.slice(inicio, Math.min(fin + 1, inicio + MAX_ETIQUETA));
     if (!/\stype\s*=\s*["']?text\/plain/i.test(tag)) continue;
     if (!RE_ATRIBUTO_RETENIDO.test(tag)) continue;
     if (reCierre.lastIndex <= fin) reCierre.lastIndex = fin + 1;
     const c = reCierre.exec(html);
-    tramos.push([inicio, c ? c.index + c[0].length : html.length]);
-    if (!c || tramos.length >= MAX_RETENIDOS) break;
+    // Sin </script> no hay tramo. Antes se empujaba hasta el final del documento, o sea que
+    // una sola etiqueta rota declaraba retenido TODO lo que viniera después. Es la misma
+    // clase de falso verde, por la puerta de al lado.
+    if (!c) break;
+    const cierre = c.index + c[0].length;
+    // Y si antes de ese cierre ya empieza otro <script>, el retenido quedó sin cerrar y el
+    // </script> que encontramos es el del OTRO. El tramo termina donde empieza el siguiente,
+    // para no declarar retenido un rastreador que carga sin nada que lo frene.
+    const corte = siguienteApertura !== -1 && siguienteApertura < cierre ? siguienteApertura : cierre;
+    tramos.push([inicio, corte]);
+    if (tramos.length >= MAX_RETENIDOS) break;
   }
   return tramos;
 }
@@ -1237,7 +1282,13 @@ export async function chequear(entrada, fetchImpl = fetch) {
     else falla ||= f;
   }
 
-  const httpsOk = home.url.startsWith('https://') && home.status === 200;
+  // Lo que este ítem mide es por dónde entramos, no con qué número contestó. Pedía además
+  // `status === 200`, y con eso cualquier otro 2xx (un 202 de un desafío de firewall, un 203)
+  // dejaba el ítem en rojo con el texto "Tu sitio respondió por http://, no por https://", que
+  // es falso: entramos por https. Encima le ofrecía instalar un certificado a quien ya tiene
+  // uno bueno. Para llegar hasta acá el sitio ya pasó por `status >= 400` y por la guardia del
+  // HTML vacío, así que si estamos leyendo su página, la leímos por donde dice `home.url`.
+  const httpsOk = home.url.startsWith('https://');
   const lang = idiomaDeclarado(html);
   const cmp = detectarCmp(html);
   const tramos = tramosRetenidos(html);
@@ -1542,9 +1593,9 @@ export async function chequear(entrada, fetchImpl = fetch) {
       // rastreadores dos párrafos más arriba, en la misma pantalla de teléfono.
       detalle: proveedores.length
         ? (normales.length
-            ? `Los datos de quien entra a tu sitio también llegan a ${listaLegible(proveedores)}, y casi siempre a servidores fuera de Chile.`
+            ? `Los datos de quien entra a tu sitio también llegan ${aLista(proveedores)}, y casi siempre a servidores fuera de Chile.`
             // Todos quedaron retenidos: decir "también llegan" acá sería afirmar que ya salieron.
-            : `Cuando esos rastreadores se carguen, los datos de quien entra a tu sitio van a llegar a ${listaLegible(proveedores)}, y casi siempre a servidores fuera de Chile.`) +
+            : `Cuando esos rastreadores se carguen, los datos de quien entra a tu sitio van a llegar ${aLista(proveedores)}, y casi siempre a servidores fuera de Chile.`) +
           ' Cuando los datos salen del país, la ley pide un contrato con cláusulas de protección, o que el país donde van tenga un nivel de protección adecuado (Art. 27-28).'
         // No repite la frase del ítem de arriba ("no vimos ninguno de los rastreadores más
         // comunes"), que cae en la misma pantalla de teléfono: acá se nombra cuál es esa lista,
@@ -1668,6 +1719,14 @@ function sinPoderLeer(f) {
 function listaLegible(nombres) {
   if (nombres.length <= 1) return nombres.join('');
   return nombres.slice(0, -1).join(', ') + ' y ' + nombres[nombres.length - 1];
+}
+
+// "el Pixel de Meta" es el nombre acordado del producto, y detrás de la preposición "a" pide la
+// contracción: sin esto el informe decía "los datos también llegan a el Pixel de Meta". Solo
+// aplica al primer nombre de la lista, que es el único que va pegado a la preposición.
+function aLista(nombres) {
+  const lista = listaLegible(nombres);
+  return lista.startsWith('el ') ? `al ${lista.slice(3)}` : `a ${lista}`;
 }
 
 /* ------------------------------------------------------------------ */

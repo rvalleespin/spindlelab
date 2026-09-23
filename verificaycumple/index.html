@@ -953,7 +953,7 @@
   /* "Ver el kit y precios" baja hasta acá: sin este margen, con el header en dos líneas el
      título de la sección quedaba debajo de él. */
   section.ayuda { scroll-margin-top: var(--alto-header); }
-  /* Tres anchos. Desde 1100 px, tres columnas de igual alto: kit, suscripción y formulario,
+  /* Tres anchos. Desde 1100 px, tres columnas de igual alto: kit, revisión trimestral y formulario,
      un poco más ancho porque es el que más lleva adentro. Entre 681 y 1099 las tres no caben
      sin apretar los precios, así que los dos planes siguen lado a lado y el formulario ocupa
      el ancho entero debajo. En teléfono, todo en una columna. */
@@ -1071,11 +1071,11 @@
        renglones disparejos. */
     .pedir-que { flex-direction: column; gap: 8px; }
   }
-  /* La fila de tres: kit, suscripción y formulario. El formulario va un poco más ancho porque
+  /* La fila de tres: kit, revisión trimestral y formulario. El formulario va un poco más ancho porque
      es el que más lleva, y en su columna cada campo ocupa su propia línea.
      Cada tarjeta mide lo que mide su contenido (align-items: start). Estiradas al alto del
      formulario, que es la más alta por lejos, al kit le quedaban unos 370 px de azul vacío y
-     a la suscripción otro tanto de verde: leído rápido, parecía una tarjeta rota o un texto
+     a la revisión trimestral otro tanto de verde: leído rápido, parecía una tarjeta rota o un texto
      que no cargó. Los pies quedan disparejos, que es lo normal en una fila de planes, y la
      línea sobre la nota se queda: cierra la lista, no tapa un hueco. */
   @media (min-width: 1100px) {
@@ -1771,12 +1771,21 @@
       // repetía aunque el sitio ya respondiera.
       const resp = await fetch('/api/chequeo?dominio=' + encodeURIComponent(dominio), { cache: 'no-store' });
       const data = await resp.json();
+      // El aviso de espera se borra ANTES de pintar, no en el finally. Si se borraba después,
+      // el scroll se calculaba con el aviso todavía ocupando su lugar y, al desaparecer, el
+      // informe subía esos píxeles y el header fijo se comía el primer renglón de la frase que
+      // califica el puntaje: quedaba "alcanzamos a ver. Hay 1 señal…", justo sin el "de 100,
+      // contando solo lo que". Pasaba solo en los sitios lentos, que son los de la lista.
+      clearTimeout(esperaLarga);
+      avisoEspera.textContent = '';
       if (!data || data.ok !== true) {
         renderError(data, dominio);
       } else {
         renderResultado(data);
       }
     } catch (err) {
+      clearTimeout(esperaLarga);
+      avisoEspera.textContent = '';
       renderError({ ok: false, tipo: 'sitio', error: 'No pudimos completar el chequeo. Inténtalo de nuevo.' }, dominio);
     } finally {
       clearTimeout(esqueletoTardio);
@@ -1802,7 +1811,7 @@
   }
 })();
 
-// Pedir el kit, la suscripción o hacer una pregunta. Lo que lleva a #pedir (el botón del
+// Pedir el kit, la revisión trimestral o hacer una pregunta. Lo que lleva a #pedir (el botón del
 // resultado, el de revisión a mano cuando el chequeo falla) funciona sin JavaScript: baja
 // hasta el formulario y se envía como uno común. Con JavaScript, además se marca la opción,
 // se trae el dominio y el puntaje si vienes de un chequeo, y se envía sin salir de la página.
