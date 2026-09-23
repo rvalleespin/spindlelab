@@ -192,6 +192,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
   .chq-num span{font-size:.42em;color:var(--ink-50);font-weight:600}
   .chq-veredicto{flex:1 1 260px;font-size:15px;line-height:1.65;color:var(--ink-70)}
   .chq-veredicto b{color:var(--paper)}
+  .chq-aviso{display:block;margin-top:10px;font-size:13.5px;line-height:1.6;color:var(--ink-50)}
   .chq-bloque{margin-top:34px}
   .chq-bloque h3{font-family:var(--headline);font-size:19px;font-weight:600;letter-spacing:-.02em;color:var(--paper);margin:0 0 3px}
   .chq-bloque p.sub{font-size:14px;color:var(--ink-50);margin:0 0 16px}
@@ -202,6 +203,8 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
   .chq-mark{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:1px}
   .chq-si{border:1px solid var(--teal);color:var(--teal)}
   .chq-no{border:1px solid #d98c8c;color:#d98c8c}
+  /* Lo que no pudimos medir no va ni en verde ni en rojo: los dos colores afirman algo. */
+  .chq-duda{border:1px dashed var(--ink-50);color:var(--ink-50)}
   .chq-t{font-size:14.5px;color:var(--paper);line-height:1.5}
   .chq-d{font-size:13px;color:var(--ink-50);margin-top:3px;line-height:1.55}
   .chq-fix{font-size:13px;color:var(--ink-70);margin-top:6px;line-height:1.55;border-left:2px solid var(--line);padding-left:10px}
@@ -334,10 +337,10 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
     <div class="sec-head">
       <span class="eyebrow">Además de esto</span>
       <h2>Un chequeo distinto, para la Ley 21.719.</h2>
-      <p>Si tu sitio trata datos personales (un formulario de contacto ya cuenta), la Ley 21.719 entra en plena vigencia el 1 de diciembre de 2026. <a href="https://verificaycumple.pages.dev/" rel="noopener">Verifica y Cumple</a>, nuestro chequeo gratuito para esa ley, revisa las señales técnicas básicas: política de privacidad, gestor de consentimiento, y lo que exige el Art. 14 ter.</p>
+      <p>Si tu sitio trata datos personales (un formulario de contacto ya cuenta), la Ley 21.719 entra en plena vigencia el 1 de diciembre de 2026. <a href="https://verifica.spindlelab.cl/" rel="noopener">Verifica y Cumple</a>, nuestro chequeo gratuito para esa ley, revisa las señales técnicas básicas que se ven desde afuera, como si tu portada enlaza una política de privacidad y si usas un gestor de consentimiento.</p>
     </div>
     <div class="chq-ramas">
-      <a class="chq-r2" href="https://verificaycumple.pages.dev/" rel="noopener">Revisar mi sitio para la Ley 21.719</a>
+      <a class="chq-r2" href="https://verifica.spindlelab.cl/" rel="noopener">Revisar mi sitio para la Ley 21.719</a>
     </div>
   </div>
 </section>
@@ -439,11 +442,19 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
   function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
 
-  function fallar(msg, codigo){
+  function fallar(msg, codigo, delSitio){
     // El codigo de respuesta baja de categoria: deja de ser el mensaje y pasa a ser el dato
     // que sirve cuando alguien nos escribe para que lo revisemos a mano.
+    // Y solo se presenta como respuesta del sitio cuando lo es: el 508 del bucle lo ponemos
+    // nosotros, y el 530 y el 525/526 son de Cloudflare, así que ahí la API manda
+    // codigoDelSitio: false.
+    // "Si nos escribes" no decía dónde. Va al formulario de /contacto/ y no a un mailto, porque
+    // generate_lead solo se dispara al enviar ese formulario.
+    var etiqueta = delSitio === false
+      ? 'Si nos escribes por <a href="/contacto/">el formulario de contacto</a>, menciona este código: '
+      : 'Código de respuesta de tu sitio: ';
     err.innerHTML = '<p style="margin:0">' + esc(msg) + '</p>' +
-      (codigo ? '<p class="chq-error-codigo">Codigo de respuesta de tu sitio: ' + esc(codigo) + '</p>' : '');
+      (codigo ? '<p class="chq-error-codigo">' + etiqueta + esc(codigo) + '</p>' : '');
     err.style.display = 'block';
     out.style.display = 'none';
   }
@@ -456,19 +467,40 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
   }
 
   function pintar(d){
+    // Señales que no alcanzamos a medir. Quedan fuera del número, y eso se dice: si no, el
+    // puntaje parece cubrir el sitio entero y no lo cubre.
+    var sc = d.sinConfirmar || 0;
+    var sinConfirmar = sc === 1
+      ? 'Hay 1 señal que no alcanzamos a comprobar, así que no cuenta en este número. Está más abajo, con el motivo.'
+      : 'Hay ' + sc + ' señales que no alcanzamos a comprobar, así que no cuentan en este número. Están más abajo, con el motivo.';
     var h = '<div class="chq-score"><div class="chq-num">' + d.puntaje + '<span>/100</span></div>' +
-            '<div class="chq-veredicto"><b>' + esc(d.dominio) + '</b><br>' + esc(veredicto(d.puntaje)) + '</div></div>';
+            '<div class="chq-veredicto"><b>' + esc(d.dominio) + '</b><br>' + esc(veredicto(d.puntaje)) +
+            // Cuando el dominio escrito no abrió y revisamos su otra forma (con o sin www), la
+            // API lo explica en `aviso`; sin esto, la persona ve otra dirección y no sabe por qué.
+            (d.aviso ? '<span class="chq-aviso">' + esc(d.aviso) + '</span>' : '') +
+            (sc ? '<span class="chq-aviso">' + esc(sinConfirmar) + '</span>' : '') + '</div></div>';
 
     d.bloques.forEach(function(b){
       var items = d.items.filter(function(i){ return i.bloque === b.id; });
       if(!items.length) return;
       h += '<div class="chq-bloque"><h3>' + esc(b.titulo) + '</h3><p class="sub">' + esc(b.sub) + '</p><ul class="chq-list">';
       items.forEach(function(i){
-        h += '<li' + (i.ok ? ' class="ok"' : '') + '><span class="chq-mark ' + (i.ok ? 'chq-si' : 'chq-no') + '" aria-hidden="true">' +
-             (i.ok ? '\u2713' : '\u2715') + '</span><div>' +
-             '<span class="sr-only">' + (i.ok ? 'Cumple: ' : 'No cumple: ') + '</span>' +
+        // Tres estados, no dos. "Cumple" y "No cumple" afirman los dos algo sobre el sitio, y
+        // hay se\u00f1ales que no alcanzamos a medir (un robots.txt que no nos dejaron leer, una
+        // prueba que no contest\u00f3). Esas van con su propio signo y con su propio texto: el
+        // lector de pantalla lee lo mismo que se ve, y el detalle queda a la vista, que es
+        // donde se explica por qu\u00e9 no lo sabemos.
+        // `i.estado` lo manda la API; el respaldo cubre una respuesta anterior a ese campo.
+        var estado = i.estado || (i.ok ? 'ok' : 'pendiente');
+        var duda = estado === 'sin-confirmar';
+        var marca = estado === 'ok' ? '\u2713' : duda ? '?' : '\u2715';
+        var clase = estado === 'ok' ? 'chq-si' : duda ? 'chq-duda' : 'chq-no';
+        var lee = estado === 'ok' ? 'Cumple: ' : duda ? 'No lo pudimos confirmar: ' : 'No cumple: ';
+        h += '<li' + (estado === 'ok' ? ' class="ok"' : '') + '><span class="chq-mark ' + clase + '" aria-hidden="true">' +
+             marca + '</span><div>' +
+             '<span class="sr-only">' + lee + '</span>' +
              '<div class="chq-t">' + esc(i.titulo) + '</div>' +
-             (i.ok ? '' :
+             (estado === 'ok' ? '' :
                '<div class="chq-d">' + esc(i.detalle) + '</div>' +
                (i.arreglo ? '<div class="chq-fix">' + esc(i.arreglo) + '</div>' : '')) +
              '</div></li>';
@@ -506,10 +538,10 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
     fetch('/api/chequeo?dominio=' + encodeURIComponent(v))
       .then(function(r){ return r.json(); })
       .then(function(d){
-        if(!d || !d.ok) fallar((d && d.error) || 'No pudimos completar el chequeo.', d && d.codigo);
+        if(!d || !d.ok) fallar((d && d.error) || 'No pudimos completar el chequeo.', d && d.codigo, d && d.codigoDelSitio);
         else pintar(d);
       })
-      .catch(function(){ fallar('No pudimos completar el chequeo. Intentalo de nuevo en un momento.'); })
+      .catch(function(){ fallar('No pudimos completar el chequeo. Inténtalo de nuevo en un momento.'); })
       .finally(function(){ btn.disabled = false; btn.textContent = textoPrevio; });
   });
 })();
