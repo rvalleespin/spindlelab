@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Verifica y Cumple · Chequeo técnico Ley 21.719</title>
-<meta name="description" content="Si tienes un formulario de contacto, ya te aplica la Ley 21.719, la nueva ley de datos personales. Revisa gratis qué le falta a tu sitio antes del 1 de diciembre de 2026. Sin registro y sin dejar tu correo.">
+<!-- La descripción se ancla en el sitio y no en la fecha a propósito: hay un proyecto en el
+     Senado para mover la vigencia a 2027, y un "antes del 1 de diciembre de 2026" envejece
+     mal. Lo que no envejece es que un formulario de contacto ya trata datos personales. -->
+<meta name="description" content="Si tienes un formulario de contacto, ya te aplica la Ley 21.719, la nueva ley de datos personales. Revisa gratis qué tiene publicado tu sitio y qué le falta. Sin registro y sin dejar tu correo.">
 <link rel="canonical" href="https://verifica.spindlelab.cl/">
 <!-- Ícono de la pestaña: el sello, en línea para no sumar otra petición. Sin él, el navegador
      pide /favicon.ico, que acá no existe: en local es un error 404 en la consola, y en Pages
@@ -17,7 +20,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Verifica y Cumple">
 <meta property="og:title" content="Verifica y Cumple · Chequeo técnico Ley 21.719">
-<meta property="og:description" content="Si tienes un formulario de contacto, ya te aplica la Ley 21.719, la nueva ley de datos personales. Revisa gratis qué le falta a tu sitio antes del 1 de diciembre de 2026.">
+<meta property="og:description" content="Si tienes un formulario de contacto, ya te aplica la Ley 21.719, la nueva ley de datos personales. Revisa gratis qué tiene publicado tu sitio y qué le falta.">
 <meta property="og:url" content="https://verifica.spindlelab.cl/">
 <meta property="og:locale" content="es_CL">
 <meta property="og:image" content="https://verifica.spindlelab.cl/assets/img/og-verificaycumple.jpg">
@@ -27,7 +30,7 @@
 <meta property="og:image:alt" content="Verifica y Cumple, chequeo técnico gratuito para la Ley 21.719. Una fiscalizadora a caballo bajo la pregunta ¿Estás seguro?">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Verifica y Cumple · Chequeo técnico Ley 21.719">
-<meta name="twitter:description" content="Si tienes un formulario de contacto, ya te aplica la Ley 21.719, la nueva ley de datos personales. Revisa gratis qué le falta a tu sitio antes del 1 de diciembre de 2026.">
+<meta name="twitter:description" content="Si tienes un formulario de contacto, ya te aplica la Ley 21.719, la nueva ley de datos personales. Revisa gratis qué tiene publicado tu sitio y qué le falta.">
 <meta name="twitter:image" content="https://verifica.spindlelab.cl/assets/img/og-verificaycumple.jpg">
 <meta name="twitter:image:alt" content="Verifica y Cumple, chequeo técnico gratuito para la Ley 21.719.">
 
@@ -848,6 +851,13 @@
   }
   .paso h3 { margin: 0 0 8px; font-size: 1.12rem; color: var(--vivo-tinta); }
   .paso p { margin: 0; font-size: 0.95rem; color: var(--vivo-suave); line-height: 1.6; }
+  /* El bloque 01 pasó a tener más de un párrafo (la fecha, y el proyecto que la mueve), así
+     que los separa el aire en vez de un margen en .paso p, que se lo comería el resto. */
+  .paso p + p { margin-top: 14px; }
+  /* Fecha de revisión del párrafo del proyecto de ley. Va más chica y del mismo color del
+     cuerpo: se lee como pie de nota sin bajar el contraste. Con urgencia Suma renovada, ese
+     párrafo puede quedar viejo en semanas, y sin fecha a la vista nadie sabría desde cuándo. */
+  .paso .paso-revisado { font-size: 0.82rem; margin-top: 8px; }
   @media (max-width: 760px) { .pasos { grid-template-columns: 1fr; gap: 28px; } }
 
   .comparacion {
@@ -1123,7 +1133,20 @@
     </div>
     <div class="header-derecha">
       <a class="nav-planes" href="#ayuda">Ver el kit y precios →</a>
-      <div class="fecha-limite">Ley 21.719 entra en plena vigencia el <strong>1 dic 2026</strong></div>
+      <!-- Acá decía "Ley 21.719 entra en plena vigencia el 1 dic 2026". Es la única línea que
+           se ve en todas las pantallas, y decía solo la fecha: si el proyecto de postergación
+           se aprueba, la insignia queda falsa y además el motivo para actuar se cae con ella.
+           Ahora dice el hecho que no depende de ninguna fecha. La fecha, con el proyecto del
+           Senado al lado, vive en el bloque 01, que sí tiene espacio para el matiz.
+           Ojo con el largo: .fecha-limite es white-space: nowrap y en 390px esta línea ocupa
+           casi todo el ancho, así que un texto más largo que este saca scroll lateral.
+
+           Va CONDICIONAL. La primera versión decía "Tu formulario ya trata datos personales",
+           y eso afirma que el visitante tiene un formulario cuando puede no tenerlo: en un
+           sitio cuyo valor entero es no dar por bueno lo que no vimos, no podemos abrir con una
+           suposición sobre su sitio. Y la fecha se queda, porque es un hecho y porque el
+           público son abogados; lo que ya no hace es cargar sola con el motivo para actuar. -->
+      <div class="fecha-limite">Si pides datos, te aplica desde el <strong>1 dic 2026</strong></div>
     </div>
   </div>
 </header>
@@ -1189,8 +1212,12 @@
     <div class="envoltura">
       <p class="etiqueta-seccion reveal">Sin claves ni instalar nada</p>
       <h2 class="titulo-seccion reveal">Cómo revisamos tu sitio</h2>
+      <!-- La primera frase es el ancla de toda la página, y va acá arriba, a ancho completo y
+           antes de que se nombre ninguna fecha: el motivo para revisar tu sitio es lo que tu
+           sitio hace hoy, no un plazo que el Congreso puede mover. -->
       <p class="intro reveal">
-        Parte de lo que pide la Ley 21.719 se ve en tu sitio web, a la vista de todos. Este
+        Si tienes un formulario de contacto, tu sitio está tratando datos personales hoy.
+        Parte de lo que pide la Ley 21.719 se ve ahí mismo, a la vista de todos. Este
         chequeo lee el código con que está escrita tu página, el mismo que recibe cualquier
         navegador, y busca ahí lo que la ley te pide tener publicado.
       </p>
@@ -1200,6 +1227,18 @@
           <span class="paso-num">01</span>
           <h3>La fecha</h3>
           <p>La Ley 21.719 entra en plena vigencia el 1 de diciembre de 2026. Desde ese día fiscaliza la Agencia de Protección de Datos Personales, que puede partir por su cuenta o porque alguien reclama.</p>
+          <!-- El proyecto de postergación va acá y no en la insignia del header: es el bloque
+               de la fecha, o sea donde va a mirar quien se pregunte por la postergación, y es
+               el único lugar con espacio para decir que existe y que todavía no se aprueba.
+               Los datos son de la ficha oficial de tramitación del Senado al 23-sep-2026
+               (boletín 18.623-07, mensaje 110-374, primer trámite, sin informe de comisión).
+               Para revisarlo:
+               curl -s "https://tramitacion.senado.cl/wspublico/tramitacion.php?boletin=18623"
+               (el número va sin el -07 y sin puntos, o responde vacío). El Ejecutivo le
+               renovó la urgencia Suma el 22-sep, así que esto puede cambiar en semanas:
+               si cambia, se actualiza este párrafo y la fecha de revisión de abajo. -->
+          <p>Hay un proyecto en el Senado (boletín 18.623-07) para mover esa fecha al 1 de diciembre de 2027. Todavía no se aprueba, así que hoy rige el 1 de diciembre de 2026.</p>
+          <p class="paso-revisado">Revisado el 23-sep-2026.</p>
         </div>
         <div class="paso reveal">
           <span class="paso-num">02</span>

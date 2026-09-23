@@ -111,9 +111,24 @@ propio riesgo legal.
 7. **No mencionado en el brief original: el "delegado de protección de datos" NO es
    obligatorio para toda empresa.** Solo aparece como parte del "modelo de prevención de
    infracciones" — el programa de cumplimiento OPCIONAL que, si se certifica, sirve como
-   atenuante (Art. 51). A diferencia del RGPD, donde el DPO es obligatorio para ciertos tipos
-   de tratamiento, acá es voluntario. No prometerle a cada prospecto que "necesita nombrar un
+   atenuante. A diferencia del RGPD, donde el DPO es obligatorio para ciertos tipos de
+   tratamiento, acá es voluntario. No prometerle a cada prospecto que "necesita nombrar un
    DPO".
+
+   **Los artículos, corregidos el 23-sep-2026 contra el Diario Oficial** (N° 44.023 del
+   13-dic-2024, CVE 2583630). Acá decía "Art. 51" y estaba mal: el 51 es la certificación del
+   modelo ante la Agencia, no el delegado. Los que valen:
+   - **Art. 50**: "El responsable de datos **podrá designar** un delegado de protección de
+     datos personales". Es la designación, y es facultativa.
+   - **Art. 49**: los responsables "**podrán voluntariamente** adoptar un modelo de prevención
+     de infracciones consistente en un programa de cumplimiento".
+   - **Art. 48**: lo que sí es obligatorio, adoptar acciones para prevenir infracciones.
+     Nombrar un delegado es una forma de hacerlo, no el requisito.
+
+   ⚠️ **Y ojo con la fuente:** la API de la BCN sirve una versión TRUNCADA de esta ley (salta
+   del Art. 16 sexies al 20 y corta en el 22, sin el capítulo de sanciones). Para citar un
+   artículo hay que ir al PDF del Diario Oficial, no a esa API. Este error se encontró
+   justamente al escribir un post que acusaba al mercado de citar mal la ley.
 
 8. **La ley nunca usa la palabra "cookie".** Es tecnológicamente neutra: regula el
    consentimiento para tratar datos personales en general (Art. 12), y un banner de cookies es
