@@ -1106,11 +1106,14 @@
           <p class="pedir-intro">Esto sí te pide datos, y solo para responderte: te escribimos para confirmar el alcance y el valor para tu sitio.</p>
           <p class="pedir-contexto" hidden></p>
 
+          <!-- Los nombres de campo van sin tildes ni eñes: Web3Forms los rompe (medido con el
+               envío de prueba: "Qué quiere" llegó como "QuÃ© quiere" en el correo). Los
+               valores sí pueden llevarlas. -->
           <fieldset class="pedir-que">
             <legend>Qué quieres</legend>
-            <label><input type="radio" name="Qué quiere" value="Kit de implementación" checked> Kit de implementación</label>
-            <label><input type="radio" name="Qué quiere" value="Suscripción de vigilancia"> Suscripción de vigilancia</label>
-            <label><input type="radio" name="Qué quiere" value="Los dos"> Los dos</label>
+            <label><input type="radio" name="Pedido" value="Kit de implementación" checked> Kit de implementación</label>
+            <label><input type="radio" name="Pedido" value="Suscripción de vigilancia"> Suscripción de vigilancia</label>
+            <label><input type="radio" name="Pedido" value="Los dos"> Los dos</label>
           </fieldset>
 
           <div class="pedir-campos">
@@ -1329,7 +1332,7 @@
     if (!a) return;
     ev.preventDefault();
     const valor = QUE[a.getAttribute('data-pedir')] || QUE.kit;
-    form.querySelectorAll('input[name="Qué quiere"]').forEach(function (r) { r.checked = r.value === valor; });
+    form.querySelectorAll('input[name="Pedido"]').forEach(function (r) { r.checked = r.value === valor; });
     form.elements['Desde'].value = a.getAttribute('data-desde') || '';
     const dominio = a.getAttribute('data-dominio');
     const puntaje = a.getAttribute('data-puntaje');
@@ -1351,7 +1354,7 @@
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     if (!form.reportValidity()) return;
-    const que = (form.querySelector('input[name="Qué quiere"]:checked') || {}).value || '';
+    const que = (form.querySelector('input[name="Pedido"]:checked') || {}).value || '';
     const sitio = form.elements['Sitio web'].value.trim();
     const pts = form.elements['Puntaje del chequeo'].value;
     // El asunto dice qué se pidió y de qué sitio, para reconocerlo en la bandeja sin abrirlo.
