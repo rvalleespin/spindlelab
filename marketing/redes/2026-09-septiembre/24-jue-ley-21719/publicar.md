@@ -26,21 +26,21 @@ Por eso publicamos el chequeo gratis. Escribes tu dominio y en 40 segundos te mu
 
 Si tienes una política de privacidad publicada, y si esa página de verdad abre.
 
-Si hay un gestor de consentimiento, o si tus rastreadores cargan sin preguntarle nada a nadie.
+Si hay un gestor de consentimiento de un proveedor conocido, y qué rastreadores tienes instalados.
 
 Qué proveedores externos están recibiendo datos de tus visitantes.
 
-Y dejamos los doce puntos que exige el artículo 14 ter escritos uno por uno, con las palabras de la ley y no con el resumen de un blog, para que compares.
+Y dejamos los doce puntos que pide el artículo 14 ter, uno por uno, para que compares tu política con ellos.
 
 Lo que el chequeo no hace es decirte que cumples. Te muestra qué señales están y cuáles faltan, con la instrucción para corregir cada una. Certificar que una empresa cumple es trabajo de abogado.
 
-Corregirlas sí es lo nuestro: instalamos el gestor de consentimiento, dejamos publicado lo que el artículo 14 ter exige, y volvemos a correr el chequeo para verificar que quedó. El kit parte desde $149.000 + IVA, con el detalle publicado en el sitio.
+Corregirlas sí es lo nuestro: instalamos el gestor de consentimiento, te dejamos la plantilla de política para que tu abogado la cierre, y volvemos a correr el chequeo para verificar que quedó. El kit parte desde $149.000 + IVA, con el detalle publicado en el sitio.
 
 Quedan diez semanas. Dejamos el chequeo en el primer comentario.
 
 ## Primer comentario (copiar y pegar, AL TIRO)
 
-Acá está: https://verificaycumple.pages.dev
+Acá está: https://verifica.spindlelab.cl
 
 Gratis, sin registro, y no guarda el dominio que revisas. Si sale con señales pendientes, en la misma página está el detalle del kit y su precio. Si algo te sale raro y no cachas qué hacer, escríbenos por acá y lo miramos.
 
@@ -79,7 +79,9 @@ Dos salidas, decide Ramón:
   cierra igual (*"parte desde $400.000 + IVA, con el detalle publicado en el sitio"*). La regla
   de "sin cifras ni precios" es de la **cuenta personal**, no de la página.
 - **"Lo corrimos sobre nuestro propio sitio y sacó 36 de 100"** es la versión plural del momento
-  honesto. El 36 → 73 está publicado en `verificaycumple.pages.dev`, no es dato nuevo.
+  honesto. El 36 → 73 ya no está en el sitio (se sacó el 22-sep) y el 23-sep cambió la forma de
+  puntuar: el 36 fue cierto con la regla de entonces, pero antes de reusarlo corre el chequeo de
+  nuevo sobre spindlelab.cl y usa el número de hoy.
 - **No se afirma que el chequeo evalúe los 12 puntos del Art. 14 ter uno por uno.** No lo hace:
   verifica señales técnicas, y los 12 puntos están en la página como referencia para comparar.
   Decir lo otro sería exactamente la afirmación de más que el producto entero evita.
