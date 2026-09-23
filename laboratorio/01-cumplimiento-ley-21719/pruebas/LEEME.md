@@ -1,6 +1,6 @@
 # Pruebas de los chequeos y del control de cookies
 
-74.828 comprobaciones (medidas el 23-sep-2026, al cierre de la revisión del día;
+74.836 comprobaciones (medidas el 23-sep-2026, al cierre de la revisión del día;
 73.562 de ellas son el fuzz de equivalencia del cambio a tiempo lineal)
 sobre los dos módulos de chequeo, que comparten la lógica de validación de
 destino y de descarga acotada, y sobre el control de cookies de spindlelab.cl:
@@ -17,7 +17,7 @@ líneas de cada archivo antes de correrlo.
 
 | archivo | qué cubre |
 |---|---|
-| `prueba-destino.mjs` | Verifica y Cumple: validación de dominio, portón de destinos, redirecciones, mensajes de error, contrato de la respuesta, permiso antes de rastreadores, patrones de CMP, enlace a la política, www, tiempo lineal, no-store, el middleware que muda pages.dev a verifica.spindlelab.cl, peor caso de espera, página de bloqueo con 200, sitios armados con JavaScript, política que no se pudo leer, casilla del formulario, el texto de todas las respuestas, y la marca de retención rota o comentada que no puede retener lo que viene después (530) |
+| `prueba-destino.mjs` | Verifica y Cumple: validación de dominio, portón de destinos, redirecciones, mensajes de error, contrato de la respuesta, permiso antes de rastreadores, patrones de CMP, enlace a la política, www, tiempo lineal, no-store, el middleware que muda pages.dev a verifica.spindlelab.cl, peor caso de espera, página de bloqueo con 200, sitios armados con JavaScript, política que no se pudo leer, casilla del formulario, el texto de todas las respuestas, y la marca de retención rota o comentada que no puede retener lo que viene después (538) |
 | `prueba-gemelo-completa.mjs` | spindlelab.cl: el informe inventado, notaciones de IP, redirecciones, sondas de agente, robots.txt ilegible, equivalencia ítem por ítem con la versión anterior, www, peor caso de espera, no-store, la página de bloqueo que llega con 200, llms.txt y sitemap.xml (manda lo que llegó, no el código), y que los dos detectores de bloqueo sean la misma lista (370) |
 | `prueba-streaming.mjs` | la rama de streaming de spindlelab.cl, que es la que corre en producción: cuerpos reales, cancelación de la descarga, sitemap de 4,8 MB, www, página de bloqueo con una tilde partida entre dos trozos (23) |
 | `prueba-vyc-streaming.mjs` | lo mismo para Verifica y Cumple, más la página de bloqueo, los sitios armados con JavaScript y la política que no se pudo leer (23) |
