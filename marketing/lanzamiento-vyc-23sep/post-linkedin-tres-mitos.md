@@ -1,6 +1,10 @@
 # Publicar — Los tres mitos de la Ley 21.719
 
-**Estado: ⏳ PENDIENTE DE PASE HUMANO DE RAMÓN. No publicado. No enviado.**
+**Estado: 📅 PROGRAMADO para JUEVES 24-sep-2026** (Ramón, 23-sep: "esto es para mañana"). Copia
+lista para pegar, con checklist y nota de cadencia, en
+`marketing/redes/2026-09-septiembre/24-jue-tres-mitos-ley21719/publicar.md` — ese es el archivo
+que la rutina del Copiloto busca cada mañana. Este documento se queda como el original, con la
+trazabilidad legal completa y el razonamiento de cada decisión de redacción.
 
 **Canal:** página de LinkedIn de SpindleLab (cuerpo, registro plural) **+** perfil personal de
 Ramón, que **comparte** el post de la página con su comentario en registro singular.

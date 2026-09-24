@@ -16,6 +16,7 @@ estaba en el aire, y eso costó un post: el 22-sep se publicó en la página un 
 | ~8-sep | "Un motor de adquisición. No cuatro servicios sueltos" (carrusel, 4 imgs) | — | corpus §6 |
 | ~1-sep | "Estás pagando para que lleguen" (el circuito / dominó) | 1 reacción · 1 comentario · 2 compartidos | corpus §2 + `01-mar-circuito-domino/` |
 | **22-sep** | ⛔ Explicador Ley 21.719 (plural) — **publicado y retirado el mismo día, por repetido** | 53 impresiones en ~40 min | `24-jue-ley-21719/publicar.md` |
+| **📅 24-sep (programado)** | Los tres mitos de la Ley 21.719 (delegado voluntario, sin 72h, el 4% con dos condiciones), + compartir personal | — | `24-jue-tres-mitos-ley21719/publicar.md` |
 
 ## Perfil personal de Ramón (360 seguidores)
 
@@ -40,6 +41,10 @@ verificable y sin nada que vender. Vale la pena mirarlo antes de decidir el pró
 
 ## Pendiente
 
+- **El jueves 24-sep sería el cuarto toque de la semana al perfil personal** (GEO 21-sep, VyC
+  21/22-sep, query fan-out 23-sep, tres mitos 24-sep), por encima del "un post por semana" que
+  fija `estrategia-linkedin-verifica-y-cumple.md`. Señalado a Ramón el 23-sep; decidió moverlo un
+  día en vez de a la semana siguiente. No volver a plantearlo, ya es su decisión tomada.
 - **Ya no falta capturar nada**: los cuatro textos vivos están en el corpus (§1 a §6), literales.
 - El 22-sep, LinkedIn tuvo **las escrituras caídas para la página** durante al menos una hora:
   dos envíos de comentario colgados sin error y tres guardados de edición fallidos
