@@ -1,11 +1,43 @@
 # Publicar — Los tres mitos de la Ley 21.719
 
-**Cuándo:** JUEVES 24-sep-2026 · **Canales:** página de LinkedIn de SpindleLab (cuerpo, plural)
-**+** perfil personal de Ramón, que **comparte** el post de la página con su comentario en
-registro singular. No son dos posts: es uno y su empujón.
+**Cuándo:** publicado el VIERNES 25-sep-2026 (agendado para el jue 24, salió un día después
+porque el pedido de publicar llegó el 25 y no hubo instrucción de mover la fecha).
+**Canales:** página de LinkedIn de SpindleLab (cuerpo, plural) **+** perfil personal de Ramón,
+que **comparte** el post de la página con su comentario en registro singular.
 **Pieza visual:** ninguna. Texto puro.
-**Escribe:** la sesión que construyó `verifica.spindlelab.cl` (23-sep) · **Programa esta fecha:**
-esta sesión, a pedido de Ramón ("esto es para mañana", 23-sep) · **Aprueba y publica:** Ramón.
+**Escribe:** la sesión que construyó `verifica.spindlelab.cl` (23-sep) · **Programó la fecha:**
+esta sesión, a pedido de Ramón ("esto es para mañana", 23-sep) · **Publicó:** esta sesión, a
+pedido explícito de Ramón el 25-sep ("publica el post").
+
+## ✅ ESTADO: PUBLICADO Y VERIFICADO (25-sep-2026)
+
+| Pieza | URL / evidencia |
+|---|---|
+| Post en la página | `linkedin.com/feed/update/urn:li:activity:7509227560686227457/` |
+| Primer comentario (como SpindleLab) | Confirmado: "1 comentario", autor SpindleLab, link vivo |
+| Compartir personal + comentario | Confirmado en `linkedin.com/in/me/recent-activity/all/`, "ahora", visible para cualquiera |
+
+### Cómo se hizo (para la próxima vez que algo similar se automatice)
+
+- **Antes de publicar se verificó el canal**, no el repo: ni la página ni el perfil tenían nada
+  nuevo desde el 21-sep. Publicar era seguro.
+- **Tropiezos durante la ejecución, ninguno con daño permanente:**
+  1. Un clic cayó sobre "Recomendar" del post del 21-sep en vez del cuadro de texto → dio like
+     por error → se deshizo al toque, verificado que volvió a su reacción original (1).
+  2. El primer intento del comentario del chequeo se escribió bajo el post viejo del 21-sep en
+     vez del nuevo, por un reflow de la página → se detectó antes de enviar (nunca se apretó
+     "Comentar"), y se descartó recargando en una pestaña nueva en vez de forcejear con el
+     editor.
+  3. **Hallazgo que vale la pena anotar:** al compartir un post de la propia página desde la
+     vista de administrador, LinkedIn ofrece el diálogo "Compartir con tus ideas" pero **fija la
+     identidad en la página (SpindleLab), sin selector para cambiar a la personal** — a
+     diferencia de comentar, donde sí hay selector de identidad. La solución fue navegar a la
+     URL pública del post (`linkedin.com/feed/update/urn:li:activity:<id>/`, obtenida vía
+     "Copiar enlace a la publicación" → como el portapapeles no se pudo leer, se sacó el URN
+     directo del DOM con `data-urn`) y compartir desde ahí: en esa vista sí aparece "Ramón
+     Vallejos · Publicar para todo el mundo" por defecto.
+- **Verificación final:** los tres elementos (post, comentario, compartir) se confirmaron leyendo
+  el estado real después de publicar, no asumiendo que el clic había funcionado.
 **Origen completo, con toda la trazabilidad legal y el porqué de cada decisión de redacción:**
 `marketing/lanzamiento-vyc-23sep/post-linkedin-tres-mitos.md`. Este archivo es la copia lista
 para pegar, en el lugar donde la rutina del Copiloto la busca cada mañana (paso 4c).
