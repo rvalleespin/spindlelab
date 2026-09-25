@@ -1,10 +1,14 @@
 # Respuesta a Carlos: el programa, los precios y por dónde partir
 
-- **Fecha:** 24-sep-2026 · **Estado:** borrador para revisión humana. **No enviado.**
-- **Para:** soyamusicbooking@gmail.com · en el mismo hilo.
+- **Fecha:** 24-sep-2026 · **Estado:** ✅ **borrador listo en el buzón**, en el hilo con
+  Carlos, respondiendo a su correo del 23-sep. **Sin enviar.**
+- **Para:** soyamusicbooking@gmail.com
 - **Análisis detrás:** `ventas/sr-soya-analisis-precios-y-plan.md`
-- ⚠️ **Antes de mandarlo, Ramón decide las cuatro cosas del §8 de ese análisis.**
-  El borrador está escrito con la recomendación aplicada.
+- **Las cuatro decisiones del §8 quedaron aprobadas por Ramón el 24-sep**, y están
+  aplicadas en este texto: dos listas de precio, Chile primero, landing incluida y
+  nombrada, y se le dice lo del nombre.
+- **Verificado:** sin placeholders, y **no menciona ningún adjunto**, así que el correo se
+  sostiene solo.
 
 ---
 

@@ -128,17 +128,36 @@ propuesta de salida es que las primeras ventas financien la campaña del mes 2. 
 claro si la pauta se carga a **su** tarjeta (lo recomendado, y lo que dice la cotización) o
 si deposita el total y SpindleLab administra esa parte. Va planteado en el borrador.
 
-## Próximo paso (al 21-sep-2026)
+## Lo que trajo Carlos el 23-sep
 
-**La pelota está en la cancha de Carlos.** Se le pidieron tres respuestas y de ellas
-depende todo el plan del trimestre:
+Respondió las tres preguntas **y mandó el programa completo**: `EL MILAGRO INTERIOR`, 4
+sesiones en 4 semanas, con concepto, estructura sesión por sesión y límites clínicos
+escritos por él.
 
-1. **A qué precio vende y si empaqueta en un programa.** La que más pesa: define cuánto se
-   puede pagar por conseguir un cliente.
-2. Si Terapias 5D ya tiene página, agenda y forma de cobrar.
-3. Cuánto es lo máximo que podría invertir en pauta.
+| Dato | Valor |
+|---|---|
+| Programa Fundadores (primeras 6-10 personas) | **$119.000** |
+| Programa estándar | **$159.000** |
+| Sesión suelta posterior | $45.000 · Extensión de 2 sesiones: ~$75.000 |
+| Infraestructura | **No tiene nada**: ni landing, ni agenda, ni pago. Solo Instagram |
+| Tope de pauta | $100.000/mes, los del acuerdo. Acepta reinvertir lo facturado |
+
+**El hallazgo que ordena todo:** ese precio es correcto para Chile y muy bajo para Estados
+Unidos, donde paga costo de adquisición gringo con ticket chileno. De ahí salen las dos
+recomendaciones aprobadas el 24-sep: **dos listas de precio** y **partir en Chile**, con
+Estados Unidos entrando el mes 2. Análisis en `ventas/sr-soya-analisis-precios-y-plan.md`.
+
+## Próximo paso (al 24-sep-2026)
+
+**Borrador de respuesta listo en el buzón**, pendiente de que Ramón lo envíe. Le pide dos
+definiciones: si acepta partir en Chile, y a qué precio en dólares imagina el programa en
+Estados Unidos. Con eso se cierra el plan del trimestre con números y umbral de corte.
 
 **Sin resolver, además:** si la pauta se carga a su tarjeta o deposita el total.
+
+**Queda pendiente de él, para el mes 1:** definir el precio en dólares, decidir el nombre
+para Estados Unidos (*therapy* es palabra regulada allá) y armar el protocolo de derivación
+del formulario previo.
 
 **Fecha que manda:** el trabajo parte el **12 de octubre** con su primer depósito. Con sus
 respuestas se arma el plan del trimestre con números y umbral de corte, y se cierra antes
