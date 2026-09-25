@@ -22,7 +22,7 @@ estaba en el aire, y eso costó un post: el 22-sep se publicó en la página un 
 
 | Publicado | Pieza | Métricas | Registrado en |
 |---|---|---|---|
-| **✅ 25-sep** | Compartir de "los tres mitos" con comentario propio ("las 72 horas las tenía yo también en mis notas...") | publicado, verificado | `24-jue-tres-mitos-ley21719/publicar.md` |
+| **✅ 25-sep** | "Construí Verifica y Cumple..." — post propio con el link directo en el cuerpo, no compartir | publicado, verificado | `24-jue-tres-mitos-ley21719/publicar.md` |
 | **23-sep** | Query fan-out: el mecanismo de las respuestas con IA de Google, con fuente primaria | recién publicado | `23-mie-query-fan-out/` |
 | **21-sep, editado el 22-sep** | "Soy fundador de SpindleLab y armé un chequeo gratis para la Ley 21.719…" | 58 impresiones · 1 comentario | corpus §3 |
 | **21-sep** | Compartir del post de la página, con comentario propio ("la parte incómoda no es el puntaje") | 20 impresiones | corpus §4 |

@@ -15,9 +15,42 @@ pedido explícito de Ramón el 25-sep ("publica el post").
 |---|---|
 | Post en la página | `linkedin.com/feed/update/urn:li:activity:7509227560686227457/` |
 | Primer comentario (como SpindleLab) | Confirmado: "1 comentario", autor SpindleLab, link vivo |
-| Compartir personal + comentario | Confirmado en `linkedin.com/in/me/recent-activity/all/`, "ahora", visible para cualquiera |
+| ⛔ Compartir personal + comentario (v1) | **Eliminado a pedido de Ramón**: no le gustó el compartir del post de la página. Pidió en cambio un post propio, con el link de Verifica y Cumple directo en el cuerpo (no en comentario) y mencionando SpindleLab. |
+| ✅ Post personal nuevo (v2) | Publicado por separado, ver abajo |
 
-### Cómo se hizo (para la próxima vez que algo similar se automatice)
+### Corrección pedida por Ramón (25-sep, mismo día): el compartir no funcionó para él
+
+Rechazó el compartir del post de la página con dos pedidos concretos:
+1. **No repetir "soy fundador de SpindleLab"** — ya lo dijo varias veces en el corpus, no aporta.
+2. **El link va en el cuerpo del post, no en un comentario**, para que sea más visible a quien lo
+   sigue, y que mencione SpindleLab.
+
+Se eliminó el compartir (LinkedIn: menú "..." → Eliminar publicación → confirmado "Publicación
+eliminada") y se publicó un **post nuevo e independiente** en su perfil, sin tocar el post de la
+página:
+
+> Construí Verifica y Cumple: un chequeo gratis para la Ley 21.719, la ley de datos personales.
+>
+> Antes de publicarlo leí la ley completa, artículo por artículo, en el texto del Diario Oficial.
+> Encontré tres cosas que se están cobrando como obligaciones y que la ley no dice: que necesitas
+> un delegado de protección de datos (el artículo 50 dice que es voluntario), que tienes 72 horas
+> para avisar una filtración (ese número no está en ningún artículo, es del reglamento europeo), y
+> que una pyme arriesga el 4% de sus ingresos (solo si reincide, y una primera infracción no
+> cumple esa condición).
+>
+> El chequeo revisa qué tiene publicado tu sitio para esta ley y qué le falta. Sin registro, sin
+> dejarme tu correo.
+>
+> https://verifica.spindlelab.cl
+
+**Nota de tono dada y aceptada:** un link en el cuerpo suele bajar el alcance orgánico de LinkedIn
+frente a dejarlo en el primer comentario. Se avisó una vez; Ramón lo pidió igual, así que se hizo.
+
+**Detalle técnico:** LinkedIn no arma la tarjeta de previsualización de un dominio sin protocolo
+(`verifica.spindlelab.cl` a secas queda en texto plano, no clickeable). Hay que escribir
+`https://verifica.spindlelab.cl` y esperar unos segundos a que cargue el card antes de publicar.
+
+### Cómo se hizo la primera versión (para la próxima vez que algo similar se automatice)
 
 - **Antes de publicar se verificó el canal**, no el repo: ni la página ni el perfil tenían nada
   nuevo desde el 21-sep. Publicar era seguro.
