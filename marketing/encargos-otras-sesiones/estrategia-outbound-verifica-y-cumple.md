@@ -10,6 +10,107 @@ afirmaciones que no aguantaban una segunda mirada.
 
 ---
 
+# ⚠️ Puesta al día del 25-sep-2026 (léela antes que el resto)
+
+Un día completo de revisión cambió cosas que el documento de abajo daba por ciertas. Esto manda.
+
+## 1. No fueron 15 correos. Fueron 36.
+
+Verificado en la bandeja de enviados de hola@spindlelab.cl: el **24-sep** entre las 09:36 y las
+09:37 salieron **26 a estudios de abogados y 10 a hoteles y clínicas**. El "15" que circulaba
+era lo que cubría el material de seguimiento, no lo enviado.
+
+**Respuestas hasta ahora: cero.** Ni una negativa. Una automática de postnatal (lembeye.cl) que
+deriva a una colega, ya contestada. Cero rebotes.
+
+⚠️ **Eso rompió la rampa.** El tope era 15 la primera semana, 30 la segunda, 50 la tercera, y es
+reputación de dominio, no capacidad de producción. Salieron 36 en un día. **No se manda un lote
+nuevo hasta cerrar los seguimientos de estos 36**, y la rampa se retoma desde donde quedó, no
+desde cero.
+
+## 2. Los seguimientos ya están escritos: 35 de 36
+
+| Lote | Dónde | Cuándo |
+|---|---|---|
+| 15 (10 hoteles/clínicas + 5 abogados) | `seguimientos/toque2/` y `toque3/` | toque 2 el 27-sep · toque 3 el 1-oct |
+| 20 abogados | `seguimientos/toque2-abogados/` | listos, sin fecha asignada |
+
+El que falta es **lembeye.cl**: postnatal, el hilo se movió a otra persona y corre desde otra
+fecha. **Los 20 no tienen toque 3 escrito todavía.**
+
+Cada uno lleva `Para:`, `Asunto:` y cuerpo, y **el asunto es `Re:` del original**: va dentro del
+hilo del 24-sep, no como correo nuevo. Un "Re:" fuera de hilo se lee como spam.
+
+## 3. La lista de exclusión es `ventas/lista-exclusion.csv`. Una sola.
+
+El 25-sep dos sesiones crearon una lista el mismo día sin saber una de la otra. Se disolvió la
+de `marketing/outbound/` y quedó la de `ventas/`, que ya estaba en uso y tiene filas reales.
+
+**Se consulta por correo Y por dominio**, siempre, antes de cada envío:
+
+```bash
+grep -i -E "correo@ejemplo.cl|ejemplo.cl" ventas/lista-exclusion.csv
+```
+
+Las dos cosas: alguien puede responder desde otra dirección. **La baja es de la empresa, no del
+buzón.**
+
+**Y ojo con esto:** de los cuatro abogados del CSV que nunca recibieron toque 1, **tres están
+excluidos con razón** (BH Abogados dijo que no; CEP y LSC ya tenían sus tres toques de la
+campaña AEO anterior). El único realmente sin tocar es **grupoaltum.cl**.
+
+## 4. Dos correcciones legales, y una ya salió publicada mal
+
+Verificadas contra el PDF del Diario Oficial el 25-sep:
+
+- **El 4% es solo de las infracciones GRAVÍSIMAS.** En las graves el porcentaje es 2%. Y el Art.
+  35 dice que la multa alcanza *"la más gravosa entre"* hasta tres veces la multa base **o** ese
+  porcentaje: **no digas "el tope es 2%"**, que también es impreciso.
+  El post de LinkedIn del 25-sep decía "grave o gravísima" y **hubo que editarlo en vivo**.
+- **Los artículos son de la ley 19.628**, en el texto que le puso la 21.719. Esa ley tiene tres
+  artículos permanentes. Quien busque "el artículo 50 de la 21.719" no lo encuentra.
+
+⚠️ **El toque 1 que ya salió le dijo a siete de estos prospectos** que "la Ley 21.719 pide que
+esté publicada (artículo 14 ter)". El 14 ter es de la 19.628. Si un abogado lo nota, la
+respuesta honesta es esa, sin inventar: el artículo existe y dice lo que dijimos, pero vive en
+la 19.628 con el texto que fijó la 21.719.
+
+## 5. Cuatro reglas nuevas, cada una de un error real de hoy
+
+1. **Primera parte por dominio NO es lo mismo que propia.** Un correo presentaba dos cookies
+   `_ga` como "las dos son tuyas, a favor tuyo". Las escribe Google. Es el error de los tres
+   verbos por una puerta nueva.
+2. **Una cita con "[...]" no es evidencia hasta abrir la fuente completa.** El error del 4%
+   salió de una cita guardada cortada justo en la frase que lo resolvía.
+3. **Ningún dato sobre una persona que no salga del sitio.** Un correo decía qué diplomado
+   había cursado un abogado del estudio. En una campaña sobre protección de datos, eso le avisa
+   al destinatario que investigamos personas.
+4. **El mea culpa tiene que ser real.** Cuatro correos se disculpaban por algo que el toque 1
+   nunca afirmó, porque el toque 1 era condicional ("si el formulario del sitio recibe
+   consultas"). El prospecto tiene el original abajo en el hilo.
+
+## 6. Cómo se mide un hallazgo, y cómo se comprueba el de otro
+
+La sonda es `seguimientos/probe.mjs`: dos tramos, 11 s quieto y después mouse y scroll sin
+clics. El segundo no es opcional, varios sitios chilenos retrasan sus scripts hasta el gesto.
+
+**Todo dos veces. Lo que cambie entre corridas no entra al correo.**
+
+Y lo que más conviene recordar de hoy: en una ronda, **la refutación del revisor tampoco
+sobrevivió al reconteo**. Afirmaba que un script cargaba solo tras el gesto, y al remedirlo
+cargó antes en una corrida y después en otra. Ni el correo ni su corrección aguantaban.
+**La evidencia de quien corrige también se recuenta.**
+
+## 7. Lo que sigue pendiente
+
+- **El toque 3 de los 20 abogados**, que no está escrito.
+- **grupoaltum.cl**, que nunca recibió toque 1.
+- **El chequeo profundo con navegador real** sigue sin publicar: espera a que Ramón active el
+  plan de Workers ($5/mes). Mientras tanto el chequeo no ejecuta JavaScript, y por eso el correo
+  lleva el hallazgo y nunca el puntaje.
+
+---
+
 ## 1. Qué se vende, y dónde
 
 - **El chequeo** es gratis, sin registro, en **https://verifica.spindlelab.cl**
@@ -88,6 +189,16 @@ Verificados contra el **PDF del Diario Oficial** (N° 44.023, 13-dic-2024, CVE 2
 3. **El 4% de los ingresos no es lo que arriesga una pyme.** Art. 35: solo para empresas que
    no son de menor tamaño **y** que reinciden. Reincidir, Art. 36, es dos sanciones en 30 meses.
 
+
+⚠️ **Dos precisiones verificadas el 25-sep contra el PDF, que corrigen material anterior:**
+1. **El 4% es solo de las infracciones gravísimas.** El Art. 35 dice "2% o 4% ... según se
+   trate de infracciones graves o gravísimas, respectivamente". En las graves el tope es 2%.
+   El post del 25-sep decía "grave o gravísima" para el 4% y se corrigió en LinkedIn ese día.
+2. **Estos artículos son de la ley 19.628, no de la 21.719.** La 21.719 tiene tres artículos
+   permanentes; su artículo primero mete las modificaciones en la 19.628. Al citar, decir
+   "el artículo 50 de la ley 19.628, en el texto que le puso la 21.719", o anclar al PDF del
+   Diario Oficial. Quien busque el "artículo 50 de la 21.719" no lo encuentra.
+
 ⚠️ **La API de la BCN sirve esta ley TRUNCADA** (salta del Art. 16 sexies al 20 y corta en el
 22, sin el capítulo de sanciones). Si necesitas citar un artículo, ve al PDF del Diario Oficial.
 
@@ -135,8 +246,10 @@ Va antes de la firma. Decirlo nosotros primero es más fuerte que esperar a que 
 ### Y hay que honrarla
 
 - Si alguien lo pide, **sale de la lista y no se le vuelve a escribir**. Sin preguntar por qué.
-- **La lista de exclusión tiene que existir** antes del primer envío. La política dice que
-  guardamos ese correo justamente para no volver a contactarlo por error.
+- **La lista de exclusión ya existe**: `ventas/lista-exclusion.csv`, con la regla
+  en `ventas/LEEME-lista-exclusion.md`. **Se consulta por correo Y por dominio antes de cada envío**, porque
+  alguien puede responder desde otra dirección: la baja es de la empresa, no del buzón. La
+  fila se agrega el mismo día, antes de cerrar el correo.
 - La política (`/privacidad/`, versión 1.4) ya declara en los puntos **04 y 10** qué datos
   tratamos de un prospecto, para qué, con qué base y de dónde salieron. Si cambias la fuente de
   los leads, hay que actualizar esos puntos.
