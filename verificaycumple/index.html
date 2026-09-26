@@ -517,7 +517,11 @@
     opacity: .75;
     margin: 0;
   }
-  .hero-accion #resultado { color: var(--vivo-tinta); text-align: left; }
+  /* El hero centra todo lo suyo (el formulario, la nota, el aviso), pero un informe
+     centrado no se lee. Las tres secciones del resultado van alineadas a la izquierda. */
+  .hero-accion #resultado,
+  .hero-accion #profundo,
+  .hero-accion #doce-puntos { color: var(--vivo-tinta); text-align: left; }
 
   @media (max-width: 640px) {
     /* El titular se queda centrado, como la burbuja, el caballo y el formulario.
@@ -528,7 +532,7 @@
   #resultado.visible { display: block; }
   /* El resultado y el formulario del chequeo se llevan a la vista por código; el margen
      deja el header fijo afuera, con un poco de aire. */
-  #resultado, form.chequeo { scroll-margin-top: calc(var(--alto-header) + 16px); }
+  #resultado, #profundo, #doce-puntos, form.chequeo { scroll-margin-top: calc(var(--alto-header) + 16px); }
 
   /* Aviso de espera larga. Va FUERA de #resultado a propósito: mientras carga, #resultado
      está con aria-busy, y un lector de pantalla puede callar lo que cambie adentro. */
@@ -540,7 +544,9 @@
      tinta azul marino en vez de café, y bordes que salen de esa misma tinta. Solo
      se listan los que DIFIEREN del semántico global; los que coincidían se quitaron
      para que no haya que leer dos veces lo mismo. */
-  #resultado {
+  /* #profundo y #doce-puntos van debajo, sobre el mismo azul: mismos tokens, una sola
+     lista. Separarlos llevaba a que una se corrigiera y la otra no. */
+  #resultado, #profundo, #doce-puntos {
     --panel: var(--crema-100);
     --info-bg: var(--crema-150);
     --texto: var(--vivo-tinta);
@@ -555,8 +561,8 @@
   }
   /* Estos dos van sueltos sobre el azul del hero, no dentro de la tarjeta blanca, así que
      su tinta es blanca y no la oscura de la tarjeta. */
-  #resultado .bloque h2 { color: var(--blanco); }
-  #resultado .bloque > .sub-bloque { color: rgba(255,255,255,.82); }
+  #resultado .bloque h2, #profundo .bloque h2, #profundo .bloque h3, #doce-puntos .bloque h2 { color: var(--blanco); }
+  #resultado .bloque > .sub-bloque, #profundo .bloque > .sub-bloque, #doce-puntos .bloque > .sub-bloque { color: rgba(255,255,255,.82); }
 
   .error-caja {
     background: var(--pendiente-bg);
@@ -723,7 +729,7 @@
   .resumen-resultado .boton-ayuda { padding: 11px 22px; }
 
   .bloque { margin-bottom: 28px; }
-  .bloque h2 { font-size: 1.08rem; margin: 0 0 2px; letter-spacing: -0.01em; }
+  .bloque h2, .bloque h3 { font-size: 1.08rem; margin: 0 0 2px; letter-spacing: -0.01em; }
   .bloque .sub-bloque { font-size: 0.85rem; color: var(--texto-suave); margin: 0 0 12px; }
 
   ul.items {
@@ -796,7 +802,7 @@
     padding: 20px 22px;
     margin-top: 8px;
   }
-  .informativos h2 { font-size: 0.95rem; margin: 0 0 4px; }
+  .informativos h2, .informativos h3 { font-size: 0.95rem; margin: 0 0 4px; }
   /* Mismo tamaño y tinta que el subtítulo de los bloques: como esta caja no es .bloque, el
      texto salía al tamaño de cuerpo y en tinta plena, más grande que lo que explica. */
   .informativos .sub-bloque { margin-bottom: 16px; font-size: 0.85rem; color: var(--texto-suave); }
@@ -811,6 +817,110 @@
   .panel-resolucion .monto { font-family: "Archivo Black", Impact, var(--serif); font-weight: 400; }
   .panel-resolucion .boton-ayuda { background: var(--sello); }
   .panel-resolucion .boton-ayuda:hover { background: var(--sello-oscuro); }
+
+  /* ============================================================
+     El segundo resultado: lo que vio un navegador de verdad.
+     Vive debajo del rápido, sobre el mismo azul del hero, así que toma
+     prestados sus tokens (ver el bloque de #resultado, más arriba) y sus
+     componentes: la misma tarjeta, las mismas tres marcas de estado, los
+     mismos tres radios. Lo único nuevo son las tres líneas de cada
+     rastreador, que es lo que el chequeo rápido no puede tener: desde afuera
+     no se sabe si un script llegó a mandar algo o solo se descargó.
+     ============================================================ */
+
+  /* La espera. Es la misma tarjeta del esqueleto del rápido, pero acá no imita
+     la forma del informe: son 25 a 30 segundos, y lo que la persona necesita en
+     ese rato no es una silueta, es que le digan qué estamos haciendo. */
+  .profundo-espera {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 22px;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio-tarjeta);
+    box-shadow: var(--sombra);
+  }
+  .profundo-espera .punto-vivo {
+    flex: 0 0 auto;
+    width: 14px; height: 14px;
+    margin-top: 5px;
+    border-radius: 50%;
+    background: var(--sello);
+    animation: profundo-latido 1.5s ease-in-out infinite;
+  }
+  @keyframes profundo-latido { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .profundo-espera .punto-vivo { animation: none; opacity: .8; } }
+  .profundo-espera p { margin: 0; font-size: 0.95rem; }
+  .profundo-espera p + p { margin-top: 6px; font-size: 0.87rem; color: var(--texto-suave); }
+  /* El aviso de los 40 s. Entre el segundo 30 y el 75 la pantalla decía "toma alrededor de
+     medio minuto" con el medio minuto ya vencido, y no cambiaba nada más. Va en la tinta
+     fuerte para que se note que la tarjeta dice algo nuevo. */
+  .profundo-espera p.espera-lenta { margin-top: 10px; font-size: 0.9rem; color: var(--texto); font-weight: 700; }
+
+  /* La medición guardada. La función devuelve hasta 24 h después el mismo informe, y hasta
+     acá eso se veía igual que uno recién hecho. La línea dice cuándo se midió y ofrece
+     rehacerla; el botón es texto, porque no compite con el del kit. */
+  .puntaje-revisado.aviso-cache { color: var(--texto-suave); }
+  .rehacer-profundo {
+    display: inline;
+    margin: 0; padding: 0;
+    border: 0; background: none;
+    font: inherit; color: var(--acento);
+    text-decoration: underline; text-underline-offset: 2px;
+    cursor: pointer;
+  }
+  .rehacer-profundo:hover { color: var(--texto); }
+  .rehacer-profundo:focus-visible { outline: 2px solid var(--vivo-azul); outline-offset: 2px; border-radius: 3px; }
+
+  /* Las tres líneas de cada rastreador. Cada una dice una cosa distinta:
+     que trajo su programa, que dejó una cookie, y que mandó datos. Las tres
+     aparecen SIEMPRE, también cuando no pasaron, porque el silencio se leía
+     como "no lo sabemos" y acá sí lo sabemos. */
+  .verbos { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+  /* Estas <li> viven dentro de ul.items, que le pone a las suyas 14px 18px de relleno y
+     una línea divisoria arriba. Acá las dos cosas sobran: dejaban cada verbo con la
+     sangría de una fila y una raya entre medio, como si fueran hallazgos sueltos y no
+     tres frases del mismo. */
+  /* El selector lleva `ul.items` a propósito: sin él pierde por especificidad contra
+     `ul.items li`, que es quien pone el relleno y la línea de arriba. */
+  /* Las filas de la tabla de verbos no llevan marca de estado: son la prueba, no un
+     hallazgo. Sin esto arrastraban el hueco de la columna que ya no está. */
+  ul.tabla-verbos { margin-bottom: 14px; }
+  ul.tabla-verbos li { padding-left: 18px; }
+  ul.items .verbos li { display: flex; gap: 8px; padding: 0; border-top: none; font-size: 0.87rem; line-height: 1.45; }
+  .verbos .verbo-marca { flex: 0 0 auto; width: 1em; text-align: center; font-size: 0.7em; line-height: 2.1; }
+  .verbos .paso-si { color: var(--texto); }
+  .verbos .paso-si .verbo-marca { color: var(--pendiente); }
+  .verbos .paso-no { color: var(--texto-suave); }
+  .verbos .cuando { color: var(--texto-suave); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .verbos .nombres { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92em; overflow-wrap: anywhere; }
+
+  /* Cuando el navegador no pudo. Toma prestado el lenguaje visual del estado
+     "no lo pudimos ver" (borde punteado, tinta apagada) en vez del ámbar de lo
+     pendiente: una caída nuestra no es un hallazgo sobre el sitio de nadie. Y
+     nunca, en ningún caso, se pinta de verde. */
+  .profundo-falla {
+    background: var(--info-bg);
+    border: 1px dashed var(--texto-suave);
+    border-radius: var(--radio-tarjeta);
+    padding: 20px 22px;
+  }
+  .profundo-falla p { margin: 0; font-size: 0.95rem; }
+  .profundo-falla p + p { margin-top: 8px; font-size: 0.87rem; color: var(--texto-suave); }
+
+  /* La etiqueta que dice que algo es informativo. No es una nota al pie: es un
+     rótulo del tamaño del contenido que rotula. */
+  .marca-informativa {
+    display: inline-block;
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--texto);
+    background: var(--vivo-verde);
+    border-radius: var(--radio-pill);
+    padding: 3px 10px;
+    margin: 0 0 8px;
+  }
 
   /* ============================================================
      Secciones de abajo, mismo lenguaje que el hero: bloques de
@@ -1200,6 +1310,23 @@
              en el botón sin saber que ya había algo que leer. -->
         <div id="resultado" role="region" aria-label="Resultado del chequeo" aria-live="polite" tabindex="-1"></div>
 
+        <!-- El segundo resultado: lo que vio un navegador de verdad al abrir el sitio.
+             Se dispara solo cuando el rápido ya está en pantalla y crece hacia abajo. No
+             toca, no mueve y no reescribe nada de lo que la persona está leyendo, y por eso
+             tampoco lleva el scroll: si el informe de arriba se moviera solo mientras lo
+             leen, el chequeo profundo habría empeorado el rápido.
+
+             Sin aria-live acá: esto termina siendo un informe largo, y una región viva se
+             lo lee entero de corrido. El aviso hablado va en el <p> de abajo, que es corto
+             y está fuera de la región, igual que el aviso de espera del chequeo rápido. -->
+        <div id="profundo" role="region" aria-label="Revisión con un navegador de verdad" tabindex="-1"></div>
+        <div id="doce-puntos" role="region" aria-label="Los 12 puntos del Art. 14 ter"></div>
+        <!-- Visualmente oculto a propósito: lo que se ve es la tarjeta de espera, que está
+             dentro de #profundo y ocupa el lugar donde va a salir el informe. Este párrafo
+             solo existe para el lector de pantalla, y va DESPUÉS de las dos regiones para
+             que su texto no empuje nada hacia abajo cuando aparece o se borra. -->
+        <p class="visually-hidden" id="estado-profundo" role="status" aria-live="polite"></p>
+
         <!-- Acá iba la tarjeta "spindlelab.cl 36 → 73 con el kit". Se quitó junto con la
              franja, por la misma razón: es la misma prueba social que no prueba nada para
              quien no conoce la marca, y encima ocupaba el lugar más valioso del hero,
@@ -1587,6 +1714,34 @@
     resultado.classList.add('visible');
   }
 
+  // El anillo del puntaje. Lo dibujan los dos informes (el rápido y el del
+  // navegador) con la misma fórmula y el mismo significado, así que vive en un
+  // solo lugar: dos copias se habrían separado a la primera corrección de color.
+  //
+  // Con algo pendiente, el color de lo pendiente. Sin nada pendiente pero con
+  // cosas que no pudimos confirmar, el tono neutro: ese número sale de menos
+  // señales y en verde se leía como "cumple". El verde queda para cuando todo lo
+  // que miramos salió bien.
+  function anilloDe(puntaje, pendientes, sinConfirmar) {
+    let clase = '';
+    if (puntaje === null) clase = ' sin-puntaje';
+    else if (pendientes > 0 || puntaje < UMBRAL_BIEN) clase = ' bajo';
+    else if (sinConfirmar > 0) clase = ' parcial';
+    // Un 0 dibujado como arco de largo cero deja el anillo gris y vacío, así que el sitio
+    // que sale peor es el que menos color tiene: awasi.com y hotelescumbres.cl sacan 0 y su
+    // anillo se veía igual que el de un chequeo que no llegó a correr. Y 0 es un resultado
+    // normal acá, no un caso raro. El arco nunca baja de un trocito visible; el número que
+    // va adentro sigue siendo el que manda.
+    const ARCO_MINIMO = 4;
+    const offset = puntaje === null
+      ? CIRCUNFERENCIA
+      : CIRCUNFERENCIA * (1 - Math.max(puntaje, ARCO_MINIMO) / 100);
+    return '<div class="anillo-wrap' + clase + '"><svg viewBox="0 0 120 120" aria-hidden="true">' +
+      '<circle class="anillo-fondo" cx="60" cy="60" r="52"></circle>' +
+      '<circle class="anillo-progreso" cx="60" cy="60" r="52" style="stroke-dasharray:' + CIRCUNFERENCIA + ';stroke-dashoffset:' + offset + '"></circle>' +
+      '</svg><div class="anillo-numero"' + (puntaje === null ? ' aria-hidden="true">?' : '>' + puntaje) + '</div></div>';
+  }
+
   function renderItems(items) {
     let html = '<ul class="items">';
     for (const item of items) {
@@ -1610,6 +1765,7 @@
     const items = Array.isArray(data.items) ? data.items : [];
     const bloques = Array.isArray(data.bloques) ? data.bloques : [];
     const pendientes = items.filter(function (i) { return estadoDe(i) === 'pendiente'; }).length;
+    pendientesRapido = pendientes;
     const sinConfirmar = items.filter(function (i) { return estadoDe(i) === 'sin-confirmar'; }).length;
     // Lo que sí pudimos mirar desde afuera: toda señal que no quedó "sin confirmar", esté
     // bien o pendiente. Se nombra cuando no hay puntaje, que es justo cuando el informe
@@ -1628,16 +1784,8 @@
     // Con algo pendiente, el color de lo pendiente. Sin nada pendiente pero con señales que no
     // pudimos confirmar, el tono neutro: ese número sale de menos señales y en verde se leía
     // como "cumple". El verde queda para cuando todo lo que miramos salió bien.
-    let claseAnillo = '';
-    if (puntaje === null) claseAnillo = ' sin-puntaje';
-    else if (pendientes > 0 || puntaje < UMBRAL_BIEN) claseAnillo = ' bajo';
-    else if (sinConfirmar > 0) claseAnillo = ' parcial';
-    const offset = CIRCUNFERENCIA * (1 - (puntaje || 0) / 100);
     html += '<div class="puntaje-caja">';
-    html += '<div class="anillo-wrap' + claseAnillo + '"><svg viewBox="0 0 120 120" aria-hidden="true">' +
-            '<circle class="anillo-fondo" cx="60" cy="60" r="52"></circle>' +
-            '<circle class="anillo-progreso" cx="60" cy="60" r="52" style="stroke-dasharray:' + CIRCUNFERENCIA + ';stroke-dashoffset:' + offset + '"></circle>' +
-            '</svg><div class="anillo-numero"' + (puntaje === null ? ' aria-hidden="true">?' : '>' + puntaje) + '</div></div>';
+    html += anilloDe(puntaje, pendientes, sinConfirmar);
     html += '<div class="puntaje-texto">';
     if (puntaje === null) {
       // La API deja de mandar número cuando pudo confirmar menos de la mitad del peso: un
@@ -1773,6 +1921,576 @@
     mostrar('informe');
   }
 
+
+  // ==========================================================================
+  // El segundo resultado: lo que vio un navegador de verdad.
+  //
+  // El rápido lee el código del sitio y no ejecuta JavaScript, así que ve
+  // "Google Tag Manager" sin saber qué hay adentro. `/api/profundo` abre el
+  // sitio en un navegador, lo deja correr sin tocar nada y después mueve el
+  // mouse, que es cuando algunos sitios recién despiertan sus rastreadores.
+  //
+  // La API devuelve el MISMO contrato que el chequeo rápido (bloques, items con
+  // sus tres estados, informativos, puntaje sobre lo confirmado) más los datos
+  // crudos de los tres verbos. Por eso acá casi no hay texto nuevo: se dibuja
+  // con los mismos componentes y las palabras las sigue poniendo la API, que es
+  // lo que evita que la portada y la función se contradigan con el tiempo.
+  //
+  // Lo único que esta portada agrega por su cuenta:
+  //
+  //  1. La costura entre los dos informes. Si el rápido no encontró nada y el
+  //     navegador sí (awasi.com saca 100 leyendo el código y, abierto de verdad,
+  //     ya avisó a cinco empresas), el título lo dice. Sin eso, la última frase
+  //     que la persona leyó arriba fue "no quedaron señales pendientes".
+  //  2. La tabla de los tres verbos, rastreador por rastreador. Cargar, dejar
+  //     una cookie y mandar datos son tres cosas distintas, y el Pixel de Meta
+  //     es el caso típico: carga y deja cookie sin llegar a mandar nada.
+  //  3. Que una caída nuestra jamás se muestre como buena noticia.
+  //
+  // Y no toca, no mueve y no reescribe el resultado rápido: crece debajo, y no
+  // se lleva el scroll. Si el informe de arriba se moviera solo mientras lo
+  // están leyendo, el chequeo profundo habría empeorado el rápido.
+  // ==========================================================================
+
+  const seccionProfundo = document.getElementById('profundo');
+  const seccionDoce = document.getElementById('doce-puntos');
+  const avisoProfundo = document.getElementById('estado-profundo');
+  // Cuánto esperamos antes de cortar. El guion medido tarda de 21 a 25 s y la
+  // función se da 45 de presupuesto; 75 deja aire para un sitio lento sin dejar
+  // a nadie mirando una tarjeta que late para siempre.
+  const PLAZO_PROFUNDO = 75000;
+  // La frase que impide el peor error posible: que una caída nuestra se lea como
+  // buena noticia. Va en TODAS las fallas, sin excepción.
+  const NO_ES_BUENA_NOTICIA = 'Lo de arriba sigue en pie: eso salió de leer el código de tu sitio. ' +
+    'Lo que no pudimos hacer fue abrirlo y mirar qué pasa. No quiere decir que no haya nada.';
+  // Sube de a uno en cada chequeo nuevo. Lo que vuelve de una corrida vieja se
+  // descarta: sin esto, revisar un segundo sitio dejaba el informe del primero
+  // aterrizando encima del segundo.
+  let corrida = 0;
+  let abortarProfundo = null;
+  // Cuántas señales dejó pendientes el chequeo rápido, para poder nombrar la
+  // diferencia entre los dos informes en vez de dejar que el lector la descubra.
+  let pendientesRapido = null;
+  // Lo que ya vino de `/api/doce-puntos`, guardado para poder volver a pintarlo cuando
+  // se sepa si el navegador llegó a abrir el sitio: las dos respuestas no llegan en
+  // orden, y lo que la lista dice de sí misma depende de la otra.
+  let datosDoce = null;
+  // Si la revisión con navegador terminó en falla. null mientras todavía se espera.
+  let falloElNavegador = null;
+  // El aviso de los 40 s, para poder cancelarlo.
+  let avisoLentoProfundo = null;
+  const AVISO_LENTO_PROFUNDO = 40000;
+  // Si esta corrida salió de apretar "Volver a medirlo". Cambia lo que se dice cuando la
+  // respuesta vuelve a venir de la medición guardada.
+  let rehacerPedido = false;
+
+  // --- Que la espera no mueva lo que la persona está leyendo -------------------
+  //
+  // Las dos secciones de fondo crecen tarde y crecen POR ENCIMA de lo que ya está en
+  // pantalla: los 12 puntos aterrizan a los 2 s y el informe del navegador entre 20 y 25 s
+  // después, justo encima de ellos. Con el párrafo que se estaba leyendo bajo los ojos, ese
+  // segundo aterrizaje lo empujaba 3.057 px hacia abajo en un teléfono de 390 px, 3.304 en
+  // uno de 360 y 2.420 en escritorio. Ramón aprobó lo contrario: el profundo "se carga
+  // debajo sin mover lo que la persona ya está leyendo".
+  //
+  // Por eso TODO cambio de #profundo y de #doce-puntos pasa por acá. Si el bloque que cambia
+  // termina por encima de lo que la persona está mirando, se le devuelve al scroll
+  // exactamente lo que creció y el párrafo queda en el mismo punto de la pantalla: medido,
+  // los mismos tres casos quedan en 0, 0 y -1 px. Devuelve el salto que compensó.
+  function sinMoverLoQueLeen(seccion, pintar) {
+    const raiz = document.documentElement;
+    // El header es sticky, así que lo que tapa es el borde de arriba de lo que se lee.
+    const tope = header ? header.getBoundingClientRect().bottom : 0;
+    // Dónde está la persona respecto del bloque que va a cambiar. La mitad de lo que se ve
+    // es la regla: lo que se está leyendo cae ahí, no en el borde de arriba. Si el bloque
+    // termina por encima de esa mitad, todo lo que la persona tiene bajo los ojos está más
+    // abajo y se mueve entero, así que se compensa. Si el bloque todavía llega hasta la
+    // mitad de la pantalla, está mirando justo lo que va a cambiar, y ahí lo correcto es
+    // no tocarle el scroll: el informe aparece donde estaba la tarjeta de espera.
+    const medio = tope + (window.innerHeight - tope) / 2;
+    const leyendoMasAbajo = seccion.getBoundingClientRect().bottom <= medio;
+    // Cuánto crece la página entera, y no cuánto crece la sección. Son casi lo mismo, pero
+    // el borde de abajo de la sección no incluye el margen de su último hijo (los márgenes
+    // se escapan hacia afuera), y ese descuadre dejaba 6 px de salto: poco, pero el objetivo
+    // acá es cero. Lo que la página crece por encima de lo que se está leyendo es
+    // exactamente lo que baja el párrafo que se está leyendo.
+    const altoAntes = raiz.scrollHeight;
+    const scrollAntes = window.scrollY;
+
+    pintar();
+
+    if (!leyendoMasAbajo) return 0;
+    // Leer scrollHeight fuerza el cálculo de la página ya pintada, así que el alto nuevo es
+    // el definitivo.
+    const salto = raiz.scrollHeight - altoAntes;
+    if (!salto) return 0;
+    // El CSS pone scroll-behavior: smooth para los enlaces internos. Acá eso sería una
+    // animación de 2.800 px con alguien leyendo: se apaga, se corrige y se repone.
+    const comoEstaba = raiz.style.scrollBehavior;
+    raiz.style.scrollBehavior = 'auto';
+    window.scrollTo(0, Math.max(0, scrollAntes + salto));
+    raiz.style.scrollBehavior = comoEstaba;
+    return salto;
+  }
+
+  // "6,3 s". Coma decimal, que es como se escribe acá.
+  function enSegundos(ms) {
+    if (typeof ms !== 'number' || !isFinite(ms)) return '';
+    return (Math.round(ms / 100) / 10).toFixed(1).replace('.', ',') + ' s';
+  }
+  function cuando(ms) {
+    const t = enSegundos(ms);
+    return t ? ' <span class="cuando">(a los ' + t + ')</span>' : '';
+  }
+
+  // "ayer a las 18:40". La medición se guarda hasta 24 h, así que decir cuándo se hizo es
+  // la diferencia entre un informe y un informe viejo presentado como recién hecho.
+  const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto',
+    'septiembre', 'octubre', 'noviembre', 'diciembre'];
+  function fechaCorta(iso) {
+    if (!iso) return '';
+    const d = new Date(iso);
+    if (isNaN(d.getTime())) return '';
+    const dosCifras = function (n) { return (n < 10 ? '0' : '') + n; };
+    const hora = dosCifras(d.getHours()) + ':' + dosCifras(d.getMinutes());
+    const hoy = new Date();
+    const ayer = new Date(hoy.getTime() - 24 * 60 * 60 * 1000);
+    const mismoDia = function (a, b) {
+      return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+    };
+    if (mismoDia(d, hoy)) return 'hoy a las ' + hora;
+    if (mismoDia(d, ayer)) return 'ayer a las ' + hora;
+    return 'el ' + d.getDate() + ' de ' + MESES[d.getMonth()] + ' a las ' + hora;
+  }
+  function lista(nombres) { return nombres.map(function (n) { return escapar(n); }).join(', '); }
+  // Los nombres vienen redactados para ir dentro de una frase ("tu sitio cargó el Pixel
+  // de Meta"). Como título de una fila van solos, y ahí necesitan mayúscula.
+  function conMayuscula(t) { return String(t || '').charAt(0).toUpperCase() + String(t || '').slice(1); }
+
+  // Las tres líneas de un rastreador. Aparecen SIEMPRE las tres, también las que
+  // no pasaron: si solo se listara lo ocurrido, un renglón ausente se leería como
+  // "no lo sabemos" cuando sí lo sabemos. El campo en null es un "no pasó"
+  // afirmativo, y así lo manda la API.
+  function verbosDe(r) {
+    let h = '<ul class="verbos">';
+    h += r.cargo
+      ? '<li class="paso-si"><span class="verbo-marca" aria-hidden="true">●</span><span>Trajo su programa a tu página' + cuando(r.cargo.primeraMs) + '.</span></li>'
+      : '<li class="paso-no"><span class="verbo-marca" aria-hidden="true">○</span><span>No trajo ningún programa a tu página.</span></li>';
+    if (r.cookie && Array.isArray(r.cookie.nombres) && r.cookie.nombres.length) {
+      h += '<li class="paso-si"><span class="verbo-marca" aria-hidden="true">●</span><span>Dejó ' +
+        plural(r.cookie.nombres.length, 'cookie', 'cookies') + ' en el equipo del visitante: ' +
+        '<span class="nombres">' + lista(r.cookie.nombres) + '</span>.</span></li>';
+    } else {
+      h += '<li class="paso-no"><span class="verbo-marca" aria-hidden="true">○</span><span>No dejó ninguna cookie.</span></li>';
+    }
+    h += r.envio
+      ? '<li class="paso-si"><span class="verbo-marca" aria-hidden="true">●</span><span>Le mandó datos de la visita' +
+        cuando(r.envio.primeraMs) + (r.envio.cuantas > 1 ? ', ' + r.envio.cuantas + ' veces' : '') + '.</span></li>'
+      : '<li class="paso-no"><span class="verbo-marca" aria-hidden="true">○</span><span>No le mandó datos de la visita' +
+        (r.cargo && r.cookie ? ': cargó y dejó su marca, pero hasta ahí.' : '.') + '</span></li>';
+    return h + '</ul>';
+  }
+
+  function renderProfundo(data) {
+    const dominio = data.dominio || input.value.trim();
+    const items = Array.isArray(data.items) ? data.items : [];
+    const bloques = Array.isArray(data.bloques) ? data.bloques : [];
+    const rastreadores = Array.isArray(data.rastreadores) ? data.rastreadores : [];
+    const pendientes = typeof data.pendientes === 'number'
+      ? data.pendientes : items.filter(function (i) { return estadoDe(i) === 'pendiente'; }).length;
+    const sinConfirmar = typeof data.sinConfirmar === 'number'
+      ? data.sinConfirmar : items.filter(function (i) { return estadoDe(i) === 'sin-confirmar'; }).length;
+    const puntaje = typeof data.puntaje === 'number' && isFinite(data.puntaje)
+      ? Math.max(0, Math.min(100, Math.round(data.puntaje))) : null;
+    const segundos = data.segundosMirados;
+    // Lo que sí alcanzamos a confirmar, esté bien o pendiente. Es la diferencia entre
+    // "miramos y no había nada" y "no miramos". Un sitio que nos bloquea llega acá con
+    // cero confirmados y todo sin confirmar, y se ve igual que uno limpio si no se
+    // distingue: pocas peticiones, ninguna cookie, ningún tercero. Decirle a ese dueño
+    // que su sitio no cargó rastreadores es el peor falso verde que puede dar esto.
+    const confirmados = items.filter(function (i) { return estadoDe(i) !== 'sin-confirmar'; }).length;
+
+    // El caso que define este chequeo: el rápido no encontró nada y el navegador
+    // sí. Ahí el título no puede ser neutro, porque el informe de arriba ya dijo
+    // que no quedaba nada pendiente y esa es la frase que queda pegada.
+    const contradice = pendientesRapido === 0 && pendientes > 0;
+
+    let html = '';
+    html += '<div class="bloque"><h2>' +
+      (contradice ? 'Lo abrimos de verdad, y no dice lo mismo' : 'Y esto hizo tu sitio al abrirlo de verdad') +
+      '</h2>';
+    html += '<p class="sub-bloque">' + (contradice
+      ? 'Lo de arriba salió de leer el código de tu sitio, y ahí no quedó nada pendiente. Leer el código ' +
+        'no alcanza: no muestra qué se activa cuando entra una persona. Esto sí, porque abrimos tu sitio ' +
+        'en un navegador y nos quedamos mirando sin tocar nada.'
+      : 'El resultado de arriba sale de leer el código de tu sitio. Este sale de abrirlo en un navegador, ' +
+        'como lo abriría un visitante, y quedarnos mirando sin tocar nada.') + '</p></div>';
+
+    // --- El puntaje. Mismo componente y misma fórmula que el del chequeo rápido:
+    // la función lo dice con todas sus letras, "para que los dos números
+    // signifiquen lo mismo". Dos anillos, y el de abajo es el que miró de verdad.
+    html += '<div class="puntaje-caja">';
+    html += anilloDe(puntaje, pendientes, sinConfirmar);
+    html += '<div class="puntaje-texto">';
+    if (puntaje === null && confirmados === 0) {
+      html += '<p>Esta vez no hay puntaje, y no porque tu sitio saliera mal: no alcanzamos a ver ' +
+        'nada de lo que mira esta revisión. Abajo te decimos, una por una, qué pasó con cada cosa.</p>';
+    } else if (puntaje === null) {
+      html += '<p>Esta vez no hay puntaje: de lo que mira esta revisión alcanzamos a confirmar menos de la mitad. ' +
+        'Abajo te decimos, una por una, qué pasó con cada cosa.</p>';
+    } else {
+      html += '<p>de 100 mirando lo que tu sitio <strong>hace</strong>, no lo que dice su código. ' +
+        (sinConfirmar === 0 ? ''
+          : sinConfirmar === 1 ? 'Hay 1 cosa que no pudimos mirar, así que no entra en ese número. '
+          : 'Hay ' + sinConfirmar + ' cosas que no pudimos mirar, así que no entran en ese número. ') +
+        'Esto no dice si cumples la ley. Dice qué hizo tu sitio.</p>';
+    }
+    // Cuándo se midió, siempre. La función guarda cada medición hasta 24 h y la devuelve
+    // marcada (`deCache`), y hasta acá eso se mostraba igual que una recién hecha: alguien
+    // que arregla su sitio a las 9 y vuelve a chequear a las 10 veía el informe de ayer
+    // creyendo que era de recién. Lo que sí sabemos es la hora; lo que no, si el sitio
+    // cambió desde entonces, y eso se dice en vez de darlo por sentado.
+    const medidoEl = fechaCorta(data.revisadoEn);
+    html += '<p class="puntaje-revisado">Abrimos <strong>' + escapar(data.revisado || dominio) + '</strong>' +
+      (!data.deCache && medidoEl ? ' ' + medidoEl : '') +
+      (segundos ? ' y lo miramos ' + segundos + ' segundos' : '') + '</p>';
+    if (data.deCache) {
+      html += '<p class="puntaje-revisado aviso-cache">' +
+        (rehacerPedido
+          ? 'Sigue siendo la misma medición' + (medidoEl ? ', la de ' + medidoEl : '') + '. ' +
+            'Guardamos cada una un día entero para no abrir un navegador de más. ' +
+            'Si necesitas una nueva ahora, escríbenos.'
+          : 'Esto no lo medimos recién' + (medidoEl ? ': es la medición de ' + medidoEl : '') + '. ' +
+            'Guardamos cada una por un día para no abrir un navegador de más, así que si cambiaste algo desde entonces todavía no aparece acá. ' +
+            '<button type="button" class="rehacer-profundo" data-dominio="' + attr(dominio) + '">Volver a medirlo</button>') +
+        '</p>';
+    }
+    html += '</div></div>';
+
+    // --- La cuenta y el siguiente paso ---
+    let cuenta;
+    if (pendientes > 0) cuenta = plural(pendientes, 'cosa pendiente', 'cosas pendientes');
+    // Sin nada confirmado no hay de qué decir "nada pendiente": no se miró nada.
+    else if (confirmados === 0) cuenta = 'No alcanzamos a ver nada';
+    else if (sinConfirmar > 0) cuenta = 'Nada pendiente en lo que alcanzamos a ver';
+    else cuenta = 'Nada pendiente';
+    if (sinConfirmar > 0 && confirmados > 0) cuenta += ' <span class="sin-cortar">· ' + sinConfirmar + ' que no pudimos ver</span>';
+    html += '<div class="resumen-resultado"><p>' + cuenta + '</p>';
+    html += pendientes > 0
+      ? botonPedir('kit', 'Quiero el kit →', dominio, puntaje, 'Revisión con navegador')
+      : botonPedir('pregunta', 'Pregúntanos', dominio, puntaje, 'Revisión con navegador');
+    html += '</div>';
+
+    // --- La tabla de los tres verbos ---
+    // Va ANTES de los hallazgos a propósito: es la prueba, y contesta la primera
+    // pregunta de cualquiera ("¿qué hizo mi sitio?") sin tener que leer párrafos.
+    // Los hallazgos de abajo explican qué hacer con eso.
+    function tablaDeVerbos() {
+      if (!rastreadores.length) return '';
+      let t = '<p class="sub-bloque">Cada uno hizo hasta tres cosas distintas, y conviene no confundirlas. ' +
+        '<strong>Traer su programa</strong> ya le avisa a esa empresa que alguien entró a tu sitio. ' +
+        '<strong>Dejar una cookie</strong> es marcar el equipo del visitante para reconocerlo después. ' +
+        '<strong>Mandarle datos</strong> es contarle qué hizo adentro.</p>';
+      t += '<ul class="items tabla-verbos">';
+      for (const r of rastreadores) {
+        t += '<li><span class="item-texto"><strong>' + escapar(conMayuscula(r.nombre)) + '</strong>' +
+          verbosDe(r) + '</span></li>';
+      }
+      return t + '</ul>';
+    }
+
+    // El detalle de estos tres hallazgos es la prosa rastreador por rastreador que la
+    // tabla de arriba ya dibujó ("Google Analytics cargó a los 6,3 segundos, dejó escritas
+    // las cookies…"). Con la tabla puesta, ese párrafo se lee dos veces. Lo que la tabla NO
+    // lleva se conserva entero: el título del hallazgo, su estado y el arreglo.
+    //
+    // La condición de cada uno sale de los mismos datos con que la API redactó su detalle,
+    // así que no hay que adivinar cuál rama escribió. Y falla del lado seguro: si la tabla
+    // no cubre ese hallazgo, el detalle se queda. Los casos donde eso importa son reales:
+    // un sitio que nos bloqueó, uno sin ningún rastreador, y uno con cookies de terceros
+    // que no son de ningún rastreador conocido. En los tres, el detalle dice algo que la
+    // tabla no puede decir, y en los tres se conserva.
+    const trajoAlguno = rastreadores.some(function (r) { return r.cargo; });
+    const dejoCookieAlguno = rastreadores.some(function (r) { return r.cookie; });
+    const mandoAlguno = rastreadores.some(function (r) { return r.envio; });
+    function sinLoQueYaDiceLaTabla(item) {
+      const cubierto = (item.id === 'carga' && trajoAlguno) ||
+        (item.id === 'cookies' && dejoCookieAlguno) ||
+        (item.id === 'envio' && mandoAlguno);
+      return cubierto ? Object.assign({}, item, { detalle: null }) : item;
+    }
+
+    // --- Los hallazgos, por bloque y en el orden que manda la API ---
+    const conBloque = {};
+    for (const bloque of bloques) {
+      const suyos = items.filter(function (i) { return i.bloque === bloque.id; });
+      if (!suyos.length) continue;
+      conBloque[bloque.id] = true;
+      html += '<div class="bloque"><h3>' + escapar(bloque.titulo) + '</h3>';
+      if (bloque.sub) html += '<p class="sub-bloque">' + escapar(bloque.sub) + '</p>';
+      // La prueba va antes que el hallazgo, y bajo el mismo título: primero qué hizo cada
+      // rastreador, después qué significa y cómo se arregla.
+      if (bloque.id === 'rastreadores') html += tablaDeVerbos();
+      html += renderItems(suyos.map(sinLoQueYaDiceLaTabla)) + '</div>';
+    }
+    const sueltos = items.filter(function (i) { return !conBloque[i.bloque]; });
+    if (sueltos.length) html += '<div class="bloque"><h3>Otros hallazgos</h3>' + renderItems(sueltos) + '</div>';
+
+    if (Array.isArray(data.informativos) && data.informativos.length) {
+      html += '<div class="informativos"><h3>Además vimos esto</h3>';
+      html += '<p class="sub-bloque">No entra en el puntaje, pero conviene que lo sepas.</p>';
+      for (const info of data.informativos) {
+        html += '<div class="item-info"><strong>' + escapar(info.titulo) + '</strong><p>' + escapar(info.detalle) + '</p></div>';
+      }
+      html += '</div>';
+    }
+
+    // --- El cierre. Misma regla que el rápido: el kit solo si hay pendientes reales ---
+    html += '<div class="panel-resolucion">';
+    if (pendientes > 0) {
+      html += '<p class="kicker">Lo que hace el kit</p>';
+      html += '<p>Al abrir <strong>' + escapar(dominio) + '</strong> en un navegador encontramos <strong>' +
+        plural(pendientes, 'cosa pendiente', 'cosas pendientes') + '</strong>' +
+        (sinConfirmar > 0 ? ', y ' + sinConfirmar + ' que no pudimos ver' : '') +
+        '. El kit se hace cargo de la parte técnica: que nada se cargue antes de que la persona acepte, y que ' +
+        'rechazar cueste lo mismo que aceptar. El texto final de tu política lo revisa tu abogado. ' +
+        '<span class="monto">Desde $149.000 + IVA</span>, una vez.</p>';
+      html += botonPedir('kit', 'Quiero el kit →', dominio, puntaje, 'Revisión con navegador');
+    } else if (confirmados === 0) {
+      // Nada pendiente porque no vimos nada. Acá no se afirma absolutamente nada sobre el
+      // sitio: lo único que pasó es que nuestro navegador no pudo mirar, y el detalle de
+      // por qué ya está en cada hallazgo de arriba.
+      html += '<p class="kicker">No pudimos ver tu sitio</p>';
+      html += '<p>Abrimos <strong>' + escapar(dominio) + '</strong> en un navegador y no alcanzamos a ver ' +
+        'nada de lo que revisa esta parte. No sabemos qué carga ni qué guarda, y no vamos a decirte que está ' +
+        'bien cuando no lo miramos. Esto no es un resultado a tu favor: es que no vimos. ' +
+        'Si quieres, lo revisamos a mano y te contamos cómo lo haríamos y cuánto cuesta.</p>';
+      html += botonPedir('pregunta', 'Pregúntanos', dominio, puntaje, 'Revisión con navegador');
+    } else {
+      html += '<p class="kicker">' + (sinConfirmar > 0 ? 'Nada pendiente en lo que vimos' : 'Nada pendiente') + '</p>';
+      html += '<p>Abrimos <strong>' + escapar(dominio) + '</strong> en un navegador y no encontramos nada pendiente' +
+        (sinConfirmar > 0 ? ', aunque hubo ' + plural(sinConfirmar, 'cosa que no pudimos ver', 'cosas que no pudimos ver') + '.' : '.') +
+        ' Esto no dice que cumples la ley: dice que, en lo que alcanzamos a mirar, tu sitio no cargó rastreadores ' +
+        'ni guardó nada antes de pedir permiso. La parte legal la revisa tu abogado.</p>';
+      html += botonPedir('pregunta', 'Pregúntanos', dominio, puntaje, 'Revisión con navegador');
+    }
+    html += '</div>';
+
+    seccionProfundo.innerHTML = html;
+  }
+
+  // El texto de la falla lo pone la API, que ya lo escribió sin filtrar nada de
+  // nuestra configuración: un 401 nuestro no es asunto de quien visita, y decir
+  // "token inválido" cuenta cómo está armado esto. Si por lo que sea no viniera,
+  // acá hay una frase que tampoco afirma nada sobre el sitio de nadie.
+  function renderFallaProfunda(data) {
+    const mensaje = (data && typeof data.error === 'string' && data.error) ||
+      'No pudimos abrir tu sitio en un navegador. No es un resultado sobre tu sitio, es un problema nuestro.';
+    seccionProfundo.innerHTML =
+      '<div class="bloque"><h2>La revisión con navegador</h2></div>' +
+      '<div class="profundo-falla"><p>' + escapar(mensaje) + '</p><p>' + escapar(NO_ES_BUENA_NOTICIA) + '</p></div>';
+  }
+
+  // --- Los 12 puntos del Art. 14 ter -----------------------------------------
+  // Sección informativa, aparte y marcada como tal. La API lo dice en los datos
+  // (`puntua: false`) para que esta regla no dependa de que alguien se acuerde, y
+  // manda su propio título, su intro y su nota. Los doce puntos viajan siempre,
+  // aunque no se haya podido leer la política: ahí van todos en 'sin-confirmar'
+  // y la lista igual sirve para compararla a mano.
+  function renderDocePuntos(data) {
+    const puntos = Array.isArray(data.puntos) ? data.puntos : [];
+    if (!puntos.length) { seccionDoce.innerHTML = ''; return; }
+
+    let html = '<div class="bloque">';
+    html += '<p class="marca-informativa">Informativo' + (data.puntua === false ? ', no entra en el puntaje' : '') + '</p>';
+    html += '<h2>' + escapar(data.titulo || 'Los 12 puntos que la ley pide tener publicados') + '</h2>';
+    if (data.intro) html += '<p class="sub-bloque">' + escapar(data.intro) + '</p>';
+    // De dónde sale esta lista, dicho por la portada y no por la API: es la costura entre
+    // las dos secciones. Cuando el navegador no pudo abrir el sitio, arriba queda "no
+    // pudimos ver tu sitio" y acá abajo doce vistos verdes, y se lee como que una de las
+    // dos miente. No mienten: son dos fuentes distintas, y esta se lee sin navegador.
+    html += '<p class="sub-bloque">Esta lista sale de leer el texto de tu política, no de abrir tu sitio en un navegador.' +
+      (falloElNavegador ? ' A tu política sí llegamos, aunque a tu sitio no.' : '') + '</p>';
+    if (data.aviso) html += '<p class="sub-bloque">' + escapar(data.aviso) + '</p>';
+    html += '<ul class="items">';
+    for (const p of puntos) {
+      // Los estados de la ley se llaman distinto que los del chequeo: acá lo que se
+      // afirma es sobre un texto que leímos, no sobre el sitio.
+      //
+      // Y son cuatro etiquetas, no tres. Hay puntos que la ley enumera (los cinco
+      // derechos, las cuatro partes de la letra d) y que se dan por encontrados con dos
+      // señales: dos de cinco derechos salía con visto verde y "Lo encontramos", que dice
+      // bastante más de lo que sabemos. Cuando la API nombra lo que NO vio de esa lista,
+      // el punto sale como encontrado en parte y con la marca de sin-confirmar: lo visto
+      // se cuenta, lo que falta no se da por puesto ni por ausente.
+      //
+      // Se decide por la CUENTA de lo que falta (`faltan`), nunca leyendo el texto del
+      // detalle: ese texto está redactado para una persona y cambia cuando se reescribe.
+      const faltan = Array.isArray(p.faltan) ? p.faltan.length
+        : (typeof p.faltan === 'number' && isFinite(p.faltan) ? p.faltan : 0);
+      const aMedias = p.estado === 'encontrado' && faltan > 0;
+      const etiqueta = aMedias ? 'Lo encontramos en parte'
+        : p.estado === 'encontrado' ? 'Lo encontramos'
+        : p.estado === 'no-encontrado' ? 'No lo encontramos' : 'No lo pudimos confirmar';
+      const marca = (p.estado === 'encontrado' && !aMedias) ? 'ok' : 'sin-confirmar';
+      html += '<li>' +
+        '<span class="marca-estado ' + marca + '" aria-hidden="true">' + (marca === 'ok' ? '✓' : '?') + '</span>' +
+        '<span class="item-texto">' +
+          '<span class="item-estado ' + marca + '">' + escapar(etiqueta) + '</span>' +
+          '<strong>' + escapar(p.letra ? p.letra + ') ' + p.titulo : p.titulo) + '</strong>' +
+          (p.detalle ? '<span class="detalle">' + escapar(p.detalle) + '</span>' : '') +
+        '</span></li>';
+    }
+    html += '</ul>';
+    if (data.nota) html += '<p class="sub-bloque pie-politica">' + escapar(data.nota) + '</p>';
+    if (data.fuente) html += '<p class="sub-bloque pie-politica">Leímos <strong>' + escapar(data.fuente) + '</strong></p>';
+    html += '</div>';
+    seccionDoce.innerHTML = html;
+  }
+
+  function renderFallaDoce(data) {
+    const mensaje = (data && typeof data.error === 'string' && data.error) ||
+      'No pudimos leer tu política para contrastarla con los 12 puntos.';
+    seccionDoce.innerHTML =
+      '<div class="bloque"><p class="marca-informativa">Informativo, no entra en el puntaje</p>' +
+      '<h2>Los 12 puntos que la ley pide tener publicados</h2></div>' +
+      '<div class="profundo-falla"><p>' + escapar(mensaje) + '</p>' +
+      '<p>Que no hayamos podido leerlos no quiere decir que no estén escritos en alguna parte de tu sitio.</p></div>';
+  }
+
+  // Dispara las dos revisiones de fondo. Van en paralelo: son endpoints distintos
+  // y leer la política es mucho más corto que abrir un navegador.
+  function dispararProfundo(dominio, rehacer) {
+    const mia = ++corrida;
+    if (abortarProfundo) abortarProfundo.abort();
+    const control = ('AbortController' in window) ? new AbortController() : null;
+    abortarProfundo = control;
+    rehacerPedido = !!rehacer;
+    falloElNavegador = null;
+    // Al rehacer la medición, los 12 puntos NO se vuelven a pedir: ya están en pantalla y
+    // leerlos de nuevo significaría descargar el sitio del prospecto otra vez, con nuestro
+    // nombre, para llegar al mismo texto.
+    if (!rehacer) datosDoce = null;
+
+    // La espera es larga (de 21 a 25 s medidos), así que la tarjeta dice qué
+    // estamos haciendo en vez de imitar la forma de lo que viene. aria-hidden:
+    // lo hablado va en #estado-profundo, corto y una sola vez.
+    sinMoverLoQueLeen(seccionProfundo, function () {
+      seccionProfundo.innerHTML =
+        '<div class="bloque"><h2>Y ahora lo abrimos de verdad</h2></div>' +
+        '<div class="profundo-espera" aria-hidden="true"><span class="punto-vivo"></span><div class="espera-texto">' +
+        '<p>Estamos abriendo tu sitio en un navegador de verdad, como lo vería un visitante.</p>' +
+        '<p>Lo dejamos cargar sin tocar nada y después movemos el mouse, que es cuando algunos sitios recién ' +
+        'despiertan sus rastreadores. Toma alrededor de medio minuto.</p>' +
+        '</div></div>';
+    });
+    if (!rehacer) sinMoverLoQueLeen(seccionDoce, function () { seccionDoce.innerHTML = ''; });
+    avisoProfundo.textContent = 'Estamos abriendo tu sitio en un navegador de verdad. Toma alrededor de medio minuto.';
+
+    const plazo = setTimeout(function () { if (control) control.abort(); }, PLAZO_PROFUNDO);
+    // Entre el segundo 30 y el 75 no cambiaba nada en pantalla: la misma tarjeta latiendo
+    // y la misma frase de "medio minuto", ya vencida. A los 40 s se dice que va lento y
+    // hasta cuándo esperamos, que es lo que el chequeo rápido ya hace a su escala.
+    clearTimeout(avisoLentoProfundo);
+    avisoLentoProfundo = setTimeout(function () {
+      if (mia !== corrida) return;
+      const caja = seccionProfundo.querySelector('.profundo-espera .espera-texto');
+      if (!caja || caja.querySelector('.espera-lenta')) return;
+      sinMoverLoQueLeen(seccionProfundo, function () {
+        const linea = document.createElement('p');
+        linea.className = 'espera-lenta';
+        linea.textContent = 'Está tardando más de lo normal. Seguimos esperando un poco más, y si no alcanzamos te lo decimos.';
+        caja.appendChild(linea);
+      });
+      avisoProfundo.textContent = 'La revisión con navegador está tardando más de lo normal. Seguimos esperando.';
+    }, AVISO_LENTO_PROFUNDO);
+
+    fetch('/api/profundo?dominio=' + encodeURIComponent(dominio) + (rehacer ? '&rehacer=1' : ''), {
+      cache: 'no-store',
+      signal: control ? control.signal : undefined,
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (mia !== corrida) return;
+        // El aviso hablado se borra ANTES de pintar, nunca después. Es la misma
+        // regla del chequeo rápido y por la misma razón.
+        avisoProfundo.textContent = '';
+        if (data && data.ok === true) {
+          falloElNavegador = false;
+          sinMoverLoQueLeen(seccionProfundo, function () { renderProfundo(data); });
+          avisoProfundo.textContent = 'La revisión con navegador ya está lista, debajo del resultado.';
+        } else {
+          falloElNavegador = true;
+          sinMoverLoQueLeen(seccionProfundo, function () { renderFallaProfunda(data); });
+          avisoProfundo.textContent = 'No pudimos terminar la revisión con navegador.';
+        }
+        // Los 12 puntos se leen de la política, no del navegador, y eso solo hace falta
+        // decirlo cuando el navegador falló: si no, arriba queda "no pudimos ver tu sitio"
+        // y abajo doce vistos verdes, y se lee como que una de las dos miente. Se repinta
+        // solo en ese caso; repintar por gusto movería una lista que puede estar leyéndose.
+        if (falloElNavegador && datosDoce) pintarDoce();
+      })
+      .catch(function () {
+        if (mia !== corrida) return;
+        avisoProfundo.textContent = '';
+        falloElNavegador = true;
+        sinMoverLoQueLeen(seccionProfundo, function () { renderFallaProfunda(null); });
+        avisoProfundo.textContent = 'No pudimos terminar la revisión con navegador.';
+        if (datosDoce) pintarDoce();
+      })
+      .finally(function () { clearTimeout(plazo); clearTimeout(avisoLentoProfundo); });
+
+    if (!rehacer) {
+      fetch('/api/doce-puntos?dominio=' + encodeURIComponent(dominio), { cache: 'no-store' })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (mia !== corrida) return;
+          datosDoce = data;
+          pintarDoce();
+        })
+        .catch(function () {
+          if (mia !== corrida) return;
+          datosDoce = null;
+          sinMoverLoQueLeen(seccionDoce, function () { renderFallaDoce(null); });
+        });
+    }
+  }
+
+  // Pinta (o repinta) los 12 puntos con lo último que vino, sin mover lo que se está
+  // leyendo. Se llama dos veces cuando el navegador falla: una al llegar la lista y otra
+  // al saber que el navegador no abrió, que es lo único que cambia su costura.
+  function pintarDoce() {
+    if (!datosDoce) return;
+    sinMoverLoQueLeen(seccionDoce, function () {
+      if (datosDoce.ok === true) renderDocePuntos(datosDoce);
+      else renderFallaDoce(datosDoce);
+    });
+  }
+
+  // "Volver a medirlo", en la línea que avisa que el informe viene de una medición
+  // guardada. Los botones del informe se dibujan con innerHTML, así que va delegado.
+  seccionProfundo.addEventListener('click', function (ev) {
+    const b = ev.target.closest && ev.target.closest('.rehacer-profundo');
+    if (!b) return;
+    ev.preventDefault();
+    dispararProfundo(b.getAttribute('data-dominio') || input.value.trim(), true);
+  });
+
+  // Deja las dos secciones en blanco. Se llama al empezar un chequeo nuevo: el
+  // informe profundo del sitio anterior no puede quedar bajo el resultado de otro.
+  function limpiarProfundo() {
+    corrida++;
+    if (abortarProfundo) { abortarProfundo.abort(); abortarProfundo = null; }
+    clearTimeout(avisoLentoProfundo);
+    pendientesRapido = null;
+    datosDoce = null;
+    falloElNavegador = null;
+    rehacerPedido = false;
+    seccionProfundo.innerHTML = '';
+    seccionDoce.innerHTML = '';
+    avisoProfundo.textContent = '';
+  }
+
   // Si corriges el dominio después de un error de escritura, el campo deja de marcarse.
   input.addEventListener('input', function () {
     input.removeAttribute('aria-invalid');
@@ -1788,6 +2506,7 @@
     boton.textContent = 'Revisando…';
     resultado.classList.remove('visible');
     resultado.innerHTML = '';
+    limpiarProfundo();
     avisoEspera.textContent = '';
     input.removeAttribute('aria-invalid');
     input.removeAttribute('aria-describedby');
@@ -1821,6 +2540,7 @@
         renderError(data, dominio);
       } else {
         renderResultado(data);
+        dispararProfundo(data.dominio || dominio);
       }
     } catch (err) {
       clearTimeout(esperaLarga);
