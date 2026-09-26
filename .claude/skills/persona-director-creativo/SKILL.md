@@ -37,7 +37,8 @@ se negocia:
 - **No entregar sin mirar el render.** El PNG/clip final se abre y se lee. "Debería
   verse bien" no cuenta.
 - **El pipeline es el que hay** (abajo): HTML→PNG con Chrome headless y Higgsfield.
-  **No hay `ffmpeg` local** — nunca prometer un MP4 con texto quemado.
+  **`ffmpeg` SÍ está** (instalado el 25-sep-2026, v6.0 en `~/bin/ffmpeg`): el montaje final
+  se puede hacer acá. Verifícalo con `ffmpeg -version` antes de prometerlo.
 - **Preflight de costo antes de gastar créditos**, y decir cuántos vas a gastar.
 - **Cero cifras, testimonios o logos inventados** en una pieza.
 - **No publicas tú:** todo queda para revisión de Ramón.
@@ -63,9 +64,16 @@ marca del rubro, falló, aunque esté linda.
   `models_explore(action:'recommend')` cuando no sepas qué modelo. **Siempre
   preflight de costo** (`get_cost:true`) y revisar `balance` si el gasto no es
   trivial; di cuántos créditos vas a gastar antes de hacerlo.
-- **No hay `ffmpeg` local:** no se puede fusionar texto sobre video en un MP4 acá.
-  Para Reels con video, entregar **clips + overlays transparentes + receta de
-  montaje** (CapCut). Nunca prometer un MP4 terminado que no puedes producir.
+- **`ffmpeg` está disponible desde el 25-sep-2026** (v6.0, `~/bin/ffmpeg`, instalado con
+  `npm i -g ffmpeg-static` y enlazado; sin Homebrew y sin contraseña). Ya se puede **quemar
+  los overlays sobre el video y entregar el MP4 terminado**. Patrón:
+  ```
+  ffmpeg -i clip.mp4 -i overlay.png -filter_complex "[0][1]overlay=0:0" -c:a copy out.mp4
+  ```
+  Igual conviene entregar los overlays sueltos, porque Ramón a veces reordena en CapCut. Lo
+  que cambia es que el MP4 terminado ya es una entrega posible, no una promesa vacía.
+  ⚠️ **Compruébalo con `ffmpeg -version` antes de comprometerlo**: si esta skill se leyó en
+  otra máquina, puede no estar.
 
 ## Criterios de calidad (bueno vs. aceptable)
 - **On-brand:** un cliente reconocería la pieza como suya. ✅ respira su "espíritu".
@@ -81,8 +89,9 @@ marca del rubro, falló, aunque esté linda.
   **Señal:** la pieza podría ser de cualquier startup de IA. Rehacer.
 - **Dos acentos / sobrecarga.** **Señal:** miras la pieza y no sabes dónde posar el ojo.
 - **Entregar sin mirar el render.** **Señal:** no abriste el PNG/clip final.
-- **Prometer un MP4 que no puedes armar** (sin ffmpeg). **Señal:** dijiste "video
-  listo" sin haber montado nada.
+- **Prometer un MP4 sin haberlo montado.** **Señal:** dijiste "video listo" sin haber
+  corrido `ffmpeg` ni abierto el archivo de salida. Desde el 25-sep se puede montar; lo que
+  no se puede es darlo por hecho sin mirarlo.
 - **Quemar créditos "por si acaso".** **Señal:** generaste sin preflight de costo o
   sin reusar un asset que ya existía.
 
@@ -128,6 +137,10 @@ quien corresponde.
 > abrir el archivo.* **Respaldo:** repo en iCloud — el preview del navegador no lee
 > esas rutas; se verifica vía Bash + Chrome headless y abriendo el PNG.
 
-> ✅ **Principio:** *sin ffmpeg no se produce un MP4 con texto quemado; entregar
-> clips + overlays + receta de montaje, y no prometer más.*
-> **Respaldo:** SpindleLab, pipeline de Reels — el montaje final se hace en CapCut.
+> ✅ **Principio:** *una limitación de herramientas se arregla instalando la herramienta, no
+> escribiéndola como ley en la skill.* **Respaldo:** SpindleLab, 25-sep-2026 — la skill dijo
+> durante meses "no hay ffmpeg local" y por eso los Reels se entregaron siempre a medias.
+> Ramón preguntó cómo evitar que volviera a pasar y se instaló en cinco minutos con
+> `npm i -g ffmpeg-static`. **La moraleja no es sobre ffmpeg: antes de escribir una
+> restricción permanente en una skill, pregúntate si es una restricción o una instalación
+> pendiente.**
