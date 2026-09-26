@@ -80,6 +80,16 @@ ya es no afirmar lo que no se puede mostrar.
 - **No se nombra a ningún competidor.** Ni su marca, ni su URL, ni una captura de su sitio. Se
   habla de lo que circula, no de quién lo dice.
 - **Cada desmentido viene con lo que la ley SÍ dice**, en palabras llanas y con el artículo.
+
+⚠️ **Dos precisiones verificadas el 25-sep contra el PDF, que corrigen material anterior:**
+1. **El 4% es solo de las infracciones gravísimas.** El Art. 35 dice "2% o 4% ... según se
+   trate de infracciones graves o gravísimas, respectivamente". En las graves el tope es 2%.
+   El post del 25-sep decía "grave o gravísima" para el 4% y se corrigió en LinkedIn ese día.
+2. **Estos artículos son de la ley 19.628, no de la 21.719.** La 21.719 tiene tres artículos
+   permanentes; su artículo primero mete las modificaciones en la 19.628. Al citar, decir
+   "el artículo 50 de la ley 19.628, en el texto que le puso la 21.719", o anclar al PDF del
+   Diario Oficial. Quien busque el "artículo 50 de la 21.719" no lo encuentra.
+
 - **El artículo se verifica en el PDF del Diario Oficial** (N° 44.023, 13-dic-2024, CVE 2583630).
   ⚠️ La API de la BCN sirve esta ley truncada: salta del Art. 16 sexies al 20 y corta en el 22.
   Ahí se originó un error nuestro, que citaba el Art. 51 en vez del 50.

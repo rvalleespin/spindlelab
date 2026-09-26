@@ -106,8 +106,8 @@ tareas de los tres constructores y los dos revisores.
 
 ## El resto de lo pendiente, que no es de código
 
-- **La lista de exclusión de outbound.** Los 40 correos ofrecen darse de baja. Tiene que existir
-  antes del primer envío, y hay que honrarla.
+- ~~**La lista de exclusión de outbound.**~~ Hecha el 25-sep: `ventas/lista-exclusion.csv`
+  y su regla en `ventas/LEEME-lista-exclusion.md`. Se consulta por correo y por dominio antes de cada envío.
 - **Que el abogado revise** la frase de "interés legítimo" del punto 04 de `/privacidad/`.
 - **La rama de la otra sesión** (chequeo lineal de spindlelab.cl): va a dejar un enlace para que
   Ramón decida si entra a main.

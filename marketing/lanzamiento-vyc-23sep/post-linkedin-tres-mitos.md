@@ -23,11 +23,11 @@ La primera es que tienes que nombrar un delegado de protección de datos. El art
 
 La segunda es que tienes 72 horas para avisar una filtración de datos. Ese plazo es del reglamento europeo. En el texto de la ley chilena el número no aparece. El artículo 14 sexies pide reportar a la Agencia por los medios más expeditos posibles y sin dilaciones indebidas, que es un estándar de conducta y no un reloj. Te obliga a moverte apenas te enteras, y tampoco te da tres días de colchón.
 
-La tercera es que una pyme arriesga el 4% de sus ingresos. Ese 4% está en el artículo 35 con dos condiciones que van juntas. Se aplica a empresas que no son de menor tamaño según la ley 20.416, y solo cuando reinciden en una infracción grave o gravísima. Reincidir, dice el artículo 36, es haber sido sancionado dos o más veces en treinta meses. Una pyme en su primera infracción no cumple ninguna de las dos.
+La tercera es que una pyme arriesga el 4% de sus ingresos. Ese 4% está en el artículo 35 con dos condiciones que van juntas. Se aplica a empresas que no son de menor tamaño según la ley 20.416, y solo cuando reinciden. Y ese 4% es el porcentaje de las infracciones gravísimas; en las graves es 2%. Reincidir, dice el artículo 36, es haber sido sancionado dos o más veces en treinta meses. Una pyme en su primera infracción no cumple ninguna de las dos.
 
 Las tres existen en el reglamento europeo. La ley chilena se le parece en varias cosas, y el atajo fue suponer que se le parecía en todas.
 
-Si te llega una propuesta de cumplimiento, sirve preguntar de qué artículo sale cada obligación que te están cobrando. El número se puede ir a mirar.
+Si te llega una propuesta de cumplimiento, sirve preguntar de qué artículo sale cada obligación que te están cobrando. El número se puede ir a mirar. Ojo al buscarlo: la 21.719 no numera estos artículos por su cuenta, los instala dentro de la ley 19.628, que es donde hay que ir.
 
 Dejamos en el primer comentario el chequeo gratis, para la parte que sí se ve en tu sitio.
 
@@ -72,6 +72,13 @@ que no existía. Si vuelve a pasar, va esta versión: **idéntica salvo los dos 
 (34 páginas).** Descargado y verificado el 23-sep-2026.
 Copia local: `do_2583630.pdf` · texto extraído: `do.txt` · contraste: `ley-21719.xml` (BCN).
 
+⚠️ **De qué cuerpo son estos artículos.** La Ley 21.719 tiene tres artículos permanentes
+(primero, segundo y tercero) más las disposiciones transitorias. Su **artículo primero**
+*"Introdúcense las siguientes modificaciones en la ley N° 19.628"*, y por ahí entran los
+artículos 14 sexies, 35, 36, 48, 49 y 50. O sea: **son artículos de la ley 19.628 con el texto
+que les puso la 21.719.** Quien abra la 21.719 en LeyChile buscando el "artículo 50" no lo va a
+encontrar. Verificado contra el PDF el 25-sep-2026.
+
 | Afirmación del post | Artículo | Texto oficial |
 |---|---|---|
 | El delegado es voluntario | **Art. 50** | "El responsable de datos **podrá designar** un delegado de protección de datos personales." |
@@ -79,7 +86,7 @@ Copia local: `do_2583630.pdf` · texto extraído: `do.txt` · contraste: `ley-21
 | Lo que sí es obligatorio | **Art. 48** | "Los responsables de datos [...] **deberán adoptar acciones destinadas a prevenir** la comisión de las infracciones establecidas en los artículos 34 bis, 34 ter y 34 quáter." |
 | No hay plazo de 72 horas | **Art. 14 sexies** | "El responsable deberá reportar a la Agencia, **por los medios más expeditos posibles y sin dilaciones indebidas**, las vulneraciones a las medidas de seguridad..." |
 | El número 72 no está en la ley | — | `grep "72 horas\|setenta y dos"` sobre el texto oficial completo: **cero coincidencias**. |
-| El 4% tiene dos condiciones | **Art. 35, inciso cuarto** | "En caso de que el infractor corresponda a una empresa **distinta** de aquéllas definidas como empresas de menor tamaño en el artículo segundo de la ley N° 20.416, que **reincida** en infracción de carácter grave o gravísima [...] la multa podrá alcanzar [...] al 2% o 4% de los ingresos anuales..." |
+| El 4% es solo de las gravísimas | **Art. 35, inciso cuarto** | "En caso de que el infractor corresponda a una empresa **distinta** de aquéllas definidas como empresas de menor tamaño en el artículo segundo de la ley N° 20.416, que **reincida** en infracción de carácter grave o gravísima [...] la multa podrá alcanzar [...] hasta el monto correspondiente al 2% o 4% de los ingresos anuales por ventas y servicios y otras actividades del giro en el último año calendario, **según se trate de infracciones graves o gravísimas, respectivamente**." ⚠️ Esta cita estaba cortada en "2% o 4% de los ingresos anuales..." y el corte se comía justo la frase que resuelve cuál tramo es cuál. De ahí salió el error del 25-sep. |
 | Qué es reincidir | **Art. 36, letra a)** | "Existe reincidencia cuando el responsable ha sido sancionado en **dos o más ocasiones, en los últimos treinta meses**, por infracción a esta ley." |
 | Escala general de multas (no va en el post, es el contexto) | **Art. 35** | leves: amonestación escrita o hasta 5.000 UTM · graves: hasta 10.000 UTM · gravísimas: hasta 20.000 UTM |
 

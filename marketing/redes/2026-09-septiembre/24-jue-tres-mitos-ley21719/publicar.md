@@ -11,6 +11,16 @@ pedido explícito de Ramón el 25-sep ("publica el post").
 
 ## ✅ ESTADO: PUBLICADO Y VERIFICADO (25-sep-2026)
 
+> ⚠️ **EDITADO el 25-sep-2026 por la tarde, con permiso de Ramón.** El párrafo del 4%
+> decía que ese tramo corría para infracciones "grave o gravísima". El Art. 35 dice "2% o 4%
+> ... según se trate de infracciones graves o gravísimas, respectivamente": el 4% es solo de las
+> gravísimas. Se agregó además dónde buscar los artículos (están en la ley 19.628, que es la que
+> la 21.719 modifica). El post en vivo muestra "Editado" y el texto nuevo, verificado recargando
+> la página. El primer comentario y la vista previa del link quedaron intactos.
+>
+> **Cómo se coló:** la cita de respaldo en el archivo estaba cortada en "2% o 4% de los ingresos
+> anuales...", y el corte se comía justo la frase que resolvía cuál tramo era cuál.
+
 | Pieza | URL / evidencia |
 |---|---|
 | Post en la página | `linkedin.com/feed/update/urn:li:activity:7509227560686227457/` |
@@ -93,11 +103,11 @@ La primera es que tienes que nombrar un delegado de protección de datos. El art
 
 La segunda es que tienes 72 horas para avisar una filtración de datos. Ese plazo es del reglamento europeo. En el texto de la ley chilena el número no aparece. El artículo 14 sexies pide reportar a la Agencia por los medios más expeditos posibles y sin dilaciones indebidas, que es un estándar de conducta y no un reloj. Te obliga a moverte apenas te enteras, y tampoco te da tres días de colchón.
 
-La tercera es que una pyme arriesga el 4% de sus ingresos. Ese 4% está en el artículo 35 con dos condiciones que van juntas. Se aplica a empresas que no son de menor tamaño según la ley 20.416, y solo cuando reinciden en una infracción grave o gravísima. Reincidir, dice el artículo 36, es haber sido sancionado dos o más veces en treinta meses. Una pyme en su primera infracción no cumple ninguna de las dos.
+La tercera es que una pyme arriesga el 4% de sus ingresos. Ese 4% está en el artículo 35 con dos condiciones que van juntas. Se aplica a empresas que no son de menor tamaño según la ley 20.416, y solo cuando reinciden. Y ese 4% es el porcentaje de las infracciones gravísimas; en las graves es 2%. Reincidir, dice el artículo 36, es haber sido sancionado dos o más veces en treinta meses. Una pyme en su primera infracción no cumple ninguna de las dos.
 
 Las tres existen en el reglamento europeo. La ley chilena se le parece en varias cosas, y el atajo fue suponer que se le parecía en todas.
 
-Si te llega una propuesta de cumplimiento, sirve preguntar de qué artículo sale cada obligación que te están cobrando. El número se puede ir a mirar.
+Si te llega una propuesta de cumplimiento, sirve preguntar de qué artículo sale cada obligación que te están cobrando. El número se puede ir a mirar. Ojo al buscarlo: la 21.719 no numera estos artículos por su cuenta, los instala dentro de la ley 19.628, que es donde hay que ir.
 
 Dejamos en el primer comentario el chequeo gratis, para la parte que sí se ve en tu sitio.
 

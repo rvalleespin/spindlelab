@@ -115,6 +115,11 @@ propio riesgo legal.
    tratamiento, acá es voluntario. No prometerle a cada prospecto que "necesita nombrar un
    DPO".
 
+   ⚠️ **De qué cuerpo son (verificado el 25-sep).** La Ley 21.719 tiene tres artículos
+   permanentes; su artículo primero introduce las modificaciones **en la ley 19.628**. Todos los
+   números de abajo son de la 19.628 con el texto que le puso la 21.719. Al citarlos en público,
+   decirlo así o anclar al PDF: quien busque el "artículo 50 de la 21.719" no lo encuentra.
+
    **Los artículos, corregidos el 23-sep-2026 contra el Diario Oficial** (N° 44.023 del
    13-dic-2024, CVE 2583630). Acá decía "Art. 51" y estaba mal: el 51 es la certificación del
    modelo ante la Agencia, no el delegado. Los que valen:

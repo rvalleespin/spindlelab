@@ -8,7 +8,14 @@ devolvernos el golpe lo hace con una línea.
 
 ## Cómo se usa
 
-- **Antes de cualquier envío**, cruzar la lista de destinatarios contra este archivo.
+- **Antes de cualquier envío**, cruzar la lista de destinatarios contra este archivo,
+  **por correo Y por dominio**:
+  ```bash
+  grep -i -E "correo@ejemplo.cl|ejemplo.cl" ventas/lista-exclusion.csv
+  ```
+  Las dos cosas, porque alguien puede responder desde una dirección distinta de la que le
+  escribimos: el socio contesta desde su cuenta y el buzón al que escribimos no aparece por
+  ningún lado. **La baja es de la empresa, no del buzón.**
 - Si alguien **pide darse de baja**: se agrega acá con `tipo=baja-solicitada`, se confirma en una
   línea y **no se pregunta por qué**.
 - Una **negativa** ("no estamos interesados") también entra. No es lo mismo que una baja formal,
