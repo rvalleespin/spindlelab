@@ -1,4 +1,4 @@
-# Qué hay publicado de verdad en LinkedIn
+# Qué hay publicado de verdad (LinkedIn + Instagram)
 
 **Capturado desde LinkedIn el 22-sep-2026.** Este archivo existe porque el repo no sabía lo que
 estaba en el aire, y eso costó un post: el 22-sep se publicó en la página un explicador de la Ley
@@ -16,7 +16,45 @@ estaba en el aire, y eso costó un post: el 22-sep se publicó en la página un 
 | ~8-sep | "Un motor de adquisición. No cuatro servicios sueltos" (carrusel, 4 imgs) | — | corpus §6 |
 | ~1-sep | "Estás pagando para que lleguen" (el circuito / dominó) | 1 reacción · 1 comentario · 2 compartidos | corpus §2 + `01-mar-circuito-domino/` |
 | **22-sep** | ⛔ Explicador Ley 21.719 (plural) — **publicado y retirado el mismo día, por repetido** | 53 impresiones en ~40 min | `24-jue-ley-21719/publicar.md` |
-| **✅ 25-sep** | Los tres mitos de la Ley 21.719 (delegado voluntario, sin 72h, el 4% con dos condiciones) | publicado, verificado | `24-jue-tres-mitos-ley21719/publicar.md` |
+| **✅ 25-sep** | Los tres mitos de la Ley 21.719 (delegado voluntario, sin 72h, el 4% con dos condiciones) | **398 impresiones** · ✏️ **editado esa tarde: el 4% es solo de las gravísimas** | `24-jue-tres-mitos-ley21719/publicar.md` |
+
+## Instagram · cuenta `spindlelab.cl` (19 seguidores)
+
+**Capturado del canal el 25-sep-2026.** ⚠️ **Verifica y Cumple pasó a tener línea editorial
+propia ese día** (decisión de Ramón): su campaña NO usa el sistema oscuro de SpindleLab. Ver
+`marketing/encargos-otras-sesiones/verifica-campana-linea-propia.md`. Esta sección existe porque el repo estaba equivocado
+sobre esta cuenta en casi todo, y la planificación se hizo con datos falsos:
+
+| Lo que decía el repo | Lo que hay de verdad |
+|---|---|
+| Handle `@spindle.lab` | **`spindlelab.cl`** |
+| Dormida desde el 16-jul | Último post el **3-sep**, tres semanas antes |
+| 2 publicaciones, de julio | **7**, casi todas en el sistema oscuro vigente |
+| Bio a `spindlelab.cl` | El enlace ya iba a **`spindlelab.cl/diagnostico`** |
+
+No hay marca muerta que tapar: la grilla ya está en el sistema actual, así que una pieza nueva
+entra sin chocar.
+
+| Publicado | Pieza | Enlace |
+|---|---|---|
+| **⛔ 25-sep** | "100 de 100, contando solo lo que alcanzamos a ver" — **publicado y eliminado el mismo día por Ramón**: quedaba fuera de la línea de la campaña de Verifica, que se decidió aparte esa tarde | era `instagram.com/p/DduVT6Dkr0N/` |
+| 3-sep | "Cinco cosas que las empresas serias están haciendo para perder clientes" (carrusel) | mecanismo "comenta CIRCUITO" |
+
+**Bio actualizado el 25-sep:** salió el mini-diagnóstico, que ya no se ofrece. Quedó:
+*"SEO técnico y visibilidad en IA para empresas chilenas. / Le preguntamos a ChatGPT por tu
+negocio. / Chequea tu sitio gratis ↓"*
+
+⚠️ **Pendientes de Ramón en esta cuenta, las dos cosas que no se pueden hacer desde el computador
+o que son suyas:**
+- **El enlace del bio.** Instagram solo deja editar los sitios web **desde la app del teléfono**.
+  Hoy va a `spindlelab.cl/diagnostico`; para la campaña de Verifica tiene que ir a
+  `verifica.spindlelab.cl`. Cuando lo cambie, la última línea del bio debería decir algo como
+  *"Ahora: chequea gratis tu sitio para la Ley 21.719 ↓"*, o el bio promete una cosa y el enlace
+  lleva a otra.
+- **La etiqueta "Perfil generado con IA"** está encendida y la ve cualquiera. En una consultoría
+  que vende criterio conviene decidirlo a propósito, no dejarlo por omisión.
+
+---
 
 ## Perfil personal de Ramón (360 seguidores)
 

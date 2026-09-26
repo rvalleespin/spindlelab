@@ -1,0 +1,72 @@
+/* Sistema visual — septiembre 2026 · campaña "el motor + el chequeo"
+   v2 (31-ago): MIGRADO AL ESTILO LIVE aprobado el 12-ago y alineado al sitio en
+   producción (spindlelab.cl, Astro). Tokens sacados del CSS de producción
+   (/_astro/index.*.css), no inventados:
+     --bg #0e141b · --surface #161d26 · --fg #f2efe8 · --fg-muted #9aa4b0
+     --fg-faint #6b7580 · --gold #c9a227 · --support #2fa99b (verde petróleo)
+     --hairline rgba(247,245,240,.1) · Gabarito (títulos) + Manrope (texto)
+   Fondo: frame real del hero del sitio (fondo-hilo.jpg = /video/hero-hilo-de-oro.jpg)
+   con velo oscuro para legibilidad. Regla de marca: verde petróleo en etiquetas,
+   dorado solo en el punto del wordmark o en UN dato. La v1 (sistema de agosto,
+   papel/tinta #131A22 + Inter) quedó superada: ya no hay dirección "clara". */
+
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); }
+@font-face { font-family:'Manrope'; src:url('manrope.woff2') format('woff2'); font-weight:400 800; }
+@font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:100 900; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1080px; height:1080px; overflow:hidden; font-family:'Manrope','Inter',sans-serif; }
+.post { width:1080px; height:1080px; position:relative;
+  background:linear-gradient(rgba(14,20,27,0.86), rgba(14,20,27,0.96)),
+             url('fondo-hilo.jpg') center/cover, #0e141b; }
+
+/* ---- Dirección A: ficha tipográfica (siempre oscura desde la v2) ---- */
+.a { padding:80px; display:flex; flex-direction:column; color:#f2efe8; }
+.a.dark { color:#f2efe8; } /* alias histórico: en v2 todas las piezas son oscuras */
+.eyebrow { font-size:21px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#2fa99b; }
+.rule { height:1px; background:rgba(247,245,240,0.14); margin-top:26px; }
+.h { font-family:'Gabarito'; font-weight:600; letter-spacing:-1.4px; line-height:1.12; color:#f2efe8; }
+.sub { font-size:30px; line-height:1.55; color:#9aa4b0; max-width:860px; margin-top:26px; }
+.foot { position:absolute; bottom:80px; left:80px; right:80px; display:flex; align-items:flex-end; justify-content:space-between; }
+.wm { font-family:'Gabarito'; font-weight:600; font-size:42px; color:#f2efe8; }
+.pt { color:#c9a227; }
+.cta { font-size:24px; color:#9aa4b0; text-align:right; white-space:nowrap; }
+
+/* dispositivo de código */
+.code { margin-top:44px; background:rgba(22,29,38,0.82); border:1px solid rgba(247,245,240,0.12);
+  border-radius:10px; padding:30px 34px;
+  font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:26px; line-height:1.7; color:#9aa4b0; }
+.code b { color:#f2efe8; font-weight:600; }
+
+/* ---- Dirección B: ventana (foto + banda) ---- */
+.b .ph { width:1080px; height:648px; object-fit:cover; display:block; }
+.b .band { position:absolute; left:0; right:0; bottom:0; height:432px;
+  background:rgba(14,20,27,0.97); color:#f2efe8; padding:56px 80px 0;
+  border-top:1px solid rgba(247,245,240,0.10); }
+.b .band .h { font-size:56px; }
+
+/* ---- Dispositivo de septiembre: la cartera legible ----
+   Jerarquía por peso tipográfico; el color solo marca la etiqueta de grupo. */
+.cartera { margin-top:30px; border-top:1px solid rgba(247,245,240,0.14); }
+.cartera .fila { display:flex; align-items:baseline; justify-content:space-between;
+  padding:16px 2px; border-bottom:1px solid rgba(247,245,240,0.10); gap:24px; }
+.cartera .nom { font-size:29px; font-weight:500; color:#f2efe8; }
+.cartera .eje { font-size:17px; font-weight:700; letter-spacing:2.4px; text-transform:uppercase;
+  color:#2fa99b; margin-left:14px; }
+.cartera .val { font-size:27px; font-weight:600; color:#f2efe8; white-space:nowrap;
+  font-variant-numeric:tabular-nums; }
+.cartera .val i { font-style:normal; font-weight:400; font-size:21px; color:#9aa4b0; }
+.pie-nota { font-size:20px; line-height:1.5; color:#9aa4b0; margin-top:22px; }
+
+/* ---- Dispositivo de septiembre: el motor ---- */
+.motor { margin-top:44px; }
+.motor .eje-box { border:1px solid rgba(247,245,240,0.14); border-radius:10px;
+  background:rgba(22,29,38,0.82); padding:26px 30px; }
+.motor .kicker { font-size:17px; font-weight:700; letter-spacing:2.4px; text-transform:uppercase; color:#2fa99b; }
+.motor .eje-nom { font-family:'Gabarito'; font-weight:600; font-size:38px; line-height:1.2; margin-top:8px; color:#f2efe8; }
+.motor .brazos { display:flex; gap:18px; margin-top:18px; }
+.motor .brazo { flex:1; border:1px solid rgba(247,245,240,0.12); border-radius:10px; padding:20px 22px;
+  background:rgba(22,29,38,0.55); }
+.motor .brazo .n { font-size:25px; font-weight:500; color:#f2efe8; line-height:1.25; }
+.motor .fases { display:flex; align-items:center; gap:14px; margin-top:34px; flex-wrap:nowrap; }
+.motor .fase { font-size:21px; color:#9aa4b0; white-space:nowrap; }
+.motor .flecha { color:#6b7580; font-size:19px; }
