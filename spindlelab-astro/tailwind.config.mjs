@@ -38,6 +38,14 @@ export default {
         // Contraste verificado con papel encima: navy 13,4:1 · petróleo 5,0:1.
         'campo-navy': '#0E2A47',
         'campo-petroleo': '#0F766E',
+
+        // Medidos de la referencia con canvas (sus fondos vienen en oklch, así que leerlos
+        // como texto daba basura). El azul de allá es #122955: el navy de la casa ya estaba
+        // a unos pocos puntos, así que ese slot no se toma prestado de nadie.
+        'campo-ciruela': '#341F34',
+        // OJO con brasa: papel encima da 4,31:1 y reprueba AA para texto normal.
+        // Sobre este campo el cuerpo va en BLANCO PURO (4,70:1), no en papel.
+        'campo-brasa': '#DA3400',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
