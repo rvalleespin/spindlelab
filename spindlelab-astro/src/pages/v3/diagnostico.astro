@@ -22,6 +22,7 @@ import FooterV3 from '../../components/v3/FooterV3.astro';
 
 import paginas from '../../data/paginas-v3.json';
 import '../../styles/chequeo-v3.css';
+import '../../styles/campos-v3.css'; // tintes de color, filete, rotulo
 
 const s = (paginas as Record<string, any>).diagnostico;
 const [chequeos, caminos, ley, responde, cierre] = s.secciones;
@@ -62,10 +63,10 @@ const jsonLd = {
 
   <main class="text-papel">
     <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-48 pb-14 md:pb-16">
-      <nav aria-label="Migas" class="text-white/35 text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
+      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
         <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
         <span aria-hidden="true" class="mx-2">·</span>
-        <span class="text-white/60">Chequeo gratis</span>
+        <span class="text-humo">Chequeo gratis</span>
       </nav>
       <h1
         class="font-extrabold uppercase m-0 max-w-[12ch]"
@@ -73,12 +74,29 @@ const jsonLd = {
       >
         {s.h1}
       </h1>
-      {s.lead && <p class="mt-10 text-white/60 text-xl md:text-2xl leading-relaxed max-w-prosa">{s.lead}</p>}
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
+        <div class="md:col-span-5">
+          {s.lead && <p class="m-0 text-papel text-xl md:text-2xl leading-relaxed">{s.lead}</p>}
+        </div>
+        <div class="md:col-span-6 md:col-start-7">
+          <img
+            src={s.foto}
+            alt={s.fotoAlt}
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+            class="media-campo"
+          />
+        </div>
+      </div>
+
     </section>
 
     <!-- EL CHEQUEO. Los id son contrato con el script: no tocar. -->
     <section id="chequeo" class="px-6 md:px-medianil pb-24 md:pb-36 scroll-mt-24">
-      <div class="border-t border-b border-white/15">
+      <div class="border-t border-b filete">
         <form class="chq-form flex flex-col sm:flex-row sm:items-stretch" id="chq-form" novalidate>
           <label for="chq-dominio" class="sr-only">Tu dominio</label>
           <input
@@ -91,7 +109,7 @@ const jsonLd = {
             spellcheck="false"
             placeholder="tuempresa.cl"
             required
-            class="flex-1 bg-transparent font-mono text-2xl md:text-4xl text-papel placeholder:text-white/25 py-7 md:py-9 outline-none focus-visible:bg-white/[0.04] transition-colors"
+            class="flex-1 bg-transparent font-mono text-2xl md:text-4xl text-papel placeholder:text-humo py-7 md:py-9 outline-none focus-visible:bg-white/[0.04] transition-colors"
           />
           <button
             type="submit"
@@ -118,7 +136,7 @@ const jsonLd = {
       <div class="grid gap-x-8 lg:gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
         {
           (chequeos.bloques ?? []).map((b: any) => (
-            <article class="border-t border-noche/25 pt-5">
+            <article class="border-t filete pt-5">
               <h3
                 class="font-extrabold uppercase m-0"
                 style="font-size:clamp(1.0625rem,1.5vw,1.375rem); line-height:1.1; letter-spacing:-0.03em"
@@ -131,12 +149,12 @@ const jsonLd = {
         }
       </div>
       {chequeos.parrafos?.[0] && (
-        <p class="mt-12 text-noche/60 text-lg leading-relaxed max-w-prosa">{chequeos.parrafos[0]}</p>
+        <p class="mt-12 text-noche/65 text-lg leading-relaxed max-w-prosa">{chequeos.parrafos[0]}</p>
       )}
     </section>
 
     <!-- CAMPO BRASA. Texto en BLANCO PURO: papel encima reprueba AA sobre este color. -->
-    <section class="bg-campo-brasa text-white px-6 md:px-medianil py-32 md:py-seccion">
+    <section class="tinte--brasa text-white px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[16ch]"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
@@ -146,7 +164,7 @@ const jsonLd = {
       <div class="grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-2">
         {
           (caminos.bloques ?? []).map((b: any) => (
-            <article class="border-t border-white/40 pt-6">
+            <article class="border-t filete pt-6">
               <h3
                 class="font-extrabold uppercase m-0"
                 style="font-size:clamp(1.25rem,2vw,1.875rem); line-height:1.05; letter-spacing:-0.03em"
@@ -169,7 +187,7 @@ const jsonLd = {
         {ley.h2}
       </h2>
       {ley.parrafos?.[0] && (
-        <p class="mt-8 text-white/60 text-lg leading-relaxed max-w-prosa">{ley.parrafos[0]}</p>
+        <p class="mt-8 text-humo text-lg leading-relaxed max-w-prosa">{ley.parrafos[0]}</p>
       )}
 
       {s.faq?.length > 0 && (
@@ -180,16 +198,16 @@ const jsonLd = {
           >
             {responde.h2}
           </h2>
-          <dl class="m-0 border-t border-white/10">
+          <dl class="m-0 border-t filete">
             {s.faq.map((f: any) => (
-              <div class="border-b border-white/10 py-7 md:py-9 grid gap-3 md:grid-cols-[minmax(0,22rem)_1fr] md:gap-12">
+              <div class="border-b filete py-7 md:py-9 grid gap-3 md:grid-cols-[minmax(0,22rem)_1fr] md:gap-12">
                 <dt
                   class="font-extrabold uppercase"
                   style="font-size:clamp(1.0625rem,1.6vw,1.375rem); line-height:1.1; letter-spacing:-0.03em"
                 >
                   {f.p}
                 </dt>
-                <dd class="m-0 text-white/55 text-lg leading-relaxed max-w-prosa">{f.r}</dd>
+                <dd class="m-0 text-humo text-lg leading-relaxed max-w-prosa">{f.r}</dd>
               </div>
             ))}
           </dl>

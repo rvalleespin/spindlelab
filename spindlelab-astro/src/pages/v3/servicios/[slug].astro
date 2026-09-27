@@ -23,6 +23,7 @@ import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
 
 import servicios from '../../../data/servicios-v3.json';
+import '../../../styles/campos-v3.css'; // tintes de color, filete, rotulo
 
 export function getStaticPaths() {
   return Object.keys(servicios).map((slug) => ({ params: { slug } }));
@@ -73,12 +74,12 @@ const jsonLd = {
 
   <main class="text-papel">
     <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-28">
-      <nav aria-label="Migas" class="text-white/35 text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
+      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
         <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
         <span aria-hidden="true" class="mx-2">·</span>
-        <a href="/servicios/" class="hover:text-papel transition-colors">Soluciones</a>
+        <a href="/v3/servicios/" class="hover:text-papel transition-colors">Soluciones</a>
         <span aria-hidden="true" class="mx-2">·</span>
-        <span class="text-white/60">{s.h1}</span>
+        <span class="text-humo">{s.h1}</span>
       </nav>
       <h1
         class="font-extrabold uppercase m-0 max-w-[14ch]"
@@ -86,9 +87,26 @@ const jsonLd = {
       >
         {s.h1}
       </h1>
-      {s.lead && (
-        <p class="mt-10 text-white/60 text-xl md:text-2xl leading-relaxed max-w-prosa">{s.lead}</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
+        <div class="md:col-span-5">
+          {s.lead && (
+        <p class="mt-10 text-papel text-xl md:text-2xl leading-relaxed max-w-prosa">{s.lead}</p>
       )}
+        </div>
+        <div class="md:col-span-6 md:col-start-7">
+          <img
+            src={s.foto}
+            alt={s.fotoAlt}
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+            class="media-campo"
+          />
+        </div>
+      </div>
+
     </section>
 
     <!-- QUÉ INCLUYE, en columnas. -->
@@ -102,7 +120,7 @@ const jsonLd = {
       <ul class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
         {
           (secIncluye.lista ?? []).map((i: string) => (
-            <li class="border-t border-noche/25 pt-5 text-noche/75 text-base leading-relaxed">
+            <li class="border-t filete pt-5 text-noche/75 text-base leading-relaxed">
               {i}
             </li>
           ))
@@ -118,22 +136,22 @@ const jsonLd = {
       >
         {secPlanes.h2}
       </h2>
-      {secPlanes.nota && <p class="text-noche/50 text-sm mb-12 md:mb-16 max-w-prosa">{secPlanes.nota}</p>}
+      {secPlanes.nota && <p class="text-noche/65 text-sm mb-12 md:mb-16 max-w-prosa">{secPlanes.nota}</p>}
       <div class="grid gap-x-8 lg:gap-x-12 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
         {
           (secPlanes.planes ?? []).map((p: any) => (
-            <article class="flex flex-col border-t border-noche/25 pt-6">
+            <article class="flex flex-col border-t filete pt-6">
               <h3
                 class="font-extrabold uppercase m-0"
                 style="font-size:clamp(1.125rem,1.7vw,1.5rem); line-height:1.05; letter-spacing:-0.03em"
               >
                 {p.nombre}
               </h3>
-              {p.tagline && <p class="mt-3 text-noche/60 text-base leading-relaxed">{p.tagline}</p>}
+              {p.tagline && <p class="mt-3 text-noche/65 text-base leading-relaxed">{p.tagline}</p>}
               <ul class="list-none p-0 mt-5 mb-0 space-y-2">
                 {p.puntos.map((x: string) => (
                   <li class="flex gap-2.5 text-noche/70 text-sm leading-relaxed">
-                    <span aria-hidden="true" class="text-noche/30">—</span>
+                    <span aria-hidden="true" class="text-noche/65">—</span>
                     <span>{x}</span>
                   </li>
                 ))}
@@ -153,11 +171,11 @@ const jsonLd = {
       >
         {secBloques.h2}
       </h2>
-      <ol class="list-none p-0 m-0 border-t border-white/10">
+      <ol class="list-none p-0 m-0 border-t filete">
         {
           (secBloques.bloques ?? []).map((b: any, i: number) => (
-            <li class="border-b border-white/10 py-7 md:py-9 flex flex-col md:flex-row gap-3 md:gap-12">
-              <span class="text-white/30 font-bold text-sm flex-none md:w-16" style="letter-spacing:0.16em">
+            <li class="border-b filete py-7 md:py-9 flex flex-col md:flex-row gap-3 md:gap-12">
+              <span class="text-humo font-bold text-sm flex-none md:w-16" style="letter-spacing:0.16em">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <span
@@ -166,7 +184,7 @@ const jsonLd = {
               >
                 {b.t}
               </span>
-              <span class="text-white/55 text-lg leading-relaxed max-w-prosa">{b.d}</span>
+              <span class="text-humo text-lg leading-relaxed max-w-prosa">{b.d}</span>
             </li>
           ))
         }
@@ -181,17 +199,17 @@ const jsonLd = {
       >
         {s.secciones[3].h2}
       </h2>
-      <dl class="m-0 border-t border-white/10">
+      <dl class="m-0 border-t filete">
         {
           s.faq.map((f: any) => (
-            <div class="border-b border-white/10 py-7 md:py-9 grid gap-3 md:grid-cols-[minmax(0,22rem)_1fr] md:gap-12">
+            <div class="border-b filete py-7 md:py-9 grid gap-3 md:grid-cols-[minmax(0,22rem)_1fr] md:gap-12">
               <dt
                 class="font-extrabold uppercase"
                 style="font-size:clamp(1.125rem,1.7vw,1.5rem); line-height:1.1; letter-spacing:-0.03em"
               >
                 {f.p}
               </dt>
-              <dd class="m-0 text-white/55 text-lg leading-relaxed max-w-prosa">{f.r}</dd>
+              <dd class="m-0 text-humo text-lg leading-relaxed max-w-prosa">{f.r}</dd>
             </div>
           ))
         }
@@ -219,7 +237,7 @@ const jsonLd = {
         </a>
         <a
           href="/diagnostico/"
-          class="rounded-v3 border border-noche/25 hover:border-noche text-noche text-sm font-bold px-8 py-4 transition-colors"
+          class="rounded-v3 border filete hover:border-noche text-noche text-sm font-bold px-8 py-4 transition-colors"
         >
           Chequeo gratis
         </a>

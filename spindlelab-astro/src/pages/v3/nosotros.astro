@@ -20,6 +20,7 @@ import Layout from '../../layouts/Layout.astro';
 import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
+import '../../styles/campos-v3.css'; // tintes de color, filete, rotulo
 
 
 const url = 'https://spindlelab.cl/nosotros/';
@@ -78,10 +79,10 @@ const jsonLd = {
 
   <main class="text-papel">
     <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-16 md:pb-24">
-      <nav aria-label="Migas" class="text-white/35 text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
+      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
         <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
         <span aria-hidden="true" class="mx-2">·</span>
-        <span class="text-white/60">Nosotros</span>
+        <span class="text-humo">Nosotros</span>
       </nav>
       <h1
         class="font-extrabold uppercase m-0 max-w-[14ch]"
@@ -98,11 +99,11 @@ const jsonLd = {
           height="1200"
           loading="eager"
           decoding="async"
-          class="shrink-0 w-20 h-24 rounded-lg border border-white/10 object-cover object-top"
+          class="shrink-0 w-20 h-24 rounded-lg border filete object-cover object-top"
         />
         <div>
           <p class="text-base font-bold text-papel m-0">Ramón Vallejos</p>
-          <p class="text-sm text-white/50 m-0 mt-1">
+          <p class="text-sm text-humo m-0 mt-1">
             Consultor de SEO técnico y visibilidad en IA · Chile
           </p>
         </div>
@@ -123,7 +124,7 @@ const jsonLd = {
     </section>
 
     <!-- CÓMO TRABAJO, en campo navy. Los cuatro puntos van en singular. -->
-    <section class="bg-campo-navy text-papel px-6 md:px-medianil py-32 md:py-seccion">
+    <section class="tinte--navy px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 mb-12 md:mb-16"
         style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0"
@@ -133,14 +134,14 @@ const jsonLd = {
       <div class="grid gap-x-8 lg:gap-x-12 gap-y-10 md:grid-cols-2">
         {
           puntos.map((p) => (
-            <article class="border-t border-white/25 pt-6">
+            <article class="border-t filete pt-6">
               <h3
                 class="font-extrabold uppercase m-0"
                 style="font-size:clamp(1.125rem,1.8vw,1.625rem); line-height:1.1; letter-spacing:-0.03em"
               >
                 {p.t}
               </h3>
-              <p class="mt-4 text-white/70 text-base leading-relaxed">{p.d}</p>
+              <p class="mt-4 text-humo text-base leading-relaxed">{p.d}</p>
             </article>
           ))
         }
@@ -154,7 +155,7 @@ const jsonLd = {
       >
         ¿Apareces cuando preguntan?
       </h2>
-      <p class="mt-8 text-white/60 text-xl leading-relaxed max-w-prosa">
+      <p class="mt-8 text-humo text-xl leading-relaxed max-w-prosa">
         Te lo muestro. Chequeo real, gratis, en 24 horas. Antes de que pagues nada.
       </p>
       <div class="mt-12 flex items-center gap-4 flex-wrap">
@@ -166,7 +167,7 @@ const jsonLd = {
         </a>
         <a
           href={CONTACTO}
-          class="rounded-v3 border border-white/25 hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
+          class="rounded-v3 border filete hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
         >
           Escríbeme
         </a>

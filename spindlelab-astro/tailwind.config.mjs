@@ -25,8 +25,10 @@ export default {
         papel: '#F7F5F0',
         pluma: '#5D6673',
 
-        // Solo dirección C (galería). Es una EXTENSIÓN de marca propuesta, no
-        // aprobada: negro cálido en vez del azulado #0E141B del sitio actual.
+        // Negro cálido de la dirección C. Quedó SUPERADO por 'noche' (#000000), que es
+        // el lienzo real de la referencia y el que Ramón aprobó el 27-sep. Se conserva
+        // porque las maquetas /v3/a, /b, /c y maqueta-inicial lo siguen usando: son el
+        // registro de las tres direcciones que comparaste y no se tocan.
         // Cambia porque el dorado sobre un negro frío tira a mostaza, y sobre
         // este lee como dorado. Papel encima da 17,3:1 y el dorado 7,8:1.
         'tinta-galeria': '#14110E',
@@ -53,6 +55,7 @@ export default {
         // acá no se reemplaza un token de marca: se reemplaza una suposición mía por el
         // valor real de la referencia. Papel encima da 19,3:1 y el dorado 8,7:1, así que
         // el punto dorado sigue leyendo como dorado y no como mostaza.
+        // ✅ APROBADO por Ramón el 27-sep-2026.
         noche: '#000000',
         // Tinta (#131A22, canónica del manual) baja a SUPERFICIE: tarjetas y paneles
         // elevados sobre el negro. Es el rol que el manual §04 ya le da.
@@ -81,8 +84,10 @@ export default {
 
         // --- Sistema tipográfico V2 (solo maquetas /v2/*) ---
         // Manrope toma titulares Y cuerpo; Gabarito queda reservada al wordmark.
-        // El manual §05 hoy asigna Gabarito a titulares, así que esto lo reemplaza y
-        // necesita tu visto bueno. El argumento: si Gabarito aparece en un solo lugar,
+        // El manual §05 hoy asigna Gabarito a titulares, así que esto lo reemplaza.
+        // ✅ APROBADO por Ramón el 27-sep-2026, junto con los titulares en MAYÚSCULAS,
+        // que también van contra el §05. Pendiente: bajar los dos cambios al manual,
+        // porque hasta que eso pase el manual y el sitio dicen cosas distintas. El argumento: si Gabarito aparece en un solo lugar,
         // el wordmark deja de ser «el titular más grande» y pasa a leerse como firma.
         // Manrope ya es de la marca (sistema live v2 de redes, manual §04) y ya está
         // auto-alojada, así que no agrega ni una petición a terceros.

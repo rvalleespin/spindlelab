@@ -79,12 +79,12 @@ const pasos = [
       >
         ¿Te menciona la IA?
       </h1>
-      <p class="mt-8 text-white/60 text-lg md:text-2xl leading-relaxed max-w-prosa">
+      <p class="mt-8 text-humo text-lg md:text-2xl leading-relaxed max-w-prosa">
         Cuando tu cliente pregunta quién puede ayudarlo, ¿sale tu nombre? Pega tu dirección
         web y te lo decimos en 30 segundos. Sin registro, sin dejar tu correo.
       </p>
 
-      <div class="mt-10 border-t border-b border-white/15">
+      <div class="mt-10 border-t border-b filete">
         <form class="chq-form flex flex-col sm:flex-row sm:items-stretch" id="chq-form" novalidate>
           <label for="chq-dominio" class="sr-only">Tu dominio</label>
           <input
@@ -97,7 +97,7 @@ const pasos = [
             spellcheck="false"
             placeholder="tuempresa.cl"
             required
-            class="flex-1 bg-transparent font-mono text-2xl md:text-4xl text-papel placeholder:text-white/25 py-7 md:py-9 outline-none focus-visible:bg-white/[0.04] transition-colors"
+            class="flex-1 bg-transparent font-mono text-2xl md:text-4xl text-papel placeholder:text-humo py-7 md:py-9 outline-none focus-visible:bg-white/[0.04] transition-colors"
           />
           <button
             type="submit"
@@ -112,7 +112,7 @@ const pasos = [
       <div class="chq-error mt-6 text-sm" id="chq-error" role="alert"></div>
       <div id="chq-out" aria-live="polite" class="mt-8"></div>
 
-      <p class="mt-8 text-white/40 text-sm max-w-prosa">
+      <p class="mt-8 text-humo text-sm max-w-prosa">
         Revisamos 21 señales técnicas. Es el mismo chequeo con el que partimos cada proyecto.
       </p>
     </section>
@@ -139,7 +139,7 @@ const pasos = [
           ))
         }
       </div>
-      <p class="mt-4 text-white/35 text-xs font-bold uppercase" style="letter-spacing:0.16em">
+      <p class="mt-4 text-humo text-xs font-bold uppercase" style="letter-spacing:0.16em">
         Bernardo Combeau · fotografía de retrato · sitio y panel · cuatro vistas del mismo proyecto
       </p>
     </section>
@@ -248,17 +248,17 @@ const pasos = [
         <p class="m-0 rotulo text-sm font-bold uppercase" style="letter-spacing:0.16em">
           Los seis valores, juntos
         </p>
-        <p class="m-0 mt-4 text-noche/50 text-base max-w-prosa">
+        <p class="m-0 mt-4 text-noche/65 text-base max-w-prosa">
           En pesos, + IVA. Los publicamos a propósito: la mayoría del rubro no lo hace.
         </p>
         <ul class="list-none p-0 m-0 mt-10 grid gap-x-12 gap-y-5 sm:grid-cols-2">
           {
             [...momentos.flatMap((m) => m.items), ...tambien].map((it) => (
-              <li class="border-t border-noche/20 pt-4 flex flex-wrap items-baseline justify-between gap-x-4">
+              <li class="border-t filete pt-4 flex flex-wrap items-baseline justify-between gap-x-4">
                 <a href={it.href} class="font-bold hover:opacity-55 transition-opacity">
                   {it.n}
                 </a>
-                <span class="text-noche/60 text-sm tabular-nums">{it.p}</span>
+                <span class="text-noche/65 text-sm tabular-nums">{it.p}</span>
               </li>
             ))
           }
@@ -274,11 +274,11 @@ const pasos = [
         Herramientas gratis, sin registro
       </h2>
       <div class="grid gap-x-8 lg:gap-x-12 gap-y-10 md:grid-cols-3">
-        <article class="border-t border-white/30 pt-6">
+        <article class="border-t filete pt-6">
           <h3 class="font-extrabold uppercase m-0 text-xl" style="letter-spacing:-0.02em">
             Chequeo de visibilidad en IA
           </h3>
-          <p class="mt-4 text-white/80 text-base leading-relaxed">
+          <p class="mt-4 text-humo text-base leading-relaxed">
             21 señales, 30 segundos, sin registro.
           </p>
           <a href="#chequeo" class="mt-5 inline-flex items-center gap-2 text-sm font-bold hover:gap-3 transition-all">
@@ -286,11 +286,11 @@ const pasos = [
           </a>
         </article>
 
-        <article class="border-t border-white/30 pt-6">
+        <article class="border-t filete pt-6">
           <h3 class="font-extrabold uppercase m-0 text-xl" style="letter-spacing:-0.02em">
             Verifica y Cumple
           </h3>
-          <p class="mt-4 text-white/80 text-base leading-relaxed">
+          <p class="mt-4 text-humo text-base leading-relaxed">
             Si tu sitio cumple lo técnico de la Ley 21.719, que entra en vigencia el 1 de
             diciembre.
           </p>
@@ -298,11 +298,11 @@ const pasos = [
                en el repo y no se inventa un destino. Falta completarla. -->
         </article>
 
-        <article class="border-t border-white/30 pt-6">
+        <article class="border-t filete pt-6">
           <h3 class="font-extrabold uppercase m-0 text-xl" style="letter-spacing:-0.02em">
             La metodología, publicada
           </h3>
-          <p class="mt-4 text-white/80 text-base leading-relaxed">
+          <p class="mt-4 text-humo text-base leading-relaxed">
             Cómo se calcula cada punto del chequeo, a la vista.
           </p>
           <a href="/diagnostico/" class="mt-5 inline-flex items-center gap-2 text-sm font-bold hover:gap-3 transition-all">
@@ -319,11 +319,11 @@ const pasos = [
       >
         Cómo trabajamos
       </h2>
-      <ol class="list-none p-0 m-0 border-t border-white/10">
+      <ol class="list-none p-0 m-0 border-t filete">
         {
           pasos.map((p) => (
-            <li class="border-b border-white/10 py-8 md:py-11 flex flex-col md:flex-row gap-4 md:gap-12">
-              <span class="text-white/30 font-bold text-sm flex-none md:w-16" style="letter-spacing:0.16em">
+            <li class="border-b filete py-8 md:py-11 flex flex-col md:flex-row gap-4 md:gap-12">
+              <span class="text-humo font-bold text-sm flex-none md:w-16" style="letter-spacing:0.16em">
                 {p.n}
               </span>
               <span
@@ -332,7 +332,7 @@ const pasos = [
               >
                 {p.t}
               </span>
-              <span class="text-white/55 text-lg leading-relaxed max-w-prosa">{p.d}</span>
+              <span class="text-humo text-lg leading-relaxed max-w-prosa">{p.d}</span>
             </li>
           ))
         }
@@ -360,7 +360,7 @@ const pasos = [
         </a>
         <a
           href="#chequeo"
-          class="rounded-v3 border border-noche/25 hover:border-noche text-noche text-sm font-bold px-8 py-4 transition-colors"
+          class="rounded-v3 border filete hover:border-noche text-noche text-sm font-bold px-8 py-4 transition-colors"
         >
           Prefiero correr el chequeo
         </a>

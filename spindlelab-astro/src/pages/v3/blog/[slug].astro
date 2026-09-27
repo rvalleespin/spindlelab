@@ -68,13 +68,13 @@ const fecha = meta.datePublished
   <main>
     <!-- Cabecera en tinta: migas y fecha. El titular es el h1 del artículo, más abajo. -->
     <header class="text-papel px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-12 md:pb-16">
-      <nav aria-label="Migas" class="text-white/35 text-xs font-bold uppercase mb-6" style="letter-spacing:0.16em">
+      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-6" style="letter-spacing:0.16em">
         <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
         <span aria-hidden="true" class="mx-2">·</span>
         <a href="/v3/blog/" class="hover:text-papel transition-colors">Blog</a>
       </nav>
       {fecha && (
-        <p class="text-white/40 text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">
+        <p class="text-humo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">
           <time datetime={meta.datePublished}>{fecha}</time>
         </p>
       )}
@@ -92,7 +92,7 @@ const fecha = meta.datePublished
       >
         ¿Te menciona la IA?
       </h2>
-      <p class="mt-8 text-white/60 text-xl leading-relaxed max-w-prosa">
+      <p class="mt-8 text-humo text-xl leading-relaxed max-w-prosa">
         Pega tu dirección web y te lo decimos en 30 segundos. Sin registro.
       </p>
       <div class="mt-12 flex items-center gap-4 flex-wrap">
@@ -104,7 +104,7 @@ const fecha = meta.datePublished
         </a>
         <a
           href={CONTACTO}
-          class="rounded-v3 border border-white/25 hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
+          class="rounded-v3 border filete hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
         >
           Conversemos tu proyecto
         </a>

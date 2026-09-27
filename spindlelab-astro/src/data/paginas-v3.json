@@ -84,7 +84,9 @@
         "item": "https://spindlelab.cl/metodo/"
       }
     ],
-    "canonical": "https://spindlelab.cl/metodo/"
+    "canonical": "https://spindlelab.cl/metodo/",
+    "foto": "/assets/img/hero-metodo.jpg",
+    "fotoAlt": "Mesa de trabajo durante una sesión de método"
   },
   "diagnostico": {
     "slug": "diagnostico",
@@ -180,7 +182,9 @@
         "item": "https://spindlelab.cl/diagnostico/"
       }
     ],
-    "canonical": "https://spindlelab.cl/diagnostico/"
+    "canonical": "https://spindlelab.cl/diagnostico/",
+    "foto": "/video/evidencia-medicion.jpg",
+    "fotoAlt": "Pantalla con una medición de visibilidad en curso"
   },
   "contacto": {
     "slug": "contacto",
@@ -262,7 +266,9 @@
         "r": "Sí, sin problema. En sectores financieros es práctica habitual y estamos acostumbrados a trabajar bajo NDA."
       }
     ],
-    "canonical": "https://spindlelab.cl/contacto/"
+    "canonical": "https://spindlelab.cl/contacto/",
+    "foto": "/assets/img/hero-contacto.jpg",
+    "fotoAlt": "Escritorio con un computador y una libreta"
   },
   "servicios": {
     "slug": "servicios",
@@ -430,6 +436,8 @@
         }
       ]
     },
-    "canonical": "https://spindlelab.cl/servicios/"
+    "canonical": "https://spindlelab.cl/servicios/",
+    "foto": "/assets/img/hero-servicios.jpg",
+    "fotoAlt": "Equipo revisando el trabajo en pantalla"
   }
 }

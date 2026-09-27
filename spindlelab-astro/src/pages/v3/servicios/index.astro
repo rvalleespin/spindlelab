@@ -19,6 +19,7 @@ import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
 
 import oferta from '../../../data/oferta-v3.json';
+import '../../../styles/campos-v3.css'; // tintes de color, filete, rotulo
 
 const url = 'https://spindlelab.cl/servicios/';
 
@@ -64,10 +65,10 @@ const jsonLd = {
 
   <main class="text-papel">
     <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-16 md:pb-20">
-      <nav aria-label="Migas" class="text-white/35 text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
+      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
         <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
         <span aria-hidden="true" class="mx-2">·</span>
-        <span class="text-white/60">Soluciones</span>
+        <span class="text-humo">Soluciones</span>
       </nav>
       <h1
         class="font-extrabold uppercase m-0"
@@ -75,11 +76,28 @@ const jsonLd = {
       >
         Qué hacemos
       </h1>
-      <p class="mt-10 text-white/60 text-xl md:text-2xl leading-relaxed max-w-prosa">
-        El eje es el SEO técnico, la visibilidad en motores de IA y el desarrollo web.
-        Completamos la ruta con Google y Meta Ads. El contenido creativo lo entregas tú y
-        nosotros lo hacemos funcionar.
-      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
+        <div class="md:col-span-5">
+          <p class="m-0 text-papel text-xl md:text-2xl leading-relaxed">
+            El eje es el SEO técnico, la visibilidad en motores de IA y el desarrollo web.
+            Completamos la ruta con Google y Meta Ads. El contenido creativo lo entregas tú
+            y nosotros lo hacemos funcionar.
+          </p>
+        </div>
+        <div class="md:col-span-6 md:col-start-7">
+          <img
+            src={'/assets/img/hero-servicios.jpg'}
+            alt={'Equipo revisando el trabajo en pantalla'}
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+            class="media-campo"
+          />
+        </div>
+      </div>
+
     </section>
 
     <!-- ORDENADO POR EL MOMENTO DEL CLIENTE, igual que la home. -->
@@ -90,14 +108,14 @@ const jsonLd = {
       >
         ¿Por dónde te toca partir?
       </h2>
-      <p class="text-noche/50 text-sm mb-12 md:mb-16 max-w-prosa">
+      <p class="text-noche/65 text-sm mb-12 md:mb-16 max-w-prosa">
         Valores en pesos, + IVA. Los publicamos a propósito: la mayoría del rubro no lo hace.
       </p>
 
       <div class="grid gap-x-8 lg:gap-x-12 gap-y-14 lg:grid-cols-3">
         {
           oferta.momentos.map((m: any) => (
-            <div class="flex flex-col border-t border-noche/25 pt-6">
+            <div class="flex flex-col border-t filete pt-6">
               <h3
                 class="font-extrabold uppercase m-0 max-w-[18ch]"
                 style="font-size:clamp(1.0625rem,1.5vw,1.375rem); line-height:1.15; letter-spacing:-0.02em"
@@ -109,20 +127,20 @@ const jsonLd = {
                   <li>
                     <a href={it.href} class="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-noche">
                       <span class="block font-bold text-lg group-hover:opacity-55 transition-opacity">{it.n}</span>
-                      <span class="block mt-2 text-noche/60 text-sm leading-relaxed">{it.d}</span>
+                      <span class="block mt-2 text-noche/65 text-sm leading-relaxed">{it.d}</span>
                       <span class="block mt-2 font-bold text-sm">{it.p}</span>
                     </a>
                   </li>
                 ))}
               </ul>
-              {m.nota && <p class="mt-6 text-noche/50 text-sm leading-relaxed">{m.nota}</p>}
+              {m.nota && <p class="mt-6 text-noche/65 text-sm leading-relaxed">{m.nota}</p>}
             </div>
           ))
         }
       </div>
 
-      <div class="mt-16 pt-8 border-t border-noche/15">
-        <span class="text-noche/45 text-xs font-bold uppercase block mb-6" style="letter-spacing:0.16em">
+      <div class="mt-16 pt-8 border-t filete">
+        <span class="text-noche/65 text-xs font-bold uppercase block mb-6" style="letter-spacing:0.16em">
           También
         </span>
         <ul class="list-none p-0 m-0 grid gap-x-10 gap-y-7 sm:grid-cols-2">
@@ -131,7 +149,7 @@ const jsonLd = {
               <li>
                 <a href={t.href} class="group block">
                   <span class="block font-bold group-hover:opacity-55 transition-opacity">{t.n}</span>
-                  <span class="block mt-1.5 text-noche/60 text-sm leading-relaxed">{t.d}</span>
+                  <span class="block mt-1.5 text-noche/65 text-sm leading-relaxed">{t.d}</span>
                   <span class="block mt-1.5 font-bold text-sm">{t.p}</span>
                 </a>
               </li>
@@ -142,7 +160,7 @@ const jsonLd = {
     </section>
 
     <!-- EL LÍMITE, verbatim. Decir qué NO se hace evita el malentendido de alcance. -->
-    <section class="bg-campo-navy text-papel px-6 md:px-medianil py-32 md:py-seccion">
+    <section class="tinte--navy px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 mb-12 md:mb-16"
         style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0"
@@ -150,36 +168,36 @@ const jsonLd = {
         Qué hacemos y qué no
       </h2>
       <div class="grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-2">
-        <div class="border-t border-white/25 pt-6">
+        <div class="border-t filete pt-6">
           <h3 class="font-extrabold uppercase m-0 text-xl" style="letter-spacing:-0.02em">
             Lo hacemos nosotros
           </h3>
           <ul class="list-none p-0 mt-5 mb-0 space-y-3">
             {
               oferta.dentro.map((i: string) => (
-                <li class="flex gap-2.5 text-white/70 text-base leading-relaxed">
-                  <span aria-hidden="true" class="text-white/35">—</span>
+                <li class="flex gap-2.5 text-humo text-base leading-relaxed">
+                  <span aria-hidden="true" class="text-humo">—</span>
                   <span>{i}</span>
                 </li>
               ))
             }
           </ul>
         </div>
-        <div class="border-t border-white/25 pt-6">
+        <div class="border-t filete pt-6">
           <h3 class="font-extrabold uppercase m-0 text-xl" style="letter-spacing:-0.02em">
             Lo pones tú
           </h3>
           <ul class="list-none p-0 mt-5 mb-0 space-y-3">
             {
               oferta.fuera.map((i: string) => (
-                <li class="flex gap-2.5 text-white/70 text-base leading-relaxed">
-                  <span aria-hidden="true" class="text-white/35">—</span>
+                <li class="flex gap-2.5 text-humo text-base leading-relaxed">
+                  <span aria-hidden="true" class="text-humo">—</span>
                   <span>{i}</span>
                 </li>
               ))
             }
           </ul>
-          <p class="mt-6 text-white/50 text-sm leading-relaxed">
+          <p class="mt-6 text-humo text-sm leading-relaxed">
             Si no lo tienes, te conectamos con partners.
           </p>
         </div>
@@ -193,7 +211,7 @@ const jsonLd = {
       >
         Empieza por el chequeo
       </h2>
-      <p class="mt-8 text-white/60 text-xl leading-relaxed max-w-prosa">
+      <p class="mt-8 text-humo text-xl leading-relaxed max-w-prosa">
         Revisamos tu sitio, tu competencia y tu presencia en IA. Sin costo y sin compromiso.
       </p>
       <div class="mt-12 flex items-center gap-4 flex-wrap">
@@ -205,7 +223,7 @@ const jsonLd = {
         </a>
         <a
           href={CONTACTO}
-          class="rounded-v3 border border-white/25 hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
+          class="rounded-v3 border filete hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
         >
           Conversemos tu proyecto
         </a>

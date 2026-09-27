@@ -32,6 +32,27 @@
   justify-content: space-between;
 }
 
+/* El TINTE es el par fondo+crema, sin obligar a ocupar una pantalla. Va aparte de
+ * .campo porque las páginas internas también necesitan bandas de color, pero de alto
+ * natural: una sección de FAQ no es un cartel de pantalla completa. */
+.tinte--navy {
+  background: #0e2a47;
+  color: #e4f1ec;
+}
+.tinte--brasa {
+  background: #da3400;
+  color: #ffffff;
+}
+.tinte--petroleo {
+  background: #0f766e;
+  color: #fff4e2;
+}
+.tinte--ciruela {
+  background: #341f34;
+  color: #ffefdd;
+}
+
+/* Un campo es un tinte que además ocupa la pantalla. */
 .campo--navy {
   background: #0e2a47;
   color: #e4f1ec;
@@ -50,12 +71,9 @@
 }
 
 /* El cuerpo hereda la crema del campo a plena fuerza. Nada de opacidad acá. */
-.campo p,
-.campo h1,
-.campo h2,
-.campo h3,
-.campo li,
-.campo strong {
+.campo p, .campo h1, .campo h2, .campo h3, .campo li, .campo strong,
+[class*='tinte--'] p, [class*='tinte--'] h1, [class*='tinte--'] h2,
+[class*='tinte--'] h3, [class*='tinte--'] li, [class*='tinte--'] strong {
   color: inherit;
 }
 
@@ -63,7 +81,43 @@
  * Global a propósito: también se usa en las secciones de papel, y con opacidad en vez
  * de un color fijo hereda el tono de la sección que lo contiene. */
 .rotulo {
-  opacity: 0.62;
+  /* SIN OPACIDAD. La opacidad da un contraste distinto sobre cada fondo, y eso fue
+   * exactamente lo que reprobó AA: los rótulos del pie quedaban en 2,48:1 y los de las
+   * secciones de papel en 3,94:1, porque el .62 se sumaba a un color ya atenuado.
+   * Color explícito por contexto, medido: */
+  color: #96948e; /* sobre el lienzo negro  6,92:1 */
+}
+.bg-papel .rotulo {
+  color: #636260; /* sobre papel  5,59:1 */
+}
+
+/* TEXTO ATENUADO DENTRO DE UN CAMPO DE COLOR.
+ *
+ * `humo` (#96948E) es el gris del lienzo NEGRO y no sirve sobre color: medido, sobre
+ * petróleo da 1,80:1 y sobre brasa 1,55:1. Dentro de un tinte, lo atenuado se resuelve
+ * con la crema del propio campo, nunca con un gris de otra familia. */
+[class*='tinte--'] .text-humo,
+.campo .text-humo,
+[class*='tinte--'] .rotulo,
+.campo .rotulo {
+  color: inherit;
+  opacity: 0.72; /* navy 7,18:1 · ciruela 7,63:1 */
+}
+
+/* ...SALVO sobre petróleo y brasa, donde no hay margen que gastar. Son fondos de
+ * luminancia media: la crema a plena fuerza ya está en 5,03:1 y 4,70:1, y cualquier
+ * atenuación la tira bajo el 4,5:1 de AA (a 0,72 dan 3,40 y 3,05). Ahí el rótulo va a
+ * plena fuerza y se distingue por TAMAÑO y CAJA, no por opacidad.
+ * Esto corrige de paso el rótulo del campo naranja de la home, que estaba en 2,59:1. */
+.tinte--petroleo .text-humo,
+.campo--petroleo .text-humo,
+.tinte--petroleo .rotulo,
+.campo--petroleo .rotulo,
+.tinte--brasa .text-humo,
+.campo--brasa .text-humo,
+.tinte--brasa .rotulo,
+.campo--brasa .rotulo {
+  opacity: 1;
 }
 
 /* Filete separador, teñido con la crema del campo en vez de blanco al 10%.
@@ -74,8 +128,14 @@
  * `opacity` crea un contexto de apilado, así que el `.filete > * { opacity: 1 }` que
  * puse para compensar no podía funcionar: un hijo nunca supera la opacidad del padre.
  * Se tiñe el BORDE, no el elemento. */
-.campo .filete {
+.campo .filete,
+[class*='tinte--'] .filete {
   border-color: color-mix(in srgb, currentColor 30%, transparent);
+}
+
+/* Filete sobre negro o sobre papel: mismo criterio, teñido con el color del texto. */
+.filete {
+  border-color: color-mix(in srgb, currentColor 28%, transparent);
 }
 
 /* El botón del campo: blanco lleno con texto negro, radio 6px.
