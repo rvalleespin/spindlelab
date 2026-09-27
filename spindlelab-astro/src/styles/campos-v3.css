@@ -104,6 +104,17 @@
   opacity: 0.72; /* navy 7,18:1 · ciruela 7,63:1 */
 }
 
+/* GUARDA CONTRA LA OPACIDAD ANIDADA. Si un .text-humo cuelga de otro .text-humo, las
+ * dos opacidades se multiplican: 0,72 × 0,72 = 0,52, y la crema cae a 4,45:1. Pasó con
+ * las rayas de viñeta dentro de un <li> que ya estaba atenuado. Es el mismo error que
+ * el del .filete, y es fácil de repetir, así que se ataja acá. */
+[class*='tinte--'] .text-humo .text-humo,
+[class*='tinte--'] .rotulo .rotulo,
+.campo .text-humo .text-humo,
+.campo .rotulo .rotulo {
+  opacity: 1;
+}
+
 /* ...SALVO sobre petróleo y brasa, donde no hay margen que gastar. Son fondos de
  * luminancia media: la crema a plena fuerza ya está en 5,03:1 y 4,70:1, y cualquier
  * atenuación la tira bajo el 4,5:1 de AA (a 0,72 dan 3,40 y 3,05). Ahí el rótulo va a

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "verificar": "node scripts/verificar.mjs"
   },
   "dependencies": {
     "astro": "^4.16.18",
