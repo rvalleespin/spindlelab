@@ -1,6 +1,13 @@
-import * as vyc from '/tmp/vyc-sub-wt/verificaycumple/functions/api/chequeo.js';
-import * as spl from '/tmp/spl-main-wt/spindlelab-astro/functions/api/chequeo.js';
+// Los dos chequeos, cada uno de donde vive: el de Verifica y Cumple del worktree que lo
+// tiene, y el de spindlelab.cl de la rama `main`, que es lo que se despliega. Ni uno ni otro
+// de una carpeta de /tmp. Ver rutas.mjs.
+import { rutaEnElRepo, fuenteEnLaRama, moduloDe } from './rutas.mjs';
 import fs from 'node:fs';
+import { pathToFileURL } from 'node:url';
+const RUTA_VYC = rutaEnElRepo('verificaycumple/functions/api/chequeo.js', 'VYC_CHEQUEO_JS');
+const vyc = await import(pathToFileURL(RUTA_VYC).href);
+const FUENTE_SPL = fuenteEnLaRama('spindlelab-astro/functions/api/chequeo.js', 'main', 'SPL_CHEQUEO_JS');
+const spl = await moduloDe(FUENTE_SPL);
 
 let ok=0, malo=0;
 const eq=(n,r,e)=>{ if(JSON.stringify(r)===JSON.stringify(e)) ok++; else {malo++; console.log(`  FALLA ${n}: esperado ${JSON.stringify(e)}, real ${JSON.stringify(r)}`);} };
@@ -196,28 +203,28 @@ console.log('=== 23-sep: las dos listas de página de bloqueo son la MISMA lista
   // llevaba raíces sueltas (`restringid`, `bloquead`, `forbidden`) y el patrón flojo
   // `verify (?:that )?you`, que se comían landings reales. Si una cambia, la otra va detrás en
   // el mismo cambio: esta prueba es la que lo obliga.
-  const lista = (ruta) => {
-    const fuente = fs.readFileSync(ruta, 'utf8');
+  // Se leen los dos FUENTES, no dos rutas escritas a mano.
+  const FUENTE_VYC = fs.readFileSync(RUTA_VYC, 'utf8');
+  const lista = (fuente) => {
     const m = /const RE_TEXTO_BLOQUEO = new RegExp\(\[([\s\S]*?)\]\.join\('\|'\)\);/.exec(fuente);
     return m && m[1].replace(/\s+/g, ' ').trim();
   };
-  const deVyc = lista('/tmp/vyc-sub-wt/verificaycumple/functions/api/chequeo.js');
-  const deSpl = lista('/tmp/spl-main-wt/spindlelab-astro/functions/api/chequeo.js');
+  const deVyc = lista(FUENTE_VYC);
+  const deSpl = lista(FUENTE_SPL.texto);
   eq('las dos listas se encontraron en el código', [!!deVyc, !!deSpl], [true, true]);
   eq('y son literalmente la misma, alternativa por alternativa', deVyc, deSpl);
   // Y los dos topes de la regla son los mismos números en los dos archivos: el 23-sep se
   // tomaron el más estricto de cada lado (16.000 caracteres y 2 enlaces), para que una landing
   // chica y real tenga menos formas de recibir el mensaje del firewall.
-  const numero = (ruta, nombres) => {
-    const fuente = fs.readFileSync(ruta, 'utf8');
+  const numero = (fuente, nombres) => {
     for (const n of nombres) {
       const m = new RegExp(`const ${n} = ([0-9_]+);`).exec(fuente);
       if (m) return Number(m[1].replace(/_/g, ''));
     }
     return null;
   };
-  const VYC = '/tmp/vyc-sub-wt/verificaycumple/functions/api/chequeo.js';
-  const SPL = '/tmp/spl-main-wt/spindlelab-astro/functions/api/chequeo.js';
+  const VYC = FUENTE_VYC;
+  const SPL = FUENTE_SPL.texto;
   eq('el tope de tamaño es el mismo en los dos, y es 16.000',
      [numero(VYC, ['MAX_BLOQUEO_CON_TEXTO']), numero(SPL, ['TOPE_PAGINA_BLOQUEO'])], [16000, 16000]);
   eq('el tope de enlaces es el mismo en los dos, y es 2',

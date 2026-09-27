@@ -1,0 +1,4679 @@
+{
+  "arg": "https://skinology.cl/",
+  "finalUrl": "https://skinology.cl/",
+  "title": "Skinology - Skincare 100% a la medida con tus fórmulas únicas – SKiNOLOGY",
+  "elapsed": 11909,
+  "requests": [
+    {
+      "url": "https://skinology.cl/",
+      "method": "GET",
+      "type": "Document",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201909.837812
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/storefront/assets/storefront/storefronts.moderate.specrules-eb468f32.json",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.410845
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/base.css?v=49896215193624118051773847423",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.412016
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-cart-drawer.css?v=39223250576183958541773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.4123
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-cart.css?v=164708765130180853531773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.412413
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-totals.css?v=15906652033866631521773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.412474
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-price.css?v=47596247576480123001773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.412535
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-discounts.css?v=152760482443307489271773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.41257
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a07da7-80ac-79b2-b2bb-249f33153710/in-cart-upsell-1072/assets/index.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.412619
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/files/Skinology_FINALai-11.png?v=1721351491&width=240",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.413682
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/constants.js?v=132983761750457495441773769752",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.413752
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/pubsub.js?v=25310214064522200911773769752",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.413771
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/global.js?v=7301445359237545521773769752",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.413787
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/details-disclosure.js?v=13653116266235556501773769752",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.4138
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/details-modal.js?v=25581673532751508451773769752",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.413814
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/search-form.js?v=133129549252120666541773769752",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.413828
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/animations.js?v=88693664871331136111773769752",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.413853
+    },
+    {
+      "url": "https://skinology.cl/checkouts/internal/preloads.js?locale=es-CL&default_configuration_id=636911924",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.413868
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.init-shop-user-recognition.es.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.413888
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.init-shop-cart-sync.es.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.413906
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/storefront/assets/storefront/load_feature-1bd60354.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.413923
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/storefront/assets/storefront/origin_trials-318ab40a.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.413939
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/compiled_assets/scripts.js?v=90487813905515327061773839893",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.413951
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-TGNSTPGC",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.419166
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-cart-items.css?v=13033300910818915211773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.4275
+    },
+    {
+      "url": "https://skinology.cl/cdn/fonts/assistant/assistant_n4.9120912a469cad1cc292572851508ca49d12e768.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.428369
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-predictive-search.css?v=118923337488134913561773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.428471
+    },
+    {
+      "url": "https://www.clarity.ms/tag/seusjemezy",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.428735
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/RgqR5x/klaviyo.js?company_id=RgqR5x",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.431558
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/loader.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.431685
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a03384-d7eb-7887-83aa-7e3218532fdd/dondy-whatsapp-chat-widget-98/assets/ChatBubble.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.431707
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.9.4.min.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.433972
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/quantity-popover.css?v=160630540099520878331773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434002
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-card.css?v=120341546515895839841773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434031
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/cart.js?v=25986244538023964561773769752",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434053
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/quantity-popover.js?v=987015268078116491773769752",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434069
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-slideshow.css?v=17933591812325749411773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434084
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-slider.css?v=14039311878856620671773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434098
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-list-social.css?v=35792976012981934991773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434112
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/cart-notification.js?v=133508293167896966491773769752",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434136
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/files/logo_sin_fondo_skincare_a_la_medida_chile_skinology_200x80.png?v=1714875497",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434165
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/Skinology_skincare_personalizado.png?v=1773848782",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434181
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/skinology_skincare_unico_para_ti.png?v=1773777445",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434483
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/WhatsApp_Image_2025-01-17_at_6.11.35_PM.jpg?v=1737148349",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434497
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/antes_y_despu_s_skinology_2.png?v=1773612809",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434511
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/antes_y_despu_s_skinology_3.png?v=1773612839",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.43453
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/skincare_personalizado.png?v=1773425154",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434545
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/RutinacompletaSkinology.jpg?v=1773751927",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434558
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/bernado.png?v=1773426923",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434569
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/Cami_2.png?v=1773426923",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.434583
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/claudia.png?v=1773426923",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.435549
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/jechu.png?v=1773426923",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.435623
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/Frasco_de_laboratorio_y_ciclo_continuo.png?v=1773682146",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.435677
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/WhatsApp_Image_2026-03-16_at_11.20.58_AM.jpg?v=1773682173",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.435697
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/Antonia_Schlesinger_y_Lia_Hojman_Skinology.jpg?v=1735859553",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.435711
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/portada_manifiesto_skinology.png?v=1773929807",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.435722
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/section-image-banner.css?v=124819179385751388401773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.435742
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-accordion.css?v=7971072480289620591773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.435758
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/collapsible-content.css?v=113829722280668215821773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.435775
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/section-footer.css?v=60318643098753476351773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.436607
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-newsletter.css?v=4727253280200485261773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.436651
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-list-menu.css?v=151968516119678728991773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.436676
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-list-payment.css?v=69253961410771838501773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.436689
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/predictive-search.js?v=57209189334897115771773769752",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.43671
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/cart-drawer.js?v=169981311261118214701773769752",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.436727
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a07da7-80ac-79b2-b2bb-249f33153710/in-cart-upsell-1072/assets/vintage_index2.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.436741
+    },
+    {
+      "url": "https://cdn.shopify.com/storefront/standard-actions.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.436771
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.451592
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/bc8540278we853e1abpb62b2c4amde256306m.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.452726
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.453194
+    },
+    {
+      "url": "https://skinology.cl/cdn/s/trekkie.storefront.f1ba865b3fecd812ad617f74ac079261075e9edb.min.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.454103
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/storefront/assets/shop_events_listener-4e26a9ce.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.454241
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.init-shop-cart-sync_BnXZvIaY.es.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483209
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.document_DMcRsBXN.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483282
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.init_CPJSFQau.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.48334
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.register_CyWSTojb.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483365
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.tslib-es6_CHHZATl5.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483387
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.networkErrorMessages_DIkDbO6W.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483404
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.shop-cart-sync_CqxGIP4Q.es.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.48342
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.defineInitFunction_CIjOjzsO.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.48344
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.window_CAbVMZox.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483464
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.casing_U_9x-Om3.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483484
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.utils_CY1J4tRu.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483498
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.v4_D2VNBPfk.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483513
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useUserRecognitionSignal_D5ZIuhZc.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483532
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.storage_DQF5v-OM.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483549
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.hooks_FQ60gQnj.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483564
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.authorize_WtTR8Xbh.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483582
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useEventListener_D5-R6De3.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483594
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.validators_09U1U9sZ.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.483608
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.init-shop-user-recognition_BX1n49y2.es.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.486309
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.shop-user-recognition_BMb4zV0a.es.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.48633
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useElementEventListener_0N1my8kW.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.486348
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.hooks_BdHMoIgb.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.486361
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.context_IZTYG4gY.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.486373
+    },
+    {
+      "url": "https://static-tracking.klaviyo.com/onsite/js/fender_analytics.899102af0d84f.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.505449
+    },
+    {
+      "url": "https://static-tracking.klaviyo.com/onsite/js/static.5ec41f4bb7722.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.507485
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/runtime.f6d8d48e3c930.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.507535
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/sharedUtils.90bf8cf57e4f7.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.507568
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~customerHubRoot~contentBlocks~embeddedIntegrationBlocks~favorites~faq~static~~signup_forms~in_app_forms~post_identification_sync~web_personalization~client_identity~server_side_cookies~reviews~telemetry.684af76542a79.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.507597
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~signup_forms~in_app_forms~telemetry~client_identity~onsite-personalization~onsite-triggering-v2~.2e8a97eddb164.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.507633
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~signup_forms~product_recommendations~in_app_forms~reviews~atlas.35eeb98952326.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.507664
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~signup_forms~in_app_forms.724292397f0a3.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.507712
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/default~signup_forms~in_app_forms.974901e175d2d.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.507756
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/signup_forms.a968412c97105.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.507822
+    },
+    {
+      "url": "https://static-tracking.klaviyo.com/onsite/js/post_identification_sync.fd0785a161164.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.507856
+    },
+    {
+      "url": "https://static-tracking.klaviyo.com/onsite/js/telemetry.f0be3a77f0e9e.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.507894
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/event_adapter.252e6831ea756.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.507923
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~onsite-back-in-stock~ClientStore~~Render~.ee908032ef1c9.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.61663
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/3117.c15b8db8bf42f.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.616736
+    },
+    {
+      "url": "https://fast.a.klaviyo.com/custom-fonts/api/v1/company-fonts/onsite?company_id=RgqR5x",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.643152
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-search.css?v=165164710990765432851773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.667715
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-menu-drawer.css?v=147478906057189667651773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.667775
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/files/aftershave_skinology.png?v=1780598622",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.703541
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-cart-notification.css?v=54116361853792938221773769752",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.70396
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Allura:ital,wght@0,400&family=Dancing+Script:ital,wght@0,400&family=Fira+Sans:ital,wght@0,400&family=Gorditas:ital,wght@0,400&family=Sacramento:ital,wght@0,400&display=swap",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.733362
+    },
+    {
+      "url": "https://skinology.cl/cdn/fonts/assistant/assistant_n7.bf44452348ec8b8efa3aa3068825305886b1c83c.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.739805
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.860195
+    },
+    {
+      "url": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1NSAyNTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiBmaWxsPSJXaW5kb3ciPgo8Zz4KCTxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iMiIvPgoJPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMiIvPgoJPGNpcmNsZSBjeD0iMTIiIGN5PSIxOCIgcj0iMiIvPgo8L2c+Cjwvc3ZnPgo=",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.872743
+    },
+    {
+      "url": "https://cdn.shopify.com/videos/c/o/v/d846cc3f01ca411ba90417eb1649e543.mp4",
+      "method": "GET",
+      "type": "Media",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.891648
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.89936
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.907444
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.907699
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.957231
+    },
+    {
+      "url": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxOTYgMTk2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxOTYgMTk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik05OCw0OXY0Yy0yNC45LDAtNDUsMjAuMS00NSw0NQoJYzAsMTgsMTAuNiwzMy42LDI1LjksNDAuOGwtMS43LDMuNmMwLjEsMCwwLjIsMC4xLDAuMywwLjFjLTAuMSwwLTAuMi0wLjEtMC4zLTAuMWwwLDBDNjAuNSwxMzQuNSw0OSwxMTcuNiw0OSw5OAoJQzQ5LDcwLjksNzAuOSw0OSw5OCw0OXoiLz4KPC9zdmc+Cg==",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.967979
+    },
+    {
+      "url": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxOTYgMTk2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxOTYgMTk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNDcsOThjMCwxOS42LTExLjUsMzYuNS0yOC4yLDQ0LjRsMCwwYy0wLjEsMC0wLjIsMC4xLTAuMywwLjEKCWMwLjEsMCwwLjItMC4xLDAuMy0wLjFsLTEuNy0zLjZDMTMyLjQsMTMxLjYsMTQzLDExNiwxNDMsOThjMC0yNC45LTIwLjEtNDUtNDUtNDV2LTRDMTI1LjEsNDksMTQ3LDcwLjksMTQ3LDk4eiIvPgo8L3N2Zz4K",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201910.968683
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/app/web-pixel-630522164@a3321ca85cf5aaf6b57585fcd8d67b3a~2/pixel.modern.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.033149
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/app/web-pixel-259686708@96420dbe9ea96c426a1b7f364f977719~2/pixel.modern.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.033377
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/custom/web-pixel-shopify-custom-pixel@0530/sandbox/modern/",
+      "method": "GET",
+      "type": "Document",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.576446
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a07da7-80ac-79b2-b2bb-249f33153710/in-cart-upsell-1072/assets/helpers2.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.072757
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a07da7-80ac-79b2-b2bb-249f33153710/in-cart-upsell-1072/assets/rules.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.07281
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a07da7-80ac-79b2-b2bb-249f33153710/in-cart-upsell-1072/assets/domHelpers.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.072843
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a07da7-80ac-79b2-b2bb-249f33153710/in-cart-upsell-1072/assets/popupDomHelpers.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.072874
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a07da7-80ac-79b2-b2bb-249f33153710/in-cart-upsell-1072/assets/addonHelper.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.072919
+    },
+    {
+      "url": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJXaW5kb3ciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTggNXYxNGwxMS03eiIvPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4K",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.077613
+    },
+    {
+      "url": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJXaW5kb3ciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTMgOXY2aDRsNSA1VjRMNyA5SDN6bTEzLjUgM2MwLTEuNzctMS4wMi0zLjI5LTIuNS00LjAzdjguMDVjMS40OC0uNzMgMi41LTIuMjUgMi41LTQuMDJ6TTE0IDMuMjN2Mi4wNmMyLjg5Ljg2IDUgMy41NCA1IDYuNzFzLTIuMTEgNS44NS01IDYuNzF2Mi4wNmM0LjAxLS45MSA3LTQuNDkgNy04Ljc3cy0yLjk5LTcuODYtNy04Ljc3eiIvPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4K",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.078315
+    },
+    {
+      "url": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJXaW5kb3ciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgogICAgPHBhdGggZD0iTTcgMTRINXY1aDV2LTJIN3YtM3ptLTItNGgyVjdoM1Y1SDV2NXptMTIgN2gtM3YyaDV2LTVoLTJ2M3pNMTQgNXYyaDN2M2gyVjVoLTV6Ii8+Cjwvc3ZnPgo=",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.078801
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/consent-tracking-api/v0.1/consent-tracking-api.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.086959
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-1163133236@bdb3cf00f0fa4ad2ccc8185950029b78/sandbox/worker.modern.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.110798
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-1001521460@c63c5b72c8d77be5f2d27d14c081da38/sandbox/worker.modern.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.138368
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-967475508@22e92c2ad45662f435e4801458fb78cc/sandbox/worker.modern.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.149854
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-923140404@8acc938b1a30dc7624e304493ca567d7/sandbox/worker.modern.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.213023
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-849215796@e46595b10fdc5e1674d5c89a8c843bb3/sandbox/worker.modern.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.221414
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-849183028@a2e7513c3708f34b1f617d7ce88f9697/sandbox/worker.modern.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.226954
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-816480564@bd1df4806f96b914851f3ad62aad33e8/sandbox/worker.modern.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.261805
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-713589044@7ae565e198624b39e0856d352b9a6b4c/sandbox/worker.modern.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.265581
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-shopify-app-pixel@0530/sandbox/worker.modern.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.267812
+    },
+    {
+      "url": "https://skinology.cl/api/collect",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.763723
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.795146
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_v3_base.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.800148
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_base.js",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.801498
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_common.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.801694
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_others.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.802311
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_form.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.802621
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_v3_form.css",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.802657
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.908995
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/logs",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.933404
+    },
+    {
+      "url": "https://a.klaviyo.com/forms/api/v3/geo-ip",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.944417
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.shop-user-recognition.es.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.953332
+    },
+    {
+      "url": "https://shop.app/pay/hop?analytics_trace_id=207a6bec-4565-420b-8d11-234f69500bd7&target_origin=https%3A%2F%2Fskinology.cl&client_handle=e69510-2.myshopify.com",
+      "method": "GET",
+      "type": "Document",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.329448
+    },
+    {
+      "url": "https://widget-view.dondy.net/api/WhatsAppWidgetsView/e69510-2.myshopify.com",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.958709
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-1L56MSFZDQ",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.966862
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-1L56MSFZDQ&cx=c&gtm=4e69m1",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.968771
+    },
+    {
+      "url": "https://connect.facebook.net/en_US/fbevents.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.973198
+    },
+    {
+      "url": "https://skinology.cl/apps/in-cart-upsell/has_valid_token",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.977501
+    },
+    {
+      "url": "https://skinology.cl/cart.js?icu=1",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.979558
+    },
+    {
+      "url": "https://scripts.clarity.ms/0.8.70/clarity.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.987522
+    },
+    {
+      "url": "https://static-forms.klaviyo.com/forms/api/v7/RgqR5x/full-forms",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.991106
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.991712
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/storefront/assets/storefront/webmcp-f1e1e155.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201911.994196
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.002611
+    },
+    {
+      "url": "data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAScAA0AAAAABrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAEgAAAABoAAAAcbyQ+3kdERUYAAARgAAAAHgAAACAAMwAGT1MvMgAAAZgAAABGAAAAVi+vS9xjbWFwAAAB8AAAAEAAAAFKwBMjvmdhc3AAAARYAAAACAAAAAj//wADZ2x5ZgAAAkAAAAEJAAABdH33LXtoZWFkAAABMAAAAC0AAAA2BroQKWhoZWEAAAFgAAAAHAAAACQD5QHQaG10eAAAAeAAAAAPAAAAFAYAAABsb2NhAAACMAAAAA4AAAAOAO4AeG1heHAAAAF8AAAAHAAAACAASgAvbmFtZQAAA0wAAADeAAABkorWfVZwb3N0AAAELAAAACkAAABEp3ubLXgBY2BkYADhPPP4OfH8Nl8ZuJkYQODS2fRrCPr/aSYGxq1ALgcDWBoAO60LkwAAAHgBY2BkYGDc+v80gx4TAwgASaAICmABAFB+Arl4AWNgZGBgYGPQYWBiAAIwyQgWc2AAAwAHVQB6eAFjYGRiYJzAwMrAwejDmMbAwOAOpb8ySDK0MDAwMbByMsCBAAMCBKS5pjA4PGB4wMR44P8BBj3GrQymQGFGkBwAjtgK/gAAeAFjYoAAEA1jAwAAZAAHAHgB3crBCcAwDEPRZydkih567CDdf4ZskmLwFBV8xBfCaC4BXkOUmx4sU0h2ngNb9V0vQCxaRKIAevT7fGWuBrEAAAAAAAAAAAA0AHgAugAAeAF9z79Kw1AUx/FzTm7un6QmJtwmQ5Bg1abgEGr/BAqlU6Gju+Cgg1MkQ/sA7Vj7BOnmO/gUvo2Lo14NqIO6/IazfD8HEODtmQCfoANwNsyp2/GJt3WKQrd1NLiYYWx2PBqOsmJMEOznPOTzfSCrhAtbbLdmeFLJV9eKd63WLrZcIcuaEVdssWCKM6pLCfTVOYbz/0pNSMSZKLIZpvh78sAUH6PlMrreTCabP9r+Z/puPZ2ur/RqpQHgh+MIegCnXeM4MRAPjYN//5tj4ZtTjkFqEdmeMShlEJ7tVAly2TAkx6R68Fl4E/aVvn8JqHFQ4JS1434gXKcuL31dDhzs3YbsEOAd/IU88gAAAHgBfY4xTgMxEEVfkk0AgRCioKFxQYd2ZRtpixxgRU2RfhU5q5VWseQ4JdfgAJyBlmNwAM7ABRhZQ0ORwp7nr+eZAa54YwYg9zm3ynPOeFRe8MCrciXOh/KSS76UV5L/iDmrLiS5AeU519wrL3jmSbkS5115yR2fyivJv9kx0ZMZ2RLZw27q87iNQi8EBo5FSPIMw3HqBboi5lKTGAGDp8FKXWP+t9TU01Lj5His1Ba6uM9dTEMwvrFmbf5GC/q2drW3ruXUhhsCiQOjznFlCzYhHUZp4xp76vsvQh89CQAAeAFjYGJABowM6IANLMrEyMTIzMjCXpyRWJBqZshWXJJYBKOMAFHFBucAAAAAAAAB//8AAngBY2BkYGDgA2IJBhBgAvKZGViBJAuYxwAABJsAOgAAeAFjYGBgZACCk535hiD60tn0azAaAEqpB6wAAA==",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.01361
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.038793
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "method": "OPTIONS",
+      "type": "Other",
+      "initiator": "preflight",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.461541
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_common.js",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.324499
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_others.js",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.392444
+    },
+    {
+      "url": "https://widget-view.dondy.net/api/WhatsAppWidgetsView/e69510-2.myshopify.com",
+      "method": "OPTIONS",
+      "type": "Other",
+      "initiator": "preflight",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.797916
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "method": "OPTIONS",
+      "type": "Other",
+      "initiator": "preflight",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.797948
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/destination?id=MC-DNSPLRHPMN&cx=c&gtm=4e69m1",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.814062
+    },
+    {
+      "url": "https://www.googleadservices.com/pagead/conversion/16785062946/?random=1790201912872&cv=11&fst=1790201912872&fmt=7&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270&u_w=800&u_h=600&url=https%3A%2F%2Fskinology.cl%2F&rcb=1&label=R-GICOvGv5QaEKL43sM-&gtm_ee=1&evnid=sh-d0595a99-1E4A-4FEA-90C5-801B98606D08&excid=shp.c3b32c9c-2eea-48e4-86a3-c39b3b19ca6d&tiba=Skinology%20-%20Skincare%20100%25%20a%20la%20medida%20con%20tus%20f%C3%B3rmulas%20%C3%BAnicas%20%E2%80%93%20SKiNOLOGY&frm=0&did=dYmNjMT%2CdNzYwYj&gdid=dYmNjMT&edid=dNzYwYj&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=1436852191.1790201913&ec_m=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review*DIV%3Atrue%3A23%3Atrue*1&ec_sel=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review&ec_meta=DIV%3Atrue%3A23%3Atrue&ec_lat=0&ec_s=1&ec_mode=c&oid=GG_2140275732.1790201913&oidsrc=3&ecsid2=275573607.1790201913&_tu=ABI&gcl_ctr=1~0~0~0&data=event%3Dpage_view%3Bshopify_event_name%3Dpage_viewed%3Bpage_path%3D%2F&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.878491
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=1&frm=0&apvc=1&auid=1436852191.1790201913&dt=Skinology%20-%20Skincare%20100%25%20a%20la%20medida%20con%20tus%20f%C3%B3rmulas%20%C3%BAnicas%20%E2%80%93%20SKiNOLOGY&tid=AW-16785062946&en=page_view&dl=https%3A%2F%2Fskinology.cl%2F&scrsrc=www.googletagmanager.com&rnd=1980874056.1790201913&navt=n&npa=0&did=dYmNjMT&gdid=dYmNjMT&_tu=AAI&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270&tft=1790201912882&tfd=3047&tids=AW-16785062946&fmt=8",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.88301
+    },
+    {
+      "url": "https://ad.doubleclick.net/ccm/s/collect?auid=1436852191.1790201913&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xecxf1&fmt=8",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.883665
+    },
+    {
+      "url": "https://www.googleadservices.com/ccm/conversion/16785062946/?random=1790201912872&cv=11&fst=1790201912872&fmt=3&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270&u_w=800&u_h=600&url=https%3A%2F%2Fskinology.cl%2F&rcb=1&label=R-GICOvGv5QaEKL43sM-&gtm_ee=1&evnid=sh-d0595a99-1E4A-4FEA-90C5-801B98606D08&excid=shp.c3b32c9c-2eea-48e4-86a3-c39b3b19ca6d&tiba=Skinology%20-%20Skincare%20100%25%20a%20la%20medida%20con%20tus%20f%C3%B3rmulas%20%C3%BAnicas%20%E2%80%93%20SKiNOLOGY&frm=0&did=dYmNjMT%2CdNzYwYj&gdid=dYmNjMT&edid=dNzYwYj&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=1436852191.1790201913&ec_m=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review*DIV%3Atrue%3A23%3Atrue*1&ec_sel=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review&ec_meta=DIV%3Atrue%3A23%3Atrue&ec_lat=0&ec_s=1&ec_mode=c&oid=GG_2140275732.1790201913&oidsrc=3&ecsid2=275573607.1790201913&_tu=ABI&gcl_ctr=1~0~0~0&data=event%3Dpage_view%3Bshopify_event_name%3Dpage_viewed%3Bpage_path%3D%2F&category=acrcp_v1_512&em=tv.1&emd=tvd.1",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.883833
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-1L56MSFZDQ&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xf1&_p=1790201910418&_gaz=1&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dYmNjMT.dN2ZkMj.dNTU0Yz&ecid=1143453557&_eu=AAAAAGAC&cid=1083076373.1790201913&ec_mode=c&excid=shp.c3b32c9c-2eea-48e4-86a3-c39b3b19ca6d&frm=0&pscdl=noapi&rcb=1&sr=800x600&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uam=&uamb=0&uap=macOS&uapv=26.6.2&uaw=0&ul=es-419&gaf=2&_s=1&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270&dp=%2F&dt=Skinology%20-%20Skincare%20100%25%20a%20la%20medida%20con%20tus%20f%C3%B3rmulas%20%C3%BAnicas%20%E2%80%93%20SKiNOLOGY&dl=https%3A%2F%2Fskinology.cl%2F&sid=1790201912&sct=1&seg=0&_tu=AAI&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&edid=dNzYwYj&ep.shopify_event_name=page_viewed&evnid=sh-d0595a99-1E4A-4FEA-90C5-801B98606D08&tfd=3142",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.978253
+    },
+    {
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-1L56MSFZDQ&cid=1083076373.1790201913&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xf1&rcb=1&aip=1&dma=0&gcs=G111&gcd=13t3t3t3t5l1&npa=0&frm=0&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.978659
+    },
+    {
+      "url": "https://www.google.cl/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-1L56MSFZDQ&cid=1083076373.1790201913&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xf1&rcb=1&aip=1&dma=0&gcs=G111&gcd=13t3t3t3t5l1&npa=0&frm=0&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270&z=283391148",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.978835
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~ClientStore~~Render.c32e496a6ad43.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.982147
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/default~onsite-back-in-stock~ClientStore~~Render.51432baf2a1fc.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.982395
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/default~back-in-stock-dynamic-button-handler~ClientStore~~Render.d3667a0e5a149.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.982579
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/default~ClientStore~~Render.58b5f7dbc5261.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.98273
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/ClientStore.ee8435877e389.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201912.982891
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "method": "OPTIONS",
+      "type": "Other",
+      "initiator": "preflight",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.28278
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/logs",
+      "method": "OPTIONS",
+      "type": "Other",
+      "initiator": "preflight",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.282809
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "method": "OPTIONS",
+      "type": "Other",
+      "initiator": "preflight",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.28283
+    },
+    {
+      "url": "https://connect.facebook.net/signals/config/1076531043439238?v=2.9.406&r=stable&domain=skinology.cl&hme=8a9e6a9b82926b8f07fd0a2edd8b8f1ef075648059d1bb52ec651feab764c219&ex_m=117%2C236%2C168%2C27%2C81%2C82%2C160%2C77%2C76%2C11%2C178%2C101%2C20%2C152%2C140%2C46%2C84%2C89%2C148%2C173%2C180%2C8%2C4%2C5%2C7%2C6%2C3%2C102%2C114%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C161%2C86%2C125%2C22%2C24%2C51%2C47%2C49%2C48%2C94%2C103%2C107%2C123%2C159%2C162%2C53%2C124%2C29%2C26%2C132%2C78%2C43%2C164%2C163%2C165%2C156%2C154%2C30%2C42%2C66%2C122%2C175%2C79%2C21%2C127%2C92%2C75%2C23%2C96%2C97%2C129%2C95%2C150%2C149%2C153%2C108%2C174%2C177%2C41%2C56%2C126%2C54%2C182%2C109%2C181%2C203%2C250%2C83%2C264%2C263%2C262%2C14%2C25%2C28%2C40%2C62%2C116%2C68%2C10%2C72%2C110%2C111%2C112%2C118%2C143%2C38%2C36%2C145%2C146%2C147%2C142%2C141%2C169%2C85%2C172%2C170%2C171%2C57%2C67%2C136%2C19%2C176%2C52%2C313%2C314%2C315%2C312%2C328%2C353%2C243%2C232%2C69%2C233%2C231%2C356%2C347%2C59%2C244%2C120%2C144%2C91%2C134%2C61%2C133%2C139%2C138%2C65%2C73%2C71%2C166%2C87%2C88%2C128%2C44%2C39%2C60%2C63%2C113%2C179%2C1%2C137%2C16%2C135%2C12%2C2%2C64%2C104%2C15%2C74%2C70%2C131%2C100%2C99%2C184%2C185%2C105%2C106%2C9%2C115%2C183%2C58%2C157%2C98%2C90%2C80%2C130%2C119%2C50%2C158%2C0%2C93%2C151%2C155%2C167%2C45%2C121%2C13%2C186",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.192196
+    },
+    {
+      "url": "https://n.clarity.ms/collect",
+      "method": "POST",
+      "type": "XHR",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.20196
+    },
+    {
+      "url": "https://www.merchant-center-analytics.goog/mc/collect?v=2&tid=MC-DNSPLRHPMN&gtm=45ve69m1v9204467584za200zb9240871403zd9240871403xf1&_p=1790201910418&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dYmNjMT&cid=1083076373.1790201913&excid=shp.c3b32c9c-2eea-48e4-86a3-c39b3b19ca6d&frm=0&pscdl=noapi&rcb=2&sr=800x600&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uam=&uamb=0&uap=macOS&uapv=26.6.2&uaw=0&ul=es-419&_s=1&tag_exp=115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153&dp=%2F&dt=Skinology%20-%20Skincare%20100%25%20a%20la%20medida%20con%20tus%20f%C3%B3rmulas%20%C3%BAnicas%20%E2%80%93%20SKiNOLOGY&dl=https%3A%2F%2Fskinology.cl%2F&sid=1790201913&sct=1&seg=0&_tu=AAI&en=page_view&_fv=1&_ss=1&_ee=1&edid=dNzYwYj&ep.shopify_event_name=page_viewed&evnid=sh-d0595a99-1E4A-4FEA-90C5-801B98606D08&tfd=3421",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.257675
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/onsite-triggering-v2.dcf87f1b4a3b5.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.30384
+    },
+    {
+      "url": "https://n.clarity.ms/collect",
+      "method": "POST",
+      "type": "XHR",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.389041
+    },
+    {
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/16785062946/?random=1562200518&cv=11&fst=1790201912872&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270&u_w=800&u_h=600&url=https%3A%2F%2Fskinology.cl%2F&rcb=1&label=R-GICOvGv5QaEKL43sM-&gtm_ee=1&evnid=sh-d0595a99-1E4A-4FEA-90C5-801B98606D08&excid=shp.c3b32c9c-2eea-48e4-86a3-c39b3b19ca6d&tiba=Skinology%20-%20Skincare%20100%25%20a%20la%20medida%20con%20tus%20f%C3%B3rmulas%20%C3%BAnicas%20%E2%80%93%20SKiNOLOGY&frm=0&did=dYmNjMT%2CdNzYwYj&gdid=dYmNjMT&edid=dNzYwYj&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=1436852191.1790201913&ec_m=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review*DIV%3Atrue%3A23%3Atrue*1&ec_sel=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review&ec_meta=DIV%3Atrue%3A23%3Atrue&ec_lat=0&ec_s=1&ec_mode=c&oidsrc=3&ecsid2=275573607.1790201913&_tu=ABI&gcl_ctr=1~0~0~0&data=event%3Dpage_view%3Bshopify_event_name%3Dpage_viewed%3Bpage_path%3D%2F&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5&ct_cookie_present=false&eoid=CkgKEQjw8c3VBhCU86WJ8qeu_tMBEjMACZjU4D4A4qL1gnF_h8NV1mTX6EVx3ECwvXsl9f5bb4KKbvUCGjt1sbnMfYQGXMQgrt3w_wcB&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCJPasQII29yxAgiH27ECCNPFsQII68yxAgjtzrECCNXPsQII9NqxAgji6rECCOjusQIIkuuxAgjJ47ECCJfUsQIIyduxAgjN5rECCI7nsQIIseGxAgiz4bECCKbdsQIIsN6xAgiA27ECCM3hsQI&cerd=ChTV1b4tlOS-Lcjsvi3z7L4tnem3OA&fsk=ChAI8PHN1QYQ_dfp-t61lKEuEiwAqTZTSHi8jn_g_cKiYlDzc5utqISx5HW_DPL8lGDNEbIye4R2C5rfYnabxBoCPmU&pscrd=IhMImaT-6N2FlwMVBTgeAB2XqSd0OhVodHRwczovL3NraW5vbG9neS5jbC9CV0NoRUk4UEhOMVFZUXpKS1QtczdBX0t1QkFSSXNBRTcyTTdwU0F0RE5KaDk4MXBOak9FVkRwMGx2Q1BWbmc1dnJKTUFOTm1iQmV5Vk5Sb3BHUk00eWFTVXoMCAliCAgAEAAYACAA",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.555989
+    },
+    {
+      "url": "https://www.google.com/pagead/1p-conversion/16785062946/?random=1562200518&cv=11&fst=1790201912872&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270&u_w=800&u_h=600&url=https%3A%2F%2Fskinology.cl%2F&rcb=1&label=R-GICOvGv5QaEKL43sM-&gtm_ee=1&evnid=sh-d0595a99-1E4A-4FEA-90C5-801B98606D08&excid=shp.c3b32c9c-2eea-48e4-86a3-c39b3b19ca6d&tiba=Skinology%20-%20Skincare%20100%25%20a%20la%20medida%20con%20tus%20f%C3%B3rmulas%20%C3%BAnicas%20%E2%80%93%20SKiNOLOGY&frm=0&did=dYmNjMT%2CdNzYwYj&gdid=dYmNjMT&edid=dNzYwYj&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=1436852191.1790201913&ec_m=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review*DIV%3Atrue%3A23%3Atrue*1&ec_sel=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review&ec_meta=DIV%3Atrue%3A23%3Atrue&ec_lat=0&ec_s=1&ec_mode=c&oidsrc=3&ecsid2=275573607.1790201913&_tu=ABI&gcl_ctr=1~0~0~0&data=event%3Dpage_view%3Bshopify_event_name%3Dpage_viewed%3Bpage_path%3D%2F&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5&ct_cookie_present=false&eoid=CkgKEQjw8c3VBhCU86WJ8qeu_tMBEjMACZjU4D4A4qL1gnF_h8NV1mTX6EVx3ECwvXsl9f5bb4KKbvUCGjt1sbnMfYQGXMQgrt3w_wcB&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCJPasQII29yxAgiH27ECCNPFsQII68yxAgjtzrECCNXPsQII9NqxAgji6rECCOjusQIIkuuxAgjJ47ECCJfUsQIIyduxAgjN5rECCI7nsQIIseGxAgiz4bECCKbdsQIIsN6xAgiA27ECCM3hsQI&cerd=ChTV1b4tlOS-Lcjsvi3z7L4tnem3OA&fsk=ChAI8PHN1QYQ_dfp-t61lKEuEiwAqTZTSHi8jn_g_cKiYlDzc5utqISx5HW_DPL8lGDNEbIye4R2C5rfYnabxBoCPmU&pscrd=IhMImaT-6N2FlwMVBTgeAB2XqSd0OhVodHRwczovL3NraW5vbG9neS5jbC9CV0NoRUk4UEhOMVFZUXpKS1QtczdBX0t1QkFSSXNBRTcyTTdwU0F0RE5KaDk4MXBOak9FVkRwMGx2Q1BWbmc1dnJKTUFOTm1iQmV5Vk5Sb3BHUk00eWFTVXoMCAliCAgAEAAYACAA&is_vtc=1&cid=CAQS0wEAQM4h3CnoQof1sEZ3qS2WPl9P6dcsPswpz7mNJsvlT9-KRCoRT96x-ZPVEKuej0PTcirlHJNnvmiorphsr77yR2Cjy0B9G9j6MTXr2RM-3n1kaB8FoBT8tX-D5iSOUu41jLx5XFI06xi_ezatDQweAuVUaVLxRxEskk8pRwrO9ApNzfKwLLKLhJRrNb3CTtIrDdkP4BjNDMKFK23PuGkOCorBQizm5X8OcnOPa8jwLmbR0cTPnuVb5695OqZTjLwhtR8br5zqQiLk4zbPyDfQk5-u&random=2473804934",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.844066
+    },
+    {
+      "url": "https://www.google.cl/pagead/1p-conversion/16785062946/?random=1562200518&cv=11&fst=1790201912872&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270&u_w=800&u_h=600&url=https%3A%2F%2Fskinology.cl%2F&rcb=1&label=R-GICOvGv5QaEKL43sM-&gtm_ee=1&evnid=sh-d0595a99-1E4A-4FEA-90C5-801B98606D08&excid=shp.c3b32c9c-2eea-48e4-86a3-c39b3b19ca6d&tiba=Skinology%20-%20Skincare%20100%25%20a%20la%20medida%20con%20tus%20f%C3%B3rmulas%20%C3%BAnicas%20%E2%80%93%20SKiNOLOGY&frm=0&did=dYmNjMT%2CdNzYwYj&gdid=dYmNjMT&edid=dNzYwYj&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=1436852191.1790201913&ec_m=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review*DIV%3Atrue%3A23%3Atrue*1&ec_sel=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review&ec_meta=DIV%3Atrue%3A23%3Atrue&ec_lat=0&ec_s=1&ec_mode=c&oidsrc=3&ecsid2=275573607.1790201913&_tu=ABI&gcl_ctr=1~0~0~0&data=event%3Dpage_view%3Bshopify_event_name%3Dpage_viewed%3Bpage_path%3D%2F&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5&ct_cookie_present=false&eoid=CkgKEQjw8c3VBhCU86WJ8qeu_tMBEjMACZjU4D4A4qL1gnF_h8NV1mTX6EVx3ECwvXsl9f5bb4KKbvUCGjt1sbnMfYQGXMQgrt3w_wcB&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCJPasQII29yxAgiH27ECCNPFsQII68yxAgjtzrECCNXPsQII9NqxAgji6rECCOjusQIIkuuxAgjJ47ECCJfUsQIIyduxAgjN5rECCI7nsQIIseGxAgiz4bECCKbdsQIIsN6xAgiA27ECCM3hsQI&cerd=ChTV1b4tlOS-Lcjsvi3z7L4tnem3OA&fsk=ChAI8PHN1QYQ_dfp-t61lKEuEiwAqTZTSHi8jn_g_cKiYlDzc5utqISx5HW_DPL8lGDNEbIye4R2C5rfYnabxBoCPmU&is_vtc=1&cid=CAQS0wEAQM4h3CnoQof1sEZ3qS2WPl9P6dcsPswpz7mNJsvlT9-KRCoRT96x-ZPVEKuej0PTcirlHJNnvmiorphsr77yR2Cjy0B9G9j6MTXr2RM-3n1kaB8FoBT8tX-D5iSOUu41jLx5XFI06xi_ezatDQweAuVUaVLxRxEskk8pRwrO9ApNzfKwLLKLhJRrNb3CTtIrDdkP4BjNDMKFK23PuGkOCorBQizm5X8OcnOPa8jwLmbR0cTPnuVb5695OqZTjLwhtR8br5zqQiLk4zbPyDfQk5-u&random=2473804934&ipr=y&pscrd=IhMImaT-6N2FlwMVBTgeAB2XqSd0OhVodHRwczovL3NraW5vbG9neS5jbC9CV0NoRUk4UEhOMVFZUXpKS1QtczdBX0t1QkFSSXNBRTcyTTdwU0F0RE5KaDk4MXBOak9FVkRwMGx2Q1BWbmc1dnJKTUFOTm1iQmV5Vk5Sb3BHUk00eWFTVXoMCAliCAgAEAAYACAAggETcAGIAQHiAQEC8QGGN2V38UTcPw",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.847458
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/4014.b5fec642c6440.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.948266
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/styles.34eba46798a60.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.948786
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~onsite-personalization~Render.85bb31baf2492.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.949062
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~Render~customerHubRoot.00ecb29b13072.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.949251
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~Render.70af32cdecf97.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.949424
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/default~in_app_forms~onsite-personalization~Render.67e2daa7ce8ad.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.949592
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/Render.c23999bf4416b.js?cb=2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201913.949689
+    },
+    {
+      "url": "https://d3k81ch9hvuctc.cloudfront.net/company/RgqR5x/images/8a19240a-d6b9-492b-9383-3e43e117f130.jpeg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201914.108203
+    },
+    {
+      "url": "https://d3k81ch9hvuctc.cloudfront.net/company/RgqR5x/images/92b74900-51d2-46cf-abe4-39ae42dbdd18.jpeg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201914.10828
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/firasans/v18/va9E4kDNxMZdWfMOD5Vvl4jLazX3dA.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201914.121399
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "via": "iframe",
+      "viaUrl": "",
+      "ts": 1790201914.359402
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-1163133236@bdb3cf00f0fa4ad2ccc8185950029b78/sandbox/worker.modern.js",
+      "ts": 1790201914.36321
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-967475508@22e92c2ad45662f435e4801458fb78cc/sandbox/worker.modern.js",
+      "ts": 1790201914.365673
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-1001521460@c63c5b72c8d77be5f2d27d14c081da38/sandbox/worker.modern.js",
+      "ts": 1790201914.362704
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-849215796@e46595b10fdc5e1674d5c89a8c843bb3/sandbox/worker.modern.js",
+      "ts": 1790201914.365488
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-849183028@a2e7513c3708f34b1f617d7ce88f9697/sandbox/worker.modern.js",
+      "ts": 1790201914.363399
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-923140404@8acc938b1a30dc7624e304493ca567d7/sandbox/worker.modern.js",
+      "ts": 1790201914.365331
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-shopify-app-pixel@0530/sandbox/worker.modern.js",
+      "ts": 1790201914.363025
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-816480564@bd1df4806f96b914851f3ad62aad33e8/sandbox/worker.modern.js",
+      "ts": 1790201914.365613
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-713589044@7ae565e198624b39e0856d352b9a6b4c/sandbox/worker.modern.js",
+      "ts": 1790201914.362739
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-1163133236@bdb3cf00f0fa4ad2ccc8185950029b78.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-1163133236@bdb3cf00f0fa4ad2ccc8185950029b78/sandbox/worker.modern.js",
+      "ts": 1790201914.463332
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-1001521460@c63c5b72c8d77be5f2d27d14c081da38.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-1001521460@c63c5b72c8d77be5f2d27d14c081da38/sandbox/worker.modern.js",
+      "ts": 1790201914.466934
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-713589044@7ae565e198624b39e0856d352b9a6b4c.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-713589044@7ae565e198624b39e0856d352b9a6b4c/sandbox/worker.modern.js",
+      "ts": 1790201914.46815
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-923140404@8acc938b1a30dc7624e304493ca567d7.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-923140404@8acc938b1a30dc7624e304493ca567d7/sandbox/worker.modern.js",
+      "ts": 1790201914.469704
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-849183028@a2e7513c3708f34b1f617d7ce88f9697.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-849183028@a2e7513c3708f34b1f617d7ce88f9697/sandbox/worker.modern.js",
+      "ts": 1790201914.488447
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-816480564@bd1df4806f96b914851f3ad62aad33e8.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-816480564@bd1df4806f96b914851f3ad62aad33e8/sandbox/worker.modern.js",
+      "ts": 1790201914.493015
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-shopify-app-pixel@0530.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-shopify-app-pixel@0530/sandbox/worker.modern.js",
+      "ts": 1790201914.496407
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-849215796@e46595b10fdc5e1674d5c89a8c843bb3.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-849215796@e46595b10fdc5e1674d5c89a8c843bb3/sandbox/worker.modern.js",
+      "ts": 1790201914.497594
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-967475508@22e92c2ad45662f435e4801458fb78cc.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-967475508@22e92c2ad45662f435e4801458fb78cc/sandbox/worker.modern.js",
+      "ts": 1790201914.498724
+    },
+    {
+      "url": "https://ct.pinterest.com/user/?cb=1790201914571&ed=%7B%22np%22%3A%22shopify-web-pixel%22%2C%22eventID%22%3A%22sh-d0595a99-1E4A-4FEA-90C5-801B98606D08%22%2C%22is_product_page%22%3A%22false%22%7D&ad=%7B%22mh%22%3A%22987bb863%22%2C%22sh%22%3A600%2C%22sw%22%3A800%2C%22loc%22%3A%22https%3A%2F%2Fskinology.cl%2F%22%2C%22if%22%3Atrue%2C%22language%22%3A%22es-419%22%7D&pd=%7B%22np%22%3A%22shopify-web-pixel%22%2C%22external_id%22%3A%22c820b7687dab062d895146fa405d73be72705a426d3e1d5289cadbc5af6bfa47%22%7D&tid=2613682208670",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-713589044@7ae565e198624b39e0856d352b9a6b4c/sandbox/worker.modern.js",
+      "ts": 1790201914.588369
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201914.614171
+    },
+    {
+      "url": "https://analytics.tiktok.com/i18n/pixel/shopify.js?sdkid=D1TBGAJC77UAVF9UIDTG&lib=ttq",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-967475508@22e92c2ad45662f435e4801458fb78cc/sandbox/worker.modern.js",
+      "ts": 1790201914.627429
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201914.667506
+    },
+    {
+      "url": "https://ct.pinterest.com/v3/?cb=1790201914571&ad=%7B%22mh%22%3A%22987bb863%22%2C%22ua%22%3A%22Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20HeadlessChrome%2F153.0.0.0%20Safari%2F537.36%22%2C%22sh%22%3A600%2C%22sw%22%3A800%2C%22loc%22%3A%22https%3A%2F%2Fskinology.cl%2F%22%2C%22if%22%3Atrue%2C%22language%22%3A%22es-419%22%2C%22is_eu%22%3Afalse%2C%22unauthIdDataSource%22%3A%22fpc_ls%22%7D&pd=%7B%22np%22%3A%22shopify-web-pixel%22%2C%22external_id%22%3A%22c820b7687dab062d895146fa405d73be72705a426d3e1d5289cadbc5af6bfa47%22%2C%22pin_unauth%22%3A%22dWlkPVl6RTVNbUpoWXpRdFpUVTRaUzAwTlRJeUxUZzROemt0TnpNNU5UQmxPVFExWVRZNA%22%7D&ov=%7B%22tkp%22%3A%22stag%22%2C%22version%22%3A%220.92%22%2C%22env%22%3A%22prod%22%7D&tid=2613682208670&event=init",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-713589044@7ae565e198624b39e0856d352b9a6b4c/sandbox/worker.modern.js",
+      "ts": 1790201914.775846
+    },
+    {
+      "url": "https://cdn.shopify.com/proxy/c692d85570dbddc4412335917e83dda4069ffaa1ea958fe5b11b05528cfc5895/api.goaffpro.com/loader.js?shop=e69510-2.myshopify.com&sp-cache-control=cHVibGljLCBtYXgtYWdlPTkwMA",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201914.884821
+    },
+    {
+      "url": "https://chimpstatic.com/mcjs-connected/js/users/b19c3080773a8391a44aad1ee/14509f3d8265c44440e1211e0.js?shop=e69510-2.myshopify.com",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201914.884924
+    },
+    {
+      "url": "https://app.octaneai.com/b37763ciknxkjt95/shopify.js?x=RNJggf8ajLVOOylE&shop=e69510-2.myshopify.com",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201914.885007
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.reportAssetMetrics_Ds4otafy.esm.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201914.885548
+    },
+    {
+      "url": "https://c.clarity.ms/c.gif",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201914.886962
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/polyfills.QSVzdYsv.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201914.898524
+    },
+    {
+      "url": "https://ct.pinterest.com/v3/?cb=1790201914571&ed=%7B%22np%22%3A%22shopify-web-pixel%22%2C%22eventID%22%3A%22sh-d0595a99-1E4A-4FEA-90C5-801B98606D08%22%2C%22is_product_page%22%3A%22false%22%7D&ad=%7B%22mh%22%3A%22987bb863%22%2C%22ua%22%3A%22Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20HeadlessChrome%2F153.0.0.0%20Safari%2F537.36%22%2C%22sh%22%3A600%2C%22sw%22%3A800%2C%22loc%22%3A%22https%3A%2F%2Fskinology.cl%2F%22%2C%22if%22%3Atrue%2C%22language%22%3A%22es-419%22%2C%22is_eu%22%3Afalse%2C%22unauthIdDataSource%22%3A%22fpc_ls%22%7D&pd=%7B%22np%22%3A%22shopify-web-pixel%22%2C%22client_user_agent%22%3A%22Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20HeadlessChrome%2F153.0.0.0%20Safari%2F537.36%22%2C%22external_id%22%3A%22c820b7687dab062d895146fa405d73be72705a426d3e1d5289cadbc5af6bfa47%22%2C%22pin_unauth%22%3A%22dWlkPVl6RTVNbUpoWXpRdFpUVTRaUzAwTlRJeUxUZzROemt0TnpNNU5UQmxPVFExWVRZNA%22%7D&ov=%7B%22tkp%22%3A%22stag%22%2C%22version%22%3A%220.92%22%2C%22env%22%3A%22prod%22%7D&tid=2613682208670&event=PageVisit",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-713589044@7ae565e198624b39e0856d352b9a6b4c/sandbox/worker.modern.js",
+      "ts": 1790201914.904529
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.000256
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/files/Skinology_huella.png?crop=center&height=32&v=1714874508&width=32",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.086174
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.086446
+    },
+    {
+      "url": "https://analytics.tiktok.com/i18n/pixel/static/shopify.NWUzMmFkMi4wLjAuNjUw.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-967475508@22e92c2ad45662f435e4801458fb78cc/sandbox/worker.modern.js",
+      "ts": 1790201914.991479
+    },
+    {
+      "url": "https://analytics.tiktok.com/api/v2/shopify_pixel",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-967475508@22e92c2ad45662f435e4801458fb78cc/sandbox/worker.modern.js",
+      "ts": 1790201915.057547
+    },
+    {
+      "url": "https://analytics.tiktok.com/api/v2/shopify_pixel",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-967475508@22e92c2ad45662f435e4801458fb78cc/sandbox/worker.modern.js",
+      "ts": 1790201915.057978
+    },
+    {
+      "url": "https://analytics-ipv6.tiktokw.us/ipv6/enrich_ipv6",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "worker",
+      "viaUrl": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-967475508@22e92c2ad45662f435e4801458fb78cc/sandbox/worker.modern.js",
+      "ts": 1790201915.058298
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/app.xM1mGn7i.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.136407
+    },
+    {
+      "url": "https://c.bing.com/c.gif?ctsa=mr&CtsSyncId=F85F792CDD1A4B90BC366A2566CDEAA0&RedC=c.clarity.ms&MXFR=027F8761F6826EFD12FE90BCF282601E",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.236548
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/esnext-vendor.D7ldIee_.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.294102
+    },
+    {
+      "url": "https://c.clarity.ms/c.gif?ctsa=mr&CtsSyncId=F85F792CDD1A4B90BC366A2566CDEAA0&MUID=3D0BDDCA769E612433EECA17778B60A2",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "other",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.415609
+    },
+    {
+      "url": "https://app.octaneai.com/get_analytics_engine/b37763ciknxkjt95",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.420085
+    },
+    {
+      "url": "https://app.octaneai.com/get_user_info/b37763ciknxkjt95",
+      "method": "POST",
+      "type": "XHR",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.422036
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/context-browser.Jn5Sgb3K.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.518425
+    },
+    {
+      "url": "https://tracking.aws.judge.me/widgets/track_bulk_events?_events_count=1",
+      "method": "POST",
+      "type": "XHR",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.534929
+    },
+    {
+      "url": "https://n.clarity.ms/collect",
+      "method": "POST",
+      "type": "XHR",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.537426
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/addresses-is-address-empty.CxCyzHx4.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.602573
+    },
+    {
+      "url": "https://app.octaneai.com/b37763ciknxkjt95/utrk",
+      "method": "POST",
+      "type": "XHR",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.648295
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/shop-pay-ProgressIntercepts.CUIOGWLT.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.739744
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/checkout-updaters-helpers.Dm0286LB.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.824374
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.860102
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/shared-shop-theme.CR2ag9Cw.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.903232
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/consent-manager-shared.CL6EPkRJ.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201915.98411
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/mobile-checkout-sdk-MobileCheckoutSdkClient.Bb5LDFpS.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201916.182687
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/apple-pay-errors.hqeyInIx.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201916.626454
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/receipt-mapper-load-recovery.DLaSNNz4.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201916.747522
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/receipt-eager-mappers.B0Kd5qPd.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201916.830412
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/shared-report-graphql-error.BWZSu59I.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201916.912737
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/shop-pay-normalizeBuyerDetails.CXuZoZ3k.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201917.001715
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/context-CheckoutSheetProtocolClient.C6THFGkK.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201917.07563
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/utilities-shopCashMoney.CB8KYVd2.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201917.151792
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/graphql-PaymentSessionMutation.WJMpH6_I.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201917.226369
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hydrate.B4pmcIW0.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201917.298627
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/constants.BeVo-AXm.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201917.439334
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useReplaceShopPayInHistory.Dlfv4t9b.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201917.513686
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/locale-es.CV1Mk9lU.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201917.599033
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/OnePage.CTZ3e6oU.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201917.683758
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/components-DeliveryTransition.C5pfxf1h.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201917.774928
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/localization-index.DEUXx-2-.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201917.869848
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/useShopPayButtonClassName.kFL-m-dH.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201917.949849
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useShouldRevealCustomization.QgSG5VE9.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201918.048646
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/models-ShopPayBuyerDetails.model.hZduhJXj.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201918.122892
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useCanChangeCompanyLocation.BJy3JeTZ.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201918.193046
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/ChangeCompanyLocationLink.DS-ofwr4.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201918.273079
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/BillingAddressForm.BMpmE0Ia.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201918.347271
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useSuppressShopPayModalOnLoad.n1vi9sGT.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201918.423925
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/PhoneField.DrjH1_ZP.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201918.538993
+    },
+    {
+      "url": "https://n.clarity.ms/collect",
+      "method": "POST",
+      "type": "XHR",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201918.60708
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useUnauthenticatedErrorModal.Dha6y8XB.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201918.611909
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Popover.DnnkL6nF.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201918.687982
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Choice.DKU0inNi.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201918.759631
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Checkbox.q2hVg8C9.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201918.851555
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useForceShopPayUrl.B_ZGd_Tf.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201918.960696
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/ImpressionEventCapture.BsC-EdmH.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201919.042324
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/ShopPayLogo.8_Z8Cs8E.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201919.140209
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useWalletsTimeout.BVBD7doF.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201919.233131
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/components-RedirectionNotice.module.Cd3lddYk.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201919.313684
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Monorail-monorailMetric-wallets.iyAJRt0o.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201919.413588
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/shop-pay-installments-monorail.BrJ9sxq3.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201919.491021
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/MarketsProDisclaimer.CTjO5Rmc.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201919.574056
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/IncentiveBadge.CZVYbYKR.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201919.660746
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/shipping-methods-grouping.BUOHnBlw.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201919.742101
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Section-SectionStyleOverride.BQ7Sy_WU.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201919.819172
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/TransitionHeight.Dxi70V4k.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201919.895769
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/AutocompleteField-hooks.Cp2YKCy4.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201919.972302
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/PendingShipping.BVmLGOai.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201920.066841
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/StickyPayButton-StickyPayButton.module.BocS5s95.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201920.154502
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Switch.DyKsmGjr.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201920.235935
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-payment-button.CopCNxdz.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201920.31542
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/useAddressMutationsWithNegotiation.mNidQgq1.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201920.398837
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/PaymentIcon.4bgG9u4I.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201920.495014
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/PaymentLine.P9dGeH3_.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201920.601323
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Theme-ThemeOverride.vPs1l939.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201920.742816
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useUpdateCheckoutAddress.BT6ILTbf.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201920.828977
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/payment-usePaymentExemptionReason.Cvb9MeB9.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201920.921144
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useShopPayProgressIntercepts.BdDND3Gw.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201921.025049
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Section.BxdkE0nu.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201921.114139
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/PaymentErrorBanner.CM4habRT.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201921.245131
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useGeneralPaymentErrorMessage.CmuVUfD3.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201921.345296
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-usePreselectSpi.CGKpL4vr.js",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "script",
+      "via": "page",
+      "viaUrl": "https://skinology.cl/",
+      "ts": 1790201921.427888
+    }
+  ],
+  "responses": [
+    {
+      "url": "https://skinology.cl/",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/base.css?v=49896215193624118051773847423",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-cart-drawer.css?v=39223250576183958541773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-cart.css?v=164708765130180853531773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-totals.css?v=15906652033866631521773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-price.css?v=47596247576480123001773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-discounts.css?v=152760482443307489271773769752",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a07da7-80ac-79b2-b2bb-249f33153710/in-cart-upsell-1072/assets/index.css",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.init-shop-cart-sync.es.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.init-shop-user-recognition.es.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/RgqR5x/klaviyo.js?company_id=RgqR5x",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/storefront/standard-actions.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/storefront/assets/storefront/storefronts.moderate.specrules-eb468f32.json",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a07da7-80ac-79b2-b2bb-249f33153710/in-cart-upsell-1072/assets/vintage_index2.js",
+      "status": 200
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-TGNSTPGC",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/storefront/assets/storefront/origin_trials-318ab40a.js",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/signup_forms.a968412c97105.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/event_adapter.252e6831ea756.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/runtime.f6d8d48e3c930.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~signup_forms~in_app_forms.724292397f0a3.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/default~signup_forms~in_app_forms.974901e175d2d.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/loader.js",
+      "status": 200
+    },
+    {
+      "url": "https://static-tracking.klaviyo.com/onsite/js/post_identification_sync.fd0785a161164.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static-tracking.klaviyo.com/onsite/js/telemetry.f0be3a77f0e9e.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static-tracking.klaviyo.com/onsite/js/static.5ec41f4bb7722.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static-tracking.klaviyo.com/onsite/js/fender_analytics.899102af0d84f.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~signup_forms~product_recommendations~in_app_forms~reviews~atlas.35eeb98952326.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~signup_forms~in_app_forms~telemetry~client_identity~onsite-personalization~onsite-triggering-v2~.2e8a97eddb164.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~customerHubRoot~contentBlocks~embeddedIntegrationBlocks~favorites~faq~static~~signup_forms~in_app_forms~post_identification_sync~web_personalization~client_identity~server_side_cookies~reviews~telemetry.684af76542a79.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.init-shop-cart-sync_BnXZvIaY.es.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/sharedUtils.90bf8cf57e4f7.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.init_CPJSFQau.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.register_CyWSTojb.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.tslib-es6_CHHZATl5.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.document_DMcRsBXN.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/Skinology_skincare_personalizado.png?v=1773848782",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.networkErrorMessages_DIkDbO6W.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.window_CAbVMZox.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.utils_CY1J4tRu.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.shop-cart-sync_CqxGIP4Q.es.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.storage_DQF5v-OM.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.hooks_FQ60gQnj.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.v4_D2VNBPfk.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.defineInitFunction_CIjOjzsO.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.authorize_WtTR8Xbh.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useEventListener_D5-R6De3.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.casing_U_9x-Om3.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.shop-user-recognition_BMb4zV0a.es.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.context_IZTYG4gY.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.validators_09U1U9sZ.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.init-shop-user-recognition_BX1n49y2.es.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useUserRecognitionSignal_D5ZIuhZc.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useElementEventListener_0N1my8kW.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.hooks_BdHMoIgb.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a03384-d7eb-7887-83aa-7e3218532fdd/dondy-whatsapp-chat-widget-98/assets/ChatBubble.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-list-social.css?v=35792976012981934991773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/section-image-banner.css?v=124819179385751388401773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/section-footer.css?v=60318643098753476351773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-newsletter.css?v=4727253280200485261773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-list-menu.css?v=151968516119678728991773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-card.css?v=120341546515895839841773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/files/logo_sin_fondo_skincare_a_la_medida_chile_skinology_200x80.png?v=1714875497",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-list-payment.css?v=69253961410771838501773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/quantity-popover.css?v=160630540099520878331773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-slideshow.css?v=17933591812325749411773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/files/Skinology_FINALai-11.png?v=1721351491&width=240",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-slider.css?v=14039311878856620671773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-accordion.css?v=7971072480289620591773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/fonts/assistant/assistant_n4.9120912a469cad1cc292572851508ca49d12e768.woff2",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/collapsible-content.css?v=113829722280668215821773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/storefront/assets/storefront/load_feature-1bd60354.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/pubsub.js?v=25310214064522200911773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/search-form.js?v=133129549252120666541773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/details-modal.js?v=25581673532751508451773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/constants.js?v=132983761750457495441773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/global.js?v=7301445359237545521773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/details-disclosure.js?v=13653116266235556501773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/cart-drawer.js?v=169981311261118214701773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/quantity-popover.js?v=987015268078116491773769752",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/skinology_skincare_unico_para_ti.png?v=1773777445",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~onsite-back-in-stock~ClientStore~~Render~.ee908032ef1c9.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-predictive-search.css?v=118923337488134913561773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-cart-items.css?v=13033300910818915211773769752",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/WhatsApp_Image_2025-01-17_at_6.11.35_PM.jpg?v=1737148349",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/cart.js?v=25986244538023964561773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.9.4.min.js",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/3117.c15b8db8bf42f.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/cart-notification.js?v=133508293167896966491773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/storefront/assets/shop_events_listener-4e26a9ce.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/s/trekkie.storefront.f1ba865b3fecd812ad617f74ac079261075e9edb.min.js",
+      "status": 200
+    },
+    {
+      "url": "https://fast.a.klaviyo.com/custom-fonts/api/v1/company-fonts/onsite?company_id=RgqR5x",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-menu-drawer.css?v=147478906057189667651773769752",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/antes_y_despu_s_skinology_2.png?v=1773612809",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-search.css?v=165164710990765432851773769752",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/antes_y_despu_s_skinology_3.png?v=1773612839",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/files/aftershave_skinology.png?v=1780598622",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/component-cart-notification.css?v=54116361853792938221773769752",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/skincare_personalizado.png?v=1773425154",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/RutinacompletaSkinology.jpg?v=1773751927",
+      "status": 200
+    },
+    {
+      "url": "https://www.clarity.ms/tag/seusjemezy",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/predictive-search.js?v=57209189334897115771773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/assets/animations.js?v=88693664871331136111773769752",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/t/25/compiled_assets/scripts.js?v=90487813905515327061773839893",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/checkouts/internal/preloads.js?locale=es-CL&default_configuration_id=636911924",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/bc8540278we853e1abpb62b2c4amde256306m.js",
+      "status": 200
+    },
+    {
+      "url": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1NSAyNTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiBmaWxsPSJXaW5kb3ciPgo8Zz4KCTxjaXJjbGUgY3g9IjEyIiBjeT0iNiIgcj0iMiIvPgoJPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMiIvPgoJPGNpcmNsZSBjeD0iMTIiIGN5PSIxOCIgcj0iMiIvPgo8L2c+Cjwvc3ZnPgo=",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/bernado.png?v=1773426923",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/Cami_2.png?v=1773426923",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/claudia.png?v=1773426923",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/fonts/assistant/assistant_n7.bf44452348ec8b8efa3aa3068825305886b1c83c.woff2",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/jechu.png?v=1773426923",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/Frasco_de_laboratorio_y_ciclo_continuo.png?v=1773682146",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/Antonia_Schlesinger_y_Lia_Hojman_Skinology.jpg?v=1735859553",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/WhatsApp_Image_2026-03-16_at_11.20.58_AM.jpg?v=1773682173",
+      "status": 200
+    },
+    {
+      "url": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxOTYgMTk2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxOTYgMTk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik05OCw0OXY0Yy0yNC45LDAtNDUsMjAuMS00NSw0NQoJYzAsMTgsMTAuNiwzMy42LDI1LjksNDAuOGwtMS43LDMuNmMwLjEsMCwwLjIsMC4xLDAuMywwLjFjLTAuMSwwLTAuMi0wLjEtMC4zLTAuMWwwLDBDNjAuNSwxMzQuNSw0OSwxMTcuNiw0OSw5OAoJQzQ5LDcwLjksNzAuOSw0OSw5OCw0OXoiLz4KPC9zdmc+Cg==",
+      "status": 200
+    },
+    {
+      "url": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxOTYgMTk2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxOTYgMTk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNDcsOThjMCwxOS42LTExLjUsMzYuNS0yOC4yLDQ0LjRsMCwwYy0wLjEsMC0wLjIsMC4xLTAuMywwLjEKCWMwLjEsMCwwLjItMC4xLDAuMy0wLjFsLTEuNy0zLjZDMTMyLjQsMTMxLjYsMTQzLDExNiwxNDMsOThjMC0yNC45LTIwLjEtNDUtNDUtNDV2LTRDMTI1LjEsNDksMTQ3LDcwLjksMTQ3LDk4eiIvPgo8L3N2Zz4K",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0827/9103/9284/files/portada_manifiesto_skinology.png?v=1773929807",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/videos/c/o/v/d846cc3f01ca411ba90417eb1649e543.mp4",
+      "status": 206
+    },
+    {
+      "url": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJXaW5kb3ciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTggNXYxNGwxMS03eiIvPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4K",
+      "status": 200
+    },
+    {
+      "url": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJXaW5kb3ciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTMgOXY2aDRsNSA1VjRMNyA5SDN6bTEzLjUgM2MwLTEuNzctMS4wMi0zLjI5LTIuNS00LjAzdjguMDVjMS40OC0uNzMgMi41LTIuMjUgMi41LTQuMDJ6TTE0IDMuMjN2Mi4wNmMyLjg5Ljg2IDUgMy41NCA1IDYuNzFzLTIuMTEgNS44NS01IDYuNzF2Mi4wNmM0LjAxLS45MSA3LTQuNDkgNy04Ljc3cy0yLjk5LTcuODYtNy04Ljc3eiIvPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4K",
+      "status": 200
+    },
+    {
+      "url": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJXaW5kb3ciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgogICAgPHBhdGggZD0iTTcgMTRINXY1aDV2LTJIN3YtM3ptLTItNGgyVjdoM1Y1SDV2NXptMTIgN2gtM3YyaDV2LTVoLTJ2M3pNMTQgNXYyaDN2M2gyVjVoLTV6Ii8+Cjwvc3ZnPgo=",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/custom/web-pixel-shopify-custom-pixel@0530/sandbox/modern/",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Allura:ital,wght@0,400&family=Dancing+Script:ital,wght@0,400&family=Fira+Sans:ital,wght@0,400&family=Gorditas:ital,wght@0,400&family=Sacramento:ital,wght@0,400&display=swap",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/app/web-pixel-630522164@a3321ca85cf5aaf6b57585fcd8d67b3a~2/pixel.modern.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/app/web-pixel-259686708@96420dbe9ea96c426a1b7f364f977719~2/pixel.modern.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a07da7-80ac-79b2-b2bb-249f33153710/in-cart-upsell-1072/assets/rules.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a07da7-80ac-79b2-b2bb-249f33153710/in-cart-upsell-1072/assets/popupDomHelpers.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a07da7-80ac-79b2-b2bb-249f33153710/in-cart-upsell-1072/assets/domHelpers.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a07da7-80ac-79b2-b2bb-249f33153710/in-cart-upsell-1072/assets/addonHelper.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a07da7-80ac-79b2-b2bb-249f33153710/in-cart-upsell-1072/assets/helpers2.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/consent-tracking-api/v0.1/consent-tracking-api.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_v3_base.css",
+      "status": 200
+    },
+    {
+      "url": "data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAScAA0AAAAABrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAEgAAAABoAAAAcbyQ+3kdERUYAAARgAAAAHgAAACAAMwAGT1MvMgAAAZgAAABGAAAAVi+vS9xjbWFwAAAB8AAAAEAAAAFKwBMjvmdhc3AAAARYAAAACAAAAAj//wADZ2x5ZgAAAkAAAAEJAAABdH33LXtoZWFkAAABMAAAAC0AAAA2BroQKWhoZWEAAAFgAAAAHAAAACQD5QHQaG10eAAAAeAAAAAPAAAAFAYAAABsb2NhAAACMAAAAA4AAAAOAO4AeG1heHAAAAF8AAAAHAAAACAASgAvbmFtZQAAA0wAAADeAAABkorWfVZwb3N0AAAELAAAACkAAABEp3ubLXgBY2BkYADhPPP4OfH8Nl8ZuJkYQODS2fRrCPr/aSYGxq1ALgcDWBoAO60LkwAAAHgBY2BkYGDc+v80gx4TAwgASaAICmABAFB+Arl4AWNgZGBgYGPQYWBiAAIwyQgWc2AAAwAHVQB6eAFjYGRiYJzAwMrAwejDmMbAwOAOpb8ySDK0MDAwMbByMsCBAAMCBKS5pjA4PGB4wMR44P8BBj3GrQymQGFGkBwAjtgK/gAAeAFjYoAAEA1jAwAAZAAHAHgB3crBCcAwDEPRZydkih567CDdf4ZskmLwFBV8xBfCaC4BXkOUmx4sU0h2ngNb9V0vQCxaRKIAevT7fGWuBrEAAAAAAAAAAAA0AHgAugAAeAF9z79Kw1AUx/FzTm7un6QmJtwmQ5Bg1abgEGr/BAqlU6Gju+Cgg1MkQ/sA7Vj7BOnmO/gUvo2Lo14NqIO6/IazfD8HEODtmQCfoANwNsyp2/GJt3WKQrd1NLiYYWx2PBqOsmJMEOznPOTzfSCrhAtbbLdmeFLJV9eKd63WLrZcIcuaEVdssWCKM6pLCfTVOYbz/0pNSMSZKLIZpvh78sAUH6PlMrreTCabP9r+Z/puPZ2ur/RqpQHgh+MIegCnXeM4MRAPjYN//5tj4ZtTjkFqEdmeMShlEJ7tVAly2TAkx6R68Fl4E/aVvn8JqHFQ4JS1434gXKcuL31dDhzs3YbsEOAd/IU88gAAAHgBfY4xTgMxEEVfkk0AgRCioKFxQYd2ZRtpixxgRU2RfhU5q5VWseQ4JdfgAJyBlmNwAM7ABRhZQ0ORwp7nr+eZAa54YwYg9zm3ynPOeFRe8MCrciXOh/KSS76UV5L/iDmrLiS5AeU519wrL3jmSbkS5115yR2fyivJv9kx0ZMZ2RLZw27q87iNQi8EBo5FSPIMw3HqBboi5lKTGAGDp8FKXWP+t9TU01Lj5His1Ba6uM9dTEMwvrFmbf5GC/q2drW3ruXUhhsCiQOjznFlCzYhHUZp4xp76vsvQh89CQAAeAFjYGJABowM6IANLMrEyMTIzMjCXpyRWJBqZshWXJJYBKOMAFHFBucAAAAAAAAB//8AAngBY2BkYGDgA2IJBhBgAvKZGViBJAuYxwAABJsAOgAAeAFjYGBgZACCk535hiD60tn0azAaAEqpB6wAAA==",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_base.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_common.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_others.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.shop-user-recognition.es.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/apps/in-cart-upsell/has_valid_token",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cart.js?icu=1",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/storefront/assets/storefront/webmcp-f1e1e155.js",
+      "status": 200
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-1L56MSFZDQ&cx=c&gtm=4e69m1",
+      "status": 200
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "status": 204
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "status": 204
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-1L56MSFZDQ",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_common.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_others.js",
+      "status": 200
+    },
+    {
+      "url": "https://static-forms.klaviyo.com/forms/api/v7/RgqR5x/full-forms",
+      "status": 200
+    },
+    {
+      "url": "https://scripts.clarity.ms/0.8.70/clarity.js",
+      "status": 200
+    },
+    {
+      "url": "https://connect.facebook.net/en_US/fbevents.js",
+      "status": 200
+    },
+    {
+      "url": "https://a.klaviyo.com/forms/api/v3/geo-ip",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_form.js",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/extensions/01a0cdf8-b2d2-7ccd-a251-5cf8c66ad2ca/judgeme-762/assets/widget_v3_form.css",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/api/collect",
+      "status": 200
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/destination?id=MC-DNSPLRHPMN&cx=c&gtm=4e69m1",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "status": 200
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "status": 200
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "status": 204
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/logs",
+      "status": 204
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "status": 204
+    },
+    {
+      "url": "https://shop.app/pay/hop?analytics_trace_id=207a6bec-4565-420b-8d11-234f69500bd7&target_origin=https%3A%2F%2Fskinology.cl&client_handle=e69510-2.myshopify.com",
+      "status": 403
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "status": 200
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/logs",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/ClientStore.ee8435877e389.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/default~onsite-back-in-stock~ClientStore~~Render.51432baf2a1fc.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/default~back-in-stock-dynamic-button-handler~ClientStore~~Render.d3667a0e5a149.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~ClientStore~~Render.c32e496a6ad43.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/default~ClientStore~~Render.58b5f7dbc5261.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://www.googleadservices.com/ccm/conversion/16785062946/?random=1790201912872&cv=11&fst=1790201912872&fmt=3&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270&u_w=800&u_h=600&url=https%3A%2F%2Fskinology.cl%2F&rcb=1&label=R-GICOvGv5QaEKL43sM-&gtm_ee=1&evnid=sh-d0595a99-1E4A-4FEA-90C5-801B98606D08&excid=shp.c3b32c9c-2eea-48e4-86a3-c39b3b19ca6d&tiba=Skinology%20-%20Skincare%20100%25%20a%20la%20medida%20con%20tus%20f%C3%B3rmulas%20%C3%BAnicas%20%E2%80%93%20SKiNOLOGY&frm=0&did=dYmNjMT%2CdNzYwYj&gdid=dYmNjMT&edid=dNzYwYj&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=1436852191.1790201913&ec_m=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review*DIV%3Atrue%3A23%3Atrue*1&ec_sel=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review&ec_meta=DIV%3Atrue%3A23%3Atrue&ec_lat=0&ec_s=1&ec_mode=c&oid=GG_2140275732.1790201913&oidsrc=3&ecsid2=275573607.1790201913&_tu=ABI&gcl_ctr=1~0~0~0&data=event%3Dpage_view%3Bshopify_event_name%3Dpage_viewed%3Bpage_path%3D%2F&category=acrcp_v1_512&em=tv.1&emd=tvd.1",
+      "status": 200
+    },
+    {
+      "url": "https://widget-view.dondy.net/api/WhatsAppWidgetsView/e69510-2.myshopify.com",
+      "status": 204
+    },
+    {
+      "url": "https://connect.facebook.net/signals/config/1076531043439238?v=2.9.406&r=stable&domain=skinology.cl&hme=8a9e6a9b82926b8f07fd0a2edd8b8f1ef075648059d1bb52ec651feab764c219&ex_m=117%2C236%2C168%2C27%2C81%2C82%2C160%2C77%2C76%2C11%2C178%2C101%2C20%2C152%2C140%2C46%2C84%2C89%2C148%2C173%2C180%2C8%2C4%2C5%2C7%2C6%2C3%2C102%2C114%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C161%2C86%2C125%2C22%2C24%2C51%2C47%2C49%2C48%2C94%2C103%2C107%2C123%2C159%2C162%2C53%2C124%2C29%2C26%2C132%2C78%2C43%2C164%2C163%2C165%2C156%2C154%2C30%2C42%2C66%2C122%2C175%2C79%2C21%2C127%2C92%2C75%2C23%2C96%2C97%2C129%2C95%2C150%2C149%2C153%2C108%2C174%2C177%2C41%2C56%2C126%2C54%2C182%2C109%2C181%2C203%2C250%2C83%2C264%2C263%2C262%2C14%2C25%2C28%2C40%2C62%2C116%2C68%2C10%2C72%2C110%2C111%2C112%2C118%2C143%2C38%2C36%2C145%2C146%2C147%2C142%2C141%2C169%2C85%2C172%2C170%2C171%2C57%2C67%2C136%2C19%2C176%2C52%2C313%2C314%2C315%2C312%2C328%2C353%2C243%2C232%2C69%2C233%2C231%2C356%2C347%2C59%2C244%2C120%2C144%2C91%2C134%2C61%2C133%2C139%2C138%2C65%2C73%2C71%2C166%2C87%2C88%2C128%2C44%2C39%2C60%2C63%2C113%2C179%2C1%2C137%2C16%2C135%2C12%2C2%2C64%2C104%2C15%2C74%2C70%2C131%2C100%2C99%2C184%2C185%2C105%2C106%2C9%2C115%2C183%2C58%2C157%2C98%2C90%2C80%2C130%2C119%2C50%2C158%2C0%2C93%2C151%2C155%2C167%2C45%2C121%2C13%2C186",
+      "status": 200
+    },
+    {
+      "url": "https://www.google.cl/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-1L56MSFZDQ&cid=1083076373.1790201913&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xf1&rcb=1&aip=1&dma=0&gcs=G111&gcd=13t3t3t3t5l1&npa=0&frm=0&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270&z=283391148",
+      "status": 200
+    },
+    {
+      "url": "https://www.googleadservices.com/pagead/conversion/16785062946/?random=1790201912872&cv=11&fst=1790201912872&fmt=7&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270&u_w=800&u_h=600&url=https%3A%2F%2Fskinology.cl%2F&rcb=1&label=R-GICOvGv5QaEKL43sM-&gtm_ee=1&evnid=sh-d0595a99-1E4A-4FEA-90C5-801B98606D08&excid=shp.c3b32c9c-2eea-48e4-86a3-c39b3b19ca6d&tiba=Skinology%20-%20Skincare%20100%25%20a%20la%20medida%20con%20tus%20f%C3%B3rmulas%20%C3%BAnicas%20%E2%80%93%20SKiNOLOGY&frm=0&did=dYmNjMT%2CdNzYwYj&gdid=dYmNjMT&edid=dNzYwYj&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=1436852191.1790201913&ec_m=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review*DIV%3Atrue%3A23%3Atrue*1&ec_sel=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review&ec_meta=DIV%3Atrue%3A23%3Atrue&ec_lat=0&ec_s=1&ec_mode=c&oid=GG_2140275732.1790201913&oidsrc=3&ecsid2=275573607.1790201913&_tu=ABI&gcl_ctr=1~0~0~0&data=event%3Dpage_view%3Bshopify_event_name%3Dpage_viewed%3Bpage_path%3D%2F&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/onsite-triggering-v2.dcf87f1b4a3b5.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "status": 200
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "status": 200
+    },
+    {
+      "url": "https://widget-view.dondy.net/api/WhatsAppWidgetsView/e69510-2.myshopify.com",
+      "status": 200
+    },
+    {
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-1L56MSFZDQ&cid=1083076373.1790201913&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xf1&rcb=1&aip=1&dma=0&gcs=G111&gcd=13t3t3t3t5l1&npa=0&frm=0&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270",
+      "status": 204
+    },
+    {
+      "url": "https://ad.doubleclick.net/ccm/s/collect?auid=1436852191.1790201913&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xecxf1&fmt=8",
+      "status": 204
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=1&frm=0&apvc=1&auid=1436852191.1790201913&dt=Skinology%20-%20Skincare%20100%25%20a%20la%20medida%20con%20tus%20f%C3%B3rmulas%20%C3%BAnicas%20%E2%80%93%20SKiNOLOGY&tid=AW-16785062946&en=page_view&dl=https%3A%2F%2Fskinology.cl%2F&scrsrc=www.googletagmanager.com&rnd=1980874056.1790201913&navt=n&npa=0&did=dYmNjMT&gdid=dYmNjMT&_tu=AAI&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270&tft=1790201912882&tfd=3047&tids=AW-16785062946&fmt=8",
+      "status": 200
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-1L56MSFZDQ&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xf1&_p=1790201910418&_gaz=1&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dYmNjMT.dN2ZkMj.dNTU0Yz&ecid=1143453557&_eu=AAAAAGAC&cid=1083076373.1790201913&ec_mode=c&excid=shp.c3b32c9c-2eea-48e4-86a3-c39b3b19ca6d&frm=0&pscdl=noapi&rcb=1&sr=800x600&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uam=&uamb=0&uap=macOS&uapv=26.6.2&uaw=0&ul=es-419&gaf=2&_s=1&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270&dp=%2F&dt=Skinology%20-%20Skincare%20100%25%20a%20la%20medida%20con%20tus%20f%C3%B3rmulas%20%C3%BAnicas%20%E2%80%93%20SKiNOLOGY&dl=https%3A%2F%2Fskinology.cl%2F&sid=1790201912&sct=1&seg=0&_tu=AAI&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&edid=dNzYwYj&ep.shopify_event_name=page_viewed&evnid=sh-d0595a99-1E4A-4FEA-90C5-801B98606D08&tfd=3142",
+      "status": 204
+    },
+    {
+      "url": "https://www.merchant-center-analytics.goog/mc/collect?v=2&tid=MC-DNSPLRHPMN&gtm=45ve69m1v9204467584za200zb9240871403zd9240871403xf1&_p=1790201910418&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dYmNjMT&cid=1083076373.1790201913&excid=shp.c3b32c9c-2eea-48e4-86a3-c39b3b19ca6d&frm=0&pscdl=noapi&rcb=2&sr=800x600&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uam=&uamb=0&uap=macOS&uapv=26.6.2&uaw=0&ul=es-419&_s=1&tag_exp=115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153&dp=%2F&dt=Skinology%20-%20Skincare%20100%25%20a%20la%20medida%20con%20tus%20f%C3%B3rmulas%20%C3%BAnicas%20%E2%80%93%20SKiNOLOGY&dl=https%3A%2F%2Fskinology.cl%2F&sid=1790201913&sct=1&seg=0&_tu=AAI&en=page_view&_fv=1&_ss=1&_ee=1&edid=dNzYwYj&ep.shopify_event_name=page_viewed&evnid=sh-d0595a99-1E4A-4FEA-90C5-801B98606D08&tfd=3421",
+      "status": 204
+    },
+    {
+      "url": "https://n.clarity.ms/collect",
+      "status": 204
+    },
+    {
+      "url": "https://www.google.cl/pagead/1p-conversion/16785062946/?random=1562200518&cv=11&fst=1790201912872&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je69m1v9177275980za200zb9240871403zd9240871403xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~117776796~118897920~118897930~120213116~120385422~120469145~120469153~121046262~121046270&u_w=800&u_h=600&url=https%3A%2F%2Fskinology.cl%2F&rcb=1&label=R-GICOvGv5QaEKL43sM-&gtm_ee=1&evnid=sh-d0595a99-1E4A-4FEA-90C5-801B98606D08&excid=shp.c3b32c9c-2eea-48e4-86a3-c39b3b19ca6d&tiba=Skinology%20-%20Skincare%20100%25%20a%20la%20medida%20con%20tus%20f%C3%B3rmulas%20%C3%BAnicas%20%E2%80%93%20SKiNOLOGY&frm=0&did=dYmNjMT%2CdNzYwYj&gdid=dYmNjMT&edid=dNzYwYj&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=1436852191.1790201913&ec_m=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review*DIV%3Atrue%3A23%3Atrue*1&ec_sel=%23shopify-block-ATnNJb21ONEU0RW9KU__judge_me_review&ec_meta=DIV%3Atrue%3A23%3Atrue&ec_lat=0&ec_s=1&ec_mode=c&oidsrc=3&ecsid2=275573607.1790201913&_tu=ABI&gcl_ctr=1~0~0~0&data=event%3Dpage_view%3Bshopify_event_name%3Dpage_viewed%3Bpage_path%3D%2F&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5&ct_cookie_present=false&eoid=CkgKEQjw8c3VBhCU86WJ8qeu_tMBEjMACZjU4D4A4qL1gnF_h8NV1mTX6EVx3ECwvXsl9f5bb4KKbvUCGjt1sbnMfYQGXMQgrt3w_wcB&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCJPasQII29yxAgiH27ECCNPFsQII68yxAgjtzrECCNXPsQII9NqxAgji6rECCOjusQIIkuuxAgjJ47ECCJfUsQIIyduxAgjN5rECCI7nsQIIseGxAgiz4bECCKbdsQIIsN6xAgiA27ECCM3hsQI&cerd=ChTV1b4tlOS-Lcjsvi3z7L4tnem3OA&fsk=ChAI8PHN1QYQ_dfp-t61lKEuEiwAqTZTSHi8jn_g_cKiYlDzc5utqISx5HW_DPL8lGDNEbIye4R2C5rfYnabxBoCPmU&is_vtc=1&cid=CAQS0wEAQM4h3CnoQof1sEZ3qS2WPl9P6dcsPswpz7mNJsvlT9-KRCoRT96x-ZPVEKuej0PTcirlHJNnvmiorphsr77yR2Cjy0B9G9j6MTXr2RM-3n1kaB8FoBT8tX-D5iSOUu41jLx5XFI06xi_ezatDQweAuVUaVLxRxEskk8pRwrO9ApNzfKwLLKLhJRrNb3CTtIrDdkP4BjNDMKFK23PuGkOCorBQizm5X8OcnOPa8jwLmbR0cTPnuVb5695OqZTjLwhtR8br5zqQiLk4zbPyDfQk5-u&random=2473804934&ipr=y&pscrd=IhMImaT-6N2FlwMVBTgeAB2XqSd0OhVodHRwczovL3NraW5vbG9neS5jbC9CV0NoRUk4UEhOMVFZUXpKS1QtczdBX0t1QkFSSXNBRTcyTTdwU0F0RE5KaDk4MXBOak9FVkRwMGx2Q1BWbmc1dnJKTUFOTm1iQmV5Vk5Sb3BHUk00eWFTVXoMCAliCAgAEAAYACAAggETcAGIAQHiAQEC8QGGN2V38UTcPw",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/4014.b5fec642c6440.css",
+      "status": 200
+    },
+    {
+      "url": "https://n.clarity.ms/collect",
+      "status": 204
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/styles.34eba46798a60.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~Render~customerHubRoot.00ecb29b13072.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~Render.70af32cdecf97.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/default~in_app_forms~onsite-personalization~Render.67e2daa7ce8ad.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/vendors~onsite-personalization~Render.85bb31baf2492.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://static.klaviyo.com/onsite/js/Render.c23999bf4416b.js?cb=2",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/firasans/v18/va9E4kDNxMZdWfMOD5Vvl4jLazX3dA.woff2",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-1163133236@bdb3cf00f0fa4ad2ccc8185950029b78/sandbox/worker.modern.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-967475508@22e92c2ad45662f435e4801458fb78cc/sandbox/worker.modern.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-1001521460@c63c5b72c8d77be5f2d27d14c081da38/sandbox/worker.modern.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-849215796@e46595b10fdc5e1674d5c89a8c843bb3/sandbox/worker.modern.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-849183028@a2e7513c3708f34b1f617d7ce88f9697/sandbox/worker.modern.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-923140404@8acc938b1a30dc7624e304493ca567d7/sandbox/worker.modern.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-shopify-app-pixel@0530/sandbox/worker.modern.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-816480564@bd1df4806f96b914851f3ad62aad33e8/sandbox/worker.modern.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-713589044@7ae565e198624b39e0856d352b9a6b4c/sandbox/worker.modern.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "status": 200
+    },
+    {
+      "url": "https://d3k81ch9hvuctc.cloudfront.net/company/RgqR5x/images/8a19240a-d6b9-492b-9383-3e43e117f130.jpeg",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "status": 200
+    },
+    {
+      "url": "https://d3k81ch9hvuctc.cloudfront.net/company/RgqR5x/images/92b74900-51d2-46cf-abe4-39ae42dbdd18.jpeg",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-1163133236@bdb3cf00f0fa4ad2ccc8185950029b78.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-1001521460@c63c5b72c8d77be5f2d27d14c081da38.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-713589044@7ae565e198624b39e0856d352b9a6b4c.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/wpm/sc8540278we853e1abpb62b2c4amde256306m.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-923140404@8acc938b1a30dc7624e304493ca567d7.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-shopify-app-pixel@0530.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-849215796@e46595b10fdc5e1674d5c89a8c843bb3.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-967475508@22e92c2ad45662f435e4801458fb78cc.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-849183028@a2e7513c3708f34b1f617d7ce88f9697.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/web-pixels/strict/app/web-pixel-816480564@bd1df4806f96b914851f3ad62aad33e8.js",
+      "status": 200
+    },
+    {
+      "url": "https://ct.pinterest.com/user/?cb=1790201914571&ed=%7B%22np%22%3A%22shopify-web-pixel%22%2C%22eventID%22%3A%22sh-d0595a99-1E4A-4FEA-90C5-801B98606D08%22%2C%22is_product_page%22%3A%22false%22%7D&ad=%7B%22mh%22%3A%22987bb863%22%2C%22sh%22%3A600%2C%22sw%22%3A800%2C%22loc%22%3A%22https%3A%2F%2Fskinology.cl%2F%22%2C%22if%22%3Atrue%2C%22language%22%3A%22es-419%22%7D&pd=%7B%22np%22%3A%22shopify-web-pixel%22%2C%22external_id%22%3A%22c820b7687dab062d895146fa405d73be72705a426d3e1d5289cadbc5af6bfa47%22%7D&tid=2613682208670",
+      "status": 200
+    },
+    {
+      "url": "https://ct.pinterest.com/v3/?cb=1790201914571&ad=%7B%22mh%22%3A%22987bb863%22%2C%22ua%22%3A%22Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20HeadlessChrome%2F153.0.0.0%20Safari%2F537.36%22%2C%22sh%22%3A600%2C%22sw%22%3A800%2C%22loc%22%3A%22https%3A%2F%2Fskinology.cl%2F%22%2C%22if%22%3Atrue%2C%22language%22%3A%22es-419%22%2C%22is_eu%22%3Afalse%2C%22unauthIdDataSource%22%3A%22fpc_ls%22%7D&pd=%7B%22np%22%3A%22shopify-web-pixel%22%2C%22external_id%22%3A%22c820b7687dab062d895146fa405d73be72705a426d3e1d5289cadbc5af6bfa47%22%2C%22pin_unauth%22%3A%22dWlkPVl6RTVNbUpoWXpRdFpUVTRaUzAwTlRJeUxUZzROemt0TnpNNU5UQmxPVFExWVRZNA%22%7D&ov=%7B%22tkp%22%3A%22stag%22%2C%22version%22%3A%220.92%22%2C%22env%22%3A%22prod%22%7D&tid=2613682208670&event=init",
+      "status": 200
+    },
+    {
+      "url": "https://analytics.tiktok.com/i18n/pixel/shopify.js?sdkid=D1TBGAJC77UAVF9UIDTG&lib=ttq",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/proxy/c692d85570dbddc4412335917e83dda4069ffaa1ea958fe5b11b05528cfc5895/api.goaffpro.com/loader.js?shop=e69510-2.myshopify.com&sp-cache-control=cHVibGljLCBtYXgtYWdlPTkwMA",
+      "status": 200
+    },
+    {
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.reportAssetMetrics_Ds4otafy.esm.js",
+      "status": 200
+    },
+    {
+      "url": "https://ct.pinterest.com/v3/?cb=1790201914571&ed=%7B%22np%22%3A%22shopify-web-pixel%22%2C%22eventID%22%3A%22sh-d0595a99-1E4A-4FEA-90C5-801B98606D08%22%2C%22is_product_page%22%3A%22false%22%7D&ad=%7B%22mh%22%3A%22987bb863%22%2C%22ua%22%3A%22Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20HeadlessChrome%2F153.0.0.0%20Safari%2F537.36%22%2C%22sh%22%3A600%2C%22sw%22%3A800%2C%22loc%22%3A%22https%3A%2F%2Fskinology.cl%2F%22%2C%22if%22%3Atrue%2C%22language%22%3A%22es-419%22%2C%22is_eu%22%3Afalse%2C%22unauthIdDataSource%22%3A%22fpc_ls%22%7D&pd=%7B%22np%22%3A%22shopify-web-pixel%22%2C%22client_user_agent%22%3A%22Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20HeadlessChrome%2F153.0.0.0%20Safari%2F537.36%22%2C%22external_id%22%3A%22c820b7687dab062d895146fa405d73be72705a426d3e1d5289cadbc5af6bfa47%22%2C%22pin_unauth%22%3A%22dWlkPVl6RTVNbUpoWXpRdFpUVTRaUzAwTlRJeUxUZzROemt0TnpNNU5UQmxPVFExWVRZNA%22%7D&ov=%7B%22tkp%22%3A%22stag%22%2C%22version%22%3A%220.92%22%2C%22env%22%3A%22prod%22%7D&tid=2613682208670&event=PageVisit",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/polyfills.QSVzdYsv.js",
+      "status": 200
+    },
+    {
+      "url": "https://analytics.tiktok.com/i18n/pixel/static/shopify.NWUzMmFkMi4wLjAuNjUw.js",
+      "status": 200
+    },
+    {
+      "url": "https://chimpstatic.com/mcjs-connected/js/users/b19c3080773a8391a44aad1ee/14509f3d8265c44440e1211e0.js?shop=e69510-2.myshopify.com",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shop/files/Skinology_huella.png?crop=center&height=32&v=1714874508&width=32",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "status": 200
+    },
+    {
+      "url": "https://analytics.tiktok.com/api/v2/shopify_pixel",
+      "status": 200
+    },
+    {
+      "url": "https://analytics.tiktok.com/api/v2/shopify_pixel",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/app.xM1mGn7i.js",
+      "status": 200
+    },
+    {
+      "url": "https://app.octaneai.com/b37763ciknxkjt95/shopify.js?x=RNJggf8ajLVOOylE&shop=e69510-2.myshopify.com",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/esnext-vendor.D7ldIee_.js",
+      "status": 200
+    },
+    {
+      "url": "https://c.clarity.ms/c.gif?ctsa=mr&CtsSyncId=F85F792CDD1A4B90BC366A2566CDEAA0&MUID=3D0BDDCA769E612433EECA17778B60A2",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/context-browser.Jn5Sgb3K.js",
+      "status": 200
+    },
+    {
+      "url": "https://analytics-ipv6.tiktokw.us/ipv6/enrich_ipv6",
+      "status": 200
+    },
+    {
+      "url": "https://app.octaneai.com/get_user_info/b37763ciknxkjt95",
+      "status": 200
+    },
+    {
+      "url": "https://app.octaneai.com/get_analytics_engine/b37763ciknxkjt95",
+      "status": 200
+    },
+    {
+      "url": "https://n.clarity.ms/collect",
+      "status": 204
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/addresses-is-address-empty.CxCyzHx4.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/shop-pay-ProgressIntercepts.CUIOGWLT.js",
+      "status": 200
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "status": 200
+    },
+    {
+      "url": "https://app.octaneai.com/b37763ciknxkjt95/utrk",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/checkout-updaters-helpers.Dm0286LB.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "status": 200
+    },
+    {
+      "url": "https://tracking.aws.judge.me/widgets/track_bulk_events?_events_count=1",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/shared-shop-theme.CR2ag9Cw.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/consent-manager-shared.CL6EPkRJ.js",
+      "status": 200
+    },
+    {
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/mobile-checkout-sdk-MobileCheckoutSdkClient.Bb5LDFpS.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/apple-pay-errors.hqeyInIx.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/receipt-mapper-load-recovery.DLaSNNz4.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/receipt-eager-mappers.B0Kd5qPd.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/shared-report-graphql-error.BWZSu59I.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/shop-pay-normalizeBuyerDetails.CXuZoZ3k.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/context-CheckoutSheetProtocolClient.C6THFGkK.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/utilities-shopCashMoney.CB8KYVd2.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/graphql-PaymentSessionMutation.WJMpH6_I.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hydrate.B4pmcIW0.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/constants.BeVo-AXm.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useReplaceShopPayInHistory.Dlfv4t9b.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/locale-es.CV1Mk9lU.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/OnePage.CTZ3e6oU.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/components-DeliveryTransition.C5pfxf1h.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/localization-index.DEUXx-2-.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/useShopPayButtonClassName.kFL-m-dH.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useShouldRevealCustomization.QgSG5VE9.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/models-ShopPayBuyerDetails.model.hZduhJXj.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useCanChangeCompanyLocation.BJy3JeTZ.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/ChangeCompanyLocationLink.DS-ofwr4.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/BillingAddressForm.BMpmE0Ia.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useSuppressShopPayModalOnLoad.n1vi9sGT.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/PhoneField.DrjH1_ZP.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useUnauthenticatedErrorModal.Dha6y8XB.js",
+      "status": 200
+    },
+    {
+      "url": "https://n.clarity.ms/collect",
+      "status": 204
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Popover.DnnkL6nF.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Choice.DKU0inNi.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Checkbox.q2hVg8C9.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useForceShopPayUrl.B_ZGd_Tf.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/ImpressionEventCapture.BsC-EdmH.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/ShopPayLogo.8_Z8Cs8E.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useWalletsTimeout.BVBD7doF.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/components-RedirectionNotice.module.Cd3lddYk.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Monorail-monorailMetric-wallets.iyAJRt0o.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/shop-pay-installments-monorail.BrJ9sxq3.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/MarketsProDisclaimer.CTjO5Rmc.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/IncentiveBadge.CZVYbYKR.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/shipping-methods-grouping.BUOHnBlw.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Section-SectionStyleOverride.BQ7Sy_WU.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/TransitionHeight.Dxi70V4k.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/AutocompleteField-hooks.Cp2YKCy4.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/PendingShipping.BVmLGOai.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/StickyPayButton-StickyPayButton.module.BocS5s95.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Switch.DyKsmGjr.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-payment-button.CopCNxdz.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/useAddressMutationsWithNegotiation.mNidQgq1.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/PaymentIcon.4bgG9u4I.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/PaymentLine.P9dGeH3_.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Theme-ThemeOverride.vPs1l939.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useUpdateCheckoutAddress.BT6ILTbf.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/payment-usePaymentExemptionReason.Cvb9MeB9.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useShopPayProgressIntercepts.BdDND3Gw.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/Section.BxdkE0nu.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/PaymentErrorBanner.CM4habRT.js",
+      "status": 200
+    },
+    {
+      "url": "https://skinology.cl/cdn/shopifycloud/checkout-web/assets/c1/hooks-useGeneralPaymentErrorMessage.CmuVUfD3.js",
+      "status": 200
+    }
+  ],
+  "cookies": [
+    {
+      "name": "_shopify_y",
+      "value": "c3b32c9c-2eea-48e4-86a3-c39b3b19ca6d",
+      "domain": ".skinology.cl",
+      "path": "/",
+      "expires": 1821759512.692937,
+      "size": 46,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "sameSite": "Lax",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_shopify_s",
+      "value": "f2da2fce-1e57-4170-a377-4ce513c65709",
+      "domain": ".skinology.cl",
+      "path": "/",
+      "expires": 1790203712.693778,
+      "size": 46,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "sameSite": "Lax",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "localization",
+      "value": "CL",
+      "domain": "skinology.cl",
+      "path": "/",
+      "expires": 1821737910.401369,
+      "size": 14,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_shopify_analytics",
+      "value": ":AaDQWVQ5AAEAHQYaVGfZd3JG9QHqPBaAzDCwMHJpE1VYXZOjLwbCm4HFn7dq6ISSHae0fclnKItycwDBZaZva8s8ct_ROBGSxkrukDd3xmm1ANhs3LBL4misHvzhttf7WqxHh9wBiTIBGKrQqV_LqvFfJ5w:",
+      "domain": "skinology.cl",
+      "path": "/",
+      "expires": 1821737910.401674,
+      "size": 175,
+      "httpOnly": true,
+      "secure": true,
+      "session": false,
+      "sameSite": "Lax",
+      "priority": "High",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_shopify_marketing",
+      "value": ":AaDQWVQ5AAEAHuc0IxmOO05pED3UMhPn0g6Uh0Df8yrxPmoQLoFVQYcO3X8yydsuCunm-Zo_Oidsxq4QIBGNZgUSLHHnq-DPZsdaPjm-UaJ2jcfVYl5OgcSSZ0EkXRJz8RBPtzCJ8_9wav8joL4UujDX-lQ:",
+      "domain": "skinology.cl",
+      "path": "/",
+      "expires": 1821737910.40169,
+      "size": 175,
+      "httpOnly": true,
+      "secure": true,
+      "session": false,
+      "sameSite": "Lax",
+      "priority": "High",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "CLID",
+      "value": "d574362e744149a3b815229526d6d108.20260923.20270923",
+      "domain": "www.clarity.ms",
+      "path": "/",
+      "expires": 1821737910.694519,
+      "size": 54,
+      "httpOnly": true,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "__kla_id",
+      "value": "eyJjaWQiOiJPVGhqWVRNeU16WXRaVEl3WXkwME9HVTBMVGhqTVRrdFpEVTFaRFF5T1RrMU0yVmsifQ==",
+      "domain": "skinology.cl",
+      "path": "/",
+      "expires": 1824761912.003008,
+      "size": 88,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_shopify_essential",
+      "value": ":AaDQWVQjAAEA9yctdPQxeUGDIuXTUlN5ARdEQt-erroO4KU_06E58JnfjwbMiIToQ6aVKg9PuANzI8A-L4Edd3w1KYFqhr1nDHTsKo4TQL2Me5Bm3ocPTHYG0APDZQS0pHa65CrlOOsu9oTEddGZRv2_zxMg8xsT7aOPbXVl8nhFnA-wtzSiX-dz23pH7n5N2nC7xhMOTZIuBPX_h7tnSF9TuEEG0nJeLSnRo4qMEnuVF1FPWgT76Lj16sq9Tq2BnJwBGvb6SRco44wQGK5uDge5BXjmM_oLrhoxBZNt4N5P3Z7u6A09p38J8rGYeOk7yy1JF77pWqbCr7yBzSF0p6A0qHGHMNFD1BGXVGv0JUhEVBVDt31xomL6b83ulbv_CjxWd0uTroxMBW8Q:",
+      "domain": "skinology.cl",
+      "path": "/",
+      "expires": 1821737912.851013,
+      "size": 420,
+      "httpOnly": true,
+      "secure": true,
+      "session": false,
+      "sameSite": "Lax",
+      "priority": "High",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.1436852191.1790201913.-.-.1790201912.275573607.1790201913.1790201912",
+      "domain": ".skinology.cl",
+      "path": "/",
+      "expires": 1797977913,
+      "size": 79,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_ga_1L56MSFZDQ",
+      "value": "GS2.1.s1790201912$o1$g0$t1790201912$j60$l0$h1143453557",
+      "domain": ".skinology.cl",
+      "path": "/",
+      "expires": 1824761912.971166,
+      "size": 68,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1083076373.1790201913",
+      "domain": ".skinology.cl",
+      "path": "/",
+      "expires": 1824761913.254974,
+      "size": 30,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_clck",
+      "value": "spefur%5E2%5Eg9p%5E0%5E2457",
+      "domain": ".skinology.cl",
+      "path": "/",
+      "expires": 1821737913,
+      "size": 32,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_ga_DNSPLRHPMN",
+      "value": "GS2.1.s1790201913$o1$g0$t1790201913$j60$l0$h0",
+      "domain": ".skinology.cl",
+      "path": "/",
+      "expires": 1824761913.252254,
+      "size": 59,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_shop_app_essential",
+      "value": ":AaDQWV_6AAEAAXNS8HN8FAc4gQ-bHb620cFk2vhSkq3RuR_wUXNF_F_xeN8H44FuPt9e-9vENPJa9g8s-7WH9jhEWAkvJzOSQGJfkPODleF3bp8nswMR20F7FJuj78r3v-3Jke5T5bF6879qgYesP_rm5puSIi-g3XD4Jg:",
+      "domain": ".shop.app",
+      "path": "/",
+      "expires": 1821737913.388408,
+      "size": 187,
+      "httpOnly": true,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "High",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_fbp",
+      "value": "fb.1.1790201913509.18162900483211154",
+      "domain": ".skinology.cl",
+      "path": "/",
+      "expires": 1797977913,
+      "size": 40,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "sameSite": "Lax",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_clsk",
+      "value": "haxubf%5E1790201913748%5E1%5E1%5En.clarity.ms%2Fcollect",
+      "domain": ".skinology.cl",
+      "path": "/",
+      "expires": 1790288313,
+      "size": 60,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "shopify_client_id",
+      "value": "c3b32c9c-2eea-48e4-86a3-c39b3b19ca6d",
+      "domain": "skinology.cl",
+      "path": "/",
+      "expires": 1821737914,
+      "size": 53,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_pin_unauth",
+      "value": "dWlkPVl6RTVNbUpoWXpRdFpUVTRaUzAwTlRJeUxUZzROemt0TnpNNU5UQmxPVFExWVRZNA",
+      "domain": "skinology.cl",
+      "path": "/",
+      "expires": 1821737914,
+      "size": 81,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_pinterest_ct_ua",
+      "value": "TWc9PSYxVDFCZ1hvSmxiZTROdnl0QkhFcjh6OHpwWmM4RjRqeWJZbjNxSXlBRW12R1N6VUhWbWU5akZ4UWVqTWF5L0VTMnRCdDBySEdCWm1IS0FPMW0zOXF1QUhidW1Md0ltT2x2NVlIZGEvb0d2VT0meTZWM29QZytoWU1BS0NheTd4d0tzaUxvZjlVPQ==",
+      "domain": ".ct.pinterest.com",
+      "path": "/",
+      "expires": 1821737915.034737,
+      "size": 208,
+      "httpOnly": false,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_ttp",
+      "value": "01M385JSN1K9NRBZNVGSGNAY4S_.tt.0.1790201915043",
+      "domain": ".skinology.cl",
+      "path": "/",
+      "expires": 1823897915,
+      "size": 50,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "ttcsid_D1TBGAJC77UAVF9UIDTG",
+      "value": "1790201915051::afn0cinh97CcCioUsyVV.1.1790201915051.0",
+      "domain": ".skinology.cl",
+      "path": "/",
+      "expires": 1823897915,
+      "size": 80,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "ttcsid",
+      "value": "1790201915052::347HLttCmb27yj_RfIWH.1.1790201915052.0",
+      "domain": ".skinology.cl",
+      "path": "/",
+      "expires": 1823897915,
+      "size": 59,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "octane%2Fshopify%2Fuid",
+      "value": "aaa6e263d03252b295f440492d91329309b79b26abfc3512d8fd51a63a951ac96d46661f6886993cc721cac91f107b295f81a8e111511885a24d0acf",
+      "domain": ".skinology.cl",
+      "path": "/",
+      "expires": 1824761915.377167,
+      "size": 142,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "MUID",
+      "value": "3D0BDDCA769E612433EECA17778B60A2",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": 1823897916.408278,
+      "size": 36,
+      "httpOnly": false,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "High",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "MR",
+      "value": "0",
+      "domain": ".c.bing.com",
+      "path": "/",
+      "expires": 1790806716.408368,
+      "size": 3,
+      "httpOnly": false,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "SRM_B",
+      "value": "3D0BDDCA769E612433EECA17778B60A2",
+      "domain": ".c.bing.com",
+      "path": "/",
+      "expires": 1823897916.408386,
+      "size": 37,
+      "httpOnly": false,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "SM",
+      "value": "C",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": -1,
+      "size": 3,
+      "httpOnly": false,
+      "secure": true,
+      "session": true,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "MUID",
+      "value": "3D0BDDCA769E612433EECA17778B60A2",
+      "domain": ".clarity.ms",
+      "path": "/",
+      "expires": 1823897915.558661,
+      "size": 36,
+      "httpOnly": false,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "High",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "MR",
+      "value": "0",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": 1790806715.558697,
+      "size": 3,
+      "httpOnly": false,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "ANONCHK",
+      "value": "0",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": 1790202515.558713,
+      "size": 8,
+      "httpOnly": false,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    }
+  ],
+  "cookieBannerProbe": [],
+  "bodyText": "Ir directamente al contenido\n\nENVÍO GRATIS sobre $69.990 🚚 **\n\n💳 Hasta 3 cuotas sin interés 💳\n\nSkinQuiz\nProductos\nSkinology for men\nPor qué Skinology\nAbout Us\nSkincare Blog\nClientes\nCarrito\n\nSKINCARE ULTRA PERSONALIZADO\n\nTu piel, resuelta para siempre.\n\nCremas formuladas desde cero para ti.\nQue aprenden y evolucionan contigo.\n\nNO MÁS PROBAR · NO MÁS DUDAR · NO MÁS TIRAR LA PLATA.\n\nDescubrir mis fórmulas →\nYa soy cliente →\nQuiero mis próximas fórmulas\n\n¿TE SUENA FAMILIAR?\n\nEl problema no eres tú. El problema es que ninguna crema estaba hecha para ti.\n\n×\n\n\"Compré cinco cremas este año y ninguna me funcionó.\"\n\n×\n\n\"No sé si estoy tirando la plata a la basura.\"\n\n×\n\n\"Quiero tratar manchas, arrugas y sensibilidad — pero no existe una crema para todo eso.\"\n\nExiste una crema para todo eso.\nSe llama la tuya.\n\nFormulada desde cero. Solo para ti.\n\nRESULTADOS REALES\n\nLo que pasa cuando tu piel\ntiene exactamente lo que necesita.\n\nFotos reales de clientes Skinology · Sin filtros\n\nCatherinne · 3 meses usando Skinology\n\nDisminución en cicatrices post acné, piel más turgente y luminosa.\n\nJacky · 6 semanas usando Skinology\n\nDisminución en manchas, rosácea y arrugas.\n\nManuel · 1 mes usando Skinology\n\nDisminución en espinillas, puntos negros y cicatrices post acné.\n\nFormulemos tus cremas →\nCuando tu piel está en su mejor versión, tú estás en tu mejor versión.\n\nEsa seguridad con la que entras a una reunión. Esa confianza frente al espejo a las 6am.\n\nNo es suerte...es que tu piel tiene exactamente lo que necesita.\n\nCÓMO FUNCIONA\n\nTu piel tiene su propia historia. Cuéntanosla.\n\n5 minutos para entender tu piel como nunca antes.\n\nNadie más en el mundo va a recibir tus mismas cremas. Porque tu piel es única.\n\n1\n\nCuéntanos sobre tu piel\n\nEl SkinQuiz fue diseñado por nuestra dermatóloga fundadora para que analicemos tu piel.\n\n2\n\nTus cremas, elaboradas desde cero\n\nNo hay perfil genérico. Nuestra IA + dermatóloga definen los ingredientes exactos para ti. No existe otra persona en el mundo con tus mismas cremas.\n\n3\n\nTu piel evoluciona. Tus cremas también.\n\nCada nueva rutina se ajusta a tus cambios y tu feedback. Nunca más empezar de cero. Nunca más la incertidumbre.\n\nEmpezar mi SkinQuiz →\n\nTU RUTINA COMPLETA\n\n4 productos. Todos 100% personalizados para ti.\n\nNo hay ingredientes genéricos ni concentraciones estándar. Cada producto de tu rutina trata exactamente lo que tu piel necesita, hasta 20 síntomas en simultáneo.\n\n☀️\n\nCrema de día\n\nHidratación, protección y tratamiento activo durante el día...con los ingredientes exactos para tu piel.\n\n🌙\n\nCrema de noche\n\nReparación profunda mientras duermes. Tu piel trabaja de noche...tus cremas también.\n\n💧\n\nSérum\n\nAntioxidante, hidratante, calmante y estimulador de colágeno para lo que tu piel necesite.\n\n👁️\n\nContorno de ojos\n\nFormulado para la zona más delicada del rostro. Ojeras, bolsas, líneas de expresión, tratados con precisión.\n\n¿Por qué funcionan mejor juntos?\n\nPorque los 4 productos son formulados como un sistema — los ingredientes se potencian entre sí. No son 4 cremas separadas, son una rutina diseñada como un todo para tu piel específica.\n\n$149.990 $129.990\n\nRutina completa · 4 productos personalizados\n\nDescubrir mis fórmulas →\nTambién puedes comprar cada producto por separado →\n\nLO QUE CAMBIA DE VERDAD\n\nNo lo decimos nosotras.\nLo dicen ellas.\n\n177 reseñas verificadas\n\n\"Me siento con una cara que transmite paz y serenidad. Las manchas disminuyeron, la piel se unificó y las arrugas están mucho más tenues.\"\n\n— Josefina · ⭐⭐⭐⭐⭐\n\n\"Tengo piel muy sensible con rojeces y manchas. Por primera vez siento que mi rutina funciona. Confío en que dejo mi piel en manos de profesionales.\"\n\n— Mónica · ⭐⭐⭐⭐⭐\n\n\"Amo que sea simple y rápido. No tener que pensar en qué ponerme. Sé que mis cremas tienen todo lo que necesito. Mi piel está preciosa.\"\n\n— Trini · ⭐⭐⭐⭐⭐\n\n\"No lo hubiera logrado con marcas comerciales o hubiese tenido que pagar fortunas. Seguiré hasta el fin de los tiempos.\"\n\n— María Angélica · ⭐⭐⭐⭐⭐\n\n\"Se acabó probar",
+  "targets": [
+    {
+      "type": "page",
+      "url": "https://skinology.cl/"
+    },
+    {
+      "type": "iframe",
+      "url": ""
+    },
+    {
+      "type": "worker",
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-967475508@22e92c2ad45662f435e4801458fb78cc/sandbox/worker.modern.js"
+    },
+    {
+      "type": "worker",
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-1001521460@c63c5b72c8d77be5f2d27d14c081da38/sandbox/worker.modern.js"
+    },
+    {
+      "type": "worker",
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-1163133236@bdb3cf00f0fa4ad2ccc8185950029b78/sandbox/worker.modern.js"
+    },
+    {
+      "type": "worker",
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-849215796@e46595b10fdc5e1674d5c89a8c843bb3/sandbox/worker.modern.js"
+    },
+    {
+      "type": "worker",
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-923140404@8acc938b1a30dc7624e304493ca567d7/sandbox/worker.modern.js"
+    },
+    {
+      "type": "worker",
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-849183028@a2e7513c3708f34b1f617d7ce88f9697/sandbox/worker.modern.js"
+    },
+    {
+      "type": "worker",
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-816480564@bd1df4806f96b914851f3ad62aad33e8/sandbox/worker.modern.js"
+    },
+    {
+      "type": "worker",
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-shopify-app-pixel@0530/sandbox/worker.modern.js"
+    },
+    {
+      "type": "worker",
+      "url": "https://skinology.cl/web-pixels@c8540278we853e1abpb62b2c4amde256306/web-pixel-713589044@7ae565e198624b39e0856d352b9a6b4c/sandbox/worker.modern.js"
+    },
+    {
+      "type": "iframe",
+      "url": "https://shop.app/pay/hop?analytics_trace_id=207a6bec-4565-420b-8d11-234f69500bd7&target_origin=https%3A%2F%2Fskinology.cl&client_handle=e69510-2.myshopify.com"
+    }
+  ]
+}

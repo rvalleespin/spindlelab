@@ -1,4 +1,8 @@
-import * as nuevo from '/tmp/spl-main-wt/spindlelab-astro/functions/api/chequeo.js';
+// El chequeo de spindlelab.cl vive en la rama `main` (es lo que despliega Cloudflare
+// Pages), no en la rama de estas pruebas. Se pide POR RAMA y no por carpeta: el 26-sep
+// había cuatro copias distintas de este archivo en los worktrees del repo. Ver rutas.mjs.
+import { moduloEnLaRama } from './rutas.mjs';
+const nuevo = await moduloEnLaRama('spindlelab-astro/functions/api/chequeo.js', 'main', 'SPL_CHEQUEO_JS');
 
 let ok=0, malo=0;
 const eq=(n,r,e)=>{ if(JSON.stringify(r)===JSON.stringify(e)) ok++; else {malo++; console.log(`  FALLA ${n}: esperado ${JSON.stringify(e)}, real ${JSON.stringify(r)}`);} };

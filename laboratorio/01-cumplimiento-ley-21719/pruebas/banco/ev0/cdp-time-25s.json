@@ -1,0 +1,172 @@
+{
+  "url": "https://time.cl/",
+  "slug": "time-25s",
+  "urlFinal": "https://www.time.cl/",
+  "titulo": "TIME Hotel & Apartments | Hotel y Apart Hotel en Santiago",
+  "ms": 26273,
+  "requests": [
+    {
+      "url": "https://time.cl/",
+      "method": "GET",
+      "type": "Document",
+      "initiator": "other",
+      "t": 1790202060.636139
+    },
+    {
+      "url": "https://www.time.cl/",
+      "method": "GET",
+      "type": "Document",
+      "initiator": "other",
+      "t": 1790202061.423067
+    },
+    {
+      "url": "https://www.time.cl/wp-content/litespeed/ucss/48d072e702607085cd636f63de5d3674.css?ver=3589c",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "t": 1790202061.677771
+    },
+    {
+      "url": "https://www.time.cl/wp-content/uploads/2024/12/Verlag-Book.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "t": 1790202061.677918
+    },
+    {
+      "url": "https://www.time.cl/wp-content/uploads/2025/12/MyriadPro-Light.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "t": 1790202061.677986
+    },
+    {
+      "url": "https://www.time.cl/wp-content/uploads/2025/09/Hotel-Rugendas-Exterior-2.webp",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790202061.685003
+    },
+    {
+      "url": "https://connect.facebook.net/en_US/fbevents.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790202061.685585
+    },
+    {
+      "url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDI0IiBoZWlnaHQ9IjE1MzYiIHZpZXdCb3g9IjAgMCAxMDI0IDE1MzYiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790202061.694347
+    },
+    {
+      "url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTQ2IiBoZWlnaHQ9IjE1MzYiIHZpZXdCb3g9IjAgMCAxMTQ2IDE1MzYiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790202061.694635
+    },
+    {
+      "url": "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790202061.694686
+    },
+    {
+      "url": "https://www.time.cl/wp-content/plugins/spotlight-social-photo-feeds/ui/dist/styles/common-vendors.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "t": 1790202061.698927
+    },
+    {
+      "url": "https://www.time.cl/wp-content/plugins/spotlight-social-photo-feeds/ui/dist/styles/common.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "t": 1790202061.700381
+    },
+    {
+      "url": "https://www.time.cl/wp-content/plugins/spotlight-social-photo-feeds/ui/dist/styles/feed.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "t": 1790202061.700406
+    },
+    {
+      "url": "https://www.time.cl/wp-content/plugins/spotlight-social-photo-feeds/ui/dist/styles/front-app.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "t": 1790202061.700423
+    },
+    {
+      "url": "https://www.time.cl/wp-content/uploads/2025/01/Hotel-Rugendas-Exterior-ByN1.webp",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790202061.704942
+    },
+    {
+      "url": "https://www.time.cl/wp-content/uploads/2024/12/Verlag-Light.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "t": 1790202061.710315
+    },
+    {
+      "url": "https://www.time.cl/wp-content/plugins/litespeed-cache/guest.vary.php",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790202061.780525
+    },
+    {
+      "url": "https://www.time.cl/wp-content/uploads/2026/03/Favicon-Time-150x150.png",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "other",
+      "t": 1790202061.785995
+    }
+  ],
+  "cookies": [],
+  "probe": {
+    "titulo": "TIME Hotel & Apartments | Hotel y Apart Hotel en Santiago",
+    "urlFinal": "https://www.time.cl/",
+    "localStorage": [],
+    "candidatos": [],
+    "casillas": [],
+    "fijos": [
+      {
+        "tag": "DIV",
+        "cls": "elementor-element elementor-element-35759ae header e-flex e-con-boxed e-con e-parent",
+        "id": "",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 70
+        },
+        "texto": "Home Nosotros Alojamientos Rugendas Restaurant Salones Experiencias Contacto Reservar ES"
+      },
+      {
+        "tag": "DIV",
+        "cls": "elementor-element elementor-element-3c478e7 e-con-full e-flex e-con e-child",
+        "id": "contenedor-logo",
+        "rect": {
+          "x": 192,
+          "y": 361,
+          "w": 896,
+          "h": 286
+        },
+        "texto": ""
+      }
+    ],
+    "enlaces": [],
+    "totalEnlaces": 161
+  },
+  "errores": []
+}

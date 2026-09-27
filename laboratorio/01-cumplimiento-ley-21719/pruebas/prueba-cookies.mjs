@@ -1,7 +1,11 @@
-import fs from 'node:fs';
 import vm from 'node:vm';
-const RUTA = '/tmp/spl-main-wt/spindlelab-astro/public/js/consent-banner.js';
-const SRC = fs.readFileSync(RUTA, 'utf8');
+// El control de cookies vive en la rama `main`, que es lo que despliega Cloudflare Pages.
+// Se pide por rama y no por una carpeta de /tmp: esa carpeta dejó de ser un repositorio el
+// 26-sep, y una copia suelta se queda vieja sin avisar. Ver rutas.mjs.
+import { fuenteEnLaRama } from './rutas.mjs';
+const FUENTE = fuenteEnLaRama('spindlelab-astro/public/js/consent-banner.js', 'main', 'SPL_CONSENT_JS');
+const SRC = FUENTE.texto;
+const RUTA = FUENTE.ruta || FUENTE.origen;
 
 let ok = 0, malo = 0;
 const eq = (n, r, e) => { if (JSON.stringify(r) === JSON.stringify(e)) ok++; else { malo++; console.log(`  FALLA ${n}: esperado ${JSON.stringify(e)}, real ${JSON.stringify(r)}`); } };

@@ -1,0 +1,224 @@
+{
+  "slug": "lastorres",
+  "urlPedida": "https://lastorres.com/",
+  "urlFinal": "https://lastorres.com/",
+  "title": "Bienvenido a Las Torres Patagonia - Torres del Paine",
+  "navError": null,
+  "totalRequests": 89,
+  "totalTerceros": 45,
+  "hostsTerceros": [
+    "c.bing.com",
+    "c.clarity.ms",
+    "cdn.plyr.io",
+    "cdnjs.cloudflare.com",
+    "connect.facebook.net",
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "i.clarity.ms",
+    "pagead2.googlesyndication.com",
+    "scripts.clarity.ms",
+    "static.cloudflareinsights.com",
+    "tracker.metricool.com",
+    "use.fontawesome.com",
+    "www.clarity.ms",
+    "www.google-analytics.com",
+    "www.googletagmanager.com"
+  ],
+  "rastreadoresDisparados": {
+    "Google Analytics (GA4 /g/collect)": {
+      "n": 2,
+      "ejemplos": [
+        "https://www.google-analytics.com/g/collect?v=2&tid=G-JRVPJ40Y6B&gtm=45je69m1h1v9115032051z8856499105za20gzb856499105zd856499105xf1&_p=1790201957668&gcs=G100&gcd=13p3p3p3p5l1&npa=1&dma_cps=-&dma=0&ecid=1333023094&_eu=EAAA",
+        "https://www.google-analytics.com/g/collect?v=2&tid=G-LDHY57S118&gtm=45je69m1h1v874548945z8856499105za20gzb856499105zd856499105xf1&_p=1790201957668&gcs=G100&gcd=13p3p3p3p5l1&npa=1&dma_cps=-&dma=0&ecid=1274462555&_eu=EAAAA"
+      ]
+    },
+    "Google Analytics (gtag.js con G-)": {
+      "n": 2,
+      "ejemplos": [
+        "https://www.googletagmanager.com/gtag/js?id=G-LDHY57S118&cx=c&gtm=4e69m1h1",
+        "https://www.googletagmanager.com/gtag/js?id=G-JRVPJ40Y6B&cx=c&gtm=4e69m1h1"
+      ]
+    },
+    "Google Tag Manager (contenedor GTM-)": {
+      "n": 1,
+      "ejemplos": [
+        "https://www.googletagmanager.com/gtm.js?id=GTM-P759V75"
+      ]
+    },
+    "Meta Pixel (fbevents.js)": {
+      "n": 1,
+      "ejemplos": [
+        "https://connect.facebook.net/en_US/fbevents.js"
+      ]
+    },
+    "Microsoft Clarity": {
+      "n": 9,
+      "ejemplos": [
+        "https://www.clarity.ms/tag/y2egiikli8?ref=wordpress",
+        "https://scripts.clarity.ms/0.8.70/clarity.js",
+        "https://i.clarity.ms/collect"
+      ]
+    },
+    "Google Ads (conversion)": {
+      "n": 2,
+      "ejemplos": [
+        "https://www.googletagmanager.com/gtag/js?id=AW-11410653667",
+        "https://www.googletagmanager.com/gtag/js?id=AW-684465896&cx=c&gtm=4e69m1h1"
+      ]
+    }
+  },
+  "cookies": [
+    {
+      "name": "countVisit",
+      "domain": "lastorres.com",
+      "session": true,
+      "expiresDias": null,
+      "httpOnly": false,
+      "secure": false
+    },
+    {
+      "name": "wp-wpml_current_language",
+      "domain": "lastorres.com",
+      "session": true,
+      "expiresDias": null,
+      "httpOnly": false,
+      "secure": false
+    },
+    {
+      "name": "CLID",
+      "domain": "www.clarity.ms",
+      "session": false,
+      "expiresDias": 365,
+      "httpOnly": true,
+      "secure": true
+    },
+    {
+      "name": "_clck",
+      "domain": ".lastorres.com",
+      "session": false,
+      "expiresDias": 365,
+      "httpOnly": false,
+      "secure": false
+    },
+    {
+      "name": "_fbp",
+      "domain": ".lastorres.com",
+      "session": false,
+      "expiresDias": 90,
+      "httpOnly": false,
+      "secure": false
+    },
+    {
+      "name": "_clsk",
+      "domain": ".lastorres.com",
+      "session": false,
+      "expiresDias": 1,
+      "httpOnly": false,
+      "secure": false
+    },
+    {
+      "name": "MUID",
+      "domain": ".bing.com",
+      "session": false,
+      "expiresDias": 390,
+      "httpOnly": false,
+      "secure": true
+    },
+    {
+      "name": "MR",
+      "domain": ".c.bing.com",
+      "session": false,
+      "expiresDias": 7,
+      "httpOnly": false,
+      "secure": true
+    },
+    {
+      "name": "SRM_B",
+      "domain": ".c.bing.com",
+      "session": false,
+      "expiresDias": 390,
+      "httpOnly": false,
+      "secure": true
+    },
+    {
+      "name": "SM",
+      "domain": ".c.clarity.ms",
+      "session": true,
+      "expiresDias": null,
+      "httpOnly": false,
+      "secure": true
+    },
+    {
+      "name": "MUID",
+      "domain": ".clarity.ms",
+      "session": false,
+      "expiresDias": 390,
+      "httpOnly": false,
+      "secure": true
+    },
+    {
+      "name": "MR",
+      "domain": ".c.clarity.ms",
+      "session": false,
+      "expiresDias": 7,
+      "httpOnly": false,
+      "secure": true
+    },
+    {
+      "name": "ANONCHK",
+      "domain": ".c.clarity.ms",
+      "session": false,
+      "expiresDias": 0,
+      "httpOnly": false,
+      "secure": true
+    }
+  ],
+  "totalCookies": 13,
+  "cookiesDeTerceros": [
+    "CLID @ www.clarity.ms",
+    "MUID @ .bing.com",
+    "MR @ .c.bing.com",
+    "SRM_B @ .c.bing.com",
+    "SM @ .c.clarity.ms",
+    "MUID @ .clarity.ms",
+    "MR @ .c.clarity.ms",
+    "ANONCHK @ .c.clarity.ms"
+  ],
+  "pistaBanner": {
+    "bodyMencionaCookies": true,
+    "overlaysConTextoCookies": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "cls": "cm cm--box cm--wide cm--bottom cm--center cm--flip",
+        "text": "Este sitio web utiliza cookies Usamos cookies propias y de terceros para que el sitio funcione correctamente, entender cómo se usa y, si las aceptas, mostrarte contenido y publicidad más relevante. Puedes aceptarlas todas, rechazar las que no son necesarias o personalizar tu elección. Puedes cambiar",
+        "rect": {
+          "x": 80,
+          "y": 648,
+          "w": 1120,
+          "h": 236
+        },
+        "mentionsCookies": true
+      }
+    ],
+    "overlaysTotales": 1
+  },
+  "overlays": [
+    {
+      "tag": "DIV",
+      "id": "",
+      "cls": "cm cm--box cm--wide cm--bottom cm--center cm--flip",
+      "text": "Este sitio web utiliza cookies Usamos cookies propias y de terceros para que el sitio funcione correctamente, entender cómo se usa y, si las aceptas, mostrarte contenido y publicidad más relevante. Puedes aceptarlas todas, rechazar las que no son necesarias o personalizar tu elección. Puedes cambiar",
+      "rect": {
+        "x": 80,
+        "y": 648,
+        "w": 1120,
+        "h": 236
+      },
+      "mentionsCookies": true
+    }
+  ],
+  "lang": "es",
+  "iframes": [],
+  "bodyTextHead": "ES\nEN\nPT-BR\n \nINICIO\nTORRES DEL PAINE\nDESCUBRE LAS TORRES PATAGONIA\nCIRCUITOS Y TOURS\nPRE CHECK-IN\nDONDE ALOJAR\nDESCUBRE\nOFERTAS\nsearch\nViaje a la Patagonia: un podcast para descubrir Torres del Paine\nLEER MÁS \nDECUBRE EL NUEVO CIRCUITO DE TREKKING W JOURNEY\nVER MÁS \nALL INCLUSIVE HOTEL LAS TORRES\nLEER MÁS \nCIRCUITO W 5 DIAS / 4 NOCHES\nCIRCUITO W \nDESCUBRE NUESTROS CAMPING FULL EQUIPADOS\nCAMPING PREMIUM \nREVISA NUESTRO BLOG E INICIATIVAS DE SUSTENTABILIDAD\nBLOG LAS TORRES \nViaje a la Patagonia: un podcast para descubrir Torres del Paine\nLEER MÁS \nDECUBRE EL NUEVO CIRCUITO DE TREKKING W JOURNEY\nVER MÁS \nALL INCLUSIVE HOTEL LAS TORRES\nLEER MÁS \nCIRCUITO W 5 DIAS / 4 NOCHES\nCIRCUITO W \nDESCUBRE NUESTROS CAMPING FULL EQUIPADOS\nCAMPING PREMIUM \nREVISA NUESTRO BLOG E INICIATIVAS DE SUSTENTABILIDAD\nBLOG LAS TORRES \nViaje a la Patagonia: un podcast para descubrir Torres del Paine\nLEER MÁS \n123456\nlocal_mall PAQUETES\nhotel POR NOCHE\n¿QUÉ EXPERIENCIA BUSCAS?\nSelecciona experiencia\nCircuito W Hotel\nAll-Inclusive - 2 - 5 Noches\nCircuito W Journey 5D/4N\nCircuito W + 5D/4N\nCircuito O 8D/7N\nCircuito W 4D/3N Autoguiado\nCircuito W 5D/4N\nevent_available RESERVAR\n¡Bienvenido a Las Torres Patagonia!\n\nSomos una reserva ubicada en el corazón del Parque Nacional Torres del Paine, dedicada a la conservación de la naturaleza y cultura de Patagonia y el turismo sustentable.\n\nOfrecemos la variedad más amplia de aventuras y circuitos de trekking para vivir una experiencia auténtica e increíble en Las To"
+}

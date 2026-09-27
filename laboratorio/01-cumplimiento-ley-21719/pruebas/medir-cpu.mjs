@@ -1,14 +1,20 @@
-import * as nuevo from '/tmp/spl-main-wt/spindlelab-astro/functions/api/chequeo.js';
-import { execFileSync } from 'node:child_process';
+// El chequeo de hoy sale de la rama `main`, que es lo que despliega Cloudflare Pages, y no
+// de una carpeta: el 26-sep había cuatro copias distintas de este archivo en los worktrees
+// del repositorio. Ver rutas.mjs.
+import { moduloEnLaRama, moduloEnElCommit } from './rutas.mjs';
+const nuevo = await moduloEnLaRama('spindlelab-astro/functions/api/chequeo.js', 'main', 'SPL_CHEQUEO_JS');
 
 // La versión vieja sale del historial de git (c2616e9, la de antes de "El chequeo de
 // /diagnostico/ deja de inventar informes"), igual que en prueba-gemelo-completa y
 // prueba-robots. El import apuntaba a un ./chequeo-viejo.mjs que vivía en el scratchpad de una
 // sesión y nunca se versionó, así que esta medición no corría en ningún otro lado. Se importa
 // como data: para no escribir nada en disco.
+//
+// El repositorio se resuelve desde este mismo archivo. Antes decía `git -C /tmp/spl-main-wt`,
+// y el 26-sep esa carpeta dejó de ser un repositorio: la medición reventaba con "fatal: not a
+// git repository" antes de imprimir una sola fila.
 const VIEJO = 'c2616e9dbe20d05d9e2edd973e76e7b7fdf9b09a';
-const fuenteVieja = execFileSync('git', ['-C', '/tmp/spl-main-wt', 'show', `${VIEJO}:spindlelab-astro/functions/api/chequeo.js`]);
-const viejo = await import('data:text/javascript;base64,' + fuenteVieja.toString('base64'));
+const viejo = await moduloEnElCommit('spindlelab-astro/functions/api/chequeo.js', VIEJO);
 
 // Una portada realista y pesada: mucho marcado repetido, varios bloques JSON-LD,
 // formularios, scripts. Es el perfil de un WordPress grande, no ruido plano.

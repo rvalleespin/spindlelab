@@ -1,13 +1,20 @@
-import * as nuevo from '/tmp/spl-main-wt/spindlelab-astro/functions/api/chequeo.js';
-import { execFileSync } from 'node:child_process';
+// El chequeo de hoy sale de la rama `main` (lo que despliega Cloudflare Pages), pedido por
+// RAMA y no por carpeta: el 26-sep había cuatro copias distintas de este mismo archivo en
+// los worktrees del repositorio, así que "la primera que exista" habría cambiado el archivo
+// bajo prueba sin decirlo. Ver rutas.mjs.
+import { moduloEnLaRama, moduloEnElCommit, fuenteEnLaRama, rutaEnElRepo } from './rutas.mjs';
+const nuevo = await moduloEnLaRama('spindlelab-astro/functions/api/chequeo.js', 'main', 'SPL_CHEQUEO_JS');
 
 // La versión vieja sale del historial de git (c2616e9, la de antes de "El chequeo de
 // /diagnostico/ deja de inventar informes"), no de un archivo suelto. El import apuntaba a un
 // ./chequeo-viejo.mjs que vivía en el scratchpad de una sesión y nunca se versionó, así que
 // esta prueba no corría en ningún otro lado. Se importa como data: para no escribir nada.
+//
+// El repositorio se resuelve desde este mismo archivo. Antes decía `git -C /tmp/spl-main-wt`:
+// el 26-sep esa carpeta dejó de ser un repositorio y las 370 comprobaciones de acá reventaban
+// con "fatal: not a git repository" antes de la primera.
 const VIEJO = 'c2616e9dbe20d05d9e2edd973e76e7b7fdf9b09a';
-const fuenteVieja = execFileSync('git', ['-C', '/tmp/spl-main-wt', 'show', `${VIEJO}:spindlelab-astro/functions/api/chequeo.js`]);
-const viejo = await import('data:text/javascript;base64,' + fuenteVieja.toString('base64'));
+const viejo = await moduloEnElCommit('spindlelab-astro/functions/api/chequeo.js', VIEJO);
 
 let ok = 0, malo = 0;
 const eq = (n, real, esp) => {
@@ -740,8 +747,7 @@ console.log('=== 13. llms.txt y sitemap.xml: manda lo que llegó, no el código 
   // reproducirse. Pasó el 23-sep, y el síntoma engaña, porque se ven dos fallas que parecen
   // una regresión cuando en realidad la prueba se está mirando a sí misma.
   const ANTES_LLMS = '1857e3e';
-  const fuenteHoy = execFileSync('git', ['-C', '/tmp/spl-main-wt', 'show', `${ANTES_LLMS}:spindlelab-astro/functions/api/chequeo.js`]);
-  const hoy = await import('data:text/javascript;base64,' + fuenteHoy.toString('base64'));
+  const hoy = await moduloEnElCommit('spindlelab-astro/functions/api/chequeo.js', ANTES_LLMS);
   const antes = await hoy.chequear('ejemplo.cl', con('/llms.txt', { status: 302, location: '/' }));
   eq('ANTES: el 302 a la portada daba verde en llms.txt', item(antes, 'llms').ok, true);
   eq('ANTES: y afirmaba haberlo encontrado', item(antes, 'llms').detalle, 'Encontramos /llms.txt.');
@@ -814,15 +820,16 @@ console.log('=== 14. los dos detectores de bloqueo son gemelos, y se comprueba =
   // Tres informes del 23-sep dieron por alineadas las dos listas cuando no lo estaban, y un
   // reproductor encontró 6 discrepancias sobre 11 páginas. Por eso la alineación deja de ser
   // una afirmación de un comentario y pasa a ser algo que se mide acá.
+  // Se comparan los dos FUENTES, no dos rutas de una carpeta: el de spindlelab.cl por su
+  // rama (`main`) y el de Verifica y Cumple por el worktree que lo tiene. Ver rutas.mjs.
   const { readFileSync } = await import('node:fs');
-  const bloque = (ruta) => {
-    const s = readFileSync(ruta, 'utf-8');
-    const i = s.indexOf('const RE_TEXTO_BLOQUEO = new RegExp([');
-    const j = s.indexOf('].join(', i);
-    return i === -1 || j === -1 ? null : s.slice(i, j);
+  const bloque = (fuente) => {
+    const i = fuente.indexOf('const RE_TEXTO_BLOQUEO = new RegExp([');
+    const j = fuente.indexOf('].join(', i);
+    return i === -1 || j === -1 ? null : fuente.slice(i, j);
   };
-  const mia = bloque('/tmp/spl-main-wt/spindlelab-astro/functions/api/chequeo.js');
-  const suya = bloque('/tmp/vyc-sub-wt/verificaycumple/functions/api/chequeo.js');
+  const mia = bloque(fuenteEnLaRama('spindlelab-astro/functions/api/chequeo.js', 'main', 'SPL_CHEQUEO_JS').texto);
+  const suya = bloque(readFileSync(rutaEnElRepo('verificaycumple/functions/api/chequeo.js', 'VYC_CHEQUEO_JS'), 'utf-8'));
   eq('la lista de frases está en los dos archivos', !!mia && !!suya, true);
   eq('y es la misma, alternativa por alternativa', mia, suya);
 

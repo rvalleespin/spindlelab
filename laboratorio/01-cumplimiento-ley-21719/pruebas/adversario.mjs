@@ -1,4 +1,7 @@
-const m = await import('/tmp/spl-main-wt/spindlelab-astro/functions/api/chequeo.js');
+// El chequeo de spindlelab.cl sale de la rama `main`, que es lo que se despliega. Por rama
+// y no por carpeta: hay copias distintas de este archivo en varios worktrees (ver rutas.mjs).
+import { moduloEnLaRama } from './rutas.mjs';
+const m = await moduloEnLaRama('spindlelab-astro/functions/api/chequeo.js', 'main', 'SPL_CHEQUEO_JS');
 function fake(html){ return async (url) => ({ status: url.endsWith('/') ? 200 : 404, url,
   headers:{get:(k)=> k.toLowerCase()==='content-length' ? String(new TextEncoder().encode(url.endsWith('/')?html:'').length) : null}, text: async()=> url.endsWith('/') ? html : '' }); }
 async function medir(nombre, html) {

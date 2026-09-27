@@ -1,5 +1,10 @@
-import * as vyc from '/tmp/vyc-sub-wt/verificaycumple/functions/api/chequeo.js';
+// El chequeo de Verifica y Cumple, del worktree del repositorio que lo tiene. Nada de
+// carpetas de /tmp: la que había acá dejó de ser un repositorio el 26-sep. Ver rutas.mjs.
+import { rutaEnElRepo } from './rutas.mjs';
 import fs from 'node:fs';
+import { pathToFileURL } from 'node:url';
+const vyc = await import(pathToFileURL(
+  rutaEnElRepo('verificaycumple/functions/api/chequeo.js', 'VYC_CHEQUEO_JS')).href);
 let ok=0, malo=0;
 const eq=(n,r,e)=>{ if(JSON.stringify(r)===JSON.stringify(e)) ok++; else {malo++; console.log(`  FALLA ${n}: esperado ${JSON.stringify(e)}, real ${JSON.stringify(r)}`);} };
 
@@ -79,7 +84,10 @@ console.log('=== 23-sep: www, política y permiso, por la rama que corre en prod
 console.log('=== 23-sep, segunda pasada: bloqueo, sitios armados con JavaScript y política ilegible ===');
 {
   // F2: la página de bloqueo exacta de www.bancoestado.cl, por streaming.
-  const BANCO = fs.readFileSync('/private/tmp/claude-501/-Users-ramon-Library-Mobile-Documents-com-apple-CloudDocs-SPINDLELAB/befb9f93-f301-497e-a5c3-ea7342366826/scratchpad/verif/integracion/home-www.bancoestado.cl.html', 'utf8');
+  // La captura está versionada junto a la prueba. Hasta el 26-sep se leía del scratchpad de
+  // una sesión de Claude Code, con el UUID de esa sesión escrito en la ruta: pasaba por
+  // casualidad, porque la sesión que la corría era justo esa. Ver paginas-23sep/LEEME.md.
+  const BANCO = fs.readFileSync(new URL('./paginas-23sep/home-www.bancoestado.cl.html', import.meta.url), 'utf8');
   const r = await vyc.chequear('www.bancoestado.cl', fake({ 'https://www.bancoestado.cl/': { status:200, body:BANCO } }));
   eq('página de bloqueo con 200: sin informe', [r.ok, r.tipo, r.codigo, r.error], [false, 'sitio', undefined, vyc.mensajeDeFallo('vacia')]);
 }

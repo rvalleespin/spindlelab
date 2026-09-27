@@ -23,11 +23,15 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { rutaEnElRepo, bancoDeMediciones } from './rutas.mjs';
 
-const RUTA_MODULO = process.env.PROFUNDO_JS
-  || '/tmp/vyc-sub-wt/verificaycumple/functions/api/profundo.js';
-const DATOS = process.env.PROFUNDO_DATOS
-  || '/private/tmp/claude-501/-Users-ramon-Library-Mobile-Documents-com-apple-CloudDocs-SPINDLELAB/befb9f93-f301-497e-a5c3-ea7342366826/scratchpad/borradores';
+// Las dos rutas se buscan DENTRO del repositorio (ver `rutas.mjs`), no en una carpeta de
+// /tmp ni en el scratchpad de una sesión: las dos anteriores eran efímeras, una ya se había
+// roto, y este archivo estuvo a un reinicio de no correr en ninguna parte. Se pueden forzar
+// con PROFUNDO_JS (o VYC_SITIO) y PROFUNDO_DATOS, y las dos se imprimen al arrancar: una
+// prueba que no dice qué cargó no deja ver que cargó la copia equivocada.
+const RUTA_MODULO = rutaEnElRepo('verificaycumple/functions/api/profundo.js', 'PROFUNDO_JS');
+const DATOS = bancoDeMediciones();
 
 const m = await import(RUTA_MODULO);
 
@@ -157,7 +161,14 @@ const buscar = (h, clave) => h.find((x) => x.clave === clave) || null;
  * de eventos, no por un valor de retorno. Si mañana `medirConNavegador`*
  * deja de escuchar `Network.requestWillBeSent`, esto se entera.        *
  * ------------------------------------------------------------------ */
-function navegadorDeMentira({ url = 'https://ejemplo.cl/', peticiones = [], cookies = [], aviso = {}, cargo = true, hrefFinal = null } = {}) {
+//
+// `avisoRevienta` reproduce lo que hace una pared con desafío de JavaScript: se recarga
+// sola y destruye el contexto de ejecución, así que el `Runtime.evaluate` que mide la
+// página tira. Importa que sea ESE evaluate y no un campo puesto a mano, porque de ahí
+// salen los TRES detectores de texto a la vez (título, texto en pantalla y `letras`) y lo
+// que hay que probar es justamente que se mueren juntos. El de `location.href` sí contesta:
+// es otra llamada, y en el Chrome de verdad sobrevive.
+function navegadorDeMentira({ url = 'https://ejemplo.cl/', peticiones = [], cookies = [], aviso = {}, cargo = true, hrefFinal = null, avisoRevienta = false } = {}) {
   const oyentes = [];
   const cliente = {
     llamadas: [],
@@ -183,9 +194,9 @@ function navegadorDeMentira({ url = 'https://ejemplo.cl/', peticiones = [], cook
         }
         case 'Storage.getCookies': return { cookies };
         case 'Runtime.evaluate':
-          return /location\.href/.test(params.expression || '')
-            ? { result: { value: hrefFinal || url } }
-            : { result: { value: JSON.stringify(aviso) } };
+          if (/location\.href/.test(params.expression || '')) return { result: { value: hrefFinal || url } };
+          if (avisoRevienta) throw new Error('Cannot find context with specified id');
+          return { result: { value: JSON.stringify(aviso) } };
         default: return {};
       }
     },
@@ -483,8 +494,17 @@ console.log('=== 13. reconocer que nos bloquearon, sin confundirlo con un sitio 
   // esta regla, un sitio que nos tapó la vista entera salía con los tres ítems en verde.
   eq('una sola petición y sin texto: no vimos el sitio',
     m.pareceBloqueo({ peticiones: [{ url: 'x' }], cookies: [], letras: null }), 'flaco');
-  falso('tres peticiones sin dato de texto ya no se asumen bloqueo',
-    m.pareceBloqueo({ peticiones: [{ url: 'a' }, { url: 'b' }, { url: 'c' }], cookies: [], letras: null }));
+  // Esta afirmaba lo contrario hasta el 26-sep ("tres peticiones sin dato de texto ya no se
+  // asumen bloqueo") y era el último falso verde: bendecía como CORRECTO que una pared de
+  // tres peticiones saliera limpia por el solo hecho de que no pudimos contar su texto.
+  // Falta de dato no es dato a favor. El §34 lo mide de punta a punta sobre la pared real.
+  eq('tres peticiones y sin dato de texto: tampoco vimos el sitio',
+    m.pareceBloqueo({ peticiones: [{ url: 'a' }, { url: 'b' }, { url: 'c' }], cookies: [], letras: null }), 'flaco');
+  // Y el límite del otro lado, que es lo que impide que esto le quite el informe a nadie:
+  // el corte de peticiones no se movió. Con texto desconocido pero con la red entera medida,
+  // no hay sospecha que levantar.
+  falso('un sitio con muchas peticiones y sin dato de texto NO es sospechoso',
+    m.pareceBloqueo({ peticiones: new Array(40).fill({ url: 'x' }), cookies: [], letras: null }));
 
   // Los dos motivos se dicen con palabras distintas, y solo uno acusa al sitio. example.com
   // es el caso real que lo obligó: 1 petición y 127 caracteres, y es una página de verdad,
@@ -511,6 +531,25 @@ console.log('=== 13. reconocer que nos bloquearon, sin confundirlo con un sitio 
     /nos bloqueó/.test(JSON.stringify(rFlaco.items)));
   cierto('pero se deja dicho que podría serlo',
     /Puede ser que tu sitio no nos dejara entrar/.test(rFlaco.items[0].detalle));
+  // Y el mismo motivo cuando el texto NO se midió. Se llega igual a 'flaco' (una sola
+  // petición y ninguna cookie vale por sí sola), pero ahí "casi no trae contenido" es una
+  // afirmación sobre algo que nadie contó: `letras` viene en null porque el detector de
+  // aviso tampoco pudo correr. El estado no cambia; lo que no puede es decir de más.
+  const rSinLetras = m.armarInforme({
+    urlFinal: 'https://ejemplo.cl/', titulo: '', letras: null, msTotal: 18000, parcial: false,
+    tras1: { ms: 11000, peticiones: [{ url: 'https://ejemplo.cl/', metodo: 'GET', tipo: 'Document', ms: 100, conCuerpo: false }], cookies: [] },
+    tras2: { ms: 18000, peticiones: [{ url: 'https://ejemplo.cl/', metodo: 'GET', tipo: 'Document', ms: 100, conCuerpo: false }], cookies: [] },
+    aviso: { fallo: 'timeout' },
+  }, 'ejemplo.cl');
+  eq('sin dato de texto también es flaco', rSinLetras.bloqueado, 'flaco');
+  falso('y no se afirma cuánto contenido traía',
+    /casi no trae contenido/.test(JSON.stringify(rSinLetras.items)));
+  cierto('se dice que el texto no se pudo leer',
+    /el texto de la página tampoco lo pudimos leer/.test(rSinLetras.items[0].detalle));
+  cierto('y se sigue dejando dicho que podría ser un bloqueo',
+    /Puede ser que tu sitio no nos dejara entrar/.test(rSinLetras.items[0].detalle));
+  eq('sin puntaje, igual que el otro', rSinLetras.puntaje, null);
+
   // Los dos van igual a sin-confirmar: ninguno suma ni resta.
   eq('los dos dejan todo sin confirmar', [rBloqueo.sinConfirmar, rFlaco.sinConfirmar], [4, 4]);
   eq('y sin puntaje', [rBloqueo.puntaje, rFlaco.puntaje], [null, null]);
@@ -804,6 +843,10 @@ console.log('=== 20. los 11 sitios del banco, con su fila esperada cada uno ==='
 console.log('=== 21. santander: la pared de Akamai que salía en verde (medido el 25-sep) ===');
 const MEDIDAS = new URL('./medidas-25sep/', import.meta.url);
 const medida = (nombre) => JSON.parse(fs.readFileSync(new URL(nombre + '.json', MEDIDAS), 'utf8'));
+// El banco del 26-sep: 34 portadas medidas con el mismo medidor, por las que se rehizo el
+// §23. Ver medidas-26sep/LEEME.md.
+const MEDIDAS26 = new URL('./medidas-26sep/', import.meta.url);
+const medida26 = (nombre) => JSON.parse(fs.readFileSync(new URL(nombre + '.json', MEDIDAS26), 'utf8'));
 {
   const med = medida('santander');
 
@@ -871,40 +914,127 @@ console.log('=== 22. los cinco prospectos reales siguen recibiendo informe ===')
 }
 
 /* ================================================================== */
-console.log('=== 23. el portero solo cuenta si la cookie es del propio dominio ===');
+console.log('=== 23. la pared se reconoce por la forma de la página, no por la lista de cookies ===');
 {
+  // ESTA SECCIÓN SE REHIZO EL 26-SEP, Y POR QUÉ IMPORTA.
+  //
+  // Lo que había acá afirmaba que una página con 20 peticiones y 4.000 letras cuyas ÚNICAS
+  // cookies fueran _abck y bm_sz era una pared de Akamai. Nadie lo había medido: era la
+  // regla del código escrita otra vez en forma de prueba, y por eso pasaba siempre. Cuando
+  // se midió resultó ser al revés — itau.cl y scotiabank.cl son portadas enteras, vistas
+  // completas, con esas mismas cookies de primera parte.
+  //
+  // La regla vieja tenía además el agujero por el que el revisor volvió a entrar: exigía que
+  // TODAS las cookies fueran de la lista, así que una sola cookie corriente al lado la
+  // desarmaba. Las dos fallas son la misma — reconocer la pared por la AUSENCIA de todo lo
+  // demás — y por eso la regla nueva mira lo que la pared ES.
+  //
+  // Todo lo de abajo se apoya en medidas-26sep/, no en lo que el código devuelve hoy.
+
+  const censo = medida26('censo');
+  const fila = (dominio) => censo.sitios.find((s) => s.dominio === dominio);
+
+  /* --- 1. el hueco que justifica el número ------------------------ */
+  // Las tres paredes del censo, comprobadas a mano una por una: banco.santander.cl muestra
+  // "Revisa tu conexión a internet", www.bancoestado.cl "se ha restringido este acceso" y
+  // www.latamairlines.com "Access Denied". Las otras 31 son portadas de verdad.
+  const PAREDES = ['santander.cl', 'bancoestado.cl', 'latamairlines.com'];
+  eq('el censo trae las 34 portadas medidas', censo.sitios.length, 34);
+  const paredes = censo.sitios.filter((s) => PAREDES.includes(s.dominio));
+  const reales = censo.sitios.filter((s) => !PAREDES.includes(s.dominio));
+  eq('tres de ellas son paredes', paredes.length, 3);
+  eq('y treinta y una son páginas de verdad', reales.length, 31);
+
+  const masGorda = Math.max(...paredes.map((s) => s.peticiones));
+  const masFlaca = Math.min(...reales.map((s) => s.peticiones));
+  eq('la pared más cargada trae 8 peticiones', masGorda, 8);
+  eq('la portada real más flaca trae 23', masFlaca, 23);
+  // EL INVARIANTE. Si alguien mueve el corte fuera del hueco, esto falla, y falla contra una
+  // medición, no contra una opinión.
+  cierto('el corte deja las tres paredes de un lado', masGorda <= m.MAX_PETICIONES_PARED);
+  cierto('y las treinta y una portadas reales del otro', masFlaca > m.MAX_PETICIONES_PARED);
+  cierto('ninguna portada real medida cabe bajo el corte',
+    reales.every((s) => s.peticiones > m.MAX_PETICIONES_PARED));
+
+  /* --- 2. lo que rompe la regla vieja: el banco que SÍ vimos ------- */
+  for (const [nombre, dominio, peticiones] of [['itau', 'itau.cl', 119], ['scotiabank', 'scotiabank.cl', 212]]) {
+    const med = medida26(nombre);
+    eq(`${dominio}: ${peticiones} peticiones, o sea la portada entera`, med.tras2.peticiones.length, peticiones);
+    cierto(`${dominio}: con al menos una cookie de gestor de bots en su propio dominio`,
+      med.tras2.cookies.some((c) => m.esCookieDePortero(c.name) && /(^|\.)(itau|scotiabank)\.cl$/.test(String(c.domain).replace(/^\./, ''))));
+    // Y el veredicto: no es una pared. Es el sitio.
+    eq(`${dominio}: no se declina`, m.pareceBloqueo({
+      peticiones: med.tras2.peticiones, cookies: med.tras2.cookies, letras: med.letras,
+      titulo: med.titulo, texto: med.texto, urlFinal: med.urlFinal, dominio,
+    }), null);
+    const r = m.armarInforme(med, dominio);
+    eq(`${dominio}: y recibe informe`, r.bloqueado, null);
+    cierto(`${dominio}: con puntaje`, typeof r.puntaje === 'number');
+  }
+
+  /* --- 3. la cookie corriente al lado ya no desarma la pared ------- */
+  // El agujero que el revisor dejó anotado. La base es la medición de la pared; lo único que
+  // se agrega es UNA cookie de las más comunes que hay, con un nombre que no se inventó: es
+  // la que escribe uhc.cl, uno de los cinco prospectos del §22.
+  const pared = medida26('santander');
+  const comoEstaba = {
+    peticiones: pared.tras2.peticiones, cookies: pared.tras2.cookies, letras: pared.letras,
+    titulo: pared.titulo, texto: pared.texto, urlFinal: pared.urlFinal, dominio: 'www.santander.cl',
+  };
+  eq('la pared medida el 26-sep sigue siendo la misma', pared.tras2.peticiones.length, 8);
+  eq('y se reconoce', m.pareceBloqueo(comoEstaba), 'portero');
+  const corriente = medida('uhc').tras2.cookies[0].name;
+  eq('la cookie corriente que se le pone al lado es una real', corriente, 'pll_language');
+  eq('con una cookie corriente al lado, la pared sigue siendo una pared', m.pareceBloqueo({
+    ...comoEstaba, cookies: [...pared.tras2.cookies, { name: corriente, domain: '.santander.cl' }],
+  }), 'portero');
+  // Y con cinco más, tampoco: el "todas" ya no manda.
+  eq('ni con cinco al lado', m.pareceBloqueo({
+    ...comoEstaba,
+    cookies: [...pared.tras2.cookies, ...['_ga', '_gid', 'PHPSESSID', 'modalVisto', 'carrito']
+      .map((n) => ({ name: n, domain: '.santander.cl' }))],
+  }), 'portero');
+
+  /* --- 4. y el gestor que no está en la lista tampoco se escapa ---- */
+  // La prueba de que el catálogo dejó de ser lo que decide. Misma pared medida, con las dos
+  // cookies renombradas a algo que no reconocemos: ya no se puede nombrar al guardia, así
+  // que el motivo cambia de palabras — pero el informe sigue sin poder salir en verde.
+  const desconocido = m.pareceBloqueo({
+    ...comoEstaba,
+    cookies: pared.tras2.cookies.map((c) => ({ ...c, name: 'guardia_que_no_conocemos_' + c.name.length })),
+  });
+  falso('un gestor que no está en la lista ya no se llama portero', desconocido === 'portero');
+  eq('pero la pared se reconoce igual, por la forma de la página', desconocido, 'flaco');
+  const rDesc = m.armarInforme({
+    ...pared,
+    tras1: { ...pared.tras1, cookies: pared.tras1.cookies.map((c) => ({ ...c, name: 'xx_' + c.name })) },
+    tras2: { ...pared.tras2, cookies: pared.tras2.cookies.map((c) => ({ ...c, name: 'xx_' + c.name })) },
+  }, 'www.santander.cl');
+  falso('y ningún ítem sale en verde', rDesc.items.some((i) => i.ok));
+  eq('ni hay puntaje', rDesc.puntaje, null);
+
+  /* --- 5. lo que ya cuidaba esta sección y sigue valiendo ---------- */
   const unas = (nombres, dominio) => nombres.map((n) => ({ name: n, domain: dominio }));
   const muchas = new Array(20).fill(0).map((_, i) => ({ url: 'https://ejemplo.cl/x' + i }));
 
-  eq('solo cookies de Akamai, del propio dominio', m.pareceBloqueo({
-    peticiones: muchas, cookies: unas(['_abck', 'bm_sz'], '.ejemplo.cl'), letras: 4000, dominio: 'ejemplo.cl',
-  }), 'portero');
-  eq('DataDome también', m.pareceBloqueo({
-    peticiones: muchas, cookies: unas(['datadome'], 'www.ejemplo.cl'), letras: 4000, dominio: 'ejemplo.cl',
-  }), 'portero');
-  eq('Imperva también', m.pareceBloqueo({
-    peticiones: muchas, cookies: unas(['incap_ses_123_456', 'visid_incap_456'], '.ejemplo.cl'), letras: 4000, dominio: 'ejemplo.cl',
-  }), 'portero');
-
-  // EL FALSO POSITIVO QUE ESTA PRUEBA EXISTE PARA EVITAR, y que salió del propio banco:
   // hotelescumbres.cl deja UNA sola cookie y es el cf_clearance de asksuite.com, el chat que
   // tiene incrustado. Es un sitio que vimos entero, con 82 peticiones y Google Analytics
   // cargando y enviando. Sin el requisito del dominio propio se declinaba solo.
   eq('el cf_clearance de un tercero NO es el portero de este sitio', m.pareceBloqueo({
-    peticiones: muchas, cookies: unas(['cf_clearance'], '.asksuite.com'), letras: 4000, dominio: 'hotelescumbres.cl',
+    peticiones: muchas, cookies: unas(['cf_clearance'], '.asksuite.com'), letras: 300, dominio: 'hotelescumbres.cl',
   }), null);
   eq('y el caso real del banco tampoco se declina',
     m.armarInforme({ ...cumbres, aviso: { avisos: [], marcosIlegibles: [] } }, 'hotelescumbres.cl').bloqueado, null);
 
-  // Una cookie de portero junto a una normal no es una pared: la página escribió algo suyo.
-  eq('con una cookie que no es de portero, no hay pared', m.pareceBloqueo({
-    peticiones: muchas, cookies: [...unas(['_abck'], '.ejemplo.cl'), ...unas(['carrito'], '.ejemplo.cl')],
-    letras: 4000, dominio: 'ejemplo.cl',
-  }), null);
   // Sin cookies no hay portero: eso es otro caso, y lo resuelven las otras puertas.
   falso('cero cookies no es portero', m.pareceBloqueo({
-    peticiones: muchas, cookies: [], letras: 4000, dominio: 'ejemplo.cl',
+    peticiones: muchas, cookies: [], letras: 300, dominio: 'ejemplo.cl',
   }) === 'portero');
+  // Y una página entera con cookies de gestor NO es una pared, que es justo lo que esta
+  // sección afirmaba al revés hasta hoy.
+  eq('una página entera con cookies de Akamai no es una pared', m.pareceBloqueo({
+    peticiones: muchas, cookies: unas(['_abck', 'bm_sz'], '.ejemplo.cl'), letras: 4000, dominio: 'ejemplo.cl',
+  }), null);
 }
 
 /* ================================================================== */
@@ -962,10 +1092,19 @@ console.log('=== 25. el sitio que no terminó de cargar no puede salir en verde 
     /no terminó de cargar/.test(corto.items.find((i) => i.id === 'carga').detalle));
   cierto('sin contarlo en contra',
     /ni a favor ni en contra/.test(corto.items.find((i) => i.id === 'envio').detalle));
-  // Lo que NO cambia: las cookies y el aviso se siguen leyendo, porque lo que vimos lo vimos.
-  eq('el ítem de cookies sigue contando', corto.items.find((i) => i.id === 'cookies').estado, 'ok');
-  eq('los 7 de carga y envío salen del denominador', corto.pesoConfirmado, 6);
-  // Y con 6 de 13 confirmados ya no se muestra número: es menos de la mitad del peso. Un
+  // 26-sep: faltaba el tercero. La decisión era sobre lo que no sabemos, y de un sitio que
+  // nunca disparó el evento de carga tampoco sabemos qué cookies MÁS iba a escribir: "no
+  // dejó ninguna cookie" es la misma afirmación hecha con lo poco que alcanzamos a mirar, y
+  // salía en VERDE. Lo que sí se sigue leyendo es el aviso, que se mira con los ojos y no
+  // con el reloj: o apareció mientras estuvimos ahí, o no apareció.
+  eq('el ítem de cookies tampoco puede ir en verde',
+    corto.items.find((i) => i.id === 'cookies').estado, 'sin-confirmar');
+  falso('ninguno de los tres verbos va en verde',
+    corto.items.filter((i) => ['carga', 'cookies', 'envio'].includes(i.id)).some((i) => i.ok));
+  eq('los 10 de los tres verbos salen del denominador', corto.pesoConfirmado, 3);
+  eq('y queda contando solo el aviso',
+    corto.items.filter((i) => i.estado !== 'sin-confirmar').map((i) => i.id), ['aviso']);
+  // Y con 3 de 13 confirmados ya no se muestra número: es menos de la mitad del peso. Un
   // sitio que no terminó de cargar deja de tener nota, que es justo lo que corresponde.
   eq('y sin la mitad del peso, no hay número', corto.puntaje, null);
   cierto('pero sí se explica en el canal informativo',
@@ -1170,6 +1309,468 @@ console.log('=== 29. "Volver a medirlo": rehacer=1 se salta la caché y NADA má
   cierto('rehacer=0 no cuenta', (await pedir('&rehacer=0')).deCache);
   cierto('rehacer=si tampoco', (await pedir('&rehacer=si')).deCache);
   cierto('ni rehacer a secas', (await pedir('&rehacer')).deCache);
+}
+
+/* ================================================================== */
+console.log('=== 30. concordancia: el ítem de cookies se lee como lo escribiría una persona ===');
+{
+  // Las dos frases salían mal en prospectos REALES, de la lista a la que le escribimos:
+  // garciaparot.cl, con una sola cookie propia, leía "Las 1 que escribió son de tu propio
+  // dominio"; revitalaser.cl, con el _fbp que el Pixel de Meta deja al mover el mouse
+  // (medido el 23-sep, el mismo caso del §14), leía "Quedaron escritas la cookie _fbp".
+  //
+  // Lo que se afirma acá es CASTELLANO, no lo que el código devuelve hoy: ninguna de estas
+  // frases puede aparecer en un informe, la escriba quien la escriba y cambie como cambie
+  // la redacción. Por eso la lista es de frases prohibidas y se pasa por informes enteros.
+  const PROHIBIDO = [
+    [/\bLas 1 /, 'un plural con el número 1 ("Las 1 …")'],
+    [/\bLos 1 /, 'un plural con el número 1 ("Los 1 …")'],
+    [/Quedaron escritas la cookie\b/, 'plural con sustantivo en singular'],
+    [/Quedó escrita las cookies\b/, 'singular con sustantivo en plural'],
+    [/\bquedaron 1 /, '"quedaron 1 …"'],
+    [/\bquedó 1 cookies\b/, '"quedó 1 cookies"'],
+  ];
+  const revisar = (que, r) => {
+    const texto = JSON.stringify(r.items) + JSON.stringify(r.informativos);
+    for (const [re, nombre] of PROHIBIDO) falso(`${que}: sin ${nombre}`, re.test(texto));
+  };
+
+  // Primero, los cinco prospectos reales del §22, tal como fueron medidos.
+  for (const nombre of ['tuane', 'uhc', 'hjmc', 'pdnd', 'zarhi']) {
+    revisar(nombre + '.cl', m.armarInforme(medida(nombre), nombre + '.cl'));
+  }
+  // uhc.cl escribió dos cookies propias, así que ahí el plural es el correcto.
+  cierto('uhc.cl, con dos cookies propias, va en plural',
+    /Las 2 que escribió son de tu propio dominio/.test(
+      m.armarInforme(medida('uhc'), 'uhc.cl').items.find((i) => i.id === 'cookies').detalle));
+
+  const conCookies = (cookies, peticiones) => m.armarInforme({
+    urlFinal: 'https://sitio.cl/', titulo: 'Sitio', texto: 'Hola', letras: 4000, msTotal: 18000,
+    parcial: false,
+    tras1: { ms: 18000, peticiones, cookies }, tras2: { ms: 18000, peticiones, cookies },
+    aviso: { avisos: [], marcosIlegibles: [] },
+  }, 'sitio.cl');
+  const itemCookies = (r) => r.items.find((i) => i.id === 'cookies');
+
+  // Una sola cookie propia: el caso de garciaparot.cl. El nombre es uno real, de uhc.cl.
+  const unaPropia = conCookies([{ name: 'pll_language', domain: 'sitio.cl' }],
+    [{ url: 'https://sitio.cl/' }, { url: 'https://sitio.cl/a.css' }]);
+  eq('una cookie propia: el ítem sigue en verde', itemCookies(unaPropia).estado, 'ok');
+  cierto('y se dice en singular',
+    /La única que escribió es de tu propio dominio/.test(itemCookies(unaPropia).detalle));
+  revisar('una cookie propia', unaPropia);
+
+  // Una sola cookie de rastreo: el _fbp de revitalaser.cl.
+  const pixel = [{ url: 'https://sitio.cl/' },
+    { url: 'https://connect.facebook.net/es_LA/fbevents.js', ms: 900 }];
+  const unRastreador = conCookies([{ name: '_fbp', domain: '.sitio.cl' }], pixel);
+  eq('una cookie de rastreo: el ítem queda pendiente', itemCookies(unRastreador).estado, 'pendiente');
+  cierto('y se dice en singular',
+    /Quedó escrita la cookie _fbp sin que nadie diera permiso/.test(itemCookies(unRastreador).detalle));
+  revisar('una cookie de rastreo', unRastreador);
+
+  // Dos, para que el singular no se haya arreglado rompiendo el plural.
+  const dosRastreadores = conCookies(
+    [{ name: '_fbp', domain: '.sitio.cl' }, { name: '_ga', domain: '.sitio.cl' }],
+    pixel.concat([{ url: 'https://www.googletagmanager.com/gtag/js?id=G-ABC', ms: 950 }]));
+  cierto('dos cookies de rastreo: plural',
+    /Quedaron escritas las cookies /.test(itemCookies(dosRastreadores).detalle));
+  revisar('dos cookies de rastreo', dosRastreadores);
+}
+
+/* ================================================================== */
+console.log('=== 31. los cinco prospectos reales, con la carga a medias, no salen en verde ===');
+{
+  // Los mismos cinco del §22 con `parcial: true`, que es lo que devuelve el medidor cuando
+  // el evento de carga nunca llega. Hasta el 26-sep los cinco mostraban el ítem de cookies
+  // en verde, incluidos uhc.cl y hjmc.cl, que sí alcanzaron a escribir cookies propias.
+  for (const nombre of ['tuane', 'uhc', 'hjmc', 'pdnd', 'zarhi']) {
+    const r = m.armarInforme({ ...medida(nombre), parcial: true }, nombre + '.cl');
+    const it = r.items.find((i) => i.id === 'cookies');
+    eq(`${nombre}.cl: el ítem de cookies queda sin confirmar`, it.estado, 'sin-confirmar');
+    falso(`${nombre}.cl: y no en verde`, it.ok);
+    falso(`${nombre}.cl: ya no afirma que no dejó ninguna cookie`,
+      /no dejó ninguna cookie/.test(it.detalle));
+    cierto(`${nombre}.cl: dice qué es lo que no sabemos`,
+      /no sabemos qué otras cookies iba a escribir/.test(it.detalle));
+    cierto(`${nombre}.cl: y que no se cuenta`, /ni a favor ni en contra/.test(it.detalle));
+    eq(`${nombre}.cl: fuera del puntaje`, r.pesoConfirmado, 3);
+    eq(`${nombre}.cl: y sin número`, r.puntaje, null);
+  }
+  // Lo que sí alcanzamos a ver se sigue diciendo: no es lo mismo "no vimos nada" que "vimos
+  // dos cookies tuyas y no sabemos si venían más".
+  cierto('uhc.cl: se nombra lo que sí se alcanzó a ver',
+    /Alcanzamos a ver 2 cookies, y todas son de tu propio dominio/.test(
+      m.armarInforme({ ...medida('uhc'), parcial: true }, 'uhc.cl').items.find((i) => i.id === 'cookies').detalle));
+  cierto('pdnd.cl: y cuando no se vio ninguna, se dice así',
+    /Hasta donde alcanzamos a mirar, no quedó ninguna cookie/.test(
+      m.armarInforme({ ...medida('pdnd'), parcial: true }, 'pdnd.cl').items.find((i) => i.id === 'cookies').detalle));
+}
+
+/* ================================================================== */
+console.log('=== 32. el verde de cookies dice lo que sabe, y no más ===');
+{
+  // EL HALLAZGO, abierto desde el 25-sep. De los tres ítems que pueden salir en verde, este
+  // era el único que afirmaba en absoluto: "tu sitio no dejó ninguna cookie de rastreo ni de
+  // terceros". Los otros dos se acotan solos ("ningún rastreador conocido DE LOS QUE
+  // BUSCAMOS"), que es lo único que de verdad sabemos: lo que hay en nuestro catálogo.
+  //
+  // Y la puerta de escape para el rastreador que no está en el catálogo (§26 y §28) solo
+  // existe para cookies de OTRO dominio. Una cookie de rastreo de PRIMERA PARTE que no
+  // reconocemos entra por acá y sale en verde.
+  //
+  // LO QUE SE ARREGLÓ ES LA FRASE, NO EL ESTADO. Un sitio genuinamente limpio tiene que
+  // poder salir en verde o el producto no dice nada. Lo que no puede es afirmar sobre todas
+  // las cookies del mundo lo que solo sabe de las suyas.
+  //
+  // Los nombres con los que se comprueba NO se inventaron acá ni se copiaron de un informe:
+  // se LEEN del censo del 26-sep, y solo se toman los que quedaron escritos en el dominio
+  // del propio sitio que los escribió, que es lo que hace al caso.
+  const censo = medida26('censo');
+  const FAMILIAS = [
+    ['Yandex Metrica', /^_ym_/],
+    ['RTB House', /^__rtbh\./],
+    ['VWO', /^_vwo_|^_vis_opt_/],
+    ['Convert', /^_conv_[vs]$/],
+    ['Dynatrace', /^dtCookie/],
+  ];
+  // Cookie del censo que es de PRIMERA PARTE: su dominio es el registrable del sitio.
+  const propiasDelCenso = censo.sitios.flatMap((s) => s.nombresDeCookies.map((x) => {
+    const i = x.lastIndexOf('@');
+    return { sitio: s.dominio, nombre: x.slice(0, i), dominio: x.slice(i + 1).replace(/^\./, '') };
+  }).filter((c) => c.dominio === s.dominio || c.dominio.endsWith('.' + s.dominio)));
+
+  const rastreoNoReconocido = [];
+  for (const [quien, re] of FAMILIAS) {
+    const hallazgos = propiasDelCenso.filter((c) => re.test(c.nombre));
+    cierto(`${quien}: medido como cookie de primera parte en el censo del 26-sep`, hallazgos.length > 0);
+    // Y la mitad que hace el falso verde: no está en nuestro catálogo.
+    eq(`${quien}: y no lo reconocemos como rastreador`,
+      m.clasificarRastreadores([], hallazgos.map((c) => ({ name: c.nombre, domain: '.' + c.sitio }))).length, 0);
+    rastreoNoReconocido.push(...new Set(hallazgos.map((c) => c.nombre)));
+  }
+  cierto('son varias, de cinco productos distintos', rastreoNoReconocido.length >= 8);
+  // Las de wom.cl están entre ellas, que es el caso que el hallazgo nombraba.
+  cierto('con las de RTB House y Convert de www.wom.cl adentro',
+    ['__rtbh.lid', '__rtbh.uid', '_conv_v', '_conv_s'].every((n) => rastreoNoReconocido.includes(n)));
+
+  // La base es un prospecto REAL cuyo ítem de cookies sale en verde hoy: uhc.cl, del §22.
+  const limpio = medida('uhc');
+  const itemCookies = (r) => r.items.find((i) => i.id === 'cookies');
+  const rLimpio = m.armarInforme(limpio, 'uhc.cl');
+  eq('uhc.cl: el ítem de cookies sale en verde', itemCookies(rLimpio).estado, 'ok');
+
+  /* --- 1. la frase, en el informe que de verdad se le manda -------- */
+  falso('y ya no afirma que no dejó ninguna cookie de rastreo',
+    /no dejó ninguna cookie de rastreo/.test(itemCookies(rLimpio).detalle));
+  cierto('se acota al catálogo, como los otros dos',
+    /rastreadores que buscamos/.test(itemCookies(rLimpio).detalle));
+  // Lo de terceros SÍ está confirmado y se sigue diciendo entero: si hubiera quedado una
+  // cookie de otro dominio, el informe habría salido por la rama del §26.
+  cierto('lo de los terceros sí se afirma, porque eso sí lo sabemos',
+    /no dejó ninguna cookie de otro dominio/.test(itemCookies(rLimpio).detalle));
+
+  /* --- 2. la misma regla en los CUATRO verdes ---------------------- */
+  // El invariante que impide que vuelva a pasar: un ítem en verde que hable de rastreadores
+  // tiene que decir de cuáles habla.
+  //
+  // Hasta el 26-sep este bucle recorría un solo informe, el de uhc.cl, donde los verdes son
+  // tres: carga, cookies y envío. El cuarto ítem que puede salir en verde es el del aviso, y
+  // en uhc.cl no sale (no tiene banner), así que el bucle nunca lo miraba y el invariante
+  // pasaba SIN COMPROBARLO. Y ese verde decía "no corrió ningún rastreador", en absoluto,
+  // que es exactamente la frase que este §32 existe para prohibir.
+  //
+  // Un invariante que no dice sobre cuántos casos corrió no es un invariante: es una
+  // casualidad. Por eso ahora se recorren varios informes Y se exige que entre todos hayan
+  // salido los cuatro verdes; si mañana aparece un quinto ítem verde y nadie lo agrega acá,
+  // la cuenta no calza y esto falla.
+  //
+  // El informe con el aviso en verde se compone de dos mediciones reales: el sitio es uhc.cl
+  // tal como se midió el 25-sep (limpio, sin nada de nuestro catálogo) y el aviso es el que
+  // terrado.cl tiene de verdad, con sus botones "RECHAZAR" y "ACEPTAR", anotados en el
+  // banco del 23-sep. Ninguno de los dos se inventó acá.
+  const avisoDeTerrado = {
+    avisos: [{ fuente: 'elemento', texto: 'Uso de cookies', botones: ['RECHAZAR', 'ACEPTAR'],
+      tieneBotonDeConsentimiento: true }],
+    marcosIlegibles: [],
+  };
+  const rConAviso = m.armarInforme({ ...limpio, aviso: avisoDeTerrado }, 'uhc.cl');
+  eq('con un banner real encima, uhc.cl saca el aviso en verde',
+    rConAviso.items.find((i) => i.id === 'aviso').estado, 'ok');
+
+  const verdesVistos = new Set();
+  for (const r of [rLimpio, rConAviso]) {
+    for (const it of r.items) {
+      if (!it.ok) continue;
+      verdesVistos.add(it.id);
+      if (!/rastreador/i.test(it.detalle)) continue;
+      cierto(`el verde de "${it.id}" dice de qué rastreadores habla`,
+        /que buscamos/.test(it.detalle));
+    }
+  }
+  eq('y se miraron los cuatro verdes, no tres', [...verdesVistos].sort().join(','),
+    'aviso,carga,cookies,envio');
+
+  // Y la misma contradicción medida del §32, ahora sobre el verde del aviso: con las cookies
+  // de rastreo de primera parte del censo puestas encima, el ítem sigue en verde (bien: no
+  // vimos ningún rastreador de los nuestros) pero ya no puede decirlo en absoluto, porque
+  // ahí mismo, en la medición de la que salió, hay ocho cookies de rastreo.
+  const conAvisoYRastreo = m.armarInforme({
+    ...limpio,
+    aviso: avisoDeTerrado,
+    tras1: { ...limpio.tras1, cookies: [...limpio.tras1.cookies, ...rastreoNoReconocido.map((n) => ({ name: n, domain: '.uhc.cl' }))] },
+    tras2: { ...limpio.tras2, cookies: [...limpio.tras2.cookies, ...rastreoNoReconocido.map((n) => ({ name: n, domain: '.uhc.cl' }))] },
+  }, 'uhc.cl');
+  const elAviso = conAvisoYRastreo.items.find((i) => i.id === 'aviso');
+  eq('el aviso sigue en verde', elAviso.estado, 'ok');
+  falso('pero ya no afirma que no corrió ningún rastreador',
+    /no corrió ningún rastreador\./.test(elAviso.detalle));
+  cierto('sino ninguno de los que buscamos', /que buscamos/.test(elAviso.detalle));
+
+  /* --- 3. el falso verde medido: rastreo de primera parte ---------- */
+  const conRastreoPropio = (dominioCookie) => {
+    const extra = rastreoNoReconocido.map((n) => ({ name: n, domain: dominioCookie }));
+    const t1 = { ...limpio.tras1, cookies: [...limpio.tras1.cookies, ...extra] };
+    const t2 = { ...limpio.tras2, cookies: [...limpio.tras2.cookies, ...extra] };
+    return m.armarInforme({ ...limpio, tras1: t1, tras2: t2 }, 'uhc.cl');
+  };
+
+  // Primero el hecho que hace falso el verde: ninguna de todas ellas la reconocemos.
+  eq('no reconocemos ninguna de las del censo como rastreador',
+    m.clasificarRastreadores([], rastreoNoReconocido.map((n) => ({ name: n, domain: '.uhc.cl' }))).length, 0);
+
+  const propias = conRastreoPropio('.uhc.cl');
+  // El ESTADO no cambia, y eso es deliberado: bajarlo todo a sin-confirmar dejaría al sitio
+  // limpio sin poder salir nunca en verde.
+  eq('con rastreo de primera parte, el ítem sigue en verde', itemCookies(propias).estado, 'ok');
+  eq('y el puntaje es el mismo que sin ellas', propias.puntaje, rLimpio.puntaje);
+  // Lo que cambia es que la frase ya no miente sobre ellas.
+  falso('pero ya no se afirma que no hay cookies de rastreo',
+    /no dejó ninguna cookie de rastreo/.test(itemCookies(propias).detalle));
+  cierto('sino que no hay ninguna de las que buscamos',
+    /ninguna de los rastreadores que buscamos/.test(itemCookies(propias).detalle));
+  cierto('y se dice cuántas propias escribió',
+    /son de tu propio dominio/.test(itemCookies(propias).detalle));
+
+  /* --- 4. la puerta que SÍ funciona sigue funcionando -------------- */
+  // Las MISMAS cuatro cookies en otro dominio caen a sin-confirmar, que es la diferencia que
+  // el hallazgo señalaba. No se toca.
+  const ajenas = conRastreoPropio('.creativecdn.com');
+  eq('las mismas cuatro en otro dominio no salen en verde', itemCookies(ajenas).estado, 'sin-confirmar');
+  falso('y no son verde', itemCookies(ajenas).ok);
+  cierto('con los nombres a la vista', /__rtbh/.test(itemCookies(ajenas).detalle));
+}
+
+/* ================================================================== */
+console.log('=== 33. el motivo "portero" no puede afirmar lo que su regla dejó de comprobar ===');
+{
+  // La contraparte del §23. Ahí se arregló la REGLA: la pared se reconoce por la forma de la
+  // página y ya no por el "todas las cookies son de un gestor de bots". Lo que se quedó
+  // atrás fue la FRASE que la persona lee, que seguía diciendo "las ÚNICAS cookies que
+  // quedaron son las del sistema que filtra robots". Mientras la regla exigía el "todas",
+  // era verdad por construcción. Desde que no lo exige, el motivo dispara igual con cookies
+  // corrientes al lado, y ahí la frase pasa a ser una afirmación falsa sobre la medición de
+  // la que salió. El propio §23 construye ese caso y lo da por bueno: comprueba el motivo,
+  // no lo que se dice.
+  //
+  // Esto NO se comprueba contra la redacción de hoy, que es lo que haría que la prueba y el
+  // arreglo salieran del mismo supuesto. Se comprueba TEXTO contra DATOS: si el informe
+  // afirma que las únicas cookies son las del gestor, la medición tiene que mostrar eso.
+  // Cambie como cambie la redacción, la regla sigue valiendo.
+  const afirmaUnicas = (r) =>
+    /únicas cookies que quedaron son las del sistema que filtra robots/.test(JSON.stringify(r.items));
+  const todasDePortero = (cookies) =>
+    cookies.length > 0 && cookies.every((c) => m.esCookieDePortero(c.name));
+
+  const pared = medida26('santander');
+  // Tal como se midió, la afirmación sería verdad: la pared dejó _abck y bm_sz y nada más.
+  eq('la pared medida dejó dos cookies', pared.tras2.cookies.length, 2);
+  cierto('y las dos son del gestor de bots', todasDePortero(pared.tras2.cookies));
+  eq('se reconoce como portero', m.armarInforme(pared, 'www.santander.cl').bloqueado, 'portero');
+
+  // Y ahora el caso que la vuelve falsa, con datos reales en las DOS mitades:
+  //   - la pared es la medición del 26-sep de banco.santander.cl;
+  //   - las cookies que se le ponen al lado son las que scotiabank.cl escribió de verdad ese
+  //     mismo día y que NO son de gestor de bots: su BIGipServerPool_ de balanceador F5, su
+  //     ARRAffinity, su cookie de idioma. Un sitio detrás de un F5 y de Akamai a la vez es
+  //     exactamente esto, y está medido; si ese sitio nos muestra su pared, el motivo
+  //     dispara con las cookies corrientes ahí mismo.
+  const scotia = medida26('scotiabank');
+  const corrientes = [...new Set(scotia.tras2.cookies
+    .filter((c) => !m.esCookieDePortero(c.name)).map((c) => c.name))].slice(0, 5);
+  cierto('scotiabank.cl escribió cookies corrientes junto a las de Akamai', corrientes.length >= 3);
+  cierto('y entre ellas está la del balanceador F5, que a propósito no es de portero',
+    corrientes.some((n) => /^BIGipServerPool_/.test(n)));
+
+  const vecinas = corrientes.map((name) => ({ name, domain: '.santander.cl' }));
+  const conVecinas = {
+    ...pared,
+    tras1: { ...pared.tras1, cookies: [...pared.tras1.cookies, ...vecinas] },
+    tras2: { ...pared.tras2, cookies: [...pared.tras2.cookies, ...vecinas] },
+  };
+  const rVecinas = m.armarInforme(conVecinas, 'www.santander.cl');
+  eq('con las cookies corrientes al lado la pared sigue declinando', rVecinas.bloqueado, 'portero');
+  eq('y sigue sin puntaje', rVecinas.puntaje, null);
+  falso('pero ya NO todas sus cookies son del gestor', todasDePortero(conVecinas.tras2.cookies));
+
+  // EL INVARIANTE, en su forma general: ningún informe puede afirmar que las únicas cookies
+  // son las del gestor si su propia medición muestra otras. Se pasa por los dos casos.
+  for (const [que, med] of [['la pared tal como se midió', pared], ['con cookies corrientes al lado', conVecinas]]) {
+    const r = m.armarInforme(med, 'www.santander.cl');
+    cierto(`${que}: lo que afirma y lo que se midió coinciden`,
+      !afirmaUnicas(r) || todasDePortero(med.tras2.cookies));
+  }
+  // Y el corte más duro, que es el que de verdad cierra el hallazgo: la frase NO puede
+  // usarse ni siquiera en el caso donde sería verdad. Las dos mediciones salen por la misma
+  // rama y por la misma línea de código, así que una afirmación que solo se sostiene en una
+  // de las dos es una afirmación que esa rama no puede hacer. Si alguien la devuelve "solo
+  // para el caso limpio", el de al lado se la lleva puesta y nadie se entera.
+  falso('con cookies corrientes al lado no afirma que sean las únicas', afirmaUnicas(rVecinas));
+  falso('y tampoco en la pared tal como se midió, porque es la misma línea',
+    afirmaUnicas(m.armarInforme(pared, 'www.santander.cl')));
+
+  // Lo que sí se comprobó, y es lo único que el motivo puede decir: que lo que se abrió trae
+  // demasiado poco para ser una portada, y que el guardia firmó en el dominio del sitio.
+  const detalle = rVecinas.items.find((i) => i.id === 'carga').detalle;
+  cierto('dice que la página trajo muy poco', /puñado de archivos/.test(detalle));
+  cierto('y que la cookie del gestor quedó en el dominio propio',
+    /en tu propio dominio la cookie del sistema que filtra robots/.test(detalle));
+  cierto('y sigue diciendo que no lo contamos ni a favor ni en contra',
+    /ni a favor ni en contra/.test(detalle));
+  // Las dos mitades son ciertas en la medición: 8 peticiones (bajo el corte) y una cookie de
+  // gestor en .santander.cl.
+  cierto('las 8 peticiones medidas caben bajo el corte',
+    pared.tras2.peticiones.length <= m.MAX_PETICIONES_PARED);
+  cierto('y hay una cookie de gestor en el dominio del propio sitio',
+    conVecinas.tras2.cookies.some((c) => m.esCookieDePortero(c.name) && /santander\.cl$/.test(c.domain.replace(/^\./, ''))));
+
+  // Y el motivo no habla del texto, que es lo que en la otra rama no se sabe: `letras` en
+  // null (el detector de aviso tampoco pudo correr) también da 'portero'.
+  const sinLetras = m.armarInforme({ ...conVecinas, letras: null, aviso: { fallo: 'timeout' } }, 'www.santander.cl');
+  eq('sin saber cuánto texto había, sigue siendo portero', sinLetras.bloqueado, 'portero');
+  falso('y la frase no afirma nada sobre el texto',
+    /texto|contenido|letras/i.test(sinLetras.items.find((i) => i.id === 'carga').detalle));
+}
+
+/* ================================================================== */
+console.log('=== 34. la pared que nos deja CIEGOS no puede salir mejor que la que sí medimos ===');
+{
+  // El último falso verde de esta familia, y el más incómodo: se abría justo cuando más
+  // falta hacía cerrarlo.
+  //
+  // En `medirConNavegador` el título, el texto en pantalla y `letras` salen del MISMO
+  // `Runtime.evaluate`. Una pared con desafío de JavaScript se recarga sola y destruye el
+  // contexto de ejecución, así que ese evaluate tira y los tres detectores de texto se
+  // mueren de una vez. Con ellos se mueren las tres primeras puertas de `pareceBloqueo`
+  // (título, texto y ruta final), y la única que quedaba en pie era la lista de nombres de
+  // cookies, que es exactamente de lo que este código lleva dos rondas intentando no
+  // depender.
+  //
+  // Esta sección no le pone `letras: null` a una medición a mano. Hace reventar el evaluate
+  // en el navegador de mentira y deja que `medirConNavegador` —el de producción— produzca
+  // la medición ciega. Así la prueba no sale del mismo supuesto que el arreglo: si mañana
+  // alguien mide el texto por otra vía, la medición ciega dejará de serlo y esto lo dirá.
+
+  // La pared es una medición REAL: la fila de bancoestado.cl del censo del 26-sep, leída del
+  // archivo, no escrita acá. `pareceBloqueo` solo mira cuántas peticiones hubo, así que las
+  // URLs se rellenan con la del propio sitio; los números —3 peticiones, 0 cookies, 353
+  // letras— son los medidos.
+  const censo = JSON.parse(fs.readFileSync(new URL('censo.json', MEDIDAS26), 'utf8'));
+  const fila = censo.sitios.find((s) => s.dominio === 'bancoestado.cl');
+  cierto('la fila de la pared de 3 peticiones está en el censo', !!fila);
+  eq('y son 3 peticiones, 0 cookies', [fila.peticiones, fila.cookies], [3, 0]);
+  cierto('con texto medido, y poco', fila.letras > 0 && fila.letras < m.MIN_LETRAS_PAGINA);
+  // El título medido viene vacío: ni siquiera la primera puerta la atrapaba con los ojos
+  // abiertos. Lo que la atrapaba era el tamaño.
+  eq('y sin título que la delate', fila.titulo, '');
+
+  const DOM = fila.dominio;
+  const peticionesDeLaPared = new Array(fila.peticiones).fill(0)
+    .map((_, i) => ({ url: `${fila.urlFinal}${i ? 'a' + i + '.css' : ''}` }));
+
+  const abrirPared = (avisoRevienta) => navegadorDeMentira({
+    url: fila.urlFinal,
+    peticiones: peticionesDeLaPared,
+    cookies: [],
+    avisoRevienta,
+    aviso: { avisos: [], marcosIlegibles: [], titulo: fila.titulo, texto: 'x'.repeat(fila.letras), letras: fila.letras },
+  });
+
+  // --- (a) la pared con el detector de texto vivo: ya declinaba ------
+  const vista = await m.medirConNavegador(abrirPared(false), fila.urlFinal, DOM, { pasivoMs: 5, gestoMs: 5 });
+  eq('con el detector vivo, el texto se midió', vista.letras, fila.letras);
+  const rVista = m.armarInforme(vista, DOM);
+  eq('y la pared declina', rVista.bloqueado, 'flaco');
+  eq('sin puntaje', rVista.puntaje, null);
+  eq('con los cuatro ítems sin confirmar', rVista.sinConfirmar, 4);
+  eq('y ninguno en verde', rVista.items.filter((i) => i.ok).length, 0);
+
+  // --- (b) la MISMA pared, con el evaluate reventado ------------------
+  const ciega = await m.medirConNavegador(abrirPared(true), fila.urlFinal, DOM, { pasivoMs: 5, gestoMs: 5 });
+  // El mecanismo, antes que el veredicto: los tres detectores cayeron juntos. Si alguno
+  // sobreviviera, este caso no sería el que se quiere probar.
+  eq('el texto no se pudo contar', ciega.letras, null);
+  eq('el título tampoco', ciega.titulo, '');
+  eq('ni el texto en pantalla', ciega.texto, '');
+  cierto('y el detector de aviso quedó marcado como fallado', !!ciega.aviso.fallo);
+  // Y la red sí se midió: lo que se perdió es el texto, no la medición entera. Por eso el
+  // caso es peligroso: se ve igual que un sitio limpio.
+  eq('las peticiones sí se registraron', ciega.tras2.peticiones.length, fila.peticiones);
+
+  const rCiega = m.armarInforme(ciega, DOM);
+  // LA AFIRMACIÓN QUE FALTABA. Hasta el 26-sep esto daba 100/100 con tres verdes y la
+  // portada lo cerraba con "Nada pendiente".
+  falso('la pared ciega NO da 100', rCiega.puntaje === 100);
+  eq('no da ningún puntaje', rCiega.puntaje, null);
+  eq('ningún ítem en verde', rCiega.items.filter((i) => i.ok).length, 0);
+  eq('los cuatro quedan sin confirmar', rCiega.sinConfirmar, 4);
+  // `confirmados === 0` es lo que hace que la portada muestre "No pudimos ver tu sitio" en
+  // vez de "Nada pendiente". Se calcula igual en index.html (renderProfundo).
+  eq('y la portada no tiene nada que declarar como visto',
+    rCiega.items.filter((i) => i.estado !== 'sin-confirmar').length, 0);
+
+  // EL INVARIANTE, en su forma general: medir MENOS no puede puntuar MEJOR. Vale para los
+  // dos informes de arriba y es lo que quedaría en pie si mañana cambian los números.
+  cierto('ver menos no puntúa mejor', (rCiega.puntaje ?? -1) <= (rVista.puntaje ?? -1));
+  cierto('ni deja más ítems en verde',
+    rCiega.items.filter((i) => i.ok).length <= rVista.items.filter((i) => i.ok).length);
+
+  // Y lo que se le dice al dueño: no se afirma cuánto texto traía, porque nadie lo contó.
+  const detalleCiego = rCiega.items.find((i) => i.id === 'carga').detalle;
+  cierto('se dice que el texto tampoco se pudo leer',
+    /el texto de la página tampoco lo pudimos leer/.test(detalleCiego));
+  falso('y no se afirma cuánto contenido traía',
+    /casi no trae contenido/.test(JSON.stringify(rCiega.items)));
+  falso('ni se acusa al sitio de bloquearnos', /nos bloqueó/.test(JSON.stringify(rCiega.items)));
+
+  /* --- El otro lado: que esto no le quite el informe a nadie -------- */
+  //
+  // El riesgo de un corte así es el falso positivo: dejar sin informe a un prospecto chico.
+  // Se comprueba contra el censo entero, cegando las 34 portadas medidas. Las tres paredes
+  // que el LEEME de `medidas-26sep/` identifica a mano (bancoestado.cl y latamairlines.com
+  // por el texto, santander.cl por la cookie del gestor) tienen que declinar; las otras 31,
+  // que son portadas reales y doce de ellas prospectos de las listas de outbound, tienen que
+  // seguir recibiendo informe aunque el texto no se haya podido contar.
+  const PAREDES = ['bancoestado.cl', 'latamairlines.com', 'santander.cl'];
+  eq('el censo trae las 34', censo.sitios.length, 34);
+  let paredesQueDeclinan = 0, realesQueSiguen = 0;
+  for (const s of censo.sitios) {
+    const cegado = m.pareceBloqueo({
+      peticiones: new Array(s.peticiones).fill({ url: s.urlFinal }),
+      cookies: (s.nombresDeCookies || []).map((n) => {
+        const i = n.lastIndexOf('@');
+        return { name: n.slice(0, i), domain: n.slice(i + 1) };
+      }),
+      letras: null, titulo: '', texto: '', urlFinal: s.urlFinal, dominio: s.dominio,
+    });
+    if (PAREDES.includes(s.dominio)) {
+      if (cegado) paredesQueDeclinan++;
+      else { malo++; console.log(`  FALLA la pared ${s.dominio}, cegada, sale limpia`); }
+    } else if (!cegado) realesQueSiguen++;
+    else { malo++; console.log(`  FALLA la portada real ${s.dominio} (${s.peticiones} peticiones) se queda sin informe`); }
+  }
+  eq('las tres paredes del censo declinan aunque no se pueda contar el texto', paredesQueDeclinan, 3);
+  eq('y las 31 portadas reales siguen recibiendo informe', realesQueSiguen, 31);
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);

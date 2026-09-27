@@ -20,9 +20,25 @@
  * Las direcciones quedan anotadas para poder volver a bajarlas y rehacer la tabla.
  *
  * Se corre con `node prueba-doce-puntos.mjs`. Sin runner y sin dependencias, como las demás.
+ *
+ * La carpeta del código se pasa por `VYC_SITIO` (la carpeta `verificaycumple/`). Sin ella se
+ * busca dentro del repo con `rutas.mjs`, que imprime cuál eligió. Hasta el 26-sep la ruta
+ * estaba escrita a mano y apuntaba a un worktree bajo /tmp, que el sistema borra solo.
+ *
+ * OJO, Y ES LO QUE HAY QUE SABER DE ESTE ARCHIVO: todo lo de acá afirma la forma ANIDADA de la
+ * respuesta (`cuerpo.seccion.…`) contra el mismo código que la produce, así que no puede decir
+ * nada sobre si la portada la sabe leer. El 26-sep no la sabía leer, la sección salía vacía en
+ * producción, y estas comprobaciones pasaban igual. Quien cuida esa costura es
+ * `prueba-portada-doce.mjs`, que levanta index.html en un navegador de verdad. Si cambias la
+ * forma de esta respuesta, esa es la que tiene que seguir pasando.
  */
 
-import * as doce from '/tmp/vyc-sub-wt/verificaycumple/functions/api/doce-puntos.js';
+import path from 'node:path';
+import { rutaEnElRepo } from './rutas.mjs';
+
+const SITIO = process.env.VYC_SITIO
+  || path.dirname(rutaEnElRepo('verificaycumple/index.html', 'VYC_INDEX_HTML'));
+const doce = await import(SITIO + '/functions/api/doce-puntos.js');
 
 let ok = 0, malo = 0;
 // Minúsculas y sin tildes, para comparar frases sin pelear con la acentuación. Se escribe con
@@ -1478,7 +1494,7 @@ async function pedir(dominio, rutas, opciones = {}) {
 
 // El tope que el endpoint importa de profundo.js, para comprobar que es el MISMO número y no
 // una copia que se pueda desincronizar.
-const { TOPE_IP_DIA: doceTope } = await import('/tmp/vyc-sub-wt/verificaycumple/functions/api/profundo.js');
+const { TOPE_IP_DIA: doceTope } = await import(SITIO + '/functions/api/profundo.js');
 
 {
   const r = await pedir('ejemplo.cl', {

@@ -1,11 +1,17 @@
-import * as nuevo from '/tmp/spl-main-wt/spindlelab-astro/functions/api/chequeo.js';
-import { execFileSync } from 'node:child_process';
+// El chequeo de hoy sale de la rama `main` (lo que despliega Cloudflare Pages), pedido por
+// rama y no por carpeta: hay copias distintas de este archivo en varios worktrees del
+// repositorio, y elegir "la primera que exista" cambiaría el archivo bajo prueba en
+// silencio. Ver rutas.mjs.
+import { moduloEnLaRama, moduloEnElCommit } from './rutas.mjs';
+const nuevo = await moduloEnLaRama('spindlelab-astro/functions/api/chequeo.js', 'main', 'SPL_CHEQUEO_JS');
 
 // La versión vieja sale del historial de git (c2616e9), igual que en prueba-gemelo-completa:
-// el ./chequeo-viejo.mjs que se importaba nunca se versionó y esta tabla no corría.
+// el ./chequeo-viejo.mjs que se importaba nunca se versionó y esta tabla no corría. El
+// repositorio se resuelve desde este mismo archivo: antes decía `git -C /tmp/spl-main-wt`, y
+// el 26-sep esa carpeta dejó de ser un repositorio, así que las 115 comprobaciones de acá
+// reventaban antes de la primera.
 const VIEJO = 'c2616e9dbe20d05d9e2edd973e76e7b7fdf9b09a';
-const fuenteVieja = execFileSync('git', ['-C', '/tmp/spl-main-wt', 'show', `${VIEJO}:spindlelab-astro/functions/api/chequeo.js`]);
-const viejo = await import('data:text/javascript;base64,' + fuenteVieja.toString('base64'));
+const viejo = await moduloEnElCommit('spindlelab-astro/functions/api/chequeo.js', VIEJO);
 
 const PORTADA = '<!doctype html><html lang="es-CL"><head><title>T</title><meta name="description" content="d"></head><body><h1>H</h1></body></html>';
 // La misma portada, pero con todo lo que el chequeo premia. Sirve para la prueba de que un

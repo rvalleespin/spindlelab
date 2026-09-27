@@ -1,8 +1,16 @@
-import { normalizarDominio, destinoPermitido, chequear, mensajeDeFallo, buscarEnlacesPolitica, detectarCmp, onRequestGet,
-         esPaginaDeBloqueo, armadoConJavaScript, comoSeArma, destinoDeMetaRefresh,
-         buscarPoliticaEnDatos } from '/tmp/vyc-sub-wt/verificaycumple/functions/api/chequeo.js';
+// El chequeo y el middleware de Verifica y Cumple, del worktree del repositorio que los
+// tiene. Antes eran dos rutas absolutas a `/tmp/vyc-sub-wt/`, una carpeta efímera que el
+// 26-sep ya no era un repositorio: una copia suelta ahí se queda vieja sin avisar, y esa es
+// la peor forma de fallar porque se ve igual que un verde legítimo. Ver rutas.mjs.
+import { rutaEnElRepo } from './rutas.mjs';
 import fs from 'node:fs';
-import { onRequest as middleware } from '/tmp/vyc-sub-wt/verificaycumple/functions/_middleware.js';
+import { pathToFileURL } from 'node:url';
+const { normalizarDominio, destinoPermitido, chequear, mensajeDeFallo, buscarEnlacesPolitica, detectarCmp, onRequestGet,
+        esPaginaDeBloqueo, armadoConJavaScript, comoSeArma, destinoDeMetaRefresh,
+        buscarPoliticaEnDatos } = await import(pathToFileURL(
+  rutaEnElRepo('verificaycumple/functions/api/chequeo.js', 'VYC_CHEQUEO_JS')).href);
+const { onRequest: middleware } = await import(pathToFileURL(
+  rutaEnElRepo('verificaycumple/functions/_middleware.js', 'VYC_MIDDLEWARE_JS')).href);
 
 let ok = 0, malo = 0;
 const eq = (nombre, real, esperado) => {
@@ -856,7 +864,10 @@ const LANDING_RECAPTCHA = '<!DOCTYPE html><html lang="es"><head><title>Dra. Pér
   'y las <a href="https://policies.google.com/terms">Condiciones del servicio</a> de Google.</p></body></html>';
 {
   // El HTML exacto que www.bancoestado.cl le devolvió a nuestro lector el 23-sep (650 bytes).
-  const BANCO = fs.readFileSync('/private/tmp/claude-501/-Users-ramon-Library-Mobile-Documents-com-apple-CloudDocs-SPINDLELAB/befb9f93-f301-497e-a5c3-ea7342366826/scratchpad/verif/integracion/home-www.bancoestado.cl.html', 'utf8');
+  // Versionada junto a la prueba. Hasta el 26-sep se leía del scratchpad de una sesión de
+  // Claude Code, con el UUID de esa sesión en la ruta: pasaba por casualidad. Ver
+  // paginas-23sep/LEEME.md.
+  const BANCO = fs.readFileSync(new URL('./paginas-23sep/home-www.bancoestado.cl.html', import.meta.url), 'utf8');
   eq('el HTML guardado es el de la evidencia', [BANCO.length > 600 && BANCO.length < 700, /se ha restringido este acceso/.test(BANCO)], [true, true]);
   eq('esPaginaDeBloqueo: bancoestado', esPaginaDeBloqueo(BANCO), true);
   const f = fakeRed({ 'https://www.bancoestado.cl/': { status: 200, body: BANCO } });
