@@ -1,25 +1,36 @@
 ---
-// MAQUETA C2 — home completa en la composición corregida (27-sep).
+// HOME v3 — reestructurada según brief-textos-estructura-sitio-v3.md (27-sep).
 //
-// El lenguaje quedó fijado en la revisión anterior: tipografía a todo el ancho, obra en la
-// primera pantalla, navegación contraída a un módulo, y el color lo pone el trabajo. Acá se
-// extiende al resto de la home, con contraste narrativo tinta ↔ papel para marcar los
-// cambios de discurso.
+// EL CAMBIO DE FONDO: el chequeo deja de ser la página /diagnostico/ y pasa a ser el hero.
+// El visitante comprueba su propio problema antes de leer una línea de venta. Eso es
+// «No te prometo. Te muestro» como arquitectura, no como frase en una sección de marca.
 //
-// Reglas que se mantienen y NO se re-discuten:
-//   · Los precios son EXACTAMENTE los vigentes. Cambia el orden y el argumento, no el número.
-//   · Queda una puerta para quien YA tiene sitio y no lo va a rehacer.
-//   · No se promete vigilancia de menciones en IA: capacidad-servicios.md la marca ❌ porque
-//     depende de un paso manual que no escala más allá de 1-2 clientes.
-//   · Un solo dorado por vista: el punto del wordmark, que está fijo en la nav.
-//   · Cero prueba inventada. El chequeo se muestra en su estado vacío real.
+// POR QUÉ, con lo verificado en las dos fichas de competencia del 27-sep:
+//   · Las dos agencias revisadas prometen y no pueden demostrar nada antes de cobrar.
+//   · Ninguna pasa de 51/100 en el chequeo propio; las dos tienen CERO datos estructurados.
+//   · En desarrollo web a secas, Agencia Bull gana por historia, clientes y escala. La ficha
+//     lo dice sin rodeos: el pivote solo se sostiene si el AEO va ADELANTE, no escondido.
+// Por eso el instrumento va primero y la obra inmediatamente después: la prueba abre, el
+// oficio remata. No es una cosa o la otra.
 //
-// ⚠️ ROMPE EL MANUAL §05 (titulares en sentence case, nunca ALL CAPS). Aprobado por Ramón
-// para esta dirección. Revertirlo es quitar `uppercase` del componente de titular.
+// LOS TEXTOS del brief son propuestas de trabajo, no copy final (lo dice el propio brief:
+// Renata pasa el tono, Ramón aprueba).
+//
+// Reglas que NO se tocan y acá se respetan:
+//   · Precios EXACTAMENTE los vigentes. Cambia el orden y el encuadre, no el número.
+//   · No se promete monitoreo continuo de menciones en IA (capacidad-servicios.md ❌).
+//   · Cero prueba social inventada. El 67 de 69 sale de corridas reales del chequeo
+//     (marketing/metricas/corridas-chequeo-2026-08-31.md), verificado antes de ponerlo.
+//   · Ningún competidor se nombra. El patrón se cuenta en abstracto.
+//   · Un solo dorado por vista: el punto del wordmark, fijo en la nav.
+//
+// EL CHEQUEO ES LA HERRAMIENTA REAL, no una imitación: mismos id que exige el script
+// (chq-form, chq-dominio, chq-btn, chq-out, chq-error), mismo /api/chequeo.
 import Layout from '../../layouts/Layout.astro';
 import NavV2 from '../../components/v2/NavV2.astro';
 import FooterV2 from '../../components/v2/FooterV2.astro';
 import { CONTACTO } from '../../consts';
+import '../../styles/chequeo-v2.css';
 
 const tira = [
   { src: '/mockup-interno/obra-1.png', alt: 'Página de retratos del sitio de Bernardo Combeau' },
@@ -28,53 +39,33 @@ const tira = [
   { src: '/mockup-interno/obra-4.png', alt: 'Portada del sitio de Bernardo Combeau' },
 ];
 
-const menu = [
-  { href: '#obra', label: 'Obra' },
-  { href: '#servicios', label: 'Servicios' },
-  { href: '#metodo', label: 'Método' },
-  { href: '#chequeo', label: 'Chequeo' },
-  { href: CONTACTO, label: 'Contacto' },
+// Ordenados por el MOMENTO del cliente, no por tamaño del entregable. Precios intactos.
+const momentos = [
+  {
+    momento: 'Tu sitio existe y no lo van a rehacer',
+    items: [
+      { n: 'Visibilidad en IA', p: '$400.000', href: '/servicios/visibilidad-en-ia/' },
+      { n: 'Auditoría SEO Técnica', p: '$490.000 · $690.000 con Visibilidad IA', href: '/servicios/auditoria-seo-tecnica/' },
+    ],
+  },
+  {
+    momento: 'Tu sitio te frena, o no existe',
+    items: [
+      { n: 'Desarrollo Web', p: '$390.000 · $690.000 · $1.190.000', href: '/servicios/desarrollo-web/' },
+    ],
+    nota: 'Con el SEO técnico y el AEO puestos desde el primer commit, no parchados después.',
+  },
+  {
+    momento: 'Ya giras y quieres sostenerlo',
+    items: [
+      { n: 'Acompañamiento Mensual', p: '$590.000/mes · $790.000/mes Pro', href: '/servicios/acompanamiento-mensual/' },
+    ],
+  },
 ];
 
-// Precios vigentes, verificados contra el sitio en producción el 27-sep-2026. Todos + IVA.
-// El orden cambia (Desarrollo Web al frente, porque es el pilar); los montos no.
-const servicios = [
-  {
-    nombre: 'Desarrollo Web',
-    linea: 'El sitio completo: diseño, construcción y la estructura técnica resuelta desde el primer día.',
-    precio: '$390.000 · $690.000 · $1.190.000',
-    href: '/servicios/desarrollo-web/',
-  },
-  {
-    nombre: 'Visibilidad en IA',
-    linea: 'Para que ChatGPT, Gemini y Perplexity puedan citarte cuando preguntan por tu rubro.',
-    precio: '$400.000',
-    href: '/servicios/visibilidad-en-ia/',
-  },
-  {
-    nombre: 'Auditoría SEO Técnica',
-    linea: 'La puerta si ya tienes sitio y no lo vas a rehacer. Qué lo frena, y qué mueve la aguja.',
-    precio: '$490.000 · $690.000 con Visibilidad IA',
-    href: '/servicios/auditoria-seo-tecnica/',
-  },
-  {
-    nombre: 'Acompañamiento Mensual',
-    linea: 'Continuidad después de entregar. Se contrata cuando hay algo que sostener.',
-    precio: '$590.000/mes · $790.000/mes Pro',
-    href: '/servicios/acompanamiento-mensual/',
-  },
-  {
-    nombre: 'Gestión de Redes Sociales',
-    linea: 'Contenido con cadencia real, sostenido en hallazgos y no en jerga de venta.',
-    precio: '$390.000/mes · $590.000/mes con pauta',
-    href: '/servicios/redes-sociales/',
-  },
-  {
-    nombre: 'Paid Media',
-    linea: 'Google Ads de alta intención, con presupuesto controlado y los defaults desactivados.',
-    precio: '$350.000/mes · $550.000/mes Pro',
-    href: '/servicios/paid-media/',
-  },
+const tambien = [
+  { n: 'Gestión de Redes Sociales', p: '$390.000/mes · $590.000/mes con pauta', href: '/servicios/redes-sociales/' },
+  { n: 'Paid Media (Google)', p: '$350.000/mes · $550.000/mes Pro', href: '/servicios/paid-media/' },
 ];
 
 const pasos = [
@@ -83,17 +74,10 @@ const pasos = [
   { n: '03', t: 'Construimos', d: 'Diseño y desarrollo, con la estructura técnica incorporada. No es una capa que se agrega al final.' },
   { n: '04', t: 'Medimos', d: 'Qué cambió y qué no. Si algo no rindió, se dice y se corrige.' },
 ];
-
-const chequeos = [
-  'Estructura que Google puede leer',
-  'Datos estructurados (schema)',
-  'Respuestas que la IA puede citar',
-  'Velocidad real en móvil',
-];
 ---
 
 <Layout
-  title="Maqueta C2 · home completa · exploración rebranding"
+  title="Maqueta v3 · home con el chequeo en el hero · exploración rebranding"
   description="Maqueta interna para decidir. No es una página publicada."
   bodyClass="bg-tinta-galeria font-texto"
 >
@@ -102,16 +86,54 @@ const chequeos = [
   <NavV2 />
 
   <main class="text-papel">
-    <section class="px-4 sm:px-6 pt-32 sm:pt-40 md:pt-48 pb-7 md:pb-9">
+    <!-- BLOQUE 1 · EL HERO ES LA PRUEBA. Una pregunta que el visitante puede responder
+         ahí mismo, y el instrumento debajo. -->
+    <section id="chequeo" class="px-4 sm:px-6 pt-32 sm:pt-40 md:pt-44 pb-10 md:pb-14 scroll-mt-24">
       <h1
-        class="font-extrabold uppercase m-0"
-        style="font-size:clamp(2.25rem, 9.2vw, 11rem); line-height:0.86; letter-spacing:-0.035em"
+        class="font-extrabold uppercase m-0 max-w-[19ch]"
+        style="font-size:clamp(1.875rem, 6.2vw, 6.5rem); line-height:0.9; letter-spacing:-0.035em; text-wrap:balance"
       >
-        Sitios que se<br />miran dos veces
+        Cuando tu cliente le pregunta a una IA quién puede ayudarlo, ¿aparece tu nombre?
       </h1>
+      <p class="mt-8 text-white/60 text-lg md:text-xl leading-relaxed max-w-prosa">
+        Pega tu dirección web y te lo decimos en 30 segundos. Sin registro, sin dejar tu correo.
+      </p>
+
+      <div class="mt-10 border-t border-b border-white/15">
+        <form class="chq-form flex flex-col sm:flex-row sm:items-stretch" id="chq-form" novalidate>
+          <label for="chq-dominio" class="sr-only">Tu dominio</label>
+          <input
+            id="chq-dominio"
+            name="dominio"
+            type="text"
+            inputmode="url"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+            placeholder="tuempresa.cl"
+            required
+            class="flex-1 bg-transparent font-mono text-2xl md:text-4xl text-papel placeholder:text-white/25 py-7 md:py-9 outline-none focus-visible:bg-white/[0.04] transition-colors"
+          />
+          <button
+            type="submit"
+            id="chq-btn"
+            class="flex-none self-stretch sm:self-auto bg-papel hover:bg-white text-tinta-galeria text-sm font-bold px-8 my-4 sm:my-5 rounded-full transition-colors py-3.5 sm:py-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+          >
+            Revisar mi sitio
+          </button>
+        </form>
+      </div>
+
+      <div class="chq-error mt-6 text-sm" id="chq-error" role="alert"></div>
+      <div id="chq-out" aria-live="polite" class="mt-8"></div>
+
+      <p class="mt-8 text-white/40 text-sm max-w-prosa">
+        Revisamos 21 señales técnicas. Es el mismo chequeo con el que partimos cada proyecto.
+      </p>
     </section>
 
-    <section id="obra" class="px-4 sm:px-6 pb-4 scroll-mt-24">
+    <!-- LA OBRA, inmediatamente después: la prueba abre, el oficio remata. -->
+    <section id="obra" class="px-4 sm:px-6 pt-10 md:pt-14 pb-4 scroll-mt-24">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-2.5">
         {
           tira.map((t, i) => (
@@ -137,64 +159,126 @@ const chequeos = [
       </p>
     </section>
 
-    <!-- PRIMER CAMPO DE COLOR: navy. Cambia el discurso (se pasa de mostrar a explicar) y
-         el color lo marca con un corte duro, sin degradado. -->
+    <!-- BLOQUE 2 · EL PROBLEMA, con dato propio verificable. Campo navy. -->
     <section class="bg-campo-navy text-papel mt-24 md:mt-36 px-4 sm:px-6 py-28 md:py-44">
       <h2
-        class="font-extrabold uppercase m-0 max-w-[18ch]"
-        style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:-0.035em"
+        class="font-extrabold uppercase m-0 max-w-[17ch]"
+        style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:-0.035em; text-wrap:balance"
       >
-        Un sitio bonito que nadie encuentra es un folleto caro
+        De los últimos 69 sitios que revisamos, 67 tenían el mismo problema
       </h2>
       <p class="mt-10 md:mt-14 text-white/70 text-xl md:text-2xl leading-relaxed max-w-prosa">
-        La mayoría de los sitios están escritos para personas y para Google. Hoy hay una
-        capa más: el motor que responde por tu rubro antes de que alguien llegue a tu
-        página. Si esa capa no puede leerte, no apareces en la respuesta.
+        Ni una sola pregunta respondida en un formato que una IA pueda citar. No eran sitios
+        malos. Estaban escritos para que los lea una persona, no la máquina que hoy responde
+        por su rubro.
       </p>
     </section>
 
-    <section id="servicios" class="bg-papel text-tinta-galeria px-4 sm:px-6 pb-28 md:pb-44 scroll-mt-24">
+    <!-- BLOQUE 4 · POR DÓNDE TE TOCA PARTIR. Ordenado por el momento del cliente. -->
+    <section id="servicios" class="bg-papel text-tinta-galeria px-4 sm:px-6 py-28 md:py-44 scroll-mt-24">
       <h2
-        class="font-extrabold uppercase m-0 mb-4"
-        style="font-size:clamp(1.75rem, 4.4vw, 4.5rem); line-height:0.95; letter-spacing:-0.035em"
+        class="font-extrabold uppercase m-0 mb-4 max-w-[16ch]"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em"
       >
-        Servicios
+        ¿Por dónde te toca partir?
       </h2>
-      <p class="text-tinta-galeria/50 text-sm mb-10 md:mb-14">Valores en pesos, + IVA.</p>
+      <p class="text-tinta-galeria/50 text-sm mb-12 md:mb-16 max-w-prosa">
+        Valores en pesos, + IVA. Los publicamos a propósito: la mayoría del rubro no lo hace.
+      </p>
 
-      <!-- COLUMNAS. Cada servicio es una columna con una regla de pelo arriba, no una
-           tarjeta con borde alrededor: la grilla de cajas idénticas lee genérico. La regla
-           va solo arriba de cada columna, así el separador es correcto a 3, 2 o 1 columna
-           sin depender de nth-child, que se rompe al cambiar de breakpoint.
-           El precio va empujado al fondo (mt-auto) para que quede alineado entre columnas
-           aunque las descripciones midan distinto. -->
-      <ul class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-x-8 lg:gap-x-12 gap-y-14 lg:grid-cols-3">
         {
-          servicios.map((s) => (
-            <li class="flex">
-              <a
-                href={s.href}
-                class="group flex flex-col w-full border-t border-tinta-galeria/25 pt-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-tinta-galeria"
+          momentos.map((m) => (
+            <div class="flex flex-col border-t border-tinta-galeria/25 pt-6">
+              <h3
+                class="font-extrabold uppercase m-0 max-w-[18ch]"
+                style="font-size:clamp(1.0625rem,1.5vw,1.375rem); line-height:1.15; letter-spacing:-0.02em"
               >
-                <span
-                  class="font-extrabold uppercase group-hover:opacity-55 transition-opacity"
-                  style="font-size:clamp(1.25rem,1.9vw,1.75rem); line-height:1.02; letter-spacing:-0.03em"
-                >
-                  {s.nombre}
-                </span>
-                <span class="mt-4 text-tinta-galeria/60 text-base leading-relaxed">
-                  {s.linea}
-                </span>
-                <span class="mt-auto pt-8 font-bold text-base">{s.precio}</span>
-              </a>
-            </li>
+                {m.momento}
+              </h3>
+              <ul class="list-none p-0 mt-6 mb-0 space-y-5 flex-1">
+                {m.items.map((it) => (
+                  <li>
+                    <a href={it.href} class="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-tinta-galeria">
+                      <span class="block font-bold text-lg group-hover:opacity-55 transition-opacity">{it.n}</span>
+                      <span class="block mt-1 text-tinta-galeria/60 text-sm">{it.p}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              {m.nota && <p class="mt-6 text-tinta-galeria/50 text-sm leading-relaxed">{m.nota}</p>}
+            </div>
           ))
         }
-      </ul>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-tinta-galeria/15">
+        <span class="text-tinta-galeria/45 text-xs font-bold uppercase block mb-5" style="letter-spacing:0.16em">
+          También
+        </span>
+        <ul class="list-none p-0 m-0 grid gap-x-10 gap-y-4 sm:grid-cols-2">
+          {
+            tambien.map((t) => (
+              <li>
+                <a href={t.href} class="group flex flex-wrap items-baseline gap-x-3">
+                  <span class="font-bold group-hover:opacity-55 transition-opacity">{t.n}</span>
+                  <span class="text-tinta-galeria/55 text-sm">{t.p}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </section>
 
-    <!-- SEGUNDO CAMPO DE COLOR: petróleo. -->
-    <section id="metodo" class="bg-campo-petroleo text-papel px-4 sm:px-6 py-28 md:py-44 scroll-mt-24">
+    <!-- BLOQUE 5 · HERRAMIENTAS GRATIS. Bloque nuevo. Campo petróleo. -->
+    <section class="bg-campo-petroleo text-papel px-4 sm:px-6 py-28 md:py-44">
+      <h2
+        class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[17ch]"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em; text-wrap:balance"
+      >
+        Herramientas que puedes usar sin hablar con nadie
+      </h2>
+      <div class="grid gap-x-8 lg:gap-x-12 gap-y-10 md:grid-cols-3">
+        <article class="border-t border-white/30 pt-6">
+          <h3 class="font-extrabold uppercase m-0 text-xl" style="letter-spacing:-0.02em">
+            Chequeo de visibilidad en IA
+          </h3>
+          <p class="mt-4 text-white/80 text-base leading-relaxed">
+            21 señales, 30 segundos, sin registro.
+          </p>
+          <a href="#chequeo" class="mt-5 inline-flex items-center gap-2 text-sm font-bold hover:gap-3 transition-all">
+            Correrlo ahora <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="border-t border-white/30 pt-6">
+          <h3 class="font-extrabold uppercase m-0 text-xl" style="letter-spacing:-0.02em">
+            Verifica y Cumple
+          </h3>
+          <p class="mt-4 text-white/80 text-base leading-relaxed">
+            Si tu sitio cumple lo técnico de la Ley 21.719, que entra en vigencia el 1 de
+            diciembre.
+          </p>
+          <!-- Sin enlace a propósito: la URL pública de esta herramienta no está confirmada
+               en el repo y no se inventa un destino. Falta completarla. -->
+        </article>
+
+        <article class="border-t border-white/30 pt-6">
+          <h3 class="font-extrabold uppercase m-0 text-xl" style="letter-spacing:-0.02em">
+            La metodología, publicada
+          </h3>
+          <p class="mt-4 text-white/80 text-base leading-relaxed">
+            Cómo se calcula cada punto del chequeo, a la vista.
+          </p>
+          <a href="/diagnostico/" class="mt-5 inline-flex items-center gap-2 text-sm font-bold hover:gap-3 transition-all">
+            Ver el método <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section id="metodo" class="px-4 sm:px-6 py-28 md:py-44 scroll-mt-24">
       <h2
         class="font-extrabold uppercase m-0 mb-12 md:mb-20 max-w-[14ch]"
         style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:-0.035em"
@@ -221,54 +305,7 @@ const chequeos = [
       </ol>
     </section>
 
-    <!-- LA PUERTA para quien ya tiene sitio. El panel va en su estado VACÍO real: no hay
-         resultados de ejemplo simulados. -->
-    <section id="chequeo" class="px-4 sm:px-6 pb-28 md:pb-44 scroll-mt-24">
-      <h2
-        class="font-extrabold uppercase m-0 max-w-[16ch]"
-        style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:-0.035em"
-      >
-        ¿Ya tienes sitio?
-      </h2>
-      <p class="mt-8 text-white/55 text-xl leading-relaxed max-w-prosa">
-        No siempre hay que rehacerlo. Escribe tu dominio y revisamos qué lo está dejando
-        fuera. El chequeo es gratis.
-      </p>
-
-      <div class="mt-12 border-t border-b border-white/15">
-        <form class="flex flex-col sm:flex-row sm:items-stretch" onsubmit="return false">
-          <label for="dominio" class="sr-only">Tu dominio</label>
-          <input
-            id="dominio"
-            name="dominio"
-            type="text"
-            inputmode="url"
-            autocomplete="url"
-            placeholder="tudominio.cl"
-            class="flex-1 bg-transparent font-mono text-2xl md:text-4xl text-papel placeholder:text-white/25 py-7 md:py-9 outline-none focus-visible:bg-white/[0.04] transition-colors"
-          />
-          <button
-            type="submit"
-            class="flex-none self-stretch sm:self-auto bg-papel hover:bg-white text-tinta-galeria text-sm font-bold px-8 my-4 sm:my-5 rounded-full transition-colors py-3.5 sm:py-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
-          >
-            Revisar
-          </button>
-        </form>
-      </div>
-
-      <ul class="mt-8 grid gap-x-10 gap-y-3 sm:grid-cols-2 lg:grid-cols-4 list-none p-0 m-0">
-        {
-          chequeos.map((c) => (
-            <li class="flex items-baseline gap-3 font-mono text-sm text-white/50">
-              <span aria-hidden="true" class="text-white/25">—</span>
-              <span>{c}</span>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-
-    <!-- CIERRE en papel. -->
+    <!-- BLOQUE 7 · CIERRE bajo, sin urgencia fabricada. -->
     <section class="bg-papel text-tinta-galeria px-4 sm:px-6 py-28 md:py-44">
       <h2
         class="font-extrabold uppercase m-0 max-w-[14ch]"
@@ -291,7 +328,7 @@ const chequeos = [
           href="#chequeo"
           class="rounded-full border border-tinta-galeria/25 hover:border-tinta-galeria text-tinta-galeria text-sm font-bold px-8 py-4 transition-colors"
         >
-          Prefiero el chequeo gratis
+          Prefiero correr el chequeo
         </a>
       </div>
     </section>
@@ -299,4 +336,5 @@ const chequeos = [
 
   <FooterV2 />
 
+  <script src="/assets/js/v2-chequeo.js" is:inline defer></script>
 </Layout>
