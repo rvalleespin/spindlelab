@@ -908,6 +908,9 @@
   }
   .profundo-falla p { margin: 0; font-size: 0.95rem; }
   .profundo-falla p + p { margin-top: 8px; font-size: 0.87rem; color: var(--texto-suave); }
+  .profundo-falla .profundo-falla-contacto { margin-top: 12px; font-size: 0.9rem; }
+  /* Con el informe guardado debajo, la tarjeta es un aviso y no el final de la sección. */
+  .profundo-falla + .bloque { margin-top: 28px; }
 
   /* La etiqueta que dice que algo es informativo. No es una nota al pie: es un
      rótulo del tamaño del contenido que rotula. */
@@ -1983,6 +1986,13 @@
   // Si esta corrida salió de apretar "Volver a medirlo". Cambia lo que se dice cuando la
   // respuesta vuelve a venir de la medición guardada.
   let rehacerPedido = false;
+  // El HTML del último informe profundo que se pintó. Existe por una sola razón: "Volver a
+  // medirlo" puede fallar (el caso más probable es el tope del día, que contesta al toque), y
+  // hasta ahora esa falla borraba el informe que la persona estaba leyendo. Ese informe es
+  // suyo: lo pidió, lo esperó medio minuto y no tiene por qué perderlo por apretar un botón.
+  // Se recupera reenviando el formulario, sí, pero nadie se lo dice y no debería tener que
+  // saberlo. Se guarda al pintarlo y se devuelve tal cual si la medición nueva no sale.
+  let informeEnPantalla = '';
 
   // --- Que la espera no mueva lo que la persona está leyendo -------------------
   //
@@ -2270,25 +2280,62 @@
       html += '<p class="kicker">' + (sinConfirmar > 0 ? 'Nada pendiente en lo que vimos' : 'Nada pendiente') + '</p>';
       html += '<p>Abrimos <strong>' + escapar(dominio) + '</strong> en un navegador y no encontramos nada pendiente' +
         (sinConfirmar > 0 ? ', aunque hubo ' + plural(sinConfirmar, 'cosa que no pudimos ver', 'cosas que no pudimos ver') + '.' : '.') +
-        ' Esto no dice que cumples la ley: dice que, en lo que alcanzamos a mirar, tu sitio no cargó rastreadores ' +
-        'ni guardó nada antes de pedir permiso. La parte legal la revisa tu abogado.</p>';
+        // El acotamiento que el 26-sep sí les puso a los cuatro ítems y a esta frase no.
+        // Decía "tu sitio no cargó rastreadores ni guardó nada antes de pedir permiso", en
+        // absoluto, sobre dos cosas que solo se saben del catálogo: `algoCorrio` se calcula
+        // sobre los rastreadores que buscamos, y el verde del ítem de cookies convive con
+        // cookies de rastreo de PRIMERA PARTE que no reconocemos (en el censo del 26-sep
+        // hay cinco familias así, Yandex Metrica entre ellas). O sea que un sitio con un
+        // rastreador fuera del catálogo llegaba hasta acá y se llevaba escrito que no
+        // guardó nada.
+        //
+        // Es además la frase más citable del informe: la que queda en la captura y la que
+        // se lee DESPUÉS de instalar el kit, que es el momento en que menos se puede
+        // prometer de más. Ahora dice lo que de verdad se comprobó, con las mismas palabras
+        // que los ítems de arriba, y en primera persona: es lo que vimos, no un certificado
+        // sobre el sitio.
+        ' Esto no dice que cumples la ley: dice que, en lo que alcanzamos a mirar, no vimos correr ninguno de ' +
+        'los rastreadores que buscamos ni quedar ninguna cookie de otro dominio antes de pedir permiso. ' +
+        'La parte legal la revisa tu abogado.</p>';
       html += botonPedir('pregunta', 'Pregúntanos', dominio, puntaje, 'Revisión con navegador');
     }
     html += '</div>';
 
     seccionProfundo.innerHTML = html;
+    informeEnPantalla = html;
   }
 
   // El texto de la falla lo pone la API, que ya lo escribió sin filtrar nada de
   // nuestra configuración: un 401 nuestro no es asunto de quien visita, y decir
   // "token inválido" cuenta cómo está armado esto. Si por lo que sea no viniera,
   // acá hay una frase que tampoco afirma nada sobre el sitio de nadie.
-  function renderFallaProfunda(data) {
+  //
+  // `informeGuardado` es el informe que ya estaba en pantalla cuando se apretó "Volver a
+  // medirlo". Si viene, la tarjeta se pone ENCIMA y el informe se queda donde estaba.
+  function renderFallaProfunda(data, informeGuardado) {
     const mensaje = (data && typeof data.error === 'string' && data.error) ||
       'No pudimos abrir tu sitio en un navegador. No es un resultado sobre tu sitio, es un problema nuestro.';
-    seccionProfundo.innerHTML =
-      '<div class="bloque"><h2>La revisión con navegador</h2></div>' +
-      '<div class="profundo-falla"><p>' + escapar(mensaje) + '</p><p>' + escapar(NO_ES_BUENA_NOTICIA) + '</p></div>';
+    // Varias de estas fallas terminan en "escríbenos" (la del tope del día, sin ir más
+    // lejos) y hasta acá no había dónde: los dos párrafos pasan por escapar(), así que el
+    // texto de la API no puede traer un enlace. Lo pone la portada, como ya lo hace la
+    // tarjeta de error del chequeo rápido.
+    const dominio = (data && data.dominio) || input.value.trim();
+    const escribenos = '<p class="profundo-falla-contacto"><a href="mailto:' + CONTACTO +
+      '?subject=' + attr(encodeURIComponent('Revisión con navegador: ' + dominio)) +
+      '">Escríbenos a ' + CONTACTO + '</a></p>';
+    // La segunda frase cambia cuando el informe se queda abajo: NO_ES_BUENA_NOTICIA dice
+    // que no pudimos abrir el sitio, y con el informe ahí mismo eso sería falso. Lo que no
+    // cambia es lo que esa frase cuida: que una caída nuestra no se lea como buena noticia.
+    const segunda = informeGuardado
+      ? 'Lo que ya tenías sigue acá abajo: es la medición guardada, la misma que estabas viendo. ' +
+        'Lo único que no pudimos hacer ahora es una nueva.'
+      : NO_ES_BUENA_NOTICIA;
+    const tarjeta = '<div class="profundo-falla"><p>' + escapar(mensaje) + '</p>' +
+      '<p>' + escapar(segunda) + '</p>' + escribenos + '</div>';
+    // Con informe guardado no va el título: el que trae el informe ya está abajo.
+    seccionProfundo.innerHTML = informeGuardado
+      ? tarjeta + informeGuardado
+      : '<div class="bloque"><h2>La revisión con navegador</h2></div>' + tarjeta;
   }
 
   // --- Los 12 puntos del Art. 14 ter -----------------------------------------
@@ -2298,8 +2345,12 @@
   // aunque no se haya podido leer la política: ahí van todos en 'sin-confirmar'
   // y la lista igual sirve para compararla a mano.
   function renderDocePuntos(data) {
-    const puntos = Array.isArray(data.puntos) ? data.puntos : [];
-    if (!puntos.length) { seccionDoce.innerHTML = ''; return; }
+    const puntos = (data && Array.isArray(data.puntos)) ? data.puntos : [];
+    // Sin puntos no se puede dibujar la lista, pero borrar la sección es la peor salida:
+    // desaparece sin decir nada y la página queda afirmando, por omisión, que acá no había
+    // nada que mirar. La API manda SIEMPRE los doce, hasta cuando no pudo leer la política,
+    // así que llegar sin ellos es una falla nuestra, y como tal se muestra.
+    if (!puntos.length) { renderFallaDoce(null); return; }
 
     let html = '<div class="bloque">';
     html += '<p class="marca-informativa">Informativo' + (data.puntua === false ? ', no entra en el puntaje' : '') + '</p>';
@@ -2367,6 +2418,11 @@
     abortarProfundo = control;
     rehacerPedido = !!rehacer;
     falloElNavegador = null;
+    // Lo que la persona tiene en pantalla, antes de taparlo con la tarjeta de espera. Solo
+    // en un "Volver a medirlo": una corrida nueva empieza de cero y ahí no hay nada suyo
+    // que cuidar. Se toma de la variable y no del DOM para que dos clics seguidos no
+    // guarden la tarjeta de espera en vez del informe.
+    const informeGuardado = rehacer ? informeEnPantalla : '';
     // Al rehacer la medición, los 12 puntos NO se vuelven a pedir: ya están en pantalla y
     // leerlos de nuevo significaría descargar el sitio del prospecto otra vez, con nuestro
     // nombre, para llegar al mismo texto.
@@ -2420,9 +2476,15 @@
           sinMoverLoQueLeen(seccionProfundo, function () { renderProfundo(data); });
           avisoProfundo.textContent = 'La revisión con navegador ya está lista, debajo del resultado.';
         } else {
-          falloElNavegador = true;
-          sinMoverLoQueLeen(seccionProfundo, function () { renderFallaProfunda(data); });
-          avisoProfundo.textContent = 'No pudimos terminar la revisión con navegador.';
+          // Con el informe guardado abajo, el navegador SÍ llegó a abrir el sitio: fue en la
+          // medición que sigue en pantalla. Decir lo contrario haría que la costura de los 12
+          // puntos ("a tu política sí llegamos, aunque a tu sitio no") contradiga al informe
+          // que está ahí mismo.
+          falloElNavegador = !informeGuardado;
+          sinMoverLoQueLeen(seccionProfundo, function () { renderFallaProfunda(data, informeGuardado); });
+          avisoProfundo.textContent = informeGuardado
+            ? 'No pudimos medirlo de nuevo. El informe que tenías sigue abajo.'
+            : 'No pudimos terminar la revisión con navegador.';
         }
         // Los 12 puntos se leen de la política, no del navegador, y eso solo hace falta
         // decirlo cuando el navegador falló: si no, arriba queda "no pudimos ver tu sitio"
@@ -2433,10 +2495,12 @@
       .catch(function () {
         if (mia !== corrida) return;
         avisoProfundo.textContent = '';
-        falloElNavegador = true;
-        sinMoverLoQueLeen(seccionProfundo, function () { renderFallaProfunda(null); });
-        avisoProfundo.textContent = 'No pudimos terminar la revisión con navegador.';
-        if (datosDoce) pintarDoce();
+        falloElNavegador = !informeGuardado;
+        sinMoverLoQueLeen(seccionProfundo, function () { renderFallaProfunda(null, informeGuardado); });
+        avisoProfundo.textContent = informeGuardado
+          ? 'No pudimos medirlo de nuevo. El informe que tenías sigue abajo.'
+          : 'No pudimos terminar la revisión con navegador.';
+        if (falloElNavegador && datosDoce) pintarDoce();
       })
       .finally(function () { clearTimeout(plazo); clearTimeout(avisoLentoProfundo); });
 
@@ -2459,10 +2523,18 @@
   // Pinta (o repinta) los 12 puntos con lo último que vino, sin mover lo que se está
   // leyendo. Se llama dos veces cuando el navegador falla: una al llegar la lista y otra
   // al saber que el navegador no abrió, que es lo único que cambia su costura.
+  //
+  // `datosDoce` es el SOBRE que manda la API: { ok, dominio, revisado, seccion }. El `ok` de
+  // afuera dice si la petición salió bien; los doce puntos y todos sus textos van adentro, en
+  // `seccion`. Hasta el 26-sep esto le pasaba el sobre entero a renderDocePuntos, que busca
+  // `data.puntos` en la raíz: no lo encontraba nunca, y la sección entera se borraba en
+  // silencio por el camino de éxito. El desenvolver va acá y no en la API porque el sobre es
+  // el contrato que las pruebas del endpoint fijan, y afuera viajan dos datos (`dominio`,
+  // `revisado`) que no son de la sección.
   function pintarDoce() {
     if (!datosDoce) return;
     sinMoverLoQueLeen(seccionDoce, function () {
-      if (datosDoce.ok === true) renderDocePuntos(datosDoce);
+      if (datosDoce.ok === true) renderDocePuntos(datosDoce.seccion);
       else renderFallaDoce(datosDoce);
     });
   }
@@ -2486,6 +2558,7 @@
     datosDoce = null;
     falloElNavegador = null;
     rehacerPedido = false;
+    informeEnPantalla = '';
     seccionProfundo.innerHTML = '';
     seccionDoce.innerHTML = '';
     avisoProfundo.textContent = '';

@@ -431,18 +431,62 @@ function rutaDe(u) {
  * el 'flaco' de <=6 peticiones y 0 cookies lo atrapaban: una pared de verdad trae más
  * peticiones que eso y SIEMPRE deja sus cookies.
  *
- * La regla es "si las ÚNICAS cookies que quedaron son de esta lista, no vimos la página". El
- * "únicas" es lo que la hace segura: patagoniacamp.com deja cuatro __cf_bm de terceros y
- * además _ga, _fbp y __hstc, así que no cae acá. Y en los cinco prospectos reales que se
- * midieron el 25-sep (tuane, uhc, hjmc, pdnd, zarhi) no aparece ninguna.
+ * ESTA LISTA YA NO DECIDE NADA, y ese es el arreglo del 26-sep. Hasta entonces la regla era
+ * "si las ÚNICAS cookies que quedaron son de esta lista, no vimos la página", y tenía dos
+ * agujeros por los que se volvía a colar el 77/100 de www.santander.cl:
+ *
+ *   1. bastaba UNA cookie corriente al lado para que el "únicas" fallara;
+ *   2. bastaba que el gestor de turno no estuviera escrito acá.
+ *
+ * Los dos agujeros son el mismo: se reconocía la pared por la AUSENCIA de todo lo demás, y
+ * cualquier cosa que apareciera la desarmaba. Ampliar la lista no arregla eso — mañana sale
+ * otro gestor. Lo que decide ahora es si lo que se abrió tiene FORMA de página (ver
+ * `MAX_PETICIONES_PARED` más abajo); esta lista solo elige con qué palabras se dice, porque
+ * cuando el guardia firmó con su cookie podemos nombrarlo y cuando no, no.
+ *
+ * Nombres medidos el 26-sep-2026 en sitios chilenos, con el mismo `medirConNavegador` de
+ * producción: nlbi_, visid_incap_, incap_ses_ y reese84 (Imperva, en itau.cl, bancochile.cl
+ * y aguasandinas.cl); _abck, bm_sz y ALTDCAKAMAI (Akamai, en scotiabank.cl y santander.cl).
+ * bm_sv, bm_mi, bm_so, bm_lso y ak_bmsc son el resto de la familia de Akamai; no se midieron
+ * acá y están por completitud, no como prueba de nada.
+ *
+ * Lo que NO entra, aunque apareció al lado de las anteriores: BIGipServerPool_ (scotiabank.cl)
+ * y TS01ad81bb (wom.cl) son cookies de balanceador F5, no de un gestor de bots, y decir "el
+ * sistema que filtra robots nos detectó" sobre una cookie de balanceo sería inventar. Que no
+ * estén ya no abre ningún agujero: un sitio protegido por un F5 que nos muestre una pared
+ * cae igual por la forma de la página, solo que con las palabras de 'flaco'.
  *
  * Lo que NO se hace es cortar por letras<500 a secas: tuane.cl es una portada real con 261
  * letras y se quedaría sin informe sin motivo.
  */
 export const COOKIES_DE_PORTERO = [
-  /^_abck$/i, /^bm_sz$/i, /^bm_sv$/i, /^ak_bmsc$/i, /^datadome$/i, /^incap_ses_/i,
-  /^visid_incap_/i, /^__cf_bm$/i, /^cf_clearance$/i, /^reese84$/i, /^_px/i,
+  /^_abck$/i, /^bm_(sz|sv|mi|so|lso)$/i, /^ak_bmsc$/i, /^ALTDCAKAMAI$/i,
+  /^datadome$/i, /^incap_ses_/i, /^visid_incap_/i, /^nlbi_/i, /^reese84$/i,
+  /^__cf_bm$/i, /^cf_clearance$/i, /^_px/i,
 ];
+
+/*
+ * Cuánto es "poca página". Los dos números salen de medir, no de una intuición.
+ *
+ * El 26-sep-2026 se abrieron con el MISMO `medirConNavegador` que corre en producción 34
+ * portadas: 12 prospectos chicos sacados de las listas de outbound (clínicas y estudios de
+ * abogados) y 22 sitios chilenos grandes, bancos y retail incluidos. Tres resultaron ser
+ * paredes y 31 páginas de verdad. La tabla entera está en `medidas-26sep/censo.json`, junto
+ * a las pruebas; esto es el resumen:
+ *
+ *   la pared de banco.santander.cl ..........  8 peticiones,   435 letras
+ *   las otras dos paredes ...................  3 peticiones (bancoestado.cl, latamairlines)
+ *   la portada real más flaca de las 31 ..... 23 peticiones,   261 letras (tuane.cl)
+ *   la siguiente ............................ 75 peticiones
+ *   la más flaca de TODO el banco ........... 18 peticiones (time.cl, medido el 23-sep)
+ *
+ * Entre la pared y la portada real más pobre que se ha medido hay un hueco, y el corte va
+ * dentro del hueco. No hay ninguna portada real medida con 12 peticiones o menos: una página
+ * de verdad, por pobre que sea, pide sus hojas de estilo, sus tipografías y sus imágenes.
+ * Si algún día aparece una que no, este número se mueve con esa medición en la mano.
+ */
+export const MAX_PETICIONES_PARED = 12;
+export const MIN_LETRAS_PAGINA = 500;
 
 export function esCookieDePortero(nombre) {
   return COOKIES_DE_PORTERO.some((re) => re.test(String(nombre || '')));
@@ -451,26 +495,29 @@ export function esCookieDePortero(nombre) {
 /**
  * ¿El sitio nos dejó mirar de verdad?
  *
- * Un sitio que nos bloquea se ve casi igual que un sitio limpio: pocas peticiones, ningún
- * tercero, ninguna cookie. La diferencia la hace el texto: una página real tiene contenido,
- * una página de bloqueo tiene cuatro líneas. Sin esta guardia, "nos bloquearon" se informa
- * como "está limpio", que es el falso verde de la regla 3.
+ * Un sitio que nos bloquea se ve casi igual que un sitio limpio: pocos terceros, pocas
+ * cookies, nada que acusar. La diferencia la hace el TAMAÑO de lo que se abrió: una página
+ * real carga sus cosas y tiene contenido; una pantalla de bloqueo trae cuatro archivos y
+ * cuatro líneas. Sin esta guardia, "nos bloquearon" se informa como "está limpio", que es el
+ * falso verde de la regla 3.
  *
  * Devuelve el MOTIVO, no un sí/no, y los dos motivos se dicen con palabras distintas:
  *
  *   'bloqueo'  el título es el de un desafío o un acceso denegado. Ahí sí se puede decir
  *              que el sitio no nos dejó entrar.
- *   'portero'  las únicas cookies que quedaron son las de un bot manager (Akamai, DataDome,
- *              Cloudflare, Imperva). El guardia nos escribió su cookie, así que lo que
- *              miramos fue su pared. No acusa al sitio: dice que no vimos lo que veníamos
- *              a ver. Es el motivo que faltaba, y por el que www.santander.cl salía 77/100
- *              con tres ítems en verde (25-sep).
+ *   'portero'  lo que se abrió no tiene forma de página (poquísimas peticiones y poquísimo
+ *              texto) Y encima quedó la cookie de un gestor de bots escrita en el dominio
+ *              del propio sitio. El guardia firmó la pantalla que miramos. No acusa al
+ *              sitio: dice que no vimos lo que veníamos a ver. Es el motivo por el que
+ *              www.santander.cl salía 77/100 con tres ítems en verde (25-sep).
  *
- *   'flaco'    una petición, nada de texto. Puede ser un bloqueo y puede ser una página
- *              de verdad que casi no tiene nada (example.com trae 127 caracteres y una
- *              sola petición, y es una página real). No sabemos cuál de las dos, así que
- *              NO se le dice al dueño que su sitio nos bloqueó: se dice lo que sí vimos,
- *              que es que no había con qué trabajar.
+ *   'flaco'    poquísimas peticiones, y o poquísimo texto o NINGÚN dato de texto. Puede
+ *              ser un bloqueo y puede ser una página de verdad que casi no tiene nada
+ *              (example.com trae 127 caracteres y una sola petición, y es una página
+ *              real). No sabemos cuál de las dos, así que NO se le dice al dueño que su
+ *              sitio nos bloqueó: se dice lo que sí vimos, que es que no había con qué
+ *              trabajar. Que el texto no se haya podido contar cuenta como no saber, no
+ *              como saber que estaba bien.
  *
  * Los tres van a 'sin-confirmar' igual. Lo que cambia es que uno acusa al sitio y los otros
  * dos describen lo que pasó, y solo esos dos son siempre verdad.
@@ -487,33 +534,71 @@ export function pareceBloqueo({ peticiones = [], cookies = [], letras = null, ti
   // Dónde terminamos. Un sitio que manda a su página de fuera de línea no nos mostró el suyo.
   if (RE_RUTA_PARED.test(rutaDe(urlFinal))) return 'bloqueo';
 
-  // Las únicas cookies que quedaron son del portero que nos detectó, y al menos una es del
-  // dominio del propio sitio: lo que miramos fue su pared, no la página. Va al mismo balde
-  // que 'flaco' (sin-confirmar, fuera del puntaje) y no a 'bloqueo', porque 'bloqueo' acusa
-  // al sitio de habernos cerrado la puerta y acá lo único que sabemos de cierto es que no
-  // vimos lo que veníamos a ver.
+  // ¿Lo que se abrió tiene FORMA de página?
   //
-  // El "del propio dominio" NO es un adorno, y no estaba en la regla propuesta. Lo pidió un
-  // dato del banco: hotelescumbres.cl deja UNA sola cookie, cf_clearance, y es de asksuite.com
-  // (el chat que tiene incrustado). Sin ese requisito, un sitio que vimos entero (82
-  // peticiones, Google Analytics cargando y enviando) se declinaba como si nos hubieran
-  // tapado la vista. Un guardia que protege ESTE sitio escribe en ESTE dominio; el
-  // cf_clearance de un tercero no dice nada sobre si vimos la página o no.
-  const propio = registrable(dominio);
-  if (cookies.length
-    && cookies.every((c) => esCookieDePortero(c.name))
-    && propio && cookies.some((c) => registrable(c.domain) === propio)) return 'portero';
+  // Esta es la pregunta que reemplazó a "¿son TODAS las cookies de un gestor de bots?". Una
+  // pared no carga el sitio: trae su HTML, un par de hojas de estilo, tres imágenes y se
+  // acaba. La de banco.santander.cl son 8 peticiones y 435 letras, sin un solo script. Una
+  // portada de verdad, por pobre que sea, pide bastante más: la más flaca de las 31 del
+  // 26-sep trae 23, y la más flaca de todo el banco, 18. Ver `MAX_PETICIONES_PARED`.
+  const pocasPeticiones = peticiones.length <= MAX_PETICIONES_PARED;
+  // "No sabemos cuánto texto había" NO es "había texto". `letras` viene en null cuando el
+  // Runtime.evaluate que mide la página no pudo correr, y eso no es un accidente
+  // independiente: en `medirConNavegador` el título, el texto en pantalla y `letras` salen
+  // del MISMO evaluate. Cuando ese evaluate revienta, los tres detectores de texto mueren
+  // juntos, y con ellos las tres primeras puertas de esta función.
+  //
+  // Lo que revienta un Runtime.evaluate es, entre otras cosas, un desafío de JavaScript que
+  // se recarga solo y destruye el contexto de ejecución. O sea: el caso en que más falta
+  // hace reconocer la pared es exactamente el caso en el que nos quedamos ciegos. Tratar el
+  // "no sabemos" como si fuera texto suficiente devolvía la pared a verde por la puerta de
+  // atrás, con la lista de nombres de cookies como única defensa, que es justo de lo que
+  // este código lleva dos rondas tratando de dejar de depender.
+  const sinDatoDeTexto = typeof letras !== 'number';
+  const pocoTexto = !sinDatoDeTexto && letras < MIN_LETRAS_PAGINA;
 
-  // Poquísima actividad Y poquísimo texto. Los dos juntos: un one-pager honesto puede tener
-  // 8 peticiones y ninguna cookie, y ese sí trae texto.
+  // Y si además quedó la cookie de un gestor de bots en el dominio del PROPIO sitio, sabemos
+  // de quién era la pantalla y se puede decir con esas palabras. Va al mismo balde que
+  // 'flaco' (sin-confirmar, fuera del puntaje) y no a 'bloqueo', porque 'bloqueo' acusa al
+  // sitio de habernos cerrado la puerta y acá lo único que sabemos de cierto es que no vimos
+  // lo que veníamos a ver.
+  //
+  // El "del propio dominio" NO es un adorno. Lo pidió un dato del banco: hotelescumbres.cl
+  // deja UNA sola cookie, cf_clearance, y es de asksuite.com (el chat que tiene incrustado).
+  // Un guardia que protege ESTE sitio escribe en ESTE dominio; el cf_clearance de un tercero
+  // no dice nada sobre si vimos la página o no.
+  //
+  // El texto desconocido cuenta como poca página, igual que en la puerta genérica de abajo:
+  // con la firma del guardia y una docena escasa de peticiones, lo que falta por saber no
+  // cambia el diagnóstico.
+  const propio = registrable(dominio);
+  if (pocasPeticiones && (pocoTexto || sinDatoDeTexto) && propio
+    && cookies.some((c) => esCookieDePortero(c.name) && registrable(c.domain) === propio)) {
+    return 'portero';
+  }
+
+  // La misma pared, vista sin el nombre del guardia. Ya no exige que no haya cookies: una
+  // pared SIEMPRE deja las suyas, y exigir cero cookies era justo lo que dejaba escapar a
+  // banco.santander.cl, que deja dos.
   // Una sola petición y ninguna cookie: eso no es un sitio, es una respuesta. Un sitio real
-  // pide al menos su hoja de estilos. Vale por sí sola, incluso sin saber cuánto texto
-  // había: si el detector de aviso tampoco pudo correr, `letras` viene en null, y sin esta
-  // línea un sitio que nos tapó la vista entera saldría con los tres ítems en verde.
+  // pide al menos su hoja de estilos.
   if (peticiones.length <= 1 && cookies.length === 0) return 'flaco';
-  const flaco = peticiones.length <= 6 && cookies.length === 0;
-  const sinTexto = typeof letras === 'number' && letras < 500;
-  return flaco && sinTexto ? 'flaco' : null;
+
+  // Y la puerta genérica, que hasta el 26-sep exigía `letras` numérico y por eso dejaba
+  // pasar en VERDE a la pared que nos había dejado ciegos. Medido: la misma pared de 3
+  // peticiones declina con `letras` medidas y sacaba 100/100 con tres verdes y "Nada
+  // pendiente" con `letras` en null, que es el estado en el que la deja un desafío de
+  // JavaScript.
+  //
+  // El "no sabemos" no suma ni resta, y acá eso significa 'flaco' (sin-confirmar, fuera del
+  // puntaje), no `null`. Devolver `null` no es neutral: es declarar que lo que se abrió
+  // tenía forma de página, que es precisamente lo que no pudimos comprobar.
+  //
+  // El corte no se abre: sigue pidiendo <=12 peticiones. Una portada real no cae acá aunque
+  // el detector de texto se muera, porque ninguna de las 31 medidas el 26-sep baja de 18
+  // (ver `MAX_PETICIONES_PARED`). Lo único que cambia es que dejar de poder mirar ya no se
+  // premia.
+  return pocasPeticiones && (pocoTexto || sinDatoDeTexto) ? 'flaco' : null;
 }
 
 /* ================================================================== *
@@ -625,9 +710,36 @@ export function armarInforme(medicion, dominio) {
   const noPudimosMirar = bloqueado === 'bloqueo'
     ? 'Tu sitio nos bloqueó la lectura con un navegador, así que esto no lo sabemos. No lo contamos ni a favor ni en contra.'
     : bloqueado === 'portero'
-      ? 'Lo que se abrió no fue tu sitio: las únicas cookies que quedaron son las del sistema que filtra robots y que nos detectó, así que lo que miramos fue su pantalla. Esto no lo sabemos, y no lo contamos ni a favor ni en contra.'
+      // Esta frase quedó atrasada respecto de su propia regla y decía algo que ya no se
+      // comprueba (26-sep). Afirmaba "las ÚNICAS cookies que quedaron son las del sistema
+      // que filtra robots", que era verdad mientras el motivo exigía el "todas". Desde que
+      // lo que decide es la FORMA de la página, el motivo dispara igual con cookies
+      // corrientes al lado, y ahí la frase pasa a ser falsa. El §23 de la prueba ya
+      // construía ese caso exacto (la pared medida de banco.santander.cl con cinco cookies
+      // comunes encima) y lo daba por bueno, porque comprueba el MOTIVO y no lo que se
+      // dice; el §33 es el que mira la frase. Y no es un caso de laboratorio: un sitio
+      // detrás de un F5 y de Akamai a la vez deja su BIGipServerPool_ junto al _abck, que
+      // es scotiabank.cl tal como se midió el 26-sep.
+      //
+      // Ahora dice las dos cosas que sí se comprobaron: que lo que se abrió es demasiado
+      // poco para ser una portada, y que el guardia firmó en el dominio del propio sitio.
+      // No habla de cuánto texto había, porque en la rama de `letras` en null no lo
+      // sabemos.
+      ? 'Lo que se abrió no fue tu sitio: trajo un puñado de archivos, muchos menos de los que pide una portada, y quedó escrita en tu propio dominio la cookie del sistema que filtra robots que nos detectó. Lo que miramos fue su pantalla. Esto no lo sabemos, y no lo contamos ni a favor ni en contra.'
       : bloqueado === 'flaco'
-        ? 'La página que abrimos casi no trae contenido, así que no podemos afirmar nada sobre ella. Puede ser que tu sitio no nos dejara entrar. No lo contamos ni a favor ni en contra.'
+        // Y la tercera de la misma familia (26-sep). "Casi no trae contenido" es una
+        // afirmación sobre el TEXTO, y a 'flaco' se puede llegar sin haberlo medido: la
+        // puerta de "una sola petición y ninguna cookie" vale incluso con `letras` en null,
+        // que es lo que pasa cuando el detector de aviso tampoco pudo correr. Ahí la frase
+        // afirmaba algo que nadie contó. (Desde el 26-sep la puerta genérica también deja
+        // pasar el `letras` en null, así que llegar acá sin número ya no significa una sola
+        // petición; puede ser cualquier cosa con <=12. La frase de abajo sirve para las
+        // dos: no afirma cuánto texto había.) No cambia ningún estado ni ningún puntaje:
+        // los casos que entran por acá ya iban a
+        // sin-confirmar. Cambia lo que se le dice al dueño de un sitio sobre su sitio.
+        ? (typeof medicion.letras === 'number'
+          ? 'La página que abrimos casi no trae contenido, así que no podemos afirmar nada sobre ella. Puede ser que tu sitio no nos dejara entrar. No lo contamos ni a favor ni en contra.'
+          : 'Lo que abrimos casi no trajo nada, y el texto de la página tampoco lo pudimos leer, así que no podemos afirmar nada sobre ella. Puede ser que tu sitio no nos dejara entrar. No lo contamos ni a favor ni en contra.')
         : 'No alcanzamos a verlo entero, así que esto no lo sabemos. No lo contamos ni a favor ni en contra.';
 
   // Decisión del coordinador (25-sep). Un sitio que nunca disparó el evento de carga es justo
@@ -638,6 +750,10 @@ export function armarInforme(medicion, dominio) {
   // sobre lo poco que alcanzamos a mirar. Es la misma regla que ya se aplica a 'flaco'.
   const noTerminoDeCargar = `Tu sitio no terminó de cargar en los ${segundosMirados} segundos que esperamos, ` +
     'así que no sabemos qué más iba a cargar. No lo contamos ni a favor ni en contra.';
+  // La misma frase para el ítem de cookies, donde lo que no sabemos no es qué más iba a
+  // cargar sino qué más iba a escribir.
+  const noSabemosQueMasEscribia = `Tu sitio no terminó de cargar en los ${segundosMirados} segundos que esperamos, ` +
+    'así que no sabemos qué otras cookies iba a escribir. No lo contamos ni a favor ni en contra.';
 
   /* --- 1. Rastreadores que cargan solos ---------------------------- */
   if (bloqueado) {
@@ -664,7 +780,7 @@ export function armarInforme(medicion, dominio) {
   } else if (conCookie.length) {
     const nombres = conCookie.flatMap((h) => h.cookie.nombres);
     add('rastreadores', 'cookies', 'Cookies escritas sin permiso', 'pendiente', 3,
-      `Quedaron escritas ${nombres.length === 1 ? 'la cookie' : 'las cookies'} ${listaLegible(nombres)} ` +
+      `${nombres.length === 1 ? 'Quedó escrita la cookie' : 'Quedaron escritas las cookies'} ${listaLegible(nombres)} ` +
       `sin que nadie diera permiso. ${conMayuscula(listaLegible(conCookie.map((h) => h.nombre)))} ` +
       `${conCookie.length === 1 ? 'la escribió' : 'las escribieron'} solo${conCookie.length === 1 ? '' : 's'}.`,
       'Estas cookies no son técnicas: identifican a la persona para medirla o para publicidad. Tienen que esperar al permiso.');
@@ -690,10 +806,52 @@ export function armarInforme(medicion, dominio) {
           'Pregúntale a quien mantiene tu sitio qué escribe y si puede esperar al permiso.'
         : 'No sabemos para qué sirve cada una: pueden ser algo técnico o pueden estar identificando a la persona. ' +
           'Pregúntale a quien mantiene tu sitio qué escribe cada una y si pueden esperar al permiso.'));
+  } else if (parcial) {
+    // La misma decisión del coordinador que ya rige en carga y en envío (25-sep), aplicada
+    // donde faltaba: de un sitio que nunca disparó el evento de carga tampoco sabemos qué
+    // cookies MÁS iba a escribir. "No dejó ninguna cookie" es una afirmación sobre el sitio
+    // hecha con lo poco que alcanzamos a mirar, y encima en verde. Lo que sí vimos se dice
+    // igual (si hubo cookies de rastreo o de terceros, el informe salió por una de las dos
+    // ramas de arriba y este caso no se alcanza); lo que falta queda fuera del puntaje.
+    add('rastreadores', 'cookies', 'Cookies escritas sin permiso', 'sin-confirmar', 3,
+      (gal.propias.length
+        ? `Alcanzamos a ver ${gal.propias.length === 1 ? '1 cookie, y es de tu propio dominio' : `${gal.propias.length} cookies, y todas son de tu propio dominio`}. `
+        : 'Hasta donde alcanzamos a mirar, no quedó ninguna cookie. ') +
+      noSabemosQueMasEscribia,
+      'Ábrelo en incógnito, no toques nada, y revisa en las herramientas del navegador qué cookies quedaron.');
   } else {
+    // El verde acotado, como los otros dos (26-sep). Decía "no dejó ninguna cookie de rastreo
+    // ni de terceros", y la mitad de esa frase era una afirmación que no podemos hacer.
+    //
+    // Lo de terceros SÍ está confirmado: si hubiera quedado una cookie de otro dominio, el
+    // informe habría salido por la rama de arriba. Lo de "de rastreo" no: la puerta de
+    // escape para el rastreador que no está en el catálogo es la de las cookies de OTRO
+    // dominio, así que una cookie de rastreo de PRIMERA PARTE que no reconocemos llega
+    // hasta acá.
+    //
+    // No es hipotético. Estas cinco familias quedaron escritas COMO PROPIAS en el censo del
+    // 26-sep (`medidas-26sep/censo.json`), y ninguna está en nuestro catálogo:
+    //
+    //   _ym_uid, _ym_d ................ Yandex Metrica   en sodimac.cl
+    //   __rtbh.lid, __rtbh.uid ........ RTB House        en wom.cl, jumbo.cl, bci.cl
+    //   _vwo_uuid_v2, _vis_opt_s ...... VWO              en entel.cl, skyairline.com
+    //   _conv_v, _conv_s .............. Convert          en wom.cl
+    //   dtCookie ...................... Dynatrace        en aguasandinas.cl
+    //
+    // Puestas sobre un prospecto limpio de verdad (uhc.cl, del banco del 25-sep) el informe
+    // sale 77/100 con este ítem en verde, igual que sin ellas.
+    //
+    // Lo que se arregla es la FRASE, no el estado: un sitio genuinamente limpio tiene que
+    // poder salir en verde o el producto no dice nada. Lo que no puede es afirmar en
+    // absoluto lo que solo sabe de su propio catálogo, que es exactamente lo que los otros
+    // dos ítems ya dicen con "de los que buscamos".
     add('rastreadores', 'cookies', 'Cookies escritas sin permiso', 'ok', 3,
       gal.propias.length
-        ? `Sin tocar nada, tu sitio no dejó ninguna cookie de rastreo ni de terceros. Las ${gal.propias.length} que escribió son de tu propio dominio.`
+        ? 'Sin tocar nada, tu sitio no dejó ninguna cookie de otro dominio ni ninguna de los ' +
+          'rastreadores que buscamos. ' +
+          (gal.propias.length === 1
+            ? 'La única que escribió es de tu propio dominio.'
+            : `Las ${gal.propias.length} que escribió son de tu propio dominio.`)
         : 'Sin tocar nada, tu sitio no dejó ninguna cookie.');
   }
 
@@ -736,9 +894,20 @@ export function armarInforme(medicion, dominio) {
       'pero los rastreadores ya habían partido antes de que nadie lo tocara. El aviso está, y no está reteniendo nada.',
       'El aviso tiene que retener los scripts, no solo anunciarlos. Revisa con quien lo instaló si está en modo "solo informar".');
   } else if (aviso.estado === 'visible') {
+    // El CUARTO verde, y le faltaba el mismo acotamiento que se les arregló a los otros tres
+    // (26-sep). Decía "no corrió ningún rastreador", en absoluto, cuando `algoCorrio` se
+    // calcula sobre `hallados`, o sea solo sobre nuestro catálogo. Es la misma frase falsa
+    // que el ítem de cookies acaba de dejar de decir, y acá importa más todavía: este es el
+    // informe que sale DESPUÉS de instalar el kit, cuando el gestor ya está puesto, y es el
+    // momento en que menos se puede prometer de más.
+    //
+    // El invariante que lo cuida está en el §32 de la prueba: un ítem en verde que hable de
+    // rastreadores tiene que decir de cuáles habla. Hasta hoy ese bucle recorría un solo
+    // informe, el de uhc.cl, donde este ítem no sale en verde, así que pasaba sin tocarlo.
     add('aviso', 'aviso', 'Si aparece un aviso al entrar', 'ok', 3,
       `Aparece un aviso al entrar${aviso.botones.length ? `, con botones que dicen ${listaLegible(aviso.botones.map((b) => `"${b}"`))}` : ''}, ` +
-      'y mientras no lo tocamos no corrió ningún rastreador. No revisamos qué pasa cuando alguien acepta o rechaza.');
+      'y mientras no lo tocamos no corrió ninguno de los rastreadores que buscamos. ' +
+      'No revisamos qué pasa cuando alguien acepta o rechaza.');
   } else {
     add('aviso', 'aviso', 'Si aparece un aviso al entrar', 'pendiente', 3,
       `Estuvimos ${segundosMirados} segundos en tu sitio, movimos el mouse y bajamos la página, y no apareció ningún aviso de cookies.` +
@@ -852,8 +1021,13 @@ export const FALLAS = {
     // alguien que trabaja con sitios, que es justo con quien queremos hablar: mandarlo a
     // esperar hasta mañana y nada más es despedir al único visitante que ya demostró que
     // esto le sirve.
-    mensaje: 'Ya hiciste todas las revisiones profundas que te tocan hoy. El contador se pone en cero mañana; ' +
-      'si necesitas más ahora, escríbenos.',
+    //
+    // Y no dice "ya hiciste": el contador es por IP, y una IP es una oficina, un edificio o
+    // un operador móvil entero. Decirle "ya hiciste veinte" a quien hizo una es acusarlo de
+    // algo que no hicimos cómo saber. Se dice de dónde sale la cuenta y se deja la puerta
+    // abierta; la dirección a la que escribir la pone la portada, como enlace.
+    mensaje: 'Desde tu conexión ya se hicieron todas las revisiones profundas que damos por día. ' +
+      'El contador se pone en cero mañana; si necesitas más ahora, escríbenos.',
   },
   'navegador': {
     tipo: 'nuestro',
