@@ -2,28 +2,15 @@
 // Pie del sistema V3. Compartido entre la home y las internas.
 // Los enlaces son <a href> reales, no menciones en texto: un pie con nombres de servicio
 // sin enlazar es enlazado interno perdido.
-import { CONTACTO, EMAIL } from '../../consts';
+import { EMAIL } from '../../consts';
+import { CONTACTO_V3 as CONTACTO, SERVICIOS_V3, CASA_V3 } from '../../consts-v3';
 
-const servicios = [
-  { href: '/servicios/desarrollo-web/', label: 'Desarrollo Web' },
-  { href: '/servicios/visibilidad-en-ia/', label: 'Visibilidad en IA' },
-  { href: '/servicios/auditoria-seo-tecnica/', label: 'Auditoría SEO Técnica' },
-  { href: '/servicios/acompanamiento-mensual/', label: 'Acompañamiento Mensual' },
-  { href: '/servicios/redes-sociales/', label: 'Gestión de Redes Sociales' },
-  { href: '/servicios/paid-media/', label: 'Paid Media' },
-];
+const servicios = SERVICIOS_V3;
 
-const casa = [
-  { href: '/metodo/', label: 'Método' },
-  { href: '/nosotros/', label: 'Nosotros' },
-  { href: '/diagnostico/', label: 'Chequeo gratis' },
-  { href: '/blog/', label: 'Blog' },
-  { href: CONTACTO, label: 'Contacto' },
-  { href: '/privacidad/', label: 'Privacidad' },
-];
+const casa = CASA_V3;
 ---
 
-<footer class="bg-tinta-galeria text-white/45 text-sm px-4 sm:px-6 py-16 md:py-24">
+<footer class="bg-noche text-white/45 text-sm px-6 md:px-medianil py-24 md:py-40">
   <div class="grid gap-12 md:grid-cols-3">
     <div>
       <span class="font-wordmark text-2xl text-papel tracking-tight block">

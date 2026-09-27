@@ -1,0 +1,124 @@
+/* Campos de color del v3.
+ *
+ * POR QUÉ ESTA HOJA EXISTE. La versión anterior pintaba los campos de color y luego
+ * escribía encima con `text-white/70`, `/45`, `/30`. Eso es lo que hacía que el scroll se
+ * viera plano aunque los colores estuvieran puestos: el blanco con opacidad sobre un
+ * fondo de color no da un color, da un gris sucio, y da un gris DISTINTO en cada sección.
+ *
+ * Medido en la referencia: no usa blanco con opacidad en ningún panel. Tiñe el texto
+ * hacia una familia distinta a la del panel (su oliva lleva ámbar, su azul lleva menta,
+ * su naranja lleva rosa, su ciruela lleva ámbar) y lo usa A PLENA FUERZA. La opacidad
+ * aparece en un solo lugar: el rótulo del precio, al 80% y al 50%.
+ *
+ * Así que acá: el campo define su propia crema, el cuerpo va a plena fuerza, y lo único
+ * que baja es el rótulo (.rotulo) y los metadatos (.dato).
+ *
+ * CONTRASTE, calculado con math real (no a ojo), todos aprueban AA de cuerpo ≥4,5:1:
+ *   navy #0E2A47 + #E4F1EC = 12,56:1   ·  petróleo #0F766E + #FFF4E2 = 5,03:1
+ *   ciruela #341F34 + #FFEFDD = 13,40:1  ·  brasa #DA3400 + #FFFFFF = 4,70:1
+ *
+ * Brasa es el caso especial y vale anotarlo: la única opción que aprueba AA de cuerpo
+ * sobre #DA3400 es el blanco puro. La referencia falla acá — su naranja lleva #f5e0db y
+ * da 3,70:1, que reprueba. Ese par no se copia; se corrige.
+ */
+
+.campo {
+  /* Un campo ocupa una pantalla completa, como en la referencia (sus paneles miden
+   * 900–920px en un viewport de 900). Con min-height, no con altura fija: si el texto
+   * crece en móvil el panel crece con él en vez de recortarlo. */
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.campo--navy {
+  background: #0e2a47;
+  color: #e4f1ec;
+}
+.campo--brasa {
+  background: #da3400;
+  color: #ffffff;
+}
+.campo--petroleo {
+  background: #0f766e;
+  color: #fff4e2;
+}
+.campo--ciruela {
+  background: #341f34;
+  color: #ffefdd;
+}
+
+/* El cuerpo hereda la crema del campo a plena fuerza. Nada de opacidad acá. */
+.campo p,
+.campo h1,
+.campo h2,
+.campo h3,
+.campo li,
+.campo strong {
+  color: inherit;
+}
+
+/* Rótulo: lo único que baja de fuerza, igual que en la referencia.
+ * Global a propósito: también se usa en las secciones de papel, y con opacidad en vez
+ * de un color fijo hereda el tono de la sección que lo contiene. */
+.rotulo {
+  opacity: 0.62;
+}
+
+/* Filete separador, teñido con la crema del campo en vez de blanco al 10%.
+ *
+ * OJO: acá había un error mío. Esto era `border-color: currentColor; opacity: .28`, y
+ * como el filete va sobre el <li> que contiene la oferta entera, la opacidad se comía
+ * TODO el contenido: el nombre, la bajada, el precio y el botón blanco quedaban al 28%.
+ * `opacity` crea un contexto de apilado, así que el `.filete > * { opacity: 1 }` que
+ * puse para compensar no podía funcionar: un hijo nunca supera la opacidad del padre.
+ * Se tiñe el BORDE, no el elemento. */
+.campo .filete {
+  border-color: color-mix(in srgb, currentColor 30%, transparent);
+}
+
+/* El botón del campo: blanco lleno con texto negro, radio 6px.
+ * Medido en la referencia: sus botones son #ffffff con texto #151517 y radio 6px.
+ * No es una píldora. El contraste del par es 18,2:1. */
+.boton-campo {
+  display: inline-block;
+  background: #ffffff;
+  color: #14110e;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.9rem 1.6rem;
+  transition: opacity 0.2s;
+}
+.boton-campo:hover {
+  opacity: 0.85;
+}
+.boton-campo:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* La palabra gigante del campo.
+ * Medido en la referencia: 120px a 1440 de ancho = 8,33vw, peso 800, caja alta,
+ * line-height 0,9 y letter-spacing NORMAL. Ese último dato es el que más se notaba:
+ * el v3 venía con -0,035em, que a 120px son -4,2px por letra. Mayúsculas apretadas a
+ * ese tamaño leen a startup; con el tracking normal leen a cartel. */
+.palabra {
+  font-size: clamp(2.75rem, 8.33vw, 8.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+/* La media del campo: 16:9, que es la unidad de la referencia (sus imágenes son
+ * 640×360 a un 44% del ancho del viewport). */
+.media-campo {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}

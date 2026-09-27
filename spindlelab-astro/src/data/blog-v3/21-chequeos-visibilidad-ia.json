@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "slug": "21-chequeos-visibilidad-ia",
+    "title": "Los 21 chequeos de visibilidad en IA, explicados · SpindleLab",
+    "description": "Qué mide cada uno de los 21 chequeos de visibilidad en IA, cuánto pesa en el puntaje y cómo se arregla si no lo pasas. Con la metodología completa.",
+    "headline": "Los 21 chequeos de visibilidad en IA, explicados uno por uno",
+    "datePublished": "2026-09-04",
+    "dateModified": "2026-09-08",
+    "canonical": "https://spindlelab.cl/blog/21-chequeos-visibilidad-ia/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://spindlelab.cl/#org",
+        "name": "SpindleLab",
+        "url": "https://spindlelab.cl/",
+        "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
+        "email": "hola@spindlelab.cl",
+        "description": "SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B y financieras en Chile.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Santiago",
+          "addressCountry": "CL"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Chile"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/spindlelab/",
+          "https://www.instagram.com/spindle.lab/"
+        ],
+        "founder": {
+          "@id": "https://spindlelab.cl/#autor-ramon"
+        }
+      },
+      {
+        "@type": "Article",
+        "@id": "https://spindlelab.cl/blog/21-chequeos-visibilidad-ia/#article",
+        "headline": "Los 21 chequeos de visibilidad en IA, explicados uno por uno",
+        "description": "Qué mide cada uno de los 21 chequeos de visibilidad en IA, cuánto pesa en el puntaje y cómo se arregla si no lo pasas. Con la metodología completa.",
+        "inLanguage": "es-CL",
+        "datePublished": "2026-09-04",
+        "dateModified": "2026-09-08",
+        "image": "https://spindlelab.cl/assets/img/og-marca.jpg?v=4",
+        "author": {
+          "@id": "https://spindlelab.cl/#autor-ramon"
+        },
+        "publisher": {
+          "@id": "https://spindlelab.cl/#org"
+        },
+        "mainEntityOfPage": "https://spindlelab.cl/blog/21-chequeos-visibilidad-ia/"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://spindlelab.cl/#autor-ramon",
+        "name": "Ramón Vallejos",
+        "jobTitle": "Consultor de SEO técnico y visibilidad en IA (AEO/GEO)",
+        "image": "https://spindlelab.cl/assets/img/ramon-vallejos.jpg",
+        "worksFor": {
+          "@id": "https://spindlelab.cl/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://spindlelab.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "El Taller",
+            "item": "https://spindlelab.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Los 21 chequeos de visibilidad en IA",
+            "item": "https://spindlelab.cl/blog/21-chequeos-visibilidad-ia/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué es un chequeo de visibilidad en IA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Es una revisión automática del código público de tu sitio que verifica si los motores de IA pueden acceder a él, entender qué es tu negocio y extraer fragmentos citables. El nuestro mide 21 señales agrupadas en tres bloques: acceso, entidad y citabilidad."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto puntaje necesito para estar bien?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sobre 90 significa que la parte técnica está resuelta y lo que falta ya no está dentro de tu sitio. Entre 70 y 89 quedan huecos concretos, normalmente dos o tres. Bajo 45 conviene revisar primero si hay un bloqueo de acceso en el robots.txt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Bloquear a GPTBot protege mi contenido?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Evita que tu texto entre al entrenamiento de los modelos futuros de OpenAI, y es una decisión legítima sobre tu propiedad intelectual. Lo que NO hace es quitarte citas hoy: de eso se encargan otros robots (OAI-SearchBot y ChatGPT-User), que conviene dejar entrar si tu negocio depende de que te encuentren. La confusión entre ambos es el error más común del rubro."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Sirve tener llms.txt si ya tengo sitemap.xml?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hacen cosas distintas. El sitemap lista todas tus URLs para que un rastreador no se pierda ninguna. El llms.txt explica en texto plano qué eres y cuáles de esas páginas importan. Uno es un inventario, el otro es una guía de lectura."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Por qué declarar la entidad pesa más que tener un solo H1?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Porque son problemas de distinto tamaño. Sin un nodo de entidad, un motor tiene que deducir qué eres a partir del texto suelto y prefiere citar a quien se lo dijo explícito. Un H1 de más es un detalle de orden que casi nunca cambia si te citan o no. Por eso valen 8 y 2 puntos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Un puntaje alto significa que ChatGPT me va a recomendar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. El chequeo mide si tu sitio está preparado, no si hoy te citan. Los motores arman sus respuestas con fuentes de terceros, no solo con tu sitio. Puedes estar impecable por dentro y aun así no aparecer, y qué fuentes te faltan es justo lo que revisa el diagnóstico completo."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

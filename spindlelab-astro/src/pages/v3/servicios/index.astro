@@ -14,9 +14,10 @@
 // El límite «dentro / fuera» va verbatim: es honesto y es lo que evita malentendidos de
 // alcance. El FAQ no se duplica acá; vive en cada página de servicio.
 import Layout from '../../../layouts/Layout.astro';
+import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
-import { CONTACTO } from '../../../consts';
+
 import oferta from '../../../data/oferta-v3.json';
 
 const url = 'https://spindlelab.cl/servicios/';
@@ -52,7 +53,7 @@ const jsonLd = {
 <Layout
   title="Soluciones: SEO técnico, visibilidad en IA y desarrollo web · SpindleLab"
   description="SEO técnico, visibilidad en motores de IA y desarrollo web a medida, con precios publicados. Chequeo gratis antes de contratar nada."
-  bodyClass="bg-tinta-galeria font-texto"
+  bodyClass="bg-noche font-texto"
 >
   <Fragment slot="head">
     <meta name="robots" content="noindex, nofollow" />
@@ -62,7 +63,7 @@ const jsonLd = {
   <NavV3 />
 
   <main class="text-papel">
-    <section class="px-4 sm:px-6 pt-32 sm:pt-40 md:pt-44 pb-16 md:pb-20">
+    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-16 md:pb-20">
       <nav aria-label="Migas" class="text-white/35 text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
         <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
         <span aria-hidden="true" class="mx-2">·</span>
@@ -70,7 +71,7 @@ const jsonLd = {
       </nav>
       <h1
         class="font-extrabold uppercase m-0"
-        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.9; letter-spacing:-0.035em"
+        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.9; letter-spacing:0"
       >
         Qué hacemos
       </h1>
@@ -82,21 +83,21 @@ const jsonLd = {
     </section>
 
     <!-- ORDENADO POR EL MOMENTO DEL CLIENTE, igual que la home. -->
-    <section class="bg-papel text-tinta-galeria px-4 sm:px-6 py-24 md:py-36">
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 mb-4 max-w-[16ch]"
-        style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:-0.035em"
+        style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0"
       >
         ¿Por dónde te toca partir?
       </h2>
-      <p class="text-tinta-galeria/50 text-sm mb-12 md:mb-16 max-w-prosa">
+      <p class="text-noche/50 text-sm mb-12 md:mb-16 max-w-prosa">
         Valores en pesos, + IVA. Los publicamos a propósito: la mayoría del rubro no lo hace.
       </p>
 
       <div class="grid gap-x-8 lg:gap-x-12 gap-y-14 lg:grid-cols-3">
         {
           oferta.momentos.map((m: any) => (
-            <div class="flex flex-col border-t border-tinta-galeria/25 pt-6">
+            <div class="flex flex-col border-t border-noche/25 pt-6">
               <h3
                 class="font-extrabold uppercase m-0 max-w-[18ch]"
                 style="font-size:clamp(1.0625rem,1.5vw,1.375rem); line-height:1.15; letter-spacing:-0.02em"
@@ -106,22 +107,22 @@ const jsonLd = {
               <ul class="list-none p-0 mt-6 mb-0 space-y-7 flex-1">
                 {m.items.map((it: any) => (
                   <li>
-                    <a href={it.href} class="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-tinta-galeria">
+                    <a href={it.href} class="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-noche">
                       <span class="block font-bold text-lg group-hover:opacity-55 transition-opacity">{it.n}</span>
-                      <span class="block mt-2 text-tinta-galeria/60 text-sm leading-relaxed">{it.d}</span>
+                      <span class="block mt-2 text-noche/60 text-sm leading-relaxed">{it.d}</span>
                       <span class="block mt-2 font-bold text-sm">{it.p}</span>
                     </a>
                   </li>
                 ))}
               </ul>
-              {m.nota && <p class="mt-6 text-tinta-galeria/50 text-sm leading-relaxed">{m.nota}</p>}
+              {m.nota && <p class="mt-6 text-noche/50 text-sm leading-relaxed">{m.nota}</p>}
             </div>
           ))
         }
       </div>
 
-      <div class="mt-16 pt-8 border-t border-tinta-galeria/15">
-        <span class="text-tinta-galeria/45 text-xs font-bold uppercase block mb-6" style="letter-spacing:0.16em">
+      <div class="mt-16 pt-8 border-t border-noche/15">
+        <span class="text-noche/45 text-xs font-bold uppercase block mb-6" style="letter-spacing:0.16em">
           También
         </span>
         <ul class="list-none p-0 m-0 grid gap-x-10 gap-y-7 sm:grid-cols-2">
@@ -130,7 +131,7 @@ const jsonLd = {
               <li>
                 <a href={t.href} class="group block">
                   <span class="block font-bold group-hover:opacity-55 transition-opacity">{t.n}</span>
-                  <span class="block mt-1.5 text-tinta-galeria/60 text-sm leading-relaxed">{t.d}</span>
+                  <span class="block mt-1.5 text-noche/60 text-sm leading-relaxed">{t.d}</span>
                   <span class="block mt-1.5 font-bold text-sm">{t.p}</span>
                 </a>
               </li>
@@ -141,10 +142,10 @@ const jsonLd = {
     </section>
 
     <!-- EL LÍMITE, verbatim. Decir qué NO se hace evita el malentendido de alcance. -->
-    <section class="bg-campo-navy text-papel px-4 sm:px-6 py-24 md:py-36">
+    <section class="bg-campo-navy text-papel px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 mb-12 md:mb-16"
-        style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:-0.035em"
+        style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0"
       >
         Qué hacemos y qué no
       </h2>
@@ -185,10 +186,10 @@ const jsonLd = {
       </div>
     </section>
 
-    <section class="px-4 sm:px-6 py-24 md:py-36">
+    <section class="px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 max-w-[15ch]"
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em; text-wrap:balance"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         Empieza por el chequeo
       </h2>
@@ -198,13 +199,13 @@ const jsonLd = {
       <div class="mt-12 flex items-center gap-4 flex-wrap">
         <a
           href="/v3/#chequeo"
-          class="rounded-full bg-papel hover:bg-white text-tinta-galeria text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+          class="rounded-v3 bg-papel hover:bg-white text-noche text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
         >
           Correr el chequeo
         </a>
         <a
           href={CONTACTO}
-          class="rounded-full border border-white/25 hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
+          class="rounded-v3 border border-white/25 hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
         >
           Conversemos tu proyecto
         </a>

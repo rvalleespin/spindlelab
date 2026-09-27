@@ -27,16 +27,18 @@
 // EL CHEQUEO ES LA HERRAMIENTA REAL, no una imitación: mismos id que exige el script
 // (chq-form, chq-dominio, chq-btn, chq-out, chq-error), mismo /api/chequeo.
 import Layout from '../../layouts/Layout.astro';
+import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
-import { CONTACTO } from '../../consts';
+
 import '../../styles/chequeo-v3.css';
+import '../../styles/campos-v3.css';
 import oferta from '../../data/oferta-v3.json';
 
 // El orden por momento y los PRECIOS viven en data/oferta-v3.json, compartido con el
 // indice de servicios. Estaban escritos a mano en los dos lados, que es como un precio
 // queda distinto en una pagina y nadie lo nota.
-const { momentos, tambien } = oferta;
+const { momentos, tambien, tambienPanel } = oferta;
 
 const tira = [
   { src: '/mockup-interno/obra-1.png', alt: 'Página de retratos del sitio de Bernardo Combeau' },
@@ -57,7 +59,7 @@ const pasos = [
 <Layout
   title="Maqueta v3 · home con el chequeo en el hero · exploración rebranding"
   description="Maqueta interna para decidir. No es una página publicada."
-  bodyClass="bg-tinta-galeria font-texto"
+  bodyClass="bg-noche font-texto"
 >
   <meta slot="head" name="robots" content="noindex, nofollow" />
 
@@ -66,18 +68,18 @@ const pasos = [
   <main class="text-papel">
     <!-- BLOQUE 1 · EL HERO ES LA PRUEBA. Una pregunta que el visitante puede responder
          ahí mismo, y el instrumento debajo. -->
-    <section id="chequeo" class="px-4 sm:px-6 pt-32 sm:pt-40 md:pt-44 pb-10 md:pb-14 scroll-mt-24">
+    <section id="chequeo" class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-10 md:pb-14 scroll-mt-24">
       <!-- El titular se acortó de 79 a 19 caracteres. A 6,5rem en mayúsculas caben ~20 por
            línea, así que el anterior ocupaba cuatro y aplastaba el instrumento, que es lo
            que tiene que ver el visitante. La pregunta completa baja a la línea de apoyo,
            donde el texto es chico y no cuesta líneas. -->
       <h1
         class="font-extrabold uppercase m-0"
-        style="font-size:clamp(2.25rem, 8.4vw, 8rem); line-height:0.88; letter-spacing:-0.035em"
+        style="font-size:clamp(2.25rem, 8.4vw, 8rem); line-height:0.88; letter-spacing:0"
       >
         ¿Te menciona la IA?
       </h1>
-      <p class="mt-8 text-white/60 text-lg md:text-xl leading-relaxed max-w-prosa">
+      <p class="mt-8 text-white/60 text-lg md:text-2xl leading-relaxed max-w-prosa">
         Cuando tu cliente pregunta quién puede ayudarlo, ¿sale tu nombre? Pega tu dirección
         web y te lo decimos en 30 segundos. Sin registro, sin dejar tu correo.
       </p>
@@ -100,7 +102,7 @@ const pasos = [
           <button
             type="submit"
             id="chq-btn"
-            class="flex-none self-stretch sm:self-auto bg-papel hover:bg-white text-tinta-galeria text-sm font-bold px-8 my-4 sm:my-5 rounded-full transition-colors py-3.5 sm:py-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+            class="flex-none self-stretch sm:self-auto bg-papel hover:bg-white text-noche text-sm font-bold px-8 my-4 sm:my-5 rounded-v3 transition-colors py-3.5 sm:py-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
           >
             Revisar mi sitio
           </button>
@@ -116,7 +118,7 @@ const pasos = [
     </section>
 
     <!-- LA OBRA, inmediatamente después: la prueba abre, el oficio remata. -->
-    <section id="obra" class="px-4 sm:px-6 pt-10 md:pt-14 pb-4 scroll-mt-24">
+    <section id="obra" class="px-6 md:px-medianil pt-10 md:pt-14 pb-4 scroll-mt-24">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-2.5">
         {
           tira.map((t, i) => (
@@ -143,82 +145,131 @@ const pasos = [
     </section>
 
     <!-- BLOQUE 2 · EL PROBLEMA, con dato propio verificable. Campo navy. -->
-    <section class="bg-campo-navy text-papel mt-24 md:mt-36 px-4 sm:px-6 py-28 md:py-44">
+    <section class="px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 max-w-[17ch]"
-        style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:-0.035em; text-wrap:balance"
+        style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:0; text-wrap:balance"
       >
         67 de 69 sitios tenían el mismo problema
       </h2>
-      <p class="mt-10 md:mt-14 text-white/70 text-xl md:text-2xl leading-relaxed max-w-prosa">
+      <p class="mt-10 md:mt-14 text-humo text-xl md:text-2xl leading-relaxed max-w-prosa">
         Son los últimos que pasamos por el chequeo. Ninguno respondía una sola pregunta en
         un formato que una IA pueda citar. No eran sitios malos. Estaban escritos para que
         los lea una persona, no la máquina que hoy responde por su rubro.
       </p>
     </section>
 
-    <!-- BLOQUE 4 · POR DÓNDE TE TOCA PARTIR. Ordenado por el momento del cliente. -->
-    <section id="servicios" class="bg-papel text-tinta-galeria px-4 sm:px-6 py-28 md:py-44 scroll-mt-24">
-      <h2
-        class="font-extrabold uppercase m-0 mb-4 max-w-[16ch]"
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em"
-      >
-        ¿Por dónde te toca partir?
-      </h2>
-      <p class="text-tinta-galeria/50 text-sm mb-12 md:mb-16 max-w-prosa">
-        Valores en pesos, + IVA. Los publicamos a propósito: la mayoría del rubro no lo hace.
-      </p>
+    <!-- BLOQUE 4 · LOS CAMPOS. Un servicio, una pantalla, un color.
+         ================================================================================
+         ESTE ES EL CAMBIO DE ESTRUCTURA. Antes esto era UNA sección en papel con los seis
+         servicios apretados en una grilla de tres columnas. Medido en la referencia, eso
+         es justo lo que ella NO hace: le da a cada oferta UNA PANTALLA COMPLETA (sus
+         paneles miden 900–920px en un viewport de 900), con una sola palabra de 120px
+         como titular, su precio, su botón blanco y una imagen 16:9.
+         Por eso su home mide 11,8 pantallas y la mía medía 6,9: el largo no es relleno,
+         es que cada servicio tiene su propio mundo de color.
 
-      <div class="grid gap-x-8 lg:gap-x-12 gap-y-14 lg:grid-cols-3">
-        {
-          momentos.map((m) => (
-            <div class="flex flex-col border-t border-tinta-galeria/25 pt-6">
-              <h3
-                class="font-extrabold uppercase m-0 max-w-[18ch]"
-                style="font-size:clamp(1.0625rem,1.5vw,1.375rem); line-height:1.15; letter-spacing:-0.02em"
-              >
-                {m.momento}
-              </h3>
-              <ul class="list-none p-0 mt-6 mb-0 space-y-5 flex-1">
-                {m.items.map((it) => (
-                  <li>
-                    <a href={it.href} class="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-tinta-galeria">
-                      <span class="block font-bold text-lg group-hover:opacity-55 transition-opacity">{it.n}</span>
-                      <span class="block mt-1 text-tinta-galeria/60 text-sm">{it.p}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              {m.nota && <p class="mt-6 text-tinta-galeria/50 text-sm leading-relaxed">{m.nota}</p>}
-            </div>
-          ))
-        }
-      </div>
+         LA GRILLA DE COLUMNAS NO SE PIERDE: la elegiste para servicios y sigue viva en
+         /v3/servicios/. Acá, en la home, el recorrido es el que pasa por los colores.
 
-      <div class="mt-16 pt-8 border-t border-tinta-galeria/15">
-        <span class="text-tinta-galeria/45 text-xs font-bold uppercase block mb-5" style="letter-spacing:0.16em">
-          También
-        </span>
-        <ul class="list-none p-0 m-0 grid gap-x-10 gap-y-4 sm:grid-cols-2">
+         EL NARANJA VA EN DESARROLLO a propósito. Es el color más fuerte de la paleta y
+         el desarrollo web es el pilar del negocio; el color más alto va al pilar, no
+         repartido al azar.
+
+         LOS PRECIOS salen de data/oferta-v3.json sin tocarse. Este bloque no los escribe:
+         los lee.
+         ============================================================================= -->
+    <div id="servicios" class="scroll-mt-0">
+      {
+        [...momentos, tambienPanel].map((m, i) => {
+          const items = m.items ?? tambien;
+          const nSer = String(i + 1).padStart(2, '0');
+          return (
+            <section class={`campo campo--${m.campo} px-6 md:px-medianil pt-28 md:pt-40 pb-16 md:pb-24`}>
+              {/* Fila de rótulos, arriba. 14px peso 500, como en la referencia. */}
+              <div class="flex items-baseline justify-between gap-6 text-sm font-medium">
+                <span class="rotulo">{m.momento}</span>
+                <span class="rotulo tabular-nums">
+                  {nSer} / 04
+                </span>
+              </div>
+
+              {/* La palabra. Una sola, a 8,33vw, tracking normal. */}
+              <h2 class="palabra mt-10 md:mt-0">{m.palabra}</h2>
+
+              {/* Pie del campo: texto a la izquierda, imagen a la derecha.
+                  Grilla de 12 columnas con gap de 32px, que es la de la referencia. */}
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-12 md:mt-0">
+                {/* Las ofertas van en FILA, no apiladas. Un campo con dos ofertas apiladas
+                    se pasaba de la pantalla y rompía el ritmo de «un servicio, una
+                    pantalla»; en fila, con una o con dos, el campo sigue cabiendo. */}
+                <div class="md:col-span-6">
+                  <ul class={`list-none p-0 m-0 grid gap-x-6 gap-y-8 ${items.length > 1 ? 'sm:grid-cols-2' : ''}`}>
+                    {items.map((it) => (
+                      <li class="border-t filete pt-5">
+                        <p class="m-0 text-xl md:text-2xl font-bold leading-snug">{it.n}</p>
+                        <p class="m-0 mt-3 text-lg md:text-xl leading-relaxed">{it.d}</p>
+                        <p class="m-0 mt-4 flex flex-wrap items-baseline gap-x-3">
+                          <span class="rotulo text-base">Valor</span>
+                          <span class="text-lg md:text-xl font-semibold">{it.p}</span>
+                        </p>
+                        <a href={it.href} class="boton-campo mt-5">
+                          Ver {it.n}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                  {m.nota && <p class="mt-8 rotulo text-base leading-relaxed max-w-prosa">{m.nota}</p>}
+                </div>
+
+                {/* La media. 16:9 a ~44% del ancho, la unidad medida en la referencia.
+                    Son fotos que ya están en el sitio vivo, no imágenes inventadas. */}
+                <div class="md:col-span-5 md:col-start-8">
+                  <img
+                    src={m.img}
+                    alt={m.alt}
+                    width="1280"
+                    height="720"
+                    loading="lazy"
+                    decoding="async"
+                    class="media-campo"
+                  />
+                </div>
+              </div>
+            </section>
+          );
+        })
+      }
+
+      {/* El renglón de precios en papel: el resumen contable después del recorrido.
+          Es lo único que queda en claro, y a propósito: los valores se leen mejor
+          sobre papel que sobre cuatro colores distintos. */}
+      <section class="bg-papel text-noche px-6 md:px-medianil py-24 md:py-40">
+        <p class="m-0 rotulo text-sm font-bold uppercase" style="letter-spacing:0.16em">
+          Los seis valores, juntos
+        </p>
+        <p class="m-0 mt-4 text-noche/50 text-base max-w-prosa">
+          En pesos, + IVA. Los publicamos a propósito: la mayoría del rubro no lo hace.
+        </p>
+        <ul class="list-none p-0 m-0 mt-10 grid gap-x-12 gap-y-5 sm:grid-cols-2">
           {
-            tambien.map((t) => (
-              <li>
-                <a href={t.href} class="group flex flex-wrap items-baseline gap-x-3">
-                  <span class="font-bold group-hover:opacity-55 transition-opacity">{t.n}</span>
-                  <span class="text-tinta-galeria/55 text-sm">{t.p}</span>
+            [...momentos.flatMap((m) => m.items), ...tambien].map((it) => (
+              <li class="border-t border-noche/20 pt-4 flex flex-wrap items-baseline justify-between gap-x-4">
+                <a href={it.href} class="font-bold hover:opacity-55 transition-opacity">
+                  {it.n}
                 </a>
+                <span class="text-noche/60 text-sm tabular-nums">{it.p}</span>
               </li>
             ))
           }
         </ul>
-      </div>
-    </section>
-
+      </section>
+    </div>
     <!-- BLOQUE 5 · HERRAMIENTAS GRATIS. Bloque nuevo. Campo petróleo. -->
-    <section class="bg-campo-petroleo text-papel px-4 sm:px-6 py-28 md:py-44">
+    <section class="bg-surface-2 text-papel px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[17ch]"
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em; text-wrap:balance"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         Herramientas gratis, sin registro
       </h2>
@@ -261,10 +312,10 @@ const pasos = [
       </div>
     </section>
 
-    <section id="metodo" class="px-4 sm:px-6 py-28 md:py-44 scroll-mt-24">
+    <section id="metodo" class="px-6 md:px-medianil py-32 md:py-seccion scroll-mt-24">
       <h2
         class="font-extrabold uppercase m-0 mb-12 md:mb-20 max-w-[14ch]"
-        style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:-0.035em"
+        style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:0"
       >
         Cómo trabajamos
       </h2>
@@ -289,27 +340,27 @@ const pasos = [
     </section>
 
     <!-- BLOQUE 7 · CIERRE bajo, sin urgencia fabricada. -->
-    <section class="bg-papel text-tinta-galeria px-4 sm:px-6 py-28 md:py-44">
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 max-w-[14ch]"
-        style="font-size:clamp(2.25rem, 8vw, 9rem); line-height:0.88; letter-spacing:-0.035em"
+        style="font-size:clamp(2.25rem, 8vw, 9rem); line-height:0.88; letter-spacing:0"
       >
         Conversemos tu proyecto
       </h2>
-      <p class="mt-10 text-tinta-galeria/65 text-xl leading-relaxed max-w-prosa">
+      <p class="mt-10 text-noche/65 text-2xl leading-relaxed max-w-prosa">
         Cuéntanos qué necesitas y te decimos qué haríamos, en cuánto tiempo y cuánto cuesta.
         Si lo que necesitas no es lo que vendemos, también te lo decimos.
       </p>
       <div class="mt-12 flex items-center gap-4 flex-wrap">
         <a
           href={CONTACTO}
-          class="rounded-full bg-tinta-galeria hover:bg-black text-papel text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-tinta-galeria"
+          class="rounded-v3 bg-noche hover:bg-black text-papel text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-noche"
         >
           Escríbenos
         </a>
         <a
           href="#chequeo"
-          class="rounded-full border border-tinta-galeria/25 hover:border-tinta-galeria text-tinta-galeria text-sm font-bold px-8 py-4 transition-colors"
+          class="rounded-v3 border border-noche/25 hover:border-noche text-noche text-sm font-bold px-8 py-4 transition-colors"
         >
           Prefiero correr el chequeo
         </a>

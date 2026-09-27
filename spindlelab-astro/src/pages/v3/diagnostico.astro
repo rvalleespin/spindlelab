@@ -16,9 +16,10 @@
 // OJO CON EL CAMPO BRASA (#DA3400): papel encima da 4,31:1 y reprueba AA. Ahí el cuerpo
 // va en blanco puro (4,70:1).
 import Layout from '../../layouts/Layout.astro';
+import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
-import { CONTACTO } from '../../consts';
+
 import paginas from '../../data/paginas-v3.json';
 import '../../styles/chequeo-v3.css';
 
@@ -51,7 +52,7 @@ const jsonLd = {
 };
 ---
 
-<Layout title={s.title} description={s.description} bodyClass="bg-tinta-galeria font-texto">
+<Layout title={s.title} description={s.description} bodyClass="bg-noche font-texto">
   <Fragment slot="head">
     <meta name="robots" content="noindex, nofollow" />
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
@@ -60,7 +61,7 @@ const jsonLd = {
   <NavV3 />
 
   <main class="text-papel">
-    <section class="px-4 sm:px-6 pt-32 sm:pt-40 md:pt-48 pb-14 md:pb-16">
+    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-48 pb-14 md:pb-16">
       <nav aria-label="Migas" class="text-white/35 text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
         <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
         <span aria-hidden="true" class="mx-2">·</span>
@@ -68,7 +69,7 @@ const jsonLd = {
       </nav>
       <h1
         class="font-extrabold uppercase m-0 max-w-[12ch]"
-        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.88; letter-spacing:-0.035em"
+        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.88; letter-spacing:0"
       >
         {s.h1}
       </h1>
@@ -76,7 +77,7 @@ const jsonLd = {
     </section>
 
     <!-- EL CHEQUEO. Los id son contrato con el script: no tocar. -->
-    <section id="chequeo" class="px-4 sm:px-6 pb-24 md:pb-36 scroll-mt-24">
+    <section id="chequeo" class="px-6 md:px-medianil pb-24 md:pb-36 scroll-mt-24">
       <div class="border-t border-b border-white/15">
         <form class="chq-form flex flex-col sm:flex-row sm:items-stretch" id="chq-form" novalidate>
           <label for="chq-dominio" class="sr-only">Tu dominio</label>
@@ -95,7 +96,7 @@ const jsonLd = {
           <button
             type="submit"
             id="chq-btn"
-            class="flex-none self-stretch sm:self-auto bg-papel hover:bg-white text-tinta-galeria text-sm font-bold px-8 my-4 sm:my-5 rounded-full transition-colors py-3.5 sm:py-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+            class="flex-none self-stretch sm:self-auto bg-papel hover:bg-white text-noche text-sm font-bold px-8 my-4 sm:my-5 rounded-v3 transition-colors py-3.5 sm:py-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
           >
             Revisar mi sitio
           </button>
@@ -107,38 +108,38 @@ const jsonLd = {
     </section>
 
     <!-- PAPEL: los 21 chequeos publicados. -->
-    <section class="bg-papel text-tinta-galeria px-4 sm:px-6 py-24 md:py-36">
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[16ch]"
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em; text-wrap:balance"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         {chequeos.h2}
       </h2>
       <div class="grid gap-x-8 lg:gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
         {
           (chequeos.bloques ?? []).map((b: any) => (
-            <article class="border-t border-tinta-galeria/25 pt-5">
+            <article class="border-t border-noche/25 pt-5">
               <h3
                 class="font-extrabold uppercase m-0"
                 style="font-size:clamp(1.0625rem,1.5vw,1.375rem); line-height:1.1; letter-spacing:-0.03em"
               >
                 {b.t}
               </h3>
-              {b.d && <p class="mt-3 text-tinta-galeria/65 text-base leading-relaxed">{b.d}</p>}
+              {b.d && <p class="mt-3 text-noche/65 text-base leading-relaxed">{b.d}</p>}
             </article>
           ))
         }
       </div>
       {chequeos.parrafos?.[0] && (
-        <p class="mt-12 text-tinta-galeria/60 text-lg leading-relaxed max-w-prosa">{chequeos.parrafos[0]}</p>
+        <p class="mt-12 text-noche/60 text-lg leading-relaxed max-w-prosa">{chequeos.parrafos[0]}</p>
       )}
     </section>
 
     <!-- CAMPO BRASA. Texto en BLANCO PURO: papel encima reprueba AA sobre este color. -->
-    <section class="bg-campo-brasa text-white px-4 sm:px-6 py-24 md:py-36">
+    <section class="bg-campo-brasa text-white px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[16ch]"
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em; text-wrap:balance"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         {caminos.h2}
       </h2>
@@ -160,10 +161,10 @@ const jsonLd = {
     </section>
 
     <!-- TINTA: la ley y lo que solemos responder. -->
-    <section class="px-4 sm:px-6 py-24 md:py-36">
+    <section class="px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 max-w-[17ch]"
-        style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:-0.035em; text-wrap:balance"
+        style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0; text-wrap:balance"
       >
         {ley.h2}
       </h2>
@@ -175,7 +176,7 @@ const jsonLd = {
         <>
           <h2
             class="font-extrabold uppercase m-0 mt-24 md:mt-36 mb-12 md:mb-16"
-            style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em"
+            style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
           >
             {responde.h2}
           </h2>
@@ -196,19 +197,19 @@ const jsonLd = {
       )}
     </section>
 
-    <section class="bg-papel text-tinta-galeria px-4 sm:px-6 py-24 md:py-36">
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 max-w-[15ch]"
-        style="font-size:clamp(2rem, 6.6vw, 7.5rem); line-height:0.88; letter-spacing:-0.035em; text-wrap:balance"
+        style="font-size:clamp(2rem, 6.6vw, 7.5rem); line-height:0.88; letter-spacing:0; text-wrap:balance"
       >
         {cierre.h2}
       </h2>
       {cierre.parrafos?.[0] && (
-        <p class="mt-10 text-tinta-galeria/65 text-xl leading-relaxed max-w-prosa">{cierre.parrafos[0]}</p>
+        <p class="mt-10 text-noche/65 text-xl leading-relaxed max-w-prosa">{cierre.parrafos[0]}</p>
       )}
       <a
         href={CONTACTO}
-        class="inline-block mt-12 rounded-full bg-tinta-galeria hover:bg-black text-papel text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-tinta-galeria"
+        class="inline-block mt-12 rounded-v3 bg-noche hover:bg-black text-papel text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-noche"
       >
         Conversemos tu proyecto
       </a>

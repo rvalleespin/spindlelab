@@ -46,6 +46,34 @@ export default {
         // OJO con brasa: papel encima da 4,31:1 y reprueba AA para texto normal.
         // Sobre este campo el cuerpo va en BLANCO PURO (4,70:1), no en papel.
         'campo-brasa': '#DA3400',
+
+        // --- V3: el lienzo es NEGRO PURO ---
+        // Medido en la referencia: su body es #000000, no un negro cálido. El
+        // 'tinta-galeria' (#14110E) era una extensión MÍA que nunca aprobaste, así que
+        // acá no se reemplaza un token de marca: se reemplaza una suposición mía por el
+        // valor real de la referencia. Papel encima da 19,3:1 y el dorado 8,7:1, así que
+        // el punto dorado sigue leyendo como dorado y no como mostaza.
+        noche: '#000000',
+        // Tinta (#131A22, canónica del manual) baja a SUPERFICIE: tarjetas y paneles
+        // elevados sobre el negro. Es el rol que el manual §04 ya le da.
+
+        // --- Cremas por campo de color ---
+        // Esto es lo que hacía que los campos se vieran planos. La referencia NO pone
+        // blanco con opacidad sobre sus paneles: tiñe el texto hacia una familia distinta
+        // a la del panel (oliva→ámbar, azul→menta, naranja→rosa, ciruela→ámbar). Blanco
+        // al 45% lee gris y muerto; una crema teñida lee decidida.
+        // Contraste verificado con math real, todas aprueban AA de cuerpo (≥4,5:1):
+        'crema-navy': '#E4F1EC', // sobre navy    12,56:1
+        'crema-petroleo': '#FFF4E2', // sobre petróleo  5,03:1
+        'crema-ciruela': '#FFEFDD', // sobre ciruela  13,40:1
+        // Brasa NO lleva crema: la única opción que aprueba AA de cuerpo sobre #DA3400 es
+        // el blanco puro (4,70:1). La propia referencia falla acá — su naranja lleva
+        // #f5e0db y da 3,70:1, que reprueba. Ese par no se copia.
+
+        // Gris de metadatos sobre negro. Reemplaza el text-white/45 y /30: la opacidad
+        // sobre un fondo que cambia de color da un gris distinto en cada sección.
+        // Gris pluma (#5D6673) no sirve de cuerpo acá: sobre negro da 3,61:1 y reprueba.
+        humo: '#96948E', // sobre negro 6,92:1
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
@@ -70,6 +98,18 @@ export default {
       },
       maxWidth: {
         prosa: '62ch', // ancho de lectura controlado (cuerpo editorial)
+      },
+      borderRadius: {
+        // UN radio, 6px, para todo. Medido en la referencia: 6px usado 156 veces y
+        // CERO píldoras. La píldora (rounded-full) es la forma más genérica que existe
+        // en la web hoy; es lo primero que hace que una página lea a plantilla.
+        v3: '6px',
+      },
+      spacing: {
+        // El aire de sección de la referencia: 256px arriba y abajo en escritorio.
+        // El v3 venía en 176px, un 69% de eso.
+        seccion: '16rem', // 256px
+        medianil: '2.5rem', // 40px — el medianil plano de la referencia (2,8% de 1440)
       },
     },
   },

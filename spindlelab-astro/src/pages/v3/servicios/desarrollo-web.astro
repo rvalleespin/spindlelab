@@ -18,9 +18,10 @@
 // «Sí.», que es un resto de una pregunta de sí/no anterior. Acá va sin ese «Sí»; hay que
 // corregirlo también en la página publicada.
 import Layout from '../../../layouts/Layout.astro';
+import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
-import { CONTACTO } from '../../../consts';
+
 
 const incluye = [
   'Diseño 100% a medida, sin plantillas ni WordPress.',
@@ -132,7 +133,7 @@ const jsonLd = {
 <Layout
   title="Desarrollo web a medida, sin plantillas ni WordPress · SpindleLab"
   description="Sitios web 100% a medida, código propio, sin plantillas ni WordPress. Construcción asistida por IA con supervisión humana en cada fase."
-  bodyClass="bg-tinta-galeria font-texto"
+  bodyClass="bg-noche font-texto"
 >
   <Fragment slot="head">
     <meta name="robots" content="noindex, nofollow" />
@@ -142,7 +143,7 @@ const jsonLd = {
   <NavV3 />
 
   <main class="text-papel">
-    <section class="px-4 sm:px-6 pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-28">
+    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-28">
       <nav aria-label="Migas" class="text-white/35 text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
         <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
         <span aria-hidden="true" class="mx-2">·</span>
@@ -152,7 +153,7 @@ const jsonLd = {
       </nav>
       <h1
         class="font-extrabold uppercase m-0"
-        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.86; letter-spacing:-0.035em"
+        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.86; letter-spacing:0"
       >
         Desarrollo web
       </h1>
@@ -164,17 +165,17 @@ const jsonLd = {
     </section>
 
     <!-- QUÉ INCLUYE, en columnas. -->
-    <section class="bg-papel text-tinta-galeria px-4 sm:px-6 py-24 md:py-36">
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[16ch]"
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
       >
         Todo parte con esto
       </h2>
       <ul class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
         {
           incluye.map((i) => (
-            <li class="border-t border-tinta-galeria/25 pt-5 text-tinta-galeria/75 text-base leading-relaxed">
+            <li class="border-t border-noche/25 pt-5 text-noche/75 text-base leading-relaxed">
               {i}
             </li>
           ))
@@ -183,31 +184,31 @@ const jsonLd = {
     </section>
 
     <!-- PLANES, en columnas, con los precios exactos. -->
-    <section id="planes" class="bg-papel text-tinta-galeria px-4 sm:px-6 pb-24 md:pb-36 scroll-mt-24">
+    <section id="planes" class="bg-papel text-noche px-6 md:px-medianil pb-24 md:pb-36 scroll-mt-24">
       <h2
         class="font-extrabold uppercase m-0 mb-3"
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
       >
         Elige por dónde partir
       </h2>
-      <p class="text-tinta-galeria/50 text-sm mb-12 md:mb-16">
+      <p class="text-noche/50 text-sm mb-12 md:mb-16">
         Valores en pesos, + IVA. El valor final se cierra tras el diagnóstico gratuito.
       </p>
       <div class="grid gap-x-8 lg:gap-x-12 gap-y-14 md:grid-cols-2 lg:grid-cols-4">
         {
           planes.map((p) => (
-            <article class="flex flex-col border-t border-tinta-galeria/25 pt-6">
+            <article class="flex flex-col border-t border-noche/25 pt-6">
               <h3
                 class="font-extrabold uppercase m-0"
                 style="font-size:clamp(1.125rem,1.6vw,1.5rem); line-height:1.05; letter-spacing:-0.03em"
               >
                 {p.nombre}
               </h3>
-              <p class="mt-3 text-tinta-galeria/60 text-base leading-relaxed">{p.linea}</p>
+              <p class="mt-3 text-noche/60 text-base leading-relaxed">{p.linea}</p>
               <ul class="list-none p-0 mt-5 mb-0 space-y-2">
                 {p.puntos.map((x) => (
-                  <li class="flex gap-2.5 text-tinta-galeria/70 text-sm leading-relaxed">
-                    <span aria-hidden="true" class="text-tinta-galeria/30">—</span>
+                  <li class="flex gap-2.5 text-noche/70 text-sm leading-relaxed">
+                    <span aria-hidden="true" class="text-noche/30">—</span>
                     <span>{x}</span>
                   </li>
                 ))}
@@ -220,10 +221,10 @@ const jsonLd = {
     </section>
 
     <!-- FASES. -->
-    <section class="px-4 sm:px-6 py-24 md:py-36">
+    <section class="px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[15ch]"
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
       >
         Cinco fases, aprobación en cada una
       </h2>
@@ -248,10 +249,10 @@ const jsonLd = {
     </section>
 
     <!-- FAQ. Mismo contenido que alimenta el FAQPage del schema. -->
-    <section class="px-4 sm:px-6 pb-24 md:pb-36">
+    <section class="px-6 md:px-medianil pb-24 md:pb-36">
       <h2
         class="font-extrabold uppercase m-0 mb-12 md:mb-16"
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
       >
         Sobre el desarrollo
       </h2>
@@ -272,27 +273,27 @@ const jsonLd = {
       </dl>
     </section>
 
-    <section class="bg-papel text-tinta-galeria px-4 sm:px-6 py-24 md:py-36">
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 max-w-[16ch]"
-        style="font-size:clamp(2rem, 7vw, 8rem); line-height:0.88; letter-spacing:-0.035em"
+        style="font-size:clamp(2rem, 7vw, 8rem); line-height:0.88; letter-spacing:0"
       >
         ¿Qué necesita decir tu sitio?
       </h2>
-      <p class="mt-10 text-tinta-galeria/65 text-xl leading-relaxed max-w-prosa">
+      <p class="mt-10 text-noche/65 text-xl leading-relaxed max-w-prosa">
         Si ya tienes uno, empezamos con el chequeo gratuito. Si partes de cero, conversemos
         tu proyecto directamente.
       </p>
       <div class="mt-12 flex items-center gap-4 flex-wrap">
         <a
           href={CONTACTO}
-          class="rounded-full bg-tinta-galeria hover:bg-black text-papel text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-tinta-galeria"
+          class="rounded-v3 bg-noche hover:bg-black text-papel text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-noche"
         >
           Conversemos tu proyecto
         </a>
         <a
           href="/diagnostico/"
-          class="rounded-full border border-tinta-galeria/25 hover:border-tinta-galeria text-tinta-galeria text-sm font-bold px-8 py-4 transition-colors"
+          class="rounded-v3 border border-noche/25 hover:border-noche text-noche text-sm font-bold px-8 py-4 transition-colors"
         >
           Chequeo gratis
         </a>

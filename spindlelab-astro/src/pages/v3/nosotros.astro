@@ -17,9 +17,10 @@
 // que nunca se mezclan en la misma pieza. No lo reescribo solo: es la biografía de Ramón
 // y la decisión es suya.
 import Layout from '../../layouts/Layout.astro';
+import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
-import { CONTACTO } from '../../consts';
+
 
 const url = 'https://spindlelab.cl/nosotros/';
 
@@ -66,7 +67,7 @@ const jsonLd = {
 <Layout
   title="Ramón Vallejos, consultor de SEO técnico e IA · SpindleLab"
   description="Detrás de SpindleLab está Ramón Vallejos: SEO técnico y visibilidad en motores de IA, con evidencia antes que promesas. Chequeo gratis en 24 horas."
-  bodyClass="bg-tinta-galeria font-texto"
+  bodyClass="bg-noche font-texto"
 >
   <Fragment slot="head">
     <meta name="robots" content="noindex, nofollow" />
@@ -76,7 +77,7 @@ const jsonLd = {
   <NavV3 />
 
   <main class="text-papel">
-    <section class="px-4 sm:px-6 pt-32 sm:pt-40 md:pt-44 pb-16 md:pb-24">
+    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-16 md:pb-24">
       <nav aria-label="Migas" class="text-white/35 text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
         <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
         <span aria-hidden="true" class="mx-2">·</span>
@@ -84,7 +85,7 @@ const jsonLd = {
       </nav>
       <h1
         class="font-extrabold uppercase m-0 max-w-[14ch]"
-        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.9; letter-spacing:-0.035em"
+        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.9; letter-spacing:0"
       >
         No te prometo. Te muestro.
       </h1>
@@ -109,11 +110,11 @@ const jsonLd = {
     </section>
 
     <!-- LA BIOGRAFÍA, en papel. Texto verbatim del publicado. -->
-    <section class="bg-papel text-tinta-galeria px-4 sm:px-6 py-24 md:py-36">
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <div class="max-w-prosa space-y-6">
         {
           bio.map((p, i) => (
-            <p class={i === 0 ? 'text-xl md:text-2xl leading-relaxed m-0' : 'text-lg leading-relaxed text-tinta-galeria/70 m-0'}>
+            <p class={i === 0 ? 'text-xl md:text-2xl leading-relaxed m-0' : 'text-lg leading-relaxed text-noche/70 m-0'}>
               {p}
             </p>
           ))
@@ -122,10 +123,10 @@ const jsonLd = {
     </section>
 
     <!-- CÓMO TRABAJO, en campo navy. Los cuatro puntos van en singular. -->
-    <section class="bg-campo-navy text-papel px-4 sm:px-6 py-24 md:py-36">
+    <section class="bg-campo-navy text-papel px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 mb-12 md:mb-16"
-        style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:-0.035em"
+        style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0"
       >
         Cómo trabajo
       </h2>
@@ -146,10 +147,10 @@ const jsonLd = {
       </div>
     </section>
 
-    <section class="px-4 sm:px-6 py-24 md:py-36">
+    <section class="px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         class="font-extrabold uppercase m-0 max-w-[15ch]"
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em; text-wrap:balance"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         ¿Apareces cuando preguntan?
       </h2>
@@ -159,13 +160,13 @@ const jsonLd = {
       <div class="mt-12 flex items-center gap-4 flex-wrap">
         <a
           href="/v3/#chequeo"
-          class="rounded-full bg-papel hover:bg-white text-tinta-galeria text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+          class="rounded-v3 bg-papel hover:bg-white text-noche text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
         >
           Correr el chequeo
         </a>
         <a
           href={CONTACTO}
-          class="rounded-full border border-white/25 hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
+          class="rounded-v3 border border-white/25 hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
         >
           Escríbeme
         </a>

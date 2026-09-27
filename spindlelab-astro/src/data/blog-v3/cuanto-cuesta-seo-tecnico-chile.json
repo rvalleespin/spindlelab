@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "slug": "cuanto-cuesta-seo-tecnico-chile",
+    "title": "¿Cuánto cuesta el SEO técnico en Chile? · SpindleLab",
+    "description": "Rangos reales de precio para auditoría SEO técnica y visibilidad en IA en el mercado chileno 2026, y por qué esperar sale más caro que decidir ahora.",
+    "headline": "¿Cuánto cuesta el SEO técnico en el mercado chileno en 2026?",
+    "datePublished": "2026-07-14",
+    "dateModified": "2026-08-25",
+    "canonical": "https://spindlelab.cl/blog/cuanto-cuesta-seo-tecnico-chile/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://spindlelab.cl/#org",
+        "name": "SpindleLab",
+        "url": "https://spindlelab.cl/",
+        "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
+        "email": "hola@spindlelab.cl",
+        "description": "SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B y financieras en Chile.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Santiago",
+          "addressCountry": "CL"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Chile"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/spindlelab/",
+          "https://www.instagram.com/spindle.lab/"
+        ],
+        "founder": {
+          "@id": "https://spindlelab.cl/#autor-ramon"
+        }
+      },
+      {
+        "@type": "Article",
+        "@id": "https://spindlelab.cl/blog/cuanto-cuesta-seo-tecnico-chile/#article",
+        "headline": "¿Cuánto cuesta el SEO técnico en el mercado chileno en 2026?",
+        "description": "Rangos reales de precio para auditoría SEO técnica y visibilidad en IA en el mercado chileno 2026, y por qué esperar sale más caro que decidir ahora.",
+        "inLanguage": "es-CL",
+        "datePublished": "2026-07-14",
+        "dateModified": "2026-08-25",
+        "image": "https://spindlelab.cl/assets/img/og-marca.jpg?v=4",
+        "author": {
+          "@id": "https://spindlelab.cl/#autor-ramon"
+        },
+        "publisher": {
+          "@id": "https://spindlelab.cl/#org"
+        },
+        "mainEntityOfPage": "https://spindlelab.cl/blog/cuanto-cuesta-seo-tecnico-chile/"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://spindlelab.cl/#autor-ramon",
+        "name": "Ramón Vallejos",
+        "jobTitle": "Consultor de SEO técnico y visibilidad en IA (AEO/GEO)",
+        "image": "https://spindlelab.cl/assets/img/ramon-vallejos.jpg",
+        "worksFor": {
+          "@id": "https://spindlelab.cl/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://spindlelab.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "El Taller",
+            "item": "https://spindlelab.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Cuánto cuesta el SEO técnico",
+            "item": "https://spindlelab.cl/blog/cuanto-cuesta-seo-tecnico-chile/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta una auditoría SEO técnica en el mercado chileno?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Entre $200.000 y $2.500.000 CLP como proyecto único, según el tamaño del sitio y la profundidad del análisis. La mayoría de las PyME caen en el rango de $300.000 a $800.000."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Conviene más un proyecto único o un acompañamiento mensual?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La auditoría te dice qué está mal; el acompañamiento lo sostiene en el tiempo. Si nunca has hecho una auditoría, ese es el punto de partida lógico."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta optimizar para que ChatGPT y otros motores de IA me recomienden (AEO/GEO)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un diagnóstico puntual ronda los $350.000 CLP; como parte de un acompañamiento mensual integrado con SEO, puede sumar varios cientos de miles de pesos adicionales al mes, según la agencia."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -15,7 +15,11 @@
           "href": "/v3/servicios/auditoria-seo-tecnica/",
           "d": "Rastreo, indexación, Core Web Vitals y datos estructurados. Qué te frena y qué mueve la aguja."
         }
-      ]
+      ],
+      "palabra": "Visibilidad",
+      "campo": "navy",
+      "img": "/assets/img/hero-visibilidad-ia.jpg",
+      "alt": "Fachada de edificios corporativos, imagen del servicio de visibilidad en IA"
     },
     {
       "momento": "Tu sitio te frena, o no existe",
@@ -27,7 +31,11 @@
           "d": "Sitios a medida, sin plantillas ni WordPress, con panel para que edites tú."
         }
       ],
-      "nota": "Con el SEO técnico y el AEO puestos desde el primer commit, no parchados después."
+      "nota": "Con el SEO técnico y el AEO puestos desde el primer commit, no parchados después.",
+      "palabra": "Desarrollo",
+      "campo": "brasa",
+      "img": "/assets/img/hero-desarrollo-web.jpg",
+      "alt": "Pantalla de código durante el desarrollo de un sitio a medida"
     },
     {
       "momento": "Ya giras y quieres sostenerlo",
@@ -38,7 +46,11 @@
           "href": "/v3/servicios/acompanamiento-mensual/",
           "d": "Implementación continua, contenido para búsqueda e IA, e informes quincenales."
         }
-      ]
+      ],
+      "palabra": "Continuidad",
+      "campo": "petroleo",
+      "img": "/assets/img/hero-acompanamiento.jpg",
+      "alt": "Mesa de trabajo con un informe de acompañamiento mensual"
     }
   ],
   "tambien": [
@@ -65,5 +77,13 @@
     "Creación de contenido: redacción y guiones de piezas.",
     "Diseño gráfico: piezas visuales y arte final.",
     "Producción de video: rodaje y edición."
-  ]
+  ],
+  "tambienPanel": {
+    "palabra": "Alcance",
+    "campo": "ciruela",
+    "img": "/assets/img/hero-servicios.jpg",
+    "alt": "Equipo revisando piezas de campaña en pantalla",
+    "momento": "Ya tienes demanda y quieres más",
+    "nota": "El contenido creativo lo pones tú. Nosotros lo hacemos funcionar."
+  }
 }

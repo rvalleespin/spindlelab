@@ -1,0 +1,116 @@
+---
+// LOS 7 POSTS DEL BLOG en el lenguaje v3.
+//
+// EL CUERPO DEL ARTÍCULO VA VERBATIM. No se reescribió ni se pasó por una extracción a
+// texto plano: se conserva el HTML publicado tal cual (encabezados, enlaces internos,
+// listas, tablas, acordeones del FAQ y el índice del artículo). En contenido largo esa es
+// la diferencia entre traducir el diseño y perder enlaces internos sin darse cuenta.
+//
+// EL SCHEMA TAMPOCO SE REINVENTA: el grafo de cada post se lleva completo del publicado,
+// con su Article, su autor fijo #autor-ramon, su BreadcrumbList y su FAQPage donde existe.
+// Por eso acá NO se emite el grafo del Layout: se reemplaza por el del artículo, para no
+// duplicar nodos de organización y persona.
+//
+// EL <h1> VIVE DENTRO DEL ARTÍCULO. La página no agrega otro; si se agregara, quedarían
+// dos h1 por página.
+//
+// El cuerpo va sobre papel (ver styles/prosa-v3.css): oscuro para entrar, claro para leer.
+import Layout from '../../../layouts/Layout.astro';
+import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
+import NavV3 from '../../../components/v3/NavV3.astro';
+import FooterV3 from '../../../components/v3/FooterV3.astro';
+
+import '../../../styles/prosa-v3.css';
+
+const cuerpos = import.meta.glob('../../../data/blog-v3/*.html', { query: '?raw', import: 'default', eager: true });
+const datos = import.meta.glob('../../../data/blog-v3/*.json', { eager: true });
+
+function slugDe(ruta: string) {
+  return ruta.split('/').pop()!.replace(/\.(html|json)$/, '');
+}
+
+export function getStaticPaths() {
+  const d = import.meta.glob('../../../data/blog-v3/*.json', { eager: true });
+  return Object.keys(d)
+    .map((r) => r.split('/').pop()!.replace('.json', ''))
+    .filter((s) => s !== '_indice')
+    .map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const crudo = Object.entries(cuerpos).find(([r]) => slugDe(r) === slug)?.[1] as string;
+
+// LOS ENLACES INTERNOS APUNTAN AL SITIO VIVO. El cuerpo se conserva verbatim, y eso
+// incluye sus href: /blog/, /diagnostico/, /servicios/... Dentro de la maqueta esos
+// enlaces te sacan del v3 y te llevan al sitio publicado, que es justo lo que no
+// queremos al recorrerla. Acá se reescriben SOLO los prefijos que existen en v3; lo
+// que no está en la lista se deja como estaba, para no inventar destinos.
+const RUTAS = ['blog', 'servicios', 'diagnostico', 'contacto', 'metodo', 'nosotros'];
+const cuerpo = crudo
+  .replace(new RegExp(`href="/(${RUTAS.join('|')})/`, 'g'), 'href="/v3/$1/')
+  .replace(/href="\/"/g, 'href="/v3/"');
+const info = (Object.entries(datos).find(([r]) => slugDe(r) === slug)?.[1] as any).default ?? Object.entries(datos).find(([r]) => slugDe(r) === slug)?.[1];
+const meta = info.meta;
+
+const fecha = meta.datePublished
+  ? new Date(meta.datePublished).toLocaleDateString('es-CL', { day: 'numeric', month: 'long', year: 'numeric' })
+  : '';
+---
+
+<Layout title={meta.title} description={meta.description} bodyClass="bg-noche font-texto">
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(info.jsonLd)} />
+  </Fragment>
+
+  <NavV3 />
+
+  <main>
+    <!-- Cabecera en tinta: migas y fecha. El titular es el h1 del artículo, más abajo. -->
+    <header class="text-papel px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-12 md:pb-16">
+      <nav aria-label="Migas" class="text-white/35 text-xs font-bold uppercase mb-6" style="letter-spacing:0.16em">
+        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
+        <span aria-hidden="true" class="mx-2">·</span>
+        <a href="/v3/blog/" class="hover:text-papel transition-colors">Blog</a>
+      </nav>
+      {fecha && (
+        <p class="text-white/40 text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">
+          <time datetime={meta.datePublished}>{fecha}</time>
+        </p>
+      )}
+    </header>
+
+    <!-- El artículo, sobre papel. HTML verbatim del publicado. -->
+    <div class="bg-papel">
+      <article class="prosa-v3 px-6 md:px-medianil py-24 md:py-40" set:html={cuerpo} />
+    </div>
+
+    <section class="text-papel px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        class="font-extrabold uppercase m-0 max-w-[15ch]"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
+      >
+        ¿Te menciona la IA?
+      </h2>
+      <p class="mt-8 text-white/60 text-xl leading-relaxed max-w-prosa">
+        Pega tu dirección web y te lo decimos en 30 segundos. Sin registro.
+      </p>
+      <div class="mt-12 flex items-center gap-4 flex-wrap">
+        <a
+          href="/v3/#chequeo"
+          class="rounded-v3 bg-papel hover:bg-white text-noche text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+        >
+          Correr el chequeo
+        </a>
+        <a
+          href={CONTACTO}
+          class="rounded-v3 border border-white/25 hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
+        >
+          Conversemos tu proyecto
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <FooterV3 />
+</Layout>
