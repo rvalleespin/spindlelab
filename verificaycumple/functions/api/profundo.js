@@ -904,9 +904,22 @@ export function armarInforme(medicion, dominio) {
     // El invariante que lo cuida está en el §32 de la prueba: un ítem en verde que hable de
     // rastreadores tiene que decir de cuáles habla. Hasta hoy ese bucle recorría un solo
     // informe, el de uhc.cl, donde este ítem no sale en verde, así que pasaba sin tocarlo.
+    // EL CUARTO FALSO VERDE (27-sep). La decisión del §25, dejar este ítem en verde aunque la
+    // carga quedara a medias, es correcta PARA LA PRIMERA MITAD de la frase: que aparece un
+    // aviso se ve con los ojos y no depende de que el evento de carga llegara.
+    //
+    // Lo que no se sostiene es la segunda mitad. "Mientras no lo tocamos no corrió ninguno"
+    // es una afirmación sobre LA CARGA, y la carga es justo lo que se acaba de declarar
+    // desconocido. Medido: con `parcial` este era el ÚNICO verde de la pantalla, o sea lo
+    // único positivo que la persona se llevaba, y contradecía a los otros tres ítems que
+    // tres líneas más arriba dicen "no sabemos qué más iba a cargar".
+    //
+    // Se arregla la frase y no el estado: el aviso está y eso es cierto.
     add('aviso', 'aviso', 'Si aparece un aviso al entrar', 'ok', 3,
-      `Aparece un aviso al entrar${aviso.botones.length ? `, con botones que dicen ${listaLegible(aviso.botones.map((b) => `"${b}"`))}` : ''}, ` +
-      'y mientras no lo tocamos no corrió ninguno de los rastreadores que buscamos. ' +
+      `Aparece un aviso al entrar${aviso.botones.length ? `, con botones que dicen ${listaLegible(aviso.botones.map((b) => `"${b}"`))}` : ''}. ` +
+      (parcial
+        ? 'Tu sitio no terminó de cargar, así que no alcanzamos a ver si retiene los rastreadores hasta que alguien responde: eso queda sin confirmar. '
+        : 'Y mientras no lo tocamos no corrió ninguno de los rastreadores que buscamos. ') +
       'No revisamos qué pasa cuando alguien acepta o rechaza.');
   } else {
     add('aviso', 'aviso', 'Si aparece un aviso al entrar', 'pendiente', 3,
