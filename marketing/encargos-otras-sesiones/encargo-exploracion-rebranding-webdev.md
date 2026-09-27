@@ -1,6 +1,9 @@
 # Encargo → sesión de exploración: el rebranding «Desarrollo Web + AEO incorporado»
 
 **Creado por la troncal · 27-sep-2026 · Pedido explícito de Ramón.**
+**Nota de encuadre (Ramón, 27-sep):** lo de Gemini es *una observación externa*, no un plan a
+ejecutar al pie de la letra. Se toma la idea de fondo (entrar por Desarrollo Web) y se descarta
+lo demás, empezando por su propuesta de precios.
 **Rama de trabajo: `claude/rebranding-webdev-exploracion`.**
 
 ## Qué es esto, en una frase
@@ -24,18 +27,37 @@ con lo que hay hoy **antes de decidir si se adopta**. Es una maqueta para decidi
 3. `marketing/brand/manual-de-marca.md` — la voz y el sistema visual **no cambian** en este
    ejercicio. Cambia el mensaje comercial, no la identidad.
 
-## Las tres condiciones mínimas (vienen de datos del repo, no son opinión)
-Si la maqueta las incumple, no sirve para decidir:
+## Las condiciones mínimas (decisión de Ramón, 27-sep · no se re-discuten)
 
-1. **El retainer NO puede costar $590.000/mes.** El precedente propio de mantención es
-   **$50.000/mes** (`ventas/proyectos-en-curso.md`). Propón un precio defendible y **justifícalo**;
-   si no encuentras uno que cierre, dilo en vez de inventarlo.
-2. **La «vigilancia de menciones en IA» no entra en la promesa.** `marketing/capacidad-servicios.md`
-   la marca ❌: depende de un paso manual que **no escala más allá de 1-2 clientes**. Vender eso
-   sería prometer lo que no se cumple, y rompe el lema de la casa.
-3. **Tiene que quedar una entrada para el cliente que YA tiene sitio y no lo va a rehacer.** Es la
-   mayoría del nicho legal donde hoy hay tracción. Si el mensaje nuevo lo deja fuera, la maqueta
-   pierde el mercado que ya responde.
+### 1. ⛔ LOS PRECIOS NO SE TOCAN
+**Decisión explícita de Ramón: la lista de precios vigente se mantiene tal cual.** Gemini propuso
+reestructurarla; **eso queda descartado**. Este ejercicio es de **mensaje y estructura, no de
+pricing.** La lista vigente, verificada contra el sitio en producción el 27-sep-2026 (todos
+**+ IVA**):
+
+| Servicio | Precio vigente |
+|---|---|
+| Auditoría SEO Técnica | $490.000 · $690.000 (con Visibilidad IA) |
+| Visibilidad en IA (AEO/GEO) | $400.000 |
+| Acompañamiento Mensual | $590.000/mes · $790.000/mes (Pro) |
+| Gestión de Redes Sociales | $390.000/mes · $590.000/mes (con pauta) |
+| Paid Media (Google) | $350.000/mes · $550.000/mes (Pro) |
+| Desarrollo Web | $390.000 · $690.000 · $1.190.000 |
+
+Si al reordenar la oferta un precio parece quedar fuera de lugar, **se anota como observación
+para Ramón — no se cambia.**
+
+### 2. La «vigilancia de menciones en IA» no entra en la promesa
+`marketing/capacidad-servicios.md` la marca ❌: depende de un paso manual que **no escala más
+allá de 1-2 clientes**. Da igual cómo se llame el paquete: si la maqueta promete monitoreo
+continuo de menciones en IA para varios clientes, promete lo que hoy no se cumple, y eso rompe
+«No te prometo. Te muestro».
+
+### 3. Tiene que quedar una entrada para el cliente que YA tiene sitio
+«Sitios web preparados para la IA» solo le habla a quien va a construir o rehacer. El prospecto
+más caliente de los últimos dos meses (estudio legal, 257 artículos, WordPress que funciona) nunca
+iba a rehacer su sitio, pero sí podía pagar por abrir la puerta que lo deja fuera de ChatGPT. **Si
+el mensaje nuevo lo deja fuera, la maqueta pierde el mercado que ya responde.**
 
 ## ⚠️ La estructura real del sitio (Gemini apuntó a rutas que no existen)
 El texto original manda editar `/src/pages/servicios/...`. **Ese directorio no existe.** La
@@ -56,7 +78,9 @@ imágenes hay que subir el `?v=N` en todas las referencias.
    regla de la casa es que nada se da por bueno sin verlo).
 2. **Una comparación lado a lado**: mensaje actual vs. propuesto, en los puntos donde cambia
    (hero, problema, servicios, CTA).
-3. **La oferta reescrita** con precios defendibles y el porqué de cada uno.
+3. **La oferta reordenada** bajo la jerarquía nueva (Desarrollo Web al frente, AEO incorporado
+   como diferenciador) **con los precios vigentes intactos**. Lo que cambia es el orden, el
+   encuadre y el argumento, no el número.
 4. **Un documento corto de recomendación**: qué mejora de verdad, qué se pierde, y tu veredicto
    honesto de si conviene adoptarlo. **Si concluyes que no conviene, dilo.** Nadie pidió que
    salga aprobado: se pidió material para decidir.
