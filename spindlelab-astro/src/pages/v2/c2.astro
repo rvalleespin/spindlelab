@@ -208,30 +208,30 @@ const chequeos = [
       </h2>
       <p class="text-tinta-galeria/50 text-sm mb-10 md:mb-14">Valores en pesos, + IVA.</p>
 
-      <!-- Lista con reglas de pelo, no una grilla de tarjetas: la grilla de cajas idénticas
-           lee genérico, y acá el contenido es una lista de verdad. -->
-      <ul class="list-none p-0 m-0 border-t border-tinta-galeria/15">
+      <!-- COLUMNAS. Cada servicio es una columna con una regla de pelo arriba, no una
+           tarjeta con borde alrededor: la grilla de cajas idénticas lee genérico. La regla
+           va solo arriba de cada columna, así el separador es correcto a 3, 2 o 1 columna
+           sin depender de nth-child, que se rompe al cambiar de breakpoint.
+           El precio va empujado al fondo (mt-auto) para que quede alineado entre columnas
+           aunque las descripciones midan distinto. -->
+      <ul class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
         {
           servicios.map((s) => (
-            <li class="border-b border-tinta-galeria/15">
+            <li class="flex">
               <a
                 href={s.href}
-                class="group block py-7 md:py-9 focus-visible:outline focus-visible:outline-2 focus-visible:outline-tinta-galeria"
+                class="group flex flex-col w-full border-t border-tinta-galeria/25 pt-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-tinta-galeria"
               >
-                <div class="flex flex-col lg:flex-row lg:items-baseline lg:justify-between gap-3 lg:gap-10">
-                  <span
-                    class="font-extrabold uppercase group-hover:opacity-55 transition-opacity flex-none"
-                    style="font-size:clamp(1.5rem,3.2vw,3rem); line-height:1; letter-spacing:-0.03em"
-                  >
-                    {s.nombre}
-                  </span>
-                  <span class="text-tinta-galeria/60 text-base leading-relaxed lg:flex-1 lg:max-w-[46ch]">
-                    {s.linea}
-                  </span>
-                  <span class="font-bold text-base lg:text-right flex-none whitespace-nowrap lg:whitespace-normal">
-                    {s.precio}
-                  </span>
-                </div>
+                <span
+                  class="font-extrabold uppercase group-hover:opacity-55 transition-opacity"
+                  style="font-size:clamp(1.25rem,1.9vw,1.75rem); line-height:1.02; letter-spacing:-0.03em"
+                >
+                  {s.nombre}
+                </span>
+                <span class="mt-4 text-tinta-galeria/60 text-base leading-relaxed">
+                  {s.linea}
+                </span>
+                <span class="mt-auto pt-8 font-bold text-base">{s.precio}</span>
               </a>
             </li>
           ))
