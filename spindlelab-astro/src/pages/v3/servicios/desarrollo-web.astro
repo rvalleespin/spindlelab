@@ -1,5 +1,5 @@
 ---
-// PLANTILLA DE PÁGINA INTERNA — Desarrollo Web, en el lenguaje V2.
+// PLANTILLA DE PÁGINA INTERNA — Desarrollo Web, en el lenguaje V3.
 //
 // Es la primera interna y sirve de molde para las otras 18. Se eligió esta porque es el
 // pilar del negocio y la que recibe al prospecto que viene a comprar un sitio.
@@ -7,7 +7,7 @@
 // LO QUE HAY QUE SABER ANTES DE REPLICAR:
 // Las internas de producción NO son Astro: son HTML estático en public/ con su propio
 // assets/css/style.css escrito a mano. Esta página las reconstruye sobre el Layout + Tailwind
-// del sistema V2. El contenido es el REAL de la página publicada, no inventado.
+// del sistema V3. El contenido es el REAL de la página publicada, no inventado.
 //
 // LA CAPA SEO SE CONSERVA. El grafo de producción trae 5 nodos (ProfessionalService, Person,
 // Service, BreadcrumbList, FAQPage). Acá se inyectan solo los 3 específicos de la página:
@@ -18,8 +18,8 @@
 // «Sí.», que es un resto de una pregunta de sí/no anterior. Acá va sin ese «Sí»; hay que
 // corregirlo también en la página publicada.
 import Layout from '../../../layouts/Layout.astro';
-import NavV2 from '../../../components/v2/NavV2.astro';
-import FooterV2 from '../../../components/v2/FooterV2.astro';
+import NavV3 from '../../../components/v3/NavV3.astro';
+import FooterV3 from '../../../components/v3/FooterV3.astro';
 import { CONTACTO } from '../../../consts';
 
 const incluye = [
@@ -139,12 +139,12 @@ const jsonLd = {
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   </Fragment>
 
-  <NavV2 />
+  <NavV3 />
 
   <main class="text-papel">
     <section class="px-4 sm:px-6 pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-28">
       <nav aria-label="Migas" class="text-white/35 text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
-        <a href="/v2/c2/" class="hover:text-papel transition-colors">Inicio</a>
+        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
         <span aria-hidden="true" class="mx-2">·</span>
         <a href="/servicios/" class="hover:text-papel transition-colors">Soluciones</a>
         <span aria-hidden="true" class="mx-2">·</span>
@@ -300,5 +300,5 @@ const jsonLd = {
     </section>
   </main>
 
-  <FooterV2 />
+  <FooterV3 />
 </Layout>

@@ -27,10 +27,10 @@
 // EL CHEQUEO ES LA HERRAMIENTA REAL, no una imitación: mismos id que exige el script
 // (chq-form, chq-dominio, chq-btn, chq-out, chq-error), mismo /api/chequeo.
 import Layout from '../../layouts/Layout.astro';
-import NavV2 from '../../components/v2/NavV2.astro';
-import FooterV2 from '../../components/v2/FooterV2.astro';
+import NavV3 from '../../components/v3/NavV3.astro';
+import FooterV3 from '../../components/v3/FooterV3.astro';
 import { CONTACTO } from '../../consts';
-import '../../styles/chequeo-v2.css';
+import '../../styles/chequeo-v3.css';
 
 const tira = [
   { src: '/mockup-interno/obra-1.png', alt: 'Página de retratos del sitio de Bernardo Combeau' },
@@ -83,7 +83,7 @@ const pasos = [
 >
   <meta slot="head" name="robots" content="noindex, nofollow" />
 
-  <NavV2 />
+  <NavV3 />
 
   <main class="text-papel">
     <!-- BLOQUE 1 · EL HERO ES LA PRUEBA. Una pregunta que el visitante puede responder
@@ -334,7 +334,7 @@ const pasos = [
     </section>
   </main>
 
-  <FooterV2 />
+  <FooterV3 />
 
-  <script src="/assets/js/v2-chequeo.js" is:inline defer></script>
+  <script src="/assets/js/v3-chequeo.js" is:inline defer></script>
 </Layout>

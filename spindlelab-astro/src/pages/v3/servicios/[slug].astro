@@ -1,5 +1,5 @@
 ---
-// LAS CINCO PÁGINAS DE SERVICIO restantes, en el lenguaje V2.
+// LAS CINCO PÁGINAS DE SERVICIO restantes, en el lenguaje V3.
 //
 // Es UNA plantilla con datos, no cinco archivos: las cinco páginas publicadas resultaron
 // tener exactamente la misma forma (lista de lo que incluye → planes con precio → un bloque
@@ -7,7 +7,7 @@
 // cinco veces.
 //
 // EL CONTENIDO NO SE RETIPEÓ. Está extraído de las páginas publicadas a
-// src/data/servicios-v2.json, que es como se evita que un precio se transcriba mal. Los
+// src/data/servicios-v3.json, que es como se evita que un precio se transcriba mal. Los
 // cinco precios se verificaron contra la lista vigente del encargo y calzan.
 //
 // EL SCHEMA TAMPOCO SE REINVENTÓ: el catálogo de ofertas y las migas salen del grafo
@@ -18,10 +18,10 @@
 // en auditoría, límites de lo que se promete en visibilidad en IA) pero comparte forma, así
 // que se renderiza igual y el h2 de cada una lo explica.
 import Layout from '../../../layouts/Layout.astro';
-import NavV2 from '../../../components/v2/NavV2.astro';
-import FooterV2 from '../../../components/v2/FooterV2.astro';
+import NavV3 from '../../../components/v3/NavV3.astro';
+import FooterV3 from '../../../components/v3/FooterV3.astro';
 import { CONTACTO } from '../../../consts';
-import servicios from '../../../data/servicios-v2.json';
+import servicios from '../../../data/servicios-v3.json';
 
 export function getStaticPaths() {
   return Object.keys(servicios).map((slug) => ({ params: { slug } }));
@@ -68,12 +68,12 @@ const jsonLd = {
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   </Fragment>
 
-  <NavV2 />
+  <NavV3 />
 
   <main class="text-papel">
     <section class="px-4 sm:px-6 pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-28">
       <nav aria-label="Migas" class="text-white/35 text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
-        <a href="/v2/c2/" class="hover:text-papel transition-colors">Inicio</a>
+        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
         <span aria-hidden="true" class="mx-2">·</span>
         <a href="/servicios/" class="hover:text-papel transition-colors">Soluciones</a>
         <span aria-hidden="true" class="mx-2">·</span>
@@ -226,5 +226,5 @@ const jsonLd = {
     </section>
   </main>
 
-  <FooterV2 />
+  <FooterV3 />
 </Layout>

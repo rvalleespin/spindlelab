@@ -1,10 +1,10 @@
 /* Estilos del chequeo, traidos VERBATIM desde /diagnostico/.
    Van tal cual para no romper el render de resultados: el script inyecta estas clases
    por innerHTML y cualquier cambio se ve recien cuando alguien corre un chequeo real.
-   Su adaptacion al lenguaje V2 es un paso aparte y deliberado. */
+   Su adaptacion al lenguaje V3 es un paso aparte y deliberado. */
 
 /* NOTA: se quitaron las reglas del FORMULARIO (.chq-form, #chq-dominio,
-   #chq-btn). Ese markup ahora es propio y en lenguaje V2; las reglas viejas le
+   #chq-btn). Ese markup ahora es propio y en lenguaje V3; las reglas viejas le
    ponian un pill azul del diseno anterior encima. Lo que queda es lo que el
    script inyecta por innerHTML, que SI debe conservarse tal cual. */
 
