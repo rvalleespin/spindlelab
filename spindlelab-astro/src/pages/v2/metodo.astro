@@ -1,0 +1,150 @@
+---
+// MÉTODO en el lenguaje V2. Contenido real extraído de /metodo/ a paginas-v2.json.
+// Ritmo de color propio: tinta → navy → papel → petróleo → tinta.
+import Layout from '../../layouts/Layout.astro';
+import NavV2 from '../../components/v2/NavV2.astro';
+import FooterV2 from '../../components/v2/FooterV2.astro';
+import { CONTACTO } from '../../consts';
+import paginas from '../../data/paginas-v2.json';
+
+const s = (paginas as Record<string, any>).metodo;
+const [recorrido, reglas, poco, cierre] = s.secciones;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${s.canonical}#breadcrumb`,
+      itemListElement: s.breadcrumb ?? [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
+        { '@type': 'ListItem', position: 2, name: 'Método' },
+      ],
+    },
+  ],
+};
+---
+
+<Layout title={s.title} description={s.description} bodyClass="bg-tinta-galeria font-texto">
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <NavV2 />
+
+  <main class="text-papel">
+    <section class="px-4 sm:px-6 pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-28">
+      <nav aria-label="Migas" class="text-white/35 text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
+        <a href="/v2/c2/" class="hover:text-papel transition-colors">Inicio</a>
+        <span aria-hidden="true" class="mx-2">·</span>
+        <span class="text-white/60">Método</span>
+      </nav>
+      <h1
+        class="font-extrabold uppercase m-0 max-w-[13ch]"
+        style="font-size:clamp(2rem, 7.4vw, 8.5rem); line-height:0.88; letter-spacing:-0.035em"
+      >
+        {s.h1}
+      </h1>
+      {s.lead && <p class="mt-10 text-white/60 text-xl md:text-2xl leading-relaxed max-w-prosa">{s.lead}</p>}
+    </section>
+
+    <!-- CAMPO NAVY: el recorrido. -->
+    <section class="bg-campo-navy text-papel px-4 sm:px-6 py-24 md:py-36">
+      <h2
+        class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[16ch]"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em; text-wrap:balance"
+      >
+        {recorrido.h2}
+      </h2>
+      <ol class="list-none p-0 m-0 border-t border-white/15">
+        {
+          (recorrido.bloques ?? []).map((b: any, i: number) => (
+            <li class="border-b border-white/15 py-7 md:py-9 flex flex-col md:flex-row gap-3 md:gap-12">
+              <span class="text-white/40 font-bold text-sm flex-none md:w-16" style="letter-spacing:0.16em">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span
+                class="font-extrabold uppercase flex-none md:w-[10em]"
+                style="font-size:clamp(1.25rem,2.2vw,1.875rem); line-height:1.05; letter-spacing:-0.03em"
+              >
+                {b.t}
+              </span>
+              {b.d && <span class="text-white/65 text-lg leading-relaxed max-w-prosa">{b.d}</span>}
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <!-- PAPEL: las reglas. -->
+    <section class="bg-papel text-tinta-galeria px-4 sm:px-6 py-24 md:py-36">
+      <h2
+        class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[16ch]"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em; text-wrap:balance"
+      >
+        {reglas.h2}
+      </h2>
+      <div class="grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-3">
+        {
+          (reglas.bloques ?? []).map((b: any) => (
+            <article class="border-t border-tinta-galeria/25 pt-6">
+              <h3
+                class="font-extrabold uppercase m-0"
+                style="font-size:clamp(1.125rem,1.8vw,1.625rem); line-height:1.05; letter-spacing:-0.03em"
+              >
+                {b.t}
+              </h3>
+              {b.d && <p class="mt-4 text-tinta-galeria/65 text-base leading-relaxed">{b.d}</p>}
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- CAMPO PETRÓLEO: poco, pero importante. -->
+    <section class="bg-campo-petroleo text-papel px-4 sm:px-6 py-24 md:py-36">
+      <h2
+        class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[16ch]"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em; text-wrap:balance"
+      >
+        {poco.h2}
+      </h2>
+      <ul class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-7 md:grid-cols-2 lg:grid-cols-3">
+        {
+          (poco.lista ?? []).map((i: string) => (
+            <li class="border-t border-white/25 pt-5 text-white/85 text-base leading-relaxed">{i}</li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="px-4 sm:px-6 py-24 md:py-36">
+      <h2
+        class="font-extrabold uppercase m-0 max-w-[15ch]"
+        style="font-size:clamp(2rem, 6.6vw, 7.5rem); line-height:0.88; letter-spacing:-0.035em; text-wrap:balance"
+      >
+        {cierre.h2}
+      </h2>
+      {cierre.parrafos?.[0] && (
+        <p class="mt-10 text-white/60 text-xl leading-relaxed max-w-prosa">{cierre.parrafos[0]}</p>
+      )}
+      <div class="mt-12 flex items-center gap-4 flex-wrap">
+        <a
+          href="/diagnostico/"
+          class="rounded-full bg-papel hover:bg-white text-tinta-galeria text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+        >
+          Empezar por el chequeo gratis
+        </a>
+        <a
+          href={CONTACTO}
+          class="rounded-full border border-white/25 hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
+        >
+          Conversemos tu proyecto
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <FooterV2 />
+</Layout>
