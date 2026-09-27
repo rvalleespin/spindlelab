@@ -17,6 +17,8 @@
 // ⚠️ ROMPE EL MANUAL §05 (titulares en sentence case, nunca ALL CAPS). Aprobado por Ramón
 // para esta dirección. Revertirlo es quitar `uppercase` del componente de titular.
 import Layout from '../../layouts/Layout.astro';
+import NavV2 from '../../components/v2/NavV2.astro';
+import FooterV2 from '../../components/v2/FooterV2.astro';
 import { CONTACTO } from '../../consts';
 
 const tira = [
@@ -97,56 +99,7 @@ const chequeos = [
 >
   <meta slot="head" name="robots" content="noindex, nofollow" />
 
-  <header class="fixed top-0 left-0 z-50 p-4 sm:p-5">
-    <div class="flex items-stretch rounded-xl overflow-hidden bg-black/60 backdrop-blur border border-white/10">
-      <a
-        href="/"
-        class="font-wordmark text-lg sm:text-xl text-papel tracking-tight pl-5 pr-4 py-3 flex items-center"
-      >
-        SpindleLab<span class="text-gold">.</span>
-      </a>
-      <button
-        type="button"
-        id="menu-btn"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="menu-overlay"
-        class="px-4 border-l border-white/10 text-papel hover:bg-white/10 transition-colors flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
-      >
-        <span aria-hidden="true" class="block w-5 space-y-[5px]">
-          <span class="block h-[1.5px] bg-papel"></span>
-          <span class="block h-[1.5px] bg-papel"></span>
-        </span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Menú real. Antes el botón no hacía nada, y un botón muerto en la portada de quien
-       vende sitios es de las cosas que más caro salen. -->
-  <div
-    id="menu-overlay"
-    hidden
-    class="fixed inset-0 z-40 bg-tinta-galeria/95 backdrop-blur px-5 sm:px-8 pt-28 sm:pt-32 pb-10 overflow-y-auto"
-  >
-    <nav aria-label="Principal">
-      <ul class="list-none p-0 m-0">
-        {
-          menu.map((m) => (
-            <li class="border-b border-white/10">
-              <a
-                href={m.href}
-                data-menu-link
-                class="block py-5 sm:py-6 font-extrabold uppercase text-papel hover:text-white/60 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
-                style="font-size:clamp(1.75rem,6vw,4rem); line-height:1; letter-spacing:-0.03em"
-              >
-                {m.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-  </div>
+  <NavV2 />
 
   <main class="text-papel">
     <section class="px-4 sm:px-6 pt-32 sm:pt-40 md:pt-48 pb-7 md:pb-9">
@@ -343,68 +296,6 @@ const chequeos = [
     </section>
   </main>
 
-  <footer class="px-4 sm:px-6 py-16 md:py-20 text-white/45 text-sm">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
-      <div>
-        <span class="font-wordmark text-2xl text-papel tracking-tight block">
-          SpindleLab<span class="text-gold">.</span>
-        </span>
-        <p class="mt-4 max-w-[34ch] leading-relaxed">
-          Estudio de diseño y SEO técnico en Santiago. Construimos el sitio y dejamos
-          resuelto lo que decide si aparece.
-        </p>
-      </div>
-      <ul class="list-none p-0 m-0 flex flex-wrap gap-x-7 gap-y-3">
-        {
-          menu.map((m) => (
-            <li>
-              <a href={m.href} class="hover:text-papel transition-colors">
-                {m.label}
-              </a>
-            </li>
-          ))
-        }
-        <li><a href="/privacidad/" class="hover:text-papel transition-colors">Privacidad</a></li>
-      </ul>
-    </div>
-  </footer>
+  <FooterV2 />
 
-  <script>
-    const btn = document.getElementById('menu-btn');
-    const overlay = document.getElementById('menu-overlay');
-
-    if (btn && overlay) {
-      const abrir = () => {
-        overlay.hidden = false;
-        btn.setAttribute('aria-expanded', 'true');
-        btn.setAttribute('aria-label', 'Cerrar menú');
-        document.body.style.overflow = 'hidden';
-        const primero = overlay.querySelector<HTMLAnchorElement>('[data-menu-link]');
-        primero?.focus();
-      };
-
-      const cerrar = ({ devolverFoco = true } = {}) => {
-        overlay.hidden = true;
-        btn.setAttribute('aria-expanded', 'false');
-        btn.setAttribute('aria-label', 'Abrir menú');
-        document.body.style.overflow = '';
-        if (devolverFoco) btn.focus();
-      };
-
-      btn.addEventListener('click', () => {
-        if (overlay.hidden) abrir();
-        else cerrar();
-      });
-
-      // Al elegir un ancla el menú tiene que irse solo, o tapa justo lo que se acaba de
-      // pedir ver. Sin devolver el foco al botón: el foco sigue al destino.
-      overlay.querySelectorAll('[data-menu-link]').forEach((a) => {
-        a.addEventListener('click', () => cerrar({ devolverFoco: false }));
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !overlay.hidden) cerrar();
-      });
-    }
-  </script>
 </Layout>
