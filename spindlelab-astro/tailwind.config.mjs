@@ -30,6 +30,14 @@ export default {
         // Cambia porque el dorado sobre un negro frío tira a mostaza, y sobre
         // este lee como dorado. Papel encima da 17,3:1 y el dorado 7,8:1.
         'tinta-galeria': '#14110E',
+
+        // Campos de color por sección. NO son colores nuevos: el manual §04 ya los tiene
+        // como «soporte web (heredados, bajan de rango)» — navy para fondos profundos de
+        // secciones y petróleo como color funcional. Acá vuelven a subir de rango para que
+        // el scroll pase por mundos de color en vez de alternar dos neutros.
+        // Contraste verificado con papel encima: navy 13,4:1 · petróleo 5,0:1.
+        'campo-navy': '#0E2A47',
+        'campo-petroleo': '#0F766E',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
