@@ -89,14 +89,19 @@ const pasos = [
     <!-- BLOQUE 1 · EL HERO ES LA PRUEBA. Una pregunta que el visitante puede responder
          ahí mismo, y el instrumento debajo. -->
     <section id="chequeo" class="px-4 sm:px-6 pt-32 sm:pt-40 md:pt-44 pb-10 md:pb-14 scroll-mt-24">
+      <!-- El titular se acortó de 79 a 19 caracteres. A 6,5rem en mayúsculas caben ~20 por
+           línea, así que el anterior ocupaba cuatro y aplastaba el instrumento, que es lo
+           que tiene que ver el visitante. La pregunta completa baja a la línea de apoyo,
+           donde el texto es chico y no cuesta líneas. -->
       <h1
-        class="font-extrabold uppercase m-0 max-w-[19ch]"
-        style="font-size:clamp(1.875rem, 6.2vw, 6.5rem); line-height:0.9; letter-spacing:-0.035em; text-wrap:balance"
+        class="font-extrabold uppercase m-0"
+        style="font-size:clamp(2.25rem, 8.4vw, 8rem); line-height:0.88; letter-spacing:-0.035em"
       >
-        Cuando tu cliente le pregunta a una IA quién puede ayudarlo, ¿aparece tu nombre?
+        ¿Te menciona la IA?
       </h1>
       <p class="mt-8 text-white/60 text-lg md:text-xl leading-relaxed max-w-prosa">
-        Pega tu dirección web y te lo decimos en 30 segundos. Sin registro, sin dejar tu correo.
+        Cuando tu cliente pregunta quién puede ayudarlo, ¿sale tu nombre? Pega tu dirección
+        web y te lo decimos en 30 segundos. Sin registro, sin dejar tu correo.
       </p>
 
       <div class="mt-10 border-t border-b border-white/15">
@@ -165,12 +170,12 @@ const pasos = [
         class="font-extrabold uppercase m-0 max-w-[17ch]"
         style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:-0.035em; text-wrap:balance"
       >
-        De los últimos 69 sitios que revisamos, 67 tenían el mismo problema
+        67 de 69 sitios tenían el mismo problema
       </h2>
       <p class="mt-10 md:mt-14 text-white/70 text-xl md:text-2xl leading-relaxed max-w-prosa">
-        Ni una sola pregunta respondida en un formato que una IA pueda citar. No eran sitios
-        malos. Estaban escritos para que los lea una persona, no la máquina que hoy responde
-        por su rubro.
+        Son los últimos que pasamos por el chequeo. Ninguno respondía una sola pregunta en
+        un formato que una IA pueda citar. No eran sitios malos. Estaban escritos para que
+        los lea una persona, no la máquina que hoy responde por su rubro.
       </p>
     </section>
 
@@ -237,7 +242,7 @@ const pasos = [
         class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[17ch]"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em; text-wrap:balance"
       >
-        Herramientas que puedes usar sin hablar con nadie
+        Herramientas gratis, sin registro
       </h2>
       <div class="grid gap-x-8 lg:gap-x-12 gap-y-10 md:grid-cols-3">
         <article class="border-t border-white/30 pt-6">
