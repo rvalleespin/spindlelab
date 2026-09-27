@@ -31,6 +31,12 @@ import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
 import { CONTACTO } from '../../consts';
 import '../../styles/chequeo-v3.css';
+import oferta from '../../data/oferta-v3.json';
+
+// El orden por momento y los PRECIOS viven en data/oferta-v3.json, compartido con el
+// indice de servicios. Estaban escritos a mano en los dos lados, que es como un precio
+// queda distinto en una pagina y nadie lo nota.
+const { momentos, tambien } = oferta;
 
 const tira = [
   { src: '/mockup-interno/obra-1.png', alt: 'Página de retratos del sitio de Bernardo Combeau' },
@@ -39,34 +45,6 @@ const tira = [
   { src: '/mockup-interno/obra-4.png', alt: 'Portada del sitio de Bernardo Combeau' },
 ];
 
-// Ordenados por el MOMENTO del cliente, no por tamaño del entregable. Precios intactos.
-const momentos = [
-  {
-    momento: 'Tu sitio existe y no lo van a rehacer',
-    items: [
-      { n: 'Visibilidad en IA', p: '$400.000', href: '/servicios/visibilidad-en-ia/' },
-      { n: 'Auditoría SEO Técnica', p: '$490.000 · $690.000 con Visibilidad IA', href: '/servicios/auditoria-seo-tecnica/' },
-    ],
-  },
-  {
-    momento: 'Tu sitio te frena, o no existe',
-    items: [
-      { n: 'Desarrollo Web', p: '$390.000 · $690.000 · $1.190.000', href: '/servicios/desarrollo-web/' },
-    ],
-    nota: 'Con el SEO técnico y el AEO puestos desde el primer commit, no parchados después.',
-  },
-  {
-    momento: 'Ya giras y quieres sostenerlo',
-    items: [
-      { n: 'Acompañamiento Mensual', p: '$590.000/mes · $790.000/mes Pro', href: '/servicios/acompanamiento-mensual/' },
-    ],
-  },
-];
-
-const tambien = [
-  { n: 'Gestión de Redes Sociales', p: '$390.000/mes · $590.000/mes con pauta', href: '/servicios/redes-sociales/' },
-  { n: 'Paid Media (Google)', p: '$350.000/mes · $550.000/mes Pro', href: '/servicios/paid-media/' },
-];
 
 const pasos = [
   { n: '01', t: 'Miramos', d: 'Revisamos tu sitio, tu competencia y qué responde la IA cuando preguntan por tu rubro. Sale un documento de una página, no una reunión.' },

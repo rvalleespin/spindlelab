@@ -1,0 +1,69 @@
+{
+  "momentos": [
+    {
+      "momento": "Tu sitio existe y no lo van a rehacer",
+      "items": [
+        {
+          "n": "Visibilidad en IA",
+          "p": "$400.000",
+          "href": "/v3/servicios/visibilidad-en-ia/",
+          "d": "Para que ChatGPT, Gemini y Perplexity puedan citarte cuando preguntan por tu rubro."
+        },
+        {
+          "n": "Auditoría SEO Técnica",
+          "p": "$490.000 · $690.000 con Visibilidad IA",
+          "href": "/v3/servicios/auditoria-seo-tecnica/",
+          "d": "Rastreo, indexación, Core Web Vitals y datos estructurados. Qué te frena y qué mueve la aguja."
+        }
+      ]
+    },
+    {
+      "momento": "Tu sitio te frena, o no existe",
+      "items": [
+        {
+          "n": "Desarrollo Web",
+          "p": "$390.000 · $690.000 · $1.190.000",
+          "href": "/v3/servicios/desarrollo-web/",
+          "d": "Sitios a medida, sin plantillas ni WordPress, con panel para que edites tú."
+        }
+      ],
+      "nota": "Con el SEO técnico y el AEO puestos desde el primer commit, no parchados después."
+    },
+    {
+      "momento": "Ya giras y quieres sostenerlo",
+      "items": [
+        {
+          "n": "Acompañamiento Mensual",
+          "p": "$590.000/mes · $790.000/mes Pro",
+          "href": "/v3/servicios/acompanamiento-mensual/",
+          "d": "Implementación continua, contenido para búsqueda e IA, e informes quincenales."
+        }
+      ]
+    }
+  ],
+  "tambien": [
+    {
+      "n": "Gestión de Redes Sociales",
+      "p": "$390.000/mes · $590.000/mes con pauta",
+      "href": "/v3/servicios/redes-sociales/",
+      "d": "Presencia, comunidad y pauta social en LinkedIn y Meta."
+    },
+    {
+      "n": "Paid Media (Google)",
+      "p": "$350.000/mes · $550.000/mes Pro",
+      "href": "/v3/servicios/paid-media/",
+      "d": "Google Ads de alta intención: captura a quien ya está buscando lo que ofreces."
+    }
+  ],
+  "dentro": [
+    "Visibilidad (SEO + IA): auditoría técnica, AEO/GEO y acompañamiento mensual.",
+    "Gestión de redes sociales: LinkedIn y Meta, orgánico y pauta social.",
+    "Paid media (Google): Google Ads de alta intención, optimizado con IA.",
+    "Desarrollo web: el sitio a medida donde el tráfico se vuelve contacto."
+  ],
+  "fuera": [
+    "Creación de contenido: redacción y guiones de piezas.",
+    "Diseño gráfico: piezas visuales y arte final.",
+    "Producción de video: rodaje y edición."
+  ]
+}

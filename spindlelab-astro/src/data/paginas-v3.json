@@ -263,5 +263,173 @@
       }
     ],
     "canonical": "https://spindlelab.cl/contacto/"
+  },
+  "servicios": {
+    "slug": "servicios",
+    "title": "Soluciones: tu motor de adquisición digital · SpindleLab",
+    "description": "Agencia de marketing con IA: SEO técnico, visibilidad en motores de IA, gestión de redes, paid media (Google) y desarrollo web para empresas en Chile.",
+    "h1": "Tu motor de adquisición digital",
+    "lead": "Somos una agencia de marketing con IA. Nuestro eje principal es el SEO técnico, la visibilidad en motores de IA y el desarrollo web. Completamos la ruta con Google y Meta Ads para que tu negocio sea aún más relevante. El contenido creativo lo entregas tú y nosotros lo hacemos funcionar. Todo empieza por un diagnóstico gratuito.",
+    "secciones": [
+      {
+        "h2": "Visibilidad: donde ganamos la pelea",
+        "bloques": [
+          {
+            "t": "Auditoría SEO Técnica",
+            "d": "Diagnóstico profundo de tu arquitectura web: rastreo, indexación, Core Web Vitals, datos estructurados y señales de autoridad. Informe priorizado por impacto, no un volcado de datos."
+          },
+          {
+            "t": "Visibilidad en IA (AEO/GEO)",
+            "d": "Optimizamos tu contenido y estructura para que ChatGPT, Gemini y Perplexity te citen como fuente confiable cuando tus clientes preguntan por servicios como el tuyo."
+          },
+          {
+            "t": "Acompañamiento Mensual",
+            "d": "Implementación continua, contenido optimizado para búsqueda e IA, e informes quincenales para sostener la ventaja mes a mes. Nuestro formato principal."
+          }
+        ],
+        "parrafos": [
+          "SEO técnico y visibilidad en IA (AEO/GEO): que Google y los motores generativos te encuentren, te entiendan y te citen. Es la pieza que lidera el motor y la puerta de entrada al resto. Tres formas de trabajarla, según tu momento.",
+          "Diagnóstico profundo de tu arquitectura web: rastreo, indexación, Core Web Vitals, datos estructurados y señales de autoridad. Informe priorizado por impacto, no un volcado de datos.",
+          "Visibilidad en IA (AEO/GEO) Optimizamos tu contenido y estructura para que ChatGPT, Gemini y Perplexity te citen como fuente confiable cuando tus clientes preguntan por servicios como el tuyo."
+        ]
+      },
+      {
+        "h2": "Las piezas que amplían y convierten",
+        "bloques": [
+          {
+            "t": "Gestión de Redes Sociales",
+            "d": "Presencia, comunidad y pauta social en LinkedIn y Meta: contenido y conversación donde tu cliente ya pasa el día. El contenido creativo lo pones tú."
+          },
+          {
+            "t": "Paid Media (Google)",
+            "d": "Google Ads optimizado con IA: captura a quien ya está buscando lo que ofreces, con el presupuesto bajo control."
+          },
+          {
+            "t": "Desarrollo Web",
+            "d": "La base donde todo aterriza: sitios a medida, sin plantillas ni WordPress, con panel de administración y SEO técnico incorporado desde el primer commit."
+          }
+        ],
+        "parrafos": [
+          "Conectadas al eje, no sueltas: redes y publicidad para que te encuentren más, y el sitio donde todo aterriza y se vuelve contacto.",
+          "Gestión de Redes Sociales Presencia, comunidad y pauta social en LinkedIn y Meta: contenido y conversación donde tu cliente ya pasa el día. El contenido creativo lo pones tú.",
+          "Google Ads optimizado con IA: captura a quien ya está buscando lo que ofreces, con el presupuesto bajo control."
+        ]
+      },
+      {
+        "h2": "Qué entra en el motor, y qué va con partners",
+        "bloques": [
+          {
+            "t": "Dentro del motor",
+            "d": ""
+          },
+          {
+            "t": "Fuera (lo pones tú)",
+            "d": ""
+          }
+        ],
+        "parrafos": [
+          "Somos tu motor de adquisición digital; el contenido creativo lo pones tú y nosotros lo hacemos funcionar. Si no tienes quién lo produzca, te conectamos con partners de confianza."
+        ]
+      },
+      {
+        "h2": "¿Por dónde empezar?"
+      },
+      {
+        "h2": "Antes de escribirnos",
+        "parrafos": [
+          "No. La mayoría parte por el eje (SEO y visibilidad en IA) y suma redes, paid o desarrollo cuando el momento lo pide. El diagnóstico gratuito te orienta sobre qué pieza tiene más impacto en tu caso.",
+          "No los producimos nosotros. El contenido creativo (redacción, diseño gráfico, video) lo pones tú; si no lo tienes, te conectamos con partners de producción. Nosotros orquestamos la estrategia, la pauta, la comunidad, el desarrollo y la medición, y hacemos que ese contenido funcione.",
+          "Sí. Cada solución tiene sus planes con precio de partida publicado. El alcance final se cierra después del diagnóstico gratuito, en una propuesta sin sorpresas."
+        ]
+      },
+      {
+        "h2": "Empecemos con un diagnóstico sin costo.",
+        "parrafos": [
+          "Revisamos tu sitio, tu competencia y tu presencia en IA. Sin compromiso."
+        ]
+      }
+    ],
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://spindlelab.cl/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Soluciones",
+        "item": "https://spindlelab.cl/servicios/"
+      }
+    ],
+    "itemList": {
+      "@type": "ItemList",
+      "name": "Soluciones de SpindleLab",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "@id": "https://spindlelab.cl/servicios/auditoria-seo-tecnica/#service",
+            "name": "Auditoría SEO Técnica",
+            "url": "https://spindlelab.cl/servicios/auditoria-seo-tecnica/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "@id": "https://spindlelab.cl/servicios/visibilidad-en-ia/#service",
+            "name": "Visibilidad en IA (AEO/GEO)",
+            "url": "https://spindlelab.cl/servicios/visibilidad-en-ia/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "@id": "https://spindlelab.cl/servicios/acompanamiento-mensual/#service",
+            "name": "Acompañamiento Mensual",
+            "url": "https://spindlelab.cl/servicios/acompanamiento-mensual/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "@id": "https://spindlelab.cl/servicios/redes-sociales/#service",
+            "name": "Gestión de Redes Sociales",
+            "url": "https://spindlelab.cl/servicios/redes-sociales/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Service",
+            "@id": "https://spindlelab.cl/servicios/paid-media/#service",
+            "name": "Paid Media (Google)",
+            "url": "https://spindlelab.cl/servicios/paid-media/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Service",
+            "@id": "https://spindlelab.cl/servicios/desarrollo-web/#service",
+            "name": "Desarrollo Web",
+            "url": "https://spindlelab.cl/servicios/desarrollo-web/"
+          }
+        }
+      ]
+    },
+    "canonical": "https://spindlelab.cl/servicios/"
   }
 }
