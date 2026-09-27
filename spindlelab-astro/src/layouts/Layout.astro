@@ -187,6 +187,10 @@ const jsonLd = {
     <!-- Gabarito se declara en global.css pero no se precargaba: en un hero donde el titular
          ES la pieza, llega tarde y se ve el salto de Inter a Gabarito. -->
     <link rel="preload" href="/fonts/Gabarito.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Manrope, también alojada acá (ver /fonts/manrope.css). Es la tipografía del
+         sistema V2: titulares y cuerpo. -->
+    <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/fonts/manrope.css?v=1" />
   </head>
   <body class={bodyClass}>
     <slot />

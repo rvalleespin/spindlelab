@@ -34,6 +34,16 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
         display: ['Gabarito', 'Inter', 'system-ui', 'sans-serif'],
+
+        // --- Sistema tipográfico V2 (solo maquetas /v2/*) ---
+        // Manrope toma titulares Y cuerpo; Gabarito queda reservada al wordmark.
+        // El manual §05 hoy asigna Gabarito a titulares, así que esto lo reemplaza y
+        // necesita tu visto bueno. El argumento: si Gabarito aparece en un solo lugar,
+        // el wordmark deja de ser «el titular más grande» y pasa a leerse como firma.
+        // Manrope ya es de la marca (sistema live v2 de redes, manual §04) y ya está
+        // auto-alojada, así que no agrega ni una petición a terceros.
+        texto: ['Manrope', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        wordmark: ['Gabarito', 'Manrope', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         // Escala fluida para titulares editoriales. El segundo valor es el
