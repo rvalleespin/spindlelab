@@ -1,0 +1,69 @@
+---
+// Hero V2 — exploración del rebranding «Desarrollo Web + AEO incorporado».
+// Vive solo en la rama claude/rebranding-webdev-exploracion. NO reemplaza a Hero.astro:
+// el hero actual queda intacto para poder comparar las dos versiones lado a lado.
+//
+// Dos decisiones que conviene revisar (están explicadas en el informe de la exploración):
+//
+// 1. EL DORADO DE ESTA VISTA lo lleva el punto final del titular. Por eso el punto del
+//    wordmark va en gris acá: la regla es un dorado por vista, y Nav.astro ya gasta el
+//    suyo en el punto del wordmark. Si se adopta, hay que elegir cuál de los dos lo lleva.
+//    (La home actual se salta la regla: el punto del wordmark Y la palabra «motor» van
+//    ambos en dorado en la primera pantalla.)
+//
+// 2. EL CUERPO NO USA gris pluma #5D6673. Sobre tinta da 3,0:1 de contraste y AA pide
+//    4,5:1. El repo ya tenía resuelto esto con el «gris pluma elevado» #9AA4B0 (6,9:1),
+//    que es el que se usa acá. El #5D6673 queda para hairlines y metadatos decorativos.
+import { CONTACTO } from '../consts';
+---
+
+<section id="top" class="relative min-h-svh bg-tinta flex flex-col">
+  <!-- Barra superior mínima: el wordmark y nada más. Sin navegación, sin imágenes. -->
+  <header class="px-6 sm:px-10 md:px-14 pt-10 md:pt-12">
+    <a href="/" class="font-display text-xl md:text-2xl text-papel tracking-tight">
+      SpindleLab<span class="text-pluma">.</span>
+    </a>
+  </header>
+
+  <!-- El titular. Ocupa el centro y respira: es lo único que se ve al llegar.
+       El aire va en vh y no en un py-48 fijo: con padding fijo el hero medía 970 px en una
+       pantalla de 813 y empujaba los dos botones fuera de la primera vista (medido). En vh
+       crece en monitores altos y se ajusta en notebooks, que es donde está la gente. -->
+  <div class="flex-1 flex items-center px-6 sm:px-10 md:px-14 py-[clamp(2rem,9vh,10rem)]">
+    <h1
+      class="font-display font-normal text-fluid-2xl text-papel max-w-[15ch]"
+      style="letter-spacing:-0.035em"
+    >
+      Sitios web preparados para la IA<span class="text-gold">.</span>
+    </h1>
+  </div>
+
+  <!-- Pie: una frase, y las dos puertas. Nada más. -->
+  <div class="px-6 sm:px-10 md:px-14 pb-14 md:pb-20">
+    <div class="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+      <p class="text-fg-muted text-lg md:text-xl leading-relaxed max-w-prosa">
+        Construimos el sitio para que Google lo entienda y para que ChatGPT, Gemini y
+        Perplexity puedan citarlo. Si ya tienes uno, no siempre hay que rehacerlo: primero
+        hay que ver qué lo está dejando fuera.
+      </p>
+
+      <div class="flex items-center gap-6 flex-wrap flex-none">
+        <a
+          href={CONTACTO}
+          class="bg-papel hover:bg-white text-tinta text-sm font-semibold px-7 py-3.5 rounded-full transition-colors"
+        >
+          Agenda tu diagnóstico
+        </a>
+        <!-- La puerta para quien YA tiene sitio y no lo va a rehacer. Es condición del
+             encargo (punto 3) y es el caso del prospecto más caliente de los últimos
+             dos meses, que nunca iba a reconstruir su WordPress. -->
+        <a
+          href="/diagnostico/"
+          class="text-fg-muted text-sm font-semibold hover:text-papel transition-colors underline underline-offset-4 decoration-pluma hover:decoration-papel"
+        >
+          Ya tengo sitio, quiero ver qué lo frena
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

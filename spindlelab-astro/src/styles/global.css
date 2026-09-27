@@ -36,6 +36,26 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Lenis (scroll suave). Solo aplica cuando el script lo activó, es decir a quien NO
+   pidió menos movimiento. Los dos suavizados a la vez se pelean y el scroll se traba,
+   así que con Lenis puesto se apaga el nativo. */
+html.lenis {
+  scroll-behavior: auto;
+  height: auto;
+}
+html.lenis body {
+  height: auto;
+}
+html.lenis.lenis-stopped {
+  overflow: clip;
+}
+html.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
 html,
 body {
   margin: 0;
