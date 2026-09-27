@@ -46,6 +46,15 @@ pueda copiar.
 | # | Pieza | Rubro | Estado |
 |---|---|---|---|
 | 01 | [Raigal](01-raigal/ficha.md) | Implantología y rehabilitación oral | home construida |
+| 02 | [Aplomo](02-aplomo/ficha.md) | Constructora industrial B2B | home construida |
+
+## Las piezas se construyen como opuestas, a propósito
+
+Un portafolio de dos sitios parecidos no prueba nada: prueba que hay un estilo, que es lo
+contrario de lo que se quiere demostrar. Cada pieza nueva se compone **contra** las
+anteriores en lienzo, tipografía, temperatura y densidad. Raigal es cálida, aireada y de
+serif; Aplomo es fría, tabular y de monoespaciada. La comparación está en la ficha de
+Aplomo.
 
 ## Lo que se aprendió en la primera pieza
 
