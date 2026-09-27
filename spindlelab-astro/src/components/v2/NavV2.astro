@@ -1,0 +1,133 @@
+---
+// Nav del sistema V2: un módulo compacto que SE ABRE sobre sí mismo.
+//
+// Cambio pedido por Ramón (27-sep): antes el menú era un overlay a pantalla completa.
+// Ahora el panel crece desde el mismo módulo del wordmark y la página sigue visible
+// detrás. Se siente como que el módulo se abre, no como que el sitio se tapa.
+//
+// Consecuencia de accesibilidad de ese cambio: NO se bloquea el scroll del fondo. Eso
+// tenía sentido con un overlay que cubría todo; en un panel anclado, bloquear el scroll
+// deja al visitante atrapado sin razón.
+//
+// El punto dorado del wordmark es el ÚNICO dorado de la vista (manual §02 y §06). Como
+// esta nav está fija y siempre visible, ninguna otra pieza de la página puede usar dorado.
+import { CONTACTO } from '../../consts';
+
+const enlaces = [
+  { href: '/v2/c2/', label: 'Inicio' },
+  { href: '/v2/c2/#obra', label: 'Obra' },
+  { href: '/v2/c2/#servicios', label: 'Servicios' },
+  { href: '/v2/c2/#metodo', label: 'Método' },
+  { href: '/v2/c2/#chequeo', label: 'Chequeo' },
+  { href: CONTACTO, label: 'Contacto' },
+];
+---
+
+<header class="fixed top-0 left-0 z-50 p-4 sm:p-5">
+  <div
+    id="menu-modulo"
+    class="rounded-xl overflow-hidden bg-black/75 backdrop-blur border border-white/10 transition-[width] duration-300 w-auto"
+  >
+    <!-- Fila superior: es la misma abierta y cerrada, por eso el módulo «crece» en vez
+         de reemplazarse. -->
+    <div class="flex items-stretch">
+      <a
+        href="/v2/c2/"
+        class="font-wordmark text-lg sm:text-xl text-papel tracking-tight pl-5 pr-4 py-3 flex items-center flex-1"
+      >
+        SpindleLab<span class="text-gold">.</span>
+      </a>
+      <button
+        type="button"
+        id="menu-btn"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="menu-overlay"
+        class="px-4 border-l border-white/10 text-papel hover:bg-white/10 transition-colors flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+      >
+        <span id="icono-abrir" aria-hidden="true" class="block w-5 space-y-[5px]">
+          <span class="block h-[1.5px] bg-papel"></span>
+          <span class="block h-[1.5px] bg-papel"></span>
+        </span>
+        <span id="icono-cerrar" style="display:none" aria-hidden="true" class="relative block w-5 h-5">
+          <span class="absolute inset-x-0 top-1/2 h-[1.5px] bg-papel rotate-45"></span>
+          <span class="absolute inset-x-0 top-1/2 h-[1.5px] bg-papel -rotate-45"></span>
+        </span>
+      </button>
+    </div>
+
+    <!-- El panel. Vive DENTRO del módulo. -->
+    <nav id="menu-overlay" hidden aria-label="Principal" class="border-t border-white/10">
+      <ul class="list-none p-0 m-0">
+        {
+          enlaces.map((m) => (
+            <li>
+              <a
+                href={m.href}
+                data-menu-link
+                class="block px-5 py-3.5 text-papel text-lg hover:bg-white/10 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel focus-visible:-outline-offset-2"
+              >
+                {m.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const panel = document.getElementById('menu-overlay');
+  const modulo = document.getElementById('menu-modulo');
+  const iAbrir = document.getElementById('icono-abrir');
+  const iCerrar = document.getElementById('icono-cerrar');
+
+  // El atributo hidden NO gana contra las clases de display de Tailwind (block),
+  // asi que los iconos se conmutan por estilo. Se vio en el render: salian los dos.
+  if (btn && panel && modulo && iAbrir && iCerrar) {
+    // El ancho se fija por estilo en línea a propósito: la clase arbitraria equivalente
+    // (w-[min(20rem,calc(100vw-2rem))]) NO la genera Tailwind, porque lleva comas dentro
+    // de paréntesis anidados. Se verificó en el CSS compilado: no existía.
+    const ANCHO = 'min(20rem, calc(100vw - 2rem))';
+
+    const abrir = () => {
+      panel.hidden = false;
+      modulo.style.width = ANCHO;
+      iAbrir.style.display = 'none';
+      iCerrar.style.display = 'block';
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-label', 'Cerrar menú');
+      panel.querySelector<HTMLAnchorElement>('[data-menu-link]')?.focus();
+    };
+
+    const cerrar = ({ devolverFoco = true } = {}) => {
+      panel.hidden = true;
+      modulo.style.width = '';
+      iAbrir.style.display = 'block';
+      iCerrar.style.display = 'none';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Abrir menú');
+      if (devolverFoco) btn.focus();
+    };
+
+    btn.addEventListener('click', () => (panel.hidden ? abrir() : cerrar()));
+
+    // Al elegir un ancla el panel se cierra solo, sin devolver el foco al botón: el foco
+    // sigue al destino.
+    panel.querySelectorAll('[data-menu-link]').forEach((a) => {
+      a.addEventListener('click', () => cerrar({ devolverFoco: false }));
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !panel.hidden) cerrar();
+    });
+
+    // Como el panel NO cubre la página, un clic afuera tiene que cerrarlo: si no, queda
+    // abierto tapando contenido mientras el visitante sigue navegando.
+    document.addEventListener('click', (e) => {
+      if (!panel.hidden && !modulo.contains(e.target as Node)) cerrar({ devolverFoco: false });
+    });
+  }
+</script>

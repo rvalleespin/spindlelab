@@ -1,0 +1,79 @@
+---
+// Pie del sistema V2. Compartido entre la home y las internas.
+// Los enlaces son <a href> reales, no menciones en texto: un pie con nombres de servicio
+// sin enlazar es enlazado interno perdido.
+import { CONTACTO, EMAIL } from '../../consts';
+
+const servicios = [
+  { href: '/servicios/desarrollo-web/', label: 'Desarrollo Web' },
+  { href: '/servicios/visibilidad-en-ia/', label: 'Visibilidad en IA' },
+  { href: '/servicios/auditoria-seo-tecnica/', label: 'Auditoría SEO Técnica' },
+  { href: '/servicios/acompanamiento-mensual/', label: 'Acompañamiento Mensual' },
+  { href: '/servicios/redes-sociales/', label: 'Gestión de Redes Sociales' },
+  { href: '/servicios/paid-media/', label: 'Paid Media' },
+];
+
+const casa = [
+  { href: '/metodo/', label: 'Método' },
+  { href: '/nosotros/', label: 'Nosotros' },
+  { href: '/diagnostico/', label: 'Chequeo gratis' },
+  { href: '/blog/', label: 'Blog' },
+  { href: CONTACTO, label: 'Contacto' },
+  { href: '/privacidad/', label: 'Privacidad' },
+];
+---
+
+<footer class="bg-tinta-galeria text-white/45 text-sm px-4 sm:px-6 py-16 md:py-24">
+  <div class="grid gap-12 md:grid-cols-3">
+    <div>
+      <span class="font-wordmark text-2xl text-papel tracking-tight block">
+        SpindleLab<span class="text-gold">.</span>
+      </span>
+      <p class="mt-4 max-w-[34ch] leading-relaxed">
+        Estudio de diseño y SEO técnico en Santiago. Construimos el sitio y dejamos resuelto
+        lo que decide si aparece.
+      </p>
+      <a href={`mailto:${EMAIL}`} class="mt-4 inline-block hover:text-papel transition-colors">
+        {EMAIL}
+      </a>
+    </div>
+
+    <nav aria-label="Servicios">
+      <h2 class="text-white/30 text-xs font-bold uppercase m-0 mb-5" style="letter-spacing:0.16em">
+        Servicios
+      </h2>
+      <ul class="list-none p-0 m-0 space-y-3">
+        {
+          servicios.map((s) => (
+            <li>
+              <a href={s.href} class="hover:text-papel transition-colors">
+                {s.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <nav aria-label="La casa">
+      <h2 class="text-white/30 text-xs font-bold uppercase m-0 mb-5" style="letter-spacing:0.16em">
+        La casa
+      </h2>
+      <ul class="list-none p-0 m-0 space-y-3">
+        {
+          casa.map((s) => (
+            <li>
+              <a href={s.href} class="hover:text-papel transition-colors">
+                {s.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+
+  <p class="mt-14 pt-8 border-t border-white/10 text-white/30 text-xs">
+    Santiago, Chile · SpindleLab SpA
+  </p>
+</footer>

@@ -1,0 +1,118 @@
+---
+// MAQUETA B — «Instrumento» · el sitio hace algo delante tuyo.
+// La apuesta: el wow NO es pictórico, es funcional. En vez de mostrar fotos de trabajo,
+// la portada ES la herramienta. Es «No te prometo. Te muestro» ejecutado, no citado.
+// Lock: registro técnico e instrumental (reglas de pelo, monoespaciada para la salida de
+// máquina, cero gloss de marketing), estructura editorial nítida tomada de Studio Freight.
+// Se conserva: lienzo claro, precisión, la interacción como héroe.
+// Se rechaza: imagen decorativa, video de fondo, resultados inventados.
+//
+// HONESTIDAD: el panel se muestra en su estado VACÍO real, esperando dominio. No hay
+// resultados de ejemplo simulados, porque una prueba falsa en la portada de quien vende
+// auditorías es exactamente lo que el manual prohíbe.
+//
+// Ventaja práctica: es la única de las tres que no necesita permiso de ningún cliente.
+import Layout from '../../layouts/Layout.astro';
+import { CONTACTO } from '../../consts';
+
+const chequeos = [
+  'Estructura que Google puede leer',
+  'Datos estructurados (schema)',
+  'Respuestas que la IA puede citar',
+  'Velocidad real en móvil',
+  'Lo que te deja fuera hoy',
+];
+---
+
+<Layout
+  title="Maqueta B · Instrumento · exploración rebranding"
+  description="Maqueta interna para decidir. No es una página publicada."
+  bodyClass="bg-papel"
+>
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+
+  <header class="px-6 sm:px-10 py-6 flex items-center justify-between">
+    <a href="/" class="font-display text-xl text-tinta tracking-tight">
+      SpindleLab<span class="text-gold">.</span>
+    </a>
+    <a href={CONTACTO} class="text-tinta text-sm font-semibold hover:opacity-60 transition-opacity">
+      Contacto
+    </a>
+  </header>
+
+  <main class="text-tinta px-6 sm:px-10">
+    <section class="pt-12 md:pt-16 pb-12 md:pb-16">
+      <h1
+        class="font-display font-normal text-fluid-2xl max-w-[15ch]"
+        style="letter-spacing:-0.035em; text-wrap:balance"
+      >
+        No te prometo. Te muestro.
+      </h1>
+      <p class="mt-8 text-pluma text-lg md:text-xl leading-relaxed max-w-prosa">
+        Escribe tu dominio. Revisamos si tu sitio está construido para que lo encuentren,
+        en Google y en los motores que hoy responden por tu rubro.
+      </p>
+    </section>
+
+    <!-- El instrumento. Regla de pelo, monoespaciada, cero adorno: tiene que parecer
+         una herramienta que funciona, no una sección de marketing que la imita. -->
+    <section class="pb-32 md:pb-48">
+      <div class="border-t border-b border-tinta/15">
+        <form class="flex flex-col sm:flex-row sm:items-stretch" onsubmit="return false">
+          <label for="dominio" class="sr-only">Tu dominio</label>
+          <input
+            id="dominio"
+            name="dominio"
+            type="text"
+            inputmode="url"
+            autocomplete="url"
+            placeholder="tudominio.cl"
+            class="flex-1 bg-transparent font-mono text-2xl md:text-4xl text-tinta placeholder:text-tinta/25 py-7 md:py-9 outline-none focus-visible:bg-tinta/[0.04] transition-colors"
+          />
+          <button
+            type="submit"
+            class="flex-none self-stretch sm:self-auto bg-tinta hover:bg-black text-papel text-sm font-semibold px-8 my-4 sm:my-5 rounded-full transition-colors py-3.5 sm:py-0"
+          >
+            Revisar
+          </button>
+        </form>
+      </div>
+
+      <!-- Estado vacío explícito. Lo que revisa, sin resultados fabricados. -->
+      <ul class="mt-10 grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-3 list-none p-0 m-0">
+        {
+          chequeos.map((c) => (
+            <li class="flex items-baseline gap-3 font-mono text-sm text-pluma">
+              <span aria-hidden="true" class="text-tinta/30">—</span>
+              <span>{c}</span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="mt-10 text-pluma text-sm max-w-prosa">
+        El chequeo corre solo y es gratis. Si quieres el análisis completo, con el plan de
+        qué arreglar primero, lo entregamos en 24 horas.
+      </p>
+    </section>
+
+    <section class="pb-32 md:pb-48 border-t border-tinta/15 pt-16 md:pt-24">
+      <p
+        class="font-display font-normal text-fluid-xl max-w-[18ch]"
+        style="letter-spacing:-0.03em; text-wrap:balance"
+      >
+        También construimos el sitio completo.
+      </p>
+      <p class="mt-8 text-pluma text-lg leading-relaxed max-w-prosa">
+        Diseño, desarrollo y la estructura técnica que decide si aparece, en el mismo
+        proyecto. Sin traspasarte el problema a un tercero después.
+      </p>
+      <a
+        href={CONTACTO}
+        class="inline-block mt-10 bg-tinta hover:bg-black text-papel text-sm font-semibold px-7 py-3.5 rounded-full transition-colors"
+      >
+        Conversemos tu proyecto
+      </a>
+    </section>
+  </main>
+</Layout>
