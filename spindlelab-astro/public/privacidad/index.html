@@ -100,8 +100,10 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
   }
   .doc-article::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--gold)}
   .doc-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--doc-teal);margin-bottom:10px}
-  .doc-article h1{font-family:var(--headline);font-size:clamp(26px,3.4vw,36px);font-weight:600;letter-spacing:-.01em;color:var(--doc-ink);margin-bottom:8px}
-  .doc-version{font-size:13px;color:rgba(19,26,34,.55);margin-bottom:28px}
+  /* Hijo directo: el titulo del articulo. Los h2 de cada punto cuelgan de .doc-punto
+     y conservan su propia regla, mas abajo. */
+  .doc-article > h2{font-family:var(--headline);font-size:clamp(26px,3.4vw,36px);font-weight:600;letter-spacing:-.01em;color:var(--doc-ink);margin-bottom:8px}
+  .doc-version{font-size:13px;color:rgba(19,26,34,.66);margin-bottom:28px}
   .doc-intro{font-size:15px;color:rgba(19,26,34,.75);margin-bottom:36px;line-height:1.65}
   .doc-punto{border-top:1px solid rgba(19,26,34,.12);padding:22px 0}
   .doc-punto:first-of-type{border-top:none;padding-top:0}
@@ -115,7 +117,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
     padding:18px 22px;margin:34px 0 0;font-size:13.5px;color:rgba(19,26,34,.8);line-height:1.6;
   }
   .doc-aviso strong{color:var(--doc-ink)}
-  .doc-legal{margin-top:22px;font-size:13px;color:rgba(19,26,34,.6)}
+  .doc-legal{margin-top:22px;font-size:13px;color:rgba(19,26,34,.66)}
   @media(max-width:680px){.doc-article{padding:32px 24px}}
 </style>
 </head>
@@ -154,7 +156,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
     <div class="wrap">
       <article class="doc-article">
         <span class="doc-eyebrow">Art. 14 ter, punto por punto</span>
-        <h1>Qué hacemos con tus datos</h1>
+        <h2>Qué hacemos con tus datos</h2>
         <p class="doc-version">Versión 1.4, actualizada el 22 de septiembre de 2026.</p>
         <p class="doc-intro">
           Esta página explica, sin rodeos, qué datos procesamos en spindlelab.cl, para qué, y con

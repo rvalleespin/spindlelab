@@ -11,7 +11,11 @@ export default {
         'surface-3': '#0A0F15', // footer, fondo más profundo
         fg: '#F2EFE8', // papel cálido (texto)
         'fg-muted': '#9AA4B0', // gris pluma elevado
-        'fg-faint': '#6B7580', // metadatos, disclaimers
+        // Aclarado el 27-sep: en #6B7580 reprobaba AA como texto chico sobre los tres
+        // fondos oscuros del sistema (bg 3,95:1 · surface-2 3,74:1 · surface 3,62:1), y
+        // este token existe justo para texto chico. En #828C9B da 5,44 / 5,15 / 4,99:1 y
+        // sigue quedando por debajo de fg-muted (#9AA4B0), que es lo que lo distingue.
+        'fg-faint': '#828C9B', // metadatos, disclaimers
         gold: '#C9A227', // el punto dorado (1 por vista)
         'gold-2': '#DCB52F',
         support: '#2FA99B', // petróleo elevado (acento funcional)
