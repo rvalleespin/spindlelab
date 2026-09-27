@@ -1,0 +1,230 @@
+---
+// LAS CINCO PÁGINAS DE SERVICIO restantes, en el lenguaje V2.
+//
+// Es UNA plantilla con datos, no cinco archivos: las cinco páginas publicadas resultaron
+// tener exactamente la misma forma (lista de lo que incluye → planes con precio → un bloque
+// de cuatro → FAQ → cierre). Cinco copias habrían significado arreglar cada defecto futuro
+// cinco veces.
+//
+// EL CONTENIDO NO SE RETIPEÓ. Está extraído de las páginas publicadas a
+// src/data/servicios-v2.json, que es como se evita que un precio se transcriba mal. Los
+// cinco precios se verificaron contra la lista vigente del encargo y calzan.
+//
+// EL SCHEMA TAMPOCO SE REINVENTÓ: el catálogo de ofertas y las migas salen del grafo
+// original. Layout emite organización/sitio/persona; acá van Service, BreadcrumbList y
+// FAQPage, sin duplicar @id.
+//
+// El bloque de cuatro cambia de sentido según la página (fases en acompañamiento, entregables
+// en auditoría, límites de lo que se promete en visibilidad en IA) pero comparte forma, así
+// que se renderiza igual y el h2 de cada una lo explica.
+import Layout from '../../../layouts/Layout.astro';
+import NavV2 from '../../../components/v2/NavV2.astro';
+import FooterV2 from '../../../components/v2/FooterV2.astro';
+import { CONTACTO } from '../../../consts';
+import servicios from '../../../data/servicios-v2.json';
+
+export function getStaticPaths() {
+  return Object.keys(servicios).map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const s = (servicios as Record<string, any>)[slug!];
+
+const [secIncluye, secPlanes, secBloques, , secCierre] = s.secciones;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${s.canonical}#service`,
+      name: s.serviceName,
+      serviceType: s.serviceType,
+      provider: { '@id': 'https://spindlelab.cl/#org' },
+      areaServed: { '@type': 'Country', name: 'Chile' },
+      ...(s.offerCatalog ? { hasOfferCatalog: s.offerCatalog } : {}),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${s.canonical}#breadcrumb`,
+      itemListElement: s.breadcrumb,
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${s.canonical}#faq`,
+      mainEntity: s.faq.map((f: any) => ({
+        '@type': 'Question',
+        name: f.p,
+        acceptedAnswer: { '@type': 'Answer', text: f.r },
+      })),
+    },
+  ],
+};
+---
+
+<Layout title={s.title} description={s.description} bodyClass="bg-tinta-galeria font-texto">
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <NavV2 />
+
+  <main class="text-papel">
+    <section class="px-4 sm:px-6 pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-28">
+      <nav aria-label="Migas" class="text-white/35 text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
+        <a href="/v2/c2/" class="hover:text-papel transition-colors">Inicio</a>
+        <span aria-hidden="true" class="mx-2">·</span>
+        <a href="/servicios/" class="hover:text-papel transition-colors">Soluciones</a>
+        <span aria-hidden="true" class="mx-2">·</span>
+        <span class="text-white/60">{s.h1}</span>
+      </nav>
+      <h1
+        class="font-extrabold uppercase m-0 max-w-[14ch]"
+        style="font-size:clamp(2rem, 7.4vw, 8.5rem); line-height:0.88; letter-spacing:-0.035em"
+      >
+        {s.h1}
+      </h1>
+      {s.lead && (
+        <p class="mt-10 text-white/60 text-xl md:text-2xl leading-relaxed max-w-prosa">{s.lead}</p>
+      )}
+    </section>
+
+    <!-- QUÉ INCLUYE, en columnas. -->
+    <section class="bg-papel text-tinta-galeria px-4 sm:px-6 py-24 md:py-36">
+      <h2
+        class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[18ch]"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em; text-wrap:balance"
+      >
+        {secIncluye.h2}
+      </h2>
+      <ul class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          (secIncluye.lista ?? []).map((i: string) => (
+            <li class="border-t border-tinta-galeria/25 pt-5 text-tinta-galeria/75 text-base leading-relaxed">
+              {i}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <!-- PLANES, en columnas, precios exactos a los publicados. -->
+    <section id="planes" class="bg-papel text-tinta-galeria px-4 sm:px-6 pb-24 md:pb-36 scroll-mt-24">
+      <h2
+        class="font-extrabold uppercase m-0 mb-3 max-w-[18ch]"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em; text-wrap:balance"
+      >
+        {secPlanes.h2}
+      </h2>
+      {secPlanes.nota && <p class="text-tinta-galeria/50 text-sm mb-12 md:mb-16 max-w-prosa">{secPlanes.nota}</p>}
+      <div class="grid gap-x-8 lg:gap-x-12 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+        {
+          (secPlanes.planes ?? []).map((p: any) => (
+            <article class="flex flex-col border-t border-tinta-galeria/25 pt-6">
+              <h3
+                class="font-extrabold uppercase m-0"
+                style="font-size:clamp(1.125rem,1.7vw,1.5rem); line-height:1.05; letter-spacing:-0.03em"
+              >
+                {p.nombre}
+              </h3>
+              {p.tagline && <p class="mt-3 text-tinta-galeria/60 text-base leading-relaxed">{p.tagline}</p>}
+              <ul class="list-none p-0 mt-5 mb-0 space-y-2">
+                {p.puntos.map((x: string) => (
+                  <li class="flex gap-2.5 text-tinta-galeria/70 text-sm leading-relaxed">
+                    <span aria-hidden="true" class="text-tinta-galeria/30">—</span>
+                    <span>{x}</span>
+                  </li>
+                ))}
+              </ul>
+              <span class="mt-auto pt-8 font-bold text-base">{p.precio}</span>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- EL BLOQUE DE CUATRO. Cambia de sentido por página; el h2 lo dice. -->
+    <section class="px-4 sm:px-6 py-24 md:py-36">
+      <h2
+        class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[17ch]"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em; text-wrap:balance"
+      >
+        {secBloques.h2}
+      </h2>
+      <ol class="list-none p-0 m-0 border-t border-white/10">
+        {
+          (secBloques.bloques ?? []).map((b: any, i: number) => (
+            <li class="border-b border-white/10 py-7 md:py-9 flex flex-col md:flex-row gap-3 md:gap-12">
+              <span class="text-white/30 font-bold text-sm flex-none md:w-16" style="letter-spacing:0.16em">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span
+                class="font-extrabold uppercase flex-none md:w-[10em]"
+                style="font-size:clamp(1.25rem,2.2vw,1.875rem); line-height:1.05; letter-spacing:-0.03em"
+              >
+                {b.t}
+              </span>
+              <span class="text-white/55 text-lg leading-relaxed max-w-prosa">{b.d}</span>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <!-- FAQ. El mismo contenido que alimenta el FAQPage del schema. -->
+    <section class="px-4 sm:px-6 pb-24 md:pb-36">
+      <h2
+        class="font-extrabold uppercase m-0 mb-12 md:mb-16"
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:-0.035em"
+      >
+        {s.secciones[3].h2}
+      </h2>
+      <dl class="m-0 border-t border-white/10">
+        {
+          s.faq.map((f: any) => (
+            <div class="border-b border-white/10 py-7 md:py-9 grid gap-3 md:grid-cols-[minmax(0,22rem)_1fr] md:gap-12">
+              <dt
+                class="font-extrabold uppercase"
+                style="font-size:clamp(1.125rem,1.7vw,1.5rem); line-height:1.1; letter-spacing:-0.03em"
+              >
+                {f.p}
+              </dt>
+              <dd class="m-0 text-white/55 text-lg leading-relaxed max-w-prosa">{f.r}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+
+    <section class="bg-papel text-tinta-galeria px-4 sm:px-6 py-24 md:py-36">
+      <h2
+        class="font-extrabold uppercase m-0 max-w-[16ch]"
+        style="font-size:clamp(2rem, 6.6vw, 7.5rem); line-height:0.88; letter-spacing:-0.035em; text-wrap:balance"
+      >
+        {secCierre.h2}
+      </h2>
+      {secCierre.parrafos?.[0] && (
+        <p class="mt-10 text-tinta-galeria/65 text-xl leading-relaxed max-w-prosa">
+          {secCierre.parrafos[0]}
+        </p>
+      )}
+      <div class="mt-12 flex items-center gap-4 flex-wrap">
+        <a
+          href={CONTACTO}
+          class="rounded-full bg-tinta-galeria hover:bg-black text-papel text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-tinta-galeria"
+        >
+          Conversemos tu proyecto
+        </a>
+        <a
+          href="/diagnostico/"
+          class="rounded-full border border-tinta-galeria/25 hover:border-tinta-galeria text-tinta-galeria text-sm font-bold px-8 py-4 transition-colors"
+        >
+          Chequeo gratis
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <FooterV2 />
+</Layout>

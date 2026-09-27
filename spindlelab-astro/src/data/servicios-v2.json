@@ -1,0 +1,870 @@
+{
+  "visibilidad-en-ia": {
+    "slug": "visibilidad-en-ia",
+    "title": "Visibilidad en IA (AEO/GEO) · SpindleLab",
+    "description": "Visibilidad en IA (AEO/GEO): que ChatGPT, Gemini y Perplexity citen a tu empresa, con análisis de presencia, claridad de entidad y contenido citable.",
+    "h1": "Visibilidad en IA (AEO/GEO)",
+    "lead": "Cada día más decisiones de compra B2B empiezan en un chat, no en una lista de resultados. Este servicio analiza cómo te describen ChatGPT, Gemini y Perplexity, y optimiza tu contenido, estructura y señales de autoridad para que te citen a ti como fuente confiable.",
+    "secciones": [
+      {
+        "h2": "De invisible a citable, en cuatro frentes",
+        "lista": [
+          "Línea base de presencia: ejecutamos las preguntas que haría tu cliente ideal en los principales motores de IA y documentamos si apareces, cómo te describen y quién está ganando esas respuestas hoy.",
+          "Claridad de entidad: alineamos quién eres, qué haces y dónde operas en todo el ecosistema: tu sitio, datos estructurados, directorios y perfiles. Los modelos citan lo que entienden sin ambigüedad.",
+          "Contenido citable: reestructuramos tus páginas clave para que respondan preguntas concretas con definiciones, datos y formato que los modelos pueden extraer y citar con confianza.",
+          "Acceso y medición: configuramos el acceso correcto para los bots de IA (robots.txt, políticas) y dejamos instalado un protocolo de medición repetible para seguir tu evolución mes a mes."
+        ]
+      },
+      {
+        "h2": "Elige por dónde partir",
+        "planes": [
+          {
+            "nombre": "Auditoría de Visibilidad",
+            "tagline": "La radiografía: qué dice la IA de ti hoy, y qué falta.",
+            "precio": "Desde $400.000 + IVA · una vez",
+            "puntos": [
+              "Medición en ChatGPT, Gemini y Perplexity",
+              "Quién gana hoy esas respuestas (tu competencia)",
+              "Revisión de claridad de entidad y contenido citable",
+              "Plan de citabilidad priorizado por impacto",
+              "Entrega en ~2 semanas"
+            ]
+          },
+          {
+            "nombre": "Acompañamiento Esencial",
+            "tagline": "Medimos y optimizamos mes a mes para que te empiecen a citar.",
+            "precio": "Desde $590.000 /mes + IVA",
+            "puntos": [
+              "Todo lo de la Auditoría, y más",
+              "~10 consultas medidas al mes, en 3 motores",
+              "Hasta 8 keywords trabajadas",
+              "Contenido citable y claridad de entidad",
+              "Informe mensual en lenguaje de negocio"
+            ]
+          },
+          {
+            "nombre": "Acompañamiento Pro",
+            "tagline": "Cobertura completa y share-of-voice contra tu competencia.",
+            "precio": "Desde $790.000 /mes + IVA",
+            "puntos": [
+              "Todo lo del Esencial, y más",
+              "~20 consultas medidas al mes, en 4 motores (+ AI Overviews)",
+              "Hasta 15 keywords",
+              "Share-of-voice frente a tus competidores",
+              "Autoridad de entidad y menciones externas"
+            ]
+          }
+        ],
+        "nota": "Incluido en todo plan: medición real de menciones en IA con el protocolo público de medición, nuestro protocolo público y reproducible (mismas consultas, mismos motores, misma cadencia), informe en lenguaje de negocio y cero prueba inventada. Solo lo que la IA de verdad responde."
+      },
+      {
+        "h2": "Qué puede prometer este servicio y qué no",
+        "bloques": [
+          {
+            "t": "Aumentar tu probabilidad de cita",
+            "d": "Las señales que optimizamos son las que los modelos usan para elegir fuentes. Eso se mueve y se mide."
+          },
+          {
+            "t": "Medición seria",
+            "d": "Protocolo repetible de consultas, no pantallazos anecdóticos. Sabrás si avanzas y contra quién."
+          },
+          {
+            "t": "Garantizar una respuesta exacta",
+            "d": "Nadie controla lo que genera un modelo. Desconfía de quien te garantice \"aparecer #1 en ChatGPT\"."
+          },
+          {
+            "t": "Trucos ni atajos",
+            "d": "Sin texto oculto ni manipulación. Lo que construye citabilidad es lo mismo que construye confianza real."
+          }
+        ]
+      },
+      {
+        "h2": "Sobre visibilidad en IA",
+        "parrafos": [
+          "Sí, dentro de límites honestos. Los motores eligen fuentes según claridad de entidad, autoridad y contenido citable: señales que se pueden trabajar. Lo que no existe es garantizar una respuesta específica. Escribimos sobre esto en detalle en nuestra guía para aparecer en ChatGPT.",
+          "AEO es Answer Engine Optimization; GEO, Generative Engine Optimization. Son dos nombres para la misma disciplina: aumentar la visibilidad de tu marca en respuestas generadas por IA. Tenemos una guía para gerentes no técnicos que lo explica sin jerga."
+        ]
+      },
+      {
+        "h2": "¿Apareces cuando tus clientes preguntan?",
+        "parrafos": [
+          "Envíanos tu URL y te mostramos qué dicen los motores de IA sobre tu empresa hoy. Gratis, en 24 horas."
+        ]
+      }
+    ],
+    "serviceType": "Optimización para motores de respuesta (AEO/GEO)",
+    "faq": [
+      {
+        "p": "¿Se puede realmente influir en lo que responde ChatGPT?",
+        "r": "Sí, dentro de límites honestos. Los motores de IA eligen fuentes según claridad de entidad, autoridad y contenido citable. Optimizar esas señales aumenta de forma medible la probabilidad de ser citado; nadie puede garantizar una respuesta específica."
+      },
+      {
+        "p": "¿Qué es AEO y GEO?",
+        "r": "AEO (Answer Engine Optimization) es optimizar para motores de respuesta como ChatGPT o Perplexity. GEO (Generative Engine Optimization) es el término académico para lo mismo: aumentar la visibilidad de una marca en respuestas generadas por IA."
+      },
+      {
+        "p": "¿Cómo miden la presencia en IA?",
+        "r": "Con un protocolo de consultas repetibles: las preguntas que haría tu cliente ideal, ejecutadas periódicamente en los principales motores, registrando si apareces, cómo te describen y a quién citan."
+      },
+      {
+        "p": "¿Conviene bloquear los bots de IA en robots.txt?",
+        "r": "Si tu negocio depende de ser encontrado, bloquear GPTBot o Google-Extended te saca de las respuestas. Recomendamos permitirlos de forma deliberada, salvo contenido que necesites proteger."
+      },
+      {
+        "p": "¿Cuánto cuesta?",
+        "r": "La Auditoría de Visibilidad parte en 400.000 CLP + IVA (pago único). El acompañamiento mensual parte en 590.000 CLP/mes + IVA (Esencial) y 790.000 CLP/mes (Pro). El valor final se cierra tras el diagnóstico gratuito, según el tamaño de tu sitio y las consultas a cubrir."
+      }
+    ],
+    "serviceName": "Visibilidad en IA (AEO/GEO)",
+    "offerCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Planes de Visibilidad en IA (AEO/GEO)",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Auditoría de Visibilidad en IA",
+          "description": "Radiografía única: medición en ChatGPT, Gemini y Perplexity, quién gana esas respuestas, y plan de citabilidad priorizado. Entrega en ~2 semanas.",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": 400000,
+            "priceCurrency": "CLP",
+            "valueAddedTaxIncluded": false
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Acompañamiento Esencial",
+          "description": "Retainer mensual: ~10 consultas medidas al mes en 3 motores, hasta 8 keywords, contenido citable e informe mensual.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "minPrice": 590000,
+            "priceCurrency": "CLP",
+            "unitText": "MES",
+            "valueAddedTaxIncluded": false
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Acompañamiento Pro",
+          "description": "Retainer mensual: ~20 consultas medidas al mes en 4 motores (incluye AI Overviews), hasta 15 keywords, share-of-voice vs competidores y autoridad de entidad.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "minPrice": 790000,
+            "priceCurrency": "CLP",
+            "unitText": "MES",
+            "valueAddedTaxIncluded": false
+          }
+        }
+      ]
+    },
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://spindlelab.cl/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Soluciones",
+        "item": "https://spindlelab.cl/servicios/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Visibilidad en IA (AEO/GEO)",
+        "item": "https://spindlelab.cl/servicios/visibilidad-en-ia/"
+      }
+    ],
+    "canonical": "https://spindlelab.cl/servicios/visibilidad-en-ia/"
+  },
+  "auditoria-seo-tecnica": {
+    "slug": "auditoria-seo-tecnica",
+    "title": "Auditoría SEO Técnica para empresas · SpindleLab",
+    "description": "Auditoría SEO técnica en profundidad: rastreo, indexación, Core Web Vitals, datos estructurados y señales E-E-A-T. Informe priorizado por impacto.",
+    "h1": "Auditoría SEO Técnica",
+    "lead": "Sabemos que tu sitio \"funciona\". La pregunta es si Google y los motores de IA pueden rastrearlo, entenderlo y confiar en él. Esta auditoría responde eso con evidencia y entrega un plan priorizado por impacto, no un volcado de 200 hallazgos sin jerarquía.",
+    "secciones": [
+      {
+        "h2": "Las cinco capas del análisis",
+        "lista": [
+          "Rastreo e indexación: qué puede ver Google de tu sitio, qué está indexado que no debería, y qué páginas valiosas quedaron fuera. Presupuesto de rastreo, robots.txt, sitemaps y canonicals.",
+          "Rendimiento y Core Web Vitals: velocidad real de carga en móvil y escritorio, scripts de terceros que frenan tu sitio, y qué corregir primero para pasar los umbrales de Google.",
+          "Arquitectura y enlazado interno: cómo fluye la autoridad entre tus páginas, profundidad de clics, contenido huérfano y estructura de URLs.",
+          "Datos estructurados: qué schema.org tienes, cuál está inválido y cuál falta para que buscadores y motores de IA entiendan quién eres y qué ofreces.",
+          "Señales de confianza (E-E-A-T): autoría, políticas, transparencia corporativa y consistencia de entidad. En sectores financieros y de salud, esto define si te recomiendan o no."
+        ]
+      },
+      {
+        "h2": "Del diagnóstico gratis a la auditoría a fondo",
+        "planes": [
+          {
+            "nombre": "Mini-diagnóstico",
+            "tagline": "La radiografía de una página, en 24 horas.",
+            "precio": "Gratis",
+            "puntos": [
+              "Los hallazgos técnicos más relevantes de tu sitio",
+              "Una corrección de mayor impacto para partir",
+              "Sin costo ni compromiso"
+            ]
+          },
+          {
+            "nombre": "Auditoría Completa",
+            "tagline": "Las cinco capas a fondo, con plan y código listos.",
+            "precio": "Desde $490.000 + IVA · una vez",
+            "puntos": [
+              "Rastreo, indexación y Core Web Vitals",
+              "Arquitectura, enlazado interno y datos estructurados",
+              "Señales de confianza (E-E-A-T)",
+              "Informe priorizado + código y schema listos",
+              "Sesión de traspaso con tu equipo"
+            ]
+          },
+          {
+            "nombre": "Auditoría + Visibilidad IA",
+            "tagline": "La auditoría técnica más la capa de citabilidad en IA.",
+            "precio": "Desde $690.000 + IVA · una vez",
+            "puntos": [
+              "Todo lo de la Auditoría Completa, y más",
+              "Medición de tu presencia en ChatGPT, Gemini y Perplexity",
+              "Plan de citabilidad: claridad de entidad y contenido citable",
+              "Quién gana hoy esas respuestas (tu competencia)"
+            ]
+          }
+        ],
+        "nota": "Toda auditoría pagada entrega lo mismo: un informe priorizado por impacto, código y datos estructurados listos para pegar, y una sesión de traspaso con tu equipo. Nada de un volcado de 200 hallazgos sin jerarquía."
+      },
+      {
+        "h2": "Un informe que tu equipo puede ejecutar el lunes",
+        "bloques": [
+          {
+            "t": "Resumen ejecutivo",
+            "d": "Una página en lenguaje de negocio: qué está frenando tu visibilidad y qué impacto tiene corregirlo."
+          },
+          {
+            "t": "Plan priorizado",
+            "d": "Cada hallazgo clasificado por impacto y esfuerzo. Primero lo que mueve la aguja, no lo cosmético."
+          },
+          {
+            "t": "Código y schema listos",
+            "d": "Datos estructurados corregidos, redirecciones y especificaciones técnicas que tu desarrollador puede copiar y pegar."
+          },
+          {
+            "t": "Sesión de traspaso",
+            "d": "Reunión de trabajo para revisar el plan con tu equipo y resolver dudas de implementación."
+          }
+        ]
+      },
+      {
+        "h2": "Sobre la auditoría",
+        "parrafos": [
+          "Entre dos y tres semanas desde que tenemos acceso a los datos, según el tamaño del sitio. El mini-diagnóstico inicial, gratuito, se entrega en 24 horas y te muestra el tipo de hallazgos que encontrarás en la versión completa.",
+          "Acceso de lectura a Google Search Console y Analytics, y 20 minutos de conversación sobre tu negocio y tus clientes. No necesitamos acceso al código ni al servidor."
+        ]
+      },
+      {
+        "h2": "Averigua qué está frenando tu sitio.",
+        "parrafos": [
+          "Envíanos tu URL y en 24 horas tienes el mini-diagnóstico gratuito. Sin compromiso."
+        ]
+      }
+    ],
+    "serviceType": "Auditoría SEO técnica",
+    "faq": [
+      {
+        "p": "¿Cuánto demora una auditoría SEO técnica?",
+        "r": "Entre dos y tres semanas desde el acceso a los datos, dependiendo del tamaño del sitio. El mini-diagnóstico inicial se entrega gratis en 24 horas."
+      },
+      {
+        "p": "¿Qué necesitan de nuestra parte para auditar?",
+        "r": "Acceso de lectura a Google Search Console y Analytics, y una conversación de 20 minutos sobre tu negocio. No necesitamos acceso al código ni al servidor."
+      },
+      {
+        "p": "¿La auditoría incluye la implementación de los cambios?",
+        "r": "La auditoría entrega el plan priorizado con código y datos estructurados listos para implementar por tu equipo. Si prefieres que implementemos nosotros, ese es el servicio de acompañamiento mensual."
+      },
+      {
+        "p": "¿En qué se diferencia de una auditoría SEO tradicional?",
+        "r": "Además de lo técnico clásico (rastreo, indexación, velocidad), evaluamos las señales que los motores de IA usan para citar fuentes: datos estructurados, claridad de entidad y autoridad E-E-A-T."
+      },
+      {
+        "p": "¿Cuánto cuesta?",
+        "r": "El mini-diagnóstico es gratis (pago único de 0). La Auditoría Completa parte en 490.000 CLP + IVA y la Auditoría + Visibilidad IA en 690.000 CLP + IVA. El valor final se cierra tras el mini-diagnóstico gratuito, según el tamaño del sitio."
+      }
+    ],
+    "serviceName": "Auditoría SEO Técnica",
+    "offerCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Planes de Auditoría SEO Técnica",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Mini-diagnóstico",
+          "description": "Radiografía de una página con los hallazgos técnicos más relevantes y una corrección de mayor impacto. Gratis, en 24 horas.",
+          "price": 0,
+          "priceCurrency": "CLP"
+        },
+        {
+          "@type": "Offer",
+          "name": "Auditoría Completa",
+          "description": "Las cinco capas a fondo (rastreo, rendimiento, arquitectura, datos estructurados, E-E-A-T), informe priorizado, código y schema listos, y sesión de traspaso.",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": 490000,
+            "priceCurrency": "CLP",
+            "valueAddedTaxIncluded": false
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Auditoría + Visibilidad IA",
+          "description": "Todo lo de la Auditoría Completa más la capa de citabilidad en IA: medición de presencia en ChatGPT, Gemini y Perplexity y plan de citabilidad.",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": 690000,
+            "priceCurrency": "CLP",
+            "valueAddedTaxIncluded": false
+          }
+        }
+      ]
+    },
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://spindlelab.cl/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Soluciones",
+        "item": "https://spindlelab.cl/servicios/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Auditoría SEO Técnica",
+        "item": "https://spindlelab.cl/servicios/auditoria-seo-tecnica/"
+      }
+    ],
+    "canonical": "https://spindlelab.cl/servicios/auditoria-seo-tecnica/"
+  },
+  "acompanamiento-mensual": {
+    "slug": "acompanamiento-mensual",
+    "title": "Acompañamiento Mensual de SEO e IA · SpindleLab",
+    "description": "Consultoría mensual de SEO técnico y visibilidad en IA: implementación continua, contenido optimizado e informes quincenales. Mínimo 3 meses.",
+    "h1": "Acompañamiento Mensual",
+    "lead": "Una auditoría te dice qué hacer; este servicio lo hace y lo sostiene. Implementación continua, contenido que posiciona en Google y en las respuestas de IA, y medición quincenal para que cada mes sepas exactamente qué avanzó. Calidad de agencia, trato directo de consultor.",
+    "secciones": [
+      {
+        "h2": "Ejecución, contenido y medición",
+        "lista": [
+          "Implementación priorizada: trabajamos la lista de mejoras técnicas por impacto: indexación, velocidad, datos estructurados, enlazado interno. Directamente o con tu equipo.",
+          "Contenido optimizado para búsqueda e IA: piezas pensadas para posicionar en Google y ser citadas por los modelos: estructura de respuesta, datos verificables y schema correcto.",
+          "Monitoreo doble: posiciones clásicas y presencia en respuestas de IA, medidas quincenalmente con nuestro protocolo público, protocolo público.",
+          "Informe quincenal en lenguaje de negocio: qué se hizo, qué se movió y qué sigue. Una página, sin jerga, lista para reenviar a gerencia.",
+          "Reunión mensual de decisiones: 45 minutos para revisar resultados y priorizar el mes siguiente."
+        ]
+      },
+      {
+        "h2": "Elige la cobertura",
+        "planes": [
+          {
+            "nombre": "Esencial",
+            "tagline": "Sostener y mejorar un frente: técnico o visibilidad en IA.",
+            "precio": "Desde $590.000 /mes + IVA",
+            "puntos": [
+              "Foco en una capa (técnica o visibilidad)",
+              "~10 consultas medidas al mes en IA",
+              "Hasta 8 keywords o páginas prioritarias",
+              "Informe quincenal + reunión mensual"
+            ]
+          },
+          {
+            "nombre": "Pro",
+            "tagline": "Las dos capas juntas, con más cobertura y contenido.",
+            "precio": "Desde $790.000 /mes + IVA",
+            "puntos": [
+              "SEO técnico + visibilidad en IA",
+              "~20 consultas medidas al mes (+ AI Overviews)",
+              "Hasta 15 keywords + contenido citable mensual",
+              "Share-of-voice frente a tus competidores"
+            ]
+          },
+          {
+            "nombre": "A medida",
+            "tagline": "Equipo dedicado y varios frentes a la vez.",
+            "precio": "Se cotiza tras una reunión",
+            "puntos": [
+              "Todo lo del Pro, y más",
+              "Volumen de contenido y páginas a definir",
+              "Integra desarrollo web y mantención",
+              "Prioridad y tiempos acordados"
+            ]
+          }
+        ],
+        "nota": "Todos los planes traen lo de arriba (implementación, contenido, monitoreo doble, informe quincenal y reunión mensual). Se diferencian en cuánta cobertura y volumen. Mínimo 3 meses; después, mes a mes con aviso de 30 días."
+      },
+      {
+        "h2": "Así se ve un mes tipo",
+        "bloques": [
+          {
+            "t": "Priorizar y ejecutar",
+            "d": "Definimos el foco del mes y partimos con las implementaciones de mayor impacto."
+          },
+          {
+            "t": "Primer informe",
+            "d": "Medición quincenal: posiciones, menciones en IA y estado de lo implementado."
+          },
+          {
+            "t": "Contenido y ajustes",
+            "d": "Publicamos contenido citable y corregimos según lo que muestran los datos."
+          },
+          {
+            "t": "Cierre y decisiones",
+            "d": "Segundo informe + reunión mensual: qué avanzó y qué priorizamos ahora."
+          }
+        ]
+      },
+      {
+        "h2": "Sobre el acompañamiento",
+        "parrafos": [
+          "Porque el SEO y la visibilidad en IA se mueven en ciclos: rastreo, re-indexación y actualización de modelos toman semanas. Con menos de tres meses no hay señal suficiente para evaluar con seriedad, y preferimos no vender expectativas que los datos no puedan respaldar.",
+          "Nos integramos: entregamos especificaciones, auditamos lo implementado y coordinamos prioridades con ellos. Muchos clientes nos usan como capa técnica y de IA sobre la operación de contenido existente."
+        ]
+      },
+      {
+        "h2": "Sostener la ventaja también es trabajo.",
+        "parrafos": [
+          "Cuéntanos dónde está tu sitio hoy y te proponemos un plan de acompañamiento a tu medida."
+        ]
+      }
+    ],
+    "serviceType": "Consultoría mensual de SEO y visibilidad en IA",
+    "faq": [
+      {
+        "p": "¿Por qué el mínimo es de 3 meses?",
+        "r": "Porque el SEO y la visibilidad en IA se mueven en ciclos de semanas: rastreo, re-indexación y actualización de los modelos. En menos de tres meses no hay señal suficiente para evaluar con seriedad."
+      },
+      {
+        "p": "¿Qué incluye el mes a mes?",
+        "r": "Implementación priorizada, contenido optimizado para búsqueda e IA, monitoreo de posiciones y menciones en IA, informes quincenales en lenguaje de negocio y una reunión mensual de decisiones."
+      },
+      {
+        "p": "¿Trabajan con nuestra agencia o equipo interno?",
+        "r": "Sí, nos integramos con quien ejecute hoy: damos las especificaciones, revisamos lo implementado y coordinamos prioridades. También podemos ejecutar directamente los cambios técnicos y de contenido."
+      },
+      {
+        "p": "¿Puedo salir antes si no veo valor?",
+        "r": "Cumplido el mínimo de tres meses, el servicio es mes a mes y puedes pausar o salir avisando con 30 días. Sin permanencias largas ni letra chica."
+      },
+      {
+        "p": "¿Cuánto cuesta?",
+        "r": "El plan Esencial parte en 590.000 CLP/mes + IVA y el Pro en 790.000 CLP/mes + IVA; el plan a medida se cotiza tras una reunión. El plan se dimensiona tras el diagnóstico gratuito, según el tamaño del sitio y tus objetivos."
+      }
+    ],
+    "serviceName": "Acompañamiento Mensual",
+    "offerCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Planes de Acompañamiento Mensual",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Esencial",
+          "description": "Retainer mensual sobre una capa (SEO técnico o visibilidad en IA): implementación priorizada, ~10 consultas medidas al mes, informe quincenal y reunión mensual.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "minPrice": 590000,
+            "priceCurrency": "CLP",
+            "unitText": "MES",
+            "valueAddedTaxIncluded": false
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "description": "Las dos capas juntas (SEO técnico + visibilidad en IA): ~20 consultas medidas al mes con AI Overviews, contenido citable mensual y share-of-voice vs competidores.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "minPrice": 790000,
+            "priceCurrency": "CLP",
+            "unitText": "MES",
+            "valueAddedTaxIncluded": false
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "A medida",
+          "description": "Equipo dedicado y multi-servicio: todo lo del Pro más volumen de contenido a definir, desarrollo web y mantención, con prioridad. Se cotiza tras una reunión."
+        }
+      ]
+    },
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://spindlelab.cl/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Soluciones",
+        "item": "https://spindlelab.cl/servicios/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Acompañamiento Mensual",
+        "item": "https://spindlelab.cl/servicios/acompanamiento-mensual/"
+      }
+    ],
+    "canonical": "https://spindlelab.cl/servicios/acompanamiento-mensual/"
+  },
+  "redes-sociales": {
+    "slug": "redes-sociales",
+    "title": "Gestión de Redes Sociales para empresas · SpindleLab",
+    "description": "Gestión de redes en LinkedIn y Meta: estrategia, pauta, comunidad y reportes, orquestado con agentes de IA. El contenido creativo lo pones tú.",
+    "h1": "Gestión de Redes Sociales",
+    "lead": "Tus clientes ya pasan el día en redes. Esta pieza pone tu marca ahí con estrategia: calendario, pauta, comunidad y reportes claros, no improvisación. Las piezas gráficas y el video los pones tú; si no los tienes, te conectamos con partners. SpindleLab orquesta la estrategia y la ejecución. Es una de las cuatro piezas del motor de adquisición: el eje lo ponen el SEO técnico y la visibilidad en IA.",
+    "secciones": [
+      {
+        "h2": "Estrategia y ejecución, no publicar por publicar",
+        "lista": [
+          "Estrategia y calendario editorial: definimos de qué habla tu marca, en qué formato y con qué cadencia, alineado a tu cliente y a tus objetivos de negocio.",
+          "Gestión de la pauta social (social ads), desde el plan con Pauta: armamos y ajustamos las campañas en Meta (Facebook e Instagram): audiencias, presupuesto y creatividades, sin encender gasto sin tu confirmación.",
+          "Comunidad y respuesta de mensajes: moderamos comentarios y respondemos mensajes con tu tono, para que ninguna consulta de un posible cliente quede sin contestar.",
+          "Reportes quincenales con métricas que importan: alcance útil, conversación, clics y contactos generados. Nada de métricas de vanidad ni capturas sueltas.",
+          "El contenido creativo lo pones tú: las piezas gráficas y el video los produces tú o un partner de confianza; nosotros orquestamos el brief, la revisión y la salida."
+        ]
+      },
+      {
+        "h2": "Elige la cobertura",
+        "planes": [
+          {
+            "nombre": "Orgánico",
+            "tagline": "Presencia con criterio en una plataforma, sin pauta.",
+            "precio": "Desde $390.000 /mes + IVA",
+            "puntos": [
+              "Estrategia y calendario editorial",
+              "Publicación y gestión de comunidad",
+              "Una plataforma (LinkedIn o Meta)",
+              "Reporte quincenal"
+            ]
+          },
+          {
+            "nombre": "Orgánico + Pauta",
+            "tagline": "Presencia y pauta social para llegar más lejos.",
+            "precio": "Desde $590.000 /mes + IVA",
+            "puntos": [
+              "Todo lo del Orgánico, y más",
+              "Gestión de pauta social en Meta (audiencias y campañas)",
+              "LinkedIn + Meta (Facebook e Instagram)",
+              "La inversión publicitaria va aparte"
+            ]
+          },
+          {
+            "nombre": "A medida",
+            "tagline": "Más plataformas y volumen, integrado al resto del motor.",
+            "precio": "Se cotiza tras una reunión",
+            "puntos": [
+              "Todo lo anterior, y más",
+              "Plataformas y cadencia a definir",
+              "Mayor volumen de publicación y pauta",
+              "Integrado con SEO, IA y Paid Media"
+            ]
+          }
+        ],
+        "nota": "Todos incluyen estrategia, calendario, comunidad y reporte quincenal, y en todos el creativo lo pones tú (o te conectamos con un partner). La gestión de pauta social entra desde el plan con Pauta; la inversión publicitaria va aparte."
+      },
+      {
+        "h2": "Cómo trabajamos, quincena a quincena",
+        "bloques": [
+          {
+            "t": "Estrategia y calendario",
+            "d": "Definimos objetivos, temas y cadencia. De ahí sale el calendario editorial y el brief que va a los partners de contenido."
+          },
+          {
+            "t": "Pauta y publicación",
+            "d": "Publicamos según el calendario y gestionamos la pauta social: audiencias, presupuesto y ajustes, siempre con tu visto bueno antes de gastar."
+          },
+          {
+            "t": "Comunidad y conversación",
+            "d": "Moderamos, respondemos mensajes y comentarios con tu tono, y derivamos a ventas las consultas que valen la pena."
+          },
+          {
+            "t": "Reporte y ajuste",
+            "d": "Cada quincena entregamos un reporte de las métricas que importan y ajustamos el plan según lo que de verdad funcionó."
+          }
+        ]
+      },
+      {
+        "h2": "Sobre la gestión de redes",
+        "parrafos": [
+          "No los producimos. Las piezas gráficas y el video los pones tú; si no los tienes, te conectamos con partners de producción. SpindleLab orquesta la estrategia, la pauta, la comunidad y los reportes, y hace que ese contenido salga con criterio y llegue a la gente correcta.",
+          "LinkedIn y el ecosistema Meta (Facebook e Instagram). Elegimos dónde vale la pena estar según tu cliente y tu tipo de negocio, no por estar en todas."
+        ]
+      },
+      {
+        "h2": "Pongamos tu marca en redes con criterio.",
+        "parrafos": [
+          "Envíanos tu URL y en 24 horas tienes el mini-diagnóstico gratuito. Sin compromiso."
+        ]
+      }
+    ],
+    "serviceType": "Gestión de redes sociales para empresas",
+    "faq": [
+      {
+        "p": "¿Ustedes crean el contenido (gráficas y video)?",
+        "r": "No los producimos. Las piezas gráficas y el video los pones tú; si no los tienes, te conectamos con partners de producción. SpindleLab orquesta la estrategia, la pauta, la comunidad y los reportes, y hace que ese contenido salga con criterio y llegue a la gente correcta."
+      },
+      {
+        "p": "¿Qué plataformas manejan?",
+        "r": "LinkedIn y el ecosistema Meta (Facebook e Instagram). Elegimos dónde vale la pena estar según tu cliente y tu tipo de negocio, no por estar en todas."
+      },
+      {
+        "p": "¿Incluye pauta pagada?",
+        "r": "Sí. La gestión de la pauta social (social ads) es parte del servicio: definimos audiencias, montamos las campañas y las ajustamos. El manejo de Google Ads y la pauta de alta intención en buscadores viven en su propia pieza: Paid Media (Google)."
+      },
+      {
+        "p": "¿Cómo miden resultados?",
+        "r": "Con reportes quincenales de las métricas que importan para tu negocio (alcance útil, conversación, clics y contactos), no métricas de vanidad. Cada quincena revisamos qué funcionó y ajustamos el plan."
+      },
+      {
+        "p": "¿Cuánto cuesta?",
+        "r": "El plan Orgánico parte en 390.000 CLP/mes + IVA y el Orgánico + Pauta en 590.000 CLP/mes + IVA; el plan a medida se cotiza tras una reunión. Los precios no incluyen la inversión en pauta, que la defines tú. Se dimensiona tras el diagnóstico gratuito."
+      }
+    ],
+    "serviceName": "Gestión de Redes Sociales",
+    "offerCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Planes de Gestión de Redes Sociales",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Orgánico",
+          "description": "Estrategia y calendario, publicación, comunidad y reporte quincenal en una plataforma (LinkedIn o Meta). Sin pauta.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "minPrice": 390000,
+            "priceCurrency": "CLP",
+            "unitText": "MES",
+            "valueAddedTaxIncluded": false
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Orgánico + Pauta",
+          "description": "Todo lo del Orgánico en LinkedIn y Meta más la gestión de pauta social (audiencias, campañas y ajustes). La inversión publicitaria va aparte.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "minPrice": 590000,
+            "priceCurrency": "CLP",
+            "unitText": "MES",
+            "valueAddedTaxIncluded": false
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "A medida",
+          "description": "Multi-plataforma y mayor volumen: todo lo anterior con plataformas y cadencia a definir, integrado con el resto del motor de adquisición. Se cotiza tras una reunión."
+        }
+      ]
+    },
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://spindlelab.cl/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Soluciones",
+        "item": "https://spindlelab.cl/servicios/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Gestión de Redes Sociales",
+        "item": "https://spindlelab.cl/servicios/redes-sociales/"
+      }
+    ],
+    "canonical": "https://spindlelab.cl/servicios/redes-sociales/"
+  },
+  "paid-media": {
+    "slug": "paid-media",
+    "title": "Paid Media (Google): Google Ads de alta intención · SpindleLab",
+    "description": "Manejo de Google Ads optimizado con agentes de IA: pauta de búsqueda de alta intención, con el presupuesto controlado, para empresas en Chile.",
+    "h1": "Paid Media (Google)",
+    "lead": "Publicidad para capturar a quien ya está buscando lo que ofreces, con la intención de compra más alta. Manejamos tu cuenta de Google Ads optimizada con agentes de IA, con el presupuesto siempre bajo control: la pieza que acelera cuando el motor orgánico ya gira.",
+    "secciones": [
+      {
+        "h2": "Todo lo que ponemos a trabajar",
+        "lista": [
+          "Estrategia de campañas y objetivos: qué buscas (leads, ventas, llamadas), con qué oferta y en qué orden. La estrategia primero, el gasto después.",
+          "Estructura de cuenta y segmentación: campañas y audiencias ordenadas para llegar a quien puede comprarte, no a todo el mundo.",
+          "Optimización continua asistida con IA: revisión diaria del rendimiento con agentes de IA para mover el presupuesto hacia lo que convierte.",
+          "Reportes claros de inversión y resultados: cuánto se invirtió, en qué y qué generó, en lenguaje de negocio y sin letra chica.",
+          "Integración con el resto del motor (SEO, redes, sitio): la pauta aterriza en un sitio o una Página de Campaña trabajados para convertir y se mide junto a la visibilidad orgánica, el eje del motor."
+        ]
+      },
+      {
+        "h2": "Elige la cobertura",
+        "planes": [
+          {
+            "nombre": "Gestión Esencial",
+            "tagline": "Una campaña de búsqueda de alta intención, bien hecha.",
+            "precio": "Desde $350.000 /mes + IVA",
+            "puntos": [
+              "Una campaña de búsqueda (Google Ads)",
+              "Estrategia y estructura de cuenta",
+              "Optimización con IA + reporte mensual",
+              "Inversión publicitaria aparte, bajo tu control"
+            ]
+          },
+          {
+            "nombre": "Gestión Pro",
+            "tagline": "Varias campañas y optimización avanzada, integrada al motor.",
+            "precio": "Desde $550.000 /mes + IVA",
+            "puntos": [
+              "Todo lo de la Esencial, y más",
+              "Varias campañas y objetivos",
+              "Seguimiento de conversiones y optimización avanzada",
+              "Integración con SEO, redes y sitio"
+            ]
+          },
+          {
+            "nombre": "A medida",
+            "tagline": "Cuentas grandes o multi-campaña, con volumen alto.",
+            "precio": "Se cotiza tras una reunión",
+            "puntos": [
+              "Todo lo del Pro, y más",
+              "Volumen de campañas y objetivos a definir",
+              "Presupuestos de inversión mayores",
+              "Prioridad y reuniones acordadas"
+            ]
+          }
+        ],
+        "nota": "El precio es el fee de gestión: estrategia, manejo de la cuenta, optimización con IA y reportes. La inversión en pauta la pones tú y la respetamos al peso, nunca la subimos sin tu confirmación. Mínimo 3 meses."
+      },
+      {
+        "h2": "De la estrategia a la escala, con el gasto bajo control",
+        "bloques": [
+          {
+            "t": "Estrategia y estructura",
+            "d": "Definimos objetivo, oferta y estructura de cuenta antes de gastar un peso. Qué buscamos, a quién y con qué mensaje."
+          },
+          {
+            "t": "Lanzamiento y segmentación",
+            "d": "Montamos las campañas y afinamos la segmentación hacia quien de verdad puede comprarte, no hacia todo el mundo."
+          },
+          {
+            "t": "Optimización con IA",
+            "d": "Revisamos el rendimiento a diario con agentes de IA: cortamos lo que no rinde, reforzamos lo que convierte y cazamos los defaults que juegan en contra de tu cuenta."
+          },
+          {
+            "t": "Reporte y escala",
+            "d": "Reporte claro de inversión y resultados. Cuando un canal rinde, escalamos con cabeza; cuando no, lo ajustamos o lo apagamos."
+          }
+        ]
+      },
+      {
+        "h2": "Sobre la pauta",
+        "parrafos": [
+          "Sí. Nosotros definimos la estrategia y gestionamos la cuenta día a día, pero el presupuesto lo fijas tú y lo respetamos al peso. Nunca subimos la inversión sin tu confirmación: verás en todo momento cuánto se gasta y en qué.",
+          "La pauta en Instagram y Facebook vive junto a la gestión de tus redes, porque comparte contenido, audiencia y comunidad: la manejamos en Gestión de Redes Sociales. Esta pieza se enfoca en Google, donde capturamos a quien ya está buscando lo que ofreces: la intención de compra más alta."
+        ]
+      },
+      {
+        "h2": "¿Listo para acelerar el motor?",
+        "parrafos": [
+          "Envíanos tu URL y en 24 horas tienes el mini-diagnóstico gratuito. Vemos dónde conviene invertir antes de que pongas un peso en pauta."
+        ]
+      }
+    ],
+    "serviceType": "Gestión de campañas de Google Ads (búsqueda de alta intención)",
+    "faq": [
+      {
+        "p": "¿Manejan ustedes el presupuesto de pauta?",
+        "r": "Sí. Nosotros definimos la estrategia y gestionamos la cuenta día a día, pero el presupuesto lo fijas tú y lo respetamos al peso. Nunca subimos la inversión sin tu confirmación: verás en todo momento cuánto se gasta y en qué."
+      },
+      {
+        "p": "¿Y la publicidad en Instagram y Facebook?",
+        "r": "La pauta en Instagram y Facebook vive junto a la gestión de tus redes, porque comparte contenido, audiencia y comunidad: la manejamos en Gestión de Redes Sociales. Esta pieza se enfoca en Google, donde capturamos a quien ya está buscando lo que ofreces: la intención de compra más alta."
+      },
+      {
+        "p": "¿Cómo optimizan con IA?",
+        "r": "Usamos agentes de IA para revisar el rendimiento a diario, detectar los ajustes que la plataforma activa contra el interés de tu cuenta y priorizar dónde mover el presupuesto. La IA acelera el análisis; las decisiones de inversión siempre pasan por criterio humano."
+      },
+      {
+        "p": "¿Se integra con el SEO y la visibilidad en IA?",
+        "r": "Sí, y ahí está la diferencia. La pauta acelera un motor que ya gira con el orgánico: enviamos el tráfico pagado a páginas trabajadas para convertir y lo medimos todo junto. Si quieres ver el eje del motor, mira Visibilidad en IA."
+      },
+      {
+        "p": "¿Cuánto cuesta?",
+        "r": "El fee de gestión parte en 350.000 CLP/mes + IVA (Gestión Esencial) y 550.000 CLP/mes + IVA (Gestión Pro); el plan a medida se cotiza tras una reunión. Ese fee no incluye la inversión en pauta, que la defines tú y va a tu tarjeta."
+      }
+    ],
+    "serviceName": "Paid Media (Google)",
+    "offerCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Planes de Paid Media (Google)",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Gestión Esencial",
+          "description": "Manejo de una campaña de búsqueda de alta intención: estrategia, estructura de cuenta, optimización con IA y reporte mensual. La inversión publicitaria va aparte.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "minPrice": 350000,
+            "priceCurrency": "CLP",
+            "unitText": "MES",
+            "valueAddedTaxIncluded": false
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Gestión Pro",
+          "description": "Varias campañas y objetivos con optimización avanzada, seguimiento de conversiones e integración con el resto del motor. La inversión publicitaria va aparte.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "minPrice": 550000,
+            "priceCurrency": "CLP",
+            "unitText": "MES",
+            "valueAddedTaxIncluded": false
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "A medida",
+          "description": "Cuentas grandes o multi-campaña: todo lo del Pro con volumen y objetivos a definir. Se cotiza tras una reunión."
+        }
+      ]
+    },
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://spindlelab.cl/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Soluciones",
+        "item": "https://spindlelab.cl/servicios/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Paid Media (Google)",
+        "item": "https://spindlelab.cl/servicios/paid-media/"
+      }
+    ],
+    "canonical": "https://spindlelab.cl/servicios/paid-media/"
+  }
+}
