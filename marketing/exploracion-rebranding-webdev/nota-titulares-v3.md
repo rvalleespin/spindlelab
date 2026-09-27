@@ -8,19 +8,30 @@ que viene abajo. No es gusto, es aritmética.
 
 ## La medida, para no escribir a ojo
 
-A tamaño máximo (`clamp` hasta 6,5–8 rem) en Manrope ExtraBold mayúsculas, sobre un
-viewport de 1440 px con los márgenes del sitio:
+En Manrope ExtraBold mayúsculas, sobre un viewport de 1440 px con los márgenes del sitio.
 
-> **Caben unos 20 caracteres por línea.**
+> ⚠️ **Los caracteres por línea dependen del tamaño máximo del `clamp`, no son un número
+> fijo.** La primera versión de esta nota decía «unos 20» sin más, y con eso se corrigió un
+> h1 de 41 a 36 caracteres que **igual salió en tres líneas**: esa página usaba un `clamp`
+> de 8,5 rem, donde caben ~13.
 
-De ahí sale la única regla que hace falta:
+| `clamp` máx. | Caracteres por línea | Dónde se usa |
+|---|---|---|
+| 8 rem | ~20 | el h1 de la home |
+| 5,5 rem | ~24 | los h1 de las internas (normalizado el 27-sep) |
+| 5 rem | ~26 | los h2 de sección |
+
+Con las internas ya normalizadas a 5,5 rem, la regla práctica queda:
 
 | Caracteres | Líneas | Veredicto |
 |---|---|---|
-| hasta ~20 | 1 | ideal para un hero |
-| ~21 a 40 | 2 | bien |
-| ~41 a 60 | 3 | ya pesa; solo si el titular es el contenido |
-| más de 60 | 4+ | **no** |
+| hasta ~22 | 1 | ideal para un hero |
+| ~23 a 40 | 2 | bien |
+| más de 40 | 3+ | **no** |
+
+**Y el arreglo no siempre es recortar texto.** Las internas tenían el `clamp` más grande
+que la home: una página interior gritando más fuerte que la portada. Bajarlo de 8,5 a
+5,5 rem resolvió más titulares que cualquier recorte, y protege los que se escriban después.
 
 ## Lo que se corrigió, como ejemplo
 
@@ -51,13 +62,42 @@ Acortar es fácil si uno se salta la voz. Estas no se tocan:
 - **Ninguna cifra sin fuente.** El «67 de 69» se mantiene porque sale de corridas reales del
   chequeo (`marketing/metricas/corridas-chequeo-2026-08-31.md`), no porque suene bien.
 
+## Los ocho de las internas
+
+Al medir todas las páginas aparecieron **ocho** titulares sobre 40 caracteres, no los dos
+que se habían marcado a ojo. Los seis extra venían del contenido de producción extraído
+para las páginas de servicio.
+
+| Página | Antes | Car. | Ahora | Car. |
+|---|---|---|---|---|
+| paid-media | «De la estrategia a la escala, con el gasto bajo control» | 55 | «Escalar con el gasto controlado» | 31 |
+| redes-sociales | «Estrategia y ejecución, no publicar por publicar» | 48 | «No publicar por publicar» | 24 |
+| auditoría | «Un informe que tu equipo puede ejecutar el lunes» | 48 | «Tu equipo lo ejecuta el lunes» | 29 |
+| auditoría | «Del diagnóstico gratis a la auditoría a fondo» | 45 | «Del chequeo gratis a la auditoría» | 33 |
+| visibilidad-en-ia | «Qué puede prometer este servicio y qué no» | 41 | «Qué prometemos y qué no» | 23 |
+| visibilidad-en-ia | «De invisible a citable, en cuatro frentes» | 41 | «De invisible a citable» | 22 |
+| desarrollo-web | «Cuéntanos qué necesita comunicar tu sitio» | 41 | «¿Qué necesita decir tu sitio?» | 29 |
+| método (h1) | «Nuestro método de SEO y visibilidad en IA» | 41 | «Cómo trabajamos» | 15 |
+
+**Qué se cuidó al recortar cada uno:**
+
+- **«Qué prometemos y qué no»** conserva el «y qué no». Es la sección de honestidad del
+  servicio, la que sostiene que no se promete monitoreo continuo de menciones en IA. Sin esa
+  mitad, el titular se vuelve publicidad.
+- **«Tu equipo lo ejecuta el lunes»** conserva «el lunes», que es el detalle concreto que
+  hace creíble la frase, y le cambia el sujeto al lector.
+- **«No publicar por publicar»** se queda con la mitad memorable; la primera parte era
+  enumeración.
+- **El h1 de método** perdió las palabras clave a propósito: siguen en el `<title>`
+  («Nuestro método de auditoría SEO + visibilidad en IA») y en el párrafo de entrada, que
+  las dice textualmente. Un h1 de 15 caracteres en una línea vale más que uno de 36 partido
+  en tres con «EN IA» huérfano.
+
+**Resultado verificado sobre el HTML compilado: cero titulares sobre 40 caracteres en las
+14 páginas.**
+
 ## Pendiente
 
-Los `h1` de las internas vienen del contenido publicado y no se tocaron. Dos quedan largos
-para el tamaño nuevo y conviene revisarlos cuando se apruebe el copy definitivo:
-
-- `/v3/metodo/` → «Nuestro método de SEO y visibilidad en IA» (41 car.)
-- `/v3/servicios/desarrollo-web/` → el cierre «Cuéntanos qué necesita comunicar tu sitio» (41 car.)
-
-Los textos de la home siguen siendo **propuestas de trabajo**, no copy final: el propio
-brief dice que Renata pasa el tono y Ramón aprueba.
+Los textos siguen siendo **propuestas de trabajo**, no copy final: el propio brief dice que
+Renata pasa el tono y Ramón aprueba. Lo que está cerrado es la restricción de largo, no la
+redacción.
