@@ -1,47 +1,102 @@
 ---
-// MAQUETA C2 — corrección de composición tras la revisión de Ramón (27-sep).
+// MAQUETA C2 — home completa en la composición corregida (27-sep).
 //
-// QUÉ ESTABA MAL EN C: cambié la piel (paleta más cálida, tipografía distinta) pero
-// mantuve el ESQUELETO del sitio actual: titular a media caja alineado a la izquierda,
-// bloque de texto debajo, grilla 2x2 muy abajo, botones repartidos por el ancho. Por eso
-// se sentía «lo mismo de siempre». El error de método fue diseñar desde la descripción en
-// texto de la referencia en vez de renderizarla y mirarla: el texto incluso decía que era
-// de fondo claro, y es casi negro.
+// El lenguaje quedó fijado en la revisión anterior: tipografía a todo el ancho, obra en la
+// primera pantalla, navegación contraída a un módulo, y el color lo pone el trabajo. Acá se
+// extiende al resto de la home, con contraste narrativo tinta ↔ papel para marcar los
+// cambios de discurso.
 //
-// QUÉ CAMBIA ACÁ, que es lo que de verdad mueve la aguja:
-//   · El titular pasa a ocupar CASI TODO EL ANCHO, no media caja.
-//   · La obra sube a la PRIMERA PANTALLA, en una tira de cuatro, no una grilla 2x2 abajo.
-//   · La navegación se contrae a UN módulo compacto arriba a la izquierda.
-//   · El color lo pone la obra. El lienzo se calla.
+// Reglas que se mantienen y NO se re-discuten:
+//   · Los precios son EXACTAMENTE los vigentes. Cambia el orden y el argumento, no el número.
+//   · Queda una puerta para quien YA tiene sitio y no lo va a rehacer.
+//   · No se promete vigilancia de menciones en IA: capacidad-servicios.md la marca ❌ porque
+//     depende de un paso manual que no escala más allá de 1-2 clientes.
+//   · Un solo dorado por vista: el punto del wordmark, que está fijo en la nav.
+//   · Cero prueba inventada. El chequeo se muestra en su estado vacío real.
 //
-// Son patrones de composición genéricos (tipografía grande, tira de trabajo, nav compacta)
-// resueltos en la marca de SpindleLab, con obra propia y voz propia. No se replica la
-// expresión de la referencia: ni su wordmark, ni su copy, ni sus remates.
-//
-// ⚠️ ROMPE EL MANUAL §05: los titulares van en MAYÚSCULAS y el manual dice «sentence case,
-// nunca ALL CAPS». Se construyó así porque es parte de lo que hace que la referencia se
-// vea como se ve. Es decisión de Ramón: revertirlo es quitar una clase.
+// ⚠️ ROMPE EL MANUAL §05 (titulares en sentence case, nunca ALL CAPS). Aprobado por Ramón
+// para esta dirección. Revertirlo es quitar `uppercase` del componente de titular.
 import Layout from '../../layouts/Layout.astro';
 import { CONTACTO } from '../../consts';
 
-// Cuatro vistas reales del proyecto entregado. No son cuatro clientes: es uno, mirado en
-// cuatro momentos, y así se declara abajo. Inventar tres clientes habría sido prueba falsa.
 const tira = [
-  { src: '/mockup-interno/obra-1.png', alt: 'Portada del sitio de Bernardo Combeau, con el retrato a pantalla completa' },
-  { src: '/mockup-interno/obra-2.png', alt: 'Galería de retratos del sitio de Bernardo Combeau' },
-  { src: '/mockup-interno/obra-3.png', alt: 'Sección de proyectos del sitio de Bernardo Combeau' },
-  { src: '/mockup-interno/obra-4.png', alt: 'Página interior del sitio de Bernardo Combeau' },
+  { src: '/mockup-interno/obra-1.png', alt: 'Página de retratos del sitio de Bernardo Combeau' },
+  { src: '/mockup-interno/obra-2.png', alt: 'Serie fotográfica en el sitio de Bernardo Combeau' },
+  { src: '/mockup-interno/obra-3.png', alt: 'Página de estudio del sitio de Bernardo Combeau' },
+  { src: '/mockup-interno/obra-4.png', alt: 'Portada del sitio de Bernardo Combeau' },
+];
+
+const menu = [
+  { href: '#obra', label: 'Obra' },
+  { href: '#servicios', label: 'Servicios' },
+  { href: '#metodo', label: 'Método' },
+  { href: '#chequeo', label: 'Chequeo' },
+  { href: CONTACTO, label: 'Contacto' },
+];
+
+// Precios vigentes, verificados contra el sitio en producción el 27-sep-2026. Todos + IVA.
+// El orden cambia (Desarrollo Web al frente, porque es el pilar); los montos no.
+const servicios = [
+  {
+    nombre: 'Desarrollo Web',
+    linea: 'El sitio completo: diseño, construcción y la estructura técnica resuelta desde el primer día.',
+    precio: '$390.000 · $690.000 · $1.190.000',
+    href: '/servicios/desarrollo-web/',
+  },
+  {
+    nombre: 'Visibilidad en IA',
+    linea: 'Para que ChatGPT, Gemini y Perplexity puedan citarte cuando preguntan por tu rubro.',
+    precio: '$400.000',
+    href: '/servicios/visibilidad-en-ia/',
+  },
+  {
+    nombre: 'Auditoría SEO Técnica',
+    linea: 'La puerta si ya tienes sitio y no lo vas a rehacer. Qué lo frena, y qué mueve la aguja.',
+    precio: '$490.000 · $690.000 con Visibilidad IA',
+    href: '/servicios/auditoria-seo-tecnica/',
+  },
+  {
+    nombre: 'Acompañamiento Mensual',
+    linea: 'Continuidad después de entregar. Se contrata cuando hay algo que sostener.',
+    precio: '$590.000/mes · $790.000/mes Pro',
+    href: '/servicios/acompanamiento-mensual/',
+  },
+  {
+    nombre: 'Gestión de Redes Sociales',
+    linea: 'Contenido con cadencia real, sostenido en hallazgos y no en jerga de venta.',
+    precio: '$390.000/mes · $590.000/mes con pauta',
+    href: '/servicios/redes-sociales/',
+  },
+  {
+    nombre: 'Paid Media',
+    linea: 'Google Ads de alta intención, con presupuesto controlado y los defaults desactivados.',
+    precio: '$350.000/mes · $550.000/mes Pro',
+    href: '/servicios/paid-media/',
+  },
+];
+
+const pasos = [
+  { n: '01', t: 'Miramos', d: 'Revisamos tu sitio, tu competencia y qué responde la IA cuando preguntan por tu rubro. Sale un documento de una página, no una reunión.' },
+  { n: '02', t: 'Priorizamos', d: 'De todo lo que se puede arreglar, decidimos qué mueve la aguja y qué puede esperar. Te decimos también lo que no necesitas.' },
+  { n: '03', t: 'Construimos', d: 'Diseño y desarrollo, con la estructura técnica incorporada. No es una capa que se agrega al final.' },
+  { n: '04', t: 'Medimos', d: 'Qué cambió y qué no. Si algo no rindió, se dice y se corrige.' },
+];
+
+const chequeos = [
+  'Estructura que Google puede leer',
+  'Datos estructurados (schema)',
+  'Respuestas que la IA puede citar',
+  'Velocidad real en móvil',
 ];
 ---
 
 <Layout
-  title="Maqueta C2 · composición corregida · exploración rebranding"
+  title="Maqueta C2 · home completa · exploración rebranding"
   description="Maqueta interna para decidir. No es una página publicada."
   bodyClass="bg-tinta-galeria font-texto"
 >
   <meta slot="head" name="robots" content="noindex, nofollow" />
 
-  <!-- NAV COMPACTA: un solo módulo, no píldoras repartidas por el ancho. -->
   <header class="fixed top-0 left-0 z-50 p-4 sm:p-5">
     <div class="flex items-stretch rounded-xl overflow-hidden bg-black/60 backdrop-blur border border-white/10">
       <a
@@ -52,8 +107,11 @@ const tira = [
       </a>
       <button
         type="button"
+        id="menu-btn"
         aria-label="Abrir menú"
-        class="px-4 border-l border-white/10 text-papel hover:bg-white/10 transition-colors flex items-center"
+        aria-expanded="false"
+        aria-controls="menu-overlay"
+        class="px-4 border-l border-white/10 text-papel hover:bg-white/10 transition-colors flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
       >
         <span aria-hidden="true" class="block w-5 space-y-[5px]">
           <span class="block h-[1.5px] bg-papel"></span>
@@ -63,32 +121,56 @@ const tira = [
     </div>
   </header>
 
+  <!-- Menú real. Antes el botón no hacía nada, y un botón muerto en la portada de quien
+       vende sitios es de las cosas que más caro salen. -->
+  <div
+    id="menu-overlay"
+    hidden
+    class="fixed inset-0 z-40 bg-tinta-galeria/95 backdrop-blur px-5 sm:px-8 pt-28 sm:pt-32 pb-10 overflow-y-auto"
+  >
+    <nav aria-label="Principal">
+      <ul class="list-none p-0 m-0">
+        {
+          menu.map((m) => (
+            <li class="border-b border-white/10">
+              <a
+                href={m.href}
+                data-menu-link
+                class="block py-5 sm:py-6 font-extrabold uppercase text-papel hover:text-white/60 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+                style="font-size:clamp(1.75rem,6vw,4rem); line-height:1; letter-spacing:-0.03em"
+              >
+                {m.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+
   <main class="text-papel">
-    <!-- TITULAR A TODO EL ANCHO. El tamaño lo manda el viewport, no una escala fija. -->
     <section class="px-4 sm:px-6 pt-32 sm:pt-40 md:pt-48 pb-7 md:pb-9">
       <h1
-        class="font-texto font-extrabold uppercase m-0"
+        class="font-extrabold uppercase m-0"
         style="font-size:clamp(2.25rem, 9.2vw, 11rem); line-height:0.86; letter-spacing:-0.035em"
       >
         Sitios que se<br />miran dos veces
       </h1>
     </section>
 
-    <!-- LA OBRA, EN LA PRIMERA PANTALLA. Cuatro piezas, sin marco, sin rótulo encima:
-         el color de la página lo pone el trabajo. -->
-    <section class="px-4 sm:px-6 pb-4">
+    <section id="obra" class="px-4 sm:px-6 pb-4 scroll-mt-24">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-2.5">
         {
           tira.map((t, i) => (
             <a
               href="#obra"
-              class="group relative block aspect-[3/4] overflow-hidden rounded-lg bg-white/[0.04]"
+              class="group relative block aspect-[3/4] overflow-hidden rounded-lg bg-white/[0.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
             >
               <img
                 src={t.src}
                 alt={t.alt}
-                width="1440"
-                height="1000"
+                width="900"
+                height="1200"
                 loading={i < 2 ? 'eager' : 'lazy'}
                 decoding="async"
                 class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
@@ -97,33 +179,232 @@ const tira = [
           ))
         }
       </div>
-      <!-- Honestidad: son cuatro vistas de UN proyecto, y se dice. -->
       <p class="mt-4 text-white/35 text-xs font-bold uppercase" style="letter-spacing:0.16em">
         Bernardo Combeau · fotografía de retrato · sitio y panel · cuatro vistas del mismo proyecto
       </p>
     </section>
 
-    <!-- Recién acá entra el texto. En la primera pantalla no compite con la obra. -->
-    <section class="px-4 sm:px-6 pt-28 md:pt-40 pb-28 md:pb-40">
-      <p class="text-white/60 text-xl md:text-2xl leading-relaxed max-w-prosa">
-        Diseñamos y construimos el sitio, y dejamos resuelto lo que decide si aparece en
-        Google y si la IA puede citarlo. Si ya tienes uno, no siempre hay que rehacerlo.
-        Primero hay que ver qué lo está dejando fuera.
+    <!-- QUIEBRE A PAPEL. Cambia el discurso: se pasa de mostrar a explicar. -->
+    <section class="bg-papel text-tinta-galeria mt-24 md:mt-36 px-4 sm:px-6 py-28 md:py-44">
+      <h2
+        class="font-extrabold uppercase m-0 max-w-[18ch]"
+        style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:-0.035em"
+      >
+        Un sitio bonito que nadie encuentra es un folleto caro
+      </h2>
+      <p class="mt-10 md:mt-14 text-tinta-galeria/70 text-xl md:text-2xl leading-relaxed max-w-prosa">
+        La mayoría de los sitios están escritos para personas y para Google. Hoy hay una
+        capa más: el motor que responde por tu rubro antes de que alguien llegue a tu
+        página. Si esa capa no puede leerte, no apareces en la respuesta.
+      </p>
+    </section>
+
+    <section id="servicios" class="bg-papel text-tinta-galeria px-4 sm:px-6 pb-28 md:pb-44 scroll-mt-24">
+      <h2
+        class="font-extrabold uppercase m-0 mb-4"
+        style="font-size:clamp(1.75rem, 4.4vw, 4.5rem); line-height:0.95; letter-spacing:-0.035em"
+      >
+        Servicios
+      </h2>
+      <p class="text-tinta-galeria/50 text-sm mb-10 md:mb-14">Valores en pesos, + IVA.</p>
+
+      <!-- Lista con reglas de pelo, no una grilla de tarjetas: la grilla de cajas idénticas
+           lee genérico, y acá el contenido es una lista de verdad. -->
+      <ul class="list-none p-0 m-0 border-t border-tinta-galeria/15">
+        {
+          servicios.map((s) => (
+            <li class="border-b border-tinta-galeria/15">
+              <a
+                href={s.href}
+                class="group block py-7 md:py-9 focus-visible:outline focus-visible:outline-2 focus-visible:outline-tinta-galeria"
+              >
+                <div class="flex flex-col lg:flex-row lg:items-baseline lg:justify-between gap-3 lg:gap-10">
+                  <span
+                    class="font-extrabold uppercase group-hover:opacity-55 transition-opacity flex-none"
+                    style="font-size:clamp(1.5rem,3.2vw,3rem); line-height:1; letter-spacing:-0.03em"
+                  >
+                    {s.nombre}
+                  </span>
+                  <span class="text-tinta-galeria/60 text-base leading-relaxed lg:flex-1 lg:max-w-[46ch]">
+                    {s.linea}
+                  </span>
+                  <span class="font-bold text-base lg:text-right flex-none whitespace-nowrap lg:whitespace-normal">
+                    {s.precio}
+                  </span>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <!-- VUELTA A TINTA. -->
+    <section id="metodo" class="px-4 sm:px-6 py-28 md:py-44 scroll-mt-24">
+      <h2
+        class="font-extrabold uppercase m-0 mb-12 md:mb-20 max-w-[14ch]"
+        style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:-0.035em"
+      >
+        Cómo trabajamos
+      </h2>
+      <ol class="list-none p-0 m-0 border-t border-white/10">
+        {
+          pasos.map((p) => (
+            <li class="border-b border-white/10 py-8 md:py-11 flex flex-col md:flex-row gap-4 md:gap-12">
+              <span class="text-white/30 font-bold text-sm flex-none md:w-16" style="letter-spacing:0.16em">
+                {p.n}
+              </span>
+              <span
+                class="font-extrabold uppercase flex-none md:w-[7em]"
+                style="font-size:clamp(1.375rem,2.6vw,2.25rem); line-height:1; letter-spacing:-0.03em"
+              >
+                {p.t}
+              </span>
+              <span class="text-white/55 text-lg leading-relaxed max-w-prosa">{p.d}</span>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <!-- LA PUERTA para quien ya tiene sitio. El panel va en su estado VACÍO real: no hay
+         resultados de ejemplo simulados. -->
+    <section id="chequeo" class="px-4 sm:px-6 pb-28 md:pb-44 scroll-mt-24">
+      <h2
+        class="font-extrabold uppercase m-0 max-w-[16ch]"
+        style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:-0.035em"
+      >
+        ¿Ya tienes sitio?
+      </h2>
+      <p class="mt-8 text-white/55 text-xl leading-relaxed max-w-prosa">
+        No siempre hay que rehacerlo. Escribe tu dominio y revisamos qué lo está dejando
+        fuera. El chequeo es gratis.
+      </p>
+
+      <div class="mt-12 border-t border-b border-white/15">
+        <form class="flex flex-col sm:flex-row sm:items-stretch" onsubmit="return false">
+          <label for="dominio" class="sr-only">Tu dominio</label>
+          <input
+            id="dominio"
+            name="dominio"
+            type="text"
+            inputmode="url"
+            autocomplete="url"
+            placeholder="tudominio.cl"
+            class="flex-1 bg-transparent font-mono text-2xl md:text-4xl text-papel placeholder:text-white/25 py-7 md:py-9 outline-none focus-visible:bg-white/[0.04] transition-colors"
+          />
+          <button
+            type="submit"
+            class="flex-none self-stretch sm:self-auto bg-papel hover:bg-white text-tinta-galeria text-sm font-bold px-8 my-4 sm:my-5 rounded-full transition-colors py-3.5 sm:py-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+          >
+            Revisar
+          </button>
+        </form>
+      </div>
+
+      <ul class="mt-8 grid gap-x-10 gap-y-3 sm:grid-cols-2 lg:grid-cols-4 list-none p-0 m-0">
+        {
+          chequeos.map((c) => (
+            <li class="flex items-baseline gap-3 font-mono text-sm text-white/50">
+              <span aria-hidden="true" class="text-white/25">—</span>
+              <span>{c}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <!-- CIERRE en papel. -->
+    <section class="bg-papel text-tinta-galeria px-4 sm:px-6 py-28 md:py-44">
+      <h2
+        class="font-extrabold uppercase m-0 max-w-[14ch]"
+        style="font-size:clamp(2.25rem, 8vw, 9rem); line-height:0.88; letter-spacing:-0.035em"
+      >
+        Conversemos tu proyecto
+      </h2>
+      <p class="mt-10 text-tinta-galeria/65 text-xl leading-relaxed max-w-prosa">
+        Cuéntanos qué necesitas y te decimos qué haríamos, en cuánto tiempo y cuánto cuesta.
+        Si lo que necesitas no es lo que vendemos, también te lo decimos.
       </p>
       <div class="mt-12 flex items-center gap-4 flex-wrap">
         <a
           href={CONTACTO}
-          class="rounded-full bg-papel hover:bg-white text-tinta-galeria text-sm font-bold px-7 py-3.5 transition-colors"
+          class="rounded-full bg-tinta-galeria hover:bg-black text-papel text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-tinta-galeria"
         >
-          Conversemos tu proyecto
+          Escríbenos
         </a>
         <a
-          href="/diagnostico/"
-          class="rounded-full border border-white/20 hover:border-papel text-papel text-sm font-bold px-7 py-3.5 transition-colors"
+          href="#chequeo"
+          class="rounded-full border border-tinta-galeria/25 hover:border-tinta-galeria text-tinta-galeria text-sm font-bold px-8 py-4 transition-colors"
         >
-          Ya tengo sitio, quiero ver qué lo frena
+          Prefiero el chequeo gratis
         </a>
       </div>
     </section>
   </main>
+
+  <footer class="px-4 sm:px-6 py-16 md:py-20 text-white/45 text-sm">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
+      <div>
+        <span class="font-wordmark text-2xl text-papel tracking-tight block">
+          SpindleLab<span class="text-gold">.</span>
+        </span>
+        <p class="mt-4 max-w-[34ch] leading-relaxed">
+          Estudio de diseño y SEO técnico en Santiago. Construimos el sitio y dejamos
+          resuelto lo que decide si aparece.
+        </p>
+      </div>
+      <ul class="list-none p-0 m-0 flex flex-wrap gap-x-7 gap-y-3">
+        {
+          menu.map((m) => (
+            <li>
+              <a href={m.href} class="hover:text-papel transition-colors">
+                {m.label}
+              </a>
+            </li>
+          ))
+        }
+        <li><a href="/privacidad/" class="hover:text-papel transition-colors">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const overlay = document.getElementById('menu-overlay');
+
+    if (btn && overlay) {
+      const abrir = () => {
+        overlay.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('aria-label', 'Cerrar menú');
+        document.body.style.overflow = 'hidden';
+        const primero = overlay.querySelector<HTMLAnchorElement>('[data-menu-link]');
+        primero?.focus();
+      };
+
+      const cerrar = ({ devolverFoco = true } = {}) => {
+        overlay.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Abrir menú');
+        document.body.style.overflow = '';
+        if (devolverFoco) btn.focus();
+      };
+
+      btn.addEventListener('click', () => {
+        if (overlay.hidden) abrir();
+        else cerrar();
+      });
+
+      // Al elegir un ancla el menú tiene que irse solo, o tapa justo lo que se acaba de
+      // pedir ver. Sin devolver el foco al botón: el foco sigue al destino.
+      overlay.querySelectorAll('[data-menu-link]').forEach((a) => {
+        a.addEventListener('click', () => cerrar({ devolverFoco: false }));
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !overlay.hidden) cerrar();
+      });
+    }
+  </script>
 </Layout>
