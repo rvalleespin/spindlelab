@@ -3,13 +3,13 @@
 // Vive solo en la rama claude/rebranding-webdev-exploracion. NO reemplaza a Hero.astro:
 // el hero actual queda intacto para poder comparar las dos versiones lado a lado.
 //
-// Dos decisiones que conviene revisar (están explicadas en el informe de la exploración):
-//
-// 1. EL DORADO DE ESTA VISTA lo lleva el punto final del titular. Por eso el punto del
-//    wordmark va en gris acá: la regla es un dorado por vista, y Nav.astro ya gasta el
-//    suyo en el punto del wordmark. Si se adopta, hay que elegir cuál de los dos lo lleva.
-//    (La home actual se salta la regla: el punto del wordmark Y la palabra «motor» van
-//    ambos en dorado en la primera pantalla.)
+// CORREGIDO (27-sep): el dorado va en el punto del wordmark, no en el del titular.
+// El manual §02 es explícito: el punto final del wordmark es SIEMPRE dorado y está
+// «prohibido: punto de otro color o apagado». La primera versión lo apagaba a gris para
+// gastar el dorado en el titular, y eso rompía la regla. Además, un carácter suelto
+// recoloreado solo para dar «gusto» es un tic reconocible de diseño generado.
+// La home actual sigue saltándose la otra mitad de la regla: el punto del wordmark Y la
+// palabra «motor» van ambos en dorado en la primera pantalla, o sea dos por vista.
 //
 // 2. EL CUERPO NO USA gris pluma #5D6673. Sobre tinta da 3,0:1 de contraste y AA pide
 //    4,5:1. El repo ya tenía resuelto esto con el «gris pluma elevado» #9AA4B0 (6,9:1),
@@ -21,7 +21,7 @@ import { CONTACTO } from '../consts';
   <!-- Barra superior mínima: el wordmark y nada más. Sin navegación, sin imágenes. -->
   <header class="px-6 sm:px-10 md:px-14 pt-10 md:pt-12">
     <a href="/" class="font-display text-xl md:text-2xl text-papel tracking-tight">
-      SpindleLab<span class="text-pluma">.</span>
+      SpindleLab<span class="text-gold">.</span>
     </a>
   </header>
 
@@ -34,7 +34,7 @@ import { CONTACTO } from '../consts';
       class="font-display font-normal text-fluid-2xl text-papel max-w-[15ch]"
       style="letter-spacing:-0.035em"
     >
-      Sitios web preparados para la IA<span class="text-gold">.</span>
+      Sitios web preparados para la IA.
     </h1>
   </div>
 

@@ -24,6 +24,12 @@ export default {
         tinta: '#131A22',
         papel: '#F7F5F0',
         pluma: '#5D6673',
+
+        // Solo dirección C (galería). Es una EXTENSIÓN de marca propuesta, no
+        // aprobada: negro cálido en vez del azulado #0E141B del sitio actual.
+        // Cambia porque el dorado sobre un negro frío tira a mostaza, y sobre
+        // este lee como dorado. Papel encima da 17,3:1 y el dorado 7,8:1.
+        'tinta-galeria': '#14110E',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],

@@ -1,0 +1,99 @@
+---
+// MAQUETA C — «Galería» · cada proyecto como objeto.
+// Lock principal: Cardan Made (lienzo saturado que convierte cada pieza en objeto de
+// galería, enmarcado generoso, registro editorial premium). Estructura de revista tomada
+// de Beans Agency: cada caso es un reportaje, no una tarjeta de grilla.
+// Se conserva: lienzo con color propio, marco/paspartú amplio, la pieza como objeto.
+// Se rechaza: el #0E141B azulado del sitio actual (repetirlo no sería un giro), tarjetas
+// con sombra, grilla de miniaturas.
+//
+// EL GIRO DE COLOR, dicho claro: el lienzo NO es el negro del sitio de hoy. Es negro
+// CÁLIDO (#14110E). Sobre un negro frío el dorado de marca tira a mostaza; sobre este
+// lee como dorado. Es una extensión de paleta PROPUESTA: no está en el manual y habría
+// que aprobarla. Contraste verificado: papel 17,3:1 y dorado 7,8:1 sobre este fondo.
+import Layout from '../../layouts/Layout.astro';
+import { CONTACTO } from '../../consts';
+---
+
+<Layout
+  title="Maqueta C · Galería · exploración rebranding"
+  description="Maqueta interna para decidir. No es una página publicada."
+  bodyClass="bg-tinta-galeria"
+>
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+
+  <header class="px-6 sm:px-10 py-6 flex items-center justify-between">
+    <a href="/" class="font-display text-xl text-papel tracking-tight">
+      SpindleLab<span class="text-gold">.</span>
+    </a>
+    <a href={CONTACTO} class="text-papel text-sm font-semibold hover:opacity-60 transition-opacity">
+      Contacto
+    </a>
+  </header>
+
+  <main class="text-papel">
+    <section class="px-6 sm:px-10 pt-24 md:pt-32 pb-20 md:pb-28">
+      <p class="text-white/40 text-xs font-semibold uppercase" style="letter-spacing:0.14em">
+        Obra · 2026
+      </p>
+      <h1
+        class="mt-7 font-display font-normal text-fluid-2xl max-w-[13ch]"
+        style="letter-spacing:-0.035em; text-wrap:balance"
+      >
+        Sitios que se miran dos veces.
+      </h1>
+    </section>
+
+    <!-- La pieza como objeto: paspartú de papel, márgenes anchos, nada encima. -->
+    <figure class="m-0 px-6 sm:px-12 lg:px-24 pb-8">
+      <div class="bg-papel p-3 sm:p-5 md:p-8">
+        <div class="relative w-full aspect-[16/10] overflow-hidden bg-tinta">
+          <img
+            src="/mockup-interno/proyecto-bernardo.png"
+            alt="Sitio de Bernardo Combeau, fotógrafo de retrato en Santiago, diseñado y construido por SpindleLab"
+            width="1440"
+            height="1000"
+            decoding="async"
+            class="absolute inset-0 w-full h-full object-cover object-top"
+          />
+        </div>
+      </div>
+      <figcaption
+        class="pt-6 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2"
+      >
+        <span class="font-display text-lg md:text-xl text-papel">Bernardo Combeau</span>
+        <span class="text-white/40 text-xs font-semibold uppercase" style="letter-spacing:0.14em">
+          Fotografía de retrato · sitio y panel · Santiago
+        </span>
+      </figcaption>
+    </figure>
+
+    <section class="px-6 sm:px-10 pt-24 md:pt-36 pb-32 md:pb-48">
+      <p
+        class="font-display font-normal text-fluid-xl max-w-[19ch]"
+        style="letter-spacing:-0.03em; text-wrap:balance"
+      >
+        Y que además los encuentran.
+      </p>
+      <p class="mt-8 text-white/55 text-lg md:text-xl leading-relaxed max-w-prosa">
+        Diseñamos y construimos el sitio, y dejamos resuelta la estructura que decide si
+        aparece en Google y si la IA puede citarlo. Si ya tienes sitio, no siempre hay que
+        rehacerlo. Primero hay que ver qué lo está dejando fuera.
+      </p>
+      <div class="mt-12 flex items-center gap-7 flex-wrap">
+        <a
+          href={CONTACTO}
+          class="bg-papel hover:bg-white text-tinta-galeria text-sm font-semibold px-7 py-3.5 rounded-full transition-colors"
+        >
+          Conversemos tu proyecto
+        </a>
+        <a
+          href="/diagnostico/"
+          class="text-white/55 text-sm font-semibold underline underline-offset-4 decoration-white/25 hover:text-papel hover:decoration-papel transition-colors"
+        >
+          Ya tengo sitio, quiero ver qué lo frena
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>

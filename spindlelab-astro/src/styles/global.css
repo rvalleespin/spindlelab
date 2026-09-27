@@ -61,11 +61,18 @@ body {
   margin: 0;
   max-width: 100%;
   overflow-x: clip;
-  background: var(--bg);
   color: var(--fg);
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* El fondo va SOLO en el <body>, no en el <html>. Si los dos lo declaran, el lienzo de
+   la página lo pinta el <html> y gana siempre: una página de fondo claro quedaba con una
+   franja azulada del tema oscuro asomando bajo el contenido y en el rebote del scroll.
+   Declarado solo acá, el lienzo hereda del body y cada página manda sobre su fondo. */
+body {
+  background: var(--bg);
 }
 
 /* Aparición al hacer scroll (reveal). Vanilla + IntersectionObserver. */

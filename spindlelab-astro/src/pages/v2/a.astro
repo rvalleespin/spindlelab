@@ -1,0 +1,94 @@
+---
+// MAQUETA A — «Papel» · el trabajo manda.
+// Lock principal: driftime.com (verificado, no de memoria): lienzo CLARO, fotografía
+// de gran formato con texto mínimo encima, copy corto, el portafolio funcionando como
+// prueba de capacidad. Detalle prestado de Colin Morella: una sola pieza a sangre que
+// ocupa la pantalla en vez de una grilla de tarjetas.
+// Se conserva: lienzo claro, imagen primero, texto mínimo, formato ancho, aire generoso.
+// Se rechaza: lienzo oscuro (es el sitio actual, no un giro), tarjetas, dorado decorativo.
+// Proporción del manual §04: papel ~70 / tinta ~25 / dorado 1-2 %. Acá se cumple.
+import Layout from '../../layouts/Layout.astro';
+import { CONTACTO } from '../../consts';
+---
+
+<Layout
+  title="Maqueta A · Papel · exploración rebranding"
+  description="Maqueta interna para decidir. No es una página publicada."
+  bodyClass="bg-papel"
+>
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+
+  <header class="fixed top-0 inset-x-0 z-50 px-6 sm:px-10 py-6 flex items-center justify-between">
+    <a href="/" class="font-display text-xl text-tinta tracking-tight">
+      SpindleLab<span class="text-gold">.</span>
+    </a>
+    <a href={CONTACTO} class="text-tinta text-sm font-semibold hover:opacity-60 transition-opacity">
+      Contacto
+    </a>
+  </header>
+
+  <main class="text-tinta">
+    <!-- Bloque de entrada: corto a propósito. En la referencia el texto no compite
+         con el trabajo, lo presenta y se aparta. -->
+    <section class="px-6 sm:px-10 pt-32 md:pt-40 pb-12 md:pb-16">
+      <p class="text-pluma text-xs font-semibold uppercase" style="letter-spacing:0.14em">
+        Estudio de diseño y SEO técnico · Santiago
+      </p>
+      <h1
+        class="mt-7 font-display font-normal text-fluid-xl max-w-[20ch]"
+        style="letter-spacing:-0.03em; text-wrap:balance"
+      >
+        Hacemos el sitio. Y&nbsp;que lo encuentren.
+      </h1>
+    </section>
+
+    <!-- El trabajo, a sangre. Es el héroe real de esta dirección. -->
+    <figure class="m-0">
+      <div class="relative w-full aspect-[16/10] md:aspect-[16/8] overflow-hidden bg-tinta">
+        <img
+          src="/mockup-interno/proyecto-bernardo.png"
+          alt="Sitio de Bernardo Combeau, fotógrafo de retrato en Santiago, diseñado y construido por SpindleLab"
+          width="1440"
+          height="1000"
+          decoding="async"
+          class="absolute inset-0 w-full h-full object-cover object-top"
+        />
+      </div>
+      <figcaption
+        class="px-6 sm:px-10 pt-5 pb-24 md:pb-32 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2"
+      >
+        <span class="font-display text-lg md:text-xl">Bernardo Combeau · fotografía de retrato</span>
+        <span class="text-pluma text-sm">Sitio completo y panel de administración · 2026</span>
+      </figcaption>
+    </figure>
+
+    <!-- Segundo tiempo: la proposición, una sola vez, con aire. -->
+    <section class="px-6 sm:px-10 pb-32 md:pb-48">
+      <p
+        class="font-display font-normal text-fluid-xl max-w-[20ch]"
+        style="letter-spacing:-0.03em; text-wrap:balance"
+      >
+        Un sitio bonito que nadie encuentra es un folleto caro.
+      </p>
+      <p class="mt-8 text-pluma text-lg md:text-xl leading-relaxed max-w-prosa">
+        Construimos el sitio y dejamos resuelto lo que decide si aparece: la estructura que
+        Google entiende y la que ChatGPT, Gemini y Perplexity pueden citar. Si ya tienes
+        sitio, no siempre hay que rehacerlo. Primero hay que ver qué lo está dejando fuera.
+      </p>
+      <div class="mt-12 flex items-center gap-7 flex-wrap">
+        <a
+          href={CONTACTO}
+          class="bg-tinta hover:bg-black text-papel text-sm font-semibold px-7 py-3.5 rounded-full transition-colors"
+        >
+          Conversemos tu proyecto
+        </a>
+        <a
+          href="/diagnostico/"
+          class="text-tinta text-sm font-semibold underline underline-offset-4 decoration-pluma hover:decoration-tinta transition-colors"
+        >
+          Ya tengo sitio, quiero ver qué lo frena
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
