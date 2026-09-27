@@ -1527,6 +1527,27 @@ console.log('=== 32. el verde de cookies dice lo que sabe, y no más ===');
     /no corrió ningún rastreador\./.test(elAviso.detalle));
   cierto('sino ninguno de los que buscamos', /que buscamos/.test(elAviso.detalle));
 
+  // EL CUARTO DE LA FAMILIA (27-sep). Con la carga a medias Y un aviso visible, este ítem era
+  // el ÚNICO verde de la pantalla y afirmaba sobre la carga, que es justo lo que los otros
+  // tres items declaran desconocido tres líneas más arriba. El caso no existía en el banco:
+  // los cinco prospectos con `parcial` del §31 no tienen banner, así que nadie construyó el
+  // par. Eso es lo que lo dejó pasar cuatro rondas.
+  const aMediasConAviso = m.armarInforme({ ...limpio, parcial: true, aviso: avisoDeTerrado }, 'uhc.cl');
+  const avisoAMedias = aMediasConAviso.items.find((i) => i.id === 'aviso');
+  eq('con la carga a medias el aviso sigue en verde, porque se ve con los ojos',
+    avisoAMedias.estado, 'ok');
+  falso('pero ya NO afirma nada sobre lo que corrió',
+    /no corrió ning/.test(avisoAMedias.detalle));
+  cierto('y dice con todas sus letras que eso quedó sin confirmar',
+    /no terminó de cargar/.test(avisoAMedias.detalle) && /sin confirmar/.test(avisoAMedias.detalle));
+
+  // El invariante que faltaba, y que habría cazado los cuatro: en un informe a medias, ningún
+  // verde puede afirmar sobre la carga. No importa cuál sea el ítem ni quién lo escriba.
+  for (const it of aMediasConAviso.items.filter((i) => i.estado === 'ok')) {
+    falso('ningún verde del informe a medias afirma sobre la carga: ' + it.id,
+      /no corrió ning|no vimos cargar|no dejó ning|no guardó nada/.test(it.detalle));
+  }
+
   /* --- 3. el falso verde medido: rastreo de primera parte ---------- */
   const conRastreoPropio = (dominioCookie) => {
     const extra = rastreoNoReconocido.map((n) => ({ name: n, domain: dominioCookie }));
