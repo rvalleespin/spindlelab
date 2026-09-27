@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- PIEZA DE CONCEPTO. Raigal no existe. Ver ../ficha.md
+     noindex a propósito: esto no puede aparecer en un buscador como si fuera una
+     clínica real. El rubro es salud; un sitio sanitario ficticio indexado es un
+     problema, no un portafolio. -->
+<meta name="robots" content="noindex, nofollow">
+
+<title>Raigal · Implantología y rehabilitación oral</title>
+<meta name="description" content="Implantes dentales y rehabilitación oral en Santiago. Evaluación con escáner 3D, rangos de precio publicados y las respuestas a lo que realmente se pregunta antes de decidir.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap">
+
+<style>
+/* ==========================================================================
+   RAIGAL — sistema visual
+   ==========================================================================
+   La idea que lo ordena: EL PROCEDIMIENTO ES FRÍO; LA DECISIÓN NO.
+   De ahí el contraste del sistema. El lienzo es hueso cálido, que es la parte
+   humana: alguien con miedo leyendo de noche. El acero frío está reservado a lo
+   técnico (medidas, etapas, datos) y no se usa en ningún otro lado.
+
+   Referencia (investigada con Refero antes de componer, ver ficha.md):
+   leandra-isler.ch da la base — lienzo cálido, tipografía enorme, aire.
+   spacelab.co.uk da la fotografía como bloque de borde vivo.
+   abetterlou.com da el acento único y la autoridad tranquila.
+
+   Rechazado a propósito: el azul sanitario, la tarjeta pastel redondeada, la foto
+   recortada en círculo y el dentista de stock sonriendo. Es el aspecto del 90% del
+   rubro, y por eso todos se ven iguales.
+
+   Contraste verificado con cálculo, no a ojo:
+     tinta sobre hueso 14,49:1 · acero sobre hueso 5,97:1 · hueso sobre tinta 14,49:1
+     hueso sobre acero 5,97:1 · acero sobre blanco 7,63:1
+   ========================================================================== */
+
+:root{
+  --hueso:#E9E3D7;      /* lienzo */
+  --hueso-2:#DDD5C6;    /* superficie más profunda */
+  --blanco:#FFFFFF;     /* el documento */
+  --tinta:#16130F;      /* texto y secciones oscuras */
+  --tinta-70:#5A554E;   /* secundario sobre hueso, 5,78:1 */
+  --acero:#46565E;      /* SOLO lo técnico */
+  --acero-claro:#9FB0B8;/* técnico sobre fondo oscuro, 8,27:1 */
+  --linea:rgba(22,19,15,.16);
+  --display:'Archivo', system-ui, sans-serif;
+  --cuerpo:'Newsreader', Georgia, serif;
+  --medianil:clamp(20px, 5vw, 64px);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--hueso); color:var(--tinta);
+  font-family:var(--cuerpo); font-size:19px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+.envoltura{padding-inline:var(--medianil)}
+.limite{max-width:1240px;margin:0 auto}
+
+/* ---- tipografía ------------------------------------------------------- */
+.display{
+  font-family:var(--display); font-weight:800; text-transform:none;
+  line-height:.92; letter-spacing:-.03em; margin:0;
+}
+h1.display{font-size:clamp(3rem, 11vw, 9.5rem)}
+h2.display{font-size:clamp(2rem, 5.5vw, 4.25rem); line-height:.96}
+h3{font-family:var(--display); font-weight:600; font-size:1.25rem; line-height:1.25; margin:0; letter-spacing:-.01em}
+
+/* El rótulo técnico: única tipografía en caja alta del sistema, y va en acero.
+   Marca lo que es dato, no lo que es discurso. */
+.rotulo{
+  font-family:var(--display); font-weight:600; font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.18em; color:var(--acero); margin:0;
+}
+.bajada{font-size:clamp(1.15rem,2vw,1.5rem); line-height:1.5; font-weight:300; max-width:34ch; margin:0}
+p{margin:0 0 1em; max-width:64ch}
+p:last-child{margin-bottom:0}
+
+/* ---- aviso de pieza de concepto ---------------------------------------
+   Va arriba del todo y sin scroll a propósito: si alguien captura la primera
+   pantalla, el aviso sale en la captura. Esa es la regla de la serie. */
+.aviso{
+  background:var(--tinta); color:var(--hueso);
+  font-family:var(--display); font-weight:500; font-size:.82rem; line-height:1.5;
+  padding:12px var(--medianil);
+}
+.aviso b{font-weight:800}
+.aviso span{color:var(--acero-claro)}
+
+/* ---- barra ------------------------------------------------------------- */
+.barra{
+  display:flex; align-items:baseline; justify-content:space-between; gap:24px;
+  padding-block:28px; border-bottom:1px solid var(--linea); flex-wrap:wrap;
+}
+.marca{font-family:var(--display); font-weight:800; font-size:1.35rem; letter-spacing:-.04em}
+.barra nav{display:flex; gap:clamp(14px,2.5vw,30px); flex-wrap:wrap}
+.barra nav a{
+  font-family:var(--display); font-weight:500; font-size:.9rem;
+  text-decoration:none; padding-bottom:2px; border-bottom:1px solid transparent;
+}
+.barra nav a:hover{border-bottom-color:var(--tinta)}
+
+/* ---- grano de papel ---------------------------------------------------
+   Una capa de ruido fijo, casi invisible, sobre todo el documento. Es la
+   diferencia entre un lienzo hueso y un rectángulo beige: sin esto la página
+   se lee plana, que es justo el aspecto de plantilla que hay que evitar. */
+body::before{
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:.32;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
+
+/* ---- el dibujo técnico -------------------------------------------------
+   No es una ilustración decorativa: es el corte que un paciente pide ver y que
+   ninguna clínica del rubro publica. Va en acero porque es la parte fría. */
+.corte{width:100%; max-width:340px; height:auto; display:block; margin-left:auto} /* acotado: es un instrumento de precisión, no un cartel */
+.corte .anot{font-family:var(--display); font-weight:600; font-size:11px; letter-spacing:.1em; text-transform:uppercase; fill:var(--acero)}
+.corte .anot-t{font-family:var(--display); font-weight:800; font-size:14px; letter-spacing:-.01em; fill:var(--acero); text-transform:none}
+.corte .cota{stroke:var(--acero); stroke-width:1; fill:none}
+.corte .guia{stroke:var(--acero); stroke-width:1; stroke-dasharray:2 3; fill:none; opacity:.55}
+
+/* ---- línea de tiempo a escala -----------------------------------------
+   Las anchuras son proporcionales a la duración real. Ese es el argumento de
+   la sección: mirando la barra se entiende sin leer que la espera es el 85%. */
+.tiempo{display:flex; width:100%; margin-top:14px; border:1px solid rgba(233,227,215,.4)}
+.tiempo div{padding:14px 12px; border-right:1px solid rgba(233,227,215,.4); min-width:0}
+.tiempo div:last-child{border-right:0}
+.tiempo .et{font-family:var(--display); font-weight:600; font-size:.78rem; line-height:1.2; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.tiempo .du{font-family:var(--display); font-weight:400; font-size:.72rem; display:block; margin-top:4px; white-space:nowrap}
+.tiempo .larga{background:rgba(233,227,215,.16); color:#FFFFFF} /* blanco: el realce aclara el acero y la crema caia a 4,22:1 */
+.escala{display:flex; margin-top:6px; font-family:var(--display); font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--hueso)} /* sin opacidad: a .6 daba 3,27:1 */
+
+/* ---- secciones --------------------------------------------------------- */
+section{padding-block:clamp(72px, 11vw, 168px)}
+.oscura{background:var(--tinta); color:var(--hueso)}
+.oscura .rotulo, footer .rotulo{color:var(--acero-claro)}
+.oscura .linea{border-color:rgba(233,227,215,.22)}
+.tecnica{background:var(--acero); color:var(--hueso)}
+.tecnica .rotulo{color:var(--hueso)}
+.documento{background:var(--blanco)}
+
+.rejilla{display:grid; gap:clamp(28px,4vw,56px)}
+@media(min-width:860px){
+  .doce{grid-template-columns:repeat(12,1fr)}
+  .mitad{grid-template-columns:1fr 1fr}
+  .tercios{grid-template-columns:repeat(3,1fr)}
+}
+.linea{border-top:1px solid var(--linea); padding-top:18px}
+
+/* ---- arancel -----------------------------------------------------------
+   Formato de lista de precios: concepto a la izquierda, valor a la derecha,
+   filete entre filas. Es como se lee un documento de honorarios, y es lo
+   contrario de tres tarjetas idénticas centradas. */
+.arancel{margin:clamp(36px,5vw,64px) 0 0}
+.arancel > div{
+  display:grid; gap:6px 32px; padding:26px 0;
+  border-top:1px solid rgba(233,227,215,.22); align-items:baseline;
+}
+.arancel > div:last-child{border-bottom:1px solid rgba(233,227,215,.22)}
+@media(min-width:760px){ .arancel > div{grid-template-columns:1fr auto} }
+.arancel dt{margin:0}
+.arancel .it{display:block; font-family:var(--display); font-weight:600; font-size:1.2rem; letter-spacing:-.01em}
+.arancel .de{display:block; margin-top:6px; font-size:.95rem; opacity:.78; max-width:52ch}
+.arancel dd{
+  margin:0; font-family:var(--display); font-weight:800; letter-spacing:-.02em;
+  font-size:clamp(1.25rem,2.2vw,1.7rem); white-space:nowrap;
+}
+@media(min-width:760px){ .arancel dd{text-align:right} }
+.arancel dd i{font-style:normal; font-weight:500; opacity:.55; font-size:.8em}
+.arancel dd small{
+  display:block; font-family:var(--cuerpo); font-weight:400; font-size:.82rem;
+  letter-spacing:0; opacity:.7; margin-top:5px; white-space:normal;
+}
+.arancel .destacada .it{color:#FFFFFF}
+.arancel .destacada dd{color:#FFFFFF}
+
+/* ---- el bloque de precio ---------------------------------------------- */
+.precio{font-family:var(--display); font-weight:800; font-size:clamp(1.3rem,2.4vw,1.85rem); letter-spacing:-.02em; margin:10px 0 0}
+.precio small{display:block; font-family:var(--cuerpo); font-weight:400; font-size:.85rem; color:var(--tinta-70); letter-spacing:0; margin-top:4px}
+.documento .precio small{color:var(--tinta-70)}
+
+/* ---- botón: rectangular, nunca píldora -------------------------------- */
+.boton{
+  display:inline-block; background:var(--tinta); color:var(--hueso);
+  font-family:var(--display); font-weight:600; font-size:.92rem;
+  text-decoration:none; padding:16px 28px; border:1px solid var(--tinta);
+}
+.boton:hover{background:transparent; color:var(--tinta)}
+.oscura .boton{background:var(--hueso); color:var(--tinta); border-color:var(--hueso)}
+.oscura .boton:hover{background:transparent; color:var(--hueso)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--acero); outline-offset:3px}
+.oscura a:focus-visible,.oscura summary:focus-visible{outline-color:var(--acero-claro)}
+
+/* ---- preguntas (el motor AEO) ------------------------------------------ */
+details{border-top:1px solid var(--linea); padding:22px 0}
+.oscura details{border-top-color:rgba(233,227,215,.22)}
+summary{
+  font-family:var(--display); font-weight:600; font-size:1.1rem; cursor:pointer;
+  list-style:none; display:flex; justify-content:space-between; gap:18px; align-items:baseline;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+'; font-weight:500; color:var(--acero); flex:none}
+.oscura summary::after{color:var(--acero-claro)}
+details[open] summary::after{content:'–'}
+details p{margin-top:14px; font-size:1rem}
+
+/* ---- diagrama de etapas ------------------------------------------------ */
+.etapas{list-style:none; padding:0; margin:0; display:grid; gap:2px; counter-reset:e}
+@media(min-width:860px){.etapas{grid-template-columns:repeat(4,1fr)}}
+.etapas li{background:rgba(233,227,215,.1); padding:26px 22px}
+.etapas .rotulo{margin-bottom:12px}
+.etapas h3{margin-bottom:8px}
+.etapas p{font-size:.95rem; margin:0; color:var(--hueso)} /* sin opacidad: a .82 daba 3,96:1 */
+.plazo{font-family:var(--display); font-weight:800; font-size:1.6rem; letter-spacing:-.02em; margin-top:14px; color:var(--hueso)}
+
+.limites{list-style:none; padding:0; margin:0; display:grid; gap:2px}
+.limites li{background:rgba(22,19,15,.05); padding:24px}
+.documento .limites li{background:var(--hueso)}
+.limites h3{margin-bottom:8px}
+.limites p{font-size:.95rem; margin:0; color:var(--tinta-70)}
+
+footer{background:var(--tinta); color:var(--hueso); padding-block:64px}
+footer a{text-decoration:none; border-bottom:1px solid rgba(233,227,215,.4)}
+.pie-aviso{margin-top:40px; padding-top:20px; border-top:1px solid rgba(233,227,215,.22); font-size:.85rem; color:var(--acero-claro); max-width:70ch}
+</style>
+
+<!-- ==========================================================================
+     LA CAPA AEO — esto es lo que la competencia del rubro no hace.
+     Grafo completo: el negocio como Dentist (subtipo de MedicalBusiness), el
+     procedimiento como MedicalProcedure, la profesional como Person con sus
+     credenciales, y el FAQPage con las preguntas largas y reales. Es lo que
+     permite que un motor de IA cite a la clínica en vez de describirla de memoria.
+     Los datos son ficticios porque la clínica lo es.
+     ========================================================================== -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Dentist",
+      "@id":"https://raigal.example/#clinica",
+      "name":"Raigal",
+      "description":"Clínica de implantología y rehabilitación oral en Santiago de Chile. Atiende exclusivamente casos de pérdida dentaria y rehabilitación sobre implantes.",
+      "medicalSpecialty":"Dentistry",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Avenida Nueva Providencia 1234, oficina 802",
+        "addressLocality":"Providencia",
+        "addressRegion":"Región Metropolitana",
+        "postalCode":"7500000",
+        "addressCountry":"CL"
+      },
+      "areaServed":{"@type":"City","name":"Santiago"},
+      "availableLanguage":"es",
+      "employee":{"@id":"https://raigal.example/#irene-solar"},
+      "availableService":{"@id":"https://raigal.example/#implante-unitario"},
+      "priceRange":"$$$"
+    },
+    {
+      "@type":"Person",
+      "@id":"https://raigal.example/#irene-solar",
+      "name":"Irene Solar de Pablo",
+      "jobTitle":"Cirujano dentista, especialista en implantología oral",
+      "worksFor":{"@id":"https://raigal.example/#clinica"},
+      "alumniOf":{"@type":"CollegeOrUniversity","name":"Universidad de Chile"},
+      "hasCredential":{
+        "@type":"EducationalOccupationalCredential",
+        "credentialCategory":"Especialidad",
+        "name":"Especialista en Implantología Buco Maxilofacial"
+      },
+      "knowsAbout":["Implantología oral","Injerto óseo","Rehabilitación sobre implantes","Carga inmediata"]
+    },
+    {
+      "@type":"MedicalProcedure",
+      "@id":"https://raigal.example/#implante-unitario",
+      "name":"Implante dental unitario",
+      "procedureType":"https://schema.org/SurgicalProcedure",
+      "bodyLocation":"Maxilar o mandíbula",
+      "howPerformed":"Instalación quirúrgica de un implante de titanio en el hueso maxilar, seguida de un período de oseointegración y la posterior instalación de un pilar y una corona definitiva.",
+      "preparation":"Evaluación clínica con escáner 3D (CBCT) para medir volumen y densidad ósea, y revisión de antecedentes médicos.",
+      "followup":"Controles a la semana, al mes y a los seis meses. Higiene y control anual de por vida.",
+      "expectedPrognosis":"La literatura reporta tasas de supervivencia sobre el 95% a diez años en pacientes sin factores de riesgo. No es una garantía individual."
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://raigal.example/#faq",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"¿Cuánto cuesta un implante dental en Santiago?",
+          "acceptedAnswer":{"@type":"Answer","text":"Un implante unitario completo, que incluye el implante de titanio, el pilar y la corona definitiva, va entre $850.000 y $1.200.000. La diferencia la hace el tipo de corona y si el caso necesita injerto óseo previo, que se cotiza aparte entre $250.000 y $600.000. Una rehabilitación completa de un maxilar sobre implantes va entre $4.500.000 y $8.000.000."}
+        },
+        {
+          "@type":"Question",
+          "name":"¿Qué pasa si no tengo hueso suficiente para un implante?",
+          "acceptedAnswer":{"@type":"Answer","text":"Es frecuente cuando la pieza se perdió hace años, porque el hueso que sostenía la raíz se reabsorbe al quedar sin función. La solución habitual es un injerto óseo previo, que agrega entre cuatro y seis meses al tratamiento. El escáner 3D de la evaluación mide el volumen disponible y define si se necesita antes de comprometer cualquier plazo."}
+        },
+        {
+          "@type":"Question",
+          "name":"¿Me puedo poner un implante si fumo?",
+          "acceptedAnswer":{"@type":"Answer","text":"Se puede, con más riesgo. El tabaco reduce la irrigación de la encía y está asociado a una tasa de fracaso más alta, sobre todo en los primeros meses de oseointegración. No es una contraindicación absoluta, pero sí cambia el pronóstico y hay que conversarlo antes y no después."}
+        },
+        {
+          "@type":"Question",
+          "name":"¿Cuánto se demora todo el tratamiento de un implante?",
+          "acceptedAnswer":{"@type":"Answer","text":"Un caso sin complicaciones toma entre cuatro y seis meses desde la instalación hasta la corona definitiva. La mayor parte de ese tiempo es oseointegración, que es el hueso uniéndose al implante y no depende de la técnica sino de la biología. Si el caso necesita injerto óseo, se suman cuatro a seis meses más."}
+        },
+        {
+          "@type":"Question",
+          "name":"¿Duele ponerse un implante dental?",
+          "acceptedAnswer":{"@type":"Answer","text":"La cirugía se hace con anestesia local y no duele mientras ocurre. El postoperatorio de un implante unitario suele ser menor al de una extracción: molestia e inflamación por dos o tres días, manejables con analgésicos comunes. Los casos con injerto son más molestos y se advierte antes."}
+        },
+        {
+          "@type":"Question",
+          "name":"¿Cuánto dura un implante dental?",
+          "acceptedAnswer":{"@type":"Answer","text":"El implante de titanio, si oseointegra bien y se mantiene la higiene, puede durar décadas. La corona que va encima es la que se desgasta y suele reemplazarse entre los diez y los quince años. Nadie puede garantizar un plazo individual: depende de higiene, hábitos, salud general y control periódico."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<!-- ======================= AVISO DE PIEZA DE CONCEPTO ======================= -->
+<div class="aviso">
+  <b>Pieza de concepto.</b> Raigal no existe: no es una clínica real, no es un cliente y
+  nada de lo que se dice acá ocurrió. <span>Ejercicio de SpindleLab para mostrar cómo
+  trabaja un sitio de salud. Los profesionales, direcciones y precios son ficticios.</span>
+</div>
+
+<header class="envoltura">
+  <div class="limite barra">
+    <span class="marca">Raigal</span>
+    <nav>
+      <a href="#procedimiento">El procedimiento</a>
+      <a href="#valores">Valores</a>
+      <a href="#especialista">La especialista</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#contacto">Evaluación</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="envoltura" style="padding-block:clamp(56px,8vw,120px)">
+    <div class="limite">
+      <p class="rotulo">Implantología y rehabilitación oral · Santiago</p>
+      <h1 class="display" style="margin-top:28px">Volver a morder.</h1>
+
+      <div class="rejilla doce" style="margin-top:clamp(40px,6vw,80px); align-items:end">
+        <div style="grid-column:span 5">
+          <p class="bajada">
+            Reponemos piezas perdidas con implantes de titanio. Un solo tipo de problema,
+            resuelto a fondo, con el plazo y el valor dichos antes de empezar.
+          </p>
+          <p style="margin-top:28px">
+            <a class="boton" href="#contacto">Agendar evaluación</a>
+          </p>
+        </div>
+        <div style="grid-column:span 7">
+          <svg class="corte" viewBox="0 0 470 600" role="img" aria-labelledby="ct cd">
+            <title id="ct">Corte de un implante dental instalado en el hueso</title>
+            <desc id="cd">Dibujo técnico en sección: corona, pilar, implante de titanio roscado y las dos capas del hueso, con las medidas habituales anotadas.</desc>
+            <defs>
+              <pattern id="trabecular" width="13" height="13" patternUnits="userSpaceOnUse">
+                <circle cx="3" cy="3" r="1.15" fill="#B9AE97" opacity=".85"/>
+                <circle cx="9.5" cy="8.5" r="1.15" fill="#B9AE97" opacity=".85"/>
+              </pattern>
+            </defs>
+
+            <!-- hueso: cortical arriba, trabecular debajo -->
+            <rect x="52" y="232" width="300" height="300" fill="#DDD5C6"/>
+            <rect x="52" y="232" width="300" height="300" fill="url(#trabecular)"/>
+            <rect x="52" y="208" width="300" height="26" fill="#C9BFA9"/>
+            <!-- encía -->
+            <path d="M52 208 q42 -22 96 -22 h112 q54 0 96 22 z" fill="#D2C0B0"/>
+
+            <!-- corona -->
+            <path d="M172 76 q30 -16 60 0 q14 34 10 78 q-2 22 -40 22 q-38 0 -40 -22 q-4 -44 10 -78 z"
+                  fill="#FFFFFF" stroke="#16130F" stroke-width="1.4"/>
+            <!-- pilar -->
+            <path d="M188 176 h28 l-3 32 h-22 z" fill="#5E7078"/>
+
+            <!-- implante: cuerpo cónico + rosca -->
+            <path d="M184 208 h36 l-5 172 q-13 14 -26 0 z" fill="#46565E"/>
+            <g stroke="#E9E3D7" stroke-width="1.5" opacity=".55">
+              <path d="M185 224 h34"/><path d="M186 241 h32"/><path d="M187 258 h30"/>
+              <path d="M188 275 h28"/><path d="M188 292 h27"/><path d="M189 309 h25"/>
+              <path d="M190 326 h23"/><path d="M191 343 h21"/><path d="M192 360 h19"/>
+            </g>
+            <path d="M196 208 h12 v22 h-12 z" fill="#2E3A40"/>
+
+            <!-- cotas -->
+            <g class="cota">
+              <path d="M184 404 h36"/><path d="M184 400 v8"/><path d="M220 400 v8"/>
+              <path d="M396 208 v172"/><path d="M392 208 h8"/><path d="M392 380 h8"/>
+            </g>
+            <text class="anot-t" x="202" y="428" text-anchor="middle">4,1 mm</text>
+            <text class="anot-t" x="404" y="298" >10 mm</text>
+
+            <!-- guías y rótulos -->
+            <g class="guia">
+              <path d="M232 112 h150"/><path d="M216 192 h166"/>
+              <path d="M240 220 h142"/><path d="M290 300 h92"/>
+            </g>
+            <text class="anot" x="388" y="116">Corona</text>
+            <text class="anot" x="388" y="196">Pilar</text>
+            <text class="anot" x="388" y="224">Hueso cortical</text>
+            <text class="anot" x="388" y="304">Rosca</text>
+            <!-- leyenda: muestra de color + nombre, como en un plano -->
+            <rect x="52" y="552" width="12" height="12" fill="#DDD5C6"/>
+            <rect x="52" y="552" width="12" height="12" fill="url(#trabecular)"/>
+            <text class="anot" x="72" y="562">Hueso trabecular</text>
+            <rect x="52" y="574" width="12" height="12" fill="#46565E"/>
+            <text class="anot" x="72" y="584">Implante de titanio</text>
+            <g class="guia"><path d="M290 300 h92"/></g>
+          </svg>
+                </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= LO QUE SE PREGUNTA ======================= -->
+  <section class="oscura envoltura" id="valores">
+    <div class="limite">
+      <p class="rotulo">Lo primero que se pregunta</p>
+      <h2 class="display" style="margin-top:22px; max-width:16ch">Cuánto cuesta y cuánto demora.</h2>
+      <p style="margin-top:28px; opacity:.85; max-width:58ch">
+        Son las dos preguntas con las que parte todo el mundo y casi nadie las responde en
+        su sitio. Estos son los rangos reales. El valor exacto sale de la evaluación,
+        porque depende de cuánto hueso hay, y eso no se sabe sin medirlo.
+      </p>
+
+      <!-- Arancel, no tarjetas. Una clínica publica una lista de precios con el valor a
+           la derecha; ese formato dice «esto es un documento, no una landing». Además
+           una grilla de tres tarjetas iguales es la forma más genérica que existe. -->
+      <dl class="arancel">
+        <div>
+          <dt>
+            <span class="it">Implante unitario</span>
+            <span class="de">Implante de titanio, pilar y corona definitiva. Es el caso más común.</span>
+          </dt>
+          <dd>$850.000 <i>a</i> $1.200.000<small>Según el tipo de corona</small></dd>
+        </div>
+        <div>
+          <dt>
+            <span class="it">Injerto óseo</span>
+            <span class="de">Solo si la evaluación muestra que falta hueso. No todos los casos lo necesitan.</span>
+          </dt>
+          <dd>$250.000 <i>a</i> $600.000<small>Se cotiza aparte, nunca sorpresa</small></dd>
+        </div>
+        <div>
+          <dt>
+            <span class="it">Rehabilitación completa</span>
+            <span class="de">Un maxilar completo sobre implantes, cuando ya no quedan piezas recuperables.</span>
+          </dt>
+          <dd>$4.500.000 <i>a</i> $8.000.000<small>Por maxilar, según técnica</small></dd>
+        </div>
+        <div class="destacada">
+          <dt>
+            <span class="it">Evaluación con escáner 3D</span>
+            <span class="de">Una sesión. Se descuenta del tratamiento si decides seguir; si no, te llevas el informe y las imágenes igual.</span>
+          </dt>
+          <dd>$45.000<small>Se descuenta del tratamiento</small></dd>
+        </div>
+      </dl>
+
+
+    </div>
+  </section>
+
+  <!-- ======================= EL PROCEDIMIENTO ======================= -->
+  <section class="tecnica envoltura" id="procedimiento">
+    <div class="limite">
+      <p class="rotulo">El procedimiento, por etapas</p>
+      <h2 class="display" style="margin-top:22px; max-width:16ch">Casi todo el plazo es espera.</h2>
+      <p style="margin-top:28px; max-width:58ch; opacity:.9">
+        La oseointegración es el hueso uniéndose al titanio. Es biología, no técnica: no se
+        acelera pagando más ni eligiendo mejor clínica. Por eso el plazo se dice completo
+        desde el principio.
+      </p>
+
+      <!-- La barra va a escala REAL: las anchuras son proporcionales a la duración de
+           cada etapa. Es el argumento de la sección hecho gráfico. Mirándola se entiende
+           sin leer que la espera es cuatro quintos del tratamiento. -->
+      <div style="margin-top:clamp(36px,5vw,64px)">
+        <p class="rotulo">Seis meses, a escala</p>
+        <div class="tiempo" role="img" aria-label="Línea de tiempo proporcional: evaluación e instalación son una sesión cada una, la oseointegración toma de tres a cinco meses, y la corona definitiva dos a tres sesiones.">
+          <div style="flex:1" title="Evaluación · 1 sesión"></div>
+          <div style="flex:1" title="Instalación · 1 sesión"></div>
+          <div class="larga" style="flex:34">
+            <span class="et">Oseointegración</span>
+            <span class="du">3 a 5 meses de espera</span>
+          </div>
+          <div style="flex:6" title="Corona definitiva · 2 a 3 sesiones">
+            <span class="et">Corona</span>
+          </div>
+        </div>
+        <div class="escala">
+          <span style="flex:1">0</span><span style="flex:1">1</span><span style="flex:1">2</span>
+          <span style="flex:1">3</span><span style="flex:1">4</span><span style="flex:1">5</span>
+          <span style="flex:0 0 auto">6 meses</span>
+        </div>
+      </div>
+
+      <ol class="etapas" style="margin-top:28px">
+        <li>
+          <p class="rotulo">Etapa 01</p>
+          <h3>Evaluación</h3>
+          <p>Escáner 3D para medir volumen y densidad del hueso, y revisión de antecedentes médicos. Acá se define si hace falta injerto.</p>
+          <p class="plazo">1 sesión</p>
+        </li>
+        <li>
+          <p class="rotulo">Etapa 02</p>
+          <h3>Instalación</h3>
+          <p>Cirugía con anestesia local. Se instala el implante de titanio en el hueso. El postoperatorio suele ser menor al de una extracción.</p>
+          <p class="plazo">1 sesión</p>
+        </li>
+        <li>
+          <p class="rotulo">Etapa 03</p>
+          <h3>Oseointegración</h3>
+          <p>El hueso crece alrededor del implante hasta fijarlo. No hay nada que hacer salvo controles y cuidado. Es la etapa larga.</p>
+          <p class="plazo">3 a 5 meses</p>
+        </li>
+        <li>
+          <p class="rotulo">Etapa 04</p>
+          <h3>Corona definitiva</h3>
+          <p>Se instala el pilar y la corona hecha a medida. Recién acá se vuelve a morder con normalidad.</p>
+          <p class="plazo">2 a 3 sesiones</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ======================= LA ESPECIALISTA (E-E-A-T) ======================= -->
+  <section class="envoltura" id="especialista">
+    <div class="limite rejilla doce" style="align-items:start">
+      <div style="grid-column:span 5">
+        <p class="rotulo">Quién opera</p>
+        <div style="margin-top:22px; border-top:1px solid var(--linea); padding-top:18px">
+          <p class="rotulo" style="color:var(--tinta-70)">Formación</p>
+          <p style="margin:6px 0 0; font-size:1rem">Cirujano dentista, Universidad de Chile</p>
+        </div>
+        <div style="margin-top:16px; border-top:1px solid var(--linea); padding-top:18px">
+          <p class="rotulo" style="color:var(--tinta-70)">Especialidad</p>
+          <p style="margin:6px 0 0; font-size:1rem">Implantología Buco Maxilofacial</p>
+        </div>
+        <div style="margin-top:16px; border-top:1px solid var(--linea); padding-top:18px">
+          <p class="rotulo" style="color:var(--tinta-70)">Ejercicio</p>
+          <p style="margin:6px 0 0; font-size:1rem">18 años · 11 dedicados solo a implantes</p>
+        </div>
+        <div style="margin-top:16px; border-top:1px solid var(--linea); padding-top:18px">
+          <p class="rotulo" style="color:var(--tinta-70)">Atiende</p>
+          <p style="margin:6px 0 0; font-size:1rem">Providencia, Santiago</p>
+        </div>
+      </div>
+      <div style="grid-column:span 7">
+        <p class="rotulo">Quién opera</p>
+        <h2 class="display" style="margin-top:22px">Irene Solar de Pablo</h2>
+        <p style="margin-top:8px; font-size:1.05rem; color:var(--tinta-70)">
+          Cirujano dentista · Especialista en Implantología Buco Maxilofacial
+        </p>
+        <div style="margin-top:32px">
+          <p>
+            Universidad de Chile, especialidad en implantología buco maxilofacial. Dieciocho
+            años operando, los últimos once dedicados solo a implantes y rehabilitación.
+          </p>
+          <p>
+            Opero yo los casos. No hay un equipo rotativo ni alguien distinto cada sesión:
+            la persona que evalúa es la que instala y la que controla después. En un
+            tratamiento que dura medio año, eso importa más de lo que parece.
+          </p>
+          <p>
+            Si un caso se resuelve mejor con otra cosa que no sea un implante, lo digo.
+            Deriva perder un tratamiento; derivan peor los implantes que no debieron
+            instalarse.
+          </p>
+        </div>
+        <p class="rotulo" style="margin-top:32px; color:var(--tinta-70)">
+          Profesional ficticia. Credenciales, registro y trayectoria inventados para esta pieza.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= LO QUE NO SE PROMETE ======================= -->
+  <section class="documento envoltura">
+    <div class="limite">
+      <p class="rotulo">Los límites</p>
+      <h2 class="display" style="margin-top:22px; max-width:18ch">Lo que no te vamos a prometer.</h2>
+      <p style="margin-top:28px; color:var(--tinta-70); max-width:58ch">
+        Es salud. Cualquiera que te asegure un resultado individual te está vendiendo algo
+        que no puede entregar.
+      </p>
+
+      <ul class="limites" style="margin-top:clamp(36px,5vw,64px)">
+        <li>
+          <h3>No garantizamos que el implante integre</h3>
+          <p>La literatura reporta sobre 95% de supervivencia a diez años en pacientes sin factores de riesgo. Eso es una estadística de población, no una promesa para tu boca. Si un implante falla, se retira, se espera y se vuelve a intentar; eso también se conversa antes.</p>
+        </li>
+        <li>
+          <h3>No hacemos el tratamiento en una semana</h3>
+          <p>Hay técnicas de carga inmediata para casos específicos y las usamos cuando corresponden. No son la regla, y ofrecerlas como si lo fueran es la forma más común de decepcionar a alguien.</p>
+        </li>
+        <li>
+          <h3>No damos un valor exacto por teléfono</h3>
+          <p>Sin ver el hueso no hay presupuesto, hay una adivinanza. Por eso el rango está publicado y el número final sale después del escáner.</p>
+        </li>
+        <li>
+          <h3>No atendemos urgencias ni odontología general</h3>
+          <p>Hacemos una sola cosa. Si lo que necesitas es otra, te decimos a quién ir en la misma evaluación.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================= PREGUNTAS (EL MOTOR AEO) ======================= -->
+  <section class="oscura envoltura" id="preguntas">
+    <div class="limite rejilla doce" style="align-items:start">
+      <div style="grid-column:span 4">
+        <p class="rotulo">Preguntas</p>
+        <h2 class="display" style="margin-top:22px">Lo que se busca a las dos de la mañana.</h2>
+        <p style="margin-top:24px; opacity:.8; font-size:1rem">
+          Están respondidas completas y en texto, no en un video ni en una infografía,
+          porque así es como se pueden citar.
+        </p>
+      </div>
+
+      <div style="grid-column:span 8">
+        <details open>
+          <summary>¿Cuánto cuesta un implante dental en Santiago?</summary>
+          <p>Un implante unitario completo, que incluye el implante de titanio, el pilar y la corona definitiva, va entre $850.000 y $1.200.000. La diferencia la hace el tipo de corona y si el caso necesita injerto óseo previo, que se cotiza aparte entre $250.000 y $600.000. Una rehabilitación completa de un maxilar sobre implantes va entre $4.500.000 y $8.000.000.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa si no tengo hueso suficiente?</summary>
+          <p>Es frecuente cuando la pieza se perdió hace años, porque el hueso que sostenía la raíz se reabsorbe al quedar sin función. La solución habitual es un injerto óseo previo, que agrega entre cuatro y seis meses al tratamiento. El escáner 3D de la evaluación mide el volumen disponible y define si se necesita antes de comprometer cualquier plazo.</p>
+        </details>
+        <details>
+          <summary>¿Me puedo poner un implante si fumo?</summary>
+          <p>Se puede, con más riesgo. El tabaco reduce la irrigación de la encía y está asociado a una tasa de fracaso más alta, sobre todo en los primeros meses de oseointegración. No es una contraindicación absoluta, pero sí cambia el pronóstico y hay que conversarlo antes y no después.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto se demora todo el tratamiento?</summary>
+          <p>Un caso sin complicaciones toma entre cuatro y seis meses desde la instalación hasta la corona definitiva. La mayor parte de ese tiempo es oseointegración, que es el hueso uniéndose al implante y no depende de la técnica sino de la biología. Si el caso necesita injerto óseo, se suman cuatro a seis meses más.</p>
+        </details>
+        <details>
+          <summary>¿Duele?</summary>
+          <p>La cirugía se hace con anestesia local y no duele mientras ocurre. El postoperatorio de un implante unitario suele ser menor al de una extracción: molestia e inflamación por dos o tres días, manejables con analgésicos comunes. Los casos con injerto son más molestos y se advierte antes.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto dura un implante?</summary>
+          <p>El implante de titanio, si oseointegra bien y se mantiene la higiene, puede durar décadas. La corona que va encima es la que se desgasta y suele reemplazarse entre los diez y los quince años. Nadie puede garantizar un plazo individual: depende de higiene, hábitos, salud general y control periódico.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CONTACTO ======================= -->
+  <section class="envoltura" id="contacto">
+    <div class="limite rejilla doce" style="align-items:end">
+      <div style="grid-column:span 7">
+        <p class="rotulo">La evaluación</p>
+        <h2 class="display" style="margin-top:22px; max-width:14ch">Primero medimos. Después conversamos.</h2>
+        <p style="margin-top:28px; max-width:52ch">
+          Una sesión, escáner 3D incluido, $45.000 que se descuentan si sigues adelante.
+          Sales con el informe, las imágenes y un plan con plazo y valor escritos. Sin
+          compromiso de continuar.
+        </p>
+        <p style="margin-top:32px">
+          <a class="boton" href="#contacto">Agendar evaluación</a>
+        </p>
+        <p style="margin-top:28px; font-size:.95rem; color:var(--tinta-70)">
+          Avenida Nueva Providencia 1234, oficina 802, Providencia, Santiago.<br>
+          Lunes a viernes, 9:00 a 18:30.
+        </p>
+      </div>
+      <div style="grid-column:span 5">
+        <div style="border-top:1px solid var(--linea); padding-top:20px">
+          <p class="rotulo">Qué te llevas de la evaluación</p>
+          <ul style="list-style:none; padding:0; margin:18px 0 0; font-size:1rem">
+            <li style="border-bottom:1px solid var(--linea); padding:12px 0">El escáner 3D, en archivo, tuyo</li>
+            <li style="border-bottom:1px solid var(--linea); padding:12px 0">El informe con lo que se midió</li>
+            <li style="border-bottom:1px solid var(--linea); padding:12px 0">Si hace falta injerto, y por qué</li>
+            <li style="border-bottom:1px solid var(--linea); padding:12px 0">El plazo, en meses, por etapa</li>
+            <li style="padding:12px 0">El valor, escrito</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="envoltura">
+  <div class="limite">
+    <div class="rejilla mitad">
+      <div>
+        <span class="marca">Raigal</span>
+        <p style="margin-top:14px; opacity:.75; font-size:.95rem; max-width:34ch">
+          Implantología y rehabilitación oral. Providencia, Santiago.
+        </p>
+      </div>
+      <div>
+        <p class="rotulo">Contacto</p>
+        <p style="margin-top:12px; font-size:.95rem; opacity:.85">
+          <a href="#contacto">hola@raigal.example</a><br>
+          +56 2 2345 6789
+        </p>
+      </div>
+    </div>
+
+    <p class="pie-aviso">
+      <b>Esta es una pieza de concepto de SpindleLab.</b> Raigal no existe. La clínica, la
+      profesional, la dirección, el teléfono y los precios son ficticios y se construyeron
+      para mostrar cómo se estructura un sitio de salud: datos estructurados para
+      <code>Dentist</code>, <code>MedicalProcedure</code> y <code>FAQPage</code>, contenido
+      en formato citable por motores de IA, y límites clínicos dichos en vez de escondidos.
+      No constituye publicidad de un servicio de salud ni orientación clínica.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
