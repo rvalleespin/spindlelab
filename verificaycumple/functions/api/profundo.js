@@ -1657,9 +1657,38 @@ export async function onRequestGet({ request, env }) {
         return { paso: 'el fetch reventó', error: String((e && e.message) || e) };
       }
     };
+    // Con `https://` la API YA contesta (el esquema era el problema), pero contesta 401 con
+    // el mismo cuerpo exacto que devuelve una petición SIN token. Eso deja dos causas, y se
+    // separan preguntándole a Cloudflare por el token en un endpoint normal, sin `Upgrade`:
+    //   200 → el token sirve y el header viaja: el problema es propio del upgrade.
+    //   401 → el token es el problema, y no hay que seguir buscando en el WebSocket.
+    const verificar = async () => {
+      try {
+        const r = await fetch('https://api.cloudflare.com/client/v4/user/tokens/verify', {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        let estado = '';
+        try { estado = ((await r.json()).result || {}).status || '(sin estado)'; } catch { estado = '(cuerpo ilegible)'; }
+        return { status: r.status, estadoDelToken: estado };
+      } catch (e) {
+        return { error: String((e && e.message) || e) };
+      }
+    };
+
+    // Forma del token, NUNCA su valor ni su largo exacto. Un token de Cloudflare son 40
+    // caracteres de [A-Za-z0-9_-]; si trae un espacio, un salto de línea o comillas pegadas
+    // de un copiar y pegar, el 401 se explica solo y no hay nada más que investigar.
+    const forma = {
+      largoEsperado: token.length === 40,
+      soloCaracteresValidos: /^[A-Za-z0-9_-]+$/.test(token),
+      traeEspaciosOSaltos: /\s/.test(token),
+      empiezaOTerminaConComilla: /^["']|["']$/.test(token),
+    };
+
     return new Response(JSON.stringify({
-      'wss://': await probar('wss://'),
-      'https://': await probar('https://'),
+      upgrade: await probar('https://'),
+      tokenSegunCloudflare: await verificar(),
+      formaDelToken: forma,
     }, null, 2), {
       status: 200,
       headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' },
