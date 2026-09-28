@@ -1625,6 +1625,36 @@ export async function onRequestGet({ request, env }) {
   // largo: un token se filtra igual por pedazos.
   //
   // Se saca apenas quede resuelto.
+  // Diagnóstico de CONEXIÓN. Las tres variables ya llegan, pero el endpoint sigue declinando
+  // con 'sin-configurar', que el código usa para tres causas distintas: falta config, la API
+  // contestó 403, o no hay KV. Esto separa cuál es, devolviendo el status crudo de la API.
+  // No expone el token ni ningún valor: solo el código de respuesta y si vino WebSocket.
+  if (url.searchParams.get('diagnostico') === 'conexion') {
+    const cuenta = env.CF_ACCOUNT_ID;
+    const token = env.CF_BROWSER_TOKEN;
+    if (!cuenta || !token) {
+      return new Response(JSON.stringify({ paso: 'faltan variables', cuenta: !!cuenta, token: !!token }), {
+        status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      });
+    }
+    const destino = `wss://api.cloudflare.com/client/v4/accounts/${cuenta}/browser-rendering/devtools/browser?keep_alive=10000`;
+    try {
+      const r = await fetch(destino, { headers: { Upgrade: 'websocket', Authorization: `Bearer ${token}` } });
+      let cuerpo = '';
+      try { cuerpo = (await r.clone().text()).slice(0, 300); } catch (e) { cuerpo = '(sin cuerpo legible)'; }
+      return new Response(JSON.stringify({
+        paso: 'la API contestó',
+        status: r.status,
+        hayWebSocket: !!r.webSocket,
+        cuerpo,
+      }, null, 2), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+    } catch (e) {
+      return new Response(JSON.stringify({ paso: 'el fetch reventó', error: String(e && e.message || e) }), {
+        status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      });
+    }
+  }
+
   if (url.searchParams.get('diagnostico') === '1') {
     const nuestras = Object.keys(env || {})
       .filter((k) => k.startsWith('CF_') || k.startsWith('VYC_'))
