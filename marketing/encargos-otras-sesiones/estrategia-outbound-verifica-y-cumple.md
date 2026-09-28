@@ -10,6 +10,46 @@ afirmaciones que no aguantaban una segunda mirada.
 
 ---
 
+# 🚨 28-sep-2026: el pozo está seco. Esto es lo primero.
+
+**Queda UN prospecto sin contactar en toda la lista de Verifica y Cumple.** Grupo Altum
+(`grupoaltum.cl`, Ignacio Valenzuela Maureira). Los otros 29 están contactados o excluidos.
+
+Contado contra la bandeja de enviados y contra `ventas/lista-exclusion.csv`, no de memoria:
+
+| | |
+|---|---|
+| En `lote-abogados-23sep.csv` | 30 |
+| Ya contactados el 24-sep | 26 |
+| Excluidos con razón | 3 (BH dijo que no; CEP y LSC ya tenían sus 3 toques de la campaña AEO) |
+| **Sin usar y contactables** | **1** |
+
+**Los dos flujos tienen que correr, y hoy no corre ninguno bien:**
+
+1. **Los seguimientos existen y no salen.** 35 escritos desde el 25-sep. Al 28-sep a mediodía
+   salieron **2**: delamazaycia.cl y tuane.cl. Faltan 13 del lote de 15 y los 20 de abogados.
+   En outbound frío las respuestas llegan en el segundo y el tercer toque, casi nunca en el
+   primero. Con 36 prospectos tocados una sola vez, todavía no sabemos si el mensaje sirve.
+2. **El frente nuevo no está atrasado: está vacío.** No hay a quién escribirle.
+
+⚠️ **Esto deroga lo que decía la puesta al día del 25-sep.** Ahí escribí "no se manda un lote
+nuevo hasta cerrar los seguimientos de estos 36". Ya no aplica, porque no hay lote nuevo que
+mandar aunque se quisiera. **La tarea dejó de ser escribir correos y pasó a ser conseguir
+prospectos calificados.**
+
+**Lo que NO sirve como reemplazo.** Las tres listas de `marketing/listas/` (clínicas dentales,
+ópticas, asesoras patrimoniales) son de julio y agosto, de otra campaña y de otro servicio. Un
+lote de Verifica se arma calificando sitios: hay que abrirlos, medirlos y descartar los que no
+tienen hallazgo. Reusarlas sin ese trabajo produce correos refutables, que es lo que estas
+reglas existen para evitar.
+
+**Y un dato técnico que descarta la hipótesis fácil:** la autenticación del dominio está
+correcta. SPF apuntando a Google, DKIM firmado, DMARC en `quarantine` con reportes, MX de
+Google. Verificado el 28-sep contra el DNS. Los correos no están cayendo a spam por
+configuración, así que el cero respuestas no se explica por ahí.
+
+---
+
 # ⚠️ Puesta al día del 25-sep-2026 (léela antes que el resto)
 
 Un día completo de revisión cambió cosas que el documento de abajo daba por ciertas. Esto manda.
