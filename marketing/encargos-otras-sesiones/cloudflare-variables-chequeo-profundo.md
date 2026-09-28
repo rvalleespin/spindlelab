@@ -1,56 +1,86 @@
-# ✅ 28-sep, tarde: causa encontrada. Léelo antes que todo lo de abajo.
+# 28-sep, noche: las DOS causas, encontradas. Lo de abajo es historia.
 
-**Lo de abajo está resuelto en parte y una cosa cambió de raíz.** Estado real:
+Este encargo nació pidiendo ayuda con tres variables de Cloudflare. Las variables terminaron
+siendo la mitad del problema, y la otra mitad no tenía nada que ver con el panel.
 
 | | |
 |---|---|
-| El sitio | ✅ funcionando, sin interrupciones |
-| `CF_ACCOUNT_ID` | ✅ llega (declarado en `verificaycumple/wrangler.toml`) |
-| `VYC_TOPES` (KV) | ✅ llega. El espacio existe: `vyc-topes`, id `fbf273b71b4642f0989be319d86a6b0b` |
-| `CF_BROWSER_TOKEN` | ❌ **se borra en cada despliegue** |
+| El sitio | ✅ funcionando, nunca se cayó |
+| `CF_ACCOUNT_ID` | ✅ llega |
+| `VYC_TOPES` (KV) | ✅ llega — espacio `vyc-topes`, id `fbf273b71b4642f0989be319d86a6b0b` |
+| `CF_BROWSER_TOKEN` | ⚠️ llega, pero **el valor guardado está roto** (ver causa 2) |
+| La conexión al navegador | ✅ arreglada en el código (ver causa 1) |
 
-## La causa
+## Causa 1 — la URL decía `wss://`
 
-El token **no está mal ni le falta permiso**. Se carga bien (`wrangler pages secret list` lo
-muestra encriptado en production), aparece en el entorno, y **desaparece en el siguiente build**.
+**El `fetch` del runtime de Cloudflare no conoce el esquema `wss:`.** Revienta antes de salir a
+la red, con `Fetch API cannot load: wss://...`, y como no hay status ni cuerpo el error parece
+de permisos o de plan. No lo es.
 
-Pasó dos veces, con el mismo patrón: se carga el secreto → el diagnóstico lo ve → se despliega
-→ el diagnóstico ya no lo ve.
+Los WebSockets salientes se abren con **`https://` + `Upgrade: websocket`**, y eso es lo que
+dice toda la doc de WebSockets de Workers. El `wss://` que muestra la doc del endpoint de
+Browser Rendering está escrita para un cliente CDP normal (puppeteer, playwright), que corre en
+un navegador de verdad.
 
-**Por qué:** al crear `verificaycumple/wrangler.toml` con un bloque `[vars]`, ese archivo pasó a
-ser la fuente de verdad del entorno del proyecto, y los secretos que viven a nivel de proyecto
-no sobreviven a un build desde Git. Los reemplaza lo declarado en el archivo.
+Se probaron **los dos esquemas en el mismo despliegue** para no volver a adivinar:
 
-## El arreglo, que es de una línea
+```
+"wss://"   → el fetch reventó: Fetch API cannot load
+"https://" → la API contestó: status 401
+```
 
-**Sacar el bloque `[vars]` de `verificaycumple/wrangler.toml` y dejar solo `[[kv_namespaces]]`.**
+Arreglado en `functions/api/profundo.js`, commit `13bd23b`.
 
-El enlace del KV era lo único que *necesitaba* estar en configuración, porque es lo único sin
-comando en wrangler. Las dos variables de texto sí tienen comando y panel, así que no ganan nada
-estando ahí y a cambio pisan el secreto.
+⚠️ **Esto tumba el "camino de respaldo" que el archivo arrastraba desde el 25-sep.** El supuesto
+era que el header `Authorization` no viajaba junto al `Upgrade`, y que por eso habría que migrar
+a un Worker aparte con el binding nativo de browser. **Viaja bien. No hace falta ningún Worker
+aparte.** La cabecera del archivo ya está corregida.
 
-Después:
-1. Volver a cargar `CF_ACCOUNT_ID` (valor: `112fd68506c4a4f40ed1c8eacaf8cf71`, no es secreto) y
-   `CF_BROWSER_TOKEN` por comando o por panel.
-2. Desplegar.
-3. Comprobar con `?diagnostico=1` que las tres aparezcan **después** del build, no antes.
+## Causa 2 — el token guardado trae un espacio o un salto de línea
 
-⚠️ **La comprobación tiene que ser después del build, y comparando el commit.** El endpoint
-`?diagnostico=1` devuelve `quienSirveEsto.commit`: si no calza con el último commit, se está
-midiendo un despliegue viejo. Ese error costó dos diagnósticos falsos hoy.
+Con el esquema arreglado la API contesta, y contesta `401` con el cuerpo
+`{"code":10000,"message":"Authentication error"}` — **idéntico, carácter por carácter, al que
+devuelve una petición sin token ninguno.**
 
-## Si después de eso el token llega y la conexión igual falla
+El diagnóstico de forma lo dejó claro:
 
-Entonces sí es el supuesto que el código arrastra desde el 25-sep, anotado en la cabecera de
-`profundo.js`: que el `fetch` de una Pages Function no deja pasar el header `Authorization`
-junto con el `Upgrade` del WebSocket. Eso obliga al camino de respaldo, un Worker aparte con el
-binding nativo de browser, llamado por service binding. Es medio día de trabajo, está mapeado,
-y no es urgente.
+```
+tokenSegunCloudflare → status 400   ← ni siquiera 401: rechaza la CABECERA, no el token
+formaDelToken        → largoEsperado: false
+                       soloCaracteresValidos: false
+                       traeEspaciosOSaltos: true
+```
 
-Para distinguirlo hay un diagnóstico puesto: `?diagnostico=conexion` devuelve el status crudo
-de la API y si vino WebSocket, sin exponer el token.
+Un espacio o un salto pegado del copiar y pegar rompe la cabecera `Authorization` entera. El
+prompt interactivo de `wrangler pages secret put` acepta cualquier cosa sin chistar — ya había
+aceptado el token **vacío** dos veces antes, en este mismo encargo.
 
-⚠️ **Los dos modos de diagnóstico son temporales** y hay que sacarlos al cerrar esto.
+**El arreglo** es volver a cargarlo limpiando y validando **antes** de enviar:
+
+```bash
+cd ~/vyc-ley21719/verificaycumple && T=$(pbpaste | tr -d '[:space:]') && if [[ "$T" =~ ^[A-Za-z0-9_-]{30,60}$ ]]; then printf '%s' "$T" | CI=1 npx --yes wrangler@latest pages secret put CF_BROWSER_TOKEN --project-name verificaycumple && echo "LISTO: ${#T} caracteres, sin espacios"; else echo "NO SE ENVIO NADA: el portapapeles tiene ${#T} caracteres y no tiene forma de token"; fi; unset T
+```
+
+Si el token ya no lo tiene (Cloudflare lo muestra una sola vez), se rota:
+`dash.cloudflare.com` → foto de perfil → **Perfil** → **Tokens de API** → menú **···** de la
+fila → **Rotar**.
+
+## La lección, que vale más que el arreglo
+
+Las dos causas son la misma enfermedad que llevamos el mes entero sacando de los informes del
+chequeo: **dar por bueno lo que no se comprobó.** Acá estaba escrita en la herramienta de
+diagnóstico, que es peor, porque es la que se supone que no miente.
+
+- El primer diagnóstico reportaba `typeof` → un secreto **vacío** salía como `'string'`, o sea
+  presente. Costó dos vueltas.
+- El segundo reportaba "texto con contenido (ok)" → un secreto **con basura adentro** salía como
+  bueno. Costó esta.
+
+Un diagnóstico de secreto reporta la **forma**, nunca el valor y nunca la mera presencia: cuántos
+caracteres, si son los válidos, si trae espacios, si trae comillas pegadas.
+
+⚠️ **Los dos modos `?diagnostico=` de `profundo.js` son temporales y hay que sacarlos** apenas
+esto quede verificado punta a punta.
 
 ---
 
