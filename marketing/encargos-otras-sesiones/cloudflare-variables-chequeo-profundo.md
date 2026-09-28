@@ -1,4 +1,22 @@
-# 28-sep, noche: las DOS causas, encontradas. Lo de abajo es historia.
+# ✅ RESUELTO — 28-sep-2026, noche. El chequeo profundo corre.
+
+**Prueba de que funciona** (no "debería funcionar"):
+
+```
+GET /api/profundo?dominio=tuane.cl
+  28,6 segundos          ← abre un navegador de verdad; antes fallaba en 0,3
+  puntaje 77 · parcial: false · 4 items (3 ok, 1 pendiente)
+  el aviso de cookies queda PENDIENTE, no verde: el sitio no muestra ninguno
+```
+
+Los dos modos `?diagnostico=` ya se sacaron (commit `0c2c04d`). Las 12 baterías de pruebas
+siguen en **2.309 bien / 0 mal**.
+
+Fueron **tres** causas encadenadas, no una, y por eso costó tanto. Lo de abajo es el registro.
+
+---
+
+# Las tres causas
 
 Este encargo nació pidiendo ayuda con tres variables de Cloudflare. Las variables terminaron
 siendo la mitad del problema, y la otra mitad no tenía nada que ver con el panel.
