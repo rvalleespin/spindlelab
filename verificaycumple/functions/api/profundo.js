@@ -1655,6 +1655,15 @@ export async function onRequestGet({ request, env }) {
     }
   }
 
+  // Dice si algo está, y si está, si tiene contenido. Un secreto vacío es el caso que nos
+  // tuvo dando vueltas: existe, es texto, y no sirve para nada.
+  const describir = (v) => {
+    if (v === undefined || v === null) return 'NO ESTÁ';
+    if (typeof v === 'object') return 'enlace a un recurso (ok)';
+    if (typeof v === 'string') return v.length ? 'texto con contenido (ok)' : 'TEXTO VACÍO';
+    return typeof v;
+  };
+
   if (url.searchParams.get('diagnostico') === '1') {
     const nuestras = Object.keys(env || {})
       .filter((k) => k.startsWith('CF_') || k.startsWith('VYC_'))
@@ -1672,10 +1681,14 @@ export async function onRequestGet({ request, env }) {
         commit: env.CF_PAGES_COMMIT_SHA,
         url: env.CF_PAGES_URL,
       },
+      // ⚠️ Este bloque reportaba solo `typeof`, y eso MINTIÓ. Una cadena vacía es de tipo
+      // 'string', así que un secreto cargado sin valor salía como presente mientras el
+      // código lo trataba como ausente. Costó varias vueltas. Ahora se reporta si tiene
+      // contenido, que es lo que de verdad importa. Nunca el valor ni su largo exacto.
       esperadas: {
-        CF_ACCOUNT_ID: typeof env.CF_ACCOUNT_ID,
-        CF_BROWSER_TOKEN: typeof env.CF_BROWSER_TOKEN,
-        VYC_TOPES: typeof env.VYC_TOPES,
+        CF_ACCOUNT_ID: describir(env.CF_ACCOUNT_ID),
+        CF_BROWSER_TOKEN: describir(env.CF_BROWSER_TOKEN),
+        VYC_TOPES: describir(env.VYC_TOPES),
       },
     }, null, 2), {
       status: 200,
