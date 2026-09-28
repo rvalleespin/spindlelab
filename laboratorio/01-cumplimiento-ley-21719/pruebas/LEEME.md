@@ -1,6 +1,22 @@
 # Pruebas de los chequeos y del control de cookies
 
-1198 comprobaciones (medidas el 23-sep-2026, al cierre de la revisión del día)
+**2.309 comprobaciones en 12 baterías, medidas el 28-sep-2026 corriéndolas todas.**
+
+⚠️ El número de antes, "1198 comprobaciones (23-sep)", estaba desfasado de tres maneras a la
+vez, y las tres importan más que la cifra:
+
+1. **Contaba baterías que no corrían.** `prueba-gemelo-completa` (370), `prueba-robots` (115)
+   y `medir-cpu` reventaban antes de la primera aserción, porque `/tmp/spl-main-wt` dejó de
+   ser un repositorio git. 485 comprobaciones figuraban en verde sin ejecutarse en ninguna
+   parte. Arreglado el 27-sep: las rutas salen de `rutas.mjs`, que busca el código dentro del
+   repositorio en vez de en una carpeta que el sistema borra.
+2. **No contaba las tres baterías que miran la PANTALLA** (`prueba-portada-doce`,
+   `prueba-portada-rehacer`, `prueba-portada-cierre`), que son las que cazan los errores de
+   costura entre la API y la portada. Esos no los ve ninguna prueba de JSON.
+3. **Los conteos individuales tampoco calzaban**: `prueba-destino` decía 530 y da 538.
+
+Regla que sale de esto: **si el número del LEEME no se puede reproducir corriendo las
+baterías hoy, el LEEME miente.** Se actualiza en el mismo cambio, o no se actualiza nunca.
 sobre los dos módulos de chequeo, que comparten la lógica de validación de
 destino y de descarga acotada, y sobre el control de cookies de spindlelab.cl:
 
@@ -51,7 +67,7 @@ se pueden perder cuando se borre una carpeta de sesión. Cada carpeta tiene su
 
 | archivo | qué cubre |
 |---|---|
-| `prueba-destino.mjs` | Verifica y Cumple: validación de dominio, portón de destinos, redirecciones, mensajes de error, contrato de la respuesta, permiso antes de rastreadores, patrones de CMP, enlace a la política, www, tiempo lineal, no-store, el middleware que muda pages.dev a verifica.spindlelab.cl, peor caso de espera, página de bloqueo con 200, sitios armados con JavaScript, política que no se pudo leer, casilla del formulario, el texto de todas las respuestas, y la marca de retención rota o comentada que no puede retener lo que viene después (530) |
+| `prueba-destino.mjs` | Verifica y Cumple: validación de dominio, portón de destinos, redirecciones, mensajes de error, contrato de la respuesta, permiso antes de rastreadores, patrones de CMP, enlace a la política, www, tiempo lineal, no-store, el middleware que muda pages.dev a verifica.spindlelab.cl, peor caso de espera, página de bloqueo con 200, sitios armados con JavaScript, política que no se pudo leer, casilla del formulario, el texto de todas las respuestas, y la marca de retención rota o comentada que no puede retener lo que viene después (538) |
 | `prueba-gemelo-completa.mjs` | spindlelab.cl: el informe inventado, notaciones de IP, redirecciones, sondas de agente, robots.txt ilegible, equivalencia ítem por ítem con la versión anterior, www, peor caso de espera, no-store, la página de bloqueo que llega con 200, llms.txt y sitemap.xml (manda lo que llegó, no el código), y que los dos detectores de bloqueo sean la misma lista (370) |
 | `prueba-streaming.mjs` | la rama de streaming de spindlelab.cl, que es la que corre en producción: cuerpos reales, cancelación de la descarga, sitemap de 4,8 MB, www, página de bloqueo con una tilde partida entre dos trozos (23) |
 | `prueba-vyc-streaming.mjs` | lo mismo para Verifica y Cumple, más la página de bloqueo, los sitios armados con JavaScript y la política que no se pudo leer (23) |

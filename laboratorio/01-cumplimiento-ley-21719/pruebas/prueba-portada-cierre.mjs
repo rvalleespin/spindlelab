@@ -353,5 +353,54 @@ else {
   cierto('los ítems de arriba dicen "de los que buscamos"', /que buscamos/.test(v.informe || ''));
 }
 
+console.log('\n=== 2. el cierre CON cosas sin confirmar tiene que decirlo ===');
+// LA DEUDA QUE ESTA BATERÍA TENÍA (27-sep). Su único caso fijaba `sinConfirmar === 0`, o sea
+// corría sobre el informe donde las cautelas no hacen falta, que es justo donde no se pueden
+// probar. Medido por el verificador: borrar "en lo que alcanzamos a mirar" del cierre daba
+// 26/26 verde; borrar la cláusula de "aunque hubo N cosas que no pudimos ver" daba 26/26;
+// dejar el kicker en "Nada pendiente" con sinConfirmar > 0 daba 26/26. Las tres cautelas que
+// impiden que el párrafo afirme en absoluto estaban sin pinnear.
+const informeAMedias = profundoMod.armarInforme({ ...conAviso, parcial: true }, DOMINIO);
+eq('el informe a medias deja cosas sin confirmar, que es la rama que faltaba',
+  [informeAMedias.sinConfirmar > 0, informeAMedias.puntaje], [true, null]);
+
+kv.set(`cache:${DOMINIO}`, JSON.stringify(informeAMedias));
+const v2 = await enPantalla(DOMINIO);
+if (v2.fatal) { console.log('  FATAL: ' + v2.fatal + '\n' + (v2.dom || '')); malo++; }
+else {
+  eq('ningún error de JavaScript', v2.roto || '', '');
+  const c2 = v2.cierre || '';
+  cierto('el cierre está ahí', c2.length > 0);
+
+  // (a) El kicker no puede decir que no queda nada pendiente cuando quedaron tres cosas
+  //     sin mirar. Este mutante pasaba 26/26 antes.
+  falso('el kicker NO dice "Nada pendiente" habiendo cosas sin confirmar',
+    /Nada pendiente(?! en lo que vimos)/.test(v2.kicker || ''));
+
+  // (b) La cautela que hace honesto al párrafo. ⚠️ La primera versión de esta aserción
+  //     ofrecía tres alternativas (/alcanzamos a mirar|lo que vimos|lo que alcanzamos a ver/)
+  //     y por eso NO cazaba el mutante: el cierre arrastra el kicker "Nada pendiente en lo que
+  //     vimos", así que borrar la cautela de la frase legal seguía calzando con otra rama del
+  //     OR. Una aserción con alternativas de más es una aserción que no puede fallar, que es
+  //     justo el vicio que esta batería existe para cuidar. Ahora se ancla a LA frase.
+  const fraseLegal = (c2.split(/(?<=\.)\s+/).find((f) => /no dice que cumples la ley/.test(f)) || '');
+  cierto('existe la frase de "esto no dice que cumples la ley"', fraseLegal.length > 0);
+  cierto('y esa frase acota a lo que alcanzamos a mirar',
+    /en lo que alcanzamos a mirar/.test(fraseLegal));
+
+  // (c) Y tiene que nombrar que quedó algo sin ver, no callarlo.
+  cierto('y dice que hubo cosas que no se pudieron ver',
+    /no pudimos ver|sin confirmar|no alcanzamos/.test(c2));
+
+  // (d) Lo de siempre, que no se puede perder por acotar.
+  cierto('sigue diciendo que no dice que cumples la ley', /no dice que cumples la ley/.test(c2));
+  cierto('y que la parte legal la revisa un abogado', /la revisa tu abogado/.test(c2));
+
+  // (e) El verde que queda (el aviso) no puede afirmar sobre la carga: es el cuarto falso
+  //     verde, cerrado el 27-sep, y acá se mira desde la pantalla y no desde el informe.
+  falso('el único verde de la pantalla no afirma sobre la carga',
+    /no corrió ning/.test(v2.informe || ''));
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);

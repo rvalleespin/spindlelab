@@ -830,16 +830,25 @@ console.log('=== 17. el peor caso de espera ===');
   // enlace de la política se cuelga. Es la suma más larga que el código permite.
   const lento = fakeRed({
     'https://ejemplo.cl/': { cuelga: true }, 'http://ejemplo.cl/': { cuelga: true },
-    // 6,5 s: contesta justo antes del corte de 8 s, con margen para que la máquina ocupada no
-    // tumbe la prueba. A 7,5 s el margen era de medio segundo y se perdía bajo carga.
-    'https://www.ejemplo.cl/': { status: 200, body: pagina('<a href="/privacidad/">Privacidad</a><a href="/aviso-legal">Aviso legal</a>'), retardo: 6500 },
+    // 4,5 s: contesta antes del corte de 8 s con 3,5 s de margen. Antes eran 6,5 (1,5 s de
+    // margen) y antes 7,5 (medio segundo), y las dos veces la prueba se cayó bajo carga: el
+    // retardo lo pone un setTimeout, y un setTimeout en una máquina ocupada llega tarde.
+    // Lo que este caso comprueba es "contestó antes del corte", no el valor exacto, así que
+    // el margen se elige por la máquina y no por el reloj del código.
+    'https://www.ejemplo.cl/': { status: 200, body: pagina('<a href="/privacidad/">Privacidad</a><a href="/aviso-legal">Aviso legal</a>'), retardo: 4500 },
     'https://www.ejemplo.cl/privacidad/': { cuelga: true }, 'https://www.ejemplo.cl/aviso-legal': { cuelga: true },
   });
   const medir = async (f) => { const t0 = Date.now(); const r = await chequear('ejemplo.cl', f); return { r, s: (Date.now() - t0) / 1000 }; };
   const [a, b] = await Promise.all([medir(colgado), medir(lento)]);
   console.log(`  todo colgado: ${a.s.toFixed(1)} s · peor caso con informe: ${b.s.toFixed(1)} s`);
   eq('todo colgado: mensaje de tiempo, sin código', [a.r.ok, a.r.error, a.r.codigo], [false, mensajeDeFallo('tiempo'), undefined]);
-  eq('todo colgado: se rinde en menos de 17 s', a.s < 17, true);
+  // TECHO DE REGRESIÓN, no objetivo de diseño. El diseño son ~16 s (un intento más una segunda
+  // ronda en paralelo) y lo que este caso existe para cazar son los 24 s y los 40 s, que es lo
+  // que sale si alguien serializa las rondas o le suma un reintento. Medir contra 17 era medir
+  // el reloj de quien corre la prueba: el mismo commit dio 538/0, 532/6, 533/5 y 538/0 en
+  // cuatro corridas seguidas sin tocar una línea. El número medido se imprime arriba para que
+  // un humano note la deriva aunque la aserción no salte.
+  eq('todo colgado: se rinde antes de los 21 s (techo de regresión)', a.s < 21, true);
   eq('peor caso con informe: hay informe', b.r.ok, true);
   // Sin informe no hay ítems: se dice y se para acá, en vez de reventar con un TypeError que
   // esconde cuál fue la falla de verdad.
@@ -850,7 +859,7 @@ console.log('=== 17. el peor caso de espera ===');
   eq('peor caso con informe: la política colgada queda sin confirmar', [item(b.r, 'politica').estado, /esa página no respondió a tiempo y no la pudimos abrir\. No lo contamos ni a favor ni en contra\./.test(item(b.r, 'politica').detalle)], ['sin-confirmar', true]);
   eq('peor caso con informe: y no culpa al enlace', /Arregla el enlace|Revisa el enlace/.test(item(b.r, 'politica').arreglo), false);
   }
-  eq('peor caso con informe: menos de 25 s', b.s < 25, true);
+  eq('peor caso con informe: antes de los 28 s (techo de regresión)', b.s < 28, true);
 }
 
 console.log('=== 18. F2: una página de bloqueo que llega con 200 no se puntúa ===');

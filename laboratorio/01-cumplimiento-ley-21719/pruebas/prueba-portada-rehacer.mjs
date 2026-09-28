@@ -256,10 +256,18 @@ const conductor = (dominio) => `
 <\/script>
 `;
 
-function servidor(dominio) {
+function servidor(dominio, opciones = {}) {
   return http.createServer(async (req, res) => {
     const url = new URL(req.url, 'http://127.0.0.1');
     const ruta = url.pathname;
+    // LA OTRA MITAD DEL ARREGLO (27-sep). El caso de arriba hace fallar la medición nueva con
+    // una RESPUESTA (`ok:false` del tope). Este la hace fallar en el TRANSPORTE: el servidor
+    // corta la conexión y el `fetch` del navegador revienta, que es el camino de la caída de
+    // red y del plazo de 75 s. Son dos ramas distintas del mismo arreglo, y la del `.catch`
+    // no tenía ninguna prueba: revertirla dejaba las 14 baterías en verde.
+    if (opciones.cortarAlRehacer && ruta === '/api/profundo' && url.searchParams.get('rehacer') === '1') {
+      return req.socket.destroy();
+    }
     try {
       if (ruta === '/api/chequeo') {
         const r = await correr(chequeoMod, req.url);
@@ -295,8 +303,8 @@ function servidor(dominio) {
   });
 }
 
-async function enPantalla(dominio) {
-  const s = servidor(dominio);
+async function enPantalla(dominio, opciones = {}) {
+  const s = servidor(dominio, opciones);
   await new Promise((r) => s.listen(0, '127.0.0.1', r));
   const puerto = s.address().port;
   const perfil = fs.mkdtempSync(path.join(os.tmpdir(), 'vyc-chrome-'));
@@ -402,6 +410,37 @@ else {
   eq('la lista de los 12 igual se dibujó', a.doceItems, 12);
   cierto('y dice que a la política sí se llegó', /A tu política sí llegamos/.test(a.doce || ''));
   cierto('y que al sitio no', String(a.doce || '').includes(FRASE_NO_LLEGAMOS));
+}
+
+console.log('\n=== 3. si la medición nueva se cae por RED, tampoco se pierde el informe ===');
+// La deuda que esta batería tenía: el arreglo vive en dos ramas y solo una estaba cubierta.
+// El escenario 1 hace fallar con una respuesta (`ok:false`); este corta la conexión, que es
+// lo que pasa con una caída de red o con el plazo de 75 s. Revertir esta rama dejaba las 14
+// baterías en verde, o sea el bug podía volver sin que nada avisara.
+const z = await enPantalla(DOMINIO, { cortarAlRehacer: true });
+if (z.fatal) { console.log('  FATAL: ' + z.fatal + '\n' + (z.dom || '')); malo++; }
+else {
+  eq('ningún error de JavaScript', z.roto || '', '');
+  cierto('llegó el informe guardado', z.antes && z.antes.puntaje);
+  const itemsAntes = z.antes.items;
+  cierto('con sus hallazgos dibujados', itemsAntes > 0);
+
+  const d = z.despues || {};
+  cierto('apretar el botón deja una tarjeta de falla', d.falla);
+
+  // LO QUE ESTE CASO EXISTE PARA CUIDAR, y que la otra rama ya cuidaba por su lado.
+  cierto('el informe sigue en pantalla pese a la caída de red', d.puntaje);
+  eq('con los mismos hallazgos', d.items, itemsAntes);
+  cierto('y el botón sigue, por si quiere reintentar', d.boton);
+  cierto('la tarjeta dice que lo de abajo es lo que ya tenía',
+    /sigue acá abajo/.test(d.textoFalla || ''));
+  cierto('y el aviso hablado también lo dice', /sigue abajo/.test(d.hablado || ''));
+
+  // Y la costura: el navegador SÍ abrió el sitio antes, así que la lista de los 12 no puede
+  // decir lo contrario porque se cayó la red en el segundo intento.
+  eq('la lista de los 12 sigue dibujada', d.doceItems, 12);
+  falso('y no dice que no llegamos al sitio',
+    String(d.doce || '').includes(FRASE_NO_LLEGAMOS));
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
