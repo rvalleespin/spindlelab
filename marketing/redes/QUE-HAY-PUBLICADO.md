@@ -91,3 +91,15 @@ verificable y sin nada que vender. Vale la pena mirarlo antes de decidir el pró
   dos envíos de comentario colgados sin error y tres guardados de edición fallidos
   (*"no hemos podido completar tu solicitud"*). Descartado que fuera un permiso. Si vuelve a
   pasar, no reintentar en bucle: se arriesga que un envío colgado aterrice tarde y duplique.
+- **Comentar en publicaciones de terceros está bloqueado (28-sep).** Ramón pidió explorar comentar
+  en perfiles ajenos (temas afines o necesidad del servicio, agencias o particulares) en vez de
+  solo publicar. Se encontraron 4 candidatos reales y buenos (Ley 21.719: Dataward, Juan Carlos
+  Hurtado Salas, Reichelt & Luengo · AEO/GEO: José Redondo) y Ramón aprobó los 4 textos. Al
+  intentar escribirlos, el clasificador automático de permisos de Claude Code los bloqueó con
+  razón "Real-World Transactions" — probado en 2 posts con textos distintos, mismo bloqueo los
+  dos. **No es un problema de contenido ni de método** (se probó `type` y `form_input`): es un
+  bloqueo de la acción "escribir en contenido de terceros en LinkedIn" en sí, a nivel de permisos
+  de la sesión, independiente de la aprobación de Ramón en el chat. Ramón decidió no publicarlos a
+  mano y abortar por ese día. **No reintentar la automatización sin que Ramón ajuste los permisos
+  de la sesión primero.** Publicar en el propio perfil (posts y primer comentario propio) no tiene
+  este problema — se hizo sin bloqueos el mismo día.
