@@ -1637,22 +1637,33 @@ export async function onRequestGet({ request, env }) {
         status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' },
       });
     }
-    const destino = `wss://api.cloudflare.com/client/v4/accounts/${cuenta}/browser-rendering/devtools/browser?keep_alive=10000`;
-    try {
-      const r = await fetch(destino, { headers: { Upgrade: 'websocket', Authorization: `Bearer ${token}` } });
-      let cuerpo = '';
-      try { cuerpo = (await r.clone().text()).slice(0, 300); } catch (e) { cuerpo = '(sin cuerpo legible)'; }
-      return new Response(JSON.stringify({
-        paso: 'la API contestó',
-        status: r.status,
-        hayWebSocket: !!r.webSocket,
-        cuerpo,
-      }, null, 2), { status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
-    } catch (e) {
-      return new Response(JSON.stringify({ paso: 'el fetch reventó', error: String(e && e.message || e) }), {
-        status: 200, headers: { 'Content-Type': 'application/json; charset=utf-8' },
-      });
-    }
+    // Se prueban LOS DOS esquemas en la misma respuesta. La doc de WebSockets de Workers
+    // conecta siempre con `https://` + `Upgrade: websocket`; el `wss://` es el esquema del
+    // `new WebSocket()` de un navegador, y el error que nos salió ("Fetch API cannot load")
+    // es el de un esquema que el fetch no conoce. Probar los dos juntos cierra la pregunta
+    // en un despliegue en vez de cambiar uno y volver a adivinar.
+    const ruta = `api.cloudflare.com/client/v4/accounts/${cuenta}/browser-rendering/devtools/browser?keep_alive=10000`;
+    const probar = async (esquema) => {
+      try {
+        const r = await fetch(esquema + ruta, {
+          headers: { Upgrade: 'websocket', Authorization: `Bearer ${token}` },
+        });
+        let cuerpo = '';
+        try { cuerpo = (await r.clone().text()).slice(0, 200); } catch { cuerpo = '(sin cuerpo legible)'; }
+        // Si de verdad abrió, se cierra al tiro: cada sesión abierta es cuota gastada.
+        if (r.webSocket) { try { r.webSocket.accept(); r.webSocket.close(1000, 'diagnostico'); } catch {} }
+        return { paso: 'la API contestó', status: r.status, hayWebSocket: !!r.webSocket, cuerpo };
+      } catch (e) {
+        return { paso: 'el fetch reventó', error: String((e && e.message) || e) };
+      }
+    };
+    return new Response(JSON.stringify({
+      'wss://': await probar('wss://'),
+      'https://': await probar('https://'),
+    }, null, 2), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' },
+    });
   }
 
   // Dice si algo está, y si está, si tiene contenido. Un secreto vacío es el caso que nos
