@@ -3,7 +3,15 @@
 **Cuándo:** LUNES 28-sep-2026 · **Canal:** perfil personal de Ramón · **Voz:** singular
 **Pieza visual:** ninguna. Texto puro.
 **Escribe:** agente-copywriter (Renata), a pedido directo de Ramón · **Aprobó el texto:** Ramón, 27-sep, sin cambios ("queda así, sin agregar nada más")
-**Estado:** ✅ Listo para publicar el lunes. No publicado aún.
+**Estado:** ✅ PUBLICADO Y VERIFICADO (28-sep-2026), perfil personal de Ramón.
+`linkedin.com/feed/update/urn:li:activity:7510340924783136768/`. Post y primer comentario
+confirmados en vivo, leyendo la página después de publicar (autor Ramón Vallejos en ambos).
+
+> ⚠️ **Corrección hecha al momento de publicar:** el primer comentario, tal como estaba escrito
+> abajo, llevaba una raya larga ("—"), prohibida por el manual de marca. Se detectó antes de
+> enviar y se publicó como "verifica.spindlelab.cl. Gratis, sin registro, 40 segundos." (punto en
+> vez de raya). El cuerpo del post no tenía el problema. Queda anotado para revisar este archivo
+> antes de reusar su plantilla.
 
 ## Origen del encargo
 

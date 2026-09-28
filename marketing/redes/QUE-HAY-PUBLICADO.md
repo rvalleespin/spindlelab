@@ -60,6 +60,7 @@ o que son suyas:**
 
 | Publicado | Pieza | Métricas | Registrado en |
 |---|---|---|---|
+| **✅ 28-sep** | "Me gusta construir sitios bien hechos..." — buenas prácticas desde el origen, ligado a Verifica y Cumple | publicado, verificado | `28-lun-buenas-practicas-desde-el-origen/publicar.md` |
 | **✅ 25-sep** | "Construí Verifica y Cumple..." — post propio con el link directo en el cuerpo, no compartir | publicado, verificado | `24-jue-tres-mitos-ley21719/publicar.md` |
 | **23-sep** | Query fan-out: el mecanismo de las respuestas con IA de Google, con fuente primaria | recién publicado | `23-mie-query-fan-out/` |
 | **21-sep, editado el 22-sep** | "Soy fundador de SpindleLab y armé un chequeo gratis para la Ley 21.719…" | 58 impresiones · 1 comentario | corpus §3 |
