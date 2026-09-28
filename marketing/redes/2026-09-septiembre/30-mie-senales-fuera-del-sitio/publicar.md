@@ -6,6 +6,12 @@
 semana por cadencia: la cuenta personal ya llevaba dos posts en dos días (GEO el 21-sep, Ley
 21.719 el 21/22-sep) sobre un ritmo de ~1 por semana.
 
+> ⚠️ **Pospuesto el 28-sep-2026, a pedido explícito de Ramón.** El slot del miércoles 30-sep se
+> reemplazó por un post de Verifica y Cumple (prioridad que Ramón fijó el 27-sep: genera leads más
+> rápido por el plazo del 1-dic). Ver `30-mie-lo-que-no-vemos/publicar.md`. Este texto no se
+> descarta — sigue vigente, no cita ningún dato con fecha de vencimiento — solo queda sin fecha
+> fija hasta que corresponda un post de visibilidad en IA en vez de VyC.
+
 ## Cuerpo (copiar y pegar)
 
 Si tu sitio está bien hecho y ChatGPT igual no te menciona, el problema está en otra parte.
