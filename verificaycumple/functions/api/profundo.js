@@ -1634,6 +1634,14 @@ export async function onRequestGet({ request, env }) {
       diagnostico: true,
       llavesNuestras: nuestras,
       totalLlavesEnEntorno: Object.keys(env || {}).length,
+      // Los CF_PAGES_* los pone Cloudflare y NO son secretos: son la rama, el commit y la
+      // URL del despliegue. Sus valores dicen qué proyecto y qué rama están sirviendo esto,
+      // que es justo lo que hay que saber para encontrar dónde van las variables.
+      quienSirveEsto: {
+        rama: env.CF_PAGES_BRANCH,
+        commit: env.CF_PAGES_COMMIT_SHA,
+        url: env.CF_PAGES_URL,
+      },
       esperadas: {
         CF_ACCOUNT_ID: typeof env.CF_ACCOUNT_ID,
         CF_BROWSER_TOKEN: typeof env.CF_BROWSER_TOKEN,
