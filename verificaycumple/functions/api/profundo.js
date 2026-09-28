@@ -54,10 +54,11 @@
  * SIN esas tres cosas el endpoint DECLINA con un mensaje honesto. No se degrada a "no
  * encontramos rastreadores": eso sería la regla 3 al revés.
  *
- * EL SUPUESTO QUE HAY QUE PROBAR EN EL PRIMER DESPLIEGUE: la doc de Workers muestra el
- * upgrade de WebSocket con el header `Upgrade` solo, y no dice si deja pasar además un
- * `Authorization`. Si no lo deja, este camino se cae y hay que ir al de respaldo (un Worker
- * aparte con el binding de browser, llamado por service binding). `conectarNavegador`
+ * ESE SUPUESTO QUEDÓ CONTESTADO EL 28-SEP, Y ES QUE SÍ: el `Authorization` viaja junto con
+ * el `Upgrade` sin problema. Lo que fallaba era otra cosa y más tonta: la URL decía `wss://`,
+ * que es el esquema del `new WebSocket()` de un navegador. El `fetch` de Workers no lo conoce
+ * y revienta antes de salir a la red. Se abre con `https://`. No hace falta el camino de
+ * respaldo ni ningún Worker aparte. `conectarNavegador`
  * distingue ese caso y lo registra, para que se vea en los logs en vez de parecer otra cosa.
  */
 
@@ -1198,7 +1199,12 @@ async function conectarNavegador(env) {
   // keep_alive al mínimo: es cuánto sobrevive el navegador después de que nos
   // desconectamos, y cada segundo de más es cuota gastada. El guion dura 25 s, así que
   // 10 s de gracia sobran y un fallo nuestro no deja una sesión ardiendo diez minutos.
-  const url = `wss://api.cloudflare.com/client/v4/accounts/${cuenta}/browser-rendering/devtools/browser?keep_alive=10000`;
+  // `https://`, NO `wss://`. La doc del endpoint muestra `wss://` porque está escrita para un
+  // cliente CDP normal (puppeteer, playwright), que usa un WebSocket de navegador. El `fetch`
+  // de Workers no conoce ese esquema y revienta antes de salir a la red con "Fetch API cannot
+  // load". Se abre con `https://` + `Upgrade: websocket`, como toda la doc de WebSockets de
+  // Workers. Comprobado el 28-sep probando los dos esquemas en el mismo despliegue.
+  const url = `https://api.cloudflare.com/client/v4/accounts/${cuenta}/browser-rendering/devtools/browser?keep_alive=10000`;
 
   let resp;
   try {
@@ -1215,14 +1221,14 @@ async function conectarNavegador(env) {
 
   const ws = resp.webSocket;
   if (!ws) {
-    // El supuesto que la doc no confirma: si el upgrade no salió, lo más probable es que el
-    // `Authorization` no haya viajado con el `Upgrade`. Se registra con esas palabras para
-    // que el próximo que lo lea sepa que toca el camino de respaldo, y no se ponga a buscar
-    // el token.
+    // 28-sep: este caso YA se diagnosticó una vez y la causa fue mundana. Un 401 acá con
+    // cuerpo "Authentication error" significa que el token guardado no sirve, y la causa que
+    // encontramos fue que traía un espacio o un salto de línea pegado del copiar y pegar, lo
+    // que rompe la cabecera entera. Antes de sospechar del plan o del permiso, revisar la
+    // FORMA del secreto: 40 caracteres de [A-Za-z0-9_-], sin nada alrededor.
     throw new FallaDeRevision('navegador',
-      `sin webSocket en la respuesta (status ${resp.status}). Puede ser que el fetch de Workers no ` +
-      'deje pasar el header Authorization junto con Upgrade: si es eso, toca el camino de respaldo ' +
-      '(Worker aparte con el binding de browser + service binding).');
+      `sin webSocket en la respuesta (status ${resp.status}). Con 401 lo primero a revisar es la ` +
+      'forma del token guardado (espacios o saltos pegados), no el plan ni el permiso.');
   }
   ws.accept();
 
