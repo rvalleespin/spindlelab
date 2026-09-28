@@ -1,0 +1,34 @@
+# Configuración del proyecto de Pages `verificaycumple`.
+#
+# POR QUÉ EXISTE ESTE ARCHIVO (28-sep-2026)
+# El chequeo profundo necesita tres cosas que el sitio estático nunca necesitó: el ID de la
+# cuenta, un token de Browser Rendering y un espacio de KV para el tope de abuso. Las dos
+# primeras son variables y la tercera es un enlace a otro recurso, y ese enlace NO tiene
+# comando en wrangler: o se hace en el panel, o se declara acá. Cloudflare lo documenta en
+# developers.cloudflare.com/pages/functions/wrangler-configuration/
+#
+# ⚠️ ESTE ARCHIVO PASA A SER LA FUENTE DE VERDAD. Lo que se configure en el panel deja de
+# aplicar para lo que esté declarado acá. Se comprobó antes de crearlo que las secciones de
+# Variables y de Vinculaciones del panel estaban VACÍAS, así que no se pisa nada.
+#
+# El token NO va acá y no debe ir nunca: es un secreto y este archivo está en el repositorio.
+# Se carga aparte con `wrangler pages secret put CF_BROWSER_TOKEN`, que lo pide por teclado.
+
+name = "verificaycumple"
+compatibility_date = "2026-09-08"
+
+# El proyecto no tiene comando de compilación y su directorio raíz ya es `verificaycumple`,
+# así que lo que se publica es esta misma carpeta.
+pages_build_output_dir = "."
+
+[vars]
+# El ID de cuenta no es un secreto: aparece en la URL del panel y en la documentación de
+# Cloudflare. Por eso va como variable de texto y no como secreto.
+CF_ACCOUNT_ID = "112fd68506c4a4f40ed1c8eacaf8cf71"
+
+[[kv_namespaces]]
+# El código lo busca como `env.VYC_TOPES`. Sin esto el chequeo profundo DECLINA, y hace bien:
+# es un endpoint público que abre navegadores remotos, y sin tope una tarde de golpes se come
+# las horas del mes.
+binding = "VYC_TOPES"
+id = "fbf273b71b4642f0989be319d86a6b0b"
