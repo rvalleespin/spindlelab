@@ -1613,6 +1613,39 @@ export async function profundo(entrada, env = {}, opciones = {}) {
 
 export async function onRequestGet({ request, env }) {
   const url = new URL(request.url);
+
+  // --- Diagnóstico temporal (28-sep-2026) -------------------------------------
+  // El endpoint contestaba 'sin-configurar' y no había forma de saber POR QUÉ: si el
+  // nombre de la variable no calzaba, si no llegaba al entorno, o si el enlace del KV
+  // faltaba. Estábamos adivinando contra un panel que yo no puedo abrir.
+  //
+  // Esto lo convierte en un hecho. Devuelve SOLO NOMBRES de las llaves que empiezan con
+  // CF_ o VYC_, que son las nuestras, y el TIPO de cada una (string = variable de texto,
+  // object = enlace a un recurso como el KV). NUNCA un valor, ni un fragmento, ni el
+  // largo: un token se filtra igual por pedazos.
+  //
+  // Se saca apenas quede resuelto.
+  if (url.searchParams.get('diagnostico') === '1') {
+    const nuestras = Object.keys(env || {})
+      .filter((k) => k.startsWith('CF_') || k.startsWith('VYC_'))
+      .sort()
+      .map((k) => ({ nombre: k, tipo: typeof env[k] }));
+    return new Response(JSON.stringify({
+      diagnostico: true,
+      llavesNuestras: nuestras,
+      totalLlavesEnEntorno: Object.keys(env || {}).length,
+      esperadas: {
+        CF_ACCOUNT_ID: typeof env.CF_ACCOUNT_ID,
+        CF_BROWSER_TOKEN: typeof env.CF_BROWSER_TOKEN,
+        VYC_TOPES: typeof env.VYC_TOPES,
+      },
+    }, null, 2), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' },
+    });
+  }
+  // ---------------------------------------------------------------------------
+
   const entrada = url.searchParams.get('dominio') || '';
   // La IP del visitante la pone el borde de Cloudflare, no el cliente: CF-Connecting-IP no
   // es falsificable desde fuera. Es lo que hace que el tope por IP valga algo.
