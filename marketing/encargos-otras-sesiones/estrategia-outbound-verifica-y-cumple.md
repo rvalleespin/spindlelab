@@ -277,11 +277,32 @@ cumple, el primer abogado que quiera devolvernos el golpe lo hace con una línea
 
 ### La línea de baja va en TODOS los correos, sin excepción
 
-> Si no quieres que te escriba, respóndeme y no lo vuelvo a hacer. Saqué tu correo de una base
-> de prospección comercial; en verifica.spindlelab.cl/privacidad cuento qué datos trato y cómo
+Va antes de la firma. Decirlo nosotros primero es más fuerte que esperar a que lo pregunten.
+
+**⚠️ Se nombra la fuente REAL, no la categoría.** Hasta el 28-sep la línea decía "de una base de
+prospección comercial". Es cierto y es vago, y esa vaguedad fue justo lo que gatilló el reclamo:
+Elías Cabello, abogado de Mi Equipo Legal, respondió con copia a dos colegas ejerciendo el
+**derecho a conocer el origen** de sus datos, citando nuestra propia política. Tuvo respuesta
+porque la fuente era rastreable (Apollo, cosecha del 9-sep), pero nombrarla de entrada se
+adelanta al reclamo y cuesta una palabra. Tres variantes según de dónde salió de verdad:
+
+**Lead de Apollo:**
+> Si no quieres que te escriba, respóndeme y no lo vuelvo a hacer. Saqué tu correo de Apollo,
+> una base comercial de contactos B2B; en verifica.spindlelab.cl/privacidad cuento qué datos
+> trato y cómo pedir que deje de hacerlo.
+
+**Lead de Google Maps (el correo está publicado en su propio sitio):**
+> Si no quieres que te escriba, respóndeme y no lo vuelvo a hacer. Saqué tu correo del sitio de
+> ustedes; en verifica.spindlelab.cl/privacidad cuento qué datos trato y cómo pedir que deje de
+> hacerlo.
+
+**Contacto que llegó por una respuesta automática:**
+> Si no quieres que te escriba, respóndeme y no lo vuelvo a hacer. Saqué tu correo de la
+> respuesta automática de X; en verifica.spindlelab.cl/privacidad cuento qué datos trato y cómo
 > pedir que deje de hacerlo.
 
-Va antes de la firma. Decirlo nosotros primero es más fuerte que esperar a que lo pregunten.
+Si no sabes de cuál de las tres salió, no mandes el correo hasta saberlo. La fuente de cada
+lead está en su CSV de origen.
 
 ### Y hay que honrarla
 
@@ -293,6 +314,11 @@ Va antes de la firma. Decirlo nosotros primero es más fuerte que esperar a que 
 - La política (`/privacidad/`, versión 1.4) ya declara en los puntos **04 y 10** qué datos
   tratamos de un prospecto, para qué, con qué base y de dónde salieron. Si cambias la fuente de
   los leads, hay que actualizar esos puntos.
+- **Si preguntan por el origen, se responde con el nombre de la fuente y nada más.** Sin vender,
+  sin aprovechar el hilo. El 28-sep se respondió "Apollo.io, consultada en septiembre", se
+  apuntó a apollo.io para su propia supresión, y se explicó que de sus datos solo queda la
+  dirección en el registro de exclusión, que es lo que permite no volver a escribirle. Esa
+  retención está declarada en el punto 10, así que la respuesta se sostiene sola.
 
 **Pendiente de abogado:** la base de legitimidad del punto 04 dice "interés legítimo". Es lo
 habitual, pero es una calificación legal y Ramón la va a confirmar.
