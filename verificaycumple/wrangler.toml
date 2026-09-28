@@ -21,10 +21,17 @@ compatibility_date = "2026-09-08"
 # así que lo que se publica es esta misma carpeta.
 pages_build_output_dir = "."
 
-[vars]
-# El ID de cuenta no es un secreto: aparece en la URL del panel y en la documentación de
-# Cloudflare. Por eso va como variable de texto y no como secreto.
-CF_ACCOUNT_ID = "112fd68506c4a4f40ed1c8eacaf8cf71"
+# NO PONER UN BLOQUE [vars] ACÁ. 28-sep, aprendido a golpes:
+#
+# Este archivo tenía CF_ACCOUNT_ID declarado como var, y eso volvió al archivo la fuente de
+# verdad del entorno completo del proyecto. Consecuencia: los SECRETOS que viven a nivel de
+# proyecto (CF_BROWSER_TOKEN) dejaban de sobrevivir a un build desde Git. Se cargaba bien, el
+# diagnóstico lo veía, y al siguiente despliegue desaparecía. Pasó dos veces con el mismo
+# patrón antes de que entendiéramos por qué.
+#
+# Lo único que NECESITA estar acá es el enlace del KV, porque es lo único de los tres ajustes
+# que no tiene comando en wrangler. Las variables de texto sí lo tienen, así que no ganan nada
+# estando acá y a cambio se llevan puesto el secreto.
 
 [[kv_namespaces]]
 # El código lo busca como `env.VYC_TOPES`. Sin esto el chequeo profundo DECLINA, y hace bien:
