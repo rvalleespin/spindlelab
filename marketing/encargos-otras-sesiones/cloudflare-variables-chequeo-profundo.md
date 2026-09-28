@@ -1,3 +1,59 @@
+# ✅ 28-sep, tarde: causa encontrada. Léelo antes que todo lo de abajo.
+
+**Lo de abajo está resuelto en parte y una cosa cambió de raíz.** Estado real:
+
+| | |
+|---|---|
+| El sitio | ✅ funcionando, sin interrupciones |
+| `CF_ACCOUNT_ID` | ✅ llega (declarado en `verificaycumple/wrangler.toml`) |
+| `VYC_TOPES` (KV) | ✅ llega. El espacio existe: `vyc-topes`, id `fbf273b71b4642f0989be319d86a6b0b` |
+| `CF_BROWSER_TOKEN` | ❌ **se borra en cada despliegue** |
+
+## La causa
+
+El token **no está mal ni le falta permiso**. Se carga bien (`wrangler pages secret list` lo
+muestra encriptado en production), aparece en el entorno, y **desaparece en el siguiente build**.
+
+Pasó dos veces, con el mismo patrón: se carga el secreto → el diagnóstico lo ve → se despliega
+→ el diagnóstico ya no lo ve.
+
+**Por qué:** al crear `verificaycumple/wrangler.toml` con un bloque `[vars]`, ese archivo pasó a
+ser la fuente de verdad del entorno del proyecto, y los secretos que viven a nivel de proyecto
+no sobreviven a un build desde Git. Los reemplaza lo declarado en el archivo.
+
+## El arreglo, que es de una línea
+
+**Sacar el bloque `[vars]` de `verificaycumple/wrangler.toml` y dejar solo `[[kv_namespaces]]`.**
+
+El enlace del KV era lo único que *necesitaba* estar en configuración, porque es lo único sin
+comando en wrangler. Las dos variables de texto sí tienen comando y panel, así que no ganan nada
+estando ahí y a cambio pisan el secreto.
+
+Después:
+1. Volver a cargar `CF_ACCOUNT_ID` (valor: `112fd68506c4a4f40ed1c8eacaf8cf71`, no es secreto) y
+   `CF_BROWSER_TOKEN` por comando o por panel.
+2. Desplegar.
+3. Comprobar con `?diagnostico=1` que las tres aparezcan **después** del build, no antes.
+
+⚠️ **La comprobación tiene que ser después del build, y comparando el commit.** El endpoint
+`?diagnostico=1` devuelve `quienSirveEsto.commit`: si no calza con el último commit, se está
+midiendo un despliegue viejo. Ese error costó dos diagnósticos falsos hoy.
+
+## Si después de eso el token llega y la conexión igual falla
+
+Entonces sí es el supuesto que el código arrastra desde el 25-sep, anotado en la cabecera de
+`profundo.js`: que el `fetch` de una Pages Function no deja pasar el header `Authorization`
+junto con el `Upgrade` del WebSocket. Eso obliga al camino de respaldo, un Worker aparte con el
+binding nativo de browser, llamado por service binding. Es medio día de trabajo, está mapeado,
+y no es urgente.
+
+Para distinguirlo hay un diagnóstico puesto: `?diagnostico=conexion` devuelve el status crudo
+de la API y si vino WebSocket, sin exponer el token.
+
+⚠️ **Los dos modos de diagnóstico son temporales** y hay que sacarlos al cerrar esto.
+
+---
+
 # Cargar las variables del chequeo profundo en Cloudflare
 
 **Para:** una sesión con acceso al navegador de Ramón (él ya está con sesión iniciada en Cloudflare)
