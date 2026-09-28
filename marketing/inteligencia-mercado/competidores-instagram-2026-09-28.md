@@ -86,11 +86,13 @@ la ventaja era de 30 y 35 puntos. Este competidor sí sabe lo que hace.
 
 ## Las tres lecturas que importan
 
-### 1. Resolvieron el problema que SpindleLab tiene abierto: ingresos sin horas
+### 1. Resolvieron algo que SpindleLab no tiene: ingreso que no depende de su presencia
 Su línea de productos de **$8.990 a $27.990 con entrega automática** genera ingreso sin consumir
-tiempo del fundador. **Ese es exactamente el cuello de SpindleLab:** 6-10 horas semanales, y un
-catálogo entero donde cada peso cobrado exige horas de Ramón. No es una idea teórica; hay un
-competidor chileno ejecutándola.
+tiempo del fundador. **Por qué importa para SpindleLab:** hoy cada peso que entra exige tiempo de Ramón — no porque le
+falten horas (se dedica al proyecto completo), sino porque **el catálogo entero está construido
+sobre trabajo no delegable**: llamadas, propuestas, entregas artesanales. Un producto que se vende
+solo mientras él hace otra cosa es ingreso que hoy no existe. No es teoría: hay un competidor
+chileno ejecutándolo.
 
 ### 2. Cobran $11.990 por lo que SpindleLab regala y además le consume tiempo
 Su «Informe SEO — 16 revisiones, tu sitio analizado en un minuto» cuesta **$11.990** y se entrega

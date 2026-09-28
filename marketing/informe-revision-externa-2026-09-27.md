@@ -56,10 +56,10 @@ diseño visual, SEO/AEO, desarrollo web, paid media, CRM, medición, coordinaci�
 un repositorio compartido, se coordinan por archivos versionados, y hay una sesión coordinadora
 que es la única autorizada a escribir el estado compartido.
 
-**La restricción dura:** el fundador dispone de unas 6 a 10 horas semanales, y solo de supervisión.
-Lo que no es delegable a un agente (llamadas, negociación, aprobar envíos, decidir) compite por
-esas mismas horas. **Esta restricción es la causa raíz de casi todos los problemas que verás más
-abajo.**
+**Dedicación:** el fundador trabaja en el proyecto a tiempo completo. La producción (investigación,
+borradores, artículos, informes) la ejecutan los agentes; lo que **solo puede hacer él** son las
+llamadas, la negociación y las aprobaciones de envío y gasto. El cuello, entonces, no es de horas
+disponibles: está en ese tramo no delegable del embudo.
 
 ---
 
@@ -263,7 +263,7 @@ El plan de 90 días vence en 8 días y hay que decidir:
 3. **Qué hacer con la publicidad pagada**, sabiendo que el tráfico llegaba bien y el sitio no
    convertía.
 4. **Cuánto peso darle a Verifica y Cumple** hasta el 1 de diciembre, sabiendo que compite por las
-   mismas 6-10 horas semanales que todo lo demás.
+   misma atención y el mismo foco que el resto del negocio.
 
 ---
 
@@ -281,7 +281,8 @@ Responde estas, con franqueza y sin suavizar:
    haría falta para cambiarlo, con recursos de una persona?
 
 3. **Sobre el foco:** hoy conviven cuatro líneas (visibilidad, redes, paid, desarrollo web) más un
-   frente nuevo con fecha de caducidad, operadas por una sola persona con 6-10 horas semanales.
+   frente nuevo con fecha de caducidad, operadas por una sola persona a tiempo completo, con los
+   agentes produciendo pero con las llamadas, propuestas y entregas dependiendo solo de ella.
    **¿Qué recortarías?** Ten en cuenta que la línea que genera ingresos reales (desarrollo web) no
    es la que el posicionamiento pone al centro.
 

@@ -65,6 +65,21 @@ Si el token ya no lo tiene (Cloudflare lo muestra una sola vez), se rota:
 `dash.cloudflare.com` → foto de perfil → **Perfil** → **Tokens de API** → menú **···** de la
 fila → **Rotar**.
 
+## Causa 3 — el token no tenía el permiso, y eso se vio en la lista, no en el error
+
+Al abrir **Perfil → Tokens de API**, el token que estaba cargado (se llamaba `ley`) tenía como
+permiso **`Cuenta.Cloudflare Pages` y nada más**. Ningún permiso de navegador. Aunque se hubiera
+pegado limpio, no habría funcionado.
+
+Se creó uno nuevo, `verifica-navegador`, con **un solo permiso**:
+`Cuenta → Ejecución del navegador → Editar` ("Ejecución del navegador" es como aparece Browser
+Rendering en la interfaz en español). El token `ley` quedó intacto.
+
+⚠️ **Los tokens de Cloudflare NO son de 40 caracteres.** El nuevo tiene 53. El primer
+diagnóstico daba `largoEsperado: false` porque comprobaba contra 40 exactos, y eso era un error
+mío, no un síntoma. El largo se valida como rango (30-60), nunca como número fijo: una regla de
+forma demasiado estrecha reporta roto lo que está sano.
+
 ## La lección, que vale más que el arreglo
 
 Las dos causas son la misma enfermedad que llevamos el mes entero sacando de los informes del
@@ -76,8 +91,10 @@ diagnóstico, que es peor, porque es la que se supone que no miente.
 - El segundo reportaba "texto con contenido (ok)" → un secreto **con basura adentro** salía como
   bueno. Costó esta.
 
-Un diagnóstico de secreto reporta la **forma**, nunca el valor y nunca la mera presencia: cuántos
-caracteres, si son los válidos, si trae espacios, si trae comillas pegadas.
+Un diagnóstico de secreto reporta la **forma**, nunca el valor y nunca la mera presencia: si los
+caracteres son los válidos, si trae espacios, si trae comillas pegadas, y el largo como rango.
+Y cuando el secreto es una credencial, la lista de permisos del panel dice cosas que el mensaje
+de error nunca va a decir: mirarla antes de seguir sospechando del código.
 
 ⚠️ **Los dos modos `?diagnostico=` de `profundo.js` son temporales y hay que sacarlos** apenas
 esto quede verificado punta a punta.

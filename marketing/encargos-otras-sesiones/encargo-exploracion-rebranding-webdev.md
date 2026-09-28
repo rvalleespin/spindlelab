@@ -94,8 +94,9 @@ imágenes hay que subir el `?v=N` en todas las referencias.
 
 ## Lo que Ramón necesita al final
 Poder mirar las dos versiones y decidir. **Una vista de decisión**, no un informe largo:
-qué gana, qué pierde, cuánto trabajo cuesta adoptarlo, y qué habría que dejar de hacer para
-pagarlo con sus 6-10 horas semanales.
+qué gana, qué pierde, cuánto trabajo cuesta adoptarlo, y y qué habría que reordenar para
+abordarlo. **No plantear la falta de horas como limitante** (corrección de Ramón, 28-sep: dedicación
+completa al proyecto).
 
 ---
 **Estado:** ⬜ sin empezar · rama creada por la troncal el 27-sep
