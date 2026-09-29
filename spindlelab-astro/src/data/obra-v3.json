@@ -1,0 +1,44 @@
+{
+  "titulo": "Trabajo",
+  "bajada": "Cuatro piezas: dos proyectos reales y dos ejercicios de concepto. Está dicho cuál es cuál en cada una.",
+  "casos": [
+    {
+      "slug": "bernardo-combeau",
+      "n": "Bernardo Combeau",
+      "rubro": "Fotografía de retrato",
+      "tipo": "cliente",
+      "linea": "Sitio y panel de administración para un fotógrafo de retrato. Cuatro vistas del mismo proyecto.",
+      "img": "/mockup-interno/obra-1.png",
+      "alt": "Página de retratos del sitio de Bernardo Combeau",
+      "pendiente": "permiso de caso público"
+    },
+    {
+      "slug": "verifica-y-cumple",
+      "n": "Verifica y Cumple",
+      "rubro": "Herramienta propia",
+      "tipo": "propio",
+      "linea": "Chequeo gratuito de las señales técnicas que pide la Ley 21.719. Lo construimos y lo mantenemos nosotros.",
+      "img": null,
+      "alt": "",
+      "pendiente": "URL pública"
+    },
+    {
+      "slug": "raigal",
+      "n": "Raigal",
+      "rubro": "Implantología",
+      "tipo": "concepto",
+      "linea": "Clínica de implantología y rehabilitación oral. Sitio completo, del argumento clínico a la ficha de tratamiento.",
+      "img": "/assets/img/obra/raigal.jpg",
+      "alt": "Portada del sitio de concepto Raigal, con el titular «Volver a morder»"
+    },
+    {
+      "slug": "aplomo",
+      "n": "Aplomo",
+      "rubro": "Constructora industrial",
+      "tipo": "concepto",
+      "linea": "Constructora industrial y edificación corporativa B2B. Sitio completo, con ficha de obra y programa.",
+      "img": "/assets/img/obra/aplomo.jpg",
+      "alt": "Portada del sitio de concepto Aplomo, con el titular «A plomo y a plazo»"
+    }
+  ]
+}
