@@ -75,13 +75,20 @@ const pasos = [
   <NavV3 />
 
   <main class="text-papel">
-    <!-- BLOQUE 1 · EL HERO AFIRMA, Y EL INSTRUMENTO LO PRUEBA.
+    {/* BLOQUE 1 · EL HERO AFIRMA, Y EL INSTRUMENTO LO PRUEBA.
          ================================================================================
          CAMBIO DE FUNCIÓN, no de redacción. Hasta el 29-sep el h1 era «¿Te menciona la
          IA?»: una pregunta, con el formulario debajo como su respuesta. Funcionaba, pero
          declaraba que el negocio se trata de la IA, y eso es exactamente lo que había que
-         mover. Medido antes del cambio: el 55 % del alto de esta home tenía marco de IA y
-         el 31 % de desarrollo web.
+         mover.
+
+         NO HAY UNA CIFRA DE ESTO Y NO CONVIENE INVENTARLE UNA. Acá decía «55 % del alto
+         con marco de IA contra 31 % de desarrollo», heredado de una sesión anterior que
+         no dejó el método escrito. Se intentó reproducir con dos métodos distintos y
+         dieron 45/13 y 32/56. Los tres números miden la misma página. La diferencia está
+         en cómo se clasifica una sección mixta, que es casi toda la página, así que el
+         porcentaje es un artefacto del método y no un hecho del sitio. Lo que sí se
+         sostiene sin medir: el titular más grande preguntaba por la IA, y ahora no.
 
          Ahora el h1 afirma qué es la casa y el formulario pasa de respuesta a PRUEBA de
          esa afirmación. Es un cambio de papel del instrumento, y conviene tenerlo escrito
@@ -95,33 +102,37 @@ const pasos = [
          NO DICE «MOTOR» a propósito, aunque la idea sea esa. La razón que estaba escrita
          acá era falsa y la verifiqué después: decía que el bloque del problema abre con
          «Los motores no citan sitios», y esa frase NO EXISTE en el sitio; ese bloque abre
-         con «No es un mal sitio.». La razón real es otra y sigue en pie, ahora contada:
-         en el texto visible del v3, «motores de IA» (buscadores) aparece 18 veces y
-         «motor de adquisición» (la máquina del negocio) 5. La palabra ya carga dos
-         significados distintos, 18 contra 5. Meterla en el titular más grande del sitio
-         para estrenar un tercero es lo que había que evitar.
+         con «No es un mal sitio.». La razón real es otra y sigue en pie, ahora contada
+         con su método: sobre el texto visible ya construido de las 21 páginas reales del
+         v3 (sin las maquetas a/b/c ni maqueta-inicial), «motores de IA» aparece 24 veces
+         y «motor de adquisición» una sola. En este sitio «motor» quiere decir buscador
+         casi siempre. Meter la palabra en el titular más grande para estrenarle un
+         tercer significado es lo que había que evitar.
 
          Titular elegido por Ramón el 29-sep entre ocho candidatos. La objeción que quedó
          anotada y no se resolvió sola: «el eje de tu negocio» es reclamable por cualquiera
-         y se sostiene en la bajada, no solo. Si la bajada se acorta, se pierde. -->
-    <section id="chequeo" class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-10 md:pb-14 scroll-mt-24">
-      <!-- 20 caracteres y 5 palabras: una sola línea a 8,4vw, así que el instrumento queda
-           entero y a la vista. El titular anterior de 79 caracteres ocupaba cuatro líneas
-           y lo aplastaba. -->
+         y se sostiene en la bajada, no solo. Si la bajada se acorta, se pierde. */}
+    <section id="chequeo" class="px-6 md:px-medianil pt-24 sm:pt-40 md:pt-44 pb-10 md:pb-14 scroll-mt-24">
+      {/* 20 caracteres y 5 palabras. Acá decía «una sola línea» y es FALSO: medido con un
+           Range —getClientRects() sobre un bloque devuelve la caja, no las líneas— va en
+           una línea desde 860px de ancho, y en DOS en todo ancho de teléfono y en la
+           banda 768-859. Dos líneas en un teléfono no es un defecto; afirmar que es una
+           sí lo era. El titular anterior, de 79 caracteres, ocupaba cuatro y aplastaba el
+           instrumento; éste lo deja a la vista, que es lo que importaba. */}
       <h1
         class:list={['font-extrabold m-0', caja('El eje de tu negocio')]}
         style="font-size:clamp(2.25rem, 8.4vw, 8rem); line-height:0.88; letter-spacing:0"
       >
         El eje de tu negocio
       </h1>
-      <p class="mt-8 text-humo text-lg md:text-2xl leading-relaxed max-w-prosa">
+      <p class="mt-5 sm:mt-8 text-humo text-lg md:text-2xl leading-relaxed max-w-prosa">
         Todo lo que pagas para que lleguen termina en tu sitio, y ahí la primera que lee
         no es una persona: es la máquina que responde cuando alguien pregunta por tu
         rubro. Diseñamos y construimos el sitio que esa máquina sí puede leer, y le
         conectamos la pauta encima. Escribe tu dominio y te mostramos cómo está el tuyo.
       </p>
 
-      <div class="mt-10 border-t border-b filete">
+      <div class="mt-6 sm:mt-10 border-t border-b filete">
         <form class="chq-form flex flex-col sm:flex-row sm:items-stretch" id="chq-form" novalidate>
           <label for="chq-dominio" class="sr-only">Tu dominio</label>
           <input
@@ -134,7 +145,7 @@ const pasos = [
             spellcheck="false"
             placeholder="tuempresa.cl"
             required
-            class="flex-1 bg-transparent font-mono text-2xl md:text-4xl text-papel placeholder:text-humo py-7 md:py-9 outline-none focus-visible:bg-white/[0.04] transition-colors"
+            class="flex-1 bg-transparent font-mono text-2xl md:text-4xl text-papel placeholder:text-humo py-5 sm:py-7 md:py-9 outline-none focus-visible:bg-white/[0.04] transition-colors"
           />
           <button
             type="submit"
@@ -154,7 +165,7 @@ const pasos = [
       </p>
     </section>
 
-    <!-- LA OBRA, inmediatamente después: la prueba abre, el oficio remata. -->
+    {/* LA OBRA, inmediatamente después: la prueba abre, el oficio remata. */}
     <section id="obra" class="px-6 md:px-medianil pt-10 md:pt-14 pb-4 scroll-mt-24">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-2.5">
         {
@@ -198,7 +209,7 @@ const pasos = [
       </p>
     </section>
 
-    <!-- BLOQUE 2 · EL PROBLEMA. Campo navy.
+    {/* BLOQUE 2 · EL PROBLEMA. Campo navy.
          ================================================================================
          EL TITULAR NO ES LA CIFRA, Y ESO ES DELIBERADO. Antes decía «67 de 69 sitios
          tenían el mismo problema» y Ramón lo bajó el 29-sep: el dato deja más dudas que
@@ -225,7 +236,7 @@ const pasos = [
 
          LA CIFRA NO SE PIERDE, BAJA AL CUERPO, que es donde se puede explicar: ahora
          llega con su muestra («los últimos 69 que pasamos por el chequeo») y con qué
-         falló exactamente. Es dato propio verificable y se mantiene. -->
+         falló exactamente. Es dato propio verificable y se mantiene. */}
     <section class="px-6 md:px-medianil py-32 md:py-seccion">
       <h2 data-entra
         class:list={['font-extrabold m-0 max-w-[22ch]', caja('No es un mal sitio.')]}
@@ -236,22 +247,23 @@ const pasos = [
       <p class="mt-10 md:mt-14 text-humo text-xl md:text-2xl leading-relaxed max-w-prosa">
         De los últimos 69 sitios que pasamos por el chequeo, 67 fallaban en lo mismo:
         ninguno respondía una sola pregunta en un formato del que se pueda sacar una cita
-        limpia, que es la tercera de las tres cosas. Estaban escritos para que los lea una
-        persona, no la máquina que hoy responde por su rubro.
+        limpia. Estaban escritos para una persona, no para la máquina.
       </p>
     </section>
 
-    <!-- BLOQUE 3 · LAS TRES COMPUERTAS. La idea conductora de la página.
+    {/* BLOQUE 3 · LAS TRES COMPUERTAS. La idea conductora de la página.
          ================================================================================
          NO SE INVENTÓ NADA ACÁ. Son los tres bloques con que la metodología publicada
          agrupa los 21 chequeos, con sus pesos reales: leer 30, entender 40, citar 30.
-         OJO, EL HILO SE CORTÓ EL 29-SEP y esto hay que resolverlo, no dejarlo escrito:
-         cuando el h1 era «¿Te menciona la IA?», la bajada del hero presentaba las tres
-         cosas («leer, entender, citar») y este bloque las explicaba. El hero nuevo afirma
-         en vez de preguntar y ya no las presenta, así que el bloque del problema, que
-         está ARRIBA de éste, dice «que es la tercera de las tres cosas» nombrando algo
-         que todavía no se nombró. Es una referencia hacia adelante.
-         La barra de pesos está a escala: 30/40/30 son los puntos de verdad. -->
+         ESTE BLOQUE ES AHORA EL PRIMERO QUE NOMBRA LAS TRES COSAS, y por eso importa que
+         esté acá. Cuando el h1 era «¿Te menciona la IA?», la bajada del hero ya las
+         presentaba y este bloque solo las explicaba. El hero nuevo afirma en vez de
+         preguntar y no las nombra, así que el bloque del problema, que va ARRIBA de éste,
+         decía «que es la tercera de las tres cosas» señalando algo que todavía no se
+         había nombrado. Se cortó esa subordinada: no aportaba un hecho, solo numeraba una
+         lista que el lector no tenía. Si alguien vuelve a mover este bloque de sitio, hay
+         que revisar que nada lo referencie desde más arriba.
+         La barra de pesos está a escala: 30/40/30 son los puntos de verdad. */}
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <p class="rotulo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">
         Las tres cosas
@@ -300,8 +312,8 @@ const pasos = [
         </div>
       </div>
 
-      <!-- La barra de pesos, a escala real. Se lee de un vistazo que el bloque del medio
-           pesa más que cualquiera de los extremos. -->
+      {/* La barra de pesos, a escala real. Se lee de un vistazo que el bloque del medio
+           pesa más que cualquiera de los extremos. */}
       <div data-entra class="mt-14 md:mt-20">
         <div class="flex w-full border border-noche/25" role="img" aria-label="Reparto del puntaje: leer 30 puntos, entender 40 puntos, citar 30 puntos, sobre un total de 100.">
           <div style="flex:30" class="border-r border-noche/25 px-3 py-4">
@@ -323,7 +335,7 @@ const pasos = [
       </div>
     </section>
 
-    <!-- BLOQUE 4 · LOS CAMPOS. Un servicio, una pantalla, un color.
+    {/* BLOQUE 4 · LOS CAMPOS. Un servicio, una pantalla, un color.
          ================================================================================
          ESTE ES EL CAMBIO DE ESTRUCTURA. Antes esto era UNA sección en papel con los seis
          servicios apretados en una grilla de tres columnas. Medido en la referencia, eso
@@ -342,7 +354,7 @@ const pasos = [
 
          LOS PRECIOS salen de data/oferta-v3.json sin tocarse. Este bloque no los escribe:
          los lee.
-         ============================================================================= -->
+         ============================================================================= */}
     <div id="servicios" class="scroll-mt-0">
       {
         [...momentos, tambienPanel].map((m, i) => {
@@ -595,7 +607,7 @@ const pasos = [
         </ul>
       </section>
     </div>
-    <!-- BLOQUE 5 · HERRAMIENTAS GRATIS. Bloque nuevo. Campo petróleo. -->
+    {/* BLOQUE 5 · HERRAMIENTAS GRATIS. Bloque nuevo. Campo petróleo. */}
     <section class="bg-surface-2 text-papel px-6 md:px-medianil py-32 md:py-seccion">
       <h2 data-entra
         class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[17ch]', caja('Tres herramientas, gratis')]}
@@ -624,8 +636,8 @@ const pasos = [
             Si tu sitio cumple lo técnico de la Ley 21.719, que entra en vigencia el 1 de
             diciembre.
           </p>
-          <!-- Sin enlace a propósito: la URL pública de esta herramienta no está confirmada
-               en el repo y no se inventa un destino. Falta completarla. -->
+          {/* Sin enlace a propósito: la URL pública de esta herramienta no está confirmada
+               en el repo y no se inventa un destino. Falta completarla. */}
         </article>
 
         <article class="border-t filete pt-6">
@@ -669,7 +681,7 @@ const pasos = [
       </ol>
     </section>
 
-    <!-- BLOQUE 7 · CIERRE bajo, sin urgencia fabricada. -->
+    {/* BLOQUE 7 · CIERRE bajo, sin urgencia fabricada. */}
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2 data-entra
         class:list={['font-extrabold m-0 max-w-[14ch]', caja('El mismo número, después')]}

@@ -111,7 +111,7 @@ const fecha = meta.datePublished
   <NavV3 />
 
   <main>
-    <!-- Cabecera en tinta: migas y fecha. El titular es el h1 del artículo, más abajo. -->
+    {/* Cabecera en tinta: migas y fecha. El titular es el h1 del artículo, más abajo. */}
     <header class="text-papel px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-12 md:pb-16">
       <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-6" style="letter-spacing:0.16em">
         <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
@@ -125,7 +125,7 @@ const fecha = meta.datePublished
       )}
     </header>
 
-    <!-- El artículo, sobre papel. HTML verbatim del publicado. -->
+    {/* El artículo, sobre papel. HTML verbatim del publicado. */}
     <div class="bg-papel">
       {/* ÍNDICE PEGAJOSO. El resto del v3 usa el sticky sobre listas verticales; un
           artículo es prosa corrida y ahí el titular pegajoso no aplica, así que lo que
@@ -175,12 +175,20 @@ const fecha = meta.datePublished
         artículos, así que el cierre del blog usa el mismo campo al que empuja. Decidido
         por Ramón el 29-sep. */}
     <section class="tinte--navy px-6 md:px-medianil py-32 md:py-seccion">
+      {/* ESTE TITULAR ERA «¿Te menciona la IA?», el h1 que la home retiró el 29-sep.
+          Quedó vivo acá, en display y hasta 5rem, en las 8 páginas del blog, y su botón
+          manda a /v3/#chequeo: una pieza que preguntaba y un destino que ahora afirma.
+          Pasa a afirmar lo mismo que el hero, y de paso fija el referente de «eje» en el
+          sitio, que es donde lo pone servicios-v3.json:720 («El sitio es el eje; la pauta
+          lo acelera»). La línea de apoyo de abajo no se toca: es la que conserva la
+          promesa del chequeo y las tres compuertas.
+          La redacción es mía, no de Ramón. Él eligió el h1 de la home, no éste. */}
       <h2
         data-entra
-        class:list={['font-extrabold m-0 max-w-[15ch]', caja('¿Te menciona la IA?')]}
+        class:list={['font-extrabold m-0 max-w-[15ch]', caja('El sitio es el eje.')]}
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
-        ¿Te menciona la IA?
+        El sitio es el eje.
       </h2>
       <p data-entra data-paso="1" class="mt-8 text-humo text-xl leading-relaxed max-w-prosa">
         Te decimos si una IA te puede leer, si te entiende y si te puede citar. Treinta segundos.
