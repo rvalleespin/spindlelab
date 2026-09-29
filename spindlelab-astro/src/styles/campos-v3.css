@@ -252,15 +252,3 @@
   }
 }
 
-/* ==========================================================================
-   TITULAR QUE ES FRASE
-   ==========================================================================
-   Ver src/utils/caja.ts para la regla y de dónde sale. Acá solo el estilo: sin
-   mayúsculas, peso 700 en vez de 800, y el interletraje un punto más suelto,
-   porque el tracking cerrado que sirve a una palabra en caja alta aprieta de más
-   una frase en caja baja. */
-.titular-frase {
-  text-transform: none;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}

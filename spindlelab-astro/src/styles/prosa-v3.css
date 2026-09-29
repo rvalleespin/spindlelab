@@ -65,9 +65,9 @@
   text-wrap: balance;
 }
 
-/* Mismo criterio: los h2 de un artículo son frases, no etiquetas. El más largo mide
- * 65 caracteres. Con 24ch de ancho máximo caían en tres líneas; a 34ch y en caja baja
- * caen en dos y se leen como subtítulo. */
+/* El ancho es lo único que quedó del intento de bajarles la caja, y se queda porque
+ * sirve igual: el h2 más largo de los artículos mide 65 caracteres y con 24ch caía en
+ * tres líneas. A 34ch cae en dos, en mayúsculas lo mismo. */
 .prosa-v3 h2 {
   color: #14110e;
   font-weight: 800;
