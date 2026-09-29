@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- PIEZA DE CONCEPTO. Deslinde no existe. Ver ../ficha.md -->
+<meta name="robots" content="noindex, nofollow">
+
+<title>Deslinde · Derecho laboral y cumplimiento para empresas</title>
+<meta name="description" content="Estudio jurídico boutique de derecho laboral y cumplimiento para empresas en Chile. Publicamos cómo cobramos, qué revisamos y qué determina cada respuesta antes de la primera reunión.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600&family=Zilla+Slab:wght@400;500;600;700&display=swap">
+
+<style>
+/* ==========================================================================
+   DESLINDE — sistema visual
+   ==========================================================================
+   «Deslindar» es fijar dónde termina una cosa y empieza otra. Es literalmente
+   el trabajo: decirle a una empresa qué le corresponde y qué no, antes de que
+   lo decida un juzgado.
+
+   POR QUÉ NO SE PARECE A LAS OTRAS DOS PIEZAS. La regla de la serie es que
+   cada pieza se compone CONTRA las anteriores, o el portafolio prueba que hay
+   un estilo en vez de que hay oficio:
+
+     Raigal    lienzo hueso cálido · serif de libro · aireada
+     Aplomo    lienzo papel frío   · monoespaciada  · tabular y densa
+     Deslinde  lienzo bosque OSCURO · slab serif    · bloques de realce
+
+   Y contra el sitio de la propia agencia también: SpindleLab v3 es casi negro
+   con Manrope. Verde bosque con slab no se confunde con ninguno de los cuatro.
+
+   LO QUE SE RECHAZA A PROPÓSITO, que es el aspecto del 90% del rubro: azul
+   marino con dorado, columnas griegas, martillo de juez, balanza, corbata de
+   stock, y el apellido del socio como marca. Es lo que hace que todos los
+   estudios se vean iguales y que ninguno se recuerde.
+
+   Referencia (Refero, antes de componer — ver ficha.md):
+   mode.com da la base: lienzo bosque profundo, el titular metido DENTRO de un
+   bloque de realce macizo, superficies de papel para lo secundario, radio de
+   16px, composición apilada a la izquierda y cero sombras.
+   legora.com da la gravedad editorial legal: display serif grande con tracking
+   negativo contra cuerpo sans chico, y disciplina de contraste alto.
+   vectary.com da el tratamiento de documento normativo para el contenido:
+   secciones numeradas, listas estructuradas, metadatos de fecha. Esa densidad
+   es justo lo que hace citable a un estudio.
+
+   EL REALCE ES BLOQUE, NUNCA TEXTO NI FONDO DE SECCIÓN. Rellena el bloque del
+   titular y el botón primario, y nada más. Misma regla que el hivis de Aplomo:
+   sirve porque aparece poco y siempre en el mismo sitio.
+
+   Contraste calculado sobre los valores, no estimado a ojo:
+     papel sobre bosque 11,86:1 · salvia sobre bosque 7,12:1
+     realce sobre bosque 9,67:1 · bosque sobre realce 9,67:1
+     bosque sobre papel 11,86:1 · gris sobre papel 6,42:1
+   ========================================================================== */
+
+:root{
+  --bosque:#08352A;      /* lienzo */
+  --bosque-2:#0C4133;    /* tarjeta sobre lienzo */
+  --papel:#EFF1E8;
+  --salvia:#A9C2B3;      /* secundario sobre bosque, 7,12:1 */
+  --gris:#4A5A50;        /* secundario sobre papel, 6,42:1 */
+  --realce:#C3E85C;      /* SOLO bloque relleno y botón primario */
+  --filete:rgba(169,194,179,.28);
+  --slab:'Zilla Slab', Georgia, serif;
+  --sans:'Libre Franklin', system-ui, sans-serif;
+  --medianil:clamp(18px, 4vw, 64px);
+  --radio:16px;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+body{
+  margin:0; background:var(--bosque); color:var(--papel);
+  font-family:var(--sans); font-size:17px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block}
+a{color:inherit}
+
+.limite{max-width:1240px; margin:0 auto; padding:0 var(--medianil)}
+.seccion{padding:clamp(56px,8vw,112px) 0}
+.prosa{max-width:66ch}
+
+/* ---- rótulo de concepto ------------------------------------------------- */
+/* Va ARRIBA DE TODO y no se puede perder: la regla de la serie pide que salga
+   en una captura de la primera pantalla, no en el pie. */
+.rotulo-concepto{
+  background:var(--papel); color:var(--bosque);
+  font-size:12px; line-height:1.5; letter-spacing:.04em;
+  padding:10px var(--medianil);
+}
+.rotulo-concepto b{font-weight:600}
+
+/* ---- tipografía --------------------------------------------------------- */
+.monumento{
+  font-family:var(--slab); font-weight:600;
+  font-size:clamp(40px, 7.4vw, 104px); line-height:.98;
+  letter-spacing:-.03em; margin:0;
+}
+.titulo{
+  font-family:var(--slab); font-weight:600;
+  font-size:clamp(28px, 3.6vw, 46px); line-height:1.08;
+  letter-spacing:-.02em; margin:0;
+}
+.subtitulo{
+  font-family:var(--slab); font-weight:600;
+  font-size:21px; line-height:1.25; letter-spacing:-.01em; margin:0;
+}
+.grande{font-size:clamp(18px,1.55vw,22px); line-height:1.55}
+.dato{
+  font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+  font-weight:600; color:var(--salvia); margin:0;
+}
+.tenue{color:var(--salvia)}
+
+/* EL BLOQUE DE REALCE. Es la firma de la composición: el titular no lleva
+   color, lo lleva la caja que lo contiene. `box-decoration-break` mantiene el
+   relleno en cada línea cuando el texto se parte en dos o tres. */
+.realce{
+  background:var(--realce); color:var(--bosque);
+  padding:.06em .22em; border-radius:6px;
+  -webkit-box-decoration-break:clone; box-decoration-break:clone;
+}
+
+/* ---- cabecera ----------------------------------------------------------- */
+.cabecera{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:24px; padding:22px 0; flex-wrap:wrap;
+}
+.marca{
+  font-family:var(--slab); font-weight:700; font-size:23px;
+  letter-spacing:-.02em; text-decoration:none;
+}
+.navegacion{display:flex; gap:clamp(14px,2vw,30px); flex-wrap:wrap}
+.navegacion a{font-size:15px; text-decoration:none; color:var(--salvia)}
+.navegacion a:hover{color:var(--papel)}
+
+/* ---- botones ------------------------------------------------------------ */
+.boton{
+  display:inline-block; font-size:15px; font-weight:600;
+  padding:14px 26px; border-radius:var(--radio); text-decoration:none;
+  border:1px solid transparent;
+}
+.boton--primario{background:var(--realce); color:var(--bosque)}
+.boton--fantasma{border-color:var(--salvia); color:var(--papel)}
+.boton:focus-visible{outline:3px solid var(--realce); outline-offset:3px}
+a:focus-visible{outline:3px solid var(--realce); outline-offset:3px}
+
+/* ---- rejillas ----------------------------------------------------------- */
+.rejilla{display:grid; gap:clamp(18px,2.4vw,32px)}
+.doce{grid-template-columns:repeat(12,1fr)}
+@media (max-width:860px){
+  .doce{grid-template-columns:1fr}
+  .doce > *{grid-column:1 / -1 !important}
+}
+
+/* ---- superficies -------------------------------------------------------- */
+.tarjeta{
+  background:var(--bosque-2); border-radius:var(--radio);
+  padding:clamp(22px,2.4vw,32px);
+}
+.lamina{
+  background:var(--papel); color:var(--bosque);
+  border-radius:var(--radio); padding:clamp(22px,3vw,44px);
+}
+.lamina .tenue{color:var(--gris)}
+.lamina .dato{color:var(--gris)}
+
+/* ---- la matriz (dibujo del oficio, no una foto) -------------------------- */
+/* La lección de Raigal: si falta un activo visual, no se deja la ranura vacía
+   ni se finge una foto. Se dibuja lo que el oficio sí dibuja. Una matriz de
+   cumplimiento es un entregable real de este trabajo, y ningún estudio de la
+   competencia la publica. */
+.matriz{width:100%; border-collapse:collapse; font-size:14px}
+.matriz th, .matriz td{
+  text-align:left; padding:13px 14px; border-bottom:1px solid rgba(8,53,42,.16);
+  vertical-align:top;
+}
+.matriz thead th{
+  font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--gris); font-weight:600; border-bottom:2px solid var(--bosque);
+}
+.matriz tbody tr:last-child td{border-bottom:none}
+.matriz td:first-child{font-weight:600}
+.envoltorio-tabla{overflow-x:auto}
+
+.marca-riesgo{
+  display:inline-block; font-size:11px; font-weight:600; letter-spacing:.08em;
+  text-transform:uppercase; padding:3px 9px; border-radius:5px;
+  border:1px solid var(--bosque); white-space:nowrap;
+}
+.marca-riesgo--alto{background:var(--bosque); color:var(--papel)}
+
+/* ---- la línea del vínculo ----------------------------------------------- */
+.linea{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+  border-top:2px solid var(--salvia); margin-top:36px;
+}
+.linea > div{padding:20px 20px 0 0; position:relative}
+.linea > div::before{
+  content:''; position:absolute; top:-7px; left:0;
+  width:12px; height:12px; border-radius:50%; background:var(--realce);
+}
+.linea .dato{margin-bottom:6px}
+@media (max-width:760px){
+  .linea{grid-template-columns:1fr; border-top:none; border-left:2px solid var(--salvia)}
+  .linea > div{padding:0 0 26px 22px}
+  .linea > div::before{top:4px; left:-7px}
+}
+
+/* ---- preguntas ---------------------------------------------------------- */
+.pregunta{border-top:1px solid var(--filete); padding:26px 0}
+.pregunta:last-child{border-bottom:1px solid var(--filete)}
+.pregunta h3{
+  font-family:var(--slab); font-weight:600; font-size:21px; line-height:1.3;
+  margin:0 0 12px; letter-spacing:-.01em;
+}
+.pregunta p{margin:0 0 12px}
+.pregunta p:last-child{margin-bottom:0}
+.pregunta ul{margin:0 0 12px; padding-left:20px}
+.pregunta li{margin-bottom:7px}
+
+/* ---- honorarios --------------------------------------------------------- */
+.banda{
+  display:flex; justify-content:space-between; align-items:baseline;
+  gap:20px; padding:20px 0; border-bottom:1px solid rgba(8,53,42,.16);
+  flex-wrap:wrap;
+}
+.banda:last-child{border-bottom:none}
+.banda .cifra{font-family:var(--slab); font-weight:600; font-size:25px; white-space:nowrap}
+
+/* ---- pie ---------------------------------------------------------------- */
+.pie{border-top:1px solid var(--filete); padding:44px 0 56px; font-size:14px}
+.aviso{
+  border:1px solid var(--filete); border-radius:var(--radio);
+  padding:22px 24px; font-size:14px; line-height:1.6; color:var(--salvia);
+}
+.aviso b{color:var(--papel); font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- ROTULADO DE CONCEPTO, sin scroll y sin ambigüedad. -->
+<div class="rotulo-concepto">
+  <b>PIEZA DE CONCEPTO · Deslinde no existe.</b> No es un estudio real, no es un
+  cliente y ninguna de las personas nombradas existe. Ejercicio de SpindleLab para
+  mostrar cómo trabaja en este rubro. Nada de lo que sigue es asesoría legal.
+</div>
+
+<header class="limite">
+  <div class="cabecera">
+    <a class="marca" href="#">Deslinde</a>
+    <nav class="navegacion" aria-label="Principal">
+      <a href="#materias">Materias</a>
+      <a href="#vinculo">El vínculo</a>
+      <a href="#matriz">La matriz</a>
+      <a href="#honorarios">Honorarios</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#estudio">El estudio</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== HERO ============================================================ -->
+<section class="seccion limite" style="padding-top:clamp(28px,4vw,56px)">
+  <p class="dato">Derecho laboral y cumplimiento · Empresas · Santiago de Chile</p>
+
+  <h1 class="monumento" style="margin-top:22px; max-width:15ch">
+    Dónde <span class="realce">termina</span> tu responsabilidad.
+  </h1>
+
+  <div class="rejilla doce" style="margin-top:clamp(34px,4.4vw,60px)">
+    <div style="grid-column:span 6">
+      <p class="grande" style="margin:0">
+        Trabajamos con el área de personas de empresas de 50 a 800 trabajadores.
+        La mayoría de las consultas que llegan no son juicios: son decisiones que
+        todavía se pueden tomar bien.
+      </p>
+      <p class="grande tenue" style="margin:18px 0 0">
+        Publicamos cómo cobramos, qué revisamos y qué determina cada respuesta,
+        porque la primera pregunta que nos hacen siempre es esa y no debería
+        costar una reunión.
+      </p>
+      <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap">
+        <a class="boton boton--primario" href="#honorarios">Ver los honorarios</a>
+        <a class="boton boton--fantasma" href="#preguntas">Leer las preguntas</a>
+      </div>
+    </div>
+
+    <div style="grid-column:span 5 / -1">
+      <div class="tarjeta">
+        <p class="dato">Lo primero que hacemos</p>
+        <p class="subtitulo" style="margin-top:14px">
+          Revisar los contratos, el reglamento interno y los últimos doce
+          finiquitos.
+        </p>
+        <p class="tenue" style="margin:16px 0 0; font-size:15px">
+          Sale un informe de una página con lo que está en regla, lo que no, y
+          qué se arregla antes de que importe. Dos semanas, precio cerrado.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MATERIAS ======================================================== -->
+<section class="seccion limite" id="materias">
+  <h2 class="titulo" style="max-width:20ch">Cuatro materias, y nada más.</h2>
+  <p class="grande tenue prosa" style="margin-top:18px">
+    Un estudio que dice hacerlo todo no es especialista en nada. Si tu asunto no
+    está en esta lista, lo decimos y derivamos.
+  </p>
+
+  <div class="rejilla doce" style="margin-top:clamp(30px,4vw,52px)">
+    <div class="tarjeta" style="grid-column:span 3">
+      <p class="dato">01</p>
+      <p class="subtitulo" style="margin-top:12px">Término de contrato</p>
+      <p class="tenue" style="margin:12px 0 0; font-size:15px">
+        Desde la decisión hasta el finiquito, incluida la que recomendamos no
+        tomar. La mayoría de los juicios que vemos empezaron en una carta
+        escrita con apuro.
+      </p>
+    </div>
+    <div class="tarjeta" style="grid-column:span 3">
+      <p class="dato">02</p>
+      <p class="subtitulo" style="margin-top:12px">Cumplimiento y fiscalización</p>
+      <p class="tenue" style="margin:12px 0 0; font-size:15px">
+        Preparación antes de una fiscalización, y defensa después. Reglamento
+        interno, jornada, registro de asistencia y subcontratación.
+      </p>
+    </div>
+    <div class="tarjeta" style="grid-column:span 3">
+      <p class="dato">03</p>
+      <p class="subtitulo" style="margin-top:12px">Acoso, denuncias e investigación</p>
+      <p class="tenue" style="margin:12px 0 0; font-size:15px">
+        Procedimiento de investigación interna, con el estudio como tercero y no
+        como parte. Es el único modo de que el informe sirva después.
+      </p>
+    </div>
+    <div class="tarjeta" style="grid-column:span 3">
+      <p class="dato">04</p>
+      <p class="subtitulo" style="margin-top:12px">Negociación colectiva</p>
+      <p class="tenue" style="margin:12px 0 0; font-size:15px">
+        Acompañamiento de la comisión negociadora, del piso a la firma. No
+        redactamos ofertas que no vamos a poder sostener en la mesa.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EL VÍNCULO ====================================================== -->
+<section class="seccion limite" id="vinculo">
+  <div class="lamina">
+    <p class="dato">El vínculo laboral, por etapas</p>
+    <h2 class="titulo" style="margin-top:14px; max-width:24ch">
+      Casi todo lo que se rompe al final se decidió al principio.
+    </h2>
+    <p class="grande tenue prosa" style="margin-top:16px">
+      Las cuatro etapas donde una empresa toma decisiones que después no puede
+      deshacer. Los plazos concretos dependen de la causal y del caso, y por eso
+      no van escritos acá como si fueran uno solo.
+    </p>
+
+    <div class="linea">
+      <div>
+        <p class="dato">Etapa 01</p>
+        <p class="subtitulo">Ingreso</p>
+        <p class="tenue" style="font-size:15px; margin:8px 0 0">
+          Contrato, funciones y jornada. Lo que no quede escrito acá se va a
+          discutir después con la versión de cada parte.
+        </p>
+      </div>
+      <div>
+        <p class="dato">Etapa 02</p>
+        <p class="subtitulo">Vigencia</p>
+        <p class="tenue" style="font-size:15px; margin:8px 0 0">
+          Cambios de función, anexos, permisos y amonestaciones. Es donde se
+          construye —o se pierde— la prueba.
+        </p>
+      </div>
+      <div>
+        <p class="dato">Etapa 03</p>
+        <p class="subtitulo">Conflicto</p>
+        <p class="tenue" style="font-size:15px; margin:8px 0 0">
+          Denuncia, licencia prolongada, fiscalización. Acá el margen se estrecha
+          y las decisiones empiezan a tener costo.
+        </p>
+      </div>
+      <div>
+        <p class="dato">Etapa 04</p>
+        <p class="subtitulo">Término</p>
+        <p class="tenue" style="font-size:15px; margin:8px 0 0">
+          Causal, carta, finiquito y cotizaciones al día. El tramo más corto y el
+          que más juicios genera.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LA MATRIZ ======================================================= -->
+<section class="seccion limite" id="matriz">
+  <div class="rejilla doce">
+    <div style="grid-column:span 4">
+      <p class="dato">El entregable</p>
+      <h2 class="titulo" style="margin-top:14px">La matriz de cumplimiento.</h2>
+      <p class="grande tenue" style="margin-top:16px">
+        No es un informe de cien páginas. Es una tabla que dice quién responde de
+        qué, con qué se prueba y cada cuánto se revisa. Cabe en una pantalla y se
+        puede usar el lunes.
+      </p>
+      <p class="tenue" style="margin-top:16px; font-size:15px">
+        Esto es un extracto de ejemplo. La matriz real se arma sobre los
+        documentos de cada empresa.
+      </p>
+    </div>
+
+    <div style="grid-column:span 8 / -1">
+      <div class="lamina">
+        <div class="envoltorio-tabla">
+          <table class="matriz">
+            <caption class="dato" style="text-align:left; padding-bottom:14px">
+              Extracto · empresa de servicios, 180 trabajadores
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Obligación</th>
+                <th scope="col">Responde</th>
+                <th scope="col">Se prueba con</th>
+                <th scope="col">Revisión</th>
+                <th scope="col">Riesgo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Registro de asistencia</td>
+                <td>Jefatura directa</td>
+                <td>Reporte mensual firmado</td>
+                <td>Mensual</td>
+                <td><span class="marca-riesgo marca-riesgo--alto">Alto</span></td>
+              </tr>
+              <tr>
+                <td>Reglamento interno vigente</td>
+                <td>Gerencia de personas</td>
+                <td>Acuse de recibo por trabajador</td>
+                <td>Anual</td>
+                <td><span class="marca-riesgo marca-riesgo--alto">Alto</span></td>
+              </tr>
+              <tr>
+                <td>Cotizaciones previsionales</td>
+                <td>Finanzas</td>
+                <td>Certificado de pago</td>
+                <td>Mensual</td>
+                <td><span class="marca-riesgo marca-riesgo--alto">Alto</span></td>
+              </tr>
+              <tr>
+                <td>Anexos por cambio de función</td>
+                <td>Jefatura directa</td>
+                <td>Anexo firmado en carpeta</td>
+                <td>Por evento</td>
+                <td><span class="marca-riesgo">Medio</span></td>
+              </tr>
+              <tr>
+                <td>Canal de denuncias operativo</td>
+                <td>Gerencia de personas</td>
+                <td>Registro de casos y plazos</td>
+                <td>Trimestral</td>
+                <td><span class="marca-riesgo">Medio</span></td>
+              </tr>
+              <tr>
+                <td>Contratos de subcontratistas</td>
+                <td>Operaciones</td>
+                <td>Certificado de cumplimiento</td>
+                <td>Mensual</td>
+                <td><span class="marca-riesgo">Medio</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HONORARIOS ====================================================== -->
+<section class="seccion limite" id="honorarios">
+  <div class="rejilla doce">
+    <div style="grid-column:span 5">
+      <p class="dato">Honorarios</p>
+      <h2 class="titulo" style="margin-top:14px; max-width:16ch">
+        Los publicamos porque es la primera pregunta.
+      </h2>
+      <p class="grande tenue" style="margin-top:16px">
+        Nadie llama a un estudio para preguntar por su trayectoria. Llama para
+        saber si puede pagarlo. Dejarlo escrito nos ahorra una reunión a los dos.
+      </p>
+      <p class="tenue" style="margin-top:16px; font-size:15px">
+        Valores de ejemplo de una pieza de concepto. No corresponden a ninguna
+        tarifa real, de este ni de ningún estudio.
+      </p>
+    </div>
+
+    <div style="grid-column:span 6 / -1">
+      <div class="lamina">
+        <div class="banda">
+          <div>
+            <p class="subtitulo">Revisión inicial</p>
+            <p class="tenue" style="margin:6px 0 0; font-size:15px">
+              Contratos, reglamento interno y los últimos doce finiquitos.
+              Informe de una página. Dos semanas.
+            </p>
+          </div>
+          <span class="cifra">$1.400.000</span>
+        </div>
+        <div class="banda">
+          <div>
+            <p class="subtitulo">Matriz de cumplimiento</p>
+            <p class="tenue" style="margin:6px 0 0; font-size:15px">
+              La tabla completa, con responsables y evidencia, más una sesión con
+              las jefaturas para instalarla.
+            </p>
+          </div>
+          <span class="cifra">$2.900.000</span>
+        </div>
+        <div class="banda">
+          <div>
+            <p class="subtitulo">Acompañamiento mensual</p>
+            <p class="tenue" style="margin:6px 0 0; font-size:15px">
+              Consultas sin tope, revisión de cartas y finiquitos antes de que
+              salgan, y la matriz al día.
+            </p>
+          </div>
+          <span class="cifra">$980.000 / mes</span>
+        </div>
+        <div class="banda">
+          <div>
+            <p class="subtitulo">Juicio</p>
+            <p class="tenue" style="margin:6px 0 0; font-size:15px">
+              Se cotiza por causa. No cobramos porcentaje sobre lo que la empresa
+              deja de pagar: alinea mal los incentivos.
+            </p>
+          </div>
+          <span class="cifra">Por causa</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PREGUNTAS =======================================================
+     LA CAPA CITABLE. Son las preguntas largas y específicas que una empresa
+     le hace a un motor de IA antes de llamar a nadie, respondidas por lo que
+     DETERMINA la respuesta —que es como responde un abogado— y no con un sí o
+     un no que sería falso en la mitad de los casos. Van en el HTML como texto
+     plano con encabezados reales, no dentro de un acordeón cerrado por JS,
+     porque lo que no está en el documento no se cita.
+     ====================================================================== -->
+<section class="seccion limite" id="preguntas">
+  <h2 class="titulo" style="max-width:22ch">Lo que nos preguntan antes de llamar.</h2>
+  <p class="grande tenue prosa" style="margin-top:18px">
+    Están respondidas por lo que determina la respuesta en cada caso. Un sí o un
+    no acá sería falso la mitad de las veces, y de todos modos no es asesoría:
+    esto es una pieza de concepto.
+  </p>
+
+  <div style="margin-top:clamp(30px,4vw,50px); max-width:76ch">
+    <article class="pregunta">
+      <h3>¿Puedo despedir por necesidades de la empresa a alguien que está con licencia médica?</h3>
+      <p>
+        Es la consulta que más llega, y la respuesta depende de tres cosas antes
+        que de la licencia:
+      </p>
+      <ul>
+        <li>si la persona tiene alguna protección vigente por su situación particular;</li>
+        <li>si la necesidad que se invoca está documentada desde antes de la licencia;</li>
+        <li>si la decisión alcanza a un grupo o solo a esa persona.</li>
+      </ul>
+      <p>
+        Lo que convierte una decisión defendible en una indefendible casi nunca es
+        la causal: es que la empresa no puede mostrar cuándo la tomó.
+      </p>
+    </article>
+
+    <article class="pregunta">
+      <h3>Tenemos las cotizaciones atrasadas de dos meses. ¿Podemos despedir igual?</h3>
+      <p>
+        Se puede firmar un finiquito con deuda previsional, y ese es exactamente
+        el problema: se firma, la empresa cree que cerró, y no cerró. Antes de
+        cualquier término conviene resolver dos cosas:
+      </p>
+      <ul>
+        <li>el estado real de pago, certificado y no de memoria;</li>
+        <li>qué pasa con la relación si el pago se regulariza después.</li>
+      </ul>
+      <p>
+        En la práctica, ordenar esto suele costar menos que lo que se arriesga por
+        no hacerlo.
+      </p>
+    </article>
+
+    <article class="pregunta">
+      <h3>Llegó una denuncia de acoso. ¿La investigamos nosotros o la mandamos a la Dirección del Trabajo?</h3>
+      <p>
+        Las dos vías existen y la empresa no siempre elige. Lo que sí controla es
+        la calidad de lo que haga:
+      </p>
+      <ul>
+        <li>que quien investigue no tenga interés en el resultado;</li>
+        <li>que se registren los plazos y las comunicaciones desde el primer día;</li>
+        <li>que la persona denunciante no quede expuesta durante el proceso.</li>
+      </ul>
+      <p>
+        Una investigación interna mal hecha es peor que no haberla hecho: deja por
+        escrito que la empresa supo.
+      </p>
+    </article>
+
+    <article class="pregunta">
+      <h3>¿Cuánto cuesta defender un juicio laboral en Chile?</h3>
+      <p>
+        Varía tanto por causa que cualquier cifra suelta engaña. Lo que sí se
+        puede anticipar es qué mueve el costo: el número de trabajadores
+        involucrados, si hay denuncia de vulneración de derechos, y si la prueba
+        documental está ordenada o hay que reconstruirla.
+      </p>
+      <p>
+        Ese último punto es el que más encarece y el único que se puede arreglar
+        antes de que exista el juicio.
+      </p>
+    </article>
+
+    <article class="pregunta">
+      <h3>¿Qué revisa una fiscalización de la Dirección del Trabajo?</h3>
+      <p>
+        Depende del motivo, pero hay un núcleo que aparece casi siempre: contratos
+        y anexos, registro de jornada, pago de remuneraciones y cotizaciones, y
+        reglamento interno con su acuse de recibo.
+      </p>
+      <p>
+        Prepararse no es esconder nada. Es tener a mano, el mismo día, lo que de
+        otro modo se busca durante una semana.
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- ===== EL ESTUDIO ====================================================== -->
+<section class="seccion limite" id="estudio">
+  <div class="rejilla doce">
+    <div style="grid-column:span 5">
+      <div class="tarjeta">
+        <p class="dato">Persona ficticia</p>
+        <p class="titulo" style="margin-top:14px; font-size:clamp(24px,2.6vw,32px)">
+          Paulina Undurraga Coz
+        </p>
+        <p class="tenue" style="margin:10px 0 0">Abogada · socia fundadora</p>
+        <p style="margin:18px 0 0">
+          Diecisiete años en derecho laboral, los primeros nueve del lado del
+          trabajador. Es la razón por la que este estudio sabe cómo se ve una
+          carta de despido desde el otro lado de la mesa.
+        </p>
+        <p class="tenue" style="margin:18px 0 0; font-size:14px">
+          <b style="color:var(--papel)">Paulina Undurraga Coz no existe.</b> Su
+          nombre, su trayectoria y su registro están inventados para este
+          ejercicio. En un sitio real esto sería lo primero a verificar: la
+          publicidad de servicios jurídicos se sostiene en que el profesional
+          exista y esté habilitado.
+        </p>
+      </div>
+    </div>
+
+    <div style="grid-column:span 6 / -1">
+      <h2 class="titulo" style="max-width:18ch">Somos dos abogadas y una procuradora.</h2>
+      <p class="grande tenue" style="margin-top:18px">
+        No tenemos veinte asociados ni queremos tenerlos. Trabajamos con ocho
+        empresas a la vez, que es el número que nos permite contestar el teléfono
+        el mismo día.
+      </p>
+      <p class="grande tenue" style="margin-top:16px">
+        Cuando una consulta se sale de las cuatro materias, lo decimos y
+        derivamos. Cobrar por aprender en el caso de un cliente es una forma
+        educada de cobrar de más.
+      </p>
+      <div style="margin-top:30px">
+        <a class="boton boton--primario" href="#honorarios">Ver los honorarios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion limite" style="padding-top:0">
+  <div class="aviso">
+    <b>Sobre esta página.</b> Deslinde es una pieza de concepto de SpindleLab.
+    El estudio no existe, las personas nombradas no existen, los honorarios son de
+    ejemplo y los casos descritos no ocurrieron. Nada de lo que está escrito acá es
+    asesoría legal ni puede usarse como tal. Se construyó para mostrar cómo la
+    agencia resuelve un sitio en un rubro YMYL, donde la exigencia de autoría
+    verificable y contenido citable no es un adorno sino la condición de entrada.
+  </div>
+</section>
+
+</main>
+
+<footer class="pie limite">
+  <div class="rejilla doce">
+    <div style="grid-column:span 6">
+      <p class="marca" style="margin:0">Deslinde</p>
+      <p class="tenue" style="margin:10px 0 0">
+        Derecho laboral y cumplimiento para empresas · Santiago de Chile
+      </p>
+    </div>
+    <div style="grid-column:span 5 / -1">
+      <p class="tenue" style="margin:0">
+        Pieza de concepto de <b style="color:var(--papel)">SpindleLab</b>. Cliente
+        ficticio, sin relación con ningún estudio real.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LegalService",
+      "@id": "https://ejemplo.invalid/deslinde/#estudio",
+      "name": "Deslinde",
+      "description": "Estudio jurídico boutique de derecho laboral y cumplimiento para empresas en Chile. PIEZA DE CONCEPTO: el estudio no existe.",
+      "disambiguatingDescription": "Cliente ficticio creado por SpindleLab como ejercicio de portafolio. No es un estudio real y no presta servicios.",
+      "areaServed": { "@type": "Country", "name": "Chile" },
+      "knowsLanguage": "es-CL",
+      "founder": { "@id": "https://ejemplo.invalid/deslinde/#paulina" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Materias",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Término de contrato" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cumplimiento y fiscalización" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Acoso, denuncias e investigación" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Negociación colectiva" } }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ejemplo.invalid/deslinde/#paulina",
+      "name": "Paulina Undurraga Coz",
+      "jobTitle": "Abogada, socia fundadora",
+      "description": "PERSONA FICTICIA. Inventada para una pieza de concepto de SpindleLab. No existe y no está habilitada para ejercer.",
+      "knowsAbout": [
+        "Derecho laboral chileno",
+        "Cumplimiento laboral",
+        "Investigación de denuncias de acoso",
+        "Negociación colectiva"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://ejemplo.invalid/deslinde/#preguntas",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Puedo despedir por necesidades de la empresa a alguien que está con licencia médica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La respuesta depende de si la persona tiene alguna protección vigente por su situación particular, de si la necesidad que se invoca está documentada desde antes de la licencia, y de si la decisión alcanza a un grupo o solo a esa persona. Lo que convierte una decisión defendible en indefendible casi nunca es la causal: es que la empresa no puede mostrar cuándo la tomó. Contenido de una pieza de concepto; no es asesoría legal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tenemos las cotizaciones atrasadas de dos meses. ¿Podemos despedir igual?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se puede firmar un finiquito con deuda previsional, y ese es el problema: se firma, la empresa cree que cerró, y no cerró. Antes de cualquier término conviene resolver el estado real de pago, certificado y no de memoria, y qué pasa con la relación si el pago se regulariza después. Contenido de una pieza de concepto; no es asesoría legal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Llegó una denuncia de acoso. ¿La investigamos nosotros o la mandamos a la Dirección del Trabajo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Las dos vías existen y la empresa no siempre elige. Lo que sí controla es la calidad de lo que haga: que quien investigue no tenga interés en el resultado, que se registren los plazos y las comunicaciones desde el primer día, y que la persona denunciante no quede expuesta durante el proceso. Una investigación interna mal hecha deja por escrito que la empresa supo. Contenido de una pieza de concepto; no es asesoría legal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta defender un juicio laboral en Chile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Varía tanto por causa que cualquier cifra suelta engaña. Lo que mueve el costo es el número de trabajadores involucrados, si hay denuncia de vulneración de derechos, y si la prueba documental está ordenada o hay que reconstruirla. Ese último punto es el que más encarece y el único que se puede arreglar antes de que exista el juicio. Contenido de una pieza de concepto; no es asesoría legal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué revisa una fiscalización de la Dirección del Trabajo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende del motivo, pero hay un núcleo que aparece casi siempre: contratos y anexos, registro de jornada, pago de remuneraciones y cotizaciones, y reglamento interno con su acuse de recibo. Prepararse es tener a mano, el mismo día, lo que de otro modo se busca durante una semana. Contenido de una pieza de concepto; no es asesoría legal."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio" }
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
