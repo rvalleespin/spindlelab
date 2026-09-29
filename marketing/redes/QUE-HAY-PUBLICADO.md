@@ -37,12 +37,19 @@ entra sin chocar.
 
 | Publicado | Pieza | Enlace |
 |---|---|---|
+| **29-sep** | **Carrusel "Las 12 cosas"** de la campaña de Verifica, 6 láminas. Con **etiqueta de IA activada** (la sheriff es una imagen fotorrealista generada con IA). Fuente en `marketing/redes/2026-10-octubre-verifica/03-carrusel-las-12-cosas/` | `instagram.com/p/Dd3uPldESqj/` |
+| **visto el 29-sep** | Reel **"Llegó la caballería / ¿Tienes un formulario de contacto?"** (pieza 01 de la campaña). Estaba anotado como "sin publicar" y **está publicado**: se vio en la grilla. No sé la fecha de salida | `instagram.com/p/DdwDroUsR9p/` |
 | **⛔ 25-sep** | "100 de 100, contando solo lo que alcanzamos a ver" — **publicado y eliminado el mismo día por Ramón**: quedaba fuera de la línea de la campaña de Verifica, que se decidió aparte esa tarde | era `instagram.com/p/DduVT6Dkr0N/` |
 | 3-sep | "Cinco cosas que las empresas serias están haciendo para perder clientes" (carrusel) | mecanismo "comenta CIRCUITO" |
 
 **Bio actualizado el 25-sep:** salió el mini-diagnóstico, que ya no se ofrece. Quedó:
 *"SEO técnico y visibilidad en IA para empresas chilenas. / Le preguntamos a ChatGPT por tu
 negocio. / Chequea tu sitio gratis ↓"*
+
+⚠️ **La cuenta lleva la etiqueta "Perfil generado con IA"** bajo el nombre, en todas las
+publicaciones. **No la pone una pieza: es de la cuenta**, y estaba desde antes del 29-sep (se
+comprobó mirando una publicación anterior). Para una marca que vende decir la verdad sobre los
+datos, conviene resolverla. Se apela desde la app.
 
 ⚠️ **Pendientes de Ramón en esta cuenta, las dos cosas que no se pueden hacer desde el computador
 o que son suyas:**

@@ -1,7 +1,7 @@
 # Pieza 4 · Reel "¿Estás seguro?" · Verifica y Cumple
 
 **Archivo a subir:** `reel.mp4` · 1080×1920 · 16 s · 30 cuadros/s · **sin audio**.
-**Cuenta:** `@spindle.lab`, y compartir a tu historia personal. Reels es la única superficie
+**Cuenta:** `spindlelab.cl`, y compartir a tu historia personal. Reels es la única superficie
 de esa cuenta con descubrimiento real; el feed es archivo.
 **Estado:** ⛔ **sin publicar.** Nada sale de acá sin tu ojo encima.
 
@@ -100,7 +100,7 @@ Va en **plural**: es la marca. Una sola opción.
 **Si lo compartes a tu historia**, primera persona singular y una línea:
 `Si tu sitio pide datos, esto te sirve. Lo dejé gratis y sin registro.`
 
-**Lo que no se escribe:** "link en la bio" (el bio de `@spindle.lab` apunta a otro producto),
+**Lo que no se escribe:** "link en la bio" (el bio de `spindlelab.cl` apunta a otro producto),
 ninguna cifra de multa, ninguna cuenta regresiva, y nada que insinúe que el chequeo dice si
 cumples. **No lo dice.**
 

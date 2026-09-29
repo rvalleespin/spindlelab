@@ -1,9 +1,12 @@
 # Pieza 3 · Carrusel "Las 12 cosas" · Verifica y Cumple
 
 **Formato:** carrusel de feed, 6 láminas de 1080×1080
-**Cuenta:** `@spindle.lab`. Esta es la pieza de **archivo**: la que se guarda, se busca y se
+**Cuenta:** `spindlelab.cl`. Esta es la pieza de **archivo**: la que se guarda, se busca y se
 manda por privado meses después. El alcance lo va a hacer tu cuenta personal compartiéndola.
-**Estado:** ⛔ **sin publicar.** Nada sale de acá sin tu ojo encima.
+**Estado:** ✅ **PUBLICADO el 29-sep-2026** en `spindlelab.cl` →
+`instagram.com/p/Dd3uPldESqj/`. Seis láminas en orden, recorte "Original" (sin recortar), sin
+filtro, y con **la etiqueta de IA activada** porque la sheriff es una imagen fotorrealista
+generada con IA. Decisión de Ramón en el momento de publicar.
 
 **Archivos**
 
@@ -73,7 +76,7 @@ Va en **plural**: es la marca hablando, no tú. Una sola opción, no acumular.
 **Si lo compartes a tu historia**, ahí sí va en primera persona singular y en una línea:
 `Me tocó leer el artículo entero. Lo dejé traducido acá.`
 
-**Lo que no se escribe:** "link en la bio" (el bio de `@spindle.lab` apunta a
+**Lo que no se escribe:** "link en la bio" (el bio de `spindlelab.cl` apunta a
 `spindlelab.cl/diagnostico/`, que es otro producto), ninguna cifra de multa, ninguna cuenta
 regresiva, y nada que insinúe que el chequeo dice si cumples. **No lo dice.**
 
