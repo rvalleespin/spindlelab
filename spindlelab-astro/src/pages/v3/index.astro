@@ -147,7 +147,7 @@ const pasos = [
 
     <!-- BLOQUE 2 · EL PROBLEMA, con dato propio verificable. Campo navy. -->
     <section class="px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
+      <h2 data-entra
         class="font-extrabold uppercase m-0 max-w-[17ch]"
         style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:0; text-wrap:balance"
       >
@@ -172,7 +172,7 @@ const pasos = [
       <p class="rotulo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">
         Las tres cosas
       </p>
-      <h2
+      <h2 data-entra
         class="font-extrabold uppercase m-0 mt-6 max-w-[16ch]"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
@@ -184,7 +184,7 @@ const pasos = [
       </p>
 
       <div class="mt-14 md:mt-20 grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-3">
-        <div class="border-t border-noche/25 pt-6">
+        <div data-entra data-paso="1" class="border-t border-noche/25 pt-6">
           <p class="rotulo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">Primero · 30 puntos</p>
           <h3 class="font-extrabold uppercase m-0 mt-4" style="font-size:clamp(1.25rem,2vw,1.75rem); line-height:1.1; letter-spacing:-0.02em">
             ¿Te pueden leer?
@@ -194,7 +194,7 @@ const pasos = [
             los robots de IA deciden lo mismo, así que se revisan por separado.
           </p>
         </div>
-        <div class="border-t border-noche/25 pt-6">
+        <div data-entra data-paso="2" class="border-t border-noche/25 pt-6">
           <p class="rotulo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">Segundo · 40 puntos</p>
           <h3 class="font-extrabold uppercase m-0 mt-4" style="font-size:clamp(1.25rem,2vw,1.75rem); line-height:1.1; letter-spacing:-0.02em">
             ¿Te entienden?
@@ -204,7 +204,7 @@ const pasos = [
             aparece a medias.
           </p>
         </div>
-        <div class="border-t border-noche/25 pt-6">
+        <div data-entra data-paso="3" class="border-t border-noche/25 pt-6">
           <p class="rotulo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">Tercero · 30 puntos</p>
           <h3 class="font-extrabold uppercase m-0 mt-4" style="font-size:clamp(1.25rem,2vw,1.75rem); line-height:1.1; letter-spacing:-0.02em">
             ¿Te pueden citar?
@@ -218,7 +218,7 @@ const pasos = [
 
       <!-- La barra de pesos, a escala real. Se lee de un vistazo que el bloque del medio
            pesa más que cualquiera de los extremos. -->
-      <div class="mt-14 md:mt-20">
+      <div data-entra class="mt-14 md:mt-20">
         <div class="flex w-full border border-noche/25" role="img" aria-label="Reparto del puntaje: leer 30 puntos, entender 40 puntos, citar 30 puntos, sobre un total de 100.">
           <div style="flex:30" class="border-r border-noche/25 px-3 py-4">
             <span class="block font-extrabold text-lg">30</span>
@@ -279,7 +279,7 @@ const pasos = [
 
               {/* Pie del campo: texto a la izquierda, imagen a la derecha.
                   Grilla de 12 columnas con gap de 32px, que es la de la referencia. */}
-              <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-12 md:mt-0">
+              <div data-entra class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-12 md:mt-0">
                 {/* Las ofertas van en FILA, no apiladas. Un campo con dos ofertas apiladas
                     se pasaba de la pantalla y rompía el ritmo de «un servicio, una
                     pantalla»; en fila, con una o con dos, el campo sigue cabiendo. */}
@@ -305,15 +305,36 @@ const pasos = [
                 {/* La media. 16:9 a ~44% del ancho, la unidad medida en la referencia.
                     Son fotos que ya están en el sitio vivo, no imágenes inventadas. */}
                 <div class="md:col-span-5 md:col-start-8">
-                  <img
-                    src={m.img}
-                    alt={m.alt}
-                    width="1280"
-                    height="720"
-                    loading="lazy"
-                    decoding="async"
-                    class="media-campo"
-                  />
+                  {/* EL VIDEO SE MONTA SOLO CUANDO SE VA A VER. Medido en la referencia:
+                      cero elementos <video> en el DOM y aun así tres mp4 pedidos por red.
+                      Por eso el src va en data-src y lo pone el script recién cuando el
+                      bloque se acerca. Sin eso, un mp4 de 4,6 MB se descarga aunque el
+                      visitante nunca baje hasta acá.
+                      Va UNO solo, en el campo del pilar: cuatro serían 16 MB de home. */}
+                  {m.video ? (
+                    <video
+                      data-src={m.video}
+                      poster={m.img}
+                      width="1280"
+                      height="720"
+                      muted
+                      loop
+                      playsinline
+                      preload="none"
+                      aria-label={m.alt}
+                      class="media-campo paralaje"
+                    />
+                  ) : (
+                    <img
+                      src={m.img}
+                      alt={m.alt}
+                      width="1280"
+                      height="720"
+                      loading="lazy"
+                      decoding="async"
+                      class="media-campo paralaje"
+                    />
+                  )}
                 </div>
               </div>
             </section>
@@ -347,7 +368,7 @@ const pasos = [
     </div>
     <!-- BLOQUE 5 · HERRAMIENTAS GRATIS. Bloque nuevo. Campo petróleo. -->
     <section class="bg-surface-2 text-papel px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
+      <h2 data-entra
         class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[17ch]"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
@@ -393,7 +414,7 @@ const pasos = [
     </section>
 
     <section id="metodo" class="px-6 md:px-medianil py-32 md:py-seccion scroll-mt-24">
-      <h2
+      <h2 data-entra
         class="font-extrabold uppercase m-0 mb-12 md:mb-20 max-w-[14ch]"
         style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:0"
       >
@@ -421,7 +442,7 @@ const pasos = [
 
     <!-- BLOQUE 7 · CIERRE bajo, sin urgencia fabricada. -->
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
+      <h2 data-entra
         class="font-extrabold uppercase m-0 max-w-[14ch]"
         style="font-size:clamp(2.25rem, 8vw, 9rem); line-height:0.88; letter-spacing:0"
       >
@@ -456,4 +477,90 @@ const pasos = [
   <FooterV3 />
 
   <script src="/assets/js/v3-chequeo.js" is:inline defer></script>
+
+  <script>
+    // MOVIMIENTO DE LA V3. Tres mecanismos, los tres medidos en la referencia y ninguno
+    // decorativo. Van juntos para que se lea como sistema y no como parches.
+    //
+    // REGLA DE SEGURIDAD: la clase que esconde la entrada la pone ESTE script, no el
+    // HTML. Si el script no corre, nada queda en opacidad 0 y la página se lee completa.
+    // Escribir `opacity:0` en el marcado y confiar en que el JS lo revierta es como un
+    // sitio termina en blanco el día que algo falla.
+    (() => {
+      const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // 1 · ENTRADA. 0,8s con la curva medida en la referencia. El primer viewport NO
+      //     se anima: la página tiene que estar completa apenas carga.
+      if (!quieto && 'IntersectionObserver' in window) {
+        const bajo = [...document.querySelectorAll('[data-entra]')].filter(
+          (el) => el.getBoundingClientRect().top > window.innerHeight * 0.9
+        );
+        bajo.forEach((el) => el.classList.add('entra'));
+        const io = new IntersectionObserver(
+          (es) => {
+            for (const e of es) {
+              if (!e.isIntersecting) continue;
+              e.target.classList.add('visible');
+              io.unobserve(e.target);
+            }
+          },
+          { rootMargin: '0px 0px -12% 0px', threshold: 0.05 }
+        );
+        bajo.forEach((el) => io.observe(el));
+        // Red de seguridad: si el observador nunca dispara, se muestra igual.
+        window.setTimeout(() => bajo.forEach((el) => el.classList.add('visible')), 3000);
+      }
+
+      // 2 · VIDEO MONTADO TARDE. El src se pone cuando el bloque se acerca, no antes.
+      //     Medido en la referencia: cero <video> en el DOM y aun así pide los mp4.
+      //     Sin esto, 4,6 MB se descargan aunque el visitante nunca baje hasta ahí.
+      const videos = [...document.querySelectorAll('video[data-src]')];
+      if (videos.length && 'IntersectionObserver' in window) {
+        const vio = new IntersectionObserver(
+          (es) => {
+            for (const e of es) {
+              if (!e.isIntersecting) continue;
+              const v = e.target;
+              if (!v.src) {
+                v.src = v.dataset.src;
+                v.load();
+              }
+              if (!quieto) v.play().catch(() => {});
+              vio.unobserve(v);
+            }
+          },
+          { rootMargin: '400px 0px' }
+        );
+        videos.forEach((v) => vio.observe(v));
+      } else {
+        videos.forEach((v) => { v.src = v.dataset.src; });
+      }
+
+      // 3 · PARALAJE corto en la media de los campos. En la referencia UN solo nodo se
+      //     mueve con el scroll, y se mueve poco. Acá igual: 22px, en un rAF para no
+      //     pelear con el scroll suave.
+      const piezas = [...document.querySelectorAll('.paralaje')];
+      if (!quieto && piezas.length) {
+        let pendiente = false;
+        const pintar = () => {
+          pendiente = false;
+          const mitad = window.innerHeight / 2;
+          for (const el of piezas) {
+            const r = el.getBoundingClientRect();
+            if (r.bottom < -200 || r.top > window.innerHeight + 200) continue;
+            const d = Math.max(-1, Math.min(1, (r.top + r.height / 2 - mitad) / mitad));
+            el.style.transform = 'translate3d(0,' + (d * 22).toFixed(1) + 'px,0)';
+          }
+        };
+        const alScroll = () => {
+          if (pendiente) return;
+          pendiente = true;
+          requestAnimationFrame(pintar);
+        };
+        addEventListener('scroll', alScroll, { passive: true });
+        addEventListener('resize', alScroll, { passive: true });
+        pintar();
+      }
+    })();
+  </script>
 </Layout>

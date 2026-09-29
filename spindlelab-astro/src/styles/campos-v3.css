@@ -193,3 +193,61 @@
   border-radius: 6px;
   display: block;
 }
+
+/* ==========================================================================
+   MOVIMIENTO
+   ==========================================================================
+   Medido en la referencia (su página de caso, 23.573 px), no supuesto:
+
+     · Sus encabezados NO están partidos en spans. Cero animación tipográfica
+       letra por letra. Son nodos de texto planos.
+     · Una sola animación CSS declarada: una entrada de 0,8s con la curva
+       cubic-bezier(.5, 0, .1, 1).
+     · Cero will-change, cero mix-blend-mode.
+     · SIETE elementos sticky.
+     · CERO elementos <video> en el DOM, y aun así tres mp4 pedidos por red:
+       el video se monta solo cuando se va a ver.
+
+   O sea que lo que hace que se sienta vivo son tres cosas simples y baratas,
+   no efectos. Acá se toman esas tres.
+   ========================================================================== */
+
+/* ENTRADA. La clase la pone el JS, no el HTML: si el script no corre, nada
+ * queda en opacidad 0 y la página se lee igual. Es la diferencia entre una
+ * animación y un contenido que desaparece cuando algo falla. */
+.entra {
+  opacity: 0;
+  transform: translateY(28px);
+}
+.entra.visible {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.8s cubic-bezier(0.5, 0, 0.1, 1),
+    transform 0.8s cubic-bezier(0.5, 0, 0.1, 1);
+}
+/* Escalonado corto dentro de un mismo bloque. Más de 3 pasos se siente lento. */
+.entra[data-paso='1'].visible { transition-delay: 0.08s }
+.entra[data-paso='2'].visible { transition-delay: 0.16s }
+.entra[data-paso='3'].visible { transition-delay: 0.24s }
+
+/* PARALAJE de la media del campo. En la referencia UN solo nodo se mueve con el
+ * scroll, y se mueve poco (85 px en toda la página). Acá igual: un
+ * desplazamiento corto, suficiente para que la imagen no se sienta pegada al
+ * fondo, lejos del parallax de plantilla. */
+.paralaje {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entra,
+  .entra.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .paralaje {
+    transform: none !important;
+    will-change: auto;
+  }
+}
