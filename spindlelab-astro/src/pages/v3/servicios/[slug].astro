@@ -34,6 +34,24 @@ const s = (servicios as Record<string, any>)[slug!];
 
 const [secIncluye, secPlanes, secBloques, , secCierre] = s.secciones;
 
+// EL COLOR DEL CAMPO VIAJA DESDE LA HOME. La home ofrece cuatro campos de color y cada
+// uno enlaza a su página; hasta ahora esas páginas llegaban en blanco y negro, o sea la
+// home prometía un color y al hacer clic desaparecía. Medido: la home es 32% color y
+// estas seis páginas eran 0%.
+// El par campo→servicio no se inventa acá, sale de oferta-v3.json:
+//   brasa → desarrollo-web · navy → visibilidad-en-ia y auditoria-seo-tecnica
+//   petróleo → acompanamiento-mensual · ciruela → redes-sociales y paid-media
+// Se tiñe UNA sección, la de los bloques numerados, igual que /v3/metodo/ ya hace con su
+// recorrido en navy. No la página entera: el lienzo sigue siendo el negro.
+const CAMPO: Record<string, string> = {
+  'visibilidad-en-ia': 'navy',
+  'auditoria-seo-tecnica': 'navy',
+  'acompanamiento-mensual': 'petroleo',
+  'redes-sociales': 'ciruela',
+  'paid-media': 'ciruela',
+};
+const campo = CAMPO[slug!] ?? '';
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -167,7 +185,7 @@ const jsonLd = {
     </section>
 
     <!-- EL BLOQUE DE CUATRO. Cambia de sentido por página; el h2 lo dice. -->
-    <section class="px-6 md:px-medianil py-32 md:py-seccion">
+    <section class={`${campo ? 'tinte--' + campo + ' ' : ''}px-6 md:px-medianil py-32 md:py-seccion`}>
       {/* Titular pegajoso. Mismo criterio que en el resto del v3: la sección es más alta
           que la pantalla (entre 1.158 y 1.323px según el servicio, contra 900 de
           viewport), así que el titular sostiene el contexto mientras se recorre la
