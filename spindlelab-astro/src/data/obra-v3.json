@@ -7,10 +7,12 @@
       "n": "Bernardo Combeau",
       "rubro": "Fotografía de retrato",
       "tipo": "cliente",
-      "linea": "Sitio y panel de administración para un fotógrafo de retrato. Cuatro vistas del mismo proyecto.",
-      "img": "/mockup-interno/obra-1.png",
-      "alt": "Página de retratos del sitio de Bernardo Combeau",
-      "pendiente": "permiso de caso público"
+      "linea": "Sitio y panel de administración para un fotógrafo de retrato.",
+      "img": "/mockup-interno/obra-4.png",
+      "alt": "Portada del sitio de Bernardo Combeau, con el titular «Un buen retrato no se toma. Se construye dirigiendo a la persona hasta su mejor versión.»",
+      "pendiente": "permiso de caso público",
+      "w": 1440,
+      "h": 1000
     },
     {
       "slug": "verifica-y-cumple",
@@ -29,7 +31,9 @@
       "tipo": "concepto",
       "linea": "Clínica de implantología y rehabilitación oral. Sitio completo, del argumento clínico a la ficha de tratamiento.",
       "img": "/assets/img/obra/raigal.jpg",
-      "alt": "Portada del sitio de concepto Raigal, con el titular «Volver a morder»"
+      "alt": "Portada del sitio de concepto Raigal, con el titular «Volver a morder»",
+      "w": 1920,
+      "h": 1080
     },
     {
       "slug": "aplomo",
@@ -38,7 +42,9 @@
       "tipo": "concepto",
       "linea": "Constructora industrial y edificación corporativa B2B. Sitio completo, con ficha de obra y programa.",
       "img": "/assets/img/obra/aplomo.jpg",
-      "alt": "Portada del sitio de concepto Aplomo, con el titular «A plomo y a plazo»"
+      "alt": "Portada del sitio de concepto Aplomo, con el titular «A plomo y a plazo»",
+      "w": 1920,
+      "h": 1080
     }
   ]
 }

@@ -93,8 +93,8 @@ const jsonLd = {
                   <img
                     src={c.img}
                     alt={c.alt}
-                    width="1280"
-                    height="720"
+                    width={c.w}
+                    height={c.h}
                     loading="lazy"
                     decoding="async"
                     class="media-campo"
@@ -106,7 +106,7 @@ const jsonLd = {
                      tipográfica dice lo que es y ocupa la misma caja 16:9, para que la
                      grilla no se descuadre. */
                   <div
-                    class="media-campo tinte--navy flex flex-col justify-end p-7"
+                    class="media-campo media-campo--texto tinte--navy flex-col justify-end p-7"
                     role="img"
                     aria-label={`${c.n}: sin captura todavía, la herramienta aún no tiene dirección pública`}
                   >
