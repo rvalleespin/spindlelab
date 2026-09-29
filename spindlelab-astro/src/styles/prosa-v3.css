@@ -30,27 +30,43 @@
  * para gerentes que no son técnicos» son 54 caracteres — y a 5,5rem se iban a tres
  * líneas y se salían de la pantalla. A 3,25rem entran en dos líneas cómodas y siguen
  * leyendo como titular. Un artículo no es un cartel. */
+/* CAJA BAJA, y esto corrige una decisión mía anterior.
+ *
+ * Las mayúsculas del v3 son para ETIQUETAS: la palabra única de un campo de color
+ * (DESARROLLO, VISIBILIDAD) y los rótulos chicos. Un título de artículo es una FRASE
+ * — «¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?» son 66
+ * caracteres y 11 palabras — y en mayúsculas de peso 800 deja de leerse como titular
+ * y se lee como un bloque macizo. Ramón lo dijo con la palabra exacta: grosero.
+ *
+ * No es cuestión de gusto, está medido en la referencia: de sus diez encabezados de
+ * 28px o más, CERO llevan mayúsculas forzadas, y su peso es 500, no 800. Acá se baja
+ * a 700, que es el punto donde el titular sigue pesando en una tipografía que en el
+ * resto del sitio va en 800.
+ *
+ * Las mayúsculas aprobadas el 27-sep no se tocan: siguen donde ganan, que es la
+ * palabra única a 8,33vw de los campos. */
 .prosa-v3 h1 {
   color: #14110e;
-  font-weight: 800;
-  text-transform: uppercase;
+  font-weight: 700;
   font-size: clamp(1.75rem, 3.6vw, 3.25rem);
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
   margin: 0 0 2.5rem;
-  max-width: 26ch;
+  max-width: 30ch;
   text-wrap: balance;
 }
 
+/* Mismo criterio: los h2 de un artículo son frases, no etiquetas. El más largo mide
+ * 65 caracteres. Con 24ch de ancho máximo caían en tres líneas; a 34ch y en caja baja
+ * caen en dos y se leen como subtítulo. */
 .prosa-v3 h2 {
   color: #14110e;
-  font-weight: 800;
-  text-transform: uppercase;
+  font-weight: 700;
   font-size: clamp(1.375rem, 2.8vw, 2.25rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
   margin-top: 3.5rem;
-  max-width: 24ch;
+  max-width: 34ch;
   text-wrap: balance;
 }
 

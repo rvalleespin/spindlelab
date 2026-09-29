@@ -16,6 +16,7 @@
 //
 // El cuerpo va sobre papel (ver styles/prosa-v3.css): oscuro para entrar, claro para leer.
 import Layout from '../../../layouts/Layout.astro';
+import { caja } from '../../../utils/caja';
 import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
@@ -176,7 +177,7 @@ const fecha = meta.datePublished
     <section class="tinte--navy px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         data-entra
-        class="font-extrabold uppercase m-0 max-w-[15ch]"
+        class:list={['font-extrabold m-0 max-w-[15ch]', caja('¿Te menciona la IA?')]}
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         ¿Te menciona la IA?

@@ -14,6 +14,7 @@
 // El límite «dentro / fuera» va verbatim: es honesto y es lo que evita malentendidos de
 // alcance. El FAQ no se duplica acá; vive en cada página de servicio.
 import Layout from '../../../layouts/Layout.astro';
+import { caja } from '../../../utils/caja';
 import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
@@ -72,7 +73,7 @@ const jsonLd = {
       </nav>
       <h1
         data-entra
-        class="font-extrabold uppercase m-0"
+        class:list={['font-extrabold m-0', caja('Qué hacemos')]}
         style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.9; letter-spacing:0"
       >
         Qué hacemos
@@ -105,7 +106,7 @@ const jsonLd = {
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         data-entra
-        class="font-extrabold uppercase m-0 mb-4 max-w-[16ch]"
+        class:list={['font-extrabold m-0 mb-4 max-w-[16ch]', caja('¿Por dónde te toca partir?')]}
         style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0"
       >
         ¿Por dónde te toca partir?
@@ -119,11 +120,11 @@ const jsonLd = {
           oferta.momentos.map((m: any) => (
             <div class="flex flex-col border-t filete pt-6">
               <h3
-                class="font-extrabold uppercase m-0 max-w-[18ch]"
+                class:list={['font-extrabold m-0 max-w-[18ch]', caja(m.momento)]}
                 style="font-size:clamp(1.0625rem,1.5vw,1.375rem); line-height:1.15; letter-spacing:-0.02em"
               >
-                {m.momento}
-              </h3>
+        {m.momento}
+      </h3>
               <ul class="list-none p-0 mt-6 mb-0 space-y-7 flex-1">
                 {m.items.map((it: any) => (
                   <li>
@@ -165,16 +166,16 @@ const jsonLd = {
     <section class="tinte--navy px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         data-entra
-        class="font-extrabold uppercase m-0 mb-12 md:mb-16"
+        class:list={['font-extrabold m-0 mb-12 md:mb-16', caja('Qué hacemos y qué no')]}
         style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0"
       >
         Qué hacemos y qué no
       </h2>
       <div data-entra data-paso="1" class="grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-2">
         <div class="border-t filete pt-6">
-          <h3 class="font-extrabold uppercase m-0 text-xl" style="letter-spacing:-0.02em">
-            Lo hacemos nosotros
-          </h3>
+          <h3 class:list={['font-extrabold m-0 text-xl', caja('Lo hacemos nosotros')]} style="letter-spacing:-0.02em">
+        Lo hacemos nosotros
+      </h3>
           <ul class="list-none p-0 mt-5 mb-0 space-y-3">
             {
               oferta.dentro.map((i: string) => (
@@ -187,9 +188,9 @@ const jsonLd = {
           </ul>
         </div>
         <div class="border-t filete pt-6">
-          <h3 class="font-extrabold uppercase m-0 text-xl" style="letter-spacing:-0.02em">
-            Lo pones tú
-          </h3>
+          <h3 class:list={['font-extrabold m-0 text-xl', caja('Lo pones tú')]} style="letter-spacing:-0.02em">
+        Lo pones tú
+      </h3>
           <ul class="list-none p-0 mt-5 mb-0 space-y-3">
             {
               oferta.fuera.map((i: string) => (
@@ -210,7 +211,7 @@ const jsonLd = {
     <section class="px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         data-entra
-        class="font-extrabold uppercase m-0 max-w-[15ch]"
+        class:list={['font-extrabold m-0 max-w-[15ch]', caja('Empieza por el chequeo')]}
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         Empieza por el chequeo

@@ -27,6 +27,7 @@
 // EL CHEQUEO ES LA HERRAMIENTA REAL, no una imitación: mismos id que exige el script
 // (chq-form, chq-dominio, chq-btn, chq-out, chq-error), mismo /api/chequeo.
 import Layout from '../../layouts/Layout.astro';
+import { caja } from '../../utils/caja';
 import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
@@ -74,7 +75,7 @@ const pasos = [
            que tiene que ver el visitante. La pregunta completa baja a la línea de apoyo,
            donde el texto es chico y no cuesta líneas. -->
       <h1
-        class="font-extrabold uppercase m-0"
+        class:list={['font-extrabold m-0', caja('¿Te menciona la IA?')]}
         style="font-size:clamp(2.25rem, 8.4vw, 8rem); line-height:0.88; letter-spacing:0"
       >
         ¿Te menciona la IA?
@@ -148,7 +149,7 @@ const pasos = [
     <!-- BLOQUE 2 · EL PROBLEMA, con dato propio verificable. Campo navy. -->
     <section class="px-6 md:px-medianil py-32 md:py-seccion">
       <h2 data-entra
-        class="font-extrabold uppercase m-0 max-w-[17ch]"
+        class:list={['font-extrabold m-0 max-w-[17ch]', caja('67 de 69 sitios tenían el mismo problema')]}
         style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:0; text-wrap:balance"
       >
         67 de 69 sitios tenían el mismo problema
@@ -173,7 +174,7 @@ const pasos = [
         Las tres cosas
       </p>
       <h2 data-entra
-        class="font-extrabold uppercase m-0 mt-6 max-w-[16ch]"
+        class:list={['font-extrabold m-0 mt-6 max-w-[16ch]', caja('Leer, entender, citar.')]}
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         Leer, entender, citar.
@@ -186,9 +187,9 @@ const pasos = [
       <div class="mt-14 md:mt-20 grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-3">
         <div data-entra data-paso="1" class="border-t border-noche/25 pt-6">
           <p class="rotulo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">Primero · 30 puntos</p>
-          <h3 class="font-extrabold uppercase m-0 mt-4" style="font-size:clamp(1.25rem,2vw,1.75rem); line-height:1.1; letter-spacing:-0.02em">
-            ¿Te pueden leer?
-          </h3>
+          <h3 class:list={['font-extrabold m-0 mt-4', caja('¿Te pueden leer?')]} style="font-size:clamp(1.25rem,2vw,1.75rem); line-height:1.1; letter-spacing:-0.02em">
+        ¿Te pueden leer?
+      </h3>
           <p class="mt-4 text-noche/70 text-base leading-relaxed">
             Es el único bloque donde fallar deja sin sentido a los otros dos. Y no todos
             los robots de IA deciden lo mismo, así que se revisan por separado.
@@ -196,9 +197,9 @@ const pasos = [
         </div>
         <div data-entra data-paso="2" class="border-t border-noche/25 pt-6">
           <p class="rotulo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">Segundo · 40 puntos</p>
-          <h3 class="font-extrabold uppercase m-0 mt-4" style="font-size:clamp(1.25rem,2vw,1.75rem); line-height:1.1; letter-spacing:-0.02em">
-            ¿Te entienden?
-          </h3>
+          <h3 class:list={['font-extrabold m-0 mt-4', caja('¿Te entienden?')]} style="font-size:clamp(1.25rem,2vw,1.75rem); line-height:1.1; letter-spacing:-0.02em">
+        ¿Te entienden?
+      </h3>
           <p class="mt-4 text-noche/70 text-base leading-relaxed">
             El que más pesa, y en las auditorías que hacemos es también el que más veces
             aparece a medias.
@@ -206,9 +207,9 @@ const pasos = [
         </div>
         <div data-entra data-paso="3" class="border-t border-noche/25 pt-6">
           <p class="rotulo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">Tercero · 30 puntos</p>
-          <h3 class="font-extrabold uppercase m-0 mt-4" style="font-size:clamp(1.25rem,2vw,1.75rem); line-height:1.1; letter-spacing:-0.02em">
-            ¿Te pueden citar?
-          </h3>
+          <h3 class:list={['font-extrabold m-0 mt-4', caja('¿Te pueden citar?')]} style="font-size:clamp(1.25rem,2vw,1.75rem); line-height:1.1; letter-spacing:-0.02em">
+        ¿Te pueden citar?
+      </h3>
           <p class="mt-4 text-noche/70 text-base leading-relaxed">
             Los motores no citan sitios. Citan fragmentos. Acá se mide si del tuyo se puede
             sacar uno limpio, con atribución y fecha.
@@ -369,16 +370,16 @@ const pasos = [
     <!-- BLOQUE 5 · HERRAMIENTAS GRATIS. Bloque nuevo. Campo petróleo. -->
     <section class="bg-surface-2 text-papel px-6 md:px-medianil py-32 md:py-seccion">
       <h2 data-entra
-        class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[17ch]"
+        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[17ch]', caja('Tres herramientas, gratis')]}
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         Tres herramientas, gratis
       </h2>
       <div class="grid gap-x-8 lg:gap-x-12 gap-y-10 md:grid-cols-3">
         <article class="border-t filete pt-6">
-          <h3 class="font-extrabold uppercase m-0 text-xl" style="letter-spacing:-0.02em">
-            Chequeo de visibilidad en IA
-          </h3>
+          <h3 class:list={['font-extrabold m-0 text-xl', caja('Chequeo de visibilidad en IA')]} style="letter-spacing:-0.02em">
+        Chequeo de visibilidad en IA
+      </h3>
           <p class="mt-4 text-humo text-base leading-relaxed">
             Las 21 señales, en treinta segundos.
           </p>
@@ -388,9 +389,9 @@ const pasos = [
         </article>
 
         <article class="border-t filete pt-6">
-          <h3 class="font-extrabold uppercase m-0 text-xl" style="letter-spacing:-0.02em">
-            Verifica y Cumple
-          </h3>
+          <h3 class:list={['font-extrabold m-0 text-xl', caja('Verifica y Cumple')]} style="letter-spacing:-0.02em">
+        Verifica y Cumple
+      </h3>
           <p class="mt-4 text-humo text-base leading-relaxed">
             Si tu sitio cumple lo técnico de la Ley 21.719, que entra en vigencia el 1 de
             diciembre.
@@ -400,9 +401,9 @@ const pasos = [
         </article>
 
         <article class="border-t filete pt-6">
-          <h3 class="font-extrabold uppercase m-0 text-xl" style="letter-spacing:-0.02em">
-            La metodología, publicada
-          </h3>
+          <h3 class:list={['font-extrabold m-0 text-xl', caja('La metodología, publicada')]} style="letter-spacing:-0.02em">
+        La metodología, publicada
+      </h3>
           <p class="mt-4 text-humo text-base leading-relaxed">
             Cómo se calcula cada punto del chequeo, a la vista.
           </p>
@@ -415,7 +416,7 @@ const pasos = [
 
     <section id="metodo" class="px-6 md:px-medianil py-32 md:py-seccion scroll-mt-24">
       <h2 data-entra
-        class="font-extrabold uppercase m-0 mb-12 md:mb-20 max-w-[14ch]"
+        class:list={['font-extrabold m-0 mb-12 md:mb-20 max-w-[14ch]', caja('Cómo trabajamos')]}
         style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:0"
       >
         Cómo trabajamos
@@ -443,7 +444,7 @@ const pasos = [
     <!-- BLOQUE 7 · CIERRE bajo, sin urgencia fabricada. -->
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2 data-entra
-        class="font-extrabold uppercase m-0 max-w-[14ch]"
+        class:list={['font-extrabold m-0 max-w-[14ch]', caja('El mismo número, después')]}
         style="font-size:clamp(2.25rem, 8vw, 9rem); line-height:0.88; letter-spacing:0"
       >
         El mismo número, después

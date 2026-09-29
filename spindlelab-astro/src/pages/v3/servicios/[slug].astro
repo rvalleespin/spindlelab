@@ -18,6 +18,7 @@
 // en auditoría, límites de lo que se promete en visibilidad en IA) pero comparte forma, así
 // que se renderiza igual y el h2 de cada una lo explica.
 import Layout from '../../../layouts/Layout.astro';
+import { caja } from '../../../utils/caja';
 import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
@@ -101,7 +102,7 @@ const jsonLd = {
       </nav>
       <h1
         data-entra
-        class="font-extrabold uppercase m-0 max-w-[14ch]"
+        class:list={['font-extrabold m-0 max-w-[14ch]', caja(s.h1)]}
         style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.88; letter-spacing:0"
       >
         {s.h1}
@@ -132,7 +133,7 @@ const jsonLd = {
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         data-entra
-        class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[18ch]"
+        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[18ch]', caja(secIncluye.h2)]}
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         {secIncluye.h2}
@@ -152,7 +153,7 @@ const jsonLd = {
     <section id="planes" class="bg-papel text-noche px-6 md:px-medianil pb-24 md:pb-36 scroll-mt-24">
       <h2
         data-entra
-        class="font-extrabold uppercase m-0 mb-3 max-w-[18ch]"
+        class:list={['font-extrabold m-0 mb-3 max-w-[18ch]', caja(secPlanes.h2)]}
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         {secPlanes.h2}
@@ -163,11 +164,11 @@ const jsonLd = {
           (secPlanes.planes ?? []).map((p: any) => (
             <article class="flex flex-col border-t filete pt-6">
               <h3
-                class="font-extrabold uppercase m-0"
+                class:list={['font-extrabold m-0', caja(p.nombre)]}
                 style="font-size:clamp(1.125rem,1.7vw,1.5rem); line-height:1.05; letter-spacing:-0.03em"
               >
-                {p.nombre}
-              </h3>
+        {p.nombre}
+      </h3>
               {p.tagline && <p class="mt-3 text-noche/65 text-base leading-relaxed">{p.tagline}</p>}
               <ul class="list-none p-0 mt-5 mb-0 space-y-2">
                 {p.puntos.map((x: string) => (
@@ -194,11 +195,11 @@ const jsonLd = {
         <div class="md:col-span-4">
           <h2
             data-entra
-            class="font-extrabold uppercase m-0 mb-12 md:mb-0 md:sticky md:top-32"
+            class:list={['font-extrabold m-0 mb-12 md:mb-0 md:sticky md:top-32', caja(secBloques.h2)]}
             style="font-size:clamp(1.75rem, 3.4vw, 3.25rem); line-height:0.94; letter-spacing:0; text-wrap:balance"
           >
-            {secBloques.h2}
-          </h2>
+        {secBloques.h2}
+      </h2>
         </div>
         <div class="md:col-span-7 md:col-start-6 ✓">
       <ol data-entra data-paso="1" class="list-none p-0 m-0 border-t filete">
@@ -229,11 +230,11 @@ const jsonLd = {
         <div class="md:col-span-4">
           <h2
             data-entra
-            class="font-extrabold uppercase m-0 mb-12 md:mb-0 md:sticky md:top-32"
+            class:list={['font-extrabold m-0 mb-12 md:mb-0 md:sticky md:top-32', caja(s.secciones[3].h2)]}
             style="font-size:clamp(1.75rem, 3.4vw, 3.25rem); line-height:0.94; letter-spacing:0; text-wrap:balance"
           >
-            {s.secciones[3].h2}
-          </h2>
+        {s.secciones[3].h2}
+      </h2>
         </div>
         <div class="md:col-span-7 md:col-start-6">
       <dl class="m-0 border-t filete">
@@ -241,11 +242,11 @@ const jsonLd = {
           s.faq.map((f: any) => (
             <div class="border-b filete py-7 md:py-9 grid gap-3 md:grid-cols-[minmax(0,15rem)_1fr] md:gap-8">
               <dt
-                class="font-extrabold uppercase"
+                class:list={['font-extrabold', caja(f.p)]}
                 style="font-size:clamp(1.125rem,1.7vw,1.5rem); line-height:1.1; letter-spacing:-0.03em"
               >
-                {f.p}
-              </dt>
+                  {f.p}
+                </dt>
               <dd class="m-0 text-humo text-lg leading-relaxed max-w-prosa">{f.r}</dd>
             </div>
           ))
@@ -258,7 +259,7 @@ const jsonLd = {
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         data-entra
-        class="font-extrabold uppercase m-0 max-w-[16ch]"
+        class:list={['font-extrabold m-0 max-w-[16ch]', caja(secCierre.h2)]}
         style="font-size:clamp(2rem, 6.6vw, 7.5rem); line-height:0.88; letter-spacing:0; text-wrap:balance"
       >
         {secCierre.h2}

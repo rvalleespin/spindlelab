@@ -2,6 +2,7 @@
 // MÉTODO en el lenguaje V3. Contenido real extraído de /metodo/ a paginas-v3.json.
 // Ritmo de color propio: tinta → navy → papel → petróleo → tinta.
 import Layout from '../../layouts/Layout.astro';
+import { caja } from '../../utils/caja';
 import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
@@ -44,7 +45,7 @@ const jsonLd = {
       </nav>
       <h1
         data-entra
-        class="font-extrabold uppercase m-0 max-w-[13ch]"
+        class:list={['font-extrabold m-0 max-w-[13ch]', caja(s.h1)]}
         style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.88; letter-spacing:0"
       >
         {s.h1}
@@ -82,11 +83,11 @@ const jsonLd = {
         <div class="md:col-span-4">
           <h2
             data-entra
-            class="font-extrabold uppercase m-0 mb-12 md:mb-0 md:sticky md:top-32"
+            class:list={['font-extrabold m-0 mb-12 md:mb-0 md:sticky md:top-32', caja(recorrido.h2)]}
             style="font-size:clamp(1.75rem, 3.4vw, 3.25rem); line-height:0.94; letter-spacing:0; text-wrap:balance"
           >
-            {recorrido.h2}
-          </h2>
+        {recorrido.h2}
+      </h2>
         </div>
         <div class="md:col-span-7 md:col-start-6">
       <ol data-entra data-paso="1" class="list-none p-0 m-0 border-t filete">
@@ -115,7 +116,7 @@ const jsonLd = {
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         data-entra
-        class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[16ch]"
+        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[16ch]', caja(reglas.h2)]}
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         {reglas.h2}
@@ -125,11 +126,11 @@ const jsonLd = {
           (reglas.bloques ?? []).map((b: any) => (
             <article class="border-t filete pt-6">
               <h3
-                class="font-extrabold uppercase m-0"
+                class:list={['font-extrabold m-0', caja(b.t)]}
                 style="font-size:clamp(1.125rem,1.8vw,1.625rem); line-height:1.05; letter-spacing:-0.03em"
               >
-                {b.t}
-              </h3>
+        {b.t}
+      </h3>
               {b.d && <p class="mt-4 text-noche/65 text-base leading-relaxed">{b.d}</p>}
             </article>
           ))
@@ -141,7 +142,7 @@ const jsonLd = {
     <section class="tinte--petroleo px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         data-entra
-        class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[16ch]"
+        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[16ch]', caja(poco.h2)]}
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         {poco.h2}
@@ -158,7 +159,7 @@ const jsonLd = {
     <section class="px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         data-entra
-        class="font-extrabold uppercase m-0 max-w-[15ch]"
+        class:list={['font-extrabold m-0 max-w-[15ch]', caja(cierre.h2)]}
         style="font-size:clamp(2rem, 6.6vw, 7.5rem); line-height:0.88; letter-spacing:0; text-wrap:balance"
       >
         {cierre.h2}

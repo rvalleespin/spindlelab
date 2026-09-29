@@ -17,6 +17,7 @@
 // que nunca se mezclan en la misma pieza. No lo reescribo solo: es la biografía de Ramón
 // y la decisión es suya.
 import Layout from '../../layouts/Layout.astro';
+import { caja } from '../../utils/caja';
 import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
@@ -86,7 +87,7 @@ const jsonLd = {
       </nav>
       <h1
         data-entra
-        class="font-extrabold uppercase m-0 max-w-[14ch]"
+        class:list={['font-extrabold m-0 max-w-[14ch]', caja('No te prometo. Te muestro.')]}
         style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.9; letter-spacing:0"
       >
         No te prometo. Te muestro.
@@ -128,7 +129,7 @@ const jsonLd = {
     <section class="tinte--navy px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         data-entra
-        class="font-extrabold uppercase m-0 mb-12 md:mb-16"
+        class:list={['font-extrabold m-0 mb-12 md:mb-16', caja('Cómo trabajo')]}
         style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0"
       >
         Cómo trabajo
@@ -138,11 +139,11 @@ const jsonLd = {
           puntos.map((p) => (
             <article class="border-t filete pt-6">
               <h3
-                class="font-extrabold uppercase m-0"
+                class:list={['font-extrabold m-0', caja(p.t)]}
                 style="font-size:clamp(1.125rem,1.8vw,1.625rem); line-height:1.1; letter-spacing:-0.03em"
               >
-                {p.t}
-              </h3>
+        {p.t}
+      </h3>
               <p class="mt-4 text-humo text-base leading-relaxed">{p.d}</p>
             </article>
           ))
@@ -153,7 +154,7 @@ const jsonLd = {
     <section class="px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         data-entra
-        class="font-extrabold uppercase m-0 max-w-[15ch]"
+        class:list={['font-extrabold m-0 max-w-[15ch]', caja('¿Apareces cuando preguntan?')]}
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         ¿Apareces cuando preguntan?
