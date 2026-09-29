@@ -17,28 +17,33 @@ de esa cuenta con descubrimiento real; el feed es archivo.
 
 ---
 
-## Las cifras son de una medición real, hecha el 28-sep
+## El ángulo: esto es sobre la confianza, no sobre un problema
 
-Este Reel no ilustra una idea: cuenta algo que pasó. Lo medimos el mismo día que el chequeo
-profundo empezó a funcionar, y estas son las cifras textuales:
+**Encuadre de Ramón, 28-sep.** El dueño de un sitio pide datos. La persona se los da confiando
+en que no terminen en otra parte. Esa confianza depende de algo que el dueño no puede ver. La
+ley llegó para poner las mismas reglas a todos, y **Verifica existe para que el dueño sepa si
+su sitio está a la altura de esa confianza.**
 
-| | |
-|---|---|
-| Chequeo rápido, el que solo lee el código | **100** |
-| Chequeo profundo, el que abre un navegador | **0** |
-| Rastreadores que cargaron solos | **6** |
-| Primera carga | **5.341 ms** |
-| Primer envío de datos | **7.240 ms** |
-| Cookies escritas sin tocar nada | **6** |
-| Aviso de cookies | **ninguno** |
-| Tiempo mirando, sin un solo clic | **25 s** |
+No es "tienes un problema". Es "esto es lo que está en juego, y te ayudamos a mirarlo".
 
-⚠️ **El sitio no se nombra, y no se nombra nunca.** Es un prospecto real y la regla de marca
-es que las empresas se generalizan. "Un sitio" no le quita nada al argumento.
+### Dos versiones anteriores se descartaron. Conviene saber por qué
 
-⚠️ **Si vuelves a usar estas cifras en otra pieza, vuelve a medirlas.** Un sitio cambia. La
-medición de septiembre que estaba anotada en el repo seguía siendo cierta, pero eso se
-comprobó corriendo el chequeo de nuevo, no confiando en la nota.
+| Versión | Qué contaba | Por qué no |
+|---|---|---|
+| v1 | La medición: 100 en el chequeo rápido, 0 en el profundo | Ponía el foco en lo buenos que somos midiendo, no en el que mira |
+| v2 | "Seis empresas ya saben que entró" | Más concreto, pero seguía siendo un hallazgo **nuestro** en vez de una razón **suya** |
+
+La medición sigue siendo real y sigue estando en el repo. **Es buen material para otra pieza
+donde el tema sea esa medición.** Acá estorbaba.
+
+⚠️ **Si se reusan esas cifras, hay que volver a medirlas.** Un sitio cambia.
+
+### El límite que no se cruza
+
+En el tramo 5 **no se dice "te decimos si tu sitio es seguro"**. El chequeo no dictamina
+cumplimiento y el sitio lo declara con todas sus letras. Se dice lo que de verdad hace:
+*te mostramos qué hace tu sitio cuando alguien entra, y qué te falta publicar.* Es la misma
+promesa, dicha sin prometer de más.
 
 ---
 
@@ -62,12 +67,15 @@ alto.
 
 | Tramo | Cuadros | Qué dice |
 |---|---|---|
-| 1 | 0–71 | **¿ESTÁS SEGURO?** · *Tu sitio se ve bien. No es lo mismo que estar bien.* |
-| 2 | 72–149 | **UN SITIO SACÓ 100 DE 100.** · *En la revisión rápida, la que solo lee el código.* |
-| 3 | 150–239 | **LO ABRIMOS EN UN NAVEGADOR Y NO TOCAMOS NADA.** · *Veinticinco segundos mirando. Ni un clic.* |
-| 4 | 240–341 | **6 rastreadores · 6 cookies · 0 avisos** · *El primero partió a los 5 segundos. A los 7 ya habían salido datos.* |
-| 5 | 342–401 | **MISMO SITIO. MISMO DÍA. OTRA HISTORIA.** · *No estaba mal hecho. Es que nadie lo había mirado.* |
-| 6 | 402–479 | **MIRA EL TUYO GRATIS.** + la dirección completa |
+| 1 | 0–71 | **¿ESTÁS SEGURO?** · *Tu sitio pide datos. Nombre, correo, teléfono.* |
+| 2 | 72–155 | **TE LOS DAN CONFIANDO EN TI.** · *En que no terminen en otra parte.* |
+| 3 | 156–239 | **PERO ESO NO SE VE.** · *Pasa por dentro de tu sitio, apenas alguien entra. No en la página que tú miras.* |
+| 4 | 240–317 | **PARA ESO LLEGÓ LA LEY.** · *Las mismas reglas para todos, y las personas sabiendo a qué atenerse.* |
+| 5 | 318–407 | **Y PARA ESO ESTAMOS NOSOTROS.** · *Te mostramos qué hace tu sitio cuando alguien entra, y qué te falta publicar.* |
+| 6 | 408–479 | **MÍRALO GRATIS.** + la dirección completa |
+
+**"¿Estás seguro?" funciona en los dos sentidos a la vez**, y por eso aguanta de titular:
+¿estás seguro de que está bien, y está tu sitio seguro para ellos? La pieza contesta las dos.
 
 ---
 
@@ -75,33 +83,37 @@ alto.
 
 Va en **plural**: es la marca. Una sola opción.
 
-> Revisamos un sitio con la herramienta rápida, esa que lee el código y nada más. Sacó 100
-> de 100.
+> Tu sitio pide datos. Un nombre, un correo, a veces un teléfono.
 >
-> Después lo abrimos en un navegador de verdad y lo dejamos ahí, sin tocar nada. A los cinco
-> segundos ya había partido el primer rastreador. A los siete ya habían salido datos de la
-> visita. Al final: seis rastreadores, seis cookies, ningún aviso.
+> Quien te los da está confiando en que no terminen en otra parte. Y eso no depende de cómo se
+> ve tu página: depende de lo que pasa por dentro cuando alguien entra, que es justo lo que no
+> se ve.
 >
-> No estaba mal hecho. Es que nadie lo había mirado con los ojos que corresponden.
+> Para eso llegó la Ley 21.719: las mismas reglas para todos, y las personas sabiendo a qué
+> atenerse.
 >
-> Si quieres ver qué hace el tuyo: verifica.spindlelab.cl. Sin registro, no pedimos tu correo.
+> Y para eso estamos nosotros. Te mostramos qué hace tu sitio cuando alguien entra y qué te
+> falta publicar, para que puedas estar tranquilo de que quien confía en ti tiene razón.
+>
+> verifica.spindlelab.cl. Sin registro, no pedimos tu correo.
 
 **Si lo compartes a tu historia**, primera persona singular y una línea:
-`Esto es lo que me tiene despierto últimamente.`
+`Si tu sitio pide datos, esto te sirve. Lo dejé gratis y sin registro.`
 
 **Lo que no se escribe:** "link en la bio" (el bio de `@spindle.lab` apunta a otro producto),
-ninguna cifra de multa, ninguna cuenta regresiva, el nombre del sitio medido, y nada que
-insinúe que el chequeo dice si cumples. **No lo dice.**
+ninguna cifra de multa, ninguna cuenta regresiva, y nada que insinúe que el chequeo dice si
+cumples. **No lo dice.**
 
 ---
 
 ## 5. Texto alternativo
 
 Video vertical sobre un cielo azul eléctrico. En letras enormes aparece la pregunta "¿Estás
-seguro?", después el relato de un sitio que sacó 100 de 100 en una revisión rápida y que, al
-abrirlo en un navegador sin tocar nada, dejó correr seis rastreadores, escribió seis cookies
-y no mostró ningún aviso. Hacia el final entra galopando una sheriff vestida de rosa fucsia
-con un documento en alto, y aparece la dirección verifica.spindlelab.cl.
+seguro?", y después: tu sitio pide datos, y quien te los da está confiando en ti, en que no
+terminen en otra parte. Pero eso no se ve mirando tu sitio: pasa por dentro cuando alguien
+entra. Para eso llegó la ley, y en ese momento entra galopando una sheriff vestida de rosa
+fucsia con un documento en alto. Cierra con "míralo gratis" y la dirección
+verifica.spindlelab.cl.
 
 ---
 
@@ -109,19 +121,20 @@ con un documento en alto, y aparece la dirección verifica.spindlelab.cl.
 
 - **La pregunta va sola.** Los dos primeros tramos no tienen personaje: solo tipografía sobre
   el cielo. Es el titular del sitio y aguanta el cuadro entero.
-- **La sheriff entra en el tramo 3, cuando abrimos el navegador.** La primera versión la dejaba
-  para el cierre, que sonaba mejor escrito y en el render dejaba cinco de los seis tramos con
-  la mitad de abajo vacía. Ella es la que va a mirar: entra cuando empieza el trabajo.
+- **La sheriff entra EXACTO en "para eso llegó la ley" (cuadro 240).** Ella *es* eso: la ley
+  que llega, y llega de tu lado. Antes de ese cuadro el cielo está vacío a propósito: todavía
+  no llega nadie.
+- **Mientras ella no llega, el texto baja al centro** (`.tipo.centrada`, top 470 en vez de 372).
+  Si se queda arriba, la mitad de abajo del cuadro queda vacía y la pieza se ve coja. Desde el
+  tramo 4 vuelve arriba, porque abajo ya galopa ella.
+- ⚠️ **A 120 px caben unos 13 caracteres por línea.** Una línea más larga se parte sola y deja
+  una palabra colgando: pasó con "QUIEN TE LOS DA" (15), que salió en dos líneas con "DA" solo.
+  **Si escribes una línea nueva, cuéntala.** Está anotado en el CSS.
 - **El caballo arranca en 952 px y no en 900.** A 900 el sombrero rozaba la segunda línea del
-  pie en el tramo de los marcadores. Es una medida tomada contra el render, no a ojo.
-- **Los marcadores llevan la cifra en lima y la frase en blanco**, y la columna tiene que
-  terminar antes de los 900 px. Con el número en 148 px terminaba en 1.050 y se montaba encima
-  del caballo. Si cambias el texto, vuelve a medir.
+  pie explicativo. Es una medida tomada contra el render, no a ojo.
 - **Cero susto y cero multa.** El argumento es la distancia entre "se ve bien" y "está bien",
   no el miedo. Dos competidores muestran la multa estimada en pesos; no gastar eso es el
   diferencial. Si la pieza funcionara porque asusta, estaría mal hecha.
-- **"No estaba mal hecho" es la frase que sostiene el tono.** No hay villano. El sitio del
-  ejemplo está bien construido; lo que faltaba era que alguien lo mirara así.
 - **La dirección va escrita completa en el cierre.** En Instagram el enlace del pie no se
   puede tocar. Nunca "link en la bio".
 - **El render es determinista y en serie.** Cada cuadro se dibuja solo en función de `?f=N`.

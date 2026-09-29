@@ -6,24 +6,26 @@
      ?f=N y se dibuja SOLO en funcion de N: el render es determinista y se
      puede rehacer un tramo suelto sin tocar el resto.
 
-     LAS CIFRAS SON DE UNA MEDICION REAL, hecha el 28-sep-2026 con el
-     chequeo profundo ya funcionando. El sitio NO se nombra: la regla de
-     marca prohibe nombrar a un prospecto, y generalizarlo no le quita
-     nada al argumento. Lo medido, textual:
+     EL ANGULO (encuadre de Ramon, 28-sep, tercera vuelta)
+     Esta pieza NO es sobre un problema, es sobre la CONFIANZA. El dueno de
+     un sitio pide datos; la persona se los da confiando en que no terminen
+     en otra parte; esa confianza depende de algo que no se ve. La ley llego
+     para poner las mismas reglas a todos, y Verifica existe para que el
+     dueno SEPA si su sitio esta a la altura de esa confianza.
 
-       chequeo rapido (solo lee el codigo) ...... 100
-       chequeo profundo (abre navegador) ........ 0
-       rastreadores que cargaron solos .......... 6
-       primera carga ............................ 5.341 ms
-       primer envio de datos .................... 7.240 ms
-       cookies escritas sin tocar nada .......... 6
-       aviso de cookies ......................... ninguno
-       segundos mirados ......................... 25, sin un solo clic
+     Dos versiones anteriores se descartaron y conviene saber por que, para
+     no volver:
+       v1: contaba la medicion (100 en el chequeo rapido, 0 en el profundo).
+           Ponia el foco en lo buenos que somos midiendo, no en el que mira.
+       v2: "seis empresas ya saben que entro". Mas concreto, pero seguia
+           siendo un hallazgo nuestro en vez de una razon suya.
 
-     Cero susto y cero cifra de multa: el argumento es la distancia entre
-     "se ve bien" y "esta bien", no el miedo. Si la pieza funciona porque
-     asusta, esta mal hecha.
+     LIMITE QUE NO SE CRUZA: en el tramo 5 NO se dice "te decimos si tu sitio
+     es seguro". El chequeo no dictamina cumplimiento y el sitio lo declara.
+     Se dice lo que de verdad hace: mostrar que pasa cuando alguien entra y
+     que falta publicar.
 
+     Cero susto y cero cifra de multa.
      Sistema visual de Verifica, NO de SpindleLab.
      ------------------------------------------------------------------ */
 
@@ -69,14 +71,11 @@
       rgba(14,30,110,.06) 100%);
   }
 
-  /* La sheriff NO esta al principio: la pregunta va sola y el 100 tambien. Entra
-     en el tercer tramo, que es cuando abrimos el navegador: ella es la que va a
-     mirar. Dejarla para el cierre sonaba mejor en el papel y en el render dejaba
-     cinco de los seis tramos con la mitad de abajo vacia. */
+  /* La sheriff entra EXACTO en "para eso llego la ley". Ella es eso: la ley
+     que llega, y llega de tu lado. Antes del cuadro 240 no esta, y ese cielo
+     vacio es a proposito: todavia no llega nadie. */
   .sheriff {
     position: absolute; z-index: 3;
-    /* 952 y no 900: a 900 el sombrero rozaba la segunda linea del pie en el tramo
-       de los marcadores. Se mide contra el render, no a ojo. */
     left: -35px; top: 952px; width: 1150px; height: auto;
     transform-origin: 50% 100%;
     filter: drop-shadow(0 26px 40px rgba(10,20,80,.34));
@@ -94,13 +93,20 @@
 
   .bloque { position: absolute; inset: 0; z-index: 5; }
   .tipo { position: absolute; left: 62px; right: 62px; top: 372px; }
+  /* Mientras la sheriff no llega, el texto baja al centro: si se queda arriba,
+     la mitad de abajo del cuadro queda vacia y la pieza se ve coja. Desde el
+     tramo 4 vuelve arriba, porque abajo ya galopa ella. */
+  .tipo.centrada { top: 470px; }
+  /* ⚠️ LIMITE MEDIDO: a 120px caben ~13 caracteres por linea en los 956px utiles.
+     Una linea mas larga se parte sola y deja una palabra colgando; paso con
+     "QUIEN TE LOS DA" (15) que salio en dos lineas y dejo "DA" solo. Si escribes
+     una linea nueva, cuentala. */
   .linea {
     font-family: var(--display); font-size: 120px; line-height: .93;
     letter-spacing: -.022em; color: #fff; transform-origin: 0% 50%;
     text-shadow: 0 6px 30px rgba(10,20,80,.32);
   }
   .linea.lima { color: var(--lima-400); }
-  .tipo.ajustada .linea { font-size: 104px; }
   /* El primer tramo es la pregunta sola y tiene que pegar: va mas grande que
      todo lo demas y centrado, porque no compite con nada en el cuadro. */
   .tipo.pregunta { top: 560px; text-align: center; }
@@ -118,25 +124,6 @@
     color: var(--lima-400); text-transform: uppercase; transform-origin: 0% 50%;
   }
   .antetitulo .estrella { width: 38px; height: 38px; display: block; }
-
-  /* Los tres marcadores del tramo de los hechos: la cifra manda y la frase
-     la explica. Se leen en un segundo, que es lo que dura un scroll. */
-  /* Los tamanos estan medidos contra el render: la columna de los tres marcadores
-     tiene que TERMINAR antes de los 900px, que es donde arranca el caballo. Con el
-     numero en 148px terminaba en ~1050 y se le montaba encima. */
-  .marcador {
-    display: flex; align-items: baseline; gap: 28px;
-    margin-bottom: 22px; transform-origin: 0% 50%;
-  }
-  .marcador .n {
-    font-family: var(--display); font-size: 122px; line-height: .86;
-    color: var(--lima-400); letter-spacing: -.04em; min-width: 146px;
-    text-shadow: 0 6px 30px rgba(10,20,80,.32);
-  }
-  .marcador .q {
-    font-family: var(--display); font-size: 46px; line-height: 1.02;
-    color: #fff; letter-spacing: -.02em; padding-bottom: 10px;
-  }
 
   .tarjeta {
     position: absolute; left: 50px; right: 50px; top: 1252px; z-index: 5;
@@ -175,16 +162,56 @@
     <span class="nombre">Verifica y Cumple</span>
   </div>
 
-  <!-- 1. La pregunta sola. Es el titular del sitio y aguanta el cuadro entero. -->
+  <!-- 1. La pregunta, que funciona en los dos sentidos a la vez: estas seguro
+          de que esta bien, y esta tu sitio seguro para ellos. -->
   <section class="bloque">
     <div class="tipo pregunta">
       <div class="linea" data-d="0">&iquest;EST&Aacute;S</div>
       <div class="linea lima" data-d="5">SEGURO?</div>
-      <div class="sub" data-d="16">Tu sitio se ve bien.<br>No es lo mismo que estar bien.</div>
+      <div class="sub" data-d="16">Tu sitio pide datos.<br>Nombre, correo, tel&eacute;fono.</div>
     </div>
   </section>
 
-  <!-- 2. El sitio que saca 100. Sin nombrarlo: la regla de marca no se negocia. -->
+  <!-- 2. Lo que de verdad esta en juego, y no es un tramite. -->
+  <section class="bloque">
+    <div class="tipo centrada">
+      <div class="linea" data-d="0">TE LOS DAN</div>
+      <div class="linea" data-d="5">CONFIANDO</div>
+      <div class="linea lima" data-d="10">EN TI.</div>
+      <div class="sub" data-d="20">En que no terminen en otra parte.</div>
+    </div>
+  </section>
+
+  <!-- 3. Por que no basta con mirar. -->
+  <section class="bloque">
+    <div class="tipo centrada">
+      <div class="linea" data-d="0">PERO ESO</div>
+      <div class="linea lima" data-d="6">NO SE VE.</div>
+      <div class="sub" data-d="16">Pasa por dentro de tu sitio, apenas alguien<br>entra. No en la p&aacute;gina que t&uacute; miras.</div>
+    </div>
+  </section>
+
+  <!-- 4. Aca entra ella, y no es casualidad: la ley que llega, de tu lado. -->
+  <section class="bloque">
+    <div class="tipo">
+      <div class="linea" data-d="0">PARA ESO</div>
+      <div class="linea lima" data-d="6">LLEG&Oacute; LA LEY.</div>
+      <div class="sub" data-d="16">Las mismas reglas para todos, y las personas<br>sabiendo a qu&eacute; atenerse.</div>
+    </div>
+  </section>
+
+  <!-- 5. Y para eso estamos nosotros. Sin prometer de mas. -->
+  <section class="bloque">
+    <div class="tipo">
+      <div class="linea" data-d="0">Y PARA ESO</div>
+      <div class="linea" data-d="5">ESTAMOS</div>
+      <div class="linea lima" data-d="10">NOSOTROS.</div>
+      <div class="sub" data-d="20">Te mostramos qu&eacute; hace tu sitio cuando alguien<br>entra, y qu&eacute; te falta publicar.</div>
+    </div>
+  </section>
+
+  <!-- 6. El cierre con la direccion completa: en Instagram el enlace del pie
+          no se puede tocar. Nunca "link en la bio". -->
   <section class="bloque">
     <div class="tipo">
       <div class="antetitulo" data-d="0">
@@ -192,57 +219,9 @@
           <polygon fill="#ff3ea0" stroke="#d6ff3d" stroke-width="5" stroke-linejoin="round"
             points="50,2 61.76,33.82 95.65,35.17 69.02,56.18 78.21,88.83 50,70 21.79,88.83 30.98,56.18 4.35,35.17 38.24,33.82"/>
         </svg>
-        Lo medimos hoy
+        Chequeo gratis
       </div>
-      <div class="linea" data-d="4">UN SITIO</div>
-      <div class="linea" data-d="9">SAC&Oacute;</div>
-      <div class="linea lima" data-d="14">100 DE 100.</div>
-      <div class="sub" data-d="24">En la revisi&oacute;n r&aacute;pida, la que solo lee el c&oacute;digo.</div>
-    </div>
-  </section>
-
-  <!-- 3. El metodo, que es la parte que nadie cuenta. -->
-  <section class="bloque">
-    <div class="tipo ajustada">
-      <div class="linea" data-d="2">LO ABRIMOS EN</div>
-      <div class="linea" data-d="7">UN NAVEGADOR</div>
-      <div class="linea lima" data-d="12">Y NO TOCAMOS NADA.</div>
-      <div class="sub" data-d="22">Veinticinco segundos mirando. Ni un clic.</div>
-    </div>
-  </section>
-
-  <!-- 4. Los hechos. Cifras medidas, no estimadas. -->
-  <section class="bloque">
-    <div class="tipo">
-      <div class="marcador" data-d="0"><span class="n">6</span><span class="q">rastreadores<br>partieron solos</span></div>
-      <div class="marcador" data-d="7"><span class="n">6</span><span class="q">cookies, sin<br>pedir permiso</span></div>
-      <div class="marcador" data-d="14"><span class="n">0</span><span class="q">avisos al entrar</span></div>
-      <div class="sub" data-d="24">El primero parti&oacute; a los 5 segundos.<br>A los 7 ya hab&iacute;an salido datos.</div>
-    </div>
-  </section>
-
-  <!-- 5. El golpe, que es la distancia entre las dos mediciones. -->
-  <section class="bloque">
-    <div class="tipo">
-      <div class="linea" data-d="0">MISMO SITIO.</div>
-      <div class="linea" data-d="5">MISMO D&Iacute;A.</div>
-      <div class="linea lima" data-d="11">OTRA HISTORIA.</div>
-      <div class="sub" data-d="20">No estaba mal hecho. Es que nadie lo hab&iacute;a mirado.</div>
-    </div>
-  </section>
-
-  <!-- 6. Ella llega con la respuesta, y el cierre es la direccion completa:
-          en Instagram el enlace del pie no se puede tocar. Nunca "link en la bio". -->
-  <section class="bloque">
-    <div class="tipo">
-      <div class="antetitulo" data-d="0">
-        <svg class="estrella" viewBox="0 0 100 100" aria-hidden="true">
-          <polygon fill="#ff3ea0" stroke="#d6ff3d" stroke-width="5" stroke-linejoin="round"
-            points="50,2 61.76,33.82 95.65,35.17 69.02,56.18 78.21,88.83 50,70 21.79,88.83 30.98,56.18 4.35,35.17 38.24,33.82"/>
-        </svg>
-        Para eso venimos
-      </div>
-      <div class="linea" data-d="5">MIRA EL TUYO</div>
+      <div class="linea" data-d="5">M&Iacute;RALO</div>
       <div class="linea lima" data-d="10">GRATIS.</div>
     </div>
     <div class="tarjeta" data-d="26" data-ease="back">
@@ -274,12 +253,10 @@
   document.getElementById("cielo").style.transform =
     "translate3d(" + (-86 * avance).toFixed(2) + "px, " + (18 * avance).toFixed(2) + "px, 0)";
 
-  // La sheriff entra en el tramo 3 (cuadro 150), que es cuando abrimos el
-  // navegador: ella es la que va a mirar. Los dos primeros tramos —la pregunta y
-  // el 100— se sostienen solos sobre el cielo.
-  var ENTRA = 150;
-  var entrada = outCubic(seg(ENTRA, ENTRA + 66));
-  var x = -1420 * (1 - entrada) + 16 * outCubic(seg(ENTRA + 66, TOTAL));
+  // Entra en el cuadro 240, justo con "PARA ESO LLEGO LA LEY". Ella ES eso.
+  var ENTRA = 240;
+  var entrada = outCubic(seg(ENTRA, ENTRA + 60));
+  var x = -1420 * (1 - entrada) + 16 * outCubic(seg(ENTRA + 60, TOTAL));
   var galope = Math.sin(F * 0.40) * 13;
   var cabeceo = Math.sin(F * 0.40 + 0.7) * 0.9;
   var acerca = 1 + 0.02 * outCubic(seg(ENTRA, TOTAL));
@@ -287,7 +264,7 @@
     "translate3d(" + x.toFixed(2) + "px, " + galope.toFixed(2) + "px, 0)" +
     " scale(" + acerca.toFixed(4) + ") rotate(" + cabeceo.toFixed(3) + "deg)";
 
-  var TIEMPOS = [[0, 72], [72, 150], [150, 240], [240, 342], [342, 402], [402, TOTAL]];
+  var TIEMPOS = [[0, 72], [72, 156], [156, 240], [240, 318], [318, 408], [408, TOTAL]];
 
   Array.prototype.forEach.call(document.querySelectorAll(".bloque"), function (bl, i) {
     var s = TIEMPOS[i][0], e = TIEMPOS[i][1];
