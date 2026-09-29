@@ -21,6 +21,7 @@ import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
 
 import '../../../styles/prosa-v3.css';
+import '../../../styles/campos-v3.css'; // tintes de campo, filete, boton-campo
 
 const cuerpos = import.meta.glob('../../../data/blog-v3/*.html', { query: '?raw', import: 'default', eager: true });
 const datos = import.meta.glob('../../../data/blog-v3/*.json', { eager: true });
@@ -85,7 +86,11 @@ const fecha = meta.datePublished
       <article class="prosa-v3 px-6 md:px-medianil py-24 md:py-40" set:html={cuerpo} />
     </div>
 
-    <section class="text-papel px-6 md:px-medianil py-32 md:py-seccion">
+    {/* NAVY. El blog era lo único del sitio sin campo de color: índice y artículos en
+        0%. Navy es el color de Visibilidad en IA, que es de lo que hablan casi todos los
+        artículos, así que el cierre del blog usa el mismo campo al que empuja. Decidido
+        por Ramón el 29-sep. */}
+    <section class="tinte--navy px-6 md:px-medianil py-32 md:py-seccion">
       <h2
         data-entra
         class="font-extrabold uppercase m-0 max-w-[15ch]"
@@ -99,13 +104,13 @@ const fecha = meta.datePublished
       <div class="mt-12 flex items-center gap-4 flex-wrap">
         <a
           href="/v3/#chequeo"
-          class="rounded-v3 bg-papel hover:bg-white text-noche text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+          class="boton-campo"
         >
           Correr el chequeo
         </a>
         <a
           href={CONTACTO}
-          class="rounded-v3 border filete hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
+          class="rounded-v3 border filete hover:border-current text-sm font-bold px-8 py-4 transition-colors"
         >
           Conversemos tu proyecto
         </a>
