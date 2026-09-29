@@ -105,7 +105,11 @@ su nota:
   afirmaciones genéricas.
 - **El bloque de herramientas gratis** (chequeo, Verifica y Cumple, metodología publicada).
 - **Ningún competidor se nombra.** El patrón se cuenta en abstracto.
-- **No se promete monitoreo continuo de menciones en IA** en ninguna parte.
+- **No se agregó ninguna promesa de monitoreo de menciones en IA.** Ojo con cómo
+  estaba escrita antes esta línea: decía «en ninguna parte», y eso es falso sobre el
+  sitio. El servicio mensual sí describe medición quincenal de menciones en IA, en
+  `metodo` (paso 04, «Monitoreo») y en cuatro lugares de `servicios-v3.json`. Queda
+  anotado abajo como observación, no tocado.
 
 ---
 
@@ -138,3 +142,33 @@ Los cambios de esta rama se aplicaron sobre la **instrucción directa de Ramón 
 que era completa y suficiente por sí sola. Queda anotado para que el registro diga de
 dónde salió el mandato y no de un documento que no existe. Si la troncal tiene ese trabajo
 local, hay que pushearlo: hasta que eso pase, el brief y la ficha contradicen al sitio.
+
+---
+
+## Observación: el monitoreo quincenal de menciones en IA
+
+**No lo toqué.** Lo dejo anotado porque roza una regla dura y la decisión no es mía.
+
+La regla que me diste es **no prometer monitoreo continuo de menciones en IA**, porque
+no escala más allá de uno o dos clientes. El sitio, tal como está hoy y desde antes de
+esta rama, sí lo describe, pero **solo dentro del servicio mensual pagado**, con alcance
+acotado:
+
+| Dónde | Qué dice |
+|---|---|
+| `/v3/metodo/`, paso 04 | «Cada quince días medimos menciones en IA con nuestro protocolo público… te lo reportamos en una página en lenguaje de negocio.» |
+| Acompañamiento mensual | «Monitoreo doble: posiciones clásicas y presencia en respuestas de IA, medidas quincenalmente.» |
+| Plan de una capa | «~10 consultas medidas al mes, informe quincenal y reunión mensual.» |
+| Alcance de los planes | «Todos los planes traen… monitoreo doble, informe quincenal y reunión mensual. Mínimo 3 meses.» |
+
+Por eso no lo cambié: **está acotado y cuantificado** (quincenal, ~10 consultas al mes,
+mínimo 3 meses, dentro de un retainer), que es distinto de prometerle monitoreo continuo
+a cualquiera que llegue al sitio. Se lee como la especificación de un servicio pagado, no
+como una promesa abierta. Borrarlo sería vaciar de contenido el servicio mensual, y esa
+es una decisión de producto tuya, no un arreglo de copy.
+
+**Lo que hay que decidir:** si la regla también cubre este caso, hay que reescribir el
+paso 04 del método y cuatro textos de `servicios-v3.json`, y el servicio mensual queda
+sin su entregable más concreto. Si la regla apuntaba a promesas abiertas y gratuitas,
+esto se queda como está y la regla debería anotarse con esa excepción para que ninguna
+sesión futura lo borre por cumplir al pie de la letra.

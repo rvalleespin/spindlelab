@@ -196,16 +196,23 @@ const jsonLd = {
 
       {s.faq?.length > 0 && (
         <>
-          <h2
-            data-entra
-            class="font-extrabold uppercase m-0 mt-24 md:mt-36 mb-12 md:mb-16"
-            style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
-          >
-            {responde.h2}
-          </h2>
+          {/* Titular pegajoso: es el bloque más alto del sitio (1.951px contra 900 de
+              pantalla), así que la pregunta que ordena la lista se queda a la vista
+              mientras se recorren las respuestas. */}
+          <div class="md:grid md:grid-cols-12 md:gap-x-8 mt-24 md:mt-36">
+            <div class="md:col-span-4">
+              <h2
+                data-entra
+                class="font-extrabold uppercase m-0 mb-12 md:mb-0 md:sticky md:top-32"
+                style="font-size:clamp(1.75rem, 3.4vw, 3.25rem); line-height:0.94; letter-spacing:0; text-wrap:balance"
+              >
+                {responde.h2}
+              </h2>
+            </div>
+            <div class="md:col-span-7 md:col-start-6">
           <dl class="m-0 border-t filete">
             {s.faq.map((f: any) => (
-              <div class="border-b filete py-7 md:py-9 grid gap-3 md:grid-cols-[minmax(0,22rem)_1fr] md:gap-12">
+              <div class="border-b filete py-7 md:py-9 grid gap-3 md:grid-cols-[minmax(0,15rem)_1fr] md:gap-8">
                 <dt
                   class="font-extrabold uppercase"
                   style="font-size:clamp(1.0625rem,1.6vw,1.375rem); line-height:1.1; letter-spacing:-0.03em"
@@ -216,6 +223,8 @@ const jsonLd = {
               </div>
             ))}
           </dl>
+            </div>
+          </div>
         </>
       )}
     </section>

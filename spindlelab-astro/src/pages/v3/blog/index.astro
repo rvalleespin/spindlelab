@@ -130,7 +130,10 @@ const jsonLd = {
           posts.map((p) => {
             const foto = fotos[p.slug];
             return (
-              <li>
+              // La tarjeta entera entra como una pieza. Marcar solo la bajada dejaba la
+              // foto y el titular puestos y el texto apareciendo después: se lee a falla,
+              // no a animación.
+              <li data-entra>
                 <a href={`/v3/blog/${p.slug}/`} class="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel focus-visible:outline-offset-4">
                   {foto && (
                     <img
@@ -154,7 +157,7 @@ const jsonLd = {
                   >
                     {p.headline}
                   </h2>
-                  <p data-entra data-paso="1" class="m-0 mt-4 text-humo text-lg leading-relaxed max-w-prosa">
+                  <p class="m-0 mt-4 text-humo text-lg leading-relaxed max-w-prosa">
                     {p.description}
                   </p>
                 </a>
