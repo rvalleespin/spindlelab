@@ -1,6 +1,22 @@
 {
   "momentos": [
     {
+      "momento": "Tu sitio te frena, o no existe",
+      "items": [
+        {
+          "n": "Desarrollo Web",
+          "p": "$390.000 · $690.000 · $1.190.000",
+          "href": "/v3/servicios/desarrollo-web/",
+          "d": "El sitio nace legible para las máquinas que hoy recomiendan tu negocio. Lo compruebas con el mismo chequeo, sobre tu dominio, antes y después."
+        }
+      ],
+      "nota": "El SEO técnico y el AEO van puestos desde el primer commit, no parchados al final. Esa es la especificación del producto, no un servicio aparte.",
+      "palabra": "Desarrollo",
+      "campo": "brasa",
+      "img": "/assets/img/hero-desarrollo-web.jpg",
+      "alt": "Pantalla de código durante el desarrollo de un sitio a medida"
+    },
+    {
       "momento": "Tu sitio existe y no lo van a rehacer",
       "items": [
         {
@@ -19,23 +35,8 @@
       "palabra": "Visibilidad",
       "campo": "navy",
       "img": "/assets/img/hero-visibilidad-ia.jpg",
-      "alt": "Fachada de edificios corporativos, imagen del servicio de visibilidad en IA"
-    },
-    {
-      "momento": "Tu sitio te frena, o no existe",
-      "items": [
-        {
-          "n": "Desarrollo Web",
-          "p": "$390.000 · $690.000 · $1.190.000",
-          "href": "/v3/servicios/desarrollo-web/",
-          "d": "Sitios a medida, sin plantillas ni WordPress, con panel para que edites tú."
-        }
-      ],
-      "nota": "Con el SEO técnico y el AEO puestos desde el primer commit, no parchados después.",
-      "palabra": "Desarrollo",
-      "campo": "brasa",
-      "img": "/assets/img/hero-desarrollo-web.jpg",
-      "alt": "Pantalla de código durante el desarrollo de un sitio a medida"
+      "alt": "Fachada de edificios corporativos, imagen del servicio de visibilidad en IA",
+      "nota": "Si tu sitio funciona y no lo vas a rehacer, esta es la puerta. No hace falta reconstruir para que una IA pueda citarte."
     },
     {
       "momento": "Ya giras y quieres sostenerlo",
