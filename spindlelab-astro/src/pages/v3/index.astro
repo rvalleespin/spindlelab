@@ -75,23 +75,50 @@ const pasos = [
   <NavV3 />
 
   <main class="text-papel">
-    <!-- BLOQUE 1 · EL HERO ES LA PRUEBA. Una pregunta que el visitante puede responder
-         ahí mismo, y el instrumento debajo. -->
+    <!-- BLOQUE 1 · EL HERO AFIRMA, Y EL INSTRUMENTO LO PRUEBA.
+         ================================================================================
+         CAMBIO DE FUNCIÓN, no de redacción. Hasta el 29-sep el h1 era «¿Te menciona la
+         IA?»: una pregunta, con el formulario debajo como su respuesta. Funcionaba, pero
+         declaraba que el negocio se trata de la IA, y eso es exactamente lo que había que
+         mover. Medido antes del cambio: el 55 % del alto de esta home tenía marco de IA y
+         el 31 % de desarrollo web.
+
+         Ahora el h1 afirma qué es la casa y el formulario pasa de respuesta a PRUEBA de
+         esa afirmación. Es un cambio de papel del instrumento, y conviene tenerlo escrito
+         porque no se ve en el diff: el mismo formulario, en el mismo sitio, ya no está
+         contestando nada.
+
+         «Eje» no es una metáfora nueva: es el sostén del nombre según el manual §06b
+         (spindle = eje/husillo, la pieza que gira y transmite el movimiento), y la palabra
+         ya se usa cinco veces en el sitio sin que el hero la hubiera presentado nunca.
+
+         NO DICE «MOTOR» a propósito, aunque la idea sea esa. La razón que estaba escrita
+         acá era falsa y la verifiqué después: decía que el bloque del problema abre con
+         «Los motores no citan sitios», y esa frase NO EXISTE en el sitio; ese bloque abre
+         con «No es un mal sitio.». La razón real es otra y sigue en pie, ahora contada:
+         en el texto visible del v3, «motores de IA» (buscadores) aparece 18 veces y
+         «motor de adquisición» (la máquina del negocio) 5. La palabra ya carga dos
+         significados distintos, 18 contra 5. Meterla en el titular más grande del sitio
+         para estrenar un tercero es lo que había que evitar.
+
+         Titular elegido por Ramón el 29-sep entre ocho candidatos. La objeción que quedó
+         anotada y no se resolvió sola: «el eje de tu negocio» es reclamable por cualquiera
+         y se sostiene en la bajada, no solo. Si la bajada se acorta, se pierde. -->
     <section id="chequeo" class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-10 md:pb-14 scroll-mt-24">
-      <!-- El titular se acortó de 79 a 19 caracteres. A 6,5rem en mayúsculas caben ~20 por
-           línea, así que el anterior ocupaba cuatro y aplastaba el instrumento, que es lo
-           que tiene que ver el visitante. La pregunta completa baja a la línea de apoyo,
-           donde el texto es chico y no cuesta líneas. -->
+      <!-- 20 caracteres y 5 palabras: una sola línea a 8,4vw, así que el instrumento queda
+           entero y a la vista. El titular anterior de 79 caracteres ocupaba cuatro líneas
+           y lo aplastaba. -->
       <h1
-        class:list={['font-extrabold m-0', caja('¿Te menciona la IA?')]}
+        class:list={['font-extrabold m-0', caja('El eje de tu negocio')]}
         style="font-size:clamp(2.25rem, 8.4vw, 8rem); line-height:0.88; letter-spacing:0"
       >
-        ¿Te menciona la IA?
+        El eje de tu negocio
       </h1>
       <p class="mt-8 text-humo text-lg md:text-2xl leading-relaxed max-w-prosa">
-        Para que una IA te nombre tienen que pasar tres cosas, en orden: que te pueda
-        leer, que te entienda y que te pueda citar. Pega tu dirección y te decimos en
-        cuál se corta.
+        Todo lo que pagas para que lleguen termina en tu sitio, y ahí la primera que lee
+        no es una persona: es la máquina que responde cuando alguien pregunta por tu
+        rubro. Diseñamos y construimos el sitio que esa máquina sí puede leer, y le
+        conectamos la pauta encima. Escribe tu dominio y te mostramos cómo está el tuyo.
       </p>
 
       <div class="mt-10 border-t border-b filete">
@@ -218,8 +245,12 @@ const pasos = [
          ================================================================================
          NO SE INVENTÓ NADA ACÁ. Son los tres bloques con que la metodología publicada
          agrupa los 21 chequeos, con sus pesos reales: leer 30, entender 40, citar 30.
-         El h1 del hero pregunta por el resultado; esto explica de qué depende; los campos
-         que vienen abajo son la respuesta. Ese es el hilo que faltaba.
+         OJO, EL HILO SE CORTÓ EL 29-SEP y esto hay que resolverlo, no dejarlo escrito:
+         cuando el h1 era «¿Te menciona la IA?», la bajada del hero presentaba las tres
+         cosas («leer, entender, citar») y este bloque las explicaba. El hero nuevo afirma
+         en vez de preguntar y ya no las presenta, así que el bloque del problema, que
+         está ARRIBA de éste, dice «que es la tercera de las tres cosas» nombrando algo
+         que todavía no se nombró. Es una referencia hacia adelante.
          La barra de pesos está a escala: 30/40/30 son los puntos de verdad. -->
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <p class="rotulo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">
