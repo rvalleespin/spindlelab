@@ -50,6 +50,49 @@ const RUTAS = ['blog', 'servicios', 'diagnostico', 'contacto', 'metodo', 'nosotr
 const cuerpo = crudo
   .replace(new RegExp(`href="/(${RUTAS.join('|')})/`, 'g'), 'href="/v3/$1/')
   .replace(/href="\/"/g, 'href="/v3/"');
+// ÍNDICE DEL ARTÍCULO. Los h2 del cuerpo publicado casi nunca traen id: de los siete
+// artículos, solo uno los tiene. Así que el id se genera acá a partir del texto del
+// encabezado, y se RESPETA el que ya venga, para no romper un enlace que alguien ya
+// tenga guardado.
+//
+// Se hace en el build, no en el navegador: el índice sale en el HTML entregado, o sea
+// funciona sin JS y lo pueden leer los motores. El JS solo agrega saber en cuál sección
+// vas, que es un lujo, no el contenido.
+function idDe(texto: string) {
+  return texto
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')   // fuera los acentos
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 60);
+}
+
+const secciones: { id: string; texto: string }[] = [];
+const usados = new Set<string>();
+const cuerpoConIds = cuerpo.replace(
+  /<h2([^>]*)>([\s\S]*?)<\/h2>/g,
+  (todo: string, attrs: string, dentro: string) => {
+    const texto = dentro.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+    if (!texto) return todo;
+    const yaTiene = attrs.match(/\bid="([^"]+)"/);
+    let id = yaTiene ? yaTiene[1] : idDe(texto);
+    if (!id) return todo;
+    // desempate: dos encabezados con el mismo texto darían el mismo id y el índice
+    // mandaría los dos al primero
+    let n = 2;
+    const base = id;
+    while (usados.has(id)) id = `${base}-${n++}`;
+    usados.add(id);
+    secciones.push({ id, texto });
+    return yaTiene ? todo : `<h2${attrs} id="${id}">${dentro}</h2>`;
+  }
+);
+
+// Con menos de tres secciones un índice no ayuda: ocupa una columna para decir lo que
+// ya se ve bajando dos pantallas.
+const hayIndice = secciones.length >= 3;
+
 const info = (Object.entries(datos).find(([r]) => slugDe(r) === slug)?.[1] as any).default ?? Object.entries(datos).find(([r]) => slugDe(r) === slug)?.[1];
 const meta = info.meta;
 
@@ -83,7 +126,47 @@ const fecha = meta.datePublished
 
     <!-- El artículo, sobre papel. HTML verbatim del publicado. -->
     <div class="bg-papel">
-      <article class="prosa-v3 px-6 md:px-medianil py-24 md:py-40" set:html={cuerpo} />
+      {/* ÍNDICE PEGAJOSO. El resto del v3 usa el sticky sobre listas verticales; un
+          artículo es prosa corrida y ahí el titular pegajoso no aplica, así que lo que
+          se queda quieto es el índice: te dice en qué parte del artículo vas.
+          El cuerpo NO se mueve de su sitio. La prosa mide 68ch y a 1440 sobran unos
+          700px a la derecha; el índice ocupa ese aire, no le quita ancho a la lectura.
+          En móvil deja de ser pegajoso y se muestra arriba, plegado en un <details>,
+          que es donde sí sirve: saltar sin recorrer cinco pantallas. */}
+      <div class="px-6 md:px-medianil py-24 md:py-40 md:grid md:grid-cols-12 md:gap-x-8">
+        {hayIndice && (
+          <nav
+            aria-label="Contenido del artículo"
+            class="indice-articulo md:col-span-3 md:col-start-10 md:order-2 md:sticky md:top-32 md:self-start mb-12 md:mb-0"
+          >
+            {/* ABIERTO en el HTML, y el JS lo pliega solo en móvil.
+                Al revés no funciona: Chrome esconde el contenido de un <details>
+                cerrado por el slot, no poniéndole display:none a los hijos, así que
+                un `display:block` en el CSS no lo revela. Lo comprobé con
+                checkVisibility(): getBoundingClientRect() sigue devolviendo una caja
+                con alto aunque el contenido no se pinte, y eso me hizo creer dos veces
+                que funcionaba.
+                Si el script no corre, la falla es un índice desplegado de más en
+                móvil, no un índice invisible en escritorio. */}
+            <details open>
+              <summary class="rotulo md:pointer-events-none">En este artículo</summary>
+              <ol class="list-none p-0 m-0 mt-5 border-t filete">
+                {secciones.map((sec) => (
+                  <li class="border-b filete">
+                    <a href={`#${sec.id}`} class="block py-2.5 text-sm leading-snug">
+                      {sec.texto}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </details>
+          </nav>
+        )}
+        <article
+          class:list={['prosa-v3', hayIndice ? 'md:col-span-8 md:order-1' : 'md:col-span-12']}
+          set:html={cuerpoConIds}
+        />
+      </div>
     </div>
 
     {/* NAVY. El blog era lo único del sitio sin campo de color: índice y artículos en
@@ -117,6 +200,55 @@ const fecha = meta.datePublished
       </div>
     </section>
   </main>
+
+  <script>
+    // EN QUÉ SECCIÓN VAS. Es lo único que el JS agrega al índice: los enlaces ya
+    // funcionan sin esto. Si el script no corre, se pierde la marca, no el contenido.
+    (() => {
+      const indice = document.querySelector('.indice-articulo');
+      if (!indice) return;
+
+      // PLEGADO SOLO EN MÓVIL. Ver la nota del marcado: el HTML sale abierto para que
+      // escritorio funcione sin JS, y acá se pliega donde estorba.
+      const caja = indice.querySelector('details');
+      const chico = window.matchMedia('(max-width: 767px)');
+      const ajustar = () => { if (caja) caja.open = !chico.matches; };
+      ajustar();
+      chico.addEventListener('change', ajustar);
+      const enlaces = [...indice.querySelectorAll('a[href^="#"]')];
+      const titulos = enlaces
+        .map((a) => document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1))))
+        .filter(Boolean);
+      if (titulos.length !== enlaces.length) return;
+
+      // No se usa IntersectionObserver acá a propósito: dice si un encabezado está a
+      // la vista, no en cuál sección estás parado. Entre dos encabezados no hay
+      // ninguno visible y la marca se apagaría justo mientras lees.
+      let pendiente = false;
+      const marcar = () => {
+        pendiente = false;
+        const linea = 140;
+        let actual = 0;
+        for (let i = 0; i < titulos.length; i++) {
+          if (titulos[i].getBoundingClientRect().top <= linea) actual = i;
+        }
+        // antes del primer encabezado no estás en ninguna sección todavía
+        const antes = titulos[0].getBoundingClientRect().top > linea;
+        enlaces.forEach((a, i) => {
+          if (!antes && i === actual) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      };
+      const pedir = () => {
+        if (pendiente) return;
+        pendiente = true;
+        requestAnimationFrame(marcar);
+      };
+      addEventListener('scroll', pedir, { passive: true });
+      addEventListener('resize', pedir);
+      marcar();
+    })();
+  </script>
 
   <FooterV3 />
 </Layout>

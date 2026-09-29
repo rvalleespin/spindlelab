@@ -205,3 +205,75 @@
 .prosa-v3 nav ul > li {
   padding-left: 0;
 }
+
+/* ==========================================================================
+   ÍNDICE DEL ARTÍCULO
+   ==========================================================================
+   Va sobre PAPEL, no sobre el lienzo negro, así que los colores son los del
+   documento. Contraste medido sobre #F7F5F0:
+     · texto del índice  #5B5A57  →  6,05:1
+     · sección actual    #14110E  → 17,3:1
+     · rótulo            #636260  →  5,59:1
+   La sección actual se distingue por COLOR y por una barra a la izquierda, no
+   solo por color: quien no distingue bien los grises igual ve cuál es.
+
+   REGLA DE DEGRADACIÓN: sin JS no hay «sección actual» y el índice queda como
+   una lista de enlaces que funciona igual. Lo que el JS agrega es saber dónde
+   vas, no el contenido. */
+.indice-articulo a {
+  color: #5b5a57;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  padding-left: 0.75rem;
+  margin-left: -0.75rem;
+  transition:
+    color 0.25s,
+    border-color 0.25s;
+}
+.indice-articulo a:hover {
+  color: #14110e;
+}
+.indice-articulo a:focus-visible {
+  outline: 2px solid #14110e;
+  outline-offset: 2px;
+}
+.indice-articulo a[aria-current='true'] {
+  color: #14110e;
+  font-weight: 700;
+  border-left-color: #14110e;
+}
+.indice-articulo .rotulo {
+  color: #636260;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.indice-articulo summary::-webkit-details-marker { display: none }
+.indice-articulo summary::after {
+  content: '+';
+  float: right;
+  font-weight: 800;
+}
+.indice-articulo details[open] summary::after { content: '–' }
+
+/* En escritorio el índice está siempre abierto y el <details> no se puede plegar:
+ * es una columna, no un acordeón. El acordeón es la forma que toma en móvil. */
+@media (min-width: 768px) {
+  .indice-articulo summary { list-style: none }
+  /* Las DOS reglas del marcador, no solo una: `details[open] summary::after` pesa más
+   * que `summary::after`, así que anular la segunda dejaba el «–» puesto en escritorio
+   * aunque ahí no haya nada que plegar. */
+  .indice-articulo summary::after,
+  .indice-articulo details[open] summary::after {
+    content: none;
+  }
+}
+
+/* El salto desde el índice no puede dejar el encabezado bajo la placa del nav. */
+.prosa-v3 h2 { scroll-margin-top: 7rem }
+
+@media (prefers-reduced-motion: reduce) {
+  .indice-articulo a { transition: none }
+}
