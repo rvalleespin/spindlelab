@@ -127,6 +127,17 @@ con un documento en alto, y aparece la dirección verifica.spindlelab.cl.
 - **El render es determinista y en serie.** Cada cuadro se dibuja solo en función de `?f=N`.
   **No lo paralelices:** Chrome headless se cuelga y los procesos quedan vivos sin escribir el
   PNG. Está documentado desde la pieza 01.
+- ⚠️ **La cuelga NO es exclusiva del paralelo.** Esta pieza se trabó en serie, en el cuadro 214:
+  el proceso vivo, sin escribir, y el bucle esperándolo para siempre. Por eso `render.sh` ahora
+  lleva un vigilante que corta a los 25 s y una segunda pasada que rehace los cuadros perdidos.
+  **No usa `timeout`**, que en macOS no viene: es un vigilante en zsh puro.
+- ⚠️ **Y ojo con `(( i++ ))` en zsh con `set -e`.** El post-incremento devuelve el valor
+  *anterior*: cero en la primera vuelta, que zsh lee como fallo y mata el script sin decir nada.
+  Va `i=$(( i + 1 ))`. Esa línea sola costó una corrida entera.
+- **Verificado sobre el MP4, no sobre los PNG.** 16,00 s · 1080×1920 · yuv420p · 30 fps. Se le
+  extrajeron cuadros al video montado y se miraron, y se midió la diferencia entre cuadros
+  vecinos alrededor del punto donde se reanudó la corrida: 6,40 %, dentro del rango de sus
+  vecinos (4,85 a 9,47 %). No hay costura.
 - **Los cuadros no van al repo.** Son 480 PNG de ~1,2 MB y esta carpeta vive en iCloud Drive.
   `render.sh` los deja en disco local y de ahí sale el MP4.
 
