@@ -352,16 +352,50 @@ const pasos = [
                               El detalle de cada plan vive en /v3/servicios/desarrollo-web/,
                               que es donde alguien lo va a leer de verdad. */}
                           <p class="m-0 text-xl md:text-2xl leading-relaxed max-w-prosa">{pl.d}</p>
-                          <p class="m-0 mt-7 flex flex-wrap items-baseline gap-x-3">
-                            <span class="rotulo text-base">Valor</span>
-                            <span class="text-xl md:text-2xl font-semibold">{pl.p}</span>
-                            <span class="rotulo text-base">+ IVA</span>
-                          </p>
+                          {/* EL PRECIO SE PARTE EN LÍNEAS, no se recorta.
+                              Tres servicios traen dos valores en una sola cadena
+                              («$490.000 · $690.000 con Visibilidad IA»), que es justo el
+                              apretado que las pestañas venían a resolver. La tentación era
+                              mostrar solo el de entrada con un «desde», pero eso saca
+                              información de la home y los precios no se tocan. Se parte por
+                              el separador: los dos números quedan, cada uno en su renglón,
+                              y se lee cuál es cuál. */}
+                          {(() => {
+                            const tramos = String(pl.p).split('·').map((x: string) => x.trim()).filter(Boolean);
+                            const conIva = !/IVA|cotiza/i.test(pl.p);
+                            return (
+                              <div class="mt-7">
+                                <span class="rotulo text-base">Valor</span>
+                                <ul class="list-none p-0 m-0 mt-1.5">
+                                  {tramos.map((t: string, n: number) => (
+                                    <li class={n === 0 ? 'text-xl md:text-2xl font-semibold leading-tight' : 'text-lg leading-tight mt-1'}>
+                                      {t}
+                                      {n === tramos.length - 1 && conIva && (
+                                        <span class="rotulo text-base"> + IVA</span>
+                                      )}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            );
+                          })()}
+                          {/* EL BOTÓN VA DENTRO DEL PANEL cuando la pestaña es un servicio
+                              distinto, no una cobertura del mismo. En Visibilidad y Alcance
+                              cada pestaña lleva a otra página; un botón fijo afuera habría
+                              mandado a todo el mundo al primer servicio, que es un enlace
+                              equivocado servido con cara de correcto. */}
+                          {pl.href && (
+                            <a href={pl.href} class="boton-campo mt-7">{pl.cta}</a>
+                          )}
                         </div>
                       ))}
-                      <a href={items[0].href} class="boton-campo mt-7">
-                        Ver {items[0].n}
-                      </a>
+                      {/* Cuando las pestañas son coberturas de UN servicio, el botón es
+                          uno solo y vive fuera de los paneles. */}
+                      {!m.planes.some((x: any) => x.href) && (
+                        <a href={items[0].href} class="boton-campo mt-7">
+                          Ver {items[0].n}
+                        </a>
+                      )}
                     </div>
                   ) : (
                     <ul class={`list-none p-0 m-0 grid gap-x-6 gap-y-8 ${items.length > 1 ? 'sm:grid-cols-2' : ''}`}>

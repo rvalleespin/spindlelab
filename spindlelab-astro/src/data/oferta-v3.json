@@ -102,7 +102,23 @@
       "campo": "navy",
       "img": "/assets/img/hero-visibilidad-ia.jpg",
       "alt": "Fachada de edificios corporativos, imagen del servicio de visibilidad en IA",
-      "nota": "Si tu sitio funciona y no lo vas a rehacer, esta es la puerta. No hace falta reconstruir para que una IA pueda citarte."
+      "nota": "Si tu sitio funciona y no lo vas a rehacer, esta es la puerta. No hace falta reconstruir para que una IA pueda citarte.",
+      "planes": [
+        {
+          "n": "Visibilidad en IA",
+          "d": "Para que ChatGPT, Gemini y Perplexity puedan citarte cuando preguntan por tu rubro.",
+          "p": "$400.000",
+          "href": "/v3/servicios/visibilidad-en-ia/",
+          "cta": "Ver Visibilidad en IA"
+        },
+        {
+          "n": "Auditoría SEO Técnica",
+          "d": "Rastreo, indexación, Core Web Vitals y datos estructurados. Qué te frena y qué mueve la aguja.",
+          "p": "$490.000 · $690.000 con Visibilidad IA",
+          "href": "/v3/servicios/auditoria-seo-tecnica/",
+          "cta": "Ver Auditoría SEO Técnica"
+        }
+      ]
     },
     {
       "momento": "Ya giras y quieres sostenerlo",
@@ -117,7 +133,24 @@
       "palabra": "Continuidad",
       "campo": "petroleo",
       "img": "/assets/img/hero-acompanamiento.jpg",
-      "alt": "Mesa de trabajo con un informe de acompañamiento mensual"
+      "alt": "Mesa de trabajo con un informe de acompañamiento mensual",
+      "planes": [
+        {
+          "n": "Esencial",
+          "d": "Sostener y mejorar un frente: técnico o visibilidad en IA.",
+          "p": "Desde $590.000 /mes + IVA"
+        },
+        {
+          "n": "Pro",
+          "d": "Las dos capas juntas, con más cobertura y contenido.",
+          "p": "Desde $790.000 /mes + IVA"
+        },
+        {
+          "n": "A medida",
+          "d": "Equipo dedicado y varios frentes a la vez.",
+          "p": "Se cotiza tras una reunión"
+        }
+      ]
     }
   ],
   "tambien": [
@@ -151,6 +184,22 @@
     "img": "/assets/img/hero-servicios.jpg",
     "alt": "Equipo revisando piezas de campaña en pantalla",
     "momento": "Ya tienes demanda y quieres más",
-    "nota": "El contenido creativo lo pones tú. Nosotros lo hacemos funcionar."
+    "nota": "El contenido creativo lo pones tú. Nosotros lo hacemos funcionar.",
+    "planes": [
+      {
+        "n": "Gestión de Redes Sociales",
+        "d": "Presencia, comunidad y pauta social en LinkedIn y Meta.",
+        "p": "$390.000/mes · $590.000/mes con pauta",
+        "href": "/v3/servicios/redes-sociales/",
+        "cta": "Ver Gestión de Redes Sociales"
+      },
+      {
+        "n": "Paid Media (Google)",
+        "d": "Google Ads de alta intención: captura a quien ya está buscando lo que ofreces.",
+        "p": "$350.000/mes · $550.000/mes Pro",
+        "href": "/v3/servicios/paid-media/",
+        "cta": "Ver Paid Media (Google)"
+      }
+    ]
   }
 }
