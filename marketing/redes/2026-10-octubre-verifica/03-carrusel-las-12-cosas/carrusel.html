@@ -3,18 +3,27 @@
 <style>
   /* ------------------------------------------------------------------
      Carrusel de feed 1080x1080, 6 laminas. Cada lamina se pide por ?s=N
-     y se dibuja sola, igual que el reel: el render es determinista y se
-     puede rehacer una lamina suelta sin tocar las otras.
+     y se dibuja sola: el render es determinista y se puede rehacer una
+     suelta sin tocar las otras.
 
-     Los 12 puntos son los literales a) a l) del Art. 14 ter de la ley
-     19.628 (los introduce el articulo primero de la 21.719). Verificados
-     el 28-sep-2026 contra el PDF del Diario Oficial N 44.023 del
-     13-dic-2024, CVE 2583630, palabra por palabra. Los titulos en
-     castellano llano son los mismos que sirve /api/doce-puntos, o sea
-     los que ya estan publicados y revisados en el sitio.
+     DE DONDE SALE EL TEXTO (28-sep-2026, correccion de Ramon)
+     De la seccion "Lo que pide la ley" del sitio en produccion, donde ya
+     estan numerados 01 a 12 y cada uno con su linea explicativa. Esa lista
+     esta escrita para contestar "que significa esto"; los titulos que sirve
+     /api/doce-puntos estan escritos para contestar "lo encontramos o no",
+     que es otro trabajo. La primera version de este carrusel uso los del
+     endpoint y por eso salio con letras a)-l) y sin explicar nada.
 
-     Sistema visual de Verifica, NO de SpindleLab: ni #0e141b, ni hilo de
-     oro, ni Gabarito, ni Manrope.
+     Se usa el texto del sitio TAL CUAL: ya esta aprobado y publicado, y asi
+     el carrusel y la pagina dicen lo mismo palabra por palabra.
+
+     Los doce corresponden a los literales a) a l) del Art. 14 ter de la ley
+     19.628 (los introduce el articulo primero de la 21.719), en ese mismo
+     orden. Verificados contra el PDF del Diario Oficial N 44.023 del
+     13-dic-2024, CVE 2583630. La correspondencia numero-letra esta en
+     publicar.md, que es donde sirve.
+
+     Sistema visual de Verifica, NO de SpindleLab.
      ------------------------------------------------------------------ */
 
   @font-face {
@@ -37,7 +46,6 @@
     --tinta-900: #17163a;
     --tinta-500: #56547a;
     --crema-100: #fffaf0;
-    --crema-200: #f7f2ea;
     --arena-300: #e2d6bf;
     --blanco:    #ffffff;
     --display: "Archivo Black", Impact, sans-serif;
@@ -46,11 +54,11 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { width: 1080px; height: 1080px; }
-  body { background: var(--crema-100); }
+  body { background: var(--crema-100); -webkit-font-smoothing: antialiased; }
   .lamina { position: relative; overflow: hidden; width: 1080px; height: 1080px; display: none; }
   .lamina.viva { display: block; }
-  /* Las laminas de lista reparten en vertical. Este es el UNICO lugar donde se les
-     da display, por lo de arriba. */
+  /* Las laminas de lista reparten en vertical. Este es el UNICO lugar donde se
+     les da display: ver la nota en `.lista`. */
   .lamina.lista.viva { display: flex; flex-direction: column; }
 
   /* ================= laminas de fondo azul (portada y cierre) ============== */
@@ -77,19 +85,25 @@
   .pill svg { display: block; width: 25px; height: 25px; }
 
   /* ---- portada ---- */
-  .portada .texto { position: absolute; z-index: 4; top: 92px; left: 76px; right: 76px; }
+  .portada .texto { position: absolute; z-index: 4; top: 86px; left: 76px; right: 76px; }
   .portada .titular {
-    margin-top: 30px; font-family: var(--display); font-weight: 400;
+    margin-top: 26px; font-family: var(--display); font-weight: 400;
     text-transform: uppercase; line-height: .92; letter-spacing: -.035em;
   }
   .portada .titular span { display: block; color: var(--blanco); }
-  .portada .titular .n { font-size: 210px; color: var(--lima-400); line-height: .84; }
-  .portada .titular .a { font-size: 92px; }
-  .portada .titular .b { font-size: 92px; color: var(--lima-400); }
+  .portada .titular .n { font-size: 196px; color: var(--lima-400); line-height: .84; }
+  /* Dos lineas enteras, del mismo ancho optico, y que TERMINAN antes del brazo de
+     la sheriff (que empieza cerca de los 860px). `nowrap` porque el corte
+     automatico dejaba "SITIO" y "DEJAR" colgando solos en su propia linea: cinco
+     lineas y ninguna del mismo largo. El tamano no es redondo, es el resultado de
+     medir; si cambia el texto hay que volver a medir. */
+  .portada .titular .a,
+  .portada .titular .b { font-size: 62px; white-space: nowrap; }
+  .portada .titular .b { color: var(--lima-400); }
   .portada .pie {
     position: absolute; z-index: 6; left: 76px; bottom: 74px;
     font-family: var(--cuerpo); font-weight: 700; font-size: 29px;
-    color: rgba(255,255,255,.92); line-height: 1.34; max-width: 560px;
+    color: rgba(255,255,255,.92); line-height: 1.34; max-width: 545px;
   }
   .portada .sheriff {
     position: absolute; z-index: 3; right: -286px; bottom: -74px;
@@ -99,13 +113,13 @@
 
   /* ================= laminas de contenido (crema) ========================= */
   /* OJO: `.lista` NO declara `display`. Si lo declara, pisa el `display:none` de
-     `.lamina` (misma especificidad, esta regla va despues) y las cuatro listas quedan
-     siempre visibles y apiladas; la captura de 1080px solo alcanza a ver la primera y
-     las seis laminas salen iguales. Pasó. El display sale SOLO de la regla `.viva`. */
-  .lista { background: var(--crema-100); padding: 74px 76px 66px; }
+     `.lamina` (misma especificidad, esta regla va despues) y las cuatro listas
+     quedan siempre visibles y apiladas; la captura de 1080px solo alcanza a ver
+     la primera y las seis laminas salen iguales. Pasó. */
+  .lista { background: var(--crema-100); padding: 70px 76px 62px; }
   .lista .cabecera {
     display: flex; align-items: center; justify-content: space-between;
-    padding-bottom: 26px; border-bottom: 3px solid var(--arena-300);
+    padding-bottom: 24px; border-bottom: 3px solid var(--arena-300);
   }
   .lista .rotulo {
     display: inline-flex; align-items: center; gap: 12px;
@@ -119,22 +133,33 @@
   }
 
   .lista .filas { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; }
-  .fila { display: flex; align-items: center; gap: 34px; }
-  .fila .letra {
-    flex: 0 0 auto; width: 104px; height: 104px; border-radius: 26px;
+
+  /* Cada punto lleva DOS cosas: el titulo corto, que es el gancho, y la linea
+     que explica de que se trata. Sin la segunda el punto no dice nada: es la
+     correccion de Ramon del 28-sep. */
+  .fila { display: flex; align-items: flex-start; gap: 30px; }
+  .fila .num {
+    flex: 0 0 auto; width: 100px; height: 100px; border-radius: 26px;
     background: var(--lima-400); color: var(--tinta-900);
-    font-family: var(--display); font-size: 54px; line-height: 104px;
-    text-align: center; text-transform: uppercase;
+    font-family: var(--display); font-size: 44px; line-height: 100px;
+    text-align: center; letter-spacing: -.02em;
   }
+  .fila .cuerpo { padding-top: 4px; }
   .fila .que {
     font-family: var(--display); font-weight: 400;
-    font-size: 47px; line-height: 1.08; letter-spacing: -.022em;
-    color: var(--tinta-900); text-wrap: balance;
+    font-size: 45px; line-height: 1.06; letter-spacing: -.022em;
+    color: var(--tinta-900);
   }
-  .fila.larga .que { font-size: 40px; }
+  .fila .porque {
+    margin-top: 12px;
+    font-family: var(--cuerpo); font-weight: 600;
+    font-size: 30px; line-height: 1.32; color: var(--tinta-500);
+    max-width: 800px;
+  }
+  .fila.larga .que { font-size: 41px; }
 
   .lista .pie {
-    padding-top: 24px; border-top: 3px solid var(--arena-300);
+    padding-top: 22px; border-top: 3px solid var(--arena-300);
     display: flex; align-items: baseline; justify-content: space-between;
   }
   .lista .pie .url {
@@ -143,23 +168,19 @@
   .lista .pie .fuente { font-family: var(--cuerpo); font-size: 23px; color: var(--tinta-500); }
 
   /* ================= cierre ================================================ */
-  .cierre .texto { position: absolute; z-index: 4; top: 96px; left: 76px; right: 76px; }
+  .cierre .texto { position: absolute; z-index: 4; top: 90px; left: 76px; right: 76px; }
   .cierre .titular {
-    margin-top: 28px; font-family: var(--display); font-weight: 400;
+    margin-top: 26px; font-family: var(--display); font-weight: 400;
     text-transform: uppercase; line-height: .93; letter-spacing: -.035em;
   }
-  .cierre .titular span { display: block; color: var(--blanco); font-size: 118px; }
+  .cierre .titular span { display: block; color: var(--blanco); font-size: 104px; }
   .cierre .titular .lima { color: var(--lima-400); }
-  /* La columna de texto tiene que terminar ANTES de la cola del caballo. Con 640px
-     se montaba encima y la ultima linea quedaba ilegible. Se mide contra el render,
-     no a ojo: la cola entra por los 430px y la sheriff arranca corrida a la derecha. */
   .cierre .sub {
-    margin-top: 30px; font-family: var(--cuerpo); font-weight: 700;
+    margin-top: 28px; font-family: var(--cuerpo); font-weight: 700;
     font-size: 31px; line-height: 1.36; color: rgba(255,255,255,.93); max-width: 508px;
   }
   /* Entera. Al correrla para despejar el texto se le cortaba la cabeza y el
-     documento en alto, que es EL gesto de la campana: ella trae algo. Una sheriff
-     sin cabeza no sirve aunque el texto se lea perfecto. */
+     documento en alto, que es EL gesto de la campana: ella trae algo. */
   .cierre .sheriff {
     position: absolute; z-index: 3; right: -150px; bottom: 176px;
     width: 700px; height: auto; display: block;
@@ -209,11 +230,17 @@
     <span class="cuenta">1 / 4</span>
   </div>
   <div class="filas">
-    <div class="fila"><div class="letra">a</div><p class="que">Tu pol&iacute;tica, con su fecha y su versi&oacute;n</p></div>
-    <div class="fila"><div class="letra">b</div><p class="que">Qui&eacute;n responde por los datos</p></div>
-    <div class="fila"><div class="letra">c</div><p class="que">Por d&oacute;nde te escriben las personas</p></div>
+    <div class="fila"><div class="num">01</div><div class="cuerpo">
+      <p class="que">Tu pol&iacute;tica de datos</p>
+      <p class="porque">Publicada, con su fecha y su n&uacute;mero de versi&oacute;n.</p></div></div>
+    <div class="fila"><div class="num">02</div><div class="cuerpo">
+      <p class="que">Qui&eacute;n responde</p>
+      <p class="porque">Qu&eacute; empresa responde y qui&eacute;n la representa.</p></div></div>
+    <div class="fila"><div class="num">03</div><div class="cuerpo">
+      <p class="que">A qui&eacute;n escribirle</p>
+      <p class="porque">Un correo o formulario para que la persona pida lo suyo.</p></div></div>
   </div>
-  <div class="pie"><span class="url">verifica.spindlelab.cl</span><span class="fuente">Art. 14 ter, letras a) a c)</span></div>
+  <div class="pie"><span class="url">verifica.spindlelab.cl</span><span class="fuente">Art. 14 ter &middot; puntos 1 a 3</span></div>
 </section>
 
 <section class="lamina lista" data-s="3">
@@ -225,11 +252,17 @@
     <span class="cuenta">2 / 4</span>
   </div>
   <div class="filas">
-    <div class="fila larga"><div class="letra">d</div><p class="que">Qu&eacute; datos tratas, para qu&eacute;, con qu&eacute; permiso y a qui&eacute;n se los entregas</p></div>
-    <div class="fila"><div class="letra">e</div><p class="que">C&oacute;mo proteges los datos que guardas</p></div>
-    <div class="fila"><div class="letra">f</div><p class="que">Los cinco derechos de cada persona sobre sus datos</p></div>
+    <div class="fila larga"><div class="num">04</div><div class="cuerpo">
+      <p class="que">Qu&eacute; datos pides y para qu&eacute;</p>
+      <p class="porque">Qu&eacute; recoges, con qu&eacute; fin, con qu&eacute; permiso y a qui&eacute;n se los pasas.</p></div></div>
+    <div class="fila"><div class="num">05</div><div class="cuerpo">
+      <p class="que">C&oacute;mo los cuidas</p>
+      <p class="porque">Qu&eacute; medidas tomas para que no se filtren.</p></div></div>
+    <div class="fila"><div class="num">06</div><div class="cuerpo">
+      <p class="que">Los cinco derechos</p>
+      <p class="porque">Ver sus datos, corregirlos, borrarlos, oponerse a que los uses y llev&aacute;rselos. Y c&oacute;mo pedirlo.</p></div></div>
   </div>
-  <div class="pie"><span class="url">verifica.spindlelab.cl</span><span class="fuente">Art. 14 ter, letras d) a f)</span></div>
+  <div class="pie"><span class="url">verifica.spindlelab.cl</span><span class="fuente">Art. 14 ter &middot; puntos 4 a 6</span></div>
 </section>
 
 <section class="lamina lista" data-s="4">
@@ -241,11 +274,17 @@
     <span class="cuenta">3 / 4</span>
   </div>
   <div class="filas">
-    <div class="fila"><div class="letra">g</div><p class="que">Que se puede reclamar ante la Agencia</p></div>
-    <div class="fila"><div class="letra">h</div><p class="que">Si los datos salen de Chile</p></div>
-    <div class="fila"><div class="letra">i</div><p class="que">Cu&aacute;nto tiempo guardas los datos</p></div>
+    <div class="fila"><div class="num">07</div><div class="cuerpo">
+      <p class="que">Que puede reclamar</p>
+      <p class="porque">Ante la Agencia de Protecci&oacute;n de Datos Personales.</p></div></div>
+    <div class="fila"><div class="num">08</div><div class="cuerpo">
+      <p class="que">Si los mandas fuera de Chile</p>
+      <p class="porque">A qu&eacute; pa&iacute;ses y con qu&eacute; nivel de protecci&oacute;n.</p></div></div>
+    <div class="fila"><div class="num">09</div><div class="cuerpo">
+      <p class="que">Cu&aacute;nto los guardas</p>
+      <p class="porque">Por cu&aacute;nto tiempo conservas cada dato.</p></div></div>
   </div>
-  <div class="pie"><span class="url">verifica.spindlelab.cl</span><span class="fuente">Art. 14 ter, letras g) a i)</span></div>
+  <div class="pie"><span class="url">verifica.spindlelab.cl</span><span class="fuente">Art. 14 ter &middot; puntos 7 a 9</span></div>
 </section>
 
 <section class="lamina lista" data-s="5">
@@ -257,11 +296,17 @@
     <span class="cuenta">4 / 4</span>
   </div>
   <div class="filas">
-    <div class="fila"><div class="letra">j</div><p class="que">De d&oacute;nde salen los datos</p></div>
-    <div class="fila"><div class="letra">k</div><p class="que">Que se puede retirar el permiso cuando uno quiera</p></div>
-    <div class="fila"><div class="letra">l</div><p class="que">Si algo decide solo sobre las personas</p></div>
+    <div class="fila"><div class="num">10</div><div class="cuerpo">
+      <p class="que">De d&oacute;nde salieron</p>
+      <p class="porque">El origen de los datos que tienes.</p></div></div>
+    <div class="fila"><div class="num">11</div><div class="cuerpo">
+      <p class="que">Que puede arrepentirse</p>
+      <p class="porque">Retirar el permiso cuando quiera, y c&oacute;mo hacerlo.</p></div></div>
+    <div class="fila"><div class="num">12</div><div class="cuerpo">
+      <p class="que">Si decide una m&aacute;quina</p>
+      <p class="porque">Si algo autom&aacute;tico decide sobre una persona, hay que decirlo.</p></div></div>
   </div>
-  <div class="pie"><span class="url">verifica.spindlelab.cl</span><span class="fuente">Art. 14 ter, letras j) a l)</span></div>
+  <div class="pie"><span class="url">verifica.spindlelab.cl</span><span class="fuente">Art. 14 ter &middot; puntos 10 a 12</span></div>
 </section>
 
 <!-- ===================== 6. cierre ===================== -->
@@ -273,8 +318,9 @@
       Chequeo gratis
     </div>
     <p class="titular">
-      <span>&iquest;Las tienes</span>
-      <span class="lima">las 12?</span>
+      <span>&iquest;Cu&aacute;ntas</span>
+      <span>de las 12</span>
+      <span class="lima">tienes?</span>
     </p>
     <p class="sub">Abrimos tu pol&iacute;tica y buscamos cada una. Te decimos cu&aacute;les vimos y cu&aacute;les no.<br><br>
       Buscamos si el punto <strong>aparece</strong>, no si lo que dice alcanza. Eso lo ve un abogado.</p>
