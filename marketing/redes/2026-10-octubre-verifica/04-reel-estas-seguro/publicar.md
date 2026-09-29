@@ -137,6 +137,10 @@ verifica.spindlelab.cl.
   diferencial. Si la pieza funcionara porque asusta, estaría mal hecha.
 - **La dirección va escrita completa en el cierre.** En Instagram el enlace del pie no se
   puede tocar. Nunca "link en la bio".
+- **El antetítulo del cierre dice "Toma un minuto", no "Chequeo gratis".** Con "chequeo gratis"
+  la palabra *gratis* aparecía dos veces en el mismo cuadro, y abajo ya está "MÍRALO GRATIS",
+  que es donde se la gana. Y "un minuto" no es un decir: el chequeo rápido responde en 2
+  segundos y el profundo en 28.
 - **El render es determinista y en serie.** Cada cuadro se dibuja solo en función de `?f=N`.
   **No lo paralelices:** Chrome headless se cuelga y los procesos quedan vivos sin escribir el
   PNG. Está documentado desde la pieza 01.
