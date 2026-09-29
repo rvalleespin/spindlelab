@@ -27,7 +27,7 @@ qué se aplicó sin que nadie lo aprobara por escrito:
 |---|---|---|
 | Lienzo negro puro `#000000` | **Aprobado por Ramón** | 27-sep-2026 |
 | Titulares en MAYÚSCULAS | **Aprobado por Ramón** | 27-sep-2026, ratificado por escrito el 29-sep |
-| Manrope toma titulares y cuerpo | **Sin constancia de aprobación** | se aplicó el 27-sep; la fecha de aprobación está reclamada en un comentario de código, no corroborada. **Pendiente de que Ramón la confirme o la rechace.** |
+| Manrope toma titulares y cuerpo | **Aprobado por Ramón** | confirmado el 29-sep-2026. Se había aplicado el 27-sep con una fecha de aprobación reclamada en un comentario de código que no se pudo corroborar; queda saldado. |
 | Campos brasa y ciruela | Aplicado, sin aprobación explícita | 27-sep |
 | Radio único de 6px | Aplicado, sin aprobación explícita | 27-sep |
 
@@ -116,10 +116,6 @@ Un documento que alguien imprime o reenvía no es un cartel.
 ---
 
 ## 05 · Tipografía
-
-> **Ojo con esta sección:** el reparto Manrope/Gabarito es la única decisión de este manual
-> sin constancia de aprobación. Está aplicada en todo el v3 y se documenta acá porque es lo
-> que el sistema hace hoy, pero necesita que Ramón la confirme o la rechace.
 
 - **Manrope:** titulares Y cuerpo. *La voz y el trabajo, en una sola familia.*
 - **Gabarito:** **solo el wordmark y el monograma.** Nada más.
@@ -273,7 +269,7 @@ código distinto de cero si encuentra algo, así que puede frenar un deploy.
   - **§07 Forma y movimiento:** sección nueva. Radio único de 6px, aire de sección de 256px, y los tres mecanismos de movimiento con sus dos reglas de degradación.
   - **§09:** se documenta `npm run verificar`.
   - **Lo que NO cambió:** esencia, wordmark, monograma, punto dorado, territorio de campaña y voz. El v3 los usa tal cual.
-  - **Queda pendiente de Ramón:** confirmar el reparto Manrope/Gabarito (es la única decisión sin constancia de aprobación); decidir si los h1 de los siete artículos se acortan al límite, con su costo de SEO; y bajar este manual a las skills que todavía repiten las reglas de la v1.3.
+  - **Queda pendiente de Ramón:** decidir si los h1 de los siete artículos se acortan al límite, con su costo de SEO; y bajar este manual a las skills que todavía repiten las reglas de la v1.3.
 - **v1.3 (8 jul 2026):** regla de voz refinada — plural para lo que la empresa ofrece, singular para lo observacional.
 - **v1.2 (8 jul 2026):** sistema aplicado a `spindlelab-site` — tipografía, favicon, 4ª línea de servicio (Desarrollo Web). Corrección: el sitio nunca usó Fraunces, usaba Manrope.
 - **v1.1 (8 jul 2026):** la tipografía de marca pasa de Fraunces Display a **Gabarito** (la serif era demasiado solemne). Kit de logo en `logo/`.

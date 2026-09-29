@@ -64,7 +64,7 @@
         ]
       },
       {
-        "h2": "El paso 01 es gratis. Empecemos ahí.",
+        "h2": "El paso 01 es gratis.",
         "parrafos": [
           "Envíanos tu URL y en 24 horas tienes el mini-diagnóstico. Los otros tres pasos, solo si el primero te convence."
         ]
@@ -99,7 +99,7 @@
         "h2": "Los 21 chequeos, publicados.",
         "bloques": [
           {
-            "t": "Y cómo medimos si la IA te nombra.",
+            "t": "Si la IA te nombra.",
             "d": "El chequeo de arriba lee tu sitio. Esto le pregunta a los motores. Es la medición que corremos cada mes en los planes con acompañamiento: cinco preguntas fijas por tres motores (ChatGPT, Gemini y Perplexity), siempre las mismas, con fecha y con la fuente de cada respuesta registrada. Cambiar las preguntas rompería la comparación entre meses."
           }
         ],
@@ -126,7 +126,7 @@
         ]
       },
       {
-        "h2": "Un chequeo distinto, para la Ley 21.719.",
+        "h2": "La Ley 21.719 también te toca.",
         "parrafos": [
           "Si tu sitio trata datos personales (un formulario de contacto ya cuenta), la Ley 21.719 entra en plena vigencia el 1 de diciembre de 2026. Verifica y Cumple, nuestro chequeo gratuito para esa ley, revisa las señales técnicas básicas que se ven desde afuera, como si tu portada enlaza una política de privacidad y si usas un gestor de consentimiento."
         ]
@@ -271,6 +271,7 @@
     "fotoAlt": "Escritorio con un computador y una libreta"
   },
   "servicios": {
+    "_nota": "NO SE RENDERIZA. Ningún template lee esta clave: servicios/index.astro escribe sus h2 a mano («Qué hacemos y qué no», «Empieza por el chequeo») y toma los precios de oferta-v3.json. Editar los textos de acá no cambia nada en pantalla. Se conserva porque es el contenido extraído de la página publicada y sirve de referencia, pero si vas a tocar /v3/servicios/, el archivo es src/pages/v3/servicios/index.astro. Verificado el 29-sep-2026.",
     "slug": "servicios",
     "title": "Soluciones: tu motor de adquisición digital · SpindleLab",
     "description": "Agencia de marketing con IA: SEO técnico, visibilidad en motores de IA, gestión de redes, paid media (Google) y desarrollo web para empresas en Chile.",
