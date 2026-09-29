@@ -1,35 +1,33 @@
 /**
- * ¿ETIQUETA o FRASE?
+ * LARGO DE UN TITULAR.
  *
- * Las mayúsculas del v3 son para etiquetas: la palabra única de un campo de color
- * (DESARROLLO, VISIBILIDAD) y los rótulos chicos. Cuando un titular es una frase, las
- * mayúsculas de peso 800 lo convierten en un bloque macizo en vez de un titular.
+ * Los titulares del v3 van en MAYÚSCULAS. Eso lo decidió Ramón el 27-sep y sigue en pie:
+ * el 29-sep lo confirmó explícitamente — «no estoy en contra de que los títulos vayan en
+ * mayúscula».
  *
- * No es criterio mío. Medido en la página de caso de la referencia: de sus diez
- * encabezados de 28px o más, CERO llevan mayúsculas forzadas y todos van en peso 500.
- * Y medido en el propio v3 antes de este cambio: la mediana de los titulares en
- * mayúsculas era 25 caracteres, pero 27 de 105 pasaban de 34, y esos son justo los que
- * caían en tres líneas y se leían como párrafo gritado.
+ * Pero las mayúsculas a tamaño de cartel no perdonan el largo. Un titular de once
+ * palabras en caja alta y peso 800 deja de leerse como titular y se lee como un bloque.
+ * Medido: la mediana de los titulares del v3 es de 25 caracteres, y los que se veían mal
+ * eran los 27 que pasaban de 34 y caían en tres líneas.
  *
- * LA REGLA, para que no haya que discutirla titular por titular:
- *   es FRASE si pasa de seis palabras,
- *   o si termina en punto/interrogación/exclamación Y pasa de 34 caracteres.
- * Todo lo demás es ETIQUETA y se queda en mayúsculas.
+ * ASÍ QUE LA REGLA NO CAMBIA LA CAJA, MARCA EL TEXTO QUE HAY QUE REESCRIBIR. Un titular
+ * que da `esLargo` verdadero no se arregla bajándole la caja: se arregla escribiendo una
+ * frase más corta y con mejor gancho. La caja no es el problema.
  *
- * El largo va junto con la puntuación por un caso concreto: «¿Por dónde te toca
- * partir?» es una pregunta, pero mide 26 caracteres, entra en una línea y en caja alta
- * se lee como etiqueta, que es lo que es. Sin el umbral de largo, la regla la mandaba a
- * caja baja y desafinaba una página que estaba bien.
+ * Yo me equivoqué acá el 29-sep: al ver el titular pesado le bajé la caja, que es tratar
+ * el síntoma. Queda escrito para que no se repita.
  */
-export function esFrase(t: unknown): boolean {
+
+/** ¿Este titular pasa del largo que las mayúsculas aguantan? Si da true, hay que
+ *  reescribir el texto, no cambiarle el estilo. */
+export function esLargo(t: unknown): boolean {
   if (typeof t !== 'string') return false;
   const s = t.trim();
   if (!s) return false;
-  if (s.split(/\s+/).length > 6) return true;
-  return /[.?!]$/.test(s) && s.length > 34;
+  return s.split(/\s+/).length > 6 || s.length > 34;
 }
 
-/** Devuelve la clase de caja que le toca al titular. */
-export function caja(t: unknown): string {
-  return esFrase(t) ? 'titular-frase' : 'uppercase';
+/** La caja de un titular del v3. Siempre mayúsculas: es el sistema. */
+export function caja(_t?: unknown): string {
+  return 'uppercase';
 }

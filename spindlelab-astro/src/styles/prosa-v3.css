@@ -30,7 +30,15 @@
  * para gerentes que no son técnicos» son 54 caracteres — y a 5,5rem se iban a tres
  * líneas y se salían de la pantalla. A 3,25rem entran en dos líneas cómodas y siguen
  * leyendo como titular. Un artículo no es un cartel. */
-/* CAJA BAJA, y esto corrige una decisión mía anterior.
+/* MAYÚSCULAS, como el resto del v3.
+ *
+ * Acá bajé la caja el 29-sep y era el arreglo equivocado: Ramón no está en contra de las
+ * mayúsculas, lo que está largo es el texto. Las mayúsculas vuelven; lo que queda
+ * pendiente es acortar los titulares de artículo, que hoy llegan a 66 caracteres.
+ * Ese pendiente es de copy y tiene un costo que no es mío de decidir: el h1 del artículo
+ * es el titular publicado, atado al canonical y al JSON-LD.
+ *
+ * (nota anterior, que quedó superada)
  *
  * Las mayúsculas del v3 son para ETIQUETAS: la palabra única de un campo de color
  * (DESARROLLO, VISIBILIDAD) y los rótulos chicos. Un título de artículo es una FRASE
@@ -47,10 +55,11 @@
  * palabra única a 8,33vw de los campos. */
 .prosa-v3 h1 {
   color: #14110e;
-  font-weight: 700;
+  font-weight: 800;
+  text-transform: uppercase;
   font-size: clamp(1.75rem, 3.6vw, 3.25rem);
-  line-height: 1.04;
-  letter-spacing: -0.025em;
+  line-height: 1;
+  letter-spacing: -0.02em;
   margin: 0 0 2.5rem;
   max-width: 30ch;
   text-wrap: balance;
@@ -61,10 +70,11 @@
  * caen en dos y se leen como subtítulo. */
 .prosa-v3 h2 {
   color: #14110e;
-  font-weight: 700;
+  font-weight: 800;
+  text-transform: uppercase;
   font-size: clamp(1.375rem, 2.8vw, 2.25rem);
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   margin-top: 3.5rem;
   max-width: 34ch;
   text-wrap: balance;
