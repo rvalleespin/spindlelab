@@ -1,0 +1,290 @@
+<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8">
+<title>Verifica y Cumple - Las 12 cosas (carrusel)</title>
+<style>
+  /* ------------------------------------------------------------------
+     Carrusel de feed 1080x1080, 6 laminas. Cada lamina se pide por ?s=N
+     y se dibuja sola, igual que el reel: el render es determinista y se
+     puede rehacer una lamina suelta sin tocar las otras.
+
+     Los 12 puntos son los literales a) a l) del Art. 14 ter de la ley
+     19.628 (los introduce el articulo primero de la 21.719). Verificados
+     el 28-sep-2026 contra el PDF del Diario Oficial N 44.023 del
+     13-dic-2024, CVE 2583630, palabra por palabra. Los titulos en
+     castellano llano son los mismos que sirve /api/doce-puntos, o sea
+     los que ya estan publicados y revisados en el sitio.
+
+     Sistema visual de Verifica, NO de SpindleLab: ni #0e141b, ni hilo de
+     oro, ni Gabarito, ni Manrope.
+     ------------------------------------------------------------------ */
+
+  @font-face {
+    font-family: "Archivo Black";
+    font-style: normal; font-weight: 400; font-display: block;
+    src: url("archivo-black-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: "Archivo Black";
+    font-style: normal; font-weight: 400; font-display: block;
+    src: url("archivo-black-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+
+  :root {
+    --azul-600:  #2e5bff;
+    --lima-400:  #d6ff3d;
+    --rosa-500:  #ff3ea0;
+    --tinta-900: #17163a;
+    --tinta-500: #56547a;
+    --crema-100: #fffaf0;
+    --crema-200: #f7f2ea;
+    --arena-300: #e2d6bf;
+    --blanco:    #ffffff;
+    --display: "Archivo Black", Impact, sans-serif;
+    --cuerpo: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1080px; }
+  body { background: var(--crema-100); }
+  .lamina { position: relative; overflow: hidden; width: 1080px; height: 1080px; display: none; }
+  .lamina.viva { display: block; }
+  /* Las laminas de lista reparten en vertical, y `.lamina.viva` le gana en
+     especificidad a `.lista`, asi que el flex hay que devolverlo aca o el
+     contenido se apelotona arriba y sobra media lamina en blanco. Pasó. */
+  .lamina.lista.viva { display: flex; flex-direction: column; }
+
+  /* ================= laminas de fondo azul (portada y cierre) ============== */
+  .azul { background: var(--azul-600); }
+  .cielo {
+    position: absolute; inset: 0; z-index: 0;
+    background: url("hero-nubes.webp") center 42% / cover no-repeat;
+    opacity: .55;
+  }
+  .velo {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(to bottom,
+      rgba(14,32,118,.66) 0%, rgba(14,32,118,.46) 40%,
+      rgba(14,32,118,.28) 62%, rgba(14,32,118,.52) 100%);
+  }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--lima-400); color: var(--tinta-900);
+    font-family: var(--display); font-size: 23px;
+    letter-spacing: .085em; text-transform: uppercase;
+    padding: 11px 24px 9px; border-radius: 999px;
+  }
+  .pill svg { display: block; width: 25px; height: 25px; }
+
+  /* ---- portada ---- */
+  .portada .texto { position: absolute; z-index: 4; top: 92px; left: 76px; right: 76px; }
+  .portada .titular {
+    margin-top: 30px; font-family: var(--display); font-weight: 400;
+    text-transform: uppercase; line-height: .92; letter-spacing: -.035em;
+  }
+  .portada .titular span { display: block; color: var(--blanco); }
+  .portada .titular .n { font-size: 210px; color: var(--lima-400); line-height: .84; }
+  .portada .titular .a { font-size: 92px; }
+  .portada .titular .b { font-size: 92px; color: var(--lima-400); }
+  .portada .pie {
+    position: absolute; z-index: 6; left: 76px; bottom: 74px;
+    font-family: var(--cuerpo); font-weight: 700; font-size: 29px;
+    color: rgba(255,255,255,.92); line-height: 1.34; max-width: 560px;
+  }
+  .portada .sheriff {
+    position: absolute; z-index: 3; right: -286px; bottom: -74px;
+    width: 940px; height: auto; display: block;
+    filter: drop-shadow(0 26px 34px rgba(8,18,74,.4));
+  }
+
+  /* ================= laminas de contenido (crema) ========================= */
+  .lista { background: var(--crema-100); padding: 74px 76px 66px; display: flex; flex-direction: column; }
+  .lista .cabecera {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 26px; border-bottom: 3px solid var(--arena-300);
+  }
+  .lista .rotulo {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: var(--display); font-size: 25px; letter-spacing: .075em;
+    text-transform: uppercase; color: var(--tinta-900);
+  }
+  .lista .rotulo svg { display: block; width: 27px; height: 27px; }
+  .lista .cuenta {
+    font-family: var(--display); font-size: 25px; letter-spacing: .05em;
+    color: var(--tinta-500);
+  }
+
+  .lista .filas { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; }
+  .fila { display: flex; align-items: center; gap: 34px; }
+  .fila .letra {
+    flex: 0 0 auto; width: 104px; height: 104px; border-radius: 26px;
+    background: var(--lima-400); color: var(--tinta-900);
+    font-family: var(--display); font-size: 54px; line-height: 104px;
+    text-align: center; text-transform: uppercase;
+  }
+  .fila .que {
+    font-family: var(--display); font-weight: 400;
+    font-size: 47px; line-height: 1.08; letter-spacing: -.022em;
+    color: var(--tinta-900); text-wrap: balance;
+  }
+  .fila.larga .que { font-size: 40px; }
+
+  .lista .pie {
+    padding-top: 24px; border-top: 3px solid var(--arena-300);
+    display: flex; align-items: baseline; justify-content: space-between;
+  }
+  .lista .pie .url {
+    font-family: var(--display); font-size: 33px; letter-spacing: -.02em; color: var(--tinta-900);
+  }
+  .lista .pie .fuente { font-family: var(--cuerpo); font-size: 23px; color: var(--tinta-500); }
+
+  /* ================= cierre ================================================ */
+  .cierre .texto { position: absolute; z-index: 4; top: 96px; left: 76px; right: 76px; }
+  .cierre .titular {
+    margin-top: 28px; font-family: var(--display); font-weight: 400;
+    text-transform: uppercase; line-height: .93; letter-spacing: -.035em;
+  }
+  .cierre .titular span { display: block; color: var(--blanco); font-size: 118px; }
+  .cierre .titular .lima { color: var(--lima-400); }
+  .cierre .sub {
+    margin-top: 30px; font-family: var(--cuerpo); font-weight: 700;
+    font-size: 32px; line-height: 1.38; color: rgba(255,255,255,.93); max-width: 640px;
+  }
+  .cierre .sheriff {
+    position: absolute; z-index: 3; right: -330px; bottom: 116px;
+    width: 880px; height: auto; display: block;
+    filter: drop-shadow(0 26px 34px rgba(8,18,74,.4));
+  }
+  .cierre .banda {
+    position: absolute; z-index: 5; left: 0; right: 0; bottom: 0; height: 196px;
+    background: var(--lima-400);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  }
+  .cierre .banda .dir {
+    font-family: var(--display); font-size: 62px; letter-spacing: -.03em; color: var(--tinta-900);
+  }
+  .cierre .banda .nota {
+    font-family: var(--cuerpo); font-weight: 700; font-size: 27px; color: rgba(23,22,58,.82);
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== 1. portada ===================== -->
+<section class="lamina azul portada" data-s="1">
+  <div class="cielo"></div><div class="velo"></div>
+  <div class="texto">
+    <div class="pill">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.6l2.9 6.36 6.95.77-5.18 4.68 1.43 6.84L12 16.76l-6.1 3.49 1.43-6.84L2.15 8.73l6.95-.77z"/></svg>
+      Ley 21.719 &middot; Art. 14 ter
+    </div>
+    <p class="titular">
+      <span class="n">12</span>
+      <span class="a">cosas que tu sitio</span>
+      <span class="b">tiene que publicar</span>
+    </p>
+  </div>
+  <img class="sheriff" src="hero-fiscalizador.png"
+       alt="Una sheriff vestida de rosa cruza el cielo en un caballo rosado con un documento en alto.">
+  <p class="pie">No hay que ser abogado para revisarlas.<br>Ac&aacute; van escritas como se hablan.</p>
+</section>
+
+<!-- ===================== 2 a 5. las doce ===================== -->
+<section class="lamina lista" data-s="2">
+  <div class="cabecera">
+    <span class="rotulo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff3ea0" d="M12 1.6l2.9 6.36 6.95.77-5.18 4.68 1.43 6.84L12 16.76l-6.1 3.49 1.43-6.84L2.15 8.73l6.95-.77z"/></svg>
+      Lo que pide la ley
+    </span>
+    <span class="cuenta">1 / 4</span>
+  </div>
+  <div class="filas">
+    <div class="fila"><div class="letra">a</div><p class="que">Tu pol&iacute;tica, con su fecha y su versi&oacute;n</p></div>
+    <div class="fila"><div class="letra">b</div><p class="que">Qui&eacute;n responde por los datos</p></div>
+    <div class="fila"><div class="letra">c</div><p class="que">Por d&oacute;nde te escriben las personas</p></div>
+  </div>
+  <div class="pie"><span class="url">verifica.spindlelab.cl</span><span class="fuente">Art. 14 ter, letras a) a c)</span></div>
+</section>
+
+<section class="lamina lista" data-s="3">
+  <div class="cabecera">
+    <span class="rotulo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff3ea0" d="M12 1.6l2.9 6.36 6.95.77-5.18 4.68 1.43 6.84L12 16.76l-6.1 3.49 1.43-6.84L2.15 8.73l6.95-.77z"/></svg>
+      Lo que pide la ley
+    </span>
+    <span class="cuenta">2 / 4</span>
+  </div>
+  <div class="filas">
+    <div class="fila larga"><div class="letra">d</div><p class="que">Qu&eacute; datos tratas, para qu&eacute;, con qu&eacute; permiso y a qui&eacute;n se los entregas</p></div>
+    <div class="fila"><div class="letra">e</div><p class="que">C&oacute;mo proteges los datos que guardas</p></div>
+    <div class="fila"><div class="letra">f</div><p class="que">Los cinco derechos de cada persona sobre sus datos</p></div>
+  </div>
+  <div class="pie"><span class="url">verifica.spindlelab.cl</span><span class="fuente">Art. 14 ter, letras d) a f)</span></div>
+</section>
+
+<section class="lamina lista" data-s="4">
+  <div class="cabecera">
+    <span class="rotulo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff3ea0" d="M12 1.6l2.9 6.36 6.95.77-5.18 4.68 1.43 6.84L12 16.76l-6.1 3.49 1.43-6.84L2.15 8.73l6.95-.77z"/></svg>
+      Lo que pide la ley
+    </span>
+    <span class="cuenta">3 / 4</span>
+  </div>
+  <div class="filas">
+    <div class="fila"><div class="letra">g</div><p class="que">Que se puede reclamar ante la Agencia</p></div>
+    <div class="fila"><div class="letra">h</div><p class="que">Si los datos salen de Chile</p></div>
+    <div class="fila"><div class="letra">i</div><p class="que">Cu&aacute;nto tiempo guardas los datos</p></div>
+  </div>
+  <div class="pie"><span class="url">verifica.spindlelab.cl</span><span class="fuente">Art. 14 ter, letras g) a i)</span></div>
+</section>
+
+<section class="lamina lista" data-s="5">
+  <div class="cabecera">
+    <span class="rotulo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff3ea0" d="M12 1.6l2.9 6.36 6.95.77-5.18 4.68 1.43 6.84L12 16.76l-6.1 3.49 1.43-6.84L2.15 8.73l6.95-.77z"/></svg>
+      Lo que pide la ley
+    </span>
+    <span class="cuenta">4 / 4</span>
+  </div>
+  <div class="filas">
+    <div class="fila"><div class="letra">j</div><p class="que">De d&oacute;nde salen los datos</p></div>
+    <div class="fila"><div class="letra">k</div><p class="que">Que se puede retirar el permiso cuando uno quiera</p></div>
+    <div class="fila"><div class="letra">l</div><p class="que">Si algo decide solo sobre las personas</p></div>
+  </div>
+  <div class="pie"><span class="url">verifica.spindlelab.cl</span><span class="fuente">Art. 14 ter, letras j) a l)</span></div>
+</section>
+
+<!-- ===================== 6. cierre ===================== -->
+<section class="lamina azul cierre" data-s="6">
+  <div class="cielo"></div><div class="velo"></div>
+  <div class="texto">
+    <div class="pill">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.6l2.9 6.36 6.95.77-5.18 4.68 1.43 6.84L12 16.76l-6.1 3.49 1.43-6.84L2.15 8.73l6.95-.77z"/></svg>
+      Chequeo gratis
+    </div>
+    <p class="titular">
+      <span>&iquest;Las tienes</span>
+      <span class="lima">las 12?</span>
+    </p>
+    <p class="sub">Abrimos tu pol&iacute;tica y buscamos cada una. Te decimos cu&aacute;les vimos y cu&aacute;les no.<br><br>
+      Buscamos si el punto <strong>aparece</strong>, no si lo que dice alcanza. Eso lo ve un abogado, no nosotros.</p>
+  </div>
+  <img class="sheriff" src="hero-fiscalizador.png" alt="">
+  <div class="banda">
+    <div class="dir">verifica.spindlelab.cl</div>
+    <div class="nota">Sin registro. No pedimos tu correo.</div>
+  </div>
+</section>
+
+<script>
+(function () {
+  "use strict";
+  var S = parseInt(new URLSearchParams(location.search).get("s") || "1", 10);
+  if (!isFinite(S) || S < 1) S = 1;
+  var el = document.querySelector('.lamina[data-s="' + S + '"]');
+  if (el) el.classList.add("viva");
+  document.documentElement.dataset.listo = "1";
+})();
+</script>
+</body></html>
