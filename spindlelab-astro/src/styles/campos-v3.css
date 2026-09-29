@@ -252,3 +252,58 @@
   }
 }
 
+
+/* ==========================================================================
+   PESTAÑAS DE MODALIDAD DENTRO DE UN CAMPO
+   ==========================================================================
+   Medido en la referencia: sus cuatro campos llevan las mismas dos pestañas y son
+   botones de verdad, no enlaces. Acá son los planes del servicio.
+
+   EL CONTRASTE NO SE RESUELVE CON OPACIDAD. La pestaña inactiva sobre brasa no
+   puede ir a 0,6 de opacidad: brasa está en 4,70:1 con blanco puro y cualquier
+   atenuación la tira bajo AA. Se distingue por el FONDO, con el texto a plena
+   fuerza.
+
+   Y EL FONDO SE TIÑE HACIA EL NEGRO, NO HACIA LA CREMA. Acá me equivoqué a la
+   primera: puse el tinte con `currentColor`, que sobre brasa es blanco, así que
+   aclaraba el naranja y BAJABA el contraste con el texto. El barrido lo midió:
+   la pestaña activa quedó en 3,02:1 y las inactivas en 4,04:1, las cuatro
+   reprobando. Con tinte negro el fondo se oscurece y el par mejora en vez de
+   empeorar. Es contraintuitivo y por eso queda escrito. */
+.planes-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  background: color-mix(in srgb, #000 14%, transparent);
+  border-radius: 6px;
+  padding: 2px;
+  width: fit-content;
+  max-width: 100%;
+}
+.planes-tabs button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  padding: 0.6rem 1.05rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.planes-tabs button:hover {
+  background: color-mix(in srgb, #000 12%, transparent);
+}
+.planes-tabs button[aria-selected='true'] {
+  background: color-mix(in srgb, #000 30%, transparent);
+}
+.planes-tabs button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .planes-tabs button { transition: none }
+}

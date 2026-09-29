@@ -15,7 +15,72 @@
       "campo": "brasa",
       "img": "/video/servicios-capas.jpg",
       "alt": "Capas de un sitio en construcción",
-      "video": "/video/servicios-capas.mp4"
+      "video": "/video/servicios-capas.mp4",
+      "planes": [
+        {
+          "n": "Página de Campaña",
+          "p": "desde $390.000",
+          "d": "Una página hecha para convertir la pauta que ya estás pagando.",
+          "puntos": [
+            "Una página, para una campaña y una oferta",
+            "Diseño a medida, sin plantilla",
+            "SEO técnico y medición desde el primer día",
+            "Entrega en ~1 semana"
+          ]
+        },
+        {
+          "n": "Sitio Esencial",
+          "p": "desde $690.000",
+          "d": "Un sitio a medida, listo para funcionar.",
+          "puntos": [
+            "Home y hasta 5 páginas",
+            "SEO técnico base: schema, velocidad, indexación",
+            "Un idioma",
+            "Entrega en ~3 semanas"
+          ]
+        },
+        {
+          "n": "Sitio Completo",
+          "p": "desde $1.190.000",
+          "d": "Más páginas y puesto a punto para que la IA te lea.",
+          "puntos": [
+            "Home y hasta 12 páginas",
+            "Blog o CMS que administras tú",
+            "SEO técnico y puesta a punto AEO/GEO",
+            "Uno o dos idiomas",
+            "Entrega en ~4 a 6 semanas"
+          ]
+        },
+        {
+          "n": "Plataforma a Medida",
+          "p": "Se cotiza",
+          "d": "Para proyectos con integraciones o lógica propia.",
+          "puntos": [
+            "Todo lo del Sitio Completo, y más",
+            "Páginas sin tope",
+            "Integraciones: CRM, reservas, pagos",
+            "Arquitectura propia",
+            "Multi-idioma"
+          ]
+        }
+      ],
+      "obra": [
+        {
+          "slug": "raigal",
+          "n": "Raigal",
+          "rubro": "Implantología",
+          "img": "/assets/img/obra/raigal.jpg",
+          "alt": "Sitio de concepto para una clínica de implantología, con la portada y el bloque de tratamientos"
+        },
+        {
+          "slug": "aplomo",
+          "n": "Aplomo",
+          "rubro": "Constructora industrial",
+          "img": "/assets/img/obra/aplomo.jpg",
+          "alt": "Sitio de concepto para una constructora industrial, con la portada y la ficha de obra"
+        }
+      ],
+      "obraNota": "Piezas de concepto. Ni Raigal ni Aplomo existen: se construyeron para mostrar cómo trabajamos en cada rubro."
     },
     {
       "momento": "Tu sitio existe y no lo van a rehacer",

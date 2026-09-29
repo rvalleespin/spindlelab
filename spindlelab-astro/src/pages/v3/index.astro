@@ -311,27 +311,136 @@ const pasos = [
                 {/* Las ofertas van en FILA, no apiladas. Un campo con dos ofertas apiladas
                     se pasaba de la pantalla y rompía el ritmo de «un servicio, una
                     pantalla»; en fila, con una o con dos, el campo sigue cabiendo. */}
-                <div class="md:col-span-6">
-                  <ul class={`list-none p-0 m-0 grid gap-x-6 gap-y-8 ${items.length > 1 ? 'sm:grid-cols-2' : ''}`}>
-                    {items.map((it) => (
-                      <li class="border-t filete pt-5">
-                        <p class="m-0 text-xl md:text-2xl font-bold leading-snug">{it.n}</p>
-                        <p class="m-0 mt-3 text-lg md:text-xl leading-relaxed">{it.d}</p>
-                        <p class="m-0 mt-4 flex flex-wrap items-baseline gap-x-3">
-                          <span class="rotulo text-base">Valor</span>
-                          <span class="text-lg md:text-xl font-semibold">{it.p}</span>
-                        </p>
-                        <a href={it.href} class="boton-campo mt-5">
-                          Ver {it.n}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+                <div class={m.obra ? 'md:col-span-7' : 'md:col-span-6'}>
+                  {/* PESTAÑAS DE MODALIDAD. Medido en la referencia: cada uno de sus cuatro
+                      campos lleva las suyas (Foundations / Partnership), son <button> con
+                      role="tab" y cambian el contenido sin cambiar de página. Acá son los
+                      planes del servicio, que hasta ahora vivían apretados en una línea de
+                      tres cifras sin decir qué separa a uno del otro.
+
+                      SIN JS SE VE EL PRIMER PLAN COMPLETO: el panel activo sale marcado
+                      desde el HTML y los demás llevan `hidden`. Si el script no corre, el
+                      visitante lee un plan entero con su precio, no una caja vacía. Misma
+                      regla de degradación que el resto del v3. */}
+                  {m.planes ? (
+                    <div class="planes" data-planes>
+                      <div class="planes-tabs" role="tablist" aria-label={`Planes de ${m.palabra}`}>
+                        {m.planes.map((pl: any, k: number) => (
+                          <button
+                            type="button"
+                            role="tab"
+                            id={`tab-${m.campo}-${k}`}
+                            aria-controls={`panel-${m.campo}-${k}`}
+                            aria-selected={k === 0 ? 'true' : 'false'}
+                            tabindex={k === 0 ? 0 : -1}
+                          >
+                            {pl.n}
+                          </button>
+                        ))}
+                      </div>
+                      {m.planes.map((pl: any, k: number) => (
+                        <div
+                          role="tabpanel"
+                          id={`panel-${m.campo}-${k}`}
+                          aria-labelledby={`tab-${m.campo}-${k}`}
+                          hidden={k !== 0}
+                          class="pt-7 border-t filete mt-6"
+                        >
+                          {/* UNA frase y el precio, nada más. La referencia no pone
+                              viñetas en el panel, y con ellas el campo se iba a 1,4
+                              pantallas y rompía la regla de «un servicio, una pantalla».
+                              El detalle de cada plan vive en /v3/servicios/desarrollo-web/,
+                              que es donde alguien lo va a leer de verdad. */}
+                          <p class="m-0 text-xl md:text-2xl leading-relaxed max-w-prosa">{pl.d}</p>
+                          <p class="m-0 mt-7 flex flex-wrap items-baseline gap-x-3">
+                            <span class="rotulo text-base">Valor</span>
+                            <span class="text-xl md:text-2xl font-semibold">{pl.p}</span>
+                            <span class="rotulo text-base">+ IVA</span>
+                          </p>
+                        </div>
+                      ))}
+                      <a href={items[0].href} class="boton-campo mt-7">
+                        Ver {items[0].n}
+                      </a>
+                    </div>
+                  ) : (
+                    <ul class={`list-none p-0 m-0 grid gap-x-6 gap-y-8 ${items.length > 1 ? 'sm:grid-cols-2' : ''}`}>
+                      {items.map((it) => (
+                        <li class="border-t filete pt-5">
+                          <p class="m-0 text-xl md:text-2xl font-bold leading-snug">{it.n}</p>
+                          <p class="m-0 mt-3 text-lg md:text-xl leading-relaxed">{it.d}</p>
+                          <p class="m-0 mt-4 flex flex-wrap items-baseline gap-x-3">
+                            <span class="rotulo text-base">Valor</span>
+                            <span class="text-lg md:text-xl font-semibold">{it.p}</span>
+                          </p>
+                          <a href={it.href} class="boton-campo mt-5">
+                            Ver {it.n}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   {m.nota && <p class="mt-8 rotulo text-base leading-relaxed max-w-prosa">{m.nota}</p>}
                 </div>
 
-                {/* La media. 16:9 a ~44% del ancho, la unidad medida en la referencia.
-                    Son fotos que ya están en el sitio vivo, no imágenes inventadas. */}
+                {/* La media de la derecha SOLO en los campos sin tira de obra.
+                    En el campo que sí la tiene, la tira ES la media: la referencia no pone
+                    una imagen suelta arriba y otra tira abajo, pone una sola cosa. Con las
+                    dos, el campo se iba a 1,37 pantallas y rompía «un servicio, una
+                    pantalla», y además competían: una foto abstracta de papeles contra el
+                    trabajo de verdad.
+
+                    CONSECUENCIA QUE HAY QUE SABER: el video sale de la home. Era el único
+                    y estaba medido y montado tarde. La referencia no tiene ninguno en su
+                    portada, así que no es una pérdida respecto del norte, pero es una
+                    decisión y queda anotada, no escondida. */}
+                {/* LA TIRA DE OBRA OCUPA LA COLUMNA DE LA MEDIA.
+                    Medido en la referencia: cada campo lleva sus piezas de trabajo DENTRO
+                    del bloque, en la misma pantalla donde va el precio. Y lleva UNA sola
+                    cosa visual, no una foto arriba y una tira abajo.
+
+                    Acá la tira empezó al pie de la sección y el campo se fue a 1,35
+                    pantallas, rompiendo «un servicio, una pantalla», que es una regla
+                    medida del sistema. Puesta en la columna de la media, el campo vuelve a
+                    caber: la fila mide lo que mide la columna de texto.
+
+                    CONSECUENCIA ANOTADA: el video sale de la home. Era el único, estaba
+                    medido y montado tarde, y compite con el trabajo de verdad. La
+                    referencia no tiene ninguno en su portada. Es una decisión, no un
+                    descuido, y se puede revertir.
+
+                    VAN DOS, NO CUATRO, porque dos son las que existen. Rellenar con dos
+                    inventadas sería la prueba social que el manual prohíbe. Y van
+                    ROTULADAS en la misma pantalla: una tira sin rótulo se lee como cartera
+                    de clientes reales. Las fichas están en la rama
+                    claude/portafolio-constructora, bajo marketing/portafolio/. */}
+                {m.obra ? (
+                  <div class="md:col-span-5 md:col-start-8">
+                    <span class="rotulo text-base">Piezas de concepto</span>
+                    <ul class="list-none p-0 m-0 mt-4 grid gap-4 grid-cols-2">
+                      {m.obra.map((o: any) => (
+                        <li>
+                          <img
+                            src={o.img}
+                            alt={o.alt}
+                            width="1280"
+                            height="720"
+                            loading="lazy"
+                            decoding="async"
+                            class="media-campo"
+                          />
+                          <p class="m-0 mt-2.5 text-sm leading-snug">
+                            <span class="font-bold block">{o.n}</span>
+                            <span class="rotulo">{o.rubro}</span>
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                    {m.obraNota && (
+                      <p class="mt-5 rotulo text-sm leading-relaxed">{m.obraNota}</p>
+                    )}
+                  </div>
+                ) : (
                 <div class="md:col-span-5 md:col-start-8">
                   {/* EL VIDEO SE MONTA SOLO CUANDO SE VA A VER. Medido en la referencia:
                       cero elementos <video> en el DOM y aun así tres mp4 pedidos por red.
@@ -364,7 +473,9 @@ const pasos = [
                     />
                   )}
                 </div>
+                )}
               </div>
+
             </section>
           );
         })
