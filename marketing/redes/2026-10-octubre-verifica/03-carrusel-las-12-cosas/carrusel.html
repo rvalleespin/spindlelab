@@ -49,9 +49,8 @@
   body { background: var(--crema-100); }
   .lamina { position: relative; overflow: hidden; width: 1080px; height: 1080px; display: none; }
   .lamina.viva { display: block; }
-  /* Las laminas de lista reparten en vertical, y `.lamina.viva` le gana en
-     especificidad a `.lista`, asi que el flex hay que devolverlo aca o el
-     contenido se apelotona arriba y sobra media lamina en blanco. Pasó. */
+  /* Las laminas de lista reparten en vertical. Este es el UNICO lugar donde se les
+     da display, por lo de arriba. */
   .lamina.lista.viva { display: flex; flex-direction: column; }
 
   /* ================= laminas de fondo azul (portada y cierre) ============== */
@@ -99,7 +98,11 @@
   }
 
   /* ================= laminas de contenido (crema) ========================= */
-  .lista { background: var(--crema-100); padding: 74px 76px 66px; display: flex; flex-direction: column; }
+  /* OJO: `.lista` NO declara `display`. Si lo declara, pisa el `display:none` de
+     `.lamina` (misma especificidad, esta regla va despues) y las cuatro listas quedan
+     siempre visibles y apiladas; la captura de 1080px solo alcanza a ver la primera y
+     las seis laminas salen iguales. Pasó. El display sale SOLO de la regla `.viva`. */
+  .lista { background: var(--crema-100); padding: 74px 76px 66px; }
   .lista .cabecera {
     display: flex; align-items: center; justify-content: space-between;
     padding-bottom: 26px; border-bottom: 3px solid var(--arena-300);
@@ -147,14 +150,20 @@
   }
   .cierre .titular span { display: block; color: var(--blanco); font-size: 118px; }
   .cierre .titular .lima { color: var(--lima-400); }
+  /* La columna de texto tiene que terminar ANTES de la cola del caballo. Con 640px
+     se montaba encima y la ultima linea quedaba ilegible. Se mide contra el render,
+     no a ojo: la cola entra por los 430px y la sheriff arranca corrida a la derecha. */
   .cierre .sub {
     margin-top: 30px; font-family: var(--cuerpo); font-weight: 700;
-    font-size: 32px; line-height: 1.38; color: rgba(255,255,255,.93); max-width: 640px;
+    font-size: 31px; line-height: 1.36; color: rgba(255,255,255,.93); max-width: 508px;
   }
+  /* Entera. Al correrla para despejar el texto se le cortaba la cabeza y el
+     documento en alto, que es EL gesto de la campana: ella trae algo. Una sheriff
+     sin cabeza no sirve aunque el texto se lea perfecto. */
   .cierre .sheriff {
-    position: absolute; z-index: 3; right: -330px; bottom: 116px;
-    width: 880px; height: auto; display: block;
-    filter: drop-shadow(0 26px 34px rgba(8,18,74,.4));
+    position: absolute; z-index: 3; right: -150px; bottom: 176px;
+    width: 700px; height: auto; display: block;
+    filter: drop-shadow(0 22px 30px rgba(8,18,74,.42));
   }
   .cierre .banda {
     position: absolute; z-index: 5; left: 0; right: 0; bottom: 0; height: 196px;
@@ -268,7 +277,7 @@
       <span class="lima">las 12?</span>
     </p>
     <p class="sub">Abrimos tu pol&iacute;tica y buscamos cada una. Te decimos cu&aacute;les vimos y cu&aacute;les no.<br><br>
-      Buscamos si el punto <strong>aparece</strong>, no si lo que dice alcanza. Eso lo ve un abogado, no nosotros.</p>
+      Buscamos si el punto <strong>aparece</strong>, no si lo que dice alcanza. Eso lo ve un abogado.</p>
   </div>
   <img class="sheriff" src="hero-fiscalizador.png" alt="">
   <div class="banda">
