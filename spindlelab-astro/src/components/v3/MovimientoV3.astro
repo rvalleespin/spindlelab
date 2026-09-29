@@ -1,0 +1,100 @@
+---
+/*
+ * EL MOVIMIENTO DE LA V3, EN UN SOLO LUGAR.
+ *
+ * POR QUÉ ESTÁ ACÁ Y NO EN EL LAYOUT. Layout.astro lo comparten TODAS las páginas
+ * Astro, incluida la home del sitio vivo. Meter el script ahí le agregaría carga a
+ * una página que no lo usa. Este componente lo renderiza FooterV3, que está en las
+ * catorce páginas del v3 y en ninguna otra, así que el v3 lo tiene entero y el sitio
+ * vivo no carga ni un byte.
+ *
+ * Astro iza y empaqueta este <script> una sola vez aunque el componente aparezca en
+ * varias páginas.
+ */
+---
+
+<script>
+  // MOVIMIENTO DE LA V3. Tres mecanismos, los tres medidos en la referencia y ninguno
+  // decorativo. Van juntos para que se lea como sistema y no como parches.
+  //
+  // REGLA DE SEGURIDAD: la clase que esconde la entrada la pone ESTE script, no el
+  // HTML. Si el script no corre, nada queda en opacidad 0 y la página se lee completa.
+  // Escribir `opacity:0` en el marcado y confiar en que el JS lo revierta es como un
+  // sitio termina en blanco el día que algo falla.
+  (() => {
+    const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // 1 · ENTRADA. 0,8s con la curva medida en la referencia. El primer viewport NO
+    //     se anima: la página tiene que estar completa apenas carga.
+    if (!quieto && 'IntersectionObserver' in window) {
+      const bajo = [...document.querySelectorAll('[data-entra]')].filter(
+        (el) => el.getBoundingClientRect().top > window.innerHeight * 0.9
+      );
+      bajo.forEach((el) => el.classList.add('entra'));
+      const io = new IntersectionObserver(
+        (es) => {
+          for (const e of es) {
+            if (!e.isIntersecting) continue;
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        },
+        { rootMargin: '0px 0px -12% 0px', threshold: 0.05 }
+      );
+      bajo.forEach((el) => io.observe(el));
+      // Red de seguridad: si el observador nunca dispara, se muestra igual.
+      window.setTimeout(() => bajo.forEach((el) => el.classList.add('visible')), 3000);
+    }
+
+    // 2 · VIDEO MONTADO TARDE. El src se pone cuando el bloque se acerca, no antes.
+    //     Medido en la referencia: cero <video> en el DOM y aun así pide los mp4.
+    //     Sin esto, 4,6 MB se descargan aunque el visitante nunca baje hasta ahí.
+    const videos = [...document.querySelectorAll('video[data-src]')];
+    if (videos.length && 'IntersectionObserver' in window) {
+      const vio = new IntersectionObserver(
+        (es) => {
+          for (const e of es) {
+            if (!e.isIntersecting) continue;
+            const v = e.target;
+            if (!v.src) {
+              v.src = v.dataset.src;
+              v.load();
+            }
+            if (!quieto) v.play().catch(() => {});
+            vio.unobserve(v);
+          }
+        },
+        { rootMargin: '400px 0px' }
+      );
+      videos.forEach((v) => vio.observe(v));
+    } else {
+      videos.forEach((v) => { v.src = v.dataset.src; });
+    }
+
+    // 3 · PARALAJE corto en la media de los campos. En la referencia UN solo nodo se
+    //     mueve con el scroll, y se mueve poco. Acá igual: 22px, en un rAF para no
+    //     pelear con el scroll suave.
+    const piezas = [...document.querySelectorAll('.paralaje')];
+    if (!quieto && piezas.length) {
+      let pendiente = false;
+      const pintar = () => {
+        pendiente = false;
+        const mitad = window.innerHeight / 2;
+        for (const el of piezas) {
+          const r = el.getBoundingClientRect();
+          if (r.bottom < -200 || r.top > window.innerHeight + 200) continue;
+          const d = Math.max(-1, Math.min(1, (r.top + r.height / 2 - mitad) / mitad));
+          el.style.transform = 'translate3d(0,' + (d * 22).toFixed(1) + 'px,0)';
+        }
+      };
+      const alScroll = () => {
+        if (pendiente) return;
+        pendiente = true;
+        requestAnimationFrame(pintar);
+      };
+      addEventListener('scroll', alScroll, { passive: true });
+      addEventListener('resize', alScroll, { passive: true });
+      pintar();
+    }
+  })();
+</script>

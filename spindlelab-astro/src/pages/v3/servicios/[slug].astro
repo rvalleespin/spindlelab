@@ -82,13 +82,14 @@ const jsonLd = {
         <span class="text-humo">{s.h1}</span>
       </nav>
       <h1
+        data-entra
         class="font-extrabold uppercase m-0 max-w-[14ch]"
         style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.88; letter-spacing:0"
       >
         {s.h1}
       </h1>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
+      <div data-entra data-paso="1" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
         <div class="md:col-span-5">
           {s.lead && (
         <p class="mt-10 text-papel text-xl md:text-2xl leading-relaxed max-w-prosa">{s.lead}</p>
@@ -112,12 +113,13 @@ const jsonLd = {
     <!-- QUÉ INCLUYE, en columnas. -->
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[18ch]"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         {secIncluye.h2}
       </h2>
-      <ul class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+      <ul data-entra data-paso="1" class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
         {
           (secIncluye.lista ?? []).map((i: string) => (
             <li class="border-t filete pt-5 text-noche/75 text-base leading-relaxed">
@@ -131,6 +133,7 @@ const jsonLd = {
     <!-- PLANES, en columnas, precios exactos a los publicados. -->
     <section id="planes" class="bg-papel text-noche px-6 md:px-medianil pb-24 md:pb-36 scroll-mt-24">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 mb-3 max-w-[18ch]"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
@@ -166,12 +169,13 @@ const jsonLd = {
     <!-- EL BLOQUE DE CUATRO. Cambia de sentido por página; el h2 lo dice. -->
     <section class="px-6 md:px-medianil py-32 md:py-seccion">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[17ch]"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         {secBloques.h2}
       </h2>
-      <ol class="list-none p-0 m-0 border-t filete">
+      <ol data-entra data-paso="1" class="list-none p-0 m-0 border-t filete">
         {
           (secBloques.bloques ?? []).map((b: any, i: number) => (
             <li class="border-b filete py-7 md:py-9 flex flex-col md:flex-row gap-3 md:gap-12">
@@ -194,6 +198,7 @@ const jsonLd = {
     <!-- FAQ. El mismo contenido que alimenta el FAQPage del schema. -->
     <section class="px-6 md:px-medianil pb-24 md:pb-36">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 mb-12 md:mb-16"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
       >
@@ -218,6 +223,7 @@ const jsonLd = {
 
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 max-w-[16ch]"
         style="font-size:clamp(2rem, 6.6vw, 7.5rem); line-height:0.88; letter-spacing:0; text-wrap:balance"
       >

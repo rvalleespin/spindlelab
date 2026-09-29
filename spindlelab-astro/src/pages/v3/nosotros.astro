@@ -85,13 +85,14 @@ const jsonLd = {
         <span class="text-humo">Nosotros</span>
       </nav>
       <h1
+        data-entra
         class="font-extrabold uppercase m-0 max-w-[14ch]"
         style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.9; letter-spacing:0"
       >
         No te prometo. Te muestro.
       </h1>
 
-      <div class="mt-12 flex items-center gap-5">
+      <div data-entra data-paso="1" class="mt-12 flex items-center gap-5">
         <img
           src="/assets/img/ramon-vallejos.jpg"
           alt="Ramón Vallejos, consultor de SpindleLab"
@@ -126,12 +127,13 @@ const jsonLd = {
     <!-- CÓMO TRABAJO, en campo navy. Los cuatro puntos van en singular. -->
     <section class="tinte--navy px-6 md:px-medianil py-32 md:py-seccion">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 mb-12 md:mb-16"
         style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0"
       >
         Cómo trabajo
       </h2>
-      <div class="grid gap-x-8 lg:gap-x-12 gap-y-10 md:grid-cols-2">
+      <div data-entra data-paso="1" class="grid gap-x-8 lg:gap-x-12 gap-y-10 md:grid-cols-2">
         {
           puntos.map((p) => (
             <article class="border-t filete pt-6">
@@ -150,12 +152,13 @@ const jsonLd = {
 
     <section class="px-6 md:px-medianil py-32 md:py-seccion">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 max-w-[15ch]"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         ¿Apareces cuando preguntan?
       </h2>
-      <p class="mt-8 text-humo text-xl leading-relaxed max-w-prosa">
+      <p data-entra data-paso="1" class="mt-8 text-humo text-xl leading-relaxed max-w-prosa">
         Te lo muestro. Chequeo real, gratis, en 24 horas. Antes de que pagues nada.
       </p>
       <div class="mt-12 flex items-center gap-4 flex-wrap">

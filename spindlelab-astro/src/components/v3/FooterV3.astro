@@ -4,11 +4,17 @@
 // sin enlazar es enlazado interno perdido.
 import { EMAIL } from '../../consts';
 import { CONTACTO_V3 as CONTACTO, SERVICIOS_V3, CASA_V3 } from '../../consts-v3';
+import MovimientoV3 from './MovimientoV3.astro';
 
 const servicios = SERVICIOS_V3;
 
 const casa = CASA_V3;
 ---
+
+{/* El sistema de movimiento del v3 viaja con el pie porque el pie está en las catorce
+    páginas del v3 y en ninguna otra. Así las internas se mueven igual que la home sin
+    repetir el script en cada archivo, y el sitio vivo no carga nada. */}
+<MovimientoV3 />
 
 <footer class="bg-noche text-humo text-sm px-6 md:px-medianil py-24 md:py-40">
   <div class="grid gap-12 md:grid-cols-3">

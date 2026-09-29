@@ -69,13 +69,14 @@ const jsonLd = {
         <span class="text-humo">Chequeo gratis</span>
       </nav>
       <h1
+        data-entra
         class="font-extrabold uppercase m-0 max-w-[12ch]"
         style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.88; letter-spacing:0"
       >
         {s.h1}
       </h1>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
+      <div data-entra data-paso="1" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
         <div class="md:col-span-5">
           {s.lead && <p class="m-0 text-papel text-xl md:text-2xl leading-relaxed">{s.lead}</p>}
         </div>
@@ -128,12 +129,13 @@ const jsonLd = {
     <!-- PAPEL: los 21 chequeos publicados. -->
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[16ch]"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         {chequeos.h2}
       </h2>
-      <div class="grid gap-x-8 lg:gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+      <div data-entra data-paso="1" class="grid gap-x-8 lg:gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
         {
           (chequeos.bloques ?? []).map((b: any) => (
             <article class="border-t filete pt-5">
@@ -156,12 +158,13 @@ const jsonLd = {
     <!-- CAMPO BRASA. Texto en BLANCO PURO: papel encima reprueba AA sobre este color. -->
     <section class="tinte--brasa text-white px-6 md:px-medianil py-32 md:py-seccion">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[16ch]"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
       >
         {caminos.h2}
       </h2>
-      <div class="grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-2">
+      <div data-entra data-paso="1" class="grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-2">
         {
           (caminos.bloques ?? []).map((b: any) => (
             <article class="border-t filete pt-6">
@@ -181,6 +184,7 @@ const jsonLd = {
     <!-- TINTA: la ley y lo que solemos responder. -->
     <section class="px-6 md:px-medianil py-32 md:py-seccion">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 max-w-[17ch]"
         style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0; text-wrap:balance"
       >
@@ -193,6 +197,7 @@ const jsonLd = {
       {s.faq?.length > 0 && (
         <>
           <h2
+            data-entra
             class="font-extrabold uppercase m-0 mt-24 md:mt-36 mb-12 md:mb-16"
             style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
           >
@@ -217,6 +222,7 @@ const jsonLd = {
 
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 max-w-[15ch]"
         style="font-size:clamp(2rem, 6.6vw, 7.5rem); line-height:0.88; letter-spacing:0; text-wrap:balance"
       >

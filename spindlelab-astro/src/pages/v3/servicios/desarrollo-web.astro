@@ -153,13 +153,14 @@ const jsonLd = {
         <span class="text-humo">Desarrollo Web</span>
       </nav>
       <h1
+        data-entra
         class="font-extrabold uppercase m-0"
         style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.86; letter-spacing:0"
       >
         Desarrollo web
       </h1>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
+      <div data-entra data-paso="1" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
         <div class="md:col-span-5">
           <p class="m-0 text-papel text-xl md:text-2xl leading-relaxed">
             A veces el problema no es lo que se audita: es lo que hay que reconstruir.
@@ -185,12 +186,13 @@ const jsonLd = {
     <!-- QUÉ INCLUYE, en columnas. -->
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[16ch]"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
       >
         Todo parte con esto
       </h2>
-      <ul class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+      <ul data-entra data-paso="1" class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
         {
           incluye.map((i) => (
             <li class="border-t filete pt-5 text-noche/75 text-base leading-relaxed">
@@ -204,12 +206,13 @@ const jsonLd = {
     <!-- PLANES, en columnas, con los precios exactos. -->
     <section id="planes" class="bg-papel text-noche px-6 md:px-medianil pb-24 md:pb-36 scroll-mt-24">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 mb-3"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
       >
         Elige por dónde partir
       </h2>
-      <p class="text-noche/65 text-sm mb-12 md:mb-16">
+      <p data-entra data-paso="1" class="text-noche/65 text-sm mb-12 md:mb-16">
         Valores en pesos, + IVA. El valor final se cierra tras el diagnóstico gratuito.
       </p>
       <div class="grid gap-x-8 lg:gap-x-12 gap-y-14 md:grid-cols-2 lg:grid-cols-4">
@@ -241,12 +244,13 @@ const jsonLd = {
     <!-- FASES. -->
     <section class="px-6 md:px-medianil py-32 md:py-seccion">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 mb-12 md:mb-16 max-w-[15ch]"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
       >
         Cinco fases, aprobación en cada una
       </h2>
-      <ol class="list-none p-0 m-0 border-t filete">
+      <ol data-entra data-paso="1" class="list-none p-0 m-0 border-t filete">
         {
           fases.map((f) => (
             <li class="border-b filete py-7 md:py-9 flex flex-col md:flex-row gap-3 md:gap-12">
@@ -269,6 +273,7 @@ const jsonLd = {
     <!-- FAQ. Mismo contenido que alimenta el FAQPage del schema. -->
     <section class="px-6 md:px-medianil pb-24 md:pb-36">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 mb-12 md:mb-16"
         style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
       >
@@ -293,12 +298,13 @@ const jsonLd = {
 
     <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
       <h2
+        data-entra
         class="font-extrabold uppercase m-0 max-w-[16ch]"
         style="font-size:clamp(2rem, 7vw, 8rem); line-height:0.88; letter-spacing:0"
       >
         ¿Qué necesita decir tu sitio?
       </h2>
-      <p class="mt-10 text-noche/65 text-xl leading-relaxed max-w-prosa">
+      <p data-entra data-paso="1" class="mt-10 text-noche/65 text-xl leading-relaxed max-w-prosa">
         Si ya tienes uno, empezamos con el chequeo gratuito. Si partes de cero, conversemos
         tu proyecto directamente.
       </p>
