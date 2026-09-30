@@ -1536,6 +1536,87 @@ export async function contar(kv, clave, tope, ttl) {
 }
 
 /* ================================================================== *
+ * Cuenta de uso. NO es un tope: es saber si esto le sirve a alguien.  *
+ *                                                                     *
+ * Nació el 30-sep-2026, cuando la campaña salió a Instagram y no      *
+ * había forma de contestar "¿entró alguien?". El chequeo rápido no    *
+ * dejaba ningún registro, y las métricas de Cloudflare cuentan        *
+ * archivos servidos, no personas.                                     *
+ *                                                                     *
+ * LA REGLA QUE MANDA ACÁ, y es la del producto entero: este sitio le  *
+ * dice a la gente que su sitio no debería rastrear a nadie sin        *
+ * permiso. Su propia medición tiene que aguantar esa vara.            *
+ *                                                                     *
+ *   - Cero cookies, cero terceros, cero scripts. Todo del lado del    *
+ *     servidor.                                                       *
+ *   - Se guardan CONTADORES, no visitas. Un número por día y por      *
+ *     origen. Nunca una IP, nunca un dominio consultado, nunca una    *
+ *     URL. No hay forma de reconstruir quién hizo qué.                *
+ *   - Si el KV no está o la escritura falla, no pasa nada y el        *
+ *     visitante no se entera.                                         *
+ *                                                                     *
+ * Se lee con `wrangler kv key list`. NO hay endpoint público: sería   *
+ * publicarle a cualquiera cuánta gente usa esto.                      *
+ * ================================================================== */
+
+// 90 días. Los topes viven 30 horas porque son un presupuesto del día; esto es
+// una medición y se mira comparando semanas.
+export const TTL_USO_S = 60 * 60 * 24 * 90;
+
+/**
+ * De dónde llegó la visita, en una palabra de una lista CERRADA.
+ *
+ * ⚠️ La lista es cerrada a propósito y no es una formalidad. `utm_source` lo
+ * escribe quien visita, y acá termina siendo parte de una llave de KV: si se
+ * aceptara tal cual, cualquiera podría fabricar miles de llaves distintas con
+ * un bucle. Lo que no está en la lista es 'otro'.
+ */
+export function origenDeLaVisita(referer, url) {
+  const CONOCIDOS = new Set([
+    'instagram', 'linkedin', 'facebook', 'whatsapp', 'correo', 'buscador', 'propio',
+  ]);
+
+  // Un utm_source explícito manda sobre el referer: es lo que nosotros pusimos en el enlace.
+  try {
+    const utm = (url && url.searchParams && url.searchParams.get('utm_source') || '').toLowerCase().trim();
+    if (CONOCIDOS.has(utm)) return utm;
+    if (utm) return 'otro';
+  } catch {}
+
+  if (!referer) return 'directo';
+  let host = '';
+  try { host = new URL(referer).hostname.toLowerCase().replace(/^www\./, ''); } catch { return 'otro'; }
+  if (!host) return 'otro';
+
+  if (host === 'instagram.com' || host.endsWith('.instagram.com')) return 'instagram';
+  if (host === 'linkedin.com' || host.endsWith('.linkedin.com') || host === 'lnkd.in') return 'linkedin';
+  if (host === 'facebook.com' || host.endsWith('.facebook.com') || host === 'fb.me') return 'facebook';
+  if (host === 'whatsapp.com' || host.endsWith('.whatsapp.com')) return 'whatsapp';
+  if (/^(www\.)?(google|bing|duckduckgo|ecosia|yahoo)\./.test(host) || host.endsWith('.google.com')) return 'buscador';
+  if (host === 'verifica.spindlelab.cl') return 'propio';
+  if (host === 'spindlelab.cl' || host.endsWith('.spindlelab.cl')) return 'propio';
+  return 'otro';
+}
+
+/**
+ * Suma uno al contador del día. Nunca revienta y nunca bloquea la respuesta.
+ *
+ * `que` es 'rapido' o 'profundo'. `origen` sale de origenDeLaVisita.
+ */
+export async function anotarUso(kv, que, origen, ahora = new Date()) {
+  if (!kv) return;
+  const dia = ahora.toISOString().slice(0, 10);
+  const claves = [`uso:${que}:${dia}`];
+  if (origen) claves.push(`uso:origen:${dia}:${origen}`);
+  for (const clave of claves) {
+    try {
+      const actual = Number((await kv.get(clave)) || 0);
+      await kv.put(clave, String(actual + 1), { expirationTtl: TTL_USO_S });
+    } catch {}
+  }
+}
+
+/* ================================================================== *
  * El endpoint.                                                        *
  * ================================================================== */
 
@@ -1629,6 +1710,13 @@ export async function onRequestGet({ request, env }) {
   const rehacer = url.searchParams.get('rehacer') === '1';
 
   const r = await profundo(entrada, env, { ip, rehacer });
+
+  // Se anota DESPUÉS de tener la respuesta. Solo las revisiones que de verdad corrieron:
+  // una que declinó por falta de cupo no es uso, es un rebote, y contarla mentiría.
+  if (r.ok && !r.deCache) {
+    await anotarUso(env && env.VYC_TOPES, 'profundo',
+      origenDeLaVisita(request.headers.get('Referer'), url));
+  }
 
   return new Response(JSON.stringify(r), {
     status: r.ok ? 200 : (r.tipo === 'entrada' ? 400 : 200),

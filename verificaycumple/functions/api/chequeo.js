@@ -26,6 +26,8 @@
  * 'entrada' si lo que se escribió no es un dominio revisable, 'sitio' si no pudimos leerlo.
  */
 
+import { anotarUso, origenDeLaVisita } from './profundo.js';
+
 const TIMEOUT_MS = 8000;
 // Presupuestos de espera. El reloj de 8 s es por cadena de redirecciones (ver `traer`), pero
 // ahora una revisión puede hacer más de una cadena: la portada tal como la escribió la
@@ -1740,11 +1742,24 @@ const CABECERAS = {
   'Access-Control-Allow-Origin': '*',
 };
 
-export async function onRequestGet({ request }) {
+export async function onRequestGet(contexto) {
+  const { request, env } = contexto;
   const url = new URL(request.url);
   const dominio = url.searchParams.get('dominio') || '';
   try {
     const r = await chequear(dominio);
+    // Cuenta de uso: hasta el 30-sep este endpoint no dejaba ningún registro y no había forma
+    // de contestar si la campaña traía gente. Es un contador por día y por origen, del lado
+    // del servidor: cero cookies, cero terceros, y nunca el dominio consultado. Ver la nota
+    // larga en profundo.js.
+    //
+    // Va con waitUntil para que la escritura no retrase la respuesta, y solo cuenta los
+    // chequeos que salieron bien: los errores de entrada no son uso.
+    if (r.ok) {
+      const tarea = anotarUso(env && env.VYC_TOPES, 'rapido',
+        origenDeLaVisita(request.headers.get('Referer'), url));
+      if (contexto.waitUntil) contexto.waitUntil(tarea); else await tarea;
+    }
     return new Response(JSON.stringify(r), { status: r.ok ? 200 : 400, headers: CABECERAS });
   } catch {
     return new Response(
