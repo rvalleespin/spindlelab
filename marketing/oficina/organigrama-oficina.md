@@ -64,7 +64,7 @@ Estado: **✅ trabajando** · **★ nuevo (esta pasada)** · **○ vacante** · 
 | **Nora** ★ | Inteligencia & Datos | `agente-analitica` | `marketing/reportes/`, GA4 / Search Console | `oficina/memoria/nora-analitica.md` | Actividad de todos los frentes → atribución + reporte mensual (agencia y producto) | ★ nuevo |
 | **Nadia** ★ | Producto & Diseño | `producto-ui-ux` | cross-proyecto (Praxi + web SpindleLab); vive **solo en global** | `oficina/memoria/nadia-producto.md` (a crear) | Pantalla/flujo/feature → diseño UI/UX + arquitectura frontend; sistema anti-slop (brand.json + voice.json, gate en CI) | ★ nuevo |
 | **Pía** ★ | Producto & Diseño | `agente-growth-producto` | repo del producto (Praxi); `oficina/growth-producto/` | `oficina/memoria/pia-growth.md` (a crear) | Producto → onboarding, activación, lifecycle, retención (cross-proyecto) | ★ nuevo |
-| **Monse** ○ | Admin & Finanzas | `agente-finanzas` | `ventas/cobros.md` (a crear), COTIZACIONES/ | — | Proyecto ganado → seguimiento de cobros/fases/facturación | ○ vacante |
+| **Monse** ○ | Admin & Finanzas | `agente-finanzas` | `ventas/obligaciones-tributarias.md`, `ventas/cobros.md` (a crear), COTIZACIONES/ | — | Proyecto ganado → seguimiento de cobros/fases/facturación; además el calendario tributario de la SpA y de la persona natural | ○ vacante |
 | **El Sueño** | Supervisión | `dream` | `~/.motor-agentico/dreams/` | `state.json` (propio) | 24h de actividad → 4 prescripciones/día | ✅ |
 
 > **Nota sobre Nadia (`producto-ui-ux`).** No es un rol de agencia-para-cliente:
@@ -160,6 +160,8 @@ disponible (repo + global).
 
 **Quedan en cola (vacantes ya identificadas):**
 - **Monse** (`agente-finanzas`) — cobros por fase separados del CRM (hubo el error "Fase 1 cobrada").
+  Mientras esté vacante, el mapa tributario vive en `ventas/obligaciones-tributarias.md` (30-sep-2026):
+  la SpA declara F29 mensual aunque no entre plata, y hay cuatro preguntas abiertas antes de ejecutar nada.
 
 **Contratada el 28-ago-2026:** **Marta** (`agente-calendario-editorial`) — ordena a
 Cata/Bruno/Renata por mes y tema; nació con el relanzamiento del motor (su
