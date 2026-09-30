@@ -193,7 +193,7 @@ y el daño que de verdad molesta es la anotación, no el monto.
 |---|---|---|---|
 | 1 | ~~Confirmar si el inicio de actividades está aprobado~~ **✅ resuelto 30-sep-2026: vigente desde agosto, F29 de ago-2026 declarado sin movimiento y sin multa.** Queda de ese mismo paso: ver **qué régimen** quedó marcado en la situación tributaria del RUT 78.474.925-8 | Ramón | **esta semana** |
 | 2 | **Declarar el F29 de sep-2026**, que se habilita el 1-oct y vence el 20-oct. En ceros si sigue sin movimiento | Ramón (o el contador, si ya está) | **entre el 1 y el 20-oct** |
-| 2b | Guardar el comprobante PDF del F29 de agosto y anotarlo en §8. Esto convierte el ⚠️ en ✅ | Ramón | al tenerlo a mano |
+| 2b | ~~Guardar el comprobante del F29 de agosto~~ **ya está guardado** (carpeta `SpindleLab` de la nube, 30-sep). Queda anotar **folio y fecha de presentación** en §8: eso convierte el ⚠️ en ✅ y de paso aclara si agosto entró dentro de plazo | Ramón, o una sesión local en el Mac | próxima vez que se abra el repo en el Mac |
 | 2c | **Patente municipal:** la llamada a la municipalidad con la pregunta de §4. Pendiente confirmado por Ramón el 30-sep | Ramón | antes de **enero-2027** (primera cuota) |
 | 3 | **Contratar contador con tarifa de empresa sin movimiento.** El encargo es chico y definido: F29 mensual, DDJJ de marzo, F22 de abril, y decir si falta patente municipal | Ramón | antes del **20-oct** (vence el F29 de sep-2026, ya con obligación vigente y confirmada) |
 | 4 | Completar lo que queda del setup: Certificado Digital SII, facturación electrónica, cuenta corriente empresa. Sin esto la SpA no puede facturar el 30 % de María Loreto | Ramón | antes de la reunión de inicio del **6-oct** |
@@ -214,10 +214,34 @@ Se llena hacia adelante. Un mes sin fila es un mes que nadie verificó.
 | Período | F29 SpA | F29 / boletas Ramón | Quién lo presentó | Evidencia | Nota |
 |---|---|---|---|---|---|
 | jul-2026 | — no aplica | ❓ | — | — | El portal no lo ofreció: el inicio de actividades rige desde agosto. Se cierra con una mirada al listado de F29 (pregunta 1 de §2) |
-| **ago-2026** | ⚠️ **presentado sin movimiento, sin multa** | ❓ | Ramón | ⚠️ falta guardar el comprobante del SII | Reportado por Ramón el **30-sep-2026**. Primer período de la SpA. Vencía el 20-sep: si se presentó después, ver la precisión de §2 sobre la multa |
+| **ago-2026** | ⚠️ **presentado sin movimiento, sin multa** | ❓ | Ramón | comprobante **existe**: PDF en la carpeta `SpindleLab` de la nube personal de Ramón (reportado 30-sep-2026). **Falta el folio y la ruta exacta acá** | Reportado por Ramón el **30-sep-2026**. Primer período de la SpA. Vencía el 20-sep: si se presentó después, ver la precisión de §2 sobre la multa |
 | sep-2026 | ⬜ se habilita el **1-oct** | ❓ | — | — | Vence el **20-oct-2026**. Va sí o sí, aunque siga sin movimiento. Que hoy no aparezca es el calendario, no un bloqueo |
 | oct-2026 | ⬜ | ❓ | — | — | Vence el 20-nov-2026 |
 
 Convención: ✅ presentado con comprobante a la vista · ⚠️ presentado sin comprobante guardado ·
 ⬜ todavía no vence · ❌ no presentado · ❓ no verificado. **Nada se marca ✅ sin el comprobante del SII**, igual que
 cualquier otro estado compartido de este repo.
+
+### Dónde viven los comprobantes
+
+El comprobante de agosto existe y está en la carpeta `SpindleLab` de la nube personal de Ramón.
+Eso es mejor que no tenerlo, pero todavía no sirve como evidencia para este repo, por una razón
+práctica: **una sesión en la nube no ve esa carpeta**, y una sesión local tampoco sabe que ahí
+está si no se lo dicen. Se buscó en el Google Drive de `hola@spindlelab.cl` el 30-sep-2026 y no
+hay ningún archivo de F29 ni de comprobante, así que está en la nube personal (iCloud), fuera
+del alcance de cualquier sesión que no corra en el Mac.
+
+**Convención que cierra el hueco, sin mover archivos a ninguna parte:**
+
+1. **El PDF se queda donde está.** No se sube al repo. Los documentos tributarios llevan RUT y
+   folio, y aquí ya existe el criterio de dejar fuera lo sensible (`COTIZACIONES/` y `LOGOS/`
+   están en `.gitignore`). Si algún día conviene tenerlos en el árbol, van en un `TRIBUTARIO/`
+   también ignorado.
+2. **Lo que se versiona es el rastro, no el archivo:** en la columna *Evidencia* van
+   **folio + fecha de presentación + nombre del archivo**. Con eso cualquiera lo encuentra en
+   treinta segundos y nadie tiene que volver a preguntar si existe.
+3. **Nombre de archivo sugerido:** `F29-2026-08-spindlelab-spa.pdf`. Períodos en `AAAA-MM` para
+   que se ordenen solos.
+4. **Quién lo marca ✅:** una sesión local en el Mac puede abrir el PDF, leer el folio, anotarlo
+   acá y cerrar la fila. Desde la nube no se puede, y por eso queda en ⚠️: **no es duda de que
+   el trámite se hizo, es que el dato todavía no está escrito donde se consulta.**
