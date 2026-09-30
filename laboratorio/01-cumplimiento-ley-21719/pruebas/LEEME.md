@@ -1,6 +1,6 @@
 # Pruebas de los chequeos y del control de cookies
 
-**2.309 comprobaciones en 12 baterías, medidas el 28-sep-2026 corriéndolas todas.**
+**2.354 comprobaciones en 13 baterías, medidas el 30-sep-2026 corriéndolas todas.**
 
 ⚠️ El número de antes, "1198 comprobaciones (23-sep)", estaba desfasado de tres maneras a la
 vez, y las tres importan más que la cifra:
