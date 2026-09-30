@@ -194,16 +194,6 @@
   display: block;
 }
 
-/* La misma caja, pero para contenido en vez de una imagen.
- *
- * `.media-campo` fija `display: block` porque todos sus usos son <img>, y esa regla le
- * gana a la utilidad `flex` de Tailwind por orden de hoja. Se vio en el render, no en el
- * código: en el índice de trabajo la tarjeta sin captura salió con sus dos rótulos en una
- * sola línea, uno al lado del otro, en vez de apilados al pie de la caja. El modificador
- * va DESPUÉS de `.media-campo` a propósito; esa es toda la razón por la que gana. */
-.media-campo--texto {
-  display: flex;
-}
 
 /* ==========================================================================
    MOVIMIENTO

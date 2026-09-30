@@ -4,8 +4,14 @@ Sitios completos para **clientes que no existen**, construidos para mostrar hast
 llega la agencia en rubros donde todavía no hay un caso liberado que enseñar.
 
 Nació el 27-sep-2026, de una necesidad concreta: el único trabajo de desarrollo web
-entregado (Bernardo Combeau) **sigue sin permiso de caso público**, así que no hay nada
-que mostrarle a un prospecto. Esperar el permiso no es una estrategia.
+entregado (Bernardo Combeau) no tenía permiso de caso público, así que no había nada que
+mostrarle a un prospecto. Esperar el permiso no es una estrategia.
+
+**Actualización 30-sep-2026: Bernardo dio el permiso.** Sus dos sitios
+(`bernardocombeau.cl` y `bernardocombeau.cl/modelo/`) entraron al índice de trabajo como
+casos de cliente, recapturados desde los sitios vivos. La serie de concepto sigue teniendo
+sentido igual: son rubros donde no hay caso liberado, y una sola es la que entró al sitio.
+Lo que cambió es que ya no son lo único que hay para mostrar.
 
 ## La regla que hace que esto sume en vez de restar
 
@@ -45,8 +51,8 @@ pueda copiar.
 
 | # | Pieza | Rubro | Estado |
 |---|---|---|---|
-| 01 | [Raigal](01-raigal/ficha.md) | Implantología y rehabilitación oral | home construida |
-| 02 | [Aplomo](02-aplomo/ficha.md) | Constructora industrial B2B | home construida |
+| 01 | [Raigal](01-raigal/ficha.md) | Implantología y rehabilitación oral | home construida · **en el sitio**, en /v3/trabajo/ y en la tira de la home |
+| 02 | [Aplomo](02-aplomo/ficha.md) | Constructora industrial B2B | home construida · fuera del sitio (Ramón eligió una sola pieza de concepto) |
 | 03 | [Deslinde](03-deslinde/ficha.md) | Derecho laboral y cumplimiento B2B | home construida · **fuera del sitio** hasta que Ramón la revise |
 
 ## Las piezas se construyen como opuestas, a propósito

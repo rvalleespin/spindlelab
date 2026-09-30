@@ -35,26 +35,24 @@ import FooterV3 from '../../components/v3/FooterV3.astro';
 import '../../styles/chequeo-v3.css';
 import '../../styles/campos-v3.css';
 import oferta from '../../data/oferta-v3.json';
+import obra from '../../data/obra-v3.json';
 
 // El orden por momento y los PRECIOS viven en data/oferta-v3.json, compartido con el
 // indice de servicios. Estaban escritos a mano en los dos lados, que es como un precio
 // queda distinto en una pagina y nadie lo nota.
 const { momentos, tambien, tambienPanel } = oferta;
 
-// LA TIRA BAJÓ DE CUATRO VISTAS A DOS, y no por diseño: obra-1 y obra-2 tienen
-// MINIATURAS ROTAS ADENTRO. Son capturas del sitio de Bernardo tomadas con las fotos sin
-// cargar, así que salen con el texto alternativo a la vista («Jessy», «Paul», «Retrato
-// femenino con luz lateral dramática…»): tres rotas de cuatro en una, tres de siete en la
-// otra. La tira las mostraba a tamaño completo, en 3:4, sin recorte que las tapara.
+// LA TIRA SALE DEL MISMO DATO QUE /v3/trabajo/, no de una lista aparte. Escrita a mano en
+// los dos lados es como una pieza queda distinta en una página y nadie lo nota.
 //
-// Mostrar el sitio de un cliente con las imágenes rotas, en la pantalla donde se argumenta
-// que sabemos construir sitios, es peor que mostrar dos piezas en vez de cuatro. Quedan las
-// dos capturas limpias. Para volver a cuatro hay que RE-CAPTURAR, no rellenar: el sitio
-// vive en otro repo y estas son copias internas.
-const tira = [
-  { src: '/mockup-interno/obra-4.png', alt: 'Portada del sitio de Bernardo Combeau', w: 1440, h: 1000 },
-  { src: '/mockup-interno/obra-3.png', alt: 'Página de estudio del sitio de Bernardo Combeau', w: 900, h: 1200 },
-];
+// VOLVIÓ A CUATRO, y ahora las cuatro son reales. El 29-sep habían bajado a dos porque las
+// otras dos capturas tenían miniaturas rotas adentro: eran copias internas tomadas con las
+// fotos sin cargar. Con el permiso de caso público dado por Bernardo el 30-sep se
+// recapturó desde los sitios vivos, así que ya no hay copias internas en juego.
+//
+// Usa el recorte ALTO (3:4) porque la tira es vertical; el índice de trabajo usa el ancho
+// (16:9). Son dos capturas por sitio, no una escalada.
+const tira = obra.casos.map((c: any) => ({ src: c.tira, alt: c.alt, n: c.n }));
 
 
 const pasos = [
@@ -218,8 +216,8 @@ const pasos = [
               <img
                 src={t.src}
                 alt={t.alt}
-                width={t.w}
-                height={t.h}
+                width="900"
+                height="1200"
                 loading={i < 2 ? 'eager' : 'lazy'}
                 decoding="async"
                 class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
@@ -227,27 +225,15 @@ const pasos = [
             </a>
           ))
         }
-        {/* Las dos columnas que quedaron libres no se rellenan con una captura de adorno:
-            se usan para llegar al índice de trabajo, que antes no existía. La tira entera
-            apuntaba a «#obra», que es la propia sección donde vive: un enlace que no lleva
-            a ninguna parte. */}
-        <a
-          href="/v3/trabajo/"
-          class="group col-span-2 flex flex-col justify-between rounded-lg border filete p-5 sm:p-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
-        >
-          <span class="rotulo text-base">El trabajo completo</span>
-          <span class="mt-8 font-extrabold uppercase leading-none" style="font-size:clamp(1.25rem,2.4vw,2rem); letter-spacing:-0.01em">
-            Cuatro piezas
-            <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-          </span>
-          <span class="mt-3 text-humo text-base leading-relaxed">
-            Dos proyectos reales y dos ejercicios de concepto, con el rótulo de cuál es cuál.
-          </span>
+      </div>
+      <div class="mt-4 flex items-baseline gap-x-5 gap-y-2 flex-wrap">
+        <p class="m-0 text-humo text-xs font-bold uppercase" style="letter-spacing:0.16em">
+          {tira.map((t: any) => t.n).join(' · ')}
+        </p>
+        <a href="/v3/trabajo/" class="text-humo text-xs font-bold uppercase underline underline-offset-4 hover:text-papel transition-colors" style="letter-spacing:0.16em">
+          Ver el trabajo &rarr;
         </a>
       </div>
-      <p class="mt-4 text-humo text-xs font-bold uppercase" style="letter-spacing:0.16em">
-        Bernardo Combeau · fotografía de retrato · sitio y panel
-      </p>
     </section>
 
     {/* BLOQUE 2 · EL PROBLEMA. Campo navy.

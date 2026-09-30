@@ -89,35 +89,15 @@ const jsonLd = {
           casos.map((c: any) => (
             <li>
               <article>
-                {c.img ? (
-                  <img
-                    src={c.img}
-                    alt={c.alt}
-                    width={c.w}
-                    height={c.h}
-                    loading="lazy"
-                    decoding="async"
-                    class="media-campo"
-                  />
+                {/* TRES DE LAS CUATRO ENLAZAN AL SITIO VIVO. Un índice de trabajo que no
+                    deja entrar a ver el trabajo es un álbum de capturas. La de concepto no
+                    lleva enlace porque no hay a dónde ir, y eso también dice lo que es. */}
+                {c.url ? (
+                  <a href={c.url} target="_blank" rel="noopener" class="grupo-obra block focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel focus-visible:outline-offset-4">
+                    <img src={c.img} alt={c.alt} width={c.w} height={c.h} loading="lazy" decoding="async" class="media-campo" />
+                  </a>
                 ) : (
-                  /* SIN IMAGEN INVENTADA. Verifica y Cumple no tiene URL pública todavía,
-                     así que no hay de qué sacar una captura. Una maqueta fabricada sería
-                     una pantalla que no existe presentada como si existiera. La tarjeta
-                     tipográfica dice lo que es y ocupa la misma caja 16:9, para que la
-                     grilla no se descuadre. */
-                  <div
-                    class="media-campo media-campo--texto tinte--navy flex-col justify-end p-7"
-                    role="img"
-                    aria-label={`${c.n}: sin captura todavía, la herramienta aún no tiene dirección pública`}
-                  >
-                    <span class="rotulo text-base">Sin captura todavía</span>
-                    <span
-                      class="font-extrabold uppercase leading-none mt-2"
-                      style="font-size:clamp(1.5rem,3vw,2.5rem); letter-spacing:-0.01em"
-                    >
-                      {c.n}
-                    </span>
-                  </div>
+                  <img src={c.img} alt={c.alt} width={c.w} height={c.h} loading="lazy" decoding="async" class="media-campo" />
                 )}
 
                 <div class="mt-4 flex items-baseline gap-3 flex-wrap">
@@ -125,6 +105,11 @@ const jsonLd = {
                   <span class="rotulo text-base">{c.rubro}</span>
                   <span class="rotulo text-base">·</span>
                   <span class="rotulo text-base">{ROTULO[c.tipo as keyof typeof ROTULO]}</span>
+                  {c.url && (
+                    <a href={c.url} target="_blank" rel="noopener" class="rotulo text-base underline underline-offset-4 hover:opacity-70 transition-opacity">
+                      Ver el sitio
+                    </a>
+                  )}
                 </div>
 
                 <p class="m-0 mt-2.5 text-humo text-base leading-relaxed max-w-prosa">
