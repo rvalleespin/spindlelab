@@ -284,7 +284,7 @@ prospección comercial". Es cierto y es vago, y esa vaguedad fue justo lo que ga
 Elías Cabello, abogado de Mi Equipo Legal, respondió con copia a dos colegas ejerciendo el
 **derecho a conocer el origen** de sus datos, citando nuestra propia política. Tuvo respuesta
 porque la fuente era rastreable (Apollo, cosecha del 9-sep), pero nombrarla de entrada se
-adelanta al reclamo y cuesta una palabra. Tres variantes según de dónde salió de verdad:
+adelanta al reclamo y cuesta una palabra. Cuatro variantes según de dónde salió de verdad:
 
 **Lead de Apollo:**
 > Si no quieres que te escriba, respóndeme y no lo vuelvo a hacer. Saqué tu correo de Apollo,
@@ -301,7 +301,15 @@ adelanta al reclamo y cuesta una palabra. Tres variantes según de dónde salió
 > respuesta automática de X; en verifica.spindlelab.cl/privacidad cuento qué datos trato y cómo
 > pedir que deje de hacerlo.
 
-Si no sabes de cuál de las tres salió, no mandes el correo hasta saberlo. La fuente de cada
+**Lead de un directorio público donde la empresa se inscribió (guía de DiarioEmprende):**
+> Si no quieres que te escriba, respóndeme y no lo vuelvo a hacer. Saqué tu correo de la Guía de
+> Empresas y Negocios de DiarioEmprende, donde ustedes lo publicaron; en
+> verifica.spindlelab.cl/privacidad cuento qué datos trato y cómo pedir que deje de hacerlo.
+
+Esta cuarta es la más sólida de todas, porque el prospecto publicó el correo él mismo para que
+lo contactaran. Se agregó el 30-sep con el banco `ventas/contactos-diarioemprende-30sep.csv`.
+
+Si no sabes de cuál de las cuatro salió, no mandes el correo hasta saberlo. La fuente de cada
 lead está en su CSV de origen.
 
 ### Y hay que honrarla
