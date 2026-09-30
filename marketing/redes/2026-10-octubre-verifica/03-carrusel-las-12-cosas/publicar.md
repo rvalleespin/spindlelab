@@ -154,6 +154,8 @@ regresiva, y nada que insinúe que el chequeo dice si cumples. **No lo dice.**
 
 ## Cómo se mide
 
-Chequeos corridos en Cloudflare (Workers & Pages → `verificaycumple` → Métricas →
-Solicitudes) el día que se sube y el siguiente. Y guardados del propio Instagram, que para
-esta pieza dicen más que los "me gusta": es material de consulta, no de aplauso.
+⚠️ **No con las "Solicitudes" de Cloudflare.** Esa cifra cuenta archivos servidos, no personas.
+
+Con los **contadores de uso** en KV, que cuentan chequeos corridos y de dónde llegó la gente.
+Las instrucciones para leerlos están en `marketing/redes/QUE-HAY-PUBLICADO.md`. Lo que dice si
+esta pieza funcionó es `uso:origen:<fecha>:instagram`, no las vistas.

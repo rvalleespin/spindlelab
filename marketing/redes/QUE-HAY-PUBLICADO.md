@@ -18,6 +18,45 @@ estaba en el aire, y eso costó un post: el 22-sep se publicó en la página un 
 | **22-sep** | ⛔ Explicador Ley 21.719 (plural) — **publicado y retirado el mismo día, por repetido** | 53 impresiones en ~40 min | `24-jue-ley-21719/publicar.md` |
 | **✅ 25-sep** | Los tres mitos de la Ley 21.719 (delegado voluntario, sin 72h, el 4% con dos condiciones) | **398 impresiones** · ✏️ **editado esa tarde: el 4% es solo de las gravísimas** | `24-jue-tres-mitos-ley21719/publicar.md` |
 
+## Cómo se mide si esto sirvió (desde el 30-sep-2026)
+
+⚠️ **NO se mide con las "Solicitudes" de Cloudflare.** Esa cifra cuenta archivos servidos, no
+personas: una visita son muchas solicitudes, y las pruebas de desarrollo entran en el mismo
+número. El 30-sep se miró ese gráfico y no contestaba nada.
+
+**Se mide con los contadores de uso**, que viven en el KV `vyc-topes` y cuentan **chequeos
+corridos**, que es lo único que importa. Cero cookies, cero terceros, cero scripts: se escriben
+del lado del servidor. Guardan números, nunca una IP ni el dominio que alguien consultó.
+
+```bash
+cd ~/vyc-ley21719/verificaycumple
+npx wrangler kv key list --namespace-id fbf273b71b4642f0989be319d86a6b0b --remote
+# y para leer una:
+npx wrangler kv key get "uso:rapido:2026-10-01" --namespace-id fbf273b71b4642f0989be319d86a6b0b --remote
+```
+
+Las llaves:
+
+| Llave | Qué cuenta |
+|---|---|
+| `uso:rapido:<fecha>` | chequeos rápidos que corrieron ese día |
+| `uso:profundo:<fecha>` | revisiones con navegador que corrieron ese día |
+| `uso:origen:<fecha>:<origen>` | de dónde llegó la gente |
+
+Los orígenes son una lista cerrada: `instagram`, `linkedin`, `facebook`, `whatsapp`, `correo`,
+`buscador`, `propio`, `directo`, `otro`. Duran **90 días**, así que se pueden comparar semanas.
+
+⚠️ **No confundirlos con `tope:*`**, que son otra cosa: el presupuesto diario contra abuso, y
+vencen a las 30 horas.
+
+⚠️ **No hay endpoint público para leerlos**, a propósito: sería publicarle a cualquiera cuánta
+gente usa esto.
+
+**Estado al 30-sep, 13:00:** el KV está en cero. Los contadores se estrenaron hoy, así que la
+primera lectura con sentido es **mañana**.
+
+---
+
 ## Instagram · cuenta `spindlelab.cl` (19 seguidores)
 
 **Capturado del canal el 25-sep-2026.** ⚠️ **Verifica y Cumple pasó a tener línea editorial

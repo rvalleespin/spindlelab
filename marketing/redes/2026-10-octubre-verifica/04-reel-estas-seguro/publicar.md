@@ -200,6 +200,8 @@ verifica.spindlelab.cl.
 
 ## Cómo se mide
 
-Chequeos corridos en Cloudflare (Workers & Pages → `verificaycumple` → Métricas →
-Solicitudes) el día que se sube y el siguiente. Por visitas al chequeo, no por vistas del
-Reel: las vistas dicen cuánta gente pasó, no cuánta hizo algo.
+⚠️ **No con las "Solicitudes" de Cloudflare.** Esa cifra cuenta archivos servidos, no personas.
+
+Con los **contadores de uso** en KV, que cuentan chequeos corridos y de dónde llegó la gente.
+Las instrucciones para leerlos están en `marketing/redes/QUE-HAY-PUBLICADO.md`. Lo que dice si
+esta pieza funcionó es `uso:origen:<fecha>:instagram`, no las vistas.
