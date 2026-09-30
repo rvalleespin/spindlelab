@@ -43,6 +43,10 @@ Las llaves:
 | `uso:profundo:<fecha>` | revisiones con navegador que corrieron ese día |
 | `uso:origen:<fecha>:<origen>` | de dónde llegó la gente |
 
+**Y cada pedido que llegue por el formulario trae su propio origen**, en el campo *"Llego de"* del
+correo. Con pocos pedidos eso vale más que el agregado: un pedido es un dato, y saber que **ese**
+vino de Instagram contesta la pregunta entera.
+
 Los orígenes son una lista cerrada: `instagram`, `linkedin`, `facebook`, `whatsapp`, `correo`,
 `buscador`, `propio`, `directo`, `otro`. Duran **90 días**, así que se pueden comparar semanas.
 
@@ -94,11 +98,22 @@ datos, conviene resolverla. Se apela desde la app.
 
 ⚠️ **Pendientes de Ramón en esta cuenta, las dos cosas que no se pueden hacer desde el computador
 o que son suyas:**
-- **El enlace del bio.** Instagram solo deja editar los sitios web **desde la app del teléfono**.
-  Hoy va a `spindlelab.cl/diagnostico`; para la campaña de Verifica tiene que ir a
-  `verifica.spindlelab.cl`. Cuando lo cambie, la última línea del bio debería decir algo como
-  *"Ahora: chequea gratis tu sitio para la Ley 21.719 ↓"*, o el bio promete una cosa y el enlace
-  lleva a otra.
+- **El enlace del bio, y ahora está costando.** Instagram solo deja editarlo **desde la app del
+  teléfono**. Hoy va a `spindlelab.cl/diagnostico`, que es otro producto: quien vea una pieza de
+  la campaña, entre al perfil y toque el único enlace clicable **aterriza en otra parte**.
+
+  ⚠️ **Va con la marca de origen pegada, no pelado:**
+
+  ```
+  https://verifica.spindlelab.cl/?utm_source=instagram
+  ```
+
+  Sin ese `?utm_source=instagram`, casi todo el tráfico de la campaña se cuenta como "directo":
+  el navegador interno de Instagram **no manda referer**. Comprobado el 30-sep en producción.
+  Lo mismo para el sticker de enlace de las historias.
+
+  Y la última línea del bio debería decir algo como *"Ahora: chequea gratis tu sitio para la Ley
+  21.719 ↓"*, o el bio promete una cosa y el enlace lleva a otra.
 - **La etiqueta "Perfil generado con IA"** está encendida y la ve cualquiera. En una consultoría
   que vende criterio conviene decidirlo a propósito, no dejarlo por omisión.
 
