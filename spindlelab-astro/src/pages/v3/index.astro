@@ -112,6 +112,12 @@ const pasos = [
          Titular elegido por Ramón el 29-sep entre ocho candidatos. La objeción que quedó
          anotada y no se resolvió sola: «el eje de tu negocio» es reclamable por cualquiera
          y se sostiene en la bajada, no solo. Si la bajada se acorta, se pierde. */}
+    {/* EL AIRE DE ARRIBA ES 96px EN MÓVIL Y NO PUEDE BAJAR. La cabecera fija termina en
+          el píxel 86, así que con pt-20 (80px) el titular se le mete debajo. Se probó para
+          ganar los 6px que faltan a 320px de ancho, donde el aviso de cookies todavía tapa
+          el botón del chequeo; no compensa: un titular pisado se ve roto siempre, y el
+          aviso se quita con un toque. A 320px el hero no cabe entero sobre el aviso y eso
+          queda asumido. Desde 360px hacia arriba el botón queda libre. */}
     <section id="chequeo" class="px-6 md:px-medianil pt-24 sm:pt-40 md:pt-44 pb-10 md:pb-14 scroll-mt-24">
       {/* 20 caracteres y 5 palabras. Acá decía «una sola línea» y es FALSO: medido con un
            Range —getClientRects() sobre un bloque devuelve la caja, no las líneas— va en
@@ -126,10 +132,9 @@ const pasos = [
         El eje de tu negocio
       </h1>
       <p class="mt-5 sm:mt-8 text-humo text-lg md:text-2xl leading-relaxed max-w-prosa">
-        Todo lo que pagas para que lleguen termina en tu sitio, y ahí la primera que lee
-        no es una persona: es la máquina que responde cuando alguien pregunta por tu
-        rubro. Diseñamos y construimos el sitio que esa máquina sí puede leer, y le
-        conectamos la pauta encima. Escribe tu dominio y te mostramos cómo está el tuyo.
+        Todo lo que pagas para que lleguen termina en tu sitio. Y ahí la primera que lee
+        no es una persona, es una máquina. Diseñamos y construimos el sitio que esa
+        máquina sí puede leer. Escribe tu dominio y te mostramos cómo está.
       </p>
 
       <div class="mt-6 sm:mt-10 border-t border-b filete">
