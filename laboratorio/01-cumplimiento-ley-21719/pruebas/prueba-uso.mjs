@@ -30,6 +30,7 @@
  *
  * Ruta: PROFUNDO_JS, o se busca en el repo (rutas.mjs).
  */
+import fs from 'node:fs';
 import { rutaEnElRepo } from './rutas.mjs';
 
 const RUTA = rutaEnElRepo('verificaycumple/functions/api/profundo.js', 'PROFUNDO_JS');
@@ -220,6 +221,81 @@ function kvFalso() {
   try { origenDeLaVisita(undefined, undefined); } catch { reventó = true; }
   eq('origenDeLaVisita sin url no revienta', reventó, false);
   eq('y contesta directo', origenDeLaVisita(undefined, undefined), 'directo');
+}
+
+/* ================================================================== *
+ * 7. La copia del cliente NO puede separarse de la del servidor.      *
+ *                                                                     *
+ * El formulario necesita el origen del lado del cliente y no puede    *
+ * preguntarle al servidor, así que la lista está repetida en          *
+ * `index.html`. Dos copias de una regla es exactamente cómo empieza   *
+ * un desvío silencioso: alguien arregla una y la otra queda mintiendo.*
+ *                                                                     *
+ * Esto no compara las listas: compara el COMPORTAMIENTO. Los mismos   *
+ * casos pasan por las dos implementaciones y tienen que coincidir.    *
+ * ================================================================== */
+{
+  const INDEX = rutaEnElRepo('verificaycumple/index.html', 'VYC_INDEX_HTML');
+  const html = fs.readFileSync(INDEX, 'utf8');
+
+  eq('el formulario tiene el campo oculto del origen',
+    /name="Llego de"/.test(html), true);
+  eq('y el nombre del campo va sin tildes, que Web3Forms rompe',
+    /name="Lleg[oó] de"/.test(html) && !/name="Llegó de"/.test(html), true);
+
+  // Las dos marcas, una en cada archivo.
+  const marca = (txt) => {
+    const m = txt.match(/ORIGENES-CERRADOS:([^\n]*)/);
+    return m ? m[1].trim().split(/\s+/).sort() : null;
+  };
+  const listaCliente = marca(html);
+  const listaServidor = marca(fs.readFileSync(RUTA.replace('file://', ''), 'utf8'));
+  eq('la página declara su lista cerrada', Array.isArray(listaCliente) && listaCliente.length > 0, true);
+  eq('el servidor declara la suya', Array.isArray(listaServidor) && listaServidor.length > 0, true);
+  eq('y las dos listas son la misma', listaCliente, listaServidor);
+
+  // Se saca la función de la página tal cual está y se corre acá.
+  const inicio = html.indexOf('function origenExterno(');
+  let fin = html.indexOf('{', inicio), nivel = 0;
+  for (let i = fin; i < html.length; i++) {
+    if (html[i] === '{') nivel++;
+    else if (html[i] === '}') { nivel--; if (nivel === 0) { fin = i + 1; break; } }
+  }
+  const fuente = html.slice(inicio, fin);
+  eq('se pudo extraer origenExterno de la página', fuente.startsWith('function origenExterno('), true);
+
+  const origenExterno = new Function(`${fuente}; return origenExterno;`)();
+
+  // Los mismos casos por las dos puertas. Si una deriva, esto se cae.
+  const CASOS = [
+    ['', ''], [null, ''],
+    ['https://instagram.com/', ''],
+    ['https://www.instagram.com/p/x', ''],
+    ['https://l.instagram.com/?u=x', ''],
+    ['https://linkedin.com/', ''], ['https://lnkd.in/x', ''],
+    ['https://m.facebook.com/x', ''], ['https://fb.me/x', ''],
+    ['https://www.google.com/', ''], ['https://google.cl/search?q=x', ''],
+    ['https://duckduckgo.com/', ''], ['https://www.bing.com/', ''],
+    ['https://verifica.spindlelab.cl/', ''], ['https://spindlelab.cl/x', ''],
+    ['https://ejemplo.cl/', ''], ['no soy una url', ''],
+    ['https://www.google.com/', '?utm_source=instagram'],
+    ['', '?utm_source=LINKEDIN'],
+    ['', '?utm_source=' + encodeURIComponent('uso:rapido:2026-01-01')],
+    ['', '?utm_source=' + encodeURIComponent('a'.repeat(300))],
+    ['', '?utm_source=' + encodeURIComponent('🐴')],
+    ['https://instagram.com/', '?utm_source='],
+  ];
+  let iguales = 0;
+  for (const [ref, busqueda] of CASOS) {
+    const servidor = origenDeLaVisita(ref, new URL('https://verifica.spindlelab.cl/' + busqueda));
+    const cliente = origenExterno(ref, busqueda);
+    if (servidor === cliente) iguales++;
+    else {
+      malo++;
+      console.log(`  FALLA desvío cliente/servidor en ${JSON.stringify([ref, busqueda])}: servidor ${JSON.stringify(servidor)}, página ${JSON.stringify(cliente)}`);
+    }
+  }
+  eq('las dos implementaciones contestan igual en todos los casos', iguales, CASOS.length);
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
