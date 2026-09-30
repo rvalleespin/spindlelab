@@ -98,19 +98,16 @@ datos, conviene resolverla. Se apela desde la app.
 
 ⚠️ **Pendientes de Ramón en esta cuenta, las dos cosas que no se pueden hacer desde el computador
 o que son suyas:**
-- **El enlace del bio, y ahora está costando.** Instagram solo deja editarlo **desde la app del
-  teléfono**. Hoy va a `spindlelab.cl/diagnostico`, que es otro producto: quien vea una pieza de
-  la campaña, entre al perfil y toque el único enlace clicable **aterriza en otra parte**.
+- **El enlace del bio: ✅ puesto el 30-sep, con una cosa pendiente.** Ramón agregó
+  `verifica.spindlelab.cl/?utm_source=instagram`, etiquetado "Verifica y cumple". La marca de
+  origen está bien puesta, y hace falta: el navegador interno de Instagram **no manda referer**
+  (comprobado en producción), así que sin ella el tráfico de la campaña se contaría como
+  "directo". **Lo mismo hay que hacer con el sticker de enlace de las historias.**
 
-  ⚠️ **Va con la marca de origen pegada, no pelado:**
-
-  ```
-  https://verifica.spindlelab.cl/?utm_source=instagram
-  ```
-
-  Sin ese `?utm_source=instagram`, casi todo el tráfico de la campaña se cuenta como "directo":
-  el navegador interno de Instagram **no manda referer**. Comprobado el 30-sep en producción.
-  Lo mismo para el sticker de enlace de las historias.
+  ⚠️ **Quedó SEGUNDO, y en el perfil solo se ve el primero.** La línea visible dice
+  *"spindlelab.cl/diagnostico y 1 más"*: el de Verifica está detrás de ese "y 1 más". Quien
+  venga de la campaña y toque lo que se ve, aterriza en el otro producto. **Mientras la campaña
+  corra, Verifica va primero** (Editar perfil → Enlaces).
 
   Y la última línea del bio debería decir algo como *"Ahora: chequea gratis tu sitio para la Ley
   21.719 ↓"*, o el bio promete una cosa y el enlace lleva a otra.
