@@ -10,7 +10,7 @@
 > plazo los confirma el contador o el propio SII antes de actuar.** Donde hay fuente, está
 > linkeada; donde no hay certeza, está marcado como pendiente de confirmar.
 >
-> Última actualización: 2026-09-30. Dueño del documento: **Monse (`agente-finanzas`)** — hoy
+> Última actualización: 2026-09-30 (F29 declarado sin movimiento, ver §2). Dueño del documento: **Monse (`agente-finanzas`)** — hoy
 > vacante, así que lo mantiene quien toque el tema.
 
 ---
@@ -42,20 +42,47 @@ no cuando se constituye la sociedad. La SpA existe legalmente desde que el siste
 el RUT, pero su RUT queda inactivo en el SII hasta que el Formulario 4415 está procesado
 ([referencia](https://yo-facturo.com/blog/inicio-de-actividades-en-el-sii-paso-a-paso-2026/)).
 
-El último estado registrado en el repo es de **25-jul-2026**, y decía: *inicio de actividades
-enviado pero bloqueado por documentos que dependen de terceros; faltan Certificado Digital SII,
-facturación electrónica y cuenta corriente empresa.* Han pasado **dos meses**.
+El último estado registrado en el repo era de **25-jul-2026**: *inicio de actividades enviado
+pero bloqueado por documentos que dependen de terceros; faltan Certificado Digital SII,
+facturación electrónica y cuenta corriente empresa.*
 
-### Preguntas que hay que responder antes de cualquier otra cosa
+### ✅ Estado real al 30-sep-2026 (reportado por Ramón)
+
+**El F29 quedó declarado sin movimiento, y no hubo multa.**
+
+Eso resuelve la pregunta de fondo y cambia el punto de partida de este documento:
+
+- **El inicio de actividades está vigente.** No se puede presentar un F29 con el RUT inactivo
+  en el SII, así que el Formulario 4415 quedó procesado. La pregunta 1 de abajo pasa de
+  "¿está aprobado?" a "¿desde qué mes exactamente?", que es lo que dice cuántos períodos
+  hay que cubrir hacia atrás.
+- **La obligación mensual ya corre.** El próximo vencimiento es el **F29 de sep-2026 el
+  20-oct-2026**, y desde ahí todos los meses, con o sin ventas.
+- **Queda pendiente el comprobante.** Por la convención de §8, esto se anota ⚠️ y no ✅ hasta
+  que el PDF del SII esté guardado. No es desconfianza, es la misma regla que se aplica a
+  cualquier otro estado de este repo.
+
+> ⚠️ **Una precisión sobre "no hubo multa".** La sanción por una declaración sin pago inmediato
+> es un **rango** (1 UTM a 1 UTA) que el SII aplica, no un monto que el formulario cobre solo
+> al momento de declarar. Si el período se presentó **dentro de plazo**, no hay nada que mirar.
+> Si se presentó atrasado, vale la pena revisar en Mi SII que no quede anotación ni giro
+> pendiente antes de darlo por cerrado
+> ([SII](https://www.sii.cl/preguntas_frecuentes/iva/001_030_1228.htm),
+> [ref](https://www.scauditores.cl/blog/f29-atrasado-como-regularizar)).
+
+### Preguntas que siguen abiertas
 
 | # | Pregunta | Cómo se responde | Por qué importa |
 |---|---|---|---|
-| 1 | **¿El inicio de actividades de la SpA está APROBADO?** Y si sí, ¿con qué fecha? | sii.cl → Mi SII → *Consultar situación tributaria* del RUT 78.474.925-8 | Si está aprobado desde agosto, **ya hay F29 atrasados** (§5). Si sigue pendiente, la obligación todavía no corre y el trabajo es desbloquearlo. |
+| 1 | **¿Desde qué mes está vigente el inicio de actividades?** (que está vigente ya lo sabemos: se pudo declarar) Y: ¿qué período cubrió el F29 declarado, y quedó algún mes anterior sin cubrir? | sii.cl → Mi SII → *Consultar situación tributaria* del RUT 78.474.925-8 · y el listado de F29 presentados | Dice si hay períodos hacia atrás todavía descubiertos. Cada mes vigente sin declarar es una exposición de 1 UTM a 1 UTA (§5), y sale más barato presentarlos en ceros ahora que explicarlos en abril. |
 | 2 | **¿Qué régimen quedó marcado?** ProPyme General (14 D N°3) o ProPyme Transparente (14 D N°8) | misma consulta de situación tributaria | Cambia qué se declara en abril y quién paga el impuesto (la empresa o Ramón en su Global Complementario). |
 | 3 | **¿Ramón emitió boletas de honorarios por lo que ya cobró como persona natural?** (Fase 3 y los $235.200 de Bernardo llegaron **sin retención**) | Mi SII → boletas de honorarios emitidas | Si el pagador no retuvo, **el que debe el PPM es él**, mes a mes. Sin eso, la cuenta aparece entera en abril de 2027. |
 | 4 | **¿Hay contador contratado?** | Ramón | Un contador para una SpA sin movimiento cuesta del orden de decenas de miles de pesos al mes. La multa de un solo F29 no presentado parte en 1 UTM (~$71.500). No tenerlo no se sostiene por precio. |
+| 5 | **¿La SpA tiene patente municipal?** | municipalidad del domicilio | Con inicio de actividades vigente corresponde patente. Es el olvido más común de una empresa nueva que opera desde casa, y ahora que sabemos que el inicio está vigente dejó de ser hipotético. |
 
-**Nada de lo que sigue se ejecuta a ciegas:** primero se responden estas cuatro.
+Las preguntas 1 y 2 salen de la misma pantalla de Mi SII y son cinco minutos. La 3 la responde
+Ramón. La 5 es una llamada a la municipalidad. **La 4 sigue siendo la que hace que esto no
+dependa de que alguien se acuerde cada mes.**
 
 ---
 
@@ -137,9 +164,10 @@ y el daño que de verdad molesta es la anotación, no el monto.
 
 | # | Paso | Quién | Cuándo |
 |---|---|---|---|
-| 1 | Entrar a Mi SII y sacar la **situación tributaria del RUT 78.474.925-8**: ¿inicio de actividades aprobado?, ¿desde qué fecha?, ¿qué régimen? | Ramón | **esta semana** |
-| 2 | Según eso: (a) si está aprobado → contar cuántos F29 faltan desde ese mes y presentarlos, aunque sean todos en ceros; (b) si sigue pendiente → listar exactamente qué documento falta y de quién depende | Ramón + contador | mismo día que el paso 1 |
-| 3 | **Contratar contador con tarifa de empresa sin movimiento.** El encargo es chico y definido: F29 mensual, DDJJ de marzo, F22 de abril, y decir si falta patente municipal | Ramón | antes del **20-oct** (siguiente vencimiento de F29) |
+| 1 | ~~Confirmar si el inicio de actividades está aprobado~~ **✅ resuelto 30-sep-2026: está vigente, el F29 se declaró sin movimiento y sin multa.** Queda de ese mismo paso: sacar la **situación tributaria del RUT 78.474.925-8** para ver **desde qué mes** rige y **qué régimen** quedó | Ramón | **esta semana** |
+| 2 | Contar, en el listado de F29 presentados, si quedó algún mes vigente sin cubrir. Si quedó, presentarlo en ceros ahora | Ramón | mismo día que el paso 1 |
+| 2b | Guardar el comprobante PDF del F29 ya declarado y anotarlo en §8. Esto es lo que convierte el ⚠️ en ✅ | Ramón | al tenerlo a mano |
+| 3 | **Contratar contador con tarifa de empresa sin movimiento.** El encargo es chico y definido: F29 mensual, DDJJ de marzo, F22 de abril, y decir si falta patente municipal | Ramón | antes del **20-oct** (vence el F29 de sep-2026, ya con obligación vigente y confirmada) |
 | 4 | Completar lo que queda del setup: Certificado Digital SII, facturación electrónica, cuenta corriente empresa. Sin esto la SpA no puede facturar el 30 % de María Loreto | Ramón | antes de la reunión de inicio del **6-oct** |
 | 5 | Revisar si Ramón debió emitir boleta de honorarios por los cobros sin retención, y regularizar si corresponde | contador | con el paso 3 |
 | 6 | Volver acá y llenar el registro de §8 | quien toque el tema | cada mes |
@@ -156,9 +184,11 @@ Se llena hacia adelante. Un mes sin fila es un mes que nadie verificó.
 
 | Período | F29 SpA | F29 / boletas Ramón | Quién lo presentó | Evidencia | Nota |
 |---|---|---|---|---|---|
-| ago-2026 | ❓ por verificar | ❓ | — | — | Depende de la fecha de aprobación del inicio de actividades |
-| sep-2026 | ❓ por verificar | ❓ | — | — | Vence el **20-oct-2026** |
+| **período por confirmar** ⚠️ | ⚠️ **presentado sin movimiento, sin multa** | ❓ | Ramón | ⚠️ falta guardar el comprobante del SII | Reportado por Ramón el **30-sep-2026**. Confirma que el inicio de actividades está vigente. **Anotar acá qué mes cubrió** y mover la fila a su período. |
+| jul-2026 | ❓ por verificar | ❓ | — | — | Solo aplica si el inicio de actividades rige desde julio |
+| ago-2026 | ❓ por verificar | ❓ | — | — | Venció el 20-sep-2026. Verificar si es el período que ya se declaró o si sigue descubierto |
+| sep-2026 | ⬜ pendiente | ❓ | — | — | Vence el **20-oct-2026**. Obligación confirmada: va sí o sí, aunque siga sin movimiento |
 
 Convención: ✅ presentado con comprobante a la vista · ⚠️ presentado sin comprobante guardado ·
-❌ no presentado · ❓ no verificado. **Nada se marca ✅ sin el comprobante del SII**, igual que
+⬜ todavía no vence · ❌ no presentado · ❓ no verificado. **Nada se marca ✅ sin el comprobante del SII**, igual que
 cualquier otro estado compartido de este repo.
