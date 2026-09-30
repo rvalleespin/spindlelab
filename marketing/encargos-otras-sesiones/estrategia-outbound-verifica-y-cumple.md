@@ -335,6 +335,26 @@ habitual, pero es una calificación legal y Ramón la va a confirmar.
 
 ## 7. Forma del correo
 
+### El reparto entre VyC y el motor, decidido por Ramón el 30-sep
+
+No son dos campañas, son dos momentos del mismo correo, y **no hay que unificarlos**:
+
+- **El toque 1 abre con el hallazgo medido de la ley y cierra vendiendo el motor completo.**
+  Ramón: "el mail debe estar enfocado en el motor que mueve tu negocio, que es lo que hace
+  SpindleLab, y de primera instancia está Verifica y Cumple como gran gancho". La plantilla es
+  la de 4 párrafos del 8-sep, con el hallazgo de la ley en el P1 en vez del de AEO. Eso sube el
+  cuerpo a ~200 palabras: **el tope de 130 de más abajo aplica al correo de VyC puro, no a
+  este.**
+- **El toque 2 y el toque 3 se quedan en Verifica y Cumple.** Decisión explícita de Ramón el
+  30-sep: *"que se quede en VyC porque es la puerta de entrada para SpindleLab, es lo más
+  contundente que tenemos para que lleguen a los servicios de la empresa"*.
+
+⚠️ **No "armonices" el seguimiento con la voz del motor.** Es la corrección obvia y es
+equivocada: lo concreto y comprobable del hallazgo de la ley es lo que gana la conversación, y
+el motor se vende después, en la conversación que ese hallazgo abrió. Si un día el toque 2
+suena a catálogo de servicios, se volvió atrás sin querer.
+
+
 - **Voz singular de Ramón.** Es una persona escribiendo, no la marca. "Revisé", "te escribo".
   El plural es para el sitio y la página de LinkedIn.
 - **Bajo 130 palabras** el cuerpo, sin contar la firma ni la línea de baja.
