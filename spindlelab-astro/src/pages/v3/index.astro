@@ -545,7 +545,13 @@ const pasos = [
                     claude/portafolio-constructora, bajo marketing/portafolio/. */}
                 {m.obra ? (
                   <div class="md:col-span-5 md:col-start-8">
-                    <span class="rotulo text-base">Piezas de concepto</span>
+                    {/* EL RÓTULO VIENE DEL DATO, no fijo acá. Estaba escrito «Piezas de
+                        concepto» a mano, y al cambiar la tira a trabajo de cliente real
+                        quedó rotulando de ficticio un sitio que existe y está entregado.
+                        Es el error simétrico del que prohíbe el manual: tan malo es
+                        presentar como real algo inventado como presentar como inventado
+                        algo real. */}
+                    <span class="rotulo text-base">{m.obraRotulo ?? 'Trabajo'}</span>
                     <ul class="list-none p-0 m-0 mt-4 grid gap-4 grid-cols-2">
                       {m.obra.map((o: any) => (
                         <li>
