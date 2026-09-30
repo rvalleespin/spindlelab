@@ -1489,6 +1489,12 @@
               <input type="checkbox" name="botcheck" class="pedir-trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
               <input type="hidden" name="Puntaje del chequeo" value="">
               <input type="hidden" name="Desde" value="">
+              <!-- De dónde llegó la persona al sitio (Instagram, buscador, directo...). Lo
+                   llena `marcarOrigen()` una vez al cargar. Es lo que contesta si una campaña
+                   trajo a alguien: con pocos pedidos, un agregado no dice nada y saber que
+                   ESTE vino de Instagram lo dice todo. Sin tilde en el nombre: Web3Forms los
+                   rompe (medido). -->
+              <input type="hidden" name="Llego de" value="">
 
               <h3 class="pedir-titulo">Pídelo acá</h3>
               <p class="pedir-intro">Esto sí te pide datos, y solo para responderte. Si es un pedido, te escribimos con lo que haríamos y cuánto cuesta. Si solo quieres preguntar, marca la última opción.</p>
@@ -2675,6 +2681,54 @@
   form.addEventListener('change', function (ev) {
     if (ev.target && ev.target.name === 'Pedido') ajustarTextos();
   });
+
+  /* ------------------------------------------------------------------
+     De dónde llegó la persona, para que el correo del pedido lo diga.
+
+     Cero cookies y cero rastreo: se mira el referer que el navegador manda
+     solo, o el utm_source del enlace, y se traduce a UNA palabra de una lista
+     cerrada. No se guarda nada; viaja en el formulario que la persona envía a
+     propósito, junto al resto de lo que escribió.
+
+     ⚠️ LA LISTA ES CERRADA, y no es formalidad: `utm_source` lo escribe quien
+     visita. Lo que no está en la lista es 'otro'.
+
+     ⚠️ Esta lista está repetida en `functions/api/profundo.js`, que la usa para
+     los contadores del servidor. `prueba-uso.mjs` compara las dos y se pone
+     roja si se separan. Si agregas un origen, va en los dos lados.
+  ------------------------------------------------------------------ */
+  // ORIGENES-CERRADOS: instagram linkedin facebook whatsapp correo buscador propio directo otro
+  function origenExterno(referer, busqueda) {
+    const CONOCIDOS = ['instagram', 'linkedin', 'facebook', 'whatsapp', 'correo', 'buscador', 'propio'];
+    try {
+      const utm = (new URLSearchParams(busqueda || '').get('utm_source') || '').toLowerCase().trim();
+      if (CONOCIDOS.indexOf(utm) !== -1) return utm;
+      if (utm) return 'otro';
+    } catch (e) {}
+
+    if (!referer) return 'directo';
+    let host = '';
+    try { host = new URL(referer).hostname.toLowerCase().replace(/^www\./, ''); } catch (e) { return 'otro'; }
+    if (!host) return 'otro';
+
+    if (host === 'instagram.com' || /\.instagram\.com$/.test(host)) return 'instagram';
+    if (host === 'linkedin.com' || /\.linkedin\.com$/.test(host) || host === 'lnkd.in') return 'linkedin';
+    if (host === 'facebook.com' || /\.facebook\.com$/.test(host) || host === 'fb.me') return 'facebook';
+    if (host === 'whatsapp.com' || /\.whatsapp\.com$/.test(host)) return 'whatsapp';
+    if (/^(google|bing|duckduckgo|ecosia|yahoo)\./.test(host) || /\.google\.com$/.test(host)) return 'buscador';
+    if (host === 'verifica.spindlelab.cl') return 'propio';
+    if (host === 'spindlelab.cl' || /\.spindlelab\.cl$/.test(host)) return 'propio';
+    return 'otro';
+  }
+
+  // Una vez al cargar, y no se toca más: es de la visita, no del chequeo. Por eso tampoco
+  // entra en limpiarContexto(), que borra lo que sí cambia entre un pedido y el siguiente.
+  function marcarOrigen() {
+    try {
+      form.elements['Llego de'].value = origenExterno(document.referrer, location.search);
+    } catch (e) {}
+  }
+  marcarOrigen();
 
   // form.reset() no toca los <input type=hidden>: para ellos, el valor actual ES el valor por
   // defecto. Sin limpiarlos a mano, lo siguiente que se enviaba en la misma visita salía con

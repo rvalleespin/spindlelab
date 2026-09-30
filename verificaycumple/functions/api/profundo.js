@@ -1572,6 +1572,10 @@ export const TTL_USO_S = 60 * 60 * 24 * 90;
  * un bucle. Lo que no está en la lista es 'otro'.
  */
 export function origenDeLaVisita(referer, url) {
+  // ORIGENES-CERRADOS: instagram linkedin facebook whatsapp correo buscador propio directo otro
+  // ⚠️ Esta misma lista está repetida en `index.html`, porque el formulario la necesita del
+  // lado del cliente y no puede preguntarle al servidor. `prueba-uso.mjs` compara las dos y
+  // se pone roja si se separan. Si agregas un origen, va en los dos lados.
   const CONOCIDOS = new Set([
     'instagram', 'linkedin', 'facebook', 'whatsapp', 'correo', 'buscador', 'propio',
   ]);
