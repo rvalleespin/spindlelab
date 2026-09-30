@@ -3,7 +3,11 @@
 **Archivo a subir:** `reel.mp4` · 1080×1920 · 16 s · 30 cuadros/s · **sin audio**.
 **Cuenta:** `spindlelab.cl`, y compartir a tu historia personal. Reels es la única superficie
 de esa cuenta con descubrimiento real; el feed es archivo.
-**Estado:** ⛔ **sin publicar.** Nada sale de acá sin tu ojo encima.
+**Estado:** ✅ **PUBLICADO el 30-sep-2026** en `spindlelab.cl` →
+`instagram.com/reel/Dd6dAemM6E2/`. Encuadre **9:16**, portada en "¿ESTÁS SEGURO?", etiqueta de
+IA activada (aparece como *"Contenido generado con IA"*), y **sin audio de tendencia**: salió
+con la pista de silencio, que Instagram registró como "Audio original". Decisión de Ramón,
+sabiendo el costo.
 
 **Archivos**
 
@@ -47,19 +51,42 @@ promesa, dicha sin prometer de más.
 
 ---
 
-## 1. Antes de subir: ponle audio desde la app
+## 1. El audio, y dos cosas que se aprendieron subiéndolo
 
-**El MP4 va mudo a propósito.** No tenemos música con licencia y no vale la pena inventarla.
+⚠️ **UN MP4 SIN PISTA DE AUDIO NO ENTRA POR EL SUBIDOR WEB DE INSTAGRAM.** Se queda en la zona
+de arrastre con la barra girando, para siempre, **sin mensaje de error**. El campo `file` sí
+tiene el archivo (se comprobó: `C:\fakepath\reel.mp4`), pero la interfaz nunca avanza. El
+carrusel de imágenes había entrado sin problema; la diferencia era el video.
 
-Al subirlo, **elige un audio de tendencia dentro de Instagram**, en el paso de edición. Un Reel
-mudo rinde peor y el audio de tendencia es una de las señales con que Instagram reparte
-alcance. La pieza no depende del ritmo: no hay nada que sincronizar.
+**El arreglo:** agregarle una pista de silencio. Entró al instante.
+
+```bash
+~/bin/ffmpeg -y -i reel.mp4 -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 \
+  -c:v copy -c:a aac -b:a 128k -shortest reel-con-pista-de-silencio.mp4
+```
+
+El archivo que se sube es **`reel-con-pista-de-silencio.mp4`**, no `reel.mp4`.
+
+⚠️ **El subidor web NO deja elegir audio.** En la pantalla de edición solo hay portada, acortar
+y un interruptor de "Sonido activado". Y el audio **no se puede agregar después de publicar**:
+para ponerle música hay que borrar el reel y volver a subirlo desde el teléfono.
+
+⚠️ **El recorte "Original" SÍ recorta un video vertical.** Cortaba la cabecera. Hay que elegir
+**9:16** explícitamente, aunque el archivo ya sea 1080×1920.
+
+**Si se vuelve a subir desde el teléfono**, ahí sí se elige un audio de tendencia en el paso de
+edición. Un Reel mudo rinde peor y el audio de tendencia es una de las señales con que Instagram
+reparte alcance. **Ojo:** una cuenta profesional puede ver solo la biblioteca "Sonidos para
+empresas", sin música comercial popular.
 
 ## 2. La portada
 
-El primer cuadro ya es la pregunta y funciona sola. Si prefieres una con la sheriff dentro,
-en el selector de portada anda al **segundo 11 o 12**: ahí está entera y con el documento en
-alto.
+⚠️ **El primer cuadro NO es la pregunta: es cielo vacío**, porque el texto entra con fundido.
+Esta nota decía lo contrario y estaba mal. En el selector de portada hay que **correr el
+recuadro al segundo 2**, que es donde "¿ESTÁS SEGURO?" está entero. Es lo que se usó, y es la
+mejor portada para la grilla: se lee en miniatura.
+
+Si se prefiere una con la sheriff, va en el **segundo 11 o 12**.
 
 ---
 

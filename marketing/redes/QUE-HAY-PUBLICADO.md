@@ -37,6 +37,7 @@ entra sin chocar.
 
 | Publicado | Pieza | Enlace |
 |---|---|---|
+| **30-sep** | **Reel "¿Estás seguro?"** de la campaña de Verifica, 16 s. Encuadre 9:16, portada en la pregunta, **etiqueta de IA activada**, y **sin audio de tendencia**: salió con una pista de silencio que hubo que agregarle para que el subidor web lo aceptara | `instagram.com/reel/Dd6dAemM6E2/` |
 | **29-sep** | **Carrusel "Las 12 cosas"** de la campaña de Verifica, 6 láminas. Con **etiqueta de IA activada** (la sheriff es una imagen fotorrealista generada con IA). Fuente en `marketing/redes/2026-10-octubre-verifica/03-carrusel-las-12-cosas/` | `instagram.com/p/Dd3uPldESqj/` |
 | **visto el 29-sep** | Reel **"Llegó la caballería / ¿Tienes un formulario de contacto?"** (pieza 01 de la campaña). Estaba anotado como "sin publicar" y **está publicado**: se vio en la grilla. No sé la fecha de salida | `instagram.com/p/DdwDroUsR9p/` |
 | **⛔ 25-sep** | "100 de 100, contando solo lo que alcanzamos a ver" — **publicado y eliminado el mismo día por Ramón**: quedaba fuera de la línea de la campaña de Verifica, que se decidió aparte esa tarde | era `instagram.com/p/DduVT6Dkr0N/` |
