@@ -4,7 +4,10 @@
 **Pieza visual:** ninguna. Texto puro.
 **Escribe:** agente-copywriter (Renata) · **Aprobó el texto:** Ramón, 28-sep, sin cambios ("queda
 así, sin agregar nada más")
-**Estado:** ✅ Aprobado, en cola para el miércoles 30-sep. No publicado aún.
+**Estado:** ✅ PUBLICADO Y VERIFICADO (30-sep-2026), perfil personal de Ramón.
+`linkedin.com/feed/update/urn:li:activity:7511055609463476224/`. Post y primer comentario
+confirmados en vivo, leyendo la página después de publicar (texto exacto, sin duplicación,
+autor Ramón Vallejos en ambos).
 
 ## Origen del encargo
 
