@@ -10,7 +10,8 @@
 > plazo los confirma el contador o el propio SII antes de actuar.** Donde hay fuente, está
 > linkeada; donde no hay certeza, está marcado como pendiente de confirmar.
 >
-> Última actualización: 2026-09-30 (F29 declarado sin movimiento, ver §2). Dueño del documento: **Monse (`agente-finanzas`)** — hoy
+> Última actualización: 2026-09-30 (F29 de ago-2026 declarado sin movimiento; patente municipal
+> pendiente confirmada). Dueño del documento: **Monse (`agente-finanzas`)** — hoy
 > vacante, así que lo mantiene quien toque el tema.
 
 ---
@@ -48,16 +49,18 @@ facturación electrónica y cuenta corriente empresa.*
 
 ### ✅ Estado real al 30-sep-2026 (reportado por Ramón)
 
-**El F29 quedó declarado sin movimiento, y no hubo multa.**
-
-Eso resuelve la pregunta de fondo y cambia el punto de partida de este documento:
+**El F29 del período ago-2026 quedó declarado sin movimiento, y no hubo multa.**
+Septiembre todavía no aparece habilitado en el portal.
 
 - **El inicio de actividades está vigente.** No se puede presentar un F29 con el RUT inactivo
-  en el SII, así que el Formulario 4415 quedó procesado. La pregunta 1 de abajo pasa de
-  "¿está aprobado?" a "¿desde qué mes exactamente?", que es lo que dice cuántos períodos
-  hay que cubrir hacia atrás.
-- **La obligación mensual ya corre.** El próximo vencimiento es el **F29 de sep-2026 el
-  20-oct-2026**, y desde ahí todos los meses, con o sin ventas.
+  en el SII, así que el Formulario 4415 quedó procesado.
+- **Rige desde agosto, no desde julio.** Es una inferencia razonable, no un dato leído: el
+  portal ofrece los períodos desde el inicio de actividades en adelante, y agosto fue el
+  primero disponible. Si julio correspondiera, habría aparecido igual que agosto.
+  **No hay períodos atrasados que cubrir.** Se confirma de una mirada al listado de F29 del RUT.
+- **Que septiembre no esté habilitado es el calendario, no un bloqueo.** El período se declara
+  una vez cerrado: septiembre se abre el **1-oct** y vence el **20-oct**. Nada que hacer hasta
+  entonces, y nada que esperar tampoco: el 1-oct ya se puede presentar.
 - **Queda pendiente el comprobante.** Por la convención de §8, esto se anota ⚠️ y no ✅ hasta
   que el PDF del SII esté guardado. No es desconfianza, es la misma regla que se aplica a
   cualquier otro estado de este repo.
@@ -74,15 +77,15 @@ Eso resuelve la pregunta de fondo y cambia el punto de partida de este documento
 
 | # | Pregunta | Cómo se responde | Por qué importa |
 |---|---|---|---|
-| 1 | **¿Desde qué mes está vigente el inicio de actividades?** (que está vigente ya lo sabemos: se pudo declarar) Y: ¿qué período cubrió el F29 declarado, y quedó algún mes anterior sin cubrir? | sii.cl → Mi SII → *Consultar situación tributaria* del RUT 78.474.925-8 · y el listado de F29 presentados | Dice si hay períodos hacia atrás todavía descubiertos. Cada mes vigente sin declarar es una exposición de 1 UTM a 1 UTA (§5), y sale más barato presentarlos en ceros ahora que explicarlos en abril. |
+| 1 | **Confirmar que no quedó ningún período anterior a agosto sin cubrir.** Ya sabemos que el inicio está vigente y que agosto fue el primer período ofrecido; esto solo cierra la inferencia con el dato | sii.cl → Mi SII → listado de F29 presentados del RUT 78.474.925-8 | Un mes vigente sin declarar expone a 1 UTM–1 UTA (§5). Es la verificación más barata del documento: una pantalla. |
 | 2 | **¿Qué régimen quedó marcado?** ProPyme General (14 D N°3) o ProPyme Transparente (14 D N°8) | misma consulta de situación tributaria | Cambia qué se declara en abril y quién paga el impuesto (la empresa o Ramón en su Global Complementario). |
 | 3 | **¿Ramón emitió boletas de honorarios por lo que ya cobró como persona natural?** (Fase 3 y los $235.200 de Bernardo llegaron **sin retención**) | Mi SII → boletas de honorarios emitidas | Si el pagador no retuvo, **el que debe el PPM es él**, mes a mes. Sin eso, la cuenta aparece entera en abril de 2027. |
 | 4 | **¿Hay contador contratado?** | Ramón | Un contador para una SpA sin movimiento cuesta del orden de decenas de miles de pesos al mes. La multa de un solo F29 no presentado parte en 1 UTM (~$71.500). No tenerlo no se sostiene por precio. |
-| 5 | **¿La SpA tiene patente municipal?** | municipalidad del domicilio | Con inicio de actividades vigente corresponde patente. Es el olvido más común de una empresa nueva que opera desde casa, y ahora que sabemos que el inicio está vigente dejó de ser hipotético. |
+| 5 | ~~¿La SpA tiene patente municipal?~~ **Respondida el 30-sep-2026: no la tiene, está pendiente.** Lo que queda es cómo se tramita operando desde el domicilio | municipalidad del domicilio | Ya no es una pregunta sino una tarea, con plazo real: primera cuota en enero-2027. Detalle y qué preguntar, en §4. |
 
-Las preguntas 1 y 2 salen de la misma pantalla de Mi SII y son cinco minutos. La 3 la responde
-Ramón. La 5 es una llamada a la municipalidad. **La 4 sigue siendo la que hace que esto no
-dependa de que alguien se acuerde cada mes.**
+La 1 y la 2 salen de Mi SII y son cinco minutos. La 3 la responde Ramón. La 5 es una llamada a
+la municipalidad. **La 4 sigue siendo la que hace que esto no dependa de que alguien se acuerde
+cada mes** — y ahora con más razón, porque el calendario ya está corriendo de verdad.
 
 ---
 
@@ -128,7 +131,31 @@ espera no es plata, es la declaración.
 |---|---|---|
 | **Declaraciones juradas** | marzo | Las que apliquen según régimen. Las prepara el contador; aquí solo se marca que existen y que vencen **antes** del F22. |
 | **F22 renta** | abril | La SpA declara aunque no haya tenido movimiento. Ramón declara sus honorarios; ahí se descuentan las cotizaciones previsionales que la retención financió. |
-| **Patente municipal** | al tener inicio de actividades; se paga por semestres | Con inicio de actividades en el SII corresponde patente en la municipalidad del domicilio ([ref](https://denegocios.cl/patente-municipal-para-tu-empresa/)). ⚠️ **Verificar si la SpA la tiene.** Es el olvido más común de una empresa nueva que opera desde casa. |
+| **Patente municipal** | dos cuotas: **enero y julio** | Con inicio de actividades en el SII corresponde patente en la municipalidad del domicilio ([ref](https://denegocios.cl/patente-municipal-para-tu-empresa/)). ⚠️ **Pendiente confirmado el 30-sep-2026.** Detalle abajo. |
+
+### Patente municipal — pendiente confirmado (30-sep-2026)
+
+Ramón lo tiene en la lista, sin resolver. Lo que conviene saber antes de llamar:
+
+- **Cuánto.** Se calcula entre **0,25 % y 0,5 % del capital propio tributario** (el porcentaje lo
+  fija cada municipalidad), con **mínimo 1 UTM** (~$71.500) y tope 8.000 UTM. Y hay una regla que
+  aquí probablemente aplica: **cuando el contribuyente no está obligado a llevar balance general,
+  la patente es un monto fijo igual al mínimo, 1 UTM**
+  ([ref](https://transtecnia.cl/articulo-tributario/capital-propio-tributario-para-efectos-de-pago-de-patentes-municipales/)).
+  Para una SpA recién constituida y sin movimiento, **el orden de magnitud realista es el mínimo**,
+  no una cifra que asuste.
+- **Cuándo.** Se paga en **dos cuotas semestrales, enero y julio**
+  ([ref](https://www.asesoriasintegralesjaao.cl/blog/2026/07/02/patente-municipal-comercial-2026-segunda-cuota-julio/)).
+  El próximo hito es **enero de 2027**, así que hay margen para hacerlo bien.
+- **El punto que sí puede trabar.** La SpA opera desde el domicilio de Ramón. Las municipalidades
+  suelen pedir **certificado de informaciones previas / zonificación** antes de otorgar patente
+  comercial, y en zona residencial la vía habitual es inscribirse como **Microempresa Familiar**
+  (Ley 19.749), que existe justamente para permitir actividad económica desde la vivienda.
+  ⚠️ **Esto varía por municipalidad y no está verificado para la de Ramón**: es la pregunta
+  concreta que hay que hacer, no una conclusión.
+- **Qué preguntar, textual:** *"Tengo una SpA de servicios profesionales, sin local, que funciona
+  desde mi domicilio. ¿Qué necesito para la patente: patente comercial con informe de
+  zonificación, o me corresponde Microempresa Familiar?"* Con eso se resuelve en una llamada.
 
 ---
 
@@ -164,12 +191,14 @@ y el daño que de verdad molesta es la anotación, no el monto.
 
 | # | Paso | Quién | Cuándo |
 |---|---|---|---|
-| 1 | ~~Confirmar si el inicio de actividades está aprobado~~ **✅ resuelto 30-sep-2026: está vigente, el F29 se declaró sin movimiento y sin multa.** Queda de ese mismo paso: sacar la **situación tributaria del RUT 78.474.925-8** para ver **desde qué mes** rige y **qué régimen** quedó | Ramón | **esta semana** |
-| 2 | Contar, en el listado de F29 presentados, si quedó algún mes vigente sin cubrir. Si quedó, presentarlo en ceros ahora | Ramón | mismo día que el paso 1 |
-| 2b | Guardar el comprobante PDF del F29 ya declarado y anotarlo en §8. Esto es lo que convierte el ⚠️ en ✅ | Ramón | al tenerlo a mano |
+| 1 | ~~Confirmar si el inicio de actividades está aprobado~~ **✅ resuelto 30-sep-2026: vigente desde agosto, F29 de ago-2026 declarado sin movimiento y sin multa.** Queda de ese mismo paso: ver **qué régimen** quedó marcado en la situación tributaria del RUT 78.474.925-8 | Ramón | **esta semana** |
+| 2 | **Declarar el F29 de sep-2026**, que se habilita el 1-oct y vence el 20-oct. En ceros si sigue sin movimiento | Ramón (o el contador, si ya está) | **entre el 1 y el 20-oct** |
+| 2b | Guardar el comprobante PDF del F29 de agosto y anotarlo en §8. Esto convierte el ⚠️ en ✅ | Ramón | al tenerlo a mano |
+| 2c | **Patente municipal:** la llamada a la municipalidad con la pregunta de §4. Pendiente confirmado por Ramón el 30-sep | Ramón | antes de **enero-2027** (primera cuota) |
 | 3 | **Contratar contador con tarifa de empresa sin movimiento.** El encargo es chico y definido: F29 mensual, DDJJ de marzo, F22 de abril, y decir si falta patente municipal | Ramón | antes del **20-oct** (vence el F29 de sep-2026, ya con obligación vigente y confirmada) |
 | 4 | Completar lo que queda del setup: Certificado Digital SII, facturación electrónica, cuenta corriente empresa. Sin esto la SpA no puede facturar el 30 % de María Loreto | Ramón | antes de la reunión de inicio del **6-oct** |
 | 5 | Revisar si Ramón debió emitir boleta de honorarios por los cobros sin retención, y regularizar si corresponde | contador | con el paso 3 |
+| 7 | ~~Verificar si falta patente municipal~~ **confirmado: falta.** Pasa a ser el paso 2c | — | — |
 | 6 | Volver acá y llenar el registro de §8 | quien toque el tema | cada mes |
 
 **El paso 4 tiene fecha real y consecuencia comercial**, no solo tributaria: María Loreto es
@@ -184,10 +213,10 @@ Se llena hacia adelante. Un mes sin fila es un mes que nadie verificó.
 
 | Período | F29 SpA | F29 / boletas Ramón | Quién lo presentó | Evidencia | Nota |
 |---|---|---|---|---|---|
-| **período por confirmar** ⚠️ | ⚠️ **presentado sin movimiento, sin multa** | ❓ | Ramón | ⚠️ falta guardar el comprobante del SII | Reportado por Ramón el **30-sep-2026**. Confirma que el inicio de actividades está vigente. **Anotar acá qué mes cubrió** y mover la fila a su período. |
-| jul-2026 | ❓ por verificar | ❓ | — | — | Solo aplica si el inicio de actividades rige desde julio |
-| ago-2026 | ❓ por verificar | ❓ | — | — | Venció el 20-sep-2026. Verificar si es el período que ya se declaró o si sigue descubierto |
-| sep-2026 | ⬜ pendiente | ❓ | — | — | Vence el **20-oct-2026**. Obligación confirmada: va sí o sí, aunque siga sin movimiento |
+| jul-2026 | — no aplica | ❓ | — | — | El portal no lo ofreció: el inicio de actividades rige desde agosto. Se cierra con una mirada al listado de F29 (pregunta 1 de §2) |
+| **ago-2026** | ⚠️ **presentado sin movimiento, sin multa** | ❓ | Ramón | ⚠️ falta guardar el comprobante del SII | Reportado por Ramón el **30-sep-2026**. Primer período de la SpA. Vencía el 20-sep: si se presentó después, ver la precisión de §2 sobre la multa |
+| sep-2026 | ⬜ se habilita el **1-oct** | ❓ | — | — | Vence el **20-oct-2026**. Va sí o sí, aunque siga sin movimiento. Que hoy no aparezca es el calendario, no un bloqueo |
+| oct-2026 | ⬜ | ❓ | — | — | Vence el 20-nov-2026 |
 
 Convención: ✅ presentado con comprobante a la vista · ⚠️ presentado sin comprobante guardado ·
 ⬜ todavía no vence · ❌ no presentado · ❓ no verificado. **Nada se marca ✅ sin el comprobante del SII**, igual que
