@@ -3,7 +3,14 @@
 **Formato:** Story estática, 1080×1920, diseñada vertical de nacimiento (no recortada de un cuadrado)
 **Cuenta:** la **personal de Ramón**. Es la pieza que mueve gente de verdad: `@spindle.lab`
 tiene 19 seguidores, así que el alcance real de este lote es la red personal.
-**Estado:** ⛔ **sin publicar.** Nada sale de acá sin tu ojo encima.
+**Estado:** ⛔ **sin publicar, y en pausa a propósito (30-sep).** Esta pieza existía para
+empujar un Reel desde la historia, y el 30-sep Ramón hizo ese empujón **a mano**: compartió el
+carrusel y el reel "¿Estás seguro?" como historias en sus dos cuentas, la personal y la de la
+empresa. El trabajo ya está hecho para esta tanda.
+
+**Se guarda para la próxima pieza que necesite empujón.** No caduca: el gancho "llegó la
+caballería" sirve para cualquier pieza de la campaña. ⚠️ Si se usa, revisar que el sticker de
+enlace apunte a la pieza vigente, no al primer Reel.
 
 **Archivos**
 
