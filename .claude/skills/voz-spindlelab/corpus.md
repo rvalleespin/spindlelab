@@ -279,6 +279,56 @@ Estamos publicando la serie del circuito todo septiembre. Síguenos para no perd
 
 ---
 
+## <a id="8-outbound-rechazado"></a>8. El descarte del outbound (30-sep y 1-oct-2026)
+
+**Estado:** ❌ enviado y después rechazado por el estilo. Diez correos fríos del lote de
+DiarioEmprende salieron el 30-sep; Ramón los leyó y dijo *"están muy largos y/o demasiado
+técnicos"* y, al día siguiente, *"los textos están extraños, se sienten IA y no venden bien el
+servicio que tenemos"*. Entra al corpus porque el descarte enseña más que el acierto, y porque
+los dos tics documentados arriba estaban **todos** en estos correos.
+
+### El párrafo que no funcionó
+
+> Abrí tgfclean.cl en un navegador limpio y lo dejé diez segundos sin tocar nada. En ese rato el
+> sitio ya había escrito doce cookies: Google Analytics y Google Ads ya habían recibido la
+> visita, el Pixel de Meta había cargado y dejado su cookie, y una de las doce quedó en
+> doubleclick.net, **que no es tu dominio**. Al bajar la página, YouTube sumó cinco más. Tienes
+> política publicada, **que es más de lo que tiene casi nadie**, pero…
+
+Cuatro remates que solo califican la frase anterior, cuando el techo son dos. Abre hablando de
+lo que hizo él, no de la situación del lector. Y cuenta la medición en su propio vocabulario:
+cookies contadas, nombres de proveedor, `_fbp`, doubleclick.net.
+
+### La misma cosa, dicha en su voz
+
+> Entré y no toqué nada, ni acepté nada. En diez segundos tu sitio ya le había avisado a Google
+> que yo estaba ahí.
+
+### Lo que faltaba, y era lo que vendía
+
+Dos movimientos que sí están en los textos publicados y los correos no usaban:
+
+1. **El momento incómodo propio.** El post del 22-sep funciona porque dice *"lo primero que hice
+   fue correr el chequeo sobre mi propio sitio"* y que salió mal. Sin eso, un correo frío que
+   señala el sitio ajeno es un informe de inspector. Con eso es alguien contando algo que le
+   pasó. **(Las cifras 36 → 73 no se reusan**, la forma de puntuar cambió; el movimiento sí.)
+2. **La fila de fichas**, del carrusel del motor: *"Tu web, tus redes y tu pauta son fichas de la
+   misma fila: si una está torcida, la energía no llega a la venta, da lo mismo cuánto inviertas
+   en las demás."* Los correos la habían reemplazado por *"soy el motor que cierra ese círculo:
+   que tu sitio esté en orden y convierta al que llega, que Google y la IA te recomienden, y que
+   lo que inviertes en pauta no se escape por una fuga"*. Tres cláusulas abstractas en vez de una
+   imagen concreta. **Ahí se perdía la venta.**
+
+### Y el seguimiento que era una ficha técnica
+
+El copiloto escribía el toque 2 así: *"Si deciden avanzar con X, **esto es lo que instalo:** el
+aviso que bloquea los rastreadores…"*. Corto, correcto, y sin ninguna razón para actuar: es un
+listado de entregables con dos puntos de motor. Reescrito con el precio adelante, el límite
+dicho sin adornos (*"la política de privacidad la tiene que redactar un abogado; en su caso eso
+está resuelto de entrada"*) y un cierre que no empuja.
+
+---
+
 ## <a id="3-mas"></a>7. Dónde hay más material
 
 - **Piezas listas y pasadas por revisión, aún no publicadas:**
