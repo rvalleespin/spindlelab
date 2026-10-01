@@ -349,6 +349,43 @@ No son dos campañas, son dos momentos del mismo correo, y **no hay que unificar
   30-sep: *"que se quede en VyC porque es la puerta de entrada para SpindleLab, es lo más
   contundente que tenemos para que lleguen a los servicios de la empresa"*.
 
+### El error de escritura del 30-sep: contar la medición en vez del hallazgo
+
+Ramón leyó los diez correos y dijo: *"están muy largos y/o demasiado técnicos, deberían tener
+una mejor escritura"*. Tenía razón, y la causa no era el largo, era de dónde salía el texto.
+
+**Los correos estaban escritos en el vocabulario de la sonda.** "Doce cookies, una de ellas en
+doubleclick.net", "el Pixel de Meta cargó y dejó su cookie", "Sourcebuster, WooCommerce,
+PHPSESSID", "un plugin que retrasa los scripts hasta el primer gesto". Todo eso es cierto y
+nada de eso le importa al dueño. Le importa qué le está pasando.
+
+Reglas, con el ejemplo real de tgfclean:
+
+1. **La consecuencia primero, en castellano.** No "escribió doce cookies, GA y Google Ads
+   recibieron la visita", sino *"no toqué nada, ni acepté nada, y en diez segundos tu sitio ya
+   le había avisado a Google que yo estaba ahí"*.
+2. **UN dato como prueba, no el inventario.** Un número concreto basta. La lista completa de
+   cookies y dominios vive en el CSV del banco y en el JSON de la sonda, que es donde
+   corresponde. **El correo hereda la exactitud, no el vocabulario.** El rigor de la sección 3
+   sigue mandando: lo que no se puede afirmar, no se afirma. Solo se dice distinto.
+3. **Cero nombres de proveedor y cero jerga.** Ni `_fbp`, ni `_gcl_au`, ni doubleclick.net, ni
+   "pixel", ni "plugin", ni "tramo pasivo".
+4. **El motor en UNA frase, no en tres cláusulas.** "Eso es lo que hago: dejo el sitio en orden
+   y lo pongo a aparecer donde la gente pregunta. Los precios están publicados en spindlelab.cl."
+   Lo que había antes ("soy el motor que cierra ese círculo: que tu sitio esté en orden y
+   convierta al que llega, que Google y la IA te recomienden, y que lo que inviertes en pauta no
+   se escape por una fuga") suena a folleto pegado al final.
+5. **Sin costuras.** "Te lo cuento porque es el síntoma de algo más grande" es el andamio
+   asomándose. Se saca y se dice la cosa.
+6. **Varía el párrafo del dolor.** Si la misma frase aparece en los diez correos, se lee como
+   plantilla aunque cada hallazgo sea distinto.
+7. **Bajo 150 palabras** el cuerpo, sin firma ni línea de baja. Los del 30-sep tenían 200 a 230.
+
+Y la línea de baja también se acortó, sin perder nada de lo que tiene que decir:
+> Si no quieres que te escriba, dime y no insisto. Saqué tu correo de la Guía de Empresas y
+> Negocios de DiarioEmprende, donde ustedes lo publicaron; en
+> verifica.spindlelab.cl/privacidad digo qué datos trato y cómo pedir que deje de hacerlo.
+
 ⚠️ **No "armonices" el seguimiento con la voz del motor.** Es la corrección obvia y es
 equivocada: lo concreto y comprobable del hallazgo de la ley es lo que gana la conversación, y
 el motor se vende después, en la conversación que ese hallazgo abrió. Si un día el toque 2
