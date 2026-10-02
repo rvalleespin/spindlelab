@@ -79,7 +79,7 @@ dominio. Es la de menor fricción y la que entrega un dato que justifica la conv
 | Activo | Dónde está | Permiso |
 |---|---|---|
 | 2 sitios de Bernardo Combeau, recapturados de los sitios vivos | `public/assets/img/obra/combeau-*.jpg` | ✅ **dado el 30-sep-2026** |
-| Verifica y Cumple (landing real entregada) | `.../verifica-y-cumple-*.jpg` | ⚠️ **a confirmar antes de publicar** |
+| Verifica y Cumple — **producto propio de la casa** (`verifica.spindlelab.cl`), no cliente | `.../verifica-y-cumple-*.jpg` | ✅ propio, sin permiso que pedir |
 | Raigal — pieza de concepto, rubro implantología | `.../raigal*.jpg` + `marketing/portafolio/01-raigal/` | ✅ propia, **rotulada en la pieza** |
 | Aplomo · Deslinde — piezas de concepto | `marketing/portafolio/02-, 03-` | Fuera del sitio por decisión registrada |
 | Manrope + Gabarito + Inter, auto-alojadas | `public/fonts/` (woff2 + css) | ✅ licencia en el repo |
