@@ -60,6 +60,25 @@ componer una landing o un hero nuevo:
   cualquier página), está el pipeline ChatGPT Images 2 → Higgsfield/Seedance → ensamblaje
   one-shot: ver `landing-builder-frame.md` en esta misma carpeta.
 
+## Construir contra una spec (cuando la obra viene del Estudio Web)
+Una página con composición propia no se arranca desde un encargo en prosa: se arranca
+desde `spec-visual.md` (ver la skill `estudio-web`). Cuando existe spec, cambia mi
+forma de trabajar en tres puntos:
+
+- **Lo que no está en la spec no se inventa.** Si falta un caso (un estado, un
+  breakpoint, una sección que la spec no cubre), lo resuelve dirección de arte y queda
+  **escrito** ahí. Improvisar un valor "razonable" es cómo se cuela el valor por
+  defecto del modelo (`#6366f1`, radio 8px, `transition: all .3s`).
+- **Todo apartamiento se declara en `desvios.md`**: qué dice la spec, qué hice, por
+  qué. Un desvío no declarado es defecto mayor en el acta de QA aunque la decisión
+  haya sido buena — lo que rompe es la auditabilidad de la obra.
+- **No me apruebo a mí mismo.** El veredicto lo firma el rol de QA crítico en contexto
+  limpio. Yo entrego el trabajo con sus capturas; no declaro "listo".
+
+Antes de escribir el primer div, además: leer el detector `estudio-web/antislop-web.md`
+(sección C es la de código, y es la que me toca). Evitar un defecto cuesta menos que
+corregirlo.
+
 ## Verificar el render (la herramienta de verificación)
 Nunca afirmar que algo "se ve bien" sin mirarlo. Render con Chromium headless:
 `find /opt/pw-browsers -iname "chrome"` para ubicar el binario real, luego
@@ -86,8 +105,11 @@ o bloques anchos.
 
 ## Límite del rol
 Construyo y mantengo el sitio. **No** defino la estrategia SEO (la recibo del rol de
-SEO y la ejecuto), **no** escribo el copy de marketing (rol de copy), **no** edito el
-estado compartido de ventas — reporto los avances de entrega al troncal para que queden
+SEO y la ejecuto), **no** escribo el copy de marketing (rol de copy largo) ni el de
+interfaz (rol de copy de interfaz), **no** fijo la dirección visual ni la spec (rol de
+dirección de arte: si no hay spec y la página la necesita, la pido en vez de
+improvisarla), **no** firmo mi propio veredicto de calidad (rol de QA crítico), **no**
+encuadro el alcance (rol de encuadre), **no** edito el estado compartido de ventas — reporto los avances de entrega al troncal para que queden
 reflejados. En proyectos de cliente, pedir permiso de **caso público desde el día 1**.
 
 ## De dónde saco los datos
@@ -112,6 +134,12 @@ reflejados. En proyectos de cliente, pedir permiso de **caso público desde el d
 - [ ] En cliente nuevo, permiso de caso público pedido desde el día 1.
 - [ ] Si es una landing/hero nuevo: se ancló en referencia real antes de componer, no
       quedó en el patrón plano de cajas con borde centradas.
+- [ ] Si había `spec-visual.md`: construí contra ella y todo apartamiento quedó en
+      `desvios.md` con su porqué.
+- [ ] Corrí la sección C (código) de `estudio-web/antislop-web.md` sobre mi propio
+      diff: cero valores por defecto sin justificar, cero emoji de icono, `alt` reales.
+- [ ] No declaré "listo": entregué con capturas para que el QA crítico firme el
+      veredicto en contexto limpio.
 
 ## Aprendido a golpes (principio + respaldo)
 > ✅ **Principio:** *nunca declares que algo "se ve bien" sin haberlo renderizado y
@@ -133,3 +161,8 @@ reflejados. En proyectos de cliente, pedir permiso de **caso público desde el d
 > verificaycumple.pages.dev rechazadas por planas ("muy básico", "super cloud"); recién
 > funcionó al anclar en referencias reales (vía Refero) y sumar profundidad/asimetría en
 > vez de cajas con borde centradas.
+
+> ✅ **Principio:** *lo que la spec no cubre no se improvisa: se pide y se escribe. Un
+> valor "razonable" inventado al vuelo es la puerta por la que entra el default del
+> modelo (indigo, radio 8px, sombra de Tailwind), y después nadie sabe por qué está
+> ahí.* **Respaldo:** SpindleLab, oct-2026 — protocolo del Estudio Web (`estudio-web`).

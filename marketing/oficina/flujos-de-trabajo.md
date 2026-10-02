@@ -37,6 +37,16 @@ Nombre humano · `skill` — labor en una línea.
 - **Diego** · `persona-disenador-web` — el sitio propio y los sitios de clientes.
 - **Simón** · `agente-seo-aeo` — el servicio core que se cobra: SEO técnico + visibilidad en IA.
 
+**Estudio Web** (el flujo con el que Entrega construye web — ver flujo 2b)
+- **Mauro** · `web-encuadre` — convierte el encargo en prosa en un brief con criterios
+  verificables y la lista de lo que NO se hace. Dueño de la compuerta 1.
+- **Lucía** · `web-direccion-arte` — referencias reales, **dos** direcciones como
+  tablero renderizado (compuerta 2) y la `spec-visual.md` que el constructor cumple.
+- **Clara** · `web-copy-interfaz` — el texto de la pantalla, en la voz del sitio.
+- **Javiera** · `web-qa-critico` — audita, mide y firma veredicto. **En subagente
+  limpio**: el que construyó no se aprueba a sí mismo.
+- Entrada única: **`/estudio-web`** (orquesta a los cuatro + Diego + Simón).
+
 **Producto & Diseño** (para los productos propios — Praxi)
 - **Nadia** · `producto-ui-ux` — diseño de producto, UI/UX, arquitectura frontend.
 - **Pía** · `agente-growth-producto` — onboarding, activación, lifecycle, retención. **Skill en reserva** (`oficina/skills-en-reserva/`) hasta que haya un caso real de Praxi.
@@ -85,6 +95,34 @@ marca Ganado  →  auditoría técnica + visibilidad  →  ejecuta en el     →
 ```
 Detalle de fases en `ventas/proyectos-en-curso.md`. Simón define el **qué y el
 porqué**; los cambios en el sitio los ejecuta Diego con sus convenciones.
+
+### 2b. Construir o rediseñar un sitio (el Estudio Web)
+```
+Mauro                 [RAMÓN]        Lucía + Clara + Simón      [RAMÓN]
+brief de obra    →  COMPUERTA 1  →  referencias reales,     →  COMPUERTA 2
+(rutas, jerarquía,   aprueba el      2 direcciones como         elige UNA
+activos reales,      brief           tablero renderizado,       dirección
+criterios, lo                        copy real, señales
+que NO se hace)
+
+   Lucía              Diego                  Javiera                Mauro
+→  spec-visual   →  construye contra    →  audita en subagente  →  cierra: capturas,
+   (contrato)       la spec + desvios.md    limpio → acta-qa.md     pendientes, memorias
+                                            (máx. 2 rondas)
+```
+**Dos compuertas y ninguna más.** El criterio de Ramón se gasta donde es barato —una
+página de brief, un tablero— y no mirando el sitio terminado, que es lo que producía
+tres y cuatro pasadas. Entre la spec y el cierre el estudio trabaja solo; solo sube
+algo si el QA rechaza dos veces (entonces el problema está en la spec o en el brief),
+si aparece una restricción que invalida el brief, o si hay que gastar plata o publicar.
+
+**Triaje antes de arrancar:** *obra* (sitio, rediseño, landing, página con composición
+propia) → pipeline completo; *pulido* (una sección que no convence) → Lucía spec-ea
+esa sección + Diego + Javiera, una compuerta; *encargo* (copy, un post, un bug) →
+Diego directo + pase express de Javiera, sin compuertas.
+
+Protocolo, detector anti-slop y plantillas: `.claude/skills/estudio-web/`.
+Artefactos de cada obra: `oficina/obras-web/<cliente>-<obra>/`.
 
 ### 3. Producir contenido (blog + redes)
 ```

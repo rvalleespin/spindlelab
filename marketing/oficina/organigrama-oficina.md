@@ -29,6 +29,8 @@ VENTAS              Raquel (agente-crm) ★
 MARCA & CONTENIDO   Cata (persona-social-media) · Bruno (persona-director-creativo) · Renata (agente-copywriter) ★ · Marta (agente-calendario-editorial) ★
 PAID MEDIA          Gonzalo (persona-paid-media) · Fran (persona-meta-ads)
 ENTREGA             Diego (persona-disenador-web) · Simón (agente-seo-aeo) ★  ← el servicio core que se cobra
+ESTUDIO WEB         Mauro (web-encuadre) ★ · Lucía (web-direccion-arte) ★ · Clara (web-copy-interfaz) ★ · Javiera (web-qa-critico) ★
+                    + Diego construye · Simón pone las señales — orquesta `estudio-web` ★ (2 compuertas, QA independiente)
 PRODUCTO & DISEÑO   Nadia (producto-ui-ux) ★ · Pía (agente-growth-producto) ★   (cross-proyecto: Praxi + web)
 INTELIGENCIA & DATOS  Marco (agente-inteligencia-mercado) ★ ← mira el mercado ANTES de decidir · Nora (agente-analitica) ★ ← mide qué produjo cada frente DESPUÉS
 ADMIN & FINANZAS    Monse (agente-finanzas) ○
@@ -60,12 +62,32 @@ Estado: **✅ trabajando** · **★ nuevo (esta pasada)** · **○ vacante** · 
 | **Fran** | Paid Media | `persona-meta-ads` | Meta Ads Manager (navegador) | `oficina/memoria/fran-meta-ads.md` | Presupuesto/objetivo → campañas Meta (nunca escribe sin OK) | ✅ |
 | **Diego** | Entrega | `persona-disenador-web` | `spindlelab-site/`, sitios de clientes | `oficina/memoria/diego-web.md` | Encargo → sitio/blog publicado (JSON-LD, versionado de assets) | ✅ |
 | **Simón** ★ | Entrega | `agente-seo-aeo` | `ventas/entregas/<cliente>/`, plugins searchfit | `oficina/memoria/simon-seo-aeo.md` (a crear) | Cliente ganado → auditoría técnica + visibilidad en IA + plan implementado (el servicio core) | ★ nuevo |
+| **Mauro** ★ | Estudio Web | `web-encuadre` | `marketing/oficina/obras-web/<cliente>-<obra>/` | `oficina/memoria/mauro-encuadre-web.md` | Encargo en prosa → `brief-de-obra.md` (compuerta 1: rutas, jerarquía, activos reales, criterios verificables, lo que NO se hace) + cierre de obra | ★ nuevo |
+| **Lucía** ★ | Estudio Web | `web-direccion-arte` | ídem (`referencias.md`, `tableros/`, `spec-visual.md`) | `oficina/memoria/lucia-direccion-arte.md` | Brief → lock de referencias reales + **dos** direcciones como tablero renderizado (compuerta 2) → `spec-visual.md` auditable | ★ nuevo |
+| **Clara** ★ | Estudio Web | `web-copy-interfaz` | ídem (`copy-secciones.md`) | `oficina/memoria/clara-copy-interfaz.md` | Brief → copy de pantalla en la voz del sitio (headline, CTA, labels, errores, vacíos, 404) + afirmaciones por verificar | ★ nuevo |
+| **Javiera** ★ | Estudio Web | `web-qa-critico` | ídem (`acta-qa.md`, `capturas/`) | `oficina/memoria/javiera-qa-web.md` | Código construido → `acta-qa.md`: veredicto (Aprobado / Con reparos / **Rechazado**) + defectos numerados + mediciones. Corre en **subagente limpio** | ★ nuevo |
 | **Marco** ★ | Inteligencia & Datos | `agente-inteligencia-mercado` | `marketing/oficina/inteligencia-mercado/` (clientes); `docs/` del producto (Praxi) | `oficina/memoria/marco-inteligencia-mercado.md` | Decisión cara (precio, posicionamiento, nuevo mercado, competidor) → informe de mercado/competencia (cross-proyecto) | ★ nuevo |
 | **Nora** ★ | Inteligencia & Datos | `agente-analitica` | `marketing/reportes/`, GA4 / Search Console | `oficina/memoria/nora-analitica.md` | Actividad de todos los frentes → atribución + reporte mensual (agencia y producto) | ★ nuevo |
 | **Nadia** ★ | Producto & Diseño | `producto-ui-ux` | cross-proyecto (Praxi + web SpindleLab); vive **solo en global** | `oficina/memoria/nadia-producto.md` (a crear) | Pantalla/flujo/feature → diseño UI/UX + arquitectura frontend; sistema anti-slop (brand.json + voice.json, gate en CI) | ★ nuevo |
 | **Pía** ★ | Producto & Diseño | `agente-growth-producto` | repo del producto (Praxi); `oficina/growth-producto/` | `oficina/memoria/pia-growth.md` (a crear) | Producto → onboarding, activación, lifecycle, retención (cross-proyecto) | ★ nuevo |
 | **Monse** ○ | Admin & Finanzas | `agente-finanzas` | `ventas/cobros.md` (a crear), COTIZACIONES/ | — | Proyecto ganado → seguimiento de cobros/fases/facturación | ○ vacante |
 | **El Sueño** | Supervisión | `dream` | `~/.motor-agentico/dreams/` | `state.json` (propio) | 24h de actividad → 4 prescripciones/día | ✅ |
+
+> **Nota — el Estudio Web (2-oct-2026).** No es un departamento nuevo que compita con
+> Entrega: es **el flujo con el que Entrega construye web**. Nació de un problema
+> medido: un sitio se corregía en tres o cuatro pasadas porque el criterio de quien
+> aprueba se gastaba mirando el sitio **terminado**. El estudio mueve esas decisiones
+> hacia adelante y las concentra en **dos compuertas** (el brief, y la elección entre
+> dos direcciones visuales mostradas como tablero renderizado); entre medio trabaja
+> solo, y la revisión la firma Javiera **en subagente limpio**, no el que construyó.
+> Entrada: `/estudio-web`. El protocolo completo, el detector anti-slop (castellano,
+> estructura y código) y las plantillas están en `.claude/skills/estudio-web/`; los
+> artefactos de cada obra, en `oficina/obras-web/<cliente>-<obra>/`.
+>
+> **Por qué estas cuatro skills se llaman `web-*` y no `persona-*`.** Desvío
+> deliberado de la convención de nombres: el prefijo compartido hace que el equipo
+> aparezca junto al escribir `/web` y se lea como lo que es, un equipo. Diego
+> conserva su nombre (`persona-disenador-web`) para no romper lo que ya lo invoca.
 
 > **Nota sobre Nadia (`producto-ui-ux`).** No es un rol de agencia-para-cliente:
 > es **oficio de diseño de producto**, y es **cross-proyecto** (la usas en Praxi y
