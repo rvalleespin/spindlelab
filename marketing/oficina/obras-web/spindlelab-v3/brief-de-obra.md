@@ -3,7 +3,7 @@
 **Fecha:** 2026-10-02 · **Ficha:** `oficina/clientes/spindlelab.md` ·
 **Repo y rama:** este repo, `spindlelab-astro/`; la v3 vive en
 `claude/rebranding-webdev-exploracion` (52 commits, 117 archivos, sin mergear)
-**Tipo:** **obra** · **Aprueba:** Ramón
+**Tipo:** **obra — iteración de diseño** (no publicación; ver §10) · **Aprueba:** Ramón
 
 > **Hallazgo del encuadre: esta obra no empieza de cero.** La v3 está construida: 14
 > páginas bajo `/v3/*`, sistema de diseño propio (campos de color, Manrope auto-alojada,
@@ -131,13 +131,16 @@ dominio del visitante.
 
 ## 8 · Lo que NO se hace en esta obra
 
-1. **No se reabre la dirección visual.** El sistema de la v3 es el acuerdo. Un cambio de
-   dirección es otra obra.
+1. **No se reabre el sistema visual** (paleta, tipografía, campos de color, radios,
+   movimiento): es el acuerdo y se respeta. **Sí se reabre el hero** — titular, bajada,
+   jerarquía y composición del primer viewport — por decisión de la compuerta 1.
 2. **No se escriben páginas nuevas** más allá de `/trabajo/`.
 3. **No se tocan los precios** ni la estructura de planes.
 4. **No se publican Aplomo ni Deslinde** (decisión ya registrada: una sola pieza de
    concepto en el sitio).
-5. **No se reenciende Google Ads.** Eso viene después de medir, y es decisión de Ramón.
+5. **No se publica nada.** Decisión de la compuerta 1. Las rutas siguen bajo `/v3/*` con
+   `noindex`; el sitio en vivo queda intacto. Por lo mismo **no se reenciende Google Ads**:
+   eso viene después de publicar y medir, y es decisión de Ramón.
 6. **No se toca `spindlelab-site/` (v1) ni `spindlelab-site-v2/`** (el experimento en
    React que nunca se usó). Su limpieza es otro encargo.
 7. **No se migra el blog a Markdown ni a content collections.** Va como está en la rama.
@@ -150,5 +153,35 @@ dominio del visitante.
 - `/trabajo/` entra al `sitemap.xml`; `/privacidad/` se conserva tal cual (HTML estático).
 - Lenis se conserva salvo que el QA mida un costo real de rendimiento.
 
-## 10 · Compuerta 1
-- **Aprobado por:** — · **Fecha:** — · **Cambios pedidos al aprobar:** —
+## 10 · Compuerta 1 — cerrada
+
+**Aprobado por:** Ramón · **Fecha:** 2026-10-02 · **Vía:** las tres preguntas bloqueantes
+del encuadre, respondidas en un solo pase.
+
+| Pregunta | Decisión |
+|---|---|
+| Alcance | **Seguir iterando el diseño.** No se publica. Lucía abre otra ronda sobre la v3. |
+| Éxito | **Conversión medida.** No la estética. |
+| Hero | **Reabrirlo ahora**, antes de construir nada más. |
+
+### La contradicción, dicha de frente
+**No se puede medir conversión sin publicar.** Las dos primeras decisiones se excluyen si
+se leen literal. Resuelto así, y es reversible en una línea: esta obra itera el diseño
+**con la conversión como criterio de la spec** — cada decisión del hero se justifica por lo
+que le hace al camino del visitante hasta dejar sus datos, y la spec sale con su plan de
+medición escrito. La medición real empieza el día que se publique, en otra obra. Si lo que
+querías era medir ya, eso es publicar, y se dice en una línea.
+
+### Lectura del alcance elegido
+La opción elegida decía textual *"solo tiene sentido si el sistema visual de la v3 no te
+convence, y en ese caso quiero saber qué específicamente antes de que nadie toque un div"*.
+No llegó ese detalle, pero sí llegó una señal precisa: **reabrir el hero**. Así que el
+encuadre asume que lo que no convence es el primer viewport, no el sistema. Supuesto
+reversible: si lo que no convence son los campos de color, la tipografía o el movimiento,
+dilo y el alcance cambia — eso sí sería reabrir el sistema, y es otra obra.
+
+### Qué se produce en esta obra (y dónde para)
+Fase 1 completa y **para en la compuerta 2**: diagnóstico de por qué el hero no convertiría,
+lock de referencias auditado, y **dos direcciones de hero opuestas** renderizadas a 1440 y
+390 con copy real, cada una con su referencia dominante y qué sacrifica. Eliges una. Recién
+entonces se escribe la spec y se construye.
