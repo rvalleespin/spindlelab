@@ -1,35 +1,28 @@
 # SPL-DIAG-2026-007 — Focus Contable (focuscontable.cl)
 
-**Fecha:** 2-oct-2026 · **Estado:** ⏳ **v2 LISTA, NO ENVIADA** (falta el pase de Ramón).
+**Fecha:** 2-oct-2026 · **Estado:** ⏳ **v3 LISTA, NO ENVIADA** (falta el pase de Ramón).
 
-> **v2 (2-oct, tarde) — rehecha tras la auditoría exhaustiva.** Ramón detectó que la v1 daba por
-> buenos los enlaces sociales sin haberlos pedido: **dos de los tres están muertos**. Se corrió una
-> auditoría de 8 dimensiones con verificación adversarial (115 hallazgos en bruto, **109 confirmados**,
-> detalle completo en `HALLAZGOS-auditoria-completa.md`) y el documento cambió entero:
+> **v3 (2-oct, noche) — reescritura de venta, por decisión de Ramón.** Dos cambios de criterio:
+> 1. **No se regala nada.** La doctrina de la skill (`regala el paso 1 y haz visible la ruta`) queda
+>    revertida para esta pieza por decisión del dueño. El diagnóstico demuestra que miramos a fondo y
+>    encontramos cosas reales, específicas y verificables (eso es la autoridad y el gancho), pero el
+>    **cómo** se arregla queda dentro de lo que se contrata. El bloque de impacto ya no dice «llene
+>    /servicios/, se lo decimos gratis»; ahora nombra el costo («no es grave, es caro») y cierra en la
+>    llamada. El riesgo de DIY que motivaba el regalo se cubre de otra forma: sin entregar el fix, no
+>    hay qué copiar.
+> 2. **Registro de ejecutivo de ventas**, con la voz real de SpindleLab (`voz-spindlelab`): abre en la
+>    situación del prospecto, hechos pelados, reencuadre «no es X, es Y», cero guion largo de efecto,
+>    cero tic de recalificar la frase anterior. Se mantiene «usted» (primera impresión en documento
+>    formal, como el precedente del 006); el tuteo de la voz es para las redes de Ramón, no para esto.
 >
-> - **Se corrige un error de la v1.** La v1 decía que «Sobre Nosotros» no nombra a ningún profesional.
->   **Es falso:** «Eduardo Bascur — Fundador» está en el texto visible, justo después del párrafo donde
->   la extracción de la v1 cortó. Lo cierto es más fino y más vendedor: está nombrado en 1 de 21
->   páginas y en cero schema, mientras el autor que el sitio declara para todo el contenido tributario
->   es un usuario llamado «focuscontable» con avatar genérico.
-> - **Cambia la corrección de mayor impacto.** La v1 regalaba la ficha de identidad (`Organization` +
->   `sameAs`). Ya no sirve: el `sameAs` solo podría apuntar a LinkedIn, porque YouTube y TikTok están
->   muertos, y declarar entidades muertas es peor que no declarar nada. La v2 elige **`/servicios/`**:
->   la página que vende los nueve servicios tiene **una sola palabra propia**, sin meta description, y
->   es **huérfana** (está en el sitemap que se le entrega a Google, pero ningún enlace interno lleva a
->   ella). Gana por jerarquía: el acceso al sitio está sano, pero la puerta de lo que se cobra está
->   tapiada por dentro, y nada aguas abajo (schema, citabilidad) sirve sobre una página que no dice nada.
-> - **Cambian las tres razones**, ahora sostenidas por hechos que el prospecto comprueba en segundos:
->   la página de servicios vacía y huérfana; la autoridad que no llega a las máquinas; y lo que pierde
->   al que sí llega (Lorem ipsum visible en la portada, tienda sin medios de pago, formulario con los
->   campos cruzados, cero medición).
-> - **El ancla verificable es mejor:** ya no es el JSON-LD, es «abra su portada y baje hasta Preguntas
->   Frecuentes». Seis preguntas en inglés respondidas en latín, a la vista.
->
-> **Lo que NO entró, a propósito.** Hay 109 hallazgos confirmados y al documento entraron tres razones
-> y una corrección. El resto (la tienda que no cobra, el Aula Virtual que publica el teléfono de un
-> tercero, las páginas legales inexistentes, los testimonios con fotos de banco) es exactamente lo que
-> se cobra. Regalar la auditoría completa mata la venta: regla de la casa.
+> **⚠️ Incidente durante la auditoría (2-oct):** dos subagentes del workflow de auditoría exhaustiva
+> **enviaron los formularios de contacto y cotización reales de focuscontable.cl en producción** (varias
+> entradas de prueba, una tanda seguida) al probar la protección anti-spam. El harness los marcó como
+> «Third-Party Attack». Eso cae en el buzón/CRM del prospecto como pruebas de SpindleLab con fecha de
+> hoy. **Acción:** la línea de disculpa va en el correo de Ramón (decisión del 2-oct). **Ningún hallazgo
+> que salió de tocar los formularios entró al documento;** el diagnóstico se sostiene solo sobre GET y
+> parseo de JSON-LD (solo lectura). Pendiente: limpiar del `HALLAZGOS-auditoria-completa.md` lo que vino
+> de enviar formularios.
 
 ---
 
