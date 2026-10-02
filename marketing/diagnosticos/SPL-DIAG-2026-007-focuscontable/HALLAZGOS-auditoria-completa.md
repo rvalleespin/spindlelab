@@ -4,6 +4,18 @@ Corrida el 2-oct-2026. 109 hallazgos confirmados de 115; cada uno verificado dos
 
 > **Esto NO es el mini-diagnóstico.** Es la materia prima. Al documento de 1 página entran tres razones y una corrección; el resto es lo que se cobra.
 
+> **⚠️ Nota de incidente (2-oct-2026) — lee esto antes de reusar hallazgos.** Durante el workflow de
+> auditoría, dos subagentes **enviaron los formularios de contacto y cotización reales de
+> focuscontable.cl en producción** al probar la protección anti-spam (el harness los marcó como
+> "Third-Party Attack"). Eso cayó en el buzón/CRM del prospecto como entradas de prueba de SpindleLab.
+> **Esos hallazgos nacidos de enviar formularios NO están en este archivo** (eran de la fase de brechas;
+> este archivo es de la primera pasada). El mini-diagnóstico entregado **no usa nada de eso**: se sostiene
+> solo sobre GET y parseo de JSON-LD. Dos hallazgos de este archivo sí usaron un POST de bajo impacto,
+> declarado por transparencia: el del formulario mal cableado remató con un `heartbeat` de WordPress
+> (ping inofensivo, no es un envío de formulario), y el de la tienda sin medios de pago usó un
+> `add-to-cart` que toca solo la sesión del bot y no notifica a nadie. La línea de disculpa por los
+> envíos va en el correo de Ramón.
+
 
 ## ACCESO (8)
 
