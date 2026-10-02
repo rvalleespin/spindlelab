@@ -15,8 +15,8 @@
 > plazo los confirma el contador o el propio SII antes de actuar.** Donde hay fuente, está
 > linkeada; donde no hay certeza, está marcado como pendiente de confirmar.
 >
-> Última actualización: 2026-10-02 (entra dinero a la cuenta de la empresa: el F29 de sep-2026
-> ya no es sin movimiento). Dueño del documento: **Monse (`agente-finanzas`)** — hoy
+> Última actualización: 2026-10-02 (pago 1 en proceso: el IVA cae en el F29 de oct, vence 20-nov).
+> Dueño del documento: **Monse (`agente-finanzas`)** — hoy
 > vacante, así que lo mantiene quien toque el tema.
 
 ---
@@ -111,9 +111,9 @@ cada mes** — y ahora con más razón, porque el calendario ya está corriendo 
 Dicho de otra forma: **la cuenta corriente empresa vacía no es un argumento.** Lo que el SII
 espera no es plata, es la declaración.
 
-> **Y desde octubre de 2026 esto dejó de ser el caso central.** Ya entra dinero a la cuenta de la
-> empresa, así que la pregunta ya no es si declarar sin movimiento, sino **cuánto IVA se debe**.
-> El F29 pasa de trámite en ceros a cálculo real. La lógica está en
+> **Y desde octubre de 2026 esto deja de ser el caso central.** Con el pago 1 en curso, el F29
+> pasa de trámite en ceros a cálculo real. El mes en que cae lo define la fecha de la factura o la
+> de la plata, la que ocurra primero (art. 9 DL 825), no la fecha del acuerdo. La lógica está en
 > `ventas/instructivo-contable.md`.
 
 ---
@@ -202,7 +202,8 @@ y el daño que de verdad molesta es la anotación, no el monto.
 | # | Paso | Quién | Cuándo |
 |---|---|---|---|
 | 1 | ~~Confirmar si el inicio de actividades está aprobado~~ **✅ resuelto 30-sep-2026: vigente desde agosto, F29 de ago-2026 declarado sin movimiento y sin multa.** Queda de ese mismo paso: ver **qué régimen** quedó marcado en la situación tributaria del RUT 78.474.925-8 | Ramón | **esta semana** |
-| 2 | **Declarar el F29 de sep-2026** (habilitado desde el 1-oct, vence el 20-oct). ⚠️ **Ya no va en ceros:** hay dinero recibido en la cuenta de la empresa, así que hay IVA que determinar. Primero: qué entró, cuándo, y si está facturado | Ramón + contador | **entre el 1 y el 20-oct** |
+| 2 | **Declarar el F29 de sep-2026** (habilitado desde el 1-oct, vence el 20-oct). Probablemente en ceros: el pago 1 estaba en proceso al 2-oct. Antes de presentarlo, confirmar que no entró nada en septiembre | Ramón | **entre el 1 y el 20-oct** |
+| 2d | **El F29 de oct-2026 (vence 20-nov) sí lleva IVA:** el del pago 1. Apartar los **$67.830** el día que entre la plata, no el 19-nov | Ramón | al recibir el pago 1 |
 | 2b | ~~Guardar el comprobante del F29 de agosto~~ **ya está guardado** (carpeta `SpindleLab` de la nube, 30-sep). Queda anotar **folio y fecha de presentación** en §8: eso convierte el ⚠️ en ✅ y de paso aclara si agosto entró dentro de plazo | Ramón, o una sesión local en el Mac | próxima vez que se abra el repo en el Mac |
 | 2c | **Patente municipal:** la llamada a la municipalidad con la pregunta de §4. Pendiente confirmado por Ramón el 30-sep | Ramón | antes de **enero-2027** (primera cuota) |
 | 3 | **Contratar contador con tarifa de empresa sin movimiento.** El encargo es chico y definido: F29 mensual, DDJJ de marzo, F22 de abril, y decir si falta patente municipal | Ramón | antes del **20-oct** (vence el F29 de sep-2026, ya con obligación vigente y confirmada) |
@@ -225,8 +226,8 @@ Se llena hacia adelante. Un mes sin fila es un mes que nadie verificó.
 |---|---|---|---|---|---|
 | jul-2026 | — no aplica | ❓ | — | — | El portal no lo ofreció: el inicio de actividades rige desde agosto. Se cierra con una mirada al listado de F29 (pregunta 1 de §2) |
 | **ago-2026** | ⚠️ **presentado sin movimiento, sin multa** | ❓ | Ramón | comprobante **existe**: PDF en la carpeta `SpindleLab` de la nube personal de Ramón (reportado 30-sep-2026). **Falta el folio y la ruta exacta acá** | Reportado por Ramón el **30-sep-2026**. Primer período de la SpA. Vencía el 20-sep: si se presentó después, ver la precisión de §2 sobre la multa |
-| sep-2026 | ⬜ **habilitado desde el 1-oct** | ❓ | — | — | Vence el **20-oct-2026**. ⚠️ **Ya NO es sin movimiento:** entró dinero a la cuenta de la empresa. Hay IVA que determinar. Ver `ventas/instructivo-contable.md` idea 3 |
-| oct-2026 | ⬜ | ❓ | — | — | Vence el 20-nov-2026 |
+| sep-2026 | ⬜ **habilitado desde el 1-oct** | ❓ | — | — | Vence el **20-oct-2026**. El pago 1 estaba *en proceso* al 2-oct, así que probablemente este mes **todavía va en ceros**. Confirmar que no entró nada más en septiembre |
+| oct-2026 | ⬜ | ❓ | — | — | Vence el **20-nov-2026**. Aquí cae el IVA del **pago 1 de María Loreto**: $424.830 con IVA, de los cuales **$67.830 son IVA débito**. Ver `ventas/instructivo-contable.md` |
 
 Convención: ✅ presentado con comprobante a la vista · ⚠️ presentado sin comprobante guardado ·
 ⬜ todavía no vence · ❌ no presentado · ❓ no verificado. **Nada se marca ✅ sin el comprobante del SII**, igual que

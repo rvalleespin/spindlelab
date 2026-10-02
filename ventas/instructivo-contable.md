@@ -60,9 +60,11 @@ En español: **si la plata ya entró a la cuenta de la empresa, el IVA de ese me
 emitido la factura o no.** Recibir primero y facturar después no corre el plazo: lo único que
 hace es dejarte sin el documento que respalda un impuesto que igual debes.
 
-> ⚠️ **Esto tiene efecto inmediato.** Si el dinero entró en septiembre, el F29 de sep-2026
-> (vence el **20-oct**) ya **no** es un F29 sin movimiento. Hay que ver qué entró, cuándo, y si
-> está facturado. Es la pregunta abierta al final de este documento.
+> ⚠️ **Esto decide en qué F29 cae el pago 1.** El pago 1 está **en proceso** al 2-oct, así que lo
+> más probable es que la plata se perciba y la factura se emita en **octubre**: entonces el IVA va
+> en el **F29 de oct-2026, que vence el 20-nov**, y el **F29 de sep-2026 (20-oct) todavía va en
+> ceros**. Lo que define el mes no es cuándo cerraste el trato: es la fecha de la factura o la de
+> la plata, la que ocurra primero. **Si algo entró en septiembre, ese F29 deja de ir en ceros.**
 
 ### 4. El impuesto a la renta se paga sobre la utilidad, no sobre lo que entró
 
@@ -226,6 +228,117 @@ conviene, **saber eso en octubre es muy distinto a saberlo en mayo.**
 
 ---
 
+## El pago 1, con números
+
+Es la Fase 1 de María Loreto: **30 % = $424.830 con IVA** (del proyecto de $1.190.000 + IVA).
+Vale desarmarlo, porque el saldo del banco va a decir $424.830 y esa cifra engaña:
+
+| Concepto | Monto | De quién es |
+|---|---|---|
+| Entra a la cuenta | **$424.830** | |
+| IVA (19 % sobre el neto) | **−$67.830** | **del fisco.** Se entrega en el F29 del mes siguiente |
+| Ingreso real de la empresa | **$357.000** | de la empresa |
+| PPM (0,125 % del neto) ⚠️ tasa a confirmar | **−$446** | anticipo de la renta, va en el mismo F29 |
+| Queda para gastos del mes y retiro | **≈ $356.550** | |
+
+**La cifra que importa recordar es $67.830.** Ese es el pedazo que no es tuyo ni de la empresa.
+Antes de mover un peso a tu cuenta personal, ese monto se aparta.
+
+Y de los $356.550 restantes, primero salen los gastos del negocio del mes (las suscripciones,
+los dominios, lo que sea que esté pagando la operación). **Lo que sobra después de eso es lo que
+se puede retirar sin dejar la empresa en descubierto el día 20.**
+
+## Cómo sacar ese dinero: retiro, no contrato
+
+Para este pago, **retiro**. Sin discusión, y por tres razones:
+
+1. **No requiere nada.** Un retiro es una transferencia de la cuenta de la empresa a la tuya,
+   registrada como retiro del accionista. No hay contrato que firmar, ni liquidación que emitir,
+   ni planilla mensual que mantener. Es legal y es lo normal en una SpA de un solo dueño.
+2. **Un sueldo empresarial para un pago de $357.000 no se sostiene.** El sueldo empresarial exige
+   una remuneración mensual **razonablemente proporcionada** por un trabajo real, y eso supone un
+   flujo estable que todavía no existe. Montarlo ahora significa asumir una obligación mensual
+   fija con el primer ingreso de la empresa en la mano.
+3. **Y su principal ventaja depende del régimen, que todavía no sabemos.** El sueldo empresarial
+   sirve porque **es gasto** y baja la utilidad. Pero si el régimen quedó en **14 D N°8
+   (Transparente), la empresa paga 0 % de todas formas**: no hay impuesto que bajar, y la ventaja
+   casi se esfuma. Montar una estructura de sueldo antes de saber el régimen es trabajar al revés.
+
+**Entonces, el orden correcto es este:**
+
+| Cuándo | Qué |
+|---|---|
+| Ahora | Emitir la factura, apartar el IVA, pagar los gastos del mes, **retirar el resto** |
+| Al saber el régimen | Recién ahí evaluar sueldo empresarial, con el contador |
+| Cuando haya ingreso mensual recurrente | Ahí el sueldo empresarial empieza a tener sentido de verdad |
+
+⚠️ **Lo único que un retiro sí necesita:** que quede registrado como retiro en la contabilidad de
+la empresa, y que la transferencia tenga una descripción clara ("retiro accionista oct-2026").
+No es burocracia: es lo que evita que en abril esa plata parezca un misterio.
+
+## La idea de que el próximo cliente "boletee" a tu nombre
+
+Es una pregunta razonable y la respuesta es **no**, pero el motivo principal no es legal. Es
+aritmético, y conviene verlo antes del argumento de riesgo.
+
+### Primero, la aritmética: para tu cliente objetivo, no ahorras nada
+
+Es cierto que una **boleta de honorarios de persona natural está exenta de IVA**
+(art. 12 letra E N°8 de la Ley del IVA, en relación con el art. 42 de la LIR — exención que la
+Ley 21.420 mantuvo intacta,
+[ref](https://www.sii.cl/destacados/iva_prestacion_servicios/)). El 19 % desaparece. Pero mira
+qué pasa según quién sea el cliente:
+
+| Cliente | Facturando por la SpA | Boleteando como persona natural |
+|---|---|---|
+| **Empresa con giro** (tu ICP: contadores, abogados, clínicas) | le cobras 19 %, **que él recupera como crédito fiscal**. Costo real para él: **cero** | no hay IVA, **pero te retiene 15,25 %** (2026) y el resto va a tu Global Complementario |
+| **Persona natural** (María Loreto) | el 19 % es costo real para ella | no hay IVA ni retención, pero el ingreso completo entra a tu Global Complementario |
+
+**Para el cliente empresa, que es el ICP del negocio, cambiar a boleta te deja peor:** sacrificas
+un IVA que a él no le costaba nada y a cambio te comes una retención de 15,25 % sobre el bruto.
+No es una optimización, es un intercambio desfavorable.
+
+Solo en el caso del cliente persona natural hay un ahorro para *él*, y lo pagas tú en forma de
+renta personal más alta y de una empresa que vuelve a no facturar nada.
+
+### Segundo, el riesgo, que es real pero secundario
+
+Si el cliente llega por spindlelab.cl, recibe una cotización de SpindleLab, conversa con
+hola@spindlelab.cl y contrata a la marca, entonces **quien presta el servicio es la empresa**. Que
+el documento salga de tu RUT personal es una desalineación entre lo que ocurre y lo que se
+documenta.
+
+El Código Tributario sanciona como elusión dos conductas: el **abuso de las formas jurídicas**
+(actos que no producen resultados relevantes más allá del ahorro tributario) y la **simulación**
+(usar actos o contratos para disfrazar la naturaleza real del negocio). La Ley 21.713 de 2024
+reforzó esa norma general
+([ref](https://mirada.fen.uchile.cl/articulo/ver/modernizacion-tributaria-en-marcha-lo-que-cambia-con-la-ley-21-713)).
+Un arreglo cuyo único efecto relevante es no pagar IVA, sobre un negocio que todo el resto de la
+evidencia atribuye a la SpA, es exactamente la figura que esa norma describe.
+
+Y hay un detalle que lo hace peor en este caso particular: **el sitio publica el RUT y la razón
+social de la SpA como señal de confianza**. Operar visiblemente como SpindleLab SpA y documentar
+como persona natural es una contradicción que queda escrita en tu propio sitio.
+
+### Lo que sí es legítimo
+
+Que tomes un trabajo **genuinamente aparte**, a tu nombre, no vendido como SpindleLab, sin usar la
+marca ni el aparato de la empresa, y lo boletees como independiente. Eso no es un truco: es
+trabajo freelance, y cualquiera puede tener una empresa y además trabajar por su cuenta. **Lo que
+no funciona es que "el próximo cliente de SpindleLab" sea ese caso.**
+
+### La regla que queda
+
+> **Contrato vendido como SpindleLab → factura de la SpA, + IVA. Sin excepciones por conveniencia
+> tributaria.** Es la misma regla del 25-jul-2026 (`ventas/proyectos-en-curso.md`), y esta
+> conversación la confirma en vez de abrirla.
+
+Si el 19 % se vuelve un problema comercial recurrente con clientes personas naturales, el camino
+no es boletear: es la discusión de estructura que quedó anotada arriba (una Ltda. de profesionales
+para esa línea), que cuesta plata y requiere socios profesionales reales. Hoy no se hace.
+
+---
+
 ## La rutina mensual, en concreto
 
 Esto es el instructivo propiamente. Son cuatro movimientos, no cuarenta.
@@ -270,7 +383,7 @@ ordenados, abril es un trámite; si no, abril es una reconstrucción.**
 
 | # | Pregunta | Quién | Por qué urge |
 |---|---|---|---|
-| 1 | **¿Qué entró a la cuenta de la empresa, cuándo, y está facturado?** | Ramón | Define el F29 de sep-2026, que vence el **20-oct** y ya no es sin movimiento |
+| 1 | **¿Entró algo en septiembre, o el pago 1 cae recién en octubre?** Y la fecha de la factura | Ramón | Define si el F29 de sep-2026 (vence 20-oct) va en ceros o con IVA, y si el pago 1 cae en el F29 de oct (vence 20-nov) |
 | 2 | **¿Qué régimen quedó marcado, 14 D N°3 o 14 D N°8?** | Mi SII → situación tributaria | Decide si pagas 12,5 % o 0 %, y si hay que corregirlo hay plazo |
 | 3 | **¿Cuál fue tu renta personal total de 2026?** (honorarios incluidos) | Ramón | Sin ese número, la comparación de regímenes es teoría |
 | 4 | **Contador.** | Ramón | Las preguntas 2 y 3 se cruzan en una conversación de 30 minutos. Es el mejor dinero que vas a gastar este mes |
