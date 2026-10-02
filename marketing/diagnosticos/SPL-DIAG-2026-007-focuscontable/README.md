@@ -1,6 +1,35 @@
 # SPL-DIAG-2026-007 — Focus Contable (focuscontable.cl)
 
-**Fecha:** 2-oct-2026 · **Estado:** ⏳ **LISTO, NO ENVIADO** (falta el pase de Ramón).
+**Fecha:** 2-oct-2026 · **Estado:** ⏳ **v2 LISTA, NO ENVIADA** (falta el pase de Ramón).
+
+> **v2 (2-oct, tarde) — rehecha tras la auditoría exhaustiva.** Ramón detectó que la v1 daba por
+> buenos los enlaces sociales sin haberlos pedido: **dos de los tres están muertos**. Se corrió una
+> auditoría de 8 dimensiones con verificación adversarial (115 hallazgos en bruto, **109 confirmados**,
+> detalle completo en `HALLAZGOS-auditoria-completa.md`) y el documento cambió entero:
+>
+> - **Se corrige un error de la v1.** La v1 decía que «Sobre Nosotros» no nombra a ningún profesional.
+>   **Es falso:** «Eduardo Bascur — Fundador» está en el texto visible, justo después del párrafo donde
+>   la extracción de la v1 cortó. Lo cierto es más fino y más vendedor: está nombrado en 1 de 21
+>   páginas y en cero schema, mientras el autor que el sitio declara para todo el contenido tributario
+>   es un usuario llamado «focuscontable» con avatar genérico.
+> - **Cambia la corrección de mayor impacto.** La v1 regalaba la ficha de identidad (`Organization` +
+>   `sameAs`). Ya no sirve: el `sameAs` solo podría apuntar a LinkedIn, porque YouTube y TikTok están
+>   muertos, y declarar entidades muertas es peor que no declarar nada. La v2 elige **`/servicios/`**:
+>   la página que vende los nueve servicios tiene **una sola palabra propia**, sin meta description, y
+>   es **huérfana** (está en el sitemap que se le entrega a Google, pero ningún enlace interno lleva a
+>   ella). Gana por jerarquía: el acceso al sitio está sano, pero la puerta de lo que se cobra está
+>   tapiada por dentro, y nada aguas abajo (schema, citabilidad) sirve sobre una página que no dice nada.
+> - **Cambian las tres razones**, ahora sostenidas por hechos que el prospecto comprueba en segundos:
+>   la página de servicios vacía y huérfana; la autoridad que no llega a las máquinas; y lo que pierde
+>   al que sí llega (Lorem ipsum visible en la portada, tienda sin medios de pago, formulario con los
+>   campos cruzados, cero medición).
+> - **El ancla verificable es mejor:** ya no es el JSON-LD, es «abra su portada y baje hasta Preguntas
+>   Frecuentes». Seis preguntas en inglés respondidas en latín, a la vista.
+>
+> **Lo que NO entró, a propósito.** Hay 109 hallazgos confirmados y al documento entraron tres razones
+> y una corrección. El resto (la tienda que no cobra, el Aula Virtual que publica el teléfono de un
+> tercero, las páginas legales inexistentes, los testimonios con fotos de banco) es exactamente lo que
+> se cobra. Regalar la auditoría completa mata la venta: regla de la casa.
 
 ---
 
