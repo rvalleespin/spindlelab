@@ -1,6 +1,15 @@
 # SPL-DIAG-2026-007 — Focus Contable (focuscontable.cl)
 
-**Fecha:** 2-oct-2026 · **Estado:** ⏳ **v4 LISTA, NO ENVIADA** (falta el pase de Ramón).
+**Fecha:** 2-oct-2026 · **Estado:** ⏳ **v5 LISTA — borrador de correo creado en Gmail, falta que Ramón lo mande.**
+
+> **v5 (2-oct) — el hilo de correo corrigió dos cosas de fondo.** Al leer el hilo real (Gmail, hola@spindlelab.cl):
+> 1. **No es frío: Eduardo pidió el diagnóstico.** El outbound del 30-sep (gancho «no tiene política de privacidad») funcionó; el 1-oct Eduardo Bascur respondió pidiendo el diagnóstico gratis. Esta es la respuesta a eso, dentro de plazo.
+> 2. **Es PUERTO MONTT, no Santiago** (su firma: Valle Volcanes 5202, Puerto Montt). El outbound prometió textual «qué responde ChatGPT cuando preguntan por un contador en Puerto Montt». La v4 abría con competidores de Santiago (query genérica de Ramón). Ramón corrió la query correcta y ChatGPT nombró **siete firmas de Puerto Montt con sus reseñas y años** (SotoMontenegro, Maldonado y Alfero, RCE, E.R.V, etc.) y Focus Contable **no estaba**. Ese es el gancho ahora, y conecta con el hallazgo de que el sitio no muestra reseñas ni autor.
+> 3. **Documento pasado a TÚ** (el hilo completo es tuteo; el outbound también). Se abandonó el «usted» de la v3-v4.
+> 4. **Hallazgo nuevo del hilo, afilado:** la firma de Eduardo enlaza su canal real de YouTube «Eduardo Bascur | Impuestos» (@eduardobascurimpuestos, vivo, 200), pero el SITIO enlaza @eduardohernandezbascur5460 (404). El sitio manda al muerto. Entró a la razón 2.
+> 5. **Chequeo alineado a `verifica.spindlelab.cl`** (lo que el outbound ya le dio), no `spindlelab.cl/diagnostico`.
+>
+> **Correo de respuesta:** borrador creado en Gmail, en el mismo hilo, en tú, primera persona de Ramón, con el PDF adjunto y la línea de disculpa por los envíos de prueba. **Ramón revisa y manda.** Pipeline: NO lo toca este rol; cuando se mande, el troncal/CRM mueve a «Diagnóstico enviado» (hay evidencia: Eduardo lo pidió el 1-oct).
 
 > **v4 (2-oct, noche) — la prueba en vivo cambió el gancho.** Ramón corrió la consulta real en ChatGPT
 > («¿quién me ayuda a formalizar mi empresa en Chile?») y el motor respondió con **cinco empresas de
