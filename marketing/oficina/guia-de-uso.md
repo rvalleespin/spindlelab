@@ -43,6 +43,11 @@ cuando quieres llamar directo a un especialista para una tarea puntual.
 | Un post de redes con el tono y la cadencia correctos | Cata | `/persona-social-media` |
 | Armar/ajustar el calendario editorial | Marta | `/agente-calendario-editorial` |
 | Una pieza visual (carrusel, Reel, key visual) | Bruno | `/persona-director-creativo` |
+| **Construir o rediseñar un sitio / una landing** (de una pasada, con compuertas) | el Estudio Web | `/estudio-web` |
+| Encuadrar una obra web antes de que alguien toque código | Mauro | `/web-encuadre` |
+| Fijar el lenguaje visual de un sitio (referencias + tablero + spec) | Lucía | `/web-direccion-arte` |
+| Escribir el texto de una pantalla (headline, CTA, labels, errores, 404) | Clara | `/web-copy-interfaz` |
+| Revisar una página antes de que la vea el cliente (anti-slop, medido) | Javiera | `/web-qa-critico` |
 | Revisar/ajustar Google Ads | Gonzalo | `/persona-paid-media` |
 | Montar/gestionar Meta Ads | Fran | `/persona-meta-ads` |
 | Tocar el sitio web o publicar un blog | Diego | `/persona-disenador-web` |

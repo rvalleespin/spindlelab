@@ -19,11 +19,47 @@ The defining structure here is that **multiple Claude Code sessions work on this
 - `agente-troncal-marketing` — the trunk/coordinator. The **only** session meant to write the shared tracking docs (`marketing/plan-operativo-90-dias.md`, `ventas/pipeline.md`, the outbound trackers). Runs in the cloud (Claude Code Remote).
 - `persona-social-media`, `persona-director-creativo` — LinkedIn/Instagram content and visual production (carousels, Reels, Stories, banners).
 - `persona-paid-media` (Google Ads) / `persona-meta-ads` (Meta Ads) — paid channels. Browser access differs per session/environment (see below) — never assume one has it just because another does.
-- `persona-disenador-web` — `spindlelab-site/` and client web-dev delivery.
+- `persona-disenador-web` — `spindlelab-site/` and client web-dev delivery. For anything
+  with its own composition (a site, a redesign, a landing) this session is now one role
+  inside a pipeline, not the whole job — see **The web team** below.
 - `mini-diagnostico` — generates the 1-page SEO/AI-visibility audit promised to prospects within 48h.
 - `buscar-leads`, `agente-outbound`, `agente-crm` — recurring task workflows (lead sourcing, outbound sequencing, pipeline updates).
 
 The full org chart of these agents (who does what, their working folder, memory, and open vacancies) is in **`marketing/oficina/organigrama-oficina.md`**; per-agent memory lives in `marketing/oficina/memoria/`.
+
+### The web team (`estudio-web`) — added 2 oct 2026
+
+Web work used to take three or four passes because the approver's judgment was spent
+looking at the *finished* site: a "no me convence" cost a full rebuild (it happened —
+three directions for a client landing rejected as "muy básico", "super cloud", sep
+2026). The fix in this repo is a pipeline with **exactly two gates** and an
+independent reviewer, orchestrated by the `estudio-web` skill:
+
+`/web-encuadre` (Mauro, brief + what is NOT built) → **gate 1** → `/web-direccion-arte`
+(Lucía, real-reference lock + **two** differentiated directions as a rendered style
+tile) ‖ `/web-copy-interfaz` (Clara, real screen copy) ‖ `/agente-seo-aeo` (Simón,
+signal layer) → **gate 2: pick one direction** → `spec-visual.md` →
+`/persona-disenador-web` (Diego builds against the spec, logs deviations) →
+`/web-qa-critico` (Javiera, written verdict) → close.
+
+Three mechanics matter more than the roster, and they are the reason it works:
+
+- **Javiera must run in a fresh subagent.** A reviewer who heard the builder's
+  reasoning approves what they understand rather than what they see. Independence here
+  is a separate context, not an attitude.
+- **Nothing is built without `spec-visual.md`, and nothing is spec'd without real
+  references.** A corrections history lives at the end of the spec — a fix that stays
+  in the chat comes back as a defect next pass.
+- **Two directions, never three.** Three get averaged, and the average of strong
+  references is exactly the design that smells of AI (`refero-design`, tell #7).
+
+The anti-slop detector in `.claude/skills/estudio-web/antislop-web.md` is the
+Spanish-copy, page-structure and markup half that `refero-design`'s own
+`references/anti-ai-slop.md` doesn't cover; both are run in full at QA. Per-obra
+artifacts live in `marketing/oficina/obras-web/<cliente>-<obra>/`. Triage first:
+a one-line copy change is an *encargo* (Diego direct + express QA), not an obra —
+running the full pipeline for a title change is bureaucracy, and bureaucracy gets
+abandoned.
 
 ### Skills live in TWO places — and that bites (jul 23)
 
