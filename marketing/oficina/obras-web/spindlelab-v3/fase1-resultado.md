@@ -99,3 +99,54 @@ Además: de las tres referencias que la dirección C declara como lock principal
 (Cardan Made, Beans Agency) no tienen URL en ningún documento del repo y nadie pudo
 abrirlas.** Lo construido sigue a driftime, que era el lock de otra dirección.
 "Ramón eligió la dirección C" no es lo mismo que "Ramón eligió lo que hay".
+
+---
+
+# Compuerta 2 — cerrada
+
+**Ramón, 2-oct-2026:** *"me gusta la dirección A"*, después de leer el informe de rechazo.
+
+## Qué se eligió exactamente
+**El principio de A, no su ejecución.** El instrumento primero, la jerarquía invertida, la
+herramienta como portada. Eso queda y no se reabre.
+
+La ejecución fue rechazada por sus tres críticos con 9 bloqueantes, y el que manda invalida
+el mecanismo que la definía: el campo a 93,6 px no aguanta un dominio chileno
+(`constructorahermanosperez.cl` se ve al 56 % a 390 px), y bajarlo a un tamaño usable es
+precisamente dejar de ser nivel display.
+
+**Por lo tanto el encargo de la fase 2 es:** el campo baja a un tamaño donde quepa un
+dominio real, y el principio sobrevive por otros recursos — posición, peso, superficie,
+contraste, aire, orden de lectura. Un campo que es lo primero y lo más evidente de la
+pantalla no necesita ser lo más grande en puntos.
+
+## Los nueve bloqueantes que la fase 2 tiene que cerrar
+1. El campo no aguanta un dominio real.
+2. El campo no parece un campo, ni en reposo ni con el foco.
+3. La bajada nunca dice **qué** es el primero que llega. Se restituye del corpus publicado,
+   verbatim, con el referente y la condición: *«no es una persona: es la máquina que
+   responde cuando alguien pregunta por tu rubro»*, y *«si esa máquina no puede leerte…»*.
+   Y vuelve el matiz: el original dice «cada vez más», no lo afirma como absoluto.
+4. «Sin registro.» sale del primer viewport (ver decisión pendiente abajo).
+5. Plan de medición escrito, con nombres de evento, y un camino a contacto sobre el pliegue.
+6. El titular afirma algo que el instrumento sí mide, o la prueba se usa para otra cosa.
+7. La segunda puerta sube a peso comparable y cubre a **los dos** públicos: construir **y
+   rehacer**. Hoy decía «todavía no tengo sitio», que excluye a la mitad del de mayor ticket.
+8. Una sola voz. Fuera la primera persona singular en boca del visitante («Veo mi puntaje»):
+   en esta marca el singular está reservado a Ramón.
+9. Algo del sistema v3 (los campos de color) entra al primer viewport, o la prueba del logo
+   tapado vuelve a fallar.
+
+## La decisión de producto que sigue pendiente, y cómo se manejó
+**¿El chequeo deja de regalar los 21 arreglos y pasa a pedir el correo?** Es de Ramón y no
+está tomada. Hasta que lo esté, **el hero no habla de registro en ninguna dirección**: ni
+promete «sin registro» (que cerraría la puerta a cobrarlo con el correo) ni promete lo
+contrario. No decir nada ahí preserva las dos opciones y no cuesta nada.
+
+Cuando se tome, esa decisión reescribe la nota del hero y el bloque de resultado del
+chequeo — que es donde el diagnóstico midió el cuello real, no en el hero.
+
+## Lo que sigue sin verificar y solo Ramón puede mirar
+**La URL final del anuncio en la cuenta 597-527-6690.** El único documento del repo que la
+nombra dice `/contacto/`. Si fue así, los 104 clics nunca vieron este hero y el orden de las
+reparaciones cambia. Son dos minutos en la cuenta.
