@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<title>SPL-DIAG-2026-007 — Mini-diagnóstico SpindleLab</title>
+<style>
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); font-weight:400 800; }
+@font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:400 700; }
+
+:root{
+  --tinta:#131A22;
+  --papel:#F7F5F0;
+  --blanco:#FFFFFF;
+  --dorado:#C9A227;
+  --gris:#5D6673;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+body{
+  font-family:'Inter', sans-serif;
+  color:var(--tinta);
+  background:var(--papel);
+  width:794px; /* A4 @ 96dpi */
+  padding:30px 56px;
+  font-size:12px;
+  line-height:1.42;
+}
+
+.wordmark{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:22px;
+  letter-spacing:-0.01em;
+}
+.wordmark .punto{ color:var(--dorado); }
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  border-bottom:2px solid var(--tinta);
+  padding-bottom:12px;
+  margin-bottom:14px;
+}
+
+.encabezado-derecha{ text-align:right; }
+.tagline{ font-size:10.5px; color:var(--gris); margin-top:4px; }
+
+.meta-box{
+  margin-top:10px;
+  font-size:10.5px;
+  color:var(--gris);
+  line-height:1.6;
+}
+.meta-box b{ color:var(--tinta); }
+
+h1.titulo-doc{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:20px;
+  margin-bottom:4px;
+}
+.subtitulo-doc{
+  font-size:12px;
+  color:var(--gris);
+  margin-bottom:13px;
+}
+
+section.bloque{
+  margin-bottom:5px;
+  break-inside:avoid;
+}
+
+.num-etiqueta{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--gris);
+  margin-bottom:6px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.num-etiqueta .num{
+  width:20px; height:20px;
+  border:1.5px solid var(--tinta);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:10.5px;
+  color:var(--tinta);
+  flex-shrink:0;
+}
+
+.bloque p{ margin-bottom:6px; }
+.bloque p:last-child{ margin-bottom:0; }
+
+.hallazgo{
+  background:var(--blanco);
+  border:1px solid rgba(19,26,34,0.12);
+  border-radius:8px;
+  padding:7px 14px;
+  margin-top:4px;
+}
+
+/* La corrección de mayor impacto — único uso del dorado en la pieza */
+.bloque-impacto{
+  background:var(--tinta);
+  color:var(--papel);
+  border-radius:10px;
+  padding:11px 18px;
+  margin-top:6px;
+  position:relative;
+}
+.bloque-impacto .num-etiqueta{ color:var(--dorado); }
+.bloque-impacto .num-etiqueta .num{ border-color:var(--dorado); color:var(--dorado); }
+.bloque-impacto h2{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:15px;
+  margin-bottom:8px;
+}
+.bloque-impacto p{ margin-bottom:0; font-size:12.5px; }
+.bloque-impacto .punto-final{ color:var(--dorado); }
+
+table.ruta{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:4px;
+  background:var(--blanco);
+  border:1px solid rgba(19,26,34,0.12);
+  border-radius:8px;
+  overflow:hidden;
+  font-size:11.5px;
+}
+table.ruta th{
+  font-family:'Gabarito', sans-serif;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--gris);
+  text-align:left;
+  padding:6px 10px;
+  border-bottom:1px solid rgba(19,26,34,0.12);
+}
+table.ruta td{
+  padding:4px 10px;
+  border-bottom:1px solid rgba(19,26,34,0.07);
+  vertical-align:top;
+  line-height:1.35;
+}
+table.ruta tr:last-child td{ border-bottom:none; }
+table.ruta td.paso{ font-family:'Gabarito', sans-serif; font-weight:700; white-space:nowrap; }
+footer{
+  margin-top:7px;
+  padding-top:7px;
+  border-top:1px solid rgba(19,26,34,0.15);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.cta{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:13.5px;
+}
+.cta .punto{ color:var(--tinta); }
+.contacto{
+  font-size:11px;
+  color:var(--gris);
+  text-align:right;
+}
+.footnote{
+  font-size:9.5px;
+  color:var(--gris);
+  margin-top:5px;
+  font-style:italic;
+}
+
+@media print{
+  @page{ size:A4; margin:0; }
+  body{ width:794px; padding:18px 50px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="wordmark">SpindleLab<span class="punto">.</span></div>
+    <div class="tagline">Un motor de adquisición · SEO técnico y visibilidad en IA como eje</div>
+  </div>
+  <div class="encabezado-derecha">
+    <div class="meta-box">
+      <div><b>Documento</b> SPL-DIAG-2026-007</div>
+      <div><b>Empresa</b> Focus Contable</div>
+      <div><b>Sitio</b> focuscontable.cl</div>
+      <div><b>Fecha</b> 2 de octubre de 2026</div>
+    </div>
+  </div>
+</header>
+
+<h1 class="titulo-doc">Mini-diagnóstico de visibilidad</h1>
+<p class="subtitulo-doc">Por qué Focus Contable no aparece cuando alguien pregunta cómo formalizar su empresa, y la ruta para que sí.</p>
+
+<section class="bloque">
+  <div class="num-etiqueta"><span class="num">1</span> Lo que está en juego</div>
+  <div class="hallazgo">
+    <p>El emprendedor que está por formalizar ya no parte en Google: le pregunta directo a ChatGPT «¿cómo formalizo mi empresa en Chile?» o «¿quién me ayuda con una observación del SII?». <b>Quien aparece en esa respuesta se lleva la consulta; el resto no se entera de que existió.</b> Usted tiene la respuesta, pero el sitio no le da a la máquina lo mínimo para nombrarlo. La falla no está en la puerta, está en la credencial.</p>
+  </div>
+</section>
+
+<section class="bloque">
+  <div class="num-etiqueta"><span class="num">2</span> Por qué no aparece: tres razones, todas verificables</div>
+  <div class="hallazgo">
+    <p><b>1 · Para una máquina, Focus Contable es un dominio, no un negocio chileno.</b> La ficha que el sitio entrega a los motores tiene cuatro datos: nombre «Focuscontable.cl» (el dominio, no la empresa), descripción «servicios contables», la URL y el idioma, declarado como español de <b>España</b>. No dice Chile, y no lleva teléfono ni correo, aunque <b>contacto@focuscontable.cl</b> y <b>+569 61673894</b> están impresos en todas sus páginas.</p>
+    <p><b>2 · El contador que sostiene la autoridad es invisible.</b> Usted enlaza en la cabecera su LinkedIn, su YouTube y su TikTok, todos a nombre de Eduardo Bascur Hernández, y el sitio nunca declara en datos que esa persona existe ni que es quien responde. En finanzas los motores verifican que haya un profesional identificable antes de recomendar. La autoridad ya está construida; falta declararla.</p>
+    <p><b>3 · Las nueve páginas de servicio no ofrecen nada que citar.</b> Término de giro, F22, liberación de observaciones, Pro Pyme: cada una responde una pregunta que la gente hace tal cual, pero las nueve entregan la misma plantilla genérica, sin declarar qué servicio son y sin preguntas frecuentes marcadas. Las descripciones tampoco están escritas: se copian de la página y arrastran la miga de pan («Servicios/Contabilidad y declaración mensual…»); la de /servicios/ no existe.</p>
+  </div>
+</section>
+
+<section class="bloque">
+  <div class="num-etiqueta"><span class="num">3</span> La ruta completa, con el estado de cada paso</div>
+  <table class="ruta">
+    <tr><th style="width:25%">Paso</th><th>Qué logra</th><th style="width:34%">Estado hoy</th></tr>
+    <tr><td class="paso">1 · Que lo puedan leer</td><td>Los motores de IA entran al sitio sin bloqueos</td><td><b>Listo</b> (verificado, nada que hacer)</td></tr>
+    <tr><td class="paso">2 · Que sepan quién es</td><td>La IA confirma que es una empresa contable chilena, real y contactable</td><td><b>Un dominio</b>, sin país ni contacto</td></tr>
+    <tr><td class="paso">3 · Que lo puedan citar</td><td>Los 9 servicios y el contador detrás pasan a ser material que la IA usa al recomendar</td><td><b>0 de 9</b> · sin autor declarado</td></tr>
+    <tr><td class="paso">4 · Medir entero</td><td>Saber cada mes si Google y la IA lo nombran, y cuántas consultas llegan</td><td><b>Sin medición</b></td></tr>
+  </table>
+</section>
+
+<div class="bloque-impacto">
+  <div class="num-etiqueta"><span class="num">4</span> La corrección de mayor impacto</div>
+  <h2>Arregle la ficha de identidad. El paso 2 va regalado</h2>
+  <p>Si este mes arregla una sola cosa, que sea esa ficha: nombre real, rubro contable, Chile, y el teléfono y correo que ya están en su sitio. Es un bloque de código que se pega una vez, y va regalado. Pero ojo con lo que resuelve: pasar de invisible a existente. No vuelve citables sus nueve servicios ni declara a Eduardo como el profesional que responde. Eso es lo que movemos nosotros: <b>que cuando un emprendedor pregunte quién lo ayuda a formalizar en Chile, el nombre que aparezca sea el suyo</b><span class="punto-final">.</span></p>
+</div>
+
+<p style="margin-top:7px;font-size:11.5px;color:var(--gris)">Trabajamos el motor completo: el sitio, el SEO, las redes y la pauta funcionando juntos, con la visibilidad en Google y en la IA como eje. Planes y precios publicados en spindlelab.cl.</p>
+
+<footer>
+  <div class="cta">¿Revisamos la ruta en 20 minutos, sin costo<span class="punto">?</span></div>
+  <div class="contacto">hola@spindlelab.cl · spindlelab.cl<br>chequeo gratis: spindlelab.cl/diagnostico</div>
+</footer>
+
+<p class="footnote">Compruébelo usted mismo: abra el código fuente de su portada y busque «Organization»; esas cuatro líneas son su negocio ante los motores. Nuestro chequeo público le da hoy 65/100 (spindlelab.cl/diagnostico). Verificado el 2-oct-2026 con consultas directas a focuscontable.cl (HTTP, robots.txt, sitemaps, JSON-LD y prueba de acceso como OAI-SearchBot, ChatGPT-User, Claude-SearchBot y PerplexityBot); la consulta en vivo a los motores no se corrió. No reemplaza una auditoría completa.</p>
+
+</body>
+</html>
