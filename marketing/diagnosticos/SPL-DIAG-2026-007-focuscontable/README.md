@@ -1,6 +1,16 @@
 # SPL-DIAG-2026-007 — Focus Contable (focuscontable.cl)
 
-**Fecha:** 2-oct-2026 · **Estado:** ⏳ **v3 LISTA, NO ENVIADA** (falta el pase de Ramón).
+**Fecha:** 2-oct-2026 · **Estado:** ⏳ **v4 LISTA, NO ENVIADA** (falta el pase de Ramón).
+
+> **v4 (2-oct, noche) — la prueba en vivo cambió el gancho.** Ramón corrió la consulta real en ChatGPT
+> («¿quién me ayuda a formalizar mi empresa en Chile?») y el motor respondió con **cinco empresas de
+> Santiago por nombre —dos contables, F5 Contable y GUCH Solutions— y Focus Contable no estaba.** Eso es
+> la mejor prueba de venta posible, y es lo que la skill pide hacer si la prueba en vivo se corre. El
+> documento ahora **abre con ese hecho** (sección 1 «Lo que probamos»), las tres razones técnicas pasan a
+> ser **la explicación de por qué no apareció** (sección 2), y el cierre hace bookend: «la próxima vez que
+> alguien pregunte en ChatGPT… que el que aparezca sea usted». El pie ya no dice «no se corrió la consulta»;
+> dice que se corrió el 2-oct, con el aviso honesto de que las respuestas de IA varían entre intentos y que
+> lo mejor es que Eduardo lo pruebe él mismo (ese es el ancla verificable). Dominio confirmado por Ramón.
 
 > **v3 (2-oct, noche) — reescritura de venta, por decisión de Ramón.** Dos cambios de criterio:
 > 1. **No se regala nada.** La doctrina de la skill (`regala el paso 1 y haz visible la ruta`) queda
