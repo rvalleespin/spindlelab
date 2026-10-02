@@ -60,7 +60,8 @@ o que son suyas:**
 
 | Publicado | Pieza | Métricas | Registrado en |
 |---|---|---|---|
-| **✅ 30-sep** | "Cuando el chequeo de Verifica y Cumple no alcanza a ver algo... lo dice" — el mecanismo de declinar en vez de inventar un puntaje | publicado, verificado | `30-mie-lo-que-no-vemos/publicar.md` |
+| **✅ 2-oct** | "Si llevas meses buscando el video que se haga viral, tu sitio web probablemente lleva esos mismos meses sin tocarse..." — el sitio es la tienda principal, las redes la vitrina; cierre de Desarrollo Web a medida | publicado, verificado (urn 7511845341839953921) | `2026-10-octubre-linkedin/02-vie-el-sitio-es-la-tienda/publicar.md` |
+| **✅ 30-sep** | "Cuando el chequeo de Verifica y Cumple no alcanza a ver algo... lo dice" — el mecanismo de declinar en vez de inventar un puntaje | publicado, verificado (94 impresiones el 2-oct) | `30-mie-lo-que-no-vemos/publicar.md` |
 | **✅ 28-sep** | "Me gusta construir sitios bien hechos..." — buenas prácticas desde el origen, ligado a Verifica y Cumple | publicado, verificado | `28-lun-buenas-practicas-desde-el-origen/publicar.md` |
 | **✅ 25-sep** | "Construí Verifica y Cumple..." — post propio con el link directo en el cuerpo, no compartir | publicado, verificado | `24-jue-tres-mitos-ley21719/publicar.md` |
 | **23-sep** | Query fan-out: el mecanismo de las respuestas con IA de Google, con fuente primaria | recién publicado | `23-mie-query-fan-out/` |
