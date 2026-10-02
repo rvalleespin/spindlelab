@@ -1,0 +1,440 @@
+<!doctype html>
+<!-- TABLERO · DIRECCIÓN A2 · "el instrumento manda", reconstruida · 2-oct-2026
+     ===========================================================================
+     QUÉ SE CONSERVA (es lo que Ramón eligió): el instrumento es lo primero y lo
+     dominante del primer viewport. La afirmación de marca viene DESPUÉS.
+
+     QUÉ CAMBIA: el campo deja de mandar por tamaño de letra. A lo hacía con 93,6 px
+     y por eso no le cabía un dominio chileno real (medido: 'constructorahermanosperez.cl'
+     a 390 px mostraba el 56 %). Acá el campo baja a un cuerpo donde el dominio cabe
+     entero, y el instrumento manda por POSICIÓN (es lo primero), por SUPERFICIE (una
+     banda de campo de color a sangre, la única superficie saturada de la vista),
+     por CONTRASTE (es el único panel claro contra el lienzo negro) y por ORDEN DE
+     LECTURA. Un campo que es lo primero y lo más evidente no necesita ser lo más
+     grande en puntos.
+
+     DE DÓNDE SALE LA SUPERFICIE: de los campos de color del propio sistema v3
+     (manual §04). A renunció a ellos y por eso fallaba la prueba del logo tapado.
+     Acá la banda trae DOS: navy (#0E2A47, el campo de Visibilidad en IA, que es a lo
+     que pertenece el chequeo) y brasa (#DA3400, el campo de Desarrollo Web, que es
+     la segunda puerta). Se tocan a sangre, sin medianil entre ellos, igual que los
+     campos se tocan en el scroll de la home.
+
+     EL AVISO DE COOKIES REAL VA PUESTO, copiado de src/layouts/Layout.astro sin el
+     atributo [hidden], porque el bloqueante de la otra dirección fue justamente un
+     elemento que quedaba debajo de él. -->
+<html lang="es-CL">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dirección A2 · el instrumento manda</title>
+<style>
+/* ===========================================================================
+   FUENTES DEL SISTEMA V3, RELATIVAS. Nunca por CDN: el headless sin red cae al
+   fallback y la captura muestra una tipografía que no es la de la dirección.
+   Inter va porque el aviso de cookies real la pide por nombre.
+   =========================================================================== */
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:block;
+  src:url('manrope-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:block;
+  src:url('manrope-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Gabarito';font-style:normal;font-weight:400 700;font-display:block;
+  src:url('Gabarito.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:block;
+  src:url('inter-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:block;
+  src:url('inter-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+
+/* ===========================================================================
+   TOKENS DEL SISTEMA V3, con su rol. Ni un color nuevo: todos salen de
+   tailwind.config.mjs y de src/styles/campos-v3.css.
+     noche  #000000  lienzo
+     papel  #F7F5F0  texto sobre el lienzo (19,3:1)
+     humo   #96948E  atenuado sobre el lienzo (6,92:1)
+     navy   #0E2A47  campo de Visibilidad en IA  + crema #E4F1EC (12,56:1)
+     brasa  #DA3400  campo de Desarrollo Web     + BLANCO PURO  (4,70:1)
+     gold   #C9A227  UN uso por vista: el punto del wordmark
+     radio v3 6px · medianil 40px · Manrope todo · Gabarito solo wordmark
+   =========================================================================== */
+:root{
+  --noche:#000000; --papel:#F7F5F0; --humo:#96948E; --gold:#C9A227;
+  --navy:#0E2A47;  --crema:#E4F1EC;
+  --brasa:#DA3400; --blanco:#FFFFFF;
+  --radio:6px; --medianil:40px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--noche); color:var(--papel);
+  font-family:'Manrope','Inter',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* El filete del sistema: teñido con el color del texto del contexto, NUNCA blanco
+   al 10 %. Se usa de verdad en esta hoja (cabecera, sección siguiente y la tira). */
+.filete{border-color:color-mix(in srgb, currentColor 28%, transparent)}
+
+/* --- CABECERA FIJA, el módulo de NavV3. Termina alrededor del píxel 86.
+       AHORA LLEVA UN CAMINO A CONTACTO A LA VISTA: en A no había ninguno en el
+       primer viewport sin abrir el overlay, y es el defecto 17. --- */
+.cabecera{position:absolute;top:0;left:0;z-index:50;padding:20px}
+.modulo{border-radius:var(--radio);overflow:hidden;background:rgba(0,0,0,.75);
+  border:1px solid color-mix(in srgb, var(--papel) 18%, transparent);
+  display:flex;align-items:stretch;color:var(--papel)}
+.wordmark{font-family:'Gabarito','Manrope',system-ui,sans-serif;font-size:20px;
+  letter-spacing:-.01em;color:var(--papel);padding:12px 16px 12px 20px;display:flex;
+  align-items:center;text-decoration:none;line-height:1.4}
+.punto{color:var(--gold)} /* EL ÚNICO DORADO DE LA VISTA */
+.nav-contacto{display:flex;align-items:center;padding:0 16px;font-size:14px;
+  font-weight:700;color:var(--papel);text-decoration:none;
+  border-left:1px solid; border-left-color:color-mix(in srgb, var(--papel) 18%, transparent)}
+.nav-contacto:hover{text-decoration:underline;text-underline-offset:4px}
+.btn-menu{padding:0 16px;background:transparent;display:flex;align-items:center;
+  border:0;border-left:1px solid;
+  border-left-color:color-mix(in srgb, var(--papel) 18%, transparent)}
+.hamb{display:block;width:20px}
+.hamb i{display:block;height:1.5px;background:var(--papel)}
+.hamb i+i{margin-top:5px}
+.modulo a:focus-visible,.modulo button:focus-visible{outline:2px solid var(--papel);outline-offset:-3px}
+
+/* ===========================================================================
+   LA BANDA DEL PRIMER VIEWPORT.
+   A sangre, sin medianil a los lados: así se tocan los campos en la home.
+   En móvil se apila (navy arriba, brasa abajo); desde 1024 van en fila.
+   El reparto 68/32 no es decorativo: el instrumento se queda con la superficie
+   mayor y con la izquierda, que es por donde se empieza a leer.
+   =========================================================================== */
+.hero{padding-top:96px}  /* la cabecera termina en 86: 96 es el mínimo que no la pisa */
+@media (min-width:768px){ .hero{padding-top:118px} }
+
+.banda{display:flex;flex-direction:column}
+@media (min-width:1024px){ .banda{flex-direction:row;align-items:stretch} }
+
+/* --- EL INSTRUMENTO, sobre el campo navy --- */
+.instrumento{background:var(--navy);color:var(--crema);padding:18px 18px 22px}
+@media (min-width:768px){ .instrumento{padding:32px var(--medianil) 36px} }
+@media (min-width:1024px){ .instrumento{flex:1 1 68%;min-width:0} }
+
+/* El rótulo es el <label> del campo: la única línea antes del instrumento, y
+   dice exactamente lo que va a pasar. Misma promesa que el botón (defecto 33). */
+.rotulo-campo{display:block;font-size:16px;font-weight:500;line-height:1.45;
+  color:var(--crema);margin:0 0 12px;max-width:46ch}
+@media (min-width:768px){ .rotulo-campo{font-size:17px;margin-bottom:18px} }
+
+.chq-form{display:flex;flex-direction:column;align-items:stretch;gap:10px;margin:0}
+@media (min-width:768px){ .chq-form{flex-direction:row;align-items:stretch;gap:16px} }
+
+/* EL CAMPO PARECE UN CAMPO EN REPOSO. Era el defecto 2: fondo transparente,
+   border 0, outline none, cero diferencia entre enfocado y no enfocado.
+   Acá tiene superficie propia (el navy teñido hacia el negro, que es como el
+   sistema oscurece dentro de un campo: ver .planes-tabs en campos-v3.css),
+   filete propio que TERMINA donde termina el campo, radio 6 y cursor visible. */
+.caja-campo{
+  flex:1 1 auto;min-width:0;display:flex;align-items:center;
+  background:color-mix(in srgb, #000 24%, var(--navy));
+  border:1px solid color-mix(in srgb, var(--crema) 32%, transparent);
+  border-radius:var(--radio);
+  padding:11px;
+  transition:border-color .15s ease, background-color .15s ease;
+}
+@media (min-width:768px){ .caja-campo{padding:14px 18px} }
+
+/* Las reglas van sobre .caja-campo input, no sobre #chq-dominio, porque la tira de
+   estados de abajo lleva los mismos controles y con el selector por id se quedaban
+   con el input por defecto del navegador: caja blanca, texto negro y borde propio.
+   Se vio mirando el PNG, no leyendo el marcado. */
+.caja-campo input{
+  width:100%;min-width:0;background:transparent;border:0;outline:none;padding:0;margin:0;
+  font-family:'Manrope','Inter',system-ui,sans-serif;
+  font-size:18px;font-weight:700;line-height:1.2;letter-spacing:0;color:var(--crema);
+  appearance:none;-webkit-appearance:none;border-radius:0;
+}
+.caja-campo input::placeholder{color:color-mix(in srgb, var(--crema) 62%, transparent);opacity:1}
+#chq-dominio{
+  /* 18 px a 360 y 390 · 18,4 px a 768 · 24,6 px a 1024 · 34 px a 1440.
+     Es el cuerpo donde cabe un dominio chileno de largo normal CON holgura, medido
+     uno a uno con scrollWidth, no estimado. El tope de 34 px no es estetico: a 37 px
+     el dominio de 28 caracteres entraba justo, sin margen. */
+  font-size:clamp(1.125rem, 2.4vw, 2.125rem);
+}
+
+/* ESTADO DE FOCO PROPIO. El filete pasa a crema plena, la superficie se oscurece
+   y además hay contorno. Tres señales, no una. */
+.caja-campo:focus-within,.caja-campo.es-foco{
+  border-color:var(--crema);
+  background:color-mix(in srgb, #000 36%, var(--navy));
+  outline:2px solid var(--crema);outline-offset:2px;
+}
+.caja-campo.es-error{border-color:var(--blanco);box-shadow:inset 3px 0 0 var(--blanco)}
+
+/* El botón del campo: blanco lleno sobre el campo de color, radio 6, sin píldora.
+   Es la regla .boton-campo del sistema (campos-v3.css), tal cual. */
+.chq-btn{
+  flex:none;appearance:none;border:1px solid transparent;cursor:pointer;
+  background:var(--blanco);color:#14110E;
+  font-family:inherit;font-size:15px;font-weight:700;letter-spacing:0;
+  border-radius:var(--radio);padding:15px 26px;margin:0;
+  transition:opacity .18s ease;
+}
+@media (min-width:768px){ .chq-btn{font-size:16px;padding:0 32px} }
+.chq-btn:hover,.chq-btn.es-hover{opacity:.85}
+.chq-btn:focus-visible,.chq-btn.es-foco{outline:2px solid var(--crema);outline-offset:3px}
+.chq-btn:disabled,.chq-btn.es-off{
+  background:transparent;color:var(--crema);cursor:not-allowed;
+  border:1px solid color-mix(in srgb, var(--crema) 45%, transparent);
+}
+
+/* LA NOTA DEL MÉTODO, INVERTIDA. En A abría con «Sin registro.», que es la promesa
+   que cierra la puerta a la decisión de producto pendiente, y dejaba la cláusula que
+   de verdad diferencia al final y en el gris más chico. Acá la cláusula del método
+   abre, va en crema plena y peso 700, y la fricción no se menciona. */
+.nota{margin:14px 0 0;font-size:15px;line-height:1.6;max-width:62ch;
+  color:color-mix(in srgb, var(--crema) 72%, transparent)}
+@media (min-width:768px){ .nota{font-size:16px;margin-top:20px} }
+.nota b{color:var(--crema);font-weight:700}
+
+.chq-error{display:none}
+#chq-out{display:none}
+
+/* --- LA SEGUNDA PUERTA, sobre el campo brasa ---------------------------------
+   En A era un enlace de texto de 16 px con href='#', para el público que el brief
+   §2 pone PRIMERO. Acá es un bloque con su propio campo de color, su propio
+   titular y su propio botón: peso comparable al instrumento sin pasarlo, porque
+   su superficie es la menor y va a la derecha.
+   SOBRE BRASA NO VA TEXTO ATENUADO: el manual §04 es explícito, la única opción
+   que aprueba AA de cuerpo sobre #DA3400 es el blanco puro. El rótulo se
+   distingue por tamaño y caja, no por opacidad. */
+.puerta{background:var(--brasa);color:var(--blanco);padding:18px 18px 22px;
+  display:flex;flex-direction:column}
+@media (min-width:768px){ .puerta{padding:28px var(--medianil) 34px} }
+@media (min-width:1024px){ .puerta{flex:0 0 32%;padding:36px var(--medianil) 40px;justify-content:space-between} }
+.rotulo{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;
+  margin:0;color:inherit}
+.puerta-titulo{margin:10px 0 0;font-weight:800;line-height:1.08;letter-spacing:0;
+  text-transform:uppercase;font-size:clamp(1.375rem, 2.2vw, 1.75rem);text-wrap:balance}
+.puerta-cta{display:inline-block;align-self:flex-start;margin-top:16px;
+  background:var(--blanco);color:#14110E;border-radius:var(--radio);
+  font-weight:700;font-size:15px;padding:13px 22px;text-decoration:none}
+.puerta-cta:hover{opacity:.85}
+.puerta-cta:focus-visible{outline:2px solid var(--blanco);outline-offset:3px}
+
+/* ===========================================================================
+   LA AFIRMACIÓN DE MARCA, DESPUÉS DEL INSTRUMENTO.
+   Toma el rol «titular de artículo» del manual §05: clamp(1,75rem, 3,6vw, 3,25rem).
+   En A el h1 estaba a 24 px, por debajo del piso de 28 px de cualquier rol de
+   titular del manual, y esa desviación ni siquiera estaba declarada (defecto 31).
+   Acá no hay desviación: es un rol del manual, usado donde corresponde.
+   =========================================================================== */
+.decir{padding:0 20px}
+@media (min-width:768px){ .decir{padding:0 var(--medianil)} }
+
+.decir h1{
+  margin:26px 0 0;font-weight:800;text-transform:uppercase;
+  font-size:clamp(1.75rem, 3.6vw, 3.25rem);
+  line-height:1.02;letter-spacing:0;color:var(--papel);text-wrap:balance;max-width:20ch;
+}
+@media (min-width:768px){ .decir h1{margin-top:44px} }
+
+/* La bajada vuelve al corpus publicado: el referente («es la máquina que
+   responde cuando alguien pregunta por tu rubro») y el eslabón causal («si esa
+   máquina no puede leerte…») estaban en el post del 1-sep y A los había cortado.
+   Vuelve también el matiz «cada vez más», que A había endurecido a absoluto. */
+.bajada{margin:16px 0 0;font-size:17px;line-height:1.55;color:var(--humo);max-width:62ch}
+@media (min-width:768px){ .bajada{font-size:22px;margin-top:20px} }
+
+/* El borde de la sección siguiente, asomando: el primer viewport no cierra en
+   negro vacío (regla B6 del detector de la casa, defecto 24). */
+.siguiente{margin-top:30px;padding-top:16px;border-top:1px solid;color:var(--humo);
+  display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (min-width:768px){ .siguiente{margin-top:48px} }
+.siguiente a{color:var(--humo);text-decoration:underline;text-underline-offset:4px}
+
+/* ===========================================================================
+   DE ACÁ PARA ABAJO YA NO ES EL PRIMER VIEWPORT.
+   =========================================================================== */
+.pliegue{display:flex;align-items:center;gap:14px;padding:0 20px;margin-top:64px;flex-wrap:wrap}
+@media (min-width:768px){ .pliegue{padding:0 var(--medianil)} }
+.pliegue span{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--humo)}
+.pliegue hr{flex:1;min-width:40px;height:0;margin:0;border:0;
+  border-top:1px dashed color-mix(in srgb, var(--papel) 32%, transparent)}
+
+.tira{padding:48px 20px 72px}
+@media (min-width:768px){ .tira{padding:56px var(--medianil) 80px} }
+.tira h2{font-size:24px;font-weight:800;text-transform:uppercase;letter-spacing:0;
+  line-height:1.1;margin:0 0 8px}
+.tira>p{margin:0 0 28px;font-size:15px;line-height:1.6;color:var(--humo);max-width:62ch}
+.tira h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--humo);margin:44px 0 16px}
+.estados{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px;align-items:start}
+@media (min-width:1024px){ .estados{grid-template-columns:repeat(4,max-content);gap:28px} }
+.estado{display:flex;flex-direction:column;gap:10px}
+.estado em{font-style:normal;font-size:13px;color:var(--humo)}
+/* Los estados del campo se muestran sobre su propio campo navy, porque un control
+   se mira donde vive: fuera del navy sus colores no significan nada. */
+.estados-campo{display:grid;gap:18px}
+@media (min-width:768px){ .estados-campo{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px} }
+.estado .chq-btn{width:100%;white-space:nowrap}
+@media (min-width:1024px){ .estado .chq-btn{width:auto} }
+.muestra{background:var(--navy);color:var(--crema);border-radius:var(--radio);padding:18px}
+.muestra em{display:block;font-style:normal;font-size:12px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.16em;margin-bottom:10px}
+.muestra .caja-campo{padding:11px}
+.muestra .caja-campo input{font-size:18px}
+.muestra p.ayuda{margin:10px 0 0;font-size:13px;line-height:1.5;
+  color:color-mix(in srgb, var(--crema) 72%, transparent)}
+.muestra.es-error p.ayuda{color:var(--blanco)}
+/* El botón se muestra sobre navy por la misma razón. */
+.muestra-btn{background:var(--navy);border-radius:var(--radio);padding:18px;
+  display:flex;flex-direction:column;gap:10px;align-items:flex-start;color:var(--crema)}
+.muestra-btn em{font-style:normal;font-size:12px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.16em;color:color-mix(in srgb, var(--crema) 72%, transparent)}
+</style>
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="modulo">
+    <a class="wordmark" href="/">SpindleLab<span class="punto">.</span></a>
+    <a class="nav-contacto" href="/contacto/" data-evento="contacto_cabecera">Escríbenos</a>
+    <button class="btn-menu" type="button" aria-label="Abrir menú">
+      <span class="hamb" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+
+    <div class="banda">
+
+      <!-- EL INSTRUMENTO. El contrato del chequeo real se conserva entero:
+           chq-form, chq-dominio, chq-btn, chq-error y chq-out, mismo /api/chequeo.
+           Si la composición los renombra, el instrumento deja de funcionar y el
+           hero pasa a ser una imitación. -->
+      <div class="instrumento">
+        <label class="rotulo-campo" for="chq-dominio">Escribe tu dominio y te mostramos cómo lo lee una máquina.</label>
+
+        <form class="chq-form" id="chq-form" novalidate onsubmit="return false" data-evento="chequeo_enviado">
+          <span class="caja-campo">
+            <input id="chq-dominio" name="dominio" type="text" inputmode="url"
+                   autocomplete="off" autocapitalize="off" spellcheck="false"
+                   placeholder="tuempresa.cl" required />
+          </span>
+          <button class="chq-btn" type="submit" id="chq-btn">Revisa tu sitio</button>
+        </form>
+
+        <p class="nota"><b>Es el mismo chequeo con el que partimos cada proyecto.</b> 21 señales, con la metodología publicada.</p>
+
+        <div class="chq-error" id="chq-error" role="alert"></div>
+        <div id="chq-out" aria-live="polite"></div>
+      </div>
+
+      <!-- LA SEGUNDA PUERTA. Cubre a los dos: el que va a construir y el que va a
+           rehacer. En A decía «todavía no tengo sitio», que dejaba fuera a la mitad
+           del público que el brief pone primero. -->
+      <div class="puerta">
+        <div>
+          <p class="rotulo">Desarrollo web</p>
+          <p class="puerta-titulo">Construimos y rehacemos sitios</p>
+        </div>
+        <a class="puerta-cta" href="/servicios/desarrollo-web/" data-evento="puerta_desarrollo">Ver desarrollo web</a>
+      </div>
+
+    </div>
+
+    <div class="decir">
+      <h1>Ahí se corta el circuito</h1>
+
+      <p class="bajada">Tu sitio está escrito para personas. Pero cada vez más, el primero en llegar no es una persona: es la máquina que responde cuando alguien pregunta por tu rubro. Si esa máquina no puede leerte, la consulta que pagaste termina en otra parte.</p>
+
+      <div class="siguiente filete">
+        <span class="rotulo">El trabajo</span>
+        <a class="rotulo" href="/trabajo/">Ver el trabajo &rarr;</a>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="pliegue">
+    <span>Línea de pliegue</span><hr /><span>900 px escritorio · 844 px móvil</span>
+  </div>
+
+  <section class="tira">
+    <h2>Lo que hay debajo del pliegue</h2>
+    <p>Los estados que el primer viewport no muestra en reposo. El campo se mira sobre su propio campo navy: fuera de él sus colores no significan nada.</p>
+
+    <h3>Estados del campo</h3>
+    <div class="estados-campo">
+      <div class="muestra">
+        <em>Reposo</em>
+        <span class="caja-campo">
+          <input type="text" placeholder="tuempresa.cl" aria-label="Ejemplo de campo en reposo" />
+        </span>
+        <p class="ayuda">Superficie propia, filete que termina donde termina el campo, radio 6.</p>
+      </div>
+      <div class="muestra">
+        <em>Foco</em>
+        <span class="caja-campo es-foco">
+          <input type="text" placeholder="tuempresa.cl" aria-label="Ejemplo de campo con foco" />
+        </span>
+        <p class="ayuda">Filete a crema plena, superficie más oscura y contorno. Tres señales, no una.</p>
+      </div>
+      <div class="muestra">
+        <em>Escrito</em>
+        <span class="caja-campo">
+          <input type="text" value="constructorahermanosperez.cl" aria-label="Ejemplo de campo escrito" />
+        </span>
+        <p class="ayuda">28 caracteres, un largo normal en el B2B chileno, enteros y verificables.</p>
+      </div>
+      <div class="muestra es-error">
+        <em>Error</em>
+        <span class="caja-campo es-error">
+          <input type="text" value="tuempresa" aria-label="Ejemplo de campo con error" />
+        </span>
+        <p class="ayuda">Eso no parece un dominio. Prueba con tuempresa.cl.</p>
+      </div>
+    </div>
+
+    <h3>Estados del botón</h3>
+    <div class="estados">
+      <div class="estado muestra-btn"><button class="chq-btn" type="button">Revisa tu sitio</button><em>reposo</em></div>
+      <div class="estado muestra-btn"><button class="chq-btn es-hover" type="button">Revisa tu sitio</button><em>hover</em></div>
+      <div class="estado muestra-btn"><button class="chq-btn es-foco" type="button">Revisa tu sitio</button><em>foco visible</em></div>
+      <div class="estado muestra-btn"><button class="chq-btn es-off" type="button" disabled>Revisando</button><em>deshabilitado</em></div>
+    </div>
+  </section>
+</main>
+
+<!-- AVISO DE COOKIES REAL, copiado verbatim de src/layouts/Layout.astro sin el
+     atributo [hidden], para que esté presente en todas las capturas. -->
+<div id="cookie-banner">
+  <style>
+    #cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#161D26;border-top:1px solid rgba(247,245,240,.12);padding:18px 20px}
+    #cookie-banner .cb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    #cookie-banner p{margin:0;font-size:13.5px;color:rgba(242,239,232,.72);line-height:1.5;max-width:640px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+    #cookie-banner a{color:#2FA99B;font-weight:600}
+    #cookie-banner .cb-actions{display:flex;gap:10px;flex:none}
+    #cookie-banner button{font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;padding:10px 20px;border-radius:6px;cursor:pointer;border:1.5px solid transparent}
+    #cookie-reject{background:transparent;color:#F2EFE8;border-color:rgba(247,245,240,.35)}
+    #cookie-reject:hover{background:rgba(247,245,240,.08)}
+    #cookie-accept{background:#F4F6F3;color:#12201A;border-color:#F4F6F3}
+    #cookie-accept:hover{background:#FFFFFF}
+    #cookie-banner[hidden]{display:none}
+    @media(max-width:680px){#cookie-banner{padding:12px 16px}#cookie-banner .cb-inner{flex-direction:column;align-items:stretch;gap:10px}#cookie-banner p{font-size:13px;line-height:1.45}#cookie-banner button{padding:9px 18px}#cookie-banner .cb-actions{justify-content:flex-end}}
+  </style>
+  <div class="cb-inner">
+    <p>Usamos Google Analytics y Meta Pixel para entender cómo se usa este sitio. Puedes aceptarlos o rechazarlos. Más detalle en la <a href="/privacidad/">política de privacidad</a>.</p>
+    <div class="cb-actions">
+      <button type="button" id="cookie-reject">Rechazar</button>
+      <button type="button" id="cookie-accept">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
