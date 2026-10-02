@@ -1,0 +1,279 @@
+<!doctype html>
+<!-- TABLERO · DIRECCION A · "El instrumento manda" · 2-oct-2026
+     Render: hero-1440.png y hero-390.png, con el Chromium del contenedor
+     (/opt/pw-browsers/chromium-1194/chrome-linux/chrome).
+     OJO CON EL RENDER A 390: ese Chromium en modo headless tiene un ANCHO MINIMO
+     DE VENTANA DE 500px. Medido acá: con --window-size=390,1600 la pagina se
+     maqueta a 500 y la captura recorta los primeros 390, asi que el PNG muestra
+     texto cortado que NO es un defecto de la pagina. Comprobado con una sonda:
+     innerWidth=500 / docW=500 pidiendo 390. Por eso hero-390.png se toma con el
+     MISMO binario pero fijando el viewport real en 390x1600 (Playwright), y la
+     salida cruda del comando prescrito queda guardada aparte como
+     hero-390-comando-prescrito-recorte-de-500.png para que se vea el efecto.
+     A 390 de verdad: scrollWidth 390, cero scroll horizontal. -->
+<html lang="es-CL">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Direccion A — El instrumento manda</title>
+<style>
+/* ===========================================================================
+   FUENTES DEL SISTEMA V3, RELATIVAS. Nunca por CDN: el headless sin red cae al
+   fallback y la captura muestra una tipografia que no es la de la direccion.
+   =========================================================================== */
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:block;
+  src:url('manrope-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:block;
+  src:url('manrope-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Gabarito';font-style:normal;font-weight:400 700;font-display:block;
+  src:url('Gabarito.woff2') format('woff2');}
+
+/* ===========================================================================
+   TOKENS — los del sistema v3, con su rol. Ni un color nuevo.
+   noche #000000 lienzo · papel #F7F5F0 texto y boton · humo #96948E atenuado
+   gold #C9A227 UN uso por vista: el punto del wordmark · radio v3 6px
+   medianil 40px · Manrope titulares y cuerpo · Gabarito solo wordmark
+   =========================================================================== */
+:root{
+  --noche:#000000; --papel:#F7F5F0; --humo:#96948E; --gold:#C9A227;
+  --radio:6px; --medianil:40px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--noche); color:var(--papel);
+  font-family:'Manrope','Inter',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+/* El filete del sistema: tenido con el color del texto, nunca blanco al 10%. */
+.filete{border-color:color-mix(in srgb, currentColor 28%, transparent)}
+
+/* --- CABECERA FIJA, igual que NavV3: modulo arriba a la izquierda.
+       Termina alrededor del pixel 86, que es el dato que fija el aire de arriba. --- */
+.cabecera{position:absolute;top:0;left:0;z-index:50;padding:20px}
+.modulo{border-radius:var(--radio);overflow:hidden;background:rgba(0,0,0,.75);
+  border:1px solid rgba(255,255,255,.1);display:flex;align-items:stretch}
+.wordmark{font-family:'Gabarito','Manrope',system-ui,sans-serif;font-size:20px;
+  letter-spacing:-.01em;color:var(--papel);padding:12px 16px 12px 20px;display:flex;
+  align-items:center;text-decoration:none;line-height:1.4}
+.punto{color:var(--gold)} /* EL UNICO DORADO DE LA VISTA */
+.btn-menu{padding:0 16px;border-left:1px solid rgba(255,255,255,.1);background:transparent;
+  display:flex;align-items:center;border:0;border-left:1px solid rgba(255,255,255,.1)}
+.hamb{display:block;width:20px}
+.hamb i{display:block;height:1.5px;background:var(--papel)}
+.hamb i+i{margin-top:5px}
+
+/* ===========================================================================
+   HERO — EL INSTRUMENTO MANDA.
+   El campo del dominio toma el nivel DISPLAY del sistema (el que en la
+   referencia tiene la palabra del campo de color). El titular baja al nivel de
+   cuerpo y aparece DESPUES del instrumento. Dos niveles de lectura, nada en
+   medio: es el rasgo filoso de la dominante, no un promedio.
+   El alto esta fijado en px, no en vh, para que la linea de pliegue de la
+   captura sea honesta con la ventana de 1440x2000 / 390x1600.
+   =========================================================================== */
+.hero{
+  min-height:844px;                 /* movil: alto real documentado */
+  padding:96px var(--medianil) 40px; /* los 96px de arriba NO bajan: la cabecera termina en 86 */
+  padding-left:24px;padding-right:24px;
+}
+@media (min-width:768px){
+  .hero{min-height:813px;padding:136px var(--medianil) 48px}
+}
+
+/* La unica linea de texto antes del instrumento: lo minimo indispensable para
+   entender que va a pasar si escribes tu dominio. Es el <label> del campo. */
+.rotulo-campo{
+  display:block;font-size:16px;font-weight:500;line-height:1.5;color:var(--papel);
+  margin:0 0 18px;
+}
+@media (min-width:768px){ .rotulo-campo{font-size:17px;margin-bottom:22px} }
+
+/* EL INSTRUMENTO. Filete arriba, filete grueso abajo: una base, no una tarjeta.
+   Cero pildoras, cero tarjeta de vidrio, cero degrade. */
+.instrumento{border-top:1px solid;border-bottom:2px solid var(--papel)}
+.instrumento{border-top-color:color-mix(in srgb, var(--papel) 28%, transparent)}
+.chq-form{display:flex;flex-direction:column;align-items:stretch;margin:0}
+@media (min-width:768px){ .chq-form{flex-direction:row;align-items:stretch} }
+
+#chq-dominio{
+  flex:1 1 auto;min-width:0;background:transparent;border:0;outline:none;
+  font-family:'Manrope','Inter',system-ui,sans-serif;
+  font-size:clamp(2.5rem, 6.5vw, 5.875rem);  /* 40px a 390 · 93,6px a 1440 */
+  font-weight:800;line-height:1.1;letter-spacing:0;color:var(--papel);
+  padding:20px 0;
+}
+@media (min-width:768px){ #chq-dominio{padding:24px 0} }
+#chq-dominio::placeholder{color:var(--humo);opacity:1}
+
+/* El boton: el unico relleno claro de la vista, radio 6px, sin pildora.
+   Nombra lo que devuelve, en indicativo. */
+.chq-btn{
+  flex:none;appearance:none;border:1px solid transparent;cursor:pointer;
+  background:var(--papel);color:var(--noche);
+  font-family:inherit;font-size:16px;font-weight:700;letter-spacing:0;
+  border-radius:var(--radio);padding:16px 28px;margin:0 0 20px;
+  transition:background-color .18s ease;
+}
+@media (min-width:768px){
+  .chq-btn{align-self:center;margin:0 0 0 32px;padding:19px 40px}
+}
+.chq-btn:hover,.chq-btn.es-hover{background:#ffffff}
+.chq-btn:focus-visible,.chq-btn.es-foco{outline:2px solid var(--papel);outline-offset:3px}
+.chq-btn:disabled,.chq-btn.es-off{
+  background:transparent;color:var(--humo);cursor:not-allowed;
+  border:1px solid color-mix(in srgb, var(--papel) 28%, transparent);
+}
+
+/* La nota del metodo. SUBE DE JERARQUIA: antes vivia en 14px grises al final
+   del bloque, y es lo unico del hero que un competidor no puede igualar
+   escribiendolo. Ahora va a 16px, pegada al instrumento. */
+.nota{margin:20px 0 0;font-size:16px;line-height:1.6;color:var(--humo);max-width:80ch}
+@media (min-width:768px){ .nota{margin-top:22px} }
+.nota b{color:var(--papel);font-weight:700}
+
+/* SEGUNDA PUERTA, de peso deliberadamente distinto: un enlace de texto, sin
+   tarjeta y sin boton. Es la entrada del que va a construir, que es el publico
+   que manda en la home y hoy no tiene nada que tocar sin scroll. */
+.chq-error{display:none}
+#chq-out{display:none}
+.puerta2{margin:26px 0 0;font-size:16px;line-height:1.6;color:var(--humo)}
+.puerta2 a{color:var(--papel);text-decoration:underline;text-underline-offset:4px;
+  text-decoration-thickness:1px}
+
+/* LA AFIRMACION DE MARCA, DESPUES DEL INSTRUMENTO.
+   Mayusculas peso 800 (la caja no se baja nunca), pero en el nivel de cuerpo:
+   se distingue de la bajada por CAJA y PESO, no por tamano. */
+/* El titular NO es el elemento mas grande: la escala la tiene el campo. */
+.hero h1{
+  margin:32px 0 0;font-size:22px;font-weight:800;text-transform:uppercase;
+  line-height:1.08;letter-spacing:0;color:var(--papel);text-wrap:balance;
+}
+@media (min-width:768px){ .hero h1{margin-top:56px;font-size:24px} }
+
+.bajada{margin:12px 0 0;font-size:17px;line-height:1.55;color:var(--humo);max-width:62ch}
+.bajada+.bajada{margin-top:8px}
+@media (min-width:768px){ .bajada{font-size:24px;margin-top:16px} .bajada+.bajada{margin-top:12px} }
+
+/* ===========================================================================
+   DE ACA PARA ABAJO YA NO ES EL PRIMER VIEWPORT.
+   =========================================================================== */
+.pliegue{display:flex;align-items:center;gap:14px;padding:0 24px}
+@media (min-width:768px){ .pliegue{padding:0 var(--medianil)} }
+.pliegue{flex-wrap:wrap}
+.pliegue span{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--humo)}
+.pliegue hr{min-width:40px}
+.pliegue hr{flex:1;height:0;margin:0;border:0;border-top:1px dashed color-mix(in srgb, var(--papel) 32%, transparent)}
+
+.tira{padding:56px 24px 72px}
+@media (min-width:768px){ .tira{padding:64px var(--medianil) 80px} }
+.tira h2{font-size:24px;font-weight:800;text-transform:uppercase;letter-spacing:0;
+  line-height:1.1;margin:0 0 24px}
+.tira h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--humo);margin:48px 0 16px}
+.estados{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px;align-items:start}
+.estado .chq-btn{width:100%;margin:0;white-space:nowrap;padding-left:12px;padding-right:12px}
+@media (min-width:768px){
+  .estados{grid-template-columns:repeat(4,max-content);gap:28px}
+  .estado .chq-btn{width:auto;margin:0}
+}
+.estado{display:flex;flex-direction:column;gap:10px}
+.estado em{font-style:normal;font-size:13px;color:var(--humo)}
+.escala{list-style:none;margin:0;padding:0;display:grid;gap:26px}
+.escala li{border-top:1px solid color-mix(in srgb, var(--papel) 28%, transparent);padding-top:14px}
+.escala .dato{display:block;font-size:12px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.16em;color:var(--humo);margin-bottom:10px}
+.m-display{font-size:clamp(2.5rem,6.5vw,5.875rem);font-weight:800;line-height:1.1;letter-spacing:0;margin:0}
+.m-h1{font-size:24px;font-weight:800;text-transform:uppercase;line-height:1.08;margin:0}
+.m-cuerpo{font-size:24px;font-weight:400;line-height:1.55;color:var(--humo);margin:0;max-width:62ch}
+.m-nota{font-size:16px;font-weight:400;line-height:1.6;color:var(--humo);margin:0;max-width:62ch}
+@media (max-width:767px){
+  .m-h1{font-size:22px} .m-cuerpo{font-size:17px}
+}
+</style>
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="modulo">
+    <a class="wordmark" href="#">SpindleLab<span class="punto">.</span></a>
+    <button class="btn-menu" type="button" aria-label="Abrir menú">
+      <span class="hamb" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+
+    <label class="rotulo-campo" for="chq-dominio">Escribe tu dominio y te mostramos cómo está.</label>
+
+    <div class="instrumento">
+      <form class="chq-form" id="chq-form" novalidate onsubmit="return false">
+        <input id="chq-dominio" name="dominio" type="text" inputmode="url"
+               autocomplete="off" autocapitalize="off" spellcheck="false"
+               placeholder="tuempresa.cl" required />
+        <button class="chq-btn" type="submit" id="chq-btn">Veo mi puntaje</button>
+      </form>
+    </div>
+
+    <!-- El contrato del instrumento se conserva entero: chq-form, chq-dominio, chq-btn,
+         chq-error y chq-out, mismo /api/chequeo. Si la composicion los renombra, el
+         instrumento real deja de funcionar y el hero pasa a ser una imitacion. Los dos
+         ultimos van vacios y ocultos en reposo, igual que en produccion. -->
+    <div class="chq-error" id="chq-error" role="alert"></div>
+    <div id="chq-out" aria-live="polite"></div>
+
+    <p class="nota">Sin registro. Revisamos 21 señales técnicas. Es el mismo chequeo con el que partimos cada proyecto.</p>
+
+    <p class="puerta2">o <a href="#">todavía no tengo sitio y quiero construirlo</a></p>
+
+    <h1>Construimos sitios que la IA lee</h1>
+
+    <p class="bajada">Meta empuja. Google empuja. Los dos llevan al mismo lugar: tu sitio.</p>
+    <p class="bajada">Tu sitio está escrito para personas, y el primero en llegar no es una persona. La consulta que pagaste termina en otra parte.</p>
+
+  </section>
+
+  <div class="pliegue">
+    <span>Línea de pliegue</span><hr /><span>813 px escritorio · 844 px móvil</span>
+  </div>
+
+  <section class="tira">
+    <h2>Lo que hay debajo del pliegue</h2>
+
+    <h3>Estados del botón</h3>
+    <div class="estados">
+      <div class="estado"><button class="chq-btn" type="button">Veo mi puntaje</button><em>reposo</em></div>
+      <div class="estado"><button class="chq-btn es-hover" type="button">Veo mi puntaje</button><em>hover</em></div>
+      <div class="estado"><button class="chq-btn es-foco" type="button">Veo mi puntaje</button><em>foco visible</em></div>
+      <div class="estado"><button class="chq-btn es-off" type="button" disabled>Revisando</button><em>deshabilitado</em></div>
+    </div>
+
+    <h3>Escala tipográfica, con texto real</h3>
+    <ul class="escala">
+      <li>
+        <span class="dato">Display · Manrope 800 · el campo del dominio · 93,6 px a 1440 / 40 px a 390</span>
+        <p class="m-display">tuempresa.cl</p>
+      </li>
+      <li>
+        <span class="dato">Afirmación · Manrope 800 mayúsculas · 24 px / 22 px</span>
+        <p class="m-h1">Construimos sitios que la IA lee</p>
+      </li>
+      <li>
+        <span class="dato">Cuerpo · Manrope 400 · 24 px / 17 px</span>
+        <p class="m-cuerpo">Tu sitio está escrito para personas, y el primero en llegar no es una persona. La consulta que pagaste termina en otra parte.</p>
+      </li>
+      <li>
+        <span class="dato">Nota y rótulo de campo · Manrope 400 y 500 · 16 px</span>
+        <p class="m-nota">Sin registro. Revisamos 21 señales técnicas. Es el mismo chequeo con el que partimos cada proyecto.</p>
+      </li>
+    </ul>
+  </section>
+</main>
+
+</body>
+</html>

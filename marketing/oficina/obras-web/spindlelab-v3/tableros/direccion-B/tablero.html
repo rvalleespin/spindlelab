@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dirección B · La afirmación manda · hero v3 SpindleLab</title>
+<meta name="robots" content="noindex, nofollow" />
+
+<!-- Fuentes del sistema v3, auto-alojadas y referenciadas RELATIVAS.
+     Nunca por CDN: el headless sin red cae al fallback y la captura miente. -->
+<style>
+  @font-face{
+    font-family:'Manrope'; font-style:normal; font-weight:400 800; font-display:block;
+    src:url('fonts/manrope-latin.woff2') format('woff2');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  @font-face{
+    font-family:'Manrope'; font-style:normal; font-weight:400 800; font-display:block;
+    src:url('fonts/manrope-latin-ext.woff2') format('woff2');
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Gabarito'; font-style:normal; font-weight:400 700; font-display:block;
+    src:url('fonts/Gabarito.woff2') format('woff2');
+  }
+
+  /* ---- Tokens del sistema v3. No se inventa paleta: estos son los de
+          tailwind.config.mjs con SU rol. ---- */
+  :root{
+    --noche:#000000;      /* lienzo, aprobado 27-sep */
+    --papel:#F7F5F0;      /* el artefacto claro: acá es la superficie del instrumento */
+    --humo:#96948E;       /* metadatos sobre negro, 6,92:1 */
+    --oro:#C9A227;        /* UN uso por vista: el punto del wordmark */
+    --radio:6px;          /* radio único del sistema, cero píldoras */
+    --medianil:40px;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--noche);
+    color:var(--papel);
+    font-family:'Manrope','Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  /* ================= CABECERA ================= */
+  /* Termina en el píxel 86, como el v3 construido. */
+  .nav{
+    position:absolute; inset:0 0 auto 0; height:86px;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 24px;
+  }
+  @media (min-width:768px){ .nav{padding:0 var(--medianil)} }
+  .wordmark{
+    font-family:'Gabarito','Manrope',system-ui,sans-serif;
+    font-weight:700; font-size:20px; letter-spacing:-0.01em; color:var(--papel);
+  }
+  .wordmark .punto{color:var(--oro)}  /* el único dorado de la vista */
+  .nav-menu{
+    font-size:14px; font-weight:700; color:var(--papel);
+    background:none; border:0; padding:6px 0; cursor:pointer;
+    letter-spacing:0.02em;
+  }
+
+  /* ================= HERO ================= */
+  /* Una sola regla izquierda. Nada centrado: el ojo baja en vertical
+     desde la afirmación hasta el instrumento. */
+  .hero{
+    padding:96px 24px 0;
+    min-height:844px;             /* el primer viewport de teléfono, para medir */
+  }
+  @media (min-width:768px){
+    .hero{padding:136px var(--medianil) 0; min-height:813px}
+  }
+
+  h1{
+    margin:0;
+    font-weight:800;
+    text-transform:uppercase;
+    font-size:clamp(2.25rem, 8.4vw, 8rem);
+    line-height:0.88;
+    letter-spacing:0;
+    color:var(--papel);
+    max-width:18ch;              /* corta la línea donde yo decido, no donde cae */
+  }
+
+  /* DOS NIVELES DE LECTURA Y NADA EN MEDIO. Es el rasgo de la referencia
+     que la v3 construida perdió (14 tamaños medidos). Acá hay dos:
+     el display del h1 y el cuerpo. La bajada va a PLENA FUERZA en papel
+     —es parte de la afirmación, no un pie de foto— y la nota baja por
+     COLOR, no por tamaño. */
+  .bajada{
+    margin:24px 0 0;
+    font-size:clamp(1.125rem, 1.7vw, 1.5rem);
+    line-height:1.5;
+    font-weight:400;
+    color:var(--papel);
+    max-width:60ch;
+  }
+  @media (min-width:768px){ .bajada{margin-top:28px} }
+
+  /* ---- EL INSTRUMENTO: la única superficie encendida de la vista ----
+     El dorado ya está gastado en el punto del wordmark, así que el
+     instrumento no puede destacar por color. Destaca por ser lo único
+     claro sobre negro. Radio 6px del sistema, cero píldoras. */
+  .instrumento{
+    margin-top:28px;
+    background:var(--papel);
+    border-radius:var(--radio);
+    padding:10px;
+    max-width:660px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  @media (min-width:768px){
+    .instrumento{margin-top:36px; flex-direction:row; align-items:stretch; gap:12px}
+  }
+  .campo-dominio{
+    flex:1 1 auto; min-width:0;
+    border:0; background:transparent; outline:none;
+    font-family:inherit; font-weight:500;
+    font-size:1.375rem; color:var(--noche);
+    padding:14px 12px;
+  }
+  @media (min-width:768px){ .campo-dominio{font-size:2rem; padding:16px 14px} }
+  .campo-dominio::placeholder{color:#8A8782; opacity:1}
+  .campo-dominio:focus-visible{
+    background:rgba(0,0,0,.06); border-radius:var(--radio);
+  }
+  .boton{
+    flex:0 0 auto;
+    background:var(--noche); color:var(--papel);
+    font-family:inherit; font-size:15px; font-weight:800;
+    letter-spacing:0.01em;
+    border:0; border-radius:var(--radio);
+    padding:16px 22px; cursor:pointer;
+    transition:background-color .18s ease;
+  }
+  @media (min-width:768px){ .boton{padding:0 26px} }
+  .boton:hover{background:#231F1C}
+  .boton:focus-visible{outline:3px solid var(--noche); outline-offset:3px}
+  .boton:disabled{background:#9A9691; color:#F7F5F0; cursor:not-allowed}
+
+  /* La nota: MISMO tamaño que la bajada, menos brillo. Es la tira de
+     parámetros del instrumento, no letra chica. Acá vive el único
+     eslabón que un competidor no puede copiar escribiéndolo. */
+  .nota{
+    margin:20px 0 0;
+    font-size:clamp(1.125rem, 1.7vw, 1.5rem);
+    line-height:1.45;
+    color:var(--humo);
+    max-width:46ch;
+  }
+  /* La segunda puerta, barata: una línea, peso distinto, sin tarjeta. */
+  .otra-puerta{
+    margin:14px 0 0;
+    font-size:clamp(1.125rem, 1.7vw, 1.5rem);
+    line-height:1.45;
+    color:var(--papel);
+    max-width:74ch;
+  }
+  .otra-puerta a{
+    color:var(--papel); text-decoration:underline;
+    text-decoration-thickness:2px; text-underline-offset:4px;
+  }
+  .otra-puerta a:focus-visible{outline:3px solid var(--papel); outline-offset:3px}
+
+  /* Línea de pliegue, solo para el tablero (no va al sitio). */
+  .pliegue{
+    position:absolute; left:0; right:0; height:0;
+    border-top:1px dashed rgba(201,162,39,0);
+  }
+
+  /* ================= TIRA DE ESTADOS (fuera del primer viewport) ================= */
+  .taller{
+    margin-top:0;
+    padding:72px 24px 96px;
+    border-top:1px solid rgba(247,245,240,.14);
+  }
+  @media (min-width:768px){ .taller{padding:72px var(--medianil) 96px} }
+  .rotulo{
+    margin:0 0 28px; font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:0.16em; color:var(--humo);
+  }
+  .estados{display:flex; flex-wrap:wrap; gap:28px 32px; align-items:flex-start}
+  .estado{display:flex; flex-direction:column; gap:10px}
+  .estado .cap{font-size:13px; color:var(--humo)}
+  .estado .marco{background:var(--papel); border-radius:var(--radio); padding:10px}
+  .b-foco{outline:3px solid var(--noche); outline-offset:3px}
+  .b-hover{background:#231F1C !important}
+  .escala{margin-top:64px; display:flex; flex-direction:column; gap:26px}
+  .muestra{display:flex; flex-direction:column; gap:6px}
+  .muestra .cap{font-size:12px; color:var(--humo); letter-spacing:.08em; text-transform:uppercase}
+  .m-display{font-weight:800; text-transform:uppercase; font-size:clamp(2.25rem,8.4vw,8rem); line-height:.88; margin:0}
+  .m-cuerpo{font-size:clamp(1.125rem,1.7vw,1.5rem); line-height:1.5; margin:0; max-width:54ch}
+  .m-cuerpo--humo{color:var(--humo)}
+  .m-boton{font-size:15px; font-weight:800}
+</style>
+</head>
+<body>
+
+  <header class="nav">
+    <span class="wordmark">SpindleLab<span class="punto">.</span></span>
+    <button class="nav-menu" type="button">Abrir menú</button>
+  </header>
+
+  <main>
+    <section class="hero">
+
+      <!-- LA AFIRMACIÓN. 28 caracteres, 6 palabras, con verbo, abre en la
+           situación del lector, y es falsable en 40 segundos por el
+           instrumento que viene inmediatamente debajo. -->
+      <h1>Tu sitio ya tiene un puntaje</h1>
+
+      <!-- La bajada es un RECORTE del post publicado el 1-sep-2026, no una
+           paráfrasis: cuatro paráfrasis fallaron. Recupera los tres
+           movimientos que la bajada vigente había perdido: el doble empuje
+           pagado, el reencuadre, y el costo dicho en plata. -->
+      <p class="bajada">
+        Meta empuja. Google empuja. Los dos llevan al mismo lugar: tu sitio. Porque tu
+        sitio está escrito para personas. Y el primero en llegar no es una persona. Si
+        no puede leerte, la consulta que pagaste termina en otra parte.
+      </p>
+
+      <!-- Los identificadores son contrato con /api/chequeo, no estilo. -->
+      <form class="instrumento chq-form" id="chq-form" novalidate onsubmit="return false">
+        <label class="sr-only" for="chq-dominio" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Tu dominio</label>
+        <input class="campo-dominio" id="chq-dominio" name="dominio" type="text"
+               inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false"
+               placeholder="tuempresa.cl" required />
+        <button class="boton" id="chq-btn" type="submit">Te mostramos tu puntaje</button>
+      </form>
+
+      <p class="nota">
+        Son 21 señales y la metodología está publicada, con el peso de cada una. No pide
+        registro. Es el mismo chequeo con el que partimos cada proyecto.
+      </p>
+
+      <p class="otra-puerta">
+        Si el sitio todavía no existe, lo construimos.
+        <a href="/v3/contacto/">Cuéntanos qué necesitas</a>
+      </p>
+
+    </section>
+
+    <!-- ================= FUERA DEL PRIMER VIEWPORT ================= -->
+    <section class="taller">
+      <p class="rotulo">Estados del botón</p>
+      <div class="estados">
+        <div class="estado">
+          <div class="marco"><button class="boton" type="button">Te mostramos tu puntaje</button></div>
+          <span class="cap">Reposo</span>
+        </div>
+        <div class="estado">
+          <div class="marco"><button class="boton b-hover" type="button">Te mostramos tu puntaje</button></div>
+          <span class="cap">Hover</span>
+        </div>
+        <div class="estado">
+          <div class="marco"><button class="boton b-foco" type="button">Te mostramos tu puntaje</button></div>
+          <span class="cap">Foco visible (3px, color del botón)</span>
+        </div>
+        <div class="estado">
+          <div class="marco"><button class="boton" type="button" disabled>Revisando…</button></div>
+          <span class="cap">Deshabilitado (mientras corre el chequeo)</span>
+        </div>
+      </div>
+
+      <div class="escala">
+        <p class="rotulo" style="margin:0">Escala tipográfica del primer viewport · dos niveles, nada en medio</p>
+        <div class="muestra">
+          <span class="cap">Display · Manrope 800 · mayúsculas · clamp(2,25rem · 8,4vw · 8rem) · interlínea 0,88</span>
+          <p class="m-display">Tu sitio ya tiene un puntaje</p>
+        </div>
+        <div class="muestra">
+          <span class="cap">Cuerpo · Manrope 400 · clamp(1,125rem · 1,7vw · 1,5rem) · interlínea 1,5 · papel a plena fuerza</span>
+          <p class="m-cuerpo">Meta empuja. Google empuja. Los dos llevan al mismo lugar: tu sitio.</p>
+        </div>
+        <div class="muestra">
+          <span class="cap">Cuerpo en humo · mismo tamaño, menos brillo · 6,92:1 sobre negro</span>
+          <p class="m-cuerpo m-cuerpo--humo">Son 21 señales y la metodología está publicada, con el peso de cada una.</p>
+        </div>
+        <div class="muestra">
+          <span class="cap">Botón · Manrope 800 · 15px (no es un tercer nivel: es interfaz)</span>
+          <p class="m-boton" style="margin:0">Te mostramos tu puntaje</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

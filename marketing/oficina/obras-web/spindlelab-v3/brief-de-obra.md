@@ -94,11 +94,16 @@ dominio del visitante.
 ## 6 · Restricciones (lo que no se puede tocar ni decir)
 
 - **Las 20 URLs vivas no cambian.** Ni un slug.
-- **La medición no se reconstruye.** `generate_lead` en `/contacto/`, captura de UTM en
-  `sessionStorage`, los nombres `.contact-form` / `#f-utm-source|medium|campaign` /
-  `.form-status` / `.form-success`, el banner de consentimiento y el Meta Pixel. El
-  `Layout.astro` de la rama ya los lleva; hay que **comprobarlo disparando el evento**,
-  no leyendo el código.
+- **La medición no se reconstruye** — pero **hay que arreglarla**. `generate_lead` en
+  `/contacto/`, los nombres `.contact-form` / `#f-utm-source|medium|campaign` /
+  `.form-status` / `.form-success`, el banner de consentimiento y el Meta Pixel.
+  **CORRECCIÓN del 2-oct (este brief se equivocaba):** `Layout.astro` lleva gtag con
+  consent mode, el banner y el Pixel — verificado — pero **NO lleva la captura de UTM**.
+  Esa captura vive solo dentro de `public/contacto/index.html` y lee la query string de
+  **la página en que corre**. Consecuencia medida: quien llega a la home con
+  `?utm_source=google` y después navega a contacto llega sin query string, y el
+  formulario se envía con los tres UTM vacíos. La atribución solo funciona si el anuncio
+  aterriza directo en `/contacto/`. Arreglarlo es parte de la obra, no un supuesto.
 - **Cero prueba social inventada.** Ni cifras de resultado, ni testimonios, ni logos.
   Las piezas de concepto van rotuladas **visibles sin scroll** (regla ya escrita en
   `marketing/portafolio/README.md`).
