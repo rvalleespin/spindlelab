@@ -1,36 +1,89 @@
 ---
-// ÍNDICE DE TRABAJO — la página que faltaba.
+// ÍNDICE DE TRABAJO — sistema driftime (5-oct-2026).
 //
-// Medido en la referencia (driftime.com/work): 3.298px, UNA sola sección, diez proyectos
-// en grilla. Su H1 va a 120px, peso 800 y mayúsculas («OUR WORK AND PARTNERSHIPS») y los
-// nombres de proyecto a 16px peso 400. Esa distancia entre los dos niveles —120 contra
-// 16, sin nada en medio— es lo que hace que la página se lea de un golpe: la imagen hace
-// el trabajo, la etiqueta solo identifica.
+// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md, §4 plantilla «Índice»:
+// h1 60 px + entrada → piezas grandes con rótulo. Implementación de referencia:
+// src/pages/v3/servicios/desarrollo-web.astro (cabecera, entrada, secciones pegajosas,
+// galería) y src/pages/v3/servicios/index.astro (el otro índice).
 //
-// Clasifican por RUBRO, no por servicio: Arts & Heritage, Financial Services, Nonprofit…
-// Acá se hace igual, porque un prospecto se reconoce en su rubro, no en el nombre del
-// servicio que le vendimos a otro.
+// LA REFERENCIA: driftime.com/work. Una sola sección de proyectos, la imagen grande y el
+// nombre chico debajo: la imagen hace el trabajo, la etiqueta solo identifica. Sus casos
+// arman la galería en grillas asimétricas (a sangre, dos lado a lado, 1 + texto). Acá:
+// una a sangre, un par 5 + 7 (no mitades iguales) y una de 8 columnas con su pie al lado.
+//
+// Clasifican por RUBRO, no por servicio, porque un prospecto se reconoce en su rubro, no en
+// el nombre del servicio que le vendimos a otro. Acá igual.
 //
 // LAS CUATRO PIEZAS NO SON LO MISMO, Y EL SITIO LO DICE.
-//   · cliente  — trabajo entregado a un cliente real
+//   · cliente  — trabajo entregado a un cliente real (Combeau, con permiso)
 //   · propio   — producto de la casa
 //   · concepto — ejercicio: el cliente no existe
-// El rótulo va en la tarjeta, no en una nota al pie. El manual prohíbe prueba social
-// inventada, y una grilla de trabajos sin distinguir cuál es cuál la rompe de frente.
+// El rótulo va en la pieza (arriba a la izquierda, spec §3) y se repite en el pie de cada
+// una. La de concepto lleva además su rótulo en papel, y su pie dice que no existe.
+//
+// SIN DISPLAY: una interna tiene cero usos de Manrope 800 en mayúsculas (spec §2). La
+// versión anterior de esta página ponía «TRABAJO» a 128 px en 800; ya no.
+//
+// EL JSON-LD va por el slot «head», como en desarrollo-web. La versión anterior lo pasaba
+// como prop jsonLd al Layout, pero Layout.astro no declara esa prop: el grafo no salía en la
+// página (medido el 5-oct: solo los tres nodos del Layout). Mismos dos nodos y mismo @id.
+// isPartOf apuntaba a #sitio, un @id que no existe en ningún grafo del sitio; Layout emite
+// el WebSite como #website, y es al que apuntan blog/ y nosotros/.
 import Layout from '../../layouts/Layout.astro';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
-import { caja } from '../../utils/caja';
+import Pieza from '../../components/v3/Pieza.astro';
+import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
+import '../../styles/driftime.css';
 import obra from '../../data/obra-v3.json';
-import '../../styles/campos-v3.css';
 
 const { casos } = obra;
 
-const ROTULO = {
+const ROTULO: Record<string, string> = {
   cliente: 'Cliente',
   propio: 'Producto propio',
   concepto: 'Pieza de concepto',
 };
+
+// Cada pieza con su forma en la composición: una a sangre, un par 5 + 7, y una de 8
+// columnas con su pie al lado. Lo que pesa más en la página es trabajo de cliente; la pieza
+// de concepto cierra y es la más chica de las anchas.
+//   ancha — a todo el ancho, 16:9 (mockup de notebook + teléfono)
+//   alta  — 5 de 12 columnas, 10:11 (mockup en teléfono)
+//   media — 7 de 12, toma la altura de la alta (mockup de notebook + teléfono)
+//   final — 8 de 12, 4:3, con el pie en las 4 columnas que quedan
+// Raigal va en mockup y no en su portada plana: la portada trae el aviso de concepto
+// impreso arriba, y el rótulo de la pieza le quedaba encima (medido el 5-oct). En el
+// mockup el aviso queda dentro de las pantallas y el rótulo cae sobre el fondo.
+// pos: el mockup a 16:9 se recorta (queda el 75 % del alto). Los dispositivos van del
+// 18 % al 88,8 % del alto del archivo (medido). Anclado al 55 %, el notebook queda bajo el
+// rótulo de la pieza y no detrás, y la base del teléfono sale entera.
+const FORMAS: Record<string, { forma: string; src: (c: any) => string; alt: (c: any) => string; w: number; h: number; pos?: string }> = {
+  'combeau-fotografia': { forma: 'ancha', src: (c) => c.mock, alt: (c) => c.altMock, w: 1600, h: 1200, pos: '50% 55%' },
+  'combeau-modelo': { forma: 'alta', src: (c) => c.mockAlto, alt: (c) => c.altMock, w: 1000, h: 1100 },
+  'verifica-y-cumple': { forma: 'media', src: (c) => c.mock, alt: (c) => c.altMock, w: 1600, h: 1200 },
+  raigal: { forma: 'final', src: (c) => c.mock, alt: (c) => c.altMock, w: 1600, h: 1200 },
+};
+
+const piezas = casos.map((c: any, i: number) => {
+  const f = FORMAS[c.slug] ?? { forma: 'ancha', src: (x: any) => x.mock, alt: (x: any) => x.altMock, w: 1600, h: 1200 };
+  const concepto = c.tipo === 'concepto';
+  return {
+    ...c,
+    forma: f.forma,
+    src: f.src(c),
+    altImg: f.alt(c),
+    w: f.w,
+    h: f.h,
+    pos: f.pos,
+    eager: i === 0,
+    concepto,
+    // Mismo rótulo que la fila de la home y la galería de Desarrollo Web.
+    etiquetas: [concepto ? `${c.n} · ${c.rubro}` : `${c.n} · ${ROTULO[c.tipo] ?? c.rubro}`],
+    // Lo que se lee en el enlace: el dominio, sin protocolo ni barra final.
+    dominio: c.url ? c.url.replace(/^https?:\/\//, '').replace(/\/$/, '') : null,
+  };
+});
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -40,7 +93,7 @@ const jsonLd = {
       '@id': 'https://spindlelab.cl/trabajo/#pagina',
       name: 'Trabajo',
       description: obra.bajada,
-      isPartOf: { '@id': 'https://spindlelab.cl/#sitio' },
+      isPartOf: { '@id': 'https://spindlelab.cl/#website' },
     },
     {
       '@type': 'BreadcrumbList',
@@ -56,88 +109,142 @@ const jsonLd = {
 <Layout
   title="Trabajo · SpindleLab"
   description={obra.bajada}
-  jsonLd={jsonLd}
+  bodyClass="d-body"
 >
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <NavV3 />
 
-  <main class="text-papel">
-    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-20 md:pb-28">
-      <nav aria-label="Miga de pan" class="rotulo text-base flex gap-2 mb-10">
-        <a href="/v3/" class="hover:opacity-70 transition-opacity">Inicio</a>
-        <span aria-hidden="true">·</span>
-        <span>Trabajo</span>
-      </nav>
+  <main>
+    <header class="d-cab">
+      <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Trabajo</nav>
+      <h1 class="d-h1">{obra.titulo}</h1>
+    </header>
 
-      <h1
-        class:list={['font-extrabold m-0 max-w-[14ch]', caja(obra.titulo)]}
-        style="font-size:clamp(2.25rem, 8.4vw, 8rem); line-height:0.88; letter-spacing:0"
-      >
-        {obra.titulo}
-      </h1>
+    <div class="d-entrada">
+      <p class="d-nota-card"><b>Tres enlazan al sitio en vivo.</b> La de concepto no lleva enlace: no hay a dónde ir.</p>
+      <p class="d-guia">{obra.bajada}</p>
+    </div>
 
-      <p class="mt-10 text-humo text-xl md:text-2xl leading-relaxed max-w-prosa">
-        {obra.bajada}
-      </p>
+    {/* Las cuatro piezas. Cada una es un artículo: la imagen arriba y su pie debajo
+        (nombre · rubro y tipo · la línea · el sitio en vivo). La imagen también enlaza,
+        pero fuera del orden de tabulación: el enlace del pie es el que se anuncia. */}
+    <div class="d-obras-trab">
+      {piezas.map((p: any) => (
+        <article class:list={['d-obra-trab', `d-obra-trab--${p.forma}`]} aria-labelledby={`o-${p.slug}`}>
+          {p.url ? (
+            <a class="d-obra-trab__img" href={p.url} target="_blank" rel="noopener" tabindex="-1">
+              <Pieza src={p.src} alt={p.altImg} concepto={p.concepto} etiquetas={p.etiquetas} clase="d-obra-trab__fig" ancho={p.w} alto={p.h} eager={p.eager} posicion={p.pos} />
+            </a>
+          ) : (
+            <div class="d-obra-trab__img">
+              <Pieza src={p.src} alt={p.altImg} concepto={p.concepto} etiquetas={p.etiquetas} clase="d-obra-trab__fig" ancho={p.w} alto={p.h} eager={p.eager} posicion={p.pos} />
+            </div>
+          )}
+          <div class="d-pie-trab">
+            <div class="d-pie-trab__id">
+              <h2 class="d-h3" id={`o-${p.slug}`}>{p.n}</h2>
+              <p class="d-rot">{p.rubro} · {ROTULO[p.tipo]}</p>
+            </div>
+            <div class="d-pie-trab__txt">
+              <p class="d-cuerpo">{p.linea}</p>
+              {p.concepto && (
+                <p class="d-cuerpo"><b class="d-pie-trab__fuerte">{p.n} no existe.</b> Es un ejercicio para mostrar cómo trabajamos en este rubro, no un cliente.</p>
+              )}
+              {p.url && (
+                <a class="d-btn d-btn--alt d-pie-trab__enlace" href={p.url} target="_blank" rel="noopener">
+                  {p.dominio}<span class="d-sr">: ver el sitio de {p.n}, abre en una pestaña nueva</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    {/* Lo que la página decía al cierre, como sección pegajosa: el rubro que falta y la
+        salida para quien no se ve en las cuatro. */}
+    <section class="d-sec" aria-labelledby="s-rubro">
+      <div class="d-eti"><h2 class="d-h2" id="s-rubro">Si tu rubro no está</h2></div>
+      <div>
+        <p class="d-guia">Estamos construyendo una pieza de concepto por rubro. Si el tuyo no está todavía, el chequeo funciona igual sobre tu sitio.</p>
+        <div class="d-btns d-btns-trab"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>
+      </div>
     </section>
 
-    {/* UNA sola sección con la grilla, como la referencia. Dos columnas en escritorio:
-        con cuatro piezas, cuatro columnas las dejaría del tamaño de una estampilla y la
-        imagen es lo que tiene que hacer el trabajo. */}
-    <section class="px-6 md:px-medianil pb-24 md:pb-40">
-      <ul class="list-none p-0 m-0 grid gap-x-8 gap-y-16 md:grid-cols-2">
-        {
-          casos.map((c: any) => (
-            <li>
-              <article>
-                {/* TRES DE LAS CUATRO ENLAZAN AL SITIO VIVO. Un índice de trabajo que no
-                    deja entrar a ver el trabajo es un álbum de capturas. La de concepto no
-                    lleva enlace porque no hay a dónde ir, y eso también dice lo que es. */}
-                {c.url ? (
-                  <a href={c.url} target="_blank" rel="noopener" class="grupo-obra block focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel focus-visible:outline-offset-4">
-                    <img src={c.img} alt={c.alt} width={c.w} height={c.h} loading="lazy" decoding="async" class="media-campo" />
-                  </a>
-                ) : (
-                  <img src={c.img} alt={c.alt} width={c.w} height={c.h} loading="lazy" decoding="async" class="media-campo" />
-                )}
-
-                <div class="mt-4 flex items-baseline gap-3 flex-wrap">
-                  <h2 class="m-0 text-base font-bold">{c.n}</h2>
-                  <span class="rotulo text-base">{c.rubro}</span>
-                  <span class="rotulo text-base">·</span>
-                  <span class="rotulo text-base">{ROTULO[c.tipo as keyof typeof ROTULO]}</span>
-                  {c.url && (
-                    <a href={c.url} target="_blank" rel="noopener" class="rotulo text-base underline underline-offset-4 hover:opacity-70 transition-opacity">
-                      Ver el sitio
-                    </a>
-                  )}
-                </div>
-
-                <p class="m-0 mt-2.5 text-humo text-base leading-relaxed max-w-prosa">
-                  {c.linea}
-                </p>
-
-                {c.tipo === 'concepto' && (
-                  <p class="m-0 mt-2.5 text-base leading-relaxed max-w-prosa">
-                    <strong>{c.n} no existe.</strong> Es un ejercicio para mostrar cómo
-                    trabajamos en este rubro, no un cliente.
-                  </p>
-                )}
-              </article>
-            </li>
-          ))
-        }
-      </ul>
-
-      {/* Lo que falta, dicho en la página en vez de escondido. Una grilla de cuatro con
-          dos ejercicios se explica sola si se dice por qué; si no se dice, el visitante
-          saca su propia conclusión y es peor. */}
-      <p class="mt-16 rotulo text-base leading-relaxed max-w-prosa">
-        Estamos construyendo una pieza de concepto por rubro. Si el tuyo no está todavía,
-        el chequeo funciona igual sobre tu sitio.
-      </p>
-      <a href="/v3/diagnostico/" class="boton-campo mt-6">Correr el chequeo</a>
-    </section>
+    <a class="d-siguiente" href="/v3/servicios/desarrollo-web/"><span class="d-chico d-gris">Siguiente</span><span class="d-h1">Desarrollo Web&nbsp;→</span></a>
   </main>
 
   <FooterV3 />
 </Layout>
+
+<style>
+  /* ------------------------------------------------------------ la composición */
+  /* Grilla de 12, como .d-galeria. Cada artículo ocupa dos filas de la grilla (imagen y
+     pie) con subgrid: así, en el par 5 + 7, las dos imágenes comparten alto y los dos pies
+     arrancan a la misma altura, sin calcular a mano un ratio que calce. */
+  .d-obras-trab {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--d-g);
+    row-gap: 0;
+    padding: 120px var(--d-m) 0;
+  }
+  .d-obra-trab {
+    grid-column: 1 / -1;
+    grid-row: span 2;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+    row-gap: 20px;
+    margin-bottom: 120px;
+  }
+  .d-obra-trab:last-child { margin-bottom: 0; }
+  .d-obra-trab--alta { grid-column: 1 / span 5; }
+  .d-obra-trab--media { grid-column: 6 / -1; }
+
+  .d-obra-trab__img { grid-column: 1 / -1; display: block; min-height: 0; text-decoration: none; }
+  .d-obra-trab__img :global(.d-obra-trab__fig) { height: 100%; }
+  .d-obra-trab--ancha :global(.d-obra-trab__fig) { aspect-ratio: 16 / 9; }
+  .d-obra-trab--alta :global(.d-obra-trab__fig) { aspect-ratio: 10 / 11; }
+  /* La media no lleva ratio: se estira al alto de la alta, su vecina de fila. */
+  .d-obra-trab--final :global(.d-obra-trab__fig) { aspect-ratio: 4 / 3; }
+
+  /* La final: imagen en 8 columnas y el pie en las 4 de la derecha, apoyado abajo (como
+     el bloque «quién» de la home). Una sola fila: no necesita el subgrid de filas. */
+  .d-obra-trab--final { grid-row: auto; grid-template-rows: auto; }
+  .d-obra-trab--final .d-obra-trab__img { grid-column: 1 / span 8; }
+
+  /* ------------------------------------------------------------ el pie de cada pieza */
+  .d-pie-trab { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 14px; }
+  .d-pie-trab__id { display: flex; flex-direction: column; gap: 4px; }
+  .d-pie-trab__txt { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; max-width: 620px; }
+  .d-pie-trab__fuerte { color: var(--d-papel); font-weight: 600; }
+  .d-pie-trab__enlace { margin-top: 6px; gap: 8px; }
+
+  /* En la pieza a todo el ancho, el pie se parte 5 + 7, como las secciones pegajosas que
+     vienen después: el nombre a la izquierda, la línea y el enlace a la derecha. */
+  .d-obra-trab--ancha .d-pie-trab { display: grid; grid-template-columns: subgrid; }
+  .d-obra-trab--ancha .d-pie-trab__id { grid-column: 1 / span 5; }
+  .d-obra-trab--ancha .d-pie-trab__txt { grid-column: 6 / -1; }
+  .d-obra-trab--final .d-pie-trab { grid-column: 9 / -1; align-self: end; padding-left: clamp(0px, 1.5vw, 24px); }
+
+  .d-btns-trab { margin-top: 28px; }
+
+  @media (max-width: 767px) {
+    .d-obras-trab { grid-template-columns: minmax(0, 1fr); padding-top: 80px; }
+    .d-obra-trab,
+    .d-obra-trab--alta,
+    .d-obra-trab--media { grid-column: 1 / -1; margin-bottom: 72px; }
+    .d-obra-trab:last-child { margin-bottom: 0; }
+    .d-obra-trab { row-gap: 16px; }
+    /* En celular cada pieza va sola, con el mockup en su ratio nativo (4:3): se ve entero. */
+    .d-obra-trab--ancha :global(.d-obra-trab__fig),
+    .d-obra-trab--media :global(.d-obra-trab__fig) { aspect-ratio: 4 / 3; }
+    .d-obra-trab--ancha .d-pie-trab { display: flex; }
+    .d-obra-trab--final { row-gap: 16px; }
+    .d-obra-trab--final .d-obra-trab__img,
+    .d-obra-trab--final .d-pie-trab { grid-column: 1 / -1; padding-left: 0; }
+  }
+</style>

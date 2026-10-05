@@ -97,6 +97,7 @@ interface Propio {
   marcasSr?: string[];
   cierreH2?: string;
   cierreP?: string;
+  leadSin?: string[];
 }
 
 const PROPIO: Record<string, Propio> = {
@@ -109,7 +110,7 @@ const PROPIO: Record<string, Propio> = {
     marcasSr: ['Prometemos:', 'Prometemos:', 'No prometemos:', 'No prometemos:'],
   },
   'auditoria-seo-tecnica': {
-    linea: 'En profundidad, con un informe priorizado por impacto. Mini-diagnóstico gratis; la auditoría, desde $490.000 + IVA.',
+    linea: 'En profundidad, con un informe priorizado por impacto. La auditoría, desde $490.000 + IVA; el mini-diagnóstico es gratis.',
     nota: ['Valores en pesos, + IVA.', 'El valor final se cierra tras el mini-diagnóstico gratuito, según el tamaño del sitio.'],
     sangre: { ...IMG.domino, pos: '50% 58%' },
     galeria: [{ img: IMG.ventana, forma: 'd-g-media', pos: '40% 50%' }, { img: IMG.hilo, forma: 'd-g-alta', pos: '30% 50%' }],
@@ -117,7 +118,7 @@ const PROPIO: Record<string, Propio> = {
   },
   'acompanamiento-mensual': {
     linea: 'Implementación continua e informes quincenales de SEO técnico y visibilidad en IA. Desde $590.000/mes + IVA, mínimo 3 meses.',
-    nota: ['Mínimo 3 meses.', 'Después, mes a mes con aviso de 30 días. Valores en pesos, + IVA.'],
+    nota: ['Valores en pesos, + IVA.', 'Cumplidos los 3 meses, mes a mes con aviso de 30 días.'],
     sangre: { ...IMG.dominoCurva, pos: '50% 62%' },
     // El servicio se vende como «trato directo de consultor»: el consultor es verificable.
     galeria: [{ img: IMG.ramon, forma: 'd-g-alta', pos: '50% 30%' }, { img: IMG.escritorio, forma: 'd-g-media', pos: '30% 50%' }],
@@ -128,20 +129,32 @@ const PROPIO: Record<string, Propio> = {
     linea: 'LinkedIn y Meta: estrategia, pauta, comunidad y reportes. Desde $390.000/mes + IVA; el creativo lo pones tú.',
     nota: ['Valores en pesos, + IVA.', 'No incluyen la inversión en pauta: esa la defines tú.'],
     sangre: { ...IMG.ventana, pos: '50% 50%' },
-    galeria: [{ img: IMG.domino, forma: 'd-g-alta', pos: '45% 50%' }, { img: IMG.hilos, forma: 'd-g-media', pos: '50% 25%' }],
+    // Sin hilos.jpg en la galería: su línea dorada, a 900 px de ancho, se lee como un
+    // segundo oro en la vista. Solo va donde la pide el encargo (cabecera de Visibilidad).
+    // domino.jpg tampoco va en la alta: su fondo es negro puro y, sobre el lienzo negro, la
+    // pieza pierde el borde (medido en captura: se lee como un hueco).
+    galeria: [{ img: IMG.dominoCurva, forma: 'd-g-alta', pos: '30% 50%' }, { img: IMG.hilo, forma: 'd-g-media', pos: '50% 45%' }],
     marcas: ['01', '02', '03', '04'],
+    // El «creativo lo pones tú» está en la línea, en lo que incluye, en la nota de planes y
+    // en la primera pregunta. En la entrada era la quinta vez: se corta ahí.
+    leadSin: ['Las piezas gráficas y el video los pones tú; si no los tienes, te conectamos con partners. ', 'SpindleLab orquesta la estrategia y la ejecución. '],
   },
   'paid-media': {
-    linea: 'Google Ads de búsqueda, de alta intención y con el presupuesto bajo tu control. Gestión desde $350.000/mes + IVA; la inversión va aparte.',
+    linea: 'Google Ads de alta intención, con el presupuesto bajo tu control. Gestión desde $350.000/mes + IVA.',
     nota: ['El precio es el fee de gestión, + IVA.', 'La inversión en pauta la pones tú y va a tu tarjeta.'],
     sangre: { ...IMG.hilo, pos: '50% 45%' },
-    galeria: [{ img: IMG.dominoCurva, forma: 'd-g-media', pos: '50% 60%' }, { img: IMG.ventana, forma: 'd-g-alta', pos: '22% 50%' }],
+    galeria: [{ img: IMG.domino, forma: 'd-g-media', pos: '50% 62%' }, { img: IMG.ventana, forma: 'd-g-alta', pos: '22% 50%' }],
     marcas: ['01', '02', '03', '04'],
     cierreH2: 'Vemos dónde conviene invertir',
     cierreP: 'Envíanos tu URL y en 24 horas tienes el mini-diagnóstico gratuito, antes de que pongas un peso en pauta.',
   },
 };
 const pr = PROPIO[slug!];
+if (!pr) throw new Error(`[slug].astro: falta la entrada de PROPIO para «${slug}» (línea, nota, imágenes y marcas). Un servicio nuevo en servicios-v3.json la necesita.`);
+const lead: string = (pr.leadSin ?? []).reduce((a, x) => a.replace(x, ''), s.lead ?? '');
+// Una palabra con guion («mini-diagnóstico») no se corta en el guion: sale de constantes
+// de este archivo, no de datos de terceros, así que set:html es seguro.
+const sinCorte = (t: string) => t.replace(/([\wáéíóúñÁÉÍÓÚÑ$.]+-[\wáéíóúñÁÉÍÓÚÑ.]+)/g, '<span class="d-nw-svc">$1</span>');
 
 // La miga visible usa el nombre del grafo, para que lo visible y el schema digan lo mismo.
 const nombre: string = s.breadcrumb?.[2]?.name ?? s.h1;
@@ -190,7 +203,7 @@ const jsonLd = {
     <header class="d-cab">
       <nav class="d-miga" aria-label="Miga de pan"><a href="/v3/">Inicio</a> · <a href="/v3/servicios/">Servicios</a> · {nombre}</nav>
       <h1 class="d-h1">{s.h1}</h1>
-      <p class="d-linea">{pr.linea}</p>
+      <p class="d-linea" set:html={sinCorte(pr.linea)} />
       <div class="d-btns">
         {secPlanes && <a class="d-btn" href="#planes">Ver planes</a>}
         <a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a>
@@ -202,8 +215,8 @@ const jsonLd = {
     </figure>
 
     <div class="d-entrada">
-      <p class="d-nota-card"><b>{pr.nota[0]}</b> {pr.nota[1]}</p>
-      {s.lead && <p class="d-guia">{comillas(s.lead)}</p>}
+      <p class="d-nota-card"><b>{pr.nota[0]}</b> <Fragment set:html={sinCorte(pr.nota[1])} /></p>
+      {lead && <p class="d-guia">{comillas(lead)}</p>}
     </div>
 
     {secIncluye && (
@@ -281,7 +294,7 @@ const jsonLd = {
       </section>
     )}
 
-    <a class="d-siguiente" href={sig.href}><span class="d-chico d-gris">Siguiente</span><span class="d-h1">{sig.label} →</span></a>
+    <a class="d-siguiente" href={sig.href}><span class="d-chico d-gris">Siguiente</span><span class="d-h1">{sig.label}{'\u00a0'}→</span></a>
   </main>
 
   <FooterV3 />
@@ -295,6 +308,7 @@ const jsonLd = {
     .d-galeria--svc :global(.d-g-alta) { aspect-ratio: auto; }
   }
   .d-inc-svc { margin-top: 8px; }
+  :global(.d-nw-svc) { white-space: nowrap; }
   .d-cierre-svc { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
   .d-cierre-svc .d-guia { max-width: 640px; }
 </style>
