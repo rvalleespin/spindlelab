@@ -17,8 +17,10 @@
 // home); el alt del mockup en teléfono describe el teléfono; sin nota en la entrada (repetía
 // la bajada y empujaba la obra bajo el aviso de cookies a 390); el cierre habla a todos, con
 // el chequeo y el precio de entrada de Desarrollo Web, sin prometer piezas por rubro, y no
-// se pega (--quieta); la barra de «Bernardo Combeau | Model» va en gris; el grafo suma url,
-// #breadcrumb y la lista de las cuatro piezas.
+// se pega (--quieta); la barra de «Bernardo Combeau | Model» va en gris, en el h2 y en la
+// etiqueta de la imagen; el grafo suma url, #breadcrumb y la lista de las cuatro piezas.
+// Segunda pasada: el cierre nombraba a Gemini, que el chequeo no prueba en vivo; ahora dice
+// ChatGPT, Claude y Perplexity, como el índice de servicios y el diagnóstico.
 //
 // Clasifican por RUBRO, no por servicio, porque un prospecto se reconoce en su rubro, no en
 // el nombre del servicio que le vendimos a otro. Acá igual.
@@ -320,6 +322,12 @@ const jsonLd = {
 
   /* «Bernardo Combeau | Model»: la barra en gris, como en su propio sitio. */
   .d-barra-trab { color: var(--d-gris); font-weight: 400; }
+  /* La misma barra en la etiqueta de la imagen. La etiqueta propia se ubica contra el
+     contenedor de la imagen (mismo rincón que el figcaption de Pieza: la figura lo llena).
+     .d-etq span alcanza también al span anidado de la barra (fondo, desenfoque, relleno):
+     acá se le quitan, y queda solo el color. */
+  .d-obra-trab__img { position: relative; }
+  .d-etq-trab .d-barra-etq-trab { background: none; -webkit-backdrop-filter: none; backdrop-filter: none; padding: 0 0.1em; border-radius: 0; color: var(--d-gris); font-weight: 400; }
 
   /* La entrada sin nota: la bajada en las 7 columnas de la derecha, como la guía de
      Desarrollo Web. En celular, .d-entrada ya apila. */
