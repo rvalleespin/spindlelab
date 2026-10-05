@@ -15,7 +15,7 @@
 //   inventada.
 // · El contenido es el de paginas-v3.json.metodo. La duración y el entregable de cada
 //   fase salen de la página publicada (public/metodo/index.html), que el JSON no recogió,
-//   SALVO la fase 01 (ver «datos»). Los precios salen de servicios-v3.json, exactos.
+//   SALVO las fases 01 y 02 (ver «datos»). Los precios salen de servicios-v3.json, exactos.
 //
 // CORRECCIONES DEL QA DEL 5-OCT (Javiera), aplicadas aquí y no en el JSON porque los JSON
 // de src/data no se tocan desde una página; van propuestas a Clara para que el JSON quede
@@ -29,9 +29,9 @@
 //   de la fase 01. La fase 01 nombra el chequeo como punto de partida, como la home.
 // · Cada fase dice cuánto cuesta y enlaza a su servicio (antes no había cómo saberlo).
 //
-// LA CAPA SEO: el BreadcrumbList de la v3 y el HowTo (#metodo-spindlelab) de la página
-// publicada, portado con sus mismos pasos. La organización y la persona las emite
-// Layout.astro; aquí solo se referencian por @id, sin repetir nodos.
+// LA CAPA SEO: el BreadcrumbList de la v3 y, de la página publicada, el WebPage (#webpage)
+// y el HowTo (#metodo-spindlelab), portados con sus mismos @id y pasos. La organización y
+// la persona las emite Layout.astro; aquí solo se referencian por @id, sin repetir nodos.
 import Layout from '../../layouts/Layout.astro';
 import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
@@ -63,19 +63,24 @@ const textoFase = (d: string, i: number) => {
       .replace(/^Todo parte con tu URL\.\s*Auditamos/, `Todo parte con tu URL y el chequeo de 21${NB}señales, el mismo que puedes correr tú en segundos. Después auditamos`)
       .replace('Luego conversamos', 'Y conversamos')
       .replace('tu negocio, tus clientes y las búsquedas', 'tu negocio y las búsquedas')
-      .replace(/en 24 horas/g, `en 24${NB}horas`);
+      // «gratis, en 24 horas» ya lo dicen los datos de la fase justo debajo («Duración
+      // 24 h», «Cuánto cuesta: sin costo»): dicho tres veces en el mismo bloque era relleno
+      // (QA: «24 horas» ×4 y «gratis» ×6 en la página).
+      .replace(/ que recibes gratis, en 24 horas\./, '.');
   }
   if (i === 3) return d.replace(/^Lo que no se mide, se estanca\.\s*/, '');
   return d;
 };
 
-// Duración y entregable por fase. Fases 02 a 04, verbatim de public/metodo/index.html.
-// Fase 01 corregida (ver arriba). Un valor con varias líneas es un arreglo: la publicada
-// las unía con «·», que a 768 caía al comienzo de la línea.
+// Duración y entregable por fase. Fases 03 y 04, verbatim de public/metodo/index.html.
+// Fase 01 corregida (ver arriba). Fase 02: la publicada decía «1–2 semanas», pero la fase
+// es la Auditoría de Visibilidad cuyo precio va justo debajo, y servicios-v3.json dice
+// «Entrega en ~2 semanas» (mandan los JSON, spec §6). Un valor con varias líneas es un
+// arreglo: la publicada las unía con «·», que a 768 caía al comienzo de la línea.
 type Dato = [string, string | string[]];
 const datos: Dato[][] = [
   [['Duración', `24${NB}h`], ['Recibes', 'Mini-diagnóstico de una página con los hallazgos priorizados']],
-  [['Duración', `1–2${NB}semanas`], ['Recibes', 'Línea base de presencia en IA + plan de citabilidad']],
+  [['Duración', `~2${NB}semanas`], ['Recibes', 'Línea base de presencia en IA + plan de citabilidad']],
   [['Duración', `Según alcance: típicamente 2${NB}a${NB}6${NB}semanas`], ['Recibes', 'Cambios implementados y verificados']],
   [['Frecuencia', ['Informes quincenales', 'Reunión mensual']], ['Recibes', `Evolución medible contra la línea${NB}base`]],
 ];
@@ -88,7 +93,11 @@ const datos: Dato[][] = [
 const precios: { t: string; href?: string; enlace?: string }[] = [
   { t: `Sin costo. La auditoría completa va aparte: 2${NB}a${NB}3${NB}semanas, desde${NB}$490.000${NB}+${NB}IVA.`, href: '/v3/servicios/auditoria-seo-tecnica/', enlace: 'Ver la auditoría' },
   { t: `Auditoría de Visibilidad: desde${NB}$400.000${NB}+${NB}IVA, una${NB}vez.`, href: '/v3/servicios/visibilidad-en-ia/', enlace: 'Ver Visibilidad en IA' },
-  { t: `Acompañamiento Mensual: desde${NB}$590.000${NB}/mes${NB}+${NB}IVA, mínimo 3${NB}meses.`, href: '/v3/servicios/acompanamiento-mensual/', enlace: 'Ver el acompañamiento' },
+  // La fase dice «entrega de especificaciones para tu equipo, o ejecución directa nuestra»:
+  // la FAQ de auditoria-seo-tecnica separa los dos casos («listos para implementar por tu
+  // equipo. Si prefieres que implementemos nosotros, ese es el servicio de acompañamiento
+  // mensual»). Con un solo precio parecía que implementar siempre cuesta el mensual.
+  { t: `Si lo ejecutamos nosotros, Acompañamiento Mensual: desde${NB}$590.000${NB}/mes${NB}+${NB}IVA, mínimo 3${NB}meses. Si lo ejecuta tu equipo, el plan viene en la auditoría completa.`, href: '/v3/servicios/acompanamiento-mensual/', enlace: 'Ver el acompañamiento' },
   { t: `Va dentro del mismo Acompañamiento Mensual de la fase${NB}03.` },
 ];
 
@@ -127,6 +136,18 @@ const pasosPublicados = [
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    // WebPage de la publicada, verbatim: su mainEntity es el HowTo. El Layout no emite
+    // WebPage, así que no se repite ningún @id.
+    {
+      '@type': 'WebPage',
+      '@id': 'https://spindlelab.cl/metodo/#webpage',
+      name: 'Nuestro método de SEO y visibilidad en IA',
+      url: 'https://spindlelab.cl/metodo/',
+      inLanguage: 'es-CL',
+      about: { '@id': 'https://spindlelab.cl/#org' },
+      publisher: { '@id': 'https://spindlelab.cl/#org' },
+      mainEntity: { '@id': 'https://spindlelab.cl/metodo/#metodo-spindlelab' },
+    },
     {
       '@type': 'HowTo',
       '@id': 'https://spindlelab.cl/metodo/#metodo-spindlelab',
@@ -296,7 +317,7 @@ const jsonLd = {
   .d-datos-met dt { font-size: 0.8125rem; font-weight: 500; color: var(--d-gris); margin: 0 0 4px; }
   .d-datos-met dd { margin: 0; font-size: 0.9375rem; line-height: 1.5; }
   .d-datos-met .d-cuesta-met { grid-column: 1 / -1; }
-  .d-datos-met .d-cuesta-met dd { max-width: 34em; }   /* 15 px: ≤ 68 caracteres, medido */
+  .d-datos-met .d-cuesta-met dd { max-width: 31em; }   /* 15 px: ≤ 68 caracteres, medido con Range (con 34 em la línea de la fase 03 llegaba a 71) */
   .d-linea-met { display: block; }
   @media (max-width: 1023px) { .d-datos-met { grid-template-columns: minmax(0, 1fr); } }
 
@@ -308,6 +329,7 @@ const jsonLd = {
   /* Lo que pedimos: el término a la izquierda, la explicación a la derecha. */
   .d-pide-met { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 6px var(--d-g); align-items: baseline; }
   .d-pide-met dd { margin: 0; }
+  .d-pide-met dd.d-cuerpo { text-wrap: balance; }   /* respuestas de 1 a 3 líneas: «para ti.» quedaba sola a 1440 */
 
   .d-cierre-met { border-top: 1px solid var(--d-filete); padding-top: 22px; }
   .d-cierre-met .d-btns { margin-top: 28px; }
