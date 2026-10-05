@@ -1,0 +1,720 @@
+{
+ "url": "https://www.studio-iron.com/collections/kouros-maghsoudi",
+ "title": "Kouros Maghsoudi — Studio Iron",
+ "scrollW": 1440,
+ "clientW": 1440,
+ "H": 7424,
+ "html": {
+  "tag": "HTML",
+  "cls": "lenis",
+  "txt": "SKIP TO CONTENT\nDesign\nArt\nLondon Design Festival\nEvents\nAbout\nSearch\nAccount\nBa",
+  "ff": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "24px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 7424
+ },
+ "body": {
+  "tag": "BODY",
+  "cls": "antialiased",
+  "txt": "SKIP TO CONTENT\nDesign\nArt\nLondon Design Festival\nEvents\nAbout\nSearch\nAccount\nBa",
+  "ff": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+  "fs": "14px",
+  "fw": "500",
+  "lh": "21px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(10, 10, 10)",
+  "bg": "rgb(255, 255, 255)",
+  "x": 0,
+  "y": 29,
+  "w": 1440,
+  "h": 7395
+ },
+ "h1": {
+  "tag": "H1",
+  "cls": "col-span-4 lg:col-span-2 text-center",
+  "txt": "",
+  "ff": "\"Albert Sans\", \"Albert Sans Fallback\"",
+  "fs": "13px",
+  "fw": "500",
+  "lh": "19.5px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(10, 10, 10)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 540,
+  "y": 2,
+  "w": 360,
+  "h": 25
+ },
+ "h2": {
+  "tag": "H2",
+  "cls": "bookish_82aca62c-module__UWeQgW__className lg:max-w-[520px] text-[26px] lg:text-4xl leading-[0.8] uppercase text-center mb-[20px]",
+  "txt": "KOUROS MAGHSOUDI",
+  "ff": "bookish, \"bookish Fallback\"",
+  "fs": "36px",
+  "fw": "500",
+  "lh": "28.8px",
+  "ls": "normal",
+  "tt": "uppercase",
+  "color": "rgb(10, 10, 10)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 889,
+  "y": 2007,
+  "w": 382,
+  "h": 29
+ },
+ "h3": null,
+ "header": {
+  "tag": "HEADER",
+  "cls": "header-module__HqSsuG__header header-module__HqSsuG__solid albert_sans_d07bd869-module__vNvuEW__className",
+  "txt": "Design\nArt\nLondon Design Festival\nEvents\nAbout\nSearch\nAccount\nBag [0]",
+  "ff": "\"Albert Sans\", \"Albert Sans Fallback\"",
+  "fs": "13px",
+  "fw": "500",
+  "lh": "19.5px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(10, 10, 10)",
+  "bg": "rgb(255, 255, 255)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 29
+ },
+ "nav": {
+  "tag": "NAV",
+  "cls": "dynamic-menu-module__qpp75q__menu dynamic-menu-module__qpp75q__desktop",
+  "txt": "Design\nArt\nLondon Design Festival\nEvents\nAbout",
+  "ff": "\"Albert Sans\", \"Albert Sans Fallback\"",
+  "fs": "13px",
+  "fw": "500",
+  "lh": "19.5px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(10, 10, 10)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 18,
+  "y": 8,
+  "w": 504,
+  "h": 13
+ },
+ "fijos": [
+  {
+   "pos": "fixed",
+   "tag": "HEADER",
+   "cls": "header-module__HqSsuG__header header-module__HqSsuG__solid albert_sans_d07bd869-module__vNvuEW__className",
+   "txt": "Design\nArt\nLondon Design Festival\nEvents\nAbout\nSearch\nAccount\nBag [0]",
+   "ff": "\"Albert Sans\", \"Albert Sans Fallback\"",
+   "fs": "13px",
+   "fw": "500",
+   "lh": "19.5px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(10, 10, 10)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 29
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "\n                lg:hidden fixed inset-0 z-40\n                bg-[rgba(255,255,255,0.85)] backdrop-blur-[1px]\n                transition-opacity duration-200 ease-in-out\n                opacity-0 pointer-events-none\n            ",
+   "txt": "",
+   "ff": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "fs": "14px",
+   "fw": "500",
+   "lh": "21px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(10, 10, 10)",
+   "bg": "rgba(255, 255, 255, 0.85)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "\n                lg:hidden fixed top-0 left-0 w-[100vw] max-w-[100vw] h-[100dvh] z-[45] bg-[var(--background)] overflow-hidden\n                pt-[40px] flex flex-col\n                transition-transform duration-300 ease-in-out transition-opacity\n                -translate-x-full opacity-0 pointer-events-none\n                albert_sans_d07bd869-module__vNvuEW__className\n            ",
+   "txt": "DesignArtLondon Design FestivalEventsAboutAccountSearch",
+   "ff": "\"Albert Sans\", \"Albert Sans Fallback\"",
+   "fs": "14px",
+   "fw": "500",
+   "lh": "21px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(10, 10, 10)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "sticky",
+   "tag": "DIV",
+   "cls": "text-center lg:text-left lg:col-start-1 lg:row-start-1 lg:z-10 lg:self-start lg:sticky lg:top-[45%] lg:transform lg:-translate-y-1/2 lg:left-[0] lg:p-[20px] px-[12px] lg:px-[20px] lg:py-[0px] py-[24px] w-[100%] lg:max-w-[35%] text-black lg:text-(--hero-text,inherit) flex flex-col lg:flex-row lg:items-end gap-[18px] lg:gap-0",
+   "txt": "Kouros Maghsoudi",
+   "ff": "\"Albert Sans\", \"Albert Sans Fallback\"",
+   "fs": "14px",
+   "fw": "500",
+   "lh": "21px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 333,
+   "w": 504,
+   "h": 144
+  },
+  {
+   "pos": "sticky",
+   "tag": "DIV",
+   "cls": "w-full lg:sticky lg:top-[40px] px-[20px] lg:px-[0px] pb-[24px] lg:pb-[24px] lg:max-w-[100%] lg:py-[40px] py-[20px] mx-auto",
+   "txt": "ABOUT\nKOUROS MAGHSOUDI\n\nDesign has always surrounded Kouros Maghsoudi, who was b",
+   "ff": "\"Albert Sans\", \"Albert Sans Fallback\"",
+   "fs": "14px",
+   "fw": "500",
+   "lh": "21px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(10, 10, 10)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 720,
+   "y": 1941,
+   "w": 720,
+   "h": 379
+  },
+  {
+   "pos": "sticky",
+   "tag": "DIV",
+   "cls": "w-full text-center lg:sticky lg:top-[40px] px-[12px] lg:px-[0px] pb-[0px] lg:pb-[24px] max-w-[100%] mx-auto",
+   "txt": "\"Human behavior isn't always chic or controlled. Sometimes it's impulsive, somet",
+   "ff": "\"Albert Sans\", \"Albert Sans Fallback\"",
+   "fs": "14px",
+   "fw": "500",
+   "lh": "21px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(10, 10, 10)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 3823,
+   "w": 720,
+   "h": 214
+  },
+  {
+   "pos": "sticky",
+   "tag": "DIV",
+   "cls": "w-full text-center lg:sticky lg:top-[40px] px-[12px] lg:px-[0px] pb-[0px] lg:pb-[24px] max-w-[100%] mx-auto",
+   "txt": "\"I didn't go to design school — I'm self-taught and I built my practice on insti",
+   "ff": "\"Albert Sans\", \"Albert Sans Fallback\"",
+   "fs": "14px",
+   "fw": "500",
+   "lh": "21px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(10, 10, 10)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 720,
+   "y": 5187,
+   "w": 720,
+   "h": 210
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "cart-module__GMR72G__cart cart-module__GMR72G__isClosed albert_sans_ea8044c2-module__OGpixG__className",
+   "txt": "Bag [0]\nCLOSE\n\nYour bag is empty\n\nCONTINUE SHOPPING",
+   "ff": "\"Albert Sans\", \"Albert Sans Fallback\"",
+   "fs": "14px",
+   "fw": "500",
+   "lh": "21px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(10, 10, 10)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 1488,
+   "y": 0,
+   "w": 480,
+   "h": 900
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "shop-menu-module__KVl6JW__menu albert_sans_d07bd869-module__vNvuEW__className ",
+   "txt": "",
+   "ff": "\"Albert Sans\", \"Albert Sans Fallback\"",
+   "fs": "14px",
+   "fw": "500",
+   "lh": "21px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(10, 10, 10)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 8,
+   "y": 8,
+   "w": 1424,
+   "h": 665
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "cookie-notice-module__7kQufq__banner cookie-notice-module__7kQufq__bannerVisible",
+   "txt": "CookiesWe use cookies to run this site, remember your preferences, and — with yo",
+   "ff": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "fs": "12px",
+   "fw": "500",
+   "lh": "18.6px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  }
+ ],
+ "fuentes": [
+  "Albert Sans 500 normal",
+  "Albert Sans Fallback normal normal",
+  "bookish 400 normal",
+  "bookish 500 italic"
+ ],
+ "tamanos": [
+  [
+   "14px \"Albert Sans\"",
+   10
+  ],
+  [
+   "12px \"Albert Sans\"",
+   9
+  ],
+  [
+   "13px \"Albert Sans\"",
+   6
+  ],
+  [
+   "115.2px \"Albert Sans\"",
+   4
+  ],
+  [
+   "12px bookish",
+   4
+  ],
+  [
+   "12px \"Helvetica Neue\"",
+   3
+  ],
+  [
+   "37.44px bookish",
+   3
+  ],
+  [
+   "80.64px bookish",
+   1
+  ],
+  [
+   "36px bookish",
+   1
+  ],
+  [
+   "11px \"Albert Sans\"",
+   1
+  ]
+ ],
+ "imgs": [
+  {
+   "src": "https://cdn.shopify.com/s/files/1/0943/2301/6066/files/21X9_HugBedEditorial_Cassar14_copy.jpg?v=1781620534&width=1600&he",
+   "x": 0,
+   "y": 29,
+   "w": 1440,
+   "h": 617,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px solid rgb(10, 10, 10)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://www.studio-iron.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0943%2F2301%2F6066%2Ffiles%2",
+   "x": 13,
+   "y": 659,
+   "w": 462,
+   "h": 580,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://www.studio-iron.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0943%2F2301%2F6066%2Ffiles%2",
+   "x": 489,
+   "y": 659,
+   "w": 462,
+   "h": 580,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://cdn.shopify.com/s/files/1/0943/2301/6066/files/MG_6577_1200x_crop_center.jpg?v=1780573479",
+   "x": 489,
+   "y": 659,
+   "w": 462,
+   "h": 580,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px solid rgb(10, 10, 10)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://cdn.shopify.com/s/files/1/0943/2301/6066/files/DSCF2044-Edit_1200x_crop_center.jpg?v=1781708321",
+   "x": 489,
+   "y": 659,
+   "w": 462,
+   "h": 580,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px solid rgb(10, 10, 10)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://www.studio-iron.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0943%2F2301%2F6066%2Ffiles%2",
+   "x": 965,
+   "y": 659,
+   "w": 462,
+   "h": 580,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://www.studio-iron.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0943%2F2301%2F6066%2Ffiles%2",
+   "x": 13,
+   "y": 1300,
+   "w": 462,
+   "h": 580,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://cdn.sanity.io/images/fzcdfabk/production/383bbee62f52a0fc571373454adff13771f35bb4-1106x1380.png?w=2400&auto=form",
+   "x": 0,
+   "y": 1941,
+   "w": 720,
+   "h": 899,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px solid rgb(10, 10, 10)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://cdn.sanity.io/images/fzcdfabk/production/73bf0d7895fe135a8b245c6060017036a74b2adc-6720x4480.jpg?w=1600&auto=form",
+   "x": 0,
+   "y": 2851,
+   "w": 1440,
+   "h": 960,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px solid rgb(10, 10, 10)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://cdn.sanity.io/images/fzcdfabk/production/ec48e26c0c423931a7617819ca7fd659ea8afb78-2000x2388.jpg?w=2400&auto=form",
+   "x": 720,
+   "y": 3823,
+   "w": 720,
+   "h": 860,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px solid rgb(10, 10, 10)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://cdn.sanity.io/images/fzcdfabk/production/518f47b377112cffbc3f281e5c19b09f37d7dbfa-6000x7999.jpg?w=1800&auto=form",
+   "x": 0,
+   "y": 4695,
+   "w": 360,
+   "h": 480,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px solid rgb(10, 10, 10)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://cdn.sanity.io/images/fzcdfabk/production/60c37c05f5d9c497eb20ebb9e9f934625f1c2bec-1080x1351.jpg?w=1800&auto=form",
+   "x": 360,
+   "y": 4695,
+   "w": 360,
+   "h": 480,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px solid rgb(10, 10, 10)",
+   "radius": "0px"
+  }
+ ],
+ "links": [
+  {
+   "t": "SKIP TO CONTENT",
+   "h": "https://www.studio-iron.com/collections/kouros-maghsoudi#main"
+  },
+  {
+   "t": "Art",
+   "h": "https://www.studio-iron.com/art"
+  },
+  {
+   "t": "London Design Festival",
+   "h": "https://www.studio-iron.com/pages/london-design-festival"
+  },
+  {
+   "t": "Events",
+   "h": "https://www.studio-iron.com/events"
+  },
+  {
+   "t": "About",
+   "h": "https://www.studio-iron.com/pages/about"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/"
+  },
+  {
+   "t": "Account",
+   "h": "https://shopify.com/94323016066/account"
+  },
+  {
+   "t": "Art",
+   "h": "https://www.studio-iron.com/art"
+  },
+  {
+   "t": "London Design Festival",
+   "h": "https://www.studio-iron.com/pages/london-design-festival"
+  },
+  {
+   "t": "Events",
+   "h": "https://www.studio-iron.com/events"
+  },
+  {
+   "t": "About",
+   "h": "https://www.studio-iron.com/pages/about"
+  },
+  {
+   "t": "Account",
+   "h": "https://shopify.com/94323016066/account"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/products/hug-bed"
+  },
+  {
+   "t": "KOUROS MAGHSOUDI",
+   "h": "https://www.studio-iron.com/collections/kouros-maghsoudi"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/products/hug-bed-copy"
+  },
+  {
+   "t": "KOUROS MAGHSOUDI",
+   "h": "https://www.studio-iron.com/collections/kouros-maghsoudi"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/products/hug-tray"
+  },
+  {
+   "t": "KOUROS MAGHSOUDI",
+   "h": "https://www.studio-iron.com/collections/kouros-maghsoudi"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/products/cut-divider"
+  },
+  {
+   "t": "KOUROS MAGHSOUDI",
+   "h": "https://www.studio-iron.com/collections/kouros-maghsoudi"
+  },
+  {
+   "t": "Privacy Policy",
+   "h": "https://www.studio-iron.com/pages/privacy"
+  },
+  {
+   "t": "About",
+   "h": "https://www.studio-iron.com/pages/about"
+  },
+  {
+   "t": "Design",
+   "h": "https://www.studio-iron.com/collections/all-objects"
+  },
+  {
+   "t": "Events",
+   "h": "https://www.studio-iron.com/events"
+  },
+  {
+   "t": "Shipping & Returns",
+   "h": "https://www.studio-iron.com/pages/shipping-returns"
+  },
+  {
+   "t": "Account",
+   "h": "https://shopify.com/94323016066/account"
+  },
+  {
+   "t": "Instagram",
+   "h": "https://instagram.com/studioiron_"
+  },
+  {
+   "t": "Terms of Service",
+   "h": "https://www.studio-iron.com/pages/terms"
+  },
+  {
+   "t": "Privacy Policy",
+   "h": "https://www.studio-iron.com/pages/privacy"
+  },
+  {
+   "t": "Cookies",
+   "h": "https://www.studio-iron.com/pages/cookies"
+  },
+  {
+   "t": "Accessibility",
+   "h": "https://www.studio-iron.com/pages/accessibility"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/all-objects"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/andu-masebo"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/anoe-melliou"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/apohli"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/atelier-fomenta"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/atelier-moore-x-camille-cabanes"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/black-metal"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/body-amplification-devices"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/buchanan-studio"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/cj-aslan"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/completed-works"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/cruda"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/douze-degres"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/gary-card"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/gast-studio"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/hardstyle"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/hardstyle-1"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/jesse-butterfield"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/judexaya"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/kelly-wearstler-x-arca"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/kouros-maghsoudi"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/marquel-williams"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/marten-herma-anderson"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/panorammma"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/paul-coenen"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/ra-workshop"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/sylvie-macmillan"
+  },
+  {
+   "t": "",
+   "h": "https://www.studio-iron.com/collections/wretched-flowers"
+  },
+  {
+   "t": "Cookie Policy",
+   "h": "https://www.studio-iron.com/pages/cookies"
+  },
+  {
+   "t": "Privacy Policy",
+   "h": "https://www.studio-iron.com/pages/privacy"
+  }
+ ]
+}

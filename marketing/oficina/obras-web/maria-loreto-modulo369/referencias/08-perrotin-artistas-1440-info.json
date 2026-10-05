@@ -1,0 +1,1002 @@
+{
+ "url": "https://www.perrotin.com/en/artists",
+ "title": "Artists - Perrotin",
+ "scrollW": 1440,
+ "clientW": 1440,
+ "H": 3587,
+ "html": {
+  "tag": "HTML",
+  "cls": "",
+  "txt": "ARTISTS\nEXHIBITIONS & EVENTS\nABOUT\nCOLLECT\nMEDIA\nLOCATIONS\nSTORE\nSEARCH\nEN\nARTIS",
+  "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 3587
+ },
+ "body": {
+  "tag": "BODY",
+  "cls": "",
+  "txt": "ARTISTS\nEXHIBITIONS & EVENTS\nABOUT\nCOLLECT\nMEDIA\nLOCATIONS\nSTORE\nSEARCH\nEN\nARTIS",
+  "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "24px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgb(255, 255, 255)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 3587
+ },
+ "h1": {
+  "tag": "H1",
+  "cls": "",
+  "txt": "ARTISTS",
+  "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+  "fs": "48px",
+  "fw": "500",
+  "lh": "48px",
+  "ls": "normal",
+  "tt": "uppercase",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 24,
+  "y": 240,
+  "w": 1392,
+  "h": 48
+ },
+ "h2": {
+  "tag": "H2",
+  "cls": "",
+  "txt": "ON VIEW NOW AT OUR GALLERIES",
+  "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+  "fs": "13px",
+  "fw": "500",
+  "lh": "18px",
+  "ls": "normal",
+  "tt": "uppercase",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 24,
+  "y": 2615,
+  "w": 212,
+  "h": 18
+ },
+ "h3": {
+  "tag": "H3",
+  "cls": "",
+  "txt": "My taste is consistently eclectic, and the gallery has never limited itself to a",
+  "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+  "fs": "32px",
+  "fw": "400",
+  "lh": "32px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(255, 255, 255)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 24,
+  "y": 1589,
+  "w": 428,
+  "h": 160
+ },
+ "header": {
+  "tag": "HEADER",
+  "cls": "header is-light-mode",
+  "txt": "ARTISTS\nEXHIBITIONS & EVENTS\nABOUT\nCOLLECT\nMEDIA\nLOCATIONS\nSTORE\nSEARCH\nEN",
+  "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "24px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(255, 255, 255, 0.4)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 80
+ },
+ "nav": null,
+ "fijos": [
+  {
+   "pos": "fixed",
+   "tag": "BUTTON",
+   "cls": "",
+   "txt": "",
+   "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+   "fs": "14px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(51, 51, 51)",
+   "bg": "rgba(0, 0, 0, 0.6)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "",
+   "txt": "Close                     Cookies management panel                  By allowing ",
+   "ff": "Akzidenz-Grotesk, sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "tarteaucitronAlertBigTop",
+   "txt": "This site uses cookies and gives you control over what you want to activate   Ou",
+   "ff": "Akzidenz-Grotesk, sans-serif",
+   "fs": "15px",
+   "fw": "400",
+   "lh": "22.5px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "",
+   "txt": "",
+   "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(51, 51, 51)",
+   "bg": "rgb(0, 170, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "tarteaucitronIconBottomLeft",
+   "txt": "",
+   "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(51, 51, 51)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "HEADER",
+   "cls": "header is-light-mode",
+   "txt": "ARTISTS\nEXHIBITIONS & EVENTS\nABOUT\nCOLLECT\nMEDIA\nLOCATIONS\nSTORE\nSEARCH\nEN",
+   "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(255, 255, 255, 0.4)",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 80
+  }
+ ],
+ "fuentes": [
+  "Akzidenz-Grotesk normal normal",
+  "icomoon normal normal",
+  "Akzidenz-Grotesk 400 normal",
+  "Akzidenz-Grotesk 500 normal"
+ ],
+ "tamanos": [
+  [
+   "13px Akzidenz-Grotesk",
+   143
+  ],
+  [
+   "12px Akzidenz-Grotesk",
+   19
+  ],
+  [
+   "14px Akzidenz-Grotesk",
+   16
+  ],
+  [
+   "18px Akzidenz-Grotesk",
+   14
+  ],
+  [
+   "11px Akzidenz-Grotesk",
+   8
+  ],
+  [
+   "24px Akzidenz-Grotesk",
+   4
+  ],
+  [
+   "16px Akzidenz-Grotesk",
+   2
+  ],
+  [
+   "48px Akzidenz-Grotesk",
+   1
+  ],
+  [
+   "32px Akzidenz-Grotesk",
+   1
+  ]
+ ],
+ "imgs": [
+  {
+   "src": "https://s3.perrotin.com/d:autox700/front/img/content/perrotin_emmanuel.jpg",
+   "x": 768,
+   "y": 1327,
+   "w": 500,
+   "h": 700,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(255, 255, 255)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:400xauto/artiste/31_1968.jpg",
+   "x": 24,
+   "y": 2716,
+   "w": 178,
+   "h": 178,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:400xauto/artiste/36_2391.jpg",
+   "x": 218,
+   "y": 2716,
+   "w": 178,
+   "h": 178,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:400xauto/artiste/806_1771.jpg",
+   "x": 412,
+   "y": 2716,
+   "w": 178,
+   "h": 178,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:400xauto/artiste/1563_2051.jpg",
+   "x": 607,
+   "y": 2716,
+   "w": 178,
+   "h": 178,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:400xauto/artiste/56_1100.jpg",
+   "x": 801,
+   "y": 2716,
+   "w": 178,
+   "h": 178,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:400xauto/artiste/1051_1738_v_1695309613.jpg",
+   "x": 995,
+   "y": 2716,
+   "w": 178,
+   "h": 178,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:400xauto/artiste/1424_2327.jpg",
+   "x": 1189,
+   "y": 2716,
+   "w": 178,
+   "h": 178,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:400xauto/artiste/226_2154.jpg",
+   "x": 1383,
+   "y": 2716,
+   "w": 178,
+   "h": 178,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:400xauto/artiste/142_1790.jpg",
+   "x": 1578,
+   "y": 2716,
+   "w": 178,
+   "h": 178,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  }
+ ],
+ "links": [
+  {
+   "t": "Read more",
+   "h": "https://tarteaucitron.io/en/service-details/googletagmanager/"
+  },
+  {
+   "t": "View the official website",
+   "h": "https://policies.google.com/privacy"
+  },
+  {
+   "t": "Read more",
+   "h": "https://tarteaucitron.io/en/service-details/gtag/"
+  },
+  {
+   "t": "View the official website",
+   "h": "https://policies.google.com/privacy"
+  },
+  {
+   "t": "Read more",
+   "h": "https://tarteaucitron.io/en/service-details/facebook/"
+  },
+  {
+   "t": "View the official website",
+   "h": "https://www.facebook.com/policy.php"
+  },
+  {
+   "t": "Read more",
+   "h": "https://tarteaucitron.io/en/service-details/vimeo/"
+  },
+  {
+   "t": "View the official website",
+   "h": "https://vimeo.com/privacy"
+  },
+  {
+   "t": "",
+   "h": "https://tarteaucitron.io/"
+  },
+  {
+   "t": "",
+   "h": "https://www.perrotin.com/"
+  },
+  {
+   "t": "ARTISTS",
+   "h": "https://www.perrotin.com/en/artists"
+  },
+  {
+   "t": "EXHIBITIONS & EVENTS",
+   "h": "https://www.perrotin.com/en/agenda"
+  },
+  {
+   "t": "ABOUT",
+   "h": "https://www.perrotin.com/en/about"
+  },
+  {
+   "t": "COLLECT",
+   "h": "https://www.perrotin.com/en/collect"
+  },
+  {
+   "t": "MEDIA",
+   "h": "https://www.perrotin.com/en/medias"
+  },
+  {
+   "t": "LOCATIONS",
+   "h": "https://www.perrotin.com/en/locations"
+  },
+  {
+   "t": "STORE",
+   "h": "https://storeparis.perrotin.com/"
+  },
+  {
+   "t": "NINA CHANEL ABNEY",
+   "h": "https://www.perrotin.com/en/artists/nina-chanel-abney"
+  },
+  {
+   "t": "YOUNG-IL AHN",
+   "h": "https://www.perrotin.com/en/artists/young-il-ahn"
+  },
+  {
+   "t": "ALMA ALLEN",
+   "h": "https://www.perrotin.com/en/artists/alma-allen"
+  },
+  {
+   "t": "JEAN-MARIE APPRIOU",
+   "h": "https://www.perrotin.com/en/artists/jean-marie-appriou"
+  },
+  {
+   "t": "IVÁN ARGOTE",
+   "h": "https://www.perrotin.com/en/artists/ivan-argote"
+  },
+  {
+   "t": "DANIEL ARSHAM",
+   "h": "https://www.perrotin.com/en/artists/daniel-arsham"
+  },
+  {
+   "t": "CRISTINA BANBAN",
+   "h": "https://www.perrotin.com/en/artists/cristina-banban"
+  },
+  {
+   "t": "ALI BANISADR",
+   "h": "https://www.perrotin.com/en/artists/ali-banisadr"
+  },
+  {
+   "t": "HERNAN BAS",
+   "h": "https://www.perrotin.com/en/artists/hernan-bas"
+  },
+  {
+   "t": "GENESIS BELANGER",
+   "h": "https://www.perrotin.com/en/artists/genesis-belanger"
+  },
+  {
+   "t": "ANNA-EVA BERGMAN",
+   "h": "https://www.perrotin.com/en/artists/anna-eva-bergman"
+  },
+  {
+   "t": "JASON BOYD KINSELLA",
+   "h": "https://www.perrotin.com/en/artists/jason-boyd-kinsella"
+  },
+  {
+   "t": "SOPHIE CALLE",
+   "h": "https://www.perrotin.com/en/artists/sophie-calle"
+  },
+  {
+   "t": "MAURIZIO CATTELAN",
+   "h": "https://www.perrotin.com/en/artists/maurizio-cattelan"
+  },
+  {
+   "t": "LYNN CHADWICK",
+   "h": "https://www.perrotin.com/en/artists/lynn-chadwick"
+  },
+  {
+   "t": "JULIAN CHARRIÈRE",
+   "h": "https://www.perrotin.com/en/artists/julian-charriere"
+  },
+  {
+   "t": "CHEN FEI",
+   "h": "https://www.perrotin.com/en/artists/chen-fei"
+  },
+  {
+   "t": "CHEN KE",
+   "h": "https://www.perrotin.com/en/artists/chen-ke"
+  },
+  {
+   "t": "JOHAN CRETEN",
+   "h": "https://www.perrotin.com/en/artists/johan-creten"
+  },
+  {
+   "t": "JEAN-PHILIPPE DELHOMME",
+   "h": "https://www.perrotin.com/en/artists/jean-philippe-delhomme"
+  },
+  {
+   "t": "WIM DELVOYE",
+   "h": "https://www.perrotin.com/en/artists/wim-delvoye"
+  },
+  {
+   "t": "MATHILDE DENIZE",
+   "h": "https://www.perrotin.com/en/artists/mathilde-denize"
+  },
+  {
+   "t": "NICK DOYLE",
+   "h": "https://www.perrotin.com/en/artists/nick-doyle"
+  },
+  {
+   "t": "OLI EPP",
+   "h": "https://www.perrotin.com/en/artists/oli-epp"
+  },
+  {
+   "t": "LIONEL ESTÈVE",
+   "h": "https://www.perrotin.com/en/artists/lionel-esteve"
+  },
+  {
+   "t": "JENS FÄNGE",
+   "h": "https://www.perrotin.com/en/artists/jens-faenge"
+  },
+  {
+   "t": "BERNARD FRIZE",
+   "h": "https://www.perrotin.com/en/artists/bernard-frize"
+  },
+  {
+   "t": "GELITIN",
+   "h": "https://www.perrotin.com/en/artists/gelitin"
+  },
+  {
+   "t": "MEHDI GHADYANLOO",
+   "h": "https://www.perrotin.com/en/artists/mehdi-ghadyanloo"
+  },
+  {
+   "t": "ELIZABETH GLAESSNER",
+   "h": "https://www.perrotin.com/en/artists/elizabeth-glaessner"
+  },
+  {
+   "t": "LAURENT GRASSO",
+   "h": "https://www.perrotin.com/en/artists/laurent-grasso"
+  },
+  {
+   "t": "NANCY GRAVES",
+   "h": "https://www.perrotin.com/en/artists/nancy-graves"
+  },
+  {
+   "t": "TODD GRAY",
+   "h": "https://www.perrotin.com/en/artists/todd-gray"
+  },
+  {
+   "t": "VIVIAN GREVEN",
+   "h": "https://www.perrotin.com/en/artists/vivian-greven"
+  },
+  {
+   "t": "HANS HARTUNG",
+   "h": "https://www.perrotin.com/en/artists/hans-hartung"
+  },
+  {
+   "t": "JEPPE HEIN",
+   "h": "https://www.perrotin.com/en/artists/jeppe-hein"
+  },
+  {
+   "t": "THILO HEINZMANN",
+   "h": "https://www.perrotin.com/en/artists/thilo-heinzmann"
+  },
+  {
+   "t": "JOHN HENDERSON",
+   "h": "https://www.perrotin.com/en/artists/john-henderson"
+  },
+  {
+   "t": "LESLIE HEWITT",
+   "h": "https://www.perrotin.com/en/artists/leslie-hewitt"
+  },
+  {
+   "t": "GREGOR HILDEBRANDT",
+   "h": "https://www.perrotin.com/en/artists/gregor-hildebrandt"
+  },
+  {
+   "t": "JR",
+   "h": "https://www.perrotin.com/en/artists/jr"
+  },
+  {
+   "t": "JESPER JUST",
+   "h": "https://www.perrotin.com/en/artists/jesper-just"
+  },
+  {
+   "t": "SUSUMU KAMIJO",
+   "h": "https://www.perrotin.com/en/artists/susumu-kamijo"
+  },
+  {
+   "t": "IZUMI KATO",
+   "h": "https://www.perrotin.com/en/artists/izumi-kato"
+  },
+  {
+   "t": "BHARTI KHER",
+   "h": "https://www.perrotin.com/en/artists/bharti-kher"
+  },
+  {
+   "t": "KOAK",
+   "h": "https://www.perrotin.com/en/artists/koak"
+  },
+  {
+   "t": "KLARA KRISTALOVA",
+   "h": "https://www.perrotin.com/en/artists/klara-kristalova"
+  },
+  {
+   "t": "LEE BAE",
+   "h": "https://www.perrotin.com/en/artists/lee-bae"
+  },
+  {
+   "t": "LEE MINGWEI",
+   "h": "https://www.perrotin.com/en/artists/lee-mingwei"
+  },
+  {
+   "t": "NIKKI MALOOF",
+   "h": "https://www.perrotin.com/en/artists/nikki-maloof"
+  },
+  {
+   "t": "GEORGES MATHIEU",
+   "h": "https://www.perrotin.com/en/artists/georges-mathieu"
+  },
+  {
+   "t": "GABRIEL DE LA MORA",
+   "h": "https://www.perrotin.com/en/artists/gabriel-de-la-mora"
+  },
+  {
+   "t": "MR.",
+   "h": "https://www.perrotin.com/en/artists/mr"
+  },
+  {
+   "t": "MSCHF",
+   "h": "https://www.perrotin.com/en/artists/mschf"
+  },
+  {
+   "t": "TAKASHI MURAKAMI",
+   "h": "https://www.perrotin.com/en/artists/takashi-murakami"
+  },
+  {
+   "t": "DANIELLE ORCHARD",
+   "h": "https://www.perrotin.com/en/artists/danielle-orchard-1049"
+  },
+  {
+   "t": "OTANI WORKSHOP",
+   "h": "https://www.perrotin.com/en/artists/otani-workshop"
+  },
+  {
+   "t": "JEAN-MICHEL OTHONIEL",
+   "h": "https://www.perrotin.com/en/artists/jean-michel-othoniel"
+  },
+  {
+   "t": "GAHEE PARK",
+   "h": "https://www.perrotin.com/en/artists/gahee-park"
+  },
+  {
+   "t": "PARK SEO-BO",
+   "h": "https://www.perrotin.com/en/artists/park-seo-bo"
+  },
+  {
+   "t": "PAUL PFEIFFER",
+   "h": "https://www.perrotin.com/en/artists/paul-pfeiffer"
+  },
+  {
+   "t": "PAOLA PIVI",
+   "h": "https://www.perrotin.com/en/artists/paola-pivi"
+  },
+  {
+   "t": "CHRISTIANE POOLEY",
+   "h": "https://www.perrotin.com/en/artists/christiane-pooley"
+  },
+  {
+   "t": "GABRIEL RICO",
+   "h": "https://www.perrotin.com/en/artists/gabriel-rico"
+  },
+  {
+   "t": "CLAUDE RUTAULT",
+   "h": "https://www.perrotin.com/en/artists/claude-rutault"
+  },
+  {
+   "t": "MARK RYDEN",
+   "h": "https://www.perrotin.com/en/artists/mark-ryden"
+  },
+  {
+   "t": "SIGRID SANDSTRÖM",
+   "h": "https://www.perrotin.com/en/artists/sigrid-sandstroem"
+  },
+  {
+   "t": "SHIM MOON-SEUP",
+   "h": "https://www.perrotin.com/en/artists/shim-moon-seup"
+  },
+  {
+   "t": "EMILY MAE SMITH",
+   "h": "https://www.perrotin.com/en/artists/emily-mae-smith"
+  },
+  {
+   "t": "JESÚS RAFAEL SOTO",
+   "h": "https://www.perrotin.com/en/artists/jesus-rafael-soto"
+  },
+  {
+   "t": "PIERRE SOULAGES",
+   "h": "https://www.perrotin.com/en/artists/pierre-soulages"
+  },
+  {
+   "t": "JOSH SPERLING",
+   "h": "https://www.perrotin.com/en/artists/josh-sperling"
+  },
+  {
+   "t": "KATHIA ST. HILAIRE",
+   "h": "https://www.perrotin.com/en/artists/kathia-st-hilaire"
+  },
+  {
+   "t": "TAVARES STRACHAN",
+   "h": "https://www.perrotin.com/en/artists/tavares-strachan"
+  },
+  {
+   "t": "CLAIRE TABOURET",
+   "h": "https://www.perrotin.com/en/artists/claire-tabouret"
+  },
+  {
+   "t": "AYA TAKANO",
+   "h": "https://www.perrotin.com/en/artists/aya-takano"
+  },
+  {
+   "t": "XAVIER VEILHAN",
+   "h": "https://www.perrotin.com/en/artists/xavier-veilhan"
+  },
+  {
+   "t": "BERNAR VENET",
+   "h": "https://www.perrotin.com/en/artists/bernar-venet"
+  },
+  {
+   "t": "PIETER VERMEERSCH",
+   "h": "https://www.perrotin.com/en/artists/pieter-vermeersch"
+  },
+  {
+   "t": "XIYAO WANG",
+   "h": "https://www.perrotin.com/en/artists/xiyao-wang"
+  },
+  {
+   "t": "EMMA WEBSTER",
+   "h": "https://www.perrotin.com/en/artists/emma-webster"
+  },
+  {
+   "t": "MONIRA AL QADIRI",
+   "h": "https://www.perrotin.com/en/artists/monira-al-qadiri"
+  },
+  {
+   "t": "KELLY BEEMAN",
+   "h": "https://www.perrotin.com/en/artists/kelly-beeman"
+  },
+  {
+   "t": "CHANG YA CHIN",
+   "h": "https://www.perrotin.com/en/artists/chang-ya-chin"
+  },
+  {
+   "t": "ALEX GARDNER",
+   "h": "https://www.perrotin.com/en/artists/alex-gardner"
+  },
+  {
+   "t": "NICK GOSS",
+   "h": "https://www.perrotin.com/en/artists/nick-goss"
+  },
+  {
+   "t": "CHARLES HASCOËT",
+   "h": "https://www.perrotin.com/en/artists/charles-hascoet"
+  },
+  {
+   "t": "HOLLY LOWEN",
+   "h": "https://www.perrotin.com/en/artists/holly-lowen"
+  },
+  {
+   "t": "FARHAD MOSHIRI",
+   "h": "https://www.perrotin.com/en/artists/farhad-moshiri"
+  },
+  {
+   "t": "OB",
+   "h": "https://www.perrotin.com/en/artists/ob"
+  },
+  {
+   "t": "KATHERINA OLSCHBAUR",
+   "h": "https://www.perrotin.com/en/artists/katherina-olschbaur"
+  },
+  {
+   "t": "EMMA PREMPEH",
+   "h": "https://www.perrotin.com/en/artists/emma-prempeh"
+  },
+  {
+   "t": "KYUNGMI SHIN",
+   "h": "https://www.perrotin.com/en/artists/kyungmi-shin"
+  },
+  {
+   "t": "MARIA TANIGUCHI",
+   "h": "https://www.perrotin.com/en/artists/maria-taniguchi"
+  },
+  {
+   "t": "CHIFFON THOMAS",
+   "h": "https://www.perrotin.com/en/artists/chiffon-thomas"
+  },
+  {
+   "t": "ARYO TOH DJOJO",
+   "h": "https://www.perrotin.com/en/artists/aryo-toh-djojo"
+  },
+  {
+   "t": "ROBIN F. WILLIAMS",
+   "h": "https://www.perrotin.com/en/artists/robin-f-williams"
+  },
+  {
+   "t": "XU ZHEN®",
+   "h": "https://www.perrotin.com/en/artists/xu-zhen"
+  },
+  {
+   "t": "EMMANUEL PERROTIN",
+   "h": "https://s3file.perrotin.com/front/doc/content/Perrotin_Corporate_Documentation_en_v11.pdf"
+  },
+  {
+   "t": "MR.",
+   "h": "https://www.perrotin.com/en/artists/mr"
+  },
+  {
+   "t": "JOHAN CRETEN",
+   "h": "https://www.perrotin.com/en/artists/johan-creten"
+  },
+  {
+   "t": "JEAN-PHILIPPE DELHOMME",
+   "h": "https://www.perrotin.com/en/artists/jean-philippe-delhomme"
+  },
+  {
+   "t": "YOUNG-IL AHN",
+   "h": "https://www.perrotin.com/en/artists/young-il-ahn"
+  },
+  {
+   "t": "HERNAN BAS",
+   "h": "https://www.perrotin.com/en/artists/hernan-bas"
+  },
+  {
+   "t": "NIKKI MALOOF",
+   "h": "https://www.perrotin.com/en/artists/nikki-maloof"
+  },
+  {
+   "t": "ARYO TOH DJOJO",
+   "h": "https://www.perrotin.com/en/artists/aryo-toh-djojo"
+  },
+  {
+   "t": "PAUL PFEIFFER",
+   "h": "https://www.perrotin.com/en/artists/paul-pfeiffer"
+  },
+  {
+   "t": "PIETER VERMEERSCH",
+   "h": "https://www.perrotin.com/en/artists/pieter-vermeersch"
+  },
+  {
+   "t": "",
+   "h": "https://www.instagram.com/perrotin"
+  },
+  {
+   "t": "",
+   "h": "https://www.tiktok.com/@perrotin"
+  },
+  {
+   "t": "",
+   "h": "https://www.linkedin.com/company/perrotin"
+  },
+  {
+   "t": "",
+   "h": "https://s3.perrotin.com/vue/photo/54000.jpg?d=600xmax"
+  },
+  {
+   "t": "",
+   "h": "https://xhslink.com/m/31bwrSXCn9h"
+  },
+  {
+   "t": "",
+   "h": "https://www.youtube.com/GaleriePerrotin/"
+  },
+  {
+   "t": "",
+   "h": "https://www.facebook.com/GaleriePerrotin/"
+  },
+  {
+   "t": "",
+   "h": "https://fr.pinterest.com/galerieperrotin/"
+  },
+  {
+   "t": "NEW YORK",
+   "h": "https://www.perrotin.com/en/locations#new-york"
+  },
+  {
+   "t": "LOS ANGELES",
+   "h": "https://www.perrotin.com/en/locations#los-angeles"
+  },
+  {
+   "t": "PARIS",
+   "h": "https://www.perrotin.com/en/locations#paris"
+  },
+  {
+   "t": "LONDON",
+   "h": "https://www.perrotin.com/en/locations#london"
+  },
+  {
+   "t": "HONG KONG",
+   "h": "https://www.perrotin.com/en/locations#hong-kong"
+  },
+  {
+   "t": "SEOUL",
+   "h": "https://www.perrotin.com/en/locations#seoul"
+  },
+  {
+   "t": "TOKYO",
+   "h": "https://www.perrotin.com/en/locations#tokyo"
+  },
+  {
+   "t": "SHANGHAI",
+   "h": "https://www.perrotin.com/en/locations#shanghai"
+  },
+  {
+   "t": "DUBAI",
+   "h": "https://www.perrotin.com/en/locations#dubai"
+  },
+  {
+   "t": "LAS VEGAS",
+   "h": "https://www.perrotin.com/en/locations#las-vegas"
+  },
+  {
+   "t": "ARTISTS",
+   "h": "https://www.perrotin.com/en/artists"
+  },
+  {
+   "t": "EXHIBITIONS & EVENTS",
+   "h": "https://www.perrotin.com/en/agenda"
+  },
+  {
+   "t": "ABOUT",
+   "h": "https://www.perrotin.com/en/about"
+  },
+  {
+   "t": "COLLECT",
+   "h": "https://www.perrotin.com/en/collect"
+  },
+  {
+   "t": "MEDIA",
+   "h": "https://www.perrotin.com/en/medias"
+  },
+  {
+   "t": "LOCATIONS",
+   "h": "https://www.perrotin.com/en/locations"
+  },
+  {
+   "t": "STORE",
+   "h": "https://storeparis.perrotin.com/"
+  },
+  {
+   "t": "PRESS ROOM",
+   "h": "https://press.perrotin.com/"
+  },
+  {
+   "t": "STORE",
+   "h": "https://storeparis.perrotin.com/"
+  },
+  {
+   "t": "HISTORY",
+   "h": "https://www.perrotin.com/en/history"
+  },
+  {
+   "t": "CREDIT",
+   "h": "https://www.perrotin.com/en/credit"
+  },
+  {
+   "t": "JOBS",
+   "h": "https://www.perrotin.com/en/jobs"
+  },
+  {
+   "t": "LEGAL",
+   "h": "https://www.perrotin.com/en/legal"
+  }
+ ]
+}

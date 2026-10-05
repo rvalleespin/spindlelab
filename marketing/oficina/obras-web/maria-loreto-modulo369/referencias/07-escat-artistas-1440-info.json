@@ -1,0 +1,776 @@
+{
+ "url": "https://escatgallery.com/artists/",
+ "title": "Artists – Escat Gallery",
+ "scrollW": 1440,
+ "clientW": 1440,
+ "H": 4326,
+ "html": {
+  "tag": "HTML",
+  "cls": "",
+  "txt": "ESCAT GALLERY\nEXHIBITIONS\nARTISTS\nESCAT PROJECTS\nVIEWING ROOMS\nCATALOGUE\nABOUT\nE",
+  "ff": "Times",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgb(255, 255, 255)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 4326
+ },
+ "body": {
+  "tag": "BODY",
+  "cls": "wp-singular page-template page-template-template-artists page-template-template-artists-php page page-id-72 wp-theme-apn",
+  "txt": "ESCAT GALLERY\nEXHIBITIONS\nARTISTS\nESCAT PROJECTS\nVIEWING ROOMS\nCATALOGUE\nABOUT\nE",
+  "ff": "\"Times New Roman\", serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 4326
+ },
+ "h1": {
+  "tag": "H1",
+  "cls": "sticky-bar-title",
+  "txt": "Artists",
+  "ff": "\"NeueHaasGroteskText Pro\", sans-serif",
+  "fs": "11px",
+  "fw": "500",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "uppercase",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 0,
+  "h": 0
+ },
+ "h2": null,
+ "h3": {
+  "tag": "H3",
+  "cls": "artist-name font-30",
+  "txt": "Celia Lees",
+  "ff": "\"Times New Roman\", serif",
+  "fs": "30px",
+  "fw": "400",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 656,
+  "y": 630,
+  "w": 127,
+  "h": 34
+ },
+ "header": {
+  "tag": "HEADER",
+  "cls": "site-header",
+  "txt": "ESCAT GALLERY\nEXHIBITIONS\nARTISTS\nESCAT PROJECTS\nVIEWING ROOMS\nCATALOGUE\nABOUT\nE",
+  "ff": "\"Times New Roman\", serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 88
+ },
+ "nav": {
+  "tag": "NAV",
+  "cls": "nav sans medium uppercase",
+  "txt": "ESCAT GALLERY\nEXHIBITIONS\nARTISTS\nESCAT PROJECTS\nVIEWING ROOMS\nCATALOGUE\nABOUT\nE",
+  "ff": "\"NeueHaasGroteskText Pro\", sans-serif",
+  "fs": "11px",
+  "fw": "500",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "uppercase",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 16,
+  "y": 37,
+  "w": 1408,
+  "h": 14
+ },
+ "fijos": [
+  {
+   "pos": "fixed",
+   "tag": "HEADER",
+   "cls": "site-header",
+   "txt": "ESCAT GALLERY\nEXHIBITIONS\nARTISTS\nESCAT PROJECTS\nVIEWING ROOMS\nCATALOGUE\nABOUT\nE",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 88
+  },
+  {
+   "pos": "sticky",
+   "tag": "DIV",
+   "cls": "artists-sticky-bar sticky-bar sans medium uppercase",
+   "txt": "Artists\n\n      \n        List / Grid",
+   "ff": "\"NeueHaasGroteskText Pro\", sans-serif",
+   "fs": "11px",
+   "fw": "500",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "uppercase",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "artist-image",
+   "txt": "",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "artist-image",
+   "txt": "",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "artist-image",
+   "txt": "",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "artist-image",
+   "txt": "",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "artist-image",
+   "txt": "",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "artist-image",
+   "txt": "",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "artist-image",
+   "txt": "",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "artist-image",
+   "txt": "",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "artist-image",
+   "txt": "",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "artist-image",
+   "txt": "",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "artist-image",
+   "txt": "",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "artist-image",
+   "txt": "",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "artist-image",
+   "txt": "",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700
+  }
+ ],
+ "fuentes": [
+  "NeueHaasGroteskText Pro normal italic",
+  "NeueHaasGroteskText Pro 500 normal"
+ ],
+ "tamanos": [
+  [
+   "12px \"NeueHaasGroteskText Pro\"",
+   63
+  ],
+  [
+   "30px \"Times New Roman\"",
+   33
+  ],
+  [
+   "11px \"NeueHaasGroteskText Pro\"",
+   28
+  ],
+  [
+   "16px \"Times New Roman\"",
+   5
+  ],
+  [
+   "16px \"NeueHaasGroteskText Pro\"",
+   2
+  ],
+  [
+   "20px \"Times New Roman\"",
+   1
+  ]
+ ],
+ "imgs": [
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/artists/52034/Celia%20Lees.png",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/artists/53314/Alba%20Fabre.png",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/artists/52035/Danny%20Avidan.png",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/artists/52036/Emma%20Labattaglia.png",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/artists/52037/ericstefanski.png",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/artists/52038/Christina%20Gschwantner.png",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/artists/52039/Flora%20Castiglia.jpg",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/artists/52041/Carsten%20Beck.png",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/artists/52042/Mareo.png",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/artists/52043/Adam%20Dora.png",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/artists/52044/ELIURPI.png",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/artists/52045/jonathanfreemantle.jpg",
+   "x": 100,
+   "y": 100,
+   "w": 1240,
+   "h": 700,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  }
+ ],
+ "links": [
+  {
+   "t": "ESCAT GALLERY",
+   "h": "https://escatgallery.com/"
+  },
+  {
+   "t": "EXHIBITIONS",
+   "h": "https://escatgallery.com/exhibitions/"
+  },
+  {
+   "t": "ARTISTS",
+   "h": "https://escatgallery.com/artists/"
+  },
+  {
+   "t": "ESCAT PROJECTS",
+   "h": "https://escatgallery.com/escat-projects/"
+  },
+  {
+   "t": "VIEWING ROOMS",
+   "h": "https://escatgallery.com/viewing-rooms/"
+  },
+  {
+   "t": "CATALOGUE",
+   "h": "https://www.artsy.net/partner/escat-gallery/works"
+  },
+  {
+   "t": "ABOUT",
+   "h": "https://escatgallery.com/about/"
+  },
+  {
+   "t": "EN",
+   "h": "https://escatgallery.com/artists/"
+  },
+  {
+   "t": "ES",
+   "h": "https://escatgallery.com/es/artists-es/"
+  },
+  {
+   "t": "CA",
+   "h": "https://escatgallery.com/ca/artists-ca/"
+  },
+  {
+   "t": "Celia Lees",
+   "h": "https://escatgallery.com/artist/celia-lees"
+  },
+  {
+   "t": "Alba Fabre",
+   "h": "https://escatgallery.com/artist/alba-fabre"
+  },
+  {
+   "t": "Danny Avidan",
+   "h": "https://escatgallery.com/artist/danny-avidan"
+  },
+  {
+   "t": "Emma Labattaglia",
+   "h": "https://escatgallery.com/artist/emma-labattaglia"
+  },
+  {
+   "t": "Eric Stefanski",
+   "h": "https://escatgallery.com/artist/eric-stefanski"
+  },
+  {
+   "t": "Christina Gschwantner",
+   "h": "https://escatgallery.com/artist/christina-gschwantner"
+  },
+  {
+   "t": "Flora Castiglia",
+   "h": "https://escatgallery.com/artist/flora-castiglia"
+  },
+  {
+   "t": "Carsten Beck",
+   "h": "https://escatgallery.com/artist/carsten-beck"
+  },
+  {
+   "t": "Mareo Rodriguez",
+   "h": "https://escatgallery.com/artist/mareo-rodriguez"
+  },
+  {
+   "t": "Ádám Dóra",
+   "h": "https://escatgallery.com/artist/adam-dora"
+  },
+  {
+   "t": "Eliurpi",
+   "h": "https://escatgallery.com/artist/eliurpi"
+  },
+  {
+   "t": "Jonathan Freemantle",
+   "h": "https://escatgallery.com/artist/jonathan-freemantle"
+  },
+  {
+   "t": "Colt Seager",
+   "h": "https://escatgallery.com/artist/colt-seager"
+  },
+  {
+   "t": "Rose Madone",
+   "h": "https://escatgallery.com/artist/rose-madone"
+  },
+  {
+   "t": "Viktor Kobylianski",
+   "h": "https://escatgallery.com/artist/viktor-kobylianski"
+  },
+  {
+   "t": "Tete Alurralde",
+   "h": "https://escatgallery.com/artist/tete-alurralde"
+  },
+  {
+   "t": "Beñat Olaberria",
+   "h": "https://escatgallery.com/artist/benat-olaberria"
+  },
+  {
+   "t": "Aleksandar Bezinovic",
+   "h": "https://escatgallery.com/artist/aleksandar-bezinovic"
+  },
+  {
+   "t": "Silvia De Marchi",
+   "h": "https://escatgallery.com/artist/silvia-de-marchi"
+  },
+  {
+   "t": "Gabriela Meunié",
+   "h": "https://escatgallery.com/artist/gabriela-meunie"
+  },
+  {
+   "t": "Christian On Hansen",
+   "h": "https://escatgallery.com/artist/christian-on-hansen"
+  },
+  {
+   "t": "Carolin Kreutzer",
+   "h": "https://escatgallery.com/artist/carolin-kreutzer"
+  },
+  {
+   "t": "Mirko Baricchi",
+   "h": "https://escatgallery.com/artist/mirko-baricchi"
+  },
+  {
+   "t": "Irinka Talakhadze",
+   "h": "https://escatgallery.com/artist/irinka-talakhadze"
+  },
+  {
+   "t": "Diana Ruban",
+   "h": "https://escatgallery.com/artist/diana-ruban"
+  },
+  {
+   "t": "Blanca Nieto",
+   "h": "https://escatgallery.com/artist/blanca-nieto"
+  },
+  {
+   "t": "Vivian Alarcón",
+   "h": "https://escatgallery.com/artist/vivian-alarcon"
+  },
+  {
+   "t": "Júlia Martins Miranda",
+   "h": "https://escatgallery.com/artist/julia-martins-miranda"
+  },
+  {
+   "t": "Federica Furbelli",
+   "h": "https://escatgallery.com/artist/federica-furbelli"
+  },
+  {
+   "t": "Maria Naidyonova",
+   "h": "https://escatgallery.com/artist/maria-naidyonova"
+  },
+  {
+   "t": "Denis Ymeri",
+   "h": "https://escatgallery.com/artist/denis-ymeri"
+  },
+  {
+   "t": "José María de Aurora",
+   "h": "https://escatgallery.com/artist/jose-maria-de-aurora"
+  },
+  {
+   "t": "Salvita De Corte",
+   "h": "https://escatgallery.com/artist/salvita-de-corte"
+  },
+  {
+   "t": "ESCAT GALLERY",
+   "h": "https://escatgallery.com/"
+  },
+  {
+   "t": "EN",
+   "h": "https://escatgallery.com/artists/"
+  },
+  {
+   "t": "ES",
+   "h": "https://escatgallery.com/es/artists-es/"
+  },
+  {
+   "t": "CA",
+   "h": "https://escatgallery.com/ca/artists-ca/"
+  },
+  {
+   "t": "C/ Trafalgar, 47 – 08010",
+   "h": "https://maps.app.goo.gl/JuK4c7eEyyysVekP7"
+  },
+  {
+   "t": "",
+   "h": "https://www.artsy.net/partner/escat-gallery"
+  },
+  {
+   "t": "View full catalogue on Artsy",
+   "h": "https://www.artsy.net/partner/escat-gallery"
+  },
+  {
+   "t": "VIEW FULL CATALOGUE ON ARTSY",
+   "h": "https://www.artsy.net/partner/escat-gallery"
+  },
+  {
+   "t": "POLICIES",
+   "h": "https://escatgallery.com/policies/"
+  },
+  {
+   "t": "YOUTUBE",
+   "h": "https://www.youtube.com/@Escatgallery?app=desktop"
+  },
+  {
+   "t": "INSTAGRAM",
+   "h": "https://www.instagram.com/escatgallery/"
+  },
+  {
+   "t": "PINTEREST",
+   "h": "https://es.pinterest.com/escatgallery/"
+  },
+  {
+   "t": "SPOTIFY",
+   "h": "https://open.spotify.com/user/315v5xvigusd464nexdk6b7twxzu?si=36789a9038b749dd"
+  },
+  {
+   "t": "LINKEDIN",
+   "h": "https://www.linkedin.com/company/escatgallery/?viewAsMember=true"
+  }
+ ]
+}

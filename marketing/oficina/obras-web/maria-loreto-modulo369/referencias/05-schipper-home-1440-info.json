@@ -1,0 +1,891 @@
+{
+ "url": "https://www.estherschipper.com/",
+ "title": "Esther Schipper",
+ "scrollW": 1440,
+ "clientW": 1440,
+ "H": 6379,
+ "html": {
+  "tag": "HTML",
+  "cls": "wf-acuminpro-i7-active wf-acuminpro-n2-active wf-acuminpro-i2-active wf-acuminpro-n7-active wf-acuminpro-n4-active wf-acuminpro-n5-active wf-acuminpro-i4-active wf-active",
+  "txt": "Skip to main content\nHome\n \nArtists\n \nExhibitions\n \nFairs\n \nLatest press\n \nLocat",
+  "ff": "Times",
+  "fs": "10px",
+  "fw": "400",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgb(255, 255, 255)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 6379
+ },
+ "body": {
+  "tag": "BODY",
+  "cls": "section-home section-root site-responsive responsive-top-size-1023 responsive-nav-standard responsive-nav-side-position-right analytics-track-all-links site-lib-version-2-0 hero_heading_title_position_overlay no-page-params menu_standard browser-js-enabled tabbing-listener-added clicking-listener-added core-accessibility-stylesheet-checked browser-chrome browser-chrome-141 platform-mac device-desktop first-load-complete device-video-inline-enabled smooth-scroll-fallback layout-hero-active main_slideshow_active pageload-splash-secondary-images-preloaded main_slideshow_animate page-top hero-variant-light resizing",
+  "txt": "Skip to main content\nHome\n \nArtists\n \nExhibitions\n \nFairs\n \nLatest press\n \nLocat",
+  "ff": "AcuminProWeb, sans-serif",
+  "fs": "13px",
+  "fw": "200",
+  "lh": "29px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(12, 12, 12)",
+  "bg": "rgb(255, 255, 255)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 6379
+ },
+ "h1": {
+  "tag": "H1",
+  "cls": "hidden",
+  "txt": "Esther Schipper",
+  "ff": "AcuminProWeb, sans-serif",
+  "fs": "40px",
+  "fw": "300",
+  "lh": "50px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(12, 12, 12)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 0,
+  "h": 0
+ },
+ "h2": {
+  "tag": "H2",
+  "cls": "",
+  "txt": "Gallery latest",
+  "ff": "AcuminProWeb, sans-serif",
+  "fs": "18px",
+  "fw": "400",
+  "lh": "21.78px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(12, 12, 12)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 95,
+  "y": 3713,
+  "w": 1250,
+  "h": 22
+ },
+ "h3": {
+  "tag": "H3",
+  "cls": "ani-in",
+  "txt": "Berlin",
+  "ff": "AcuminProWeb, sans-serif",
+  "fs": "26px",
+  "fw": "300",
+  "lh": "32px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(255, 255, 255)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 986,
+  "y": 1424,
+  "w": 358,
+  "h": 29
+ },
+ "header": {
+  "tag": "HEADER",
+  "cls": "",
+  "txt": "Skip to main content\nHome\n \nArtists\n \nExhibitions\n \nFairs\n \nLatest press\n \nLocat",
+  "ff": "AcuminProWeb, sans-serif",
+  "fs": "13px",
+  "fw": "200",
+  "lh": "29px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(12, 12, 12)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 0
+ },
+ "nav": {
+  "tag": "NAV",
+  "cls": "navigation",
+  "txt": "Home\n \nArtists\n \nExhibitions\n \nFairs\n \nLatest press\n \nLocations\n \nAbout",
+  "ff": "AcuminProWeb, sans-serif",
+  "fs": "14px",
+  "fw": "400",
+  "lh": "30.94px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(255, 255, 255)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 704,
+  "y": 44,
+  "w": 589,
+  "h": 22
+ },
+ "fijos": [
+  {
+   "pos": "fixed",
+   "tag": "A",
+   "cls": "skiplink",
+   "txt": "Skip to main content",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "29px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": -9904,
+   "y": 55,
+   "w": 115,
+   "h": 29
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "grecaptcha-badge",
+   "txt": "",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "13px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 565,
+   "y": 6261,
+   "w": 256,
+   "h": 60
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "active",
+   "txt": "Cookies allow us to provide you with useful features and to measure performance ",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "29px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "",
+   "txt": "Close\n                Cookie preferences\n                \n                Select",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "29px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "",
+   "txt": "",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "29px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgba(0, 0, 0, 0.4)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "notify_panel sqcw_auto_open sqcw_initialised",
+   "txt": "Close\n    \n        \n            Your shopping basket\n        \n        \n\n\n\n\n\n    ",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "29px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "BUTTON",
+   "cls": "notify_panel_close clear_button_styles",
+   "txt": "Close",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "29px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "overlay enquire-overlay",
+   "txt": "Close\n    \n    \n        \n            \n                \n                    \n    ",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "29px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "overlay-bg",
+   "txt": "",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "29px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "grecaptcha-badge",
+   "txt": "",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "29px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "overlay gallery-contact-overlay",
+   "txt": "Close\n    \n    \n        \n            \n                \n                    \n    ",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "29px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "overlay-bg",
+   "txt": "",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "29px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "grecaptcha-badge",
+   "txt": "",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "29px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "overlay search-overlay",
+   "txt": "Close\n    \n        \n            \n                Type your search\n              ",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "29px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "overlay-bg",
+   "txt": "",
+   "ff": "AcuminProWeb, sans-serif",
+   "fs": "13px",
+   "fw": "200",
+   "lh": "29px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(12, 12, 12)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  }
+ ],
+ "fuentes": [
+  "AcuminProWeb 100 normal",
+  "AcuminProWeb 200 normal",
+  "AcuminProWeb normal normal",
+  "AcuminProWeb bold normal",
+  "FontAwesome normal normal"
+ ],
+ "tamanos": [
+  [
+   "13px AcuminProWeb",
+   40
+  ],
+  [
+   "22px AcuminProWeb",
+   23
+  ],
+  [
+   "14px AcuminProWeb",
+   17
+  ],
+  [
+   "17px AcuminProWeb",
+   9
+  ],
+  [
+   "20px AcuminProWeb",
+   5
+  ],
+  [
+   "9px AcuminProWeb",
+   4
+  ],
+  [
+   "12px AcuminProWeb",
+   2
+  ],
+  [
+   "28px AcuminProWeb",
+   2
+  ],
+  [
+   "40px AcuminProWeb",
+   1
+  ],
+  [
+   "18px AcuminProWeb",
+   1
+  ]
+ ],
+ "imgs": [
+  {
+   "src": "https://static-assets.artlogic.net/w_3000,h_3000,c_limit,f_auto,fl_lossy,q_auto:best/ws-estherschipper2/usr/images/pages",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 900,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(12, 12, 12)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_3000,h_3000,c_limit,f_auto,fl_lossy,q_auto:best/ws-estherschipper2/usr/images/pages",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 900,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(12, 12, 12)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_1500,h_1500,c_limit,f_auto,fl_lossy,q_auto:best/ws-estherschipper2/usr/images/viewi",
+   "x": 0,
+   "y": 900,
+   "w": 899,
+   "h": 675,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(12, 12, 12)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_1500,h_1500,c_limit,f_auto,fl_lossy,q_auto:best/ws-estherschipper2/usr/images/viewi",
+   "x": 541,
+   "y": 1820,
+   "w": 899,
+   "h": 580,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(12, 12, 12)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_1500,h_1500,c_limit,f_auto,fl_lossy,q_auto:best/ws-estherschipper2/usr/images/viewi",
+   "x": 0,
+   "y": 2495,
+   "w": 899,
+   "h": 580,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(12, 12, 12)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_1500,h_1500,c_limit,f_auto,fl_lossy,q_auto:best/ws-estherschipper2/usr/images/viewi",
+   "x": 541,
+   "y": 3020,
+   "w": 899,
+   "h": 580,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(12, 12, 12)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_750,h_750,c_limit,f_auto,fl_lossy,q_auto:best/ws-estherschipper2/usr/images/news/li",
+   "x": 95,
+   "y": 3810,
+   "w": 534,
+   "h": 301,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(12, 12, 12)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_500,h_500,c_limit,f_auto,fl_lossy,q_auto:best/ws-estherschipper2/usr/images/news/li",
+   "x": 669,
+   "y": 3810,
+   "w": 433,
+   "h": 301,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(12, 12, 12)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_300,h_300,c_limit,f_auto,fl_lossy,q_auto:best/ws-estherschipper2/usr/images/news/li",
+   "x": 1143,
+   "y": 3810,
+   "w": 200,
+   "h": 301,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(12, 12, 12)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_500,h_500,c_limit,f_auto,fl_lossy,q_auto:best/ws-estherschipper2/usr/images/news/li",
+   "x": 95,
+   "y": 4463,
+   "w": 457,
+   "h": 305,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(12, 12, 12)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_300,h_300,c_limit,f_auto,fl_lossy,q_auto:best/ws-estherschipper2/usr/images/news/li",
+   "x": 592,
+   "y": 4463,
+   "w": 254,
+   "h": 305,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(12, 12, 12)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_500,h_500,c_limit,f_auto,fl_lossy,q_auto:best/ws-estherschipper2/usr/images/news/li",
+   "x": 886,
+   "y": 4463,
+   "w": 457,
+   "h": 305,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px none rgb(12, 12, 12)",
+   "radius": "0px"
+  }
+ ],
+ "links": [
+  {
+   "t": "",
+   "h": "https://www.estherschipper.com/"
+  },
+  {
+   "t": "Skip to main content",
+   "h": "https://www.estherschipper.com/#main_content"
+  },
+  {
+   "t": "Home",
+   "h": "https://www.estherschipper.com/"
+  },
+  {
+   "t": "Artists",
+   "h": "https://www.estherschipper.com/artists/"
+  },
+  {
+   "t": "Current",
+   "h": "https://www.estherschipper.com/exhibitions/#current"
+  },
+  {
+   "t": "Upcoming",
+   "h": "https://www.estherschipper.com/exhibitions/#upcoming"
+  },
+  {
+   "t": "Past",
+   "h": "https://www.estherschipper.com/exhibitions/#past"
+  },
+  {
+   "t": "Johnen Galerie",
+   "h": "https://www.estherschipper.com/exhibitions/johnen-galerie/"
+  },
+  {
+   "t": "Fairs",
+   "h": "https://www.estherschipper.com/art-fairs/"
+  },
+  {
+   "t": "Latest press",
+   "h": "https://www.estherschipper.com/news/"
+  },
+  {
+   "t": "Locations",
+   "h": "https://www.estherschipper.com/locations/"
+  },
+  {
+   "t": "About",
+   "h": "https://www.estherschipper.com/about/gallery/"
+  },
+  {
+   "t": "Locations",
+   "h": "https://www.estherschipper.com/gallery/#address"
+  },
+  {
+   "t": "Contact",
+   "h": "https://www.estherschipper.com/gallery/#contact"
+  },
+  {
+   "t": "Hours",
+   "h": "https://www.estherschipper.com/gallery/#hours"
+  },
+  {
+   "t": "Wishlist",
+   "h": "https://www.estherschipper.com/wishlist/basket/"
+  },
+  {
+   "t": "Exhibition, September 10 - October 24, 2026 Repose David Cla",
+   "h": "https://www.estherschipper.com/exhibitions/1601-repose-david-claerbout/"
+  },
+  {
+   "t": "Exhibition, September 10 - October 24, 2026 Fire Sermon Tuan",
+   "h": "https://www.estherschipper.com/exhibitions/1600-fire-sermon-tuan-andrew-nguyen/"
+  },
+  {
+   "t": "Exhibition, September 2 - October 31, 2026 Who Lived Happily",
+   "h": "https://www.estherschipper.com/exhibitions/1595-who-lived-happily-ever-after-simon-fujiwara/"
+  },
+  {
+   "t": "Featured viewing room Berlin Esther Schipper | Berlin",
+   "h": "https://www.estherschipper.com/viewing-room/23-berlin/"
+  },
+  {
+   "t": "Featured viewing room Paris Esther Schipper | Paris",
+   "h": "https://www.estherschipper.com/viewing-room/49-paris/"
+  },
+  {
+   "t": "Featured viewing room Seoul Esther Schipper | Seoul",
+   "h": "https://www.estherschipper.com/viewing-room/36-seoul/"
+  },
+  {
+   "t": "Featured viewing room New York Showroom & Office Esther Schi",
+   "h": "https://www.estherschipper.com/viewing-room/53-new-york-showroom-office/"
+  },
+  {
+   "t": "Featured A Sense of Wonder OCULA French artist Camille Henro",
+   "h": "https://ocula.com/magazine/conversations/camille-henrot-in-the-veins-rachel-connolly-2026/"
+  },
+  {
+   "t": "Press Daring to see something for yourself TOWARDS PHOTOGRAP",
+   "h": "https://towards.photography/en/annette-kelm-daring-to-see-something-for-yourself/"
+  },
+  {
+   "t": "Featured Ryan Gander: Die schönsten Ausstellungen in Salzbur",
+   "h": "https://www.weltkunst.de/ausstellungen/2026/07/ausstellungen-salzburg-kunst-im-festivalsommer"
+  },
+  {
+   "t": "Featured Wie im Fiebertraum: Pierre Huyghe entwirft in der F",
+   "h": "https://www.swr.de/kultur/kunst/ausstellung-pierre-huyghe-fondation-beyeler-riehen-schweiz-100.html"
+  },
+  {
+   "t": "Press Behind The Scenes: Camille Henrot's Commedia dell'arte",
+   "h": "https://aspenartmuseum.org/art-and-ideas/behind-the-scenes/"
+  },
+  {
+   "t": "Featured Lee Bae brings charcoal, gesture and contemplation ",
+   "h": "https://artdaily.com/news/198006/Lee-Bae-brings-charcoal--gesture-and-contemplation-to-a-medieval-French-abbey"
+  },
+  {
+   "t": "Exhibitions Camille Henrot’s new exhibition opens in Copenha",
+   "h": "https://hubemag.com/camille-henrots-new-exhibition-opens-in-copenhagen"
+  },
+  {
+   "t": "Featured Anicka Yi with Christopher Y. Lew The Brooklyn Rail",
+   "h": "https://brooklynrail.org/2026/07/art/anicka-yi-with-christopher-y-lew/"
+  },
+  {
+   "t": "Featured Now representing — Camille Henrot Esther Schipper i",
+   "h": "https://www.estherschipper.com/news/809-now-representing-camille-henrot-esther-schipper-is-delighted-to-announce-the-representation/"
+  },
+  {
+   "t": "Featured A Sense of Wonder OCULA French artist Camille Henro",
+   "h": "https://ocula.com/magazine/conversations/camille-henrot-in-the-veins-rachel-connolly-2026/"
+  },
+  {
+   "t": "Press Daring to see something for yourself TOWARDS PHOTOGRAP",
+   "h": "https://towards.photography/en/annette-kelm-daring-to-see-something-for-yourself/"
+  },
+  {
+   "t": "Featured Ryan Gander: Die schönsten Ausstellungen in Salzbur",
+   "h": "https://www.weltkunst.de/ausstellungen/2026/07/ausstellungen-salzburg-kunst-im-festivalsommer"
+  },
+  {
+   "t": "Featured Wie im Fiebertraum: Pierre Huyghe entwirft in der F",
+   "h": "https://www.swr.de/kultur/kunst/ausstellung-pierre-huyghe-fondation-beyeler-riehen-schweiz-100.html"
+  },
+  {
+   "t": "Press Behind The Scenes: Camille Henrot's Commedia dell'arte",
+   "h": "https://aspenartmuseum.org/art-and-ideas/behind-the-scenes/"
+  },
+  {
+   "t": "Featured Lee Bae brings charcoal, gesture and contemplation ",
+   "h": "https://artdaily.com/news/198006/Lee-Bae-brings-charcoal--gesture-and-contemplation-to-a-medieval-French-abbey"
+  },
+  {
+   "t": "Exhibitions Camille Henrot’s new exhibition opens in Copenha",
+   "h": "https://hubemag.com/camille-henrots-new-exhibition-opens-in-copenhagen"
+  },
+  {
+   "t": "Featured Anicka Yi with Christopher Y. Lew The Brooklyn Rail",
+   "h": "https://brooklynrail.org/2026/07/art/anicka-yi-with-christopher-y-lew/"
+  },
+  {
+   "t": "Featured Now representing — Camille Henrot Esther Schipper i",
+   "h": "https://www.estherschipper.com/news/809-now-representing-camille-henrot-esther-schipper-is-delighted-to-announce-the-representation/"
+  },
+  {
+   "t": "Media Library Browse exhibition films from Esther Schipper",
+   "h": "https://www.estherschipper.com/video/"
+  },
+  {
+   "t": "",
+   "h": "https://www.estherschipper.com/"
+  },
+  {
+   "t": "About",
+   "h": "https://www.estherschipper.com/about/gallery/"
+  },
+  {
+   "t": "Imprint",
+   "h": "https://www.estherschipper.com/about/imprint/"
+  },
+  {
+   "t": "Contact",
+   "h": "https://www.estherschipper.com/gallery/#contact"
+  },
+  {
+   "t": "Careers",
+   "h": "https://www.estherschipper.com/about/jobs/"
+  },
+  {
+   "t": "Instagram . (This link opens in a new tab).",
+   "h": "https://www.instagram.com/estherschippergallery/"
+  },
+  {
+   "t": "WeChat",
+   "h": "https://www.estherschipper.com/usr/library/images/main/esther-schipper-wechat-qr-code.jpg"
+  },
+  {
+   "t": "Facebook . (This link opens in a new tab).",
+   "h": "https://www.facebook.com/EstherSchipperGallery/"
+  },
+  {
+   "t": "here",
+   "h": "https://www.estherschipper.com/privacy-policy/"
+  },
+  {
+   "t": "Privacy policy",
+   "h": "https://www.estherschipper.com/privacy-policy/"
+  },
+  {
+   "t": "Accessibility policy",
+   "h": "https://www.estherschipper.com/accessibility-policy/"
+  },
+  {
+   "t": "Privacy Policy",
+   "h": "https://www.estherschipper.com/privacy-policy/"
+  },
+  {
+   "t": "Manage cookies",
+   "h": "https://www.estherschipper.com/#"
+  },
+  {
+   "t": "Accept all",
+   "h": "https://www.estherschipper.com/#"
+  },
+  {
+   "t": "Close",
+   "h": "https://www.estherschipper.com/#"
+  },
+  {
+   "t": "Checkout now",
+   "h": "https://www.estherschipper.com/store/basket/"
+  },
+  {
+   "t": "privacy policy",
+   "h": "https://www.estherschipper.com/privacy-policy/"
+  },
+  {
+   "t": "privacy policy",
+   "h": "https://www.estherschipper.com/privacy-policy/"
+  },
+  {
+   "t": "",
+   "h": "https://www.estherschipper.com/"
+  },
+  {
+   "t": "Home",
+   "h": "https://www.estherschipper.com/"
+  },
+  {
+   "t": "Artists",
+   "h": "https://www.estherschipper.com/artists/"
+  },
+  {
+   "t": "Current",
+   "h": "https://www.estherschipper.com/exhibitions/#current"
+  },
+  {
+   "t": "Upcoming",
+   "h": "https://www.estherschipper.com/exhibitions/#upcoming"
+  },
+  {
+   "t": "Past",
+   "h": "https://www.estherschipper.com/exhibitions/#past"
+  },
+  {
+   "t": "Johnen Galerie",
+   "h": "https://www.estherschipper.com/exhibitions/johnen-galerie/"
+  },
+  {
+   "t": "Fairs",
+   "h": "https://www.estherschipper.com/art-fairs/"
+  },
+  {
+   "t": "Latest press",
+   "h": "https://www.estherschipper.com/news/"
+  },
+  {
+   "t": "Locations",
+   "h": "https://www.estherschipper.com/locations/"
+  },
+  {
+   "t": "About",
+   "h": "https://www.estherschipper.com/about/gallery/"
+  },
+  {
+   "t": "Address",
+   "h": "https://www.estherschipper.com/gallery/#address"
+  },
+  {
+   "t": "Contact",
+   "h": "https://www.estherschipper.com/gallery/#contact"
+  },
+  {
+   "t": "Hours",
+   "h": "https://www.estherschipper.com/gallery/#hours"
+  },
+  {
+   "t": "Find us",
+   "h": "https://www.estherschipper.com/gallery/#find-us"
+  },
+  {
+   "t": "Previous",
+   "h": "https://www.estherschipper.com/#"
+  },
+  {
+   "t": "Next",
+   "h": "https://www.estherschipper.com/#"
+  }
+ ]
+}

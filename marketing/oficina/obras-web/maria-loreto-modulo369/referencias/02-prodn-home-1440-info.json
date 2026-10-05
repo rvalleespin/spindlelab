@@ -1,0 +1,1243 @@
+{
+ "url": "https://prodn.com/",
+ "title": "PRODn at Art + Commerce",
+ "scrollW": 1440,
+ "clientW": 1440,
+ "H": 900,
+ "html": {
+  "tag": "HTML",
+  "cls": "fonts-loaded",
+  "txt": "INFO\nPORTFOLIO\nT MAGAZINE\nVOGUE x MET GALA\nChatGPT SF\nChanel Metiers D'Arts 2026",
+  "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "20.8px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 900
+ },
+ "body": {
+  "tag": "BODY",
+  "cls": "home wp-singular page-template page-template- page-template-templates page-template-pages page-template-home-page page-template-templatespageshome-page-php page page-id-300104 wp-theme-prodn page-home",
+  "txt": "INFO\nPORTFOLIO\nT MAGAZINE\nVOGUE x MET GALA\nChatGPT SF\nChanel Metiers D'Arts 2026",
+  "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "20.8px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgb(255, 255, 255)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 900
+ },
+ "h1": {
+  "tag": "H1",
+  "cls": "",
+  "txt": "Snake",
+  "ff": "lores-12",
+  "fs": "100.8px",
+  "fw": "700",
+  "lh": "110.88px",
+  "ls": "-1px",
+  "tt": "uppercase",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 0,
+  "h": 0
+ },
+ "h2": {
+  "tag": "H2",
+  "cls": "",
+  "txt": "Centro de preferencia de la privacidad",
+  "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+  "fs": "16px",
+  "fw": "700",
+  "lh": "24px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(105, 105, 105)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 0,
+  "h": 0
+ },
+ "h3": {
+  "tag": "H3",
+  "cls": "",
+  "txt": "Gestionar las preferencias de consentimiento",
+  "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+  "fs": "16px",
+  "fw": "700",
+  "lh": "20.8px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(105, 105, 105)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 0,
+  "h": 0
+ },
+ "header": null,
+ "nav": {
+  "tag": "NAV",
+  "cls": "header JS--header ",
+  "txt": "INFO\nPORTFOLIO",
+  "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "20.8px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(255, 255, 255)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 77
+ },
+ "fijos": [
+  {
+   "pos": "fixed",
+   "tag": "NAV",
+   "cls": "header JS--header ",
+   "txt": "INFO\nPORTFOLIO",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "20.8px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 77
+  },
+  {
+   "pos": "fixed",
+   "tag": "NAV",
+   "cls": "JS--burgerMenu burgerMenu",
+   "txt": "Home\n\t\t\t\t\t\t\t\tInfo\n\t\t\t\t\t\t\t\tArchive\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "20.8px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(255, 255, 255, 0.93)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "NAV",
+   "cls": "header JS--header ",
+   "txt": "Home\n\t\t\t\t\t\t\t\tInfo\n\t\t\t\t\t\t\t\tArchive",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "20.8px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "homeBannerMenu__footerText",
+   "txt": "A DIVISION OF ART+COMMERCE",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "20.8px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 40,
+   "y": 863,
+   "w": 1360,
+   "h": 13
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "snakeModal",
+   "txt": "Snake\n\t\t\t\t\tPRESS [ENTER] TO PLAY\n\n\t\t\t\t\n\n\t\t\t\t\n\n\t\t\t\t\tSnake\n\t\t\t\t\tSWIPE TO PLAY",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "20.8px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "dvdWrapper",
+   "txt": "",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "20.8px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgb(0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "onetrust-pc-dark-filter ot-hide ot-fade-in",
+   "txt": "",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "20.8px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0.5)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "otFlat bottom ot-wo-title vertical-align-content",
+   "txt": "Al hacer clic en “Aceptar todas las cookies”, usted acepta que las cookies se gu",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "20.8px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgb(0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "otPcCenter ot-hide ot-fade-in",
+   "txt": "Solicitud de exclusión respetadaCentro de preferencia de la privacidadCuando vis",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "20.8px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "sticky",
+   "tag": "DIV",
+   "cls": "",
+   "txt": "Consent Leg.Interest checkbox label label checkbox label label checkbox label la",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  }
+ ],
+ "fuentes": [
+  "Neue Haas Grotesk Display Pro 700 normal",
+  "Neue Haas Grotesk Text Pro 400 normal",
+  "Neue Haas Grotesk Text Pro 700 normal"
+ ],
+ "tamanos": [
+  [
+   "27px \"Neue Haas Grotesk Display Pro\"",
+   196
+  ],
+  [
+   "13px \"Neue Haas Grotesk Display Pro\"",
+   195
+  ],
+  [
+   "12px \"Neue Haas Grotesk Text Pro\"",
+   6
+  ],
+  [
+   "40px \"Neue Haas Grotesk Text Pro\"",
+   3
+  ]
+ ],
+ "imgs": [
+  {
+   "src": "https://aandcprod.s3.us-east-1.amazonaws.com/aandcprodn1/content/uploads/2026/09/sml20260301z003-Comp-.jpg",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 900,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 900,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 900,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 900,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  }
+ ],
+ "links": [
+  {
+   "t": "",
+   "h": "https://prodn.com/"
+  },
+  {
+   "t": "Home",
+   "h": "https://prodn.com/"
+  },
+  {
+   "t": "INFO",
+   "h": "https://prodn.com/info/"
+  },
+  {
+   "t": "PORTFOLIO",
+   "h": "https://prodn.com/portfolio/"
+  },
+  {
+   "t": "",
+   "h": "https://prodn.com/#"
+  },
+  {
+   "t": "",
+   "h": "https://prodn.com/"
+  },
+  {
+   "t": "Home",
+   "h": "https://prodn.com/"
+  },
+  {
+   "t": "Info",
+   "h": "https://artandcommerceproduction.local/info"
+  },
+  {
+   "t": "Archive",
+   "h": "https://artandcommerceproduction.local/archive"
+  },
+  {
+   "t": "",
+   "h": "https://prodn.com/#"
+  },
+  {
+   "t": "Home",
+   "h": "https://prodn.com/"
+  },
+  {
+   "t": "Info",
+   "h": "https://prodn.com/info/"
+  },
+  {
+   "t": "Portfolio",
+   "h": "https://prodn.com/portfolio/"
+  },
+  {
+   "t": "T MAGAZINE",
+   "h": "https://prodn.com/work/cj-as-t-magazine/"
+  },
+  {
+   "t": "VOGUE x MET GALA",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2018/"
+  },
+  {
+   "t": "ChatGPT SF",
+   "h": "https://prodn.com/work/chatgptsf/"
+  },
+  {
+   "t": "Chanel Metiers D'Arts 2026",
+   "h": "https://prodn.com/work/chanel-metiers-darts-2026/"
+  },
+  {
+   "t": "LOUIS VUITTON NYC TEASER",
+   "h": "https://prodn.com/work/louis-vuitton-ny-show-teaser-x-albert-moya/"
+  },
+  {
+   "t": "VERSACE SS26",
+   "h": "https://prodn.com/work/sm-versace-ss26/"
+  },
+  {
+   "t": "CHANEL 25 HANDBAG",
+   "h": "https://prodn.com/work/gordon-von-steiner-chanel-25-handbag-campaign-2025/"
+  },
+  {
+   "t": "ZARA 50TH ANNIVERSARY",
+   "h": "https://prodn.com/work/steven-meisel-zara-50th-anniversary-campaign-2025/"
+  },
+  {
+   "t": "CHANEL NO. 5",
+   "h": "https://prodn.com/work/ks-chanel-no-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD TRAILERS",
+   "h": "https://prodn.com/work/gordon-von-steiner-vogue-world-2025/"
+  },
+  {
+   "t": "PERFECT MAGAZINE ISSUE 6.5",
+   "h": "https://prodn.com/work/rp-perfect-magazine-issue-6-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD OPENING",
+   "h": "https://prodn.com/work/rob-ashford-vogueworld-opeining/"
+  },
+  {
+   "t": "AMERICAN VOGUE SEPT. 2025",
+   "h": "https://prodn.com/work/dj-vogue-sept-2025/"
+  },
+  {
+   "t": "PRADA SS25",
+   "h": "https://prodn.com/work/steven-meisel-prada-spring-summer-2025/"
+  },
+  {
+   "t": "LOUIS VUITTON BEAUTY",
+   "h": "https://prodn.com/work/steven-meisel-louis-vuitton-beauty-2025/"
+  },
+  {
+   "t": "MISS SIXTY SS25",
+   "h": "https://prodn.com/work/carlijn-jacobs-miss-sixty-spring-summer-2025/"
+  },
+  {
+   "t": "T MAGAZINE",
+   "h": "https://prodn.com/work/cj-as-t-magazine/"
+  },
+  {
+   "t": "VOGUE x MET GALA",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2018/"
+  },
+  {
+   "t": "ChatGPT SF",
+   "h": "https://prodn.com/work/chatgptsf/"
+  },
+  {
+   "t": "Chanel Metiers D'Arts 2026",
+   "h": "https://prodn.com/work/chanel-metiers-darts-2026/"
+  },
+  {
+   "t": "LOUIS VUITTON NYC TEASER",
+   "h": "https://prodn.com/work/louis-vuitton-ny-show-teaser-x-albert-moya/"
+  },
+  {
+   "t": "VERSACE SS26",
+   "h": "https://prodn.com/work/sm-versace-ss26/"
+  },
+  {
+   "t": "CHANEL 25 HANDBAG",
+   "h": "https://prodn.com/work/gordon-von-steiner-chanel-25-handbag-campaign-2025/"
+  },
+  {
+   "t": "ZARA 50TH ANNIVERSARY",
+   "h": "https://prodn.com/work/steven-meisel-zara-50th-anniversary-campaign-2025/"
+  },
+  {
+   "t": "CHANEL NO. 5",
+   "h": "https://prodn.com/work/ks-chanel-no-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD TRAILERS",
+   "h": "https://prodn.com/work/gordon-von-steiner-vogue-world-2025/"
+  },
+  {
+   "t": "PERFECT MAGAZINE ISSUE 6.5",
+   "h": "https://prodn.com/work/rp-perfect-magazine-issue-6-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD OPENING",
+   "h": "https://prodn.com/work/rob-ashford-vogueworld-opeining/"
+  },
+  {
+   "t": "AMERICAN VOGUE SEPT. 2025",
+   "h": "https://prodn.com/work/dj-vogue-sept-2025/"
+  },
+  {
+   "t": "PRADA SS25",
+   "h": "https://prodn.com/work/steven-meisel-prada-spring-summer-2025/"
+  },
+  {
+   "t": "LOUIS VUITTON BEAUTY",
+   "h": "https://prodn.com/work/steven-meisel-louis-vuitton-beauty-2025/"
+  },
+  {
+   "t": "MISS SIXTY SS25",
+   "h": "https://prodn.com/work/carlijn-jacobs-miss-sixty-spring-summer-2025/"
+  },
+  {
+   "t": "T MAGAZINE",
+   "h": "https://prodn.com/work/cj-as-t-magazine/"
+  },
+  {
+   "t": "VOGUE x MET GALA",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2018/"
+  },
+  {
+   "t": "ChatGPT SF",
+   "h": "https://prodn.com/work/chatgptsf/"
+  },
+  {
+   "t": "Chanel Metiers D'Arts 2026",
+   "h": "https://prodn.com/work/chanel-metiers-darts-2026/"
+  },
+  {
+   "t": "LOUIS VUITTON NYC TEASER",
+   "h": "https://prodn.com/work/louis-vuitton-ny-show-teaser-x-albert-moya/"
+  },
+  {
+   "t": "VERSACE SS26",
+   "h": "https://prodn.com/work/sm-versace-ss26/"
+  },
+  {
+   "t": "CHANEL 25 HANDBAG",
+   "h": "https://prodn.com/work/gordon-von-steiner-chanel-25-handbag-campaign-2025/"
+  },
+  {
+   "t": "ZARA 50TH ANNIVERSARY",
+   "h": "https://prodn.com/work/steven-meisel-zara-50th-anniversary-campaign-2025/"
+  },
+  {
+   "t": "CHANEL NO. 5",
+   "h": "https://prodn.com/work/ks-chanel-no-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD TRAILERS",
+   "h": "https://prodn.com/work/gordon-von-steiner-vogue-world-2025/"
+  },
+  {
+   "t": "PERFECT MAGAZINE ISSUE 6.5",
+   "h": "https://prodn.com/work/rp-perfect-magazine-issue-6-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD OPENING",
+   "h": "https://prodn.com/work/rob-ashford-vogueworld-opeining/"
+  },
+  {
+   "t": "AMERICAN VOGUE SEPT. 2025",
+   "h": "https://prodn.com/work/dj-vogue-sept-2025/"
+  },
+  {
+   "t": "PRADA SS25",
+   "h": "https://prodn.com/work/steven-meisel-prada-spring-summer-2025/"
+  },
+  {
+   "t": "LOUIS VUITTON BEAUTY",
+   "h": "https://prodn.com/work/steven-meisel-louis-vuitton-beauty-2025/"
+  },
+  {
+   "t": "MISS SIXTY SS25",
+   "h": "https://prodn.com/work/carlijn-jacobs-miss-sixty-spring-summer-2025/"
+  },
+  {
+   "t": "T MAGAZINE",
+   "h": "https://prodn.com/work/cj-as-t-magazine/"
+  },
+  {
+   "t": "VOGUE x MET GALA",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2018/"
+  },
+  {
+   "t": "ChatGPT SF",
+   "h": "https://prodn.com/work/chatgptsf/"
+  },
+  {
+   "t": "Chanel Metiers D'Arts 2026",
+   "h": "https://prodn.com/work/chanel-metiers-darts-2026/"
+  },
+  {
+   "t": "LOUIS VUITTON NYC TEASER",
+   "h": "https://prodn.com/work/louis-vuitton-ny-show-teaser-x-albert-moya/"
+  },
+  {
+   "t": "VERSACE SS26",
+   "h": "https://prodn.com/work/sm-versace-ss26/"
+  },
+  {
+   "t": "CHANEL 25 HANDBAG",
+   "h": "https://prodn.com/work/gordon-von-steiner-chanel-25-handbag-campaign-2025/"
+  },
+  {
+   "t": "ZARA 50TH ANNIVERSARY",
+   "h": "https://prodn.com/work/steven-meisel-zara-50th-anniversary-campaign-2025/"
+  },
+  {
+   "t": "CHANEL NO. 5",
+   "h": "https://prodn.com/work/ks-chanel-no-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD TRAILERS",
+   "h": "https://prodn.com/work/gordon-von-steiner-vogue-world-2025/"
+  },
+  {
+   "t": "PERFECT MAGAZINE ISSUE 6.5",
+   "h": "https://prodn.com/work/rp-perfect-magazine-issue-6-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD OPENING",
+   "h": "https://prodn.com/work/rob-ashford-vogueworld-opeining/"
+  },
+  {
+   "t": "AMERICAN VOGUE SEPT. 2025",
+   "h": "https://prodn.com/work/dj-vogue-sept-2025/"
+  },
+  {
+   "t": "PRADA SS25",
+   "h": "https://prodn.com/work/steven-meisel-prada-spring-summer-2025/"
+  },
+  {
+   "t": "LOUIS VUITTON BEAUTY",
+   "h": "https://prodn.com/work/steven-meisel-louis-vuitton-beauty-2025/"
+  },
+  {
+   "t": "MISS SIXTY SS25",
+   "h": "https://prodn.com/work/carlijn-jacobs-miss-sixty-spring-summer-2025/"
+  },
+  {
+   "t": "T MAGAZINE",
+   "h": "https://prodn.com/work/cj-as-t-magazine/"
+  },
+  {
+   "t": "VOGUE x MET GALA",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2018/"
+  },
+  {
+   "t": "ChatGPT SF",
+   "h": "https://prodn.com/work/chatgptsf/"
+  },
+  {
+   "t": "Chanel Metiers D'Arts 2026",
+   "h": "https://prodn.com/work/chanel-metiers-darts-2026/"
+  },
+  {
+   "t": "LOUIS VUITTON NYC TEASER",
+   "h": "https://prodn.com/work/louis-vuitton-ny-show-teaser-x-albert-moya/"
+  },
+  {
+   "t": "VERSACE SS26",
+   "h": "https://prodn.com/work/sm-versace-ss26/"
+  },
+  {
+   "t": "CHANEL 25 HANDBAG",
+   "h": "https://prodn.com/work/gordon-von-steiner-chanel-25-handbag-campaign-2025/"
+  },
+  {
+   "t": "ZARA 50TH ANNIVERSARY",
+   "h": "https://prodn.com/work/steven-meisel-zara-50th-anniversary-campaign-2025/"
+  },
+  {
+   "t": "CHANEL NO. 5",
+   "h": "https://prodn.com/work/ks-chanel-no-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD TRAILERS",
+   "h": "https://prodn.com/work/gordon-von-steiner-vogue-world-2025/"
+  },
+  {
+   "t": "PERFECT MAGAZINE ISSUE 6.5",
+   "h": "https://prodn.com/work/rp-perfect-magazine-issue-6-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD OPENING",
+   "h": "https://prodn.com/work/rob-ashford-vogueworld-opeining/"
+  },
+  {
+   "t": "AMERICAN VOGUE SEPT. 2025",
+   "h": "https://prodn.com/work/dj-vogue-sept-2025/"
+  },
+  {
+   "t": "PRADA SS25",
+   "h": "https://prodn.com/work/steven-meisel-prada-spring-summer-2025/"
+  },
+  {
+   "t": "LOUIS VUITTON BEAUTY",
+   "h": "https://prodn.com/work/steven-meisel-louis-vuitton-beauty-2025/"
+  },
+  {
+   "t": "MISS SIXTY SS25",
+   "h": "https://prodn.com/work/carlijn-jacobs-miss-sixty-spring-summer-2025/"
+  },
+  {
+   "t": "T MAGAZINE",
+   "h": "https://prodn.com/work/cj-as-t-magazine/"
+  },
+  {
+   "t": "VOGUE x MET GALA",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2018/"
+  },
+  {
+   "t": "ChatGPT SF",
+   "h": "https://prodn.com/work/chatgptsf/"
+  },
+  {
+   "t": "Chanel Metiers D'Arts 2026",
+   "h": "https://prodn.com/work/chanel-metiers-darts-2026/"
+  },
+  {
+   "t": "LOUIS VUITTON NYC TEASER",
+   "h": "https://prodn.com/work/louis-vuitton-ny-show-teaser-x-albert-moya/"
+  },
+  {
+   "t": "VERSACE SS26",
+   "h": "https://prodn.com/work/sm-versace-ss26/"
+  },
+  {
+   "t": "CHANEL 25 HANDBAG",
+   "h": "https://prodn.com/work/gordon-von-steiner-chanel-25-handbag-campaign-2025/"
+  },
+  {
+   "t": "ZARA 50TH ANNIVERSARY",
+   "h": "https://prodn.com/work/steven-meisel-zara-50th-anniversary-campaign-2025/"
+  },
+  {
+   "t": "CHANEL NO. 5",
+   "h": "https://prodn.com/work/ks-chanel-no-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD TRAILERS",
+   "h": "https://prodn.com/work/gordon-von-steiner-vogue-world-2025/"
+  },
+  {
+   "t": "PERFECT MAGAZINE ISSUE 6.5",
+   "h": "https://prodn.com/work/rp-perfect-magazine-issue-6-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD OPENING",
+   "h": "https://prodn.com/work/rob-ashford-vogueworld-opeining/"
+  },
+  {
+   "t": "AMERICAN VOGUE SEPT. 2025",
+   "h": "https://prodn.com/work/dj-vogue-sept-2025/"
+  },
+  {
+   "t": "PRADA SS25",
+   "h": "https://prodn.com/work/steven-meisel-prada-spring-summer-2025/"
+  },
+  {
+   "t": "LOUIS VUITTON BEAUTY",
+   "h": "https://prodn.com/work/steven-meisel-louis-vuitton-beauty-2025/"
+  },
+  {
+   "t": "MISS SIXTY SS25",
+   "h": "https://prodn.com/work/carlijn-jacobs-miss-sixty-spring-summer-2025/"
+  },
+  {
+   "t": "T MAGAZINE",
+   "h": "https://prodn.com/work/cj-as-t-magazine/"
+  },
+  {
+   "t": "VOGUE x MET GALA",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2018/"
+  },
+  {
+   "t": "ChatGPT SF",
+   "h": "https://prodn.com/work/chatgptsf/"
+  },
+  {
+   "t": "Chanel Metiers D'Arts 2026",
+   "h": "https://prodn.com/work/chanel-metiers-darts-2026/"
+  },
+  {
+   "t": "LOUIS VUITTON NYC TEASER",
+   "h": "https://prodn.com/work/louis-vuitton-ny-show-teaser-x-albert-moya/"
+  },
+  {
+   "t": "VERSACE SS26",
+   "h": "https://prodn.com/work/sm-versace-ss26/"
+  },
+  {
+   "t": "CHANEL 25 HANDBAG",
+   "h": "https://prodn.com/work/gordon-von-steiner-chanel-25-handbag-campaign-2025/"
+  },
+  {
+   "t": "ZARA 50TH ANNIVERSARY",
+   "h": "https://prodn.com/work/steven-meisel-zara-50th-anniversary-campaign-2025/"
+  },
+  {
+   "t": "CHANEL NO. 5",
+   "h": "https://prodn.com/work/ks-chanel-no-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD TRAILERS",
+   "h": "https://prodn.com/work/gordon-von-steiner-vogue-world-2025/"
+  },
+  {
+   "t": "PERFECT MAGAZINE ISSUE 6.5",
+   "h": "https://prodn.com/work/rp-perfect-magazine-issue-6-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD OPENING",
+   "h": "https://prodn.com/work/rob-ashford-vogueworld-opeining/"
+  },
+  {
+   "t": "AMERICAN VOGUE SEPT. 2025",
+   "h": "https://prodn.com/work/dj-vogue-sept-2025/"
+  },
+  {
+   "t": "PRADA SS25",
+   "h": "https://prodn.com/work/steven-meisel-prada-spring-summer-2025/"
+  },
+  {
+   "t": "LOUIS VUITTON BEAUTY",
+   "h": "https://prodn.com/work/steven-meisel-louis-vuitton-beauty-2025/"
+  },
+  {
+   "t": "MISS SIXTY SS25",
+   "h": "https://prodn.com/work/carlijn-jacobs-miss-sixty-spring-summer-2025/"
+  },
+  {
+   "t": "T MAGAZINE",
+   "h": "https://prodn.com/work/cj-as-t-magazine/"
+  },
+  {
+   "t": "VOGUE x MET GALA",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2018/"
+  },
+  {
+   "t": "ChatGPT SF",
+   "h": "https://prodn.com/work/chatgptsf/"
+  },
+  {
+   "t": "Chanel Metiers D'Arts 2026",
+   "h": "https://prodn.com/work/chanel-metiers-darts-2026/"
+  },
+  {
+   "t": "LOUIS VUITTON NYC TEASER",
+   "h": "https://prodn.com/work/louis-vuitton-ny-show-teaser-x-albert-moya/"
+  },
+  {
+   "t": "VERSACE SS26",
+   "h": "https://prodn.com/work/sm-versace-ss26/"
+  },
+  {
+   "t": "CHANEL 25 HANDBAG",
+   "h": "https://prodn.com/work/gordon-von-steiner-chanel-25-handbag-campaign-2025/"
+  },
+  {
+   "t": "ZARA 50TH ANNIVERSARY",
+   "h": "https://prodn.com/work/steven-meisel-zara-50th-anniversary-campaign-2025/"
+  },
+  {
+   "t": "CHANEL NO. 5",
+   "h": "https://prodn.com/work/ks-chanel-no-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD TRAILERS",
+   "h": "https://prodn.com/work/gordon-von-steiner-vogue-world-2025/"
+  },
+  {
+   "t": "PERFECT MAGAZINE ISSUE 6.5",
+   "h": "https://prodn.com/work/rp-perfect-magazine-issue-6-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD OPENING",
+   "h": "https://prodn.com/work/rob-ashford-vogueworld-opeining/"
+  },
+  {
+   "t": "AMERICAN VOGUE SEPT. 2025",
+   "h": "https://prodn.com/work/dj-vogue-sept-2025/"
+  },
+  {
+   "t": "PRADA SS25",
+   "h": "https://prodn.com/work/steven-meisel-prada-spring-summer-2025/"
+  },
+  {
+   "t": "LOUIS VUITTON BEAUTY",
+   "h": "https://prodn.com/work/steven-meisel-louis-vuitton-beauty-2025/"
+  },
+  {
+   "t": "MISS SIXTY SS25",
+   "h": "https://prodn.com/work/carlijn-jacobs-miss-sixty-spring-summer-2025/"
+  },
+  {
+   "t": "T MAGAZINE",
+   "h": "https://prodn.com/work/cj-as-t-magazine/"
+  },
+  {
+   "t": "VOGUE x MET GALA",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2018/"
+  },
+  {
+   "t": "ChatGPT SF",
+   "h": "https://prodn.com/work/chatgptsf/"
+  },
+  {
+   "t": "Chanel Metiers D'Arts 2026",
+   "h": "https://prodn.com/work/chanel-metiers-darts-2026/"
+  },
+  {
+   "t": "LOUIS VUITTON NYC TEASER",
+   "h": "https://prodn.com/work/louis-vuitton-ny-show-teaser-x-albert-moya/"
+  },
+  {
+   "t": "VERSACE SS26",
+   "h": "https://prodn.com/work/sm-versace-ss26/"
+  },
+  {
+   "t": "CHANEL 25 HANDBAG",
+   "h": "https://prodn.com/work/gordon-von-steiner-chanel-25-handbag-campaign-2025/"
+  },
+  {
+   "t": "ZARA 50TH ANNIVERSARY",
+   "h": "https://prodn.com/work/steven-meisel-zara-50th-anniversary-campaign-2025/"
+  },
+  {
+   "t": "CHANEL NO. 5",
+   "h": "https://prodn.com/work/ks-chanel-no-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD TRAILERS",
+   "h": "https://prodn.com/work/gordon-von-steiner-vogue-world-2025/"
+  },
+  {
+   "t": "PERFECT MAGAZINE ISSUE 6.5",
+   "h": "https://prodn.com/work/rp-perfect-magazine-issue-6-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD OPENING",
+   "h": "https://prodn.com/work/rob-ashford-vogueworld-opeining/"
+  },
+  {
+   "t": "AMERICAN VOGUE SEPT. 2025",
+   "h": "https://prodn.com/work/dj-vogue-sept-2025/"
+  },
+  {
+   "t": "PRADA SS25",
+   "h": "https://prodn.com/work/steven-meisel-prada-spring-summer-2025/"
+  },
+  {
+   "t": "LOUIS VUITTON BEAUTY",
+   "h": "https://prodn.com/work/steven-meisel-louis-vuitton-beauty-2025/"
+  },
+  {
+   "t": "MISS SIXTY SS25",
+   "h": "https://prodn.com/work/carlijn-jacobs-miss-sixty-spring-summer-2025/"
+  },
+  {
+   "t": "T MAGAZINE",
+   "h": "https://prodn.com/work/cj-as-t-magazine/"
+  },
+  {
+   "t": "VOGUE x MET GALA",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2018/"
+  },
+  {
+   "t": "ChatGPT SF",
+   "h": "https://prodn.com/work/chatgptsf/"
+  },
+  {
+   "t": "Chanel Metiers D'Arts 2026",
+   "h": "https://prodn.com/work/chanel-metiers-darts-2026/"
+  },
+  {
+   "t": "LOUIS VUITTON NYC TEASER",
+   "h": "https://prodn.com/work/louis-vuitton-ny-show-teaser-x-albert-moya/"
+  },
+  {
+   "t": "VERSACE SS26",
+   "h": "https://prodn.com/work/sm-versace-ss26/"
+  },
+  {
+   "t": "CHANEL 25 HANDBAG",
+   "h": "https://prodn.com/work/gordon-von-steiner-chanel-25-handbag-campaign-2025/"
+  },
+  {
+   "t": "ZARA 50TH ANNIVERSARY",
+   "h": "https://prodn.com/work/steven-meisel-zara-50th-anniversary-campaign-2025/"
+  },
+  {
+   "t": "CHANEL NO. 5",
+   "h": "https://prodn.com/work/ks-chanel-no-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD TRAILERS",
+   "h": "https://prodn.com/work/gordon-von-steiner-vogue-world-2025/"
+  },
+  {
+   "t": "PERFECT MAGAZINE ISSUE 6.5",
+   "h": "https://prodn.com/work/rp-perfect-magazine-issue-6-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD OPENING",
+   "h": "https://prodn.com/work/rob-ashford-vogueworld-opeining/"
+  },
+  {
+   "t": "AMERICAN VOGUE SEPT. 2025",
+   "h": "https://prodn.com/work/dj-vogue-sept-2025/"
+  },
+  {
+   "t": "PRADA SS25",
+   "h": "https://prodn.com/work/steven-meisel-prada-spring-summer-2025/"
+  },
+  {
+   "t": "LOUIS VUITTON BEAUTY",
+   "h": "https://prodn.com/work/steven-meisel-louis-vuitton-beauty-2025/"
+  },
+  {
+   "t": "MISS SIXTY SS25",
+   "h": "https://prodn.com/work/carlijn-jacobs-miss-sixty-spring-summer-2025/"
+  },
+  {
+   "t": "T MAGAZINE",
+   "h": "https://prodn.com/work/cj-as-t-magazine/"
+  },
+  {
+   "t": "VOGUE x MET GALA",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2018/"
+  },
+  {
+   "t": "ChatGPT SF",
+   "h": "https://prodn.com/work/chatgptsf/"
+  },
+  {
+   "t": "Chanel Metiers D'Arts 2026",
+   "h": "https://prodn.com/work/chanel-metiers-darts-2026/"
+  },
+  {
+   "t": "LOUIS VUITTON NYC TEASER",
+   "h": "https://prodn.com/work/louis-vuitton-ny-show-teaser-x-albert-moya/"
+  },
+  {
+   "t": "VERSACE SS26",
+   "h": "https://prodn.com/work/sm-versace-ss26/"
+  },
+  {
+   "t": "CHANEL 25 HANDBAG",
+   "h": "https://prodn.com/work/gordon-von-steiner-chanel-25-handbag-campaign-2025/"
+  },
+  {
+   "t": "ZARA 50TH ANNIVERSARY",
+   "h": "https://prodn.com/work/steven-meisel-zara-50th-anniversary-campaign-2025/"
+  },
+  {
+   "t": "CHANEL NO. 5",
+   "h": "https://prodn.com/work/ks-chanel-no-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD TRAILERS",
+   "h": "https://prodn.com/work/gordon-von-steiner-vogue-world-2025/"
+  },
+  {
+   "t": "PERFECT MAGAZINE ISSUE 6.5",
+   "h": "https://prodn.com/work/rp-perfect-magazine-issue-6-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD OPENING",
+   "h": "https://prodn.com/work/rob-ashford-vogueworld-opeining/"
+  },
+  {
+   "t": "AMERICAN VOGUE SEPT. 2025",
+   "h": "https://prodn.com/work/dj-vogue-sept-2025/"
+  },
+  {
+   "t": "PRADA SS25",
+   "h": "https://prodn.com/work/steven-meisel-prada-spring-summer-2025/"
+  },
+  {
+   "t": "LOUIS VUITTON BEAUTY",
+   "h": "https://prodn.com/work/steven-meisel-louis-vuitton-beauty-2025/"
+  },
+  {
+   "t": "MISS SIXTY SS25",
+   "h": "https://prodn.com/work/carlijn-jacobs-miss-sixty-spring-summer-2025/"
+  },
+  {
+   "t": "T MAGAZINE",
+   "h": "https://prodn.com/work/cj-as-t-magazine/"
+  },
+  {
+   "t": "VOGUE x MET GALA",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2018/"
+  },
+  {
+   "t": "ChatGPT SF",
+   "h": "https://prodn.com/work/chatgptsf/"
+  },
+  {
+   "t": "Chanel Metiers D'Arts 2026",
+   "h": "https://prodn.com/work/chanel-metiers-darts-2026/"
+  },
+  {
+   "t": "LOUIS VUITTON NYC TEASER",
+   "h": "https://prodn.com/work/louis-vuitton-ny-show-teaser-x-albert-moya/"
+  },
+  {
+   "t": "VERSACE SS26",
+   "h": "https://prodn.com/work/sm-versace-ss26/"
+  },
+  {
+   "t": "CHANEL 25 HANDBAG",
+   "h": "https://prodn.com/work/gordon-von-steiner-chanel-25-handbag-campaign-2025/"
+  },
+  {
+   "t": "ZARA 50TH ANNIVERSARY",
+   "h": "https://prodn.com/work/steven-meisel-zara-50th-anniversary-campaign-2025/"
+  },
+  {
+   "t": "CHANEL NO. 5",
+   "h": "https://prodn.com/work/ks-chanel-no-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD TRAILERS",
+   "h": "https://prodn.com/work/gordon-von-steiner-vogue-world-2025/"
+  },
+  {
+   "t": "PERFECT MAGAZINE ISSUE 6.5",
+   "h": "https://prodn.com/work/rp-perfect-magazine-issue-6-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD OPENING",
+   "h": "https://prodn.com/work/rob-ashford-vogueworld-opeining/"
+  },
+  {
+   "t": "AMERICAN VOGUE SEPT. 2025",
+   "h": "https://prodn.com/work/dj-vogue-sept-2025/"
+  },
+  {
+   "t": "PRADA SS25",
+   "h": "https://prodn.com/work/steven-meisel-prada-spring-summer-2025/"
+  },
+  {
+   "t": "LOUIS VUITTON BEAUTY",
+   "h": "https://prodn.com/work/steven-meisel-louis-vuitton-beauty-2025/"
+  },
+  {
+   "t": "MISS SIXTY SS25",
+   "h": "https://prodn.com/work/carlijn-jacobs-miss-sixty-spring-summer-2025/"
+  },
+  {
+   "t": "T MAGAZINE",
+   "h": "https://prodn.com/work/cj-as-t-magazine/"
+  },
+  {
+   "t": "VOGUE x MET GALA",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2018/"
+  },
+  {
+   "t": "ChatGPT SF",
+   "h": "https://prodn.com/work/chatgptsf/"
+  },
+  {
+   "t": "Chanel Metiers D'Arts 2026",
+   "h": "https://prodn.com/work/chanel-metiers-darts-2026/"
+  },
+  {
+   "t": "LOUIS VUITTON NYC TEASER",
+   "h": "https://prodn.com/work/louis-vuitton-ny-show-teaser-x-albert-moya/"
+  },
+  {
+   "t": "VERSACE SS26",
+   "h": "https://prodn.com/work/sm-versace-ss26/"
+  },
+  {
+   "t": "CHANEL 25 HANDBAG",
+   "h": "https://prodn.com/work/gordon-von-steiner-chanel-25-handbag-campaign-2025/"
+  },
+  {
+   "t": "ZARA 50TH ANNIVERSARY",
+   "h": "https://prodn.com/work/steven-meisel-zara-50th-anniversary-campaign-2025/"
+  },
+  {
+   "t": "CHANEL NO. 5",
+   "h": "https://prodn.com/work/ks-chanel-no-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD TRAILERS",
+   "h": "https://prodn.com/work/gordon-von-steiner-vogue-world-2025/"
+  },
+  {
+   "t": "PERFECT MAGAZINE ISSUE 6.5",
+   "h": "https://prodn.com/work/rp-perfect-magazine-issue-6-5/"
+  },
+  {
+   "t": "VOGUEWORLD HOLLYWOOD OPENING",
+   "h": "https://prodn.com/work/rob-ashford-vogueworld-opeining/"
+  },
+  {
+   "t": "AMERICAN VOGUE SEPT. 2025",
+   "h": "https://prodn.com/work/dj-vogue-sept-2025/"
+  },
+  {
+   "t": "PRADA SS25",
+   "h": "https://prodn.com/work/steven-meisel-prada-spring-summer-2025/"
+  },
+  {
+   "t": "LOUIS VUITTON BEAUTY",
+   "h": "https://prodn.com/work/steven-meisel-louis-vuitton-beauty-2025/"
+  }
+ ]
+}

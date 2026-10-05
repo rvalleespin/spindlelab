@@ -1,0 +1,660 @@
+{
+ "url": "https://www.perrotin.com/en",
+ "title": "PERROTIN - art gallery",
+ "scrollW": 500,
+ "clientW": 500,
+ "H": 3959,
+ "html": {
+  "tag": "HTML",
+  "cls": "",
+  "txt": "SEARCH\nYOUNG-IL AHN: SELF REFLECTIONS\nEXPLORE OUR CURRENT AND UPCOMING EXHIBITIO",
+  "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 500,
+  "h": 3959
+ },
+ "body": {
+  "tag": "BODY",
+  "cls": "",
+  "txt": "SEARCH\nYOUNG-IL AHN: SELF REFLECTIONS\nEXPLORE OUR CURRENT AND UPCOMING EXHIBITIO",
+  "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "24px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgb(255, 255, 255)",
+  "x": 0,
+  "y": 0,
+  "w": 500,
+  "h": 3959
+ },
+ "h1": {
+  "tag": "H1",
+  "cls": "",
+  "txt": "YOUNG-IL AHN: SELF REFLECTIONS",
+  "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+  "fs": "24px",
+  "fw": "400",
+  "lh": "28px",
+  "ls": "normal",
+  "tt": "uppercase",
+  "color": "rgb(255, 255, 255)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 16,
+  "y": 751,
+  "w": 468,
+  "h": 28
+ },
+ "h2": {
+  "tag": "H2",
+  "cls": "",
+  "txt": "CURRENT EXHIBITIONS",
+  "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+  "fs": "12px",
+  "fw": "500",
+  "lh": "14px",
+  "ls": "normal",
+  "tt": "uppercase",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 16,
+  "y": 953,
+  "w": 139,
+  "h": 14
+ },
+ "h3": {
+  "tag": "H3",
+  "cls": "",
+  "txt": "YOUNG-IL AHN",
+  "ff": "Akzidenz-Grotesk-Extended",
+  "fs": "18px",
+  "fw": "500",
+  "lh": "15.3px",
+  "ls": "normal",
+  "tt": "uppercase",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 16,
+  "y": 1562,
+  "w": 163,
+  "h": 15
+ },
+ "header": {
+  "tag": "HEADER",
+  "cls": "header is-light-mode",
+  "txt": "SEARCH",
+  "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "24px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(255, 255, 255, 0.4)",
+  "x": 0,
+  "y": 0,
+  "w": 500,
+  "h": 64
+ },
+ "nav": null,
+ "fijos": [
+  {
+   "pos": "fixed",
+   "tag": "BUTTON",
+   "cls": "",
+   "txt": "",
+   "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+   "fs": "14px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(51, 51, 51)",
+   "bg": "rgba(0, 0, 0, 0.6)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "",
+   "txt": "Close                     Cookies management panel                  By allowing ",
+   "ff": "Akzidenz-Grotesk, sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "BUTTON",
+   "cls": "",
+   "txt": "Close",
+   "ff": "Akzidenz-Grotesk, sans-serif",
+   "fs": "12px",
+   "fw": "700",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgb(0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "tarteaucitronAlertBigTop",
+   "txt": "This site uses cookies and gives you control over what you want to activate   Ou",
+   "ff": "Akzidenz-Grotesk, sans-serif",
+   "fs": "15px",
+   "fw": "400",
+   "lh": "22.5px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "",
+   "txt": "",
+   "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(51, 51, 51)",
+   "bg": "rgb(0, 170, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "tarteaucitronIconBottomLeft",
+   "txt": "",
+   "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(51, 51, 51)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "HEADER",
+   "cls": "header is-light-mode",
+   "txt": "SEARCH",
+   "ff": "Akzidenz-Grotesk, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(255, 255, 255, 0.4)",
+   "x": 0,
+   "y": 0,
+   "w": 500,
+   "h": 64
+  }
+ ],
+ "fuentes": [
+  "Akzidenz-Grotesk normal normal",
+  "Akzidenz-Grotesk-Extended 500 normal",
+  "icomoon normal normal",
+  "Akzidenz-Grotesk 400 normal",
+  "Akzidenz-Grotesk 500 normal"
+ ],
+ "tamanos": [
+  [
+   "12px Akzidenz-Grotesk",
+   75
+  ],
+  [
+   "18px Akzidenz-Grotesk",
+   16
+  ],
+  [
+   "0px Akzidenz-Grotesk",
+   9
+  ],
+  [
+   "11px Akzidenz-Grotesk",
+   8
+  ],
+  [
+   "14px Akzidenz-Grotesk",
+   7
+  ],
+  [
+   "18px Akzidenz-Grotesk-Extended",
+   7
+  ],
+  [
+   "16px Akzidenz-Grotesk",
+   2
+  ],
+  [
+   "13px Akzidenz-Grotesk",
+   1
+  ],
+  [
+   "24px Akzidenz-Grotesk",
+   1
+  ],
+  [
+   "28px Akzidenz-Grotesk",
+   1
+  ]
+ ],
+ "imgs": [
+  {
+   "src": "https://s3.perrotin.com/vue/photo/56332.jpg",
+   "x": 0,
+   "y": 0,
+   "w": 500,
+   "h": 889,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:600xauto/exhibition/55927_v_1788987612.jpg",
+   "x": 16,
+   "y": 1016,
+   "w": 371,
+   "h": 530,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:600xauto/exhibition/12297_v_1789692972.jpg",
+   "x": 403,
+   "y": 1016,
+   "w": 371,
+   "h": 206,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:600xauto/exhibition/12506_v_1788607625.jpg",
+   "x": 403,
+   "y": 1342,
+   "w": 371,
+   "h": 206,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:600xauto/exhibition/56203_v_1788229317.jpg",
+   "x": 790,
+   "y": 1016,
+   "w": 371,
+   "h": 530,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "",
+   "x": 1178,
+   "y": 1016,
+   "w": 371,
+   "h": 206,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "",
+   "x": 1178,
+   "y": 1342,
+   "w": 371,
+   "h": 206,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "",
+   "x": 1565,
+   "y": 1016,
+   "w": 371,
+   "h": 530,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:1200xauto/video/vignette/c0280_2026-10-02_08-31.jpeg",
+   "x": 0,
+   "y": 1681,
+   "w": 500,
+   "h": 765,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:600xauto/vue/photo/24298_v_1605189638.jpg",
+   "x": 16,
+   "y": 2883,
+   "w": 171,
+   "h": 114,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(255, 255, 255)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://s3.perrotin.com/d:600xauto/vue/photo/47497.jpg",
+   "x": 168,
+   "y": 2867,
+   "w": 194,
+   "h": 130,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(255, 255, 255)",
+   "radius": "0px"
+  }
+ ],
+ "links": [
+  {
+   "t": "Read more",
+   "h": "https://tarteaucitron.io/en/service-details/googletagmanager/"
+  },
+  {
+   "t": "View the official website",
+   "h": "https://policies.google.com/privacy"
+  },
+  {
+   "t": "Read more",
+   "h": "https://tarteaucitron.io/en/service-details/gtag/"
+  },
+  {
+   "t": "View the official website",
+   "h": "https://policies.google.com/privacy"
+  },
+  {
+   "t": "Read more",
+   "h": "https://tarteaucitron.io/en/service-details/facebook/"
+  },
+  {
+   "t": "View the official website",
+   "h": "https://www.facebook.com/policy.php"
+  },
+  {
+   "t": "Read more",
+   "h": "https://tarteaucitron.io/en/service-details/vimeo/"
+  },
+  {
+   "t": "View the official website",
+   "h": "https://vimeo.com/privacy"
+  },
+  {
+   "t": "",
+   "h": "https://tarteaucitron.io/"
+  },
+  {
+   "t": "",
+   "h": "https://www.perrotin.com/"
+  },
+  {
+   "t": "Artists",
+   "h": "https://www.perrotin.com/en/artists"
+  },
+  {
+   "t": "Exhibitions & Events",
+   "h": "https://www.perrotin.com/en/agenda"
+  },
+  {
+   "t": "About",
+   "h": "https://www.perrotin.com/en/about"
+  },
+  {
+   "t": "Collect",
+   "h": "https://www.perrotin.com/en/collect"
+  },
+  {
+   "t": "Media",
+   "h": "https://www.perrotin.com/en/medias"
+  },
+  {
+   "t": "Locations",
+   "h": "https://www.perrotin.com/en/locations"
+  },
+  {
+   "t": "Store",
+   "h": "https://storeparis.perrotin.com/"
+  },
+  {
+   "t": "EXPLORE OUR CURRENT AND UPCOMING EXHIBITIONS",
+   "h": "https://www.perrotin.com/en/agenda/"
+  },
+  {
+   "t": "VIEW ALL EXHIBITIONS",
+   "h": "https://www.perrotin.com/en/agenda"
+  },
+  {
+   "t": "YOUNG-IL AHN NEW YORK, USA UNTIL OCTOBER 17",
+   "h": "https://www.perrotin.com/en/events/self-reflections-2026-new-york"
+  },
+  {
+   "t": "PAUL PFEIFFER LOS ANGELES, USA UNTIL NOVEMBER 7",
+   "h": "https://www.perrotin.com/en/events/olympia-2026-los-angeles"
+  },
+  {
+   "t": "JOHAN CRETEN PARIS, FRANCE UNTIL OCTOBER 10",
+   "h": "https://www.perrotin.com/en/events/les-chiens-de-pavlov-2026-paris"
+  },
+  {
+   "t": "MR. SEOUL, SOUTH KOREA UNTIL OCTOBER 24",
+   "h": "https://www.perrotin.com/en/events/on-the-threshold-of-tomorrow-2026-seoul"
+  },
+  {
+   "t": "HERNAN BAS TOKYO, JAPAN UNTIL NOVEMBER 11",
+   "h": "https://www.perrotin.com/en/events/time-to-shine-the-salesmen-2026-tokyo"
+  },
+  {
+   "t": "JEAN-PHILIPPE DELHOMME SHANGHAI, CHINA UNTIL OCTOBER 23",
+   "h": "https://www.perrotin.com/en/events/house-of-painting-2026-shanghai"
+  },
+  {
+   "t": "PIETER VERMEERSCH DUBAI, UNITED ARAB EMIRATES UNTIL NOVEMBER",
+   "h": "https://www.perrotin.com/en/events/pieter-vermeersch-2026-dubai"
+  },
+  {
+   "t": "VIEW ALL MEDIA",
+   "h": "https://www.perrotin.com/en/medias"
+  },
+  {
+   "t": "EXHIBITIONS \"OLYMPIA\" AT PERROTIN LOS ANGELES PAUL PFEIFFER",
+   "h": "https://www.perrotin.com/en/media/olympia-at-perrotin-los-angeles"
+  },
+  {
+   "t": "EXHIBITIONS \"LES CHIENS DE PAVLOV\" AT PERROTIN PARIS JOHAN C",
+   "h": "https://www.perrotin.com/en/media/les-chiens-de-pavlov-at-perrotin-paris-3039"
+  },
+  {
+   "t": "TALKS TALK BETWEEN PAUL PFEIFFER AND JENNIFER KING AT PERROT",
+   "h": "https://www.perrotin.com/en/media/talk-between-paul-pfeiffer-and-jennifer-king-at-perrotin-los-angeles-3038"
+  },
+  {
+   "t": "→ EXPLORE",
+   "h": "https://www.perrotin.com/en/history"
+  },
+  {
+   "t": "",
+   "h": "https://www.instagram.com/perrotin"
+  },
+  {
+   "t": "",
+   "h": "https://www.tiktok.com/@perrotin"
+  },
+  {
+   "t": "",
+   "h": "https://www.linkedin.com/company/perrotin"
+  },
+  {
+   "t": "",
+   "h": "https://s3.perrotin.com/vue/photo/54000.jpg?d=600xmax"
+  },
+  {
+   "t": "",
+   "h": "https://xhslink.com/m/31bwrSXCn9h"
+  },
+  {
+   "t": "",
+   "h": "https://www.youtube.com/GaleriePerrotin/"
+  },
+  {
+   "t": "",
+   "h": "https://www.facebook.com/GaleriePerrotin/"
+  },
+  {
+   "t": "",
+   "h": "https://fr.pinterest.com/galerieperrotin/"
+  },
+  {
+   "t": "NEW YORK",
+   "h": "https://www.perrotin.com/en/locations#new-york"
+  },
+  {
+   "t": "LOS ANGELES",
+   "h": "https://www.perrotin.com/en/locations#los-angeles"
+  },
+  {
+   "t": "PARIS",
+   "h": "https://www.perrotin.com/en/locations#paris"
+  },
+  {
+   "t": "LONDON",
+   "h": "https://www.perrotin.com/en/locations#london"
+  },
+  {
+   "t": "HONG KONG",
+   "h": "https://www.perrotin.com/en/locations#hong-kong"
+  },
+  {
+   "t": "SEOUL",
+   "h": "https://www.perrotin.com/en/locations#seoul"
+  },
+  {
+   "t": "TOKYO",
+   "h": "https://www.perrotin.com/en/locations#tokyo"
+  },
+  {
+   "t": "SHANGHAI",
+   "h": "https://www.perrotin.com/en/locations#shanghai"
+  },
+  {
+   "t": "DUBAI",
+   "h": "https://www.perrotin.com/en/locations#dubai"
+  },
+  {
+   "t": "LAS VEGAS",
+   "h": "https://www.perrotin.com/en/locations#las-vegas"
+  },
+  {
+   "t": "ARTISTS",
+   "h": "https://www.perrotin.com/en/artists"
+  },
+  {
+   "t": "EXHIBITIONS & EVENTS",
+   "h": "https://www.perrotin.com/en/agenda"
+  },
+  {
+   "t": "ABOUT",
+   "h": "https://www.perrotin.com/en/about"
+  },
+  {
+   "t": "COLLECT",
+   "h": "https://www.perrotin.com/en/collect"
+  },
+  {
+   "t": "MEDIA",
+   "h": "https://www.perrotin.com/en/medias"
+  },
+  {
+   "t": "LOCATIONS",
+   "h": "https://www.perrotin.com/en/locations"
+  },
+  {
+   "t": "STORE",
+   "h": "https://storeparis.perrotin.com/"
+  },
+  {
+   "t": "PRESS ROOM",
+   "h": "https://press.perrotin.com/"
+  },
+  {
+   "t": "STORE",
+   "h": "https://storeparis.perrotin.com/"
+  },
+  {
+   "t": "HISTORY",
+   "h": "https://www.perrotin.com/en/history"
+  },
+  {
+   "t": "CREDIT",
+   "h": "https://www.perrotin.com/en/credit"
+  },
+  {
+   "t": "JOBS",
+   "h": "https://www.perrotin.com/en/jobs"
+  },
+  {
+   "t": "LEGAL",
+   "h": "https://www.perrotin.com/en/legal"
+  }
+ ]
+}

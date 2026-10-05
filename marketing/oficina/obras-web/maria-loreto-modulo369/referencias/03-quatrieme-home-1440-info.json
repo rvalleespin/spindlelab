@@ -1,0 +1,548 @@
+{
+ "url": "https://quatriemeetage.studio/",
+ "title": "QUATRIÈME ÉTAGE",
+ "scrollW": 1440,
+ "clientW": 1440,
+ "H": 13744,
+ "html": {
+  "tag": "HTML",
+  "cls": "monument_673d6e1c-module__XdwfaG__variable monumentmono_e4be9101-module__MYorya__variable lenis",
+  "txt": "QUATRIÈME ÉTAGE\nWORK\n/\nSTUDIO\nINFO\n@\nQUATRIEME-ETAGE.COM\nINSTAGRAM\n[\n]\n©\n2026\n[ ",
+  "ff": "monument",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "24px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 13744
+ },
+ "body": {
+  "tag": "BODY",
+  "cls": "bg-background font-monument text-foreground min-h-svh uppercase antialiased",
+  "txt": "QUATRIÈME ÉTAGE\nWORK\n/\nSTUDIO\nINFO\n@\nQUATRIEME-ETAGE.COM\nINSTAGRAM\n[\n]\n©\n2026\n[ ",
+  "ff": "monument",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "24px",
+  "ls": "normal",
+  "tt": "uppercase",
+  "color": "rgb(251, 250, 250)",
+  "bg": "rgb(11, 10, 10)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 13744
+ },
+ "h1": {
+  "tag": "H1",
+  "cls": "",
+  "txt": "QUATRIÈME ÉTAGE",
+  "ff": "monument",
+  "fs": "14px",
+  "fw": "400",
+  "lh": "10.15px",
+  "ls": "-0.35px",
+  "tt": "uppercase",
+  "color": "rgb(251, 250, 250)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 10,
+  "y": 14,
+  "w": 118,
+  "h": 10
+ },
+ "h2": null,
+ "h3": {
+  "tag": "H3",
+  "cls": "",
+  "txt": "",
+  "ff": "monument",
+  "fs": "14px",
+  "fw": "400",
+  "lh": "14px",
+  "ls": "-0.35px",
+  "tt": "uppercase",
+  "color": "rgb(251, 250, 250)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 1081,
+  "y": 118,
+  "w": 229,
+  "h": 14
+ },
+ "header": null,
+ "nav": {
+  "tag": "NAV",
+  "cls": "bg-surface fixed top-12 z-40 flex h-4 w-[calc(16.66vw*2)] min-w-fit items-end space-x-1 pe-2.5 max-md:ps-2.5 md:top-0 md:left-1/2 md:h-6 md:w-[8.33vw] text-[12px] leading-[0.65] tracking-tight md:text-[14px] md:leading-[0.725]",
+  "txt": "WORK\n/\nSTUDIO",
+  "ff": "monument",
+  "fs": "14px",
+  "fw": "400",
+  "lh": "10.15px",
+  "ls": "-0.35px",
+  "tt": "uppercase",
+  "color": "rgb(251, 250, 250)",
+  "bg": "rgb(0, 0, 0)",
+  "x": 720,
+  "y": 0,
+  "w": 120,
+  "h": 24
+ },
+ "fijos": [
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "bg-surface fixed top-0 z-40 flex h-4 w-[calc(16.66vw*4)] min-w-fit items-end px-2.5 md:h-6 md:w-[16.66vw] text-[12px] leading-[0.65] tracking-tight md:text-[14px] md:leading-[0.725]",
+   "txt": "QUATRIÈME ÉTAGE",
+   "ff": "monument",
+   "fs": "14px",
+   "fw": "400",
+   "lh": "10.15px",
+   "ls": "-0.35px",
+   "tt": "uppercase",
+   "color": "rgb(251, 250, 250)",
+   "bg": "rgb(0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 240,
+   "h": 24
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "fixed top-0 z-40 flex h-4 w-[16.66vw] min-w-fit items-end justify-center gap-2.5 max-md:right-0 md:left-[16.66vw] md:h-6",
+   "txt": "",
+   "ff": "monument",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "tt": "uppercase",
+   "color": "rgb(251, 250, 250)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 240,
+   "y": 0,
+   "w": 240,
+   "h": 24
+  },
+  {
+   "pos": "fixed",
+   "tag": "NAV",
+   "cls": "bg-surface fixed top-12 z-40 flex h-4 w-[calc(16.66vw*2)] min-w-fit items-end space-x-1 pe-2.5 max-md:ps-2.5 md:top-0 md:left-1/2 md:h-6 md:w-[8.33vw] text-[12px] leading-[0.65] tracking-tight md:text-[14px] md:leading-[0.725]",
+   "txt": "WORK\n/\nSTUDIO",
+   "ff": "monument",
+   "fs": "14px",
+   "fw": "400",
+   "lh": "10.15px",
+   "ls": "-0.35px",
+   "tt": "uppercase",
+   "color": "rgb(251, 250, 250)",
+   "bg": "rgb(0, 0, 0)",
+   "x": 720,
+   "y": 0,
+   "w": 120,
+   "h": 24
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "fixed top-12 right-0 z-40 w-[calc(16.66vw*3)] md:top-0 md:w-[calc(16.66vw*2)] text-[12px] leading-[0.65] tracking-tight md:text-[14px] md:leading-[0.725]",
+   "txt": "INFO\n@\nQUATRIEME-ETAGE.COM\nINSTAGRAM\n[\n]",
+   "ff": "monument",
+   "fs": "14px",
+   "fw": "400",
+   "lh": "10.15px",
+   "ls": "-0.35px",
+   "tt": "uppercase",
+   "color": "rgb(251, 250, 250)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 960,
+   "y": 0,
+   "w": 480,
+   "h": 38
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "fixed",
+   "txt": "",
+   "ff": "monument",
+   "fs": "14px",
+   "fw": "400",
+   "lh": "10.15px",
+   "ls": "-0.35px",
+   "tt": "uppercase",
+   "color": "rgb(251, 250, 250)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 960,
+   "y": 38,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "bg-surface fixed z-50 w-screen pe-2.5 pt-4 text-wrap max-md:left-0 max-md:ps-2.5 md:right-0 md:w-[50vw] md:pt-5 text-[12px] leading-[0.65] tracking-tight md:text-[14px] md:leading-[0.725]",
+   "txt": "",
+   "ff": "monument",
+   "fs": "14px",
+   "fw": "400",
+   "lh": "10.15px",
+   "ls": "-0.35px",
+   "tt": "uppercase",
+   "color": "rgb(251, 250, 250)",
+   "bg": "rgb(0, 0, 0)",
+   "x": 720,
+   "y": 38,
+   "w": 720,
+   "h": 60
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "bg-surface font-monument fixed right-0 z-40 h-fit w-[calc(16.66vw*3)] min-w-fit pr-2.5 md:right-[8.33vw] md:w-[16.6vw] text-[12px] leading-[0.65] tracking-tight md:text-[14px] md:leading-[0.725]",
+   "txt": "",
+   "ff": "monument",
+   "fs": "14px",
+   "fw": "400",
+   "lh": "10.15px",
+   "ls": "-0.35px",
+   "tt": "uppercase",
+   "color": "rgb(251, 250, 250)",
+   "bg": "rgb(0, 0, 0)",
+   "x": 1081,
+   "y": 98,
+   "w": 239,
+   "h": 218
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "bg-surface flex h-5 min-w-fit items-end gap-1 pe-2.5 text-[12px] leading-[0.65] max-md:ps-2.5 md:h-6 md:text-[14px] md:leading-[0.7] fixed z-40 w-[calc(16.66vw*2)] -translate-y-full md:left-1/2 md:w-[8.33vw]",
+   "txt": "©\n2026",
+   "ff": "monument",
+   "fs": "14px",
+   "fw": "400",
+   "lh": "9.8px",
+   "ls": "normal",
+   "tt": "uppercase",
+   "color": "rgb(251, 250, 250)",
+   "bg": "rgb(0, 0, 0)",
+   "x": 720,
+   "y": 179,
+   "w": 120,
+   "h": 24
+  },
+  {
+   "pos": "fixed",
+   "tag": "FOOTER",
+   "cls": "bg-surface fixed right-0 bottom-0 z-20 flex h-6 w-1/2 min-w-fit items-center justify-end px-2 py-1 md:right-[8.33vw] md:h-8 md:w-[16.66vw]",
+   "txt": "",
+   "ff": "monument",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "tt": "uppercase",
+   "color": "rgb(251, 250, 250)",
+   "bg": "rgb(0, 0, 0)",
+   "x": 1081,
+   "y": 868,
+   "w": 239,
+   "h": 32
+  }
+ ],
+ "fuentes": [
+  "monument normal normal",
+  "monumentMono normal normal"
+ ],
+ "tamanos": [
+  [
+   "10px monumentMono",
+   34
+  ],
+  [
+   "14px monument",
+   6
+  ]
+ ],
+ "imgs": [
+  {
+   "src": "https://quatriemeetage.studio/_next/image?url=https%3A%2F%2Fquatriemeetage.studio%2Fapi%2Fmedia%2Ffile%2Fcase-study-thoo",
+   "x": 60,
+   "y": 64,
+   "w": 600,
+   "h": 600,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://quatriemeetage.studio/_next/image?url=https%3A%2F%2Fquatriemeetage.studio%2Fapi%2Fmedia%2Ffile%2Fcase-study-thoo",
+   "x": 60,
+   "y": 64,
+   "w": 600,
+   "h": 600,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://quatriemeetage.studio/_next/image?url=https%3A%2F%2Fquatriemeetage.studio%2Fapi%2Fmedia%2Ffile%2Fcase-study-les-",
+   "x": 60,
+   "y": 800,
+   "w": 600,
+   "h": 800,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://quatriemeetage.studio/_next/image?url=https%3A%2F%2Fquatriemeetage.studio%2Fapi%2Fmedia%2Ffile%2Fcase-study-les-",
+   "x": 60,
+   "y": 800,
+   "w": 600,
+   "h": 800,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://quatriemeetage.studio/_next/image?url=https%3A%2F%2Fquatriemeetage.studio%2Fapi%2Fmedia%2Ffile%2Fcase-study-post",
+   "x": 60,
+   "y": 1721,
+   "w": 600,
+   "h": 750,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://quatriemeetage.studio/_next/image?url=https%3A%2F%2Fquatriemeetage.studio%2Fapi%2Fmedia%2Ffile%2Fcase-study-post",
+   "x": 60,
+   "y": 1721,
+   "w": 600,
+   "h": 750,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://quatriemeetage.studio/_next/image?url=https%3A%2F%2Fquatriemeetage.studio%2Fapi%2Fmedia%2Ffile%2Fcase-study-broc",
+   "x": 60,
+   "y": 2592,
+   "w": 600,
+   "h": 800,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://quatriemeetage.studio/_next/image?url=https%3A%2F%2Fquatriemeetage.studio%2Fapi%2Fmedia%2Ffile%2Fcase-study-broc",
+   "x": 60,
+   "y": 2592,
+   "w": 600,
+   "h": 800,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://quatriemeetage.studio/_next/image?url=https%3A%2F%2Fquatriemeetage.studio%2Fapi%2Fmedia%2Ffile%2Fcase-study-bnic",
+   "x": 60,
+   "y": 3513,
+   "w": 600,
+   "h": 782,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://quatriemeetage.studio/_next/image?url=https%3A%2F%2Fquatriemeetage.studio%2Fapi%2Fmedia%2Ffile%2Fcase-study-bnic",
+   "x": 60,
+   "y": 3513,
+   "w": 600,
+   "h": 782,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://quatriemeetage.studio/_next/image?url=https%3A%2F%2Fquatriemeetage.studio%2Fapi%2Fmedia%2Ffile%2Fcase-study-bmw-",
+   "x": 60,
+   "y": 4416,
+   "w": 600,
+   "h": 600,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://quatriemeetage.studio/_next/image?url=https%3A%2F%2Fquatriemeetage.studio%2Fapi%2Fmedia%2Ffile%2Fcase-study-bmw-",
+   "x": 60,
+   "y": 4416,
+   "w": 600,
+   "h": 600,
+   "fit": "contain",
+   "shadow": "none",
+   "border": "0px solid rgba(0, 0, 0, 0)",
+   "radius": "0px"
+  }
+ ],
+ "links": [
+  {
+   "t": "INSTAGRAM",
+   "h": "https://www.instagram.com/quatriemeetage.studio/"
+  },
+  {
+   "t": "[ THOOK ] ALBUM COVER DESIGNS FOR DAWN AND THE GREAT MIGRATI",
+   "h": "https://quatriemeetage.studio/w/thook"
+  },
+  {
+   "t": "[ LES TRAITS FRANÇAIS ] A TOULOUSE BOUTIQUE SELLING FRENCH-M",
+   "h": "https://quatriemeetage.studio/w/les-traits-franais"
+  },
+  {
+   "t": "[ POSTÉRIEUR ] A TEXTILE UPCYCLING INITIATIVE ( IDENTITY DES",
+   "h": "https://quatriemeetage.studio/w/posterieur"
+  },
+  {
+   "t": "[ BROCK ] AN ICONIC STORE IN THE HEART OF TOULOUSE ( VISUAL ",
+   "h": "https://quatriemeetage.studio/w/brock"
+  },
+  {
+   "t": "[ B—NICE—T ] A REIMAGINED CAFFEINATED BEVERAGE BRAND ( IDENT",
+   "h": "https://quatriemeetage.studio/w/b-nice-t"
+  },
+  {
+   "t": "[ EMBASSY ] A STREET-CULTURE HUB FOR MUSIC, FASHION AND ART ",
+   "h": "https://quatriemeetage.studio/w/embassy"
+  },
+  {
+   "t": "[ SOMA ] A HYBRID ART SPACE IN MARSEILLE, FRANCE ( IDENTITY ",
+   "h": "https://quatriemeetage.studio/w/soma"
+  },
+  {
+   "t": "[ TWELVE ] A MAGNESIUM-BASED COSMETICS BRAND ( NAMING / BRAN",
+   "h": "https://quatriemeetage.studio/w/twelve"
+  },
+  {
+   "t": "[ SERGE FAURE ] A FRENCH METAL SCULPTOR ( VISUAL IDENTITY / ",
+   "h": "https://quatriemeetage.studio/w/serge-faure"
+  },
+  {
+   "t": "[ PARTS & LABOUR ] A CREATIVE STUDIO BASED IN LOS ANGELES, U",
+   "h": "https://quatriemeetage.studio/w/parts-and-labour"
+  },
+  {
+   "t": "[ SODA STUDIO ] A PILATES REFORMER STUDIO BASED IN BORDEAUX,",
+   "h": "https://quatriemeetage.studio/w/soda-studio"
+  },
+  {
+   "t": "[ THE WOODS ] AN EXPERIENCE VENUE IN NORTH FLORIDA, USA ( ID",
+   "h": "https://quatriemeetage.studio/w/the-woods"
+  },
+  {
+   "t": "[ TIFFANY SQUARE ] A GLAM-MEETS-GRIT FASHION BRAND ( ART DIR",
+   "h": "https://quatriemeetage.studio/w/tiffany-square"
+  },
+  {
+   "t": "[ SOMA ] A HYBRID ART SPACE IN MARSEILLE, FRANCE ( IDENTITY ",
+   "h": "https://quatriemeetage.studio/w/soma"
+  },
+  {
+   "t": "[ PARTS & LABOUR ] A CREATIVE STUDIO BASED IN LOS ANGELES, U",
+   "h": "https://quatriemeetage.studio/w/parts-and-labour"
+  },
+  {
+   "t": "[ OPSIN ] A ONE-STOP DEFI TERMINAL BUILT FOR THE MODERN CRYP",
+   "h": "https://quatriemeetage.studio/w/opsin"
+  },
+  {
+   "t": "[ BENJAMIN BIOLAY ] À L'AUDITORIUM ( )",
+   "h": "https://quatriemeetage.studio/w/benjamin-biolay"
+  },
+  {
+   "t": "[ BROCK ] AN ICONIC STORE IN THE HEART OF TOULOUSE ( VISUAL ",
+   "h": "https://quatriemeetage.studio/w/brock"
+  },
+  {
+   "t": "[ YRB ] A BROOKLYN-BORN HARD YERBA MATE BEVERAGE ( VISUAL ID",
+   "h": "https://quatriemeetage.studio/w/yrb"
+  },
+  {
+   "t": "[ TIFFANY SQUARE ] A GLAM-MEETS-GRIT FASHION BRAND ( ART DIR",
+   "h": "https://quatriemeetage.studio/w/tiffany-square"
+  },
+  {
+   "t": "[ SERLINOLAB ] A FAMILY-OWNED SKINCARE LABORATORY ( BRAND ID",
+   "h": "https://quatriemeetage.studio/w/serlinolab"
+  },
+  {
+   "t": "[ TWELVE ] A MAGNESIUM-BASED COSMETICS BRAND ( NAMING / BRAN",
+   "h": "https://quatriemeetage.studio/w/twelve"
+  },
+  {
+   "t": "[ LES TRAITS FRANÇAIS ] A TOULOUSE BOUTIQUE SELLING FRENCH-M",
+   "h": "https://quatriemeetage.studio/w/les-traits-franais"
+  },
+  {
+   "t": "[ BLEND ] AN ECLECTIC 'RENDEZ-VOUS' FOR NICHE WINES AND PROD",
+   "h": "https://quatriemeetage.studio/w/blend"
+  },
+  {
+   "t": "[ LE5 WINE BAR ] A RENOWNED WINE BAR IN TOULOUSE, FRANCE ( I",
+   "h": "https://quatriemeetage.studio/w/le5-wine-bar"
+  },
+  {
+   "t": "[ SOPHOMORE ] AN EDITORIAL STUDIO FOR MUSIC AND CULTURE ( ID",
+   "h": "https://quatriemeetage.studio/w/sophomore"
+  },
+  {
+   "t": "[ BUDDY ] A ROUTINE-BASED CANNABIS PILL BRAND ( )",
+   "h": "https://quatriemeetage.studio/w/buddy"
+  },
+  {
+   "t": "[ SOMA ] A HYBRID ART SPACE IN MARSEILLE, FRANCE ( IDENTITY ",
+   "h": "https://quatriemeetage.studio/w/soma"
+  },
+  {
+   "t": "[ BLEND ] AN ECLECTIC 'RENDEZ-VOUS' FOR NICHE WINES AND PROD",
+   "h": "https://quatriemeetage.studio/w/blend"
+  },
+  {
+   "t": "[ BROCK ] AN ICONIC STORE IN THE HEART OF TOULOUSE ( VISUAL ",
+   "h": "https://quatriemeetage.studio/w/brock"
+  },
+  {
+   "t": "[ BUDDY ] A ROUTINE-BASED CANNABIS PILL BRAND ( )",
+   "h": "https://quatriemeetage.studio/w/buddy"
+  },
+  {
+   "t": "[ POSTÉRIEUR ] A TEXTILE UPCYCLING INITIATIVE ( IDENTITY DES",
+   "h": "https://quatriemeetage.studio/w/posterieur"
+  },
+  {
+   "t": "[ BLADE ] BLD-02 / OFF THE TOP / SUMMER RAVE ( )",
+   "h": "https://quatriemeetage.studio/w/blade"
+  },
+  {
+   "t": "[ B—NICE—T ] A REIMAGINED CAFFEINATED BEVERAGE BRAND ( IDENT",
+   "h": "https://quatriemeetage.studio/w/b-nice-t"
+  }
+ ]
+}

@@ -1,0 +1,684 @@
+{
+ "url": "https://prodn.com/portfolio/",
+ "title": "Portfolio | PRODn at Art + Commerce",
+ "scrollW": 500,
+ "clientW": 500,
+ "H": 22151,
+ "html": {
+  "tag": "HTML",
+  "cls": "fonts-loaded",
+  "txt": "W MAGAZINE SUMMER 2026 ISSUE\nKarim Sadli\n\nGucci High Jewelry\nCarlijn Jacobs\n\nFen",
+  "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+  "fs": "12px",
+  "fw": "400",
+  "lh": "15.6px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 500,
+  "h": 22151
+ },
+ "body": {
+  "tag": "BODY",
+  "cls": "wp-singular page-template page-template- page-template-templates page-template-pages page-template-work-archive page-template-templatespageswork-archive-php page page-id-300196 wp-theme-prodn  page-portfolio",
+  "txt": "W MAGAZINE SUMMER 2026 ISSUE\nKarim Sadli\n\nGucci High Jewelry\nCarlijn Jacobs\n\nFen",
+  "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+  "fs": "12px",
+  "fw": "400",
+  "lh": "15.6px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgb(255, 255, 255)",
+  "x": 0,
+  "y": 0,
+  "w": 500,
+  "h": 22151
+ },
+ "h1": {
+  "tag": "H1",
+  "cls": "",
+  "txt": "Snake",
+  "ff": "lores-12",
+  "fs": "60px",
+  "fw": "700",
+  "lh": "66px",
+  "ls": "-1px",
+  "tt": "uppercase",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 0,
+  "h": 0
+ },
+ "h2": {
+  "tag": "H2",
+  "cls": "",
+  "txt": "Centro de preferencia de la privacidad",
+  "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+  "fs": "12px",
+  "fw": "700",
+  "lh": "18px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(105, 105, 105)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 0,
+  "h": 0
+ },
+ "h3": {
+  "tag": "H3",
+  "cls": "",
+  "txt": "Gestionar las preferencias de consentimiento",
+  "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+  "fs": "12px",
+  "fw": "700",
+  "lh": "15.6px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(105, 105, 105)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 0,
+  "h": 0
+ },
+ "header": null,
+ "nav": {
+  "tag": "NAV",
+  "cls": "header JS--header ",
+  "txt": "",
+  "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+  "fs": "12px",
+  "fw": "400",
+  "lh": "15.6px",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgb(255, 255, 255)",
+  "x": 0,
+  "y": 0,
+  "w": 500,
+  "h": 49
+ },
+ "fijos": [
+  {
+   "pos": "fixed",
+   "tag": "NAV",
+   "cls": "header JS--header ",
+   "txt": "",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "12px",
+   "fw": "400",
+   "lh": "15.6px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 500,
+   "h": 49
+  },
+  {
+   "pos": "fixed",
+   "tag": "NAV",
+   "cls": "JS--burgerMenu burgerMenu",
+   "txt": "Home\n\t\t\t\t\t\t\t\tInfo\n\t\t\t\t\t\t\t\tArchive\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "12px",
+   "fw": "400",
+   "lh": "15.6px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(255, 255, 255, 0.93)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "NAV",
+   "cls": "header JS--header ",
+   "txt": "Home\n\t\t\t\t\t\t\t\tInfo\n\t\t\t\t\t\t\t\tArchive",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "12px",
+   "fw": "400",
+   "lh": "15.6px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "snakeModal",
+   "txt": "Snake\n\t\t\t\t\tPRESS [ENTER] TO PLAY\n\n\t\t\t\t\n\n\t\t\t\t\n\n\t\t\t\t\tSnake\n\t\t\t\t\tSWIPE TO PLAY",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "12px",
+   "fw": "400",
+   "lh": "15.6px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "dvdWrapper",
+   "txt": "",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "12px",
+   "fw": "400",
+   "lh": "15.6px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgb(0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "onetrust-pc-dark-filter ot-hide ot-fade-in",
+   "txt": "",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "12px",
+   "fw": "400",
+   "lh": "15.6px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0.5)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "otFlat bottom ot-wo-title vertical-align-content",
+   "txt": "Al hacer clic en “Aceptar todas las cookies”, usted acepta que las cookies se gu",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "12px",
+   "fw": "400",
+   "lh": "15.6px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgb(0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "otPcCenter ot-hide ot-fade-in",
+   "txt": "Solicitud de exclusión respetadaCentro de preferencia de la privacidadCuando vis",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "12px",
+   "fw": "400",
+   "lh": "15.6px",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "sticky",
+   "tag": "DIV",
+   "cls": "",
+   "txt": "Consent Leg.Interest checkbox label label checkbox label label checkbox label la",
+   "ff": "\"Neue Haas Grotesk Text Pro\", sans-serif",
+   "fs": "12px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  }
+ ],
+ "fuentes": [
+  "Neue Haas Grotesk Display Pro 700 normal",
+  "Neue Haas Grotesk Text Pro 400 normal"
+ ],
+ "tamanos": [
+  [
+   "14px \"Neue Haas Grotesk Display Pro\"",
+   72
+  ],
+  [
+   "12px \"Neue Haas Grotesk Text Pro\"",
+   10
+  ],
+  [
+   "10px \"Neue Haas Grotesk Display Pro\"",
+   6
+  ],
+  [
+   "10.2px \"Neue Haas Grotesk Text Pro\"",
+   5
+  ],
+  [
+   "9.744px \"Neue Haas Grotesk Text Pro\"",
+   5
+  ],
+  [
+   "9px \"Neue Haas Grotesk Text Pro\"",
+   4
+  ],
+  [
+   "40px \"Neue Haas Grotesk Text Pro\"",
+   3
+  ],
+  [
+   "60px lores-12",
+   2
+  ],
+  [
+   "30px lores-12",
+   2
+  ]
+ ],
+ "imgs": [
+  {
+   "src": "https://aandcprod.s3.us-east-1.amazonaws.com/aandcprodn1/content/uploads/2026/09/prodn_artandcommerce_1781103897_3916505",
+   "x": 20,
+   "y": 79,
+   "w": 460,
+   "h": 613,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://aandcprod.s3.us-east-1.amazonaws.com/aandcprodn1/content/uploads/2026/07/cjb20260701z004-1-1500x927.jpg",
+   "x": 20,
+   "y": 747,
+   "w": 460,
+   "h": 284,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://aandcprod.s3.us-east-1.amazonaws.com/aandcprodn1/content/uploads/2026/07/sml20260701z002.jpg",
+   "x": 20,
+   "y": 1399,
+   "w": 460,
+   "h": 575,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://aandcprod.s3.us-east-1.amazonaws.com/aandcprodn1/content/uploads/2026/02/rpv20220701z001t01-2.jpg",
+   "x": 20,
+   "y": 2028,
+   "w": 460,
+   "h": 575,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://aandcprod.s3.us-east-1.amazonaws.com/aandcprodn1/content/uploads/2026/02/cjb20230501z001t02.jpg",
+   "x": 20,
+   "y": 2657,
+   "w": 460,
+   "h": 575,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://aandcprod.s3.us-east-1.amazonaws.com/aandcprodn1/content/uploads/2026/02/rpv20230301t001t02.jpg",
+   "x": 20,
+   "y": 3286,
+   "w": 460,
+   "h": 575,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://aandcprod.s3.us-east-1.amazonaws.com/aandcprodn1/content/uploads/2026/02/rpv20220901y008t01.jpg",
+   "x": 20,
+   "y": 3916,
+   "w": 460,
+   "h": 575,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://aandcprod.s3.us-east-1.amazonaws.com/aandcprodn1/content/uploads/2026/02/sml20251001z001t02-1500x1875.jpg",
+   "x": 20,
+   "y": 4545,
+   "w": 460,
+   "h": 575,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://aandcprod.s3.us-east-1.amazonaws.com/aandcprodn1/content/uploads/2026/09/cmd20260525a002t01.jpg",
+   "x": 20,
+   "y": 5175,
+   "w": 460,
+   "h": 613,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://aandcprod.s3.us-east-1.amazonaws.com/aandcprodn1/content/uploads/2026/02/sml20250401z002t01.jpg",
+   "x": 20,
+   "y": 5842,
+   "w": 460,
+   "h": 575,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://aandcprod.s3.us-east-1.amazonaws.com/aandcprodn1/content/uploads/2026/02/prd20250901z002t01-1500x844.jpg",
+   "x": 20,
+   "y": 6472,
+   "w": 460,
+   "h": 259,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://aandcprod.s3.us-east-1.amazonaws.com/aandcprodn1/content/uploads/2026/02/cmd20250301z001t01.jpg",
+   "x": 20,
+   "y": 6785,
+   "w": 460,
+   "h": 575,
+   "fit": "cover",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  }
+ ],
+ "links": [
+  {
+   "t": "",
+   "h": "https://prodn.com/"
+  },
+  {
+   "t": "Home",
+   "h": "https://prodn.com/"
+  },
+  {
+   "t": "Info",
+   "h": "https://prodn.com/info/"
+  },
+  {
+   "t": "Portfolio",
+   "h": "https://prodn.com/portfolio/"
+  },
+  {
+   "t": "",
+   "h": "https://prodn.com/portfolio/#"
+  },
+  {
+   "t": "",
+   "h": "https://prodn.com/"
+  },
+  {
+   "t": "Home",
+   "h": "https://prodn.com/"
+  },
+  {
+   "t": "Info",
+   "h": "https://artandcommerceproduction.local/info"
+  },
+  {
+   "t": "Archive",
+   "h": "https://artandcommerceproduction.local/archive"
+  },
+  {
+   "t": "",
+   "h": "https://prodn.com/portfolio/#"
+  },
+  {
+   "t": "Home",
+   "h": "https://prodn.com/"
+  },
+  {
+   "t": "Info",
+   "h": "https://prodn.com/info/"
+  },
+  {
+   "t": "Portfolio",
+   "h": "https://prodn.com/portfolio/"
+  },
+  {
+   "t": "W MAGAZINE SUMMER 2026 ISSUE Karim Sadli",
+   "h": "https://prodn.com/work/w-mag-gisele-cover-karim-sadli/"
+  },
+  {
+   "t": "Gucci High Jewelry Carlijn Jacobs",
+   "h": "https://prodn.com/work/gucci-high-jewelry/"
+  },
+  {
+   "t": "Fendi 100th Anniversary Steven Meisel",
+   "h": "https://prodn.com/work/fendi-100-anniversary/"
+  },
+  {
+   "t": "SPECS AR Glasses Steven Meisel",
+   "h": "https://prodn.com/work/specs-ar-glasses/"
+  },
+  {
+   "t": "British Vogue July 2022 Rafael Pavarotti",
+   "h": "https://prodn.com/work/rp-british-vogue-july-2022/"
+  },
+  {
+   "t": "Vogue Italia May 2023 Carlijn Jacobs",
+   "h": "https://prodn.com/work/cj-vogue-italia-may-2023/"
+  },
+  {
+   "t": "Vogue Italia March 2023 Rafael Pavarotti",
+   "h": "https://prodn.com/work/rp-vogue-italia-march-2023/"
+  },
+  {
+   "t": "Vogue Italia Sept. 2022 Rafael Pavarotti",
+   "h": "https://prodn.com/work/vogue-italia-sept-2022-rp/"
+  },
+  {
+   "t": "Vogue Italia March 2025 Steven Meisel",
+   "h": "https://prodn.com/work/sm-vogue-italia-march-2025/"
+  },
+  {
+   "t": "Chanel Metiers D'Arts 2026 Craig McDean (Stills) + Rahim For",
+   "h": "https://prodn.com/work/chanel-metiers-darts-2026/"
+  },
+  {
+   "t": "Gucci Foulard Steven Meisel",
+   "h": "https://prodn.com/work/sm-gucci-foulard/"
+  },
+  {
+   "t": "ChatGPT Samuel Bradley",
+   "h": "https://prodn.com/work/sb-chat-gpt/"
+  },
+  {
+   "t": "Chanel SS25 Pre-Collection Craig McDean",
+   "h": "https://prodn.com/work/cmd-chanel-pre-ss25/"
+  },
+  {
+   "t": "The Met Gala Bardia Zeinali",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2019/"
+  },
+  {
+   "t": "Dolce & Gabbana SS25 Steven Meisel",
+   "h": "https://prodn.com/work/sm-dg-ss25/"
+  },
+  {
+   "t": "Perfect Magazine Issue 7 Carlijn Jacobs",
+   "h": "https://prodn.com/work/cj-perfect-7/"
+  },
+  {
+   "t": "AnOther Magazine Rahim Fortune",
+   "h": "https://prodn.com/work/rf-another-magazine/"
+  },
+  {
+   "t": "Omega Craig McDean",
+   "h": "https://prodn.com/work/craig-mcdean-omega/"
+  },
+  {
+   "t": "Vogue Italia September 2007 Steven Meisel",
+   "h": "https://prodn.com/work/sm-vogue-italia-september-2007/"
+  },
+  {
+   "t": "Dolce & Gabbana SS24 Steven Meisel",
+   "h": "https://prodn.com/work/sm-dg-ss24/"
+  },
+  {
+   "t": "The Met Gala Bardia Zeinali",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2019-2/"
+  },
+  {
+   "t": "The Met Gala Bardia Zeinali",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2022/"
+  },
+  {
+   "t": "The Met Gala Bardia Zeinali",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2019-3/"
+  },
+  {
+   "t": "The Met Gala Bardia Zeinali",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2021/"
+  },
+  {
+   "t": "The Met Gala Bardia Zeinali",
+   "h": "https://prodn.com/work/bardia-zeinali-the-met-gala-2024/"
+  },
+  {
+   "t": "Miu Miu Handbags 2025 Steven Meisel",
+   "h": "https://prodn.com/work/miu-miu-handbags-2025/"
+  },
+  {
+   "t": "Vogue Italia September 2016 Craig McDean",
+   "h": "https://prodn.com/work/cmd-vogue-italia-sept-2016/"
+  },
+  {
+   "t": "Louis Vuitton x Yayoi Kusama Steven Meisel",
+   "h": "https://prodn.com/work/sm-lv-kusama/"
+  },
+  {
+   "t": "Vogue.com x HELLO YOU Bardia Zeinali",
+   "h": "https://prodn.com/work/bz-vogue-hello-you/"
+  },
+  {
+   "t": "Moschino SS20 Steven Meisel",
+   "h": "https://prodn.com/work/moschino-ss20/"
+  },
+  {
+   "t": "M Le Monde Karim Sadli",
+   "h": "https://prodn.com/work/m-le-monde-karim-sadli/"
+  },
+  {
+   "t": "System Magazine Carlijn Jacobs",
+   "h": "https://prodn.com/work/system-magazine-carlijn-jacobs/"
+  },
+  {
+   "t": "i-D Spring 2023 Karim Sadli",
+   "h": "https://prodn.com/work/ks-i-d-spring-2023/"
+  },
+  {
+   "t": "WSJ June/July 2024 Cass Bird",
+   "h": "https://prodn.com/work/cb-wsj-june-july-2024/"
+  },
+  {
+   "t": "W Magazine September 2025 Steven Meisel",
+   "h": "https://prodn.com/work/sm-w-magazine-sept-2025/"
+  },
+  {
+   "t": "Vanity Fair Hollywood Toiletpaper",
+   "h": "https://prodn.com/work/toiletpaper-vanity-fair-27th-hollywood-issue-2022/"
+  },
+  {
+   "t": "",
+   "h": "https://prodn.com/work/prodn-stickers/"
+  },
+  {
+   "t": "INSTAGRAM",
+   "h": "https://www.instagram.com/prodn_artandcommerce/"
+  },
+  {
+   "t": "DO NOT SELL MY PERSONAL INFO",
+   "h": "https://privacyportal.onetrust.com/webform/889c435d-64b4-46d8-ad05-06332fe1d097/db459d3a-bffa-4cb2-a6fd-0daa31651507"
+  },
+  {
+   "t": "COOKIE POLICY",
+   "h": "https://wmefashion.com/cookies/"
+  },
+  {
+   "t": "PRIVACY POLICY",
+   "h": "https://wmefashion.com/privacy-policy/"
+  },
+  {
+   "t": "TERMS OF USE",
+   "h": "https://wmefashion.com/terms-of-use/"
+  },
+  {
+   "t": "SITE CREDITS",
+   "h": "https://projectsimply.com/"
+  },
+  {
+   "t": "Más información",
+   "h": "https://cookiepedia.co.uk/giving-consent-to-cookies"
+  },
+  {
+   "t": "",
+   "h": "https://www.onetrust.com/solutions/consent-and-preferences/?utm_source=cmp&utm_medium=cmpbanner"
+  }
+ ]
+}

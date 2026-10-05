@@ -1,0 +1,578 @@
+{
+ "url": "https://www.kurimanzutto.com/es/artistas",
+ "title": "Artistas - Kurimanzutto",
+ "scrollW": 1440,
+ "clientW": 1440,
+ "H": 4029,
+ "html": {
+  "tag": "HTML",
+  "cls": "",
+  "txt": "Skip to content\nartistasacerca deexposicionesnoticiasarchivolibrería en líneacon",
+  "ff": "sans-serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 900
+ },
+ "body": {
+  "tag": "BODY",
+  "cls": "ada-compliance s-a1 js-focus-visible",
+  "txt": "Skip to content\nartistasacerca deexposicionesnoticiasarchivolibrería en líneacon",
+  "ff": "kurimanzutto, sans-serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgb(255, 255, 255)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 900
+ },
+ "h1": null,
+ "h2": null,
+ "h3": null,
+ "header": {
+  "tag": "HEADER",
+  "cls": "main-header                  fixed",
+  "txt": "artistasacerca deexposicionesnoticiasarchivolibrería en líneacontactobúsqueda\nEN",
+  "ff": "kurimanzutto, sans-serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "uppercase",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgb(255, 255, 255)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 98
+ },
+ "nav": {
+  "tag": "NAV",
+  "cls": "main",
+  "txt": "artistasacerca deexposicionesnoticiasarchivolibrería en líneacontactobúsqueda",
+  "ff": "kurimanzutto, sans-serif",
+  "fs": "18px",
+  "fw": "400",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "lowercase",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 35,
+  "y": 30,
+  "w": 1370,
+  "h": 38
+ },
+ "fijos": [
+  {
+   "pos": "fixed",
+   "tag": "HEADER",
+   "cls": "main-header                  fixed",
+   "txt": "artistasacerca deexposicionesnoticiasarchivolibrería en líneacontactobúsqueda\nEN",
+   "ff": "kurimanzutto, sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "uppercase",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgb(255, 255, 255)",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 98
+  },
+  {
+   "pos": "fixed",
+   "tag": "DIV",
+   "cls": "grecaptcha-badge",
+   "txt": "",
+   "ff": "kurimanzutto, sans-serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 1370,
+   "y": 826,
+   "w": 256,
+   "h": 60
+  }
+ ],
+ "fuentes": [
+  "kurimanzutto normal normal",
+  "kurimanzutto bold normal normal"
+ ],
+ "tamanos": [
+  [
+   "18px kurimanzutto",
+   19
+  ],
+  [
+   "12px kurimanzutto",
+   6
+  ],
+  [
+   "11px kurimanzutto",
+   2
+  ],
+  [
+   "9px Arial",
+   2
+  ],
+  [
+   "16px kurimanzutto",
+   1
+  ]
+ ],
+ "imgs": [
+  {
+   "src": "https://s3.amazonaws.com/files.collageplatform.com.prod/application/5ee8d205bd3ab4ab008b4568/7416bd8b63fc01cce8d9521b085",
+   "x": 35,
+   "y": 30,
+   "w": 250,
+   "h": 33,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_712,h_530,c_lfill/exhibit-e/5ee8d205bd3ab4ab008b4568/18386563d2971e2102be26e80bd172",
+   "x": 35,
+   "y": 138,
+   "w": 325,
+   "h": 242,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_712,h_530,c_lfill/exhibit-e/5ee8d205bd3ab4ab008b4568/8bbeb1279403398151352b95ffdd4d",
+   "x": 383,
+   "y": 138,
+   "w": 325,
+   "h": 242,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_712,h_530,c_lfill/exhibit-e/5ee8d205bd3ab4ab008b4568/daad18cb14fec5d4a83d98966dfa7d",
+   "x": 732,
+   "y": 138,
+   "w": 325,
+   "h": 242,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_712,h_530,c_lfill/exhibit-e/5ee8d205bd3ab4ab008b4568/e5527070bd990bfffcecead49547f8",
+   "x": 1080,
+   "y": 138,
+   "w": 325,
+   "h": 242,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_712,h_530,c_lfill/exhibit-e/5ee8d205bd3ab4ab008b4568/221ea7865222c3620146a016249806",
+   "x": 35,
+   "y": 466,
+   "w": 325,
+   "h": 242,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_712,h_530,c_lfill/exhibit-e/5ee8d205bd3ab4ab008b4568/7d10318842a6a5a9e11b5bdabea131",
+   "x": 383,
+   "y": 466,
+   "w": 325,
+   "h": 242,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_712,h_530,c_lfill/exhibit-e/5ee8d205bd3ab4ab008b4568/996f3795bdf55da497817df758a986",
+   "x": 732,
+   "y": 466,
+   "w": 325,
+   "h": 242,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_712,h_530,c_lfill/exhibit-e/5ee8d205bd3ab4ab008b4568/9b44d6225affc72897d3852a04c30b",
+   "x": 1080,
+   "y": 466,
+   "w": 325,
+   "h": 242,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_712,h_530,c_lfill/exhibit-e/5ee8d205bd3ab4ab008b4568/45c1ff90f15e5606e116cec9b9a473",
+   "x": 35,
+   "y": 794,
+   "w": 325,
+   "h": 242,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_712,h_530,c_lfill/exhibit-e/5ee8d205bd3ab4ab008b4568/9f094d51f3337a916cdc755b527021",
+   "x": 383,
+   "y": 794,
+   "w": 325,
+   "h": 242,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://static-assets.artlogic.net/w_712,h_530,c_lfill/exhibit-e/5ee8d205bd3ab4ab008b4568/0f07808983c52e806007af7aba6b09",
+   "x": 732,
+   "y": 794,
+   "w": 325,
+   "h": 242,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  }
+ ],
+ "links": [
+  {
+   "t": "Skip to content",
+   "h": "https://www.kurimanzutto.com/es/artistas#contentWrapper"
+  },
+  {
+   "t": "",
+   "h": "https://www.kurimanzutto.com/es"
+  },
+  {
+   "t": "artistas",
+   "h": "https://www.kurimanzutto.com/es/artistas"
+  },
+  {
+   "t": "acerca de",
+   "h": "https://www.kurimanzutto.com/es/acerca-de"
+  },
+  {
+   "t": "exposiciones",
+   "h": "https://www.kurimanzutto.com/es/exposiciones"
+  },
+  {
+   "t": "noticias",
+   "h": "https://www.kurimanzutto.com/es/noticias"
+  },
+  {
+   "t": "archivo",
+   "h": "https://www.kurimanzutto.com/es/archivo"
+  },
+  {
+   "t": "librería en línea",
+   "h": "https://kmlibros.kurimanzutto.com/?lang=es"
+  },
+  {
+   "t": "contacto",
+   "h": "https://www.kurimanzutto.com/es/contacto2"
+  },
+  {
+   "t": "búsqueda",
+   "h": "https://www.kurimanzutto.com/es/busqueda"
+  },
+  {
+   "t": "EN",
+   "h": "https://www.kurimanzutto.com/artists"
+  },
+  {
+   "t": "ESP",
+   "h": "https://www.kurimanzutto.com/es/artistas"
+  },
+  {
+   "t": "Menu",
+   "h": "https://www.kurimanzutto.com/es/artistas#"
+  },
+  {
+   "t": "Artistas",
+   "h": "https://www.kurimanzutto.com/es/artistas"
+  },
+  {
+   "t": "Acerca de",
+   "h": "https://www.kurimanzutto.com/es/acerca-de"
+  },
+  {
+   "t": "Exposiciones",
+   "h": "https://www.kurimanzutto.com/es/exposiciones"
+  },
+  {
+   "t": "Noticias",
+   "h": "https://www.kurimanzutto.com/es/noticias"
+  },
+  {
+   "t": "Archivo",
+   "h": "https://www.kurimanzutto.com/es/archivo"
+  },
+  {
+   "t": "Librería en línea",
+   "h": "https://kmlibros.kurimanzutto.com/?lang=es"
+  },
+  {
+   "t": "Contacto",
+   "h": "https://www.kurimanzutto.com/es/contacto2"
+  },
+  {
+   "t": "Búsqueda",
+   "h": "https://www.kurimanzutto.com/es/busqueda"
+  },
+  {
+   "t": "en",
+   "h": "https://www.kurimanzutto.com/artists"
+  },
+  {
+   "t": "es",
+   "h": "https://www.kurimanzutto.com/es/artistas"
+  },
+  {
+   "t": "abraham cruzvillegas",
+   "h": "https://www.kurimanzutto.com/es/artistas/abraham-cruzvillegas"
+  },
+  {
+   "t": "adrián villar rojas",
+   "h": "https://www.kurimanzutto.com/es/artistas/adrian-villar-rojas"
+  },
+  {
+   "t": "akram zaatari",
+   "h": "https://www.kurimanzutto.com/es/artistas/akram-zaatari"
+  },
+  {
+   "t": "alexandra bachzetsis",
+   "h": "https://www.kurimanzutto.com/es/artistas/alexandra-bachzetsis"
+  },
+  {
+   "t": "allora & calzadilla",
+   "h": "https://www.kurimanzutto.com/es/artistas/allora-calzadilla"
+  },
+  {
+   "t": "ana segovia",
+   "h": "https://www.kurimanzutto.com/es/artistas/ana-segovia"
+  },
+  {
+   "t": "anri sala",
+   "h": "https://www.kurimanzutto.com/es/artistas/anri-sala"
+  },
+  {
+   "t": "apichatpong weerasethakul",
+   "h": "https://www.kurimanzutto.com/es/artistas/apichatpong-weerasethakul"
+  },
+  {
+   "t": "bárbara sánchez-kane",
+   "h": "https://www.kurimanzutto.com/es/artistas/barbara-sanchez-kane"
+  },
+  {
+   "t": "carlos amorales",
+   "h": "https://www.kurimanzutto.com/es/artistas/carlos-amorales"
+  },
+  {
+   "t": "damián ortega",
+   "h": "https://www.kurimanzutto.com/es/artistas/damian-ortega"
+  },
+  {
+   "t": "danh vo",
+   "h": "https://www.kurimanzutto.com/es/artistas/danh-vo"
+  },
+  {
+   "t": "daniel guzmán",
+   "h": "https://www.kurimanzutto.com/es/artistas/daniel-guzman"
+  },
+  {
+   "t": "dr. lakra",
+   "h": "https://www.kurimanzutto.com/es/artistas/dr-lakra"
+  },
+  {
+   "t": "duane linklater",
+   "h": "https://www.kurimanzutto.com/es/artistas/duane-linklater"
+  },
+  {
+   "t": "eduardo abaroa",
+   "h": "https://www.kurimanzutto.com/es/artistas/eduardo-abaroa"
+  },
+  {
+   "t": "felipe baeza",
+   "h": "https://www.kurimanzutto.com/es/artistas/felipe-baeza"
+  },
+  {
+   "t": "fernando ortega",
+   "h": "https://www.kurimanzutto.com/es/artistas/fernando-ortega"
+  },
+  {
+   "t": "gabriel kuri",
+   "h": "https://www.kurimanzutto.com/es/artistas/gabriel-kuri"
+  },
+  {
+   "t": "gabriel orozco",
+   "h": "https://www.kurimanzutto.com/es/artistas/gabriel-orozco"
+  },
+  {
+   "t": "gabriel sierra",
+   "h": "https://www.kurimanzutto.com/es/artistas/gabriel-sierra"
+  },
+  {
+   "t": "gala porras-kim",
+   "h": "https://www.kurimanzutto.com/es/artistas/gala-porras-kim"
+  },
+  {
+   "t": "haegue yang",
+   "h": "https://www.kurimanzutto.com/es/artistas/haegue-yang"
+  },
+  {
+   "t": "jimmie durham",
+   "h": "https://www.kurimanzutto.com/es/artistas/jimmie-durham"
+  },
+  {
+   "t": "john giorno estate",
+   "h": "https://www.kurimanzutto.com/es/artistas/john-giorno-estate"
+  },
+  {
+   "t": "leonor antunes",
+   "h": "https://www.kurimanzutto.com/es/artistas/leonor-antunes"
+  },
+  {
+   "t": "mariana castillo deball",
+   "h": "https://www.kurimanzutto.com/es/artistas/mariana-castillo-deball"
+  },
+  {
+   "t": "marieta chirulescu",
+   "h": "https://www.kurimanzutto.com/es/artistas/marieta-chirulescu"
+  },
+  {
+   "t": "marta minujín",
+   "h": "https://www.kurimanzutto.com/es/artistas/marta-minujin"
+  },
+  {
+   "t": "miguel calderón",
+   "h": "https://www.kurimanzutto.com/es/artistas/miguel-calderon"
+  },
+  {
+   "t": "minerva cuevas",
+   "h": "https://www.kurimanzutto.com/es/artistas/minerva-cuevas"
+  },
+  {
+   "t": "monika sosnowska",
+   "h": "https://www.kurimanzutto.com/es/artistas/monika-sosnowska"
+  },
+  {
+   "t": "nairy baghramian",
+   "h": "https://www.kurimanzutto.com/es/artistas/nairy-baghramian"
+  },
+  {
+   "t": "oscar murillo",
+   "h": "https://www.kurimanzutto.com/es/artistas/oscar-murillo"
+  },
+  {
+   "t": "petrit halilaj",
+   "h": "https://www.kurimanzutto.com/es/artistas/petrit-halilaj"
+  },
+  {
+   "t": "rirkrit tiravanija",
+   "h": "https://www.kurimanzutto.com/es/artistas/rirkrit-tiravanija"
+  },
+  {
+   "t": "roberto gil de montes",
+   "h": "https://www.kurimanzutto.com/es/artistas/roberto-gil-de-montes"
+  },
+  {
+   "t": "roman ondak",
+   "h": "https://www.kurimanzutto.com/es/artistas/roman-ondak"
+  },
+  {
+   "t": "sarah lucas",
+   "h": "https://www.kurimanzutto.com/es/artistas/sarah-lucas"
+  },
+  {
+   "t": "sofía táboas",
+   "h": "https://www.kurimanzutto.com/es/artistas/sofia-taboas"
+  },
+  {
+   "t": "tarek atoui",
+   "h": "https://www.kurimanzutto.com/es/artistas/tarek-atoui"
+  },
+  {
+   "t": "wangshui",
+   "h": "https://www.kurimanzutto.com/es/artistas/wangshui"
+  },
+  {
+   "t": "wilfredo prieto",
+   "h": "https://www.kurimanzutto.com/es/artistas/wilfredo-prieto"
+  },
+  {
+   "t": "",
+   "h": "https://www.wechat.com/"
+  },
+  {
+   "t": "",
+   "h": "https://www.facebook.com/KurimanzuttoGaleria/"
+  },
+  {
+   "t": "",
+   "h": "https://twitter.com/kurimanzutto?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+  },
+  {
+   "t": "",
+   "h": "https://www.instagram.com/kurimanzutto/?hl=en"
+  },
+  {
+   "t": "términos y condiciones",
+   "h": "https://www.kurimanzutto.com/attachment/es/5ee8d205bd3ab4ab008b4568/TextOneColumnWithFile/5efdf8da2bab2c7b13b9e30d/additionalFiles/62701a01e0a781b0bb07f3f3/translatedAdditionalFiles/62701acdd53e4228bd0efbe2"
+  },
+  {
+   "t": "aviso de privacidad",
+   "h": "https://www.kurimanzutto.com/attachment/en/5ee8d205bd3ab4ab008b4568/TextOneColumnWithFile/5efdf8da2bab2c7b13b9e30d/additionalFiles/5efdf93b2bab2c7b13b9e30f/translatedAdditionalFiles/5efdf93b2bab2c7b13b9e310"
+  },
+  {
+   "t": "política de venta de la librería",
+   "h": "https://kmlibros.kurimanzutto.com/pages/politica-de-ventas#"
+  },
+  {
+   "t": "declaración de inclusión",
+   "h": "https://www.kurimanzutto.com/statement-of-inclusion/"
+  },
+  {
+   "t": "Site Index",
+   "h": "https://www.kurimanzutto.com/es/site-index"
+  }
+ ]
+}

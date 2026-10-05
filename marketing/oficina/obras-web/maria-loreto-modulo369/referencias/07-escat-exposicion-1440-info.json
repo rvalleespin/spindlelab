@@ -1,0 +1,461 @@
+{
+ "url": "https://escatgallery.com/exhibition/solaz-de-aurora/",
+ "title": "SOLAZ – De Aurora – Escat Gallery",
+ "scrollW": 1440,
+ "clientW": 1440,
+ "H": 7237,
+ "html": {
+  "tag": "HTML",
+  "cls": "",
+  "txt": "ESCAT GALLERY\nEXHIBITIONS\nARTISTS\nESCAT PROJECTS\nVIEWING ROOMS\nCATALOGUE\nABOUT\nE",
+  "ff": "Times",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgb(255, 255, 255)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 7237
+ },
+ "body": {
+  "tag": "BODY",
+  "cls": "blog wp-theme-apn route-exposicion expo_ref-solaz-de-aurora in_page-1 hfeed",
+  "txt": "ESCAT GALLERY\nEXHIBITIONS\nARTISTS\nESCAT PROJECTS\nVIEWING ROOMS\nCATALOGUE\nABOUT\nE",
+  "ff": "\"Times New Roman\", serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 7237
+ },
+ "h1": null,
+ "h2": {
+  "tag": "H2",
+  "cls": "exhibition-name sans bold uppercase font-18",
+  "txt": "SOLAZ",
+  "ff": "\"NeueHaasGroteskText Pro\", sans-serif",
+  "fs": "18px",
+  "fw": "700",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "uppercase",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 688,
+  "y": 202,
+  "w": 63,
+  "h": 23
+ },
+ "h3": null,
+ "header": {
+  "tag": "HEADER",
+  "cls": "site-header",
+  "txt": "ESCAT GALLERY\nEXHIBITIONS\nARTISTS\nESCAT PROJECTS\nVIEWING ROOMS\nCATALOGUE\nABOUT\nE",
+  "ff": "\"Times New Roman\", serif",
+  "fs": "16px",
+  "fw": "400",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "none",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 88
+ },
+ "nav": {
+  "tag": "NAV",
+  "cls": "nav sans medium uppercase",
+  "txt": "ESCAT GALLERY\nEXHIBITIONS\nARTISTS\nESCAT PROJECTS\nVIEWING ROOMS\nCATALOGUE\nABOUT\nE",
+  "ff": "\"NeueHaasGroteskText Pro\", sans-serif",
+  "fs": "11px",
+  "fw": "500",
+  "lh": "normal",
+  "ls": "normal",
+  "tt": "uppercase",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "x": 16,
+  "y": 37,
+  "w": 1408,
+  "h": 14
+ },
+ "fijos": [
+  {
+   "pos": "fixed",
+   "tag": "HEADER",
+   "cls": "site-header",
+   "txt": "ESCAT GALLERY\nEXHIBITIONS\nARTISTS\nESCAT PROJECTS\nVIEWING ROOMS\nCATALOGUE\nABOUT\nE",
+   "ff": "\"Times New Roman\", serif",
+   "fs": "16px",
+   "fw": "400",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "none",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 88
+  },
+  {
+   "pos": "sticky",
+   "tag": "DIV",
+   "cls": "exhibition-single-sticky-bar sticky-bar sans medium uppercase",
+   "txt": "Exhibition",
+   "ff": "\"NeueHaasGroteskText Pro\", sans-serif",
+   "fs": "11px",
+   "fw": "500",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "uppercase",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  },
+  {
+   "pos": "sticky",
+   "tag": "DIV",
+   "cls": "exhibition-single-sticky-bar-artwork sticky-bar sans medium uppercase",
+   "txt": "Artwork",
+   "ff": "\"NeueHaasGroteskText Pro\", sans-serif",
+   "fs": "11px",
+   "fw": "500",
+   "lh": "normal",
+   "ls": "normal",
+   "tt": "uppercase",
+   "color": "rgb(0, 0, 0)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 0,
+   "h": 0
+  }
+ ],
+ "fuentes": [
+  "NeueHaasGroteskText Pro normal italic",
+  "NeueHaasGroteskText Pro 500 normal",
+  "NeueHaasGroteskText Pro bold normal"
+ ],
+ "tamanos": [
+  [
+   "11px \"NeueHaasGroteskText Pro\"",
+   27
+  ],
+  [
+   "16px \"Times New Roman\"",
+   10
+  ],
+  [
+   "20px \"Times New Roman\"",
+   3
+  ],
+  [
+   "12px \"NeueHaasGroteskText Pro\"",
+   3
+  ],
+  [
+   "16px \"NeueHaasGroteskText Pro\"",
+   2
+  ],
+  [
+   "18px \"NeueHaasGroteskText Pro\"",
+   1
+  ]
+ ],
+ "imgs": [
+  {
+   "src": "https://d2d5nmv8kwmev4.cloudfront.net/expositions/10722/1000/SALA_DE_AURORA_BAIXA_ZgYWk.JPG",
+   "x": 16,
+   "y": 488,
+   "w": 696,
+   "h": 1044,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://d2d5nmv8kwmev4.cloudfront.net/expositions/10722/1000/SALA_DE_AURORA_BAIXA_1_zOLIl.JPG",
+   "x": 728,
+   "y": 488,
+   "w": 696,
+   "h": 1044,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://d2d5nmv8kwmev4.cloudfront.net/expositions/10722/1000/SALA_DE_AURORA_BAIXA_2_n50l3.JPG",
+   "x": 16,
+   "y": 2269,
+   "w": 1081,
+   "h": 720,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://d2d5nmv8kwmev4.cloudfront.net/expositions/10722/1000/SALA_DE_AURORA_BAIXA_3_3iWY9.JPG",
+   "x": 1113,
+   "y": 2269,
+   "w": 1081,
+   "h": 720,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://d2d5nmv8kwmev4.cloudfront.net/expositions/10722/1000/SALA_DE_AURORA_BAIXA_4_FfwYI.JPG",
+   "x": 2210,
+   "y": 2269,
+   "w": 1081,
+   "h": 720,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://d2d5nmv8kwmev4.cloudfront.net/expositions/10722/1000/SALA_DE_AURORA_BAIXA_6_e312v.JPG",
+   "x": 3307,
+   "y": 2269,
+   "w": 1081,
+   "h": 720,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://d2d5nmv8kwmev4.cloudfront.net/expositions/10722/1000/SALA_DE_AURORA_BAIXA_8_lumE2.JPG",
+   "x": 4404,
+   "y": 2269,
+   "w": 1079,
+   "h": 720,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://d2d5nmv8kwmev4.cloudfront.net/expositions/10722/1000/SALA_DE_AURORABAIXA_tRuHA.JPG",
+   "x": 5500,
+   "y": 2269,
+   "w": 1081,
+   "h": 720,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://d2d5nmv8kwmev4.cloudfront.net/expositions/10722/1000/SALA_DE_AURORABAIXA_1_CATBV.JPG",
+   "x": 6597,
+   "y": 2269,
+   "w": 1081,
+   "h": 720,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/works/807362/DE_AURORA_BAIXA_44.jpg",
+   "x": 16,
+   "y": 3139,
+   "w": 459,
+   "h": 688,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/works/807363/DE_AURORA_baixa_48_correcio.jpg",
+   "x": 491,
+   "y": 3139,
+   "w": 459,
+   "h": 688,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  },
+  {
+   "src": "https://dncs92qkcz9jn.cloudfront.net/works/807366/DE_AURORA_BAIXA_53.jpg",
+   "x": 965,
+   "y": 3139,
+   "w": 459,
+   "h": 688,
+   "fit": "fill",
+   "shadow": "none",
+   "border": "0px none rgb(0, 0, 0)",
+   "radius": "0px"
+  }
+ ],
+ "links": [
+  {
+   "t": "ESCAT GALLERY",
+   "h": "https://escatgallery.com/"
+  },
+  {
+   "t": "EXHIBITIONS",
+   "h": "https://escatgallery.com/exhibitions/"
+  },
+  {
+   "t": "ARTISTS",
+   "h": "https://escatgallery.com/artists/"
+  },
+  {
+   "t": "ESCAT PROJECTS",
+   "h": "https://escatgallery.com/escat-projects/"
+  },
+  {
+   "t": "VIEWING ROOMS",
+   "h": "https://escatgallery.com/viewing-rooms/"
+  },
+  {
+   "t": "CATALOGUE",
+   "h": "https://www.artsy.net/partner/escat-gallery/works"
+  },
+  {
+   "t": "ABOUT",
+   "h": "https://escatgallery.com/about/"
+  },
+  {
+   "t": "EN",
+   "h": "https://escatgallery.com/"
+  },
+  {
+   "t": "ES",
+   "h": "https://escatgallery.com/es/"
+  },
+  {
+   "t": "CA",
+   "h": "https://escatgallery.com/ca/"
+  },
+  {
+   "t": "",
+   "h": "https://escatgallery.com/artworks/untitled-jma006"
+  },
+  {
+   "t": "",
+   "h": "https://escatgallery.com/artworks/untitled-jma007"
+  },
+  {
+   "t": "",
+   "h": "https://escatgallery.com/artworks/untitled-jma008"
+  },
+  {
+   "t": "",
+   "h": "https://escatgallery.com/artworks/untitled-jma009"
+  },
+  {
+   "t": "",
+   "h": "https://escatgallery.com/artworks/untitled-jma010"
+  },
+  {
+   "t": "",
+   "h": "https://escatgallery.com/artworks/untitled-jma011"
+  },
+  {
+   "t": "",
+   "h": "https://escatgallery.com/artworks/untitled-jma012"
+  },
+  {
+   "t": "",
+   "h": "https://escatgallery.com/artworks/untitled-jma013"
+  },
+  {
+   "t": "",
+   "h": "https://escatgallery.com/artworks/untitled-jma014"
+  },
+  {
+   "t": "",
+   "h": "https://escatgallery.com/artworks/untitled-jma015"
+  },
+  {
+   "t": "",
+   "h": "https://escatgallery.com/artworks/untitled-jma016"
+  },
+  {
+   "t": "",
+   "h": "https://escatgallery.com/artworks/untitled-jma017"
+  },
+  {
+   "t": "ESCAT GALLERY",
+   "h": "https://escatgallery.com/"
+  },
+  {
+   "t": "EN",
+   "h": "https://escatgallery.com/"
+  },
+  {
+   "t": "ES",
+   "h": "https://escatgallery.com/es/"
+  },
+  {
+   "t": "CA",
+   "h": "https://escatgallery.com/ca/"
+  },
+  {
+   "t": "C/ Trafalgar, 47 – 08010",
+   "h": "https://maps.app.goo.gl/JuK4c7eEyyysVekP7"
+  },
+  {
+   "t": "",
+   "h": "https://www.artsy.net/partner/escat-gallery"
+  },
+  {
+   "t": "View full catalogue on Artsy",
+   "h": "https://www.artsy.net/partner/escat-gallery"
+  },
+  {
+   "t": "VIEW FULL CATALOGUE ON ARTSY",
+   "h": "https://www.artsy.net/partner/escat-gallery"
+  },
+  {
+   "t": "POLICIES",
+   "h": "https://escatgallery.com/policies/"
+  },
+  {
+   "t": "YOUTUBE",
+   "h": "https://www.youtube.com/@Escatgallery?app=desktop"
+  },
+  {
+   "t": "INSTAGRAM",
+   "h": "https://www.instagram.com/escatgallery/"
+  },
+  {
+   "t": "PINTEREST",
+   "h": "https://es.pinterest.com/escatgallery/"
+  },
+  {
+   "t": "SPOTIFY",
+   "h": "https://open.spotify.com/user/315v5xvigusd464nexdk6b7twxzu?si=36789a9038b749dd"
+  },
+  {
+   "t": "LINKEDIN",
+   "h": "https://www.linkedin.com/company/escatgallery/?viewAsMember=true"
+  }
+ ]
+}
