@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desarrollo web que los motores de IA pueden leer · SpindleLab</title>
+<meta name="description" content="Sitios construidos para que los motores de IA puedan leerlos y citarlos, con el SEO técnico desde el primer commit. Lo compruebas con el chequeo gratis.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://spindlelab.cl/servicios/desarrollo-web/">
+<style>
+/* ============================================================================
+   TABLERO — página interna en el lenguaje de los CASOS de driftime.
+   Medido en /work/global-center-for-health-diplomacy-and-inclusion:
+   · el h1 del caso NO usa el display: va en la sans a 60 px, peso 500, en caja normal;
+   · una imagen grande a sangre;
+   · alterna ETIQUETA PEGAJOSA a la izquierda + texto largo a la derecha, con GALERÍAS
+     en grillas asimétricas entre medio.
+   En esta página el display (Manrope 800 mayúsculas) no aparece ni una vez: así lo
+   hace driftime en sus internas. El grito queda para la home.
+   ============================================================================ */
+@font-face{font-family:'Manrope';src:url('manrope-latin.woff2') format('woff2');font-weight:400 800;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';src:url('manrope-latin-ext.woff2') format('woff2');font-weight:400 800;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Gabarito';src:url('Gabarito.woff2') format('woff2');font-weight:400 900;font-display:swap}
+:root{--noche:#000;--modulo:#161616;--filete:rgba(247,245,240,.12);--papel:#F7F5F0;--gris:#9AA4B0;--gris-2:#6B7580;--oro:#C9A227;--brasa:#DA3400;--r:6px;--m:40px;--g:16px}
+@media (max-width:767px){:root{--m:20px;--g:10px}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--noche);color:var(--papel);font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--papel);outline-offset:3px}
+
+/* escala de los casos de driftime, traducida a Manrope */
+.h-caso{font-size:clamp(2.25rem,4.17vw,3.75rem);line-height:1.1;font-weight:500;letter-spacing:-.02em;margin:0}   /* 60 px */
+.h-sec{font-size:clamp(1.375rem,2.08vw,1.875rem);line-height:1.4;font-weight:500;letter-spacing:-.02em;margin:0}  /* 30 px */
+.h-sub{font-size:clamp(1.25rem,1.67vw,1.5rem);line-height:1.4;font-weight:500;margin:0}                          /* 24 px */
+.guia{font-size:clamp(1.25rem,1.67vw,1.5rem);line-height:1.5;margin:0}                                             /* 24 px */
+.cuerpo{font-size:clamp(1.0625rem,1.25vw,1.125rem);line-height:1.6;color:var(--gris);margin:0}                     /* 18 px gris */
+.chico{font-size:.875rem;line-height:1.5}
+
+.btn{display:inline-flex;align-items:center;height:36px;padding:0 14px;border-radius:var(--r);background:var(--papel);color:#000;font:500 .875rem/1 'Manrope',sans-serif;text-decoration:none}
+.btn.sec{background:var(--modulo);color:var(--papel)}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+
+.nav{position:fixed;top:24px;left:var(--m);z-index:50;display:flex;height:56px;background:var(--modulo);border-radius:var(--r);overflow:hidden}
+.nav > *{display:flex;align-items:center;padding:0 18px;text-decoration:none}
+.nav > * + *{border-left:1px solid var(--filete)}
+.marca{font-family:'Gabarito',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:-.01em}
+.marca i{font-style:normal;color:var(--oro)}
+.nav .esc{font-weight:500;font-size:.9375rem}
+.nav button{background:none;border:0;color:inherit}
+.ham{width:20px;height:10px;border-top:1.5px solid currentColor;border-bottom:1.5px solid currentColor}
+@media (max-width:767px){.nav{top:16px;height:52px}.nav > *{padding:0 14px}}
+
+/* 1 · cabecera del caso */
+.cab{padding:min(34vh,300px) var(--m) 40px;max-width:1100px}
+.miga{font-size:.8125rem;color:var(--gris);margin:0 0 22px}
+.miga a{text-decoration:none}.miga a:hover{text-decoration:underline}
+.cab .linea{margin:14px 0 26px;font-size:clamp(1rem,1.25vw,1.125rem);line-height:1.5;color:var(--gris);max-width:560px}
+
+/* 2 · imagen a sangre */
+.sangre{margin:0 var(--m);border-radius:var(--r);overflow:hidden;aspect-ratio:2.39}
+.sangre img{width:100%;height:100%;object-fit:cover}
+@media (max-width:767px){.sangre{aspect-ratio:4/3}}
+
+/* 3 · nota + entrada (driftime: tarjeta de impacto chica a la izquierda, párrafo a la derecha) */
+.entrada{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--g);padding:28px var(--m) 0}
+.nota-card{align-self:start;background:var(--modulo);border-radius:var(--r);padding:14px 16px;font-size:.875rem;line-height:1.5;color:var(--gris);max-width:360px}
+.nota-card b{color:var(--papel);font-weight:600}
+@media (max-width:767px){.entrada{grid-template-columns:1fr;gap:24px}.entrada .guia{order:-1}}
+
+/* 4 · secciones con etiqueta pegajosa */
+.sec{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--g);padding:180px var(--m) 0}
+.sec .eti{position:sticky;top:120px;align-self:start}
+.sec .eti .chico{margin-top:10px;color:var(--gris);max-width:300px}
+.filas{display:flex;flex-direction:column}
+.filas > *{padding:22px 0;border-top:1px solid var(--filete)}
+.filas > *:last-child{border-bottom:1px solid var(--filete)}
+@media (max-width:767px){.sec{grid-template-columns:1fr;padding-top:110px;gap:28px}.sec .eti{position:static}}
+
+/* incluye */
+.incluye p{margin:0}
+
+/* planes: filas editoriales, NO cuatro tarjetas iguales (tell B1 del detector) */
+.plan{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;align-items:baseline}
+.plan .precio{font-weight:600;font-size:clamp(1.0625rem,1.25vw,1.125rem);white-space:nowrap}
+.plan .cuerpo{grid-column:1 / -1}
+.plan ul{grid-column:1 / -1;margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.plan li{font-size:.8125rem;background:var(--modulo);border-radius:4px;padding:6px 9px;color:var(--papel)}
+@media (max-width:767px){.plan{grid-template-columns:1fr}.plan .precio{white-space:normal}}
+
+/* fases */
+.fase{display:grid;grid-template-columns:56px minmax(0,1fr);gap:4px 16px}
+.fase .n{color:var(--gris);font-variant-numeric:tabular-nums;padding-top:4px}
+.fase .cuerpo{grid-column:2}
+
+/* preguntas */
+.faq h3{margin-bottom:8px}
+
+/* galería de obra: grilla asimétrica, como los casos de driftime */
+.galeria{padding:180px var(--m) 0;display:grid;gap:var(--g);grid-template-columns:repeat(12,minmax(0,1fr))}
+.galeria .cab-g{grid-column:1 / -1;display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:12px}
+.pieza{position:relative;margin:0;border-radius:var(--r);overflow:hidden;background:var(--modulo)}
+.pieza img{width:100%;height:100%;object-fit:cover}
+.g-ancha{grid-column:1 / -1;aspect-ratio:16/9}
+.g-alta{grid-column:span 4;aspect-ratio:3/4}
+.g-media{grid-column:span 8;aspect-ratio:4/3}
+.etq{position:absolute;left:10px;top:10px;display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.etq span{background:rgba(0,0,0,.66);backdrop-filter:blur(6px);color:var(--papel);font-size:.75rem;font-weight:500;padding:5px 8px;border-radius:4px}
+.etq .concepto{background:var(--papel);color:#000}
+@media (max-width:767px){.galeria{padding-top:110px;grid-template-columns:1fr}.g-ancha,.g-alta,.g-media{grid-column:1 / -1}.g-alta{aspect-ratio:4/5}.galeria .cab-g{flex-direction:column;align-items:flex-start}}
+
+/* siguiente */
+.siguiente{margin:200px var(--m) 0;padding:28px 0 36px;border-top:1px solid var(--filete);display:flex;justify-content:space-between;align-items:baseline;gap:16px;text-decoration:none}
+.siguiente:hover .h-caso{text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:2px}
+
+/* pie */
+.pie{background:#0E0E0E;padding:72px var(--m) 28px;margin-top:120px;overflow:hidden;container-type:inline-size}
+.pie .arriba{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--g)}
+.pie nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 24px;font-size:.9375rem}
+.pie nav a{text-decoration:none;opacity:.9}
+.gigante{font-family:'Gabarito',sans-serif;font-weight:800;font-size:calc(100cqi / 4.78);line-height:.78;letter-spacing:-.035em;margin:96px 0 18px;white-space:nowrap}
+.pie .legal{display:flex;justify-content:space-between;gap:16px;font-size:.8125rem;color:var(--gris-2)}
+@media (max-width:767px){.pie .arriba{grid-template-columns:1fr;gap:48px}.gigante{margin-top:64px}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Service","@id":"https://spindlelab.cl/servicios/desarrollo-web/#service","name":"Desarrollo Web","serviceType":"Desarrollo web a medida","provider":{"@id":"https://spindlelab.cl/#org"},"areaServed":{"@type":"Country","name":"Chile"},
+  "hasOfferCatalog":{"@type":"OfferCatalog","name":"Planes de Desarrollo Web","itemListElement":[
+   {"@type":"Offer","name":"Página de Campaña","description":"Una página a medida pensada para una campaña y una oferta, con SEO técnico y medición desde el primer día. Entrega en ~1 semana.","priceSpecification":{"@type":"PriceSpecification","minPrice":390000,"priceCurrency":"CLP","valueAddedTaxIncluded":false}},
+   {"@type":"Offer","name":"Sitio Esencial","description":"Home y hasta 5 páginas, SEO técnico base, un idioma. Entrega en ~3 semanas.","priceSpecification":{"@type":"PriceSpecification","minPrice":690000,"priceCurrency":"CLP","valueAddedTaxIncluded":false}},
+   {"@type":"Offer","name":"Sitio Completo","description":"Home y hasta 12 páginas, blog/CMS, SEO técnico y puesta a punto AEO/GEO. Entrega en ~4 a 6 semanas.","priceSpecification":{"@type":"PriceSpecification","minPrice":1190000,"priceCurrency":"CLP","valueAddedTaxIncluded":false}},
+   {"@type":"Offer","name":"Plataforma a Medida","description":"Todo lo del Sitio Completo y más: páginas sin tope, integraciones a medida, arquitectura propia, multi-idioma. Se cotiza tras una reunión."}]}},
+ {"@type":"BreadcrumbList","@id":"https://spindlelab.cl/servicios/desarrollo-web/#breadcrumb","itemListElement":[
+   {"@type":"ListItem","position":1,"name":"Inicio","item":"https://spindlelab.cl/"},
+   {"@type":"ListItem","position":2,"name":"Servicios","item":"https://spindlelab.cl/servicios/"},
+   {"@type":"ListItem","position":3,"name":"Desarrollo Web"}]},
+ {"@type":"FAQPage","@id":"https://spindlelab.cl/servicios/desarrollo-web/#faq","mainEntity":[
+   {"@type":"Question","name":"¿Usan plantillas o WordPress?","acceptedAnswer":{"@type":"Answer","text":"No. Cada sitio se construye con código propio, a medida. Sin temas genéricos ni page builders: control total sobre rendimiento, diseño y SEO técnico."}},
+   {"@type":"Question","name":"¿Cuánto cuesta?","acceptedAnswer":{"@type":"Answer","text":"Cada pack tiene un precio de partida («desde»): Página de Campaña desde $390.000 + IVA, Sitio Esencial desde $690.000 + IVA y Sitio Completo desde $1.190.000 + IVA; la Plataforma a Medida se cotiza tras una reunión. El valor final se cierra tras el diagnóstico gratuito, según las páginas y funcionalidades que necesites. Sin sorpresas."}},
+   {"@type":"Question","name":"¿Cómo afecta el desarrollo con IA a la calidad?","acceptedAnswer":{"@type":"Answer","text":"La ejecución asistida por IA reduce tiempos, no supervisión: cada fase pasa por revisión humana antes de avanzar a la siguiente. La velocidad se traduce en plazos más cortos, no en menos control de calidad."}},
+   {"@type":"Question","name":"¿El sitio incluye SEO?","acceptedAnswer":{"@type":"Answer","text":"Sí, de base: rendimiento, datos estructurados y arquitectura pensados desde el diseño. Si además necesitas visibilidad en motores de IA, ese trabajo se profundiza con el servicio de Visibilidad en IA."}}]}
+]}
+</script>
+</head>
+<body>
+<nav class="nav" aria-label="Principal">
+  <a href="/" class="marca" aria-label="SpindleLab, inicio">SpindleLab<i>.</i></a>
+  <a href="/contacto/" class="esc">Escríbenos</a>
+  <button type="button" aria-label="Abrir menú"><span class="ham"></span></button>
+</nav>
+
+<main>
+<!-- 1 · cabecera: sin display. El h1 del caso en driftime va en la sans a 60 px, peso 500. -->
+<header class="cab">
+  <p class="miga"><a href="/">Inicio</a> · <a href="/servicios/">Servicios</a> · Desarrollo Web</p>
+  <h1 class="h-caso">Desarrollo web que los motores de IA pueden leer</h1>
+  <p class="linea">Sitios a medida con el SEO técnico puesto desde el primer commit. Tres planes, desde $390.000 + IVA.</p>
+  <div class="btns"><a class="btn" href="#planes">Ver planes</a><a class="btn sec" href="/contacto/">Escríbenos</a></div>
+</header>
+
+<!-- 2 · imagen a sangre -->
+<figure class="sangre" style="margin-top:0;margin-bottom:0"><img src="img/escritorio.jpg" alt="Escritorio de madera junto a la ventana, con un laptop, un cuaderno abierto y una taza" width="1600" height="670"></figure>
+
+<!-- 3 · nota + entrada -->
+<div class="entrada">
+  <p class="nota-card"><b>Valores en pesos, + IVA.</b> El valor final se cierra tras el diagnóstico gratuito.</p>
+  <p class="guia">A veces el problema no es lo que se audita: es lo que hay que reconstruir. Construimos el sitio para que las máquinas que hoy recomiendan tu negocio puedan leerlo, y te lo demostramos con el mismo chequeo sobre tu dominio.</p>
+</div>
+
+<!-- 4 · qué incluye -->
+<section class="sec" aria-labelledby="s-inc">
+  <div class="eti"><h2 class="h-sec" id="s-inc">Todo parte con esto</h2></div>
+  <div class="filas incluye">
+    <p class="guia">Legible para motores de IA desde el primer commit: datos estructurados, contenido citable e indexación.</p>
+    <p class="guia">El mismo chequeo que corres gratis en la portada, pasado sobre tu sitio antes de entregarlo.</p>
+    <p class="guia">Un panel para editar textos e imágenes tú mismo, sin depender de nadie.</p>
+    <p class="guia">Código propio y diseño a medida, con control total del rendimiento.</p>
+    <p class="guia">Construcción con IA, revisión humana en cada fase antes de avanzar.</p>
+    <p class="guia">Dominio, SSL, analítica y 30 días de garantía post-lanzamiento.</p>
+  </div>
+</section>
+
+<!-- 5 · galería: el trabajo entregado -->
+<section class="galeria" aria-labelledby="s-obra">
+  <div class="cab-g"><h2 class="h-sec" id="s-obra">Sitios que ya construimos</h2><a class="btn sec" href="/trabajo/">Ver el trabajo</a></div>
+  <figure class="pieza g-ancha"><img src="img/obra-combeau-foto-ancho.jpg" alt="Portada del sitio de fotografía de Bernardo Combeau: un retrato iluminado en verde" loading="lazy"><figcaption class="etq"><span>Bernardo Combeau · Fotografía</span></figcaption></figure>
+  <figure class="pieza g-alta"><img src="img/obra-combeau-modelo.jpg" alt="Sitio de modelo de Bernardo Combeau: retrato de cuerpo entero junto a una puerta" loading="lazy"><figcaption class="etq"><span>Bernardo Combeau · Modelo</span></figcaption></figure>
+  <figure class="pieza g-media"><img src="img/obra-vyc.jpg" alt="Portada de Verifica y Cumple con el titular «¿Estás seguro?» sobre azul" loading="lazy" style="object-position:50% 30%"><figcaption class="etq"><span>Verifica y Cumple · Producto propio</span></figcaption></figure>
+  <figure class="pieza g-media"><img src="img/obra-raigal.jpg" alt="Portada de Raigal, sitio de implantología, con el titular «Volver a morder»" loading="lazy" style="object-position:50% 20%"><figcaption class="etq"><span class="concepto">Pieza de concepto · no es un cliente</span><span>Raigal · Implantología</span></figcaption></figure>
+  <figure class="pieza g-alta"><img src="img/ventana.jpg" alt="Mesa de trabajo junto a una ventana con cortinas, un cuaderno abierto y un laptop" loading="lazy" style="object-position:70% 50%"></figure>
+</section>
+
+<!-- 6 · planes -->
+<section class="sec" id="planes" aria-labelledby="s-pla">
+  <div class="eti"><h2 class="h-sec" id="s-pla">Elige por dónde partir</h2><p class="chico">Valores en pesos, + IVA. El valor final se cierra tras el diagnóstico gratuito.</p></div>
+  <div class="filas">
+    <div class="plan"><h3 class="h-sub">Página de Campaña</h3><span class="precio">desde $390.000</span><p class="cuerpo">Una página hecha para convertir la pauta que ya estás pagando.</p><ul><li>Una página, para una campaña y una oferta</li><li>Diseño a medida, sin plantilla</li><li>SEO técnico y medición desde el primer día</li><li>Entrega en ~1 semana</li></ul></div>
+    <div class="plan"><h3 class="h-sub">Sitio Esencial</h3><span class="precio">desde $690.000</span><p class="cuerpo">Un sitio a medida, listo para funcionar.</p><ul><li>Home y hasta 5 páginas</li><li>SEO técnico base: schema, velocidad, indexación</li><li>Un idioma</li><li>Entrega en ~3 semanas</li></ul></div>
+    <div class="plan"><h3 class="h-sub">Sitio Completo</h3><span class="precio">desde $1.190.000</span><p class="cuerpo">Más páginas y puesto a punto para que la IA te lea.</p><ul><li>Home y hasta 12 páginas</li><li>Blog o CMS que administras tú</li><li>SEO técnico y puesta a punto AEO/GEO</li><li>Uno o dos idiomas</li><li>Entrega en ~4 a 6 semanas</li></ul></div>
+    <div class="plan"><h3 class="h-sub">Plataforma a Medida</h3><span class="precio">Se cotiza</span><p class="cuerpo">Para proyectos con integraciones o lógica propia.</p><ul><li>Todo lo del Sitio Completo, y más</li><li>Páginas sin tope</li><li>Integraciones: CRM, reservas, pagos</li><li>Arquitectura propia</li><li>Multi-idioma</li></ul></div>
+  </div>
+</section>
+
+<!-- 7 · fases -->
+<section class="sec" aria-labelledby="s-fas">
+  <div class="eti"><h2 class="h-sec" id="s-fas">Cinco fases, apruebas cada una</h2></div>
+  <div class="filas">
+    <div class="fase"><span class="n">01</span><h3 class="h-sub">Descubrimiento</h3><p class="cuerpo">Conversamos sobre tu negocio, tu marca y qué necesita comunicar el sitio. Definimos la dirección de diseño con referentes concretos de tu rubro.</p></div>
+    <div class="fase"><span class="n">02</span><h3 class="h-sub">Diseño</h3><p class="cuerpo">Proponemos las páginas clave (home y una página tipo) antes de escribir una sola línea de código. Ajustamos hasta que el diseño te representa.</p></div>
+    <div class="fase"><span class="n">03</span><h3 class="h-sub">Desarrollo con IA</h3><p class="cuerpo">Construimos el sitio con el agente de desarrollo de SpindleLab, con supervisión técnica humana en cada avance. Sigues el progreso en una URL de prueba.</p></div>
+    <div class="fase"><span class="n">04</span><h3 class="h-sub">QA y contenido</h3><p class="cuerpo">Cargamos tu contenido final, probamos en distintos dispositivos, afinamos rendimiento y SEO, y hacemos las rondas de revisión incluidas en tu plan.</p></div>
+    <div class="fase"><span class="n">05</span><h3 class="h-sub">Lanzamiento</h3><p class="cuerpo">Configuramos dominio, SSL y analítica, y publicamos en producción. Quedas con 30 días de garantía para corregir errores de funcionamiento.</p></div>
+  </div>
+</section>
+
+<!-- 8 · preguntas -->
+<section class="sec faq" aria-labelledby="s-faq">
+  <div class="eti"><h2 class="h-sec" id="s-faq">Sobre el desarrollo</h2></div>
+  <div class="filas">
+    <div><h3 class="h-sub">¿Usan plantillas o WordPress?</h3><p class="cuerpo">No. Cada sitio se construye con código propio, a medida. Sin temas genéricos ni page builders: control total sobre rendimiento, diseño y SEO técnico.</p></div>
+    <div><h3 class="h-sub">¿Cuánto cuesta?</h3><p class="cuerpo">Cada pack tiene un precio de partida («desde»): Página de Campaña desde $390.000 + IVA, Sitio Esencial desde $690.000 + IVA y Sitio Completo desde $1.190.000 + IVA; la Plataforma a Medida se cotiza tras una reunión. El valor final se cierra tras el diagnóstico gratuito, según las páginas y funcionalidades que necesites. Sin sorpresas.</p></div>
+    <div><h3 class="h-sub">¿Cómo afecta el desarrollo con IA a la calidad?</h3><p class="cuerpo">La ejecución asistida por IA reduce tiempos, no supervisión: cada fase pasa por revisión humana antes de avanzar a la siguiente. La velocidad se traduce en plazos más cortos, no en menos control de calidad.</p></div>
+    <div><h3 class="h-sub">¿El sitio incluye SEO?</h3><p class="cuerpo">Sí, de base: rendimiento, datos estructurados y arquitectura pensados desde el diseño. Si además necesitas visibilidad en motores de IA, ese trabajo se profundiza con el servicio de Visibilidad en IA.</p></div>
+  </div>
+</section>
+
+<!-- 9 · siguiente servicio, como el «siguiente caso» de driftime -->
+<a class="siguiente" href="/servicios/visibilidad-en-ia/"><span class="chico" style="color:var(--gris)">Siguiente</span><span class="h-caso">Visibilidad en IA →</span></a>
+</main>
+
+<footer class="pie">
+  <div class="arriba">
+    <div style="display:flex;flex-direction:column;gap:18px;align-items:flex-start"><p class="guia" style="max-width:520px">Si quieres hablar de tu sitio, escríbenos.</p><a class="btn" href="/contacto/">Escríbenos</a></div>
+    <nav aria-label="Pie">
+      <a href="/">Inicio</a><a href="/diagnostico/">Diagnóstico gratis</a>
+      <a href="/trabajo/">Trabajo</a><a href="/blog/">El Taller</a>
+      <a href="/servicios/">Servicios</a><a href="/privacidad/">Privacidad</a>
+      <a href="/metodo/">Método</a><a href="https://www.linkedin.com/company/spindlelab/">LinkedIn ↗</a>
+      <a href="/nosotros/">Nosotros</a><a href="https://www.instagram.com/spindlelab.cl/">Instagram ↗</a>
+    </nav>
+  </div>
+  <p class="gigante" aria-hidden="true">SpindleLab.</p>
+  <div class="legal"><span>© 2026 SpindleLab · Santiago de Chile</span><a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a></div>
+</footer>
+</body>
+</html>
