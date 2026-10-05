@@ -18,88 +18,119 @@
 > borrador, el "Pase 3 vie 5-sep" caía sábado y el "Pase 4 vie 19-sep" caía **sábado de Fiestas
 > Patrias**. Las tandas quedaron reprogramadas (ver sección de tandas).
 
-## Octubre 2026 — slots reales (actualizado 5-oct-2026)
+## Octubre 2026 — estrategia del mes (decidida con Ramón el 5-oct-2026)
 
-> **Esta sección refleja lo que está pasando de verdad, no un plan a futuro.** La escribió la
-> sesión del canal de redes a pedido del punto 9.2 de
-> `encargos-otras-sesiones/estrategia-linkedin-actualizacion-5oct.md`. El inventario de lo que
-> está en el aire es `marketing/redes/QUE-HAY-PUBLICADO.md`; las piezas, una carpeta por post en
-> `marketing/redes/2026-10-octubre-linkedin/`.
->
-> **Nada se publica sin la aprobación de Ramón en el chat, post por post.** No hay pases ni
-> tandas este mes: él aprueba cada texto cuando se le presenta.
+> Las decisiones de abajo son suyas, de la conversación del 5-oct. Lo que está en el aire vive en
+> `marketing/redes/QUE-HAY-PUBLICADO.md`; las piezas, una carpeta por post en
+> `marketing/redes/2026-10-octubre-linkedin/`. **Nada se publica sin su aprobación en el chat,
+> post por post.** No hay pases ni tandas: aprueba cada texto cuando se le presenta.
 
-**Lo que cambió respecto del modelo de septiembre, y cambia el calendario entero:**
+### Las cinco decisiones que ordenan el mes
 
-1. **El canal que alcanza es el perfil personal de Ramón** (≈364 seguidores). La página tiene 4 y
-   el Instagram 19. El calendario de septiembre repartía el peso entre página e Instagram; en
-   octubre el eje es el perfil personal, en registro singular y texto puro.
-2. **La cadencia real son 2 o 3 posts por semana en el perfil**, no 1 por semana como decía la
-   estrategia del 23-sep. Ramón, el 2-oct: *"no tenemos publicaciones desde el 30. no conviene
-   tanto silencio"*.
-3. **Cada post tiene salida comercial.** El 5-oct rechazó un borrador correcto porque *"no es un
-   post que influya en la venta"*. El dato es el gancho; el post termina en el chequeo, el
-   diagnóstico o el servicio.
-4. **Rotación de los tres servicios, sin rachas:** SEO y visibilidad en IA · Verifica y Cumple
-   (prioridad por el plazo del 1-dic) · Desarrollo Web a medida. Entre el 25 y el 30-sep salieron
-   tres de Verifica y Cumple seguidos; desde el 2-oct se alterna.
-5. **Los temas salen de un radar semanal de dolores del rubro** (X y LinkedIn, hechos fechados),
-   no de un tema mensual fijado con un mes de anticipación.
+1. **Las gráficas quedan congeladas, sujetas al sitio.** Hay cambios estructurales grandes en
+   curso, así que no se produce ninguna pieza gráfica nueva hasta que el sitio aterrice: una
+   etiqueta o una firma quemada hoy queda vieja en dos semanas, que es exactamente lo que pasó con
+   las 6 piezas de agosto. **Consecuencia:** el mes es **texto puro**, más el video con la cara de
+   Ramón, que no depende del sistema visual porque no lleva ninguno.
+2. **`/diagnostico/` se mantiene.** Confirmado por Ramón, y los cuatro URLs que usan las piezas
+   responden 200 (verificado el 5-oct: home, `/diagnostico/`, `/servicios/desarrollo-web/` y
+   `verifica.spindlelab.cl`). El post del 7-oct no está en riesgo y los CTA siguen válidos.
+3. **Solo orgánico.** Paid apagado por costos. El perfil personal de Ramón es el único canal con
+   alcance real (≈364 seguidores, contra 4 de la página y 19 de Instagram) y cuesta cero.
+4. **Verifica y Cumple se aprovecha ahora**, por el plazo del 1-dic. Es la única pieza del negocio
+   con fecha de vencimiento, y la ventana se cierra a fin de noviembre.
+5. **Se alternan los tipos de contenido**, no solo los servicios. Cuatro tipos, y **nunca dos del
+   mismo tipo seguidos**:
 
-### Lo publicado y lo que viene
+| Tipo | Qué es | Evidencia de que rinde |
+|---|---|---|
+| **A · Opinión de oficio con fuente primaria** | Un hecho verificable del rubro, leído en la fuente, con el matiz incómodo | Los dos mejores del perfil: GEO (307) y query fan-out |
+| **B · Dato legal de la 21.719** | Un mito o una obligación real, con el número de artículo | El de mejor alcance de la página (398) y el motor de VyC |
+| **C · Criterio de construcción** | Cómo trabaja y por qué, cierre de Desarrollo Web | 102 el 2-oct, sin cifras ni datos de campañas |
+| **D · Video con su cara** | Nuevo este mes. Su trabajo es confianza, no información | Sin precedente publicado. Dos guiones murieron sin grabar |
 
-| Fecha | Canal · voz | Pieza | Servicio | Carpeta | Estado |
-|---|---|---|---|---|---|
-| **Vie 2-oct** | Perfil Ramón · singular | "El sitio es la tienda principal, las redes son la vitrina" | Desarrollo Web | `02-vie-el-sitio-es-la-tienda/` | ✅ **publicado y verificado** · 102 impresiones al 5-oct |
-| **Lun 5-oct** | Perfil Ramón · singular | "El cuarto mito: la amonestación del primer año es una facultad, no un derecho" | Verifica y Cumple | `05-lun-cuarto-mito-amonestacion/` | ✅ **publicado y verificado** · tres rondas de ajuste |
-| **Mié 7-oct** | Perfil Ramón · singular | "Antes de pagar un panel de visibilidad en IA, lo que ya puedes medir gratis" (Search Console) | SEO / visibilidad en IA | `07-mie-visibilidad-en-ia-lo-que-se-mide/` | 🟡 **aprobado por Ramón el 5-oct, en cola.** Antes de publicar: releer la página de ayuda de Google y `/diagnostico/` en vivo |
-| **Vie 9-oct** (candidato) | Perfil Ramón · singular | Costco: el tráfico que llega desde IA es poco y convierte mejor | SEO / visibilidad en IA | — | ⬜ **dato verificado** en el transcript del 24-sep. **Falta la apertura**: Ramón descartó partir por la noticia. Tiene que abrir en la situación del lector ("si tu jefe o tu cliente te dice que el tráfico desde ChatGPT es muy poco...") |
+### El mensaje cerrado del mes (el ángulo nuevo, idea de Ramón)
 
-**Alternancia de servicios en el mes:** Desarrollo Web (2) → Verifica y Cumple (5) → visibilidad
-en IA (7) → visibilidad en IA (9, candidato). Si el 9 sale, son dos de visibilidad en IA seguidos:
-**conviene que el siguiente vuelva a Verifica y Cumple o a Desarrollo Web.**
+**La ley obliga a todos a arreglar su sitio; el sitio que SpindleLab construye ya viene sin esos
+huecos.** Cierra Verifica y Cumple con Desarrollo Web en una sola frase, y es lo único del mes que
+no se ha dicho nunca en público.
 
-### Banco de temas, con su requisito pendiente
+⚠️ **Dos precisiones antes de publicarlo, las dos importan:**
 
-Ninguno entra a un slot hasta que su requisito esté cumplido. Los requisitos no son trámite: dos
-posts se tuvieron que corregir en vivo por citar una fuente que no se había leído entera.
+- **No se dice "cumple la ley".** Es una afirmación legal que el propio Ramón ya acotó en público
+  el 5-oct: *"La política de privacidad la redacta un abogado"*. La forma honesta es que **los
+  huecos de construcción** (cómo cargan los scripts, qué pide un formulario y para qué, que la
+  política enlazada abra) no aparecen cuando el sitio se hace bien. El texto de la política sigue
+  siendo de un abogado.
+- **La página del servicio todavía no dice nada de esto.** `/servicios/desarrollo-web/` promete a
+  medida, sin plantillas ni WordPress, panel de edición y SEO técnico, y **no menciona la Ley
+  21.719 ni privacidad** (leída en vivo el 5-oct). Si el mensaje sale en redes, el prospecto hace
+  clic y no lo encuentra. **Encargo para el trabajo del sitio que ya está en curso**, no para
+  después.
 
-| Tema | Qué falta antes de poder escribirlo |
+### Cadencia y slots
+
+**Lunes y miércoles fijos, viernes oportunista.** Los dos primeros se planifican; el viernes sale
+del radar semanal de dolores del rubro, que es de donde salieron los mejores posts. Tres por
+semana solo se sostiene si uno de los tres es barato de producir.
+
+| Fecha | Tipo | Pieza | Estado |
+|---|---|---|---|
+| **lun 5-oct** | B | El cuarto mito: la amonestación es una facultad, no un derecho | ✅ publicado y verificado |
+| **mié 7-oct** | A | Antes de pagar un panel de visibilidad en IA, lo que ya puedes medir gratis | 🟡 aprobado, en cola. Releer la página de Google y `/diagnostico/` antes de publicar |
+| **vie 9-oct** | **D** | **Reel cara a cámara: el mensaje cerrado.** LinkedIn nativo primero, Instagram después | 🟡 **guion listo**, `09-vie-reel-cara-a-camara/guion.md`. Depende de que Ramón grabe |
+| lun 12-oct | C | El mensaje cerrado en texto, para quien no vio el video | ⬜ se escribe después del reel, para no pisarlo |
+| mié 14-oct | B | Cookies y la ley chilena | ⬜ **bloqueado**: hay que verificar qué exige de verdad la 21.719 sobre cookies antes de afirmar nada |
+| vie 16-oct | A | Del radar semanal | ⬜ |
+| lun 19-oct | B | El plazo del 1-dic a seis semanas, sin urgencia fabricada | ⬜ |
+| mié 21-oct | A | "Para que la IA te recomiende, tu sitio no basta" | ⬜ aprobado el 22-sep y pospuesto. **Necesita gancho nuevo**: comparte ideas con el del 7-oct |
+| vie 23-oct | C o D | Segundo video, solo si el primero rindió | ⬜ |
+| lun 26-oct | B | Cierre de la ventana de la ley | ⬜ |
+| mié 28-oct | A | Costco: el tráfico desde IA es poco y convierte mejor | ⬜ dato verificado en el transcript del 24-sep. **Falta la apertura**: Ramón descartó partir por la noticia |
+| vie 30-oct | — | Cierre de mes: publicado vs planificado, qué tipo rindió | ⬜ |
+
+**Alternancia verificada:** B → A → D → C → B → A → B → A → C/D → B → A. Sin dos del mismo tipo
+seguidos en ningún tramo.
+
+### El banco de temas y su requisito
+
+Ninguno entra a un slot hasta que su requisito esté cumplido. No es trámite: dos posts se
+corrigieron en vivo por citar una fuente que no se había leído entera.
+
+| Tema | Qué falta |
 |---|---|
+| Cookies y Verifica y Cumple (el hartazgo con los banners es buen gancho) | **Verificar qué exige la ley chilena sobre cookies.** Sin eso no se escribe |
 | La guía de contenido útil de Google (editada hacia el 2-oct, con una sección contra autores inventados) | **Leer el documento en Google**, no un resumen |
-| "Para que la IA te recomiende, tu sitio no basta" (aprobado el 22-sep, pospuesto) | **Cambiarle el gancho**: ya comparte ideas con el post del 7-oct |
-| Cookies y Verifica y Cumple (el hartazgo con los banners es buen gancho) | **Verificar qué exige la ley chilena sobre cookies**, antes de afirmar nada |
+| "Para que la IA te recomiende, tu sitio no basta" | Cambiarle el gancho |
 | El proyecto de postergación (boletín 18.623-07) | **Solo con novedad real.** Un post ajeno dice que también cambiaría el artículo sexto transitorio; no se pudo verificar, y el 5-oct se publicó sin esa línea |
 
 ### Los otros dos canales
 
-- **Página de empresa (4 seguidores).** No se revisa desde el 25-sep. Está sin decidir qué papel
-  juega: la propuesta sobre la mesa es que sea el archivo de lo que se reusa, no un canal con
-  cadencia propia. **Decisión de Ramón, pendiente.** Mientras no se decida, no se le programan
-  slots: con 4 seguidores, un post ahí no alcanza a nadie que el perfil personal no alcance mejor.
-- **Instagram (`spindlelab.cl`, 19 seguidores).** Desde el 25-sep **Verifica y Cumple tiene línea
-  editorial propia** y no usa el sistema oscuro de SpindleLab
-  (`encargos-otras-sesiones/verifica-campana-linea-propia.md`). Las piezas de esa campaña esperan
-  el ojo de Ramón. Dos cosas que solo puede hacer él y bloquean el canal:
-  - **El enlace del bio** (Instagram solo lo deja editar desde la app del teléfono). Hoy va a
+- **Página de empresa (4 seguidores).** Sin slots este mes. Con 4 seguidores, un post ahí no
+  alcanza a nadie que el perfil personal no alcance mejor. Queda como archivo de lo que se reusa.
+  Decisión formal de su papel: pendiente de Ramón, sin urgencia.
+- **Instagram (`spindlelab.cl`, 19 seguidores).** Verifica y Cumple tiene línea editorial propia
+  desde el 25-sep. El reel de lanzamiento (`2026-10-octubre-verifica/01-reel-llego-la-sheriff/`,
+  11 s, mudo) está renderizado y **sin publicar, esperando el ojo de Ramón**. Dos cosas que solo
+  puede hacer él y bloquean el canal:
+  - **El enlace del bio** (Instagram solo lo deja editar desde el teléfono). Hoy va a
     `spindlelab.cl/diagnostico`; para la campaña de Verifica tiene que ir a
-    `verifica.spindlelab.cl`, o el bio promete una cosa y el enlace lleva a otra.
-  - **La etiqueta "Perfil generado con IA"**, encendida y visible. En una consultoría que vende
-    criterio, conviene decidirlo a propósito.
+    `verifica.spindlelab.cl`.
+  - **La etiqueta "Perfil generado con IA"**, encendida y visible. Si el mes abre con su cara para
+    construir confianza, esa etiqueta dice lo contrario en el mismo perfil. **Es la razón por la
+    que el reel va primero a LinkedIn.**
+  - ❓ **Pendiente de aclarar:** si el congelamiento de gráficas incluye la línea propia de
+    Verifica, que por decisión del 25-sep no usa el sistema visual del sitio. Si no lo incluye, el
+    reel de la sheriff puede salir cuando Ramón lo apruebe.
 
-### Medición del mes (pendiente, punto 9.3 del encargo)
+### Medición (necesita navegador con la sesión de Ramón)
 
-- [ ] Impresiones del post del 5-oct y del 7-oct.
-- [ ] Chequeos corridos en Cloudflare esos dos días, para ver si el post mueve el chequeo.
-- [ ] Lectura honesta de la muestra: con estos volúmenes, los números sirven para elegir el
-      siguiente post, no para sacar leyes.
-
-### Lo que este mes no tiene, y es a propósito
-
-Sin tema mensual fijado por adelantado, sin pases de revisión en tanda, sin piezas visuales
-(todos los posts del mes son texto puro) y sin programador: Ramón publica cuando aprueba. El
-modelo de septiembre, con ventanas y tandas, se armó para un mes de piezas gráficas recicladas
-que al final no salió.
+- [ ] Impresiones del 5-oct y del 7-oct.
+- [ ] Chequeos corridos en Cloudflare esos días, para ver si el post mueve el chequeo.
+- [ ] Del reel: retención y si trae comentarios, no solo impresiones. Es la única forma de decidir
+      si va un segundo el 23-oct.
+- [ ] Lectura honesta: con estos volúmenes los números sirven para elegir el siguiente post, no
+      para sacar leyes.
 
 ---
 
