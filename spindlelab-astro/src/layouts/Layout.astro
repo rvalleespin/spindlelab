@@ -4,11 +4,15 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  /** Fondo del <body>. Por defecto el del sitio actual; la maqueta V3 usa tinta para que
+   *  no quede una costura visible bajo el hero (el body es #0E141B y el hero #131A22). */
+  bodyClass?: string;
 }
 
 const {
   title = 'Agencia de marketing con IA en Chile · SpindleLab',
   description = 'Auditamos tu sitio y tu presencia en IA para que ChatGPT, Gemini y Perplexity te recomienden antes que tu competencia. Diagnóstico gratis en 24 horas.',
+  bodyClass = 'bg-bg',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
@@ -81,13 +85,13 @@ const jsonLd = {
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Google tag (gtag.js): NO se carga hasta que haya consentimiento. Hasta el 22-sep se
+    {/* Google tag (gtag.js): NO se carga hasta que haya consentimiento. Hasta el 22-sep se
          cargaba siempre, con Consent Mode en denegado, y así igual le mandaba a Google un aviso
          sin cookies de cada página vista a quien había dicho que no (medido en la red). Ahora el
          archivo se pide recién cuando la persona acepta: __spindlelabInitGA, que también llama
          /js/consent-banner.js al pulsar Aceptar. La función gtag() se define igual aunque no
          haga nada, porque hay código que la llama directo (el generate_lead de /contacto/), y
-         sin ella lanzaría un error justo después de un envío exitoso. -->
+         sin ella lanzaría un error justo después de un envío exitoso. */}
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -116,9 +120,9 @@ const jsonLd = {
       if (__spindlelabConsent === 'granted') { __spindlelabInitGA(); }
     </script>
 
-    <!-- Meta Pixel Code — no tiene consent mode propio, así que no se inicializa hasta
+    {/* Meta Pixel Code — no tiene consent mode propio, así que no se inicializa hasta
          que haya consentimiento. Sin noscript: no se puede pedir consentimiento sin
-         JavaScript, así que tampoco se rastrea sin JavaScript. -->
+         JavaScript, así que tampoco se rastrea sin JavaScript. */}
     <script is:inline>
       function __spindlelabInitMeta() {
         if (window.__spindlelabMetaInited) return;
@@ -146,7 +150,7 @@ const jsonLd = {
         __spindlelabInitMeta();
       }
     </script>
-    <!-- End Meta Pixel Code -->
+    {/* End Meta Pixel Code */}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
@@ -174,15 +178,68 @@ const jsonLd = {
 
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
 
-    <!-- Inter alojada en el sitio (ver /fonts/inter.css): antes venía de Google Fonts, que
-         recibía la IP de cada visitante en cada página, aceptara o no las cookies. -->
+    <slot name="head" />
+
+    {/* Inter alojada en el sitio (ver /fonts/inter.css): antes venía de Google Fonts, que
+         recibía la IP de cada visitante en cada página, aceptara o no las cookies. */}
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/fonts/inter.css?v=1" />
+    {/* Gabarito se declara en global.css pero no se precargaba: en un hero donde el titular
+         ES la pieza, llega tarde y se ve el salto de Inter a Gabarito. */}
+    <link rel="preload" href="/fonts/Gabarito.woff2" as="font" type="font/woff2" crossorigin />
+    {/* Manrope, también alojada acá (ver /fonts/manrope.css). Es la tipografía del
+         sistema V3: titulares y cuerpo. */}
+    <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/fonts/manrope.css?v=1" />
   </head>
-  <body class="bg-bg">
+  <body class={bodyClass}>
     <slot />
 
-    <!-- Reveal al hacer scroll (con red de seguridad). -->
+    {/* Scroll suave (Lenis). Queda FUERA para quien pidió menos movimiento: secuestrar el
+         scroll es de las cosas que más molestan con vértigo o mareo por movimiento, y el
+         sitio ya respeta esa preferencia en el video y en los reveals. Si no se carga, el
+         scroll nativo sigue funcionando igual: es decoración, no estructura. */}
+    <script>
+      import Lenis from 'lenis';
+
+      const quiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!quiereMenosMovimiento) {
+        const lenis = new Lenis({
+          duration: 1.1,
+          easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+          // En táctil se deja el scroll nativo: el del dedo ya tiene su propia inercia y
+          // duplicarla se siente pegajoso, además del costo en INP en móvil.
+          syncTouch: false,
+        });
+
+        // Lenis pelea con scroll-behavior:smooth del CSS; con la clase .lenis puesta,
+        // global.css lo desactiva.
+        document.documentElement.classList.add('lenis');
+
+        const raf = (time: number) => {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        };
+        requestAnimationFrame(raf);
+
+        // Los anclas internas (#metodo, #top) las maneja Lenis para que el salto herede
+        // la misma inercia en vez de cortarse en seco.
+        document.querySelectorAll('a[href^="#"]').forEach((a) => {
+          a.addEventListener('click', (e) => {
+            const id = a.getAttribute('href');
+            if (!id || id === '#') return;
+            const destino = document.querySelector(id);
+            if (!destino) return;
+            e.preventDefault();
+            lenis.scrollTo(destino as HTMLElement, { offset: 0 });
+          });
+        });
+      }
+    </script>
+
+    {/* Reveal al hacer scroll (con red de seguridad). */}
     <script>
       const els = document.querySelectorAll('[data-reveal]');
       const reveal = (el: Element) => el.classList.add('is-visible');
@@ -208,7 +265,7 @@ const jsonLd = {
       }
     </script>
 
-    <!-- Videos de sección: reproducir solo en pantalla (carga diferida). -->
+    {/* Videos de sección: reproducir solo en pantalla (carga diferida). */}
     <script>
       const lazyVids = document.querySelectorAll('video[data-lazyvideo]');
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -240,13 +297,13 @@ const jsonLd = {
         #cookie-banner p{margin:0;font-size:13.5px;color:rgba(242,239,232,.72);line-height:1.5;max-width:640px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
         #cookie-banner a{color:#2FA99B;font-weight:600}
         #cookie-banner .cb-actions{display:flex;gap:10px;flex:none}
-        #cookie-banner button{font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;padding:10px 20px;border-radius:999px;cursor:pointer;border:1.5px solid transparent}
+        #cookie-banner button{font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;padding:10px 20px;border-radius:6px;cursor:pointer;border:1.5px solid transparent}
         #cookie-reject{background:transparent;color:#F2EFE8;border-color:rgba(247,245,240,.35)}
         #cookie-reject:hover{background:rgba(247,245,240,.08)}
         #cookie-accept{background:#F4F6F3;color:#12201A;border-color:#F4F6F3}
         #cookie-accept:hover{background:#FFFFFF}
         #cookie-banner[hidden]{display:none}
-        @media(max-width:680px){#cookie-banner .cb-inner{flex-direction:column;align-items:stretch}#cookie-banner .cb-actions{justify-content:flex-end}}
+        @media(max-width:680px){#cookie-banner{padding:12px 16px}#cookie-banner .cb-inner{flex-direction:column;align-items:stretch;gap:10px}#cookie-banner p{font-size:13px;line-height:1.45}#cookie-banner button{padding:9px 18px}#cookie-banner .cb-actions{justify-content:flex-end}}
       </style>
       <div class="cb-inner">
         <p>Usamos Google Analytics y Meta Pixel para entender cómo se usa este sitio. Puedes aceptarlos o rechazarlos. Más detalle en la <a href="/privacidad/">política de privacidad</a>.</p>

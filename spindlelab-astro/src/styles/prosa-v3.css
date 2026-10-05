@@ -1,0 +1,305 @@
+/* Tipografía de artículo para el blog v3.
+ *
+ * El HTML de cada post se conserva VERBATIM del publicado (encabezados, enlaces, listas,
+ * tablas, acordeones). Esta hoja lo viste, no lo reescribe: por eso estiliza por ELEMENTO
+ * y no por las clases del CSS viejo, que no se cargan acá.
+ *
+ * El cuerpo va sobre papel a propósito. Un artículo largo sobre fondo oscuro cansa, y el
+ * manual §04 define un sistema papel-dominante. El encabezado del post sí va en tinta:
+ * oscuro para entrar, claro para leer.
+ *
+ * Inventario real de lo que aparece dentro de los 7 artículos, para no dejar nada sin
+ * estilo: p, table/tr/td/th, strong, li/ul/ol, code, a, h1/h2/h3, details/summary,
+ * blockquote, img, nav (índice del artículo).
+ */
+
+.prosa-v3 {
+  color: rgb(19 17 14 / 0.78);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.prosa-v3 > * + * {
+  margin-top: 1.5rem;
+}
+
+/* El h1 viene DENTRO del artículo: es el titular de la página, no se duplica fuera.
+ *
+ * MÁS CHICO QUE EL DE UN CAMPO, A PROPÓSITO. Los campos llevan UNA palabra y aguantan
+ * 8,33vw. Los títulos de los posts son títulos reales de artículo — «AEO y GEO explicados
+ * para gerentes que no son técnicos» son 54 caracteres — y a 5,5rem se iban a tres
+ * líneas y se salían de la pantalla. A 3,25rem entran en dos líneas cómodas y siguen
+ * leyendo como titular. Un artículo no es un cartel. */
+/* MAYÚSCULAS, como el resto del v3.
+ *
+ * Acá bajé la caja el 29-sep y era el arreglo equivocado: Ramón no está en contra de las
+ * mayúsculas, lo que está largo es el texto. Las mayúsculas vuelven; lo que queda
+ * pendiente es acortar los titulares de artículo, que hoy llegan a 66 caracteres.
+ * Ese pendiente es de copy y tiene un costo que no es mío de decidir: el h1 del artículo
+ * es el titular publicado, atado al canonical y al JSON-LD.
+ *
+ * (nota anterior, que quedó superada)
+ *
+ * Las mayúsculas del v3 son para ETIQUETAS: la palabra única de un campo de color
+ * (DESARROLLO, VISIBILIDAD) y los rótulos chicos. Un título de artículo es una FRASE
+ * — «¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?» son 66
+ * caracteres y 11 palabras — y en mayúsculas de peso 800 deja de leerse como titular
+ * y se lee como un bloque macizo. Ramón lo dijo con la palabra exacta: grosero.
+ *
+ * No es cuestión de gusto, está medido en la referencia: de sus diez encabezados de
+ * 28px o más, CERO llevan mayúsculas forzadas, y su peso es 500, no 800. Acá se baja
+ * a 700, que es el punto donde el titular sigue pesando en una tipografía que en el
+ * resto del sitio va en 800.
+ *
+ * Las mayúsculas aprobadas el 27-sep no se tocan: siguen donde ganan, que es la
+ * palabra única a 8,33vw de los campos. */
+.prosa-v3 h1 {
+  color: #14110e;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(1.75rem, 3.6vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0 0 2.5rem;
+  max-width: 30ch;
+  text-wrap: balance;
+}
+
+/* El ancho es lo único que quedó del intento de bajarles la caja, y se queda porque
+ * sirve igual: el h2 más largo de los artículos mide 65 caracteres y con 24ch caía en
+ * tres líneas. A 34ch cae en dos, en mayúsculas lo mismo. */
+.prosa-v3 h2 {
+  color: #14110e;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(1.375rem, 2.8vw, 2.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-top: 3.5rem;
+  max-width: 34ch;
+  text-wrap: balance;
+}
+
+.prosa-v3 h3 {
+  color: #14110e;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin-top: 2.5rem;
+}
+
+.prosa-v3 p,
+.prosa-v3 li {
+  max-width: 68ch; /* manual §05: texto corrido ≤ 68 caracteres por línea */
+}
+
+.prosa-v3 a {
+  color: #14110e;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-color: rgb(19 17 14 / 0.3);
+  transition: text-decoration-color 0.2s;
+}
+.prosa-v3 a:hover {
+  text-decoration-color: #14110e;
+}
+.prosa-v3 a:focus-visible {
+  outline: 2px solid #14110e;
+  outline-offset: 2px;
+}
+
+.prosa-v3 strong,
+.prosa-v3 b {
+  color: #14110e;
+  font-weight: 700;
+}
+
+.prosa-v3 ul,
+.prosa-v3 ol {
+  padding-left: 1.25rem;
+}
+.prosa-v3 li + li {
+  margin-top: 0.6rem;
+}
+.prosa-v3 ul {
+  list-style: none;
+  padding-left: 0;
+}
+.prosa-v3 ul > li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+/* Viñeta como raya, no como punto: el punto es del wordmark y no se reparte por el texto. */
+.prosa-v3 ul > li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgb(19 17 14 / 0.3);
+}
+
+.prosa-v3 code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: rgb(19 17 14 / 0.06);
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+}
+
+.prosa-v3 blockquote {
+  border-left: 2px solid rgb(19 17 14 / 0.25);
+  padding-left: 1.25rem;
+  color: rgb(19 17 14 / 0.65);
+}
+
+.prosa-v3 img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* Tablas: se desbordan en móvil si no se las deja desplazar. */
+.prosa-v3 table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  display: block;
+  overflow-x: auto;
+}
+.prosa-v3 th,
+.prosa-v3 td {
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid rgb(19 17 14 / 0.15);
+  vertical-align: top;
+}
+.prosa-v3 th {
+  color: #14110e;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom-color: rgb(19 17 14 / 0.3);
+}
+
+/* Acordeones del FAQ. */
+.prosa-v3 details {
+  border-top: 1px solid rgb(19 17 14 / 0.18);
+  padding: 1.1rem 0;
+}
+.prosa-v3 details > * + * {
+  margin-top: 0.9rem;
+}
+.prosa-v3 summary {
+  color: #14110e;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+.prosa-v3 summary::-webkit-details-marker {
+  display: none;
+}
+.prosa-v3 summary::after {
+  content: '+';
+  float: right;
+  color: rgb(19 17 14 / 0.45);
+}
+.prosa-v3 details[open] summary::after {
+  content: '–';
+}
+.prosa-v3 summary:focus-visible {
+  outline: 2px solid #14110e;
+  outline-offset: 2px;
+}
+
+/* La miga del artículo se OCULTA: la página ya pone la suya, y además la del artículo
+ * apunta a las rutas del sitio vivo (/, /diagnostico/, /blog/), no a las de la maqueta.
+ * Dejarla visible daba dos migas de pan, una encima de la otra, diciendo cosas distintas. */
+.prosa-v3 nav.crumbs {
+  display: none;
+}
+
+/* Índice del artículo (cuando el post trae uno propio, que no es la miga). */
+.prosa-v3 nav {
+  border-top: 1px solid rgb(19 17 14 / 0.18);
+  border-bottom: 1px solid rgb(19 17 14 / 0.18);
+  padding: 1.25rem 0;
+  font-size: 0.95rem;
+}
+.prosa-v3 nav ul > li::before {
+  content: none;
+}
+.prosa-v3 nav ul > li {
+  padding-left: 0;
+}
+
+/* ==========================================================================
+   ÍNDICE DEL ARTÍCULO
+   ==========================================================================
+   Va sobre PAPEL, no sobre el lienzo negro, así que los colores son los del
+   documento. Contraste medido sobre #F7F5F0:
+     · texto del índice  #5B5A57  →  6,05:1
+     · sección actual    #14110E  → 17,3:1
+     · rótulo            #636260  →  5,59:1
+   La sección actual se distingue por COLOR y por una barra a la izquierda, no
+   solo por color: quien no distingue bien los grises igual ve cuál es.
+
+   REGLA DE DEGRADACIÓN: sin JS no hay «sección actual» y el índice queda como
+   una lista de enlaces que funciona igual. Lo que el JS agrega es saber dónde
+   vas, no el contenido. */
+.indice-articulo a {
+  color: #5b5a57;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  padding-left: 0.75rem;
+  margin-left: -0.75rem;
+  transition:
+    color 0.25s,
+    border-color 0.25s;
+}
+.indice-articulo a:hover {
+  color: #14110e;
+}
+.indice-articulo a:focus-visible {
+  outline: 2px solid #14110e;
+  outline-offset: 2px;
+}
+.indice-articulo a[aria-current='true'] {
+  color: #14110e;
+  font-weight: 700;
+  border-left-color: #14110e;
+}
+.indice-articulo .rotulo {
+  color: #636260;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.indice-articulo summary::-webkit-details-marker { display: none }
+.indice-articulo summary::after {
+  content: '+';
+  float: right;
+  font-weight: 800;
+}
+.indice-articulo details[open] summary::after { content: '–' }
+
+/* En escritorio el índice está siempre abierto y el <details> no se puede plegar:
+ * es una columna, no un acordeón. El acordeón es la forma que toma en móvil. */
+@media (min-width: 768px) {
+  .indice-articulo summary { list-style: none }
+  /* Las DOS reglas del marcador, no solo una: `details[open] summary::after` pesa más
+   * que `summary::after`, así que anular la segunda dejaba el «–» puesto en escritorio
+   * aunque ahí no haya nada que plegar. */
+  .indice-articulo summary::after,
+  .indice-articulo details[open] summary::after {
+    content: none;
+  }
+}
+
+/* El salto desde el índice no puede dejar el encabezado bajo la placa del nav. */
+.prosa-v3 h2 { scroll-margin-top: 7rem }
+
+@media (prefers-reduced-motion: reduce) {
+  .indice-articulo a { transition: none }
+}

@@ -1,0 +1,72 @@
+---
+// Pie del sistema V3. Compartido entre la home y las internas.
+// Los enlaces son <a href> reales, no menciones en texto: un pie con nombres de servicio
+// sin enlazar es enlazado interno perdido.
+import { EMAIL } from '../../consts';
+import { CONTACTO_V3 as CONTACTO, SERVICIOS_V3, CASA_V3 } from '../../consts-v3';
+import MovimientoV3 from './MovimientoV3.astro';
+
+const servicios = SERVICIOS_V3;
+
+const casa = CASA_V3;
+---
+
+{/* El sistema de movimiento del v3 viaja con el pie porque el pie está en las catorce
+    páginas del v3 y en ninguna otra. Así las internas se mueven igual que la home sin
+    repetir el script en cada archivo, y el sitio vivo no carga nada. */}
+<MovimientoV3 />
+
+<footer class="bg-noche text-humo text-sm px-6 md:px-medianil py-24 md:py-40">
+  <div class="grid gap-12 md:grid-cols-3">
+    <div>
+      <span class="font-wordmark text-2xl text-papel tracking-tight block">
+        SpindleLab<span class="text-gold">.</span>
+      </span>
+      <p class="mt-4 max-w-[34ch] leading-relaxed">
+        Estudio de diseño y SEO técnico en Santiago. Construimos el sitio y dejamos resuelto
+        lo que decide si aparece.
+      </p>
+      <a href={`mailto:${EMAIL}`} class="mt-4 inline-block hover:text-papel transition-colors">
+        {EMAIL}
+      </a>
+    </div>
+
+    <nav aria-label="Servicios">
+      <h2 class="text-humo text-xs font-bold uppercase m-0 mb-5" style="letter-spacing:0.16em">
+        Servicios
+      </h2>
+      <ul class="list-none p-0 m-0 space-y-3">
+        {
+          servicios.map((s) => (
+            <li>
+              <a href={s.href} class="hover:text-papel transition-colors">
+                {s.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <nav aria-label="La casa">
+      <h2 class="text-humo text-xs font-bold uppercase m-0 mb-5" style="letter-spacing:0.16em">
+        La casa
+      </h2>
+      <ul class="list-none p-0 m-0 space-y-3">
+        {
+          casa.map((s) => (
+            <li>
+              <a href={s.href} class="hover:text-papel transition-colors">
+                {s.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+
+  <p class="mt-14 pt-8 border-t filete text-humo text-xs">
+    Santiago, Chile · SpindleLab SpA
+  </p>
+</footer>

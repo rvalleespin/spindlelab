@@ -1,0 +1,290 @@
+---
+// LAS CINCO PÁGINAS DE SERVICIO restantes, en el lenguaje V3.
+//
+// Es UNA plantilla con datos, no cinco archivos: las cinco páginas publicadas resultaron
+// tener exactamente la misma forma (lista de lo que incluye → planes con precio → un bloque
+// de cuatro → FAQ → cierre). Cinco copias habrían significado arreglar cada defecto futuro
+// cinco veces.
+//
+// EL CONTENIDO NO SE RETIPEÓ. Está extraído de las páginas publicadas a
+// src/data/servicios-v3.json, que es como se evita que un precio se transcriba mal. Los
+// cinco precios se verificaron contra la lista vigente del encargo y calzan.
+//
+// EL SCHEMA TAMPOCO SE REINVENTÓ: el catálogo de ofertas y las migas salen del grafo
+// original. Layout emite organización/sitio/persona; acá van Service, BreadcrumbList y
+// FAQPage, sin duplicar @id.
+//
+// El bloque de cuatro cambia de sentido según la página (fases en acompañamiento, entregables
+// en auditoría, límites de lo que se promete en visibilidad en IA) pero comparte forma, así
+// que se renderiza igual y el h2 de cada una lo explica.
+import Layout from '../../../layouts/Layout.astro';
+import { caja } from '../../../utils/caja';
+import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
+import NavV3 from '../../../components/v3/NavV3.astro';
+import FooterV3 from '../../../components/v3/FooterV3.astro';
+
+import servicios from '../../../data/servicios-v3.json';
+import '../../../styles/campos-v3.css'; // tintes de color, filete, rotulo
+
+export function getStaticPaths() {
+  return Object.keys(servicios).map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const s = (servicios as Record<string, any>)[slug!];
+
+const [secIncluye, secPlanes, secBloques, , secCierre] = s.secciones;
+
+// EL COLOR DEL CAMPO VIAJA DESDE LA HOME. La home ofrece cuatro campos de color y cada
+// uno enlaza a su página; hasta ahora esas páginas llegaban en blanco y negro, o sea la
+// home prometía un color y al hacer clic desaparecía. Medido: la home es 32% color y
+// estas seis páginas eran 0%.
+// El par campo→servicio no se inventa acá, sale de oferta-v3.json:
+//   brasa → desarrollo-web · navy → visibilidad-en-ia y auditoria-seo-tecnica
+//   petróleo → acompanamiento-mensual · ciruela → redes-sociales y paid-media
+// Se tiñe UNA sección, la de los bloques numerados, igual que /v3/metodo/ ya hace con su
+// recorrido en navy. No la página entera: el lienzo sigue siendo el negro.
+const CAMPO: Record<string, string> = {
+  'visibilidad-en-ia': 'navy',
+  'auditoria-seo-tecnica': 'navy',
+  'acompanamiento-mensual': 'petroleo',
+  'redes-sociales': 'ciruela',
+  'paid-media': 'ciruela',
+};
+const campo = CAMPO[slug!] ?? '';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${s.canonical}#service`,
+      name: s.serviceName,
+      serviceType: s.serviceType,
+      provider: { '@id': 'https://spindlelab.cl/#org' },
+      areaServed: { '@type': 'Country', name: 'Chile' },
+      ...(s.offerCatalog ? { hasOfferCatalog: s.offerCatalog } : {}),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${s.canonical}#breadcrumb`,
+      itemListElement: s.breadcrumb,
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${s.canonical}#faq`,
+      mainEntity: s.faq.map((f: any) => ({
+        '@type': 'Question',
+        name: f.p,
+        acceptedAnswer: { '@type': 'Answer', text: f.r },
+      })),
+    },
+  ],
+};
+---
+
+<Layout title={s.title} description={s.description} bodyClass="bg-noche font-texto">
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <NavV3 />
+
+  <main class="text-papel">
+    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-28">
+      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
+        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
+        <span aria-hidden="true" class="mx-2">·</span>
+        <a href="/v3/servicios/" class="hover:text-papel transition-colors">Soluciones</a>
+        <span aria-hidden="true" class="mx-2">·</span>
+        <span class="text-humo">{s.h1}</span>
+      </nav>
+      <h1
+        data-entra
+        class:list={['font-extrabold m-0 max-w-[14ch]', caja(s.h1)]}
+        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.88; letter-spacing:0"
+      >
+        {s.h1}
+      </h1>
+
+      <div data-entra data-paso="1" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
+        <div class="md:col-span-5">
+          {s.lead && (
+        <p class="mt-10 text-papel text-xl md:text-2xl leading-relaxed max-w-prosa">{s.lead}</p>
+      )}
+        </div>
+        <div class="md:col-span-6 md:col-start-7">
+          <img
+            src={s.foto}
+            alt={s.fotoAlt}
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+            class="media-campo"
+          />
+        </div>
+      </div>
+
+    </section>
+
+    {/* QUÉ INCLUYE, en columnas. */}
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[18ch]', caja(secIncluye.h2)]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
+      >
+        {secIncluye.h2}
+      </h2>
+      <ul data-entra data-paso="1" class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          (secIncluye.lista ?? []).map((i: string) => (
+            <li class="border-t filete pt-5 text-noche/75 text-base leading-relaxed">
+              {i}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    {/* PLANES, en columnas, precios exactos a los publicados. */}
+    <section id="planes" class="bg-papel text-noche px-6 md:px-medianil pb-24 md:pb-36 scroll-mt-24">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 mb-3 max-w-[18ch]', caja(secPlanes.h2)]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
+      >
+        {secPlanes.h2}
+      </h2>
+      {secPlanes.nota && <p class="text-noche/65 text-sm mb-12 md:mb-16 max-w-prosa">{secPlanes.nota}</p>}
+      <div class="grid gap-x-8 lg:gap-x-12 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+        {
+          (secPlanes.planes ?? []).map((p: any) => (
+            <article class="flex flex-col border-t filete pt-6">
+              <h3
+                class:list={['font-extrabold m-0', caja(p.nombre)]}
+                style="font-size:clamp(1.125rem,1.7vw,1.5rem); line-height:1.05; letter-spacing:-0.03em"
+              >
+        {p.nombre}
+      </h3>
+              {p.tagline && <p class="mt-3 text-noche/65 text-base leading-relaxed">{p.tagline}</p>}
+              <ul class="list-none p-0 mt-5 mb-0 space-y-2">
+                {p.puntos.map((x: string) => (
+                  <li class="flex gap-2.5 text-noche/70 text-sm leading-relaxed">
+                    <span aria-hidden="true" class="text-noche/65">—</span>
+                    <span>{x}</span>
+                  </li>
+                ))}
+              </ul>
+              <span class="mt-auto pt-8 font-bold text-base">{p.precio}</span>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    {/* EL BLOQUE DE CUATRO. Cambia de sentido por página; el h2 lo dice. */}
+    <section class={`${campo ? 'tinte--' + campo + ' ' : ''}px-6 md:px-medianil py-32 md:py-seccion`}>
+      {/* Titular pegajoso. Mismo criterio que en el resto del v3: la sección es más alta
+          que la pantalla (entre 1.158 y 1.323px según el servicio, contra 900 de
+          viewport), así que el titular sostiene el contexto mientras se recorre la
+          lista. Donde el contenido sea corto, el sticky simplemente no llega a pegarse. */}
+      <div class="md:grid md:grid-cols-12 md:gap-x-8">
+        <div class="md:col-span-4">
+          <h2
+            data-entra
+            class:list={['font-extrabold m-0 mb-12 md:mb-0 md:sticky md:top-32', caja(secBloques.h2)]}
+            style="font-size:clamp(1.75rem, 3.4vw, 3.25rem); line-height:0.94; letter-spacing:0; text-wrap:balance"
+          >
+        {secBloques.h2}
+      </h2>
+        </div>
+        <div class="md:col-span-7 md:col-start-6 ✓">
+      <ol data-entra data-paso="1" class="list-none p-0 m-0 border-t filete">
+        {
+          (secBloques.bloques ?? []).map((b: any, i: number) => (
+            <li class="border-b filete py-7 md:py-9 flex flex-col md:flex-row gap-3 md:gap-8">
+              <span class="text-humo font-bold text-sm flex-none md:w-10" style="letter-spacing:0.16em">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span
+                class="font-extrabold uppercase flex-none md:w-[10em]"
+                style="font-size:clamp(1.25rem,2.2vw,1.875rem); line-height:1.05; letter-spacing:-0.03em"
+              >
+                {b.t}
+              </span>
+              <span class="text-humo text-lg leading-relaxed max-w-prosa">{b.d}</span>
+            </li>
+          ))
+        }
+      </ol>
+        </div>
+      </div>
+    </section>
+
+    {/* FAQ. El mismo contenido que alimenta el FAQPage del schema. */}
+    <section class="px-6 md:px-medianil pb-24 md:pb-36">
+      <div class="md:grid md:grid-cols-12 md:gap-x-8">
+        <div class="md:col-span-4">
+          <h2
+            data-entra
+            class:list={['font-extrabold m-0 mb-12 md:mb-0 md:sticky md:top-32', caja(s.secciones[3].h2)]}
+            style="font-size:clamp(1.75rem, 3.4vw, 3.25rem); line-height:0.94; letter-spacing:0; text-wrap:balance"
+          >
+        {s.secciones[3].h2}
+      </h2>
+        </div>
+        <div class="md:col-span-7 md:col-start-6">
+      <dl class="m-0 border-t filete">
+        {
+          s.faq.map((f: any) => (
+            <div class="border-b filete py-7 md:py-9 grid gap-3 md:grid-cols-[minmax(0,15rem)_1fr] md:gap-8">
+              <dt
+                class:list={['font-extrabold', caja(f.p)]}
+                style="font-size:clamp(1.125rem,1.7vw,1.5rem); line-height:1.1; letter-spacing:-0.03em"
+              >
+                  {f.p}
+                </dt>
+              <dd class="m-0 text-humo text-lg leading-relaxed max-w-prosa">{f.r}</dd>
+            </div>
+          ))
+        }
+      </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 max-w-[16ch]', caja(secCierre.h2)]}
+        style="font-size:clamp(2rem, 6.6vw, 7.5rem); line-height:0.88; letter-spacing:0; text-wrap:balance"
+      >
+        {secCierre.h2}
+      </h2>
+      {secCierre.parrafos?.[0] && (
+        <p class="mt-10 text-noche/65 text-xl leading-relaxed max-w-prosa">
+          {secCierre.parrafos[0]}
+        </p>
+      )}
+      <div class="mt-12 flex items-center gap-4 flex-wrap">
+        <a
+          href={CONTACTO}
+          class="rounded-v3 bg-noche hover:bg-black text-papel text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-noche"
+        >
+          Conversemos tu proyecto
+        </a>
+        <a
+          href="/v3/diagnostico/"
+          class="rounded-v3 border filete hover:border-noche text-noche text-sm font-bold px-8 py-4 transition-colors"
+        >
+          Chequeo gratis
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <FooterV3 />
+</Layout>

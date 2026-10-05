@@ -1,0 +1,340 @@
+---
+// PLANTILLA DE PÁGINA INTERNA — Desarrollo Web, en el lenguaje V3.
+//
+// Es la primera interna y sirve de molde para las otras 18. Se eligió esta porque es el
+// pilar del negocio y la que recibe al prospecto que viene a comprar un sitio.
+//
+// LO QUE HAY QUE SABER ANTES DE REPLICAR:
+// Las internas de producción NO son Astro: son HTML estático en public/ con su propio
+// assets/css/style.css escrito a mano. Esta página las reconstruye sobre el Layout + Tailwind
+// del sistema V3. El contenido es el REAL de la página publicada, no inventado.
+//
+// LA CAPA SEO SE CONSERVA. El grafo de producción trae 5 nodos (ProfessionalService, Person,
+// Service, BreadcrumbList, FAQPage). Acá se inyectan solo los 3 específicos de la página:
+// la organización y la persona ya las emite Layout.astro, y repetirlas duplicaría @id.
+// Las URLs del grafo apuntan a producción a propósito: es lo que iría al publicar.
+//
+// ⚠️ DEFECTO DE COPY ENCONTRADO EN PRODUCCIÓN: la respuesta a «¿Cuánto cuesta?» empieza con
+// «Sí.», que es un resto de una pregunta de sí/no anterior. Acá va sin ese «Sí»; hay que
+// corregirlo también en la página publicada.
+import Layout from '../../../layouts/Layout.astro';
+import { caja } from '../../../utils/caja';
+import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
+import NavV3 from '../../../components/v3/NavV3.astro';
+import FooterV3 from '../../../components/v3/FooterV3.astro';
+import '../../../styles/campos-v3.css'; // tintes de color, filete, rotulo
+
+
+const incluye = [
+  'Legible para motores de IA desde el primer commit: datos estructurados, contenido citable e indexación.',
+  'El mismo chequeo que corres gratis acá, pasado sobre tu sitio antes de entregarlo.',
+  'Un panel para editar textos e imágenes tú mismo, sin depender de nadie.',
+  'Código propio y diseño a medida, con control total del rendimiento.',
+  'Construcción con IA, revisión humana en cada fase antes de avanzar.',
+  'Dominio, SSL, analítica y 30 días de garantía post-lanzamiento.',
+];
+
+// Precios EXACTOS a los publicados. Todos + IVA.
+const planes = [
+  {
+    nombre: 'Página de Campaña',
+    precio: 'desde $390.000',
+    linea: 'Una página hecha para convertir la pauta que ya estás pagando.',
+    puntos: ['Una página, para una campaña y una oferta', 'Diseño a medida, sin plantilla', 'SEO técnico y medición desde el primer día', 'Entrega en ~1 semana'],
+  },
+  {
+    nombre: 'Sitio Esencial',
+    precio: 'desde $690.000',
+    linea: 'Un sitio a medida, listo para funcionar.',
+    puntos: ['Home y hasta 5 páginas', 'SEO técnico base: schema, velocidad, indexación', 'Un idioma', 'Entrega en ~3 semanas'],
+  },
+  {
+    nombre: 'Sitio Completo',
+    precio: 'desde $1.190.000',
+    linea: 'Más páginas y puesto a punto para que la IA te lea.',
+    puntos: ['Home y hasta 12 páginas', 'Blog o CMS que administras tú', 'SEO técnico y puesta a punto AEO/GEO', 'Uno o dos idiomas', 'Entrega en ~4 a 6 semanas'],
+  },
+  {
+    nombre: 'Plataforma a Medida',
+    precio: 'Se cotiza',
+    linea: 'Para proyectos con integraciones o lógica propia.',
+    puntos: ['Todo lo del Sitio Completo, y más', 'Páginas sin tope', 'Integraciones: CRM, reservas, pagos', 'Arquitectura propia', 'Multi-idioma'],
+  },
+];
+
+const fases = [
+  { n: '01', t: 'Descubrimiento', d: 'Conversamos sobre tu negocio, tu marca y qué necesita comunicar el sitio. Definimos la dirección de diseño con referentes concretos de tu rubro.' },
+  { n: '02', t: 'Diseño', d: 'Proponemos las páginas clave (home y una página tipo) antes de escribir una sola línea de código. Ajustamos hasta que el diseño te representa.' },
+  { n: '03', t: 'Desarrollo con IA', d: 'Construimos el sitio con el agente de desarrollo de SpindleLab, con supervisión técnica humana en cada avance. Sigues el progreso en una URL de prueba.' },
+  { n: '04', t: 'QA y contenido', d: 'Cargamos tu contenido final, probamos en distintos dispositivos, afinamos rendimiento y SEO, y hacemos las rondas de revisión incluidas en tu plan.' },
+  { n: '05', t: 'Lanzamiento', d: 'Configuramos dominio, SSL y analítica, y publicamos en producción. Quedas con 30 días de garantía para corregir errores de funcionamiento.' },
+];
+
+const faq = [
+  {
+    p: '¿Usan plantillas o WordPress?',
+    r: 'No. Cada sitio se construye con código propio, a medida. Sin temas genéricos ni page builders: control total sobre rendimiento, diseño y SEO técnico.',
+  },
+  {
+    p: '¿Cuánto cuesta?',
+    r: 'Cada pack tiene un precio de partida («desde»): Página de Campaña desde $390.000 + IVA, Sitio Esencial desde $690.000 + IVA y Sitio Completo desde $1.190.000 + IVA; la Plataforma a Medida se cotiza tras una reunión. El valor final se cierra tras el diagnóstico gratuito, según las páginas y funcionalidades que necesites. Sin sorpresas.',
+  },
+  {
+    p: '¿Cómo afecta el desarrollo con IA a la calidad?',
+    r: 'La ejecución asistida por IA reduce tiempos, no supervisión: cada fase pasa por revisión humana antes de avanzar a la siguiente. La velocidad se traduce en plazos más cortos, no en menos control de calidad.',
+  },
+  {
+    p: '¿El sitio incluye SEO?',
+    r: 'Sí, de base: rendimiento, datos estructurados y arquitectura pensados desde el diseño. Si además necesitas visibilidad en motores de IA, ese trabajo se profundiza con el servicio de Visibilidad en IA.',
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': 'https://spindlelab.cl/servicios/desarrollo-web/#service',
+      name: 'Desarrollo Web',
+      serviceType: 'Desarrollo web a medida',
+      provider: { '@id': 'https://spindlelab.cl/#org' },
+      areaServed: { '@type': 'Country', name: 'Chile' },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Planes de Desarrollo Web',
+        itemListElement: [
+          { '@type': 'Offer', name: 'Página de Campaña', description: 'Una página a medida pensada para una campaña y una oferta, con SEO técnico y medición desde el primer día. Entrega en ~1 semana.', priceSpecification: { '@type': 'PriceSpecification', minPrice: 390000, priceCurrency: 'CLP', valueAddedTaxIncluded: false } },
+          { '@type': 'Offer', name: 'Sitio Esencial', description: 'Home y hasta 5 páginas, SEO técnico base, un idioma. Entrega en ~3 semanas.', priceSpecification: { '@type': 'PriceSpecification', minPrice: 690000, priceCurrency: 'CLP', valueAddedTaxIncluded: false } },
+          { '@type': 'Offer', name: 'Sitio Completo', description: 'Home y hasta 12 páginas, blog/CMS, SEO técnico y puesta a punto AEO/GEO. Entrega en ~4 a 6 semanas.', priceSpecification: { '@type': 'PriceSpecification', minPrice: 1190000, priceCurrency: 'CLP', valueAddedTaxIncluded: false } },
+          { '@type': 'Offer', name: 'Plataforma a Medida', description: 'Todo lo del Sitio Completo y más: páginas sin tope, integraciones a medida, arquitectura propia, multi-idioma. Se cotiza tras una reunión.' },
+        ],
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://spindlelab.cl/servicios/desarrollo-web/#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
+        { '@type': 'ListItem', position: 2, name: 'Soluciones', item: 'https://spindlelab.cl/servicios/' },
+        { '@type': 'ListItem', position: 3, name: 'Desarrollo Web' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://spindlelab.cl/servicios/desarrollo-web/#faq',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.p,
+        acceptedAnswer: { '@type': 'Answer', text: f.r },
+      })),
+    },
+  ],
+};
+---
+
+<Layout
+  title="Desarrollo web que los motores de IA pueden leer · SpindleLab"
+  description="Sitios construidos para que los motores de IA puedan leerlos y citarlos, con el SEO técnico desde el primer commit. Lo compruebas con el chequeo gratis."
+  bodyClass="bg-noche font-texto"
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <NavV3 />
+
+  <main class="text-papel">
+    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-28">
+      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
+        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
+        <span aria-hidden="true" class="mx-2">·</span>
+        <a href="/v3/servicios/" class="hover:text-papel transition-colors">Soluciones</a>
+        <span aria-hidden="true" class="mx-2">·</span>
+        <span class="text-humo">Desarrollo Web</span>
+      </nav>
+      <h1
+        data-entra
+        class:list={['font-extrabold m-0', caja('Desarrollo web')]}
+        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.86; letter-spacing:0"
+      >
+        Desarrollo web
+      </h1>
+
+      <div data-entra data-paso="1" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
+        <div class="md:col-span-5">
+          <p class="m-0 text-papel text-xl md:text-2xl leading-relaxed">
+            A veces el problema no es lo que se audita: es lo que hay que reconstruir.
+            Construimos el sitio para que las máquinas que hoy recomiendan tu negocio
+            puedan leerlo, y te lo demostramos con el mismo chequeo sobre tu dominio.
+          </p>
+        </div>
+        <div class="md:col-span-6 md:col-start-7">
+          <img
+            src="/assets/img/hero-desarrollo-web.jpg"
+            alt="Pantalla de código durante el desarrollo de un sitio a medida"
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+            class="media-campo"
+          />
+        </div>
+      </div>
+
+    </section>
+
+    {/* QUÉ INCLUYE, en columnas. */}
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[16ch]', caja('Todo parte con esto')]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
+      >
+        Todo parte con esto
+      </h2>
+      <ul data-entra data-paso="1" class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          incluye.map((i) => (
+            <li class="border-t filete pt-5 text-noche/75 text-base leading-relaxed">
+              {i}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    {/* PLANES, en columnas, con los precios exactos. */}
+    <section id="planes" class="bg-papel text-noche px-6 md:px-medianil pb-24 md:pb-36 scroll-mt-24">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 mb-3', caja('Elige por dónde partir')]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
+      >
+        Elige por dónde partir
+      </h2>
+      <p data-entra data-paso="1" class="text-noche/65 text-sm mb-12 md:mb-16">
+        Valores en pesos, + IVA. El valor final se cierra tras el diagnóstico gratuito.
+      </p>
+      <div class="grid gap-x-8 lg:gap-x-12 gap-y-14 md:grid-cols-2 lg:grid-cols-4">
+        {
+          planes.map((p) => (
+            <article class="flex flex-col border-t filete pt-6">
+              <h3
+                class:list={['font-extrabold m-0', caja(p.nombre)]}
+                style="font-size:clamp(1.125rem,1.6vw,1.5rem); line-height:1.05; letter-spacing:-0.03em"
+              >
+        {p.nombre}
+      </h3>
+              <p class="mt-3 text-noche/65 text-base leading-relaxed">{p.linea}</p>
+              <ul class="list-none p-0 mt-5 mb-0 space-y-2">
+                {p.puntos.map((x) => (
+                  <li class="flex gap-2.5 text-noche/70 text-sm leading-relaxed">
+                    <span aria-hidden="true" class="text-noche/65">—</span>
+                    <span>{x}</span>
+                  </li>
+                ))}
+              </ul>
+              <span class="mt-auto pt-8 font-bold text-base">{p.precio}</span>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    {/* FASES. */}
+        {/* BRASA. Es el campo que en la home abre la oferta y el que enlaza a esta página.
+        Llegaba en blanco y negro: la home prometía el naranja y al hacer clic desaparecía. */}
+    <section class="tinte--brasa px-6 md:px-medianil py-32 md:py-seccion">   {/* Titular pegajoso: la sección es más alta que la pantalla, así que el titular
+          sostiene el contexto mientras se recorre la lista. Criterio, no gusto — donde la
+          sección cabe en pantalla el sticky no haría nada y el titular se queda plano. */}
+      <div class="md:grid md:grid-cols-12 md:gap-x-8">
+        <div class="md:col-span-4">
+          <h2
+            data-entra
+            class:list={['font-extrabold m-0 mb-12 md:mb-0 md:sticky md:top-32', caja('Cinco fases, apruebas cada una')]}
+            style="font-size:clamp(1.75rem, 3.4vw, 3.25rem); line-height:0.92; letter-spacing:0"
+          >
+        Cinco fases, apruebas cada una
+      </h2>
+        </div>
+        <div class="md:col-span-7 md:col-start-6">
+          <ol data-entra data-paso="1" class="list-none p-0 m-0 border-t filete">
+        {
+          fases.map((f) => (
+            <li class="border-b filete py-7 md:py-9 flex flex-col md:flex-row gap-3 md:gap-12">
+              <span class="text-humo font-bold text-sm flex-none md:w-16" style="letter-spacing:0.16em">
+                {f.n}
+              </span>
+              <span
+                class="font-extrabold uppercase flex-none md:w-[9em]"
+                style="font-size:clamp(1.25rem,2.2vw,1.875rem); line-height:1.05; letter-spacing:-0.03em"
+              >
+                {f.t}
+              </span>
+              <span class="text-humo text-lg leading-relaxed max-w-prosa">{f.d}</span>
+            </li>
+          ))
+        }
+      </ol>
+        </div>
+      </div>
+    </section>
+
+    {/* FAQ. Mismo contenido que alimenta el FAQPage del schema. */}
+    <section class="px-6 md:px-medianil pb-24 md:pb-36">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 mb-12 md:mb-16', caja('Sobre el desarrollo')]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
+      >
+        Sobre el desarrollo
+      </h2>
+      <dl class="m-0 border-t filete">
+        {
+          faq.map((f) => (
+            <div class="border-b filete py-7 md:py-9 grid gap-3 md:grid-cols-[minmax(0,22rem)_1fr] md:gap-12">
+              <dt
+                class:list={['font-extrabold', caja(f.p)]}
+                style="font-size:clamp(1.125rem,1.7vw,1.5rem); line-height:1.1; letter-spacing:-0.03em"
+              >
+                  {f.p}
+                </dt>
+              <dd class="m-0 text-humo text-lg leading-relaxed max-w-prosa">{f.r}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 max-w-[16ch]', caja('¿Qué necesita decir tu sitio?')]}
+        style="font-size:clamp(2rem, 7vw, 8rem); line-height:0.88; letter-spacing:0"
+      >
+        ¿Qué necesita decir tu sitio?
+      </h2>
+      <p data-entra data-paso="1" class="mt-10 text-noche/65 text-xl leading-relaxed max-w-prosa">
+        Si ya tienes uno, empezamos con el chequeo gratuito. Si partes de cero, conversemos
+        tu proyecto directamente.
+      </p>
+      <div class="mt-12 flex items-center gap-4 flex-wrap">
+        <a
+          href={CONTACTO}
+          class="rounded-v3 bg-noche hover:bg-black text-papel text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-noche"
+        >
+          Conversemos tu proyecto
+        </a>
+        <a
+          href="/v3/diagnostico/"
+          class="rounded-v3 border filete hover:border-noche text-noche text-sm font-bold px-8 py-4 transition-colors"
+        >
+          Chequeo gratis
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <FooterV3 />
+</Layout>

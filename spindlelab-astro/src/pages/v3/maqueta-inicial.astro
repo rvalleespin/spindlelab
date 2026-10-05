@@ -1,0 +1,25 @@
+---
+// Ruta de previsualización de la exploración del rebranding. Existe solo en la rama
+// claude/rebranding-webdev-exploracion para poder mirar el hero nuevo sin tocar la home.
+// noindex: es una maqueta, no una página del sitio.
+import Layout from '../../layouts/Layout.astro';
+import HeroV2 from '../../components/HeroV2.astro';
+---
+
+<Layout
+  title="Maqueta V2 · exploración rebranding · SpindleLab"
+  description="Maqueta interna para decidir. No es una página publicada."
+  bodyClass="bg-tinta"
+>
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <HeroV2 />
+
+  {/* Banda de contraste narrativo: el quiebre pasa a fondo papel. Va acá solo para
+       poder ver la transición de color que pide la dirección Driftime; el contenido
+       de esta sección todavía no está escrito. */}
+  <section class="bg-papel text-tinta px-6 sm:px-10 md:px-14 py-32 md:py-48">
+    <p class="font-display text-fluid-xl max-w-[18ch]" style="letter-spacing:-0.03em">
+      Tu sitio le responde a Google. No le responde a la IA.
+    </p>
+  </section>
+</Layout>

@@ -1,0 +1,240 @@
+---
+// ÍNDICE DE SERVICIOS en el lenguaje v3.
+//
+// QUÉ CAMBIA RESPECTO DE LO PUBLICADO: la página se llama «Tu motor de adquisición
+// digital» y ordena por tipo de entregable («Visibilidad: donde ganamos la pelea», «Las
+// piezas que amplían y convierten», «Qué entra en el motor»). El brief v3 reemplaza ese
+// encuadre y ordena por el MOMENTO del cliente, que es además lo que ya hace la home.
+// El contenido real se conserva; cambia el orden y los rótulos.
+//
+// LOS PRECIOS Y EL ORDEN VIVEN EN src/data/oferta-v3.json, compartido con la home. Estaban
+// escritos a mano en los dos lados y esa es la forma clásica de que un precio quede
+// distinto en una página y nadie lo note hasta que un cliente lo ve.
+//
+// El límite «dentro / fuera» va verbatim: es honesto y es lo que evita malentendidos de
+// alcance. El FAQ no se duplica acá; vive en cada página de servicio.
+import Layout from '../../../layouts/Layout.astro';
+import { caja } from '../../../utils/caja';
+import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
+import NavV3 from '../../../components/v3/NavV3.astro';
+import FooterV3 from '../../../components/v3/FooterV3.astro';
+
+import oferta from '../../../data/oferta-v3.json';
+import '../../../styles/campos-v3.css'; // tintes de color, filete, rotulo
+
+const url = 'https://spindlelab.cl/servicios/';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
+        { '@type': 'ListItem', position: 2, name: 'Soluciones' },
+      ],
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#itemlist`,
+      itemListElement: [
+        ...oferta.momentos.flatMap((m: any) => m.items),
+        ...oferta.tambien,
+      ].map((s: any, i: number) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: s.n,
+        url: `https://spindlelab.cl${s.href.replace('/v3', '')}`,
+      })),
+    },
+  ],
+};
+---
+
+<Layout
+  title="Soluciones: SEO técnico, visibilidad en IA y desarrollo web · SpindleLab"
+  description="SEO técnico, visibilidad en motores de IA y desarrollo web a medida, con precios publicados. Chequeo gratis antes de contratar nada."
+  bodyClass="bg-noche font-texto"
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <NavV3 />
+
+  <main class="text-papel">
+    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-16 md:pb-20">
+      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
+        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
+        <span aria-hidden="true" class="mx-2">·</span>
+        <span class="text-humo">Soluciones</span>
+      </nav>
+      <h1
+        data-entra
+        class:list={['font-extrabold m-0', caja('Qué hacemos')]}
+        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.9; letter-spacing:0"
+      >
+        Qué hacemos
+      </h1>
+
+      <div data-entra data-paso="1" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
+        <div class="md:col-span-5">
+          <p class="m-0 text-papel text-xl md:text-2xl leading-relaxed">
+            El centro es tu sitio. Lo construimos para que las máquinas que hoy
+            recomiendan tu negocio puedan leerlo, y eso se comprueba sobre tu propio
+            dominio. Si ya tienes sitio y no lo vas a rehacer, hay una puerta para eso.
+          </p>
+        </div>
+        <div class="md:col-span-6 md:col-start-7">
+          <img
+            src={'/assets/img/hero-servicios.jpg'}
+            alt={'Equipo revisando el trabajo en pantalla'}
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+            class="media-campo"
+          />
+        </div>
+      </div>
+
+    </section>
+
+    {/* ORDENADO POR EL MOMENTO DEL CLIENTE, igual que la home. */}
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 mb-4 max-w-[16ch]', caja('¿Por dónde te toca partir?')]}
+        style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0"
+      >
+        ¿Por dónde te toca partir?
+      </h2>
+      <p data-entra data-paso="1" class="text-noche/65 text-sm mb-12 md:mb-16 max-w-prosa">
+        Valores en pesos, + IVA. Los publicamos a propósito: la mayoría del rubro no lo hace.
+      </p>
+
+      <div class="grid gap-x-8 lg:gap-x-12 gap-y-14 lg:grid-cols-3">
+        {
+          oferta.momentos.map((m: any) => (
+            <div class="flex flex-col border-t filete pt-6">
+              <h3
+                class:list={['font-extrabold m-0 max-w-[18ch]', caja(m.momento)]}
+                style="font-size:clamp(1.0625rem,1.5vw,1.375rem); line-height:1.15; letter-spacing:-0.02em"
+              >
+        {m.momento}
+      </h3>
+              <ul class="list-none p-0 mt-6 mb-0 space-y-7 flex-1">
+                {m.items.map((it: any) => (
+                  <li>
+                    <a href={it.href} class="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-noche">
+                      <span class="block font-bold text-lg group-hover:opacity-55 transition-opacity">{it.n}</span>
+                      <span class="block mt-2 text-noche/65 text-sm leading-relaxed">{it.d}</span>
+                      <span class="block mt-2 font-bold text-sm">{it.p}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              {m.nota && <p class="mt-6 text-noche/65 text-sm leading-relaxed">{m.nota}</p>}
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="mt-16 pt-8 border-t filete">
+        <span class="text-noche/65 text-xs font-bold uppercase block mb-6" style="letter-spacing:0.16em">
+          También
+        </span>
+        <ul class="list-none p-0 m-0 grid gap-x-10 gap-y-7 sm:grid-cols-2">
+          {
+            oferta.tambien.map((t: any) => (
+              <li>
+                <a href={t.href} class="group block">
+                  <span class="block font-bold group-hover:opacity-55 transition-opacity">{t.n}</span>
+                  <span class="block mt-1.5 text-noche/65 text-sm leading-relaxed">{t.d}</span>
+                  <span class="block mt-1.5 font-bold text-sm">{t.p}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    {/* EL LÍMITE, verbatim. Decir qué NO se hace evita el malentendido de alcance. */}
+    <section class="tinte--navy px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 mb-12 md:mb-16', caja('Qué hacemos y qué no')]}
+        style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0"
+      >
+        Qué hacemos y qué no
+      </h2>
+      <div data-entra data-paso="1" class="grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-2">
+        <div class="border-t filete pt-6">
+          <h3 class:list={['font-extrabold m-0 text-xl', caja('Lo hacemos nosotros')]} style="letter-spacing:-0.02em">
+        Lo hacemos nosotros
+      </h3>
+          <ul class="list-none p-0 mt-5 mb-0 space-y-3">
+            {
+              oferta.dentro.map((i: string) => (
+                <li class="flex gap-2.5 text-humo text-base leading-relaxed">
+                  <span aria-hidden="true">—</span>
+                  <span>{i}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="border-t filete pt-6">
+          <h3 class:list={['font-extrabold m-0 text-xl', caja('Lo pones tú')]} style="letter-spacing:-0.02em">
+        Lo pones tú
+      </h3>
+          <ul class="list-none p-0 mt-5 mb-0 space-y-3">
+            {
+              oferta.fuera.map((i: string) => (
+                <li class="flex gap-2.5 text-humo text-base leading-relaxed">
+                  <span aria-hidden="true">—</span>
+                  <span>{i}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="mt-6 text-humo text-sm leading-relaxed">
+            Si no lo tienes, te conectamos con partners.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 max-w-[15ch]', caja('Empieza por el chequeo')]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
+      >
+        Empieza por el chequeo
+      </h2>
+      <p data-entra data-paso="1" class="mt-8 text-humo text-xl leading-relaxed max-w-prosa">
+        Revisamos tu sitio, tu competencia y tu presencia en IA. Sin costo y sin compromiso.
+      </p>
+      <div class="mt-12 flex items-center gap-4 flex-wrap">
+        <a
+          href="/v3/#chequeo"
+          class="rounded-v3 bg-papel hover:bg-white text-noche text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+        >
+          Correr el chequeo
+        </a>
+        <a
+          href={CONTACTO}
+          class="rounded-v3 border filete hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
+        >
+          Conversemos tu proyecto
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <FooterV3 />
+</Layout>

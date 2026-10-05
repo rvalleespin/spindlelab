@@ -1,0 +1,245 @@
+---
+// CONTACTO en el lenguaje V3. Ritmo de color: tinta → ciruela → papel.
+//
+// EL FORMULARIO VA VERBATIM en lo que importa: mismos name, mismos id, el honeypot
+// (botcheck), los tres campos UTM ocultos y la casilla de consentimiento. Lo único que
+// cambia es el estilo. Reimplementar esto es como se rompe la captación de leads sin
+// que nadie se entere hasta que dejan de llegar correos.
+//
+// El script tampoco se reescribió: vive en /assets/js/v3-contacto.js, sacado tal cual de
+// la página publicada. Necesita .contact-form, #f-utm-source/medium/campaign,
+// .form-status y .form-success. Esos nombres NO se tocan.
+//
+// Un cambio deliberado: en producción el botón es `btn gold`. Acá no, porque el dorado de
+// la vista ya lo gasta el punto del wordmark (manual §02 y §06).
+import Layout from '../../layouts/Layout.astro';
+import { caja } from '../../utils/caja';
+import NavV3 from '../../components/v3/NavV3.astro';
+import FooterV3 from '../../components/v3/FooterV3.astro';
+import paginas from '../../data/paginas-v3.json';
+import '../../styles/campos-v3.css'; // tintes de color, filete, rotulo
+
+const s = (paginas as Record<string, any>).contacto;
+const [proyecto, pasos, antes] = s.secciones;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${s.canonical}#breadcrumb`,
+      itemListElement: s.breadcrumb ?? [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
+        { '@type': 'ListItem', position: 2, name: 'Contacto' },
+      ],
+    },
+    ...(s.faq?.length
+      ? [{
+          '@type': 'FAQPage',
+          '@id': `${s.canonical}#faq`,
+          mainEntity: s.faq.map((f: any) => ({
+            '@type': 'Question',
+            name: f.p,
+            acceptedAnswer: { '@type': 'Answer', text: f.r },
+          })),
+        }]
+      : []),
+  ],
+};
+
+const campo = 'w-full bg-transparent border filete rounded-lg px-4 py-3 text-papel placeholder:text-humo outline-none focus-visible:border-papel focus-visible:bg-white/[0.04] transition-colors';
+const etiqueta = 'block text-humo text-xs font-bold uppercase mb-2';
+---
+
+<Layout title={s.title} description={s.description} bodyClass="bg-noche font-texto">
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <NavV3 />
+
+  <main class="text-papel">
+    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-48 pb-16 md:pb-20">
+      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
+        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
+        <span aria-hidden="true" class="mx-2">·</span>
+        <span class="text-humo">Contacto</span>
+      </nav>
+      <h1
+        data-entra
+        class:list={['font-extrabold m-0 max-w-[13ch]', caja(s.h1)]}
+        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.88; letter-spacing:0"
+      >
+        {s.h1}
+      </h1>
+
+      <div data-entra data-paso="1" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
+        <div class="md:col-span-5">
+          {s.lead && <p class="m-0 text-papel text-xl md:text-2xl leading-relaxed">{s.lead}</p>}
+        </div>
+        <div class="md:col-span-6 md:col-start-7">
+          <img
+            src={s.foto}
+            alt={s.fotoAlt}
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+            class="media-campo"
+          />
+        </div>
+      </div>
+
+    </section>
+
+    <section class="px-6 md:px-medianil pb-24 md:pb-36">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 mb-10 md:mb-14 max-w-[16ch]', caja(proyecto.h2)]}
+        style="font-size:clamp(1.5rem, 4vw, 3.25rem); line-height:0.95; letter-spacing:0"
+      >
+        {proyecto.h2}
+      </h2>
+
+      <form
+        class="contact-form max-w-2xl"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+      >
+        <input type="hidden" name="access_key" value="f3a309f5-cbe6-4cf1-b77f-cfd0ee92685f" />
+        <input type="hidden" name="subject" value="Nuevo contacto desde spindlelab.cl" />
+        <input type="hidden" name="from_name" value="Formulario spindlelab.cl" />
+        {/* Honeypot: invisible para personas, tentador para bots. No quitar. */}
+        <input
+          type="checkbox"
+          name="botcheck"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+          class="hidden"
+        />
+
+        <div class="mb-6">
+          <label for="f-nombre" class={etiqueta} style="letter-spacing:0.14em">Nombre</label>
+          <input type="text" id="f-nombre" name="Nombre" autocomplete="name" required class={campo} />
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 mb-6">
+          <div>
+            <label for="f-email" class={etiqueta} style="letter-spacing:0.14em">Email</label>
+            <input type="email" id="f-email" name="Email" autocomplete="email" required class={campo} />
+          </div>
+          <div>
+            <label for="f-sitio" class={etiqueta} style="letter-spacing:0.14em">Sitio web</label>
+            <input type="text" id="f-sitio" name="Sitio web" placeholder="tuempresa.cl" autocomplete="url" required class={campo} />
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label for="f-mensaje" class={etiqueta} style="letter-spacing:0.14em">
+            Cuéntanos brevemente <span class="text-humo normal-case">(opcional)</span>
+          </label>
+          <textarea
+            id="f-mensaje"
+            name="Mensaje"
+            rows="4"
+            placeholder="Qué hace tu empresa, qué te preocupa de tu sitio..."
+            class={campo}></textarea>
+        </div>
+
+        {/* Los rellena el script con los UTM de la visita. */}
+        <input type="hidden" name="UTM Source" id="f-utm-source" />
+        <input type="hidden" name="UTM Medium" id="f-utm-medium" />
+        <input type="hidden" name="UTM Campaign" id="f-utm-campaign" />
+
+        <div class="mb-8">
+          <label class="flex items-start gap-3 text-humo text-sm leading-relaxed cursor-pointer">
+            <input
+              type="checkbox"
+              id="f-consiento"
+              name="Consiento"
+              required
+              class="mt-1 flex-none w-4 h-4 accent-papel"
+            />
+            <span>
+              Acepto que estos datos se usen para responder mi solicitud, según la
+              <a href="/privacidad/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-papel">
+                política de privacidad</a>.
+            </span>
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          class="rounded-v3 bg-papel hover:bg-white text-noche text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+        >
+          Enviar
+        </button>
+        <p class="form-status mt-5 text-humo text-sm" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    {/* CAMPO CIRUELA: los tres pasos. */}
+    <section class="tinte--ciruela px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[16ch]', caja(pasos.h2)]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
+      >
+        {pasos.h2}
+      </h2>
+      <div data-entra data-paso="1" class="grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-3">
+        {
+          (pasos.bloques ?? []).map((b: any, i: number) => (
+            <article class="border-t filete pt-6">
+              <span class="text-humo font-bold text-sm block mb-4" style="letter-spacing:0.16em">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <h3
+                class:list={['font-extrabold m-0', caja(b.t)]}
+                style="font-size:clamp(1.125rem,1.8vw,1.625rem); line-height:1.05; letter-spacing:-0.03em"
+              >
+        {b.t}
+      </h3>
+              {b.d && <p class="mt-4 text-humo text-base leading-relaxed">{b.d}</p>}
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 mb-10 md:mb-14', caja(antes.h2)]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
+      >
+        {antes.h2}
+      </h2>
+      {s.faq?.length ? (
+        <dl class="m-0 border-t filete">
+          {s.faq.map((f: any) => (
+            <div class="border-b filete py-7 grid gap-3 md:grid-cols-[minmax(0,22rem)_1fr] md:gap-12">
+              <dt
+                class:list={['font-extrabold', caja(f.p)]}
+                style="font-size:clamp(1.0625rem,1.6vw,1.375rem); line-height:1.1; letter-spacing:-0.03em"
+              >
+                  {f.p}
+                </dt>
+              <dd class="m-0 text-noche/65 text-lg leading-relaxed max-w-prosa">{f.r}</dd>
+            </div>
+          ))}
+        </dl>
+      ) : (
+        antes.parrafos?.[0] && (
+          <p class="text-noche/65 text-xl leading-relaxed max-w-prosa">{antes.parrafos[0]}</p>
+        )
+      )}
+    </section>
+  </main>
+
+  <FooterV3 />
+
+  <script src="/assets/js/v3-contacto.js" is:inline defer></script>
+</Layout>

@@ -1,0 +1,754 @@
+---
+// HOME v3 — reestructurada según brief-textos-estructura-sitio-v3.md (27-sep).
+//
+// EL CAMBIO DE FONDO: el chequeo deja de ser la página /diagnostico/ y pasa a ser el hero.
+// El visitante comprueba su propio problema antes de leer una línea de venta. Eso es
+// «No te prometo. Te muestro» como arquitectura, no como frase en una sección de marca.
+//
+// POR QUÉ, con lo verificado en las dos fichas de competencia del 27-sep:
+//   · Las dos agencias revisadas prometen y no pueden demostrar nada antes de cobrar.
+//   · Ninguna pasa de 51/100 en el chequeo propio; las dos tienen CERO datos estructurados.
+//   · En desarrollo web a secas, Agencia Bull gana por historia, clientes y escala. La ficha
+//     lo dice sin rodeos: el pivote solo se sostiene si el AEO va ADELANTE, no escondido.
+// Por eso el instrumento va primero y la obra inmediatamente después: la prueba abre, el
+// oficio remata. No es una cosa o la otra.
+//
+// LOS TEXTOS del brief son propuestas de trabajo, no copy final (lo dice el propio brief:
+// Renata pasa el tono, Ramón aprueba).
+//
+// Reglas que NO se tocan y acá se respetan:
+//   · Precios EXACTAMENTE los vigentes. Cambia el orden y el encuadre, no el número.
+//   · No se promete monitoreo continuo de menciones en IA (capacidad-servicios.md ❌).
+//   · Cero prueba social inventada. El 67 de 69 sale de corridas reales del chequeo
+//     (marketing/metricas/corridas-chequeo-2026-08-31.md), verificado antes de ponerlo.
+//   · Ningún competidor se nombra. El patrón se cuenta en abstracto.
+//   · Un solo dorado por vista: el punto del wordmark, fijo en la nav.
+//
+// EL CHEQUEO ES LA HERRAMIENTA REAL, no una imitación: mismos id que exige el script
+// (chq-form, chq-dominio, chq-btn, chq-out, chq-error), mismo /api/chequeo.
+import Layout from '../../layouts/Layout.astro';
+import { caja } from '../../utils/caja';
+import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
+import NavV3 from '../../components/v3/NavV3.astro';
+import FooterV3 from '../../components/v3/FooterV3.astro';
+
+import '../../styles/chequeo-v3.css';
+import '../../styles/campos-v3.css';
+import oferta from '../../data/oferta-v3.json';
+import obra from '../../data/obra-v3.json';
+
+// El orden por momento y los PRECIOS viven en data/oferta-v3.json, compartido con el
+// indice de servicios. Estaban escritos a mano en los dos lados, que es como un precio
+// queda distinto en una pagina y nadie lo nota.
+const { momentos, tambien, tambienPanel } = oferta;
+
+// LA TIRA SALE DEL MISMO DATO QUE /v3/trabajo/, no de una lista aparte. Escrita a mano en
+// los dos lados es como una pieza queda distinta en una página y nadie lo nota.
+//
+// VOLVIÓ A CUATRO, y ahora las cuatro son reales. El 29-sep habían bajado a dos porque las
+// otras dos capturas tenían miniaturas rotas adentro: eran copias internas tomadas con las
+// fotos sin cargar. Con el permiso de caso público dado por Bernardo el 30-sep se
+// recapturó desde los sitios vivos, así que ya no hay copias internas en juego.
+//
+// Usa el recorte ALTO (3:4) porque la tira es vertical; el índice de trabajo usa el ancho
+// (16:9). Son dos capturas por sitio, no una escalada.
+const tira = obra.casos.map((c: any) => ({ src: c.tira, alt: c.alt, n: c.n }));
+
+
+const pasos = [
+  { n: '01', t: 'Miramos', d: 'Revisamos tu sitio, tu competencia y qué responde la IA cuando preguntan por tu rubro. Sale un documento de una página, no una reunión.' },
+  { n: '02', t: 'Priorizamos', d: 'De todo lo que se puede arreglar, decidimos qué mueve la aguja y qué puede esperar. Te decimos también lo que no necesitas.' },
+  { n: '03', t: 'Construimos', d: 'Diseño y desarrollo, con la estructura técnica incorporada. No es una capa que se agrega al final.' },
+  { n: '04', t: 'Medimos', d: 'Qué cambió y qué no. Si algo no rindió, se dice y se corrige.' },
+];
+---
+
+<Layout
+  title="Maqueta v3 · home con el chequeo en el hero · exploración rebranding"
+  description="Maqueta interna para decidir. No es una página publicada."
+  bodyClass="bg-noche font-texto"
+>
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+
+  <NavV3 />
+
+  <main class="text-papel">
+    {/* BLOQUE 1 · EL HERO AFIRMA, Y EL INSTRUMENTO LO PRUEBA.
+         ================================================================================
+         CAMBIO DE FUNCIÓN, no de redacción. Hasta el 29-sep el h1 era «¿Te menciona la
+         IA?»: una pregunta, con el formulario debajo como su respuesta. Funcionaba, pero
+         declaraba que el negocio se trata de la IA, y eso es exactamente lo que había que
+         mover.
+
+         NO HAY UNA CIFRA DE ESTO Y NO CONVIENE INVENTARLE UNA. Acá decía «55 % del alto
+         con marco de IA contra 31 % de desarrollo», heredado de una sesión anterior que
+         no dejó el método escrito. Se intentó reproducir con dos métodos distintos y
+         dieron 45/13 y 32/56. Los tres números miden la misma página. La diferencia está
+         en cómo se clasifica una sección mixta, que es casi toda la página, así que el
+         porcentaje es un artefacto del método y no un hecho del sitio. Lo que sí se
+         sostiene sin medir: el titular más grande preguntaba por la IA, y ahora no.
+
+         Ahora el h1 afirma qué es la casa y el formulario pasa de respuesta a PRUEBA de
+         esa afirmación. Es un cambio de papel del instrumento, y conviene tenerlo escrito
+         porque no se ve en el diff: el mismo formulario, en el mismo sitio, ya no está
+         contestando nada.
+
+         «Eje» no es una metáfora nueva: es el sostén del nombre según el manual §06b
+         (spindle = eje/husillo, la pieza que gira y transmite el movimiento), y la palabra
+         ya se usa cinco veces en el sitio sin que el hero la hubiera presentado nunca.
+
+         NO DICE «MOTOR» a propósito, aunque la idea sea esa. La razón que estaba escrita
+         acá era falsa y la verifiqué después: decía que el bloque del problema abre con
+         «Los motores no citan sitios», y esa frase NO EXISTE en el sitio; ese bloque abre
+         con «No es un mal sitio.». La razón real es otra y sigue en pie, ahora contada
+         con su método: sobre el texto visible ya construido de las 21 páginas reales del
+         v3 (sin las maquetas a/b/c ni maqueta-inicial), «motores de IA» aparece 24 veces
+         y «motor de adquisición» una sola. En este sitio «motor» quiere decir buscador
+         casi siempre. Meter la palabra en el titular más grande para estrenarle un
+         tercer significado es lo que había que evitar.
+
+         Titular elegido por Ramón el 29-sep entre ocho candidatos.
+
+         LA BAJADA COSTÓ CUATRO INTENTOS Y LOS TRES PRIMEROS FALLARON POR COSAS DISTINTAS.
+         Va anotado entero porque el patrón es el aprendizaje, no el texto final.
+
+           1º  «…termina en tu sitio, y ahí la primera que lee no es una persona: es la
+               máquina que responde cuando alguien pregunta por tu rubro.»
+               Ramón: demasiado larga. Cinco líneas en escritorio, nueve en teléfono, y
+               empujaba el botón del chequeo debajo del aviso de cookies.
+
+           2º  Lo mismo, acortado. Ramón: «la redacción está muy extraña y no se entiende
+               bien». Dos defectos concretos, no de gusto:
+                 · «para que lleguen» no dice A DÓNDE. El verbo quedaba sin destino.
+                 · «la primera que lee» concuerda en femenino con «máquina», que aparece
+                   recién en la frase siguiente. Se lee como acertijo.
+
+           3º  «Estás pagando para que lleguen, y todo eso lleva al mismo lugar: tu sitio.»
+               Ramón: redundante, y tenía razón. «lleguen» y «lleva al mismo lugar» son el
+               mismo movimiento dicho dos veces. Se pliega en «lleguen a tu sitio» y sobra
+               media frase.
+
+         LA LECCIÓN, PARA QUIEN TOQUE ESTO DESPUÉS: el texto bueno ya estaba escrito y
+         publicado. Los tres intentos fueron paráfrasis mías del post de Instagram del
+         1-sep-2026 (corpus de voz, §2), y cada paráfrasis rompió algo que el original
+         tenía bien:
+
+           «Estás pagando para que lleguen. Meta empuja. Google empuja. Los dos llevan al
+            mismo lugar: tu sitio. Y ahí se corta el circuito. Porque tu sitio está escrito
+            para personas. Pero cada vez más, el primero en llegar no es una persona […].
+            Si esa máquina no puede leerte, entenderte ni citarte, la energía no pasa.»
+
+         De ahí salen las tres piezas de la versión que quedó: el arranque literal, la
+         CONDICIÓN («si no te puede leer»), que es lo que hace que la frase no sea un
+         non sequitur, y la imagen del corte, que Ramón pidió como «camino roto» y en su
+         post es «ahí se corta el circuito».
+
+         NO REESCRIBIR ESTO DE CERO. Partir del corpus. La objeción que quedó
+         anotada y no se resolvió sola: «el eje de tu negocio» es reclamable por cualquiera
+         y se sostiene en la bajada, no solo. Si la bajada se acorta, se pierde. */}
+    {/* EL AIRE DE ARRIBA ES 96px EN MÓVIL Y NO PUEDE BAJAR. La cabecera fija termina en
+          el píxel 86, así que con pt-20 (80px) el titular se le mete debajo. Se probó para
+          ganar los 6px que faltan a 320px de ancho, donde el aviso de cookies todavía tapa
+          el botón del chequeo; no compensa: un titular pisado se ve roto siempre, y el
+          aviso se quita con un toque. A 320px el hero no cabe entero sobre el aviso y eso
+          queda asumido. Desde 360px hacia arriba el botón queda libre. */}
+    <section id="chequeo" class="px-6 md:px-medianil pt-24 sm:pt-40 md:pt-44 pb-10 md:pb-14 scroll-mt-24">
+      {/* 20 caracteres y 5 palabras. Acá decía «una sola línea» y es FALSO: medido con un
+           Range —getClientRects() sobre un bloque devuelve la caja, no las líneas— va en
+           una línea desde 860px de ancho, y en DOS en todo ancho de teléfono y en la
+           banda 768-859. Dos líneas en un teléfono no es un defecto; afirmar que es una
+           sí lo era. El titular anterior, de 79 caracteres, ocupaba cuatro y aplastaba el
+           instrumento; éste lo deja a la vista, que es lo que importaba. */}
+      <h1
+        class:list={['font-extrabold m-0', caja('El eje de tu negocio')]}
+        style="font-size:clamp(2.25rem, 8.4vw, 8rem); line-height:0.88; letter-spacing:0"
+      >
+        El eje de tu negocio
+      </h1>
+      <p class="mt-5 sm:mt-8 text-humo text-lg md:text-2xl leading-relaxed max-w-prosa">
+        Estás pagando para que lleguen a tu sitio. Pero el primero que llega es una
+        máquina, y si no te puede leer, el camino se corta ahí. Diseñamos y construimos el
+        sitio que esa máquina sí puede leer. Escribe tu dominio y te mostramos cómo está.
+      </p>
+
+      <div class="mt-6 sm:mt-10 border-t border-b filete">
+        <form class="chq-form flex flex-col sm:flex-row sm:items-stretch" id="chq-form" novalidate>
+          <label for="chq-dominio" class="sr-only">Tu dominio</label>
+          <input
+            id="chq-dominio"
+            name="dominio"
+            type="text"
+            inputmode="url"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+            placeholder="tuempresa.cl"
+            required
+            class="flex-1 bg-transparent font-mono text-2xl md:text-4xl text-papel placeholder:text-humo py-5 sm:py-7 md:py-9 outline-none focus-visible:bg-white/[0.04] transition-colors"
+          />
+          <button
+            type="submit"
+            id="chq-btn"
+            class="flex-none self-stretch sm:self-auto bg-papel hover:bg-white text-noche text-sm font-bold px-8 my-4 sm:my-5 rounded-v3 transition-colors py-3.5 sm:py-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+          >
+            Revisar mi sitio
+          </button>
+        </form>
+      </div>
+
+      <div class="chq-error mt-6 text-sm" id="chq-error" role="alert"></div>
+      <div id="chq-out" aria-live="polite" class="mt-8"></div>
+
+      <p class="mt-8 text-humo text-sm max-w-prosa">
+        Revisamos 21 señales técnicas. Es el mismo chequeo con el que partimos cada proyecto.
+      </p>
+    </section>
+
+    {/* LA OBRA, inmediatamente después: la prueba abre, el oficio remata. */}
+    <section id="obra" class="px-6 md:px-medianil pt-10 md:pt-14 pb-4 scroll-mt-24">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-2.5">
+        {
+          tira.map((t, i) => (
+            <a
+              href="/v3/trabajo/"
+              class="group relative block aspect-[3/4] overflow-hidden rounded-lg bg-white/[0.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+            >
+              <img
+                src={t.src}
+                alt={t.alt}
+                width="900"
+                height="1200"
+                loading={i < 2 ? 'eager' : 'lazy'}
+                decoding="async"
+                class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
+              />
+            </a>
+          ))
+        }
+      </div>
+      <div class="mt-4 flex items-baseline gap-x-5 gap-y-2 flex-wrap">
+        <p class="m-0 text-humo text-xs font-bold uppercase" style="letter-spacing:0.16em">
+          {tira.map((t: any) => t.n).join(' · ')}
+        </p>
+        <a href="/v3/trabajo/" class="text-humo text-xs font-bold uppercase underline underline-offset-4 hover:text-papel transition-colors" style="letter-spacing:0.16em">
+          Ver el trabajo &rarr;
+        </a>
+      </div>
+    </section>
+
+    {/* BLOQUE 2 · EL PROBLEMA. Campo navy.
+         ================================================================================
+         EL TITULAR NO ES LA CIFRA, Y ESO ES DELIBERADO. Antes decía «67 de 69 sitios
+         tenían el mismo problema» y Ramón lo bajó el 29-sep: el dato deja más dudas que
+         respuestas a quien recién llega (¿67 de qué muestra?, ¿medidos cómo?, ¿cuándo?),
+         y no es la forma que usan las referencias. Medido en la página de caso de la
+         referencia: de sus diez encabezados, CERO llevan una cifra; los que cargan el
+         argumento son transformaciones («From static to playful and hidden to hero»).
+
+         El titular que faltaba ya estaba escrito en este mismo párrafo: «no eran sitios
+         malos, estaban escritos para que los lea una persona». Esa es la reformulación
+         «no es X, es Y» que la marca ya usa en sus textos publicados.
+
+         Se compararon tres versiones renderizadas y Ramón eligió esta, en UNA línea.
+         Es la más corta de las tres y la que más golpea. Sola se lee como un non sequitur
+         hasta llegar al párrafo, y ahí está la gracia: la pregunta que abre («¿entonces
+         cuál es el problema?») la responde la primera línea del cuerpo, no queda dando
+         vueltas como la cifra que había antes.
+
+         DOS DETALLES DE MAQUETA QUE LA SOSTIENEN EN UNA LÍNEA, y que hay que respetar si
+         alguien cambia este texto: el ancho sube de 17ch a 22ch porque el titular mide 19
+         caracteres y en 17ch se partía; y se saca `text-wrap: balance`, que justamente
+         reparte el texto en dos líneas parejas cuando cabe en una. En móvil sí parte en
+         dos, y está bien: a 390px no hay ancho para 19 caracteres a ese cuerpo.
+
+         LA CIFRA NO SE PIERDE, BAJA AL CUERPO, que es donde se puede explicar: ahora
+         llega con su muestra («los últimos 69 que pasamos por el chequeo») y con qué
+         falló exactamente. Es dato propio verificable y se mantiene. */}
+    <section class="px-6 md:px-medianil py-32 md:py-seccion">
+      <h2 data-entra
+        class:list={['font-extrabold m-0 max-w-[22ch]', caja('No es un mal sitio.')]}
+        style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:0"
+      >
+        No es un mal sitio.
+      </h2>
+      <p class="mt-10 md:mt-14 text-humo text-xl md:text-2xl leading-relaxed max-w-prosa">
+        De los últimos 69 sitios que pasamos por el chequeo, 67 fallaban en lo mismo:
+        ninguno respondía una sola pregunta en un formato del que se pueda sacar una cita
+        limpia. Estaban escritos para una persona, no para la máquina.
+      </p>
+    </section>
+
+    {/* BLOQUE 3 · LAS TRES COMPUERTAS. La idea conductora de la página.
+         ================================================================================
+         NO SE INVENTÓ NADA ACÁ. Son los tres bloques con que la metodología publicada
+         agrupa los 21 chequeos, con sus pesos reales: leer 30, entender 40, citar 30.
+         ESTE BLOQUE ES AHORA EL PRIMERO QUE NOMBRA LAS TRES COSAS, y por eso importa que
+         esté acá. Cuando el h1 era «¿Te menciona la IA?», la bajada del hero ya las
+         presentaba y este bloque solo las explicaba. El hero nuevo afirma en vez de
+         preguntar y no las nombra, así que el bloque del problema, que va ARRIBA de éste,
+         decía «que es la tercera de las tres cosas» señalando algo que todavía no se
+         había nombrado. Se cortó esa subordinada: no aportaba un hecho, solo numeraba una
+         lista que el lector no tenía. Si alguien vuelve a mover este bloque de sitio, hay
+         que revisar que nada lo referencie desde más arriba.
+         La barra de pesos está a escala: 30/40/30 son los puntos de verdad. */}
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
+      <p class="rotulo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">
+        Las tres cosas
+      </p>
+      <h2 data-entra
+        class:list={['font-extrabold m-0 mt-6 max-w-[16ch]', caja('Leer, entender, citar.')]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
+      >
+        Leer, entender, citar.
+      </h2>
+      <p class="mt-8 text-noche/65 text-xl md:text-2xl leading-relaxed max-w-prosa">
+        Van en ese orden y no se saltan. El chequeo son 21 señales repartidas entre las
+        tres, y el puntaje dice en cuál te estás cortando.
+      </p>
+
+      <div class="mt-14 md:mt-20 grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-3">
+        <div data-entra data-paso="1" class="border-t border-noche/25 pt-6">
+          <p class="rotulo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">Primero · 30 puntos</p>
+          <h3 class:list={['font-extrabold m-0 mt-4', caja('¿Te pueden leer?')]} style="font-size:clamp(1.25rem,2vw,1.75rem); line-height:1.1; letter-spacing:-0.02em">
+        ¿Te pueden leer?
+      </h3>
+          <p class="mt-4 text-noche/70 text-base leading-relaxed">
+            Es el único bloque donde fallar deja sin sentido a los otros dos. Y no todos
+            los robots de IA deciden lo mismo, así que se revisan por separado.
+          </p>
+        </div>
+        <div data-entra data-paso="2" class="border-t border-noche/25 pt-6">
+          <p class="rotulo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">Segundo · 40 puntos</p>
+          <h3 class:list={['font-extrabold m-0 mt-4', caja('¿Te entienden?')]} style="font-size:clamp(1.25rem,2vw,1.75rem); line-height:1.1; letter-spacing:-0.02em">
+        ¿Te entienden?
+      </h3>
+          <p class="mt-4 text-noche/70 text-base leading-relaxed">
+            El que más pesa, y en las auditorías que hacemos es también el que más veces
+            aparece a medias.
+          </p>
+        </div>
+        <div data-entra data-paso="3" class="border-t border-noche/25 pt-6">
+          <p class="rotulo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">Tercero · 30 puntos</p>
+          <h3 class:list={['font-extrabold m-0 mt-4', caja('¿Te pueden citar?')]} style="font-size:clamp(1.25rem,2vw,1.75rem); line-height:1.1; letter-spacing:-0.02em">
+        ¿Te pueden citar?
+      </h3>
+          <p class="mt-4 text-noche/70 text-base leading-relaxed">
+            Los motores no citan sitios. Citan fragmentos. Acá se mide si del tuyo se puede
+            sacar uno limpio, con atribución y fecha.
+          </p>
+        </div>
+      </div>
+
+      {/* La barra de pesos, a escala real. Se lee de un vistazo que el bloque del medio
+           pesa más que cualquiera de los extremos. */}
+      <div data-entra class="mt-14 md:mt-20">
+        <div class="flex w-full border border-noche/25" role="img" aria-label="Reparto del puntaje: leer 30 puntos, entender 40 puntos, citar 30 puntos, sobre un total de 100.">
+          <div style="flex:30" class="border-r border-noche/25 px-3 py-4">
+            <span class="block font-extrabold text-lg">30</span>
+            <span class="block text-noche/60 text-xs mt-1">Leer</span>
+          </div>
+          <div style="flex:40" class="border-r border-noche/25 px-3 py-4 bg-noche/[0.07]">
+            <span class="block font-extrabold text-lg">40</span>
+            <span class="block text-noche/60 text-xs mt-1">Entender</span>
+          </div>
+          <div style="flex:30" class="px-3 py-4">
+            <span class="block font-extrabold text-lg">30</span>
+            <span class="block text-noche/60 text-xs mt-1">Citar</span>
+          </div>
+        </div>
+        <p class="mt-8 text-noche/70 text-lg md:text-xl leading-relaxed max-w-prosa">
+          En cuál de las tres te cortas es lo que define por dónde te toca partir.
+        </p>
+      </div>
+    </section>
+
+    {/* BLOQUE 4 · LOS CAMPOS. Un servicio, una pantalla, un color.
+         ================================================================================
+         ESTE ES EL CAMBIO DE ESTRUCTURA. Antes esto era UNA sección en papel con los seis
+         servicios apretados en una grilla de tres columnas. Medido en la referencia, eso
+         es justo lo que ella NO hace: le da a cada oferta UNA PANTALLA COMPLETA (sus
+         paneles miden 900–920px en un viewport de 900), con una sola palabra de 120px
+         como titular, su precio, su botón blanco y una imagen 16:9.
+         Por eso su home mide 11,8 pantallas y la mía medía 6,9: el largo no es relleno,
+         es que cada servicio tiene su propio mundo de color.
+
+         LA GRILLA DE COLUMNAS NO SE PIERDE: la elegiste para servicios y sigue viva en
+         /v3/servicios/. Acá, en la home, el recorrido es el que pasa por los colores.
+
+         EL NARANJA VA EN DESARROLLO a propósito. Es el color más fuerte de la paleta y
+         el desarrollo web es el pilar del negocio; el color más alto va al pilar, no
+         repartido al azar.
+
+         LOS PRECIOS salen de data/oferta-v3.json sin tocarse. Este bloque no los escribe:
+         los lee.
+         ============================================================================= */}
+    <div id="servicios" class="scroll-mt-0">
+      {
+        [...momentos, tambienPanel].map((m, i) => {
+          const items = m.items ?? tambien;
+          const nSer = String(i + 1).padStart(2, '0');
+          return (
+            <section class={`campo campo--${m.campo} px-6 md:px-medianil pt-28 md:pt-40 pb-16 md:pb-24`}>
+              {/* Fila de rótulos, arriba. 14px peso 500, como en la referencia. */}
+              <div class="flex items-baseline justify-between gap-6 text-sm font-medium">
+                <span class="rotulo">{m.momento}</span>
+                <span class="rotulo tabular-nums">
+                  {nSer} / 04
+                </span>
+              </div>
+
+              {/* La palabra. Una sola, a 8,33vw, tracking normal. */}
+              <h2 class="palabra mt-10 md:mt-0">{m.palabra}</h2>
+
+              {/* Pie del campo: texto a la izquierda, imagen a la derecha.
+                  Grilla de 12 columnas con gap de 32px, que es la de la referencia. */}
+              <div data-entra class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-12 md:mt-0">
+                {/* Las ofertas van en FILA, no apiladas. Un campo con dos ofertas apiladas
+                    se pasaba de la pantalla y rompía el ritmo de «un servicio, una
+                    pantalla»; en fila, con una o con dos, el campo sigue cabiendo. */}
+                <div class={m.obra ? 'md:col-span-7' : 'md:col-span-6'}>
+                  {/* PESTAÑAS DE MODALIDAD. Medido en la referencia: cada uno de sus cuatro
+                      campos lleva las suyas (Foundations / Partnership), son <button> con
+                      role="tab" y cambian el contenido sin cambiar de página. Acá son los
+                      planes del servicio, que hasta ahora vivían apretados en una línea de
+                      tres cifras sin decir qué separa a uno del otro.
+
+                      SIN JS SE VE EL PRIMER PLAN COMPLETO: el panel activo sale marcado
+                      desde el HTML y los demás llevan `hidden`. Si el script no corre, el
+                      visitante lee un plan entero con su precio, no una caja vacía. Misma
+                      regla de degradación que el resto del v3. */}
+                  {m.planes ? (
+                    <div class="planes" data-planes>
+                      <div class="planes-tabs" role="tablist" aria-label={`Planes de ${m.palabra}`}>
+                        {m.planes.map((pl: any, k: number) => (
+                          <button
+                            type="button"
+                            role="tab"
+                            id={`tab-${m.campo}-${k}`}
+                            aria-controls={`panel-${m.campo}-${k}`}
+                            aria-selected={k === 0 ? 'true' : 'false'}
+                            tabindex={k === 0 ? 0 : -1}
+                          >
+                            {pl.n}
+                          </button>
+                        ))}
+                      </div>
+                      {m.planes.map((pl: any, k: number) => (
+                        <div
+                          role="tabpanel"
+                          id={`panel-${m.campo}-${k}`}
+                          aria-labelledby={`tab-${m.campo}-${k}`}
+                          hidden={k !== 0}
+                          class="pt-7 border-t filete mt-6"
+                        >
+                          {/* UNA frase y el precio, nada más. La referencia no pone
+                              viñetas en el panel, y con ellas el campo se iba a 1,4
+                              pantallas y rompía la regla de «un servicio, una pantalla».
+                              El detalle de cada plan vive en /v3/servicios/desarrollo-web/,
+                              que es donde alguien lo va a leer de verdad. */}
+                          <p class="m-0 text-xl md:text-2xl leading-relaxed max-w-prosa">{pl.d}</p>
+                          {/* EL PRECIO SE PARTE EN LÍNEAS, no se recorta.
+                              Tres servicios traen dos valores en una sola cadena
+                              («$490.000 · $690.000 con Visibilidad IA»), que es justo el
+                              apretado que las pestañas venían a resolver. La tentación era
+                              mostrar solo el de entrada con un «desde», pero eso saca
+                              información de la home y los precios no se tocan. Se parte por
+                              el separador: los dos números quedan, cada uno en su renglón,
+                              y se lee cuál es cuál. */}
+                          {(() => {
+                            const tramos = String(pl.p).split('·').map((x: string) => x.trim()).filter(Boolean);
+                            const conIva = !/IVA|cotiza/i.test(pl.p);
+                            return (
+                              <div class="mt-7">
+                                <span class="rotulo text-base">Valor</span>
+                                <ul class="list-none p-0 m-0 mt-1.5">
+                                  {tramos.map((t: string, n: number) => (
+                                    <li class={n === 0 ? 'text-xl md:text-2xl font-semibold leading-tight' : 'text-lg leading-tight mt-1'}>
+                                      {t}
+                                      {n === tramos.length - 1 && conIva && (
+                                        <span class="rotulo text-base"> + IVA</span>
+                                      )}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            );
+                          })()}
+                          {/* EL BOTÓN VA DENTRO DEL PANEL cuando la pestaña es un servicio
+                              distinto, no una cobertura del mismo. En Visibilidad y Alcance
+                              cada pestaña lleva a otra página; un botón fijo afuera habría
+                              mandado a todo el mundo al primer servicio, que es un enlace
+                              equivocado servido con cara de correcto. */}
+                          {pl.href && (
+                            <a href={pl.href} class="boton-campo mt-7">{pl.cta}</a>
+                          )}
+                        </div>
+                      ))}
+                      {/* Cuando las pestañas son coberturas de UN servicio, el botón es
+                          uno solo y vive fuera de los paneles. */}
+                      {!m.planes.some((x: any) => x.href) && (
+                        <a href={items[0].href} class="boton-campo mt-7">
+                          Ver {items[0].n}
+                        </a>
+                      )}
+                    </div>
+                  ) : (
+                    <ul class={`list-none p-0 m-0 grid gap-x-6 gap-y-8 ${items.length > 1 ? 'sm:grid-cols-2' : ''}`}>
+                      {items.map((it) => (
+                        <li class="border-t filete pt-5">
+                          <p class="m-0 text-xl md:text-2xl font-bold leading-snug">{it.n}</p>
+                          <p class="m-0 mt-3 text-lg md:text-xl leading-relaxed">{it.d}</p>
+                          <p class="m-0 mt-4 flex flex-wrap items-baseline gap-x-3">
+                            <span class="rotulo text-base">Valor</span>
+                            <span class="text-lg md:text-xl font-semibold">{it.p}</span>
+                          </p>
+                          <a href={it.href} class="boton-campo mt-5">
+                            Ver {it.n}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {m.nota && <p class="mt-8 rotulo text-base leading-relaxed max-w-prosa">{m.nota}</p>}
+                </div>
+
+                {/* La media de la derecha SOLO en los campos sin tira de obra.
+                    En el campo que sí la tiene, la tira ES la media: la referencia no pone
+                    una imagen suelta arriba y otra tira abajo, pone una sola cosa. Con las
+                    dos, el campo se iba a 1,37 pantallas y rompía «un servicio, una
+                    pantalla», y además competían: una foto abstracta de papeles contra el
+                    trabajo de verdad.
+
+                    CONSECUENCIA QUE HAY QUE SABER: el video sale de la home. Era el único
+                    y estaba medido y montado tarde. La referencia no tiene ninguno en su
+                    portada, así que no es una pérdida respecto del norte, pero es una
+                    decisión y queda anotada, no escondida. */}
+                {/* LA TIRA DE OBRA OCUPA LA COLUMNA DE LA MEDIA.
+                    Medido en la referencia: cada campo lleva sus piezas de trabajo DENTRO
+                    del bloque, en la misma pantalla donde va el precio. Y lleva UNA sola
+                    cosa visual, no una foto arriba y una tira abajo.
+
+                    Acá la tira empezó al pie de la sección y el campo se fue a 1,35
+                    pantallas, rompiendo «un servicio, una pantalla», que es una regla
+                    medida del sistema. Puesta en la columna de la media, el campo vuelve a
+                    caber: la fila mide lo que mide la columna de texto.
+
+                    CONSECUENCIA ANOTADA: el video sale de la home. Era el único, estaba
+                    medido y montado tarde, y compite con el trabajo de verdad. La
+                    referencia no tiene ninguno en su portada. Es una decisión, no un
+                    descuido, y se puede revertir.
+
+                    VAN DOS, NO CUATRO, porque dos son las que existen. Rellenar con dos
+                    inventadas sería la prueba social que el manual prohíbe. Y van
+                    ROTULADAS en la misma pantalla: una tira sin rótulo se lee como cartera
+                    de clientes reales. Las fichas están en la rama
+                    claude/portafolio-constructora, bajo marketing/portafolio/. */}
+                {m.obra ? (
+                  <div class="md:col-span-5 md:col-start-8">
+                    {/* EL RÓTULO VIENE DEL DATO, no fijo acá. Estaba escrito «Piezas de
+                        concepto» a mano, y al cambiar la tira a trabajo de cliente real
+                        quedó rotulando de ficticio un sitio que existe y está entregado.
+                        Es el error simétrico del que prohíbe el manual: tan malo es
+                        presentar como real algo inventado como presentar como inventado
+                        algo real. */}
+                    <span class="rotulo text-base">{m.obraRotulo ?? 'Trabajo'}</span>
+                    <ul class="list-none p-0 m-0 mt-4 grid gap-4 grid-cols-2">
+                      {m.obra.map((o: any) => (
+                        <li>
+                          <img
+                            src={o.img}
+                            alt={o.alt}
+                            width="1280"
+                            height="720"
+                            loading="lazy"
+                            decoding="async"
+                            class="media-campo"
+                          />
+                          <p class="m-0 mt-2.5 text-sm leading-snug">
+                            <span class="font-bold block">{o.n}</span>
+                            <span class="rotulo">{o.rubro}</span>
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                    {m.obraNota && (
+                      <p class="mt-5 rotulo text-sm leading-relaxed">{m.obraNota}</p>
+                    )}
+                  </div>
+                ) : (
+                <div class="md:col-span-5 md:col-start-8">
+                  {/* EL VIDEO SE MONTA SOLO CUANDO SE VA A VER. Medido en la referencia:
+                      cero elementos <video> en el DOM y aun así tres mp4 pedidos por red.
+                      Por eso el src va en data-src y lo pone el script recién cuando el
+                      bloque se acerca. Sin eso, un mp4 de 4,6 MB se descarga aunque el
+                      visitante nunca baje hasta acá.
+                      Va UNO solo, en el campo del pilar: cuatro serían 16 MB de home. */}
+                  {m.video ? (
+                    <video
+                      data-src={m.video}
+                      poster={m.img}
+                      width="1280"
+                      height="720"
+                      muted
+                      loop
+                      playsinline
+                      preload="none"
+                      aria-label={m.alt}
+                      class="media-campo paralaje"
+                    />
+                  ) : (
+                    <img
+                      src={m.img}
+                      alt={m.alt}
+                      width="1280"
+                      height="720"
+                      loading="lazy"
+                      decoding="async"
+                      class="media-campo paralaje"
+                    />
+                  )}
+                </div>
+                )}
+              </div>
+
+            </section>
+          );
+        })
+      }
+
+      {/* El renglón de precios en papel: el resumen contable después del recorrido.
+          Es lo único que queda en claro, y a propósito: los valores se leen mejor
+          sobre papel que sobre cuatro colores distintos. */}
+      <section class="bg-papel text-noche px-6 md:px-medianil py-24 md:py-40">
+        <p class="m-0 rotulo text-sm font-bold uppercase" style="letter-spacing:0.16em">
+          Los seis valores, juntos
+        </p>
+        <p class="m-0 mt-4 text-noche/65 text-base max-w-prosa">
+          En pesos, + IVA. Los publicamos a propósito: la mayoría del rubro no lo hace.
+        </p>
+        <ul class="list-none p-0 m-0 mt-10 grid gap-x-12 gap-y-5 sm:grid-cols-2">
+          {
+            [...momentos.flatMap((m) => m.items), ...tambien].map((it) => (
+              <li class="border-t filete pt-4 flex flex-wrap items-baseline justify-between gap-x-4">
+                <a href={it.href} class="font-bold hover:opacity-55 transition-opacity">
+                  {it.n}
+                </a>
+                <span class="text-noche/65 text-sm tabular-nums">{it.p}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+    {/* BLOQUE 5 · HERRAMIENTAS GRATIS. Bloque nuevo. Campo petróleo. */}
+    <section class="bg-surface-2 text-papel px-6 md:px-medianil py-32 md:py-seccion">
+      <h2 data-entra
+        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[17ch]', caja('Tres herramientas, gratis')]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
+      >
+        Tres herramientas, gratis
+      </h2>
+      <div class="grid gap-x-8 lg:gap-x-12 gap-y-10 md:grid-cols-3">
+        <article class="border-t filete pt-6">
+          <h3 class:list={['font-extrabold m-0 text-xl', caja('Chequeo de visibilidad en IA')]} style="letter-spacing:-0.02em">
+        Chequeo de visibilidad en IA
+      </h3>
+          <p class="mt-4 text-humo text-base leading-relaxed">
+            Las 21 señales, en treinta segundos.
+          </p>
+          <a href="#chequeo" class="mt-5 inline-flex items-center gap-2 text-sm font-bold hover:gap-3 transition-all">
+            Correrlo ahora <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="border-t filete pt-6">
+          <h3 class:list={['font-extrabold m-0 text-xl', caja('Verifica y Cumple')]} style="letter-spacing:-0.02em">
+        Verifica y Cumple
+      </h3>
+          <p class="mt-4 text-humo text-base leading-relaxed">
+            Si tu sitio cumple lo técnico de la Ley 21.719, que entra en vigencia el 1 de
+            diciembre.
+          </p>
+          {/* Sin enlace a propósito: la URL pública de esta herramienta no está confirmada
+               en el repo y no se inventa un destino. Falta completarla. */}
+        </article>
+
+        <article class="border-t filete pt-6">
+          <h3 class:list={['font-extrabold m-0 text-xl', caja('La metodología, publicada')]} style="letter-spacing:-0.02em">
+        La metodología, publicada
+      </h3>
+          <p class="mt-4 text-humo text-base leading-relaxed">
+            Cómo se calcula cada punto del chequeo, a la vista.
+          </p>
+          <a href="/v3/diagnostico/" class="mt-5 inline-flex items-center gap-2 text-sm font-bold hover:gap-3 transition-all">
+            Ver el método <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section id="metodo" class="px-6 md:px-medianil py-32 md:py-seccion scroll-mt-24">
+      <h2 data-entra
+        class:list={['font-extrabold m-0 mb-12 md:mb-20 max-w-[14ch]', caja('Cómo trabajamos')]}
+        style="font-size:clamp(2rem, 6.4vw, 7rem); line-height:0.9; letter-spacing:0"
+      >
+        Cómo trabajamos
+      </h2>
+      <ol class="list-none p-0 m-0 border-t filete">
+        {
+          pasos.map((p) => (
+            <li class="border-b filete py-8 md:py-11 flex flex-col md:flex-row gap-4 md:gap-12">
+              <span class="text-humo font-bold text-sm flex-none md:w-16" style="letter-spacing:0.16em">
+                {p.n}
+              </span>
+              <span
+                class="font-extrabold uppercase flex-none md:w-[7em]"
+                style="font-size:clamp(1.375rem,2.6vw,2.25rem); line-height:1; letter-spacing:-0.03em"
+              >
+                {p.t}
+              </span>
+              <span class="text-humo text-lg leading-relaxed max-w-prosa">{p.d}</span>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    {/* BLOQUE 7 · CIERRE bajo, sin urgencia fabricada. */}
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
+      <h2 data-entra
+        class:list={['font-extrabold m-0 max-w-[14ch]', caja('El mismo número, después')]}
+        style="font-size:clamp(2.25rem, 8vw, 9rem); line-height:0.88; letter-spacing:0"
+      >
+        El mismo número, después
+      </h2>
+      <p class="mt-10 text-noche/65 text-2xl leading-relaxed max-w-prosa">
+        Empezaste esta página corriendo el chequeo sobre tu dominio. Si trabajamos juntos,
+        lo volvemos a correr sobre el sitio entregado y comparas los dos puntajes. Es la
+        misma vara, medida dos veces.
+      </p>
+      <p class="mt-6 text-noche/65 text-lg leading-relaxed max-w-prosa">
+        Cuéntanos qué necesitas y te decimos qué haríamos, en cuánto tiempo y cuánto
+        cuesta. Si lo que necesitas no es lo que vendemos, también te lo decimos.
+      </p>
+      <div class="mt-12 flex items-center gap-4 flex-wrap">
+        <a
+          href={CONTACTO}
+          class="rounded-v3 bg-noche hover:bg-black text-papel text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-noche"
+        >
+          Escríbenos
+        </a>
+        <a
+          href="#chequeo"
+          class="rounded-v3 border filete hover:border-noche text-noche text-sm font-bold px-8 py-4 transition-colors"
+        >
+          Prefiero correr el chequeo
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <FooterV3 />
+
+  <script src="/assets/js/v3-chequeo.js" is:inline defer></script>
+</Layout>

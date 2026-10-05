@@ -1,0 +1,204 @@
+{
+  "momentos": [
+    {
+      "momento": "Tu sitio te frena, o no existe",
+      "items": [
+        {
+          "n": "Desarrollo Web",
+          "p": "$390.000 · $690.000 · $1.190.000",
+          "href": "/v3/servicios/desarrollo-web/",
+          "d": "El sitio nace legible para las máquinas que hoy recomiendan tu negocio. Lo compruebas con el mismo chequeo, sobre tu dominio, antes y después."
+        }
+      ],
+      "nota": "El SEO técnico y el AEO van puestos desde el primer commit, no parchados al final. Esa es la especificación del producto, no un servicio aparte.",
+      "palabra": "Desarrollo",
+      "campo": "brasa",
+      "img": "/video/servicios-capas.jpg",
+      "alt": "Capas de un sitio en construcción",
+      "video": "/video/servicios-capas.mp4",
+      "planes": [
+        {
+          "n": "Página de Campaña",
+          "p": "desde $390.000",
+          "d": "Una página hecha para convertir la pauta que ya estás pagando.",
+          "puntos": [
+            "Una página, para una campaña y una oferta",
+            "Diseño a medida, sin plantilla",
+            "SEO técnico y medición desde el primer día",
+            "Entrega en ~1 semana"
+          ]
+        },
+        {
+          "n": "Sitio Esencial",
+          "p": "desde $690.000",
+          "d": "Un sitio a medida, listo para funcionar.",
+          "puntos": [
+            "Home y hasta 5 páginas",
+            "SEO técnico base: schema, velocidad, indexación",
+            "Un idioma",
+            "Entrega en ~3 semanas"
+          ]
+        },
+        {
+          "n": "Sitio Completo",
+          "p": "desde $1.190.000",
+          "d": "Más páginas y puesto a punto para que la IA te lea.",
+          "puntos": [
+            "Home y hasta 12 páginas",
+            "Blog o CMS que administras tú",
+            "SEO técnico y puesta a punto AEO/GEO",
+            "Uno o dos idiomas",
+            "Entrega en ~4 a 6 semanas"
+          ]
+        },
+        {
+          "n": "Plataforma a Medida",
+          "p": "Se cotiza",
+          "d": "Para proyectos con integraciones o lógica propia.",
+          "puntos": [
+            "Todo lo del Sitio Completo, y más",
+            "Páginas sin tope",
+            "Integraciones: CRM, reservas, pagos",
+            "Arquitectura propia",
+            "Multi-idioma"
+          ]
+        }
+      ],
+      "obra": [
+        {
+          "n": "Bernardo Combeau",
+          "rubro": "Fotografía de retrato",
+          "img": "/assets/img/obra/combeau-fotografia-ancho.jpg",
+          "alt": "Portada de bernardocombeau.cl"
+        },
+        {
+          "n": "Bernardo Combeau | Model",
+          "rubro": "Book de modelo",
+          "img": "/assets/img/obra/combeau-modelo-ancho.jpg",
+          "alt": "Portada del book de modelo de Bernardo Combeau"
+        }
+      ],
+      "obraNota": "Dos sitios entregados al mismo cliente, cada uno con su marca. Hay más en el trabajo, incluida una pieza de concepto para los rubros donde todavía no hay caso liberado.",
+      "obraRotulo": "Trabajo entregado"
+    },
+    {
+      "momento": "Tu sitio existe y no lo van a rehacer",
+      "items": [
+        {
+          "n": "Visibilidad en IA",
+          "p": "$400.000",
+          "href": "/v3/servicios/visibilidad-en-ia/",
+          "d": "Para que ChatGPT, Gemini y Perplexity puedan citarte cuando preguntan por tu rubro."
+        },
+        {
+          "n": "Auditoría SEO Técnica",
+          "p": "$490.000 · $690.000 con Visibilidad IA",
+          "href": "/v3/servicios/auditoria-seo-tecnica/",
+          "d": "Rastreo, indexación, Core Web Vitals y datos estructurados. Qué te frena y qué mueve la aguja."
+        }
+      ],
+      "palabra": "Visibilidad",
+      "campo": "navy",
+      "img": "/assets/img/hero-visibilidad-ia.jpg",
+      "alt": "Fachada de edificios corporativos, imagen del servicio de visibilidad en IA",
+      "nota": "Si tu sitio funciona y no lo vas a rehacer, esta es la puerta. No hace falta reconstruir para que una IA pueda citarte.",
+      "planes": [
+        {
+          "n": "Visibilidad en IA",
+          "d": "Para que ChatGPT, Gemini y Perplexity puedan citarte cuando preguntan por tu rubro.",
+          "p": "$400.000",
+          "href": "/v3/servicios/visibilidad-en-ia/",
+          "cta": "Ver Visibilidad en IA"
+        },
+        {
+          "n": "Auditoría SEO Técnica",
+          "d": "Rastreo, indexación, Core Web Vitals y datos estructurados. Qué te frena y qué mueve la aguja.",
+          "p": "$490.000 · $690.000 con Visibilidad IA",
+          "href": "/v3/servicios/auditoria-seo-tecnica/",
+          "cta": "Ver Auditoría SEO Técnica"
+        }
+      ]
+    },
+    {
+      "momento": "Ya giras y quieres sostenerlo",
+      "items": [
+        {
+          "n": "Acompañamiento Mensual",
+          "p": "$590.000/mes · $790.000/mes Pro",
+          "href": "/v3/servicios/acompanamiento-mensual/",
+          "d": "Implementación continua, contenido para búsqueda e IA, e informes quincenales."
+        }
+      ],
+      "palabra": "Continuidad",
+      "campo": "petroleo",
+      "img": "/assets/img/hero-acompanamiento.jpg",
+      "alt": "Mesa de trabajo con un informe de acompañamiento mensual",
+      "planes": [
+        {
+          "n": "Esencial",
+          "d": "Sostener y mejorar un frente: técnico o visibilidad en IA.",
+          "p": "Desde $590.000 /mes + IVA"
+        },
+        {
+          "n": "Pro",
+          "d": "Las dos capas juntas, con más cobertura y contenido.",
+          "p": "Desde $790.000 /mes + IVA"
+        },
+        {
+          "n": "A medida",
+          "d": "Equipo dedicado y varios frentes a la vez.",
+          "p": "Se cotiza tras una reunión"
+        }
+      ]
+    }
+  ],
+  "tambien": [
+    {
+      "n": "Gestión de Redes Sociales",
+      "p": "$390.000/mes · $590.000/mes con pauta",
+      "href": "/v3/servicios/redes-sociales/",
+      "d": "Presencia, comunidad y pauta social en LinkedIn y Meta."
+    },
+    {
+      "n": "Paid Media (Google)",
+      "p": "$350.000/mes · $550.000/mes Pro",
+      "href": "/v3/servicios/paid-media/",
+      "d": "Google Ads de alta intención: captura a quien ya está buscando lo que ofreces."
+    }
+  ],
+  "dentro": [
+    "Visibilidad (SEO + IA): auditoría técnica, AEO/GEO y acompañamiento mensual.",
+    "Gestión de redes sociales: LinkedIn y Meta, orgánico y pauta social.",
+    "Paid media (Google): Google Ads de alta intención, optimizado con IA.",
+    "Desarrollo web: el sitio a medida donde el tráfico se vuelve contacto."
+  ],
+  "fuera": [
+    "Creación de contenido: redacción y guiones de piezas.",
+    "Diseño gráfico: piezas visuales y arte final.",
+    "Producción de video: rodaje y edición."
+  ],
+  "tambienPanel": {
+    "palabra": "Alcance",
+    "campo": "ciruela",
+    "img": "/assets/img/hero-servicios.jpg",
+    "alt": "Equipo revisando piezas de campaña en pantalla",
+    "momento": "Ya tienes demanda y quieres más",
+    "nota": "El contenido creativo lo pones tú. Nosotros lo hacemos funcionar.",
+    "planes": [
+      {
+        "n": "Gestión de Redes Sociales",
+        "d": "Presencia, comunidad y pauta social en LinkedIn y Meta.",
+        "p": "$390.000/mes · $590.000/mes con pauta",
+        "href": "/v3/servicios/redes-sociales/",
+        "cta": "Ver Gestión de Redes Sociales"
+      },
+      {
+        "n": "Paid Media (Google)",
+        "d": "Google Ads de alta intención: captura a quien ya está buscando lo que ofreces.",
+        "p": "$350.000/mes · $550.000/mes Pro",
+        "href": "/v3/servicios/paid-media/",
+        "cta": "Ver Paid Media (Google)"
+      }
+    ]
+  }
+}

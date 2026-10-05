@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "slug": "como-elegir-verificar-agencia-aeo-geo-chile",
+    "title": "Cómo elegir (y verificar) una agencia de AEO/GEO en Chile · SpindleLab",
+    "description": "Guía de compra honesta: los criterios que debes exigirle a una agencia de AEO/GEO en Chile y, sobre todo, cómo verificar cada uno por ti mismo. Sin ranking.",
+    "headline": "Cómo elegir (y verificar) una agencia de AEO/GEO en Chile",
+    "datePublished": "2026-08-25",
+    "dateModified": "2026-08-25",
+    "canonical": "https://spindlelab.cl/blog/como-elegir-verificar-agencia-aeo-geo-chile/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://spindlelab.cl/#org",
+        "name": "SpindleLab",
+        "url": "https://spindlelab.cl/",
+        "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
+        "email": "hola@spindlelab.cl",
+        "description": "SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B y financieras en Chile.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Santiago",
+          "addressCountry": "CL"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Chile"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/spindlelab/",
+          "https://www.instagram.com/spindle.lab/"
+        ],
+        "founder": {
+          "@id": "https://spindlelab.cl/#autor-ramon"
+        }
+      },
+      {
+        "@type": "Article",
+        "@id": "https://spindlelab.cl/blog/como-elegir-verificar-agencia-aeo-geo-chile/#article",
+        "headline": "Cómo elegir (y verificar) una agencia de AEO/GEO en Chile",
+        "description": "Guía de compra honesta: los criterios que debes exigirle a una agencia de AEO/GEO en Chile y cómo verificar cada uno por ti mismo, sin ranking.",
+        "inLanguage": "es-CL",
+        "datePublished": "2026-08-25",
+        "dateModified": "2026-08-25",
+        "image": "https://spindlelab.cl/assets/img/og-marca.jpg?v=4",
+        "author": {
+          "@id": "https://spindlelab.cl/#autor-ramon"
+        },
+        "publisher": {
+          "@id": "https://spindlelab.cl/#org"
+        },
+        "mainEntityOfPage": "https://spindlelab.cl/blog/como-elegir-verificar-agencia-aeo-geo-chile/"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://spindlelab.cl/#autor-ramon",
+        "name": "Ramón Vallejos",
+        "jobTitle": "Consultor de SEO técnico y visibilidad en IA (AEO/GEO)",
+        "image": "https://spindlelab.cl/assets/img/ramon-vallejos.jpg",
+        "worksFor": {
+          "@id": "https://spindlelab.cl/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://spindlelab.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "El Taller",
+            "item": "https://spindlelab.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Cómo elegir una agencia de AEO/GEO",
+            "item": "https://spindlelab.cl/blog/como-elegir-verificar-agencia-aeo-geo-chile/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Por qué ChatGPT o Perplexity me recomiendan ciertas agencias?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Porque resumen lo que encuentran escrito en la web con tono de autoridad, y buena parte de lo escrito sobre \"mejores agencias\" son listas que las propias agencias publican sobre sí mismas y donde salen primeras. El modelo no tiene un juez independiente adentro: repite lo que abunda. Por eso conviene verificar cada nombre con criterios propios en vez de tomar la recomendación como un veredicto neutral."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuál es la diferencia entre SEO técnico y AEO/GEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Comparten base. Los motores de IA se alimentan de la misma web que rastrea Google, así que un sitio con buena base técnica (rápido, legible por robots, con datos estructurados) es también un sitio que la IA puede citar. El AEO/GEO agrega una capa nueva encima: medir qué responden los modelos sobre tu categoría y darles contenido citable. Desconfía de quien vende la capa sin haber auditado primero el cimiento técnico."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puede una agencia garantizarme el #1 en ChatGPT?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, y prometerlo es una bandera roja. Nadie controla lo que responde un modelo generativo: cambia con cada actualización y con cada forma de preguntar. Lo serio no promete un puesto, sino que mide tu punto de partida, prioriza por impacto y trabaja para subir la probabilidad de que te citen. Habla de tendencias medibles, no de garantías."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué le pido a una agencia para comprobar que un caso de éxito es real?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cuatro datos concretos: qué consulta exacta usaron, en qué motor, el antes y el después, y cuándo ocurrió. Un caso con esas cuatro piezas se puede verificar. Un pantallazo de una respuesta de IA sin consulta, sin motor y sin fecha no prueba nada, porque pudo salir de una pregunta amañada o de un día suelto. Si la prueba no tiene contexto, no la cuentes como prueba."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Necesito contratar SEO técnico y AEO por separado?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No necesariamente, y esa es la conversación que debe darte la agencia. Como comparten base, muchas veces la inversión es una sola: arreglar y aprovechar la infraestructura que te posiciona en Google es lo que te hace citable por la IA. Una agencia honesta te dirá qué parte ya está sana y no hace falta tocar, en vez de venderte los dos servicios como si fueran proyectos desconectados."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

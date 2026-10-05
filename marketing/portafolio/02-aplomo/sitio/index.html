@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- PIEZA DE CONCEPTO. Aplomo no existe. Ver ../ficha.md -->
+<meta name="robots" content="noindex, nofollow">
+
+<title>Aplomo · Constructora industrial y edificación corporativa</title>
+<meta name="description" content="Construcción de naves industriales, bodegas y ampliaciones de planta en Chile. Programa de obra y costos por m² publicados, y las condiciones de contrato explicadas antes de firmar.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+/* ==========================================================================
+   APLOMO — sistema visual
+   ==========================================================================
+   «Aplomo» significa las dos cosas a la vez: que un muro está a plomo, y la
+   serenidad de quien no se descompone. Un contratista B2B vende exactamente
+   eso: que la obra queda derecha y que el plazo no se le arranca.
+
+   LA PÁGINA ES UNA LÁMINA DE PLANO, no una landing. Blanco de papel, filetes
+   negros de 1px, todo alineado a una grilla visible, datos en monoespaciada.
+   Nada de degradados, nada de sombras suaves, nada de esquinas redondeadas.
+
+   Referencia (Refero, antes de componer — ver ficha.md):
+   19-86.fr da la base: archivo arquitectónico impreso, filetes, alineación
+   tabular y un titular monumental sin peso ornamental.
+   timescale.com da el panel de borde duro con sombra desplazada y el acento
+   de alta visibilidad usado como marca técnica.
+   mostlikely.at da el grano y la severidad.
+
+   EL ACENTO SOLO EXISTE COMO BLOQUE RELLENO CON TEXTO NEGRO ENCIMA. Nunca como
+   texto de color, nunca como fondo de sección. Es la regla del chaleco
+   reflectante: sirve porque aparece poco y siempre en el mismo sitio.
+
+   Contraste verificado con cálculo:
+     tinta sobre papel 17,8:1 · tinta sobre hivis 15,2:1 · gris sobre papel 5,4:1
+   ========================================================================== */
+
+:root{
+  --papel:#F2F1ED;
+  --papel-2:#E6E4DE;
+  --tinta:#0D0D0C;
+  --gris:#5C5C55;        /* secundario, 5,4:1 sobre papel */
+  --hivis:#D6E000;       /* SOLO como bloque relleno */
+  --filete:#0D0D0C;
+  --cond:'IBM Plex Sans Condensed', 'Arial Narrow', sans-serif;
+  --sans:'IBM Plex Sans', system-ui, sans-serif;
+  --mono:'IBM Plex Mono', ui-monospace, monospace;
+  --medianil:clamp(18px, 4vw, 56px);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--papel); color:var(--tinta);
+  font-family:var(--sans); font-size:17px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+/* grano: le saca el plano de plantilla sin agregar un solo elemento */
+body::before{
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:.30;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+.envoltura{padding-inline:var(--medianil)}
+.limite{max-width:1320px;margin:0 auto}
+
+/* ---- tipografía -------------------------------------------------------- */
+.monumento{
+  font-family:var(--cond); font-weight:700; line-height:.86;
+  letter-spacing:-.03em; margin:0; text-transform:uppercase;
+}
+h1.monumento{font-size:clamp(3.4rem, 13vw, 11rem)}
+h2.monumento{font-size:clamp(2rem, 5.5vw, 4.5rem); line-height:.92}
+h3{font-family:var(--cond); font-weight:600; font-size:1.3rem; line-height:1.15; margin:0; text-transform:uppercase; letter-spacing:-.01em}
+/* la monoespaciada marca TODO lo que es dato medido, y nada más */
+.dato{font-family:var(--mono); font-weight:500; font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--gris); margin:0}
+p{margin:0 0 .9em; max-width:66ch}
+p:last-child{margin-bottom:0}
+.grande{font-size:clamp(1.1rem,1.8vw,1.35rem); line-height:1.45; max-width:40ch}
+
+/* ---- aviso de pieza de concepto: bloque hivis, la única vez que llena ---- */
+.aviso{
+  background:var(--hivis); color:var(--tinta);
+  font-family:var(--mono); font-size:.76rem; line-height:1.5;
+  padding:11px var(--medianil); border-bottom:1px solid var(--filete);
+}
+.aviso b{font-weight:500; text-transform:uppercase; letter-spacing:.06em}
+
+/* ---- barra ------------------------------------------------------------- */
+.barra{display:flex; align-items:center; justify-content:space-between; gap:20px; padding-block:18px; flex-wrap:wrap}
+.marca{font-family:var(--cond); font-weight:700; font-size:1.5rem; letter-spacing:-.03em; text-transform:uppercase}
+.barra nav{display:flex; gap:clamp(12px,2vw,26px); flex-wrap:wrap}
+.barra nav a{font-family:var(--mono); font-size:.74rem; text-transform:uppercase; letter-spacing:.08em; text-decoration:none}
+.barra nav a:hover{background:var(--hivis)}
+.regla{border:0; border-top:1px solid var(--filete); margin:0}
+.regla-fina{border:0; border-top:1px solid rgba(13,13,12,.22); margin:0}
+
+/* ---- secciones --------------------------------------------------------- */
+section{padding-block:clamp(56px, 8vw, 128px)}
+.invertida{background:var(--tinta); color:var(--papel)}
+.invertida .dato{color:#A8A89F}
+.invertida .regla-fina{border-top-color:rgba(242,241,237,.28)}
+
+/* ---- lista tabular: filas con filete, como un índice de láminas -------- */
+.tabla-obra{width:100%; border-collapse:collapse; font-size:.95rem}
+.tabla-obra th,.tabla-obra td{text-align:left; padding:16px 12px 16px 0; border-bottom:1px solid rgba(13,13,12,.22); vertical-align:top}
+.tabla-obra thead th{font-family:var(--mono); font-weight:500; font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; color:var(--gris); padding-top:0}
+.tabla-obra .num{font-family:var(--mono); white-space:nowrap; text-align:right; padding-right:0}
+.tabla-obra tbody th{font-family:var(--cond); font-weight:600; font-size:1.15rem; text-transform:uppercase}
+.marco-scroll{overflow-x:auto}
+
+/* ---- panel de borde duro (Timescale) ----------------------------------- */
+.panel{border:1px solid var(--filete); background:var(--papel); padding:clamp(20px,2.4vw,32px); box-shadow:6px 6px 0 var(--tinta)}
+.invertida .panel{background:var(--tinta); border-color:var(--papel); box-shadow:6px 6px 0 var(--papel)}
+
+.rejilla{display:grid; gap:clamp(20px,2.6vw,36px)}
+@media(min-width:900px){ .dos{grid-template-columns:1fr 1fr} .doce{grid-template-columns:repeat(12,1fr)} }
+
+/* ---- botón: rectángulo, cero radio ------------------------------------- */
+.boton{
+  display:inline-block; background:var(--tinta); color:var(--papel);
+  font-family:var(--mono); font-size:.8rem; text-transform:uppercase; letter-spacing:.08em;
+  text-decoration:none; padding:15px 26px; border:1px solid var(--tinta);
+}
+.boton:hover{background:var(--hivis); color:var(--tinta)}
+.invertida .boton{background:var(--papel); color:var(--tinta); border-color:var(--papel)}
+.invertida .boton:hover{background:var(--hivis)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--tinta); outline-offset:3px}
+.invertida a:focus-visible,.invertida summary:focus-visible{outline-color:var(--papel)}
+
+/* ---- PROGRAMA DE OBRA -------------------------------------------------
+   Es el documento central del oficio y ninguna constructora lo publica.
+   Las barras están en una grilla de 44 columnas = 44 semanas reales, así que
+   la proporción entre partidas es verdadera y no decorativa. */
+.gantt{min-width:760px}
+.gantt-fila{display:grid; grid-template-columns:200px 1fr; align-items:center; border-bottom:1px solid rgba(242,241,237,.22)}
+.gantt-fila:first-child{border-top:1px solid rgba(242,241,237,.22)}
+.gantt-nombre{font-family:var(--sans); font-size:.85rem; padding:11px 14px 11px 0}
+.gantt-pista{display:grid; grid-template-columns:repeat(44,1fr); height:100%; align-items:center}
+.gantt-barra{height:15px; background:var(--papel); grid-row:1}
+.gantt-barra.critica{background:var(--hivis)}
+.gantt-escala{display:grid; grid-template-columns:200px 1fr; margin-top:8px}
+.gantt-meses{display:grid; grid-template-columns:repeat(10,1fr); font-family:var(--mono); font-size:.62rem; letter-spacing:.08em; color:#A8A89F}
+.gantt-meses span{border-left:1px solid rgba(242,241,237,.28); padding-left:5px}
+.leyenda{display:flex; gap:20px; flex-wrap:wrap; margin-top:20px; font-family:var(--mono); font-size:.68rem; text-transform:uppercase; letter-spacing:.08em}
+.leyenda i{display:inline-block; width:22px; height:10px; margin-right:7px; vertical-align:middle; font-style:normal}
+
+/* ---- corte constructivo ------------------------------------------------ */
+.corte{width:100%; max-width:760px; height:auto; display:block; margin-top:28px}
+.corte .cot{stroke:var(--tinta); stroke-width:1; fill:none}
+.corte .ln{stroke:var(--tinta); stroke-width:1.6; fill:none; stroke-linejoin:miter}
+.corte .gu{stroke:var(--tinta); stroke-width:1; stroke-dasharray:3 3; fill:none; opacity:.5}
+.corte .tx{font-family:var(--mono); font-size:11px; letter-spacing:.06em; fill:var(--tinta)}
+
+/* ---- preguntas --------------------------------------------------------- */
+details{border-bottom:1px solid rgba(13,13,12,.22)}
+.invertida details{border-bottom-color:rgba(242,241,237,.28)}
+summary{
+  font-family:var(--cond); font-weight:600; font-size:1.12rem; text-transform:uppercase;
+  cursor:pointer; list-style:none; display:flex; justify-content:space-between; gap:16px;
+  align-items:baseline; padding:19px 0;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+'; font-family:var(--mono); font-weight:400; flex:none}
+details[open] summary::after{content:'–'}
+details p{padding-bottom:20px; font-size:.98rem; max-width:74ch}
+
+.limites{list-style:none; padding:0; margin:0}
+.limites li{border-bottom:1px solid rgba(13,13,12,.22); padding:22px 0; display:grid; gap:6px}
+@media(min-width:760px){ .limites li{grid-template-columns:260px 1fr; gap:32px} }
+.limites p{margin:0; color:var(--gris); font-size:.97rem}
+
+footer{background:var(--tinta); color:var(--papel); padding-block:52px}
+footer .dato{color:#A8A89F}
+.pie-aviso{margin-top:36px; padding-top:18px; border-top:1px solid rgba(242,241,237,.28); font-family:var(--mono); font-size:.72rem; line-height:1.65; color:#A8A89F; max-width:82ch}
+</style>
+
+<!-- ==========================================================================
+     LA CAPA AEO. GeneralContractor con su catálogo de servicios y rangos de
+     precio por m², más el FAQPage con las preguntas que un jefe de operaciones
+     sí escribe completas. Es lo que permite que un motor de IA cite a la
+     constructora en vez de describir el rubro de memoria.
+     ========================================================================== -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"GeneralContractor",
+      "@id":"https://aplomo.example/#constructora",
+      "name":"Aplomo",
+      "description":"Constructora de obra industrial y edificación corporativa en Chile: naves industriales, bodegas, ampliaciones de planta y obra civil asociada.",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Camino a Lonquén 4500, bodega 12",
+        "addressLocality":"Maipú",
+        "addressRegion":"Región Metropolitana",
+        "addressCountry":"CL"
+      },
+      "areaServed":[
+        {"@type":"State","name":"Región Metropolitana"},
+        {"@type":"State","name":"Región de Valparaíso"},
+        {"@type":"State","name":"Región del Libertador General Bernardo O'Higgins"}
+      ],
+      "knowsAbout":["Naves industriales","Estructura metálica","Obra civil","Recepción municipal","Contrato a suma alzada"],
+      "hasOfferCatalog":{
+        "@type":"OfferCatalog",
+        "name":"Tipologías y rangos de costo por metro cuadrado",
+        "itemListElement":[
+          {
+            "@type":"Offer",
+            "itemOffered":{"@type":"Service","name":"Nave industrial de estructura metálica","serviceType":"Construcción industrial"},
+            "priceSpecification":{"@type":"PriceSpecification","minPrice":18,"maxPrice":26,"priceCurrency":"CLP","unitText":"UF por m² construido"}
+          },
+          {
+            "@type":"Offer",
+            "itemOffered":{"@type":"Service","name":"Bodega de acopio sin climatización","serviceType":"Construcción industrial"},
+            "priceSpecification":{"@type":"PriceSpecification","minPrice":12,"maxPrice":17,"priceCurrency":"CLP","unitText":"UF por m² construido"}
+          },
+          {
+            "@type":"Offer",
+            "itemOffered":{"@type":"Service","name":"Ampliación de planta en operación","serviceType":"Construcción industrial"},
+            "priceSpecification":{"@type":"PriceSpecification","minPrice":24,"maxPrice":38,"priceCurrency":"CLP","unitText":"UF por m² construido"}
+          },
+          {
+            "@type":"Offer",
+            "itemOffered":{"@type":"Service","name":"Edificio corporativo de hormigón armado","serviceType":"Edificación"},
+            "priceSpecification":{"@type":"PriceSpecification","minPrice":32,"maxPrice":48,"priceCurrency":"CLP","unitText":"UF por m² construido"}
+          }
+        ]
+      }
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://aplomo.example/#faq",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"¿Cuánto cuesta construir una nave industrial por metro cuadrado en Chile?",
+          "acceptedAnswer":{"@type":"Answer","text":"Una nave industrial de estructura metálica, con radier, cubierta y cerramiento, va entre 18 y 26 UF por m² construido. Una bodega de acopio simple, sin climatización ni oficinas, baja a un rango de 12 a 17 UF. Una ampliación sobre una planta en operación sube a 24 a 38 UF, porque hay que trabajar sin detener la producción. El rango se mueve principalmente por la luz libre entre pilares, la altura de hombro y la calidad del suelo, que define cuánta fundación se necesita."}
+        },
+        {
+          "@type":"Question",
+          "name":"¿Cuánto se demora la recepción municipal de una obra?",
+          "acceptedAnswer":{"@type":"Answer","text":"Solicitada la recepción con el expediente completo, la Dirección de Obras tiene plazos legales para pronunciarse, pero en la práctica el trámite toma entre uno y tres meses según la comuna y la carga de la DOM. Lo que más lo atrasa no es la municipalidad: son las observaciones por diferencias entre lo construido y lo aprobado. Por eso conviene tramitar las modificaciones durante la obra y no al final."}
+        },
+        {
+          "@type":"Question",
+          "name":"¿Qué diferencia hay entre un contrato a suma alzada y uno a administración delegada?",
+          "acceptedAnswer":{"@type":"Answer","text":"En suma alzada se pacta un precio fijo por un alcance definido: el riesgo de que la obra cueste más lo toma la constructora, y a cambio el precio incluye ese riesgo. En administración delegada el mandante paga el costo real más un honorario, así que ve cada factura y paga menos si todo sale bien, pero asume la variación. Suma alzada sirve cuando el proyecto está cerrado; administración delegada, cuando el alcance todavía se está definiendo."}
+        },
+        {
+          "@type":"Question",
+          "name":"¿Qué pasa si la obra se atrasa?",
+          "acceptedAnswer":{"@type":"Answer","text":"El contrato fija multas por día de atraso imputable a la constructora, normalmente como porcentaje diario del monto con un tope. No todo atraso es imputable: lluvias fuera de rango histórico, cambios de alcance pedidos por el mandante y demoras de servicios externos suelen dar derecho a ampliación de plazo. La diferencia entre un atraso que se cobra y uno que no está escrita en el contrato, y conviene leerla antes de firmar."}
+        },
+        {
+          "@type":"Question",
+          "name":"¿Qué es la boleta de garantía y cuánto cubre?",
+          "acceptedAnswer":{"@type":"Answer","text":"Es un documento bancario que el mandante puede cobrar si la constructora incumple. Lo habitual son dos: una de fiel cumplimiento durante la obra, por el 5% a 10% del contrato, y una de buena ejecución después de la recepción, por un monto menor y con vigencia de doce a veinticuatro meses. No cubre vicios ocultos más allá de su vigencia; para eso corren los plazos de responsabilidad de la Ley General de Urbanismo y Construcciones."}
+        },
+        {
+          "@type":"Question",
+          "name":"¿Se puede construir una ampliación sin detener la planta?",
+          "acceptedAnswer":{"@type":"Answer","text":"Sí, y es el caso más común en industria. Exige segregación física de faenas, accesos independientes para camiones y una secuencia que concentre las actividades ruidosas o con corte de servicios en ventanas acordadas, normalmente de noche o en parada programada. Encarece la obra entre un 15% y un 30% respecto de construir en terreno libre, y ese sobrecosto conviene tenerlo en el presupuesto desde el principio y no como adicional."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<div class="aviso">
+  <b>Pieza de concepto</b> · Aplomo no existe: no es una constructora real, no es un
+  cliente y ninguna de las obras ocurrió. Ejercicio de SpindleLab. Domicilio, cifras y
+  contratos son ficticios.
+</div>
+
+<header class="envoltura">
+  <div class="limite barra">
+    <span class="marca">Aplomo</span>
+    <nav>
+      <a href="#que-construimos">Qué construimos</a>
+      <a href="#programa">Programa</a>
+      <a href="#costos">Costos</a>
+      <a href="#contrato">Contrato</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+  </div>
+</header>
+<hr class="regla">
+
+<main>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="envoltura" style="padding-block:clamp(40px,6vw,88px)">
+    <div class="limite">
+      <p class="dato">Constructora industrial · Obra civil · Región Metropolitana y Valparaíso</p>
+      <h1 class="monumento" style="margin-top:20px">A plomo <br>y a plazo.</h1>
+
+      <div class="rejilla doce" style="margin-top:clamp(36px,5vw,72px)">
+        <div style="grid-column:span 5">
+          <p class="grande">
+            Naves industriales, bodegas y ampliaciones de planta. Publicamos el programa de
+            obra y el costo por metro cuadrado antes de que nos pidas una cotización.
+          </p>
+          <p style="margin-top:24px"><a class="boton" href="#contacto">Pedir visita a terreno</a></p>
+        </div>
+        <div style="grid-column:span 7">
+          <!-- Ficha técnica: el resumen que un jefe de operaciones busca primero -->
+          <div class="marco-scroll">
+            <table class="tabla-obra">
+              <caption class="dato" style="text-align:left; padding-bottom:14px">Capacidad declarada</caption>
+              <tbody>
+                <tr><th scope="row">Superficie máxima por obra</th><td class="num">12.000 m²</td></tr>
+                <tr><th scope="row">Luz libre máxima sin pilar intermedio</th><td class="num">35 m</td></tr>
+                <tr><th scope="row">Altura de hombro máxima</th><td class="num">12 m</td></tr>
+                <tr><th scope="row">Obras simultáneas</th><td class="num">3</td></tr>
+                <tr><th scope="row">Radio de operación desde Maipú</th><td class="num">180 km</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= QUÉ CONSTRUIMOS ======================= -->
+  <section class="envoltura" id="que-construimos" style="border-top:1px solid var(--filete)">
+    <div class="limite">
+      <p class="dato">Tipologías</p>
+      <h2 class="monumento" style="margin-top:16px; max-width:18ch">Cuatro cosas, hechas muchas veces.</h2>
+      <p style="margin-top:22px; color:var(--gris); max-width:56ch">
+        No hacemos vivienda, no hacemos retail y no hacemos obra pública. La lista corta es
+        a propósito: en industrial el que repite tipología es el que acierta el plazo.
+      </p>
+
+      <div class="marco-scroll" style="margin-top:clamp(30px,4vw,56px)">
+        <table class="tabla-obra" id="costos">
+          <thead>
+            <tr>
+              <th scope="col">Tipología</th>
+              <th scope="col">Qué incluye</th>
+              <th scope="col" class="num">Costo por m²</th>
+              <th scope="col" class="num">Plazo referencial</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Nave industrial</th>
+              <td>Estructura metálica, radier, cubierta, cerramiento y oficinas de apoyo.</td>
+              <td class="num">18 a 26 UF</td>
+              <td class="num">8 a 11 meses</td>
+            </tr>
+            <tr>
+              <th scope="row">Bodega de acopio</th>
+              <td>Sin climatización ni oficinas. La tipología más económica por m².</td>
+              <td class="num">12 a 17 UF</td>
+              <td class="num">5 a 7 meses</td>
+            </tr>
+            <tr>
+              <th scope="row">Ampliación de planta</th>
+              <td>Sobre instalación en operación, con segregación de faenas y ventanas de corte.</td>
+              <td class="num">24 a 38 UF</td>
+              <td class="num">7 a 12 meses</td>
+            </tr>
+            <tr>
+              <th scope="row">Edificio corporativo</th>
+              <td>Hormigón armado, terminaciones de oficina y certificación de eficiencia.</td>
+              <td class="num">32 a 48 UF</td>
+              <td class="num">12 a 18 meses</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="dato" style="margin-top:18px; max-width:72ch; line-height:1.6">
+        Valores en UF por m² construido, sin IVA, a septiembre de 2026. El rango se mueve
+        por luz libre, altura de hombro y calidad del suelo, que define cuánta fundación
+        se necesita. El número exacto sale después de la mecánica de suelos.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================= PROGRAMA DE OBRA ======================= -->
+  <section class="invertida envoltura" id="programa">
+    <div class="limite">
+      <p class="dato">Programa de obra · Nave industrial de 2.500 m²</p>
+      <h2 class="monumento" style="margin-top:16px; max-width:20ch">El plazo no parte cuando llega la excavadora.</h2>
+      <p style="margin-top:22px; max-width:58ch; opacity:.86">
+        Casi cuatro meses del programa se van en permisos y proyecto, antes de que haya una
+        sola máquina en terreno. Es la parte que nadie pone en la cotización y la que más
+        sorprende al mandante. Acá está el programa completo, a escala.
+      </p>
+
+      <div class="marco-scroll" style="margin-top:clamp(30px,4vw,56px)">
+        <div class="gantt" role="img" aria-label="Programa de obra de 44 semanas para una nave industrial de 2.500 metros cuadrados. Permisos y proyecto ocupan las semanas 1 a 8; movimiento de tierra 7 a 10; fundaciones 10 a 16; estructura metálica 15 a 24; cubierta y cerramiento 22 a 30; instalaciones 26 a 36; pavimentos y terminaciones 33 a 40; recepción municipal 40 a 44. La ruta crítica pasa por permisos, fundaciones, estructura metálica y recepción.">
+          <div class="gantt-fila"><div class="gantt-nombre">Permisos y proyecto</div><div class="gantt-pista"><div class="gantt-barra critica" style="grid-column:1 / 9"></div></div></div>
+          <div class="gantt-fila"><div class="gantt-nombre">Movimiento de tierra</div><div class="gantt-pista"><div class="gantt-barra" style="grid-column:7 / 11"></div></div></div>
+          <div class="gantt-fila"><div class="gantt-nombre">Fundaciones</div><div class="gantt-pista"><div class="gantt-barra critica" style="grid-column:10 / 17"></div></div></div>
+          <div class="gantt-fila"><div class="gantt-nombre">Estructura metálica</div><div class="gantt-pista"><div class="gantt-barra critica" style="grid-column:15 / 25"></div></div></div>
+          <div class="gantt-fila"><div class="gantt-nombre">Cubierta y cerramiento</div><div class="gantt-pista"><div class="gantt-barra" style="grid-column:22 / 31"></div></div></div>
+          <div class="gantt-fila"><div class="gantt-nombre">Instalaciones</div><div class="gantt-pista"><div class="gantt-barra" style="grid-column:26 / 37"></div></div></div>
+          <div class="gantt-fila"><div class="gantt-nombre">Pavimentos y terminaciones</div><div class="gantt-pista"><div class="gantt-barra" style="grid-column:33 / 41"></div></div></div>
+          <div class="gantt-fila"><div class="gantt-nombre">Recepción municipal</div><div class="gantt-pista"><div class="gantt-barra critica" style="grid-column:40 / 45"></div></div></div>
+
+          <div class="gantt-escala">
+            <div></div>
+            <div class="gantt-meses">
+              <span>M1</span><span>M2</span><span>M3</span><span>M4</span><span>M5</span>
+              <span>M6</span><span>M7</span><span>M8</span><span>M9</span><span>M10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leyenda">
+        <span><i style="background:#D6E000"></i>Ruta crítica</span>
+        <span><i style="background:#F2F1ED"></i>Holgura disponible</span>
+        <span style="opacity:.75">44 semanas · 10 meses</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CORTE CONSTRUCTIVO ======================= -->
+  <section class="envoltura">
+    <div class="limite">
+      <p class="dato">Corte tipo · Nave de estructura metálica</p>
+      <h2 class="monumento" style="margin-top:16px; max-width:16ch">Lo que define el precio es la luz.</h2>
+      <p style="margin-top:22px; color:var(--gris); max-width:58ch">
+        Cada metro de luz libre entre pilares encarece la estructura más que un metro de
+        largo, porque el marco crece en toda su sección. Si la operación tolera un pilar
+        intermedio, ahí hay una diferencia de precio que conviene mirar antes de cerrar
+        el proyecto.
+      </p>
+
+      <svg class="corte" viewBox="0 0 760 330" role="img" aria-labelledby="ct cd">
+        <title id="ct">Corte transversal tipo de una nave industrial de estructura metálica</title>
+        <desc id="cd">Marco metálico a dos aguas con 25 metros de luz libre entre pilares, 8 metros de altura de hombro y 10,2 metros a la cumbrera, sobre radier y fundaciones corridas.</desc>
+
+        <!-- terreno -->
+        <path class="ln" d="M20 286 H740"/>
+        <g class="gu"><path d="M20 292 H740"/><path d="M20 298 H740"/></g>
+        <!-- fundaciones -->
+        <path class="ln" d="M96 286 v22 h58 v-22"/>
+        <path class="ln" d="M606 286 v22 h58 v-22"/>
+        <!-- radier -->
+        <path class="ln" d="M125 286 H635"/>
+        <!-- pilares -->
+        <path class="ln" d="M119 286 V110"/><path class="ln" d="M131 286 V110"/>
+        <path class="ln" d="M629 286 V110"/><path class="ln" d="M641 286 V110"/>
+        <!-- vigas a dos aguas -->
+        <path class="ln" d="M119 110 L380 44 L641 110"/>
+        <path class="ln" d="M131 122 L380 58 L629 122"/>
+        <!-- costaneras -->
+        <g class="gu">
+          <path d="M184 94 v14"/><path d="M249 78 v14"/><path d="M314 62 v14"/>
+          <path d="M446 62 v14"/><path d="M511 78 v14"/><path d="M576 94 v14"/>
+        </g>
+
+        <!-- cota de luz libre -->
+        <g class="cot">
+          <path d="M131 244 H629"/><path d="M131 238 v12"/><path d="M629 238 v12"/>
+        </g>
+        <text class="tx" x="380" y="236" text-anchor="middle">LUZ LIBRE 25,00 m</text>
+
+        <!-- cota de altura de hombro -->
+        <g class="cot">
+          <path d="M690 110 V286"/><path d="M684 110 h12"/><path d="M684 286 h12"/>
+        </g>
+        <text class="tx" x="700" y="204">8,00 m</text>
+
+        <!-- cota a cumbrera -->
+        <g class="cot">
+          <path d="M60 44 V286"/><path d="M54 44 h12"/><path d="M54 286 h12"/>
+        </g>
+        <text class="tx" x="52" y="170" text-anchor="end">10,20 m</text>
+
+        <text class="tx" x="125" y="322">FUNDACIÓN CORRIDA</text>
+        <text class="tx" x="500" y="278">RADIER e=15 cm</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ======================= CONTRATO ======================= -->
+  <section class="envoltura" id="contrato" style="border-top:1px solid var(--filete)">
+    <div class="limite">
+      <p class="dato">Modalidad de contrato</p>
+      <h2 class="monumento" style="margin-top:16px; max-width:18ch">Quién se queda con el riesgo.</h2>
+      <p style="margin-top:22px; color:var(--gris); max-width:58ch">
+        Es la decisión que más plata mueve y casi nunca se explica antes de firmar. Las dos
+        modalidades son legítimas; sirven para momentos distintos del proyecto.
+      </p>
+
+      <div class="rejilla dos" style="margin-top:clamp(30px,4vw,56px)">
+        <div class="panel">
+          <p class="dato">Modalidad A</p>
+          <h3 style="margin-top:10px">Suma alzada</h3>
+          <p style="margin-top:14px; font-size:.97rem">
+            Precio fijo por un alcance definido. Si la obra cuesta más de lo previsto, lo
+            absorbe la constructora. A cambio, ese riesgo ya está dentro del precio.
+          </p>
+          <hr class="regla-fina" style="margin:18px 0">
+          <p class="dato">Sirve cuando</p>
+          <p style="margin-top:8px; font-size:.97rem">El proyecto está cerrado y el mandante necesita un número que no se mueva.</p>
+        </div>
+        <div class="panel">
+          <p class="dato">Modalidad B</p>
+          <h3 style="margin-top:10px">Administración delegada</h3>
+          <p style="margin-top:14px; font-size:.97rem">
+            El mandante paga el costo real más un honorario. Ve cada factura y paga menos
+            si todo sale bien, pero asume la variación si algo sube.
+          </p>
+          <hr class="regla-fina" style="margin:18px 0">
+          <p class="dato">Sirve cuando</p>
+          <p style="margin-top:8px; font-size:.97rem">El alcance todavía se está definiendo y cerrar un precio ahora saldría caro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= LO QUE NO CONTROLAMOS ======================= -->
+  <section class="envoltura" style="border-top:1px solid var(--filete)">
+    <div class="limite">
+      <p class="dato">Los límites</p>
+      <h2 class="monumento" style="margin-top:16px; max-width:16ch">Lo que no controlamos.</h2>
+      <p style="margin-top:22px; color:var(--gris); max-width:56ch">
+        Decirlo antes de firmar es más barato que discutirlo en la semana 30.
+      </p>
+
+      <ul class="limites" style="margin-top:clamp(28px,4vw,52px)">
+        <li>
+          <h3>La Dirección de Obras</h3>
+          <p>Los plazos de permiso y recepción dependen de la comuna y de su carga de trabajo. Los estimamos por experiencia en cada DOM, pero no los garantizamos: no son nuestros.</p>
+        </li>
+        <li>
+          <h3>El precio del acero</h3>
+          <p>En estructura metálica el acero es la partida más grande y se cotiza en dólares. Los contratos largos llevan una cláusula de reajuste; sin ella, alguien se come la diferencia y el contrato se rompe igual.</p>
+        </li>
+        <li>
+          <h3>El suelo, hasta que se perfora</h3>
+          <p>La mecánica de suelos se hace antes de cotizar, pero un relleno no declarado o una napa alta aparecen al excavar. Cuando pasa, se cotiza el mayor cimiento como adicional y se muestra el cálculo.</p>
+        </li>
+        <li>
+          <h3>La lluvia fuera de rango</h3>
+          <p>El programa contempla los días de lluvia históricos de la zona. Un invierno fuera de ese rango da derecho a ampliación de plazo, y está escrito en el contrato para que no se discuta después.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================= PREGUNTAS ======================= -->
+  <section class="invertida envoltura" id="preguntas">
+    <div class="limite rejilla doce">
+      <div style="grid-column:span 4">
+        <p class="dato">Preguntas</p>
+        <h2 class="monumento" style="margin-top:16px">Lo que se pregunta antes de licitar.</h2>
+        <p style="margin-top:20px; opacity:.82; font-size:.97rem">
+          Respondidas completas y en texto. Si la respuesta está en un PDF que hay que
+          pedir, no existe para nadie.
+        </p>
+      </div>
+      <div style="grid-column:span 8">
+        <details open>
+          <summary>¿Cuánto cuesta construir una nave industrial por m²?</summary>
+          <p>Una nave industrial de estructura metálica, con radier, cubierta y cerramiento, va entre 18 y 26 UF por m² construido. Una bodega de acopio simple, sin climatización ni oficinas, baja a un rango de 12 a 17 UF. Una ampliación sobre una planta en operación sube a 24 a 38 UF, porque hay que trabajar sin detener la producción. El rango se mueve principalmente por la luz libre entre pilares, la altura de hombro y la calidad del suelo, que define cuánta fundación se necesita.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto se demora la recepción municipal?</summary>
+          <p>Solicitada la recepción con el expediente completo, la Dirección de Obras tiene plazos legales para pronunciarse, pero en la práctica el trámite toma entre uno y tres meses según la comuna y la carga de la DOM. Lo que más lo atrasa no es la municipalidad: son las observaciones por diferencias entre lo construido y lo aprobado. Por eso conviene tramitar las modificaciones durante la obra y no al final.</p>
+        </details>
+        <details>
+          <summary>¿Suma alzada o administración delegada?</summary>
+          <p>En suma alzada se pacta un precio fijo por un alcance definido: el riesgo de que la obra cueste más lo toma la constructora, y a cambio el precio incluye ese riesgo. En administración delegada el mandante paga el costo real más un honorario, así que ve cada factura y paga menos si todo sale bien, pero asume la variación. Suma alzada sirve cuando el proyecto está cerrado; administración delegada, cuando el alcance todavía se está definiendo.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa si la obra se atrasa?</summary>
+          <p>El contrato fija multas por día de atraso imputable a la constructora, normalmente como porcentaje diario del monto con un tope. No todo atraso es imputable: lluvias fuera de rango histórico, cambios de alcance pedidos por el mandante y demoras de servicios externos suelen dar derecho a ampliación de plazo. La diferencia entre un atraso que se cobra y uno que no está escrita en el contrato, y conviene leerla antes de firmar.</p>
+        </details>
+        <details>
+          <summary>¿Qué es la boleta de garantía y cuánto cubre?</summary>
+          <p>Es un documento bancario que el mandante puede cobrar si la constructora incumple. Lo habitual son dos: una de fiel cumplimiento durante la obra, por el 5% a 10% del contrato, y una de buena ejecución después de la recepción, por un monto menor y con vigencia de doce a veinticuatro meses. No cubre vicios ocultos más allá de su vigencia; para eso corren los plazos de responsabilidad de la Ley General de Urbanismo y Construcciones.</p>
+        </details>
+        <details>
+          <summary>¿Se puede ampliar sin detener la planta?</summary>
+          <p>Sí, y es el caso más común en industria. Exige segregación física de faenas, accesos independientes para camiones y una secuencia que concentre las actividades ruidosas o con corte de servicios en ventanas acordadas, normalmente de noche o en parada programada. Encarece la obra entre un 15% y un 30% respecto de construir en terreno libre, y ese sobrecosto conviene tenerlo en el presupuesto desde el principio y no como adicional.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CONTACTO ======================= -->
+  <section class="envoltura" id="contacto" style="border-top:1px solid var(--filete)">
+    <div class="limite rejilla doce">
+      <div style="grid-column:span 7">
+        <p class="dato">Primer paso</p>
+        <h2 class="monumento" style="margin-top:16px; max-width:14ch">Visita a terreno, sin costo.</h2>
+        <p style="margin-top:22px; max-width:52ch">
+          Vamos, medimos y te decimos en una semana si el terreno aguanta lo que quieres
+          construir y en qué rango de UF por m² estaría. Sin compromiso de licitarnos.
+        </p>
+        <p style="margin-top:26px"><a class="boton" href="#contacto">Pedir visita a terreno</a></p>
+        <p class="dato" style="margin-top:26px; line-height:1.7">
+          Camino a Lonquén 4500, bodega 12, Maipú<br>
+          Lunes a viernes, 8:00 a 18:00
+        </p>
+      </div>
+      <div style="grid-column:span 5">
+        <div class="panel">
+          <p class="dato">Qué te llevas de la visita</p>
+          <hr class="regla-fina" style="margin:16px 0">
+          <table class="tabla-obra" style="font-size:.92rem">
+            <tbody>
+              <tr><td style="border-bottom-color:rgba(13,13,12,.14)">Levantamiento con medidas del terreno</td></tr>
+              <tr><td style="border-bottom-color:rgba(13,13,12,.14)">Tipología recomendada y por qué</td></tr>
+              <tr><td style="border-bottom-color:rgba(13,13,12,.14)">Rango de UF por m² para tu caso</td></tr>
+              <tr><td style="border-bottom-color:rgba(13,13,12,.14)">Programa preliminar en semanas</td></tr>
+              <tr><td style="border-bottom:0">Qué permisos vas a necesitar</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="envoltura">
+  <div class="limite">
+    <div class="rejilla dos">
+      <div>
+        <span class="marca">Aplomo</span>
+        <p class="dato" style="margin-top:12px; line-height:1.7">
+          Constructora industrial y edificación corporativa<br>
+          Maipú, Región Metropolitana
+        </p>
+      </div>
+      <div>
+        <p class="dato">Contacto</p>
+        <p class="dato" style="margin-top:10px; line-height:1.9; color:var(--papel)">
+          obras@aplomo.example<br>
+          +56 2 2987 6543
+        </p>
+      </div>
+    </div>
+    <p class="pie-aviso">
+      Esta es una pieza de concepto de SpindleLab. Aplomo no existe. La constructora, el
+      domicilio, el teléfono, las obras, los plazos y los valores por m² son ficticios y se
+      construyeron para mostrar cómo se estructura un sitio B2B de construcción: datos
+      estructurados de GeneralContractor con catálogo de precios, contenido en formato
+      citable por motores de IA, y el programa de obra y las condiciones de contrato
+      publicados en vez de reservados para la reunión. No constituye oferta de servicios
+      de construcción ni asesoría técnica.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

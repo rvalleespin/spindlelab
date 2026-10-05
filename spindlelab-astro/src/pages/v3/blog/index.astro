@@ -1,0 +1,213 @@
+---
+// ÍNDICE DEL BLOG en el lenguaje v3.
+//
+// EL MOLDE SALE DE LA REFERENCIA, MEDIDO: su sección de notas es negra, con tarjetas de
+// imagen 3:2 a ~47% del ancho, titular de 30px en peso 500 con tracking -0,6px, bajada de
+// 18px en gris y fecha de 14px. Dos por fila. No es una grilla de tarjetas con borde:
+// la imagen ES la tarjeta y debajo va el texto, sin caja que lo encierre.
+//
+// LOS DATOS SALEN DE data/blog-v3/_indice.json, que se extrajo de los posts publicados.
+// Ni el título ni la bajada ni la fecha se retipean acá: un índice que se escribe a mano
+// es un índice que termina diciendo algo distinto al post.
+//
+// ⚠️ LAS IMÁGENES SON DECISIÓN EDITORIAL, NO DATO. Los 7 posts no traen imagen propia, así
+// que acá se les asigna una de las que YA están en el sitio vivo (las mismas que hoy hacen
+// de hero en las páginas de servicio y en el blog). No hay ninguna imagen inventada ni
+// generada, pero la asignación tema→foto es mía y se cambia en un solo lugar: el mapa de
+// abajo. Si prefieres el índice sin fotos, se borra `foto` y la tarjeta queda a puro texto.
+import Layout from '../../../layouts/Layout.astro';
+import { caja } from '../../../utils/caja';
+import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
+import NavV3 from '../../../components/v3/NavV3.astro';
+import FooterV3 from '../../../components/v3/FooterV3.astro';
+
+import indice from '../../../data/blog-v3/_indice.json';
+import '../../../styles/campos-v3.css'; // por .palabra y el radio de 6px
+
+const url = 'https://spindlelab.cl/blog/';
+
+// tema → foto ya publicada en el sitio. El alt describe la foto, no afirma nada del post.
+const fotos: Record<string, { src: string; alt: string }> = {
+  '21-chequeos-visibilidad-ia': {
+    src: '/video/evidencia-medicion.jpg',
+    alt: 'Pantalla con una medición en curso',
+  },
+  'como-aparecer-en-chatgpt': {
+    src: '/assets/img/hero-visibilidad-ia.jpg',
+    alt: 'Persona revisando resultados en un computador',
+  },
+  'como-elegir-verificar-agencia-aeo-geo-chile': {
+    src: '/video/evidencia-oficina.jpg',
+    alt: 'Mesa de oficina con documentos de trabajo',
+  },
+  'cuanto-cuesta-seo-tecnico-chile': {
+    src: '/assets/img/estrategia-mesa.jpg',
+    alt: 'Mesa de trabajo con notas y un computador',
+  },
+  'que-es-aeo-geo': {
+    src: '/assets/img/hero-blog.jpg',
+    alt: 'Escritorio con material de lectura',
+  },
+  'que-es-un-mini-diagnostico-seo': {
+    src: '/assets/img/hero-auditoria-seo.jpg',
+    alt: 'Pantalla con una auditoría técnica abierta',
+  },
+  'seo-tecnico-fintechs-chile': {
+    src: '/assets/img/hero-edificios.jpg',
+    alt: 'Fachada de edificios corporativos',
+  },
+};
+
+// Más nuevo primero. Ordenar por fecha y no por nombre de archivo: alfabético dejaba
+// «21-chequeos», el más reciente, arriba por casualidad y no por criterio.
+const posts = [...indice].sort((a, b) => (a.datePublished < b.datePublished ? 1 : -1));
+
+const fechaLarga = (f: string) =>
+  new Date(f).toLocaleDateString('es-CL', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': `${url}#collectionpage`,
+      url,
+      name: 'Blog · SpindleLab',
+      isPartOf: { '@id': 'https://spindlelab.cl/#website' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
+        { '@type': 'ListItem', position: 2, name: 'Blog' },
+      ],
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#itemlist`,
+      itemListElement: posts.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: p.headline,
+        url: p.canonical,
+      })),
+    },
+  ],
+};
+---
+
+<Layout
+  title="Blog: SEO técnico y visibilidad en IA · SpindleLab"
+  description="Cómo funcionan el SEO técnico y la visibilidad en motores de IA en Chile, explicado con la metodología a la vista y sin promesas de primeros lugares."
+  bodyClass="bg-noche font-texto"
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <NavV3 />
+
+  <main class="text-papel">
+    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-20 md:pb-28">
+      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
+        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
+        <span aria-hidden="true" class="mx-2">·</span>
+        <span class="text-papel/60">Blog</span>
+      </nav>
+      {/* Una palabra, como los campos. 8,33vw, tracking normal. */}
+      <h1 class="palabra">Blog</h1>
+      <p data-entra data-paso="1" class="mt-10 text-humo text-xl md:text-2xl leading-relaxed max-w-prosa">
+        Cómo funciona esto por dentro: qué mira el chequeo, qué cuesta arreglarlo y qué
+        preguntar antes de contratar a alguien. La metodología está publicada a propósito.
+      </p>
+    </section>
+
+    {/* LAS NOTAS. Dos por fila, imagen 3:2 arriba y texto debajo, sin caja. */}
+    <section class="px-6 md:px-medianil pb-24 md:pb-40">
+      <ul class="list-none p-0 m-0 grid gap-x-8 gap-y-16 md:grid-cols-2">
+        {
+          posts.map((p) => {
+            const foto = fotos[p.slug];
+            return (
+              // La tarjeta entera entra como una pieza. Marcar solo la bajada dejaba la
+              // foto y el titular puestos y el texto apareciendo después: se lee a falla,
+              // no a animación.
+              <li data-entra>
+                <a href={`/v3/blog/${p.slug}/`} class="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel focus-visible:outline-offset-4">
+                  {foto && (
+                    <img
+                      src={foto.src}
+                      alt={foto.alt}
+                      width="1280"
+                      height="853"
+                      loading="lazy"
+                      decoding="async"
+                      class="w-full rounded-v3 object-cover group-hover:opacity-85 transition-opacity"
+                      style="aspect-ratio:3/2"
+                    />
+                  )}
+                  <p class="m-0 mt-6 text-humo text-sm">
+                    <time datetime={p.datePublished}>{fechaLarga(p.datePublished)}</time>
+                  </p>
+                  {/* 30px peso 500 tracking -0,6px: la medida de la tarjeta en la referencia. */}
+                  <h2
+                    class="m-0 mt-3 font-medium group-hover:opacity-70 transition-opacity"
+                    style="font-size:clamp(1.375rem,2.08vw,1.875rem); line-height:1.4; letter-spacing:-0.6px; text-wrap:balance"
+                  >
+                    {p.headline}
+                  </h2>
+                  <p class="m-0 mt-4 text-humo text-lg leading-relaxed max-w-prosa">
+                    {p.description}
+                  </p>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </section>
+
+    {/* NAVY. El blog era lo único del sitio sin campo de color: índice y artículos en
+        0%. Navy es el color de Visibilidad en IA, que es de lo que hablan casi todos los
+        artículos, así que el cierre del blog usa el mismo campo al que empuja. Decidido
+        por Ramón el 29-sep. */}
+    <section class="tinte--navy px-6 md:px-medianil py-32 md:py-seccion">
+      {/* ESTE TITULAR ERA «¿Te menciona la IA?», el h1 que la home retiró el 29-sep.
+          Quedó vivo acá, en display y hasta 5rem, en las 8 páginas del blog, y su botón
+          manda a /v3/#chequeo: una pieza que preguntaba y un destino que ahora afirma.
+          Pasa a afirmar lo mismo que el hero, y de paso fija el referente de «eje» en el
+          sitio, que es donde lo pone servicios-v3.json:720 («El sitio es el eje; la pauta
+          lo acelera»). La línea de apoyo de abajo no se toca: es la que conserva la
+          promesa del chequeo y las tres compuertas.
+          La redacción es mía, no de Ramón. Él eligió el h1 de la home, no éste. */}
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 max-w-[15ch]', caja('El sitio es el eje.')]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
+      >
+        El sitio es el eje.
+      </h2>
+      <p data-entra data-paso="1" class="mt-8 text-humo text-xl md:text-2xl leading-relaxed max-w-prosa">
+        Te decimos si una IA te puede leer, si te entiende y si te puede citar. Treinta segundos.
+      </p>
+      <div class="mt-12 flex items-center gap-4 flex-wrap">
+        <a
+          href="/v3/#chequeo"
+          class="boton-campo"
+        >
+          Correr el chequeo
+        </a>
+        <a
+          href={CONTACTO}
+          class="rounded-v3 border filete hover:border-current text-sm font-bold px-8 py-4 transition-colors"
+        >
+          Conversemos tu proyecto
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <FooterV3 />
+</Layout>

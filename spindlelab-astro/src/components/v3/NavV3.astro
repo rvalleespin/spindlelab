@@ -1,0 +1,233 @@
+---
+// Nav del sistema V3 — OVERLAY A PANTALLA COMPLETA.
+//
+// POR QUÉ VUELVE A SER OVERLAY. El 27-sep Ramón pidió lo contrario: que el panel creciera
+// desde el módulo del wordmark en vez de tapar la página. El 29-sep lo revirtió mirándolo
+// en uso: «el botón de menú no se despliega con las otras opciones para navegar». Y tenía
+// dos razones, no una:
+//
+//   1. El panel anclado medía 320px de ancho y colgaba sobre el contenido. Funcionaba
+//      —abría, cerraba, tenía foco— pero no se leía como navegación, se leía como un
+//      accidente sobre el titular.
+//   2. Le FALTABAN PÁGINAS. El menú tenía seis enlaces y el sitio tiene veinte páginas.
+//      No había forma de llegar a Nosotros ni al Blog desde ninguna parte del menú. Eso
+//      no es un problema de estilo, es navegación rota.
+//
+// Medido en la referencia para no inventar: su H1 de página va a 120px, peso 800 y
+// MAYÚSCULAS (verificado en su índice de trabajo: «OUR WORK AND PARTNERSHIPS»), y sus
+// etiquetas de proyecto van a 16px peso 400. Esa es la distancia entre los dos niveles de
+// lectura que se copia acá: el menú primario grande, la lista de servicios chica.
+//
+// El punto dorado del wordmark sigue siendo el único dorado de la vista.
+import { CONTACTO_V3 as CONTACTO, SERVICIOS_V3 } from '../../consts-v3';
+
+// Las SIETE páginas de primer nivel. Antes eran seis enlaces y dos de ellos eran anclas
+// de la home, no páginas: se podía «navegar» sin salir nunca del inicio.
+const principales = [
+  { href: '/v3/', label: 'Inicio' },
+  { href: '/v3/servicios/', label: 'Servicios' },
+  { href: '/v3/trabajo/', label: 'Trabajo' },
+  { href: '/v3/metodo/', label: 'Método' },
+  { href: '/v3/nosotros/', label: 'Nosotros' },
+  { href: '/v3/blog/', label: 'Blog' },
+  { href: '/v3/diagnostico/', label: 'Chequeo gratis' },
+  { href: CONTACTO, label: 'Contacto' },
+];
+---
+
+<header class="fixed top-0 left-0 z-50 p-4 sm:p-5">
+  <div class="rounded-v3 overflow-hidden bg-black/75 backdrop-blur border border-white/10">
+    <div class="flex items-stretch">
+      <a
+        href="/v3/"
+        class="font-wordmark text-lg sm:text-xl text-papel tracking-tight pl-5 pr-4 py-3 flex items-center"
+      >
+        SpindleLab<span class="text-gold">.</span>
+      </a>
+      <button
+        type="button"
+        id="menu-btn"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="menu-overlay"
+        class="px-4 border-l border-white/10 text-papel hover:bg-white/10 transition-colors flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+      >
+        <span id="icono-abrir" aria-hidden="true" class="block w-5 space-y-[5px]">
+          <span class="block h-[1.5px] bg-papel"></span>
+          <span class="block h-[1.5px] bg-papel"></span>
+        </span>
+        <span id="icono-cerrar" style="display:none" aria-hidden="true" class="relative block w-5 h-5">
+          <span class="absolute inset-x-0 top-1/2 h-[1.5px] bg-papel rotate-45"></span>
+          <span class="absolute inset-x-0 top-1/2 h-[1.5px] bg-papel -rotate-45"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+
+{/* El overlay vive FUERA del módulo del wordmark: cubre la pantalla entera, así que no
+    puede estar dentro de una caja de 232px con overflow oculto. */}
+<div
+  id="menu-overlay"
+  hidden
+  class="fixed inset-0 z-40 bg-noche overflow-y-auto"
+>
+  <nav aria-label="Principal" class="min-h-full px-6 md:px-medianil pt-28 md:pt-32 pb-12 md:pb-16 grid md:grid-cols-12 gap-x-8 gap-y-12 content-start">
+    {/* Primario: grande y en mayúsculas, como los titulares de página de la referencia. */}
+    <ul class="list-none p-0 m-0 md:col-span-7">
+      {
+        principales.map((m, i) => (
+          <li class="border-b filete">
+            <a
+              href={m.href}
+              data-menu-link
+              data-paso={i}
+              class="menu-enlace group flex items-baseline gap-5 py-3 md:py-3.5 text-papel focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel focus-visible:-outline-offset-4"
+            >
+              <span class="rotulo text-base tabular-nums flex-none">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span class="font-extrabold uppercase leading-none tracking-normal menu-palabra">
+                {m.label}
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    {/* Secundario: los seis servicios, en la escala chica. En la referencia las etiquetas
+        de proyecto van a 16px peso 400 contra titulares de 120px; esa distancia es lo que
+        hace que se lean dos niveles y no una lista larga. */}
+    <div class="md:col-span-4 md:col-start-9">
+      <span class="rotulo text-base">Los servicios</span>
+      <ul class="list-none p-0 m-0 mt-5">
+        {
+          SERVICIOS_V3.map((s) => (
+            <li class="border-b filete">
+              <a
+                href={s.href}
+                data-menu-link
+                class="block py-3 text-papel text-base hover:opacity-70 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel focus-visible:-outline-offset-2"
+              >
+                {s.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="mt-10 text-humo text-base leading-relaxed max-w-prosa">
+        Estudio de diseño y SEO técnico en Santiago. Construimos el sitio y dejamos resuelto
+        que las máquinas que hoy recomiendan tu negocio puedan leerlo.
+      </p>
+    </div>
+  </nav>
+</div>
+
+<style>
+  /* La palabra del menú, en la escala de display. No llega a los 8,33vw de un campo de
+   * color: un menú de siete filas a ese tamaño no cabe en una pantalla, y el punto de
+   * esto es justamente ver las siete de una vez. */
+  .menu-palabra {
+    /* El tope baja de 3,75rem a 3,25rem por una razón medida, no estética: con siete
+     * filas y el tamaño anterior, «CONTACTO» quedaba cortado bajo el borde de una
+     * pantalla de 900px. El punto de un menú de pantalla completa es ver las siete
+     * opciones de una vez; si hay que hacer scroll para encontrar la última, vuelve a
+     * ser una lista escondida. */
+    font-size: clamp(1.625rem, 4vw, 3.25rem);
+  }
+  /* El número se alinea con la palabra sin competir. */
+  .menu-enlace .rotulo {
+    transition: opacity 0.2s;
+  }
+  .menu-enlace:hover .menu-palabra {
+    opacity: 0.7;
+  }
+
+  /* Entrada escalonada de las filas, con la misma curva que el resto del v3. Si el JS no
+   * corre, el overlay no se abre y esto no aplica: nunca deja contenido escondido. */
+  #menu-overlay[data-abierto] .menu-enlace {
+    animation: menu-entra 0.5s cubic-bezier(0.5, 0, 0.1, 1) backwards;
+  }
+  #menu-overlay[data-abierto] .menu-enlace[data-paso='1'] { animation-delay: 0.04s }
+  #menu-overlay[data-abierto] .menu-enlace[data-paso='2'] { animation-delay: 0.08s }
+  #menu-overlay[data-abierto] .menu-enlace[data-paso='3'] { animation-delay: 0.12s }
+  #menu-overlay[data-abierto] .menu-enlace[data-paso='4'] { animation-delay: 0.16s }
+  #menu-overlay[data-abierto] .menu-enlace[data-paso='5'] { animation-delay: 0.2s }
+  #menu-overlay[data-abierto] .menu-enlace[data-paso='6'] { animation-delay: 0.24s }
+  @keyframes menu-entra {
+    from { opacity: 0; transform: translateY(14px) }
+    to { opacity: 1; transform: none }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #menu-overlay[data-abierto] .menu-enlace { animation: none }
+    .menu-enlace .rotulo, .menu-enlace:hover .menu-palabra { transition: none }
+  }
+</style>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const panel = document.getElementById('menu-overlay');
+  const iAbrir = document.getElementById('icono-abrir');
+  const iCerrar = document.getElementById('icono-cerrar');
+
+  // `hidden` no gana contra las clases de display de Tailwind, así que los iconos se
+  // conmutan por estilo. Se vio en el render: salían los dos a la vez.
+  if (btn && panel && iAbrir && iCerrar) {
+    let devolver: HTMLElement | null = null;
+
+    const focos = () =>
+      [...panel.querySelectorAll<HTMLElement>('a[href], button')].filter((e) => e.offsetParent);
+
+    const abrir = () => {
+      devolver = document.activeElement as HTMLElement;
+      panel.hidden = false;
+      panel.setAttribute('data-abierto', '');
+      // Este overlay SÍ cubre la pantalla, así que el scroll del fondo se bloquea. En el
+      // panel anclado anterior no se bloqueaba, y ahí era lo correcto: dejar atrapado a
+      // quien tiene la página a la vista no tiene sentido. Acá la página no se ve.
+      document.documentElement.style.overflow = 'hidden';
+      iAbrir.style.display = 'none';
+      iCerrar.style.display = 'block';
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-label', 'Cerrar menú');
+      focos()[0]?.focus();
+    };
+
+    const cerrar = ({ devolverFoco = true } = {}) => {
+      panel.hidden = true;
+      panel.removeAttribute('data-abierto');
+      document.documentElement.style.overflow = '';
+      iAbrir.style.display = 'block';
+      iCerrar.style.display = 'none';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Abrir menú');
+      if (devolverFoco) (devolver ?? btn).focus();
+    };
+
+    btn.addEventListener('click', () => (panel.hidden ? abrir() : cerrar()));
+
+    panel.querySelectorAll('[data-menu-link]').forEach((a) => {
+      a.addEventListener('click', () => cerrar({ devolverFoco: false }));
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (panel.hidden) return;
+      if (e.key === 'Escape') return cerrar();
+      // El foco queda encerrado mientras el overlay cubre la pantalla: si se escapa al
+      // fondo, el visitante de teclado navega a ciegas por una página que no ve.
+      if (e.key !== 'Tab') return;
+      const f = focos();
+      if (!f.length) return;
+      const primero = f[0];
+      const ultimo = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === primero) {
+        e.preventDefault();
+        ultimo.focus();
+      } else if (!e.shiftKey && document.activeElement === ultimo) {
+        e.preventDefault();
+        primero.focus();
+      }
+    });
+  }
+</script>

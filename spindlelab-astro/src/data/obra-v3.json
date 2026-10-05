@@ -1,0 +1,58 @@
+{
+  "titulo": "Trabajo",
+  "bajada": "Cuatro piezas: tres sitios en producción y un ejercicio de concepto. Está dicho cuál es cuál en cada una.",
+  "casos": [
+    {
+      "slug": "combeau-fotografia",
+      "n": "Bernardo Combeau",
+      "rubro": "Fotografía de retrato",
+      "tipo": "cliente",
+      "linea": "Sitio y panel de administración para un fotógrafo de retrato. Él carga las series y el sitio se arma solo.",
+      "url": "https://bernardocombeau.cl/",
+      "img": "/assets/img/obra/combeau-fotografia-ancho.jpg",
+      "w": 1440,
+      "h": 810,
+      "tira": "/assets/img/obra/combeau-fotografia-alto.jpg",
+      "alt": "Portada de bernardocombeau.cl, con el titular «Un buen retrato no se toma. Se construye dirigiendo a la persona hasta su mejor versión.»"
+    },
+    {
+      "slug": "combeau-modelo",
+      "n": "Bernardo Combeau | Model",
+      "rubro": "Book de modelo",
+      "tipo": "cliente",
+      "linea": "El mismo cliente, el otro oficio. Book de modelo en inglés, con su propia marca y su propia navegación.",
+      "url": "https://bernardocombeau.cl/modelo/",
+      "img": "/assets/img/obra/combeau-modelo-ancho.jpg",
+      "w": 1440,
+      "h": 810,
+      "tira": "/assets/img/obra/combeau-modelo-alto.jpg",
+      "alt": "Portada del book de modelo de Bernardo Combeau, con una fotografía editorial a pantalla completa"
+    },
+    {
+      "slug": "verifica-y-cumple",
+      "n": "Verifica y Cumple",
+      "rubro": "Herramienta propia",
+      "tipo": "propio",
+      "linea": "Chequeo gratuito de las señales técnicas que pide la Ley 21.719. Lo construimos y lo mantenemos nosotros.",
+      "url": "https://verificaycumple.pages.dev/",
+      "img": "/assets/img/obra/verifica-y-cumple-ancho.jpg",
+      "w": 1440,
+      "h": 810,
+      "tira": "/assets/img/obra/verifica-y-cumple-alto.jpg",
+      "alt": "Portada de Verifica y Cumple, con el titular «¿Estás seguro?» en azul y verde"
+    },
+    {
+      "slug": "raigal",
+      "n": "Raigal",
+      "rubro": "Implantología",
+      "tipo": "concepto",
+      "linea": "Clínica de implantología y rehabilitación oral. Sitio completo, del argumento clínico a la ficha de tratamiento.",
+      "url": null,
+      "img": "/assets/img/obra/raigal-ancho.jpg",
+      "w": 1440,
+      "h": 810,
+      "tira": "/assets/img/obra/raigal-alto.jpg",
+      "alt": "Portada del sitio de concepto Raigal, con el titular «Volver a morder»"
+    }
+  ]
+}

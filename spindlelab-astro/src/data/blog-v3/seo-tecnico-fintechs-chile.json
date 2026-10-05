@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "slug": "seo-tecnico-fintechs-chile",
+    "title": "SEO técnico para fintechs chilenas · SpindleLab",
+    "description": "Los 7 problemas de SEO técnico más comunes en fintechs chilenas: renderizado JS, indexación descontrolada, E-E-A-T débil y más, con su solución.",
+    "headline": "SEO técnico para fintechs chilenas: los 7 problemas que más se repiten",
+    "datePublished": "2026-07-07",
+    "dateModified": "2026-08-25",
+    "canonical": "https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://spindlelab.cl/#org",
+        "name": "SpindleLab",
+        "url": "https://spindlelab.cl/",
+        "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
+        "email": "hola@spindlelab.cl",
+        "description": "SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B y financieras en Chile.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Santiago",
+          "addressCountry": "CL"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Chile"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/spindlelab/",
+          "https://www.instagram.com/spindle.lab/"
+        ],
+        "founder": {
+          "@id": "https://spindlelab.cl/#autor-ramon"
+        }
+      },
+      {
+        "@type": "Article",
+        "@id": "https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/#article",
+        "headline": "SEO técnico para fintechs chilenas: los 7 problemas que más se repiten",
+        "description": "Los siete problemas de SEO técnico más comunes en sitios financieros chilenos y cómo corregirlos sin rehacer la plataforma.",
+        "inLanguage": "es-CL",
+        "datePublished": "2026-07-07",
+        "dateModified": "2026-08-25",
+        "image": "https://spindlelab.cl/assets/img/og-marca.jpg?v=4",
+        "author": {
+          "@id": "https://spindlelab.cl/#autor-ramon"
+        },
+        "publisher": {
+          "@id": "https://spindlelab.cl/#org"
+        },
+        "mainEntityOfPage": "https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://spindlelab.cl/#autor-ramon",
+        "name": "Ramón Vallejos",
+        "jobTitle": "Consultor de SEO técnico y visibilidad en IA (AEO/GEO)",
+        "image": "https://spindlelab.cl/assets/img/ramon-vallejos.jpg",
+        "worksFor": {
+          "@id": "https://spindlelab.cl/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://spindlelab.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "El Taller",
+            "item": "https://spindlelab.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "SEO técnico para fintechs chilenas",
+            "item": "https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/"
+          }
+        ]
+      }
+    ]
+  }
+}

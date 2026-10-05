@@ -1,0 +1,256 @@
+---
+// DIAGNÓSTICO en el lenguaje V3. Ritmo de color: tinta → papel → brasa → tinta → papel.
+//
+// ESTA ES LA PÁGINA DELICADA. El chequeo es una herramienta que funciona de verdad:
+//   · El formulario necesita los id exactos chq-form, chq-dominio y chq-btn.
+//   · El script escribe resultados dentro de #chq-out y errores en #chq-error.
+//   · Llama a /api/chequeo e inyecta 18 clases chq-* por innerHTML.
+// Nada de eso se reescribió. El script va tal cual en /assets/js/v3-chequeo.js y sus
+// estilos, que resultaron estar inline en la página publicada y no en el CSS compartido,
+// van tal cual en styles/chequeo-v3.css. El tool es autocontenido, así que sigue
+// funcionando igual dentro del diseño nuevo.
+//
+// Su adaptación visual al lenguaje V3 es un paso APARTE y deliberado: tocar esos estilos
+// a ciegas solo se nota cuando alguien corre un chequeo real y ve el resultado roto.
+//
+// OJO CON EL CAMPO BRASA (#DA3400): papel encima da 4,31:1 y reprueba AA. Ahí el cuerpo
+// va en blanco puro (4,70:1).
+import Layout from '../../layouts/Layout.astro';
+import { caja } from '../../utils/caja';
+import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
+import NavV3 from '../../components/v3/NavV3.astro';
+import FooterV3 from '../../components/v3/FooterV3.astro';
+
+import paginas from '../../data/paginas-v3.json';
+import '../../styles/chequeo-v3.css';
+import '../../styles/campos-v3.css'; // tintes de color, filete, rotulo
+
+const s = (paginas as Record<string, any>).diagnostico;
+const [chequeos, caminos, ley, responde, cierre] = s.secciones;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${s.canonical}#breadcrumb`,
+      itemListElement: s.breadcrumb ?? [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
+        { '@type': 'ListItem', position: 2, name: 'Chequeo gratis' },
+      ],
+    },
+    ...(s.faq?.length
+      ? [{
+          '@type': 'FAQPage',
+          '@id': `${s.canonical}#faq`,
+          mainEntity: s.faq.map((f: any) => ({
+            '@type': 'Question',
+            name: f.p,
+            acceptedAnswer: { '@type': 'Answer', text: f.r },
+          })),
+        }]
+      : []),
+  ],
+};
+---
+
+<Layout title={s.title} description={s.description} bodyClass="bg-noche font-texto">
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <NavV3 />
+
+  <main class="text-papel">
+    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-48 pb-14 md:pb-16">
+      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
+        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
+        <span aria-hidden="true" class="mx-2">·</span>
+        <span class="text-humo">Chequeo gratis</span>
+      </nav>
+      <h1
+        data-entra
+        class:list={['font-extrabold m-0 max-w-[12ch]', caja(s.h1)]}
+        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.88; letter-spacing:0"
+      >
+        {s.h1}
+      </h1>
+
+      <div data-entra data-paso="1" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
+        <div class="md:col-span-5">
+          {s.lead && <p class="m-0 text-papel text-xl md:text-2xl leading-relaxed">{s.lead}</p>}
+        </div>
+        <div class="md:col-span-6 md:col-start-7">
+          <img
+            src={s.foto}
+            alt={s.fotoAlt}
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+            class="media-campo"
+          />
+        </div>
+      </div>
+
+    </section>
+
+    {/* EL CHEQUEO. Los id son contrato con el script: no tocar. */}
+    <section id="chequeo" class="px-6 md:px-medianil pb-24 md:pb-36 scroll-mt-24">
+      <div class="border-t border-b filete">
+        <form class="chq-form flex flex-col sm:flex-row sm:items-stretch" id="chq-form" novalidate>
+          <label for="chq-dominio" class="sr-only">Tu dominio</label>
+          <input
+            id="chq-dominio"
+            name="dominio"
+            type="text"
+            inputmode="url"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+            placeholder="tuempresa.cl"
+            required
+            class="flex-1 bg-transparent font-mono text-2xl md:text-4xl text-papel placeholder:text-humo py-7 md:py-9 outline-none focus-visible:bg-white/[0.04] transition-colors"
+          />
+          <button
+            type="submit"
+            id="chq-btn"
+            class="flex-none self-stretch sm:self-auto bg-papel hover:bg-white text-noche text-sm font-bold px-8 my-4 sm:my-5 rounded-v3 transition-colors py-3.5 sm:py-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+          >
+            Revisar mi sitio
+          </button>
+        </form>
+      </div>
+
+      <div class="chq-error mt-6 text-sm" id="chq-error" role="alert"></div>
+      <div id="chq-out" aria-live="polite" class="mt-8"></div>
+    </section>
+
+    {/* PAPEL: los 21 chequeos publicados. */}
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[16ch]', caja(chequeos.h2)]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
+      >
+        {chequeos.h2}
+      </h2>
+      <div data-entra data-paso="1" class="grid gap-x-8 lg:gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+        {
+          (chequeos.bloques ?? []).map((b: any) => (
+            <article class="border-t filete pt-5">
+              <h3
+                class:list={['font-extrabold m-0', caja(b.t)]}
+                style="font-size:clamp(1.0625rem,1.5vw,1.375rem); line-height:1.1; letter-spacing:-0.03em"
+              >
+        {b.t}
+      </h3>
+              {b.d && <p class="mt-3 text-noche/65 text-base leading-relaxed">{b.d}</p>}
+            </article>
+          ))
+        }
+      </div>
+      {chequeos.parrafos?.[0] && (
+        <p class="mt-12 text-noche/65 text-lg leading-relaxed max-w-prosa">{chequeos.parrafos[0]}</p>
+      )}
+    </section>
+
+    {/* CAMPO BRASA. Texto en BLANCO PURO: papel encima reprueba AA sobre este color. */}
+    <section class="tinte--brasa text-white px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[16ch]', caja(caminos.h2)]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
+      >
+        {caminos.h2}
+      </h2>
+      <div data-entra data-paso="1" class="grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-2">
+        {
+          (caminos.bloques ?? []).map((b: any) => (
+            <article class="border-t filete pt-6">
+              <h3
+                class:list={['font-extrabold m-0', caja(b.t)]}
+                style="font-size:clamp(1.25rem,2vw,1.875rem); line-height:1.05; letter-spacing:-0.03em"
+              >
+        {b.t}
+      </h3>
+              {b.d && <p class="mt-4 text-white text-base leading-relaxed">{b.d}</p>}
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    {/* TINTA: la ley y lo que solemos responder. */}
+    <section class="px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 max-w-[17ch]', caja(ley.h2)]}
+        style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0; text-wrap:balance"
+      >
+        {ley.h2}
+      </h2>
+      {ley.parrafos?.[0] && (
+        <p class="mt-8 text-humo text-lg leading-relaxed max-w-prosa">{ley.parrafos[0]}</p>
+      )}
+
+      {s.faq?.length > 0 && (
+        <>
+          {/* Titular pegajoso: es el bloque más alto del sitio (1.951px contra 900 de
+              pantalla), así que la pregunta que ordena la lista se queda a la vista
+              mientras se recorren las respuestas. */}
+          <div class="md:grid md:grid-cols-12 md:gap-x-8 mt-24 md:mt-36">
+            <div class="md:col-span-4">
+              <h2
+                data-entra
+                class:list={['font-extrabold m-0 mb-12 md:mb-0 md:sticky md:top-32', caja(responde.h2)]}
+                style="font-size:clamp(1.75rem, 3.4vw, 3.25rem); line-height:0.94; letter-spacing:0; text-wrap:balance"
+              >
+        {responde.h2}
+      </h2>
+            </div>
+            <div class="md:col-span-7 md:col-start-6">
+          <dl class="m-0 border-t filete">
+            {s.faq.map((f: any) => (
+              <div class="border-b filete py-7 md:py-9 grid gap-3 md:grid-cols-[minmax(0,15rem)_1fr] md:gap-8">
+                <dt
+                  class:list={['font-extrabold', caja(f.p)]}
+                  style="font-size:clamp(1.0625rem,1.6vw,1.375rem); line-height:1.1; letter-spacing:-0.03em"
+                >
+                  {f.p}
+                </dt>
+                <dd class="m-0 text-humo text-lg leading-relaxed max-w-prosa">{f.r}</dd>
+              </div>
+            ))}
+          </dl>
+            </div>
+          </div>
+        </>
+      )}
+    </section>
+
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 max-w-[15ch]', caja(cierre.h2)]}
+        style="font-size:clamp(2rem, 6.6vw, 7.5rem); line-height:0.88; letter-spacing:0; text-wrap:balance"
+      >
+        {cierre.h2}
+      </h2>
+      {cierre.parrafos?.[0] && (
+        <p class="mt-10 text-noche/65 text-xl leading-relaxed max-w-prosa">{cierre.parrafos[0]}</p>
+      )}
+      <a
+        href={CONTACTO}
+        class="inline-block mt-12 rounded-v3 bg-noche hover:bg-black text-papel text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-noche"
+      >
+        Conversemos tu proyecto
+      </a>
+    </section>
+  </main>
+
+  <FooterV3 />
+
+  <script src="/assets/js/v3-chequeo.js" is:inline defer></script>
+</Layout>

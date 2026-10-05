@@ -1,0 +1,188 @@
+---
+// MÉTODO en el lenguaje V3. Contenido real extraído de /metodo/ a paginas-v3.json.
+// Ritmo de color propio: tinta → navy → papel → petróleo → tinta.
+import Layout from '../../layouts/Layout.astro';
+import { caja } from '../../utils/caja';
+import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
+import NavV3 from '../../components/v3/NavV3.astro';
+import FooterV3 from '../../components/v3/FooterV3.astro';
+
+import paginas from '../../data/paginas-v3.json';
+import '../../styles/campos-v3.css'; // tintes de color, filete, rotulo
+
+const s = (paginas as Record<string, any>).metodo;
+const [recorrido, reglas, poco, cierre] = s.secciones;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${s.canonical}#breadcrumb`,
+      itemListElement: s.breadcrumb ?? [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
+        { '@type': 'ListItem', position: 2, name: 'Método' },
+      ],
+    },
+  ],
+};
+---
+
+<Layout title={s.title} description={s.description} bodyClass="bg-noche font-texto">
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <NavV3 />
+
+  <main class="text-papel">
+    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-28">
+      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
+        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
+        <span aria-hidden="true" class="mx-2">·</span>
+        <span class="text-humo">Método</span>
+      </nav>
+      <h1
+        data-entra
+        class:list={['font-extrabold m-0 max-w-[13ch]', caja(s.h1)]}
+        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.88; letter-spacing:0"
+      >
+        {s.h1}
+      </h1>
+
+      <div data-entra data-paso="1" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
+        <div class="md:col-span-5">
+          {s.lead && <p class="m-0 text-papel text-xl md:text-2xl leading-relaxed">{s.lead}</p>}
+        </div>
+        <div class="md:col-span-6 md:col-start-7">
+          <img
+            src={s.foto}
+            alt={s.fotoAlt}
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+            class="media-campo"
+          />
+        </div>
+      </div>
+
+    </section>
+
+    {/* CAMPO NAVY: el recorrido. */}
+    {/* TITULAR PEGAJOSO. Medido en la referencia: siete elementos sticky, y es el
+         mecanismo que más usa. Acá se aplica con un criterio, no a gusto: el titular
+         se queda quieto SOLO donde su propia sección es más alta que la pantalla, o
+         sea donde hay algo que recorrer mientras el titular sostiene el contexto.
+         Esta sección mide 1.563px contra un viewport de 900. En las que caben en
+         pantalla el sticky no haría nada y el titular se queda como estaba.
+         En móvil no aplica: una sola columna, el titular ocuparía pantalla. */}
+    <section class="tinte--navy px-6 md:px-medianil py-32 md:py-seccion">
+      <div class="md:grid md:grid-cols-12 md:gap-x-8">
+        <div class="md:col-span-4">
+          <h2
+            data-entra
+            class:list={['font-extrabold m-0 mb-12 md:mb-0 md:sticky md:top-32', caja(recorrido.h2)]}
+            style="font-size:clamp(1.75rem, 3.4vw, 3.25rem); line-height:0.94; letter-spacing:0; text-wrap:balance"
+          >
+        {recorrido.h2}
+      </h2>
+        </div>
+        <div class="md:col-span-7 md:col-start-6">
+      <ol data-entra data-paso="1" class="list-none p-0 m-0 border-t filete">
+        {
+          (recorrido.bloques ?? []).map((b: any, i: number) => (
+            <li class="border-b filete py-7 md:py-9 flex flex-col md:flex-row gap-3 md:gap-8">
+              <span class="text-humo font-bold text-sm flex-none md:w-10" style="letter-spacing:0.16em">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span
+                class="font-extrabold uppercase flex-none md:w-[10em]"
+                style="font-size:clamp(1.25rem,2.2vw,1.875rem); line-height:1.05; letter-spacing:-0.03em"
+              >
+                {b.t}
+              </span>
+              {b.d && <span class="text-humo text-lg leading-relaxed max-w-prosa">{b.d}</span>}
+            </li>
+          ))
+        }
+      </ol>
+        </div>
+      </div>
+    </section>
+
+    {/* PAPEL: las reglas. */}
+    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[16ch]', caja(reglas.h2)]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
+      >
+        {reglas.h2}
+      </h2>
+      <div data-entra data-paso="1" class="grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-3">
+        {
+          (reglas.bloques ?? []).map((b: any) => (
+            <article class="border-t filete pt-6">
+              <h3
+                class:list={['font-extrabold m-0', caja(b.t)]}
+                style="font-size:clamp(1.125rem,1.8vw,1.625rem); line-height:1.05; letter-spacing:-0.03em"
+              >
+        {b.t}
+      </h3>
+              {b.d && <p class="mt-4 text-noche/65 text-base leading-relaxed">{b.d}</p>}
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    {/* CAMPO PETRÓLEO: poco, pero importante. */}
+    <section class="tinte--petroleo px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[16ch]', caja(poco.h2)]}
+        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
+      >
+        {poco.h2}
+      </h2>
+      <ul data-entra data-paso="1" class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-7 md:grid-cols-2 lg:grid-cols-3">
+        {
+          (poco.lista ?? []).map((i: string) => (
+            <li class="border-t filete pt-5 text-humo text-base leading-relaxed">{i}</li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="px-6 md:px-medianil py-32 md:py-seccion">
+      <h2
+        data-entra
+        class:list={['font-extrabold m-0 max-w-[15ch]', caja(cierre.h2)]}
+        style="font-size:clamp(2rem, 6.6vw, 7.5rem); line-height:0.88; letter-spacing:0; text-wrap:balance"
+      >
+        {cierre.h2}
+      </h2>
+      {cierre.parrafos?.[0] && (
+        <p class="mt-10 text-humo text-xl leading-relaxed max-w-prosa">{cierre.parrafos[0]}</p>
+      )}
+      <div class="mt-12 flex items-center gap-4 flex-wrap">
+        <a
+          href="/v3/diagnostico/"
+          class="rounded-v3 bg-papel hover:bg-white text-noche text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
+        >
+          Empezar por el chequeo gratis
+        </a>
+        <a
+          href={CONTACTO}
+          class="rounded-v3 border filete hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
+        >
+          Conversemos tu proyecto
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <FooterV3 />
+</Layout>
