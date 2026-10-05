@@ -349,6 +349,37 @@ No son dos campañas, son dos momentos del mismo correo, y **no hay que unificar
   30-sep: *"que se quede en VyC porque es la puerta de entrada para SpindleLab, es lo más
   contundente que tenemos para que lleguen a los servicios de la empresa"*.
 
+### Cuando un correo ya salió roto: el toque siguiente lo dice en una línea (5-oct)
+
+Los toque 2 del 28-sep a **tuane.cl** y **delamazaycia.cl** salieron con cuatro defectos a la
+vez, y conviene tenerlos listados porque se juntaron en un solo correo:
+
+1. **Los enlaces llevaban el blob de `google.com/url?q=...` como TEXTO VISIBLE**, no como
+   destino. Donde debía decir "tuane.cl" decía una dirección de doscientos caracteres. Pasa
+   cuando se pasa solo `body` sin `htmlBody`, o cuando el ancla se copia de un hilo ya servido
+   por Gmail.
+2. **Dos frases de la lista prohibida:** "No sé si alcanzaste a mirarlo" y "Si te sirve avanzar".
+3. **La línea de baja vieja y vaga** ("de una base de prospección comercial").
+4. **La firma en texto plano** en vez de la v3.
+
+Leído de corrido, ese correo **se lee como phishing**: un blob de google.com justo donde va el
+nombre del dominio es la firma visual de un correo falso.
+
+**Cómo se repara, porque no se puede recuperar lo enviado.** El toque siguiente lo dice en UNA
+línea y sigue:
+
+> El correo que te mandé el lunes salió mal: donde debía ir el nombre de tu sitio apareció una
+> dirección larguísima de google.com. Entiendo si lo borraste, se lee igual que un correo falso.
+
+Y de ahí pasa de inmediato a la oferta en limpio. Dos cosas que importan de esa forma: **va una
+línea, no un párrafo** (el corpus de voz prohíbe abrir disculpándose y rumiar el error), y
+**reconocerlo es lo que explica el silencio** — un prospecto que recibió algo que parecía
+phishing no te ignoró por desinterés. Eso vuelve el defecto en el "algo nuevo" que un
+seguimiento necesita.
+
+Con los dos siendo abogados, el cierre además concede lo suyo: "el texto legal lo revisas tú,
+que es tu oficio".
+
 ### El error de escritura del 30-sep: contar la medición en vez del hallazgo
 
 Ramón leyó los diez correos y dijo: *"están muy largos y/o demasiado técnicos, deberían tener
