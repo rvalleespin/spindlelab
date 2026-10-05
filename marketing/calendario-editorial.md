@@ -75,26 +75,45 @@ no se ha dicho nunca en público.
 ### Cadencia y slots
 
 **Lunes y miércoles fijos, viernes oportunista.** Los dos primeros se planifican; el viernes sale
-del radar semanal de dolores del rubro, que es de donde salieron los mejores posts. Tres por
-semana solo se sostiene si uno de los tres es barato de producir.
+del radar semanal de dolores del rubro, que es de donde salieron los mejores posts. Tres por semana
+solo se sostiene si uno de los tres es barato de producir.
+
+> ⚠️ **El lunes 12-oct es feriado** (Ramón, 5-oct). Eso corrió dos cosas, no una:
+> - El post del lunes 12 se cae.
+> - **El viernes 9 queda de víspera de fin de semana largo** (10, 11 y 12), que es el peor día para
+>   publicar en LinkedIn B2B: la gente se desconecta antes. El reel con la cara de Ramón estaba ahí
+>   y era la pieza más importante del mes, así que **se movió al martes 13**, cuando la gente vuelve
+>   del feriado. De paso le deja el fin de semana largo para grabarlo sin apuro.
+>
+> El **sábado 31-oct** (Día de las Iglesias Evangélicas) cae fin de semana y no toca ningún slot;
+> conviene confirmarlo igual antes de programar la última semana.
+>
+> **La semana del 12 queda con cuatro días hábiles y dos posts.** Meter tres en cuatro días después
+> de un feriado se paga en calidad. Con el viernes 9 vacío y el lunes 12 feriado, **el mes baja de
+> 11 piezas a 9** en LinkedIn, más las 2 de la pista de Verifica. Está bien: en septiembre el
+> problema no fue el volumen.
 
 | Fecha | Tipo | Pieza | Estado |
 |---|---|---|---|
 | **lun 5-oct** | B | El cuarto mito: la amonestación es una facultad, no un derecho | ✅ publicado y verificado |
 | **mié 7-oct** | A | Antes de pagar un panel de visibilidad en IA, lo que ya puedes medir gratis | 🟡 aprobado, en cola. Releer la página de Google y `/diagnostico/` antes de publicar |
-| **vie 9-oct** | **D** | **Reel cara a cámara: el mensaje cerrado.** LinkedIn nativo primero, Instagram después | 🟡 **guion listo**, `09-vie-reel-cara-a-camara/guion.md`. Depende de que Ramón grabe |
-| lun 12-oct | C | El mensaje cerrado en texto, para quien no vio el video | ⬜ se escribe después del reel, para no pisarlo |
-| mié 14-oct | B | Cookies y la ley chilena | ⬜ **bloqueado**: hay que verificar qué exige de verdad la 21.719 sobre cookies antes de afirmar nada |
-| vie 16-oct | A | Del radar semanal | ⬜ |
-| lun 19-oct | B | El plazo del 1-dic a seis semanas, sin urgencia fabricada | ⬜ |
+| ~~vie 9-oct~~ | — | **Vacío a propósito.** Víspera de fin de semana largo | — |
+| **sáb 10 – lun 12** | — | **Fin de semana largo. Cero publicaciones** | — |
+| **mar 13-oct** | **D** | **Reel cara a cámara: el mensaje cerrado.** LinkedIn nativo primero, Instagram después | 🟡 **guion listo**, `13-mar-reel-cara-a-camara/guion.md`. Depende de que Ramón grabe. Si se corre, el jue 15 |
+| vie 16-oct | C | El mensaje cerrado en texto, para quien no vio el video | ⬜ se escribe después del reel, para no pisarlo |
+| lun 19-oct | B | Cookies y la ley chilena | ⬜ **bloqueado**: hay que verificar qué exige de verdad la 21.719 sobre cookies antes de afirmar nada |
 | mié 21-oct | A | "Para que la IA te recomiende, tu sitio no basta" | ⬜ aprobado el 22-sep y pospuesto. **Necesita gancho nuevo**: comparte ideas con el del 7-oct |
 | vie 23-oct | C o D | Segundo video, solo si el primero rindió | ⬜ |
-| lun 26-oct | B | Cierre de la ventana de la ley | ⬜ |
+| lun 26-oct | B | El plazo del 1-dic a cinco semanas, sin urgencia fabricada | ⬜ |
 | mié 28-oct | A | Costco: el tráfico desde IA es poco y convierte mejor | ⬜ dato verificado en el transcript del 24-sep. **Falta la apertura**: Ramón descartó partir por la noticia |
 | vie 30-oct | — | Cierre de mes: publicado vs planificado, qué tipo rindió | ⬜ |
 
-**Alternancia verificada:** B → A → D → C → B → A → B → A → C/D → B → A. Sin dos del mismo tipo
-seguidos en ningún tramo.
+**Alternancia verificada:** B → A → D → C → B → A → C/D → B → A. Sin dos del mismo tipo seguidos.
+
+**Regla de reemplazo, para no romper la alternancia al improvisar:** si una pieza se cae porque su
+requisito no se cumplió (cookies es la candidata), la que entra en su lugar **tiene que ser de un
+tipo distinto al de la fila anterior y al de la siguiente**. Si lo único disponible es del mismo
+tipo, el slot se deja vacío. Un hueco cuesta menos que dos posts iguales seguidos.
 
 ### El banco de temas y su requisito
 

@@ -1,6 +1,10 @@
 # Guion — Primer video cara a cámara: el mensaje cerrado
 
-**Cuándo:** VIERNES 9-oct-2026 (o el lunes 12 si la grabación se corre)
+**Cuándo:** MARTES 13-oct-2026. **Movido del viernes 9** (Ramón avisó que el lunes 12 es feriado):
+el 9 es víspera de fin de semana largo y la gente se desconecta antes, que es el peor día posible
+para la pieza más importante del mes. El martes 13 la gente vuelve del feriado y revisa LinkedIn.
+**De paso te deja el fin de semana largo para grabarlo sin apuro**, que es justo lo que necesita
+alguien a quien esto le cuesta. Si se corre, el siguiente día bueno es el jueves 15.
 **Canal:** **LinkedIn, video nativo en el perfil personal, primero.** Instagram después, si quieres.
 **Voz:** singular · **Duración objetivo: 35 segundos** · vertical 9:16 · **subtítulos siempre**
 **Escribe:** esta sesión, a pedido de Ramón el 5-oct ("debería partir con un reel en donde se
@@ -94,7 +98,7 @@ Más filoso y más corto. Dícelo en voz alta las dos veces y quédate con la qu
 
 | Pieza viva | ¿Se pisa? |
 |---|---|
-| 28-sep · "Me gusta construir sitios bien hechos" | **Roza y es a propósito.** Ahí dijiste que mirabas esos huecos antes de que existiera la ley; acá va el paso siguiente, que es lo que por eso recibes. Si quieres distancia, el video se mueve al 12-oct |
+| 28-sep · "Me gusta construir sitios bien hechos" | **Roza y es a propósito.** Ahí dijiste que mirabas esos huecos antes de que existiera la ley; acá va el paso siguiente, que es lo que por eso recibes. Con el video el 13-oct quedan 15 días de distancia, suficiente |
 | 5-oct · el cuarto mito | No. Ahí el tema es la amonestación y el registro público; acá no hay ningún dato legal |
 | 2-oct · "El sitio es la tienda principal" | No. Ahí es dónde poner el esfuerzo; acá es qué trae el sitio que construyo |
 | 30-sep · "Lo que el chequeo no alcanza a ver" | No. Ahí es el mecanismo del chequeo |
