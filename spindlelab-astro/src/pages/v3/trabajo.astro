@@ -209,11 +209,17 @@ const jsonLd = {
         <article class:list={['d-obra-trab', `d-obra-trab--${p.forma}`]} aria-labelledby={`o-${p.slug}`}>
           {p.url ? (
             <a class="d-obra-trab__img" href={p.url} target="_blank" rel="noopener" tabindex="-1">
-              <Pieza src={p.src} alt={p.altImg} concepto={p.concepto} etiquetas={p.etiquetas} clase="d-obra-trab__fig" ancho={p.w} alto={p.h} eager={p.eager} posicion={p.pos} />
+              <Pieza src={p.src} alt={p.altImg} concepto={p.concepto} etiquetas={p.chipPropio ? [] : p.etiquetas} clase="d-obra-trab__fig" ancho={p.w} alto={p.h} eager={p.eager} posicion={p.pos} />
+              {p.chipPropio && (
+                <span class="d-etq d-etq-trab"><span>{p.nombre[0]} <span class="d-barra-etq-trab">|</span> {p.nombre.slice(1).join(' | ')} · {ROTULO[p.tipo] ?? p.rubro}</span></span>
+              )}
             </a>
           ) : (
             <div class="d-obra-trab__img">
-              <Pieza src={p.src} alt={p.altImg} concepto={p.concepto} etiquetas={p.etiquetas} clase="d-obra-trab__fig" ancho={p.w} alto={p.h} eager={p.eager} posicion={p.pos} />
+              <Pieza src={p.src} alt={p.altImg} concepto={p.concepto} etiquetas={p.chipPropio ? [] : p.etiquetas} clase="d-obra-trab__fig" ancho={p.w} alto={p.h} eager={p.eager} posicion={p.pos} />
+              {p.chipPropio && (
+                <span class="d-etq d-etq-trab"><span>{p.nombre[0]} <span class="d-barra-etq-trab">|</span> {p.nombre.slice(1).join(' | ')} · {ROTULO[p.tipo] ?? p.rubro}</span></span>
+              )}
             </div>
           )}
           <div class="d-pie-trab">
