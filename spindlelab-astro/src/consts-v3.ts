@@ -19,6 +19,7 @@ export const SERVICIOS_V3 = [
 ];
 
 export const CASA_V3 = [
+  { href: '/v3/trabajo/', label: 'Trabajo' },
   { href: '/v3/metodo/', label: 'Método' },
   { href: '/v3/nosotros/', label: 'Nosotros' },
   { href: '/v3/diagnostico/', label: 'Chequeo gratis' },

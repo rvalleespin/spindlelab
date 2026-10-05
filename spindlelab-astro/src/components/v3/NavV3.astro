@@ -20,6 +20,7 @@
 //
 // El punto dorado del wordmark sigue siendo el único dorado de la vista.
 import { CONTACTO_V3 as CONTACTO, SERVICIOS_V3 } from '../../consts-v3';
+import '../../styles/driftime.css';
 
 // Las SIETE páginas de primer nivel. Antes eran seis enlaces y dos de ellos eran anclas
 // de la home, no páginas: se podía «navegar» sin salir nunca del inicio.
@@ -43,6 +44,14 @@ const principales = [
         class="font-wordmark text-lg sm:text-xl text-papel tracking-tight pl-5 pr-4 py-3 flex items-center"
       >
         SpindleLab<span class="text-gold">.</span>
+      </a>
+      {/* Escríbenos: el camino a contacto sobre el pliegue, en todas las páginas. Lo pidió el
+           QA de la dirección A (no había ninguno visible: el primero estaba en el píxel 10.834). */}
+      <a
+        href={CONTACTO}
+        class="px-4 border-l border-white/10 text-papel text-[0.9375rem] font-medium hover:bg-white/10 transition-colors flex items-center no-underline"
+      >
+        Escríbenos
       </a>
       <button
         type="button"
@@ -84,10 +93,10 @@ const principales = [
               data-paso={i}
               class="menu-enlace group flex items-baseline gap-5 py-3 md:py-3.5 text-papel focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel focus-visible:-outline-offset-4"
             >
-              <span class="rotulo text-base tabular-nums flex-none">
+              <span class="d-rot tabular-nums flex-none" style="font-size:0.9375rem">
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <span class="font-extrabold uppercase leading-none tracking-normal menu-palabra">
+              <span class="font-medium leading-none menu-palabra" style="letter-spacing:-0.02em">
                 {m.label}
               </span>
             </a>
@@ -100,7 +109,7 @@ const principales = [
         de proyecto van a 16px peso 400 contra titulares de 120px; esa distancia es lo que
         hace que se lean dos niveles y no una lista larga. */}
     <div class="md:col-span-4 md:col-start-9">
-      <span class="rotulo text-base">Los servicios</span>
+      <span class="d-rot" style="font-size:0.9375rem">Los servicios</span>
       <ul class="list-none p-0 m-0 mt-5">
         {
           SERVICIOS_V3.map((s) => (

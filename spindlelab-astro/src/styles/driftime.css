@@ -1,0 +1,214 @@
+/* ============================================================================
+   driftime.css — el sistema del sitio en el lenguaje de driftime.com (5-oct-2026)
+
+   Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md
+   Referencia medida: …/referencia-driftime/lock-driftime.md
+   Implementación de referencia: …/tableros/driftime-home y driftime-desarrollo
+
+   TODO lleva prefijo d-, clases y variables. La v3 ya tiene .campo, .filete, .rotulo y
+   variables --bg, --gold en :root; sin prefijo, una página que cargue las dos hojas se
+   rompe en silencio.
+
+   La regla que manda: .d-display (Manrope 800 en mayúsculas) aparece en CINCO lugares del
+   sitio y en ninguno más — el titular del hero y las cuatro palabras de campo. Las páginas
+   internas tienen cero. Así lo hace driftime: 5 elementos contra 517.
+   ============================================================================ */
+
+:root {
+  --d-noche: #000;
+  --d-modulo: #161616;
+  --d-filete: rgba(247, 245, 240, 0.12);
+  --d-papel: #f7f5f0;
+  --d-gris: #9aa4b0;      /* 6,9:1 sobre negro */
+  --d-gris-2: #6b7580;
+  --d-oro: #c9a227;       /* solo el punto del wordmark del módulo */
+  /* Campos: contraste medido por el equipo v3 (campos-v3.css), todos AA de cuerpo.
+     Brasa lleva blanco puro: driftime falla ahí (3,70:1) y no se copia. */
+  --d-brasa: #da3400;    --d-brasa-t: #ffffff;
+  --d-navy: #0e2a47;     --d-navy-t: #e4f1ec;
+  --d-petroleo: #0f766e; --d-petroleo-t: #fff4e2;
+  --d-ciruela: #341f34;  --d-ciruela-t: #ffefdd;
+  --d-r: 6px;            /* el único radio; 4 px solo dentro de un control */
+  --d-m: 40px;
+  --d-g: 16px;
+}
+@media (max-width: 767px) { :root { --d-m: 20px; --d-g: 10px; } }
+
+.d-body { background: var(--d-noche); color: var(--d-papel); font-family: 'Manrope', system-ui, sans-serif; font-weight: 400; -webkit-font-smoothing: antialiased; }
+.d-body a { color: inherit; }
+.d-body :focus-visible { outline: 2px solid var(--d-papel); outline-offset: 3px; }
+.d-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------------------------------------------------------------- escala */
+.d-display { font-weight: 800; text-transform: uppercase; font-size: clamp(2.4rem, 10vw, 7.5rem); line-height: 0.9; letter-spacing: -0.005em; margin: 0; }
+.d-h1 { font-size: clamp(2.25rem, 4.17vw, 3.75rem); line-height: 1.1; font-weight: 500; letter-spacing: -0.02em; margin: 0; }   /* 60 px */
+.d-h2 { font-size: clamp(1.375rem, 2.08vw, 1.875rem); line-height: 1.4; font-weight: 500; letter-spacing: -0.02em; margin: 0; } /* 30 px */
+.d-h3 { font-size: clamp(1.25rem, 1.67vw, 1.5rem); line-height: 1.4; font-weight: 500; margin: 0; }                             /* 24 px */
+.d-guia { font-size: clamp(1.25rem, 1.67vw, 1.5rem); line-height: 1.5; font-weight: 400; margin: 0; }                           /* 24 / 20 px */
+.d-cuerpo { font-size: clamp(1.0625rem, 1.25vw, 1.125rem); line-height: 1.6; color: var(--d-gris); margin: 0; }                /* 18 px */
+.d-chico { font-size: 0.875rem; line-height: 1.5; }
+.d-gris { color: var(--d-gris); }
+.d-rot { font-size: 0.8125rem; font-weight: 500; color: var(--d-gris); margin: 0; }  /* rótulo: caja normal, nunca mayúsculas espaciadas */
+
+/* ---------------------------------------------------------------- piezas chicas */
+.d-btn { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: var(--d-r); background: var(--d-papel); color: #000 !important; font: 500 0.875rem/1 'Manrope', sans-serif; text-decoration: none; border: 0; cursor: pointer; white-space: nowrap; }
+.d-btn:hover { background: #fff; }
+.d-btn--alt { background: var(--d-modulo); color: var(--d-papel) !important; }
+.d-btn--alt:hover { background: #222; }
+.d-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.d-pills { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 4px; border-radius: var(--d-r); background: rgba(0, 0, 0, 0.22); align-self: flex-start; }
+.d-pill { height: 30px; padding: 0 12px; border-radius: 4px; border: 0; background: transparent; color: inherit; opacity: 0.62; font: 500 0.8125rem/1 'Manrope', sans-serif; cursor: pointer; }
+.d-pill[aria-selected='true'] { background: rgba(255, 255, 255, 0.14); opacity: 1; }
+
+/* ---------------------------------------------------------------- piezas de imagen */
+.d-pieza { position: relative; margin: 0; border-radius: var(--d-r); overflow: hidden; background: var(--d-modulo); }
+.d-pieza img, .d-pieza video { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Etiquetas ARRIBA: abajo las tapa el aviso de cookies (medido a 1440x900: aviso desde
+   y=827), y el rótulo de una pieza de concepto tiene que verse sin scroll. */
+.d-etq { position: absolute; left: 10px; top: 10px; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.d-etq span { background: rgba(0, 0, 0, 0.66); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: var(--d-papel); font-size: 0.75rem; font-weight: 500; padding: 5px 8px; border-radius: 4px; }
+.d-etq .d-etq--concepto { background: var(--d-papel); color: #000; }
+
+.d-fila { display: grid; gap: var(--d-g); }
+.d-fila--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.d-fila--4 .d-pieza { aspect-ratio: 0.91; }          /* el ratio medido en driftime */
+.d-fila--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.d-fila--3 .d-pieza { aspect-ratio: 4 / 3; }
+.d-fila--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.d-fila--2 .d-pieza { aspect-ratio: 16 / 9; }
+@media (max-width: 767px) {
+  /* Celular: carrusel con la siguiente pieza asomándose, como driftime. */
+  .d-fila { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin-right: calc(var(--d-m) * -1); padding-right: var(--d-m); scrollbar-width: none; }
+  .d-fila::-webkit-scrollbar { display: none; }
+  .d-fila .d-pieza { flex: 0 0 78%; scroll-snap-align: start; }
+  .d-fila--2 .d-pieza, .d-fila--3 .d-pieza { flex-basis: 86%; }
+}
+
+/* ---------------------------------------------------------------- hero de la home */
+.d-hero { min-height: 100svh; padding: 112px var(--d-m) 28px; display: flex; flex-direction: column; }
+.d-instr { max-width: 720px; }
+.d-instr .d-rot { margin-bottom: 10px; }
+.d-dom { display: flex; align-items: stretch; height: 64px; background: var(--d-papel); border-radius: var(--d-r); padding: 6px; }
+.d-dom input { flex: 1; min-width: 0; border: 0; background: transparent; color: #000; font: 500 1.375rem/1 'Manrope', sans-serif; padding: 0 14px; outline: none; }
+.d-dom input::placeholder { color: #6b6b6b; }
+.d-dom:focus-within { box-shadow: 0 0 0 2px var(--d-noche), 0 0 0 4px var(--d-papel); }
+.d-dom button { flex: none; border: 0; border-radius: 4px; background: #000; color: var(--d-papel); font: 500 0.9375rem/1 'Manrope', sans-serif; padding: 0 20px; cursor: pointer; }
+.d-dom button:disabled { opacity: 0.6; cursor: progress; }
+.d-instr .d-nota { margin: 10px 0 0; font-size: 0.9375rem; line-height: 1.5; color: var(--d-gris); }
+.d-instr .d-nota b { color: var(--d-papel); font-weight: 600; }
+.d-titular { margin-top: auto; padding-top: 40px; }
+.d-ojillo { margin: 0 0 14px; font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 500; }
+.d-hero .d-fila { margin-top: 24px; }
+@media (max-width: 767px) {
+  .d-hero { padding-top: 96px; }
+  .d-dom { height: auto; flex-direction: column; gap: 6px; }
+  .d-dom input { height: 52px; font-size: 1.125rem; }
+  .d-dom button { height: 48px; }
+}
+
+/* ---------------------------------------------------------------- bloques de texto */
+.d-pres { padding: 180px var(--d-m) 200px; }
+.d-pres .d-guia { max-width: 780px; }
+.d-pres .d-btns { margin-top: 28px; }
+@media (max-width: 767px) { .d-pres { padding: 110px var(--d-m) 130px; } }
+
+/* ---------------------------------------------------------------- campos pegajosos */
+/* Cada campo tapa al anterior. min-height y no altura fija: en celular crece en vez de
+   recortar. El z-index sube campo a campo. */
+.d-campo { position: sticky; top: 0; min-height: 100svh; padding: 32px var(--d-m); display: flex; flex-direction: column; }
+.d-campo__cab { display: flex; flex-direction: column; gap: 18px; max-width: 720px; }
+.d-campo .d-display { margin-bottom: 6px; }
+.d-desc { font-size: clamp(1.125rem, 1.67vw, 1.5rem); line-height: 1.5; margin: 0; }   /* 24 px, como driftime */
+.d-desc b { font-weight: 600; }
+.d-campo .d-fila { margin-top: auto; padding-top: 32px; }
+.d-campo--brasa { background: var(--d-brasa); color: var(--d-brasa-t); z-index: 2; }
+.d-campo--navy { background: var(--d-navy); color: var(--d-navy-t); z-index: 3; }
+.d-campo--petroleo { background: var(--d-petroleo); color: var(--d-petroleo-t); z-index: 4; }
+.d-campo--ciruela { background: var(--d-ciruela); color: var(--d-ciruela-t); z-index: 5; }
+.d-panel[hidden] { display: none; }
+@media (max-width: 767px) { .d-campo { padding: 96px var(--d-m) 28px; } .d-campo__cab { gap: 14px; } }
+
+.d-precio { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 12px; font-size: 1rem; margin: 0; }
+.d-precio .d-pre-rot { opacity: 0.72; }
+.d-precio .d-pre-sep { width: 1px; height: 16px; background: currentColor; opacity: 0.35; }
+.d-precio b { font-weight: 600; }
+
+/* Lo que va después de los campos tapa al último campo. */
+.d-tapa { position: relative; z-index: 6; background: var(--d-noche); }
+
+/* ---------------------------------------------------------------- quién (home) */
+.d-quien { padding: 180px var(--d-m) 160px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--d-g); align-items: end; }
+.d-quien .d-pieza { aspect-ratio: 3 / 4; }
+.d-quien__txt { padding-left: clamp(0px, 4vw, 64px); display: flex; flex-direction: column; gap: 22px; }
+@media (max-width: 767px) { .d-quien { grid-template-columns: 1fr; padding: 110px var(--d-m) 100px; } .d-quien__txt { padding-left: 0; } }
+
+/* ---------------------------------------------------------------- índice editorial */
+.d-indice { padding: 40px var(--d-m) 160px; }
+.d-indice__cab { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; }
+.d-indice ol, .d-indice ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--d-filete); }
+.d-indice li > a { display: grid; grid-template-columns: 120px minmax(0, 1fr) 24px; gap: var(--d-g); align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--d-filete); text-decoration: none; }
+.d-indice li > a:hover .d-h3 { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.d-indice time { color: var(--d-gris); font-size: 0.9375rem; }
+.d-flecha { color: var(--d-gris); }
+@media (max-width: 767px) { .d-indice li > a { grid-template-columns: 1fr; gap: 6px; } .d-flecha { display: none; } .d-indice__cab { flex-direction: column; align-items: flex-start; } }
+
+/* ---------------------------------------------------------------- páginas internas */
+.d-cab { padding: min(34vh, 300px) var(--d-m) 40px; max-width: 1100px; }
+.d-miga { font-size: 0.8125rem; color: var(--d-gris); margin: 0 0 22px; }
+.d-miga a { text-decoration: none; } .d-miga a:hover { text-decoration: underline; }
+.d-cab .d-linea { margin: 14px 0 26px; font-size: clamp(1rem, 1.25vw, 1.125rem); line-height: 1.5; color: var(--d-gris); max-width: 560px; }
+.d-sangre { margin: 0 var(--d-m); border-radius: var(--d-r); overflow: hidden; aspect-ratio: 2.39; }
+.d-sangre img, .d-sangre video { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 767px) { .d-sangre { aspect-ratio: 4 / 3; } }
+.d-entrada { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--d-g); padding: 28px var(--d-m) 0; }
+.d-nota-card { align-self: start; background: var(--d-modulo); border-radius: var(--d-r); padding: 14px 16px; font-size: 0.875rem; line-height: 1.5; color: var(--d-gris); max-width: 360px; margin: 0; }
+.d-nota-card b { color: var(--d-papel); font-weight: 600; }
+@media (max-width: 767px) { .d-entrada { grid-template-columns: 1fr; gap: 24px; } .d-entrada .d-guia { order: -1; } }
+
+/* Sección con etiqueta pegajosa: el h2 queda fijo a la izquierda mientras el texto corre. */
+.d-sec { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--d-g); padding: 180px var(--d-m) 0; }
+.d-eti { position: sticky; top: 120px; align-self: start; }
+.d-eti .d-chico { margin-top: 10px; color: var(--d-gris); max-width: 300px; }
+@media (max-width: 767px) { .d-sec { grid-template-columns: 1fr; padding-top: 110px; gap: 28px; } .d-eti { position: static; } }
+.d-filas { display: flex; flex-direction: column; }
+.d-filas > * { padding: 22px 0; border-top: 1px solid var(--d-filete); margin: 0; }
+.d-filas > *:last-child { border-bottom: 1px solid var(--d-filete); }
+
+/* planes: filas editoriales, NUNCA tarjetas iguales (tell B1 del detector) */
+.d-plan { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 24px; align-items: baseline; }
+.d-plan .d-plan__precio { font-weight: 600; font-size: clamp(1.0625rem, 1.25vw, 1.125rem); white-space: nowrap; }
+.d-plan .d-cuerpo, .d-plan ul { grid-column: 1 / -1; }
+.d-plan ul { margin: 8px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.d-plan li { font-size: 0.8125rem; background: var(--d-modulo); border-radius: 4px; padding: 6px 9px; color: var(--d-papel); }
+@media (max-width: 767px) { .d-plan { grid-template-columns: 1fr; } .d-plan .d-plan__precio { white-space: normal; } }
+.d-fase { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 4px 16px; }
+.d-fase .d-fase__n { color: var(--d-gris); font-variant-numeric: tabular-nums; padding-top: 4px; }
+.d-fase .d-cuerpo { grid-column: 2; }
+.d-faq .d-h3 { margin-bottom: 8px; }
+
+/* Galería asimétrica, como los casos de driftime. */
+.d-galeria { padding: 180px var(--d-m) 0; display: grid; gap: var(--d-g); grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.d-galeria__cab { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 12px; }
+.d-g-ancha { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+.d-g-alta { grid-column: span 4; aspect-ratio: 3 / 4; }
+.d-g-media { grid-column: span 8; aspect-ratio: 4 / 3; }
+.d-g-mitad { grid-column: span 6; aspect-ratio: 4 / 3; }
+@media (max-width: 767px) { .d-galeria { padding-top: 110px; grid-template-columns: 1fr; } .d-g-ancha, .d-g-alta, .d-g-media, .d-g-mitad { grid-column: 1 / -1; } .d-g-alta { aspect-ratio: 4 / 5; } .d-galeria__cab { flex-direction: column; align-items: flex-start; } }
+
+.d-siguiente { margin: 200px var(--d-m) 0; padding: 28px 0 36px; border-top: 1px solid var(--d-filete); display: flex; justify-content: space-between; align-items: baseline; gap: 16px; text-decoration: none; }
+.d-siguiente:hover .d-h1 { text-decoration: underline; text-underline-offset: 8px; text-decoration-thickness: 2px; }
+
+/* ---------------------------------------------------------------- pie */
+.d-pie { position: relative; z-index: 6; background: #0e0e0e; padding: 72px var(--d-m) 28px; margin-top: 120px; overflow: hidden; container-type: inline-size; }
+.d-pie__arriba { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--d-g); }
+.d-pie__nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 24px; font-size: 0.9375rem; align-content: start; }
+.d-pie__nav a { text-decoration: none; opacity: 0.9; } .d-pie__nav a:hover { text-decoration: underline; }
+/* Medido: el texto mide 4,744 veces su tamaño de letra. Ancho del CONTENEDOR (cqi, no vw:
+   así no se pasa con una barra de scroll visible) / 4,78. Su punto va en papel: el oro de
+   esta vista ya está en el módulo de navegación. Un oro por vista. */
+.d-gigante { font-family: 'Gabarito', sans-serif; font-weight: 800; font-size: calc(100cqi / 4.78); line-height: 0.78; letter-spacing: -0.035em; margin: 96px 0 18px; white-space: nowrap; }
+.d-pie__legal { display: flex; justify-content: space-between; gap: 16px; font-size: 0.8125rem; color: var(--d-gris-2); }
+@media (max-width: 767px) { .d-pie__arriba { grid-template-columns: 1fr; gap: 48px; } .d-gigante { margin-top: 64px; } }
+.d-home .d-pie { margin-top: 0; }
+
+@media (prefers-reduced-motion: reduce) { .d-fila { scroll-behavior: auto; } }
