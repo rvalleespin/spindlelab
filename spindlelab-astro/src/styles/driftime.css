@@ -97,7 +97,8 @@
 .d-instr .d-nota { margin: 10px 0 0; font-size: 0.9375rem; line-height: 1.5; color: var(--d-gris); }
 .d-instr .d-nota b { color: var(--d-papel); font-weight: 600; }
 .d-titular { margin-top: auto; padding-top: 40px; }
-.d-ojillo { margin: 0 0 14px; font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 500; }
+.d-ojillo { margin: 0 0 clamp(14px, 2.2vw, 30px);   /* el acento de la Í sobresale de la interlínea 0,9 */
+   font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 500; }
 .d-hero .d-fila { margin-top: 24px; }
 @media (max-width: 767px) {
   .d-hero { padding-top: 96px; }

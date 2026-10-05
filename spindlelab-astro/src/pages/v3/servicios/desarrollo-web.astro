@@ -135,9 +135,11 @@ const jsonLd = {
 
 // La galería sale del mismo dato que /v3/trabajo/ y la fila del hero de la home.
 const rotuloTipo: Record<string, string> = { cliente: 'Cliente', propio: 'Producto propio', concepto: '' };
-const piezas = obra.casos.map((c: any) => ({
-  src: c.tipo === 'concepto' || c.slug === 'combeau-modelo' ? c.tira : c.img,
-  alt: c.alt, concepto: c.tipo === 'concepto',
+// La primera va a sangre como pantalla plana; las otras, en dispositivo (los mockups
+// calzan con la forma: alta = teléfono, media = notebook + teléfono en 4:3).
+const enDispositivo = (c: any, i: number) => (i === 1 ? { src: c.mockAlto, alt: c.altMock } : i > 1 ? { src: c.mock, alt: c.altMock } : { src: c.img, alt: c.alt });
+const piezas = obra.casos.map((c: any, i: number) => ({
+  ...enDispositivo(c, i), concepto: c.tipo === 'concepto',
   etiquetas: [c.tipo === 'concepto' ? `${c.n} · ${c.rubro}` : `${c.n} · ${rotuloTipo[c.tipo] ?? c.rubro}`],
 }));
 // Grilla asimétrica: ancha, alta + media, media + alta (como los casos de driftime).

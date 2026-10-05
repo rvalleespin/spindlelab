@@ -31,8 +31,9 @@ import indice from '../../data/blog-v3/_indice.json';
 // La fila del hero sale del MISMO dato que /v3/trabajo/. El tipo decide la etiqueta: una
 // pieza de concepto lleva su rótulo, sin que nadie tenga que acordarse.
 const rotuloTipo: Record<string, string> = { cliente: 'Cliente', propio: 'Producto propio', concepto: '' };
+// La fila usa el mockup en teléfono (10:11, el ratio de la fila): la obra se ve como se usa.
 const tira = obra.casos.map((c: any) => ({
-  src: c.tira, alt: c.alt, concepto: c.tipo === 'concepto',
+  src: c.mockAlto, alt: c.altMock, concepto: c.tipo === 'concepto',
   etiquetas: [c.tipo === 'concepto' ? `${c.n} · ${c.rubro}` : `${c.n} · ${rotuloTipo[c.tipo] ?? c.rubro}`],
 }));
 
