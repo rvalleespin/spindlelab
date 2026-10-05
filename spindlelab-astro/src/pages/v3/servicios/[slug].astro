@@ -1,30 +1,42 @@
 ---
-// LAS CINCO PÁGINAS DE SERVICIO restantes, en el lenguaje V3.
+// LAS CINCO PÁGINAS DE SERVICIO en el lenguaje de driftime (5-oct-2026).
 //
-// Es UNA plantilla con datos, no cinco archivos: las cinco páginas publicadas resultaron
-// tener exactamente la misma forma (lista de lo que incluye → planes con precio → un bloque
-// de cuatro → FAQ → cierre). Cinco copias habrían significado arreglar cada defecto futuro
-// cinco veces.
+// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md (§4, plantilla «Servicio»).
+// Molde: ./desarrollo-web.astro. Misma estructura, alimentada por src/data/servicios-v3.json:
+//   miga · h1 .d-h1 · línea · 2 botones → imagen a sangre → nota + entrada →
+//   secciones pegajosas (incluye · galería · planes · bloques · preguntas · cierre) →
+//   siguiente servicio → pie.
+// Las secciones se buscan por su FORMA (lista, planes, bloques), no por su posición, y una
+// sección que el servicio no trae no se pinta: nada de títulos sobre un hueco.
 //
-// EL CONTENIDO NO SE RETIPEÓ. Está extraído de las páginas publicadas a
-// src/data/servicios-v3.json, que es como se evita que un precio se transcriba mal. Los
-// cinco precios se verificaron contra la lista vigente del encargo y calzan.
+// LO QUE SE CONSERVA de la versión anterior: URL, title, description, noindex y el JSON-LD
+// (Service + BreadcrumbList + FAQPage, mismos @id). Layout ya emite organización, sitio y
+// persona; repetirlos duplicaría @id. El grafo sigue diciendo «Soluciones» en la miga
+// porque así se llama en producción; la miga visible dice «Servicios», como el menú del v3.
 //
-// EL SCHEMA TAMPOCO SE REINVENTÓ: el catálogo de ofertas y las migas salen del grafo
-// original. Layout emite organización/sitio/persona; acá van Service, BreadcrumbList y
-// FAQPage, sin duplicar @id.
+// LO QUE NO VIENE DEL JSON y de dónde sale (todo tiene fuente en el repo):
+// · La línea bajo el h1: la meta description del JSON + la «note» del hero de la página
+//   publicada (public/servicios/<slug>/index.html), con el «+ IVA» que exige la spec §7.
+// · La nota de precios: la «pack-note» de esa misma página publicada.
+// · Las marcas de los bloques: las «num» publicadas (Sí/No en visibilidad, A–D en los
+//   entregables de la auditoría, S1–S4 en el mes tipo). Redes y Paid Media numeran 01–04
+//   como las fases de Desarrollo Web: son procesos en orden.
+// · El titular del cierre de Paid Media: el publicado era «¿Listo para acelerar el motor?»,
+//   tell A5 del detector. Se rearma con su propio párrafo.
 //
-// El bloque de cuatro cambia de sentido según la página (fases en acompañamiento, entregables
-// en auditoría, límites de lo que se promete en visibilidad en IA) pero comparte forma, así
-// que se renderiza igual y el h2 de cada una lo explica.
+// LO QUE SE DEJA AFUERA A PROPÓSITO:
+// · El tinte de color del campo en la sección de bloques (la versión anterior lo tenía).
+//   La página de referencia, Desarrollo Web, no usa su brasa en ninguna parte: los casos de
+//   driftime son negro e imagen. Se sigue la referencia.
+// · Piezas de obra (sitios de clientes): ninguno de estos cinco servicios las produjo, y
+//   mostrarlas acá sería prueba social inventada. Solo el pool honesto de fotografía.
 import Layout from '../../../layouts/Layout.astro';
-import { caja } from '../../../utils/caja';
-import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
+import { CONTACTO_V3 as CONTACTO, SERVICIOS_V3 } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
-
+import Pieza from '../../../components/v3/Pieza.astro';
+import '../../../styles/driftime.css';
 import servicios from '../../../data/servicios-v3.json';
-import '../../../styles/campos-v3.css'; // tintes de color, filete, rotulo
 
 export function getStaticPaths() {
   return Object.keys(servicios).map((slug) => ({ params: { slug } }));
@@ -33,25 +45,110 @@ export function getStaticPaths() {
 const { slug } = Astro.params;
 const s = (servicios as Record<string, any>)[slug!];
 
-const [secIncluye, secPlanes, secBloques, , secCierre] = s.secciones;
+// ------------------------------------------------------------------ secciones por forma
+const secs: any[] = s.secciones ?? [];
+const secIncluye = secs.find((x) => Array.isArray(x.lista) && x.lista.length);
+const secPlanes = secs.find((x) => Array.isArray(x.planes) && x.planes.length);
+const secBloques = secs.find((x) => Array.isArray(x.bloques) && x.bloques.length);
+// Las dos de párrafos: la primera titula las preguntas, la última es el cierre.
+const conParrafos = secs.filter((x) => Array.isArray(x.parrafos));
+const hFaq: string = conParrafos.length > 1 ? conParrafos[0].h2 : 'Preguntas frecuentes';
+const secCierre = conParrafos.length ? conParrafos[conParrafos.length - 1] : null;
+const faq: { p: string; r: string }[] = s.faq ?? [];
 
-// EL COLOR DEL CAMPO VIAJA DESDE LA HOME. La home ofrece cuatro campos de color y cada
-// uno enlaza a su página; hasta ahora esas páginas llegaban en blanco y negro, o sea la
-// home prometía un color y al hacer clic desaparecía. Medido: la home es 32% color y
-// estas seis páginas eran 0%.
-// El par campo→servicio no se inventa acá, sale de oferta-v3.json:
-//   brasa → desarrollo-web · navy → visibilidad-en-ia y auditoria-seo-tecnica
-//   petróleo → acompanamiento-mensual · ciruela → redes-sociales y paid-media
-// Se tiñe UNA sección, la de los bloques numerados, igual que /v3/metodo/ ya hace con su
-// recorrido en navy. No la página entera: el lienzo sigue siendo el negro.
-const CAMPO: Record<string, string> = {
-  'visibilidad-en-ia': 'navy',
-  'auditoria-seo-tecnica': 'navy',
-  'acompanamiento-mensual': 'petroleo',
-  'redes-sociales': 'ciruela',
-  'paid-media': 'ciruela',
+// ------------------------------------------------------------------ texto
+const comillas = (t: string) => t.replace(/"([^"]+)"/g, '«$1»');
+const mayus = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
+const sinPunto = (t: string) => t.replace(/\.\s*$/, '');
+// Restos de la extracción a JSON: el texto de un enlace quedó repetido en la frase. Está
+// igual en la página publicada; se corrige acá y se propone corregir el JSON.
+const LIMPIEZA: [RegExp, string][] = [
+  [/con nuestro protocolo público, protocolo público\./, 'con nuestro protocolo público.'],
+  [/con el protocolo público de medición, nuestro protocolo público y reproducible/, 'con nuestro protocolo público y reproducible'],
+];
+const limpia = (t: string) => LIMPIEZA.reduce((a, [r, x]) => a.replace(r, x), comillas(t));
+// «Rastreo e indexación: qué puede ver Google…» → título + cuerpo, como en la publicada
+// (allá el título iba en <b>).
+const partir = (t: string) => {
+  const i = t.indexOf(': ');
+  return i > 0 && i <= 90 ? { t: t.slice(0, i), d: mayus(limpia(t.slice(i + 2))) } : { t: '', d: limpia(t) };
 };
-const campo = CAMPO[slug!] ?? '';
+
+// ------------------------------------------------------------------ lo propio de cada servicio
+type Img = { src: string; alt: string; w: number; h: number; pos?: string; etq?: string };
+const IMG: Record<string, Img> = {
+  hilo: { src: '/assets/img/d/hilo.jpg', alt: 'Un hilo luminoso cruza en diagonal un fondo verde oscuro', w: 1400, h: 787 },
+  hilos: { src: '/assets/img/d/hilos.jpg', alt: 'Una línea dorada atraviesa un fondo oscuro de fibras', w: 1600, h: 1600 },
+  domino: { src: '/assets/img/d/domino.jpg', alt: 'Fichas de dominó negras cayendo en fila sobre un fondo oscuro', w: 1600, h: 1600 },
+  dominoCurva: { src: '/assets/img/d/domino-curva.jpg', alt: 'Fichas de dominó de madera en fila curva sobre piedra oscura, con luz cálida', w: 1600, h: 1600 },
+  escritorio: { src: '/assets/img/d/escritorio.jpg', alt: 'Escritorio de madera junto a la ventana, con un laptop, un cuaderno abierto y una taza', w: 1600, h: 670 },
+  ventana: { src: '/assets/img/d/ventana.jpg', alt: 'Mesa de trabajo junto a una ventana con cortinas, con un libro abierto, un laptop y una taza', w: 1600, h: 670 },
+  ramon: { src: '/assets/img/ramon-vallejos.jpg', alt: 'Ramón Vallejos, consultor de SpindleLab', w: 896, h: 1200, etq: 'Ramón Vallejos' },
+};
+
+interface Propio {
+  linea: string;
+  nota: [string, string];
+  sangre: Img;
+  // Galería: dos imágenes del pool, distintas de la de cabecera y de otra familia
+  // (hilo/hilos, dominó/dominó curva y escritorio/ventana se parecen entre sí).
+  galeria: { img: Img; forma: 'd-g-media' | 'd-g-alta'; pos?: string }[];
+  marcas: string[];
+  marcasSr?: string[];
+  cierreH2?: string;
+  cierreP?: string;
+}
+
+const PROPIO: Record<string, Propio> = {
+  'visibilidad-en-ia': {
+    linea: 'Que ChatGPT, Gemini y Perplexity citen a tu empresa. Tres planes, desde $400.000 + IVA.',
+    nota: ['Valores en pesos, + IVA.', 'Los acompañamientos son mensuales; el valor final se cierra tras el diagnóstico gratuito.'],
+    sangre: { ...IMG.hilos, pos: '50% 22%' },
+    galeria: [{ img: IMG.escritorio, forma: 'd-g-media', pos: '35% 50%' }, { img: IMG.dominoCurva, forma: 'd-g-alta', pos: '40% 50%' }],
+    marcas: ['Sí', 'Sí', 'No', 'No'],
+    marcasSr: ['Prometemos:', 'Prometemos:', 'No prometemos:', 'No prometemos:'],
+  },
+  'auditoria-seo-tecnica': {
+    linea: 'En profundidad, con un informe priorizado por impacto. Mini-diagnóstico gratis; la auditoría, desde $490.000 + IVA.',
+    nota: ['Valores en pesos, + IVA.', 'El valor final se cierra tras el mini-diagnóstico gratuito, según el tamaño del sitio.'],
+    sangre: { ...IMG.domino, pos: '50% 58%' },
+    galeria: [{ img: IMG.ventana, forma: 'd-g-media', pos: '40% 50%' }, { img: IMG.hilo, forma: 'd-g-alta', pos: '30% 50%' }],
+    marcas: ['A', 'B', 'C', 'D'],
+  },
+  'acompanamiento-mensual': {
+    linea: 'Implementación continua e informes quincenales de SEO técnico y visibilidad en IA. Desde $590.000/mes + IVA, mínimo 3 meses.',
+    nota: ['Mínimo 3 meses.', 'Después, mes a mes con aviso de 30 días. Valores en pesos, + IVA.'],
+    sangre: { ...IMG.dominoCurva, pos: '50% 62%' },
+    // El servicio se vende como «trato directo de consultor»: el consultor es verificable.
+    galeria: [{ img: IMG.ramon, forma: 'd-g-alta', pos: '50% 30%' }, { img: IMG.escritorio, forma: 'd-g-media', pos: '30% 50%' }],
+    marcas: ['S1', 'S2', 'S3', 'S4'],
+    marcasSr: ['Semana 1:', 'Semana 2:', 'Semana 3:', 'Semana 4:'],
+  },
+  'redes-sociales': {
+    linea: 'LinkedIn y Meta: estrategia, pauta, comunidad y reportes. Desde $390.000/mes + IVA; el creativo lo pones tú.',
+    nota: ['Valores en pesos, + IVA.', 'No incluyen la inversión en pauta: esa la defines tú.'],
+    sangre: { ...IMG.ventana, pos: '50% 50%' },
+    galeria: [{ img: IMG.domino, forma: 'd-g-alta', pos: '45% 50%' }, { img: IMG.hilos, forma: 'd-g-media', pos: '50% 25%' }],
+    marcas: ['01', '02', '03', '04'],
+  },
+  'paid-media': {
+    linea: 'Google Ads de búsqueda, de alta intención y con el presupuesto bajo tu control. Gestión desde $350.000/mes + IVA; la inversión va aparte.',
+    nota: ['El precio es el fee de gestión, + IVA.', 'La inversión en pauta la pones tú y va a tu tarjeta.'],
+    sangre: { ...IMG.hilo, pos: '50% 45%' },
+    galeria: [{ img: IMG.dominoCurva, forma: 'd-g-media', pos: '50% 60%' }, { img: IMG.ventana, forma: 'd-g-alta', pos: '22% 50%' }],
+    marcas: ['01', '02', '03', '04'],
+    cierreH2: 'Vemos dónde conviene invertir',
+    cierreP: 'Envíanos tu URL y en 24 horas tienes el mini-diagnóstico gratuito, antes de que pongas un peso en pauta.',
+  },
+};
+const pr = PROPIO[slug!];
+
+// La miga visible usa el nombre del grafo, para que lo visible y el schema digan lo mismo.
+const nombre: string = s.breadcrumb?.[2]?.name ?? s.h1;
+
+// Siguiente servicio: el que sigue en el menú, en ciclo (Paid Media → Desarrollo Web).
+const aqui = SERVICIOS_V3.findIndex((x) => x.href === `/v3/servicios/${slug}/`);
+const sig = SERVICIOS_V3[(aqui + 1) % SERVICIOS_V3.length];
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -82,209 +179,122 @@ const jsonLd = {
   ],
 };
 ---
-
-<Layout title={s.title} description={s.description} bodyClass="bg-noche font-texto">
-  <Fragment slot="head">
-    <meta name="robots" content="noindex, nofollow" />
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
-  </Fragment>
-
+<Layout title={s.title} description={s.description} bodyClass="d-body">
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <NavV3 />
 
-  <main class="text-papel">
-    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-28">
-      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
-        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
-        <span aria-hidden="true" class="mx-2">·</span>
-        <a href="/v3/servicios/" class="hover:text-papel transition-colors">Soluciones</a>
-        <span aria-hidden="true" class="mx-2">·</span>
-        <span class="text-humo">{s.h1}</span>
-      </nav>
-      <h1
-        data-entra
-        class:list={['font-extrabold m-0 max-w-[14ch]', caja(s.h1)]}
-        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.88; letter-spacing:0"
-      >
-        {s.h1}
-      </h1>
-
-      <div data-entra data-paso="1" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
-        <div class="md:col-span-5">
-          {s.lead && (
-        <p class="mt-10 text-papel text-xl md:text-2xl leading-relaxed max-w-prosa">{s.lead}</p>
-      )}
-        </div>
-        <div class="md:col-span-6 md:col-start-7">
-          <img
-            src={s.foto}
-            alt={s.fotoAlt}
-            width="1280"
-            height="720"
-            loading="eager"
-            decoding="async"
-            class="media-campo"
-          />
-        </div>
+  {/* Plantilla «servicio» = el caso de driftime (spec §4). Cero display: las internas no
+       usan Manrope 800 en mayúsculas. Cero oro: el único es el punto del módulo. */}
+  <main>
+    <header class="d-cab">
+      <nav class="d-miga" aria-label="Miga de pan"><a href="/v3/">Inicio</a> · <a href="/v3/servicios/">Servicios</a> · {nombre}</nav>
+      <h1 class="d-h1">{s.h1}</h1>
+      <p class="d-linea">{pr.linea}</p>
+      <div class="d-btns">
+        {secPlanes && <a class="d-btn" href="#planes">Ver planes</a>}
+        <a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a>
       </div>
+    </header>
 
-    </section>
+    <figure class="d-sangre">
+      <img src={pr.sangre.src} alt={pr.sangre.alt} width={pr.sangre.w} height={pr.sangre.h} loading="eager" fetchpriority="high" style={pr.sangre.pos ? `object-position:${pr.sangre.pos}` : undefined} />
+    </figure>
 
-    {/* QUÉ INCLUYE, en columnas. */}
-    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[18ch]', caja(secIncluye.h2)]}
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
-      >
-        {secIncluye.h2}
-      </h2>
-      <ul data-entra data-paso="1" class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
-        {
-          (secIncluye.lista ?? []).map((i: string) => (
-            <li class="border-t filete pt-5 text-noche/75 text-base leading-relaxed">
-              {i}
-            </li>
-          ))
-        }
-      </ul>
-    </section>
+    <div class="d-entrada">
+      <p class="d-nota-card"><b>{pr.nota[0]}</b> {pr.nota[1]}</p>
+      {s.lead && <p class="d-guia">{comillas(s.lead)}</p>}
+    </div>
 
-    {/* PLANES, en columnas, precios exactos a los publicados. */}
-    <section id="planes" class="bg-papel text-noche px-6 md:px-medianil pb-24 md:pb-36 scroll-mt-24">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 mb-3 max-w-[18ch]', caja(secPlanes.h2)]}
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
-      >
-        {secPlanes.h2}
-      </h2>
-      {secPlanes.nota && <p class="text-noche/65 text-sm mb-12 md:mb-16 max-w-prosa">{secPlanes.nota}</p>}
-      <div class="grid gap-x-8 lg:gap-x-12 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
-        {
-          (secPlanes.planes ?? []).map((p: any) => (
-            <article class="flex flex-col border-t filete pt-6">
-              <h3
-                class:list={['font-extrabold m-0', caja(p.nombre)]}
-                style="font-size:clamp(1.125rem,1.7vw,1.5rem); line-height:1.05; letter-spacing:-0.03em"
-              >
-        {p.nombre}
-      </h3>
-              {p.tagline && <p class="mt-3 text-noche/65 text-base leading-relaxed">{p.tagline}</p>}
-              <ul class="list-none p-0 mt-5 mb-0 space-y-2">
-                {p.puntos.map((x: string) => (
-                  <li class="flex gap-2.5 text-noche/70 text-sm leading-relaxed">
-                    <span aria-hidden="true" class="text-noche/65">—</span>
-                    <span>{x}</span>
-                  </li>
-                ))}
-              </ul>
-              <span class="mt-auto pt-8 font-bold text-base">{p.precio}</span>
-            </article>
-          ))
-        }
+    {secIncluye && (
+      <section class="d-sec" aria-labelledby="s-inc">
+        <div class="d-eti"><h2 class="d-h2" id="s-inc">{sinPunto(secIncluye.h2)}</h2></div>
+        <div class="d-filas">
+          {secIncluye.lista.map((t: string) => {
+            const x = partir(t);
+            return x.t ? (<div><h3 class="d-h3">{x.t}</h3><p class="d-cuerpo d-inc-svc">{x.d}</p></div>) : (<p class="d-guia">{x.d}</p>);
+          })}
+        </div>
+      </section>
+    )}
+
+    {/* Galería entre secciones, asimétrica. Solo fotografía del pool honesto (spec §5). */}
+    {pr.galeria.length > 0 && (
+      <div class="d-galeria d-galeria--svc">
+        {pr.galeria.map((g) => (
+          <Pieza src={g.img.src} alt={g.img.alt} ancho={g.img.w} alto={g.img.h} clase={g.forma} posicion={g.pos} etiquetas={g.img.etq ? [g.img.etq] : []} />
+        ))}
       </div>
-    </section>
+    )}
 
-    {/* EL BLOQUE DE CUATRO. Cambia de sentido por página; el h2 lo dice. */}
-    <section class={`${campo ? 'tinte--' + campo + ' ' : ''}px-6 md:px-medianil py-32 md:py-seccion`}>
-      {/* Titular pegajoso. Mismo criterio que en el resto del v3: la sección es más alta
-          que la pantalla (entre 1.158 y 1.323px según el servicio, contra 900 de
-          viewport), así que el titular sostiene el contexto mientras se recorre la
-          lista. Donde el contenido sea corto, el sticky simplemente no llega a pegarse. */}
-      <div class="md:grid md:grid-cols-12 md:gap-x-8">
-        <div class="md:col-span-4">
-          <h2
-            data-entra
-            class:list={['font-extrabold m-0 mb-12 md:mb-0 md:sticky md:top-32', caja(secBloques.h2)]}
-            style="font-size:clamp(1.75rem, 3.4vw, 3.25rem); line-height:0.94; letter-spacing:0; text-wrap:balance"
-          >
-        {secBloques.h2}
-      </h2>
+    {secPlanes && (
+      <section class="d-sec" id="planes" aria-labelledby="s-pla">
+        <div class="d-eti">
+          <h2 class="d-h2" id="s-pla">{sinPunto(secPlanes.h2)}</h2>
+          {secPlanes.nota && <p class="d-chico">{limpia(secPlanes.nota)}</p>}
         </div>
-        <div class="md:col-span-7 md:col-start-6 ✓">
-      <ol data-entra data-paso="1" class="list-none p-0 m-0 border-t filete">
-        {
-          (secBloques.bloques ?? []).map((b: any, i: number) => (
-            <li class="border-b filete py-7 md:py-9 flex flex-col md:flex-row gap-3 md:gap-8">
-              <span class="text-humo font-bold text-sm flex-none md:w-10" style="letter-spacing:0.16em">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <span
-                class="font-extrabold uppercase flex-none md:w-[10em]"
-                style="font-size:clamp(1.25rem,2.2vw,1.875rem); line-height:1.05; letter-spacing:-0.03em"
-              >
-                {b.t}
-              </span>
-              <span class="text-humo text-lg leading-relaxed max-w-prosa">{b.d}</span>
-            </li>
-          ))
-        }
-      </ol>
-        </div>
-      </div>
-    </section>
-
-    {/* FAQ. El mismo contenido que alimenta el FAQPage del schema. */}
-    <section class="px-6 md:px-medianil pb-24 md:pb-36">
-      <div class="md:grid md:grid-cols-12 md:gap-x-8">
-        <div class="md:col-span-4">
-          <h2
-            data-entra
-            class:list={['font-extrabold m-0 mb-12 md:mb-0 md:sticky md:top-32', caja(s.secciones[3].h2)]}
-            style="font-size:clamp(1.75rem, 3.4vw, 3.25rem); line-height:0.94; letter-spacing:0; text-wrap:balance"
-          >
-        {s.secciones[3].h2}
-      </h2>
-        </div>
-        <div class="md:col-span-7 md:col-start-6">
-      <dl class="m-0 border-t filete">
-        {
-          s.faq.map((f: any) => (
-            <div class="border-b filete py-7 md:py-9 grid gap-3 md:grid-cols-[minmax(0,15rem)_1fr] md:gap-8">
-              <dt
-                class:list={['font-extrabold', caja(f.p)]}
-                style="font-size:clamp(1.125rem,1.7vw,1.5rem); line-height:1.1; letter-spacing:-0.03em"
-              >
-                  {f.p}
-                </dt>
-              <dd class="m-0 text-humo text-lg leading-relaxed max-w-prosa">{f.r}</dd>
+        <div class="d-filas">
+          {secPlanes.planes.map((p: any) => (
+            <div class="d-plan">
+              <h3 class="d-h3">{p.nombre}</h3><span class="d-plan__precio">{p.precio}</span>
+              {p.tagline && <p class="d-cuerpo">{p.tagline}</p>}
+              {p.puntos?.length > 0 && <ul>{p.puntos.map((x: string) => <li>{x}</li>)}</ul>}
             </div>
-          ))
-        }
-      </dl>
+          ))}
         </div>
-      </div>
-    </section>
+      </section>
+    )}
 
-    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 max-w-[16ch]', caja(secCierre.h2)]}
-        style="font-size:clamp(2rem, 6.6vw, 7.5rem); line-height:0.88; letter-spacing:0; text-wrap:balance"
-      >
-        {secCierre.h2}
-      </h2>
-      {secCierre.parrafos?.[0] && (
-        <p class="mt-10 text-noche/65 text-xl leading-relaxed max-w-prosa">
-          {secCierre.parrafos[0]}
-        </p>
-      )}
-      <div class="mt-12 flex items-center gap-4 flex-wrap">
-        <a
-          href={CONTACTO}
-          class="rounded-v3 bg-noche hover:bg-black text-papel text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-noche"
-        >
-          Conversemos tu proyecto
-        </a>
-        <a
-          href="/v3/diagnostico/"
-          class="rounded-v3 border filete hover:border-noche text-noche text-sm font-bold px-8 py-4 transition-colors"
-        >
-          Chequeo gratis
-        </a>
-      </div>
-    </section>
+    {secBloques && (
+      <section class="d-sec" aria-labelledby="s-blo">
+        <div class="d-eti"><h2 class="d-h2" id="s-blo">{sinPunto(secBloques.h2)}</h2></div>
+        <div class="d-filas">
+          {secBloques.bloques.map((b: any, i: number) => (
+            <div class="d-fase">
+              <span class="d-fase__n" aria-hidden={pr.marcasSr ? 'true' : undefined}>{pr.marcas[i] ?? String(i + 1).padStart(2, '0')}</span>
+              <h3 class="d-h3">{pr.marcasSr?.[i] && <span class="d-sr">{pr.marcasSr[i]} </span>}{b.t}</h3>
+              <p class="d-cuerpo">{limpia(b.d)}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {faq.length > 0 && (
+      <section class="d-sec d-faq" aria-labelledby="s-faq">
+        <div class="d-eti"><h2 class="d-h2" id="s-faq">{sinPunto(hFaq)}</h2></div>
+        <div class="d-filas">
+          {faq.map((f) => (<div><h3 class="d-h3">{f.p}</h3><p class="d-cuerpo">{f.r}</p></div>))}
+        </div>
+      </section>
+    )}
+
+    {/* El cierre de la página publicada: la oferta concreta (mini-diagnóstico en 24 h), que
+         el pie no dice. Criterio de éxito de la obra = conversión. */}
+    {secCierre && (
+      <section class="d-sec" aria-labelledby="s-cie">
+        <div class="d-eti"><h2 class="d-h2" id="s-cie">{pr.cierreH2 ?? sinPunto(secCierre.h2)}</h2></div>
+        <div class="d-cierre-svc">
+          <p class="d-guia">{pr.cierreP ?? secCierre.parrafos?.[0]}</p>
+          <div class="d-btns"><a class="d-btn" href={CONTACTO}>Pedir el diagnóstico gratis</a></div>
+        </div>
+      </section>
+    )}
+
+    <a class="d-siguiente" href={sig.href}><span class="d-chico d-gris">Siguiente</span><span class="d-h1">{sig.label} →</span></a>
   </main>
 
   <FooterV3 />
 </Layout>
+
+<style>
+  /* Galería de dos: la alta toma el alto de la media, así las dos terminan en la misma
+     línea (sin esto la alta, en 3:4, queda 86 px más corta y deja un escalón). En celular
+     se apilan y vuelven a los ratios de driftime.css. */
+  @media (min-width: 768px) {
+    .d-galeria--svc :global(.d-g-alta) { aspect-ratio: auto; }
+  }
+  .d-inc-svc { margin-top: 8px; }
+  .d-cierre-svc { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  .d-cierre-svc .d-guia { max-width: 640px; }
+</style>
