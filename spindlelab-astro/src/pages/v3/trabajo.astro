@@ -124,6 +124,11 @@ const piezas = casos.map((c: any, i: number) => {
     concepto,
     // Mismo rótulo que la fila de la home y la galería de Desarrollo Web.
     etiquetas: [concepto ? `${c.n} · ${c.rubro}` : `${c.n} · ${ROTULO[c.tipo] ?? c.rubro}`],
+    // Un nombre con barra («Bernardo Combeau | Model») no puede ir en las etiquetas de
+    // Pieza: Pieza pinta texto plano y la barra se lee «I» (QA, 5-oct). Esa pieza pinta su
+    // propia etiqueta, con las mismas clases .d-etq y la barra en gris. Solo si no es de
+    // concepto: el rótulo de concepto lo pone Pieza, en el mismo rincón.
+    chipPropio: !concepto && c.n.includes(' | '),
     // Lo que se lee en el enlace: el dominio, sin protocolo ni barra final.
     dominio: c.url ? c.url.replace(/^https?:\/\//, '').replace(/\/$/, '') : null,
   };
@@ -237,11 +242,13 @@ const jsonLd = {
         rubro. El paso gratis (el chequeo, que corre sobre cualquier sitio) y el precio de
         entrada de Desarrollo Web. Sin anunciar piezas futuras: el portafolio registra UNA
         pieza de concepto en el sitio (marketing/portafolio/README.md), no una serie por rubro.
-        Sección corta: --quieta, la etiqueta no se pega (spec §7). */}
+        Sección corta: --quieta, la etiqueta no se pega (spec §7). Los motores que nombra el
+        chequeo son los que functions/api/chequeo.js prueba (ChatGPT, Claude, Perplexity), con
+        las mismas palabras que el índice de servicios: Gemini no se prueba en vivo. */}
     <section class="d-sec d-sec--quieta" aria-labelledby="s-cierre">
       <div class="d-eti"><h2 class="d-h2" id="s-cierre">Antes de construir el tuyo</h2></div>
       <div class="d-cierre-trab">
-        <p class="d-guia">Pon tu dominio y ves en segundos si ChatGPT, Gemini y Perplexity pueden leer tu sitio, sea cual sea el rubro. Es el mismo chequeo con el que partimos cada proyecto.</p>
+        <p class="d-guia">Pon tu dominio y ves en segundos si los robots de ChatGPT, Claude y Perplexity pueden entrar a tu sitio, sea cual sea el rubro. Es el mismo chequeo con el que partimos cada proyecto.</p>
         <p class="d-cuerpo">Si hay que construirlo de nuevo, eso es Desarrollo Web: tres planes, y el valor final se cierra tras el diagnóstico gratuito.</p>
         <p class="d-precio d-precio-trab"><span class="d-pre-rot">Desde</span><span class="d-pre-sep" aria-hidden="true"></span> <span class="d-pre-junto-trab"><b>{desdeWeb}</b> <span class="d-pre-rot">+ IVA</span></span></p>
         <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href="/v3/servicios/desarrollo-web/">Ver Desarrollo Web</a></div>

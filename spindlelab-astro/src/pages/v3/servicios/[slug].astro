@@ -394,11 +394,14 @@ const jsonLd = {
      fichas ocupan del 28 al 80 %, y la primera fila toda iluminada está en el 44 %.
      · Escritorio (2,39): la ventana mide el 41,8 % del alto. object-position 76 % la pone
        en 44–86 %: la ficha de adelante toca el borde superior.
-     · Celular (4:3): la ventana mide el 75 %; ni con 100 % sale del negro. Se acerca ×1,6
-       desde abajo: object-position 56 % + scale con origen en 20 % 100 % deja a la vista
-       x 7,5–70 % · y 42–89 % de la foto (1.000 px de foto para 350 de pantalla). */
+     · Celular (4:3): la ventana mide el 75 %; ni con 100 % sale del negro. Se acerca ×1,82
+       desde abajo: object-position 45 % + scale con origen en 20 % 100 % deja a la vista
+       x 9–64 % · y 45–86 % de la foto (880 px de foto para 350 de pantalla). Medido por
+       borde sobre la foto, con luma > 14 como «se ve»: arriba 55 %, izquierda 82 %,
+       derecha 100 %, abajo 82 %. Con el ×1,6 anterior (y 42–89 %) arriba era 34 % y la
+       esquina superior izquierda quedaba en negro (luma 8 sobre el lienzo). */
   .d-sangre--domino-svc img { object-position: 50% 76%; }
   @media (max-width: 767px) {
-    .d-sangre--domino-svc img { object-position: 50% 56%; transform: scale(1.6); transform-origin: 20% 100%; }
+    .d-sangre--domino-svc img { object-position: 50% 45%; transform: scale(1.82); transform-origin: 20% 100%; }
   }
 </style>

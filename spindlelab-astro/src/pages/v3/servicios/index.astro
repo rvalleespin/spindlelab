@@ -160,11 +160,13 @@ const partir = (t: string) => {
     {/* El texto describe lo que hace el botón (QA 5-oct, bloqueante): el chequeo es el
          automático de /v3/diagnostico/, sobre tu sitio; no mira la competencia, eso es el
          diagnóstico completo. Mismo destino que «Chequeo gratis» del pie y del menú.
-         Fuente del copy: /v3/diagnostico/ (línea, nota del instrumento y «Dos caminos»). */}
+         Fuente del copy: /v3/diagnostico/ (línea, nota del instrumento y «Dos caminos»). Nombra
+         los mismos motores que esa línea (ChatGPT, Claude, Perplexity): Gemini no se prueba en
+         vivo en functions/api/chequeo.js (spec §7). */}
     <section class="d-sec d-sec--quieta" aria-labelledby="s-chequeo">
       <div class="d-eti"><h2 class="d-h2" id="s-chequeo">Empieza por el chequeo</h2></div>
       <div>
-        <p class="d-guia">Pon tu dominio y ves en segundos si ChatGPT, Gemini y Perplexity pueden leer tu sitio. Gratis y sin dejar tu correo.</p>
+        <p class="d-guia">Pon tu dominio y ves en segundos si los robots de ChatGPT, Claude y Perplexity pueden entrar a tu sitio. Gratis y sin dejar tu correo.</p>
         <div class="d-btns d-chequeo-sidx"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Conversemos tu proyecto</a></div>
       </div>
     </section>
