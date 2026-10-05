@@ -116,7 +116,11 @@
 /* ---------------------------------------------------------------- campos pegajosos */
 /* Cada campo tapa al anterior. min-height y no altura fija: en celular crece en vez de
    recortar. El z-index sube campo a campo. */
-.d-campo { position: sticky; top: 0; min-height: 100svh; padding: 32px var(--d-m); display: flex; flex-direction: column; }
+.d-campo { position: sticky; top: 0; min-height: 100svh; padding: 92px var(--d-m) 32px; display: flex; flex-direction: column; }   /* arriba: libra el módulo de nav fijo (termina en ~74 px); con 32 px el módulo tapaba el titular */
+/* Un campo pegajoso más alto que la pantalla esconde su borde de abajo para siempre (el
+   siguiente se le monta encima): la fila de imágenes se ajusta al alto disponible. Medido:
+   sin esto, a 1440×800 y 1280×720 se perdían 70–140 px de las imágenes. */
+@media (min-width: 768px) { .d-campo .d-fila .d-pieza { aspect-ratio: auto; height: clamp(170px, calc(100svh - 560px), 380px); } }
 .d-campo__cab { display: flex; flex-direction: column; gap: 18px; max-width: 720px; }
 .d-campo .d-display { margin-bottom: 6px; }
 .d-desc { font-size: clamp(1.125rem, 1.67vw, 1.5rem); line-height: 1.5; margin: 0; }   /* 24 px, como driftime */
