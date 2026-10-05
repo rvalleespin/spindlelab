@@ -83,7 +83,8 @@ Ver manual §05. Resumen operativo:
 
 ## 5 · Imagen
 **Se usa** (pool honesto): obra (Combeau ×2 con permiso, Verifica y Cumple propio, Raigal
-concepto rotulado), mockups compuestos de esa obra, hilo de oro, dominó ×2, hilos, escritorio,
+concepto rotulado), mockups compuestos de esa obra (`obra/mock-<caso>-ancho.jpg` 4:3 y
+`-alto.jpg` 10:11; cómo se hicieron en `mockups/README.md`), hilo de oro, dominó ×2, hilos, escritorio,
 ventana, retrato de Ramón.
 **No se usa nunca:** `hero-*.jpg`, `estrategia-mesa.jpg`, `equipo-creativo.jpg`,
 `servicios-oficina`, `evidencia-oficina`, `metodo`, `problema`, `foto-banner-original` — son de
@@ -111,3 +112,4 @@ punto dorado dibujado: serían un segundo oro en la vista, así que tampoco.
 | 5-oct | Etiquetas de pieza arriba, no abajo | **regla** | QA del tablero (el aviso de cookies las tapaba) |
 | 5-oct | Wordmark del pie con `cqi`, no `vw` | **regla** | QA del tablero (se cortaba) |
 | 5-oct | Sin Gabarito/Inter: la escasez se logra en Manrope | **regla** | corrección propia (revertía la aprobación del 29-sep) |
+| 5-oct | Mockups sobre fondo de color de estudio, no sobre las fotos del pool | **preferencia** (la foto no lo permite: notebooks cerrados) | Diego, al componerlos |
