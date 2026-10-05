@@ -84,9 +84,7 @@
         "item": "https://spindlelab.cl/metodo/"
       }
     ],
-    "canonical": "https://spindlelab.cl/metodo/",
-    "foto": "/assets/img/hero-metodo.jpg",
-    "fotoAlt": "Mesa de trabajo durante una sesión de método"
+    "canonical": "https://spindlelab.cl/metodo/"
   },
   "diagnostico": {
     "slug": "diagnostico",
@@ -182,9 +180,7 @@
         "item": "https://spindlelab.cl/diagnostico/"
       }
     ],
-    "canonical": "https://spindlelab.cl/diagnostico/",
-    "foto": "/video/evidencia-medicion.jpg",
-    "fotoAlt": "Pantalla con una medición de visibilidad en curso"
+    "canonical": "https://spindlelab.cl/diagnostico/"
   },
   "contacto": {
     "slug": "contacto",
@@ -266,9 +262,7 @@
         "r": "Sí, sin problema. En sectores financieros es práctica habitual y estamos acostumbrados a trabajar bajo NDA."
       }
     ],
-    "canonical": "https://spindlelab.cl/contacto/",
-    "foto": "/assets/img/hero-contacto.jpg",
-    "fotoAlt": "Escritorio con un computador y una libreta"
+    "canonical": "https://spindlelab.cl/contacto/"
   },
   "servicios": {
     "_nota": "NO SE RENDERIZA. Ningún template lee esta clave: servicios/index.astro escribe sus h2 a mano («Qué hacemos y qué no», «Empieza por el chequeo») y toma los precios de oferta-v3.json. Editar los textos de acá no cambia nada en pantalla. Se conserva porque es el contenido extraído de la página publicada y sirve de referencia, pero si vas a tocar /v3/servicios/, el archivo es src/pages/v3/servicios/index.astro. Verificado el 29-sep-2026.",
@@ -437,8 +431,6 @@
         }
       ]
     },
-    "canonical": "https://spindlelab.cl/servicios/",
-    "foto": "/assets/img/hero-servicios.jpg",
-    "fotoAlt": "Equipo revisando el trabajo en pantalla"
+    "canonical": "https://spindlelab.cl/servicios/"
   }
 }

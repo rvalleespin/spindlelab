@@ -41,7 +41,7 @@
 
 /* ---------------------------------------------------------------- escala */
 .d-display { font-weight: 800; text-transform: uppercase; font-size: clamp(2.4rem, 10vw, 7.5rem); line-height: 0.9; letter-spacing: -0.005em; margin: 0; }
-.d-h1 { font-size: clamp(2.25rem, 4.17vw, 3.75rem); line-height: 1.1; font-weight: 500; letter-spacing: -0.02em; margin: 0; }   /* 60 px */
+.d-h1 { font-size: clamp(2.25rem, 4.17vw, 3.75rem); line-height: 1.1; font-weight: 500; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }   /* 60 px */
 .d-h2 { font-size: clamp(1.375rem, 2.08vw, 1.875rem); line-height: 1.4; font-weight: 500; letter-spacing: -0.02em; margin: 0; } /* 30 px */
 .d-h3 { font-size: clamp(1.25rem, 1.67vw, 1.5rem); line-height: 1.4; font-weight: 500; margin: 0; }                             /* 24 px */
 .d-guia { font-size: clamp(1.25rem, 1.67vw, 1.5rem); line-height: 1.5; font-weight: 400; margin: 0; }                           /* 24 / 20 px */
@@ -129,9 +129,12 @@
 .d-panel[hidden] { display: none; }
 @media (max-width: 767px) { .d-campo { padding: 96px var(--d-m) 28px; } .d-campo__cab { gap: 14px; } }
 
-.d-precio { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 12px; font-size: 1rem; margin: 0; }
-.d-precio .d-pre-rot { opacity: 0.72; }
-.d-precio .d-pre-sep { width: 1px; height: 16px; background: currentColor; opacity: 0.35; }
+/* Flujo en línea, no flex: con flex, a 390 el separador quedaba solo al final de una línea y
+   «+ IVA» huérfano en la siguiente. «+ IVA» va pegado a la última cifra y no se parte.
+   Sin opacidad en los rótulos: a 0,72 «Desde» medía 3,05:1 sobre brasa (verificar.mjs). */
+.d-precio { display: block; font-size: 1rem; line-height: 1.6; margin: 0; }
+.d-precio .d-pre-sep { display: inline-block; width: 1px; height: 0.875em; vertical-align: -0.08em; margin: 0 0.75em; background: currentColor; opacity: 0.35; }
+.d-precio .d-pre-rot:last-child { margin-left: 0.5em; white-space: nowrap; }
 .d-precio b { font-weight: 600; }
 
 /* Lo que va después de los campos tapa al último campo. */
@@ -169,6 +172,7 @@
 /* Sección con etiqueta pegajosa: el h2 queda fijo a la izquierda mientras el texto corre. */
 .d-sec { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--d-g); padding: 180px var(--d-m) 0; }
 .d-eti { position: sticky; top: 120px; align-self: start; }
+.d-sec--quieta .d-eti { position: static; }   /* sección corta: la etiqueta no se pega (se corría bajo el texto) */
 .d-eti .d-chico { margin-top: 10px; color: var(--d-gris); max-width: 300px; }
 @media (max-width: 767px) { .d-sec { grid-template-columns: 1fr; padding-top: 110px; gap: 28px; } .d-eti { position: static; } }
 .d-filas { display: flex; flex-direction: column; }
@@ -185,6 +189,7 @@
 .d-fase { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 4px 16px; }
 .d-fase .d-fase__n { color: var(--d-gris); font-variant-numeric: tabular-nums; padding-top: 4px; }
 .d-fase .d-cuerpo { grid-column: 2; }
+@media (max-width: 767px) { .d-fase { grid-template-columns: 1fr; } .d-fase .d-cuerpo { grid-column: 1; } }   /* la columna de 56 px dejaba el texto en ~270 px */
 .d-faq .d-h3 { margin-bottom: 8px; }
 
 /* Galería asimétrica, como los casos de driftime. */
@@ -207,8 +212,8 @@
 /* Medido: el texto mide 4,744 veces su tamaño de letra. Ancho del CONTENEDOR (cqi, no vw:
    así no se pasa con una barra de scroll visible) / 4,78. Su punto va en papel: el oro de
    esta vista ya está en el módulo de navegación. Un oro por vista. */
-.d-gigante { font-family: 'Gabarito', sans-serif; font-weight: 800; font-size: calc(100cqi / 4.78); line-height: 0.78; letter-spacing: -0.035em; margin: 96px 0 18px; white-space: nowrap; }
-.d-pie__legal { display: flex; justify-content: space-between; gap: 16px; font-size: 0.8125rem; color: var(--d-gris-2); }
+.d-gigante { font-family: 'Gabarito', sans-serif; font-weight: 800; font-size: calc(100cqi / 4.78); line-height: 0.78; letter-spacing: -0.035em; margin: 96px 0 calc(0.16em + 16px); white-space: nowrap; }   /* la «p» baja 0,15 em bajo la caja (interlínea 0,78): medido */
+.d-pie__legal { display: flex; justify-content: space-between; gap: 16px; font-size: 0.8125rem; color: var(--d-gris); }   /* gris-2 daba 4,12:1 a 13 px */
 @media (max-width: 767px) { .d-pie__arriba { grid-template-columns: 1fr; gap: 48px; } .d-gigante { margin-top: 64px; } }
 .d-home .d-pie { margin-top: 0; }
 

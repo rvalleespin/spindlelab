@@ -55,7 +55,7 @@
             ]
           }
         ],
-        "nota": "Incluido en todo plan: medición real de menciones en IA con el protocolo público de medición, nuestro protocolo público y reproducible (mismas consultas, mismos motores, misma cadencia), informe en lenguaje de negocio y cero prueba inventada. Solo lo que la IA de verdad responde."
+        "nota": "Incluido en todo plan: medición real de menciones en IA con nuestro protocolo público y reproducible (mismas consultas, mismos motores, misma cadencia), informe en lenguaje de negocio y cero prueba inventada. Solo lo que la IA de verdad responde."
       },
       {
         "h2": "Qué prometemos y qué no",
@@ -112,7 +112,7 @@
       },
       {
         "p": "¿Cuánto cuesta?",
-        "r": "La Auditoría de Visibilidad parte en 400.000 CLP + IVA (pago único). El acompañamiento mensual parte en 590.000 CLP/mes + IVA (Esencial) y 790.000 CLP/mes (Pro). El valor final se cierra tras el diagnóstico gratuito, según el tamaño de tu sitio y las consultas a cubrir."
+        "r": "La Auditoría de Visibilidad parte en 400.000 CLP + IVA (pago único). El acompañamiento mensual parte en 590.000 CLP/mes + IVA (Esencial) y 790.000 CLP/mes + IVA (Pro). El valor final se cierra tras el diagnóstico gratuito, según el tamaño de tu sitio y las consultas a cubrir."
       }
     ],
     "serviceName": "Visibilidad en IA (AEO/GEO)",
@@ -177,9 +177,7 @@
         "item": "https://spindlelab.cl/servicios/visibilidad-en-ia/"
       }
     ],
-    "canonical": "https://spindlelab.cl/servicios/visibilidad-en-ia/",
-    "foto": "/assets/img/hero-visibilidad-ia.jpg",
-    "fotoAlt": "Persona revisando resultados de búsqueda en un computador"
+    "canonical": "https://spindlelab.cl/servicios/visibilidad-en-ia/"
   },
   "auditoria-seo-tecnica": {
     "slug": "auditoria-seo-tecnica",
@@ -292,7 +290,7 @@
       },
       {
         "p": "¿Cuánto cuesta?",
-        "r": "El mini-diagnóstico es gratis (pago único de 0). La Auditoría Completa parte en 490.000 CLP + IVA y la Auditoría + Visibilidad IA en 690.000 CLP + IVA. El valor final se cierra tras el mini-diagnóstico gratuito, según el tamaño del sitio."
+        "r": "El mini-diagnóstico es gratis. La Auditoría Completa parte en 490.000 CLP + IVA y la Auditoría + Visibilidad IA en 690.000 CLP + IVA. El valor final se cierra tras el mini-diagnóstico gratuito, según el tamaño del sitio."
       }
     ],
     "serviceName": "Auditoría SEO Técnica",
@@ -351,9 +349,7 @@
         "item": "https://spindlelab.cl/servicios/auditoria-seo-tecnica/"
       }
     ],
-    "canonical": "https://spindlelab.cl/servicios/auditoria-seo-tecnica/",
-    "foto": "/assets/img/hero-auditoria-seo.jpg",
-    "fotoAlt": "Pantalla con una auditoría técnica abierta"
+    "canonical": "https://spindlelab.cl/servicios/auditoria-seo-tecnica/"
   },
   "acompanamiento-mensual": {
     "slug": "acompanamiento-mensual",
@@ -367,7 +363,7 @@
         "lista": [
           "Implementación priorizada: trabajamos la lista de mejoras técnicas por impacto: indexación, velocidad, datos estructurados, enlazado interno. Directamente o con tu equipo.",
           "Contenido optimizado para búsqueda e IA: piezas pensadas para posicionar en Google y ser citadas por los modelos: estructura de respuesta, datos verificables y schema correcto.",
-          "Monitoreo doble: posiciones clásicas y presencia en respuestas de IA, medidas quincenalmente con nuestro protocolo público, protocolo público.",
+          "Monitoreo doble: posiciones clásicas y presencia en respuestas de IA, medidas quincenalmente con nuestro protocolo público.",
           "Informe quincenal en lenguaje de negocio: qué se hizo, qué se movió y qué sigue. Una página, sin jerga, lista para reenviar a gerencia.",
           "Reunión mensual de decisiones: 45 minutos para revisar resultados y priorizar el mes siguiente."
         ]
@@ -525,9 +521,7 @@
         "item": "https://spindlelab.cl/servicios/acompanamiento-mensual/"
       }
     ],
-    "canonical": "https://spindlelab.cl/servicios/acompanamiento-mensual/",
-    "foto": "/assets/img/hero-acompanamiento.jpg",
-    "fotoAlt": "Mesa de trabajo con un informe mensual"
+    "canonical": "https://spindlelab.cl/servicios/acompanamiento-mensual/"
   },
   "redes-sociales": {
     "slug": "redes-sociales",
@@ -699,9 +693,7 @@
         "item": "https://spindlelab.cl/servicios/redes-sociales/"
       }
     ],
-    "canonical": "https://spindlelab.cl/servicios/redes-sociales/",
-    "foto": "/assets/img/equipo-creativo.jpg",
-    "fotoAlt": "Equipo creativo revisando piezas en pantalla"
+    "canonical": "https://spindlelab.cl/servicios/redes-sociales/"
   },
   "paid-media": {
     "slug": "paid-media",
@@ -788,7 +780,7 @@
         ]
       },
       {
-        "h2": "¿Listo para acelerar el motor?",
+        "h2": "Vemos dónde conviene invertir",
         "parrafos": [
           "Envíanos tu URL y en 24 horas tienes el mini-diagnóstico gratuito. Vemos dónde conviene invertir antes de que pongas un peso en pauta."
         ]
@@ -873,8 +865,6 @@
         "item": "https://spindlelab.cl/servicios/paid-media/"
       }
     ],
-    "canonical": "https://spindlelab.cl/servicios/paid-media/",
-    "foto": "/assets/img/estrategia-mesa.jpg",
-    "fotoAlt": "Mesa de trabajo con notas de campaña y un computador"
+    "canonical": "https://spindlelab.cl/servicios/paid-media/"
   }
 }

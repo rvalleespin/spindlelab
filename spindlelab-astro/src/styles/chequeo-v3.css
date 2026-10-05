@@ -61,3 +61,18 @@
 .peso-list {gap:12px}
 .nota-std {border-left:3px solid var(--teal);background:var(--surface);padding:20px 24px;border-radius:0 6px 6px 0;font-size:14px;line-height:1.7;color:var(--ink-70);max-width:780px}
 .nota-std strong {color:var(--paper)}
+
+/* EN EL SISTEMA DRIFTIME (5-oct). Las reglas de arriba vienen verbatim de /diagnostico/ y
+   leen variables del sitio publicado que en .d-body no existen (--ink-50, --ink-70, --line,
+   --teal, --headline): el resultado salía sin bordes, con el gris azulado viejo, y el botón
+   principal con texto papel sobre fondo papel, porque `.d-body a { color: inherit }` le gana
+   a `.chq-r1`. Lo encontró el constructor del diagnóstico con una respuesta simulada. */
+.d-body #chq-out, .d-body .chq-error {
+  --ink-50: var(--d-gris); --ink-70: var(--d-papel); --line: var(--d-filete);
+  --surface: var(--d-modulo); --surface-2: var(--d-modulo); --teal: var(--support);
+  --headline: 'Manrope', system-ui, sans-serif; --bg: var(--d-noche);
+}
+.d-body .chq-error-codigo { border-top-color: var(--d-filete); }
+.d-body .chq-ramas a { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; font-size: 0.875rem; font-weight: 500; }
+.d-body .chq-r1 { color: var(--d-noche); }
+.d-body .chq-r2 { background: var(--d-noche); }

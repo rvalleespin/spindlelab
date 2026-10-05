@@ -90,6 +90,9 @@ ventana, retrato de Ramón.
 `servicios-oficina`, `evidencia-oficina`, `metodo`, `problema`, `foto-banner-original` — son de
 banco o muestran equipos que no existen. `servicios-capas` y `evidencia-medicion` llevan un
 punto dorado dibujado: serían un segundo oro en la vista, así que tampoco.
+`hilos.jpg` **es un recorte** (5-oct): la foto original traía una línea de oro de lado a lado,
+y junto al punto del módulo eran dos oros en la misma vista. Se recortó bajo la línea; no se
+vuelve a la versión completa.
 **Video:** solo `hero-hilo-de-oro.mp4`, y solo si no hay `prefers-reduced-motion`.
 
 ## 6 · Lo que esta spec prohíbe explícitamente
@@ -113,3 +116,13 @@ punto dorado dibujado: serían un segundo oro en la vista, así que tampoco.
 | 5-oct | Wordmark del pie con `cqi`, no `vw` | **regla** | QA del tablero (se cortaba) |
 | 5-oct | Sin Gabarito/Inter: la escasez se logra en Manrope | **regla** | corrección propia (revertía la aprobación del 29-sep) |
 | 5-oct | Mockups sobre fondo de color de estudio, no sobre las fotos del pool | **preferencia** (la foto no lo permite: notebooks cerrados) | Diego, al componerlos |
+| 5-oct | `hilos.jpg` sin la línea de oro (recorte) | **regla** (un oro por vista) | Diego, al construir Visibilidad en IA |
+| 5-oct | El JSON-LD de una página va en `slot="head"`; el Layout **no tiene** prop `jsonLd` (Astro la ignora sin error y el grafo se pierde) | **regla** | Diego, en Trabajo |
+| 5-oct | Una pieza cuya captura trae el aviso de concepto horneado se muestra en su mockup, no en la captura plana (el rótulo de `Pieza` tapaba el aviso) | preferencia | Diego, en Trabajo |
+| 5-oct | Línea de precio en flujo de texto, no flex: «+ IVA» pegado a la última cifra, nunca huérfano; rótulos sin opacidad (a 0,72 medían 3,05:1 sobre brasa) | **regla** | verificar.mjs, índice de servicios |
+| 5-oct | Wordmark gigante con margen inferior `0,16 em + 16 px`: la «p» baja 0,15 em bajo su caja y pisaba la línea legal | **regla** (medido) | cinco constructores por separado |
+| 5-oct | Línea legal del pie en `--gris`, no `--gris-2` (4,12:1 a 13 px) | **regla** | verificar.mjs |
+| 5-oct | `.d-sec--quieta` para secciones cortas: la etiqueta no se pega | componente | Diego, en el blog |
+| 5-oct | `.d-fase` en una columna en celular (la de 56 px dejaba el texto en ~270 px) | **regla** | Diego, en Método |
+| 5-oct | El resultado del chequeo se adapta al sistema en `chequeo-v3.css` (antes salía con el botón principal invisible) | **regla** | Diego, en Diagnóstico, con respuesta simulada |
+| 5-oct | `oro1 = 1` es lo esperado en toda página (el punto del módulo); 2 o más es defecto | aclaración de medición | tres constructores |
