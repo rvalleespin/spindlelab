@@ -108,7 +108,7 @@ Largo: **18.000 a 23.500 px**. Es una revista, no una ficha.
 
 | De driftime | ¿Se transfiere? | Cómo |
 |---|---|---|
-| Display escaso + sans tranquila grande | **Sí, es la clave** | Con las fuentes de la marca: **Gabarito** 800 en mayúsculas hace el papel de landour (ya es la del wordmark); **Inter** hace el de Geist. No hace falta comprar letra: hace falta disciplina. |
+| Display escaso + sans tranquila grande | **Sí, es la clave** | **Dentro de Manrope**, que es la decisión aprobada por Ramón el 29-sep (manual v2.0: Manrope para titulares y cuerpo; Gabarito solo wordmark y monograma). Manrope 800 en mayúsculas hace el papel de landour **en cinco lugares**; Manrope 400 a 24 px hace el de Geist en todo lo demás. El problema de la v3 nunca fue la familia: fue usar el 800 en todas partes. *(Corregido el 5-oct: la primera versión de este lock recomendaba Gabarito + Inter, lo que revertía una decisión aprobada. Si se quiere una segunda familia para el display, como hace driftime, es decisión de Ramón y reabre el manual.)* |
 | Cuatro campos pegajosos | **Sí** — la v3 ya los tiene | Desarrollo · Visibilidad · Continuidad · Alcance |
 | Radio 6 px, botones chicos, píldoras | **Sí** — la v3 ya los tiene | |
 | Precio a la vista en cada servicio | **Sí** | Los precios ya son públicos en el sitio. Se muestran igual, sin tocarlos. |
@@ -118,7 +118,7 @@ Largo: **18.000 a 23.500 px**. Es una revista, no una ficha.
 | **Muro de 12 logos de clientes** | **No** | Regla innegociable: cero prueba social inventada. Hay un cliente con permiso. Se sustituye por la obra misma. |
 | Casos de 20.000 px | **No por ahora** | No hay material para eso en cada servicio. Las internas toman la plantilla (etiqueta pegajosa + texto + galería) a la escala del contenido real. |
 | Audio del caso | **No** | No existe. No se simula. |
-| landour | **No** | Es letra licenciada de driftime. Se usa Gabarito, que ya es de la marca. |
+| landour | **No** | Es letra licenciada de driftime. Su papel lo hace Manrope 800, con la escasez de driftime. |
 
 ## 9 · Lo que la v3 tenía bien y lo que tenía mal, contra esto
 
@@ -132,5 +132,7 @@ menú, los titulares pegajosos, las píldoras.
    imagen. Es el tell #9 del detector de refero: *una referencia guiada por imagen colapsada
    en texto*.
 3. **La obra bajo el pliegue.** driftime la pone en el primer pantallazo.
-4. **Manrope** en vez de la letra de la marca, creyendo que eso era lo de driftime. No lo
-   era: driftime usa Geist + landour.
+4. ~~Manrope en vez de la letra de la marca~~ — **corregido**: Manrope ES la letra de la
+   marca desde el 29-sep, aprobada por Ramón. Lo que no es cierto es que driftime la use
+   (usa Geist + landour), pero eso no importa: lo que se transfiere es la escasez, no la
+   familia.
