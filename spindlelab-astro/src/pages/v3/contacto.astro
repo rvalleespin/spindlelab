@@ -27,7 +27,10 @@
 // wordmark del módulo (spec §1 y §6).
 //
 // La foto que usaba la versión anterior (hero-contacto.jpg) está en la lista negra de la
-// spec (§5: hero-*.jpg). Sale.
+// spec (§5: hero-*.jpg). Sale. Y la que la reemplazó (ventana.jpg a sangre entre el
+// formulario y los pasos) también salió en el QA del 5-oct: la plantilla Herramienta no
+// lleva imagen, esa foto ya está en cuatro páginas y aquí separaba el formulario de su
+// respaldo con casi una pantalla de atmósfera.
 import Layout from '../../layouts/Layout.astro';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
@@ -40,6 +43,29 @@ const [proyecto, pasos, antes] = s.secciones;
 // «Tu URL.» y «24 horas.» no se parten: a 390 px el h1 dejaba «horas.» sola en la línea.
 const h1 = s.h1.replace('Tu URL', 'Tu\u00a0URL').replace('24 horas', '24\u00a0horas');
 const listo = proyecto.bloques?.[0] ?? { t: 'Listo.', d: 'Te escribimos dentro de 24 horas con tu mini-diagnóstico.' };
+
+// RÓTULOS (QA 5-oct). Los h2 del JSON eran plantilla: «Cuéntanos de tu proyecto» (el titular
+// por defecto de cualquier formulario, y aquí no se pide un proyecto sino la URL de un sitio
+// que ya existe) y «Tres pasos, cero fricción» (jerga de producto, manual §01). Se nombra lo
+// que pasa. Mientras el JSON no cambie, el rótulo se fija aquí; está propuesto el cambio
+// en src/data/paginas-v3.json para que no dependa de esta página.
+const h2Form = 'Pide tu mini-diagnóstico';
+const h2Pasos = 'Qué pasa después';
+
+// El botón dice qué recibe la persona, no «Enviar» (antislop A5). v3-contacto.js le vuelve
+// a poner 'Enviar →' cuando el envío falla; el script de abajo lo devuelve a este texto.
+const etiquetaEnvio = 'Pedir mi mini-diagnóstico →';
+
+// FAQ (QA 5-oct, BLOQUEANTE). faq[2].r en el JSON dice «estamos acostumbrados a trabajar
+// bajo NDA»: afirma experiencia repetida con clientes financieros que nada en el repo
+// respalda (ventas/ registra un cliente entregado, no financiero, y ningún NDA). La versión
+// honesta es la que ya está a la vista en la página publicada (public/contacto/index.html,
+// FAQ visible) y la que el mismo JSON guarda en secciones[2].parrafos[2]. Se usa esa, y como
+// el texto visible y el FAQPage salen de este mismo arreglo, los dos quedan corregidos.
+// Cuando el JSON se arregle (propuesto), este reemplazo deja de hacer nada.
+const NDA_P = '¿Firman acuerdos de confidencialidad?';
+const NDA_R = 'Sí, sin problema. En sectores financieros es práctica habitual y trabajamos bajo NDA cuando el cliente lo requiere.';
+const faq = (s.faq ?? []).map((f: any) => (f.p === NDA_P ? { ...f, r: NDA_R } : f));
 
 // El mismo mailto de la página publicada: asunto y arranque del cuerpo ya escritos.
 const mailto = `mailto:${EMAIL}?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20`;
@@ -55,11 +81,11 @@ const jsonLd = {
         { '@type': 'ListItem', position: 2, name: 'Contacto' },
       ],
     },
-    ...(s.faq?.length
+    ...(faq.length
       ? [{
           '@type': 'FAQPage',
           '@id': `${s.canonical}#faq`,
-          mainEntity: s.faq.map((f: any) => ({
+          mainEntity: faq.map((f: any) => ({
             '@type': 'Question',
             name: f.p,
             acceptedAnswer: { '@type': 'Answer', text: f.r },
@@ -89,9 +115,10 @@ const jsonLd = {
     {/* El formulario ocupa el lugar que en un caso de driftime tiene la imagen a sangre: es
          lo primero que se ve después del título, entero sobre el pliegue a 1440×900. */}
     <section class="d-ct" id="contacto-form" aria-labelledby="s-form">
+      {/* Solo el h2: el párrafo que iba aquí repetía plazo y formato (h1, línea, paso 02 y
+           pregunta 1 ya los dicen) y a 390 dejaba «Sitio web» bajo el aviso de cookies. */}
       <div class="d-ct-eti">
-        <h2 class="d-h2" id="s-form">{proyecto.h2}</h2>
-        <p class="d-cuerpo">Completa el formulario y en 24 horas te escribimos con el mini-diagnóstico: una página con lo que está bien, lo que frena tu visibilidad y qué haríamos primero.</p>
+        <h2 class="d-h2" id="s-form">{h2Form}</h2>
       </div>
 
       <div class="d-ct-zona">
@@ -134,7 +161,7 @@ const jsonLd = {
           </label>
 
           <div class="d-ct-envio">
-            <button type="submit" class="d-btn">Enviar →</button>
+            <button type="submit" class="d-btn">{etiquetaEnvio}</button>
             <p class="form-status" role="status" aria-live="polite"></p>
           </div>
         </form>
@@ -146,19 +173,15 @@ const jsonLd = {
       </div>
 
       <div class="d-ct-directo">
-        <p class="d-chico d-gris">¿Prefieres ir directo? Escríbenos a</p>
+        <p class="d-chico d-gris">O escríbenos directo a</p>
         <a class="d-ct-correo" href={mailto}>{EMAIL}</a>
       </div>
     </section>
 
-    <figure class="d-sangre d-sangre--ct">
-      <img src="/assets/img/d/ventana.jpg" alt="Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop" width="1600" height="670" loading="lazy" decoding="async" />
-    </figure>
-
+    {/* Los pasos van pegados al formulario: son su respaldo (qué pasa al enviarlo). */}
     <section class="d-sec d-pasos-ct" aria-labelledby="s-pasos">
       <div class="d-eti">
-        <h2 class="d-h2" id="s-pasos">{pasos.h2}</h2>
-        <p class="d-chico">Qué pasa después de tu correo.</p>
+        <h2 class="d-h2" id="s-pasos">{h2Pasos}</h2>
       </div>
       <div class="d-filas">
         {(pasos.bloques ?? []).map((b: any, i: number) => (
@@ -167,12 +190,13 @@ const jsonLd = {
       </div>
     </section>
 
-    {/* Las preguntas visibles salen del MISMO dato que el FAQPage del JSON-LD (s.faq): lo
-         que se marca como respuesta tiene que estar a la vista. */}
+    {/* Las preguntas visibles salen del MISMO arreglo que el FAQPage del JSON-LD (faq, con
+         la respuesta del NDA corregida arriba): lo que se marca como respuesta tiene que
+         estar a la vista, y decir lo mismo. */}
     <section class="d-sec d-faq" aria-labelledby="s-antes">
       <div class="d-eti"><h2 class="d-h2" id="s-antes">{antes.h2}</h2></div>
       <div class="d-filas">
-        {(s.faq ?? []).map((f: any) => (<div><h3 class="d-h3">{f.p}</h3><p class="d-cuerpo">{f.r}</p></div>))}
+        {faq.map((f: any) => (<div><h3 class="d-h3">{f.p}</h3><p class="d-cuerpo">{f.r}</p></div>))}
       </div>
     </section>
   </main>
@@ -180,6 +204,22 @@ const jsonLd = {
   <FooterV3 />
 
   <script src="/assets/js/v3-contacto.js" is:inline defer></script>
+  {/* Dos arreglos de esta página que no tocan archivos compartidos (están propuestos en
+       NavV3, FooterV3 y v3-contacto.js; cuando entren, este bloque deja de hacer nada):
+       1. En contacto, «Escríbenos» del módulo, del menú y del pie apuntaba a esta misma URL:
+          recargaba, volvía arriba y podía borrar lo escrito. Aquí lleva al formulario.
+       2. v3-contacto.js devuelve el botón a 'Enviar →' cuando el envío falla. Si el botón
+          queda habilitado con otro texto, se le devuelve el suyo. */}
+  <script is:inline>
+    (function () {
+      document.querySelectorAll('a[href="/v3/contacto/"]').forEach(function (a) { a.setAttribute('href', '#contacto-form'); });
+      var b = document.querySelector('.contact-form button[type="submit"]');
+      if (!b || !('MutationObserver' in window)) return;
+      var t = b.textContent;
+      new MutationObserver(function () { if (!b.disabled && b.textContent !== t) b.textContent = t; })
+        .observe(b, { childList: true, characterData: true, subtree: true, attributes: true, attributeFilter: ['disabled'] });
+    })();
+  </script>
 </Layout>
 
 <style>
@@ -187,7 +227,9 @@ const jsonLd = {
 
   /* Cabecera: la de un caso (.d-cab) pone el título a min(34vh, 300px). En una herramienta
      eso empuja el formulario bajo el pliegue; se acerca a lo que hace el hero de la home
-     con el instrumento (112 px), dejando aire bajo el módulo de navegación. */
+     con el instrumento (112 px), dejando aire bajo el módulo de navegación. Medido a
+     1440×900: botón en y 748–784, aviso de cookies en 823. Desvío declarado en la spec
+     (§7, 5-oct, contacto). */
   .d-cab--ct { padding-top: 140px; padding-bottom: 0; }
   .d-cab--ct .d-linea { margin-bottom: 0; }
 
@@ -203,15 +245,16 @@ const jsonLd = {
     padding: 48px var(--d-m) 0;
   }
   .d-ct-eti { grid-area: eti; display: flex; flex-direction: column; gap: 14px; padding-right: clamp(0px, 4vw, 64px); }
-  .d-ct-eti .d-cuerpo { max-width: 440px; }
   .d-ct-zona { grid-area: zona; }
   .d-ct-directo { grid-area: directo; align-self: end; display: flex; flex-direction: column; gap: 4px; padding-top: 32px; }
   .d-ct-correo { font-size: clamp(1.25rem, 1.67vw, 1.5rem); line-height: 1.4; font-weight: 400; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; align-self: flex-start; }
   .d-ct-correo:hover { text-decoration-thickness: 2px; }
 
   /* Los campos: módulo #161616, radio 6, etiqueta visible arriba. El borde va en papel al
-     30 % y no al 12 % del filete: el límite de un control necesita 3:1 contra el lienzo
-     (WCAG 1.4.11) y el filete da ~1,3:1. */
+     32 % y no al 12 % del filete: el límite de un control necesita 3:1 contra el lienzo
+     (WCAG 1.4.11) y el filete da ~1,3:1. Medido (compuesto sobre el relleno del campo): al
+     30 % daba 2,99:1, un pelo bajo el mínimo; al 32 % da 3,24:1. Componente declarado en la
+     spec (§7, 5-oct, contacto). */
   .d-ct-form { display: flex; flex-direction: column; gap: 20px; color-scheme: dark; }
   .d-ct-form[hidden], .d-ct-listo[hidden] { display: none; }
   .d-ct-par { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px var(--d-g); }
@@ -225,7 +268,7 @@ const jsonLd = {
     margin: 0;
     background: var(--d-modulo);
     color: var(--d-papel);
-    border: 1px solid rgba(247, 245, 240, 0.3);
+    border: 1px solid rgba(247, 245, 240, 0.32);
     border-radius: var(--d-r);
     font: 400 1rem/1.5 'Manrope', system-ui, sans-serif;   /* 16 px: iOS no hace zoom al enfocar */
   }
@@ -256,7 +299,8 @@ const jsonLd = {
   /* Lo que reemplaza al formulario cuando el envío sale bien. */
   .d-ct-listo { background: var(--d-modulo); border-radius: var(--d-r); padding: 28px; display: flex; flex-direction: column; gap: 8px; }
 
-  .d-sangre--ct { margin-top: 160px; }
+  /* Al llegar por #contacto-form el módulo de navegación fijo no tapa el h2. */
+  .d-ct { scroll-margin-top: 40px; }
 
   @media (max-width: 767px) {
     .d-cab--ct { padding-top: 112px; }
@@ -273,10 +317,7 @@ const jsonLd = {
     .d-ct-directo { padding-top: 4px; }
     .d-ct-par { grid-template-columns: minmax(0, 1fr); }
     .d-ct-form { gap: 18px; }
-    /* La foto a 4:3 recorta los lados: se encuadra el cuaderno entero en vez de medio
-       cuaderno y medio laptop. */
-    .d-sangre--ct { margin-top: 110px; }
-    .d-sangre--ct img { object-position: 20% 50%; }
+    .d-ct { scroll-margin-top: 56px; }
     /* El número va sobre el título, como en Método: la columna de 56 px dejaba cada paso
        en 270 px de ancho. */
     .d-pasos-ct .d-fase { grid-template-columns: minmax(0, 1fr); }
