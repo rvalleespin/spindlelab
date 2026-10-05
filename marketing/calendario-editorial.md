@@ -27,11 +27,15 @@
 
 ### Las cinco decisiones que ordenan el mes
 
-1. **Las gráficas quedan congeladas, sujetas al sitio.** Hay cambios estructurales grandes en
-   curso, así que no se produce ninguna pieza gráfica nueva hasta que el sitio aterrice: una
-   etiqueta o una firma quemada hoy queda vieja en dos semanas, que es exactamente lo que pasó con
-   las 6 piezas de agosto. **Consecuencia:** el mes es **texto puro**, más el video con la cara de
-   Ramón, que no depende del sistema visual porque no lleva ninguno.
+1. **Las gráficas de SpindleLab quedan congeladas, sujetas al sitio.** Hay cambios estructurales
+   grandes en curso, así que no se produce ninguna pieza gráfica nueva **en el sistema de
+   SpindleLab** hasta que el sitio aterrice: una etiqueta o una firma quemada hoy queda vieja en dos
+   semanas, que es exactamente lo que pasó con las 6 piezas de agosto. **Consecuencia:** el canal de
+   LinkedIn es **texto puro**, más el video con la cara de Ramón, que no depende del sistema visual
+   porque no lleva ninguno.
+   **Verifica y Cumple NO está congelada** (Ramón, 5-oct): tiene línea visual propia desde el 25-sep
+   (azul `#2e5bff`, lima `#d6ff3d`, la sheriff en rosa, Archivo Black; cero dorado, cero Gabarito) y
+   no depende del sitio de SpindleLab. **Sus piezas pueden salir.**
 2. **`/diagnostico/` se mantiene.** Confirmado por Ramón, y los cuatro URLs que usan las piezas
    responden 200 (verificado el 5-oct: home, `/diagnostico/`, `/servicios/desarrollo-web/` y
    `verifica.spindlelab.cl`). El post del 7-oct no está en riesgo y los CTA siguen válidos.
@@ -109,19 +113,36 @@ corrigieron en vivo por citar una fuente que no se había leído entera.
 - **Página de empresa (4 seguidores).** Sin slots este mes. Con 4 seguidores, un post ahí no
   alcanza a nadie que el perfil personal no alcance mejor. Queda como archivo de lo que se reusa.
   Decisión formal de su papel: pendiente de Ramón, sin urgencia.
-- **Instagram (`spindlelab.cl`, 19 seguidores).** Verifica y Cumple tiene línea editorial propia
-  desde el 25-sep. El reel de lanzamiento (`2026-10-octubre-verifica/01-reel-llego-la-sheriff/`,
-  11 s, mudo) está renderizado y **sin publicar, esperando el ojo de Ramón**. Dos cosas que solo
-  puede hacer él y bloquean el canal:
+- **Instagram (`spindlelab.cl`, 19 seguidores).** Deja de estar parado: la línea de Verifica
+  está liberada, así que es el canal de esa campaña. Ver la pista propia más abajo.
+  **Dos cosas que solo puede hacer Ramón** y que conviene resolver antes del primer envío:
   - **El enlace del bio** (Instagram solo lo deja editar desde el teléfono). Hoy va a
     `spindlelab.cl/diagnostico`; para la campaña de Verifica tiene que ir a
-    `verifica.spindlelab.cl`.
+    `verifica.spindlelab.cl`. No bloquea el reel, porque la dirección va escrita en pantalla y en
+    el pie, pero con el bio mal apuntado se pierde el único clic que Instagram sí permite.
   - **La etiqueta "Perfil generado con IA"**, encendida y visible. Si el mes abre con su cara para
     construir confianza, esa etiqueta dice lo contrario en el mismo perfil. **Es la razón por la
-    que el reel va primero a LinkedIn.**
-  - ❓ **Pendiente de aclarar:** si el congelamiento de gráficas incluye la línea propia de
-    Verifica, que por decisión del 25-sep no usa el sistema visual del sitio. Si no lo incluye, el
-    reel de la sheriff puede salir cuando Ramón lo apruebe.
+    que el video de Ramón va primero a LinkedIn**, y una razón más para apagarla antes de que la
+    campaña de Verifica traiga gente nueva a mirar el perfil.
+
+### Pista propia de Verifica y Cumple (Instagram + story personal)
+
+Corre en paralelo a la rotación de LinkedIn y no compite por sus slots: es otro sistema visual,
+otra cuenta y otro público. Las dos piezas están **terminadas y sin publicar**, esperando el ojo
+de Ramón.
+
+| Pieza | Dónde | Estado |
+|---|---|---|
+| **Reel "Llegó la sheriff"** (`01-reel-llego-la-sheriff/reel.mp4`, 1080×1920, 11 s, 30 c/s, mudo) | Instagram `spindlelab.cl` | ✅ **listo.** Verificado el 5-oct renderizando los cuadros 105, 200 y 295 desde `reel.html`: la corrección del 25-sep está adentro, la pieza dice **"ENTONCES YA GUARDAS DATOS DE PERSONAS"**, no la versión vieja con jerga legal. El pie de foto y la portada están escritos en su `publicar.md` |
+| **Story para compartir** (`02-story-compartir/story.png`) | Story de la cuenta **personal** de Ramón | ✅ **listo.** Es la que mueve gente de verdad: 19 seguidores en IG contra ≈364 en su red personal |
+
+**Al subir el reel:** va mudo a propósito (no hay música con licencia). Se le pone un audio de
+tendencia **desde la app de Instagram**, en el paso de edición, porque un audio agregado ahí cuenta
+para cómo Instagram reparte alcance y uno pegado antes de subir no. Esto aplica solo a las piezas
+mudas: **al video con la cara de Ramón no se le pone audio de tendencia encima de su voz.**
+
+**Costo: cero.** El reel es HTML y CSS calculado por cuadro, renderizado con Chrome headless y
+montado con ffmpeg. No se usó Higgsfield ni se generó ninguna imagen nueva.
 
 ### Medición (necesita navegador con la sesión de Ramón)
 

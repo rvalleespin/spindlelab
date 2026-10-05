@@ -1,6 +1,11 @@
 # Reel de lanzamiento de Verifica y Cumple: "Llegó la sheriff"
 
 **Estado:** listo para tu ojo. **Nada se publicó.**
+**Liberado el 5-oct:** Ramón confirmó que la línea visual de Verifica es propia y no queda
+congelada por los cambios del sitio de SpindleLab. Esta pieza puede salir cuando él la apruebe.
+**Verificado el 5-oct** renderizando los cuadros 105, 200 y 295 desde `reel.html` con Chrome
+headless: la corrección de jerga está dentro de la pieza. La tabla del §4 decía todavía "tratas
+datos" y estaba mal **solo en el documento**; quedó corregida.
 **Archivo a subir:** `reel.mp4` · 1080×1920 · 11 s · 30 cuadros/s · **sin audio**.
 **Cuenta:** `spindlelab.cl`, salvo que decidas otra cosa. Sigue abierta la pregunta de si
 Verifica vive en la cuenta actual o en una propia, y esta pieza funciona igual en las dos.
@@ -84,7 +89,7 @@ Etiquetas, opcionales y pocas, al final del pie o en el primer comentario:
 | Tiempo | Qué se ve | Qué dice |
 |---|---|---|
 | 0,0 a 2,5 s | Ella entra galopando por la izquierda y cruza el cielo | ¿TIENES UN **FORMULARIO** DE CONTACTO? |
-| 2,5 a 5,0 s | Ella ya llegó, al trote en el sitio | ENTONCES YA **TRATAS DATOS** PERSONALES. · *Un nombre y un correo ya lo son.* |
+| 2,5 a 5,0 s | Ella ya llegó, al trote en el sitio | ENTONCES YA **GUARDAS DATOS** DE PERSONAS. · *Un nombre y un correo ya lo son.* |
 | 5,0 a 7,6 s | Igual, el documento en alto | Y EN CHILE ESO TIENE **SUS REGLAS.** · *Ley 21.719. Y tu formulario ya está andando.* |
 | 7,6 a 11,0 s | El bloque lima entra justo debajo del papel que ella levanta | ★ PARA ESO VENIMOS · REVISAMOS TU SITIO **GRATIS.** · **verifica.spindlelab.cl** |
 
