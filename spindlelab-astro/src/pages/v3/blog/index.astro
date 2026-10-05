@@ -17,7 +17,7 @@
 //   fila de novedades de driftime (imagen grande + título 30 px). El resto son filas.
 // · El cierre navy con «El sitio es el eje.» en 800 sale: era display en una interna y
 //   su «Treinta segundos» no tiene fuente en el repo. El cierre ahora es una sección
-//   pegajosa con copy que sí la tiene (ver las fuentes al pie del frontmatter).
+//   .d-sec con copy que sí la tiene (ver las fuentes al pie del frontmatter).
 //
 // LOS DATOS SALEN DE data/blog-v3/_indice.json, extraído de los posts publicados. Título,
 // bajada y fecha no se retipean acá: un índice escrito a mano termina diciendo algo
@@ -32,7 +32,9 @@ import indice from '../../../data/blog-v3/_indice.json';
 const url = 'https://spindlelab.cl/blog/';
 
 // Más nuevo primero. Por fecha y no por nombre de archivo: alfabético dejaba «21-chequeos»
-// arriba por casualidad y no por criterio. Empates (tres del 7-jul): orden del JSON.
+// arriba por casualidad y no por criterio. Empates (tres del 7-jul): el comparador nunca
+// devuelve 0, así que quedan al revés del JSON. Es el mismo comparador de antes y se deja
+// igual para que el ItemList del JSON-LD no cambie de orden.
 const posts = [...indice].sort((a, b) => (a.datePublished < b.datePublished ? 1 : -1));
 const [ultimo, ...resto] = posts;
 
@@ -138,8 +140,9 @@ const jsonLd = {
       </ol>
     </section>
 
-    {/* Cierre: lo que viene después de leer. Sección pegajosa, no campo de color: el
-         campo lleva display y las internas no lo tienen. */}
+    {/* Cierre: lo que viene después de leer. Sección con etiqueta (.d-sec), no campo de
+         color: el campo lleva display y las internas no lo tienen. La etiqueta no se pega
+         (ver el estilo): con tres líneas a la derecha no hay nada contra qué pegarse. */}
     <section class="d-sec d-sec--cierre-blog" aria-labelledby="s-medir">
       <div class="d-eti"><h2 class="d-h2" id="s-medir">Leer ayuda; medir, más.</h2></div>
       <div class="d-cierre-blog">
@@ -174,7 +177,12 @@ const jsonLd = {
   .d-dest-blog__enlace { text-decoration: none; }
   /* z-index: la figura (.d-pieza) es posicionada y viene después en el DOM; sin esto la
      imagen tapa el área del enlace y el clic sobre la foto no lleva a ninguna parte. */
-  .d-dest-blog__enlace::after { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: var(--d-r); }
+  .d-dest-blog__enlace::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+  /* Foco: el contorno va en la fila entera, igual que en las filas de abajo (ahí el enlace
+     ES la fila). En el título solo quedaba un contorno partido en dos renglones. */
+  .d-dest-blog__enlace:focus-visible { outline: none; }
+  .d-dest-blog__enlace:focus-visible::after { outline: 2px solid var(--d-papel); outline-offset: 3px; }
+  .d-dest-blog__txt .d-h2 { text-wrap: balance; }
   .d-dest-blog__fila:hover .d-dest-blog__enlace { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
   :global(.d-dest-blog__img) { align-self: start; aspect-ratio: 3 / 2; }
 
