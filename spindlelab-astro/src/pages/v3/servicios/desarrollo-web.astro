@@ -22,12 +22,14 @@ import { caja } from '../../../utils/caja';
 import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
-import '../../../styles/campos-v3.css'; // tintes de color, filete, rotulo
+import Pieza from '../../../components/v3/Pieza.astro';
+import '../../../styles/driftime.css';
+import obra from '../../../data/obra-v3.json';
 
 
 const incluye = [
   'Legible para motores de IA desde el primer commit: datos estructurados, contenido citable e indexación.',
-  'El mismo chequeo que corres gratis acá, pasado sobre tu sitio antes de entregarlo.',
+  'El mismo chequeo que corres gratis en la portada, pasado sobre tu sitio antes de entregarlo.',
   'Un panel para editar textos e imágenes tú mismo, sin depender de nadie.',
   'Código propio y diseño a medida, con control total del rendimiento.',
   'Construcción con IA, revisión humana en cada fase antes de avanzar.',
@@ -115,7 +117,7 @@ const jsonLd = {
       '@id': 'https://spindlelab.cl/servicios/desarrollo-web/#breadcrumb',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
-        { '@type': 'ListItem', position: 2, name: 'Soluciones', item: 'https://spindlelab.cl/servicios/' },
+        { '@type': 'ListItem', position: 2, name: 'Servicios', item: 'https://spindlelab.cl/servicios/' },
         { '@type': 'ListItem', position: 3, name: 'Desarrollo Web' },
       ],
     },
@@ -130,210 +132,85 @@ const jsonLd = {
     },
   ],
 };
----
 
+// La galería sale del mismo dato que /v3/trabajo/ y la fila del hero de la home.
+const rotuloTipo: Record<string, string> = { cliente: 'Cliente', propio: 'Producto propio', concepto: '' };
+const piezas = obra.casos.map((c: any) => ({
+  src: c.tipo === 'concepto' || c.slug === 'combeau-modelo' ? c.tira : c.img,
+  alt: c.alt, concepto: c.tipo === 'concepto',
+  etiquetas: [c.tipo === 'concepto' ? `${c.n} · ${c.rubro}` : `${c.n} · ${rotuloTipo[c.tipo] ?? c.rubro}`],
+}));
+// Grilla asimétrica: ancha, alta + media, media + alta (como los casos de driftime).
+const forma = ['d-g-ancha', 'd-g-alta', 'd-g-media', 'd-g-media'];
+---
 <Layout
   title="Desarrollo web que los motores de IA pueden leer · SpindleLab"
   description="Sitios construidos para que los motores de IA puedan leerlos y citarlos, con el SEO técnico desde el primer commit. Lo compruebas con el chequeo gratis."
-  bodyClass="bg-noche font-texto"
+  bodyClass="d-body"
 >
-  <Fragment slot="head">
-    <meta name="robots" content="noindex, nofollow" />
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
-  </Fragment>
-
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <NavV3 />
 
-  <main class="text-papel">
-    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-28">
-      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
-        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
-        <span aria-hidden="true" class="mx-2">·</span>
-        <a href="/v3/servicios/" class="hover:text-papel transition-colors">Soluciones</a>
-        <span aria-hidden="true" class="mx-2">·</span>
-        <span class="text-humo">Desarrollo Web</span>
-      </nav>
-      <h1
-        data-entra
-        class:list={['font-extrabold m-0', caja('Desarrollo web')]}
-        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.86; letter-spacing:0"
-      >
-        Desarrollo web
-      </h1>
+  {/* Plantilla «servicio» = el caso de driftime (spec §4). Sin display: las internas
+       tienen cero usos de Manrope 800 en mayúsculas. Tablero: tableros/driftime-desarrollo */}
+  <main>
+    <header class="d-cab">
+      <p class="d-miga"><a href="/v3/">Inicio</a> · <a href="/v3/servicios/">Servicios</a> · Desarrollo Web</p>
+      <h1 class="d-h1">Desarrollo web que los motores de IA pueden leer</h1>
+      <p class="d-linea">Sitios a medida con el SEO técnico puesto desde el primer commit. Tres planes, desde $390.000 + IVA.</p>
+      <div class="d-btns"><a class="d-btn" href="#planes">Ver planes</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>
+    </header>
 
-      <div data-entra data-paso="1" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
-        <div class="md:col-span-5">
-          <p class="m-0 text-papel text-xl md:text-2xl leading-relaxed">
-            A veces el problema no es lo que se audita: es lo que hay que reconstruir.
-            Construimos el sitio para que las máquinas que hoy recomiendan tu negocio
-            puedan leerlo, y te lo demostramos con el mismo chequeo sobre tu dominio.
-          </p>
-        </div>
-        <div class="md:col-span-6 md:col-start-7">
-          <img
-            src="/assets/img/hero-desarrollo-web.jpg"
-            alt="Pantalla de código durante el desarrollo de un sitio a medida"
-            width="1280"
-            height="720"
-            loading="eager"
-            decoding="async"
-            class="media-campo"
-          />
-        </div>
-      </div>
+    <figure class="d-sangre"><img src="/assets/img/d/escritorio.jpg" alt="Escritorio de madera junto a la ventana, con un laptop, un cuaderno abierto y una taza" width="1600" height="670" loading="eager" fetchpriority="high" /></figure>
 
+    <div class="d-entrada">
+      <p class="d-nota-card"><b>Valores en pesos, + IVA.</b> El valor final se cierra tras el diagnóstico gratuito.</p>
+      <p class="d-guia">A veces el problema no es lo que se audita: es lo que hay que reconstruir. Construimos el sitio para que las máquinas que hoy recomiendan tu negocio puedan leerlo, y te lo demostramos con el mismo chequeo sobre tu dominio.</p>
+    </div>
+
+    <section class="d-sec" aria-labelledby="s-inc">
+      <div class="d-eti"><h2 class="d-h2" id="s-inc">Todo parte con esto</h2></div>
+      <div class="d-filas">{incluye.map((t) => <p class="d-guia">{t}</p>)}</div>
     </section>
 
-    {/* QUÉ INCLUYE, en columnas. */}
-    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[16ch]', caja('Todo parte con esto')]}
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
-      >
-        Todo parte con esto
-      </h2>
-      <ul data-entra data-paso="1" class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
-        {
-          incluye.map((i) => (
-            <li class="border-t filete pt-5 text-noche/75 text-base leading-relaxed">
-              {i}
-            </li>
-          ))
-        }
-      </ul>
+    <section class="d-galeria" aria-labelledby="s-obra">
+      <div class="d-galeria__cab"><h2 class="d-h2" id="s-obra">Sitios que ya construimos</h2><a class="d-btn d-btn--alt" href="/v3/trabajo/">Ver el trabajo</a></div>
+      {piezas.map((pz, i) => <Pieza src={pz.src} alt={pz.alt} concepto={pz.concepto} etiquetas={pz.etiquetas} clase={forma[i] ?? 'd-g-mitad'} posicion="50% 25%" />)}
+      {/* Cierra la grilla: media (Raigal) + alta. Sin esto queda un hueco a la derecha. */}
+      <Pieza src="/assets/img/d/ventana.jpg" alt="Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop" clase="d-g-alta" posicion="70% 50%" />
     </section>
 
-    {/* PLANES, en columnas, con los precios exactos. */}
-    <section id="planes" class="bg-papel text-noche px-6 md:px-medianil pb-24 md:pb-36 scroll-mt-24">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 mb-3', caja('Elige por dónde partir')]}
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
-      >
-        Elige por dónde partir
-      </h2>
-      <p data-entra data-paso="1" class="text-noche/65 text-sm mb-12 md:mb-16">
-        Valores en pesos, + IVA. El valor final se cierra tras el diagnóstico gratuito.
-      </p>
-      <div class="grid gap-x-8 lg:gap-x-12 gap-y-14 md:grid-cols-2 lg:grid-cols-4">
-        {
-          planes.map((p) => (
-            <article class="flex flex-col border-t filete pt-6">
-              <h3
-                class:list={['font-extrabold m-0', caja(p.nombre)]}
-                style="font-size:clamp(1.125rem,1.6vw,1.5rem); line-height:1.05; letter-spacing:-0.03em"
-              >
-        {p.nombre}
-      </h3>
-              <p class="mt-3 text-noche/65 text-base leading-relaxed">{p.linea}</p>
-              <ul class="list-none p-0 mt-5 mb-0 space-y-2">
-                {p.puntos.map((x) => (
-                  <li class="flex gap-2.5 text-noche/70 text-sm leading-relaxed">
-                    <span aria-hidden="true" class="text-noche/65">—</span>
-                    <span>{x}</span>
-                  </li>
-                ))}
-              </ul>
-              <span class="mt-auto pt-8 font-bold text-base">{p.precio}</span>
-            </article>
-          ))
-        }
+    <section class="d-sec" id="planes" aria-labelledby="s-pla">
+      <div class="d-eti"><h2 class="d-h2" id="s-pla">Elige por dónde partir</h2><p class="d-chico">Valores en pesos, + IVA. El valor final se cierra tras el diagnóstico gratuito.</p></div>
+      <div class="d-filas">
+        {planes.map((p) => (
+          <div class="d-plan">
+            <h3 class="d-h3">{p.nombre}</h3><span class="d-plan__precio">{p.precio}</span>
+            <p class="d-cuerpo">{p.linea}</p>
+            <ul>{p.puntos.map((x) => <li>{x}</li>)}</ul>
+          </div>
+        ))}
       </div>
     </section>
 
-    {/* FASES. */}
-        {/* BRASA. Es el campo que en la home abre la oferta y el que enlaza a esta página.
-        Llegaba en blanco y negro: la home prometía el naranja y al hacer clic desaparecía. */}
-    <section class="tinte--brasa px-6 md:px-medianil py-32 md:py-seccion">   {/* Titular pegajoso: la sección es más alta que la pantalla, así que el titular
-          sostiene el contexto mientras se recorre la lista. Criterio, no gusto — donde la
-          sección cabe en pantalla el sticky no haría nada y el titular se queda plano. */}
-      <div class="md:grid md:grid-cols-12 md:gap-x-8">
-        <div class="md:col-span-4">
-          <h2
-            data-entra
-            class:list={['font-extrabold m-0 mb-12 md:mb-0 md:sticky md:top-32', caja('Cinco fases, apruebas cada una')]}
-            style="font-size:clamp(1.75rem, 3.4vw, 3.25rem); line-height:0.92; letter-spacing:0"
-          >
-        Cinco fases, apruebas cada una
-      </h2>
-        </div>
-        <div class="md:col-span-7 md:col-start-6">
-          <ol data-entra data-paso="1" class="list-none p-0 m-0 border-t filete">
-        {
-          fases.map((f) => (
-            <li class="border-b filete py-7 md:py-9 flex flex-col md:flex-row gap-3 md:gap-12">
-              <span class="text-humo font-bold text-sm flex-none md:w-16" style="letter-spacing:0.16em">
-                {f.n}
-              </span>
-              <span
-                class="font-extrabold uppercase flex-none md:w-[9em]"
-                style="font-size:clamp(1.25rem,2.2vw,1.875rem); line-height:1.05; letter-spacing:-0.03em"
-              >
-                {f.t}
-              </span>
-              <span class="text-humo text-lg leading-relaxed max-w-prosa">{f.d}</span>
-            </li>
-          ))
-        }
-      </ol>
-        </div>
+    <section class="d-sec" aria-labelledby="s-fas">
+      <div class="d-eti"><h2 class="d-h2" id="s-fas">Cinco fases, apruebas cada una</h2></div>
+      <div class="d-filas">
+        {fases.map((f) => (
+          <div class="d-fase"><span class="d-fase__n">{f.n}</span><h3 class="d-h3">{f.t}</h3><p class="d-cuerpo">{f.d}</p></div>
+        ))}
       </div>
     </section>
 
-    {/* FAQ. Mismo contenido que alimenta el FAQPage del schema. */}
-    <section class="px-6 md:px-medianil pb-24 md:pb-36">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 mb-12 md:mb-16', caja('Sobre el desarrollo')]}
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
-      >
-        Sobre el desarrollo
-      </h2>
-      <dl class="m-0 border-t filete">
-        {
-          faq.map((f) => (
-            <div class="border-b filete py-7 md:py-9 grid gap-3 md:grid-cols-[minmax(0,22rem)_1fr] md:gap-12">
-              <dt
-                class:list={['font-extrabold', caja(f.p)]}
-                style="font-size:clamp(1.125rem,1.7vw,1.5rem); line-height:1.1; letter-spacing:-0.03em"
-              >
-                  {f.p}
-                </dt>
-              <dd class="m-0 text-humo text-lg leading-relaxed max-w-prosa">{f.r}</dd>
-            </div>
-          ))
-        }
-      </dl>
-    </section>
-
-    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 max-w-[16ch]', caja('¿Qué necesita decir tu sitio?')]}
-        style="font-size:clamp(2rem, 7vw, 8rem); line-height:0.88; letter-spacing:0"
-      >
-        ¿Qué necesita decir tu sitio?
-      </h2>
-      <p data-entra data-paso="1" class="mt-10 text-noche/65 text-xl leading-relaxed max-w-prosa">
-        Si ya tienes uno, empezamos con el chequeo gratuito. Si partes de cero, conversemos
-        tu proyecto directamente.
-      </p>
-      <div class="mt-12 flex items-center gap-4 flex-wrap">
-        <a
-          href={CONTACTO}
-          class="rounded-v3 bg-noche hover:bg-black text-papel text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-noche"
-        >
-          Conversemos tu proyecto
-        </a>
-        <a
-          href="/v3/diagnostico/"
-          class="rounded-v3 border filete hover:border-noche text-noche text-sm font-bold px-8 py-4 transition-colors"
-        >
-          Chequeo gratis
-        </a>
+    <section class="d-sec d-faq" aria-labelledby="s-faq">
+      <div class="d-eti"><h2 class="d-h2" id="s-faq">Sobre el desarrollo</h2></div>
+      <div class="d-filas">
+        {faq.map((f) => (<div><h3 class="d-h3">{f.p}</h3><p class="d-cuerpo">{f.r}</p></div>))}
       </div>
     </section>
+
+    <a class="d-siguiente" href="/v3/servicios/visibilidad-en-ia/"><span class="d-chico d-gris">Siguiente</span><span class="d-h1">Visibilidad en IA →</span></a>
   </main>
 
   <FooterV3 />
