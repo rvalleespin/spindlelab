@@ -18,8 +18,10 @@
 // chequeo-v3.css pinta con variables del sitio publicado (--ink-50, --ink-70, --line,
 // --teal, --headline, --bg) que la v3 no define: sin esto el resultado sale sin bordes y
 // con el gris azulado viejo de --surface. Se definen abajo, en el contenedor del
-// instrumento, mapeadas a los tokens d-*. Y los dos botones del remate (.chq-ramas) se
-// bajan a 36 px: la spec no admite otro botón grande que el del chequeo.
+// instrumento, mapeadas a los tokens d-*. Los dos botones del remate (.chq-ramas) se
+// bajan a 36 px: la spec no admite otro botón grande que el del chequeo. Y el primero
+// recupera su texto negro: .d-body a { color: inherit } le ganaba y quedaba papel sobre
+// papel (medido con una respuesta simulada de /api/chequeo; en la home pasa lo mismo).
 //
 // EL COPY. Todo sale de paginas-v3.json salvo los tres bloques con su peso y las dos notas
 // de «no mide» y «lo que muestran las corridas», que el JSON perdió y están en la página
@@ -104,7 +106,7 @@ const jsonLd = {
       </div>
     </header>
 
-    <figure class="d-sangre"><img src="/assets/img/d/hilo.jpg" alt="Un hilo luminoso cruza en diagonal un fondo verde oscuro" width="1400" height="787" loading="lazy" decoding="async" style="object-position:50% 55%" /></figure>
+    <figure class="d-sangre"><img src="/assets/img/d/hilo.jpg" alt="Un hilo luminoso cruza en diagonal un fondo verde oscuro" width="1400" height="787" loading="eager" fetchpriority="high" decoding="async" style="object-position:50% 55%" /></figure>
 
     <div class="d-entrada">
       <p class="d-nota-card"><b>21 chequeos, 100 puntos.</b> Tres bloques, con su peso a la vista: leerte 30, entenderte 40, citarte 30.</p>
@@ -159,7 +161,7 @@ const jsonLd = {
             <div class="d-fase"><span class="d-fase__n">{String(i + 1).padStart(2, '0')}</span><h3 class="d-h3">{b.t}</h3><p class="d-cuerpo">{b.d}</p></div>
           ))}
         </div>
-        <div class="d-btns d-btns-diag"><a class="d-btn" href={CONTACTO}>Agenda tu diagnóstico gratis</a><a class="d-btn d-btn--alt" href="#chequeo">Volver al chequeo</a></div>
+        <div class="d-btns d-btns-diag"><a class="d-btn" href={CONTACTO}>Pedir el diagnóstico completo</a><a class="d-btn d-btn--alt" href="#chequeo">Volver al chequeo</a></div>
       </div>
     </section>
 
@@ -181,7 +183,8 @@ const jsonLd = {
       </div>
     </section>
 
-    <a class="d-siguiente d-siguiente-diag" href={CONTACTO}><span class="d-chico d-gris">{cierre.parrafos[0]}</span><span class="d-h1">{cierre.h2} →</span></a>
+    {/* El CTA dice qué pasa al hacer clic (antislop A5); la pregunta del cierre va en el rótulo. */}
+    <a class="d-siguiente d-siguiente-diag" href={CONTACTO}><span class="d-chico d-gris">{cierre.h2} {cierre.parrafos[0]}</span><span class="d-h1">Pedir el diagnóstico completo →</span></a>
   </main>
 
   <FooterV3 />
@@ -209,6 +212,9 @@ const jsonLd = {
   .d-res-diag:not(:has(#chq-out[style*='block'])) h2 { display: none; }
   .d-instr-diag :global(.chq-error-codigo) { border-top-color: var(--d-filete); }
   .d-instr-diag :global(.chq-ramas a) { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; font-size: 0.875rem; font-weight: 500; }
+  /* .d-body a { color: inherit } (driftime.css) le gana a .chq-r1 { color: var(--bg) }:
+     sin esto el botón principal del remate sale papel sobre papel, vacío a la vista. */
+  .d-instr-diag :global(.chq-r1) { color: var(--d-noche); }
   .d-instr-diag :global(.chq-r2) { background: var(--d-noche); }
 
   .d-cuerpo b { color: var(--d-papel); font-weight: 600; }
@@ -216,7 +222,7 @@ const jsonLd = {
   .d-filas-diag .d-h3 { margin-bottom: 8px; }
   .d-btns-diag { margin-top: 28px; }
   :global(.d-vyc-diag) { aspect-ratio: 4 / 3; margin-top: 36px; }
-  .d-siguiente-diag .d-chico { max-width: 300px; }
+  .d-siguiente-diag .d-chico { max-width: 340px; }
 
   @media (max-width: 767px) {
     /* El instrumento tiene que quedar arriba del pliegue y pulsable con el aviso de

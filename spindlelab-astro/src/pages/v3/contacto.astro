@@ -1,26 +1,48 @@
 ---
-// CONTACTO en el lenguaje V3. Ritmo de color: tinta → ciruela → papel.
+// CONTACTO, en el lenguaje driftime (5-oct-2026). Plantilla «herramienta» (spec §4):
+// h1 60 px + una línea → el FORMULARIO como protagonista → secciones pegajosas de apoyo.
+// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md
 //
-// EL FORMULARIO VA VERBATIM en lo que importa: mismos name, mismos id, el honeypot
-// (botcheck), los tres campos UTM ocultos y la casilla de consentimiento. Lo único que
-// cambia es el estilo. Reimplementar esto es como se rompe la captación de leads sin
-// que nadie se entere hasta que dejan de llegar correos.
+// EL FORMULARIO VA VERBATIM en lo que importa: mismo action de web3forms, mismos hidden
+// (access_key, subject, from_name), el honeypot (botcheck), los mismos name e id de cada
+// campo, los tres UTM ocultos y la casilla de consentimiento. Solo cambia la presentación.
+// Reimplementar esto es como se rompe la captación de leads sin que nadie se entere hasta
+// que dejan de llegar correos.
 //
-// El script tampoco se reescribió: vive en /assets/js/v3-contacto.js, sacado tal cual de
-// la página publicada. Necesita .contact-form, #f-utm-source/medium/campaign,
-// .form-status y .form-success. Esos nombres NO se tocan.
+// El script tampoco se toca: /assets/js/v3-contacto.js, sacado tal cual de la página
+// publicada. Necesita .contact-form, #f-utm-source/medium/campaign, .form-status,
+// .form-success y un button[type=submit] dentro del form. Esos nombres NO se tocan.
 //
-// Un cambio deliberado: en producción el botón es `btn gold`. Acá no, porque el dorado de
-// la vista ya lo gasta el punto del wordmark (manual §02 y §06).
+// DOS COSAS QUE ESTE ARCHIVO CUIDA Y QUE NO SE VEN EN LA CAPTURA:
+// · .form-success FALTABA en la versión anterior de esta maqueta. El script hace
+//   `success.hidden = false` sin comprobar que exista: un envío que SÍ llegaba lanzaba un
+//   TypeError, caía en el catch y le mostraba «Algo falló al enviar» a quien acababa de
+//   escribir. Vuelve con el texto de producción.
+// · El script reemplaza className de .form-status (`'form-status show err'`): cualquier
+//   clase extra puesta ahí se pierde al enviar. Por eso se estila desde el padre.
+// · El form y .form-success se muestran/ocultan con el atributo hidden. Si una regla les
+//   pone display, el hidden deja de funcionar: de ahí los [hidden] { display: none }.
+//
+// En producción el botón es `btn gold`. Acá no: el único oro de la vista es el punto del
+// wordmark del módulo (spec §1 y §6).
+//
+// La foto que usaba la versión anterior (hero-contacto.jpg) está en la lista negra de la
+// spec (§5: hero-*.jpg). Sale.
 import Layout from '../../layouts/Layout.astro';
-import { caja } from '../../utils/caja';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
+import { EMAIL } from '../../consts';
 import paginas from '../../data/paginas-v3.json';
-import '../../styles/campos-v3.css'; // tintes de color, filete, rotulo
+import '../../styles/driftime.css';
 
 const s = (paginas as Record<string, any>).contacto;
 const [proyecto, pasos, antes] = s.secciones;
+// «Tu URL.» y «24 horas.» no se parten: a 390 px el h1 dejaba «horas.» sola en la línea.
+const h1 = s.h1.replace('Tu URL', 'Tu\u00a0URL').replace('24 horas', '24\u00a0horas');
+const listo = proyecto.bloques?.[0] ?? { t: 'Listo.', d: 'Te escribimos dentro de 24 horas con tu mini-diagnóstico.' };
+
+// El mismo mailto de la página publicada: asunto y arranque del cuerpo ya escritos.
+const mailto = `mailto:${EMAIL}?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20`;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -46,12 +68,9 @@ const jsonLd = {
       : []),
   ],
 };
-
-const campo = 'w-full bg-transparent border filete rounded-lg px-4 py-3 text-papel placeholder:text-humo outline-none focus-visible:border-papel focus-visible:bg-white/[0.04] transition-colors';
-const etiqueta = 'block text-humo text-xs font-bold uppercase mb-2';
 ---
 
-<Layout title={s.title} description={s.description} bodyClass="bg-noche font-texto">
+<Layout title={s.title} description={s.description} bodyClass="d-body">
   <Fragment slot="head">
     <meta name="robots" content="noindex, nofollow" />
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
@@ -59,183 +78,102 @@ const etiqueta = 'block text-humo text-xs font-bold uppercase mb-2';
 
   <NavV3 />
 
-  <main class="text-papel">
-    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-48 pb-16 md:pb-20">
-      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
-        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
-        <span aria-hidden="true" class="mx-2">·</span>
-        <span class="text-humo">Contacto</span>
-      </nav>
-      <h1
-        data-entra
-        class:list={['font-extrabold m-0 max-w-[13ch]', caja(s.h1)]}
-        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.88; letter-spacing:0"
-      >
-        {s.h1}
-      </h1>
+  {/* Sin display: las internas tienen cero usos de Manrope 800 en mayúsculas. */}
+  <main>
+    <header class="d-cab d-cab--ct">
+      <p class="d-miga"><a href="/v3/">Inicio</a> · Contacto</p>
+      <h1 class="d-h1">{h1}</h1>
+      <p class="d-linea">Escríbenos con la dirección de tu sitio y recibes el mini-diagnóstico, gratis y sin compromiso.</p>
+    </header>
 
-      <div data-entra data-paso="1" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
-        <div class="md:col-span-5">
-          {s.lead && <p class="m-0 text-papel text-xl md:text-2xl leading-relaxed">{s.lead}</p>}
-        </div>
-        <div class="md:col-span-6 md:col-start-7">
-          <img
-            src={s.foto}
-            alt={s.fotoAlt}
-            width="1280"
-            height="720"
-            loading="eager"
-            decoding="async"
-            class="media-campo"
-          />
-        </div>
+    {/* El formulario ocupa el lugar que en un caso de driftime tiene la imagen a sangre: es
+         lo primero que se ve después del título, entero sobre el pliegue a 1440×900. */}
+    <section class="d-ct" id="contacto-form" aria-labelledby="s-form">
+      <div class="d-ct-eti">
+        <h2 class="d-h2" id="s-form">{proyecto.h2}</h2>
+        <p class="d-cuerpo">Completa el formulario y en 24 horas te escribimos con el mini-diagnóstico: una página con lo que está bien, lo que frena tu visibilidad y qué haríamos primero.</p>
       </div>
 
-    </section>
+      <div class="d-ct-zona">
+        <form class="contact-form d-ct-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="f3a309f5-cbe6-4cf1-b77f-cfd0ee92685f" />
+          <input type="hidden" name="subject" value="Nuevo contacto desde spindlelab.cl" />
+          <input type="hidden" name="from_name" value="Formulario spindlelab.cl" />
+          {/* Honeypot: invisible para personas, tentador para bots. No quitar. */}
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" />
 
-    <section class="px-6 md:px-medianil pb-24 md:pb-36">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 mb-10 md:mb-14 max-w-[16ch]', caja(proyecto.h2)]}
-        style="font-size:clamp(1.5rem, 4vw, 3.25rem); line-height:0.95; letter-spacing:0"
-      >
-        {proyecto.h2}
-      </h2>
-
-      <form
-        class="contact-form max-w-2xl"
-        action="https://api.web3forms.com/submit"
-        method="POST"
-      >
-        <input type="hidden" name="access_key" value="f3a309f5-cbe6-4cf1-b77f-cfd0ee92685f" />
-        <input type="hidden" name="subject" value="Nuevo contacto desde spindlelab.cl" />
-        <input type="hidden" name="from_name" value="Formulario spindlelab.cl" />
-        {/* Honeypot: invisible para personas, tentador para bots. No quitar. */}
-        <input
-          type="checkbox"
-          name="botcheck"
-          tabindex="-1"
-          autocomplete="off"
-          aria-hidden="true"
-          class="hidden"
-        />
-
-        <div class="mb-6">
-          <label for="f-nombre" class={etiqueta} style="letter-spacing:0.14em">Nombre</label>
-          <input type="text" id="f-nombre" name="Nombre" autocomplete="name" required class={campo} />
-        </div>
-
-        <div class="grid gap-6 sm:grid-cols-2 mb-6">
-          <div>
-            <label for="f-email" class={etiqueta} style="letter-spacing:0.14em">Email</label>
-            <input type="email" id="f-email" name="Email" autocomplete="email" required class={campo} />
-          </div>
-          <div>
-            <label for="f-sitio" class={etiqueta} style="letter-spacing:0.14em">Sitio web</label>
-            <input type="text" id="f-sitio" name="Sitio web" placeholder="tuempresa.cl" autocomplete="url" required class={campo} />
-          </div>
-        </div>
-
-        <div class="mb-6">
-          <label for="f-mensaje" class={etiqueta} style="letter-spacing:0.14em">
-            Cuéntanos brevemente <span class="text-humo normal-case">(opcional)</span>
-          </label>
-          <textarea
-            id="f-mensaje"
-            name="Mensaje"
-            rows="4"
-            placeholder="Qué hace tu empresa, qué te preocupa de tu sitio..."
-            class={campo}></textarea>
-        </div>
-
-        {/* Los rellena el script con los UTM de la visita. */}
-        <input type="hidden" name="UTM Source" id="f-utm-source" />
-        <input type="hidden" name="UTM Medium" id="f-utm-medium" />
-        <input type="hidden" name="UTM Campaign" id="f-utm-campaign" />
-
-        <div class="mb-8">
-          <label class="flex items-start gap-3 text-humo text-sm leading-relaxed cursor-pointer">
-            <input
-              type="checkbox"
-              id="f-consiento"
-              name="Consiento"
-              required
-              class="mt-1 flex-none w-4 h-4 accent-papel"
-            />
-            <span>
-              Acepto que estos datos se usen para responder mi solicitud, según la
-              <a href="/privacidad/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-papel">
-                política de privacidad</a>.
-            </span>
-          </label>
-        </div>
-
-        <button
-          type="submit"
-          class="rounded-v3 bg-papel hover:bg-white text-noche text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
-        >
-          Enviar
-        </button>
-        <p class="form-status mt-5 text-humo text-sm" role="status" aria-live="polite"></p>
-      </form>
-    </section>
-
-    {/* CAMPO CIRUELA: los tres pasos. */}
-    <section class="tinte--ciruela px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[16ch]', caja(pasos.h2)]}
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
-      >
-        {pasos.h2}
-      </h2>
-      <div data-entra data-paso="1" class="grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-3">
-        {
-          (pasos.bloques ?? []).map((b: any, i: number) => (
-            <article class="border-t filete pt-6">
-              <span class="text-humo font-bold text-sm block mb-4" style="letter-spacing:0.16em">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <h3
-                class:list={['font-extrabold m-0', caja(b.t)]}
-                style="font-size:clamp(1.125rem,1.8vw,1.625rem); line-height:1.05; letter-spacing:-0.03em"
-              >
-        {b.t}
-      </h3>
-              {b.d && <p class="mt-4 text-humo text-base leading-relaxed">{b.d}</p>}
-            </article>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 mb-10 md:mb-14', caja(antes.h2)]}
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0"
-      >
-        {antes.h2}
-      </h2>
-      {s.faq?.length ? (
-        <dl class="m-0 border-t filete">
-          {s.faq.map((f: any) => (
-            <div class="border-b filete py-7 grid gap-3 md:grid-cols-[minmax(0,22rem)_1fr] md:gap-12">
-              <dt
-                class:list={['font-extrabold', caja(f.p)]}
-                style="font-size:clamp(1.0625rem,1.6vw,1.375rem); line-height:1.1; letter-spacing:-0.03em"
-              >
-                  {f.p}
-                </dt>
-              <dd class="m-0 text-noche/65 text-lg leading-relaxed max-w-prosa">{f.r}</dd>
+          <div class="d-ct-par">
+            <div class="d-ct-campo">
+              <label for="f-nombre">Nombre</label>
+              <input type="text" id="f-nombre" name="Nombre" autocomplete="name" required />
             </div>
-          ))}
-        </dl>
-      ) : (
-        antes.parrafos?.[0] && (
-          <p class="text-noche/65 text-xl leading-relaxed max-w-prosa">{antes.parrafos[0]}</p>
-        )
-      )}
+            <div class="d-ct-campo">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="Email" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div class="d-ct-campo">
+            <label for="f-sitio">Sitio web</label>
+            <input type="text" id="f-sitio" name="Sitio web" placeholder="tuempresa.cl" autocomplete="url" required />
+          </div>
+
+          <div class="d-ct-campo">
+            <label for="f-mensaje">Cuéntanos brevemente <span>(opcional)</span></label>
+            <textarea id="f-mensaje" name="Mensaje" rows="3" placeholder="Qué hace tu empresa, qué te preocupa de tu sitio..."></textarea>
+          </div>
+
+          {/* Los rellena el script con los UTM de la visita. */}
+          <input type="hidden" name="UTM Source" id="f-utm-source" />
+          <input type="hidden" name="UTM Medium" id="f-utm-medium" />
+          <input type="hidden" name="UTM Campaign" id="f-utm-campaign" />
+
+          <label class="d-ct-consiento">
+            <input type="checkbox" id="f-consiento" name="Consiento" required />
+            <span>Acepto que estos datos se usen para responder mi solicitud, según la <a href="/privacidad/" target="_blank" rel="noopener">política de privacidad</a>.</span>
+          </label>
+
+          <div class="d-ct-envio">
+            <button type="submit" class="d-btn">Enviar →</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+
+        <div class="form-success d-ct-listo" role="status" aria-live="polite" hidden>
+          <h3 class="d-h3">{listo.t}</h3>
+          <p class="d-cuerpo">{listo.d}</p>
+        </div>
+      </div>
+
+      <div class="d-ct-directo">
+        <p class="d-chico d-gris">¿Prefieres ir directo? Escríbenos a</p>
+        <a class="d-ct-correo" href={mailto}>{EMAIL}</a>
+      </div>
+    </section>
+
+    <figure class="d-sangre d-sangre--ct">
+      <img src="/assets/img/d/ventana.jpg" alt="Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop" width="1600" height="670" loading="lazy" decoding="async" />
+    </figure>
+
+    <section class="d-sec d-pasos-ct" aria-labelledby="s-pasos">
+      <div class="d-eti">
+        <h2 class="d-h2" id="s-pasos">{pasos.h2}</h2>
+        <p class="d-chico">Qué pasa después de tu correo.</p>
+      </div>
+      <div class="d-filas">
+        {(pasos.bloques ?? []).map((b: any, i: number) => (
+          <div class="d-fase"><span class="d-fase__n">{String(i + 1).padStart(2, '0')}</span><h3 class="d-h3">{b.t}</h3><p class="d-cuerpo">{b.d}</p></div>
+        ))}
+      </div>
+    </section>
+
+    {/* Las preguntas visibles salen del MISMO dato que el FAQPage del JSON-LD (s.faq): lo
+         que se marca como respuesta tiene que estar a la vista. */}
+    <section class="d-sec d-faq" aria-labelledby="s-antes">
+      <div class="d-eti"><h2 class="d-h2" id="s-antes">{antes.h2}</h2></div>
+      <div class="d-filas">
+        {(s.faq ?? []).map((f: any) => (<div><h3 class="d-h3">{f.p}</h3><p class="d-cuerpo">{f.r}</p></div>))}
+      </div>
     </section>
   </main>
 
@@ -243,3 +181,106 @@ const etiqueta = 'block text-humo text-xs font-bold uppercase mb-2';
 
   <script src="/assets/js/v3-contacto.js" is:inline defer></script>
 </Layout>
+
+<style>
+  /* Solo lo que driftime.css no trae. Todo con sufijo -ct para no chocar. */
+
+  /* Cabecera: la de un caso (.d-cab) pone el título a min(34vh, 300px). En una herramienta
+     eso empuja el formulario bajo el pliegue; se acerca a lo que hace el hero de la home
+     con el instrumento (112 px), dejando aire bajo el módulo de navegación. */
+  .d-cab--ct { padding-top: 140px; padding-bottom: 0; }
+  .d-cab--ct .d-linea { margin-bottom: 0; }
+
+  /* Formulario + su contexto: 5/12 a la izquierda (la etiqueta y el correo directo, este
+     último apoyado abajo, a la altura del botón), 7/12 el formulario. La misma partición
+     que .d-entrada y .d-sec. */
+  .d-ct {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'eti zona' 'directo zona';
+    gap: 0 var(--d-g);
+    padding: 48px var(--d-m) 0;
+  }
+  .d-ct-eti { grid-area: eti; display: flex; flex-direction: column; gap: 14px; padding-right: clamp(0px, 4vw, 64px); }
+  .d-ct-eti .d-cuerpo { max-width: 440px; }
+  .d-ct-zona { grid-area: zona; }
+  .d-ct-directo { grid-area: directo; align-self: end; display: flex; flex-direction: column; gap: 4px; padding-top: 32px; }
+  .d-ct-correo { font-size: clamp(1.25rem, 1.67vw, 1.5rem); line-height: 1.4; font-weight: 400; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; align-self: flex-start; }
+  .d-ct-correo:hover { text-decoration-thickness: 2px; }
+
+  /* Los campos: módulo #161616, radio 6, etiqueta visible arriba. El borde va en papel al
+     30 % y no al 12 % del filete: el límite de un control necesita 3:1 contra el lienzo
+     (WCAG 1.4.11) y el filete da ~1,3:1. */
+  .d-ct-form { display: flex; flex-direction: column; gap: 20px; color-scheme: dark; }
+  .d-ct-form[hidden], .d-ct-listo[hidden] { display: none; }
+  .d-ct-par { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px var(--d-g); }
+  .d-ct-campo { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .d-ct-campo label { font-size: 0.9375rem; font-weight: 500; line-height: 1.4; color: var(--d-papel); }
+  .d-ct-campo label span { color: var(--d-gris); font-weight: 400; }
+  .d-ct-campo input,
+  .d-ct-campo textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    background: var(--d-modulo);
+    color: var(--d-papel);
+    border: 1px solid rgba(247, 245, 240, 0.3);
+    border-radius: var(--d-r);
+    font: 400 1rem/1.5 'Manrope', system-ui, sans-serif;   /* 16 px: iOS no hace zoom al enfocar */
+  }
+  .d-ct-campo input { height: 48px; padding: 0 14px; }
+  .d-ct-campo textarea { padding: 11px 14px; resize: vertical; min-height: 96px; display: block; }
+  .d-ct-campo input::placeholder,
+  .d-ct-campo textarea::placeholder { color: var(--d-gris); opacity: 1; }
+  .d-ct-campo input:hover,
+  .d-ct-campo textarea:hover { border-color: rgba(247, 245, 240, 0.5); }
+  /* Foco: el contorno de 2 px en papel lo pone .d-body :focus-visible; acá el borde se
+     enciende también, para que el campo activo se lea aunque el contorno quede tapado. */
+  .d-ct-campo input:focus,
+  .d-ct-campo textarea:focus { border-color: var(--d-papel); }
+  /* El autocompletado de Chrome pinta el campo celeste: se devuelve al módulo. */
+  .d-ct-campo input:-webkit-autofill { -webkit-text-fill-color: var(--d-papel); box-shadow: 0 0 0 1000px var(--d-modulo) inset; caret-color: var(--d-papel); }
+
+  .d-ct-consiento { display: flex; align-items: flex-start; gap: 12px; font-size: 0.875rem; line-height: 1.5; color: var(--d-gris); cursor: pointer; max-width: 620px; }
+  .d-ct-consiento input { flex: none; width: 18px; height: 18px; margin: 1px 0 0; accent-color: var(--d-papel); cursor: pointer; }
+  .d-ct-consiento a { color: var(--d-papel); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+  .d-ct-envio { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; padding-top: 4px; }
+  .d-ct-envio .d-btn:disabled { opacity: 0.6; cursor: progress; }
+  /* El script reescribe className de .form-status: se estila desde el padre, nunca con
+     una clase propia sobre el párrafo. Vacío no ocupa lugar. */
+  .d-ct-envio :global(.form-status) { margin: 0; font-size: 0.875rem; line-height: 1.5; color: var(--d-gris); }
+  .d-ct-envio :global(.form-status.err) { color: var(--d-papel); }
+
+  /* Lo que reemplaza al formulario cuando el envío sale bien. */
+  .d-ct-listo { background: var(--d-modulo); border-radius: var(--d-r); padding: 28px; display: flex; flex-direction: column; gap: 8px; }
+
+  .d-sangre--ct { margin-top: 160px; }
+
+  @media (max-width: 767px) {
+    .d-cab--ct { padding-top: 112px; }
+    /* Celular: etiqueta → formulario → correo directo. El correo no puede quedar antes del
+       formulario: lo empujaría bajo el pliegue. */
+    .d-ct {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: none;
+      grid-template-areas: 'eti' 'zona' 'directo';
+      gap: 28px;
+      padding-top: 40px;
+    }
+    .d-ct-eti { padding-right: 0; gap: 10px; }
+    .d-ct-directo { padding-top: 4px; }
+    .d-ct-par { grid-template-columns: minmax(0, 1fr); }
+    .d-ct-form { gap: 18px; }
+    /* La foto a 4:3 recorta los lados: se encuadra el cuaderno entero en vez de medio
+       cuaderno y medio laptop. */
+    .d-sangre--ct { margin-top: 110px; }
+    .d-sangre--ct img { object-position: 20% 50%; }
+    /* El número va sobre el título, como en Método: la columna de 56 px dejaba cada paso
+       en 270 px de ancho. */
+    .d-pasos-ct .d-fase { grid-template-columns: minmax(0, 1fr); }
+    .d-pasos-ct .d-fase .d-cuerpo { grid-column: 1; }
+    .d-pasos-ct .d-fase__n { padding-top: 0; font-size: 0.875rem; }
+  }
+</style>
