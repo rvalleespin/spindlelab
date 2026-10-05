@@ -18,6 +18,7 @@ copiado se desactualiza y nadie se entera.
 - **`spindlelab.md`** — la casa (un cliente más).
 - **`praxi.md`** — producto propio, marca distinta, repo propio.
 - **`bernardo-combeau.md`** — cliente de Desarrollo Web.
+- **`maria-loreto-hernandez.md`** — cliente de Desarrollo Web (galería Módulo 369, Sitio Completo).
 
 ## Plantilla de ficha
 ```markdown
