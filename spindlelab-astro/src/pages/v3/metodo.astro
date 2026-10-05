@@ -14,12 +14,24 @@
 //   auditoría no produjo esos sitios, mostrarlos aquí como resultado sería prueba social
 //   inventada.
 // · El contenido es el de paginas-v3.json.metodo. La duración y el entregable de cada
-//   fase salen de la página publicada (public/metodo/index.html), que el JSON no recogió.
+//   fase salen de la página publicada (public/metodo/index.html), que el JSON no recogió,
+//   SALVO la fase 01 (ver «datos»). Los precios salen de servicios-v3.json, exactos.
 //
-// LA CAPA SEO SE CONSERVA tal cual estaba en la v3: un BreadcrumbList con su @id. La
-// organización y la persona las emite Layout.astro. La página publicada además trae un
-// HowTo (#metodo-spindlelab) que la v3 nunca portó; no se agrega aquí (ver el resumen
-// de la obra).
+// CORRECCIONES DEL QA DEL 5-OCT (Javiera), aplicadas aquí y no en el JSON porque los JSON
+// de src/data no se tocan desde una página; van propuestas a Clara para que el JSON quede
+// igual y estos reemplazos pasen a ser no-ops:
+// · Fase 01: la publicada decía «1 semana la versión completa». La versión completa es la
+//   Auditoría SEO técnica y su JSON dice «entre dos y tres semanas», desde $490.000 + IVA
+//   (bloqueante: el sitio se contradecía, y «el paso 01 es gratis» al lado dejaba entender
+//   que la auditoría también lo era). Si Ramón confirma 1 semana, primero cambia el JSON.
+// · Copy de relleno (antislop A2, A3, A10): el lead sin «No improvisamos:» ni «refinado
+//   para sectores…», la fase 04 sin el aforismo, la fila «20 minutos» sin repetir la serie
+//   de la fase 01. La fase 01 nombra el chequeo como punto de partida, como la home.
+// · Cada fase dice cuánto cuesta y enlaza a su servicio (antes no había cómo saberlo).
+//
+// LA CAPA SEO: el BreadcrumbList de la v3 y el HowTo (#metodo-spindlelab) de la página
+// publicada, portado con sus mismos pasos. La organización y la persona las emite
+// Layout.astro; aquí solo se referencian por @id, sin repetir nodos.
 import Layout from '../../layouts/Layout.astro';
 import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
@@ -31,33 +43,106 @@ import paginas from '../../data/paginas-v3.json';
 const s = (paginas as Record<string, any>).metodo;
 const [recorrido, reglas, poco, cierre] = s.secciones;
 
-// Duración y entregable por fase, verbatim de public/metodo/index.html.
-const datos: [string, string][][] = [
-  [['Duración', '24 h el mini-diagnóstico · 1 semana la versión completa'], ['Recibes', 'Informe con hallazgos priorizados por impacto']],
-  [['Duración', '1–2 semanas'], ['Recibes', 'Línea base de presencia en IA + plan de citabilidad']],
-  [['Duración', 'Según alcance: típicamente 2 a 6 semanas'], ['Recibes', 'Cambios implementados y verificados']],
-  [['Frecuencia', 'Informes quincenales · reunión mensual'], ['Recibes', 'Evolución medible contra la línea base']],
+const NB = ' '; // número y unidad no se parten (a 768 quedaba «1 / semana»)
+
+// Lead sin la fórmula de negación ni la frase vacía, y sin repetir «cuatro fases» (la
+// línea de la cabecera las nombra justo arriba).
+const lead = s.lead
+  .replace(/^No improvisamos:\s*cada/, 'Cada')
+  .replace(' de cuatro fases de auditoría', ' de auditoría')
+  .replace(', refinado para sectores donde la confianza es crítica', '')
+  .replace('sepas exactamente qué', 'sepas qué');
+
+// Texto de cada fase. Fase 01: el chequeo como punto de partida (fuente: la home, «Es el
+// mismo chequeo con el que partimos cada proyecto», y /v3/servicios/: «ves en segundos»);
+// la conversación de 20 minutos sin la serie que repetía la fila «20 minutos».
+// Fase 04: sin «Lo que no se mide, se estanca.» (aforismo de plantilla).
+const textoFase = (d: string, i: number) => {
+  if (i === 0) {
+    return d
+      .replace(/^Todo parte con tu URL\.\s*Auditamos/, `Todo parte con tu URL y el chequeo de 21${NB}señales, el mismo que puedes correr tú en segundos. Después auditamos`)
+      .replace('Luego conversamos', 'Y conversamos')
+      .replace('tu negocio, tus clientes y las búsquedas', 'tu negocio y las búsquedas')
+      .replace(/en 24 horas/g, `en 24${NB}horas`);
+  }
+  if (i === 3) return d.replace(/^Lo que no se mide, se estanca\.\s*/, '');
+  return d;
+};
+
+// Duración y entregable por fase. Fases 02 a 04, verbatim de public/metodo/index.html.
+// Fase 01 corregida (ver arriba). Un valor con varias líneas es un arreglo: la publicada
+// las unía con «·», que a 768 caía al comienzo de la línea.
+type Dato = [string, string | string[]];
+const datos: Dato[][] = [
+  [['Duración', `24${NB}h`], ['Recibes', 'Mini-diagnóstico de una página con los hallazgos priorizados']],
+  [['Duración', `1–2${NB}semanas`], ['Recibes', 'Línea base de presencia en IA + plan de citabilidad']],
+  [['Duración', `Según alcance: típicamente 2${NB}a${NB}6${NB}semanas`], ['Recibes', 'Cambios implementados y verificados']],
+  [['Frecuencia', ['Informes quincenales', 'Reunión mensual']], ['Recibes', `Evolución medible contra la línea${NB}base`]],
 ];
 
-// En la publicada, «nuestro protocolo público» enlaza a la medición del diagnóstico.
+// Cuánto cuesta cada fase y dónde se ve el detalle. Cifras EXACTAS de servicios-v3.json:
+// auditoria-seo-tecnica («Auditoría Completa», «Desde $490.000 + IVA · una vez»; FAQ «Entre
+// dos y tres semanas»), visibilidad-en-ia («Auditoría de Visibilidad», «Desde $400.000 +
+// IVA · una vez»), acompanamiento-mensual («Desde $590.000 /mes + IVA», «Mínimo 3 meses»;
+// su nota: todos los planes traen implementación y monitoreo).
+const precios: { t: string; href?: string; enlace?: string }[] = [
+  { t: `Sin costo. La auditoría completa va aparte: 2${NB}a${NB}3${NB}semanas, desde${NB}$490.000${NB}+${NB}IVA.`, href: '/v3/servicios/auditoria-seo-tecnica/', enlace: 'Ver la auditoría' },
+  { t: `Auditoría de Visibilidad: desde${NB}$400.000${NB}+${NB}IVA, una${NB}vez.`, href: '/v3/servicios/visibilidad-en-ia/', enlace: 'Ver Visibilidad en IA' },
+  { t: `Acompañamiento Mensual: desde${NB}$590.000${NB}/mes${NB}+${NB}IVA, mínimo 3${NB}meses.`, href: '/v3/servicios/acompanamiento-mensual/', enlace: 'Ver el acompañamiento' },
+  { t: `Va dentro del mismo Acompañamiento Mensual de la fase${NB}03.` },
+];
+
+// En la publicada, «nuestro protocolo público» enlaza a /diagnostico/#medicion-mensual.
+// En la v3 ese protocolo es la fila «Y cómo medimos si la IA te nombra.», dentro de la
+// sección #s-nom de /v3/diagnostico/, que todavía no tiene el id publicado (propuesto a
+// quien lleva Diagnóstico). Cuando lo tenga, este enlace pasa a #medicion-mensual.
 const PROTOCOLO = 'nuestro protocolo público';
+const PROTOCOLO_HREF = '/v3/diagnostico/#s-nom';
 const partir = (d: string) => {
   const i = d.indexOf(PROTOCOLO);
   return i < 0 ? null : [d.slice(0, i), d.slice(i + PROTOCOLO.length)];
 };
 
 // «Tu URL: con eso parte…» → término + explicación, para la lista de lo que pedimos.
+// La fila «20 minutos» repetía la serie de la fase 01 («tu negocio, tus clientes y…»).
 const pedidos = (poco.lista ?? []).map((t: string) => {
   const i = t.indexOf(':');
-  const resto = t.slice(i + 1).trim();
+  const termino = t.slice(0, i);
+  let resto = t.slice(i + 1).trim();
+  if (termino === '20 minutos') resto = resto.replace(/^una conversación sobre tu negocio, tus clientes y qué/, 'una conversación para entender qué');
   // Comillas rectas del JSON → comillas latinas, como el resto del sitio.
   const d = resto.replace(/"([^"]+)"/g, '«$1»');
-  return { t: t.slice(0, i), d: d.charAt(0).toUpperCase() + d.slice(1) };
+  return { t: termino, d: d.charAt(0).toUpperCase() + d.slice(1) };
 });
+
+// HowTo de la página publicada, mismo @id y mismos pasos. Los nombres salen de los h3 para
+// que el dato estructurado y lo visible no se separen nunca.
+const pasosPublicados = [
+  'Auditamos el sitio en profundidad (rastreo, indexación, velocidad, datos estructurados y señales de confianza) y entregamos un mini-diagnóstico de una página, gratis, en 24 horas.',
+  'Medimos tu presencia en ChatGPT, Gemini y Perplexity con un protocolo repetible, documentamos quién gana esas respuestas hoy y trazamos la hoja de ruta de citabilidad: claridad de entidad, contenido citable y autoridad.',
+  'Ejecutamos los cambios técnicos y de contenido junto a tu equipo: indexación y velocidad, datos estructurados listos para pegar, y páginas reestructuradas para responder preguntas en formato citable.',
+  'Cada quince días medimos menciones en IA, posiciones en Google y tráfico orgánico contra la línea base, y lo reportamos en lenguaje de negocio. El ciclo se repite: el monitoreo alimenta el siguiente diagnóstico.',
+];
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    {
+      '@type': 'HowTo',
+      '@id': 'https://spindlelab.cl/metodo/#metodo-spindlelab',
+      name: 'Método SpindleLab',
+      description:
+        'El Método SpindleLab es el proceso de cuatro fases de SpindleLab para llevar un sitio de la invisibilidad a ser citado en Google y en las respuestas de los motores de IA (AEO/GEO): diagnóstico técnico, estrategia AEO/GEO, implementación y monitoreo. Es un ciclo repetible y cada fase se mide.',
+      inLanguage: 'es-CL',
+      author: { '@id': 'https://spindlelab.cl/#autor-ramon' },
+      publisher: { '@id': 'https://spindlelab.cl/#org' },
+      step: (recorrido.bloques ?? []).map((b: any, i: number) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: b.t,
+        text: pasosPublicados[i],
+      })),
+    },
     {
       '@type': 'BreadcrumbList',
       '@id': `${s.canonical}#breadcrumb`,
@@ -83,8 +168,10 @@ const jsonLd = {
       <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Método</nav>
       <h1 class="d-h1">{s.h1}</h1>
       <p class="d-linea">Cuatro pasos medibles: diagnóstico técnico, estrategia AEO/GEO, implementación y monitoreo.</p>
+      {/* El chequeo es el punto de partida de la fase 01 (lo dice el texto de la fase). El
+           texto del botón es el del resto del sitio para el mismo destino. */}
       <div class="d-btns">
-        <a class="d-btn" href="/v3/diagnostico/">Empezar por el chequeo gratis</a>
+        <a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a>
         <a class="d-btn d-btn--alt" href="#fases">Ver las cuatro fases</a>
       </div>
     </header>
@@ -101,24 +188,34 @@ const jsonLd = {
       />
     </figure>
 
-    <div class="d-entrada">
-      <p class="d-nota-card"><b>El paso 01 es gratis</b> y llega en 24 horas.</p>
-      <p class="d-guia">{s.lead}</p>
+    <div class="d-entrada d-entrada-met">
+      <p class="d-nota-card"><b>El paso 01 es gratis.</b> Las fases 02 a 04 se contratan aparte; el precio va en cada fase.</p>
+      <p class="d-guia">{lead}</p>
     </div>
 
     <section class="d-sec" id="fases" aria-labelledby="s-fases">
       <div class="d-eti"><h2 class="d-h2" id="s-fases">{recorrido.h2}</h2></div>
       <ol class="d-filas d-lista-met d-fases-met">
         {(recorrido.bloques ?? []).map((b: any, i: number) => {
-          const p = partir(b.d);
+          const d = textoFase(b.d, i);
+          const p = partir(d);
+          const pr = precios[i];
           return (
             <li class="d-fase">
               <span class="d-fase__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
               <h3 class="d-h3">{b.t}</h3>
-              <p class="d-cuerpo">{p ? <Fragment>{p[0]}<a class="d-enl-met" href="/v3/diagnostico/">{PROTOCOLO}</a>{p[1]}</Fragment> : b.d}</p>
+              <p class="d-cuerpo">{p ? <Fragment>{p[0]}<a class="d-enl-met" href={PROTOCOLO_HREF}>{PROTOCOLO}</a>{p[1]}</Fragment> : d}</p>
               {datos[i] && (
                 <dl class="d-datos-met">
-                  {datos[i].map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
+                  {datos[i].map(([k, v]) => (
+                    <div><dt>{k}</dt><dd>{Array.isArray(v) ? v.map((x) => <span class="d-linea-met">{x}</span>) : v}</dd></div>
+                  ))}
+                  {pr && (
+                    <div class="d-cuesta-met">
+                      <dt>Cuánto cuesta</dt>
+                      <dd>{pr.t}{pr.href && <Fragment> <a class="d-enl-met" href={pr.href}>{pr.enlace}{NB}→</a></Fragment>}</dd>
+                    </div>
+                  )}
                 </dl>
               )}
             </li>
@@ -129,10 +226,13 @@ const jsonLd = {
 
     {/* Respiro entre el recorrido y las reglas, como las galerías de los casos de driftime.
          Dos fotos de campaña del pool, nada de obra (ver arriba). Dos mitades iguales en 4:3:
-         alta + media dejaría un hueco, porque cada una conserva su proporción. */}
+         alta + media dejaría un hueco, porque cada una conserva su proporción.
+         ventana.jpg y no domino.jpg: el tercio de arriba de domino.jpg es negro puro y, sobre
+         el lienzo negro, la pieza perdía el borde y se leía como un hueco (QA 5-oct; mismo
+         hallazgo ya medido en servicios/[slug].astro). La cortina clara marca el borde. */}
     <div class="d-galeria">
       <figure class="d-pieza d-g-mitad">
-        <img src="/assets/img/d/domino.jpg" alt="Fichas de dominó negras cayendo una sobre otra en fila, sobre fondo oscuro" width="1600" height="1600" loading="lazy" decoding="async" style="object-position:50% 62%" />
+        <img src="/assets/img/d/ventana.jpg" alt="Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop" width="1600" height="670" loading="lazy" decoding="async" style="object-position:12% 50%" />
       </figure>
       <figure class="d-pieza d-g-mitad">
         <img src="/assets/img/d/hilo.jpg" alt="Un hilo luminoso verde azulado cruza en diagonal un fondo oscuro" width="1400" height="787" loading="lazy" decoding="async" />
@@ -148,8 +248,10 @@ const jsonLd = {
       </div>
     </section>
 
+    {/* El título dice de qué trata la sección en palabras del visitante (antislop B8); el
+         guiño del JSON («Poco, pero importante») queda como bajada. */}
     <section class="d-sec" aria-labelledby="s-poco">
-      <div class="d-eti"><h2 class="d-h2" id="s-poco">{poco.h2}</h2><p class="d-chico">Lo que necesitamos de ti para partir.</p></div>
+      <div class="d-eti"><h2 class="d-h2" id="s-poco">Lo que necesitamos de ti</h2><p class="d-chico">{poco.h2}.</p></div>
       <dl class="d-filas d-lista-met">
         {pedidos.map((x: any) => (
           <div class="d-pide-met"><dt class="d-h3">{x.t}</dt><dd class="d-cuerpo">{x.d}</dd></div>
@@ -157,13 +259,16 @@ const jsonLd = {
       </dl>
     </section>
 
+    {/* El párrafo dice «Envíanos tu URL y en 24 horas tienes el mini-diagnóstico»: el botón
+         principal hace exactamente eso (el formulario de contacto pide el sitio y promete el
+         mini-diagnóstico en 24 horas). Es además la conversión medida (generate_lead). */}
     <section class="d-sec" aria-labelledby="s-cierre">
       <div class="d-eti"><h2 class="d-h2" id="s-cierre">{cierre.h2}</h2></div>
       <div class="d-cierre-met">
-        {cierre.parrafos?.[0] && <p class="d-guia">{cierre.parrafos[0]}</p>}
+        {cierre.parrafos?.[0] && <p class="d-guia">{cierre.parrafos[0].replace('24 horas', `24${NB}horas`)}</p>}
         <div class="d-btns">
-          <a class="d-btn" href="/v3/diagnostico/">Empezar por el chequeo gratis</a>
-          <a class="d-btn d-btn--alt" href={CONTACTO}>Conversemos tu proyecto</a>
+          <a class="d-btn" href={CONTACTO}>Pedir el mini-diagnóstico</a>
+          <a class="d-btn d-btn--alt" href="/v3/diagnostico/">Correr el chequeo</a>
         </div>
       </div>
     </section>
@@ -176,12 +281,27 @@ const jsonLd = {
   /* Solo lo que driftime.css no trae. Todo con sufijo -met para no chocar. */
   .d-lista-met { list-style: none; padding: 0; margin: 0; }
 
-  /* Duración y entregable bajo cada fase: dos datos lado a lado, rótulo en gris. */
-  .d-datos-met { grid-column: 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px var(--d-g); margin: 14px 0 0; }
+  /* MEDIDA: ≤ 68 caracteres por línea (manual §05). Tope en em, NO en ch: en Manrope el
+     cero es más ancho que la letra promedio y 68ch no recortaban nada (la misma medición
+     del blog). El valor sale de medir con Range, carácter por carácter: con 30 em el
+     máximo a 1440 es 65 (31 em llegaba justo a 68, sin margen). El lead y el cierre van en
+     24 px, así que su tope es otro número de em para el mismo resultado (máx. 63).
+     text-wrap: pretty evita la última línea de una palabra («nuestra.», 8 caracteres). */
+  .d-fases-met .d-cuerpo, .d-regla-met .d-cuerpo, .d-pide-met .d-cuerpo { max-width: 30em; text-wrap: pretty; }
+  .d-entrada-met .d-guia, .d-cierre-met .d-guia { max-width: 28.5em; text-wrap: pretty; }
+
+  /* Duración y entregable bajo cada fase: dos datos lado a lado, rótulo en gris; el precio
+     ocupa la fila entera. Una sola columna bajo 1024: a 768 cada dato quedaba en ~150 px. */
+  .d-datos-met { grid-column: 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px var(--d-g); margin: 14px 0 0; max-width: 34.5em; }
   .d-datos-met dt { font-size: 0.8125rem; font-weight: 500; color: var(--d-gris); margin: 0 0 4px; }
   .d-datos-met dd { margin: 0; font-size: 0.9375rem; line-height: 1.5; }
+  .d-datos-met .d-cuesta-met { grid-column: 1 / -1; }
+  .d-datos-met .d-cuesta-met dd { max-width: 34em; }   /* 15 px: ≤ 68 caracteres, medido */
+  .d-linea-met { display: block; }
+  @media (max-width: 1023px) { .d-datos-met { grid-template-columns: minmax(0, 1fr); } }
 
-  .d-enl-met { color: var(--d-papel); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .d-enl-met { color: var(--d-papel); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; white-space: nowrap; }
+  .d-cuerpo .d-enl-met { white-space: normal; }
 
   .d-regla-met .d-h3 { margin-bottom: 8px; }
 
@@ -198,7 +318,6 @@ const jsonLd = {
     .d-fases-met .d-fase { grid-template-columns: minmax(0, 1fr); }
     .d-fases-met .d-fase .d-cuerpo, .d-fases-met .d-datos-met { grid-column: 1; }
     .d-fases-met .d-fase__n { padding-top: 0; font-size: 0.875rem; }
-    .d-datos-met { grid-template-columns: 1fr; }
     .d-pide-met { grid-template-columns: 1fr; }
   }
 </style>

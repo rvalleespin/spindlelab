@@ -15,6 +15,8 @@
 //   de las siete eran de la lista negra de §5 (hero-*, estrategia-mesa, evidencia-*).
 //   Queda UNA imagen del pool honesto, en la fila del artículo más reciente, que es la
 //   fila de novedades de driftime (imagen grande + título 30 px). El resto son filas.
+//   Es un desvío de §4 (que pide fecha · título · flecha) y está declarado en el §7 de la
+//   spec, no solo acá.
 // · El cierre navy con «El sitio es el eje.» en 800 sale: era display en una interna y
 //   su «Treinta segundos» no tiene fuente en el repo. El cierre ahora es una sección
 //   .d-sec con copy que sí la tiene (ver las fuentes al pie del frontmatter).
@@ -30,6 +32,10 @@ import '../../../styles/driftime.css';
 import indice from '../../../data/blog-v3/_indice.json';
 
 const url = 'https://spindlelab.cl/blog/';
+// Una sola fuente para la meta description y la del nodo CollectionPage: si se escriben
+// por separado, terminan diciendo cosas distintas.
+const DESCRIPCION =
+  'Cómo funcionan el SEO técnico y la visibilidad en motores de IA en Chile, explicado con la metodología a la vista y sin promesas de primeros lugares.';
 
 // Más nuevo primero. Por fecha y no por nombre de archivo: alfabético dejaba «21-chequeos»
 // arriba por casualidad y no por criterio. Empates (tres del 7-jul): el comparador nunca
@@ -59,7 +65,12 @@ const jsonLd = {
       '@id': `${url}#collectionpage`,
       url,
       name: 'Blog · SpindleLab',
+      description: DESCRIPCION,
+      inLanguage: 'es-CL',
       isPartOf: { '@id': 'https://spindlelab.cl/#website' },
+      // La lista ES el contenido de la página, y la miga es la suya (QA 5-oct, antislop C8).
+      mainEntity: { '@id': `${url}#itemlist` },
+      breadcrumb: { '@id': `${url}#breadcrumb` },
     },
     {
       '@type': 'BreadcrumbList',
@@ -84,16 +95,20 @@ const jsonLd = {
 
 // FUENTES DEL COPY QUE NO VIENE DEL JSON:
 // · h1: el h2 de la sección «El Taller» de v3/index.astro.
-// · Línea: la entrada de la versión anterior de esta página, sin cambios.
+// · Línea: la entrada de la versión anterior de esta página, con la serie de tres pasada a
+//   «desde… hasta…» (QA 5-oct, antislop A3). Cada artículo sigue teniendo su lugar en ella.
 // · «Leer ayuda; medir, más.»: el cierre del índice publicado (spindlelab-site/blog/index.html).
-// · «Te decimos si una IA te puede leer…»: el cierre de la versión anterior de esta página.
-// · «Automático, en segundos, sobre tu sitio.»: paginas-v3.json (bloque del chequeo).
+// · «Pon tu dominio y ves en segundos si…»: el arranque de los cierres de /v3/servicios/ y
+//   /v3/trabajo/ («Pon tu dominio y ves en segundos si ChatGPT, Gemini y Perplexity…») con
+//   la tríada leer/entender/citar de la línea de /v3/diagnostico/ y del cierre anterior.
 // · «Es el mismo chequeo con el que partimos cada proyecto.»: la nota del chequeo de la home.
+// · Se borró «Automático, en segundos, sobre tu sitio.» (QA 5-oct, A3/A10): era la tercera
+//   serie de tres de la página y «en segundos» ya está en la guía.
 ---
 
 <Layout
   title="Blog: SEO técnico y visibilidad en IA · SpindleLab"
-  description="Cómo funcionan el SEO técnico y la visibilidad en motores de IA en Chile, explicado con la metodología a la vista y sin promesas de primeros lugares."
+  description={DESCRIPCION}
   bodyClass="d-body"
 >
   <Fragment slot="head">
@@ -107,7 +122,10 @@ const jsonLd = {
     <header class="d-cab">
       <p class="d-miga"><a href="/v3/">Inicio</a> · Blog</p>
       <h1 class="d-h1">Lo que escribimos sobre búsqueda e IA</h1>
-      <p class="d-linea">Cómo funciona esto por dentro: qué mira el chequeo, qué cuesta arreglarlo y qué preguntar antes de contratar a alguien. La metodología está publicada a propósito.</p>
+      {/* Dos elementos, no tres (antislop A3: una sola serie de tres por página, y esa es
+           leer/entender/citar del cierre). «Desde… hasta…» cubre los artículos de en medio,
+           como el de costos, sin enumerarlos. Redacción provisoria: la final es de Clara. */}
+      <p class="d-linea">Cómo funciona esto por dentro, desde qué mira el chequeo hasta qué preguntar antes de contratar a alguien. La metodología está publicada a propósito.</p>
     </header>
 
     {/* Una sola lista, del más nuevo al más antiguo. La primera fila se abre: es la fila de
@@ -141,14 +159,19 @@ const jsonLd = {
     </section>
 
     {/* Cierre: lo que viene después de leer. Sección con etiqueta (.d-sec), no campo de
-         color: el campo lleva display y las internas no lo tienen. La etiqueta no se pega
-         (ver el estilo): con tres líneas a la derecha no hay nada contra qué pegarse. */}
-    <section class="d-sec d-sec--cierre-blog" aria-labelledby="s-medir">
+         color: el campo lleva display y las internas no lo tienen. Sección corta:
+         .d-sec--quieta (spec §7), la etiqueta no se pega.
+         El botón va a /v3/diagnostico/ (spec §7, regla del 5-oct: un botón «chequeo» lleva
+         ahí, igual que servicios, trabajo y método). Antes iba a /v3/#chequeo y el módulo de
+         navegación tapaba el campo del dominio al llegar (QA 5-oct, bloqueante).
+         El texto describe el chequeo automático (tu dominio, en segundos), no a alguien que
+         «te dice»: la mezcla «Te decimos… / Automático» se contradecía (QA 5-oct). */}
+    <section class="d-sec d-sec--quieta" aria-labelledby="s-medir">
       <div class="d-eti"><h2 class="d-h2" id="s-medir">Leer ayuda; medir, más.</h2></div>
       <div class="d-cierre-blog">
-        <p class="d-guia">Te decimos si una IA te puede leer, si te entiende y si te puede citar.</p>
-        <p class="d-cuerpo">Automático, en segundos, sobre tu sitio. Es el mismo chequeo con el que partimos cada proyecto.</p>
-        <div class="d-btns"><a class="d-btn" href="/v3/#chequeo">Correr el chequeo</a><a class="d-btn d-btn--alt" href="/v3/metodo/">Ver el método</a></div>
+        <p class="d-guia">Pon tu dominio y ves en segundos si una IA te puede leer, si te entiende y si te puede citar.</p>
+        <p class="d-cuerpo">Es el mismo chequeo con el que partimos cada proyecto.</p>
+        <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href="/v3/metodo/">Ver el método</a></div>
       </div>
     </section>
   </main>
@@ -189,9 +212,8 @@ const jsonLd = {
   /* El h1 tiene una sola palabra de más para la línea a 1440 («IA» quedaba sola abajo). */
   .d-cab .d-h1 { text-wrap: balance; }
 
-  /* El cierre tiene tres líneas a la derecha: no hay texto contra el cual pegarse, y la
-     etiqueta pegajosa bajaba por debajo del párrafo al hacer scroll. Aquí va quieta. */
-  .d-sec--cierre-blog .d-eti { position: static; }
+  /* El cierre es corto: va con .d-sec--quieta del sistema (spec §7), no con una regla
+     propia que dijera lo mismo con otro nombre. */
 
   .d-cierre-blog { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
   .d-cierre-blog .d-btns { margin-top: 14px; }
@@ -204,9 +226,12 @@ const jsonLd = {
     .d-dest-blog__txt { padding-right: 0; }
   }
 
+  /* Celular: la imagen va DESPUÉS del texto, como a 768. Delante empujaba la fecha y el
+     título fuera del primer pantallazo (texto desde y=956 con viewport de 844; QA 5-oct):
+     en un índice lo que se escanea es el título. */
   @media (max-width: 767px) {
     .d-dest-blog__fila { grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 20px 0 32px; }
-    :global(.d-dest-blog__img) { order: -1; aspect-ratio: 4 / 3; margin-bottom: 14px; }
+    :global(.d-dest-blog__img) { aspect-ratio: 4 / 3; margin-top: 14px; }
     .d-dest-blog__txt { gap: 10px; padding-right: 0; }
   }
 </style>

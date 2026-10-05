@@ -2,8 +2,10 @@
 // LOS 7 POSTS DEL BLOG — sistema driftime (5-oct-2026).
 //
 // Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md, §4 plantilla
-// «Artículo»: miga · h1 60 px · fecha → imagen editorial → etiqueta pegajosa con el índice
-// del artículo + cuerpo verbatim a la derecha → siguiente artículo → pie.
+// «Artículo»: miga · h1 60 px · tema · fecha · lectura · autor → imagen editorial → etiqueta
+// pegajosa con el índice del artículo + cuerpo verbatim a la derecha → cierre (chequeo +
+// Escríbenos) → siguiente artículo → pie. El autor y el cierre entraron a la spec el 5-oct
+// (QA): estaban construidos sin declarar, o faltaban.
 // Implementación de referencia: v3/servicios/desarrollo-web.astro (d-cab, d-sangre, d-sec,
 // d-siguiente). Sin display: las internas tienen cero Manrope 800 en mayúsculas.
 //
@@ -12,21 +14,29 @@
 //   · la CABEZA (miga, h1, línea de autor) se lee del archivo y se vuelve a montar en la
 //     cabecera d-cab, con las mismas palabras. Tiene que salir de ahí porque la plantilla
 //     pone el h1 ARRIBA de la imagen, y dejarlo además dentro del cuerpo daría dos h1.
+//     La miga es la excepción declarada (spec §7): «Inicio · Blog · <nombre corto>»; del
+//     archivo sale solo el nombre corto («Chequeo gratis» no es padre del post y «El
+//     Taller» se llama «Blog» en todo el v3).
 //   · el bloque .prose (todo lo que se lee) se inyecta entero en la columna derecha. Lo
-//     único que se le toca son atributos, nunca texto: los href internos pasan a /v3/ y
-//     los h2 que no traen id reciben uno, para el índice.
+//     único que se le toca son atributos, nunca texto: los href internos pasan a /v3/,
+//     los h2 que no traen id reciben uno, para el índice, y un índice en prosa («En esta
+//     guía: …») lleva `hidden` cuando ya está el pegajoso.
 // Si un post nuevo no trae esa estructura, el build se cae con el nombre del archivo: es
 // preferible a publicar una página con dos h1 o sin cuerpo.
 //
-// EL SCHEMA NO SE REINVENTA: el grafo de cada post (Article + Person #autor-ramon +
-// BreadcrumbList + FAQPage, con su ProfessionalService) va completo, tal como el publicado.
-// OJO: Layout.astro emite SIEMPRE su propio grafo (#org, #website, #autor-ramon), así que
-// #org y #autor-ramon salen dos veces en el HTML. Ya pasaba antes de esta versión (la nota
-// anterior de este archivo decía que el grafo del Layout se reemplazaba; no es así). No se
-// toca acá porque arreglarlo es tocar Layout, que es compartido: queda anotado.
+// EL SCHEMA NO SE REINVENTA: el grafo de cada post (Article + BreadcrumbList + FAQPage) sale
+// del publicado. Layout.astro emite SIEMPRE #org y #autor-ramon, en su versión completa; el
+// post traía una copia más corta de los dos (sin makesOffer, knowsAbout, alumniOf ni url) y
+// salían dos veces en el HTML. Se filtran ACÁ, al serializar, como hace la referencia
+// (servicios/desarrollo-web.astro): Layout no se toca. Comparados campo por campo en los
+// siete posts, los nodos del post son un subconjunto exacto de los del Layout: no se pierde
+// nada. author y publisher del Article siguen apuntando por @id a los nodos del Layout.
+// La miga del grafo dice «Blog» (no «El Taller»): la misma palabra de la miga visible, del
+// menú y del BreadcrumbList de /v3/blog/ (QA 5-oct, antislop C8).
 import Layout from '../../../layouts/Layout.astro';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
+import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
 import '../../../styles/driftime.css';
 import indice from '../../../data/blog-v3/_indice.json';
 
@@ -50,6 +60,19 @@ const crudo = Object.entries(cuerpos).find(([r]) => slugDe(r) === slug)?.[1] as 
 const entrada = Object.entries(datos).find(([r]) => slugDe(r) === slug)?.[1] as any;
 const info = entrada?.default ?? entrada;
 const meta = info.meta;
+
+// El grafo del post, sin los nodos que ya emite el Layout y con la miga que se ve.
+const DEL_LAYOUT = new Set(['https://spindlelab.cl/#org', 'https://spindlelab.cl/#autor-ramon']);
+const ld = {
+  ...info.jsonLd,
+  '@graph': info.jsonLd['@graph']
+    .filter((n: any) => !DEL_LAYOUT.has(n['@id']))
+    .map((n: any) =>
+      n['@type'] === 'BreadcrumbList'
+        ? { ...n, itemListElement: n.itemListElement.map((it: any) => (it.position === 2 ? { ...it, name: 'Blog' } : it)) }
+        : n,
+    ),
+};
 
 // ---------------------------------------------------------------- la cabeza del post
 const MARCA_PROSA = '<div class="prose">';
@@ -119,6 +142,13 @@ const cuerpoConIds = cuerpo.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/g, (todo: strin
 });
 // Con menos de tres secciones un índice no orienta: dice lo que se ve bajando dos pantallas.
 const hayIndice = secciones.length >= 3;
+// ÍNDICE REPETIDO. Un post puede traer su propio índice en prosa («En esta guía: … · … ·»,
+// hoy el de los 21 chequeos). Junto al índice pegajoso eran dos índices en la misma
+// pantalla (QA 5-oct, antislop A10). Cuando hay índice pegajoso, ese párrafo lleva
+// `hidden`: se toca un atributo, no el texto, y sin índice pegajoso vuelve a verse.
+const cuerpoFinal = hayIndice
+  ? cuerpoConIds.replace(/<p>(\s*<strong>En esta guía:<\/strong>)/, '<p hidden>$1')
+  : cuerpoConIds;
 
 // ---------------------------------------------------------------- imagen y siguiente
 // IMAGEN EDITORIAL: decisión de página, no dato del post (los posts no traen imagen). Solo
@@ -135,7 +165,10 @@ const IMAGEN: Record<string, { src: string; alt: string; w: number; h: number; p
   'cuanto-cuesta-seo-tecnico-chile': { src: '/assets/img/d/domino.jpg', alt: 'Fichas de dominó negras cayendo en fila sobre un fondo oscuro', w: 1600, h: 1600, pos: '50% 58%' },
   'seo-tecnico-fintechs-chile': { src: '/assets/img/d/hilo.jpg', alt: 'Un hilo luminoso cruza en diagonal un fondo verde oscuro', w: 1400, h: 787 },
   'que-es-aeo-geo': { src: '/assets/img/d/ventana.jpg', alt: 'Mesa de trabajo junto a una ventana con cortinas, con un libro abierto, un laptop y una taza', w: 1600, h: 670, pos: '62% 50%' },
-  'como-aparecer-en-chatgpt': { src: '/assets/img/d/hilos.jpg', alt: 'Una línea dorada atraviesa un fondo oscuro de fibras', w: 1600, h: 1600, pos: '50% 24%' },
+  // hilos.jpg es el RECORTE del 5-oct (spec §5): sin la línea dorada, 1600 × 960. El alt es
+  // el de la home (index.astro), mirando la imagen; describir la línea era describir la foto
+  // de antes.
+  'como-aparecer-en-chatgpt': { src: '/assets/img/d/hilos.jpg', alt: 'Cantos de hojas apiladas en azul oscuro, en diagonal', w: 1600, h: 960 },
 };
 const img = IMAGEN[slug!] ?? IMAGEN['21-chequeos-visibilidad-ia'];
 
@@ -148,7 +181,7 @@ const siguiente = orden[(iAqui + 1) % orden.length];
 <Layout title={meta.title} description={meta.description} bodyClass="d-body">
   <Fragment slot="head">
     <meta name="robots" content="noindex, nofollow" />
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(info.jsonLd)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(ld)} />
   </Fragment>
 
   <NavV3 />
@@ -166,7 +199,10 @@ const siguiente = orden[(iAqui + 1) % orden.length];
       </p>
       {autor.nombre && (
         <div class="d-autor-art">
-          {autor.src && <img src={autor.src} alt={autor.alt} width="44" height="44" loading="eager" />}
+          {/* lazy, como en el post publicado: es una foto de 896 × 1200 (198 KB) para 44 px y
+               no compite con la imagen principal (fetchpriority high). La miniatura de 88 px
+               es un asset nuevo en public/, compartido: quedó propuesto, no creado. */}
+          {autor.src && <img src={autor.src} alt={autor.alt} width="44" height="44" loading="lazy" decoding="async" />}
           <p><span class="d-autor-art__nombre" set:html={autor.nombre} />{autor.rol && <span class="d-gris" set:html={autor.rol} />}</p>
         </div>
       )}
@@ -199,8 +235,26 @@ const siguiente = orden[(iAqui + 1) % orden.length];
           </details>
         </nav>
       ) : <div />}
-      <article class="d-prosa-art" set:html={cuerpoConIds} />
+      <article class="d-prosa-art" set:html={cuerpoFinal} />
     </div>
+
+    {/* CIERRE: el paso siguiente después de leer (QA 5-oct; spec §4 Artículo). Los posts
+         publicados cierran con un llamado; sin él, lo más grande al final era «Siguiente
+         artículo», que invita a seguir leyendo y no a convertir. Es el cierre de /v3/blog/,
+         con las mismas palabras (fuentes en el frontmatter de blog/index.astro) y el mismo
+         componente: .d-sec--quieta, la etiqueta no se pega.
+         «Correr el chequeo» va a /v3/diagnostico/ y no a /v3/#chequeo: regla del §7 de la
+         spec (al llegar a /v3/#chequeo el módulo de navegación tapaba el campo del dominio).
+         El segundo botón es «Escríbenos»: en un artículo, el otro camino es hablar, no
+         seguir leyendo sobre el método. */}
+    <section class="d-sec d-sec--quieta d-cierre-art" aria-labelledby="s-medir">
+      <div class="d-eti"><h2 class="d-h2" id="s-medir">Leer ayuda; medir, más.</h2></div>
+      <div class="d-cierre-art__txt">
+        <p class="d-guia">Pon tu dominio y ves en segundos si una IA te puede leer, si te entiende y si te puede citar.</p>
+        <p class="d-cuerpo">Es el mismo chequeo con el que partimos cada proyecto.</p>
+        <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>
+      </div>
+    </section>
 
     {siguiente && siguiente.slug !== slug && (
       <a class="d-siguiente d-siguiente--art" href={`/v3/blog/${siguiente.slug}/`}>
@@ -291,13 +345,24 @@ const siguiente = orden[(iAqui + 1) % orden.length];
 
   /* El cuerpo: HTML inyectado, así que todo va por :global(). Manrope 400, 19 px, en gris
      (el texto secundario de driftime, 6,9:1); papel para lo que tiene que pesar: entrada,
-     encabezados, negritas, enlaces. Medida máxima 68ch. */
+     encabezados, negritas, enlaces.
+     MEDIDA: ≤ 68 caracteres por línea (manual §05). Tope en em, NO en ch: «ch» es el ancho
+     del cero, y en Manrope el cero es mucho más ancho que la letra promedio; 68ch daban 87
+     caracteres reales y el tope nunca actuaba (QA 5-oct, medido con Range). El valor sale
+     de medir, no de un promedio: con 32 em la mediana daba 66 pero las líneas con muchas
+     letras angostas llegaban a 76; con 28,5 em el máximo queda en 68 en los siete posts.
+     Al ser em, vale igual a 17, 19 y 24 px (la entrada) sin otra regla. La nota va en
+     16 px y con relleno: 31 em de SU letra (32 em dejaban una línea de 69 en el post de
+     fintechs). Tablas, filetes de h2 y filas
+     de la FAQ siguen al ancho de la columna; las respuestas de la FAQ son <p> y quedan con
+     el tope. */
   .d-prosa-art { font-size: clamp(1.0625rem, 1.32vw, 1.1875rem); line-height: 1.65; color: var(--d-gris); overflow-wrap: break-word; min-width: 0; }
   .d-prosa-art > :global(* + *) { margin-top: 1.15em; }
-  .d-prosa-art :global(p), .d-prosa-art :global(li), .d-prosa-art :global(blockquote) { max-width: 68ch; }
+  .d-prosa-art :global(p), .d-prosa-art :global(li), .d-prosa-art :global(blockquote) { max-width: 28.5em; }
+  .d-prosa-art :global(.nota) { max-width: 31em; }
   .d-prosa-art :global(p) { margin-bottom: 0; }
   /* La primera frase es la entrada del caso de driftime: 24 px, papel. */
-  .d-prosa-art > :global(p:first-child) { font-size: clamp(1.25rem, 1.67vw, 1.5rem); line-height: 1.5; color: var(--d-papel); max-width: 34em; }
+  .d-prosa-art > :global(p:first-child) { font-size: clamp(1.25rem, 1.67vw, 1.5rem); line-height: 1.5; color: var(--d-papel); }
 
   .d-prosa-art :global(h2) { font-size: clamp(1.375rem, 2.08vw, 1.875rem); line-height: 1.3; font-weight: 500; letter-spacing: -0.02em; color: var(--d-papel); margin: 96px 0 0; padding-top: 28px; border-top: 1px solid var(--d-filete); text-wrap: balance; scroll-margin-top: 104px; }
   .d-prosa-art :global(h2 + *) { margin-top: 18px; }
@@ -323,7 +388,7 @@ const siguiente = orden[(iAqui + 1) % orden.length];
 
   .d-prosa-art :global(.nota) { margin-top: 32px; background: var(--d-modulo); border-radius: var(--d-r); padding: 18px 20px; font-size: 1rem; line-height: 1.6; color: var(--d-gris); }
 
-  .d-prosa-art :global(code) { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.86em; background: var(--d-modulo); color: var(--d-papel); border-radius: 4px; padding: 0.12em 0.36em; overflow-wrap: anywhere; }
+  .d-prosa-art :global(code) { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.86em; background: var(--d-modulo); color: var(--d-papel); border-radius: var(--d-r); padding: 0.12em 0.36em; overflow-wrap: anywhere; }   /* un solo radio (spec §1): 4 px es solo dentro de un control */
 
   /* Tablas: se desplazan dentro de su caja; la página no. */
   .d-prosa-art :global(table) { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; font-size: 0.9375rem; line-height: 1.5; margin-top: 28px; }
@@ -346,6 +411,22 @@ const siguiente = orden[(iAqui + 1) % orden.length];
   .d-siguiente--art { flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 160px; }
   .d-siguiente--art .d-h1 { max-width: 32ch; text-wrap: balance; }
 
+  /* ------------------------------------------------------------ cierre */
+  /* Mismo armado que el cierre de /v3/blog/ (.d-cierre-blog). */
+  .d-cierre-art__txt { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  .d-cierre-art__txt .d-guia { max-width: 28.5em; }   /* la misma medida del cuerpo */
+  .d-cierre-art__txt .d-btns { margin-top: 14px; }
+
+  /* Tablas en columna angosta: celular Y tableta. Entre 768 y 1023 la columna del cuerpo
+     mide ~392 px y la tabla de cinco columnas quedaba en torres de una palabra, cortada sin
+     indicio (QA 5-oct, a 768). Bajo ~10rem por columna, mejor que se desplace. */
+  @media (max-width: 1023px) {
+    .d-prosa-art :global(th), .d-prosa-art :global(td) { min-width: 9.5rem; }
+    /* Al desplazar a la derecha, la primera columna (el nombre del chequeo) se queda: si no,
+       a la tercera columna ya no sabes en qué fila vas. */
+    .d-prosa-art :global(th:first-child), .d-prosa-art :global(td:first-child) { position: sticky; left: 0; z-index: 1; background: var(--d-noche); }
+  }
+
   @media (max-width: 767px) {
     .d-art { padding-top: 40px; gap: 32px; }
     .d-indice-art { max-width: none; }
@@ -357,12 +438,6 @@ const siguiente = orden[(iAqui + 1) % orden.length];
     .d-indice-art a[aria-current='true']::before { display: none; }
     .d-prosa-art :global(h2) { margin-top: 72px; padding-top: 22px; scroll-margin-top: 88px; }
     .d-prosa-art :global(blockquote) { margin: 32px 0; padding-left: 18px; }
-    /* Bajo ~10rem por columna, una tabla de cinco se vuelve una tira de palabras sueltas:
-       mejor que se desplace. */
-    .d-prosa-art :global(th), .d-prosa-art :global(td) { min-width: 9.5rem; }
-    /* Al desplazar a la derecha, la primera columna (el nombre del chequeo) se queda: si no,
-       a la tercera columna ya no sabes en qué fila vas. */
-    .d-prosa-art :global(th:first-child), .d-prosa-art :global(td:first-child) { position: sticky; left: 0; z-index: 1; background: var(--d-noche); }
     .d-siguiente--art { margin-top: 110px; }
   }
 </style>

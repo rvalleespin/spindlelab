@@ -11,12 +11,32 @@
 // EL TEXTO VA VERBATIM. Es la biografía real de Ramón, con empleadores y estudios
 // concretos: no es copy que se reescriba por gusto. Solo cambia el envase. En la versión
 // driftime el segundo párrafo (la trayectoria) se parte en filas, una oración por fila, sin
-// cambiarle una palabra; su primera oración pasa a ser la etiqueta pegajosa. Lo único que
-// se cortó es la bajada del cierre («Te lo muestro. Chequeo real, gratis, en 24 horas.
-// Antes de que pagues nada.»), porque el último párrafo de la bio, que va al lado, ya dice
-// chequeo, gratis y 24 horas; su idea queda en la línea chica de la etiqueta («Te lo
-// muestro antes de que pagues nada.»). Rótulo nuevo: «Por qué un solo sistema», sacado de
-// la bio («Conectamos las piezas en un solo sistema»).
+// cambiarle una palabra; su primera oración pasa a ser la etiqueta pegajosa.
+//
+// LO QUE SÍ CAMBIA RESPECTO DE LA PÁGINA PUBLICADA (src/pages/nosotros.astro), todo aquí:
+//  1. La bajada del cierre («Te lo mostramos. Diagnóstico real, gratis, en 24 horas. Antes
+//     de que pagues nada.») se corta: el último párrafo de la bio, que va al lado, ya dice
+//     diagnóstico, gratis y 24 horas. Su idea queda en la línea chica de la etiqueta, en
+//     singular como el resto de la página: «Te lo muestro antes de que pagues nada.».
+//  2. El botón del cierre («Agenda tu diagnóstico» → contacto) pasa a «Pedir el
+//     diagnóstico» (mismo destino, mismas palabras que /v3/diagnostico/) y se le suma
+//     «Correr el chequeo» → /v3/diagnostico/ como secundario.
+//  3. La cabecera suma dos botones que la publicada no tenía: «Correr el chequeo» →
+//     /v3/diagnostico/ y «Escríbenos» → contacto (la acción de contacto del nav, spec §3).
+//  4. Rótulo nuevo «Por qué un solo sistema», sacado de la bio («Conectamos las piezas en
+//     un solo sistema»), y el rótulo del bloque de puntos, «Cómo trabajo».
+//  5. El h2 del cierre es el titular publicado, entero: «¿Apareces cuando tus clientes
+//     preguntan?» (una pasada anterior lo había acortado a «cuando preguntan»).
+//  6. Tipografía, sin tocar palabras: «24 horas» con espacio duro y «E-commerce» sin
+//     partir en el guion (Manrope no trae el guion no separable U+2011; va en un span
+//     nowrap).
+//
+// QA 5-oct (bloqueante): una pasada anterior había cambiado «Lo primero es un diagnóstico»
+// por «Lo primero es un chequeo», y la meta «Diagnóstico gratis» por «Chequeo gratis», sin
+// declararlo. Era falso: el chequeo es automático, instantáneo y no mide si la IA te nombra
+// (FAQ de /v3/diagnostico/). Se restituyó la bio y la meta publicadas. «Chequeo» en esta
+// página nombra SOLO el automático, y sus botones van a /v3/diagnostico/ (spec §7), no a
+// /v3/#chequeo: con el nav fijo, el ancla de la home dejaba el campo bajo el módulo.
 //
 // LA FOTO: el retrato va grande y entero (3:4, el mismo formato del archivo, 896×1200), no
 // en avatar. En driftime la gente va a buen tamaño. La única otra imagen es ventana.jpg,
@@ -33,10 +53,17 @@
 // y la decisión es suya. (En la v3 queda solo «Conectamos… las medimos», que describe lo
 // que se entrega: con la regla de voz del 5-oct, plural para lo que se entrega, calza.)
 //
-// ⚠️ HALLAZGO DE COPY, tampoco corregido: «El objetivo no es solo que vendas. Es que…» es
-// la construcción «no solo X» del detector anti-slop (A4). Es una frase de la bio
-// publicada; por eso va verbatim y SIN destacarla (no es un titular ni una cita grande).
-// Si Ramón la quiere sin el «no solo», basta con «El objetivo es que cuando alguien…».
+// ⚠️ PENDIENTE DE RAMÓN (QA 5-oct, menor, A4): «El objetivo no es solo que vendas. Es
+// que…» es la construcción «no solo X» del detector anti-slop. Es una frase de la bio
+// publicada; va verbatim y SIN destacarla (no es titular ni cita grande) hasta que Ramón
+// decida. Versión propuesta: «El objetivo es que cuando alguien pregunte por tu rubro, tu
+// nombre ya esté ahí.». Su decisión, sea cual sea, va a la spec §7.
+//
+// ⚠️ PENDIENTE DE CLARA O RAMÓN (QA 5-oct, menor, A10): la fila 1 de «Cómo trabajo»
+// («Diagnóstico antes que contrato») y el párrafo del cierre dicen casi lo mismo, con
+// «Gratis, en 24 horas» en los dos. Son dos textos publicados; cuál se va no lo decide el
+// constructor. Opciones: quitar el párrafo del cierre (queda h2 + línea chica + botones) o
+// quitar la fila 1.
 //
 // JSON-LD: AboutPage + BreadcrumbList, los mismos nodos e @id de antes. La Person
 // (#autor-ramon) la emite Layout.astro; acá solo se referencia, para no duplicar @id.
@@ -48,6 +75,7 @@ import Pieza from '../../components/v3/Pieza.astro';
 import '../../styles/driftime.css';
 
 const url = 'https://spindlelab.cl/nosotros/';
+const NB = '\u00a0'; // «24 horas» no se parte entre líneas
 
 // La biografía publicada, párrafo por párrafo. No se edita aquí sin Ramón.
 const presentacion =
@@ -70,10 +98,10 @@ const porque = [
 ];
 
 const primero =
-  'Lo primero es un chequeo. Reviso tu sitio, tu contenido y si la IA te nombra, y te entrego en una página qué te frena y qué mueve la aguja. Gratis, en 24 horas. Con eso decides con información, no a ciegas.';
+  `Lo primero es un diagnóstico. Reviso tu sitio, tu contenido y si la IA te nombra, y te entrego en una página qué te frena y qué mueve la aguja. Gratis, en 24${NB}horas. Con eso decides con información, no a ciegas.`;
 
 const puntos = [
-  { t: 'Diagnóstico antes que contrato', d: 'Antes de cobrarte nada, reviso tu sitio y tu presencia en IA y te muestro los hallazgos en una página. Gratis, en 24 horas.' },
+  { t: 'Diagnóstico antes que contrato', d: `Antes de cobrarte nada, reviso tu sitio y tu presencia en IA y te muestro los hallazgos en una página. Gratis, en 24${NB}horas.` },
   { t: 'Arreglo lo técnico y lo legible', d: 'SEO técnico, datos estructurados y contenido que la IA pueda citar. No hay que rehacer tu sitio. Hay que hacerlo legible.' },
   { t: 'Mido si te recomiendan', d: 'Registro si ChatGPT, Gemini y Perplexity te nombran ante las preguntas de tus clientes. Con fecha, no de memoria. Nada de métricas de vanidad.' },
   { t: 'Sin humo', d: 'No prometo primeros lugares. Nadie puede garantizarlos. Te digo qué se puede mover y qué no, y me hago cargo de lo que sí.' },
@@ -105,7 +133,7 @@ const jsonLd = {
 
 <Layout
   title="Ramón Vallejos, consultor de SEO técnico e IA · SpindleLab"
-  description="Detrás de SpindleLab está Ramón Vallejos: SEO técnico y visibilidad en motores de IA, con evidencia antes que promesas. Chequeo gratis en 24 horas."
+  description="Detrás de SpindleLab está Ramón Vallejos: SEO técnico y visibilidad en motores de IA, con evidencia antes que promesas. Diagnóstico gratis en 24 horas."
   bodyClass="d-body"
 >
   <meta slot="head" name="robots" content="noindex, nofollow" />
@@ -119,7 +147,7 @@ const jsonLd = {
       <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Nosotros</nav>
       <h1 class="d-h1 d-h1-nos">No te prometo. Te muestro.</h1>
       <p class="d-linea">Detrás de SpindleLab está Ramón Vallejos: SEO técnico y visibilidad en motores de IA, con evidencia antes que promesas.</p>
-      <div class="d-btns"><a class="d-btn" href="/v3/#chequeo">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbeme</a></div>
+      <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>
     </header>
 
     {/* El retrato a buen tamaño, entero, y la presentación al lado (la «entrada» de la
@@ -134,10 +162,11 @@ const jsonLd = {
 
     <section class="d-sec" aria-labelledby="s-tra">
       <div class="d-eti"><h2 class="d-h2" id="s-tra">{trayectoriaEti}</h2></div>
-      <div class="d-filas">{trayectoria.map((t) => <p class="d-guia">{t}</p>)}</div>
+      <div class="d-filas">{trayectoria.map((t) => { const [a, b] = t.split('E-commerce'); return <p class="d-guia">{a}{b !== undefined && <><span class="d-nobr-nos">E-commerce</span>{b}</>}</p>; })}</div>
     </section>
 
-    <section class="d-sec" aria-labelledby="s-por">
+    {/* Prosa corta, no lista: la etiqueta no se pega (spec §7, .d-sec--quieta). */}
+    <section class="d-sec d-sec--quieta" aria-labelledby="s-por">
       <div class="d-eti"><h2 class="d-h2" id="s-por">Por qué un solo sistema</h2></div>
       <div class="d-texto-nos">
         <p class="d-guia">{porque[0]}</p>
@@ -155,11 +184,14 @@ const jsonLd = {
       </div>
     </section>
 
-    <section class="d-sec" aria-labelledby="s-apa">
-      <div class="d-eti"><h2 class="d-h2" id="s-apa">¿Apareces cuando preguntan?</h2><p class="d-chico">Te lo muestro antes de que pagues nada.</p></div>
+    {/* Cierre. El párrafo describe el DIAGNÓSTICO (a mano, 24 horas): el botón principal
+         lleva a pedirlo. El chequeo automático va de secundario, a /v3/diagnostico/. Corta,
+         así que quieta. */}
+    <section class="d-sec d-sec--quieta" aria-labelledby="s-apa">
+      <div class="d-eti"><h2 class="d-h2" id="s-apa">¿Apareces cuando tus clientes preguntan?</h2><p class="d-chico">Te lo muestro antes de que pagues nada.</p></div>
       <div class="d-texto-nos">
         <p class="d-guia">{primero}</p>
-        <div class="d-btns"><a class="d-btn" href="/v3/#chequeo">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbeme</a></div>
+        <div class="d-btns"><a class="d-btn" href={CONTACTO}>Pedir el diagnóstico</a><a class="d-btn d-btn--alt" href="/v3/diagnostico/">Correr el chequeo</a></div>
       </div>
     </section>
 
@@ -190,6 +222,9 @@ const jsonLd = {
   /* «No te prometo. Te / muestro.» en celular: el titular se parte por la frase, no por
      el ancho. */
   .d-h1-nos { text-wrap: balance; }
+  /* «E-commerce» no se parte en el guion (a 390 quedaba «… y E-» / «commerce»). Manrope no
+     trae U+2011, así que el guion no separable caería a otra fuente: span nowrap. */
+  .d-nobr-nos { white-space: nowrap; }
   @media (max-width: 767px) {
     .d-retrato-nos { grid-template-columns: 1fr; gap: 28px; }
     .d-pausa-nos { margin-top: 110px; }

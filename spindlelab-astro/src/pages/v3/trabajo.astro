@@ -9,7 +9,16 @@
 // LA REFERENCIA: driftime.com/work. Una sola sección de proyectos, la imagen grande y el
 // nombre chico debajo: la imagen hace el trabajo, la etiqueta solo identifica. Sus casos
 // arman la galería en grillas asimétricas (a sangre, dos lado a lado, 1 + texto). Acá:
-// una a sangre, un par 5 + 7 (no mitades iguales) y una de 8 columnas con su pie al lado.
+// una a sangre, un par 5 + 7 (no mitades iguales) y una de 8 columnas con su pie al lado
+// (7 + 5 entre 1024 y 1279; apilada con el pie 5 + 7 entre 768 y 1023: el pie no baja de
+// ~43 caracteres por línea en ningún ancho de tableta o escritorio, medido).
+//
+// QA INDEPENDIENTE (5-oct), lo que cambió: la línea de Raigal dice solo lo construido (una
+// home); el alt del mockup en teléfono describe el teléfono; sin nota en la entrada (repetía
+// la bajada y empujaba la obra bajo el aviso de cookies a 390); el cierre habla a todos, con
+// el chequeo y el precio de entrada de Desarrollo Web, sin prometer piezas por rubro, y no
+// se pega (--quieta); la barra de «Bernardo Combeau | Model» va en gris; el grafo suma url,
+// #breadcrumb y la lista de las cuatro piezas.
 //
 // Clasifican por RUBRO, no por servicio, porque un prospecto se reconoce en su rubro, no en
 // el nombre del servicio que le vendimos a otro. Acá igual.
@@ -324,6 +333,12 @@ const jsonLd = {
     .d-obra-trab--final .d-pie-trab { grid-column: 1 / -1; align-self: start; padding-left: 0; display: grid; grid-template-columns: subgrid; }
     .d-obra-trab--final .d-pie-trab__id { grid-column: 1 / span 5; }
     .d-obra-trab--final .d-pie-trab__txt { grid-column: 6 / -1; }
+  }
+  /* Entre 1024 y 1279 el 8 + 4 todavía deja el pie en ~290 px (33 caracteres a 1024,
+     medido): 7 + 5 hasta que las 4 columnas den ~40. */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .d-obra-trab--final .d-obra-trab__img { grid-column: 1 / span 7; }
+    .d-obra-trab--final .d-pie-trab { grid-column: 8 / -1; }
   }
 
   @media (max-width: 767px) {

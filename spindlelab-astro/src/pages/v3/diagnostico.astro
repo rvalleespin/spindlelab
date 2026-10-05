@@ -14,20 +14,23 @@
 // El marcado del formulario es el mismo de la home (.d-instr / .d-dom). El script va tal
 // cual (/assets/js/v3-chequeo.js) y sus estilos también (styles/chequeo-v3.css).
 //
-// LO QUE ESTA PÁGINA LE PONE AL RESULTADO, SIN TOCAR LA HOJA COMPARTIDA:
-// chequeo-v3.css pinta con variables del sitio publicado (--ink-50, --ink-70, --line,
-// --teal, --headline, --bg) que la v3 no define: sin esto el resultado sale sin bordes y
-// con el gris azulado viejo de --surface. Se definen abajo, en el contenedor del
-// instrumento, mapeadas a los tokens d-*. Los dos botones del remate (.chq-ramas) se
-// bajan a 36 px: la spec no admite otro botón grande que el del chequeo. Y el primero
-// recupera su texto negro: .d-body a { color: inherit } le ganaba y quedaba papel sobre
-// papel (medido con una respuesta simulada de /api/chequeo; en la home pasa lo mismo).
+// EL RESULTADO DEL CHEQUEO tiene un solo dueño: chequeo-v3.css, bloque «EN EL SISTEMA
+// DRIFTIME (5-oct)» (variables mapeadas a los tokens d-*, botones del remate a 36 px, texto
+// negro en .chq-r1). Spec §7. Esta página NO repite esas reglas: solo ubica el resultado
+// bajo el instrumento (márgenes). Medido con una respuesta simulada de /api/chequeo.
 //
-// EL COPY. Todo sale de paginas-v3.json salvo los tres bloques con su peso y las dos notas
-// de «no mide» y «lo que muestran las corridas», que el JSON perdió y están en la página
-// publicada (public/diagnostico/index.html), de donde se copian tal cual.
-// Las dos preguntas de privacidad del FAQ se muestran en su propia sección; las cinco
-// siguen visibles en la página y el FAQPage del JSON-LD no cambia.
+// EL COPY. Sale de paginas-v3.json salvo:
+//   · los tres bloques con su peso y las dos notas de «no mide» y «lo que muestran las
+//     corridas», que el JSON perdió y están en la página publicada
+//     (public/diagnostico/index.html), de donde se copian tal cual;
+//   · cuatro textos que el QA del 5-oct devolvió y que en el JSON siguen como antes (la
+//     corrección va propuesta a Clara/Simón; cuando el JSON cambie, se vuelve a leer de ahí):
+//     la línea bajo el h1 (nombraba a Gemini, que functions/api/chequeo.js no prueba en
+//     vivo, y omitía a Claude, que sí), la guía de la entrada (sin «Cada vez más…»), el
+//     rótulo de «Los 21 chequeos» (sin la comparación con «ninguna herramienta del rubro»,
+//     más amplia que su respaldo) y el rótulo del cierre (sin pregunta ni «sin compromiso»).
+// Las cinco preguntas van juntas en «Lo que solemos responder», como el FAQPage.
+// Los desvíos de la plantilla Herramienta (spec §4) están declarados en spec §7.
 import Layout from '../../layouts/Layout.astro';
 import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
@@ -39,12 +42,8 @@ import '../../styles/chequeo-v3.css'; // el resultado del chequeo se pinta con e
 import '../../styles/driftime.css';
 
 const s = (paginas as Record<string, any>).diagnostico;
-const [chequeos, caminos, ley, responde, cierre] = s.secciones;
-
-// Privacidad: dos preguntas del FAQ, en su propia sección. El resto, en «preguntas».
-const PRIVACIDAD = ['¿Guardan mi dominio?', '¿El chequeo es realmente gratis?'];
-const privacidad = PRIVACIDAD.map((p) => s.faq.find((f: any) => f.p === p)).filter(Boolean);
-const preguntas = s.faq.filter((f: any) => !PRIVACIDAD.includes(f.p));
+// La quinta sección del JSON (el cierre) no se lee: su rótulo va reescrito abajo (ver cabecera).
+const [chequeos, caminos, ley, responde] = s.secciones;
 
 // Verifica y Cumple aparece donde se habla de Verifica y Cumple: es la herramienta misma,
 // producto propio, no un resultado del chequeo.
@@ -87,7 +86,10 @@ const jsonLd = {
     <header class="d-cab d-cab-diag">
       <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Chequeo de visibilidad en IA</nav>
       <h1 class="d-h1">{s.h1}</h1>
-      <p class="d-linea">Pon tu dominio y revisamos al instante si ChatGPT, Gemini y Perplexity pueden entrar a tu sitio, entender qué haces y citarte.</p>
+      {/* Los motores que nombra son los que el chequeo prueba en vivo (functions/api/chequeo.js:
+           OAI-SearchBot/ChatGPT-User, Claude-SearchBot/Claude-User, PerplexityBot/Perplexity-User).
+           Gemini no: Google-Extended cuenta como robot de entrenamiento. */}
+      <p class="d-linea">Pon tu dominio y revisamos al instante si los robots de ChatGPT, Claude y Perplexity pueden entrar a tu sitio, y si la IA puede entender qué haces y citarte.</p>
 
       {/* EL INSTRUMENTO. Los id son contrato con el script: no tocar. */}
       <div class="d-instr d-instr-diag" id="chequeo">
@@ -108,14 +110,19 @@ const jsonLd = {
 
     <figure class="d-sangre"><img src="/assets/img/d/hilo.jpg" alt="Un hilo luminoso cruza en diagonal un fondo verde oscuro" width="1400" height="787" loading="eager" fetchpriority="high" decoding="async" style="object-position:50% 55%" /></figure>
 
+    {/* El primer «Pedirlo» de la página (brief §3: lo que tiene que pasar en /diagnostico/).
+         Secundario y de 36 px: el protagonista sigue siendo el instrumento. */}
     <div class="d-entrada">
       <p class="d-nota-card"><b>21 chequeos, 100 puntos.</b> Tres bloques, con su peso a la vista: leerte 30, entenderte 40, citarte 30.</p>
-      <p class="d-guia">Cada vez más clientes preguntan antes de buscar. El chequeo de esta página lee tu sitio; el diagnóstico completo le pregunta a los motores. Los dos son gratis.</p>
+      <div class="d-entrada-diag">
+        <p class="d-guia">El chequeo de esta página lee tu sitio; el diagnóstico completo le pregunta a los motores. Los dos son gratis.</p>
+        <div class="d-btns"><a class="d-btn d-btn--alt" href={CONTACTO}>Pedir el diagnóstico</a></div>
+      </div>
     </div>
 
     {/* QUÉ REVISA */}
     <section class="d-sec" id="metodologia" aria-labelledby="s-che">
-      <div class="d-eti"><h2 class="d-h2" id="s-che">{chequeos.h2}</h2><p class="d-chico">{chequeos.parrafos[0]}</p></div>
+      <div class="d-eti"><h2 class="d-h2" id="s-che">{chequeos.h2}</h2><p class="d-chico">La metodología completa, con el peso de cada bloque, para que puedas repetir el chequeo a mano si quieres.</p></div>
       <div class="d-filas">
         <div class="d-plan">
           <h3 class="d-h3">¿Te pueden leer?</h3><span class="d-plan__precio">30 puntos</span>
@@ -133,22 +140,13 @@ const jsonLd = {
     </section>
 
     {/* QUÉ NO REVISA */}
+    {/* Sin guía: lo que el chequeo no mide ya lo dice la pregunta «¿Qué mide exactamente el
+         puntaje?» (QA 5-oct, regla del 30 %). Quedan las dos notas de la página publicada. */}
     <section class="d-sec" aria-labelledby="s-nom">
       <div class="d-eti"><h2 class="d-h2" id="s-nom">Lo que este chequeo no mide.</h2></div>
-      <div>
-        <p class="d-guia">No mide si hoy te citan. Eso depende de que te mencionen en fuentes que la IA lee, y no se puede saber leyendo tu sitio: hay que preguntarle a los motores. Eso es el diagnóstico completo, y lo hacemos a mano.</p>
-        <div class="d-filas d-filas-diag">
-          <div><h3 class="d-h3">Y cómo medimos si la IA te nombra.</h3><p class="d-cuerpo">{chequeos.bloques[0].d}</p></div>
-          <div><h3 class="d-h3">Lo que muestran las corridas.</h3><p class="d-cuerpo">Quienes aparecen recomendados casi nunca lo consiguen desde su propio sitio: los motores los citan desde rankings, directorios y artículos de terceros. Sin saber de dónde sale la recomendación, no hay nada que trabajar.</p></div>
-        </div>
-      </div>
-    </section>
-
-    {/* PRIVACIDAD */}
-    <section class="d-sec d-faq" aria-labelledby="s-pri">
-      <div class="d-eti"><h2 class="d-h2" id="s-pri">Tu dominio y tus datos.</h2></div>
-      <div class="d-filas">
-        {privacidad.map((f: any) => (<div><h3 class="d-h3">{f.p}</h3><p class="d-cuerpo">{f.r}</p></div>))}
+      <div class="d-filas d-filas-diag">
+        <div><h3 class="d-h3">Y cómo medimos si la IA te nombra.</h3><p class="d-cuerpo">{chequeos.bloques[0].d}</p></div>
+        <div><h3 class="d-h3">Lo que muestran las corridas.</h3><p class="d-cuerpo">Quienes aparecen recomendados casi nunca lo consiguen desde su propio sitio: los motores los citan desde rankings, directorios y artículos de terceros. Sin saber de dónde sale la recomendación, no hay nada que trabajar.</p></div>
       </div>
     </section>
 
@@ -161,7 +159,7 @@ const jsonLd = {
             <div class="d-fase"><span class="d-fase__n">{String(i + 1).padStart(2, '0')}</span><h3 class="d-h3">{b.t}</h3><p class="d-cuerpo">{b.d}</p></div>
           ))}
         </div>
-        <div class="d-btns d-btns-diag"><a class="d-btn" href={CONTACTO}>Pedir el diagnóstico completo</a><a class="d-btn d-btn--alt" href="#chequeo">Volver al chequeo</a></div>
+        <div class="d-btns d-btns-diag"><a class="d-btn" href={CONTACTO}>Pedir el diagnóstico</a><a class="d-btn d-btn--alt" href="#chequeo">Volver al chequeo</a></div>
       </div>
     </section>
 
@@ -179,12 +177,14 @@ const jsonLd = {
     <section class="d-sec d-faq" aria-labelledby="s-faq">
       <div class="d-eti"><h2 class="d-h2" id="s-faq">{responde.h2}</h2></div>
       <div class="d-filas">
-        {preguntas.map((f: any) => (<div><h3 class="d-h3">{f.p}</h3><p class="d-cuerpo">{f.r}</p></div>))}
+        {s.faq.map((f: any) => (<div><h3 class="d-h3">{f.p}</h3><p class="d-cuerpo">{f.r}</p></div>))}
       </div>
     </section>
 
-    {/* El CTA dice qué pasa al hacer clic (antislop A5); la pregunta del cierre va en el rótulo. */}
-    <a class="d-siguiente d-siguiente-diag" href={CONTACTO}><span class="d-chico d-gris">{cierre.h2} {cierre.parrafos[0]}</span><span class="d-h1">Pedir el diagnóstico completo →</span></a>
+    {/* El CTA dice qué pasa al hacer clic (antislop A5). Los botones dicen «el diagnóstico»,
+         sin «completo»: contacto lo ofrece como «mini-diagnóstico» y los dos adjetivos se
+         contradecían justo en el clic (QA 5-oct; el nombre único queda para Clara). */}
+    <a class="d-siguiente d-siguiente-diag" href={CONTACTO}><span class="d-chico d-gris">Una página, gratis, en 24 horas.</span><span class="d-h1">Pedir el diagnóstico →</span></a>
   </main>
 
   <FooterV3 />
@@ -194,31 +194,15 @@ const jsonLd = {
 
 <style>
   /* El instrumento: mismo marcado y clases que la home; aquí va debajo del h1. */
-  .d-instr-diag {
-    margin-top: 4px;
-    scroll-margin-top: 120px;
-    /* Variables que chequeo-v3.css espera y la v3 no define (ver cabecera). */
-    --ink-50: var(--d-gris);
-    --ink-70: var(--d-papel);
-    --line: var(--d-filete);
-    --surface: var(--d-modulo);
-    --surface-2: var(--d-modulo);
-    --teal: var(--support);
-    --headline: 'Manrope', system-ui, sans-serif;
-    --bg: var(--d-noche);
-  }
+  /* Los colores, bordes y botones del resultado son de chequeo-v3.css (ver cabecera);
+     aquí solo su lugar bajo el instrumento. */
+  .d-instr-diag { margin-top: 4px; scroll-margin-top: 120px; }
   .d-instr-diag .chq-error { margin-top: 12px; }
   .d-instr-diag #chq-out { margin-top: 28px; }
   .d-res-diag:not(:has(#chq-out[style*='block'])) h2 { display: none; }
-  .d-instr-diag :global(.chq-error-codigo) { border-top-color: var(--d-filete); }
-  .d-instr-diag :global(.chq-ramas a) { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; font-size: 0.875rem; font-weight: 500; }
-  /* .d-body a { color: inherit } (driftime.css) le gana a .chq-r1 { color: var(--bg) }:
-     sin esto el botón principal del remate sale papel sobre papel, vacío a la vista. */
-  .d-instr-diag :global(.chq-r1) { color: var(--d-noche); }
-  .d-instr-diag :global(.chq-r2) { background: var(--d-noche); }
 
+  .d-entrada-diag .d-btns { margin-top: 22px; }
   .d-cuerpo b { color: var(--d-papel); font-weight: 600; }
-  .d-filas-diag { margin-top: 36px; }
   .d-filas-diag .d-h3 { margin-bottom: 8px; }
   .d-btns-diag { margin-top: 28px; }
   :global(.d-vyc-diag) { aspect-ratio: 4 / 3; margin-top: 36px; }
@@ -228,6 +212,9 @@ const jsonLd = {
     /* El instrumento tiene que quedar arriba del pliegue y pulsable con el aviso de
        cookies abierto, también en un teléfono de 667 px de alto. */
     .d-cab-diag { padding-top: 124px; }
+    /* La guía va antes de la nota, como en desarrollo-web (driftime.css lo hace con la
+       .d-guia suelta; aquí va envuelta con su botón). */
+    .d-entrada-diag { order: -1; }
     .d-siguiente-diag { flex-direction: column; align-items: flex-start; gap: 12px; }
   }
 </style>
