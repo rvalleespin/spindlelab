@@ -1,28 +1,34 @@
 ---
-// LOS 7 POSTS DEL BLOG en el lenguaje v3.
+// LOS 7 POSTS DEL BLOG — sistema driftime (5-oct-2026).
 //
-// EL CUERPO DEL ARTÍCULO VA VERBATIM. No se reescribió ni se pasó por una extracción a
-// texto plano: se conserva el HTML publicado tal cual (encabezados, enlaces internos,
-// listas, tablas, acordeones del FAQ y el índice del artículo). En contenido largo esa es
-// la diferencia entre traducir el diseño y perder enlaces internos sin darse cuenta.
+// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md, §4 plantilla
+// «Artículo»: miga · h1 60 px · fecha → imagen editorial → etiqueta pegajosa con el índice
+// del artículo + cuerpo verbatim a la derecha → siguiente artículo → pie.
+// Implementación de referencia: v3/servicios/desarrollo-web.astro (d-cab, d-sangre, d-sec,
+// d-siguiente). Sin display: las internas tienen cero Manrope 800 en mayúsculas.
 //
-// EL SCHEMA TAMPOCO SE REINVENTA: el grafo de cada post se lleva completo del publicado,
-// con su Article, su autor fijo #autor-ramon, su BreadcrumbList y su FAQPage donde existe.
-// Por eso acá NO se emite el grafo del Layout: se reemplaza por el del artículo, para no
-// duplicar nodos de organización y persona.
+// EL CUERPO VA VERBATIM. Cada data/blog-v3/<slug>.html es el HTML publicado tal cual. Se
+// parte en dos, sin retipear nada:
+//   · la CABEZA (miga, h1, línea de autor) se lee del archivo y se vuelve a montar en la
+//     cabecera d-cab, con las mismas palabras. Tiene que salir de ahí porque la plantilla
+//     pone el h1 ARRIBA de la imagen, y dejarlo además dentro del cuerpo daría dos h1.
+//   · el bloque .prose (todo lo que se lee) se inyecta entero en la columna derecha. Lo
+//     único que se le toca son atributos, nunca texto: los href internos pasan a /v3/ y
+//     los h2 que no traen id reciben uno, para el índice.
+// Si un post nuevo no trae esa estructura, el build se cae con el nombre del archivo: es
+// preferible a publicar una página con dos h1 o sin cuerpo.
 //
-// EL <h1> VIVE DENTRO DEL ARTÍCULO. La página no agrega otro; si se agregara, quedarían
-// dos h1 por página.
-//
-// El cuerpo va sobre papel (ver styles/prosa-v3.css): oscuro para entrar, claro para leer.
+// EL SCHEMA NO SE REINVENTA: el grafo de cada post (Article + Person #autor-ramon +
+// BreadcrumbList + FAQPage, con su ProfessionalService) va completo, tal como el publicado.
+// OJO: Layout.astro emite SIEMPRE su propio grafo (#org, #website, #autor-ramon), así que
+// #org y #autor-ramon salen dos veces en el HTML. Ya pasaba antes de esta versión (la nota
+// anterior de este archivo decía que el grafo del Layout se reemplazaba; no es así). No se
+// toca acá porque arreglarlo es tocar Layout, que es compartido: queda anotado.
 import Layout from '../../../layouts/Layout.astro';
-import { caja } from '../../../utils/caja';
-import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
-
-import '../../../styles/prosa-v3.css';
-import '../../../styles/campos-v3.css'; // tintes de campo, filete, boton-campo
+import '../../../styles/driftime.css';
+import indice from '../../../data/blog-v3/_indice.json';
 
 const cuerpos = import.meta.glob('../../../data/blog-v3/*.html', { query: '?raw', import: 'default', eager: true });
 const datos = import.meta.glob('../../../data/blog-v3/*.json', { eager: true });
@@ -41,68 +47,105 @@ export function getStaticPaths() {
 
 const { slug } = Astro.params;
 const crudo = Object.entries(cuerpos).find(([r]) => slugDe(r) === slug)?.[1] as string;
+const entrada = Object.entries(datos).find(([r]) => slugDe(r) === slug)?.[1] as any;
+const info = entrada?.default ?? entrada;
+const meta = info.meta;
 
-// LOS ENLACES INTERNOS APUNTAN AL SITIO VIVO. El cuerpo se conserva verbatim, y eso
-// incluye sus href: /blog/, /diagnostico/, /servicios/... Dentro de la maqueta esos
-// enlaces te sacan del v3 y te llevan al sitio publicado, que es justo lo que no
-// queremos al recorrerla. Acá se reescriben SOLO los prefijos que existen en v3; lo
+// ---------------------------------------------------------------- la cabeza del post
+const MARCA_PROSA = '<div class="prose">';
+const iProsa = crudo.indexOf(MARCA_PROSA);
+if (iProsa < 0) throw new Error(`blog-v3/${slug}.html: no trae el bloque <div class="prose">`);
+const cabeza = crudo.slice(0, iProsa);
+
+const h1 = cabeza.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1].trim();
+if (!h1) throw new Error(`blog-v3/${slug}.html: no trae <h1>`);
+// El último eslabón de la miga publicada es el nombre corto del post.
+const migaCorta = [...(cabeza.match(/<nav class="crumbs"[\s\S]*?<\/nav>/)?.[0] ?? '').matchAll(/<li>([\s\S]*?)<\/li>/g)].pop()?.[1].trim();
+const byline = cabeza.match(/<p class="byline">([\s\S]*?)<\/p>/)?.[1] ?? '';
+const tema = byline.match(/<b>([\s\S]*?)<\/b>/)?.[1].trim();
+const [fechaVisible, lectura] = [...byline.matchAll(/<span>([\s\S]*?)<\/span>/g)].map((m) => m[1].trim());
+const autorBloque = cabeza.match(/<div class="author">([\s\S]*?)<\/div>\s*<\/div>/)?.[1] ?? '';
+const autor = {
+  src: autorBloque.match(/<img[^>]*\bsrc="([^"]+)"/)?.[1],
+  alt: autorBloque.match(/<img[^>]*\balt="([^"]*)"/)?.[1] ?? '',
+  nombre: autorBloque.match(/<p class="author-name">([\s\S]*?)<\/p>/)?.[1].trim(),
+  rol: autorBloque.match(/<p class="author-role">([\s\S]*?)<\/p>/)?.[1].trim(),
+};
+
+// ---------------------------------------------------------------- el cuerpo, verbatim
+// Del <div class="prose"> hasta su cierre: el archivo termina en «</div> </div>» (prose y
+// el contenedor .wrap), y lo que queda después del segundo cierre tiene que ser vacío.
+const iCierreWrap = crudo.lastIndexOf('</div>');
+const iCierreProsa = crudo.lastIndexOf('</div>', iCierreWrap - 1);
+if (crudo.slice(iCierreWrap + 6).trim() || crudo.slice(iCierreProsa + 6, iCierreWrap).trim()) {
+  throw new Error(`blog-v3/${slug}.html: el bloque .prose no cierra donde se espera`);
+}
+const prosa = crudo.slice(iProsa + MARCA_PROSA.length, iCierreProsa);
+
+// LOS ENLACES INTERNOS APUNTAN AL SITIO VIVO (/blog/, /diagnostico/, /servicios/...). Dentro
+// de la maqueta te sacarían del v3. Se reescriben SOLO los prefijos que existen en v3; lo
 // que no está en la lista se deja como estaba, para no inventar destinos.
 const RUTAS = ['blog', 'servicios', 'diagnostico', 'contacto', 'metodo', 'nosotros'];
-const cuerpo = crudo
+const cuerpo = prosa
   .replace(new RegExp(`href="/(${RUTAS.join('|')})/`, 'g'), 'href="/v3/$1/')
   .replace(/href="\/"/g, 'href="/v3/"');
-// ÍNDICE DEL ARTÍCULO. Los h2 del cuerpo publicado casi nunca traen id: de los siete
-// artículos, solo uno los tiene. Así que el id se genera acá a partir del texto del
-// encabezado, y se RESPETA el que ya venga, para no romper un enlace que alguien ya
-// tenga guardado.
-//
-// Se hace en el build, no en el navegador: el índice sale en el HTML entregado, o sea
-// funciona sin JS y lo pueden leer los motores. El JS solo agrega saber en cuál sección
-// vas, que es un lujo, no el contenido.
+
+// ÍNDICE DEL ARTÍCULO. De los siete posts, solo uno trae id en sus h2: el id se genera en el
+// build a partir del texto y se RESPETA el que ya venga (un enlace guardado no se rompe).
+// En el build y no en el navegador: el índice sale en el HTML y funciona sin JS.
 function idDe(texto: string) {
   return texto
     .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')   // fuera los acentos
+    .replace(/[̀-ͯ]/g, '')
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
     .slice(0, 60);
 }
-
 const secciones: { id: string; texto: string }[] = [];
 const usados = new Set<string>();
-const cuerpoConIds = cuerpo.replace(
-  /<h2([^>]*)>([\s\S]*?)<\/h2>/g,
-  (todo: string, attrs: string, dentro: string) => {
-    const texto = dentro.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-    if (!texto) return todo;
-    const yaTiene = attrs.match(/\bid="([^"]+)"/);
-    let id = yaTiene ? yaTiene[1] : idDe(texto);
-    if (!id) return todo;
-    // desempate: dos encabezados con el mismo texto darían el mismo id y el índice
-    // mandaría los dos al primero
-    let n = 2;
-    const base = id;
-    while (usados.has(id)) id = `${base}-${n++}`;
-    usados.add(id);
-    secciones.push({ id, texto });
-    return yaTiene ? todo : `<h2${attrs} id="${id}">${dentro}</h2>`;
-  }
-);
-
-// Con menos de tres secciones un índice no ayuda: ocupa una columna para decir lo que
-// ya se ve bajando dos pantallas.
+const cuerpoConIds = cuerpo.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/g, (todo: string, attrs: string, dentro: string) => {
+  const texto = dentro.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  if (!texto) return todo;
+  const yaTiene = attrs.match(/\bid="([^"]+)"/);
+  let id = yaTiene ? yaTiene[1] : idDe(texto);
+  if (!id) return todo;
+  const base = id;
+  let n = 2;
+  while (usados.has(id)) id = `${base}-${n++}`;   // dos h2 iguales no pueden mandar al mismo
+  usados.add(id);
+  secciones.push({ id, texto });
+  return yaTiene ? todo : `<h2${attrs} id="${id}">${dentro}</h2>`;
+});
+// Con menos de tres secciones un índice no orienta: dice lo que se ve bajando dos pantallas.
 const hayIndice = secciones.length >= 3;
 
-const info = (Object.entries(datos).find(([r]) => slugDe(r) === slug)?.[1] as any).default ?? Object.entries(datos).find(([r]) => slugDe(r) === slug)?.[1];
-const meta = info.meta;
+// ---------------------------------------------------------------- imagen y siguiente
+// IMAGEN EDITORIAL: decisión de página, no dato del post (los posts no traen imagen). Solo
+// el pool honesto de §5, y ninguna afirma nada del artículo. El mapa es FIJO por slug y está
+// repartido sobre el orden de lectura (el del índice, del más nuevo al más antiguo, que es
+// el que sigue «Siguiente artículo»): dos seguidos nunca repiten imagen ni familia
+// (dominó · hilo · mesa), contando la vuelta del último al primero. Son 6 fotos para 7
+// posts: hilo.jpg se repite, a tres posts de distancia. El de los 21 chequeos lleva la
+// misma fila curva de fichas que su fila destacada en /v3/blog/.
+const IMAGEN: Record<string, { src: string; alt: string; w: number; h: number; pos?: string }> = {
+  '21-chequeos-visibilidad-ia': { src: '/assets/img/d/domino-curva.jpg', alt: 'Fichas de dominó de madera de pie en una fila curva, con luz cálida de costado', w: 1600, h: 1600, pos: '50% 62%' },
+  'como-elegir-verificar-agencia-aeo-geo-chile': { src: '/assets/img/d/hilo.jpg', alt: 'Un hilo luminoso cruza en diagonal un fondo verde oscuro', w: 1400, h: 787 },
+  'que-es-un-mini-diagnostico-seo': { src: '/assets/img/d/escritorio.jpg', alt: 'Escritorio de madera junto a la ventana, con un laptop, un cuaderno abierto y una taza', w: 1600, h: 670 },
+  'cuanto-cuesta-seo-tecnico-chile': { src: '/assets/img/d/domino.jpg', alt: 'Fichas de dominó negras cayendo en fila sobre un fondo oscuro', w: 1600, h: 1600, pos: '50% 58%' },
+  'seo-tecnico-fintechs-chile': { src: '/assets/img/d/hilo.jpg', alt: 'Un hilo luminoso cruza en diagonal un fondo verde oscuro', w: 1400, h: 787 },
+  'que-es-aeo-geo': { src: '/assets/img/d/ventana.jpg', alt: 'Mesa de trabajo junto a una ventana con cortinas, con un libro abierto, un laptop y una taza', w: 1600, h: 670, pos: '62% 50%' },
+  'como-aparecer-en-chatgpt': { src: '/assets/img/d/hilos.jpg', alt: 'Una línea dorada atraviesa un fondo oscuro de fibras', w: 1600, h: 1600, pos: '50% 24%' },
+};
+const img = IMAGEN[slug!] ?? IMAGEN['21-chequeos-visibilidad-ia'];
 
-const fecha = meta.datePublished
-  ? new Date(meta.datePublished).toLocaleDateString('es-CL', { day: 'numeric', month: 'long', year: 'numeric' })
-  : '';
+// Mismo orden que /v3/blog/ (misma expresión, para que los empates del 7-jul caigan igual).
+const orden = [...indice].sort((a, b) => (a.datePublished < b.datePublished ? 1 : -1));
+const iAqui = orden.findIndex((p) => p.slug === slug);
+const siguiente = orden[(iAqui + 1) % orden.length];
 ---
 
-<Layout title={meta.title} description={meta.description} bodyClass="bg-noche font-texto">
+<Layout title={meta.title} description={meta.description} bodyClass="d-body">
   <Fragment slot="head">
     <meta name="robots" content="noindex, nofollow" />
     <script type="application/ld+json" is:inline set:html={JSON.stringify(info.jsonLd)} />
@@ -111,153 +154,215 @@ const fecha = meta.datePublished
   <NavV3 />
 
   <main>
-    {/* Cabecera en tinta: migas y fecha. El titular es el h1 del artículo, más abajo. */}
-    <header class="text-papel px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-12 md:pb-16">
-      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-6" style="letter-spacing:0.16em">
-        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
-        <span aria-hidden="true" class="mx-2">·</span>
-        <a href="/v3/blog/" class="hover:text-papel transition-colors">Blog</a>
+    <header class="d-cab d-cab--art">
+      <nav class="d-miga" aria-label="Miga de pan">
+        <a href="/v3/">Inicio</a> · <a href="/v3/blog/">Blog</a>{migaCorta && <> · <span set:html={migaCorta} /></>}
       </nav>
-      {fecha && (
-        <p class="text-humo text-xs font-bold uppercase m-0" style="letter-spacing:0.16em">
-          <time datetime={meta.datePublished}>{fecha}</time>
-        </p>
+      <h1 class="d-h1" set:html={h1} />
+      <p class="d-linea">
+        {tema && <><span set:html={tema} /> · </>}
+        {fechaVisible && <time datetime={meta.datePublished} set:html={fechaVisible} />}
+        {lectura && <> · <span set:html={lectura} /></>}
+      </p>
+      {autor.nombre && (
+        <div class="d-autor-art">
+          {autor.src && <img src={autor.src} alt={autor.alt} width="44" height="44" loading="eager" />}
+          <p><span class="d-autor-art__nombre" set:html={autor.nombre} />{autor.rol && <span class="d-gris" set:html={autor.rol} />}</p>
+        </div>
       )}
     </header>
 
-    {/* El artículo, sobre papel. HTML verbatim del publicado. */}
-    <div class="bg-papel">
-      {/* ÍNDICE PEGAJOSO. El resto del v3 usa el sticky sobre listas verticales; un
-          artículo es prosa corrida y ahí el titular pegajoso no aplica, así que lo que
-          se queda quieto es el índice: te dice en qué parte del artículo vas.
-          El cuerpo NO se mueve de su sitio. La prosa mide 68ch y a 1440 sobran unos
-          700px a la derecha; el índice ocupa ese aire, no le quita ancho a la lectura.
-          En móvil deja de ser pegajoso y se muestra arriba, plegado en un <details>,
-          que es donde sí sirve: saltar sin recorrer cinco pantallas. */}
-      <div class="px-6 md:px-medianil py-24 md:py-40 md:grid md:grid-cols-12 md:gap-x-8">
-        {hayIndice && (
-          <nav
-            aria-label="Contenido del artículo"
-            class="indice-articulo md:col-span-3 md:col-start-10 md:order-2 md:sticky md:top-32 md:self-start mb-12 md:mb-0"
-          >
-            {/* ABIERTO en el HTML, y el JS lo pliega solo en móvil.
-                Al revés no funciona: Chrome esconde el contenido de un <details>
-                cerrado por el slot, no poniéndole display:none a los hijos, así que
-                un `display:block` en el CSS no lo revela. Lo comprobé con
-                checkVisibility(): getBoundingClientRect() sigue devolviendo una caja
-                con alto aunque el contenido no se pinte, y eso me hizo creer dos veces
-                que funcionaba.
-                Si el script no corre, la falla es un índice desplegado de más en
-                móvil, no un índice invisible en escritorio. */}
-            <details open>
-              <summary class="rotulo md:pointer-events-none">En este artículo</summary>
-              <ol class="list-none p-0 m-0 mt-5 border-t filete">
-                {secciones.map((sec) => (
-                  <li class="border-b filete">
-                    <a href={`#${sec.id}`} class="block py-2.5 text-sm leading-snug">
-                      {sec.texto}
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </details>
-          </nav>
-        )}
-        <article
-          class:list={['prosa-v3', hayIndice ? 'md:col-span-8 md:order-1' : 'md:col-span-12']}
-          set:html={cuerpoConIds}
-        />
-      </div>
+    <figure class="d-sangre">
+      <img src={img.src} alt={img.alt} width={img.w} height={img.h} loading="eager" fetchpriority="high" style={img.pos ? `object-position:${img.pos}` : undefined} />
+    </figure>
+
+    {/* ÍNDICE PEGAJOSO + CUERPO. Es la sección con etiqueta de driftime (.d-sec): lo que se
+         queda quieto a la izquierda no es un h2 sino el índice, que dice en qué parte vas.
+         En celular la etiqueta deja de pegarse (.d-sec ya lo hace) y el índice va arriba,
+         plegado.
+         El <details> sale ABIERTO en el HTML y el JS lo pliega solo en celular: al revés no
+         funciona, porque Chrome esconde el contenido de un <details> cerrado por el slot y
+         ningún display:block lo revela. Sin JS, lo peor es un índice desplegado de más en
+         celular, no un índice invisible en escritorio. */}
+    <div class="d-sec d-art">
+      {hayIndice ? (
+        <nav class="d-eti d-indice-art" aria-label="Contenido del artículo">
+          <details open>
+            <summary>En este artículo</summary>
+            <ol>
+              {secciones.map((sec, i) => (
+                <li>
+                  <a href={`#${sec.id}`}><span class="d-indice-art__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><span>{sec.texto}</span></a>
+                </li>
+              ))}
+            </ol>
+          </details>
+        </nav>
+      ) : <div />}
+      <article class="d-prosa-art" set:html={cuerpoConIds} />
     </div>
 
-    {/* NAVY. El blog era lo único del sitio sin campo de color: índice y artículos en
-        0%. Navy es el color de Visibilidad en IA, que es de lo que hablan casi todos los
-        artículos, así que el cierre del blog usa el mismo campo al que empuja. Decidido
-        por Ramón el 29-sep. */}
-    <section class="tinte--navy px-6 md:px-medianil py-32 md:py-seccion">
-      {/* ESTE TITULAR ERA «¿Te menciona la IA?», el h1 que la home retiró el 29-sep.
-          Quedó vivo acá, en display y hasta 5rem, en las 8 páginas del blog, y su botón
-          manda a /v3/#chequeo: una pieza que preguntaba y un destino que ahora afirma.
-          Pasa a afirmar lo mismo que el hero, y de paso fija el referente de «eje» en el
-          sitio, que es donde lo pone servicios-v3.json:720 («El sitio es el eje; la pauta
-          lo acelera»). La línea de apoyo de abajo no se toca: es la que conserva la
-          promesa del chequeo y las tres compuertas.
-          La redacción es mía, no de Ramón. Él eligió el h1 de la home, no éste. */}
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 max-w-[15ch]', caja('El sitio es el eje.')]}
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
-      >
-        El sitio es el eje.
-      </h2>
-      <p data-entra data-paso="1" class="mt-8 text-humo text-xl leading-relaxed max-w-prosa">
-        Te decimos si una IA te puede leer, si te entiende y si te puede citar. Treinta segundos.
-      </p>
-      <div class="mt-12 flex items-center gap-4 flex-wrap">
-        <a
-          href="/v3/#chequeo"
-          class="boton-campo"
-        >
-          Correr el chequeo
-        </a>
-        <a
-          href={CONTACTO}
-          class="rounded-v3 border filete hover:border-current text-sm font-bold px-8 py-4 transition-colors"
-        >
-          Conversemos tu proyecto
-        </a>
-      </div>
-    </section>
+    {siguiente && siguiente.slug !== slug && (
+      <a class="d-siguiente d-siguiente--art" href={`/v3/blog/${siguiente.slug}/`}>
+        <span class="d-chico d-gris">Siguiente artículo</span>
+        <span class="d-h1">{siguiente.headline} <span aria-hidden="true">→</span></span>
+      </a>
+    )}
   </main>
-
-  <script>
-    // EN QUÉ SECCIÓN VAS. Es lo único que el JS agrega al índice: los enlaces ya
-    // funcionan sin esto. Si el script no corre, se pierde la marca, no el contenido.
-    (() => {
-      const indice = document.querySelector('.indice-articulo');
-      if (!indice) return;
-
-      // PLEGADO SOLO EN MÓVIL. Ver la nota del marcado: el HTML sale abierto para que
-      // escritorio funcione sin JS, y acá se pliega donde estorba.
-      const caja = indice.querySelector('details');
-      const chico = window.matchMedia('(max-width: 767px)');
-      const ajustar = () => { if (caja) caja.open = !chico.matches; };
-      ajustar();
-      chico.addEventListener('change', ajustar);
-      const enlaces = [...indice.querySelectorAll('a[href^="#"]')];
-      const titulos = enlaces
-        .map((a) => document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1))))
-        .filter(Boolean);
-      if (titulos.length !== enlaces.length) return;
-
-      // No se usa IntersectionObserver acá a propósito: dice si un encabezado está a
-      // la vista, no en cuál sección estás parado. Entre dos encabezados no hay
-      // ninguno visible y la marca se apagaría justo mientras lees.
-      let pendiente = false;
-      const marcar = () => {
-        pendiente = false;
-        const linea = 140;
-        let actual = 0;
-        for (let i = 0; i < titulos.length; i++) {
-          if (titulos[i].getBoundingClientRect().top <= linea) actual = i;
-        }
-        // antes del primer encabezado no estás en ninguna sección todavía
-        const antes = titulos[0].getBoundingClientRect().top > linea;
-        enlaces.forEach((a, i) => {
-          if (!antes && i === actual) a.setAttribute('aria-current', 'true');
-          else a.removeAttribute('aria-current');
-        });
-      };
-      const pedir = () => {
-        if (pendiente) return;
-        pendiente = true;
-        requestAnimationFrame(marcar);
-      };
-      addEventListener('scroll', pedir, { passive: true });
-      addEventListener('resize', pedir);
-      marcar();
-    })();
-  </script>
 
   <FooterV3 />
 </Layout>
+
+<script>
+  // EN QUÉ SECCIÓN VAS, y el plegado en celular. Los enlaces del índice funcionan sin esto:
+  // si el script no corre se pierde la marca, no el contenido.
+  (() => {
+    const indice = document.querySelector('.d-indice-art');
+    if (!indice) return;
+
+    const caja = indice.querySelector('details');
+    const resumen = indice.querySelector('summary');
+    const chico = window.matchMedia('(max-width: 767px)');
+    const ajustar = () => {
+      if (caja) caja.open = !chico.matches;
+      // En escritorio el resumen es solo un rótulo: no se enfoca ni pliega nada.
+      if (resumen) resumen.tabIndex = chico.matches ? 0 : -1;
+    };
+    ajustar();
+    chico.addEventListener('change', ajustar);
+    resumen?.addEventListener('click', (e) => { if (!chico.matches) e.preventDefault(); });
+
+    const enlaces = [...indice.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')];
+    const titulos = enlaces
+      .map((a) => document.getElementById(decodeURIComponent(a.getAttribute('href')!.slice(1))))
+      .filter((t): t is HTMLElement => !!t);
+    if (titulos.length !== enlaces.length) return;
+
+    // No IntersectionObserver: dice si un encabezado está a la vista, no en qué sección
+    // estás. Entre dos encabezados no hay ninguno visible y la marca se apagaría leyendo.
+    let pendiente = false;
+    const marcar = () => {
+      pendiente = false;
+      const linea = 140;
+      let actual = 0;
+      for (let i = 0; i < titulos.length; i++) if (titulos[i].getBoundingClientRect().top <= linea) actual = i;
+      const antes = titulos[0].getBoundingClientRect().top > linea;
+      enlaces.forEach((a, i) => {
+        if (!antes && i === actual) a.setAttribute('aria-current', 'true');
+        else a.removeAttribute('aria-current');
+      });
+    };
+    const pedir = () => { if (pendiente) return; pendiente = true; requestAnimationFrame(marcar); };
+    addEventListener('scroll', pedir, { passive: true });
+    addEventListener('resize', pedir);
+    marcar();
+  })();
+</script>
+
+<style>
+  /* ------------------------------------------------------------ cabecera */
+  /* Sin tope propio: .d-cab ya corta en 1100 px, y con eso los títulos de 60-70 caracteres
+     caen en dos líneas en vez de tres. */
+  .d-cab--art .d-h1 { text-wrap: balance; }
+  .d-cab--art .d-linea { margin-bottom: 22px; }
+  .d-cab--art .d-linea > * { white-space: nowrap; }   /* «Lectura: 6 / min» quedaba partido en celular */
+  .d-autor-art { display: flex; align-items: center; gap: 12px; }
+  .d-autor-art img { width: 44px; height: 44px; border-radius: var(--d-r); object-fit: cover; display: block; flex: none; }
+  .d-autor-art p { margin: 0; display: flex; flex-direction: column; font-size: 0.9375rem; line-height: 1.4; }
+  .d-autor-art__nombre { font-weight: 500; }
+
+  /* ------------------------------------------------------------ índice + cuerpo */
+  /* Después de la imagen no hay entrada (.d-entrada): el cuerpo arranca más cerca que los
+     180 px de una sección de servicio, si no la primera pantalla bajo la foto queda vacía. */
+  .d-art { padding-top: clamp(56px, 7vw, 112px); }
+
+  .d-indice-art { max-width: 340px; }
+  .d-indice-art summary { list-style: none; font-size: 0.8125rem; font-weight: 500; color: var(--d-gris); margin-bottom: 14px; cursor: default; }
+  .d-indice-art summary::-webkit-details-marker { display: none; }
+  .d-indice-art ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--d-filete); }
+  .d-indice-art li { border-bottom: 1px solid var(--d-filete); }
+  .d-indice-art a { position: relative; display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 8px; padding: 11px 0; font-size: 0.9375rem; line-height: 1.4; color: var(--d-gris); text-decoration: none; }
+  .d-indice-art a:hover { color: var(--d-papel); }
+  .d-indice-art__n { color: var(--d-gris); font-size: 0.8125rem; line-height: 1.7; font-variant-numeric: tabular-nums; }   /* gris y no gris-2: el 2 da 4,48:1 */
+  /* Sección actual: color Y una barra, no solo color. */
+  .d-indice-art a[aria-current='true'] { color: var(--d-papel); }
+  .d-indice-art a[aria-current='true'] .d-indice-art__n { color: var(--d-papel); }
+  .d-indice-art a[aria-current='true']::before { content: ''; position: absolute; left: -14px; top: 12px; bottom: 12px; width: 2px; background: var(--d-papel); }
+
+  /* El cuerpo: HTML inyectado, así que todo va por :global(). Manrope 400, 19 px, en gris
+     (el texto secundario de driftime, 6,9:1); papel para lo que tiene que pesar: entrada,
+     encabezados, negritas, enlaces. Medida máxima 68ch. */
+  .d-prosa-art { font-size: clamp(1.0625rem, 1.32vw, 1.1875rem); line-height: 1.65; color: var(--d-gris); overflow-wrap: break-word; min-width: 0; }
+  .d-prosa-art > :global(* + *) { margin-top: 1.15em; }
+  .d-prosa-art :global(p), .d-prosa-art :global(li), .d-prosa-art :global(blockquote) { max-width: 68ch; }
+  .d-prosa-art :global(p) { margin-bottom: 0; }
+  /* La primera frase es la entrada del caso de driftime: 24 px, papel. */
+  .d-prosa-art > :global(p:first-child) { font-size: clamp(1.25rem, 1.67vw, 1.5rem); line-height: 1.5; color: var(--d-papel); max-width: 34em; }
+
+  .d-prosa-art :global(h2) { font-size: clamp(1.375rem, 2.08vw, 1.875rem); line-height: 1.3; font-weight: 500; letter-spacing: -0.02em; color: var(--d-papel); margin: 96px 0 0; padding-top: 28px; border-top: 1px solid var(--d-filete); text-wrap: balance; scroll-margin-top: 104px; }
+  .d-prosa-art :global(h2 + *) { margin-top: 18px; }
+  .d-prosa-art :global(h3) { font-size: clamp(1.25rem, 1.67vw, 1.5rem); line-height: 1.4; font-weight: 500; color: var(--d-papel); margin: 48px 0 0; text-wrap: balance; }
+  .d-prosa-art :global(h3 + *) { margin-top: 10px; }
+  .d-prosa-art :global(strong), .d-prosa-art :global(b) { color: var(--d-papel); font-weight: 600; }
+  .d-prosa-art :global(em) { font-style: italic; }
+
+  .d-prosa-art :global(a) { color: var(--d-papel); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+  .d-prosa-art :global(a:hover) { text-decoration-thickness: 2px; }
+
+  .d-prosa-art :global(ul), .d-prosa-art :global(ol) { margin-bottom: 0; padding: 0; list-style: none; }
+  .d-prosa-art :global(li + li) { margin-top: 0.7em; }
+  .d-prosa-art :global(ul > li) { position: relative; padding-left: 26px; }
+  /* Viñeta: un filete corto. Ni punto (es del wordmark) ni raya tipográfica. */
+  .d-prosa-art :global(ul > li::before) { content: ''; position: absolute; left: 2px; top: 0.82em; width: 12px; height: 1px; background: var(--d-gris-2); }
+  .d-prosa-art :global(ol) { counter-reset: d-art; }
+  .d-prosa-art :global(ol > li) { position: relative; padding-left: 34px; counter-increment: d-art; }
+  .d-prosa-art :global(ol > li::before) { content: counter(d-art, decimal-leading-zero); position: absolute; left: 0; top: 0; color: var(--d-gris); font-variant-numeric: tabular-nums; }
+
+  .d-prosa-art :global(blockquote) { margin: 40px 0; padding: 4px 0 4px 24px; border-left: 2px solid var(--d-papel); font-size: clamp(1.25rem, 1.67vw, 1.5rem); line-height: 1.5; color: var(--d-papel); }
+  .d-prosa-art :global(blockquote + *) { margin-top: 0; }
+
+  .d-prosa-art :global(.nota) { margin-top: 32px; background: var(--d-modulo); border-radius: var(--d-r); padding: 18px 20px; font-size: 1rem; line-height: 1.6; color: var(--d-gris); }
+
+  .d-prosa-art :global(code) { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.86em; background: var(--d-modulo); color: var(--d-papel); border-radius: 4px; padding: 0.12em 0.36em; overflow-wrap: anywhere; }
+
+  /* Tablas: se desplazan dentro de su caja; la página no. */
+  .d-prosa-art :global(table) { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; font-size: 0.9375rem; line-height: 1.5; margin-top: 28px; }
+  .d-prosa-art :global(th), .d-prosa-art :global(td) { text-align: left; vertical-align: top; padding: 12px 14px 12px 0; border-bottom: 1px solid var(--d-filete); }
+  .d-prosa-art :global(th) { font-size: 0.8125rem; font-weight: 500; color: var(--d-papel); border-bottom-color: var(--d-gris-2); white-space: nowrap; }
+  .d-prosa-art :global(td:first-child) { color: var(--d-papel); }
+
+  /* Preguntas frecuentes: filas con filete, como .d-faq. */
+  .d-prosa-art :global(.faq) { margin-top: 18px; border-bottom: 1px solid var(--d-filete); }
+  .d-prosa-art :global(details) { border-top: 1px solid var(--d-filete); padding: 20px 0; }
+  .d-prosa-art :global(summary) { display: flex; justify-content: space-between; gap: 16px; list-style: none; cursor: pointer; color: var(--d-papel); font-weight: 500; }
+  .d-prosa-art :global(summary::-webkit-details-marker) { display: none; }
+  .d-prosa-art :global(summary::after) { content: '+'; flex: none; color: var(--d-gris); font-weight: 400; }
+  .d-prosa-art :global(details[open] > summary::after) { content: '–'; }
+  .d-prosa-art :global(.faq-a) { margin-top: 12px; }
+
+  /* ------------------------------------------------------------ siguiente */
+  /* Los títulos de los posts son frases largas (hasta 66 caracteres): rótulo arriba y título
+     debajo, en vez de los dos en una línea como en un servicio. */
+  .d-siguiente--art { flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 160px; }
+  .d-siguiente--art .d-h1 { max-width: 32ch; text-wrap: balance; }
+
+  @media (max-width: 767px) {
+    .d-art { padding-top: 40px; gap: 32px; }
+    .d-indice-art { max-width: none; }
+    /* En celular el resumen sí es un botón: plegar y desplegar. */
+    .d-indice-art summary { display: flex; justify-content: space-between; align-items: center; margin: 0; padding: 14px 0; border-top: 1px solid var(--d-filete); border-bottom: 1px solid var(--d-filete); font-size: 0.9375rem; color: var(--d-papel); cursor: pointer; }
+    .d-indice-art summary::after { content: '+'; color: var(--d-gris); }
+    .d-indice-art details[open] summary::after { content: '–'; }
+    .d-indice-art details[open] ol { border-top: 0; }
+    .d-indice-art a[aria-current='true']::before { display: none; }
+    .d-prosa-art :global(h2) { margin-top: 72px; padding-top: 22px; scroll-margin-top: 88px; }
+    .d-prosa-art :global(blockquote) { margin: 32px 0; padding-left: 18px; }
+    /* Bajo ~10rem por columna, una tabla de cinco se vuelve una tira de palabras sueltas:
+       mejor que se desplace. */
+    .d-prosa-art :global(th), .d-prosa-art :global(td) { min-width: 9.5rem; }
+    /* Al desplazar a la derecha, la primera columna (el nombre del chequeo) se queda: si no,
+       a la tercera columna ya no sabes en qué fila vas. */
+    .d-prosa-art :global(th:first-child), .d-prosa-art :global(td:first-child) { position: sticky; left: 0; z-index: 1; background: var(--d-noche); }
+    .d-siguiente--art { margin-top: 110px; }
+  }
+</style>

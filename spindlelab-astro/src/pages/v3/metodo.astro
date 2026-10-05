@@ -1,17 +1,59 @@
 ---
-// MÉTODO en el lenguaje V3. Contenido real extraído de /metodo/ a paginas-v3.json.
-// Ritmo de color propio: tinta → navy → papel → petróleo → tinta.
+// MÉTODO — plantilla EDITORIAL del sistema driftime (5-oct-2026).
+//
+// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md (§4, «Editorial»).
+// Molde: src/pages/v3/servicios/desarrollo-web.astro (cabecera, imagen a sangre, entrada,
+// secciones con etiqueta pegajosa). Lo que había antes en este archivo (ritmo de color
+// tinta → navy → papel → petróleo, titulares en 800 mayúsculas) está en el git.
+//
+// REGLAS QUE SOSTIENEN ESTA PÁGINA:
+// · Cero .d-display: una interna no grita (spec §2). El h1 es .d-h1, 60 px peso 500.
+// · Cero oro. El único de la vista es el punto del módulo, que pone NavV3.
+// · Imágenes solo del pool honesto: el dominó en curva a sangre (una cadena de pasos) y un
+//   par de fotos de campaña entre secciones. Nada de obra de clientes: el método de
+//   auditoría no produjo esos sitios, mostrarlos aquí como resultado sería prueba social
+//   inventada.
+// · El contenido es el de paginas-v3.json.metodo. La duración y el entregable de cada
+//   fase salen de la página publicada (public/metodo/index.html), que el JSON no recogió.
+//
+// LA CAPA SEO SE CONSERVA tal cual estaba en la v3: un BreadcrumbList con su @id. La
+// organización y la persona las emite Layout.astro. La página publicada además trae un
+// HowTo (#metodo-spindlelab) que la v3 nunca portó; no se agrega aquí (ver el resumen
+// de la obra).
 import Layout from '../../layouts/Layout.astro';
-import { caja } from '../../utils/caja';
 import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
+import '../../styles/driftime.css';
 
 import paginas from '../../data/paginas-v3.json';
-import '../../styles/campos-v3.css'; // tintes de color, filete, rotulo
 
 const s = (paginas as Record<string, any>).metodo;
 const [recorrido, reglas, poco, cierre] = s.secciones;
+
+// Duración y entregable por fase, verbatim de public/metodo/index.html.
+const datos: [string, string][][] = [
+  [['Duración', '24 h el mini-diagnóstico · 1 semana la versión completa'], ['Recibes', 'Informe con hallazgos priorizados por impacto']],
+  [['Duración', '1–2 semanas'], ['Recibes', 'Línea base de presencia en IA + plan de citabilidad']],
+  [['Duración', 'Según alcance: típicamente 2 a 6 semanas'], ['Recibes', 'Cambios implementados y verificados']],
+  [['Frecuencia', 'Informes quincenales · reunión mensual'], ['Recibes', 'Evolución medible contra la línea base']],
+];
+
+// En la publicada, «nuestro protocolo público» enlaza a la medición del diagnóstico.
+const PROTOCOLO = 'nuestro protocolo público';
+const partir = (d: string) => {
+  const i = d.indexOf(PROTOCOLO);
+  return i < 0 ? null : [d.slice(0, i), d.slice(i + PROTOCOLO.length)];
+};
+
+// «Tu URL: con eso parte…» → término + explicación, para la lista de lo que pedimos.
+const pedidos = (poco.lista ?? []).map((t: string) => {
+  const i = t.indexOf(':');
+  const resto = t.slice(i + 1).trim();
+  // Comillas rectas del JSON → comillas latinas, como el resto del sitio.
+  const d = resto.replace(/"([^"]+)"/g, '«$1»');
+  return { t: t.slice(0, i), d: d.charAt(0).toUpperCase() + d.slice(1) };
+});
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -28,7 +70,7 @@ const jsonLd = {
 };
 ---
 
-<Layout title={s.title} description={s.description} bodyClass="bg-noche font-texto">
+<Layout title={s.title} description={s.description} bodyClass="d-body">
   <Fragment slot="head">
     <meta name="robots" content="noindex, nofollow" />
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
@@ -36,153 +78,127 @@ const jsonLd = {
 
   <NavV3 />
 
-  <main class="text-papel">
-    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-28">
-      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
-        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
-        <span aria-hidden="true" class="mx-2">·</span>
-        <span class="text-humo">Método</span>
-      </nav>
-      <h1
-        data-entra
-        class:list={['font-extrabold m-0 max-w-[13ch]', caja(s.h1)]}
-        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.88; letter-spacing:0"
-      >
-        {s.h1}
-      </h1>
-
-      <div data-entra data-paso="1" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
-        <div class="md:col-span-5">
-          {s.lead && <p class="m-0 text-papel text-xl md:text-2xl leading-relaxed">{s.lead}</p>}
-        </div>
-        <div class="md:col-span-6 md:col-start-7">
-          <img
-            src={s.foto}
-            alt={s.fotoAlt}
-            width="1280"
-            height="720"
-            loading="eager"
-            decoding="async"
-            class="media-campo"
-          />
-        </div>
+  <main>
+    <header class="d-cab">
+      <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Método</nav>
+      <h1 class="d-h1">{s.h1}</h1>
+      <p class="d-linea">Cuatro pasos medibles: diagnóstico técnico, estrategia AEO/GEO, implementación y monitoreo.</p>
+      <div class="d-btns">
+        <a class="d-btn" href="/v3/diagnostico/">Empezar por el chequeo gratis</a>
+        <a class="d-btn d-btn--alt" href="#fases">Ver las cuatro fases</a>
       </div>
+    </header>
 
-    </section>
+    <figure class="d-sangre">
+      <img
+        src="/assets/img/d/domino-curva.jpg"
+        alt="Fichas de dominó de madera en una fila que se curva hacia el fondo, sobre piedra oscura y con luz cálida de costado"
+        width="1600"
+        height="1600"
+        loading="eager"
+        fetchpriority="high"
+        style="object-position:50% 58%"
+      />
+    </figure>
 
-    {/* CAMPO NAVY: el recorrido. */}
-    {/* TITULAR PEGAJOSO. Medido en la referencia: siete elementos sticky, y es el
-         mecanismo que más usa. Acá se aplica con un criterio, no a gusto: el titular
-         se queda quieto SOLO donde su propia sección es más alta que la pantalla, o
-         sea donde hay algo que recorrer mientras el titular sostiene el contexto.
-         Esta sección mide 1.563px contra un viewport de 900. En las que caben en
-         pantalla el sticky no haría nada y el titular se queda como estaba.
-         En móvil no aplica: una sola columna, el titular ocuparía pantalla. */}
-    <section class="tinte--navy px-6 md:px-medianil py-32 md:py-seccion">
-      <div class="md:grid md:grid-cols-12 md:gap-x-8">
-        <div class="md:col-span-4">
-          <h2
-            data-entra
-            class:list={['font-extrabold m-0 mb-12 md:mb-0 md:sticky md:top-32', caja(recorrido.h2)]}
-            style="font-size:clamp(1.75rem, 3.4vw, 3.25rem); line-height:0.94; letter-spacing:0; text-wrap:balance"
-          >
-        {recorrido.h2}
-      </h2>
-        </div>
-        <div class="md:col-span-7 md:col-start-6">
-      <ol data-entra data-paso="1" class="list-none p-0 m-0 border-t filete">
-        {
-          (recorrido.bloques ?? []).map((b: any, i: number) => (
-            <li class="border-b filete py-7 md:py-9 flex flex-col md:flex-row gap-3 md:gap-8">
-              <span class="text-humo font-bold text-sm flex-none md:w-10" style="letter-spacing:0.16em">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <span
-                class="font-extrabold uppercase flex-none md:w-[10em]"
-                style="font-size:clamp(1.25rem,2.2vw,1.875rem); line-height:1.05; letter-spacing:-0.03em"
-              >
-                {b.t}
-              </span>
-              {b.d && <span class="text-humo text-lg leading-relaxed max-w-prosa">{b.d}</span>}
+    <div class="d-entrada">
+      <p class="d-nota-card"><b>El paso 01 es gratis</b> y llega en 24 horas.</p>
+      <p class="d-guia">{s.lead}</p>
+    </div>
+
+    <section class="d-sec" id="fases" aria-labelledby="s-fases">
+      <div class="d-eti"><h2 class="d-h2" id="s-fases">{recorrido.h2}</h2></div>
+      <ol class="d-filas d-lista-met d-fases-met">
+        {(recorrido.bloques ?? []).map((b: any, i: number) => {
+          const p = partir(b.d);
+          return (
+            <li class="d-fase">
+              <span class="d-fase__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <h3 class="d-h3">{b.t}</h3>
+              <p class="d-cuerpo">{p ? <Fragment>{p[0]}<a class="d-enl-met" href="/v3/diagnostico/">{PROTOCOLO}</a>{p[1]}</Fragment> : b.d}</p>
+              {datos[i] && (
+                <dl class="d-datos-met">
+                  {datos[i].map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
+                </dl>
+              )}
             </li>
-          ))
-        }
+          );
+        })}
       </ol>
+    </section>
+
+    {/* Respiro entre el recorrido y las reglas, como las galerías de los casos de driftime.
+         Dos fotos de campaña del pool, nada de obra (ver arriba). Dos mitades iguales en 4:3:
+         alta + media dejaría un hueco, porque cada una conserva su proporción. */}
+    <div class="d-galeria">
+      <figure class="d-pieza d-g-mitad">
+        <img src="/assets/img/d/domino.jpg" alt="Fichas de dominó negras cayendo una sobre otra en fila, sobre fondo oscuro" width="1600" height="1600" loading="lazy" decoding="async" style="object-position:50% 62%" />
+      </figure>
+      <figure class="d-pieza d-g-mitad">
+        <img src="/assets/img/d/hilo.jpg" alt="Un hilo luminoso verde azulado cruza en diagonal un fondo oscuro" width="1400" height="787" loading="lazy" decoding="async" />
+      </figure>
+    </div>
+
+    <section class="d-sec" aria-labelledby="s-reglas">
+      <div class="d-eti"><h2 class="d-h2" id="s-reglas">{reglas.h2}</h2></div>
+      <div class="d-filas">
+        {(reglas.bloques ?? []).map((b: any) => (
+          <div class="d-regla-met"><h3 class="d-h3">{b.t}</h3><p class="d-cuerpo">{b.d}</p></div>
+        ))}
+      </div>
+    </section>
+
+    <section class="d-sec" aria-labelledby="s-poco">
+      <div class="d-eti"><h2 class="d-h2" id="s-poco">{poco.h2}</h2><p class="d-chico">Lo que necesitamos de ti para partir.</p></div>
+      <dl class="d-filas d-lista-met">
+        {pedidos.map((x: any) => (
+          <div class="d-pide-met"><dt class="d-h3">{x.t}</dt><dd class="d-cuerpo">{x.d}</dd></div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="d-sec" aria-labelledby="s-cierre">
+      <div class="d-eti"><h2 class="d-h2" id="s-cierre">{cierre.h2}</h2></div>
+      <div class="d-cierre-met">
+        {cierre.parrafos?.[0] && <p class="d-guia">{cierre.parrafos[0]}</p>}
+        <div class="d-btns">
+          <a class="d-btn" href="/v3/diagnostico/">Empezar por el chequeo gratis</a>
+          <a class="d-btn d-btn--alt" href={CONTACTO}>Conversemos tu proyecto</a>
         </div>
-      </div>
-    </section>
-
-    {/* PAPEL: las reglas. */}
-    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[16ch]', caja(reglas.h2)]}
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
-      >
-        {reglas.h2}
-      </h2>
-      <div data-entra data-paso="1" class="grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-3">
-        {
-          (reglas.bloques ?? []).map((b: any) => (
-            <article class="border-t filete pt-6">
-              <h3
-                class:list={['font-extrabold m-0', caja(b.t)]}
-                style="font-size:clamp(1.125rem,1.8vw,1.625rem); line-height:1.05; letter-spacing:-0.03em"
-              >
-        {b.t}
-      </h3>
-              {b.d && <p class="mt-4 text-noche/65 text-base leading-relaxed">{b.d}</p>}
-            </article>
-          ))
-        }
-      </div>
-    </section>
-
-    {/* CAMPO PETRÓLEO: poco, pero importante. */}
-    <section class="tinte--petroleo px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 mb-12 md:mb-16 max-w-[16ch]', caja(poco.h2)]}
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
-      >
-        {poco.h2}
-      </h2>
-      <ul data-entra data-paso="1" class="list-none p-0 m-0 grid gap-x-8 lg:gap-x-12 gap-y-7 md:grid-cols-2 lg:grid-cols-3">
-        {
-          (poco.lista ?? []).map((i: string) => (
-            <li class="border-t filete pt-5 text-humo text-base leading-relaxed">{i}</li>
-          ))
-        }
-      </ul>
-    </section>
-
-    <section class="px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 max-w-[15ch]', caja(cierre.h2)]}
-        style="font-size:clamp(2rem, 6.6vw, 7.5rem); line-height:0.88; letter-spacing:0; text-wrap:balance"
-      >
-        {cierre.h2}
-      </h2>
-      {cierre.parrafos?.[0] && (
-        <p class="mt-10 text-humo text-xl leading-relaxed max-w-prosa">{cierre.parrafos[0]}</p>
-      )}
-      <div class="mt-12 flex items-center gap-4 flex-wrap">
-        <a
-          href="/v3/diagnostico/"
-          class="rounded-v3 bg-papel hover:bg-white text-noche text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
-        >
-          Empezar por el chequeo gratis
-        </a>
-        <a
-          href={CONTACTO}
-          class="rounded-v3 border filete hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
-        >
-          Conversemos tu proyecto
-        </a>
       </div>
     </section>
   </main>
 
   <FooterV3 />
 </Layout>
+
+<style>
+  /* Solo lo que driftime.css no trae. Todo con sufijo -met para no chocar. */
+  .d-lista-met { list-style: none; padding: 0; margin: 0; }
+
+  /* Duración y entregable bajo cada fase: dos datos lado a lado, rótulo en gris. */
+  .d-datos-met { grid-column: 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px var(--d-g); margin: 14px 0 0; }
+  .d-datos-met dt { font-size: 0.8125rem; font-weight: 500; color: var(--d-gris); margin: 0 0 4px; }
+  .d-datos-met dd { margin: 0; font-size: 0.9375rem; line-height: 1.5; }
+
+  .d-enl-met { color: var(--d-papel); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+  .d-regla-met .d-h3 { margin-bottom: 8px; }
+
+  /* Lo que pedimos: el término a la izquierda, la explicación a la derecha. */
+  .d-pide-met { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 6px var(--d-g); align-items: baseline; }
+  .d-pide-met dd { margin: 0; }
+
+  .d-cierre-met { border-top: 1px solid var(--d-filete); padding-top: 22px; }
+  .d-cierre-met .d-btns { margin-top: 28px; }
+
+  @media (max-width: 767px) {
+    /* En celular el número va sobre el título: la columna de 56 px dejaba el párrafo en
+       270 px y cada fase en dos pantallas. */
+    .d-fases-met .d-fase { grid-template-columns: minmax(0, 1fr); }
+    .d-fases-met .d-fase .d-cuerpo, .d-fases-met .d-datos-met { grid-column: 1; }
+    .d-fases-met .d-fase__n { padding-top: 0; font-size: 0.875rem; }
+    .d-datos-met { grid-template-columns: 1fr; }
+    .d-pide-met { grid-template-columns: 1fr; }
+  }
+</style>
