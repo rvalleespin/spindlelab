@@ -1,6 +1,12 @@
 # Calendario editorial — working doc de Marta (agente-calendario-editorial)
 
-> **Estado: FORMALIZADO por Marta (28-ago-2026), pendiente de aprobación de Ramón en el Pase 1.**
+> **Lo vigente es la sección de octubre, abajo** (actualizada el 5-oct-2026). La de septiembre
+> quedó como registro: ese plan no se ejecutó como está escrito, y tiene una nota que dice qué sí
+> salió. Antes de programar o publicar cualquier cosa, la fuente del estado real es
+> `marketing/redes/QUE-HAY-PUBLICADO.md`, mirando el canal, no este documento.
+
+> **Estado de la sección de septiembre: FORMALIZADO por Marta (28-ago-2026), pendiente de
+> aprobación de Ramón en el Pase 1.**
 > Cada fila está verificada contra el inventario real (`marketing/redes/posts-agosto/` y
 > `marketing/redes/carrusel-03-cinco-chequeos/`). Las reglas del rol están en la skill de Marta;
 > las convenciones de SpindleLab, en `oficina/clientes/spindlelab.md`. Piezas nuevas del mes:
@@ -12,7 +18,109 @@
 > borrador, el "Pase 3 vie 5-sep" caía sábado y el "Pase 4 vie 19-sep" caía **sábado de Fiestas
 > Patrias**. Las tandas quedaron reprogramadas (ver sección de tandas).
 
+## Octubre 2026 — slots reales (actualizado 5-oct-2026)
+
+> **Esta sección refleja lo que está pasando de verdad, no un plan a futuro.** La escribió la
+> sesión del canal de redes a pedido del punto 9.2 de
+> `encargos-otras-sesiones/estrategia-linkedin-actualizacion-5oct.md`. El inventario de lo que
+> está en el aire es `marketing/redes/QUE-HAY-PUBLICADO.md`; las piezas, una carpeta por post en
+> `marketing/redes/2026-10-octubre-linkedin/`.
+>
+> **Nada se publica sin la aprobación de Ramón en el chat, post por post.** No hay pases ni
+> tandas este mes: él aprueba cada texto cuando se le presenta.
+
+**Lo que cambió respecto del modelo de septiembre, y cambia el calendario entero:**
+
+1. **El canal que alcanza es el perfil personal de Ramón** (≈364 seguidores). La página tiene 4 y
+   el Instagram 19. El calendario de septiembre repartía el peso entre página e Instagram; en
+   octubre el eje es el perfil personal, en registro singular y texto puro.
+2. **La cadencia real son 2 o 3 posts por semana en el perfil**, no 1 por semana como decía la
+   estrategia del 23-sep. Ramón, el 2-oct: *"no tenemos publicaciones desde el 30. no conviene
+   tanto silencio"*.
+3. **Cada post tiene salida comercial.** El 5-oct rechazó un borrador correcto porque *"no es un
+   post que influya en la venta"*. El dato es el gancho; el post termina en el chequeo, el
+   diagnóstico o el servicio.
+4. **Rotación de los tres servicios, sin rachas:** SEO y visibilidad en IA · Verifica y Cumple
+   (prioridad por el plazo del 1-dic) · Desarrollo Web a medida. Entre el 25 y el 30-sep salieron
+   tres de Verifica y Cumple seguidos; desde el 2-oct se alterna.
+5. **Los temas salen de un radar semanal de dolores del rubro** (X y LinkedIn, hechos fechados),
+   no de un tema mensual fijado con un mes de anticipación.
+
+### Lo publicado y lo que viene
+
+| Fecha | Canal · voz | Pieza | Servicio | Carpeta | Estado |
+|---|---|---|---|---|---|
+| **Vie 2-oct** | Perfil Ramón · singular | "El sitio es la tienda principal, las redes son la vitrina" | Desarrollo Web | `02-vie-el-sitio-es-la-tienda/` | ✅ **publicado y verificado** · 102 impresiones al 5-oct |
+| **Lun 5-oct** | Perfil Ramón · singular | "El cuarto mito: la amonestación del primer año es una facultad, no un derecho" | Verifica y Cumple | `05-lun-cuarto-mito-amonestacion/` | ✅ **publicado y verificado** · tres rondas de ajuste |
+| **Mié 7-oct** | Perfil Ramón · singular | "Antes de pagar un panel de visibilidad en IA, lo que ya puedes medir gratis" (Search Console) | SEO / visibilidad en IA | `07-mie-visibilidad-en-ia-lo-que-se-mide/` | 🟡 **aprobado por Ramón el 5-oct, en cola.** Antes de publicar: releer la página de ayuda de Google y `/diagnostico/` en vivo |
+| **Vie 9-oct** (candidato) | Perfil Ramón · singular | Costco: el tráfico que llega desde IA es poco y convierte mejor | SEO / visibilidad en IA | — | ⬜ **dato verificado** en el transcript del 24-sep. **Falta la apertura**: Ramón descartó partir por la noticia. Tiene que abrir en la situación del lector ("si tu jefe o tu cliente te dice que el tráfico desde ChatGPT es muy poco...") |
+
+**Alternancia de servicios en el mes:** Desarrollo Web (2) → Verifica y Cumple (5) → visibilidad
+en IA (7) → visibilidad en IA (9, candidato). Si el 9 sale, son dos de visibilidad en IA seguidos:
+**conviene que el siguiente vuelva a Verifica y Cumple o a Desarrollo Web.**
+
+### Banco de temas, con su requisito pendiente
+
+Ninguno entra a un slot hasta que su requisito esté cumplido. Los requisitos no son trámite: dos
+posts se tuvieron que corregir en vivo por citar una fuente que no se había leído entera.
+
+| Tema | Qué falta antes de poder escribirlo |
+|---|---|
+| La guía de contenido útil de Google (editada hacia el 2-oct, con una sección contra autores inventados) | **Leer el documento en Google**, no un resumen |
+| "Para que la IA te recomiende, tu sitio no basta" (aprobado el 22-sep, pospuesto) | **Cambiarle el gancho**: ya comparte ideas con el post del 7-oct |
+| Cookies y Verifica y Cumple (el hartazgo con los banners es buen gancho) | **Verificar qué exige la ley chilena sobre cookies**, antes de afirmar nada |
+| El proyecto de postergación (boletín 18.623-07) | **Solo con novedad real.** Un post ajeno dice que también cambiaría el artículo sexto transitorio; no se pudo verificar, y el 5-oct se publicó sin esa línea |
+
+### Los otros dos canales
+
+- **Página de empresa (4 seguidores).** No se revisa desde el 25-sep. Está sin decidir qué papel
+  juega: la propuesta sobre la mesa es que sea el archivo de lo que se reusa, no un canal con
+  cadencia propia. **Decisión de Ramón, pendiente.** Mientras no se decida, no se le programan
+  slots: con 4 seguidores, un post ahí no alcanza a nadie que el perfil personal no alcance mejor.
+- **Instagram (`spindlelab.cl`, 19 seguidores).** Desde el 25-sep **Verifica y Cumple tiene línea
+  editorial propia** y no usa el sistema oscuro de SpindleLab
+  (`encargos-otras-sesiones/verifica-campana-linea-propia.md`). Las piezas de esa campaña esperan
+  el ojo de Ramón. Dos cosas que solo puede hacer él y bloquean el canal:
+  - **El enlace del bio** (Instagram solo lo deja editar desde la app del teléfono). Hoy va a
+    `spindlelab.cl/diagnostico`; para la campaña de Verifica tiene que ir a
+    `verifica.spindlelab.cl`, o el bio promete una cosa y el enlace lleva a otra.
+  - **La etiqueta "Perfil generado con IA"**, encendida y visible. En una consultoría que vende
+    criterio, conviene decidirlo a propósito.
+
+### Medición del mes (pendiente, punto 9.3 del encargo)
+
+- [ ] Impresiones del post del 5-oct y del 7-oct.
+- [ ] Chequeos corridos en Cloudflare esos dos días, para ver si el post mueve el chequeo.
+- [ ] Lectura honesta de la muestra: con estos volúmenes, los números sirven para elegir el
+      siguiente post, no para sacar leyes.
+
+### Lo que este mes no tiene, y es a propósito
+
+Sin tema mensual fijado por adelantado, sin pases de revisión en tanda, sin piezas visuales
+(todos los posts del mes son texto puro) y sin programador: Ramón publica cuando aprueba. El
+modelo de septiembre, con ventanas y tandas, se armó para un mes de piezas gráficas recicladas
+que al final no salió.
+
+---
+
 ## Septiembre 2026 — Campaña de relanzamiento: el motor + el chequeo
+
+> ⚠️ **Este plan no se ejecutó como está escrito. Queda como registro de cómo se razonó el mes,
+> no como relato de lo que pasó** (nota agregada el 5-oct-2026).
+>
+> Lo que sí salió en septiembre está en `marketing/redes/QUE-HAY-PUBLICADO.md`, capturado del
+> canal: en la página, el post del circuito (~1-sep), el carrusel del motor (~8-sep) y los de la
+> Ley 21.719 (21-sep, el retirado del 22-sep y los tres mitos del 25-sep); en el perfil personal,
+> siete posts entre el 1 y el 30-sep; en Instagram, un carrusel el 3-sep.
+>
+> **Ninguna de las filas de piezas recicladas de agosto de este calendario aparece en ese
+> inventario.** Las 6 piezas 1080×1080 de `posts-agosto/` y el carrusel de los 5 chequeos siguen
+> sin publicarse, con su etiqueta y su firma viejas quemadas en el HTML. El mes se fue por otro
+> lado: el lanzamiento de Verifica y Cumple (23-sep) y el perfil personal como canal principal.
+>
+> **La campaña de septiembre tampoco terminó con el cierre de mes de Marta** (la sección del final
+> de este documento está sin llenar). Lo más cercano a ese cierre es el inventario de
+> QUE-HAY-PUBLICADO y la actualización de estrategia del 5-oct.
 
 **Mensaje del mes:** "Mostramos, no prometemos — ahora el motor completo, y puedes
 comprobarlo tú mismo" (brief v2, aprobado por Ramón 28-ago). **Gancho central:** el chequeo →

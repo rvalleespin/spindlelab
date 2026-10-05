@@ -124,8 +124,26 @@ transitorio y **no se pudo verificar**; el 5-oct se publicó sin esa línea.
 
 ## 9. Pendientes para la sesión que lleva el canal
 
-1. **Pasar al corpus de voz** los posts publicados desde el 22-sep (25-sep v2, 28-sep, 30-sep, 2-oct, 5-oct) y, para el 5-oct,
-   las tres versiones con el motivo de cada rechazo. El corpus hoy termina en el 22-sep.
-2. **Reflejar en `marketing/calendario-editorial.md`** los slots reales de octubre.
-3. **Medir** impresiones del 5-oct y del 7-oct, y los chequeos corridos en Cloudflare esos días.
-4. **No publicar nada sin la aprobación de Ramón en el chat**, ni editar los documentos compartidos del troncal.
+1. ✅ **HECHO (5-oct, sesión de redes). Corpus de voz al día.** `.claude/skills/voz-spindlelab/corpus.md`
+   pasó de 8 a 15 fichas. Entraron literales: 23-sep (query fan-out, **que esta lista no
+   enumeraba** y estaba publicado desde antes del corte), 25-sep v2 personal, 25-sep de la página
+   con el texto **corregido** esa tarde, 28-sep, 30-sep, 2-oct y 5-oct. Para el 5-oct quedaron los
+   motivos de los dos rechazos y los fragmentos citados.
+   ⚠️ **El texto íntegro de la v1 y la v2 del 5-oct no quedó guardado en ninguna parte** y no se
+   reconstruyó: un ejemplo inventado para ilustrar una regla arruina el corpus. Si alguien tiene
+   esos textos en un chat, vale la pena pegarlos.
+   De paso, `SKILL.md` ganó el **tercer tic** (el post que explica bien y no vende: salida
+   comercial + conectores de relleno + el "no es X, es Y" repetido + remates figurados, tope dos).
+2. ✅ **HECHO (5-oct, sesión de redes). Octubre en el calendario editorial.**
+   `marketing/calendario-editorial.md` tiene una sección de octubre con los slots reales (2 y 5-oct
+   publicados, 7-oct en cola, 9-oct candidato con su apertura pendiente), los cinco cambios de
+   modelo respecto de septiembre, el banco de temas con el requisito de cada uno, el estado de los
+   otros dos canales y los pendientes de medición. La sección de septiembre quedó marcada como
+   registro: ese plan no se ejecutó como está escrito, y la nota dice qué sí salió.
+3. ⬜ **Medir** impresiones del 5-oct y del 7-oct, y los chequeos corridos en Cloudflare esos días.
+   **Esta sesión no lo puede hacer:** no tiene navegador con la sesión de LinkedIn de Ramón ni
+   acceso al panel de Cloudflare. Queda anotado como checklist en la sección de octubre del
+   calendario, para la sesión que sí tenga navegador.
+4. ⬜ **No publicar nada sin la aprobación de Ramón en el chat**, ni editar los documentos
+   compartidos del troncal. Respetado: esta sesión no publicó nada y no tocó
+   `plan-operativo-90-dias.md` ni `ventas/pipeline.md`.

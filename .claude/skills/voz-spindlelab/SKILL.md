@@ -13,6 +13,11 @@ leyendo dos párrafos reales que diez viñetas de "evita la jerga".
 **El corpus completo está en [`corpus.md`](corpus.md)** (textos íntegros + procedencia).
 Léelo antes de escribir algo largo. Lo de abajo es el mapa.
 
+**Al 5-oct-2026 el corpus tiene 15 fichas** y cubre todo lo publicado en el perfil personal y la
+página hasta esa fecha, incluidas las versiones que Ramón rechazó y el motivo de cada rechazo.
+Para saber qué está en el aire **ahora**, la fuente es `marketing/redes/QUE-HAY-PUBLICADO.md`, no
+este archivo.
+
 ## Dos registros, no uno
 
 | | **Singular — Ramón** | **Plural — la marca** |
@@ -88,6 +93,38 @@ usarlos como **motor de cada párrafo**.
 transiciones reales: *"Y lo llamativo es la fecha."* · *"Así que si te llega una propuesta…"* ·
 *"No significa que no haya nada que hacer."* · *"Piensa lo que significa."* Eso es lo que hace
 que un análisis técnico se lea como conversación.
+
+## El tercer tic: el post que explica bien y no vende (5-oct-2026)
+
+El rechazo más caro de documentar, porque el borrador estaba **bien escrito**:
+
+> *"está buena, pero no es un post que influya en la venta. tiene toques de IA que no se
+> justifican"*
+
+**Dos cosas, no una.**
+
+**(a) Todo post tiene salida comercial.** El dato verificado es el gancho, no el destino. Un
+borrador que termina remitiendo al texto completo de la ley es un explicador, y Ramón no publica
+explicadores. La versión que salió usa el dato para **desarmar la idea de esperar** y pasa derecho
+a lo que el lector puede revisar hoy, con el límite dicho sin adornos (*"La política de privacidad
+la redacta un abogado"*). La salida ocupa el cuerpo del post, no la última línea.
+
+**(b) Cuatro toques de IA que no están en los dos tics anteriores.** Los fragmentos rechazados:
+
+> ❌ *"Circula una idea que tranquiliza:"* — el anuncio con dos puntos, otra vez.
+> ❌ *"Hay una norma real detrás"* — **conector de relleno**: no dice nada que el párrafo
+> siguiente no diga mejor.
+> ❌ *"No es un período de gracia. Es..."* — **el "no es X, es Y" usado una vez más.** Está en los
+> movimientos de arriba porque funciona; deja de funcionar cuando aparece en cada pieza. Es un
+> recurso, no una plantilla.
+> ❌ La imagen del cajón — **remate figurado.** Tope: **dos remates por post**, y de preferencia
+> uno solo y literal ("Tu sitio es la tienda principal. Las redes son la vitrina").
+
+**Y la regla de apertura, que es la misma de siempre dicha más fuerte:** *"no tiene un contexto.
+cualquiera que lea este post no sabe de qué estamos hablando"*. Se abre **en la situación de quien
+lee**, nunca en la noticia. El mismo día se rechazó un borrador que abría con *"En la llamada de
+resultados del 24 de septiembre, el CFO de Costco dijo..."*. Si el tema es una ley, la primera
+línea dice cuál es y a quién le aplica.
 
 ## Lo que no aparece nunca en el texto aprobado
 
