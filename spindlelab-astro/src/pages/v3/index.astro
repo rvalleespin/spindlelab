@@ -39,22 +39,22 @@ const tira = obra.casos.map((c: any) => ({
 
 // Los cuatro campos, en el orden que fija el giro del 29-sep: Desarrollo abre.
 // Las imágenes salen solo del pool honesto (spec §5).
-const imgs: Record<string, { src: string; alt: string; etq?: string }[]> = {
+const imgs: Record<string, { src: string; w: number; h: number; alt: string; etq?: string; cel?: string; pos?: string }[]> = {
   Desarrollo: [
-    { src: '/assets/img/obra/combeau-fotografia-ancho.jpg', alt: 'Portada del sitio de fotografía de Bernardo Combeau, un retrato iluminado en verde', etq: 'Bernardo Combeau' },
-    { src: '/assets/img/obra/verifica-y-cumple-ancho.jpg', alt: 'Portada de Verifica y Cumple con el titular «¿Estás seguro?» sobre azul', etq: 'Verifica y Cumple' },
+    { src: '/assets/img/obra/combeau-fotografia-ancho.jpg', w: 1440, h: 810, cel: '/assets/img/obra/mock-combeau-fotografia-alto.jpg', alt: 'Portada del sitio de fotografía de Bernardo Combeau, un retrato iluminado en verde', etq: 'Bernardo Combeau' },
+    { src: '/assets/img/obra/verifica-y-cumple-ancho.jpg', w: 1440, h: 810, cel: '/assets/img/obra/mock-verifica-y-cumple-alto.jpg', alt: 'Portada de Verifica y Cumple con el titular «¿Estás seguro?» sobre azul', etq: 'Verifica y Cumple' },
   ],
   Visibilidad: [
-    { src: '/assets/img/d/hilos.jpg', alt: 'Cantos de hojas apiladas en azul oscuro, en diagonal' },
-    { src: '/assets/img/d/ventana.jpg', alt: 'Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop' },
+    { src: '/assets/img/d/hilos.jpg', w: 1600, h: 960, alt: 'Cantos de hojas apiladas en azul oscuro, en diagonal' },
+    { src: '/assets/img/d/ventana.jpg', w: 1600, h: 670, pos: '72% 50%', alt: 'Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop' },
   ],
   Continuidad: [
-    { src: '/assets/img/d/domino-curva.jpg', alt: 'Fichas de dominó en fila curva sobre madera, con luz cálida' },
-    { src: '/assets/img/d/escritorio.jpg', alt: 'Escritorio de madera con un laptop, un cuaderno y una taza junto a la ventana' },
+    { src: '/assets/img/d/domino-curva.jpg', w: 1600, h: 1600, alt: 'Fichas de dominó en fila curva sobre madera, con luz cálida' },
+    { src: '/assets/img/d/escritorio.jpg', w: 1600, h: 670, pos: '34% 50%', alt: 'Escritorio de madera con un laptop, un cuaderno y una taza junto a la ventana' },
   ],
   Alcance: [
-    { src: '/assets/img/d/hilo.jpg', alt: 'Un hilo luminoso cruza en diagonal un fondo verde oscuro' },
-    { src: '/assets/img/d/domino.jpg', alt: 'Fichas de dominó cayendo en fila sobre fondo negro' },
+    { src: '/assets/img/d/hilo.jpg', w: 1400, h: 787, pos: '55% 50%', alt: 'Un hilo luminoso cruza en diagonal un fondo verde oscuro' },
+    { src: '/assets/img/d/domino.jpg', w: 1600, h: 1600, alt: 'Fichas de dominó cayendo en fila sobre fondo negro' },
   ],
 };
 const campos = [
@@ -133,8 +133,8 @@ const fecha = (iso: string) =>
             </div>
           ))}
         </div>
-        <div class="d-fila d-fila--2">
-          {c.imgs.map((im) => <Pieza src={im.src} alt={im.alt} etiquetas={im.etq ? [im.etq] : []} />)}
+        <div class="d-fila d-fila--2" style={`--suma:${c.imgs.reduce((t: number, im: any) => t + im.w / im.h, 0).toFixed(4)}`}>
+          {c.imgs.map((im) => <Pieza src={im.src} alt={im.alt} etiquetas={im.etq ? [im.etq] : []} ancho={im.w} alto={im.h} proporcion={im.w / im.h} srcCel={im.cel} posicion={im.pos} />)}
         </div>
       </section>
     ))}

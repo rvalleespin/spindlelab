@@ -12,20 +12,27 @@ interface Props {
   alto?: number;
   eager?: boolean;
   posicion?: string;
+  /** Otra imagen para celular (<picture>): p. ej. la obra en teléfono donde la celda es vertical. */
+  srcCel?: string;
+  /** Ancho/alto natural de la imagen. Con esto la pieza puede medir lo que la imagen, sin recortarla. */
+  proporcion?: number;
 }
-const { src, alt, clase = '', etiquetas = [], concepto = false, ancho, alto, eager = false, posicion } = Astro.props;
+const { src, alt, clase = '', etiquetas = [], concepto = false, ancho, alto, eager = false, posicion, srcCel, proporcion } = Astro.props;
 ---
-<figure class:list={['d-pieza', clase]}>
-  <img
-    src={src}
-    alt={alt}
-    width={ancho}
-    height={alto}
-    loading={eager ? 'eager' : 'lazy'}
-    fetchpriority={eager ? 'high' : undefined}
-    decoding="async"
-    style={posicion ? `object-position:${posicion}` : undefined}
-  />
+<figure class:list={['d-pieza', clase]} style={proporcion ? `--r:${proporcion.toFixed(4)}` : undefined}>
+  <picture>
+    {srcCel && <source media="(max-width: 767px)" srcset={srcCel} />}
+    <img
+      src={src}
+      alt={alt}
+      width={ancho}
+      height={alto}
+      loading={eager ? 'eager' : 'lazy'}
+      fetchpriority={eager ? 'high' : undefined}
+      decoding="async"
+      style={posicion ? `object-position:${posicion}` : undefined}
+    />
+  </picture>
   {(concepto || etiquetas.length > 0) && (
     <figcaption class="d-etq">
       {concepto && <span class="d-etq--concepto">Pieza de concepto · no es un cliente</span>}

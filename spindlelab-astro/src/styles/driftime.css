@@ -62,6 +62,7 @@
 
 /* ---------------------------------------------------------------- piezas de imagen */
 .d-pieza { position: relative; margin: 0; border-radius: var(--d-r); overflow: hidden; background: var(--d-modulo); }
+.d-pieza picture { display: contents; }
 .d-pieza img, .d-pieza video { width: 100%; height: 100%; object-fit: cover; display: block; }
 /* Etiquetas ARRIBA: abajo las tapa el aviso de cookies (medido a 1440x900: aviso desde
    y=827), y el rótulo de una pieza de concepto tiene que verse sin scroll. */
@@ -116,11 +117,18 @@
 /* ---------------------------------------------------------------- campos pegajosos */
 /* Cada campo tapa al anterior. min-height y no altura fija: en celular crece en vez de
    recortar. El z-index sube campo a campo. */
-.d-campo { position: sticky; top: 0; min-height: 100svh; padding: 92px var(--d-m) 32px; display: flex; flex-direction: column; }   /* arriba: libra el módulo de nav fijo (termina en ~74 px); con 32 px el módulo tapaba el titular */
-/* Un campo pegajoso más alto que la pantalla esconde su borde de abajo para siempre (el
-   siguiente se le monta encima): la fila de imágenes se ajusta al alto disponible. Medido:
-   sin esto, a 1440×800 y 1280×720 se perdían 70–140 px de las imágenes. */
-@media (min-width: 768px) { .d-campo .d-fila .d-pieza { aspect-ratio: auto; height: clamp(170px, calc(100svh - 560px), 380px); } }
+.d-campo { position: sticky; top: 0; height: 100svh; padding: 92px var(--d-m) 32px; display: flex; flex-direction: column; }   /* arriba: libra el módulo de nav fijo (termina en ~74 px) */
+/* UNA PANTALLA EXACTA (5-oct, pedido de Ramón: «las imágenes quedan fuera del navegador").
+   Medido antes en 8 pantallas reales: en notebook la fila recortaba de 25 a 73 % de cada
+   imagen, y en celular la segunda pieza quedaba 244 px fuera del borde derecho.
+   Ahora: la fila llena exactamente lo que deja la cabecera (flex 1). En escritorio cada
+   pieza mantiene SU proporción (--r, ancho/alto natural) y las dos comparten alto; si a lo
+   ancho no caben, el alto baja hasta que quepan (--suma = r1 + r2, en cqw de la fila). */
+.d-campo .d-fila { flex: 1 1 0; min-height: 0; margin-top: 0; padding-top: 28px; display: flex; align-items: flex-end; gap: var(--d-g); container-type: inline-size; }
+@media (min-width: 768px) {
+  .d-campo .d-fila .d-pieza { flex: none; aspect-ratio: var(--r, 1.7778); width: auto; height: min(100%, calc((100cqw - var(--d-g)) / var(--suma, 3.5556))); }
+  .d-campo .d-display { font-size: clamp(2.4rem, min(10vw, 14svh), 7.5rem); }   /* en pantallas bajas el titular cede alto a las imágenes */
+}
 .d-campo__cab { display: flex; flex-direction: column; gap: 18px; max-width: 720px; }
 .d-campo .d-display { margin-bottom: 6px; }
 .d-desc { font-size: clamp(1.125rem, 1.67vw, 1.5rem); line-height: 1.5; margin: 0; }   /* 24 px, como driftime */
@@ -131,7 +139,20 @@
 .d-campo--petroleo { background: var(--d-petroleo); color: var(--d-petroleo-t); z-index: 4; }
 .d-campo--ciruela { background: var(--d-ciruela); color: var(--d-ciruela-t); z-index: 5; }
 .d-panel[hidden] { display: none; }
-@media (max-width: 767px) { .d-campo { padding: 96px var(--d-m) 28px; } .d-campo__cab { gap: 14px; } }
+@media (max-width: 767px) {
+  .d-campo { padding: 84px var(--d-m) 24px; } .d-campo__cab { gap: 14px; }
+  /* Celular: las dos piezas lado a lado, dentro de la pantalla (no carrusel: en un campo
+     pegajoso la que asomaba quedaba cortada contra el borde). Celdas verticales que llenan
+     el alto que queda, con tope para que en teléfonos altos no se estiren. */
+  .d-campo .d-fila { display: grid; grid-template-columns: 1fr 1fr; align-items: end; overflow: visible; margin-right: 0; padding-right: 0; scroll-snap-type: none; padding-top: 22px; }
+  .d-campo .d-fila .d-pieza { height: 100%; max-height: calc((100cqw - var(--d-g)) / 2 * 1.35); aspect-ratio: auto; flex: none; }
+}
+/* Pantallas muy bajas: el campo no cabe en una pantalla aunque las imágenes se achiquen. Ahí
+   deja de pegarse y se lee de corrido; nada queda escondido bajo el campo siguiente. */
+@media (min-width: 768px) and (max-height: 679px), (max-width: 767px) and (max-height: 599px) {
+  .d-campo { position: relative; height: auto; }
+  .d-campo .d-fila { flex: none; height: clamp(180px, 42vw, 320px); }
+}
 
 /* Flujo en línea, no flex: con flex, a 390 el separador quedaba solo al final de una línea y
    «+ IVA» huérfano en la siguiente. «+ IVA» va pegado a la última cifra y no se parte.
