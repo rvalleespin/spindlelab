@@ -26,7 +26,8 @@ qué se aplicó sin que nadie lo aprobara por escrito:
 | Decisión | Estado | Constancia |
 |---|---|---|
 | Lienzo negro puro `#000000` | **Aprobado por Ramón** | 27-sep-2026 |
-| Titulares en MAYÚSCULAS | **Aprobado por Ramón** | 27-sep-2026, ratificado por escrito el 29-sep |
+| ~~Titulares en MAYÚSCULAS~~ (reemplazado el 5-oct, fila de abajo) | **Aprobado por Ramón** | 27-sep-2026, ratificado por escrito el 29-sep |
+| **Mayúsculas solo en el display: cinco lugares** (titular del hero y las cuatro palabras de campo). Todo lo demás en caja normal | **Aprobado por Ramón** | 5-oct-2026, al fijar driftime.com como la vara del sitio entero |
 | Manrope toma titulares y cuerpo | **Aprobado por Ramón** | confirmado el 29-sep-2026. Se había aplicado el 27-sep con una fecha de aprobación reclamada en un comentario de código que no se pudo corroborar; queda saldado. |
 | Campos brasa y ciruela | Aplicado, sin aprobación explícita | 27-sep |
 | Radio único de 6px | Aplicado, sin aprobación explícita | 27-sep |
@@ -126,33 +127,46 @@ leerse como «el titular más grande» y pasa a leerse como firma. Manrope ya es
 (es la tipografía del sistema live v2 de redes) y ya está auto-alojada, así que el cambio
 no agrega ni una petición a terceros.
 
-### La caja: mayúsculas, con un límite de largo
+### La caja: mayúsculas solo donde grita el display *(cambia el 5-oct-2026)*
 
-**Los titulares del v3 van en MAYÚSCULAS**, peso 800. Esto reemplaza la regla de la v1.3,
-que prohibía ALL CAPS en titulares.
+**Regla vigente, aprobada por Ramón el 5-oct-2026:** las mayúsculas en peso 800 se usan en
+**cinco lugares del sitio y en ninguno más** — el titular del hero de la home y las cuatro
+palabras de campo (Desarrollo, Visibilidad, Continuidad, Alcance). Todo otro titular, en la
+home y en las internas, va en **caja normal**, Manrope 500.
 
-**Pero las mayúsculas a tamaño de cartel no perdonan el largo, y eso es parte de la regla,
-no una recomendación:**
+**Por qué cambió.** El 5-oct Ramón fijó driftime.com como la vara del sitio entero, y por
+primera vez se midió driftime en el navegador (el equipo anterior no había podido abrirlo).
+El dato que decide: en su home, la tipografía display aparece en **5 elementos contra 517**
+en la sans de lectura, y sus páginas internas no la usan ni en el h1. Lo que hace que
+driftime se vea fuerte es el contraste entre esos cinco gritos y el silencio del resto. La
+regla anterior («todos los titulares en mayúsculas 800») producía lo contrario: un sitio que
+grita en cada sección, y por eso nada destaca. Detalle: `marketing/oficina/obras-web/
+spindlelab-v3/referencia-driftime/lock-driftime.md`.
 
-> **Un titular va en mayúsculas y tiene que caber: máximo 6 palabras y 34 caracteres.**
-> Si no cabe, se reescribe el texto. **Nunca se le baja la caja.**
+**El límite de largo sigue, pero solo para el display:** máximo 6 palabras y 34 caracteres.
+Si no cabe, se reescribe; nunca se le baja la caja. Lo que dijo Ramón el 29-sep sigue
+valiendo: *«que las frases sean más concisas, precisas y con mejores ganchos»*.
 
-De dónde sale el número: la mediana de los titulares del sistema es de 25 caracteres, y los
-que se veían mal eran los que pasaban de 34 y caían en tres líneas. Un titular de once
-palabras en caja alta deja de leerse como titular y se lee como un bloque.
+**Consecuencia que conviene anotar:** el pendiente de los siete h1 publicados del blog (que
+medían entre 46 y 70 caracteres y no cabían en mayúsculas, y acortarlos costaba SEO)
+**desaparece**. Con la regla nueva van en caja normal y su largo no es un problema.
 
-**Esto es una regla de copy, no de tipografía.** Un titular largo es un problema de
-escritura: falta precisión o falta gancho. La caja no lo arregla — se probó el 29-sep,
-bajarle la caja a las frases largas, y Ramón lo rechazó con razón: *«no estoy en contra de
-que los títulos vayan en mayúscula, es sino que las frases sean más concisas, precisas y
-con mejores ganchos»*. El chequeo está en `spindlelab-astro/src/utils/caja.ts` (`esLargo`).
+### La escala (medida en driftime, traducida a Manrope)
 
-### La escala
+| Rol | Tamaño (escritorio → celular) | Peso | Caja |
+|---|---|---|---|
+| **Display** (los cinco lugares) | `clamp(2,4rem, 10vw, 7,5rem)` → 120 px / ~39 px | 800 | MAYÚSCULAS, interlínea 0,9 |
+| Título de página interna (h1) | `clamp(2,25rem, 4,17vw, 3,75rem)` → 60 px | 500 | normal, tracking −0,02em |
+| Título de sección (h2) | `clamp(1,375rem, 2,08vw, 1,875rem)` → 30 px | 500 | normal, tracking −0,02em |
+| Subtítulo (h3) | `clamp(1,25rem, 1,67vw, 1,5rem)` → 24 px | 500 | normal |
+| Párrafo guía | `clamp(1,25rem, 1,67vw, 1,5rem)` → 24 / 20 px | 400 | normal, interlínea 1,5 |
+| Cuerpo secundario | `clamp(1,0625rem, 1,25vw, 1,125rem)` → 18 px, en gris | 400 | normal |
+| Botón | 14 px | 500 | normal |
+| Rótulos y metadatos | 13 px | 500 | normal (ya no en mayúsculas espaciadas) |
 
-- **La palabra del campo:** una sola palabra, `8,33vw` (hasta 8,5rem), peso 800, **tracking cero**. El tracking cerrado a ese tamaño lee a startup; el normal lee a cartel.
-- **Titular de sección:** `clamp(1,75rem, 5,2vw, 5rem)`, peso 800.
-- **Titular de artículo:** `clamp(1,75rem, 3,6vw, 3,25rem)`. Más chico que el de un campo a propósito: un campo lleva una palabra, un artículo lleva un título real. *(Pendiente: los siete h1 publicados miden entre 46 y 70 caracteres, o sea incumplen el límite de arriba. Acortarlos tiene costo de SEO — son el titular publicado, atado al canonical y al JSON-LD — así que es decisión de Ramón, no de quien maqueta.)*
-- **Rótulos y etiquetas:** mayúsculas chicas con tracking `0,16em` (`prosa-v3.css`, el pie y los rótulos de sección).
+- **Wordmark gigante del pie:** Gabarito 800, tamaño = ancho del contenedor / 4,78 (medido:
+  el texto mide 4,744 veces su tamaño de letra). Su punto va en papel, no en oro: el oro de
+  esa vista ya está en el módulo de navegación.
 - **Texto corrido:** ≤ 68 caracteres por línea *(sigue vigente de la v1.3)*.
 
 ---
