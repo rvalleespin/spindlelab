@@ -204,13 +204,33 @@ const jsonLd = {
   <FooterV3 />
 
   <script src="/assets/js/v3-contacto.js" is:inline defer></script>
-  {/* Dos arreglos de esta página que no tocan archivos compartidos (están propuestos en
+  {/* Tres arreglos de esta página que no tocan archivos compartidos (están propuestos en
        NavV3, FooterV3 y v3-contacto.js; cuando entren, este bloque deja de hacer nada):
        1. En contacto, «Escríbenos» del módulo, del menú y del pie apuntaba a esta misma URL:
           recargaba, volvía arriba y podía borrar lo escrito. Aquí lleva al formulario.
        2. v3-contacto.js devuelve el botón a 'Enviar →' cuando el envío falla. Si el botón
-          queda habilitado con otro texto, se le devuelve el suyo. */}
+          queda habilitado con otro texto, se le devuelve el suyo.
+       3. UTM (QA 5-oct): la captura vive solo en v3-contacto.js y lee la URL de contacto;
+          quien llegaba por un anuncio a otra página v3 y pasaba a contacto enviaba sin
+          atribución. Puente: si ni esta URL ni la sesión traen UTM, se leen de la página
+          anterior del mismo sitio (document.referrer). Cubre anuncio → página → contacto,
+          no un recorrido de dos saltos: eso lo arregla la captura en NavV3 (propuesta).
+          Corre en el análisis del HTML, antes que v3-contacto.js (defer), que es quien
+          vuelca sessionStorage en los campos ocultos. */}
   <script is:inline>
+    (function () {
+      try {
+        var K = ['utm_source', 'utm_medium', 'utm_campaign'];
+        var aqui = new URLSearchParams(location.search);
+        var hay = K.some(function (k) { return aqui.get(k) || sessionStorage.getItem(k); });
+        if (!hay && document.referrer) {
+          var ref = new URL(document.referrer);
+          if (ref.origin === location.origin) {
+            K.forEach(function (k) { var v = ref.searchParams.get(k); if (v) sessionStorage.setItem(k, v); });
+          }
+        }
+      } catch (e) {}
+    })();
     (function () {
       document.querySelectorAll('a[href="/v3/contacto/"]').forEach(function (a) { a.setAttribute('href', '#contacto-form'); });
       var b = document.querySelector('.contact-form button[type="submit"]');
