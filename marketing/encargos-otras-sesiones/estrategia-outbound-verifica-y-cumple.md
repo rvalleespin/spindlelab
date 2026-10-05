@@ -486,3 +486,59 @@ Nada de eso se ha enviado. Los 12 borradores viejos de Gmail ya los borró Ramó
   versión con fecha. Mandar el link, no explicar.
 - **Quiere avanzar** → el formulario del sitio lo lleva al pedido con el dominio y el contexto
   del chequeo. El estado se registra en el pipeline, no en el CSV del lote.
+
+---
+
+## 11. Dos filtros que se pagan solos (5-oct-2026, lote de 51 abogados)
+
+### El prospecto que vende lo mismo que nosotros: filtrarlo ANTES de sondear
+
+La sección 9 ya decía "descarta si el prospecto ya vende esto". En abogados eso no es una
+excepción, es **12% del lote**: de 51 estudios, 5 tienen protección de datos como área de
+práctica y 1 tiene un socio con diplomado en el tema. `fontaineycia.cl` llega a ofrecer su propio
+instrumento para medir la preparación de una empresa ante la ley.
+
+**Entonces el filtro va primero, no después de gastar la sonda.** Se baja la portada y se busca:
+
+```
+protecci.n de datos | datos personales | 21\.719 | 21719
+```
+
+- Aparece como **área de práctica o servicio** → descartar, es el competidor.
+- Aparece solo en el **pie** (su propia política) o en el **CV de un socio** → se evalúa aparte,
+  pero con cuidado: va a defenderse mejor que cualquiera.
+- No aparece → sigue a la sonda.
+
+Esto ordenó el lote de hoy: 8 sondas que no se gastaron.
+
+### Un 200 no es una página
+
+Para afirmar que alguien tiene o no tiene política de privacidad, **hay que leer la página**. El
+código HTTP no sirve: `atasociados.cl`, `betancourtabogados.cl` y `rgcabogado.cl` respondieron
+**200 en las seis rutas de política que probamos** y también en una ruta inventada. Sirven la
+portada en cualquier parte. Ninguno tiene política.
+
+**La prueba:** pedir `/<algo-que-no-existe>/` y comparar tamaño y título con la ruta real. Si
+devuelve lo mismo, no hay página. Es la misma familia de error que "6 peticiones y 0 cookies"
+siendo la pantalla de error de Chrome: **el indicador respondió, la cosa no está ahí.**
+
+Y al revés: `altlegal.cl` sí tenía política real (161 KB, título propio, vocabulario de la ley).
+Si no se comprueba, se descarta a quien sí vale y se le escribe a quien no.
+
+### Lo que el recuento volvió a salvar
+
+`castaneda.cl` dio **10 cookies en la primera corrida y 6 en la segunda**. Las cuatro que se
+fueron eran justo las del hallazgo que iba a llevar el correo. Se reescribió con lo que sí
+aguantó las dos corridas. Van tres lotes seguidos en que la segunda corrida bota una frase.
+
+Y una que se cayó por leer mal el indicador: decir que `chll.cl` "usa la versión vieja de
+Analytics que Google abandonó" era falso. Tiene la cookie de una propiedad antigua **y** una
+propiedad nueva. Tener las dos no es usar solo la vieja.
+
+### El rendimiento real de un vertical
+
+De 51 vírgenes de abogados salieron **10 correos: 20%**. La merma que teníamos estimada era del
+69% (o sea 31% de rendimiento). **Abogados rinde menos**, y la causa principal es la primera
+sección de acá: el prospecto vende lo mismo.
+
+Conviene medir esto por vertical antes de comprometer sesiones completas a uno.
