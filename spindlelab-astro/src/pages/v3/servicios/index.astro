@@ -1,29 +1,43 @@
 ---
-// ÍNDICE DE SERVICIOS en el lenguaje v3.
+// ÍNDICE DE SERVICIOS — sistema driftime (5-oct-2026).
 //
-// QUÉ CAMBIA RESPECTO DE LO PUBLICADO: la página se llama «Tu motor de adquisición
-// digital» y ordena por tipo de entregable («Visibilidad: donde ganamos la pelea», «Las
-// piezas que amplían y convierten», «Qué entra en el motor»). El brief v3 reemplaza ese
-// encuadre y ordena por el MOMENTO del cliente, que es además lo que ya hace la home.
-// El contenido real se conserva; cambia el orden y los rótulos.
+// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md, §4 plantilla «Índice»:
+// h1 60 px + entrada → filas editoriales, cada servicio con su campo de color y su precio.
+// Implementación de referencia: src/pages/v3/servicios/desarrollo-web.astro (cabecera, entrada,
+// secciones pegajosas) y src/pages/v3/index.astro (campos y línea de precio).
 //
-// LOS PRECIOS Y EL ORDEN VIVEN EN src/data/oferta-v3.json, compartido con la home. Estaban
-// escritos a mano en los dos lados y esa es la forma clásica de que un precio quede
-// distinto en una página y nadie lo note hasta que un cliente lo ve.
+// LO QUE ORDENA LA PÁGINA: el MOMENTO del cliente, igual que la home. Cada momento es una
+// banda del color de su campo (brasa = Desarrollo, navy = Visibilidad, petróleo = Continuidad,
+// ciruela = Alcance) y adentro van sus servicios como filas con filete, nunca tarjetas. En
+// escritorio las bandas se pegan arriba y se apilan, como los campos de la home y de driftime.
+// En celular no se pegan: una banda más alta que la pantalla escondería su final bajo la
+// siguiente.
 //
-// El límite «dentro / fuera» va verbatim: es honesto y es lo que evita malentendidos de
-// alcance. El FAQ no se duplica acá; vive en cada página de servicio.
+// SIN DISPLAY: una interna tiene cero usos de Manrope 800 en mayúsculas. La palabra del campo,
+// que en la home es display, acá va como rótulo chico en caja normal.
+//
+// CONTRASTE EN LAS BANDAS: brasa con blanco da 4,70:1 y petróleo con su crema 5,06:1. Pasan
+// AA, pero sin margen: cualquier opacidad en el texto los deja abajo. Por eso todo el texto de
+// una banda va al 100 % (incluido el «Desde» y el «+ IVA» del precio, que driftime.css baja a
+// 0,72) y la jerarquía se hace con tamaño y peso.
+//
+// LOS PRECIOS Y EL ORDEN VIVEN EN src/data/oferta-v3.json, compartido con la home: un precio
+// escrito a mano en dos lados termina distinto en uno. Se muestran con la misma forma que en
+// la home: «Desde | … | + IVA».
+//
+// El límite «dentro / fuera» va verbatim: es honesto y evita malentendidos de alcance. El FAQ
+// no se duplica acá; vive en cada página de servicio.
 import Layout from '../../../layouts/Layout.astro';
-import { caja } from '../../../utils/caja';
 import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
-
+import '../../../styles/driftime.css';
 import oferta from '../../../data/oferta-v3.json';
-import '../../../styles/campos-v3.css'; // tintes de color, filete, rotulo
 
 const url = 'https://spindlelab.cl/servicios/';
 
+// El grafo no cambia: mismos dos nodos y mismos @id que la versión anterior. La organización
+// y la persona ya las emite Layout.astro.
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -50,191 +64,143 @@ const jsonLd = {
     },
   ],
 };
----
 
+// Las cuatro bandas, en el orden de la home: Desarrollo abre, Alcance cierra.
+const bandas = [
+  ...oferta.momentos.map((m: any) => ({ palabra: m.palabra, campo: m.campo, momento: m.momento, nota: m.nota, items: m.items })),
+  { palabra: oferta.tambienPanel.palabra, campo: oferta.tambienPanel.campo, momento: oferta.tambienPanel.momento, nota: oferta.tambienPanel.nota, items: oferta.tambien },
+].map((b) => ({ ...b, id: `m-${b.palabra.toLowerCase()}` }));
+
+// «Visibilidad (SEO + IA): auditoría técnica…» → el rótulo en papel, el detalle en gris.
+const partir = (t: string) => {
+  const i = t.indexOf(': ');
+  return i === -1 ? { a: '', b: t } : { a: t.slice(0, i + 1), b: t.slice(i + 2) };
+};
+---
 <Layout
   title="Soluciones: SEO técnico, visibilidad en IA y desarrollo web · SpindleLab"
   description="SEO técnico, visibilidad en motores de IA y desarrollo web a medida, con precios publicados. Chequeo gratis antes de contratar nada."
-  bodyClass="bg-noche font-texto"
+  bodyClass="d-body"
 >
-  <Fragment slot="head">
-    <meta name="robots" content="noindex, nofollow" />
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
-  </Fragment>
-
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <NavV3 />
 
-  <main class="text-papel">
-    <section class="px-6 md:px-medianil pt-32 sm:pt-40 md:pt-44 pb-16 md:pb-20">
-      <nav aria-label="Migas" class="text-humo text-xs font-bold uppercase mb-8" style="letter-spacing:0.16em">
-        <a href="/v3/" class="hover:text-papel transition-colors">Inicio</a>
-        <span aria-hidden="true" class="mx-2">·</span>
-        <span class="text-humo">Soluciones</span>
-      </nav>
-      <h1
-        data-entra
-        class:list={['font-extrabold m-0', caja('Qué hacemos')]}
-        style="font-size:clamp(1.875rem, 5.6vw, 5.5rem); line-height:0.9; letter-spacing:0"
-      >
-        Qué hacemos
-      </h1>
+  <main>
+    <header class="d-cab">
+      <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Soluciones</nav>
+      <h1 class="d-h1">Qué hacemos</h1>
+    </header>
 
-      <div data-entra data-paso="1" class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-x-8 items-end mt-10 md:mt-12">
-        <div class="md:col-span-5">
-          <p class="m-0 text-papel text-xl md:text-2xl leading-relaxed">
-            El centro es tu sitio. Lo construimos para que las máquinas que hoy
-            recomiendan tu negocio puedan leerlo, y eso se comprueba sobre tu propio
-            dominio. Si ya tienes sitio y no lo vas a rehacer, hay una puerta para eso.
-          </p>
-        </div>
-        <div class="md:col-span-6 md:col-start-7">
-          <img
-            src={'/assets/img/hero-servicios.jpg'}
-            alt={'Equipo revisando el trabajo en pantalla'}
-            width="1280"
-            height="720"
-            loading="eager"
-            decoding="async"
-            class="media-campo"
-          />
-        </div>
-      </div>
+    <div class="d-entrada">
+      <p class="d-nota-card"><b>Valores en pesos, + IVA.</b> Los publicamos a propósito: la mayoría del rubro no lo hace.</p>
+      <p class="d-guia">El centro es tu sitio. Lo construimos para que las máquinas que hoy recomiendan tu negocio puedan leerlo, y eso se comprueba sobre tu propio dominio. Si ya tienes sitio y no lo vas a rehacer, hay una puerta para eso.</p>
+    </div>
 
-    </section>
-
-    {/* ORDENADO POR EL MOMENTO DEL CLIENTE, igual que la home. */}
-    <section class="bg-papel text-noche px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 mb-4 max-w-[16ch]', caja('¿Por dónde te toca partir?')]}
-        style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0"
-      >
-        ¿Por dónde te toca partir?
-      </h2>
-      <p data-entra data-paso="1" class="text-noche/65 text-sm mb-12 md:mb-16 max-w-prosa">
-        Valores en pesos, + IVA. Los publicamos a propósito: la mayoría del rubro no lo hace.
-      </p>
-
-      <div class="grid gap-x-8 lg:gap-x-12 gap-y-14 lg:grid-cols-3">
-        {
-          oferta.momentos.map((m: any) => (
-            <div class="flex flex-col border-t filete pt-6">
-              <h3
-                class:list={['font-extrabold m-0 max-w-[18ch]', caja(m.momento)]}
-                style="font-size:clamp(1.0625rem,1.5vw,1.375rem); line-height:1.15; letter-spacing:-0.02em"
-              >
-        {m.momento}
-      </h3>
-              <ul class="list-none p-0 mt-6 mb-0 space-y-7 flex-1">
-                {m.items.map((it: any) => (
-                  <li>
-                    <a href={it.href} class="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-noche">
-                      <span class="block font-bold text-lg group-hover:opacity-55 transition-opacity">{it.n}</span>
-                      <span class="block mt-2 text-noche/65 text-sm leading-relaxed">{it.d}</span>
-                      <span class="block mt-2 font-bold text-sm">{it.p}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              {m.nota && <p class="mt-6 text-noche/65 text-sm leading-relaxed">{m.nota}</p>}
-            </div>
-          ))
-        }
-      </div>
-
-      <div class="mt-16 pt-8 border-t filete">
-        <span class="text-noche/65 text-xs font-bold uppercase block mb-6" style="letter-spacing:0.16em">
-          También
-        </span>
-        <ul class="list-none p-0 m-0 grid gap-x-10 gap-y-7 sm:grid-cols-2">
-          {
-            oferta.tambien.map((t: any) => (
+    {/* Las bandas de los cuatro momentos. Cada fila es un enlace entero al servicio. */}
+    <div class="d-bandas-sidx">
+      {bandas.map((b) => (
+        <section class:list={['d-banda-sidx', `d-banda-sidx--${b.campo}`]} aria-labelledby={b.id}>
+          <div class="d-banda-sidx__cab">
+            <p class="d-banda-sidx__pal">{b.palabra}</p>
+            <h2 class="d-h2" id={b.id}>{b.momento}</h2>
+            {b.nota && <p class="d-banda-sidx__nota">{b.nota}</p>}
+          </div>
+          <ul class="d-banda-sidx__filas">
+            {b.items.map((it: any) => (
               <li>
-                <a href={t.href} class="group block">
-                  <span class="block font-bold group-hover:opacity-55 transition-opacity">{t.n}</span>
-                  <span class="block mt-1.5 text-noche/65 text-sm leading-relaxed">{t.d}</span>
-                  <span class="block mt-1.5 font-bold text-sm">{t.p}</span>
+                <a class="d-fila-sidx" href={it.href}>
+                  <h3 class="d-h3">{it.n}</h3>
+                  <span class="d-fila-sidx__flecha" aria-hidden="true">→</span>
+                  <p class="d-fila-sidx__d">{it.d}</p>
+                  <p class="d-precio">
+                    <span class="d-pre-rot">Desde</span><span class="d-pre-sep"></span><b>{it.p}</b><span class="d-pre-rot">+ IVA</span>
+                  </p>
                 </a>
               </li>
-            ))
-          }
-        </ul>
-      </div>
-    </section>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
 
     {/* EL LÍMITE, verbatim. Decir qué NO se hace evita el malentendido de alcance. */}
-    <section class="tinte--navy px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 mb-12 md:mb-16', caja('Qué hacemos y qué no')]}
-        style="font-size:clamp(1.5rem, 4.4vw, 4rem); line-height:0.94; letter-spacing:0"
-      >
-        Qué hacemos y qué no
-      </h2>
-      <div data-entra data-paso="1" class="grid gap-x-8 lg:gap-x-12 gap-y-12 md:grid-cols-2">
-        <div class="border-t filete pt-6">
-          <h3 class:list={['font-extrabold m-0 text-xl', caja('Lo hacemos nosotros')]} style="letter-spacing:-0.02em">
-        Lo hacemos nosotros
-      </h3>
-          <ul class="list-none p-0 mt-5 mb-0 space-y-3">
-            {
-              oferta.dentro.map((i: string) => (
-                <li class="flex gap-2.5 text-humo text-base leading-relaxed">
-                  <span aria-hidden="true">—</span>
-                  <span>{i}</span>
-                </li>
-              ))
-            }
+    <section class="d-sec" aria-labelledby="s-limite">
+      <div class="d-eti"><h2 class="d-h2" id="s-limite">Qué hacemos y qué no</h2></div>
+      <div class="d-limite-sidx">
+        <div>
+          <h3 class="d-h3">Lo hacemos nosotros</h3>
+          <ul class="d-filas d-lista-sidx">
+            {oferta.dentro.map((t: string) => { const p = partir(t); return <li>{p.a && <span>{p.a} </span>}<span class="d-gris">{p.b}</span></li>; })}
           </ul>
         </div>
-        <div class="border-t filete pt-6">
-          <h3 class:list={['font-extrabold m-0 text-xl', caja('Lo pones tú')]} style="letter-spacing:-0.02em">
-        Lo pones tú
-      </h3>
-          <ul class="list-none p-0 mt-5 mb-0 space-y-3">
-            {
-              oferta.fuera.map((i: string) => (
-                <li class="flex gap-2.5 text-humo text-base leading-relaxed">
-                  <span aria-hidden="true">—</span>
-                  <span>{i}</span>
-                </li>
-              ))
-            }
+        <div>
+          <h3 class="d-h3">Lo pones tú</h3>
+          <ul class="d-filas d-lista-sidx">
+            {oferta.fuera.map((t: string) => { const p = partir(t); return <li>{p.a && <span>{p.a} </span>}<span class="d-gris">{p.b}</span></li>; })}
           </ul>
-          <p class="mt-6 text-humo text-sm leading-relaxed">
-            Si no lo tienes, te conectamos con partners.
-          </p>
+          <p class="d-chico d-gris d-limite-sidx__pie">Si no lo tienes, te conectamos con partners.</p>
         </div>
       </div>
     </section>
 
-    <section class="px-6 md:px-medianil py-32 md:py-seccion">
-      <h2
-        data-entra
-        class:list={['font-extrabold m-0 max-w-[15ch]', caja('Empieza por el chequeo')]}
-        style="font-size:clamp(1.75rem, 5.2vw, 5rem); line-height:0.92; letter-spacing:0; text-wrap:balance"
-      >
-        Empieza por el chequeo
-      </h2>
-      <p data-entra data-paso="1" class="mt-8 text-humo text-xl leading-relaxed max-w-prosa">
-        Revisamos tu sitio, tu competencia y tu presencia en IA. Sin costo y sin compromiso.
-      </p>
-      <div class="mt-12 flex items-center gap-4 flex-wrap">
-        <a
-          href="/v3/#chequeo"
-          class="rounded-v3 bg-papel hover:bg-white text-noche text-sm font-bold px-8 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel"
-        >
-          Correr el chequeo
-        </a>
-        <a
-          href={CONTACTO}
-          class="rounded-v3 border filete hover:border-papel text-papel text-sm font-bold px-8 py-4 transition-colors"
-        >
-          Conversemos tu proyecto
-        </a>
+    <section class="d-sec" aria-labelledby="s-chequeo">
+      <div class="d-eti"><h2 class="d-h2" id="s-chequeo">Empieza por el chequeo</h2></div>
+      <div>
+        <p class="d-guia">Revisamos tu sitio, tu competencia y tu presencia en IA. Sin costo y sin compromiso.</p>
+        <div class="d-btns d-chequeo-sidx"><a class="d-btn" href="/v3/#chequeo">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Conversemos tu proyecto</a></div>
       </div>
     </section>
   </main>
 
   <FooterV3 />
 </Layout>
+
+<style>
+  /* ------------------------------------------------------------ bandas de los momentos */
+  .d-bandas-sidx { margin-top: 120px; }
+  .d-banda-sidx { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--d-g); padding: 96px var(--d-m) 80px; }
+  .d-banda-sidx--brasa { background: var(--d-brasa); color: var(--d-brasa-t); }
+  .d-banda-sidx--navy { background: var(--d-navy); color: var(--d-navy-t); }
+  .d-banda-sidx--petroleo { background: var(--d-petroleo); color: var(--d-petroleo-t); }
+  .d-banda-sidx--ciruela { background: var(--d-ciruela); color: var(--d-ciruela-t); }
+  /* Escritorio: se pegan arriba y la siguiente tapa a la anterior. El padding de arriba deja
+     libre el módulo de navegación, que está fijo encima. */
+  @media (min-width: 768px) {
+    .d-banda-sidx { position: sticky; top: 0; }
+    .d-banda-sidx:nth-child(1) { z-index: 1; }
+    .d-banda-sidx:nth-child(2) { z-index: 2; }
+    .d-banda-sidx:nth-child(3) { z-index: 3; }
+    .d-banda-sidx:nth-child(4) { z-index: 4; }
+  }
+  .d-banda-sidx__cab { display: flex; flex-direction: column; gap: 12px; align-self: start; padding-right: clamp(0px, 3vw, 48px); }
+  .d-banda-sidx__pal { font-size: 0.8125rem; font-weight: 500; margin: 0; }
+  .d-banda-sidx__nota { font-size: 0.875rem; line-height: 1.5; max-width: 340px; margin: 6px 0 0; }
+  .d-banda-sidx__filas { list-style: none; margin: 0; padding: 0; }
+
+  /* La fila: nombre y flecha arriba, la línea y el precio debajo. Filete en el color del texto
+     de la banda; es un separador, no texto, así que su opacidad no afecta el contraste. */
+  .d-fila-sidx { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 24px; padding: 24px 0 28px; border-top: 1px solid color-mix(in srgb, currentColor 32%, transparent); text-decoration: none; }
+  .d-banda-sidx__filas li:last-child .d-fila-sidx { border-bottom: 1px solid color-mix(in srgb, currentColor 32%, transparent); }
+  .d-fila-sidx .d-h3 { grid-column: 1; grid-row: 1; }
+  .d-fila-sidx__flecha { grid-column: 2; grid-row: 1; font-size: 1.5rem; line-height: 1.4; }
+  .d-fila-sidx__d { grid-column: 1 / -1; font-size: clamp(1.0625rem, 1.25vw, 1.125rem); line-height: 1.6; margin: 0; max-width: 620px; }
+  .d-fila-sidx .d-precio { grid-column: 1 / -1; margin-top: 6px; }
+  .d-fila-sidx .d-pre-rot { opacity: 1; }
+  .d-fila-sidx:hover .d-h3 { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+  .d-fila-sidx:focus-visible { outline-color: currentColor; outline-offset: 4px; }
+
+  @media (max-width: 767px) {
+    .d-bandas-sidx { margin-top: 80px; }
+    .d-banda-sidx { grid-template-columns: 1fr; gap: 28px; padding: 56px var(--d-m) 48px; }
+    .d-banda-sidx__cab { padding-right: 0; }
+  }
+
+  /* ------------------------------------------------------------ dentro / fuera */
+  .d-limite-sidx { display: flex; flex-direction: column; gap: 56px; }
+  .d-lista-sidx { list-style: none; padding: 0; margin: 14px 0 0; }
+  .d-lista-sidx li { font-size: clamp(1.0625rem, 1.25vw, 1.125rem); line-height: 1.6; }
+  .d-limite-sidx__pie { margin: 14px 0 0; }
+
+  .d-chequeo-sidx { margin-top: 28px; }
+</style>
