@@ -33,11 +33,43 @@ import Layout from '../../layouts/Layout.astro';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
 import Pieza from '../../components/v3/Pieza.astro';
-import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import '../../styles/driftime.css';
 import obra from '../../data/obra-v3.json';
+import oferta from '../../data/oferta-v3.json';
 
 const { casos } = obra;
+
+// CORRECCIONES AL DATO COMPARTIDO (QA independiente, 5-oct). obra-v3.json no se edita desde
+// una página: el cambio va propuesto a su dueño. Mientras tanto la página corrige lo suyo,
+// y cada corrección se retira sola cuando el JSON la trae.
+//  · Raigal: la línea decía «Sitio completo, del argumento clínico a la ficha de
+//    tratamiento». Lo construido es UNA home (marketing/portafolio/01-raigal/ficha.md §Estado:
+//    las internas siguen abiertas; sitio/ tiene un solo index.html, sin enlaces internos).
+//    La línea nueva nombra solo las secciones que esa home tiene. Redacción final: Clara.
+//    Solo se reemplaza si el JSON trae todavía la frase vieja, exacta.
+const LINEA_CORREGIDA: Record<string, { antes: string; ahora: string }> = {
+  raigal: {
+    antes: 'Clínica de implantología y rehabilitación oral. Sitio completo, del argumento clínico a la ficha de tratamiento.',
+    ahora: 'Clínica de implantología y rehabilitación oral. Una home de una sola página: costo y plazos, las etapas del tratamiento, la especialista, lo que no se promete y las preguntas frecuentes.',
+  },
+};
+//  · El mockup -alto es SOLO el teléfono (1000×1100, mirado). altMock describe el par
+//    notebook + teléfono del -ancho. Hasta que el JSON traiga altMockAlto por caso, va acá.
+const ALT_ALTO: Record<string, string> = {
+  'combeau-modelo': 'El book de modelo de Bernardo Combeau abierto en un teléfono',
+};
+
+// El precio de entrada de Desarrollo Web, del mismo dato que la home y el índice de
+// servicios: el primero de «$390.000 · $690.000 · $1.190.000». Spec §3: «Desde … + IVA».
+const desdeWeb = oferta.momentos
+  .flatMap((m: any) => m.items)
+  .find((it: any) => it.href === '/v3/servicios/desarrollo-web/')
+  ?.p.split(' · ')[0];
+
+// «Bernardo Combeau | Model»: en Manrope la barra sube a la altura de las mayúsculas y se
+// lee «Combeau I Model». En su propio sitio va en gris claro; acá, en --d-gris. El nombre no
+// se toca: solo se parte para pintar la barra.
+const partesNombre = (n: string) => n.split(' | ');
 
 const ROTULO: Record<string, string> = {
   cliente: 'Cliente',
@@ -60,7 +92,7 @@ const ROTULO: Record<string, string> = {
 // rótulo de la pieza y no detrás, y la base del teléfono sale entera.
 const FORMAS: Record<string, { forma: string; src: (c: any) => string; alt: (c: any) => string; w: number; h: number; pos?: string }> = {
   'combeau-fotografia': { forma: 'ancha', src: (c) => c.mock, alt: (c) => c.altMock, w: 1600, h: 1200, pos: '50% 55%' },
-  'combeau-modelo': { forma: 'alta', src: (c) => c.mockAlto, alt: (c) => c.altMock, w: 1000, h: 1100 },
+  'combeau-modelo': { forma: 'alta', src: (c) => c.mockAlto, alt: (c) => c.altMockAlto ?? ALT_ALTO[c.slug] ?? c.altMock, w: 1000, h: 1100 },
   'verifica-y-cumple': { forma: 'media', src: (c) => c.mock, alt: (c) => c.altMock, w: 1600, h: 1200 },
   raigal: { forma: 'final', src: (c) => c.mock, alt: (c) => c.altMock, w: 1600, h: 1200 },
 };
@@ -68,8 +100,11 @@ const FORMAS: Record<string, { forma: string; src: (c: any) => string; alt: (c: 
 const piezas = casos.map((c: any, i: number) => {
   const f = FORMAS[c.slug] ?? { forma: 'ancha', src: (x: any) => x.mock, alt: (x: any) => x.altMock, w: 1600, h: 1200 };
   const concepto = c.tipo === 'concepto';
+  const fix = LINEA_CORREGIDA[c.slug];
   return {
     ...c,
+    linea: fix && c.linea === fix.antes ? fix.ahora : c.linea,
+    nombre: partesNombre(c.n),
     forma: f.forma,
     src: f.src(c),
     altImg: f.alt(c),
@@ -85,18 +120,43 @@ const piezas = casos.map((c: any, i: number) => {
   };
 });
 
+// Mismos dos nodos y mismo @id de la página. Se suma (QA, C8): url, el @id del breadcrumb
+// (#breadcrumb, como en desarrollo-web y el índice de servicios) y mainEntity: la lista de
+// las cuatro piezas, con su sitio cuando existe y, en Raigal, dicho que es un concepto.
+const URL_PAGINA = 'https://spindlelab.cl/trabajo/';
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'CollectionPage',
-      '@id': 'https://spindlelab.cl/trabajo/#pagina',
+      '@id': `${URL_PAGINA}#pagina`,
+      url: URL_PAGINA,
       name: 'Trabajo',
       description: obra.bajada,
+      inLanguage: 'es-CL',
       isPartOf: { '@id': 'https://spindlelab.cl/#website' },
+      breadcrumb: { '@id': `${URL_PAGINA}#breadcrumb` },
+      mainEntity: {
+        '@type': 'ItemList',
+        '@id': `${URL_PAGINA}#piezas`,
+        numberOfItems: piezas.length,
+        itemListElement: piezas.map((p: any, i: number) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          item: p.url
+            ? { '@type': 'WebSite', name: p.n, url: p.url, description: p.linea, creator: { '@id': 'https://spindlelab.cl/#org' } }
+            : {
+                '@type': 'CreativeWork',
+                name: p.n,
+                description: `Pieza de concepto: ${p.n} no existe y no es un cliente. Es un ejercicio de SpindleLab en el rubro de ${p.rubro.toLowerCase()}. ${p.linea}`,
+                creator: { '@id': 'https://spindlelab.cl/#org' },
+              },
+        })),
+      },
     },
     {
       '@type': 'BreadcrumbList',
+      '@id': `${URL_PAGINA}#breadcrumb`,
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
         { '@type': 'ListItem', position: 2, name: 'Trabajo' },
@@ -121,8 +181,9 @@ const jsonLd = {
       <h1 class="d-h1">{obra.titulo}</h1>
     </header>
 
-    <div class="d-entrada">
-      <p class="d-nota-card"><b>Tres enlazan al sitio en vivo.</b> La de concepto no lleva enlace: no hay a dónde ir.</p>
+    {/* Sin nota: repetía la bajada (dos frases sobre el rotulado, ninguna sobre el trabajo)
+        y a 390 empujaba la primera pieza bajo el aviso de cookies (QA, 5-oct). */}
+    <div class="d-entrada d-entrada-trab">
       <p class="d-guia">{obra.bajada}</p>
     </div>
 
@@ -143,7 +204,7 @@ const jsonLd = {
           )}
           <div class="d-pie-trab">
             <div class="d-pie-trab__id">
-              <h2 class="d-h3" id={`o-${p.slug}`}>{p.n}</h2>
+              <h2 class="d-h3" id={`o-${p.slug}`}>{p.nombre.map((parte: string, i: number) => (i === 0 ? parte : [' ', <span class="d-barra-trab">|</span>, ' ', parte]))}</h2>
               <p class="d-rot">{p.rubro} · {ROTULO[p.tipo]}</p>
             </div>
             <div class="d-pie-trab__txt">
@@ -163,13 +224,18 @@ const jsonLd = {
       ))}
     </div>
 
-    {/* Lo que la página decía al cierre, como sección pegajosa: el rubro que falta y la
-        salida para quien no se ve en las cuatro. */}
-    <section class="d-sec" aria-labelledby="s-rubro">
-      <div class="d-eti"><h2 class="d-h2" id="s-rubro">Si tu rubro no está</h2></div>
-      <div>
-        <p class="d-guia">Estamos construyendo una pieza de concepto por rubro. Si el tuyo no está todavía, el chequeo funciona igual sobre tu sitio.</p>
-        <div class="d-btns d-btns-trab"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>
+    {/* El cierre, para todos: el que se reconoció en una pieza y el que no encontró su
+        rubro. El paso gratis (el chequeo, que corre sobre cualquier sitio) y el precio de
+        entrada de Desarrollo Web. Sin anunciar piezas futuras: el portafolio registra UNA
+        pieza de concepto en el sitio (marketing/portafolio/README.md), no una serie por rubro.
+        Sección corta: --quieta, la etiqueta no se pega (spec §7). */}
+    <section class="d-sec d-sec--quieta" aria-labelledby="s-cierre">
+      <div class="d-eti"><h2 class="d-h2" id="s-cierre">Antes de construir el tuyo</h2></div>
+      <div class="d-cierre-trab">
+        <p class="d-guia">Pon tu dominio y ves en segundos si ChatGPT, Gemini y Perplexity pueden leer tu sitio, sea cual sea el rubro. Es el mismo chequeo con el que partimos cada proyecto.</p>
+        <p class="d-cuerpo">Si hay que construirlo de nuevo, eso es Desarrollo Web: tres planes, y el valor final se cierra tras el diagnóstico gratuito.</p>
+        <p class="d-precio d-precio-trab"><span class="d-pre-rot">Desde</span><span class="d-pre-sep" aria-hidden="true"></span> <span class="d-pre-junto-trab"><b>{desdeWeb}</b> <span class="d-pre-rot">+ IVA</span></span></p>
+        <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href="/v3/servicios/desarrollo-web/">Ver Desarrollo Web</a></div>
       </div>
     </section>
 
@@ -230,9 +296,38 @@ const jsonLd = {
   .d-obra-trab--ancha .d-pie-trab__txt { grid-column: 6 / -1; }
   .d-obra-trab--final .d-pie-trab { grid-column: 9 / -1; align-self: end; padding-left: clamp(0px, 1.5vw, 24px); }
 
-  .d-btns-trab { margin-top: 28px; }
+  /* «Bernardo Combeau | Model»: la barra en gris, como en su propio sitio. */
+  .d-barra-trab { color: var(--d-gris); font-weight: 400; }
+
+  /* La entrada sin nota: la bajada en las 7 columnas de la derecha, como la guía de
+     Desarrollo Web. En celular, .d-entrada ya apila. */
+  .d-entrada-trab .d-guia { grid-column: 2; }
+
+  /* ------------------------------------------------------------ el cierre */
+  .d-cierre-trab { display: flex; flex-direction: column; align-items: flex-start; }
+  .d-cierre-trab .d-cuerpo { margin-top: 22px; max-width: 620px; }
+  .d-cierre-trab .d-btns { margin-top: 28px; }
+  /* Línea de precio en flujo de texto (spec §7): espacios reales entre las piezas, el
+     separador aria-hidden y «$390.000 + IVA» que no se parte. Los márgenes se ajustan para
+     que espacio real + margen midan lo mismo que en .d-precio. */
+  .d-precio-trab { margin-top: 18px; }
+  .d-precio-trab .d-pre-sep { margin: 0 0.5em 0 0.75em; }
+  .d-precio-trab .d-pre-junto-trab { white-space: nowrap; }
+  .d-precio-trab .d-pre-rot:last-child { margin-left: 0; }
+
+  /* ------------------------------------------------------------ tableta */
+  /* La final en 8 + 4 deja el pie en ~207 px a 768 (24 caracteres por línea). Hasta 1023:
+     imagen a todo el ancho y el pie debajo, partido 5 + 7 como el de la pieza ancha. */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .d-obra-trab--final { grid-template-rows: auto auto; row-gap: 20px; }
+    .d-obra-trab--final .d-obra-trab__img { grid-column: 1 / -1; }
+    .d-obra-trab--final .d-pie-trab { grid-column: 1 / -1; align-self: start; padding-left: 0; display: grid; grid-template-columns: subgrid; }
+    .d-obra-trab--final .d-pie-trab__id { grid-column: 1 / span 5; }
+    .d-obra-trab--final .d-pie-trab__txt { grid-column: 6 / -1; }
+  }
 
   @media (max-width: 767px) {
+    .d-entrada-trab .d-guia { grid-column: 1; }
     .d-obras-trab { grid-template-columns: minmax(0, 1fr); padding-top: 80px; }
     .d-obra-trab,
     .d-obra-trab--alta,

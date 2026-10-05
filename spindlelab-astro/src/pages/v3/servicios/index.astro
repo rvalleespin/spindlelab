@@ -18,60 +18,72 @@
 //
 // CONTRASTE EN LAS BANDAS: brasa con blanco da 4,70:1 y petróleo con su crema 5,06:1. Pasan
 // AA, pero sin margen: cualquier opacidad en el texto los deja abajo. Por eso todo el texto de
-// una banda va al 100 % (incluido el «Desde» y el «+ IVA» del precio, que driftime.css baja a
-// 0,72) y la jerarquía se hace con tamaño y peso.
+// una banda va al 100 % (incluido el «Desde» y el «+ IVA» del precio) y la jerarquía se hace
+// con tamaño y peso.
+//
+// La banda es un componente propio de esta página, declarado en la spec (§3 «banda del
+// índice» y §7): alto variable, filete en el color del texto al 32 %, pegajosa solo desde
+// 768 px de ancho y 680 px de alto.
 //
 // LOS PRECIOS Y EL ORDEN VIVEN EN src/data/oferta-v3.json, compartido con la home: un precio
 // escrito a mano en dos lados termina distinto en uno. Se muestran con la misma forma que en
 // la home: «Desde | … | + IVA».
 //
-// El límite «dentro / fuera» va verbatim: es honesto y evita malentendidos de alcance. El FAQ
-// no se duplica acá; vive en cada página de servicio.
+// De «dentro / fuera» queda solo «fuera» (QA 5-oct, A10): «dentro» repetía los servicios que
+// las cuatro bandas acaban de mostrar, y en el orden contrario. El FAQ no se duplica acá; vive
+// en cada página de servicio.
 import Layout from '../../../layouts/Layout.astro';
 import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
 import '../../../styles/driftime.css';
 import oferta from '../../../data/oferta-v3.json';
+import paginas from '../../../data/paginas-v3.json';
 
 const url = 'https://spindlelab.cl/servicios/';
+const pub = (paginas as Record<string, any>).servicios;
 
-// El grafo no cambia: mismos dos nodos y mismos @id que la versión anterior. La organización
-// y la persona ya las emite Layout.astro.
+// El grafo es el de producción (public/servicios/index.html), que paginas-v3.json guarda
+// extraído: mismos dos nodos y mismos @id. Cada ítem apunta al nodo Service con el mismo @id
+// que Layout.astro declara en makesOffer; sin eso el índice queda desconectado de los
+// servicios (QA 5-oct, C8). La organización y la persona ya las emite Layout.astro.
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'BreadcrumbList',
       '@id': `${url}#breadcrumb`,
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
-        { '@type': 'ListItem', position: 2, name: 'Soluciones' },
-      ],
+      itemListElement: pub.breadcrumb,
     },
     {
-      '@type': 'ItemList',
+      ...pub.itemList,
       '@id': `${url}#itemlist`,
-      itemListElement: [
-        ...oferta.momentos.flatMap((m: any) => m.items),
-        ...oferta.tambien,
-      ].map((s: any, i: number) => ({
-        '@type': 'ListItem',
-        position: i + 1,
-        name: s.n,
-        url: `https://spindlelab.cl${s.href.replace('/v3', '')}`,
-      })),
     },
   ],
 };
+
+// Notas de banda propias de esta página. En oferta-v3.json la de Desarrollo traía dos
+// antítesis seguidas y jerga («primer commit», «AEO»), y la de Visibilidad repetía «no lo vas
+// a rehacer», que ya dice su h2 (QA 5-oct, A4/A10/B8). El JSON es compartido y no se toca
+// desde acá: el cambio va propuesto. Cuando el JSON lo traiga, este mapa se borra.
+const notaPagina: Record<string, string> = {
+  brasa: 'La legibilidad para Google y para la IA viene incluida desde el primer día de construcción; no se cobra después.',
+  navy: 'No hace falta reconstruir para que una IA pueda citarte.',
+};
+
+// «$490.000 · $690.000 con Visibilidad IA» → una alternativa por trozo. Cada trozo no se
+// parte: la línea solo corta entre alternativas, nunca dentro de «$690.000 con Visibilidad
+// IA» (QA 5-oct). El punto va pegado con espacio duro a la alternativa anterior, así ninguna
+// línea empieza con «·».
+const alternativas = (p: string) => p.split(' · ');
 
 // Las cuatro bandas, en el orden de la home: Desarrollo abre, Alcance cierra.
 const bandas = [
   ...oferta.momentos.map((m: any) => ({ palabra: m.palabra, campo: m.campo, momento: m.momento, nota: m.nota, items: m.items })),
   { palabra: oferta.tambienPanel.palabra, campo: oferta.tambienPanel.campo, momento: oferta.tambienPanel.momento, nota: oferta.tambienPanel.nota, items: oferta.tambien },
-].map((b) => ({ ...b, id: `m-${b.palabra.toLowerCase()}` }));
+].map((b) => ({ ...b, nota: notaPagina[b.campo] ?? b.nota, id: `m-${b.palabra.toLowerCase()}` }));
 
-// «Visibilidad (SEO + IA): auditoría técnica…» → el rótulo en papel, el detalle en gris.
+// «Creación de contenido: redacción y guiones…» → el rótulo en papel, el detalle en gris.
 const partir = (t: string) => {
   const i = t.indexOf(': ');
   return i === -1 ? { a: '', b: t } : { a: t.slice(0, i + 1), b: t.slice(i + 2) };
@@ -94,7 +106,10 @@ const partir = (t: string) => {
 
     <div class="d-entrada">
       <p class="d-nota-card"><b>Valores en pesos, + IVA.</b> Los publicamos a propósito: la mayoría del rubro no lo hace.</p>
-      <p class="d-guia">El centro es tu sitio. Lo construimos para que las máquinas que hoy recomiendan tu negocio puedan leerlo, y eso se comprueba sobre tu propio dominio. Si ya tienes sitio y no lo vas a rehacer, hay una puerta para eso.</p>
+      {/* Los dos destinos que anuncia van enlazados (QA 5-oct): el chequeo, que la description
+           promete, quedaba a ~3.500 px. Sin repetir la fila de Desarrollo Web, que se comparte
+           con la home, ni el «no lo vas a rehacer» del h2 de Visibilidad. */}
+      <p class="d-guia">El centro es tu sitio: lo construimos para que los motores de IA puedan leerlo. Si ya tienes uno y funciona, <a class="d-enlace-sidx" href="#m-visibilidad">hay una puerta para eso</a>. Y antes de contratar nada, <a class="d-enlace-sidx" href="/v3/diagnostico/">mira gratis cómo te leen hoy</a>.</p>
     </div>
 
     {/* Las bandas de los cuatro momentos. Cada fila es un enlace entero al servicio. */}
@@ -113,8 +128,13 @@ const partir = (t: string) => {
                   <h3 class="d-h3">{it.n}</h3>
                   <span class="d-fila-sidx__flecha" aria-hidden="true">→</span>
                   <p class="d-fila-sidx__d">{it.d}</p>
+                  {/* Espacios reales entre las piezas: sin ellos el texto sin CSS (lector de
+                       pantalla, copiar, rastreador) era «Desde$390.000 … $1.190.000+ IVA». */}
                   <p class="d-precio">
-                    <span class="d-pre-rot">Desde</span><span class="d-pre-sep"></span><b>{it.p}</b><span class="d-pre-rot">+ IVA</span>
+                    {alternativas(it.p).map((a, i, todas) => [
+                      i > 0 ? ' ' : '',
+                      <span class="d-pre-alt-sidx">{i === 0 && [<span class="d-pre-rot">Desde</span>, <span class="d-pre-sep" aria-hidden="true"></span>, ' ']}<b>{a}{i < todas.length - 1 ? ' ·' : ''}</b>{i === todas.length - 1 && [' ', <span class="d-pre-rot">+ IVA</span>]}</span>,
+                    ])}
                   </p>
                 </a>
               </li>
@@ -124,31 +144,28 @@ const partir = (t: string) => {
       ))}
     </div>
 
-    {/* EL LÍMITE, verbatim. Decir qué NO se hace evita el malentendido de alcance. */}
-    <section class="d-sec" aria-labelledby="s-limite">
-      <div class="d-eti"><h2 class="d-h2" id="s-limite">Qué hacemos y qué no</h2></div>
-      <div class="d-limite-sidx">
-        <div>
-          <h3 class="d-h3">Lo hacemos nosotros</h3>
-          <ul class="d-filas d-lista-sidx">
-            {oferta.dentro.map((t: string) => { const p = partir(t); return <li>{p.a && <span>{p.a} </span>}<span class="d-gris">{p.b}</span></li>; })}
-          </ul>
-        </div>
-        <div>
-          <h3 class="d-h3">Lo pones tú</h3>
-          <ul class="d-filas d-lista-sidx">
-            {oferta.fuera.map((t: string) => { const p = partir(t); return <li>{p.a && <span>{p.a} </span>}<span class="d-gris">{p.b}</span></li>; })}
-          </ul>
-          <p class="d-chico d-gris d-limite-sidx__pie">Si no lo tienes, te conectamos con partners.</p>
-        </div>
+    {/* EL LÍMITE, verbatim. Decir qué NO se hace evita el malentendido de alcance. Solo la
+         mitad «fuera»: la mitad «dentro» repetía las bandas (QA 5-oct, A10/B7). Sección corta:
+         la etiqueta no se pega (spec §7). */}
+    <section class="d-sec d-sec--quieta" aria-labelledby="s-limite">
+      <div class="d-eti"><h2 class="d-h2" id="s-limite">Lo que no hacemos</h2></div>
+      <div>
+        <ul class="d-filas d-lista-sidx">
+          {oferta.fuera.map((t: string) => { const p = partir(t); return <li>{p.a && <span>{p.a} </span>}<span class="d-gris">{p.b}</span></li>; })}
+        </ul>
+        <p class="d-chico d-gris d-limite-sidx__pie">Si no lo tienes, te conectamos con partners.</p>
       </div>
     </section>
 
-    <section class="d-sec" aria-labelledby="s-chequeo">
+    {/* El texto describe lo que hace el botón (QA 5-oct, bloqueante): el chequeo es el
+         automático de /v3/diagnostico/, sobre tu sitio; no mira la competencia, eso es el
+         diagnóstico completo. Mismo destino que «Chequeo gratis» del pie y del menú.
+         Fuente del copy: /v3/diagnostico/ (línea, nota del instrumento y «Dos caminos»). */}
+    <section class="d-sec d-sec--quieta" aria-labelledby="s-chequeo">
       <div class="d-eti"><h2 class="d-h2" id="s-chequeo">Empieza por el chequeo</h2></div>
       <div>
-        <p class="d-guia">Revisamos tu sitio, tu competencia y tu presencia en IA. Sin costo y sin compromiso.</p>
-        <div class="d-btns d-chequeo-sidx"><a class="d-btn" href="/v3/#chequeo">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Conversemos tu proyecto</a></div>
+        <p class="d-guia">Pon tu dominio y ves en segundos si ChatGPT, Gemini y Perplexity pueden leer tu sitio. Gratis y sin dejar tu correo.</p>
+        <div class="d-btns d-chequeo-sidx"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Conversemos tu proyecto</a></div>
       </div>
     </section>
   </main>
@@ -175,6 +192,12 @@ const partir = (t: string) => {
     .d-banda-sidx:nth-child(3) { z-index: 3; }
     .d-banda-sidx:nth-child(4) { z-index: 4; }
   }
+  /* El ancla de la entrada («hay una puerta para eso») cae acá. En celular la banda no se pega
+     y el h2 quedaba bajo el módulo de navegación (medido: h2 en y=0, módulo hasta y=86). */
+  .d-banda-sidx .d-h2 { scroll-margin-top: 140px; }
+  /* Escritorio: 96 de padding + rótulo + 12 de hueco = 127; la banda queda justo arriba, sin
+     la franja de la anterior (con 140 asomaban 12 px de brasa). */
+  @media (min-width: 768px) { .d-banda-sidx .d-h2 { scroll-margin-top: 127px; } }
   .d-banda-sidx__cab { display: flex; flex-direction: column; gap: 12px; align-self: start; padding-right: clamp(0px, 3vw, 48px); }
   .d-banda-sidx__pal { font-size: 0.8125rem; font-weight: 500; margin: 0; }
   .d-banda-sidx__nota { font-size: 0.875rem; line-height: 1.5; max-width: 340px; margin: 6px 0 0; }
@@ -191,9 +214,13 @@ const partir = (t: string) => {
      final de una línea y el «+ IVA» huérfano en la siguiente. En línea, solo corta entre las
      palabras de la cifra; «Desde» queda pegado a la primera y «+ IVA» a la última. */
   .d-fila-sidx .d-precio { grid-column: 1 / -1; margin-top: 6px; display: block; line-height: 1.6; }
-  .d-fila-sidx .d-pre-sep { display: inline-block; width: 1px; height: 14px; vertical-align: -2px; margin: 0 12px; }
+  /* Cada alternativa con su plan no se parte: «$690.000 con Visibilidad IA + IVA» va junto.
+     Entre las piezas hay espacios reales (~4 px); los márgenes de abajo suman lo que falta
+     para los 12 px de antes. */
+  .d-fila-sidx .d-pre-alt-sidx { white-space: nowrap; }
+  .d-fila-sidx .d-pre-sep { display: inline-block; width: 1px; height: 14px; vertical-align: -2px; margin: 0 8px 0 12px; }   /* un solo espacio real, después: el texto lee «Desde $390.000» */
   .d-fila-sidx .d-pre-rot { opacity: 1; }
-  .d-fila-sidx .d-pre-rot:last-child { margin-left: 12px; white-space: nowrap; }
+  .d-fila-sidx .d-pre-rot:last-child { margin-left: 8px; white-space: nowrap; }
   .d-fila-sidx:hover .d-h3 { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
   .d-fila-sidx:focus-visible { outline-color: currentColor; outline-offset: 4px; }
 
@@ -203,9 +230,12 @@ const partir = (t: string) => {
     .d-banda-sidx__cab { padding-right: 0; }
   }
 
-  /* ------------------------------------------------------------ dentro / fuera */
-  .d-limite-sidx { display: flex; flex-direction: column; gap: 56px; }
-  .d-lista-sidx { list-style: none; padding: 0; margin: 14px 0 0; }
+  /* ------------------------------------------------------------ entrada */
+  .d-enlace-sidx { text-decoration: underline; text-underline-offset: 0.16em; text-decoration-thickness: 1px; }
+  .d-enlace-sidx:hover { text-decoration-thickness: 2px; }
+
+  /* ------------------------------------------------------------ lo que no hacemos */
+  .d-lista-sidx { list-style: none; padding: 0; margin: 0; }
   .d-lista-sidx li { font-size: clamp(1.0625rem, 1.25vw, 1.125rem); line-height: 1.6; }
   .d-limite-sidx__pie { margin: 14px 0 0; }
 
