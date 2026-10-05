@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+/* RUTA C — "La brecha" · dispositivo: EL PARTIDO EN DOS (mismo objeto, dos lecturas) */
+.dos { display:flex; gap:0; margin-top:40px; border:1px solid rgba(247,245,240,0.12); border-radius:12px; overflow:hidden; }
+.lado { flex:1; padding:30px 32px 34px; min-height:388px; }
+.lado.izq { background:rgba(22,29,38,0.86); border-right:1px solid rgba(247,245,240,0.12); }
+.lado.der { background:rgba(14,20,27,0.92); }
+.lado .rot { font-size:17px; font-weight:700; letter-spacing:2.4px; text-transform:uppercase; color:#2fa99b; }
+.lado.der .rot { color:#6b7580; }
+.maq { margin-top:26px; }
+.maq .t { height:22px; width:74%; border-radius:5px; background:rgba(242,239,232,0.72); }
+.maq .l { height:11px; border-radius:5px; background:rgba(242,239,232,0.26); margin-top:15px; }
+.maq .caja { height:74px; border-radius:8px; background:rgba(242,239,232,0.13); margin-top:22px; }
+.vacio-cod { margin-top:26px; font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:23px;
+  line-height:1.7; color:#9aa4b0; }
+.vacio-cod b { color:#f2efe8; font-weight:600; }
+.vacio-cod span { opacity:.55; }
+</style></head><body>
+<div class="post a">
+  <div class="eyebrow">Chequea tu sitio · Septiembre</div>
+  <div class="rule"></div>
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center; margin-top:-18px;">
+    <div class="h" style="font-size:74px;">El mismo sitio,<br>leído dos veces.</div>
+    <div class="dos">
+      <div class="lado izq">
+        <div class="rot">Lo que ve una persona</div>
+        <div class="maq">
+          <div class="t"></div>
+          <div class="l" style="width:100%;"></div>
+          <div class="l" style="width:92%;"></div>
+          <div class="l" style="width:64%;"></div>
+          <div class="caja"></div>
+          <div class="l" style="width:86%;"></div>
+          <div class="l" style="width:48%;"></div>
+        </div>
+      </div>
+      <div class="lado der">
+        <div class="rot">Lo que recibe ChatGPT</div>
+        <div class="vacio-cod">
+          <div><b>&lt;div id="app"&gt;&lt;/div&gt;</b></div>
+          <div><span>&lt;!-- y nada más --&gt;</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="wm">SpindleLab<span class="pt">.</span></div>
+    <div class="cta">Chequea tu sitio gratis · spindlelab.cl/diagnostico</div>
+  </div>
+</div>
+</body></html>

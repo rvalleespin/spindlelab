@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js): NO se carga hasta que haya consentimiento. Hasta el 22-sep se
+     cargaba siempre, con Consent Mode en denegado, y así igual le mandaba a Google un aviso
+     sin cookies de cada página vista a quien había dicho que no (medido en la red). Ahora el
+     archivo se pide recién cuando la persona acepta: __spindlelabInitGA, que también llama
+     /js/consent-banner.js al pulsar Aceptar. La función gtag() se define igual aunque no
+     haga nada, porque hay código que la llama directo (el generate_lead de /contacto/), y
+     sin ella lanzaría un error justo después de un envío exitoso. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var __spindlelabConsent = (function(){
+    try { return localStorage.getItem('spindlelab_consent'); } catch(e){ return null; }
+  })();
+  function __spindlelabInitGA(){
+    if (window.__spindlelabGAInited) return;
+    window.__spindlelabGAInited = true;
+    // Lo que se haya encolado antes del permiso (un generate_lead, un chequeo_completado)
+    // se descarta: nada de lo que pasó antes de aceptar se manda después de aceptar.
+    window.dataLayer.length = 0;
+    gtag('consent', 'default', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-J40VW9E0TW');
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J40VW9E0TW';
+    document.head.appendChild(s);
+  }
+  if (__spindlelabConsent === 'granted') { __spindlelabInitGA(); }
+</script>
+<!-- Meta Pixel Code — no tiene un "consent mode" propio, así que no se inicializa hasta
+     que haya consentimiento. Sin noscript: no se puede pedir consentimiento sin
+     JavaScript, así que tampoco se rastrea sin JavaScript. -->
+<script>
+function __spindlelabInitMeta(){
+  if(window.__spindlelabMetaInited) return;
+  window.__spindlelabMetaInited = true;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2885353628478565');
+  fbq('track', 'PageView');
+}
+if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
+</script>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soluciones: tu motor de adquisición digital · SpindleLab</title>
+<meta name="description" content="Agencia de marketing con IA: SEO técnico, visibilidad en motores de IA, gestión de redes, paid media (Google) y desarrollo web para empresas en Chile.">
+<link rel="canonical" href="https://spindlelab.cl/servicios/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpindleLab">
+<meta property="og:title" content="Soluciones · SpindleLab">
+<meta property="og:description" content="Un motor de adquisición digital: SEO y visibilidad en IA, redes sociales, paid media y desarrollo web, orquestados por un especialista con agentes de IA.">
+<meta property="og:url" content="https://spindlelab.cl/servicios/">
+<meta property="og:image" content="https://spindlelab.cl/assets/img/og-marca.jpg?v=4">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="SpindleLab. SEO técnico y visibilidad en IA">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=4"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://spindlelab.cl/#org",
+      "name": "SpindleLab",
+      "url": "https://spindlelab.cl/",
+      "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
+      "email": "hola@spindlelab.cl",
+      "description": "SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B y financieras en Chile.",
+      "address": {"@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL"},
+      "areaServed": {"@type": "Country", "name": "Chile"},
+      "sameAs": ["https://www.linkedin.com/company/spindlelab/", "https://www.instagram.com/spindle.lab/"],
+      "founder": {"@id": "https://spindlelab.cl/#autor-ramon"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://spindlelab.cl/#autor-ramon",
+      "name": "Ramón Vallejos",
+      "jobTitle": "Consultor de SEO técnico y visibilidad en IA (AEO/GEO)",
+      "image": "https://spindlelab.cl/assets/img/ramon-vallejos.jpg",
+      "url": "https://spindlelab.cl/nosotros/",
+      "worksFor": {"@id": "https://spindlelab.cl/#org"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://spindlelab.cl/"},
+        {"@type": "ListItem", "position": 2, "name": "Soluciones", "item": "https://spindlelab.cl/servicios/"}
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Soluciones de SpindleLab",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "item": {"@type": "Service", "@id": "https://spindlelab.cl/servicios/auditoria-seo-tecnica/#service", "name": "Auditoría SEO Técnica", "url": "https://spindlelab.cl/servicios/auditoria-seo-tecnica/"}},
+        {"@type": "ListItem", "position": 2, "item": {"@type": "Service", "@id": "https://spindlelab.cl/servicios/visibilidad-en-ia/#service", "name": "Visibilidad en IA (AEO/GEO)", "url": "https://spindlelab.cl/servicios/visibilidad-en-ia/"}},
+        {"@type": "ListItem", "position": 3, "item": {"@type": "Service", "@id": "https://spindlelab.cl/servicios/acompanamiento-mensual/#service", "name": "Acompañamiento Mensual", "url": "https://spindlelab.cl/servicios/acompanamiento-mensual/"}},
+        {"@type": "ListItem", "position": 4, "item": {"@type": "Service", "@id": "https://spindlelab.cl/servicios/redes-sociales/#service", "name": "Gestión de Redes Sociales", "url": "https://spindlelab.cl/servicios/redes-sociales/"}},
+        {"@type": "ListItem", "position": 5, "item": {"@type": "Service", "@id": "https://spindlelab.cl/servicios/paid-media/#service", "name": "Paid Media (Google)", "url": "https://spindlelab.cl/servicios/paid-media/"}},
+        {"@type": "ListItem", "position": 6, "item": {"@type": "Service", "@id": "https://spindlelab.cl/servicios/desarrollo-web/#service", "name": "Desarrollo Web", "url": "https://spindlelab.cl/servicios/desarrollo-web/"}}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/inter.css?v=1">
+<link rel="stylesheet" href="/assets/css/style.css?v=29">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="SpindleLab, inicio">SpindleLab<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span class="bars"></span></button>
+    <div class="nav-pill"><ul class="nav-links" id="nav-links">
+      <li><a href="/servicios/" aria-current="page">Soluciones</a></li>
+      <li><a href="/metodo/">Método</a></li>
+      <li><a href="/nosotros/">Nosotros</a></li>
+      <li><a href="/#evidencia">Evidencia</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contacto/">Contacto</a></li>
+    </ul>
+    <a class="btn gold small nav-cta" href="/diagnostico/">Chequea tu sitio</a></div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero page-hero-video">
+    <video class="ph-bg" src="/video/servicios-oficina.mp4" poster="/video/servicios-oficina.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+    <div class="ph-veil"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Miga de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li>Soluciones</li>
+        </ol>
+      </nav>
+      <h1>Tu motor de adquisición digital</h1>
+      <p class="lead">Somos una agencia de marketing con IA. Nuestro eje principal es el SEO técnico, la visibilidad en motores de IA y el desarrollo web. Completamos la ruta con Google y Meta Ads para que tu negocio sea aún más relevante. El contenido creativo lo entregas tú y nosotros lo hacemos funcionar. Todo empieza por un diagnóstico gratuito.</p>
+      <div class="actions">
+        <a class="btn gold" href="/contacto/">Agenda tu diagnóstico →</a>
+        <span class="note">Sin costo · Respuesta en 24 horas</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="group-label">
+        <span class="n">01 · El eje</span>
+        <h2>Visibilidad: donde ganamos la pelea</h2>
+        <p>SEO técnico y visibilidad en IA (AEO/GEO): que Google y los motores generativos te encuentren, te entiendan y te citen. Es la pieza que lidera el motor y la puerta de entrada al resto. Tres formas de trabajarla, según tu momento.</p>
+      </div>
+      <div class="cards three">
+        <a class="card reveal" href="/servicios/auditoria-seo-tecnica/">
+          <span class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+          </span>
+          <h3>Auditoría SEO Técnica</h3>
+          <p>Diagnóstico profundo de tu arquitectura web: rastreo, indexación, Core Web Vitals, datos estructurados y señales de autoridad. Informe priorizado por impacto, no un volcado de datos.</p>
+          <span class="more">Más detalles</span>
+        </a>
+        <a class="card reveal" href="/servicios/visibilidad-en-ia/">
+          <span class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="4"/></svg>
+          </span>
+          <h3>Visibilidad en IA (AEO/GEO)</h3>
+          <p>Optimizamos tu contenido y estructura para que ChatGPT, Gemini y Perplexity te citen como fuente confiable cuando tus clientes preguntan por servicios como el tuyo.</p>
+          <span class="more">Más detalles</span>
+        </a>
+        <a class="card reveal" href="/servicios/acompanamiento-mensual/">
+          <span class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-8"/><path d="M14 8h6v6"/></svg>
+          </span>
+          <h3>Acompañamiento Mensual</h3>
+          <p>Implementación continua, contenido optimizado para búsqueda e IA, e informes quincenales para sostener la ventaja mes a mes. Nuestro formato principal.</p>
+          <span class="more">Ver plan</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec alt">
+    <div class="wrap">
+      <div class="group-label">
+        <span class="n">02 · El resto del motor</span>
+        <h2>Las piezas que amplían y convierten</h2>
+        <p>Conectadas al eje, no sueltas: redes y publicidad para que te encuentren más, y el sitio donde todo aterriza y se vuelve contacto.</p>
+      </div>
+      <div class="cards three">
+        <a class="card reveal" href="/servicios/redes-sociales/">
+          <span class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <h3>Gestión de Redes Sociales</h3>
+          <p>Presencia, comunidad y pauta social en LinkedIn y Meta: contenido y conversación donde tu cliente ya pasa el día. El contenido creativo lo pones tú.</p>
+          <span class="more">Más detalles</span>
+        </a>
+        <a class="card reveal" href="/servicios/paid-media/">
+          <span class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </span>
+          <h3>Paid Media (Google)</h3>
+          <p>Google Ads optimizado con IA: captura a quien ya está buscando lo que ofreces, con el presupuesto bajo control.</p>
+          <span class="more">Más detalles</span>
+        </a>
+        <a class="card reveal" href="/servicios/desarrollo-web/">
+          <span class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </span>
+          <h3>Desarrollo Web</h3>
+          <p>La base donde todo aterriza: sitios a medida, sin plantillas ni WordPress, con panel de administración y SEO técnico incorporado desde el primer commit.</p>
+          <span class="more">Más detalles</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="cartera-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">La cartera, sin letra chica</span>
+        <h2 id="cartera-title">Qué entra en el motor, y qué va con partners</h2>
+      </div>
+      <div class="cartera">
+        <div class="col">
+          <h3>Dentro del motor</h3>
+          <ul class="check-list">
+            <li><b>Visibilidad (SEO + IA)</b>: auditoría técnica, AEO/GEO y acompañamiento mensual.</li>
+            <li><b>Gestión de redes sociales</b>: LinkedIn y Meta, orgánico y pauta social.</li>
+            <li><b>Paid media (Google)</b>: Google Ads de alta intención, optimizado con IA.</li>
+            <li><b>Desarrollo web</b>: el sitio a medida donde el tráfico se vuelve contacto.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Fuera (lo pones tú)</h3>
+          <ul class="excl-list">
+            <li><b>Creación de contenido</b>: redacción y guiones de piezas.</li>
+            <li><b>Diseño gráfico</b>: piezas visuales y arte final.</li>
+            <li><b>Producción de video</b>: rodaje y edición.</li>
+          </ul>
+          <p class="partner-note"><b>Somos tu motor de adquisición digital;</b> el contenido creativo lo pones tú y nosotros lo hacemos funcionar. Si no tienes quién lo produzca, te conectamos con partners de confianza.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec alt" aria-labelledby="compare-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Cómo encajan</span>
+        <h2 id="compare-title">¿Por dónde empezar?</h2>
+      </div>
+      <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Visibilidad (SEO + IA)</th>
+            <th scope="col">Redes sociales</th>
+            <th scope="col">Paid media (Google)</th>
+            <th scope="col">Desarrollo web</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Qué resuelve</th>
+            <td>Que te encuentren y te citen en Google y en la IA.</td>
+            <td>Presencia y comunidad donde tu cliente ya está.</td>
+            <td>Tráfico de alta intención, ahora.</td>
+            <td>La base donde el tráfico se vuelve contacto.</td>
+          </tr>
+          <tr>
+            <th scope="row">Cuándo sumarla</th>
+            <td><b>El punto de partida.</b></td>
+            <td>Para estar presente y sostener marca.</td>
+            <td>Cuando el orgánico ya gira y quieres acelerar.</td>
+            <td>Si partes de cero o tu sitio te frena.</td>
+          </tr>
+          <tr>
+            <th scope="row">Punto de partida</th>
+            <td colspan="4"><b>Mini-diagnóstico gratis en 24 horas</b>: el mismo para todo el motor.</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Preguntas frecuentes</span>
+        <h2 id="faq-title">Antes de escribirnos</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>¿Tengo que contratar todo el motor?</summary>
+          <p class="faq-a">No. La mayoría parte por el eje (SEO y visibilidad en IA) y suma redes, paid o desarrollo cuando el momento lo pide. El diagnóstico gratuito te orienta sobre qué pieza tiene más impacto en tu caso.</p>
+        </details>
+        <details>
+          <summary>¿Ustedes crean el contenido, las gráficas y el video?</summary>
+          <p class="faq-a">No los producimos nosotros. El contenido creativo (redacción, diseño gráfico, video) lo pones tú; si no lo tienes, te conectamos con partners de producción. Nosotros orquestamos la estrategia, la pauta, la comunidad, el desarrollo y la medición, y hacemos que ese contenido funcione.</p>
+        </details>
+        <details>
+          <summary>¿Publican precios?</summary>
+          <p class="faq-a">Sí. Cada solución tiene sus planes con precio de partida publicado. El alcance final se cierra después del diagnóstico gratuito, en una propuesta sin sorpresas.</p>
+        </details>
+        <details>
+          <summary>¿Atienden solo empresas financieras?</summary>
+          <p class="faq-a">Nos especializamos en sectores donde la confianza es crítica (finanzas, salud, legal, B2B) porque ahí las exigencias de autoridad (E-E-A-T) son mayores. Si tu rubro es otro, el diagnóstico gratuito nos dirá si podemos ayudarte.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="wrap">
+      <span class="eyebrow teal">Hablemos</span>
+      <h2 id="cta-title">Empecemos con un diagnóstico sin costo.</h2>
+      <p>Revisamos tu sitio, tu competencia y tu presencia en IA. Sin compromiso.</p>
+      <a class="btn gold" href="/contacto/">Agenda tu diagnóstico gratis</a>
+      <br>
+      <a class="email" href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="wordmark">SpindleLab<span>.</span></p>
+    <div class="cols">
+      <nav aria-label="Soluciones">
+        <h4>Soluciones</h4>
+        <ul>
+          <li><a href="/servicios/auditoria-seo-tecnica/">Auditoría SEO Técnica</a></li>
+          <li><a href="/servicios/visibilidad-en-ia/">Visibilidad en IA (AEO/GEO)</a></li>
+          <li><a href="/servicios/acompanamiento-mensual/">Acompañamiento Mensual</a></li>
+          <li><a href="/servicios/redes-sociales/">Gestión de Redes Sociales</a></li>
+          <li><a href="/servicios/paid-media/">Paid Media (Google)</a></li>
+          <li><a href="/servicios/desarrollo-web/">Desarrollo Web</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Sitio">
+        <h4>Sitio</h4>
+        <ul>
+          <li><a href="/metodo/">Nuestro Método</a></li><li><a href="/nosotros/">Nosotros</a></li>
+          <li><a href="/diagnostico/">Chequeo gratis</a></li>
+          <li><a href="/blog/">El Taller</a></li>
+          <li><a href="/contacto/">Contacto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>Santiago, Chile</li>
+          <li><a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 SpindleLab. Todos los derechos reservados.</span>
+      <nav><a href="/privacidad/">Política de privacidad</a></nav>
+      <span>SEO técnico · AEO/GEO · Chile</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.menu-btn'),links=document.getElementById('nav-links');
+  if(btn){btn.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
+})();
+</script>
+<script src="/assets/js/hero-bg-video.js" defer></script>
+<script src="/assets/js/site-header.js" defer></script>
+<div id="cookie-banner" hidden>
+  <style>
+    #cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#161D26;border-top:1px solid rgba(247,245,240,.12);padding:18px 20px}
+    #cookie-banner .cb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    #cookie-banner p{margin:0;font-size:13.5px;color:rgba(242,239,232,.72);line-height:1.5;max-width:640px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+    #cookie-banner a{color:#2FA99B;font-weight:600}
+    #cookie-banner .cb-actions{display:flex;gap:10px;flex:none}
+    #cookie-banner button{font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;padding:10px 20px;border-radius:999px;cursor:pointer;border:1.5px solid transparent}
+    #cookie-reject{background:transparent;color:#F2EFE8;border-color:rgba(247,245,240,.35)}
+    #cookie-reject:hover{background:rgba(247,245,240,.08)}
+    #cookie-accept{background:#F4F6F3;color:#12201A;border-color:#F4F6F3}
+    #cookie-accept:hover{background:#FFFFFF}
+    #cookie-banner[hidden]{display:none}
+    @media(max-width:680px){#cookie-banner .cb-inner{flex-direction:column;align-items:stretch}#cookie-banner .cb-actions{justify-content:flex-end}}
+  </style>
+  <div class="cb-inner">
+    <p>Usamos Google Analytics y Meta Pixel para entender cómo se usa este sitio. Puedes aceptarlos o rechazarlos. Más detalle en la <a href="/privacidad/">política de privacidad</a>.</p>
+    <div class="cb-actions">
+      <button type="button" id="cookie-reject">Rechazar</button>
+      <button type="button" id="cookie-accept">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script src="/js/consent-banner.js?v=3" defer></script>
+</body>
+</html>

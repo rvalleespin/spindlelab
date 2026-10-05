@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+/* CONCEPTO "el eje + el circuito que lo enciende" — jue 3-sep · v2
+   Corregido: DESPUES DEL CORTE NO PASA ENERGIA. La landing y la conversion quedan
+   a oscuras; ahi esta el argumento. El circuito es un LAZO DE HILO (lenguaje
+   textil/luz), nunca placa ni trazas: el manual prohibe la estetica de circuitos. */
+.post.ci { padding:80px; display:flex; flex-direction:column; color:#f2efe8; }
+.lazo { margin:22px 0 0 -14px; }
+.est { font-size:19px; font-weight:700; letter-spacing:2.2px; text-transform:uppercase; fill:#2fa99b; }
+.est.off { fill:#5c6570; }
+.desde { display:flex; align-items:baseline; gap:12px; white-space:nowrap; }
+.desde .svc { font-size:22px; color:#9aa4b0; }
+.desde .val { font-family:'Gabarito'; font-weight:600; font-size:32px; color:#f2efe8; }
+.desde .val i { font-style:normal; font-weight:400; font-size:20px; color:#9aa4b0; }
+</style></head><body>
+<div class="post ci">
+  <div class="eyebrow">Chequea tu sitio · Septiembre</div>
+  <div class="rule"></div>
+  <div class="h" style="font-size:70px; margin-top:32px;">Pagas para que lleguen.<br>El circuito se corta antes.</div>
+
+  <div class="lazo">
+  <svg width="940" height="452" viewBox="0 0 940 452">
+    <defs><filter id="gl" x="-25%" y="-60%" width="150%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter></defs>
+
+    <!-- APAGADO: todo lo que viene DESPUES del corte -->
+    <path d="M 789.4,331.1 A 390,185 0 0 1 80,225" fill="none"
+          stroke="#f2efe8" stroke-opacity="0.085" stroke-width="2.2" stroke-dasharray="8 12"/>
+
+    <!-- VIVO: la energia llega hasta el motor y ahi se acaba -->
+    <path d="M 80,225 A 390,185 0 0 1 789.4,118.9" fill="none"
+          stroke="#2fa99b" stroke-opacity="0.34" stroke-width="6" filter="url(#gl)"/>
+    <path d="M 80,225 A 390,185 0 0 1 789.4,118.9" fill="none"
+          stroke="#a9d8d1" stroke-opacity="0.62" stroke-width="1.5"/>
+
+    <!-- los dos cabos del corte -->
+    <circle cx="789.4" cy="118.9" r="5" fill="#c9a227"/>
+    <circle cx="789.4" cy="331.1" r="4" fill="#4a545f"/>
+
+    <!-- estaciones -->
+    <circle cx="336.6" cy="51.1"  r="4" fill="#2fa99b"/>
+    <circle cx="665"   cy="64.8"  r="4" fill="#2fa99b"/>
+    <circle cx="665"   cy="385.2" r="4" fill="#5c6570"/>
+    <circle cx="336.6" cy="398.9" r="4" fill="#5c6570"/>
+    <text class="est"     x="336.6" y="28"  text-anchor="middle">Te preguntan</text>
+    <text class="est"     x="665"   y="41"  text-anchor="middle">El motor busca</text>
+    <text class="est off" x="665"   y="419" text-anchor="middle">Tu landing</text>
+    <text class="est off" x="336.6" y="433" text-anchor="middle">Convierte</text>
+  </svg>
+  </div>
+
+  <div class="foot">
+    <div>
+      <div class="desde">
+        <span class="svc">Visibilidad en IA</span>
+        <span class="val"><i>desde</i> $400.000</span>
+      </div>
+      <div class="wm" style="margin-top:14px;">SpindleLab<span class="pt" style="color:#f2efe8;">.</span></div>
+    </div>
+    <div class="cta">Chequea tu sitio gratis · spindlelab.cl/diagnostico</div>
+  </div>
+</div>
+</body></html>

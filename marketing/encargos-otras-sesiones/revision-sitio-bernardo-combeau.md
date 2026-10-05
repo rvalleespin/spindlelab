@@ -1,0 +1,386 @@
+> **Actualización 2026-09-03 (Diego) — CORRECCIÓN: la rama troncal para Parte 1 es
+> `claude/revision-parte-1-correcciones`, no la de abajo.** Este encargo se ejecutó dos
+> veces en paralelo, por dos sesiones distintas sin saberlo (yo, y una sesión aparte con
+> el git identity de Ramón — probablemente su sesión local). Confirmado con
+> `git ls-remote --heads origin` sobre `rvalleespin/bernardo-combeau`: ambas ramas parten
+> del mismo commit y ninguna llegó a `main`. Comparadas línea a línea, la otra rama es más
+> completa — en particular encontró el root-cause real del punto 5 (`inputtedWidth`, un
+> artefacto de `@astrojs/vercel` cuando `width` no es un ancho válido del adaptador; la
+> causa era `width={800}` en 8 componentes, varios fuera de lo que yo revisé) y agregó
+> `llms.txt` + una medición de LCP más rigurosa (mobile throttled vía CDP). Ramón confirmó:
+> **`claude/revision-parte-1-correcciones` queda como troncal**, la rama de abajo
+> (`claude/parte-1-correcciones-sitio`, mía) no se usa. El resto de esta nota describe MI
+> ejecución, que quedó superseded — se deja como registro, no como la versión vigente.
+>
+> **Actualización 2026-09-03 (Diego, persona-disenador-web) — Parte 1 hecha (superseded,
+> ver corrección arriba).** Ejecutada
+> en el repo separado `rvalleespin/bernardo-combeau`, rama `claude/parte-1-correcciones-sitio`
+> (push hecho, sin PR — no se pidió explícitamente en esta sesión). Detalle completo en
+> `marketing/oficina/memoria/diego-web.md`. Resumen: varios de los 7 puntos no calzaban
+> 1:1 con el código fuente (como el propio encargo advertía) — se verificó cada uno
+> contra el repo real antes de tocar nada, y el diff terminó siendo más específico que
+> la lista original:
+> - Alts: eran 9 con `.` literal (no 5) más ~15 numéricos/dash — todos reescritos viendo
+>   la foto real.
+> - Los "2 placeholders" tenían contenido real detrás (proyecto "La caída" y retratos
+>   "Actores") — se renombraron los slugs con redirect 301, no se despublicaron.
+> - El descalce de "La caída" era la misma entrada de arriba — corregido junto con eso.
+> - `inputtedWidth="800"` no existe en el repo actual — nada que corregir.
+> - Hero: no había `loading="lazy"` explícito, es el default de Astro sin `loading` —
+>   corregido a `eager`+`fetchpriority="high"`, verificado con Chromium headless que la
+>   prioridad de red pasa de "Low" a "High" en la primera request.
+> - JSON-LD: Person + LocalBusiness (grafo compartido, en todas las páginas) +
+>   ImageObject por foto real en cada galería — datos 100% reales del propio sitio.
+> - Años: normalizados a raya en las 3 entradas con guion.
+> - Bonus fuera de la lista: `sobremi.json` tenía un `"."` suelto renderizándose en la
+>   página Sobre-mí — corregido con el mismo patrón guard que ya usa el código.
+>
+> Verificado con render (Chromium headless), no solo leyendo código. Build de producción
+> sin errores. Parte 2-3 (rediseño) y Parte 5 (regla IA) no tocadas — quedan para cuando
+> Ramón decida abrir esa conversación, después del cobro pendiente (Parte 6).
+
+# Encargo — Revisión del sitio de Bernardo Combeau: corregir, y después darle vida
+
+**Fecha:** 2026-09-03 · **Para:** la sesión que mantiene el repo de Bernardo Combeau
+**De:** sesión troncal (a pedido de Ramón) · **Cliente:** Bernardo Combeau (fotógrafo, Santiago)
+**Origen:** Ramón encuentra el sitio "un poquito plano, fome", y pide más creatividad,
+impacto y memoria **sin perder la esencia**.
+
+> **Cómo se hizo esta revisión, y su límite.** Se leyó el **sitio en vivo**
+> (`https://bernardocombeau.cl`): HTML servido y el CSS completo (`/_astro/nav.Dqq3zwkF.css`).
+> **No se vio la página renderizada** — el navegador headless de la sesión cloud no
+> atraviesa su proxy. Todo lo de abajo sale del código, no de mirar la pantalla.
+> **Verifica cada punto contra el repo antes de tocar nada:** el sitio pudo cambiar, y la
+> versión servida puede no ser la del código fuente.
+
+---
+
+> **Actualización 1 (7-sep-2026) — primera corrección de botones/UI-UX del sitio
+> público, ejecutada.** A pedido de Ramón conecté el MCP de Refero (referencias de
+> diseño real) e hice un inventario completo de cada botón/link del sitio — con
+> Chromium headless corriendo local y capturas, no solo lectura de código. Encontré 5
+> gaps reales; los primeros 4 son correcciones (Parte 1, no rediseño):
+>
+> - **Servicios → "Otros proyectos" decía "Conversemos →" pero era un `<div>` sin
+>   acción** — un visitante no podía hacer clic ahí. Ahora es un link real a
+>   `/contacto`.
+> - **El CTA del hero y los 3 botones de Contacto** (WhatsApp/Email/Instagram) no
+>   tenían ningún estado hover ni focus-visible — cero feedback de que son
+>   interactivos, ni para mouse ni para teclado.
+> - **El tag "Publicado en" de las fichas de Retratos** tampoco tenía hover/focus —
+>   mismo bug, mismo arreglo.
+> - **Los controles del lightbox de Retratos/Proyectos** (cerrar/anterior/siguiente)
+>   tenían menos área de toque que el Visor nuevo de Modelo — parejados a 48×48px.
+>
+> El quinto punto sí toca el look, no solo la corrección — respaldado en 8 referencias
+> de sitios editoriales de fotografía en Refero (Atelier Deux-Cé, Julia Krantz,
+> Christopher Ireland, Artandcommerce, Bibliothèque, Simone Sniekers, Jakub Reis, Laura
+> Monin) más 3 sitios con CTA real (Sequel, Handhold, Medium): **el único CTA "duro"
+> del sitio (el pill del hero y el WhatsApp de Contacto) pasó de solo-contorno a
+> relleno sólido** — invierte a fantasma en hover para dar feedback, sin sumar ningún
+> color nuevo a la paleta. Email e Instagram siguen fantasma; nada más cambió.
+>
+> **Este último punto es exactamente el tipo de cambio que la Parte 3 de este
+> documento (punto 4, "un acento cálido... usado en el CTA") dejó como rediseño pagado
+> aparte (Parte 6).** Antes de tocarlo le pregunté a Ramón directamente si ya se
+> habían cobrado los $235.200 de Fases 1 y 5 — confirmó que sí, así que lo hice.
+> **Sigue pendiente y sin tocar:** el resto de la Parte 2-3 completa (romper la grilla
+> cuadrada, aparición al scroll, movimiento en el hero, etc.) — esto no fue eso, fue
+> solo el relleno del botón.
+>
+> Verificado con Chromium headless local: estados hover/focus por color computado (no
+> solo por ojo), el link de Servicios navegando de verdad a `/contacto` al hacer clic,
+> y el tamaño real (48×48px) de los tres controles del lightbox. Mergeado directo a
+> `main` (commit `058dbf6`), confirmado en producción.
+
+> **Actualización 2 (7-sep-2026) — Ramón corrige: "me equivoqué en separar los
+> sitios", fondo negro permanente para todo Bernardo-fotógrafo.** Instrucción directa:
+> el sitio de fotografía (Home, Retratos, Proyectos, Estudio, Servicios, Sobre mí,
+> Contacto) va en fondo negro, y **solo** la sección Modelo queda en blanco. Antes de
+> tocar nada confirmé en el propio código que hoy no existe ningún mecanismo activo
+> que fuerce un tema — el sitio solo se veía oscuro si el visitante tenía dark mode
+> activado en su sistema operativo (`prefers-color-scheme`), y los selectores
+> `[data-theme]` que ya estaban escritos en el CSS nunca se activaban desde ningún
+> `.astro` (código muerto).
+>
+> Ejecutado: el fondo oscuro pasa a ser **fijo**, no condicional al tema del sistema —
+> se usa la misma paleta oscura que ya vivía en el CSS (nunca se inventó un color
+> nuevo), y se retiró el `@media(prefers-color-scheme)` más los `[data-theme]`
+> muertos. La sección Modelo no se tocó — tiene sus propios tokens
+> (`--mp`/`--mi`/`--mm`/`--ml`), siempre claros, completamente aislados de los del
+> sitio principal (`--paper`/`--ink`/etc.), así que sigue blanca sin que hiciera falta
+> ningún cambio ahí. Confirmé además que ningún archivo de página tiene un color
+> "a mano" (grep sin resultados fuera de `global.css`) — todo el sitio ya dependía de
+> estos tokens, por eso el cambio fue de una sola pieza del CSS.
+>
+> Verificado con Chromium headless local, forzando el color-scheme del navegador a
+> "dark" y a "light" por separado en las mismas páginas — el sitio principal se ve
+> **idéntico** en ambos casos (ya no depende del sistema del visitante), con buen
+> contraste en cada página (Servicios, Contacto, Retratos + lightbox, Estudio, Sobre
+> mí); Modelo (portada y Work) se ve sin ningún cambio, blanca, con el trabajo de
+> rondas anteriores (grilla de 2 columnas, flechas, tipografía) intacto. Mergeado
+> directo a `main` (commit `00b134c`), confirmado en producción.
+
+> **Actualización 3 (7-sep-2026) — "la franja de video del home está estática en el
+> teléfono".** Ramón reportó que la franja de Motion/Commercials (la sección con
+> video de fondo en `/modelo/`) no se movía en su celular. Causa encontrada en el
+> código, no es un bug nuevo — es una decisión de una sesión anterior, explícita en
+> un comentario del propio archivo: el video solo arranca solo al hacer scroll en
+> pantallas ≥768px (dato móvil + autoplay poco confiable en celular). El problema
+> real es que en pantallas chicas el botón Play **tampoco se mostraba** — quedaba la
+> franja fija sin absolutamente ninguna forma de hacerla andar.
+>
+> Corregido sin tocar la lógica de autoplay automático (que sigue siendo solo
+> desktop, respetando datos y `prefers-reduced-motion`, como ya estaba pensado): el
+> botón Play/Pause ahora aparece siempre que haya video, en cualquier pantalla. Un
+> tap es un gesto real del usuario, así que reproduce de forma confiable incluso
+> donde el autoplay automático no corre — el propio código ya advertía que el modo
+> de bajo consumo de iOS bloquea el autoplay "aun con muted + playsinline, y no es
+> detectable", así que forzar autoplay en todo celular no habría sido una solución
+> confiable; un botón que sí depende de un gesto del usuario, sí lo es.
+>
+> Verificado con Chromium headless local en viewport de celular (390×844, con
+> touch): antes del tap el botón ya está visible y el video no cargó nada
+> (`videoSrc:""`, cero costo de datos); después del tap el video carga y reproduce
+> de verdad (`paused:false`). En desktop, sin tocar nada, el autoplay automático
+> sigue exactamente igual que antes. Mergeado directo a `main` (commit `02cc02a`).
+> Confirmado en producción de forma indirecta pero concluyente: extraje el script
+> minificado real que sirve `bernardocombeau.cl/modelo/` y confirmé que
+> `botón.hidden=false` y su listener de clic ya no dependen del ancho de pantalla —
+> solo el arranque automático por `IntersectionObserver` sigue condicionado a
+> desktop, exactamente como quedó en el commit.
+
+> **Actualización 4 (7-sep-2026) — Ramón corrige de nuevo: quiere que arranque sola
+> también en el teléfono, no solo con el botón.** La Actualización 3 resolvió "no hay
+> forma de hacerla andar" con un botón siempre disponible, pero la idea de Ramón era
+> que se reprodujera **automáticamente**, igual que en desktop.
+>
+> Se sacó la restricción de "solo pantallas ≥768px" del arranque automático — el
+> video ya iba `muted+playsinline`, que es justo el caso que los navegadores móviles
+> sí dejan autoplayear sin que el visitante toque nada (la restricción real de los
+> navegadores es sobre autoplay CON sonido, no sobre autoplay silenciado). Se
+> mantienen sin tocar las dos preferencias que sí son del visitante, no del tamaño de
+> su pantalla: `prefers-reduced-motion` y ahorro de datos (Data Saver) — si alguien
+> pidió explícitamente menos movimiento o cuidar sus datos, el video sigue sin
+> arrancar solo. El botón Play/Pause de la Actualización 3 se mantiene, siempre
+> visible, como respaldo: el propio código ya advertía que el modo de bajo consumo de
+> iPhone puede bloquear cualquier autoplay, muted o no, sin que haya forma de
+> detectarlo de antemano — si eso pasa, el botón sigue ahí para arrancarla a mano en
+> vez de quedar sin ninguna salida.
+>
+> Verificado con Chromium headless local, viewport de celular, sin tocar nada: el
+> `<video>` pasa a `paused:false` solo, con `muted:true` y `playsInline:true` (las
+> condiciones que los navegadores móviles exigen para autoplay sin gesto). No se
+> pudo confirmar el avance visual de los fotogramas en este entorno de prueba — el
+> Chromium headless de esta sesión no llega al CDN real del video (mismo límite de
+> red ya documentado antes para YouTube y unpkg.com; confirmado aparte que ese mismo
+> archivo SÍ es alcanzable por HTTP normal, o sea es un límite del navegador de
+> prueba, no del video ni del sitio). Verificado también que con
+> `prefers-reduced-motion` activado el video NO arranca solo (sigue mostrando el
+> póster) pero el botón Play sigue disponible, y que desktop no tuvo ninguna
+> regresión. Mergeado directo a `main` (commit `1f0a021`), confirmado en producción
+> extrayendo el script real servido: ya no queda ningún `matchMedia` de ancho de
+> pantalla, solo el de `prefers-reduced-motion`.
+
+> **Actualización 5 (7-sep-2026) — Commercials se divide en Spot TV y Redes
+> sociales.** Ramón pidió la subcategoría porque un spot de TV y un video hecho
+> para redes no miden lo mismo. Antes TODO Commercials forzaba la miniatura a
+> 16:9 (horizontal), sin importar la forma real del video.
+>
+> - **Dato:** cada comercial en `motion.json` suma `categoria`
+>   (`spot-tv`/`redes-sociales`), elegible desde un campo nuevo en el panel.
+> - **Sitio:** la página `/modelo/commercials` pasa a un solo `<h1>Commercials</h1>`
+>   con dos subgrupos (`<h2>`) — Spot TV en cuadros 16:9, Redes sociales en
+>   cuadros 9:16 (vertical) — cada uno visible solo si tiene contenido real.
+> - **Panel:** vista previa dividida igual que el sitio real, con la misma
+>   proporción por grupo.
+>
+> **Sobre los 10 comerciales que ya existían:** los dejé todos por defecto en
+> "Spot TV" al principio (no tenía forma de saber la categoría real de cada
+> uno sin inventarla), y lo dejé anotado así en el primer commit. Ramón avisó
+> en el momento que ese lote completo está subido al canal de YouTube como
+> **Shorts** — o sea, contenido vertical de redes, no spots de TV — así que
+> corregí los 10 a "redes-sociales" antes de subir nada a producción. Quedan
+> re-categorizables uno por uno desde el panel cuando Bernardo cargue contenido
+> nuevo de cualquiera de los dos tipos.
+>
+> Verificado con Chromium headless local (sitio real desktop/mobile, y el
+> panel completo corriendo en `local_backend`: el campo categoría en el
+> formulario, el resumen de cada item reflejándolo, y la vista previa en vivo
+> mostrando "Redes sociales" con las 10 miniaturas en 9:16). Mergeado directo
+> a `main` (commit `352361f`), confirmado en producción.
+
+> **Actualización 6 (7-sep-2026) — la categorización de la Actualización 5 estaba
+> al revés; Ramón la corrigió, y trajo el contenido real de redes.** Los 10
+> comerciales que ya existían (Claro, Mennt, Skyrizi, Ketchup, Watts, Canada Dry,
+> Ramazzotti, Banco Internacional, Kit Kat, Jumbo Circo) son avisos de marca de
+> verdad, no Shorts — Ramón entró al panel él mismo y los corrigió de vuelta a
+> "spot-tv" (commit propio `ae86354`, verificado leyendo el diff real antes de
+> tocar nada más, no solo el mensaje). Después señaló dónde está el contenido de
+> redes sociales real: `youtube.com/@berncombeau/shorts`.
+>
+> Entré a esa página (el HTML público trae los datos de YouTube embebidos, no
+> hizo falta navegador) y extraje los **11 Shorts reales** que hay ahí — título y
+> ID de video de cada uno, nada inventado. Los agregué a `comerciales` con
+> `categoria:"redes-sociales"`: Kano Outdoor Parkas 2026, Cielo Milano 2025,
+> Comercial Santander 2025, Sastrería Cielo Milano, Opticas GMO, Comercial
+> Loncoleche 2025, Nolk Chile mountain wear, Jumbo Navidad 2024, Comercial Mall
+> Plaza 2024, Mall Plaza, y Viol Mati Bern. De regalo, la miniatura real de cada
+> uno confirma 720×1280 px — exactamente 9:16, la proporción vertical que ya se
+> había elegido para este grupo en la Actualización 5 sin todavía tener contenido
+> real para probarla.
+>
+> Verificado con Chromium headless local: 10 tiles en Spot TV (16:9) + 11 en
+> Redes sociales (9:16), cada link apuntando al Short real correspondiente.
+> Mergeado directo a `main` (commit `bac7af6`), confirmado en producción.
+
+> **Actualización 7 (7-sep-2026) — auditoría de fricción sobre todo lo hecho esta
+> sesión.** Ramón pidió revisar el conjunto y resolver lo que generara fricción,
+> no solo lo puntual que se había ido reportando. Encontré un hallazgo real y
+> dos menores.
+>
+> **El hallazgo real: el lightbox de Retratos/Proyectos no se podía cerrar con
+> teclado.** Es un mecanismo viejo (CSS `:target`, sin JavaScript a propósito) —
+> confirmado con una prueba concreta, no una sospecha: Escape no lo cerraba (el
+> hash se quedaba fijo) y el foco no se movía adentro al abrirlo. El Visor de
+> Modelo (`<dialog>` + `showModal()`, construido en esta misma sesión) ya
+> resolvía exactamente esto — foco atrapado, Escape, gestos de swipe — pero
+> Retratos/Proyectos se quedaron con el mecanismo original.
+>
+> Unifiqué los dos: Retratos y Proyectos ahora usan el mismo `<Visor />`
+> compartido que Modelo. Al componente le costó una generalización real (antes
+> buscaba específicamente `button.photo`, el nombre de clase de Modelo; ahora
+> busca por el atributo `data-lb`, así no le importa qué CSS use cada sección) y
+> un soporte nuevo de caption opcional (lugar/año/crédito, separado del `alt`
+> real de la foto — sin eso, sigue mostrando el alt, cero cambio para Modelo).
+> **Encontré y corregí en el camino un bug propio de esta misma unificación**
+> antes de subir nada: al generalizar el selector de clic olvidé actualizar el
+> que arma el grupo de fotos navegables, y quedó buscando `button.photo` en vez
+> de `button[data-lb]` — cero fotos encontradas, error de JS al abrir. Lo agarró
+> la propia prueba (Playwright reportó 0 fotos y un error real), no quedó en
+> producción.
+>
+> **Los dos menores:** `.serie-nav` (← serie anterior / siguiente →) y el pie de
+> página no tenían ningún estado de hover/focus — `.serie-nav` ni eso: era
+> `color:inherit` puro, se leía como texto plano sin ninguna pista de que lleva
+> a otra página. Mismo criterio ya usado en el resto del sitio esta sesión
+> (oscurece hacia `--ink` al pasar el mouse o tabular).
+>
+> **Revisado y descartado como fricción real:** integridad de todos los links
+> de navegación (sin 404 en ninguna ruta actual); contraste del tema oscuro
+> permanente (Actualización 2) calculado con la fórmula real de WCAG —
+> `--ink`/`--paper` en 17.6:1, `--mute`/`--paper` en 5.7:1, ambos superan el
+> mínimo AA de 4.5:1 sin ningún ajuste necesario.
+>
+> Verificado con Chromium headless local: clic abre el visor y atrapa el foco,
+> flechas navegan la misma serie, Escape cierra y devuelve el foco a la
+> miniatura correcta, en Retratos, Proyectos y (sin regresión) en Modelo → Work;
+> probado también en viewport de celular (abre con tap) y con datos de prueba
+> temporales revertidos para el caption combinado. Mergeado directo a `main`
+> (commits `e198bf9` y `4df3f70`), confirmado en producción.
+
+---
+
+## PARTE 1 — Correcciones (esto no es gusto, está roto o falta)
+
+Prioridad sobre lo creativo. Varias son exactamente el servicio que vende SpindleLab, así
+que dejarlas pasar es incoherente con lo que se le cobra a cualquier otro cliente.
+
+1. **Cinco imágenes con `alt="."`** (un punto). Ni un buscador de imágenes ni un motor de
+   IA pueden leerlas. Cada foto necesita un alt real y descriptivo.
+2. **Dos placeholders publicados en producción:** existen y responden las rutas
+   `/retratos/nombre-de-la-serie` y `/proyectos/aquí-estoy-creando-algo-nuevo`.
+   Renombrar o despublicar. Un placeholder en producción es error de credibilidad, no de
+   estilo.
+3. **Descalce de contenido:** la tarjeta titulada **"La caída"** lleva
+   `alt="de cuando salgo un domingo"`.
+4. **El hero tiene `loading="lazy"`.** Es el elemento más grande de la página: cargarlo
+   perezoso retrasa la primera pintura y castiga el LCP. Debe ir `loading="eager"` con
+   `fetchpriority="high"`. El resto de la grilla sí va lazy.
+5. **Atributo inválido `inputtedWidth="800"`** en todas las tarjetas (parece un `width`
+   mal tipeado que se filtró desde el generador).
+6. **Cero JSON-LD en todo el sitio.** No hay `Person`, ni `ImageObject`, ni negocio local.
+   Para un fotógrafo de Santiago que quiere aparecer cuando alguien le pregunta a un motor
+   de IA por un retratista, ese es el hueco completo. Es la corrección de mayor valor
+   comercial de esta lista.
+7. **Formatos de año mezclados** en la misma grilla: `2022-2026` con guion y `2022–2026`
+   con raya.
+
+**Criterio de término de la Parte 1:** render verificado (no asumido), LCP medido antes y
+después, y el sitio pasando el chequeo de 21 señales de SpindleLab. La regla de la casa
+aplica igual cuando el cliente ya aprobó: **una pieza que reprueba nuestro propio chequeo
+contradice lo que vendemos.**
+
+---
+
+## PARTE 2 — Por qué se siente plano (diagnóstico, con la evidencia)
+
+- **Una sola animación en todo el sitio:** el reveal del hero al cargar (`@keyframes
+  reveal`, 0,9 s, `translateY(10px)` + opacidad). Después nada se mueve nunca más.
+- **Cero reacción al scroll.** La palabra `scroll` no aparece en el CSS.
+- **La única interacción es `scale(1.035)`** en hover de tarjeta. Un 3,5%: imperceptible.
+- **La paleta no tiene acento.** Los cinco tokens (`--paper #fbfaf8`, `--ink #111110`,
+  `--mute #84817a`, `--line #e7e4dd`, `--stage #f0efe9`) son cinco tonos del mismo beige.
+  No hay un punto de tensión en la página.
+- **Dos feeds idénticos.** "Retratos" y "Proyectos" comparten grid, tarjeta y leyenda.
+  Cero variación de ritmo entre secciones.
+- **Y el problema de fondo: todas las tarjetas forzadas a `aspect-ratio: 1`.** Un retrato
+  es 4/5, un apaisado 3/2. Se está recortando la composición de un fotógrafo para que
+  quepa en una grilla. **Eso es lo que aplana un portafolio:** todo pesa igual, así que
+  nada pesa. No es falta de animación, es falta de jerarquía entre las obras.
+
+## PARTE 3 — Movimientos propuestos, por orden de impacto
+
+Son propuestas, no órdenes. Se eligen con Ramón, y Bernardo aprueba.
+
+1. **Romper la cuadrícula cuadrada.** Que el formato lo dicte la foto. Ritmo de una grande
+   con dos chicas, o masonry. Cambia más de la mitad de la sensación y no toca la esencia.
+2. **Aparición al scroll.** Fade + 12 px de subida, escalonado. El keyframe `reveal` ya
+   existe: reutilizarlo con `IntersectionObserver`. Barato y es lo que falta.
+3. **Subir el hover** de 1.035 a ~1.06, más lento, y que la leyenda aparezca al pasar por
+   encima en vez de estar siempre visible.
+4. **Un punto de tensión en la paleta:** un acento cálido extraído de la piel de sus
+   propios retratos, usado en el CTA y en el hover. **Uno solo y escaso** (regla de la casa
+   sobre el acento único).
+5. **Movimiento en el hero.** Hoy es foto fija. Si Bernardo tiene video de sesión, sirve la
+   técnica del loop perfecto (mismo frame de inicio y fin). Si no hay video, un ken-burns
+   lentísimo (escala 1.0 → 1.04 en ~20 s) da vida sin inventar nada.
+
+**Mantener `prefers-reduced-motion`.** El CSS actual ya apaga el zoom para quien lo pide
+(`@media (prefers-reduced-motion: reduce)`). Cualquier animación nueva se agrega dentro de
+ese guard, no fuera.
+
+## PARTE 4 — Lo que NO se toca
+
+El sitio está bien hecho. Esto se conserva:
+
+- **El grano por SVG** (`feTurbulence` + `mix-blend-mode: overlay` al 35%) sobre cada foto.
+  Es oficio y da textura de película.
+- El guard de `prefers-reduced-motion`.
+- Canonical, Open Graph completo, imágenes responsivas por Vercel, `aspect-ratio` declarado
+  (no hay salto de layout).
+- El scrim en gradiente del hero, que resuelve la legibilidad del texto sobre foto.
+- **El `h1`:** *"Un buen retrato no se toma. Se construye dirigiendo a la persona hasta su
+  mejor versión."* No es relleno, tiene criterio. No reescribirlo.
+
+## PARTE 5 — Regla dura para este cliente
+
+**Ninguna imagen ni video generado con IA entra a este sitio.** El producto de Bernardo es
+su ojo; una imagen generada en el sitio de un fotógrafo no es una mejora, es un problema de
+credibilidad. Las técnicas de landings con movimiento que quedaron en la memoria de Bruno
+sirven para productos sin material propio. Acá hay material real, y ese es el activo.
+
+## PARTE 6 — Nota comercial (decisión de Ramón, no de la sesión que ejecuta)
+
+- La **Parte 1** es corrección y entrega de servicio: candidata natural a la primera entrega
+  real de SEO/AEO sobre un cliente que ya confía, y buen momento para pedir el testimonio y
+  el permiso de caso público, que siguen pendientes.
+- La **Parte 2-3** es rediseño y **no está en el Plan Esencial** que Bernardo contrató. Va
+  como fase aparte que se cobra.
+- **El proyecto está PAGADO.** Ramón confirmó el 3-sep que el cobro de las Fases 1 y 5
+  ($235.200) se hizo "hace mucho tiempo". La versión anterior de este encargo decía que
+  seguía pendiente y recomendaba cobrar antes de abrir el rediseño: **eso era falso**, salía
+  de `ventas/pipeline.md` y `ventas/proyectos-en-curso.md`, que están desactualizados.
+  No hay nada que cobrar antes de conversar el rediseño.
+  **Pendiente separado, para el troncal:** actualizar los dos documentos de ventas con la
+  fecha real del pago (Ramón no la precisó).

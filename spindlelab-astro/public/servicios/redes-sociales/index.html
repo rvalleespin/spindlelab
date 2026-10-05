@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js): NO se carga hasta que haya consentimiento. Hasta el 22-sep se
+     cargaba siempre, con Consent Mode en denegado, y así igual le mandaba a Google un aviso
+     sin cookies de cada página vista a quien había dicho que no (medido en la red). Ahora el
+     archivo se pide recién cuando la persona acepta: __spindlelabInitGA, que también llama
+     /js/consent-banner.js al pulsar Aceptar. La función gtag() se define igual aunque no
+     haga nada, porque hay código que la llama directo (el generate_lead de /contacto/), y
+     sin ella lanzaría un error justo después de un envío exitoso. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var __spindlelabConsent = (function(){
+    try { return localStorage.getItem('spindlelab_consent'); } catch(e){ return null; }
+  })();
+  function __spindlelabInitGA(){
+    if (window.__spindlelabGAInited) return;
+    window.__spindlelabGAInited = true;
+    // Lo que se haya encolado antes del permiso (un generate_lead, un chequeo_completado)
+    // se descarta: nada de lo que pasó antes de aceptar se manda después de aceptar.
+    window.dataLayer.length = 0;
+    gtag('consent', 'default', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-J40VW9E0TW');
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J40VW9E0TW';
+    document.head.appendChild(s);
+  }
+  if (__spindlelabConsent === 'granted') { __spindlelabInitGA(); }
+</script>
+<!-- Meta Pixel Code — no tiene un "consent mode" propio, así que no se inicializa hasta
+     que haya consentimiento. Sin noscript: no se puede pedir consentimiento sin
+     JavaScript, así que tampoco se rastrea sin JavaScript. -->
+<script>
+function __spindlelabInitMeta(){
+  if(window.__spindlelabMetaInited) return;
+  window.__spindlelabMetaInited = true;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2885353628478565');
+  fbq('track', 'PageView');
+}
+if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
+</script>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestión de Redes Sociales para empresas · SpindleLab</title>
+<meta name="description" content="Gestión de redes en LinkedIn y Meta: estrategia, pauta, comunidad y reportes, orquestado con agentes de IA. El contenido creativo lo pones tú.">
+<link rel="canonical" href="https://spindlelab.cl/servicios/redes-sociales/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpindleLab">
+<meta property="og:title" content="Gestión de Redes Sociales · SpindleLab">
+<meta property="og:description" content="Estrategia, pauta, comunidad y reportes en redes para empresas. Orquestamos la ejecución con agentes de IA; el contenido creativo lo pones tú (o te conectamos con un partner).">
+<meta property="og:url" content="https://spindlelab.cl/servicios/redes-sociales/">
+<meta property="og:image" content="https://spindlelab.cl/assets/img/og-marca.jpg?v=4">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="SpindleLab. SEO técnico y visibilidad en IA">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=4"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://spindlelab.cl/#org",
+      "name": "SpindleLab",
+      "url": "https://spindlelab.cl/",
+      "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
+      "email": "hola@spindlelab.cl",
+      "description": "SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B y financieras en Chile.",
+      "address": {"@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL"},
+      "areaServed": {"@type": "Country", "name": "Chile"},
+      "sameAs": ["https://www.linkedin.com/company/spindlelab/", "https://www.instagram.com/spindle.lab/"],
+      "founder": {"@id": "https://spindlelab.cl/#autor-ramon"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://spindlelab.cl/#autor-ramon",
+      "name": "Ramón Vallejos",
+      "jobTitle": "Consultor de SEO técnico y visibilidad en IA (AEO/GEO)",
+      "image": "https://spindlelab.cl/assets/img/ramon-vallejos.jpg",
+      "url": "https://spindlelab.cl/nosotros/",
+      "worksFor": {"@id": "https://spindlelab.cl/#org"}
+    },
+    {
+      "@type": "Service",
+      "@id": "https://spindlelab.cl/servicios/redes-sociales/#service",
+      "name": "Gestión de Redes Sociales",
+      "serviceType": "Gestión de redes sociales para empresas",
+      "provider": {"@id": "https://spindlelab.cl/#org"},
+      "areaServed": {"@type": "Country", "name": "Chile"},
+      "description": "Estrategia, calendario, gestión de pauta social, comunidad y reportes quincenales en redes para empresas. SpindleLab orquesta la estrategia y la ejecución; las piezas gráficas y el video los pone el cliente o un partner de producción.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Planes de Gestión de Redes Sociales",
+        "itemListElement": [
+          {"@type": "Offer", "name": "Orgánico", "description": "Estrategia y calendario, publicación, comunidad y reporte quincenal en una plataforma (LinkedIn o Meta). Sin pauta.", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": 390000, "priceCurrency": "CLP", "unitText": "MES", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "Orgánico + Pauta", "description": "Todo lo del Orgánico en LinkedIn y Meta más la gestión de pauta social (audiencias, campañas y ajustes). La inversión publicitaria va aparte.", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": 590000, "priceCurrency": "CLP", "unitText": "MES", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "A medida", "description": "Multi-plataforma y mayor volumen: todo lo anterior con plataformas y cadencia a definir, integrado con el resto del motor de adquisición. Se cotiza tras una reunión."}
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://spindlelab.cl/"},
+        {"@type": "ListItem", "position": 2, "name": "Soluciones", "item": "https://spindlelab.cl/servicios/"},
+        {"@type": "ListItem", "position": 3, "name": "Gestión de Redes Sociales", "item": "https://spindlelab.cl/servicios/redes-sociales/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "¿Ustedes crean el contenido (gráficas y video)?", "acceptedAnswer": {"@type": "Answer", "text": "No los producimos. Las piezas gráficas y el video los pones tú; si no los tienes, te conectamos con partners de producción. SpindleLab orquesta la estrategia, la pauta, la comunidad y los reportes, y hace que ese contenido salga con criterio y llegue a la gente correcta."}},
+        {"@type": "Question", "name": "¿Qué plataformas manejan?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn y el ecosistema Meta (Facebook e Instagram). Elegimos dónde vale la pena estar según tu cliente y tu tipo de negocio, no por estar en todas."}},
+        {"@type": "Question", "name": "¿Incluye pauta pagada?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La gestión de la pauta social (social ads) es parte del servicio: definimos audiencias, montamos las campañas y las ajustamos. El manejo de Google Ads y la pauta de alta intención en buscadores viven en su propia pieza: Paid Media (Google)."}},
+        {"@type": "Question", "name": "¿Cómo miden resultados?", "acceptedAnswer": {"@type": "Answer", "text": "Con reportes quincenales de las métricas que importan para tu negocio (alcance útil, conversación, clics y contactos), no métricas de vanidad. Cada quincena revisamos qué funcionó y ajustamos el plan."}},
+        {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "El plan Orgánico parte en 390.000 CLP/mes + IVA y el Orgánico + Pauta en 590.000 CLP/mes + IVA; el plan a medida se cotiza tras una reunión. Los precios no incluyen la inversión en pauta, que la defines tú. Se dimensiona tras el diagnóstico gratuito."}}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/inter.css?v=1">
+<link rel="stylesheet" href="/assets/css/style.css?v=29">
+<style>
+  .packs-grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr);align-items:stretch}
+  @media(max-width:860px){.packs-grid{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
+  .pack{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px}
+  .pack.featured{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
+  .pack .tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+  .pack h3{font-family:var(--headline);font-size:20px;font-weight:600;color:var(--ink);letter-spacing:-.02em;margin:0}
+  .pack .tagline{font-size:13.5px;color:var(--ink-70);line-height:1.5;margin:8px 0 0}
+  .pack .price{margin:18px 0 2px;font-family:var(--headline)}
+  .pack .price .from{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-50);margin-bottom:2px}
+  .pack .price .amount{font-size:30px;font-weight:700;color:var(--paper);letter-spacing:-.02em}
+  .pack .price .iva{font-size:12px;color:var(--ink-50);font-weight:400}
+  .pack .price .quote{font-size:18px;font-weight:600;color:var(--paper)}
+  .pack ul{list-style:none;display:grid;gap:11px;margin:20px 0 24px;padding:20px 0 0;border-top:1px solid var(--line)}
+  .pack ul li{position:relative;padding-left:26px;font-size:13.5px;line-height:1.5;color:var(--ink)}
+  .pack ul li::before{content:"";position:absolute;left:2px;top:5px;width:12px;height:7px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+  .pack .btn{margin-top:auto;justify-content:center;width:100%}
+  .pack-note{margin-top:26px;font-size:12.5px;color:var(--ink-50);line-height:1.75;max-width:760px}
+  .pack-note b{color:var(--ink-70);font-weight:600}
+  .pack-common{max-width:680px;margin:0 0 36px;color:var(--ink-70);font-size:14.5px;line-height:1.6}
+  .pack-common b{color:var(--paper);font-weight:600}
+  /* --- densidad: menos aire vertical y listas a 2 columnas en desktop --- */
+  .sec{padding:64px 0}
+  .band-navy{padding:64px 0}
+  .sec-head{margin-bottom:34px}
+  @media(min-width:900px){
+    .check-list{grid-template-columns:1fr 1fr;gap:16px 44px}
+    .check-list li{font-size:14px}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="SpindleLab, inicio">SpindleLab<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span class="bars"></span></button>
+    <div class="nav-pill"><ul class="nav-links" id="nav-links">
+      <li><a href="/servicios/" aria-current="page">Soluciones</a></li>
+      <li><a href="/metodo/">Método</a></li>
+      <li><a href="/nosotros/">Nosotros</a></li>
+      <li><a href="/#evidencia">Evidencia</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contacto/">Contacto</a></li>
+    </ul>
+    <a class="btn gold small nav-cta" href="/diagnostico/">Chequea tu sitio</a></div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero page-hero-video">
+    <video class="ph-bg" src="/video/servicios-oficina.mp4" poster="/video/servicios-oficina.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+    <div class="ph-veil"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Miga de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/servicios/">Soluciones</a></li>
+          <li>Gestión de Redes Sociales</li>
+        </ol>
+      </nav>
+      <h1>Gestión de Redes Sociales</h1>
+      <p class="lead">Tus clientes ya pasan el día en redes. Esta pieza pone tu marca ahí con estrategia: calendario, pauta, comunidad y reportes claros, no improvisación. Las piezas gráficas y el video los pones tú; si no los tienes, te conectamos con partners. SpindleLab orquesta la estrategia y la ejecución. Es una de las cuatro piezas del motor de adquisición: el eje lo ponen el <a href="/servicios/auditoria-seo-tecnica/">SEO técnico</a> y la <a href="/servicios/visibilidad-en-ia/">visibilidad en IA</a>.</p>
+      <div class="actions">
+        <a class="btn gold" href="#planes">Ver planes y precios →</a>
+        <span class="note">Desde $390.000/mes · el creativo lo pones tú</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Qué incluye</span>
+        <h2>Estrategia y ejecución, no publicar por publicar</h2>
+      </div>
+      <ul class="check-list">
+        <li><b>Estrategia y calendario editorial</b>: definimos de qué habla tu marca, en qué formato y con qué cadencia, alineado a tu cliente y a tus objetivos de negocio.</li>
+        <li><b>Gestión de la pauta social (social ads)</b>, desde el plan con Pauta: armamos y ajustamos las campañas en Meta (Facebook e Instagram): audiencias, presupuesto y creatividades, sin encender gasto sin tu confirmación.</li>
+        <li><b>Comunidad y respuesta de mensajes</b>: moderamos comentarios y respondemos mensajes con tu tono, para que ninguna consulta de un posible cliente quede sin contestar.</li>
+        <li><b>Reportes quincenales con métricas que importan</b>: alcance útil, conversación, clics y contactos generados. Nada de métricas de vanidad ni capturas sueltas.</li>
+        <li><b>El contenido creativo lo pones tú</b>: las piezas gráficas y el video los produces tú o un partner de confianza; nosotros orquestamos el brief, la revisión y la salida.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="planes" aria-labelledby="planes-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Planes</span>
+        <h2 id="planes-title">Elige la cobertura</h2>
+      </div>
+      <p class="pack-common">Todos incluyen <b>estrategia, calendario, comunidad y reporte quincenal</b>, y en todos <b>el creativo lo pones tú</b> (o te conectamos con un partner). La gestión de pauta social entra desde el plan con Pauta; la inversión publicitaria va aparte.</p>
+      <div class="packs-grid">
+        <div class="pack reveal">
+          <span class="tag">Orgánico</span>
+          <h3>Orgánico</h3>
+          <p class="tagline">Presencia con criterio en una plataforma, sin pauta.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$390.000</span> <span class="iva">/mes + IVA</span></div>
+          <ul>
+            <li>Estrategia y calendario editorial</li>
+            <li>Publicación y gestión de comunidad</li>
+            <li>Una plataforma (LinkedIn o Meta)</li>
+            <li>Reporte quincenal</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+        <div class="pack featured reveal">
+          <span class="tag">Más elegido</span>
+          <h3>Orgánico + Pauta</h3>
+          <p class="tagline">Presencia y pauta social para llegar más lejos.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$590.000</span> <span class="iva">/mes + IVA</span></div>
+          <ul>
+            <li>Todo lo del Orgánico, y más</li>
+            <li>Gestión de pauta social en Meta (audiencias y campañas)</li>
+            <li>LinkedIn + Meta (Facebook e Instagram)</li>
+            <li>La inversión publicitaria va aparte</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+        <div class="pack reveal">
+          <span class="tag">A medida</span>
+          <h3>A medida</h3>
+          <p class="tagline">Más plataformas y volumen, integrado al resto del motor.</p>
+          <div class="price"><span class="quote">Se cotiza tras una reunión</span></div>
+          <ul>
+            <li>Todo lo anterior, y más</li>
+            <li>Plataformas y cadencia a definir</li>
+            <li>Mayor volumen de publicación y pauta</li>
+            <li>Integrado con SEO, IA y Paid Media</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+      </div>
+      <p class="pack-note"><b>Los precios no incluyen IVA (19%)</b> y no incluyen la inversión en pauta (esa la defines tú). El plan se dimensiona tras el diagnóstico gratuito. Recuerda: <b>las piezas gráficas y el video los pones tú</b>; si no los tienes, te conectamos con partners de producción.</p>
+    </div>
+  </section>
+
+  <section class="band-navy" aria-labelledby="proceso-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow gold">El proceso</span>
+        <h2 id="proceso-title">Cómo trabajamos, quincena a quincena</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="num">A</span>
+          <h3>Estrategia y calendario</h3>
+          <p>Definimos objetivos, temas y cadencia. De ahí sale el calendario editorial y el brief que va a los partners de contenido.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">B</span>
+          <h3>Pauta y publicación</h3>
+          <p>Publicamos según el calendario y gestionamos la pauta social: audiencias, presupuesto y ajustes, siempre con tu visto bueno antes de gastar.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">C</span>
+          <h3>Comunidad y conversación</h3>
+          <p>Moderamos, respondemos mensajes y comentarios con tu tono, y derivamos a ventas las consultas que valen la pena.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">D</span>
+          <h3>Reporte y ajuste</h3>
+          <p>Cada quincena entregamos un reporte de las métricas que importan y ajustamos el plan según lo que de verdad funcionó.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Preguntas frecuentes</span>
+        <h2 id="faq-title">Sobre la gestión de redes</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>¿Ustedes crean el contenido (gráficas y video)?</summary>
+          <p class="faq-a">No los producimos. Las piezas gráficas y el video los pones tú; si no los tienes, te conectamos con partners de producción. SpindleLab orquesta la estrategia, la pauta, la comunidad y los reportes, y hace que ese contenido salga con criterio y llegue a la gente correcta.</p>
+        </details>
+        <details>
+          <summary>¿Qué plataformas manejan?</summary>
+          <p class="faq-a">LinkedIn y el ecosistema Meta (Facebook e Instagram). Elegimos dónde vale la pena estar según tu cliente y tu tipo de negocio, no por estar en todas.</p>
+        </details>
+        <details>
+          <summary>¿Incluye pauta pagada?</summary>
+          <p class="faq-a">Sí. La gestión de la pauta social (social ads) es parte del servicio: definimos audiencias, montamos las campañas y las ajustamos. El manejo de Google Ads y la pauta de alta intención en buscadores viven en su propia pieza: <a href="/servicios/paid-media/">Paid Media (Google)</a>.</p>
+        </details>
+        <details>
+          <summary>¿Cómo miden resultados?</summary>
+          <p class="faq-a">Con reportes quincenales de las métricas que importan para tu negocio (alcance útil, conversación, clics y contactos), no métricas de vanidad. Cada quincena revisamos qué funcionó y ajustamos el plan.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto cuesta?</summary>
+          <p class="faq-a">El plan <a href="#planes">Orgánico</a> parte en $390.000/mes + IVA y el Orgánico + Pauta en $590.000/mes + IVA; el plan a medida se cotiza tras una reunión. Los precios no incluyen la inversión en pauta, que la defines tú. Se dimensiona tras el diagnóstico gratuito.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="wrap">
+      <span class="eyebrow teal">Hablemos</span>
+      <h2 id="cta-title">Pongamos tu marca en redes con criterio.</h2>
+      <p>Envíanos tu URL y en 24 horas tienes el mini-diagnóstico gratuito. Sin compromiso.</p>
+      <a class="btn gold" href="/contacto/">Agenda tu diagnóstico gratis</a>
+      <br>
+      <a class="email" href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="wordmark">SpindleLab<span>.</span></p>
+    <div class="cols">
+      <nav aria-label="Soluciones">
+        <h4>Soluciones</h4>
+        <ul>
+          <li><a href="/servicios/auditoria-seo-tecnica/">Auditoría SEO Técnica</a></li>
+          <li><a href="/servicios/visibilidad-en-ia/">Visibilidad en IA (AEO/GEO)</a></li>
+          <li><a href="/servicios/acompanamiento-mensual/">Acompañamiento Mensual</a></li>
+          <li><a href="/servicios/redes-sociales/">Gestión de Redes Sociales</a></li>
+          <li><a href="/servicios/paid-media/">Paid Media (Google)</a></li>
+          <li><a href="/servicios/desarrollo-web/">Desarrollo Web</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Sitio">
+        <h4>Sitio</h4>
+        <ul>
+          <li><a href="/metodo/">Nuestro Método</a></li><li><a href="/nosotros/">Nosotros</a></li>
+          <li><a href="/diagnostico/">Chequeo gratis</a></li>
+          <li><a href="/blog/">El Taller</a></li>
+          <li><a href="/contacto/">Contacto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>Santiago, Chile</li>
+          <li><a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 SpindleLab. Todos los derechos reservados.</span>
+      <nav><a href="/privacidad/">Política de privacidad</a></nav>
+      <span>SEO técnico · AEO/GEO · Chile</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.menu-btn'),links=document.getElementById('nav-links');
+  if(btn){btn.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
+})();
+</script>
+<script src="/assets/js/hero-bg-video.js" defer></script>
+<script src="/assets/js/site-header.js" defer></script>
+<div id="cookie-banner" hidden>
+  <style>
+    #cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#161D26;border-top:1px solid rgba(247,245,240,.12);padding:18px 20px}
+    #cookie-banner .cb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    #cookie-banner p{margin:0;font-size:13.5px;color:rgba(242,239,232,.72);line-height:1.5;max-width:640px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+    #cookie-banner a{color:#2FA99B;font-weight:600}
+    #cookie-banner .cb-actions{display:flex;gap:10px;flex:none}
+    #cookie-banner button{font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;padding:10px 20px;border-radius:999px;cursor:pointer;border:1.5px solid transparent}
+    #cookie-reject{background:transparent;color:#F2EFE8;border-color:rgba(247,245,240,.35)}
+    #cookie-reject:hover{background:rgba(247,245,240,.08)}
+    #cookie-accept{background:#F4F6F3;color:#12201A;border-color:#F4F6F3}
+    #cookie-accept:hover{background:#FFFFFF}
+    #cookie-banner[hidden]{display:none}
+    @media(max-width:680px){#cookie-banner .cb-inner{flex-direction:column;align-items:stretch}#cookie-banner .cb-actions{justify-content:flex-end}}
+  </style>
+  <div class="cb-inner">
+    <p>Usamos Google Analytics y Meta Pixel para entender cómo se usa este sitio. Puedes aceptarlos o rechazarlos. Más detalle en la <a href="/privacidad/">política de privacidad</a>.</p>
+    <div class="cb-actions">
+      <button type="button" id="cookie-reject">Rechazar</button>
+      <button type="button" id="cookie-accept">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script src="/js/consent-banner.js?v=3" defer></script>
+</body>
+</html>

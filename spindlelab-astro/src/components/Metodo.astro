@@ -1,0 +1,65 @@
+---
+const PASOS = [
+  {
+    n: '01',
+    titulo: 'Diagnóstico técnico',
+    desc: 'Revisamos qué piezas tienes, cuáles fallan y cuáles no se hablan entre sí.',
+  },
+  {
+    n: '02',
+    titulo: 'Estrategia AEO/GEO',
+    desc: 'Definimos el eje del motor: la hoja de ruta para que Google y la IA te citen.',
+  },
+  {
+    n: '03',
+    titulo: 'Implementación',
+    desc: 'Conectamos las piezas y ejecutamos los cambios junto a tu equipo.',
+  },
+  {
+    n: '04',
+    titulo: 'Monitoreo',
+    desc: 'Medimos el motor entero, no una pieza: menciones en IA, posiciones y tráfico.',
+  },
+];
+---
+
+<section id="metodo" class="relative overflow-hidden bg-bg py-24 md:py-32 px-4 sm:px-6 scroll-mt-20">
+  <video
+    data-lazyvideo
+    class="absolute inset-0 w-full h-full object-cover"
+    src="/video/metodo.mp4"
+    poster="/video/metodo.jpg"
+    muted
+    loop
+    playsinline
+    preload="none"></video>
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background:linear-gradient(to bottom, rgba(14,20,27,0.87) 0%, rgba(14,20,27,0.8) 42%, rgba(14,20,27,0.83) 70%, rgba(14,20,27,0.93) 100%)"
+  >
+  </div>
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <div data-reveal class="max-w-2xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">Método SpindleLab</p>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-fg" style="letter-spacing:-0.03em">
+        Así armamos tu motor.
+      </h2>
+    </div>
+
+    <div class="mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {
+        PASOS.map((p, i) => (
+          <div data-reveal style={`transition-delay:${i * 90}ms`}>
+            <div class="h-full rounded-2xl border border-white/10 bg-surface p-6 md:p-7">
+              <div class={`font-display text-4xl md:text-5xl font-semibold mb-5 ${p.n === '01' ? 'text-gold' : 'text-fg-muted'}`} style="letter-spacing:-0.03em">
+                {p.n}
+              </div>
+              <h3 class="font-display text-lg font-semibold text-fg mb-2.5">{p.titulo}</h3>
+              <p class="text-sm text-fg-muted leading-relaxed">{p.desc}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

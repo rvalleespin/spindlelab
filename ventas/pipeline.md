@@ -13,9 +13,17 @@
 
 ## Pipeline activo
 
+> ⚠️ **En reconstrucción (21-sep-2026).** Esta tabla estuvo congelada desde el 23-jul con una
+> sola fila, mientras agosto y septiembre sumaban 6 conversaciones vivas que nunca entraron.
+> **No la tomes como la realidad todavía.** Las preguntas para reconstruirla están en
+> `ventas/pipeline-reconstruccion-preguntas-2026-09-21.md`; en cuanto Ramón las responda, la
+> troncal escribe acá una fila por prospecto con etapa real y próximo paso con fecha.
+
+
 | Nombre / Empresa | Rubro | Fuente | Etapa | Próximo paso | Último contacto | Notas |
 |---|---|---|---|---|---|---|
-| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅** | **Pedir permiso de caso público AHORA (acordado 21 jul, no esperar a la entrega)** + iniciar Fase 1 (Descubrimiento) | 8 jul 2026 | Cotización SPL-COT-2026-014 aprobada. Plan Portafolio Pro. |
+| María Loreto Hernández | Galería de arte virtual (proyecto nuevo, 3+ artistas) | Referida por Bernardo Combeau (WhatsApp) | **Ganado ✅ — Sitio Completo** ($1.190.000 + IVA) | **Lun 6-oct: reunión de inicio** (Fase 1, Descubrimiento). Detalle de la entrega en `proyectos-en-curso.md` | 26-sep-2026: llamada, dio luz verde (confirmado por Ramón); mismo día mandó por correo su brief de referentes y bocetos | Cotización **SPL-COT-2026-015** (`COTIZACIONES/`). Pide: sitio ES/EN sobre su dominio .com ya comprado, panel para subir/editar/ordenar obras, galería con ≥3 artistas que crece, e-commerce a futuro, dudas de hosting y varias casillas de correo. Planes con precios publicados: Esencial $690.000 / **Completo $1.190.000 ★ recomendado** / Plataforma a Medida (se cotiza) · todo **+ IVA**. Hosting propuesto: Cloudflare Pages (gratis); correos: Zoho Mail gratis o Google Workspace. Tienda = adicional, se cotiza aparte. ⚠️ **Contrato nuevo → se factura por la SpA, + IVA:** confirmar que la SpA ya puede emitir factura antes de cobrar el anticipo del 30%. **24-sep: respondió con 12 dudas** (qué puede editar sola, idiomas, cuentas a su nombre, cambio de técnico, costos recurrentes, tienda, fotos, correo, móvil, dominios .com y .cl). **Compromisos que quedaron por escrito en esa respuesta (cumplirlos al construir, difieren de Bernardo):** (1) las fotos que suba desde el panel se optimizan (en Bernardo se publican tal cual); (2) cuentas a nombre de ella desde el día 1 (hosting Cloudflare, correo, GitHub), el código se traspasa a su GitHub con el pago final, más un documento corto de cómo está armado; (3) botón «Comprar» por obra con link de pago de Mercado Pago que crea ella, **incluido en los $1.190.000**, y desaparece al marcarla vendida; (4) tope de 10 MB por foto en el panel, mínimo 2.000 px, JPG; (5) .com principal y .cl redirigido, incluido. Tienda completa aparte, **desde $450.000 + IVA**. |
+| Bernardo Combeau | Fotógrafo | Contacto directo | **Ganado ✅ — Lanzamiento** | Conectar dominio y salir a producción — **meta: viernes 24 jul**. Ramón afinando detalles de entrega, 23 jul. Detalle de fases en `proyectos-en-curso.md` | 23 jul 2026 (revisiones de afinamiento previas a la entrega) | Cotización SPL-COT-2026-014 aprobada. **Plan Esencial** ($392.000). Sitio y panel de administración presentados a Bernardo el 20 jul, dio el OK y quedó probando la plataforma. Compró `bernardocombeau.cl` (NIC Chile) el mismo día. **Pagos (actualizado 21-sep-2026):** proyecto **pagado al 100 %**. Fase 3 ($156.800) el 14-jul; Fases 1 y 5 ($235.200) cobradas juntas y confirmadas por Ramón el 21-sep. **Ampliación adicional cobrada y entregada: $120.000.** **Ticket real: $512.000** — usar esta cifra como referencia de lo que rinde un cliente de Desarrollo Web, no los $392.000. **Permiso de caso público: aún no pedido** desde julio; ahora sin saldo pendiente la conversación está despejada, es el momento. |
 
 ## Casos en pausa (no forman parte del pipeline activo)
 
@@ -27,4 +35,4 @@
 
 - **Desde marketing:** cuando alguien responde a un email de outbound (`marketing/outbound/`) o escribe por la web/redes, se agrega una fila aquí.
 - **Desde ventas:** cada avance de etapa se actualiza a mano — este documento no se automatiza (todavía) porque el volumen no lo justifica.
-- Al ganar un proyecto, agregar también una entrada en `proyectos-en-curso.md` (pendiente de crear cuando haya un segundo proyecto activo en simultáneo con Bernardo).
+- Al ganar un proyecto, agregar también una entrada en `proyectos-en-curso.md` con el detalle de fases/entrega — **21 jul: se encargó su creación a la sesión de `/persona-disenador-web`** (tiene la visibilidad real de fases que esta sesión no tiene), sin esperar a un segundo proyecto simultáneo.

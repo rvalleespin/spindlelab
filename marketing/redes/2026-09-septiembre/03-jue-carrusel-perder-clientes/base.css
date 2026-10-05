@@ -1,0 +1,21 @@
+/* Carrusel "perder clientes" — mundo dominó del concepto (1-sep). Fotografía física +
+   velo, jamás ficha plana. Dorado: UNO por lámina (el número o un punto). */
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); }
+@font-face { font-family:'Manrope'; src:url('manrope.woff2') format('woff2'); font-weight:400 800; }
+@font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:100 900; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1080px; height:1080px; overflow:hidden; font-family:'Manrope','Inter',sans-serif; }
+.slide { width:1080px; height:1080px; position:relative; padding:84px; display:flex; flex-direction:column; color:#f2efe8; background:#0e141b; }
+.slide.foto-caida { background:linear-gradient(rgba(14,20,27,.42), rgba(14,20,27,.78)), url('fondo-domino.png') center/cover, #0e141b; }
+.slide.foto-linea { background:linear-gradient(rgba(14,20,27,.30), rgba(14,20,27,.66)), url('domino-3.png') center 65%/cover, #0e141b; }
+.slide.foto-caida-suave { background:linear-gradient(rgba(14,20,27,.72), rgba(14,20,27,.90)), url('fondo-domino.png') center/cover, #0e141b; }
+.eyebrow { font-size:22px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#2fa99b; }
+.num { font-family:'Gabarito'; font-weight:600; font-size:96px; color:#C9A227; line-height:1; }
+.tit { font-family:'Gabarito'; font-weight:600; line-height:1.12; letter-spacing:-1.5px; color:#f2efe8; }
+.sub { font-size:30px; line-height:1.5; color:#cfd6dd; max-width:860px; }
+.pager { position:absolute; bottom:60px; right:84px; font-size:20px; font-weight:600; letter-spacing:1px; color:#9aa4b0; }
+.wm { font-family:'Gabarito'; font-weight:600; font-size:42px; color:#f2efe8; }
+.pt { color:#C9A227; }
+.desliza { position:absolute; bottom:110px; right:84px; font-size:26px; font-weight:600; color:#f2efe8; }
+.centro { flex:1; display:flex; flex-direction:column; justify-content:flex-end; padding-bottom:120px; }
+.centro-med { flex:1; display:flex; flex-direction:column; justify-content:center; }

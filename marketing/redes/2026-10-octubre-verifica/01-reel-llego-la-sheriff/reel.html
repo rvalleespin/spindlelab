@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8">
+<title>Verifica y Cumple · Reel de lanzamiento</title>
+<!--
+  Reel 1080x1920 de Verifica y Cumple. "Llego la sheriff".
+
+  DETERMINISTA A PROPOSITO: el cuadro se pide por la URL (?f=N) y TODO se posiciona
+  en funcion de N. No hay @keyframes ni nada corriendo solo, asi que el mismo N da
+  siempre el mismo pixel y se puede rehacer un cuadro suelto sin remontar el resto.
+
+  Sistema visual: el de Verifica y Cumple, leido del CSS en produccion de
+  verifica.spindlelab.cl (verificado el 25-sep-2026). Nada de SpindleLab aca:
+  ni el negro del sistema oscuro, ni hilo de oro, ni Gabarito, ni Manrope,
+  ni el dorado, ni el verde petroleo. Si aparece alguno, la pieza esta mal.
+-->
+<style>
+  /* Archivo Black, servida desde la carpeta para que el render no dependa de la red. */
+  @font-face {
+    font-family: "Archivo Black"; font-style: normal; font-weight: 400; font-display: block;
+    src: url("archivo-black-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: "Archivo Black"; font-style: normal; font-weight: 400; font-display: block;
+    src: url("archivo-black-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+
+  :root {
+    --azul-600:  #2e5bff;
+    --lima-400:  #d6ff3d;
+    --rosa-500:  #ff3ea0;
+    --tinta-900: #17163a;
+    --tinta-500: #56547a;
+    --display: "Archivo Black", Impact, sans-serif;
+    --cuerpo: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--azul-600); }
+  body { -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
+
+  .reel { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--azul-600); }
+
+  /* --- El cielo del hero, con una deriva lenta que da parallax contra el caballo --- */
+  .cielo {
+    position: absolute; inset: -80px -120px; z-index: 0;
+    background: url("hero-nubes.webp") center 50% / cover no-repeat;
+    opacity: .60;
+  }
+  /* Velo: cierra arriba, donde va el texto, y se abre abajo para que el cielo
+     respire justo donde galopa el caballo. Mismo criterio que el hero del sitio. */
+  .velo {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(to bottom,
+      rgba(14,30,110,.66) 0%,
+      rgba(14,30,110,.60) 28%,
+      rgba(14,30,110,.40) 46%,
+      rgba(14,30,110,.12) 62%,
+      rgba(14,30,110,.06) 100%);
+  }
+
+  /* --- La sheriff --- */
+  .sheriff {
+    position: absolute; z-index: 3;
+    left: -35px; top: 900px; width: 1150px; height: auto;
+    transform-origin: 50% 100%;
+    filter: drop-shadow(0 26px 40px rgba(10,20,80,.34));
+  }
+
+  /* --- La marca, arriba, presente todo el reel: mucha gente no sabe que esto existe --- */
+  .marca {
+    position: absolute; z-index: 6; top: 232px; left: 0; right: 0;
+    display: flex; align-items: center; justify-content: center; gap: 18px;
+  }
+  .marca .estrella { width: 46px; height: 46px; display: block; }
+  .marca .nombre {
+    font-family: var(--display); font-size: 33px; color: #fff;
+    letter-spacing: .15em; text-transform: uppercase;
+  }
+
+  /* --- Bloques de texto --- */
+  .bloque { position: absolute; inset: 0; z-index: 5; }
+  .tipo { position: absolute; left: 62px; right: 62px; top: 372px; }
+  .linea {
+    font-family: var(--display); font-size: 120px; line-height: .93;
+    letter-spacing: -.022em; color: #fff; transform-origin: 0% 50%;
+    text-shadow: 0 6px 30px rgba(10,20,80,.32);
+  }
+  .linea.lima { color: var(--lima-400); }
+  .tipo.ajustada .linea { font-size: 112px; }
+  .sub {
+    margin-top: 32px; font-family: var(--cuerpo); font-size: 39px; font-weight: 600;
+    line-height: 1.28; color: rgba(255,255,255,.94); transform-origin: 0% 50%;
+    text-shadow: 0 4px 22px rgba(10,20,80,.42);
+  }
+  .antetitulo {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 26px;
+    font-family: var(--display); font-size: 34px; letter-spacing: .12em;
+    color: var(--lima-400); text-transform: uppercase; transform-origin: 0% 50%;
+  }
+  .antetitulo .estrella { width: 38px; height: 38px; display: block; }
+
+  /* --- La tarjeta del cierre: la direccion completa, porque en Instagram el link
+         del pie no se puede tocar. Nunca "link en la bio". --- */
+  .tarjeta {
+    position: absolute; left: 50px; right: 50px; top: 1252px; z-index: 5;
+    background: var(--lima-400); border-radius: 30px;
+    padding: 34px 36px 40px; text-align: center;
+    transform-origin: 50% 50%;
+    box-shadow: 0 30px 60px rgba(10,20,80,.30);
+  }
+  .tarjeta .rotulo {
+    font-family: var(--cuerpo); font-size: 31px; font-weight: 800;
+    letter-spacing: .13em; text-transform: uppercase; color: rgba(23,22,58,.74);
+  }
+  .tarjeta .dir {
+    margin-top: 14px; font-family: var(--display); font-size: 70px; line-height: 1;
+    letter-spacing: -.028em; color: var(--tinta-900);
+  }
+  .tarjeta .nota {
+    margin-top: 16px; font-family: var(--cuerpo); font-size: 31px; font-weight: 600;
+    color: var(--tinta-500);
+  }
+</style>
+</head>
+<body>
+<div class="reel">
+
+  <div class="cielo" id="cielo"></div>
+  <div class="velo"></div>
+
+  <img class="sheriff" id="sheriff" src="hero-fiscalizador.png" alt="">
+
+  <div class="marca">
+    <svg class="estrella" viewBox="0 0 100 100" aria-hidden="true">
+      <polygon fill="#ff3ea0" stroke="#fff" stroke-width="5" stroke-linejoin="round"
+        points="50,2 61.76,33.82 95.65,35.17 69.02,56.18 78.21,88.83 50,70 21.79,88.83 30.98,56.18 4.35,35.17 38.24,33.82"/>
+    </svg>
+    <span class="nombre">Verifica y Cumple</span>
+  </div>
+
+  <!-- 1. El gancho. La pregunta ya esta puesta en el cuadro 0 y ella entra galopando
+          por debajo: quien abre el Reel lee la frase completa de inmediato. -->
+  <section class="bloque">
+    <div class="tipo">
+      <div class="antetitulo" data-d="-9">
+        <svg class="estrella" viewBox="0 0 100 100" aria-hidden="true">
+          <polygon fill="#ff3ea0" stroke="#d6ff3d" stroke-width="5" stroke-linejoin="round"
+            points="50,2 61.76,33.82 95.65,35.17 69.02,56.18 78.21,88.83 50,70 21.79,88.83 30.98,56.18 4.35,35.17 38.24,33.82"/>
+        </svg>
+        Llegó la caballería
+      </div>
+      <div class="linea" data-d="-9">¿TIENES UN</div>
+      <div class="linea lima" data-d="-9">FORMULARIO</div>
+      <div class="linea" data-d="-9">DE CONTACTO?</div>
+    </div>
+  </section>
+
+  <!-- 2. La traduccion, sin jerga. -->
+  <section class="bloque">
+    <div class="tipo ajustada">
+      <div class="linea" data-d="2">ENTONCES YA</div>
+      <div class="linea lima" data-d="7">GUARDAS DATOS</div>
+      <div class="linea" data-d="12">DE PERSONAS.</div>
+      <div class="sub" data-d="20">Un nombre y un correo ya lo son.</div>
+    </div>
+  </section>
+
+  <!-- 3. La ley, sin susto y sin cifra. El ancla es hoy, no una cuenta regresiva:
+          hay un proyecto en el Senado para mover la fecha y la pieza no puede
+          envejecer el dia que se vote. -->
+  <section class="bloque">
+    <div class="tipo">
+      <div class="linea" data-d="2">Y VENIMOS</div>
+      <div class="linea" data-d="7">A DECIRTE</div>
+      <div class="linea lima" data-d="12">QUÉ TE FALTA.</div>
+      <div class="sub" data-d="20">Lo pide la Ley 21.719. Nosotros te lo mostramos.</div>
+    </div>
+  </section>
+
+  <!-- 4. Ella llega con el papel en alto y nosotros con el chequeo. -->
+  <section class="bloque">
+    <div class="tipo">
+      <div class="antetitulo" data-d="0">
+        <svg class="estrella" viewBox="0 0 100 100" aria-hidden="true">
+          <polygon fill="#ff3ea0" stroke="#d6ff3d" stroke-width="5" stroke-linejoin="round"
+            points="50,2 61.76,33.82 95.65,35.17 69.02,56.18 78.21,88.83 50,70 21.79,88.83 30.98,56.18 4.35,35.17 38.24,33.82"/>
+        </svg>
+        Para eso venimos
+      </div>
+      <div class="linea" data-d="5">REVISAMOS</div>
+      <div class="linea" data-d="10">TU SITIO</div>
+      <div class="linea lima" data-d="15">GRATIS.</div>
+    </div>
+    <div class="tarjeta" data-d="24" data-ease="back">
+      <div class="rotulo">Revisa el tuyo en</div>
+      <div class="dir">verifica.spindlelab.cl</div>
+      <div class="nota">Sin registro. No pedimos tu correo.</div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---- el cuadro llega por la URL: ?f=N -------------------------------------
+  var F = parseInt(new URLSearchParams(location.search).get("f") || "0", 10);
+  if (!isFinite(F) || F < 0) F = 0;
+  var TOTAL = 330;                     // 11 s a 30 cuadros
+
+  var clamp = function (t) { return t < 0 ? 0 : t > 1 ? 1 : t; };
+  // progreso 0..1 de F entre los cuadros a y b
+  var seg = function (a, b) { return clamp((F - a) / (b - a)); };
+  var outCubic = function (t) { return 1 - Math.pow(1 - t, 3); };
+  var outBack = function (t) {
+    var c1 = 1.70158, c3 = c1 + 1;
+    return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+  };
+
+  // ---- el cielo deriva al reves que el caballo: parallax barato --------------
+  var avance = clamp(F / (TOTAL - 1));
+  document.getElementById("cielo").style.transform =
+    "translate3d(" + (-72 * avance).toFixed(2) + "px, " + (16 * avance).toFixed(2) + "px, 0)";
+
+  // ---- la sheriff: entra por la izquierda porque el caballo mira a la derecha,
+  //      o sea viene hacia ti. Despues se queda: llego. ------------------------
+  var entrada = outCubic(seg(0, 42));
+  var x = -1250 * (1 - entrada) + 18 * outCubic(seg(42, TOTAL));
+  var galope = Math.sin(F * 0.40) * 13;                  // ~1.9 Hz, cadencia de galope
+  var cabeceo = Math.sin(F * 0.40 + 0.7) * 0.9;
+  var acerca = 1 + 0.022 * avance + 0.016 * outCubic(seg(225, 258));
+  document.getElementById("sheriff").style.transform =
+    "translate3d(" + x.toFixed(2) + "px, " + galope.toFixed(2) + "px, 0)" +
+    " scale(" + acerca.toFixed(4) + ") rotate(" + cabeceo.toFixed(3) + "deg)";
+
+  // ---- los cuatro tiempos ---------------------------------------------------
+  var TIEMPOS = [[0, 76], [76, 152], [152, 228], [228, TOTAL]];
+
+  Array.prototype.forEach.call(document.querySelectorAll(".bloque"), function (bl, i) {
+    var s = TIEMPOS[i][0], e = TIEMPOS[i][1];
+    if (F < s || F >= e) { bl.style.display = "none"; return; }
+
+    // el ultimo tiempo no sale: el cuadro final tiene que quedar entero y quieto
+    var ultimo = (i === TIEMPOS.length - 1);
+    var salida = ultimo ? 0 : outCubic(seg(e - 6, e));
+
+    Array.prototype.forEach.call(bl.querySelectorAll("[data-d]"), function (el) {
+      var d = parseFloat(el.dataset.d);
+      var t = seg(s + d, s + d + 9);
+      var p = (el.dataset.ease === "back") ? outBack(t) : outCubic(t);
+      var visible = clamp(t * 1.6);              // la opacidad sube antes que el rebote
+      el.style.opacity = (visible * (1 - salida)).toFixed(4);
+      el.style.transform =
+        "translate3d(0, " + ((1 - p) * 54 - salida * 36).toFixed(2) + "px, 0)" +
+        " scale(" + (0.962 + 0.038 * p).toFixed(4) + ")";
+    });
+  });
+
+  document.documentElement.dataset.listo = "1";   // marca para el render
+})();
+</script>
+</body></html>

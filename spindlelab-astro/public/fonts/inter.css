@@ -1,0 +1,32 @@
+/*
+ * Inter, alojada en el propio sitio. Antes se pedía a Google Fonts desde las 21 páginas, y
+ * esa petición le entregaba a Google la IP de cada visitante en cada página, aceptara o no
+ * las cookies. Son los mismos archivos que servía Google para la URL de antes (variable,
+ * pesos 300 a 700) y con los mismos rangos de caracteres, así que el texto se ve igual. Solo
+ * se alojan los subconjuntos latin y latin-ext: son los únicos que usa el sitio (medido
+ * contra el texto de todas las páginas). La flecha → ya caía fuera del subconjunto de Google
+ * y se sigue dibujando con la fuente del sistema, igual que antes.
+ *
+ * OJO: /fonts/* se sirve con caché de un año e inmutable. Si se cambia esta hoja, hay que
+ * subir el ?v= en las 21 páginas que la enlazan.
+ */
+
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/fonts/inter-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/fonts/inter-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}

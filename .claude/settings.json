@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "( SRC=\"${CLAUDE_PROJECT_DIR:-$(pwd)}/.claude/skills\"; if [ -d \"$SRC\" ]; then mkdir -p \"$HOME/.claude/skills\"; for d in \"$SRC\"/*/; do n=$(basename \"$d\"); rm -rf \"$HOME/.claude/skills/$n\"; cp -r \"$d\" \"$HOME/.claude/skills/$n\"; done; fi ) 2>/dev/null || true",
+            "timeout": 15,
+            "statusMessage": "Sincronizando .claude/skills del repo a ~/.claude/skills..."
+          }
+        ]
+      }
+    ]
+  }
+}

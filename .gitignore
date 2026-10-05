@@ -1,8 +1,14 @@
 .DS_Store
+*.code-workspace
 .claude/*
 !.claude/skills/
 !.claude/skills/**
-COTIZACIONES/
+!.claude/settings.json
+/COTIZACIONES/
+/marketing/cotizaciones/
 LOGOS/
 linkedin-spindlelab.md
 analisiscotizacionfotografo.md
+
+# cache local de wrangler pages dev
+spindlelab-astro/.wrangler/

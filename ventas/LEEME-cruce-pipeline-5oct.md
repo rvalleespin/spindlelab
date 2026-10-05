@@ -46,16 +46,26 @@ verificado, no un correo genérico de Gmail— en vez de volumen.
 
 ## Lo que apareció de paso, y vale más que el conteo
 
-**Dos entregables enviados sin respuesta, además de Focus Contable:**
+**Los dos casos que encontré, y por qué los dos están CERRADOS:**
 
-- **corteszamora.cl** (Gabriel Zamora) pidió una cotización el 20-ago, la recibió el 21-ago
-  con el diagnóstico adjunto, y se le escribió el 24-ago, el 1-sep y el 22-sep sin respuesta.
-  Es el lead más avanzado del pipeline: pidió precio.
-- **plabogados.cl** (Claudia Osorio) respondió el 10-sep que estaban rehaciendo el sitio y
-  **"podríamos conversar (en noviembre?)"**. Nadie agendó eso. Noviembre es ahora.
+- **plabogados.cl** (Claudia Osorio) respondió el 10-sep: *"estamos realizando reparaciones y
+  trabajos profundos en nuestro sitio web, lo que repercute en el AEO, por lo que podríamos
+  conversar (en caso de requerirlo) en 2027"*. Es un no cortés a más de un año, con un "en caso
+  de requerirlo" encima. **Cerrado.**
+- **corteszamora.cl** (Gabriel Zamora) pidió una cotización el 20-ago y la recibió al día
+  siguiente. Después se le escribió el 24-ago, el 1-sep y el 22-sep sin respuesta: cinco
+  correos nuestros en total, muy por encima del tope de tres. **Cerrado por tope.**
 
-Los dos deberían caer en el PASO 3B del copiloto, que se agregó hoy. El de Claudia no, porque
-no lleva adjunto: ese hay que agendarlo a mano.
+Los dos quedaron en `lista-exclusion.csv` para que el copiloto no los vuelva a ofrecer.
+
+⚠️ **ERROR MÍO, Y LA REGLA QUE SALE DE AHÍ.** En la primera versión de este documento escribí
+que Claudia había dicho "noviembre". **Lo inventé.** El snippet que devuelve la API de Gmail
+venía cortado justo en "podríamos conversar (en" y yo completé el resto por mi cuenta. Decía
+2027. Quedó escrito en el repo como una oportunidad inminente que no existía.
+
+**La regla: un snippet cortado no es una cita.** Si una frase va a sostener una decisión, se
+lee el mensaje completo con `get_message`, no el extracto de la búsqueda. Es la misma lección
+que las cookies: lo que no se puede afirmar entero, no se afirma.
 
 **Dos rebotes de agosto y septiembre que nunca se registraron:** dentalschneider.cl (19-ago)
 y santiagocontadores.cl (3-sep). Con los de la mañana van seis en un día, todos anteriores

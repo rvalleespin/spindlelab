@@ -43,3 +43,24 @@
 | Clínica EM Estétika Médica | https://www.estetikamedica.cl/ | Providencia + Viña + Concón (3 sedes) | Estética | Toxina botulínica, rellenos AH, PRP; expansión reciente a Concón | Director médico / gerente general |
 | Clínica Beunique | https://www.clinicabeunique.cl/ | Viña del Mar (Reñaca) / Concón | Estética | Medicina estética regenerativa | Médico(a) fundador(a) |
 | Climed – Clínica Mediterránea ⚠️ por verificar | https://www.climed.cl/ | Lo Barnechea (La Dehesa) | Estética | Medicina estética de vanguardia en torre médica de La Dehesa | Director médico propietario |
+
+---
+
+## ✅ Emails de decisor obtenidos (21 jul 2026)
+
+Los emails verificados del decisor ya están extraídos en Apollo y guardados en:
+- `ventas/contactos-clinicas-dentales-chile.csv` — **47 clínicas dentales/estéticas** (este Frente B), decisor + email verificado, 10 catch-all marcados para 2ª ola.
+- `ventas/contactos-clinicas-medicas-chile.csv` — **53 clínicas médicas de otras especialidades** (oftalmología, imagenología, etc.) → candidatas a **Frente C (salud visual/médica)**.
+
+Búsqueda de mails **cerrada**. Siguiente etapa: rompe hielo verificado por sitio + envío en lotes según rampa (tope 50/sem).
+
+---
+
+## Enriquecimiento Modo A completado (21 jul 2026)
+
+Las 35 clínicas se buscaron en Apollo por dominio. Vista completa en `ventas/frente-b-enriquecido.csv`:
+- **9 con email** (5 decisores fuertes: Beladent, Zaror, Terré, Naran, Estétika Médica · + 4 contactos junior: DentArt, Zenclinic, AC Odontología, Red Implantología).
+- **9 con decisor identificado pero sin email en Apollo** → candidatas a buscar el correo a mano (web/Instagram): Odontoestética, RD Estudio Dental, EOS, Clínica Volans, Blend, Denttored, Clínica Elements, Cara Bonita, Dermamed.
+- **17 sin datos útiles** (no indexadas en Apollo o sin contacto).
+
+**Conclusión:** la cobertura de Apollo para clínicas boutique chicas es baja (~1 de 4 tiene email de decisor). Para las 9 con decisor-sin-email conviene un rastreo manual del correo; el resto no está en Apollo.

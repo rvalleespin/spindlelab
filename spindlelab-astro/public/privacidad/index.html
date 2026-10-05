@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js): NO se carga hasta que haya consentimiento. Hasta el 22-sep se
+     cargaba siempre, con Consent Mode en denegado, y así igual le mandaba a Google un aviso
+     sin cookies de cada página vista a quien había dicho que no (medido en la red). Ahora el
+     archivo se pide recién cuando la persona acepta: __spindlelabInitGA, que también llama
+     /js/consent-banner.js al pulsar Aceptar. La función gtag() se define igual aunque no
+     haga nada, porque hay código que la llama directo (el generate_lead de /contacto/), y
+     sin ella lanzaría un error justo después de un envío exitoso. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var __spindlelabConsent = (function(){
+    try { return localStorage.getItem('spindlelab_consent'); } catch(e){ return null; }
+  })();
+  function __spindlelabInitGA(){
+    if (window.__spindlelabGAInited) return;
+    window.__spindlelabGAInited = true;
+    // Lo que se haya encolado antes del permiso (un generate_lead, un chequeo_completado)
+    // se descarta: nada de lo que pasó antes de aceptar se manda después de aceptar.
+    window.dataLayer.length = 0;
+    gtag('consent', 'default', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-J40VW9E0TW');
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J40VW9E0TW';
+    document.head.appendChild(s);
+  }
+  if (__spindlelabConsent === 'granted') { __spindlelabInitGA(); }
+</script>
+<!-- Meta Pixel Code — no tiene un "consent mode" propio, así que no se inicializa hasta
+     que haya consentimiento. Sin noscript: no se puede pedir consentimiento sin
+     JavaScript, así que tampoco se rastrea sin JavaScript. -->
+<script>
+function __spindlelabInitMeta(){
+  if(window.__spindlelabMetaInited) return;
+  window.__spindlelabMetaInited = true;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2885353628478565');
+  fbq('track', 'PageView');
+}
+if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
+</script>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de privacidad · SpindleLab</title>
+<meta name="description" content="Qué datos procesa SpindleLab, para qué y cómo, estructurado según los 12 puntos que exige el Art. 14 ter de la Ley 21.719.">
+<link rel="canonical" href="https://spindlelab.cl/privacidad/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpindleLab">
+<meta property="og:title" content="Política de privacidad · SpindleLab">
+<meta property="og:description" content="Qué datos procesa SpindleLab, para qué, y cómo.">
+<meta property="og:url" content="https://spindlelab.cl/privacidad/">
+<meta property="og:locale" content="es_CL">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=4"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://spindlelab.cl/privacidad/#page",
+      "url": "https://spindlelab.cl/privacidad/",
+      "name": "Política de privacidad · SpindleLab",
+      "about": {"@id": "https://spindlelab.cl/#org"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://spindlelab.cl/"},
+        {"@type": "ListItem", "position": 2, "name": "Política de privacidad", "item": "https://spindlelab.cl/privacidad/"}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/inter.css?v=1">
+<link rel="stylesheet" href="/assets/css/style.css?v=29">
+<style>
+  .doc-page{padding:80px 0 100px}
+  .doc-article{
+    max-width:720px;margin:0 auto;background:var(--doc-bg);color:var(--doc-ink);
+    border-radius:var(--r-card);padding:48px 56px;position:relative;overflow:hidden;
+  }
+  .doc-article::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--gold)}
+  .doc-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--doc-teal);margin-bottom:10px}
+  .doc-article h1{font-family:var(--headline);font-size:clamp(26px,3.4vw,36px);font-weight:600;letter-spacing:-.01em;color:var(--doc-ink);margin-bottom:8px}
+  .doc-version{font-size:13px;color:rgba(19,26,34,.55);margin-bottom:28px}
+  .doc-intro{font-size:15px;color:rgba(19,26,34,.75);margin-bottom:36px;line-height:1.65}
+  .doc-punto{border-top:1px solid rgba(19,26,34,.12);padding:22px 0}
+  .doc-punto:first-of-type{border-top:none;padding-top:0}
+  .doc-punto-num{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--doc-teal);margin-bottom:6px;text-transform:uppercase}
+  .doc-punto h2{font-family:var(--headline);font-size:16px;font-weight:600;color:var(--doc-ink);margin-bottom:8px}
+  .doc-punto p{font-size:14.5px;color:rgba(19,26,34,.75);line-height:1.65;margin-bottom:8px}
+  .doc-punto p:last-child{margin-bottom:0}
+  .doc-punto a{color:var(--doc-teal);font-weight:600}
+  .doc-aviso{
+    background:rgba(15,118,110,.08);border:1px solid rgba(15,118,110,.25);border-radius:10px;
+    padding:18px 22px;margin:34px 0 0;font-size:13.5px;color:rgba(19,26,34,.8);line-height:1.6;
+  }
+  .doc-aviso strong{color:var(--doc-ink)}
+  .doc-legal{margin-top:22px;font-size:13px;color:rgba(19,26,34,.6)}
+  @media(max-width:680px){.doc-article{padding:32px 24px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="SpindleLab, inicio">SpindleLab<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span class="bars"></span></button>
+    <div class="nav-pill"><ul class="nav-links" id="nav-links">
+      <li><a href="/servicios/">Soluciones</a></li>
+      <li><a href="/metodo/">Método</a></li>
+      <li><a href="/nosotros/">Nosotros</a></li>
+      <li><a href="/#evidencia">Evidencia</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contacto/">Contacto</a></li>
+    </ul>
+    <a class="btn gold small nav-cta" href="/contacto/">Diagnóstico gratis</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Miga de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li>Política de privacidad</li>
+        </ol>
+      </nav>
+      <h1>Política de privacidad</h1>
+    </div>
+  </section>
+
+  <section class="doc-page">
+    <div class="wrap">
+      <article class="doc-article">
+        <span class="doc-eyebrow">Art. 14 ter, punto por punto</span>
+        <h1>Qué hacemos con tus datos</h1>
+        <p class="doc-version">Versión 1.4, actualizada el 22 de septiembre de 2026.</p>
+        <p class="doc-intro">
+          Esta página explica, sin rodeos, qué datos procesamos en spindlelab.cl, para qué, y con
+          quién los compartimos, siguiendo los mismos 12 puntos que exige la Ley 21.719 para
+          cualquier sitio que trate datos personales.
+        </p>
+
+        <div class="doc-punto">
+          <span class="doc-punto-num">01 · Política de tratamiento</span>
+          <h2>Esta política</h2>
+          <p>Versión 1.4, actualizada el 22 de septiembre de 2026, cuando sumamos a esta política el conteo de visitas sin cookies de Cloudflare, que funcionaba desde antes y no estaba escrito acá. La 1.3, del mismo día, es cuando Google Analytics dejó de cargarse antes de que aceptes. Hasta la 1.2 se cargaba igual con el consentimiento denegado, y le mandaba a Google un aviso sin cookies de cada página vista. La 1.2 (el control para cambiar la decisión) y la 1.1 son del mismo día; la 1.0 es del 21 de septiembre. Si la cambiamos, actualizamos esta fecha.</p>
+        </div>
+
+        <div class="doc-punto">
+          <span class="doc-punto-num">02 · El responsable</span>
+          <h2>Quién trata los datos</h2>
+          <p>SpindleLab SpA, RUT 78.474.925-8, representada por su fundador Ramón Vallejos Espíndola.</p>
+        </div>
+
+        <div class="doc-punto">
+          <span class="doc-punto-num">03 · Medio de contacto</span>
+          <h2>Cómo escribirnos</h2>
+          <p>Para cualquier solicitud relacionada con esta política o con tus datos: <a href="mailto:hola@spindlelab.cl?subject=Privacidad">hola@spindlelab.cl</a>.</p>
+        </div>
+
+        <div class="doc-punto">
+          <span class="doc-punto-num">04 · Categorías de datos</span>
+          <h2>Qué procesamos, y para qué</h2>
+          <p>Si escribes el formulario de <a href="/contacto/">contacto</a>: tu nombre, correo, sitio web y el mensaje que escribas, más los parámetros UTM de la campaña que te trajo (si vienes de un anuncio). La base de legitimidad es tu propia solicitud, y te pedimos un acto de consentimiento explícito (una casilla, sin marcar por defecto) antes de que el formulario se pueda enviar.</p>
+          <p>Además, si nos das permiso, en todas las páginas del sitio usamos Google Analytics (GA4) y Meta Pixel para entender cómo se usa el sitio. Cómo te lo pedimos y cómo cambiarlo, en el punto 11.</p>
+          <p>Y contamos las visitas con Cloudflare Web Analytics, que no usa cookies ni guarda nada en tu navegador. Registra qué página se vio, desde qué sitio llegaste, el país, el tipo de dispositivo, el navegador y cuánto tardó en cargar, y lo vemos siempre sumado, sin saber quién eres. Este conteo corre aunque rechaces las cookies, justamente porque no las usa.</p>
+        </div>
+
+        <div class="doc-punto">
+          <span class="doc-punto-num">05 · Medidas de seguridad</span>
+          <h2>Cómo se procesa</h2>
+          <p>El sitio se sirve por HTTPS. El formulario de contacto se procesa a través de un proveedor externo (web3forms.com) y llega directo a nuestro correo. No mantenemos una base de datos propia con las respuestas.</p>
+        </div>
+
+        <div class="doc-punto">
+          <span class="doc-punto-num">06 · Los cinco derechos</span>
+          <h2>Acceso, rectificación, supresión, oposición y portabilidad</h2>
+          <p>Puedes ejercerlos escribiendo a <a href="mailto:hola@spindlelab.cl?subject=Ejercer%20mis%20derechos">hola@spindlelab.cl</a>. Respondemos directamente, sin formularios adicionales.</p>
+        </div>
+
+        <div class="doc-punto">
+          <span class="doc-punto-num">07 · Recurrir ante la Agencia</span>
+          <h2>Si no te respondemos, o no estás conforme</h2>
+          <p>Puedes recurrir ante la Agencia de Protección de Datos Personales.</p>
+        </div>
+
+        <div class="doc-punto">
+          <span class="doc-punto-num">08 · Transferencias internacionales</span>
+          <h2>Con qué proveedores externos trabajamos</h2>
+          <p>El formulario de contacto se procesa a través de <strong>web3forms.com</strong>, con infraestructura fuera de Chile. Google Analytics y Meta Pixel también procesan datos de navegación en servidores fuera de Chile, bajo las políticas de privacidad propias de Google y Meta. El sitio se sirve a través de la infraestructura de Cloudflare, con centros de datos fuera de Chile: como con cualquier sitio web, Cloudflare procesa metadatos técnicos de conexión (por ejemplo tu dirección IP) para entregarte la página, y es también quien hace el conteo de visitas. No compartimos tus datos con nadie más.</p>
+        </div>
+
+        <div class="doc-punto">
+          <span class="doc-punto-num">09 · Plazo de conservación</span>
+          <h2>Cuánto tiempo se guarda</h2>
+          <p>Los mensajes del formulario se conservan en nuestro correo mientras sean relevantes para la conversación que iniciaste, o hasta que pidas su eliminación. Los datos que procesan Analytics, Meta y el conteo de visitas de Cloudflare siguen la retención propia de esos proveedores, no la nuestra.</p>
+        </div>
+
+        <div class="doc-punto">
+          <span class="doc-punto-num">10 · Origen de los datos</span>
+          <h2>De dónde salen</h2>
+          <p>Directamente de ti: lo que escribes en el formulario, o tu navegación por el sitio.</p>
+        </div>
+
+        <div class="doc-punto">
+          <span class="doc-punto-num">11 · Revocar el consentimiento</span>
+          <h2>Sobre pedirte permiso</h2>
+          <p>Puedes elegir no marcar la casilla de consentimiento del formulario. En ese caso no vamos a poder procesar tu solicitud, pero puedes escribirnos directo a hola@spindlelab.cl en su lugar.</p>
+          <p>Para Google Analytics y Meta Pixel te preguntamos antes. La primera vez que entras
+            al sitio aparece un aviso abajo con dos opciones, aceptar o rechazar, y hasta que elijas
+            no se carga ninguno de los dos: tu navegador no descarga ni el archivo de Analytics ni
+            el Pixel de Meta.</p>
+          <p>Si rechazas, o mientras no elijas, siguen sin cargarse. Google Analytics y Meta no
+            reciben nada de tu visita desde este sitio, y no se guarda ninguna cookie de medición
+            en tu navegador. Lo único que sigue corriendo es el conteo de visitas de Cloudflare del
+            punto 04, que no usa cookies ni te identifica, y por eso no necesita tu permiso.</p>
+          <p>Puedes cambiar de opinión cuando quieras. Al final de cualquier página, junto al
+            enlace a esta política, hay un control que dice qué elegiste (<em>Cookies: aceptadas</em>
+            o <em>Cookies: rechazadas</em>) y que abre el mismo aviso para que elijas de nuevo.</p>
+          <p>Si pasas de aceptar a rechazar, tres cosas ocurren ahí mismo: le decimos a
+            Analytics que deje de usar cookies, borramos del navegador las cookies que dejaron
+            Analytics y el Pixel (<code>_ga</code>, <code>_gid</code>, <code>_gcl</code>,
+            <code>_fbp</code> y las de su familia), y recargamos la página un par de segundos
+            después, avisándote antes. Lo último es necesario: ni Analytics ni el Pixel de Meta se
+            pueden descargar una vez que arrancaron, y en esos segundos Analytics todavía puede
+            mandar un aviso sin cookies. La recarga es lo que los saca de verdad, porque la página
+            nueva ya no los carga. Y si después de rechazar vuelves con el botón Atrás a una
+            página que había quedado abierta con ellos corriendo, esa página también se recarga.</p>
+          <div class="doc-aviso">
+            <strong>Aviso honesto:</strong> tu decisión se guarda en el navegador con el que
+            entraste, así que es por navegador y por dispositivo. Si entras desde otro, o si borras
+            los datos del sitio, te vamos a preguntar de nuevo. En una ventana privada se
+            recuerda hasta que la cierres. Y si tu navegador no nos deja guardar nada (por ejemplo,
+            con la opción de bloquear todas las cookies), la decisión se aplica pero no se puede
+            recordar: vale en la página donde la tomaste y te la volvemos a preguntar en la
+            siguiente. Te lo decimos en pantalla en vez de fingir que quedó. También puedes
+            bloquear los dos con una extensión, por ejemplo uBlock Origin. Y si tenías otra
+            pestaña de este sitio abierta, ahí borramos las cookies al momento pero no la
+            recargamos solos, por si estabas escribiendo algo: hasta que la recargues, los dos
+            siguen cargados en esa pestaña: al Pixel le retiramos el permiso y deja de mandar datos,
+            pero Analytics todavía puede mandar avisos sin cookies mientras esa pestaña siga
+            abierta. Te lo dejamos avisado en pantalla, con un botón para recargarla; el aviso no se
+            borra solo, lo cierras tú.
+          </div>
+        </div>
+
+        <div class="doc-punto">
+          <span class="doc-punto-num">12 · Decisiones automatizadas</span>
+          <h2>No hay ninguna</h2>
+          <p>Nada en este sitio toma decisiones automatizadas que te afecten a ti o a tu empresa.</p>
+        </div>
+
+        <p class="doc-legal">Esto describe lo que hacemos, no reemplaza asesoría legal. Si tienes dudas sobre cómo esta ley aplica a tu propio caso, esa evaluación corresponde a un abogado.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="wordmark">SpindleLab<span>.</span></p>
+    <div class="cols">
+      <nav aria-label="Soluciones">
+        <h4>Soluciones</h4>
+        <ul>
+          <li><a href="/servicios/auditoria-seo-tecnica/">Auditoría SEO Técnica</a></li>
+          <li><a href="/servicios/visibilidad-en-ia/">Visibilidad en IA (AEO/GEO)</a></li>
+          <li><a href="/servicios/acompanamiento-mensual/">Acompañamiento Mensual</a></li>
+          <li><a href="/servicios/redes-sociales/">Gestión de Redes Sociales</a></li>
+          <li><a href="/servicios/paid-media/">Paid Media (Google)</a></li>
+          <li><a href="/servicios/desarrollo-web/">Desarrollo Web</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Sitio">
+        <h4>Sitio</h4>
+        <ul>
+          <li><a href="/metodo/">Nuestro Método</a></li><li><a href="/nosotros/">Nosotros</a></li>
+          <li><a href="/diagnostico/">Chequeo gratis</a></li>
+          <li><a href="/blog/">El Taller</a></li>
+          <li><a href="/contacto/">Contacto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>Santiago, Chile</li>
+          <li><a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 SpindleLab. Todos los derechos reservados.</span>
+      <nav><a href="/privacidad/">Política de privacidad</a></nav>
+      <span>SEO técnico · AEO/GEO · Chile</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.menu-btn'),links=document.getElementById('nav-links');
+  if(btn){btn.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });}
+})();
+</script>
+<script src="/assets/js/site-header.js" defer></script>
+<div id="cookie-banner" hidden>
+  <style>
+    #cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#161D26;border-top:1px solid rgba(247,245,240,.12);padding:18px 20px}
+    #cookie-banner .cb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    #cookie-banner p{margin:0;font-size:13.5px;color:rgba(242,239,232,.72);line-height:1.5;max-width:640px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+    #cookie-banner a{color:#2FA99B;font-weight:600}
+    #cookie-banner .cb-actions{display:flex;gap:10px;flex:none}
+    #cookie-banner button{font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;padding:10px 20px;border-radius:999px;cursor:pointer;border:1.5px solid transparent}
+    #cookie-reject{background:transparent;color:#F2EFE8;border-color:rgba(247,245,240,.35)}
+    #cookie-reject:hover{background:rgba(247,245,240,.08)}
+    #cookie-accept{background:#F4F6F3;color:#12201A;border-color:#F4F6F3}
+    #cookie-accept:hover{background:#FFFFFF}
+    #cookie-banner[hidden]{display:none}
+    @media(max-width:680px){#cookie-banner .cb-inner{flex-direction:column;align-items:stretch}#cookie-banner .cb-actions{justify-content:flex-end}}
+  </style>
+  <div class="cb-inner">
+    <p>Usamos Google Analytics y Meta Pixel para entender cómo se usa este sitio. Puedes aceptarlos o rechazarlos. Más detalle en la <a href="/privacidad/">política de privacidad</a>.</p>
+    <div class="cb-actions">
+      <button type="button" id="cookie-reject">Rechazar</button>
+      <button type="button" id="cookie-accept">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script src="/js/consent-banner.js?v=3" defer></script>
+</body>
+</html>

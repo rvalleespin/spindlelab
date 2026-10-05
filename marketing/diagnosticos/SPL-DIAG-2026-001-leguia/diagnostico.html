@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<title>SPL-DIAG-2026-001 — Mini-diagnóstico SpindleLab — Clínica Dental Augusto Leguía</title>
+<style>
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); font-weight:400 800; }
+@font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:400 700; }
+
+:root{
+  --tinta:#131A22;
+  --papel:#F7F5F0;
+  --blanco:#FFFFFF;
+  --dorado:#C9A227;
+  --gris:#5D6673;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+body{
+  font-family:'Inter', sans-serif;
+  color:var(--tinta);
+  background:var(--papel);
+  width:794px; /* A4 @ 96dpi */
+  padding:48px 56px;
+  font-size:13.5px;
+  line-height:1.5;
+}
+
+.wordmark{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:22px;
+  letter-spacing:-0.01em;
+}
+.wordmark .punto{ color:var(--dorado); }
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  border-bottom:2px solid var(--tinta);
+  padding-bottom:16px;
+  margin-bottom:24px;
+}
+
+.encabezado-derecha{ text-align:right; }
+.tagline{ font-size:10.5px; color:var(--gris); margin-top:4px; }
+
+.meta-box{
+  margin-top:10px;
+  font-size:10.5px;
+  color:var(--gris);
+  line-height:1.6;
+}
+.meta-box b{ color:var(--tinta); }
+
+h1.titulo-doc{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:20px;
+  margin-bottom:4px;
+}
+.subtitulo-doc{
+  font-size:12px;
+  color:var(--gris);
+  margin-bottom:24px;
+}
+
+section.bloque{
+  margin-bottom:18px;
+  break-inside:avoid;
+}
+
+.num-etiqueta{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--gris);
+  margin-bottom:6px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.num-etiqueta .num{
+  width:20px; height:20px;
+  border:1.5px solid var(--tinta);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:10.5px;
+  color:var(--tinta);
+  flex-shrink:0;
+}
+
+.bloque p{ margin-bottom:6px; }
+.bloque p:last-child{ margin-bottom:0; }
+
+.hallazgo{
+  background:var(--blanco);
+  border:1px solid rgba(19,26,34,0.12);
+  border-radius:8px;
+  padding:12px 16px;
+  margin-top:6px;
+}
+
+/* La corrección de mayor impacto — único uso del dorado en la pieza */
+.bloque-impacto{
+  background:var(--tinta);
+  color:var(--papel);
+  border-radius:10px;
+  padding:20px 22px;
+  margin-top:22px;
+  position:relative;
+}
+.bloque-impacto .num-etiqueta{ color:var(--dorado); }
+.bloque-impacto .num-etiqueta .num{ border-color:var(--dorado); color:var(--dorado); }
+.bloque-impacto h2{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:15px;
+  margin-bottom:8px;
+}
+.bloque-impacto p{ margin-bottom:0; font-size:13px; }
+.bloque-impacto .punto-final{ color:var(--dorado); }
+
+footer{
+  margin-top:26px;
+  padding-top:16px;
+  border-top:1px solid rgba(19,26,34,0.15);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.cta{
+  font-family:'Gabarito', sans-serif;
+  font-weight:700;
+  font-size:13.5px;
+}
+.cta .punto{ color:var(--tinta); }
+.contacto{
+  font-size:11px;
+  color:var(--gris);
+  text-align:right;
+}
+.footnote{
+  font-size:9.5px;
+  color:var(--gris);
+  margin-top:14px;
+  font-style:italic;
+}
+
+@media print{
+  @page{ size:A4; margin:0; }
+  body{ width:auto; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="wordmark">SpindleLab<span class="punto">.</span></div>
+    <div class="tagline">SEO técnico · Visibilidad en IA (AEO/GEO) · Desarrollo web</div>
+  </div>
+  <div class="encabezado-derecha">
+    <div class="meta-box">
+      <div><b>Documento</b> SPL-DIAG-2026-001</div>
+      <div><b>Empresa</b> Clínica Dental Augusto Leguía</div>
+      <div><b>Sitio</b> leguia.cl</div>
+      <div><b>Fecha</b> 21 de julio de 2026</div>
+    </div>
+  </div>
+</header>
+
+<h1 class="titulo-doc">Mini-diagnóstico de visibilidad</h1>
+<p class="subtitulo-doc">Cómo ve Clínica Dental Augusto Leguía un buscador y un motor de IA hoy — y la única corrección que más impacto tendría.</p>
+
+<section class="bloque">
+  <div class="num-etiqueta"><span class="num">1</span> Estado técnico esencial</div>
+  <div class="hallazgo">
+    <p>El sitio responde <b>HTTP 200</b>, es indexable y tiene sitemap, título y meta description presentes — la base está sana (WordPress + Elementor + Yoast). Pero hay un bloqueo autoinfligido: el <b>robots.txt incluye <code>Disallow: /especialidades/</code></b>, la página de servicios que el propio menú del sitio enlaza. Responde 200 a un visitante, pero queda vedada al rastreo de Google y de los bots de IA. El mismo archivo bloquea además a dos especialistas nombrados del equipo (<code>/equipo-al/dr-sergio-echeverria/</code> y <code>/equipo-al/dra-consuelo-norambuena-n/</code>). Los únicos datos estructurados son los genéricos de WordPress (Organization, WebSite) — no hay marcado de clínica ni de profesionales — y <code>og:locale</code> está fijado en <code>es_ES</code> (España) en un negocio local de Las Condes.</p>
+  </div>
+</section>
+
+<section class="bloque">
+  <div class="num-etiqueta"><span class="num">2</span> Visibilidad en motores de IA</div>
+  <div class="hallazgo">
+    <p>La pregunta de categoría que un paciente real haría: <b>«¿Cuáles son las mejores clínicas de implantes dentales en El Golf / Las Condes?»</b>. El riesgo estructural es concreto: como el hub de especialidades está bloqueado al rastreo y no existe marcado de entidad médica, los motores de IA carecen de las señales que usan para nombrar a una clínica en su respuesta — el escenario esperable es que citen a competidores con fichas mejor estructuradas. Confirmaremos el resultado real de ChatGPT y Perplexity antes de la reunión.</p>
+  </div>
+</section>
+
+<section class="bloque">
+  <div class="num-etiqueta"><span class="num">3</span> Señales de confianza</div>
+  <div class="hallazgo">
+    <p>Salud es un rubro YMYL: Google y los motores de IA exigen pruebas de quién está detrás. Aquí hay una base real — cada especialista tiene su página propia con nombre y foto (en el sitemap del equipo), y el teléfono y la dirección de El Golf son verificables. Lo que falta: ese equipo no está declarado en datos estructurados (ni la clínica como <code>MedicalClinic</code> ni los profesionales como <code>Physician</code>), no hay reseñas marcadas de forma legible para máquinas, y —contradictoriamente— el robots.txt bloquea a dos de esos mismos especialistas. La autoridad existe en la página, pero no está escrita en el idioma que leen los buscadores.</p>
+  </div>
+</section>
+
+<div class="bloque-impacto">
+  <div class="num-etiqueta"><span class="num">4</span> La corrección de mayor impacto</div>
+  <h2>Volver la clínica una entidad que las máquinas puedan leer</h2>
+  <p>Si solo arreglan una cosa este mes: publicar datos estructurados de clínica dental con cada especialista nombrado como profesional y cada especialidad enlazada — quitando antes del robots.txt el bloqueo a <code>/especialidades/</code>, su paso previo obligado. Hoy su mayor activo, un equipo real de especialistas en El Golf, es invisible para Google y para los motores de IA; ese marcado es lo que convierte esa reputación en algo que un buscador puede citar<span class="punto-final">.</span></p>
+</div>
+
+<footer>
+  <div class="cta">¿Conversamos 20 minutos, sin costo<span class="punto">?</span></div>
+  <div class="contacto">hola@spindlelab.cl · spindlelab.cl</div>
+</footer>
+
+<p class="footnote">Este documento es un diagnóstico inicial elaborado desde información pública — no reemplaza una auditoría técnica completa. Válido como fotografía del estado del sitio al 21 de julio de 2026.</p>
+
+</body>
+</html>

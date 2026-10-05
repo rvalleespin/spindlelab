@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+/* RUTA B — "El hilo" · v2: el hilo ocupa una banda-imagen arriba (como la foto-ventana
+   del sistema), el titular baja. Verde contenido, sin etiqueta explicativa. */
+.post.hilo { background:linear-gradient(rgba(14,20,27,0.94), rgba(14,20,27,0.99)),
+             url('fondo-hilo.jpg') center/cover, #0e141b;
+             padding:80px; display:flex; flex-direction:column; color:#f2efe8; }
+.banda { position:relative; height:322px; margin-top:34px; overflow:hidden; }
+.banda svg { position:absolute; left:-80px; top:0; width:1080px; height:322px; }
+</style></head><body>
+<div class="post hilo">
+  <div class="eyebrow">Chequea tu sitio · Septiembre</div>
+  <div class="rule"></div>
+  <div class="banda">
+    <svg viewBox="0 0 1080 322">
+      <defs><filter id="g" x="-30%" y="-60%" width="160%" height="220%">
+        <feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter></defs>
+      <!-- hacia dónde iba: el tramo que ya no llega -->
+      <path d="M792,148 C880,133 960,120 1080,104" fill="none" stroke="#f2efe8" stroke-opacity="0.05" stroke-width="2.4"/>
+      <circle cx="1058" cy="107" r="3" fill="#f2efe8" fill-opacity="0.10"/>
+      <!-- el hilo vivo, que muere en 792 -->
+      <path d="M0,286 C210,262 520,196 792,148" fill="none" stroke="#2fa99b" stroke-opacity="0.55" stroke-width="6" filter="url(#g)"/>
+      <path d="M0,286 C210,262 520,196 792,148" fill="none" stroke="#cfe9e4" stroke-opacity="0.60" stroke-width="1.4"/>
+      <!-- hebras de acompañamiento, apagadas -->
+      <path d="M0,306 C230,286 540,224 820,172" fill="none" stroke="#f2efe8" stroke-opacity="0.06" stroke-width="1"/>
+      <path d="M0,262 C220,238 520,172 800,124" fill="none" stroke="#f2efe8" stroke-opacity="0.045" stroke-width="1"/>
+    </svg>
+  </div>
+  <div style="margin-top:44px;">
+    <div class="h" style="font-size:76px;">El camino hasta ti existe.<br>Se corta antes de llegar.</div>
+    <div class="sub" style="margin-top:26px; max-width:800px;">Tu cliente pregunta, la IA sale a buscar, y en algún punto del recorrido tu sitio deja de contestar. No es contenido: es cómo está construido.</div>
+  </div>
+  <div class="foot">
+    <div class="wm">SpindleLab<span class="pt">.</span></div>
+    <div class="cta">Chequea tu sitio gratis · spindlelab.cl/diagnostico</div>
+  </div>
+</div>
+</body></html>

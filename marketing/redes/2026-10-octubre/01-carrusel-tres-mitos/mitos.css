@@ -1,0 +1,36 @@
+/* Carrusel "Los tres mitos de la Ley 21.719" · octubre 2026
+   Extensión de base.css. No redefine tokens: los usa.
+   Semántica del color en esta pieza:
+     gris #6b7580 = lo que circula (el mito tachado, y solo él: los rótulos
+     chicos van en #9aa4b0 por contraste)
+     verde petróleo #2fa99b = etiqueta de lo que dice la ley
+     dorado #c9a227 = UN dato por lámina (el número del artículo; en portada y
+     cierre, el punto del wordmark). Nunca los dos en la misma lámina. */
+
+.top { display:flex; align-items:baseline; justify-content:space-between; gap:24px; }
+.pager { font-size:20px; font-weight:800; letter-spacing:2.6px; color:#9aa4b0; }
+
+.cuerpo { flex:1; display:flex; flex-direction:column; justify-content:center; padding-bottom:120px; }
+/* Las tres láminas de mito se anclan arriba en vez de centrarse. Centradas, la
+   etiqueta arrancaba en y=230, y=185 e y=168 según cuánto texto traía cada una:
+   62px de salto al deslizar. Con el ancla, las tres parten en la misma fila. */
+.cuerpo.anclado { justify-content:flex-start; padding-top:26px; }
+
+.tag { font-size:19px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#9aa4b0; }
+.tag.ley { color:#2fa99b; }
+
+.mito { font-family:'Gabarito'; font-weight:600; font-size:58px; line-height:1.18; letter-spacing:-1.2px;
+  color:#6b7580; margin-top:16px; max-width:890px;
+  text-decoration:line-through; text-decoration-thickness:4px;
+  text-decoration-color:rgba(107,117,128,0.8); }
+
+.caja { margin-top:44px; background:rgba(255,255,255,0.02); border:1px solid rgba(247,245,240,0.10);
+  border-radius:16px; padding:36px 40px; }
+.caja .txt { font-family:'Gabarito'; font-weight:600; font-size:40px; line-height:1.24; letter-spacing:-1px;
+  color:#f2efe8; margin-top:16px; }
+.caja .url { font-family:'Gabarito'; font-weight:600; font-size:46px; letter-spacing:-1px;
+  color:#f2efe8; margin-top:22px; }
+.art { font-family:'Gabarito'; font-weight:600; font-size:38px; letter-spacing:-0.5px;
+  color:#c9a227; margin-top:24px; }
+
+.nota { font-size:26px; line-height:1.52; color:#9aa4b0; margin-top:30px; max-width:900px; }

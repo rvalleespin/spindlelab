@@ -1,0 +1,41 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); }
+@font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:100 900; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1640px; height:624px; overflow:hidden; font-family:'Inter',sans-serif; }
+.cover {
+  position:relative; width:1640px; height:624px; overflow:hidden;
+  background:
+    linear-gradient(rgba(19,26,34,0.55), rgba(19,26,34,0.55)),
+    radial-gradient(ellipse 62% 92% at 50% 50%, rgba(19,26,34,0.42) 0%, rgba(19,26,34,0) 74%),
+    url('fondo-a.png');
+  background-size: cover, cover, cover;
+  background-position: center, center, center 42%;
+}
+/* Bloque centrado — zona segura de Facebook: nada importante en el borde inferior izquierdo (avatar) ni en los lados (recorte móvil). max-width mantiene todo dentro del área visible en celular. */
+.content {
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:0 340px;
+}
+.wordmark {
+  font-family:'Gabarito'; font-weight:600; font-size:118px; line-height:1;
+  color:#F7F5F0; letter-spacing:-2px;
+}
+.wordmark .pt { color:#C9A227; }
+.promesa {
+  font-family:'Gabarito'; font-weight:500; font-size:36px; line-height:1.25;
+  color:#F7F5F0; margin-top:26px; letter-spacing:-0.3px;
+}
+.cta {
+  font-size:21px; font-weight:500; color:#C9C2B0; margin-top:22px; letter-spacing:0.4px;
+}
+</style></head><body>
+<div class="cover">
+  <div class="content">
+    <div class="wordmark">SpindleLab<span class="pt">.</span></div>
+    <div class="promesa">SEO técnico y visibilidad en IA</div>
+    <div class="cta">Mini-diagnóstico gratis · spindlelab.cl</div>
+  </div>
+</div>
+</body></html>

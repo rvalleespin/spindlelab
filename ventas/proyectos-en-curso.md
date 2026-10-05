@@ -1,0 +1,47 @@
+# Proyectos en curso — SpindleLab
+
+> Distinto de `pipeline.md`: pipeline trackea prospectos hasta que se ganan o se pierden; esto trackea la **entrega** de los proyectos ya ganados. Un proyecto entra aquí cuando pasa a "Ganado ✅" en el pipeline y sale cuando se cierra/entrega o se da de baja.
+
+## Cómo se usa
+
+- Cada proyecto activo es una fila en la tabla de abajo, con la fase actual según el proceso de entrega correspondiente (ver la columna "Proceso de referencia").
+- Actualizar la fase apenas cambie — este documento no se automatiza, igual que `pipeline.md`.
+- Al entregar/cerrar un proyecto, mover la fila a "Proyectos entregados" con fecha de cierre y, si corresponde, iniciar la gestión de caso público (`marketing/plantillas/solicitud-testimonio-simpletrust.md` es la plantilla de referencia para pedir permiso).
+
+## Proyectos activos
+
+| Cliente | Línea de servicio | Proceso de referencia | Fase actual | Próximo hito | Último contacto | Notas |
+|---|---|---|---|---|---|---|
+| María Loreto Hernández | Desarrollo Web (**Sitio Completo**, $1.190.000 + IVA = $1.416.100) | `ventas/proceso-desarrollo-web-cliente.md` · cotización SPL-COT-2026-015 | 0. Ganado, antes de Fase 1 | **Lun 6-oct: reunión de inicio** (hora por coordinar). Ramón muestra una **primera maqueta** con imágenes de relleno. Plazo total: octubre a noviembre, sin apuro. Cobro Fase 1: 30% = $424.830 con IVA, **se factura por la SpA** | 26-sep-2026 17:34 (correo de resumen enviado, verificado en Gmail) tras la llamada del mismo día | Galería **Módulo 369**, ES/EN, dominios **modulo369.com** (principal) y **modulo369.cl** (NIC Chile). Parte con 3 artistas: María, una amiga y un tercero aún por definir (no bloquea). Proyecto de código en `GALERIA-MARIA-LORETO/` (repo propio, hermano de SPINDLELAB y PORTAFOLIO; brief en `BRIEF.md`). **Compromisos escritos el 24-sep, distintos de Bernardo:** fotos subidas desde el panel se optimizan; cuentas a nombre de ella desde el día 1 (Cloudflare, correo, GitHub) y traspaso del código con el pago final + documento de cómo está armado; botón «Comprar» con link de Mercado Pago por obra, incluido; tope 10 MB / mín. 2.000 px / JPG; .cl redirigido al .com. Tienda completa aparte, desde $450.000 + IVA. **Hosting en Cloudflare Pages, no Vercel Hobby** (prohíbe uso comercial). |
+| Bernardo Combeau | Desarrollo Web (**Plan Esencial**, oferta $392.000) | `ventas/proceso-desarrollo-web-cliente.md` | 5. Lanzamiento — cliente aprobó el sitio en reunión (20 jul); armando checklist técnico de salida | Conectar dominio `bernardocombeau.cl` (comprado 20 jul en NIC Chile) — DNS y OAuth callback en curso. Meta tope: **viernes 24 jul**. Cobros pendientes: Fase 1 ($117.600) + Fase 5 ($117.600) = $235.200, en **un solo cobro contra entrega** (decisión 22 jul) | 20 jul 2026 (reunión: cliente dio OK, quedó probando el panel) | Cotización SPL-COT-2026-014 aprobada. Plan Esencial (no Portafolio Pro) — el abono de $156.800 = 40% de $392.000 lo confirma. **Cambió el orden de cobro**: se pagó primero la Fase 3; Fases 1 y 5 quedan pendientes. Proyecto en `bernardo-combeau` (Vercel) — los fallos de deploy del 14-16 jul ya se resolvieron (bug de configuración, no de código). Bernardo ya es colaborador en GitHub y está usando el panel de administración directamente (creó series de prueba él mismo). **Sigue pendiente pedir permiso de caso público — no se ha pedido todavía** (21-sep: ya no hay saldo pendiente, así que la conversación está despejada), pese al acuerdo de pedirlo desde el día 1; dado que el cliente ya aprobó y está en fase de lanzamiento, es buen momento para pedirlo ahora. Checklist técnico restante: registros DNS en NIC Chile, actualizar callback de la OAuth App de GitHub, apuntar `site` del proyecto al dominio real — nada de esto bloquea el pago, son tareas en paralelo. Ver "Estado de pagos" abajo. |
+
+## Estado de pagos — Bernardo Combeau
+
+Plan **Esencial**, oferta de lanzamiento **$392.000** (IVA incl.). Esquema original según cotización SPL-COT-2026-014: 30% Fase 1 (al iniciar) / 40% Fase 3 (al aprobar staging) / 30% Fase 5 (contra entrega).
+
+> **Hubo un cambio en el orden de cobro:** se pagó primero la Fase 3 (40%); las Fases 1 y 5 quedaron pendientes. El esquema de montos por fase se mantiene; cambió la secuencia en que se cobra.
+>
+> **Decisión 22 jul 2026 — Fases 1 y 5 se cobran juntas en un solo pago contra entrega.** En vez de emitir la Fase 1 ahora por separado, Ramón juntará ambas pendientes ($117.600 + $117.600 = **$235.200**) en un único cobro al momento de la entrega. No enviar la Fase 1 aparte.
+>
+> **Decisión 25 jul 2026 — este contrato se cobra COMPLETO como persona natural, NO por SpindleLab SpA.** Cerrado, no es un pendiente a reevaluar. El lanzamiento técnico se hizo el 24 jul, así que el cobro de los $235.200 está habilitado y sale a los mismos datos bancarios personales con que llegó la Fase 3. Motivos: (a) el servicio se contrató y se prestó antes de que existiera la SpA (constituida el 24 jul 2026, RUT 78.474.925-8), y partir un mismo contrato entre dos contribuyentes es peor que dejarlo entero; (b) la SpA todavía no puede emitir documentos — el inicio de actividades está enviado pero bloqueado por documentos que dependen de terceros, y faltan Certificado Digital SII, facturación electrónica y cuenta corriente empresa; (c) como la cotización pactó "IVA incluido", facturar desde la SpA regalaría ~$37.553 de IVA débito sobre el mismo precio. **La SpA estrena facturación con la mantención mensual ($50.000/mes) y con clientes nuevos.** La Fase 3 llegó íntegra, sin retención aplicada: mismo criterio acá, se piden los $235.200 completos. Regla general que queda: contrato prestado antes del 24-jul-2026 → persona natural; contrato nuevo → SpA.
+
+| Fase | Concepto | Monto (30/40/30) | Estado | Evidencia |
+|---|---|---|---|---|
+| 1. Descubrimiento | 30% | $117.600 | ✅ **Pagado** (cobrado junto con Fase 5) | Confirmado por Ramón el 21-sep-2026. |
+| 3. Desarrollo IA | 40% (aprobar staging) | $156.800 | ✅ **Pagado 14 jul 2026** | Transferencia BICE de "Bernardo Combeau Oyarzún" → BancoChile, 14 jul 12:35. Monto exacto = 40% de $392.000. |
+| 5. Lanzamiento | 30% (contra entrega) | $117.600 | ✅ **Pagado** (cobrado junto con Fase 1) | Confirmado por Ramón el 21-sep-2026. |
+
+Notas:
+- **21 jun 2026 — transferencia de $10.000** del mismo remitente, sin clasificar (probable transferencia de prueba). No corresponde a ninguna cuota del esquema; verificar con Bernardo.
+- Total verificado recibido vía BICE: **$166.800** ($10.000 + $156.800).
+- **21-sep-2026 — COBRADO. Nada pendiente.** Los $235.200 (Fases 1 + 5) se cobraron en un solo pago, como persona natural según la decisión del 25 jul. Proyecto pagado al 100% ($392.000). Fuente: confirmación directa de Ramón el 21-sep-2026; no se pidió comprobante bancario.
+- **Ampliación cobrada y entregada:** el cliente pidió una sección adicional dentro del mismo sitio; **se cobró $120.000 y ya está entregada** (confirmado por Ramón el 21-sep-2026).
+- **Ticket real del proyecto: $512.000** ($392.000 del Plan Esencial + $120.000 de la ampliación). Usar esta cifra, no los $392.000, como referencia de lo que rinde un cliente de Desarrollo Web. Ramón lo considera equivalente al servicio completo.
+- **Es la mejor evidencia comercial que existe hoy en la cartera:** un cliente que pagó, recibió, volvió a pedir y pagó de nuevo. Ampliación de +31% sobre el contrato original. Sirve para la conversación de "subir el valor por cliente" mucho más que un testimonio.
+
+## Proyectos entregados
+
+*(vacío — se completa cuando se cierre el primer proyecto)*
+
+| Cliente | Línea de servicio | Fecha de cierre | ¿Caso público? | Notas |
+|---|---|---|---|---|

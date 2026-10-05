@@ -10,6 +10,23 @@
   gtag("js", new Date());
   gtag("config", "G-J40VW9E0TW");
 </script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2885353628478565');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2885353628478565&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contacto — pide tu diagnóstico gratis — SpindleLab</title>
 <meta name="description" content="Escríbenos a hola@spindlelab.cl con la URL de tu sitio y en 48 horas recibes un mini-diagnóstico gratuito de SEO técnico y presencia en IA. Sin compromiso.">
@@ -54,7 +71,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css?v=13">
+<link rel="stylesheet" href="/assets/css/style.css?v=15">
 </head>
 <body>
 
@@ -94,6 +111,71 @@
         <img src="/assets/img/hero-contacto.jpg" width="600" height="400" alt="Dos personas conversando con café en una mesa junto a la ventana" fetchpriority="high">
         <span class="media-tag">Contacto <b>· 48 h</b></span>
       </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contacto-form" aria-labelledby="cta-title">
+    <div class="wrap">
+      <span class="eyebrow teal">El primer paso</span>
+      <h2 id="cta-title">Cuéntanos de tu proyecto</h2>
+      <p>Completa el formulario y te escribimos dentro de 48 horas hábiles con el mini-diagnóstico o los siguientes pasos.</p>
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="f3a309f5-cbe6-4cf1-b77f-cfd0ee92685f">
+        <input type="hidden" name="subject" value="Nuevo contacto desde spindlelab.cl">
+        <input type="hidden" name="from_name" value="Formulario spindlelab.cl">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field">
+          <label for="f-nombre">Nombre</label>
+          <input type="text" id="f-nombre" name="Nombre" autocomplete="name" required>
+        </div>
+        <div class="field row2">
+          <div>
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="Email" autocomplete="email" required>
+          </div>
+          <div>
+            <label for="f-sitio">Sitio web <span class="opt">(opcional)</span></label>
+            <input type="text" id="f-sitio" name="Sitio web" placeholder="tuempresa.cl" autocomplete="url">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-servicio">Qué te interesa <span class="opt">(opcional)</span></label>
+          <select id="f-servicio" name="Servicio de interés">
+            <option value="">Selecciona una opción</option>
+            <option>Auditoría SEO Técnica</option>
+            <option>Visibilidad en IA (AEO/GEO)</option>
+            <option>Desarrollo Web</option>
+            <option>Acompañamiento Mensual</option>
+            <option>No estoy seguro todavía</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-origen">¿Cómo nos encontraste? <span class="opt">(opcional)</span></label>
+          <select id="f-origen" name="Cómo nos encontró">
+            <option value="">Selecciona una opción</option>
+            <option>Búsqueda en Google</option>
+            <option>Anuncio de Google (Ads)</option>
+            <option>LinkedIn</option>
+            <option>Instagram</option>
+            <option>Recomendación de alguien</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-mensaje">Cuéntanos brevemente <span class="opt">(opcional)</span></label>
+          <textarea id="f-mensaje" name="Mensaje" rows="3" placeholder="Qué hace tu empresa, qué te preocupa de tu sitio..."></textarea>
+        </div>
+        <input type="hidden" name="UTM Source" id="f-utm-source">
+        <input type="hidden" name="UTM Medium" id="f-utm-medium">
+        <input type="hidden" name="UTM Campaign" id="f-utm-campaign">
+        <button type="submit" class="btn gold">Enviar →</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+      <div class="form-success" role="status" aria-live="polite" hidden>
+        <h3>Listo.</h3>
+        <p>Te escribimos dentro de 48 horas hábiles con tu mini-diagnóstico.</p>
+      </div>
+      <p class="form-note">¿Prefieres ir directo? Escríbenos a <a href="mailto:hola@spindlelab.cl?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20">hola@spindlelab.cl</a></p>
     </div>
   </section>
 
@@ -171,70 +253,6 @@
     </div>
   </section>
 
-  <section class="cta" id="contacto-form" aria-labelledby="cta-title">
-    <div class="wrap">
-      <span class="eyebrow teal">El primer paso</span>
-      <h2 id="cta-title">Cuéntanos de tu proyecto</h2>
-      <p>Completa el formulario y te escribimos dentro de 48 horas hábiles con el mini-diagnóstico o los siguientes pasos.</p>
-      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="f3a309f5-cbe6-4cf1-b77f-cfd0ee92685f">
-        <input type="hidden" name="subject" value="Nuevo contacto desde spindlelab.cl">
-        <input type="hidden" name="from_name" value="Formulario spindlelab.cl">
-        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="field">
-          <label for="f-nombre">Nombre</label>
-          <input type="text" id="f-nombre" name="Nombre" autocomplete="name" required>
-        </div>
-        <div class="field row2">
-          <div>
-            <label for="f-email">Email</label>
-            <input type="email" id="f-email" name="Email" autocomplete="email" required>
-          </div>
-          <div>
-            <label for="f-sitio">Sitio web <span class="opt">(opcional)</span></label>
-            <input type="text" id="f-sitio" name="Sitio web" placeholder="tuempresa.cl" autocomplete="url">
-          </div>
-        </div>
-        <div class="field">
-          <label for="f-servicio">Qué te interesa</label>
-          <select id="f-servicio" name="Servicio de interés" required>
-            <option value="">Selecciona una opción</option>
-            <option>Auditoría SEO Técnica</option>
-            <option>Visibilidad en IA (AEO/GEO)</option>
-            <option>Desarrollo Web</option>
-            <option>Acompañamiento Mensual</option>
-            <option>No estoy seguro todavía</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="f-origen">¿Cómo nos encontraste? <span class="opt">(opcional)</span></label>
-          <select id="f-origen" name="Cómo nos encontró">
-            <option value="">Selecciona una opción</option>
-            <option>Búsqueda en Google</option>
-            <option>Anuncio de Google (Ads)</option>
-            <option>LinkedIn</option>
-            <option>Instagram</option>
-            <option>Recomendación de alguien</option>
-            <option>Otro</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="f-mensaje">Cuéntanos brevemente <span class="opt">(opcional)</span></label>
-          <textarea id="f-mensaje" name="Mensaje" rows="3" placeholder="Qué hace tu empresa, qué te preocupa de tu sitio..."></textarea>
-        </div>
-        <input type="hidden" name="UTM Source" id="f-utm-source">
-        <input type="hidden" name="UTM Medium" id="f-utm-medium">
-        <input type="hidden" name="UTM Campaign" id="f-utm-campaign">
-        <button type="submit" class="btn gold">Enviar →</button>
-        <p class="form-status" role="status" aria-live="polite"></p>
-      </form>
-      <div class="form-success" role="status" aria-live="polite" hidden>
-        <h3>Listo.</h3>
-        <p>Te escribimos dentro de 48 horas hábiles con tu mini-diagnóstico.</p>
-      </div>
-      <p class="form-note">¿Prefieres ir directo? Escríbenos a <a href="mailto:hola@spindlelab.cl?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20">hola@spindlelab.cl</a></p>
-    </div>
-  </section>
 
 </main>
 
@@ -327,6 +345,7 @@
       form.hidden=true;
       success.hidden=false;
       gtag('event','generate_lead',{form_id:'contacto',service_interest:serviceInterest});
+      if(window.fbq){ fbq('track','Lead',{content_name:'contacto',service_interest:serviceInterest}); }
     }).catch(function(){
       status.textContent='Algo falló al enviar. Escríbenos directo a hola@spindlelab.cl mientras lo revisamos.';
       status.className='form-status show err';
