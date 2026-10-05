@@ -108,4 +108,7 @@ Sus referentes y los de la cotización sirven de insumo puntual (`BRIEF.md`). Lo
 *Se le comunica en la reunión (son consecuencia del contrato):* Tienda sin carrito (la tienda completa va aparte, desde $450.000 + IVA; lo incluido es Comprar por obra con su link de MP) y sin newsletter (no está cotizado; se puede contratar aparte).
 
 ## 10 · Compuerta 1
-- **Aprobado por:** · **Fecha:** · **Cambios pedidos al aprobar:**
+- **Aprobado por:** Ramón · **Fecha:** 5-oct-2026 · **Cambios pedidos al aprobar:** ninguno al texto. Respuestas a §9:
+  - **§9-1 → link en su iPhone.** OK explícito de Ramón para publicar la v2 en `modulo369-maqueta.pages.dev` (cuenta Cloudflare de SpindleLab, `noindex`, URL no listada, se baja después de la reunión). 390 px pasa a ser el ancho principal.
+  - **§9-2 → sin bocetos.** «Los referentes están en la cotización. Ábrelos y revisa»: Lucía construye el lock de referencias abriendo los 4 referentes de la cotización (Studio Iron, PRODn, Quatrième Étage, Artem Taradash) más los 4 de María; Inicio, Artistas, Encuentro y Libro se construyen contra la descripción de `BRIEF.md` y se comparan con sus originales en la reunión.
+  - **Autoadministración:** capa «Lo editas tú» en la maqueta (marca qué parte cambia María desde el panel) + demo público real de Decap en la reunión. **Sin panel simulado** (confirma §8-3).
