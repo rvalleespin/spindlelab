@@ -1,40 +1,40 @@
 empresa,dominio,email,tipo,hallazgo_medido,estado
 Catalina Díaz De Pauw,ahasonrie.cl,catalina@ahasonrie.cl,dental,"DOMINIO RECICLADO: hoy sirve otro negocio (""Llevanos DONDE quieras""). NO escribir",descartado - fuera de perfil
 Valeria Ulzurrun,alatheia.cl,valeriau@alatheia.cl,medica,"Distribuidor de equipos de diagnostico, no es clinica",descartado - fuera de perfil
-David Vidal G,amanda-salud.com,david.vidal@amanda-salud.com,medica,,virgen - sin medir
-Mario Ramirez Dauvin,apsorad.cl,mramirez@apsorad.cl,medica,,virgen - sin medir
+David Vidal G,amanda-salud.com,david.vidal@amanda-salud.com,medica,"2 cookies, GA RECIBE la visita y Hotjar carga. Cero enlaces legales y cero formularios",medido - sin hallazgo fuerte
+Mario Ramirez Dauvin,apsorad.cl,mramirez@apsorad.cl,medica,"13 cookies antes de tocar nada, cinco en dominios de Microsoft/Bing. Clarity RECIBE la visita (g.clarity.ms): graba el recorrido. CERO enlaces legales y /politica-de-privacidad, /privacidad, /terminos y /aviso-legal dan 404. Rubro: teleradiologia, o sea imagenes medicas",borrador 5-oct
 Karina Suárez,belenus.cl,ksuarez@belenus.cl,dental,"La portada sirve el titulo ""Visa""; revisar antes de escribir",descartado - fuera de perfil
 Angel Bayo,biofotonica.cl,gerencia@biofotonica.cl,medica,"9 cookies antes de tocar nada: GA4 mas seis de Sourcebuster, que guarda de donde viene cada visita. GA RECIBE la visita. Cero enlaces legales. 2 formularios",borrador 5-oct
 Sergio Correa Bengochea,bollek.cl,sergio@bollek.cl,dental,"13 cookies antes de tocar nada, una de ellas en .doubleclick.net. GA4 y Google Ads RECIBEN la visita; Meta cargo y dejo _fbp, sin envio a facebook.com/tr. Plugin PixelYourSite. Cero enlaces legales",borrador 5-oct
-Cristian Camus Valverde,ccamusv.cl,cristian.camus@ccamusv.cl,medica,,virgen - sin medir
-Carlos Cerón,cela.cl,carlos.ceron@cela.cl,dental,,virgen - sin medir
-Juan Leyton Garcia,chbs.cl,gerencia@chbs.cl,medica,,virgen - sin medir
+Cristian Camus Valverde,ccamusv.cl,cristian.camus@ccamusv.cl,medica,"1 cookie, cero terceros. 2 formularios y cero enlaces legales. Sitio limpio pero sin pagina que explique los formularios",medido - sin hallazgo fuerte
+Carlos Cerón,cela.cl,carlos.ceron@cela.cl,dental,"36 cookies antes de tocar nada, 10 en dominios ajenos (Google, TikTok, Pinterest, Microsoft/Clarity, Bing, shop.app). RECIBEN la visita: GA4, Google Ads, Merchant Center, TikTok y Clarity (k.clarity.ms, que graba el recorrido). SI tiene politica y terminos. 21 formularios",borrador 5-oct
+Juan Leyton Garcia,chbs.cl,gerencia@chbs.cl,medica,"20 cookies antes de tocar nada, SIETE en dominios de HubSpot (hs-scripts, hsforms, hs-analytics, hs-banner, hubspot, usemessages, hsappstatic). HubSpot sirve los formularios y el chat. GA RECIBE la visita. SI tiene Politica de Privacidad y Proteccion. 2 formularios. Se presenta como clinica neurologica",borrador 5-oct
 Carolina Lobarede,clandent.cl,carolina.lobarede@clandent.cl,dental,"Distribuidor de insumos dentales, no es clinica",descartado - fuera de perfil
-Luis Gomez Kukaitis,clinicaimet.cl,luis.gomez@clinicaimet.cl,medica,,virgen - sin medir
-Angel Vargas Ayala,clinicasachssalud.cl,avargas@clinicasachssalud.cl,medica,,virgen - sin medir
+Luis Gomez Kukaitis,clinicaimet.cl,luis.gomez@clinicaimet.cl,medica,"clinicaimet.cl REDIRIGE a andessaludmagallanes.cl (cambio de marca o compra). 8 cookies antes de tocar nada, GA4 y Google Ads RECIBEN la visita, cookie en .andessaludmagallanes.cl y .doubleclick.net, 4 formularios, cero enlaces legales. NO SE ESCRIBIO: no esta claro quien controla el sitio hoy",medido - dueno incierto
+Angel Vargas Ayala,clinicasachssalud.cl,avargas@clinicasachssalud.cl,medica,"5 cookies, solo GA (que recibe la visita). Institucional grande (ACHS). Sin enlaces legales utiles detectados",medido - fuera de ticket
 Sylvia Salas,clinicasyal.cl,dra.sylviasalas@clinicasyal.cl,dental,"25 cookies antes de tocar nada. GA4 y Google Ads RECIBEN la visita; Meta cargo y dejo _fbp pero NO hay envio a facebook.com/tr. Sourcebuster, PixelYourSite y stats de WordPress.com (pixel.wp.com/g.gif recibe). SI tiene Terminos, Politica de Privacidad y Politica de Cookies publicadas, pero no hay aviso de consentimiento: las cookies se escriben antes",borrador 5-oct
 Claudia Sanhueza Schuler,clinicavs.cl,claudiasanhueza@clinicavs.cl,medica,"El HTML que sirve el servidor trae <title>Document</title>; el nombre real lo pone JavaScript en el navegador. 5 cookies antes de tocar nada (PHPSESSID + GA4, incluida una de Universal Analytics). GA4 RECIBE la visita. Cero enlaces legales. 1 formulario",borrador 5-oct
 Benjamin Duch,cruznacional.cl,bduch@cruznacional.cl,medica,"CERO cookies si te quedas quieto; al mover el mouse y hacer scroll aparecen 30 y +117 peticiones. Plugin de velocidad que retrasa los scripts hasta el gesto. RECIBEN la visita: GA4, Google Ads (ccm/collect y rmkt), TikTok (api/v2/pixel) y Microsoft Clarity (l.clarity.ms/collect, que graba el recorrido). Cargan tambien Hotjar, Contentsquare, Bing y Ahrefs. Cookies en .doubleclick.net, clarity.ms, .tiktok.com, .youtube.com y .bing.com. Unica pagina legal: Bases legales. 2 formularios",borrador 5-oct
-Marcelo Wortsman,cslab.cl,marcelow@cslab.cl,medica,,virgen - sin medir
-Matias Aguilera,cybersalud.cl,matias.aguilera@cybersalud.cl,medica,,virgen - sin medir
+Marcelo Wortsman,cslab.cl,marcelow@cslab.cl,medica,9 cookies pero ningun rastreador de terceros salvo YouTube. SI tiene politica de privacidad. 2 formularios. Sitio sano,medido - sin hallazgo fuerte
+Matias Aguilera,cybersalud.cl,matias.aguilera@cybersalud.cl,medica,"6 cookies; GA4 y Google Ads RECIBEN la visita, cookie en .doubleclick.net. Solo Terminos y Condiciones",medido - sin escribir
 Marcelo Gomez Marcos,diagnomar.cl,marcelogomez@diagnomar.cl,medica,El dominio no responde (HTTP 000),descartado - sitio caido
 Solange Jorge,expressdent.cl,solange.jorge@expressdent.cl,dental,"Casa dental de insumos y equipamiento, no es clinica",descartado - fuera de perfil
-Roberto Martinez Gonzalez,grupocorpus.cl,dr.martinez@grupocorpus.cl,medica,,virgen - sin medir
-Jose Valdes G-H,innolab.cl,jvaldes@innolab.cl,medica,,virgen - sin medir
-Mauricio Sanchez Garcia,iocupacional.cl,msanchez@iocupacional.cl,medica,,virgen - sin medir
-Maricel Perez Ceballos,laboratoriogreenlab.cl,m.perez@laboratoriogreenlab.cl,medica,,virgen - sin medir
-Lorena Rojas Torres,lartodontologia.cl,lorenarojas@lartodontologia.cl,dental,,virgen - sin medir
-Alejandra Cuesta Nazar,medcorp.cl,acuesta@medcorp.cl,medica,,virgen - sin medir
+Roberto Martinez Gonzalez,grupocorpus.cl,dr.martinez@grupocorpus.cl,medica,"2 cookies, solo GA (que recibe la visita). SI tiene terminos y politicas de privacidad. Sitio sano",medido - sin hallazgo fuerte
+Jose Valdes G-H,innolab.cl,jvaldes@innolab.cl,medica,CERO cookies en ambos tramos. GA carga pero no alcanza a enviar. Cero enlaces legales y cero formularios. Sitio limpio,medido - sin hallazgo fuerte
+Mauricio Sanchez Garcia,iocupacional.cl,msanchez@iocupacional.cl,medica,"8 cookies antes de tocar nada, cuatro en dominios de HubSpot, que sirve los formularios. Cero paginas legales (el unico enlace tipo legal es un articulo del blog). Rubro: examenes preocupacionales",borrador 5-oct
+Maricel Perez Ceballos,laboratoriogreenlab.cl,m.perez@laboratoriogreenlab.cl,medica,9 cookies antes de tocar nada; Google Ads RECIBE la visita y deja cookie en .doubleclick.net. CERO enlaces legales. 1 formulario. Rubro: examenes a domicilio,borrador 5-oct
+Lorena Rojas Torres,lartodontologia.cl,lorenarojas@lartodontologia.cl,dental,"10 cookies antes de tocar nada, GA RECIBE la visita, Meta carga, Sourcebuster guarda el origen. Cookie en .clinicalart.cl (otro dominio suyo). Cero enlaces legales",medido - sin escribir
+Alejandra Cuesta Nazar,medcorp.cl,acuesta@medcorp.cl,medica,"11 cookies antes de tocar nada incluido Sourcebuster; GA RECIBE la visita. Solo tiene Terminos y Condiciones, no politica de privacidad. 4 formularios",medido - sin escribir
 Felipe Letelier Cavin,medic-home.cl,felipe.letelier@medic-home.cl,medica,"Tienda Shopify de atencion de salud a domicilio. 10 cookies antes de tocar nada; RECIBEN la visita GA4, Google Merchant Center y los web-pixels de Shopify. Terceros en el primer tramo: Metricool y pixee.gropulse.com. Al mover el mouse aparecen Mixpanel y api.ipify.org, que devuelve la IP del visitante. SI tiene normativa legal y politicas de privacidad. 3 formularios",borrador 5-oct
-Jorge Carrera De La Barrera,medicenter.cl,jdelacarrera@medicenter.cl,medica,,virgen - sin medir
-Patrichs Rosales Maturana,myrasalud.cl,patrichs.rosalesmaturana@myrasalud.cl,medica,,virgen - sin medir
-Veronica Arredondo,oncovidachile.cl,veronica.arredondo@oncovidachile.cl,medica,,virgen - sin medir
+Jorge Carrera De La Barrera,medicenter.cl,jdelacarrera@medicenter.cl,medica,"4 cookies, todas propias. GA4 y Google Ads RECIBEN la visita. Meta carga. Cero enlaces legales",medido - sin escribir
+Patrichs Rosales Maturana,myrasalud.cl,patrichs.rosalesmaturana@myrasalud.cl,medica,0 cookies quieto; al mover el mouse aparecen 5 y GA4 y Google Ads reciben la visita (scripts retrasados). Cero enlaces legales. 2 formularios. El titulo parte con 'Inicio',medido - sin escribir
+Veronica Arredondo,oncovidachile.cl,veronica.arredondo@oncovidachile.cl,medica,"Dominio APARCADO en GoDaddy: el cuerpo dice literal 'oncovidachile.cl is parked free, courtesy of GoDaddy.com'. La clinica ya no esta ahi",descartado dominio aparcado
 Carlos Fernandez Caniupan,policenter.cl,cfernandez@policenter.cl,dental,El dominio no responde (HTTP 000),descartado - sitio caido
 Raul Carrillo,positronpharma.cl,rcarrillo@positronpharma.cl,medica,El dominio no responde (HTTP 000),descartado - sitio caido
-Jaime Acuña,r-nueva.cl,jaime.acuna@r-nueva.cl,dental,,virgen - sin medir
-Catalina Penela,redimplantologia.cl,catalina@redimplantologia.cl,dental,,virgen - sin medir
-Gonzalo Trucco,redsalud.cl,gonzalo.trucco@redsalud.cl,medica,,virgen - sin medir
-Mariela Fernandez Fekete,southgenetics.cl,mfernandez@southgenetics.cl,medica,,virgen - sin medir
-Pablo Burr,ultravision.cl,pburr@ultravision.cl,medica,,virgen - sin medir
-Esteban Mendez Laport,wiclinic.cl,esteban.mendez@wiclinic.cl,medica,,virgen - sin medir
-Mario Jerez Espina,xinermed.cl,mjerez@xinermed.cl,medica,,virgen - sin medir
+Jaime Acuña,r-nueva.cl,jaime.acuna@r-nueva.cl,dental,"4 cookies; GA4 y Google Ads RECIBEN la visita, cookie en .doubleclick.net. Cero enlaces legales. 2 formularios",medido - sin escribir
+Catalina Penela,redimplantologia.cl,catalina@redimplantologia.cl,dental,"1 cookie quieto; al mover el mouse aparecen 18 y +128 peticiones (scripts retrasados hasta el gesto). RECIBEN en el tramo B: GA4 y Google Ads. Cookies en .youtube.com y .doubleclick.net. La unica pagina 'legal' es un descargo de precios. NO SE ESCRIBIO: el contacto del CSV es asistente dental, no decisora",medido - falta decisor
+Gonzalo Trucco,redsalud.cl,gonzalo.trucco@redsalud.cl,medica,"30 cookies antes de tocar nada y OCHO dominios ajenos. RECIBEN: GA4, Google Ads, TikTok, Clarity y LinkedIn Ads. Cargan tambien Meta y Bing. Hallazgo fuerte, pero es una de las cadenas grandes del pais: fuera del ticket del kit de $149.000 y con equipo legal propio",medido - fuera de ticket
+Mariela Fernandez Fekete,southgenetics.cl,mfernandez@southgenetics.cl,medica,"4 cookies y Google Ads RECIBE la visita en el primer tramo, pese a tener un gestor de consentimiento instalado. OJO: el marcador '{vendor_count} proveedores' esta sin reemplazar en el HTML del gestor, pero NO en el texto visible: solo se veria abriendo el panel de preferencias, y la sonda no hace clics. Hay que comprobarlo con un clic antes de usarlo",medido - falta comprobar con clic
+Pablo Burr,ultravision.cl,pburr@ultravision.cl,medica,"14 cookies antes de tocar nada, una en .tiktok.com y otra en .doubleclick.net. RECIBEN: GA4, Google Ads y el pixel de TikTok. Meta tambien carga. CERO enlaces legales",borrador 5-oct
+Esteban Mendez Laport,wiclinic.cl,esteban.mendez@wiclinic.cl,medica,"10 cookies antes de tocar nada, cookies en .tiktok.com y .doubleclick.net. RECIBEN: GA4, Google Ads y TikTok. SI tiene politica de privacidad y terminos de uso",medido - sin escribir
+Mario Jerez Espina,xinermed.cl,mjerez@xinermed.cl,medica,"1 cookie, nada de terceros. Tiene gestor de consentimiento con Aviso Legal, Politica de cookies y Declaracion de Privacidad. Mismo marcador '{vendor_count}' sin reemplazar en el HTML del gestor, no visible sin clic",medido - sin hallazgo fuerte
