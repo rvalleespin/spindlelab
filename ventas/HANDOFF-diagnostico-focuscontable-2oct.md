@@ -1,3 +1,18 @@
+# ✅ CERRADO — traspaso del mini-diagnóstico para Focus Contable (Eduardo Bascur)
+
+> **Este encargo ya se hizo. No lo vuelvas a tomar.**
+> El diagnóstico salió el **jueves 2-oct a las 19:26 (Santiago)**, con el PDF adjunto, desde
+> otra sesión. Verificado en Gmail: hilo `1a0f2aceca48e041`, tercer mensaje. Esa sesión sí
+> corrió la consulta real a ChatGPT por un contador en Puerto Montt, que era la condición
+> que este traspaso marcaba como obligatoria.
+>
+> **Lo que queda vivo no es el diagnóstico, es el seguimiento.** Eduardo no ha respondido
+> desde que lo recibió, y ni el copiloto ni nadie lo va a tomar: ver la nota al final.
+
+Lo de abajo queda como registro de cómo se armó el encargo.
+
+---
+
 # Traspaso: mini-diagnóstico para Focus Contable (Eduardo Bascur)
 
 **Para la sesión que corra la skill `mini-diagnostico` (Valen).** Esto es el contrato
@@ -105,3 +120,24 @@ el puerto 9530.
 - `ventas/contactos-diarioemprende-30sep.csv` — la fila de focuscontable.cl.
 - `marketing/diagnosticos/SPL-DIAG-2026-006-legalprisma/` — el último hecho, como
   referencia de formato.
+
+---
+
+## ⚠️ El hueco que dejó este caso (5-oct)
+
+Eduardo recibió el diagnóstico el 2-oct y no ha contestado. **Nadie lo va a seguir**, y no
+por descuido sino por diseño: el copiloto lo descarta dos veces.
+
+- En el **PASO 1** busca respuestas con `in:inbox newer_than:3d`. La respuesta de Eduardo es
+  del 1-oct, así que desde el 4-oct quedó fuera de esa ventana.
+- En el **PASO 3**, la cola de seguimientos excluye los hilos donde el prospecto respondió,
+  porque la regla dice que eso es una respuesta y no un seguimiento. Y la respuesta ya fue
+  contestada con el diagnóstico, así que tampoco entra por ahí.
+
+Resultado: un prospecto que pidió el entregable, lo recibió y se quedó callado no tiene
+dueño. **No es un caso aislado.** Dentimagen está igual desde agosto: recibió su
+diagnóstico el 11-ago, un correo de reactivación el 1-sep, y nada más.
+
+Falta una regla para el estado "entregable enviado, sin respuesta": quién lo revisa, a los
+cuántos días, y con qué se escribe. Mientras no exista, los leads más calientes del embudo
+son los que se enfrían en silencio.
