@@ -1,5 +1,11 @@
 # Fundamento — Frente EE.UU. (AEO / AI-visibility para med spas y clínicas)
 
+> **ESTADO: CERRADO el 21-sep-2026 (decisión de Ramón, corte 2 del checkpoint del día 77).**
+> Nunca se envió un Loom, así que el criterio de corte de abajo nunca llegó a correr. **Para
+> reabrirlo:** el primer Loom sale la misma semana en que se reabre, o no se abre; y solo si
+> aparece una razón nueva. Detalle en `marketing/oficina/clientes/spindlelab.md` (cortes del §8).
+> Todo lo de abajo queda como material para un reinicio con método. No es un plan en curso.
+
 > **Documento de Dirección (Tomás/troncal).** Funda el frente antes de ejecutarlo, según el
 > protocolo de "abrir un frente nuevo" del `agente-troncal-marketing`. La persona que ejecuta
 > (`persona-frente-eeuu`, "Sam") toma su estrategia de acá — no la improvisa. Decidido con
