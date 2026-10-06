@@ -422,3 +422,165 @@ Módulo 369 starts with three artists and will grow slowly, keeping room to show
 | 6 | **Formatos de edición** | 14 × 21,6, 15,2 × 22,9 (tapa blanda) y 21 × 28 cm (tapa dura) son tamaños de KDP; las páginas son de muestra. «Se imprimen a pedido» es cierto para KDP | Ninguno en la maqueta |
 | 7 | **Texto de muestra en gris o en grafito** (§0.1) | En gris se lee pendiente, que es lo que la corrección pide evitar | Lucía |
 | 8 | **Nada de esto va a producción** | En el sitio, cada hueco lo escriben María o cada artista en los dos idiomas (compromiso 5 del 24-sep). La lista de qué escribe cada una sigue en `copy-secciones.md` §6 | Regla del brief §6 |
+
+---
+
+## 14 · Studio Iron: texto de muestra nuevo o corregido (spec v2 §12)
+
+> Lo escribe Clara el 5-oct (noche) para los slots de muestra de `spec-visual.md` v2 §12 (8, 9, 12, 13, 20, 27 y 28). El texto fijo de los mismos slots está en `copy-secciones.md` §12. **Donde esta sección cambia algo anterior de este documento, gana esta.** Todo lleva `.pendiente` y su marca «muestra» / «sample» (spec 8.1); nada va a producción. Para revisión humana: lo aprueba Ramón antes de construir.
+> **Las obras, miradas de nuevo:** las 27 de M01 que están hoy en `GALERIA-MARIA-LORETO/maqueta/img/obras/` (hojas ampliadas en `scratchpad/clara-si/a-1.png` … `c-7.png`), las tapas e interiores de `img/ediciones/` (`scratchpad/clara-si/ediciones.png`) y la receta de la spec 3.2. Lo que escribí el 5-oct en la mañana describía el relleno de la v1 (desvíos 1, 2 y 30): A ya no son dos franjas borrosas, B ya no son cuadrados iguales con círculos, C ya no son marañas de líneas finas. Ahora A son campos de borde duro, B papeles de distintos largos sobre cartón y C trazos de pincel seco.
+
+### 14.0 · Qué reemplaza
+
+| Dónde | Antes | Ahora |
+|---|---|---|
+| §3 · statements de A, B y C | 45 a 65 palabras; B y C describían la v1 | §14.2, ≤ 35 palabras |
+| §3 · historia y proceso de A y B; bio e historia y proceso de C | Mencionaban dos franjas (A), cuadrados y círculos (B), plumas técnicas y minas (C) | §14.2. **No estaban en la lista de §12**: es el mismo defecto del desvío 2, en la misma página, junto a las mismas obras |
+| §4 · descripciones de las 27 obras | Describían la v1 | §14.3 |
+| §5 · descripción de cada edición | e-01 decía «hojas color crema» (el papel es casi blanco); e-03 pasaba de 35 palabras y decía «una por página» (el interior 1 pone los datos a la izquierda y la obra a la derecha) | §14.4, un solo texto por edición, ≤ 35 palabras, el mismo en Ediciones y en Edición |
+| §10 · `alt` del registro | «Registro de relleno: encuentro 001» | «Registro de relleno: Encuentro 001» (`copy-secciones.md` 12.4) |
+
+### 14.1 · Inicio
+
+#### Slot 8 · `inicio.enunciado` · H2 (`--t-enunciado`, punto final en cobalto)
+
+| ES | EN |
+|---|---|
+| De cada artista, la serie entera. | From each artist, the whole series. |
+
+6 palabras. Medido con Instrument Serif: dos líneas a 390 (46,8 px en 354) y dos a 1440 (100,8 px en `c2-8`).
+
+| | Candidato | Por qué |
+|---|---|---|
+| **A · elegido** | De cada artista, la serie entera. | Dice la decisión curatorial concreta que ya está en la visión curatorial de muestra (un conjunto de obras por artista, no piezas sueltas) y es exactamente lo que María va a ver en la maqueta: las nueve obras de cada serie. Pasa el test de intercambio: una galería de piezas sueltas no lo puede decir. Fragmento corto, como el de Studio Iron («Dedicated to a new era of design.») |
+| B | Pocos artistas, seguidos de cerca. | Repite el párrafo de abajo («artistas que la galería sigue de cerca») |
+| C | Una galería de obra en serie. | «En serie», en castellano, es producción en serie: la peor lectura posible para una galería de arte |
+| D | Series completas, de pocos artistas. | «Series completas» se lee primero como televisión |
+
+No usa la frase del correo de María ni «orden con pequeñas disrupciones», ni el vocabulario vetado de §1.
+
+#### Slot 9 · Enunciado, párrafo
+
+`acerca.enunciado` (§11) **tal cual**, 30 palabras: «Módulo 369 es una galería de arte en línea, en español y en inglés. Muestra obra hecha en taller, en series largas, de artistas que la galería sigue de cerca.» Funciona bajo el H2: dice qué es la galería, que el H2 no dice, y desarrolla «la serie entera» sin repetirlo. María escribe un solo texto, como Studio Iron, que repite el suyo en About.
+
+#### Slot 12 · `inicio.encuentro` · Banda Encuentro, párrafo
+
+| ES | EN |
+|---|---|
+| Una caja numerada del 001 al 369, con materiales para armar algo donde y con quien quieras. Cada una se activa una vez y queda registrada en el Libro. | A box numbered 001 to 369, with materials to make something wherever and with whoever you like. Each one is activated once and recorded in the Libro. |
+
+29 / 27 palabras, dos frases. Sale de `encuentro.que-es` (§6) y no agrega nada que ese texto no diga. Empieza sin repetir «Encuentro», que está justo arriba como título de la banda.
+
+#### Slot 13 · `inicio.ediciones` · Banda Ediciones, párrafo
+
+`ediciones.presentacion` (§5) **tal cual**, 25 palabras: «Módulo 369 edita cuadernos y libros con obra de sus artistas. Se imprimen a pedido y se compran en Amazon, en español y en inglés.» Un texto de María, dos lugares.
+
+### 14.2 · Artista: statements (slot 20) y lo que cambió por M01
+
+#### Statements (≤ 35 palabras, en itálica de 36 junto a una obra, sin comillas)
+
+| Artista | ES | EN | Palabras |
+|---|---|---|---|
+| A · Campo | Pinto dos colores por tela, a veces tres, y lo que más miro es el borde donde se tocan. Trabajo en capas delgadas, durante semanas, y paro cuando otra capa ya no cambia nada. | I paint two colours on each canvas, sometimes three, and what I watch most is the edge where they meet. I work in thin layers, over weeks, and stop when another layer would change nothing. | 34 · 35 |
+| B · Recorte | Corto papel en tiras y rectángulos de distintos largos y los pego sobre cartón, casi todos ajustados a una cuadrícula que después no se ve. Pocos tonos: negro, gris, kraft, blanco y algún rojo. | I cut paper into strips and rectangles of different lengths and glue them onto card, most fitted to a grid that no longer shows. Few tones: black, grey, kraft, white and the odd red. | 34 · 34 |
+| C · Línea | Dibujo con un pincel casi seco: tinta o grafito sobre papel claro, tinta clara sobre papel negro. Hago pocos trazos, de una sola pasada, y los dejo terminar donde el pincel se seca. | I draw with an almost dry brush: ink or graphite on pale paper, light ink on black paper. I make a few single-pass strokes and let them end where the brush runs dry. | 33 · 33 |
+
+- **A** se acortó y cambió «la línea donde se tocan» por «el borde»: los campos de M01 tienen borde duro y en a-02, a-05, a-06, a-07 y a-09 hay solo dos colores; en a-01, a-03, a-04 y a-08, tres. «Dos colores, a veces tres» es verdad en las nueve.
+- **B** ya no dice «cuadrados del mismo tamaño» (M01: tiras y rectángulos de largos distintos, el 70% a una cuadrícula de 6 × 6) ni promete un rojo en cada obra (b-06 no tiene).
+- **C** ya no dice «papel gris» (M01: papel casi blanco) ni describe líneas de pluma: son trazos de pincel seco que se abren hacia el final.
+- Medido: el de A ocupa 5 líneas a 26 px en 354 y 6 líneas a 36 px en 464.
+
+#### Historia y proceso de A (cambia una frase)
+
+| ES | EN |
+|---|---|
+| Cada serie empieza con una paleta corta, que Artista A prueba en papel antes de pasar a la tela. La tela recibe varias manos de base, lijadas entre una y otra. Después vienen las capas de color, muy diluidas, que se dejan secar días enteros; los bordes entre un campo y otro se trabajan al final, con un pincel chico. Una obra puede llevar veinte capas. Cuando la serie está terminada, se cuelga completa en el taller y recién ahí cada cuadro recibe su título y su número. | Each series begins with a short palette, which Artist A tests on paper before moving to canvas. The canvas takes several coats of ground, sanded between each one. Then come the layers of colour, heavily thinned and left to dry for days at a time; the edges between one field and the next are worked last, with a small brush. A single painting can carry twenty layers. When the series is finished, it is hung together in the studio, and only then does each painting get its title and number. |
+
+La bio de A no cambia.
+
+#### Historia y proceso de B (cambian el corte y la cuadrícula; sale el círculo)
+
+| ES | EN |
+|---|---|
+| Todo empieza con el corte. En una jornada, Artista B corta decenas de tiras y rectángulos de distintos largos y los separa por tono en cajas chicas. Sobre el cartón traza a lápiz una cuadrícula, que después borra, y pega de arriba hacia abajo: casi todas las piezas van ajustadas a la cuadrícula y algunas quedan sueltas, apenas giradas. Al final recorta un sector de la obra ya pegada y lo mueve. Antes de firmarla, cada obra pasa una semana bajo peso para que el papel no se ondule. | It all starts with cutting. In a single day, Artist B cuts dozens of strips and rectangles of different lengths and sorts them by tone into small boxes. A pencil grid goes onto the card, to be erased later, and the gluing runs from top to bottom: most pieces are fitted to the grid, and a few are left loose, slightly turned. Last of all, a section of the finished collage is cut out and moved. Before it is signed, each work spends a week under weights so the paper does not cockle. |
+
+La bio de B no cambia (cúter, regla, papeles de color plano y cartón siguen siendo verdad).
+
+#### Biografía de C (cambian las herramientas)
+
+| ES | EN |
+|---|---|
+| Artista C estudió arquitectura y dibujó planos a mano durante años antes de dedicarse por completo al dibujo. De la oficina conserva la mesa grande y el gusto por el papel de buen gramaje; las plumas técnicas las cambió por pinceles anchos y gastados. Trabaja en formatos chicos y medianos, siempre en series que comparten papel y pincel, y casi siempre de noche. Guarda los dibujos separados por serie en una cajonera plana, la misma que usaba para los planos. Del dibujo técnico le quedó también la costumbre de numerar cada hoja. | Artist C studied architecture and spent years drawing plans by hand before turning to drawing full time. From the office came the large table and a liking for heavy paper; the technical pens gave way to wide, worn brushes. Artist C works in small and mid-size formats, always in series that share a paper and a brush, and nearly always at night. The drawings are kept by series in a flat-file cabinet, the same one once used for plans. Technical drawing also left the habit of numbering every sheet. |
+
+#### Historia y proceso de C (pincel en vez de pluma y mina)
+
+| ES | EN |
+|---|---|
+| Antes de empezar, Artista C humedece el papel, lo estira sobre una tabla y lo deja secar un día. Cada dibujo se hace en una sola sesión, con el mismo pincel de principio a fin. El pincel se carga poco y se descarga en un trapo antes de tocar la hoja: por eso el trazo deja ver el papel entre las cerdas y se va secando hacia el final. En papel negro usa tinta blanca diluida. No corrige: si un dibujo no funciona, lo guarda y empieza otro. | Before starting, Artist C dampens the paper, stretches it on a board and leaves it to dry for a day. Each drawing is made in a single session, with the same brush from beginning to end. The brush takes very little ink and is wiped on a rag before it touches the sheet, so the paper shows between the bristle marks and each stroke dries out towards its end. On black paper, the ink is diluted white. Nothing is corrected: if a drawing does not work, it is put away and another one begins. |
+
+### 14.3 · Ficha: las 27 descripciones (slot 27; `obra.<id>.descripcion`)
+
+Una o dos frases de lo que se ve, en la voz de la galería. La técnica es la de `app.js` (A impar óleo, par acrílico; B impar collage, par papel recortado; C 02, 05 y 08 grafito, el resto tinta), con los nombres nuevos de B (`copy-secciones.md` 12.0). Ninguna descripción contradice su fila «Técnica»: C 01, 04 y 07, en papel negro, son tinta.
+
+| Obra | Técnica ES / EN | ES | EN |
+|---|---|---|---|
+| a-01 · Campo 01 | Óleo sobre tela / Oil on canvas | Terracota en algo más de la mitad de arriba y arena abajo, separados por una franja angosta casi negra. | Terracotta across a little over the top half and sand below, divided by a narrow, near-black band. |
+| a-02 · Campo 02 | Acrílico sobre tela / Acrylic on canvas | Un solo campo ocre sobre un fondo café oscuro, corrido hacia la izquierda. | A single ochre field on a dark brown ground, set towards the left. |
+| a-03 · Campo 03 | Óleo sobre tela / Oil on canvas | Un campo arena ocupa la izquierda, hasta pasada la mitad. A la derecha, sobre crema, una franja verde vertical que no toca los bordes. | A sand field takes up the left, past the middle. On the right, against cream, an upright green band that stops short of the edges. |
+| a-04 · Campo 04 | Acrílico sobre tela / Acrylic on canvas | Tres franjas horizontales del mismo alto: rojo arriba, casi negro al medio y arena abajo. | Three horizontal bands of equal height: red above, near-black in the middle and sand below. |
+| a-05 · Campo 05 | Óleo sobre tela / Oil on canvas | Fondo arena, cruzado de arriba abajo por una franja casi negra cerca del borde izquierdo. | A sand ground, crossed from top to bottom by a near-black band close to the left edge. |
+| a-06 · Campo 06 | Acrílico sobre tela / Acrylic on canvas | Un rectángulo crema, vertical, sobre un rojo óxido, corrido hacia la derecha. | An upright cream rectangle on a rust red, set towards the right. |
+| a-07 · Campo 07 | Óleo sobre tela / Oil on canvas | Verde oliva en casi toda la tela y una franja arena abajo. | Olive green over most of the canvas, with a band of sand along the bottom. |
+| a-08 · Campo 08 | Acrílico sobre tela / Acrylic on canvas | Dos campos verticales sobre gris piedra: terracota a la izquierda y café oscuro a la derecha, con una franja angosta del fondo entre los dos. | Two vertical fields on stone grey: terracotta on the left and dark brown on the right, with a narrow strip of ground between them. |
+| a-09 · Campo 09 | Óleo sobre tela / Oil on canvas | Un cuadrado ocre al centro, sobre un rojo ladrillo oscuro. Cierra la serie. | An ochre square in the centre, on a dark brick red. The last work in the series. |
+| b-01 · Recorte 01 | Collage sobre cartón / Collage on card | Pocas piezas, sueltas sobre el cartón. Arriba a la derecha, una tira negra larga; más abajo, un rojo que se sale por el borde derecho. | A few pieces, loose on the card. Top right, a long black strip; further down, a red that runs off the right edge. |
+| b-02 · Recorte 02 | Papel recortado sobre cartón / Cut paper on card | Sobre un cartón más oscuro, dos rojos: un cuadrado arriba a la izquierda y una tira que entra por el borde izquierdo. | On a darker card, two reds: a square at the upper left and a strip coming in from the left edge. |
+| b-03 · Recorte 03 | Collage sobre cartón / Collage on card | En la mitad de abajo, las piezas se montan unas sobre otras y asoma un rojo bajo un negro. Arriba, tiras grises entran por los dos bordes. | In the lower half the pieces overlap, and a red shows beneath a black. Above, grey strips come in from both edges. |
+| b-04 · Recorte 04 | Papel recortado sobre cartón / Cut paper on card | Las piezas se juntan arriba y abajo, y el centro queda casi libre. Abajo, una tira negra larga y un rojo contra el borde derecho. | The pieces gather at the top and bottom, leaving the centre almost clear. At the bottom, a long black strip and a red against the right edge. |
+| b-05 · Recorte 05 | Collage sobre cartón / Collage on card | La más cargada de la serie: piezas grandes, negras y blancas, que casi tapan el cartón. Un rojo alto arriba, al centro. | The fullest work in the series: large black and white pieces that almost cover the card. A tall red at the top, in the middle. |
+| b-06 · Recorte 06 | Papel recortado sobre cartón / Cut paper on card | Formato alto y sin rojo. Las piezas se reparten arriba y en un grupo bajo la mitad, donde un negro grande se monta sobre un kraft. | A tall format, with no red. The pieces spread across the top and into a group below the middle, where a large black overlaps a kraft. |
+| b-07 · Recorte 07 | Collage sobre cartón / Collage on card | De las más despejadas: pocas piezas, casi todas tiras. Un rojo corto entra por el borde derecho, arriba. | One of the sparest in the series: few pieces, most of them strips. A short red comes in from the right edge, at the top. |
+| b-08 · Recorte 08 | Papel recortado sobre cartón / Cut paper on card | Densa, con dos tiras rojas en la mitad de abajo. A la derecha, un blanco dentro de un marco negro; abajo a la izquierda, un blanco grande que se sale por el borde. | Dense, with two red strips in the lower half. On the right, a white inside a black frame; bottom left, a large white that runs off the edge. |
+| b-09 · Recorte 09 | Collage sobre cartón / Collage on card | Horizontal, con mucho cartón a la vista. Arriba, una fila de piezas casi alineada; abajo, un negro y un rojo suben desde el borde. | Horizontal, with plenty of card showing. Along the top, a near-straight row of pieces; below, a black and a red rise from the bottom edge. |
+| c-01 · Línea 01 | Tinta sobre papel / Ink on paper | Tinta clara sobre papel negro. Trazos de pincel seco en la mitad de abajo, dos de ellos cruzados; la mitad de arriba queda oscura. | Light ink on black paper. Dry-brush strokes across the lower half, two of them crossing; the upper half stays dark. |
+| c-02 · Línea 02 | Grafito sobre papel / Graphite on paper | Dos trazos se cruzan al centro. A la derecha, uno corto y casi vertical; abajo, otro solo que llega al borde derecho. | Two strokes cross in the middle. To the right, a short, near-vertical one; below, another on its own that reaches the right edge. |
+| c-03 · Línea 03 | Tinta sobre papel / Ink on paper | Un ángulo a la izquierda y, a la derecha, dos trazos que se cruzan en aspa. El tercio de abajo queda sin trazo. | An angle on the left and, on the right, two strokes crossing in an X. The bottom third is left bare. |
+| c-04 · Línea 04 | Tinta sobre papel / Ink on paper | Tinta clara sobre papel negro. Los trazos se cruzan a la derecha del centro; uno entra por el borde izquierdo y otro sube desde abajo. | Light ink on black paper. The strokes cross just right of centre; one comes in from the left edge and another rises from the bottom. |
+| c-05 · Línea 05 | Grafito sobre papel / Graphite on paper | Formato alto y pocos trazos, separados entre sí. Uno baja desde el borde de arriba; los demás quedan sueltos, con mucho papel alrededor. | A tall format with a few strokes, set apart. One drops from the top edge; the rest sit loose, with plenty of paper around them. |
+| c-06 · Línea 06 | Tinta sobre papel / Ink on paper | Varios trazos que se cruzan abajo, al centro, y dos verticales arriba. Uno corto y ancho cierra abajo a la izquierda. | Several strokes crossing low in the middle, and two upright ones above. A short, wide stroke sits at the lower left. |
+| c-07 · Línea 07 | Tinta sobre papel / Ink on paper | Tinta clara sobre papel negro. Un trazo largo baja en diagonal hacia la derecha; abajo, dos trazos anchos llegan hasta el borde. | Light ink on black paper. A long stroke runs diagonally down to the right; below, two wide strokes reach the bottom edge. |
+| c-08 · Línea 08 | Grafito sobre papel / Graphite on paper | Horizontal. Dos trazos se cruzan sobre el centro, con un ángulo a la izquierda y uno suelto a la derecha; la mitad de abajo queda sin trazo. | Horizontal. Two strokes cross above the centre, with an angle on the left and a loose one on the right; the lower half is left bare. |
+| c-09 · Línea 09 | Tinta sobre papel / Ink on paper | Trazos cargados hacia la izquierda, que se cruzan en una forma alta. La derecha y la parte de abajo quedan libres. | Strokes weighted to the left, crossing in a tall shape. The right side and the bottom are left clear. |
+
+- Comprobadas contra los dos lugares donde una obra aparece con su descripción al lado o cerca: la ficha (obra plana) y la Edición (e-02 abre con Recorte 07; e-03 con Línea 02 y Campo 05 y 06).
+- Si M01 se vuelve a generar con otras semillas, cambian las de B y C (posiciones de piezas y trazos); las de A dependen solo de la tabla de la spec 3.2, que no cambia.
+
+### 14.4 · Ediciones: un texto por edición (slot 28)
+
+Es la descripción breve del bloque partido de Ediciones **y** la descripción de la página de cada Edición: María escribe uno.
+
+| Edición | ES | EN | Palabras |
+|---|---|---|---|
+| 01 · Cuaderno | Cuaderno de hojas lisas, con cuatro láminas a color de la serie Campo, de Artista A, repartidas entre las páginas. Tapa blanda negra, del tamaño justo para llevar en un bolso. | A notebook of plain pages, with four colour plates from Artist A's Field series spread through it. Black softcover, sized to carry in a bag. | 31 · 25 |
+| 02 · Cuaderno | Cuaderno de tapa kraft, con una cuadrícula de puntos apenas marcada en las hojas: sirve para escribir o para dibujar a mano. Abre con Recorte 07, de Artista B, y sus datos. | A notebook with a kraft cover and a faint dot grid on its pages, for writing or drawing by hand. It opens with Artist B's Cut-out 07 and its details. | 32 · 30 |
+| 03 · Libro | Libro de tapa dura con las obras de los tres artistas con que parte Módulo 369: nueve de cada uno, con sus datos. Cierra con el statement de cada artista. | A hardcover book of work by the three artists Módulo 369 starts with: nine by each, with their details. It closes with each artist's statement. | 30 · 25 |
+
+- Comprobadas contra las tapas e interiores de M03: e-01 tapa grafito, hojas lisas y Campo 03 a página completa; e-02 tapa kraft, Recorte 07 con sus datos y la doble página de puntos; e-03 datos de Línea 02 a la izquierda y la obra a la derecha, y Campo 05 con Campo 06.
+- Páginas y formato (§5) no cambian.
+
+### 14.5 · Pasada de borrado y búsqueda
+
+| Se borró | Por qué |
+|---|---|
+| «la línea donde se tocan» (A) | Los bordes de M01 son de campo, no una línea entre dos franjas |
+| «Esa línea nunca sale igual, aunque use los mismos colores» (A) | No cabía en 35 palabras y era la frase que menos hacía |
+| «En cada obra levanto una parte ya pegada…» (statement de B) | No se ve en las obras; queda en historia y proceso, que es donde se cuenta cómo se trabaja |
+| «Termino cuando ya no sé dónde va la línea siguiente» (C) | Describía dibujo de línea continua; quedó el criterio del pincel que se seca |
+| «hojas color crema» (e-01) | El papel de M03 es casi blanco |
+| «una por página» (e-03) | El interior 1 pone los datos en una página y la obra en la otra |
+| «casi vacío» (primer borrador de b-04) | «Vacío» es vocabulario de María (§1); quedó «casi libre» |
+| «Hago pocos trazos, sin volver a cargar el pincel» (primer borrador de C) | Contradecía la historia y proceso (el pincel se carga en cada trazo) |
+
+**Búsqueda hecha sobre esta sección**, antes de entregarla: cero rayas (U+2014 y U+2013); ningún texto de muestra usa el vocabulario vetado de §1 (hallazgo, accidente, inesperado, estructura, acumulación, fragmento, repetición, vacío, gesto, disrupción, romper, escala, desplazado, orden, limpio, elegante, sorprender) ni su equivalente inglés; cero «nosotros», «nuestro» y «usted»; cero cifras de precio. Los conteos de palabras de 14.1, 14.2 y 14.4 están contados con script, no a ojo.
+**Voz:** los statements son lo único en primera persona y suenan a alguien hablando de su taller; las descripciones, a quien atiende la galería diciendo lo que hay en la pared, una cosa por frase. Las tres bios siguen pasando el test de intercambio de oficio.
+**Lo que hay que mirar antes de mostrar:** sigue valiendo §13. Se suma que la bio de C ahora habla de pinceles: si la amiga de María pinta o dibuja con pincel, el «¿esa soy yo?» de §13-3 se mira con más cuidado.

@@ -694,3 +694,190 @@ Cada etiqueta dice en una frase qué parte cambia María desde el panel. Habla d
 | 8 | Contador de Encuentro | «007/369», cuántos van, marcado de muestra | «001/369» como formato de numeración |
 | 9 | Inglés | Británico (Enquire) | Americano (Inquire), en tres textos |
 | 10 | Selector 3 · 6 · 9 (C22) | Copy listo en la vista 2 si entra | |
+
+---
+
+## 12 · Studio Iron: slots nuevos o cambiados (spec v2 §12)
+
+> Lo escribe Clara el 5-oct (noche) contra `spec-visual.md` v2 §12, después de que Ramón pasara a Studio Iron como referencia dominante (brief §10, segunda corrección). Aquí va **el texto fijo**; el texto de muestra que pide §12 (slots 8, 9, 12, 13, 20, 27 y 28, más dos correcciones fuera de la lista) está en `copy-muestra.md` §14. **Donde esta sección contradice algo anterior de este documento, gana esta** (la lista exacta está en 12.0). Para revisión humana: lo aprueba Ramón antes de construir.
+> **Medido, no estimado:** los anchos que se citan salen de Chrome headless con Archivo, IBM Plex Mono e Instrument Serif cargadas de Google Fonts, a los tamaños de la spec 1.2 (`scratchpad/clara-si/medir.html`).
+> **Ningún slot pide algo que el brief prohíbe:** no hay cifras de precio, carrito, newsletter como función ni texto atribuido a María. Lo que entregué distinto de lo que proponía la spec está en 12.6, con su porqué.
+
+### 12.0 · Qué cambia de este documento (y nada más)
+
+| Dónde | Antes | Ahora | Por qué |
+|---|---|---|---|
+| 2.2 · Inicio | Sin titular visible; el enunciado vive solo en Acerca | Enunciado en el inicio: H2 + párrafo de muestra (copy-muestra §14.1) | Spec D4 y slot 8: Studio Iron lo tiene y es la palabra enorme a 390. El párrafo es el mismo de Acerca, así que María sigue escribiendo un texto |
+| 3.3 · Botón del menú a 390 | «Menú» / «Cerrar» visibles | Sin texto visible; `aria-label` (12.1-1) | Spec 2.0.4: dos rayas, como Studio Iron |
+| 3.4 · Pie | Nombre, descriptor, enlaces, dominio | Titular, enlace, tres columnas y línea legal (12.1-4 a 7) | Spec 2.0.14 |
+| 4.1 · Pie de tarjeta y del carrusel | «Artista A · Campo 04, 2025» | Título «Campo 04 (2025)» a la izquierda, autor «ARTISTA A» a la derecha (12.2-10, 12.3-22) | Spec 2.0.6: el pie de tarjeta de Studio Iron |
+| 4.1 · Técnicas de B | «Collage sobre papel» · «Papel recortado» | «Collage sobre cartón» · «Papel recortado sobre cartón» / «Collage on card» · «Cut paper on card» | El collage de M01 está pegado sobre cartón y el statement de B lo dice; la fila «Técnica» no puede decir otra cosa. Las opciones cortas del filtro no cambian |
+| 4.2 · Botón Comprar | «Comprar con Mercado Pago» | Botón-fila «Comprar» · «Mercado Pago →» (12.3-25) | Es la variante corta que 4.2 ya dejaba prevista |
+| 4.2 · Fila «Precio», estado 2 sin precio | «Precio a consultar» | «A consultar» / «On request» | La fila ya se llama «Precio»: se leía «PRECIO · Precio a consultar» |
+| 4.3 · H1 de la ficha | «Campo 04», con fila «Año» | «Campo 04, 2025», sin fila «Año» (12.3-23) | Spec 2.5 |
+| 4.4 · Filtros | `select` y vista «Muro · Índice» | Opciones de texto y vista «Muro · Lista» (12.3-21) | Spec D21 |
+| 5-1 y 5-8 · Bajo el contador | «activados · de muestra» | «activados de muestra» / «sample activations» | Slot 11. Es la misma clave en Inicio y en Encuentro (`activadosMuestra`): cambia en las dos, y así hay un solo nombre |
+| 5-7 · Botón de Edición | «Comprar en Amazon» | Botón-fila «Comprar» · «Amazon →» (12.4-29) | Paralelo exacto al de la obra; «Comprar en Amazon · AMAZON →» decía Amazon dos veces |
+| 5-13 · Cómo se compra | Cuatro líneas con prefijo («Obras: …») | Cuatro frases completas, sin prefijo (12.3-26) | Spec 2.13 pone un H2 por vía; además las dos primeras se reusan en la ficha, donde no hay H2 |
+| 5-14 · Contacto | Sin H2 de sección | H2 «Consultas» · «Correo» · «Instagram» · «Newsletter» (12.4-37) | Spec 2.14; «Formulario» cambia a «Consultas» (12.6) |
+| 7 · Avisos | aviso único de la foto de Biografía | dos avisos, A y B/C (12.3-19) | Resuelve el desvío 14 |
+
+### 12.1 · Cromo
+
+| # | Slot | ES | EN | Nota |
+|---|---|---|---|---|
+| 1 | Botón de menú (≤ 1000), `aria-label` | Abrir menú · Cerrar menú | Open menu · Close menu | Ya no lleva texto visible. Con `aria-expanded` bastaría un rótulo fijo («Menú» / «Menu»); si la spec cambia el rótulo, estos son los dos |
+| 2 | Panel y submenú Artistas: primera celda | Todos los artistas | All artists | La spec proponía «Todas las artistas»: ver 12.6-1. Mide 94,8 px en Archivo 500 12; cabe en la celda de 114 a 768 y de 97,9 a 1001 |
+| 3 | Submenú a 390: volver | ‹ Volver | ‹ Back | `.etiqueta-ancha`, sale en mayúsculas |
+| 3b | Ítem del menú a 390 que abre el subnivel | Artistas › | Artists › | El «›» va en Archivo 16 (spec 2.0.4) |
+| 4 | **Titular del pie** (`--t-titulo` mayúscula; las tres palabras marcadas, en `<em>`) | Consulta por una *obra*, una *edición* o un *encuentro*. | Enquire about a *work*, an *edition* or an *Encuentro*. | 9 palabras en los dos idiomas. Lleva a Contacto con el enlace del slot 5. Medido: 740 px en una línea a 36 (cabe en `c1-5`, 781, a 1440); a 26, en 354 px, dos líneas |
+| 5 | Enlace del pie (a Contacto) | Escribir a Módulo 369 → | Write to Módulo 369 → | 207 / 189 px en `.etiqueta-ancha`. No repite «consulta», que ya está en el titular |
+| 6 | Rótulos de las columnas del pie | Galería · Módulo 369 · Redes | Gallery · Módulo 369 · Social | Los de Studio Iron son STUDIO · SUPPORT · SOCIAL |
+| 6b | Contenido de Redes | @modulo369 | @modulo369 | Sin enlace y con su marca «muestra» (copy-muestra §9 y §13-2: la cuenta no está verificada) |
+| 7 | Línea legal del pie | Módulo 369 · Galería de arte en línea · modulo369.com | Módulo 369 · Online art gallery · modulo369.com | El descriptor sigue por confirmar con María (§10-1) |
+
+**Titular del pie, con los descartes a la vista** (paso 2):
+
+| | Candidato | Por qué |
+|---|---|---|
+| **A · elegido** | Consulta por una *obra*, una *edición* o un *encuentro*. | Dice las tres cosas que se pueden pedir y usa el mismo verbo que el botón de la ficha («Consultar por esta obra»): un concepto, un nombre. Imperativo de tú, sin pregunta. Es lo que diría quien atiende la galería si alguien pregunta «¿y cómo pido algo?» |
+| B | Escribe por una obra, una edición o un encuentro. | «Escribir por» en Chile se entiende como escribir en nombre de alguien |
+| C | Para una obra, una edición o un encuentro, escribe. | El verbo al final suena a remate armado |
+| descartado | El de Studio Iron («Be the first to hear about new objects, collections and studio news») | Es la invitación al newsletter, que no está incluido (brief §8-2) |
+
+La serie de tres del titular no es tricolon de ritmo: son las tres vías reales de la galería, y la spec pide justamente tres palabras en itálica.
+
+### 12.2 · Inicio
+
+| # | Slot | ES | EN | Nota |
+|---|---|---|---|---|
+| 8 | Enunciado, H2 (`inicio.enunciado`) | muestra: copy-muestra §14.1 | | ≤ 7 palabras, punto final en cobalto |
+| 9 | Enunciado, párrafo | muestra: `acerca.enunciado` tal cual (30 palabras) | | Confirmo que funciona en su nuevo lugar: desarrolla el H2 sin repetirlo |
+| 10 | Línea de pie y controles del carrusel | Título: «{titulo} ({anio})», p. ej. «Línea 04 (2025)» · autor: «{artista}», sale «ARTISTA C» | «Line 04 (2025)» · «ARTIST C» | Reemplaza `pieCarrusel`. Medido a 390: título 84 + autor 49 + controles ≈ 306 px de 366: cabe en una línea |
+| 10b | Controles | ← · 01 / 05 · → | igual | `aria-label` de las flechas: «Obra anterior» / «Obra siguiente» · «Previous work» / «Next work» (copy 5-1, sin cambio) |
+| 11 | Banda Encuentro: rótulo | 007/369 · activados de muestra | 007/369 · sample activations | Gris, sin cobalto (D6). El mismo texto va bajo el contador de Encuentro (12.0) |
+| 12 | Banda Encuentro: párrafo (`inicio.encuentro`) | muestra: copy-muestra §14.1 | | ≤ 30 palabras |
+| 13 | Banda Ediciones: párrafo (`inicio.ediciones`) | muestra: `ediciones.presentacion` tal cual (25 palabras) | | Un texto de María sirve en los dos lugares |
+| 14 | Enlaces de banda | Qué es Encuentro · Ver las ediciones | About Encuentro · See the editions | Los dos **sin flecha**: son la misma pieza (enlace de acción ancho) en dos bandas seguidas, y la spec 2.1 los escribe así |
+| 15 | Tiras: `aria-label` de la pista | Obras · Artistas | Works · Artists | |
+| 15b | Tiras: flechas, `aria-label` | Anterior · Siguiente | Previous · Next | Las flechas están fuera de la pista: que la línea de título sea un grupo con `aria-labelledby` al título de la tira, así el lector de pantalla dice «Obras, Siguiente» y no tres «Siguiente» iguales en la página |
+| 16 | Tarjeta de artista: conteo | {n} obras · 1 obra | {n} works · 1 work | `.etiqueta`: sale «9 OBRAS» |
+
+### 12.3 · Artista, Obras, Ficha
+
+| # | Slot | ES | EN | Nota |
+|---|---|---|---|---|
+| 17 | Rótulo del hero | Detalle · Campo 01, 2025 | Detail · Field 01, 2025 | B: «Detalle · Recorte 09, 2026» / «Detail · Cut-out 09, 2026». C: «Detalle · Línea 08, 2026» / «Detail · Line 08, 2026». Años de `app.js` (01 a 04 son 2025; 05 a 09, 2026) |
+| 17b | `alt` del hero | Detalle de relleno de Campo 01, de Artista A | Placeholder detail of Field 01, by Artist A | Patrón: «Detalle de relleno de {titulo}, de {artista}» |
+| 18 | Rótulo de Biografía | Biografía | Biography | |
+| 19 | Aviso de la imagen de Biografía, Artista A | Maqueta · La foto de taller es opcional. Si no hay, aquí va una obra. | Mock-up · The studio photo is optional. Without one, a work goes here. | Resuelve el desvío 14: dos avisos |
+| 19b | Aviso de la imagen de Biografía, Artistas B y C | Maqueta · Si no hay foto de taller, aquí va una obra suya. | Mock-up · Without a studio photo, one of the artist's works goes here. | «Suya» concuerda con «obra» y no le pone género a la artista |
+| 20 | Statement | muestra: copy-muestra §14.2 | | ≤ 35 palabras, sin comillas; B y C reescritos sobre M01 |
+| 21 | Obras: filtro Artista (celdas) | Todos los artistas · Artista A · Artista B · Artista C | All artists · Artist A · Artist B · Artist C | Mismo texto que el slot 2: un concepto, un nombre. Sin rótulo de grupo (las celdas se explican solas) |
+| 21b | Obras: filtro Técnica | Técnica: Todas · Óleo · Acrílico · Collage · Recortado · Tinta · Grafito | Medium: All · Oil · Acrylic · Collage · Cut paper · Ink · Graphite | Opciones cortas; la técnica larga queda en la ficha |
+| 21c | Obras: filtro Tamaño | Tamaño (lado mayor): Todos · Hasta 50 cm · De 50 a 100 cm · Más de 100 cm | Size (longest side): All · Up to 50 cm · 50 to 100 cm · Over 100 cm | Los de copy 4.4, como pide el slot. **No** «Chico · Mediano · Grande» de la spec 2.4: ver 12.6-3. Medido: 316 / 262 px; a 390 pasa a dos líneas con `flex-wrap` |
+| 21d | Obras: filtro Disponibilidad | Disponibilidad: Todas · Disponible · Vendida · Colección privada | Availability: All · Available · Sold · Private collection | |
+| 21e | Vista | Vista: Muro · Lista | View: Wall · List | «Lista» reemplaza a «Índice». El rótulo «Vista» queda solo para lectores de pantalla a 390 (desvío 27) |
+| 21f | Conteo, «Quitar filtros», «Filtrar», estado vacío | sin cambio (copy 4.4) | | |
+| 21g | Lista (nivel 2): botón contorno por estado | Comprar · Consultar | Buy · Enquire | Corto porque va solo, bajo los datos de la obra |
+| 22 | Pie de tarjeta | Campo 04 (2025) · ARTISTA A | Field 04 (2025) · ARTIST A | Chip: «Disponible» / «Vendida» / «Colección privada» (sin cambio) |
+| 23 | **H1 de la ficha** | Campo 04, 2025 | Field 04, 2025 | Sale la fila «Año»; el `dl` queda Técnica · Medidas · Precio · Disponibilidad / Medium · Dimensions · Price · Availability |
+| 24 | Rótulos de imagen, ficha | 01 · Vista general · 02 · Detalle | 01 · Full view · 02 · Detail | En los segmentos a ≤ 1000, el mismo texto sin el «·»: «01 Vista general» |
+| 24b | Rótulos de imagen, Edición | 01 · Portada · 02 · Interior · 03 · Interior | 01 · Cover · 02 · Inside pages · 03 · Inside pages | |
+| 25 | **Botón-fila**, estado 1 (lleno) | Comprar · Mercado Pago → | Buy · Mercado Pago → | Medido a 390 (318 px útiles dentro del botón): 64 + 114 px. Debajo, el enlace «Consultar por esta obra» / «Enquire about this work» |
+| 25b | Botón-fila, estado 2 sin precio (lleno) | Consultar el precio · → | Enquire about the price · → | **No** «Consultar por esta obra · PRECIO A CONSULTAR»: ver 12.6-2. La fila Precio del `dl` dice «A consultar» / «On request» |
+| 25c | Botón-fila, estado 2 con precio y sin link (lleno; no aparece en la maqueta) | Consultar por esta obra · → | Enquire about this work · → | El precio ya está en el `dl` |
+| 25d | Botón-fila, estados 3 y 4 (contorno) | Consultar por esta obra · → | Enquire about this work · → | 168 px de 318: cabe |
+| 26 | Resumen plegable de la ficha | › Cómo se compra | › How to buy | Contenido: `compraObras` y `compraConsultas` de 12.3-26b. Funcionan en la ficha porque ya no llevan el prefijo «Obras:» y son frases completas |
+| 26b | Cómo se compra (Tienda y ficha) | **Obras:** Cada obra se compra desde su ficha, con el botón Comprar. El pago se hace en Mercado Pago, obra por obra; no hay carrito. · **Consultas:** Si una obra no tiene botón Comprar, o prefieres conversarlo antes, usa Consultar en su ficha o escribe desde Contacto. · **Encuentro:** La caja se pide o se compra en Activar un encuentro. · **Ediciones:** Cada edición se compra en Amazon, en español o en inglés, desde su página. | **Works:** Each work is bought from its own page, with the Buy button. Payment goes through Mercado Pago, one work at a time; there is no cart. · **Enquiries:** If a work has no Buy button, or you would rather talk first, use Enquire on its page or write from Contact. · **Encuentro:** The box is requested or bought on Activate an Encuentro. · **Editions:** Each edition is bought on Amazon, in Spanish or English, from its own page. | Lo que va en negrita es el H2 de Tienda (spec 2.13), no parte de la frase. El criterio del brief §7 («cómo se compra cada cosa y que no hay carrito») sigue cumplido por la línea de Obras |
+| 27 | Descripciones de las 27 obras | muestra: copy-muestra §14.3 | | Escritas mirando las obras de M01 |
+
+### 12.4 · Ediciones, Encuentro, Libro, Acerca, Tienda, Contacto
+
+| # | Slot | ES | EN | Nota |
+|---|---|---|---|---|
+| 28 | Descripción breve de cada edición | muestra: copy-muestra §14.4 | | ≤ 35 palabras; es la misma en Ediciones y en Edición |
+| 29 | Botón de cada edición (Ediciones) | Ver la edición | See the edition | Botón contorno |
+| 29b | Botón-fila de la Edición (lleno) | Comprar · Amazon → | Buy · Amazon → | Ver 12.0. Debajo, sin cambio: «Edición en inglés →» / «Spanish edition →» |
+| 29c | Bloque partido de Ediciones: tipo y emisor | Cuaderno / Libro · Módulo 369 | Notebook / Book · Módulo 369 | Sin cambio |
+| 30 | Encuentro: categoría y títulos de bloque | Encuentro · Cómo funciona · Formas de activación | Encuentro · How it works · Ways to activate | Confirmados |
+| 31 | Encuentro: enlace bajo la franja de registros | Ver el Libro | See the Libro | |
+| 32 | Activar: categoría de cada opción | Opción 1 · Opción 2 | Option 1 · Option 2 | Títulos sin cambio: «Pedir la caja» / «Comprar la caja» |
+| 32b | Activar: botones-fila | Enviar solicitud · → · Comprar con Mercado Pago · → | Send request · → · Buy with Mercado Pago · → | Aquí sí cabe «Comprar con Mercado Pago» (202 px): la derecha lleva solo la flecha. Si Lucía prefiere el mismo par que la obra: «Comprar» · «Mercado Pago →» |
+| 33 | Encuentro activado: rótulo del carrusel | Otros encuentros del Libro | Other Encuentros in the Libro | La spec traía «encounters»: Encuentro no se traduce (§0) |
+| 33b | Encuentro activado: paginación | ← 01 / 06 → | igual | `aria-label` de las flechas: «Encuentro anterior» / «Encuentro siguiente» · «Previous Encuentro» / «Next Encuentro» |
+| 34 | Libro: pie del destacado y de los otros | Encuentro {nnn} | Encuentro {nnn} | Sin cambio |
+| 35 | Tienda: opciones y conteo | Todo · Obras · Encuentro · Ediciones · «{n} piezas» / «1 pieza» | All · Works · Encuentro · Editions · «{n} pieces» / «1 piece» | |
+| 35b | Tienda: estado vacío (spec 4.18) | No hay piezas en esta categoría por ahora. · Ver todas | Nothing in this category right now. · See all | Con los datos de la maqueta no aparece; queda escrito para el sitio |
+| 35c | Tienda: título de la tarjeta de la caja y de cada tapa | Caja de Encuentro · Edición 01 | Encuentro box · Edition 01 | Autor a la derecha: «MÓDULO 369». La caja y las tapas no llevan año |
+| 35d | Tienda: rótulo sobre los cuatro H2 de compra | Cómo se compra | How to buy | Recomendado: sin él, el H2 «Obras» bajo la grilla se lee como otra lista de obras (ver 12.6-6) |
+| 36 | Tienda: chip de vía | Mercado Pago · Amazon | Mercado Pago · Amazon | Nombres propios, no se traducen |
+| 36b | Tienda: botones | Comprar · Ver en Amazon | Buy · View on Amazon | Avisos al tocar: el de la ficha (obra), el de la caja (copy §7) y el de Amazon de la Edición, sin cambio |
+| 37 | Contacto: H2 de las secciones | Consultas · Correo · Instagram · Newsletter | Enquiries · Email · Instagram · Newsletter | «Consultas» en vez de «Formulario»: 12.6-5 |
+| 37b | Contacto: botón-fila del formulario | Enviar consulta · → | Send enquiry · → | |
+| 37c | Contacto: campo del newsletter | Tu correo · Suscribirme → | Your email · Subscribe → | El aviso de no incluido sigue siempre visible (copy §7) |
+| 38 | `alt` de las imágenes nuevas | tabla de abajo | | Todos dicen «de relleno» |
+
+**Slot 38 · `alt` de las imágenes nuevas** (spec 3.1; ES y EN; los patrones usan los datos de `app.js`):
+
+| Imagen (spec 3.1) | `alt` ES | `alt` EN |
+|---|---|---|
+| 3.1.1 · Láminas del carrusel y 3.1.2 · tarjetas de obra (vista en muro) | Obra de relleno: {titulo}, de {artista}, colgada en un muro | Placeholder work: {titulo}, by {artista}, hung on a wall |
+| 3.1.3 · Tarjeta de artista y Biografía de B y C | el mismo patrón, con su obra (Campo 07, Recorte 07, Línea 07) | the same pattern |
+| 3.1.4 · Miniaturas del panel, del submenú y del filtro | `alt=""` | `alt=""` |
+| 3.1.5 · Hero de Artista | Detalle de relleno de {titulo}, de {artista} | Placeholder detail of {titulo}, by {artista} |
+| 3.1.6 · Obra sola de Artista | Obra de relleno: {titulo}, de {artista} | Placeholder work: {titulo}, by {artista} |
+| 3.1.7 · Imagen del statement | patrón de vista en muro | wall-view pattern |
+| 3.1.10 · Tapas en Tienda | Portada de relleno: Edición 01 | Placeholder cover: Edition 01 |
+| 3.1.12 · Banda Ediciones | Interior de relleno, Edición 03: doble página con Línea 02 a la derecha | Placeholder inside page, Edition 03: spread with Line 02 on the right |
+| 3.1.13 · Banda Encuentro y foto de Encuentro | Foto de relleno: la caja de Encuentro, de cerca | Placeholder photo: the Encuentro box, close up |
+| 3.1.14 · Caja en Activar y Tienda | Foto de relleno: la caja de Encuentro | Placeholder photo: the Encuentro box |
+| 3.1.15 · Registros | Registro de relleno: Encuentro 001 | Placeholder record: Encuentro 001 |
+| 3.1.17 · Acerca | Vista de relleno: Campo 09, de Artista A, colgada en un muro | Placeholder view: Field 09, by Artist A, hung on a wall |
+| 3.1.18 · Fila de 4 detalles (nivel 2) | Detalle de relleno de {titulo}, de {artista} | Placeholder detail of {titulo}, by {artista} |
+
+- **Miniaturas con `alt=""`:** van dentro de un enlace o botón que ya tiene el nombre al lado («Artista A»). Con `alt` lleno, el lector de pantalla leería «Obra de relleno: Campo 07, de Artista A, colgada en un muro, Artista A» en cada celda del menú. El criterio de `alt` de relleno (brief §7) se cumple igual: una imagen que no se anuncia no dice que es real. Si Javiera lo mide como `alt` vacío prohibido, el patrón de vista en muro sirve.
+- **Acerca:** la spec proponía «Vista de relleno: una obra en un muro». Nombrar la obra dice lo mismo y además cuál es.
+- **Registros:** «Encuentro 001» con mayúscula, como en el Libro («Encuentro 007»): es el nombre del registro. Cambia también en copy-muestra §10.
+
+### 12.5 · Lo que Diego me dejó en `desvios.md`
+
+| Desvío | Respuesta |
+|---|---|
+| 1 y 30 · descripciones de las 27 obras | Reescritas mirando M01: copy-muestra §14.3 |
+| 2 · statements de B y C | Reescritos (copy-muestra §14.2). Además corregí la historia y proceso de A, B y C y la bio de C, que tenían el mismo problema |
+| 13 · «CLP ···» en ES | De acuerdo. Si P14 prohíbe el «$», «CLP ···» en los dos idiomas está bien |
+| 14 · aviso de la foto opcional | Dos versiones: 12.3-19 y 19b |
+| 15 · EN de los pies | Pie de la caja: ES «Caja de Encuentro» (no «Caja Encuentro») / EN «Encuentro box» ✓. Pie del registro: ES «Registro · Encuentro 001» (mayúscula) / EN «Record · Encuentro 001» ✓. `aria-label` del mapa: ES «369 posiciones, 7 activadas, de muestra» / EN «369 positions, 7 activated, all samples» (sumo «all», como el contador del Libro). Con la spec v2, los dos pies pueden no tener lugar: si no aparecen, no hacen falta |
+| 28 · «0 obras» | De acuerdo: «0 obras» / «0 works» |
+
+### 12.6 · Lo que entregué distinto de lo que proponía la spec
+
+1. **«Todos los artistas», no «Todas las artistas»** (slots 2 y 21). `BRIEF.md` l.100: las artistas de partida son María, una amiga «y un tercero que todavía está buscando». Todo el sitio dice ya «los artistas» (visión curatorial, Acerca, «Ver los artistas»); un femenino solo en el menú se leería como texto cosido por partes.
+2. **Estado 2 sin precio: «Consultar el precio · →»**, no «Consultar por esta obra · PRECIO A CONSULTAR». Medido a 390: la etiqueta mide 167,7 px y el valor 146,9; dentro del botón hay 318. Quedan 3,4 px entre los dos, se tocan; a 375 no caben. «Consultar el precio» mide 134,7 px (EN «Enquire about the price», 166,5), dice qué pasa al tocarlo (pides el precio) y deja el dato en el `dl` («Precio · A consultar»). En EN el par de la spec sí cabía (18 px de aire), pero los dos idiomas van con la misma estructura.
+3. **Tamaño en centímetros, no «Chico · Mediano · Grande»** (spec 2.4). El slot 21 pide las opciones de copy 4.4, y 4.4 ya había sacado esos tres: en EN, «Medium» quedaba dos veces en el mismo bloque (el filtro Técnica se llama «Medium» y la opción del medio también). Ahora que los filtros son líneas de texto una encima de otra, se nota más.
+4. **«Comprar · Amazon →»** en vez de «Comprar en Amazon · AMAZON →» (slot 29): el valor ya dice adónde va, como en la obra.
+5. **Contacto: «Consultas», no «Formulario»** (slot 37). «Formulario» nombra la pieza de interfaz, no lo que la persona viene a hacer; «Consultas» / «Enquiries» es el rótulo de una galería.
+6. **Tienda: un rótulo «Cómo se compra» sobre los cuatro H2** (spec 2.13 los deja sin título). Sin él, «OBRAS» justo debajo de la grilla parece el título de otra lista. Es composición: lo decide Lucía; el texto queda escrito.
+7. **La bajada del Libro sigue siendo texto fijo** («El registro de cada encuentro activado.»), no de muestra como dice la spec 2.10: orienta, sobre todo en EN, donde «Libro» no se traduce, y no la escribe María.
+
+### 12.7 · Pasada de borrado y pasada de voz
+
+| Se borró | Por qué |
+|---|---|
+| «Escribir una consulta →» (propuesta de la spec para el enlace del pie) | Repetía «consulta» del titular, a una línea |
+| «Formulario» como H2 | Nombre de la pieza, no de lo que se hace |
+| El prefijo «Obras:», «Encuentro:», «Ediciones:» de Cómo se compra | Ahora hay H2; y en la ficha, sin H2, la frase tenía que sostenerse sola |
+| «Amazon» dos veces en el botón de Edición; «Precio» dos veces en la fila del `dl` | Repetición dentro de la misma pieza |
+| «Todas las artistas» | Género que el brief no sostiene |
+
+**Voz:** leí en voz alta el titular del pie con el enlace debajo («Consulta por una obra, una edición o un encuentro. Escribir a Módulo 369»): suena a lo que diría quien atiende la galería, sin pregunta ni promesa. Los botones-fila se completan todos con «…y entonces pasa X»: Comprar → vas a Mercado Pago; Consultar el precio → vas a Contacto con la obra cargada. Tú en todo; cero «nosotros», cero «usted»; sin Title Case; cero rayas.
+**Borrar 30% más:** lo probé en Cómo se compra (el bloque más largo de voz de la galería): sin la línea de Consultas, quien llega a una obra en estado 2, 3 o 4 no sabe qué hacer. Queda.
+
+### 12.8 · Afirmaciones nuevas por verificar
+
+| # | Texto | Dónde | Qué falta y quién |
+|---|---|---|---|
+| 1 | «Consulta por una obra, una edición o un encuentro» | Pie | Que Encuentro se pueda consultar depende de §9-4; si la caja no existe en el sitio, el titular queda con dos palabras en itálica y Lucía decide si se sostiene. Ramón, después de la reunión |
+| 2 | «Collage sobre cartón» / «Papel recortado sobre cartón» | Ficha, Tienda | Ninguno en la maqueta (relleno bajo aviso global) |
+| 3 | `alt=""` en miniaturas | Menú, filtro | Que Javiera lo acepte (12.4, nota de slot 38) |

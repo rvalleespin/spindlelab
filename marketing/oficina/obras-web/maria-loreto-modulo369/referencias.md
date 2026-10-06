@@ -1,250 +1,211 @@
 # Lock de referencias · Módulo 369 · maqueta v2 (dirección retícula 3·6·9)
 
-> Lo escribe Lucía (`/web-direccion-arte`, pasos 1 y 2) el 5-oct-2026. La dirección **retícula 3·6·9** ya está elegida (Ramón, 26-sep; encabezado de `brief-de-obra.md`). Este documento **no** propone direcciones ni tableros: fija qué referencia manda en la ejecución, qué trabajo acotado hace cada una de las otras y qué no se toma de ninguna. Es insumo de `spec-visual.md` (paso 5), no la spec. Lo que contradiga a `brief-de-obra.md`, pierde.
+> Lo escribe Lucía (`/web-direccion-arte`, pasos 1 y 2). **Versión 2, 5-oct-2026 (noche): reemplaza entera la versión con PRODn dominante** (queda en git, commit `b7393c4`). La causa es la segunda corrección de Ramón (brief §10, ~20:40): «quiero que la maqueta sea más cercana a esta referencia. Ve todo el sitio, el hero, las internas, todo: https://www.studio-iron.com/». Es **regla**: Studio Iron es la referencia dominante de toda la maqueta.
+> La dirección retícula 3·6·9 no se reabre (brief §8-5): este documento fija qué manda en la ejecución, qué trabajo acotado le queda a cada otra referencia y qué no se toma de ninguna. Lo que contradiga a `brief-de-obra.md` pierde. Insumo de `spec-visual.md`, no la spec.
 
-**Cómo se miró.** Los 8 sitios se abrieron en vivo el 5-oct-2026 con Chrome headless por CDP, a 1440 y a 500 px de ancho (500 es el mínimo que dibuja el headless; a 500 se emuló un iPhone: user agent móvil y toque). Por cada página hay primer viewport (`-v0.jpg`), dos posiciones al bajar (`-v1`, `-v2`, para ver qué queda fijo encima de las fotos), página completa (`-full.jpg`, cortada a 9.000 px) y estilos computados (`-info.json`: fuentes cargadas, tamaños, color de fondo, elementos `fixed`/`sticky`, posición de imágenes). Las medidas de este documento salen de esos archivos o de sondas puntuales con `getBoundingClientRect` y `getComputedStyle`. Los avisos de cookies se ocultaron con CSS para la captura, **sin aceptarlos**. 20 páginas, 192 archivos, en `referencias/`. La v1 se renderizó igual desde una copia (`scratchpad/lucia-v1-capturas/`, 10 vistas a 1440).
+**Cómo se miró.** Seis analistas recorrieron Studio Iron entero el 5-oct por CDP, a 1440 × 900 y a 390 × 844 reales (iPhone emulado, DPR 2), y también a 768 en tienda, diseñador y eventos: secuencias de scroll, páginas completas, hover, menús, carruseles, estilos computados y CSS publicado. Los avisos de cookies se ocultaron con CSS, sin aceptarlos; no se agregó nada al carrito, no se envió ningún formulario ni se inició sesión. Todo está en `referencias/studio-iron/{home,tienda,disenador,producto,eventos,global}/` (capturas `.jpg` y medidas `.json`; el consolidado de cada tipo de página es `medidas-*.json`). Yo miré con mis ojos las capturas clave de los seis tipos antes de escribir esto (lista en §7). Las medidas de este documento salen de esos archivos.
 
-**Un dato que condiciona todo:** 7 de los 8 referentes tienen `body` en `#FFFFFF` (Quatrième Étage, `#0B0A0A`). El hueso `#EEEAE2` no sale de ninguna referencia: sale del rechazo explícito de María a «tanto blanco intenso» (Perrotin) y es token fijo de la dirección. Por eso **ninguna referencia aporta lienzo ni color**: aportan composición, tratamiento de la obra, tipografía y comportamiento.
+**Lo que condiciona todo (no cambia).** Studio Iron es blanco `#FFF`, casi negro `#0A0A0A` y un pie negro `#000`, con dos familias (una serif de libro con itálica, `bookish`, y Albert Sans 500). La maqueta tiene seis tokens fijos (hueso `#EEEAE2`, hueso-2, grafito, gris, línea, cobalto) y tres familias (Archivo, IBM Plex Mono, Instrument Serif). La traducción es directa y sin promedio: **blanco → hueso, negro → grafito, bookish → Instrument Serif (recta e itálica), Albert Sans → Archivo**. Plex Mono toma el papel de las mayúsculas chicas espaciadas de Studio Iron (DISCOVER, SUBSCRIBE, ACCOUNT, rótulos del pie, el contador `01 / 15`). Y las tres restricciones de María valen por encima de la referencia: **cero blanco intenso** (Perrotin), **nada fijo o pegado encima de una foto al bajar** (Escat) y **sin carrito** (brief §8).
 
 ---
 
 ## 0 · Resumen
 
-| Referencia | Elegida por | Rol | Trabajo asignado | Vistas |
-|---|---|---|---|---|
-| **PRODn** (portafolio) | Ramón, cotización | **Dominante** | La regla de la retícula: cada fila suma el módulo y lo reparte distinto; obra plana a su proporción, pie de dos líneas, vacío entre filas | Obras, Artista, Inicio (bajo el carrusel), Tienda, Ediciones |
-| Kurimanzutto | María | Secundaria | (1) La artista se muestra con su obra, nunca con su cara; Artista abre con el nombre chico y una obra a todo el ancho. (2) El único color saturado tiene un solo rol y nunca hace de estado de interfaz | Artistas, Artista, todo el sitio (cobalto) |
-| Esther Schipper | María | Secundaria | (1) Estructura del índice de Artistas: 3 por fila, línea de 1 px, nombre debajo. (2) Indicador del carrusel en números chicos con una raya junto al activo | Artistas, Inicio |
-| Escat Gallery | María (le gusta y lo rechaza) | Secundaria | (1) La «foto grande»: obra al ancho del contenido, leyenda debajo y partida en la retícula. (2) El hallazgo de la vista Índice: la imagen aparece al pasar por el nombre o al cruzar el centro de la pantalla | Inicio, Obras |
-| Quatrième Étage | Ramón, cotización | Secundaria | (1) Cabecera anclada a columnas de la retícula. (2) Numeración mono de cada imagen, fuera de ella, y miniaturas a escala chica | Todas (cabecera), Ficha, Libro, Encuentro |
-| Studio Iron | Ramón, cotización | Secundaria | (1) Secuencia de la página de autor (grilla de obras, texto angosto, una obra sola grande, cita). (2) La serif itálica solo para una cita textual, o fuera | Artista |
-| Artem Taradash | Ramón, cotización | Secundaria | (1) Texto largo en columnas angostas que ocupan celdas de la retícula. (2) Dos tamaños de texto y nada en medio | Acerca, Encuentro, Activar, Tienda, Contacto |
-| Perrotin | María (lo odia) | **Contra-referencia** | Fija lo prohibido: artistas como lista de nombres sin obra, blanco intenso sin obra, bio de persona, cabecera translúcida y desenfoque | Artistas, Acerca, Inicio |
+| Referencia | Rol ahora | Trabajo que conserva | Antes (lock PRODn) |
+|---|---|---|---|
+| **Studio Iron** (studio-iron.com, entero) | **Dominante de toda la maqueta** | Cromo, escala tipográfica, secuencia de portada, tarjeta, grilla de colección, página de autor, ficha de obra (`/art`), páginas de evento y de edit, About, páginas de texto, pie, menú de 390, movimiento | Secundaria (página de autor y cita) |
+| Kurimanzutto (de María) | Secundaria acotada | (1) La artista se muestra por su obra, nunca por su cara: **choca con Studio Iron**, que usa retratos en About y en el hero. (2) El único color saturado tiene un solo rol y nunca es estado de interfaz: **Studio Iron no tiene acento**, así que no tiene respuesta | Secundaria (lo mismo, más la apertura de Artista, que ahora resuelve Studio Iron) |
+| Boceto de María «IDEA - ENCUENTRO» (descrito en `BRIEF.md`) | Insumo de la clienta, no referencia de sitio | Enlace vertical «Libro» a la derecha del contador de Encuentro | Igual |
+| Mapa de 369 del Libro (diagnóstico C10, spec D19) | Decisión propia, sin referencia | Las 369 posiciones en 41 × 9. **Studio Iron no tiene respuesta** (su índice de eventos es una lista de fotos) | Igual |
+| Esther Schipper (de María) | **Retirada** como fuente de forma | Solo se cita su inicio negro («a María no le molesta») como respaldo de que el pie vaya en grafito | Secundaria (índice de artistas, indicador del carrusel) |
+| PRODn | **Retirada** | Nada. La regla de filas y la obra alineada arriba se reemplazan por la grilla uniforme y la celda 4:5 de Studio Iron | Dominante |
+| Quatrième Étage | **Retirada** | Nada. La cabecera anclada a columnas y la numeración mono se reemplazan por la cabecera de tres zonas y el contador `01 / 15` de Studio Iron | Secundaria |
+| Artem Taradash | **Retirada** | Nada. El texto en columnas angostas se reemplaza por la columna centrada de las páginas de evento y de texto de Studio Iron | Secundaria |
+| Escat Gallery (de María) | **Contra-referencia** | Fija lo prohibido: letras fijas que se pegan sobre la foto al bajar. Su «foto grande» ya la resuelve el hero de Studio Iron; su hallazgo del Índice se retira | Secundaria (foto grande, hallazgo) |
+| Perrotin (de María) | **Contra-referencia** | Fija lo prohibido: blanco intenso, artistas como lista de nombres sin obra, bio de persona, cabecera translúcida | Igual |
 
-El método pide de 3 a 6 referencias; aquí son 8 porque el encargo las exige todas. Para que no se promedien, cada secundaria tiene uno o dos trabajos con borde y una lista de lo que no se toma.
+**Nada se promedia.** Donde Studio Iron tiene respuesta, manda Studio Iron, traducida a los tokens. Una secundaria entra solo en dos casos: Studio Iron no tiene respuesta, o su respuesta choca con una restricción del brief. Cada caso está nombrado en §3 y §4.
 
 ---
 
-## 1 · La dominante: PRODn, página de portafolio
+## 1 · La dominante: Studio Iron
 
-**URL:** https://prodn.com/portfolio/ (más https://prodn.com/ y https://prodn.com/work/chanel-metiers-darts-2026/)
-**Capturas:** `referencias/02-prodn-portfolio-1440-{v0,v1,full}.jpg`, `02-prodn-portfolio-500-*`, `02-prodn-proyecto-*`, `02-prodn-home-*`.
+**URL:** https://www.studio-iron.com/ y sus internas: `/collections/all-objects`, `/art`, `/collections/<diseñador>` (andu-masebo, gast-studio, atelier-fomenta, kouros-maghsoudi), `/products/<objeto>` (tubular-chair, rubber-table-medium, sounding-lamp-2), `/artists/<artista>/<obra>` (phil-hale/record-separator, thomas-cardiff/recognition), `/events`, `/events/<evento>` (studio-iron-x-saatchi-yates, in-plain-sight, studio-iron-at-brompton-design-district), `/pages/london-design-festival`, `/pages/black-metal`, `/pages/about`, `/pages/shipping-returns`.
 
-### Por qué manda ella
-1. **Es la única de las 8 que convierte «orden con pequeñas disrupciones» en una regla de layout.** Medido a 1440: margen 40 px, calle 20 px, módulo de 5 columnas de 256 px (5 × 256 + 4 × 20 = 1.360). Las filas son 2+3 (532 y 808 px de ancho), 3+2, cinco de 1 (las tapas de Vogue, 256 × 320 cada una), 3+2 y una de 5 (1.360 × 765). El orden está en que la suma siempre cierra; la disrupción, en cómo se reparte. Se traduce directo a 9 columnas (1440), 6 (768) y 3 (390), que es la 3·6·9.
-2. **La obra va plana, a su proporción, alineada arriba.** Sin caja, sin marco, sin sombra. La diferencia de alturas produce el desplazamiento sin que nada se monte sobre nada. Es lo que la v1 no hace (ver «v1 contradice»).
-3. **Nada encima de la imagen.** El pie va debajo, en dos líneas pegadas (título / autor), mismo cuerpo y peso (Neue Haas Display 15 px, 700, a 10 px de la imagen).
-4. **El vacío está medido.** El primer bloque empieza en y = 205, unos 128 px de nada bajo la cabecera, y entre filas hay ~92 px contra 20 px de calle: las filas se leen como renglones.
-
-### Por qué no las otras
-- **Kurimanzutto** es galería y es de María, pero su grilla es uniforme (4 iguales, todas recortadas a 4:3): daría orden sin una regla que se pueda romper con criterio. Entra como secundaria con lo que María nombró de ella.
-- **Quatrième Étage** es la que más se parece a una retícula visible, pero su lienzo es negro: tomarla como dominante y ejecutarla sobre hueso es exactamente el promedio que `anti-ai-slop.md` llama tell #7 («dark canvases become cream»).
-- **Esther Schipper** abre en negro a sangre con texto encima y representa a sus artistas con retratos (el brief §7 lo prohíbe).
-- **Escat** tiene el menú fijo sobre las fotos, que es lo que María rechazó.
-- **Studio Iron** es una tienda: el panel de compra va encima de la foto y en celular hay una barra «Add to bag» fija.
-- **Taradash** es un portafolio de producto y UI; su aporte es tipográfico, no de rubro.
+### Por qué manda (además de que lo pide Ramón)
+1. **Es una galería de arte y objeto que se ve terminada con muy pocos recursos.** Dos familias, un solo tamaño de texto chico por rol, cero color de acento, cero sombras, cero radios. La terminación sale de la escala (una serif enorme contra pies de 12 px), de la densidad (bloques que se tocan, márgenes de 12 px) y de que **cada celda de imagen está llena**. Eso es exactamente lo que la vara de terminación de la v2 exige (brief §6, §7, §10).
+2. **Tiene ya el «orden con pequeñas disrupciones» de María:** una grilla uniforme y quieta, y de pronto una palabra de borde a borde (la marca enorme), un enunciado de 100 px en mayúsculas, un nombre en itálica de 80 px, una cita en itálica grande, una banda de foto a sangre. Las disrupciones son de escala, no de desorden.
+3. **Cubre todos los tipos de página del mapa de María** (§2): portada, colección con tarjetas, página de autor, ficha de obra con «Consultar», índice de eventos y página de evento, edit curado, about y página de texto.
 
 ### Lock (formato `refero-design`)
 ```text
-Dominante:        PRODn, portafolio (prodn.com/portfolio/)
-Se preserva:      a. cada fila de obras suma el módulo: 9 a 1440, 6 a 768, 3 a 390,
-                     con repartos distintos fila a fila (la spec escribe los permitidos)
-                  b. obra plana a su proporción natural; sin caja, marco, sombra ni recorte
-                     en Obras, Artista y Ficha
-                  c. pie bajo la imagen, dos líneas; nada encima de la obra
-                  d. calle angosta y separación entre filas de al menos 4 veces la calle
-                  e. vacío arriba antes del primer bloque de obra
-Se toma solo:     ver §2 (un trabajo o dos por secundaria)
-Reglas de rol:    cobalto, un solo rol escrito y nunca estado de interfaz (Kurimanzutto)
-                  serif itálica, solo cita textual en primera persona (Studio Iron) o se quita
-                  hueso-2, solo espera de carga y marcador de imagen faltante; nunca fondo de obra
-Media:            las 27 obras de relleno de img/obras/ (código, marcadas, brief §6); foto de la
-                  caja y registros de Encuentro: marcador dirigido con ratio y texto, nunca un
-                  fake de CSS
-Se rechaza:       paspartú, sombra, desenfoque, translateY que pisa la fila, carrusel enmarcado,
-                  muro uniforme en s3, cabecera fija, texto sobre la obra, lista de nombres sin obra
-Tokens:           solo los de maqueta/styles.css (hueso, hueso-2, grafito, gris, línea, cobalto;
-                  Archivo, IBM Plex Mono, Instrument Serif condicional), cada uno con rol
+Dominante:     Studio Iron (studio-iron.com, todo el sitio)
+Se preserva:   a. Cromo de una línea, sin borde: menú a la izquierda, marca al centro, utilidades a
+                  la derecha; 13 px; la sección actual subrayada (1 px a -2 px).
+               b. Marca tipográfica serif: primera palabra en itálica, segunda en redonda. En la
+                  portada de escritorio, la marca de borde a borde (97% del ancho), con la foto del
+                  hero que sube POR ENCIMA de ella al bajar.
+               c. Hero = una sola foto a sangre, sin texto encima; a 390 entra el enunciado en el
+                  mismo primer viewport.
+               d. Enunciado en serif mayúscula enorme (7vw a 1440, 12vw a 390), interlineado < 1,
+                  centrado, con un párrafo corto debajo (máx. 438 px).
+               e. Tarjeta: celda 4:5 LLENA (foto con su fondo de estudio), pie de una línea a
+                  1440 (título sans 12 a la izquierda | AUTOR serif mayúscula a la derecha) y
+                  apilado y centrado a 390. Sin precio. Hover: filo de 1 px negro, instantáneo.
+               f. Grilla de colección uniforme de 3 por fila (464 px a 1440 con margen y calle de
+                  12; 240 px a 768), 2 por fila a 390; última fila abierta a la izquierda.
+               g. Página de autor: hero a sangre bajo la cabecera, nombre en serif ITÁLICA grande,
+                  grilla de piezas, bloque About en mitades a sangre (imagen | texto centrado),
+                  y en la variante larga: imagen sola a sangre, cita en itálica junto a una foto.
+               h. Ficha de obra (/art): imágenes apiladas a la izquierda (vista general y
+                  detalles al mismo ancho), cartela a la derecha: ARTISTA serif mayúscula chica,
+                  título en serif ITÁLICA con el año tras coma, técnica y medidas en sans,
+                  acción; la cartela queda al costado, nunca sobre la imagen.
+               i. Bandas de foto a sangre (16:9 a 1440, 4:5 a 390) que separan las tiras de la
+                  portada; bloques partidos 50/50 a sangre (imagen | texto) que alternan de lado.
+               j. Páginas de evento y de texto: columna centrada angosta (≈ 520 px), H1 serif
+                  mayúscula 36/26, fila de datos en mayúsculas espaciadas, foto a sangre,
+                  carrusel con contador «← 01 / 15 →».
+               k. Pie oscuro: titular serif mayúscula con tres palabras en itálica, tres columnas
+                  de enlaces con rótulos espaciados, línea legal.
+               l. Menú de 390: pantalla completa clara, ítems en serif mayúscula de 38 px
+                  centrados, subnivel con miniaturas de obra en 2 columnas.
+               m. Densidad: margen 12 en grillas, 18 en el cromo, 24 en el pie; bloques que se
+                  tocan; la única pausa con aire es el enunciado.
+Traducción:    #FFF -> hueso; #0A0A0A y #000 -> grafito; zinc y #E2E2E2 -> línea / gris;
+               relleno de carga #F0F0F0 / zinc-100 -> hueso-2 plano; bookish -> Instrument Serif
+               (recta e itálica); Albert Sans 500 -> Archivo 500 (400 en párrafos);
+               mayúsculas chicas espaciadas -> IBM Plex Mono 12.
+Reglas de rol: cobalto: un solo rol (trazo dentro de un elemento enorme, lista cerrada de tres),
+               nunca estado de interfaz (Kurimanzutto; Studio Iron no tiene acento).
+               grafito como fondo: solo el pie del sitio.
+Media:         las 27 obras de relleno (M01) se muestran en tarjeta como «vista en muro» 4:5
+               (la obra ENTERA colgada en un muro claro, M07): así la celda queda llena como en
+               Studio Iron sin recortar la obra. Las fotos de objeto (caja, registros,
+               interiores) sí se recortan en las bandas.
+Se rechaza:    cabecera fija; panel de compra sobre la foto; barra «Add to bag» fija; texto
+               pegado sobre una foto al bajar; texto blanco sobre foto; degradé negro sobre
+               foto; flechas montadas sobre las imágenes; carrito, cuenta, búsqueda, tallas;
+               newsletter como función; blanco; velos con desenfoque; Lenis y la aceleración
+               del hero; cursor propio; mascota; retratos; object-fit cover sobre una obra.
 ```
 
-**Las filas de obra se llenan; el vacío vive entre filas y en las filas de texto.** PRODn no deja celdas vacías dentro de una fila de imágenes; el vacío está arriba y entre renglones. Las celdas vacías de una fila son de Taradash y solo aplican a filas de texto (§2).
+### Rasgos medidos que la spec tiene que cumplir (con su fuente)
 
-**Qué NO se toma de PRODn:** la portada (video a pantalla completa con la lista de proyectos encima: el activo a 27 px y los demás a 13 px, todo sobre la imagen), la cabecera fija (`NAV.header` en `position: fixed`, ver `02-prodn-*-info.json`), el menú en negrita mayúscula, la grilla uniforme 4 × 3 de la página de proyecto y el colapso a una columna en celular (a 500: una columna de 460 px con margen de 20; ver choque 2 en §4).
-
-**v1 ya sigue:** la retícula de 9 con clases `s1`–`s9` y `c1`–`c9` (la herramienta para repartir filas existe); el pie de obra va debajo de la imagen; la cabecera no es fija.
-**v1 contradice:**
-- Obras pinta las 27 en `s3` (nueve filas de 3 iguales): la retícula de 9 no se percibe (`app.js` L201; diagnóstico, lente de dirección de arte).
-- Cada obra va en una caja `hueso-2` con padding del 8% y sombra (`styles.css` L140-141), y la ficha repite caja y sombra en línea (`app.js` L211-212). PRODn: imagen plana.
-- `.corrida` desplaza con `translateY` sin reservar espacio y pisa la fila siguiente: 30 px en `#/artistas/a` y 39 px en `#/obras` (`styles.css` L145; diagnóstico C01). En la captura `lucia-v1-capturas/artista-1440-full.jpg` el pie de «Campo 02» queda encima de la fila de «Campo 04». En PRODn el desplazamiento sale de alturas distintas alineadas arriba, nunca de una superposición.
-- El estado (Disponible, Vendida, Colección privada) es un dato que PRODn no tiene y el brief sí exige (§4): se conserva como tercera línea en mono, no se suprime.
-
----
-
-## 2 · Secundarias, cada una con su trabajo
-
-### Kurimanzutto · de María
-**URL:** https://www.kurimanzutto.com/es/artistas (más `/es/artistas/gabriel-orozco` y `/es/archivo`)
-**Capturas:** `06-kurimanzutto-artistas-*`, `06-kurimanzutto-artista-*`, `06-kurimanzutto-archivo-*`.
-
-**Observado.** Fondo `#FFFFFF`. Un solo color saturado, un rojo cercano a `#EC2829` (muestreado del logotipo en la captura JPEG, aproximado), y **solo en el logotipo**: el ítem actual del menú se apaga a gris `rgb(117,117,117)` en vez de colorearse; EN/ESP a 11 px en la esquina superior derecha, activo en negro e inactivo en gris. Artistas: 4 columnas de 325 px con calle de 23; cada artista es **una obra suya** (no su cara) recortada a 4:3 (el CDN pide `w_712,h_530,c_lfill`), y el nombre a 18 px en minúscula debajo. Página de artista: el nombre a 22 px y debajo una obra a todo el ancho de la ventana (1440 de 1440; a 500, a sangre): el nombre es chico y la obra es lo enorme. Más abajo la misma página sí usa un retrato en «biografía». Cabecera fija opaca de 98 px.
-
-**Aporta.**
-1. **Artistas y Artista:** la artista se representa con una obra suya, nunca con su cara (lo que María dijo que le gusta; brief §7 lo exige). Artista abre con el nombre chico y una obra al ancho completo del contenido: es la disrupción de escala de la vista Artista que pide §7.
-2. **Regla de color, aplicada al cobalto:** el único color saturado vive en un rol y no hace de estado de interfaz (página actual, foco, hover, enlace). Esos estados van en grafito y gris.
-
-**No se toma:** el recorte 4:3 de las obras (manda PRODn: proporción natural), la minúscula en nombres propios, la cabecera fija, la grilla uniforme de 4, el retrato de la biografía, el rojo.
-
-**v1 ya sigue:** Artistas sin retratos (cada fila muestra 3 obras); ES/EN chico en la barra de aviso, activo subrayado; en reposo el cobalto aparece una sola vez (la «ll» de HALLAZGO).
-**v1 contradice:** el cobalto hace de estado de interfaz en `:focus-visible` (`styles.css` L37) y en `.vertical:hover` (L198), y la capa Retícula lo usa al 7% y al 22% (L76-77; es herramienta de maqueta, pero tiñe las obras). El menú marca la página actual con subrayado y grafito (L90-91) donde Kurimanzutto la apaga. Artista abre con un `h1` de hasta 58 px y sin obra al ancho completo (`app.js` V.artista).
-
-### Esther Schipper · de María
-**URL:** https://www.estherschipper.com/ (más `/artists/` y `/exhibitions/1601-repose-david-claerbout/`)
-**Capturas:** `05-schipper-artistas-*`, `05-schipper-home-*`, `05-schipper-exposicion-*`.
-
-**Observado.** Artistas: grilla de 3 cuadrados de 358 px con calle de 88 px; 17 px bajo cada imagen, una línea de 1 px, y bajo la línea el nombre a 22 px (Acumin, peso liviano); unos 100 px entre filas. A 500 mantiene **2 columnas** (213 px) con la misma línea y nombre. Cada imagen es un retrato en blanco y negro. Inicio: foto de sala a sangre al alto de la ventana con el texto encima (fecha 13 px, título 40 px peso 300, artista 22 px) sobre una línea de 1 px, y abajo a la derecha el indicador del carrusel: números chicos «1 2 3» con una raya horizontal junto al activo. Las secciones abren con una línea de 1 px a todo el ancho y una etiqueta de 13 px («Films», «Press», «Explore»). Hay contenido que aparece con animación al bajar: en las capturas completas quedan bloques en blanco (`05-schipper-home-1440-full.jpg`, `05-schipper-exposicion-1440-full.jpg`). Sus imágenes solo cargaron con un user agent de escritorio.
-
-**Aporta.**
-1. **Artistas:** la estructura del índice, que es la 3·6·9 literal: 3 por fila (3 artistas = 1 fila, 6 = 2, 9 = 3), línea de 1 px entre obra y nombre, nombre a un solo tamaño, mucho aire entre filas.
-2. **Inicio:** el indicador del carrusel en números chicos (01 a 05) con una raya junto al activo, en lugar de «← Anterior · 01 / 05 · Siguiente →».
-
-**No se toma:** los retratos (se reemplazan por una obra, que es el trabajo de Kurimanzutto), el recorte cuadrado (proporción natural: las obras se paran sobre la línea alineadas abajo), el inicio negro a sangre con texto sobre la foto, la firma caligráfica, las animaciones de aparición, el conmutador List / Grid.
-
-**v1 ya sigue:** línea de 1 px grafito sobre cada artista (`.artista-fila`, `border-top`); obras alineadas abajo (`align-items: end`, `styles.css` L158).
-**v1 contradice:** el índice es un zigzag: una fila de 6 columnas por artista, con 3 obras en cajas (unos 1.700 px para 3 artistas; diagnóstico C22); los controles del carrusel son texto (`app.js` L104-107).
-
-### Escat Gallery · de María, con su rechazo
-**URL:** https://escatgallery.com/ (más `/artists/` y `/exhibition/solaz-de-aurora`)
-**Capturas:** `07-escat-home-*`, `07-escat-exposicion-*`, `07-escat-artistas-*`.
-
-**Observado.** Inicio: foto de sala a sangre que al cargar mide 1440 × 900 (el alto completo de la ventana) con la leyenda justo bajo el pliegue (y = 910); después de recorrer la página y volver arriba la foto queda en 1440 × 706 con la leyenda a la vista (`07-escat-home-1440-v0.jpg`), así que su alto depende del scroll. La leyenda va **debajo**, en una fila partida: título en grotesca negrita mayúscula de 16 px en el margen izquierdo (x = 16), nombre y fechas en serif de 16 px desde la mitad (x = 728), sede en itálica. A 500, la misma foto a sangre y la leyenda sigue partida en dos. Menú de 8 ítems de 11 px en mayúscula repartidos a todo el ancho, **fijo y transparente**: al bajar queda encima de las fotos (`07-escat-exposicion-1440-v1.jpg`: el menú cruza dos fotos de sala; `07-escat-home-500-v1.jpg`: «ESCAT GALLERY / MENU» sobre la foto). Además hay etiquetas de sección `sticky`. Artistas: lista centrada de nombres en serif de 30 px. Su código tiene un hallazgo: con cursor, aparece en grande la obra del artista bajo el puntero; al bajar, se activa el artista cuyo centro cruza el centro de la pantalla (`main.js`, `initCenteredArtistActive`; `artists.css`, `.hovering .artist.active .artist-image`). El headless no disparó ese estado: está verificado en el código, no en una captura.
-
-**Aporta.**
-1. **Inicio, la «foto grande» que María nombró:** la obra del carrusel ocupa el ancho del contenido y entre 78% y 100% del alto de la ventana (lo medido en Escat), y su leyenda va debajo, partida en la retícula. Nada encima de la imagen. En el iPhone de María el alto se descuenta para que leyenda e indicador queden a la vista sin bajar (el diagnóstico C04 ya lo pide).
-2. **Obras, vista Índice, el hallazgo:** la imagen aparece al pasar por el nombre (con cursor) o cuando la fila cruza el centro de la pantalla al bajar (en el iPhone de María), en columnas reservadas y sin tapar texto. Con esto la v2 tiene un hallazgo que también funciona en su teléfono; el C07 del diagnóstico lo apagaba en pantallas táctiles.
-
-**No se toma (este es el rechazo de María):** el menú fijo transparente sobre las fotos y las etiquetas `sticky`. Tampoco la serif Times por defecto, la lista centrada ni la imagen fija que aparece detrás del texto (en la v2 aparece en su columna).
-
-**v1 ya sigue:** la cabecera no es fija, a propósito (`styles.css` L83: «nada tapa las imágenes al bajar»); la leyenda del carrusel va debajo de la imagen; el Índice ya escribe `data-img` en cada fila (`app.js` L198), aunque nada lo usa.
-**v1 contradice:** la portada es una caja 16/8,2 con la obra al 88% sobre una copia desenfocada y con sombra (`styles.css` L125-131; captura `lucia-v1-capturas/inicio-1440-full.jpg`): se lee como deslizador de tienda, no como la foto grande. La capa Retícula es una capa fija que tiñe las obras (brief §8-4: es solo de la maqueta).
-
-### Quatrième Étage · cotización
-**URL:** https://quatriemeetage.studio/ (más `/w/soma`)
-**Capturas:** `03-quatrieme-home-*`, `03-quatrieme-proyecto-*`.
-
-**Observado.** Lienzo `#0B0A0A`. La cabecera está partida en celdas alineadas a una retícula de 6 columnas de 16,66vw: la marca en la 1, «WORK / STUDIO» en la 4, correo e Instagram en la 5; cada celda es una barra negra fija. Pies en monumentMono de 10 px mayúscula, con tres tonos en una sola línea (nombre entre corchetes en blanco, descripción en gris, disciplinas entre paréntesis en blanco). Página de proyecto: el número de la imagen («001») en mono de 10 px al lado de la imagen, y una tira de miniaturas de todo el proyecto a escala muy chica junto a la imagen grande. Dos columnas de imágenes de 600 px (x = 60 y x = 780) con alturas distintas, de modo que las filas nunca coinciden. Al bajar, las barras fijas quedan sobre las imágenes (`03-quatrieme-home-1440-v1.jpg`, `03-quatrieme-home-500-v0.jpg`).
-
-**Aporta.**
-1. **Cabecera de todas las vistas:** cada ítem empieza en una columna de la retícula (la marca en la 1 y el resto anclado a columnas), así la retícula se ve sin encender la capa.
-2. **Ficha, Libro y Encuentro:** la numeración mono de cada imagen va fuera de ella («01» general, «02» detalle; «001» en cada registro del Libro) y las miniaturas van a escala chica junto a la imagen grande. Es la disrupción de escala disponible para la Ficha.
-
-**No se toma:** el lienzo negro (sobre hueso sería promediar), las barras fijas sobre las imágenes, la mayúscula en todo y los corchetes como delimitador del pie (en la maqueta los corchetes significan «texto pendiente», brief §6, y no se usan con otro sentido).
-
-**v1 ya sigue:** IBM Plex Mono para números y etiquetas (`.etiqueta` de 11 px en mayúscula con `.08em`, `.num`); el contador 001/369 en mono, que el diagnóstico señala como lo mejor ejecutado; el «01 / 03» de las filas de artistas.
-**v1 contradice:** la cabecera es la marca en `span 3` más un menú en flex alineado a la derecha (`styles.css` L85-88), así que los ítems no caen en columnas; la ficha tiene una sola imagen y sin número (el brief §7 pide general y detalle).
-
-### Studio Iron · cotización
-**URL:** https://www.studio-iron.com/ (más `/collections/kouros-maghsoudi` y `/products/cut-divider`)
-**Capturas:** `01-studio-iron-home-*`, `01-studio-iron-coleccion-*`, `01-studio-iron-ficha-*`.
-
-**Observado.** Tienda de objetos de diseño y arte. La página de un autor (Kouros Maghsoudi) es una secuencia: foto a sangre con el nombre en serif itálica, grilla de obras de a 3, bloque «About» (retrato a la izquierda y texto en columna angosta a la derecha), una obra sola a sangre, una cita del autor en serif itálica grande junto a una foto, cuatro imágenes en fila, otra cita, foto final. La serif (`bookish`) va en el logotipo, en titulares de colección y en las citas; el cuerpo, en Albert Sans de 13 a 14 px. Ficha: imagen a sangre con un panel blanco **encima** (título, autor, `dl` de dos columnas con Materials, Dimensions, Made in, y precio con «Add To Bag»; `01-studio-iron-ficha-1440-v0.jpg`); en celular, barra «Add To Bag» fija abajo (`01-studio-iron-ficha-500-full.jpg`).
-
-**Aporta.**
-1. **Artista:** el orden de la página de autor, que alterna grilla de obras, texto en columna angosta, una obra sola grande y una cita. Es el molde para los 6 bloques del mapa de María (nombre, statement, unas 9 obras, bio, historia o proceso, foto opcional).
-2. **Rol de la serif itálica:** solo una cita textual en primera persona (el statement de la artista, entre comillas). Si no hay cita real que mostrar, la familia no tiene trabajo y el brief §7 permite quitarla.
-
-**No se toma:** el panel de compra encima de la foto, la barra fija, el carrito, el precio en cifras (brief §6), el logotipo serif enorme y el retrato del autor en «About» (en Módulo 369 la foto de la artista es opcional y nunca la representa en un índice).
-
-**v1 ya sigue:** Artista pone primero las obras y después bio e historia o proceso.
-**v1 contradice:** Instrument Serif itálica aparece 13 veces como «susurro» (`app.js`: lenguaje de cada artista, «hallazgo, accidente», «la acción», el pie del sitio, notas de maqueta). Es la palabra en serif itálica de adorno que `anti-ai-slop.md` marca como tell #4. Artista no tiene el momento «una obra sola grande y una cita».
-
-### Artem Taradash · cotización
-**URL:** https://taradash.me/
-**Capturas:** `04-taradash-home-*`.
-
-**Observado.** Fondo blanco y retícula de 6 columnas de 240 px: las columnas de texto empiezan en x = 497, 737, 977 y 1217 y miden unos 205 px. **Solo dos tamaños de texto** en la página: 12,4 px (todo el cuerpo, en columnas angostas) y 38,9 a 43,2 px (titulares), más uno de 86 px una sola vez. Etiqueta «Obj.» de 12 px sobre el nombre del proyecto de 39 px. Imágenes de escalas muy distintas lado a lado (un objeto de 925 px que sale del viewport junto a una foto de 445 px) con mucha retícula vacía. Arriba a la izquierda, botones-etiqueta negros fijos que al bajar quedan sobre las imágenes (`04-taradash-home-1440-v1.jpg`). A 500 mantiene 2 columnas.
-
-**Aporta.**
-1. **Acerca, Encuentro, Activar, Tienda (cómo se compra) y Contacto:** el texto largo va en columnas angostas que ocupan celdas de la retícula, una idea por columna, y el resto de la fila queda vacío. No se centra ni se estira a 62 caracteres.
-2. **Escala tipográfica:** dos tamaños de texto y nada en medio; la palabra enorme y el contador quedan fuera de la escala porque son la disrupción.
-
-**No se toma:** los botones fijos sobre las imágenes, la foto circular con firma encima, las imágenes de producto y de interfaz, las esquinas redondeadas de algunas capturas y las 2 columnas de texto a 390 (darían unos 170 px por columna, ilegible).
-
-**v1 ya sigue:** Acerca y Encuentro separan el título a la izquierda y el texto a la derecha en columnas de la retícula, con aire entre bloques.
-**v1 contradice:** `styles.css` y `app.js` declaran 9, 11, 12, 13, 13,5, 14, 15, 17, 19 y 20 px, más 9 `clamp()` distintos; «Qué es Encuentro» y «Criterio curatorial» van en un solo bloque ancho.
+| Rasgo | Studio Iron, medido | Captura / JSON |
+|---|---|---|
+| Cabecera | 29 px a 1440 (Albert Sans 500 13/13, gap 24, primer enlace en x = 18), 38 px a 390; fija, fondo `#FFF`, sin borde | `home/1440-primer-viewport.jpg`, `global/medidas-cromo-studio-iron.json` |
+| Sección actual | `::after` de 1 px a −2 px, `scaleX(1)`; hover crece de 0 a 1 desde la izquierda en 400 ms `cubic-bezier(.22,.61,.36,1)` | `global/about-1440-nav-hover-art.jpg` |
+| Marca enorme | tinta de x = 22 a x = 1.418 (97%), mayúscula de 165 px (11,5vw), caja de 188 px; `sticky` bajo la foto, solo ≥ 1024 | `home/1440-primer-viewport.jpg`, `home/1440-seq-00421.jpg` |
+| Hero | una foto 3:4 a sangre (1440 × 1910; 390 × 517); sin texto, sin controles | `home/1440-full.jpg`, `home/390-seq-00000.jpg` |
+| Enunciado | serif mayúscula 7vw (100,8 px) / 12vw (46,8 px), interlineado 0,75 / 0,8, tracking −0,01em, centrado en el 70%; párrafo 15/1,55 máx. 438 px | `home/1440-seq-01320.jpg` |
+| Tira de tarjetas | título serif 20 px mayúscula; 4 por vista (≥ 1220), 3 (920 a 1219), 2,6 (520 a 919), 3 a 390; avance de una tarjeta en 300 ms; flechas cuadradas de 28 px | `home/1440-i-cards-reposo.jpg` |
+| Tarjeta | caja 4:5 llena, pie a 3 px: título Albert 12/14,4 a la izquierda, autor serif 12 mayúscula a la derecha; a 390 centrado y apilado | `tienda/si-tienda-1440-v0.jpg`, `tienda/si-tienda-390-v0.jpg` |
+| Hover de tarjeta | borde de 1 px pasa de `#FFF` a `#0A0A0A`, sin transición; nada más cambia | `tienda/si-tienda-1440-hover-tarjeta-zoom.jpg` |
+| Colección | H1 serif 36 (26 a 390) centrado, padding 90/80; grilla 3 × 464 con calle 12 y filas a 20; 2 × 193,5 a 390 | `tienda/medidas-tienda.json` |
+| Banda a sangre | 1440 × 810 (16:9); 390 × 488 (4:5); título serif 48 / 26 | `home/1440-seq-01768.jpg`, `home/390-seq-00844.jpg` |
+| Página de autor | hero 21:9 (1440 × 617), 5:4 a 390; nombre itálica 5,6vw (80,6 px) / 26 px; grilla 3 × 464; About 720 · 720, texto 520 justificado con sangría 30 | `disenador/andu-1440-full.jpg`, `disenador/andu-390-full.jpg` |
+| Cita | serif itálica 38/38 centrada en la mitad de 720, junto a una foto de 720 | `disenador/kouros-1440-s06-y3825.jpg` |
+| Ficha de obra | imagen en x 71,5 a 833 (762 px); columna vacía; cartela en x 904 a 1.368 (464 px), sticky top 40; ARTISTA serif 14 mayúscula; título serif itálica 30 con el año tras coma; datos 13/19,5; ENQUIRE | `producto/obra-record-separator-1440-s1100.jpg`, `tienda/si-art-1440-v0.jpg` |
+| Botón-fila | ancho completo, acción a la izquierda y valor a la derecha, 44,5 de alto; invierte a negro en hover, sin transición | `producto/tubular-chair-390-v0.jpg` |
+| Paginación | segmentos de 2 px, el activo negro, los demás al 20% | `producto/tubular-chair-390-v0.jpg` |
+| Índice de eventos | H1 serif centrado; destacado 3:2 a sangre; pasados en 2 columnas 3:2 con pie de dos líneas | `eventos/indice-1440-full.jpg` |
+| Página de evento | H1 serif 36, fila de datos 12,8 px tracking 0,08em con «·», bajada centrada máx. 524, foto a sangre 3:2, texto 520 con sangría 40, carrusel de alto fijo con «← 01 / 15 →» | `eventos/evento-saatchi-1440-full.jpg` |
+| Bloque partido de edit | 720 · 720 a sangre; texto a 36 px del borde de la foto: categoría 11 tracking .15em, título itálica 30, autor serif 14, descripción 12/1,55, botón contorno serif 10 tracking .18em | `eventos/ldf-1440-s01620.jpg` |
+| About | foto 2:3 a sangre a la izquierda (704 px), texto justificado en la mitad derecha, centrado en vertical | `global/about-1440-y00000.jpg` |
+| Página de texto | columna de 704 centrada, H1 serif 36 en caja normal, H2 serif 20 mayúscula, párrafos 14/22,75 | `global/ship-1440-y00000.jpg` |
+| Pie | negro, padding 24; titular serif 2,6vw (37,44 px) mayúscula con tres palabras en itálica; tres columnas con rótulos 12 tracking .12em; legal 12 | `producto/tubular-chair-1440-full.jpg`, `global/about-390-y01500.jpg` |
+| Menú de 390 | pantalla completa, ítems serif 38/38 mayúscula, 12 px entre ítems, centrados; subnivel «‹ BACK» con 2 columnas de 177 px | `home/390-i-menu-abierto.jpg` |
+| Movimiento | 150 ms (opacidades de hover), 200 a 300 ms (paneles, carrusel), 400 ms (subrayado), cambio de página instantáneo con fundido de imagen | `global/medidas-cromo-studio-iron.json` |
 
 ---
 
-## 3 · Contra-referencia: Perrotin (lo que María odia)
+## 2 · Mapeo: tipo de página de Studio Iron → vista de Módulo 369
 
-**URL:** https://www.perrotin.com/en (más `/en/artists`)
-**Capturas:** `08-perrotin-artistas-*`, `08-perrotin-home-*`.
-
-**Observado.** Fondo `#FFFFFF` en todo. Artistas es un directorio de texto: 81 nombres en 4 columnas de 13 px en mayúscula, **sin una sola imagen**, bajo un título «ARTISTS» de 48 px (`08-perrotin-artistas-1440-v0.jpg`; a 500, una columna de nombres). Más abajo, el retrato del fundador con una cita suya (una bio de persona) y una tira de retratos de artistas. Inicio: cabecera blanca translúcida (`rgba(255,255,255,.4)`) fija sobre la foto, titular blanco en mayúscula sobre la foto y un panel de medios con fondo desenfocado (`08-perrotin-home-1440-full.jpg`).
-
-**Lo que fija como prohibido en la v2:**
-1. Artistas nunca como lista de nombres sin obra.
-2. Ninguna vista que sea solo blanco y texto negro, sin una obra.
-3. Acerca sin retrato ni bio de persona (su mapa lo dice: «no es una bio personal»).
-4. Ni cabecera translúcida, ni desenfoque detrás de nada, ni titular sobre la foto.
-
-**v1 ya evita:** hueso en vez de blanco; Artistas con obras; ningún retrato; Acerca sin persona.
-**v1 todavía tiene de Perrotin:** el desenfoque (una copia de la obra con `blur(40px)` detrás del carrusel, `styles.css` L128-129) y la vista Índice de Obras, que hoy es una lista de nombres sin imagen: es el directorio de Perrotin hasta que el hallazgo de Escat la active.
+| Vista de Módulo 369 (brief §3) | Página de Studio Iron que manda | Qué se toma (resumen; detalle en la spec) | Qué se aparta y por qué |
+|---|---|---|---|
+| **Cromo global** (aviso, cabecera, menús, pie) | Cabecera, menú Design, menú de 390, pie (todas las páginas) | Cabecera de tres zonas de una línea; sección actual subrayada; panel «Artistas» con miniaturas de obra (el menú Design); menú de 390 con ítems serif enormes y subnivel; pie oscuro con titular serif con itálicas y tres columnas | En el flujo, no fija (Escat). Pie en grafito, no negro. Sin Bag, Account ni Search. Sin newsletter (el titular invita a escribir). Paneles opacos en hueso, sin velo ni desenfoque. Barra de aviso de la maqueta encima (brief §6) |
+| **Inicio** `/` | Portada | Secuencia completa: marca enorme pegada bajo la lámina (≥ 1001) → lámina a sangre → enunciado → tira OBRAS → banda ENCUENTRO → tira ARTISTAS → banda EDICIONES → pie | El hero es el carrusel de María (brief §3), con su pie y sus controles en una línea debajo, nunca encima. El texto de las bandas va debajo de la foto. Sin aceleración del hero ni Lenis |
+| **Artistas** `/artistas/` | Panel «Design» (Studio Iron no tiene página índice) + cabecera de colección | H1 serif centrado + visión curatorial centrada; artistas como tarjetas 4:5 de obra, 3 por fila | Una vista propia en vez de un desplegable, porque es una ruta del mapa de María |
+| **Artista** `/artistas/<a>/` | Página de diseñador (andu-masebo; kouros-maghsoudi como variante larga) | Hero a sangre (un detalle declarado de su obra), nombre en itálica enorme, grilla 3 × 464, Biografía en mitades a sangre, obra sola a sangre, statement en itálica junto a una obra | El nombre va **debajo** del hero, no encima ni pegado (Escat; en Fomenta el nombre negro se pierde sobre la obra negra). Sin retrato (Kurimanzutto, brief §7) |
+| **Obras** `/obras/` | Colección `all-objects` | H1 centrado, grilla uniforme de tarjetas 3 por fila / 2 a 390 | Studio Iron no tiene filtros, conteo ni estado vacío; el brief §7 los exige: se arman con su vocabulario (miniaturas del menú Design para Artista, opciones de texto con el subrayado de la navegación para las otras). Sin scroll infinito |
+| **Ficha** `/obras/<o>/` | Ficha de obra de `/art` (phil-hale/record-separator) + piezas de la ficha de producto | Imágenes apiladas (general y detalle al mismo ancho) a la izquierda, cartela a la derecha con ARTISTA, título en itálica con el año, datos, botón-fila, enlace CONSULTAR; a 390, pista con paginación por segmentos y cartela inmediatamente debajo | Nada sobre la foto (el panel de compra de producto no se toma). Los 4 estados del brief §4 en el botón-fila. Sin cajones: «Cómo se compra» en línea |
+| **Ediciones** `/ediciones/` | Edit `/pages/black-metal` | Cabecera centrada + bloques partidos a sangre que alternan: tapa a un lado; al otro categoría, título en itálica, MÓDULO 369, descripción, botón contorno | Texto quieto (no sticky). Sin texto blanco sobre foto |
+| **Edición** `/ediciones/<e>/` | Ficha de obra de `/art` | Tapa e interiores apilados a la izquierda; cartela con botón-fila «Comprar en Amazon» | Igual que la Ficha |
+| **Encuentro** `/encuentro/` | Edit `/pages/london-design-festival` + banda de la portada | Cabecera de la palabra/número enorme; foto de la caja a sangre; intro centrada; franja de 4 registros sin calle; bloques partidos para Cómo funciona y Formas de activación; preguntas en columna centrada | La palabra enorme no va sobre la foto: el contador 007/369 va sobre hueso, encima de la foto. Enlace vertical «Libro» (boceto de María) |
+| **Activar** `/encuentro/activar/` | Página de texto (shipping-returns) + bloques partidos de edit | H1 + secciones H2 serif en columna centrada (Proceso, Qué recibes, Tiempos, Registro); las dos opciones como bloques partidos | Las dos opciones siguen porque §9-4 está abierta |
+| **Libro** `/encuentro/libro/` | Índice `/events` | H1 centrado + bajada; destacado (el último encuentro) a sangre 3:2 con su pie debajo; los otros en 2 columnas 3:2 | El mapa de 369 no tiene respuesta en Studio Iron: se conserva (D19), entre la cabecera y el destacado. El texto del destacado va debajo de la foto (Studio Iron lo pone encima a 1440 y debajo a 390) |
+| **Encuentro NNN** | Página de evento (saatchi-yates) | H1 centrado (el contador 001/369), fila de datos FECHA · LUGAR, bajada centrada, foto a sangre, texto con sangría, carrusel «Otros encuentros» con «← 01 / 07 →» | Sin bloque FEATURING negro. Sin fotos de personas |
+| **Acerca** `/acerca/` | About | Mitades a sangre: foto 2:3 a la izquierda, texto a la derecha centrado en vertical | La foto no es un retrato (brief §7): una obra de relleno en un muro. H1 visible (copy 12). Texto justificado solo ≥ 1001 |
+| **Tienda** `/tienda/` | Colección `all-objects` | La misma grilla y tarjeta de Obras, con todo lo que se compra; opciones de texto «Todo · Obras · Encuentro · Ediciones» | Un botón por obra bajo su pie (brief §3), «Cómo se compra» con la plantilla de página de texto y el aviso de sin carrito |
+| **Contacto** `/contacto/` | Página de texto (shipping-returns) + campo de línea del pie | Columna centrada, H1 en caja normal, secciones H2 serif mayúscula; campos como una línea; enviar como botón-fila | Studio Iron no tiene página de contacto. Newsletter marcado como no incluido |
+| **404** | Cabecera de colección | H1 serif centrado + dos enlaces | |
 
 ---
 
-## 4 · Por vista
+## 3 · Secundarias que quedan, con su borde
 
-| Vista | Manda | Trabajo de las secundarias | Disrupción de María que la sostiene (§7) | Prohibido aquí |
+### Kurimanzutto · de María (secundaria acotada, dos trabajos)
+**Capturas:** `referencias/06-kurimanzutto-*` (lock anterior, siguen válidas).
+1. **La artista se representa por su obra, nunca por su cara.** Choca con Studio Iron: retrato en el bloque About de cada diseñador (Andu, Fomenta), modelo en el hero de la portada y en About, miniaturas con personas en el menú. **Gana Kurimanzutto** porque es lo que María pidió y el brief §7 lo exige. Donde Studio Iron pone un retrato, Módulo 369 pone la foto de taller (Artista A), una obra en un muro o un detalle declarado.
+2. **El único color saturado tiene un rol y nunca es estado de interfaz.** Studio Iron no tiene color de acento (declara `--hightlight: #fc1701` y no lo usa en ninguna regla medida): no tiene respuesta para el cobalto, que es token fijo y disrupción pedida por María. Se aplica la regla de Kurimanzutto: el cobalto vive en una lista cerrada de tres trazos dentro de elementos enormes; foco, hover, página actual y enlaces van en grafito.
+**No se toma:** el recorte 4:3, la minúscula en nombres, la cabecera fija, la grilla de 4, el rojo, la apertura de Artista (ahora la resuelve Studio Iron).
+
+### Boceto de María (insumo de la clienta)
+El enlace vertical «Libro» a la derecha de la numeración de Encuentro sale de la descripción de su boceto (`BRIEF.md`). Studio Iron no tiene nada equivalente y no choca con nada: se conserva.
+
+### Mapa de 369 (decisión propia)
+Studio Iron no tiene respuesta para un registro numerado de 369 posiciones. Se conserva el mapa de 41 × 9 (spec D19), dibujado con los recursos de Studio Iron (línea de 1 px, números en mono como su contador).
+
+---
+
+## 4 · Contra-referencias y choques con Studio Iron, resueltos
+
+| # | Choque | Studio Iron hace | Resolución | Fuente de la restricción |
 |---|---|---|---|---|
-| Inicio | PRODn, en las filas bajo el carrusel (artistas, Encuentro, ediciones) | Escat: foto grande y leyenda debajo. Schipper: indicador 01 a 05 | Palabra enorme (su correo); cobalto en su único rol | Texto sobre la obra, desenfoque, caja con sombra |
-| Artistas | Schipper (estructura: 3 por fila, línea, nombre) | Kurimanzutto: obra, no cara; obras a proporción natural paradas sobre la línea (regla de PRODn) | No exigida por §7 | Lista de nombres (Perrotin), retratos, recorte |
-| Artista | Kurimanzutto (apertura) y PRODn (las unas 9 obras en filas que suman 9) | Studio Iron: secuencia y cita | Cambio de escala: nombre chico y una obra al ancho completo | Retrato como representación |
-| Obras | PRODn (muro) | Escat: Índice con hallazgo | Escala real dentro de filas que suman 9 (diagnóstico C21) | Paspartú, todo en `s3`, Índice sin imagen |
-| Ficha | PRODn (imagen plana a su alto natural) | Quatrième: «01 general / 02 detalle» en mono y miniaturas chicas | Cambio de escala: miniatura junto a la imagen grande | Panel sobre la foto, barra fija (Studio Iron) |
-| Ediciones | PRODn (precedente de la fila de tapas chicas; el reparto exacto lo fija la spec) | | | Tapas con sombra |
-| Encuentro | La retícula (dirección) | Taradash: texto en columnas angostas. Quatrième: número mono | Contador 001/369 (escala); enlace vertical «Libro» de su boceto | Proceso escrito como hecho (diagnóstico C09) |
-| Activar | | Taradash: columnas angostas | | |
-| Libro | La retícula de 369 (9 × 41, diagnóstico C10) | Quatrième: número mono de cada registro | | Obra de artista usada como registro |
-| Acerca | | Taradash: columnas angostas, dos tamaños | | Retrato o bio de persona (Perrotin) |
-| Tienda | PRODn (obras disponibles en una fila que suma 9) | Taradash: «cómo se compra» en columnas | | Carrito, cifras |
-| Contacto | | Taradash: columnas | | |
+| 1 | Elementos fijos sobre fotos | Cabecera blanca fija (29 / 38 px) que tapa las fotos al bajar; hoja «Add to bag» fija en el DOM de celular (medido: no se abre nunca; la «barra fija» del lock anterior era un artefacto de captura) | Cabecera **en el flujo**, se va con la página. Sin hoja ni barra | María contra Escat; brief §7 |
+| 2 | Texto pegado sobre foto | Texto del destacado `sticky` al 50% encima de la foto, con degradé negro; nombre del autor `sticky` sobre el hero | Todo texto va **debajo o al costado** de la foto, sobre hueso, y quieto | María contra Escat |
+| 3 | Algo pegado que no queda sobre una foto | La marca enorme queda pegada **debajo** de la foto del hero (la foto la tapa); la cartela de `/art` queda pegada **al costado** de las imágenes, en su columna | **Se toman las dos**, solo a ≥ 1001 y con un criterio de QA medible: en ningún paso de scroll un elemento pegado queda encima de un `img`. El brief §7 prohíbe lo fijo o pegado **encima** de una obra; lo que María rechazó de Escat son letras que ensucian la foto | Brief §7 (letra del criterio) |
+| 4 | Blanco | `#FFF` en fondo, cabecera, paneles, cajones, velos | Hueso. Cero blanco en la interfaz | María contra Perrotin |
+| 5 | Retratos y personas | Hero, About, menú, eventos con gente | Obra, taller, caja o registro sin personas | María sobre Kurimanzutto; brief §7 |
+| 6 | Recorte de la obra | `object-fit: cover` 4:5 en tarjetas | La celda 4:5 se llena con una **vista en muro** de la obra entera (M07): lo que se recorta es muro, nunca obra. En la ficha, la obra va plana y entera | Spec P3 |
+| 7 | Carrito y cuentas | Bag, Account, Search, tallas, Add to bag, cajón de bolsa | Fuera. «Tienda» ocupa el lugar de «Bag» como enlace; el botón-fila lleva a Mercado Pago o a Consultar | Brief §8 |
+| 8 | Newsletter | Formulario en el pie con casilla de consentimiento | El titular del pie invita a escribir y lleva a Contacto; el newsletter vive solo en Contacto, marcado como no incluido | Brief §8-2 |
+| 9 | Velos y desenfoque | Velo blanco al 65% con `blur(1px)` bajo el menú Design; al 85% en el menú de 390 | Paneles opacos en hueso, **en el flujo**, que empujan la página | Spec P4 |
+| 10 | Scroll secuestrado | Lenis en escritorio; el hero sube 1,9 veces más rápido que el scroll | Scroll nativo; de ese efecto se toma solo la marca pegada debajo (CSS) | Spec P12; iPhone de María |
+| 11 | Cursor propio, mascota, logo dibujado | Grifo con SCROLL en `mix-blend-mode`; grifo en el pie; wordmark en SVG | Marca tipográfica en Instrument Serif; sin mascota ni cursor | Brief §8-6 |
+| 12 | Tamaños bajo 12 px | 8 (tallas), 9 (SCROLL), 10 (ENQUIRE), 11 (DISCOVER, rótulos) | Esos roles pasan a Plex Mono 12 | Spec 1.2 (C39) |
+| 13 | Botón de 37 px | ENQUIRE de 99 × 37 | 44 px de alto mínimo; botón-fila de 48 | Spec 4.25 |
+| 14 | Texto justificado a 390 | About y eventos justificados con ríos visibles | Justificado solo ≥ 1001; alineado a la izquierda abajo | Legibilidad (capturas `disenador/andu-390-s03-y1434.jpg`, `global/about-390-y00500.jpg`) |
+| 15 | Cuatro tarjetas por vista a 1440 | 4 × 348 desde 1.220 px | 3 por vista (c1-3 · c4-6 · c7-9 = 464 px), el corte que Studio Iron usa entre 920 y 1.219 | Retícula de 9 |
+| 16 | Pie negro | `#000` con texto blanco | `--grafito` con texto `--hueso` (14,38:1). Es la única superficie oscura | Tokens; a María «no le molesta» el inicio negro de Schipper |
+
+**Escat (contra-referencia):** se conserva solo su prohibición. Su «foto grande» la resuelve el hero de Studio Iron y su hallazgo del Índice se retira (Studio Iron no lo tiene; la vista Lista de `/art` ocupa su lugar en Obras, nivel 2).
+**Perrotin (contra-referencia):** blanco intenso, artistas como lista de nombres sin obra, bio de persona, cabecera translúcida, titular sobre la foto.
 
 ---
 
-## 5 · Choques entre referencias y cómo se resolvieron
+## 5 · Qué cambia respecto del lock anterior (para Diego y Javiera)
 
-1. **Proporción.** Kurimanzutto recorta a 4:3 y Schipper a cuadrado; PRODn respeta la proporción. **Manda PRODn:** es obra de artista, y recortarla en un índice es decidir por la artista. En Artistas las obras se paran sobre la línea de Schipper, alineadas abajo (la v1 ya alinea abajo).
-2. **390 px.** PRODn colapsa a una columna; Schipper y Taradash mantienen dos iguales. En una retícula de 3, dos columnas iguales no existen. **Manda la retícula:** a 390 cada fila suma 3 (2+1, 1+2, 3 o 1+1+1). Propuesta para la spec en Artistas: obra en 2 columnas y línea con nombre en la tercera, alternando el lado.
-3. **Serif.** Escat usa serif para nombres y fechas; Studio Iron solo para citas. **Se queda el rol de Studio Iron** (un rol, con contenido real) o la familia se quita. Escat no aporta tipografía.
-4. **Inicio negro.** A María «no le molesta» el de Schipper, pero el hueso es token fijo y la dirección no se reabre por iniciativa interna (brief §8-5). No se toma.
-5. **Corchetes.** Quatrième los usa en sus pies y el brief §6 los reserva para marcar texto pendiente. **Gana el brief.**
-6. **Celdas vacías.** PRODn llena cada fila de imágenes; Taradash deja celdas vacías. **Las filas de obra se llenan y el vacío vive entre filas y en las filas de texto.**
-
----
-
-## 6 · Lo que esto le pasa a la spec (paso 5; todavía no es la spec)
-
-- **Regla de filas:** cada fila de obras suma 9, 6 o 3 según el ancho, con una lista escrita de repartos permitidos y el orden en que se alternan. La «obra corrida» deja de ser un `transform` y pasa a ser una fila con otro reparto o una obra alineada distinto.
-- **Superficies:** un solo lienzo hueso. `hueso-2` solo como espera de carga y marcador de imagen faltante. Cero sombras.
-- **Cobalto:** un rol escrito y uno solo; foco, hover, página actual y enlaces en grafito y gris. Nota de riesgo: `#1F3BD6` tiene tono de unos 231°, cerca del índigo por defecto de los modelos (`#6366F1`, unos 239°); lo separan su oscuridad (luminosidad de 48% contra 67%) y su escasez, y por eso la regla de rol no es opcional.
-- **Tipografía:** dos tamaños de texto, más la palabra enorme y el contador como disrupción. Plex Mono para números, estados y etiquetas. Instrument Serif solo para una cita textual real; si en la v2 no hay ninguna publicable (la frase de María viene de un correo privado y publicarla textual no está consultado, brief §5), la familia sale.
-- **Cabecera:** anclada a columnas y no fija.
-- **Nada fijo ni pegado encima de una obra** (brief §7). La imagen del hallazgo aparece en su columna, sin nada encima. La capa Retícula queda como herramienta de maqueta.
-- **Media faltante** (caja de Encuentro, registros del Libro, interiores de ediciones): marcador dirigido con ratio fijo y texto que dice qué foto va, en `hueso-2`.
+- **Sale la regla de filas de PRODn** (spec anterior 1.4): las listas de obra pasan a grilla uniforme de 3 por fila (2 a 390), como Studio Iron.
+- **Vuelve Instrument Serif, con itálica** (el lock anterior la quitaba, D7): marca, H1, títulos de banda y de tira, nombre de artista, título de obra, cita, menú de 390, titular del pie.
+- **La celda de imagen se llena**: nueva media «vista en muro» (M07). La obra deja de flotar sobre hueso en tarjetas.
+- **Margen y calle de 12 px** (antes 42/18, 30/12, 18/12): con 9 columnas a 1440, `c1-3` mide exactamente los 464 px de Studio Iron.
+- **Cabecera de tres zonas** en vez de anclada a columnas (Quatrième, retirada).
+- **Indicador del carrusel:** «← 01 / 05 →» con flechas cuadradas (Studio Iron) en vez de los números con raya (Schipper, retirada).
+- **Cambio de vista instantáneo**, como Studio Iron (sale View Transitions); se mantiene el fundido de cada imagen.
+- **Índice con hallazgo (Escat) sale;** entra la vista Lista de `/art` como nivel 2.
+- **La palabra enorme del inicio** pasa a ser la marca MÓDULO 369 de borde a borde (≥ 1001) y el enunciado (≤ 1000); el cobalto del inicio pasa de la I de ARTISTAS al punto final del enunciado.
 
 ---
 
-## 7 · Refero (complemento consultado)
+## 6 · Límites de esta investigación
 
-Búsqueda de estilos «contemporary art gallery website strict modular grid monospace captions off-white canvas single accent color»: 10 resultados. Revisé completo V–A–C (v-a-c.org) porque usa etiquetas laterales rotadas, cercanas al enlace vertical «Libro» del boceto de María. **No entra al lock:** su navegación vertical es fija (choca con §7) y el enlace vertical ya tiene fuente propia, el boceto de María. Los demás resultados (Spacelab, Platform, Katherine Pihl y otros) son galerías en blanco puro, el territorio de Perrotin. Con 8 referencias ya por sobre el máximo de 6 del método, una novena diluiría.
+- **Sitio en vivo al 5-oct-2026.** La portada cambia con cada campaña; lo que se toma son estructuras, medidas y comportamientos, no contenidos ni fotos.
+- **La serif de Studio Iron (`bookish`) es más ancha que Instrument Serif** (1,39 a 1,48 veces a igual cuerpo, medido por un analista; Instrument Serif es una serif condensada de display). La traducción iguala alto de mayúscula en los tamaños grandes (Instrument Serif: H = 0,72em, medido hoy en Chrome) y sube un punto el cuerpo en los chicos (12 → 13). Lo mide Javiera contra las capturas lado a lado.
+- **El hover de tarjeta** de Studio Iron se midió en pantalla (borde de 1 px, sin transición); el «cruce a detalle» que citaba la spec anterior (1.7.q) **no existe** en la referencia: era el cambio de variante de color.
+- **390 real por CDP** en todos los tipos de página (las capturas del lock anterior eran a 500).
 
----
+## 7 · Capturas que miré para escribir esto
 
-## 8 · Límites de esta investigación
-
-- **500 px, no 390.** El headless no dibuja menos de unos 500 px. Lo que aquí se dice de celular se miró a 500; el overflow a 390 se mide en la v2 con `scrollWidth` contra `clientWidth`, no con estas capturas.
-- **Hallazgo de Escat:** no se pudo disparar en el headless. Su mecánica está verificada en `main.js` y `artists.css`, no en una captura.
-- **Schipper y Kurimanzutto** solo cargaron sus imágenes con un user agent de escritorio; con el del headless salían cajas grises. Las secciones de Schipper que aparecen con animación quedan en blanco en las capturas completas.
-- **El rojo de Kurimanzutto** está muestreado de un JPEG y es aproximado. Para el lock solo importa su rol.
-- **Sitios en vivo al 5-oct-2026:** las portadas cambian con cada exposición; lo que se toma son estructuras y medidas, no contenidos.
-- **Peso:** la carpeta `referencias/` pesa unos 33 MB (las capturas completas llegan a 1,7 MB cada una). Antes de versionarla conviene decidir si se commitea entera o solo los `-v0` y los `-info.json`.
+`home/1440-primer-viewport.jpg`, `home/1440-full.jpg`, `home/1440-seq-01320.jpg`, `home/390-full.jpg`, `home/390-seq-00000.jpg`, `home/390-i-menu-abierto.jpg`, `home/1440-i-menu-design-abierto.jpg`, `tienda/si-tienda-1440-v0.jpg`, `tienda/si-tienda-390-v0.jpg`, `tienda/si-art-1440-v0.jpg`, `tienda/si-art-390-v0.jpg`, `disenador/andu-1440-full.jpg`, `disenador/andu-1440-s00-y0.jpg`, `disenador/andu-1440-s03-y1530.jpg`, `disenador/andu-390-full.jpg`, `disenador/kouros-1440-s06-y3825.jpg`, `producto/tubular-chair-1440-v0.jpg`, `producto/tubular-chair-1440-full.jpg`, `producto/tubular-chair-390-v0.jpg`, `producto/obra-record-separator-1440-s1100.jpg`, `eventos/indice-1440-full.jpg`, `eventos/evento-saatchi-1440-full.jpg`, `eventos/evento-saatchi-390-i-carrusel-01.jpg`, `eventos/ldf-1440-s01620.jpg`, `eventos/blackmetal-1440-full.jpg`, `global/about-1440-y00000.jpg`, `global/about-390-y01500.jpg`, `global/ship-1440-y00000.jpg`.
