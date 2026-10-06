@@ -28,6 +28,7 @@ import Layout from '../../../layouts/Layout.astro';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
 import Pieza from '../../../components/v3/Pieza.astro';
+import Miga from '../../../components/v3/Miga.astro';
 import '../../../styles/driftime.css';
 import indice from '../../../data/blog-v3/_indice.json';
 
@@ -52,8 +53,14 @@ const fecha = (iso: string) =>
 // La imagen de la fila destacada es DECISIÓN EDITORIAL, no dato: los posts no traen imagen
 // propia. Sale del pool honesto (§5) y no afirma nada del artículo: una fila de fichas,
 // una detrás de otra, para el post de los 21 chequeos uno por uno.
+// srcset (QA final, técnica #8): versión de 800 px. La foto es cuadrada y su caja es más
+// ancha que alta, así que se pinta al ancho de la caja: la columna de 7fr de la fila
+// (120 px + 5fr + 7fr en 100vw − 80, con dos gutters de 16), la columna de texto entre 768 y
+// 1023, y todo el ancho en celular.
 const imgUltimo = {
   src: '/assets/img/d/domino-curva.jpg',
+  srcset: '/assets/img/d/domino-curva-800.jpg 800w, /assets/img/d/domino-curva.jpg 1600w',
+  sizes: '(max-width: 767px) calc(100vw - 40px), (max-width: 1023px) calc(100vw - 216px), calc((100vw - 232px) * 0.583)',
   alt: 'Fichas de dominó de madera de pie en una fila curva, con luz cálida de costado',
 };
 
@@ -120,7 +127,7 @@ const jsonLd = {
 
   <main>
     <header class="d-cab">
-      <p class="d-miga"><a href="/v3/">Inicio</a> · Blog</p>
+      <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Blog' }]} />
       <h1 class="d-h1">Lo que escribimos sobre búsqueda e IA</h1>
       {/* Dos elementos, no tres (antislop A3: una sola serie de tres por página, y esa es
            leer/entender/citar del cierre). «Desde… hasta…» cubre los artículos de en medio,
@@ -143,7 +150,7 @@ const jsonLd = {
               <p class="d-cuerpo">{ultimo.description}</p>
               <span class="d-btn" aria-hidden="true">Leer el artículo</span>
             </div>
-            <Pieza src={imgUltimo.src} alt={imgUltimo.alt} clase="d-dest-blog__img" ancho={1600} alto={1600} eager posicion="50% 60%" />
+            <Pieza src={imgUltimo.src} srcset={imgUltimo.srcset} sizes={imgUltimo.sizes} alt={imgUltimo.alt} clase="d-dest-blog__img" ancho={1600} alto={1600} eager posicion="50% 60%" />
           </article>
         </li>
         {resto.map((p) => (

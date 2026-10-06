@@ -36,6 +36,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
+import Miga from '../../../components/v3/Miga.astro';
 import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
 import '../../../styles/driftime.css';
 import indice from '../../../data/blog-v3/_indice.json';
@@ -102,9 +103,15 @@ const ld = {
 };
 
 const autorBloque = cabeza.match(/<div class="author">([\s\S]*?)<\/div>\s*<\/div>/)?.[1] ?? '';
+// AVATAR (QA final, técnica #8): el post publicado pinta el retrato entero (896 × 1200, 193 KB)
+// en 44 px. Va la miniatura de 132 × 132 (44 × 3, el mismo encuadre cuadrado y centrado que
+// object-fit: cover sacaba del retrato) y alt vacío: el nombre está escrito al lado, y con el
+// alt del post el lector de pantalla decía «Ramón Vallejos» dos veces.
+const AVATAR: Record<string, string> = { '/assets/img/ramon-vallejos.jpg': '/assets/img/ramon-vallejos-avatar.jpg' };
+const srcAutor = autorBloque.match(/<img[^>]*\bsrc="([^"]+)"/)?.[1];
 const autor = {
-  src: autorBloque.match(/<img[^>]*\bsrc="([^"]+)"/)?.[1],
-  alt: autorBloque.match(/<img[^>]*\balt="([^"]*)"/)?.[1] ?? '',
+  src: srcAutor ? AVATAR[srcAutor] ?? srcAutor : undefined,
+  alt: '',
   nombre: autorBloque.match(/<p class="author-name">([\s\S]*?)<\/p>/)?.[1].trim(),
   rol: autorBloque.match(/<p class="author-role">([\s\S]*?)<\/p>/)?.[1].trim(),
 };
@@ -188,6 +195,37 @@ const IMAGEN: Record<string, { src: string; alt: string; w: number; h: number; p
   'como-aparecer-en-chatgpt': { src: '/assets/img/d/hilos.jpg', alt: 'Cantos de hojas apiladas en azul oscuro, en diagonal', w: 1600, h: 960 },
 };
 const img = IMAGEN[slug!] ?? IMAGEN['21-chequeos-visibilidad-ia'];
+// PESO (QA final, técnica #8): versión de 800 px de cada foto. `sizes` es el ancho al que se
+// pinta: la caja de .d-sangre mide 100vw − 80 en 2,39 (escritorio) y 100vw − 40 en 4:3
+// (celular); una foto más ancha que la caja se pinta a «alto de la caja × su proporción».
+// Una división por línea: el compilador de Astro lee «a / b … c / d» como expresión regular.
+// hilos.jpg va con ?v=2, la misma URL que la home y los servicios (re-exportado con más
+// contraste en la QA final, mirada #6).
+const VERSION: Record<string, number> = { '/assets/img/d/hilos.jpg': 2 };
+const imgUrl = img.src + (VERSION[img.src] ? `?v=${VERSION[img.src]}` : '');
+const imgSrcset = `${img.src.replace(/\.jpg$/, '-800.jpg')} 800w, ${imgUrl} ${img.w}w`;
+const R_CEL = 4 / 3;
+const R_ESC = 2.39;
+const nImg = img.w / img.h;
+const fCel = Math.max(1, nImg / R_CEL);
+const fEsc = Math.max(1, nImg / R_ESC);
+const imgSizes = `(max-width: 767px) calc((100vw - 40px) * ${fCel.toFixed(3)}), calc((100vw - 80px) * ${fEsc.toFixed(3)})`;
+
+// FAQPage = FAQ VISIBLE (QA final, técnica #10). La directriz de Google pide que lo marcado se
+// vea, y un sitio que vende datos estructurados no puede marcar lo que no muestra. Cada
+// pregunta del FAQPage tiene que estar entre las del FAQ visible del cuerpo, y su respuesta
+// dentro de la respuesta visible (puede ser un tramo: en el de costos, la marcada es la primera
+// frase de la visible). Si un post no lo cumple, el build se cae con el nombre del archivo.
+const plano = (h: string) => h.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&nbsp;|\u00a0/g, ' ').replace(/\s+/g, ' ').trim();
+const faqVisible = [...prosa.matchAll(/<summary>([\s\S]*?)<\/summary>\s*<p class="faq-a">([\s\S]*?)<\/p>/g)].map((m) => ({ p: plano(m[1]), r: plano(m[2]) }));
+for (const n of info.jsonLd['@graph'].filter((x: any) => x['@type'] === 'FAQPage')) {
+  for (const q of n.mainEntity ?? []) {
+    const v = faqVisible.find((x) => x.p === plano(q.name));
+    if (!v || !v.r.includes(plano(q.acceptedAnswer?.text ?? ''))) {
+      throw new Error(`blog-v3/${slug}.json: la pregunta «${q.name}» del FAQPage no está visible en el post (o su respuesta dice otra cosa)`);
+    }
+  }
+}
 
 // Mismo orden que /v3/blog/ (misma expresión, para que los empates del 7-jul caigan igual).
 const orden = [...indice].sort((a, b) => (a.datePublished < b.datePublished ? 1 : -1));
@@ -205,9 +243,7 @@ const siguiente = orden[(iAqui + 1) % orden.length];
 
   <main>
     <header class="d-cab d-cab--art">
-      <nav class="d-miga" aria-label="Miga de pan">
-        <a href="/v3/">Inicio</a> · <a href="/v3/blog/">Blog</a>{migaCorta && <> · <span set:html={migaCorta} /></>}
-      </nav>
+      <Miga items={[{ label: 'Inicio', href: '/v3/' }, ...(migaCorta ? [{ label: 'Blog', href: '/v3/blog/' }, { label: migaCorta, html: true }] : [{ label: 'Blog' }])]} />
       <h1 class="d-h1" set:html={h1} />
       <p class="d-linea">
         {tema && <><span set:html={tema} /> · </>}
@@ -216,17 +252,16 @@ const siguiente = orden[(iAqui + 1) % orden.length];
       </p>
       {autor.nombre && (
         <div class="d-autor-art">
-          {/* lazy, como en el post publicado: es una foto de 896 × 1200 (198 KB) para 44 px y
-               no compite con la imagen principal (fetchpriority high). La miniatura de 88 px
-               es un asset nuevo en public/, compartido: quedó propuesto, no creado. */}
-          {autor.src && <img src={autor.src} alt={autor.alt} width="44" height="44" loading="lazy" decoding="async" />}
+          {/* lazy, como en el post publicado: no compite con la imagen principal. La miniatura
+               de 132 × 132 (técnica #8) declara su tamaño real; el CSS la pinta en 44. */}
+          {autor.src && <img src={autor.src} alt={autor.alt} width="132" height="132" loading="lazy" decoding="async" />}
           <p><span class="d-autor-art__nombre" set:html={autor.nombre} />{autor.rol && <span class="d-gris" set:html={autor.rol} />}</p>
         </div>
       )}
     </header>
 
     <figure class="d-sangre">
-      <img src={img.src} alt={img.alt} width={img.w} height={img.h} loading="eager" fetchpriority="high" style={img.pos ? `object-position:${img.pos}` : undefined} />
+      <img src={imgUrl} srcset={imgSrcset} sizes={imgSizes} alt={img.alt} width={img.w} height={img.h} loading="eager" fetchpriority="high" style={img.pos ? `object-position:${img.pos}` : undefined} />
     </figure>
 
     {/* ÍNDICE PEGAJOSO + CUERPO. Es la sección con etiqueta de driftime (.d-sec): lo que se

@@ -72,6 +72,7 @@ import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
 import Pieza from '../../components/v3/Pieza.astro';
+import Miga from '../../components/v3/Miga.astro';
 import '../../styles/driftime.css';
 
 const url = 'https://spindlelab.cl/nosotros/';
@@ -144,7 +145,7 @@ const jsonLd = {
        Manrope 800 en mayúsculas. */}
   <main>
     <header class="d-cab">
-      <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Nosotros</nav>
+      <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Nosotros' }]} />
       <h1 class="d-h1 d-h1-nos">No te prometo. Te muestro.</h1>
       <p class="d-linea">Detrás de SpindleLab está Ramón Vallejos: SEO técnico y visibilidad en motores de IA, con evidencia antes que promesas.</p>
       <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>
@@ -175,7 +176,10 @@ const jsonLd = {
       </div>
     </section>
 
-    <figure class="d-sangre d-pausa-nos"><img src="/assets/img/d/ventana.jpg" alt="Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop" width="1600" height="670" loading="lazy" decoding="async" /></figure>
+    {/* srcset (QA final, técnica #8): en escritorio la foto llena la caja de 2,39; en celular
+         la caja es 4:3 y la foto se pinta a 1,79 veces su ancho. El retrato de arriba no lleva:
+         mide 896 de ancho, lo justo para la columna de 5/12 con DPR 2. */}
+    <figure class="d-sangre d-pausa-nos"><img src="/assets/img/d/ventana.jpg" srcset="/assets/img/d/ventana-800.jpg 800w, /assets/img/d/ventana.jpg 1600w" sizes="(max-width: 767px) calc((100vw - 40px) * 1.791), calc(100vw - 80px)" alt="Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop" width="1600" height="670" loading="lazy" decoding="async" /></figure>
 
     <section class="d-sec d-faq" aria-labelledby="s-com">
       <div class="d-eti"><h2 class="d-h2" id="s-com">Cómo trabajo</h2></div>

@@ -53,6 +53,7 @@ import Layout from '../../layouts/Layout.astro';
 import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
+import Miga from '../../components/v3/Miga.astro';
 import '../../styles/driftime.css';
 
 import paginas from '../../data/paginas-v3.json';
@@ -218,7 +219,7 @@ const jsonLd = {
 
   <main>
     <header class="d-cab">
-      <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Método</nav>
+      <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Método' }]} />
       <h1 class="d-h1">{s.h1}</h1>
       <p class="d-linea">{linea}</p>
       {/* El chequeo es el punto de partida de la fase 01 (lo dice el texto de la fase). El
@@ -229,9 +230,13 @@ const jsonLd = {
       </div>
     </header>
 
+    {/* srcset (QA final, técnica #8): versión de 800 px. La foto es cuadrada: en la caja de
+         2,39 (escritorio) y en la de 4:3 (celular) se pinta al ancho de la caja. */}
     <figure class="d-sangre">
       <img
         src="/assets/img/d/domino-curva.jpg"
+        srcset="/assets/img/d/domino-curva-800.jpg 800w, /assets/img/d/domino-curva.jpg 1600w"
+        sizes="(max-width: 767px) calc(100vw - 40px), calc(100vw - 80px)"
         alt="Fichas de dominó de madera en una fila que se curva hacia el fondo, sobre piedra oscura y con luz cálida de costado"
         width="1600"
         height="1600"
@@ -287,12 +292,15 @@ const jsonLd = {
          ventana.jpg y no domino.jpg: el tercio de arriba de domino.jpg es negro puro y, sobre
          el lienzo negro, la pieza perdía el borde y se leía como un hueco (QA 5-oct; mismo
          hallazgo ya medido en servicios/[slug].astro). La cortina clara marca el borde. */}
+    {/* sizes: cada mitad mide (100vw − 80) / 2 en 4:3 (a todo el ancho en celular) y la foto,
+         más ancha que la caja, se pinta a «alto de la caja × su proporción»: ventana (2,39) a
+         0,896 del ancho de la fila, hilo (1,78) a 0,667. */}
     <div class="d-galeria">
       <figure class="d-pieza d-g-mitad">
-        <img src="/assets/img/d/ventana.jpg" alt="Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto" width="1600" height="670" loading="lazy" decoding="async" style="object-position:12% 50%" />
+        <img src="/assets/img/d/ventana.jpg" srcset="/assets/img/d/ventana-800.jpg 800w, /assets/img/d/ventana.jpg 1600w" sizes="(max-width: 767px) calc((100vw - 40px) * 1.791), calc((100vw - 80px) * 0.896)" alt="Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto" width="1600" height="670" loading="lazy" decoding="async" style="object-position:12% 50%" />
       </figure>
       <figure class="d-pieza d-g-mitad">
-        <img src="/assets/img/d/hilo.jpg" alt="Un hilo luminoso verde azulado cruza en diagonal un fondo oscuro" width="1400" height="787" loading="lazy" decoding="async" />
+        <img src="/assets/img/d/hilo.jpg" srcset="/assets/img/d/hilo-800.jpg 800w, /assets/img/d/hilo.jpg 1400w" sizes="(max-width: 767px) calc((100vw - 40px) * 1.334), calc((100vw - 80px) * 0.667)" alt="Un hilo luminoso verde azulado cruza en diagonal un fondo oscuro" width="1400" height="787" loading="lazy" decoding="async" />
       </figure>
     </div>
 

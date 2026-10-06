@@ -91,26 +91,26 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "¿Qué significa AEO?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Answer Engine Optimization: optimizar la presencia de una marca para los motores de respuesta (ChatGPT, Gemini, Perplexity y las respuestas generadas de Google) de modo que la citen y recomienden."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Qué significa GEO?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Generative Engine Optimization: el término de origen académico para la misma disciplina que AEO (aumentar la visibilidad de una marca en respuestas generadas por inteligencia artificial)."
-            }
-          },
-          {
-            "@type": "Question",
             "name": "¿AEO reemplaza al SEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. Comparten la base técnica y Google sigue moviendo la mayor parte del tráfico. AEO agrega un segundo campo de visibilidad (las respuestas de IA) que se trabaja con la misma inversión de base."
+              "text": "No. Google sigue moviendo la mayor parte del tráfico y la base técnica es compartida. AEO agrega un segundo campo de visibilidad que se trabaja con la misma inversión de base."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Esto aplica a empresas chilenas o es tema de mercados grandes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aplica, y con ventaja: como la adopción local todavía es baja, una empresa mediana que optimice ahora puede ganar respuestas de categoría completas antes de que lleguen los grandes presupuestos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta empezar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Medir tu situación actual cuesta cero: nuestro mini-diagnóstico es gratuito e incluye una revisión de tu presencia en IA. Desde ahí, cualquier propuesta se dimensiona según tu caso."
             }
           }
         ]

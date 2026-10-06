@@ -91,26 +91,26 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "¿Cuánto tarda una empresa en aparecer en las respuestas de ChatGPT?",
+            "name": "¿Cuánto tarda en verse resultado?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "En consultas con búsqueda en vivo, semanas tras optimizar contenido y señales. En el conocimiento base del modelo, meses o hasta el siguiente ciclo de entrenamiento. Por eso la estrategia trabaja ambos caminos a la vez."
+              "text": "En respuestas con búsqueda en vivo, las mejoras de contenido y señales pueden reflejarse en semanas. En el conocimiento base del modelo, los cambios toman meses o esperan al siguiente ciclo de entrenamiento. Por eso la estrategia correcta trabaja ambos caminos a la vez."
             }
           },
           {
             "@type": "Question",
-            "name": "¿Debo bloquear los bots de IA en mi robots.txt?",
+            "name": "¿Y si prefiero que la IA no use mi contenido?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Si tu negocio depende de ser encontrado y recomendado, bloquearlos te saca de la conversación. La decisión correcta para la mayoría de las empresas B2B es permitirlos deliberadamente."
+              "text": "Es una decisión legítima. Algunos medios la han tomado. Pero para una empresa que vende servicios, bloquear los bots equivale a pedir que no te recomienden. Se puede proteger contenido específico y dejar abierto lo comercial: esa configuración fina es parte del trabajo."
             }
           },
           {
             "@type": "Question",
-            "name": "¿Optimizar para IA es lo mismo que hacer SEO?",
+            "name": "¿Esto reemplaza al SEO tradicional?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Comparten la base técnica: un sitio rastreable, rápido y con datos estructurados. La capa nueva es la claridad de entidad y el contenido citable: formato que un modelo puede extraer y atribuir con confianza."
+              "text": "No: lo extiende. Google sigue moviendo la mayoría del tráfico, y la base técnica es compartida. Lo que cambia es que ahora hay un segundo campo de juego (las respuestas generadas) y conviene competir en ambos con la misma inversión."
             }
           }
         ]

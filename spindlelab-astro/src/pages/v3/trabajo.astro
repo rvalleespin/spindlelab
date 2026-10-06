@@ -27,6 +27,14 @@
 // sobre el aviso de cookies; «Herramienta · Producto propio» sin repetir «propio»; la línea
 // de Raigal más corta. Las correcciones al JSON compartido están declaradas en spec §7.
 //
+// QA FINAL (6-oct): title con la consulta que la buscaría, «Trabajo: sitios que construimos ·
+// SpindleLab» (técnica #13b; el de antes tenía 20 caracteres y ninguna palabra buscable); la
+// etiqueta de cada imagen es el `rotulo` de obra-v3.json, el mismo de la home y de Desarrollo
+// web (mirada #10: «Bernardo Combeau | Model · Cliente» mezclaba dos separadores y a 768 se
+// partía en «Bernardo Combeau I / Model»). El nombre de marca con su barra queda solo donde se
+// nombra el sitio: el h2 del pie, junto a su enlace. Miga con el componente Miga (técnica #12)
+// y srcset con los mockups de 800 px (técnica #8).
+//
 // Clasifican por RUBRO, no por servicio, porque un prospecto se reconoce en su rubro, no en
 // el nombre del servicio que le vendimos a otro. Acá igual.
 //
@@ -49,6 +57,7 @@ import Layout from '../../layouts/Layout.astro';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
 import Pieza from '../../components/v3/Pieza.astro';
+import Miga from '../../components/v3/Miga.astro';
 import '../../styles/driftime.css';
 import obra from '../../data/obra-v3.json';
 import oferta from '../../data/oferta-v3.json';
@@ -124,6 +133,19 @@ const FORMAS: Record<string, { forma: string; src: (c: any) => string; alt: (c: 
   raigal: { forma: 'final', src: (c) => c.mock, alt: (c) => c.altMock, w: 1600, h: 1200 },
 };
 
+// PESO (QA final, técnica #8): cada mockup tiene su versión de 800 px. `sizes` es el ancho al
+// que se pinta, con la cuenta del CSS de abajo (grilla de 12 en 100vw − 80, gutter 16): la
+// ancha a todo el ancho; la alta en 5 columnas (0,417); la media en 7 columnas pero con el alto
+// de la alta, así que el mockup 4:3 se pinta a 0,611 del ancho; la final en 8 columnas (7 entre
+// 1024 y 1279, todo el ancho entre 768 y 1023). En celular, todas a todo el ancho.
+const SIZES: Record<string, string> = {
+  ancha: '(max-width: 767px) calc(100vw - 40px), calc(100vw - 80px)',
+  alta: '(max-width: 767px) calc(100vw - 40px), calc((100vw - 80px) * 0.417)',
+  media: '(max-width: 767px) calc(100vw - 40px), calc((100vw - 80px) * 0.611)',
+  final: '(max-width: 767px) calc(100vw - 40px), (max-width: 1023px) calc(100vw - 80px), (max-width: 1279px) calc((100vw - 80px) * 0.583), calc((100vw - 80px) * 0.667)',
+};
+const srcsetDe = (src: string, w: number) => `${src.replace(/\.jpg$/, '-800.jpg')} 800w, ${src} ${w}w`;
+
 const piezas = casos.map((c: any, i: number) => {
   const f = FORMAS[c.slug] ?? { forma: 'ancha', src: (x: any) => x.mock, alt: (x: any) => x.altMock, w: 1600, h: 1200 };
   const concepto = c.tipo === 'concepto';
@@ -136,19 +158,16 @@ const piezas = casos.map((c: any, i: number) => {
     nombre: partesNombre(c.n),
     forma: f.forma,
     src: f.src(c),
+    srcset: srcsetDe(f.src(c), f.w),
+    sizes: SIZES[f.forma],
     altImg: f.alt(c),
     w: f.w,
     h: f.h,
     pos: f.pos,
     eager: i === 0,
     concepto,
-    // Mismo rótulo que la fila de la home y la galería de Desarrollo Web.
-    etiquetas: [concepto ? `${c.n} · ${c.rubro}` : `${c.n} · ${ROTULO[c.tipo] ?? c.rubro}`],
-    // Un nombre con barra («Bernardo Combeau | Model») no puede ir en las etiquetas de
-    // Pieza: Pieza pinta texto plano y la barra se lee «I» (QA, 5-oct). Esa pieza pinta su
-    // propia etiqueta, con las mismas clases .d-etq y la barra en gris. Solo si no es de
-    // concepto: el rótulo de concepto lo pone Pieza, en el mismo rincón.
-    chipPropio: !concepto && c.n.includes(' | '),
+    // El rótulo único de la obra (obra-v3.json), el mismo de la home y de Desarrollo web.
+    etiquetas: [c.rotulo],
     // Lo que se lee en el enlace: el dominio, sin protocolo ni barra final.
     dominio: c.url ? c.url.replace(/^https?:\/\//, '').replace(/\/$/, '') : null,
   };
@@ -201,7 +220,7 @@ const jsonLd = {
 ---
 
 <Layout
-  title="Trabajo · SpindleLab"
+  title="Trabajo: sitios que construimos · SpindleLab"
   description={obra.bajada}
   bodyClass="d-body"
 >
@@ -211,7 +230,7 @@ const jsonLd = {
 
   <main>
     <header class="d-cab d-cab--trab">
-      <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Trabajo</nav>
+      <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Trabajo' }]} />
       <h1 class="d-h1">{obra.titulo}</h1>
     </header>
 
@@ -229,17 +248,11 @@ const jsonLd = {
         <article class:list={['d-obra-trab', `d-obra-trab--${p.forma}`]} aria-labelledby={`o-${p.slug}`}>
           {p.url ? (
             <a class="d-obra-trab__img" href={p.url} target="_blank" rel="noopener" tabindex="-1">
-              <Pieza src={p.src} alt={p.altImg} concepto={p.concepto} etiquetas={p.chipPropio ? [] : p.etiquetas} clase="d-obra-trab__fig" ancho={p.w} alto={p.h} eager={p.eager} posicion={p.pos} />
-              {p.chipPropio && (
-                <span class="d-etq d-etq-trab"><span>{p.nombre[0]} <span class="d-barra-etq-trab">|</span> {p.nombre.slice(1).join(' | ')} · {ROTULO[p.tipo] ?? p.rubro}</span></span>
-              )}
+              <Pieza src={p.src} srcset={p.srcset} sizes={p.sizes} alt={p.altImg} concepto={p.concepto} etiquetas={p.etiquetas} clase="d-obra-trab__fig" ancho={p.w} alto={p.h} eager={p.eager} posicion={p.pos} />
             </a>
           ) : (
             <div class="d-obra-trab__img">
-              <Pieza src={p.src} alt={p.altImg} concepto={p.concepto} etiquetas={p.chipPropio ? [] : p.etiquetas} clase="d-obra-trab__fig" ancho={p.w} alto={p.h} eager={p.eager} posicion={p.pos} />
-              {p.chipPropio && (
-                <span class="d-etq d-etq-trab"><span>{p.nombre[0]} <span class="d-barra-etq-trab">|</span> {p.nombre.slice(1).join(' | ')} · {ROTULO[p.tipo] ?? p.rubro}</span></span>
-              )}
+              <Pieza src={p.src} srcset={p.srcset} sizes={p.sizes} alt={p.altImg} concepto={p.concepto} etiquetas={p.etiquetas} clase="d-obra-trab__fig" ancho={p.w} alto={p.h} eager={p.eager} posicion={p.pos} />
             </div>
           )}
           <div class="d-pie-trab">
@@ -346,14 +359,10 @@ const jsonLd = {
   .d-obra-trab--ancha .d-pie-trab__txt { grid-column: 6 / -1; }
   .d-obra-trab--final .d-pie-trab { grid-column: 9 / -1; align-self: end; padding-left: clamp(0px, 1.5vw, 24px); }
 
-  /* «Bernardo Combeau | Model»: la barra en gris, como en su propio sitio. */
+  /* «Bernardo Combeau | Model» en el h2 del pie: la barra en gris, como en su propio sitio.
+     La etiqueta de la imagen ya no la lleva (usa el `rotulo` de la obra). */
   .d-barra-trab { color: var(--d-gris); font-weight: 400; }
-  /* La misma barra en la etiqueta de la imagen. La etiqueta propia se ubica contra el
-     contenedor de la imagen (mismo rincón que el figcaption de Pieza: la figura lo llena).
-     .d-etq span alcanza también al span anidado de la barra (fondo, desenfoque, relleno):
-     acá se le quitan, y queda solo el color. */
   .d-obra-trab__img { position: relative; }
-  .d-etq-trab .d-barra-etq-trab { background: none; -webkit-backdrop-filter: none; backdrop-filter: none; padding: 0 0.1em; border-radius: 0; color: var(--d-gris); font-weight: 400; }
 
   /* La entrada sin nota: la bajada en las 7 columnas de la derecha, como la guía de
      Desarrollo Web. En celular, .d-entrada ya apila. */
