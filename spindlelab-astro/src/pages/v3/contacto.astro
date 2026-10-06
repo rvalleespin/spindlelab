@@ -109,7 +109,12 @@ const jsonLd = {
     <header class="d-cab d-cab--ct">
       <p class="d-miga"><a href="/v3/">Inicio</a> · Contacto</p>
       <h1 class="d-h1">{h1}</h1>
-      <p class="d-linea">Escríbenos con la dirección de tu sitio y recibes el mini-diagnóstico, gratis y sin compromiso.</p>
+      {/* Escrita en la página (el lead del JSON es otro texto, más largo): sexto texto de la
+           fila de contacto de spec §7, propuesto como campo `linea` en paginas-v3.json. Sin
+           «sin compromiso»: es frase de folleto y la pregunta 1 ya lo responde (QA2 6-oct).
+           «mini-diagnóstico, gratis.» no se parte: a 1440 dejaba «gratis.» sola en la segunda
+           línea, y un espacio duro solo movía el corte al guion («mini-/diagnóstico»). */}
+      <p class="d-linea">Escríbenos con la dirección de tu sitio y recibes el <span class="d-ct-junto">mini-diagnóstico, gratis.</span></p>
     </header>
 
     {/* El formulario ocupa el lugar que en un caso de driftime tiene la imagen a sangre: es
@@ -147,7 +152,7 @@ const jsonLd = {
 
           <div class="d-ct-campo">
             <label for="f-mensaje">Cuéntanos brevemente <span>(opcional)</span></label>
-            <textarea id="f-mensaje" name="Mensaje" rows="3" placeholder="Qué hace tu empresa, qué te preocupa de tu sitio..."></textarea>
+            <textarea id="f-mensaje" name="Mensaje" rows="3" placeholder="Qué hace tu empresa, qué te preocupa de tu sitio…"></textarea>
           </div>
 
           {/* Los rellena el script con los UTM de la visita. */}
@@ -204,8 +209,9 @@ const jsonLd = {
   <FooterV3 />
 
   <script src="/assets/js/v3-contacto.js" is:inline defer></script>
-  {/* Tres arreglos de esta página que no tocan archivos compartidos (están propuestos en
-       NavV3, FooterV3 y v3-contacto.js; cuando entren, este bloque deja de hacer nada):
+  {/* Cuatro arreglos de esta página que no tocan archivos compartidos (los tres primeros
+       están propuestos en NavV3, FooterV3 y v3-contacto.js; cuando entren, dejan de hacer
+       nada; el cuarto se explica en su lugar, más abajo):
        1. En contacto, «Escríbenos» del módulo, del menú y del pie apuntaba a esta misma URL:
           recargaba, volvía arriba y podía borrar lo escrito. Aquí lleva al formulario.
        2. v3-contacto.js devuelve el botón a 'Enviar →' cuando el envío falla. Si el botón
@@ -239,6 +245,36 @@ const jsonLd = {
       new MutationObserver(function () { if (!b.disabled && b.textContent !== t) b.textContent = t; })
         .observe(b, { childList: true, characterData: true, subtree: true, attributes: true, attributeFilter: ['disabled'] });
     })();
+    /* 4. Envío correcto (QA2 6-oct, bloqueante). v3-contacto.js oculta el formulario y la
+          página se acorta ~560 px: la caja «Listo.» quedaba sobre el borde superior, bajo el
+          módulo, y el foco caía a BODY (el botón enfocado se ocultó). Al volverse visible, la
+          caja toma el foco (eso además la anuncia: un role=status que pasa de hidden a
+          visible no se lee de forma fiable) y, si no está entera entre el módulo y el borde
+          inferior o el aviso de cookies, se centra. Sin animación con movimiento reducido. */
+    (function () {
+      var listo = document.querySelector('.form-success');
+      if (!listo || !('MutationObserver' in window)) return;
+      var mo = new MutationObserver(function () {
+        if (listo.hidden) return;
+        mo.disconnect();
+        listo.tabIndex = -1;
+        listo.focus({ preventScroll: true });
+        var nav = document.querySelector('header.fixed');
+        var arriba = nav ? nav.getBoundingClientRect().bottom : 0;
+        var abajo = window.innerHeight;
+        var aviso = document.getElementById('cookie-banner');
+        if (aviso && aviso.getClientRects().length) {
+          var ra = aviso.getBoundingClientRect();
+          if (ra.height && ra.top < abajo) abajo = ra.top;
+        }
+        var r = listo.getBoundingClientRect();
+        if (r.top < arriba + 8 || r.bottom > abajo - 8) {
+          var quieto = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+          listo.scrollIntoView({ block: 'center', behavior: quieto ? 'auto' : 'smooth' });
+        }
+      });
+      mo.observe(listo, { attributes: true, attributeFilter: ['hidden'] });
+    })();
   </script>
 </Layout>
 
@@ -252,6 +288,7 @@ const jsonLd = {
      (§7, 5-oct, contacto). */
   .d-cab--ct { padding-top: 140px; padding-bottom: 0; }
   .d-cab--ct .d-linea { margin-bottom: 0; }
+  .d-ct-junto { white-space: nowrap; }
 
   /* Formulario + su contexto: 5/12 a la izquierda (la etiqueta y el correo directo, este
      último apoyado abajo, a la altura del botón), 7/12 el formulario. La misma partición
