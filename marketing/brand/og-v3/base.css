@@ -5,6 +5,6 @@
 html, body { width: 1200px; height: 630px; overflow: hidden; background: #000; color: #F7F5F0; font-family: 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; }
 .wm { font-family: 'Gabarito', sans-serif; font-weight: 800; letter-spacing: -0.035em; line-height: 1; }
 .wm i { font-style: normal; color: #C9A227; }
-.mod { display: inline-flex; align-items: center; height: 54px; padding: 0 20px; background: #161616; border-radius: 6px; font-size: 26px; }
+.mod { display: inline-block; font-size: 56px; }   /* wordmark tipográfico puro, sin placa (manual §02); 263 px de tinta, sobre el mínimo de 120 */
 .display { font-weight: 800; text-transform: uppercase; line-height: 0.9; letter-spacing: -0.005em; }
 .gris { color: #9AA4B0; }
