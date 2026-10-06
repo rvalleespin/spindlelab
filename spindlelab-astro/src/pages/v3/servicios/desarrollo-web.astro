@@ -175,7 +175,7 @@ const vyc = caso('verifica-y-cumple');
 const rai = caso('raigal');
 // rCel: proporción de la caja en celular cuando no es r (la ventana: 3:4 en la fila de escritorio,
 // 4:3 en celular, donde una foto de ambiente de 3:4 a todo el ancho llenaba una pantalla).
-type PiezaDw = { src: string; w: number; h: number; alt: string; r: number; rCel?: number; s800?: string; etq?: string; concepto?: boolean; pos?: string; clase?: string };
+type PiezaDw = { src: string; w: number; h: number; alt: string; r: number; rCel?: number; s800?: string; etq?: string; concepto?: boolean; pos?: string; clase?: string; plana?: boolean };
 const v800 = (src: string) => src.replace(/\.jpg$/, '-800.jpg');
 // El ancho al que se pinta cada pieza, con la cuenta del CSS de abajo: escritorio, la fila
 // mide 100vw − 80 (márgenes) y reparte 100vw − 96 (menos un gutter) entre sus piezas en
@@ -188,14 +188,14 @@ const sizesDw = (p: PiezaDw, suma: number) => {
   const cel = Math.max(1, n / (p.rCel ?? p.r));
   return `(max-width: 767px) calc((100vw - 40px) * ${f(cel)}), calc((100vw - 96px) * ${f(esc)})`;
 };
-const ancha: PiezaDw = { src: fot.img, w: fot.w, h: fot.h, alt: fot.alt, r: fot.w / fot.h, s800: v800(fot.img), etq: fot.rotulo };
+const ancha: PiezaDw = { src: fot.img, w: fot.w, h: fot.h, alt: fot.alt, r: fot.w / fot.h, s800: v800(fot.img), etq: fot.rotulo, plana: true };
 const filas: PiezaDw[][] = [
   [
-    // Captura plana del book (900 × 1200), no el mockup en teléfono de Trabajo. El alt de la
-    // portada ancha («a pantalla completa») no describe esta tira: es el mismo, ajustado a lo
-    // que muestra.
-    { src: mod.tira, w: 900, h: 1200, alt: 'Portada del book de modelo de Bernardo Combeau, con una fotografía editorial y su ficha debajo', r: 0.75, etq: mod.rotulo },
-    { src: vyc.img, w: vyc.w, h: vyc.h, alt: vyc.alt, r: vyc.w / vyc.h, s800: v800(vyc.img), etq: vyc.rotulo },
+    // El book va en su mockup de teléfono: la captura plana tiene texto arriba (el wordmark del
+    // sitio) y abajo (la ficha), y la etiqueta tapaba uno de los dos en cualquier esquina
+    // (re-verificación de la QA final). Repite una pieza de Trabajo; es el costo menor.
+    { src: mod.mockAlto, w: 1000, h: 1100, alt: mod.altMockAlto ?? mod.altMock, r: 1000 / 1100, s800: v800(mod.mockAlto), etq: mod.rotulo },
+    { src: vyc.img, w: vyc.w, h: vyc.h, alt: vyc.alt, r: vyc.w / vyc.h, s800: v800(vyc.img), etq: vyc.rotulo, plana: true },
   ],
   [
     { src: rai.mock, w: 1600, h: 1200, alt: rai.altMock, r: 4 / 3, s800: v800(rai.mock), etq: rai.rotulo, concepto: true },
@@ -242,10 +242,10 @@ const sumaDe = (fila: PiezaDw[]) => fila.reduce((t, p) => t + p.r, 0);
 
     <section class="d-galeria" aria-labelledby="s-obra">
       <div class="d-galeria__cab"><h2 class="d-h2" id="s-obra">Sitios que ya construimos</h2><a class="d-btn d-btn--alt" href="/v3/trabajo/">Ver el trabajo</a></div>
-      <Pieza src={ancha.src} srcset={`${ancha.s800} 800w, ${ancha.src} ${ancha.w}w`} sizes="(max-width: 767px) calc(100vw - 40px), calc(100vw - 80px)" alt={ancha.alt} etiquetas={[ancha.etq!]} ancho={ancha.w} alto={ancha.h} proporcion={ancha.r} clase="d-g-ancha" />
+      <Pieza etqAbajo="siempre" src={ancha.src} srcset={`${ancha.s800} 800w, ${ancha.src} ${ancha.w}w`} sizes="(max-width: 767px) calc(100vw - 40px), calc(100vw - 80px)" alt={ancha.alt} etiquetas={[ancha.etq!]} ancho={ancha.w} alto={ancha.h} proporcion={ancha.r} clase="d-g-ancha" />
       {filas.map((fila) => (
         <div class="d-fila-dw">
-          {fila.map((p) => <Pieza src={p.src} srcset={p.s800 ? `${p.s800} 800w, ${p.src} ${p.w}w` : undefined} sizes={p.s800 ? sizesDw(p, sumaDe(fila)) : undefined} alt={p.alt} concepto={p.concepto} etiquetas={p.etq ? [p.etq] : []} ancho={p.w} alto={p.h} proporcion={p.r} posicion={p.pos} clase={p.clase} />)}
+          {fila.map((p) => <Pieza etqAbajo={p.plana ? 'siempre' : undefined} src={p.src} srcset={p.s800 ? `${p.s800} 800w, ${p.src} ${p.w}w` : undefined} sizes={p.s800 ? sizesDw(p, sumaDe(fila)) : undefined} alt={p.alt} concepto={p.concepto} etiquetas={p.etq ? [p.etq] : []} ancho={p.w} alto={p.h} proporcion={p.r} posicion={p.pos} clase={p.clase} />)}
         </div>
       ))}
     </section>

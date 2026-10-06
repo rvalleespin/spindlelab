@@ -72,6 +72,11 @@
 .d-etq { position: absolute; left: 10px; top: 10px; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
 .d-etq span { background: rgba(0, 0, 0, 0.66); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: var(--d-papel); font-size: 0.75rem; font-weight: 500; padding: 5px 8px; border-radius: 4px; }
 .d-etq .d-etq--concepto { background: var(--d-papel); color: #000; }
+/* Capturas planas: arriba está la cabecera del sitio retratado y la etiqueta le tapaba el
+   wordmark (re-verificación de la QA final). Van abajo; están lejos del primer pantallazo,
+   así que la regla del 5-oct (arriba, por el aviso de cookies) no aplica. */
+.d-pieza--etq-abajo .d-etq { top: auto; bottom: 10px; }
+@media (min-width: 1025px), (min-width: 768px) and (orientation: landscape) { .d-pieza--etq-abajo-esc .d-etq { top: auto; bottom: 10px; } }
 
 .d-fila { display: grid; gap: var(--d-g); }
 .d-fila--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -128,10 +133,16 @@
 /* En carrusel el titular ya no se ancla al fondo de la pantalla: con la fila más baja, el
    margen automático abría un hueco negro entre el chequeo y el titular (a 768 × 1024 eran
    ~380 px). El hero mide lo que trae y la presentación sigue debajo. */
-@media (max-width: 767px), (max-width: 1024px) and (orientation: portrait) {
+/* Solo en TABLETA: en celular el hero vuelve a llenar la pantalla con el titular anclado
+   abajo (re-verificación de la QA final: aplicado también al celular, la obra bajaba de
+   273 × 300 a 229 × 252 y quedaban 99 px de negro bajo la fila). */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .d-hero { min-height: 0; }
   .d-hero .d-titular { margin-top: 0; }
 }
+/* Celular: el alto común más grande con el que la pieza ancha (4:3) todavía cabe entera al
+   detenerse el carrusel (ancho visible = 100vw − margen). */
+@media (max-width: 767px) { .d-fila--hero .d-pieza { height: calc((100vw - var(--d-m)) * 0.74); } }
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .d-fila--hero .d-pieza { height: calc((100vw - var(--d-m)) * 0.4); }
   .d-hero .d-titular { padding-top: clamp(48px, 8svh, 96px); }

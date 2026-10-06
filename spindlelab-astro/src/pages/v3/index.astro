@@ -251,7 +251,7 @@ const jsonLd = {
           ))}
         </div>
         <div class="d-fila d-fila--2" style={`--suma:${c.suma.toFixed(4)}`}>
-          {c.imgs.map((im) => <Pieza src={im.url} srcset={im.srcset} sizes={im.sizes} alt={im.alt} etiquetas={im.etq ? [im.etq] : []} ancho={im.w} alto={im.h} proporcion={im.w / im.h} srcCel={im.cel} srcsetCel={im.cel ? candidatas(im.cel, MOCK.alto.w) : undefined} sizesCel={im.cel ? sizesCelda(MOCK.alto.w / MOCK.alto.h) : undefined} anchoCel={im.cel ? MOCK.alto.w : undefined} altoCel={im.cel ? MOCK.alto.h : undefined} mediaCel={CEL} posicion={im.pos} />)}
+          {c.imgs.map((im) => <Pieza etqAbajo={im.cel ? 'escritorio' : undefined} src={im.url} srcset={im.srcset} sizes={im.sizes} alt={im.alt} etiquetas={im.etq ? [im.etq] : []} ancho={im.w} alto={im.h} proporcion={im.w / im.h} srcCel={im.cel} srcsetCel={im.cel ? candidatas(im.cel, MOCK.alto.w) : undefined} sizesCel={im.cel ? sizesCelda(MOCK.alto.w / MOCK.alto.h) : undefined} anchoCel={im.cel ? MOCK.alto.w : undefined} altoCel={im.cel ? MOCK.alto.h : undefined} mediaCel={CEL} posicion={im.pos} />)}
         </div>
       </section>
     ))}
@@ -287,5 +287,5 @@ const jsonLd = {
   <FocoPila bandas=".d-campo" />
   <FooterV3 />
 
-  <script src="/assets/js/v3-chequeo.js" is:inline defer></script>
+  <script src="/assets/js/v3-chequeo.js?v=2" is:inline defer></script>
 </Layout>

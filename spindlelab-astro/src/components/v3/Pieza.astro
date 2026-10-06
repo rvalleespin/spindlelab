@@ -11,6 +11,9 @@ interface Props {
   alt: string;
   clase?: string;
   etiquetas?: string[];
+  /** Etiqueta ABAJO a la izquierda, para capturas planas cuyo arriba es la cabecera del sitio
+      retratado (la etiqueta tapaba su wordmark). «escritorio»: solo donde se ve la captura plana. */
+  etqAbajo?: 'siempre' | 'escritorio';
   concepto?: boolean;
   ancho?: number;
   alto?: number;
@@ -32,11 +35,11 @@ interface Props {
   sizesCel?: string;
 }
 const {
-  src, alt, clase = '', etiquetas = [], concepto = false, ancho, alto, eager = false, posicion,
+  src, alt, clase = '', etiquetas = [], etqAbajo, concepto = false, ancho, alto, eager = false, posicion,
   srcCel, anchoCel, altoCel, mediaCel = '(max-width: 767px)', proporcion, srcset, sizes, srcsetCel, sizesCel,
 } = Astro.props;
 ---
-<figure class:list={['d-pieza', clase]} style={proporcion ? `--r:${proporcion.toFixed(4)}` : undefined}>
+<figure class:list={['d-pieza', clase, etqAbajo === 'siempre' && 'd-pieza--etq-abajo', etqAbajo === 'escritorio' && 'd-pieza--etq-abajo-esc']} style={proporcion ? `--r:${proporcion.toFixed(4)}` : undefined}>
   <picture>
     {srcCel && <source media={mediaCel} srcset={srcsetCel ?? srcCel} sizes={srcsetCel ? sizesCel ?? sizes : undefined} width={anchoCel} height={altoCel} />}
     <img
