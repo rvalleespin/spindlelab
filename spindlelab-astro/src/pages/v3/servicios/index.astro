@@ -32,6 +32,12 @@
 // De «dentro / fuera» queda solo «fuera» (QA 5-oct, A10): «dentro» repetía los servicios que
 // las cuatro bandas acaban de mostrar, y en el orden contrario. El FAQ no se duplica acá; vive
 // en cada página de servicio.
+//
+// FOCO EN LA PILA PEGAJOSA (QA2 5-oct, bloqueante, WCAG 2.4.11): hacia atrás con Shift+Tab, una
+// fila de una banda anterior quedaba entera bajo la banda siguiente. El navegador no hace
+// scroll porque la fila está geométricamente dentro de la ventana. El script del final lleva
+// la ventana a la posición natural de la banda cuando el foco cae tapado; sin JS, la banda con
+// el foco sube encima de las otras (CSS). Spec §3, regla de toda pila pegajosa.
 import Layout from '../../../layouts/Layout.astro';
 import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
@@ -47,13 +53,16 @@ const pub = (paginas as Record<string, any>).servicios;
 // extraído: mismos dos nodos y mismos @id. Cada ítem apunta al nodo Service con el mismo @id
 // que Layout.astro declara en makesOffer; sin eso el índice queda desconectado de los
 // servicios (QA 5-oct, C8). La organización y la persona ya las emite Layout.astro.
+// La miga dice «Servicios», como el menú, el pie y la miga de cada servicio (QA2 5-oct, C8):
+// el JSON publicado la llama «Soluciones» y el mismo ítem quedaba con dos nombres en el grafo.
+const migas = pub.breadcrumb.map((li: any) => (li.position === 2 ? { ...li, name: 'Servicios' } : li));
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'BreadcrumbList',
       '@id': `${url}#breadcrumb`,
-      itemListElement: pub.breadcrumb,
+      itemListElement: migas,
     },
     {
       ...pub.itemList,
@@ -66,9 +75,26 @@ const jsonLd = {
 // antítesis seguidas y jerga («primer commit», «AEO»), y la de Visibilidad repetía «no lo vas
 // a rehacer», que ya dice su h2 (QA 5-oct, A4/A10/B8). El JSON es compartido y no se toca
 // desde acá: el cambio va propuesto. Cuando el JSON lo traiga, este mapa se borra.
+// Desarrollo va SIN nota (QA2 5-oct, A10): la guía de la entrada, la nota y la fila decían
+// tres veces seguidas que el sitio nace legible para la IA. Petróleo tampoco lleva.
 const notaPagina: Record<string, string> = {
-  brasa: 'La legibilidad para Google y para la IA viene incluida desde el primer día de construcción; no se cobra después.',
+  brasa: '',
   navy: 'No hace falta reconstruir para que una IA pueda citarte.',
+};
+
+// Descripciones de fila propias de esta página (QA2 5-oct, A10). La de Desarrollo Web se
+// comparte con la home, donde «el mismo chequeo» remite al instrumento del hero; acá no hay
+// chequeo antes y «el mismo» no remitía a nada. Mismo mecanismo transitorio que notaPagina.
+const descPagina: Record<string, string> = {
+  '/v3/servicios/desarrollo-web/': 'El sitio nace legible para las máquinas que hoy recomiendan tu negocio. Lo compruebas con el chequeo gratis, sobre tu dominio, antes y después.',
+};
+
+// «Lo que pones tú» (QA2 5-oct, voz precisa): con «Lo que no hacemos: Creación de contenido» la
+// página negaba el «contenido para búsqueda e IA» que vende Acompañamiento una pantalla antes.
+// Rótulo y término vienen de la página publicada: «Fuera (lo pones tú)» y «el contenido
+// creativo (redacción, diseño gráfico, video) lo pones tú».
+const fueraPagina: Record<string, string> = {
+  'Creación de contenido: redacción y guiones de piezas.': 'Contenido creativo: redacción y guiones de piezas.',
 };
 
 // «$490.000 · $690.000 con Visibilidad IA» → una alternativa por trozo. Cada trozo no se
@@ -81,7 +107,12 @@ const alternativas = (p: string) => p.split(' · ');
 const bandas = [
   ...oferta.momentos.map((m: any) => ({ palabra: m.palabra, campo: m.campo, momento: m.momento, nota: m.nota, items: m.items })),
   { palabra: oferta.tambienPanel.palabra, campo: oferta.tambienPanel.campo, momento: oferta.tambienPanel.momento, nota: oferta.tambienPanel.nota, items: oferta.tambien },
-].map((b) => ({ ...b, nota: notaPagina[b.campo] ?? b.nota, id: `m-${b.palabra.toLowerCase()}` }));
+].map((b) => ({
+  ...b,
+  nota: notaPagina[b.campo] ?? b.nota,
+  id: `m-${b.palabra.toLowerCase()}`,
+  items: b.items.map((it: any) => ({ ...it, d: descPagina[it.href] ?? it.d })),
+}));
 
 // «Creación de contenido: redacción y guiones…» → el rótulo en papel, el detalle en gris.
 const partir = (t: string) => {
@@ -100,7 +131,7 @@ const partir = (t: string) => {
 
   <main>
     <header class="d-cab">
-      <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Soluciones</nav>
+      <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Servicios</nav>
       <h1 class="d-h1">Qué hacemos</h1>
     </header>
 
@@ -144,16 +175,18 @@ const partir = (t: string) => {
       ))}
     </div>
 
-    {/* EL LÍMITE, verbatim. Decir qué NO se hace evita el malentendido de alcance. Solo la
-         mitad «fuera»: la mitad «dentro» repetía las bandas (QA 5-oct, A10/B7). Sección corta:
-         la etiqueta no se pega (spec §7). */}
+    {/* EL LÍMITE. Decir qué NO se hace evita el malentendido de alcance. Solo la mitad
+         «fuera»: la mitad «dentro» repetía las bandas (QA 5-oct, A10/B7). Sección corta: la
+         etiqueta no se pega (spec §7). Rótulo, término y pie de la página publicada (QA2 5-oct):
+         «lo pones tú», «contenido creativo» y «Si no tienes quién lo produzca…», donde el «lo»
+         tiene referente. */}
     <section class="d-sec d-sec--quieta" aria-labelledby="s-limite">
-      <div class="d-eti"><h2 class="d-h2" id="s-limite">Lo que no hacemos</h2></div>
+      <div class="d-eti"><h2 class="d-h2" id="s-limite">Lo que pones tú</h2></div>
       <div>
         <ul class="d-filas d-lista-sidx">
-          {oferta.fuera.map((t: string) => { const p = partir(t); return <li>{p.a && <span>{p.a} </span>}<span class="d-gris">{p.b}</span></li>; })}
+          {oferta.fuera.map((t: string) => { const p = partir(fueraPagina[t] ?? t); return <li>{p.a && <span>{p.a} </span>}<span class="d-gris">{p.b}</span></li>; })}
         </ul>
-        <p class="d-chico d-gris d-limite-sidx__pie">Si no lo tienes, te conectamos con partners.</p>
+        <p class="d-chico d-gris d-limite-sidx__pie">Si no tienes quién lo produzca, te conectamos con partners.</p>
       </div>
     </section>
 
@@ -167,12 +200,48 @@ const partir = (t: string) => {
       <div class="d-eti"><h2 class="d-h2" id="s-chequeo">Empieza por el chequeo</h2></div>
       <div>
         <p class="d-guia">Pon tu dominio y ves en segundos si los robots de ChatGPT, Claude y Perplexity pueden entrar a tu sitio. Gratis y sin dejar tu correo.</p>
-        <div class="d-btns d-chequeo-sidx"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Conversemos tu proyecto</a></div>
+        <div class="d-btns d-chequeo-sidx"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Pedir el diagnóstico</a></div>
       </div>
     </section>
   </main>
 
   <FooterV3 />
+
+  <script>
+    // FOCO NO OCULTO EN LA PILA PEGAJOSA (WCAG 2.2 SC 2.4.11; QA2 5-oct, bloqueante).
+    // Hacia atrás (Shift+Tab), la fila enfocada de una banda anterior queda pegada en top:0
+    // bajo la banda siguiente: está dentro de la ventana, así que el navegador no hace scroll.
+    // Si el foco cae tapado, la ventana va a la posición natural de su banda: el comienzo de la
+    // pila más el alto de las bandas anteriores. Ahí la banda está entera arriba y las
+    // siguientes, debajo de ella. Solo si la banda se está pegando: se lee del estilo calculado,
+    // así el media query vive en un solo lugar (el CSS).
+    const pila = document.querySelector<HTMLElement>('.d-bandas-sidx');
+    if (pila) {
+      pila.dataset.foco = 'js';
+      const visible = (el: Element) => {
+        const r = el.getBoundingClientRect();
+        // Tres puntos sobre la línea media del elemento, como mide QA.
+        return [0.15, 0.5, 0.85].every((f) => {
+          const x = r.left + r.width * f, y = r.top + r.height / 2;
+          if (y < 0 || y > window.innerHeight || x < 0 || x > window.innerWidth) return false;
+          const en = document.elementFromPoint(x, y);
+          return !!en && (en === el || el.contains(en));
+        });
+      };
+      pila.addEventListener('focusin', (e) => {
+        const el = e.target as HTMLElement;
+        const banda = el.closest<HTMLElement>('.d-banda-sidx');
+        if (!banda || getComputedStyle(banda).position !== 'sticky') return;
+        // Un cuadro después: el scroll propio del navegador al enfocar ya ocurrió.
+        requestAnimationFrame(() => {
+          if (document.activeElement !== el || visible(el)) return;
+          let top = pila.getBoundingClientRect().top + window.scrollY;
+          for (const b of pila.children) { if (b === banda) break; top += (b as HTMLElement).offsetHeight; }
+          window.scrollTo({ top: Math.round(top), behavior: 'instant' });
+        });
+      });
+    }
+  </script>
 </Layout>
 
 <style>
@@ -193,6 +262,11 @@ const partir = (t: string) => {
     .d-banda-sidx:nth-child(2) { z-index: 2; }
     .d-banda-sidx:nth-child(3) { z-index: 3; }
     .d-banda-sidx:nth-child(4) { z-index: 4; }
+    /* Sin JS (el script del final no corrió): la banda con el foco sube encima de las demás,
+       para que Shift+Tab nunca deje el foco tapado. Con JS no hace falta y no se aplica: el
+       script lleva la banda a su sitio, y una banda subida taparía a las siguientes al seguir
+       bajando con el foco todavía adentro. */
+    .d-bandas-sidx:not([data-foco]) .d-banda-sidx:focus-within { z-index: 5; }
   }
   /* El ancla de la entrada («hay una puerta para eso») cae acá. En celular la banda no se pega
      y el h2 quedaba bajo el módulo de navegación (medido: h2 en y=0, módulo hasta y=86). */
@@ -211,7 +285,9 @@ const partir = (t: string) => {
   .d-banda-sidx__filas li:last-child .d-fila-sidx { border-bottom: 1px solid color-mix(in srgb, currentColor 32%, transparent); }
   .d-fila-sidx .d-h3 { grid-column: 1; grid-row: 1; }
   .d-fila-sidx__flecha { grid-column: 2; grid-row: 1; font-size: 1.5rem; line-height: 1.4; }
-  .d-fila-sidx__d { grid-column: 1 / -1; font-size: clamp(1.0625rem, 1.25vw, 1.125rem); line-height: 1.6; margin: 0; max-width: 620px; }
+  /* Medida en em, no en px (QA2 5-oct, manual §05): 620 px daban 75–79 caracteres por línea.
+     28.5em es el valor que la spec §7 midió con Range para el cuerpo de 18 px en Manrope. */
+  .d-fila-sidx__d { grid-column: 1 / -1; font-size: clamp(1.0625rem, 1.25vw, 1.125rem); line-height: 1.6; margin: 0; max-width: 28.5em; }
   /* El precio fluye como texto, no como flex: en celular el flex dejaba el separador solo al
      final de una línea y el «+ IVA» huérfano en la siguiente. En línea, solo corta entre las
      palabras de la cifra; «Desde» queda pegado a la primera y «+ IVA» a la última. */

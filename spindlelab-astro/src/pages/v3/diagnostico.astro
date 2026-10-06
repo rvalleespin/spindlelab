@@ -28,7 +28,10 @@
 //     la línea bajo el h1 (nombraba a Gemini, que functions/api/chequeo.js no prueba en
 //     vivo, y omitía a Claude, que sí), la guía de la entrada (sin «Cada vez más…»), el
 //     rótulo de «Los 21 chequeos» (sin la comparación con «ninguna herramienta del rubro»,
-//     más amplia que su respaldo) y el rótulo del cierre (sin pregunta ni «sin compromiso»).
+//     más amplia que su respaldo) y el rótulo del cierre (sin pregunta ni «sin compromiso»);
+//   · dos más que el QA del 6-oct devolvió: la meta description (también nombraba a
+//     Gemini) y la nota «Y cómo medimos si la IA te nombra.» (sus cifras, 5 preguntas × 3
+//     motores, no son las de los planes en servicios-v3.json, y repetía la guía).
 // Las cinco preguntas van juntas en «Lo que solemos responder», como el FAQPage.
 // Los desvíos de la plantilla Herramienta (spec §4) están declarados en spec §7.
 import Layout from '../../layouts/Layout.astro';
@@ -48,6 +51,13 @@ const [chequeos, caminos, ley, responde] = s.secciones;
 // Verifica y Cumple aparece donde se habla de Verifica y Cumple: es la herramienta misma,
 // producto propio, no un resultado del chequeo.
 const vyc = obra.casos.find((c: any) => c.slug === 'verifica-y-cumple') as any;
+
+// La meta description (y og:description, que el Layout saca de la misma prop) va escrita
+// aquí y no leída de s.description (QA 6-oct, spec §7): el JSON nombra a Gemini, que
+// functions/api/chequeo.js no prueba en vivo, y omite a Claude, que sí. Es la misma
+// corrección de la línea bajo el h1; sin esto, Google y la tarjeta al compartir decían
+// otra cosa que la página (antislop C8). Cuando el JSON cambie, se vuelve a leer de ahí.
+const descripcion = 'Pon tu dominio y revisamos al instante si ChatGPT, Claude y Perplexity pueden leerte, entenderte y citarte. Gratis, con los 21 chequeos y su puntaje publicados.';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -75,7 +85,7 @@ const jsonLd = {
 };
 ---
 
-<Layout title={s.title} description={s.description} bodyClass="d-body">
+<Layout title={s.title} description={descripcion} bodyClass="d-body">
   <meta slot="head" name="robots" content="noindex, nofollow" />
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <NavV3 />
@@ -140,12 +150,19 @@ const jsonLd = {
     </section>
 
     {/* QUÉ NO REVISA */}
-    {/* Sin guía: lo que el chequeo no mide ya lo dice la pregunta «¿Qué mide exactamente el
-         puntaje?» (QA 5-oct, regla del 30 %). Quedan las dos notas de la página publicada. */}
+    {/* Sin guía (QA 5-oct, regla del 30 %). Quedan las dos notas de la página publicada.
+         La primera va escrita aquí y no leída de chequeos.bloques[0].d (QA 6-oct, spec §7):
+         el JSON decía «cinco preguntas fijas por tres motores (ChatGPT, Gemini y
+         Perplexity)», que es el Índice de Citabilidad propio (marketing/metricas/
+         test-menciones-ia.md), no lo que traen los planes (servicios-v3.json: ~10 consultas
+         en 3 motores en Esencial, ~20 en 4 en Pro). Sin cifras, con la nota de
+         servicios-v3.json: «mismas consultas, mismos motores, misma cadencia». Y abre
+         diciendo qué no mide, que es lo que promete el h2 (antes repetía la guía de la
+         entrada: «El chequeo de arriba lee tu sitio. Esto le pregunta a los motores.»). */}
     <section class="d-sec" aria-labelledby="s-nom">
       <div class="d-eti"><h2 class="d-h2" id="s-nom">Lo que este chequeo no mide.</h2></div>
       <div class="d-filas d-filas-diag">
-        <div><h3 class="d-h3">Y cómo medimos si la IA te nombra.</h3><p class="d-cuerpo">{chequeos.bloques[0].d}</p></div>
+        <div><h3 class="d-h3">Y cómo medimos si la IA te nombra.</h3><p class="d-cuerpo">No mide si hoy te citan: para eso hay que preguntarle a los motores. En los planes con acompañamiento lo hacemos cada mes con las mismas preguntas y en los mismos motores, con fecha y con la fuente de cada respuesta registrada. Cambiar las preguntas rompería la comparación entre meses.</p></div>
         <div><h3 class="d-h3">Lo que muestran las corridas.</h3><p class="d-cuerpo">Quienes aparecen recomendados casi nunca lo consiguen desde su propio sitio: los motores los citan desde rankings, directorios y artículos de terceros. Sin saber de dónde sale la recomendación, no hay nada que trabajar.</p></div>
       </div>
     </section>
@@ -168,7 +185,9 @@ const jsonLd = {
       <div class="d-eti"><h2 class="d-h2" id="s-ley">{ley.h2}</h2></div>
       <div>
         <p class="d-guia">{ley.parrafos[0]}</p>
-        <div class="d-btns d-btns-diag"><a class="d-btn" href="https://verifica.spindlelab.cl/" rel="noopener">Revisar mi sitio para la Ley 21.719</a></div>
+        {/* Secundario (QA 6-oct): bajo el instrumento, el único botón papel es «Pedir el
+             diagnóstico»; este lleva a otro producto. */}
+        <div class="d-btns d-btns-diag"><a class="d-btn d-btn--alt" href="https://verifica.spindlelab.cl/" rel="noopener">Revisar mi sitio para la Ley 21.719</a></div>
         {vyc && <Pieza src={vyc.mock} alt={vyc.altMock} etiquetas={[`${vyc.n} · Producto propio`]} clase="d-vyc-diag" ancho={1600} alto={1200} />}
       </div>
     </section>
@@ -210,8 +229,12 @@ const jsonLd = {
 
   @media (max-width: 767px) {
     /* El instrumento tiene que quedar arriba del pliegue y pulsable con el aviso de
-       cookies abierto, también en un teléfono de 667 px de alto. */
-    .d-cab-diag { padding-top: 124px; }
+       cookies abierto, también en un teléfono de 667 px de alto. 100 px y no 124 (QA
+       6-oct): con el campo a su alto de 52 px (arreglo propuesto para driftime.css; hoy
+       el flex: 1 lo encoge a 24) la nota terminaba en y=537, justo donde empieza el
+       aviso. Medido a 375 × 667 con el campo a 52: botón 381–429, nota hasta 513, aviso
+       en 537. El módulo de nav fijo termina en 86: la miga queda 14 px bajo él. */
+    .d-cab-diag { padding-top: 100px; }
     /* La guía va antes de la nota, como en desarrollo-web (driftime.css lo hace con la
        .d-guia suelta; aquí va envuelta con su botón). */
     .d-entrada-diag { order: -1; }
