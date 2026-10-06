@@ -104,7 +104,9 @@
 @media (max-width: 767px) {
   .d-hero { padding-top: 96px; }
   .d-dom { height: auto; flex-direction: column; gap: 6px; }
-  .d-dom input { height: 52px; font-size: 1.125rem; }
+  /* flex: none: en columna, el flex: 1 (base 0 %) le ganaba al height y dejaba el campo en
+     24 px (spec §7, 6-oct; aplicado en la revisión cruzada). */
+  .d-dom input { flex: none; height: 52px; font-size: 1.125rem; }
   .d-dom button { height: 48px; }
 }
 
