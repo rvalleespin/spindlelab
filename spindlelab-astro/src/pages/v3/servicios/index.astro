@@ -39,7 +39,7 @@
 // la ventana a la posición natural de la banda cuando el foco cae tapado; sin JS, la banda con
 // el foco sube encima de las otras (CSS). Spec §3, regla de toda pila pegajosa.
 import Layout from '../../../layouts/Layout.astro';
-import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
+import { CONTACTO_V3 as CONTACTO, OG_V3 } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
 import Miga from '../../../components/v3/Miga.astro';
@@ -140,7 +140,7 @@ const partir = (t: string) => {
   return i === -1 ? { a: '', b: t } : { a: t.slice(0, i + 1), b: t.slice(i + 2) };
 };
 ---
-<Layout
+<Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt}
   title="Soluciones: SEO técnico, visibilidad en IA y desarrollo web · SpindleLab"
   description="SEO técnico, visibilidad en motores de IA y desarrollo web a medida, con precios publicados. Chequeo gratis antes de contratar nada."
   bodyClass="d-body"

@@ -36,8 +36,9 @@ Vista previa: https://claude-magical-franklin-ckfk.spindlelab-v2.pages.dev/v3/
 
 1. **Sección de preguntas en la home.** El chequeo propio da 83/100 a la home v3; con
    preguntas visibles y su FAQPage sube a ~94. driftime no la tiene.
-2. **Imagen al compartir (OG) y `og:type` de artículo.** Hoy muestra la marca anterior.
-   Requiere tocar `Layout.astro` (protegido por la spec §6). La imagen v3 se puede producir.
+2. ~~**Imagen al compartir (OG) y `og:type` de artículo.**~~ **Resuelto el 6-oct** con
+   autorización de Ramón: imagen v3 en `marketing/brand/og-v3/`, conectada a las 21 rutas
+   con props opcionales de `Layout.astro` (el sitio publicado no cambia).
 3. **Plan Acompañamiento Esencial:** ¿informe mensual o quincenal? Las páginas se
    contradicen (también las publicadas).
 4. **Los tres «acá»** del artículo publicado de los 21 chequeos, y la frase «¿Apareces

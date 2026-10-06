@@ -61,8 +61,7 @@ import Miga from '../../components/v3/Miga.astro';
 import '../../styles/driftime.css';
 import obra from '../../data/obra-v3.json';
 import oferta from '../../data/oferta-v3.json';
-import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
-
+import { CONTACTO_V3 as CONTACTO, OG_V3_OBRA } from '../../consts-v3';
 const { casos } = obra;
 
 // CORRECCIONES AL DATO COMPARTIDO (QA independiente, 5-oct). obra-v3.json no se edita desde
@@ -219,7 +218,7 @@ const jsonLd = {
 };
 ---
 
-<Layout
+<Layout ogImage={OG_V3_OBRA.imagen} ogImageAlt={OG_V3_OBRA.alt}
   title="Trabajo: sitios que construimos · SpindleLab"
   description={obra.bajada}
   bodyClass="d-body"

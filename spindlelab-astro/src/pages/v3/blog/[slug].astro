@@ -37,7 +37,7 @@ import Layout from '../../../layouts/Layout.astro';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
 import Miga from '../../../components/v3/Miga.astro';
-import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
+import { CONTACTO_V3 as CONTACTO, OG_V3 } from '../../../consts-v3';
 import '../../../styles/driftime.css';
 import indice from '../../../data/blog-v3/_indice.json';
 
@@ -95,6 +95,8 @@ const ld = {
   ...info.jsonLd,
   '@graph': info.jsonLd['@graph']
     .filter((n: any) => !DEL_LAYOUT.has(n['@id']))
+    // La imagen del Article es la de compartir: la de la v3, no la de la marca anterior.
+    .map((n: any) => (n.image === 'https://spindlelab.cl/assets/img/og-marca.jpg?v=4' ? { ...n, image: new URL(OG_V3.imagen, 'https://spindlelab.cl').href } : n))
     .map((n: any) =>
       n['@type'] === 'BreadcrumbList'
         ? { ...n, itemListElement: n.itemListElement.map((it: any) => (it.position === 2 ? { ...it, name: 'Blog' } : it.position === 3 && migaTexto ? { ...it, name: migaTexto } : it)) }
@@ -233,7 +235,7 @@ const iAqui = orden.findIndex((p) => p.slug === slug);
 const siguiente = orden[(iAqui + 1) % orden.length];
 ---
 
-<Layout title={meta.title} description={meta.description} bodyClass="d-body">
+<Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt} ogType="article" title={meta.title} description={meta.description} bodyClass="d-body">
   <Fragment slot="head">
     <meta name="robots" content="noindex, nofollow" />
     <script type="application/ld+json" is:inline set:html={JSON.stringify(ld)} />

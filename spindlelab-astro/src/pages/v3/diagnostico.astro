@@ -35,7 +35,7 @@
 // Las cinco preguntas van juntas en «Lo que solemos responder», como el FAQPage.
 // Los desvíos de la plantilla Herramienta (spec §4) están declarados en spec §7.
 import Layout from '../../layouts/Layout.astro';
-import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
+import { CONTACTO_V3 as CONTACTO, OG_V3 } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
 import Pieza from '../../components/v3/Pieza.astro';
@@ -96,7 +96,7 @@ const jsonLd = {
 };
 ---
 
-<Layout title={s.title} description={descripcion} bodyClass="d-body">
+<Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt} title={s.title} description={descripcion} bodyClass="d-body">
   <meta slot="head" name="robots" content="noindex, nofollow" />
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <NavV3 />

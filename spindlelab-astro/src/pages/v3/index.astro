@@ -34,7 +34,7 @@ import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
 import Pieza from '../../components/v3/Pieza.astro';
 import FocoPila from '../../components/v3/FocoPila.astro';
-import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
+import { CONTACTO_V3 as CONTACTO, OG_V3 } from '../../consts-v3';
 import '../../styles/chequeo-v3.css'; // el resultado del chequeo se pinta con estas clases
 import '../../styles/driftime.css';
 import oferta from '../../data/oferta-v3.json';
@@ -170,7 +170,7 @@ const jsonLd = {
 };
 ---
 
-<Layout
+<Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt}
   title={TITLE}
   description="Auditamos tu sitio y tu presencia en IA para que ChatGPT, Gemini y Perplexity te recomienden antes que tu competencia. Diagnóstico gratis en 24 horas."
   bodyClass="d-body d-home"

@@ -39,7 +39,7 @@
 // · La miga es el componente Miga (técnica #12).
 import Layout from '../../../layouts/Layout.astro';
 import { caja } from '../../../utils/caja';
-import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
+import { CONTACTO_V3 as CONTACTO, OG_V3_OBRA } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
 import Pieza from '../../../components/v3/Pieza.astro';
@@ -204,7 +204,7 @@ const filas: PiezaDw[][] = [
 ];
 const sumaDe = (fila: PiezaDw[]) => fila.reduce((t, p) => t + p.r, 0);
 ---
-<Layout
+<Layout ogImage={OG_V3_OBRA.imagen} ogImageAlt={OG_V3_OBRA.alt}
   title="Desarrollo web que los motores de IA pueden leer · SpindleLab"
   description="Sitios construidos para que los motores de IA puedan leerlos y citarlos, con el SEO técnico desde el primer commit. Lo compruebas con el chequeo gratis."
   bodyClass="d-body"

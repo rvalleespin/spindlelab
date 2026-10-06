@@ -68,7 +68,7 @@
 // JSON-LD: AboutPage + BreadcrumbList, los mismos nodos e @id de antes. La Person
 // (#autor-ramon) la emite Layout.astro; acá solo se referencia, para no duplicar @id.
 import Layout from '../../layouts/Layout.astro';
-import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
+import { CONTACTO_V3 as CONTACTO, OG_V3 } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
 import Pieza from '../../components/v3/Pieza.astro';
@@ -132,7 +132,7 @@ const jsonLd = {
 };
 ---
 
-<Layout
+<Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt}
   title="Ramón Vallejos, consultor de SEO técnico e IA · SpindleLab"
   description="Detrás de SpindleLab está Ramón Vallejos: SEO técnico y visibilidad en motores de IA, con evidencia antes que promesas. Diagnóstico gratis en 24 horas."
   bodyClass="d-body"

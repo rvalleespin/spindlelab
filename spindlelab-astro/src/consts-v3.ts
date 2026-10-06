@@ -33,3 +33,15 @@ export const CASA_V3 = [
   // Privacidad no tiene versión v3: se deja apuntando a la publicada, que sí existe.
   { href: '/privacidad/', label: 'Privacidad' },
 ];
+
+// Imagen al compartir de la v3 (marketing/brand/og-v3/). La de titular va por defecto; la de
+// obra, solo donde se habla de sitios construidos. Raigal no está en la de obra: sin su rótulo
+// de concepto sería mostrar una clínica inventada como trabajo real.
+export const OG_V3 = {
+  imagen: '/assets/img/og-v3.jpg',
+  alt: 'SpindleLab. Estás pagando para que lleguen a tu sitio. Ahí se corta el circuito.',
+};
+export const OG_V3_OBRA = {
+  imagen: '/assets/img/og-v3-desarrollo-web.jpg',
+  alt: 'Tres sitios hechos por SpindleLab: el de fotografía y el book de modelo de Bernardo Combeau (cliente) y Verifica y Cumple, producto propio',
+};

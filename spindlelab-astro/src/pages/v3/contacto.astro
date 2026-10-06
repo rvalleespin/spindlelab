@@ -38,6 +38,7 @@ import Miga from '../../components/v3/Miga.astro';
 import { EMAIL } from '../../consts';
 import paginas from '../../data/paginas-v3.json';
 import '../../styles/driftime.css';
+import { OG_V3 } from '../../consts-v3';
 
 const s = (paginas as Record<string, any>).contacto;
 const [proyecto, pasos, antes] = s.secciones;
@@ -97,7 +98,7 @@ const jsonLd = {
 };
 ---
 
-<Layout title={s.title} description={s.description} bodyClass="d-body">
+<Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt} title={s.title} description={s.description} bodyClass="d-body">
   <Fragment slot="head">
     <meta name="robots" content="noindex, nofollow" />
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />

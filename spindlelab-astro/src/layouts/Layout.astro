@@ -7,13 +7,23 @@ interface Props {
   /** Fondo del <body>. Por defecto el del sitio actual; la maqueta V3 usa tinta para que
    *  no quede una costura visible bajo el hero (el body es #0E141B y el hero #131A22). */
   bodyClass?: string;
+  /** Imagen al compartir (Open Graph). Ruta del sitio o URL absoluta. Por defecto, la de
+   *  siempre: el sitio publicado no cambia. La v3 pasa la suya (marketing/brand/og-v3/). */
+  ogImage?: string;
+  ogImageAlt?: string;
+  /** «article» en los posts; «website» en el resto. */
+  ogType?: string;
 }
 
 const {
   title = 'Agencia de marketing con IA en Chile · SpindleLab',
   description = 'Auditamos tu sitio y tu presencia en IA para que ChatGPT, Gemini y Perplexity te recomienden antes que tu competencia. Diagnóstico gratis en 24 horas.',
   bodyClass = 'bg-bg',
+  ogImage = 'https://spindlelab.cl/assets/img/og-marca.jpg?v=4',
+  ogImageAlt = 'SpindleLab. SEO técnico y visibilidad en IA',
+  ogType = 'website',
 } = Astro.props;
+const ogImageUrl = new URL(ogImage, Astro.site).href;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
@@ -159,16 +169,16 @@ const jsonLd = {
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#0E141B" />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="SpindleLab" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content="https://spindlelab.cl/assets/img/og-marca.jpg?v=4" />
+    <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:alt" content="SpindleLab. SEO técnico y visibilidad en IA" />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:locale" content="es_CL" />
     <meta name="twitter:card" content="summary_large_image" />
 

@@ -50,7 +50,7 @@
 // y el HowTo (#metodo-spindlelab), portados con sus mismos @id y pasos. La organización y
 // la persona las emite Layout.astro; aquí solo se referencian por @id, sin repetir nodos.
 import Layout from '../../layouts/Layout.astro';
-import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
+import { CONTACTO_V3 as CONTACTO, OG_V3 } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
 import Miga from '../../components/v3/Miga.astro';
@@ -209,7 +209,7 @@ const jsonLd = {
 };
 ---
 
-<Layout title={s.title} description={s.description} bodyClass="d-body">
+<Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt} title={s.title} description={s.description} bodyClass="d-body">
   <Fragment slot="head">
     <meta name="robots" content="noindex, nofollow" />
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
