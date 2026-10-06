@@ -1,0 +1,78 @@
+---
+/*
+ * FOCO NO OCULTO EN UNA PILA PEGAJOSA (spec §3, «Toda pila pegajosa»; WCAG 2.2 SC 2.4.11).
+ *
+ * El problema: en una pila de bandas pegajosas, hacia atrás (Shift+Tab) el control enfocado
+ * de una banda anterior queda pegado en top: 0 BAJO la banda siguiente. Está dentro de la
+ * ventana, así que el navegador no hace scroll, y el foco queda tapado del todo.
+ *
+ * El arreglo: al entrar el foco en una banda, un cuadro después (el scroll propio del
+ * navegador al enfocar ya ocurrió) se mira en tres puntos del elemento si
+ * `elementFromPoint` lo devuelve a él o a un hijo. Si no, la ventana va a la posición
+ * natural de su banda: el comienzo de la pila más el alto de las bandas anteriores. Ahí la
+ * banda está entera arriba y las siguientes, debajo. `behavior: 'instant'`, también con
+ * Lenis. Solo si la banda se está pegando: se lee del estilo calculado, así el media query
+ * vive en un solo lugar (el CSS).
+ *
+ * Es el mecanismo que el índice de servicios tenía como script de página (QA2 5-oct), sacado
+ * a un componente para que la home (QA final, técnica #1) y cualquier pila que venga usen
+ * el mismo. Sin JS, el respaldo es CSS: la banda con el foco sube de z-index
+ * (`:focus-within`). Este script marca cada banda con `data-foco="js"` y ese respaldo se
+ * apaga: con JS, una banda subida taparía a las siguientes al seguir bajando con el foco
+ * adentro.
+ *
+ * Uso:
+ *   <FocoPila bandas=".d-campo" />                          bandas hermanas, sin contenedor
+ *   <FocoPila bandas=".d-banda-sidx" pila=".d-bandas-sidx" />  bandas dentro de un contenedor
+ * Las bandas tienen que ser hermanas consecutivas. Sin `pila`, el comienzo natural se toma
+ * del borde inferior de lo que va justo antes de la primera banda (una banda pegada no
+ * informa su posición natural).
+ */
+interface Props {
+  /** Selector de las bandas pegajosas. */
+  bandas: string;
+  /** Selector del contenedor de la pila, si las bandas tienen uno propio. */
+  pila?: string;
+}
+const { bandas, pila } = Astro.props;
+---
+<template data-foco-pila data-bandas={bandas} data-pila={pila}></template>
+
+<script>
+  for (const conf of document.querySelectorAll<HTMLTemplateElement>('template[data-foco-pila]')) {
+    const bandas = [...document.querySelectorAll<HTMLElement>(conf.dataset.bandas || '')];
+    if (!bandas.length) continue;
+    const pila = conf.dataset.pila ? document.querySelector<HTMLElement>(conf.dataset.pila) : null;
+    bandas.forEach((b) => { b.dataset.foco = 'js'; });
+
+    // Tres puntos sobre la línea media del elemento, como mide QA.
+    const visible = (el: Element) => {
+      const r = el.getBoundingClientRect();
+      return [0.15, 0.5, 0.85].every((f) => {
+        const x = r.left + r.width * f, y = r.top + r.height / 2;
+        if (y < 0 || y > window.innerHeight || x < 0 || x > window.innerWidth) return false;
+        const en = document.elementFromPoint(x, y);
+        return !!en && (en === el || el.contains(en));
+      });
+    };
+
+    const inicio = () => {
+      if (pila) return pila.getBoundingClientRect().top + window.scrollY;
+      const antes = bandas[0].previousElementSibling as HTMLElement | null;
+      if (antes) return antes.getBoundingClientRect().bottom + window.scrollY + parseFloat(getComputedStyle(antes).marginBottom || '0');
+      return (bandas[0].parentElement as HTMLElement).getBoundingClientRect().top + window.scrollY;
+    };
+
+    document.addEventListener('focusin', (e) => {
+      const el = e.target as HTMLElement;
+      const banda = bandas.find((b) => b.contains(el));
+      if (!banda || getComputedStyle(banda).position !== 'sticky') return;
+      requestAnimationFrame(() => {
+        if (document.activeElement !== el || visible(el)) return;
+        let top = inicio();
+        for (const b of bandas) { if (b === banda) break; top += b.offsetHeight; }
+        window.scrollTo({ top: Math.round(top), behavior: 'instant' });
+      });
+    });
+  }
+</script>

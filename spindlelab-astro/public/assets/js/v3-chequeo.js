@@ -3,6 +3,8 @@
 // Cambios de la v3 (6-oct, revisión cruzada): el destino de contacto se lee del formulario
 // (data-contacto) y tres textos (veredicto ≥ 90 sin «acá», remate sin «completo», botón
 // «Pedir el diagnóstico»). La lógica no cambia.
+// QA final (6-oct): los enlaces a contacto llevan ?sitio=<dominio> y el botón «Pedir el
+// diagnóstico» se repite dentro de .chq-score. Cambio de enlaces y de marcado, no de lógica.
 (function(){
   var form = document.getElementById('chq-form');
   var input = document.getElementById('chq-dominio');
@@ -15,6 +17,15 @@
   // conversión del chequeo sacaba al visitante de la v3 y el puente de UTM de /v3/contacto/
   // no corría (revisión cruzada, 6-oct). Sin el atributo sigue yendo a /contacto/.
   var CT = form.getAttribute('data-contacto') || '/contacto/';
+  // El dominio viaja a contacto (QA final, 6-oct): quien acaba de escribirlo en el chequeo y
+  // pulsa «Pedir el diagnóstico» llegaba a un formulario con «Sitio web» vacío y tenía que
+  // escribirlo otra vez, justo en el paso que se mide. Contacto lo pone en #f-sitio si está
+  // vacío. Solo agrega ?sitio=: los utm_* siguen en sessionStorage, no en la URL.
+  function aContacto(dominio){
+    dominio = String(dominio == null ? '' : dominio).trim();
+    if(!dominio) return CT;
+    return CT + (CT.indexOf('?') < 0 ? '?' : '&') + 'sitio=' + encodeURIComponent(dominio);
+  }
 
   function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
@@ -28,7 +39,7 @@
     // "Si nos escribes" no decía dónde. Va al formulario de /contacto/ y no a un mailto, porque
     // generate_lead solo se dispara al enviar ese formulario.
     var etiqueta = delSitio === false
-      ? 'Si nos escribes por <a href="' + esc(CT) + '">el formulario de contacto</a>, menciona este código: '
+      ? 'Si nos escribes por <a href="' + esc(aContacto(input.value)) + '">el formulario de contacto</a>, menciona este código: '
       : 'Código de respuesta de tu sitio: ';
     err.innerHTML = '<p style="margin:0">' + esc(msg) + '</p>' +
       (codigo ? '<p class="chq-error-codigo">' + etiqueta + esc(codigo) + '</p>' : '');
@@ -50,12 +61,16 @@
     var sinConfirmar = sc === 1
       ? 'Hay 1 señal que no alcanzamos a comprobar, así que no cuenta en este número. Está más abajo, con el motivo.'
       : 'Hay ' + sc + ' señales que no alcanzamos a comprobar, así que no cuentan en este número. Están más abajo, con el motivo.';
+    var CTD = aContacto(d.dominio || input.value);
     var h = '<div class="chq-score"><div class="chq-num">' + d.puntaje + '<span>/100</span></div>' +
             '<div class="chq-veredicto"><b>' + esc(d.dominio) + '</b><br>' + esc(veredicto(d.puntaje)) +
             // Cuando el dominio escrito no abrió y revisamos su otra forma (con o sin www), la
             // API lo explica en `aviso`; sin esto, la persona ve otra dirección y no sabe por qué.
             (d.aviso ? '<span class="chq-aviso">' + esc(d.aviso) + '</span>' : '') +
-            (sc ? '<span class="chq-aviso">' + esc(sinConfirmar) + '</span>' : '') + '</div></div>';
+            (sc ? '<span class="chq-aviso">' + esc(sinConfirmar) + '</span>' : '') + '</div>' +
+            // El paso siguiente junto al puntaje (QA final, 6-oct): antes quedaba recién
+            // después de los 21 ítems. El remate completo sigue al final.
+            '<div class="chq-ramas"><a class="chq-r1" href="' + esc(CTD) + '">Pedir el diagnóstico</a></div></div>';
 
     d.bloques.forEach(function(b){
       var items = d.items.filter(function(i){ return i.bloque === b.id; });
@@ -90,8 +105,8 @@
          'y de qué fuentes lo están sacando. Te lo entregamos en una página, gratis, en 24 horas.</p>' +
          // El mismo nombre del paso en todo el sitio, sin «completo» (spec §7): contacto lo
          // ofrece como mini-diagnóstico. Revisión cruzada, 6-oct.
-         '<div class="chq-ramas"><a class="chq-r1" href="' + esc(CT) + '">Pedir el diagnóstico</a>' +
-         '<a class="chq-r2" href="' + esc(CT) + '">Prefiero hablarlo contigo</a></div></div>';
+         '<div class="chq-ramas"><a class="chq-r1" href="' + esc(CTD) + '">Pedir el diagnóstico</a>' +
+         '<a class="chq-r2" href="' + esc(CTD) + '">Prefiero hablarlo contigo</a></div></div>';
 
     out.innerHTML = h;
     out.style.display = 'block';

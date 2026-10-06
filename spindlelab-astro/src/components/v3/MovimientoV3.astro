@@ -46,13 +46,19 @@
       window.setTimeout(() => bajo.forEach((el) => el.classList.add('visible')), 3000);
     }
 
-    // 1b · PESTAÑAS DE PLAN. El HTML ya sale con el primer panel visible y los demás
-    //      con `hidden`, así que esto solo agrega el cambio. Si no corre, el visitante
-    //      lee un plan completo con su precio en vez de una caja vacía.
-    for (const caja of document.querySelectorAll('[data-planes]')) {
+    // 1b · PESTAÑAS (los planes de un servicio, `data-planes`; los servicios de un campo
+    //      de la home, `data-pestanas`). UNA sola implementación para el patrón (QA final,
+    //      técnica #7: la home tenía un script propio sin flechas ni tabindex itinerante).
+    //      El HTML ya sale con el primer panel visible y los demás con `hidden`, así que
+    //      esto solo agrega el cambio. Si no corre, el visitante lee un plan completo con
+    //      su precio en vez de una caja vacía. Un grupo de una sola pestaña no es un
+    //      tablist: la página lo dibuja como rótulo y aquí no se toca.
+    for (const caja of document.querySelectorAll('[data-planes], [data-pestanas]')) {
       const tabs = [...caja.querySelectorAll('[role="tab"]')];
       const paneles = tabs.map((t) => document.getElementById(t.getAttribute('aria-controls')));
       if (tabs.length < 2 || paneles.some((x) => !x)) continue;
+      // Tabindex itinerante desde el inicio: solo la pestaña activa está en el orden de Tab.
+      tabs.forEach((t) => { t.tabIndex = t.getAttribute('aria-selected') === 'true' ? 0 : -1; });
 
       const mostrar = (i, mover) => {
         tabs.forEach((t, k) => {

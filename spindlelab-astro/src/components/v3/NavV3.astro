@@ -34,9 +34,40 @@ const principales = [
   { href: '/v3/diagnostico/', label: 'Chequeo gratis' },
   { href: CONTACTO, label: 'Contacto' },
 ];
+
+// DÓNDE ESTÁS (QA final, 6-oct: mirada 11 y técnica 12). Al abrir el menú no se veía en qué
+// página estaba uno, y no había aria-current en ninguna de las 21 rutas. La página exacta
+// lleva aria-current="page"; la sección que la contiene («Servicios» estando en un servicio,
+// «Blog» estando en un artículo) lleva aria-current="true", que es el valor para «el actual
+// dentro de un conjunto». El estado visual es el mismo para los dos y no usa oro (el punto
+// del módulo es el único de la vista): el número en papel y la palabra subrayada a 1 px.
+const conBarra = (p: string) => (p.endsWith('/') ? p : `${p}/`);
+const aqui = conBarra(Astro.url.pathname);
+const SECCIONES = ['/v3/servicios/', '/v3/blog/'];
+const actual = (href: string): 'page' | 'true' | undefined =>
+  href === aqui ? 'page' : SECCIONES.includes(href) && aqui.startsWith(href) ? 'true' : undefined;
 ---
 
-<header class="fixed top-0 left-0 z-50 p-4 sm:p-5">
+{/* ATRIBUCIÓN (QA final, conversión 1, bloqueante). Los UTM del anuncio se guardan en la
+     PRIMERA página que pisa el visitante, sea cual sea, con las mismas claves de
+     sessionStorage que lee v3-contacto.js. Antes la captura vivía solo en contacto (y un
+     puente por document.referrer cubría un salto): anuncio → home → Desarrollo web →
+     contacto llegaba sin atribución, que es el camino principal de Ads. Va en NavV3 y no en
+     Layout porque el módulo está en las 21 rutas y Layout no se toca (spec §6). Es inline
+     y corre al analizar el HTML: antes que cualquier clic. */}
+<script is:inline>
+  (function () {
+    try {
+      var q = new URLSearchParams(location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
+        var v = q.get(k);
+        if (v) sessionStorage.setItem(k, v);
+      });
+    } catch (e) {}
+  })();
+</script>
+
+<header class="fixed top-0 left-0 z-50 p-4 sm:p-5" data-modulo-nav>
   <div class="rounded-v3 overflow-hidden bg-black/75 backdrop-blur border border-white/10">
     <div class="flex items-stretch">
       <a
@@ -89,6 +120,7 @@ const principales = [
           <li class="border-b filete">
             <a
               href={m.href}
+              aria-current={actual(m.href)}
               data-menu-link
               data-paso={i}
               class="menu-enlace group flex items-baseline gap-5 py-3 md:py-3.5 text-papel focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel focus-visible:-outline-offset-4"
@@ -116,8 +148,9 @@ const principales = [
             <li class="border-b filete">
               <a
                 href={s.href}
+                aria-current={actual(s.href)}
                 data-menu-link
-                class="block py-3 text-papel text-base hover:opacity-70 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel focus-visible:-outline-offset-2"
+                class="menu-servicio block py-3 text-papel text-base hover:opacity-70 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel focus-visible:-outline-offset-2"
               >
                 {s.label}
               </a>
@@ -153,6 +186,20 @@ const principales = [
     opacity: 0.7;
   }
 
+  /* Dónde estás: el número pasa de gris a papel y la palabra se subraya a 1 px. Sin oro. */
+  .menu-enlace[aria-current] .d-rot {
+    color: var(--d-papel);
+  }
+  .menu-enlace[aria-current] .menu-palabra,
+  .menu-servicio[aria-current] {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.14em;
+  }
+  .menu-servicio[aria-current] {
+    text-underline-offset: 4px;
+  }
+
   /* Entrada escalonada de las filas, con la misma curva que el resto del v3. Si el JS no
    * corre, el overlay no se abre y esto no aplica: nunca deja contenido escondido. */
   #menu-overlay[data-abierto] .menu-enlace {
@@ -184,12 +231,37 @@ const principales = [
   // conmutan por estilo. Se vio en el render: salían los dos a la vez.
   if (btn && panel && iAbrir && iCerrar) {
     let devolver: HTMLElement | null = null;
+    const modulo = btn.closest<HTMLElement>('[data-modulo-nav]');
 
-    const focos = () =>
-      [...panel.querySelectorAll<HTMLElement>('a[href], button')].filter((e) => e.offsetParent);
+    // La trampa de foco incluye el MÓDULO ENTERO, no solo el panel (QA final, técnica 6):
+    // antes recorría los 14 enlaces del panel y el botón de cerrar (la X visible arriba a la
+    // izquierda), el wordmark y «Escríbenos» nunca recibían foco con el menú abierto; lo
+    // único que cerraba era Escape, sin ninguna pista a la vista. Orden del documento:
+    // wordmark, Escríbenos, cerrar, y después el panel.
+    const visibles = (raiz: ParentNode | null) =>
+      raiz ? [...raiz.querySelectorAll<HTMLElement>('a[href], button')].filter((e) => e.offsetParent) : [];
+    const enlaces = () => visibles(panel);
+    const focos = () => [...visibles(modulo), ...enlaces()];
+
+    // Con el menú abierto, el fondo (main, el pie y todo lo que no sea el módulo, el panel
+    // o el aviso de cookies) queda inert: ni el teclado ni el lector de pantalla llegan a
+    // una página que no se ve. Se excluye todo hermano que contenga al módulo o al panel,
+    // por si alguna página los envolviera.
+    const fondo = () =>
+      [...document.body.children].filter(
+        (el) =>
+          el instanceof HTMLElement &&
+          !['SCRIPT', 'STYLE', 'TEMPLATE', 'LINK'].includes(el.tagName) &&
+          el.id !== 'cookie-banner' &&
+          !el.contains(panel) &&
+          !(modulo && el.contains(modulo))
+      ) as HTMLElement[];
+    let inertes: HTMLElement[] = [];
 
     const abrir = () => {
       devolver = document.activeElement as HTMLElement;
+      inertes = fondo().filter((el) => !el.inert);
+      inertes.forEach((el) => (el.inert = true));
       panel.hidden = false;
       panel.setAttribute('data-abierto', '');
       // Este overlay SÍ cubre la pantalla, así que el scroll del fondo se bloquea. En el
@@ -200,10 +272,13 @@ const principales = [
       iCerrar.style.display = 'block';
       btn.setAttribute('aria-expanded', 'true');
       btn.setAttribute('aria-label', 'Cerrar menú');
-      focos()[0]?.focus();
+      // Al abrir, el foco va al primer enlace del panel («Inicio»), no al módulo.
+      enlaces()[0]?.focus();
     };
 
     const cerrar = ({ devolverFoco = true } = {}) => {
+      inertes.forEach((el) => (el.inert = false));
+      inertes = [];
       panel.hidden = true;
       panel.removeAttribute('data-abierto');
       document.documentElement.style.overflow = '';
@@ -218,6 +293,13 @@ const principales = [
 
     panel.querySelectorAll('[data-menu-link]').forEach((a) => {
       a.addEventListener('click', () => cerrar({ devolverFoco: false }));
+    });
+    // Los enlaces del módulo también cierran: en contacto, «Escríbenos» lleva a
+    // #contacto-form sin recargar, y el panel se quedaba abierto encima del formulario.
+    modulo?.querySelectorAll('a[href]').forEach((a) => {
+      a.addEventListener('click', () => {
+        if (!panel.hidden) cerrar({ devolverFoco: false });
+      });
     });
 
     document.addEventListener('keydown', (e) => {

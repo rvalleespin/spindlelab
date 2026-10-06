@@ -34,6 +34,7 @@
 import Layout from '../../layouts/Layout.astro';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
+import Miga from '../../components/v3/Miga.astro';
 import { EMAIL } from '../../consts';
 import paginas from '../../data/paginas-v3.json';
 import '../../styles/driftime.css';
@@ -107,7 +108,7 @@ const jsonLd = {
   {/* Sin display: las internas tienen cero usos de Manrope 800 en mayúsculas. */}
   <main>
     <header class="d-cab d-cab--ct">
-      <p class="d-miga"><a href="/v3/">Inicio</a> · Contacto</p>
+      <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Contacto' }]} />
       <h1 class="d-h1">{h1}</h1>
       {/* Escrita en la página (el lead del JSON es otro texto, más largo): sexto texto de la
            fila de contacto de spec §7, propuesto como campo `linea` en paginas-v3.json. Sin
@@ -145,9 +146,16 @@ const jsonLd = {
             </div>
           </div>
 
+          {/* Ayuda para quien todavía no tiene sitio (QA final, conversión 9). Cada
+               «Escríbenos» de Desarrollo web llega aquí, y «Sitio web» es obligatorio: quien va a
+               construir su primer sitio no sabía qué poner. Sin renombrar nada ni quitar el
+               required (spec §6; quitarlo lo decide Ramón). El texto sale de la página publicada
+               de Desarrollo web («Si partes de cero, conversemos tu proyecto directamente.») y
+               del arreglo de la QA («no tengo»). El campo la anuncia con aria-describedby. */}
           <div class="d-ct-campo">
             <label for="f-sitio">Sitio web</label>
-            <input type="text" id="f-sitio" name="Sitio web" placeholder="tuempresa.cl" autocomplete="url" required />
+            <input type="text" id="f-sitio" name="Sitio web" placeholder="tuempresa.cl" autocomplete="url" aria-describedby="f-sitio-ayuda" required />
+            <p class="d-ct-ayuda" id="f-sitio-ayuda">Si partes de cero, escribe «no tengo» y cuéntanos tu proyecto abajo.</p>
           </div>
 
           <div class="d-ct-campo">
@@ -209,32 +217,28 @@ const jsonLd = {
   <FooterV3 />
 
   <script src="/assets/js/v3-contacto.js" is:inline defer></script>
-  {/* Cuatro arreglos de esta página que no tocan archivos compartidos (los tres primeros
-       están propuestos en NavV3, FooterV3 y v3-contacto.js; cuando entren, dejan de hacer
-       nada; el cuarto se explica en su lugar, más abajo):
+  {/* Arreglos de esta página que no tocan archivos compartidos (el cuarto y el quinto se
+       explican en su lugar, más abajo):
        1. En contacto, «Escríbenos» del módulo, del menú y del pie apuntaba a esta misma URL:
-          recargaba, volvía arriba y podía borrar lo escrito. Aquí lleva al formulario.
+          recargaba, volvía arriba y podía borrar lo escrito. Aquí lleva al formulario
+          (propuesto en NavV3 y FooterV3 comparando Astro.url.pathname; cuando entre, esto
+          deja de hacer nada).
        2. v3-contacto.js devuelve el botón a 'Enviar →' cuando el envío falla. Si el botón
           queda habilitado con otro texto, se le devuelve el suyo.
-       3. UTM (QA 5-oct): la captura vive solo en v3-contacto.js y lee la URL de contacto;
-          quien llegaba por un anuncio a otra página v3 y pasaba a contacto enviaba sin
-          atribución. Puente: si ni esta URL ni la sesión traen UTM, se leen de la página
-          anterior del mismo sitio (document.referrer). Cubre anuncio → página → contacto,
-          no un recorrido de dos saltos: eso lo arregla la captura en NavV3 (propuesta).
-          Corre en el análisis del HTML, antes que v3-contacto.js (defer), que es quien
-          vuelca sessionStorage en los campos ocultos. */}
+       3. UTM: el puente por document.referrer que vivía aquí (QA 5-oct, spec §7) se retiró
+          en la QA final: la captura está ahora en NavV3, en las 21 rutas, con las mismas
+          claves de sessionStorage que lee v3-contacto.js, y cubre cualquier número de saltos.
+          v3-contacto.js (defer) sigue siendo quien vuelca sessionStorage en #f-utm-*. */}
   <script is:inline>
+    /* 5. El dominio que viene del chequeo (QA final, conversión 6). v3-chequeo.js manda
+          ?sitio=<dominio> en los enlaces del resultado y del aviso de error; si «Sitio web»
+          está vacío, se rellena con él. No pisa lo que el navegador o la persona ya pusieron,
+          no renombra nada y no toca los UTM (solo lee el parámetro sitio). */
     (function () {
       try {
-        var K = ['utm_source', 'utm_medium', 'utm_campaign'];
-        var aqui = new URLSearchParams(location.search);
-        var hay = K.some(function (k) { return aqui.get(k) || sessionStorage.getItem(k); });
-        if (!hay && document.referrer) {
-          var ref = new URL(document.referrer);
-          if (ref.origin === location.origin) {
-            K.forEach(function (k) { var v = ref.searchParams.get(k); if (v) sessionStorage.setItem(k, v); });
-          }
-        }
+        var v = (new URLSearchParams(location.search).get('sitio') || '').trim().slice(0, 200);
+        var campo = document.getElementById('f-sitio');
+        if (v && campo && !campo.value) campo.value = v;
       } catch (e) {}
     })();
     (function () {
@@ -318,6 +322,8 @@ const jsonLd = {
   .d-ct-campo { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
   .d-ct-campo label { font-size: 0.9375rem; font-weight: 500; line-height: 1.4; color: var(--d-papel); }
   .d-ct-campo label span { color: var(--d-gris); font-weight: 400; }
+  /* Ayuda bajo un campo: 14 px gris, pegada al campo que explica. */
+  .d-ct-ayuda { margin: 0; font-size: 0.875rem; line-height: 1.5; color: var(--d-gris); }
   .d-ct-campo input,
   .d-ct-campo textarea {
     width: 100%;

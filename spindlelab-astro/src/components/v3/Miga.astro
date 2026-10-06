@@ -1,0 +1,49 @@
+---
+// Miga de pan del sistema v3. UN solo componente (QA final, técnica 12): la miga se marcaba
+// de tres maneras (<p> en tres plantillas, nav con aria-label «Miga de pan» en unas y
+// «Migas» en otras) y ninguna decía cuál era la página actual.
+//
+// · nav.d-miga con aria-label «Miga de pan»: un hito con nombre, el mismo en todas.
+// · Lista ordenada: el lector de pantalla anuncia «lista, 2 elementos» y la posición.
+// · El último eslabón es la página actual: aria-current="page", sin enlace.
+// · El separador «·» va con aria-hidden: se ve igual que antes y no se lee.
+// · El aspecto es el de siempre (.d-miga de driftime.css): 13 px, gris, enlaces sin
+//   subrayado. Su texto visible sigue siendo «Inicio · Contacto», que es lo que se compara
+//   con el BreadcrumbList.
+//
+// Uso:
+//   <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Contacto' }]} />
+//   `html: true` en un eslabón lo pinta con set:html (el título corto de un artículo trae
+//   entidades del HTML publicado).
+interface Eslabon {
+  label: string;
+  href?: string;
+  html?: boolean;
+}
+interface Props {
+  items: Eslabon[];
+}
+const { items } = Astro.props;
+const ultimo = items.length - 1;
+---
+
+<nav class="d-miga" aria-label="Miga de pan">
+  {/* Cada eslabón en una sola línea, sin espacios entre sus partes: el único espacio es el
+      del separador « · », así se lee igual en dev y en el build comprimido. */}
+  <ol class="d-miga__lista">
+    {items.map((e, i) => <li>{i > 0 && <span class="d-miga__sep" aria-hidden="true"> · </span>}{i === ultimo ? (e.html ? <span aria-current="page" set:html={e.label} /> : <span aria-current="page">{e.label}</span>) : e.html ? <a href={e.href} set:html={e.label} /> : <a href={e.href}>{e.label}</a>}</li>)}
+  </ol>
+</nav>
+
+<style>
+  /* La lista no cambia el aspecto de la miga: en línea, sin viñetas ni sangría. */
+  .d-miga__lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+  }
+  .d-miga__lista li {
+    display: inline;
+  }
+</style>

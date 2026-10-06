@@ -23,10 +23,17 @@
 //   con «·» en vez de raya, y la description por defecto de Layout.astro (la de la home Astro
 //   publicada; dice 24 horas, como el resto de la v3, y no las 48 de spindlelab-site). El
 //   noindex se mantiene.
+// · QA final (6-oct), paquete A: el title baja a 53 caracteres (el chequeo de la casa pide de 15
+//   a 65 y el anterior medía 67; mismo texto sin «para empresas») y la página suma un nodo
+//   WebPage con fechas en su JSON-LD (Layout no se toca). Fila del hero en proporciones
+//   mixtas, rótulo único por obra (`rotulo` en obra-v3.json), pestañas de los campos con la
+//   implementación de MovimientoV3, foco de la pila con FocoPila, srcset en las piezas y
+//   la línea de precio con el marcado del índice de servicios.
 import Layout from '../../layouts/Layout.astro';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
 import Pieza from '../../components/v3/Pieza.astro';
+import FocoPila from '../../components/v3/FocoPila.astro';
 import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import '../../styles/chequeo-v3.css'; // el resultado del chequeo se pinta con estas clases
 import '../../styles/driftime.css';
@@ -34,26 +41,60 @@ import oferta from '../../data/oferta-v3.json';
 import obra from '../../data/obra-v3.json';
 import indice from '../../data/blog-v3/_indice.json';
 
-// La fila del hero sale del MISMO dato que /v3/trabajo/. El tipo decide la etiqueta: una
-// pieza de concepto lleva su rótulo, sin que nadie tenga que acordarse.
-const rotuloTipo: Record<string, string> = { cliente: 'Cliente', propio: 'Producto propio', concepto: '' };
-// La fila usa el mockup en teléfono (10:11, el ratio de la fila): la obra se ve como se usa.
-// Su alt es `altMockAlto` (solo el teléfono); `altMock` describe el par notebook + teléfono
-// del mockup ancho (antislop C5; spec §7, fila de Trabajo del 6-oct).
-const tira = obra.casos.map((c: any) => ({
-  src: c.mockAlto, alt: c.altMockAlto ?? c.altMock, concepto: c.tipo === 'concepto',
-  etiquetas: [c.tipo === 'concepto' ? `${c.n} · ${c.rubro}` : `${c.n} · ${rotuloTipo[c.tipo] ?? c.rubro}`],
-}));
+// TABLETA VERTICAL = CELULAR (QA final, mirada #1): el mismo corte que driftime.css. En una
+// tableta parada la fila del hero va en carrusel y los campos en la grilla de dos celdas, así
+// que la imagen de celular (`srcCel`) también manda ahí.
+const TAB = '(max-width: 1024px) and (orientation: portrait)';
+const CEL = `(max-width: 767px), ${TAB}`;
+// Cada foto del pool y cada mockup tiene su versión de 800 px (`<foto>-800.jpg`, la misma
+// imagen reescalada): el navegador la elige cuando la pieza se ve chica (QA final, técnica #8).
+const v800 = (src: string) => src.replace(/\.jpg$/, '-800.jpg');
+const candidatas = (src: string, w: number, v?: number) => `${v800(src)} 800w, ${src}${v ? `?v=${v}` : ''} ${w}w`;
+
+// La fila del hero sale del MISMO dato que /v3/trabajo/. Rótulo único por obra: `rotulo` de
+// obra-v3.json («Combeau, fotografía · Cliente»), el mismo en el hero y en el campo
+// Desarrollo (QA final, mirada #10). Una pieza de concepto lleva además su rótulo en papel.
+// PROPORCIONES MIXTAS CON ALTO COMÚN (QA final, mirada #5): cuatro teléfonos iguales se leían
+// como cuatro tarjetas (antislop B1). Las piezas 2 y 4 van en el mockup ancho (notebook +
+// teléfono, 4:3) y la 1 y la 3 en el alto (teléfono, 10:11). Cada una en su proporción, sin
+// recorte: `--r` por pieza y `--suma` en la fila, el mecanismo de los campos. El alt de cada
+// imagen describe ese mockup: `altMock` el par, `altMockAlto` solo el teléfono.
+const MOCK = { alto: { w: 1000, h: 1100 }, ancho: { w: 1600, h: 1200 } } as const;
+const SIZES_TIRA = {
+  alto: `(max-width: 767px) 60vw, ${TAB} 35vw, 19vw`,
+  ancho: `(max-width: 767px) 88vw, ${TAB} 51vw, 28vw`,
+};
+const tira = obra.casos.map((c: any, i: number) => {
+  const forma: 'alto' | 'ancho' = i % 2 === 1 ? 'ancho' : 'alto';
+  const src: string = forma === 'ancho' ? c.mock : c.mockAlto;
+  const { w, h } = MOCK[forma];
+  return {
+    src, w, h, srcset: candidatas(src, w), sizes: SIZES_TIRA[forma],
+    alt: forma === 'ancho' ? c.altMock : c.altMockAlto ?? c.altMock,
+    concepto: c.tipo === 'concepto',
+    etiquetas: [c.rotulo],
+  };
+});
+const sumaTira = tira.reduce((t: number, p: any) => t + p.w / p.h, 0);
 
 // Los cuatro campos, en el orden que fija el giro del 29-sep: Desarrollo abre.
-// Las imágenes salen solo del pool honesto (spec §5).
-const imgs: Record<string, { src: string; w: number; h: number; alt: string; etq?: string; cel?: string; pos?: string }[]> = {
+// Las imágenes salen solo del pool honesto (spec §5). w y h son los del archivo (QA final,
+// técnica #9). `v`: versión del archivo cuando cambió de contenido con el mismo nombre (caché
+// de 7 días en /assets/*): hilos.jpg ganó contraste (QA final, mirada #6).
+// Desarrollo lee la obra de obra-v3.json: la captura de Combeau termina al final de la banda
+// verde (`combeau-fotografia-ancho-2.jpg`, 1440 × 616; la anterior cortaba la fila de retratos
+// a la altura de la frente, QA final, mirada #4).
+type Img = { src: string; w: number; h: number; alt: string; v?: number; etq?: string; cel?: string; pos?: string };
+const caso = (slug: string) => obra.casos.find((c: any) => c.slug === slug) as any;
+const combeau = caso('combeau-fotografia');
+const vyc = caso('verifica-y-cumple');
+const imgs: Record<string, Img[]> = {
   Desarrollo: [
-    { src: '/assets/img/obra/combeau-fotografia-ancho.jpg', w: 1440, h: 810, cel: '/assets/img/obra/mock-combeau-fotografia-alto.jpg', alt: 'Portada del sitio de fotografía de Bernardo Combeau, un retrato iluminado en verde', etq: 'Bernardo Combeau' },
-    { src: '/assets/img/obra/verifica-y-cumple-ancho.jpg', w: 1440, h: 810, cel: '/assets/img/obra/mock-verifica-y-cumple-alto.jpg', alt: 'Portada de Verifica y Cumple con el titular «¿Estás seguro?» sobre azul', etq: 'Verifica y Cumple' },
+    { src: combeau.img, w: combeau.w, h: combeau.h, cel: combeau.mockAlto, alt: 'Portada del sitio de fotografía de Bernardo Combeau, un retrato iluminado en verde', etq: combeau.rotulo },
+    { src: vyc.img, w: vyc.w, h: vyc.h, cel: vyc.mockAlto, alt: 'Portada de Verifica y Cumple con el titular «¿Estás seguro?» sobre azul', etq: vyc.rotulo },
   ],
   Visibilidad: [
-    { src: '/assets/img/d/hilos.jpg', w: 1600, h: 960, alt: 'Cantos de hojas apiladas en azul oscuro, en diagonal' },
+    { src: '/assets/img/d/hilos.jpg', v: 2, w: 1600, h: 960, alt: 'Cantos de hojas apiladas en azul oscuro, en diagonal' },
     { src: '/assets/img/d/ventana.jpg', w: 1600, h: 670, pos: '72% 50%', alt: 'Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop' },
   ],
   Continuidad: [
@@ -68,19 +109,58 @@ const imgs: Record<string, { src: string; w: number; h: number; alt: string; etq
 const campos = [
   ...oferta.momentos.map((m: any) => ({ palabra: m.palabra, campo: m.campo, momento: m.momento, items: m.items })),
   { palabra: oferta.tambienPanel.palabra, campo: oferta.tambienPanel.campo, momento: oferta.tambienPanel.momento, items: oferta.tambien },
-].map((c) => ({ ...c, id: c.palabra.toLowerCase(), imgs: imgs[c.palabra] ?? [] }));
+].map((c) => {
+  const lista = imgs[c.palabra] ?? [];
+  const suma = lista.reduce((t, im) => t + im.w / im.h, 0);
+  return {
+    ...c, id: c.palabra.toLowerCase(), suma,
+    // En escritorio cada pieza ocupa su parte del ancho (r / suma); en celular y tableta
+    // vertical, media fila.
+    imgs: lista.map((im) => ({ ...im, url: im.src + (im.v ? `?v=${im.v}` : ''), srcset: candidatas(im.src, im.w, im.v), sizes: `${CEL} 48vw, ${Math.ceil((im.w / im.h / suma) * 100)}vw` })),
+  };
+});
+
+// «$490.000 · $690.000 con Visibilidad IA» → una alternativa por trozo, y cada trozo no se
+// parte (QA final, conversión #4; el marcado del índice de servicios, spec §7 del 5-oct).
+const alternativas = (p: string) => p.split(' · ');
 
 const posts = [...indice].sort((a: any, b: any) => (a.datePublished < b.datePublished ? 1 : -1)).slice(0, 4);
 const fecha = (iso: string) =>
   new Date(iso + 'T12:00:00').toLocaleDateString('es-CL', { day: 'numeric', month: 'short', year: 'numeric' }).replace('.', '');
+
+// EL NODO DE LA PÁGINA (QA final, conversión #2). La home reprobaba su propio chequeo por «sin
+// fechas en tu schema». Layout emite #org, #website y #autor-ramon y no se toca; la página suma
+// solo su WebPage, con el @id de la portada publicada (patrón de Método: …/#webpage).
+// · datePublished 2026-07-08: la portada estaba en línea ese día (plan-operativo-90-dias.md,
+//   semana 1: Search Console verificado y sitemap enviado, «Correcto», 11 páginas).
+// · dateModified: la fecha de esta versión. AL PUBLICAR LA V3 se cambia por el día en que
+//   sale (si no, el grafo diría que la portada no cambió desde hoy).
+const TITLE = 'SEO técnico y visibilidad en IA en Chile · SpindleLab';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://spindlelab.cl/#webpage',
+      url: 'https://spindlelab.cl/',
+      name: TITLE,
+      inLanguage: 'es-CL',
+      isPartOf: { '@id': 'https://spindlelab.cl/#website' },
+      about: { '@id': 'https://spindlelab.cl/#org' },
+      datePublished: '2026-07-08',
+      dateModified: '2026-10-06',
+    },
+  ],
+};
 ---
 
 <Layout
-  title="SEO técnico y visibilidad en IA para empresas en Chile · SpindleLab"
+  title={TITLE}
   description="Auditamos tu sitio y tu presencia en IA para que ChatGPT, Gemini y Perplexity te recomienden antes que tu competencia. Diagnóstico gratis en 24 horas."
   bodyClass="d-body d-home"
 >
   <meta slot="head" name="robots" content="noindex, nofollow" />
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <NavV3 />
 
   <main>
@@ -103,9 +183,11 @@ const fecha = (iso: string) =>
         <h1 class="d-display" id="h1">Ahí se corta<br />el circuito</h1>
       </div>
 
-      <div class="d-fila d-fila--4" aria-label="Trabajo entregado">
+      {/* role="region": un div no anuncia su aria-label, y a 390 el carrusel recibe foco
+           (QA final, técnica #12). */}
+      <div class="d-fila d-fila--hero" role="region" aria-label="Trabajo entregado" style={`--suma:${sumaTira.toFixed(4)}`}>
         {tira.map((t: any, i: number) => (
-          <Pieza src={t.src} alt={t.alt} concepto={t.concepto} etiquetas={t.etiquetas} ancho={900} alto={1200} eager={i < 2} />
+          <Pieza src={t.src} srcset={t.srcset} sizes={t.sizes} alt={t.alt} concepto={t.concepto} etiquetas={t.etiquetas} ancho={t.w} alto={t.h} proporcion={t.w / t.h} eager={i < 2} />
         ))}
       </div>
     </section>
@@ -123,16 +205,27 @@ const fecha = (iso: string) =>
       <section class:list={['d-campo', `d-campo--${c.campo}`]} aria-labelledby={`t-${c.id}`}>
         <div class="d-campo__cab">
           <h2 class="d-display" id={`t-${c.id}`}>{c.palabra}</h2>
-          <div class="d-pills" role="tablist" data-pestanas>
-            {c.items.map((it: any, i: number) => (
-              <button class="d-pill" role="tab" type="button" aria-selected={i === 0 ? 'true' : 'false'} aria-controls={`p-${c.id}-${i}`} id={`tab-${c.id}-${i}`}>{it.n}</button>
-            ))}
-          </div>
+          {/* Dos servicios: pestañas (MovimientoV3: flechas, Inicio/Fin, tabindex itinerante).
+               Uno solo: la píldora es un rótulo, no un control (QA final, técnica #7). */}
+          {c.items.length > 1 ? (
+            <div class="d-pills" role="tablist" aria-labelledby={`t-${c.id}`} data-pestanas>
+              {c.items.map((it: any, i: number) => (
+                <button class="d-pill" role="tab" type="button" aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} aria-controls={`p-${c.id}-${i}`} id={`tab-${c.id}-${i}`}>{it.n}</button>
+              ))}
+            </div>
+          ) : (
+            <div class="d-pills"><span class="d-pill d-pill--rotulo">{c.items[0].n}</span></div>
+          )}
           {c.items.map((it: any, i: number) => (
-            <div class="d-panel" id={`p-${c.id}-${i}`} role="tabpanel" aria-labelledby={`tab-${c.id}-${i}`} hidden={i !== 0}>
+            <div class="d-panel" id={`p-${c.id}-${i}`} role={c.items.length > 1 ? 'tabpanel' : undefined} aria-labelledby={c.items.length > 1 ? `tab-${c.id}-${i}` : undefined} hidden={i !== 0}>
               <p class="d-desc"><b>{c.momento}.</b> {it.d}</p>
+              {/* Espacios reales entre las piezas y separador aria-hidden: sin CSS se leía
+                   «Desde$390.000…+ IVA». Cada alternativa con su plan no se parte. */}
               <p class="d-precio" style="margin-top:18px">
-                <span class="d-pre-rot">Desde</span><span class="d-pre-sep"></span><b>{it.p}</b><span class="d-pre-rot">+ IVA</span>
+                {alternativas(it.p).map((a, k, todas) => [
+                  k > 0 ? ' ' : '',
+                  <span class="d-pre-alt">{k === 0 && [<span class="d-pre-rot">Desde</span>, <span class="d-pre-sep" aria-hidden="true"></span>, ' ']}<b>{a}{k < todas.length - 1 ? '\u00a0·' : ''}</b>{k === todas.length - 1 && [' ', <span class="d-pre-rot">+ IVA</span>]}</span>,
+                ])}
               </p>
               <div class="d-btns" style="margin-top:18px">
                 <a class="d-btn" href={it.href}>Ver {it.n}</a>
@@ -141,8 +234,8 @@ const fecha = (iso: string) =>
             </div>
           ))}
         </div>
-        <div class="d-fila d-fila--2" style={`--suma:${c.imgs.reduce((t: number, im: any) => t + im.w / im.h, 0).toFixed(4)}`}>
-          {c.imgs.map((im) => <Pieza src={im.src} alt={im.alt} etiquetas={im.etq ? [im.etq] : []} ancho={im.w} alto={im.h} proporcion={im.w / im.h} srcCel={im.cel} posicion={im.pos} />)}
+        <div class="d-fila d-fila--2" style={`--suma:${c.suma.toFixed(4)}`}>
+          {c.imgs.map((im) => <Pieza src={im.url} srcset={im.srcset} sizes={im.sizes} alt={im.alt} etiquetas={im.etq ? [im.etq] : []} ancho={im.w} alto={im.h} proporcion={im.w / im.h} srcCel={im.cel} srcsetCel={im.cel ? candidatas(im.cel, MOCK.alto.w) : undefined} sizesCel={im.cel ? '48vw' : undefined} anchoCel={im.cel ? MOCK.alto.w : undefined} altoCel={im.cel ? MOCK.alto.h : undefined} mediaCel={CEL} posicion={im.pos} />)}
         </div>
       </section>
     ))}
@@ -174,20 +267,9 @@ const fecha = (iso: string) =>
     </section>
   </main>
 
+  {/* Foco no oculto en la pila de campos (spec §3; QA final, técnica #1). */}
+  <FocoPila bandas=".d-campo" />
   <FooterV3 />
 
-  <script>
-    // Pestañas de los campos con dos servicios. Lo mínimo, sin librería.
-    document.querySelectorAll('[data-pestanas]').forEach((grupo) => {
-      const tabs = grupo.querySelectorAll<HTMLButtonElement>('[role=tab]');
-      tabs.forEach((t) => t.addEventListener('click', () => {
-        tabs.forEach((o) => {
-          o.setAttribute('aria-selected', String(o === t));
-          const p = document.getElementById(o.getAttribute('aria-controls') || '');
-          if (p) p.hidden = o !== t;
-        });
-      }));
-    });
-  </script>
   <script src="/assets/js/v3-chequeo.js" is:inline defer></script>
 </Layout>

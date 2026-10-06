@@ -39,6 +39,7 @@ import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
 import Pieza from '../../components/v3/Pieza.astro';
+import Miga from '../../components/v3/Miga.astro';
 import paginas from '../../data/paginas-v3.json';
 import obra from '../../data/obra-v3.json';
 import '../../styles/chequeo-v3.css'; // el resultado del chequeo se pinta con estas clases
@@ -104,7 +105,7 @@ const jsonLd = {
        Manrope 800 en mayúsculas. */}
   <main>
     <header class="d-cab d-cab-diag">
-      <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · {MIGA}</nav>
+      <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: MIGA }]} />
       <h1 class="d-h1">{s.h1}</h1>
       {/* Los motores que nombra son los que el chequeo prueba en vivo (functions/api/chequeo.js:
            OAI-SearchBot/ChatGPT-User, Claude-SearchBot/Claude-User, PerplexityBot/Perplexity-User).
@@ -135,7 +136,10 @@ const jsonLd = {
     <div class="d-entrada">
       <p class="d-nota-card"><b>21 chequeos, 100 puntos.</b> Tres bloques, con su peso a la vista: leerte 30, entenderte 40, citarte 30.</p>
       <div class="d-entrada-diag">
-        <p class="d-guia">El chequeo de esta página lee tu sitio; el diagnóstico completo le pregunta a los motores. Los dos son gratis.</p>
+        {/* «mini-diagnóstico», no «diagnóstico completo» (QA final, conversión 8): el paso gratis
+             tenía dos nombres en el mismo recorrido, y al lado Auditoría vende la «Auditoría
+             Completa». Es el nombre con que contacto lo ofrece; el botón dice la forma corta. */}
+        <p class="d-guia">El chequeo de esta página lee tu sitio; el mini-diagnóstico le pregunta a los motores. Los dos son gratis.</p>
         <div class="d-btns"><a class="d-btn d-btn--alt" href={CONTACTO}>Pedir el diagnóstico</a></div>
       </div>
     </div>
@@ -218,7 +222,9 @@ const jsonLd = {
 
   <FooterV3 />
 
-  <script src="/assets/js/v3-chequeo.js" is:inline defer></script>
+  {/* ?v=2: el archivo cambió en la QA final (enlaces con ?sitio= y botón junto al puntaje) y
+       /assets/* se cachea 7 días. */}
+  <script src="/assets/js/v3-chequeo.js?v=2" is:inline defer></script>
 </Layout>
 
 <style>

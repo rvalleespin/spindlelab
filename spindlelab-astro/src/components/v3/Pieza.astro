@@ -2,6 +2,10 @@
 // Una pieza de imagen del sistema driftime: radio 6, etiquetas ARRIBA a la izquierda.
 // Si es una pieza de concepto, el rótulo va primero y en papel, visible sin scroll
 // (regla de marketing/portafolio/README.md).
+//
+// PESO (QA final, técnica #8): `srcset` + `sizes` dejan que el navegador pida la versión
+// de 800 px (`<foto>-800.jpg`, mismas fotos reescaladas) cuando la pieza se ve chica. Sin
+// ellos, a 390 con DPR 3 una celda de 170 px recibía el archivo de 1600 (factor 3,1).
 interface Props {
   src: string;
   alt: string;
@@ -14,16 +18,31 @@ interface Props {
   posicion?: string;
   /** Otra imagen para celular (<picture>): p. ej. la obra en teléfono donde la celda es vertical. */
   srcCel?: string;
+  /** Ancho y alto reales de srcCel (van en el <source>, para que la caja no salte). */
+  anchoCel?: number;
+  altoCel?: number;
+  /** Dónde manda srcCel. Por defecto, celular; la home le suma la tableta vertical. */
+  mediaCel?: string;
   /** Ancho/alto natural de la imagen. Con esto la pieza puede medir lo que la imagen, sin recortarla. */
   proporcion?: number;
+  /** Candidatas por ancho («…-800.jpg 800w, ….jpg 1600w») y el ancho con que se verá. */
+  srcset?: string;
+  sizes?: string;
+  srcsetCel?: string;
+  sizesCel?: string;
 }
-const { src, alt, clase = '', etiquetas = [], concepto = false, ancho, alto, eager = false, posicion, srcCel, proporcion } = Astro.props;
+const {
+  src, alt, clase = '', etiquetas = [], concepto = false, ancho, alto, eager = false, posicion,
+  srcCel, anchoCel, altoCel, mediaCel = '(max-width: 767px)', proporcion, srcset, sizes, srcsetCel, sizesCel,
+} = Astro.props;
 ---
 <figure class:list={['d-pieza', clase]} style={proporcion ? `--r:${proporcion.toFixed(4)}` : undefined}>
   <picture>
-    {srcCel && <source media="(max-width: 767px)" srcset={srcCel} />}
+    {srcCel && <source media={mediaCel} srcset={srcsetCel ?? srcCel} sizes={srcsetCel ? sizesCel ?? sizes : undefined} width={anchoCel} height={altoCel} />}
     <img
       src={src}
+      srcset={srcset}
+      sizes={srcset ? sizes : undefined}
       alt={alt}
       width={ancho}
       height={alto}
