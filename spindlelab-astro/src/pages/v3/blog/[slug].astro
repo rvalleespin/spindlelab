@@ -61,19 +61,6 @@ const entrada = Object.entries(datos).find(([r]) => slugDe(r) === slug)?.[1] as 
 const info = entrada?.default ?? entrada;
 const meta = info.meta;
 
-// El grafo del post, sin los nodos que ya emite el Layout y con la miga que se ve.
-const DEL_LAYOUT = new Set(['https://spindlelab.cl/#org', 'https://spindlelab.cl/#autor-ramon']);
-const ld = {
-  ...info.jsonLd,
-  '@graph': info.jsonLd['@graph']
-    .filter((n: any) => !DEL_LAYOUT.has(n['@id']))
-    .map((n: any) =>
-      n['@type'] === 'BreadcrumbList'
-        ? { ...n, itemListElement: n.itemListElement.map((it: any) => (it.position === 2 ? { ...it, name: 'Blog' } : it)) }
-        : n,
-    ),
-};
-
 // ---------------------------------------------------------------- la cabeza del post
 const MARCA_PROSA = '<div class="prose">';
 const iProsa = crudo.indexOf(MARCA_PROSA);
@@ -84,9 +71,36 @@ const h1 = cabeza.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1].trim();
 if (!h1) throw new Error(`blog-v3/${slug}.html: no trae <h1>`);
 // El último eslabón de la miga publicada es el nombre corto del post.
 const migaCorta = [...(cabeza.match(/<nav class="crumbs"[\s\S]*?<\/nav>/)?.[0] ?? '').matchAll(/<li>([\s\S]*?)<\/li>/g)].pop()?.[1].trim();
+const migaTexto = (migaCorta ?? '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').trim();
 const byline = cabeza.match(/<p class="byline">([\s\S]*?)<\/p>/)?.[1] ?? '';
-const tema = byline.match(/<b>([\s\S]*?)<\/b>/)?.[1].trim();
-const [fechaVisible, lectura] = [...byline.matchAll(/<span>([\s\S]*?)<\/span>/g)].map((m) => m[1].trim());
+// Tema en caja de oración (antislop A6): el byline publicado de fintechs dice «SEO Técnico».
+// Se corrige al leer, sin tocar el HTML publicado que guarda data/blog-v3/. Revisión cruzada, 6-oct.
+const TEMA_CAJA: Record<string, string> = { 'SEO Técnico': 'SEO técnico' };
+const temaPublicado = byline.match(/<b>([\s\S]*?)<\/b>/)?.[1].trim();
+const tema = temaPublicado ? TEMA_CAJA[temaPublicado] ?? temaPublicado : temaPublicado;
+const [fechaPublicada, lectura] = [...byline.matchAll(/<span>([\s\S]*?)<\/span>/g)].map((m) => m[1].trim());
+// La fecha visible sale de meta.datePublished y no del byline, que trae la coma del inglés
+// antes del año («7 de julio, 2026»): «7 de julio de 2026» (antislop A7). Revisión cruzada, 6-oct.
+const fechaVisible = meta.datePublished
+  ? new Date(String(meta.datePublished).slice(0, 10) + 'T12:00:00').toLocaleDateString('es-CL', { day: 'numeric', month: 'long', year: 'numeric' })
+  : fechaPublicada;
+
+// El grafo del post, sin los nodos que ya emite el Layout y con la miga que se ve: posición 2
+// «Blog» y posición 3 el nombre corto de la miga visible, de la misma fuente (revisión
+// cruzada, 6-oct: en fintechs el grafo decía «… fintechs chilenas» y la miga «… fintechs»;
+// las otras seis coincidían por casualidad). Spec §7, regla del artículo.
+const DEL_LAYOUT = new Set(['https://spindlelab.cl/#org', 'https://spindlelab.cl/#autor-ramon']);
+const ld = {
+  ...info.jsonLd,
+  '@graph': info.jsonLd['@graph']
+    .filter((n: any) => !DEL_LAYOUT.has(n['@id']))
+    .map((n: any) =>
+      n['@type'] === 'BreadcrumbList'
+        ? { ...n, itemListElement: n.itemListElement.map((it: any) => (it.position === 2 ? { ...it, name: 'Blog' } : it.position === 3 && migaTexto ? { ...it, name: migaTexto } : it)) }
+        : n,
+    ),
+};
+
 const autorBloque = cabeza.match(/<div class="author">([\s\S]*?)<\/div>\s*<\/div>/)?.[1] ?? '';
 const autor = {
   src: autorBloque.match(/<img[^>]*\bsrc="([^"]+)"/)?.[1],
@@ -155,16 +169,19 @@ const cuerpoFinal = hayIndice
 // el pool honesto de §5, y ninguna afirma nada del artículo. El mapa es FIJO por slug y está
 // repartido sobre el orden de lectura (el del índice, del más nuevo al más antiguo, que es
 // el que sigue «Siguiente artículo»): dos seguidos nunca repiten imagen ni familia
-// (dominó · hilo · mesa), contando la vuelta del último al primero. Son 6 fotos para 7
-// posts: hilo.jpg se repite, a tres posts de distancia. El de los 21 chequeos lleva la
-// misma fila curva de fichas que su fila destacada en /v3/blog/.
+// (dominó · hilo · mesa), contando la vuelta del último al primero. El de los 21 chequeos
+// lleva la misma fila curva de fichas que su fila destacada en /v3/blog/.
+// hilo.jpg NO va en ningún post (revisión cruzada, 6-oct): es la cabecera a sangre de
+// /v3/diagnostico/, a donde lleva el cierre de cada artículo («Correr el chequeo»), y se veía
+// dos veces seguidas. Va hilos.jpg, de la misma familia, así que el reparto no se mueve:
+// queda en los posts 2, 5 y 7 del ciclo de 7, nunca seguidos.
 const IMAGEN: Record<string, { src: string; alt: string; w: number; h: number; pos?: string }> = {
   '21-chequeos-visibilidad-ia': { src: '/assets/img/d/domino-curva.jpg', alt: 'Fichas de dominó de madera de pie en una fila curva, con luz cálida de costado', w: 1600, h: 1600, pos: '50% 62%' },
-  'como-elegir-verificar-agencia-aeo-geo-chile': { src: '/assets/img/d/hilo.jpg', alt: 'Un hilo luminoso cruza en diagonal un fondo verde oscuro', w: 1400, h: 787 },
+  'como-elegir-verificar-agencia-aeo-geo-chile': { src: '/assets/img/d/hilos.jpg', alt: 'Cantos de hojas apiladas en azul oscuro, en diagonal', w: 1600, h: 960 },
   'que-es-un-mini-diagnostico-seo': { src: '/assets/img/d/escritorio.jpg', alt: 'Escritorio de madera junto a la ventana, con un laptop, un cuaderno abierto y una taza', w: 1600, h: 670 },
   'cuanto-cuesta-seo-tecnico-chile': { src: '/assets/img/d/domino.jpg', alt: 'Fichas de dominó negras cayendo en fila sobre un fondo oscuro', w: 1600, h: 1600, pos: '50% 58%' },
-  'seo-tecnico-fintechs-chile': { src: '/assets/img/d/hilo.jpg', alt: 'Un hilo luminoso cruza en diagonal un fondo verde oscuro', w: 1400, h: 787 },
-  'que-es-aeo-geo': { src: '/assets/img/d/ventana.jpg', alt: 'Mesa de trabajo junto a una ventana con cortinas, con un libro abierto, un laptop y una taza', w: 1600, h: 670, pos: '62% 50%' },
+  'seo-tecnico-fintechs-chile': { src: '/assets/img/d/hilos.jpg', alt: 'Cantos de hojas apiladas en azul oscuro, en diagonal', w: 1600, h: 960 },
+  'que-es-aeo-geo': { src: '/assets/img/d/ventana.jpg', alt: 'Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto, un laptop y una taza', w: 1600, h: 670, pos: '62% 50%' },
   // hilos.jpg es el RECORTE del 5-oct (spec §5): sin la línea dorada, 1600 × 960. El alt es
   // el de la home (index.astro), mirando la imagen; describir la línea era describir la foto
   // de antes.

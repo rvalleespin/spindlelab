@@ -16,7 +16,13 @@
 // · La obra va arriba del pliegue (driftime la pone ahí; la v3 la había bajado).
 // · Precios: los de oferta-v3.json, siempre «desde … + IVA».
 // · Cero imagen de banco y cero gente inventada (spec §5).
-// · El chequeo es la herramienta real: ids chq-* y /api/chequeo, como antes.
+// · El chequeo es la herramienta real: ids chq-* y /api/chequeo, como antes. Su resultado
+//   lleva a contacto de la v3 (data-contacto del formulario, que lee v3-chequeo.js).
+// · Title y description de producción, como las otras 20 rutas (revisión cruzada, 6-oct; antes
+//   eran de maqueta interna y nombraban a la referencia): el title de spindlelab-site/index.html
+//   con «·» en vez de raya, y la description por defecto de Layout.astro (la de la home Astro
+//   publicada; dice 24 horas, como el resto de la v3, y no las 48 de spindlelab-site). El
+//   noindex se mantiene.
 import Layout from '../../layouts/Layout.astro';
 import NavV3 from '../../components/v3/NavV3.astro';
 import FooterV3 from '../../components/v3/FooterV3.astro';
@@ -32,8 +38,10 @@ import indice from '../../data/blog-v3/_indice.json';
 // pieza de concepto lleva su rótulo, sin que nadie tenga que acordarse.
 const rotuloTipo: Record<string, string> = { cliente: 'Cliente', propio: 'Producto propio', concepto: '' };
 // La fila usa el mockup en teléfono (10:11, el ratio de la fila): la obra se ve como se usa.
+// Su alt es `altMockAlto` (solo el teléfono); `altMock` describe el par notebook + teléfono
+// del mockup ancho (antislop C5; spec §7, fila de Trabajo del 6-oct).
 const tira = obra.casos.map((c: any) => ({
-  src: c.mockAlto, alt: c.altMock, concepto: c.tipo === 'concepto',
+  src: c.mockAlto, alt: c.altMockAlto ?? c.altMock, concepto: c.tipo === 'concepto',
   etiquetas: [c.tipo === 'concepto' ? `${c.n} · ${c.rubro}` : `${c.n} · ${rotuloTipo[c.tipo] ?? c.rubro}`],
 }));
 
@@ -49,7 +57,7 @@ const imgs: Record<string, { src: string; w: number; h: number; alt: string; etq
     { src: '/assets/img/d/ventana.jpg', w: 1600, h: 670, pos: '72% 50%', alt: 'Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop' },
   ],
   Continuidad: [
-    { src: '/assets/img/d/domino-curva.jpg', w: 1600, h: 1600, alt: 'Fichas de dominó en fila curva sobre madera, con luz cálida' },
+    { src: '/assets/img/d/domino-curva.jpg', w: 1600, h: 1600, alt: 'Fichas de dominó de madera en fila curva sobre piedra oscura, con luz cálida' },
     { src: '/assets/img/d/escritorio.jpg', w: 1600, h: 670, pos: '34% 50%', alt: 'Escritorio de madera con un laptop, un cuaderno y una taza junto a la ventana' },
   ],
   Alcance: [
@@ -68,8 +76,8 @@ const fecha = (iso: string) =>
 ---
 
 <Layout
-  title="Maqueta v3 · home en el lenguaje de driftime · exploración rebranding"
-  description="Maqueta interna para decidir. No es una página publicada."
+  title="SEO técnico y visibilidad en IA para empresas en Chile · SpindleLab"
+  description="Auditamos tu sitio y tu presencia en IA para que ChatGPT, Gemini y Perplexity te recomienden antes que tu competencia. Diagnóstico gratis en 24 horas."
   bodyClass="d-body d-home"
 >
   <meta slot="head" name="robots" content="noindex, nofollow" />
@@ -80,7 +88,7 @@ const fecha = (iso: string) =>
     <section class="d-hero" aria-labelledby="h1">
       <div class="d-instr" id="chequeo">
         <p class="d-rot">Chequeo de visibilidad en IA</p>
-        <form class="d-dom chq-form" id="chq-form" novalidate aria-describedby="chq-nota">
+        <form class="d-dom chq-form" id="chq-form" novalidate aria-describedby="chq-nota" data-contacto={CONTACTO}>
           <label for="chq-dominio" class="d-sr">Tu dominio</label>
           <input id="chq-dominio" name="dominio" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="tuempresa.cl" required />
           <button id="chq-btn" type="submit">Ver cómo lo lee</button>

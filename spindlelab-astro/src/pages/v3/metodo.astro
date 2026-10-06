@@ -117,6 +117,8 @@ const datos: Dato[][] = [
 // dos y tres semanas»), visibilidad-en-ia («Auditoría de Visibilidad», «Desde $400.000 +
 // IVA · una vez»), acompanamiento-mensual («Desde $590.000 /mes + IVA», «Mínimo 3 meses»;
 // su nota: todos los planes traen implementación y monitoreo).
+// Nombre del servicio en caja de oración, el del menú y su h1, y el precio con la notación
+// del sitio, «$590.000/mes + IVA» (sin espacio antes de /mes). Revisión cruzada, 6-oct.
 const precios: { t: string; href?: string; enlace?: string }[] = [
   { t: `Sin costo. La auditoría completa va aparte: 2${NB}a${NB}3${NB}semanas, desde${NB}$490.000${NB}+${NB}IVA.`, href: '/v3/servicios/auditoria-seo-tecnica/', enlace: 'Ver la auditoría' },
   { t: `Auditoría de Visibilidad: desde${NB}$400.000${NB}+${NB}IVA, una${NB}vez.`, href: '/v3/servicios/visibilidad-en-ia/', enlace: 'Ver Visibilidad en IA' },
@@ -124,8 +126,8 @@ const precios: { t: string; href?: string; enlace?: string }[] = [
   // la FAQ de auditoria-seo-tecnica separa los dos casos («listos para implementar por tu
   // equipo. Si prefieres que implementemos nosotros, ese es el servicio de acompañamiento
   // mensual»). Con un solo precio parecía que implementar siempre cuesta el mensual.
-  { t: `Si lo ejecutamos nosotros, Acompañamiento Mensual: desde${NB}$590.000${NB}/mes${NB}+${NB}IVA, mínimo 3${NB}meses. Si lo ejecuta tu equipo, el plan viene en la auditoría completa.`, href: '/v3/servicios/acompanamiento-mensual/', enlace: 'Ver el acompañamiento' },
-  { t: `Va dentro del mismo Acompañamiento Mensual de la fase${NB}03.` },
+  { t: `Si lo ejecutamos nosotros, Acompañamiento mensual: desde${NB}$590.000/mes${NB}+${NB}IVA, mínimo 3${NB}meses. Si lo ejecuta tu equipo, el plan viene en la auditoría completa.`, href: '/v3/servicios/acompanamiento-mensual/', enlace: 'Ver el acompañamiento' },
+  { t: `Va dentro del mismo Acompañamiento mensual de la fase${NB}03.` },
 ];
 
 // «Nuestro protocolo público» es una afirmación que el enlace tiene que probar. En la
@@ -319,13 +321,15 @@ const jsonLd = {
          mini-diagnóstico en 24 horas). Es además la conversión medida (generate_lead).
          Sección corta (~160 px a 1440 × 900): .d-sec--quieta, la etiqueta no se pega (manual
          §07; spec §7, el mismo cierre que el artículo). Pegada, el h2 se despegaba del texto
-         y pasaba bajo el módulo de navegación (QA2). */}
+         y pasaba bajo el módulo de navegación (QA2).
+         Revisión cruzada, 6-oct: el h2 sin punto final, como los h2 de las otras rutas, y el
+         botón con el nombre del paso del resto del sitio, «Pedir el diagnóstico» (spec §7). */}
     <section class="d-sec d-sec--quieta" aria-labelledby="s-cierre">
-      <div class="d-eti"><h2 class="d-h2" id="s-cierre">{cierre.h2}</h2></div>
+      <div class="d-eti"><h2 class="d-h2" id="s-cierre">{cierre.h2.replace(/\.\s*$/, '')}</h2></div>
       <div class="d-cierre-met">
         {cierre.parrafos?.[0] && <p class="d-guia">{cierre.parrafos[0].replace('24 horas', `24${NB}horas`)}</p>}
         <div class="d-btns">
-          <a class="d-btn" href={CONTACTO}>Pedir el mini-diagnóstico</a>
+          <a class="d-btn" href={CONTACTO}>Pedir el diagnóstico</a>
           <a class="d-btn d-btn--alt" href="/v3/diagnostico/">Correr el chequeo</a>
         </div>
       </div>

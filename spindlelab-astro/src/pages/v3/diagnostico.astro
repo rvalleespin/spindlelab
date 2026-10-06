@@ -48,6 +48,11 @@ const s = (paginas as Record<string, any>).diagnostico;
 // La quinta sección del JSON (el cierre) no se lee: su rótulo va reescrito abajo (ver cabecera).
 const [chequeos, caminos, ley, responde] = s.secciones;
 
+// Los h2 de sección van sin punto final, como en las otras 19 rutas («Lo que incluye», «Qué
+// pasa después»). El JSON los trae con punto; se quita al pintar (el mismo sinPunto de
+// servicios/[slug].astro). Revisión cruzada, 6-oct.
+const sinPunto = (t: string) => t.replace(/\.\s*$/, '');
+
 // Verifica y Cumple aparece donde se habla de Verifica y Cumple: es la herramienta misma,
 // producto propio, no un resultado del chequeo.
 const vyc = obra.casos.find((c: any) => c.slug === 'verifica-y-cumple') as any;
@@ -59,16 +64,21 @@ const vyc = obra.casos.find((c: any) => c.slug === 'verifica-y-cumple') as any;
 // otra cosa que la página (antislop C8). Cuando el JSON cambie, se vuelve a leer de ahí.
 const descripcion = 'Pon tu dominio y revisamos al instante si ChatGPT, Claude y Perplexity pueden leerte, entenderte y citarte. Gratis, con los 21 chequeos y su puntaje publicados.';
 
+// UN NOMBRE PARA ESTA PÁGINA: «Chequeo gratis», el del menú y el pie (revisión cruzada,
+// 6-oct; spec §7, miga = menú). El JSON publicado la llama «Chequeo de visibilidad en IA» en
+// la miga; se sobrescribe la posición 2 al serializar, el patrón de servicios/index.astro.
+// El <title> conserva el nombre largo («Chequeo gratis de visibilidad en IA…»).
+const MIGA = 'Chequeo gratis';
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'BreadcrumbList',
       '@id': `${s.canonical}#breadcrumb`,
-      itemListElement: s.breadcrumb ?? [
+      itemListElement: (s.breadcrumb ?? [
         { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
-        { '@type': 'ListItem', position: 2, name: 'Chequeo gratis' },
-      ],
+        { '@type': 'ListItem', position: 2, name: MIGA },
+      ]).map((li: any) => (li.position === 2 ? { ...li, name: MIGA } : li)),
     },
     ...(s.faq?.length
       ? [{
@@ -94,7 +104,7 @@ const jsonLd = {
        Manrope 800 en mayúsculas. */}
   <main>
     <header class="d-cab d-cab-diag">
-      <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Chequeo de visibilidad en IA</nav>
+      <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · {MIGA}</nav>
       <h1 class="d-h1">{s.h1}</h1>
       {/* Los motores que nombra son los que el chequeo prueba en vivo (functions/api/chequeo.js:
            OAI-SearchBot/ChatGPT-User, Claude-SearchBot/Claude-User, PerplexityBot/Perplexity-User).
@@ -103,7 +113,7 @@ const jsonLd = {
 
       {/* EL INSTRUMENTO. Los id son contrato con el script: no tocar. */}
       <div class="d-instr d-instr-diag" id="chequeo">
-        <form class="d-dom chq-form" id="chq-form" novalidate aria-describedby="chq-nota">
+        <form class="d-dom chq-form" id="chq-form" novalidate aria-describedby="chq-nota" data-contacto={CONTACTO}>
           <label for="chq-dominio" class="d-sr">Tu dominio</label>
           <input id="chq-dominio" name="dominio" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="tuempresa.cl" required />
           <button id="chq-btn" type="submit">Revisar mi sitio</button>
@@ -132,7 +142,7 @@ const jsonLd = {
 
     {/* QUÉ REVISA */}
     <section class="d-sec" id="metodologia" aria-labelledby="s-che">
-      <div class="d-eti"><h2 class="d-h2" id="s-che">{chequeos.h2}</h2><p class="d-chico">La metodología completa, con el peso de cada bloque, para que puedas repetir el chequeo a mano si quieres.</p></div>
+      <div class="d-eti"><h2 class="d-h2" id="s-che">{sinPunto(chequeos.h2)}</h2><p class="d-chico">La metodología completa, con el peso de cada bloque, para que puedas repetir el chequeo a mano si quieres.</p></div>
       <div class="d-filas">
         <div class="d-plan">
           <h3 class="d-h3">¿Te pueden leer?</h3><span class="d-plan__precio">30 puntos</span>
@@ -160,16 +170,16 @@ const jsonLd = {
          diciendo qué no mide, que es lo que promete el h2 (antes repetía la guía de la
          entrada: «El chequeo de arriba lee tu sitio. Esto le pregunta a los motores.»). */}
     <section class="d-sec" aria-labelledby="s-nom">
-      <div class="d-eti"><h2 class="d-h2" id="s-nom">Lo que este chequeo no mide.</h2></div>
+      <div class="d-eti"><h2 class="d-h2" id="s-nom">Lo que este chequeo no mide</h2></div>
       <div class="d-filas d-filas-diag">
-        <div><h3 class="d-h3">Y cómo medimos si la IA te nombra.</h3><p class="d-cuerpo">No mide si hoy te citan: para eso hay que preguntarle a los motores. En los planes con acompañamiento lo hacemos cada mes con las mismas preguntas y en los mismos motores, con fecha y con la fuente de cada respuesta registrada. Cambiar las preguntas rompería la comparación entre meses.</p></div>
-        <div><h3 class="d-h3">Lo que muestran las corridas.</h3><p class="d-cuerpo">Quienes aparecen recomendados casi nunca lo consiguen desde su propio sitio: los motores los citan desde rankings, directorios y artículos de terceros. Sin saber de dónde sale la recomendación, no hay nada que trabajar.</p></div>
+        <div><h3 class="d-h3">Y cómo medimos si la IA te nombra</h3><p class="d-cuerpo">No mide si hoy te citan: para eso hay que preguntarle a los motores. En los planes con acompañamiento lo hacemos cada mes con las mismas preguntas y en los mismos motores, con fecha y con la fuente de cada respuesta registrada. Cambiar las preguntas rompería la comparación entre meses.</p></div>
+        <div><h3 class="d-h3">Lo que muestran las corridas</h3><p class="d-cuerpo">Quienes aparecen recomendados casi nunca lo consiguen desde su propio sitio: los motores los citan desde rankings, directorios y artículos de terceros. Sin saber de dónde sale la recomendación, no hay nada que trabajar.</p></div>
       </div>
     </section>
 
     {/* QUÉ PASA DESPUÉS */}
     <section class="d-sec" aria-labelledby="s-cam">
-      <div class="d-eti"><h2 class="d-h2" id="s-cam">{caminos.h2}</h2></div>
+      <div class="d-eti"><h2 class="d-h2" id="s-cam">{sinPunto(caminos.h2)}</h2></div>
       <div>
         <div class="d-filas">
           {caminos.bloques.map((b: any, i: number) => (
@@ -182,7 +192,7 @@ const jsonLd = {
 
     {/* ADEMÁS: la otra herramienta propia */}
     <section class="d-sec" aria-labelledby="s-ley">
-      <div class="d-eti"><h2 class="d-h2" id="s-ley">{ley.h2}</h2></div>
+      <div class="d-eti"><h2 class="d-h2" id="s-ley">{sinPunto(ley.h2)}</h2></div>
       <div>
         <p class="d-guia">{ley.parrafos[0]}</p>
         {/* Secundario (QA 6-oct): bajo el instrumento, el único botón papel es «Pedir el
@@ -194,7 +204,7 @@ const jsonLd = {
 
     {/* PREGUNTAS */}
     <section class="d-sec d-faq" aria-labelledby="s-faq">
-      <div class="d-eti"><h2 class="d-h2" id="s-faq">{responde.h2}</h2></div>
+      <div class="d-eti"><h2 class="d-h2" id="s-faq">{sinPunto(responde.h2)}</h2></div>
       <div class="d-filas">
         {s.faq.map((f: any) => (<div><h3 class="d-h3">{f.p}</h3><p class="d-cuerpo">{f.r}</p></div>))}
       </div>

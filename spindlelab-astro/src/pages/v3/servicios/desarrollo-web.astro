@@ -36,23 +36,25 @@ const incluye = [
   'Dominio, SSL, analítica y 30 días de garantía post-lanzamiento.',
 ];
 
-// Precios EXACTOS a los publicados. Todos + IVA.
+// Precios EXACTOS a los publicados, con la notación del resto del sitio: «Desde … + IVA»
+// (spec §3 .precio y §7, 5-oct). Antes decía «desde $390.000», en minúscula y sin IVA en la
+// línea de precio, contra las otras cinco páginas de servicio. Revisión cruzada, 6-oct.
 const planes = [
   {
     nombre: 'Página de Campaña',
-    precio: 'desde $390.000',
+    precio: 'Desde $390.000 + IVA',
     linea: 'Una página hecha para convertir la pauta que ya estás pagando.',
     puntos: ['Una página, para una campaña y una oferta', 'Diseño a medida, sin plantilla', 'SEO técnico y medición desde el primer día', 'Entrega en ~1 semana'],
   },
   {
     nombre: 'Sitio Esencial',
-    precio: 'desde $690.000',
+    precio: 'Desde $690.000 + IVA',
     linea: 'Un sitio a medida, listo para funcionar.',
     puntos: ['Home y hasta 5 páginas', 'SEO técnico base: schema, velocidad, indexación', 'Un idioma', 'Entrega en ~3 semanas'],
   },
   {
     nombre: 'Sitio Completo',
-    precio: 'desde $1.190.000',
+    precio: 'Desde $1.190.000 + IVA',
     linea: 'Más páginas y puesto a punto para que la IA te lea.',
     puntos: ['Home y hasta 12 páginas', 'Blog o CMS que administras tú', 'SEO técnico y puesta a punto AEO/GEO', 'Uno o dos idiomas', 'Entrega en ~4 a 6 semanas'],
   },
@@ -118,7 +120,7 @@ const jsonLd = {
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
         { '@type': 'ListItem', position: 2, name: 'Servicios', item: 'https://spindlelab.cl/servicios/' },
-        { '@type': 'ListItem', position: 3, name: 'Desarrollo Web' },
+        { '@type': 'ListItem', position: 3, name: 'Desarrollo web' },   // = la miga visible y el menú (caja de oración, spec §7); el nodo Service conserva el nombre de producto
       ],
     },
     {
@@ -137,7 +139,9 @@ const jsonLd = {
 const rotuloTipo: Record<string, string> = { cliente: 'Cliente', propio: 'Producto propio', concepto: '' };
 // La primera va a sangre como pantalla plana; las otras, en dispositivo (los mockups
 // calzan con la forma: alta = teléfono, media = notebook + teléfono en 4:3).
-const enDispositivo = (c: any, i: number) => (i === 1 ? { src: c.mockAlto, alt: c.altMock } : i > 1 ? { src: c.mock, alt: c.altMock } : { src: c.img, alt: c.alt });
+// El mockup alto muestra SOLO el teléfono: su alt es `altMockAlto`, no `altMock`, que describe
+// notebook y teléfono (antislop C5; revisión cruzada, 6-oct).
+const enDispositivo = (c: any, i: number) => (i === 1 ? { src: c.mockAlto, alt: c.altMockAlto ?? c.altMock } : i > 1 ? { src: c.mock, alt: c.altMock } : { src: c.img, alt: c.alt });
 const piezas = obra.casos.map((c: any, i: number) => ({
   ...enDispositivo(c, i), concepto: c.tipo === 'concepto',
   etiquetas: [c.tipo === 'concepto' ? `${c.n} · ${c.rubro}` : `${c.n} · ${rotuloTipo[c.tipo] ?? c.rubro}`],
@@ -158,7 +162,7 @@ const forma = ['d-g-ancha', 'd-g-alta', 'd-g-media', 'd-g-media'];
        tienen cero usos de Manrope 800 en mayúsculas. Tablero: tableros/driftime-desarrollo */}
   <main>
     <header class="d-cab">
-      <p class="d-miga"><a href="/v3/">Inicio</a> · <a href="/v3/servicios/">Servicios</a> · Desarrollo Web</p>
+      <p class="d-miga"><a href="/v3/">Inicio</a> · <a href="/v3/servicios/">Servicios</a> · Desarrollo web</p>
       <h1 class="d-h1">Desarrollo web que los motores de IA pueden leer</h1>
       <p class="d-linea">Sitios a medida con el SEO técnico puesto desde el primer commit. Tres planes, desde $390.000 + IVA.</p>
       <div class="d-btns"><a class="d-btn" href="#planes">Ver planes</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>

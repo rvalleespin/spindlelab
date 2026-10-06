@@ -185,11 +185,13 @@ type Img = { src: string; alt: string; w: number; h: number; pos?: string; etq?:
 const IMG: Record<string, Img> = {
   hilo: { src: '/assets/img/d/hilo.jpg', alt: 'Un hilo luminoso cruza en diagonal un fondo verde oscuro', w: 1400, h: 787 },
   // Recorte del 5-oct (spec §5): 1600×960 y ya sin la línea dorada, así que el alt tampoco la nombra.
-  hilos: { src: '/assets/img/d/hilos.jpg', alt: 'Fibras finas y oscuras en diagonal, con reflejos azulados', w: 1600, h: 960 },
+  // El mismo alt de la home y del blog, mirando la imagen: son cantos de hojas, no fibras (C5;
+  // una imagen con dos alts que describen objetos distintos). Revisión cruzada, 6-oct.
+  hilos: { src: '/assets/img/d/hilos.jpg', alt: 'Cantos de hojas apiladas en azul oscuro, en diagonal', w: 1600, h: 960 },
   domino: { src: '/assets/img/d/domino.jpg', alt: 'Fichas de dominó negras cayendo en fila sobre un fondo oscuro', w: 1600, h: 1600 },
   dominoCurva: { src: '/assets/img/d/domino-curva.jpg', alt: 'Fichas de dominó de madera en fila curva sobre piedra oscura, con luz cálida', w: 1600, h: 1600 },
   escritorio: { src: '/assets/img/d/escritorio.jpg', alt: 'Escritorio de madera junto a la ventana, con un laptop, un cuaderno abierto y una taza', w: 1600, h: 670 },
-  ventana: { src: '/assets/img/d/ventana.jpg', alt: 'Mesa de trabajo junto a una ventana con cortinas, con un libro abierto, un laptop y una taza', w: 1600, h: 670 },
+  ventana: { src: '/assets/img/d/ventana.jpg', alt: 'Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto, un laptop y una taza', w: 1600, h: 670 },
   ramon: { src: '/assets/img/ramon-vallejos.jpg', alt: 'Ramón Vallejos, consultor de SpindleLab', w: 896, h: 1200, etq: 'Ramón Vallejos' },
 };
 
@@ -204,6 +206,15 @@ interface Propio {
   // REPARTO (QA2, 6-oct): recorridas con «Siguiente», en ciclo (… → Paid Media → Desarrollo
   // Web → Visibilidad …), ninguna foto aparece en más de dos páginas seguidas. Desarrollo Web
   // usa escritorio (cabecera) y ventana (galería), y eso también cuenta.
+  // Y (revisión cruzada, 6-oct) ninguna FAMILIA de cabecera en dos páginas seguidas: antes
+  // Auditoría (dominó) → Acompañamiento (dominó curvo) abrían las dos con fichas, y con el
+  // dominó curvo de la galería de Visibilidad eran tres pantallas seguidas de dominó. Ahora
+  // las cabeceras del ciclo son mesa (DW) · hilos · dominó · mesa · dominó curvo · hilo.
+  // Cada página, foto por foto (cabecera + galería):
+  //   DW escritorio + ventana · Visibilidad hilos + escritorio, dominó curvo ·
+  //   Auditoría dominó + ventana, hilo · Acompañamiento ventana + Ramón, hilos ·
+  //   Redes dominó curvo + escritorio · Paid Media hilo + dominó curvo.
+  // Ninguna foto en más de dos páginas seguidas.
   galeria: { img: Img; forma: 'd-g-media' | 'd-g-alta' | 'd-g-ancha'; pos?: string }[];
   marcas: string[];
   marcasSr?: string[];
@@ -249,9 +260,12 @@ const PROPIO: Record<string, Propio> = {
     // anterior pegaba las dos capas al precio de entrada (QA2, 6-oct; brief §3, manual §08).
     linea: 'Implementación continua e informes quincenales de SEO técnico o de visibilidad en IA, desde $590.000/mes + IVA; las dos juntas, desde $790.000/mes + IVA. Mínimo 3 meses.',
     nota: ['Valores en pesos, + IVA.', 'Cumplidos los 3 meses, mes a mes con aviso de 30 días.'],
-    sangre: { ...IMG.dominoCurva, pos: '50% 62%' },
+    // Ventana y no dominó curvo (revisión cruzada, 6-oct): la página anterior, Auditoría, abre
+    // con dominó, y eran dos cabeceras seguidas de fichas.
+    sangre: { ...IMG.ventana, pos: '50% 50%' },
     // La reunión mensual de decisiones es con el consultor, y el consultor es verificable.
-    galeria: [{ img: IMG.ramon, forma: 'd-g-alta', pos: '50% 30%' }, { img: IMG.escritorio, forma: 'd-g-media', pos: '30% 50%' }],
+    // hilos y no escritorio: escritorio es de la misma familia que la cabecera (ventana).
+    galeria: [{ img: IMG.ramon, forma: 'd-g-alta', pos: '50% 30%' }, { img: IMG.hilos, forma: 'd-g-media', pos: '50% 50%' }],
     marcas: ['S1', 'S2', 'S3', 'S4'],
     marcasSr: ['Semana 1:', 'Semana 2:', 'Semana 3:', 'Semana 4:'],
     // El h2 del JSON («Ejecución, contenido y medición») repetía la tríada de la entrada,
@@ -274,12 +288,14 @@ const PROPIO: Record<string, Propio> = {
     // de entrada (QA2, 6-oct; brief §3, manual §08).
     linea: 'LinkedIn o Meta, con estrategia, comunidad y reportes: desde $390.000/mes + IVA. Con pauta en Meta y las dos redes, desde $590.000/mes + IVA. El creativo lo pones tú.',
     nota: ['Valores en pesos, + IVA.', 'No incluyen la inversión en pauta: esa la defines tú.'],
-    sangre: { ...IMG.ventana, pos: '50% 50%' },
-    // Una sola imagen (QA2, 6-oct): con dominó curvo eran tres páginas seguidas con la misma
-    // foto (Acompañamiento → Redes → Paid Media). hilos y no hilo: hilo es la cabecera de la
-    // página siguiente (Paid Media), y la vería dos pantallas seguidas. domino.jpg no va: su
-    // fondo negro puro se funde con el lienzo (medido: se lee como un hueco).
-    galeria: [{ img: IMG.hilos, forma: 'd-g-ancha', pos: '50% 50%' }],
+    // Dominó curvo de cabecera (revisión cruzada, 6-oct): pasa aquí desde Acompañamiento, que
+    // ahora abre con ventana. Mismo encuadre que tenía allá.
+    sangre: { ...IMG.dominoCurva, pos: '50% 62%' },
+    // Una sola imagen (QA2, 6-oct). Escritorio y no hilos: Acompañamiento, la anterior, ya
+    // lleva hilos en su galería; hilo/hilos tampoco, porque hilo es la cabecera de la página
+    // siguiente (Paid Media). domino.jpg no va: su fondo negro puro se funde con el lienzo
+    // (medido: se lee como un hueco), y además es la familia de la cabecera.
+    galeria: [{ img: IMG.escritorio, forma: 'd-g-ancha', pos: '40% 50%' }],
     marcas: ['01', '02', '03', '04'],
     // La entrada del JSON, frase por frase: «Tus clientes ya pasan el día en redes» (A2,
     // carraspeo); la enumeración «calendario, pauta, comunidad y reportes» (ya está en la
@@ -298,11 +314,11 @@ const PROPIO: Record<string, Propio> = {
     sangre: { ...IMG.hilo, pos: '50% 45%' },
     // Dominó curvo y no domino.jpg: el negro puro de esa foto se fundía con el lienzo y la
     // pieza parecía empezar 100 px más abajo que la de al lado (QA, 5-oct).
-    // Una sola imagen (QA2, 6-oct). Sin ventana: Redes la lleva de cabecera y Desarrollo Web
-    // (la siguiente) en su galería, y eran tres páginas seguidas. hilo/hilos no (misma familia
-    // que la cabecera), escritorio tampoco (Paid Media → Desarrollo Web → Visibilidad). Queda
-    // el dominó curvo: con Redes sin él, está en Visibilidad, Acompañamiento y aquí, nunca en
-    // dos páginas seguidas.
+    // Una sola imagen (QA2, 6-oct). Sin ventana: Desarrollo Web (la siguiente) la lleva en su
+    // galería y Acompañamiento de cabecera. hilo/hilos no (misma familia que la cabecera),
+    // escritorio tampoco (Redes → Paid Media → Desarrollo Web: tres seguidas). Queda el dominó
+    // curvo: desde la revisión cruzada (6-oct) está en Visibilidad (galería), Redes (cabecera)
+    // y aquí; Redes → Paid Media son dos páginas seguidas, nunca tres.
     galeria: [{ img: IMG.dominoCurva, forma: 'd-g-ancha', pos: '50% 55%' }],
     marcas: ['01', '02', '03', '04'],
     // La entrada repetía el presupuesto bajo control (ya en la línea, la nota y la FAQ, A10)
@@ -323,9 +339,9 @@ const sinCorte = (t: string) => t.replace(/([\wáéíóúñÁÉÍÓÚÑ$.]+-[\w�
 // ni en el h1 ni en la nav). El title y el nodo Service conservan el nombre de producto como
 // está publicado; la miga del grafo dice lo mismo que la visible (ver jsonLd). «Paid Media»
 // se deja: es el nombre en inglés del canal.
-// Cuando SERVICIOS_V3 (consts-v3) traiga las etiquetas en caja de oración (propuesto, QA2
-// 6-oct: el pie y el menú todavía dicen «Auditoría SEO Técnica»…), sigLabel se lee de ahí y
-// este mapa queda solo para el h1 y la miga.
+// «Siguiente» lee su nombre de SERVICIOS_V3 (consts-v3), que desde la revisión cruzada (6-oct)
+// trae los nombres en caja de oración: el menú, el pie y «Siguiente» dicen lo mismo. Este mapa
+// queda solo para el h1 y la miga, porque el JSON publicado trae el nombre en Title Case.
 const CAJA: Record<string, string> = {
   'desarrollo-web': 'Desarrollo web',
   'auditoria-seo-tecnica': 'Auditoría SEO técnica',
@@ -339,7 +355,7 @@ const nombre: string = CAJA[slug!] ?? s.breadcrumb?.[2]?.name ?? s.h1;
 // Siguiente servicio: el que sigue en el menú, en ciclo (Paid Media → Desarrollo web).
 const aqui = SERVICIOS_V3.findIndex((x) => x.href === `/v3/servicios/${slug}/`);
 const sig = SERVICIOS_V3[(aqui + 1) % SERVICIOS_V3.length];
-const sigLabel: string = CAJA[sig.href.split('/').filter(Boolean).pop() ?? ''] ?? sig.label;
+const sigLabel: string = sig.label;
 
 // Texto corrido con sus ENLACES, calculado en el orden en que se lee la página (así «la
 // primera vez» es la primera que ve el lector). Solo lo visible; el FAQPage va en texto plano.

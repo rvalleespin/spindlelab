@@ -1,5 +1,8 @@
 // Extraído VERBATIM de /diagnostico/ para la maqueta V2. No modificar la lógica:
 // captura UTM, honeypot y eventos de conversión ya están resueltos ahí.
+// Cambios de la v3 (6-oct, revisión cruzada): el destino de contacto se lee del formulario
+// (data-contacto) y tres textos (veredicto ≥ 90 sin «acá», remate sin «completo», botón
+// «Pedir el diagnóstico»). La lógica no cambia.
 (function(){
   var form = document.getElementById('chq-form');
   var input = document.getElementById('chq-dominio');
@@ -7,6 +10,11 @@
   var out = document.getElementById('chq-out');
   var err = document.getElementById('chq-error');
   if(!form) return;
+  // A dónde llevan los botones del resultado y el aviso de error. La maqueta pone
+  // data-contacto="/v3/contacto/" en el formulario: con /contacto/ fijo, la única salida de
+  // conversión del chequeo sacaba al visitante de la v3 y el puente de UTM de /v3/contacto/
+  // no corría (revisión cruzada, 6-oct). Sin el atributo sigue yendo a /contacto/.
+  var CT = form.getAttribute('data-contacto') || '/contacto/';
 
   function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
@@ -20,7 +28,7 @@
     // "Si nos escribes" no decía dónde. Va al formulario de /contacto/ y no a un mailto, porque
     // generate_lead solo se dispara al enviar ese formulario.
     var etiqueta = delSitio === false
-      ? 'Si nos escribes por <a href="/contacto/">el formulario de contacto</a>, menciona este código: '
+      ? 'Si nos escribes por <a href="' + esc(CT) + '">el formulario de contacto</a>, menciona este código: '
       : 'Código de respuesta de tu sitio: ';
     err.innerHTML = '<p style="margin:0">' + esc(msg) + '</p>' +
       (codigo ? '<p class="chq-error-codigo">' + etiqueta + esc(codigo) + '</p>' : '');
@@ -29,7 +37,7 @@
   }
 
   function veredicto(p){
-    if(p >= 90) return 'Tu sitio está listo por el lado técnico. Lo que te falta para que te citen ya no está acá adentro.';
+    if(p >= 90) return 'Tu sitio está listo por el lado técnico. Lo que te falta para que te citen ya no está dentro de tu sitio.';
     if(p >= 70) return 'Tienes lo esencial resuelto, pero hay huecos que te cuestan menciones.';
     if(p >= 45) return 'Los motores pueden llegar, pero les cuesta entenderte y no tienen mucho que citar.';
     return 'Hoy la IA tiene poco con qué trabajar cuando alguien pregunta por tu rubro.';
@@ -78,10 +86,12 @@
     });
 
     h += '<div class="chq-remate"><h3>Esto es la mitad técnica.</h3>' +
-         '<p>El chequeo revisa tu sitio. El diagnóstico completo te dice quién aparece hoy cuando alguien pregunta por tu rubro en ChatGPT, Gemini y Perplexity, ' +
+         '<p>El chequeo revisa tu sitio. El diagnóstico te dice quién aparece hoy cuando alguien pregunta por tu rubro en ChatGPT, Gemini y Perplexity, ' +
          'y de qué fuentes lo están sacando. Te lo entregamos en una página, gratis, en 24 horas.</p>' +
-         '<div class="chq-ramas"><a class="chq-r1" href="/contacto/">Quiero el análisis completo</a>' +
-         '<a class="chq-r2" href="/contacto/">Prefiero hablarlo contigo</a></div></div>';
+         // El mismo nombre del paso en todo el sitio, sin «completo» (spec §7): contacto lo
+         // ofrece como mini-diagnóstico. Revisión cruzada, 6-oct.
+         '<div class="chq-ramas"><a class="chq-r1" href="' + esc(CT) + '">Pedir el diagnóstico</a>' +
+         '<a class="chq-r2" href="' + esc(CT) + '">Prefiero hablarlo contigo</a></div></div>';
 
     out.innerHTML = h;
     out.style.display = 'block';
