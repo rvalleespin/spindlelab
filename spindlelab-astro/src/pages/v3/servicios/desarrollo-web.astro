@@ -17,16 +17,39 @@
 // ⚠️ DEFECTO DE COPY ENCONTRADO EN PRODUCCIÓN: la respuesta a «¿Cuánto cuesta?» empieza con
 // «Sí.», que es un resto de una pregunta de sí/no anterior. Acá va sin ese «Sí»; hay que
 // corregirlo también en la página publicada.
+//
+// QA FINAL (6-oct), lo que cambió:
+// · Cierre antes de «Siguiente» (conversión #5): la puerta principal de Ads era el único
+//   servicio sin paso de conversión entre la cabecera y el pie. Mismo componente que los otros
+//   cinco (.d-sec--quieta). El h2 y la guía son los del cierre de la página publicada
+//   (public/servicios/desarrollo-web/index.html, «Cuéntanos qué necesita comunicar tu sitio.»),
+//   sin el punto final de los h2 (spec §7). Botones: «Escríbenos» (la acción de contacto del
+//   sistema, §3; sirve al que parte de cero) y «Correr el chequeo» → /v3/diagnostico/.
+// · «chequeo» enlazado a /v3/diagnostico/ en «Todo parte con esto»: el texto nombra un
+//   chequeo «en la portada» que quien llega desde Ads no ha visto (regla de enlaces en texto
+//   corrido, spec §7).
+// · Galería (revisión cruzada, pendiente 3): Combeau modelo y Verifica y Cumple van en su
+//   captura plana, no en el mockup que ya muestra Trabajo, la página anterior en «Siguiente».
+//   Raigal sigue en mockup (regla del 5-oct: su portada trae el aviso de concepto horneado).
+//   Las capturas no se recortan (son sitios: un recorte se come el titular): cada fila tiene
+//   alto común y cada pieza su proporción, como los campos de la home.
+// · Rótulo único por obra: `rotulo` de obra-v3.json (mirada #10).
+// · width/height con las medidas reales de cada archivo (técnica #9) y srcset con la versión
+//   de 800 px donde existe (técnica #8).
+// · La miga es el componente Miga (técnica #12).
 import Layout from '../../../layouts/Layout.astro';
 import { caja } from '../../../utils/caja';
 import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
 import Pieza from '../../../components/v3/Pieza.astro';
+import Miga from '../../../components/v3/Miga.astro';
 import '../../../styles/driftime.css';
 import obra from '../../../data/obra-v3.json';
 
 
+// La palabra que se enlaza en la lista (QA final, conversión #5).
+const CHEQUEO = 'chequeo';
 const incluye = [
   'Legible para motores de IA desde el primer commit: datos estructurados, contenido citable e indexación.',
   'El mismo chequeo que corres gratis en la portada, pasado sobre tu sitio antes de entregarlo.',
@@ -135,19 +158,51 @@ const jsonLd = {
   ],
 };
 
-// La galería sale del mismo dato que /v3/trabajo/ y la fila del hero de la home.
-const rotuloTipo: Record<string, string> = { cliente: 'Cliente', propio: 'Producto propio', concepto: '' };
-// La primera va a sangre como pantalla plana; las otras, en dispositivo (los mockups
-// calzan con la forma: alta = teléfono, media = notebook + teléfono en 4:3).
-// El mockup alto muestra SOLO el teléfono: su alt es `altMockAlto`, no `altMock`, que describe
-// notebook y teléfono (antislop C5; revisión cruzada, 6-oct).
-const enDispositivo = (c: any, i: number) => (i === 1 ? { src: c.mockAlto, alt: c.altMockAlto ?? c.altMock } : i > 1 ? { src: c.mock, alt: c.altMock } : { src: c.img, alt: c.alt });
-const piezas = obra.casos.map((c: any, i: number) => ({
-  ...enDispositivo(c, i), concepto: c.tipo === 'concepto',
-  etiquetas: [c.tipo === 'concepto' ? `${c.n} · ${c.rubro}` : `${c.n} · ${rotuloTipo[c.tipo] ?? c.rubro}`],
-}));
-// Grilla asimétrica: ancha, alta + media, media + alta (como los casos de driftime).
-const forma = ['d-g-ancha', 'd-g-alta', 'd-g-media', 'd-g-media'];
+// ------------------------------------------------------------------ la galería
+// Sale del mismo dato que /v3/trabajo/ y la home (obra-v3.json), con el rótulo único de cada
+// obra (`rotulo`, QA final, mirada #10). Composición: una ancha a todo el ancho y dos filas de
+// alto común, cada pieza en su proporción y sin recorte (flex-grow = su proporción: los anchos
+// salen proporcionales y los altos, iguales). La ventana cierra la última fila como pieza alta
+// de 3:4 (es foto de ambiente: esa sí se recorta).
+const caso = (slug: string) => {
+  const c = obra.casos.find((x: any) => x.slug === slug);
+  if (!c) throw new Error(`desarrollo-web.astro: obra-v3.json no trae «${slug}»`);
+  return c as any;
+};
+const fot = caso('combeau-fotografia');
+const mod = caso('combeau-modelo');
+const vyc = caso('verifica-y-cumple');
+const rai = caso('raigal');
+// rCel: proporción de la caja en celular cuando no es r (la ventana: 3:4 en la fila de escritorio,
+// 4:3 en celular, donde una foto de ambiente de 3:4 a todo el ancho llenaba una pantalla).
+type PiezaDw = { src: string; w: number; h: number; alt: string; r: number; rCel?: number; s800?: string; etq?: string; concepto?: boolean; pos?: string; clase?: string };
+const v800 = (src: string) => src.replace(/\.jpg$/, '-800.jpg');
+// El ancho al que se pinta cada pieza, con la cuenta del CSS de abajo: escritorio, la fila
+// mide 100vw − 80 (márgenes) y reparte 100vw − 96 (menos un gutter) entre sus piezas en
+// proporción a r; celular, cada pieza a todo el ancho (100vw − 40). Con object-fit: cover,
+// una foto más ancha que su caja se pinta a «alto de la caja × su proporción».
+const f = (n: number) => n.toFixed(3);
+const sizesDw = (p: PiezaDw, suma: number) => {
+  const n = p.w / p.h;
+  const esc = Math.max(p.r, n) / suma;
+  const cel = Math.max(1, n / (p.rCel ?? p.r));
+  return `(max-width: 767px) calc((100vw - 40px) * ${f(cel)}), calc((100vw - 96px) * ${f(esc)})`;
+};
+const ancha: PiezaDw = { src: fot.img, w: fot.w, h: fot.h, alt: fot.alt, r: fot.w / fot.h, s800: v800(fot.img), etq: fot.rotulo };
+const filas: PiezaDw[][] = [
+  [
+    // Captura plana del book (900 × 1200), no el mockup en teléfono de Trabajo. El alt de la
+    // portada ancha («a pantalla completa») no describe esta tira: es el mismo, ajustado a lo
+    // que muestra.
+    { src: mod.tira, w: 900, h: 1200, alt: 'Portada del book de modelo de Bernardo Combeau, con una fotografía editorial y su ficha debajo', r: 0.75, etq: mod.rotulo },
+    { src: vyc.img, w: vyc.w, h: vyc.h, alt: vyc.alt, r: vyc.w / vyc.h, s800: v800(vyc.img), etq: vyc.rotulo },
+  ],
+  [
+    { src: rai.mock, w: 1600, h: 1200, alt: rai.altMock, r: 4 / 3, s800: v800(rai.mock), etq: rai.rotulo, concepto: true },
+    { src: '/assets/img/d/ventana.jpg', w: 1600, h: 670, alt: 'Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop', r: 0.75, rCel: 4 / 3, s800: '/assets/img/d/ventana-800.jpg', pos: '70% 50%', clase: 'd-amb-dw' },
+  ],
+];
+const sumaDe = (fila: PiezaDw[]) => fila.reduce((t, p) => t + p.r, 0);
 ---
 <Layout
   title="Desarrollo web que los motores de IA pueden leer · SpindleLab"
@@ -162,13 +217,15 @@ const forma = ['d-g-ancha', 'd-g-alta', 'd-g-media', 'd-g-media'];
        tienen cero usos de Manrope 800 en mayúsculas. Tablero: tableros/driftime-desarrollo */}
   <main>
     <header class="d-cab">
-      <p class="d-miga"><a href="/v3/">Inicio</a> · <a href="/v3/servicios/">Servicios</a> · Desarrollo web</p>
+      <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Servicios', href: '/v3/servicios/' }, { label: 'Desarrollo web' }]} />
       <h1 class="d-h1">Desarrollo web que los motores de IA pueden leer</h1>
       <p class="d-linea">Sitios a medida con el SEO técnico puesto desde el primer commit. Tres planes, desde $390.000 + IVA.</p>
       <div class="d-btns"><a class="d-btn" href="#planes">Ver planes</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>
     </header>
 
-    <figure class="d-sangre"><img src="/assets/img/d/escritorio.jpg" alt="Escritorio de madera junto a la ventana, con un laptop, un cuaderno abierto y una taza" width="1600" height="670" loading="eager" fetchpriority="high" /></figure>
+    {/* sizes: 2,39 en escritorio (la caja de .d-sangre, del mismo ancho); en celular la caja es
+         4:3 y la foto se pinta a 1,79 veces su ancho. */}
+    <figure class="d-sangre"><img src="/assets/img/d/escritorio.jpg" srcset="/assets/img/d/escritorio-800.jpg 800w, /assets/img/d/escritorio.jpg 1600w" sizes="(max-width: 767px) calc((100vw - 40px) * 1.791), calc(100vw - 80px)" alt="Escritorio de madera junto a la ventana, con un laptop, un cuaderno abierto y una taza" width="1600" height="670" loading="eager" fetchpriority="high" /></figure>
 
     <div class="d-entrada">
       <p class="d-nota-card"><b>Valores en pesos, + IVA.</b> El valor final se cierra tras el diagnóstico gratuito.</p>
@@ -177,14 +234,20 @@ const forma = ['d-g-ancha', 'd-g-alta', 'd-g-media', 'd-g-media'];
 
     <section class="d-sec" aria-labelledby="s-inc">
       <div class="d-eti"><h2 class="d-h2" id="s-inc">Todo parte con esto</h2></div>
-      <div class="d-filas">{incluye.map((t) => <p class="d-guia">{t}</p>)}</div>
+      <div class="d-filas">{incluye.map((t) => {
+        const [antes, despues] = t.split(CHEQUEO);
+        return despues === undefined ? <p class="d-guia">{t}</p> : <p class="d-guia">{antes}<a class="d-enl-dw" href="/v3/diagnostico/">chequeo</a>{despues}</p>;
+      })}</div>
     </section>
 
     <section class="d-galeria" aria-labelledby="s-obra">
       <div class="d-galeria__cab"><h2 class="d-h2" id="s-obra">Sitios que ya construimos</h2><a class="d-btn d-btn--alt" href="/v3/trabajo/">Ver el trabajo</a></div>
-      {piezas.map((pz, i) => <Pieza src={pz.src} alt={pz.alt} concepto={pz.concepto} etiquetas={pz.etiquetas} clase={forma[i] ?? 'd-g-mitad'} posicion="50% 25%" />)}
-      {/* Cierra la grilla: media (Raigal) + alta. Sin esto queda un hueco a la derecha. */}
-      <Pieza src="/assets/img/d/ventana.jpg" alt="Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop" clase="d-g-alta" posicion="70% 50%" />
+      <Pieza src={ancha.src} srcset={`${ancha.s800} 800w, ${ancha.src} ${ancha.w}w`} sizes="(max-width: 767px) calc(100vw - 40px), calc(100vw - 80px)" alt={ancha.alt} etiquetas={[ancha.etq!]} ancho={ancha.w} alto={ancha.h} proporcion={ancha.r} clase="d-g-ancha" />
+      {filas.map((fila) => (
+        <div class="d-fila-dw">
+          {fila.map((p) => <Pieza src={p.src} srcset={p.s800 ? `${p.s800} 800w, ${p.src} ${p.w}w` : undefined} sizes={p.s800 ? sizesDw(p, sumaDe(fila)) : undefined} alt={p.alt} concepto={p.concepto} etiquetas={p.etq ? [p.etq] : []} ancho={p.w} alto={p.h} proporcion={p.r} posicion={p.pos} clase={p.clase} />)}
+        </div>
+      ))}
     </section>
 
     <section class="d-sec" id="planes" aria-labelledby="s-pla">
@@ -216,8 +279,42 @@ const forma = ['d-g-ancha', 'd-g-alta', 'd-g-media', 'd-g-media'];
       </div>
     </section>
 
+    {/* El cierre de los otros cinco servicios (.d-sec--quieta), con el h2 y la guía del cierre
+         publicado de esta página. Corto: la etiqueta no se pega. */}
+    <section class="d-sec d-sec--quieta" aria-labelledby="s-cie">
+      <div class="d-eti"><h2 class="d-h2" id="s-cie">Cuéntanos qué necesita comunicar tu sitio</h2></div>
+      <div class="d-cierre-dw">
+        <p class="d-guia">Si ya tienes uno, empezamos con el diagnóstico gratuito. Si partes de cero, conversemos tu proyecto directamente.</p>
+        <div class="d-btns">
+          <a class="d-btn" href={CONTACTO}>Escríbenos</a>
+          <a class="d-btn d-btn--alt" href="/v3/diagnostico/">Correr el chequeo</a>
+        </div>
+      </div>
+    </section>
+
     <a class="d-siguiente" href="/v3/servicios/visibilidad-en-ia/"><span class="d-chico d-gris">Siguiente</span><span class="d-h1">Visibilidad en IA →</span></a>
   </main>
 
   <FooterV3 />
 </Layout>
+
+<style>
+  /* «chequeo» enlazado en el texto corrido: papel con subrayado de 1 px, como los enlaces de
+     las otras páginas de servicio (spec §7). */
+  .d-enl-dw { color: var(--d-papel); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .d-enl-dw:hover { text-decoration-thickness: 2px; }
+
+  /* Filas de la galería: alto común sin recorte. Cada pieza crece en proporción a su r (la
+     pone Pieza en --r) y mantiene esa proporción: anchos proporcionales, altos iguales. */
+  .d-fila-dw { grid-column: 1 / -1; display: flex; gap: var(--d-g); }
+  .d-fila-dw :global(.d-pieza) { flex: var(--r) 1 0%; min-width: 0; aspect-ratio: var(--r); }
+  @media (max-width: 767px) {
+    .d-fila-dw { flex-direction: column; }
+    .d-fila-dw :global(.d-pieza) { flex: none; width: 100%; }
+    .d-fila-dw :global(.d-amb-dw) { aspect-ratio: 4 / 3; }
+  }
+
+  /* El cierre: mismo armado que .d-cierre-svc de las otras cinco. */
+  .d-cierre-dw { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  .d-cierre-dw .d-guia { max-width: 640px; }
+</style>

@@ -48,6 +48,7 @@ import { CONTACTO_V3 as CONTACTO, SERVICIOS_V3 } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
 import Pieza from '../../../components/v3/Pieza.astro';
+import Miga from '../../../components/v3/Miga.astro';
 import '../../../styles/driftime.css';
 import servicios from '../../../data/servicios-v3.json';
 
@@ -181,18 +182,65 @@ const enlaza = (t: string) =>
   }, esc(t));
 
 // ------------------------------------------------------------------ lo propio de cada servicio
-type Img = { src: string; alt: string; w: number; h: number; pos?: string; etq?: string };
+// v: versión del archivo (?v=N) cuando cambió de contenido con el mismo nombre. sin800: no hay
+// versión de 800 px (el retrato mide 896 de ancho: no hace falta).
+type Img = { src: string; alt: string; w: number; h: number; pos?: string; etq?: string; v?: number; sin800?: boolean };
 const IMG: Record<string, Img> = {
   hilo: { src: '/assets/img/d/hilo.jpg', alt: 'Un hilo luminoso cruza en diagonal un fondo verde oscuro', w: 1400, h: 787 },
   // Recorte del 5-oct (spec §5): 1600×960 y ya sin la línea dorada, así que el alt tampoco la nombra.
   // El mismo alt de la home y del blog, mirando la imagen: son cantos de hojas, no fibras (C5;
   // una imagen con dos alts que describen objetos distintos). Revisión cruzada, 6-oct.
-  hilos: { src: '/assets/img/d/hilos.jpg', alt: 'Cantos de hojas apiladas en azul oscuro, en diagonal', w: 1600, h: 960 },
+  // v 2: el archivo se re-exportó con más contraste (QA final, mirada #6); la home ya lo pide
+  // con ?v=2, y la misma URL en todas las páginas es un solo archivo en caché.
+  hilos: { src: '/assets/img/d/hilos.jpg', alt: 'Cantos de hojas apiladas en azul oscuro, en diagonal', w: 1600, h: 960, v: 2 },
   domino: { src: '/assets/img/d/domino.jpg', alt: 'Fichas de dominó negras cayendo en fila sobre un fondo oscuro', w: 1600, h: 1600 },
   dominoCurva: { src: '/assets/img/d/domino-curva.jpg', alt: 'Fichas de dominó de madera en fila curva sobre piedra oscura, con luz cálida', w: 1600, h: 1600 },
   escritorio: { src: '/assets/img/d/escritorio.jpg', alt: 'Escritorio de madera junto a la ventana, con un laptop, un cuaderno abierto y una taza', w: 1600, h: 670 },
   ventana: { src: '/assets/img/d/ventana.jpg', alt: 'Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto, un laptop y una taza', w: 1600, h: 670 },
-  ramon: { src: '/assets/img/ramon-vallejos.jpg', alt: 'Ramón Vallejos, consultor de SpindleLab', w: 896, h: 1200, etq: 'Ramón Vallejos' },
+  ramon: { src: '/assets/img/ramon-vallejos.jpg', alt: 'Ramón Vallejos, consultor de SpindleLab', w: 896, h: 1200, etq: 'Ramón Vallejos', sin800: true },
+};
+
+// ------------------------------------------------------------------ peso de las fotos
+// QA final, técnica #8: cada foto del pool tiene su versión de 800 px (`<foto>-800.jpg`, la
+// misma foto reescalada), y `sizes` le dice al navegador a qué ancho se va a PINTAR, no el de
+// su caja: con object-fit: cover, una foto más ancha que su caja se pinta más ancha que ella
+// (escritorio.jpg, 2,39, en la caja 4:3 de celular se pinta a 1,79 veces la caja). Los
+// anchos salen de driftime.css: márgenes de 40 px (20 en celular), gutter de 16, grilla de 12.
+const urlDe = (im: Img) => im.src + (im.v ? `?v=${im.v}` : '');
+const srcsetDe = (im: Img) => (im.sin800 ? undefined : `${im.src.replace(/\.jpg$/, '-800.jpg')} 800w, ${urlDe(im)} ${im.w}w`);
+const f = (n: number) => n.toFixed(3);
+const CEL = '(max-width: 767px)';
+// Proporciones de caja como constantes, una división por línea: el compilador de Astro lee
+// «1 / 3, n / 2» en una misma línea como una expresión regular y la página no compila.
+const R_CEL = 4 / 3;        // .d-sangre y .d-g-media en celular
+const R_SANGRE = 2.39;      // .d-sangre en escritorio
+const R_ANCHA = 16 / 9;     // .d-g-ancha sin proporción propia
+const R_ALTA_CEL = 0.8;     // .d-g-alta en celular (4:5)
+const TERCIO = 1 / 3;
+const DOS_TERCIOS = 2 / 3;
+const razon = (im: Img) => im.w / im.h;
+// Imagen a sangre: caja de 2,39 en escritorio (100vw − 80) y de 4:3 en celular (100vw − 40).
+// `zoomCel`: el encuadre de domino.jpg en celular se acerca con transform (ver <style>).
+const sizesSangre = (im: Img, zoomCel = 1) => {
+  const cel = Math.max(1, razon(im) / R_CEL) * zoomCel;
+  const esc = Math.max(1, razon(im) / R_SANGRE);
+  return `${CEL} calc((100vw - 40px) * ${f(cel)}), calc((100vw - 80px) * ${f(esc)})`;
+};
+// Galería (.d-galeria--svc). Escritorio: la media mide 8 de 12 columnas, (100vw − 88) × 2/3, en
+// 4:3; la alta, 4 de 12, con el alto de la media (aspect-ratio auto), que es (100vw − 80) × 0,5;
+// la ancha, todo el ancho en 16:9. Celular: todas a todo el ancho, la alta en 4:5.
+const sizesGal = (forma: string, im: Img) => {
+  const n = razon(im);
+  let cel = Math.max(1, n / R_ANCHA);
+  let esc = `(100vw - 80px) * ${f(Math.max(1, n / R_ANCHA))}`;
+  if (forma === 'd-g-alta') {
+    cel = Math.max(1, n / R_ALTA_CEL);
+    esc = `(100vw - 80px) * ${f(Math.max(TERCIO, n * 0.5))}`;
+  } else if (forma === 'd-g-media') {
+    cel = Math.max(1, n / R_CEL);
+    esc = `(100vw - 88px) * ${f(DOS_TERCIOS * Math.max(1, 0.75 * n))}`;
+  }
+  return `${CEL} calc((100vw - 40px) * ${f(cel)}), calc(${esc})`;
 };
 
 interface Propio {
@@ -405,7 +453,7 @@ const jsonLd = {
        usan Manrope 800 en mayúsculas. Cero oro: el único es el punto del módulo. */}
   <main>
     <header class="d-cab">
-      <nav class="d-miga" aria-label="Miga de pan"><a href="/v3/">Inicio</a> · <a href="/v3/servicios/">Servicios</a> · {nombre}</nav>
+      <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Servicios', href: '/v3/servicios/' }, { label: nombre }]} />
       <h1 class="d-h1">{h1}</h1>
       <p class="d-linea" set:html={sinCorte(pr.linea)} />
       <div class="d-btns">
@@ -415,7 +463,7 @@ const jsonLd = {
     </header>
 
     <figure class:list={['d-sangre', pr.sangreClase]}>
-      <img src={pr.sangre.src} alt={pr.sangre.alt} width={pr.sangre.w} height={pr.sangre.h} loading="eager" fetchpriority="high" style={pr.sangre.pos ? `object-position:${pr.sangre.pos}` : undefined} />
+      <img src={urlDe(pr.sangre)} srcset={srcsetDe(pr.sangre)} sizes={srcsetDe(pr.sangre) ? sizesSangre(pr.sangre, pr.sangreClase === 'd-sangre--domino-svc' ? 1.82 : 1) : undefined} alt={pr.sangre.alt} width={pr.sangre.w} height={pr.sangre.h} loading="eager" fetchpriority="high" style={pr.sangre.pos ? `object-position:${pr.sangre.pos}` : undefined} />
     </figure>
 
     <div class="d-entrada">
@@ -437,7 +485,7 @@ const jsonLd = {
     {pr.galeria.length > 0 && (
       <div class="d-galeria d-galeria--svc">
         {pr.galeria.map((g) => (
-          <Pieza src={g.img.src} alt={g.img.alt} ancho={g.img.w} alto={g.img.h} clase={g.forma} posicion={g.pos} etiquetas={g.img.etq ? [g.img.etq] : []} />
+          <Pieza src={urlDe(g.img)} srcset={srcsetDe(g.img)} sizes={sizesGal(g.forma, g.img)} alt={g.img.alt} ancho={g.img.w} alto={g.img.h} clase={g.forma} posicion={g.pos} etiquetas={g.img.etq ? [g.img.etq] : []} />
         ))}
       </div>
     )}
@@ -500,7 +548,7 @@ const jsonLd = {
       </section>
     )}
 
-    <a class="d-siguiente d-siguiente--svc" href={sig.href}><span class="d-chico d-gris">Siguiente</span><span class="d-h1">{sigLabel}{'\u00a0'}→</span></a>
+    <a class="d-siguiente" href={sig.href}><span class="d-chico d-gris">Siguiente</span><span class="d-h1">{sigLabel}{'\u00a0'}→</span></a>
   </main>
 
   <FooterV3 />
@@ -523,11 +571,9 @@ const jsonLd = {
   .d-cierre-svc { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
   .d-cierre-svc .d-guia { max-width: 640px; }
 
-  /* «Siguiente» encima del título bajo 768: en línea le dejaba 272 px al título y
-     «Acompañamiento» (36 px, no se corta) invadía 15 px del margen de 20 (QA, 5-oct). */
-  @media (max-width: 767px) {
-    .d-siguiente--svc { flex-direction: column; align-items: flex-start; gap: 6px; }
-  }
+  /* «Siguiente» apilado bajo 768: ya no es un parche de esta página. La regla vive en el
+     sistema (driftime.css, QA final, mirada #7) y vale igual para Desarrollo web, Trabajo y
+     Nosotros. */
 
   /* domino.jpg (1600×1600): de 0 a 28 % de alto es negro puro, medido por franjas. Las
      fichas ocupan del 28 al 80 %, y la primera fila toda iluminada está en el 44 %.

@@ -336,8 +336,10 @@ html body.d-body #cookie-banner #cookie-reject:hover { background: rgba(247, 245
      (`:focus-visible`). Siempre puesto, corría 100 px cada ancla que ya tiene su propio
      scroll-margin medido (medido: #planes de 180 a 280, #contacto-form de 88 a 188, el índice
      del artículo de 104 a 204, las bandas del índice de servicios de 128 a 227). Con
-     `:focus-visible`, un clic o un toque cae donde caía; quien navega con teclado cae 100 px
-     más abajo, bajo el módulo y no detrás.
+     `:focus-visible`, un clic, un toque o Enter sobre un enlace caen donde caían (medido:
+     #planes 180 y 110, #contacto-form 88 y 96). Lo único que se corre es el resultado del
+     chequeo enviado con Enter desde el campo, que sigue con foco de teclado: cae en 196 y no
+     en 96 (con clic, en 96).
    Probado antes como scroll-margin de los controles: Chrome no hace scroll cuando el control
    ya está entero dentro de la ventana aunque esté bajo el aviso (quedaba 1 de 38 en la home). */
 html:has(body.d-body):has(#cookie-banner:not([hidden])),

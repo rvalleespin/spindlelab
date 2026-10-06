@@ -42,6 +42,7 @@ import Layout from '../../../layouts/Layout.astro';
 import { CONTACTO_V3 as CONTACTO } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
 import FooterV3 from '../../../components/v3/FooterV3.astro';
+import Miga from '../../../components/v3/Miga.astro';
 import '../../../styles/driftime.css';
 import oferta from '../../../data/oferta-v3.json';
 import paginas from '../../../data/paginas-v3.json';
@@ -56,6 +57,23 @@ const pub = (paginas as Record<string, any>).servicios;
 // La miga dice «Servicios», como el menú, el pie y la miga de cada servicio (QA2 5-oct, C8):
 // el JSON publicado la llama «Soluciones» y el mismo ítem quedaba con dos nombres en el grafo.
 const migas = pub.breadcrumb.map((li: any) => (li.position === 2 ? { ...li, name: 'Servicios' } : li));
+
+// El ItemList dice lo mismo que la página (QA final, técnica #13c; antislop C8): se llama
+// «Servicios de SpindleLab», como la miga y el menú (el JSON publicado dice «Soluciones»), y
+// va en el orden de las bandas: Desarrollo, Visibilidad, Auditoría, Acompañamiento, Redes,
+// Paid Media (el JSON ponía Desarrollo Web sexto). El orden sale de oferta-v3.json, el mismo
+// dato que pinta las bandas; cada ítem conserva su nodo Service publicado (mismo @id y nombre
+// de producto, spec §7). Un servicio de la página que el JSON no traiga hace caer el build.
+const ordenPagina: string[] = [...oferta.momentos.flatMap((m: any) => m.items), ...oferta.tambien].map((it: any) => it.href.replace('/v3/', '/'));
+const itemList = {
+  ...pub.itemList,
+  name: 'Servicios de SpindleLab',
+  itemListElement: ordenPagina.map((ruta, i) => {
+    const li = pub.itemList.itemListElement.find((x: any) => x.item.url === `https://spindlelab.cl${ruta}`);
+    if (!li) throw new Error(`servicios/index.astro: el ItemList publicado no trae ${ruta}`);
+    return { ...li, position: i + 1 };
+  }),
+};
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -65,7 +83,7 @@ const jsonLd = {
       itemListElement: migas,
     },
     {
-      ...pub.itemList,
+      ...itemList,
       '@id': `${url}#itemlist`,
     },
   ],
@@ -90,7 +108,9 @@ const descPagina: Record<string, string> = {
 };
 
 // «Lo que pones tú» (QA2 5-oct, voz precisa): con «Lo que no hacemos: Creación de contenido» la
-// página negaba el «contenido para búsqueda e IA» que vende Acompañamiento una pantalla antes.
+// página negaba el «contenido para búsqueda e IA» que vende Acompañamiento (su página, «Lo que
+// incluye»; la fila de este índice ya no lo nombra desde la QA final, mirada #12: una sola serie
+// de tres en la home, que comparte la descripción).
 // Rótulo y término vienen de la página publicada: «Fuera (lo pones tú)» y «el contenido
 // creativo (redacción, diseño gráfico, video) lo pones tú».
 const fueraPagina: Record<string, string> = {
@@ -131,7 +151,7 @@ const partir = (t: string) => {
 
   <main>
     <header class="d-cab">
-      <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Servicios</nav>
+      <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Servicios' }]} />
       <h1 class="d-h1">Qué hacemos</h1>
     </header>
 
