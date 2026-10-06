@@ -32,6 +32,16 @@ tableros, spec)
   logo 21px vs 20/24px, cuerpo 15px vs 16px, y una barra translúcida al scroll que
   faltaba: solo aparecen comparando valores computados.
 
+## Aprendido en la primera obra (spindlelab-v3, 5–6 oct 2026)
+- **La escasez se mide**: 5 mayúsculas 800 en todo el sitio y un oro por vista, contado
+  también DENTRO de las fotos (hilos.jpg traía una línea de oro de lado a lado: se recortó).
+- **Con 6 fotos el sitio repite**, y la revisión cruzada lo marca como bloqueante en
+  páginas seguidas. El pool de imagen se dimensiona antes de construir 21 rutas, no después.
+- **Etiquetas de pieza**: arriba en el primer pantallazo (el aviso de cookies tapa abajo);
+  abajo en capturas planas, cuyo arriba es la cabecera del sitio retratado.
+- **Mockups sin costo**: dispositivo dibujado en CSS + captura real, sobre color de estudio.
+  Sobre fotografía propia no se pudo (notebooks cerrados en las fotos del pool).
+
 ## Con quién trabajo
 - Recibo el brief de **Mauro** y el copy real de **Clara** (sin copy real, el tablero
   miente). Entrego la spec a **Diego**, que construye contra ella, y la audita

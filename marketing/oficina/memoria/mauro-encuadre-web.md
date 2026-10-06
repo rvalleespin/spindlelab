@@ -26,6 +26,16 @@
 - **Si esta sesión no es dueña del repo del sitio, la obra se entrega como encargo**
   en `marketing/encargos-otras-sesiones/`, no se empuja (protocolo de la oficina).
 
+## Aprendido en la primera obra (spindlelab-v3, 5–6 oct 2026)
+- **Compuertas respetadas: las dos.** Gate 1 (seguir iterando, éxito = conversión, reabrir
+  el hero) y gate 2 (dirección A). Después Ramón amplió el alcance a todo el sitio con
+  driftime como referencia: se escribió como decisión en la spec (§0), no se reabrió nada.
+- **Lo que no decide el constructor se separa a tiempo** y se le lleva a Ramón en una
+  lista corta: sección de preguntas en la home, imagen OG (toca Layout), cadencia de un
+  plan, texto verbatim publicado. Mezclarlo con los arreglos frena la obra.
+- **La obra larga se respalda sola**: commits WIP cada 20 minutos, porque el contenedor se
+  reinició tres veces y el límite de uso cortó la orquestación cuatro.
+
 ## Con quién trabajo
 - Entrego el brief a **Lucía** (dirección de arte) y **Clara** (copy de interfaz), y
   la capa de señales la pide **Simón**. Reporto el cierre al troncal (**Tomás**), que

@@ -109,6 +109,18 @@
   main = local `git merge --no-ff <rama>` + `git push origin <tmp>:main` (equivale
   al merge del PR, sin squash). `git push` desde Bash SÍ funcionó esta sesión.
 
+### Obra spindlelab-v3 (5–6 oct 2026)
+- **Un campo pegajoso más alto que la pantalla esconde su borde de abajo para siempre.**
+  Campo = una pantalla exacta; la fila de imágenes llena lo que deja la cabecera y cada
+  pieza conserva su proporción (`--r`, `--suma`). Medido en 8 pantallas reales antes de
+  decir «arreglado»: Ramón lo vio en su notebook, no en 1440×900.
+- **Paquetes de archivos disjuntos** permiten arreglar en paralelo sin pisarse; un
+  arreglo que necesita un archivo ajeno se anota, no se toca.
+- **Asset que cambia de contenido, cambia de nombre** (`-2`) o lleva `?v=N` en todas sus
+  referencias: la vista previa también cachea 7 días.
+- **Una media query para tableta no puede tocar el celular**: `(max-width: 767px), (max-width:
+  1024px) and (orientation: portrait)` sirve para la fila; el alto mínimo del hero, no.
+
 ## Con quién trabajo
 - Copy me lo pasa **Renata** (marcado para revisión humana). SEO técnico me lo
   encarga **Simón** vía `marketing/encargos-otras-sesiones/`.

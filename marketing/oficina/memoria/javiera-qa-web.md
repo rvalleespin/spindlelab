@@ -33,6 +33,19 @@
 - **Un desvío no declarado es defecto mayor**, aunque la decisión haya sido buena: lo
   que rompe es la auditabilidad de la obra.
 
+## Aprendido en la primera obra (spindlelab-v3, 5–6 oct 2026)
+- **Una revisión por página no ve el sitio.** Nueve páginas aprobadas una por una y la
+  revisión cruzada las rechazó igual: el mismo plan prometía dos cadencias en dos páginas
+  seguidas, un servicio tenía dos nombres, la misma foto abría páginas consecutivas. La
+  cruzada va siempre, después de las de página.
+- **Tres lentes encuentran lo que una sola no.** Sobre el build de producción: mirada del
+  cliente (tableta vertical desarmada), conversión (los UTM se perdían al segundo salto,
+  justo en el camino de Ads) y técnica (111 paradas de foco bajo el aviso de cookies).
+  Ninguna lente vio lo de las otras dos.
+- **Re-verificar es defecto por defecto, con el mismo script que lo encontró**, y buscando
+  regresiones: el arreglo de tableta se coló al celular y achicó la obra 16 %.
+- **Lo que mide `npm run verificar` no se repite a mano**; se le busca lo que se le escapa.
+
 ## Con quién trabajo
 - Audito lo de **Diego** contra la spec de **Lucía** y el brief de **Mauro**; los
   defectos de copy los marco contra el detector y los arregla **Clara**. No arreglo yo
