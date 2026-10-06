@@ -21,6 +21,11 @@
 // etiqueta de la imagen; el grafo suma url, #breadcrumb y la lista de las cuatro piezas.
 // Segunda pasada: el cierre nombraba a Gemini, que el chequeo no prueba en vivo; ahora dice
 // ChatGPT, Claude y Perplexity, como el índice de servicios y el diagnóstico.
+// QA2 (6-oct): la medida del pie y del cierre va en el párrafo y en em (28.5em, ≤ 68
+// caracteres); el par del cierre es «Correr el chequeo» + «Pedir el diagnóstico» (Desarrollo
+// Web lo lleva el «Siguiente»); la cabecera baja a 112 px en celular para que la obra asome
+// sobre el aviso de cookies; «Herramienta · Producto propio» sin repetir «propio»; la línea
+// de Raigal más corta. Las correcciones al JSON compartido están declaradas en spec §7.
 //
 // Clasifican por RUBRO, no por servicio, porque un prospecto se reconoce en su rubro, no en
 // el nombre del servicio que le vendimos a otro. Acá igual.
@@ -47,6 +52,7 @@ import Pieza from '../../components/v3/Pieza.astro';
 import '../../styles/driftime.css';
 import obra from '../../data/obra-v3.json';
 import oferta from '../../data/oferta-v3.json';
+import { CONTACTO_V3 as CONTACTO } from '../../consts-v3';
 
 const { casos } = obra;
 
@@ -56,13 +62,23 @@ const { casos } = obra;
 //  · Raigal: la línea decía «Sitio completo, del argumento clínico a la ficha de
 //    tratamiento». Lo construido es UNA home (marketing/portafolio/01-raigal/ficha.md §Estado:
 //    las internas siguen abiertas; sitio/ tiene un solo index.html, sin enlaces internos).
-//    La línea nueva nombra solo las secciones que esa home tiene. Redacción final: Clara.
+//    La línea nueva nombra solo las secciones que esa home tiene (verificadas en
+//    sitio/index.html: #valores, #procedimiento, #especialista, «Lo que no te vamos a
+//    prometer», #preguntas). QA2: «una home de una sola página» era redundante y la línea
+//    tenía 31 palabras contra 17-20 de las otras tres; queda en 22, con «por ahora» porque
+//    las internas siguen abiertas en la ficha. Redacción final: Clara.
 //    Solo se reemplaza si el JSON trae todavía la frase vieja, exacta.
 const LINEA_CORREGIDA: Record<string, { antes: string; ahora: string }> = {
   raigal: {
     antes: 'Clínica de implantología y rehabilitación oral. Sitio completo, del argumento clínico a la ficha de tratamiento.',
-    ahora: 'Clínica de implantología y rehabilitación oral. Una home de una sola página: costo y plazos, las etapas del tratamiento, la especialista, lo que no se promete y las preguntas frecuentes.',
+    ahora: 'Clínica de implantología. Por ahora, solo la portada: costo y plazos, etapas, la especialista, lo que no se promete y preguntas frecuentes.',
   },
+};
+//  · Verifica y Cumple: el rubro «Herramienta propia» junto al tipo «Producto propio» se
+//    leía «Herramienta propia · Producto propio» (QA2, A10). El rubro que se propone al
+//    dueño del JSON es «Herramienta»; mismo mecanismo: se retira solo cuando el JSON cambia.
+const RUBRO_CORREGIDO: Record<string, { antes: string; ahora: string }> = {
+  'verifica-y-cumple': { antes: 'Herramienta propia', ahora: 'Herramienta' },
 };
 //  · El mockup -alto es SOLO el teléfono (1000×1100, mirado). altMock describe el par
 //    notebook + teléfono del -ancho. Hasta que el JSON traiga altMockAlto por caso, va acá.
@@ -112,9 +128,11 @@ const piezas = casos.map((c: any, i: number) => {
   const f = FORMAS[c.slug] ?? { forma: 'ancha', src: (x: any) => x.mock, alt: (x: any) => x.altMock, w: 1600, h: 1200 };
   const concepto = c.tipo === 'concepto';
   const fix = LINEA_CORREGIDA[c.slug];
+  const fixRubro = RUBRO_CORREGIDO[c.slug];
   return {
     ...c,
     linea: fix && c.linea === fix.antes ? fix.ahora : c.linea,
+    rubro: fixRubro && c.rubro === fixRubro.antes ? fixRubro.ahora : c.rubro,
     nombre: partesNombre(c.n),
     forma: f.forma,
     src: f.src(c),
@@ -192,7 +210,7 @@ const jsonLd = {
   <NavV3 />
 
   <main>
-    <header class="d-cab">
+    <header class="d-cab d-cab--trab">
       <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Trabajo</nav>
       <h1 class="d-h1">{obra.titulo}</h1>
     </header>
@@ -259,7 +277,10 @@ const jsonLd = {
         <p class="d-guia">Pon tu dominio y ves en segundos si los robots de ChatGPT, Claude y Perplexity pueden entrar a tu sitio, sea cual sea el rubro. Es el mismo chequeo con el que partimos cada proyecto.</p>
         <p class="d-cuerpo">Si hay que construirlo de nuevo, eso es Desarrollo Web: tres planes, y el valor final se cierra tras el diagnóstico gratuito.</p>
         <p class="d-precio d-precio-trab"><span class="d-pre-rot">Desde</span><span class="d-pre-sep" aria-hidden="true"></span> <span class="d-pre-junto-trab"><b>{desdeWeb}</b> <span class="d-pre-rot">+ IVA</span></span></p>
-        <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href="/v3/servicios/desarrollo-web/">Ver Desarrollo Web</a></div>
+        {/* El par de cierre del sitio (spec §7, índice de servicios y Nosotros): el chequeo
+            y el diagnóstico que el cuerpo nombra. Desarrollo Web lo lleva el «Siguiente»
+            de abajo; un botón al mismo destino a 240 px repetía el llamado (QA2, A10). */}
+        <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Pedir el diagnóstico</a></div>
       </div>
     </section>
 
@@ -309,7 +330,12 @@ const jsonLd = {
   /* ------------------------------------------------------------ el pie de cada pieza */
   .d-pie-trab { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 14px; }
   .d-pie-trab__id { display: flex; flex-direction: column; gap: 4px; }
-  .d-pie-trab__txt { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; max-width: 620px; }
+  .d-pie-trab__txt { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+  /* La medida va en el párrafo y en em, no en el contenedor ni en px (manual §05, ≤ 68
+     caracteres; spec §3 y §7): con 620 px y letra de 17 px eran 36,5 em y el pie llegaba a
+     75-84 caracteres (QA2). 28.5em es el valor que la spec midió con Range para el cuerpo
+     de 18 px en Manrope, el mismo de .d-fila-sidx__d del índice de servicios. */
+  .d-pie-trab__txt .d-cuerpo { max-width: 28.5em; }
   .d-pie-trab__fuerte { color: var(--d-papel); font-weight: 600; }
   .d-pie-trab__enlace { margin-top: 6px; gap: 8px; }
 
@@ -332,10 +358,13 @@ const jsonLd = {
   /* La entrada sin nota: la bajada en las 7 columnas de la derecha, como la guía de
      Desarrollo Web. En celular, .d-entrada ya apila. */
   .d-entrada-trab .d-guia { grid-column: 2; }
+  /* La bajada también es texto corrido (manual §05, ≤ 68): sin tope medía 69 a 1280 y 1440
+     y 96 a 1920. Mismo valor que la entrada de Método (28.5em a 24 px); medido con Range. */
+  .d-entrada-trab .d-guia { max-width: 28.5em; }
 
   /* ------------------------------------------------------------ el cierre */
   .d-cierre-trab { display: flex; flex-direction: column; align-items: flex-start; }
-  .d-cierre-trab .d-cuerpo { margin-top: 22px; max-width: 620px; }
+  .d-cierre-trab .d-cuerpo { margin-top: 22px; max-width: 28.5em; }   /* en em, como el pie (QA2) */
   .d-cierre-trab .d-btns { margin-top: 28px; }
   /* Línea de precio en flujo de texto (spec §7): espacios reales entre las piezas, el
      separador aria-hidden y «$390.000 + IVA» que no se parte. Los márgenes se ajustan para
@@ -363,6 +392,11 @@ const jsonLd = {
   }
 
   @media (max-width: 767px) {
+    /* La obra tiene que asomar en el primer pantallazo de un teléfono chico con el aviso
+       de cookies abierto (brief §3; lock §5 y §9.3). Con el min(34vh, 300px) de .d-cab la
+       primera pieza empezaba en y=576 a 375 × 667, bajo el aviso (537). 112 px, como
+       .d-cab--ct: medido y declarado en spec §7 (6-oct, Trabajo). */
+    .d-cab--trab { padding-top: 112px; }
     .d-entrada-trab .d-guia { grid-column: 1; }
     .d-obras-trab { grid-template-columns: minmax(0, 1fr); padding-top: 80px; }
     .d-obra-trab,

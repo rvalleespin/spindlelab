@@ -29,6 +29,23 @@
 //   de la fase 01. La fase 01 nombra el chequeo como punto de partida, como la home.
 // · Cada fase dice cuánto cuesta y enlaza a su servicio (antes no había cómo saberlo).
 //
+// CORRECCIONES DEL QA2 DEL 6-OCT (Javiera):
+// · «Nuestro protocolo público» (fase 04) enlaza al artículo que lo describe, no a la nota
+//   de /v3/diagnostico/ (sin protocolo y con otra cadencia). Bloqueante. Ver PROTOCOLO_HREF.
+// · Fase 01 y su paso del HowTo: «revisamos el sitio a mano», sin «en profundidad».
+// · Nota de la entrada: «fase», no «paso»; sin «02 a 04 se contratan aparte».
+// · Alt de ventana.jpg sin el laptop (el recorte no lo muestra). Cierre en .d-sec--quieta.
+// · Quedan para Clara en paginas-v3.json (la página no los parcha): «Estrategia AEO/GEO»
+//   → «Estrategia de visibilidad en IA» en el h3 (de ahí sale el paso del HowTo) y en la
+//   línea; «Cuatro pasos medibles» y «El primer paso es gratis.» → «fase».
+//
+// DESVÍO DE §4 (declarado en la spec §7, 6-oct): Editorial es «h1 60 px → imagen →
+// secciones pegajosas»; esta página suma piezas de la plantilla Servicio: línea y dos
+// botones en la cabecera, nota + entrada (.d-entrada) y una galería (.d-galeria) entre
+// secciones. Por qué: el primer «Correr el chequeo» va en la cabecera (la fase 01 parte
+// ahí), la nota dice desde el primer pantallazo que la fase 01 es gratis, y la galería da
+// el respiro entre el recorrido y las reglas, como en los casos de driftime.
+//
 // LA CAPA SEO: el BreadcrumbList de la v3 y, de la página publicada, el WebPage (#webpage)
 // y el HowTo (#metodo-spindlelab), portados con sus mismos @id y pasos. La organización y
 // la persona las emite Layout.astro; aquí solo se referencian por @id, sin repetir nodos.
@@ -45,6 +62,12 @@ const [recorrido, reglas, poco, cierre] = s.secciones;
 
 const NB = ' '; // número y unidad no se parten (a 768 quedaba «1 / semana»)
 
+// La línea bajo el h1 sale del JSON (antes iba copiada a mano): el campo `linea` si Clara
+// lo crea (propuesto, QA2: «Cuatro fases medibles: …, estrategia de visibilidad en IA, …»,
+// sin tocar la meta, que decide Simón); mientras no exista, la primera frase de la
+// description, que es el mismo texto de hoy.
+const linea: string = s.linea ?? s.description.slice(0, s.description.indexOf('.') + 1);
+
 // Lead sin la fórmula de negación ni la frase vacía, y sin repetir «cuatro fases» (la
 // línea de la cabecera las nombra justo arriba).
 const lead = s.lead
@@ -56,11 +79,15 @@ const lead = s.lead
 // Texto de cada fase. Fase 01: el chequeo como punto de partida (fuente: la home, «Es el
 // mismo chequeo con el que partimos cada proyecto», y /v3/servicios/: «ves en segundos»);
 // la conversación de 20 minutos sin la serie que repetía la fila «20 minutos».
+// «Revisamos el sitio a mano», no «auditamos el sitio en profundidad» (QA2): a fondo es la
+// Auditoría Completa pagada («Las cinco capas a fondo», servicios-v3.json); el gratis es
+// «la radiografía de una página». «A mano» sale de paginas-v3.json (diagnóstico: «lo
+// hacemos a mano») y separa esta revisión del chequeo automático de la frase anterior.
 // Fase 04: sin «Lo que no se mide, se estanca.» (aforismo de plantilla).
 const textoFase = (d: string, i: number) => {
   if (i === 0) {
     return d
-      .replace(/^Todo parte con tu URL\.\s*Auditamos/, `Todo parte con tu URL y el chequeo de 21${NB}señales, el mismo que puedes correr tú en segundos. Después auditamos`)
+      .replace(/^Todo parte con tu URL\.\s*Auditamos el sitio en profundidad/, `Todo parte con tu URL y el chequeo de 21${NB}señales, el mismo que puedes correr tú en segundos. Después revisamos el sitio a mano`)
       .replace('Luego conversamos', 'Y conversamos')
       .replace('tu negocio, tus clientes y las búsquedas', 'tu negocio y las búsquedas')
       // «gratis, en 24 horas» ya lo dicen los datos de la fase justo debajo («Duración
@@ -101,12 +128,15 @@ const precios: { t: string; href?: string; enlace?: string }[] = [
   { t: `Va dentro del mismo Acompañamiento Mensual de la fase${NB}03.` },
 ];
 
-// En la publicada, «nuestro protocolo público» enlaza a /diagnostico/#medicion-mensual.
-// En la v3 ese protocolo es la fila «Y cómo medimos si la IA te nombra.», dentro de la
-// sección #s-nom de /v3/diagnostico/, que todavía no tiene el id publicado (propuesto a
-// quien lleva Diagnóstico). Cuando lo tenga, este enlace pasa a #medicion-mensual.
+// «Nuestro protocolo público» es una afirmación que el enlace tiene que probar. En la
+// publicada iba a /diagnostico/#medicion-mensual; en la v3 esa nota (#s-nom de
+// /v3/diagnostico/) quedó sin cifras tras la corrección del 6-oct y dice «cada mes», contra
+// el «cada quince días» de esta fase (QA2, bloqueante). Va al artículo que sí describe el
+// protocolo en público y sin cadencia que choque: «el mismo set de preguntas (las que haría
+// tu cliente ideal), ejecutadas periódicamente en los mismos motores, registrando si
+// apareces, cómo te describen y a quién más citan» (medido: responde 200 y el id existe).
 const PROTOCOLO = 'nuestro protocolo público';
-const PROTOCOLO_HREF = '/v3/diagnostico/#s-nom';
+const PROTOCOLO_HREF = '/v3/blog/como-aparecer-en-chatgpt/#como-medir-si-esta-funcionando';
 const partir = (d: string) => {
   const i = d.indexOf(PROTOCOLO);
   return i < 0 ? null : [d.slice(0, i), d.slice(i + PROTOCOLO.length)];
@@ -127,7 +157,7 @@ const pedidos = (poco.lista ?? []).map((t: string) => {
 // HowTo de la página publicada, mismo @id y mismos pasos. Los nombres salen de los h3 para
 // que el dato estructurado y lo visible no se separen nunca.
 const pasosPublicados = [
-  'Auditamos el sitio en profundidad (rastreo, indexación, velocidad, datos estructurados y señales de confianza) y entregamos un mini-diagnóstico de una página, gratis, en 24 horas.',
+  'Revisamos el sitio a mano (rastreo, indexación, velocidad, datos estructurados y señales de confianza) y entregamos un mini-diagnóstico de una página, gratis, en 24 horas.',
   'Medimos tu presencia en ChatGPT, Gemini y Perplexity con un protocolo repetible, documentamos quién gana esas respuestas hoy y trazamos la hoja de ruta de citabilidad: claridad de entidad, contenido citable y autoridad.',
   'Ejecutamos los cambios técnicos y de contenido junto a tu equipo: indexación y velocidad, datos estructurados listos para pegar, y páginas reestructuradas para responder preguntas en formato citable.',
   'Cada quince días medimos menciones en IA, posiciones en Google y tráfico orgánico contra la línea base, y lo reportamos en lenguaje de negocio. El ciclo se repite: el monitoreo alimenta el siguiente diagnóstico.',
@@ -188,7 +218,7 @@ const jsonLd = {
     <header class="d-cab">
       <nav class="d-miga" aria-label="Migas"><a href="/v3/">Inicio</a> · Método</nav>
       <h1 class="d-h1">{s.h1}</h1>
-      <p class="d-linea">Cuatro pasos medibles: diagnóstico técnico, estrategia AEO/GEO, implementación y monitoreo.</p>
+      <p class="d-linea">{linea}</p>
       {/* El chequeo es el punto de partida de la fase 01 (lo dice el texto de la fase). El
            texto del botón es el del resto del sitio para el mismo destino. */}
       <div class="d-btns">
@@ -209,8 +239,12 @@ const jsonLd = {
       />
     </figure>
 
+    {/* Un solo sustantivo en lo que la página escribe por su cuenta: «fase», el de la
+         numeración, el botón y cada «de la fase 03» (QA2, antislop A7). Sin «02 a 04 se
+         contratan aparte»: la 04 va dentro del Acompañamiento de la 03, y la 03 la puede
+         ejecutar tu equipo con el plan de la auditoría. */}
     <div class="d-entrada d-entrada-met">
-      <p class="d-nota-card"><b>El paso 01 es gratis.</b> Las fases 02 a 04 se contratan aparte; el precio va en cada fase.</p>
+      <p class="d-nota-card"><b>La fase 01 es gratis.</b> Cada una de las demás dice cuánto cuesta.</p>
       <p class="d-guia">{lead}</p>
     </div>
 
@@ -253,7 +287,7 @@ const jsonLd = {
          hallazgo ya medido en servicios/[slug].astro). La cortina clara marca el borde. */}
     <div class="d-galeria">
       <figure class="d-pieza d-g-mitad">
-        <img src="/assets/img/d/ventana.jpg" alt="Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop" width="1600" height="670" loading="lazy" decoding="async" style="object-position:12% 50%" />
+        <img src="/assets/img/d/ventana.jpg" alt="Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto" width="1600" height="670" loading="lazy" decoding="async" style="object-position:12% 50%" />
       </figure>
       <figure class="d-pieza d-g-mitad">
         <img src="/assets/img/d/hilo.jpg" alt="Un hilo luminoso verde azulado cruza en diagonal un fondo oscuro" width="1400" height="787" loading="lazy" decoding="async" />
@@ -282,8 +316,11 @@ const jsonLd = {
 
     {/* El párrafo dice «Envíanos tu URL y en 24 horas tienes el mini-diagnóstico»: el botón
          principal hace exactamente eso (el formulario de contacto pide el sitio y promete el
-         mini-diagnóstico en 24 horas). Es además la conversión medida (generate_lead). */}
-    <section class="d-sec" aria-labelledby="s-cierre">
+         mini-diagnóstico en 24 horas). Es además la conversión medida (generate_lead).
+         Sección corta (~160 px a 1440 × 900): .d-sec--quieta, la etiqueta no se pega (manual
+         §07; spec §7, el mismo cierre que el artículo). Pegada, el h2 se despegaba del texto
+         y pasaba bajo el módulo de navegación (QA2). */}
+    <section class="d-sec d-sec--quieta" aria-labelledby="s-cierre">
       <div class="d-eti"><h2 class="d-h2" id="s-cierre">{cierre.h2}</h2></div>
       <div class="d-cierre-met">
         {cierre.parrafos?.[0] && <p class="d-guia">{cierre.parrafos[0].replace('24 horas', `24${NB}horas`)}</p>}
