@@ -60,9 +60,12 @@ const candidatas = (src: string, w: number, v?: number) => `${v800(src)} 800w, $
 // recorte: `--r` por pieza y `--suma` en la fila, el mecanismo de los campos. El alt de cada
 // imagen describe ese mockup: `altMock` el par, `altMockAlto` solo el teléfono.
 const MOCK = { alto: { w: 1000, h: 1100 }, ancho: { w: 1600, h: 1200 } } as const;
+// El ancho con que se verá cada pieza, con la misma cuenta del CSS (driftime.css, «fila del
+// hero»): en escritorio, (ancho − márgenes − 3 huecos) × r / suma; en carrusel, el alto fijo
+// por r. Medido con currentSrc: a 1440 con DPR 2 cada pieza pide la de 800.
 const SIZES_TIRA = {
-  alto: `(max-width: 767px) 60vw, ${TAB} 35vw, 19vw`,
-  ancho: `(max-width: 767px) 88vw, ${TAB} 51vw, 28vw`,
+  alto: `(max-width: 767px) calc((100vw - 20px) * 0.618), ${TAB} calc((100vw - 40px) * 0.3636), calc((100vw - 129px) * 0.2027)`,
+  ancho: `(max-width: 767px) calc((100vw - 20px) * 0.9067), ${TAB} calc((100vw - 40px) * 0.5333), calc((100vw - 129px) * 0.2973)`,
 };
 const tira = obra.casos.map((c: any, i: number) => {
   const forma: 'alto' | 'ancho' = i % 2 === 1 ? 'ancho' : 'alto';
@@ -106,6 +109,12 @@ const imgs: Record<string, Img[]> = {
     { src: '/assets/img/d/domino.jpg', w: 1600, h: 1600, alt: 'Fichas de dominó cayendo en fila sobre fondo negro' },
   ],
 };
+// Celular y tableta vertical: media fila, pero la celda es vertical y la imagen la cubre
+// (object-fit: cover), así que se ve a lo ALTO de la celda por su proporción. La celda mide
+// ~1,35 veces su ancho en celular y ~1,9 en tableta: una foto ancha (ventana, 2,39) se pinta a
+// ~3 anchos de celda y pide el archivo grande; un mockup en teléfono (0,91), el de 800.
+const sizesCelda = (r: number) =>
+  `(max-width: 767px) calc((100vw - 50px) * ${(Math.max(1, 1.35 * r) / 2).toFixed(3)}), ${TAB} calc((100vw - 96px) * ${(Math.max(1, 1.9 * r) / 2).toFixed(3)})`;
 const campos = [
   ...oferta.momentos.map((m: any) => ({ palabra: m.palabra, campo: m.campo, momento: m.momento, items: m.items })),
   { palabra: oferta.tambienPanel.palabra, campo: oferta.tambienPanel.campo, momento: oferta.tambienPanel.momento, items: oferta.tambien },
@@ -114,9 +123,16 @@ const campos = [
   const suma = lista.reduce((t, im) => t + im.w / im.h, 0);
   return {
     ...c, id: c.palabra.toLowerCase(), suma,
-    // En escritorio cada pieza ocupa su parte del ancho (r / suma); en celular y tableta
-    // vertical, media fila.
-    imgs: lista.map((im) => ({ ...im, url: im.src + (im.v ? `?v=${im.v}` : ''), srcset: candidatas(im.src, im.w, im.v), sizes: `${CEL} 48vw, ${Math.ceil((im.w / im.h / suma) * 100)}vw` })),
+    // Escritorio: lo que dé el menor de los dos topes del CSS, el alto que deja la cabecera
+    // (~100vh − 500 px) o el ancho de la fila repartido por r / suma; cada pieza mide r × ese
+    // alto, sin recorte.
+    imgs: lista.map((im) => {
+      const r = im.w / im.h;
+      return {
+        ...im, url: im.src + (im.v ? `?v=${im.v}` : ''), srcset: candidatas(im.src, im.w, im.v),
+        sizes: `${sizesCelda(r)}, min(calc((100vh - 500px) * ${r.toFixed(3)}), calc((100vw - 96px) * ${(r / suma).toFixed(3)}))`,
+      };
+    }),
   };
 });
 
@@ -235,7 +251,7 @@ const jsonLd = {
           ))}
         </div>
         <div class="d-fila d-fila--2" style={`--suma:${c.suma.toFixed(4)}`}>
-          {c.imgs.map((im) => <Pieza src={im.url} srcset={im.srcset} sizes={im.sizes} alt={im.alt} etiquetas={im.etq ? [im.etq] : []} ancho={im.w} alto={im.h} proporcion={im.w / im.h} srcCel={im.cel} srcsetCel={im.cel ? candidatas(im.cel, MOCK.alto.w) : undefined} sizesCel={im.cel ? '48vw' : undefined} anchoCel={im.cel ? MOCK.alto.w : undefined} altoCel={im.cel ? MOCK.alto.h : undefined} mediaCel={CEL} posicion={im.pos} />)}
+          {c.imgs.map((im) => <Pieza src={im.url} srcset={im.srcset} sizes={im.sizes} alt={im.alt} etiquetas={im.etq ? [im.etq] : []} ancho={im.w} alto={im.h} proporcion={im.w / im.h} srcCel={im.cel} srcsetCel={im.cel ? candidatas(im.cel, MOCK.alto.w) : undefined} sizesCel={im.cel ? sizesCelda(MOCK.alto.w / MOCK.alto.h) : undefined} anchoCel={im.cel ? MOCK.alto.w : undefined} altoCel={im.cel ? MOCK.alto.h : undefined} mediaCel={CEL} posicion={im.pos} />)}
         </div>
       </section>
     ))}

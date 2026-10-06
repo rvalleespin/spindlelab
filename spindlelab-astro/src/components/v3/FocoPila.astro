@@ -43,7 +43,10 @@ const { bandas, pila } = Astro.props;
     const bandas = [...document.querySelectorAll<HTMLElement>(conf.dataset.bandas || '')];
     if (!bandas.length) continue;
     const pila = conf.dataset.pila ? document.querySelector<HTMLElement>(conf.dataset.pila) : null;
+    // Apaga el respaldo sin JS: en cada banda y, si lo hay, en el contenedor (el índice de
+    // servicios escribe su respaldo como `.d-bandas-sidx:not([data-foco]) …`).
     bandas.forEach((b) => { b.dataset.foco = 'js'; });
+    if (pila) pila.dataset.foco = 'js';
 
     // Tres puntos sobre la línea media del elemento, como mide QA.
     const visible = (el: Element) => {

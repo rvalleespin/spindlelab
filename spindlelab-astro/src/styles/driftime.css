@@ -193,11 +193,11 @@
   .d-campo .d-fila { display: grid; grid-template-columns: 1fr 1fr; align-items: end; overflow: visible; margin-right: 0; padding-right: 0; scroll-snap-type: none; padding-top: 22px; }
   .d-campo .d-fila .d-pieza { height: 100%; max-height: calc((100cqw - var(--d-g)) / 2 * 1.35); aspect-ratio: auto; flex: none; }
 }
-/* Tableta vertical: el tope sube a 1,75 veces el ancho de la celda para que la fila llene lo
-   que deja la cabecera (a 768 × 1024, celdas de 336 × ~560; con 1,35 quedaban ~120 px de color
-   vacío entre los botones y la fila). */
+/* Tableta vertical: sin tope, la fila llena lo que deja la cabecera (a 768 × 1024, celdas de
+   336 × 555; con el tope de celular quedaban ~120 px de color vacío entre los botones y la
+   fila, y con 1,75 todavía 91 a 118 en 820 × 1180 y 1024 × 1366). */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  .d-campo .d-fila .d-pieza { max-height: calc((100cqw - var(--d-g)) / 2 * 1.75); }
+  .d-campo .d-fila .d-pieza { max-height: none; }
 }
 /* Pantallas muy bajas: el campo no cabe en una pantalla aunque las imágenes se achiquen. Ahí
    deja de pegarse y se lee de corrido; nada queda escondido bajo el campo siguiente. */
@@ -278,7 +278,9 @@
 /* Galería asimétrica, como los casos de driftime. */
 .d-galeria { padding: 180px var(--d-m) 0; display: grid; gap: var(--d-g); grid-template-columns: repeat(12, minmax(0, 1fr)); }
 .d-galeria__cab { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 12px; }
-.d-g-ancha { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+/* Una pieza ancha que trae su proporción (`proporcion` en Pieza → --r) la respeta y no se
+   recorta; sin ella, 16:9. Para la captura de Combeau (2,34) en la galería de Desarrollo web. */
+.d-g-ancha { grid-column: 1 / -1; aspect-ratio: var(--r, 16 / 9); }
 .d-g-alta { grid-column: span 4; aspect-ratio: 3 / 4; }
 .d-g-media { grid-column: span 8; aspect-ratio: 4 / 3; }
 .d-g-mitad { grid-column: span 6; aspect-ratio: 4 / 3; }
@@ -322,14 +324,35 @@ html body.d-body #cookie-banner #cookie-reject { background: transparent; color:
 html body.d-body #cookie-banner #cookie-reject:hover { background: rgba(247, 245, 240, 0.08); }
 
 /* ---------------------------------------------------------------- foco bajo lo fijo */
-/* Ningún control enfocado queda bajo el módulo de navegación ni bajo el aviso de cookies
+/* Ningún control enfocado queda bajo el aviso de cookies ni bajo el módulo de navegación
    (WCAG 2.2 SC 2.4.11; QA final, técnica #2: con el aviso abierto, 111 de 1.259 paradas
-   quedaban tapadas, entre ellas el consentimiento de contacto a 390). Va como scroll-margin de
-   los controles y no como scroll-padding del documento: el scroll-padding también corre
-   100 px cada ancla (#planes, #contacto-form, el índice del artículo, el resultado del
-   chequeo), que ya tienen su propio scroll-margin medido. */
-.d-body :is(a[href], button, input, select, textarea, summary, [tabindex]:not([tabindex='-1'])) { scroll-margin-top: 100px; }
-html:has(#cookie-banner:not([hidden])) .d-body :is(a[href], button, input, select, textarea, summary, [tabindex]:not([tabindex='-1'])) { scroll-margin-bottom: 96px; }
-@media (max-width: 767px) {
-  html:has(#cookie-banner:not([hidden])) .d-body :is(a[href], button, input, select, textarea, summary, [tabindex]:not([tabindex='-1'])) { scroll-margin-bottom: 146px; }
+   quedaban tapadas, entre ellas el consentimiento de contacto a 390 y la primera pestaña de la
+   home a 1440).
+   · ABAJO, el aviso: scroll-padding-bottom con el alto del aviso + ~18 px, mientras está
+     abierto. No mueve ninguna ancla (las anclas se alinean arriba). El aviso mide 78 px desde
+     885 px de ancho (una fila), 134 entre 681 y 884 (el texto y los botones en dos filas),
+     109 a 128 entre 360 y 680 y 146 a 320 (medido en /v3/contacto/).
+   · ARRIBA, el módulo: scroll-padding-top de 100 px SOLO mientras hay foco de teclado
+     (`:focus-visible`). Siempre puesto, corría 100 px cada ancla que ya tiene su propio
+     scroll-margin medido (medido: #planes de 180 a 280, #contacto-form de 88 a 188, el índice
+     del artículo de 104 a 204, las bandas del índice de servicios de 128 a 227). Con
+     `:focus-visible`, un clic o un toque cae donde caía; quien navega con teclado cae 100 px
+     más abajo, bajo el módulo y no detrás.
+   Probado antes como scroll-margin de los controles: Chrome no hace scroll cuando el control
+   ya está entero dentro de la ventana aunque esté bajo el aviso (quedaba 1 de 38 en la home). */
+html:has(body.d-body):has(#cookie-banner:not([hidden])),
+html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: 96px; }
+@media (max-width: 899px) {
+  html:has(body.d-body):has(#cookie-banner:not([hidden])),
+  html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: 152px; }
 }
+@media (max-width: 680px) {
+  html:has(body.d-body):has(#cookie-banner:not([hidden])),
+  html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: 146px; }
+}
+@media (max-width: 359px) {
+  html:has(body.d-body):has(#cookie-banner:not([hidden])),
+  html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: 164px; }
+}
+html:has(body.d-body):has(:focus-visible),
+.d-body #menu-overlay { scroll-padding-top: 100px; }
