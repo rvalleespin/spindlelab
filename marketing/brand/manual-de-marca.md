@@ -610,14 +610,26 @@ máximo tres pasos escalonados, nada letra por letra.
 Instagram no tiene botones, así que **nada imita un botón**: ni cajas con texto de acción, ni
 píldoras, ni flechas en cápsula. El llamado es **texto**:
 
-> **Chequea tu sitio gratis. Enlace en la bio**
+> **Comenta QUIERO MEJORAS y te mandamos el chequeo por DM**
 
-En el cierre, en guía (55 px, 400, papel). En el texto de la publicación los enlaces no
-funcionan: el enlace vive en la **bio** y, en stories, en el **sticker de enlace**.
+En el cierre, en guía (55 px, 400, papel). **Un solo llamado por pieza.**
 
-**Este llamado funciona solo si la bio apunta al chequeo** (`spindlelab.cl/diagnostico/`). Si
-la bio pasa a `verifica.spindlelab.cl`, como pidió la campaña de Verifica, el llamado manda al
-lugar equivocado: lo decide Ramón antes de la primera publicación.
+**Por qué el gancho de comentarios y no «enlace en la bio»** (Ramón, 1-sep, keyword actualizada
+el 7-oct): en Instagram los enlaces del pie de foto no son clicables, así que el DM es la entrega
+real, no una fricción inventada. La bio sigue siendo el único enlace que se puede tocar, y queda
+como respaldo **en el pie de foto**, nunca como segundo llamado dentro de la lámina. En stories,
+el enlace va en el **sticker**.
+
+**La keyword es `QUIERO MEJORAS`** (reemplaza a `CIRCUITO`, que era del concepto del dominó del
+sistema v2). Va en mayúsculas dentro de la línea, porque así se escribe igual en el comentario;
+no es un display ni un rótulo espaciado, así que no choca con §10.4.
+
+> ⚠️ **La keyword vive en ManyChat, no en la pieza.** Publicar una lámina que pide
+> `QUIERO MEJORAS` mientras ManyChat sigue escuchando `CIRCUITO` deja a quien comenta sin
+> respuesta. **Antes de la primera publicación hay que cambiarla en ManyChat** (Automation →
+> keyword) y agregar ahí el post nuevo al trigger. Lo hace Ramón; esta sesión no toca ManyChat.
+> Conviene configurarla como «contiene» y no como coincidencia exacta: son dos palabras, y
+> «quiero mejoras!» o «Quiero mejoras.» tienen que entrar igual.
 
 **Precio.** Como máximo **una línea de precio por publicación**, en el campo de su pilar y en
 el formato del sitio: `Desde ▏ $X + IVA`, con la cifra exacta de `oferta-v3.json` (umbral de

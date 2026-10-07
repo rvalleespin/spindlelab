@@ -195,11 +195,23 @@ tirar trabajo bueno. Los terminé.
 
 El manual no las reconcilia y el kit las contradice. **Decide Ramón; yo no las retiro por mi cuenta.**
 
-1. **El gancho «Comenta CIRCUITO».** `clientes/spindlelab.md:184-188` y `:201`: «Comenta CIRCUITO y
-   te mandamos el link por DM», con **ManyChat ya conectado** (keyword `CIRCUITO`, activo sobre el
-   post del dominó). El razonamiento sigue en pie: *en IG los links no son clicables y el DM es la
-   entrega real.* El kit llama a «Chequea tu sitio gratis. Enlace en la bio», que es un clic menos
-   directo. **O el llamado suma el gancho, o la regla del 1-sep se retira.**
+**Al 7-oct queda una resuelta (la 1) y dos pendientes (la 2 y la 3), más la de los viernes.**
+
+1. ✅ **RESUELTA POR RAMÓN el 7-oct: el gancho se queda, con keyword nueva.** `CIRCUITO` pasa a
+   **`QUIERO MEJORAS`**. Tiene sentido más allá de la preferencia: `CIRCUITO` era la palabra del
+   concepto del dominó del sistema v2, y el v3 reemplazó ese sistema entero, así que la keyword
+   había quedado huérfana de su campaña.
+   **Hecho en esta pasada:** el llamado del kit es ahora «Comenta QUIERO MEJORAS y te mandamos el
+   chequeo por DM», en `carrusel-5-cierre`, `post-titular` y `story-portada`, con sus alt
+   actualizados y las tres piezas rendidas de nuevo. El manual §10.8 quedó reescrito con el porqué
+   del gancho (en IG los enlaces del pie no son clicables, el DM es la entrega real) y con la regla
+   de **un solo llamado por pieza**: la bio deja de ser el llamado de la lámina y queda como
+   respaldo en el pie de foto. La ficha `clientes/spindlelab.md` registra el cambio sin borrar el
+   texto del 1-sep.
+   ⚠️ **Lo que queda y es de Ramón: cambiar la keyword en ManyChat.** Hoy escucha `CIRCUITO`. Si se
+   publica una lámina que pide `QUIERO MEJORAS` con ManyChat sin tocar, **quien comente no recibe
+   nada**. Conviene además configurarla como «contiene» y no como coincidencia exacta: son dos
+   palabras, y «quiero mejoras!» o «Quiero mejoras.» tienen que entrar igual.
 2. **«Stories sueltas: NO por ahora»** (`:208-210`). Solo re-compartir el feed, hasta tener base de
    seguidores. **El kit trae `story-portada` diseñada.** O la plantilla espera, o la regla cambia.
 3. **«Las fichas tipográficas planas SOLAS ya no pasan»** (`:211-214`): toda pieza nueva bajo el

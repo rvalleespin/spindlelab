@@ -43,7 +43,7 @@ En el resto de las piezas, los textos vienen del sitio tal cual: el hero de la h
 - **Forma.**
   - Un solo radio, 6 px del sitio. La etiqueta de pieza usa 4 px.
   - Cero píldoras.
-  - Nada imita un botón: el llamado es texto («Chequea tu sitio gratis. Enlace en la bio.»).
+  - Nada imita un botón: el llamado es texto («Comenta QUIERO MEJORAS y te mandamos el chequeo por DM.»), uno solo por pieza.
 - **Imagen.**
   - Solo el pool del sitio y los mockups de obra.
   - La etiqueta va arriba a la izquierda, como en el sitio. En capturas planas va abajo.
@@ -163,5 +163,6 @@ Una observación para Ramón: con la regla de wordmark en cada portada, el wordm
 > Las dos primeras **ya no están abiertas**: el manual v3.0 las resolvió. El punto va en el color del texto del campo sobre brasa y petróleo (§10.5), y el precio es una línea por pieza con la cifra de `oferta-v3.json` (§10.8). La cita al manual v2.0 quedaba vieja.
 
 1. **El formato 3:4 (1080×1440).** Instagram lo acepta desde may-2025 y no pierde nada en la grilla. El kit queda en 4:5 por la decisión fijada; pasar a 3:4 es cambiar el alto en `base.css` (`body.f45`).
-4. **El enlace del bio.** El llamado «Chequea tu sitio gratis. Enlace en la bio.» solo funciona si el bio sigue apuntando a `spindlelab.cl/diagnostico/`, y no a `verifica.spindlelab.cl`.
+4. **El enlace del bio.** Ya no es el llamado de la lámina (desde el 7-oct va el gancho de comentarios), pero sigue siendo el único enlace clicable del perfil y se nombra en el pie de foto. Decide Ramón si apunta a `spindlelab.cl/diagnostico/` o a `verifica.spindlelab.cl`.
+5. **La keyword en ManyChat.** La pieza pide `QUIERO MEJORAS` y ManyChat todavía escucha `CIRCUITO`. **Hay que cambiarla antes de publicar**, o quien comente no recibe nada.
 5. **El radio convertido** (16,6 px en la lámina para que se vea de 6 px). Si se prefiere el literal de 6 px, se cambia `--k` a 1 en `base.css`.

@@ -182,7 +182,12 @@ cierre de mes.
 ## Estado operacional — Interacción y tráfico (decisión de Ramón, 1-sep-2026)
 
 - **Objetivo del mes: tráfico al chequeo.** Las piezas invitan a interactuar, no solo a mirar.
-- **Instagram: gancho de comentarios** ("Comenta CIRCUITO y te mandamos el link por DM").
+- **Instagram: gancho de comentarios.** ⚠️ **La keyword cambió el 7-oct (Ramón): `CIRCUITO` →
+  `QUIERO MEJORAS`.** El llamado vigente es «Comenta QUIERO MEJORAS y te mandamos el chequeo por
+  DM». El gancho en sí sigue en pie; lo que cambió es la palabra. `CIRCUITO` era del concepto del
+  dominó del sistema visual v2, que el v3 reemplazó. **Hay que cambiarla en ManyChat antes de la
+  primera publicación**, o quien comente no recibe nada. Texto original del 1-sep, como registro:
+  ("Comenta CIRCUITO y te mandamos el link por DM").
   Herramienta: **ManyChat** (partner oficial de Meta; keyword del mes: CIRCUITO). Mientras
   Ramón no conecte la cuenta, los DM se responden a mano con la plantilla del publicar.md
   del día. En IG esto no es fricción artificial: los links no son clicables y el DM es la
@@ -197,7 +202,11 @@ cierre de mes.
 ### Actualizaciones del 1-sep (Ramón, tarde)
 - **Handle de Instagram cambiado: `@spindlelab.cl`** (antes @spindle.lab) — mejor recordación,
   calca el dominio. Bio apuntando a `spindlelab.cl/diagnostico` ✅.
-- **ManyChat CONECTADO** ✅: keyword `CIRCUITO`, activo sobre el post del dominó (1-sep). Para
+- **ManyChat CONECTADO** ✅: keyword `CIRCUITO`, activo sobre el post del dominó (1-sep).
+  ⚠️ **Pendiente de Ramón desde el 7-oct: cambiar la keyword a `QUIERO MEJORAS`** y configurarla
+  como «contiene», no como coincidencia exacta (son dos palabras: «quiero mejoras!» tiene que
+  entrar igual). Mientras no se cambie, las piezas nuevas del kit de Instagram piden una palabra
+  que ManyChat no escucha. Para
   cada post nuevo con gancho: Automation → agregar el post al trigger existente (un clic).
   Regla intacta: solo Instagram; en LinkedIn los DM van a mano.
 - **Metricool ADOPTADO para programar** (revierte la decisión del 28-ago de publicación 100%
