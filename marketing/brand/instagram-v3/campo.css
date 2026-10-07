@@ -1,8 +1,8 @@
 /* Composición compartida de post-campo-*.html (1080×1350): el campo del sitio en una lámina.
-   Orden del sitio: palabra en display · servicios · momento + descripción · precio · imagen. */
-body { padding: var(--d-m); display: flex; flex-direction: column; }
-.palabra { font-size: 132px; margin-top: 64px; white-space: nowrap; }   /* las cuatro al mismo tamaño: «Continuidad» (6,92 × tamaño) cabe en 936 */
-.servicios { margin-top: 30px; font-size: var(--t-rot); font-weight: 500; line-height: 1.4; }
-.guia { margin-top: 26px; max-width: 920px; }
-.precio { margin-top: 22px; }
-.pieza { flex: 1 1 0; min-height: 400px; margin-top: 44px; }   /* como la fila del campo en el sitio: llena lo que deja la cabecera (400 como piso, el de Desarrollo) */
+   Orden del sitio (index.astro, sección 3): palabra en display · servicio · momento +
+   descripción · precio · fila de piezas al fondo. Aire: el del campo a 390 × 2,77. */
+.palabra { margin-top: 56px; margin-bottom: 17px; }   /* el display lleva 6 px de margen abajo en el sitio */
+.servicio { font-size: var(--t-rot); font-weight: 500; line-height: 1.5; }   /* como texto, no como píldora */
+.desc { margin-top: var(--d-bloque); }
+.precio { margin-top: 50px; }                         /* 18 × 2,77 */
+.fila-piezas { padding-top: var(--d-fila); }           /* 22 × 2,77 */

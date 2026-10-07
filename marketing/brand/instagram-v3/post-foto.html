@@ -1,25 +1,17 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
-<!-- POST-FOTO · 1080×1350 · una foto del pool a sangre, SIN velo: el texto va donde la foto ya es
-     oscura. Texto: la presentación de la home v3 (del post publicado del 1-sep), recortado.
-     Al cambiar la foto, medir el contraste del texto contra la zona que pisa (medir.py lo hace). -->
+<meta name="alt-instagram" content="Lámina negra con fichas de dominó cayendo en fila sobre fondo negro. Tu sitio está escrito para personas. Pero cada vez más, el primero en llegar no es una persona: es la máquina que responde cuando alguien pregunta por tu rubro.">
+<!-- POST-FOTO · 1080×1350 · como lo define el manual (§07b, §10.6): la foto es una PIEZA, con radio, en su
+     proporción (domino.jpg es 1:1) y sin nada escrito encima; el titular va en el lienzo, en h2.
+     Sin filtros: la foto va como está en el sitio (oro por tono: 0,006 %, bajo el 0,1 %).
+     Texto: la presentación de la home v3 tal cual, CON su referente («es la máquina que
+     responde…»): su falta fue el bloqueante de las dos direcciones del 2-oct (index.astro:212). -->
 <style>
-body { padding: var(--d-m); display: flex; flex-direction: column; }
-.foto { position: absolute; inset: 0; z-index: 0; }
-.foto { background: #000; }
-/* domino.jpg tiene el tercio de arriba en negro puro (0,0,0, medido): la foto se apoya abajo a
-   1080 × 1080 y el lienzo negro la continúa sin costura. Así el texto cae sobre negro real y no
-   hace falta velo. Lo que asoma de la foto empieza en y ≈ 589 (medido por columnas). */
-.foto img { position: absolute; left: 0; bottom: 0; width: 1080px; height: 1080px; display: block; filter: saturate(0.65); }
-/* saturate(.65): la luz cálida sobre los puntos del dominó caía en el rango del oro (71 px a ±40 de
-   #C9A227). Con la saturación al 65 % la foto se ve igual y el único oro es el punto del wordmark. */
-.capa { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%; }
-.h1 { margin-top: 56px; max-width: 900px; }
-.wmpie { margin-top: auto; }
-</style></head><body class="f45 sobre-foto">
-<div class="foto"><img src="img/domino.jpg" alt=""></div>
-<div class="capa">
-  <div><span class="wm wm--76">SpindleLab<i>.</i></span></div>
-  <h1 class="h1">Tu sitio está escrito para personas. Cada vez más, el primero en llegar no es una persona.</h1>   <!-- EDITAR -->
-  <p class="llamado wmpie">Chequea tu sitio gratis. Enlace en la bio.</p>
+.fila-piezas { padding-top: 56px; }
+.h2 { margin-top: 56px; }
+</style></head><body class="f45">
+<div><span class="wm wm--76">SpindleLab<i>.</i></span></div>
+<div class="fila-piezas" style="--n:1;--suma:1">
+  <figure class="pieza" style="--r:1"><img src="img/domino.jpg" alt="Fichas de dominó cayendo en fila sobre fondo negro"></figure>   <!-- EDITAR: foto + su proporción en --r y --suma -->
 </div>
+<h2 class="h2">Tu sitio está escrito para personas. Pero cada vez más, el primero en llegar no es una persona: es la máquina que responde cuando alguien pregunta por tu rubro.</h2>   <!-- EDITAR -->
 </body></html>

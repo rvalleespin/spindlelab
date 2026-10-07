@@ -1,14 +1,12 @@
-/* Composición compartida del carrusel (1080×1350, todas las láminas en la misma proporción:
+/* Composición compartida del carrusel (1080×1350; todas las láminas en la misma proporción:
    Instagram les impone la de la primera). Portada y cierre llevan wordmark; las interiores no.
-   El display solo en la portada. */
-body { padding: var(--d-m); display: flex; flex-direction: column; }
+   El display solo en la portada. Una idea por lámina interior (manual §10.7). */
 .serie { display: flex; justify-content: space-between; gap: 24px; }   /* rótulo de la serie + n de N, en gris */
-.fila-dato { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 32px; align-items: baseline; }
-.fila-dato .h2 { font-size: 52px; }
-.fila-dato .pts { font-size: var(--t-guia); font-weight: 600; white-space: nowrap; }
-.fila-dato .cuerpo { grid-column: 1 / -1; text-wrap: balance; }
-.nota { text-wrap: balance; }
-.paso { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 6px 16px; }
-.paso .n { color: var(--d-gris); font-size: var(--t-guia); font-variant-numeric: tabular-nums; line-height: 1.35; }
-.paso .t { font-size: var(--t-guia); font-weight: 500; line-height: 1.35; }
+.abajo { margin-top: auto; }                                          /* el titular se apoya abajo, como el del hero */
+.fila-dato { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 39px; align-items: baseline; }
+.fila-dato .pts { font-size: var(--t-h3); font-weight: 600; line-height: 1.4; white-space: nowrap; }
+.fila-dato .cuerpo { grid-column: 1 / -1; }
+/* Pasos: la fase del sitio. Número en gris en su columna, título en h3, cuerpo en gris. */
+.paso { display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 0 39px; }
+.paso .n { color: var(--d-gris); font-size: var(--t-h3); font-weight: 500; line-height: 1.4; font-variant-numeric: tabular-nums; }
 .paso .cuerpo { grid-column: 2; }

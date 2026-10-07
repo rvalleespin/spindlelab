@@ -1,25 +1,29 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<meta name="alt-instagram" content="Fichas de dominó cayendo en fila sobre fondo negro. Estás pagando para que lleguen a tu sitio. AHÍ SE CORTA EL CIRCUITO. Chequea tu sitio gratis.">
 <!-- STORY-PORTADA · 1080×1920 (sirve también de portada de reel).
-     Zonas (ver story-portada-guia): todo lo que se lee va entre y = 270 y y = 1250, que es la banda
-     segura del reel (Meta: 14 % arriba, 35 % abajo, 6 % por lado) y queda dentro de la de la story
-     (250 arriba, 340 abajo) y del recorte 3:4 de la grilla (240 a 1680). Entre 1290 y 1560 queda
-     LIBRE para el sticker de enlace, que se pone en la app. El llamado va dentro de la banda. Textos: hero de la home v3, tal cual. -->
+     Zonas (ver story-portada-guia): todo lo que se lee va entre y = 270 e y = 1248, la banda segura
+     del reel (Meta: 14 % arriba, 35 % abajo, 6 % por lado), que cae dentro de la de la story (250
+     arriba, 340 abajo) y del recorte 3:4 de la grilla (240 a 1680). De 1290 a 1560 queda LIBRE para
+     el sticker de enlace, que se pone en la app. Textos: hero de la home v3, tal cual.
+     La foto va entera (1:1), sin filtro. OJO (manual §10.11): la regla del 1-sep de Ramón dice
+     «stories sueltas: NO por ahora»; mientras no la retire, esto se usa como portada de reel. -->
 <style>
-body { padding: 0 72px; }
-/* La banda que se lee: de y = 290 a y = 1248. */
-.banda { position: absolute; left: 72px; right: 72px; top: 290px; height: 958px; display: flex; flex-direction: column; }
-.pieza { height: 300px; margin-top: 48px; flex: none; }   /* termina en y ≈ 714 */
-.pieza img { object-position: 50% 62%; filter: saturate(0.65); }   /* como en post-foto: los puntos del dominó caían en el rango del oro */
-.ojillo { margin-top: 64px; margin-bottom: 32px; }
-.display { font-size: 130px; white-space: nowrap; }
-.llamado { margin-top: 44px; }   /* termina en y ≈ 1170, lejos de la columna de íconos del reel (x > 850, y > 1150) */
+body { padding: 0 90px; }
+.banda { position: absolute; left: 90px; right: 90px; top: 280px; height: 968px; display: flex; flex-direction: column; }
+.fila-piezas { padding-top: 50px; }
+.titular { margin-top: 56px; }
+.llamado { margin-top: 50px; }
 </style></head><body class="f916">
 <div class="banda">
   <div><span class="wm wm--76">SpindleLab<i>.</i></span></div>
-  <figure class="pieza"><img src="img/domino.jpg" alt=""></figure>
-  <p class="ojillo">Estás pagando para que lleguen a tu sitio.</p>
-  <h1 class="display">Ahí se corta<br>el circuito</h1>
-  <p class="llamado">Chequea tu sitio gratis.</p>
+  <div class="fila-piezas" style="--n:1;--suma:1">
+    <figure class="pieza" style="--r:1"><img src="img/domino.jpg" alt="Fichas de dominó cayendo en fila sobre fondo negro"></figure>
+  </div>
+  <div class="titular">
+    <p class="ojillo">Estás pagando para que lleguen a tu sitio.</p>
+    <h1 class="display">Ahí se corta<br>el circuito</h1>
+    <p class="llamado">Chequea tu sitio gratis.</p>
+  </div>
 </div>
 <!-- De y = 1290 a 1560: libre para el sticker de enlace (se pone en la app). -->
 </body></html>
