@@ -97,19 +97,26 @@ solo se sostiene si uno de los tres es barato de producir.
 |---|---|---|---|
 | **lun 5-oct** | B | El cuarto mito: la amonestación es una facultad, no un derecho | ✅ publicado y verificado |
 | **mié 7-oct** | A | Antes de pagar un panel de visibilidad en IA, lo que ya puedes medir gratis | 🟡 aprobado, en cola. Releer la página de Google y `/diagnostico/` antes de publicar |
-| **jue 8-oct** | B | **El día después del Cyber: la base de datos que te quedó** | 🟡 **borrador listo**, `08-jue-cyber-datos/publicar.md`. Pieza de coyuntura, **ventana corta**: sirve el 8 o el 9, después se cae |
+| **jue 8-oct** | C | **El Cyber como examen del sitio: ¿funcionó?** (ángulo de Ramón) | 🟡 **borrador listo**, `08-jue-cyber-examen-del-sitio/publicar.md`. Pieza de coyuntura, **ventana corta**: sirve el 8 o el 9, después se cae |
 | vie 9-oct | — | Vacío a propósito (víspera de fin de semana largo), o el post del Cyber si se corre | — |
 | **sáb 10 – lun 12** | — | **Fin de semana largo. Cero publicaciones** | — |
 | **mar 13-oct** | **D** | **Reel cara a cámara: el mensaje cerrado.** LinkedIn nativo primero, Instagram después | 🟡 **guion listo**, `13-mar-reel-cara-a-camara/guion.md`. Depende de que Ramón grabe. Si se corre, el jue 15 |
-| vie 16-oct | C | El mensaje cerrado en texto, para quien no vio el video | ⬜ se escribe después del reel, para no pisarlo |
-| lun 19-oct | B | Cookies y la ley chilena | ⬜ **bloqueado**: hay que verificar qué exige de verdad la 21.719 sobre cookies antes de afirmar nada |
-| mié 21-oct | A | "Para que la IA te recomiende, tu sitio no basta" | ⬜ aprobado el 22-sep y pospuesto. **Necesita gancho nuevo**: comparte ideas con el del 7-oct |
+| vie 16-oct | B | La base de datos que te dejó la temporada: datos personales a seis semanas de la ley | ⬜ **ya escrito**, en el banco al final de `08-jue-cyber-examen-del-sitio/publicar.md`. Al reusarlo se cambia el arranque: la referencia al Cyber envejece, entra temporada alta |
+| lun 19-oct | A | "Para que la IA te recomiende, tu sitio no basta" | ⬜ aprobado el 22-sep y pospuesto. **Necesita gancho nuevo**: comparte ideas con el del 7-oct |
+| mié 21-oct | B | Cookies y la ley chilena | ⬜ **bloqueado**: hay que verificar qué exige de verdad la 21.719 sobre cookies. Si sigue bloqueado, entra el plazo del 1-dic a seis semanas |
 | vie 23-oct | C o D | Segundo video, solo si el primero rindió | ⬜ |
-| lun 26-oct | B | El plazo del 1-dic a cinco semanas, sin urgencia fabricada | ⬜ |
-| mié 28-oct | A | Costco: el tráfico desde IA es poco y convierte mejor | ⬜ dato verificado en el transcript del 24-sep. **Falta la apertura**: Ramón descartó partir por la noticia |
+| lun 26-oct | A | Costco: el tráfico desde IA es poco y convierte mejor | ⬜ dato verificado en el transcript del 24-sep. **Falta la apertura**: Ramón descartó partir por la noticia |
+| mié 28-oct | B | El cierre de la ventana de la ley | ⬜ |
 | vie 30-oct | — | Cierre de mes: publicado vs planificado, qué tipo rindió | ⬜ |
 
-**Alternancia verificada:** B → A → B → D → C → B → A → C/D → B → A. Sin dos del mismo tipo seguidos.
+**Alternancia verificada:** B → A → C → D → B → A → B → C/D → A → B. Sin dos del mismo tipo seguidos.
+
+> ⚠️ **La alternancia de tipos no basta: hay que mirar también el servicio.** Al cambiar el post del
+> jue 8 al ángulo del Cyber (Desarrollo Web), el 8, el reel del 13 y el texto que había para el 16
+> quedaban los tres del mismo servicio en nueve días. Tipos distintos, misma racha que en
+> septiembre con Verifica y Cumple. **Se cayó el texto del 16** (el reel ya cuenta el mensaje
+> cerrado) y entró en su lugar la pieza de datos personales. Si el reel no se graba, ese texto
+> vuelve al calendario.
 
 > **Sobre el CyberMonday (7-oct).** Fue del **lun 5 al mié 7 de octubre** (Cámara de Comercio de
 > Santiago), así que una campaña "para el Cyber" ya no alcanzaba. Lo que sí tiene ventana es el día
