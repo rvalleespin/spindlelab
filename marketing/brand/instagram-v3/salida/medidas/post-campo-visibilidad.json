@@ -11,9 +11,9 @@
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 72,
+   "y0": 64,
    "x1": 432.5625,
-   "y1": 148
+   "y1": 155
   },
   {
    "t": ".",
@@ -27,37 +27,37 @@
    "y1": 155
   },
   {
-   "t": "Visibilidad",
+   "t": "VISIBILIDAD",
    "px": 132,
    "peso": "800",
    "may": true,
    "guia": false,
    "x0": 72,
-   "y0": 212,
-   "x1": 1008,
-   "y1": 330.796875
+   "y0": 180,
+   "x1": 826.25,
+   "y1": 361
   },
   {
-   "t": "Visibilidad en IA · Auditoría SEO técnic",
+   "t": "Visibilidad en IA · Auditoría SEO técnica",
    "px": 36,
    "peso": "500",
    "may": false,
    "guia": false,
    "x0": 72,
    "y0": 360.796875,
-   "x1": 1008,
-   "y1": 411.1875
+   "x1": 718.796875,
+   "y1": 409.796875
   },
   {
-   "t": "Tu sitio existe y no lo vas a rehacer. P",
+   "t": "Tu sitio existe y no lo vas a rehacer. Para que ChatGPT, Gem",
    "px": 44,
    "peso": "400",
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 437.1875,
-   "x1": 992,
-   "y1": 628.578125
+   "y0": 438.1875,
+   "x1": 983.203125,
+   "y1": 625.78125
   },
   {
    "t": "Tu sitio existe y no lo vas a rehacer.",
@@ -77,9 +77,9 @@
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 650.578125,
-   "x1": 1008,
-   "y1": 704.578125
+   "y0": 652.578125,
+   "x1": 492.34375,
+   "y1": 701.578125
   },
   {
    "t": "$400.000",
@@ -113,5 +113,6 @@
    "oro": true
   }
  ],
+ "desborde": false,
  "alto": 1350
 }

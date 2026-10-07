@@ -5,4 +5,4 @@ body { padding: var(--d-m); display: flex; flex-direction: column; }
 .servicios { margin-top: 30px; font-size: var(--t-rot); font-weight: 500; line-height: 1.4; }
 .guia { margin-top: 26px; max-width: 920px; }
 .precio { margin-top: 22px; }
-.pieza { flex: none; height: 400px; margin-top: auto; }   /* alto fijo: las cuatro variantes ponen la imagen a la misma altura en la grilla */
+.pieza { flex: 1 1 0; min-height: 400px; margin-top: 44px; }   /* como la fila del campo en el sitio: llena lo que deja la cabecera (400 como piso, el de Desarrollo) */

@@ -1,0 +1,74 @@
+{
+ "fuentes": [
+  "Manrope 200 800",
+  "Gabarito 400 900"
+ ],
+ "textos": [
+  {
+   "t": "SpindleLab.",
+   "px": 76,
+   "peso": "800",
+   "may": false,
+   "guia": false,
+   "x0": 72,
+   "y0": 282,
+   "x1": 432.5625,
+   "y1": 373
+  },
+  {
+   "t": ".",
+   "px": 76,
+   "peso": "800",
+   "may": false,
+   "guia": false,
+   "x0": 414.15625,
+   "y0": 282,
+   "x1": 432.5625,
+   "y1": 373
+  },
+  {
+   "t": "Estás pagando para que lleguen a tu sitio.",
+   "px": 44,
+   "peso": "500",
+   "may": false,
+   "guia": false,
+   "x0": 72,
+   "y0": 776,
+   "x1": 923.59375,
+   "y1": 836
+  },
+  {
+   "t": "AHÍ SE CORTA EL CIRCUITO",
+   "px": 130,
+   "peso": "800",
+   "may": true,
+   "guia": false,
+   "x0": 72,
+   "y0": 836.1875,
+   "x1": 950.9375,
+   "y1": 1131.1875
+  },
+  {
+   "t": "Chequea tu sitio gratis.",
+   "px": 36,
+   "peso": "500",
+   "may": false,
+   "guia": false,
+   "x0": 72,
+   "y0": 1145.1875,
+   "x1": 464.484375,
+   "y1": 1194.1875
+  }
+ ],
+ "puntos": [
+  {
+   "x0": 414.15625,
+   "y0": 282,
+   "x1": 432.5625,
+   "y1": 373,
+   "oro": true
+  }
+ ],
+ "desborde": false,
+ "alto": 1920
+}

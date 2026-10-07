@@ -1,0 +1,140 @@
+{
+ "fuentes": [
+  "Manrope 200 800",
+  "Gabarito 400 900"
+ ],
+ "textos": [
+  {
+   "t": "Story: 250 px sin texto (barra y perfil)",
+   "px": 33,
+   "peso": "500",
+   "may": false,
+   "guia": true,
+   "x0": 36,
+   "y0": 28,
+   "x1": 607.375,
+   "y1": 73
+  },
+  {
+   "t": "Story: 340 px sin texto (responder)",
+   "px": 33,
+   "peso": "500",
+   "may": false,
+   "guia": true,
+   "x0": 36,
+   "y0": 1834,
+   "x1": 574.25,
+   "y1": 1879
+  },
+  {
+   "t": "Reel: sin texto bajo y = 1248 (35 %)",
+   "px": 33,
+   "peso": "500",
+   "may": false,
+   "guia": true,
+   "x0": 36,
+   "y0": 1594,
+   "x1": 571.6875,
+   "y1": 1639
+  },
+  {
+   "t": "Libre para el sticker de enlace",
+   "px": 33,
+   "peso": "500",
+   "may": false,
+   "guia": true,
+   "x0": 108,
+   "y0": 1424,
+   "x1": 562.625,
+   "y1": 1469
+  },
+  {
+   "t": "Reel: íconos, ~230 × 770",
+   "px": 33,
+   "peso": "500",
+   "may": false,
+   "guia": true,
+   "x0": 448.640625,
+   "y0": 1704,
+   "x1": 818,
+   "y1": 1749
+  },
+  {
+   "t": "Recorte 3:4 de la grilla: 240 a 1680",
+   "px": 33,
+   "peso": "500",
+   "may": false,
+   "guia": true,
+   "x0": 522.96875,
+   "y0": 180,
+   "x1": 1044,
+   "y1": 225
+  },
+  {
+   "t": "SpindleLab.",
+   "px": 76,
+   "peso": "800",
+   "may": false,
+   "guia": false,
+   "x0": 72,
+   "y0": 282,
+   "x1": 432.5625,
+   "y1": 373
+  },
+  {
+   "t": ".",
+   "px": 76,
+   "peso": "800",
+   "may": false,
+   "guia": false,
+   "x0": 414.15625,
+   "y0": 282,
+   "x1": 432.5625,
+   "y1": 373
+  },
+  {
+   "t": "Estás pagando para que lleguen a tu sitio.",
+   "px": 44,
+   "peso": "500",
+   "may": false,
+   "guia": false,
+   "x0": 72,
+   "y0": 776,
+   "x1": 923.59375,
+   "y1": 836
+  },
+  {
+   "t": "AHÍ SE CORTA EL CIRCUITO",
+   "px": 130,
+   "peso": "800",
+   "may": true,
+   "guia": false,
+   "x0": 72,
+   "y0": 836.1875,
+   "x1": 950.9375,
+   "y1": 1131.1875
+  },
+  {
+   "t": "Chequea tu sitio gratis.",
+   "px": 36,
+   "peso": "500",
+   "may": false,
+   "guia": false,
+   "x0": 72,
+   "y0": 1145.1875,
+   "x1": 464.484375,
+   "y1": 1194.1875
+  }
+ ],
+ "puntos": [
+  {
+   "x0": 414.15625,
+   "y0": 282,
+   "x1": 432.5625,
+   "y1": 373,
+   "oro": true
+  }
+ ],
+ "desborde": false,
+ "alto": 1920
+}

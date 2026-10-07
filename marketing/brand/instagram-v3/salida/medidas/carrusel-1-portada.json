@@ -11,9 +11,9 @@
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 72,
+   "y0": 64,
    "x1": 432.5625,
-   "y1": 148
+   "y1": 155
   },
   {
    "t": ".",
@@ -27,37 +27,37 @@
    "y1": 155
   },
   {
-   "t": "Un motor de IA tiene que poder hacer tre",
+   "t": "Un motor de IA tiene que poder hacer tres cosas con tu sitio",
    "px": 44,
    "peso": "500",
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 611.234375,
-   "x1": 932,
-   "y1": 725.609375
+   "y0": 609.234375,
+   "x1": 924.796875,
+   "y1": 726.421875
   },
   {
-   "t": "Leerte,entendertey citarte",
+   "t": "LEERTE, ENTENDERTE Y CITARTE",
    "px": 140,
    "peso": "800",
    "may": true,
    "guia": false,
    "x0": 72,
-   "y0": 765.609375,
-   "x1": 1008,
-   "y1": 1143.609375
+   "y0": 732.609375,
+   "x1": 963.53125,
+   "y1": 1175.609375
   },
   {
-   "t": "Los 21 chequeos de visibilidad en IA, ex",
+   "t": "Los 21 chequeos de visibilidad en IA, explicados",
    "px": 36,
    "peso": "500",
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 1199.609375,
-   "x1": 1008,
-   "y1": 1278
+   "y0": 1227.609375,
+   "x1": 862.34375,
+   "y1": 1276.609375
   }
  ],
  "puntos": [
@@ -69,5 +69,6 @@
    "oro": true
   }
  ],
+ "desborde": false,
  "alto": 1350
 }

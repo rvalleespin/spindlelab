@@ -30,17 +30,25 @@ for (const n of piezas) {
         if (!propio) continue;
         const cs = d.defaultView.getComputedStyle(el);
         if (cs.visibility === 'hidden' || cs.display === 'none') continue;
-        const r = el.getBoundingClientRect();
-        textos.push({ t: el.textContent.trim().slice(0, 40), px: parseFloat(cs.fontSize), peso: cs.fontWeight, may: cs.textTransform === 'uppercase', guia: !!el.closest('.guia-capa'), x0: r.left + off.x, y0: r.top + off.y, x1: r.right + off.x, y1: r.bottom + off.y });
+        // Caja de la TINTA del texto (Range), no del bloque: un <p> mide todo el ancho.
+        const rg = d.createRange(); rg.selectNodeContents(el); const r = rg.getBoundingClientRect();
+        textos.push({ t: (el.innerText || el.textContent).replace(/\s*\n\s*/g, ' ').trim().slice(0, 60), px: parseFloat(cs.fontSize), peso: cs.fontWeight, may: cs.textTransform === 'uppercase', guia: !!el.closest('.guia-capa'), x0: r.left + off.x, y0: r.top + off.y, x1: r.right + off.x, y1: r.bottom + off.y });
       }
       for (const i of d.querySelectorAll('.wm i')) { const r = i.getBoundingClientRect(); puntos.push({ x0: r.left + off.x, y0: r.top + off.y, x1: r.right + off.x, y1: r.bottom + off.y, oro: !i.classList.contains('sin-oro') }); }
     }
-    return { fuentes: [...fuentes], textos, puntos };
+    // Desborde: el body es de alto fijo con overflow oculto, así que lo que se pasa no se ve.
+    const desborde = document.body.scrollHeight > document.body.clientHeight + 1 || document.body.scrollWidth > document.body.clientWidth + 1;
+    return { fuentes: [...fuentes], textos, puntos, desborde };
   });
   medidas.alto = Math.round(alto);
   writeFileSync(dir + 'salida/medidas/' + n + '.json', JSON.stringify(medidas, null, 1));
   await p.screenshot({ path: dir + 'salida/_2x/' + n + '@2x.png' });
-  console.log(n, `1080×${medidas.alto}`, 'fuentes:', medidas.fuentes.join(', '));
+  // Pieza sobre foto: una segunda captura sin texto, para medir el contraste contra lo que pisa.
+  if (await p.evaluate(() => document.body.classList.contains('sobre-foto'))) {
+    await p.addStyleTag({ content: '.capa { visibility: hidden !important; }' });
+    await p.screenshot({ path: dir + 'salida/_2x/' + n + '-fondo@2x.png' });
+  }
+  console.log(n, `1080×${medidas.alto}`, medidas.desborde ? '⚠ DESBORDA' : 'sin desborde', '· fuentes:', medidas.fuentes.join(', '));
   await p.close();
 }
 await b.close();

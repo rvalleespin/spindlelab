@@ -1,0 +1,35 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<!-- GUÍA DE ZONAS 9:16 sobre story-portada (para revisar, NO para publicar). Para otra story,
+     cambiar el src del iframe. Cifras: story orgánica 250 / 340 (Moonb, jul-2026); reel y story
+     pagada 14 % / 35 % / 6 % = 269 / 672 / 65 (Meta Ads Guide); columna de íconos del reel
+     ~230 × 770 abajo a la derecha (Hopper HQ, 18-sep-2026); recorte 3:4 de la grilla 240 a 1680. -->
+<style>
+iframe { position: absolute; inset: 0; width: 1080px; height: 1920px; border: 0; }
+.guia-capa { position: absolute; inset: 0; pointer-events: none; }
+.z { position: absolute; left: 0; right: 0; }
+.z-story { background: rgba(218, 52, 0, 0.42); }
+.z-reel { background: repeating-linear-gradient(135deg, rgba(218, 52, 0, 0.30) 0 14px, transparent 14px 28px); }
+.l { position: absolute; left: 0; right: 0; border-top: 3px dashed var(--d-papel); }
+.v { position: absolute; top: 0; bottom: 0; border-left: 3px dashed rgba(247, 245, 240, 0.6); }
+.col { position: absolute; right: 0; width: 230px; top: 1150px; bottom: 0; background: repeating-linear-gradient(45deg, rgba(14, 42, 71, 0.75) 0 14px, transparent 14px 28px); outline: 3px solid #e4f1ec; outline-offset: -3px; }
+.stk { position: absolute; left: 72px; right: 72px; top: 1360px; height: 200px; border: 3px dashed var(--d-papel); border-radius: var(--d-r); }
+.t { position: absolute; font-size: 33px; font-weight: 500; line-height: 1.3; background: #000; color: var(--d-papel); padding: 6px 12px; border-radius: var(--d-r4); }
+</style></head><body class="f916">
+<iframe src="story-portada.html"></iframe>
+<div class="guia-capa">
+  <div class="z z-story" style="top:0;height:250px"></div>
+  <div class="z z-story" style="top:1580px;height:340px"></div>
+  <div class="z z-reel" style="top:1248px;height:332px"></div>
+  <div class="col"></div>
+  <div class="l" style="top:240px"></div><div class="l" style="top:1680px"></div>
+  <div class="l" style="top:269px;border-color:#e4f1ec"></div><div class="l" style="top:1248px;border-color:#e4f1ec"></div>
+  <div class="v" style="left:65px"></div><div class="v" style="left:1015px"></div>
+  <div class="stk"></div>
+  <p class="t" style="left:24px;top:24px">Story: 250 px sin texto (barra y perfil)</p>
+  <p class="t" style="left:24px;top:1830px">Story: 340 px sin texto (responder)</p>
+  <p class="t" style="left:24px;top:1590px">Reel: sin texto bajo y = 1248 (35 %)</p>
+  <p class="t" style="left:96px;top:1420px">Libre para el sticker de enlace</p>
+  <p class="t" style="right:250px;top:1700px">Reel: íconos, ~230 × 770</p>
+  <p class="t" style="right:24px;top:176px">Recorte 3:4 de la grilla: 240 a 1680</p>
+</div>
+</body></html>

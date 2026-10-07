@@ -13,7 +13,7 @@
    "x0": 72,
    "y0": 72,
    "x1": 663.453125,
-   "y1": 122.390625
+   "y1": 121
   },
   {
    "t": "5 de 5",
@@ -24,40 +24,40 @@
    "x0": 908.921875,
    "y0": 72,
    "x1": 1008,
-   "y1": 122.390625
+   "y1": 121
   },
   {
-   "t": "Corre los 21 chequeos sobre tu propio si",
+   "t": "Corre los 21 chequeos sobre tu propio sitio.",
    "px": 76,
    "peso": "500",
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 178.390625,
-   "x1": 1008,
-   "y1": 345.578125
+   "y0": 167.390625,
+   "x1": 821.59375,
+   "y1": 354.984375
   },
   {
-   "t": "No pide registro, y la metodología compl",
+   "t": "No pide registro, y la metodología completa está publicada.",
    "px": 40,
    "peso": "400",
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 369.578125,
-   "x1": 1008,
-   "y1": 489.578125
+   "y0": 371.578125,
+   "x1": 864.15625,
+   "y1": 486.578125
   },
   {
-   "t": "Chequea tu sitio gratis. Enlace en la bi",
+   "t": "Chequea tu sitio gratis. Enlace en la bio.",
    "px": 36,
    "peso": "500",
    "may": false,
    "guia": false,
    "x0": 72,
    "y0": 529.578125,
-   "x1": 1008,
-   "y1": 579.96875
+   "x1": 738.734375,
+   "y1": 578.578125
   },
   {
    "t": "SpindleLab.",
@@ -66,9 +66,9 @@
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 1092.828125,
-   "x1": 1008,
-   "y1": 1278
+   "y0": 1050.828125,
+   "x1": 1006.59375,
+   "y1": 1286.828125
   },
   {
    "t": ".",
@@ -91,5 +91,6 @@
    "oro": true
   }
  ],
+ "desborde": false,
  "alto": 1350
 }

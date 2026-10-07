@@ -11,9 +11,9 @@
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 72,
+   "y0": 64,
    "x1": 432.5625,
-   "y1": 148
+   "y1": 155
   },
   {
    "t": ".",
@@ -27,26 +27,26 @@
    "y1": 155
   },
   {
-   "t": "Tu sitio está escrito para personas. El ",
+   "t": "Tu sitio está escrito para personas. Cada vez más, el primer",
    "px": 76,
    "peso": "500",
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 204,
-   "x1": 972,
-   "y1": 538.375
+   "y0": 193,
+   "x1": 917.8125,
+   "y1": 547.78125
   },
   {
-   "t": "Chequea tu sitio gratis. Enlace en la bi",
+   "t": "Chequea tu sitio gratis. Enlace en la bio.",
    "px": 36,
    "peso": "500",
    "may": false,
    "guia": false,
    "x0": 72,
    "y0": 1227.609375,
-   "x1": 1008,
-   "y1": 1278
+   "x1": 738.734375,
+   "y1": 1276.609375
   }
  ],
  "puntos": [
@@ -58,5 +58,6 @@
    "oro": true
   }
  ],
+ "desborde": false,
  "alto": 1350
 }

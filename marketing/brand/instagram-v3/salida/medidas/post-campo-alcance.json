@@ -11,9 +11,9 @@
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 72,
+   "y0": 64,
    "x1": 432.5625,
-   "y1": 148
+   "y1": 155
   },
   {
    "t": ".",
@@ -27,37 +27,37 @@
    "y1": 155
   },
   {
-   "t": "Alcance",
+   "t": "ALCANCE",
    "px": 132,
    "peso": "800",
    "may": true,
    "guia": false,
    "x0": 72,
-   "y0": 212,
-   "x1": 1008,
-   "y1": 330.796875
+   "y0": 180,
+   "x1": 687.53125,
+   "y1": 361
   },
   {
-   "t": "Gestión de redes sociales · Paid Media (",
+   "t": "Gestión de redes sociales · Paid Media (Google)",
    "px": 36,
    "peso": "500",
    "may": false,
    "guia": false,
    "x0": 72,
    "y0": 360.796875,
-   "x1": 1008,
-   "y1": 411.1875
+   "x1": 865.828125,
+   "y1": 409.796875
   },
   {
-   "t": "Ya tienes demanda y quieres más. El cont",
+   "t": "Ya tienes demanda y quieres más. El contenido creativo lo po",
    "px": 44,
    "peso": "400",
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 437.1875,
-   "x1": 992,
-   "y1": 628.578125
+   "y0": 438.1875,
+   "x1": 937.25,
+   "y1": 625.78125
   },
   {
    "t": "Ya tienes demanda y quieres más.",
@@ -77,9 +77,9 @@
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 650.578125,
-   "x1": 1008,
-   "y1": 704.578125
+   "y0": 652.578125,
+   "x1": 575.375,
+   "y1": 701.578125
   },
   {
    "t": "$350.000/mes",
@@ -113,5 +113,6 @@
    "oro": true
   }
  ],
+ "desborde": false,
  "alto": 1350
 }

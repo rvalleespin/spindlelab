@@ -11,9 +11,9 @@
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 72,
+   "y0": 64,
    "x1": 432.5625,
-   "y1": 148
+   "y1": 155
   },
   {
    "t": ".",
@@ -27,15 +27,15 @@
    "y1": 155
   },
   {
-   "t": "Desarrollo web que los motores de IA pue",
+   "t": "Desarrollo web que los motores de IA pueden leer",
    "px": 76,
    "peso": "500",
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 204,
-   "x1": 1008,
-   "y1": 371.1875
+   "y0": 193,
+   "x1": 961.171875,
+   "y1": 380.59375
   },
   {
    "t": "Combeau, fotografía · Cliente",
@@ -43,21 +43,21 @@
    "peso": "500",
    "may": false,
    "guia": false,
-   "x0": 99.6875,
-   "y0": 446.875,
-   "x1": 590.953125,
-   "y1": 520.375
+   "x0": 119.6875,
+   "y0": 460.875,
+   "x1": 570.953125,
+   "y1": 505.875
   },
   {
-   "t": "Sitio y panel de administración para un ",
+   "t": "Sitio y panel de administración para un fotógrafo de retrato",
    "px": 40,
    "peso": "400",
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 1151.1875,
-   "x1": 1008,
-   "y1": 1271.1875
+   "y0": 1153.1875,
+   "x1": 1002.875,
+   "y1": 1268.1875
   }
  ],
  "puntos": [
@@ -69,5 +69,6 @@
    "oro": true
   }
  ],
+ "desborde": false,
  "alto": 1350
 }

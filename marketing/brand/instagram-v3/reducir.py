@@ -6,7 +6,7 @@
 import sys, os, glob
 from PIL import Image
 base = os.path.dirname(os.path.abspath(__file__))
-nombres = sys.argv[1:] or [os.path.basename(f)[:-7] for f in sorted(glob.glob(f'{base}/salida/_2x/*@2x.png'))]
+nombres = sys.argv[1:] or [os.path.basename(f)[:-7] for f in sorted(glob.glob(f'{base}/salida/_2x/*@2x.png')) if not f.endswith('-fondo@2x.png')]
 for n in nombres:
     im = Image.open(f'{base}/salida/_2x/{n}@2x.png').convert('RGB')
     im = im.resize((1080, round(im.height * 1080 / im.width)), Image.LANCZOS)

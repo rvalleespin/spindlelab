@@ -6,7 +6,8 @@ body { padding: var(--d-m); display: flex; flex-direction: column; }
 .fila-dato { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 32px; align-items: baseline; }
 .fila-dato .h2 { font-size: 52px; }
 .fila-dato .pts { font-size: var(--t-guia); font-weight: 600; white-space: nowrap; }
-.fila-dato .cuerpo { grid-column: 1 / -1; }
+.fila-dato .cuerpo { grid-column: 1 / -1; text-wrap: balance; }
+.nota { text-wrap: balance; }
 .paso { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 6px 16px; }
 .paso .n { color: var(--d-gris); font-size: var(--t-guia); font-variant-numeric: tabular-nums; line-height: 1.35; }
 .paso .t { font-size: var(--t-guia); font-weight: 500; line-height: 1.35; }

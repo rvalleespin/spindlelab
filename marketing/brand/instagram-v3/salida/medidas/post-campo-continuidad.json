@@ -11,9 +11,9 @@
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 72,
+   "y0": 64,
    "x1": 432.5625,
-   "y1": 148
+   "y1": 155
   },
   {
    "t": ".",
@@ -27,15 +27,15 @@
    "y1": 155
   },
   {
-   "t": "Continuidad",
+   "t": "CONTINUIDAD",
    "px": 132,
    "peso": "800",
    "may": true,
    "guia": false,
    "x0": 72,
-   "y0": 212,
-   "x1": 1008,
-   "y1": 330.796875
+   "y0": 180,
+   "x1": 985.1875,
+   "y1": 361
   },
   {
    "t": "Acompañamiento mensual",
@@ -45,19 +45,19 @@
    "guia": false,
    "x0": 72,
    "y0": 360.796875,
-   "x1": 1008,
-   "y1": 411.1875
+   "x1": 520.453125,
+   "y1": 409.796875
   },
   {
-   "t": "Ya giras y quieres sostenerlo. Implement",
+   "t": "Ya giras y quieres sostenerlo. Implementación continua e inf",
    "px": 44,
    "peso": "400",
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 437.1875,
-   "x1": 992,
-   "y1": 692.375
+   "y0": 438.1875,
+   "x1": 937.296875,
+   "y1": 689.578125
   },
   {
    "t": "Ya giras y quieres sostenerlo.",
@@ -77,9 +77,9 @@
    "may": false,
    "guia": false,
    "x0": 72,
-   "y0": 714.375,
-   "x1": 1008,
-   "y1": 768.375
+   "y0": 716.375,
+   "x1": 577.15625,
+   "y1": 765.375
   },
   {
    "t": "$590.000/mes",
@@ -113,5 +113,6 @@
    "oro": false
   }
  ],
+ "desborde": false,
  "alto": 1350
 }
