@@ -1,3 +1,7 @@
+> **El manual manda.** La fuente de verdad de este kit es `marketing/brand/manual-de-marca.md` §10.
+> Si este README y el manual dicen distinto, el que está mal es este README. Alineado el 7-oct por
+> la sesión de redes al resolver los bloqueantes de la revisión independiente.
+
 # Kit de Instagram v3
 
 Plantillas HTML que se exportan a PNG o JPG para publicar en Instagram con el sistema del sitio v3. Ese sistema es el lenguaje de driftime.com, ya traducido a SpindleLab en `spindlelab-astro/src/styles/driftime.css`. Aquí se copia el sistema tal como quedó traducido. No se copia nada propio de driftime: ni su tipografía, ni su logo, ni sus textos.
@@ -13,7 +17,7 @@ La carpeta es autocontenida: trae sus fuentes (`*.woff2`, copiadas de `tableros/
 | `post-titular` | 1080×1350 | Una idea fuerte, sin imagen | sí, arriba | sí, una vez | no (negro) | no |
 | `post-campo-desarrollo` · `-visibilidad` · `-continuidad` · `-alcance` | 1080×1350 | Un pilar con su servicio y su precio | sí | la palabra del campo | brasa · navy · petróleo · ciruela | una del campo, como en el sitio |
 | `post-obra` | 1080×1350 | Trabajo real en su mockup | sí | no | no | mockup con su rótulo de obra |
-| `post-foto` | 1080×1350 | Una frase sobre una foto del pool | sí | no | no | foto a sangre, sin velo |
+| `post-foto` | 1080×1350 | La foto como pieza (radio, en su proporción, sin nada escrito encima) y el titular en h2 sobre el lienzo | sí | no | no | nunca a sangre, nunca texto encima |
 | `carrusel-1-portada` | 1080×1350 | Abre el carrusel | sí | sí, una vez en todo el carrusel | no | no |
 | `carrusel-2-interior` · `carrusel-4-interior` | 1080×1350 | Filas con filete y pasos numerados | **no** | **no** | no | no |
 | `carrusel-3-dato` | 1080×1350 | Una cifra real en Manrope 500, en papel | **no** | **no** | no | no |
@@ -24,7 +28,7 @@ La carpeta es autocontenida: trae sus fuentes (`*.woff2`, copiadas de `tableros/
 
 El carrusel de ejemplo es real. Toma el artículo «Los 21 chequeos de visibilidad en IA, explicados uno por uno» (blog, 4-sep-2026). Las cifras salen del artículo y cuadran: bloques de 30 + 40 + 30 puntos, 5 + 8 + 8 = 21 chequeos, 6 + 8 + 5 + 6 = 25 y 6 + 5 = 11.
 
-En el resto de las piezas, los textos vienen del sitio tal cual: el hero de la home, el h1 de Desarrollo web, los campos de `oferta-v3.json` y la línea de obra de `obra-v3.json`. La única excepción es `post-foto`, que recorta la presentación de la home.
+En el resto de las piezas, los textos vienen del sitio tal cual: el hero de la home, el h1 de Desarrollo web, los campos de `oferta-v3.json` y la línea de obra de `obra-v3.json`. `post-foto` usa la presentación de la home **entera, con su referente** («es la máquina que responde…»): recortarla antes del referente fue el bloqueante 4 de la revisión.
 
 ## Reglas que cumple el kit (y que conviene no romper al editar)
 
@@ -43,7 +47,7 @@ En el resto de las piezas, los textos vienen del sitio tal cual: el hero de la h
 - **Imagen.**
   - Solo el pool del sitio y los mockups de obra.
   - La etiqueta va arriba a la izquierda, como en el sitio. En capturas planas va abajo.
-  - Raigal solo puede aparecer con «Pieza de concepto · no es un cliente» primero. Además, ese rótulo tiene que leerse en la miniatura de la grilla; si no se lee, Raigal va en una lámina interior.
+  - Raigal solo puede aparecer con «Pieza de concepto · no es un cliente» primero. Y **Raigal va solo en láminas interiores**: nunca en una portada ni en una pieza única (manual §10.6 y §10.10).
 - **Fotos de Unsplash (regla nueva).** Se aceptan objetos, materiales y lugares. Nunca personas presentadas como el equipo o como clientes. Nunca pantallas con datos inventados. El kit todavía no trae ninguna foto de Unsplash, porque las elige Ramón.
 - **Voz.** Sin «acá», sin voseo y sin raya como muleta. Lo verifiqué con grep en todos los HTML. Cero cifras, logos o testimonios inventados. Verifica y Cumple tiene su propia línea editorial y no sigue este kit.
 - **Precio.** Como máximo un «Desde ▏ $X + IVA» por pieza, con la cifra exacta de `oferta-v3.json`. Nunca la cartera completa. **Lo tiene que confirmar Ramón** (ver Decisiones abiertas).
@@ -65,7 +69,7 @@ Si se escribiera «6 px» literal en la lámina, se vería como una esquina rect
 ## Cómo se edita
 
 1. **Copia la plantilla** que corresponda, con un nombre nuevo, en esta misma carpeta. Cambia solo el texto y la imagen. Las líneas para editar están marcadas `EDITAR`.
-2. **Display.** Cada palabra ocupa de ancho su tamaño de letra por un factor (medido en Manrope 800). El renglón más largo tiene que caber en 936 px.
+2. **Display.** Cada palabra ocupa de ancho su tamaño de letra por un factor (medido en Manrope 800). El renglón más largo tiene que caber en los **900 px** de ancho útil (margen 90, manual §10.3).
 
    | Palabra | Factor |
    |---|---|
@@ -85,8 +89,8 @@ Si se escribiera «6 px» literal en la lámina, se vería como una esquina rect
    - Tres ejemplos de lo que pasó con este kit:
      - `domino-curva.jpg` tiene un 0,6 % de píxeles de oro, así que Continuidad usa `escritorio.jpg`, la otra foto que ese campo usa en el sitio. `domino-curva.jpg` quedó fuera de `img/`.
      - En el mockup del book de modelo, la franja amarilla del piso queda fuera con el encuadre `50% 36%`.
-     - En `domino.jpg`, la luz cálida sobre los puntos del dominó caía en el rango del oro. Se corrigió con `filter: saturate(0.65)` en `post-foto` y en `story-portada`. Es el mismo criterio con que el sitio recortó `hilos.jpg`.
-5. **Foto con texto encima.** El texto tiene que caer donde la foto ya es oscura: no se usa velo. `medir.py` mide el contraste contra el píxel más claro que pisa el texto. `domino.jpg` tiene el tercio de arriba en negro puro (0,0,0). Por eso se apoya abajo a 1080×1080 y el lienzo la continúa sin costura.
+     - En `domino.jpg`, la luz cálida sobre los puntos del dominó caía en el rango del oro. **Ese filtro se retiró el 7-oct**: bajarle la saturación a una foto para que pase una medición es un tratamiento que el sitio no hace y el manual no registra. Por tono, `domino.jpg` da 0,006 %, bajo el umbral.
+5. **Texto sobre una foto: no va.** El manual lo prohíbe salvo la etiqueta de pieza (§10.10), y `post-foto` se recompuso con la foto como pieza y el titular en el lienzo. El modo «sobre-foto» de `render.mjs` queda sin uso.
 
 ## Cómo se rinde
 
@@ -111,7 +115,7 @@ Lo que **no** está verificado es cómo recomprime Instagram. Después de la pri
 
 | Formato | Zona | Fuente |
 |---|---|---|
-| Feed y carrusel 1080×1350 (4:5) | La grilla del perfil muestra el centro 3:4, de x = 34 a 1046. El margen del kit es de 72 px: quedan 38 dentro del recorte. Todas las láminas de un carrusel toman la proporción de la primera | Kapwing · Oktopost · Storrito |
+| Feed y carrusel 1080×1350 (4:5) | La grilla del perfil muestra el centro 3:4, de x = 34 a 1046. El margen del kit es de **90 px** (34 del recorte + 20 del sitio × 2,77), igual que el manual. Todas las láminas de un carrusel toman la proporción de la primera | Kapwing · Oktopost · Storrito |
 | Story 1080×1920, orgánica | Sin texto en los 250 px de arriba ni en los 340 de abajo | Moonb, jul-2026 |
 | Reel (y story pagada) | Meta pide dejar libre el 14 % de arriba, el 35 % de abajo y el 6 % de cada lado: 269, 672 y 65 px. Abajo a la derecha está la columna de íconos, de unos 230 × 770 px. **Esto cambia la cifra fijada de 340 abajo, que vale solo para stories orgánicas** | Meta Ads Guide (Reels, Stories) · Hopper HQ |
 | Portada del reel en la grilla | Recorte central 3:4: de y = 240 a 1680 | Hopper HQ |
@@ -156,8 +160,8 @@ Una observación para Ramón: con la regla de wordmark en cada portada, el wordm
 
 ## Decisiones abiertas para Ramón
 
-1. **El punto del wordmark sobre brasa y petróleo.** Por defecto va en el color del texto del campo: el oro da 1,94:1 sobre brasa y 2,26:1 sobre petróleo, y es lo que hace el pie del sitio. El manual v2.0 dice que el punto «no cambia nunca de color». `post-campo-desarrollo-oro.png` muestra la otra opción para comparar.
-2. **El precio en las piezas.** El kit pone un solo «Desde $X + IVA» por pieza, el más bajo del campo, como reencuadró Ramón el 1-sep. La alternativa es ninguno. La ficha `clientes/spindlelab.md` todavía tiene la regla vieja.
-3. **El formato 3:4 (1080×1440).** Instagram lo acepta desde may-2025 y no pierde nada en la grilla. El kit queda en 4:5 por la decisión fijada; pasar a 3:4 es cambiar el alto en `base.css` (`body.f45`).
+> Las dos primeras **ya no están abiertas**: el manual v3.0 las resolvió. El punto va en el color del texto del campo sobre brasa y petróleo (§10.5), y el precio es una línea por pieza con la cifra de `oferta-v3.json` (§10.8). La cita al manual v2.0 quedaba vieja.
+
+1. **El formato 3:4 (1080×1440).** Instagram lo acepta desde may-2025 y no pierde nada en la grilla. El kit queda en 4:5 por la decisión fijada; pasar a 3:4 es cambiar el alto en `base.css` (`body.f45`).
 4. **El enlace del bio.** El llamado «Chequea tu sitio gratis. Enlace en la bio.» solo funciona si el bio sigue apuntando a `spindlelab.cl/diagnostico/`, y no a `verifica.spindlelab.cl`.
 5. **El radio convertido** (16,6 px en la lámina para que se vea de 6 px). Si se prefiere el literal de 6 px, se cambia `--k` a 1 en `base.css`.

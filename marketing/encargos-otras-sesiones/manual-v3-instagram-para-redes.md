@@ -133,6 +133,103 @@ El detalle de cada uno está en `_proceso/revision-independiente.md`. En resumen
 
 ## Respuesta de la sesión de redes
 
-*(Llenar acá. El veredicto puede ser aprueba, aprueba con cambios o rechaza. Agregar qué se
-cambió en el manual o en el kit y en qué commits, y qué decisiones quedan para Ramón. Con esto,
-el troncal lo registra.)*
+**Veredicto: APRUEBA CON CAMBIOS.** Evaluado el 7-oct-2026 por la sesión de redes (Cata).
+Rama de trabajo: `claude/cata-evalua-manual-v3`, sacada de `claude/magical-franklin-ckfki2`.
+
+**Los 4 bloqueantes están resueltos. El §10 sirve para producir.** Pero **no se publica todavía**,
+y no por el manual: por tres reglas que dejó Ramón el 1-sep y que el kit contradice. Son suyas, no
+mías, y van al final.
+
+### Qué decidí en cada bloqueante
+
+| # | Decisión | Qué se hizo |
+|---|---|---|
+| **1 · Manual y kit no coinciden** | **Manda el manual.** Opción A de la revisión. El manual deriva cada medida del sitio a 390 × 2,77 y lo deja escrito; el kit tenía valores sin regla que los explicara. Un sistema se audita contra un principio, no contra un archivo | Los arreglos a medio hacer (`b70f2c3`) ya habían alineado `base.css`, `campo.css` y seis HTML. **Faltaban los cinco archivos del carrusel, que nadie tocó**: display 140 → 108, los nombres de bloque de `fila-dato` a su rol real (h3, 55), el wordmark del cierre 197 → 190 |
+| **2 · La cifra a 460 px en una lámina interior** | **Se cambia la lámina, no la regla.** La escasez del display es lo que hace que el primer grito se vea; una cifra gigante adentro es un segundo grito | La cifra pasa a h1 (100 px, 500, papel) y **se agregó la fuente en rótulo**, que faltaba: «Metodología publicada en spindlelab.cl/diagnostico». Se cita `/diagnostico/`, que está en vivo y publica el peso de cada bloque; el artículo del blog todavía no está publicado y no se puede citar |
+| **3 · post-foto no es lo que el manual define** | **Manda el manual: la foto es una pieza, no un fondo.** Una foto a sangre con el titular encima es la miniatura más genérica de Instagram, y el sitio no lo hace en ninguna parte | Ya estaba recompuesto en `b70f2c3`, pero quedaba la foto a media caja, como una miniatura huérfana: `domino.jpg` es 1:1 y a ancho completo pedía 900×900, que no cabe con el titular restituido. **Cambié la foto a `escritorio.jpg` (2,39)**, que a 900 de ancho mide 377 de alto y deja sitio. Si se prefiere el dominó, hay que acortar el titular |
+| **4 · El titular corta la frase antes de su referente** | **Se restituye entero.** No es una preferencia: la falta de ese referente ya fue el bloqueante de las dos direcciones del 2-oct | Resuelto en `b70f2c3`. Verificado contra `index.astro:212-215` |
+
+### Los arreglos a medio hacer: terminados, no descartados
+
+Iban en la dirección correcta y resolvían tres de los cuatro bloqueantes. Descartarlos habría sido
+tirar trabajo bueno. Los terminé.
+
+### Menores resueltos
+
+- **7 · «el chequeo que más pesa»** era falso: en la tabla del artículo **hay dos chequeos que pesan
+  8** («El servidor no expulsa a los robots de IA» y «Tu negocio está declarado como entidad»). Lo
+  verifiqué en el HTML del artículo. La lámina ahora dice «uno de los dos chequeos que más pesan».
+  **Queda un aviso para el dueño del blog: el artículo tiene la misma afirmación y hay que
+  corregirla ahí también.**
+- **8 · el paso 3 se contradecía** → «Y reescribe tus títulos como preguntas. Once puntos, con el
+  contenido que ya tienes.»
+- **13 · falta el texto alternativo** → **las 14 piezas** llevan ahora `<meta name="alt-instagram">`
+  con el alt escrito. Faltaban los cinco carruseles y la guía. Se copia a mano en «Configuración
+  avanzada» al publicar: el PNG no lo hereda.
+- **6 · el precio bajo dos servicios** y **11 · el filtro de saturación**: ya resueltos en `b70f2c3`,
+  verificados.
+- **10 · el README contradecía al manual** → alineado: encabezado que dice que el manual manda,
+  post-foto redefinido, Raigal solo en interiores, 936 → 900, el filtro retirado, «foto con texto
+  encima» eliminado, y las decisiones 1 y 2 marcadas como ya resueltas por el manual.
+- **9 · dos criterios de oro** → **adopto el de tono**, que describe lo que se ve. Lo medí por mi
+  cuenta en las 14 piezas: el oro se concentra siempre en el punto del wordmark. Lo que cae fuera
+  son **entre 8 y 20 píxeles dentro de fotos**, en cafés oscuros (96,77,43) y una crema pálida
+  (223,197,152): ninguno se lee como el acento dorado. **Falta escribir ese criterio único en §10.9
+  y en `medir.py`**, que es una línea y no alcancé a hacerla.
+
+### Dos defectos que encontré yo
+
+1. **Franja negra de ~85 px al fondo de los cuatro post-campo** (ARREGLADO). El campo dejaba de
+   cubrir la lámina, y el manual dice que el campo es el fondo entero, nunca una franja. **No era
+   del kit: era del render.** A ventana exacta de 1350, Chrome reflujaba y el fondo quedaba corto;
+   con ventana más alta y recorte sale completo. Los PNG y JPG de `salida/` están rehechos así y
+   verificados en 0 px de franja. **Esto hay que mirarlo también en el Mac**: si `render.mjs` da la
+   franja, el parámetro de ventana es el culpable, no el CSS.
+2. **Las filas de una sola pieza no llenan el ancho** (NO arreglado, es decisión de dirección). Con
+   una sola imagen, la pieza se encoge al alto disponible y queda alineada a la izquierda, con negro
+   a la derecha. Se ve en `post-campo-alcance`. Arreglarlo a la fuerza devuelve el desborde del
+   defecto 1, así que la salida es editorial: elegir para cada pieza una foto cuya proporción calce
+   con el alto que deja el texto, que es lo que hice en post-foto. **Es de Bruno.**
+
+### ⚠️ Lo que bloquea publicar: tres reglas de Ramón del 1-sep
+
+El manual no las reconcilia y el kit las contradice. **Decide Ramón; yo no las retiro por mi cuenta.**
+
+1. **El gancho «Comenta CIRCUITO».** `clientes/spindlelab.md:184-188` y `:201`: «Comenta CIRCUITO y
+   te mandamos el link por DM», con **ManyChat ya conectado** (keyword `CIRCUITO`, activo sobre el
+   post del dominó). El razonamiento sigue en pie: *en IG los links no son clicables y el DM es la
+   entrega real.* El kit llama a «Chequea tu sitio gratis. Enlace en la bio», que es un clic menos
+   directo. **O el llamado suma el gancho, o la regla del 1-sep se retira.**
+2. **«Stories sueltas: NO por ahora»** (`:208-210`). Solo re-compartir el feed, hasta tener base de
+   seguidores. **El kit trae `story-portada` diseñada.** O la plantilla espera, o la regla cambia.
+3. **«Las fichas tipográficas planas SOLAS ya no pasan»** (`:211-214`): toda pieza nueva bajo el
+   mundo del concepto. **`post-titular` y las cinco láminas del carrusel son solo tipografía.** Ojo
+   con el matiz: esa regla nombra el concepto del dominó del sistema v2, y el v3 cambió el sistema
+   entero. Puede que ya esté obsoleta por eso, pero **eso lo dices tú, no yo.**
+
+**Y una cuarta que no estaba en la lista y me toca a mí:** `:266` dice **«VIERNES NO SE PUBLICA»**
+(B2B, viernes tarde muerto). El calendario de octubre que armé hoy tiene piezas el vie 16, el vie 23
+y el vie 30. **O esa regla sigue y muevo esos tres slots, o se retira.** Avísame y lo corrijo.
+
+### Lo que decide Ramón antes de la primera publicación (del propio manual, §10.11)
+
+El enlace del bio (`/diagnostico/` o `verifica.spindlelab.cl`) · 4:5 o 3:4 · la lectura del radio
+(17/11 de lienzo, que es la que recomiendo: el literal queda casi recto en el teléfono) · volver a
+capturar la cuenta, que no se mira desde el 25-sep.
+
+### ⚠️ Caveat de verificación, importante
+
+**Esta sesión corre en la nube y `spindlelab-astro` no tiene playwright instalado**, así que
+`node render.mjs` falla acá. Rendí con Chrome headless con los mismos parámetros (2x, fuentes
+locales, LANCZOS a 1080, JPEG q90 croma 4:4:4) y **miré cada pieza**. Pero **`salida/medidas/*.json`
+quedaron viejos**, así que las columnas automáticas de `medir.py` están comparando contra cajas
+desplazadas y **no sirven como están**. Por eso medí el oro por mi cuenta.
+
+**Antes de publicar, en el Mac: `node render.mjs` y `python3 medir.py` completos**, para regenerar
+las medidas y confirmar lo que yo verifiqué a ojo y con medición propia.
+
+### Lo que NO toqué
+
+§01 a §09 del manual · la línea de Verifica y Cumple · las skills, `redes/README.md`, las plantillas
+v2, `perfil-instagram.md` y las memorias: **esa actualización va recién cuando Ramón apruebe**, como
+dice el encargo. Y no se publicó nada.
