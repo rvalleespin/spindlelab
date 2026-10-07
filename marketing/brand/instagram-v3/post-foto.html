@@ -1,0 +1,19 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<!-- POST-FOTO · 1080×1350 · una foto del pool a sangre, SIN velo: el texto va donde la foto ya es
+     oscura. Texto: la presentación de la home v3 (del post publicado del 1-sep), recortado.
+     Al cambiar la foto, medir el contraste del texto contra la zona que pisa (medir.py lo hace). -->
+<style>
+body { padding: var(--d-m); display: flex; flex-direction: column; }
+.foto { position: absolute; inset: 0; z-index: 0; }
+.foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 100%; display: block; }
+.capa { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%; }
+.h1 { margin-top: 56px; max-width: 900px; }
+.wmpie { margin-top: auto; }
+</style></head><body class="f45">
+<div class="foto"><img src="img/domino.jpg" alt=""></div>
+<div class="capa">
+  <div><span class="wm wm--76">SpindleLab<i>.</i></span></div>
+  <h1 class="h1">Tu sitio está escrito para personas. El primero en llegar ya no es una persona.</h1>   <!-- EDITAR -->
+  <p class="llamado wmpie">Chequea tu sitio gratis. Enlace en la bio.</p>
+</div>
+</body></html>

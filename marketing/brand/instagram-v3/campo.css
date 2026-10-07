@@ -1,0 +1,8 @@
+/* Composición compartida de post-campo-*.html (1080×1350): el campo del sitio en una lámina.
+   Orden del sitio: palabra en display · servicios · momento + descripción · precio · imagen. */
+body { padding: var(--d-m); display: flex; flex-direction: column; }
+.palabra { font-size: 132px; margin-top: 64px; white-space: nowrap; }   /* las cuatro al mismo tamaño: «Continuidad» (6,92 × tamaño) cabe en 936 */
+.servicios { margin-top: 30px; font-size: var(--t-rot); font-weight: 500; line-height: 1.4; }
+.guia { margin-top: 26px; max-width: 920px; }
+.precio { margin-top: 22px; }
+.pieza { flex: none; height: 400px; margin-top: auto; }   /* alto fijo: las cuatro variantes ponen la imagen a la misma altura en la grilla */
