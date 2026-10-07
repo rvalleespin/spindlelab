@@ -135,9 +135,19 @@ cargo, seguidores): hay homónimos (otra "aleyda solis" en Nicaragua, otra "Aley
 Roundtable, 61.726) y Glenn Gabe (G-Squared Interactive; en la búsqueda no ofrece "Seguir", sí en su perfil).
 **Ya seguía:** Juan Carlos Hurtado Salas (consultor de protección de datos, Santiago; 2º grado, con dos contactos en común).
 
-**Vistos esta semana y no seguidos (falta verificar quiénes son):** voces chilenas de la Ley 21.719 (Josefina Navarrete
-Bada, Jorge Martelli de TitanSec, Morgan y Cía., Presencia360) y la asociación gremial "A G P D Chile" que LinkedIn
-sugirió en la barra lateral (no se encontró como página de empresa).
+**Voces chilenas de la Ley 21.719, seguidas el 7-oct (verificadas, "Siguiendo"):** Josefina Navarrete Bada (abogada, Prieto
+Abogados, Universidad de Chile; 581 seguidores; publicó sobre el proyecto que cambiaría el art. sexto transitorio) y Jorge
+Martelli (Director de Operaciones de TitanSec, ciberseguridad y Ley 21.719; 2º grado, contactos en común Nicolás Fontaine y
+Matías Herrera). A Jorge se le dio "Seguir" desde el menú "..." de su perfil porque el botón principal era "Conectar"
+(que habría enviado una invitación); no se envió ninguna.
+
+**Vistos y NO seguidos, con el motivo:**
+- **Presencia360** (servicios y consultoría de TI, 143 seguidores): "combina auditoría automatizada y análisis especializado para
+  mejorar cumplimiento normativo, SEO, rendimiento, seguridad y experiencia de usuario". **Es un competidor directo del chequeo.**
+  Seguirlo es decisión de Ramón.
+- **Morgan y Cía.**: hay dos páginas distintas (asesoría de inversión/CFO remoto, 54 seguidores; despacho de abogados, 3
+  seguidores) y no se pudo confirmar cuál escribió el post. Aporta poco a la red.
+- **"A G P D Chile"** (asociación gremial que LinkedIn sugirió): no se encontró como página de empresa; falta verificar qué es.
 
 **Para otro frente:** las invitaciones a conectar con abogados y contadores de Chile, que son los dos oficios con los que el
 chequeo se complementa ("la política de privacidad la redacta un abogado"), por lista y con su visto bueno.
