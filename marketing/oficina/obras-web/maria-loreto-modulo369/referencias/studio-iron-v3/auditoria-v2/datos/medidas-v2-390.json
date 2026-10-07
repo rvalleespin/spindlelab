@@ -1,0 +1,4898 @@
+{
+ "01-inicio": {
+  "url": "https://modulo369-maqueta.pages.dev/?aud=1#/",
+  "titulo": "Módulo 369 · maqueta",
+  "vw": 390,
+  "vh": 844,
+  "alto": 3511,
+  "pantallas": 4.2,
+  "lenis": false,
+  "texto": {
+   "palabras": 253,
+   "palabrasV0": 75,
+   "caracteres": 1306,
+   "familias": {
+    "IBM Plex Mono": 352,
+    "Instrument Serif": 236,
+    "Archivo": 718
+   },
+   "alineacion": {
+    "center": 1065,
+    "left": 226,
+    "right": 15,
+    "otra": 0
+   },
+   "topEstilos": [
+    {
+     "estilo": "Archivo | 14px | 500 | normal | none | ls normal | lh 21.7px",
+     "chars": 438,
+     "ejemplo": "Módulo 369 es una galería de arte en línea, en esp"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 0.96px | lh 16.8px",
+     "chars": 170,
+     "ejemplo": "Maqueta"
+    },
+    {
+     "estilo": "Archivo | 12px | 500 | normal | none | ls normal | lh 14.4px",
+     "chars": 156,
+     "ejemplo": "Línea 04 (2025)"
+    },
+    {
+     "estilo": "Instrument Serif | 13px | 400 | normal | uppercase | ls 0.26px | lh 15.6px",
+     "chars": 117,
+     "ejemplo": "Artista C"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls 0.48px | lh 16.8px",
+     "chars": 95,
+     "ejemplo": "Obras, artistas, textos y datos de relleno: se cam"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 1.8px | lh 16.8px",
+     "chars": 83,
+     "ejemplo": "Ir al contenido"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 13px",
+     "chars": 54,
+     "ejemplo": "Artistas"
+    },
+    {
+     "estilo": "Archivo | 12px | 400 | normal | none | ls normal | lh 16.8px",
+     "chars": 50,
+     "ejemplo": "Módulo 369 · Galería de arte en línea"
+    },
+    {
+     "estilo": "Instrument Serif | 46.8px | 400 | normal | uppercase | ls -0.468px | lh 37.44px",
+     "chars": 33,
+     "ejemplo": "De cada artista, la serie entera"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 26px",
+     "chars": 26,
+     "ejemplo": "Consulta por una"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 26px",
+     "chars": 20,
+     "ejemplo": "obra"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 23.4px",
+     "chars": 18,
+     "ejemplo": "Encuentro"
+    },
+    {
+     "estilo": "Instrument Serif | 20px | 400 | normal | uppercase | ls normal | lh 24px",
+     "chars": 13,
+     "ejemplo": "Obras"
+    },
+    {
+     "estilo": "Archivo | 14px | 500 | normal | none | ls normal | lh 22.4px",
+     "chars": 10,
+     "ejemplo": "Módulo 369"
+    }
+   ],
+   "colores": [
+    [
+     "rgb(27, 27, 25)",
+     850
+    ],
+    [
+     "rgb(107, 103, 95)",
+     236
+    ],
+    [
+     "rgb(238, 234, 226)",
+     169
+    ],
+    [
+     "rgb(211, 204, 190)",
+     50
+    ],
+    [
+     "rgb(31, 59, 214)",
+     1
+    ]
+   ],
+   "bloquesLargos": [
+    {
+     "palabras": 30,
+     "y": 774,
+     "texto": "Módulo 369 es una galería de arte en línea, en español y en inglés. Muestra obra hecha en "
+    },
+    {
+     "palabras": 29,
+     "y": 1800,
+     "texto": "Una caja numerada del 001 al 369, con materiales para armar algo donde y con quien quieras"
+    },
+    {
+     "palabras": 25,
+     "y": 2352,
+     "texto": "Módulo 369 edita cuadernos y libros con obra de sus artistas. Se imprimen a pedido y se co"
+    }
+   ],
+   "nBloquesLargos": 3,
+   "muestras": [
+    {
+     "texto": "Maqueta",
+     "y": 6,
+     "clase": "rotulo etiqueta"
+    },
+    {
+     "texto": "Obras, artistas, textos y datos de relleno: se cambian por los reales.",
+     "y": 23,
+     "clase": "texto"
+    },
+    {
+     "texto": "Módulo 369 es una galería de arte en línea, en español y en inglés. Muestra obra",
+     "y": 774,
+     "clase": "pendiente t-bajada"
+    },
+    {
+     "texto": "· activados de muestra",
+     "y": 1730,
+     "clase": "rotulo-dato etiqueta"
+    }
+   ],
+   "nMuestras": 4,
+   "pendientes": 5,
+   "marcasMuestra": 5,
+   "rotulos": 36,
+   "rotulosMono": 23
+  },
+  "imagenes": {
+   "n": 19,
+   "areaPctPagina": 115.5,
+   "areaPctV0": 57.8,
+   "lista": [
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 107.4,
+     "w": 390,
+     "h": 487.5,
+     "src": "lamina-1-v.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 390,
+     "y": 107.4,
+     "w": 390,
+     "h": 487.5,
+     "src": "lamina-2-v.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 780,
+     "y": 107.4,
+     "w": 390,
+     "h": 487.5,
+     "src": "lamina-3-v.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1170,
+     "y": 107.4,
+     "w": 390,
+     "h": 487.5,
+     "src": "lamina-4-v.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1560,
+     "y": 107.4,
+     "w": 390,
+     "h": 487.5,
+     "src": "lamina-5-v.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 920.8,
+     "w": 129.3,
+     "h": 161.7,
+     "src": "a-03-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 130.3,
+     "y": 920.8,
+     "w": 129.3,
+     "h": 161.7,
+     "src": "b-01-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 260.7,
+     "y": 920.8,
+     "w": 129.3,
+     "h": 161.7,
+     "src": "c-01-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 391,
+     "y": 920.8,
+     "w": 129.3,
+     "h": 161.7,
+     "src": "a-05-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 521.3,
+     "y": 920.8,
+     "w": 129.3,
+     "h": 161.7,
+     "src": "b-03-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 651.6,
+     "y": 920.8,
+     "w": 129.3,
+     "h": 161.7,
+     "src": "c-03-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 782,
+     "y": 920.8,
+     "w": 129.3,
+     "h": 161.7,
+     "src": "a-08-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 912.3,
+     "y": 920.8,
+     "w": 129.3,
+     "h": 161.7,
+     "src": "b-06-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1042.6,
+     "y": 920.8,
+     "w": 129.3,
+     "h": 161.7,
+     "src": "c-06-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 1206.1,
+     "w": 390,
+     "h": 487.5,
+     "src": "caja-banda-v.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 2062.8,
+     "w": 129.3,
+     "h": 161.7,
+     "src": "a-07-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 130.3,
+     "y": 2062.8,
+     "w": 129.3,
+     "h": 161.7,
+     "src": "b-07-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 260.7,
+     "y": 2062.8,
+     "w": 129.3,
+     "h": 161.7,
+     "src": "c-07-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 2521.3,
+     "w": 390,
+     "h": 487.5,
+     "src": "banda-v.jpg?v=3",
+     "obj": "cover"
+    }
+   ]
+  },
+  "movimiento": {
+   "conTransicion": 72,
+   "propsTrans": {
+    "color": 15,
+    "transform": 2,
+    "background-size": 25,
+    "opacity": 23,
+    "border-color": 7,
+    "visibility": 1
+   },
+   "conAnim": 2,
+   "keyframes": 2,
+   "reglasHover": 22,
+   "reglasTrans": 24,
+   "hojasOk": 2,
+   "hojasNo": 1,
+   "animaciones": 0,
+   "sticky": [],
+   "fixed": []
+  },
+  "cromo": {
+   "bg": "rgb(238, 234, 226)",
+   "bgHtml": "rgb(238, 234, 226)",
+   "header": {
+    "h": 44,
+    "pos": "static",
+    "bg": "rgb(238, 234, 226)",
+    "borde": "0px none rgb(27, 27, 25)"
+   },
+   "footer": {
+    "h": 502.4,
+    "bg": "rgb(27, 27, 25)",
+    "color": "rgb(238, 234, 226)"
+   }
+  },
+  "encabezados": [
+   {
+    "tag": "H1",
+    "texto": "Módulo 369",
+    "fam": "Archivo",
+    "size": "14px",
+    "peso": "500",
+    "estilo": "normal",
+    "tt": "none",
+    "ls": "normal",
+    "align": "start",
+    "y": 106,
+    "w": 1
+   },
+   {
+    "tag": "H2",
+    "texto": "DE CADA ARTISTA, LA SERIE ENTERA.",
+    "fam": "Instrument Serif",
+    "size": "46.8px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "-0.468px",
+    "align": "center",
+    "y": 675,
+    "w": 354
+   },
+   {
+    "tag": "H2",
+    "texto": "ENCUENTRO",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 1758,
+    "w": 114
+   },
+   {
+    "tag": "H2",
+    "texto": "EDICIONES",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 2311,
+    "w": 99
+   }
+  ],
+  "fuentes": [
+   "Archivo 400 800 normal",
+   "IBM Plex Mono 500 normal",
+   "Instrument Serif 400 italic",
+   "Instrument Serif 400 normal"
+  ],
+  "estado": 200,
+  "rectsV0": [
+   {
+    "x": 0,
+    "y": 107.40625,
+    "w": 390,
+    "h": 487.5
+   },
+   {
+    "x": 390,
+    "y": 107.40625,
+    "w": 390,
+    "h": 487.5
+   },
+   {
+    "x": 780,
+    "y": 107.40625,
+    "w": 390,
+    "h": 487.5
+   },
+   {
+    "x": 1170,
+    "y": 107.40625,
+    "w": 390,
+    "h": 487.5
+   },
+   {
+    "x": 1560,
+    "y": 107.40625,
+    "w": 390,
+    "h": 487.5
+   }
+  ],
+  "rectsB1": [
+   {
+    "x": 0,
+    "y": 76.84375,
+    "w": 129.328125,
+    "h": 161.65625
+   },
+   {
+    "x": 130.328125,
+    "y": 76.84375,
+    "w": 129.328125,
+    "h": 161.65625
+   },
+   {
+    "x": 260.65625,
+    "y": 76.84375,
+    "w": 129.328125,
+    "h": 161.65625
+   },
+   {
+    "x": 390.984375,
+    "y": 76.84375,
+    "w": 129.328125,
+    "h": 161.65625
+   },
+   {
+    "x": 521.3125,
+    "y": 76.84375,
+    "w": 129.328125,
+    "h": 161.65625
+   },
+   {
+    "x": 651.640625,
+    "y": 76.84375,
+    "w": 129.328125,
+    "h": 161.65625
+   },
+   {
+    "x": 781.96875,
+    "y": 76.84375,
+    "w": 129.328125,
+    "h": 161.65625
+   },
+   {
+    "x": 912.296875,
+    "y": 76.84375,
+    "w": 129.328125,
+    "h": 161.65625
+   },
+   {
+    "x": 1042.625,
+    "y": 76.84375,
+    "w": 129.328125,
+    "h": 161.65625
+   },
+   {
+    "x": 0,
+    "y": 362.078125,
+    "w": 390,
+    "h": 487.5
+   }
+  ],
+  "yB1": 844
+ },
+ "02-artistas": {
+  "url": "https://modulo369-maqueta.pages.dev/?aud=2#/artistas",
+  "titulo": "Artistas · Módulo 369 · maqueta",
+  "vw": 390,
+  "vh": 844,
+  "alto": 1581,
+  "pantallas": 1.9,
+  "lenis": false,
+  "texto": {
+   "palabras": 122,
+   "palabrasV0": 80,
+   "caracteres": 657,
+   "familias": {
+    "IBM Plex Mono": 179,
+    "Instrument Serif": 90,
+    "Archivo": 388
+   },
+   "alineacion": {
+    "center": 481,
+    "left": 161,
+    "right": 15,
+    "otra": 0
+   },
+   "topEstilos": [
+    {
+     "estilo": "Archivo | 14px | 500 | normal | none | ls normal | lh 21.7px",
+     "chars": 274,
+     "ejemplo": "Módulo 369 trabaja con pocos artistas y muestra de"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls 0.48px | lh 16.8px",
+     "chars": 90,
+     "ejemplo": "Obras, artistas, textos y datos de relleno: se cam"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 13px",
+     "chars": 54,
+     "ejemplo": "Artistas"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 0.96px | lh 16.8px",
+     "chars": 52,
+     "ejemplo": "Maqueta"
+    },
+    {
+     "estilo": "Archivo | 12px | 400 | normal | none | ls normal | lh 16.8px",
+     "chars": 50,
+     "ejemplo": "Módulo 369 · Galería de arte en línea"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 1.8px | lh 16.8px",
+     "chars": 37,
+     "ejemplo": "Ir al contenido"
+    },
+    {
+     "estilo": "Instrument Serif | 20px | 400 | normal | uppercase | ls normal | lh 24px",
+     "chars": 27,
+     "ejemplo": "Artista A"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 26px",
+     "chars": 26,
+     "ejemplo": "Consulta por una"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 26px",
+     "chars": 20,
+     "ejemplo": "obra"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.8px",
+     "chars": 10,
+     "ejemplo": "@modulo369"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 23.4px",
+     "chars": 8,
+     "ejemplo": "Artistas"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls normal | lh 26px",
+     "chars": 6,
+     "ejemplo": "Módulo"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls normal | lh 26px",
+     "chars": 3,
+     "ejemplo": "369"
+    }
+   ],
+   "colores": [
+    [
+     "rgb(27, 27, 25)",
+     327
+    ],
+    [
+     "rgb(238, 234, 226)",
+     169
+    ],
+    [
+     "rgb(107, 103, 95)",
+     111
+    ],
+    [
+     "rgb(211, 204, 190)",
+     50
+    ]
+   ],
+   "bloquesLargos": [
+    {
+     "palabras": 48,
+     "y": 191,
+     "texto": "Módulo 369 trabaja con pocos artistas y muestra de cada uno un conjunto de obras, no pieza"
+    }
+   ],
+   "nBloquesLargos": 1,
+   "muestras": [
+    {
+     "texto": "Maqueta",
+     "y": 6,
+     "clase": "rotulo etiqueta"
+    },
+    {
+     "texto": "Obras, artistas, textos y datos de relleno: se cambian por los reales.",
+     "y": 23,
+     "clase": "texto"
+    },
+    {
+     "texto": "Módulo 369 trabaja con pocos artistas y muestra de cada uno un conjunto de obras",
+     "y": 191,
+     "clase": "pendiente t-bajada vision"
+    }
+   ],
+   "nMuestras": 3,
+   "pendientes": 2,
+   "marcasMuestra": 2,
+   "rotulos": 11,
+   "rotulosMono": 11
+  },
+  "imagenes": {
+   "n": 3,
+   "areaPctPagina": 22.8,
+   "areaPctV0": 37.6,
+   "lista": [
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 374.9,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-07-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 374.9,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "b-07-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 687.6,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "c-07-600.jpg?v=3",
+     "obj": "cover"
+    }
+   ]
+  },
+  "movimiento": {
+   "conTransicion": 46,
+   "propsTrans": {
+    "color": 10,
+    "transform": 2,
+    "background-size": 25,
+    "opacity": 8,
+    "border-color": 1,
+    "visibility": 1
+   },
+   "conAnim": 2,
+   "keyframes": 2,
+   "reglasHover": 22,
+   "reglasTrans": 24,
+   "hojasOk": 2,
+   "hojasNo": 1,
+   "animaciones": 0,
+   "sticky": [],
+   "fixed": []
+  },
+  "cromo": {
+   "bg": "rgb(238, 234, 226)",
+   "bgHtml": "rgb(238, 234, 226)",
+   "header": {
+    "h": 44,
+    "pos": "static",
+    "bg": "rgb(238, 234, 226)",
+    "borde": "0px none rgb(27, 27, 25)"
+   },
+   "footer": {
+    "h": 502.4,
+    "bg": "rgb(27, 27, 25)",
+    "color": "rgb(238, 234, 226)"
+   }
+  },
+  "encabezados": [
+   {
+    "tag": "H1",
+    "texto": "ARTISTAS",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 143,
+    "w": 84
+   }
+  ],
+  "fuentes": [
+   "Archivo 400 800 normal",
+   "IBM Plex Mono 500 normal",
+   "Instrument Serif 400 italic",
+   "Instrument Serif 400 normal"
+  ],
+  "estado": 200,
+  "rectsV0": [
+   {
+    "x": 1,
+    "y": 374.921875,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": 374.921875,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 1,
+    "y": 687.59375,
+    "w": 193.5,
+    "h": 241.875
+   }
+  ],
+  "rectsB1": [
+   {
+    "x": 1,
+    "y": -49.40625,
+    "w": 193.5,
+    "h": 241.875
+   }
+  ],
+  "yB1": 737
+ },
+ "03-artista": {
+  "url": "https://modulo369-maqueta.pages.dev/?aud=3#/artistas/a",
+  "titulo": "Artista A · Módulo 369 · maqueta",
+  "vw": 390,
+  "vh": 844,
+  "alto": 5257,
+  "pantallas": 6.2,
+  "lenis": false,
+  "texto": {
+   "palabras": 363,
+   "palabrasV0": 42,
+   "caracteres": 1915,
+   "familias": {
+    "IBM Plex Mono": 312,
+    "Instrument Serif": 346,
+    "Archivo": 1257
+   },
+   "alineacion": {
+    "center": 620,
+    "left": 1256,
+    "right": 39,
+    "otra": 0
+   },
+   "topEstilos": [
+    {
+     "estilo": "Archivo | 16px | 400 | normal | none | ls normal | lh 24px",
+     "chars": 536,
+     "ejemplo": "Artista A estudió pintura y trabajó varios años co"
+    },
+    {
+     "estilo": "Archivo | 14px | 400 | normal | none | ls normal | lh 22.4px",
+     "chars": 472,
+     "ejemplo": "Cada serie empieza con una paleta corta, que Artis"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls 0.48px | lh 16.8px",
+     "chars": 183,
+     "ejemplo": "Obras, artistas, textos y datos de relleno: se cam"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | none | ls -0.26px | lh 24.7px",
+     "chars": 174,
+     "ejemplo": "Pinto dos colores por tela, a veces tres, y lo que"
+    },
+    {
+     "estilo": "Archivo | 12px | 500 | normal | none | ls normal | lh 14.4px",
+     "chars": 135,
+     "ejemplo": "Campo 02 (2025)"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 0.96px | lh 16.8px",
+     "chars": 81,
+     "ejemplo": "Maqueta"
+    },
+    {
+     "estilo": "Instrument Serif | 13px | 400 | normal | uppercase | ls 0.26px | lh 15.6px",
+     "chars": 81,
+     "ejemplo": "Artista A"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 13px",
+     "chars": 54,
+     "ejemplo": "Artistas"
+    },
+    {
+     "estilo": "Archivo | 12px | 400 | normal | none | ls normal | lh 16.8px",
+     "chars": 50,
+     "ejemplo": "Módulo 369 · Galería de arte en línea"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 1.8px | lh 16.8px",
+     "chars": 48,
+     "ejemplo": "Ir al contenido"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 26px",
+     "chars": 26,
+     "ejemplo": "Consulta por una"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 26px",
+     "chars": 20,
+     "ejemplo": "obra"
+    },
+    {
+     "estilo": "Instrument Serif | 20px | 400 | normal | uppercase | ls normal | lh 24px",
+     "chars": 18,
+     "ejemplo": "Historia y proceso"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.8px",
+     "chars": 10,
+     "ejemplo": "@modulo369"
+    }
+   ],
+   "colores": [
+    [
+     "rgb(27, 27, 25)",
+     1472
+    ],
+    [
+     "rgb(107, 103, 95)",
+     224
+    ],
+    [
+     "rgb(238, 234, 226)",
+     169
+    ],
+    [
+     "rgb(211, 204, 190)",
+     50
+    ]
+   ],
+   "bloquesLargos": [
+    {
+     "palabras": 88,
+     "y": 1869,
+     "texto": "Cada serie empieza con una paleta corta, que Artista A prueba en papel antes de pasar a la"
+    },
+    {
+     "palabras": 99,
+     "y": 2722,
+     "texto": "Artista A estudió pintura y trabajó varios años como asistente en talleres de otros pintor"
+    },
+    {
+     "palabras": 34,
+     "y": 3471,
+     "texto": "Pinto dos colores por tela, a veces tres, y lo que más miro es el borde donde se tocan. Tr"
+    }
+   ],
+   "nBloquesLargos": 3,
+   "muestras": [
+    {
+     "texto": "Maqueta",
+     "y": 6,
+     "clase": "rotulo etiqueta"
+    },
+    {
+     "texto": "Obras, artistas, textos y datos de relleno: se cambian por los reales.",
+     "y": 23,
+     "clase": "texto"
+    },
+    {
+     "texto": "Maqueta · La foto de taller es opcional. Si no hay, aquí va una obra.",
+     "y": 3022,
+     "clase": "nota-maqueta"
+    }
+   ],
+   "nMuestras": 3,
+   "pendientes": 4,
+   "marcasMuestra": 4,
+   "rotulos": 22,
+   "rotulosMono": 13
+  },
+  "imagenes": {
+   "n": 16,
+   "areaPctPagina": 57.6,
+   "areaPctV0": 65.4,
+   "lista": [
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 107.4,
+     "w": 390,
+     "h": 312,
+     "src": "a-hero-v.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 521.4,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-02-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 521.4,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-03-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 846,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-04-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 846,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-05-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 1170.7,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-06-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 1170.7,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-07-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 1472.6,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-08-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 1472.6,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-09-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 2124.7,
+     "w": 390,
+     "h": 487.5,
+     "src": "a-taller-1200.jpg?v=3",
+     "obj": "fill"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 3109.4,
+     "w": 390,
+     "h": 260,
+     "src": "a-01-1200.jpg?v=3",
+     "obj": "fill"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 3746.8,
+     "w": 390,
+     "h": 487.5,
+     "src": "a-04.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 4234.3,
+     "w": 195,
+     "h": 260,
+     "src": "a-det-1.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195,
+     "y": 4234.3,
+     "w": 195,
+     "h": 260,
+     "src": "a-det-2.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 4494.3,
+     "w": 195,
+     "h": 260,
+     "src": "a-det-3.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195,
+     "y": 4494.3,
+     "w": 195,
+     "h": 260,
+     "src": "a-det-4.jpg?v=3",
+     "obj": "cover"
+    }
+   ]
+  },
+  "movimiento": {
+   "conTransicion": 59,
+   "propsTrans": {
+    "color": 11,
+    "transform": 2,
+    "background-size": 25,
+    "opacity": 20,
+    "border-color": 1,
+    "visibility": 1
+   },
+   "conAnim": 2,
+   "keyframes": 2,
+   "reglasHover": 22,
+   "reglasTrans": 24,
+   "hojasOk": 2,
+   "hojasNo": 1,
+   "animaciones": 0,
+   "sticky": [],
+   "fixed": []
+  },
+  "cromo": {
+   "bg": "rgb(238, 234, 226)",
+   "bgHtml": "rgb(238, 234, 226)",
+   "header": {
+    "h": 44,
+    "pos": "static",
+    "bg": "rgb(238, 234, 226)",
+    "borde": "0px none rgb(27, 27, 25)"
+   },
+   "footer": {
+    "h": 502.4,
+    "bg": "rgb(27, 27, 25)",
+    "color": "rgb(238, 234, 226)"
+   }
+  },
+  "encabezados": [
+   {
+    "tag": "H1",
+    "texto": "Artista A",
+    "fam": "Instrument Serif",
+    "size": "48px",
+    "peso": "400",
+    "estilo": "italic",
+    "tt": "none",
+    "ls": "-0.48px",
+    "align": "center",
+    "y": 442,
+    "w": 390
+   },
+   {
+    "tag": "H2",
+    "texto": "HISTORIA Y PROCESO",
+    "fam": "Instrument Serif",
+    "size": "20px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "start",
+    "y": 1833,
+    "w": 354
+   },
+   {
+    "tag": "H2",
+    "texto": "ARTISTA A",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 2665,
+    "w": 90
+   }
+  ],
+  "fuentes": [
+   "Archivo 400 800 normal",
+   "IBM Plex Mono 500 normal",
+   "Instrument Serif 400 italic",
+   "Instrument Serif 400 normal"
+  ],
+  "estado": 200,
+  "rectsV0": [
+   {
+    "x": 0,
+    "y": 107.40625,
+    "w": 390,
+    "h": 312
+   },
+   {
+    "x": 1,
+    "y": 521.390625,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": 521.390625,
+    "w": 193.5,
+    "h": 241.875
+   }
+  ],
+  "rectsB1": [
+   {
+    "x": 1,
+    "y": 2.046875,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": 2.046875,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 1,
+    "y": 326.703125,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": 326.703125,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 1,
+    "y": 628.5625,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": 628.5625,
+    "w": 193.5,
+    "h": 241.875
+   }
+  ],
+  "yB1": 844
+ },
+ "04-obras": {
+  "url": "https://modulo369-maqueta.pages.dev/?aud=4#/obras",
+  "titulo": "Obras · Módulo 369 · maqueta",
+  "vw": 390,
+  "vh": 844,
+  "alto": 5306,
+  "pantallas": 6.3,
+  "lenis": false,
+  "texto": {
+   "palabras": 257,
+   "palabrasV0": 75,
+   "caracteres": 1358,
+   "familias": {
+    "IBM Plex Mono": 346,
+    "Instrument Serif": 303,
+    "Archivo": 709
+   },
+   "alineacion": {
+    "center": 1142,
+    "left": 201,
+    "right": 15,
+    "otra": 0
+   },
+   "topEstilos": [
+    {
+     "estilo": "Archivo | 12px | 500 | normal | none | ls normal | lh 14.4px",
+     "chars": 468,
+     "ejemplo": "Todos los artistas"
+    },
+    {
+     "estilo": "Instrument Serif | 13px | 400 | normal | uppercase | ls 0.26px | lh 15.6px",
+     "chars": 243,
+     "ejemplo": "Artista A"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 0.96px | lh 16.8px",
+     "chars": 202,
+     "ejemplo": "Maqueta"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 13px",
+     "chars": 181,
+     "ejemplo": "Todas"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls 0.48px | lh 16.8px",
+     "chars": 90,
+     "ejemplo": "Obras, artistas, textos y datos de relleno: se cam"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 1.8px | lh 16.8px",
+     "chars": 53,
+     "ejemplo": "Ir al contenido"
+    },
+    {
+     "estilo": "Archivo | 12px | 400 | normal | none | ls normal | lh 16.8px",
+     "chars": 50,
+     "ejemplo": "Módulo 369 · Galería de arte en línea"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 26px",
+     "chars": 26,
+     "ejemplo": "Consulta por una"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 26px",
+     "chars": 20,
+     "ejemplo": "obra"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.8px",
+     "chars": 10,
+     "ejemplo": "@modulo369"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls normal | lh 26px",
+     "chars": 6,
+     "ejemplo": "Módulo"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 23.4px",
+     "chars": 5,
+     "ejemplo": "Obras"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls normal | lh 26px",
+     "chars": 3,
+     "ejemplo": "369"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls normal | lh 16.8px",
+     "chars": 1,
+     "ejemplo": "·"
+    }
+   ],
+   "colores": [
+    [
+     "rgb(27, 27, 25)",
+     877
+    ],
+    [
+     "rgb(107, 103, 95)",
+     262
+    ],
+    [
+     "rgb(238, 234, 226)",
+     169
+    ],
+    [
+     "rgb(211, 204, 190)",
+     50
+    ]
+   ],
+   "bloquesLargos": [],
+   "nBloquesLargos": 0,
+   "muestras": [
+    {
+     "texto": "Maqueta",
+     "y": 6,
+     "clase": "rotulo etiqueta"
+    },
+    {
+     "texto": "Obras, artistas, textos y datos de relleno: se cambian por los reales.",
+     "y": 23,
+     "clase": "texto"
+    }
+   ],
+   "nMuestras": 2,
+   "pendientes": 1,
+   "marcasMuestra": 1,
+   "rotulos": 51,
+   "rotulosMono": 24
+  },
+  "imagenes": {
+   "n": 31,
+   "areaPctPagina": 65.9,
+   "areaPctV0": 82.6,
+   "lista": [
+    {
+     "tag": "IMG",
+     "x": 12,
+     "y": 276.8,
+     "w": 177,
+     "h": 141.6,
+     "src": "todas-h.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 201,
+     "y": 276.8,
+     "w": 177,
+     "h": 141.6,
+     "src": "a-07-h.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 12,
+     "y": 456.8,
+     "w": 177,
+     "h": 141.6,
+     "src": "b-07-h.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 201,
+     "y": 456.8,
+     "w": 177,
+     "h": 141.6,
+     "src": "c-07-h.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 317.6,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-01-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 317.6,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "b-01-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 642.3,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "c-01-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 642.3,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-02-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 966.9,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "b-02-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 966.9,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "c-02-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 1268.8,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-03-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 1268.8,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "b-03-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 1593.4,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "c-03-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 1593.4,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-04-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 1895.3,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "b-04-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 1895.3,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "c-04-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 2219.9,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-05-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 2219.9,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "b-05-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 2544.6,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "c-05-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 2544.6,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-06-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 2846.5,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "b-06-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 2846.5,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "c-06-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 3171.1,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-07-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 3171.1,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "b-07-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 3473,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "c-07-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 3473,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-08-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 3797.6,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "b-08-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 3797.6,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "c-08-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 4122.3,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-09-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 4122.3,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "b-09-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 4424.1,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "c-09-600.jpg?v=3",
+     "obj": "cover"
+    }
+   ]
+  },
+  "movimiento": {
+   "conTransicion": 92,
+   "propsTrans": {
+    "color": 11,
+    "transform": 2,
+    "background-size": 42,
+    "opacity": 36,
+    "border-color": 1,
+    "visibility": 1
+   },
+   "conAnim": 2,
+   "keyframes": 2,
+   "reglasHover": 22,
+   "reglasTrans": 24,
+   "hojasOk": 2,
+   "hojasNo": 1,
+   "animaciones": 0,
+   "sticky": [],
+   "fixed": []
+  },
+  "cromo": {
+   "bg": "rgb(238, 234, 226)",
+   "bgHtml": "rgb(238, 234, 226)",
+   "header": {
+    "h": 44,
+    "pos": "static",
+    "bg": "rgb(238, 234, 226)",
+    "borde": "0px none rgb(27, 27, 25)"
+   },
+   "footer": {
+    "h": 502.4,
+    "bg": "rgb(27, 27, 25)",
+    "color": "rgb(238, 234, 226)"
+   }
+  },
+  "encabezados": [
+   {
+    "tag": "H1",
+    "texto": "OBRAS",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 143,
+    "w": 59
+   }
+  ],
+  "fuentes": [
+   "Archivo 400 800 normal",
+   "IBM Plex Mono 500 normal",
+   "Instrument Serif 400 italic",
+   "Instrument Serif 400 normal"
+  ],
+  "estado": 200,
+  "rectsV0": [
+   {
+    "x": 12,
+    "y": 276.796875,
+    "w": 177,
+    "h": 141.59375
+   },
+   {
+    "x": 201,
+    "y": 276.796875,
+    "w": 177,
+    "h": 141.59375
+   },
+   {
+    "x": 12,
+    "y": 456.78125,
+    "w": 177,
+    "h": 141.59375
+   },
+   {
+    "x": 201,
+    "y": 456.78125,
+    "w": 177,
+    "h": 141.59375
+   },
+   {
+    "x": 1,
+    "y": 317.59375,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": 317.59375,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 1,
+    "y": 642.25,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": 642.25,
+    "w": 193.5,
+    "h": 241.875
+   }
+  ],
+  "rectsB1": [
+   {
+    "x": 1,
+    "y": -201.75,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": -201.75,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 1,
+    "y": 122.90625,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": 122.90625,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 1,
+    "y": 424.765625,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": 424.765625,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 1,
+    "y": 749.421875,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": 749.421875,
+    "w": 193.5,
+    "h": 241.875
+   }
+  ],
+  "yB1": 844
+ },
+ "05-ficha": {
+  "url": "https://modulo369-maqueta.pages.dev/?aud=5#/obras/a-04",
+  "titulo": "Campo 04 · Módulo 369 · maqueta",
+  "vw": 390,
+  "vh": 844,
+  "alto": 1748,
+  "pantallas": 2.1,
+  "lenis": false,
+  "texto": {
+   "palabras": 159,
+   "palabrasV0": 47,
+   "caracteres": 844,
+   "familias": {
+    "IBM Plex Mono": 268,
+    "Instrument Serif": 78,
+    "Archivo": 498
+   },
+   "alineacion": {
+    "center": 151,
+    "left": 678,
+    "right": 15,
+    "otra": 0
+   },
+   "topEstilos": [
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 19.5px",
+     "chars": 275,
+     "ejemplo": "Acrílico sobre tela"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 1.8px | lh 16.8px",
+     "chars": 109,
+     "ejemplo": "Ir al contenido"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls 0.48px | lh 16.8px",
+     "chars": 90,
+     "ejemplo": "Obras, artistas, textos y datos de relleno: se cam"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.15px",
+     "chars": 89,
+     "ejemplo": "Tres franjas horizontales del mismo alto: rojo arr"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 0.96px | lh 16.8px",
+     "chars": 57,
+     "ejemplo": "Maqueta"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 13px",
+     "chars": 54,
+     "ejemplo": "Artistas"
+    },
+    {
+     "estilo": "Archivo | 12px | 400 | normal | none | ls normal | lh 16.8px",
+     "chars": 50,
+     "ejemplo": "Módulo 369 · Galería de arte en línea"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 26px",
+     "chars": 26,
+     "ejemplo": "Consulta por una"
+    },
+    {
+     "estilo": "Archivo | 16px | 500 | normal | none | ls 0.96px | lh 16px",
+     "chars": 20,
+     "ejemplo": "Comprar"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 26px",
+     "chars": 20,
+     "ejemplo": "obra"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | none | ls -0.26px | lh 24.7px",
+     "chars": 14,
+     "ejemplo": "Campo 04, 2025"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls normal | lh 18px",
+     "chars": 12,
+     "ejemplo": "126 × 126 cm"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.8px",
+     "chars": 10,
+     "ejemplo": "@modulo369"
+    },
+    {
+     "estilo": "Instrument Serif | 13px | 400 | normal | uppercase | ls 0.26px | lh 15.6px",
+     "chars": 9,
+     "ejemplo": "Artista A"
+    }
+   ],
+   "colores": [
+    [
+     "rgb(27, 27, 25)",
+     525
+    ],
+    [
+     "rgb(238, 234, 226)",
+     169
+    ],
+    [
+     "rgb(107, 103, 95)",
+     100
+    ],
+    [
+     "rgb(211, 204, 190)",
+     50
+    ]
+   ],
+   "bloquesLargos": [],
+   "nBloquesLargos": 0,
+   "muestras": [
+    {
+     "texto": "Maqueta",
+     "y": 6,
+     "clase": "rotulo etiqueta"
+    },
+    {
+     "texto": "Obras, artistas, textos y datos de relleno: se cambian por los reales.",
+     "y": 23,
+     "clase": "texto"
+    }
+   ],
+   "nMuestras": 2,
+   "pendientes": 3,
+   "marcasMuestra": 3,
+   "rotulos": 16,
+   "rotulosMono": 15
+  },
+  "imagenes": {
+   "n": 2,
+   "areaPctPagina": 44.6,
+   "areaPctV0": 46.2,
+   "lista": [
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 107.4,
+     "w": 390,
+     "h": 390,
+     "src": "a-04-1200.jpg?v=3",
+     "obj": "fill"
+    },
+    {
+     "tag": "IMG",
+     "x": 390,
+     "y": 107.4,
+     "w": 390,
+     "h": 390,
+     "src": "a-04-detalle.jpg?v=3",
+     "obj": "fill"
+    }
+   ]
+  },
+  "movimiento": {
+   "conTransicion": 58,
+   "propsTrans": {
+    "color": 16,
+    "transform": 2,
+    "background-size": 31,
+    "opacity": 6,
+    "background-color": 2,
+    "border-color": 1,
+    "visibility": 1
+   },
+   "conAnim": 2,
+   "keyframes": 2,
+   "reglasHover": 22,
+   "reglasTrans": 24,
+   "hojasOk": 2,
+   "hojasNo": 1,
+   "animaciones": 0,
+   "sticky": [],
+   "fixed": []
+  },
+  "cromo": {
+   "bg": "rgb(238, 234, 226)",
+   "bgHtml": "rgb(238, 234, 226)",
+   "header": {
+    "h": 44,
+    "pos": "static",
+    "bg": "rgb(238, 234, 226)",
+    "borde": "0px none rgb(27, 27, 25)"
+   },
+   "footer": {
+    "h": 502.4,
+    "bg": "rgb(27, 27, 25)",
+    "color": "rgb(238, 234, 226)"
+   }
+  },
+  "encabezados": [
+   {
+    "tag": "H1",
+    "texto": "Campo 04, 2025",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "italic",
+    "tt": "none",
+    "ls": "-0.26px",
+    "align": "start",
+    "y": 612,
+    "w": 354
+   }
+  ],
+  "fuentes": [
+   "Archivo 400 800 normal",
+   "IBM Plex Mono 500 normal",
+   "Instrument Serif 400 italic",
+   "Instrument Serif 400 normal"
+  ],
+  "estado": 200,
+  "rectsV0": [
+   {
+    "x": 0,
+    "y": 107.40625,
+    "w": 390,
+    "h": 390
+   },
+   {
+    "x": 390,
+    "y": 107.40625,
+    "w": 390,
+    "h": 390
+   }
+  ],
+  "rectsB1": [],
+  "yB1": 844
+ },
+ "06-ficha-obra": {
+  "url": "https://modulo369-maqueta.pages.dev/?aud=6#/obras/a-06",
+  "titulo": "Campo 06 · Módulo 369 · maqueta",
+  "vw": 390,
+  "vh": 844,
+  "alto": 1614,
+  "pantallas": 1.9,
+  "lenis": false,
+  "texto": {
+   "palabras": 154,
+   "palabrasV0": 53,
+   "caracteres": 823,
+   "familias": {
+    "IBM Plex Mono": 244,
+    "Instrument Serif": 78,
+    "Archivo": 501
+   },
+   "alineacion": {
+    "center": 151,
+    "left": 657,
+    "right": 15,
+    "otra": 0
+   },
+   "topEstilos": [
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 19.5px",
+     "chars": 286,
+     "ejemplo": "Acrílico sobre tela"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls 0.48px | lh 16.8px",
+     "chars": 90,
+     "ejemplo": "Obras, artistas, textos y datos de relleno: se cam"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 1.8px | lh 16.8px",
+     "chars": 86,
+     "ejemplo": "Ir al contenido"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.15px",
+     "chars": 77,
+     "ejemplo": "Un rectángulo crema, vertical, sobre un rojo óxido"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 0.96px | lh 16.8px",
+     "chars": 57,
+     "ejemplo": "Maqueta"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 13px",
+     "chars": 54,
+     "ejemplo": "Artistas"
+    },
+    {
+     "estilo": "Archivo | 12px | 400 | normal | none | ls normal | lh 16.8px",
+     "chars": 50,
+     "ejemplo": "Módulo 369 · Galería de arte en línea"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 26px",
+     "chars": 26,
+     "ejemplo": "Consulta por una"
+    },
+    {
+     "estilo": "Archivo | 16px | 500 | normal | none | ls 0.96px | lh 16px",
+     "chars": 24,
+     "ejemplo": "Consultar por esta obra"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 26px",
+     "chars": 20,
+     "ejemplo": "obra"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | none | ls -0.26px | lh 24.7px",
+     "chars": 14,
+     "ejemplo": "Campo 06, 2026"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls normal | lh 18px",
+     "chars": 11,
+     "ejemplo": "96 × 120 cm"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.8px",
+     "chars": 10,
+     "ejemplo": "@modulo369"
+    },
+    {
+     "estilo": "Instrument Serif | 13px | 400 | normal | uppercase | ls 0.26px | lh 15.6px",
+     "chars": 9,
+     "ejemplo": "Artista A"
+    }
+   ],
+   "colores": [
+    [
+     "rgb(27, 27, 25)",
+     504
+    ],
+    [
+     "rgb(238, 234, 226)",
+     169
+    ],
+    [
+     "rgb(107, 103, 95)",
+     100
+    ],
+    [
+     "rgb(211, 204, 190)",
+     50
+    ]
+   ],
+   "bloquesLargos": [],
+   "nBloquesLargos": 0,
+   "muestras": [
+    {
+     "texto": "Maqueta",
+     "y": 6,
+     "clase": "rotulo etiqueta"
+    },
+    {
+     "texto": "Obras, artistas, textos y datos de relleno: se cambian por los reales.",
+     "y": 23,
+     "clase": "texto"
+    }
+   ],
+   "nMuestras": 2,
+   "pendientes": 2,
+   "marcasMuestra": 2,
+   "rotulos": 15,
+   "rotulosMono": 14
+  },
+  "imagenes": {
+   "n": 2,
+   "areaPctPagina": 38.7,
+   "areaPctV0": 37,
+   "lista": [
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 107.4,
+     "w": 390,
+     "h": 312,
+     "src": "a-06-1200.jpg?v=3",
+     "obj": "fill"
+    },
+    {
+     "tag": "IMG",
+     "x": 390,
+     "y": 107.4,
+     "w": 390,
+     "h": 312,
+     "src": "a-06-detalle.jpg?v=3",
+     "obj": "fill"
+    }
+   ]
+  },
+  "movimiento": {
+   "conTransicion": 57,
+   "propsTrans": {
+    "color": 15,
+    "transform": 2,
+    "background-size": 31,
+    "opacity": 6,
+    "background-color": 2,
+    "border-color": 1,
+    "visibility": 1
+   },
+   "conAnim": 2,
+   "keyframes": 2,
+   "reglasHover": 22,
+   "reglasTrans": 24,
+   "hojasOk": 2,
+   "hojasNo": 1,
+   "animaciones": 0,
+   "sticky": [],
+   "fixed": []
+  },
+  "cromo": {
+   "bg": "rgb(238, 234, 226)",
+   "bgHtml": "rgb(238, 234, 226)",
+   "header": {
+    "h": 44,
+    "pos": "static",
+    "bg": "rgb(238, 234, 226)",
+    "borde": "0px none rgb(27, 27, 25)"
+   },
+   "footer": {
+    "h": 502.4,
+    "bg": "rgb(27, 27, 25)",
+    "color": "rgb(238, 234, 226)"
+   }
+  },
+  "encabezados": [
+   {
+    "tag": "H1",
+    "texto": "Campo 06, 2026",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "italic",
+    "tt": "none",
+    "ls": "-0.26px",
+    "align": "start",
+    "y": 534,
+    "w": 354
+   }
+  ],
+  "fuentes": [
+   "Archivo 400 800 normal",
+   "IBM Plex Mono 500 normal",
+   "Instrument Serif 400 italic",
+   "Instrument Serif 400 normal"
+  ],
+  "estado": 200,
+  "rectsV0": [
+   {
+    "x": 0,
+    "y": 107.40625,
+    "w": 390,
+    "h": 312
+   },
+   {
+    "x": 390,
+    "y": 107.40625,
+    "w": 390,
+    "h": 312
+   }
+  ],
+  "rectsB1": [],
+  "yB1": 770
+ },
+ "07-ediciones": {
+  "url": "https://modulo369-maqueta.pages.dev/?aud=7#/ediciones",
+  "titulo": "Ediciones · Módulo 369 · maqueta",
+  "vw": 390,
+  "vh": 844,
+  "alto": 4577,
+  "pantallas": 5.4,
+  "lenis": false,
+  "texto": {
+   "palabras": 204,
+   "palabrasV0": 49,
+   "caracteres": 1090,
+   "familias": {
+    "IBM Plex Mono": 221,
+    "Instrument Serif": 124,
+    "Archivo": 745
+   },
+   "alineacion": {
+    "center": 914,
+    "left": 161,
+    "right": 15,
+    "otra": 0
+   },
+   "topEstilos": [
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.15px",
+     "chars": 501,
+     "ejemplo": "Cuaderno de hojas lisas, con cuatro láminas a colo"
+    },
+    {
+     "estilo": "Archivo | 14px | 500 | normal | none | ls normal | lh 21.7px",
+     "chars": 130,
+     "ejemplo": "Módulo 369 edita cuadernos y libros con obra de su"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls 0.48px | lh 16.8px",
+     "chars": 90,
+     "ejemplo": "Obras, artistas, textos y datos de relleno: se cam"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 1.8px | lh 16.8px",
+     "chars": 79,
+     "ejemplo": "Ir al contenido"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 13px",
+     "chars": 54,
+     "ejemplo": "Artistas"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 0.96px | lh 16.8px",
+     "chars": 52,
+     "ejemplo": "Maqueta"
+    },
+    {
+     "estilo": "Archivo | 12px | 400 | normal | none | ls normal | lh 16.8px",
+     "chars": 50,
+     "ejemplo": "Módulo 369 · Galería de arte en línea"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | none | ls -0.26px | lh 24.7px",
+     "chars": 30,
+     "ejemplo": "Edición 01"
+    },
+    {
+     "estilo": "Instrument Serif | 13px | 400 | normal | uppercase | ls 0.26px | lh 15.6px",
+     "chars": 30,
+     "ejemplo": "Módulo 369"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 26px",
+     "chars": 26,
+     "ejemplo": "Consulta por una"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 26px",
+     "chars": 20,
+     "ejemplo": "obra"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.8px",
+     "chars": 10,
+     "ejemplo": "@modulo369"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 23.4px",
+     "chars": 9,
+     "ejemplo": "Ediciones"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls normal | lh 26px",
+     "chars": 6,
+     "ejemplo": "Módulo"
+    }
+   ],
+   "colores": [
+    [
+     "rgb(27, 27, 25)",
+     781
+    ],
+    [
+     "rgb(238, 234, 226)",
+     169
+    ],
+    [
+     "rgb(107, 103, 95)",
+     90
+    ],
+    [
+     "rgb(211, 204, 190)",
+     50
+    ]
+   ],
+   "bloquesLargos": [
+    {
+     "palabras": 25,
+     "y": 191,
+     "texto": "Módulo 369 edita cuadernos y libros con obra de sus artistas. Se imprimen a pedido y se co"
+    },
+    {
+     "palabras": 31,
+     "y": 1559,
+     "texto": "Cuaderno de hojas lisas, con cuatro láminas a color de la serie Campo, de Artista A, repar"
+    },
+    {
+     "palabras": 32,
+     "y": 2461,
+     "texto": "Cuaderno de tapa kraft, con una cuadrícula de puntos apenas marcada en las hojas: sirve pa"
+    },
+    {
+     "palabras": 30,
+     "y": 3334,
+     "texto": "Libro de tapa dura con las obras de los tres artistas con que parte Módulo 369: nueve de c"
+    }
+   ],
+   "nBloquesLargos": 4,
+   "muestras": [
+    {
+     "texto": "Maqueta",
+     "y": 6,
+     "clase": "rotulo etiqueta"
+    },
+    {
+     "texto": "Obras, artistas, textos y datos de relleno: se cambian por los reales.",
+     "y": 23,
+     "clase": "texto"
+    }
+   ],
+   "nMuestras": 2,
+   "pendientes": 5,
+   "marcasMuestra": 5,
+   "rotulos": 17,
+   "rotulosMono": 14
+  },
+  "imagenes": {
+   "n": 8,
+   "areaPctPagina": 57.8,
+   "areaPctV0": 58.3,
+   "lista": [
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 351.9,
+     "w": 195,
+     "h": 260,
+     "src": "e-01-i1-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195,
+     "y": 351.9,
+     "w": 195,
+     "h": 260,
+     "src": "e-02-i1-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 611.9,
+     "w": 195,
+     "h": 260,
+     "src": "e-02-i2-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195,
+     "y": 611.9,
+     "w": 195,
+     "h": 260,
+     "src": "e-03-i2-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 871.9,
+     "w": 390,
+     "h": 546,
+     "src": "e-01.jpg?v=3",
+     "obj": "fill"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 1773.5,
+     "w": 390,
+     "h": 546,
+     "src": "e-02.jpg?v=3",
+     "obj": "fill"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 2675.1,
+     "w": 390,
+     "h": 487.5,
+     "src": "banda-v.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 3528.1,
+     "w": 390,
+     "h": 546,
+     "src": "e-03.jpg?v=3",
+     "obj": "fill"
+    }
+   ]
+  },
+  "movimiento": {
+   "conTransicion": 54,
+   "propsTrans": {
+    "color": 10,
+    "transform": 2,
+    "background-size": 25,
+    "opacity": 16,
+    "border-color": 1,
+    "visibility": 1
+   },
+   "conAnim": 2,
+   "keyframes": 2,
+   "reglasHover": 22,
+   "reglasTrans": 24,
+   "hojasOk": 2,
+   "hojasNo": 1,
+   "animaciones": 0,
+   "sticky": [],
+   "fixed": []
+  },
+  "cromo": {
+   "bg": "rgb(238, 234, 226)",
+   "bgHtml": "rgb(238, 234, 226)",
+   "header": {
+    "h": 44,
+    "pos": "static",
+    "bg": "rgb(238, 234, 226)",
+    "borde": "0px none rgb(27, 27, 25)"
+   },
+   "footer": {
+    "h": 502.4,
+    "bg": "rgb(27, 27, 25)",
+    "color": "rgb(238, 234, 226)"
+   }
+  },
+  "encabezados": [
+   {
+    "tag": "H1",
+    "texto": "EDICIONES",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 143,
+    "w": 99
+   },
+   {
+    "tag": "H2",
+    "texto": "Edición 01",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "italic",
+    "tt": "none",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 1471,
+    "w": 92
+   },
+   {
+    "tag": "H2",
+    "texto": "Edición 02",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "italic",
+    "tt": "none",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 2372,
+    "w": 96
+   },
+   {
+    "tag": "H2",
+    "texto": "Edición 03",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "italic",
+    "tt": "none",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 3245,
+    "w": 96
+   }
+  ],
+  "fuentes": [
+   "Archivo 400 800 normal",
+   "IBM Plex Mono 500 normal",
+   "Instrument Serif 400 italic",
+   "Instrument Serif 400 normal"
+  ],
+  "estado": 200,
+  "rectsV0": [
+   {
+    "x": 0,
+    "y": 351.859375,
+    "w": 195,
+    "h": 260
+   },
+   {
+    "x": 195,
+    "y": 351.859375,
+    "w": 195,
+    "h": 260
+   },
+   {
+    "x": 0,
+    "y": 611.859375,
+    "w": 195,
+    "h": 260
+   },
+   {
+    "x": 195,
+    "y": 611.859375,
+    "w": 195,
+    "h": 260
+   }
+  ],
+  "rectsB1": [
+   {
+    "x": 0,
+    "y": -232.140625,
+    "w": 195,
+    "h": 260
+   },
+   {
+    "x": 195,
+    "y": -232.140625,
+    "w": 195,
+    "h": 260
+   },
+   {
+    "x": 0,
+    "y": 27.859375,
+    "w": 390,
+    "h": 546
+   }
+  ],
+  "yB1": 844
+ },
+ "08-encuentro": {
+  "url": "https://modulo369-maqueta.pages.dev/?aud=8#/encuentro",
+  "titulo": "Encuentro · Módulo 369 · maqueta",
+  "vw": 390,
+  "vh": 844,
+  "alto": 4492,
+  "pantallas": 5.3,
+  "lenis": false,
+  "texto": {
+   "palabras": 337,
+   "palabrasV0": 32,
+   "caracteres": 1792,
+   "familias": {
+    "IBM Plex Mono": 477,
+    "Instrument Serif": 108,
+    "Archivo": 1207
+   },
+   "alineacion": {
+    "center": 1241,
+    "left": 536,
+    "right": 15,
+    "otra": 0
+   },
+   "topEstilos": [
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.15px",
+     "chars": 489,
+     "ejemplo": "Pides o compras la caja en Activar un encuentro y "
+    },
+    {
+     "estilo": "Archivo | 14px | 400 | normal | none | ls normal | lh 22.4px",
+     "chars": 488,
+     "ejemplo": "Encuentro es una caja. Hay 369, numeradas del 001 "
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls 0.48px | lh 16.8px",
+     "chars": 317,
+     "ejemplo": "Obras, artistas, textos y datos de relleno: se cam"
+    },
+    {
+     "estilo": "Archivo | 14px | 500 | normal | none | ls normal | lh 19.6px",
+     "chars": 95,
+     "ejemplo": "¿Hace falta saber de arte?"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 0.96px | lh 16.8px",
+     "chars": 84,
+     "ejemplo": "Maqueta"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 1.8px | lh 16.8px",
+     "chars": 69,
+     "ejemplo": "Ir al contenido"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 13px",
+     "chars": 54,
+     "ejemplo": "Artistas"
+    },
+    {
+     "estilo": "Archivo | 12px | 400 | normal | none | ls normal | lh 16.8px",
+     "chars": 50,
+     "ejemplo": "Módulo 369 · Galería de arte en línea"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | none | ls -0.26px | lh 24.7px",
+     "chars": 33,
+     "ejemplo": "Cómo funciona"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 26px",
+     "chars": 26,
+     "ejemplo": "Consulta por una"
+    },
+    {
+     "estilo": "Archivo | 16px | 500 | normal | none | ls 0.96px | lh 16px",
+     "chars": 21,
+     "ejemplo": "Activar un encuentro"
+    },
+    {
+     "estilo": "Instrument Serif | 20px | 400 | normal | uppercase | ls normal | lh 24px",
+     "chars": 20,
+     "ejemplo": "Preguntas frecuentes"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 26px",
+     "chars": 20,
+     "ejemplo": "obra"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.8px",
+     "chars": 10,
+     "ejemplo": "@modulo369"
+    }
+   ],
+   "colores": [
+    [
+     "rgb(27, 27, 25)",
+     1232
+    ],
+    [
+     "rgb(107, 103, 95)",
+     340
+    ],
+    [
+     "rgb(238, 234, 226)",
+     169
+    ],
+    [
+     "rgb(211, 204, 190)",
+     50
+    ],
+    [
+     "rgb(31, 59, 214)",
+     1
+    ]
+   ],
+   "bloquesLargos": [
+    {
+     "palabras": 49,
+     "y": 864,
+     "texto": "Encuentro es una caja. Hay 369, numeradas del 001 al 369, y cada una se activa una sola ve"
+    },
+    {
+     "palabras": 60,
+     "y": 2122,
+     "texto": "Pides o compras la caja en Activar un encuentro y te llega con su número. La abres cuando "
+    },
+    {
+     "palabras": 40,
+     "y": 2254,
+     "texto": "Maqueta · Por decidir: quién sube cada registro al Libro. Si lo sube María desde el panel,"
+    },
+    {
+     "palabras": 36,
+     "y": 2913,
+     "texto": "Una caja se puede activar a solas o entre varias personas, en una casa, en un taller o al "
+    }
+   ],
+   "nBloquesLargos": 4,
+   "muestras": [
+    {
+     "texto": "Maqueta",
+     "y": 6,
+     "clase": "rotulo etiqueta"
+    },
+    {
+     "texto": "Obras, artistas, textos y datos de relleno: se cambian por los reales.",
+     "y": 23,
+     "clase": "texto"
+    },
+    {
+     "texto": "activados de muestra",
+     "y": 252,
+     "clase": "etiqueta gris bajo-contador"
+    },
+    {
+     "texto": "Maqueta · Por decidir: quién sube cada registro al Libro. Si lo sube María desde",
+     "y": 2254,
+     "clase": "nota-maqueta"
+    }
+   ],
+   "nMuestras": 4,
+   "pendientes": 5,
+   "marcasMuestra": 5,
+   "rotulos": 16,
+   "rotulosMono": 16
+  },
+  "imagenes": {
+   "n": 8,
+   "areaPctPagina": 50.6,
+   "areaPctV0": 57.8,
+   "lista": [
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 322.7,
+     "w": 390,
+     "h": 487.5,
+     "src": "caja-banda-v.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 1098.1,
+     "w": 195,
+     "h": 260,
+     "src": "r-001-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195,
+     "y": 1098.1,
+     "w": 195,
+     "h": 260,
+     "src": "r-002-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 1358.1,
+     "w": 195,
+     "h": 260,
+     "src": "r-003-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195,
+     "y": 1358.1,
+     "w": 195,
+     "h": 260,
+     "src": "r-004-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 1618.1,
+     "w": 390,
+     "h": 390,
+     "src": "r-005-1200.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 2409.2,
+     "w": 390,
+     "h": 390,
+     "src": "r-006-1200.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 3502.3,
+     "w": 390,
+     "h": 487.5,
+     "src": "r-007-1200.jpg?v=3",
+     "obj": "cover"
+    }
+   ]
+  },
+  "movimiento": {
+   "conTransicion": 54,
+   "propsTrans": {
+    "color": 12,
+    "transform": 2,
+    "background-size": 26,
+    "opacity": 13,
+    "border-color": 1,
+    "visibility": 1
+   },
+   "conAnim": 2,
+   "keyframes": 2,
+   "reglasHover": 22,
+   "reglasTrans": 24,
+   "hojasOk": 2,
+   "hojasNo": 1,
+   "animaciones": 0,
+   "sticky": [],
+   "fixed": []
+  },
+  "cromo": {
+   "bg": "rgb(238, 234, 226)",
+   "bgHtml": "rgb(238, 234, 226)",
+   "header": {
+    "h": 44,
+    "pos": "static",
+    "bg": "rgb(238, 234, 226)",
+    "borde": "0px none rgb(27, 27, 25)"
+   },
+   "footer": {
+    "h": 502.4,
+    "bg": "rgb(27, 27, 25)",
+    "color": "rgb(238, 234, 226)"
+   }
+  },
+  "encabezados": [
+   {
+    "tag": "H1",
+    "texto": "ENCUENTRO 007/369",
+    "fam": "Archivo",
+    "size": "14px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "none",
+    "ls": "normal",
+    "align": "center",
+    "y": 143,
+    "w": 272
+   },
+   {
+    "tag": "H2",
+    "texto": "Cómo funciona",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "italic",
+    "tt": "none",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 2061,
+    "w": 141
+   },
+   {
+    "tag": "H2",
+    "texto": "Formas de activación",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "italic",
+    "tt": "none",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 2852,
+    "w": 194
+   },
+   {
+    "tag": "H2",
+    "texto": "PREGUNTAS FRECUENTES",
+    "fam": "Instrument Serif",
+    "size": "20px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "start",
+    "y": 3181,
+    "w": 354
+   }
+  ],
+  "fuentes": [
+   "Archivo 400 800 normal",
+   "IBM Plex Mono 400 normal",
+   "IBM Plex Mono 500 normal",
+   "Instrument Serif 400 italic",
+   "Instrument Serif 400 normal"
+  ],
+  "estado": 200,
+  "rectsV0": [
+   {
+    "x": 0,
+    "y": 322.65625,
+    "w": 390,
+    "h": 487.5
+   }
+  ],
+  "rectsB1": [
+   {
+    "x": 0,
+    "y": 254.109375,
+    "w": 195,
+    "h": 260
+   },
+   {
+    "x": 195,
+    "y": 254.109375,
+    "w": 195,
+    "h": 260
+   },
+   {
+    "x": 0,
+    "y": 514.109375,
+    "w": 195,
+    "h": 260
+   },
+   {
+    "x": 195,
+    "y": 514.109375,
+    "w": 195,
+    "h": 260
+   },
+   {
+    "x": 0,
+    "y": 774.109375,
+    "w": 390,
+    "h": 390
+   }
+  ],
+  "yB1": 844
+ },
+ "09-libro": {
+  "url": "https://modulo369-maqueta.pages.dev/?aud=9#/encuentro/libro",
+  "titulo": "Libro · Módulo 369 · maqueta",
+  "vw": 390,
+  "vh": 844,
+  "alto": 3614,
+  "pantallas": 4.3,
+  "lenis": false,
+  "texto": {
+   "palabras": 135,
+   "palabrasV0": 58,
+   "caracteres": 749,
+   "familias": {
+    "IBM Plex Mono": 445,
+    "Instrument Serif": 151,
+    "Archivo": 153
+   },
+   "alineacion": {
+    "center": 573,
+    "left": 161,
+    "right": 15,
+    "otra": 0
+   },
+   "topEstilos": [
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 0.96px | lh 16.8px",
+     "chars": 202,
+     "ejemplo": "Maqueta"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls 0.48px | lh 16.8px",
+     "chars": 195,
+     "ejemplo": "Obras, artistas, textos y datos de relleno: se cam"
+    },
+    {
+     "estilo": "Instrument Serif | 16px | 400 | normal | uppercase | ls normal | lh 20px",
+     "chars": 78,
+     "ejemplo": "Encuentro 006"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 13px",
+     "chars": 54,
+     "ejemplo": "Artistas"
+    },
+    {
+     "estilo": "Archivo | 12px | 400 | normal | none | ls normal | lh 16.8px",
+     "chars": 50,
+     "ejemplo": "Módulo 369 · Galería de arte en línea"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 1.8px | lh 16.8px",
+     "chars": 48,
+     "ejemplo": "Ir al contenido"
+    },
+    {
+     "estilo": "Archivo | 14px | 500 | normal | none | ls normal | lh 21.7px",
+     "chars": 39,
+     "ejemplo": "El registro de cada encuentro activado."
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 26px",
+     "chars": 26,
+     "ejemplo": "Consulta por una"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 26px",
+     "chars": 20,
+     "ejemplo": "obra"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 23.4px",
+     "chars": 18,
+     "ejemplo": "Libro"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.8px",
+     "chars": 10,
+     "ejemplo": "@modulo369"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls normal | lh 26px",
+     "chars": 6,
+     "ejemplo": "Módulo"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls normal | lh 26px",
+     "chars": 3,
+     "ejemplo": "369"
+    }
+   ],
+   "colores": [
+    [
+     "rgb(107, 103, 95)",
+     289
+    ],
+    [
+     "rgb(27, 27, 25)",
+     241
+    ],
+    [
+     "rgb(238, 234, 226)",
+     169
+    ],
+    [
+     "rgb(211, 204, 190)",
+     50
+    ]
+   ],
+   "bloquesLargos": [],
+   "nBloquesLargos": 0,
+   "muestras": [
+    {
+     "texto": "Maqueta",
+     "y": 6,
+     "clase": "rotulo etiqueta"
+    },
+    {
+     "texto": "Obras, artistas, textos y datos de relleno: se cambian por los reales.",
+     "y": 23,
+     "clase": "texto"
+    },
+    {
+     "texto": "los 7 son de muestra",
+     "y": 253,
+     "clase": "dato"
+    },
+    {
+     "texto": "Maqueta · En el sitio, mientras no haya encuentros activados, el Libro muestra l",
+     "y": 484,
+     "clase": "nota-maqueta"
+    }
+   ],
+   "nMuestras": 4,
+   "pendientes": 9,
+   "marcasMuestra": 9,
+   "rotulos": 19,
+   "rotulosMono": 19
+  },
+  "imagenes": {
+   "n": 7,
+   "areaPctPagina": 50.4,
+   "areaPctV0": 25.4,
+   "lista": [
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 630,
+     "w": 390,
+     "h": 260,
+     "src": "r-007-1200.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 1007,
+     "w": 390,
+     "h": 260,
+     "src": "r-006-1200.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 1345.8,
+     "w": 390,
+     "h": 260,
+     "src": "r-005-1200.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 1684.6,
+     "w": 390,
+     "h": 260,
+     "src": "r-004-1200.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 2023.4,
+     "w": 390,
+     "h": 260,
+     "src": "r-003-1200.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 2362.2,
+     "w": 390,
+     "h": 260,
+     "src": "r-002-1200.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 2701,
+     "w": 390,
+     "h": 260,
+     "src": "r-001-1200.jpg?v=3",
+     "obj": "cover"
+    }
+   ]
+  },
+  "movimiento": {
+   "conTransicion": 58,
+   "propsTrans": {
+    "color": 11,
+    "transform": 2,
+    "background-size": 32,
+    "opacity": 12,
+    "border-color": 1,
+    "visibility": 1
+   },
+   "conAnim": 2,
+   "keyframes": 2,
+   "reglasHover": 22,
+   "reglasTrans": 24,
+   "hojasOk": 2,
+   "hojasNo": 1,
+   "animaciones": 0,
+   "sticky": [],
+   "fixed": []
+  },
+  "cromo": {
+   "bg": "rgb(238, 234, 226)",
+   "bgHtml": "rgb(238, 234, 226)",
+   "header": {
+    "h": 44,
+    "pos": "static",
+    "bg": "rgb(238, 234, 226)",
+    "borde": "0px none rgb(27, 27, 25)"
+   },
+   "footer": {
+    "h": 502.4,
+    "bg": "rgb(27, 27, 25)",
+    "color": "rgb(238, 234, 226)"
+   }
+  },
+  "encabezados": [
+   {
+    "tag": "H1",
+    "texto": "LIBRO",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 143,
+    "w": 55
+   },
+   {
+    "tag": "H2",
+    "texto": "ENCUENTRO 007",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 908,
+    "w": 150
+   },
+   {
+    "tag": "H3",
+    "texto": "ENCUENTRO 006",
+    "fam": "Instrument Serif",
+    "size": "16px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "center",
+    "y": 1279,
+    "w": 390
+   },
+   {
+    "tag": "H3",
+    "texto": "ENCUENTRO 005",
+    "fam": "Instrument Serif",
+    "size": "16px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "center",
+    "y": 1618,
+    "w": 390
+   },
+   {
+    "tag": "H3",
+    "texto": "ENCUENTRO 004",
+    "fam": "Instrument Serif",
+    "size": "16px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "center",
+    "y": 1957,
+    "w": 390
+   },
+   {
+    "tag": "H3",
+    "texto": "ENCUENTRO 003",
+    "fam": "Instrument Serif",
+    "size": "16px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "center",
+    "y": 2295,
+    "w": 390
+   },
+   {
+    "tag": "H3",
+    "texto": "ENCUENTRO 002",
+    "fam": "Instrument Serif",
+    "size": "16px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "center",
+    "y": 2634,
+    "w": 390
+   },
+   {
+    "tag": "H3",
+    "texto": "ENCUENTRO 001",
+    "fam": "Instrument Serif",
+    "size": "16px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "center",
+    "y": 2973,
+    "w": 390
+   }
+  ],
+  "fuentes": [
+   "Archivo 400 800 normal",
+   "IBM Plex Mono 500 normal",
+   "Instrument Serif 400 italic",
+   "Instrument Serif 400 normal"
+  ],
+  "estado": 200,
+  "rectsV0": [
+   {
+    "x": 0,
+    "y": 630.046875,
+    "w": 390,
+    "h": 260
+   }
+  ],
+  "rectsB1": [
+   {
+    "x": 0,
+    "y": -213.953125,
+    "w": 390,
+    "h": 260
+   },
+   {
+    "x": 0,
+    "y": 163.046875,
+    "w": 390,
+    "h": 260
+   },
+   {
+    "x": 0,
+    "y": 501.84375,
+    "w": 390,
+    "h": 260
+   },
+   {
+    "x": 0,
+    "y": 840.640625,
+    "w": 390,
+    "h": 260
+   }
+  ],
+  "yB1": 844
+ },
+ "10-activado": {
+  "url": "https://modulo369-maqueta.pages.dev/?aud=10#/encuentro/libro/005",
+  "titulo": "Encuentro 005 · Módulo 369 · maqueta",
+  "vw": 390,
+  "vh": 844,
+  "alto": 1800,
+  "pantallas": 2.1,
+  "lenis": false,
+  "texto": {
+   "palabras": 112,
+   "palabrasV0": 67,
+   "caracteres": 591,
+   "familias": {
+    "IBM Plex Mono": 261,
+    "Instrument Serif": 68,
+    "Archivo": 262
+   },
+   "alineacion": {
+    "center": 408,
+    "left": 168,
+    "right": 15,
+    "otra": 0
+   },
+   "topEstilos": [
+    {
+     "estilo": "Archivo | 14px | 500 | normal | none | ls normal | lh 21.7px",
+     "chars": 148,
+     "ejemplo": "Cinco personas de una misma oficina la abrieron en"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 0.96px | lh 16.8px",
+     "chars": 118,
+     "ejemplo": "Maqueta"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls 0.48px | lh 16.8px",
+     "chars": 90,
+     "ejemplo": "Obras, artistas, textos y datos de relleno: se cam"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 13px",
+     "chars": 54,
+     "ejemplo": "Artistas"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 1.8px | lh 16.8px",
+     "chars": 51,
+     "ejemplo": "Ir al contenido"
+    },
+    {
+     "estilo": "Archivo | 12px | 400 | normal | none | ls normal | lh 16.8px",
+     "chars": 50,
+     "ejemplo": "Módulo 369 · Galería de arte en línea"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 26px",
+     "chars": 26,
+     "ejemplo": "Consulta por una"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 26px",
+     "chars": 20,
+     "ejemplo": "obra"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 23.4px",
+     "chars": 13,
+     "ejemplo": "Encuentro 005"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.8px",
+     "chars": 10,
+     "ejemplo": "@modulo369"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls normal | lh 26px",
+     "chars": 6,
+     "ejemplo": "Módulo"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls normal | lh 26px",
+     "chars": 3,
+     "ejemplo": "369"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls normal | lh 16.8px",
+     "chars": 2,
+     "ejemplo": "←"
+    }
+   ],
+   "colores": [
+    [
+     "rgb(27, 27, 25)",
+     281
+    ],
+    [
+     "rgb(238, 234, 226)",
+     169
+    ],
+    [
+     "rgb(107, 103, 95)",
+     91
+    ],
+    [
+     "rgb(211, 204, 190)",
+     50
+    ]
+   ],
+   "bloquesLargos": [],
+   "nBloquesLargos": 0,
+   "muestras": [
+    {
+     "texto": "Maqueta",
+     "y": 6,
+     "clase": "rotulo etiqueta"
+    },
+    {
+     "texto": "Obras, artistas, textos y datos de relleno: se cambian por los reales.",
+     "y": 23,
+     "clase": "texto"
+    }
+   ],
+   "nMuestras": 2,
+   "pendientes": 4,
+   "marcasMuestra": 4,
+   "rotulos": 14,
+   "rotulosMono": 14
+  },
+  "imagenes": {
+   "n": 7,
+   "areaPctPagina": 67.6,
+   "areaPctV0": 37.6,
+   "lista": [
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 426.3,
+     "w": 390,
+     "h": 312,
+     "src": "r-005-1200.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 55,
+     "y": 837.9,
+     "w": 280,
+     "h": 210,
+     "src": "r-001-600.jpg?v=3",
+     "obj": "fill"
+    },
+    {
+     "tag": "IMG",
+     "x": 347,
+     "y": 837.9,
+     "w": 280,
+     "h": 210,
+     "src": "r-002-600.jpg?v=3",
+     "obj": "fill"
+    },
+    {
+     "tag": "IMG",
+     "x": 639,
+     "y": 837.9,
+     "w": 280,
+     "h": 210,
+     "src": "r-003-600.jpg?v=3",
+     "obj": "fill"
+    },
+    {
+     "tag": "IMG",
+     "x": 931,
+     "y": 837.9,
+     "w": 280,
+     "h": 210,
+     "src": "r-004-600.jpg?v=3",
+     "obj": "fill"
+    },
+    {
+     "tag": "IMG",
+     "x": 1223,
+     "y": 837.9,
+     "w": 280,
+     "h": 210,
+     "src": "r-006-600.jpg?v=3",
+     "obj": "fill"
+    },
+    {
+     "tag": "IMG",
+     "x": 1515,
+     "y": 837.9,
+     "w": 280,
+     "h": 210,
+     "src": "r-007-600.jpg?v=3",
+     "obj": "fill"
+    }
+   ]
+  },
+  "movimiento": {
+   "conTransicion": 52,
+   "propsTrans": {
+    "color": 13,
+    "transform": 2,
+    "background-size": 25,
+    "opacity": 11,
+    "border-color": 1,
+    "visibility": 1
+   },
+   "conAnim": 2,
+   "keyframes": 2,
+   "reglasHover": 22,
+   "reglasTrans": 24,
+   "hojasOk": 2,
+   "hojasNo": 1,
+   "animaciones": 0,
+   "sticky": [],
+   "fixed": []
+  },
+  "cromo": {
+   "bg": "rgb(238, 234, 226)",
+   "bgHtml": "rgb(238, 234, 226)",
+   "header": {
+    "h": 44,
+    "pos": "static",
+    "bg": "rgb(238, 234, 226)",
+    "borde": "0px none rgb(27, 27, 25)"
+   },
+   "footer": {
+    "h": 502.4,
+    "bg": "rgb(27, 27, 25)",
+    "color": "rgb(238, 234, 226)"
+   }
+  },
+  "encabezados": [
+   {
+    "tag": "H1",
+    "texto": "ENCUENTRO 005",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 143,
+    "w": 151
+   },
+   {
+    "tag": "H2",
+    "texto": "Otros encuentros del Libro",
+    "fam": "Archivo",
+    "size": "14px",
+    "peso": "500",
+    "estilo": "normal",
+    "tt": "none",
+    "ls": "normal",
+    "align": "center",
+    "y": 792,
+    "w": 390
+   }
+  ],
+  "fuentes": [
+   "Archivo 400 800 normal",
+   "IBM Plex Mono 500 normal",
+   "Instrument Serif 400 italic",
+   "Instrument Serif 400 normal"
+  ],
+  "estado": 200,
+  "rectsV0": [
+   {
+    "x": 0,
+    "y": 426.25,
+    "w": 390,
+    "h": 312
+   },
+   {
+    "x": 55,
+    "y": 837.9375,
+    "w": 280,
+    "h": 210
+   },
+   {
+    "x": 347,
+    "y": 837.9375,
+    "w": 280,
+    "h": 210
+   },
+   {
+    "x": 639,
+    "y": 837.9375,
+    "w": 280,
+    "h": 210
+   },
+   {
+    "x": 931,
+    "y": 837.9375,
+    "w": 280,
+    "h": 210
+   },
+   {
+    "x": 1223,
+    "y": 837.9375,
+    "w": 280,
+    "h": 210
+   },
+   {
+    "x": 1515,
+    "y": 837.9375,
+    "w": 280,
+    "h": 210
+   }
+  ],
+  "rectsB1": [
+   {
+    "x": 55,
+    "y": -6.0625,
+    "w": 280,
+    "h": 210
+   },
+   {
+    "x": 347,
+    "y": -6.0625,
+    "w": 280,
+    "h": 210
+   },
+   {
+    "x": 639,
+    "y": -6.0625,
+    "w": 280,
+    "h": 210
+   },
+   {
+    "x": 931,
+    "y": -6.0625,
+    "w": 280,
+    "h": 210
+   },
+   {
+    "x": 1223,
+    "y": -6.0625,
+    "w": 280,
+    "h": 210
+   },
+   {
+    "x": 1515,
+    "y": -6.0625,
+    "w": 280,
+    "h": 210
+   }
+  ],
+  "yB1": 844
+ },
+ "11-acerca": {
+  "url": "https://modulo369-maqueta.pages.dev/?aud=11#/acerca",
+  "titulo": "Acerca de Módulo 369 · Módulo 369 · maqueta",
+  "vw": 390,
+  "vh": 844,
+  "alto": 2324,
+  "pantallas": 2.8,
+  "lenis": false,
+  "texto": {
+   "palabras": 273,
+   "palabrasV0": 57,
+   "caracteres": 1432,
+   "familias": {
+    "IBM Plex Mono": 236,
+    "Instrument Serif": 123,
+    "Archivo": 1073
+   },
+   "alineacion": {
+    "center": 151,
+    "left": 1266,
+    "right": 15,
+    "otra": 0
+   },
+   "topEstilos": [
+    {
+     "estilo": "Archivo | 16px | 400 | normal | none | ls normal | lh 24px",
+     "chars": 801,
+     "ejemplo": "Antes de publicar una obra, Módulo 369 la mira en "
+    },
+    {
+     "estilo": "Archivo | 14px | 500 | normal | none | ls normal | lh 21.7px",
+     "chars": 158,
+     "ejemplo": "Módulo 369 es una galería de arte en línea, en esp"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls 0.48px | lh 16.8px",
+     "chars": 150,
+     "ejemplo": "Obras, artistas, textos y datos de relleno: se cam"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 1.8px | lh 16.8px",
+     "chars": 55,
+     "ejemplo": "Ir al contenido"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 13px",
+     "chars": 54,
+     "ejemplo": "Artistas"
+    },
+    {
+     "estilo": "Archivo | 12px | 400 | normal | none | ls normal | lh 16.8px",
+     "chars": 50,
+     "ejemplo": "Módulo 369 · Galería de arte en línea"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 0.96px | lh 16.8px",
+     "chars": 31,
+     "ejemplo": "Maqueta"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 26px",
+     "chars": 26,
+     "ejemplo": "Consulta por una"
+    },
+    {
+     "estilo": "Instrument Serif | 20px | 400 | normal | uppercase | ls normal | lh 24px",
+     "chars": 25,
+     "ejemplo": "Criterio curatorial"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | none | ls -0.26px | lh 28.6px",
+     "chars": 20,
+     "ejemplo": "Acerca de Módulo 369"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 26px",
+     "chars": 20,
+     "ejemplo": "obra"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 23.4px",
+     "chars": 12,
+     "ejemplo": "mirar"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 23.4px",
+     "chars": 11,
+     "ejemplo": "seleccionar"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.8px",
+     "chars": 10,
+     "ejemplo": "@modulo369"
+    }
+   ],
+   "colores": [
+    [
+     "rgb(27, 27, 25)",
+     1063
+    ],
+    [
+     "rgb(238, 234, 226)",
+     169
+    ],
+    [
+     "rgb(107, 103, 95)",
+     150
+    ],
+    [
+     "rgb(211, 204, 190)",
+     50
+    ]
+   ],
+   "bloquesLargos": [
+    {
+     "palabras": 30,
+     "y": 781,
+     "texto": "Módulo 369 es una galería de arte en línea, en español y en inglés. Muestra obra hecha en "
+    },
+    {
+     "palabras": 59,
+     "y": 1052,
+     "texto": "Antes de publicar una obra, Módulo 369 la mira en el taller, junto al resto de su serie. D"
+    },
+    {
+     "palabras": 49,
+     "y": 1292,
+     "texto": "Un artista entra a Módulo 369 cuando tiene un trabajo en curso que se puede seguir en el t"
+    },
+    {
+     "palabras": 48,
+     "y": 1484,
+     "texto": "Módulo 369 parte con tres artistas y va a crecer de a poco, sin perder el espacio para mos"
+    }
+   ],
+   "nBloquesLargos": 4,
+   "muestras": [
+    {
+     "texto": "Maqueta",
+     "y": 6,
+     "clase": "rotulo etiqueta"
+    },
+    {
+     "texto": "Obras, artistas, textos y datos de relleno: se cambian por los reales.",
+     "y": 23,
+     "clase": "texto"
+    },
+    {
+     "texto": "Módulo 369 es una galería de arte en línea, en español y en inglés. Muestra obra",
+     "y": 781,
+     "clase": "pendiente t-bajada acerca-enunciado just"
+    },
+    {
+     "texto": "Maqueta · Las tres palabras son del mapa del sitio de María.",
+     "y": 982,
+     "clase": "nota-maqueta"
+    },
+    {
+     "texto": "Antes de publicar una obra, Módulo 369 la mira en el taller, junto al resto de s",
+     "y": 1052,
+     "clase": "pendiente t-texto acerca-p justifica"
+    }
+   ],
+   "nMuestras": 5,
+   "pendientes": 5,
+   "marcasMuestra": 5,
+   "rotulos": 9,
+   "rotulosMono": 9
+  },
+  "imagenes": {
+   "n": 1,
+   "areaPctPagina": 25.2,
+   "areaPctV0": 69.3,
+   "lista": [
+    {
+     "tag": "IMG",
+     "x": 0,
+     "y": 107.4,
+     "w": 390,
+     "h": 585,
+     "src": "acerca.jpg?v=3",
+     "obj": "fill"
+    }
+   ]
+  },
+  "movimiento": {
+   "conTransicion": 44,
+   "propsTrans": {
+    "color": 11,
+    "transform": 2,
+    "background-size": 25,
+    "opacity": 5,
+    "border-color": 1,
+    "visibility": 1
+   },
+   "conAnim": 2,
+   "keyframes": 2,
+   "reglasHover": 22,
+   "reglasTrans": 24,
+   "hojasOk": 2,
+   "hojasNo": 1,
+   "animaciones": 0,
+   "sticky": [],
+   "fixed": []
+  },
+  "cromo": {
+   "bg": "rgb(238, 234, 226)",
+   "bgHtml": "rgb(238, 234, 226)",
+   "header": {
+    "h": 44,
+    "pos": "static",
+    "bg": "rgb(238, 234, 226)",
+    "borde": "0px none rgb(27, 27, 25)"
+   },
+   "footer": {
+    "h": 502.4,
+    "bg": "rgb(27, 27, 25)",
+    "color": "rgb(238, 234, 226)"
+   }
+  },
+  "encabezados": [
+   {
+    "tag": "H1",
+    "texto": "Acerca de Módulo 369",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "none",
+    "ls": "-0.26px",
+    "align": "start",
+    "y": 728,
+    "w": 354
+   },
+   {
+    "tag": "H2",
+    "texto": "CRITERIO CURATORIAL",
+    "fam": "Instrument Serif",
+    "size": "20px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "start",
+    "y": 1256,
+    "w": 354
+   },
+   {
+    "tag": "H2",
+    "texto": "VISIÓN",
+    "fam": "Instrument Serif",
+    "size": "20px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "start",
+    "y": 1448,
+    "w": 354
+   }
+  ],
+  "fuentes": [
+   "Archivo 400 800 normal",
+   "IBM Plex Mono 500 normal",
+   "Instrument Serif 400 italic",
+   "Instrument Serif 400 normal"
+  ],
+  "estado": 200,
+  "rectsV0": [
+   {
+    "x": 0,
+    "y": 107.40625,
+    "w": 390,
+    "h": 585
+   }
+  ],
+  "rectsB1": [],
+  "yB1": 844
+ },
+ "12-tienda": {
+  "url": "https://modulo369-maqueta.pages.dev/?aud=12#/tienda",
+  "titulo": "Tienda · Módulo 369 · maqueta",
+  "vw": 390,
+  "vh": 844,
+  "alto": 3132,
+  "pantallas": 3.7,
+  "lenis": false,
+  "texto": {
+   "palabras": 237,
+   "palabrasV0": 46,
+   "caracteres": 1263,
+   "familias": {
+    "IBM Plex Mono": 503,
+    "Instrument Serif": 160,
+    "Archivo": 600
+   },
+   "alineacion": {
+    "center": 496,
+    "left": 752,
+    "right": 15,
+    "otra": 0
+   },
+   "topEstilos": [
+    {
+     "estilo": "Archivo | 14px | 400 | normal | none | ls normal | lh 22.4px",
+     "chars": 365,
+     "ejemplo": "Cada obra se compra desde su ficha, con el botón C"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls 0.48px | lh 16.8px",
+     "chars": 284,
+     "ejemplo": "Obras, artistas, textos y datos de relleno: se cam"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 1.8px | lh 16.8px",
+     "chars": 115,
+     "ejemplo": "Ir al contenido"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 0.96px | lh 16.8px",
+     "chars": 104,
+     "ejemplo": "Maqueta"
+    },
+    {
+     "estilo": "Archivo | 12px | 500 | normal | none | ls normal | lh 14.4px",
+     "chars": 94,
+     "ejemplo": "Campo 01 (2025)"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 13px",
+     "chars": 81,
+     "ejemplo": "Todo"
+    },
+    {
+     "estilo": "Instrument Serif | 13px | 400 | normal | uppercase | ls 0.26px | lh 15.6px",
+     "chars": 67,
+     "ejemplo": "Artista A"
+    },
+    {
+     "estilo": "Archivo | 12px | 400 | normal | none | ls normal | lh 16.8px",
+     "chars": 50,
+     "ejemplo": "Módulo 369 · Galería de arte en línea"
+    },
+    {
+     "estilo": "Instrument Serif | 20px | 400 | normal | uppercase | ls normal | lh 24px",
+     "chars": 32,
+     "ejemplo": "Obras"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 26px",
+     "chars": 26,
+     "ejemplo": "Consulta por una"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 26px",
+     "chars": 20,
+     "ejemplo": "obra"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.8px",
+     "chars": 10,
+     "ejemplo": "@modulo369"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls normal | lh 26px",
+     "chars": 6,
+     "ejemplo": "Módulo"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 23.4px",
+     "chars": 6,
+     "ejemplo": "Tienda"
+    }
+   ],
+   "colores": [
+    [
+     "rgb(27, 27, 25)",
+     687
+    ],
+    [
+     "rgb(107, 103, 95)",
+     357
+    ],
+    [
+     "rgb(238, 234, 226)",
+     169
+    ],
+    [
+     "rgb(211, 204, 190)",
+     50
+    ]
+   ],
+   "bloquesLargos": [
+    {
+     "palabras": 37,
+     "y": 2450,
+     "texto": "Maqueta · El carrito (carro, pago dentro del sitio y stock) no está incluido: es la tienda"
+    }
+   ],
+   "nBloquesLargos": 1,
+   "muestras": [
+    {
+     "texto": "Maqueta",
+     "y": 6,
+     "clase": "rotulo etiqueta"
+    },
+    {
+     "texto": "Obras, artistas, textos y datos de relleno: se cambian por los reales.",
+     "y": 23,
+     "clase": "texto"
+    },
+    {
+     "texto": "Maqueta · El carrito (carro, pago dentro del sitio y stock) no está incluido: es",
+     "y": 2450,
+     "clase": "nota-maqueta"
+    }
+   ],
+   "nMuestras": 3,
+   "pendientes": 1,
+   "marcasMuestra": 1,
+   "rotulos": 30,
+   "rotulosMono": 23
+  },
+  "imagenes": {
+   "n": 7,
+   "areaPctPagina": 26.8,
+   "areaPctV0": 40.6,
+   "lista": [
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 359.6,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "a-01-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 359.6,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "b-02-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 740.3,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "c-02-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 740.3,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "caja-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 1120.9,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "e-01-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 195.5,
+     "y": 1120.9,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "e-02-600.jpg?v=3",
+     "obj": "cover"
+    },
+    {
+     "tag": "IMG",
+     "x": 1,
+     "y": 1501.6,
+     "w": 193.5,
+     "h": 241.9,
+     "src": "e-03-600.jpg?v=3",
+     "obj": "cover"
+    }
+   ]
+  },
+  "movimiento": {
+   "conTransicion": 61,
+   "propsTrans": {
+    "color": 10,
+    "transform": 2,
+    "background-size": 29,
+    "opacity": 19,
+    "border-color": 1,
+    "visibility": 1
+   },
+   "conAnim": 2,
+   "keyframes": 2,
+   "reglasHover": 22,
+   "reglasTrans": 24,
+   "hojasOk": 2,
+   "hojasNo": 1,
+   "animaciones": 0,
+   "sticky": [],
+   "fixed": []
+  },
+  "cromo": {
+   "bg": "rgb(238, 234, 226)",
+   "bgHtml": "rgb(238, 234, 226)",
+   "header": {
+    "h": 44,
+    "pos": "static",
+    "bg": "rgb(238, 234, 226)",
+    "borde": "0px none rgb(27, 27, 25)"
+   },
+   "footer": {
+    "h": 502.4,
+    "bg": "rgb(27, 27, 25)",
+    "color": "rgb(238, 234, 226)"
+   }
+  },
+  "encabezados": [
+   {
+    "tag": "H1",
+    "texto": "TIENDA",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 143,
+    "w": 68
+   },
+   {
+    "tag": "H2",
+    "texto": "OBRAS",
+    "fam": "Instrument Serif",
+    "size": "20px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "start",
+    "y": 1960,
+    "w": 354
+   },
+   {
+    "tag": "H2",
+    "texto": "CONSULTAS",
+    "fam": "Instrument Serif",
+    "size": "20px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "start",
+    "y": 2099,
+    "w": 354
+   },
+   {
+    "tag": "H2",
+    "texto": "ENCUENTRO",
+    "fam": "Instrument Serif",
+    "size": "20px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "start",
+    "y": 2239,
+    "w": 354
+   },
+   {
+    "tag": "H2",
+    "texto": "EDICIONES",
+    "fam": "Instrument Serif",
+    "size": "20px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "start",
+    "y": 2333,
+    "w": 354
+   }
+  ],
+  "fuentes": [
+   "Archivo 400 800 normal",
+   "IBM Plex Mono 500 normal",
+   "Instrument Serif 400 italic",
+   "Instrument Serif 400 normal"
+  ],
+  "estado": 200,
+  "rectsV0": [
+   {
+    "x": 1,
+    "y": 359.59375,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": 359.59375,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 1,
+    "y": 740.25,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": 740.25,
+    "w": 193.5,
+    "h": 241.875
+   }
+  ],
+  "rectsB1": [
+   {
+    "x": 1,
+    "y": -103.75,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": -103.75,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 1,
+    "y": 276.90625,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 195.5,
+    "y": 276.90625,
+    "w": 193.5,
+    "h": 241.875
+   },
+   {
+    "x": 1,
+    "y": 657.5625,
+    "w": 193.5,
+    "h": 241.875
+   }
+  ],
+  "yB1": 844
+ },
+ "13-contacto": {
+  "url": "https://modulo369-maqueta.pages.dev/?aud=13#/contacto",
+  "titulo": "Contacto · Módulo 369 · maqueta",
+  "vw": 390,
+  "vh": 844,
+  "alto": 1688,
+  "pantallas": 2,
+  "lenis": false,
+  "texto": {
+   "palabras": 123,
+   "palabrasV0": 58,
+   "caracteres": 716,
+   "familias": {
+    "IBM Plex Mono": 477,
+    "Instrument Serif": 97,
+    "Archivo": 142
+   },
+   "alineacion": {
+    "center": 179,
+    "left": 522,
+    "right": 15,
+    "otra": 0
+   },
+   "topEstilos": [
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls 0.48px | lh 16.8px",
+     "chars": 352,
+     "ejemplo": "Obras, artistas, textos y datos de relleno: se cam"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 1.8px | lh 16.8px",
+     "chars": 65,
+     "ejemplo": "Ir al contenido"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 0.96px | lh 16.8px",
+     "chars": 60,
+     "ejemplo": "Maqueta"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 13px",
+     "chars": 54,
+     "ejemplo": "Artistas"
+    },
+    {
+     "estilo": "Archivo | 12px | 400 | normal | none | ls normal | lh 16.8px",
+     "chars": 50,
+     "ejemplo": "Módulo 369 · Galería de arte en línea"
+    },
+    {
+     "estilo": "Instrument Serif | 20px | 400 | normal | uppercase | ls normal | lh 24px",
+     "chars": 34,
+     "ejemplo": "Consultas"
+    },
+    {
+     "estilo": "Archivo | 14px | 400 | normal | none | ls normal | lh 22.4px",
+     "chars": 28,
+     "ejemplo": "hola@modulo369.com"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 26px",
+     "chars": 26,
+     "ejemplo": "Consulta por una"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 26px",
+     "chars": 20,
+     "ejemplo": "obra"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.8px",
+     "chars": 10,
+     "ejemplo": "@modulo369"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | none | ls -0.26px | lh 28.6px",
+     "chars": 8,
+     "ejemplo": "Contacto"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls normal | lh 26px",
+     "chars": 6,
+     "ejemplo": "Módulo"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls normal | lh 26px",
+     "chars": 3,
+     "ejemplo": "369"
+    }
+   ],
+   "colores": [
+    [
+     "rgb(107, 103, 95)",
+     381
+    ],
+    [
+     "rgb(238, 234, 226)",
+     185
+    ],
+    [
+     "rgb(27, 27, 25)",
+     100
+    ],
+    [
+     "rgb(211, 204, 190)",
+     50
+    ]
+   ],
+   "bloquesLargos": [],
+   "nBloquesLargos": 0,
+   "muestras": [
+    {
+     "texto": "Maqueta",
+     "y": 6,
+     "clase": "rotulo etiqueta"
+    },
+    {
+     "texto": "Obras, artistas, textos y datos de relleno: se cambian por los reales.",
+     "y": 23,
+     "clase": "texto"
+    },
+    {
+     "texto": "Maqueta · Esta casilla todavía no existe: se crea con el correo del dominio (Zoh",
+     "y": 739,
+     "clase": "nota-maqueta"
+    },
+    {
+     "texto": "Maqueta · El newsletter no está incluido: necesita un servicio externo, con cuen",
+     "y": 955,
+     "clase": "nota-maqueta"
+    }
+   ],
+   "nMuestras": 4,
+   "pendientes": 2,
+   "marcasMuestra": 2,
+   "rotulos": 15,
+   "rotulosMono": 15
+  },
+  "imagenes": {
+   "n": 0,
+   "areaPctPagina": 0,
+   "areaPctV0": 0,
+   "lista": []
+  },
+  "movimiento": {
+   "conTransicion": 44,
+   "propsTrans": {
+    "color": 11,
+    "transform": 2,
+    "background-size": 25,
+    "opacity": 5,
+    "border-color": 1,
+    "visibility": 1
+   },
+   "conAnim": 2,
+   "keyframes": 2,
+   "reglasHover": 22,
+   "reglasTrans": 24,
+   "hojasOk": 2,
+   "hojasNo": 1,
+   "animaciones": 0,
+   "sticky": [],
+   "fixed": []
+  },
+  "cromo": {
+   "bg": "rgb(238, 234, 226)",
+   "bgHtml": "rgb(238, 234, 226)",
+   "header": {
+    "h": 44,
+    "pos": "static",
+    "bg": "rgb(238, 234, 226)",
+    "borde": "0px none rgb(27, 27, 25)"
+   },
+   "footer": {
+    "h": 502.4,
+    "bg": "rgb(27, 27, 25)",
+    "color": "rgb(238, 234, 226)"
+   }
+  },
+  "encabezados": [
+   {
+    "tag": "H1",
+    "texto": "Contacto",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "none",
+    "ls": "-0.26px",
+    "align": "start",
+    "y": 143,
+    "w": 354
+   },
+   {
+    "tag": "H2",
+    "texto": "CONSULTAS",
+    "fam": "Instrument Serif",
+    "size": "20px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "start",
+    "y": 208,
+    "w": 354
+   },
+   {
+    "tag": "H2",
+    "texto": "CORREO",
+    "fam": "Instrument Serif",
+    "size": "20px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "start",
+    "y": 668,
+    "w": 354
+   },
+   {
+    "tag": "H2",
+    "texto": "INSTAGRAM",
+    "fam": "Instrument Serif",
+    "size": "20px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "start",
+    "y": 825,
+    "w": 354
+   },
+   {
+    "tag": "H2",
+    "texto": "NEWSLETTER",
+    "fam": "Instrument Serif",
+    "size": "20px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "uppercase",
+    "ls": "normal",
+    "align": "start",
+    "y": 919,
+    "w": 354
+   }
+  ],
+  "fuentes": [
+   "Archivo 400 800 normal",
+   "IBM Plex Mono 500 normal",
+   "Instrument Serif 400 italic",
+   "Instrument Serif 400 normal"
+  ],
+  "estado": 200,
+  "rectsV0": [],
+  "rectsB1": [],
+  "yB1": 844
+ },
+ "14-404": {
+  "url": "https://modulo369-maqueta.pages.dev/?aud=14#/ruta-que-no-existe",
+  "titulo": "Esta página no existe. · Módulo 369 · maqueta",
+  "vw": 390,
+  "vh": 844,
+  "alto": 1032,
+  "pantallas": 1.2,
+  "lenis": false,
+  "texto": {
+   "palabras": 72,
+   "palabrasV0": 60,
+   "caracteres": 376,
+   "familias": {
+    "IBM Plex Mono": 185,
+    "Instrument Serif": 77,
+    "Archivo": 114
+   },
+   "alineacion": {
+    "center": 200,
+    "left": 161,
+    "right": 15,
+    "otra": 0
+   },
+   "topEstilos": [
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | none | ls 0.48px | lh 16.8px",
+     "chars": 90,
+     "ejemplo": "Obras, artistas, textos y datos de relleno: se cam"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 1.8px | lh 16.8px",
+     "chars": 64,
+     "ejemplo": "Ir al contenido"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 13px",
+     "chars": 54,
+     "ejemplo": "Artistas"
+    },
+    {
+     "estilo": "Archivo | 12px | 400 | normal | none | ls normal | lh 16.8px",
+     "chars": 50,
+     "ejemplo": "Módulo 369 · Galería de arte en línea"
+    },
+    {
+     "estilo": "IBM Plex Mono | 12px | 500 | normal | uppercase | ls 0.96px | lh 16.8px",
+     "chars": 31,
+     "ejemplo": "Maqueta"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls -0.26px | lh 26px",
+     "chars": 26,
+     "ejemplo": "Consulta por una"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | none | ls -0.26px | lh 28.6px",
+     "chars": 22,
+     "ejemplo": "Esta página no existe."
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls -0.26px | lh 26px",
+     "chars": 20,
+     "ejemplo": "obra"
+    },
+    {
+     "estilo": "Archivo | 13px | 500 | normal | none | ls normal | lh 20.8px",
+     "chars": 10,
+     "ejemplo": "@modulo369"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | italic | uppercase | ls normal | lh 26px",
+     "chars": 6,
+     "ejemplo": "Módulo"
+    },
+    {
+     "estilo": "Instrument Serif | 26px | 400 | normal | uppercase | ls normal | lh 26px",
+     "chars": 3,
+     "ejemplo": "369"
+    }
+   ],
+   "colores": [
+    [
+     "rgb(238, 234, 226)",
+     169
+    ],
+    [
+     "rgb(107, 103, 95)",
+     90
+    ],
+    [
+     "rgb(27, 27, 25)",
+     67
+    ],
+    [
+     "rgb(211, 204, 190)",
+     50
+    ]
+   ],
+   "bloquesLargos": [],
+   "nBloquesLargos": 0,
+   "muestras": [
+    {
+     "texto": "Maqueta",
+     "y": 6,
+     "clase": "rotulo etiqueta"
+    },
+    {
+     "texto": "Obras, artistas, textos y datos de relleno: se cambian por los reales.",
+     "y": 23,
+     "clase": "texto"
+    }
+   ],
+   "nMuestras": 2,
+   "pendientes": 1,
+   "marcasMuestra": 1,
+   "rotulos": 10,
+   "rotulosMono": 10
+  },
+  "imagenes": {
+   "n": 0,
+   "areaPctPagina": 0,
+   "areaPctV0": 0,
+   "lista": []
+  },
+  "movimiento": {
+   "conTransicion": 45,
+   "propsTrans": {
+    "color": 12,
+    "transform": 2,
+    "background-size": 25,
+    "opacity": 5,
+    "border-color": 1,
+    "visibility": 1
+   },
+   "conAnim": 2,
+   "keyframes": 2,
+   "reglasHover": 22,
+   "reglasTrans": 24,
+   "hojasOk": 2,
+   "hojasNo": 1,
+   "animaciones": 0,
+   "sticky": [],
+   "fixed": []
+  },
+  "cromo": {
+   "bg": "rgb(238, 234, 226)",
+   "bgHtml": "rgb(238, 234, 226)",
+   "header": {
+    "h": 44,
+    "pos": "static",
+    "bg": "rgb(238, 234, 226)",
+    "borde": "0px none rgb(27, 27, 25)"
+   },
+   "footer": {
+    "h": 502.4,
+    "bg": "rgb(27, 27, 25)",
+    "color": "rgb(238, 234, 226)"
+   }
+  },
+  "encabezados": [
+   {
+    "tag": "H1",
+    "texto": "Esta página no existe.",
+    "fam": "Instrument Serif",
+    "size": "26px",
+    "peso": "400",
+    "estilo": "normal",
+    "tt": "none",
+    "ls": "-0.26px",
+    "align": "center",
+    "y": 203,
+    "w": 182
+   }
+  ],
+  "fuentes": [
+   "Archivo 400 800 normal",
+   "IBM Plex Mono 500 normal",
+   "Instrument Serif 400 italic",
+   "Instrument Serif 400 normal"
+  ],
+  "estado": 200,
+  "rectsV0": [],
+  "rectsB1": [],
+  "yB1": 188
+ }
+}

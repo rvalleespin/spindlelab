@@ -1,0 +1,4849 @@
+{
+ "designMenuState": {
+  "h": 664.984375,
+  "vis": false,
+  "cls": "shop-menu-module__KVl6JW__menu albert_sans_d07bd869-module__vNvuEW__className "
+ },
+ "designMenu": {
+  "label": "menu-design-1440",
+  "url": "https://www.studio-iron.com/",
+  "title": "Curated objects from independent designers — Studio Iron — Studio Iron",
+  "scrollH": 5770,
+  "w": 1440,
+  "colors": [
+   {
+    "prop": "background",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": false,
+    "count": 1,
+    "area": 946938,
+    "chars": 0,
+    "regions": {
+     "menu-design": 1
+    },
+    "samples": [
+     "div.shop-menu-module__KVl6JW__menu.albert_sans_d07bd869-module__vNvuEW__className [menu-design]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#f0f0f0",
+    "rgba": [
+     240,
+     240,
+     240,
+     1
+    ],
+    "visible": false,
+    "count": 28,
+    "area": 473056,
+    "chars": 0,
+    "regions": {
+     "menu-design": 28
+    },
+    "samples": [
+     "div.shop-menu-module__KVl6JW__thumbWrap [menu-design]",
+     "div.shop-menu-module__KVl6JW__thumbPlaceholder [menu-design]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 28,
+    "area": 0,
+    "chars": 379,
+    "regions": {
+     "menu-design": 28
+    },
+    "samples": [
+     "span.shop-menu-module__KVl6JW__title «All Objects» [menu-design]",
+     "span.shop-menu-module__KVl6JW__title «Andu Masebo» [menu-design]",
+     "span.shop-menu-module__KVl6JW__title «Anoe Melliou» [menu-design]",
+     "span.shop-menu-module__KVl6JW__title «Apohli» [menu-design]",
+     "span.shop-menu-module__KVl6JW__title «Atelier Fomenta» [menu-design]",
+     "span.shop-menu-module__KVl6JW__title «Atelier Moore x Camille Cabanes» [menu-design]"
+    ]
+   }
+  ],
+  "pairs": [],
+  "selection": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(10, 10, 10)"
+  },
+  "theme": [
+   "#ffffff"
+  ],
+  "imgCount": 92,
+  "imgBgs": {
+   "img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal": 53,
+   "img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal": 2,
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal": 22,
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal": 15
+  },
+  "rootVars": {
+   "--tw-ring-offset-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-100": "lab(96.1634% .0993311 -.364041) => #f4f4f5",
+   "--tw-ring-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-200": "lab(90.6853% .399232 -1.45452) => #e4e4e7",
+   "--color-gray-800": "lab(16.1051% -1.18239 -11.7533) => #1e2939",
+   "--color-green-600": "lab(59.0978% -58.6621 41.2579) => #00a63e",
+   "--grey": "#f0f0f0 => #f0f0f0",
+   "--color-zinc-500": "lab(47.8878% 1.65477 -5.77283) => #71717b",
+   "--color-zinc-900": "lab(8.30603% .618205 -2.16572) => #18181b",
+   "--color-neutral-500": "lab(48.496% 0 0) => #737373",
+   "--color-zinc-800": "lab(15.7305% .613764 -2.16959) => #27272a",
+   "--hightlight": "#fc1701 => #fc1701",
+   "--tw-inset-ring-shadow": "0 0 #0000 => #000000@0",
+   "--background": "#fff => #ffffff",
+   "--tw-gradient-via": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-gray-300": "lab(85.1236% -.612259 -3.7138) => #d1d5dc",
+   "--color-gray-500": "lab(47.7841% -.393182 -10.0268) => #6a7282",
+   "--color-red-700": "lab(40.4273% 67.2623 53.7441) => #c10007",
+   "--color-zinc-50": "lab(98.26% 0 0) => #fafafa",
+   "--swiper-theme-color": "#007aff => #007aff",
+   "--color-gray-50": "lab(98.2596% -.247031 -.706708) => #f9fafb",
+   "--color-gray-900": "lab(8.11897% .811279 -12.254) => #101828",
+   "--tw-inset-shadow": "0 0 #0000 => #000000@0",
+   "--tw-ring-offset-color": "#fff => #ffffff",
+   "--color-zinc-400": "lab(65.6464% 1.53497 -5.42429) => #9f9fa9",
+   "--color-red-400": "lab(63.7053% 60.745 31.3109) => #ff6467",
+   "--tw-gradient-from": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-white": "#fff => #ffffff",
+   "--color-gray-400": "lab(65.9269% -.832707 -8.17473) => #99a1af",
+   "--color-gray-700": "lab(27.1134% -.956401 -12.3224) => #364153",
+   "--color-zinc-600": "lab(35.1166% 1.78212 -6.1173) => #52525c",
+   "--tw-gradient-to": "rgba(0, 0, 0, 0) => #000000@0",
+   "--muted-text": "#6b6b6b => #6b6b6b",
+   "--color-gray-600": "lab(35.6337% -1.58697 -10.8425) => #4a5565",
+   "--color-blue-600": "lab(44.0605% 29.0279 -86.0352) => #155dfc",
+   "--color-gray-100": "lab(96.1596% -.0823438 -1.13575) => #f3f4f6",
+   "--tw-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-300": "lab(84.9837% .601262 -2.17986) => #d4d4d8",
+   "--color-blue-200": "lab(86.15% -4.04379 -21.0797) => #bedbff",
+   "--color-blue-50": "lab(96.492% -1.14644 -5.11479) => #eff6ff",
+   "--color-gray-200": "lab(91.6229% -.159115 -2.26791) => #e5e7eb",
+   "--color-black": "#000 => #000000",
+   "--color-zinc-700": "lab(26.8019% 1.35387 -4.68303) => #3f3f46",
+   "--foreground": "#0a0a0a => #0a0a0a"
+  },
+  "htmlBg": "rgba(0, 0, 0, 0)",
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(10, 10, 10)"
+ },
+ "designMenuNewVis": [
+  {
+   "cls": "dynamic-menu-module__qpp75q__submenu",
+   "id": "",
+   "pos": "absolute",
+   "bg": "rgb(255, 255, 255)",
+   "z": "1",
+   "x": 0,
+   "y": 29,
+   "w": 1440,
+   "h": 692,
+   "backdrop": "none"
+  },
+  {
+   "cls": "sticky top-[30px] z-0",
+   "id": "",
+   "pos": "sticky",
+   "bg": "rgba(0, 0, 0, 0)",
+   "z": "0",
+   "x": 0,
+   "y": 30,
+   "w": 1440,
+   "h": 188,
+   "backdrop": "none"
+  },
+  {
+   "cls": "object-contain",
+   "id": "",
+   "pos": "absolute",
+   "bg": "rgba(0, 0, 0, 0)",
+   "z": "auto",
+   "x": 0,
+   "y": 228,
+   "w": 1440,
+   "h": 1910,
+   "backdrop": "none"
+  },
+  {
+   "cls": "dynamic-menu-module__qpp75q__overlay",
+   "id": "",
+   "pos": "fixed",
+   "bg": "rgba(255, 255, 255, 0.65)",
+   "z": "40",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 900,
+   "backdrop": "blur(1px)"
+  }
+ ],
+ "designMenuThumbHover": {
+  "th": {
+   "x": 98.6640625,
+   "y": 131.015625,
+   "txt": ""
+  },
+  "before": {
+   "op": "1",
+   "color": "rgb(10, 10, 10)",
+   "td": "none",
+   "img": "1 none none",
+   "after": "none"
+  },
+  "after": {
+   "op": "1",
+   "color": "rgb(10, 10, 10)",
+   "td": "none",
+   "img": "1 none none",
+   "after": "none"
+  }
+ },
+ "searchClick": "Search",
+ "searchNewVis": [
+  {
+   "cls": "sticky top-[30px] z-0",
+   "id": "",
+   "pos": "sticky",
+   "bg": "rgba(0, 0, 0, 0)",
+   "z": "0",
+   "x": 0,
+   "y": 30,
+   "w": 1440,
+   "h": 188,
+   "backdrop": "none"
+  },
+  {
+   "cls": "object-contain",
+   "id": "",
+   "pos": "absolute",
+   "bg": "rgba(0, 0, 0, 0)",
+   "z": "auto",
+   "x": 0,
+   "y": 228,
+   "w": 1440,
+   "h": 1910,
+   "backdrop": "none"
+  },
+  {
+   "cls": "fixed inset-0 z-40",
+   "id": "",
+   "pos": "fixed",
+   "bg": "rgba(255, 255, 255, 0.65)",
+   "z": "40",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 900,
+   "backdrop": "blur(1px)"
+  },
+  {
+   "cls": "fixed top-0 right-0 h-full z-50 bg-white flex flex-col",
+   "id": "",
+   "pos": "fixed",
+   "bg": "rgb(255, 255, 255)",
+   "z": "50",
+   "x": 960,
+   "y": 0,
+   "w": 480,
+   "h": 900,
+   "backdrop": "none"
+  },
+  {
+   "cls": "loaded",
+   "id": "",
+   "pos": "absolute",
+   "bg": "rgba(0, 0, 0, 0)",
+   "z": "auto",
+   "x": 981,
+   "y": 182,
+   "w": 217,
+   "h": 274,
+   "backdrop": "none"
+  },
+  {
+   "cls": "loaded",
+   "id": "",
+   "pos": "absolute",
+   "bg": "rgba(0, 0, 0, 0)",
+   "z": "auto",
+   "x": 1202,
+   "y": 182,
+   "w": 217,
+   "h": 274,
+   "backdrop": "none"
+  }
+ ],
+ "searchFull": {
+  "label": "search-1440",
+  "url": "https://www.studio-iron.com/",
+  "title": "Curated objects from independent designers — Studio Iron — Studio Iron",
+  "scrollH": 5770,
+  "w": 1440,
+  "colors": [
+   {
+    "prop": "background",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 6,
+    "area": 16746429,
+    "chars": 0,
+    "regions": {
+     "main": 2,
+     "header": 1,
+     "cart": 1,
+     "drawer": 1,
+     "search": 1
+    },
+    "samples": [
+     "body.antialiased [main]",
+     "header.header-module__HqSsuG__header.albert_sans_d07bd869-module__vNvuEW__className [header]",
+     "main.albert_sans_6ab7f873-module__7VJibG__className.wrapper [main]",
+     "div.cart-module__GMR72G__cart.cart-module__GMR72G__isClosed.albert_sans_ea8044c2-module__OGpixG__className [cart]",
+     "div.fixed.top-0.right-0.h-full [drawer]",
+     "span.text-[10px].tracking-[0.15em].uppercase.px-2 [search]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 29,
+    "area": 0,
+    "chars": 780,
+    "regions": {
+     "main": 7,
+     "footer": 22
+    },
+    "samples": [
+     "a.skip-link «Skip to content» [main]",
+     "h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9].lg:text-5xl.text-[26px] «London Design Festival» [main]",
+     "p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] «The group exhibition embraces experiment» [main]",
+     "span.mt-[6px].inline-block.lg:self-start.text-[11px] «Discover» [main]",
+     "h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9].lg:text-5xl.text-[26px] «Black Metal Edit» [main]",
+     "p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] «The Black Metal Edit explores the darker» [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 6314,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "a.skip-link [main]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 64,
+    "area": 0,
+    "chars": 1026,
+    "regions": {
+     "menu": 5,
+     "header": 4,
+     "main": 45,
+     "cart": 3,
+     "drawer": 1,
+     "search": 6
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.hover-underline «Design» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Art» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «London Design Festival» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Events» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «About» [menu]",
+     "button.hover-underline «Search» [header]"
+    ]
+   },
+   {
+    "prop": "pseudo-bg::after",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 8,
+    "area": 409.9529,
+    "chars": 0,
+    "regions": {
+     "menu": 5,
+     "header": 3
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.hover-underline «content=\"\"» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «content=\"\"» [menu]",
+     "button.hover-underline «content=\"\"» [header]",
+     "a.hover-underline «content=\"\"» [header]"
+    ]
+   },
+   {
+    "prop": "svg-fill",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 13,
+    "area": 4637,
+    "chars": 0,
+    "regions": {
+     "header": 13
+    },
+    "samples": [
+     "g [header]",
+     "path [header]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 2,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "header": 2
+    },
+    "samples": [
+     "span.block.w-5.h-[2px].bg-current [header]"
+    ]
+   },
+   {
+    "prop": "svg-stroke",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 3,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "header": 2,
+     "menu": 1
+    },
+    "samples": [
+     "path [header]",
+     "path [menu]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 35,
+    "area": 0,
+    "chars": 434,
+    "regions": {
+     "menu": 5,
+     "main": 2,
+     "menu-design": 28
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.dynamic-menu-module__qpp75q__hasSubmenu.hover-underline «Design» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Art» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «London Design Festival» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Events» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «About» [menu]",
+     "a.flex.items-center.gap-2.py-3 «Account» [main]"
+    ]
+   },
+   {
+    "prop": "pseudo-bg::after",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 5,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "menu": 5
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.dynamic-menu-module__qpp75q__hasSubmenu.hover-underline «content=\"\"» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «content=\"\"» [menu]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#e4e4e7",
+    "rgba": [
+     228,
+     228,
+     231,
+     1
+    ],
+    "visible": false,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.px-3.py-1.flex.flex-row «Top 1px» [main]"
+    ]
+   },
+   {
+    "prop": "svg-fill",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 13,
+    "area": 540778,
+    "chars": 0,
+    "regions": {
+     "main": 13
+    },
+    "samples": [
+     "g [main]",
+     "path [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#f4f4f5",
+    "rgba": [
+     244,
+     244,
+     245,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 2750243,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.relative.w-full.h-0.bg-zinc-100 [main]"
+    ]
+   },
+   {
+    "prop": "svg-fill",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": false,
+    "count": 1,
+    "area": 1489,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "path [main]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": false,
+    "count": 1,
+    "area": 0,
+    "chars": 6,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "span «Scroll» [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#ffffff@0.902",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.902
+    ],
+    "visible": true,
+    "count": 4,
+    "area": 3136,
+    "chars": 0,
+    "regions": {
+     "main": 4
+    },
+    "samples": [
+     "button.w-7.h-7.flex.items-center [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#e4e4e7",
+    "rgba": [
+     228,
+     228,
+     231,
+     1
+    ],
+    "visible": true,
+    "count": 32,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 32
+    },
+    "samples": [
+     "button.w-7.h-7.flex.items-center «Top 1px» [main]",
+     "button.w-7.h-7.flex.items-center «Right 1px» [main]",
+     "button.w-7.h-7.flex.items-center «Bottom 1px» [main]",
+     "button.w-7.h-7.flex.items-center «Left 1px» [main]",
+     "button.w-[15px].h-[8px].cursor-pointer.box-border «Top 1px» [main]",
+     "button.w-[15px].h-[8px].cursor-pointer.box-border «Right 1px» [main]"
+    ]
+   },
+   {
+    "prop": "svg-stroke",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 4,
+    "area": 120,
+    "chars": 0,
+    "regions": {
+     "main": 4
+    },
+    "samples": [
+     "path [main]"
+    ]
+   },
+   {
+    "prop": "gradient",
+    "hex": "#f6f6f6",
+    "rgba": [
+     246,
+     246,
+     246,
+     1
+    ],
+    "visible": true,
+    "count": 22,
+    "area": 3162298,
+    "chars": 0,
+    "regions": {
+     "main": 20,
+     "search": 2
+    },
+    "samples": [
+     "div.product-card-module__3G3cFq__image.relative «linear-gradient(90deg, rgb(246, 246, 246» [main]",
+     "div.product-card-module__3G3cFq__image.relative «linear-gradient(90deg, rgb(246, 246, 246» [search]"
+    ]
+   },
+   {
+    "prop": "gradient",
+    "hex": "#ebebeb",
+    "rgba": [
+     235,
+     235,
+     235,
+     1
+    ],
+    "visible": true,
+    "count": 22,
+    "area": 3162298,
+    "chars": 0,
+    "regions": {
+     "main": 20,
+     "search": 2
+    },
+    "samples": [
+     "div.product-card-module__3G3cFq__image.relative «linear-gradient(90deg, rgb(246, 246, 246» [main]",
+     "div.product-card-module__3G3cFq__image.relative «linear-gradient(90deg, rgb(246, 246, 246» [search]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 91,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 83,
+     "search": 8
+    },
+    "samples": [
+     "div.product-card-module__3G3cFq__image.relative «Top 1px» [main]",
+     "div.product-card-module__3G3cFq__image.relative «Right 1px» [main]",
+     "div.product-card-module__3G3cFq__image.relative «Bottom 1px» [main]",
+     "div.product-card-module__3G3cFq__image.relative «Left 1px» [main]",
+     "span «Bottom 1px» [main]",
+     "span.mt-[6px].inline-block.lg:self-start.text-[11px] «Bottom 1px» [main]"
+    ]
+   },
+   {
+    "prop": "pseudo-bg::after",
+    "hex": "#ebebeb",
+    "rgba": [
+     235,
+     235,
+     235,
+     1
+    ],
+    "visible": true,
+    "count": 22,
+    "area": 3129007.5,
+    "chars": 0,
+    "regions": {
+     "main": 20,
+     "search": 2
+    },
+    "samples": [
+     "div.product-card-module__3G3cFq__image.relative «content=\"\"» [main]",
+     "div.product-card-module__3G3cFq__image.relative «content=\"\"» [search]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#52525c",
+    "rgba": [
+     82,
+     82,
+     92,
+     1
+    ],
+    "visible": true,
+    "count": 11,
+    "area": 0,
+    "chars": 19,
+    "regions": {
+     "main": 11
+    },
+    "samples": [
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «37» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «38» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «39» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «40» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «41» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «42» [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#d4d4d8",
+    "rgba": [
+     212,
+     212,
+     216,
+     1
+    ],
+    "visible": true,
+    "count": 44,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 44
+    },
+    "samples": [
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Top 1px» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Right 1px» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Bottom 1px» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Left 1px» [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": true,
+    "count": 3,
+    "area": 735878,
+    "chars": 0,
+    "regions": {
+     "main": 2,
+     "footer": 1
+    },
+    "samples": [
+     "button.w-[15px].h-[8px].cursor-pointer.box-border [main]",
+     "footer.bg-black.text-white.p-[12px].lg:p-[18px] [footer]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#e6e5e5",
+    "rgba": [
+     230,
+     229,
+     229,
+     1
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 240,
+    "chars": 0,
+    "regions": {
+     "main": 2
+    },
+    "samples": [
+     "button.w-[15px].h-[8px].cursor-pointer.box-border [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": true,
+    "count": 6,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 4,
+     "cart": 1,
+     "search": 1
+    },
+    "samples": [
+     "div.p-[10px].lg:p-[12px].gap-0.5 «Top 1px» [main]",
+     "div.p-[10px].lg:p-[12px].gap-0.5 «Right 1px» [main]",
+     "div.p-[10px].lg:p-[12px].gap-0.5 «Bottom 1px» [main]",
+     "div.p-[10px].lg:p-[12px].gap-0.5 «Left 1px» [main]",
+     "button.text-[11px].tracking-[0.18em].uppercase.border-b «Bottom 1px» [cart]",
+     "div.search-module__6zfDpG__inputWrap «Bottom 1px» [search]"
+    ]
+   },
+   {
+    "prop": "gradient",
+    "hex": "#000000@0.749",
+    "rgba": [
+     0,
+     0,
+     0,
+     0.749
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 1283040,
+    "chars": 0,
+    "regions": {
+     "main": 2
+    },
+    "samples": [
+     "div.absolute.inset-y-0.left-0.lg:w-[55%] «linear-gradient(to right, oklab(0 0 0 / » [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#ffffff@0.4",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.4
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "div.flex.border-b.border-white/40.focus-within:border-white «Bottom 1px» [footer]"
+    ]
+   },
+   {
+    "prop": "placeholder",
+    "hex": "#ffffff@0.502",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.502
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "input.flex-1.bg-transparent.outline-none.py-2 «Your email address» [footer]"
+    ]
+   },
+   {
+    "prop": "caret",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 2
+    },
+    "samples": [
+     "input.flex-1.bg-transparent.outline-none.py-2 [footer]",
+     "input.shrink-0.mt-[3px].accent-white [footer]"
+    ]
+   },
+   {
+    "prop": "accent",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "input.shrink-0.mt-[3px].accent-white [footer]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#ffffff@0.698",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.698
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 0,
+    "chars": 111,
+    "regions": {
+     "footer": 2
+    },
+    "samples": [
+     "span.text-[11px].leading-relaxed.text-white/70 «I agree to receive marketing emails from» [footer]",
+     "a.underline «Privacy Policy» [footer]"
+    ]
+   },
+   {
+    "prop": "text-decoration",
+    "hex": "#ffffff@0.698",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.698
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "a.underline «underline Privacy Policy» [footer]"
+    ]
+   },
+   {
+    "prop": "svg-fill",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 8895,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "path [footer]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": true,
+    "count": 3,
+    "area": 0,
+    "chars": 10,
+    "regions": {
+     "cart": 1,
+     "drawer": 1,
+     "search": 1
+    },
+    "samples": [
+     "button.text-black.text-[12px].tracking-widest.uppercase «Close» [cart]",
+     "button.text-black.text-sm.text-[12px].tracking-widest «Close» [drawer]",
+     "input.search-module__6zfDpG__input «input:search» [search]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": false,
+    "count": 1,
+    "area": 946938,
+    "chars": 0,
+    "regions": {
+     "menu-design": 1
+    },
+    "samples": [
+     "div.shop-menu-module__KVl6JW__menu.albert_sans_d07bd869-module__vNvuEW__className [menu-design]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#f0f0f0",
+    "rgba": [
+     240,
+     240,
+     240,
+     1
+    ],
+    "visible": false,
+    "count": 28,
+    "area": 473056,
+    "chars": 0,
+    "regions": {
+     "menu-design": 28
+    },
+    "samples": [
+     "div.shop-menu-module__KVl6JW__thumbWrap [menu-design]",
+     "div.shop-menu-module__KVl6JW__thumbPlaceholder [menu-design]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#ffffff@0.65",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.65
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 1296000,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.fixed.inset-0.z-40 [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#f4f4f5",
+    "rgba": [
+     244,
+     244,
+     245,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "drawer": 1
+    },
+    "samples": [
+     "div.flex.items-center.justify-between.lg:px-[24px] «Bottom 1px» [drawer]"
+    ]
+   },
+   {
+    "prop": "placeholder",
+    "hex": "#aaaaaa",
+    "rgba": [
+     170,
+     170,
+     170,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "search": 1
+    },
+    "samples": [
+     "input.search-module__6zfDpG__input «What are you looking for?» [search]"
+    ]
+   },
+   {
+    "prop": "caret",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "search": 1
+    },
+    "samples": [
+     "input.search-module__6zfDpG__input [search]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": false,
+    "count": 2,
+    "area": 0,
+    "chars": 27,
+    "regions": {
+     "cookie": 2
+    },
+    "samples": [
+     "a «Cookie Policy» [cookie]",
+     "a «Privacy Policy» [cookie]"
+    ]
+   },
+   {
+    "prop": "text-decoration",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": false,
+    "count": 2,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "cookie": 2
+    },
+    "samples": [
+     "a «underline Cookie Policy» [cookie]",
+     "a «underline Privacy Policy» [cookie]"
+    ]
+   }
+  ],
+  "pairs": [
+   {
+    "fg": "#ffffff",
+    "fgDeclared": "#ffffff",
+    "opacity": 1,
+    "bg": "#0a0a0a",
+    "overImage": false,
+    "ratio": 19.8,
+    "chars": 15,
+    "count": 1,
+    "samples": [
+     "«Skip to content» a.skip-link [main] 12px/500"
+    ],
+    "sizes": {
+     "12px/500": 15
+    }
+   },
+   {
+    "fg": "#0a0a0a",
+    "fgDeclared": "#0a0a0a",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": false,
+    "ratio": 19.8,
+    "chars": 963,
+    "count": 58,
+    "samples": [
+     "«Design» button.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+     "«Art» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+     "«London Design Festival» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+     "«Events» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+     "«About» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500"
+    ],
+    "sizes": {
+     "13px/500": 61,
+     "100.8px/500": 33,
+     "15px/500": 181,
+     "20px/500": 11,
+     "12px/500": 603,
+     "20px/400": 11,
+     "11.2px/500": 16,
+     "14px/500": 30,
+     "11px/500": 17
+    }
+   },
+   {
+    "fg": "#52525c",
+    "fgDeclared": "#52525c",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": false,
+    "ratio": 7.72,
+    "chars": 19,
+    "count": 11,
+    "samples": [
+     "«37» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+     "«38» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+     "«39» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+     "«40» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+     "«41» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500"
+    ],
+    "sizes": {
+     "8px/500": 19
+    }
+   },
+   {
+    "fg": "#ffffff",
+    "fgDeclared": "#ffffff",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": true,
+    "ratio": 1,
+    "chars": 518,
+    "count": 6,
+    "samples": [
+     "«London Design Festival» h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [main] 48px/500",
+     "«The group exhibition embraces » p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] [main] 15px/500",
+     "«Discover» span.mt-[6px].inline-block.lg:self-start.text-[11px] [main] 11px/500",
+     "«Black Metal Edit» h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [main] 48px/500",
+     "«The Black Metal Edit explores » p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] [main] 15px/500"
+    ],
+    "sizes": {
+     "48px/500": 38,
+     "15px/500": 455,
+     "11px/500": 25
+    }
+   },
+   {
+    "fg": "#ffffff",
+    "fgDeclared": "#ffffff",
+    "opacity": 1,
+    "bg": "#000000",
+    "overImage": false,
+    "ratio": 21,
+    "chars": 247,
+    "count": 20,
+    "samples": [
+     "«Be the first to hear about new» h2.basis-[60%].uppercase.bookish_82aca62c-module__UWeQgW__cl [footer] 37.44px/500",
+     "«objects,» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 37.44px/500",
+     "«collections» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 37.44px/500",
+     "«studio» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 37.44px/500",
+     "«Subscribe →» button.uppercase.text-xs.tracking-[0.15em].disabled:opacity- [footer] 12px/500"
+    ],
+    "sizes": {
+     "37.44px/500": 65,
+     "12px/500": 124,
+     "14px/500": 58
+    }
+   },
+   {
+    "fg": "#b2b2b2",
+    "fgDeclared": "#ffffff@0.698",
+    "opacity": 1,
+    "bg": "#000000",
+    "overImage": false,
+    "ratio": 9.9,
+    "chars": 111,
+    "count": 2,
+    "samples": [
+     "«I agree to receive marketing e» span.text-[11px].leading-relaxed.text-white/70 [footer] 11px/500",
+     "«Privacy Policy» a.underline [footer] 11px/500"
+    ],
+    "sizes": {
+     "11px/500": 111
+    }
+   },
+   {
+    "fg": "#000000",
+    "fgDeclared": "#000000",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": false,
+    "ratio": 21,
+    "chars": 10,
+    "count": 2,
+    "samples": [
+     "«Close» button.text-black.text-[12px].tracking-widest.uppercase [cart] 12px/500",
+     "«Close» button.text-black.text-sm.text-[12px].tracking-widest [drawer] 12px/500"
+    ],
+    "sizes": {
+     "12px/500": 10
+    }
+   },
+   {
+    "fg": "#0a0a0a",
+    "fgDeclared": "#0a0a0a",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": true,
+    "ratio": 19.8,
+    "chars": 63,
+    "count": 6,
+    "samples": [
+     "«Suggestions» div.search-module__6zfDpG__sectionTitle [search] 13px/700",
+     "«HARDSTYLE» h4.product-card-module__3G3cFq__title [search] 12px/500",
+     "«HARDSTYLE» div.product-card-module__3G3cFq__vendor.bookish_82aca62c-mod [search] 12px/500",
+     "«Sold Out» span.text-[10px].tracking-[0.15em].uppercase.px-2 [search] 10px/500",
+     "«Tapestry V» h4.product-card-module__3G3cFq__title [search] 12px/500"
+    ],
+    "sizes": {
+     "13px/700": 11,
+     "12px/500": 44,
+     "10px/500": 8
+    }
+   }
+  ],
+  "selection": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(10, 10, 10)"
+  },
+  "theme": [
+   "#ffffff"
+  ],
+  "imgCount": 68,
+  "imgBgs": {
+   "img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal": 2,
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal": 24,
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal": 15,
+   "img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal": 27
+  },
+  "rootVars": {
+   "--tw-ring-offset-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-100": "lab(96.1634% .0993311 -.364041) => #f4f4f5",
+   "--tw-ring-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-200": "lab(90.6853% .399232 -1.45452) => #e4e4e7",
+   "--color-gray-800": "lab(16.1051% -1.18239 -11.7533) => #1e2939",
+   "--color-green-600": "lab(59.0978% -58.6621 41.2579) => #00a63e",
+   "--grey": "#f0f0f0 => #f0f0f0",
+   "--color-zinc-500": "lab(47.8878% 1.65477 -5.77283) => #71717b",
+   "--color-zinc-900": "lab(8.30603% .618205 -2.16572) => #18181b",
+   "--color-neutral-500": "lab(48.496% 0 0) => #737373",
+   "--color-zinc-800": "lab(15.7305% .613764 -2.16959) => #27272a",
+   "--hightlight": "#fc1701 => #fc1701",
+   "--tw-inset-ring-shadow": "0 0 #0000 => #000000@0",
+   "--background": "#fff => #ffffff",
+   "--tw-gradient-via": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-gray-300": "lab(85.1236% -.612259 -3.7138) => #d1d5dc",
+   "--color-gray-500": "lab(47.7841% -.393182 -10.0268) => #6a7282",
+   "--color-red-700": "lab(40.4273% 67.2623 53.7441) => #c10007",
+   "--color-zinc-50": "lab(98.26% 0 0) => #fafafa",
+   "--swiper-theme-color": "#007aff => #007aff",
+   "--color-gray-50": "lab(98.2596% -.247031 -.706708) => #f9fafb",
+   "--color-gray-900": "lab(8.11897% .811279 -12.254) => #101828",
+   "--tw-inset-shadow": "0 0 #0000 => #000000@0",
+   "--tw-ring-offset-color": "#fff => #ffffff",
+   "--color-zinc-400": "lab(65.6464% 1.53497 -5.42429) => #9f9fa9",
+   "--color-red-400": "lab(63.7053% 60.745 31.3109) => #ff6467",
+   "--tw-gradient-from": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-white": "#fff => #ffffff",
+   "--color-gray-400": "lab(65.9269% -.832707 -8.17473) => #99a1af",
+   "--color-gray-700": "lab(27.1134% -.956401 -12.3224) => #364153",
+   "--color-zinc-600": "lab(35.1166% 1.78212 -6.1173) => #52525c",
+   "--tw-gradient-to": "rgba(0, 0, 0, 0) => #000000@0",
+   "--muted-text": "#6b6b6b => #6b6b6b",
+   "--color-gray-600": "lab(35.6337% -1.58697 -10.8425) => #4a5565",
+   "--color-blue-600": "lab(44.0605% 29.0279 -86.0352) => #155dfc",
+   "--color-gray-100": "lab(96.1596% -.0823438 -1.13575) => #f3f4f6",
+   "--tw-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-300": "lab(84.9837% .601262 -2.17986) => #d4d4d8",
+   "--color-blue-200": "lab(86.15% -4.04379 -21.0797) => #bedbff",
+   "--color-blue-50": "lab(96.492% -1.14644 -5.11479) => #eff6ff",
+   "--color-gray-200": "lab(91.6229% -.159115 -2.26791) => #e5e7eb",
+   "--color-black": "#000 => #000000",
+   "--color-zinc-700": "lab(26.8019% 1.35387 -4.68303) => #3f3f46",
+   "--foreground": "#0a0a0a => #0a0a0a"
+  },
+  "htmlBg": "rgba(0, 0, 0, 0)",
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(10, 10, 10)"
+ },
+ "bagClick": "Bag [0]",
+ "bagNewVis": [
+  {
+   "cls": "sticky top-[30px] z-0",
+   "id": "",
+   "pos": "sticky",
+   "bg": "rgba(0, 0, 0, 0)",
+   "z": "0",
+   "x": 0,
+   "y": 30,
+   "w": 1440,
+   "h": 188,
+   "backdrop": "none"
+  },
+  {
+   "cls": "object-contain",
+   "id": "",
+   "pos": "absolute",
+   "bg": "rgba(0, 0, 0, 0)",
+   "z": "auto",
+   "x": 0,
+   "y": 228,
+   "w": 1440,
+   "h": 1910,
+   "backdrop": "none"
+  },
+  {
+   "cls": "cart-module__GMR72G__overlay",
+   "id": "",
+   "pos": "fixed",
+   "bg": "rgba(255, 255, 255, 0.65)",
+   "z": "999",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 900,
+   "backdrop": "blur(1px)"
+  },
+  {
+   "cls": "cart-module__GMR72G__cart cart-module__GMR72G__isOpen albert_sans_ea8044c2-module__OGpixG_",
+   "id": "",
+   "pos": "fixed",
+   "bg": "rgb(255, 255, 255)",
+   "z": "1000",
+   "x": 960,
+   "y": 0,
+   "w": 480,
+   "h": 900,
+   "backdrop": "none"
+  }
+ ],
+ "bag": {
+  "label": "bag-1440",
+  "url": "https://www.studio-iron.com/",
+  "title": "Curated objects from independent designers — Studio Iron — Studio Iron",
+  "scrollH": 5770,
+  "w": 1440,
+  "colors": [
+   {
+    "prop": "background",
+    "hex": "#ffffff@0.65",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.65
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 1296000,
+    "chars": 0,
+    "regions": {
+     "cart": 1
+    },
+    "samples": [
+     "div.cart-module__GMR72G__overlay [cart]"
+    ]
+   }
+  ],
+  "pairs": [],
+  "selection": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(10, 10, 10)"
+  },
+  "theme": [
+   "#ffffff"
+  ],
+  "imgCount": 66,
+  "imgBgs": {
+   "img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal": 2,
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal": 22,
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal": 15,
+   "img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal": 27
+  },
+  "rootVars": {
+   "--tw-ring-offset-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-100": "lab(96.1634% .0993311 -.364041) => #f4f4f5",
+   "--tw-ring-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-200": "lab(90.6853% .399232 -1.45452) => #e4e4e7",
+   "--color-gray-800": "lab(16.1051% -1.18239 -11.7533) => #1e2939",
+   "--color-green-600": "lab(59.0978% -58.6621 41.2579) => #00a63e",
+   "--grey": "#f0f0f0 => #f0f0f0",
+   "--color-zinc-500": "lab(47.8878% 1.65477 -5.77283) => #71717b",
+   "--color-zinc-900": "lab(8.30603% .618205 -2.16572) => #18181b",
+   "--color-neutral-500": "lab(48.496% 0 0) => #737373",
+   "--color-zinc-800": "lab(15.7305% .613764 -2.16959) => #27272a",
+   "--hightlight": "#fc1701 => #fc1701",
+   "--tw-inset-ring-shadow": "0 0 #0000 => #000000@0",
+   "--background": "#fff => #ffffff",
+   "--tw-gradient-via": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-gray-300": "lab(85.1236% -.612259 -3.7138) => #d1d5dc",
+   "--color-gray-500": "lab(47.7841% -.393182 -10.0268) => #6a7282",
+   "--color-red-700": "lab(40.4273% 67.2623 53.7441) => #c10007",
+   "--color-zinc-50": "lab(98.26% 0 0) => #fafafa",
+   "--swiper-theme-color": "#007aff => #007aff",
+   "--color-gray-50": "lab(98.2596% -.247031 -.706708) => #f9fafb",
+   "--color-gray-900": "lab(8.11897% .811279 -12.254) => #101828",
+   "--tw-inset-shadow": "0 0 #0000 => #000000@0",
+   "--tw-ring-offset-color": "#fff => #ffffff",
+   "--color-zinc-400": "lab(65.6464% 1.53497 -5.42429) => #9f9fa9",
+   "--color-red-400": "lab(63.7053% 60.745 31.3109) => #ff6467",
+   "--tw-gradient-from": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-white": "#fff => #ffffff",
+   "--color-gray-400": "lab(65.9269% -.832707 -8.17473) => #99a1af",
+   "--color-gray-700": "lab(27.1134% -.956401 -12.3224) => #364153",
+   "--color-zinc-600": "lab(35.1166% 1.78212 -6.1173) => #52525c",
+   "--tw-gradient-to": "rgba(0, 0, 0, 0) => #000000@0",
+   "--muted-text": "#6b6b6b => #6b6b6b",
+   "--color-gray-600": "lab(35.6337% -1.58697 -10.8425) => #4a5565",
+   "--color-blue-600": "lab(44.0605% 29.0279 -86.0352) => #155dfc",
+   "--color-gray-100": "lab(96.1596% -.0823438 -1.13575) => #f3f4f6",
+   "--tw-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-300": "lab(84.9837% .601262 -2.17986) => #d4d4d8",
+   "--color-blue-200": "lab(86.15% -4.04379 -21.0797) => #bedbff",
+   "--color-blue-50": "lab(96.492% -1.14644 -5.11479) => #eff6ff",
+   "--color-gray-200": "lab(91.6229% -.159115 -2.26791) => #e5e7eb",
+   "--color-black": "#000 => #000000",
+   "--color-zinc-700": "lab(26.8019% 1.35387 -4.68303) => #3f3f46",
+   "--foreground": "#0a0a0a => #0a0a0a"
+  },
+  "htmlBg": "rgba(0, 0, 0, 0)",
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(10, 10, 10)"
+ },
+ "enquireClick": "ENQUIRE",
+ "enquireNewVis": [
+  {
+   "cls": "object-contain",
+   "id": "",
+   "pos": "absolute",
+   "bg": "rgba(0, 0, 0, 0)",
+   "z": "auto",
+   "x": 72,
+   "y": 90,
+   "w": 762,
+   "h": 756,
+   "backdrop": "none"
+  },
+  {
+   "cls": "object-contain",
+   "id": "",
+   "pos": "absolute",
+   "bg": "rgba(0, 0, 0, 0)",
+   "z": "auto",
+   "x": 72,
+   "y": 858,
+   "w": 762,
+   "h": 762,
+   "backdrop": "none"
+  },
+  {
+   "cls": "flex flex-col gap-[24px] lg:gap-[36px] lg:pt-[8px] lg:col-start-16 lg:col-span-8 sticky to",
+   "id": "",
+   "pos": "sticky",
+   "bg": "rgba(0, 0, 0, 0)",
+   "z": "auto",
+   "x": 905,
+   "y": 90,
+   "w": 464,
+   "h": 196,
+   "backdrop": "none"
+  },
+  {
+   "cls": "fixed inset-0 z-40",
+   "id": "",
+   "pos": "fixed",
+   "bg": "rgba(255, 255, 255, 0.65)",
+   "z": "40",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 900,
+   "backdrop": "blur(1px)"
+  },
+  {
+   "cls": "fixed top-0 right-0 h-full z-50 bg-white flex flex-col",
+   "id": "",
+   "pos": "fixed",
+   "bg": "rgb(255, 255, 255)",
+   "z": "50",
+   "x": 960,
+   "y": 0,
+   "w": 480,
+   "h": 900,
+   "backdrop": "none"
+  }
+ ],
+ "enquireFull": {
+  "label": "enquire-1440",
+  "url": "https://www.studio-iron.com/artists/phil-hale/record-separator",
+  "title": "Record Separator — Studio Iron",
+  "scrollH": 3717,
+  "w": 1440,
+  "colors": [
+   {
+    "prop": "background",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 5,
+    "area": 10875488,
+    "chars": 0,
+    "regions": {
+     "main": 2,
+     "header": 1,
+     "cart": 1,
+     "drawer": 1
+    },
+    "samples": [
+     "body.antialiased [main]",
+     "header.header-module__HqSsuG__header.header-module__HqSsuG__solid.albert_sans_d07bd869-module__vNvuEW__className [header]",
+     "main.albert_sans_6ab7f873-module__7VJibG__className.wrapper [main]",
+     "div.cart-module__GMR72G__cart.cart-module__GMR72G__isClosed.albert_sans_ea8044c2-module__OGpixG__className [cart]",
+     "div.fixed.top-0.right-0.h-full [drawer]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 24,
+    "area": 0,
+    "chars": 274,
+    "regions": {
+     "main": 1,
+     "footer": 22,
+     "drawer": 1
+    },
+    "samples": [
+     "a.skip-link «Skip to content» [main]",
+     "h2.basis-[60%].uppercase.bookish_82aca62c-module__UWeQgW__className «Be the first to hear about new and news.» [footer]",
+     "span.italic.uppercase.bookish_82aca62c-module__UWeQgW__className «objects,» [footer]",
+     "span.italic.uppercase.bookish_82aca62c-module__UWeQgW__className «collections» [footer]",
+     "span.italic.uppercase.bookish_82aca62c-module__UWeQgW__className «studio» [footer]",
+     "input.flex-1.bg-transparent.outline-none.py-2 «input:email» [footer]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 6314,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "a.skip-link [main]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 19,
+    "area": 0,
+    "chars": 213,
+    "regions": {
+     "menu": 5,
+     "header": 4,
+     "main": 5,
+     "cart": 3,
+     "drawer": 2
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.hover-underline «Design» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Art» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «London Design Festival» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Events» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «About» [menu]",
+     "button.hover-underline «Search» [header]"
+    ]
+   },
+   {
+    "prop": "pseudo-bg::after",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 8,
+    "area": 409.9529,
+    "chars": 0,
+    "regions": {
+     "menu": 5,
+     "header": 3
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.hover-underline «content=\"\"» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «content=\"\"» [menu]",
+     "button.hover-underline «content=\"\"» [header]",
+     "a.hover-underline «content=\"\"» [header]"
+    ]
+   },
+   {
+    "prop": "svg-fill",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 13,
+    "area": 4637,
+    "chars": 0,
+    "regions": {
+     "header": 13
+    },
+    "samples": [
+     "g [header]",
+     "path [header]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 2,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "header": 2
+    },
+    "samples": [
+     "span.block.w-5.h-[2px].bg-current [header]"
+    ]
+   },
+   {
+    "prop": "svg-stroke",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 3,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "header": 2,
+     "menu": 1
+    },
+    "samples": [
+     "path [header]",
+     "path [menu]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 35,
+    "area": 0,
+    "chars": 434,
+    "regions": {
+     "menu": 5,
+     "main": 2,
+     "menu-design": 28
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.dynamic-menu-module__qpp75q__hasSubmenu.hover-underline «Design» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Art» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «London Design Festival» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Events» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «About» [menu]",
+     "a.flex.items-center.gap-2.py-3 «Account» [main]"
+    ]
+   },
+   {
+    "prop": "pseudo-bg::after",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 5,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "menu": 5
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.dynamic-menu-module__qpp75q__hasSubmenu.hover-underline «content=\"\"» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «content=\"\"» [menu]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#e4e4e7",
+    "rgba": [
+     228,
+     228,
+     231,
+     1
+    ],
+    "visible": false,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.px-3.py-1.flex.flex-row «Top 1px» [main]"
+    ]
+   },
+   {
+    "prop": "text-decoration",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "button.lg:self-start.text-[12px].tracking-[0.18em].uppercase «underline Enquire» [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 755823,
+    "chars": 0,
+    "regions": {
+     "footer": 1,
+     "drawer": 1
+    },
+    "samples": [
+     "footer.bg-black.text-white.p-[12px].lg:p-[18px] [footer]",
+     "button.mt-[14px].px-2.w-full.py-[14px] [drawer]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#ffffff@0.4",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.4
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "div.flex.border-b.border-white/40.focus-within:border-white «Bottom 1px» [footer]"
+    ]
+   },
+   {
+    "prop": "placeholder",
+    "hex": "#ffffff@0.502",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.502
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "input.flex-1.bg-transparent.outline-none.py-2 «Your email address» [footer]"
+    ]
+   },
+   {
+    "prop": "caret",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 2
+    },
+    "samples": [
+     "input.flex-1.bg-transparent.outline-none.py-2 [footer]",
+     "input.shrink-0.mt-[3px].accent-white [footer]"
+    ]
+   },
+   {
+    "prop": "accent",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "input.shrink-0.mt-[3px].accent-white [footer]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#ffffff@0.698",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.698
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 0,
+    "chars": 111,
+    "regions": {
+     "footer": 2
+    },
+    "samples": [
+     "span.text-[11px].leading-relaxed.text-white/70 «I agree to receive marketing emails from» [footer]",
+     "a.underline «Privacy Policy» [footer]"
+    ]
+   },
+   {
+    "prop": "text-decoration",
+    "hex": "#ffffff@0.698",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.698
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "a.underline «underline Privacy Policy» [footer]"
+    ]
+   },
+   {
+    "prop": "svg-fill",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 8895,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "path [footer]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": true,
+    "count": 4,
+    "area": 0,
+    "chars": 10,
+    "regions": {
+     "cart": 1,
+     "drawer": 3
+    },
+    "samples": [
+     "button.text-black.text-[12px].tracking-widest.uppercase «Close» [cart]",
+     "button.text-black.text-sm.text-[12px].tracking-widest «Close» [drawer]",
+     "input.peer.block.w-full.bg-zinc-100 «input:text» [drawer]",
+     "input.peer.block.w-full.bg-zinc-100 «input:email» [drawer]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "cart": 1
+    },
+    "samples": [
+     "button.text-[11px].tracking-[0.18em].uppercase.border-b «Bottom 1px» [cart]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": false,
+    "count": 1,
+    "area": 946938,
+    "chars": 0,
+    "regions": {
+     "menu-design": 1
+    },
+    "samples": [
+     "div.shop-menu-module__KVl6JW__menu.albert_sans_d07bd869-module__vNvuEW__className [menu-design]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#f0f0f0",
+    "rgba": [
+     240,
+     240,
+     240,
+     1
+    ],
+    "visible": false,
+    "count": 28,
+    "area": 473056,
+    "chars": 0,
+    "regions": {
+     "menu-design": 28
+    },
+    "samples": [
+     "div.shop-menu-module__KVl6JW__thumbWrap [menu-design]",
+     "div.shop-menu-module__KVl6JW__thumbPlaceholder [menu-design]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#ffffff@0.65",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.65
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 1296000,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.fixed.inset-0.z-40 [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#f4f4f5",
+    "rgba": [
+     244,
+     244,
+     245,
+     1
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "drawer": 2
+    },
+    "samples": [
+     "div.flex.items-center.justify-between.lg:px-[24px] «Bottom 1px» [drawer]",
+     "div.flex.gap-[12px].items-center.pb-[14px] «Bottom 1px» [drawer]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#f4f4f5",
+    "rgba": [
+     244,
+     244,
+     245,
+     1
+    ],
+    "visible": true,
+    "count": 3,
+    "area": 95336,
+    "chars": 0,
+    "regions": {
+     "drawer": 3
+    },
+    "samples": [
+     "img.!w-[50%].object-cover.bg-zinc-100.flex-shrink-0 [drawer]",
+     "input.peer.block.w-full.bg-zinc-100 [drawer]"
+    ]
+   },
+   {
+    "prop": "caret",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "drawer": 2
+    },
+    "samples": [
+     "input.peer.block.w-full.bg-zinc-100 [drawer]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#d4d4d8",
+    "rgba": [
+     212,
+     212,
+     216,
+     1
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "drawer": 2
+    },
+    "samples": [
+     "input.peer.block.w-full.bg-zinc-100 «Bottom 1px» [drawer]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#71717b",
+    "rgba": [
+     113,
+     113,
+     123,
+     1
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 0,
+    "chars": 10,
+    "regions": {
+     "drawer": 2
+    },
+    "samples": [
+     "label.pointer-events-none.absolute.left-[14px].top-[14px] «Name» [drawer]",
+     "label.pointer-events-none.absolute.left-[14px].top-[14px] «E-mail» [drawer]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": false,
+    "count": 2,
+    "area": 0,
+    "chars": 27,
+    "regions": {
+     "cookie": 2
+    },
+    "samples": [
+     "a «Cookie Policy» [cookie]",
+     "a «Privacy Policy» [cookie]"
+    ]
+   },
+   {
+    "prop": "text-decoration",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": false,
+    "count": 2,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "cookie": 2
+    },
+    "samples": [
+     "a «underline Cookie Policy» [cookie]",
+     "a «underline Privacy Policy» [cookie]"
+    ]
+   }
+  ],
+  "pairs": [
+   {
+    "fg": "#ffffff",
+    "fgDeclared": "#ffffff",
+    "opacity": 1,
+    "bg": "#0a0a0a",
+    "overImage": false,
+    "ratio": 19.8,
+    "chars": 15,
+    "count": 1,
+    "samples": [
+     "«Skip to content» a.skip-link [main] 12px/500"
+    ],
+    "sizes": {
+     "12px/500": 15
+    }
+   },
+   {
+    "fg": "#0a0a0a",
+    "fgDeclared": "#0a0a0a",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": false,
+    "ratio": 19.8,
+    "chars": 109,
+    "count": 13,
+    "samples": [
+     "«Design» button.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+     "«Art» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+     "«London Design Festival» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+     "«Events» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+     "«About» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500"
+    ],
+    "sizes": {
+     "13px/500": 61,
+     "14px/500": 31,
+     "11px/500": 17
+    }
+   },
+   {
+    "fg": "#0a0a0a",
+    "fgDeclared": "#0a0a0a",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": true,
+    "ratio": 19.8,
+    "chars": 104,
+    "count": 6,
+    "samples": [
+     "«Phil Hale» a.bookish_82aca62c-module__UWeQgW__className.uppercase.leadi [main] 14px/500",
+     "«Record Separator, 2010» h1.bookish_82aca62c-module__UWeQgW__className.italic.leading [main] 30px/500",
+     "«Oil on canvas» span [main] 13px/500",
+     "«63 x 63 in. / 160 x 160 cm» span.whitespace-pre-line [main] 13px/500",
+     "«Enquire» button.lg:self-start.text-[12px].tracking-[0.18em].uppercase [main] 12px/500"
+    ],
+    "sizes": {
+     "14px/500": 9,
+     "30px/500": 22,
+     "13px/500": 39,
+     "12px/500": 7,
+     "16px/500": 27
+    }
+   },
+   {
+    "fg": "#ffffff",
+    "fgDeclared": "#ffffff",
+    "opacity": 1,
+    "bg": "#000000",
+    "overImage": false,
+    "ratio": 21,
+    "chars": 247,
+    "count": 20,
+    "samples": [
+     "«Be the first to hear about new» h2.basis-[60%].uppercase.bookish_82aca62c-module__UWeQgW__cl [footer] 37.44px/500",
+     "«objects,» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 37.44px/500",
+     "«collections» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 37.44px/500",
+     "«studio» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 37.44px/500",
+     "«Subscribe →» button.uppercase.text-xs.tracking-[0.15em].disabled:opacity- [footer] 12px/500"
+    ],
+    "sizes": {
+     "37.44px/500": 65,
+     "12px/500": 124,
+     "14px/500": 58
+    }
+   },
+   {
+    "fg": "#b2b2b2",
+    "fgDeclared": "#ffffff@0.698",
+    "opacity": 1,
+    "bg": "#000000",
+    "overImage": false,
+    "ratio": 9.9,
+    "chars": 111,
+    "count": 2,
+    "samples": [
+     "«I agree to receive marketing e» span.text-[11px].leading-relaxed.text-white/70 [footer] 11px/500",
+     "«Privacy Policy» a.underline [footer] 11px/500"
+    ],
+    "sizes": {
+     "11px/500": 111
+    }
+   },
+   {
+    "fg": "#000000",
+    "fgDeclared": "#000000",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": false,
+    "ratio": 21,
+    "chars": 10,
+    "count": 2,
+    "samples": [
+     "«Close» button.text-black.text-[12px].tracking-widest.uppercase [cart] 12px/500",
+     "«Close» button.text-black.text-sm.text-[12px].tracking-widest [drawer] 12px/500"
+    ],
+    "sizes": {
+     "12px/500": 10
+    }
+   },
+   {
+    "fg": "#71717b",
+    "fgDeclared": "#71717b",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": true,
+    "ratio": 4.83,
+    "chars": 10,
+    "count": 2,
+    "samples": [
+     "«Name» label.pointer-events-none.absolute.left-[14px].top-[14px] [drawer] 14px/500",
+     "«E-mail» label.pointer-events-none.absolute.left-[14px].top-[14px] [drawer] 14px/500"
+    ],
+    "sizes": {
+     "14px/500": 10
+    }
+   },
+   {
+    "fg": "#666666",
+    "fgDeclared": "#ffffff",
+    "opacity": 0.4,
+    "bg": "#000000",
+    "overImage": true,
+    "ratio": 3.66,
+    "chars": 12,
+    "count": 1,
+    "samples": [
+     "«Send enquiry» button.mt-[14px].px-2.w-full.py-[14px] [drawer] 11px/500"
+    ],
+    "sizes": {
+     "11px/500": 12
+    }
+   }
+  ],
+  "selection": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(10, 10, 10)"
+  },
+  "theme": [
+   "#ffffff"
+  ],
+  "imgCount": 32,
+  "imgBgs": {
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal": 4,
+   "img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal": 27,
+   "img:lab(96.1634 0.0993311 -0.364041) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal": 1
+  },
+  "rootVars": {
+   "--tw-ring-offset-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-100": "lab(96.1634% .0993311 -.364041) => #f4f4f5",
+   "--tw-ring-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-200": "lab(90.6853% .399232 -1.45452) => #e4e4e7",
+   "--color-gray-800": "lab(16.1051% -1.18239 -11.7533) => #1e2939",
+   "--color-green-600": "lab(59.0978% -58.6621 41.2579) => #00a63e",
+   "--grey": "#f0f0f0 => #f0f0f0",
+   "--color-zinc-500": "lab(47.8878% 1.65477 -5.77283) => #71717b",
+   "--color-zinc-900": "lab(8.30603% .618205 -2.16572) => #18181b",
+   "--color-neutral-500": "lab(48.496% 0 0) => #737373",
+   "--color-zinc-800": "lab(15.7305% .613764 -2.16959) => #27272a",
+   "--hightlight": "#fc1701 => #fc1701",
+   "--tw-inset-ring-shadow": "0 0 #0000 => #000000@0",
+   "--background": "#fff => #ffffff",
+   "--tw-gradient-via": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-gray-300": "lab(85.1236% -.612259 -3.7138) => #d1d5dc",
+   "--color-gray-500": "lab(47.7841% -.393182 -10.0268) => #6a7282",
+   "--color-red-700": "lab(40.4273% 67.2623 53.7441) => #c10007",
+   "--color-zinc-50": "lab(98.26% 0 0) => #fafafa",
+   "--swiper-theme-color": "#007aff => #007aff",
+   "--color-gray-50": "lab(98.2596% -.247031 -.706708) => #f9fafb",
+   "--color-gray-900": "lab(8.11897% .811279 -12.254) => #101828",
+   "--tw-inset-shadow": "0 0 #0000 => #000000@0",
+   "--tw-ring-offset-color": "#fff => #ffffff",
+   "--color-zinc-400": "lab(65.6464% 1.53497 -5.42429) => #9f9fa9",
+   "--color-red-400": "lab(63.7053% 60.745 31.3109) => #ff6467",
+   "--tw-gradient-from": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-white": "#fff => #ffffff",
+   "--color-gray-400": "lab(65.9269% -.832707 -8.17473) => #99a1af",
+   "--color-gray-700": "lab(27.1134% -.956401 -12.3224) => #364153",
+   "--color-zinc-600": "lab(35.1166% 1.78212 -6.1173) => #52525c",
+   "--tw-gradient-to": "rgba(0, 0, 0, 0) => #000000@0",
+   "--muted-text": "#6b6b6b => #6b6b6b",
+   "--color-gray-600": "lab(35.6337% -1.58697 -10.8425) => #4a5565",
+   "--color-blue-600": "lab(44.0605% 29.0279 -86.0352) => #155dfc",
+   "--color-gray-100": "lab(96.1596% -.0823438 -1.13575) => #f3f4f6",
+   "--tw-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-300": "lab(84.9837% .601262 -2.17986) => #d4d4d8",
+   "--color-blue-200": "lab(86.15% -4.04379 -21.0797) => #bedbff",
+   "--color-blue-50": "lab(96.492% -1.14644 -5.11479) => #eff6ff",
+   "--color-gray-200": "lab(91.6229% -.159115 -2.26791) => #e5e7eb",
+   "--color-black": "#000 => #000000",
+   "--color-zinc-700": "lab(26.8019% 1.35387 -4.68303) => #3f3f46",
+   "--foreground": "#0a0a0a => #0a0a0a"
+  },
+  "htmlBg": "rgba(0, 0, 0, 0)",
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(10, 10, 10)"
+ },
+ "enquireFocus": {
+  "name": "",
+  "bg": "rgba(0, 0, 0, 0)",
+  "bb": "rgb(255, 255, 255)",
+  "bbw": "0px",
+  "outline": "none rgb(255, 255, 255)",
+  "color": "rgb(255, 255, 255)",
+  "label": null
+ },
+ "burger": [
+  {
+   "txt": "",
+   "aria": "Open menu",
+   "exp": "false",
+   "cls": "flex flex-col justify-center gap-[5px] p-3"
+  },
+  {
+   "txt": "",
+   "aria": "Open cart",
+   "exp": null,
+   "cls": "p-[10px] flex items-center gap-1"
+  }
+ ],
+ "burgerClick": "Open menu",
+ "mobileMenuNewVis": [
+  {
+   "cls": "\n                lg:hidden fixed inset-0 z-40\n                bg-[rgba(255,255,255,0.85)] ",
+   "id": "",
+   "pos": "fixed",
+   "bg": "rgba(255, 255, 255, 0.85)",
+   "z": "40",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 844,
+   "backdrop": "blur(1px)"
+  },
+  {
+   "cls": "\n                lg:hidden fixed top-0 left-0 w-[100vw] max-w-[100vw] h-[100dvh] z-[45] bg",
+   "id": "mobile-menu",
+   "pos": "fixed",
+   "bg": "rgb(255, 255, 255)",
+   "z": "45",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 844,
+   "backdrop": "none"
+  },
+  {
+   "cls": "object-contain",
+   "id": "",
+   "pos": "absolute",
+   "bg": "rgba(0, 0, 0, 0)",
+   "z": "auto",
+   "x": 0,
+   "y": 38,
+   "w": 390,
+   "h": 517,
+   "backdrop": "none"
+  }
+ ],
+ "mobileMenu": {
+  "label": "mobile-menu-390",
+  "url": "https://www.studio-iron.com/",
+  "title": "Curated objects from independent designers — Studio Iron — Studio Iron",
+  "scrollH": 844,
+  "w": 390,
+  "colors": [
+   {
+    "prop": "background",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 5,
+    "area": 2773470,
+    "chars": 0,
+    "regions": {
+     "main": 3,
+     "header": 1,
+     "cart": 1
+    },
+    "samples": [
+     "body.antialiased [main]",
+     "header.header-module__HqSsuG__header.albert_sans_d07bd869-module__vNvuEW__className [header]",
+     "div.lg:hidden.fixed.top-0.left-0 [main]",
+     "main.albert_sans_6ab7f873-module__7VJibG__className.wrapper [main]",
+     "div.cart-module__GMR72G__cart.cart-module__GMR72G__isClosed.albert_sans_ea8044c2-module__OGpixG__className [cart]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 29,
+    "area": 0,
+    "chars": 780,
+    "regions": {
+     "main": 7,
+     "footer": 22
+    },
+    "samples": [
+     "a.skip-link «Skip to content» [main]",
+     "h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9].lg:text-5xl.text-[26px] «London Design Festival» [main]",
+     "p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] «The group exhibition embraces experiment» [main]",
+     "span.mt-[6px].inline-block.lg:self-start.text-[11px] «Discover» [main]",
+     "h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9].lg:text-5xl.text-[26px] «Black Metal Edit» [main]",
+     "p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] «The Black Metal Edit explores the darker» [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 3,
+    "area": 6798,
+    "chars": 0,
+    "regions": {
+     "main": 1,
+     "header": 2
+    },
+    "samples": [
+     "a.skip-link [main]",
+     "span.block.w-5.h-[2px].bg-current [header]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 37,
+    "area": 0,
+    "chars": 440,
+    "regions": {
+     "menu": 5,
+     "header": 4,
+     "menu-design": 28
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.hover-underline «Design» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Art» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «London Design Festival» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Events» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «About» [menu]",
+     "button.hover-underline «Search» [header]"
+    ]
+   },
+   {
+    "prop": "pseudo-bg::after",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 8,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "menu": 5,
+     "header": 3
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.hover-underline «content=\"\"» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «content=\"\"» [menu]",
+     "button.hover-underline «content=\"\"» [header]",
+     "a.hover-underline «content=\"\"» [header]"
+    ]
+   },
+   {
+    "prop": "svg-fill",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 13,
+    "area": 4637,
+    "chars": 0,
+    "regions": {
+     "header": 13
+    },
+    "samples": [
+     "g [header]",
+     "path [header]"
+    ]
+   },
+   {
+    "prop": "svg-stroke",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 3,
+    "area": 200,
+    "chars": 0,
+    "regions": {
+     "header": 2,
+     "menu": 1
+    },
+    "samples": [
+     "path [header]",
+     "path [menu]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#ffffff@0.85",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.85
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 329160,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.lg:hidden.fixed.inset-0.z-40 [main]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 55,
+    "area": 0,
+    "chars": 951,
+    "regions": {
+     "menu": 5,
+     "main": 47,
+     "cart": 3
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.dynamic-menu-module__qpp75q__hasSubmenu.hover-underline «Design» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Art» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «London Design Festival» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Events» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «About» [menu]",
+     "a.flex.items-center.gap-2.py-3 «Account» [main]"
+    ]
+   },
+   {
+    "prop": "pseudo-bg::after",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 5,
+    "area": 831.3592000000001,
+    "chars": 0,
+    "regions": {
+     "menu": 5
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.dynamic-menu-module__qpp75q__hasSubmenu.hover-underline «content=\"\"» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «content=\"\"» [menu]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#e4e4e7",
+    "rgba": [
+     228,
+     228,
+     231,
+     1
+    ],
+    "visible": true,
+    "count": 17,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 17
+    },
+    "samples": [
+     "div.px-3.py-1.flex.flex-row «Top 1px» [main]",
+     "button.w-[15px].h-[8px].cursor-pointer.box-border «Top 1px» [main]",
+     "button.w-[15px].h-[8px].cursor-pointer.box-border «Right 1px» [main]",
+     "button.w-[15px].h-[8px].cursor-pointer.box-border «Bottom 1px» [main]",
+     "button.w-[15px].h-[8px].cursor-pointer.box-border «Left 1px» [main]"
+    ]
+   },
+   {
+    "prop": "svg-fill",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 13,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 13
+    },
+    "samples": [
+     "g [main]",
+     "path [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#f4f4f5",
+    "rgba": [
+     244,
+     244,
+     245,
+     1
+    ],
+    "visible": false,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.relative.w-full.h-0.bg-zinc-100 [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#f4f4f5",
+    "rgba": [
+     244,
+     244,
+     245,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 201728,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.relative.w-full.h-0.bg-zinc-100 [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#ffffff@0.902",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.902
+    ],
+    "visible": false,
+    "count": 4,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 4
+    },
+    "samples": [
+     "button.w-7.h-7.flex.items-center [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#e4e4e7",
+    "rgba": [
+     228,
+     228,
+     231,
+     1
+    ],
+    "visible": false,
+    "count": 16,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 16
+    },
+    "samples": [
+     "button.w-7.h-7.flex.items-center «Top 1px» [main]",
+     "button.w-7.h-7.flex.items-center «Right 1px» [main]",
+     "button.w-7.h-7.flex.items-center «Bottom 1px» [main]",
+     "button.w-7.h-7.flex.items-center «Left 1px» [main]"
+    ]
+   },
+   {
+    "prop": "svg-stroke",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 4,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 4
+    },
+    "samples": [
+     "path [main]"
+    ]
+   },
+   {
+    "prop": "gradient",
+    "hex": "#f6f6f6",
+    "rgba": [
+     246,
+     246,
+     246,
+     1
+    ],
+    "visible": true,
+    "count": 20,
+    "area": 423300,
+    "chars": 0,
+    "regions": {
+     "main": 20
+    },
+    "samples": [
+     "div.product-card-module__3G3cFq__image.relative «linear-gradient(90deg, rgb(246, 246, 246» [main]"
+    ]
+   },
+   {
+    "prop": "gradient",
+    "hex": "#ebebeb",
+    "rgba": [
+     235,
+     235,
+     235,
+     1
+    ],
+    "visible": true,
+    "count": 20,
+    "area": 423300,
+    "chars": 0,
+    "regions": {
+     "main": 20
+    },
+    "samples": [
+     "div.product-card-module__3G3cFq__image.relative «linear-gradient(90deg, rgb(246, 246, 246» [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 83,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 83
+    },
+    "samples": [
+     "div.product-card-module__3G3cFq__image.relative «Top 1px» [main]",
+     "div.product-card-module__3G3cFq__image.relative «Right 1px» [main]",
+     "div.product-card-module__3G3cFq__image.relative «Bottom 1px» [main]",
+     "div.product-card-module__3G3cFq__image.relative «Left 1px» [main]",
+     "span «Bottom 1px» [main]",
+     "span.mt-[6px].inline-block.lg:self-start.text-[11px] «Bottom 1px» [main]"
+    ]
+   },
+   {
+    "prop": "pseudo-bg::after",
+    "hex": "#ebebeb",
+    "rgba": [
+     235,
+     235,
+     235,
+     1
+    ],
+    "visible": true,
+    "count": 20,
+    "area": 411666.7033600001,
+    "chars": 0,
+    "regions": {
+     "main": 20
+    },
+    "samples": [
+     "div.product-card-module__3G3cFq__image.relative «content=\"\"» [main]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#52525c",
+    "rgba": [
+     82,
+     82,
+     92,
+     1
+    ],
+    "visible": true,
+    "count": 11,
+    "area": 0,
+    "chars": 19,
+    "regions": {
+     "main": 11
+    },
+    "samples": [
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «37» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «38» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «39» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «40» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «41» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «42» [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#d4d4d8",
+    "rgba": [
+     212,
+     212,
+     216,
+     1
+    ],
+    "visible": true,
+    "count": 44,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 44
+    },
+    "samples": [
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Top 1px» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Right 1px» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Bottom 1px» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Left 1px» [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": true,
+    "count": 3,
+    "area": 235398,
+    "chars": 0,
+    "regions": {
+     "main": 2,
+     "footer": 1
+    },
+    "samples": [
+     "button.w-[15px].h-[8px].cursor-pointer.box-border [main]",
+     "footer.bg-black.text-white.p-[12px].lg:p-[18px] [footer]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#e6e5e5",
+    "rgba": [
+     230,
+     229,
+     229,
+     1
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 240,
+    "chars": 0,
+    "regions": {
+     "main": 2
+    },
+    "samples": [
+     "button.w-[15px].h-[8px].cursor-pointer.box-border [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": true,
+    "count": 5,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 4,
+     "cart": 1
+    },
+    "samples": [
+     "div.p-[10px].lg:p-[12px].gap-0.5 «Top 1px» [main]",
+     "div.p-[10px].lg:p-[12px].gap-0.5 «Right 1px» [main]",
+     "div.p-[10px].lg:p-[12px].gap-0.5 «Bottom 1px» [main]",
+     "div.p-[10px].lg:p-[12px].gap-0.5 «Left 1px» [main]",
+     "button.text-[11px].tracking-[0.18em].uppercase.border-b «Bottom 1px» [cart]"
+    ]
+   },
+   {
+    "prop": "gradient",
+    "hex": "#000000@0.749",
+    "rgba": [
+     0,
+     0,
+     0,
+     0.749
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 380250,
+    "chars": 0,
+    "regions": {
+     "main": 2
+    },
+    "samples": [
+     "div.absolute.inset-y-0.left-0.lg:w-[55%] «linear-gradient(0deg, oklab(0 0 0 / 0.75» [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#ffffff@0.4",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.4
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "div.flex.border-b.border-white/40.focus-within:border-white «Bottom 1px» [footer]"
+    ]
+   },
+   {
+    "prop": "placeholder",
+    "hex": "#ffffff@0.502",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.502
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "input.flex-1.bg-transparent.outline-none.py-2 «Your email address» [footer]"
+    ]
+   },
+   {
+    "prop": "caret",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 2
+    },
+    "samples": [
+     "input.flex-1.bg-transparent.outline-none.py-2 [footer]",
+     "input.shrink-0.mt-[3px].accent-white [footer]"
+    ]
+   },
+   {
+    "prop": "accent",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "input.shrink-0.mt-[3px].accent-white [footer]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#ffffff@0.698",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.698
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 0,
+    "chars": 111,
+    "regions": {
+     "footer": 2
+    },
+    "samples": [
+     "span.text-[11px].leading-relaxed.text-white/70 «I agree to receive marketing emails from» [footer]",
+     "a.underline «Privacy Policy» [footer]"
+    ]
+   },
+   {
+    "prop": "text-decoration",
+    "hex": "#ffffff@0.698",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.698
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "a.underline «underline Privacy Policy» [footer]"
+    ]
+   },
+   {
+    "prop": "svg-fill",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 1176,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "path [footer]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 5,
+    "regions": {
+     "cart": 1
+    },
+    "samples": [
+     "button.text-black.text-[12px].tracking-widest.uppercase «Close» [cart]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#f0f0f0",
+    "rgba": [
+     240,
+     240,
+     240,
+     1
+    ],
+    "visible": false,
+    "count": 28,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "menu-design": 28
+    },
+    "samples": [
+     "div.shop-menu-module__KVl6JW__thumbWrap [menu-design]",
+     "div.shop-menu-module__KVl6JW__thumbPlaceholder [menu-design]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": false,
+    "count": 2,
+    "area": 0,
+    "chars": 27,
+    "regions": {
+     "cookie": 2
+    },
+    "samples": [
+     "a «Cookie Policy» [cookie]",
+     "a «Privacy Policy» [cookie]"
+    ]
+   },
+   {
+    "prop": "text-decoration",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": false,
+    "count": 2,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "cookie": 2
+    },
+    "samples": [
+     "a «underline Cookie Policy» [cookie]",
+     "a «underline Privacy Policy» [cookie]"
+    ]
+   }
+  ],
+  "pairs": [
+   {
+    "fg": "#ffffff",
+    "fgDeclared": "#ffffff",
+    "opacity": 1,
+    "bg": "#0a0a0a",
+    "overImage": false,
+    "ratio": 19.8,
+    "chars": 15,
+    "count": 1,
+    "samples": [
+     "«Skip to content» a.skip-link [main] 12px/500"
+    ],
+    "sizes": {
+     "12px/500": 15
+    }
+   },
+   {
+    "fg": "#0a0a0a",
+    "fgDeclared": "#0a0a0a",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": true,
+    "ratio": 19.8,
+    "chars": 42,
+    "count": 5,
+    "samples": [
+     "«Design» button.dynamic-menu-module__qpp75q__menuLink.dynamic-menu-mo [menu] 38px/500",
+     "«Art» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 38px/500",
+     "«London Design Festival» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 38px/500",
+     "«Events» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 38px/500",
+     "«About» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 38px/500"
+    ],
+    "sizes": {
+     "38px/500": 42
+    }
+   },
+   {
+    "fg": "#0a0a0a",
+    "fgDeclared": "#0a0a0a",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": false,
+    "ratio": 19.8,
+    "chars": 909,
+    "count": 50,
+    "samples": [
+     "«Account» a.flex.items-center.gap-2.py-3 [main] 12px/500",
+     "«Search» button.flex.items-center.gap-2.py-2 [main] 12px/500",
+     "«Dedicated to a new era of desi» h2.bookish_82aca62c-module__UWeQgW__className.uppercase.mx-a [main] 46.8px/500",
+     "«Studio Iron exists to support » p.mx-auto.mt-[26px].text-[14px].lg:text-[15px] [main] 14px/500",
+     "«All objects» a.hover:opacity-60.transition-opacity.duration-200 [main] 20px/500"
+    ],
+    "sizes": {
+     "12px/500": 616,
+     "46.8px/500": 33,
+     "14px/500": 205,
+     "20px/500": 11,
+     "20px/400": 11,
+     "11.2px/500": 16,
+     "11px/500": 17
+    }
+   },
+   {
+    "fg": "#52525c",
+    "fgDeclared": "#52525c",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": false,
+    "ratio": 7.72,
+    "chars": 19,
+    "count": 11,
+    "samples": [
+     "«37» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+     "«38» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+     "«39» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+     "«40» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+     "«41» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500"
+    ],
+    "sizes": {
+     "8px/500": 19
+    }
+   },
+   {
+    "fg": "#ffffff",
+    "fgDeclared": "#ffffff",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": true,
+    "ratio": 1,
+    "chars": 518,
+    "count": 6,
+    "samples": [
+     "«London Design Festival» h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [main] 26px/500",
+     "«The group exhibition embraces » p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] [main] 13px/500",
+     "«Discover» span.mt-[6px].inline-block.lg:self-start.text-[11px] [main] 11px/500",
+     "«Black Metal Edit» h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [main] 26px/500",
+     "«The Black Metal Edit explores » p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] [main] 13px/500"
+    ],
+    "sizes": {
+     "26px/500": 38,
+     "13px/500": 455,
+     "11px/500": 25
+    }
+   },
+   {
+    "fg": "#ffffff",
+    "fgDeclared": "#ffffff",
+    "opacity": 1,
+    "bg": "#000000",
+    "overImage": false,
+    "ratio": 21,
+    "chars": 247,
+    "count": 20,
+    "samples": [
+     "«Be the first to hear about new» h2.basis-[60%].uppercase.bookish_82aca62c-module__UWeQgW__cl [footer] 24px/500",
+     "«objects,» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 24px/500",
+     "«collections» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 24px/500",
+     "«studio» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 24px/500",
+     "«Subscribe →» button.uppercase.text-xs.tracking-[0.15em].disabled:opacity- [footer] 12px/500"
+    ],
+    "sizes": {
+     "24px/500": 65,
+     "12px/500": 124,
+     "14px/500": 58
+    }
+   },
+   {
+    "fg": "#b2b2b2",
+    "fgDeclared": "#ffffff@0.698",
+    "opacity": 1,
+    "bg": "#000000",
+    "overImage": false,
+    "ratio": 9.9,
+    "chars": 111,
+    "count": 2,
+    "samples": [
+     "«I agree to receive marketing e» span.text-[11px].leading-relaxed.text-white/70 [footer] 11px/500",
+     "«Privacy Policy» a.underline [footer] 11px/500"
+    ],
+    "sizes": {
+     "11px/500": 111
+    }
+   },
+   {
+    "fg": "#000000",
+    "fgDeclared": "#000000",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": false,
+    "ratio": 21,
+    "chars": 5,
+    "count": 1,
+    "samples": [
+     "«Close» button.text-black.text-[12px].tracking-widest.uppercase [cart] 12px/500"
+    ],
+    "sizes": {
+     "12px/500": 5
+    }
+   }
+  ],
+  "selection": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(10, 10, 10)"
+  },
+  "theme": [
+   "#ffffff"
+  ],
+  "imgCount": 66,
+  "imgBgs": {
+   "img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal": 2,
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal": 22,
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal": 15,
+   "img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal": 27
+  },
+  "rootVars": {
+   "--tw-ring-offset-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-100": "lab(96.1634% .0993311 -.364041) => #f4f4f5",
+   "--tw-ring-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-200": "lab(90.6853% .399232 -1.45452) => #e4e4e7",
+   "--color-green-600": "lab(59.0978% -58.6621 41.2579) => #00a63e",
+   "--color-gray-800": "lab(16.1051% -1.18239 -11.7533) => #1e2939",
+   "--grey": "#f0f0f0 => #f0f0f0",
+   "--color-zinc-500": "lab(47.8878% 1.65477 -5.77283) => #71717b",
+   "--color-zinc-900": "lab(8.30603% .618205 -2.16572) => #18181b",
+   "--color-neutral-500": "lab(48.496% 0 0) => #737373",
+   "--color-zinc-800": "lab(15.7305% .613764 -2.16959) => #27272a",
+   "--hightlight": "#fc1701 => #fc1701",
+   "--tw-inset-ring-shadow": "0 0 #0000 => #000000@0",
+   "--background": "#fff => #ffffff",
+   "--tw-gradient-via": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-gray-300": "lab(85.1236% -.612259 -3.7138) => #d1d5dc",
+   "--color-gray-500": "lab(47.7841% -.393182 -10.0268) => #6a7282",
+   "--color-red-700": "lab(40.4273% 67.2623 53.7441) => #c10007",
+   "--color-zinc-50": "lab(98.26% 0 0) => #fafafa",
+   "--swiper-theme-color": "#007aff => #007aff",
+   "--color-gray-50": "lab(98.2596% -.247031 -.706708) => #f9fafb",
+   "--color-gray-900": "lab(8.11897% .811279 -12.254) => #101828",
+   "--tw-inset-shadow": "0 0 #0000 => #000000@0",
+   "--tw-ring-offset-color": "#fff => #ffffff",
+   "--color-zinc-400": "lab(65.6464% 1.53497 -5.42429) => #9f9fa9",
+   "--color-red-400": "lab(63.7053% 60.745 31.3109) => #ff6467",
+   "--tw-gradient-from": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-white": "#fff => #ffffff",
+   "--color-gray-700": "lab(27.1134% -.956401 -12.3224) => #364153",
+   "--color-gray-400": "lab(65.9269% -.832707 -8.17473) => #99a1af",
+   "--color-zinc-600": "lab(35.1166% 1.78212 -6.1173) => #52525c",
+   "--tw-gradient-to": "rgba(0, 0, 0, 0) => #000000@0",
+   "--muted-text": "#6b6b6b => #6b6b6b",
+   "--color-gray-600": "lab(35.6337% -1.58697 -10.8425) => #4a5565",
+   "--color-blue-600": "lab(44.0605% 29.0279 -86.0352) => #155dfc",
+   "--color-gray-100": "lab(96.1596% -.0823438 -1.13575) => #f3f4f6",
+   "--tw-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-300": "lab(84.9837% .601262 -2.17986) => #d4d4d8",
+   "--color-blue-50": "lab(96.492% -1.14644 -5.11479) => #eff6ff",
+   "--color-gray-200": "lab(91.6229% -.159115 -2.26791) => #e5e7eb",
+   "--color-blue-200": "lab(86.15% -4.04379 -21.0797) => #bedbff",
+   "--color-zinc-700": "lab(26.8019% 1.35387 -4.68303) => #3f3f46",
+   "--color-black": "#000 => #000000",
+   "--foreground": "#0a0a0a => #0a0a0a"
+  },
+  "htmlBg": "rgba(0, 0, 0, 0)",
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(10, 10, 10)"
+ },
+ "mobileDesign": "Design",
+ "mobileMenuDesign": {
+  "label": "mobile-menu-design-390",
+  "url": "https://www.studio-iron.com/",
+  "title": "Curated objects from independent designers — Studio Iron — Studio Iron",
+  "scrollH": 844,
+  "w": 390,
+  "colors": [
+   {
+    "prop": "background",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 5,
+    "area": 2773470,
+    "chars": 0,
+    "regions": {
+     "main": 3,
+     "header": 1,
+     "cart": 1
+    },
+    "samples": [
+     "body.antialiased [main]",
+     "header.header-module__HqSsuG__header.albert_sans_d07bd869-module__vNvuEW__className [header]",
+     "div.lg:hidden.fixed.top-0.left-0 [main]",
+     "main.albert_sans_6ab7f873-module__7VJibG__className.wrapper [main]",
+     "div.cart-module__GMR72G__cart.cart-module__GMR72G__isClosed.albert_sans_ea8044c2-module__OGpixG__className [cart]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 29,
+    "area": 0,
+    "chars": 780,
+    "regions": {
+     "main": 7,
+     "footer": 22
+    },
+    "samples": [
+     "a.skip-link «Skip to content» [main]",
+     "h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9].lg:text-5xl.text-[26px] «London Design Festival» [main]",
+     "p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] «The group exhibition embraces experiment» [main]",
+     "span.mt-[6px].inline-block.lg:self-start.text-[11px] «Discover» [main]",
+     "h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9].lg:text-5xl.text-[26px] «Black Metal Edit» [main]",
+     "p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] «The Black Metal Edit explores the darker» [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 3,
+    "area": 6798,
+    "chars": 0,
+    "regions": {
+     "main": 1,
+     "header": 2
+    },
+    "samples": [
+     "a.skip-link [main]",
+     "span.block.w-5.h-[2px].bg-current [header]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 63,
+    "area": 0,
+    "chars": 799,
+    "regions": {
+     "menu": 31,
+     "header": 4,
+     "menu-design": 28
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.hover-underline «Design» [menu]",
+     "span.dynamic-menu-module__qpp75q__title «All Objects» [menu]",
+     "span.dynamic-menu-module__qpp75q__title «Andu Masebo» [menu]",
+     "span.dynamic-menu-module__qpp75q__title «Anoe Melliou» [menu]",
+     "span.dynamic-menu-module__qpp75q__title «Apohli» [menu]",
+     "span.dynamic-menu-module__qpp75q__title «Atelier Fomenta» [menu]"
+    ]
+   },
+   {
+    "prop": "pseudo-bg::after",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 8,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "menu": 5,
+     "header": 3
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.hover-underline «content=\"\"» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «content=\"\"» [menu]",
+     "button.hover-underline «content=\"\"» [header]",
+     "a.hover-underline «content=\"\"» [header]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": false,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "menu": 1
+    },
+    "samples": [
+     "div.dynamic-menu-module__qpp75q__submenu [menu]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#f0f0f0",
+    "rgba": [
+     240,
+     240,
+     240,
+     1
+    ],
+    "visible": false,
+    "count": 54,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "menu": 26,
+     "menu-design": 28
+    },
+    "samples": [
+     "div.dynamic-menu-module__qpp75q__thumbWrap [menu]",
+     "div.shop-menu-module__KVl6JW__thumbWrap [menu-design]",
+     "div.shop-menu-module__KVl6JW__thumbPlaceholder [menu-design]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": false,
+    "count": 104,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "menu": 104
+    },
+    "samples": [
+     "img.dynamic-menu-module__qpp75q__thumb «Top 1px» [menu]",
+     "img.dynamic-menu-module__qpp75q__thumb «Right 1px» [menu]",
+     "img.dynamic-menu-module__qpp75q__thumb «Bottom 1px» [menu]",
+     "img.dynamic-menu-module__qpp75q__thumb «Left 1px» [menu]"
+    ]
+   },
+   {
+    "prop": "svg-fill",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 13,
+    "area": 4637,
+    "chars": 0,
+    "regions": {
+     "header": 13
+    },
+    "samples": [
+     "g [header]",
+     "path [header]"
+    ]
+   },
+   {
+    "prop": "svg-stroke",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 3,
+    "area": 200,
+    "chars": 0,
+    "regions": {
+     "header": 2,
+     "menu": 1
+    },
+    "samples": [
+     "path [header]",
+     "path [menu]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#ffffff@0.85",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.85
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 329160,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.lg:hidden.fixed.inset-0.z-40 [main]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 55,
+    "area": 0,
+    "chars": 951,
+    "regions": {
+     "menu": 5,
+     "main": 47,
+     "cart": 3
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.dynamic-menu-module__qpp75q__hasSubmenu.hover-underline «Design» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Art» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «London Design Festival» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Events» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «About» [menu]",
+     "a.flex.items-center.gap-2.py-3 «Account» [main]"
+    ]
+   },
+   {
+    "prop": "pseudo-bg::after",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 5,
+    "area": 831.3592000000001,
+    "chars": 0,
+    "regions": {
+     "menu": 5
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.dynamic-menu-module__qpp75q__hasSubmenu.hover-underline «content=\"\"» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «content=\"\"» [menu]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#e4e4e7",
+    "rgba": [
+     228,
+     228,
+     231,
+     1
+    ],
+    "visible": true,
+    "count": 17,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 17
+    },
+    "samples": [
+     "div.px-3.py-1.flex.flex-row «Top 1px» [main]",
+     "button.w-[15px].h-[8px].cursor-pointer.box-border «Top 1px» [main]",
+     "button.w-[15px].h-[8px].cursor-pointer.box-border «Right 1px» [main]",
+     "button.w-[15px].h-[8px].cursor-pointer.box-border «Bottom 1px» [main]",
+     "button.w-[15px].h-[8px].cursor-pointer.box-border «Left 1px» [main]"
+    ]
+   },
+   {
+    "prop": "svg-fill",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 13,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 13
+    },
+    "samples": [
+     "g [main]",
+     "path [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#f4f4f5",
+    "rgba": [
+     244,
+     244,
+     245,
+     1
+    ],
+    "visible": false,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.relative.w-full.h-0.bg-zinc-100 [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#f4f4f5",
+    "rgba": [
+     244,
+     244,
+     245,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 201728,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.relative.w-full.h-0.bg-zinc-100 [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#ffffff@0.902",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.902
+    ],
+    "visible": false,
+    "count": 4,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 4
+    },
+    "samples": [
+     "button.w-7.h-7.flex.items-center [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#e4e4e7",
+    "rgba": [
+     228,
+     228,
+     231,
+     1
+    ],
+    "visible": false,
+    "count": 16,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 16
+    },
+    "samples": [
+     "button.w-7.h-7.flex.items-center «Top 1px» [main]",
+     "button.w-7.h-7.flex.items-center «Right 1px» [main]",
+     "button.w-7.h-7.flex.items-center «Bottom 1px» [main]",
+     "button.w-7.h-7.flex.items-center «Left 1px» [main]"
+    ]
+   },
+   {
+    "prop": "svg-stroke",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": false,
+    "count": 4,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 4
+    },
+    "samples": [
+     "path [main]"
+    ]
+   },
+   {
+    "prop": "gradient",
+    "hex": "#f6f6f6",
+    "rgba": [
+     246,
+     246,
+     246,
+     1
+    ],
+    "visible": true,
+    "count": 20,
+    "area": 423300,
+    "chars": 0,
+    "regions": {
+     "main": 20
+    },
+    "samples": [
+     "div.product-card-module__3G3cFq__image.relative «linear-gradient(90deg, rgb(246, 246, 246» [main]"
+    ]
+   },
+   {
+    "prop": "gradient",
+    "hex": "#ebebeb",
+    "rgba": [
+     235,
+     235,
+     235,
+     1
+    ],
+    "visible": true,
+    "count": 20,
+    "area": 423300,
+    "chars": 0,
+    "regions": {
+     "main": 20
+    },
+    "samples": [
+     "div.product-card-module__3G3cFq__image.relative «linear-gradient(90deg, rgb(246, 246, 246» [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 83,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 83
+    },
+    "samples": [
+     "div.product-card-module__3G3cFq__image.relative «Top 1px» [main]",
+     "div.product-card-module__3G3cFq__image.relative «Right 1px» [main]",
+     "div.product-card-module__3G3cFq__image.relative «Bottom 1px» [main]",
+     "div.product-card-module__3G3cFq__image.relative «Left 1px» [main]",
+     "span «Bottom 1px» [main]",
+     "span.mt-[6px].inline-block.lg:self-start.text-[11px] «Bottom 1px» [main]"
+    ]
+   },
+   {
+    "prop": "pseudo-bg::after",
+    "hex": "#ebebeb",
+    "rgba": [
+     235,
+     235,
+     235,
+     1
+    ],
+    "visible": true,
+    "count": 20,
+    "area": 411666.7033600001,
+    "chars": 0,
+    "regions": {
+     "main": 20
+    },
+    "samples": [
+     "div.product-card-module__3G3cFq__image.relative «content=\"\"» [main]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#52525c",
+    "rgba": [
+     82,
+     82,
+     92,
+     1
+    ],
+    "visible": true,
+    "count": 11,
+    "area": 0,
+    "chars": 19,
+    "regions": {
+     "main": 11
+    },
+    "samples": [
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «37» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «38» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «39» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «40» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «41» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «42» [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#d4d4d8",
+    "rgba": [
+     212,
+     212,
+     216,
+     1
+    ],
+    "visible": true,
+    "count": 44,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 44
+    },
+    "samples": [
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Top 1px» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Right 1px» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Bottom 1px» [main]",
+     "button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Left 1px» [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": true,
+    "count": 3,
+    "area": 235398,
+    "chars": 0,
+    "regions": {
+     "main": 2,
+     "footer": 1
+    },
+    "samples": [
+     "button.w-[15px].h-[8px].cursor-pointer.box-border [main]",
+     "footer.bg-black.text-white.p-[12px].lg:p-[18px] [footer]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#e6e5e5",
+    "rgba": [
+     230,
+     229,
+     229,
+     1
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 240,
+    "chars": 0,
+    "regions": {
+     "main": 2
+    },
+    "samples": [
+     "button.w-[15px].h-[8px].cursor-pointer.box-border [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": true,
+    "count": 5,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 4,
+     "cart": 1
+    },
+    "samples": [
+     "div.p-[10px].lg:p-[12px].gap-0.5 «Top 1px» [main]",
+     "div.p-[10px].lg:p-[12px].gap-0.5 «Right 1px» [main]",
+     "div.p-[10px].lg:p-[12px].gap-0.5 «Bottom 1px» [main]",
+     "div.p-[10px].lg:p-[12px].gap-0.5 «Left 1px» [main]",
+     "button.text-[11px].tracking-[0.18em].uppercase.border-b «Bottom 1px» [cart]"
+    ]
+   },
+   {
+    "prop": "gradient",
+    "hex": "#000000@0.749",
+    "rgba": [
+     0,
+     0,
+     0,
+     0.749
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 380250,
+    "chars": 0,
+    "regions": {
+     "main": 2
+    },
+    "samples": [
+     "div.absolute.inset-y-0.left-0.lg:w-[55%] «linear-gradient(0deg, oklab(0 0 0 / 0.75» [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#ffffff@0.4",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.4
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "div.flex.border-b.border-white/40.focus-within:border-white «Bottom 1px» [footer]"
+    ]
+   },
+   {
+    "prop": "placeholder",
+    "hex": "#ffffff@0.502",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.502
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "input.flex-1.bg-transparent.outline-none.py-2 «Your email address» [footer]"
+    ]
+   },
+   {
+    "prop": "caret",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 2
+    },
+    "samples": [
+     "input.flex-1.bg-transparent.outline-none.py-2 [footer]",
+     "input.shrink-0.mt-[3px].accent-white [footer]"
+    ]
+   },
+   {
+    "prop": "accent",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "input.shrink-0.mt-[3px].accent-white [footer]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#ffffff@0.698",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.698
+    ],
+    "visible": true,
+    "count": 2,
+    "area": 0,
+    "chars": 111,
+    "regions": {
+     "footer": 2
+    },
+    "samples": [
+     "span.text-[11px].leading-relaxed.text-white/70 «I agree to receive marketing emails from» [footer]",
+     "a.underline «Privacy Policy» [footer]"
+    ]
+   },
+   {
+    "prop": "text-decoration",
+    "hex": "#ffffff@0.698",
+    "rgba": [
+     255,
+     255,
+     255,
+     0.698
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "a.underline «underline Privacy Policy» [footer]"
+    ]
+   },
+   {
+    "prop": "svg-fill",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 1176,
+    "chars": 0,
+    "regions": {
+     "footer": 1
+    },
+    "samples": [
+     "path [footer]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 5,
+    "regions": {
+     "cart": 1
+    },
+    "samples": [
+     "button.text-black.text-[12px].tracking-widest.uppercase «Close» [cart]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": false,
+    "count": 2,
+    "area": 0,
+    "chars": 27,
+    "regions": {
+     "cookie": 2
+    },
+    "samples": [
+     "a «Cookie Policy» [cookie]",
+     "a «Privacy Policy» [cookie]"
+    ]
+   },
+   {
+    "prop": "text-decoration",
+    "hex": "#000000",
+    "rgba": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "visible": false,
+    "count": 2,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "cookie": 2
+    },
+    "samples": [
+     "a «underline Cookie Policy» [cookie]",
+     "a «underline Privacy Policy» [cookie]"
+    ]
+   }
+  ],
+  "pairs": [
+   {
+    "fg": "#ffffff",
+    "fgDeclared": "#ffffff",
+    "opacity": 1,
+    "bg": "#0a0a0a",
+    "overImage": false,
+    "ratio": 19.8,
+    "chars": 15,
+    "count": 1,
+    "samples": [
+     "«Skip to content» a.skip-link [main] 12px/500"
+    ],
+    "sizes": {
+     "12px/500": 15
+    }
+   },
+   {
+    "fg": "#0a0a0a",
+    "fgDeclared": "#0a0a0a",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": true,
+    "ratio": 19.8,
+    "chars": 42,
+    "count": 5,
+    "samples": [
+     "«Design» button.dynamic-menu-module__qpp75q__menuLink.dynamic-menu-mo [menu] 38px/500",
+     "«Art» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 38px/500",
+     "«London Design Festival» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 38px/500",
+     "«Events» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 38px/500",
+     "«About» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 38px/500"
+    ],
+    "sizes": {
+     "38px/500": 42
+    }
+   },
+   {
+    "fg": "#0a0a0a",
+    "fgDeclared": "#0a0a0a",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": false,
+    "ratio": 19.8,
+    "chars": 909,
+    "count": 50,
+    "samples": [
+     "«Account» a.flex.items-center.gap-2.py-3 [main] 12px/500",
+     "«Search» button.flex.items-center.gap-2.py-2 [main] 12px/500",
+     "«Dedicated to a new era of desi» h2.bookish_82aca62c-module__UWeQgW__className.uppercase.mx-a [main] 46.8px/500",
+     "«Studio Iron exists to support » p.mx-auto.mt-[26px].text-[14px].lg:text-[15px] [main] 14px/500",
+     "«All objects» a.hover:opacity-60.transition-opacity.duration-200 [main] 20px/500"
+    ],
+    "sizes": {
+     "12px/500": 616,
+     "46.8px/500": 33,
+     "14px/500": 205,
+     "20px/500": 11,
+     "20px/400": 11,
+     "11.2px/500": 16,
+     "11px/500": 17
+    }
+   },
+   {
+    "fg": "#52525c",
+    "fgDeclared": "#52525c",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": false,
+    "ratio": 7.72,
+    "chars": 19,
+    "count": 11,
+    "samples": [
+     "«37» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+     "«38» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+     "«39» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+     "«40» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+     "«41» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500"
+    ],
+    "sizes": {
+     "8px/500": 19
+    }
+   },
+   {
+    "fg": "#ffffff",
+    "fgDeclared": "#ffffff",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": true,
+    "ratio": 1,
+    "chars": 518,
+    "count": 6,
+    "samples": [
+     "«London Design Festival» h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [main] 26px/500",
+     "«The group exhibition embraces » p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] [main] 13px/500",
+     "«Discover» span.mt-[6px].inline-block.lg:self-start.text-[11px] [main] 11px/500",
+     "«Black Metal Edit» h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [main] 26px/500",
+     "«The Black Metal Edit explores » p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] [main] 13px/500"
+    ],
+    "sizes": {
+     "26px/500": 38,
+     "13px/500": 455,
+     "11px/500": 25
+    }
+   },
+   {
+    "fg": "#ffffff",
+    "fgDeclared": "#ffffff",
+    "opacity": 1,
+    "bg": "#000000",
+    "overImage": false,
+    "ratio": 21,
+    "chars": 247,
+    "count": 20,
+    "samples": [
+     "«Be the first to hear about new» h2.basis-[60%].uppercase.bookish_82aca62c-module__UWeQgW__cl [footer] 24px/500",
+     "«objects,» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 24px/500",
+     "«collections» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 24px/500",
+     "«studio» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 24px/500",
+     "«Subscribe →» button.uppercase.text-xs.tracking-[0.15em].disabled:opacity- [footer] 12px/500"
+    ],
+    "sizes": {
+     "24px/500": 65,
+     "12px/500": 124,
+     "14px/500": 58
+    }
+   },
+   {
+    "fg": "#b2b2b2",
+    "fgDeclared": "#ffffff@0.698",
+    "opacity": 1,
+    "bg": "#000000",
+    "overImage": false,
+    "ratio": 9.9,
+    "chars": 111,
+    "count": 2,
+    "samples": [
+     "«I agree to receive marketing e» span.text-[11px].leading-relaxed.text-white/70 [footer] 11px/500",
+     "«Privacy Policy» a.underline [footer] 11px/500"
+    ],
+    "sizes": {
+     "11px/500": 111
+    }
+   },
+   {
+    "fg": "#000000",
+    "fgDeclared": "#000000",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": false,
+    "ratio": 21,
+    "chars": 5,
+    "count": 1,
+    "samples": [
+     "«Close» button.text-black.text-[12px].tracking-widest.uppercase [cart] 12px/500"
+    ],
+    "sizes": {
+     "12px/500": 5
+    }
+   }
+  ],
+  "selection": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(10, 10, 10)"
+  },
+  "theme": [
+   "#ffffff"
+  ],
+  "imgCount": 92,
+  "imgBgs": {
+   "img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal": 53,
+   "img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal": 2,
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal": 22,
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal": 15
+  },
+  "rootVars": {
+   "--tw-ring-offset-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-100": "lab(96.1634% .0993311 -.364041) => #f4f4f5",
+   "--tw-ring-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-200": "lab(90.6853% .399232 -1.45452) => #e4e4e7",
+   "--color-green-600": "lab(59.0978% -58.6621 41.2579) => #00a63e",
+   "--color-gray-800": "lab(16.1051% -1.18239 -11.7533) => #1e2939",
+   "--grey": "#f0f0f0 => #f0f0f0",
+   "--color-zinc-500": "lab(47.8878% 1.65477 -5.77283) => #71717b",
+   "--color-zinc-900": "lab(8.30603% .618205 -2.16572) => #18181b",
+   "--color-neutral-500": "lab(48.496% 0 0) => #737373",
+   "--color-zinc-800": "lab(15.7305% .613764 -2.16959) => #27272a",
+   "--hightlight": "#fc1701 => #fc1701",
+   "--tw-inset-ring-shadow": "0 0 #0000 => #000000@0",
+   "--background": "#fff => #ffffff",
+   "--tw-gradient-via": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-gray-300": "lab(85.1236% -.612259 -3.7138) => #d1d5dc",
+   "--color-gray-500": "lab(47.7841% -.393182 -10.0268) => #6a7282",
+   "--color-red-700": "lab(40.4273% 67.2623 53.7441) => #c10007",
+   "--color-zinc-50": "lab(98.26% 0 0) => #fafafa",
+   "--swiper-theme-color": "#007aff => #007aff",
+   "--color-gray-50": "lab(98.2596% -.247031 -.706708) => #f9fafb",
+   "--color-gray-900": "lab(8.11897% .811279 -12.254) => #101828",
+   "--tw-inset-shadow": "0 0 #0000 => #000000@0",
+   "--tw-ring-offset-color": "#fff => #ffffff",
+   "--color-zinc-400": "lab(65.6464% 1.53497 -5.42429) => #9f9fa9",
+   "--color-red-400": "lab(63.7053% 60.745 31.3109) => #ff6467",
+   "--tw-gradient-from": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-white": "#fff => #ffffff",
+   "--color-gray-700": "lab(27.1134% -.956401 -12.3224) => #364153",
+   "--color-gray-400": "lab(65.9269% -.832707 -8.17473) => #99a1af",
+   "--color-zinc-600": "lab(35.1166% 1.78212 -6.1173) => #52525c",
+   "--tw-gradient-to": "rgba(0, 0, 0, 0) => #000000@0",
+   "--muted-text": "#6b6b6b => #6b6b6b",
+   "--color-gray-600": "lab(35.6337% -1.58697 -10.8425) => #4a5565",
+   "--color-blue-600": "lab(44.0605% 29.0279 -86.0352) => #155dfc",
+   "--color-gray-100": "lab(96.1596% -.0823438 -1.13575) => #f3f4f6",
+   "--tw-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-300": "lab(84.9837% .601262 -2.17986) => #d4d4d8",
+   "--color-blue-50": "lab(96.492% -1.14644 -5.11479) => #eff6ff",
+   "--color-gray-200": "lab(91.6229% -.159115 -2.26791) => #e5e7eb",
+   "--color-blue-200": "lab(86.15% -4.04379 -21.0797) => #bedbff",
+   "--color-zinc-700": "lab(26.8019% 1.35387 -4.68303) => #3f3f46",
+   "--color-black": "#000 => #000000",
+   "--foreground": "#0a0a0a => #0a0a0a"
+  },
+  "htmlBg": "rgba(0, 0, 0, 0)",
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(10, 10, 10)"
+ }
+}

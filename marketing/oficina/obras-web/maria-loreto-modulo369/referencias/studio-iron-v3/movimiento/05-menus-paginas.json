@@ -1,0 +1,187 @@
+{
+ "gridHoverBorde": [
+  [
+   15.7,
+   "rgb(10, 10, 10)"
+  ]
+ ],
+ "gridHoverImg": [
+  [
+   15.7,
+   "none"
+  ]
+ ],
+ "gridHoverElemento": "DIV.product-card-module__3G3cFq__image relative | hover? true",
+ "designNodos": [
+  [
+   17,
+   "+",
+   "dynamic-menu-module__qpp75q__overlay"
+  ],
+  [
+   17,
+   "+",
+   "dynamic-menu-module__qpp75q__submenu"
+  ]
+ ],
+ "designEstado": {
+  "error": "TypeError: e.className.slice is not a function\n    at <anonymous>:1:180\n    at Array.map (<anonymous>)\n    at <anonymous>:1:90"
+ },
+ "designThumb": [
+  277.5,
+  113,
+  "dynamic-menu-module__qpp75q__thumbWrap",
+  "rgb(10, 10, 10)"
+ ],
+ "designThumbHover": {
+  "borde": [
+   [
+    {
+     "border-top-color": "rgb(10, 10, 10)",
+     "opacity": "1",
+     "outline-color": "rgb(10, 10, 10)"
+    },
+    "rgb(10, 10, 10)"
+   ]
+  ],
+  "op": [
+   [
+    {
+     "border-top-color": "rgb(10, 10, 10)",
+     "opacity": "1",
+     "outline-color": "rgb(10, 10, 10)"
+    },
+    "1"
+   ]
+  ],
+  "img": [
+   [
+    {
+     "border-top-color": "rgb(10, 10, 10)",
+     "opacity": "1",
+     "outline-color": "rgb(10, 10, 10)"
+    },
+    "none"
+   ]
+  ]
+ },
+ "searchNodos": [
+  [
+   27,
+   "+",
+   "fixed inset-0 z-40"
+  ],
+  [
+   27,
+   "+",
+   "fixed top-0 right-0 h-full z-50 bg-white flex flex-col"
+  ],
+  [
+   350,
+   "+",
+   "product-card-module__3G3cFq__productCard"
+  ],
+  [
+   350,
+   "+",
+   "product-card-module__3G3cFq__productCard"
+  ]
+ ],
+ "searchEstado": [
+  "DIV.cart-module__GMR72G__cart cart-module__GMR72G__isClosed albe tr=matrix(1, 0, 0, 1, 528, 0) trans=transform 0.2s ease-in-out r=1488,0,480,900",
+  "DIV.fixed top-0 right-0 h-full z-50 bg-white flex flex-col tr=none trans=all r=960,0,480,900",
+  "DIV.search-module__6zfDpG__panelInner tr=none trans=all r=980,53,440,827",
+  "DIV.search-module__6zfDpG__inputWrap tr=none trans=all r=980,53,440,48",
+  "INPUT.search-module__6zfDpG__input tr=none trans=all r=980,53,440,43",
+  "DIV.search-module__6zfDpG__section search-module__6zfDpG__sugges tr=none trans=all r=980,149,440,327"
+ ],
+ "searchCierreEsc": [
+  [
+   12,
+   "[1488,0,480,900]"
+  ],
+  [
+   27.5,
+   "[1480.8,0,480,900]"
+  ],
+  [
+   45.6,
+   "[1458.3,0,480,900]"
+  ],
+  [
+   62.4,
+   "[1419.6,0,480,900]"
+  ],
+  [
+   78.3,
+   "[1365.7,0,480,900]"
+  ],
+  [
+   95,
+   "[1298.4,0,480,900]"
+  ],
+  [
+   111.7,
+   "[1224.2,0,480,900]"
+  ],
+  [
+   129.1,
+   "[1149.5,0,480,900]"
+  ],
+  [
+   146.1,
+   "[1082.3,0,480,900]"
+  ],
+  [
+   160.9,
+   "[1028.3,0,480,900]"
+  ],
+  [
+   178,
+   "[989.7,0,480,900]"
+  ],
+  [
+   195.4,
+   "[967.3,0,480,900]"
+  ],
+  [
+   210.9,
+   "[960,0,480,900]"
+  ]
+ ],
+ "navPrimerCambio": null,
+ "navLog": [
+  [
+   51,
+   "/collections/all-objects",
+   "ALL OBJECTS\nChainmail Chair (2"
+  ]
+ ],
+ "navImagenes": [
+  {
+   "cls": "loaded",
+   "op": "1",
+   "par": "product-card-module__3G3cFq__image relative"
+  },
+  {
+   "cls": "loaded",
+   "op": "1",
+   "par": "product-card-module__3G3cFq__image relative"
+  },
+  {
+   "cls": "absolute inset-0 w-full h-full object-cover pointer-events-none transition-opacity duration-150 z-[5] opacity-0",
+   "op": "0",
+   "par": "product-card-module__3G3cFq__image relative"
+  },
+  {
+   "cls": "absolute inset-0 w-full h-full object-cover pointer-events-none transition-opacity duration-150 z-[5] opacity-0",
+   "op": "0",
+   "par": "product-card-module__3G3cFq__image relative"
+  }
+ ],
+ "frames": {
+  "design": 7,
+  "search": 54,
+  "nav": 24
+ }
+}

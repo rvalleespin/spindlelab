@@ -1,0 +1,321 @@
+{
+ "label": "cookie",
+ "url": "https://www.studio-iron.com/",
+ "title": "Curated objects from independent designers — Studio Iron — Studio Iron",
+ "scrollH": 5770,
+ "w": 1440,
+ "colors": [
+  {
+   "prop": "background",
+   "hex": "#ffffff",
+   "rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "visible": true,
+   "count": 5,
+   "area": 16378611,
+   "chars": 0,
+   "regions": {
+    "main": 2,
+    "header": 1,
+    "cart": 1,
+    "cookie": 1
+   },
+   "samples": [
+    "body.antialiased [main]",
+    "header.header-module__HqSsuG__header.albert_sans_d07bd869-module__vNvuEW__className [header]",
+    "main.albert_sans_6ab7f873-module__7VJibG__className.wrapper [main]",
+    "div.cart-module__GMR72G__cart.cart-module__GMR72G__isClosed.albert_sans_ea8044c2-module__OGpixG__className [cart]",
+    "div.cookie-notice-module__7kQufq__banner.cookie-notice-module__7kQufq__bannerVisible [cookie]"
+   ]
+  },
+  {
+   "prop": "color",
+   "hex": "#ffffff",
+   "rgba": [
+    255,
+    255,
+    255,
+    1
+   ],
+   "visible": true,
+   "count": 30,
+   "area": 0,
+   "chars": 790,
+   "regions": {
+    "main": 7,
+    "footer": 22,
+    "cookie": 1
+   },
+   "samples": [
+    "a.skip-link «Skip to content» [main]",
+    "h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9].lg:text-5xl.text-[26px] «London Design Festival» [main]",
+    "p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] «The group exhibition embraces experiment» [main]",
+    "span.mt-[6px].inline-block.lg:self-start.text-[11px] «Discover» [main]",
+    "h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9].lg:text-5xl.text-[26px] «Black Metal Edit» [main]",
+    "p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] «The Black Metal Edit explores the darker» [main]"
+   ]
+  },
+  {
+   "prop": "background",
+   "hex": "#000000",
+   "rgba": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "visible": true,
+   "count": 4,
+   "area": 745484,
+   "chars": 0,
+   "regions": {
+    "main": 2,
+    "footer": 1,
+    "cookie": 1
+   },
+   "samples": [
+    "button.w-[15px].h-[8px].cursor-pointer.box-border [main]",
+    "footer.bg-black.text-white.p-[12px].lg:p-[18px] [footer]",
+    "button.cookie-notice-module__7kQufq__btn.cookie-notice-module__7kQufq__btnPrimary [cookie]"
+   ]
+  },
+  {
+   "prop": "border",
+   "hex": "#000000",
+   "rgba": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "visible": true,
+   "count": 17,
+   "area": 0,
+   "chars": 0,
+   "regions": {
+    "main": 4,
+    "cart": 1,
+    "cookie": 12
+   },
+   "samples": [
+    "div.p-[10px].lg:p-[12px].gap-0.5 «Top 1px» [main]",
+    "div.p-[10px].lg:p-[12px].gap-0.5 «Right 1px» [main]",
+    "div.p-[10px].lg:p-[12px].gap-0.5 «Bottom 1px» [main]",
+    "div.p-[10px].lg:p-[12px].gap-0.5 «Left 1px» [main]",
+    "button.text-[11px].tracking-[0.18em].uppercase.border-b «Bottom 1px» [cart]",
+    "div.cookie-notice-module__7kQufq__banner.cookie-notice-module__7kQufq__bannerVisible «Top 1px» [cookie]"
+   ]
+  },
+  {
+   "prop": "color",
+   "hex": "#000000",
+   "rgba": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "visible": true,
+   "count": 6,
+   "area": 0,
+   "chars": 67,
+   "regions": {
+    "cart": 1,
+    "cookie": 5
+   },
+   "samples": [
+    "button.text-black.text-[12px].tracking-widest.uppercase «Close» [cart]",
+    "div.cookie-notice-module__7kQufq__title «Cookies» [cookie]",
+    "a «Cookie Policy» [cookie]",
+    "a «Privacy Policy» [cookie]",
+    "button.cookie-notice-module__7kQufq__btn «Reject all» [cookie]",
+    "button.cookie-notice-module__7kQufq__linkBtn «Manage preferences» [cookie]"
+   ]
+  },
+  {
+   "prop": "box-shadow",
+   "hex": "#000000@0.08",
+   "rgba": [
+    0,
+    0,
+    0,
+    0.08
+   ],
+   "visible": true,
+   "count": 1,
+   "area": 0,
+   "chars": 0,
+   "regions": {
+    "cookie": 1
+   },
+   "samples": [
+    "div.cookie-notice-module__7kQufq__banner.cookie-notice-module__7kQufq__bannerVisible «rgba(0, 0, 0, 0.08) 0px 6px 24px 0px» [cookie]"
+   ]
+  },
+  {
+   "prop": "color",
+   "hex": "#333333",
+   "rgba": [
+    51,
+    51,
+    51,
+    1
+   ],
+   "visible": true,
+   "count": 1,
+   "area": 0,
+   "chars": 148,
+   "regions": {
+    "cookie": 1
+   },
+   "samples": [
+    "p.cookie-notice-module__7kQufq__body «We use cookies to run this site, remembe» [cookie]"
+   ]
+  },
+  {
+   "prop": "text-decoration",
+   "hex": "#000000",
+   "rgba": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "visible": true,
+   "count": 3,
+   "area": 0,
+   "chars": 0,
+   "regions": {
+    "cookie": 3
+   },
+   "samples": [
+    "a «underline Cookie Policy» [cookie]",
+    "a «underline Privacy Policy» [cookie]",
+    "button.cookie-notice-module__7kQufq__linkBtn «underline Manage preferences» [cookie]"
+   ]
+  }
+ ],
+ "pairs": [
+  {
+   "fg": "#000000",
+   "fgDeclared": "#000000",
+   "opacity": 1,
+   "bg": "#ffffff",
+   "overImage": true,
+   "ratio": 21,
+   "chars": 62,
+   "count": 5,
+   "samples": [
+    "«Cookies» div.cookie-notice-module__7kQufq__title [cookie] 13px/500",
+    "«Cookie Policy» a [cookie] 12px/500",
+    "«Privacy Policy» a [cookie] 12px/500",
+    "«Reject all» button.cookie-notice-module__7kQufq__btn [cookie] 11px/500",
+    "«Manage preferences» button.cookie-notice-module__7kQufq__linkBtn [cookie] 11px/500"
+   ],
+   "sizes": {
+    "13px/500": 7,
+    "12px/500": 27,
+    "11px/500": 28
+   }
+  },
+  {
+   "fg": "#333333",
+   "fgDeclared": "#333333",
+   "opacity": 1,
+   "bg": "#ffffff",
+   "overImage": true,
+   "ratio": 12.63,
+   "chars": 148,
+   "count": 1,
+   "samples": [
+    "«We use cookies to run this sit» p.cookie-notice-module__7kQufq__body [cookie] 12px/500"
+   ],
+   "sizes": {
+    "12px/500": 148
+   }
+  },
+  {
+   "fg": "#ffffff",
+   "fgDeclared": "#ffffff",
+   "opacity": 1,
+   "bg": "#000000",
+   "overImage": true,
+   "ratio": 21,
+   "chars": 10,
+   "count": 1,
+   "samples": [
+    "«Accept all» button.cookie-notice-module__7kQufq__btn.cookie-notice-modul [cookie] 11px/500"
+   ],
+   "sizes": {
+    "11px/500": 10
+   }
+  }
+ ],
+ "selection": {
+  "bg": "rgba(0, 0, 0, 0)",
+  "color": "rgb(10, 10, 10)"
+ },
+ "theme": [
+  "#ffffff"
+ ],
+ "imgCount": 66,
+ "imgBgs": {
+  "img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal": 2,
+  "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal": 22,
+  "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal": 15,
+  "img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal": 27
+ },
+ "rootVars": {
+  "--tw-ring-offset-shadow": "0 0 #0000 => #000000@0",
+  "--color-zinc-100": "lab(96.1634% .0993311 -.364041) => #f4f4f5",
+  "--tw-ring-shadow": "0 0 #0000 => #000000@0",
+  "--color-zinc-200": "lab(90.6853% .399232 -1.45452) => #e4e4e7",
+  "--color-gray-800": "lab(16.1051% -1.18239 -11.7533) => #1e2939",
+  "--color-green-600": "lab(59.0978% -58.6621 41.2579) => #00a63e",
+  "--grey": "#f0f0f0 => #f0f0f0",
+  "--color-zinc-500": "lab(47.8878% 1.65477 -5.77283) => #71717b",
+  "--color-zinc-900": "lab(8.30603% .618205 -2.16572) => #18181b",
+  "--color-neutral-500": "lab(48.496% 0 0) => #737373",
+  "--color-zinc-800": "lab(15.7305% .613764 -2.16959) => #27272a",
+  "--hightlight": "#fc1701 => #fc1701",
+  "--tw-inset-ring-shadow": "0 0 #0000 => #000000@0",
+  "--background": "#fff => #ffffff",
+  "--tw-gradient-via": "rgba(0, 0, 0, 0) => #000000@0",
+  "--color-gray-300": "lab(85.1236% -.612259 -3.7138) => #d1d5dc",
+  "--color-gray-500": "lab(47.7841% -.393182 -10.0268) => #6a7282",
+  "--color-red-700": "lab(40.4273% 67.2623 53.7441) => #c10007",
+  "--color-zinc-50": "lab(98.26% 0 0) => #fafafa",
+  "--swiper-theme-color": "#007aff => #007aff",
+  "--color-gray-900": "lab(8.11897% .811279 -12.254) => #101828",
+  "--color-gray-50": "lab(98.2596% -.247031 -.706708) => #f9fafb",
+  "--tw-inset-shadow": "0 0 #0000 => #000000@0",
+  "--color-zinc-400": "lab(65.6464% 1.53497 -5.42429) => #9f9fa9",
+  "--tw-ring-offset-color": "#fff => #ffffff",
+  "--color-red-400": "lab(63.7053% 60.745 31.3109) => #ff6467",
+  "--tw-gradient-from": "rgba(0, 0, 0, 0) => #000000@0",
+  "--color-white": "#fff => #ffffff",
+  "--color-gray-700": "lab(27.1134% -.956401 -12.3224) => #364153",
+  "--color-gray-400": "lab(65.9269% -.832707 -8.17473) => #99a1af",
+  "--color-zinc-600": "lab(35.1166% 1.78212 -6.1173) => #52525c",
+  "--tw-gradient-to": "rgba(0, 0, 0, 0) => #000000@0",
+  "--muted-text": "#6b6b6b => #6b6b6b",
+  "--color-gray-600": "lab(35.6337% -1.58697 -10.8425) => #4a5565",
+  "--color-blue-600": "lab(44.0605% 29.0279 -86.0352) => #155dfc",
+  "--color-gray-100": "lab(96.1596% -.0823438 -1.13575) => #f3f4f6",
+  "--tw-shadow": "0 0 #0000 => #000000@0",
+  "--color-zinc-300": "lab(84.9837% .601262 -2.17986) => #d4d4d8",
+  "--color-blue-50": "lab(96.492% -1.14644 -5.11479) => #eff6ff",
+  "--color-gray-200": "lab(91.6229% -.159115 -2.26791) => #e5e7eb",
+  "--color-blue-200": "lab(86.15% -4.04379 -21.0797) => #bedbff",
+  "--color-black": "#000 => #000000",
+  "--color-zinc-700": "lab(26.8019% 1.35387 -4.68303) => #3f3f46",
+  "--foreground": "#0a0a0a => #0a0a0a"
+ },
+ "htmlBg": "rgba(0, 0, 0, 0)",
+ "bodyBg": "rgb(255, 255, 255)",
+ "bodyColor": "rgb(10, 10, 10)"
+}

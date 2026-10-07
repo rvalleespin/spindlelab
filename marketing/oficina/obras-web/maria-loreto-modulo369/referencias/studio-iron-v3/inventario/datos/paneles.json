@@ -1,0 +1,529 @@
+{
+  "cookies-1440": {
+    "r": [
+      18,
+      672,
+      520,
+      210
+    ],
+    "bg": "rgb(255, 255, 255)",
+    "txt": "COOKIES We use cookies to run this site, remember your preferences, and — with your consent — measure performance and personalise advertising. See our Cookie Policy and Privacy Policy. REJECT ALL ACCEPT ALL MANAGE PREFERENCES",
+    "botones": [
+      "Cookie Policy",
+      "Privacy Policy",
+      "REJECT ALL",
+      "ACCEPT ALL",
+      "MANAGE PREFERENCES"
+    ]
+  },
+  "busqueda-1440": {
+    "abierto": "Search",
+    "viaMenu": false,
+    "paneles0": [
+      {
+        "cls": "header-module__HqSsuG__header header-module__HqSsuG__solid a",
+        "r": [
+          0,
+          0,
+          1440,
+          29
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Design Art London Design Festival Events About Search Account Bag [0]"
+      },
+      {
+        "cls": "fixed inset-0 z-40",
+        "r": [
+          0,
+          0,
+          1440,
+          900
+        ],
+        "bg": "rgba(255, 255, 255, 0.65)",
+        "txt": ""
+      },
+      {
+        "cls": "fixed top-0 right-0 h-full z-50 bg-white flex flex-col",
+        "r": [
+          960,
+          0,
+          480,
+          900
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Search CLOSE Suggestions HARDSTYLE HARDSTYLE SOLD OUT Tapestry V WRETCHED FLOWERS"
+      }
+    ],
+    "foco": {
+      "ph": "What are you looking for?",
+      "f": "\"Helvetica Neue\" 18px/23.4px"
+    },
+    "resultados": {
+      "n": 14,
+      "enlaces": [
+        "/products/tubular-chair",
+        "/products/hug-bed-copy",
+        "/products/camber-chair",
+        "/products/camber-stool",
+        "/products/chaise-oiseaux",
+        "/products/tetra-chair",
+        "/products/cowhide-studio-chair",
+        "/products/zebra-studio-chair",
+        "/products/disco-studio-chair",
+        "/products/cowhide-studio-stool",
+        "/products/nudo-chair",
+        "/products/velvet-fern-studio-chair"
+      ],
+      "txt": "Search CLOSE CLEAR 12 results for “chair” Tubular chair ANDU MASEBO Hug Chair KOUROS MAGHSOUDI Camber Chair PAUL COENEN Camber Stool PAUL COENEN Chaise Oiseaux ATELIER MOORE X CAMILLE CABANES Tetra Chair JUDEXAYA Cowhide Studio Chair BUCHANAN STUDIO Zebra Studio Chair BUCHANAN STUDIO Disco Studio Ch"
+    }
+  },
+  "bolsa-1440": {
+    "boton": "Bag [0]",
+    "paneles": [
+      {
+        "cls": "header-module__HqSsuG__header header-module__HqSsuG__solid a",
+        "r": [
+          0,
+          0,
+          1440,
+          29
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Design Art London Design Festival Events About Search Account Bag [0]"
+      },
+      {
+        "cls": "cart-module__GMR72G__overlay",
+        "r": [
+          0,
+          0,
+          1440,
+          900
+        ],
+        "bg": "rgba(255, 255, 255, 0.65)",
+        "txt": ""
+      },
+      {
+        "cls": "cart-module__GMR72G__cart cart-module__GMR72G__isOpen albert",
+        "r": [
+          960,
+          0,
+          480,
+          900
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Bag [0] CLOSE Your bag is empty CONTINUE SHOPPING"
+      }
+    ]
+  },
+  "menu-design-1440": {
+    "paneles": [
+      {
+        "cls": "header-module__HqSsuG__header header-module__HqSsuG__solid a",
+        "r": [
+          0,
+          0,
+          1440,
+          29
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Design All Objects Andu Masebo Anoe Melliou Apohli Atelier Fomenta Atelier Moore x Camille Cabanes Body Amplification Devices Buchanan Studi"
+      },
+      {
+        "cls": "dynamic-menu-module__qpp75q__overlay",
+        "r": [
+          0,
+          0,
+          1440,
+          900
+        ],
+        "bg": "rgba(255, 255, 255, 0.65)",
+        "txt": ""
+      }
+    ],
+    "celdas": {
+      "n": 53,
+      "primeras": [
+        "All Objects",
+        "Andu Masebo",
+        "Anoe Melliou",
+        "Apohli"
+      ]
+    }
+  },
+  "salto-contenido-1440": {
+    "t": "SKIP TO CONTENT",
+    "r": [
+      12,
+      12,
+      166,
+      38
+    ]
+  },
+  "cajones-producto-1440": {
+    "r1": "Read more",
+    "p1": [
+      {
+        "cls": "header-module__HqSsuG__header header-module__HqSsuG__solid a",
+        "r": [
+          0,
+          0,
+          1440,
+          29
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Design Art London Design Festival Events About Search Account Bag [0]"
+      },
+      {
+        "cls": "fixed inset-0 z-40",
+        "r": [
+          0,
+          0,
+          1440,
+          900
+        ],
+        "bg": "rgba(255, 255, 255, 0.65)",
+        "txt": ""
+      },
+      {
+        "cls": "fixed top-0 right-0 h-full z-50 bg-white flex flex-col",
+        "r": [
+          960,
+          0,
+          480,
+          900
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Tubular chair CLOSE Made from 3 inch stainless steel tubes used in the production of car exhausts. The Tubular chair is a result of conversa"
+      }
+    ],
+    "r2": "SHIPPING & RETURNS",
+    "p2": [
+      {
+        "cls": "header-module__HqSsuG__header header-module__HqSsuG__solid a",
+        "r": [
+          0,
+          0,
+          1440,
+          29
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Design Art London Design Festival Events About Search Account Bag [0]"
+      },
+      {
+        "cls": "fixed inset-0 z-40",
+        "r": [
+          0,
+          0,
+          1440,
+          900
+        ],
+        "bg": "rgba(255, 255, 255, 0.65)",
+        "txt": ""
+      },
+      {
+        "cls": "fixed top-0 right-0 h-full z-50 bg-white flex flex-col",
+        "r": [
+          960,
+          0,
+          480,
+          900
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Shipping & Returns CLOSE SHIPPING This item will be packed and shipped directly from Andu Masebo in United Kingdom. Made to order. Allow 10 "
+      }
+    ]
+  },
+  "cajon-enquire-1440": {
+    "r": "ENQUIRE",
+    "p": [
+      {
+        "cls": "header-module__HqSsuG__header header-module__HqSsuG__solid a",
+        "r": [
+          0,
+          0,
+          1440,
+          29
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Design Art London Design Festival Events About Search Account Bag [0]"
+      },
+      {
+        "cls": "fixed inset-0 z-40",
+        "r": [
+          0,
+          0,
+          1440,
+          900
+        ],
+        "bg": "rgba(255, 255, 255, 0.65)",
+        "txt": ""
+      },
+      {
+        "cls": "fixed top-0 right-0 h-full z-50 bg-white flex flex-col",
+        "r": [
+          960,
+          0,
+          480,
+          900
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Enquire CLOSE Record Separator, Phil Hale Name E-mail SEND ENQUIRY"
+      }
+    ]
+  },
+  "cookies-390": {
+    "r": [
+      12,
+      563,
+      366,
+      269
+    ],
+    "bg": "rgb(255, 255, 255)",
+    "txt": "COOKIES We use cookies to run this site, remember your preferences, and — with your consent — measure performance and personalise advertising. See our Cookie Policy and Privacy Policy. REJECT ALL ACCEPT ALL MANAGE PREFERENCES",
+    "botones": [
+      "Cookie Policy",
+      "Privacy Policy",
+      "REJECT ALL",
+      "ACCEPT ALL",
+      "MANAGE PREFERENCES"
+    ]
+  },
+  "busqueda-390": {
+    "abierto": "SEARCH",
+    "viaMenu": false,
+    "paneles0": [
+      {
+        "cls": "header-module__HqSsuG__header header-module__HqSsuG__solid a",
+        "r": [
+          0,
+          0,
+          390,
+          38
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": ""
+      },
+      {
+        "cls": "fixed inset-0 z-40",
+        "r": [
+          0,
+          0,
+          390,
+          844
+        ],
+        "bg": "rgba(255, 255, 255, 0.65)",
+        "txt": ""
+      },
+      {
+        "cls": "fixed top-0 right-0 h-full z-50 bg-white flex flex-col",
+        "r": [
+          0,
+          0,
+          390,
+          844
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Search CLOSE Suggestions HARDSTYLE HARDSTYLE SOLD OUT Tapestry V WRETCHED FLOWERS"
+      }
+    ],
+    "foco": {
+      "ph": "What are you looking for?",
+      "f": "\"Helvetica Neue\" 18px/23.4px"
+    },
+    "resultados": {
+      "n": 14,
+      "enlaces": [
+        "/products/tubular-chair",
+        "/products/hug-bed-copy",
+        "/products/camber-chair",
+        "/products/camber-stool",
+        "/products/chaise-oiseaux",
+        "/products/tetra-chair",
+        "/products/cowhide-studio-chair",
+        "/products/zebra-studio-chair",
+        "/products/disco-studio-chair",
+        "/products/cowhide-studio-stool",
+        "/products/nudo-chair",
+        "/products/velvet-fern-studio-chair"
+      ],
+      "txt": "Search CLOSE CLEAR 12 results for “chair” Tubular chair ANDU MASEBO Hug Chair KOUROS MAGHSOUDI Camber Chair PAUL COENEN Camber Stool PAUL COENEN Chaise Oiseaux ATELIER MOORE X CAMILLE CABANES Tetra Chair JUDEXAYA Cowhide Studio Chair BUCHANAN STUDIO Zebra Studio Chair BUCHANAN STUDIO Disco Studio Ch"
+    }
+  },
+  "bolsa-390": {
+    "boton": "Open cart",
+    "paneles": [
+      {
+        "cls": "header-module__HqSsuG__header header-module__HqSsuG__solid a",
+        "r": [
+          0,
+          0,
+          390,
+          38
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": ""
+      },
+      {
+        "cls": "cart-module__GMR72G__overlay",
+        "r": [
+          0,
+          0,
+          390,
+          844
+        ],
+        "bg": "rgba(255, 255, 255, 0.65)",
+        "txt": ""
+      },
+      {
+        "cls": "cart-module__GMR72G__cart cart-module__GMR72G__isOpen albert",
+        "r": [
+          10,
+          10,
+          370,
+          824
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Bag [0] CLOSE Your bag is empty CONTINUE SHOPPING"
+      }
+    ]
+  },
+  "menu-movil-390": {
+    "imgs": 26,
+    "enlaces": 26,
+    "alto": 844
+  },
+  "cajones-producto-390": {
+    "r1": "Read more",
+    "p1": [
+      {
+        "cls": "header-module__HqSsuG__header header-module__HqSsuG__solid a",
+        "r": [
+          0,
+          0,
+          390,
+          38
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": ""
+      },
+      {
+        "cls": "lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white transi",
+        "r": [
+          0,
+          844,
+          390,
+          179
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "TUBULAR CHAIR Add To Bag £3,800.00 Made to order. Allow 10 weeks production time. Packed and shipped directly from the designer in the Unite"
+      },
+      {
+        "cls": "fixed inset-0 z-40",
+        "r": [
+          0,
+          0,
+          390,
+          844
+        ],
+        "bg": "rgba(255, 255, 255, 0.65)",
+        "txt": ""
+      },
+      {
+        "cls": "fixed top-0 right-0 h-full z-50 bg-white flex flex-col",
+        "r": [
+          0,
+          0,
+          390,
+          844
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Tubular chair CLOSE Made from 3 inch stainless steel tubes used in the production of car exhausts. The Tubular chair is a result of conversa"
+      }
+    ],
+    "r2": "SHIPPING & RETURNS",
+    "p2": [
+      {
+        "cls": "header-module__HqSsuG__header header-module__HqSsuG__solid a",
+        "r": [
+          0,
+          0,
+          390,
+          38
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": ""
+      },
+      {
+        "cls": "lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white transi",
+        "r": [
+          0,
+          844,
+          390,
+          179
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "TUBULAR CHAIR Add To Bag £3,800.00 Made to order. Allow 10 weeks production time. Packed and shipped directly from the designer in the Unite"
+      },
+      {
+        "cls": "fixed inset-0 z-40",
+        "r": [
+          0,
+          0,
+          390,
+          844
+        ],
+        "bg": "rgba(255, 255, 255, 0.65)",
+        "txt": ""
+      },
+      {
+        "cls": "fixed top-0 right-0 h-full z-50 bg-white flex flex-col",
+        "r": [
+          0,
+          0,
+          390,
+          844
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Shipping & Returns CLOSE SHIPPING This item will be packed and shipped directly from Andu Masebo in United Kingdom. Made to order. Allow 10 "
+      }
+    ]
+  },
+  "cajon-enquire-390": {
+    "r": "ENQUIRE",
+    "p": [
+      {
+        "cls": "header-module__HqSsuG__header header-module__HqSsuG__solid a",
+        "r": [
+          0,
+          0,
+          390,
+          38
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": ""
+      },
+      {
+        "cls": "fixed inset-0 z-40",
+        "r": [
+          0,
+          0,
+          390,
+          844
+        ],
+        "bg": "rgba(255, 255, 255, 0.65)",
+        "txt": ""
+      },
+      {
+        "cls": "fixed top-0 right-0 h-full z-50 bg-white flex flex-col",
+        "r": [
+          0,
+          0,
+          390,
+          844
+        ],
+        "bg": "rgb(255, 255, 255)",
+        "txt": "Enquire CLOSE Record Separator, Phil Hale Name E-mail SEND ENQUIRY"
+      }
+    ]
+  }
+}

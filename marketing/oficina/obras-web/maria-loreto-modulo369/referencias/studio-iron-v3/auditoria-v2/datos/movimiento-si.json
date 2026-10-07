@@ -1,0 +1,101 @@
+{
+ "scroll100": {
+  "final": 100,
+  "primerCambio_ms": 34,
+  "50%_ms": 133,
+  "90%_ms": 400,
+  "100%_ms": 901,
+  "lenis": true,
+  "muestras": 91
+ },
+ "hero": [
+  {
+   "y": 0,
+   "img": [
+    228,
+    1910
+   ],
+   "marca": [
+    30,
+    2108,
+    "1"
+   ],
+   "animActivas": 20
+  },
+  {
+   "y": 300,
+   "img": [
+    -136,
+    1910
+   ],
+   "marca": [
+    -270,
+    2044,
+    "1"
+   ],
+   "animActivas": 20
+  },
+  {
+   "y": 600,
+   "img": [
+    -703,
+    1910
+   ],
+   "marca": [
+    -570,
+    1777,
+    "1"
+   ],
+   "animActivas": 20
+  },
+  {
+   "y": 900,
+   "img": [
+    -1270,
+    1910
+   ],
+   "marca": [
+    -870,
+    1510,
+    "1"
+   ],
+   "animActivas": 20
+  }
+ ],
+ "hoverGrilla": {
+  "tarjeta": {
+   "x": 12,
+   "y": 120.390625,
+   "w": 464,
+   "h": 582
+  },
+  "cambios": {
+   "1:DIV": {
+    "antes": "none | 1 | none rgb(10, 10, 10) | rgb(255, 255, 255) 1px | rgb(10, 10, 10) | rgba(0, 0, 0, 0) | none | none | none",
+    "despues": "none | 1 | none rgb(10, 10, 10) | rgb(10, 10, 10) 1px | rgb(10, 10, 10) | rgba(0, 0, 0, 0) | none | none | none"
+   }
+  },
+  "nCambios": 1
+ },
+ "hoverGrilla2": {
+  "tarjeta": {
+   "x": 12,
+   "y": 120.140625,
+   "w": 464,
+   "h": 582
+  },
+  "cambios": {
+   "1:DIV": {
+    "antes": "none | 1 | none rgb(10, 10, 10) | rgb(255, 255, 255) 1px | rgb(10, 10, 10) | rgba(0, 0, 0, 0) | none | none | none",
+    "despues": "none | 1 | none rgb(10, 10, 10) | rgb(10, 10, 10) 1px | rgb(10, 10, 10) | rgba(0, 0, 0, 0) | none | none | none"
+   }
+  },
+  "nCambios": 1
+ },
+ "tira": {
+  "top": 5064.484375,
+  "h": 495.375,
+  "cls": "swiper swiper-initialized swiper-horizontal"
+ },
+ "tiraCursor": []
+}

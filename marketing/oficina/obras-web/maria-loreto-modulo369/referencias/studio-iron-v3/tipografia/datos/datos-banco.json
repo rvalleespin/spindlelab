@@ -1,0 +1,2033 @@
+{
+ "SI": {
+  "roman": {
+   "fam": "bookish",
+   "weight": 500,
+   "style": "normal",
+   "xh": 0.4275,
+   "cap": 0.6625,
+   "x_cap": 0.6452830188679245,
+   "asc": 0.7375,
+   "desc": 0.205,
+   "ancho_minus_x": 27.59731359649123,
+   "ancho_mayus_cap": 25.92128537735849,
+   "asta_x": 0.1654050950143971,
+   "contraste_o": 0.3570416691943344,
+   "eje_o": 27.0,
+   "contraste_H": 0.4559607525875532,
+   "inclinacion_l": null,
+   "cadenas": {
+    "enunciado": 1847.55,
+    "h1": 216.88,
+    "destacado": 597.91,
+    "pie": 510.66,
+    "menu390": 308.63,
+    "tira": 117.19,
+    "artista": 71.63,
+    "tarjeta": 94.31
+   },
+   "ancho_vs_SI": {
+    "enunciado": 1.0,
+    "h1": 1.0,
+    "destacado": 1.0,
+    "pie": 1.0,
+    "menu390": 1.0,
+    "tira": 1.0,
+    "artista": 1.0,
+    "tarjeta": 1.0
+   },
+   "tam_equiv_versal": 1.0,
+   "tam_equiv_x": 1.0
+  },
+  "italica": {
+   "fam": "bookish",
+   "weight": 500,
+   "style": "italic",
+   "xh": 0.435,
+   "cap": 0.6725,
+   "x_cap": 0.6468401486988847,
+   "asc": 0.7575,
+   "desc": 0.265,
+   "ancho_minus_x": 25.13582076149425,
+   "ancho_mayus_cap": 25.53583875464684,
+   "asta_x": 0.18174009541197583,
+   "contraste_o": 0.48523918196278354,
+   "eje_o": 21.0,
+   "contraste_H": null,
+   "inclinacion_l": 17.888189840298587,
+   "cadenas": {
+    "titulo_obra": 275.53,
+    "hero_autor": 306.14,
+    "evento": 1121.08,
+    "producto_ital": 342.06
+   },
+   "ancho_vs_SI": {
+    "titulo_obra": 1.0,
+    "hero_autor": 1.0,
+    "evento": 1.0,
+    "producto_ital": 1.0
+   },
+   "tam_equiv_versal": 1.0,
+   "tam_equiv_x": 1.0
+  },
+  "sans": {
+   "fam": "Albert Sans",
+   "weight": 500,
+   "style": "normal",
+   "xh": 0.5,
+   "cap": 0.7,
+   "x_cap": 0.7142857142857143,
+   "asc": 0.72,
+   "desc": 0.2,
+   "ancho_minus_x": 26.899921875,
+   "ancho_mayus_cap": 24.87776925223214,
+   "asta_x": 0.19,
+   "contraste_o": 0.8220322143634318,
+   "eje_o": 177.0,
+   "contraste_H": 0.85,
+   "inclinacion_l": 2.7948977925425166e-15,
+   "cadenas": {
+    "tarjeta": 127.86,
+    "parrafo": 464.7,
+    "rotulo": 140.75,
+    "nav": 138.78,
+    "datos": 151.23,
+    "lista": 362.39
+   },
+   "ancho_vs_SI": {
+    "tarjeta": 1.0,
+    "parrafo": 1.0,
+    "rotulo": 1.0,
+    "nav": 1.0,
+    "datos": 1.0,
+    "lista": 1.0
+   },
+   "tam_equiv_versal": 1.0,
+   "tam_equiv_x": 1.0
+  }
+ },
+ "serif": [
+  {
+   "fam": "Newsreader",
+   "src": "Google Fonts · OFL",
+   "roman": {
+    "fam": "Newsreader",
+    "weight": 400,
+    "style": "normal",
+    "xh": 0.44,
+    "cap": 0.6775,
+    "x_cap": 0.6494464944649446,
+    "asc": 0.715,
+    "desc": 0.25,
+    "ancho_minus_x": 28.634091463955965,
+    "ancho_mayus_cap": 26.43099558925277,
+    "asta_x": 0.18181818181818182,
+    "contraste_o": 0.5153385008824815,
+    "eje_o": 9.0,
+    "contraste_H": 0.6470588235294117,
+    "inclinacion_l": null,
+    "cadenas": {
+     "enunciado": 1872.22,
+     "h1": 234.73,
+     "destacado": 616.55,
+     "pie": 535.44,
+     "menu390": 315.89,
+     "tira": 127.11,
+     "artista": 72.91,
+     "tarjeta": 92.47
+    },
+    "iou": {
+     "minus": 0.6374089957327873,
+     "mayus": 0.6253872810027719
+    },
+    "ancho_vs_SI": {
+     "enunciado": 1.013,
+     "h1": 1.082,
+     "destacado": 1.031,
+     "pie": 1.049,
+     "menu390": 1.024,
+     "tira": 1.085,
+     "artista": 1.018,
+     "tarjeta": 0.98
+    },
+    "tam_equiv_versal": 0.978,
+    "tam_equiv_x": 0.972
+   },
+   "italica": {
+    "fam": "Newsreader",
+    "weight": 450,
+    "style": "italic",
+    "xh": 0.4525,
+    "cap": 0.685,
+    "x_cap": 0.6605839416058393,
+    "asc": 0.715,
+    "desc": 0.25,
+    "ancho_minus_x": 26.13525120856354,
+    "ancho_mayus_cap": 25.43199525262317,
+    "asta_x": 0.18784530386740333,
+    "contraste_o": 0.489228231294027,
+    "eje_o": 9.0,
+    "contraste_H": null,
+    "inclinacion_l": 16.403005166261952,
+    "cadenas": {
+     "titulo_obra": 287.06,
+     "hero_autor": 332.73,
+     "evento": 1214.14,
+     "producto_ital": 355.72
+    },
+    "iou": {
+     "minus": 0.534263492002264,
+     "mayus": 0.5437105184010923
+    },
+    "ancho_vs_SI": {
+     "titulo_obra": 1.042,
+     "hero_autor": 1.087,
+     "evento": 1.083,
+     "producto_ital": 1.04
+    },
+    "tam_equiv_versal": 0.982,
+    "tam_equiv_x": 0.961
+   }
+  },
+  {
+   "fam": "Spectral",
+   "src": "Google Fonts · OFL",
+   "roman": {
+    "fam": "Spectral",
+    "weight": 400,
+    "style": "normal",
+    "xh": 0.45,
+    "cap": 0.66,
+    "x_cap": 0.6818181818181818,
+    "asc": 0.75,
+    "desc": 0.23,
+    "ancho_minus_x": 28.959998914930555,
+    "ancho_mayus_cap": 27.778788248697918,
+    "asta_x": 0.17777777777777778,
+    "contraste_o": 0.45188959293637665,
+    "eje_o": 3.0,
+    "contraste_H": 0.6101702158477521,
+    "inclinacion_l": null,
+    "cadenas": {
+     "enunciado": 1971.75,
+     "h1": 239.84,
+     "destacado": 642.58,
+     "pie": 558.22,
+     "menu390": 328.59,
+     "tira": 129.95,
+     "artista": 76.5,
+     "tarjeta": 94.44
+    },
+    "iou": {
+     "minus": 0.6409509968003062,
+     "mayus": 0.649243899223118
+    },
+    "ancho_vs_SI": {
+     "enunciado": 1.067,
+     "h1": 1.106,
+     "destacado": 1.075,
+     "pie": 1.093,
+     "menu390": 1.065,
+     "tira": 1.109,
+     "artista": 1.068,
+     "tarjeta": 1.001
+    },
+    "tam_equiv_versal": 1.004,
+    "tam_equiv_x": 0.95
+   },
+   "italica": {
+    "fam": "Spectral",
+    "weight": 500,
+    "style": "italic",
+    "xh": 0.4625,
+    "cap": 0.665,
+    "x_cap": 0.6954887218045113,
+    "asc": 0.75,
+    "desc": 0.23,
+    "ancho_minus_x": 25.589189189189188,
+    "ancho_mayus_cap": 26.449624427279133,
+    "asta_x": 0.194894663538594,
+    "contraste_o": 0.39950093555113786,
+    "eje_o": 15.0,
+    "contraste_H": null,
+    "inclinacion_l": 9.133101228503829,
+    "cadenas": {
+     "titulo_obra": 281.64,
+     "hero_autor": 334.63,
+     "evento": 1235.09,
+     "producto_ital": 344.92
+    },
+    "iou": {
+     "minus": 0.4614812453928912,
+     "mayus": 0.6720460721548686
+    },
+    "ancho_vs_SI": {
+     "titulo_obra": 1.022,
+     "hero_autor": 1.093,
+     "evento": 1.102,
+     "producto_ital": 1.008
+    },
+    "tam_equiv_versal": 1.011,
+    "tam_equiv_x": 0.941
+   }
+  },
+  {
+   "fam": "Crimson Pro",
+   "src": "Google Fonts · OFL",
+   "roman": {
+    "fam": "Crimson Pro",
+    "weight": 400,
+    "style": "normal",
+    "xh": 0.42,
+    "cap": 0.5725,
+    "x_cap": 0.7336244541484715,
+    "asc": 0.6775,
+    "desc": 0.215,
+    "ancho_minus_x": 28.385416666666668,
+    "ancho_mayus_cap": 26.09511462882096,
+    "asta_x": 0.1904761904761905,
+    "contraste_o": 0.5,
+    "eje_o": 177.0,
+    "contraste_H": 0.547996624351191,
+    "inclinacion_l": null,
+    "cadenas": {
+     "enunciado": 1613.61,
+     "h1": 194.88,
+     "destacado": 521.2,
+     "pie": 446.42,
+     "menu390": 271.23,
+     "tira": 104.97,
+     "artista": 60.55,
+     "tarjeta": 77.22
+    },
+    "iou": {
+     "minus": 0.6017055471193492,
+     "mayus": 0.6431420783917401
+    },
+    "ancho_vs_SI": {
+     "enunciado": 0.873,
+     "h1": 0.899,
+     "destacado": 0.872,
+     "pie": 0.874,
+     "menu390": 0.879,
+     "tira": 0.896,
+     "artista": 0.845,
+     "tarjeta": 0.819
+    },
+    "tam_equiv_versal": 1.157,
+    "tam_equiv_x": 1.018
+   },
+   "italica": {
+    "fam": "Crimson Pro",
+    "weight": 400,
+    "style": "italic",
+    "xh": 0.4275,
+    "cap": 0.59,
+    "x_cap": 0.7245762711864407,
+    "asc": 0.6775,
+    "desc": 0.215,
+    "ancho_minus_x": 25.296966374269008,
+    "ancho_mayus_cap": 25.321106991525426,
+    "asta_x": 0.2042602245213214,
+    "contraste_o": 0.48507125007266594,
+    "eje_o": 27.0,
+    "contraste_H": null,
+    "inclinacion_l": 12.783631012662477,
+    "cadenas": {
+     "titulo_obra": 253.97,
+     "hero_autor": 292.95,
+     "evento": 1085.3,
+     "producto_ital": 320.27
+    },
+    "iou": {
+     "minus": 0.5054930298134138,
+     "mayus": 0.6812487874047417
+    },
+    "ancho_vs_SI": {
+     "titulo_obra": 0.922,
+     "hero_autor": 0.957,
+     "evento": 0.968,
+     "producto_ital": 0.936
+    },
+    "tam_equiv_versal": 1.14,
+    "tam_equiv_x": 1.018
+   }
+  },
+  {
+   "fam": "Crimson Text",
+   "src": "Google Fonts · OFL",
+   "roman": {
+    "fam": "Crimson Text",
+    "weight": 400,
+    "style": "normal",
+    "xh": 0.4225,
+    "cap": 0.645,
+    "x_cap": 0.6550387596899224,
+    "asc": 0.6775,
+    "desc": 0.22,
+    "ancho_minus_x": 27.35992973372781,
+    "ancho_mayus_cap": 25.720687984496124,
+    "asta_x": 0.18934911242603553,
+    "contraste_o": 0.46977617561176277,
+    "eje_o": 9.0,
+    "contraste_H": 0.5234239225902138,
+    "inclinacion_l": null,
+    "cadenas": {
+     "enunciado": 1766.47,
+     "h1": 213.69,
+     "destacado": 564.47,
+     "pie": 496.89,
+     "menu390": 289.27,
+     "tira": 115.42,
+     "artista": 65.7,
+     "tarjeta": 85.22
+    },
+    "iou": {
+     "minus": 0.6181100151398397,
+     "mayus": 0.5816516181214761
+    },
+    "ancho_vs_SI": {
+     "enunciado": 0.956,
+     "h1": 0.985,
+     "destacado": 0.944,
+     "pie": 0.973,
+     "menu390": 0.937,
+     "tira": 0.985,
+     "artista": 0.917,
+     "tarjeta": 0.904
+    },
+    "tam_equiv_versal": 1.027,
+    "tam_equiv_x": 1.012
+   },
+   "italica": {
+    "fam": "Crimson Text",
+    "weight": 400,
+    "style": "italic",
+    "xh": 0.425,
+    "cap": 0.645,
+    "x_cap": 0.6589147286821705,
+    "asc": 0.6675,
+    "desc": 0.23,
+    "ancho_minus_x": 24.77481617647059,
+    "ancho_mayus_cap": 23.47232315891473,
+    "asta_x": 0.2,
+    "contraste_o": 0.4765230695442354,
+    "eje_o": 39.0,
+    "contraste_H": null,
+    "inclinacion_l": 10.89836437170567,
+    "cadenas": {
+     "titulo_obra": 240.53,
+     "hero_autor": 275.8,
+     "evento": 1023.98,
+     "producto_ital": 299.39
+    },
+    "iou": {
+     "minus": 0.5117768891555122,
+     "mayus": 0.5306364548421264
+    },
+    "ancho_vs_SI": {
+     "titulo_obra": 0.873,
+     "hero_autor": 0.901,
+     "evento": 0.913,
+     "producto_ital": 0.875
+    },
+    "tam_equiv_versal": 1.043,
+    "tam_equiv_x": 1.024
+   }
+  },
+  {
+   "fam": "EB Garamond",
+   "src": "Google Fonts · OFL",
+   "roman": {
+    "fam": "EB Garamond",
+    "weight": 450,
+    "style": "normal",
+    "xh": 0.4075,
+    "cap": 0.6525,
+    "x_cap": 0.6245210727969348,
+    "asc": 0.705,
+    "desc": 0.28,
+    "ancho_minus_x": 28.340913175805216,
+    "ancho_mayus_cap": 26.44387197677203,
+    "asta_x": 0.20858895705521474,
+    "contraste_o": 0.33287133264930313,
+    "eje_o": 3.0,
+    "contraste_H": 0.42857142857142855,
+    "inclinacion_l": null,
+    "cadenas": {
+     "enunciado": 1837.97,
+     "h1": 222.78,
+     "destacado": 594.2,
+     "pie": 522.03,
+     "menu390": 311.13,
+     "tira": 120.47,
+     "artista": 70.97,
+     "tarjeta": 90.05
+    },
+    "iou": {
+     "minus": 0.6062580629424952,
+     "mayus": 0.5509098442446296
+    },
+    "ancho_vs_SI": {
+     "enunciado": 0.995,
+     "h1": 1.027,
+     "destacado": 0.994,
+     "pie": 1.022,
+     "menu390": 1.008,
+     "tira": 1.028,
+     "artista": 0.991,
+     "tarjeta": 0.955
+    },
+    "tam_equiv_versal": 1.015,
+    "tam_equiv_x": 1.049
+   },
+   "italica": {
+    "fam": "EB Garamond",
+    "weight": 450,
+    "style": "italic",
+    "xh": 0.4175,
+    "cap": 0.675,
+    "x_cap": 0.6185185185185185,
+    "asc": 0.705,
+    "desc": 0.285,
+    "ancho_minus_x": 26.6860205370509,
+    "ancho_mayus_cap": 25.21715856481481,
+    "asta_x": 0.21322747083550728,
+    "contraste_o": 0.3736611319222725,
+    "eje_o": 15.0,
+    "contraste_H": null,
+    "inclinacion_l": 16.525509365243654,
+    "cadenas": {
+     "titulo_obra": 261.97,
+     "hero_autor": 305.78,
+     "evento": 1133.52,
+     "producto_ital": 336.06
+    },
+    "iou": {
+     "minus": 0.53246605891542,
+     "mayus": 0.4626903616399426
+    },
+    "ancho_vs_SI": {
+     "titulo_obra": 0.951,
+     "hero_autor": 0.999,
+     "evento": 1.011,
+     "producto_ital": 0.982
+    },
+    "tam_equiv_versal": 0.996,
+    "tam_equiv_x": 1.042
+   }
+  },
+  {
+   "fam": "Gambetta",
+   "src": "Fontshare · ITF Free Font License",
+   "roman": {
+    "fam": "Gambetta",
+    "weight": 500,
+    "style": "normal",
+    "xh": 0.4525,
+    "cap": 0.68,
+    "x_cap": 0.6654411764705882,
+    "asc": 0.72,
+    "desc": 0.215,
+    "ancho_minus_x": 29.281767955801104,
+    "ancho_mayus_cap": 25.341175752527572,
+    "asta_x": 0.20994475138121546,
+    "contraste_o": 0.3495633186072456,
+    "eje_o": 15.0,
+    "contraste_H": 0.3662948371965041,
+    "inclinacion_l": null,
+    "cadenas": {
+     "enunciado": 1836.98,
+     "h1": 220.91,
+     "destacado": 593,
+     "pie": 520.89,
+     "menu390": 305.72,
+     "tira": 119.42,
+     "artista": 70.39,
+     "tarjeta": 89.48
+    },
+    "iou": {
+     "minus": 0.5883376591663134,
+     "mayus": 0.5846987606262275
+    },
+    "ancho_vs_SI": {
+     "enunciado": 0.994,
+     "h1": 1.019,
+     "destacado": 0.992,
+     "pie": 1.02,
+     "menu390": 0.991,
+     "tira": 1.019,
+     "artista": 0.983,
+     "tarjeta": 0.949
+    },
+    "tam_equiv_versal": 0.974,
+    "tam_equiv_x": 0.945
+   },
+   "italica": {
+    "fam": "Gambetta",
+    "weight": 500,
+    "style": "italic",
+    "xh": 0.4625,
+    "cap": 0.68,
+    "x_cap": 0.6801470588235294,
+    "asc": 0.72,
+    "desc": 0.21,
+    "ancho_minus_x": 26.02378325591216,
+    "ancho_mayus_cap": 24.31470624138327,
+    "asta_x": 0.2076688941870113,
+    "contraste_o": 0.3684210526315789,
+    "eje_o": 21.0,
+    "contraste_H": null,
+    "inclinacion_l": 11.014821256549187,
+    "cadenas": {
+     "titulo_obra": 279.13,
+     "hero_autor": 329.22,
+     "evento": 1201.69,
+     "producto_ital": 337.44
+    },
+    "iou": {
+     "minus": 0.4359480407610541,
+     "mayus": 0.5907312215668987
+    },
+    "ancho_vs_SI": {
+     "titulo_obra": 1.013,
+     "hero_autor": 1.075,
+     "evento": 1.072,
+     "producto_ital": 0.986
+    },
+    "tam_equiv_versal": 0.989,
+    "tam_equiv_x": 0.941
+   }
+  },
+  {
+   "fam": "Instrument Serif",
+   "src": "v2 actual (control, no candidata)",
+   "roman": {
+    "fam": "Instrument Serif",
+    "weight": 400,
+    "style": "normal",
+    "xh": 0.51,
+    "cap": 0.72,
+    "x_cap": 0.7083333333333334,
+    "asc": 0.74,
+    "desc": 0.205,
+    "ancho_minus_x": 19.768627690333943,
+    "ancho_mayus_cap": 17.06666734483507,
+    "asta_x": 0.13725490196078433,
+    "contraste_o": 0.31868871959954903,
+    "eje_o": 177.0,
+    "contraste_H": 0.4285714285714285,
+    "inclinacion_l": null,
+    "cadenas": {
+     "enunciado": 1315.55,
+     "h1": 162.05,
+     "destacado": 420.78,
+     "pie": 373.2,
+     "menu390": 220.03,
+     "tira": 86.73,
+     "artista": 50.36,
+     "tarjeta": 62.64
+    },
+    "iou": {
+     "minus": 0.3341301955275637,
+     "mayus": 0.2315155672171576
+    },
+    "ancho_vs_SI": {
+     "enunciado": 0.712,
+     "h1": 0.747,
+     "destacado": 0.704,
+     "pie": 0.731,
+     "menu390": 0.713,
+     "tira": 0.74,
+     "artista": 0.703,
+     "tarjeta": 0.664
+    },
+    "tam_equiv_versal": 0.92,
+    "tam_equiv_x": 0.838
+   },
+   "italica": {
+    "fam": "Instrument Serif",
+    "weight": 400,
+    "style": "italic",
+    "xh": 0.515,
+    "cap": 0.73,
+    "x_cap": 0.7054794520547946,
+    "asc": 0.7425,
+    "desc": 0.205,
+    "ancho_minus_x": 20.82330144493325,
+    "ancho_mayus_cap": 16.884931172410102,
+    "asta_x": 0.1695558174424561,
+    "contraste_o": 0.35020209798623747,
+    "eje_o": 9.0,
+    "contraste_H": null,
+    "inclinacion_l": 10.28296540700616,
+    "cadenas": {
+     "titulo_obra": 235.53,
+     "hero_autor": 275.19,
+     "evento": 1019.39,
+     "producto_ital": 301.66
+    },
+    "iou": {
+     "minus": 0.3980813377629973,
+     "mayus": 0.2811755268455346
+    },
+    "ancho_vs_SI": {
+     "titulo_obra": 0.855,
+     "hero_autor": 0.899,
+     "evento": 0.909,
+     "producto_ital": 0.882
+    },
+    "tam_equiv_versal": 0.921,
+    "tam_equiv_x": 0.845
+   }
+  }
+ ],
+ "sans": [
+  {
+   "fam": "Albert Sans",
+   "src": "Google Fonts · OFL (la misma de Studio Iron)",
+   "m": {
+    "fam": "Albert Sans",
+    "weight": 500,
+    "style": "normal",
+    "xh": 0.5,
+    "cap": 0.7,
+    "x_cap": 0.7142857142857143,
+    "asc": 0.72,
+    "desc": 0.2,
+    "ancho_minus_x": 26.9039990234375,
+    "ancho_mayus_cap": 24.874285016741073,
+    "asta_x": 0.19,
+    "contraste_o": 0.8220322143634318,
+    "eje_o": 177.0,
+    "contraste_H": 0.85,
+    "inclinacion_l": 2.7948977925425166e-15,
+    "cadenas": {
+     "tarjeta": 127.81,
+     "parrafo": 464.77,
+     "rotulo": 140.73,
+     "nav": 138.78,
+     "datos": 151.27,
+     "lista": 362.42
+    },
+    "iou": {
+     "minus": 0.9883038033182674,
+     "mayus": 0.9934536801888906
+    },
+    "ancho_vs_SI": {
+     "tarjeta": 1.0,
+     "parrafo": 1.0,
+     "rotulo": 1.0,
+     "nav": 1.0,
+     "datos": 1.0,
+     "lista": 1.0
+    },
+    "tam_equiv_versal": 1.0,
+    "tam_equiv_x": 1.0
+   }
+  },
+  {
+   "fam": "DM Sans",
+   "src": "Google Fonts · OFL",
+   "m": {
+    "fam": "DM Sans",
+    "weight": 500,
+    "style": "normal",
+    "xh": 0.505,
+    "cap": 0.7,
+    "x_cap": 0.7214285714285715,
+    "asc": 0.72,
+    "desc": 0.22,
+    "ancho_minus_x": 27.390098043007427,
+    "ancho_mayus_cap": 23.910001046316967,
+    "asta_x": 0.2079207920792079,
+    "contraste_o": 0.8109231602822097,
+    "eje_o": 171.0,
+    "contraste_H": 0.85,
+    "inclinacion_l": 5.589795585085033e-15,
+    "cadenas": {
+     "tarjeta": 127.11,
+     "parrafo": 476.98,
+     "rotulo": 135.83,
+     "nav": 140.09,
+     "datos": 153.11,
+     "lista": 369.67
+    },
+    "iou": {
+     "minus": 0.8193287104557959,
+     "mayus": 0.811766273624386
+    },
+    "ancho_vs_SI": {
+     "tarjeta": 0.994,
+     "parrafo": 1.026,
+     "rotulo": 0.965,
+     "nav": 1.009,
+     "datos": 1.012,
+     "lista": 1.02
+    },
+    "tam_equiv_versal": 1.0,
+    "tam_equiv_x": 0.99
+   }
+  },
+  {
+   "fam": "Instrument Sans",
+   "src": "Google Fonts · OFL",
+   "m": {
+    "fam": "Instrument Sans",
+    "weight": 500,
+    "style": "normal",
+    "xh": 0.51,
+    "cap": 0.72,
+    "x_cap": 0.7083333333333334,
+    "asc": 0.72,
+    "desc": 0.205,
+    "ancho_minus_x": 27.09215590533088,
+    "ancho_mayus_cap": 24.740278455946182,
+    "asta_x": 0.20681395205616654,
+    "contraste_o": 0.7727272727272727,
+    "eje_o": 3.0,
+    "contraste_H": 0.8571428571428571,
+    "inclinacion_l": 1.3974488962712581e-14,
+    "cadenas": {
+     "tarjeta": 126.48,
+     "parrafo": 467.2,
+     "rotulo": 141.81,
+     "nav": 140.14,
+     "datos": 148.81,
+     "lista": 367.16
+    },
+    "iou": {
+     "minus": 0.8321511279050788,
+     "mayus": 0.7788129088971513
+    },
+    "ancho_vs_SI": {
+     "tarjeta": 0.989,
+     "parrafo": 1.005,
+     "rotulo": 1.008,
+     "nav": 1.01,
+     "datos": 0.984,
+     "lista": 1.013
+    },
+    "tam_equiv_versal": 0.972,
+    "tam_equiv_x": 0.98
+   }
+  },
+  {
+   "fam": "Figtree",
+   "src": "Google Fonts · OFL",
+   "m": {
+    "fam": "Figtree",
+    "weight": 500,
+    "style": "normal",
+    "xh": 0.5,
+    "cap": 0.7,
+    "x_cap": 0.7142857142857143,
+    "asc": 0.7,
+    "desc": 0.2,
+    "ancho_minus_x": 26.65599853515625,
+    "ancho_mayus_cap": 24.467142159598218,
+    "asta_x": 0.2,
+    "contraste_o": 0.8732124598286489,
+    "eje_o": 3.0,
+    "contraste_H": 0.8999999999999999,
+    "inclinacion_l": -5.58317654200673e-15,
+    "cadenas": {
+     "tarjeta": 122.69,
+     "parrafo": 457.44,
+     "rotulo": 138.17,
+     "nav": 135.42,
+     "datos": 146.17,
+     "lista": 354.97
+    },
+    "iou": {
+     "minus": 0.8245988727152849,
+     "mayus": 0.7755841382871177
+    },
+    "ancho_vs_SI": {
+     "tarjeta": 0.96,
+     "parrafo": 0.984,
+     "rotulo": 0.982,
+     "nav": 0.976,
+     "datos": 0.967,
+     "lista": 0.98
+    },
+    "tam_equiv_versal": 1.0,
+    "tam_equiv_x": 1.0
+   }
+  },
+  {
+   "fam": "General Sans",
+   "src": "Fontshare · ITF Free Font License",
+   "m": {
+    "fam": "General Sans",
+    "weight": 500,
+    "style": "normal",
+    "xh": 0.53,
+    "cap": 0.7175,
+    "x_cap": 0.7386759581881533,
+    "asc": 0.7175,
+    "desc": 0.1925,
+    "ancho_minus_x": 25.790566498378535,
+    "ancho_mayus_cap": 24.519861307709057,
+    "asta_x": 0.1944861144159274,
+    "contraste_o": 0.853281833651959,
+    "eje_o": 15.0,
+    "contraste_H": 0.8636363636363636,
+    "inclinacion_l": -1.6700112213772145e-14,
+    "cadenas": {
+     "tarjeta": 122.39,
+     "parrafo": 467.66,
+     "rotulo": 139.14,
+     "nav": 138.22,
+     "datos": 143.08,
+     "lista": 364.38
+    },
+    "iou": {
+     "minus": 0.7989397057922287,
+     "mayus": 0.8159687780634888
+    },
+    "ancho_vs_SI": {
+     "tarjeta": 0.957,
+     "parrafo": 1.006,
+     "rotulo": 0.989,
+     "nav": 0.996,
+     "datos": 0.946,
+     "lista": 1.005
+    },
+    "tam_equiv_versal": 0.976,
+    "tam_equiv_x": 0.943
+   }
+  },
+  {
+   "fam": "Plus Jakarta Sans",
+   "src": "Google Fonts · OFL",
+   "m": {
+    "fam": "Plus Jakarta Sans",
+    "weight": 500,
+    "style": "normal",
+    "xh": 0.54,
+    "cap": 0.745,
+    "x_cap": 0.7248322147651007,
+    "asc": 0.7575,
+    "desc": 0.2,
+    "ancho_minus_x": 26.324074074074073,
+    "ancho_mayus_cap": 23.455033884752517,
+    "asta_x": 0.17592592592592593,
+    "contraste_o": 0.8988771049900601,
+    "eje_o": 9.0,
+    "contraste_H": 0.8999999999999999,
+    "inclinacion_l": 2.778368275256462e-15,
+    "cadenas": {
+     "tarjeta": 126.38,
+     "parrafo": 475.73,
+     "rotulo": 138.73,
+     "nav": 143.13,
+     "datos": 147.16,
+     "lista": 373.69
+    },
+    "iou": {
+     "minus": 0.8286389350374049,
+     "mayus": 0.7640775630913341
+    },
+    "ancho_vs_SI": {
+     "tarjeta": 0.988,
+     "parrafo": 1.024,
+     "rotulo": 0.986,
+     "nav": 1.031,
+     "datos": 0.973,
+     "lista": 1.031
+    },
+    "tam_equiv_versal": 0.94,
+    "tam_equiv_x": 0.926
+   }
+  },
+  {
+   "fam": "Archivo",
+   "src": "v2 actual (control, no candidata)",
+   "m": {
+    "fam": "Archivo",
+    "weight": 500,
+    "style": "normal",
+    "xh": 0.5275,
+    "cap": 0.6875,
+    "x_cap": 0.7672727272727272,
+    "asc": 0.7225,
+    "desc": 0.1725,
+    "ancho_minus_x": 25.019906138921804,
+    "ancho_mayus_cap": 25.92145419034091,
+    "asta_x": 0.1990521327014218,
+    "contraste_o": 0.8054565975758795,
+    "eje_o": 3.0,
+    "contraste_H": 0.8695652173913043,
+    "inclinacion_l": 1.3958380400518918e-14,
+    "cadenas": {
+     "tarjeta": 124.11,
+     "parrafo": 446.63,
+     "rotulo": 143.08,
+     "nav": 137.13,
+     "datos": 145.31,
+     "lista": 354.16
+    },
+    "iou": {
+     "minus": 0.7246554264378201,
+     "mayus": 0.7410008946589951
+    },
+    "ancho_vs_SI": {
+     "tarjeta": 0.971,
+     "parrafo": 0.961,
+     "rotulo": 1.017,
+     "nav": 0.988,
+     "datos": 0.961,
+     "lista": 0.977
+    },
+    "tam_equiv_versal": 1.018,
+    "tam_equiv_x": 0.948
+   }
+  }
+ ],
+ "ranking_serif": [
+  {
+   "familia": "Newsreader",
+   "total": 0.6279,
+   "roman": {
+    "peso": 400,
+    "score": 0.6443,
+    "iou": {
+     "minus": 0.6374089957327873,
+     "mayus": 0.6253872810027719
+    },
+    "rasgos": 0.6828
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.6032,
+    "iou": {
+     "minus": 0.5288800481710563,
+     "mayus": 0.5587644385890753
+    },
+    "rasgos": 0.7815
+   }
+  },
+  {
+   "familia": "Spectral",
+   "total": 0.6234,
+   "roman": {
+    "peso": 400,
+    "score": 0.6467,
+    "iou": {
+     "minus": 0.6409509968003062,
+     "mayus": 0.649243899223118
+    },
+    "rasgos": 0.6513
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.5886,
+    "iou": {
+     "minus": 0.4614812453928912,
+     "mayus": 0.6720460721548686
+    },
+    "rasgos": 0.6539
+   }
+  },
+  {
+   "familia": "Crimson Pro",
+   "total": 0.6157,
+   "roman": {
+    "peso": 400,
+    "score": 0.6148,
+    "iou": {
+     "minus": 0.6017055471193492,
+     "mayus": 0.6431420783917401
+    },
+    "rasgos": 0.5918
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.617,
+    "iou": {
+     "minus": 0.5054930298134138,
+     "mayus": 0.6812487874047417
+    },
+    "rasgos": 0.6878
+   }
+  },
+  {
+   "familia": "Crimson Text",
+   "total": 0.6105,
+   "roman": {
+    "peso": 400,
+    "score": 0.642,
+    "iou": {
+     "minus": 0.6181100151398397,
+     "mayus": 0.5816516181214761
+    },
+    "rasgos": 0.7682
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.5634,
+    "iou": {
+     "minus": 0.5117768891555122,
+     "mayus": 0.5306364548421264
+    },
+    "rasgos": 0.6898
+   }
+  },
+  {
+   "familia": "Vollkorn",
+   "total": 0.6004,
+   "roman": {
+    "peso": 400,
+    "score": 0.6086,
+    "iou": {
+     "minus": 0.5851801389622447,
+     "mayus": 0.6439365612281771
+    },
+    "rasgos": 0.5909
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.588,
+    "iou": {
+     "minus": 0.4741591131795372,
+     "mayus": 0.6627170967158251
+    },
+    "rasgos": 0.6466
+   }
+  },
+  {
+   "familia": "Libre Baskerville",
+   "total": 0.5911,
+   "roman": {
+    "peso": 400,
+    "score": 0.6095,
+    "iou": {
+     "minus": 0.5970582821023741,
+     "mayus": 0.6129623256233651
+    },
+    "rasgos": 0.623
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.5635,
+    "iou": {
+     "minus": 0.5124897115211094,
+     "mayus": 0.5122800551962927
+    },
+    "rasgos": 0.717
+   }
+  },
+  {
+   "familia": "Gambetta",
+   "total": 0.5911,
+   "roman": {
+    "peso": 500,
+    "score": 0.6249,
+    "iou": {
+     "minus": 0.5883376591663134,
+     "mayus": 0.5846987606262275
+    },
+    "rasgos": 0.7402
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.5403,
+    "iou": {
+     "minus": 0.4359480407610541,
+     "mayus": 0.5907312215668987
+    },
+    "rasgos": 0.6214
+   }
+  },
+  {
+   "familia": "Castoro",
+   "total": 0.59,
+   "roman": {
+    "peso": 400,
+    "score": 0.6084,
+    "iou": {
+     "minus": 0.5867641756808456,
+     "mayus": 0.6032264688684947
+    },
+    "rasgos": 0.6488
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.5623,
+    "iou": {
+     "minus": 0.4446775477469262,
+     "mayus": 0.6290570770614252
+    },
+    "rasgos": 0.6388
+   }
+  },
+  {
+   "familia": "Bespoke Serif",
+   "total": 0.5865,
+   "roman": {
+    "peso": 400,
+    "score": 0.5994,
+    "iou": {
+     "minus": 0.5656046296335597,
+     "mayus": 0.6307751974382161
+    },
+    "rasgos": 0.6031
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.5672,
+    "iou": {
+     "minus": 0.3889668690616413,
+     "mayus": 0.6576915080507034
+    },
+    "rasgos": 0.699
+   }
+  },
+  {
+   "familia": "EB Garamond",
+   "total": 0.5815,
+   "roman": {
+    "peso": 400,
+    "score": 0.6064,
+    "iou": {
+     "minus": 0.5889418491706978,
+     "mayus": 0.529257630256293
+    },
+    "rasgos": 0.7482
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.5441,
+    "iou": {
+     "minus": 0.5073011317712206,
+     "mayus": 0.4324595077321097
+    },
+    "rasgos": 0.767
+   }
+  },
+  {
+   "familia": "Alegreya",
+   "total": 0.5795,
+   "roman": {
+    "peso": 400,
+    "score": 0.6181,
+    "iou": {
+     "minus": 0.6019109133130739,
+     "mayus": 0.5857721490865692
+    },
+    "rasgos": 0.691
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.5217,
+    "iou": {
+     "minus": 0.48955834451967667,
+     "mayus": 0.5683604429979101
+    },
+    "rasgos": 0.4999
+   }
+  },
+  {
+   "familia": "Source Serif 4",
+   "total": 0.5746,
+   "roman": {
+    "peso": 400,
+    "score": 0.5824,
+    "iou": {
+     "minus": 0.5785195768523441,
+     "mayus": 0.6035040180100658
+    },
+    "rasgos": 0.5566
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.5629,
+    "iou": {
+     "minus": 0.4513268379820043,
+     "mayus": 0.6273161847629144
+    },
+    "rasgos": 0.6337
+   }
+  },
+  {
+   "familia": "Erode",
+   "total": 0.5704,
+   "roman": {
+    "peso": 500,
+    "score": 0.5945,
+    "iou": {
+     "minus": 0.5689774801526959,
+     "mayus": 0.6314950122045001
+    },
+    "rasgos": 0.5773
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.5342,
+    "iou": {
+     "minus": 0.4053699856638211,
+     "mayus": 0.6460617659550589
+    },
+    "rasgos": 0.5598
+   }
+  },
+  {
+   "familia": "Sentient",
+   "total": 0.5661,
+   "roman": {
+    "peso": 400,
+    "score": 0.5973,
+    "iou": {
+     "minus": 0.583810283584633,
+     "mayus": 0.6219022200114088
+    },
+    "rasgos": 0.5804
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.5194,
+    "iou": {
+     "minus": 0.40700115171158885,
+     "mayus": 0.6708029064505654
+    },
+    "rasgos": 0.4609
+   }
+  },
+  {
+   "familia": "Recia",
+   "total": 0.5604,
+   "roman": {
+    "peso": 500,
+    "score": 0.579,
+    "iou": {
+     "minus": 0.5356203547393527,
+     "mayus": 0.6063556537231554
+    },
+    "rasgos": 0.6031
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.5325,
+    "iou": {
+     "minus": 0.40781634081828066,
+     "mayus": 0.5852847746563064
+    },
+    "rasgos": 0.6402
+   }
+  },
+  {
+   "familia": "Cardo",
+   "total": 0.5564,
+   "roman": {
+    "peso": 400,
+    "score": 0.5836,
+    "iou": {
+     "minus": 0.5802135751093946,
+     "mayus": 0.5435893319301041
+    },
+    "rasgos": 0.6486
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.5157,
+    "iou": {
+     "minus": 0.461087236469911,
+     "mayus": 0.4681005570307767
+    },
+    "rasgos": 0.6689
+   }
+  },
+  {
+   "familia": "Brygada 1918",
+   "total": 0.5555,
+   "roman": {
+    "peso": 400,
+    "score": 0.5868,
+    "iou": {
+     "minus": 0.5351497500736492,
+     "mayus": 0.5794916053111929
+    },
+    "rasgos": 0.675
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.5086,
+    "iou": {
+     "minus": 0.3743704561410791,
+     "mayus": 0.5838675444824465
+    },
+    "rasgos": 0.597
+   }
+  },
+  {
+   "familia": "Rosarivo",
+   "total": 0.5514,
+   "roman": {
+    "peso": 400,
+    "score": 0.6126,
+    "iou": {
+     "minus": 0.569780693858181,
+     "mayus": 0.5896036684857937
+    },
+    "rasgos": 0.7114
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.4597,
+    "iou": {
+     "minus": 0.4250201308073718,
+     "mayus": 0.47573385948932034
+    },
+    "rasgos": 0.4875
+   }
+  },
+  {
+   "familia": "Literata",
+   "total": 0.5438,
+   "roman": {
+    "peso": 400,
+    "score": 0.6125,
+    "iou": {
+     "minus": 0.5909232075786439,
+     "mayus": 0.605983817066631
+    },
+    "rasgos": 0.6548
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.4406,
+    "iou": {
+     "minus": 0.3647784717184937,
+     "mayus": 0.4641695042375555
+    },
+    "rasgos": 0.5191
+   }
+  },
+  {
+   "familia": "Rowan",
+   "total": 0.541,
+   "roman": {
+    "peso": 500,
+    "score": 0.5728,
+    "iou": {
+     "minus": 0.5850020958575365,
+     "mayus": 0.5765361829434517
+    },
+    "rasgos": 0.5491
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.4932,
+    "iou": {
+     "minus": 0.4260613833366195,
+     "mayus": 0.5131462209687748
+    },
+    "rasgos": 0.5641
+   }
+  },
+  {
+   "familia": "Sorts Mill Goudy",
+   "total": 0.5383,
+   "roman": {
+    "peso": 400,
+    "score": 0.5942,
+    "iou": {
+     "minus": 0.507660651106277,
+     "mayus": 0.5418764396735789
+    },
+    "rasgos": 0.8025
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.4545,
+    "iou": {
+     "minus": 0.39644266068162615,
+     "mayus": 0.4541006676556819
+    },
+    "rasgos": 0.5422
+   }
+  },
+  {
+   "familia": "Gentium Book Plus",
+   "total": 0.535,
+   "roman": {
+    "peso": 400,
+    "score": 0.5673,
+    "iou": {
+     "minus": 0.5896315249345946,
+     "mayus": 0.5721262960496925
+    },
+    "rasgos": 0.5266
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.4865,
+    "iou": {
+     "minus": 0.45002363175064386,
+     "mayus": 0.485497464549144
+    },
+    "rasgos": 0.5428
+   }
+  },
+  {
+   "familia": "Libre Caslon Text",
+   "total": 0.5338,
+   "roman": {
+    "peso": 400,
+    "score": 0.5823,
+    "iou": {
+     "minus": 0.5776302788866509,
+     "mayus": 0.5432649729417592
+    },
+    "rasgos": 0.6477
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.4611,
+    "iou": {
+     "minus": 0.4177669208495918,
+     "mayus": 0.370074233581881
+    },
+    "rasgos": 0.6626
+   }
+  },
+  {
+   "familia": "Linden Hill",
+   "total": 0.5229,
+   "roman": {
+    "peso": 400,
+    "score": 0.5822,
+    "iou": {
+     "minus": 0.5478969108812555,
+     "mayus": 0.5781887233770997
+    },
+    "rasgos": 0.6395
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.434,
+    "iou": {
+     "minus": 0.38908234909044115,
+     "mayus": 0.3912029027205876
+    },
+    "rasgos": 0.5654
+   }
+  },
+  {
+   "familia": "Caudex",
+   "total": 0.5063,
+   "roman": {
+    "peso": 400,
+    "score": 0.5263,
+    "iou": {
+     "minus": 0.4942215168854906,
+     "mayus": 0.5162196149132348
+    },
+    "rasgos": 0.5894
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.4764,
+    "iou": {
+     "minus": 0.29398798715978114,
+     "mayus": 0.5537003756833806
+    },
+    "rasgos": 0.6342
+   }
+  },
+  {
+   "familia": "Faustina",
+   "total": 0.5034,
+   "roman": {
+    "peso": 500,
+    "score": 0.5418,
+    "iou": {
+     "minus": 0.5569450230901969,
+     "mayus": 0.6109475027142349
+    },
+    "rasgos": 0.4155
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.4457,
+    "iou": {
+     "minus": 0.42282118520609124,
+     "mayus": 0.4934857701632045
+    },
+    "rasgos": 0.4083
+   }
+  },
+  {
+   "familia": "Fanwood Text",
+   "total": 0.4992,
+   "roman": {
+    "peso": 400,
+    "score": 0.5266,
+    "iou": {
+     "minus": 0.5081106012611448,
+     "mayus": 0.541331031178381
+    },
+    "rasgos": 0.5321
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.4582,
+    "iou": {
+     "minus": 0.4237246174674199,
+     "mayus": 0.4570021602619517
+    },
+    "rasgos": 0.5115
+   }
+  },
+  {
+   "familia": "Cormorant",
+   "total": 0.4909,
+   "roman": {
+    "peso": 500,
+    "score": 0.4947,
+    "iou": {
+     "minus": 0.4731081021412732,
+     "mayus": 0.4920108660784963
+    },
+    "rasgos": 0.531
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.4851,
+    "iou": {
+     "minus": 0.4178155150961268,
+     "mayus": 0.4488422507720672
+    },
+    "rasgos": 0.6406
+   }
+  },
+  {
+   "familia": "Cormorant Garamond",
+   "total": 0.4898,
+   "roman": {
+    "peso": 500,
+    "score": 0.495,
+    "iou": {
+     "minus": 0.4793333002527439,
+     "mayus": 0.4877656319810277
+    },
+    "rasgos": 0.5294
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.482,
+    "iou": {
+     "minus": 0.4178155150961268,
+     "mayus": 0.440544567907329
+    },
+    "rasgos": 0.6406
+   }
+  },
+  {
+   "familia": "Zodiak",
+   "total": 0.483,
+   "roman": {
+    "peso": 400,
+    "score": 0.5465,
+    "iou": {
+     "minus": 0.4850836089041244,
+     "mayus": 0.5040159480578146
+    },
+    "rasgos": 0.7024
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.3878,
+    "iou": {
+     "minus": 0.2575008263230058,
+     "mayus": 0.48696039109844813
+    },
+    "rasgos": 0.4346
+   }
+  },
+  {
+   "familia": "Boska",
+   "total": 0.3755,
+   "roman": {
+    "peso": 500,
+    "score": 0.3838,
+    "iou": {
+     "minus": 0.44412455511184173,
+     "mayus": 0.2845725325997265
+    },
+    "rasgos": 0.442
+   },
+   "italica": {
+    "peso": 500,
+    "score": 0.3632,
+    "iou": {
+     "minus": 0.35435462295923853,
+     "mayus": 0.3236094483707353
+    },
+    "rasgos": 0.4358
+   }
+  },
+  {
+   "familia": "Goudy Bookletter 1911",
+   "total": 0.3477,
+   "roman": {
+    "peso": 400,
+    "score": 0.5795,
+    "iou": {
+     "minus": 0.5622451305061787,
+     "mayus": 0.5451922257488215
+    },
+    "rasgos": 0.6569
+   },
+   "italica": null
+  },
+  {
+   "familia": "Instrument Serif",
+   "total": 0.333,
+   "roman": {
+    "peso": 400,
+    "score": 0.3221,
+    "iou": {
+     "minus": 0.3341301955275637,
+     "mayus": 0.2315155672171576
+    },
+    "rasgos": 0.44
+   },
+   "italica": {
+    "peso": 400,
+    "score": 0.3494,
+    "iou": {
+     "minus": 0.3980813377629973,
+     "mayus": 0.2811755268455346
+    },
+    "rasgos": 0.3788
+   }
+  }
+ ],
+ "pozo_sans": [
+  {
+   "fam": "Albert Sans",
+   "iou": {
+    "minus": 0.9883038033182674,
+    "mayus": 0.9934536801888906
+   },
+   "xh": 0.5,
+   "cap": 0.7,
+   "asta_x": 0.19,
+   "eqV": 1.0,
+   "ancho": {
+    "tarjeta": 1.0,
+    "parrafo": 1.0,
+    "rotulo": 1.0,
+    "nav": 1.0,
+    "datos": 1.0,
+    "lista": 1.0
+   }
+  },
+  {
+   "fam": "DM Sans",
+   "iou": {
+    "minus": 0.8193287104557959,
+    "mayus": 0.811766273624386
+   },
+   "xh": 0.505,
+   "cap": 0.7,
+   "asta_x": 0.2079207920792079,
+   "eqV": 1.0,
+   "ancho": {
+    "tarjeta": 0.994,
+    "parrafo": 1.026,
+    "rotulo": 0.965,
+    "nav": 1.009,
+    "datos": 1.012,
+    "lista": 1.02
+   }
+  },
+  {
+   "fam": "General Sans",
+   "iou": {
+    "minus": 0.7989397057922287,
+    "mayus": 0.8159687780634888
+   },
+   "xh": 0.53,
+   "cap": 0.7175,
+   "asta_x": 0.1944861144159274,
+   "eqV": 0.976,
+   "ancho": {
+    "tarjeta": 0.957,
+    "parrafo": 1.006,
+    "rotulo": 0.989,
+    "nav": 0.996,
+    "datos": 0.946,
+    "lista": 1.005
+   }
+  },
+  {
+   "fam": "Instrument Sans",
+   "iou": {
+    "minus": 0.8321511279050788,
+    "mayus": 0.7788129088971513
+   },
+   "xh": 0.51,
+   "cap": 0.72,
+   "asta_x": 0.20681395205616654,
+   "eqV": 0.972,
+   "ancho": {
+    "tarjeta": 0.989,
+    "parrafo": 1.005,
+    "rotulo": 1.008,
+    "nav": 1.01,
+    "datos": 0.984,
+    "lista": 1.013
+   }
+  },
+  {
+   "fam": "Figtree",
+   "iou": {
+    "minus": 0.8245988727152849,
+    "mayus": 0.7755841382871177
+   },
+   "xh": 0.5,
+   "cap": 0.7,
+   "asta_x": 0.2,
+   "eqV": 1.0,
+   "ancho": {
+    "tarjeta": 0.96,
+    "parrafo": 0.984,
+    "rotulo": 0.982,
+    "nav": 0.976,
+    "datos": 0.967,
+    "lista": 0.98
+   }
+  },
+  {
+   "fam": "Plus Jakarta Sans",
+   "iou": {
+    "minus": 0.8286389350374049,
+    "mayus": 0.7640775630913341
+   },
+   "xh": 0.54,
+   "cap": 0.745,
+   "asta_x": 0.17592592592592593,
+   "eqV": 0.94,
+   "ancho": {
+    "tarjeta": 0.988,
+    "parrafo": 1.024,
+    "rotulo": 0.986,
+    "nav": 1.031,
+    "datos": 0.973,
+    "lista": 1.031
+   }
+  },
+  {
+   "fam": "Satoshi",
+   "iou": {
+    "minus": 0.7676089177440539,
+    "mayus": 0.8075137295047592
+   },
+   "xh": 0.49,
+   "cap": 0.7225,
+   "asta_x": 0.196279429200728,
+   "eqV": 0.969,
+   "ancho": {
+    "tarjeta": 0.964,
+    "parrafo": 0.974,
+    "rotulo": 0.982,
+    "nav": 0.974,
+    "datos": 1.006,
+    "lista": 0.981
+   }
+  },
+  {
+   "fam": "Inter",
+   "iou": {
+    "minus": 0.8056742466817999,
+    "mayus": 0.7543250950637819
+   },
+   "xh": 0.545,
+   "cap": 0.7275,
+   "asta_x": 0.20183486238532108,
+   "eqV": 0.962,
+   "ancho": {
+    "tarjeta": 1.016,
+    "parrafo": 1.034,
+    "rotulo": 1.009,
+    "nav": 1.041,
+    "datos": 1.061,
+    "lista": 1.037
+   }
+  },
+  {
+   "fam": "Onest",
+   "iou": {
+    "minus": 0.7900604236146335,
+    "mayus": 0.7453294580014804
+   },
+   "xh": 0.5275,
+   "cap": 0.7075,
+   "asta_x": 0.2085308056872038,
+   "eqV": 0.989,
+   "ancho": {
+    "tarjeta": 0.972,
+    "parrafo": 1.034,
+    "rotulo": 1.001,
+    "nav": 1.027,
+    "datos": 1.028,
+    "lista": 1.028
+   }
+  },
+  {
+   "fam": "Manrope",
+   "iou": {
+    "minus": 0.7542826632435746,
+    "mayus": 0.758198290433763
+   },
+   "xh": 0.54,
+   "cap": 0.72,
+   "asta_x": 0.16769231737291512,
+   "eqV": 0.972,
+   "ancho": {
+    "tarjeta": 0.999,
+    "parrafo": 1.022,
+    "rotulo": 0.958,
+    "nav": 1.008,
+    "datos": 0.971,
+    "lista": 1.015
+   }
+  },
+  {
+   "fam": "Schibsted Grotesk",
+   "iou": {
+    "minus": 0.7347164806153624,
+    "mayus": 0.7678859150859111
+   },
+   "xh": 0.5275,
+   "cap": 0.7025,
+   "asta_x": 0.18981027862086056,
+   "eqV": 0.996,
+   "ancho": {
+    "tarjeta": 0.979,
+    "parrafo": 1.019,
+    "rotulo": 1.011,
+    "nav": 1.012,
+    "datos": 1.007,
+    "lista": 1.02
+   }
+  },
+  {
+   "fam": "Geist",
+   "iou": {
+    "minus": 0.7591876321071012,
+    "mayus": 0.7371656838104803
+   },
+   "xh": 0.5325,
+   "cap": 0.71,
+   "asta_x": 0.19740653560214685,
+   "eqV": 0.986,
+   "ancho": {
+    "tarjeta": 0.989,
+    "parrafo": 1.02,
+    "rotulo": 0.979,
+    "nav": 1.018,
+    "datos": 1.028,
+    "lista": 1.016
+   }
+  },
+  {
+   "fam": "Switzer",
+   "iou": {
+    "minus": 0.7386840009410154,
+    "mayus": 0.7532400134725534
+   },
+   "xh": 0.5325,
+   "cap": 0.68,
+   "asta_x": 0.20657276995305165,
+   "eqV": 1.029,
+   "ancho": {
+    "tarjeta": 0.976,
+    "parrafo": 0.969,
+    "rotulo": 0.968,
+    "nav": 0.99,
+    "datos": 0.965,
+    "lista": 0.98
+   }
+  },
+  {
+   "fam": "Hanken Grotesk",
+   "iou": {
+    "minus": 0.7673918963644579,
+    "mayus": 0.7186583515605512
+   },
+   "xh": 0.4925,
+   "cap": 0.6975,
+   "asta_x": 0.2131979695431472,
+   "eqV": 1.004,
+   "ancho": {
+    "tarjeta": 0.952,
+    "parrafo": 0.978,
+    "rotulo": 0.961,
+    "nav": 0.965,
+    "datos": 0.991,
+    "lista": 0.968
+   }
+  },
+  {
+   "fam": "Outfit",
+   "iou": {
+    "minus": 0.7407677359748073,
+    "mayus": 0.7249833457404242
+   },
+   "xh": 0.48,
+   "cap": 0.7,
+   "asta_x": 0.23128753449140124,
+   "eqV": 1.0,
+   "ancho": {
+    "tarjeta": 0.945,
+    "parrafo": 0.957,
+    "rotulo": 0.974,
+    "nav": 0.959,
+    "datos": 0.926,
+    "lista": 0.958
+   }
+  },
+  {
+   "fam": "Archivo",
+   "iou": {
+    "minus": 0.7246554264378201,
+    "mayus": 0.7410008946589951
+   },
+   "xh": 0.5275,
+   "cap": 0.6875,
+   "asta_x": 0.1990521327014218,
+   "eqV": 1.018,
+   "ancho": {
+    "tarjeta": 0.971,
+    "parrafo": 0.961,
+    "rotulo": 1.017,
+    "nav": 0.988,
+    "datos": 0.961,
+    "lista": 0.977
+   }
+  },
+  {
+   "fam": "Supreme",
+   "iou": {
+    "minus": 0.7734692257127324,
+    "mayus": 0.6388834803397619
+   },
+   "xh": 0.4925,
+   "cap": 0.7,
+   "asta_x": 0.20304568527918784,
+   "eqV": 1.0,
+   "ancho": {
+    "tarjeta": 0.936,
+    "parrafo": 0.989,
+    "rotulo": 0.94,
+    "nav": 0.977,
+    "datos": 0.978,
+    "lista": 0.971
+   }
+  }
+ ]
+}

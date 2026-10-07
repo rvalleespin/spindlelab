@@ -1,0 +1,355 @@
+=== COLORS IN USE (visible), all pages, 1440+390 ===
+#0a0a0a            n= 1879 chars= 62924 area=    0.90Mpx pages=32 props={'background': 64, 'color': 1207, 'pseudo-bg::after': 128, 'svg-fill': 416, 'svg-stroke': 40, 'pseudo-color::before': 2, 'text-decoration': 22} regions={'main': 1036, 'menu': 160, 'header': 587, 'cart': 96}
+       background: a.skip-link [main]
+       color: button.dynamic-menu-module__qpp75q__menuLink.hover-underline «Design» [menu]
+       color: a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Art» [menu]
+       color: a.dynamic-menu-module__qpp75q__menuLink.hover-underline «London Design Festival» [menu]
+       color: a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Events» [menu]
+       color: a.dynamic-menu-module__qpp75q__menuLink.hover-underline «About» [menu]
+#ffffff            n= 1567 chars= 10807 area=  375.93Mpx pages=32 props={'background': 147, 'color': 778, 'caret': 64, 'accent': 32, 'svg-fill': 32, 'border': 514} regions={'main': 671, 'header': 32, 'cart': 32, 'footer': 832}
+       background: body.antialiased [main]
+       background: header.header-module__HqSsuG__header.header-module__HqSsuG__solid.albert_sans_d07bd869-module__vNvuEW__className [header]
+       background: main.albert_sans_6ab7f873-module__7VJibG__className.wrapper [main]
+       background: div.min-h-screen.bg-white.flex.flex-col [main]
+       background: div.cart-module__GMR72G__cart.cart-module__GMR72G__isClosed.albert_sans_ea8044c2-module__OGpixG__className [cart]
+       color: a.skip-link «Skip to content» [main]
+#000000            n=  806 chars=  3285 area=   15.54Mpx pages=32 props={'background': 60, 'color': 220, 'border': 500, 'outline': 24, 'svg-stroke': 2} regions={'footer': 32, 'cart': 64, 'main': 704, 'header': 6}
+       background: footer.bg-black.text-white.p-[12px].lg:p-[18px] [footer]
+       color: button.text-black.text-[12px].tracking-widest.uppercase «Close» [cart]
+       border: button.text-[11px].tracking-[0.18em].uppercase.border-b «Bottom 1px» [cart]
+       color: p.bookish_82aca62c-module__UWeQgW__className.leading-[0.9].lg:text-4xl.text-[26px] «Selected artworks Available through Stud» [main]
+       border: button.bookish_82aca62c-module__UWeQgW__className.inline-block.border.border-black «Top 1px» [main]
+       border: button.bookish_82aca62c-module__UWeQgW__className.inline-block.border.border-black «Right 1px» [main]
+#ebebeb            n=  411 chars=     0 area=   82.65Mpx pages=14 props={'gradient': 279, 'pseudo-bg::after': 131, 'background': 1} regions={'main': 411}
+       gradient: div.relative.w-full.bg-zinc-50.overflow-hidden «linear-gradient(90deg, rgb(246, 246, 246» [main]
+       gradient: div.relative.w-full.overflow-hidden.bg-zinc-50 «linear-gradient(90deg, rgb(246, 246, 246» [main]
+       gradient: div.relative.w-full.lazy-shimmer «linear-gradient(90deg, rgb(246, 246, 246» [main]
+       gradient: div.lazy-shimmer «linear-gradient(90deg, rgb(246, 246, 246» [main]
+       gradient: div.product-card-module__3G3cFq__image.relative «linear-gradient(90deg, rgb(246, 246, 246» [main]
+       pseudo-bg::after: div.product-card-module__3G3cFq__image.relative «content=""» [main]
+#e4e4e7            n=  283 chars=     0 area=    0.97Mpx pages=11 props={'background': 3, 'border': 280} regions={'main': 283}
+       background: div.relative.lg:sticky.lg:top-0.w-full [main]
+       border: button.absolute.left-[8px].lg:left-[16px].top-1/2 «Top 1px» [main]
+       border: button.absolute.left-[8px].lg:left-[16px].top-1/2 «Right 1px» [main]
+       border: button.absolute.left-[8px].lg:left-[16px].top-1/2 «Bottom 1px» [main]
+       border: button.absolute.left-[8px].lg:left-[16px].top-1/2 «Left 1px» [main]
+       border: button.absolute.right-[8px].lg:right-[16px].top-1/2 «Top 1px» [main]
+#f6f6f6            n=  279 chars=     0 area=   64.58Mpx pages=14 props={'gradient': 279} regions={'main': 279}
+       gradient: div.relative.w-full.bg-zinc-50.overflow-hidden «linear-gradient(90deg, rgb(246, 246, 246» [main]
+       gradient: div.relative.w-full.overflow-hidden.bg-zinc-50 «linear-gradient(90deg, rgb(246, 246, 246» [main]
+       gradient: div.relative.w-full.lazy-shimmer «linear-gradient(90deg, rgb(246, 246, 246» [main]
+       gradient: div.lazy-shimmer «linear-gradient(90deg, rgb(246, 246, 246» [main]
+       gradient: div.product-card-module__3G3cFq__image.relative «linear-gradient(90deg, rgb(246, 246, 246» [main]
+       gradient: img.lazy-image.is-loaded.lg:absolute.inset-0 «linear-gradient(90deg, rgb(246, 246, 246» [main]
+#d4d4d8            n=  224 chars=     0 area=    0.00Mpx pages= 6 props={'border': 224} regions={'main': 224}
+       border: button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Top 1px» [main]
+       border: button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Right 1px» [main]
+       border: button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Bottom 1px» [main]
+       border: button.text-[8px].px-[5px].py-[1px].leading-[1.2] «Left 1px» [main]
+#f4f4f5            n=  124 chars=     0 area=   19.39Mpx pages=14 props={'background': 124} regions={'main': 124}
+       background: button.relative.h-[60px].overflow-hidden.bg-zinc-100 [main]
+       background: div.relative.w-full.bg-zinc-100 [main]
+       background: div.relative.w-full.aspect-[4/5].lg:aspect-[16/9] [main]
+       background: div.relative.w-full.aspect-5/4.lg:aspect-21/9 [main]
+       background: a.relative.block.w-full.overflow-hidden [main]
+       background: div.relative.w-full.h-0.bg-zinc-100 [main]
+#ffffff@0.698      n=   96 chars=  3552 area=    0.00Mpx pages=32 props={'color': 64, 'text-decoration': 32} regions={'footer': 96}
+       color: span.text-[11px].leading-relaxed.text-white/70 «I agree to receive marketing emails from» [footer]
+       color: a.underline «Privacy Policy» [footer]
+       text-decoration: a.underline «underline Privacy Policy» [footer]
+#52525c            n=   56 chars=   176 area=    0.00Mpx pages= 6 props={'color': 56} regions={'main': 56}
+       color: button.text-[8px].px-[5px].py-[1px].leading-[1.2] «37» [main]
+       color: button.text-[8px].px-[5px].py-[1px].leading-[1.2] «38» [main]
+       color: button.text-[8px].px-[5px].py-[1px].leading-[1.2] «39» [main]
+       color: button.text-[8px].px-[5px].py-[1px].leading-[1.2] «40» [main]
+       color: button.text-[8px].px-[5px].py-[1px].leading-[1.2] «41» [main]
+       color: button.text-[8px].px-[5px].py-[1px].leading-[1.2] «42» [main]
+#ffffff@0.4        n=   32 chars=     0 area=    0.00Mpx pages=32 props={'border': 32} regions={'footer': 32}
+       border: div.flex.border-b.border-white/40.focus-within:border-white «Bottom 1px» [footer]
+#ffffff@0.502      n=   32 chars=     0 area=    0.00Mpx pages=32 props={'placeholder': 32} regions={'footer': 32}
+       placeholder: input.flex-1.bg-transparent.outline-none.py-2 «Your email address» [footer]
+#e2e2e2            n=    9 chars=     0 area=    0.00Mpx pages= 2 props={'border': 9} regions={'main': 9}
+       border: button.details-module__HiPw3G__addToCart «Top 1px» [main]
+       border: button.details-module__HiPw3G__addToCart «Right 1px» [main]
+       border: button.details-module__HiPw3G__addToCart «Bottom 1px» [main]
+       border: button.details-module__HiPw3G__addToCart «Left 1px» [main]
+#e6e5e5            n=    8 chars=     0 area=    0.00Mpx pages= 6 props={'background': 8} regions={'main': 8}
+       background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]
+#f575f5            n=    8 chars=     0 area=    0.00Mpx pages= 2 props={'background': 8} regions={'main': 8}
+       background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]
+#ef8ac0            n=    8 chars=     0 area=    0.00Mpx pages= 2 props={'background': 8} regions={'main': 8}
+       background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]
+#aef104            n=    8 chars=     0 area=    0.00Mpx pages= 2 props={'background': 8} regions={'main': 8}
+       background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]
+#ffffff@0.851      n=    4 chars=     0 area=    0.01Mpx pages= 2 props={'background': 4} regions={'main': 4}
+       background: button.absolute.left-[8px].lg:left-[16px].top-1/2 [main]
+       background: button.absolute.right-[8px].lg:right-[16px].top-1/2 [main]
+#3f3f46            n=    4 chars=   884 area=    0.00Mpx pages= 4 props={'color': 4} regions={'main': 4}
+       color: p.text-[12px].leading-[1.55].text-zinc-700.m-0 «Dei is part of an ongoing series explori» [main]
+#f61f1f            n=    4 chars=     0 area=    0.00Mpx pages= 2 props={'background': 4} regions={'main': 4}
+       background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]
+#ffe500            n=    4 chars=     0 area=    0.00Mpx pages= 2 props={'background': 4} regions={'main': 4}
+       background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]
+#ffffff@0.902      n=    4 chars=     0 area=    0.00Mpx pages= 1 props={'background': 4} regions={'main': 4}
+       background: button.w-7.h-7.flex.items-center [main]
+#000000@0.749      n=    4 chars=     0 area=    1.66Mpx pages= 2 props={'gradient': 4} regions={'main': 4}
+       gradient: div.absolute.inset-y-0.left-0.lg:w-[55%] «linear-gradient(to right, oklab(0 0 0 / » [main]
+       gradient: div.absolute.inset-y-0.left-0.lg:w-[55%] «linear-gradient(0deg, oklab(0 0 0 / 0.75» [main]
+#a54dcf            n=    2 chars=     0 area=    0.00Mpx pages= 2 props={'background': 2} regions={'main': 2}
+       background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]
+#05aa3d            n=    2 chars=     0 area=    0.00Mpx pages= 2 props={'background': 2} regions={'main': 2}
+       background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]
+#000000@0.35       n=    2 chars=     0 area=    1.36Mpx pages= 2 props={'gradient': 2} regions={'main': 2}
+       gradient: div.absolute.inset-y-0.left-0.pointer-events-none «linear-gradient(rgba(0, 0, 0, 0) 0%, rgb» [main]
+#71717b            n=    2 chars=    58 area=    0.00Mpx pages= 2 props={'color': 2} regions={'main': 2}
+       color: p.text-zinc-500.mb-10 «Last updated: August 27, 2026» [main]
+#000000@0.02       n=    2 chars=     0 area=    0.00Mpx pages= 2 props={'box-shadow': 2} regions={'main': 2}
+       box-shadow: div.details-module__HiPw3G__details.lg:absolute.lg:top-[50%].lg:transform «rgba(0, 0, 0, 0.02) 0px 0px 40px 0px» [main]
+#9f9fa9            n=    2 chars=    13 area=    0.00Mpx pages= 1 props={'color': 1, 'svg-stroke': 1} regions={'main': 2}
+       color: span.text-xs.tracking-[0.12em].uppercase.text-zinc-400 «Tubular chair» [main]
+       svg-stroke: path [main]
+#000000@0.45       n=    1 chars=     0 area=    0.76Mpx pages= 1 props={'gradient': 1} regions={'main': 1}
+       gradient: div.absolute.inset-y-0.left-0.w-[55%] «linear-gradient(to right, rgba(0, 0, 0, » [main]
+
+=== DECLARED ON HIDDEN ELEMENTS ONLY ===
+#f0f0f0 896 {'background': 896} ['404-1440 background: div.shop-menu-module__KVl6JW__thumbWrap [menu-design]', '404-1440 background: div.shop-menu-module__KVl6JW__thumbPlaceholder [menu-design]', '404-390 background: div.shop-menu-module__KVl6JW__thumbWrap [menu-design]']
+#ffffff@0.85 16 {'background': 16} ['404-390 background: div.lg:hidden.fixed.inset-0.z-40 [main]', 'about-390 background: div.lg:hidden.fixed.inset-0.z-40 [main]', 'account-390 background: div.lg:hidden.fixed.inset-0.z-40 [main]']
+
+=== TEXT / BACKGROUND PAIRS (effective, composited) ===
+#0a0a0a on #ffffff: 19.8:1 AA chars=61258 (small-text chars=59416) decl={'#0a0a0a'} op={1} pages=32 sizes={'14px/500': 38000, '12px/500': 13624, '13px/500': 2598, '30px/500': 1715, '14px/700': 1302, '16px/500': 1162}
+       404-1440 «Design» button.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500
+       404-1440 «Art» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500
+       404-1440 «London Design Festival» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500
+#ffffff on #000000: 21.0:1 AA chars=7874 (small-text chars=5802) decl={'#ffffff'} op={1} pages=32 sizes={'12px/500': 3951, '14px/500': 1851, '24px/500': 1040, '37.44px/500': 1032}
+       404-1440 «Be the first to hear about new» h2.basis-[60%].uppercase.bookish_82aca62c-module__UWeQgW__cl [footer] 37.44px/500
+       404-1440 «objects,» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 37.44px/500
+       404-1440 «collections» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 37.44px/500
+#b2b2b2 on #000000: 9.9:1 AA chars=3538 (small-text chars=3538) decl={'#ffffff@0.698'} op={1} pages=32 sizes={'11px/500': 3538}
+       404-1440 «I agree to receive marketing e» span.text-[11px].leading-relaxed.text-white/70 [footer] 11px/500
+       404-1440 «Privacy Policy» a.underline [footer] 11px/500
+       404-390 «I agree to receive marketing e» span.text-[11px].leading-relaxed.text-white/70 [footer] 11px/500
+#000000 on #ffffff: 21.0:1 AA chars=2775 (small-text chars=2495) decl={'#000000'} op={1} pages=32 sizes={'12px/500': 1405, '10px/500': 450, '11px/500': 366, '26px/500': 280, '14px/500': 274}
+       404-1440 «Close» button.text-black.text-[12px].tracking-widest.uppercase [cart] 12px/500
+       404-390 «Close» button.text-black.text-[12px].tracking-widest.uppercase [cart] 12px/500
+       about-1440 «Close» button.text-black.text-[12px].tracking-widest.uppercase [cart] 12px/500
+#0a0a0a on #ffffff OVER-IMAGE: 19.8:1 AA chars=1551 (small-text chars=1459) decl={'#0a0a0a'} op={1} pages=10 sizes={'14px/500': 977, '13px/500': 213, '11px/500': 140, '12px/500': 116, '109.44px/500': 39, '30px/500': 39}
+       404-1440 «Page NotFound» h2.leading-[0.8].lg:leading-[0.75].tracking-[-0.01em].text-[ [main] 109.44px/500
+       about-1440 «Design» button.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500
+       about-1440 «Art» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500
+#ffffff on #f4f4f5 OVER-IMAGE: 1.1:1 FAIL chars=1259 (small-text chars=1150) decl={'#ffffff'} op={1} pages=3 sizes={'12px/500': 997, '14px/500': 83, '36px/500': 65, '10px/500': 40, '11px/500': 30, '144px/500': 22}
+       black-metal-1440 «DESIGN» p.uppercase.tracking-[0.15em].leading-[0.8].text-[11px] [main] 11px/500
+       black-metal-1440 «Stem vase» h2.bookish_82aca62c-module__UWeQgW__className.italic.m-0.lea [main] 36px/500
+       black-metal-1440 «Gast Studio» p.bookish_82aca62c-module__UWeQgW__className.uppercase.leadi [main] 14px/500
+#ffffff on #ffffff OVER-IMAGE: 1.0:1 FAIL chars=1164 (small-text chars=1049) decl={'#ffffff'} op={1} pages=3 sizes={'15px/500': 455, '13px/500': 455, '12px/500': 89, '48px/500': 77, '11px/500': 50, '26px/500': 38}
+       events-1440 «Studio Iron at Brompton Design» h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [main] 48px/500
+       events-1440 «12 – 20 Sept 2026» span [main] 12px/500
+       events-1440 «Level 1, 3 Cromwell Place, Cro» span [main] 12px/500
+#3f3f46 on #ffffff: 10.44:1 AA chars=884 (small-text chars=884) decl={'#3f3f46'} op={1} pages=4 sizes={'12px/500': 884}
+       black-metal-1440 «Dei is part of an ongoing seri» p.text-[12px].leading-[1.55].text-zinc-700.m-0 [main] 12px/500
+       black-metal-390 «Dei is part of an ongoing seri» p.text-[12px].leading-[1.55].text-zinc-700.m-0 [main] 12px/500
+       ldf-1440 «Dei is part of an ongoing seri» p.text-[12px].leading-[1.55].text-zinc-700.m-0 [main] 12px/500
+#ffffff on #0a0a0a: 19.8:1 AA chars=480 (small-text chars=480) decl={'#ffffff'} op={1} pages=32 sizes={'12px/500': 480}
+       404-1440 «Skip to content» a.skip-link [main] 12px/500
+       404-390 «Skip to content» a.skip-link [main] 12px/500
+       about-1440 «Skip to content» a.skip-link [main] 12px/500
+#000000 on #f4f4f5 OVER-IMAGE: 19.11:1 AA chars=207 (small-text chars=188) decl={'#000000'} op={1} pages=1 sizes={'12px/500': 159, '36px/500': 19, '14px/500': 15, '10px/500': 8, '11px/500': 6}
+       ldf-1440 «DESIGN» p.uppercase.tracking-[0.15em].leading-[0.8].text-[11px] [main] 11px/500
+       ldf-1440 «Rubber Table Medium» h2.bookish_82aca62c-module__UWeQgW__className.italic.m-0.lea [main] 36px/500
+       ldf-1440 «Atelier Fomenta» p.bookish_82aca62c-module__UWeQgW__className.uppercase.leadi [main] 14px/500
+#52525c on #ffffff: 7.72:1 AA chars=176 (small-text chars=176) decl={'#52525c'} op={1} pages=6 sizes={'8px/500': 176}
+       coleccion-all-1440 «37» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500
+       coleccion-all-1440 «38» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500
+       coleccion-all-1440 «39» button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500
+#000000 on #ffffff OVER-IMAGE: 21.0:1 AA chars=175 (small-text chars=18) decl={'#000000'} op={1} pages=8 sizes={'36px/500': 146, '10px/500': 18, '80.64px/500': 11}
+       art-1440 «Selected artworks Available th» p.bookish_82aca62c-module__UWeQgW__className.leading-[0.9].l [main] 36px/500
+       artista-phil-hale-1440 «Phil Hale» h1.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [header] 36px/500
+       black-metal-1440 «Black Metal» h1.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [header] 36px/500
+#4d4d4d on #ffffff: 8.45:1 AA chars=128 (small-text chars=128) decl={'#000000'} op={0.7} pages=1 sizes={'9px/500': 128}
+       black-metal-390 «Kouros Maghsoudi» p.text-black.uppercase.text-[9px].tracking-[0.18em] [main] 9px/500
+       black-metal-390 «CRUDA» p.text-black.uppercase.text-[9px].tracking-[0.18em] [main] 9px/500
+       black-metal-390 «Bernardo Martins» p.text-black.uppercase.text-[9px].tracking-[0.18em] [main] 9px/500
+#0a0a0a on #ebebeb: 16.61:1 AA chars=115 (small-text chars=115) decl={'#0a0a0a'} op={1} pages=1 sizes={'11px/500': 115}
+       producto-tubular-390 «Made to order. Allow 10 weeks » span [main] 11px/500
+#ffffff on #000000 OVER-IMAGE: 21.0:1 AA chars=30 (small-text chars=22) decl={'#ffffff'} op={1} pages=1 sizes={'12px/500': 17, '37.44px/500': 8, '14px/500': 5}
+       evento-brompton-1440 «objects,» span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 37.44px/500
+       evento-brompton-1440 «Subscribe →» button.uppercase.text-xs.tracking-[0.15em].disabled:opacity- [footer] 12px/500
+       evento-brompton-1440 «Studio» p.text-[12px].tracking-[0.12em].uppercase.pb-2 [footer] 12px/500
+#71717b on #ffffff OVER-IMAGE: 4.83:1 AA chars=29 (small-text chars=29) decl={'#71717b'} op={1} pages=1 sizes={'14px/500': 29}
+       privacy-1440 «Last updated: August 27, 2026» p.text-zinc-500.mb-10 [main] 14px/500
+#71717b on #ffffff: 4.83:1 AA chars=29 (small-text chars=29) decl={'#71717b'} op={1} pages=1 sizes={'14px/500': 29}
+       privacy-390 «Last updated: August 27, 2026» p.text-zinc-500.mb-10 [main] 14px/500
+#b2b2b2 on #000000 OVER-IMAGE: 9.9:1 AA chars=14 (small-text chars=14) decl={'#ffffff@0.698'} op={1} pages=1 sizes={'11px/500': 14}
+       evento-brompton-1440 «Privacy Policy» a.underline [footer] 11px/500
+#9f9fa9 on #ffffff: 2.62:1 FAIL chars=13 (small-text chars=13) decl={'#9f9fa9'} op={1} pages=1 sizes={'12px/500': 13}
+       producto-tubular-390 «Tubular chair» span.text-xs.tracking-[0.12em].uppercase.text-zinc-400 [main] 12px/500
+
+=== HOVER DIFFS (1440, real mouse) ===
+[404-1440] BUTTON.dynamic-menu-module__qpp75q__menuLink.hover-underline|H| «Design» tr=all 0.2s ease
+      {"self.after": ["rgb(10, 10, 10) tf matrix(0, 0, 0, 1, 0, 0) w 41.6719px op 1 tr 0.4s", "rgb(10, 10, 10) tf matrix(1, 0, 0, 1, 0, 0) w 41.6719px op 1 tr 0.4s"]}
+[404-1440] A.dynamic-menu-module__qpp75q__menuLink.hover-underline|H| «Art» tr=all 0.2s ease
+      {"self.after": ["rgb(10, 10, 10) tf matrix(0, 0, 0, 1, 0, 0) w 18.375px op 1 tr 0.4s", "rgb(10, 10, 10) tf matrix(1, 0, 0, 1, 0, 0) w 18.375px op 1 tr 0.4s"]}
+[404-1440] BUTTON.hover-underline|H| «Search» tr=all 0s ease
+      {"self.after": ["rgb(10, 10, 10) tf matrix(0, 0, 0, 1, 0, 0) w 40.8125px op 1 tr 0.4s", "rgb(10, 10, 10) tf matrix(1, 0, 0, 1, 0, 0) w 40.8125px op 1 tr 0.4s"]}
+[404-1440] A.hover-underline|H| «Account» tr=all 0s ease
+      {"self.after": ["rgb(10, 10, 10) tf matrix(0, 0, 0, 1, 0, 0) w 50.25px op 1 tr 0.4s", "rgb(10, 10, 10) tf matrix(1, 0, 0, 1, 0, 0) w 50.25px op 1 tr 0.4s"]}
+[404-1440] BUTTON.hover-underline|H| «Bag [0]» tr=all 0s ease
+      {"self.after": ["rgb(10, 10, 10) tf matrix(0, 0, 0, 1, 0, 0) w 43.4375px op 1 tr 0.4s", "rgb(10, 10, 10) tf matrix(1, 0, 0, 1, 0, 0) w 43.4375px op 1 tr 0.4s"]}
+[404-1440] A.text-sm.hover:text-white/70|F| «About» tr=all 0s ease
+      {"self.color": ["rgb(255, 255, 255)", "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)"], "self.bt": ["rgb(255, 255, 255)", "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)"], "self.bb": ["rgb(255, 255, 255)", "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)"], "self.tdc": ["rgb(255, 255, 255)", "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)"], "self.outline": ["none 3px rgb(255, 255, 255) off 0px", "none 3px oklab(0.999994 0.0000455677 0.0000200868 / 0.7) off 0px"]}
+[404-1440] A.hover:text-white.hover:underline|F| «Terms of Service» tr=all 0s ease
+      {"self.td": ["none", "underline"]}
+[art-1440] A.dynamic-menu-module__qpp75q__menuLink.hover-underline|H| «London Design Festival» tr=all 0.2s ease
+      {"self.after": ["rgb(10, 10, 10) tf matrix(0, 0, 0, 1, 0, 0) w 138.781px op 1 tr 0.4s", "rgb(10, 10, 10) tf matrix(1, 0, 0, 1, 0, 0) w 138.781px op 1 tr 0.4s"]}
+[art-1440] A.flex.flex-col.gap-[10px].hover:opacity-80.transition-opacity|M| «PHIL HALE
+Record Separator, 20» tr=opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.op": ["1", "0.8"]}
+[art-1440] BUTTON.bookish_82aca62c-module__UWeQgW__className.inline-block.border.border-black.uppercase|M| «ENQUIRE» tr=opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.op": ["1", "0.7"]}
+[black-metal-1440] BUTTON.absolute.left-[8px].lg:left-[16px].top-1/2.-translate-y-1/2|M| «Previous» tr=color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.bg": ["oklab(0.999994 0.0000455678 0.0000200868 / 0.85)", "rgb(255, 255, 255)"], "self.bt": ["lab(90.6853 0.399232 -1.45452)", "rgb(0, 0, 0)"], "self.bb": ["lab(90.6853 0.399232 -1.45452)", "rgb(0, 0, 0)"]}
+[black-metal-1440] BUTTON.absolute.right-[8px].lg:right-[16px].top-1/2.-translate-y-1/2|M| «Next» tr=color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.bg": ["oklab(0.999994 0.0000455678 0.0000200868 / 0.85)", "rgb(255, 255, 255)"], "self.bt": ["lab(90.6853 0.399232 -1.45452)", "rgb(0, 0, 0)"], "self.bb": ["lab(90.6853 0.399232 -1.45452)", "rgb(0, 0, 0)"]}
+[black-metal-1440] A.group.block.w-full|M|img «STEM VASE
+
+GAST STUDIO» tr=all 0s ease
+      {"kid2(DIV.flex.flex-col).op": ["0", "1"]}
+[black-metal-1440] A.bookish_82aca62c-module__UWeQgW__className.inline-block.border.border-black.uppercase|M| «SHOP NOW» tr=opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.op": ["1", "0.7"]}
+[black-metal-1440] A.bookish_82aca62c-module__UWeQgW__className.inline-block.border.uppercase.tracking-[0.18em]|M| «SHOP NOW» tr=opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.op": ["1", "0.7"]}
+[coleccion-all-1440] A.|M|img «» tr=all 0s ease
+      {"kid1(DIV.product-card-module__3G3cFq__image.relative).bt": ["rgb(255, 255, 255)", "rgb(10, 10, 10)"], "kid1(DIV.product-card-module__3G3cFq__image.relative).bb": ["rgb(255, 255, 255)", "rgb(10, 10, 10)"]}
+[coleccion-all-1440] BUTTON.text-[8px].px-[5px].py-[1px].leading-[1.2].tracking-[0.06em]|M| «37» tr=color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.color": ["lab(35.1166 1.78212 -6.1173)", "rgb(0, 0, 0)"], "self.bt": ["lab(84.9837 0.601262 -2.17986)", "rgb(0, 0, 0)"], "self.bb": ["lab(84.9837 0.601262 -2.17986)", "rgb(0, 0, 0)"], "self.tdc": ["lab(35.1166 1.78212 -6.1173)", "rgb(0, 0, 0)"], "self.outline": ["none 3px lab(35.1166 1.78212 -6.1173) off 0px", "none 3px rgb(0, 0, 0) off 0px"]}
+[coleccion-all-1440] BUTTON.w-[15px].h-[8px].cursor-pointer.box-border.transition-colors|M| «View Black» tr=color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.bt": ["lab(90.6853 0.399232 -1.45452)", "rgb(0, 0, 0)"], "self.bb": ["lab(90.6853 0.399232 -1.45452)", "rgb(0, 0, 0)"]}
+[events-1440] A.flex.flex-col.gap-[6px].hover:opacity-70.transition-opacity|M| «IN PLAIN SIGHT
+THE PAINTING RO» tr=opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.op": ["1", "0.7"]}
+[home-1440] A.hover:opacity-60.transition-opacity.duration-200|M| «ALL OBJECTS» tr=opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.op": ["1", "0.6"]}
+[home-1440] BUTTON.w-7.h-7.flex.items-center.justify-center|M| «Previous» tr=color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.bt": ["lab(90.6853 0.399232 -1.45452)", "rgb(0, 0, 0)"], "self.bb": ["lab(90.6853 0.399232 -1.45452)", "rgb(0, 0, 0)"]}
+[obra-record-separator-1440] A.bookish_82aca62c-module__UWeQgW__className.uppercase.leading-[0.9].tracking-[-0.01em].text-md|M| «PHIL HALE» tr=opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.op": ["1", "0.7"]}
+[obra-record-separator-1440] BUTTON.lg:self-start.text-[12px].tracking-[0.18em].uppercase.hover:opacity-60|M| «ENQUIRE» tr=opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.op": ["1", "0.6"]}
+[producto-tubular-1440] BUTTON.dynamic-menu-module__qpp75q__menuLink.hover-underline|H| «Design» tr=all 0.2s ease
+      {"self.after": ["rgb(10, 10, 10) tf matrix(0, 0, 0, 1, 0, 0) w 41.6719px op 1 tr 0.4s", "rgb(10, 10, 10) tf matrix(0.227587, 0, 0, 1, 0, 0) w 41.6719px op 1 tr 0.4s"]}
+[producto-tubular-1440] BUTTON.underline.underline-offset-2.hover:text-zinc-500.transition-colors.duration-200|M| «Read more» tr=color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.color": ["rgb(10, 10, 10)", "lab(47.8878 1.65477 -5.77283)"], "self.bt": ["rgb(10, 10, 10)", "lab(47.8878 1.65477 -5.77283)"], "self.bb": ["rgb(10, 10, 10)", "lab(47.8878 1.65477 -5.77283)"], "self.tdc": ["rgb(10, 10, 10)", "lab(47.8878 1.65477 -5.77283)"], "self.outline": ["none 3px rgb(10, 10, 10) off 0px", "none 3px lab(47.8878 1.65477 -5.77283) off 0px"]}
+[producto-tubular-1440] BUTTON.details-module__HiPw3G__addToCart|M| «Add To Bag
+£3,800.00» tr=all 0s ease
+      {"self.color": ["rgb(10, 10, 10)", "rgb(255, 255, 255)"], "self.bg": ["rgba(0, 0, 0, 0)", "rgb(10, 10, 10)"], "self.bb": ["rgb(10, 10, 10)", "rgb(255, 255, 255)"], "self.tdc": ["rgb(10, 10, 10)", "rgb(255, 255, 255)"], "self.outline": ["none 3px rgb(10, 10, 10) off 0px", "none 3px rgb(255, 255, 255) off 0px"], "kid0(SPAN.flex.items-baseline).color": ["rgb(10, 10, 10)", "rgb(255, 255, 255)"], "kid0(SPAN.flex.items-baseline).bt": ["rgb(10, 10, 10)", "rgb(255, 255, 255)"], "kid0(SPAN.flex.items-baseline).bb": ["rgb(10, 10, 10)", "rgb(255, 255, 255)"], "kid0(SPAN.flex.items-baseline).tdc": ["rgb(1
+[producto-tubular-1440] BUTTON.inline-flex.items-center.gap-1.text-sm.text-black|M| «SHIPPING & RETURNS» tr=color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+      {"self.color": ["rgb(0, 0, 0)", "lab(47.8878 1.65477 -5.77283)"], "self.bt": ["rgb(0, 0, 0)", "lab(47.8878 1.65477 -5.77283)"], "self.bb": ["rgb(0, 0, 0)", "lab(47.8878 1.65477 -5.77283)"], "self.tdc": ["rgb(0, 0, 0)", "lab(47.8878 1.65477 -5.77283)"], "self.outline": ["none 3px rgb(0, 0, 0) off 0px", "none 3px lab(47.8878 1.65477 -5.77283) off 0px"], "kid0(SPAN.text-[10px].uppercase).color": ["rgb(0, 0, 0)", "lab(47.8878 1.65477 -5.77283)"], "kid0(SPAN.text-[10px].uppercase).bt": ["rgb(0, 0, 0)", "lab(47.8878 1.65477 -5.77283)"], "kid0(SPAN.text-[10px].uppercase).bb": ["rgb(0, 0, 0)", "lab(47
+
+=== FOCUS (forced :focus-visible) unique outlines ===
+112 ('solid 2px rgb(10, 10, 10) off 2px', 'footer')
+97 ('solid 2px rgb(10, 10, 10) off 2px', 'header')
+89 ('solid 2px rgb(10, 10, 10) off 2px', 'main')
+3 ('solid 3px rgb(10, 10, 10) off 0px', 'header')
+
+=== PAGE META ===
+404-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 27
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+404-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 27
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+about-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 28
+     1 img:rgba(0, 0, 0, 0) | parent:lab(90.6853 0.399232 -1.45452) | op:1 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+about-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 28
+     1 img:rgba(0, 0, 0, 0) | parent:lab(90.6853 0.399232 -1.45452) | op:1 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+account-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 27
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+account-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 27
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+art-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 91
+     21 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     43 img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+art-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 91
+     21 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     43 img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+artista-phil-hale-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 33
+     2 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     4 img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+artista-phil-hale-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 33
+     2 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     4 img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+black-metal-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 64
+     34 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     3 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+black-metal-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 64
+     33 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     4 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+coleccion-all-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 103
+     36 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     40 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+coleccion-all-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 103
+     36 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     40 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+disenador-gast-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 38
+     7 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     4 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+disenador-gast-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 38
+     7 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     4 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+evento-brompton-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 27
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+evento-brompton-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 27
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+events-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 30
+     1 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     2 img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+events-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 30
+     1 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     2 img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+home-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 66
+     2 img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal
+     22 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     15 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+home-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 66
+     2 img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal
+     22 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     15 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+ldf-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 59
+     32 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+ldf-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 59
+     32 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+obra-record-separator-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 31
+     4 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+obra-record-separator-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 31
+     4 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+privacy-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 27
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+privacy-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 27
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+producto-tubular-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 41
+     14 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+producto-tubular-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 41
+     14 img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+search-1440 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 27
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal
+search-390 html rgba(0, 0, 0, 0) body rgb(255, 255, 255) rgb(10, 10, 10) sel {'bg': 'rgba(0, 0, 0, 0)', 'color': 'rgb(10, 10, 10)'} theme ['#ffffff'] imgs 27
+     27 img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal

@@ -1,0 +1,258 @@
+{
+  "nombre": "t11-ficha-obra",
+  "ruta": "/artists/phil-hale/record-separator",
+  "ancho": 1440,
+  "alto": 900,
+  "estado": 200,
+  "estructura0": {
+    "url": "https://www.studio-iron.com/artists/phil-hale/record-separator",
+    "titulo": "Record Separator — Studio Iron",
+    "alto": 3717,
+    "vw": 1440,
+    "vh": 900,
+    "contenedor": "div.grid grid-cols-1 lg:grid-cols-24 gap-[12px] items-",
+    "nBloques": 2,
+    "imgsMain": 4,
+    "imgsTotal": 31,
+    "charsMain": 81,
+    "palabrasMain": 18,
+    "h1": [
+      {
+        "t": "",
+        "f": "Albert Sans 500  13/19.5 center",
+        "sr": false
+      },
+      {
+        "t": "Record Separator, 2010",
+        "f": "bookish 500 italic 30/28.5 ls-0.3px left",
+        "sr": false
+      }
+    ],
+    "fondoBody": "rgb(255, 255, 255)",
+    "sw": 1440,
+    "bloques": [
+      {
+        "n": 1,
+        "tag": "div",
+        "cls": "flex flex-col gap-[12px] lg:col-start-2 lg:col-span-13",
+        "y": 90,
+        "alto": 3076,
+        "x": 72,
+        "ancho": 762,
+        "fondo": "rgba(0, 0, 0, 0)",
+        "pos": "static",
+        "imgs": 4,
+        "sangre": 0,
+        "muestras": [
+          "762x756k",
+          "762x762k",
+          "762x762k",
+          "762x762k"
+        ],
+        "chars": 0,
+        "palabras": 0,
+        "titulo": null,
+        "tituloFuente": null,
+        "texto": "",
+        "enlaces": 0,
+        "botones": 0
+      },
+      {
+        "n": 2,
+        "tag": "div",
+        "cls": "flex flex-col gap-[24px] lg:gap-[36px] lg:pt-[8px] lg:col-start-16 lg:",
+        "y": 90,
+        "alto": 196,
+        "x": 905,
+        "ancho": 464,
+        "fondo": "rgba(0, 0, 0, 0)",
+        "pos": "sticky",
+        "imgs": 0,
+        "sangre": 0,
+        "muestras": [],
+        "chars": 81,
+        "palabras": 18,
+        "titulo": "Record Separator, 2010",
+        "tituloFuente": "bookish 500 italic 30/28.5 ls-0.3px left",
+        "texto": "PHIL HALE Record Separator, 2010 Oil on canvas 63 x 63 in. / 160 x 160 cm ENQUIRE",
+        "enlaces": 1,
+        "botones": 1
+      }
+    ]
+  },
+  "encima0": {
+    "scrollY": 0,
+    "fijos": [
+      {
+        "tag": "HEADER",
+        "pos": "fixed",
+        "r": [
+          0,
+          0,
+          1440,
+          29
+        ],
+        "txt": "Design Art London Design Festival Events About Sea",
+        "solapaImgs": 0
+      },
+      {
+        "tag": "DIV",
+        "pos": "sticky",
+        "r": [
+          905,
+          90,
+          464,
+          196
+        ],
+        "txt": "PHIL HALE Record Separator, 2010 Oil on canvas 63 ",
+        "solapaImgs": 7
+      }
+    ]
+  },
+  "bajando": [
+    {
+      "objetivo": 900,
+      "real": 900,
+      "encima": {
+        "scrollY": 900,
+        "fijos": [
+          {
+            "tag": "HEADER",
+            "pos": "fixed",
+            "r": [
+              0,
+              0,
+              1440,
+              29
+            ],
+            "txt": "Design Art London Design Festival Events About Sea",
+            "solapaImgs": 1
+          },
+          {
+            "tag": "DIV",
+            "pos": "sticky",
+            "r": [
+              905,
+              40,
+              464,
+              196
+            ],
+            "txt": "PHIL HALE Record Separator, 2010 Oil on canvas 63 ",
+            "solapaImgs": 7
+          }
+        ]
+      }
+    },
+    {
+      "objetivo": 2250,
+      "real": 2250,
+      "encima": {
+        "scrollY": 2250,
+        "fijos": [
+          {
+            "tag": "HEADER",
+            "pos": "fixed",
+            "r": [
+              0,
+              0,
+              1440,
+              29
+            ],
+            "txt": "Design Art London Design Festival Events About Sea",
+            "solapaImgs": 1
+          },
+          {
+            "tag": "DIV",
+            "pos": "sticky",
+            "r": [
+              905,
+              40,
+              464,
+              196
+            ],
+            "txt": "PHIL HALE Record Separator, 2010 Oil on canvas 63 ",
+            "solapaImgs": 7
+          }
+        ]
+      }
+    }
+  ],
+  "estructuraFinal": {
+    "url": "https://www.studio-iron.com/artists/phil-hale/record-separator",
+    "titulo": "Record Separator — Studio Iron",
+    "alto": 3717,
+    "vw": 1440,
+    "vh": 900,
+    "contenedor": "div.grid grid-cols-1 lg:grid-cols-24 gap-[12px] items-",
+    "nBloques": 2,
+    "imgsMain": 4,
+    "imgsTotal": 31,
+    "charsMain": 81,
+    "palabrasMain": 18,
+    "h1": [
+      {
+        "t": "",
+        "f": "Albert Sans 500  13/19.5 center",
+        "sr": false
+      },
+      {
+        "t": "Record Separator, 2010",
+        "f": "bookish 500 italic 30/28.5 ls-0.3px left",
+        "sr": false
+      }
+    ],
+    "fondoBody": "rgb(255, 255, 255)",
+    "sw": 1440,
+    "bloques": [
+      {
+        "n": 1,
+        "tag": "div",
+        "cls": "flex flex-col gap-[12px] lg:col-start-2 lg:col-span-13",
+        "y": 90,
+        "alto": 3076,
+        "x": 72,
+        "ancho": 762,
+        "fondo": "rgba(0, 0, 0, 0)",
+        "pos": "static",
+        "imgs": 4,
+        "sangre": 0,
+        "muestras": [
+          "762x756k",
+          "762x762k",
+          "762x762k",
+          "762x762k"
+        ],
+        "chars": 0,
+        "palabras": 0,
+        "titulo": null,
+        "tituloFuente": null,
+        "texto": "",
+        "enlaces": 0,
+        "botones": 0
+      },
+      {
+        "n": 2,
+        "tag": "div",
+        "cls": "flex flex-col gap-[24px] lg:gap-[36px] lg:pt-[8px] lg:col-start-16 lg:",
+        "y": 90,
+        "alto": 196,
+        "x": 905,
+        "ancho": 464,
+        "fondo": "rgba(0, 0, 0, 0)",
+        "pos": "sticky",
+        "imgs": 0,
+        "sangre": 0,
+        "muestras": [],
+        "chars": 81,
+        "palabras": 18,
+        "titulo": "Record Separator, 2010",
+        "tituloFuente": "bookish 500 italic 30/28.5 ls-0.3px left",
+        "texto": "PHIL HALE Record Separator, 2010 Oil on canvas 63 x 63 in. / 160 x 160 cm ENQUIRE",
+        "enlaces": 1,
+        "botones": 1
+      }
+    ]
+  },
+  "altoCaptura": 3717,
+  "recortada": false
+}

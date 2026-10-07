@@ -1,0 +1,243 @@
+{
+  "nombre": "t17-about",
+  "ruta": "/pages/about",
+  "ancho": 1440,
+  "alto": 900,
+  "estado": 200,
+  "estructura0": {
+    "url": "https://www.studio-iron.com/pages/about",
+    "titulo": "About — Studio Iron",
+    "alto": 1567,
+    "vw": 1440,
+    "vh": 900,
+    "contenedor": "div.grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-8 it",
+    "nBloques": 2,
+    "imgsMain": 1,
+    "imgsTotal": 28,
+    "charsMain": 1156,
+    "palabrasMain": 170,
+    "h1": [
+      {
+        "t": "",
+        "f": "Albert Sans 500  13/19.5 center",
+        "sr": false
+      },
+      {
+        "t": "About",
+        "f": "Albert Sans 500  14/21 start",
+        "sr": true
+      }
+    ],
+    "fondoBody": "rgb(255, 255, 255)",
+    "sw": 1440,
+    "bloques": [
+      {
+        "n": 1,
+        "tag": "div",
+        "cls": "relative lg:sticky lg:top-0 w-full aspect-2/3 bg-zinc-200 overflow-hid",
+        "y": 0,
+        "alto": 1056,
+        "x": 0,
+        "ancho": 704,
+        "fondo": "lab(90.6853 0.399232 -1.45452)",
+        "pos": "sticky",
+        "imgs": 1,
+        "sangre": 0,
+        "muestras": [
+          "704x1056c"
+        ],
+        "chars": 0,
+        "palabras": 0,
+        "titulo": null,
+        "tituloFuente": null,
+        "texto": "",
+        "enlaces": 0,
+        "botones": 0
+      },
+      {
+        "n": 2,
+        "tag": "div",
+        "cls": "flex flex-col justify-center items-center py-6 lg:py-6 px-2 lg:pl-0 lg",
+        "y": 0,
+        "alto": 900,
+        "x": 736,
+        "ancho": 704,
+        "fondo": "rgba(0, 0, 0, 0)",
+        "pos": "sticky",
+        "imgs": 0,
+        "sangre": 0,
+        "muestras": [],
+        "chars": 1156,
+        "palabras": 170,
+        "titulo": "About",
+        "tituloFuente": "Albert Sans 500  14/21 start",
+        "texto": "About Isamaya Ffrench is a creative director, designer and curator whose work spans beauty, fashion, object design and contemporary culture. Originally trained ",
+        "enlaces": 0,
+        "botones": 0
+      }
+    ]
+  },
+  "encima0": {
+    "scrollY": 0,
+    "fijos": [
+      {
+        "tag": "HEADER",
+        "pos": "fixed",
+        "r": [
+          0,
+          0,
+          1440,
+          29
+        ],
+        "txt": "Design Art London Design Festival Events About Sea",
+        "solapaImgs": 1
+      },
+      {
+        "tag": "DIV",
+        "pos": "sticky",
+        "r": [
+          0,
+          0,
+          704,
+          1056
+        ],
+        "txt": "",
+        "solapaImgs": 17
+      },
+      {
+        "tag": "DIV",
+        "pos": "sticky",
+        "r": [
+          736,
+          0,
+          704,
+          900
+        ],
+        "txt": "About Isamaya Ffrench is a creative director, desi",
+        "solapaImgs": 14
+      }
+    ]
+  },
+  "bajando": [
+    {
+      "objetivo": 900,
+      "real": 667,
+      "encima": {
+        "scrollY": 667,
+        "fijos": [
+          {
+            "tag": "HEADER",
+            "pos": "fixed",
+            "r": [
+              0,
+              0,
+              1440,
+              29
+            ],
+            "txt": "Design Art London Design Festival Events About Sea",
+            "solapaImgs": 1
+          },
+          {
+            "tag": "DIV",
+            "pos": "sticky",
+            "r": [
+              0,
+              -667,
+              704,
+              1056
+            ],
+            "txt": "",
+            "solapaImgs": 16
+          },
+          {
+            "tag": "DIV",
+            "pos": "sticky",
+            "r": [
+              736,
+              -511,
+              704,
+              900
+            ],
+            "txt": "About Isamaya Ffrench is a creative director, desi",
+            "solapaImgs": 14
+          }
+        ]
+      }
+    }
+  ],
+  "estructuraFinal": {
+    "url": "https://www.studio-iron.com/pages/about",
+    "titulo": "About — Studio Iron",
+    "alto": 1567,
+    "vw": 1440,
+    "vh": 900,
+    "contenedor": "div.grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-8 it",
+    "nBloques": 2,
+    "imgsMain": 1,
+    "imgsTotal": 28,
+    "charsMain": 1156,
+    "palabrasMain": 170,
+    "h1": [
+      {
+        "t": "",
+        "f": "Albert Sans 500  13/19.5 center",
+        "sr": false
+      },
+      {
+        "t": "About",
+        "f": "Albert Sans 500  14/21 start",
+        "sr": true
+      }
+    ],
+    "fondoBody": "rgb(255, 255, 255)",
+    "sw": 1440,
+    "bloques": [
+      {
+        "n": 1,
+        "tag": "div",
+        "cls": "relative lg:sticky lg:top-0 w-full aspect-2/3 bg-zinc-200 overflow-hid",
+        "y": 0,
+        "alto": 1056,
+        "x": 0,
+        "ancho": 704,
+        "fondo": "lab(90.6853 0.399232 -1.45452)",
+        "pos": "sticky",
+        "imgs": 1,
+        "sangre": 0,
+        "muestras": [
+          "704x1056c"
+        ],
+        "chars": 0,
+        "palabras": 0,
+        "titulo": null,
+        "tituloFuente": null,
+        "texto": "",
+        "enlaces": 0,
+        "botones": 0
+      },
+      {
+        "n": 2,
+        "tag": "div",
+        "cls": "flex flex-col justify-center items-center py-6 lg:py-6 px-2 lg:pl-0 lg",
+        "y": 0,
+        "alto": 900,
+        "x": 736,
+        "ancho": 704,
+        "fondo": "rgba(0, 0, 0, 0)",
+        "pos": "sticky",
+        "imgs": 0,
+        "sangre": 0,
+        "muestras": [],
+        "chars": 1156,
+        "palabras": 170,
+        "titulo": "About",
+        "tituloFuente": "Albert Sans 500  14/21 start",
+        "texto": "About Isamaya Ffrench is a creative director, designer and curator whose work spans beauty, fashion, object design and contemporary culture. Originally trained ",
+        "enlaces": 0,
+        "botones": 0
+      }
+    ]
+  },
+  "altoCaptura": 1567,
+  "recortada": false
+}

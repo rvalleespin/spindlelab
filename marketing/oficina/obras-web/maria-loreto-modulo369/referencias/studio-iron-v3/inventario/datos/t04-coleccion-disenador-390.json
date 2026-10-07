@@ -1,0 +1,272 @@
+{
+  "nombre": "t04-coleccion-disenador",
+  "ruta": "/collections/andu-masebo",
+  "ancho": 390,
+  "alto": 844,
+  "estado": 200,
+  "estructura0": {
+    "url": "https://www.studio-iron.com/collections/andu-masebo",
+    "titulo": "Andu Masebo — Studio Iron",
+    "alto": 2710,
+    "vw": 390,
+    "vh": 844,
+    "contenedor": "main.albert_sans_6ab7f873-module__7VJibG__className wra",
+    "nBloques": 3,
+    "imgsMain": 6,
+    "imgsTotal": 33,
+    "charsMain": 1161,
+    "palabrasMain": 173,
+    "h1": [
+      {
+        "t": "",
+        "f": "Albert Sans 500  13/19.5 center",
+        "sr": false
+      },
+      {
+        "t": "Andu Masebo",
+        "f": "bookish 500 italic 26/20 center",
+        "sr": false
+      }
+    ],
+    "fondoBody": "rgb(255, 255, 255)",
+    "sw": 390,
+    "bloques": [
+      {
+        "n": 1,
+        "tag": "section",
+        "cls": "mt-[38px] lg:mt-[29px]",
+        "y": 38,
+        "alto": 380,
+        "x": 0,
+        "ancho": 390,
+        "fondo": "rgba(0, 0, 0, 0)",
+        "pos": "static",
+        "imgs": 1,
+        "sangre": 1,
+        "muestras": [
+          "390x312c"
+        ],
+        "chars": 11,
+        "palabras": 2,
+        "titulo": "Andu Masebo",
+        "tituloFuente": "bookish 500 italic 26/20 center",
+        "texto": "Andu Masebo",
+        "enlaces": 0,
+        "botones": 0
+      },
+      {
+        "n": 2,
+        "tag": "div",
+        "cls": "relative z-10 transition-[margin] duration-300 ease-out lg:mx-[0px]",
+        "y": 418,
+        "alto": 641,
+        "x": 0,
+        "ancho": 390,
+        "fondo": "rgb(255, 255, 255)",
+        "pos": "relative",
+        "imgs": 4,
+        "sangre": 0,
+        "muestras": [
+          "192x242c",
+          "192x242c",
+          "192x242c",
+          "192x242c"
+        ],
+        "chars": 125,
+        "palabras": 19,
+        "titulo": "Tubular chair",
+        "tituloFuente": "Albert Sans 500  12/14.4 center",
+        "texto": "Tubular chair ANDU MASEBO Rolling incense burner ANDU MASEBO Coat Stand Study ANDU MASEBO Candleholder No.12 Mini ANDU MASEBO",
+        "enlaces": 8,
+        "botones": 0
+      },
+      {
+        "n": 3,
+        "tag": "div",
+        "cls": "w-full flex flex-col gap-[12px]",
+        "y": 1059,
+        "alto": 1049,
+        "x": 0,
+        "ancho": 390,
+        "fondo": "rgba(0, 0, 0, 0)",
+        "pos": "static",
+        "imgs": 1,
+        "sangre": 1,
+        "muestras": [
+          "390x487c"
+        ],
+        "chars": 1023,
+        "palabras": 152,
+        "titulo": "ANDU",
+        "tituloFuente": "bookish 500  26/20.8 MAY center",
+        "texto": "ABOUT ANDU Andu Masebo is a product and furniture designer from London with a practice rooted in craft, curiosity and storytelling through design. Working in th",
+        "enlaces": 0,
+        "botones": 0
+      }
+    ]
+  },
+  "encima0": {
+    "scrollY": 0,
+    "fijos": [
+      {
+        "tag": "HEADER",
+        "pos": "fixed",
+        "r": [
+          0,
+          0,
+          390,
+          38
+        ],
+        "txt": "",
+        "solapaImgs": 0
+      }
+    ]
+  },
+  "bajando": [
+    {
+      "objetivo": 844,
+      "real": 738,
+      "encima": {
+        "scrollY": 738,
+        "fijos": [
+          {
+            "tag": "HEADER",
+            "pos": "fixed",
+            "r": [
+              0,
+              0,
+              390,
+              38
+            ],
+            "txt": "",
+            "solapaImgs": 2
+          }
+        ]
+      }
+    },
+    {
+      "objetivo": 2110,
+      "real": 1866,
+      "encima": {
+        "scrollY": 1866,
+        "fijos": [
+          {
+            "tag": "HEADER",
+            "pos": "fixed",
+            "r": [
+              0,
+              0,
+              390,
+              38
+            ],
+            "txt": "",
+            "solapaImgs": 0
+          }
+        ]
+      }
+    }
+  ],
+  "estructuraFinal": {
+    "url": "https://www.studio-iron.com/collections/andu-masebo",
+    "titulo": "Andu Masebo — Studio Iron",
+    "alto": 2710,
+    "vw": 390,
+    "vh": 844,
+    "contenedor": "main.albert_sans_6ab7f873-module__7VJibG__className wra",
+    "nBloques": 3,
+    "imgsMain": 6,
+    "imgsTotal": 33,
+    "charsMain": 1161,
+    "palabrasMain": 173,
+    "h1": [
+      {
+        "t": "",
+        "f": "Albert Sans 500  13/19.5 center",
+        "sr": false
+      },
+      {
+        "t": "Andu Masebo",
+        "f": "bookish 500 italic 26/20 center",
+        "sr": false
+      }
+    ],
+    "fondoBody": "rgb(255, 255, 255)",
+    "sw": 390,
+    "bloques": [
+      {
+        "n": 1,
+        "tag": "section",
+        "cls": "mt-[38px] lg:mt-[29px]",
+        "y": 38,
+        "alto": 380,
+        "x": 0,
+        "ancho": 390,
+        "fondo": "rgba(0, 0, 0, 0)",
+        "pos": "static",
+        "imgs": 1,
+        "sangre": 1,
+        "muestras": [
+          "390x312c"
+        ],
+        "chars": 11,
+        "palabras": 2,
+        "titulo": "Andu Masebo",
+        "tituloFuente": "bookish 500 italic 26/20 center",
+        "texto": "Andu Masebo",
+        "enlaces": 0,
+        "botones": 0
+      },
+      {
+        "n": 2,
+        "tag": "div",
+        "cls": "relative z-10 transition-[margin] duration-300 ease-out lg:mx-[0px]",
+        "y": 418,
+        "alto": 641,
+        "x": 0,
+        "ancho": 390,
+        "fondo": "rgb(255, 255, 255)",
+        "pos": "relative",
+        "imgs": 4,
+        "sangre": 0,
+        "muestras": [
+          "192x242c",
+          "192x242c",
+          "192x242c",
+          "192x242c"
+        ],
+        "chars": 125,
+        "palabras": 19,
+        "titulo": "Tubular chair",
+        "tituloFuente": "Albert Sans 500  12/14.4 center",
+        "texto": "Tubular chair ANDU MASEBO Rolling incense burner ANDU MASEBO Coat Stand Study ANDU MASEBO Candleholder No.12 Mini ANDU MASEBO",
+        "enlaces": 8,
+        "botones": 0
+      },
+      {
+        "n": 3,
+        "tag": "div",
+        "cls": "w-full flex flex-col gap-[12px]",
+        "y": 1059,
+        "alto": 1049,
+        "x": 0,
+        "ancho": 390,
+        "fondo": "rgba(0, 0, 0, 0)",
+        "pos": "static",
+        "imgs": 1,
+        "sangre": 1,
+        "muestras": [
+          "390x487c"
+        ],
+        "chars": 1023,
+        "palabras": 152,
+        "titulo": "ANDU",
+        "tituloFuente": "bookish 500  26/20.8 MAY center",
+        "texto": "ABOUT ANDU Andu Masebo is a product and furniture designer from London with a practice rooted in craft, curiosity and storytelling through design. Working in th",
+        "enlaces": 0,
+        "botones": 0
+      }
+    ]
+  },
+  "altoCaptura": 2710,
+  "recortada": false
+}

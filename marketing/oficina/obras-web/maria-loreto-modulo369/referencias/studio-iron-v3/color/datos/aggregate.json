@@ -1,0 +1,1602 @@
+{
+ "use": {
+  "#0a0a0a": {
+   "count": 1879,
+   "chars": 62924,
+   "area": 897112.2464000002,
+   "props": {
+    "background": 64,
+    "color": 1207,
+    "pseudo-bg::after": 128,
+    "svg-fill": 416,
+    "svg-stroke": 40,
+    "pseudo-color::before": 2,
+    "text-decoration": 22
+   },
+   "regions": {
+    "main": 1036,
+    "menu": 160,
+    "header": 587,
+    "cart": 96
+   },
+   "pages": [
+    "404-1440",
+    "404-390",
+    "about-1440",
+    "about-390",
+    "account-1440",
+    "account-390",
+    "art-1440",
+    "art-390",
+    "artista-phil-hale-1440",
+    "artista-phil-hale-390",
+    "black-metal-1440",
+    "black-metal-390",
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "evento-brompton-1440",
+    "evento-brompton-390",
+    "events-1440",
+    "events-390",
+    "home-1440",
+    "home-390",
+    "ldf-1440",
+    "ldf-390",
+    "obra-record-separator-1440",
+    "obra-record-separator-390",
+    "privacy-1440",
+    "privacy-390",
+    "producto-tubular-1440",
+    "producto-tubular-390",
+    "search-1440",
+    "search-390"
+   ],
+   "samples": [
+    "background: a.skip-link [main]",
+    "color: button.dynamic-menu-module__qpp75q__menuLink.hover-underline \u00abDesign\u00bb [menu]",
+    "color: a.dynamic-menu-module__qpp75q__menuLink.hover-underline \u00abArt\u00bb [menu]",
+    "color: a.dynamic-menu-module__qpp75q__menuLink.hover-underline \u00abLondon Design Festival\u00bb [menu]",
+    "color: a.dynamic-menu-module__qpp75q__menuLink.hover-underline \u00abEvents\u00bb [menu]",
+    "color: a.dynamic-menu-module__qpp75q__menuLink.hover-underline \u00abAbout\u00bb [menu]",
+    "color: button.hover-underline \u00abSearch\u00bb [header]",
+    "pseudo-bg::after: button.dynamic-menu-module__qpp75q__menuLink.hover-underline \u00abcontent=\"\"\u00bb [menu]",
+    "pseudo-bg::after: a.dynamic-menu-module__qpp75q__menuLink.hover-underline \u00abcontent=\"\"\u00bb [menu]",
+    "pseudo-bg::after: button.hover-underline \u00abcontent=\"\"\u00bb [header]"
+   ]
+  },
+  "#ffffff": {
+   "count": 1567,
+   "chars": 10807,
+   "area": 375931709,
+   "props": {
+    "background": 147,
+    "color": 778,
+    "caret": 64,
+    "accent": 32,
+    "svg-fill": 32,
+    "border": 514
+   },
+   "regions": {
+    "main": 671,
+    "header": 32,
+    "cart": 32,
+    "footer": 832
+   },
+   "pages": [
+    "404-1440",
+    "404-390",
+    "about-1440",
+    "about-390",
+    "account-1440",
+    "account-390",
+    "art-1440",
+    "art-390",
+    "artista-phil-hale-1440",
+    "artista-phil-hale-390",
+    "black-metal-1440",
+    "black-metal-390",
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "evento-brompton-1440",
+    "evento-brompton-390",
+    "events-1440",
+    "events-390",
+    "home-1440",
+    "home-390",
+    "ldf-1440",
+    "ldf-390",
+    "obra-record-separator-1440",
+    "obra-record-separator-390",
+    "privacy-1440",
+    "privacy-390",
+    "producto-tubular-1440",
+    "producto-tubular-390",
+    "search-1440",
+    "search-390"
+   ],
+   "samples": [
+    "background: body.antialiased [main]",
+    "background: header.header-module__HqSsuG__header.header-module__HqSsuG__solid.albert_sans_d07bd869-module__vNvuEW__className [header]",
+    "background: main.albert_sans_6ab7f873-module__7VJibG__className.wrapper [main]",
+    "background: div.min-h-screen.bg-white.flex.flex-col [main]",
+    "background: div.cart-module__GMR72G__cart.cart-module__GMR72G__isClosed.albert_sans_ea8044c2-module__OGpixG__className [cart]",
+    "color: a.skip-link \u00abSkip to content\u00bb [main]",
+    "color: h2.basis-[60%].uppercase.bookish_82aca62c-module__UWeQgW__className \u00abBe the first to hear about new and news.\u00bb [footer]",
+    "color: span.italic.uppercase.bookish_82aca62c-module__UWeQgW__className \u00abobjects,\u00bb [footer]",
+    "color: span.italic.uppercase.bookish_82aca62c-module__UWeQgW__className \u00abcollections\u00bb [footer]",
+    "color: span.italic.uppercase.bookish_82aca62c-module__UWeQgW__className \u00abstudio\u00bb [footer]"
+   ]
+  },
+  "#000000": {
+   "count": 806,
+   "chars": 3285,
+   "area": 15536584,
+   "props": {
+    "background": 60,
+    "color": 220,
+    "border": 500,
+    "outline": 24,
+    "svg-stroke": 2
+   },
+   "regions": {
+    "footer": 32,
+    "cart": 64,
+    "main": 704,
+    "header": 6
+   },
+   "pages": [
+    "404-1440",
+    "404-390",
+    "about-1440",
+    "about-390",
+    "account-1440",
+    "account-390",
+    "art-1440",
+    "art-390",
+    "artista-phil-hale-1440",
+    "artista-phil-hale-390",
+    "black-metal-1440",
+    "black-metal-390",
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "evento-brompton-1440",
+    "evento-brompton-390",
+    "events-1440",
+    "events-390",
+    "home-1440",
+    "home-390",
+    "ldf-1440",
+    "ldf-390",
+    "obra-record-separator-1440",
+    "obra-record-separator-390",
+    "privacy-1440",
+    "privacy-390",
+    "producto-tubular-1440",
+    "producto-tubular-390",
+    "search-1440",
+    "search-390"
+   ],
+   "samples": [
+    "background: footer.bg-black.text-white.p-[12px].lg:p-[18px] [footer]",
+    "color: button.text-black.text-[12px].tracking-widest.uppercase \u00abClose\u00bb [cart]",
+    "border: button.text-[11px].tracking-[0.18em].uppercase.border-b \u00abBottom 1px\u00bb [cart]",
+    "color: p.bookish_82aca62c-module__UWeQgW__className.leading-[0.9].lg:text-4xl.text-[26px] \u00abSelected artworks Available through Stud\u00bb [main]",
+    "border: button.bookish_82aca62c-module__UWeQgW__className.inline-block.border.border-black \u00abTop 1px\u00bb [main]",
+    "border: button.bookish_82aca62c-module__UWeQgW__className.inline-block.border.border-black \u00abRight 1px\u00bb [main]",
+    "border: button.bookish_82aca62c-module__UWeQgW__className.inline-block.border.border-black \u00abBottom 1px\u00bb [main]",
+    "border: button.bookish_82aca62c-module__UWeQgW__className.inline-block.border.border-black \u00abLeft 1px\u00bb [main]",
+    "outline: button.relative.h-[60px].overflow-hidden.bg-zinc-100 \u00ab1px solid\u00bb [main]",
+    "color: h1.bookish_82aca62c-module__UWeQgW__className.leading-[0.9].lg:text-4xl.text-[26px] \u00abPhil Hale\u00bb [header]"
+   ]
+  },
+  "#ebebeb": {
+   "count": 411,
+   "chars": 0,
+   "area": 82653706.891684,
+   "props": {
+    "gradient": 279,
+    "pseudo-bg::after": 131,
+    "background": 1
+   },
+   "regions": {
+    "main": 411
+   },
+   "pages": [
+    "black-metal-1440",
+    "black-metal-390",
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "events-1440",
+    "events-390",
+    "home-1440",
+    "home-390",
+    "ldf-1440",
+    "ldf-390",
+    "producto-tubular-1440",
+    "producto-tubular-390"
+   ],
+   "samples": [
+    "gradient: div.relative.w-full.bg-zinc-50.overflow-hidden \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: div.relative.w-full.overflow-hidden.bg-zinc-50 \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: div.relative.w-full.lazy-shimmer \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: div.lazy-shimmer \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: div.product-card-module__3G3cFq__image.relative \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "pseudo-bg::after: div.product-card-module__3G3cFq__image.relative \u00abcontent=\"\"\u00bb [main]",
+    "gradient: img.lazy-image.is-loaded.lg:absolute.inset-0 \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: img.lazy-image.is-loaded.absolute.inset-0 \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: div.gallery-module__rY4c6G__productImage.aspect-4/5.lg:aspect-16/9.lg:max-h-[51vw] \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: div.swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-active \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]"
+   ]
+  },
+  "#e4e4e7": {
+   "count": 283,
+   "chars": 0,
+   "area": 971638,
+   "props": {
+    "background": 3,
+    "border": 280
+   },
+   "regions": {
+    "main": 283
+   },
+   "pages": [
+    "about-1440",
+    "about-390",
+    "black-metal-1440",
+    "black-metal-390",
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "home-1440",
+    "home-390",
+    "producto-tubular-390"
+   ],
+   "samples": [
+    "background: div.relative.lg:sticky.lg:top-0.w-full [main]",
+    "border: button.absolute.left-[8px].lg:left-[16px].top-1/2 \u00abTop 1px\u00bb [main]",
+    "border: button.absolute.left-[8px].lg:left-[16px].top-1/2 \u00abRight 1px\u00bb [main]",
+    "border: button.absolute.left-[8px].lg:left-[16px].top-1/2 \u00abBottom 1px\u00bb [main]",
+    "border: button.absolute.left-[8px].lg:left-[16px].top-1/2 \u00abLeft 1px\u00bb [main]",
+    "border: button.absolute.right-[8px].lg:right-[16px].top-1/2 \u00abTop 1px\u00bb [main]",
+    "border: button.absolute.right-[8px].lg:right-[16px].top-1/2 \u00abRight 1px\u00bb [main]",
+    "border: button.w-[15px].h-[8px].cursor-pointer.box-border \u00abTop 1px\u00bb [main]",
+    "border: button.w-[15px].h-[8px].cursor-pointer.box-border \u00abRight 1px\u00bb [main]",
+    "border: button.w-[15px].h-[8px].cursor-pointer.box-border \u00abBottom 1px\u00bb [main]"
+   ]
+  },
+  "#f6f6f6": {
+   "count": 279,
+   "chars": 0,
+   "area": 64575636,
+   "props": {
+    "gradient": 279
+   },
+   "regions": {
+    "main": 279
+   },
+   "pages": [
+    "black-metal-1440",
+    "black-metal-390",
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "events-1440",
+    "events-390",
+    "home-1440",
+    "home-390",
+    "ldf-1440",
+    "ldf-390",
+    "producto-tubular-1440",
+    "producto-tubular-390"
+   ],
+   "samples": [
+    "gradient: div.relative.w-full.bg-zinc-50.overflow-hidden \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: div.relative.w-full.overflow-hidden.bg-zinc-50 \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: div.relative.w-full.lazy-shimmer \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: div.lazy-shimmer \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: div.product-card-module__3G3cFq__image.relative \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: img.lazy-image.is-loaded.lg:absolute.inset-0 \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: img.lazy-image.is-loaded.absolute.inset-0 \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: div.gallery-module__rY4c6G__productImage.aspect-4/5.lg:aspect-16/9.lg:max-h-[51vw] \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: div.swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-active \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]",
+    "gradient: div.swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-next \u00ablinear-gradient(90deg, rgb(246, 246, 246\u00bb [main]"
+   ]
+  },
+  "#d4d4d8": {
+   "count": 224,
+   "chars": 0,
+   "area": 0,
+   "props": {
+    "border": 224
+   },
+   "regions": {
+    "main": 224
+   },
+   "pages": [
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "home-1440",
+    "home-390"
+   ],
+   "samples": [
+    "border: button.text-[8px].px-[5px].py-[1px].leading-[1.2] \u00abTop 1px\u00bb [main]",
+    "border: button.text-[8px].px-[5px].py-[1px].leading-[1.2] \u00abRight 1px\u00bb [main]",
+    "border: button.text-[8px].px-[5px].py-[1px].leading-[1.2] \u00abBottom 1px\u00bb [main]",
+    "border: button.text-[8px].px-[5px].py-[1px].leading-[1.2] \u00abLeft 1px\u00bb [main]"
+   ]
+  },
+  "#f4f4f5": {
+   "count": 124,
+   "chars": 0,
+   "area": 19386526,
+   "props": {
+    "background": 124
+   },
+   "regions": {
+    "main": 124
+   },
+   "pages": [
+    "art-1440",
+    "art-390",
+    "artista-phil-hale-1440",
+    "artista-phil-hale-390",
+    "black-metal-1440",
+    "black-metal-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "events-1440",
+    "events-390",
+    "home-1440",
+    "home-390",
+    "ldf-1440",
+    "ldf-390"
+   ],
+   "samples": [
+    "background: button.relative.h-[60px].overflow-hidden.bg-zinc-100 [main]",
+    "background: div.relative.w-full.bg-zinc-100 [main]",
+    "background: div.relative.w-full.aspect-[4/5].lg:aspect-[16/9] [main]",
+    "background: div.relative.w-full.aspect-5/4.lg:aspect-21/9 [main]",
+    "background: a.relative.block.w-full.overflow-hidden [main]",
+    "background: div.relative.w-full.h-0.bg-zinc-100 [main]"
+   ]
+  },
+  "#ffffff@0.698": {
+   "count": 96,
+   "chars": 3552,
+   "area": 0,
+   "props": {
+    "color": 64,
+    "text-decoration": 32
+   },
+   "regions": {
+    "footer": 96
+   },
+   "pages": [
+    "404-1440",
+    "404-390",
+    "about-1440",
+    "about-390",
+    "account-1440",
+    "account-390",
+    "art-1440",
+    "art-390",
+    "artista-phil-hale-1440",
+    "artista-phil-hale-390",
+    "black-metal-1440",
+    "black-metal-390",
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "evento-brompton-1440",
+    "evento-brompton-390",
+    "events-1440",
+    "events-390",
+    "home-1440",
+    "home-390",
+    "ldf-1440",
+    "ldf-390",
+    "obra-record-separator-1440",
+    "obra-record-separator-390",
+    "privacy-1440",
+    "privacy-390",
+    "producto-tubular-1440",
+    "producto-tubular-390",
+    "search-1440",
+    "search-390"
+   ],
+   "samples": [
+    "color: span.text-[11px].leading-relaxed.text-white/70 \u00abI agree to receive marketing emails from\u00bb [footer]",
+    "color: a.underline \u00abPrivacy Policy\u00bb [footer]",
+    "text-decoration: a.underline \u00abunderline Privacy Policy\u00bb [footer]"
+   ]
+  },
+  "#52525c": {
+   "count": 56,
+   "chars": 176,
+   "area": 0,
+   "props": {
+    "color": 56
+   },
+   "regions": {
+    "main": 56
+   },
+   "pages": [
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "home-1440",
+    "home-390"
+   ],
+   "samples": [
+    "color: button.text-[8px].px-[5px].py-[1px].leading-[1.2] \u00ab37\u00bb [main]",
+    "color: button.text-[8px].px-[5px].py-[1px].leading-[1.2] \u00ab38\u00bb [main]",
+    "color: button.text-[8px].px-[5px].py-[1px].leading-[1.2] \u00ab39\u00bb [main]",
+    "color: button.text-[8px].px-[5px].py-[1px].leading-[1.2] \u00ab40\u00bb [main]",
+    "color: button.text-[8px].px-[5px].py-[1px].leading-[1.2] \u00ab41\u00bb [main]",
+    "color: button.text-[8px].px-[5px].py-[1px].leading-[1.2] \u00ab42\u00bb [main]",
+    "color: button.text-[8px].px-[5px].py-[1px].leading-[1.2] \u00abChrome Small\u00bb [main]",
+    "color: button.text-[8px].px-[5px].py-[1px].leading-[1.2] \u00abChrome Large\u00bb [main]"
+   ]
+  },
+  "#ffffff@0.4": {
+   "count": 32,
+   "chars": 0,
+   "area": 0,
+   "props": {
+    "border": 32
+   },
+   "regions": {
+    "footer": 32
+   },
+   "pages": [
+    "404-1440",
+    "404-390",
+    "about-1440",
+    "about-390",
+    "account-1440",
+    "account-390",
+    "art-1440",
+    "art-390",
+    "artista-phil-hale-1440",
+    "artista-phil-hale-390",
+    "black-metal-1440",
+    "black-metal-390",
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "evento-brompton-1440",
+    "evento-brompton-390",
+    "events-1440",
+    "events-390",
+    "home-1440",
+    "home-390",
+    "ldf-1440",
+    "ldf-390",
+    "obra-record-separator-1440",
+    "obra-record-separator-390",
+    "privacy-1440",
+    "privacy-390",
+    "producto-tubular-1440",
+    "producto-tubular-390",
+    "search-1440",
+    "search-390"
+   ],
+   "samples": [
+    "border: div.flex.border-b.border-white/40.focus-within:border-white \u00abBottom 1px\u00bb [footer]"
+   ]
+  },
+  "#ffffff@0.502": {
+   "count": 32,
+   "chars": 0,
+   "area": 0,
+   "props": {
+    "placeholder": 32
+   },
+   "regions": {
+    "footer": 32
+   },
+   "pages": [
+    "404-1440",
+    "404-390",
+    "about-1440",
+    "about-390",
+    "account-1440",
+    "account-390",
+    "art-1440",
+    "art-390",
+    "artista-phil-hale-1440",
+    "artista-phil-hale-390",
+    "black-metal-1440",
+    "black-metal-390",
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "evento-brompton-1440",
+    "evento-brompton-390",
+    "events-1440",
+    "events-390",
+    "home-1440",
+    "home-390",
+    "ldf-1440",
+    "ldf-390",
+    "obra-record-separator-1440",
+    "obra-record-separator-390",
+    "privacy-1440",
+    "privacy-390",
+    "producto-tubular-1440",
+    "producto-tubular-390",
+    "search-1440",
+    "search-390"
+   ],
+   "samples": [
+    "placeholder: input.flex-1.bg-transparent.outline-none.py-2 \u00abYour email address\u00bb [footer]"
+   ]
+  },
+  "#e2e2e2": {
+   "count": 9,
+   "chars": 0,
+   "area": 0,
+   "props": {
+    "border": 9
+   },
+   "regions": {
+    "main": 9
+   },
+   "pages": [
+    "producto-tubular-1440",
+    "producto-tubular-390"
+   ],
+   "samples": [
+    "border: button.details-module__HiPw3G__addToCart \u00abTop 1px\u00bb [main]",
+    "border: button.details-module__HiPw3G__addToCart \u00abRight 1px\u00bb [main]",
+    "border: button.details-module__HiPw3G__addToCart \u00abBottom 1px\u00bb [main]",
+    "border: button.details-module__HiPw3G__addToCart \u00abLeft 1px\u00bb [main]"
+   ]
+  },
+  "#e6e5e5": {
+   "count": 8,
+   "chars": 0,
+   "area": 960,
+   "props": {
+    "background": 8
+   },
+   "regions": {
+    "main": 8
+   },
+   "pages": [
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "home-1440",
+    "home-390"
+   ],
+   "samples": [
+    "background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]"
+   ]
+  },
+  "#f575f5": {
+   "count": 8,
+   "chars": 0,
+   "area": 960,
+   "props": {
+    "background": 8
+   },
+   "regions": {
+    "main": 8
+   },
+   "pages": [
+    "coleccion-all-1440",
+    "coleccion-all-390"
+   ],
+   "samples": [
+    "background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]"
+   ]
+  },
+  "#ef8ac0": {
+   "count": 8,
+   "chars": 0,
+   "area": 960,
+   "props": {
+    "background": 8
+   },
+   "regions": {
+    "main": 8
+   },
+   "pages": [
+    "coleccion-all-1440",
+    "coleccion-all-390"
+   ],
+   "samples": [
+    "background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]"
+   ]
+  },
+  "#aef104": {
+   "count": 8,
+   "chars": 0,
+   "area": 960,
+   "props": {
+    "background": 8
+   },
+   "regions": {
+    "main": 8
+   },
+   "pages": [
+    "coleccion-all-1440",
+    "coleccion-all-390"
+   ],
+   "samples": [
+    "background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]"
+   ]
+  },
+  "#ffffff@0.851": {
+   "count": 4,
+   "chars": 0,
+   "area": 6400,
+   "props": {
+    "background": 4
+   },
+   "regions": {
+    "main": 4
+   },
+   "pages": [
+    "black-metal-1440",
+    "black-metal-390"
+   ],
+   "samples": [
+    "background: button.absolute.left-[8px].lg:left-[16px].top-1/2 [main]",
+    "background: button.absolute.right-[8px].lg:right-[16px].top-1/2 [main]"
+   ]
+  },
+  "#3f3f46": {
+   "count": 4,
+   "chars": 884,
+   "area": 0,
+   "props": {
+    "color": 4
+   },
+   "regions": {
+    "main": 4
+   },
+   "pages": [
+    "black-metal-1440",
+    "black-metal-390",
+    "ldf-1440",
+    "ldf-390"
+   ],
+   "samples": [
+    "color: p.text-[12px].leading-[1.55].text-zinc-700.m-0 \u00abDei is part of an ongoing series explori\u00bb [main]"
+   ]
+  },
+  "#f61f1f": {
+   "count": 4,
+   "chars": 0,
+   "area": 480,
+   "props": {
+    "background": 4
+   },
+   "regions": {
+    "main": 4
+   },
+   "pages": [
+    "coleccion-all-1440",
+    "coleccion-all-390"
+   ],
+   "samples": [
+    "background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]"
+   ]
+  },
+  "#ffe500": {
+   "count": 4,
+   "chars": 0,
+   "area": 480,
+   "props": {
+    "background": 4
+   },
+   "regions": {
+    "main": 4
+   },
+   "pages": [
+    "coleccion-all-1440",
+    "coleccion-all-390"
+   ],
+   "samples": [
+    "background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]"
+   ]
+  },
+  "#ffffff@0.902": {
+   "count": 4,
+   "chars": 0,
+   "area": 3136,
+   "props": {
+    "background": 4
+   },
+   "regions": {
+    "main": 4
+   },
+   "pages": [
+    "home-1440"
+   ],
+   "samples": [
+    "background: button.w-7.h-7.flex.items-center [main]"
+   ]
+  },
+  "#000000@0.749": {
+   "count": 4,
+   "chars": 0,
+   "area": 1663290,
+   "props": {
+    "gradient": 4
+   },
+   "regions": {
+    "main": 4
+   },
+   "pages": [
+    "home-1440",
+    "home-390"
+   ],
+   "samples": [
+    "gradient: div.absolute.inset-y-0.left-0.lg:w-[55%] \u00ablinear-gradient(to right, oklab(0 0 0 / \u00bb [main]",
+    "gradient: div.absolute.inset-y-0.left-0.lg:w-[55%] \u00ablinear-gradient(0deg, oklab(0 0 0 / 0.75\u00bb [main]"
+   ]
+  },
+  "#a54dcf": {
+   "count": 2,
+   "chars": 0,
+   "area": 240,
+   "props": {
+    "background": 2
+   },
+   "regions": {
+    "main": 2
+   },
+   "pages": [
+    "coleccion-all-1440",
+    "coleccion-all-390"
+   ],
+   "samples": [
+    "background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]"
+   ]
+  },
+  "#05aa3d": {
+   "count": 2,
+   "chars": 0,
+   "area": 240,
+   "props": {
+    "background": 2
+   },
+   "regions": {
+    "main": 2
+   },
+   "pages": [
+    "coleccion-all-1440",
+    "coleccion-all-390"
+   ],
+   "samples": [
+    "background: button.w-[15px].h-[8px].cursor-pointer.box-border [main]"
+   ]
+  },
+  "#000000@0.35": {
+   "count": 2,
+   "chars": 0,
+   "area": 1356525,
+   "props": {
+    "gradient": 2
+   },
+   "regions": {
+    "main": 2
+   },
+   "pages": [
+    "ldf-1440",
+    "ldf-390"
+   ],
+   "samples": [
+    "gradient: div.absolute.inset-y-0.left-0.pointer-events-none \u00ablinear-gradient(rgba(0, 0, 0, 0) 0%, rgb\u00bb [main]"
+   ]
+  },
+  "#71717b": {
+   "count": 2,
+   "chars": 58,
+   "area": 0,
+   "props": {
+    "color": 2
+   },
+   "regions": {
+    "main": 2
+   },
+   "pages": [
+    "privacy-1440",
+    "privacy-390"
+   ],
+   "samples": [
+    "color: p.text-zinc-500.mb-10 \u00abLast updated: August 27, 2026\u00bb [main]"
+   ]
+  },
+  "#000000@0.02": {
+   "count": 2,
+   "chars": 0,
+   "area": 0,
+   "props": {
+    "box-shadow": 2
+   },
+   "regions": {
+    "main": 2
+   },
+   "pages": [
+    "producto-tubular-1440",
+    "producto-tubular-390"
+   ],
+   "samples": [
+    "box-shadow: div.details-module__HiPw3G__details.lg:absolute.lg:top-[50%].lg:transform \u00abrgba(0, 0, 0, 0.02) 0px 0px 40px 0px\u00bb [main]"
+   ]
+  },
+  "#9f9fa9": {
+   "count": 2,
+   "chars": 13,
+   "area": 144,
+   "props": {
+    "color": 1,
+    "svg-stroke": 1
+   },
+   "regions": {
+    "main": 2
+   },
+   "pages": [
+    "producto-tubular-390"
+   ],
+   "samples": [
+    "color: span.text-xs.tracking-[0.12em].uppercase.text-zinc-400 \u00abTubular chair\u00bb [main]",
+    "svg-stroke: path [main]"
+   ]
+  },
+  "#000000@0.45": {
+   "count": 1,
+   "chars": 0,
+   "area": 760320,
+   "props": {
+    "gradient": 1
+   },
+   "regions": {
+    "main": 1
+   },
+   "pages": [
+    "events-1440"
+   ],
+   "samples": [
+    "gradient: div.absolute.inset-y-0.left-0.w-[55%] \u00ablinear-gradient(to right, rgba(0, 0, 0, \u00bb [main]"
+   ]
+  }
+ },
+ "pairs": [
+  {
+   "fg": "#ffffff",
+   "bg": "#0a0a0a",
+   "overImage": false,
+   "ratio": 19.8,
+   "chars": 480,
+   "sizes": {
+    "12px/500": 480
+   },
+   "pages": [
+    "404-1440",
+    "404-390",
+    "about-1440",
+    "about-390",
+    "account-1440",
+    "account-390",
+    "art-1440",
+    "art-390",
+    "artista-phil-hale-1440",
+    "artista-phil-hale-390",
+    "black-metal-1440",
+    "black-metal-390",
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "evento-brompton-1440",
+    "evento-brompton-390",
+    "events-1440",
+    "events-390",
+    "home-1440",
+    "home-390",
+    "ldf-1440",
+    "ldf-390",
+    "obra-record-separator-1440",
+    "obra-record-separator-390",
+    "privacy-1440",
+    "privacy-390",
+    "producto-tubular-1440",
+    "producto-tubular-390",
+    "search-1440",
+    "search-390"
+   ],
+   "samples": [
+    "404-1440 \u00abSkip to content\u00bb a.skip-link [main] 12px/500",
+    "404-390 \u00abSkip to content\u00bb a.skip-link [main] 12px/500",
+    "about-1440 \u00abSkip to content\u00bb a.skip-link [main] 12px/500",
+    "about-390 \u00abSkip to content\u00bb a.skip-link [main] 12px/500",
+    "account-1440 \u00abSkip to content\u00bb a.skip-link [main] 12px/500",
+    "account-390 \u00abSkip to content\u00bb a.skip-link [main] 12px/500"
+   ],
+   "declared": [
+    "#ffffff"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#0a0a0a",
+   "bg": "#ffffff",
+   "overImage": false,
+   "ratio": 19.8,
+   "chars": 61258,
+   "sizes": {
+    "13px/500": 2598,
+    "14px/500": 38000,
+    "11px/500": 830,
+    "46.8px/500": 72,
+    "16px/500": 1162,
+    "10px/500": 378,
+    "30px/500": 1715,
+    "15px/500": 506,
+    "12px/500": 13624,
+    "36px/500": 11,
+    "26px/500": 11,
+    "12.8px/500": 178,
+    "100.8px/500": 33,
+    "20px/500": 22,
+    "20px/400": 784,
+    "11.2px/500": 32,
+    "14px/700": 1302
+   },
+   "pages": [
+    "404-1440",
+    "404-390",
+    "about-1440",
+    "about-390",
+    "account-1440",
+    "account-390",
+    "art-1440",
+    "art-390",
+    "artista-phil-hale-1440",
+    "artista-phil-hale-390",
+    "black-metal-1440",
+    "black-metal-390",
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "evento-brompton-1440",
+    "evento-brompton-390",
+    "events-1440",
+    "events-390",
+    "home-1440",
+    "home-390",
+    "ldf-1440",
+    "ldf-390",
+    "obra-record-separator-1440",
+    "obra-record-separator-390",
+    "privacy-1440",
+    "privacy-390",
+    "producto-tubular-1440",
+    "producto-tubular-390",
+    "search-1440",
+    "search-390"
+   ],
+   "samples": [
+    "404-1440 \u00abDesign\u00bb button.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+    "404-1440 \u00abArt\u00bb a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+    "404-1440 \u00abLondon Design Festival\u00bb a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+    "404-1440 \u00abEvents\u00bb a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+    "404-1440 \u00abAbout\u00bb a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+    "404-390 \u00abPage NotFound\u00bb h2.leading-[0.8].lg:leading-[0.75].tracking-[-0.01em].text-[ [main] 46.8px/500"
+   ],
+   "declared": [
+    "#0a0a0a"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#0a0a0a",
+   "bg": "#ffffff",
+   "overImage": true,
+   "ratio": 19.8,
+   "chars": 1551,
+   "sizes": {
+    "109.44px/500": 39,
+    "13px/500": 213,
+    "14px/500": 977,
+    "30px/500": 39,
+    "12px/500": 116,
+    "36px/500": 14,
+    "16px/500": 13,
+    "11px/500": 140
+   },
+   "pages": [
+    "404-1440",
+    "about-1440",
+    "account-1440",
+    "art-1440",
+    "artista-phil-hale-1440",
+    "ldf-1440",
+    "obra-record-separator-1440",
+    "privacy-1440",
+    "producto-tubular-1440",
+    "search-1440"
+   ],
+   "samples": [
+    "404-1440 \u00abPage NotFound\u00bb h2.leading-[0.8].lg:leading-[0.75].tracking-[-0.01em].text-[ [main] 109.44px/500",
+    "about-1440 \u00abDesign\u00bb button.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+    "about-1440 \u00abArt\u00bb a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+    "about-1440 \u00abLondon Design Festival\u00bb a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+    "about-1440 \u00abEvents\u00bb a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 13px/500",
+    "about-1440 \u00abAbout\u00bb a.dynamic-menu-module__qpp75q__menuLink.hover-underline.is-a [menu] 13px/500"
+   ],
+   "declared": [
+    "#0a0a0a"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#ffffff",
+   "bg": "#000000",
+   "overImage": false,
+   "ratio": 21.0,
+   "chars": 7874,
+   "sizes": {
+    "37.44px/500": 1032,
+    "12px/500": 3951,
+    "14px/500": 1851,
+    "24px/500": 1040
+   },
+   "pages": [
+    "404-1440",
+    "404-390",
+    "about-1440",
+    "about-390",
+    "account-1440",
+    "account-390",
+    "art-1440",
+    "art-390",
+    "artista-phil-hale-1440",
+    "artista-phil-hale-390",
+    "black-metal-1440",
+    "black-metal-390",
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "evento-brompton-1440",
+    "evento-brompton-390",
+    "events-1440",
+    "events-390",
+    "home-1440",
+    "home-390",
+    "ldf-1440",
+    "ldf-390",
+    "obra-record-separator-1440",
+    "obra-record-separator-390",
+    "privacy-1440",
+    "privacy-390",
+    "producto-tubular-1440",
+    "producto-tubular-390",
+    "search-1440",
+    "search-390"
+   ],
+   "samples": [
+    "404-1440 \u00abBe the first to hear about new\u00bb h2.basis-[60%].uppercase.bookish_82aca62c-module__UWeQgW__cl [footer] 37.44px/500",
+    "404-1440 \u00abobjects,\u00bb span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 37.44px/500",
+    "404-1440 \u00abcollections\u00bb span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 37.44px/500",
+    "404-1440 \u00abstudio\u00bb span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 37.44px/500",
+    "404-1440 \u00abSubscribe \u2192\u00bb button.uppercase.text-xs.tracking-[0.15em].disabled:opacity- [footer] 12px/500",
+    "404-390 \u00abBe the first to hear about new\u00bb h2.basis-[60%].uppercase.bookish_82aca62c-module__UWeQgW__cl [footer] 24px/500"
+   ],
+   "declared": [
+    "#ffffff"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#b2b2b2",
+   "bg": "#000000",
+   "overImage": false,
+   "ratio": 9.9,
+   "chars": 3538,
+   "sizes": {
+    "11px/500": 3538
+   },
+   "pages": [
+    "404-1440",
+    "404-390",
+    "about-1440",
+    "about-390",
+    "account-1440",
+    "account-390",
+    "art-1440",
+    "art-390",
+    "artista-phil-hale-1440",
+    "artista-phil-hale-390",
+    "black-metal-1440",
+    "black-metal-390",
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "evento-brompton-1440",
+    "evento-brompton-390",
+    "events-1440",
+    "events-390",
+    "home-1440",
+    "home-390",
+    "ldf-1440",
+    "ldf-390",
+    "obra-record-separator-1440",
+    "obra-record-separator-390",
+    "privacy-1440",
+    "privacy-390",
+    "producto-tubular-1440",
+    "producto-tubular-390",
+    "search-1440",
+    "search-390"
+   ],
+   "samples": [
+    "404-1440 \u00abI agree to receive marketing e\u00bb span.text-[11px].leading-relaxed.text-white/70 [footer] 11px/500",
+    "404-1440 \u00abPrivacy Policy\u00bb a.underline [footer] 11px/500",
+    "404-390 \u00abI agree to receive marketing e\u00bb span.text-[11px].leading-relaxed.text-white/70 [footer] 11px/500",
+    "404-390 \u00abPrivacy Policy\u00bb a.underline [footer] 11px/500",
+    "about-1440 \u00abI agree to receive marketing e\u00bb span.text-[11px].leading-relaxed.text-white/70 [footer] 11px/500",
+    "about-1440 \u00abPrivacy Policy\u00bb a.underline [footer] 11px/500"
+   ],
+   "declared": [
+    "#ffffff@0.698"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#000000",
+   "bg": "#ffffff",
+   "overImage": false,
+   "ratio": 21.0,
+   "chars": 2775,
+   "sizes": {
+    "12px/500": 1405,
+    "26px/500": 280,
+    "11px/500": 366,
+    "10px/500": 450,
+    "14px/500": 274
+   },
+   "pages": [
+    "404-1440",
+    "404-390",
+    "about-1440",
+    "about-390",
+    "account-1440",
+    "account-390",
+    "art-1440",
+    "art-390",
+    "artista-phil-hale-1440",
+    "artista-phil-hale-390",
+    "black-metal-1440",
+    "black-metal-390",
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "evento-brompton-1440",
+    "evento-brompton-390",
+    "events-1440",
+    "events-390",
+    "home-1440",
+    "home-390",
+    "ldf-1440",
+    "ldf-390",
+    "obra-record-separator-1440",
+    "obra-record-separator-390",
+    "privacy-1440",
+    "privacy-390",
+    "producto-tubular-1440",
+    "producto-tubular-390",
+    "search-1440",
+    "search-390"
+   ],
+   "samples": [
+    "404-1440 \u00abClose\u00bb button.text-black.text-[12px].tracking-widest.uppercase [cart] 12px/500",
+    "404-390 \u00abClose\u00bb button.text-black.text-[12px].tracking-widest.uppercase [cart] 12px/500",
+    "about-1440 \u00abClose\u00bb button.text-black.text-[12px].tracking-widest.uppercase [cart] 12px/500",
+    "about-390 \u00abClose\u00bb button.text-black.text-[12px].tracking-widest.uppercase [cart] 12px/500",
+    "account-1440 \u00abClose\u00bb button.text-black.text-[12px].tracking-widest.uppercase [cart] 12px/500",
+    "account-390 \u00abClose\u00bb button.text-black.text-[12px].tracking-widest.uppercase [cart] 12px/500"
+   ],
+   "declared": [
+    "#000000"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#000000",
+   "bg": "#ffffff",
+   "overImage": true,
+   "ratio": 21.0,
+   "chars": 175,
+   "sizes": {
+    "36px/500": 146,
+    "80.64px/500": 11,
+    "10px/500": 18
+   },
+   "pages": [
+    "art-1440",
+    "artista-phil-hale-1440",
+    "black-metal-1440",
+    "coleccion-all-1440",
+    "disenador-gast-1440",
+    "evento-brompton-1440",
+    "events-1440",
+    "producto-tubular-1440"
+   ],
+   "samples": [
+    "art-1440 \u00abSelected artworks Available th\u00bb p.bookish_82aca62c-module__UWeQgW__className.leading-[0.9].l [main] 36px/500",
+    "artista-phil-hale-1440 \u00abPhil Hale\u00bb h1.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [header] 36px/500",
+    "black-metal-1440 \u00abBlack Metal\u00bb h1.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [header] 36px/500",
+    "coleccion-all-1440 \u00abAll Objects\u00bb h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [main] 36px/500",
+    "disenador-gast-1440 \u00abGast Studio\u00bb h1.bookish_82aca62c-module__UWeQgW__className.text-[26px].le [main] 80.64px/500",
+    "evento-brompton-1440 \u00abStudio Iron at Brompton Design\u00bb h1.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [header] 36px/500"
+   ],
+   "declared": [
+    "#000000"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#ffffff",
+   "bg": "#f4f4f5",
+   "overImage": true,
+   "ratio": 1.1,
+   "chars": 1259,
+   "sizes": {
+    "11px/500": 30,
+    "36px/500": 65,
+    "14px/500": 83,
+    "12px/500": 997,
+    "10px/500": 40,
+    "144px/500": 22,
+    "89.7px/500": 22
+   },
+   "pages": [
+    "black-metal-1440",
+    "ldf-1440",
+    "ldf-390"
+   ],
+   "samples": [
+    "black-metal-1440 \u00abDESIGN\u00bb p.uppercase.tracking-[0.15em].leading-[0.8].text-[11px] [main] 11px/500",
+    "black-metal-1440 \u00abStem vase\u00bb h2.bookish_82aca62c-module__UWeQgW__className.italic.m-0.lea [main] 36px/500",
+    "black-metal-1440 \u00abGast Studio\u00bb p.bookish_82aca62c-module__UWeQgW__className.uppercase.leadi [main] 14px/500",
+    "black-metal-1440 \u00abIn addition to their predomina\u00bb p.text-[12px].leading-[1.55].m-0.mb-[36px] [main] 12px/500",
+    "black-metal-1440 \u00abShop now\u00bb a.bookish_82aca62c-module__UWeQgW__className.inline-block.bo [main] 10px/500",
+    "ldf-1440 \u00abLondon Design Festival\u00bb h2.bookish_82aca62c-module__UWeQgW__className.italic.leading [main] 144px/500"
+   ],
+   "declared": [
+    "#ffffff"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#3f3f46",
+   "bg": "#ffffff",
+   "overImage": false,
+   "ratio": 10.44,
+   "chars": 884,
+   "sizes": {
+    "12px/500": 884
+   },
+   "pages": [
+    "black-metal-1440",
+    "black-metal-390",
+    "ldf-1440",
+    "ldf-390"
+   ],
+   "samples": [
+    "black-metal-1440 \u00abDei is part of an ongoing seri\u00bb p.text-[12px].leading-[1.55].text-zinc-700.m-0 [main] 12px/500",
+    "black-metal-390 \u00abDei is part of an ongoing seri\u00bb p.text-[12px].leading-[1.55].text-zinc-700.m-0 [main] 12px/500",
+    "ldf-1440 \u00abDei is part of an ongoing seri\u00bb p.text-[12px].leading-[1.55].text-zinc-700.m-0 [main] 12px/500",
+    "ldf-390 \u00abDei is part of an ongoing seri\u00bb p.text-[12px].leading-[1.55].text-zinc-700.m-0 [main] 12px/500"
+   ],
+   "declared": [
+    "#3f3f46"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#4d4d4d",
+   "bg": "#ffffff",
+   "overImage": false,
+   "ratio": 8.45,
+   "chars": 128,
+   "sizes": {
+    "9px/500": 128
+   },
+   "pages": [
+    "black-metal-390"
+   ],
+   "samples": [
+    "black-metal-390 \u00abKouros Maghsoudi\u00bb p.text-black.uppercase.text-[9px].tracking-[0.18em] [main] 9px/500",
+    "black-metal-390 \u00abCRUDA\u00bb p.text-black.uppercase.text-[9px].tracking-[0.18em] [main] 9px/500",
+    "black-metal-390 \u00abBernardo Martins\u00bb p.text-black.uppercase.text-[9px].tracking-[0.18em] [main] 9px/500",
+    "black-metal-390 \u00abGast Studio\u00bb p.text-black.uppercase.text-[9px].tracking-[0.18em] [main] 9px/500",
+    "black-metal-390 \u00abAtelier Fomenta\u00bb p.text-black.uppercase.text-[9px].tracking-[0.18em] [main] 9px/500"
+   ],
+   "declared": [
+    "#000000"
+   ],
+   "opacity": [
+    0.7
+   ]
+  },
+  {
+   "fg": "#52525c",
+   "bg": "#ffffff",
+   "overImage": false,
+   "ratio": 7.72,
+   "chars": 176,
+   "sizes": {
+    "8px/500": 176
+   },
+   "pages": [
+    "coleccion-all-1440",
+    "coleccion-all-390",
+    "disenador-gast-1440",
+    "disenador-gast-390",
+    "home-1440",
+    "home-390"
+   ],
+   "samples": [
+    "coleccion-all-1440 \u00ab37\u00bb button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+    "coleccion-all-1440 \u00ab38\u00bb button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+    "coleccion-all-1440 \u00ab39\u00bb button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+    "coleccion-all-1440 \u00ab40\u00bb button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+    "coleccion-all-1440 \u00ab41\u00bb button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500",
+    "coleccion-all-390 \u00ab37\u00bb button.text-[8px].px-[5px].py-[1px].leading-[1.2] [main] 8px/500"
+   ],
+   "declared": [
+    "#52525c"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#ffffff",
+   "bg": "#000000",
+   "overImage": true,
+   "ratio": 21.0,
+   "chars": 30,
+   "sizes": {
+    "37.44px/500": 8,
+    "12px/500": 17,
+    "14px/500": 5
+   },
+   "pages": [
+    "evento-brompton-1440"
+   ],
+   "samples": [
+    "evento-brompton-1440 \u00abobjects,\u00bb span.italic.uppercase.bookish_82aca62c-module__UWeQgW__class [footer] 37.44px/500",
+    "evento-brompton-1440 \u00abSubscribe \u2192\u00bb button.uppercase.text-xs.tracking-[0.15em].disabled:opacity- [footer] 12px/500",
+    "evento-brompton-1440 \u00abStudio\u00bb p.text-[12px].tracking-[0.12em].uppercase.pb-2 [footer] 12px/500",
+    "evento-brompton-1440 \u00abAbout\u00bb a.text-sm.hover:text-white/70 [footer] 14px/500"
+   ],
+   "declared": [
+    "#ffffff"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#b2b2b2",
+   "bg": "#000000",
+   "overImage": true,
+   "ratio": 9.9,
+   "chars": 14,
+   "sizes": {
+    "11px/500": 14
+   },
+   "pages": [
+    "evento-brompton-1440"
+   ],
+   "samples": [
+    "evento-brompton-1440 \u00abPrivacy Policy\u00bb a.underline [footer] 11px/500"
+   ],
+   "declared": [
+    "#ffffff@0.698"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#ffffff",
+   "bg": "#ffffff",
+   "overImage": true,
+   "ratio": 1.0,
+   "chars": 1164,
+   "sizes": {
+    "48px/500": 77,
+    "12px/500": 89,
+    "15px/500": 455,
+    "11px/500": 50,
+    "26px/500": 38,
+    "13px/500": 455
+   },
+   "pages": [
+    "events-1440",
+    "home-1440",
+    "home-390"
+   ],
+   "samples": [
+    "events-1440 \u00abStudio Iron at Brompton Design\u00bb h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [main] 48px/500",
+    "events-1440 \u00ab12 \u2013 20 Sept 2026\u00bb span [main] 12px/500",
+    "events-1440 \u00abLevel 1, 3 Cromwell Place, Cro\u00bb span [main] 12px/500",
+    "home-1440 \u00abLondon Design Festival\u00bb h2.bookish_82aca62c-module__UWeQgW__className.leading-[0.9]. [main] 48px/500",
+    "home-1440 \u00abThe group exhibition embraces \u00bb p.text-[13px].lg:text-[15px].leading-[1.4].max-w-[40ch] [main] 15px/500",
+    "home-1440 \u00abDiscover\u00bb span.mt-[6px].inline-block.lg:self-start.text-[11px] [main] 11px/500"
+   ],
+   "declared": [
+    "#ffffff"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#000000",
+   "bg": "#f4f4f5",
+   "overImage": true,
+   "ratio": 19.11,
+   "chars": 207,
+   "sizes": {
+    "11px/500": 6,
+    "36px/500": 19,
+    "14px/500": 15,
+    "12px/500": 159,
+    "10px/500": 8
+   },
+   "pages": [
+    "ldf-1440"
+   ],
+   "samples": [
+    "ldf-1440 \u00abDESIGN\u00bb p.uppercase.tracking-[0.15em].leading-[0.8].text-[11px] [main] 11px/500",
+    "ldf-1440 \u00abRubber Table Medium\u00bb h2.bookish_82aca62c-module__UWeQgW__className.italic.m-0.lea [main] 36px/500",
+    "ldf-1440 \u00abAtelier Fomenta\u00bb p.bookish_82aca62c-module__UWeQgW__className.uppercase.leadi [main] 14px/500",
+    "ldf-1440 \u00abThe series of Rubber Tables ex\u00bb p.text-[12px].leading-[1.55].m-0.mb-[36px] [main] 12px/500",
+    "ldf-1440 \u00abShop now\u00bb a.bookish_82aca62c-module__UWeQgW__className.inline-block.bo [main] 10px/500"
+   ],
+   "declared": [
+    "#000000"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#71717b",
+   "bg": "#ffffff",
+   "overImage": true,
+   "ratio": 4.83,
+   "chars": 29,
+   "sizes": {
+    "14px/500": 29
+   },
+   "pages": [
+    "privacy-1440"
+   ],
+   "samples": [
+    "privacy-1440 \u00abLast updated: August 27, 2026\u00bb p.text-zinc-500.mb-10 [main] 14px/500"
+   ],
+   "declared": [
+    "#71717b"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#71717b",
+   "bg": "#ffffff",
+   "overImage": false,
+   "ratio": 4.83,
+   "chars": 29,
+   "sizes": {
+    "14px/500": 29
+   },
+   "pages": [
+    "privacy-390"
+   ],
+   "samples": [
+    "privacy-390 \u00abLast updated: August 27, 2026\u00bb p.text-zinc-500.mb-10 [main] 14px/500"
+   ],
+   "declared": [
+    "#71717b"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#9f9fa9",
+   "bg": "#ffffff",
+   "overImage": false,
+   "ratio": 2.62,
+   "chars": 13,
+   "sizes": {
+    "12px/500": 13
+   },
+   "pages": [
+    "producto-tubular-390"
+   ],
+   "samples": [
+    "producto-tubular-390 \u00abTubular chair\u00bb span.text-xs.tracking-[0.12em].uppercase.text-zinc-400 [main] 12px/500"
+   ],
+   "declared": [
+    "#9f9fa9"
+   ],
+   "opacity": [
+    1
+   ]
+  },
+  {
+   "fg": "#0a0a0a",
+   "bg": "#ebebeb",
+   "overImage": false,
+   "ratio": 16.61,
+   "chars": 115,
+   "sizes": {
+    "11px/500": 115
+   },
+   "pages": [
+    "producto-tubular-390"
+   ],
+   "samples": [
+    "producto-tubular-390 \u00abMade to order. Allow 10 weeks \u00bb span [main] 11px/500"
+   ],
+   "declared": [
+    "#0a0a0a"
+   ],
+   "opacity": [
+    1
+   ]
+  }
+ ]
+}

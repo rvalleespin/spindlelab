@@ -1,0 +1,77 @@
+{
+ "/pages/london-design-festival": {
+  "sw": [],
+  "botones": [],
+  "sticky": [
+   "w-full max-w-[100%] flex flex-col min-[1024px]:sticky min-[1",
+   "w-full max-w-[100%] flex flex-col min-[1024px]:sticky min-[1",
+   "w-full max-w-[100%] flex flex-col min-[1024px]:sticky min-[1",
+   "w-full max-w-[100%] flex flex-col min-[1024px]:sticky min-[1",
+   "w-full max-w-[100%] flex flex-col min-[1024px]:sticky min-[1"
+  ],
+  "h": 24150
+ },
+ "/pages/about": {
+  "sw": [],
+  "botones": [],
+  "sticky": [
+   "relative lg:sticky lg:top-0 w-full aspect-2/3 bg-zinc-200 ov",
+   "flex flex-col justify-center items-center py-6 lg:py-6 px-2 "
+  ],
+  "h": 1567
+ },
+ "/events/studio-iron-at-brompton-design-district": {
+  "sw": [],
+  "botones": [],
+  "sticky": [],
+  "h": 900
+ },
+ "/events/in-plain-sight": {
+  "sw": [
+   {
+    "effect": "slide",
+    "speed": 500,
+    "loop": true,
+    "spv": "auto",
+    "auto": false,
+    "n": 20
+   }
+  ],
+  "botones": [
+   "Previous",
+   "Next"
+  ],
+  "sticky": [],
+  "h": 1566
+ },
+ "/events/studio-iron-x-saatchi-yates": {
+  "sw": [
+   {
+    "effect": "slide",
+    "speed": 500,
+    "loop": true,
+    "spv": "auto",
+    "auto": false,
+    "n": 15
+   }
+  ],
+  "botones": [
+   "Previous",
+   "Next"
+  ],
+  "sticky": [],
+  "h": 3902
+ },
+ "/pages/privacy": {
+  "sw": [],
+  "botones": [],
+  "sticky": [],
+  "h": 6673
+ },
+ "/pages/shipping-returns": {
+  "sw": [],
+  "botones": [],
+  "sticky": [],
+  "h": 2898
+ }
+}

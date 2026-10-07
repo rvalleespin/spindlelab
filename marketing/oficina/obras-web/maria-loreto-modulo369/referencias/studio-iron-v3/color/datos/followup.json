@@ -1,0 +1,479 @@
+{
+ "submenu": {
+  "err": "nf [class*=\"dynamic-menu-module__qpp75q__submenu\"]"
+ },
+ "designAfter": {
+  "tf": "matrix(1, 0, 0, 1, 0, 0)",
+  "bg": "rgb(10, 10, 10)",
+  "h": "1px",
+  "bottom": "-2px"
+ },
+ "enquireBtn": {
+  "disabled": true,
+  "bg": "rgb(0, 0, 0)",
+  "color": "rgb(255, 255, 255)",
+  "op": "0.4",
+  "cls": "mt-[14px] px-2 w-full py-[14px] bg-black text-white text-[11px] tracking-[0.1em] uppercase disabled:opacity-40 !text-center"
+ },
+ "enquireInputs": [
+  {
+   "bg": "lab(96.1634 0.0993311 -0.364041)",
+   "bb": "lab(84.9837 0.601262 -2.17986) 1px",
+   "h": 54,
+   "label": "lab(47.8878 1.65477 -5.77283) 14px"
+  },
+  {
+   "bg": "lab(96.1634 0.0993311 -0.364041)",
+   "bb": "lab(84.9837 0.601262 -2.17986) 1px",
+   "h": 54,
+   "label": "lab(47.8878 1.65477 -5.77283) 14px"
+  }
+ ],
+ "enquireFocus": {
+  "bg": "lab(96.1634 0.0993311 -0.364041)",
+  "bb": "lab(84.9837 0.601262 -2.17986) 1px",
+  "outline": "none 3px rgb(0, 0, 0)",
+  "shadow": "none",
+  "label": "lab(47.8878 1.65477 -5.77283) 14px none"
+ },
+ "mobileMenu": {
+  "label": "mobile-menu-390",
+  "url": "https://www.studio-iron.com/",
+  "title": "Curated objects from independent designers — Studio Iron — Studio Iron",
+  "scrollH": 844,
+  "w": 390,
+  "colors": [
+   {
+    "prop": "background",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 329160,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.lg:hidden.fixed.top-0.left-0 [main]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 7,
+    "area": 0,
+    "chars": 55,
+    "regions": {
+     "menu": 5,
+     "main": 2
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.dynamic-menu-module__qpp75q__hasSubmenu.hover-underline «Design» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Art» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «London Design Festival» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «Events» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «About» [menu]",
+     "a.flex.items-center.gap-2.py-3 «Account» [main]"
+    ]
+   },
+   {
+    "prop": "pseudo-bg::after",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 5,
+    "area": 831.3592000000001,
+    "chars": 0,
+    "regions": {
+     "menu": 5
+    },
+    "samples": [
+     "button.dynamic-menu-module__qpp75q__menuLink.dynamic-menu-module__qpp75q__hasSubmenu.hover-underline «content=\"\"» [menu]",
+     "a.dynamic-menu-module__qpp75q__menuLink.hover-underline «content=\"\"» [menu]"
+    ]
+   },
+   {
+    "prop": "svg-stroke",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 41,
+    "chars": 0,
+    "regions": {
+     "menu": 1
+    },
+    "samples": [
+     "path [menu]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#e4e4e7",
+    "rgba": [
+     228,
+     228,
+     231,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.px-3.py-1.flex.flex-row «Top 1px» [main]"
+    ]
+   }
+  ],
+  "pairs": [
+   {
+    "fg": "#0a0a0a",
+    "fgDeclared": "#0a0a0a",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": true,
+    "ratio": 19.8,
+    "chars": 42,
+    "count": 5,
+    "samples": [
+     "«Design» button.dynamic-menu-module__qpp75q__menuLink.dynamic-menu-mo [menu] 38px/500",
+     "«Art» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 38px/500",
+     "«London Design Festival» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 38px/500",
+     "«Events» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 38px/500",
+     "«About» a.dynamic-menu-module__qpp75q__menuLink.hover-underline [menu] 38px/500"
+    ],
+    "sizes": {
+     "38px/500": 42
+    }
+   },
+   {
+    "fg": "#0a0a0a",
+    "fgDeclared": "#0a0a0a",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": false,
+    "ratio": 19.8,
+    "chars": 13,
+    "count": 2,
+    "samples": [
+     "«Account» a.flex.items-center.gap-2.py-3 [main] 12px/500",
+     "«Search» button.flex.items-center.gap-2.py-2 [main] 12px/500"
+    ],
+    "sizes": {
+     "12px/500": 13
+    }
+   }
+  ],
+  "selection": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(10, 10, 10)"
+  },
+  "theme": [
+   "#ffffff"
+  ],
+  "imgCount": 66,
+  "imgBgs": {
+   "img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal": 2,
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal": 22,
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal": 15,
+   "img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal": 27
+  },
+  "rootVars": {
+   "--tw-ring-offset-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-100": "lab(96.1634% .0993311 -.364041) => #f4f4f5",
+   "--tw-ring-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-200": "lab(90.6853% .399232 -1.45452) => #e4e4e7",
+   "--color-gray-800": "lab(16.1051% -1.18239 -11.7533) => #1e2939",
+   "--color-green-600": "lab(59.0978% -58.6621 41.2579) => #00a63e",
+   "--grey": "#f0f0f0 => #f0f0f0",
+   "--color-zinc-500": "lab(47.8878% 1.65477 -5.77283) => #71717b",
+   "--color-zinc-900": "lab(8.30603% .618205 -2.16572) => #18181b",
+   "--color-neutral-500": "lab(48.496% 0 0) => #737373",
+   "--color-zinc-800": "lab(15.7305% .613764 -2.16959) => #27272a",
+   "--hightlight": "#fc1701 => #fc1701",
+   "--tw-inset-ring-shadow": "0 0 #0000 => #000000@0",
+   "--background": "#fff => #ffffff",
+   "--tw-gradient-via": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-gray-300": "lab(85.1236% -.612259 -3.7138) => #d1d5dc",
+   "--color-gray-500": "lab(47.7841% -.393182 -10.0268) => #6a7282",
+   "--color-red-700": "lab(40.4273% 67.2623 53.7441) => #c10007",
+   "--color-zinc-50": "lab(98.26% 0 0) => #fafafa",
+   "--swiper-theme-color": "#007aff => #007aff",
+   "--color-gray-50": "lab(98.2596% -.247031 -.706708) => #f9fafb",
+   "--color-gray-900": "lab(8.11897% .811279 -12.254) => #101828",
+   "--tw-inset-shadow": "0 0 #0000 => #000000@0",
+   "--tw-ring-offset-color": "#fff => #ffffff",
+   "--color-zinc-400": "lab(65.6464% 1.53497 -5.42429) => #9f9fa9",
+   "--color-red-400": "lab(63.7053% 60.745 31.3109) => #ff6467",
+   "--tw-gradient-from": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-white": "#fff => #ffffff",
+   "--color-gray-400": "lab(65.9269% -.832707 -8.17473) => #99a1af",
+   "--color-gray-700": "lab(27.1134% -.956401 -12.3224) => #364153",
+   "--color-zinc-600": "lab(35.1166% 1.78212 -6.1173) => #52525c",
+   "--tw-gradient-to": "rgba(0, 0, 0, 0) => #000000@0",
+   "--muted-text": "#6b6b6b => #6b6b6b",
+   "--color-gray-600": "lab(35.6337% -1.58697 -10.8425) => #4a5565",
+   "--color-blue-600": "lab(44.0605% 29.0279 -86.0352) => #155dfc",
+   "--color-gray-100": "lab(96.1596% -.0823438 -1.13575) => #f3f4f6",
+   "--tw-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-300": "lab(84.9837% .601262 -2.17986) => #d4d4d8",
+   "--color-blue-200": "lab(86.15% -4.04379 -21.0797) => #bedbff",
+   "--color-blue-50": "lab(96.492% -1.14644 -5.11479) => #eff6ff",
+   "--color-gray-200": "lab(91.6229% -.159115 -2.26791) => #e5e7eb",
+   "--color-zinc-700": "lab(26.8019% 1.35387 -4.68303) => #3f3f46",
+   "--color-black": "#000 => #000000",
+   "--foreground": "#0a0a0a => #0a0a0a"
+  },
+  "htmlBg": "rgba(0, 0, 0, 0)",
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(10, 10, 10)"
+ },
+ "mobileDesignClick": "DESIGN",
+ "mobileMenuDesign": {
+  "label": "mobile-menu-design-390",
+  "url": "https://www.studio-iron.com/",
+  "title": "Curated objects from independent designers — Studio Iron — Studio Iron",
+  "scrollH": 844,
+  "w": 390,
+  "colors": [
+   {
+    "prop": "background",
+    "hex": "#ffffff",
+    "rgba": [
+     255,
+     255,
+     255,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 329160,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.lg:hidden.fixed.top-0.left-0 [main]"
+    ]
+   },
+   {
+    "prop": "color",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 29,
+    "area": 0,
+    "chars": 376,
+    "regions": {
+     "main": 29
+    },
+    "samples": [
+     "button.flex.items-center.gap-1.5.px-[12px] «Back» [main]",
+     "span.text-center.text-[13px].leading-[1.2] «All Objects» [main]",
+     "span.text-center.text-[13px].leading-[1.2] «Andu Masebo» [main]",
+     "span.text-center.text-[13px].leading-[1.2] «Anoe Melliou» [main]",
+     "span.text-center.text-[13px].leading-[1.2] «Apohli» [main]",
+     "span.text-center.text-[13px].leading-[1.2] «Atelier Fomenta» [main]"
+    ]
+   },
+   {
+    "prop": "svg-stroke",
+    "hex": "#0a0a0a",
+    "rgba": [
+     10,
+     10,
+     10,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 30,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "path [main]"
+    ]
+   },
+   {
+    "prop": "background",
+    "hex": "#f4f4f5",
+    "rgba": [
+     244,
+     244,
+     245,
+     1
+    ],
+    "visible": true,
+    "count": 26,
+    "area": 651612,
+    "chars": 0,
+    "regions": {
+     "main": 26
+    },
+    "samples": [
+     "div.relative.w-full.aspect-[5/4].bg-zinc-100 [main]"
+    ]
+   },
+   {
+    "prop": "border",
+    "hex": "#e4e4e7",
+    "rgba": [
+     228,
+     228,
+     231,
+     1
+    ],
+    "visible": true,
+    "count": 1,
+    "area": 0,
+    "chars": 0,
+    "regions": {
+     "main": 1
+    },
+    "samples": [
+     "div.px-3.py-1.flex.flex-row «Top 1px» [main]"
+    ]
+   }
+  ],
+  "pairs": [
+   {
+    "fg": "#0a0a0a",
+    "fgDeclared": "#0a0a0a",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": true,
+    "ratio": 19.8,
+    "chars": 227,
+    "count": 19,
+    "samples": [
+     "«Back» button.flex.items-center.gap-1.5.px-[12px] [main] 12px/500",
+     "«All Objects» span.text-center.text-[13px].leading-[1.2] [main] 13px/500",
+     "«Andu Masebo» span.text-center.text-[13px].leading-[1.2] [main] 13px/500",
+     "«Anoe Melliou» span.text-center.text-[13px].leading-[1.2] [main] 13px/500",
+     "«Apohli» span.text-center.text-[13px].leading-[1.2] [main] 13px/500"
+    ],
+    "sizes": {
+     "12px/500": 4,
+     "13px/500": 223
+    }
+   },
+   {
+    "fg": "#0a0a0a",
+    "fgDeclared": "#0a0a0a",
+    "opacity": 1,
+    "bg": "#ffffff",
+    "overImage": false,
+    "ratio": 19.8,
+    "chars": 149,
+    "count": 10,
+    "samples": [
+     "«Atelier Fomenta» span.text-center.text-[13px].leading-[1.2] [main] 13px/500",
+     "«Atelier Moore x Camille Cabane» span.text-center.text-[13px].leading-[1.2] [main] 13px/500",
+     "«Body Amplification Devices» span.text-center.text-[13px].leading-[1.2] [main] 13px/500",
+     "«Buchanan Studio» span.text-center.text-[13px].leading-[1.2] [main] 13px/500",
+     "«Cruda» span.text-center.text-[13px].leading-[1.2] [main] 13px/500"
+    ],
+    "sizes": {
+     "13px/500": 136,
+     "12px/500": 13
+    }
+   }
+  ],
+  "selection": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(10, 10, 10)"
+  },
+  "theme": [
+   "#ffffff"
+  ],
+  "imgCount": 92,
+  "imgBgs": {
+   "img:rgba(0, 0, 0, 0) | parent:lab(96.1634 0.0993311 -0.364041) | op:1 | filter:none | blend:normal": 28,
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:1 | filter:none | blend:normal": 22,
+   "img:rgba(0, 0, 0, 0) | parent:rgba(0, 0, 0, 0) | op:0 | filter:none | blend:normal": 15,
+   "img:rgba(0, 0, 0, 0) | parent:rgb(240, 240, 240) | op:1 | filter:none | blend:normal": 27
+  },
+  "rootVars": {
+   "--tw-ring-offset-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-100": "lab(96.1634% .0993311 -.364041) => #f4f4f5",
+   "--tw-ring-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-200": "lab(90.6853% .399232 -1.45452) => #e4e4e7",
+   "--color-gray-800": "lab(16.1051% -1.18239 -11.7533) => #1e2939",
+   "--color-green-600": "lab(59.0978% -58.6621 41.2579) => #00a63e",
+   "--grey": "#f0f0f0 => #f0f0f0",
+   "--color-zinc-500": "lab(47.8878% 1.65477 -5.77283) => #71717b",
+   "--color-zinc-900": "lab(8.30603% .618205 -2.16572) => #18181b",
+   "--color-neutral-500": "lab(48.496% 0 0) => #737373",
+   "--color-zinc-800": "lab(15.7305% .613764 -2.16959) => #27272a",
+   "--hightlight": "#fc1701 => #fc1701",
+   "--tw-inset-ring-shadow": "0 0 #0000 => #000000@0",
+   "--background": "#fff => #ffffff",
+   "--tw-gradient-via": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-gray-300": "lab(85.1236% -.612259 -3.7138) => #d1d5dc",
+   "--color-gray-500": "lab(47.7841% -.393182 -10.0268) => #6a7282",
+   "--color-red-700": "lab(40.4273% 67.2623 53.7441) => #c10007",
+   "--color-zinc-50": "lab(98.26% 0 0) => #fafafa",
+   "--swiper-theme-color": "#007aff => #007aff",
+   "--color-gray-50": "lab(98.2596% -.247031 -.706708) => #f9fafb",
+   "--color-gray-900": "lab(8.11897% .811279 -12.254) => #101828",
+   "--tw-inset-shadow": "0 0 #0000 => #000000@0",
+   "--tw-ring-offset-color": "#fff => #ffffff",
+   "--color-zinc-400": "lab(65.6464% 1.53497 -5.42429) => #9f9fa9",
+   "--color-red-400": "lab(63.7053% 60.745 31.3109) => #ff6467",
+   "--tw-gradient-from": "rgba(0, 0, 0, 0) => #000000@0",
+   "--color-white": "#fff => #ffffff",
+   "--color-gray-400": "lab(65.9269% -.832707 -8.17473) => #99a1af",
+   "--color-gray-700": "lab(27.1134% -.956401 -12.3224) => #364153",
+   "--color-zinc-600": "lab(35.1166% 1.78212 -6.1173) => #52525c",
+   "--tw-gradient-to": "rgba(0, 0, 0, 0) => #000000@0",
+   "--muted-text": "#6b6b6b => #6b6b6b",
+   "--color-gray-600": "lab(35.6337% -1.58697 -10.8425) => #4a5565",
+   "--color-blue-600": "lab(44.0605% 29.0279 -86.0352) => #155dfc",
+   "--color-gray-100": "lab(96.1596% -.0823438 -1.13575) => #f3f4f6",
+   "--tw-shadow": "0 0 #0000 => #000000@0",
+   "--color-zinc-300": "lab(84.9837% .601262 -2.17986) => #d4d4d8",
+   "--color-blue-200": "lab(86.15% -4.04379 -21.0797) => #bedbff",
+   "--color-blue-50": "lab(96.492% -1.14644 -5.11479) => #eff6ff",
+   "--color-gray-200": "lab(91.6229% -.159115 -2.26791) => #e5e7eb",
+   "--color-zinc-700": "lab(26.8019% 1.35387 -4.68303) => #3f3f46",
+   "--color-black": "#000 => #000000",
+   "--foreground": "#0a0a0a => #0a0a0a"
+  },
+  "htmlBg": "rgba(0, 0, 0, 0)",
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(10, 10, 10)"
+ }
+}

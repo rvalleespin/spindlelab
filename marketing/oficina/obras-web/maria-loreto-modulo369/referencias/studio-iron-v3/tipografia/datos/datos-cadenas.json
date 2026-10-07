@@ -1,0 +1,602 @@
+{
+ "alegreya-400-400": {
+  "evento": {
+   "iou": 0.191,
+   "corr": 0.695,
+   "ancho": 0.936,
+   "alto": 0.952
+  },
+  "hero": {
+   "iou": 0.267,
+   "corr": 0.867,
+   "ancho": 0.944,
+   "alto": 0.96
+  },
+  "enunciado": {
+   "iou": 0.192,
+   "corr": 0.596,
+   "ancho": 0.929,
+   "alto": 0.95
+  },
+  "destacado": {
+   "iou": 0.206,
+   "corr": 0.693,
+   "ancho": 0.937,
+   "alto": 1.015
+  },
+  "h1": {
+   "iou": 0.24,
+   "corr": 0.712,
+   "ancho": 0.937,
+   "alto": 0.889
+  },
+  "titulo": {
+   "iou": 0.223,
+   "corr": 0.703,
+   "ancho": 0.882,
+   "alto": 0.951
+  },
+  "artista": {
+   "iou": 0.197,
+   "corr": 0.661,
+   "ancho": 0.901,
+   "alto": 0.944
+  },
+  "tarjeta": {
+   "iou": 0.202,
+   "corr": 0.696,
+   "ancho": 0.861,
+   "alto": 1.0
+  }
+ },
+ "cardo-400-400": {
+  "evento": {
+   "iou": 0.166,
+   "corr": 0.627,
+   "ancho": 1.044,
+   "alto": 1.092
+  },
+  "hero": {
+   "iou": 0.24,
+   "corr": 0.829,
+   "ancho": 1.057,
+   "alto": 1.048
+  },
+  "enunciado": {
+   "iou": 0.147,
+   "corr": 0.498,
+   "ancho": 1.117,
+   "alto": 1.043
+  },
+  "destacado": {
+   "iou": 0.167,
+   "corr": 0.607,
+   "ancho": 1.1,
+   "alto": 1.062
+  },
+  "h1": {
+   "iou": 0.238,
+   "corr": 0.703,
+   "ancho": 1.112,
+   "alto": 1.159
+  },
+  "titulo": {
+   "iou": 0.277,
+   "corr": 0.863,
+   "ancho": 0.978,
+   "alto": 1.082
+  },
+  "artista": {
+   "iou": 0.352,
+   "corr": 0.836,
+   "ancho": 1.035,
+   "alto": 1.056
+  },
+  "tarjeta": {
+   "iou": 0.298,
+   "corr": 0.784,
+   "ancho": 1.0,
+   "alto": 1.0
+  }
+ },
+ "crimson-pro-400-400": {
+  "evento": {
+   "iou": 0.281,
+   "corr": 0.777,
+   "ancho": 0.963,
+   "alto": 0.881
+  },
+  "hero": {
+   "iou": 0.234,
+   "corr": 0.863,
+   "ancho": 0.948,
+   "alto": 0.88
+  },
+  "enunciado": {
+   "iou": 0.143,
+   "corr": 0.513,
+   "ancho": 0.879,
+   "alto": 0.871
+  },
+  "destacado": {
+   "iou": 0.159,
+   "corr": 0.629,
+   "ancho": 0.871,
+   "alto": 0.877
+  },
+  "h1": {
+   "iou": 0.154,
+   "corr": 0.632,
+   "ancho": 0.898,
+   "alto": 0.889
+  },
+  "titulo": {
+   "iou": 0.19,
+   "corr": 0.731,
+   "ancho": 0.922,
+   "alto": 0.869
+  },
+  "artista": {
+   "iou": 0.185,
+   "corr": 0.624,
+   "ancho": 0.844,
+   "alto": 0.889
+  },
+  "tarjeta": {
+   "iou": 0.203,
+   "corr": 0.658,
+   "ancho": 0.818,
+   "alto": 0.812
+  }
+ },
+ "crimson-text-400-400": {
+  "evento": {
+   "iou": 0.174,
+   "corr": 0.658,
+   "ancho": 0.912,
+   "alto": 0.881
+  },
+  "hero": {
+   "iou": 0.258,
+   "corr": 0.829,
+   "ancho": 0.904,
+   "alto": 0.864
+  },
+  "enunciado": {
+   "iou": 0.141,
+   "corr": 0.487,
+   "ancho": 0.96,
+   "alto": 0.964
+  },
+  "destacado": {
+   "iou": 0.21,
+   "corr": 0.699,
+   "ancho": 0.935,
+   "alto": 0.969
+  },
+  "h1": {
+   "iou": 0.367,
+   "corr": 0.88,
+   "ancho": 0.984,
+   "alto": 1.0
+  },
+  "titulo": {
+   "iou": 0.225,
+   "corr": 0.708,
+   "ancho": 0.878,
+   "alto": 0.885
+  },
+  "artista": {
+   "iou": 0.179,
+   "corr": 0.653,
+   "ancho": 0.915,
+   "alto": 0.944
+  },
+  "tarjeta": {
+   "iou": 0.204,
+   "corr": 0.679,
+   "ancho": 0.898,
+   "alto": 0.938
+  }
+ },
+ "eb-garamond-400-400": {
+  "evento": {
+   "iou": 0.322,
+   "corr": 0.9,
+   "ancho": 0.987,
+   "alto": 0.98
+  },
+  "hero": {
+   "iou": 0.289,
+   "corr": 0.915,
+   "ancho": 0.958,
+   "alto": 0.92
+  },
+  "enunciado": {
+   "iou": 0.529,
+   "corr": 0.935,
+   "ancho": 1.009,
+   "alto": 1.022
+  },
+  "destacado": {
+   "iou": 0.282,
+   "corr": 0.83,
+   "ancho": 1.007,
+   "alto": 0.985
+  },
+  "h1": {
+   "iou": 0.321,
+   "corr": 0.862,
+   "ancho": 1.023,
+   "alto": 1.016
+  },
+  "titulo": {
+   "iou": 0.223,
+   "corr": 0.771,
+   "ancho": 0.933,
+   "alto": 0.967
+  },
+  "artista": {
+   "iou": 0.304,
+   "corr": 0.836,
+   "ancho": 0.986,
+   "alto": 1.0
+  },
+  "tarjeta": {
+   "iou": 0.206,
+   "corr": 0.731,
+   "ancho": 0.947,
+   "alto": 0.938
+  }
+ },
+ "eb-garamond-450-450": {
+  "evento": {
+   "iou": 0.308,
+   "corr": 0.903,
+   "ancho": 1.011,
+   "alto": 0.98
+  },
+  "hero": {
+   "iou": 0.467,
+   "corr": 0.956,
+   "ancho": 0.989,
+   "alto": 0.92
+  },
+  "enunciado": {
+   "iou": 0.517,
+   "corr": 0.912,
+   "ancho": 1.016,
+   "alto": 1.029
+  },
+  "destacado": {
+   "iou": 0.251,
+   "corr": 0.802,
+   "ancho": 1.012,
+   "alto": 1.0
+  },
+  "h1": {
+   "iou": 0.279,
+   "corr": 0.824,
+   "ancho": 1.028,
+   "alto": 1.016
+  },
+  "titulo": {
+   "iou": 0.266,
+   "corr": 0.838,
+   "ancho": 0.958,
+   "alto": 0.967
+  },
+  "artista": {
+   "iou": 0.397,
+   "corr": 0.878,
+   "ancho": 0.993,
+   "alto": 1.0
+  },
+  "tarjeta": {
+   "iou": 0.221,
+   "corr": 0.751,
+   "ancho": 0.952,
+   "alto": 0.938
+  }
+ },
+ "gambetta-400-400": {
+  "evento": {
+   "iou": 0.178,
+   "corr": 0.676,
+   "ancho": 1.045,
+   "alto": 0.918
+  },
+  "hero": {
+   "iou": 0.308,
+   "corr": 0.912,
+   "ancho": 1.044,
+   "alto": 0.944
+  },
+  "enunciado": {
+   "iou": 0.159,
+   "corr": 0.606,
+   "ancho": 0.979,
+   "alto": 1.014
+  },
+  "destacado": {
+   "iou": 0.22,
+   "corr": 0.771,
+   "ancho": 0.971,
+   "alto": 1.031
+  },
+  "h1": {
+   "iou": 0.415,
+   "corr": 0.921,
+   "ancho": 1.0,
+   "alto": 1.032
+  },
+  "titulo": {
+   "iou": 0.327,
+   "corr": 0.884,
+   "ancho": 0.996,
+   "alto": 0.918
+  },
+  "artista": {
+   "iou": 0.239,
+   "corr": 0.678,
+   "ancho": 0.957,
+   "alto": 1.0
+  },
+  "tarjeta": {
+   "iou": 0.15,
+   "corr": 0.723,
+   "ancho": 0.93,
+   "alto": 1.0
+  }
+ },
+ "gambetta-500-500": {
+  "evento": {
+   "iou": 0.228,
+   "corr": 0.676,
+   "ancho": 1.048,
+   "alto": 0.918
+  },
+  "hero": {
+   "iou": 0.343,
+   "corr": 0.887,
+   "ancho": 1.065,
+   "alto": 0.944
+  },
+  "enunciado": {
+   "iou": 0.377,
+   "corr": 0.874,
+   "ancho": 0.997,
+   "alto": 1.014
+  },
+  "destacado": {
+   "iou": 0.439,
+   "corr": 0.914,
+   "ancho": 0.988,
+   "alto": 1.031
+  },
+  "h1": {
+   "iou": 0.599,
+   "corr": 0.961,
+   "ancho": 1.016,
+   "alto": 1.032
+  },
+  "titulo": {
+   "iou": 0.234,
+   "corr": 0.786,
+   "ancho": 1.015,
+   "alto": 0.918
+  },
+  "artista": {
+   "iou": 0.285,
+   "corr": 0.794,
+   "ancho": 0.979,
+   "alto": 1.0
+  },
+  "tarjeta": {
+   "iou": 0.214,
+   "corr": 0.765,
+   "ancho": 0.947,
+   "alto": 1.0
+  }
+ },
+ "instrument-serif-400-400": {
+  "evento": {
+   "iou": 0.151,
+   "corr": 0.64,
+   "ancho": 0.908,
+   "alto": 0.939
+  },
+  "hero": {
+   "iou": 0.256,
+   "corr": 0.783,
+   "ancho": 0.895,
+   "alto": 0.96
+  },
+  "enunciado": {
+   "iou": 0.127,
+   "corr": 0.524,
+   "ancho": 0.717,
+   "alto": 1.079
+  },
+  "destacado": {
+   "iou": 0.148,
+   "corr": 0.601,
+   "ancho": 0.707,
+   "alto": 1.092
+  },
+  "h1": {
+   "iou": 0.161,
+   "corr": 0.63,
+   "ancho": 0.749,
+   "alto": 1.063
+  },
+  "titulo": {
+   "iou": 0.149,
+   "corr": 0.672,
+   "ancho": 0.862,
+   "alto": 0.918
+  },
+  "artista": {
+   "iou": 0.156,
+   "corr": 0.572,
+   "ancho": 0.695,
+   "alto": 1.056
+  },
+  "tarjeta": {
+   "iou": 0.142,
+   "corr": 0.634,
+   "ancho": 0.663,
+   "alto": 1.062
+  }
+ },
+ "newsreader-400-400": {
+  "evento": {
+   "iou": 0.204,
+   "corr": 0.623,
+   "ancho": 1.053,
+   "alto": 0.956
+  },
+  "hero": {
+   "iou": 0.232,
+   "corr": 0.796,
+   "ancho": 1.08,
+   "alto": 0.968
+  },
+  "enunciado": {
+   "iou": 0.188,
+   "corr": 0.604,
+   "ancho": 1.074,
+   "alto": 1.122
+  },
+  "destacado": {
+   "iou": 0.154,
+   "corr": 0.631,
+   "ancho": 1.045,
+   "alto": 1.138
+  },
+  "h1": {
+   "iou": 0.215,
+   "corr": 0.688,
+   "ancho": 1.112,
+   "alto": 0.889
+  },
+  "titulo": {
+   "iou": 0.262,
+   "corr": 0.795,
+   "ancho": 1.055,
+   "alto": 0.951
+  },
+  "artista": {
+   "iou": 0.374,
+   "corr": 0.879,
+   "ancho": 1.0,
+   "alto": 1.111
+  },
+  "tarjeta": {
+   "iou": 0.173,
+   "corr": 0.724,
+   "ancho": 0.957,
+   "alto": 1.0
+  }
+ },
+ "newsreader-400-450": {
+  "evento": {
+   "iou": 0.198,
+   "corr": 0.636,
+   "ancho": 1.053,
+   "alto": 0.956
+  },
+  "hero": {
+   "iou": 0.202,
+   "corr": 0.761,
+   "ancho": 1.106,
+   "alto": 0.968
+  },
+  "enunciado": {
+   "iou": 0.188,
+   "corr": 0.604,
+   "ancho": 1.074,
+   "alto": 1.122
+  },
+  "destacado": {
+   "iou": 0.154,
+   "corr": 0.631,
+   "ancho": 1.045,
+   "alto": 1.138
+  },
+  "h1": {
+   "iou": 0.215,
+   "corr": 0.688,
+   "ancho": 1.112,
+   "alto": 0.889
+  },
+  "titulo": {
+   "iou": 0.198,
+   "corr": 0.726,
+   "ancho": 1.078,
+   "alto": 0.951
+  },
+  "artista": {
+   "iou": 0.374,
+   "corr": 0.879,
+   "ancho": 1.0,
+   "alto": 1.111
+  },
+  "tarjeta": {
+   "iou": 0.173,
+   "corr": 0.724,
+   "ancho": 0.957,
+   "alto": 1.0
+  }
+ },
+ "spectral-400-500": {
+  "evento": {
+   "iou": 0.213,
+   "corr": 0.648,
+   "ancho": 1.048,
+   "alto": 0.969
+  },
+  "hero": {
+   "iou": 0.332,
+   "corr": 0.865,
+   "ancho": 1.082,
+   "alto": 0.984
+  },
+  "enunciado": {
+   "iou": 0.23,
+   "corr": 0.565,
+   "ancho": 1.08,
+   "alto": 0.986
+  },
+  "destacado": {
+   "iou": 0.17,
+   "corr": 0.614,
+   "ancho": 1.058,
+   "alto": 1.0
+  },
+  "h1": {
+   "iou": 0.218,
+   "corr": 0.676,
+   "ancho": 1.1,
+   "alto": 0.952
+  },
+  "titulo": {
+   "iou": 0.242,
+   "corr": 0.774,
+   "ancho": 1.022,
+   "alto": 0.951
+  },
+  "artista": {
+   "iou": 0.351,
+   "corr": 0.728,
+   "ancho": 1.05,
+   "alto": 1.0
+  },
+  "tarjeta": {
+   "iou": 0.389,
+   "corr": 0.864,
+   "ancho": 0.989,
+   "alto": 0.938
+  }
+ }
+}
