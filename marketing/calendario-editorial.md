@@ -97,7 +97,8 @@ solo se sostiene si uno de los tres es barato de producir.
 |---|---|---|---|
 | **lun 5-oct** | B | El cuarto mito: la amonestación es una facultad, no un derecho | ✅ publicado y verificado |
 | **mié 7-oct** | A | Antes de pagar un panel de visibilidad en IA, lo que ya puedes medir gratis | 🟡 aprobado, en cola. Releer la página de Google y `/diagnostico/` antes de publicar |
-| ~~vie 9-oct~~ | — | **Vacío a propósito.** Víspera de fin de semana largo | — |
+| **jue 8-oct** | B | **El día después del Cyber: la base de datos que te quedó** | 🟡 **borrador listo**, `08-jue-cyber-datos/publicar.md`. Pieza de coyuntura, **ventana corta**: sirve el 8 o el 9, después se cae |
+| vie 9-oct | — | Vacío a propósito (víspera de fin de semana largo), o el post del Cyber si se corre | — |
 | **sáb 10 – lun 12** | — | **Fin de semana largo. Cero publicaciones** | — |
 | **mar 13-oct** | **D** | **Reel cara a cámara: el mensaje cerrado.** LinkedIn nativo primero, Instagram después | 🟡 **guion listo**, `13-mar-reel-cara-a-camara/guion.md`. Depende de que Ramón grabe. Si se corre, el jue 15 |
 | vie 16-oct | C | El mensaje cerrado en texto, para quien no vio el video | ⬜ se escribe después del reel, para no pisarlo |
@@ -108,7 +109,24 @@ solo se sostiene si uno de los tres es barato de producir.
 | mié 28-oct | A | Costco: el tráfico desde IA es poco y convierte mejor | ⬜ dato verificado en el transcript del 24-sep. **Falta la apertura**: Ramón descartó partir por la noticia |
 | vie 30-oct | — | Cierre de mes: publicado vs planificado, qué tipo rindió | ⬜ |
 
-**Alternancia verificada:** B → A → D → C → B → A → C/D → B → A. Sin dos del mismo tipo seguidos.
+**Alternancia verificada:** B → A → B → D → C → B → A → C/D → B → A. Sin dos del mismo tipo seguidos.
+
+> **Sobre el CyberMonday (7-oct).** Fue del **lun 5 al mié 7 de octubre** (Cámara de Comercio de
+> Santiago), así que una campaña "para el Cyber" ya no alcanzaba. Lo que sí tiene ventana es el día
+> después, y ese es el post del jue 8. **Decisión tomada: no se hace oferta ni descuento de Cyber.**
+> Es un evento de retail B2C y SpindleLab vende servicios B2B con precios publicados; un descuento
+> por calendario debilita el precio publicado, contradice "mostramos, no prometemos" y choca con la
+> regla de cero urgencia fabricada. Para Verifica y Cumple sería peor: mezclar un plazo legal real
+> con una liquidación de retail le quita seriedad justo al argumento que vende.
+>
+> **Las cifras del Cyber 2026 que circulan son proyecciones previas, no resultados.** El balance de
+> cierre lo publica la CCS en `ecommerceccs.cl` días después. Ninguna pieza cita una cifra del Cyber
+> hasta que ese balance exista, y se lee de la CCS, no de un medio.
+>
+> **Frente aparte, no es de redes:** los participantes del Cyber son una lista pública de ecommerce
+> chilenos que acaban de recibir un volumen grande de datos personales a ocho semanas de la ley. Es
+> un ICP con dolor verificable y fechado. Si se quiere trabajar, va como encargo a Dereck (lista) y
+> Emilia (secuencia), no por este canal.
 
 **Regla de reemplazo, para no romper la alternancia al improvisar:** si una pieza se cae porque su
 requisito no se cumplió (cookies es la candidata), la que entra en su lugar **tiene que ser de un
