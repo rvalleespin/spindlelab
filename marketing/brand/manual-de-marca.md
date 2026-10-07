@@ -1,5 +1,11 @@
 # Manual de marca SpindleLab · v3.0 (7 oct 2026)
 
+> ⚠️ **ESTADO: PROPUESTA EN EVALUACIÓN.** Esta versión la escribió la sesión del estudio web y
+> **la evalúa la sesión de redes sociales** antes de que rija las publicaciones. Hasta que esa
+> sesión deje su veredicto en `marketing/encargos-otras-sesiones/manual-v3-instagram-para-redes.md`,
+> el capítulo §10 (Instagram) y el kit `instagram-v3/` son propuesta, no regla. Las secciones
+> que describen el sitio (§01–§09) copian `driftime.css` y la spec v3, ya medidos.
+
 > Fuente de verdad del sistema de marca. **Esta versión copia el sistema del sitio v3**, que
 > es el lenguaje de driftime.com traducido a SpindleLab y ya construido en
 > `spindlelab-astro/src/styles/driftime.css` y las páginas `/v3/`. Se escribió para que
