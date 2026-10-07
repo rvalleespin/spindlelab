@@ -195,7 +195,8 @@ tirar trabajo bueno. Los terminé.
 
 El manual no las reconcilia y el kit las contradice. **Decide Ramón; yo no las retiro por mi cuenta.**
 
-**Al 7-oct quedan dos resueltas (la 1 y la 2) y una pendiente (la 3), más la de los viernes.**
+**Al 7-oct las tres están resueltas.** Queda fuera de este bloque la de los viernes, que no es de
+marca: el manual no gobierna cadencia. Ver abajo.
 
 1. ✅ **RESUELTA POR RAMÓN el 7-oct: el gancho se queda, con keyword nueva.** `CIRCUITO` pasa a
    **`QUIERO MEJORAS`**. Tiene sentido más allá de la preferencia: `CIRCUITO` era la palabra del
@@ -222,14 +223,49 @@ El manual no las reconcilia y el kit las contradice. **Decide Ramón; yo no las 
    encoge la lámina a unos dos tercios de la pantalla, así que **una pieza que apenas se lee en el
    feed no se lee re-compartida**. Es el argumento más fuerte para no bajar nunca del piso de 33 px.
    El sticker de enlace se pega encima al re-compartir, sin tapar el llamado.
-3. **«Las fichas tipográficas planas SOLAS ya no pasan»** (`:211-214`): toda pieza nueva bajo el
-   mundo del concepto. **`post-titular` y las cinco láminas del carrusel son solo tipografía.** Ojo
-   con el matiz: esa regla nombra el concepto del dominó del sistema v2, y el v3 cambió el sistema
-   entero. Puede que ya esté obsoleta por eso, pero **eso lo dices tú, no yo.**
+3. ✅ **RESUELTA CONTRA EL MANUAL el 7-oct, a pedido de Ramón («usa el manual de marca para
+   resolver esos problemas»). La regla se queda, y el manual la refuerza.**
+
+   **Me había equivocado al plantearla.** Dije que esa regla nombraba el concepto del dominó «del
+   sistema v2, que el v3 reemplazó». **Falso:** §06b está marcado *vigente, sin cambios desde
+   sep-2026*, el titular del hero del sitio v3 («Ahí se corta el circuito») **es** ese territorio, y
+   las dos fotos del dominó siguen en el pool de §07b. Lo que cambió del v2 al v3 fue el sistema
+   visual, no el territorio creativo. **La misma corrección invalida el porqué que había escrito
+   para el cambio de keyword** (que `CIRCUITO` «había quedado huérfana»): la decisión de Ramón vale
+   igual, pero por otra razón, y el manual quedó con la nota aclarándolo. Un porqué equivocado en un
+   manual se reusa después para decidir otra cosa.
+
+   **Lo que dice el manual, y coincide con la regla del 1-sep:** §07b abre con la tesis del sistema,
+   *«el color es el fondo; la imagen es el contenido»*, y §06b pide ejecutar el territorio con
+   **consecuencias físicas, no diagramas**. Una publicación sin ninguna imagen no es este sistema.
+
+   **Escrito como §10.6c:** *ninguna publicación es solo tipografía; toda publicación lleva al menos
+   una imagen del territorio.* El matiz que lo hace practicable: **lo obligatorio es por
+   publicación, no por lámina.** §10.7 sigue diciendo que la imagen es opcional lámina por lámina, y
+   sigue siendo cierto: **a un carrusel le basta UNA lámina con imagen**, no las cinco. Y una
+   salvaguarda, porque si no la regla se cumple mal: **no se mete una foto de relleno**. Si ninguna
+   imagen del pool dice algo sobre esa idea, la pieza no está lista.
+
+   ⚠️ **Lo que falta, y es producción de Bruno, no decisión de Ramón:** `post-titular` y el carrusel
+   **no cumplen hoy**. A `post-titular` el dominó le calza de origen, porque su titular es
+   literalmente §06b. Para el carrusel hay que elegir qué lámina lleva imagen y cuál, y elegirla es
+   dirección de arte: no la fuerzo desde acá para no meter justo la foto de relleno que la regla
+   prohíbe. **Las demás piezas ya cumplen** (post-campo, post-obra y post-foto llevan su fila).
 
 **Y una cuarta que no estaba en la lista y me toca a mí:** `:266` dice **«VIERNES NO SE PUBLICA»**
-(B2B, viernes tarde muerto). El calendario de octubre que armé hoy tiene piezas el vie 16, el vie 23
-y el vie 30. **O esa regla sigue y muevo esos tres slots, o se retira.** Avísame y lo corrijo.
+(B2B, viernes tarde muerto). El calendario de octubre tiene piezas el vie 16, el vie 23 y el vie 30.
+
+**Esta no la resuelve el manual de marca, y conviene decirlo para no forzarlo:** el manual gobierna
+el sistema visual, la voz y las reglas de pieza. **La cadencia no está en él**, ni tiene por qué: un
+manual de marca que decida qué días se publica se vuelve inauditable. Su casa es
+`clientes/spindlelab.md`, donde ya está escrita.
+
+**Lo que sí se puede hacer sin preguntar:** la regla tiene un origen declarado («lectura de
+Metricool + criterio de Ramón»), así que es una regla con dato detrás y se revisa con dato. Hoy no
+hay con qué: el inventario no registra ningún post publicado en viernes, así que **no existe
+evidencia propia ni a favor ni en contra**. Mientras no la haya, **la regla manda y los tres slots
+se mueven**. Lo dejo así en el calendario salvo que Ramón diga otra cosa; moverlos cuesta nada y
+publicar contra una regla suya sin evidencia cuesta credibilidad.
 
 ### Lo que decide Ramón antes de la primera publicación (del propio manual, §10.11)
 

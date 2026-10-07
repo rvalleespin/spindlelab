@@ -613,6 +613,31 @@ de 10.1 y 10.3 quedan en el kit: sirven igual para un reel, que sí usa 1080×19
 movimiento del sitio (§07): entrada de 28 px en 0,8 s con `cubic-bezier(.5, 0, .1, 1)`,
 máximo tres pasos escalonados, nada letra por letra.
 
+### 10.6c · Ninguna publicación es solo tipografía
+
+**Toda publicación lleva al menos una imagen del territorio.** No es una preferencia de esta
+sección: sale de dos reglas que ya están en el manual y se refuerzan entre sí.
+
+- **§07b, la tesis del sistema:** *«el color es el fondo; **la imagen es el contenido**»*. Una
+  publicación sin ninguna imagen no es este sistema, es una ficha de texto con sus colores.
+- **§06b, vigente sin cambios:** el territorio se ejecuta con **consecuencias físicas, no
+  diagramas**. El dominó es el molde, y sus dos fotos están en el pool.
+- **Y la regla de Ramón del 1-sep, que dice lo mismo en otras palabras:** *«las fichas
+  tipográficas planas SOLAS ya no pasan el pase: son sistema, no campaña»*. **Esa regla no quedó
+  obsoleta con el v3** — se revisó el 7-oct contra §06b y §07b, y el manual la respalda.
+
+**Cómo se cumple, por tipo:**
+
+| | Cómo cumple |
+|---|---|
+| `post-campo`, `post-obra`, `post-foto` | Ya cumplen: llevan su fila de piezas |
+| **`post-titular`** | **Hoy NO cumple.** Es puro texto. Necesita una imagen del territorio, y su titular («Ahí se corta el circuito») es literalmente §06b, así que el dominó le calza de origen |
+| **Carrusel** | **Hoy NO cumple**: las cinco láminas son texto. **Basta una lámina con imagen**, no las cinco. §10.7 dice que la imagen es «opcional» lámina por lámina, y sigue siendo cierto: lo obligatorio es **por publicación**, no por lámina |
+
+**Lo que esto NO autoriza:** meter una foto de relleno para cumplir. Si ninguna imagen del pool
+dice algo sobre esa idea, la pieza no está lista; se busca la imagen o se cambia la idea. Una foto
+decorativa bajo un texto es el velo de siempre con otro nombre, y §07b lo prohíbe.
+
 ### 10.7 · Un carrusel: portada, interior y cierre
 
 | | Portada | Interior | Cierre |
@@ -642,9 +667,17 @@ real, no una fricción inventada. La bio sigue siendo el único enlace que se pu
 como respaldo **en el pie de foto**, nunca como segundo llamado dentro de la lámina. En stories,
 el enlace va en el **sticker**.
 
-**La keyword es `QUIERO MEJORAS`** (reemplaza a `CIRCUITO`, que era del concepto del dominó del
-sistema v2). Va en mayúsculas dentro de la línea, porque así se escribe igual en el comentario;
-no es un display ni un rótulo espaciado, así que no choca con §10.4.
+**La keyword es `QUIERO MEJORAS`** (Ramón, 7-oct; reemplaza a `CIRCUITO`). Va en mayúsculas dentro
+de la línea, porque así se escribe igual en el comentario; no es un display ni un rótulo espaciado,
+así que no choca con §10.4.
+
+> **Corrección de una justificación equivocada (7-oct).** Al hacer el cambio se escribió que
+> `CIRCUITO` «había quedado huérfana porque su concepto era del sistema v2». **Es falso:** §06b
+> sigue vigente sin cambios, el territorio del circuito y el dominó está vivo, y el titular del
+> hero del sitio v3 es exactamente ese territorio. Lo que cambió del v2 al v3 fue el sistema
+> visual, no el territorio creativo. La keyword cambió porque `QUIERO MEJORAS` dice lo que la
+> persona quiere, no el nombre interno de la metáfora, y eso es razón suficiente. Queda anotado
+> porque un porqué equivocado en un manual se reusa para decidir otra cosa.
 
 > ⚠️ **La keyword vive en ManyChat, no en la pieza.** Publicar una lámina que pide
 > `QUIERO MEJORAS` mientras ManyChat sigue escuchando `CIRCUITO` deja a quien comenta sin
@@ -682,6 +715,7 @@ El patrón aprobado de `marketing/brand/og-v3/`:
 - **Verdad:** cifras, logos o testimonios inventados · precios distintos a los de `oferta-v3.json` · la cartera de precios · el nombre de un prospecto.
 - **Voz:** «acá» · voseo · raya como muleta · singular en la cuenta de la marca.
 - **Formato, otra vez:** **stories propias diseñadas.** La story se usa solo para re-compartir una publicación del feed (10.6b).
+- **Composición:** **una publicación sin ninguna imagen** (10.6c). Una foto de relleno puesta solo para cumplir esa regla.
 - **Línea:** contenido de Verifica y Cumple (Ley 21.719) publicado como pieza de SpindleLab con este manual. Tiene su línea propia.
 
 ### 10.11 · Lo que decide Ramón antes de la primera publicación
