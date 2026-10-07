@@ -80,7 +80,17 @@ no se ha dicho nunca en público.
 
 ### Cadencia y slots
 
-**Lunes y miércoles fijos, viernes oportunista.** Los dos primeros se planifican; el viernes sale
+**Lunes y miércoles fijos, jueves oportunista.**
+
+> ⚠️ **Los viernes salieron del calendario (7-oct).** La ficha del cliente tiene una regla del 1-sep
+> que yo no había cruzado al armar el mes: **«VIERNES NO SE PUBLICA»** (B2B, viernes tarde muerto;
+> origen declarado: lectura de Metricool + criterio de Ramón). Tenía piezas el 16 y el 23. **Se
+> movieron al jueves 15 y al jueves 22.** El vie 30 se queda porque es el cierre de mes, que no es
+> una publicación.
+> **Por qué no la discutí con dato:** la regla nació de un dato, así que se revisa con dato, y hoy
+> no hay: el inventario no registra ningún post publicado en viernes, ni a favor ni en contra.
+> Mientras no lo haya, la regla manda. Mover dos slots cuesta nada; publicar contra una regla suya
+> sin evidencia cuesta credibilidad. Los dos primeros se planifican; el viernes sale
 del radar semanal de dolores del rubro, que es de donde salieron los mejores posts. Tres por semana
 solo se sostiene si uno de los tres es barato de producir.
 
@@ -107,15 +117,15 @@ solo se sostiene si uno de los tres es barato de producir.
 | vie 9-oct | — | Vacío a propósito (víspera de fin de semana largo), o el post del Cyber si se corre | — |
 | **sáb 10 – lun 12** | — | **Fin de semana largo. Cero publicaciones** | — |
 | **mar 13-oct** | **D** | **Reel cara a cámara: el mensaje cerrado.** LinkedIn nativo primero, Instagram después | 🟡 **guion listo**, `13-mar-reel-cara-a-camara/guion.md`. Depende de que Ramón grabe. Si se corre, el jue 15 |
-| vie 16-oct | B | La base de datos que te dejó la temporada: datos personales a seis semanas de la ley | ⬜ **ya escrito**, en el banco al final de `08-jue-cyber-examen-del-sitio/publicar.md`. Al reusarlo se cambia el arranque: la referencia al Cyber envejece, entra temporada alta |
+| **jue 15-oct** | B | La base de datos que te dejó la temporada: datos personales a seis semanas de la ley | ⬜ **ya escrito**, en el banco al final de `08-jue-cyber-examen-del-sitio/publicar.md`. Al reusarlo se cambia el arranque: la referencia al Cyber envejece, entra temporada alta |
 | lun 19-oct | A | "Para que la IA te recomiende, tu sitio no basta" | ⬜ aprobado el 22-sep y pospuesto. **Necesita gancho nuevo**: comparte ideas con el del 7-oct |
 | mié 21-oct | B | Cookies y la ley chilena | ⬜ **bloqueado**: hay que verificar qué exige de verdad la 21.719 sobre cookies. Si sigue bloqueado, entra el plazo del 1-dic a seis semanas |
-| **vie 23-oct** | C | **Carrusel "Por dónde se te escapa la gente"** · **página de LinkedIn**, documento deslizable, y Ramón lo comparte desde su perfil | 🟡 **copy escrito**, `23-vie-carrusel-fugas/copy.md`. **Bloqueado por el manual nuevo**: el copy no depende de él, el diseño sí. Si el reel del 13 rindió y se prefiere un segundo video, este se corre |
+| **jue 22-oct** | C | **Carrusel "Por dónde se te escapa la gente"** · **página de LinkedIn**, documento deslizable, y Ramón lo comparte desde su perfil | 🟡 **copy escrito**, `23-vie-carrusel-fugas/copy.md`. **Bloqueado por el manual nuevo**: el copy no depende de él, el diseño sí. Si el reel del 13 rindió y se prefiere un segundo video, este se corre |
 | lun 26-oct | A | Costco: el tráfico desde IA es poco y convierte mejor | ⬜ dato verificado en el transcript del 24-sep. **Falta la apertura**: Ramón descartó partir por la noticia |
 | mié 28-oct | B | El cierre de la ventana de la ley | ⬜ |
-| vie 30-oct | — | Cierre de mes: publicado vs planificado, qué tipo rindió | ⬜ |
+| vie 30-oct | — | Cierre de mes (no es publicación, por eso sí va en viernes) | ⬜ |
 
-**Alternancia verificada:** B → A → C → D → B → A → B → C/D → A → B. Sin dos del mismo tipo seguidos.
+**Alternancia verificada:** B → A → C → D → B → A → B → C → A → B. Sin dos del mismo tipo seguidos.
 
 > ⚠️ **La alternancia de tipos no basta: hay que mirar también el servicio.** Al cambiar el post del
 > jue 8 al ángulo del Cyber (Desarrollo Web), el 8, el reel del 13 y el texto que había para el 16
