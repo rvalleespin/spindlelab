@@ -321,3 +321,97 @@
 - **Para Lucía / Ramón:** #115 (M3 a 1440 × 900) y #116 (la tapa plana), las dos discrepancias de la spec; D18 (`--gris`) sigue sin decidir.
 - **[para Clara]** siguen abiertos #93, #98 y #99.
 - Si se decide #116 (a) antes de la reunión: cambiar el `src` en `app.js`, subir `app.js?v=12`, y volver a desplegar con el OK de Ramón; `maqueta/` ya se puede subir tal cual.
+
+## v3 · Tramo 1 · fotos, sistema, cromo e Inicio (7-oct-2026, Diego, contra spec-visual 3.1)
+
+### Fotos (tramo 0 de la spec, con las 63 que bajó Ramón, no las 75 de §4)
+1. **46 fotos entran, 17 no** (la tabla `FUERA` de `herramientas/fotos_v3.py`, regla por regla: R3 caras, R4 museo o archivo, R5 texto legible). Ids que existen: A-01 a A-08, A-S, A-S2, A-V, A-T, A-P1, A-P2, A-P4; B-S, B-02 a B-04, B-S2; C-01 a C-07, C-S, C-S2, C-V, C-T; E-AP, E-AP2, E-CAJA, R-001 a R-007; ED-J, ED-J2; AC, AR, TI. **Faltan** (no hay foto que cumpla): B-05 a B-09, B-V, B-T, B-P1 a P4, C-P1 a P4, A-P3, C-09, ED-1 a 3, ED-ni, ED-nj.
+2. **Series incompletas:** A tiene 9 obras (la 9.ª es la de su lámina, `a-09` = A-S, R10), B tiene 4 (`b-01` = B-S, más B-02 a B-04) y C tiene 8 (`c-08` = C-S). El modelo de datos tiene 21 obras, no 27. Los conteos («9 OBRAS», «4 OBRAS», «8 OBRAS») salen de los datos.
+3. **Las obras planas de A y C son fotos de la obra sola, sin muro** (bbox = foto entera): la tarjeta 4:5 no puede recortarlas con ≥ 3 % de aire (3.4). Resuelto conservador: en la tarjeta la obra va **entera, apoyada en la base de la caja** (`object-fit: contain`, sin muro generado ni recorte; D11, P16); la caja queda blanca alrededor una vez cargada. Las de volumen y las fotos de espacio van con `cover` y su `foco`. La tira y la fila de artistas usan obras verticales (0,61 a 0,80) para que la tarjeta quede llena.
+4. **Tira TODAS LAS OBRAS con 8 tarjetas, no 9** (2.1 #6): B no alcanza para tres sin repetir su lámina o su tarjeta de la fila de artistas (M36). Va a-03, b-03, c-02, a-05, b-04, c-03, a-06, c-06 (c-01 y a-08 son horizontales y en 4:5 quedaban chicas).
+5. **Fila ARTISTAS:** A-07, **B-02** (no hay B-07) y C-07.
+6. **Detalles declarados de la ficha** (3.4): `herramientas/detalles_v3.py` saca dos ventanas 3:4 de dentro del bbox de cada obra (45 % del ancho, mayor desviación estándar, solape ≤ 30 %) a `img/fotos/<cat>/<archivo>-det{1,2}-{800,1600}.jpg`. Algunas ventanas miden menos de 800 px de ancho (fotos de espacio y B-04): se guardan a su tamaño, sin agrandar.
+7. **Sin variantes de 2.400 ni `-tarjeta`/`-obra` recortadas** (3.4): se usan las de 800 y 1.600 de `preparar_fotos_unsplash.py` y el recorte lo hace el CSS (`cover` con `foco`, o la obra entera). Las láminas sí tienen su recorte 3:4 desde el original (`-l34-800/1600/2400`, de `fotos_v3.py`).
+8. **Ediciones sin tapas** (R5: ninguna foto de impresos sin texto legible): cada edición usa una foto de impresos (01 ED-J2, 02 TI, 03 ED-J). ED-J y ED-J2 muestran manos (R3 las admite solo en Encuentro): sin caras; anotado para el tramo D.
+9. **Créditos:** el nombre del autor enlaza a **la página de la foto** en Unsplash (con utm), no a su perfil: `creditos.json` no trae el usuario del perfil. «Obra y foto» solo en los dos perfiles que suben su propia obra (Fons Heijnsbroek, Steve A Johnson; `OBRA_PROPIA` en `fotos_v3.py`).
+
+### Datos y textos
+10. **Títulos, años y técnicas de las 21 obras son provisorios, míos**, escritos mirando la hoja de contacto (P30: títulos propios, años 2019 a 2025; técnicas de 3.2: óleo, acrílico, mixta / yeso, gres, cerámica esmaltada / tinta, tinta y aguada). Los reemplaza la segunda pasada de Clara (copy-v3 §9). Las **descripciones de obra quedan vacías** (copy-v3 §13): la cartela se lee sin ellas.
+11. **`alt` de obra** con el patrón de copy-v3 §8 sin la parte «lo que se ve» (que es de la segunda pasada): «{técnica}: {título}, de {artista}, obra de muestra».
+12. Las bios y el statement de B siguen siendo de collage (copy-v3 aún no trae B en volumen, spec §13-6): tramo C.
+
+### Sistema, cromo e Inicio
+13. **Marca enorme:** `calc((100cqw − 2 × margen) / 6,11)` con `padding-left: .048em` y `margin: 0 12px`, como `scratch/v3/lucia/marca.html`.
+14. **Lenis 1.3.23** desde jsDelivr con su CSS, `autoRaf`, solo con puntero fino y sin movimiento reducido. **Sin `data-lenis-prevent-wheel` en la pista de la portada ni en la tira:** con el atributo, la rueda sobre la lámina no movía la página (medido: scrollY quedaba en 0), y la lámina es justo donde tiene que haber inercia. Lenis deja pasar los gestos solo horizontales.
+15. **Paso de tira y del carrusel** con `pasar()` (rAF, 300 ms, curva `ease` resuelta por Newton); sin Swiper.
+16. **Contador animado y fundido de vista:** salen (`contar()` vacío; `.repinta-*` sin uso en el Inicio; Obras todavía los llama: tramo B).
+17. `html { overflow-anchor: none }`: el hero acelerado cambia el alto de arriba y el navegador, si no, compensa el scroll.
+18. **Vistas que conservan la composición de la 2.1 hasta su tramo** (con fotos reales, la paleta, las fuentes y sin marcas): Obras (abre en LISTA a ≥ 1001; D12 es tramo B), Ficha (con anterior / siguiente y la pista de segmentos a ≤ 1000), Tienda, Artistas, Artista (obra sola = {X}-V si existe; fila de proceso de 3 solo en A; B sin taller lleva un detalle de su obra, nota 1 de Créditos), Ediciones (sin la franja de interiores ni la banda, que repetían fotos), Edición (una sola imagen), Encuentro (abre con E-AP), Activar (con la línea «Por decidir»), Libro, encuentro activado, Acerca (con el tricolon todavía), Contacto (con Newsletter todavía), 404.
+19. **Créditos y notas** (2.16) existe desde este tramo porque la barra de aviso enlaza ahí: página de texto generada desde `FOTOS` con los textos de copy-v3 6.16 (más la frase de 3.5).
+
+### Verificación (medido, 7-oct, build en `scratch/v3/build/` sin las carpetas de relleno generado, Chrome por CDP)
+- 17 vistas a 390 real (DPR 2, mobile, UA iPhone) y 12 a 1440: 0 overflow horizontal, 0 errores de consola, 0 imágenes rotas, 0 fotos repetidas dentro de una vista, 0 «muestra»/«sample»/«Maqueta ·»/corchetes en pantalla fuera del aviso, Créditos y verbos («muestra de cada uno»).
+- Fuentes cargadas: EB Garamond normal e itálica 400-500, Albert Sans 500.
+- Aviso: 28 px a 1440, 26 a 390, una línea. M3: a 390 la lámina empieza en y = 70 y lámina + línea terminan en 634 (≤ 664).
+- M28 inercia: 90 % del recorrido a ≈ 410 ms, final ≈ 930 ms. M29 hero: scrollY 0 → 900 mueve la lámina 1.710 px (1,9×); llena la ventana de s ≈ 173 a s ≈ 710. M19: con `prefers-reduced-motion`, sin clase `lenis` y `--p` = 0.
+
+## v3 · Tramo 2 · Artistas, Artista, Obras, Ficha y Tienda (7-oct-2026, Diego, contra spec-visual 3.1)
+
+### Fotos y datos
+1. **Obras que solo existen en una foto de espacio** (a-09 en A-S, c-08 en C-S): `herramientas/obra_v3.py` saca su recorte por bbox con 2 % de aire (`-obra-800/1600`, sin agrandar; el de C-S mide 1.124 px) y agrega `rec` a `fotos.js`. Ese recorte es su tarjeta (entera en la 4:5) y su vista general en la ficha; la foto de espacio entera va como 04 «En su espacio». b-01 (B-S, volumen) usa su foto, como las demás de volumen. Peso: `sala-03-obra-800` queda en 147 KB con calidad 66 (tope de 3.4: 100 KB; la pintura tiene mucha textura).
+2. **Excepción declarada a M36 en Artista A y C:** la tarjeta de a-09 / c-08 es el recorte de la lámina y el Statement muestra la lámina entera en su espacio (mismo archivo, dos encuadres: la obra sola y la sala). Es lo que pide 2.3 #6 (la obra de la lámina, en otra vista); no hay otra foto de esas obras.
+3. **Artista B sin taller, sin obra sola, sin proceso y con la lámina igual a su tarjeta** (B-S en 4:5 es la misma imagen que la tarjeta de b-01): Biografía y Statement van como texto centrado, sin foto (P32: nada de recortes de sus obras como otra foto). Sale la nota 1 de Créditos que decía «junto a su texto va un detalle de su obra»: **queda pendiente reescribirla** (tramo siguiente, Créditos). La página de B termina en texto, a `--e-16` del pie.
+4. **Fila de proceso:** A tiene 3 (P1, P2, P4) → fila de 3 de 480 × 640 (§15); a 390, una a sangre y dos debajo (la franja de 3 de 1.4.5). C y B no tienen: no va.
+5. **Imagen desplazada (D22) generalizada a series de 9, 8 y 4:** a ≥ 621 baja `--e-9` la del centro de la última fila (la 8.ª de A y de C); si la última va sola (B, 4.ª), pasa a la columna central y baja. A ≤ 620 baja la última; si va sola (A, 9.ª), pasa a la columna derecha.
+6. **Tienda, «Cómo se compra» con la foto AC, no TI:** TI es la foto de la Edición 02 en la misma grilla (tramo 1, desvío 8); con TI se repetía en la vista (M36). AC (2:3, la sala) no aparece en Tienda.
+7. **Títulos de las ediciones** siguen «Edición 01 a 03» en Tienda (P30 lo prohíbe): son de la vista Ediciones (tramo siguiente) y se cambian juntos en `T.tituloEdicion` / `EDICIONES`.
+
+### Textos
+8. **Bios y statements de copy-v3 6.3** (más cortos) en lugar de los de la v2. Spec §13-6: a A y C se les cortó la frase de formación («estudió pintura…», «estudió arquitectura…»); **B pasa a volumen con statement, bio y proceso míos, provisorios** (yeso, gres, cerámica esmaltada, sin lugar, formación ni premios) hasta la pasada de Clara.
+9. **Visión de Artistas** de copy-v3 6.2 (21 palabras); H1 «Artistas de Módulo 369»; H1 de Obras «Todas las obras»; «Tamaño» sin «(lado mayor)»; «Cómo se compra» de la ficha y de Tienda de copy-v3 5.2 y 6.13; los seis avisos al tocar de copy-v3 5.5 («Maqueta:», una frase).
+10. **Descripción de obra con «Leer más»** no va: `M.obraDescripcion` sigue vacío hasta la segunda pasada (copy-v3 §13). La cartela queda en ARTISTA → título → datos → botón-fila → Consultar (estado 1) → «› Cómo se compra».
+
+### Composición
+11. **Ficha (2.5):** imágenes apiladas en c1-5 (781 a 1440) sin tope de alto: general, dos «Detalle» y, si hay, «En su espacio»; sale anterior / siguiente y la pista con segmentos. A ≤ 1000 (D24): general a sangre → cartela → detalles a sangre. Entre detalles a ≤ 1000 va `--e-2` y no la costura de 1 px, porque cada uno lleva su rótulo «Detalle» debajo.
+12. **Bloque partido centrado (2.0.9, D10):** clase nueva `.partido.centrado` (Artistas, Artista, Tienda): la columna va al medio de su mitad y, con `.pega`, se pega a `(innerHeight − alto) / 2` con `top` calculado por el JS, que da lo mismo que `top: 50vh; translateY(-50%)` sin que la columna suba por encima de su bloque antes de pegarse. Los bloques de Encuentro, Activar, Ediciones y Acerca siguen con el partido anterior hasta su tramo.
+13. **Nombre sobre el hero de Artista (D15, M32):** A-S2 tiene el muro claro a la izquierda y el nombre en blanco no se leía: lleva `.velo-lado` (velo medido de Studio Iron) solo a ≥ 1001. B (blanco) y C (tinta) se leen sin velo. La grilla va a 12 px del hero (Studio Iron: 13), no a 0.
+14. **C-S2 (hero de Artista C) muestra retratos colgados al fondo de la sala:** entró en el tramo 1; lo anoto contra P13 (ninguna cara reconocible) para que Ramón decida si se cambia (la alternativa es C-V como hero y sin obra sola).
+15. **Obras:** MURO por defecto en todos los anchos (D12) con el conmutador «MURO · LISTA»; los tres grupos de texto de filtros en una línea que se parte; al filtrar, 1.7.n (la grilla a .4 en 200 ms y vuelve), también en Tienda. Lista con la cartela de T08 (ARTISTA, título con año, técnica y medidas, VER LA OBRA). Medidas en Albert 13 con cifras proporcionales (1.2.32).
+
+### Verificación (medido, 7-oct, build en `scratch/v3/build/`, Chrome por CDP; 390 real con DPR 2, mobile y UA de iPhone)
+- 21 vistas a 1440 y a 390 (todo el sitio, incluidas las que no se tocaron): 0 overflow horizontal, 0 errores de consola, 0 imágenes rotas, 0 fotos repetidas por archivo dentro de una vista; las únicas «muestra» en pantalla son el aviso, Créditos y el verbo («no muestra hasta…»). Artistas, Artista A y B, Obras, Ficha y Tienda a 768: sin overflow.
+- Filtros por campo: Yeso → 2; Yeso + B → 2; Yeso + A → 0 con el estado vacío; Vendida → 3; Vendida + Más de 100 cm → 0; Quitar → 21. A los 80 ms del clic la grilla está en .73 de opacidad (1.7.n).
+- Cuatro estados de la ficha: a-04 Comprar · Mercado Pago → + Consultar + «Precio en pesos chilenos»; a-06 y c-05 Consultar + «Precio a consultar»; b-04 Consultar + «Precio en pesos chilenos»; a-05 Vendida; a-03 Colección privada. Comprar muestra el aviso y no navega. La cartela queda pegada a 24 px al bajar.
+- Partidos de Artista A pegados (`.pega`), columna a 319 px del borde con ventana de 900; desplazada: 8.ª tarjeta con 54 px.
+- Capturas en `scratch/v3/diego/cap/` (`f2-*`, `m-*`, `z-lado.jpg` lado a lado con Studio Iron T04 y T11).
+
+## v3 · Tramo 3 · Encuentro, Activar, Libro, encuentro activado, Ediciones, Edición, Acerca, Contacto, 404, Créditos y la capa (7-oct-2026, Diego, contra spec-visual 3.1)
+
+### Fotos y datos
+1. **Ediciones con una sola foto por edición** (tramo 1, desvío 8: no hay `ED-n`, `ED-ni` ni `ED-nj` que cumplan R5). 2.6 pide por edición tapa + interior en dos mitades, una franja de terceras vistas y la banda `ED-J`: con tres fotos para tres ediciones, cualquiera de esas piezas repetía una foto en la vista (M36). Resuelto conservador: **una fila por edición en un bloque partido centrado** (2.0.9): la foto 3:4 en una mitad a sangre (enlace a la edición) y en la otra la columna centrada con el tipo, el título, MÓDULO 369 y VER LA EDICIÓN; las filas se tocan y alternan el lado. Sin presentación bajo el H1 (vive en la banda del Inicio). La Edición (2.7) lleva solo la tapa.
+2. **Títulos propios de las ediciones, provisorios míos** (spec §13-9; copy-v3 6.6 todavía dice «Edición 01»): 01 «Hojas lisas» / *Plain Pages*, 02 «Cuadrícula» / *Dot Grid*, 03 «Tres series» / *Three Series*. El número queda en los datos de la cartela («Edición 01») y en Tienda cambia junto (`tituloEd()`). `alt` de cada foto describe lo que se ve. La foto de la 02 (`TI`) muestra un libro de texto, no un cuaderno de puntos: lo corrige la segunda pasada de Clara o una foto nueva.
+3. **Textos de copy-v3** en Encuentro (intro de tres párrafos, bloques, preguntas), Activar (6.9, sin «después de que Módulo 369 lo revise»), los siete registros (estaciones y lugares de 6.11), Acerca (titular visible + tres párrafos; H1 para lectores), Ediciones (6.7, sin nombres de obra), 404 (6.15) y Contacto (una sección, «Mensaje», sin Newsletter ni ayuda de correo). Nota 1 de Créditos reescrita: «si un artista no tiene foto de taller, su biografía va sola, sin foto» (lo que hace Artista B desde el tramo 2).
+4. Sale el `altAcerca` duplicado que decía «Vista de relleno: {titulo}…» (en un objeto literal ganaba el segundo: Acerca y Tienda lo usaban) y las claves `altTapa`, `altInterior`, `altFranjaEdicion`, `tallerAlt`, `registroAlt` («relleno»).
+
+### Composición
+5. **«Encuentro» sobre `E-AP` (D15, M32):** centrado y sin velo, como pide primero 2.8 #1, dio **10,8 %** de píxeles de glifo con contraste ≥ 3:1 (la mesa de madera es clara; vara 90 %). Se aplicó el segundo paso de la spec: a ≥ 1001 alineado a `c1` (36 px) sobre `.velo-lado` → **94,2 %**. A 768 y 390, centrado sobre `.velo-pie`: **99,3 %** y **99,7 %**. Medido con `scratch/v3/diego/t3-m32.mjs` (captura con el texto y con el texto transparente).
+6. **Acerca: la foto no se pega** (`.acerca-foto`, 1.6.3): la condición es que el texto sea más alto que la foto, y con titular y tres párrafos es más bajo que la foto de 720 × 1080. Lo que se pega es la columna de texto, centrada en la ventana (2.0.9).
+7. **Libro:** destacado `R-007` → seis pares → el mapa a `--e-16` con su rótulo; las siete casillas activas con la miniatura de su registro a ≥ 1001 con puntero fino (sin etiqueta de la capa: miden 31 px), en `--tinta` a ≤ 1000. Se quita el número del enlace de casilla y va su `aria-label` «Encuentro 001».
+8. **Encuentro activado:** la galería «Otros encuentros» usa `pasar()` en 500 ms (1.7.j); «→» en el último vuelve al primero; fotos a su ancho natural con alto 500 / 360 y caja de 280 × 210 a ≤ 620 (`cover`). Paso medido: a los 250 ms va en 585 de 762 px.
+9. **Campos de formulario (5.7)** en Contacto y Activar: fondo `--superficie`, línea inferior `--linea-campo`, etiqueta en Albert 12 gris dentro de la caja, alto 54, texto 16. Contacto: chip de la obra cargada con miniatura 60 × 60 sobre `--superficie`, «{título}, {año}» en EB itálica 16, ARTISTA en `.t-artista`, «Quitar».
+10. **Capa «Lo editas tú» (9.2) en todas las vistas:** cada foto lleva en su caja (no en el `<img>`) un rótulo oculto con su crédito corto («Foto: {autor} / Unsplash», u «Obra y foto»), que se ve solo con la capa encendida; el primero de cada vista suma «Fotos: las cambias por las tuyas.». Contorno discontinuo `--tinta` sobre la caja.
+11. **Contador de Encuentro** en EB Garamond 450 con `tabular-nums` (seguía en Albert desde la 2.1); «ENCUENTROS ACTIVADOS» arriba, «007/369» a `--e-2`, «369» en `--gris`.
+
+### Verificación (medido, 7-oct, build en `scratch/v3/build/` sin las carpetas de relleno generado; Chrome por CDP; 390 real con DPR 2, `mobile` y UA de iPhone; `scratch/v3/diego/t3-check.mjs`, `t3-pasada.json`)
+- **17 rutas × 1440, 768 y 390 × ES y EN (102 cargas):** 0 overflow horizontal, 0 errores de JS, 0 imágenes rotas ni cajas sin revelar tras cargar, 1 `h1` por vista, 0 imágenes de `img/{obras,muro,ediciones,encuentro,artistas}`, 0 palabras en castellano en EN (fuera de Módulo, Encuentro y Libro), 0 «muestra»/«sample»/«Maqueta ·»/corchetes en pantalla fuera del aviso y Créditos (la única es el verbo de la bio de A, tramo 2). **45 enlaces internos, 0 caen en el 404.**
+- Fotos repetidas por archivo: solo las dos excepciones declaradas (la lámina de A en Artista A, tramo 2 desvío 2; los detalles de la ficha).
+- M5: el contador termina antes del «Libro» vertical en los tres anchos (1039 < 1384; 607 < 712; 310 < 334).
+- **M35 (cobertura de imagen, % del alto):** Encuentro 80,9 / 60,3 (metas 80 / 56,5 ✓); Libro 58,5 / 51,9 (57,6 / 35,8 ✓); Encuentro activado 56,4 / 30,2 (32,4 / 16,5 ✓); Acerca 68,8 / 31,8 (62,4 / 24,6 ✓). **Bajo la meta:** Ediciones 82,1 / 53,6 (85 / 58,3) y Edición 44,9 / 18,7 (60,3 / 28,2), por el desvío 1 (una foto por edición; la 01 es apaisada). De tramos anteriores, informado: Tienda 390 50,1 (53,9) y Artista B 56 / 35,4.
+- Interacción: Consultar en la ficha a-06 carga el chip en Contacto; «Leer más» se quita solo cuando la descripción entra en dos líneas (1440) y se ve a 390 (el clic a 390 no se probó); la capa muestra los créditos sobre cada foto.
+- Capturas a 1440 y 390 (primer viewport y página completa) de Inicio, Obras, Ficha (a-04), Artista A, Encuentro y Libro en `capturas/maqueta-v3/`.
+
+### Para el tramo siguiente (no son desvíos)
+- Fotos de ediciones (tapa, interior y tercera vista sin texto legible) para volver a la composición de 2.6 y 2.7 y subir M35 de las dos vistas.
+- Segunda pasada de Clara: títulos de las ediciones, títulos y `alt` de obras, descripción de cada edición contra su foto.
+- Lado a lado M24 de las vistas de este tramo y M30/M31/M32 completos: Javiera, en contexto limpio.
+- Despliegue en `modulo369-maqueta.pages.dev`: pendiente del OK de Ramón (spec 14.6-4).
