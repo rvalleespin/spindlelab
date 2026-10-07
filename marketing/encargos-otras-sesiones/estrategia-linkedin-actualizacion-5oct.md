@@ -121,6 +121,26 @@ transitorio y **no se pudo verificar**; el 5-oct se publicó sin esa línea.
 | **Instagram con la línea propia de Verifica y Cumple** (reel y story) | Otra sesión; las piezas esperan el ojo de Ramón. Pendientes suyos: el enlace del bio (solo desde el teléfono) y la etiqueta "Perfil generado con IA". |
 | **X como canal de publicación** | Hoy solo se usa para escucha. Publicar desde la cuenta de Ramón no se ha explorado ni decidido. |
 | **La página de empresa** | No se revisó desde el 25-sep. Decidir su papel: archivo de lo que se reusa. |
+| **Red: a quién seguir y con quién conectar** | Ver la sección 8b. Primera tanda de seguimientos hecha el 7-oct; las invitaciones a conectar esperan la aprobación de Ramón por lista. |
+
+### 8b. Red de Ramón en LinkedIn (7-oct-2026)
+
+**Criterio:** seguir a quien le sirva de radar y de contexto para lo que publica: expertos del rubro que ya salieron en la
+investigación y voces de cumplimiento de datos en Chile. Seguir no avisa a la persona ni envía nada. **Conectar sí envía una
+invitación, y eso solo se hace con la aprobación de Ramón sobre una lista.** Verificar siempre la identidad (insignia,
+cargo, seguidores): hay homónimos (otra "aleyda solis" en Nicaragua, otra "Aleyda" en Pakistán, "Lily Raya" en Irán).
+
+**Seguidos el 7-oct (verificados, quedaron en "Siguiendo"):** Aleyda Solís (Orainti, 124.879 seg.), Lily Ray (Amsive,
+60.308), Cyrus Shepard (Zyppy, 38.891), Marie Haynes (Marie Haynes Consulting, 17.004), Barry Schwartz (Search Engine
+Roundtable, 61.726) y Glenn Gabe (G-Squared Interactive; en la búsqueda no ofrece "Seguir", sí en su perfil).
+**Ya seguía:** Juan Carlos Hurtado Salas (consultor de protección de datos, Santiago; 2º grado, con dos contactos en común).
+
+**Vistos esta semana y no seguidos (falta verificar quiénes son):** voces chilenas de la Ley 21.719 (Josefina Navarrete
+Bada, Jorge Martelli de TitanSec, Morgan y Cía., Presencia360) y la asociación gremial "A G P D Chile" que LinkedIn
+sugirió en la barra lateral (no se encontró como página de empresa).
+
+**Para otro frente:** las invitaciones a conectar con abogados y contadores de Chile, que son los dos oficios con los que el
+chequeo se complementa ("la política de privacidad la redacta un abogado"), por lista y con su visto bueno.
 
 ## 9. Pendientes para la sesión que lleva el canal
 
