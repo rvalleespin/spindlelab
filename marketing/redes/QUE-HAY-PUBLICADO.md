@@ -60,6 +60,7 @@ o que son suyas:**
 
 | Publicado | Pieza | Métricas | Registrado en |
 |---|---|---|---|
+| **✅ 7-oct** | "Si en tu empresa alguien preguntó si aparecen en ChatGPT, es probable que ya te hayan ofrecido un panel para medirlo..." — qué se puede medir gratis de la visibilidad en IA (informe de IA generativa de Search Console) y lo que ningún panel puede prometer; cierre con el chequeo y el diagnóstico de 24 h | publicado, verificado (urn 7513591632873730048) | `2026-10-octubre-linkedin/07-mie-visibilidad-en-ia-lo-que-se-mide/publicar.md` |
 | **✅ 5-oct** | "La Ley 21.719, la nueva ley de datos personales de Chile, le aplica a cualquier empresa que maneje datos de personas..." — el cuarto mito: la amonestación del primer año es una facultad, no un derecho, y queda en un registro público; cierre con el chequeo | publicado, verificado (urn 7512857562887786496) | `2026-10-octubre-linkedin/05-lun-cuarto-mito-amonestacion/publicar.md` |
 | **✅ 2-oct** | "Si llevas meses buscando el video que se haga viral, tu sitio web probablemente lleva esos mismos meses sin tocarse..." — el sitio es la tienda principal, las redes la vitrina; cierre de Desarrollo Web a medida | publicado, verificado (urn 7511845341839953921; 102 impresiones el 5-oct) | `2026-10-octubre-linkedin/02-vie-el-sitio-es-la-tienda/publicar.md` |
 | **✅ 30-sep** | "Cuando el chequeo de Verifica y Cumple no alcanza a ver algo... lo dice" — el mecanismo de declinar en vez de inventar un puntaje | publicado, verificado (94 impresiones el 2-oct) | `30-mie-lo-que-no-vemos/publicar.md` |
