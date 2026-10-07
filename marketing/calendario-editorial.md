@@ -27,7 +27,13 @@
 
 ### Las cinco decisiones que ordenan el mes
 
-1. **Las gráficas de SpindleLab quedan congeladas, sujetas al sitio.** Hay cambios estructurales
+1. **Las gráficas de SpindleLab quedan congeladas hasta que llegue el manual nuevo.**
+   ✅ **Actualizado el 7-oct:** Ramón va a pasar el manual de marca nuevo, el que sale del sitio en
+   obra, y decidió que **las publicaciones van con la identidad nueva** aunque el sitio todavía no
+   esté en vivo. El contenido adelanta al sitio, a propósito. En cuanto el manual esté en el repo,
+   el congelamiento se levanta y **ninguna pieza nueva usa la identidad vieja**: ni punto dorado, ni
+   la firma "Chequea tu sitio gratis", ni la etiqueta de serie de septiembre.
+   El texto de abajo es por qué se congelaron, y sigue valiendo mientras el manual no llegue: Hay cambios estructurales
    grandes en curso, así que no se produce ninguna pieza gráfica nueva **en el sistema de
    SpindleLab** hasta que el sitio aterrice: una etiqueta o una firma quemada hoy queda vieja en dos
    semanas, que es exactamente lo que pasó con las 6 piezas de agosto. **Consecuencia:** el canal de
@@ -104,7 +110,7 @@ solo se sostiene si uno de los tres es barato de producir.
 | vie 16-oct | B | La base de datos que te dejó la temporada: datos personales a seis semanas de la ley | ⬜ **ya escrito**, en el banco al final de `08-jue-cyber-examen-del-sitio/publicar.md`. Al reusarlo se cambia el arranque: la referencia al Cyber envejece, entra temporada alta |
 | lun 19-oct | A | "Para que la IA te recomiende, tu sitio no basta" | ⬜ aprobado el 22-sep y pospuesto. **Necesita gancho nuevo**: comparte ideas con el del 7-oct |
 | mié 21-oct | B | Cookies y la ley chilena | ⬜ **bloqueado**: hay que verificar qué exige de verdad la 21.719 sobre cookies. Si sigue bloqueado, entra el plazo del 1-dic a seis semanas |
-| vie 23-oct | C o D | Segundo video, solo si el primero rindió | ⬜ |
+| **vie 23-oct** | C | **Carrusel "Por dónde se te escapa la gente"** · **página de LinkedIn**, documento deslizable, y Ramón lo comparte desde su perfil | 🟡 **copy escrito**, `23-vie-carrusel-fugas/copy.md`. **Bloqueado por el manual nuevo**: el copy no depende de él, el diseño sí. Si el reel del 13 rindió y se prefiere un segundo video, este se corre |
 | lun 26-oct | A | Costco: el tráfico desde IA es poco y convierte mejor | ⬜ dato verificado en el transcript del 24-sep. **Falta la apertura**: Ramón descartó partir por la noticia |
 | mié 28-oct | B | El cierre de la ventana de la ley | ⬜ |
 | vie 30-oct | — | Cierre de mes: publicado vs planificado, qué tipo rindió | ⬜ |
@@ -154,9 +160,15 @@ corrigieron en vivo por citar una fuente que no se había leído entera.
 
 ### Los otros dos canales
 
-- **Página de empresa (4 seguidores).** Sin slots este mes. Con 4 seguidores, un post ahí no
-  alcanza a nadie que el perfil personal no alcance mejor. Queda como archivo de lo que se reusa.
-  Decisión formal de su papel: pendiente de Ramón, sin urgencia.
+- **Página de empresa (4 seguidores).** ✅ **Decidido el 7-oct: vuelve a tener un papel.** El
+  carrusel del 23-oct se publica ahí, en plural, y **Ramón lo comparte desde su perfil** en singular.
+  Es la convención vigente desde el 12-jul y resuelve un problema de formato: su perfil va en texto
+  puro, así que un carrusel ahí rompería su propia regla; en la página no.
+  **El dato que lo respalda:** el post de mejor alcance de todo el inventario es de la página, no
+  del perfil. "Los tres mitos" (25-sep) hizo **398 impresiones con 4 seguidores**, porque LinkedIn
+  lo distribuyó. La página no es un canal muerto, es un canal sin seguidores, que no es lo mismo.
+  **Pero el alcance real sigue dependiendo del compartir**, así que el comentario con que Ramón
+  comparte se trabaja como pieza, no como trámite.
 - **Instagram (`spindlelab.cl`, 19 seguidores).** Deja de estar parado: la línea de Verifica
   está liberada, así que es el canal de esa campaña. Ver la pista propia más abajo.
   **Dos cosas que solo puede hacer Ramón** y que conviene resolver antes del primer envío:
