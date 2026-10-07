@@ -379,6 +379,17 @@ procedimiento de `marketing/oficina/obras-web/spindlelab-v3/mockups/README.md`.
 ### Oro dentro de una foto
 
 Criterio del relevamiento del 7-oct: tono 38–54°, saturación ≥ 0,5 y brillo ≥ 0,5.
+
+> ⚠️ **El umbral de brillo está mal y hay que corregirlo (hallazgo del 7-oct, sesión de redes).**
+> **El propio oro de la marca no pasa ese filtro:** `#C9A227` es tono 46°, saturación 0,67 y
+> **brillo 0,47**, bajo el 0,5 que pide la regla. Un detector de oro que no detecta el oro de la
+> marca da 0 % en todo y parece que nada falla.
+> **El umbral correcto es brillo ≥ 0,35**, que captura el oro de marca con margen y sigue dejando
+> fuera los marrones oscuros de las fotos. Verificado el mismo día: la luz cálida de
+> `domino-curva.jpg` está en **tono 12–20°**, o sea naranja, y queda fuera por tono, no por brillo.
+> **Lo que el criterio corregido NO cambia:** las conclusiones del relevamiento siguen en pie,
+> porque se separaron por tono. Lo que cambia es que `medir.py` tiene que usar este umbral, o
+> seguirá informando 0 % sin mirar nada.
 Resultado sobre el pool:
 
 - **0 %** en todas las fotos `d/*`, en el retrato y en los mockups (máximo 0,05 %).
