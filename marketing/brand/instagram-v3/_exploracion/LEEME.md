@@ -70,3 +70,59 @@ una foto, está en que el kit nunca decidió qué hace el trabajo visual en este
 No se toca el kit pieza por pieza. Se escribe primero qué cambia en §07b y §10.6 (dirección A) o en
 §06 (dirección B), y recién después se rehacen las piezas contra esa regla nueva. Al revés es como
 se llega a tres pasadas, que es lo que este repo ya aprendió a evitar.
+
+
+---
+
+# Decisión de Ramón (7-oct): va la A. Y dos encargos.
+
+> *«Me gusta la A, pero tienes que hacerlo más entendible para un usuario de una pyme. El siguiente
+> slide tiene que ser algo que le resuelva el dolor, contado de forma muy práctica, muy humana, que
+> le haga ver que cuando la agencia que ya tiene le dé los números, entienda si el número está bien
+> o mal. Eso podría ser un buen indicador para venirse conmigo.»*
+
+**La B queda descartada, y la mató su propio comentario.** Un `robots.txt` con `Disallow: /` no le
+dice nada a un dueño de pyme: es evidencia para alguien del oficio. La dirección B sirve para
+LinkedIn, donde el lector es técnico; para el feed de Instagram, no.
+
+## 1 · El titular, en castellano de pyme — `A-llano.html`
+
+| | |
+|---|---|
+| Antes | «AHÍ SE CORTA EL CIRCUITO» |
+| Ahora | «Y AHÍ LOS PIERDES» |
+
+«Circuito» es la metáfora interna de §06b y en el sitio funciona, porque quien llega ya está
+leyendo. **En el feed el lector es frío y no le debe nada a nuestra metáfora.** «Los pierdes» nombra
+el dolor sin pedir que se entienda nada.
+
+**El territorio no se pierde:** lo sostiene la foto del dominó, que es el molde declarado de §06b.
+Se cambia la palabra, no el mundo.
+
+## 2 · La lámina 2 — `A2-cuantos-te-escribieron.html`
+
+La idea de Ramón es la más vendedora de la sesión: **darle al dueño una forma de juzgar lo que su
+agencia le entrega.** La pieza le pasa tres preguntas que puede contestar hoy, sin pedirle permiso
+a nadie, y cierra diciendo qué significa la respuesta.
+
+**La restricción que la hizo honesta: cero benchmark inventado.** La salida fácil era decir «lo
+normal es un 2 % de conversión» y dejar que se compare. **No tenemos ese dato**, y una cifra
+inventada en una pieza es exactamente lo que el manual prohíbe. Así que el indicador **no es un
+número nuestro: es un número que él ya tiene** en su teléfono y en su bandeja. Por eso funciona, y
+por eso no se puede discutir: no le estamos pidiendo que nos crea.
+
+**El remate es el puente al servicio**, sin vender: *«Si las visitas suben y estos no, el problema
+no es traer gente. Es lo que encuentra cuando llega.»* Eso es Desarrollo Web dicho sin nombrarlo, y
+enlaza de vuelta con la lámina 1.
+
+**Por qué va sobre campo brasa y no sobre foto:** da el ritmo foto → color que hace que el carrusel
+no sea monótono, y brasa es el pilar Desarrollo, que es el servicio que resuelve justo esto (§10.5).
+
+## Lo que falta antes de producir el resto
+
+1. **Elegir entre los dos titulares de portada** (`A-foto-a-sangre` o `A-llano`).
+2. **Escribir el cambio en el manual antes de tocar el kit**: la dirección A contradice §07b y
+   §10.6 (la foto como pieza con radio). Se escribe la excepción para Instagram con su porqué, y
+   recién después se rehacen las piezas. Al revés es como se llega a tres pasadas.
+3. **Las fotos tienen que tener una zona oscura real** donde apoyar el texto. Con una foto pareja
+   habría que inventar un velo, y eso sigue prohibido. Es un criterio de selección, no un detalle.
