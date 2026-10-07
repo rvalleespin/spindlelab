@@ -585,7 +585,29 @@ cumple; la composición exacta está en el kit.
 | **`carrusel-interior`** | 1080×1350 | Sin wordmark y sin display · h1 o h2 + cuerpo · piezas con etiqueta si hacen falta | El desarrollo, una idea por lámina. **Raigal, con su rótulo, solo aquí** |
 | **`carrusel-dato`** | 1080×1350 | La cifra en h1 (100 px, 500, papel o el texto del campo) · qué es · **la fuente** en rótulo | Un dato con una fuente que cualquiera puede revisar |
 | **`carrusel-cierre`** | 1080×1350 | Negro · el llamado en texto · wordmark (puede ir a todo el ancho útil, como el pie del sitio: 900 / 4,744 = 190 px) | La última lámina, siempre |
-| **`story-portada`** | 1080×1920 | Negro o el campo del post · wordmark · display una vez · todo dentro de y 250–1580 · espacio libre para el sticker de enlace | Acompañar un post y llevar el enlace (el sticker es el único enlace que se toca aparte de la bio) |
+| ~~**`story-portada`**~~ | 1080×1920 | Negro o el campo del post · wordmark · display una vez · todo dentro de y 250–1580 · espacio libre para el sticker de enlace | **ARCHIVADA, no se usa (ver 10.6b).** La plantilla queda en el kit para cuando la cuenta tenga público de stories |
+
+### 10.6b · La story: hoy no se diseña, se re-comparte
+
+**No se producen stories propias** (Ramón, 1-sep, reconfirmado el 7-oct): con pocos seguidores que
+vean stories, una pieza diseñada para ese formato no paga el trabajo que cuesta. El uso vigente es
+uno solo:
+
+> **Ramón re-comparte la publicación del feed a su story**, a mano, desde Instagram.
+
+Eso **no es una pieza nueva**: Instagram toma el post 4:5, lo encoge y lo centra sobre un fondo que
+pone él. Tres consecuencias para quien produce el feed:
+
+1. **Nada se recorta, pero todo se achica.** La lámina ocupa cerca de dos tercios del alto de la
+   pantalla, así que el texto de 33 px (el piso de §10.4) se ve todavía más chico ahí. **Una pieza
+   que solo se lee en el feed no se lee re-compartida**: razón de más para no bajar del piso.
+2. **El enlace va en el sticker**, pegado encima al re-compartir. Es el único enlace que se toca
+   aparte de la bio. Al pegarlo conviene no tapar el llamado de la lámina.
+3. **El llamado de §10.8 sigue sirviendo**: quien ve la story llega al post y comenta ahí.
+
+**Cuándo se reactiva `story-portada`:** cuando la cuenta tenga base de seguidores que vea stories.
+Es una decisión de Ramón, no una fecha. Mientras tanto la plantilla, su guía de zonas y las medidas
+de 10.1 y 10.3 quedan en el kit: sirven igual para un reel, que sí usa 1080×1920.
 
 **El kit no trae plantilla de reel.** Un reel se compone con las zonas de 10.1 y el
 movimiento del sitio (§07): entrada de 28 px en 0,8 s con `cubic-bezier(.5, 0, .1, 1)`,
@@ -659,6 +681,7 @@ El patrón aprobado de `marketing/brand/og-v3/`:
 - **Imagen:** fotos de la lista negra · personas presentadas como equipo o clientes · pantallas con datos inventados · texto sobre una foto (salvo la etiqueta de pieza) · velos · Raigal sin su rótulo, en una portada o en una pieza única.
 - **Verdad:** cifras, logos o testimonios inventados · precios distintos a los de `oferta-v3.json` · la cartera de precios · el nombre de un prospecto.
 - **Voz:** «acá» · voseo · raya como muleta · singular en la cuenta de la marca.
+- **Formato, otra vez:** **stories propias diseñadas.** La story se usa solo para re-compartir una publicación del feed (10.6b).
 - **Línea:** contenido de Verifica y Cumple (Ley 21.719) publicado como pieza de SpindleLab con este manual. Tiene su línea propia.
 
 ### 10.11 · Lo que decide Ramón antes de la primera publicación

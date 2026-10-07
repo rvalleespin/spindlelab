@@ -195,7 +195,7 @@ tirar trabajo bueno. Los terminé.
 
 El manual no las reconcilia y el kit las contradice. **Decide Ramón; yo no las retiro por mi cuenta.**
 
-**Al 7-oct queda una resuelta (la 1) y dos pendientes (la 2 y la 3), más la de los viernes.**
+**Al 7-oct quedan dos resueltas (la 1 y la 2) y una pendiente (la 3), más la de los viernes.**
 
 1. ✅ **RESUELTA POR RAMÓN el 7-oct: el gancho se queda, con keyword nueva.** `CIRCUITO` pasa a
    **`QUIERO MEJORAS`**. Tiene sentido más allá de la preferencia: `CIRCUITO` era la palabra del
@@ -212,8 +212,16 @@ El manual no las reconcilia y el kit las contradice. **Decide Ramón; yo no las 
    publica una lámina que pide `QUIERO MEJORAS` con ManyChat sin tocar, **quien comente no recibe
    nada**. Conviene además configurarla como «contiene» y no como coincidencia exacta: son dos
    palabras, y «quiero mejoras!» o «Quiero mejoras.» tienen que entrar igual.
-2. **«Stories sueltas: NO por ahora»** (`:208-210`). Solo re-compartir el feed, hasta tener base de
-   seguidores. **El kit trae `story-portada` diseñada.** O la plantilla espera, o la regla cambia.
+2. ✅ **RESUELTA POR RAMÓN el 7-oct: la regla se queda, la plantilla espera.** *«yo comparto la
+   publicación como story. aún no tenemos muchos seguidores que nos vean las stories»*.
+   **Hecho:** `story-portada` queda **archivada, no borrada** — marcada en el manual §10.6, en el
+   README y en el propio HTML, para que nadie la tome por error. Se reactiva cuando la cuenta tenga
+   público de stories, y eso lo decide Ramón, no una fecha. Sus medidas siguen sirviendo: un reel
+   usa el mismo 1080×1920.
+   **Y se escribió el §10.6b, que faltaba**, con lo que el re-compartir le exige al feed: Instagram
+   encoge la lámina a unos dos tercios de la pantalla, así que **una pieza que apenas se lee en el
+   feed no se lee re-compartida**. Es el argumento más fuerte para no bajar nunca del piso de 33 px.
+   El sticker de enlace se pega encima al re-compartir, sin tapar el llamado.
 3. **«Las fichas tipográficas planas SOLAS ya no pasan»** (`:211-214`): toda pieza nueva bajo el
    mundo del concepto. **`post-titular` y las cinco láminas del carrusel son solo tipografía.** Ojo
    con el matiz: esa regla nombra el concepto del dominó del sistema v2, y el v3 cambió el sistema

@@ -218,6 +218,10 @@ cierre de mes.
 1. **Stories sueltas: NO por ahora.** Con pocos seguidores no mueven la aguja. Solo se usan
    para re-compartir publicaciones del feed (gesto manual de Ramón). El plan de stories
    independientes queda archivado hasta tener base de seguidores.
+   ✅ **RECONFIRMADA por Ramón el 7-oct**, al evaluar el kit de Instagram v3: *«yo comparto la
+   publicación como story. aún no tenemos muchos seguidores que nos vean las stories»*. La
+   plantilla `story-portada` del kit queda archivada, no borrada. Mecánica y consecuencias de
+   diseño en el manual §10.6b.
 2. **TODA pieza nueva se produce bajo el MUNDO del concepto** (fotografía física del
    dominó/consecuencias, manual §06b). Las fichas tipográficas planas del sistema v2 SOLAS
    ya no pasan el pase: son sistema, no campaña. Piezas pre-concepto se RE-VISTEN antes de

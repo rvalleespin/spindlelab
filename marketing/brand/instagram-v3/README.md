@@ -22,7 +22,7 @@ La carpeta es autocontenida: trae sus fuentes (`*.woff2`, copiadas de `tableros/
 | `carrusel-2-interior` · `carrusel-4-interior` | 1080×1350 | Filas con filete y pasos numerados | **no** | **no** | no | no |
 | `carrusel-3-dato` | 1080×1350 | Una cifra real en Manrope 500, en papel | **no** | **no** | no | no |
 | `carrusel-5-cierre` | 1080×1350 | Llamado y wordmark a todo el ancho, como el pie del sitio | sí | no | no | no |
-| `story-portada` | 1080×1920 | Story que acompaña un post. También sirve de portada de reel | sí | sí, una vez | no | pieza con radio |
+| `story-portada` | 1080×1920 | Story que acompaña un post. También sirve de portada de reel | sí | sí, una vez | no | pieza con radio |  ⬅️ **ARCHIVADA (7-oct): no se producen stories propias; Ramón re-comparte el feed. Manual §10.6b**
 | `story-portada-guia` | 1080×1920 | Solo para revisar las zonas. **No se publica** | — | — | — | — |
 | `post-campo-desarrollo-oro` | 1080×1350 | **Alternativa para decidir**, no es plantilla | sí, con el punto en oro sobre brasa | — | brasa | — |
 
