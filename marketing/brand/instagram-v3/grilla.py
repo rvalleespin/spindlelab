@@ -7,7 +7,10 @@ base = os.path.dirname(os.path.abspath(__file__))
 ORDEN = [
     'carrusel-1-portada', 'post-campo-visibilidad', 'post-obra',
     'post-campo-desarrollo', 'post-foto', 'post-campo-continuidad',
-    'post-titular', 'post-campo-alcance', 'story-portada',
+    'post-titular', 'post-campo-alcance',
+    # Sin story: una story NO aparece en la grilla del perfil, y además `story-portada` quedó
+    # archivada el 7-oct (manual §10.6b). Con 8 publicaciones la última fila va incompleta, que
+    # es exactamente como se ve un perfil con 8 piezas.
 ]
 TW, TH, GAP = 358, 477, 3          # 3 × 358 + 2 × 3 = 1080: el ancho de un teléfono a 1080
 def miniatura(n):
