@@ -126,3 +126,60 @@ no sea monótono, y brasa es el pilar Desarrollo, que es el servicio que resuelv
    recién después se rehacen las piezas. Al revés es como se llega a tres pasadas.
 3. **Las fotos tienen que tener una zona oscura real** donde apoyar el texto. Con una foto pareja
    habría que inventar un velo, y eso sigue prohibido. Es un criterio de selección, no un detalle.
+
+
+---
+
+# Ronda 2 (7-oct): el ángulo pasa a ser el Cyber, y tres correcciones
+
+> *«Hay que mejorar la redacción… la segunda parte me gusta pero la encuentro un poco técnica…
+> no está tan directo para decir, ya, si no recibiste los números de teléfono, entonces tu página
+> no está resultando, estás gastando de más… y la escena de los dominós, hay una ficha que se
+> devuelve, hazle un mejor encuadre para que sea en una sola dirección.»*
+>
+> Y después: *«estas gráficas tienen que ser alusivas al Cyber… apuntadas a la problemática de
+> alguien que no le funcionó su sitio para el Cyber.»*
+
+## 1 · El ángulo: Cyber
+
+**El CyberMonday fue del 5 al 7 de octubre y terminó anoche.** Es la única semana del año en que
+esta pregunta llega en el momento exacto: el dueño tiene los números frescos y la decepción
+reciente. La portada pasa a pasado («Pagaste… y ahí los perdiste») y la lámina 2 pregunta por
+**estos tres días**, no por el mes.
+
+⚠️ **Ventana corta, y hay que decirlo:** el ángulo sirve esta semana. Pasada, el arranque se cambia
+por temporada alta (noviembre y diciembre) y **el argumento se sostiene igual**, porque lo que
+vende no es el Cyber: es que el dueño cuente sus mensajes.
+
+## 2 · El encuadre: una sola dirección
+
+En `domino.jpg`, al fondo a la derecha hay **una ficha inclinada en sentido contrario** al de la
+caída. Leída rápido parece que la fila se devuelve, y eso rompe la lectura de «cae y se corta».
+La foto se alinea a la izquierda (`object-position: 0% 50%`), lo que recorta los 270 px sobrantes
+por la derecha. **Todas las fichas quedan cayendo hacia el mismo lado.**
+
+## 3 · La redacción, en castellano de dueño
+
+| | Antes | Ahora |
+|---|---|---|
+| Portada, ojillo | «Pagas para que lleguen a tu sitio.» | «Pagaste publicidad para el Cyber. Llegaron.» |
+| Portada, titular | «Y AHÍ LOS PIERDES» | «Y AHÍ LOS PERDISTE» |
+| Lámina 2 | tres preguntas en una tabla, con la fuente al lado | un gesto («Ahora abre tu teléfono») y **una** pregunta |
+| Lámina 2, remate | «el problema no es traer gente» | «Si no te escribió nadie, esas visitas no valieron nada.» |
+
+**La lámina 2 pasó de tres preguntas a una.** Tres se leen como formulario; una se contesta. Y el
+cierre dice la conclusión en vez de insinuarla, que era el reparo de Ramón.
+
+**Lo que NO se escribió, y es deliberado: «te vendieron humo».** Es la frase que Ramón usó para
+explicar la idea, y como idea es correcta. Pero escrita en la pieza es una acusación a la agencia
+que el lector tiene hoy, y el posicionamiento de la marca es **capacidad + resultado, nunca
+contraste** (brief v2 §4.5, §10.10). La pieza dice el hecho —«esas visitas no valieron nada»— y
+deja que la conclusión la saque él. Llega al mismo lugar y no nos pone a hablar mal de un tercero.
+
+## 4 · Un defecto del sistema que apareció acá
+
+**El display a interlínea 0,9 choca con las tildes.** En «AHORA ABRE / TU TELÉFONO», la tilde de la
+É de la segunda línea subía al espacio de la primera y **se leía como una coma**: «AHORA,ABRE».
+Corregido a 1,05 en la pieza y **anotado en §10.4 del manual**, porque le va a pasar a cualquier
+titular en caja alta con acento fuera de la primera línea. En el sitio no se nota; en Instagram,
+con titulares cortos y en mayúsculas, pasa seguido.

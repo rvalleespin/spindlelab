@@ -559,6 +559,12 @@ Tamaño del sitio a 390 × 2,77. Interlínea y tracking, los del sitio.
 | **Wordmark** | mínimo de piezas: 120 px de tinta | **≥ 70** (el kit usa 76) | Gabarito (archivo 600) | 1 | −0,035em | Portada y cierre |
 
 - **Nada de texto bajo 33 px.** Es la etiqueta de pieza, el texto más chico del sitio (12 px).
+- ⚠️ **La interlínea de 0,9 del display no sirve si la SEGUNDA línea lleva una vocal acentuada**
+  (hallazgo del 7-oct). La tilde sube y se mete en el espacio de la línea de arriba: en
+  «AHORA ABRE / TU TELÉFONO» la tilde de la É se leía como **una coma entre AHORA y ABRE**. Cuando
+  una línea que no sea la primera lleva Á É Í Ó Ú, el display sube a **1,05** de interlínea. En el
+  sitio no pasa porque su display casi no usa mayúsculas acentuadas en segunda línea; en Instagram,
+  con titulares cortos y en caja alta, pasa seguido.
 - **El wordmark no baja de 70 px:** el mínimo de 120 px de tinta (§02), × 2,77, son 332 px de lienzo, y la tinta mide 4,744 veces el tamaño. A 76 px mide 360 px y se ve como 130 px del sitio. En el cierre puede ir a todo el ancho útil, como el pie del sitio (10.6).
 - **Medido el 7-oct** (Chromium, fuentes de `og-v3/` cargadas): a 108 px, la palabra de campo más larga, «CONTINUIDAD», mide **747 px** y cabe en los 900 con 153 de holgura; «AHÍ SE CORTA», 730. Una línea de display lleva ~13 caracteres, así que el límite de 34 da **tres líneas como máximo**. La guía a 55 px da ~31 caracteres por línea.
 - La etiqueta de pieza a 1080: a **28 px** de la esquina de la imagen, relleno 14/22, **78 px** de alto, radio 11, negro al 66 % con desenfoque de 17 px, texto papel; varias, con 11 px entre sí.

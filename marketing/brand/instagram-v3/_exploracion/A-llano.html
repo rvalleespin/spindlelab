@@ -2,6 +2,11 @@
 <!-- DIRECCIÓN A · «la foto manda» · VARIANTE DE TITULAR LLANO (para pyme). La imagen deja de ser una pieza con radio y pasa a ser el
      lienzo: ocupa la lámina entera. El texto se apoya ARRIBA, sobre el tercio que en domino.jpg
      es negro puro (0,0,0), así que NO hace falta velo ni gradiente: la legibilidad la da la foto.
+     ENCUADRE (7-oct, pedido de Ramón): la foto se alinea a la IZQUIERDA. En el original, al fondo
+     a la derecha hay una ficha inclinada en sentido contrario al de la caída, y leída rápido
+     parece que la fila se devuelve. Al recortar los 270 px sobrantes por la derecha, todas las
+     fichas quedan cayendo hacia el mismo lado. Es la diferencia entre una fila que cae y un
+     montón de fichas.
      POR QUÉ ESTE TITULAR Y NO «Ahí se corta el circuito»: Ramón pidió (7-oct) que se entienda
      para un dueño de pyme. «Circuito» es la metáfora interna de §06b y en el sitio funciona,
      porque quien llega ya está leyendo. En el feed el público es frío y «los pierdes» nombra el
@@ -12,11 +17,11 @@
 <style>
   body { padding: 0; }
   .fondo { position: absolute; inset: 0; }
-  .fondo img { width: 100%; height: 100%; object-fit: cover; object-position: center 100%; display: block; }
+  .fondo img { width: 100%; height: 100%; object-fit: cover; object-position: 0% 50%; display: block; }
   .capa { position: relative; height: 100%; padding: var(--d-m); display: flex; flex-direction: column; }
-  .titular { margin-top: 44px; }
-  .display { font-size: 120px; }
-  .ojillo { margin-bottom: 24px; }
+  .titular { margin-top: 8px; }
+  .display { font-size: 112px; }
+  .ojillo { margin-bottom: 18px; line-height: 1.35; }
   .pie { margin-top: auto; }
   .llamado { font-size: var(--t-guia); line-height: 1.5; }
   .rot { margin-top: 6px; }
@@ -25,8 +30,8 @@
 <div class="capa">
   <div><span class="wm wm--76">SpindleLab<i>.</i></span></div>
   <div class="titular">
-    <p class="ojillo">Pagas para que lleguen a tu sitio.</p>
-    <h1 class="display">Y ahí<br>los pierdes</h1>
+    <p class="ojillo">Pagaste publicidad para el Cyber. Llegaron.</p>
+    <h1 class="display">Y ahí<br>los perdiste</h1>
   </div>
   <div class="pie">
     <p class="llamado">Comenta QUIERO MEJORAS<br>y te mandamos el chequeo por DM.</p>
