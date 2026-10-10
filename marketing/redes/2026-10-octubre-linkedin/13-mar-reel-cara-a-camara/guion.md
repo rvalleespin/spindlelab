@@ -9,7 +9,9 @@ alguien a quien esto le cuesta. Si se corre, el siguiente día bueno es el jueve
 **Voz:** singular · **Duración objetivo: 40 a 45 segundos** · vertical 9:16 · **subtítulos siempre**
 **Escribe:** esta sesión, a pedido de Ramón el 5-oct ("debería partir con un reel en donde se
 muestre mi cara. ve si es factible")
-**Estado:** ⬜ guion listo, **sin aprobar y sin grabar.** Nada se publica sin tu OK en el chat.
+**Estado:** ✅ **guion aprobado por Ramón el sáb 10-oct para grabar** (*"dale, voy a grabar con
+esta"*). Pendiente: la grabación. **Publicar sigue necesitando su OK en el chat**, aprobar el guion
+no es aprobar la publicación.
 **Segunda reescritura, sáb 10-oct:** *"me gusta pero lo siento que le falta storytelling mejor.
 aplica las reglas de elevator pitch"*. Entra una escena real al principio y la pieza se ordena en los
 cinco movimientos del pitch (abajo). Sube de 35 a 45 segundos, que es lo que cuesta la escena.
