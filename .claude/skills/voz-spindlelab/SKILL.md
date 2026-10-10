@@ -133,6 +133,39 @@ destacar", "En la era digital") · superlativos de venta ("revolucionario", "sin
 urgencia fabricada · cifras, testimonios o clientes que no existen · el nombre de un
 prospecto sin permiso · fragmentos sin verbo como titular de impacto.
 
+## Elevator pitch: los cinco movimientos (pedido por Ramón el 10-oct-2026)
+
+Ramón pidió *"aplica las reglas de elevator pitch"* para el reel del 13-oct. **No había reglas de
+elevator pitch escritas en este repo**, así que quedan acá, en la forma estándar adaptada a lo que
+este proyecto ya sabe que funciona y a lo que ya rechazó. Si Ramón corrige algo, se corrige acá.
+
+1. **La escena.** Una cosa concreta que pasó, contada en una o dos frases. No una tesis, no una
+   definición, no "en SpindleLab hacemos". El oyente tiene que *ver* algo antes de saber a qué te
+   dedicas.
+2. **El mecanismo.** Por qué pasó eso, explicado en términos que entienda alguien de afuera. **Este
+   movimiento es obligatorio** y es lo que separa esto de contar anécdotas: el 22-sep Ramón bajó
+   tres posts justamente por eso, *"no habla desde lo técnico o algo relevante que me entregue
+   autoridad como experto en el área"*. Una escena sin mecanismo es anécdota; con mecanismo, es
+   criterio.
+3. **La idea general.** Lo que la escena demuestra, en una frase que se pueda repetir. Si la idea
+   depende de una fecha o de una coyuntura, la pieza caduca con ella: conviene que no.
+4. **Qué haces.** Los servicios como una sola cosa, no como un catálogo, y en el idioma del que
+   escucha. Si el oyente podría contarle a otro lo que haces después de oír esta frase, está bien
+   escrita.
+5. **El cierre.** Quién eres y un solo paso siguiente. Nunca dos pedidas.
+
+**Reglas que atraviesan los cinco:**
+
+- **La escena sale de un hallazgo real**, y en este proyecto eso significa los lotes de
+  `marketing/outbound/`. Nada inventado, nunca, ni "a modo de ejemplo".
+- **La empresa de la escena se generaliza siempre**, en la pieza y en los comentarios. El permiso
+  del manual cubre el hallazgo, no el nombre.
+- **Una sola idea.** Si al resumir la pieza necesitas una "y", sobra algo.
+- **Cada frase se dice en una respiración.** Es la prueba más rápida de que el texto es hablable, y
+  la que caza las subordinadas de más.
+- **Las frases de abogado se van si ya no acotan nada.** Una salvedad legal existe para acotar una
+  promesa; si la promesa sale del texto, la salvedad sale con ella en vez de quedarse de adorno.
+
 ## Una advertencia sobre las fuentes
 
 **El canon es lo publicado y verificado, no todo lo que está en el aire.** El blog vivo

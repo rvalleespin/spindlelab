@@ -6,11 +6,14 @@ para la pieza más importante del mes. El martes 13 la gente vuelve del feriado 
 **De paso te deja el fin de semana largo para grabarlo sin apuro**, que es justo lo que necesita
 alguien a quien esto le cuesta. Si se corre, el siguiente día bueno es el jueves 15.
 **Canal:** **LinkedIn, video nativo en el perfil personal, primero.** Instagram después, si quieres.
-**Voz:** singular · **Duración objetivo: 35 segundos** · vertical 9:16 · **subtítulos siempre**
+**Voz:** singular · **Duración objetivo: 40 a 45 segundos** · vertical 9:16 · **subtítulos siempre**
 **Escribe:** esta sesión, a pedido de Ramón el 5-oct ("debería partir con un reel en donde se
 muestre mi cara. ve si es factible")
 **Estado:** ⬜ guion listo, **sin aprobar y sin grabar.** Nada se publica sin tu OK en el chat.
-**Reescrito el sáb 10-oct.** Ramón rechazó la primera versión (y el respaldo, que contaba lo mismo):
+**Segunda reescritura, sáb 10-oct:** *"me gusta pero lo siento que le falta storytelling mejor.
+aplica las reglas de elevator pitch"*. Entra una escena real al principio y la pieza se ordena en los
+cinco movimientos del pitch (abajo). Sube de 35 a 45 segundos, que es lo que cuesta la escena.
+**Primera reescritura, mismo día.** Ramón rechazó la versión original (y el respaldo, que contaba lo mismo):
 *"creo que el martes deberíamos destacar el desarrollo web y ahí viene lo relevante de la ley.
 siempre hay algo que revisar en un sitio. en spindlelab se desarrollan y auditan los sitios web"*.
 **Cambio de fondo:** el servicio pasa a ser el titular y la ley baja a ejemplo. La versión anterior
@@ -39,32 +42,47 @@ una vez, la restricción juega a favor.
 
 ## El guion (una sola toma, de corrido)
 
-**Duración: 35 a 40 segundos** (106 palabras). Lleva dos ideas y ningún dato legal.
+**Duración: 40 a 45 segundos** (124 palabras). Cinco movimientos, en el orden del elevator pitch:
+**escena → mecanismo → idea → qué hago → cierre.**
 
-### 0–7 seg
-> Un sitio web no se termina nunca. Se entrega, y desde ese día siempre hay algo que revisar.
+### 0–9 seg · la escena
+> Revisé el sitio de una empresa y en Google aparecía con el nombre de otra empresa. Una de
+> software, que no tenía nada que ver.
 
-### 7–19 seg
-> Por eso hago las dos cosas. Construyo sitios y los audito. Si lo construyo yo, entra bien hecho
-> desde el primer día. Si ya lo tienes, te digo qué le falta.
+### 9–20 seg · el mecanismo
+> Habían borrado una página, quedó dando error, y Google guardó ese error con el nombre
+> equivocado. Nadie ahí lo sabía, porque abriendo el sitio a mano no se ve.
 
-### 19–34 seg
-> Ahora mismo la lista de cosas que revisar creció, porque la ley de datos personales suma varias,
-> y casi todas son de construcción. Un formulario que pide más datos de los que necesita, por
-> ejemplo. La política de privacidad la redacta un abogado, el resto es mío.
+### 20–30 seg · la idea
+> Los sitios son así. No se terminan nunca. Se entregan, y desde ese día siempre hay algo que
+> revisar. Ahora, con la ley de datos personales, bastante más.
 
-### 34–38 seg
+### 30–42 seg · qué hago
+> Por eso hago las dos cosas. Construyo sitios y los audito. Si te toca sitio nuevo, entra bien
+> hecho desde el primer día. Si ya lo tienes, te digo qué le falta.
+
+### 42–45 seg · cierre
 > Soy Ramón, de SpindleLab. Los links van acá abajo, en el primer comentario.
+
+**De dónde sale la escena.** Es un hallazgo verificado de `marketing/outbound/semana-02/lote-1-frente-a.md`
+(prospecto 3): página de equipo en 404, y Google con una página de error indexada que llevaba el
+nombre de otra empresa de software. **Nunca se nombra la empresa**, ni en el video ni en los
+comentarios. Ese es el permiso completo que da el manual: hallazgo real, empresa generalizada.
+
+**Si necesitas bajarlo a 35 segundos**, sacrifica en este orden: la segunda frase del mecanismo
+("Nadie ahí lo sabía…"), después la cláusula de la ley. La escena y el "hago las dos cosas" no se
+tocan, porque son el pitch.
 
 ---
 
-## Hook alternativo, si el primero no te sale natural
+## Escena alternativa, si la primera no te sale natural
 
-> Cuando construyo un sitio, lo reviso entero antes de entregarlo. Lo raro es que después nadie lo
-> vuelva a revisar nunca.
+> Revisé un sitio donde la descripción que sale en Google estaba cortada a mitad de frase.
+> Terminaba en "de manera de". La escribió un sistema solo y nadie la leyó nunca.
 
-Entra directo por el lado del desarrollo y deja la auditoría como la consecuencia obvia. Dícelos en
-voz alta los dos y quédate con el que no te hace pensar.
+También es un hallazgo verificado del mismo lote (prospecto 10) y la misma regla de no nombrar.
+Es más fácil de contar, pero la del nombre equivocado pega más fuerte, porque el daño se entiende
+sin explicar nada. Dícelas las dos en voz alta y quédate con la que no te hace pensar.
 
 ---
 
@@ -123,29 +141,33 @@ queda chico, se cambia el lugar, no el método.
 
 | Lo que hace | Por qué |
 |---|---|
-| **Titula el servicio, no la ley** | Tu corrección del 10-oct. El desarrollo web es lo que se destaca; la ley entra como una de las cosas que hoy hay que revisar |
-| Abre en una idea tuya, no en la noticia | *"Siempre hay algo que revisar en un sitio"*, tal cual lo dijiste. De paso deja de depender del plazo del 1-dic, así que el video sirve igual en enero |
+| **Abre con una escena, no con una tesis** | Tu corrección del 10-oct. El pitch necesita que el oyente vea algo antes de que le digas a qué te dedicas |
+| **La escena es real y verificada** | La única fuente de historias que permite el manual son los hallazgos de los lotes de outbound. Nada inventado, y la empresa generalizada |
+| El mecanismo va inmediatamente después | Es la corrección de fondo del 22-sep: tres anécdotas rechazadas por *"no habla desde lo técnico"*. Una escena sin explicación es anécdota; con el porqué, es criterio |
+| **Titula el servicio, no la ley** | Tu corrección del 10-oct. El desarrollo web es lo que se destaca; la ley entra en una cláusula, como una de las cosas que hoy hay que revisar |
 | Nombra los dos servicios como uno | Desarrollar y auditar son el mismo oficio mirado en dos momentos. Eso es lo que cierra el mensaje, no la ley |
-| **No** dice "cumple la ley" | Es una afirmación legal. La política queda explícitamente en manos de un abogado |
+| No depende del plazo del 1-dic | La tesis es *"siempre hay algo que revisar"*, así que la pieza sirve igual en enero |
+| **Ya no lleva la línea del abogado** | Existía para acotar una promesa legal. Esta versión no promete cumplimiento: dice que la ley agregó cosas que revisar, que es un hecho. Sin promesa, no hay qué acotar |
 | **No** dice "soy fundador de SpindleLab" | Ya está muy repetido (tu nota de septiembre). La identificación va al final y en una línea |
-| **No** recita tu trayectoria | La autoridad la da el criterio, y la bio va por capacidad + resultado |
-| Un solo remate (*"el resto es mío"*) | El tope son dos |
-| Un solo ejemplo de la ley, no tres | Los tres ítems (scripts, formulario, política) ya salieron en el post del 5-oct. Queda uno, el formulario, que es el más fácil de ver sin ser técnico |
+| **No** recita tu trayectoria | La autoridad la da el criterio, y acá la da el mecanismo de la escena |
+| Un solo remate | El tope son dos |
 | Cero rayas largas, cero dos puntos de motor, cero "no es X, es Y" | Los tres tics documentados en `voz-spindlelab/SKILL.md` |
 
 ## Chequeo de duplicación
 
 | Pieza viva | ¿Se pisa? |
 |---|---|
-| 28-sep · "Me gusta construir sitios bien hechos" | **Roza, y más que antes.** Las dos piezas hablan de construir bien. Lo que acá es nuevo es la otra mitad, que un sitio entregado sigue necesitando revisión, y que eso también lo haces tú. **15 días de distancia** |
-| 5-oct · el cuarto mito | No. Ahí la amonestación y el registro público; acá la ley aparece en una frase y sin ningún dato legal |
+| **La escena del nombre equivocado** | **Nunca se ha publicado.** Grepeada en `marketing/redes/` y en el corpus de voz: no aparece. Material nuevo |
+| 28-sep · "Me gusta construir sitios bien hechos" | Roza en la mitad de construir bien. Lo nuevo es la otra mitad, que un sitio entregado sigue necesitando revisión. **15 días de distancia** |
+| 23-sep · "Query fan-out" | No, pero es el molde del que sale este guion: hallazgo técnico con el mecanismo explicado |
+| 5-oct · el cuarto mito | No. Ahí la amonestación y el registro público; acá la ley aparece en una cláusula |
 | 2-oct · "El sitio es la tienda principal" | No. Ahí dónde poner el esfuerzo; acá quién construye y quién revisa |
-| 30-sep · "Lo que el chequeo no alcanza a ver" | Roza apenas: el chequeo acá solo aparece como link, no como tema |
+| 30-sep · "Lo que el chequeo no alcanza a ver" | Roza apenas: el chequeo acá solo aparece como link |
 
 **Riesgo asumido:** *"siempre hay algo que revisar"* puede leerse como que entregas sitios a los que
-siempre les falta algo. Lo que lo evita es el orden del tramo de 7–19: primero que lo que construyes
-entra bien hecho, después que lo que ya existe se revisa. Si al decirlo en voz alta te suena a que
-te estás acusando, invierte las dos frases y parte por *"si ya lo tienes, te digo qué le falta"*.
+siempre les falta algo. Lo que lo evita es el orden del cuarto movimiento: primero que lo que
+construyes entra bien hecho, después que lo que ya existe se revisa. Si al decirlo en voz alta te
+suena a que te estás acusando, invierte esas dos frases.
 
 ## Primer comentario (LinkedIn, al tiro)
 
