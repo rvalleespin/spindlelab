@@ -112,9 +112,9 @@ solo se sostiene si uno de los tres es barato de producir.
 | Fecha | Tipo | Pieza | Estado |
 |---|---|---|---|
 | **lun 5-oct** | B | El cuarto mito: la amonestación es una facultad, no un derecho | ✅ publicado y verificado |
-| **mié 7-oct** | A | Antes de pagar un panel de visibilidad en IA, lo que ya puedes medir gratis | 🟡 aprobado, en cola. Releer la página de Google y `/diagnostico/` antes de publicar |
-| **jue 8-oct** | C | **El Cyber como examen del sitio: ¿funcionó?** (ángulo de Ramón) | 🟡 **borrador listo**, `08-jue-cyber-examen-del-sitio/publicar.md`. Pieza de coyuntura, **ventana corta**: sirve el 8 o el 9, después se cae |
-| vie 9-oct | — | Vacío a propósito (víspera de fin de semana largo), o el post del Cyber si se corre | — |
+| **mié 7-oct** | A | Antes de pagar un panel de visibilidad en IA, lo que ya puedes medir gratis | ✅ **publicado y verificado** (urn 7513591632873730048) |
+| ~~jue 8-oct~~ | C | ~~El Cyber como examen del sitio~~ | ⛔ **SE CAYÓ** (constatado el 10-oct). Era coyuntura con ventana al 8 o 9 y no salió. **No se fuerza fuera de fecha**, y no hay pérdida real: su ángulo de fondo lo cubre el carrusel del jue 22, que es el mismo argumento sin depender de una semana |
+| vie 9-oct | — | Vacío (regla de los viernes) | — |
 | **sáb 10 – lun 12** | — | **Fin de semana largo. Cero publicaciones** | — |
 | **mar 13-oct** | **D** | **Reel cara a cámara: el mensaje cerrado.** LinkedIn nativo primero, Instagram después | 🟡 **guion listo**, `13-mar-reel-cara-a-camara/guion.md`. Depende de que Ramón grabe. Si se corre, el jue 15 |
 | **jue 15-oct** | B | La base de datos que te dejó la temporada: datos personales a seis semanas de la ley | ⬜ **ya escrito**, en el banco al final de `08-jue-cyber-examen-del-sitio/publicar.md`. Al reusarlo se cambia el arranque: la referencia al Cyber envejece, entra temporada alta |
@@ -125,7 +125,13 @@ solo se sostiene si uno de los tres es barato de producir.
 | mié 28-oct | B | El cierre de la ventana de la ley | ⬜ |
 | vie 30-oct | — | Cierre de mes (no es publicación, por eso sí va en viernes) | ⬜ |
 
-**Alternancia verificada:** B → A → C → D → B → A → B → C → A → B. Sin dos del mismo tipo seguidos.
+**Alternancia verificada tras la caída del jue 8:** B → A → D → B → A → B → C → A → B. Sin dos del
+mismo tipo seguidos.
+
+> ⚠️ **Estado al sáb 10-oct: no hay nada en cola.** El último post salió el 7. El lunes 12 es
+> feriado, así que **el próximo slot es el martes 13 y es el reel**, que depende de que Ramón
+> grabe. Si no se graba, el 13 queda vacío y el mes pierde su pieza más importante: conviene
+> decidirlo antes del lunes, no el martes. Sin dos del mismo tipo seguidos.
 
 > ⚠️ **La alternancia de tipos no basta: hay que mirar también el servicio.** Al cambiar el post del
 > jue 8 al ángulo del Cyber (Desarrollo Web), el 8, el reel del 13 y el texto que había para el 16
