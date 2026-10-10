@@ -1,14 +1,16 @@
-# Publicar — RESPALDO del martes 13: el mensaje cerrado, en texto
+# Publicar — RESPALDO del martes 13: construyo y audito sitios, en texto
 
 **Cuándo:** MARTES 13-oct-2026 · **Canal:** perfil personal de Ramón · **Voz:** singular
 **Pieza visual:** ninguna. Texto puro. · **Tipo C** (criterio de construcción / Desarrollo Web)
 **Estado:** ⬜ **sin aprobar.** Nada se publica sin tu OK en el chat.
+**Reescrito el sáb 10-oct** junto con el reel, al mismo ángulo nuevo: el servicio es el titular y la
+ley baja a ejemplo. La versión anterior, que titulaba con la ley, está en git (commit `0bc3d9d`).
 
 ## ⚠️ Esto es un respaldo, no una pieza más
 
-**Sale SOLO si el reel del martes 13 no se graba.** Los dos cuentan el mismo mensaje cerrado, así
-que **son alternativos, nunca los dos**. Si el reel sale, este texto vuelve al banco y queda
-disponible para otro slot.
+**Sale SOLO si el reel del martes 13 no se graba.** Los dos cuentan lo mismo, así que **son
+alternativos, nunca los dos**. Si el reel sale, este texto vuelve al banco y queda disponible para
+otro slot.
 
 **Por qué existe:** escrito el sábado 10, al constatar que el martes 13 dependía de una grabación
 que puede no ocurrir. Sin respaldo, un reel no grabado deja el martes vacío y el silencio pasa de
@@ -16,25 +18,25 @@ dos días hábiles a una semana entera, que es justo lo que Ramón pidió evitar
 
 ## Cuerpo (copiar y pegar)
 
-Todo el mundo está arreglando su sitio a última hora por la ley de datos personales. Si el tuyo todavía está por hacerse, no tienes que pasar por eso.
+Un sitio web no se termina nunca. Se entrega, y desde ese día siempre hay algo que revisar.
 
-Los huecos que esa ley te va a cobrar son de construcción. Cómo cargan los scripts, qué pide un formulario y para qué, si la política que tienes enlazada de verdad abre. Cuando un sitio se hace bien, no aparecen.
+Lo que pasa es que todo lo que lo rodea se mueve. Cambian los navegadores, cambia lo que la gente busca, se acumulan scripts que nadie saca, y cada tanto cambia la ley.
 
-Yo los miraba antes de que existiera el plazo, porque un sitio bien hecho no debería tenerlos.
+Por eso hago las dos cosas. Construyo sitios y los audito. Si te lo construyo yo, entra bien hecho desde el primer día. Si ya lo tienes hecho, lo que hago es decirte qué le falta.
 
-Así que si te toca sitio nuevo, te lo entrego sin esa deuda. La política de privacidad la redacta un abogado, el resto es construcción, y eso es lo mío.
+Ahora mismo esa lista creció. La ley de datos personales suma varias cosas que revisar, y casi todas son de construcción. Un formulario que pide más datos de los que necesita, por ejemplo.
 
-Y si tu sitio ya está hecho y quieres saber en qué está, armé un chequeo gratis que te lo muestra en cuarenta segundos.
+La política de privacidad la redacta un abogado. El resto es mío.
 
-Lo dejo en el primer comentario.
+Los dos links van en el primer comentario.
 
 ## Primer comentario (AL TIRO)
 
-Acá está: https://verifica.spindlelab.cl
+Si te toca sitio nuevo, esto es lo que entrego: https://spindlelab.cl/servicios/desarrollo-web/
+
+Y si tu sitio ya está hecho y quieres ver en qué está, armé un chequeo gratis que lo muestra en cuarenta segundos: https://verifica.spindlelab.cl
 
 Gratis, sin registro, y no guarda el dominio que revisas. Lo que no alcanza a ver lo dice, en vez de darlo por bueno.
-
-Y si lo que te toca es sitio nuevo: https://spindlelab.cl/servicios/desarrollo-web/
 
 ---
 
@@ -43,19 +45,23 @@ Y si lo que te toca es sitio nuevo: https://spindlelab.cl/servicios/desarrollo-w
 | Pieza viva | ¿Se pisa? |
 |---|---|
 | **El reel del 13-oct** | **Sí, es el mismo mensaje.** Por eso son alternativos |
-| 28-sep · "Me gusta construir sitios bien hechos" | Roza: ahí dijiste que mirabas esos huecos antes de que existiera la ley. Acá va el paso siguiente, lo que por eso recibes. **15 días de distancia** |
+| 28-sep · "Me gusta construir sitios bien hechos" | Roza: las dos hablan de construir bien. Lo nuevo acá es la otra mitad, que un sitio entregado sigue necesitando revisión y que eso también lo haces tú. **15 días de distancia** |
 | 7-oct · "lo que se mide gratis de la visibilidad en IA" | No. Otro tema y otro servicio |
-| 5-oct · el cuarto mito | Misma ley, otro ángulo: ahí la sanción, acá la construcción |
+| 5-oct · el cuarto mito | No. Ahí la amonestación y el registro público; acá la ley aparece en una frase, sin dato legal |
 
 ## Tono
 
-Cero rayas largas · dos remates, que es el tope ("no tienes que pasar por eso" y "eso es lo mío") ·
-abre en la situación del lector · sin cifras · sin "soy fundador de SpindleLab" · **no dice que el
-sitio "cumple la ley"**, que es una afirmación legal: dice que los huecos de construcción no
-aparecen, y deja la política en manos de un abogado.
+Cero rayas largas · un solo remate ("el resto es mío"), bajo el tope de dos · abre en una idea tuya,
+no en la noticia · sin cifras · sin "soy fundador de SpindleLab" · **no dice que el sitio "cumple la
+ley"**, que es una afirmación legal: deja la política en manos de un abogado y se queda con la
+construcción.
 
-## Dependencia que sigue abierta
+**El párrafo de los navegadores y los scripts es lo único que el reel no tiene.** En texto hay
+espacio para sostener la primera frase; en 35 segundos, no. Si al leerlo te sobra, sácalo: el post
+funciona igual sin él.
 
-`spindlelab.cl/servicios/desarrollo-web/` **no menciona la ley ni privacidad** (leída el 5-oct). El
-segundo link del primer comentario manda a una página que no sostiene lo que el post promete. **Si
-no se alcanza a agregar esa línea, se saca ese link** y queda solo el chequeo.
+## Dependencia
+
+`spindlelab.cl/servicios/desarrollo-web/` **no menciona la ley ni privacidad** (leída el 5-oct).
+**Con este ángulo ya no importa**, porque el post no promete cumplimiento legal desde esa página,
+solo que construyes y auditas sitios. El link queda.

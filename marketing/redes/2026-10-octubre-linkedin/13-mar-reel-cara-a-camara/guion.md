@@ -1,4 +1,4 @@
-# Guion — Primer video cara a cámara: el mensaje cerrado
+# Guion — Primer video cara a cámara: construyo y audito sitios
 
 **Cuándo:** MARTES 13-oct-2026. **Movido del viernes 9** (Ramón avisó que el lunes 12 es feriado):
 el 9 es víspera de fin de semana largo y la gente se desconecta antes, que es el peor día posible
@@ -10,6 +10,11 @@ alguien a quien esto le cuesta. Si se corre, el siguiente día bueno es el jueve
 **Escribe:** esta sesión, a pedido de Ramón el 5-oct ("debería partir con un reel en donde se
 muestre mi cara. ve si es factible")
 **Estado:** ⬜ guion listo, **sin aprobar y sin grabar.** Nada se publica sin tu OK en el chat.
+**Reescrito el sáb 10-oct.** Ramón rechazó la primera versión (y el respaldo, que contaba lo mismo):
+*"creo que el martes deberíamos destacar el desarrollo web y ahí viene lo relevante de la ley.
+siempre hay algo que revisar en un sitio. en spindlelab se desarrollan y auditan los sitios web"*.
+**Cambio de fondo:** el servicio pasa a ser el titular y la ley baja a ejemplo. La versión anterior
+está en el historial de git (commit `0bc3d9d`).
 **Locación:** **al aire libre**, decidido por Ramón el sáb 10-oct — ver "Versión al aire libre" más abajo.
 **Respaldo:** si no se graba, sale el texto de `13-mar-respaldo-mensaje-cerrado/publicar.md`. **Alternativos, nunca los dos.**
 
@@ -34,35 +39,32 @@ una vez, la restricción juega a favor.
 
 ## El guion (una sola toma, de corrido)
 
-### 0–5 seg
-> Todo el mundo está arreglando su sitio a última hora por la ley de datos personales. Si el tuyo
-> todavía está por hacerse, no tienes que pasar por eso.
+**Duración: 35 a 40 segundos** (106 palabras). Lleva dos ideas y ningún dato legal.
 
-### 5–20 seg
-> Los huecos que esa ley te va a cobrar son de construcción. Cómo cargan los scripts, qué pide un
-> formulario y para qué, si la política que tienes enlazada de verdad abre. Cuando un sitio se hace
-> bien, no aparecen.
->
-> Yo los miraba antes de que existiera el plazo, porque un sitio bien hecho no debería tenerlos.
+### 0–7 seg
+> Un sitio web no se termina nunca. Se entrega, y desde ese día siempre hay algo que revisar.
 
-### 20–32 seg
-> Así que si te toca sitio nuevo, te lo entrego sin esa deuda. La política de privacidad la redacta
-> un abogado, el resto es construcción, y eso es lo mío.
->
-> Y si tu sitio ya está hecho y quieres saber en qué está, armé un chequeo gratis que te lo muestra
-> en cuarenta segundos.
+### 7–19 seg
+> Por eso hago las dos cosas. Construyo sitios y los audito. Si lo construyo yo, entra bien hecho
+> desde el primer día. Si ya lo tienes, te digo qué le falta.
 
-### 32–35 seg
-> Soy Ramón, construyo sitios y visibilidad en IA en SpindleLab. El link va acá abajo, en el primer
-> comentario.
+### 19–34 seg
+> Ahora mismo la lista de cosas que revisar creció, porque la ley de datos personales suma varias,
+> y casi todas son de construcción. Un formulario que pide más datos de los que necesita, por
+> ejemplo. La política de privacidad la redacta un abogado, el resto es mío.
+
+### 34–38 seg
+> Soy Ramón, de SpindleLab. Los links van acá abajo, en el primer comentario.
 
 ---
 
 ## Hook alternativo, si el primero no te sale natural
 
-> Si tu sitio todavía está por hacerse, la ley de datos personales te puede salir gratis.
+> Cuando construyo un sitio, lo reviso entero antes de entregarlo. Lo raro es que después nadie lo
+> vuelva a revisar nunca.
 
-Más filoso y más corto. Dícelo en voz alta las dos veces y quédate con la que no te hace pensar.
+Entra directo por el lado del desarrollo y deja la auditoría como la consecuencia obvia. Dícelos en
+voz alta los dos y quédate con el que no te hace pensar.
 
 ---
 
@@ -121,47 +123,52 @@ queda chico, se cambia el lugar, no el método.
 
 | Lo que hace | Por qué |
 |---|---|
-| Abre en tu situación, no en la noticia | Tu propia corrección del 5-oct: *"no tiene un contexto"* |
-| Dice qué ley es en la primera línea | Misma corrección |
-| **No** dice "cumple la ley" | Es una afirmación legal. La forma honesta es "sin los huecos de construcción", y la política queda explícitamente en manos de un abogado |
+| **Titula el servicio, no la ley** | Tu corrección del 10-oct. El desarrollo web es lo que se destaca; la ley entra como una de las cosas que hoy hay que revisar |
+| Abre en una idea tuya, no en la noticia | *"Siempre hay algo que revisar en un sitio"*, tal cual lo dijiste. De paso deja de depender del plazo del 1-dic, así que el video sirve igual en enero |
+| Nombra los dos servicios como uno | Desarrollar y auditar son el mismo oficio mirado en dos momentos. Eso es lo que cierra el mensaje, no la ley |
+| **No** dice "cumple la ley" | Es una afirmación legal. La política queda explícitamente en manos de un abogado |
 | **No** dice "soy fundador de SpindleLab" | Ya está muy repetido (tu nota de septiembre). La identificación va al final y en una línea |
 | **No** recita tu trayectoria | La autoridad la da el criterio, y la bio va por capacidad + resultado |
-| Cierra los dos servicios en una idea | El mensaje cerrado: la ley empuja a todos a arreglar; el que yo construyo ya viene sin eso |
-| Un solo remate (*"no tienes que pasar por eso"*) | El tope son dos |
+| Un solo remate (*"el resto es mío"*) | El tope son dos |
+| Un solo ejemplo de la ley, no tres | Los tres ítems (scripts, formulario, política) ya salieron en el post del 5-oct. Queda uno, el formulario, que es el más fácil de ver sin ser técnico |
 | Cero rayas largas, cero dos puntos de motor, cero "no es X, es Y" | Los tres tics documentados en `voz-spindlelab/SKILL.md` |
 
 ## Chequeo de duplicación
 
 | Pieza viva | ¿Se pisa? |
 |---|---|
-| 28-sep · "Me gusta construir sitios bien hechos" | **Roza y es a propósito.** Ahí dijiste que mirabas esos huecos antes de que existiera la ley; acá va el paso siguiente, que es lo que por eso recibes. Con el video el 13-oct quedan 15 días de distancia, suficiente |
-| 5-oct · el cuarto mito | No. Ahí el tema es la amonestación y el registro público; acá no hay ningún dato legal |
-| 2-oct · "El sitio es la tienda principal" | No. Ahí es dónde poner el esfuerzo; acá es qué trae el sitio que construyo |
-| 30-sep · "Lo que el chequeo no alcanza a ver" | No. Ahí es el mecanismo del chequeo |
+| 28-sep · "Me gusta construir sitios bien hechos" | **Roza, y más que antes.** Las dos piezas hablan de construir bien. Lo que acá es nuevo es la otra mitad, que un sitio entregado sigue necesitando revisión, y que eso también lo haces tú. **15 días de distancia** |
+| 5-oct · el cuarto mito | No. Ahí la amonestación y el registro público; acá la ley aparece en una frase y sin ningún dato legal |
+| 2-oct · "El sitio es la tienda principal" | No. Ahí dónde poner el esfuerzo; acá quién construye y quién revisa |
+| 30-sep · "Lo que el chequeo no alcanza a ver" | Roza apenas: el chequeo acá solo aparece como link, no como tema |
 
-**Riesgo asumido:** los tres ítems de construcción que nombra el video (scripts, formulario,
-política que abre) aparecen también en el post de hoy, 5-oct. Acá van como **consecuencia** y sin
-el ángulo legal, pero si lo ves repetido, cambia el tramo de 5–20 por los huecos que a ti más te
-molestan de los sitios ajenos, que es tu terreno.
+**Riesgo asumido:** *"siempre hay algo que revisar"* puede leerse como que entregas sitios a los que
+siempre les falta algo. Lo que lo evita es el orden del tramo de 7–19: primero que lo que construyes
+entra bien hecho, después que lo que ya existe se revisa. Si al decirlo en voz alta te suena a que
+te estás acusando, invierte las dos frases y parte por *"si ya lo tienes, te digo qué le falta"*.
 
 ## Primer comentario (LinkedIn, al tiro)
 
-Acá está: https://verifica.spindlelab.cl
+**El orden cambió con el ángulo nuevo:** desarrollo primero, chequeo segundo.
+
+Si te toca sitio nuevo, esto es lo que entrego: https://spindlelab.cl/servicios/desarrollo-web/
+
+Y si tu sitio ya está hecho y quieres ver en qué está, armé un chequeo gratis que lo muestra en
+cuarenta segundos: https://verifica.spindlelab.cl
 
 Gratis, sin registro, y no guarda el dominio que revisas. Lo que no alcanza a ver lo dice, en vez
 de darlo por bueno.
-
-Y si lo que te toca es sitio nuevo: https://spindlelab.cl/servicios/desarrollo-web/
 
 ---
 
 ## Dependencias antes de publicar
 
 1. **Grabar.** Es el único paso que no puede hacer esta sesión.
-2. **`/servicios/desarrollo-web/` no dice nada de la ley ni de privacidad** (leída en vivo el
-   5-oct). El video manda tráfico ahí con una promesa que la página no sostiene. **Conviene que el
-   trabajo del sitio que ya está en curso agregue esa línea antes**, o el segundo link del primer
-   comentario se saca y queda solo el chequeo.
+2. **El ángulo nuevo destrabó esta dependencia.** `/servicios/desarrollo-web/` no menciona la ley
+   ni privacidad (leída en vivo el 5-oct), y la versión anterior del video prometía justamente eso,
+   así que mandaba tráfico a una página que no lo sostenía. Ahora el video promete que construyes y
+   auditas sitios, y eso la página sí lo sostiene. **Ya no bloquea el martes**, aunque sigue siendo
+   buena idea que el trabajo del sitio agregue esa línea.
 3. **Instagram queda para después del de LinkedIn**, y no por pereza: la etiqueta "Perfil generado
    con IA" está encendida en esa cuenta. Un video con tu cara para construir confianza, en un
    perfil marcado como generado con IA, se pelea consigo mismo. Es tu llamado, se apaga desde el
