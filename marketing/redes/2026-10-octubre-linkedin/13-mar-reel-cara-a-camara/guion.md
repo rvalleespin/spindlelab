@@ -10,6 +10,8 @@ alguien a quien esto le cuesta. Si se corre, el siguiente día bueno es el jueve
 **Escribe:** esta sesión, a pedido de Ramón el 5-oct ("debería partir con un reel en donde se
 muestre mi cara. ve si es factible")
 **Estado:** ⬜ guion listo, **sin aprobar y sin grabar.** Nada se publica sin tu OK en el chat.
+**Locación:** **al aire libre**, decidido por Ramón el sáb 10-oct — ver "Versión al aire libre" más abajo.
+**Respaldo:** si no se graba, sale el texto de `13-mar-respaldo-mensaje-cerrado/publicar.md`. **Alternativos, nunca los dos.**
 
 ---
 
@@ -78,6 +80,40 @@ Más filoso y más corto. Dícelo en voz alta las dos veces y quédate con la qu
 6. **NO le pongas audio de tendencia.** La nota del reel de la sheriff (música desde la app) aplica
    a piezas mudas; encima de tu voz, un audio de tendencia solo estorba.
 7. **Cero música épica de stock.** Algo sobrio o nada, como el resto de la marca.
+
+---
+
+## Versión al aire libre (decidida por Ramón el sáb 10-oct)
+
+Ramón propuso grabarlo afuera, con micrófono y gimbal. **Se aprueba, con reglas**, por dos razones
+reales: el sistema visual está congelado mientras cambia el sitio y un fondo real no necesita
+etiqueta de marca, así que afuera desaparece el problema del set; y el sonido ambiente hace que el
+video se lea como grabado y no como producido, que es la mitad del mensaje.
+
+Las reglas existen porque al aire libre reaparecen, con otra cara, los dos motivos por los que
+murieron los dos guiones anteriores.
+
+**1. Viento. Es lo único que obliga a regrabar.** Espuma o peluche en el micrófono siempre, incluso
+sin viento aparente. Antes de las tomas buenas: **graba diez segundos, escúchalos con audífonos.**
+Micrófono de corbata bajo el cuello si existe; un cañón montado en el teléfono a dos metros trae
+más calle que voz, así que ahí hay que acercarse o cambiar de lugar.
+
+**2. El gimbal tienta a caminar, y caminar es la trampa.** El video del 7-sep murió por ser un
+montaje de seis cortes. Y caminando hacia cámara gesticulando, la pieza se lee como coach de
+infoproducto, lo contrario de lo que vende SpindleLab. **El gimbal se usa como trípode que no
+tiembla:** apoyado en su base sobre un banco o baranda, a la altura de los ojos, bloqueado (modo
+lock, sin seguimiento), y Ramón se aleja. **Nunca a la distancia del brazo**: entra el brazo en
+cuadro, el gran angular deforma la cara, y 35 segundos con el brazo estirado se oyen en la voz.
+
+**3. Luz.** No al mediodía (sol cenital, ojos en sombra). Nublado es ideal. Despejado: la última
+hora y media antes del atardecer, o sombra abierta mirando hacia cielo abierto. **Nunca luz
+moteada bajo las hojas**, que parpadea en la cara.
+
+**4. Fondo.** En vertical el fondo se comprime: una plaza grande se ve vacía y una calle con gente
+pasando roba la atención. Algo con profundidad pero quieto, y sin nadie caminando detrás.
+
+Lo que **no** cambia: una toma, el texto completo de corrido, tres veces, se elige una. Si el lugar
+queda chico, se cambia el lugar, no el método.
 
 ---
 
