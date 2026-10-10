@@ -1,5 +1,20 @@
 # Instrucción de arranque — sesión que continúa el rediseño v3
 
+> **⚠️ Corregida el 10-oct-2026 por la sesión del estudio web (`claude/magical-franklin-ckfki2`). Leer antes que el resto.**
+>
+> 1. **El paso 1 ya no vale.** `claude/rebranding-webdev-exploracion` quedó en el estado del
+>    30-sep más tres commits de documentos. El v3 vigente (compuertas 1 y 2, las 21 páginas
+>    reconstruidas en el lenguaje de driftime, mockups, imagen OG, QA final, manual v3.0) vive en
+>    **`claude/magical-franklin-ckfki2`**, que lleva 81 commits más y ya incluye estos tres
+>    documentos. Rama desde ahí: `git checkout -b <tu-rama> origin/claude/magical-franklin-ckfki2`.
+> 2. **Tres filas del §2 del traspaso las cambió Ramón después.** El hero se reabrió en la
+>    compuerta 1 (2-oct) y **el 10-oct Ramón confirmó que queda el actual, «Ahí se corta el
+>    circuito»**: «El eje de tu negocio» y su bajada no vuelven. Las mayúsculas 800 van **solo en
+>    cinco lugares** desde el 5-oct (manual §05). El contrato vigente es
+>    `marketing/oficina/obras-web/spindlelab-v3/spec-visual.md`.
+> 3. Los pendientes del §6 y §7 se están revisando contra la rama vigente (10-oct); el resultado queda en
+>    `marketing/oficina/obras-web/spindlelab-v3/pendientes-traspaso-revisados.md`.
+
 Para pegar como primer mensaje de la sesión que toma el trabajo.
 
 ---
