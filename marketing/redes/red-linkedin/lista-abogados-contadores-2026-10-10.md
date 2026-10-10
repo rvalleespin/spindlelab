@@ -1,7 +1,17 @@
 # Lista de abogados y contadores para conectar en LinkedIn (10-oct-2026)
 
-**Estado:** ⏳ **Pendiente de aprobación de Ramón.** No se envió ninguna invitación. Una invitación escribe a una persona real en su
-nombre, así que se envía solo después de que él apruebe a cada una (o a toda la lista) en el chat.
+**Estado:** ✅ **Aprobada por Ramón el 10-oct ("todos, sin nota") y enviada ese mismo día.** Las 13 invitaciones salieron sin nota y las 13
+quedaron en "Pendiente" (verificado en pantalla en cada perfil). Los dos de reserva (R1, R2) no se enviaron. Falta ver quién acepta.
+
+**Cómo se envió:** perfil por perfil, comprobando antes que cargo, ubicación y contactos en común coincidieran con esta lista. En los perfiles
+donde el botón principal es "Seguir" (María Francisca Marchessi, Juan Ignacio Seguel, Andrés Ossa Gillet, Feliciano Filgueira, Patricio
+Contreras, Sara Araya y Enrique Vidal), "Conectar" está en el menú "...". Después de enviar, esas cuentas no pasan a "Siguiendo".
+
+**Corrección sobre Andrés Ossa Gillet:** al abrir su perfil se vio que hoy trabaja en la Dirección Legal y de Cumplimiento del Arzobispado de
+Santiago (abogado interno), no como consultor, así que la nota de "puede competir" no aplica.
+
+**Seguimiento:** revisar en unos días quién aceptó (pestaña Mi red → Invitaciones enviadas) y anotarlo aquí. Con quien acepte, lo útil no es
+escribirle de inmediato sino reaccionar y comentar lo que publica, y dejar que vea los posts de Ramón. No retirar las pendientes antes de varias semanas.
 
 **Para qué:** red de referidos, no lista de venta. Los abogados cubren lo que el chequeo y el kit no hacen ("la política de
 privacidad la redacta un abogado"); los contadores son quienes ven primero a los dueños de pyme. Ramón pidió esta lista el 10-oct.
