@@ -27,10 +27,14 @@ git checkout -b <tu-rama> origin/claude/rebranding-webdev-exploracion
 **No hay PR abierto para esta rama.** Los PR abiertos del repo son otros: el #41 (QA del
 v2 antes de apuntar el dominio) y el #33 (presentación de marca, abierta desde el 3-sep).
 
-**Aviso sobre el #41, que no es de esta sesión pero va a chocar con alguien:** su rama
-`claude/reposicion-sitio-v2-mejoras` **no comparte ancestro con `main`**, así que no va a
-mergear limpio. Es trabajo del **v2**, no del v3 (cero archivos en `/v3/`), así que no
-pisa nada de acá.
+**Sobre el #41, y va una corrección de esta misma sesión:** llegué a escribir que su rama
+`claude/reposicion-sitio-v2-mejoras` no compartía ancestro con `main` y que el merge estaba
+bloqueado. **Es falso.** Comprobado contra GitHub: la base común es `223fef2`, que está en el
+historial de `main`, y el PR son **1 commit y 1 archivo, +61/-0**. Mi `git merge-base`
+devolvió vacío porque la referencia no resolvía en ese momento, y al usar esa variable vacía
+el `diff` comparó contra la nada y me devolvió la rama entera, de ahí el «141 archivos» que
+también era falso. Lo real: es un PR de reporte, del **v2**, con cero archivos en `/v3/`, y
+no pisa nada de acá.
 
 ---
 
@@ -513,9 +517,15 @@ Después, un verificador por hallazgo, con la instrucción de **intentar refutar
 rechazarlo ante la duda.
 
 Rindió. Un ejemplo de los que cayeron: un frente afirmó que esta rama no comparte ancestro
-con `main` y que el merge estaba bloqueado de raíz. Es falso — el que no comparte ancestro
-es `claude/reposicion-sitio-v2-mejoras`, que es del v2. Si esa pista entraba sin filtro,
-alguien habría salido a rehacer la rama.
+con `main` y que el merge estaba bloqueado de raíz. Se descartó por falso, y con razón.
+
+**Pero el filtro no me cubrió a mí.** Yo había escrito lo mismo sobre OTRA rama
+(`claude/reposicion-sitio-v2-mejoras`) y lo repetí tres veces antes de comprobarlo contra
+GitHub: también era falso, y por el mismo error de método. Un `git merge-base` que devuelve
+vacío no significa «no hay ancestro», significa que la referencia no resolvió, y usar esa
+variable vacía en un `diff` compara contra la nada y devuelve la rama entera. De ahí salieron
+dos cifras inventadas. **La lección es la del §4: comprobar también lo propio, no solo lo que
+dice otro.**
 
 Y otro que sobrevivió y corrigió a quien escribió el encargo: una verificación **clonó el
 repo público de Bernardo** y encontró que el arreglo propuesto para su portada no se podía
