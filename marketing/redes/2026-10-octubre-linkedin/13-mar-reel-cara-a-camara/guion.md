@@ -171,6 +171,33 @@ siempre les falta algo. Lo que lo evita es el orden del cuarto movimiento: prime
 construyes entra bien hecho, después que lo que ya existe se revisa. Si al decirlo en voz alta te
 suena a que te estás acusando, invierte esas dos frases.
 
+## Texto del post (copiar y pegar)
+
+**No repite el guion.** El video ya cuenta la historia con subtítulos, así que el texto hace otra
+cosa: engancha en las dos primeras líneas (lo único que se ve antes del "ver más" en el teléfono) y
+suelta la tesis que el video deja al final. Quien no reproduce igual se lleva algo; quien lee la
+primera línea tiene motivo para darle play.
+
+El sitio de una empresa aparecía en Google con el nombre de otra empresa, de otro rubro.
+
+Nadie ahí lo sabía, y es entendible. Abriendo el sitio a mano eso no se ve.
+
+Lo cuento en 45 segundos porque es el mejor ejemplo que tengo de algo que repito harto. Un sitio no se termina el día que se entrega.
+
+### Línea opcional de cierre
+
+> Es la primera vez que salgo a cámara, así que sean pacientes.
+
+**Decisión de Ramón, no mía.** A favor: es cierto, humaniza, y en LinkedIn un primer video a cámara
+con una nota así suele recibir más comentarios de apoyo. En contra: la marca construye autoridad por
+criterio, y pedir paciencia la baja un poco justo en la pieza que la estrena. Si dudas, déjala fuera:
+el video se sostiene solo.
+
+### Sin hashtags
+
+Los posts de octubre en el perfil personal no llevan ninguno. Los `#SEO #IA #Chile` que aparecen en
+el repo son de las piezas de **la página** de septiembre, otro canal y otra época.
+
 ## Primer comentario (LinkedIn, al tiro)
 
 **El orden cambió con el ángulo nuevo:** desarrollo primero, chequeo segundo.
