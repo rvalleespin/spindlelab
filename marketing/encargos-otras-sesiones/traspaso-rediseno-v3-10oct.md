@@ -473,12 +473,12 @@ donde uno de cada tres cayó al verificarlo.
 - **Las skills no repiten las reglas viejas del manual.** Lo anoté como pendiente y lo
   verifiqué al cerrar: cero menciones de Gabarito, Manrope o del dorado en `.claude/skills/`.
   Queda cerrado.
-- **El permiso de caso público de Bernardo: Ramón lo confirmó en sesión** (30-sep) y con
-  eso se trabajó. **Pero el repo lo niega:** `ventas/proyectos-en-curso.md:16` sigue
-  diciendo que no está dado, y no hay evidencia archivada. La palabra de Ramón manda sobre
-  un documento viejo; lo que falta es **actualizar el documento**, antes de que otra sesión
-  lea lo contrario y frene el caso. Mientras no se actualice, esto no está cerrado: está
-  dicho y sin registrar.
+- **El permiso de caso público de Bernardo está dado y ya está registrado.** Ramón lo
+  confirmó el 30-sep y `ventas/proyectos-en-curso.md` quedó actualizado el 10-oct: hasta
+  ese día el documento decía lo contrario y la contradicción estuvo a punto de frenar el
+  caso. **La confirmación es verbal, en sesión, sin correo archivado**, y así queda anotado
+  en el registro. El permiso no está en duda; si alguna vez hace falta el respaldo escrito,
+  hay que pedírselo a Bernardo.
 - **Verifica y Cumple tiene URL pública**: `verificaycumple.pages.dev`. Ojo que
   **`verificaycumple.cl` NO resuelve** (el gateway devuelve 502).
 
