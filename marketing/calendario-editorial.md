@@ -116,7 +116,8 @@ solo se sostiene si uno de los tres es barato de producir.
 | ~~jue 8-oct~~ | C | ~~El Cyber como examen del sitio~~ | ⛔ **SE CAYÓ** (constatado el 10-oct). Era coyuntura con ventana al 8 o 9 y no salió. **No se fuerza fuera de fecha**, y no hay pérdida real: su ángulo de fondo lo cubre el carrusel del jue 22, que es el mismo argumento sin depender de una semana |
 | vie 9-oct | — | Vacío (regla de los viernes) | — |
 | **sáb 10 – lun 12** | — | **Fin de semana largo. Cero publicaciones** | — |
-| **mar 13-oct** | **D** | **Reel cara a cámara: el mensaje cerrado.** LinkedIn nativo primero, Instagram después | 🟡 **guion listo**, `13-mar-reel-cara-a-camara/guion.md`. Depende de que Ramón grabe. Si se corre, el jue 15 |
+| **mar 13-oct** | **D** | **Reel cara a cámara: el mensaje cerrado.** LinkedIn nativo primero, Instagram después | 🟡 **guion listo**, `13-mar-reel-cara-a-camara/guion.md`. Depende de que Ramón grabe. **Ya no se corre: tiene respaldo** (fila siguiente) |
+| ↳ *respaldo del 13* | C | **El mensaje cerrado, en texto.** Mismo argumento, sin cámara | ⬜ **escrito el sáb 10**, `13-mar-respaldo-mensaje-cerrado/publicar.md`. **Sale SOLO si el reel no se graba** — son alternativos, nunca los dos. Si el reel sale, este vuelve al banco |
 | **jue 15-oct** | B | La base de datos que te dejó la temporada: datos personales a seis semanas de la ley | ⬜ **ya escrito**, en el banco al final de `08-jue-cyber-examen-del-sitio/publicar.md`. Al reusarlo se cambia el arranque: la referencia al Cyber envejece, entra temporada alta |
 | lun 19-oct | A | "Para que la IA te recomiende, tu sitio no basta" | ⬜ aprobado el 22-sep y pospuesto. **Necesita gancho nuevo**: comparte ideas con el del 7-oct |
 | mié 21-oct | B | Cookies y la ley chilena | ⬜ **bloqueado**: hay que verificar qué exige de verdad la 21.719 sobre cookies. Si sigue bloqueado, entra el plazo del 1-dic a seis semanas |
@@ -128,17 +129,26 @@ solo se sostiene si uno de los tres es barato de producir.
 **Alternancia verificada tras la caída del jue 8:** B → A → D → B → A → B → C → A → B. Sin dos del
 mismo tipo seguidos.
 
-> ⚠️ **Estado al sáb 10-oct: no hay nada en cola.** El último post salió el 7. El lunes 12 es
-> feriado, así que **el próximo slot es el martes 13 y es el reel**, que depende de que Ramón
-> grabe. Si no se graba, el 13 queda vacío y el mes pierde su pieza más importante: conviene
-> decidirlo antes del lunes, no el martes. Sin dos del mismo tipo seguidos.
+> ⚠️ **Estado al sáb 10-oct.** El último post salió el 7. El viernes 9 no se publicó (demora en el
+> pago de la suscripción), y el sáb 10, dom 11 y lun 12 (feriado) no son días hábiles: **el hueco
+> real es de dos días hábiles**, jue 8 y vie 9, no de una semana. **No se publica el sábado**: la
+> regla de los viernes vale doble en fin de semana largo.
+>
+> **El próximo slot es el martes 13 y queda cubierto pase lo que pase.** Primera opción, el reel,
+> que depende de que Ramón grabe. Si no se graba, sale el respaldo en texto escrito el sáb 10. La
+> decisión se toma el **lunes 12**, no el martes, para no publicar a las apuradas.
 
 > ⚠️ **La alternancia de tipos no basta: hay que mirar también el servicio.** Al cambiar el post del
 > jue 8 al ángulo del Cyber (Desarrollo Web), el 8, el reel del 13 y el texto que había para el 16
 > quedaban los tres del mismo servicio en nueve días. Tipos distintos, misma racha que en
 > septiembre con Verifica y Cumple. **Se cayó el texto del 16** (el reel ya cuenta el mensaje
-> cerrado) y entró en su lugar la pieza de datos personales. Si el reel no se graba, ese texto
-> vuelve al calendario.
+> cerrado) y entró en su lugar la pieza de datos personales. **Ese texto es el que volvió el sáb
+> 10 como respaldo del 13**, no del 16: si reemplaza al reel ocupa su slot, así que la racha de
+> Desarrollo Web no se repite.
+>
+> **Alternancia si entra el respaldo:** B → A → **C** → B → A → B → C → A → B. El 13 pasa de D a C
+> y queda pegado al carrusel del 22, también C, pero con nueve días y dos piezas en medio. Es el
+> costo aceptado de no dejar el martes vacío.
 
 > **Sobre el CyberMonday (7-oct).** Fue del **lun 5 al mié 7 de octubre** (Cámara de Comercio de
 > Santiago), así que una campaña "para el Cyber" ya no alcanzaba. Lo que sí tiene ventana es el día
