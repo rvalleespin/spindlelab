@@ -12,7 +12,7 @@
 >    circuito»**: «El eje de tu negocio» y su bajada no vuelven. Las mayúsculas 800 van **solo en
 >    cinco lugares** desde el 5-oct (manual §05). El contrato vigente es
 >    `marketing/oficina/obras-web/spindlelab-v3/spec-visual.md`.
-> 3. Los pendientes del §6 y §7 se están revisando contra la rama vigente (10-oct); el resultado queda en
+> 3. Los pendientes del §6 y §7 se revisaron contra la rama vigente el 10 y 11-oct; el resultado está en
 >    `marketing/oficina/obras-web/spindlelab-v3/pendientes-traspaso-revisados.md`.
 
 Para pegar como primer mensaje de la sesión que toma el trabajo.

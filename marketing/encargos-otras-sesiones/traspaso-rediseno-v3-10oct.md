@@ -6,7 +6,7 @@
 > desde la rama de este traspaso** (§0 quedó desactualizado). Del §2, Ramón cambió después tres
 > filas: el hero se reabrió el 2-oct y el **10-oct confirmó que queda «Ahí se corta el circuito»**
 > (no vuelven «El eje de tu negocio» ni su bajada), y las mayúsculas 800 van solo en cinco lugares
-> desde el 5-oct. Los pendientes del §6 y §7 se están revisando contra la rama vigente; el resultado queda en
+> desde el 5-oct. Los pendientes del §6 y §7 se revisaron contra la rama vigente el 10 y 11-oct; el resultado está en
 > `marketing/oficina/obras-web/spindlelab-v3/pendientes-traspaso-revisados.md`.
 
 **Fecha:** 2026-10-10 · **De:** sesión cloud del rediseño v3 (se cierra con este documento)
