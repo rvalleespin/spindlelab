@@ -147,3 +147,49 @@ del banco de Apollo que usa este traspaso. Ejemplo: en el 25-sep weskar.cl figur
 3 es por empresa, no por casilla. Antes de escribir, revisar las dos direcciones del dominio.
 
 La línea de baja es la variante Apollo en los dos casos, así que eso no cambia.
+
+---
+
+## Resultado de las sondas (13-oct, dos corridas)
+
+Los 16 sondeados, dos corridas cada uno. **Quince de dieciséis dieron el mismo conteo en las dos.**
+Detalle en `ventas/turismo-medidos-13oct.csv`.
+
+**5 escritos:** `cascada.travel`, `terrantai.com`, `hoteloceanic.cl`, `weskar.cl`,
+`puyuhuapilodge.com`.
+
+**El rendimiento del vertical: 5 de 21, un 24%.** Apenas mejor que abogados (20%) y bastante peor
+de lo que la pinta del barrido sugería. La causa no es el prospecto, es que **nueve de los
+dieciséis estaban limpios o casi**: cero a tres cookies, y de infraestructura.
+
+### Lo que no sobrevivió, y es la parte útil
+
+- **`hoteloceanic.cl` cambió entre corridas:** 4 pasivas y 9 al gesto la primera vez, 9 pasivas
+  la segunda. **Lo estable es el total de nueve, no el momento.** El correo dice nueve y no dice
+  "cuatro quieto y nueve al moverte".
+- **`weskar.cl` y `puyuhuapilodge.com` cargan SiteMinder y Cloudbeds, pero solo archivos** (CSS,
+  JavaScript, tipografías) y **sin dejar una sola cookie del motor**. Decir que su motor de
+  reservas recibe datos habría sido el error refutable en dos minutos. Los correos no lo dicen.
+- **`hotelcristobalcolon.cl` tenía Booking.com en el HTML estático y CERO peticiones a Booking en
+  el navegador real.** Era un enlace o un sello, no un widget.
+- **`7k-lodge.com` da 403 también en Chrome de verdad:** 2 peticiones y la pantalla de error. El
+  bloqueo es real y es hallazgo de AEO, no de VyC.
+
+> **La corrección al ángulo del vertical:** el barrido estático decía que 14 de 16 tenían motor de
+> reserva, y de ahí salió la idea de construir el correo alrededor de eso. **Medido en el
+> navegador, el motor solo deja rastro en uno: `cascada.travel`.** En los demás carga y no escribe
+> nada. El ángulo del motor de reservas sirve, pero hay que ganárselo caso a caso.
+
+### Los que no se escribieron
+
+- **`tantakuy.cl` ya cumple:** cero cookies en los dos tramos y las dos corridas, con 137
+  peticiones, política publicada y formularios con casilla. Segundo sitio chileno del pipeline que
+  llega en orden, después de `estudioveragua.cl`.
+- **Sin hallazgo** (todo cookie de infraestructura o de sesión): `hotelkennedy.cl` —que además es
+  franquicia de cadena—, `almalodge.cl`, `taka.cl`, `aguasdelmonte.cl`, `hotelcristobalcolon.cl`,
+  `laturbina.cl`.
+- **Hallazgo flojo, medidos y sin escribir:** `chelenko.com` y `tungulu.cl`, con un formulario sin
+  política cada uno y cero cookies.
+- **`director.cl` es ángulo de Desarrollo Web:** renderiza 4,4 KB con un nombre, un teléfono de
+  reservas y un Instagram. No es un sitio. Y Apollo lo tiene como `45bydirector.com`, que está
+  caído: el dominio vivo es `director.cl`.
