@@ -169,6 +169,11 @@ quedó fuera el 5-oct.
 
 ## 2 · Trabajo del estudio web
 
+> **Estado al 13-oct:** E1 a E6 hechos, con QA de Javiera en contexto limpio (Aprobado en la
+> ronda completa y en la exprés de cierre) y los desvíos decididos por Lucía. Commits de
+> 511bb86 a 7b60c6c; el registro está en el §7 de `spec-visual.md` (filas del 13-oct). Quedan
+> E7 (la lista de publicación) y E8 (el pase de voz de Clara).
+
 No necesita decisión. Se hace en esta rama, se mide y queda anotado en el §7 de la spec.
 
 **E1 · El aviso de cookies** (C34, P66, P92, P63). En la home y en vertical ya no tapa el
