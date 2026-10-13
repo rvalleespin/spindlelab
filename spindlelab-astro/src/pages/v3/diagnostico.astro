@@ -268,12 +268,21 @@ const jsonLd = {
        cambia y la línea no es enfocable), como en la home, donde el instrumento abre;
      · aire mínimo: la miga a 96, bajo la caja del módulo (86 o 94 de alto);
      · apaisado y bajo 768 de ancho, el campo y el botón en una fila de 64 px, el
-       instrumento de escritorio: en columna medía 118 px. */
+       instrumento de escritorio: en columna medía 118 px.
+     CON UN RESULTADO PINTADO, LA LÍNEA SALE DE LA VISTA (Lucía, cierre de la QA 13-oct;
+     spec §7). Con order: 1 va después de todo .d-instr-diag, que contiene #chq-out: tras el
+     chequeo, «Pon tu dominio…» quedaba bajo el remate del resultado, de 4,8 a 6,9 pantallas
+     más abajo, como una instrucción suelta después del paso de conversión. Se oculta con
+     las propiedades de .d-sr: sigue en el árbol de accesibilidad, en su lugar del DOM
+     (antes del instrumento). No display: none, y tampoco vuelve arriba: correría el
+     formulario entre 72 y 120 px en el instante en que aparece el resultado. Si un segundo
+     intento da error, la línea sigue oculta; el aviso de error se explica solo. */
   @media (orientation: portrait) and (max-height: 600px), (orientation: landscape) and (max-height: 500px) {
     .d-cab-diag { display: flex; flex-direction: column; padding-top: 96px; }
     .d-cab-diag :global(.d-miga) { margin-bottom: 14px; }
     .d-cab-diag .d-linea { order: 1; margin: 22px 0 0; }
     .d-instr-diag { margin-top: 18px; }
+    .d-cab-diag:has(#chq-out:not(:empty)) .d-linea { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: 0; }
   }
   @media (orientation: landscape) and (max-height: 500px) and (max-width: 767px) {
     .d-instr-diag .d-dom { flex-direction: row; height: 64px; gap: 0; }
