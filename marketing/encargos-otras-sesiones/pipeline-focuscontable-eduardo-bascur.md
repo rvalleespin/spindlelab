@@ -57,3 +57,32 @@ respondió un outbound pidiendo el diagnóstico. **Verifica contra la evidencia 
   - Si sigue sin responder tras ese → parquear como **"Perdido ✗ — silencio"**, revisar en ~1 mes.
   - **Canal alterno:** tiene WhatsApp publicado (+56 9 6167 3894). Un contador suele responder más
     rápido ahí que por correo; es decisión de Ramón si lo usa.
+
+---
+
+## Seguimiento 2 — LISTO (preparado 13-oct, para enviar ~5-7 días después del toque 1 si no responde)
+
+**Hallazgo re-verificado el 13-oct:** la portada de focuscontable.cl NO cambió (189.351 bytes, igual que
+la auditoría). El bloque «Preguntas Frecuentes» sigue con las preguntas en inglés
+(«What is the process for conducting an audit?», «How do you help risk management?») y las respuestas en
+texto de relleno en latín. Vigente. Por eso el toque 2 se ancla ahí (hallazgo nuevo, re-gana atención).
+
+**Texto (tú, voz de Ramón, lista para pegar). Lo manda Ramón, no se auto-envía:**
+
+> Hola Eduardo, te dejo una cosa concreta y no te quito más tiempo.
+>
+> Un detalle del diagnóstico que se ve a simple vista, hoy mismo, en tu portada: el bloque de «Preguntas
+> Frecuentes» tiene las preguntas en inglés («What is the process for conducting an audit?») y las
+> respuestas en texto de relleno en latín. Cualquiera que entre a tu sitio lo ve, incluidos tus propios
+> alumnos.
+>
+> No es grave, pero es justo el tipo de cosa que te resta credibilidad sin que te enteres, y se arregla
+> rápido. Hay varias así, chicas, que juntas deciden si un cliente confía o sigue de largo.
+>
+> ¿Lo vemos 20 minutos esta semana? Tú me dices el día. Y si prefieres dejarlo, me avisas y no te escribo más.
+>
+> Un abrazo,
+> Ramón
+
+**Este es el último toque de la secuencia** (lleva salida de cortesía). Si tampoco responde → parquear
+como "Perdido ✗ — silencio", revisar en ~1 mes o probar WhatsApp (+56 9 6167 3894).
