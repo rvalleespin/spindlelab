@@ -410,6 +410,16 @@ const siguiente = orden[(iAqui + 1) % orden.length];
   .d-indice-art a[aria-current='true'] { color: var(--d-papel); }
   .d-indice-art a[aria-current='true'] .d-indice-art__n { color: var(--d-papel); }
   .d-indice-art a[aria-current='true']::before { content: ''; position: absolute; left: -14px; top: 12px; bottom: 12px; width: 2px; background: var(--d-papel); }
+  /* PANTALLA BAJA: el índice deja de pegarse bajo 680 px de alto, el mismo corte de .d-campo
+     y de la banda del índice de servicios (spec §3). Pegado en top: 120, el índice más alto
+     (fintechs, 475 px; 21 chequeos, 440) no cabe sobre el aviso de cookies abierto (78 px):
+     sus últimas filas quedaban bajo el aviso o bajo el borde, y con Tab no había scroll que
+     las subiera (WCAG 2.4.11). Medido con Tab en los 7 artículos y el aviso abierto: 20 filas
+     tapadas a 844 × 390, 15 a 932 × 430, 7 a 1280 × 500, 2 a 1280 × 600 y 1 a 1280 × 650;
+     con el corte en 500 seguían las de 600 y 650. Ahora 0, y desde 680 se pega como antes. */
+  @media (max-height: 679px) {
+    .d-indice-art { position: static; }
+  }
 
   /* El cuerpo: HTML inyectado, así que todo va por :global(). Manrope 400, 19 px, en gris
      (el texto secundario de driftime, 6,9:1); papel para lo que tiene que pesar: entrada,
