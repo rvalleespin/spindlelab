@@ -197,10 +197,6 @@ const actual = (href: string): 'page' | 'true' | undefined =>
       padding-bottom: clamp(9px, 2svh - 4px, 14px);
     }
   }
-  /* El número se alinea con la palabra sin competir. */
-  .menu-enlace .rotulo {
-    transition: opacity 0.2s;
-  }
   .menu-enlace:hover .menu-palabra {
     opacity: 0.7;
   }
@@ -233,7 +229,6 @@ const actual = (href: string): 'page' | 'true' | undefined =>
   }
   @media (prefers-reduced-motion: reduce) {
     #menu-overlay[data-abierto] .menu-enlace { animation: none }
-    .menu-enlace .rotulo, .menu-enlace:hover .menu-palabra { transition: none }
   }
 </style>
 
