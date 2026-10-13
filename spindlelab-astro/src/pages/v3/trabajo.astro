@@ -88,11 +88,6 @@ const LINEA_CORREGIDA: Record<string, { antes: string; ahora: string }> = {
 const RUBRO_CORREGIDO: Record<string, { antes: string; ahora: string }> = {
   'verifica-y-cumple': { antes: 'Herramienta propia', ahora: 'Herramienta' },
 };
-//  · El mockup -alto es SOLO el teléfono (1000×1100, mirado). altMock describe el par
-//    notebook + teléfono del -ancho. Hasta que el JSON traiga altMockAlto por caso, va acá.
-const ALT_ALTO: Record<string, string> = {
-  'combeau-modelo': 'El book de modelo de Bernardo Combeau abierto en un teléfono',
-};
 
 // El precio de entrada de Desarrollo Web, del mismo dato que la home y el índice de
 // servicios: el primero de «$390.000 · $690.000 · $1.190.000». Spec §3: «Desde … + IVA».
@@ -116,7 +111,9 @@ const ROTULO: Record<string, string> = {
 // columnas con su pie al lado. Lo que pesa más en la página es trabajo de cliente; la pieza
 // de concepto cierra y es la más chica de las anchas.
 //   ancha — a todo el ancho, 16:9 (mockup de notebook + teléfono)
-//   alta  — 5 de 12 columnas, 10:11 (mockup en teléfono)
+//   alta  — 5 de 12 columnas, 10:11 (mockup en teléfono). El -alto es SOLO el teléfono
+//           (1000×1100, mirado): su alt es altMockAlto, que obra-v3.json trae en cada caso
+//           con -alto; altMock describe el par notebook + teléfono del -ancho
 //   media — 7 de 12, toma la altura de la alta (mockup de notebook + teléfono)
 //   final — 8 de 12, 4:3, con el pie en las 4 columnas que quedan
 // Raigal va en mockup y no en su portada plana: la portada trae el aviso de concepto
@@ -127,7 +124,7 @@ const ROTULO: Record<string, string> = {
 // rótulo de la pieza y no detrás, y la base del teléfono sale entera.
 const FORMAS: Record<string, { forma: string; src: (c: any) => string; alt: (c: any) => string; w: number; h: number; pos?: string }> = {
   'combeau-fotografia': { forma: 'ancha', src: (c) => c.mock, alt: (c) => c.altMock, w: 1600, h: 1200, pos: '50% 55%' },
-  'combeau-modelo': { forma: 'alta', src: (c) => c.mockAlto, alt: (c) => c.altMockAlto ?? ALT_ALTO[c.slug] ?? c.altMock, w: 1000, h: 1100 },
+  'combeau-modelo': { forma: 'alta', src: (c) => c.mockAlto, alt: (c) => c.altMockAlto ?? c.altMock, w: 1000, h: 1100 },
   'verifica-y-cumple': { forma: 'media', src: (c) => c.mock, alt: (c) => c.altMock, w: 1600, h: 1200 },
   raigal: { forma: 'final', src: (c) => c.mock, alt: (c) => c.altMock, w: 1600, h: 1200 },
 };
