@@ -1,10 +1,11 @@
 # Publicar: "Esperemos, que la ley de datos personales la postergan" (el proyecto del Senado)
 
-**Cuándo:** propuesto para el MIÉRCOLES 14-oct-2026 (o el jueves 15). **El tema caduca:** se pisa el día que la Comisión vote o el Congreso
-apruebe, así que conviene salir esta semana · **Canal:** perfil personal de Ramón · **Voz:** singular
+**Cuándo:** MIÉRCOLES 14-oct-2026 (decidido por Ramón el 13-oct). **El tema caduca:** se pisa el día que la Comisión vote o el Congreso
+apruebe, así que el checklist de abajo se hace el mismo miércoles antes de publicar · **Canal:** perfil personal de Ramón · **Voz:** singular
 **Pieza visual:** ninguna. Texto puro.
 **Escribe:** agente-copywriter (Renata), a pedido directo de Ramón ("prepara el siguiente post de la semana", 13-oct)
-**Estado:** 📝 BORRADOR v1, esperando la aprobación de Ramón. No publicado.
+**Estado:** ✅ APROBADO por Ramón el 13-oct, sin cambios ("queda así, déjalo para el miércoles"). **Programado para el miércoles 14-oct, no publicado.**
+Si el miércoles se publica, se publica el texto de "Cuerpo" tal cual, salvo que el checklist encuentre novedad en el Senado.
 
 ## Origen del encargo
 
