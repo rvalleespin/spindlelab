@@ -608,3 +608,40 @@ avisa que los 6 últimos los infirió por patrón, no por conteo: esos se confir
 
 Mientras los topes no estén en el CSV, la cola vuelve a ofrecer a gente que ya recibió sus tres
 correos. La etiqueta sola no alcanza.
+
+---
+
+## 13. El copiloto lee `main`, y ahí faltaba medio pipeline (13-oct-2026)
+
+Durante varias corridas el copiloto reportó que **diez direcciones no aparecían en ningún CSV de
+`ventas/`** y que por eso no podía elegirles la línea de baja ni escribirles. Hizo lo correcto al
+frenarse. Pero la causa no era de él.
+
+**El copiloto clona `origin/main`.** Once archivos de ventas vivían solo en la rama de trabajo, y
+varios se habían perdido del árbol cuando un commit de una línea arrastró 957 archivos sin querer.
+Entre ellos, `ventas/contactos-diarioemprende-30sep.csv`: **seis de esas diez direcciones estaban
+ahí**, en un archivo que main no tenía.
+
+Las otras cuatro (`cascada.net`, `santuariodelrio.cl`, `lunadepirque.cl`, `harenua.com`) son del
+lote de hoteles del 25-sep, que existía **solo dentro de un `.txt` de marketing**. La regla del
+prompt dice buscar el origen en `ventas/*.csv`, así que no estaban donde la regla manda mirar.
+
+Ambas cosas quedaron resueltas el 13-oct: los once archivos están publicados en main, y el lote de
+hoteles tiene su propio banco en `ventas/contactos-hoteles-25sep.csv` con las 43 direcciones.
+
+### La regla que queda
+
+> **Si un lead va a recibir correo, su origen tiene que estar en un `ventas/*.csv` que esté en
+> `main`.** No en una rama, no en un `.md`, no dentro del prompt de una rutina. Un banco que no
+> está en main, para el copiloto no existe.
+
+Y la de verificación, que es la que lo habría pillado meses antes: cuando una rutina cloud reporta
+que le falta un dato del repo, **comprobar en `origin/main`, no en el worktree donde uno está
+parado**. Lo que uno ve en su rama no es lo que la rutina clona.
+
+### Por qué importa más de lo que parece
+
+No eran diez correos. Entre lo que faltaba estaban los bancos de DiarioEmprende, de clínicas, de
+inmobiliarias, el cruce completo del pipeline y el de abogados. El copiloto llevaba más de una
+semana trabajando con la mitad del pipeline invisible, y eso no se manifiesta como un error: se
+manifiesta como una cola que nunca encuentra candidatos.
