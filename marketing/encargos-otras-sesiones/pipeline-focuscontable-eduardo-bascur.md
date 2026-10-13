@@ -40,3 +40,20 @@ respondió un outbound pidiendo el diagnóstico. **Verifica contra la evidencia 
 - **Encargo aparte para Diego/diseñador** (no es tuyo, troncal, pero déjalo anotado si no existe):
   revisar por qué el workflow de auditoría terminó haciendo POST a formularios de un tercero, para
   que no se repita.
+
+---
+
+## Actualización 13-oct-2026 (seguimiento)
+
+- **El diagnóstico SÍ se envió:** 2-oct-2026 22:26, con el PDF `SPL-DIAG-2026-007-focuscontable.pdf`
+  adjunto (confirmado en el hilo de Gmail, etiqueta SENT). → El troncal puede mover la fila a
+  **"Diagnóstico/propuesta enviada"** con fecha 2-oct. Ya hay evidencia.
+- **11 días de silencio.** Eduardo no respondió a la pregunta de agendar. No rebotó ni se dio de baja.
+- **Seguimiento 1 preparado** (borrador en Gmail, sin enviar, 13-oct): nudge corto, re-ancla el valor,
+  pide un par de horarios, da salida fácil. Lo manda Ramón.
+- **Cadencia sugerida** (es un lead tibio: pidió el diagnóstico, vale 2-3 toques, no abandonar al primero):
+  - Si no responde en ~5-7 días → seguimiento 2 con otro ángulo (proponerle un horario concreto, o un
+    segundo hallazgo del diagnóstico que no se destacó).
+  - Si sigue sin responder tras ese → parquear como **"Perdido ✗ — silencio"**, revisar en ~1 mes.
+  - **Canal alterno:** tiene WhatsApp publicado (+56 9 6167 3894). Un contador suele responder más
+    rápido ahí que por correo; es decisión de Ramón si lo usa.
