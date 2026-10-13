@@ -36,6 +36,18 @@
 - **La obra larga se respalda sola**: commits WIP cada 20 minutos, porque el contenedor se
   reinició tres veces y el límite de uso cortó la orquestación cuatro.
 
+## Aprendido en la revisión del traspaso (spindlelab-v3, 10–13 oct 2026)
+- **Un traspaso de otra sesión se verifica ítem por ítem antes de actuar, y la verificación
+  también.** De los 95 ítems del traspaso viejo, solo 11 seguían vivos tal como estaban
+  escritos: 28 ya estaban resueltos en la rama vigente, 19 los había dejado obsoletos una
+  decisión posterior de Ramón (el hero del 10-oct entre ellas) y 33 seguían vivos con otras
+  rutas, cifras o alcance. Ejecutado tal cual, habría rehecho trabajo y reabierto el hero. Un
+  escéptico corrigió 11 de los 95 veredictos del primer verificador y el crítico de
+  cobertura tumbó un «resuelto» (P92). El traspaso tampoco acertaba en lo que afirmaba como
+  hecho: el PR #41 «no comparte ancestro con `main`» y «toca 141 archivos» salieron de un
+  `git merge-base` vacío, que en un clon superficial no prueba nada (la referencia no
+  resolvió). Su autor lo corrigió (c9d6f6a) y GitHub lo confirma: 1 commit, 1 archivo, +61.
+
 ## Con quién trabajo
 - Entrego el brief a **Lucía** (dirección de arte) y **Clara** (copy de interfaz), y
   la capa de señales la pide **Simón**. Reporto el cierre al troncal (**Tomás**), que

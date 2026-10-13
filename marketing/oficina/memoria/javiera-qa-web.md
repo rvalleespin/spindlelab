@@ -46,6 +46,18 @@
   regresiones: el arreglo de tableta se coló al celular y achicó la obra 16 %.
 - **Lo que mide `npm run verificar` no se repite a mano**; se le busca lo que se le escapa.
 
+## Aprendido en la revisión del traspaso (spindlelab-v3, 10–13 oct 2026)
+- **Lo fijo en la pantalla se mide en todas sus formas, no en la cómoda.** El aviso de
+  cookies se midió por ancho (390, 768, 1440, siempre en vertical) y la línea base decía «no
+  ocurre desde 360px». Midiendo por alto y apaisado apareció tapado en la página propia
+  del chequeo: `/v3/diagnostico/` a 320×568 (el botón entero) y a 844×390 (campo y botón), y
+  la home a 568×320 (C34, P66; el crítico tumbó el «resuelto» de P92 con la misma medida).
+  Y el aviso que sale **después** del clic en Aceptar o Rechazar (`#cookie-aviso`, 5 s, radio
+  16 px, sombra e Inter) no existe en el DOM hasta ese clic: el render inicial no lo ve y la
+  QA final repintó solo `#cookie-banner` (P63). Se mide con `elementFromPoint` en el centro
+  del control, en alturas bajas y en horizontal, y se aprieta cada control que pinta algo
+  nuevo antes de dar la vista por medida.
+
 ## Con quién trabajo
 - Audito lo de **Diego** contra la spec de **Lucía** y el brief de **Mauro**; los
   defectos de copy los marco contra el detector y los arregla **Clara**. No arreglo yo

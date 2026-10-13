@@ -19,6 +19,8 @@
  *   · JSON-LD presente (sin datos estructurados, la IA no sabe leer la página).
  *   · alt en todas las imágenes.
  *   · Enlaces internos que responden 404.
+ *   · Comentarios HTML servidos (`<!-- -->`) en las páginas que arma Astro: en una
+ *     plantilla viajan al navegador con lo que digan (la regla va junto a `esEstatica`).
  *   · Opcional: píldoras (border-radius de 999px), que el sistema v3 no usa.
  *
  * USO
@@ -40,11 +42,10 @@ import http from 'node:http';
 // --- argumentos -------------------------------------------------------------
 const arg = (nombre, porDefecto = null) => {
   const i = process.argv.indexOf(`--${nombre}`);
-  return i !== -1 && process.argv[i + 1] && !process.argv[i + 1].startsWith('--')
-    ? process.argv[i + 1]
-    : i !== -1
-      ? true
-      : porDefecto;
+  if (i === -1) return porDefecto;
+  const v = process.argv[i + 1];
+  // '' es un valor: `--excluir ''` tiene que vaciar la lista, no caer en la de por defecto.
+  return v !== undefined && !v.startsWith('--') ? v : true;
 };
 const PREFIJO = arg('prefijo', '');
 const ANCHO = Number(arg('ancho', 390));
@@ -58,6 +59,12 @@ const EXCLUIR = (typeof arg('excluir') === 'string'
   : '/v3/a/,/v3/b/,/v3/c/,/v3/maqueta-inicial/'
 ).split(',').filter(Boolean);
 const DIST = path.resolve('dist');
+// En una plantilla Astro, un `<!-- -->` se sirve al navegador; se comenta con `{/* */}`
+// (la sesión antigua midió que el 16,2 % del HTML de su home eran notas internas). Los
+// HTML de public/ se copian tal cual al build, sin pasar por Astro y sin esa alternativa:
+// sus comentarios no se cuentan como hallazgo.
+const PUBLICO = path.resolve('public');
+const esEstatica = (ruta) => fs.existsSync(path.join(PUBLICO, ruta, 'index.html'));
 
 // --- el binario de Chromium -------------------------------------------------
 // Playwright a veces pide una versión de Chromium que no está descargada en el entorno.
@@ -283,6 +290,10 @@ for (const ruta of rutas) {
     await pagina.close();
     continue;
   }
+  // Se cuentan en el HTML tal como llega, no en el DOM: un script podría sumar o quitar nodos.
+  const comentarios = esEstatica(ruta)
+    ? 0
+    : ((await res.text().catch(() => '')).match(/<!--/g) ?? []).length;
   // Se recorre la página entera antes de medir: los bloques con `reveal` arrancan en
   // opacidad 0 y solo llegan a su estado final cuando el observador los ve pasar. Medir
   // sin bajar primero es medir la animación, no la página.
@@ -303,6 +314,9 @@ for (const ruta of rutas) {
   if (!d.jsonLd) lista.push('sin JSON-LD');
   if (d.sinAlt) lista.push(`${d.sinAlt} imagen(es) sin alt`);
   if (d.pildoras) lista.push(`${d.pildoras} elemento(s) con radio de píldora`);
+  if (comentarios) {
+    lista.push(`${comentarios} comentario(s) <!-- --> servidos al navegador (en .astro va {/* */})`);
+  }
   if (d.nFallos) {
     lista.push(
       `contraste: ${d.nFallos} nodo(s) bajo el mínimo\n` +

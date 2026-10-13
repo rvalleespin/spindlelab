@@ -121,6 +121,16 @@
 - **Una media query para tableta no puede tocar el celular**: `(max-width: 767px), (max-width:
   1024px) and (orientation: portrait)` sirve para la fila; el alto mínimo del hero, no.
 
+### Lo que la sesión antigua del v3 sabía y no quedó escrito (13 oct 2026)
+- **En una plantilla Astro, `<!-- -->` se sirve al navegador: se comenta con `{/* */}`**
+  (y en el frontmatter, `//`). La sesión antigua lo midió en su home: el 16,2 % del HTML
+  eran notas internas, y convirtió 56 comentarios en 15 archivos (traspaso §4). Build del
+  13-oct: **0** en las 21 páginas v3 (solo `/v3/maqueta-inicial/`, 4, de `HeroV2.astro`); la
+  home v2 sirve **12** (`Hero`, `Nav`, `Evidencia`, `Servicios`), entre ellas «Slot reservado
+  para el primer caso real con datos (cuando haya permiso del cliente)», y `/nosotros/` 2
+  (`Nav`). Los HTML de `public/` no pasan por Astro: lo que se comenta ahí viaja igual.
+  Desde el 13-oct `npm run verificar` los cuenta como hallazgo en las páginas que arma Astro.
+
 ## Con quién trabajo
 - Copy me lo pasa **Renata** (marcado para revisión humana). SEO técnico me lo
   encarga **Simón** vía `marketing/encargos-otras-sesiones/`.
@@ -129,3 +139,6 @@
 - [ ] meta description de `/servicios/visibilidad-en-ia/` aún dice "Optimización
   AEO/GEO" (metadata SEO, no rótulo visible); alinear si se quiere.
 - [ ] Slot de "caso real con datos" en la home, reservado hasta que un cliente dé permiso.
+- [ ] Los 14 comentarios `<!-- -->` de la home y `/nosotros/` v2 (`Hero`, `Nav`, `Evidencia`,
+  `Servicios`) se sirven en producción. No se tocaron el 13-oct (fuera del v3): se van con la
+  publicación del v3 (decisión R1 de Ramón) o se pasan a `{/* */}` antes, si él lo pide.

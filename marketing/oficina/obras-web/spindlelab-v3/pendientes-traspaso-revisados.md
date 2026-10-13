@@ -219,6 +219,7 @@ uno lleva arriba una nota de «superado» que remite a la spec. No se reescriben
   v2 del mismo build sirve 12 notas internas.
 - Su corrección sobre el PR #41: la rama del v2 sí comparte ancestro con `main`, y el clon
   superficial engaña a quien lo compruebe en local. Se aplica al traspaso.
+  **Hecho por el merge 2a62f1f** (trae c9d6f6a): §0 y §10 del traspaso ya lo dicen (13-oct).
 - La memoria de Clara no registra la obra v3.
 
 **E7 · La lista de publicación** (P70, P76, P77, nuevo del crítico). Se escribe ahora en la
