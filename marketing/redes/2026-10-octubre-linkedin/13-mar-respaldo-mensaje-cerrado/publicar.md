@@ -1,4 +1,4 @@
-# Publicar — RESPALDO del martes 13: el sitio con el nombre equivocado
+# Publicar — el sitio con el nombre equivocado (respaldo del reel, y pieza por derecho propio)
 
 **Cuándo:** MARTES 13-oct-2026 · **Canal:** perfil personal de Ramón · **Voz:** singular
 **Pieza visual:** ninguna. Texto puro. · **Tipo C** (criterio de construcción / Desarrollo Web)
@@ -6,15 +6,20 @@
 **Reescrito el sáb 10-oct** junto con el reel, al mismo ángulo nuevo: el servicio es el titular y la
 ley baja a ejemplo. La versión anterior, que titulaba con la ley, está en git (commit `0bc3d9d`).
 
-## ⚠️ Esto es un respaldo, no una pieza más
+## Ya NO es el mismo mensaje que el reel (actualizado el mar 13-oct)
 
-**Sale SOLO si el reel del martes 13 no se graba.** Los dos cuentan lo mismo, así que **son
-alternativos, nunca los dos**. Si el reel sale, este texto vuelve al banco y queda disponible para
-otro slot.
+**Antes sí lo era, y eso lo hacía un respaldo inútil.** El 13-oct quedó claro por qué: si un
+respaldo cuenta lo mismo que la pieza principal, publicarlo mata la pieza principal, así que no es
+un respaldo, es una bomba. El martes 13 quedó vacío justamente por eso: este texto estaba escrito y
+listo, y no se podía usar.
 
-**Por qué existe:** escrito el sábado 10, al constatar que el martes 13 dependía de una grabación
-que puede no ocurrir. Sin respaldo, un reel no grabado deja el martes vacío y el silencio pasa de
-dos días hábiles a una semana entera, que es justo lo que Ramón pidió evitar el 2-oct.
+**Hoy son piezas distintas.** El reel pasó a la tesis de las dos versiones del sitio. Este texto se
+queda con el caso concreto del nombre equivocado, que en video resultaba enredado y en texto
+funciona, porque hay espacio para explicarlo sin apurar.
+
+**Consecuencia práctica:** sigue siendo el respaldo si el reel no se graba, pero ya no se quema si el
+reel sale. **No el mismo día**, porque los dos cierran el mismo servicio. Con una semana de
+distancia conviven sin problema.
 
 ## Cuerpo (copiar y pegar)
 
@@ -44,7 +49,7 @@ Gratis, sin registro, y no guarda el dominio que revisas. Lo que no alcanza a ve
 
 | Pieza viva | ¿Se pisa? |
 |---|---|
-| **El reel del 13-oct** | **Sí, es el mismo mensaje.** Por eso son alternativos |
+| **El reel (jue 15)** | **Ya no.** El reel va por la tesis (las dos versiones del sitio), este por el caso. Cierran el mismo servicio, así que **no el mismo día**; con una semana de distancia conviven |
 | **La escena del nombre equivocado** | Nunca publicada. Material nuevo |
 | 28-sep · "Me gusta construir sitios bien hechos" | Roza: las dos hablan de construir bien. Lo nuevo acá es la otra mitad, que un sitio entregado sigue necesitando revisión y que eso también lo haces tú. **15 días de distancia** |
 | 7-oct · "lo que se mide gratis de la visibilidad en IA" | No. Otro tema y otro servicio |

@@ -1,4 +1,4 @@
-# Guion — Primer video cara a cámara: construyo y audito sitios
+# Guion — Primer video cara a cámara: las dos versiones de tu sitio
 
 **Cuándo:** **JUEVES 15-oct-2026** (movido del martes 13: el guion se aprobó el 10 pero no se grabó, y no se forzó una publicación apurada a las 15:00 del martes). *Antes decía:* MARTES 13-oct-2026. **Movido del viernes 9** (Ramón avisó que el lunes 12 es feriado):
 el 9 es víspera de fin de semana largo y la gente se desconecta antes, que es el peor día posible
@@ -12,6 +12,11 @@ muestre mi cara. ve si es factible")
 **Estado:** ✅ **guion aprobado por Ramón el sáb 10-oct para grabar** (*"dale, voy a grabar con
 esta"*). Pendiente: la grabación. **Publicar sigue necesitando su OK en el chat**, aprobar el guion
 no es aprobar la publicación.
+**Tercera reescritura, mar 13-oct:** *"está muy enredado el caso que dices explicar. no le encuentro
+sentido. saca insight sobre el tema"*. Tenía razón: el caso del nombre equivocado pedía tres pasos
+mentales (borraron una página, quedó un error, Google lo guardó con otro nombre) y el premio era una
+curiosidad, no un dolor. **Anécdota rara, no insight.** Sale el caso y entra el insight que el caso
+intentaba ilustrar. Aprobado por Ramón el mismo día: *"me gusta esta versión"*.
 **Segunda reescritura, sáb 10-oct:** *"me gusta pero lo siento que le falta storytelling mejor.
 aplica las reglas de elevator pitch"*. Entra una escena real al principio y la pieza se ordena en los
 cinco movimientos del pitch (abajo). Sube de 35 a 45 segundos, que es lo que cuesta la escena.
@@ -44,47 +49,58 @@ una vez, la restricción juega a favor.
 
 ## El guion (una sola toma, de corrido)
 
-**Duración: 40 a 45 segundos** (124 palabras). Cinco movimientos, en el orden del elevator pitch:
-**escena → mecanismo → idea → qué hago → cierre.**
+**Duración: 41 segundos** (113 palabras). Cinco movimientos: **insight → por qué no te enteras →
+la idea → qué hago → cierre.** El primer movimiento ya no es una escena, es la tesis.
 
-### 0–9 seg · la escena
-> Revisé el sitio de una empresa y en Google aparecía con el nombre de otra empresa. Una de
-> software, que no tenía nada que ver.
+### 0–8 seg · el insight
+> Tu sitio tiene dos versiones. La que abres tú, y la que leen Google y ChatGPT. No son la misma.
 
-### 9–20 seg · el mecanismo
-> Habían borrado una página, quedó dando error, y Google guardó ese error con el nombre
-> equivocado. Nadie ahí lo sabía, porque abriendo el sitio a mano no se ve.
+### 8–20 seg · por qué no te enteras
+> Y ahí está el problema. Si la versión que ellos leen tiene algo mal, la tuya no te avisa. Un sitio
+> roto se nota al tiro. Un sitio invisible se ve perfecto.
 
-### 20–30 seg · la idea
-> Los sitios son así. No se terminan nunca. Se entregan, y desde ese día siempre hay algo que
-> revisar. Ahora, con la ley de datos personales, bastante más.
+### 20–28 seg · la idea
+> Por eso un sitio no se termina el día que se entrega. Alguien tiene que ir a mirar la versión que
+> no ves.
 
-### 30–42 seg · qué hago
-> Por eso hago las dos cosas. Construyo sitios y los audito. Si te toca sitio nuevo, entra bien
-> hecho desde el primer día. Si ya lo tienes, te digo qué le falta.
+### 28–38 seg · qué hago
+> Yo hago las dos cosas. Construyo sitios y los audito. Si te toca sitio nuevo, entra bien hecho. Si
+> ya lo tienes, miro la versión que no ves y te digo qué le falta.
 
-### 42–45 seg · cierre
+### 38–41 seg · cierre
 > Soy Ramón, de SpindleLab. Los links van acá abajo, en el primer comentario.
 
-**De dónde sale la escena.** Es un hallazgo verificado de `marketing/outbound/semana-02/lote-1-frente-a.md`
-(prospecto 3): página de equipo en 404, y Google con una página de error indexada que llevaba el
-nombre de otra empresa de software. **Nunca se nombra la empresa**, ni en el video ni en los
-comentarios. Ese es el permiso completo que da el manual: hallazgo real, empresa generalizada.
+**De dónde sale el insight, que es lo que le da autoridad.** No es una ocurrencia: es el patrón de
+los 15 sitios auditados en `marketing/outbound/semana-02/lote-1-frente-a.md`. Uno servía HTML
+prácticamente vacío a los bots (app JavaScript), otro respondía 503 a los lectores automatizados,
+otro tenía el title de la home en una sola palabra, otro la meta description cortada a mitad de
+frase. **En los 15, el sitio abría perfecto en el navegador.** La generalización de quince
+auditorías pesa más que un caso, y no obliga a nombrar a nadie.
 
-**Si necesitas bajarlo a 35 segundos**, sacrifica en este orden: la segunda frase del mecanismo
-("Nadie ahí lo sabía…"), después la cláusula de la ley. La escena y el "hago las dos cosas" no se
-tocan, porque son el pitch.
+**La línea que no se toca:** *"Un sitio roto se nota al tiro. Un sitio invisible se ve perfecto."*
+Es la que explica por qué nadie contrata esto, y es la que hay que cuidar si se pule el resto. El
+cierre tampoco: *"miro la versión que no ves"* es el servicio dicho con las palabras que abrieron el
+video.
+
+**La ley quedó fuera a propósito.** Octubre ya tiene dos piezas dedicadas a la 21.719 (lun 19 y mié
+28), así que esta no tiene que cargarla. Si se quiere igual, va una cláusula al final del tercer
+movimiento — *"y ahora con la ley de datos personales hay más cosas en esa lista"* — y el video sube
+a 45 segundos.
 
 ---
 
-## Escena alternativa, si la primera no te sale natural
+## Los dos casos reales vuelven al banco
 
-> Revisé un sitio donde la descripción que sale en Google estaba cortada a mitad de frase.
-> Terminaba en "de manera de". La escribió un sistema solo y nadie la leyó nunca.
+Las dos escenas que llevaba la versión anterior **no se pierden**, se guardan: sirven para un post de
+texto, donde hay espacio para explicarlas sin apurar. Las dos son hallazgos verificados de
+`marketing/outbound/semana-02/lote-1-frente-a.md`, y en cualquier uso futuro **la empresa se
+generaliza, nunca se nombra.**
 
-También es un hallazgo verificado del mismo lote (prospecto 10) y la misma regla de no nombrar.
-Es más fácil de contar, pero la del nombre equivocado pega más fuerte, porque el daño se entiende
-sin explicar nada. Dícelas las dos en voz alta y quédate con la que no te hace pensar.
+1. **El nombre equivocado** (prospecto 3): borraron la página de equipo, quedó un 404, y Google tenía
+   indexada esa página de error con el nombre de otra empresa, de software. **Ya está usado**: es el
+   cuerpo del respaldo en texto (`13-mar-respaldo-mensaje-cerrado/publicar.md`).
+2. **La descripción cortada** (prospecto 10): la meta description de la home terminaba a mitad de
+   frase, en "de manera de". Autogenerada y nunca leída por nadie. **Libre.**
 
 ---
 
@@ -167,55 +183,53 @@ queda chico, se cambia el lugar, no el método.
 
 | Lo que hace | Por qué |
 |---|---|
-| **Abre con una escena, no con una tesis** | Tu corrección del 10-oct. El pitch necesita que el oyente vea algo antes de que le digas a qué te dedicas |
-| **La escena es real y verificada** | La única fuente de historias que permite el manual son los hallazgos de los lotes de outbound. Nada inventado, y la empresa generalizada |
-| El mecanismo va inmediatamente después | Es la corrección de fondo del 22-sep: tres anécdotas rechazadas por *"no habla desde lo técnico"*. Una escena sin explicación es anécdota; con el porqué, es criterio |
-| **Titula el servicio, no la ley** | Tu corrección del 10-oct. El desarrollo web es lo que se destaca; la ley entra en una cláusula, como una de las cosas que hoy hay que revisar |
-| Nombra los dos servicios como uno | Desarrollar y auditar son el mismo oficio mirado en dos momentos. Eso es lo que cierra el mensaje, no la ley |
-| No depende del plazo del 1-dic | La tesis es *"siempre hay algo que revisar"*, así que la pieza sirve igual en enero |
-| **Ya no lleva la línea del abogado** | Existía para acotar una promesa legal. Esta versión no promete cumplimiento: dice que la ley agregó cosas que revisar, que es un hecho. Sin promesa, no hay qué acotar |
+| **Abre con el insight, no con un caso** | Tu corrección del 13-oct. Un caso que pide tres pasos mentales antes del premio es anécdota; el espectador abandona antes de entender de qué le hablan |
+| El insight es la generalización de 15 auditorías | Por eso tiene autoridad sin anécdota y sin nombrar a nadie. Es la corrección de fondo del 22-sep (*"no habla desde lo técnico"*) resuelta por otra vía: criterio en vez de relato |
+| Nombra el dolor real, que es la ausencia de alarma | *"Un sitio roto se nota al tiro. Un sitio invisible se ve perfecto."* Es la razón por la que nadie contrata esto, y nadie la dice |
+| El cierre reusa las palabras de la apertura | *"Miro la versión que no ves"* es el servicio dicho con la frase que abrió el video. Cierra el círculo en vez de cambiar de tema |
+| **Titula el servicio** | Tu corrección del 10-oct. Construir y auditar van como un solo oficio |
+| No depende de ninguna fecha | Sirve igual en enero. La ley tiene sus dos piezas propias este mes |
+| **No** dice "cumple la ley" ni hace promesa legal | No hace falta la línea del abogado, porque no se promete nada legal |
 | **No** dice "soy fundador de SpindleLab" | Ya está muy repetido (tu nota de septiembre). La identificación va al final y en una línea |
-| **No** recita tu trayectoria | La autoridad la da el criterio, y acá la da el mecanismo de la escena |
+| **No** recita tu trayectoria | La autoridad la da el insight |
 | Un solo remate | El tope son dos |
-| Cero rayas largas, cero dos puntos de motor, cero "no es X, es Y" | Los tres tics documentados en `voz-spindlelab/SKILL.md` |
+| Cero rayas largas, cero dos puntos de motor, cero "no es X, es Y" | Los tres tics documentados en `voz-spindlelab/SKILL.md`. Ojo: *"un sitio roto / un sitio invisible"* es antítesis paralela, no la fórmula "no es X, es Y" |
 
 ## Chequeo de duplicación
 
 | Pieza viva | ¿Se pisa? |
 |---|---|
-| **La escena del nombre equivocado** | **Nunca se ha publicado.** Grepeada en `marketing/redes/` y en el corpus de voz: no aparece. Material nuevo |
-| 28-sep · "Me gusta construir sitios bien hechos" | Roza en la mitad de construir bien. Lo nuevo es la otra mitad, que un sitio entregado sigue necesitando revisión. **15 días de distancia** |
-| 23-sep · "Query fan-out" | No, pero es el molde del que sale este guion: hallazgo técnico con el mecanismo explicado |
-| 5-oct · el cuarto mito | No. Ahí la amonestación y el registro público; acá la ley aparece en una cláusula |
-| 2-oct · "El sitio es la tienda principal" | No. Ahí dónde poner el esfuerzo; acá quién construye y quién revisa |
-| 30-sep · "Lo que el chequeo no alcanza a ver" | Roza apenas: el chequeo acá solo aparece como link |
+| **"Las dos versiones de tu sitio"** | **Nunca se ha publicado como tesis.** Lo más cercano es el post del 23-sep (query fan-out), que explica que un sitio puede rankear y no ser mencionado. Ahí el tema es cómo arma la IA sus respuestas; acá, que no hay alarma cuando algo está mal. **20 días de distancia** |
+| 30-sep · "Lo que el chequeo no alcanza a ver" | Roza: los dos hablan de límites de lo que se ve. Ahí es el límite de la herramienta; acá, el límite del navegador. El chequeo acá solo aparece como link |
+| 28-sep · "Me gusta construir sitios bien hechos" | Roza en construir bien. Lo nuevo es la mitad de la auditoría. **17 días de distancia** |
+| 5-oct y los dos posts de la ley (19 y 28-oct) | No. Este video no toca la ley |
+| 2-oct · "El sitio es la tienda principal" | No. Ahí dónde poner el esfuerzo; acá qué no estás viendo de lo que ya pusiste |
 
-**Riesgo asumido:** *"siempre hay algo que revisar"* puede leerse como que entregas sitios a los que
-siempre les falta algo. Lo que lo evita es el orden del cuarto movimiento: primero que lo que
-construyes entra bien hecho, después que lo que ya existe se revisa. Si al decirlo en voz alta te
-suena a que te estás acusando, invierte esas dos frases.
+**Riesgo asumido:** *"la versión que leen Google y ChatGPT"* es una simplificación. Lo que cambia no
+es que haya dos archivos, es que el navegador ejecuta y renderiza lo que un rastreador muchas veces
+no. La frase es fiel al efecto y entendible sin jerga, y el video no hace ninguna afirmación técnica
+que dependa de la metáfora. **Si alguien pregunta en los comentarios, ahí sí se explica fino**: HTML
+que llega vacío, códigos de respuesta, lo que el servidor le contesta a un bot.
 
 ## Texto del post (copiar y pegar)
 
-**No repite el guion.** El video ya cuenta la historia con subtítulos, así que el texto hace otra
-cosa: engancha en las dos primeras líneas (lo único que se ve antes del "ver más" en el teléfono) y
-suelta la tesis que el video deja al final. Quien no reproduce igual se lleva algo; quien lee la
-primera línea tiene motivo para darle play.
+**No repite el guion.** El video abre con las dos versiones; el texto abre por otro lado y suelta un
+dato que el video no tiene (que puede estar así meses). Las dos primeras líneas son lo único que se
+ve antes del "ver más" en el teléfono.
 
-El sitio de una empresa aparecía en Google con el nombre de otra empresa, de otro rubro.
+Hay una razón por la que casi nadie revisa su sitio después de que se lo entregan. No hay nada que avise.
 
-Nadie ahí lo sabía, y es entendible. Abriendo el sitio a mano eso no se ve.
+Un sitio roto se nota al tiro. Un sitio invisible se ve perfecto, y puede estar así meses.
 
-Lo cuento en 45 segundos porque es el mejor ejemplo que tengo de algo que repito harto. Un sitio no se termina el día que se entrega.
+Lo cuento en cuarenta segundos.
 
 ### Línea opcional de cierre
 
 > Es la primera vez que salgo a cámara, así que sean pacientes.
 
-**Decisión de Ramón, no mía.** A favor: es cierto, humaniza, y en LinkedIn un primer video a cámara
-con una nota así suele recibir más comentarios de apoyo. En contra: la marca construye autoridad por
-criterio, y pedir paciencia la baja un poco justo en la pieza que la estrena. Si dudas, déjala fuera:
-el video se sostiene solo.
+**Decisión de Ramón, no mía.** A favor: es cierto y humaniza. En contra: la marca construye autoridad
+por criterio, y pedir paciencia la baja un poco justo en la pieza que la estrena. Si dudas, déjala
+fuera.
 
 ### Sin hashtags
 

@@ -166,6 +166,30 @@ este proyecto ya sabe que funciona y a lo que ya rechazó. Si Ramón corrige alg
 - **Las frases de abogado se van si ya no acotan nada.** Una salvedad legal existe para acotar una
   promesa; si la promesa sale del texto, la salvedad sale con ella en vez de quedarse de adorno.
 
+## Un caso no es un insight (13-oct-2026)
+
+El primer movimiento del elevator pitch pide una escena, y eso tienta a buscar el caso más llamativo
+del archivo. El 13-oct Ramón bajó uno así: *"está muy enredado el caso que dices explicar. no le
+encuentro sentido. saca insight sobre el tema"*.
+
+El caso era bueno como hallazgo (una página borrada quedó en 404 y Google tenía indexada esa página
+de error con el nombre de otra empresa) y malo como apertura, por una razón medible: **pedía tres
+pasos mentales antes del premio, y el premio era una curiosidad, no un dolor.**
+
+**La prueba, antes de abrir con un caso:**
+
+1. ¿Cuántos pasos necesita el oyente para llegar al punto? **Más de uno y no sirve de apertura.**
+2. ¿El final es algo que le puede pasar a él y le dolería? Si es "qué raro", es anécdota.
+3. ¿Se entiende sin una sola palabra del oficio? Si hay que decir 404, indexado o metadatos, no.
+
+**Qué poner en su lugar.** El insight que el caso intentaba ilustrar, dicho directo. Y la autoridad
+no se pierde si el insight es la **generalización de varios hallazgos reales** en vez de uno: *"en
+los 15 sitios que audité, todos abrían perfecto en el navegador"* pesa más que cualquier caso, no
+obliga a nombrar a nadie, y es exactamente lo que un cliente no puede decir de sí mismo.
+
+**El caso no se tira**, se guarda para un formato con espacio. En texto, un caso de tres pasos se
+explica bien; en 40 segundos de video, no.
+
 ## Una advertencia sobre las fuentes
 
 **El canon es lo publicado y verificado, no todo lo que está en el aire.** El blog vivo
