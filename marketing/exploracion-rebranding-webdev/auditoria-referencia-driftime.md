@@ -196,7 +196,7 @@ no había forma de llegar a Nosotros ni al Blog. Corregido el 29-sep.
 > Comprobado en la rama `claude/magical-franklin-ckfki2` y en el sitio compilado.
 >
 > 1. **El hero: cerrado por Ramón el 10-oct.** Queda «Ahí se corta el circuito», con el
->    ojillo «Estás pagando para que lleguen a tu sitio.» (`spindlelab-astro/src/pages/v3/index.astro`:198-199;
+>    ojillo «Estás pagando para que lleguen a tu sitio.» (`spindlelab-astro/src/pages/v3/index.astro`, `section.d-hero .d-titular`;
 >    spec §7, fila del 10-oct, `spec-visual.md`:261). La frase del «motor» que cita el punto
 >    nunca llegó al titular y no vuelve.
 > 2. **Cortar secciones: hecho.** La home v3 tiene 8 secciones: hero, presentación, los
