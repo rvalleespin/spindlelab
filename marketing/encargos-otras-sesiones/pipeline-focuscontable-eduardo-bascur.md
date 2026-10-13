@@ -86,3 +86,13 @@ texto de relleno en latín. Vigente. Por eso el toque 2 se ancla ahí (hallazgo 
 
 **Este es el último toque de la secuencia** (lleva salida de cortesía). Si tampoco responde → parquear
 como "Perdido ✗ — silencio", revisar en ~1 mes o probar WhatsApp (+56 9 6167 3894).
+
+---
+
+## Actualización 13-oct (toque 1 enviado)
+
+- **Seguimiento 1 ENVIADO por Ramón el 13-oct 16:20** (confirmado en el hilo, etiqueta SENT).
+- **Ventana del toque 2: ~20-oct** (una semana) si Eduardo no responde.
+- **Recordatorio programado** (`send_later`, fire 20-oct 13:00 UTC, trigger `trig_01GNxs6rjLj1oWvdHTEn5PoL`):
+  la sesión revisa el hilo; si no hubo respuesta, re-verifica el hallazgo y deja el toque 2 como borrador
+  en Gmail para que Ramón lo mande. No se auto-envía.
