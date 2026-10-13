@@ -54,8 +54,20 @@ impresiones"). Era cierta ese día. Queda a criterio de Ramón editarla; es un d
 
 - Al publicar, LinkedIn ofreció reactivar Premium con descuento: se rechazó ("No, gracias"). **No se tocó "Promocionar"** (publicidad de pago).
 
-## Pendiente: seguidores de la página
+## Seguidores de la página: 47 invitaciones enviadas (13-oct)
 
-El panel de la página muestra **"Aumenta tu número de seguidores: 50/50 créditos disponibles. Crea tu público invitando a tus contactos a seguir tu página"**, con
-el botón "Invitar a contactos" (y "Invitar a seguir" en el menú lateral). Es la palanca real para pasar de 4 seguidores. **No se usó**: las invitaciones salen
-en nombre de Ramón y necesitan su visto bueno, con la lista de a quién.
+Ramón aprobó usar los créditos ("sí, usa los créditos para invitar a seguir la página"). En **Panel de control → Invitar a seguir** la ventana lista a los
+contactos de Ramón y deja marcar hasta 50. Había 67 elegibles y se enviaron **47 invitaciones** (`https://www.linkedin.com/company/135255820/admin/dashboard/?invite=true`).
+LinkedIn confirmó: "Has invitado a 47 contactos a seguir tu página". **Quedan 3 de 50 créditos; renuevan el 1 de noviembre de 2026.**
+
+**A quiénes:** los 10 abogados y contadores que aceptaron la invitación de la lista del 10-oct, y sus contactos de marketing, estrategia, creatividad,
+negocios, finanzas y emprendimiento (publicistas, directores creativos, estrategas de marca, community managers, fundadores, gerentes comerciales y de
+finanzas, un analista legislativo que sigue el trámite de leyes). **A quiénes no:** reclutamiento y recursos humanos, salud, docencia, banca personas,
+gestión de propiedades, ventas ajenas al tema, y un vendedor de correos masivos automatizados.
+
+**Ya "Invitados" de antes (sin casilla):** Ernesto Jara, Paula Soza G. y Juan Ignacio Pérez Gorostiaga.
+
+**Se dejaron 3 créditos** para María Francisca Marchessi, Sara Araya Rodríguez y Luis Felipe Larrondo Ossandón cuando acepten su invitación a conectar.
+
+**Qué esperar:** la invitación llega como notificación; quien acepta pasa a seguir la página. No hay forma de medir el efecto antes de unos días. Ver el
+panel "Nuevos seguidores" del Panel de control. Con 4 seguidores de partida, cualquier número sube la página de forma visible.

@@ -70,3 +70,14 @@ tu mercado (por ejemplo, un contador de Puerto Varas).
 4. **Riesgo técnico:** escribir texto en LinkedIn de terceros fue bloqueado por el clasificador de permisos el 28-sep. Una invitación sin nota es solo un
    clic y probablemente pase; la nota puede ser bloqueada. Si pasa, Ramón la pega a mano.
 5. **Registrar** quién aceptó y quién no, en este mismo archivo.
+
+## Resultado a los 3 días (13-oct-2026)
+
+**10 de las 13 invitaciones ya fueron aceptadas.** Se sabe porque la ventana "Invitar a seguir" de la página solo lista contactos de primer grado y esos 10
+aparecen ahí (los dos primeros figuran como "Forma parte de tu red hace 1 y 2 días"): Feliciano Filgueira Caro, Diego Córdova Yukich, Andrés Ossa Gillet,
+Aldo Di Domenico Bianchini, Juan Ignacio Seguel G., Cristóbal Rodríguez Morales, Enrique Vidal, Patricio Contreras, Camilo Eduardo Bravo Soto y Roberto Iñíguez Besa.
+
+**Siguen pendientes (3):** María Francisca Marchessi Concha, Sara Araya Rodríguez y Luis Felipe Larrondo Ossandón.
+
+**Siguiente paso con los 10:** a los diez se les envió además la invitación a seguir la página de SpindleLab (13-oct). Ahora lo que rinde es reaccionar y comentar
+lo que publican, no escribirles. Eso es un comentario en contenido de terceros, que la sesión no puede ejecutar (ver la sección 7 de la estrategia): lo haría Ramón.
