@@ -542,3 +542,69 @@ De 51 vírgenes de abogados salieron **10 correos: 20%**. La merma que teníamos
 sección de acá: el prospecto vende lo mismo.
 
 Conviene medir esto por vertical antes de comprometer sesiones completas a uno.
+
+---
+
+## 12. El correo doble del 13-oct, y los dos arreglos (13-oct-2026)
+
+**Los 10 abogados del lote del 6-oct recibieron su toque 2 DOS VECES el 13-oct**, con unos 90
+segundos de diferencia, con texto distinto y en dos hilos distintos. Verificado uno por uno en
+cuatro de ellos (`acia.cl`, `totalabogados.cl`, `sycabogados.cl`, `defiendete.cl`).
+
+**Romina Araya, de Total Abogados, respondió 13 minutos después del segundo**: *"no estamos
+interesados en el servicio por ahora. Favor, les solicito no volver a enviarnos correos de este
+tipo."* Es la primera baja explícita de la campaña y llegó justo después del correo doble.
+
+### La causa: `in:sent` no ve los borradores sin enviar
+
+1. La corrida del **12-oct** redactó el toque 2 de 15 direcciones, entre ellas los 10 abogados, y
+   etiquetó los hilos con `copiloto/toque-2-listo`.
+2. Esos 15 borradores **quedaron sin enviar**.
+3. La corrida del **13-oct** contó los toques con `in:sent to:DIRECCION`. **Esa búsqueda no
+   devuelve borradores.** Vio un solo envío real (el del 6-oct), concluyó que *"quedaron con la
+   etiqueta puesta de entrada por error, sin que el toque 2 real se mandara nunca"* y **volvió a
+   redactar el mismo toque 2 para los 10**.
+4. Ramón mandó la carpeta de borradores completa. Salieron los dos.
+
+El diagnóstico del copiloto era razonable y era equivocado: la etiqueta no estaba puesta de más,
+estaba puesta por el borrador que él mismo había escrito el día anterior. **Contar envíos no es
+contar toques cuando hay borradores en cola.**
+
+> **Arreglo 1, obligatorio:** antes de redactar cualquier seguimiento, llamar a `list_drafts` y
+> **descartar toda dirección que ya tenga un borrador pendiente**. El conteo por dirección sigue
+> siendo `in:sent to:DIRECCION`, pero el resultado se suma a los borradores en cola. Un borrador
+> pendiente cuenta como toque ya escrito: no se vuelve a escribir.
+
+### El arreglo que destraba las dos colas: `replyToMessageId`
+
+El copiloto viene arrastrando lo que llama "el bug de hilos": cada seguimiento sale en un hilo
+nuevo, el hilo viejo se queda sin la etiqueta nueva, y por eso las colas de toque 2 y toque 3
+devuelven 69 y 201 candidatos de los que la mayoría ya está cerrada. Eso le costó dos corridas
+completas de conteo manual.
+
+**No es un bug, es un parámetro que no se está usando.** `create_draft` no acepta `threadId`,
+pero **sí acepta `replyToMessageId`**: se le pasa el id del último mensaje del hilo del prospecto
+y el borrador queda dentro de ese hilo. Verificado el 13-oct con la confirmación de baja a Romina:
+volvió con el `threadId` del hilo original.
+
+> **Arreglo 2:** todo seguimiento se redacta con `replyToMessageId` apuntando al último mensaje
+> del hilo del prospecto. Con eso la etiqueta y el hilo dejan de separarse, las colas se vacían de
+> falsos pendientes, y un duplicado se ve a simple vista porque queda en el mismo hilo.
+
+### Lo que esto costó, para tenerlo presente
+
+Dos correos en 90 segundos a un estudio de abogados, en una campaña cuyo argumento es el cuidado
+de los datos de terceros. Es el peor contexto posible para parecer descuidado, y la baja llegó al
+tiro. **No hay que leerlo como mala suerte: el embudo ya tenía el fallo y la cola lo iba a
+repetir con el resto del lote.**
+
+### Y el tope de la exclusión
+
+El copiloto no edita el repo, así que deja los topes anotados en su resumen y alguien los tiene
+que pasar al CSV. Entre las corridas del 12 y el 13-oct dejó anotados 42 dominios con tope
+alcanzado (+6 que infirió sin confirmar). El 13-oct se agregaron 34 filas y la lista pasó de 37 a
+**72**. **Quedan los del resumen del 13-oct todavía sin pasar**, y la propia nota del copiloto
+avisa que los 6 últimos los infirió por patrón, no por conteo: esos se confirman antes de cerrar.
+
+Mientras los topes no estén en el CSV, la cola vuelve a ofrecer a gente que ya recibió sus tres
+correos. La etiqueta sola no alcanza.
