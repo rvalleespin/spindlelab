@@ -193,3 +193,28 @@ dieciséis estaban limpios o casi**: cero a tres cookies, y de infraestructura.
 - **`director.cl` es ángulo de Desarrollo Web:** renderiza 4,4 KB con un nombre, un teléfono de
   reservas y un Instagram. No es un sitio. Y Apollo lo tiene como `45bydirector.com`, que está
   caído: el dominio vivo es `director.cl`.
+
+---
+
+## ⚠️ Volumen del 13-oct: 27 correos en un día
+
+Los cinco de turismo salieron el 13-oct a las 22:32. Ese mismo día ya habían salido 19 a las
+16:03-16:05 (la tanda de toque 2 del copiloto, con los duplicados incluidos) y 3 más a las 22:32
+(Río León, ICCS y el toque 3 de Explora).
+
+**Total del día: 27 correos desde hola@spindlelab.cl**, en dos ráfagas de minuto y medio cada una.
+
+La rampa documentada es de **15 → 30 → 50 por semana**, y la nota dice textual: *"es reputación de
+dominio, no capacidad de producción; no se excede aunque se puedan generar más"*. Veintisiete en
+un día es media semana de tope en una tarde.
+
+Y el patrón importa tanto como el número: **muchos correos casi idénticos en noventa segundos** es
+justo lo que puntúan los filtros. Sumado a que tres destinatarios recibieron el mismo correo dos
+veces ese día, es la peor combinación posible para la reputación del dominio.
+
+**No hubo rebotes al cierre del 13-oct.** Pero el daño de reputación no se manifiesta como rebote:
+se manifiesta como entrega a spam, que es invisible desde acá.
+
+> **Lo que conviene hacer:** no enviar nada el 14 ni el 15. La corrida del copiloto del 14 va a
+> dejar borradores; que se queden en la carpeta. Y cuando se retome, de a pocos y espaciados, no
+> en ráfaga.
