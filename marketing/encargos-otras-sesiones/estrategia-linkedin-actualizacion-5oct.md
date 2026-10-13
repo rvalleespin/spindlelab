@@ -120,7 +120,7 @@ transitorio y **no se pudo verificar**; el 5-oct se publicó sin esa línea.
 | **Comentar en publicaciones ajenas** (temas afines o gente que necesita el servicio) | Hay 4 candidatos reales y 4 comentarios redactados (28-sep). Ejecución bloqueada; solo con una persona pegando. |
 | **Instagram con la línea propia de Verifica y Cumple** (reel y story) | Otra sesión; las piezas esperan el ojo de Ramón. Pendientes suyos: el enlace del bio (solo desde el teléfono) y la etiqueta "Perfil generado con IA". |
 | **X como canal de publicación** | Hoy solo se usa para escucha. Publicar desde la cuenta de Ramón no se ha explorado ni decidido. |
-| **La página de empresa** | No se revisó desde el 25-sep. Decidir su papel: archivo de lo que se reusa. |
+| **La página de empresa** | Retomada el 13-oct: se publicó en plural el post de visibilidad en IA (adaptado del personal del 7-oct). Sigue con 4 seguidores. Pendiente: usar los 50 créditos de "Invitar a contactos" (necesita el visto bueno de Ramón) y fijar un ritmo (un reuso en plural por semana). |
 | **Red: a quién seguir y con quién conectar** | Ver la sección 8b. Primera tanda de seguimientos hecha el 7-oct; las invitaciones a conectar esperan la aprobación de Ramón por lista. |
 
 ### 8b. Red de Ramón en LinkedIn (7-oct-2026)

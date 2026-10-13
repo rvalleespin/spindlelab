@@ -16,6 +16,7 @@ estaba en el aire, y eso costó un post: el 22-sep se publicó en la página un 
 | ~8-sep | "Un motor de adquisición. No cuatro servicios sueltos" (carrusel, 4 imgs) | — | corpus §6 |
 | ~1-sep | "Estás pagando para que lleguen" (el circuito / dominó) | 1 reacción · 1 comentario · 2 compartidos | corpus §2 + `01-mar-circuito-domino/` |
 | **22-sep** | ⛔ Explicador Ley 21.719 (plural) — **publicado y retirado el mismo día, por repetido** | 53 impresiones en ~40 min | `24-jue-ley-21719/publicar.md` |
+| **✅ 13-oct** | "Si en tu empresa alguien preguntó si aparecen en ChatGPT..." — qué se puede medir gratis de la visibilidad en IA (Search Console), en plural; adaptación del post personal del 7-oct | publicado, verificado (urn 7515830695420821504) | `2026-10-octubre-linkedin/13-mar-pagina-visibilidad-en-ia/publicar.md` |
 | **✅ 25-sep** | Los tres mitos de la Ley 21.719 (delegado voluntario, sin 72h, el 4% con dos condiciones) | **398 impresiones** · ✏️ **editado esa tarde: el 4% es solo de las gravísimas** | `24-jue-tres-mitos-ley21719/publicar.md` |
 
 ## Instagram · cuenta `spindlelab.cl` (19 seguidores)
