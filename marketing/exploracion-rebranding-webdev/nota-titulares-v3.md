@@ -2,6 +2,21 @@
 
 **27-sep-2026 · pedido de Ramón: «cuidado con los títulos muy largos».**
 
+> **Nota de estado · 13-oct-2026: superada por la decisión del 5-oct.** Esta nota se escribió
+> para titulares en mayúsculas y a tamaño enorme. Desde el 5-oct las mayúsculas 800 van solo
+> en cinco lugares, el titular del hero y las cuatro palabras de campo (manual de marca §05;
+> spec §0), y todo otro titular va en caja normal, Manrope 500. Por eso sus tablas de `clamp`
+> y de caracteres por línea ya no aplican, y el límite de 6 palabras y 34 caracteres es solo
+> del display. Los tres ejemplos de la home («¿Te menciona la IA?», «67 de 69…» y
+> «Herramientas gratis…») tampoco están en ninguna página v3.
+>
+> **Sigue vivo** el pedido de Ramón del 27-sep: cuidado con los títulos muy largos. La cifra de
+> «Los ocho de las internas» quedó vieja; va corregida ahí mismo. Lo vigente está en
+> [`spec-visual.md`](../oficina/obras-web/spindlelab-v3/spec-visual.md); la revisión de lo
+> que quedaba, en
+> [`pendientes-traspaso-revisados.md`](../oficina/obras-web/spindlelab-v3/pendientes-traspaso-revisados.md)
+> (frente E5). Esta nota no reabre ninguna decisión.
+
 En la v3 los titulares van en **mayúsculas y a tamaño enorme**. Eso cambia las reglas del
 oficio: un titular que en un documento se lee bien, acá ocupa media pantalla y aplasta lo
 que viene abajo. No es gusto, es aritmética.
@@ -95,6 +110,18 @@ para las páginas de servicio.
 
 **Resultado verificado sobre el HTML compilado: cero titulares sobre 40 caracteres en las
 14 páginas.**
+
+> **Corrección del 13-oct-2026: esa cifra ya no es cierta.** Medido en el sitio compilado,
+> sobre las 21 rutas v3, a 1440 y a 390 px: hay **32** h1 y h2 de más de 40 caracteres (8 h1
+> y 24 h2), todos en caja normal y peso 500. 28 son del blog (los 7 h1 de artículo, los 7
+> títulos del índice y 14 h2 de artículo) y 4 de servicios. Dos títulos de esta tabla volvieron
+> a pasar de 40 por decisión registrada en el §7 de la spec (filas del 6-oct): Desarrollo web
+> cierra con el h2 publicado «Cuéntanos qué necesita comunicar tu sitio» y Auditoría dice «Del
+> mini-diagnóstico gratis a la auditoría». A 390 px, 9 títulos ocupan 3 o 4 líneas (los 7 h1 de
+> artículo, el h1 de Desarrollo web y un h2 del índice del blog); a 1440, uno solo (el h1 de
+> «cómo aparecer en ChatGPT», en 3). Desde el 5-oct esos títulos no tienen límite de largo que
+> cumplir, porque el límite es del display. Si los h1 de artículo en 4 líneas a 390 molestan,
+> el ajuste va en el `clamp` de `.d-h1` (`spindlelab-astro/src/styles/driftime.css`) y se anota en el §7 de la spec.
 
 ## Pendiente
 

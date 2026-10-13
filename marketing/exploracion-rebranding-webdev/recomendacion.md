@@ -3,6 +3,25 @@
 **Rama:** `claude/rebranding-webdev-exploracion` · **27-sep-2026** · No se tocó `main`, no se mergeó,
 no se publicó nada, **los precios quedaron exactamente como estaban.**
 
+> **Nota de estado · 13-oct-2026: registro del 27-sep, superado.** Su veredicto («No conviene
+> adoptarlo ahora», §5) lo cambiaron las decisiones de Ramón: el 2-oct cerró la compuerta 1 de
+> la obra v3 (seguir iterando el diseño, con la conversión como criterio) y en la compuerta 2
+> eligió el principio del instrumento primero; el 5-oct extendió el lenguaje de driftime a todo
+> el sitio; el 10-oct dejó el hero «Ahí se corta el circuito». Además, lo que describe ya no
+> está así: `src/pages/v2.astro` pasó a ser `src/pages/v3/maqueta-inicial.astro` el mismo
+> 27-sep (commit e0c1281), Manrope está autoalojada (`public/fonts/manrope-latin.woff2` y
+> `-latin-ext`) y la prueba de los 20 abogados quedó sin objeto con el giro del 29-sep
+> (`pendientes-traspaso-revisados.md`, §4). Lo vigente está en [`spec-visual.md`](../oficina/obras-web/spindlelab-v3/spec-visual.md); la
+> revisión de lo que quedaba, en
+> [`pendientes-traspaso-revisados.md`](../oficina/obras-web/spindlelab-v3/pendientes-traspaso-revisados.md)
+> (frente E5).
+>
+> **Siguen vivas, y son de Ramón:** las dos observaciones comerciales del §4, el
+> Acompañamiento a $590.000/mes contra la mantención de $50.000/mes (R3 en ese documento) y la
+> vigilancia de menciones en IA (R2). La retrospectiva del ciclo de 90 días que pedía el §5
+> sigue pendiente, y es de la troncal (B27). Esta nota no toca precios ni reabre ninguna
+> decisión.
+
 > **Qué es esto:** la maqueta del hero nuevo, construida y mirada, más lo que aparece cuando se
 > construye de verdad. No viene aprobado. Viene para decidir.
 

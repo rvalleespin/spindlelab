@@ -4,6 +4,17 @@
 sitio al que aspiro llegar a tener»*, con la instrucción explícita de que el manual de
 marca no manda en esta decisión.
 
+> **Nota de estado · 13-oct-2026.** Lo que este documento mide de driftime no cambia con
+> esta nota; la referencia que manda hoy es el lock de la obra
+> (`marketing/oficina/obras-web/spindlelab-v3/referencia-driftime/lock-driftime.md`). Lo que
+> quedó atrás es lo que compara con «el nuestro», que describe el v3 del 29-sep, antes del
+> cambio de hero de ese mismo día y de la reconstrucción del 5-oct, y el **§8 entero**: sus
+> cinco puntos están hechos o descartados por decisión de Ramón (detalle al comienzo del §8).
+> Lo vigente está en [`spec-visual.md`](../oficina/obras-web/spindlelab-v3/spec-visual.md);
+> la revisión de lo que quedaba, en
+> [`pendientes-traspaso-revisados.md`](../oficina/obras-web/spindlelab-v3/pendientes-traspaso-revisados.md)
+> (frente E5). Esta nota no reabre ninguna decisión.
+
 Todo lo que sigue está **medido sobre el sitio cargado en un navegador**. Lo que no pude
 verificar va marcado como tal, y no hay ni una afirmación de memoria.
 
@@ -181,19 +192,50 @@ no había forma de llegar a Nosotros ni al Blog. Corregido el 29-sep.
 
 ## 8 · Lo que falta hacer de nuestro lado
 
+> **Estado al 13-oct-2026: superado entero.** No queda ninguno de los cinco puntos por hacer.
+> Comprobado en la rama `claude/magical-franklin-ckfki2` y en el sitio compilado.
+>
+> 1. **El hero: cerrado por Ramón el 10-oct.** Queda «Ahí se corta el circuito», con el
+>    ojillo «Estás pagando para que lleguen a tu sitio.» (`spindlelab-astro/src/pages/v3/index.astro`:198-199;
+>    spec §7, fila del 10-oct, `spec-visual.md`:261). La frase del «motor» que cita el punto
+>    nunca llegó al titular y no vuelve.
+> 2. **Cortar secciones: hecho.** La home v3 tiene 8 secciones: hero, presentación, los
+>    cuatro campos, quién está detrás y El Taller (contadas en `spindlelab-astro/dist/v3/index.html`).
+> 3. **Índice de trabajo: hecho.** `/v3/trabajo/` existe desde el 29-sep (commit 7b6862b,
+>    once minutos después de esta auditoría), con cuatro piezas rotuladas: Bernardo Combeau,
+>    Bernardo Combeau | Model, Verifica y Cumple y Raigal.
+> 4. **Dos piezas de concepto más: descartado por decisión.** En el sitio va una sola pieza
+>    de concepto, Raigal (`marketing/oficina/obras-web/spindlelab-v3/brief-de-obra.md`:144;
+>    `marketing/portafolio/README.md`:55), y Ramón pidió el 29-sep no seguir gastando en
+>    ellas (`marketing/portafolio/03-deslinde/ficha.md`). El hueco que iban a llenar, que la
+>    fila de cada campo llegue de margen a margen, pasó al diferido de fotos nuevas de la
+>    spec (§7, `spec-visual.md`:259). Si Deslinde entra algún día lo decide Ramón al
+>    revisarla (`README.md`:56); eso no reabre este punto.
+> 5. **Encabezados de artículo en caja normal y peso 500: hecho, por la decisión del 5-oct**
+>    (mayúsculas 800 solo en cinco lugares: manual de marca §05, spec §0). Medido el 13-oct a
+>    1440 y 390 px: los 73 h1 y h2 de los siete artículos van en peso 500 y sin mayúsculas, y
+>    en las 21 rutas v3 hay 5 nodos en mayúsculas, todos en la home.
+
 Ordenado por lo que más mueve la aguja:
 
 1. **El hero.** Es la causa de que la IA siga leyéndose como el eje. Hay que afirmar qué es
    la casa. *(En curso: Ramón cerró la idea el 29-sep — «SpindleLab es el motor que une
    todas las partes de una idea de negocio y las hace funcionar».)*
+   → *13-oct: superado. Ramón cerró el hero el 10-oct con «Ahí se corta el circuito».*
 2. **Cortar secciones.** Doce contra ocho. El bloque de las tres cosas y el de las
    herramientas pueden vivir en páginas internas.
+   → *13-oct: hecho. La home tiene 8 secciones.*
 3. **Un índice de trabajo de verdad.** Hoy no existe: la obra vive en una tira del hero y
    en el campo de Desarrollo. Ellos le dan una página con diez proyectos clasificados por
    rubro.
+   → *13-oct: hecho. `/v3/trabajo/` existe desde el 29-sep.*
 4. **Dos piezas de concepto más**, para completar la tira de cuatro por campo.
+   → *13-oct: cerrado por decisión de Ramón, no por trabajo: una sola pieza de concepto en
+   el sitio (`brief-de-obra.md`:144, `portafolio/README.md`:55). Llenar los campos va por
+   las fotos nuevas, diferidas en la spec (§7, `spec-visual.md`:259).*
 5. **Bajar los encabezados de artículo a caja baja y peso 500**, que es lo que hace la
    referencia dentro de un caso y nosotros hacemos al revés.
+   → *13-oct: hecho, con la decisión del 5-oct. No se revierte.*
 
 ---
 

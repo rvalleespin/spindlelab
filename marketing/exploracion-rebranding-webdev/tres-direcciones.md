@@ -4,6 +4,30 @@
 Encargo nuevo de Ramón: diseño web pasa a ser el pilar del negocio, el sitio es el
 portafolio, el efecto wow importa, y hay giro de color.
 
+> **Nota de estado · 13-oct-2026: cerrado.** Las tres preguntas del final tienen respuesta, y
+> lo que el documento da por bloqueado ya no lo está:
+>
+> 1. **Cuál de las tres:** Ramón eligió C, y de ella salió la v3
+>    (`marketing/oficina/obras-web/spindlelab-v3/brief-de-obra.md`:15; en el commit e0c1281,
+>    `c2.astro` pasa a ser la home de `/v3/`). Después vinieron las compuertas del 2-oct y las
+>    decisiones del 5 y del 10-oct; lo vigente está en
+>    [`spec-visual.md`](../oficina/obras-web/spindlelab-v3/spec-visual.md). La «dirección A»
+>    que nombra la spec (§0) es otra: la del par de la compuerta 2 del 2-oct
+>    (`marketing/oficina/obras-web/spindlelab-v3/fase1-resultado.md`), no la «Papel» de este
+>    documento.
+> 2. **El permiso de Bernardo:** concedido el 30-sep (`ventas/proyectos-en-curso.md`). El
+>    índice de trabajo muestra cuatro piezas: sus dos sitios, Verifica y Cumple y Raigal, esta
+>    última rotulada como concepto.
+> 3. **`#14110E`:** no entra a la paleta. El lienzo que Ramón aprobó el 27-sep es negro puro
+>    `#000000` (manual de marca, §04 y tabla de decisiones; `spindlelab-astro/tailwind.config.mjs`, comentario
+>    del token `noche`). Lo que quede de `#14110E` en el código va por el frente E4.
+>
+> Las tres maquetas quedan como registro interno de esta exploración en `/v3/a/`, `/v3/b/` y
+> `/v3/c/` (eran `/v2/a/`, `/v2/b/` y `/v2/c/`; renombradas en e0c1281), con noindex. Siguen
+> vivas, y son de Ramón, las dos observaciones de oferta de «Lo que sigue pendiente»: R3 y R2
+> de [`pendientes-traspaso-revisados.md`](../oficina/obras-web/spindlelab-v3/pendientes-traspaso-revisados.md).
+> Esta nota no reabre ninguna decisión.
+
 ---
 
 ## Lo primero: la referencia no es lo que parecía
@@ -136,10 +160,16 @@ abiertos, porque son de estructura comercial y no se arreglan con diseño:
 
 ## Lo que necesito de ti
 
+> **Estado al 13-oct-2026: las tres respondidas.** Detalle en la nota de arriba.
+
 1. **Cuál de las tres**, o qué cruce (B tiene el mejor argumento comercial, A y C el mejor
    argumento de oficio; una portada puede abrir con A y meter el instrumento de B más abajo).
+   → *13-oct: cerrado. Ramón eligió C y de ella salió la v3 (`brief-de-obra.md`:15).*
 2. **¿Pides el permiso a Bernardo?** Sin eso, A y C no pasan de maqueta.
+   → *13-oct: cerrado. Permiso concedido el 30-sep (`ventas/proyectos-en-curso.md`).*
 3. **¿Apruebas `#14110E`** como extensión de paleta, si eliges C?
+   → *13-oct: cerrado. No entra: el lienzo aprobado el 27-sep es negro puro `#000000`
+   (manual de marca §04).*
 
 Con eso construyo la home completa en la dirección elegida. **Nada se mergea ni se publica
 sin que lo digas.**

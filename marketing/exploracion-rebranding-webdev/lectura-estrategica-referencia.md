@@ -3,6 +3,16 @@
 **Fecha:** 29-sep-2026 · **Rama:** `claude/rebranding-webdev-exploracion`
 **Encargo:** Ramón, en sesión. Tres miradas: dirección creativa, web, inteligencia de mercado.
 
+> **Nota de estado · 13-oct-2026.** Registro del 29-sep. Lo que compara con «el nuestro»
+> describe el v3 de ese día, antes del cambio de hero de esa tarde y de la
+> reconstrucción del 5-oct. Sus tres pendientes de decisión (al final) quedaron cerrados: el
+> hero, por Ramón el 10-oct; las dos piezas de concepto más, por la decisión de una sola en el
+> sitio; y el rótulo de concepto, que ya está construido. Lo vigente está en
+> [`spec-visual.md`](../oficina/obras-web/spindlelab-v3/spec-visual.md); la revisión de lo
+> que quedaba, en
+> [`pendientes-traspaso-revisados.md`](../oficina/obras-web/spindlelab-v3/pendientes-traspaso-revisados.md)
+> (frente E5). Esta nota no reabre ninguna decisión.
+
 Todo lo que sigue está **medido sobre el sitio cargado**, no descrito de memoria. Lo que es
 inferencia mía va marcado como tal.
 
@@ -174,7 +184,20 @@ respetarla en el sitio.
 
 ## Pendiente de decisión
 
+> **Estado al 13-oct-2026: los tres cerrados.** Detalle bajo cada uno.
+
 1. **El titular del hero.** Es la contradicción entre el brief y el giro. Decide Ramón.
+   → *13-oct: cerrado. Ramón dejó «Ahí se corta el circuito» el 10-oct (spec §7, fila del
+   10-oct, `spec-visual.md`:261).*
 2. **Dos piezas de concepto más**, para completar la tira de cuatro del campo Desarrollo.
+   → *13-oct: cerrado por decisión de Ramón, no por trabajo. En el sitio va una sola pieza de
+   concepto, Raigal (`marketing/oficina/obras-web/spindlelab-v3/brief-de-obra.md`:144;
+   `marketing/portafolio/README.md`:55), y Ramón pidió el 29-sep no seguir gastando en ellas
+   (`marketing/portafolio/03-deslinde/ficha.md`). Que la fila de cada campo llegue de margen a
+   margen va por las fotos nuevas, diferidas en la spec (§7, `spec-visual.md`:259).*
 3. **Cómo se rotulan** las piezas de concepto en el sitio, para que ninguna se lea como
    cliente real.
+   → *13-oct: resuelto. La pieza de concepto lleva «Pieza de concepto · no es un cliente»,
+   en papel y como primera etiqueta (`spindlelab-astro/src/components/v3/Pieza.astro`:60; spec §3), en la
+   home, en Desarrollo web y en Trabajo. La revisión fina de Raigal antes de mostrarla a un
+   prospecto es de Ramón (R9 de `pendientes-traspaso-revisados.md`).*

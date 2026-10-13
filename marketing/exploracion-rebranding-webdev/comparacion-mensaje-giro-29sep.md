@@ -3,6 +3,19 @@
 **Fecha:** 29-sep-2026 · **Rama:** `claude/rebranding-webdev-exploracion`
 **Mandato:** instrucción directa de Ramón en sesión (ver nota al final sobre los documentos).
 
+> **Nota de estado · 13-oct-2026.** Este documento es una foto del 29-sep a las 00:19 UTC
+> (commit 7e58a8c), anterior al cambio de hero de ese mismo día (1e9c423, 20:09 UTC, «v3: el
+> hero afirma en vez de preguntar») y a la reconstrucción del 5-oct. De lo que el §5 da por
+> intacto, tres cosas ya no lo están: el hero, el bloque del «67 de 69» y el de herramientas
+> gratis (marcados ahí). La «Nota sobre los documentos citados» también quedó atrás: ese
+> trabajo existe en la rama `claude/outbound-pozo-seco-28sep`, que no entró a `main`, y
+> traerlo es de la troncal (B26). La observación final sobre el monitoreo de menciones sigue
+> siendo de Ramón (R2). Lo vigente está en
+> [`spec-visual.md`](../oficina/obras-web/spindlelab-v3/spec-visual.md); la revisión de lo
+> que quedaba, en
+> [`pendientes-traspaso-revisados.md`](../oficina/obras-web/spindlelab-v3/pendientes-traspaso-revisados.md)
+> (frente E5). Esta nota no reabre ninguna decisión.
+
 El giro: **el centro pasa a ser el sitio web.** El AEO deja de venderse como servicio
 central y pasa a ser la especificación del producto, o sea la razón por la que este sitio
 vale más que el de al lado.
@@ -101,9 +114,15 @@ su nota:
   el commit anterior: mismo servicio, misma cadena de texto.
 - **El hero.** Sigue siendo la pregunta sobre si la IA te nombra, con el campo del chequeo
   ahí mismo. El brief ya lo pedía así y ya estaba construido.
+  → *Superado: el hero dejó de ser pregunta el mismo 29-sep (1e9c423), y desde el 10-oct
+  queda «Ahí se corta el circuito», con el ojillo «Estás pagando para que lleguen a tu
+  sitio.» (spec §7, fila del 10-oct, `spec-visual.md`:261).*
 - **El bloque del problema.** Sigue con el dato propio (67 de 69 sitios revisados), no con
   afirmaciones genéricas.
+  → *Superado: el bloque ya no está en ninguna página v3 (barrido del sitio compilado,
+  13-oct).*
 - **El bloque de herramientas gratis** (chequeo, Verifica y Cumple, metodología publicada).
+  → *Superado: el bloque ya no está en ninguna página v3 (mismo barrido).*
 - **Ningún competidor se nombra.** El patrón se cuenta en abstracto.
 - **No se agregó ninguna promesa de monitoreo de menciones en IA.** Ojo con cómo
   estaba escrita antes esta línea: decía «en ninguna parte», y eso es falso sobre el

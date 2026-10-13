@@ -678,7 +678,7 @@ El patrón aprobado de `marketing/brand/og-v3/`:
   - **§07 Forma y movimiento:** sección nueva. Radio único de 6px, aire de sección de 256px, y los tres mecanismos de movimiento con sus dos reglas de degradación.
   - **§09:** se documenta `npm run verificar`.
   - **Lo que NO cambió:** esencia, wordmark, monograma, punto dorado, territorio de campaña y voz. El v3 los usa tal cual.
-  - **Queda pendiente de Ramón:** decidir si los h1 de los siete artículos se acortan al límite, con su costo de SEO; y bajar este manual a las skills que todavía repiten las reglas de la v1.3.
+  - **Queda pendiente de Ramón:** decidir si los h1 de los siete artículos se acortan al límite, con su costo de SEO; y bajar este manual a las skills que todavía repiten las reglas de la v1.3. *(13-oct-2026: lo de los h1 lo cerró la decisión del 5-oct. El límite de 6 palabras y 34 caracteres es solo del display, y los h1 de artículo van en caja normal y Manrope 500, así que no hay límite que cumplir; ver §05 y `marketing/oficina/obras-web/spindlelab-v3/spec-visual.md`, §0 y §7.)*
 - **v1.3 (8 jul 2026):** regla de voz refinada: plural para lo que la empresa ofrece, singular para lo observacional.
 - **v1.2 (8 jul 2026):** sistema aplicado a `spindlelab-site`: tipografía, favicon, 4ª línea de servicio (Desarrollo Web). Corrección: el sitio nunca usó Fraunces, usaba Manrope.
 - **v1.1 (8 jul 2026):** la tipografía de marca pasa de Fraunces Display a **Gabarito** (la serif era demasiado solemne). Kit de logo en `logo/`.
