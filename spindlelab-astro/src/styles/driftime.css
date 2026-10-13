@@ -383,30 +383,34 @@ html body.d-body #cookie-aviso button:last-child:hover { background: rgba(247, 2
      chequeo enviado con Enter desde el campo, que sigue con foco de teclado: cae en 196 y no
      en 96 (con clic, en 96).
    Probado antes como scroll-margin de los controles: Chrome no hace scroll cuando el control
-   ya está entero dentro de la ventana aunque esté bajo el aviso (quedaba 1 de 38 en la home). */
-html:has(body.d-body):has(#cookie-banner:not([hidden])),
-html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: 96px; }
+   ya está entero dentro de la ventana aunque esté bajo el aviso (quedaba 1 de 38 en la home).
+   · EL PANEL DEL MENÚ, con el aviso abierto (cierre de la QA 13-oct): su relleno de abajo
+     pasa a ese mismo valor, así que todo su contenido se puede subir hasta ~18 px sobre el
+     aviso. Antes el final quedaba bajo el aviso sin scroll que lo subiera: «…leerlo.» 6 px
+     a 1280 × 650 (el panel no hacía scroll), 19 a 568 × 320 y 80 a 84 en celular vertical.
+     Las filas y el aire de arriba no se mueven; sin aviso, el relleno es el de NavV3.
+   Por eso el valor vive en una variable, --d-bajo-aviso: una sola tabla de altos del aviso
+   para el scroll-padding y para el panel. */
+html:has(body.d-body):has(#cookie-banner:not([hidden])) { --d-bajo-aviso: 96px; }
 @media (max-width: 899px) {
-  html:has(body.d-body):has(#cookie-banner:not([hidden])),
-  html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: 152px; }
+  html:has(body.d-body):has(#cookie-banner:not([hidden])) { --d-bajo-aviso: 152px; }
 }
 @media (max-width: 680px) {
-  html:has(body.d-body):has(#cookie-banner:not([hidden])),
-  html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: 146px; }
+  html:has(body.d-body):has(#cookie-banner:not([hidden])) { --d-bajo-aviso: 146px; }
 }
 @media (max-width: 359px) {
-  html:has(body.d-body):has(#cookie-banner:not([hidden])),
-  html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: 164px; }
+  html:has(body.d-body):has(#cookie-banner:not([hidden])) { --d-bajo-aviso: 164px; }
 }
 /* Pantallas bajas, con el aviso compacto (más arriba): 67 + 19 en horizontal y 132 + 18 en
    vertical. Van después de las de ancho para ganarles. */
 @media (orientation: landscape) and (max-height: 500px) {
-  html:has(body.d-body):has(#cookie-banner:not([hidden])),
-  html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: 86px; }
+  html:has(body.d-body):has(#cookie-banner:not([hidden])) { --d-bajo-aviso: 86px; }
 }
 @media (orientation: portrait) and (max-height: 600px) {
-  html:has(body.d-body):has(#cookie-banner:not([hidden])),
-  html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: 150px; }
+  html:has(body.d-body):has(#cookie-banner:not([hidden])) { --d-bajo-aviso: 150px; }
 }
+html:has(body.d-body):has(#cookie-banner:not([hidden])),
+html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: var(--d-bajo-aviso); }
+html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay .menu-nav { padding-bottom: var(--d-bajo-aviso); }
 html:has(body.d-body):has(:focus-visible),
 .d-body #menu-overlay { scroll-padding-top: 100px; }
