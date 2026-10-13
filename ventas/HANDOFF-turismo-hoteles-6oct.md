@@ -123,3 +123,27 @@ Antes de escribir, en este orden:
 - **25 clínicas sin medir** en `ventas/clinicas-sin-contactar-5oct.csv`.
 - **14 abogados con sitio vivo sin sondear**, en `ventas/abogados-medidos-5oct.csv`. Antes de
   sondearlos, pasarles el filtro del punto 3.
+
+---
+
+## Cruce contra el lote de hoteles del 25-sep (verificado 13-oct)
+
+El cruce del 5-oct no podía ver este solape, porque el lote del 25-sep **no estaba en ningún
+`ventas/*.csv`**: vivía dentro de `marketing/rutinas-prompt-copiloto-2026-09-22.txt`. Ahora está
+en `ventas/contactos-hoteles-25sep.csv` (43 direcciones, fuente Apollo).
+
+**Once de los 21 leads de este traspaso son el mismo dominio que alguien del lote del 25-sep:**
+`aguasdelmonte.cl`, `almalodge.cl`, `chelenko.com`, `hotelkennedy.cl`, `laturbina.cl`,
+`puyuhuapilodge.com`, `suizandina.com`, `taka.cl`, `tantakuy.cl`, `tungulu.cl`, `weskar.cl`.
+
+**Verificado en Gmail: ninguno de los once recibió correo nunca.** El lote del 25-sep fue una
+cosecha de 43 de la que solo se contactó a una parte (Awasi, Hoteles Cumbres, Time, Patagonia Camp,
+Las Torres, Casa Higueras, Puerta del Sur, Glampi, Hotel Alaia, Las Majadas, Cascada de las Ánimas,
+Santuario del Río, Luna de Pirque y Hare Nua, todos ya en tope). **Los 21 siguen vírgenes.**
+
+⚠️ **Pero ojo con la dirección:** para esos once, el lote del 25-sep tiene un contacto distinto al
+del banco de Apollo que usa este traspaso. Ejemplo: en el 25-sep weskar.cl figura como
+`juanjose@weskar.cl`. Son dos personas de la misma empresa. **Se escribe a una sola**, y el tope de
+3 es por empresa, no por casilla. Antes de escribir, revisar las dos direcciones del dominio.
+
+La línea de baja es la variante Apollo en los dos casos, así que eso no cambia.
