@@ -70,6 +70,49 @@ la idea → qué hago → cierre.** El primer movimiento ya no es una escena, es
 ### 38–41 seg · cierre
 > Soy Ramón, de SpindleLab. Los links van acá abajo, en el primer comentario.
 
+### Escaleta de grabación
+
+Una sola toma, vertical 9:16, 41 segundos. La barra `/` marca dónde respirar.
+
+| # | Tiempo | Movimiento | Entrega |
+|---|---|---|---|
+| 1 | 0:00 – 0:08 | **El insight** | Al lente, sin sonrisa de apertura. **Pausa de un segundo entera después de "No son la misma"**: es el gancho y necesita aire |
+| 2 | 0:08 – 0:20 | **Por qué no te enteras** | Tono explicativo, no de venta. Las dos últimas frases van parejas, sin subrayar ninguna. Lo que las hace funcionar es el contraste, no el énfasis |
+| 3 | 0:20 – 0:28 | **La idea** | Más lento que el resto. Es la conclusión, no un dato más |
+| 4 | 0:28 – 0:38 | **Qué hago** | Acá sí cambia el registro, más cercano. Las dos condicionales con la misma cadencia, porque el paralelismo es lo que hace que los dos servicios suenen a uno |
+| 5 | 0:38 – 0:41 | **El cierre** | Rápido y sin solemnidad. Sin sonrisa forzada de despedida |
+
+**1 · 0:00 – 0:08 · el insight**
+
+> Tu sitio tiene dos versiones. / La que abres tú, / y la que leen Google y ChatGPT. / No son la
+> misma. //
+
+**2 · 0:08 – 0:20 · por qué no te enteras**
+
+> Y ahí está el problema. / Si la versión que ellos leen tiene algo mal, / la tuya no te avisa. /
+> Un sitio roto se nota al tiro. / Un sitio invisible se ve perfecto. //
+
+**3 · 0:20 – 0:28 · la idea**
+
+> Por eso un sitio no se termina el día que se entrega. / Alguien tiene que ir a mirar la versión
+> que no ves. //
+
+**4 · 0:28 – 0:38 · qué hago**
+
+> Yo hago las dos cosas. / Construyo sitios y los audito. / Si te toca sitio nuevo, entra bien
+> hecho. / Si ya lo tienes, miro la versión que no ves / y te digo qué le falta. //
+
+**5 · 0:38 – 0:41 · el cierre**
+
+> Soy Ramón, de SpindleLab. / Los links van acá abajo, en el primer comentario.
+
+**Antes de la toma buena:** peluche en el micrófono · diez segundos de prueba escuchados con
+audífonos · gimbal en su base, altura de los ojos, bloqueado · dos metros de distancia al fondo ·
+texto en otro teléfono.
+
+**Después de cortar:** tres tomas completas grabadas, se elige una · subtítulos corregidos a mano ·
+sin música, sin audio de tendencia · exportar vertical.
+
 **De dónde sale el insight, que es lo que le da autoridad.** No es una ocurrencia: es el patrón de
 los 15 sitios auditados en `marketing/outbound/semana-02/lote-1-frente-a.md`. Uno servía HTML
 prácticamente vacío a los bots (app JavaScript), otro respondía 503 a los lectores automatizados,
