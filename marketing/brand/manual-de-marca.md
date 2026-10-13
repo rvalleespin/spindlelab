@@ -307,7 +307,7 @@ Cerrado por Ramón el 1-sep-2026 (reporte:
 
 | Mecanismo | Valor | Estado hoy | Fuente |
 |---|---|---|---|
-| **Entrada** | Opacidad 0 → 1 y 28 px, en 0,8 s con `cubic-bezier(.5, 0, .1, 1)`. Escalonado 0,08 / 0,16 / 0,24 s, máximo tres pasos. El primer pantallazo no anima. Red de seguridad a los 3 s | **El mecanismo existe y ninguna página v3 lo marca** (`[data-entra]`: 0, medido) | `campos-v3.css`:219-251 · `MOV`:27-47 |
+| **Entrada** | Opacidad 0 → 1 y 28 px, en 0,8 s con `cubic-bezier(.5, 0, .1, 1)`. Escalonado 0,08 / 0,16 / 0,24 s, máximo tres pasos. El primer pantallazo no anima. Red de seguridad a los 3 s | **Solo queda el script, y ninguna página v3 lo marca** (`[data-entra]`: 0, medido). La clase `.entra` vivía en `campos-v3.css`, que nada importaba y se borró el 13-oct: si una página lo marca, la regla va a `driftime.css` con estos valores | `MOV`:27-47 |
 | **Scroll suave** (Lenis) | Duración 1,1; curva `min(1, 1.001 − 2^(−10t))`; nada en táctil; apagado con movimiento reducido | En uso | `Layout.astro`:208-224 |
 | **Composición pegajosa** | Campos que se apilan (cada uno tapa al anterior) · etiqueta de sección pegajosa a 120 px · en celular, filas en carrusel con la siguiente pieza asomándose (78 % / 86 %) | En uso | `CSS`:88-94, 166-193, 268 |
 | **Video montado tarde** | El `src` se pone a 400 px de la vista; uno por página | Mecanismo listo; 0 videos en `/v3/` | `MOV`:93-108 |
@@ -382,7 +382,7 @@ Criterio del relevamiento del 7-oct: tono 38–54°, saturación ≥ 0,5 y brill
 Resultado sobre el pool:
 
 - **0 %** en todas las fotos `d/*`, en el retrato y en los mockups (máximo 0,05 %).
-- **`obra/combeau-modelo-alto.jpg`: 0,86 %** (follaje de palmera amarillo en la foto del cliente). **Cuenta como oro.**
+- **`obra/combeau-modelo-alto.jpg`: 0,86 %** (follaje de palmera amarillo en la foto del cliente). **Cuenta como oro.** La captura plana se borró el 13-oct porque ninguna página la pedía; si vuelve, se mide de nuevo.
 - **`hero-hilo-de-oro.mp4`: 0,13 a 0,72 % por cuadro.** **Cuenta como oro.**
 - El lima de la captura de Verifica y Cumple no es oro por tono (73° contra 46°; `OG/README.md`).
 
@@ -700,6 +700,7 @@ Para que el orquestador lo actualice. Este manual no los toca.
 **Skills**
 - `.claude/skills/persona-director-creativo/SKILL.md`, línea 59: «Tamaños: 1080×1080 (feed/carrusel)». Falta el recorte de grilla, las zonas seguras y la exportación a 2x con JPEG 4:4:4.
 - `.claude/skills/voz-spindlelab/SKILL.md`, línea 43: cita «escríbeme por acá y lo miramos» como rasgo; choca con «sin acá». `.claude/skills/voz-spindlelab/corpus.md` tiene 7 «acá» y el usuario viejo `@spindle.lab`: es texto publicado, se anota y no se reescribe.
+- `.claude/skills/voz-spindlelab/SKILL.md`, línea 24: «Nunca se mezclan en la misma pieza» (singular y plural). Contradice el §08, que es híbrido: singular para lo observado y plural para lo que se entrega, y su propio ejemplo («Le pregunté a ChatGPT por tu negocio. No apareces. Te mostramos por qué.») usa los dos en la misma pieza. Una sesión que cargue la skill puede querer «corregir» la bio de Nosotros, que mezcla los dos y va verbatim (decide Ramón).
 - `.claude/skills/persona-social-media/SKILL.md`: no recoge «sin acá / sin voseo» ni que en Instagram el enlace va en la bio y en el sticker.
 
 **Redes**

@@ -82,14 +82,14 @@ export default {
         sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
         display: ['Gabarito', 'Inter', 'system-ui', 'sans-serif'],
 
-        // --- Sistema tipográfico V2 (solo maquetas /v2/*) ---
-        // Manrope toma titulares Y cuerpo; Gabarito queda reservada al wordmark.
-        // El manual §05 hoy asigna Gabarito a titulares, así que esto lo reemplaza.
-        // ✅ APROBADO por Ramón el 27-sep-2026, junto con los titulares en MAYÚSCULAS,
-        // que también van contra el §05. Pendiente: bajar los dos cambios al manual,
-        // porque hasta que eso pase el manual y el sitio dicen cosas distintas. El argumento: si Gabarito aparece en un solo lugar,
-        // el wordmark deja de ser «el titular más grande» y pasa a leerse como firma.
-        // Manrope ya es de la marca (sistema live v2 de redes, manual §04) y ya está
+        // --- Tipografía del v3: manual de marca v3.0, §05 ---
+        // Manrope toma titulares y cuerpo; Gabarito queda solo para el wordmark (`wordmark`,
+        // en NavV3). Las páginas v3 toman Manrope de driftime.css (.d-body); `texto` hoy
+        // solo lo usa la maqueta /v3/c. Mayúsculas 800 solo en cinco lugares (el titular
+        // del hero y las cuatro palabras de campo), regla del 5-oct: todo otro titular va en
+        // caja normal, Manrope 500. Los titulares en mayúsculas del 27-sep quedaron atrás.
+        // El argumento del reparto: si Gabarito aparece en un solo lugar, el wordmark deja de
+        // leerse como «el titular más grande» y pasa a leerse como firma. Manrope está
         // auto-alojada, así que no agrega ni una petición a terceros.
         texto: ['Manrope', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
         wordmark: ['Gabarito', 'Manrope', 'system-ui', 'sans-serif'],
