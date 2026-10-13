@@ -9,7 +9,7 @@
 //   1. El panel anclado medía 320px de ancho y colgaba sobre el contenido. Funcionaba
 //      —abría, cerraba, tenía foco— pero no se leía como navegación, se leía como un
 //      accidente sobre el titular.
-//   2. Le FALTABAN PÁGINAS. El menú tenía seis enlaces y el sitio tiene veinte páginas.
+//   2. Le FALTABAN PÁGINAS. El menú tenía seis enlaces y el sitio tenía veinte páginas.
 //      No había forma de llegar a Nosotros ni al Blog desde ninguna parte del menú. Eso
 //      no es un problema de estilo, es navegación rota.
 //
@@ -22,7 +22,7 @@
 import { CONTACTO_V3 as CONTACTO, SERVICIOS_V3 } from '../../consts-v3';
 import '../../styles/driftime.css';
 
-// Las SIETE páginas de primer nivel. Antes eran seis enlaces y dos de ellos eran anclas
+// Las OCHO páginas de primer nivel. Antes eran seis enlaces y dos de ellos eran anclas
 // de la home, no páginas: se podía «navegar» sin salir nunca del inicio.
 const principales = [
   { href: '/v3/', label: 'Inicio' },
@@ -112,8 +112,9 @@ const actual = (href: string): 'page' | 'true' | undefined =>
   hidden
   class="fixed inset-0 z-40 bg-noche overflow-y-auto"
 >
-  <nav aria-label="Principal" class="min-h-full px-6 md:px-medianil pt-28 md:pt-32 pb-12 md:pb-16 grid md:grid-cols-12 gap-x-8 gap-y-12 content-start">
-    {/* Primario: grande y en mayúsculas, como los titulares de página de la referencia. */}
+  <nav aria-label="Principal" class="menu-nav min-h-full px-6 md:px-medianil pt-28 pb-12 md:pb-16 grid md:grid-cols-12 gap-x-8 gap-y-12 content-start">
+    {/* Primario: grande, como los titulares de página de la referencia (en caja normal: las
+        mayúsculas 800 quedan en sus cinco lugares). */}
     <ul class="list-none p-0 m-0 md:col-span-7">
       {
         principales.map((m, i) => (
@@ -122,8 +123,8 @@ const actual = (href: string): 'page' | 'true' | undefined =>
               href={m.href}
               aria-current={actual(m.href)}
               data-menu-link
-              data-paso={i}
-              class="menu-enlace group flex items-baseline gap-5 py-3 md:py-3.5 text-papel focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel focus-visible:-outline-offset-4"
+              style={`--paso: ${i}`}
+              class="menu-enlace group flex items-baseline gap-5 py-3 text-papel focus-visible:outline focus-visible:outline-2 focus-visible:outline-papel focus-visible:-outline-offset-4"
             >
               <span class="d-rot tabular-nums flex-none" style="font-size:0.9375rem">
                 {String(i + 1).padStart(2, '0')}
@@ -168,15 +169,33 @@ const actual = (href: string): 'page' | 'true' | undefined =>
 
 <style>
   /* La palabra del menú, en la escala de display. No llega a los 8,33vw de un campo de
-   * color: un menú de siete filas a ese tamaño no cabe en una pantalla, y el punto de
-   * esto es justamente ver las siete de una vez. */
+   * color: un menú de ocho filas a ese tamaño no cabe en una pantalla, y el punto de
+   * esto es justamente ver las ocho de una vez. */
   .menu-palabra {
-    /* El tope baja de 3,75rem a 3,25rem por una razón medida, no estética: con siete
-     * filas y el tamaño anterior, «CONTACTO» quedaba cortado bajo el borde de una
-     * pantalla de 900px. El punto de un menú de pantalla completa es ver las siete
-     * opciones de una vez; si hay que hacer scroll para encontrar la última, vuelve a
-     * ser una lista escondida. */
-    font-size: clamp(1.625rem, 4vw, 3.25rem);
+    /* El tope de 3,25rem salió de una pantalla de 900 px: con 3,75rem «Contacto» quedaba
+     * cortado. Con ocho filas tampoco alcanzaba en un notebook (13-oct, medido): la última
+     * terminaba en 772-776 px, fuera a 1366 × 768 y a 1280 × 720, y la ventana real de un
+     * navegador en esos equipos deja ~650 px. Por eso escala también por alto, como el
+     * titular del hero y de los campos: 5,8svh deja 52 px a 900 de alto (sin cambio) y
+     * ~38 px a 650. En celular vertical manda el mínimo, igual que antes. Si hay que hacer
+     * scroll para encontrar la última opción, vuelve a ser una lista escondida. */
+    font-size: clamp(1.625rem, min(4vw, 5.8svh), 3.25rem);
+  }
+  /* Desde 768 de ancho, el aire también sigue al alto, para que el menú se achique entero
+   * en vez de apretarse (13-oct). Arriba, 96 px hasta 800 de alto, como el hero (libran el
+   * módulo, que termina en 74), y 128 desde 900. El relleno de la fila va de 9 px a 650 de
+   * alto a 14 a 900 (38/9 contra 52/14). Con 10 px a 650 el aviso de cookies abierto tapaba
+   * el filete de «Contacto»; con 9 termina sobre él (medido: 564 contra 573 a 1280 × 650,
+   * 574 contra 580 a 1366 × 657) y el panel no hace scroll. A 900 y más da lo mismo que
+   * antes (128 y 14): 1440 × 900 no cambia. En celular siguen pt-28 y py-3. */
+  @media (min-width: 768px) {
+    .menu-nav {
+      padding-top: clamp(96px, 32svh - 160px, 128px);
+    }
+    .menu-enlace {
+      padding-top: clamp(9px, 2svh - 4px, 14px);
+      padding-bottom: clamp(9px, 2svh - 4px, 14px);
+    }
   }
   /* El número se alinea con la palabra sin competir. */
   .menu-enlace .rotulo {
@@ -201,16 +220,13 @@ const actual = (href: string): 'page' | 'true' | undefined =>
   }
 
   /* Entrada escalonada de las filas, con la misma curva que el resto del v3. Si el JS no
-   * corre, el overlay no se abre y esto no aplica: nunca deja contenido escondido. */
+   * corre, el overlay no se abre y esto no aplica: nunca deja contenido escondido.
+   * El retardo sale del índice de la fila (--paso, que pone el map): con una regla por
+   * paso, la octava fila quedó sin la suya y entraba en 0 s junto con la primera. */
   #menu-overlay[data-abierto] .menu-enlace {
     animation: menu-entra 0.5s cubic-bezier(0.5, 0, 0.1, 1) backwards;
+    animation-delay: calc(var(--paso, 0) * 0.04s);
   }
-  #menu-overlay[data-abierto] .menu-enlace[data-paso='1'] { animation-delay: 0.04s }
-  #menu-overlay[data-abierto] .menu-enlace[data-paso='2'] { animation-delay: 0.08s }
-  #menu-overlay[data-abierto] .menu-enlace[data-paso='3'] { animation-delay: 0.12s }
-  #menu-overlay[data-abierto] .menu-enlace[data-paso='4'] { animation-delay: 0.16s }
-  #menu-overlay[data-abierto] .menu-enlace[data-paso='5'] { animation-delay: 0.2s }
-  #menu-overlay[data-abierto] .menu-enlace[data-paso='6'] { animation-delay: 0.24s }
   @keyframes menu-entra {
     from { opacity: 0; transform: translateY(14px) }
     to { opacity: 1; transform: none }
