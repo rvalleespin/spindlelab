@@ -416,8 +416,11 @@ const siguiente = orden[(iAqui + 1) % orden.length];
      sus últimas filas quedaban bajo el aviso o bajo el borde, y con Tab no había scroll que
      las subiera (WCAG 2.4.11). Medido con Tab en los 7 artículos y el aviso abierto: 20 filas
      tapadas a 844 × 390, 15 a 932 × 430, 7 a 1280 × 500, 2 a 1280 × 600 y 1 a 1280 × 650;
-     con el corte en 500 seguían las de 600 y 650. Ahora 0, y desde 680 se pega como antes. */
-  @media (max-height: 679px) {
+     con el corte en 500 seguían las de 600 y 650. Ahora 0, y desde 680 se pega como antes.
+     Segunda banda: de 768 a 899 de ancho el aviso parte su texto y mide 134 px, no 78, así que
+     ahí el corte sube a 750 de alto (QA 13-oct: con 680 a 749 quedaban 1 o 2 filas bajo él,
+     p. ej. una ventana a media pantalla de un notebook de 1536 × 864, ~768 × 730). */
+  @media (max-height: 679px), (min-width: 768px) and (max-width: 899px) and (max-height: 749px) {
     .d-indice-art { position: static; }
   }
 

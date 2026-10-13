@@ -186,7 +186,9 @@ const actual = (href: string): 'page' | 'true' | undefined =>
    * módulo, que termina en 74), y 128 desde 900. El relleno de la fila va de 9 px a 650 de
    * alto a 14 a 900 (38/9 contra 52/14). Con 10 px a 650 el aviso de cookies abierto tapaba
    * el filete de «Contacto»; con 9 termina sobre él (medido: 564 contra 573 a 1280 × 650,
-   * 574 contra 580 a 1366 × 657) y el panel no hace scroll. A 900 y más da lo mismo que
+   * 574 contra 580 a 1366 × 657) sin hacer scroll. Con el aviso abierto el panel sí baja
+   * 18 a 25 px, para subir el final de la columna de servicios sobre el aviso
+   * (--d-bajo-aviso en driftime.css, bloque «foco bajo lo fijo»). A 900 y más da lo mismo que
    * antes (128 y 14): 1440 × 900 no cambia. En celular siguen pt-28 y py-3. */
   @media (min-width: 768px) {
     .menu-nav {
