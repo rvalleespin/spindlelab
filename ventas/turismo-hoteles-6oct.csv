@@ -1,0 +1,22 @@
+empresa,dominio,csv_origen,barrido_5oct,estado
+Terrantai Lodge,terrantai.com,contactos-apollo-turismo-lote2.csv,"TIENE aviso de cookies (Complianz) y 13 referencias a GA/GTM; motor SimpleBooking",sondear-primero
+Tantakuy Eco Experience,tantakuy.cl,contactos-apollo-turismo-lote2.csv,"8 menciones de politica; 4 formularios; sin aviso; motor de reserva",sondear-primero
+Hotel Oceanic Chile,hoteloceanic.cl,contactos-apollo-turismo-lote2.csv,"6 formularios; cero mencion de privacidad; sin aviso; motor de reserva",sondear-primero
+Weskar Patagonian Lodge,weskar.cl,contactos-apollo-CON-GANCHO.csv,"responde solo con www; 3 formularios; 5 GA; widget de Booking.com; sin aviso",sondear
+Puyuhuapi Lodge & Spa,puyuhuapilodge.com,contactos-apollo-CON-GANCHO.csv,"4 GA; motor Cloudbeds; sin aviso; operacion grande, revisar decisor",sondear
+Cascada Expediciones / EcoCamp,cascada.travel,contactos-apollo-turismo-lote2.csv,"13 GA/GTM; 2 menciones de politica; sin aviso; operacion grande, revisar decisor",sondear
+Chelenko Lodge,chelenko.com,contactos-apollo-CON-GANCHO.csv,"1 formulario; motor de reserva; sin aviso ni politica",sondear
+Tungulu Hotel Boutique,tungulu.cl,contactos-apollo-CON-GANCHO.csv,"1 formulario; motor de reserva; sin aviso ni politica",sondear
+Aguas del Monte Resort & Spa,aguasdelmonte.cl,contactos-apollo-CON-GANCHO.csv,"motor de reserva; sin aviso ni politica; nada de trackers en el HTML",sondear
+Hotel Cristobal Colon,hotelcristobalcolon.cl,contactos-apollo-turismo-lote2.csv,"widget de Booking.com; sin aviso ni politica",sondear
+Hotel La Turbina,laturbina.cl,contactos-apollo-turismo-lote2.csv,"motor de reserva; sin aviso ni politica",sondear
+Suizandina Lodge,suizandina.com,contactos-apollo-CON-GANCHO.csv,"2 referencias al pixel de Meta; sin aviso ni politica",sondear
+Hotel Taka Matanzas,taka.cl,contactos-apollo-CON-GANCHO.csv,"sin trackers en el HTML; sin aviso ni politica",sondear
+45 by Director Hotel,director.cl,contactos-apollo-CON-GANCHO.csv,"2.990 bytes: cascara JS, el HTML no dice nada; motor de reserva",sondear - imprescindible
+ALMA Lodge,almalodge.cl,contactos-apollo-CON-GANCHO.csv,"3.970 bytes: cascara JS, el HTML no dice nada",sondear - imprescindible
+Hotel Wyndham Garden Kennedy,hotelkennedy.cl,contactos-apollo-turismo-lote2.csv,"ya no es Hotel Kennedy: franquicia Wyndham, 1,1 MB de sitio",sondear - revisar ticket y decisor
+7K Lodge,7k-lodge.com,contactos-apollo-CON-GANCHO.csv,"403 Forbidden en los tres prefijos, 358 bytes",probar con sonda; si repite 403 el bloqueo es hallazgo AEO
+Hotelera Montepiedra,aparthotelmontepiedra.cl,contactos-apollo-CON-GANCHO.csv,"503 persistente en los tres prefijos",reintentar en una semana
+ELEMENTOS Turismo Experiencial,elementos-chile.com,contactos-apollo-CON-GANCHO.csv,"sin respuesta en los tres prefijos",reintentar en una semana
+EcoHotel Carmenere,hotelcarmenere.com,contactos-apollo-turismo-lote2.csv,"404 ConnectYourDomain Error de Wix: el dominio no esta conectado a su sitio",angulo Desarrollo Web
+Rosen (mal etiquetado),rosen.cl,contactos-apollo-turismo-lote2.csv,"es la marca de colchones Rosen, no un hotel en Temuco",descartar - mal etiquetado en Apollo
