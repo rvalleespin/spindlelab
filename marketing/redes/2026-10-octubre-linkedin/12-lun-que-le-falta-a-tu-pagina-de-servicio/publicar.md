@@ -1,9 +1,18 @@
 # Publicar — Si tu página de servicio dice lo mismo que la de tus competidores
 
-**Cuándo:** LUNES 12-oct-2026, a primera hora · **Canal:** perfil personal de Ramón · **Voz:** singular
+**Cuándo:** programado para el LUNES 12-oct-2026; **publicado el MARTES 13-oct** a pedido de Ramón ("publica el post del lunes") · **Canal:** perfil personal de Ramón · **Voz:** singular
 **Pieza visual:** ninguna. Texto puro.
 **Escribe:** agente-copywriter (Renata), a pedido directo de Ramón · **Aprobó el texto:** Ramón, 10-oct, sin cambios ("queda así, déjalo para el lunes")
-**Estado:** ✅ Aprobado, en cola para el lunes 12-oct. **No publicado aún.**
+**Estado:** ✅ PUBLICADO Y VERIFICADO (13-oct-2026), perfil personal de Ramón.
+`linkedin.com/feed/update/urn:li:activity:7515818558875017216/`. Texto leído del editor antes de publicar (6 párrafos). Captura posterior:
+"1 comentario", autor Ramón, los dos links activos.
+
+> ⚠️ **Un cambio respecto del texto aprobado el 10-oct:** "Esta semana Search Engine Land publicó..." salió como **"El viernes pasado Search
+> Engine Land publicó..."**. El artículo es del viernes 9-oct y, publicado un martes, "esta semana" ya no era cierto. Es el único cambio.
+
+**Checklist del día, hecho:** canal revisado (el último post original era el del 7-oct) · `spindlelab.cl/diagnostico/` releído en vivo (21
+chequeos, diagnóstico a mano gratis en 24 horas) · artículo releído (publicado el 9-oct, con el método, el ejemplo de Michigan, "almost word for word"
+y lo de UNKNOWN, sin cambios) · link en el primer comentario.
 
 ## Origen del encargo
 
@@ -17,7 +26,7 @@ Ramón aprobó el texto, con la frase "la autora usa el Modo IA de Google" tal c
 
 Si la página de tu servicio dice lo mismo que la de tus competidores, una IA tiene poco que sacar de ella, y tus clientes tampoco.
 
-Esta semana Search Engine Land publicó un método para encontrar qué le falta a esa página. Se parte de la pregunta real que haría un comprador, se la haces a un modelo de IA (la autora usa el Modo IA de Google) y se miran las preguntas que sugiere a continuación. Según ella, esas preguntas son el mapa de contenido: si el modelo insiste en ramificarse hacia una pregunta, la página debería responderla con evidencia.
+El viernes pasado Search Engine Land publicó un método para encontrar qué le falta a esa página. Se parte de la pregunta real que haría un comprador, se la haces a un modelo de IA (la autora usa el Modo IA de Google) y se miran las preguntas que sugiere a continuación. Según ella, esas preguntas son el mapa de contenido: si el modelo insiste en ramificarse hacia una pregunta, la página debería responderla con evidencia.
 
 El ejemplo es una página de abogados sobre accidentes de auto en Michigan, que decía casi palabra por palabra lo mismo que una docena de firmas. Al preguntarle a la IA aparecieron decisiones concretas que la página no tocaba, como qué pasa si el otro conductor no tiene seguro o dónde se presenta el reclamo.
 
