@@ -141,6 +141,13 @@ Martelli (Director de Operaciones de TitanSec, ciberseguridad y Ley 21.719; 2º 
 Matías Herrera). A Jorge se le dio "Seguir" desde el menú "..." de su perfil porque el botón principal era "Conectar"
 (que habría enviado una invitación); no se envió ninguna.
 
+**Conectar con Juan Carlos Hurtado Salas (13-oct, aprobado por Ramón):** invitación enviada sin nota; el botón pasó a
+"Pendiente". Se hizo junto con su primer comentario sugerido; ver `marketing/redes/red-linkedin/comentarios-semana-2026-10-13.md`.
+
+**Comentarios sobre publicaciones de la red:** cada semana se leen las publicaciones recientes de los contactos y se dejan
+2 o 3 comentarios listos para que Ramón los pegue (la sesión no puede escribir en contenido de terceros). Primera tanda en
+el archivo anterior; incluye el método y los descartados.
+
 **Vistos y NO seguidos, con el motivo:**
 - **Presencia360** (servicios y consultoría de TI, 143 seguidores): "combina auditoría automatizada y análisis especializado para
   mejorar cumplimiento normativo, SEO, rendimiento, seguridad y experiencia de usuario". **Es un competidor directo del chequeo.**
