@@ -59,4 +59,8 @@ viewport hay **uno**. La regla de escasez se cumple.
 - Botón bajo el pliegue: no ocurre a 390, 768 ni 1440.
 - Dos dorados en una vista: no ocurre.
 - Aviso de cookies tapando el botón: no ocurre desde 360px (el propio código ya lo
-  documentó y asumió el caso de 320px).
+  documentó y asumió el caso de 320px). **Corregido el 13-oct (P66, frente E1):** esto se
+  midió solo en vertical. En horizontal sí pasaba (en la home, 26 px del botón a 568 × 320;
+  en /v3/diagnostico/, el campo o el botón en siete teléfonos apaisados y el botón entero
+  a 320 × 568). Desde el 13-oct el aviso se compacta en pantallas bajas y no tapa el campo
+  ni el botón en ninguno de los 16 tamaños medidos, en las dos rutas (spec §7).

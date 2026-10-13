@@ -256,4 +256,28 @@ const jsonLd = {
     .d-entrada-diag { order: -1; }
     .d-siguiente-diag { flex-direction: column; align-items: flex-start; gap: 12px; }
   }
+
+  /* PANTALLAS BAJAS (E1, 13-oct; solo por alto, el resto de los tamaños no cambia). Con el
+     aviso de cookies abierto en la primera carga, el campo o el botón quedaban bajo el aviso
+     a 320 × 568 y en los siete teléfonos apaisados medidos (568 × 320 a 932 × 430). El aviso
+     ya se compacta en driftime.css (53 a 67 px apaisado), y con eso, el aire mínimo y el
+     instrumento en fila tampoco alcanza: la línea (3 renglones) termina en 249 y el campo
+     queda en 265–329, con el aviso desde 253 a 568 × 320, 293 a 640 × 360 y 307 a
+     740 × 360 (tapado en 5 de 6 apaisados; medido). Así que aquí:
+     · el instrumento va justo bajo el h1 y la línea pasa debajo (orden visual; el DOM no
+       cambia y la línea no es enfocable), como en la home, donde el instrumento abre;
+     · aire mínimo: la miga a 96, bajo la caja del módulo (86 o 94 de alto);
+     · apaisado y bajo 768 de ancho, el campo y el botón en una fila de 64 px, el
+       instrumento de escritorio: en columna medía 118 px. */
+  @media (orientation: portrait) and (max-height: 600px), (orientation: landscape) and (max-height: 500px) {
+    .d-cab-diag { display: flex; flex-direction: column; padding-top: 96px; }
+    .d-cab-diag :global(.d-miga) { margin-bottom: 14px; }
+    .d-cab-diag .d-linea { order: 1; margin: 22px 0 0; }
+    .d-instr-diag { margin-top: 18px; }
+  }
+  @media (orientation: landscape) and (max-height: 500px) and (max-width: 767px) {
+    .d-instr-diag .d-dom { flex-direction: row; height: 64px; gap: 0; }
+    .d-instr-diag .d-dom input { flex: 1; height: auto; font-size: 1.375rem; }
+    .d-instr-diag .d-dom button { height: auto; }
+  }
 </style>

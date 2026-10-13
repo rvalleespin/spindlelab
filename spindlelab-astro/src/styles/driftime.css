@@ -333,6 +333,36 @@ html body.d-body #cookie-banner #cookie-accept { background: var(--d-papel); bor
 html body.d-body #cookie-banner #cookie-accept:hover { background: #fff; border-color: #fff; }
 html body.d-body #cookie-banner #cookie-reject { background: transparent; color: var(--d-papel); border-color: rgba(247, 245, 240, 0.32); }
 html body.d-body #cookie-banner #cookie-reject:hover { background: rgba(247, 245, 240, 0.08); }
+/* PANTALLAS BAJAS (E1, 13-oct). En la primera carga el aviso medía 109 a 146 px en pantallas
+   de 320 a 430 de alto y tapaba el chequeo: en /v3/diagnostico/ el botón entero a 320 × 568 y
+   el campo o el botón en los siete teléfonos apaisados medidos; en la home, 26 px del botón a
+   568 × 320. Se compacta solo por alto, nunca por ancho: texto a 12 px (el tamaño de la
+   etiqueta de pieza), menos relleno y, en horizontal, el texto y los botones en una fila.
+   Los botones siguen en 36 px. Medido: 53 a 67 px en horizontal (568 × 320 a 1440 × 500) y
+   99 a 132 en vertical (480 × 600 a 320 × 568); antes, 109 a 146.
+   `.cb-inner` y `.cb-actions` llevan la clase doble porque Astro los deja en 1-3-0. */
+@media (orientation: landscape) and (max-height: 500px) {
+  html body.d-body #cookie-banner { padding: 8px 16px; }
+  html body.d-body #cookie-banner .cb-inner.cb-inner { flex-direction: row; flex-wrap: nowrap; align-items: center; gap: var(--d-g); }
+  html body.d-body #cookie-banner .cb-inner p { flex: 1 1 auto; min-width: 0; max-width: none; font-size: 0.75rem; line-height: 1.4; }
+  html body.d-body #cookie-banner .cb-actions.cb-actions { gap: 8px; }
+}
+@media (orientation: portrait) and (max-height: 600px) {
+  html body.d-body #cookie-banner { padding: 10px 16px; }
+  html body.d-body #cookie-banner .cb-inner.cb-inner { gap: 8px; }
+  html body.d-body #cookie-banner .cb-inner p { font-size: 0.75rem; line-height: 1.4; }
+}
+/* El aviso que confirma la elección (#cookie-aviso) lo crea consent-banner.js al pulsar Aceptar
+   o Rechazar, con estilo en línea: radio 16, sombra, fondo #161D26 y letra Inter (P63; medido,
+   81 glifos de Inter en la vista). Dura 5 s, salvo el que avisa de un cambio hecho en otra
+   pestaña, que trae dos botones («Recargar ahora» y «Cerrar») y queda puesto. Por venir en
+   línea, aquí todo va con !important. */
+html body.d-body #cookie-aviso { background: var(--d-modulo) !important; border: 1px solid var(--d-filete) !important; border-radius: var(--d-r) !important; box-shadow: none !important; color: var(--d-papel) !important; font-family: 'Manrope', system-ui, sans-serif !important; font-size: 0.875rem !important; line-height: 1.5 !important; }
+html body.d-body #cookie-aviso button { display: inline-flex; align-items: center; height: 36px; padding: 0 14px !important; border-radius: var(--d-r) !important; font: 500 0.875rem/1 'Manrope', sans-serif !important; }
+html body.d-body #cookie-aviso button:first-child { background: var(--d-papel) !important; color: #000 !important; }
+html body.d-body #cookie-aviso button:first-child:hover { background: #fff !important; }
+html body.d-body #cookie-aviso button:last-child { background: transparent !important; color: var(--d-papel) !important; border: 1px solid rgba(247, 245, 240, 0.32) !important; }
+html body.d-body #cookie-aviso button:last-child:hover { background: rgba(247, 245, 240, 0.08) !important; }
 
 /* ---------------------------------------------------------------- foco bajo lo fijo */
 /* Ningún control enfocado queda bajo el aviso de cookies ni bajo el módulo de navegación
@@ -342,7 +372,8 @@ html body.d-body #cookie-banner #cookie-reject:hover { background: rgba(247, 245
    · ABAJO, el aviso: scroll-padding-bottom con el alto del aviso + ~18 px, mientras está
      abierto. No mueve ninguna ancla (las anclas se alinean arriba). El aviso mide 78 px desde
      885 px de ancho (una fila), 134 entre 681 y 884 (el texto y los botones en dos filas),
-     109 a 128 entre 360 y 680 y 146 a 320 (medido en /v3/contacto/).
+     109 a 128 entre 360 y 680 y 146 a 320 (medido en /v3/contacto/). En pantallas
+     bajas el aviso se compacta y lleva sus propios valores (al final del bloque).
    · ARRIBA, el módulo: scroll-padding-top de 100 px SOLO mientras hay foco de teclado
      (`:focus-visible`). Siempre puesto, corría 100 px cada ancla que ya tiene su propio
      scroll-margin medido (medido: #planes de 180 a 280, #contacto-form de 88 a 188, el índice
@@ -366,6 +397,16 @@ html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bo
 @media (max-width: 359px) {
   html:has(body.d-body):has(#cookie-banner:not([hidden])),
   html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: 164px; }
+}
+/* Pantallas bajas, con el aviso compacto (más arriba): 67 + 19 en horizontal y 132 + 18 en
+   vertical. Van después de las de ancho para ganarles. */
+@media (orientation: landscape) and (max-height: 500px) {
+  html:has(body.d-body):has(#cookie-banner:not([hidden])),
+  html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: 86px; }
+}
+@media (orientation: portrait) and (max-height: 600px) {
+  html:has(body.d-body):has(#cookie-banner:not([hidden])),
+  html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: 150px; }
 }
 html:has(body.d-body):has(:focus-visible),
 .d-body #menu-overlay { scroll-padding-top: 100px; }
