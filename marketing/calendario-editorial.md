@@ -116,27 +116,45 @@ solo se sostiene si uno de los tres es barato de producir.
 | ~~jue 8-oct~~ | C | ~~El Cyber como examen del sitio~~ | ⛔ **SE CAYÓ** (constatado el 10-oct). Era coyuntura con ventana al 8 o 9 y no salió. **No se fuerza fuera de fecha**, y no hay pérdida real: su ángulo de fondo lo cubre el carrusel del jue 22, que es el mismo argumento sin depender de una semana |
 | vie 9-oct | — | Vacío (regla de los viernes) | — |
 | **sáb 10 – lun 12** | — | **Fin de semana largo. Cero publicaciones** | — |
-| **mar 13-oct** | **D** | **Reel cara a cámara: el sitio con el nombre equivocado.** LinkedIn nativo primero, Instagram después | 🟡 **guion aprobado el 10-oct para grabar**, `13-mar-reel-cara-a-camara/guion.md`. Falta la grabación; publicar necesita OK aparte. **Ya no se corre: tiene respaldo** (fila siguiente) |
-| ↳ *respaldo del 13* | C | **El sitio con el nombre equivocado, en texto.** Mismo argumento, sin cámara | ⬜ **en reserva**, `13-mar-respaldo-mensaje-cerrado/publicar.md`. Ramón va a grabar, así que lo más probable es que no se use. **Alternativos, nunca los dos**: si el reel sale, este vuelve al banco |
-| **jue 15-oct** | B | La base de datos que te dejó la temporada: datos personales a seis semanas de la ley | ⬜ **ya escrito**, en el banco al final de `08-jue-cyber-examen-del-sitio/publicar.md`. Al reusarlo se cambia el arranque: la referencia al Cyber envejece, entra temporada alta |
-| lun 19-oct | A | "Para que la IA te recomiende, tu sitio no basta" | ⬜ aprobado el 22-sep y pospuesto. **Necesita gancho nuevo**: comparte ideas con el del 7-oct |
-| mié 21-oct | B | Cookies y la ley chilena | ⬜ **bloqueado**: hay que verificar qué exige de verdad la 21.719 sobre cookies. Si sigue bloqueado, entra el plazo del 1-dic a seis semanas |
-| **jue 22-oct** | C | **Carrusel "Por dónde se te escapa la gente"** · **página de LinkedIn**, documento deslizable, y Ramón lo comparte desde su perfil | 🟡 **copy escrito**, `23-vie-carrusel-fugas/copy.md`. **Bloqueado por el manual nuevo**: el copy no depende de él, el diseño sí. Si el reel del 13 rindió y se prefiere un segundo video, este se corre |
-| lun 26-oct | A | Costco: el tráfico desde IA es poco y convierte mejor | ⬜ dato verificado en el transcript del 24-sep. **Falta la apertura**: Ramón descartó partir por la noticia |
+| ~~mar 13-oct~~ | — | ~~Reel cara a cámara~~ | ⛔ **vacío.** El guion se aprobó el 10-oct pero la grabación no alcanzó a ocurrir, y a las 15:00 del martes la ventana B2B del día ya había pasado. **Se decidió no apurar la pieza más importante del mes para alcanzar una ventana mala** (ver nota abajo) |
+| **jue 15-oct** | **D** | **Reel cara a cámara: el sitio con el nombre equivocado.** LinkedIn nativo primero, Instagram después | 🟡 **guion aprobado**, `13-mar-reel-cara-a-camara/guion.md` (el nombre de la carpeta queda con el 13; moverla rompería los links de esta tabla). Falta grabar; publicar necesita OK aparte |
+| ↳ *respaldo del reel* | C | **El sitio con el nombre equivocado, en texto.** Mismo argumento, sin cámara | ⬜ **en reserva**, `13-mar-respaldo-mensaje-cerrado/publicar.md`. **Alternativos, nunca los dos.** Si el reel se cae otra vez, este cubre el jueves |
+| **lun 19-oct** | B | La base de datos que te dejó la temporada: datos personales a seis semanas de la ley | ⬜ **ya escrito** (movido del jue 15), en el banco al final de `08-jue-cyber-examen-del-sitio/publicar.md`. Al reusarlo se cambia el arranque: la referencia al Cyber envejece, entra temporada alta |
+| **mié 21-oct** | A | Costco: el tráfico desde IA es poco y convierte mejor | ⬜ **movido del lun 26.** Dato verificado en el transcript del 24-sep. **Falta la apertura**: Ramón descartó partir por la noticia |
+| **jue 22-oct** | C | **Carrusel "Por dónde se te escapa la gente"** · **página de LinkedIn**, documento deslizable, y Ramón lo comparte desde su perfil | 🟡 **copy escrito**, `23-vie-carrusel-fugas/copy.md`. **Bloqueado por el manual nuevo**: el copy no depende de él, el diseño sí. Si el reel rindió y se prefiere un segundo video, este se corre |
+| lun 26-oct | A | "Para que la IA te recomiende, tu sitio no basta" | ⬜ aprobado el 22-sep y pospuesto dos veces. **Necesita gancho nuevo**: comparte ideas con el del 7-oct. Si el 26 sigue sin gancho, se cae del mes |
 | mié 28-oct | B | El cierre de la ventana de la ley | ⬜ |
 | vie 30-oct | — | Cierre de mes (no es publicación, por eso sí va en viernes) | ⬜ |
 
-**Alternancia verificada tras la caída del jue 8:** B → A → D → B → A → B → C → A → B. Sin dos del
-mismo tipo seguidos.
+**Alternancia verificada tras el corrimiento del 13 (recalculada el mar 13):** B → A → **D** → B → A →
+C → A → B. Sin dos del mismo tipo seguidos.
 
-> ⚠️ **Estado al sáb 10-oct.** El último post salió el 7. El viernes 9 no se publicó (demora en el
-> pago de la suscripción), y el sáb 10, dom 11 y lun 12 (feriado) no son días hábiles: **el hueco
-> real es de dos días hábiles**, jue 8 y vie 9, no de una semana. **No se publica el sábado**: la
-> regla de los viernes vale doble en fin de semana largo.
+> **Lo que el corrimiento del reel arrastró, para que quede explícito.** El reel pasa del 13 al 15;
+> el post de datos personales del 15 al 19; el de Costco del 26 al 21. **"Cookies y la ley chilena"
+> sale del mes y vuelve al banco**: estaba bloqueado esperando que alguien verificara qué exige de
+> verdad la 21.719 sobre cookies, nadie lo verificó, y meterlo el 26 habría dejado dos B seguidos.
+> Si lo quieres de vuelta, hay que desbloquearlo primero. El de "Para que la IA te recomiende" queda
+> en el 26 y es el candidato natural a caerse si no aparece un gancho, porque es el único de la cola
+> que lleva dos postergaciones.
+
+> ⚠️ **Estado al mar 13-oct, 15:00.** El último post salió el mié 7. El vie 9 no se publicó (demora
+> en el pago de la suscripción), el sáb 10, dom 11 y lun 12 (feriado) no son días hábiles, y **el
+> martes 13 quedó vacío porque el reel no se grabó.** Ramón confirmó que sigue con el plan principal,
+> o sea el reel grabado en un lugar real, no el respaldo en texto.
 >
-> **El próximo slot es el martes 13 y queda cubierto pase lo que pase.** Primera opción, el reel,
-> que depende de que Ramón grabe. Si no se graba, sale el respaldo en texto escrito el sáb 10. La
-> decisión se toma el **lunes 12**, no el martes, para no publicar a las apuradas.
+> **Por qué no se forzó el martes:** a las 15:00 la ventana B2B del día ya había pasado, y grabar
+> apurado un primer video a cámara para alcanzar una ventana mala es la combinación peor de las dos.
+> Es también, exactamente, como murieron los dos guiones cara a cámara anteriores
+> (`_archivo/2026-jul-ago/reel-agosto-robots/` y `2026-09-septiembre/07-lun-video-presentacion/`).
+>
+> **Y el respaldo no servía de salida**, aunque estuviera escrito y listo: cuenta la misma escena y
+> la misma tesis que el reel, así que publicarlo el martes habría matado el video del jueves. El
+> respaldo solo sirve si se decide no grabar en absoluto. Esa es la trampa de tener un respaldo que
+> dice lo mismo, y conviene recordarla la próxima vez que se escriba uno.
+>
+> **Costo asumido, dicho completo:** entre el jue 8 y el jue 15 quedan cuatro días hábiles sin
+> publicar nada. Es el hueco más largo del relanzamiento. Se acepta a cambio de que la pieza más
+> importante del mes salga bien grabada.
 
 > ⚠️ **La alternancia de tipos no basta: hay que mirar también el servicio.** Al cambiar el post del
 > jue 8 al ángulo del Cyber (Desarrollo Web), el 8, el reel del 13 y el texto que había para el 16

@@ -1,6 +1,6 @@
 # Guion — Primer video cara a cámara: construyo y audito sitios
 
-**Cuándo:** MARTES 13-oct-2026. **Movido del viernes 9** (Ramón avisó que el lunes 12 es feriado):
+**Cuándo:** **JUEVES 15-oct-2026** (movido del martes 13: el guion se aprobó el 10 pero no se grabó, y no se forzó una publicación apurada a las 15:00 del martes). *Antes decía:* MARTES 13-oct-2026. **Movido del viernes 9** (Ramón avisó que el lunes 12 es feriado):
 el 9 es víspera de fin de semana largo y la gente se desconecta antes, que es el peor día posible
 para la pieza más importante del mes. El martes 13 la gente vuelve del feriado y revisa LinkedIn.
 **De paso te deja el fin de semana largo para grabarlo sin apuro**, que es justo lo que necesita
@@ -130,6 +130,30 @@ cuadro, el gran angular deforma la cara, y 35 segundos con el brazo estirado se 
 **3. Luz.** No al mediodía (sol cenital, ojos en sombra). Nublado es ideal. Despejado: la última
 hora y media antes del atardecer, o sombra abierta mirando hacia cielo abierto. **Nunca luz
 moteada bajo las hojas**, que parpadea en la cara.
+
+**4b. El fondo NO se reemplaza (decidido el mar 13-oct).** Ramón preguntó si se podía poner una
+"oficina cool de agencia" detrás con una herramienta gratis. **Se puede** (CapCut recorta fondo en
+video sin pantalla verde, gratis) y **se descartó**, por cuatro razones:
+
+- **Se nota.** El recorte automático sobre una persona hablando deja halo en pelo y hombros y
+  parpadea al moverse. En un teléfono se lee como filtro de videollamada, y es lo primero que ve
+  alguien antes de escuchar la primera frase.
+- **Contradice el contenido.** La pieza se sostiene en que Ramón mira lo que nadie mira y cuenta lo
+  que realmente hay. Una oficina que no es suya es una mentira pequeña dentro del cuadro. El manual
+  prohíbe prueba social fabricada sin matices, y una oficina de agencia insinúa un equipo que no
+  existe. La consultoría de una persona es una ventaja frente al cliente que conviene, no algo que
+  esconder.
+- **Es la estética del infoproducto**, la misma que ya se descartó al prohibir caminar hacia cámara.
+- **Da más trabajo, no menos.** Un recorte limpio necesita fondo plano y buena luz igual, así que
+  se monta un set para después taparlo, y se pierde lo que el exterior da gratis: profundidad y luz.
+
+**Lo que sí hace que se vea profesional, gratis y en este orden:** audio limpio (el 80% de la
+sensación de producción) · luz de frente · **dos metros de distancia al fondo**, que lo desenfoca
+solo · metro y medio de pared decente en vez de una habitación ordenada · altura de los ojos · ropa
+lisa y oscura, sin estampados chicos que vibran en video.
+
+Si Ramón igual quiere probar el recorte: **primero la toma buena contra su pared, y recién después
+jugar en CapCut**, nunca al revés, para que exista una versión usable guardada.
 
 **4. Fondo.** En vertical el fondo se comprime: una plaza grande se ve vacía y una calle con gente
 pasando roba la atención. Algo con profundidad pero quieto, y sin nadie caminando detrás.
