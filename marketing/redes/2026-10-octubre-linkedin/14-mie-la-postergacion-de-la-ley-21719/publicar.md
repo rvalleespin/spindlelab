@@ -94,7 +94,30 @@ Pauta, 2-oct: https://www.pauta.cl/actualidad/2026/10/02/ley-de-datos-personales
 - Si sale, la versión plural para la página de SpindleLab se adapta una semana después, no el mismo día (patrón del 7 y 13-oct).
 - Dejarlo registrado en `marketing/redes/QUE-HAY-PUBLICADO.md` con el urn, y en la lista de comentarios si Hurtado o Seguel (que escriben de esto) lo ven.
 
-## Temas que siguen sin usar
+## Radar de X (13-oct, pedido de Ramón: "te puedes meter en X o Reddit para sacar temas")
+
+Reddit sigue bloqueado para las herramientas (no se rodea). En X, desde la sesión de Chrome de Ramón, se leyeron los perfiles de Lily Ray y
+DEJAN y las búsquedas por cuenta (las consultas largas con muchos OR devuelven casi nada; sirve ir cuenta por cuenta y leer el perfil con
+JavaScript, porque `get_page_text` solo devuelve el primer post). Hallazgos del 6 al 12-oct, **todos opiniones o consejos de terceros, ninguno
+confirmado por Google salvo donde se indica**:
+
+1. **El nombre del negocio en el sitio, idéntico al de Google Business Profile** (Lily Ray, 7-oct, 97 me gusta, recogiendo un consejo de Joyanne
+   Hawkins en SEO IRL: así Google trae la información local correcta a los "AI local packs"). Es el más cercano a una pyme chilena y barato de
+   hacer. **Ancla oficial:** la guía de Google Business Profile (`support.google.com/business/answer/3038177`) pide que el nombre refleje el nombre
+   real del negocio, "as used consistently on your storefront, website, stationery, and as known to customers" (leído por un resumen automático el
+   13-oct; **falta leer el texto crudo en el navegador antes de citarlo**). **No verificado:** si los "AI local packs" existen en Chile. Candidato
+   para el viernes 16 o el lunes 19, con la salida al diagnóstico a mano ("quién aparece en tu lugar").
+2. **ChatGPT hace más búsquedas con `site:`, así que los subdominios de tu sitio informan sus respuestas** (Lily Ray, 6-oct, 71 me gusta): hacer
+   inventario de subdominios (ayuda, staging) y decidir cuáles quieres que lea un modelo. Observación de una especialista, técnica, menos pyme.
+3. **Google empuja los AI Overviews a más consultas, más rápido** (Lily Ray, 9-oct, 146 me gusta). Ella misma marca que es una sospecha
+   ("I suspect"), así que no es citable como dato.
+4. **Evidencia de que ChatGPT descarta los "listicles" autopromocionales** (Lily Ray, hace unos días; Matt Kenyon lo recoge el 13-oct) y el
+   mensaje de DEJAN (11-oct) de que mencionar a un competidor en tu propio listicle lo fortalece. El segundo es un proveedor de herramientas
+   hablando de su propio detector: no se cita. El primero se puede retomar si se encuentra el post original.
+5. **Google lanzó un programa de datos frescos para sitios de contenido de usuarios** (12-oct, Cyrus Shepard): para editores y plataformas, no para
+   el público de Ramón.
+
+## Otros temas que siguen sin usar
 
 1. **Costco**, con la apertura nueva y la "base baja" (ver `07-mie-visibilidad-en-ia-lo-que-se-mide/publicar.md`).
 2. **Google quitó las estrellas de reseñas en páginas de salud** (Barry Schwartz, 7-oct). Falta leerlo en la fuente.
