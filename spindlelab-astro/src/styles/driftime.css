@@ -22,8 +22,8 @@
   --d-gris: #9aa4b0;      /* 6,9:1 sobre negro */
   --d-gris-2: #6b7580;
   --d-oro: #c9a227;       /* solo el punto del wordmark del módulo */
-  /* Campos: contraste medido por el equipo v3 (campos-v3.css), todos AA de cuerpo.
-     Brasa lleva blanco puro: driftime falla ahí (3,70:1) y no se copia. */
+  /* Campos, todos AA de cuerpo (WCAG): navy 12,56:1, petróleo 5,03:1, ciruela 13,40:1 y
+     brasa 4,70:1. Brasa lleva blanco puro: driftime falla ahí (3,70:1) y no se copia. */
   --d-brasa: #da3400;    --d-brasa-t: #ffffff;
   --d-navy: #0e2a47;     --d-navy-t: #e4f1ec;
   --d-petroleo: #0f766e; --d-petroleo-t: #fff4e2;
