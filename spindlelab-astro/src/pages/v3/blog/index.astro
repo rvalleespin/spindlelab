@@ -31,7 +31,7 @@ import Pieza from '../../../components/v3/Pieza.astro';
 import Miga from '../../../components/v3/Miga.astro';
 import '../../../styles/driftime.css';
 import indice from '../../../data/blog-v3/_indice.json';
-import { OG_V3 } from '../../../consts-v3';
+import { CONTACTO_V3 as CONTACTO, OG_V3 } from '../../../consts-v3';
 
 const url = 'https://spindlelab.cl/blog/';
 // Una sola fuente para la meta description y la del nodo CollectionPage: si se escriben
@@ -173,13 +173,17 @@ const jsonLd = {
          ahí, igual que servicios, trabajo y método). Antes iba a /v3/#chequeo y el módulo de
          navegación tapaba el campo del dominio al llegar (QA 5-oct, bloqueante).
          El texto describe el chequeo automático (tu dominio, en segundos), no a alguien que
-         «te dice»: la mezcla «Te decimos… / Automático» se contradecía (QA 5-oct). */}
+         «te dice»: la mezcla «Te decimos… / Automático» se contradecía (QA 5-oct).
+         Es el mismo cierre del artículo, botón por botón (spec §7, 5-oct: «mismas palabras»):
+         el segundo es «Escríbenos» → contacto, como en cada artículo, y no «Ver el método»,
+         que dejaba el cuerpo de /v3/blog/ sin un camino a contacto. Método sigue en el menú
+         y en el pie (rescate del v3 viejo, 13-oct). */}
     <section class="d-sec d-sec--quieta" aria-labelledby="s-medir">
       <div class="d-eti"><h2 class="d-h2" id="s-medir">Leer ayuda; medir, más.</h2></div>
       <div class="d-cierre-blog">
         <p class="d-guia">Pon tu dominio y ves en segundos si una IA te puede leer, si te entiende y si te puede citar.</p>
         <p class="d-cuerpo">Es el mismo chequeo con el que partimos cada proyecto.</p>
-        <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href="/v3/metodo/">Ver el método</a></div>
+        <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>
       </div>
     </section>
   </main>

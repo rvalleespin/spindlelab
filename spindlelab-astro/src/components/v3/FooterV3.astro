@@ -32,13 +32,30 @@ const actual = (href: string) => (href === aqui ? 'page' : undefined);
       <a href={`mailto:${EMAIL}`} class="d-chico d-gris" style="text-decoration:none">{EMAIL}</a>
     </div>
     <div class="d-pie__nav">
+      {/* Los enlaces van en ul/li, como en el menú (NavV3): sueltos, el texto plano del pie
+           salía pegado («Desarrollo webVisibilidad en IA…»). El <li> va en varias líneas a
+           propósito: el espacio que queda alrededor del enlace es lo que separa los nombres
+           en el texto plano. La lista también es flex en columna con el mismo gap, así que
+           nada se mueve (rescate del v3 viejo, 13-oct). */}
       <nav aria-label="Servicios" style="display:flex;flex-direction:column;gap:6px">
         <h2 class="d-rot" style="margin-bottom:8px">Servicios</h2>
-        {SERVICIOS_V3.map((s) => <a href={s.href} aria-current={actual(s.href)}>{s.label}</a>)}
+        <ul class="d-pie__lista">
+          {SERVICIOS_V3.map((s) => (
+            <li>
+              <a href={s.href} aria-current={actual(s.href)}>{s.label}</a>
+            </li>
+          ))}
+        </ul>
       </nav>
       <nav aria-label="La casa" style="display:flex;flex-direction:column;gap:6px">
         <h2 class="d-rot" style="margin-bottom:8px">La casa</h2>
-        {CASA_V3.map((s) => <a href={s.href} aria-current={actual(s.href)}>{s.label}</a>)}
+        <ul class="d-pie__lista">
+          {CASA_V3.map((s) => (
+            <li>
+              <a href={s.href} aria-current={actual(s.href)}>{s.label}</a>
+            </li>
+          ))}
+        </ul>
       </nav>
     </div>
   </div>
@@ -47,6 +64,11 @@ const actual = (href: string) => (href === aqui ? 'page' : undefined);
 </footer>
 
 <style>
+  .d-pie__lista { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  /* block: suelto, el enlace era un ítem flex estirado a lo ancho de la columna; así el área
+     de clic sigue igual. Solo el hijo directo: consent-banner.js mete «Privacidad» en un
+     span junto a «Cookies», y ahí tiene que seguir en línea. */
+  .d-pie__lista > li > a { display: block; }
   .d-pie__nav a[aria-current] {
     opacity: 1;
     text-decoration: underline;

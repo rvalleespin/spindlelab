@@ -165,6 +165,13 @@ const cuerpoConIds = cuerpo.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/g, (todo: strin
 });
 // Con menos de tres secciones un índice no orienta: dice lo que se ve bajando dos pantallas.
 const hayIndice = secciones.length >= 3;
+// NUMERACIÓN PROPIA. Si los h2 del post traen su número («1. La aplicación…», fintechs), el
+// índice no suma el suyo: salía «01 1. La aplicación…». La marca del contenido gana, como
+// pr.marcas en servicios/[slug].astro. Se decide por artículo y no por h2: omitirlo solo en
+// los numerados dejaba un «08» suelto bajo siete títulos con número propio, dos
+// numeraciones en la misma lista (mirado a 1440, 13-oct). La columna queda, con un espacio
+// duro: vacía, cada fila perdía 1,1 px (el alto de línea del número) y el índice se acortaba.
+const numeraSolo = secciones.some((s) => /^\d+[.)]\s/.test(s.texto));
 // ÍNDICE REPETIDO. Un post puede traer su propio índice en prosa («En esta guía: … · … ·»,
 // hoy el de los 21 chequeos). Junto al índice pegajoso eran dos índices en la misma
 // pantalla (QA 5-oct, antislop A10). Cuando hay índice pegajoso, ese párrafo lleva
@@ -244,53 +251,60 @@ const siguiente = orden[(iAqui + 1) % orden.length];
   <NavV3 />
 
   <main>
-    <header class="d-cab d-cab--art">
-      <Miga items={[{ label: 'Inicio', href: '/v3/' }, ...(migaCorta ? [{ label: 'Blog', href: '/v3/blog/' }, { label: migaCorta, html: true }] : [{ label: 'Blog' }])]} />
-      <h1 class="d-h1" set:html={h1} />
-      <p class="d-linea">
-        {tema && <><span set:html={tema} /> · </>}
-        {fechaVisible && <time datetime={meta.datePublished} set:html={fechaVisible} />}
-        {lectura && <> · <span set:html={lectura} /></>}
-      </p>
-      {autor.nombre && (
-        <div class="d-autor-art">
-          {/* lazy, como en el post publicado: no compite con la imagen principal. La miniatura
-               de 132 × 132 (técnica #8) declara su tamaño real; el CSS la pinta en 44. */}
-          {autor.src && <img src={autor.src} alt={autor.alt} width="132" height="132" loading="lazy" decoding="async" />}
-          <p><span class="d-autor-art__nombre" set:html={autor.nombre} />{autor.rol && <span class="d-gris" set:html={autor.rol} />}</p>
-        </div>
-      )}
-    </header>
+    {/* Un solo <article> con la cabeza (miga, h1, línea y autor), la imagen, el índice y el
+         cuerpo, como el post publicado: antes envolvía solo la prosa y el h1 quedaba afuera
+         (rescate del v3 viejo, 13-oct). Sin clase ni estilo: ningún selector depende de él, y
+         el índice pegajoso sigue dentro de .d-art, que es lo que lo limita. El cierre y
+         «Siguiente artículo» quedan fuera: son de la página, no del artículo. */}
+    <article>
+      <header class="d-cab d-cab--art">
+        <Miga items={[{ label: 'Inicio', href: '/v3/' }, ...(migaCorta ? [{ label: 'Blog', href: '/v3/blog/' }, { label: migaCorta, html: true }] : [{ label: 'Blog' }])]} />
+        <h1 class="d-h1" set:html={h1} />
+        <p class="d-linea">
+          {tema && <><span set:html={tema} /> · </>}
+          {fechaVisible && <time datetime={meta.datePublished} set:html={fechaVisible} />}
+          {lectura && <> · <span set:html={lectura} /></>}
+        </p>
+        {autor.nombre && (
+          <div class="d-autor-art">
+            {/* lazy, como en el post publicado: no compite con la imagen principal. La miniatura
+                 de 132 × 132 (técnica #8) declara su tamaño real; el CSS la pinta en 44. */}
+            {autor.src && <img src={autor.src} alt={autor.alt} width="132" height="132" loading="lazy" decoding="async" />}
+            <p><span class="d-autor-art__nombre" set:html={autor.nombre} />{autor.rol && <span class="d-gris" set:html={autor.rol} />}</p>
+          </div>
+        )}
+      </header>
 
-    <figure class="d-sangre">
-      <img src={imgUrl} srcset={imgSrcset} sizes={imgSizes} alt={img.alt} width={img.w} height={img.h} loading="eager" fetchpriority="high" style={img.pos ? `object-position:${img.pos}` : undefined} />
-    </figure>
+      <figure class="d-sangre">
+        <img src={imgUrl} srcset={imgSrcset} sizes={imgSizes} alt={img.alt} width={img.w} height={img.h} loading="eager" fetchpriority="high" style={img.pos ? `object-position:${img.pos}` : undefined} />
+      </figure>
 
-    {/* ÍNDICE PEGAJOSO + CUERPO. Es la sección con etiqueta de driftime (.d-sec): lo que se
-         queda quieto a la izquierda no es un h2 sino el índice, que dice en qué parte vas.
-         En celular la etiqueta deja de pegarse (.d-sec ya lo hace) y el índice va arriba,
-         plegado.
-         El <details> sale ABIERTO en el HTML y el JS lo pliega solo en celular: al revés no
-         funciona, porque Chrome esconde el contenido de un <details> cerrado por el slot y
-         ningún display:block lo revela. Sin JS, lo peor es un índice desplegado de más en
-         celular, no un índice invisible en escritorio. */}
-    <div class="d-sec d-art">
-      {hayIndice ? (
-        <nav class="d-eti d-indice-art" aria-label="Contenido del artículo">
-          <details open>
-            <summary>En este artículo</summary>
-            <ol>
-              {secciones.map((sec, i) => (
-                <li>
-                  <a href={`#${sec.id}`}><span class="d-indice-art__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><span>{sec.texto}</span></a>
-                </li>
-              ))}
-            </ol>
-          </details>
-        </nav>
-      ) : <div />}
-      <article class="d-prosa-art" set:html={cuerpoFinal} />
-    </div>
+      {/* ÍNDICE PEGAJOSO + CUERPO. Es la sección con etiqueta de driftime (.d-sec): lo que se
+           queda quieto a la izquierda no es un h2 sino el índice, que dice en qué parte vas.
+           En celular la etiqueta deja de pegarse (.d-sec ya lo hace) y el índice va arriba,
+           plegado.
+           El <details> sale ABIERTO en el HTML y el JS lo pliega solo en celular: al revés no
+           funciona, porque Chrome esconde el contenido de un <details> cerrado por el slot y
+           ningún display:block lo revela. Sin JS, lo peor es un índice desplegado de más en
+           celular, no un índice invisible en escritorio. */}
+      <div class="d-sec d-art">
+        {hayIndice ? (
+          <nav class="d-eti d-indice-art" aria-label="Contenido del artículo">
+            <details open>
+              <summary>En este artículo</summary>
+              <ol>
+                {secciones.map((sec, i) => (
+                  <li>
+                    <a href={`#${sec.id}`}><span class="d-indice-art__n" aria-hidden="true">{numeraSolo ? '\u00a0' : String(i + 1).padStart(2, '0')}</span><span>{sec.texto}</span></a>
+                  </li>
+                ))}
+              </ol>
+            </details>
+          </nav>
+        ) : <div />}
+        <div class="d-prosa-art" set:html={cuerpoFinal} />
+      </div>
+    </article>
 
     {/* CIERRE: el paso siguiente después de leer (QA 5-oct; spec §4 Artículo). Los posts
          publicados cierran con un llamado; sin él, lo más grande al final era «Siguiente

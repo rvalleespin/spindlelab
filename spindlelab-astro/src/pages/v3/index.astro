@@ -86,15 +86,17 @@ const sumaTira = tira.reduce((t: number, p: any) => t + p.w / p.h, 0);
 // de 7 días en /assets/*): hilos.jpg ganó contraste (QA final, mirada #6).
 // Desarrollo lee la obra de obra-v3.json: la captura de Combeau termina al final de la banda
 // verde (`combeau-fotografia-ancho-2.jpg`, 1440 × 616; la anterior cortaba la fila de retratos
-// a la altura de la frente, QA final, mirada #4).
+// a la altura de la frente, QA final, mirada #4). El alt también sale de ahí (`alt`, el de la
+// captura plana): escrito a mano, el mismo archivo tenía otro alt en Desarrollo web (spec §7,
+// una imagen, un alt; rescate, 13-oct).
 type Img = { src: string; w: number; h: number; alt: string; v?: number; etq?: string; cel?: string; pos?: string };
 const caso = (slug: string) => obra.casos.find((c: any) => c.slug === slug) as any;
 const combeau = caso('combeau-fotografia');
 const vyc = caso('verifica-y-cumple');
 const imgs: Record<string, Img[]> = {
   Desarrollo: [
-    { src: combeau.img, w: combeau.w, h: combeau.h, cel: combeau.mockAlto, alt: 'Portada del sitio de fotografía de Bernardo Combeau, un retrato iluminado en verde', etq: combeau.rotulo },
-    { src: vyc.img, w: vyc.w, h: vyc.h, cel: vyc.mockAlto, alt: 'Portada de Verifica y Cumple con el titular «¿Estás seguro?» sobre azul', etq: vyc.rotulo },
+    { src: combeau.img, w: combeau.w, h: combeau.h, cel: combeau.mockAlto, alt: combeau.alt, etq: combeau.rotulo },
+    { src: vyc.img, w: vyc.w, h: vyc.h, cel: vyc.mockAlto, alt: vyc.alt, etq: vyc.rotulo },
   ],
   Visibilidad: [
     { src: '/assets/img/d/hilos.jpg', v: 2, w: 1600, h: 960, alt: 'Cantos de hojas apiladas en azul oscuro, en diagonal' },

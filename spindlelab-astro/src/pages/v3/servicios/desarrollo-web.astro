@@ -265,11 +265,17 @@ const sumaDe = (fila: PiezaDw[]) => fila.reduce((t, p) => t + p.r, 0);
 
     <section class="d-sec" aria-labelledby="s-fas">
       <div class="d-eti"><h2 class="d-h2" id="s-fas">Cinco fases, apruebas cada una</h2></div>
-      <div class="d-filas">
+      {/* Lista ordenada, como las fases de Método: son pasos en orden. El número es de la
+           lista, así que va aria-hidden (rescate del v3 viejo, 13-oct). */}
+      <ol class="d-filas">
         {fases.map((f) => (
-          <div class="d-fase"><span class="d-fase__n">{f.n}</span><h3 class="d-h3">{f.t}</h3><p class="d-cuerpo">{f.d}</p></div>
+          <li class="d-fase">
+            <span class="d-fase__n" aria-hidden="true">{f.n}</span>
+            <h3 class="d-h3">{f.t}</h3>
+            <p class="d-cuerpo">{f.d}</p>
+          </li>
         ))}
-      </div>
+      </ol>
     </section>
 
     <section class="d-sec d-faq" aria-labelledby="s-faq">

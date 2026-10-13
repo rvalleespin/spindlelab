@@ -266,6 +266,10 @@ interface Propio {
   galeria: { img: Img; forma: 'd-g-media' | 'd-g-alta' | 'd-g-ancha'; pos?: string }[];
   marcas: string[];
   marcasSr?: string[];
+  // Los bloques son pasos en orden (el mes tipo, las quincenas): van en <ol>, como las fases
+  // de Método y de Desarrollo web, con la marca aria-hidden. Sin esto van en <ul>: Sí/No de
+  // Visibilidad y los entregables A–D de Auditoría no son una secuencia (rescate, 13-oct).
+  secuencia?: boolean;
   cierreH2?: string;
   cierreP?: string;
   // El cierre suma «Correr el chequeo» → /v3/diagnostico/: la puerta de quien ya tiene sitio
@@ -316,6 +320,7 @@ const PROPIO: Record<string, Propio> = {
     galeria: [{ img: IMG.ramon, forma: 'd-g-alta', pos: '50% 30%' }, { img: IMG.hilos, forma: 'd-g-media', pos: '50% 50%' }],
     marcas: ['S1', 'S2', 'S3', 'S4'],
     marcasSr: ['Semana 1:', 'Semana 2:', 'Semana 3:', 'Semana 4:'],
+    secuencia: true,
     // El h2 del JSON («Ejecución, contenido y medición») repetía la tríada de la entrada,
     // justo encima (antislop A3 y A10). La nota de planes dice «Todos los planes traen lo de
     // arriba»: esto es lo de arriba. No «Lo que pasa cada mes»: chocaba con «Así se ve un mes tipo».
@@ -345,6 +350,7 @@ const PROPIO: Record<string, Propio> = {
     // (medido: se lee como un hueco), y además es la familia de la cabecera.
     galeria: [{ img: IMG.escritorio, forma: 'd-g-ancha', pos: '40% 50%' }],
     marcas: ['01', '02', '03', '04'],
+    secuencia: true,
     // La entrada del JSON, frase por frase: «Tus clientes ya pasan el día en redes» (A2,
     // carraspeo); la enumeración «calendario, pauta, comunidad y reportes» (ya está en la
     // línea bajo el h1, A10); «el creativo lo pones tú» (era la quinta vez en la página);
@@ -369,6 +375,7 @@ const PROPIO: Record<string, Propio> = {
     // y aquí; Redes → Paid Media son dos páginas seguidas, nunca tres.
     galeria: [{ img: IMG.dominoCurva, forma: 'd-g-ancha', pos: '50% 55%' }],
     marcas: ['01', '02', '03', '04'],
+    secuencia: true,
     // La entrada repetía el presupuesto bajo control (ya en la línea, la nota y la FAQ, A10)
     // y cerraba con «motor» (jerga interna, B8). QA2, 6-oct.
     leadSin: [', con el presupuesto siempre bajo control: la pieza que acelera cuando el motor orgánico ya gira'],
@@ -378,6 +385,7 @@ const PROPIO: Record<string, Propio> = {
 };
 const pr = PROPIO[slug!];
 if (!pr) throw new Error(`[slug].astro: falta la entrada de PROPIO para «${slug}» (línea, nota, imágenes y marcas). Un servicio nuevo en servicios-v3.json la necesita.`);
+const ListaBloques = pr.secuencia ? 'ol' : 'ul';
 const lead: string = pr.lead ?? (pr.leadSin ?? []).reduce((a, x) => a.replace(x, ''), s.lead ?? '');
 // Una palabra con guion («mini-diagnóstico») no se corta en el guion: sale de constantes
 // de este archivo, no de datos de terceros, así que set:html es seguro.
@@ -511,15 +519,15 @@ const jsonLd = {
     {secBloques && (
       <section class="d-sec" aria-labelledby="s-blo">
         <div class="d-eti"><h2 class="d-h2" id="s-blo">{sinPunto(secBloques.h2)}</h2></div>
-        <div class="d-filas">
+        <ListaBloques class="d-filas">
           {secBloques.bloques.map((b: any, i: number) => (
-            <div class="d-fase">
-              <span class="d-fase__n" aria-hidden={pr.marcasSr ? 'true' : undefined}>{pr.marcas[i] ?? String(i + 1).padStart(2, '0')}</span>
+            <li class="d-fase">
+              <span class="d-fase__n" aria-hidden={pr.marcasSr || pr.secuencia ? 'true' : undefined}>{pr.marcas[i] ?? String(i + 1).padStart(2, '0')}</span>
               <h3 class="d-h3">{pr.marcasSr?.[i] && <span class="d-sr">{pr.marcasSr[i]} </span>}{b.t}</h3>
               <p class="d-cuerpo" set:html={bloquesHtml[i]} />
-            </div>
+            </li>
           ))}
-        </div>
+        </ListaBloques>
       </section>
     )}
 
