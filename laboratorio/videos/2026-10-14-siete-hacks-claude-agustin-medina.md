@@ -70,13 +70,28 @@ construir) y las dos compuertas. La casa además tiene lo que al video le falta:
 en contexto limpio**. No hay nada que incorporar; sirve como confirmación de que el pipeline del
 2-oct iba bien encaminado.
 
-## Advertencia sobre el hack 4
+## El hack 4, ya identificado (14-oct, verificado)
 
-La transcripción automática nombra el modelo clasificador como **"Jeff"**, y eso **no está
-verificado**: puede ser una mala transcripción del nombre real. Sus cifras (100 correos en 4,3 s
-por USD 0,003 frente a 12 s y USD 0,05, y hasta 85 % de ahorro de tokens) son **suyas, sin
-reproducir**. Antes de tocar nada hay que confirmar qué modelo es y correr la prueba propia. El
-patrón sí es sano y se entiende solo: **pregunta simple + mucho volumen → modelo chico; criterio
+La transcripción automática lo llamaba "Jeff". Es **Jev**, de TypeSafe, servido por OpenRouter
+como `typesafe/jev-1.13`
+([fuente](https://openrouter.ai/blog/tutorials/jev-vs-llm-as-a-judge/), leída el 14-oct).
+
+No es un modelo de lenguaje: es un **modelo de decisión**. No escribe. Responde una pregunta
+tipada con una probabilidad por respuesta, en tres formas: **sí/no** (probabilidad del sí),
+**opción** entre N alternativas, y **puntaje** en una escala que uno define, cada uno con su
+confianza.
+
+**Determinismo, con precisión:** OpenRouter **no** afirma que sea determinista. Lo que muestra es
+que no cambió su elección al invertir el orden de las opciones, y que al no generar texto no hay
+redacción que varíe. El video dice "siempre te da el mismo número"; eso es más de lo que la
+fuente sostiene.
+
+**Las cifras son del proveedor, de dos fuentes distintas y no reproducidas acá:** OpenRouter
+reporta 1.000 juicios a USD 0,021 contra USD 0,114 del LLM-como-juez (unas 5 veces más barato) y
+171 ms contra 1.662 ms de mediana (unas 10 veces más rápido). El video da otras (100 correos en
+4,3 s por USD 0,003, y hasta 85 % de ahorro). Ninguna se cita sin correr la prueba propia.
+
+El patrón sí se entiende solo: **pregunta simple y mucho volumen → modelo de decisión; criterio
 → modelo grande.**
 
 ## Dónde entra en el mapa
