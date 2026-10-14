@@ -120,6 +120,102 @@ Antes de escribir, en este orden:
   los **10 de abogados de hoy, sin estrella** (mandar después). El filtro los separa solo.
 - **35 vírgenes** en `virgenes-cruce-5oct.csv`: estos 21 de turismo más 14 de otros rubros
   (3 abogados sueltos, 3 de salud, 2 contadores, 6 del lote de expansión).
-- **25 clínicas sin medir** en `ventas/clinicas-sin-contactar-5oct.csv`.
+- **Clínicas:** NO hay 25 sin medir (error de este traspaso, corregido el 14-oct). Las 39 de
+  `ventas/clinicas-sin-contactar-5oct.csv` ya están medidas; 7 quedaron con hallazgo y sin escribir.
 - **14 abogados con sitio vivo sin sondear**, en `ventas/abogados-medidos-5oct.csv`. Antes de
   sondearlos, pasarles el filtro del punto 3.
+
+---
+
+## Cruce contra el lote de hoteles del 25-sep (verificado 13-oct)
+
+El cruce del 5-oct no podía ver este solape, porque el lote del 25-sep **no estaba en ningún
+`ventas/*.csv`**: vivía dentro de `marketing/rutinas-prompt-copiloto-2026-09-22.txt`. Ahora está
+en `ventas/contactos-hoteles-25sep.csv` (43 direcciones, fuente Apollo).
+
+**Once de los 21 leads de este traspaso son el mismo dominio que alguien del lote del 25-sep:**
+`aguasdelmonte.cl`, `almalodge.cl`, `chelenko.com`, `hotelkennedy.cl`, `laturbina.cl`,
+`puyuhuapilodge.com`, `suizandina.com`, `taka.cl`, `tantakuy.cl`, `tungulu.cl`, `weskar.cl`.
+
+**Verificado en Gmail: ninguno de los once recibió correo nunca.** El lote del 25-sep fue una
+cosecha de 43 de la que solo se contactó a una parte (Awasi, Hoteles Cumbres, Time, Patagonia Camp,
+Las Torres, Casa Higueras, Puerta del Sur, Glampi, Hotel Alaia, Las Majadas, Cascada de las Ánimas,
+Santuario del Río, Luna de Pirque y Hare Nua, todos ya en tope). **Los 21 siguen vírgenes.**
+
+⚠️ **Pero ojo con la dirección:** para esos once, el lote del 25-sep tiene un contacto distinto al
+del banco de Apollo que usa este traspaso. Ejemplo: en el 25-sep weskar.cl figura como
+`juanjose@weskar.cl`. Son dos personas de la misma empresa. **Se escribe a una sola**, y el tope de
+3 es por empresa, no por casilla. Antes de escribir, revisar las dos direcciones del dominio.
+
+La línea de baja es la variante Apollo en los dos casos, así que eso no cambia.
+
+---
+
+## Resultado de las sondas (13-oct, dos corridas)
+
+Los 16 sondeados, dos corridas cada uno. **Quince de dieciséis dieron el mismo conteo en las dos.**
+Detalle en `ventas/turismo-medidos-13oct.csv`.
+
+**5 escritos:** `cascada.travel`, `terrantai.com`, `hoteloceanic.cl`, `weskar.cl`,
+`puyuhuapilodge.com`.
+
+**El rendimiento del vertical: 5 de 21, un 24%.** Apenas mejor que abogados (20%) y bastante peor
+de lo que la pinta del barrido sugería. La causa no es el prospecto, es que **nueve de los
+dieciséis estaban limpios o casi**: cero a tres cookies, y de infraestructura.
+
+### Lo que no sobrevivió, y es la parte útil
+
+- **`hoteloceanic.cl` cambió entre corridas:** 4 pasivas y 9 al gesto la primera vez, 9 pasivas
+  la segunda. **Lo estable es el total de nueve, no el momento.** El correo dice nueve y no dice
+  "cuatro quieto y nueve al moverte".
+- **`weskar.cl` y `puyuhuapilodge.com` cargan SiteMinder y Cloudbeds, pero solo archivos** (CSS,
+  JavaScript, tipografías) y **sin dejar una sola cookie del motor**. Decir que su motor de
+  reservas recibe datos habría sido el error refutable en dos minutos. Los correos no lo dicen.
+- **`hotelcristobalcolon.cl` tenía Booking.com en el HTML estático y CERO peticiones a Booking en
+  el navegador real.** Era un enlace o un sello, no un widget.
+- **`7k-lodge.com` da 403 también en Chrome de verdad:** 2 peticiones y la pantalla de error. El
+  bloqueo es real y es hallazgo de AEO, no de VyC.
+
+> **La corrección al ángulo del vertical:** el barrido estático decía que 14 de 16 tenían motor de
+> reserva, y de ahí salió la idea de construir el correo alrededor de eso. **Medido en el
+> navegador, el motor solo deja rastro en uno: `cascada.travel`.** En los demás carga y no escribe
+> nada. El ángulo del motor de reservas sirve, pero hay que ganárselo caso a caso.
+
+### Los que no se escribieron
+
+- **`tantakuy.cl` ya cumple:** cero cookies en los dos tramos y las dos corridas, con 137
+  peticiones, política publicada y formularios con casilla. Segundo sitio chileno del pipeline que
+  llega en orden, después de `estudioveragua.cl`.
+- **Sin hallazgo** (todo cookie de infraestructura o de sesión): `hotelkennedy.cl` —que además es
+  franquicia de cadena—, `almalodge.cl`, `taka.cl`, `aguasdelmonte.cl`, `hotelcristobalcolon.cl`,
+  `laturbina.cl`.
+- **Hallazgo flojo, medidos y sin escribir:** `chelenko.com` y `tungulu.cl`, con un formulario sin
+  política cada uno y cero cookies.
+- **`director.cl` es ángulo de Desarrollo Web:** renderiza 4,4 KB con un nombre, un teléfono de
+  reservas y un Instagram. No es un sitio. Y Apollo lo tiene como `45bydirector.com`, que está
+  caído: el dominio vivo es `director.cl`.
+
+---
+
+## ⚠️ Volumen del 13-oct: 27 correos en un día
+
+Los cinco de turismo salieron el 13-oct a las 22:32. Ese mismo día ya habían salido 19 a las
+16:03-16:05 (la tanda de toque 2 del copiloto, con los duplicados incluidos) y 3 más a las 22:32
+(Río León, ICCS y el toque 3 de Explora).
+
+**Total del día: 27 correos desde hola@spindlelab.cl**, en dos ráfagas de minuto y medio cada una.
+
+La rampa documentada es de **15 → 30 → 50 por semana**, y la nota dice textual: *"es reputación de
+dominio, no capacidad de producción; no se excede aunque se puedan generar más"*. Veintisiete en
+un día es media semana de tope en una tarde.
+
+Y el patrón importa tanto como el número: **muchos correos casi idénticos en noventa segundos** es
+justo lo que puntúan los filtros. Sumado a que tres destinatarios recibieron el mismo correo dos
+veces ese día, es la peor combinación posible para la reputación del dominio.
+
+**No hubo rebotes al cierre del 13-oct.** Pero el daño de reputación no se manifiesta como rebote:
+se manifiesta como entrega a spam, que es invisible desde acá.
+
+> **Lo que conviene hacer:** no enviar nada el 14 ni el 15. La corrida del copiloto del 14 va a
+> dejar borradores; que se queden en la carpeta. Y cuando se retome, de a pocos y espaciados, no
+> en ráfaga.
