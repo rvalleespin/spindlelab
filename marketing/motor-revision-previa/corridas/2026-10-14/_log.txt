@@ -34,3 +34,25 @@
 [S06] navegador, corrida 2
 [S06] contenedores -
 [S06] sonda de borde
+[S07] p0 ok https://www.pcmservicioscontables.cl/ 
+[S07] p1 ok
+[S07] navegador, corrida 1
+[S07] navegador, corrida 2
+[S07] contenedores GTM-TJDQGWD8
+[S07] sonda de borde
+file:///home/user/spindlelab/marketing/motor-revision-previa/motor/pasadas/p3.mjs:77
+  if (!act || /^(javascript:|#)/i.test(f.action) || act === paginaUrl || act.startsWith(paginaUrl + '#')) return { estado: 'no-evaluable', porque: 'el envio lo maneja JavaScript o el CMS' };
+                                                                             ^
+
+TypeError: act.startsWith is not a function
+    at destinoFormulario (file:///home/user/spindlelab/marketing/motor-revision-previa/motor/pasadas/p3.mjs:77:78)
+    at sondaContacto (file:///home/user/spindlelab/marketing/motor-revision-previa/motor/pasadas/p3.mjs:98:136)
+    at file:///home/user/spindlelab/marketing/motor-revision-previa/motor/revisar.mjs:48:24
+
+Node.js v22.22.0
+[S08] p0 ok https://contable.app/ 
+[S08] p1 ok
+[S08] navegador, corrida 1
+[S08] navegador, corrida 2
+[S08] contenedores GTM-WHMKLJC
+[S08] sonda de borde
