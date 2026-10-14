@@ -645,3 +645,55 @@ No eran diez correos. Entre lo que faltaba estaban los bancos de DiarioEmprende,
 inmobiliarias, el cruce completo del pipeline y el de abogados. El copiloto llevaba más de una
 semana trabajando con la mitad del pipeline invisible, y eso no se manifiesta como un error: se
 manifiesta como una cola que nunca encuentra candidatos.
+
+---
+
+## 14. El criterio de corte, y dos trampas de la medición (14-oct-2026)
+
+### Qué se escribe y qué no: la decisión de Ramón
+
+Ramón pidió decidir como experto en marketing y ventas, con la consigna de que **el envío de
+correos es una parte central del embudo y los hallazgos siguen siendo importantes** aunque sean
+chicos. El criterio que quedó:
+
+1. **Se escribe todo lo que sea un hecho verdadero, comprobable en 30 segundos por el dueño y
+   relevante para él**, aunque sea pequeño. Costo de un borrador: casi cero. Costo de no escribirlo:
+   un lead medido que se enfría.
+2. **No se escribe si el sitio está en orden**: ahí no hay nada verdadero que decir y un correo
+   inventado quema credibilidad. (`tantakuy.cl`, `estudioveragua.cl`.)
+3. **No se escribe si no hay una consecuencia que el dueño sienta.** Dos cookies de Analytics, sin
+   formularios, sin grabación de sesión y sin publicidad: el correo diría "dos cookies" y nada más
+   (`amanda-salud.com`). Con un formulario sin política, aunque el sitio esté limpio, **sí**.
+4. **Un contacto que no es el decisor no descarta el lead.** Se escribe y se cierra pidiendo la
+   derivación en una línea ("si no eres tú quien ve el sitio, ¿con quién lo hablo?"). Aplicado a
+   `vets.cl` (contabilidad y RR.HH.) y `redimplantologia.cl` (asistente dental).
+5. **El sitio limpio con un formulario sin política es una forma legítima y probada**: es la del
+   correo a Focus Contable, el que mejor resultado dio de toda la campaña (pidió el diagnóstico al
+   día siguiente). Se reconoce lo bueno en una frase, sin rótulo, y se dice lo que falta.
+
+Y una corrección a un juicio mío: **"el vertical abogados rinde 20%" medía la tasa de lead a correo
+escrito, no la de respuesta.** La respuesta de ese lote quedó contaminada por el correo duplicado del
+13-oct, así que no es evidencia en contra del rubro.
+
+### Trampa 1: "tiene aviso de cookies" no se lee del HTML
+
+El 14-oct afirmé que `vets.cl` tenía aviso de cookies instalado. Era falso: la palabra
+`cookieconsent` venía de un **atributo** (`data-cookieconsent="ignore"`) del script de HubSpot, y el
+"privacy policy" venía de un plugin de chat de WhatsApp. **El aviso se confirma en la captura de
+pantalla, en los dos tramos.** Verificado a la vista el mismo día:
+
+| Sitio | Qué dijo la búsqueda de texto | Qué mostró la captura |
+|---|---|---|
+| `vets.cl` | "tiene aviso" | **no hay aviso**, ni antes ni después |
+| `cascada.travel` | "tiene aviso" | aviso real, con botones Aceptar y Rechazar |
+| `terrantai.com` | "tiene aviso" | aviso real, pero **aparece recién tras el primer gesto** |
+| `dermacne.cl` | "tiene aviso" | aviso real, con Aceptar y Denegar |
+
+Los correos ya enviados a Cascada y Terrantai estaban bien. El de Terrantai lo hace explícito: el
+sitio se ve limpio quieto, y el aviso y las cookies aparecen juntos después del movimiento.
+
+### Trampa 2: el aviso puede aparecer después del gesto
+
+Terrantai lo demuestra: **mirar solo la captura del tramo pasivo concluye "no hay aviso" y es
+falso.** Para afirmar que un sitio no tiene aviso hay que mirar también la captura del segundo
+tramo. Los cinco "no encontré aviso" de los correos del 14-oct se comprobaron en esa captura.
