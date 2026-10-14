@@ -38,7 +38,25 @@
       "lo que la ley \"exige\"",
       "cualquier cosa que no aparezca en las dos corridas"
     ],
-    "advertencias": []
+    "advertencias": [],
+    "propuesta": {
+      "en_castellano": "Abrí tu sitio sin tocar nada ni aceptar nada, y ya había dejado en mi navegador cookies de Google y Meta.",
+      "problema_tecnico": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _gcl_au, _fbp, _ga_D9WPPCQNW2, _ga.",
+      "donde_mirar": "Abrir el sitio en una ventana nueva y, sin tocar nada ~10 s, mirar las cookies (candado > Cookies, o F12 > Application > Cookies).",
+      "se_vende": {
+        "linea": "Verifica y Cumple",
+        "producto": "Kit de implementación",
+        "alcance": "Lo que el chequeo gratis deje pendiente. El kit no incluye asesoría legal: entrega la plantilla de política para que la revise el abogado del cliente. Eso se dice, no se esconde.",
+        "precio": "Desde $149.000 + IVA, una vez",
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "frase_de_arreglo": "Eso lo arreglo yo, con lo demás que el chequeo deje pendiente. Desde $149.000 + IVA, una vez.",
+      "cierre_sugerido": "Gratis y sin registro: https://verifica.spindlelab.cl",
+      "estado_del_texto": "APROBADO: tomado de correos ya revisados.",
+      "por_definir": [],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
   },
   "ruta_interna": [],
   "capa1": {
@@ -480,5 +498,6 @@
   "limites": [
     "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
     "Contenedor de Tag Manager leído una vez (es un archivo estático)."
-  ]
+  ],
+  "propuesta_agregada": "2026-10-14T23:41:52.693Z"
 }

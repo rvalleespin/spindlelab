@@ -38,7 +38,25 @@
       "lo que la ley \"exige\"",
       "cualquier cosa que no aparezca en las dos corridas"
     ],
-    "advertencias": []
+    "advertencias": [],
+    "propuesta": {
+      "en_castellano": "Abrí tu sitio sin tocar nada ni aceptar nada, y ya había dejado en mi navegador cookies de Google.",
+      "problema_tecnico": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_SKXW2K9VDS, _ga.",
+      "donde_mirar": "Abrir el sitio en una ventana nueva y, sin tocar nada ~10 s, mirar las cookies (candado > Cookies, o F12 > Application > Cookies).",
+      "se_vende": {
+        "linea": "Verifica y Cumple",
+        "producto": "Kit de implementación",
+        "alcance": "Lo que el chequeo gratis deje pendiente. El kit no incluye asesoría legal: entrega la plantilla de política para que la revise el abogado del cliente. Eso se dice, no se esconde.",
+        "precio": "Desde $149.000 + IVA, una vez",
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "frase_de_arreglo": "Eso lo arreglo yo, con lo demás que el chequeo deje pendiente. Desde $149.000 + IVA, una vez.",
+      "cierre_sugerido": "Gratis y sin registro: https://verifica.spindlelab.cl",
+      "estado_del_texto": "APROBADO: tomado de correos ya revisados.",
+      "por_definir": [],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
   },
   "ruta_interna": [
     {
@@ -74,7 +92,27 @@
       ],
       "advertencias": [
         "Sin clics (§3) el motor no ve qué se dispara al enviar un formulario."
-      ]
+      ],
+      "propuesta": {
+        "en_castellano": "Tu sitio tiene Google Analytics y, desde afuera, no veo que mida otra cosa que visitas: ni consultas, ni llamadas, ni clics a WhatsApp. Si ya lo tienes medido desde tu panel, entonces no aplica.",
+        "problema_tecnico": "El sitio no envía ningún evento de conversión que se vea desde afuera (ni etiqueta de evento en el contenedor, ni evento en el código).",
+        "donde_mirar": "En Google Analytics: Administrar > Eventos (y cuáles están marcados como clave). Del lado del sitio: Tag Assistant o el contenedor de Tag Manager, buscando alguna etiqueta de evento.",
+        "se_vende": {
+          "linea": "Acompañamiento",
+          "producto": "Medición de conversiones",
+          "alcance": "Dejar medido lo que importa: consultas por formulario, llamadas y WhatsApp.",
+          "precio": "POR DEFINIR (no hay precio documentado)",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "frase_de_arreglo": "Eso se arregla: dejo medido lo que importa, que te escriban, te llamen o te hablen por WhatsApp, para que veas qué trae clientes y qué no.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay un producto ni un precio publicado para instalar medición suelta. El Acompañamiento Mensual existe, pero es una mensualidad."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
     }
   ],
   "capa1": {
@@ -436,5 +474,6 @@
   "limites": [
     "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
     "Contenedor de Tag Manager leído una vez (es un archivo estático)."
-  ]
+  ],
+  "propuesta_agregada": "2026-10-14T23:41:52.705Z"
 }

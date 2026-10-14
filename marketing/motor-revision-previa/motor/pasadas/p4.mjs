@@ -2,6 +2,7 @@
 //   estado: 'sospecha' | 'estable'.  'verificado' NO existe aqui: lo escribe un humano.
 //   TOPES por candidato (ver jerarquia §3): C2, C4 y la rotura de formulario de C5 nunca pasan de 'sospecha'.
 import { proveedorDeCookie } from '../lib/navegador.mjs';
+import { propuesta } from '../lib/arreglo.mjs';
 
 const ORDEN = ['C5', 'C3', 'C1', 'C2', 'C4'];
 const LINEA = { C1: 'Verifica y Cumple', C2: 'Acompañamiento', C3: 'Visibilidad en IA', C4: 'Visibilidad en IA', C5: 'Desarrollo Web' };
@@ -178,8 +179,9 @@ export function veredicto(ctx) {
   const c3 = candidatoC3(edge), c4 = candidatoC4(entidad), c5 = candidatoC5(contacto);
   const todos = { C1: c1.candidato, C2: c2.candidato, C3: c3.candidato, C4: c4.candidato, C5: c5.candidato };
   const lista = ORDEN.map((id) => todos[id]).filter(Boolean);
-  const elegible = lista.find((c) => c.estado === 'estable');           // R1 + R2 + R3
-  const punteros = lista.filter((c) => c !== elegible);                  // la "ruta": no va en el correo
+  const conProp = (c) => (c ? { ...c, propuesta: propuesta(c, { c1: c1.info }) } : c);
+  const elegible = conProp(lista.find((c) => c.estado === 'estable'));  // R1 + R2 + R3
+  const punteros = lista.filter((c) => c.id !== elegible?.id).map(conProp);  // la "ruta": no va en el correo
   const capa1 = hechosCapa1({ p1, runs, formulariosDOM });
   const notas = [c3.capa1, c3.noConcluyente, c2.noEvaluable].filter(Boolean);
   let resultado;

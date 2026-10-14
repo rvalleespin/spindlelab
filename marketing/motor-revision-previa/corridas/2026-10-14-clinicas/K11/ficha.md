@@ -2,7 +2,7 @@
 
 **resultado:** `solo-capa-1` · motor v0 · 2026-10-14T22:17:03.945Z · cloud (IP de datacenter, via proxy)
 
-> Detector de sospecha. Nada de esto está verificado.
+> Detector de sospecha. Nada de esto está verificado. La propuesta es lo que se vendería **si** una persona confirma el hallazgo.
 
 ## Hallazgo (el de mayor posición con estado estable)
 

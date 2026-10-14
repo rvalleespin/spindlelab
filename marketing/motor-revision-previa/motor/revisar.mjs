@@ -8,6 +8,7 @@ import { pasada1 } from './pasadas/p1.mjs';
 import { sondear } from './lib/navegador.mjs';
 import { sondaBorde, sondaContacto, leerContenedor, entidadInterna } from './pasadas/p3.mjs';
 import { veredicto } from './pasadas/p4.mjs';
+import { renderFicha } from './lib/render.mjs';
 
 const args = process.argv.slice(2);
 const flag = (n) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : null; };
@@ -60,7 +61,5 @@ Object.assign(ficha, {
 });
 escribir('ficha.json', ficha);
 
-const cd = (c) => Object.entries(c.condiciones).map(([k, x]) => `  - **${k}** (${{ si: '✔', medias: '◐', no: '✘' }[x.v]}): ${x.razon}`).join('\n');
-const blk = (c) => `### ${c.id} · ${c.nombre}\n- **estado:** ${c.estado}${c.tope ? ` (${c.tope})` : ''}\n- **línea:** ${c.linea} · **lo comprueba:** ${c.quien_comprueba}\n- **dónde mirar:** ${c.donde_mirar}\n- **se puede afirmar:** ${c.afirmable}\n- **NO se puede afirmar:** ${c.no_afirmable.join('; ')}\n${c.advertencias?.length ? `- **advertencias:** ${c.advertencias.join(' ')}\n` : ''}- **cuatro condiciones:**\n${cd(c)}\n`;
-escribir('ficha.md', `# Ficha ${id}\n\n**resultado:** \`${v.resultado}\` · motor v0 · ${ficha.cuando} · ${ficha.entorno}\n\n> Detector de sospecha. Nada de esto está verificado.\n\n## Hallazgo (el de mayor posición con estado estable)\n\n${v.hallazgo ? blk(v.hallazgo) : '_Ninguno._\n'}\n## Ruta interna (no va en el correo)\n\n${v.punteros.length ? v.punteros.map(blk).join('\n') : '_Vacía._\n'}\n## Capa 1 (contexto)\n\n- con consecuencia: ${v.capa1.consecuencia.join(', ') || '-'}\n- higiene: ${v.capa1.higiene.join(', ') || '-'}\n${v.notas.length ? `\n## Notas\n\n${v.notas.map((n) => '- ' + n).join('\n')}\n` : ''}\n## Evidencia\n\n${ficha.evidencia.capturas.map((c) => `- ${c}`).join('\n')}\n`);
+escribir('ficha.md', renderFicha(ficha));
 console.log(`${id} :: ${v.resultado}${v.hallazgo ? ' :: ' + v.hallazgo.id + ' (' + v.hallazgo.estado + ')' : ''}${v.punteros.length ? ' :: punteros ' + v.punteros.map((p) => p.id).join(',') : ''}`);
