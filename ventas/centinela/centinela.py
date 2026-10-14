@@ -53,7 +53,13 @@ def medir(dominio):
 
 
 def anterior(dominio):
-    previos = sorted(SNAPS.glob(f"{dominio}-*.json"))
+    """La ultima foto ANTERIOR a hoy.
+
+    Excluye la de hoy a proposito: si se corre dos veces el mismo dia, comparar
+    contra si misma reporta "igual" y tapa la medicion anterior de verdad.
+    """
+    previos = sorted(p for p in SNAPS.glob(f"{dominio}-*.json")
+                     if p.stem != f"{dominio}-{HOY}")
     if not previos:
         return None
     return json.loads(previos[-1].read_text(encoding="utf-8"))
