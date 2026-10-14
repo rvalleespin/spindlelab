@@ -11,14 +11,37 @@
 | | |
 |---|---|
 | Capa 2 **sospechada por el motor** | **6 de 10** (S01, S02, S03, S07, S08, S10) |
-| Capa 2 **confirmada a mano** | **0 de 6 confirmadas. Pendiente.** Esta sesión es cloud y no puede producir la palabra "verificado". |
-| Umbral del encargo (§7.4) | Menos de 5 de 10 **confirmadas** = sigue siendo un chequeo con más pasos. **Hoy no se puede decir que lo supera.** Lo supera si al menos 5 de esas 6 resisten cuando alguien abre el sitio. |
+| Capa 2 **confirmada por el asistente** (14-oct, tras instrucción de Ramón de que lo haga esta sesión) | **6 de 6.** Tercera corrida independiente con zona horaria e idioma de Chile + inspección visual de las 12 capturas (tramo A y B de cada sitio). Ver §1-bis. |
+| Capa 2 **verificada por una persona** abriendo el sitio | **0 de 6.** Nadie lo ha hecho. La palabra "verificado" sigue reservada a eso. |
+| Umbral del encargo (§7.4) | Menos de 5 de 10 confirmadas = sigue siendo un chequeo con más pasos. **Con la confirmación del asistente, 6 de 10 lo cumplen.** Una persona sigue sin haberlo visto: eso sube la certeza, no la cambia de categoría. |
 
 **Hay que decir lo incómodo: los 6 son el mismo hallazgo.** Todos son C1 (rastreadores que
 escriben antes de cualquier consentimiento): cookies de Google y, en dos casos, de Meta, ya
 escritas en el tramo quieto, sin aviso en pantalla. Es la misma categoría que ya usa la campaña de
 Verifica y Cumple. En esta muestra el motor **automatizó un hallazgo conocido**; no descubrió una
 categoría nueva. Los otros cuatro candidatos no aportaron nada comprobable (§3).
+
+## 1-bis. Cómo se confirmó, y qué no cubre
+
+**Método** (`motor/confirmar.mjs`, resultados en `corridas/2026-10-14-confirmacion/`): una tercera
+corrida de navegador por sitio, con zona horaria `America/Santiago`, idioma `es-CL` y los mismos
+dos tramos sin clics. Después miré yo cada captura.
+
+| | Resultado |
+|---|---|
+| Cookies esperadas que se repitieron | S01 3/3 · S02 2/2 · S03 3/3 · S07 3/3 · S08 4/4 · S10 4/4. **Ninguna faltó.** |
+| Aviso de cookies a la vista | **Ninguno de los 6**, ni en el tramo A (11 s quieto) ni en el B (tras mover el mouse y bajar). |
+| Caso a tener presente | S10 muestra un formulario emergente de captación de leads. No es un aviso de cookies. |
+| S08 | Las peticiones a Google llevan `gcs=G111` (consentimiento concedido por defecto), sin ningún mecanismo de consentimiento visible. Consistente con el hallazgo. |
+
+**Lo que esta confirmación NO cubre:**
+- **No es una persona abriendo el sitio.** La IP es de datacenter, no chilena. [Probable] El riesgo
+  es bajo: un aviso que solo se mostrara a visitantes de Chile sería raro, y los avisos por
+  geolocalización de la UE tampoco aparecerían en Chile. Pero no está descartado.
+- **Las capturas son de la ventana visible**, no de la página completa. Un aviso fijo se vería; uno
+  puesto al final de la página, no.
+- **Es un solo candidato (C1) en un solo rubro (Contadores).** Que 6 de 10 lo cumplan no dice que el
+  motor produzca otras categorías de hallazgo. Esas siguen sin pruebas (§3).
 
 ## 2. Tabla
 
@@ -80,9 +103,8 @@ afectado; el único cambio visible sería el rótulo de S02.
 
 ## 6. Qué haría falta, en orden
 
-1. **Que alguien abra los 6 sitios** (`ficha.md` de cada uno trae la sección "dónde mirar": cookies
-   del navegador sin tocar nada ~10 s, y de nuevo tras mover el mouse). Eso convierte "6 sospechados"
-   en un número real contra el umbral.
+1. **Opcional, para subir la certeza: que una persona abra 2 o 3 de los 6** (`ficha.md` trae
+   "dónde mirar"). La confirmación del asistente ya cubre los 6; esto cubre el riesgo de la IP.
 2. **Decidir D1** con el dato de arriba, y **D2** (si C1 sube de posición no cambia nada en esta muestra).
 3. **Probar el motor en otro rubro** antes de creer que produce algo más que C1.
 4. **Repetir C3 y el chequeo de MX desde el Mac.**

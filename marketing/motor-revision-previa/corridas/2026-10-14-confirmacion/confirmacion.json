@@ -1,0 +1,158 @@
+{
+  "cuando": "2026-10-14T21:59:00.923Z",
+  "metodo": "tercera corrida con zona horaria e idioma de Chile; IP de datacenter",
+  "resultados": [
+    {
+      "id": "S01",
+      "esperadas": 3,
+      "repiten": [
+        "_gcl_au",
+        "_ga_Y9N52Q3PBF",
+        "_ga"
+      ],
+      "faltan": [],
+      "nuevas": [],
+      "fase_primera_aparicion": {
+        "_gcl_au": "A",
+        "_ga_Y9N52Q3PBF": "A",
+        "_ga": "A"
+      },
+      "aviso_en_dom": {
+        "A": false,
+        "B": false,
+        "texto": null
+      },
+      "capturas": [
+        "r3-chile-A.jpg",
+        "r3-chile-B.jpg"
+      ]
+    },
+    {
+      "id": "S02",
+      "esperadas": 2,
+      "repiten": [
+        "_ga_8ZYSJNWHXJ",
+        "_ga"
+      ],
+      "faltan": [],
+      "nuevas": [],
+      "fase_primera_aparicion": {
+        "_ga_8ZYSJNWHXJ": "A",
+        "_ga": "A"
+      },
+      "aviso_en_dom": {
+        "A": false,
+        "B": false,
+        "texto": null
+      },
+      "capturas": [
+        "r3-chile-A.jpg",
+        "r3-chile-B.jpg"
+      ]
+    },
+    {
+      "id": "S03",
+      "esperadas": 3,
+      "repiten": [
+        "_gcl_au",
+        "_ga_R08WMV9XC4",
+        "_ga"
+      ],
+      "faltan": [],
+      "nuevas": [],
+      "fase_primera_aparicion": {
+        "_gcl_au": "A",
+        "_ga_R08WMV9XC4": "A",
+        "_ga": "A"
+      },
+      "aviso_en_dom": {
+        "A": false,
+        "B": false,
+        "texto": null
+      },
+      "capturas": [
+        "r3-chile-A.jpg",
+        "r3-chile-B.jpg"
+      ]
+    },
+    {
+      "id": "S07",
+      "esperadas": 3,
+      "repiten": [
+        "_gcl_au",
+        "_ga_T5B5KQ32J6",
+        "_ga"
+      ],
+      "faltan": [],
+      "nuevas": [],
+      "fase_primera_aparicion": {
+        "_gcl_au": "A",
+        "_ga_T5B5KQ32J6": "A",
+        "_ga": "A"
+      },
+      "aviso_en_dom": {
+        "A": false,
+        "B": false,
+        "texto": null
+      },
+      "capturas": [
+        "r3-chile-A.jpg",
+        "r3-chile-B.jpg"
+      ]
+    },
+    {
+      "id": "S08",
+      "esperadas": 4,
+      "repiten": [
+        "_gcl_au",
+        "_ga",
+        "_ga_05M5Q3X1N3",
+        "_fbp"
+      ],
+      "faltan": [],
+      "nuevas": [],
+      "fase_primera_aparicion": {
+        "_gcl_au": "A",
+        "_ga": "A",
+        "_ga_05M5Q3X1N3": "A",
+        "_fbp": "A"
+      },
+      "aviso_en_dom": {
+        "A": false,
+        "B": false,
+        "texto": null
+      },
+      "capturas": [
+        "r3-chile-A.jpg",
+        "r3-chile-B.jpg"
+      ]
+    },
+    {
+      "id": "S10",
+      "esperadas": 4,
+      "repiten": [
+        "_gcl_au",
+        "_fbp",
+        "_ga_D9WPPCQNW2",
+        "_ga"
+      ],
+      "faltan": [],
+      "nuevas": [],
+      "fase_primera_aparicion": {
+        "_gcl_au": "A",
+        "_fbp": "A",
+        "_ga_D9WPPCQNW2": "A",
+        "_ga": "A"
+      },
+      "aviso_en_dom": {
+        "A": false,
+        "B": false,
+        "texto": null
+      },
+      "capturas": [
+        "r3-chile-A.jpg",
+        "r3-chile-B.jpg"
+      ]
+    }
+  ]
+}
