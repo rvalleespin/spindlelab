@@ -29,6 +29,12 @@
 // · `marcas` y `marcasSr`, en la sección de bloques: las «num» publicadas (Sí/No en
 //   visibilidad, A–D en los entregables de la auditoría, S1–S4 en el mes tipo). Redes y Paid
 //   Media numeran 01–04 como las fases de Desarrollo Web: son procesos en orden.
+// · `compromiso`, en la sección de planes (E8, tanda 3, 14-oct): el compromiso de los 3 meses
+//   que Ramón aprobó, solo en Visibilidad y Acompañamiento. Va como última fila de #planes, un
+//   <p class="d-cuerpo"> entre filetes como las respuestas de las preguntas. No va al JSON-LD.
+//   Los dos puntos que el pase de voz dejó en "" (el primero de Esencial en Acompañamiento y
+//   en Paid Media; vacíos y no borrados, para no correr los punteros) no se pintan: los
+//   puntos pasan por filter(Boolean).
 // LO QUE LA QA YA SACÓ DEL JSON, CON SU MOTIVO (para no devolverlo en una edición):
 // · Precio con UNA notación en toda la página (spec §3 .precio): «$590.000/mes + IVA», nunca
 //   «590.000 CLP» ni «$590.000 /mes». El JSON-LD sigue declarando priceCurrency CLP.
@@ -402,6 +408,7 @@ const jsonLd = {
               {p.puntos?.filter(Boolean).length > 0 && <ul>{p.puntos.filter(Boolean).map((x: string) => <li>{x}</li>)}</ul>}
             </div>
           ))}
+          {secPlanes.compromiso && <p class="d-cuerpo">{secPlanes.compromiso}</p>}
         </div>
       </section>
     )}
@@ -439,7 +446,7 @@ const jsonLd = {
         <div class="d-cierre-svc">
           <p class="d-guia">{secCierre.parrafos?.[0]}</p>
           <div class="d-btns">
-            <a class="d-btn" href={CONTACTO}>Pedir el diagnóstico gratis</a>
+            <a class="d-btn" href={CONTACTO}>Pedir el diagnóstico</a>
             {pr.cierreChequeo && <a class="d-btn d-btn--alt" href="/v3/diagnostico/">Correr el chequeo</a>}
           </div>
         </div>
