@@ -5,6 +5,10 @@
 **Skill:** .claude/skills/web-qa-critico/SKILL.md
 
 ## Estado actual
+- **2026-10-14 · v3, QA del pase de voz (E8): aprobado en la ronda 2.** Acta en
+  `obras-web/spindlelab-v3/e8/acta-qa-E8.md`. Quedan dos menores que no son del constructor:
+  la frase de la prueba de Trabajo (Clara) y el descuadre de la fila de dos de Trabajo, que
+  pasó a Ramón como confirmación 10.
 - **2026-10-02 — rol creado.** Antes el constructor se aprobaba a sí mismo, así que la
   primera revisión real la hacía Ramón: por eso el trabajo llegaba con defectos. Sin
   obras propias todavía.
@@ -57,6 +61,14 @@
   QA final repintó solo `#cookie-banner` (P63). Se mide con `elementFromPoint` en el centro
   del control, en alturas bajas y en horizontal, y se aprieta cada control que pinta algo
   nuevo antes de dar la vista por medida.
+
+## Aprendido en el pase de voz (spindlelab-v3, E8, 14 oct 2026)
+- **Un pase de copy se audita reconstruyendo, no contando.** Que las diferencias sumen lo mismo
+  que las filas no prueba nada. Rearmé cada texto «después» desde el «antes» con las filas
+  «cambia» de su ruta y comparé letra por letra con el HTML servido: 245 de 245 calzaron, y
+  así una diferencia sin fila habría saltado sola. Antes de eso comprobé la base: extraída y
+  comparada con una extracción conocida (`migrado.json`), tenía que dar solo las 2 diferencias
+  ya explicadas, y las dio. Una base equivocada aprueba cualquier cosa.
 
 ## Con quién trabajo
 - Audito lo de **Diego** contra la spec de **Lucía** y el brief de **Mauro**; los

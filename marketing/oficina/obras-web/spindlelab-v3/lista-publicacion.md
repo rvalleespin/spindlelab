@@ -12,6 +12,17 @@ pudo ensayar sigue marcado **[sin ensayar]**, con su razón: paneles de Cloudfla
 de Ramón, copy de Clara, el PR, el merge y todo lo que corre contra producción después del
 deploy.
 
+**Al 14-oct: P0.3 hecho** (el pase de voz, E8; el último commit de la aplicación que toca el sitio
+es `f0d911c`). Desde el ensayo, la rama cambió `spindlelab-astro/` solo con E8: `28c5d85`,
+`a70e945` (la meta de la home, que el pase reemplazó con su fila 50), `3877e51`, `2dbaa09`,
+`eaa0c33` y `f0d911c`. Eso es P0.3, así que por G7 no se vuelve a ensayar. **Ojo con los números
+de línea:** las citas archivo:línea de esta lista se midieron el 13-oct sobre `1b064bf`, y E8
+cambió los 4 JSON de datos, 13 plantillas y componentes y `v3-chequeo.js`. Varias ya no calzan:
+por ejemplo, R2.2 cita `servicios-v3.json:42` y `:382`, que hoy son `:47` y `:416`, y R4 cita
+`nosotros.astro:196`, que hoy es `:197`. También se corrieron las líneas citadas de
+`pendientes-traspaso-revisados.md`. El día del corte cada cita se vuelve a medir buscando su
+texto (`grep -n`), y no se confía en el número.
+
 **Base medida.** Rama `claude/magical-franklin-ckfki2` en `1b064bf` al empezar el ensayo
 (`git ls-remote` daba `1b064bfa…`). `origin/main` en `34c063e`. Base común `b5f4b2f`. main va
 31 commits adelante y ninguno toca `spindlelab-astro/` (`git log HEAD..origin/main --
@@ -73,7 +84,7 @@ aprobación va después, cuando E8 y R2 ya estén aplicados en la rama de la obr
 | G1 | R1, fecha y OK al merge | Sin ruta no hay publicación. `spindlelab.cl/v3/` hoy da 404 (relevamiento compuertas, curl; el ensayo lo volvió a medir). Publicar es mergear a main. | Sección 0 |
 | G2 | R2.1 aplicado | El sitio contradice una regla vigente sobre lo que se puede entregar. Lugares: `servicios-v3.json:15, 35, 39, 42, 51, 137, 149, 357, 359, 366, 367, 382, 391, 408, 419, 453, 476, 488`; `oferta-v3.json:108`; `paginas-v3.json:26`; `src/pages/v3/metodo.astro:113` y `:166` (paso 4 del HowTo); `servicios/[slug].astro:313`; `diagnostico.astro:179` (grep sobre src, compuertas). | P0.2 |
 | G3 | R2.2 aplicado | Mismo plan, dos cadencias. Producción ya tiene la contradicción (`acta-qa-final.md:42-43`): publicar no la empeora, pero la vuelve a publicar sabiendo que está. | P0.2 |
-| G4 | Pase de voz (E8) y lectura de aprobación | Regla de revisión humana. E8 sigue abierto (`pendientes-traspaso-revisados.md:237-241`). P86 (`desarrollo-web.astro:232`) va dentro del pase. | P0.3 y P0.4 |
+| G4 | Pase de voz (E8) y lectura de aprobación | Regla de revisión humana. E8 sigue abierto (`pendientes-traspaso-revisados.md:237-241`). P86 (`desarrollo-web.astro:232`) va dentro del pase. **14-oct:** E8 hecho y aprobado (P0.3, `f0d911c`), con P86 dentro; queda la lectura de aprobación. | P0.3 (hecho) y P0.4 |
 | G5 | Raigal revisado | `ficha.md:90` sin marcar. | P0.4 |
 | G6 | Maquetas y `mockup-interno/` fuera del build | En la vista previa de esta rama, `/v3/a/`, `/v3/maqueta-inicial/` y `/mockup-interno/proyecto-bernardo.png` responden 200 (compuertas, curl; el ensayo volvió a medir `/v3/a/`: 200). Si se mergea así, quedan servidas en spindlelab.cl. El brief lo prohíbe (`:113-114`, criterio `:132`). | P4 |
 | G7 | Esta lista, ensayada | Hecho el 13-oct (sección 9). Se vuelve a ensayar de P3 a la sección 4 si, antes del corte, entra a main algo bajo `spindlelab-astro/` o la rama de la obra cambia el sitio más allá de P0.2 y P0.3. | Sección 9 |
@@ -180,10 +191,12 @@ git commit -m "…"
 **P0.3 · Pase de voz de Clara (E8)** · Clara, después QA exprés de Javiera en contexto limpio · [sin ensayar: es copy]
 - Con `voz-spindlelab` sobre el copy nuevo del v3, más P86. No toca el hero del 10-oct, la bio, los «acá» ni los cuerpos de artículo (`pendientes-traspaso-revisados.md:237-241`).
 - **Verifica:** fila en el §7 de la spec con el pase y el veredicto firmado de Javiera. El barrido de la raya en el texto visible sigue en 0.
+- **Hecho el 14-oct, en `f0d911c`** (el último commit de la aplicación; la aplicación son `3877e51`, `2dbaa09` y `eaa0c33`, sobre la migración `28c5d85`). Javiera lo aprobó en la ronda 2 (`e8/acta-qa-E8.md`, `ad7fea5`). En el §7 de la spec quedaron tres filas del 14-oct: el cierre de las transitorias, el pase y el veredicto. La raya sigue en 0 en el texto visible y en el JSON-LD. P86 entró en el pase (fila 983). Lo que dejó para Ramón está arriba en `e8/e8-antes-despues.md` y va en P0.4.
 
 **P0.4 · Lectura de aprobación de Ramón** · Ramón, sobre la vista previa de la rama de la obra · [sin ensayar: es la lectura de Ramón]
 - URL: https://claude-magical-franklin-ckfk.spindlelab-v2.pages.dev/v3/ (el ensayo la midió con curl: 200, con `x-robots-tag: noindex`; `/v3/a/` también da 200 ahí, y eso lo saca P4).
 - Incluye Raigal (`ficha.md:90`), singular o plural en la bio y, en raíz, el `llms.txt` que redacte Clara (P11).
+- Incluye también lo que dejó E8: las diez confirmaciones sobre texto ya aplicado que abren `e8/e8-antes-despues.md` (la 9 con la propuesta de Clara para la frase de la prueba de Trabajo, la 10 con el descuadre de su fila de dos) y, antes de publicar, el chequeo de la Ley 21.719 corrido otra vez sobre la vista previa para la frase del 100. Medido el 14-oct: la vista previa da 200 con `x-robots-tag: noindex` en `/v3/` y ya sirve `f0d911c`.
 - **Verifica:** casilla de `ficha.md:90` marcada y fila «aprobado por Ramón, fecha» en el §7 de la spec.
 
 ### 2.1 Preparación

@@ -173,6 +173,11 @@ quedó fuera el 5-oct.
 > ronda completa y en la exprés de cierre) y los desvíos decididos por Lucía. Commits de
 > 511bb86 a 7b60c6c; el registro está en el §7 de `spec-visual.md` (filas del 13-oct). Quedan
 > E7 (la lista de publicación) y E8 (el pase de voz de Clara).
+>
+> **Estado al 14-oct:** E7 hecho el 13-oct (`lista-publicacion.md`, ensayada; `63f1e55`) y E8
+> hecho el 14-oct, aprobado por Javiera en la ronda 2 (detalle abajo, en E8). Los ocho frentes
+> del estudio están cerrados. Lo que sigue espera respuestas de Ramón, salvo una propuesta de
+> Clara (la frase de la prueba de Trabajo) antes de su lectura de aprobación.
 
 No necesita decisión. Se hace en esta rama, se mide y queda anotado en el §7 de la spec.
 
@@ -239,6 +244,38 @@ Clara corrigió textos puntuales en la QA final, pero eso no es un pase completo
 de publicar, sin tocar lo cerrado por Ramón (hero, bio, «acá») ni los cuerpos de los artículos,
 que van tal cual. En la misma pasada: la guía de entrada de Desarrollo web repite casi palabra
 por palabra la línea del campo de la home y la del menú.
+
+**E8 hecho el 14-oct** (P0.3 de `lista-publicacion.md`), en la rama y sin publicar. Clara pasó
+`voz-spindlelab` sobre todo el copy nuevo: 886 filas, que son las 851 ranuras abiertas del
+inventario (el 100 %) y 35 del encargo de la oferta de Marco. Cambian 141, se mantienen 690 con su
+motivo, 54 esperan R2 y 1 es un dato a verificar. La guía de Desarrollo web (P86) entró en el pase
+(fila 983). Las seis filas transitorias de la spec y el punto 4 de la revisión cruzada («Visibilidad
+en IA») quedaron cerrados. Documentos en `e8/`: `copy-secciones.md` (el entregable de Clara),
+`hoja-de-voz.md`, `e8-antes-despues.md` (lo que lee Ramón con la vista previa) y `acta-qa-E8.md`.
+- **Commits:** `28c5d85` (la migración al JSON, sin cambio visible), `3877e51`, `2dbaa09` y
+  `eaa0c33` (la aplicación), `9b9d590` (el antes y después), `f0d911c` y `f57f227` (los arreglos de
+  la QA). El último que toca el sitio es `f0d911c`.
+- **QA:** Javiera, en contexto limpio. Ronda 1 (`8417701`): aprobado con reparos, 6 menores. Ronda
+  2 (`ad7fea5`): **aprobado**. 245 de 245 diferencias explicadas por una fila, 141 de 141 filas en el
+  sitio, lo cerrado intacto y `verificar` sin hallazgos a 390, 768 y 1440.
+- **Registro:** tres filas del 14-oct en el §7 de `spec-visual.md`.
+
+**Lo que queda abierto de E8:**
+- **De Ramón:** R2 (el texto de cada lugar para cada respuesta está en el anexo A de
+  `copy-secciones.md`, y lo aplica Diego en P0.2), R4 y R7 (anexo C), el plazo de la Auditoría +
+  Visibilidad en IA y desde cuándo corren las ~2 semanas de la Auditoría de Visibilidad, y las diez
+  confirmaciones sobre texto ya aplicado que abren `e8-antes-despues.md`. La 10 es el descuadre de la
+  fila de dos de Trabajo (202 px a 768, 185 a 1440), que iba a decidir Lucía y pasó a Ramón.
+- **De Clara, antes de la lectura de aprobación (P0.4):** proponerle a Ramón la frase de la prueba
+  de Trabajo que tropieza en voz alta («como si el aviso de cookies frena…», confirmación 9).
+- **Antes de publicar:** volver a correr el chequeo de la Ley 21.719 sobre la vista previa para la
+  frase del 100, y la fecha de la ley (1-dic-2026) el día del corte.
+- **Fuera de E8, para la troncal y la sesión de Marco:**
+  `marketing/encargos-otras-sesiones/encargo-chequeo-google-extended-y-estudio-marco.md`
+  (Google-Extended en el chequeo, en dos artículos y en la regla del 8-sep, y la corrección del
+  estudio de Marco). Decide Ramón. Al final de ese encargo va también una nota para la troncal:
+  que la skill `mini-diagnostico` obligue a hacerles de verdad las preguntas a ChatGPT, Gemini y
+  Perplexity, porque el sitio ahora lo afirma (`copy-secciones.md`, anexo D, punto 4).
 
 ---
 

@@ -5,6 +5,10 @@
 **Skill:** .claude/skills/persona-disenador-web/SKILL.md
 
 ## Estado actual
+- **2026-10-14 · v3, pase de voz de Clara aplicado (E8).** 141 filas: por puntero en los JSON,
+  con la aserción valor = texto de hoy, y por ancla que calzaba una vez en las plantillas
+  (`3877e51`, `2dbaa09`, `eaa0c33`; arreglos de la QA en `f0d911c`). Javiera aprobó en la
+  ronda 2. Sin publicar.
 - **2026-09-03 — CORRECCIÓN sobre la entrada de más abajo: mi rama quedó
   superseded, no es la troncal.** Al terminar, Ramón detectó (y yo verifiqué con
   `git ls-remote`) que **otra sesión** — con su propio git identity, casi seguro su
@@ -130,6 +134,14 @@
   para el primer caso real con datos (cuando haya permiso del cliente)», y `/nosotros/` 2
   (`Nav`). Los HTML de `public/` no pasan por Astro: lo que se comenta ahí viaja igual.
   Desde el 13-oct `npm run verificar` los cuenta como hallazgo en las páginas que arma Astro.
+
+### Pase de voz del v3 (E8, 14 oct 2026)
+- **Lo que el documento para Ramón afirma de la composición se mide antes de escribirlo.**
+  `e8-antes-despues.md` decía que la prueba de Trabajo entraba «sin descuadrar el par con la
+  ficha de Combeau modelo». Javiera midió la diferencia vertical entre los dos enlaces de la
+  fila: 202 px a 768 y 185 a 1440, donde antes había 0. Un texto que crece dentro de una fila de
+  dos se mide en el par, no en su ficha, y a los tres anchos. Lo que no se midió no se afirma: se
+  escribe «sin medir».
 
 ## Con quién trabajo
 - Copy me lo pasa **Renata** (marcado para revisión humana). SEO técnico me lo

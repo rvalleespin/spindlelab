@@ -56,6 +56,13 @@ detalle está en `copy-secciones.md`, en el punto del anexo D que se cita.
    suma ni resta» tropieza: «como si» se lee como comparación y pide «frenara». Javiera propone «por
    ejemplo, si el aviso de cookies frena de verdad a los rastreadores», con el mismo sentido. Como es el
    texto que aprobaste, Clara lo revisa y te lo propone. Mientras tanto queda como está.
+10. **La fila de dos de Trabajo** (QA, ronda 2, defecto 2; agregado en el cierre, 14-oct). No es
+    copy, es composición. La prueba alarga solo la ficha de Verifica y Cumple, y su enlace ya no queda
+    a la altura del de Combeau modelo: 202 px de diferencia a 768, 148 a 1024 y 185 a 1440 (antes 0,
+    27 y 0). Se ve en la vista previa, en `/v3/trabajo/`. Hay dos salidas: alinear los dos enlaces al
+    pie de su ficha, que es una regla de CSS en esa fila, o dejarlo así, porque a 1024 ya había
+    descuadre y ninguna regla de la spec pide la alineación. Lo iba a decidir Lucía y no alcanzó, así
+    que lo decides tú. Mientras tanto queda declarado en el §7 de la spec.
 
 Los otros dos puntos de Desarrollo web del anexo D (que el sitio nombre varias veces el agente y la
 construcción con IA, y la fase 02, «Ajustamos hasta que el diseño te representa», frente a las rondas
@@ -91,7 +98,8 @@ Nada de esto se aplicó. Está escrito y listo para cuando respondas.
 Fuera de E8, para el troncal (anotado por Clara en el anexo D): que la skill del mini-diagnóstico
 obligue a preguntarles de verdad a ChatGPT, Gemini y Perplexity, ya que el sitio ahora lo afirma; la
 recategorización de Google-Extended en el chequeo y en el artículo de los 21 chequeos; y la corrección
-del estudio de Marco.
+del estudio de Marco. Las dos últimas quedaron escritas como encargo aparte en
+`marketing/encargos-otras-sesiones/encargo-chequeo-google-extended-y-estudio-marco.md`.
 
 ## Lo que decidiste el 14-oct, ya aplicado
 
@@ -104,8 +112,8 @@ del estudio de Marco.
 3. **La prueba va en Trabajo**, en la ficha de Verifica y Cumple, con la versión a: 36 el 9-sep, 73 el
    21-sep y 100 el 14-oct, con la forma de puntuar dicha. Es un segundo párrafo bajo la línea de la
    ficha y no va al JSON-LD (`2dbaa09`). Alarga la ficha, y su vecina de fila (Combeau modelo) no:
-   los dos enlaces de esa fila ya no quedan a la misma altura. Cómo queda lo decide Lucía (ver
-   «Lo que se miró en capturas»).
+   los dos enlaces de esa fila ya no quedan a la misma altura. Cómo queda lo decides tú
+   (confirmación 10).
 4. **El compromiso de los 3 meses entró**, con tus dos ajustes (el sitio que ya parte en 100 y el
    acceso a donde se configuran los robots) y sin decir qué pasa si no se cumple. Va en Visibilidad y
    en Acompañamiento, como última fila de los planes (`3877e51`). «Chequeo gratis» lleva a la página
