@@ -1,0 +1,22 @@
+empresa,dominio,email,hallazgo_medido,estado
+Adactiva,adactiva.cl,hola@adactiva.cl,"27 cookies sin tocar nada, igual en las dos corridas. Microsoft graba la sesion (n.clarity.ms x5), Google y Bing reciben la visita; Meta carga y deja cookie. Politica publicada y real, sin aviso de cookies. Fuente: Google Maps",borrador
+Dermacne,dermacne.cl,ignacio@dermacne.cl,"3 cookies (Meta y Google) con aviso Complianz y politica real publicados; el aviso no frena. Poca cantidad pero misma categoria que Cascada y Terrantai. Fuente: Apollo",borrador
+Wiclinic,wiclinic.cl,esteban.mendez@wiclinic.cl,"10 cookies sin tocar nada: TikTok (analytics.tiktok.com x6) y Google reciben la visita; Meta carga y deja cookie. Politica y terminos publicados, sin aviso. Remedido 14-oct, igual que el 5-oct",borrador
+Lart Odontologia,lartodontologia.cl,lorenarojas@lartodontologia.cl,"10 cookies; Google recibe la visita, Meta carga y deja cookie, una guarda de que pagina venia la persona. Cero enlaces legales. Contacto: duena. Remedido 14-oct",borrador
+Medcorp,medcorp.cl,acuesta@medcorp.cl,"11 cookies incl. Google Analytics y la de origen del visitante; 4 formularios y solo Terminos y Condiciones, sin politica de privacidad. OJO: hay rastro de Complianz en el DOM, por eso el correo NO afirma que falte el aviso. Remedido 14-oct",borrador
+Cyber Salud,cybersalud.cl,matias.aguilera@cybersalud.cl,"6 cookies: Google recibe la visita con cookie publicitaria, Meta deja la suya. Terminos si, politica y aviso no. Remedido 14-oct",borrador
+Medicenter,medicenter.cl,jdelacarrera@medicenter.cl,"4 cookies propias: Google Analytics y Google Ads reciben la visita, Meta deja cookie. Cero enlaces legales. Hallazgo moderado. Remedido 14-oct",borrador
+Myra Salud,myrasalud.cl,patrichs.rosalesmaturana@myrasalud.cl,"0 cookies quieto y 5 al mover el mouse en las dos corridas y las dos fechas: Google Analytics, Google Ads y cookie de Meta. 2 formularios, cero enlaces legales",borrador
+Clinica R-nueva,r-nueva.cl,jaime.acuna@r-nueva.cl,"4 cookies: Google recibe la visita por Analytics y por Google Ads. 2 formularios, cero enlaces legales. Remedido 14-oct",borrador
+Clinica Veterinaria VET'S,vets.cl,elide.rodriguez@vets.cl,"0 cookies quieto y 15 al mover el mouse (HubSpot, Google Analytics, un chatbot), con aviso de cookies instalado. HALLAZGO MAS FUERTE DEL LOTE, pero: el contacto es la encargada de contabilidad y RRHH, y el lote de expansion del 13-ago no documenta su fuente",pendiente - confirmar origen de la fuente
+Centro Medico Fundacion,centromedicofundacion.cl,cristian.caro@centromedicofundacion.cl,"6 cookies: Google Analytics recibe la visita, Meta carga y deja cookie. Sin politica, sin aviso. Solo responde con www. Contacto de Marketing y Convenios. Mismo problema de fuente que vets.cl",pendiente - confirmar origen de la fuente
+Estudio Ruiz Salazar,ruizsalazar.cl,barbara.yanez@ruizsalazar.cl,"5 cookies: Google Analytics y Google Ads reciben la visita. Sin aviso ni politica. Hallazgo decente pero es el rubro que rindio 20%",medido-sin-escribir
+Clinica La Reina (vet),cvlareina.cl,,"7 cookies pero TODAS de infraestructura Wix. Cero analitica",sin hallazgo
+Clinica Yany,yany.cl,,"1 cookie (v_bid), sin terceros",sin hallazgo
+CLVision,opticasclvision.cl,,"0 cookies en los dos tramos y las dos corridas",sin hallazgo
+Chileaudita,chileaudita.cl,,"0 cookies en los dos tramos y las dos corridas",sin hallazgo
+Universidad Mayor,umayor.cl,,"Es una universidad, fuera de perfil y de ticket",fuera de perfil
+Correa Fiol Abogados,correafiol.cl,,"Sin registro A en el DNS: el dominio no resuelve",sitio caido
+SGFertility,sgfertility.com,,"404 en los cuatro prefijos",sitio caido
+Seisdedos,seisdedos.cl,,"Error 500 de 2 bytes en los cuatro prefijos",sitio caido
+GGV Abogados,ggvabogados.cl,,"Marcador de 616 bytes que solo responde en http://www; no es un sitio",angulo Desarrollo Web
