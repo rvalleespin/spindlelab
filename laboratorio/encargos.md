@@ -1,0 +1,206 @@
+# Encargos abiertos del laboratorio
+
+La cola viva. **La troncal la mantiene; las sesiones de parte la ejecutan.** Cada encargo es
+acotado, dice quién lo puede hacer y con qué se verifica que quedó cerrado.
+
+Al cerrar uno: marcarlo acá **y** escribir la fila en el registro del brief que corresponda.
+
+**Última revisión de la troncal: 10-sep-2026.**
+
+## Orden recomendado
+
+E8, E2, E9 y E10 quedaron cerrados el 10-sep — el kit y el título nuevo ya están en vivo. Lo que
+sigue con más impacto: E1 (ya sin bloqueo) para que el código y el registro dejen de vivir en
+ramas separadas, y E3 para destrabar el post de Cata.
+
+| # | Encargo | Para quién | Estado |
+|---|---|---|---|
+| E2 | Reconectar `verificaycumple` en el dashboard de Cloudflare | Ramón | **cerrado 10-sep** — reconectado, auto-deploy confirmado (deployó `c718c74` solo, sin token) |
+| E9 | Construir la sección del kit de precio fijo | parte del laboratorio | **cerrado 10-sep** — verificado en vivo, `verificaycumple.pages.dev` responde `149.000` |
+| E10 | Aplicar el título nuevo del hero | parte del laboratorio | **cerrado 10-sep** — verificado en vivo, `<h1>¿Estás seguro?</h1>` responde en `curl` |
+| E3 | Desbloquear el post de Cata | parte de marketing | **abierto — pegado desde el 8-sep** |
+| E1 | Devolver `laboratorio/ley-21719` sin apagar el sitio | parte del laboratorio | **abierto — E2 ya no lo bloquea, puede tomarse** |
+| E4 | Poner a `spindlelab.cl` en regla con la Ley 21.719 | parte de la agencia | **cerrado 21-sep** — 36→73, banner de cookies real en vivo |
+| E5 | Darle su política de privacidad a `verificaycumple` | parte del laboratorio | **cerrado 21-sep** — verificado en vivo, puntaje subió de 36 a 73 |
+| E12 | Declarar el costo de atención semanal del proyecto 01 | Ramón | **abierto — incumple el filtro 3** |
+| E6 | Decidir el Figma de referencia (Community) | Ramón | **abierto** (el otro Figma ya se resolvió) |
+| E7 | Alinear el encabezado del brief con su registro | — | **cerrado 9-sep** por la sesión de parte |
+| E11 | Corregir una afirmación de la ficha de venta | parte de marketing/ventas | **cerrado 10-sep** por la sesión de parte |
+| E8 | Resolver dónde se trabaja (el clon que no existe) | Ramón | **cerrado 10-sep** — Ramón confirmó: se trabaja en la copia de iCloud; `CLAUDE.md` corregido |
+| E13 | Protocolo de entrega del kit, como skill | parte del laboratorio | **cerrado 21-sep** — `.claude/skills/entrega-kit-verificaycumple/SKILL.md` creado |
+
+---
+
+## E13 — Protocolo de entrega del kit, como skill · *parte del laboratorio* · **cerrado 21-sep**
+Ramón: "empecemos con el protocolo de entrega". Faltaba definir cómo se instala el kit
+($149.000, ya prometido en la landing) en el sitio de un cliente real que no es el propio
+repo de Ramón. Se preguntó explícitamente el método de acceso; **Ramón eligió pedir acceso
+real** (hosting/repo/CMS o credenciales temporales), no un snippet autoinstalable ni un
+árbol de decisión por plataforma. `entrega-kit-verificaycumple/SKILL.md` documenta los 8
+pasos (intake → chequeo "antes" → levantar el sitio real → instalar el gestor de
+consentimiento → ajustes técnicos → plantilla de política → chequeo "después" → entrega),
+usando spindlelab.cl (21-sep) como caso de referencia, y deja escrita la limitación conocida
+de `chequeo.js` (no reconoce gestores de cookies caseros) para que no se confunda con un
+arreglo que no funcionó.
+
+## E8 — Resolver dónde se trabaja · *Ramón* · **cerrado 10-sep**
+`CLAUDE.md:37` dice que el clon bueno es `~/Projects/spindlelab` y que la copia de iCloud está
+corrupta y no debe usarse. **Verificado el 10-sep: `~/Projects/spindlelab` no existe en la
+máquina**, y la copia de iCloud pasa `git fsck --connectivity-only` limpia (solo objetos
+colgantes normales, exit 0, sin objetos faltantes ni enlaces roto). El único árbol de trabajo
+adicional (`~/spindlelab-oficina-wt`) es un worktree *de la copia de iCloud*, no un clon
+aparte.
+
+Las tres filas del registro del 9-sep encargan trabajo "desde una sesión en el clon bueno".
+Quien lo tome hoy no encuentra el directorio. **Hay que elegir una de dos y anotarla en
+`CLAUDE.md`:** clonar de nuevo en `~/Projects/spindlelab` y trabajar ahí, o retirar la
+advertencia si ya no aplica. Mientras no se resuelva, cada encargo que dependa de un clon
+local queda en el aire.
+**Cierre:** el directorio existe y `git -C ~/Projects/spindlelab status` responde, o `CLAUDE.md`
+ya no manda a un lugar inexistente.
+
+**Resuelto el 10-sep:** Ramón eligió la segunda opción — se trabaja en la copia de iCloud, no
+se crea el clon nuevo. `CLAUDE.md:37` corregido para no mandar más a un directorio que no
+existe (queda registrado que la advertencia de "corrupta" ya no aplicaba).
+
+## E2 — Reconectar `verificaycumple` en el dashboard de Cloudflare · *Ramón* · **cerrado 10-sep**
+El proyecto se creó por API y quedó sin webhook de auto-deploy. Cada cambio exigía un token
+nuevo de Ramón más un disparo manual: ya había consumido tres tokens en un día.
+Al conectarlo, fijar y anotar en el brief cuál es la rama de producción (ver E1).
+**Cierre:** un push a la rama de producción dispara deploy sin token.
+
+**Resuelto el 10-sep:** Ramón reconectó el proyecto por el dashboard (Settings → Builds &
+deployments → Connect to Git), con **production branch `laboratorio/ley-21719`** y **root
+directory `verificaycumple`**, tal como estaba encargado. Confirmado con captura del
+dashboard: "Implementaciones automáticas habilitadas", y el commit `c718c74` (E9/E10) se
+desplegó solo, sin token. La rama de producción queda anotada acá para E1.
+
+## E9 — Construir la sección del kit de precio fijo · *parte del laboratorio* · **cerrado 10-sep**
+Decidido por Ramón el 9-sep: **$149.000 + IVA, una vez**, con el formato "Desde $X + IVA" que
+usan las páginas de `servicios/` y la nota de que el valor final se ajusta según lo que el
+chequeo muestre (mismo espíritu de la garantía honesta: no se promete resultado, se promete
+transparencia). **Incluye:** instalación y configuración de gestor de consentimiento, ajustes
+técnicos según lo que detecte el chequeo, y una plantilla de política de privacidad para que la
+revise un abogado. **No incluye asesoría legal** — guardrail de §5 del brief.
+**Construido el 10-sep** (sesión de parte, worktree aislado sobre `laboratorio/ley-21719`):
+tarjeta de precio en `section.ayuda`, mismos tokens de color del sitio (funciona en modo claro
+y oscuro, verificado con Chrome headless antes de subir), CTA cambiado a "Quiero el kit".
+Commit `c718c74`, pusheado a `origin/laboratorio/ley-21719`. **En vivo desde el 10-sep**
+(E2 resuelto): `curl https://verificaycumple.pages.dev` responde `149.000` y "Quiero el kit".
+**Cierre real: cumplido.**
+
+## E10 — Aplicar el título nuevo del hero · *parte del laboratorio* · **cerrado 10-sep**
+Elegido por Ramón el 9-sep entre cuatro variantes: **"¿Estás seguro?"** con la bajada *"En 40
+segundos sabes si tu sitio publica lo básico que exige la Ley 21.719 de protección de datos
+personales. Sin registrarte, sin que guardemos tu dominio."* Reemplaza el
+`<h1>¿Tu sitio tiene las señales que exige la Ley 21.719?` que Ramón calificó de "muy fome".
+**Aplicado el 10-sep** en el mismo commit que E9 (`c718c74`, `laboratorio/ley-21719`),
+verificado con Chrome headless antes de subir. **En vivo desde el 10-sep** (E2 resuelto):
+`curl https://verificaycumple.pages.dev` responde `<h1>¿Estás seguro?</h1>`.
+**Cierre real: cumplido.**
+
+## E3 — Desbloquear el post de Cata · *parte de marketing, toca `main`* · **pegado desde el 8-sep**
+`marketing/encargos-otras-sesiones/verificaycumple-post-personal-cata.md` tiene un solo commit
+(`ef5b670`, 3-sep) y sigue diciendo *"el sitio todavía no está desplegado… manda a un link
+roto"*. El sitio está vivo desde el 8-sep (verificado hoy, 200). **Esa condición caducada es la
+razón de que el post lleve una semana pegado, no un pase de tono.** Quitar el bloqueo 1, fijar
+`verificaycumple.pages.dev` como URL del primer comentario y borrar el condicional del `.cl`
+(la compra está descartada). El borrador y el hallazgo de las "72 horas" no se tocan.
+Ojo: ahora hay **dos** borradores de post sobre esto — el de Cata y el de
+`ventas/casos-de-exito/verifica-y-cumple.md`. Elegir uno, no publicar los dos.
+**Cierre:** el encargo ya no declara un bloqueo falso, y queda solo esperando pase de tono.
+
+## E11 — Corregir una afirmación de la ficha de venta · *parte de marketing/ventas* · **cerrado 10-sep**
+`ventas/casos-de-exito/verifica-y-cumple.md`, sección "Cómo usarlo en la llamada", punto 3,
+afirma: *"La primera infracción de una empresa pequeña es amonestación escrita, no la multa de
+20.000 UTM."* Dicho así es falso, y es exactamente lo que corrige el brief §2 punto 5: es el
+**Art. sexto transitorio**, la Agencia **"podrá"** —no "deberá"— aplicar amonestación, y solo
+durante los **primeros 12 meses** desde la entrada en vigencia. Es discrecional y con fecha de
+vencimiento. Decirlo como regla en una llamada de venta es el mismo tipo de error que el
+proyecto entero existe para no cometer.
+**Cierre:** la frase queda como "durante el primer año la Agencia puede aplicar amonestación en
+vez de multa, a su criterio" o equivalente.
+
+## E1 — Devolver `laboratorio/ley-21719` sin apagar el sitio · *parte del laboratorio* · **depende de E2**
+La rama tiene el producto y una copia del brief congelada el 3-sep; `laboratorio/ideas` tiene el
+registro completo y nada del producto. Está 42 commits detrás de `ideas` y 24 de `main`.
+Fusionar `ley-21719` → `ideas` para que código y registro queden juntos, y traer `main` a
+`ley-21719`. **Condición dura: no borrar la rama** mientras Cloudflare construya producción
+desde ella. Con E2 resuelto se decide con qué rama se queda producción y recién entonces se
+puede retirar la otra.
+**Cierre:** `curl` al sitio sigue en 200 y `git merge-base --is-ancestor` da verdadero en las
+dos direcciones.
+
+## E4 — Poner a `spindlelab.cl` en regla con la Ley 21.719 · *parte de la agencia* · **cerrado 21-sep**
+No es del laboratorio, pero lo encontró el laboratorio. Verificado el 9 y el 10-sep:
+`spindlelab.cl` da **36/100** en el chequeo que ahora enlaza desde `/diagnostico/` — sin
+política de privacidad (404 en `/privacidad/`, `/politica-de-privacidad/`, `/legal/`,
+`/cookies/`), sin gestor de consentimiento, con GA4 + GTM + Meta Pixel, y `/contacto/`
+enviando nombre, correo y sitio a `api.web3forms.com` sin checkbox de consentimiento (el único
+`type="checkbox"` es un honeypot). Encargado del tratamiento y transferencia internacional
+(Art. 27-28) sin política publicada (Art. 14 ter) ni acto afirmativo previo (Art. 12). Misma
+fecha límite: 1-dic-2026. El texto legal es de abogado; acá se hace la capa técnica.
+**Cierre:** el chequeo sube de 36/100 y `/contacto/` pide consentimiento.
+
+**Avanzado el 21-sep** (Ramón: "arreglemos la casa primero"), commit `fdae9c4` en `main`,
+verificado en vivo, **puntaje 36 → 73**:
+- **Hallazgo no relacionado pero más urgente, arreglado de paso:** el submit handler de
+  `/contacto/` referenciaba un campo de formulario que ya no existe (`'Servicio de interés'`),
+  así que cada envío lanzaba un `TypeError` antes del `fetch()` — el botón quedaba pegado en
+  "Enviando…" para siempre y el mensaje **nunca llegaba**. Confirmado en producción antes de
+  tocar nada (mismo bug en el sitio real). Arreglado en el mismo commit.
+- Checkbox de consentimiento requerido, sin premarcar, agregado al formulario (Art. 12).
+- El evento de conversión de GA4/Meta Pixel del formulario ya no dispara si no se marcó.
+- Página nueva `/privacidad/`, con los datos reales que procesa el sitio (formulario vía
+  web3forms.com, GA4, Meta Pixel), enlazada desde el footer de las 20 páginas del sitio.
+- **Sin cerrar del todo — a propósito, y dicho en la propia política:** GA4 y Meta Pixel
+  siguen cargando sin pedir consentimiento primero en *todas* las páginas (no solo el
+  formulario). Eso es un gestor de cookies real (CMP) gateando esos scripts — un trabajo más
+  grande, no hecho hoy. La política nueva lo declara como "aviso honesto", no lo esconde.
+**Resuelto el 21-sep, commit `362b88f` en `main`, verificado en vivo:** banner de cookies
+propio en las 20 páginas + `Layout.astro`. Google Consent Mode v2 arranca en `denied` en
+las 4 señales; Meta Pixel no se inicializa hasta que hay consentimiento (se envolvió en
+`__spindlelabInitMeta()`); se quitó el `<noscript>` del pixel (no se puede pedir
+consentimiento sin JS, tampoco se debía rastrear sin JS). Probado con `astro dev`: consent
+denegado por defecto confirmado en `dataLayer`, `fbq` no carga hasta "Aceptar", la decisión
+persiste entre recargas, responsive en escritorio y móvil.
+
+**El puntaje se queda en 73, y es correcto que así sea — no un problema:** `chequeo.js`
+solo reconoce gestores de cookies de terceros conocidos por nombre (Cookiebot, OneTrust,
+iubenda, etc.); uno propio, hecho a medida, no aparece en esa lista. El bloqueo real de
+GA4/Meta Pixel está verificado directamente en el navegador, no depende de que el chequeo
+lo reconozca. Si en algún momento se quiere que el número también suba, la vía es enseñarle
+a `chequeo.js` a reconocer el patrón `gtag('consent','default'` como señal — no construir
+un banner de un proveedor conocido solo para que el chequeo lo detecte.
+
+## E5 — Darle su política de privacidad a `verificaycumple` · *parte del laboratorio* · **cerrado 21-sep**
+El sitio da **36/100 en su propio chequeo** (verificado 10-sep). Trata muchos menos datos que
+`spindlelab.cl` —no pide correo ni registro— así que el riesgo legal es menor, pero es lo
+primero que va a probar cualquier visitante técnico, y hoy el sitio que pide publicar la
+política del Art. 14 ter no tiene la suya. Texto de abogado, publicación de acá.
+**Cierre:** `/api/chequeo?dominio=verificaycumple.pages.dev` sube de 36/100.
+
+**Resuelto el 21-sep:** página nueva en `/privacidad/`, estructurada contra los 12 puntos del
+Art. 14 ter, con contenido verificado contra el código real de `chequeo.js` antes de afirmar
+nada técnico (la función no tiene estado; no se guarda el dominio ni el resultado). Enlazada
+desde el footer. Commit `51e1988` en `laboratorio/ley-21719`, desplegado solo (E2 ya resuelto).
+**Verificado en vivo:** `puntaje` subió de **36 a 73**. El único ítem que sigue sin marcar
+("gestor de consentimiento reconocible") es honesto dejarlo así — el sitio no usa cookies ni
+rastreadores propios, instalar un banner de consentimiento sin nada que consentir sería un
+teatro, no una mejora real. Sin nueva fila de encargo por eso.
+
+## E12 — Declarar el costo de atención semanal del proyecto 01 · *Ramón* · **filtro 3**
+El filtro de entrada del laboratorio exige un costo de atención semanal estimado y dice *"si no
+se puede estimar, no entra"*. El proyecto 01 entró sin declararlo y ya lleva una semana
+consumiendo sesiones. Con 82 días de ventana y la agencia con prioridad (guardrail de §5), el
+número importa: es lo que decide si E9 se hace o no se hace.
+**Cierre:** hay un número en la fila del tablero.
+
+## E6 — Decidir el Figma de referencia (Community) · *Ramón*
+El archivo Community "Straightforward Brand Guidelines" sigue bloqueado: la API de Figma no da
+acceso sin duplicarlo antes a los borradores de la cuenta. **No confundir con el otro Figma:**
+el archivo nuevo de foto/calma ya se resolvió el 9-sep — Ramón vio el sitio real y se quedó con
+el rediseño desplegado, así que esa dirección está descartada y no se lleva a código.
+Este es el único de los pegados que no bloquea nada: hubo tres rediseños sin él. Recomendación:
+matarlo, o mandar una captura. Sin fecha de revisión sale del registro, por la regla del README.
+**Cierre:** una captura, un duplicado en los borradores, o una fila que diga que se descartó.
