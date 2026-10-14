@@ -1,8 +1,8 @@
 # E8 · El pase de voz del v3, antes y después
 
 14-oct-2026 · Diego · rama `claude/magical-franklin-ckfki2`, commits `3877e51`, `2dbaa09` y `eaa0c33`
-sobre `c17a788` · lista aplicada: `registro-aplicar.json` de Clara (141 filas «cambia») · nada se
-publicó: el push solo actualiza la vista previa del v3.
+sobre `c17a788`, y los arreglos de la QA (ronda 1) en `f0d911c` · lista aplicada: `registro-aplicar.json`
+de Clara (141 filas «cambia») · nada se publicó: el push solo actualiza la vista previa del v3.
 
 **Qué es.** Lo que cambió en el v3 con el pase de voz de Clara, página por página, para que lo leas
 junto con la vista previa. «Antes» es lo que el sitio mostraba hasta hoy y «Después» lo que muestra
@@ -11,6 +11,55 @@ ahora. Lo tachado sale y lo destacado en negrita entra. El «Por qué» es el de
 cifras.
 
 ---
+
+## Confirmaciones sobre texto ya aplicado
+
+Esto ya está en la vista previa. Clara lo escribió con lo que muestran los archivos, pero cada punto
+depende de algo que sabes tú. Si una respuesta es «no», el texto se cambia antes de publicar. El
+detalle está en `copy-secciones.md`, en el punto del anexo D que se cita.
+
+1. **La postura de Desarrollo web** (fila 983; «Lo que queda para ti», punto 4, y anexo D, punto 9).
+   La guía de la entrada dice ahora «Esto es para cuando no tienes sitio o hay que hacerlo de nuevo.
+   Si el tuyo funciona, te sirve más Visibilidad en IA», con el enlace a Visibilidad en IA. Es la
+   página de entrada de Ads, y el estudio de Marco dice que 2 de 2 cierres son de Desarrollo web.
+   ¿Mandamos a quien ya tiene un sitio que funciona a Visibilidad en IA? Si no, la guía queda solo con
+   su primera frase.
+2. **Contacto, el plazo de 24 horas** (fila 581; anexo D, punto 8). La confirmación del formulario dice
+   «Te escribimos dentro de 24 horas con tu mini-diagnóstico, o para conversar tu proyecto si partes de
+   cero». El plazo de 24 horas vale ahora también para quien no tiene sitio. Se apoya en el texto
+   anterior del JSON («con el mini-diagnóstico o los siguientes pasos»). Si a un proyecto nuevo no le
+   respondes en 24 horas, hay que decirlo.
+3. **Método, los accesos** (fila 713; anexo D, punto 7). Salió «Nunca pedimos accesos de
+   administrador», porque `onboarding-cliente.md` pide un usuario de CMS con rol de administrador en el
+   Acompañamiento con acceso directo. Ahora dice «Nos agregas como usuario, sin compartir tu
+   contraseña», que es cierto para Search Console y Analytics. Si quieres la promesa de antes, lo que
+   cambia es el onboarding, no el sitio.
+4. **El compromiso de los 3 meses en un Esencial solo de SEO técnico** (anexo D, punto 2). El Esencial
+   trabaja una capa, SEO técnico o visibilidad en IA (fila 836). Si es solo de SEO técnico, mueve una
+   parte de las señales del chequeo, no todas, y el compromiso igual promete más puntos a los 3 meses.
+   ¿Lo sostienes en ese caso?
+5. **Paid Media, «a diario»** (fila 1120; anexo D, punto 6). «Revisamos el rendimiento a diario con
+   agentes de IA» quedó igual dentro de la frase reescrita. La página lo dice en tres lugares, más «día
+   a día» en la FAQ, y viene de la página publicada. Confirma que es la práctica. E8 no toca esa
+   cadencia.
+6. **Redes, el cierre** (fila 1214; anexo D, punto 10). El h2 es ahora «Partimos por el sitio al que
+   llevan tus redes». Si prefieres otro ángulo, Clara lo cambia por uno que afirme algo y no repita la
+   entrada.
+7. **Diagnóstico, la fecha de la Ley 21.719** (anexo D, punto 12). La página dice que la ley entra en
+   plena vigencia el 1 de diciembre de 2026. Esa fecha sigue vigente al 14-oct, y la prórroga (boletín
+   18.623-07) está en tramitación. Hay que comprobarlo el día en que se publique el v3.
+8. **El title del índice de servicios, sin «· SpindleLab»** (fila 804; anexo D, punto 13). Va sin
+   sufijo a propósito: Google muestra el nombre del sitio aparte (og:site_name). Si lo quieres, va
+   «Servicios: SEO técnico, IA y desarrollo web · SpindleLab» (56 caracteres).
+9. **Una frase de la prueba de Trabajo que la QA propone afinar** (no se aplicó). Leída en voz alta,
+   «Lo que no se ve desde afuera, como si el aviso de cookies frena de verdad a los rastreadores, hoy no
+   suma ni resta» tropieza: «como si» se lee como comparación y pide «frenara». Javiera propone «por
+   ejemplo, si el aviso de cookies frena de verdad a los rastreadores», con el mismo sentido. Como es el
+   texto que aprobaste, Clara lo revisa y te lo propone. Mientras tanto queda como está.
+
+Los otros dos puntos de Desarrollo web del anexo D (que el sitio nombre varias veces el agente y la
+construcción con IA, y la fase 02, «Ajustamos hasta que el diseño te representa», frente a las rondas
+de revisión de las cotizaciones) son sobre texto que el pase no cambió.
 
 ## Lo que todavía decides tú
 
@@ -54,10 +103,13 @@ del estudio de Marco.
    1440, sin cambio).
 3. **La prueba va en Trabajo**, en la ficha de Verifica y Cumple, con la versión a: 36 el 9-sep, 73 el
    21-sep y 100 el 14-oct, con la forma de puntuar dicha. Es un segundo párrafo bajo la línea de la
-   ficha y no va al JSON-LD (`2dbaa09`).
+   ficha y no va al JSON-LD (`2dbaa09`). Alarga la ficha, y su vecina de fila (Combeau modelo) no:
+   los dos enlaces de esa fila ya no quedan a la misma altura. Cómo queda lo decide Lucía (ver
+   «Lo que se miró en capturas»).
 4. **El compromiso de los 3 meses entró**, con tus dos ajustes (el sitio que ya parte en 100 y el
    acceso a donde se configuran los robots) y sin decir qué pasa si no se cumple. Va en Visibilidad y
-   en Acompañamiento, como última fila de los planes (`3877e51`).
+   en Acompañamiento, como última fila de los planes (`3877e51`). «Chequeo gratis» lleva a la página
+   del chequeo, así que lo que el párrafo dice que compruebas tiene su enlace (`f0d911c`).
 5. **La meta de la home** quedó como la decidieron Simón y Clara: Gemini vuelve y la promesa de
    «antes que tu competencia» sale (`eaa0c33`). Junto a la constante del title quedó un comentario
    con la razón, para que nadie la devuelva a Claude.
@@ -110,7 +162,7 @@ Cambian 7.
 |---|---|---|---|
 | 979 | Sitios a medida con el SEO técnico puesto desde el primer commit. ~~Tres~~ planes, desde $390.000 + IVA. | Sitios a medida con el SEO técnico puesto desde el primer commit. **Cuatro** planes, desde $390.000 + IVA. | Dato: la página muestra cuatro planes, y la Desarrollo web publicada dice «4 packs». |
 | 982 | Valores en pesos, + IVA. El valor final se cierra ~~tras el diagnóstico gratuito.~~ | Valores en pesos, + IVA. El valor final se cierra **cuando conversamos tu proyecto.** | Glosario 2.2: el mini-diagnóstico no le pone precio a un sitio, y quien parte de cero no tiene sitio que diagnosticar. Vale para las dos copias de la nota. |
-| 983 | ~~A veces el problema no es lo que se audita: es lo que hay que reconstruir. Construimos el sitio para que las máquinas que hoy recomiendan tu negocio puedan leerlo, y te lo demostramos con el mismo chequeo sobre tu dominio.~~ | **Esto es para cuando no tienes sitio o hay que hacerlo de nuevo. Si el tuyo funciona, te sirve más Visibilidad en IA.** | Revisada en el paso 5. P86: repetía la línea cerrada del campo Desarrollo y el menú. Ahora dice para quién es la página y adónde va el que no la necesita. Puede llevar el enlace a Visibilidad en IA (§7:191). La postura la confirma Ramón (anexo D, 10). |
+| 983 | ~~A veces el problema no es lo que se audita: es lo que hay que reconstruir. Construimos el sitio para que las máquinas que hoy recomiendan tu negocio puedan leerlo, y te lo demostramos con el mismo chequeo sobre tu dominio.~~ | **Esto es para cuando no tienes sitio o hay que hacerlo de nuevo. Si el tuyo funciona, te sirve más Visibilidad en IA.** | Revisada en el paso 5. P86: repetía la línea cerrada del campo Desarrollo y el menú. Ahora dice para quién es la página y adónde va el que no la necesita. Puede llevar el enlace a Visibilidad en IA (§7:191). La postura la confirma Ramón (anexo D, 9). |
 | 985 | Legible para motores de ~~IA desde el primer commit:~~ datos estructurados, contenido citable e indexación. | Legible para motores de **IA:** datos estructurados, contenido citable e indexación. | A10: «desde el primer commit» ya va en la línea bajo el h1. La serie que queda es la única de la página. |
 | 986 | El mismo chequeo que corres gratis en la portada, pasado sobre tu sitio antes de entregarlo. | El mismo chequeo que corres gratis en la portada, pasado sobre tu sitio antes de entregarlo. **Te dejamos el puntaje por escrito y, si tenías otro sitio, también el de antes.** | Revisada en el paso 5. Encargo del 14-oct. El resultado de los cuatro planes, dicho una vez: el puntaje por escrito y, si había sitio, el de antes. La frase enlazada queda igual. La nueva no lleva «chequeo», por el corte de la plantilla. |
 | 1019 | Todo lo del Sitio ~~Completo, y más~~ | Todo lo del Sitio **Completo** | Corregida al unificar. Sin «y más», como los otros nueve planes del sitio. |
@@ -336,11 +388,20 @@ Cambian 4.
   que lleva el aviso de Raigal.
 - **Un enlace:** «Visibilidad en IA» en la guía de Desarrollo web lleva a su página, una vez, como pide
   la regla del texto corrido (spec §7). Clara lo dejó como opción; el texto visible es el de su fila.
+- **Otro enlace, de la ronda 1 de la QA** (`f0d911c`): «chequeo gratis» en el compromiso de Visibilidad
+  y de Acompañamiento lleva a `/v3/diagnostico/`, una vez por página, con el estilo de los otros
+  enlaces del texto corrido de esas páginas (`d-enl-svc`). Es la misma regla del texto corrido: el
+  párrafo termina «El chequeo es público, así que lo compruebas tú», y hasta ahora el único acceso
+  era el botón del cierre, más abajo. El texto no cambia.
+- **Dos espacios duros, de la misma ronda** (`f0d911c`): entre «tus» y «redes» en el h2 del cierre de
+  Redes, y entre «realmente» y «gratis?» en la primera pregunta de Contacto. Solo en lo visible: el
+  FAQPage de Contacto sigue con espacio normal.
 - **`v3-chequeo.js?v=3`** en sus dos referencias (home y Diagnóstico). No queda ningún `?v=2`.
 - **Comentarios al día** en las plantillas que decían «queda para Clara», «la final es de Clara»,
   «Redacción final: Clara» o «Redacción provisoria»: Método, Diagnóstico, Trabajo, Nosotros, el índice
   del blog, el índice de servicios y Desarrollo web dicen ahora qué decidió el pase y qué sigue en R2
-  o R4.
+  o R4. El de Diagnóstico sobre `v3-chequeo.js` dice también por qué subió a `?v=3` (fila 1444),
+  desde la ronda 1 de la QA.
 - `consts-v3.ts` no cambió: ninguna fila cae ahí.
 
 ## Comprobaciones
@@ -366,15 +427,33 @@ Se extrajo el sitio construido (las 21 rutas, a 1440) y se comparó con la extra
 | Chequeo con `/api/chequeo` simulado (respuesta guardada del 14-oct) | puntajes 95, 75, 50 y 20 con su veredicto; 0, 1 y 3 señales sin confirmar con su aviso; error con código del sitio (503) y de Cloudflare (530, con enlace a contacto); campo vacío; red caída. El botón dice «Revisando…» y queda deshabilitado mientras corre. «Pedir el diagnóstico» lleva a `/v3/contacto/?sitio=spindlelab.cl` y llena el campo del sitio. Home y Diagnóstico, a 390 y 1440 |
 
 **Lo que se miró en capturas** (390, 768 y 1440 de cada página con cambios):
-- **Palabra sola al final.** Ningún h1, «Siguiente» ni botón nuevo la tiene. Las cinco que hay a 390
-  ya estaban, con el mismo texto: el h1 «Acompañamiento mensual», tres «Siguiente» de servicios y
-  «Pedir el diagnóstico →» de Diagnóstico. En los h2 hay una nueva, a 1440: «Partimos por el sitio al
-  que llevan tus / redes» (cierre de Redes). Se resolvieron dos a 768 («Pongamos tu marca en redes» y
-  «Todo lo que ponemos a trabajar»). Contando los tres anchos, los h2 con palabra sola pasan de 27 a
-  26: el sistema equilibra el h1 (`text-wrap: balance`) pero no los h2.
+- **Palabra sola al final.** Ningún h1, «Siguiente» ni botón nuevo la tiene: son los mismos 22 casos
+  antes y después, con el mismo texto. Las cinco que hay a 390 ya estaban: el h1 «Acompañamiento
+  mensual», tres «Siguiente» de servicios y «Pedir el diagnóstico →» de Diagnóstico. En h2 y h3 el
+  pase dejó dos nuevas: «Partimos por el sitio al que llevan tus / redes» (cierre de Redes, a 1440) y
+  «¿El mini-diagnóstico es realmente / gratis?» (Contacto, a 390). La ronda 1 de la QA las cerró con un
+  espacio duro entre las dos últimas palabras. El pase resolvió además tres a 768: «Pongamos tu marca
+  en redes», «Todo lo que ponemos a trabajar» y «¿Se integra con el SEO y la visibilidad en IA?».
+  Contando h2 y h3 en las 21 rutas a 390, 768 y 1440: 55 en `c17a788`, 54 con el pase y 52 después del
+  arreglo, y las 52 ya estaban en `c17a788`. El sistema equilibra el h1 (`text-wrap: balance`) pero no
+  los h2 ni los h3.
 - **Lo nuevo se ve en el sistema:** el compromiso como fila de los planes, la nota de planes de
   Desarrollo web (cinco líneas a 390, en la etiqueta pegajosa) y la prueba en la ficha de Verifica y
-  Cumple, sin descuadrar el par con la ficha de Combeau modelo.
+  Cumple.
+- **Corrección (QA, ronda 1, defecto 4): la prueba sí descuadra la fila de Trabajo.** Hasta la ronda 1
+  este documento decía «sin descuadrar el par con la ficha de Combeau modelo», y no es así. La prueba
+  alarga solo la ficha de Verifica y Cumple, y los enlaces de las dos fichas de esa fila dejan de quedar
+  a la misma altura. Diferencia vertical entre los dos enlaces, medida en `/v3/trabajo/`:
+
+  | Ancho | `c17a788` | Ahora |
+  |---|---|---|
+  | 768 | 0 px | 202 px |
+  | 1024 | 27 px | 148 px |
+  | 1440 | 0 px | 185 px |
+
+  La alineación de antes era casual: a 1024 ya no calzaba, y ninguna regla de la spec la pide. No lo
+  toqué. Alinear los enlaces al pie de la ficha (columna flex con `margin-top: auto` en el enlace) o
+  aceptar el descuadre es una decisión de composición: la toma Lucía, y queda en el §7.
 - **«$690.000 con Visibilidad en IA»** no se parte a 390, ni en la home ni en el índice (una línea, sin
   desborde).
 - **El menú** a 768 × 720 muestra «Contacto» entero. A 1280 × 650 con el aviso de cookies abierto, el
@@ -386,4 +465,31 @@ Se extrajo el sitio construido (las 21 rutas, a 1440) y se comparó con la extra
 **Para la QA de Javiera:**
 - El compromiso mide unos 93 caracteres por línea a 1440, como las respuestas de las preguntas de la
   misma página (97). Las dos pasan los 68 del manual §05, y eso ya era así en las preguntas.
-- La palabra sola nueva del h2 de Redes, a 1440.
+- La palabra sola nueva del h2 de Redes, a 1440 (cerrada en la ronda 1, junto con la de Contacto).
+
+## La ronda 1 de la QA (Javiera, `acta-qa-E8.md`)
+
+Veredicto: aprobado con reparos, sin bloqueantes. Lo que pasó con cada defecto:
+
+| # | Defecto | Qué se hizo |
+|---|---|---|
+| 1 | Este documento no traía arriba lo que Clara deja para ti sobre texto ya aplicado, y la fila 983 citaba «anexo D, 10» | Arreglado: la sección «Confirmaciones sobre texto ya aplicado», arriba, y la cita corregida a «anexo D, 9» aquí y en `copy-secciones.md` |
+| 2 | «como si el aviso de cookies frena…» en la prueba de Trabajo tropieza en voz alta | Sin aplicar: es copy que aprobaste y la propuesta no está en `copy-secciones.md`. Va para Clara, y te queda avisado en el punto 9 de las confirmaciones |
+| 3 | «el chequeo gratis» del compromiso no tenía enlace | Arreglado (`f0d911c`) |
+| 4 | La prueba descuadra la fila de dos de Trabajo, y este documento decía que no | La afirmación está corregida, con las medidas, en «Lo que se miró en capturas». La composición la decide Lucía |
+| 5 | Dos palabras solas nuevas, en el h2 del cierre de Redes y en la primera pregunta de Contacto | Arreglado (`f0d911c`): un espacio duro en cada una |
+| 6 | El comentario sobre `v3-chequeo.js` en Diagnóstico seguía hablando del `?v=2` | Arreglado (`f0d911c`) |
+
+**Lo que se midió después del arreglo** (build de `f0d911c` contra el de `8417701`, que tiene el
+mismo sitio que `9b9d590`, el que revisó Javiera):
+
+| Comprobación | Resultado |
+|---|---|
+| HTML servido | Cambian 4 archivos: Visibilidad, Acompañamiento, Redes y Contacto. El comentario de Diagnóstico no se publica, y su HTML sale idéntico |
+| `extraer.mjs` y `comparar.mjs`, 21 rutas | 2 diferencias, los dos espacios duros. 0 en el head, los atributos y el JSON-LD; 0 zonas cerradas con otro hash; precios, `name` y `chq-*` iguales |
+| Enlaces en Visibilidad y Acompañamiento | uno más en cada página, «chequeo gratis» → `/v3/diagnostico/`, el único `d-enl-svc` hacia ahí; «Correr el chequeo» del cierre sigue igual. Con Tab, el foco es visible (contorno sólido de 2 px), a 390 y a 1440 |
+| FAQPage de Contacto | la pregunta sigue con espacio normal; la visible solo cambia ese espacio por uno duro |
+| Palabra sola en h2 y h3 | 54 antes del arreglo y 52 después, sin ninguna nueva |
+| Palabra sola en h1, botones y «Siguiente» | 22 y 22, las mismas |
+| `npm run verificar -- --prefijo /v3/ --sin-pildoras` | 21 páginas «Sin hallazgos» a 390, 768 y 1440 |
+| Desborde horizontal en lo arreglado | ninguno a 390, 768 y 1440 |
