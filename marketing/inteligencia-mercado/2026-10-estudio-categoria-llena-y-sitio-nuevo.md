@@ -145,7 +145,7 @@
 
 **M1 — El sitio nuevo se construye alrededor de UN caso verificable, no de seis servicios.**
 Hay dos clientes ganados (ambos Desarrollo Web, por referido) y sitios entregados. Pedir permiso a uno, correr el chequeo público antes/después, publicar el número y el link para que cualquiera lo reproduzca. La home pasa a ser: titular + **el caso** + el precio + el chequeo. Esto mueve a SpindleLab al cuadrante vacío con un solo activo, y es el único movimiento que ningún competidor puede copiar esta semana.
-*Si ninguno da permiso:* el caso es **spindlelab.cl mismo**, con el histórico que ya existe (36 → 73 en el chequeo tras el cross-link de Verifica y Cumple). Es menos vendedor que un cliente, y sigue siendo más que lo que muestra todo el campo.
+*Si ninguno da permiso:* el caso es **spindlelab.cl mismo**, con el histórico que ya existe: **36/100 el 10-sep → 100/100 hoy**, corrido en vivo el 14-oct contra `verifica.spindlelab.cl/api/chequeo?dominio=spindlelab.cl` (el host `verificaycumple.pages.dev` ya no sirve la API). Es un antes/después reproducible por cualquiera, con el instrumento propio. Es menos vendedor que un cliente, y sigue siendo más que lo que muestra todo el campo.
 
 **M2 — Cerrar la brecha entre lo que promete el mini-diagnóstico y lo que muestra la home.**
 El mini-diagnóstico cierra con "precios publicados en el sitio"; hoy la home no tiene precio y `/precios` responde **404**. Los precios existen, pero viven dos clics abajo, en las fichas de servicio. Abrir `/precios` (o subir el rango a la home) es trabajo de horas y toca el tramo donde Google Ads trajo CTR 16 % y 0 conversiones. **Es el arreglo de menor costo y mayor evidencia acumulada de todo el estudio** (tres fuentes distintas apuntaron al mismo cuello).

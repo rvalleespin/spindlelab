@@ -15,7 +15,7 @@
 
 ## Las tres decisiones que el estudio pone sobre la mesa
 
-1. **M1 — ¿Se pide permiso a uno de los dos clientes ganados para publicar un caso medido?** (antes/después con el chequeo público, link reproducible). Es el único movimiento que mueve a SpindleLab al cuadrante vacío y que nadie puede copiar esta semana. Alternativa sin permiso: el caso es spindlelab.cl mismo (36 → 73 en el chequeo).
+1. **M1 — ¿Se pide permiso a uno de los dos clientes ganados para publicar un caso medido?** (antes/después con el chequeo público, link reproducible). Es el único movimiento que mueve a SpindleLab al cuadrante vacío y que nadie puede copiar esta semana. Alternativa sin permiso: el caso es spindlelab.cl mismo — **36/100 el 10-sep → 100/100 verificado en vivo el 14-oct**.
 2. **M2 — ¿Se abre `/precios` y sube el rango a la home?** Trabajo de horas, toca el tramo donde Google Ads dio CTR 16,05 % y 0 conversiones, y cierra una promesa que el mini-diagnóstico ya está haciendo. **Es el arreglo de menor costo del estudio.**
 3. **M3 — ¿Cambia el eje del mensaje a "tu sitio, hecho para que la IA te cite"?** El AEO no se abandona: deja de ser el producto y pasa a ser el diferencial del producto que sí se vende. **Esto contradice la lectura vigente de que el pilar es AEO/GEO, así que es decisión de Ramón, no del estudio.**
 
