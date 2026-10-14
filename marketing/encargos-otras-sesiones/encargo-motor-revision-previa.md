@@ -80,6 +80,46 @@ en algo demostrable.
 **La fila que más vale es la segunda, y es la que nadie mide:** si el dueño no puede medir, no ve
 la mejora; y si no ve la mejora, no renueva. Esa fila es la que sostiene el Acompañamiento.
 
+## 4-bis. La vara de salida: **el problema que nadie ve** (precisión de Ramón, 14-oct)
+
+La tabla de arriba es **la capa 1: lo visible y automático**. Es lo que el chequeo gratis ya
+entrega, es correcto que se regale, y **muestra solo una parte**. Filtra candidatos. No gana una
+reunión, porque cualquiera puede obtener eso solo.
+
+Lo que gana la reunión es **la capa 2: el hallazgo que el dueño no podía ver**. Ni él, ni su
+desarrollador, ni la agencia que le cobra todos los meses. Esa es la vara con la que se mide este
+motor, y es distinta de "cuántas señales revisa".
+
+**Un hallazgo califica como capa 2 si cumple las cuatro:**
+
+1. **No se ve mirando el sitio.** Si el dueño abre su página y lo nota, no es capa 2.
+2. **Le cuesta plata o riesgo hoy**, y lo entiende en una frase, sin que nadie le explique qué es
+   AEO.
+3. **Lo puede comprobar él mismo** una vez que se le señala dónde mirar. Si no es verificable por
+   el prospecto, no se escribe.
+4. **Exige oficio**, no una llamada a una API. Si una herramienta gratis lo escupe, es capa 1.
+
+**Los que ya están probados en esta casa, como molde:**
+
+- **Trackers que disparan antes del consentimiento.** El caso awasi.com: 100/100 en el chequeo, y
+  al abrirlo en un navegador escribe cookies de Analytics, Ads, Meta y Reddit a los diez segundos,
+  sin ningún aviso. El dueño no lo ve. El chequeo tampoco: lee HTML y no ejecuta JavaScript.
+- **Scripts retrasados hasta el primer gesto** (WP Rocket y similares). En el tramo pasivo el
+  sitio parece limpio y no lo está. Dos de doce sitios chilenos cayeron ahí.
+- **El bloqueo en el borde:** el CDN o el firewall expulsa a los agentes de IA por nombre aunque
+  robots.txt los permita. Invisible desde el HTML.
+- **La medición que no mide.** Tiene analítica instalada, cree que está midiendo, y no hay ningún
+  evento de conversión: cuenta visitas y las confunde con clientes. Es el de mejor forma de los
+  cuatro, porque el dueño está convencido de lo contrario.
+- **La entidad partida:** el negocio se llama de tres maneras distintas entre su sitio, su ficha
+  de Google y su LinkedIn, así que ningún modelo consolida quién es.
+- **Un staging o subdominio viejo indexado**, compitiendo contra la página que sí vende.
+
+**Lo que esto le cambia al motor:** su trabajo no es producir el hallazgo invisible de forma
+automática — es **decir dónde mirar** para que la pasada a mano lo encuentre rápido. El motor es
+un **detector de sospecha**, no un calificador. Por eso la frontera del §2 no se mueve y por eso
+la sesión va local, con navegador.
+
 ## 5. El límite honesto, que se escribe antes de la primera línea de código
 
 Desde afuera y sin accesos, el motor detecta **ausencia y rotura**, no rendimiento. Puede decir
@@ -108,6 +148,7 @@ regalado es la única necesidad visible, el prospecto lo arregla solo y la venta
 | "Te ofrecemos la solución perfecta a tu problema" | "Esto se arregla. Lo hacemos nosotros y toma una semana." |
 | "Impulsa tu negocio con nuestras soluciones" | "Si quieres, lo dejamos andando." |
 | Lista de cinco hallazgos | Uno, el de mayor impacto, y la ruta completa visible detrás |
+| Un hallazgo que el dueño ya conocía | El que no podía ver, dicho de forma que lo compruebe en un minuto |
 
 El primero promete perfección y es castellano de folleto, el olor a IA más detectable que hay. El
 segundo afirma **capacidad y plazo**, que es más duro y es verificable. Registro plural (lo
@@ -121,8 +162,10 @@ entrega el negocio). Cargar `voz-spindlelab` antes de escribir cualquier salida.
    evidencia, y a qué línea de servicio pertenece.
 3. **El formato de salida que Emilia pueda usar** sin reescribir: hallazgo + evidencia + la
    frase de arreglo, en el tono de §6.
-4. **Las 10 primeras corridas sobre sitios reales**, con cuántas produjeron un hallazgo usable.
-   Si menos de la mitad lo produce, el motor no sirve todavía y se dice.
+4. **Las 10 primeras corridas sobre sitios reales**, contando no cuántas produjeron *un
+   hallazgo*, sino **cuántas produjeron un hallazgo de capa 2** — de los que el dueño no podía
+   ver solo (§4-bis). Esa es la vara. Si menos de la mitad lo produce, el motor todavía es un
+   chequeo con más pasos y se dice, en vez de seguir puliéndolo.
 
 ## 8. Lo que la sesión NO hace
 
