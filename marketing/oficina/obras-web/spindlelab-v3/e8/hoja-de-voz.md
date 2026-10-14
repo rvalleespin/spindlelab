@@ -15,6 +15,16 @@ y el nombre de Visibilidad (2.11, que decido con Simón).
 de Diego (paso 1, en paralelo) mueve líneas; los punteros, en general, no. Los conteos
 «visibles» cuentan el menú y el pie una sola vez.
 
+**Después de la migración (`28c5d85`, que entró antes que esta hoja).** Los punteros que cito
+siguen apuntando a lo mismo (comprobado uno por uno). Lo que esta hoja llama «tapado» describe
+`63f1e55`: con la migración, el JSON ya trae lo corregido y en `servicios-v3.json` no quedan
+«Equipo dedicado», «motor», «Cada día más» ni «acostumbrados», ni en `paginas-v3.json`
+«Ninguna herramienta» ni «Acá». Quedan, en hojas que nada lee: «Cada vez más»
+(`paginas-v3.json#/diagnostico/lead`), «sin compromiso» (`#/diagnostico/secciones/4/parrafos/0`,
+`#/contacto/lead`), «sin costo ni compromiso» (`#/contacto/secciones/2/parrafos/0`) y «Equipo
+dedicado» (`oferta-v3.json#/momentos/2/planes/2/d`). Ninguna se conecta sin pasar por esta
+hoja. La única viva es la FAQ de contacto (`paginas-v3.json#/contacto/faq/0/r`), de Clara P.
+
 ---
 
 ## 0 · Orden de autoridad y estados
