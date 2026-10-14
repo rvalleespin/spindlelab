@@ -117,7 +117,7 @@ const JS_DOM = `(() => {
 })()`;
 
 // Una corrida completa. Devuelve un objeto serializable. Guarda capturas JPEG en outDir.
-export async function sondear(url, { outDir, etiqueta, esperaA = 11000, esperaB = 9000 } = {}) {
+export async function sondear(url, { outDir, etiqueta, esperaA = 11000, esperaB = 9000, chile = false } = {}) {
   fs.mkdirSync(outDir, { recursive: true });
   const perfil = fs.mkdtempSync(path.join(os.tmpdir(), 'motor-chrome-'));
   const proxy = process.env.HTTPS_PROXY || process.env.https_proxy;
@@ -166,6 +166,11 @@ export async function sondear(url, { outDir, etiqueta, esperaA = 11000, esperaB 
     await cdp.send('Runtime.enable', {}, sessionId);
     await cdp.send('Target.setAutoAttach', { autoAttach: true, waitForDebuggerOnStart: true, flatten: true }, sessionId);
     await cdp.send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false }, sessionId);
+    if (chile) {   // zona horaria e idioma de un visitante chileno. La IP NO se puede cambiar desde aqui.
+      await cdp.send('Emulation.setTimezoneOverride', { timezoneId: 'America/Santiago' }, sessionId);
+      await cdp.send('Emulation.setLocaleOverride', { locale: 'es-CL' }, sessionId);
+      await cdp.send('Network.setExtraHTTPHeaders', { headers: { 'Accept-Language': 'es-CL,es;q=0.9' } }, sessionId);
+    }
 
     const foto = async (nombre) => {
       const f = await cdp.send('Page.captureScreenshot', { format: 'jpeg', quality: 55 }, sessionId);
