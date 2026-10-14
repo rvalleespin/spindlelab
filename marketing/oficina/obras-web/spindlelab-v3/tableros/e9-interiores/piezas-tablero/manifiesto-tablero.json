@@ -1,0 +1,145 @@
+{
+ "obra": "E9 · tablero de la compuerta (Lucía)",
+ "hecho_utc": "2026-10-14T22:45:32.740Z",
+ "regla": "Solo para el tablero. No van al sitio: si se elige la Dirección 1, Bruno las rehace con su generador (Tanda B).",
+ "fuentes": {
+  "robots": {
+   "url": "https://spindlelab.cl/robots.txt",
+   "crudo": "e9/piezas/crudo/2026-10-14/spindlelab.cl/robots.txt",
+   "sha256": "9413cbddbc337f562ce8db5d261a7bae87e1739452770f4f6bb3e6772c555c3e",
+   "capturado_chile": "2026-10-14T19:29:42-03:00"
+  },
+  "jsonld": {
+   "url": "https://spindlelab.cl/",
+   "crudo": "e9/piezas/crudo/2026-10-14/spindlelab.cl/jsonld.json (bloques[0], formateado con sangría de 2)",
+   "sha256": "5f8c99fc0305f6a1a812578830562be21258465f00279177881d63e983df5337",
+   "capturado_chile": "2026-10-14T19:29:43-03:00"
+  }
+ },
+ "escena": "e9/piezas/plantillas/escena.html (Bruno), sin hora en la barra del teléfono: la pantalla es el crudo abierto, no una captura con hora",
+ "variantes_de_bruno": [
+  {
+   "id": "l1-robots-spindlelab--petroleo",
+   "como": "node generar.mjs --sin-captura --solo=l1,l4 --campo=l1:petroleo,l4:brasa, corrido en una copia del generador en el scratchpad (no se tocó e9/piezas/)",
+   "oro_jpg_pct": 0,
+   "contraste_min": 5.03
+  },
+  {
+   "id": "l4-21-chequeos--brasa",
+   "como": "ídem",
+   "oro_png_pct": 0.044,
+   "oro_jpg_pct": 0.0051,
+   "contraste_min": 4.7
+  }
+ ],
+ "montajes": [
+  {
+   "id": "n1-robots-petroleo-ancho",
+   "archivo": "piezas-tablero/n1-robots-petroleo-ancho.jpg",
+   "ancho": 1600,
+   "alto": 669,
+   "campo": "petroleo",
+   "fondo": "#0f766e",
+   "oro_png": {
+    "pixeles": 0,
+    "total": 4281600,
+    "pct": 0,
+    "limpio": true,
+    "caja": null
+   },
+   "oro_jpg": {
+    "pixeles": 0,
+    "total": 1070400,
+    "pct": 0,
+    "limpio": true,
+    "caja": null
+   }
+  },
+  {
+   "id": "n1-robots-petroleo",
+   "archivo": "piezas-tablero/n1-robots-petroleo.jpg",
+   "ancho": 1600,
+   "alto": 1200,
+   "campo": "petroleo",
+   "fondo": "#0f766e",
+   "oro_png": {
+    "pixeles": 0,
+    "total": 7680000,
+    "pct": 0,
+    "limpio": true,
+    "caja": null
+   },
+   "oro_jpg": {
+    "pixeles": 0,
+    "total": 1920000,
+    "pct": 0,
+    "limpio": true,
+    "caja": null
+   }
+  },
+  {
+   "id": "n2-jsonld-petroleo",
+   "archivo": "piezas-tablero/n2-jsonld-petroleo.jpg",
+   "ancho": 1600,
+   "alto": 1200,
+   "campo": "petroleo",
+   "fondo": "#0f766e",
+   "oro_png": {
+    "pixeles": 60,
+    "total": 7680000,
+    "pct": 0.0008,
+    "limpio": true,
+    "caja": [
+     377,
+     602,
+     2047,
+     1718
+    ]
+   },
+   "oro_jpg": {
+    "pixeles": 7,
+    "total": 1920000,
+    "pct": 0.0004,
+    "limpio": true,
+    "caja": [
+     252,
+     297,
+     818,
+     841
+    ]
+   }
+  },
+  {
+   "id": "n2-jsonld-brasa",
+   "archivo": "piezas-tablero/n2-jsonld-brasa.jpg",
+   "ancho": 1600,
+   "alto": 1200,
+   "campo": "brasa",
+   "fondo": "#da3400",
+   "oro_png": {
+    "pixeles": 60,
+    "total": 7680000,
+    "pct": 0.0008,
+    "limpio": true,
+    "caja": [
+     377,
+     602,
+     2047,
+     1718
+    ]
+   },
+   "oro_jpg": {
+    "pixeles": 7,
+    "total": 1920000,
+    "pct": 0.0004,
+    "limpio": true,
+    "caja": [
+     252,
+     297,
+     818,
+     841
+    ]
+   }
+  }
+ ]
+}

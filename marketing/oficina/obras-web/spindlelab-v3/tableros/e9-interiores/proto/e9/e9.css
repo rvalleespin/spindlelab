@@ -1,0 +1,165 @@
+/* ============================================================================
+   e9.css — lo nuevo de E9 para el tablero de la compuerta (Lucía, 14-oct-2026)
+
+   Se carga DESPUÉS de las hojas del sitio (dist/_astro/*.css, copia del build de 72045f8).
+   Solo composición e imagen: el copy es el aprobado en E8, tal cual sale del build.
+   Todo lleva prefijo e9- para que se vea qué es nuevo. Tokens: los de driftime.css.
+   Dos direcciones: html[data-dir="d1"] «Pantallas» y html[data-dir="d2"] «Lectura de máquina».
+   ============================================================================ */
+
+/* ------------------------------------------------------------ galería entre secciones */
+/* Ritmo de los casos de driftime (lock §6.4): una galería entre sección y sección, no una
+   sola al medio. 180 px arriba, el mismo aire que .d-sec. */
+.e9-gal { padding: 180px var(--d-m) 0; display: flex; flex-direction: column; gap: var(--d-g); }
+.e9-gal__cab { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 12px; }
+
+/* FILA DE ALTO COMÚN, cada pieza en su proporción (manual §07: «en las filas, cada pieza en su
+   proporción y todas del mismo alto»). El mismo cálculo que .d-fila--hero: el alto sale del
+   ancho de la fila menos los huecos, dividido por la suma de las proporciones. --n piezas,
+   --suma = suma de los --r. Sin recorte: cada imagen trae su --r exacto. */
+.e9-fila { display: flex; gap: var(--d-g); align-items: flex-end; container-type: inline-size; }
+.e9-fila > .d-pieza { flex: none; aspect-ratio: var(--r); width: auto;
+  height: calc((100cqw - (var(--n, 1) - 1) * var(--d-g) - 1px) / var(--suma, 1)); }
+/* Ancho de la fila en columnas de 12 (la grilla de .d-sec y .d-galeria). «1 + vacío»: la
+   pieza a la izquierda y negro a la derecha, como las filas 04 y 08 del caso CeHDI. */
+.e9-fila--10 { width: calc((100% + var(--d-g)) * 10 / 12 - var(--d-g)); }
+.e9-fila--8 { width: calc((100% + var(--d-g)) * 8 / 12 - var(--d-g)); }
+.e9-fila--7 { width: calc((100% + var(--d-g)) * 7 / 12 - var(--d-g)); }
+.e9-fila--4 { width: calc((100% + var(--d-g)) * 4 / 12 - var(--d-g)); }
+.e9-fila--der { margin-left: auto; }
+
+/* Cabecera a sangre con una pieza que no es 2,39: respeta su proporción (sin recorte). */
+.e9-sangre-r { aspect-ratio: var(--r); }
+
+/* ------------------------------------------------------------ prueba: el compromiso */
+/* El texto aprobado (servicios-v3.json, Acompañamiento), partido en sus tres partes en el
+   orden en que está escrito. Las palabras no cambian; lo único que se agrega son los tres
+   rótulos y el 600 en una frase por parte (como «el momento en 600» de los campos). */
+.e9-comp { margin: 120px var(--d-m) 0; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 5fr) minmax(0, 4fr); gap: var(--d-g) 40px; padding: 28px 0 34px; border-top: 1px solid var(--d-papel); border-bottom: 1px solid var(--d-filete); }
+.e9-comp__parte { display: flex; flex-direction: column; gap: 12px; }
+.e9-comp__rot { margin: 0; font-size: 0.9375rem; font-weight: 500; color: var(--d-gris); }
+.e9-comp__txt { margin: 0; font-size: 1.25rem; line-height: 1.5; color: var(--d-papel); }
+.e9-comp__txt b { font-weight: 600; }
+.e9-comp__txt a { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+/* Dirección 2: el compromiso es una banda del campo (petróleo), de margen a margen. Texto y
+   rótulos en el color del texto del campo al 100 % (manual §04: brasa y petróleo no tienen
+   margen para opacidad ni para gris). */
+.e9-comp--banda { margin: 120px 0 0; padding: 56px var(--d-m) 64px; border: 0; background: var(--d-petroleo); color: var(--d-petroleo-t); }
+.e9-comp--banda .e9-comp__rot, .e9-comp--banda .e9-comp__txt { color: var(--d-petroleo-t); }
+.e9-comp--banda .e9-comp__parte { border-top: 1px solid color-mix(in srgb, currentColor 32%, transparent); padding-top: 14px; }
+@media (max-width: 767px) {
+  .e9-comp { grid-template-columns: 1fr; gap: 26px; margin-top: 90px; }
+  .e9-comp--banda { margin-top: 90px; padding: 44px var(--d-m) 48px; }
+  .e9-comp__txt { font-size: 1.125rem; }
+}
+
+/* ------------------------------------------------------------ sección en tira */
+/* «Así se ve un mes tipo» / «Cinco fases»: el título arriba a todo el ancho y los pasos en
+   columnas. Corta la serie de «etiqueta a la izquierda, lista a la derecha» (lo que Ramón
+   marcó como tabla de texto). */
+.e9-tira { grid-template-columns: 1fr; }
+.e9-tira .d-eti { position: static; }
+.e9-tira .d-filas { display: grid; grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr)); gap: 0 var(--d-g); }
+.e9-tira .d-filas > * { border-bottom: 1px solid var(--d-filete); }
+.e9-tira .d-fase { grid-template-columns: 1fr; gap: 10px; align-content: start; padding: 22px 0 28px; }
+.e9-tira .d-fase .d-fase__n { font-size: 1.875rem; font-weight: 500; color: var(--d-papel); padding-top: 0; letter-spacing: -0.02em; }
+.e9-tira .d-fase .d-cuerpo { grid-column: 1; }
+@media (max-width: 1023px) { .e9-tira .d-filas { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 767px) { .e9-tira .d-filas { grid-template-columns: 1fr; } .e9-tira .d-filas > * { border-bottom: 0; } .e9-tira .d-filas > *:last-child { border-bottom: 1px solid var(--d-filete); } }
+
+/* ------------------------------------------------------------ celular */
+@media (max-width: 767px) {
+  .e9-gal { padding-top: 110px; }
+  .e9-gal__cab { flex-direction: column; align-items: flex-start; }
+  .e9-fila--10, .e9-fila--8, .e9-fila--7, .e9-fila--4 { width: auto; }
+  .e9-fila--der { margin-left: 0; }
+  /* Una pieza sola: a todo el ancho, en su proporción. */
+  .e9-fila > .d-pieza:only-child { width: 100%; height: auto; }
+}
+
+/* ============================================================ DIRECCIÓN 1 · PANTALLAS */
+/* Celular: las filas de dos o más son carrusel con la siguiente asomándose (lock §7, la
+   regla de .d-fila), alto común 66 vw: una pieza 4:3 cabe entera al detenerse. */
+@media (max-width: 767px) {
+  [data-dir="d1"] .e9-fila:has(> .d-pieza + .d-pieza) { overflow-x: auto; scroll-snap-type: x mandatory; margin-right: calc(var(--d-m) * -1); padding-right: var(--d-m); scrollbar-width: none; container-type: normal; }
+  [data-dir="d1"] .e9-fila:has(> .d-pieza + .d-pieza)::-webkit-scrollbar { display: none; }
+  [data-dir="d1"] .e9-fila:has(> .d-pieza + .d-pieza) > .d-pieza { height: 66vw; scroll-snap-align: start; }
+}
+
+/* ============================================================ DIRECCIÓN 2 · LECTURA DE MÁQUINA */
+/* La cabecera del servicio es una banda del color de su campo (cierra spec §7:195). h1 de
+   60 px en 500, sin display ni mayúsculas (spec §2: una interna tiene cero display). Todo el
+   texto de la banda en el color del texto del campo al 100 %. */
+.e9-banda { color: var(--banda-t); background: var(--banda); }
+.e9-banda--petroleo { --banda: var(--d-petroleo); --banda-t: var(--d-petroleo-t); }
+.e9-banda--brasa { --banda: var(--d-brasa); --banda-t: var(--d-brasa-t); }
+.e9-banda .d-cab { padding-top: min(30vh, 260px); padding-bottom: 64px; }
+.e9-banda .d-miga, .e9-banda .d-cab .d-linea { color: var(--banda-t); }
+.e9-banda .d-cab .d-linea { max-width: 620px; }
+/* Celular: con el relleno de escritorio la banda ocupaba el 72 % de la pantalla (610 px a
+   390 × 844) solo con la cabecera; baja al de la cabecera de Trabajo en celular (112 px). */
+@media (max-width: 767px) { .e9-banda .d-cab { padding-top: 112px; padding-bottom: 40px; } }
+
+/* Texto | pieza grande: la entrada a la izquierda (5/12) y una lectura de máquina grande a la
+   derecha (7/12), en lugar de la foto a sangre. */
+.e9-par { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--d-g); padding: 56px var(--d-m) 0; align-items: start; }
+.e9-par__txt { display: flex; flex-direction: column; gap: 24px; padding-top: 6px; }
+.e9-par__txt .d-nota-card { max-width: 360px; }
+.e9-par .d-pieza { aspect-ratio: var(--r); }
+@media (max-width: 767px) { .e9-par { grid-template-columns: 1fr; gap: 28px; padding-top: 40px; } }
+
+/* La pieza grande dentro de una lista (al lado de la línea que prueba). */
+.e9-en-lista { padding: 22px 0; }
+.e9-en-lista .d-pieza { aspect-ratio: var(--r); }
+
+/* Celular: nada de carrusel; las piezas grandes se apilan a todo el ancho. */
+@media (max-width: 767px) {
+  [data-dir="d2"] .e9-fila { flex-direction: column; align-items: stretch; container-type: normal; }
+  [data-dir="d2"] .e9-fila > .d-pieza { width: 100%; height: auto; }
+}
+
+/* ------------------------------------------------------------ prueba: Trabajo */
+/* 36 → 73 → 100 como cifras fechadas, en 500 (sin display). Solo en la ficha de Verifica. */
+.e9-cifras { list-style: none; margin: 4px 0 2px; padding: 0; display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 0 28px; }
+.e9-cifras li { display: flex; flex-direction: column; gap: 4px; position: relative; }
+.e9-cifras li + li::before { content: "→"; position: absolute; left: -22px; top: 0.55em; color: var(--d-gris); font-size: 1rem; }
+.e9-cifra { font-size: 2.75rem; line-height: 1; font-weight: 500; letter-spacing: -0.02em; color: var(--d-papel); font-variant-numeric: tabular-nums; }
+.e9-cifra__fecha { font-size: 0.9375rem; font-weight: 500; color: var(--d-papel); }
+.e9-cifra__nota { font-size: 0.8125rem; line-height: 1.4; color: var(--d-gris); max-width: 11em; }
+@media (max-width: 767px) { .e9-cifras { gap: 0 24px; } .e9-cifra { font-size: 2.25rem; } }
+/* La fila vuelve a cuadrar: en cada ficha de la fila, el enlace va al fondo, así los dos
+   quedan a la misma altura aunque un texto sea más largo. */
+.e9-cuadra .d-pie-trab { height: 100%; }
+.e9-cuadra .d-pie-trab__txt { flex: 1; }
+.e9-cuadra .d-pie-trab__enlace { margin-top: auto; }
+
+/* ------------------------------------------------------------ prueba: Diagnóstico */
+/* La metodología dibujada: tres bloques con ancho 30/40/30 y sus 21 chequeos con su peso
+   (títulos y pesos literales de /api/chequeo, crudo del 14-oct). Va donde estaba la foto a
+   sangre del hilo (brief §3). */
+.e9-metodo { margin: 0 var(--d-m); padding: 30px 0 0; border-top: 1px solid var(--d-filete); }
+.e9-metodo__nota { margin: 0 0 22px; font-size: 1.125rem; line-height: 1.5; color: var(--d-gris); }
+.e9-metodo__nota b { color: var(--d-papel); font-weight: 600; }
+.e9-metodo__cols { display: flex; gap: var(--d-g); }
+.e9-metodo__bloque { flex: var(--peso) 1 0; min-width: 0; }
+.e9-metodo__barra { height: 8px; border-radius: 2px; background: var(--d-papel); margin-bottom: 18px; }
+.e9-metodo__n { display: block; font-size: 3.75rem; line-height: 1; font-weight: 500; letter-spacing: -0.02em; }
+.e9-metodo__q { margin: 10px 0 14px; font-size: 1.5rem; line-height: 1.3; font-weight: 500; }
+.e9-metodo__lista { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--d-filete); }
+.e9-metodo__lista li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--d-filete); font-size: 0.9375rem; line-height: 1.4; color: var(--d-gris); }
+.e9-metodo__lista li span { color: var(--d-papel); font-variant-numeric: tabular-nums; font-weight: 500; }
+@media (max-width: 767px) {
+  .e9-metodo__cols { flex-direction: column; gap: 40px; }
+  .e9-metodo__bloque { flex: none; }
+  /* En celular el ancho del bloque ya no dice nada: la barra conserva la proporción. */
+  .e9-metodo__barra { width: calc(var(--peso) * 1% / 0.4); max-width: 100%; }
+  .e9-metodo__n { font-size: 3rem; }
+}
+
+/* ------------------------------------------------------------ panel «Espera tu OK» */
+.e9-ok { padding: 22px 0; }
+.e9-ok .d-pieza { aspect-ratio: var(--r); outline: 2px dashed var(--d-papel); outline-offset: 6px; }
+
+/* La foto a sangre lleva etiqueta en E9 (es obra o lectura, no ambiente): necesita su caja. */
+.d-sangre { position: relative; }
+@media (max-width: 767px) { .e9-sangre-r { aspect-ratio: var(--r-cel, 4 / 3); } }
