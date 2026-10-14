@@ -19,8 +19,15 @@ inmobiliarias de Maps (38) y la guía de DiarioEmprende (53).
 
 Las 86 están en `virgenes-cruce-5oct.csv` con su correo y su CSV de origen.
 
-Sumando lo de antes: de los 493 del pipeline completo, quedan **86 + 25 clínicas sin
-medir = 111 leads vírgenes**. El resto está contactado, cerrado o descartado.
+Sumando lo de antes: de los 493 del pipeline completo, quedan **86 vírgenes sin medir**. El
+resto está contactado, cerrado o descartado.
+
+> ⚠️ **Corregido el 14-oct.** Este párrafo decía "86 + 25 clínicas sin medir = 111". Las clínicas
+> **ya estaban medidas**: las 39 de `clinicas-sin-contactar-5oct.csv` tienen resultado desde antes
+> de este cruce (se cerraron a las 10:31 y el cruce es de las 11:23). Lo que había eran **25 a 27
+> clínicas medidas y sin escribir**, de las cuales 7 tienen hallazgo y son las únicas usables. El
+> "sin medir" fue un error de palabra mío que después repetí en el traspaso de turismo y le
+> repetí a Ramón, que pidió "medir las 25 clínicas" por esa razón. No había nada que medir.
 
 ## La merma que hay que descontar
 
@@ -39,7 +46,8 @@ el cuello de botella no es la lista: cada primer contacto necesita abrir el siti
 navegador real con la sonda, dos tramos, y leer la salida. Hoy se midieron 28 sitios y eso
 ocupó casi toda la sesión.
 
-Con 111 vírgenes ya en mano hay cuatro o cinco sesiones de medición por delante. Sacar más
+Con 86 vírgenes sin medir en mano (la cifra de 111 de la primera versión era errónea, ver arriba)
+hay tres o cuatro sesiones de medición por delante. Sacar más
 leads ahora solo engorda una cola que no se alcanza a procesar. Y cuando se vuelva a Apollo,
 conviene pedir un filtro que reduzca esa merma del 69% —empresas con sitio propio
 verificado, no un correo genérico de Gmail— en vez de volumen.

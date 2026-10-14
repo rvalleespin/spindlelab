@@ -118,7 +118,7 @@ Así los dos lotes no se mezclan en el filtro.
 ## Lo que esto dice del embudo
 
 El cuello de botella sigue siendo la medición, no la lista. Pero este lote agrega un dato que
-cambia la cuenta: **en abogados, la merma es del 80%, no del 69%.** De los 111 vírgenes que
+cambia la cuenta: **en abogados, la merma es del 80%, no del 69%.** De los 86 vírgenes que
 quedaban, los 51 de abogados rinden menos por lead que el resto.
 
 Si el próximo lote de abogados rinde parecido, conviene mover el esfuerzo a un vertical donde el

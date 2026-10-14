@@ -120,7 +120,8 @@ Antes de escribir, en este orden:
   los **10 de abogados de hoy, sin estrella** (mandar después). El filtro los separa solo.
 - **35 vírgenes** en `virgenes-cruce-5oct.csv`: estos 21 de turismo más 14 de otros rubros
   (3 abogados sueltos, 3 de salud, 2 contadores, 6 del lote de expansión).
-- **25 clínicas sin medir** en `ventas/clinicas-sin-contactar-5oct.csv`.
+- **Clínicas:** NO hay 25 sin medir (error de este traspaso, corregido el 14-oct). Las 39 de
+  `ventas/clinicas-sin-contactar-5oct.csv` ya están medidas; 7 quedaron con hallazgo y sin escribir.
 - **14 abogados con sitio vivo sin sondear**, en `ventas/abogados-medidos-5oct.csv`. Antes de
   sondearlos, pasarles el filtro del punto 3.
 
