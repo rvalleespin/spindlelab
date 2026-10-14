@@ -2,13 +2,15 @@
 
 14-oct-2026 · Clara · base `6bf84fa` (el sitio es el de `28c5d85` más `a70e945`, que cambió Gemini por
 Claude en la meta de la home) · contrato: el plan E8 aprobado por Ramón, pasos 4 a 6, y el encargo de la
-oferta del 14-oct que Ramón pidió incluir.
+oferta del 14-oct que Ramón pidió incluir. Al día con las decisiones de Ramón del 14-oct (tanda 3,
+sección siguiente).
 
 **Qué es.** El entregable de Clara para tu lectura, ya revisado. Trae todo lo que el pase de voz
 propone cambiar en el v3, página por página, con su razón. El crítico de voz y Simón lo revisaron en
 contexto limpio (paso 5), y yo lo cerré con sus objeciones (paso 6). **No se aplicó nada:** ni
 `spindlelab-astro/` ni los JSON de datos cambiaron. Lo aplica Diego en el paso 7, ranura por ranura,
-desde `scratchpad/e8/registro-final.json`.
+desde `scratchpad/e8/registro-aplicar.json`, que es `registro-final.json` con tus decisiones del
+14-oct resueltas y cada fila llevada al texto exacto del archivo («Para Diego», al final).
 
 **Cómo se lee.** «Antes» es lo que el sitio muestra hoy y «Después» es la propuesta. El número es el
 de la ranura en el inventario; «nueva» es un texto que hoy no existe. **Simón** marca una ranura de
@@ -19,73 +21,95 @@ traen solo lo que cambia. Lo que se mantiene está en el registro, cada ranura c
 
 ---
 
-## Lo que queda para ti
+## Decisiones de Ramón (14-oct)
 
-En orden de peso. El detalle está en la sección que se cita.
+Las tomaste sobre la versión de este documento de `c17a788`. Ya están en la lista que aplica Diego
+(`scratchpad/e8/registro-aplicar.json`).
 
-1. **R2** (anexo A). Si se promete medir menciones en IA en los planes pagados, y si el informe del
-   Acompañamiento Esencial es mensual o quincenal. El anexo A trae el texto de cada lugar para cada
-   respuesta.
-2. **El compromiso de los 3 meses** (Visibilidad y Acompañamiento). Es una promesa comercial nueva del
-   encargo de Marco y va como un solo párrafo bajo los planes, el mismo en las dos páginas salvo el nombre
-   de los planes:
-
-   > En el Esencial y en el Pro nos comprometemos a que, a los 3 meses (el mínimo del plan), tu sitio
-   > saque en el chequeo gratis más puntos que el día en que partimos, contando las mismas señales, y a
-   > que los robots de ChatGPT, Claude y Perplexity puedan entrar a él. Necesitamos a alguien de tu
-   > equipo que apruebe los cambios que proponemos; si no se publican, el puntaje no se mueve. El
-   > chequeo es público, así que lo compruebas tú.
-
-   En Visibilidad dice «En el Acompañamiento Esencial y en el Pro», como sus tarjetas. Si no lo
-   confirmas, no va en ninguna de las dos páginas. Antes de confirmarlo, mira los casos borde del
-   anexo D, punto 2: un sitio que ya parte cerca de 100, un Esencial solo de SEO técnico y las reglas
-   de bots de Cloudflare.
-3. **La prueba en Trabajo** (ficha de Verifica y Cumple). Es copy nuevo con cifras públicas:
+1. **El bloque Resultado · Plazo · Condición va una vez por página**, como quedó: el plazo como punto de
+   cada tarjeta, la condición y el resultado común de Desarrollo web una vez, y el compromiso de los 3
+   meses en un párrafo.
+2. **El mini-diagnóstico le pregunta a ChatGPT, Gemini y Perplexity** («Sí, a los tres»). La guía de
+   Diagnóstico (#617), su paso 02 (#639) y el resultado del chequeo (#1440) se quedan como están hoy, sin
+   cambio. Las versiones b salen de la lista. La FAQ de Diagnóstico (R7, anexo C) sigue siendo cierta
+   como está. Para que lo siga siendo, cada mini-diagnóstico tiene que correr esas preguntas, y hoy la
+   skill permite no hacerlo (anexo D, punto 4). Eso queda para el troncal, fuera de E8.
+3. **La prueba va en Trabajo, en la ficha de Verifica y Cumple**, con la versión a y la vara del chequeo
+   de la Ley 21.719, que es lo que vende Verifica:
 
    > El primer sitio que revisó fue el nuestro. spindlelab.cl sacó 36 de 100 el 9 de septiembre de 2026
    > y, con lo que encontró ya arreglado, 73 el 21 de septiembre. El 14 de octubre, ya con otra forma de
    > puntuar, sacó 100. Lo que no se ve desde afuera, como si el aviso de cookies frena de verdad a los
    > rastreadores, hoy no suma ni resta.
 
-   La medición es la del chequeo de la Ley 21.719, no la del hero. El 36 y el 73 ya los publicó la página
-   de LinkedIn el 21-sep. Si prefieres no reusarlos (corpus §8), hay una versión solo con el 100 en el
-   anexo D, punto 1. Antes de publicar el v3 hay que volver a correr el chequeo de la ley sobre la vista
-   previa.
-4. **Si cada mini-diagnóstico le pregunta de verdad a ChatGPT, Gemini y Perplexity** (anexo D, punto 4).
-   El sitio lo promete en tres lugares decididos: la guía de Diagnóstico (#617), su paso 02 (#639) y el
-   resultado del chequeo (#1440). Ninguno de los tres mini-diagnósticos archivados trae una respuesta
-   real de un motor. Si lo confirmas, los tres se quedan como están. Si no contestas, va la versión b de
-   cada uno (en las tablas), que no promete la pregunta. Gemini es correcto en las dos versiones.
-5. **La meta de la home revierte `a70e945`.** El commit de hoy cambió Gemini por Claude porque «Google-Extended
-   es de entrenamiento». La documentación de Google dice que también controla el grounding de Gemini
-   Apps. Simón vetó el mismo cambio en la tarjeta de Visibilidad (#13, #782), y la meta vuelve a Gemini
-   con la promesa arreglada (#50): «…para que ChatGPT, Gemini y Perplexity puedan citarte». Si prefieres
-   conservar `a70e945`, va la misma frase con Claude, y entonces Claude va también en #13 y #782, para
-   que la home tenga una sola trinca.
-6. **Un encargo aparte, fuera de E8: Google-Extended** (Simón; anexo D, punto 5). El chequeo
+   Antes de publicar el v3 hay que volver a correr el chequeo de la ley sobre la vista previa. La frase
+   lleva esa fecha y ese puntaje, y si no da 100, se corrige.
+4. **El compromiso de los 3 meses entra**, con tus dos ajustes y sin decir qué pasa si no se cumple. Es
+   el mismo párrafo en Visibilidad y en Acompañamiento, bajo los planes, salvo el nombre de los planes.
+   En Acompañamiento:
+
+   > En el Esencial y en el Pro nos comprometemos a que, a los 3 meses (el mínimo del plan), tu sitio
+   > saque en el chequeo gratis más puntos que el día en que partimos, contando las mismas señales, y a
+   > que los robots de ChatGPT, Claude y Perplexity puedan entrar a él. Si tu sitio ya parte en 100, el
+   > compromiso es que no baje y que cerremos lo que encontremos pendiente. Necesitamos a alguien de tu
+   > equipo que apruebe los cambios, y acceso a donde se configura qué robots entran, como Cloudflare u
+   > otro CDN. El chequeo es público, así que lo compruebas tú.
+
+   En Visibilidad empieza «En el Acompañamiento Esencial y en el Pro…», como sus tarjetas. Qué cambió
+   respecto del párrafo que leíste:
+   - **El sitio que ya parte en 100.** «Lo que encontremos» acota tu «lo que falte» a lo que anotamos
+     nosotros sobre el sitio, que es lo que se cierra con tu aprobación y los accesos. No abre una
+     promesa sobre lo que publican otros, ni una cita en un modelo. Para sostenerlo, el informe de
+     partida que pide Simón (anexo D, punto 2) tiene que anotar también lo pendiente, además de la
+     fecha y la lista de señales.
+   - **El acceso a los robots.** El chequeo no ve las reglas de bots que Cloudflare aplica en el borde
+     (`chequeo.js:871-875` y `:900-902`), así que sin ese acceso «puedan entrar» no depende de
+     nosotros. «Donde se configura» vale también para un sitio sin CDN, que lo hace en su robots.txt.
+   - **Sale «si no se publican, el puntaje no se mueve».** Con dos condiciones la frase se alargaba, y
+     se leía como la salida para cuando no se cumple, que pediste no decir. Sale también «que
+     proponemos», que no sumaba.
+   - Se queda lo que revisaron el crítico y Simón: el mínimo entre paréntesis (Visibilidad no lo nombra
+     en otra parte), «contando las mismas señales» y Claude en vez de Gemini, porque es acceso y no una
+     pregunta (hoja 2.12).
+5. **La meta de la home queda como la decidieron Simón y Clara (#50):** «Auditamos tu sitio y tu
+   presencia en IA para que ChatGPT, Gemini y Perplexity puedan citarte. Diagnóstico gratis en 24
+   horas.» Revierte el motor de `a70e945`, con la razón de la documentación de Google sobre
+   Google-Extended y el grounding de Gemini.
+6. **Lo que no se aplica todavía:**
+   - R2: las 53 ranuras quedan como están, y la frase del informe al final del compromiso (anexo A) no
+     entra;
+   - R4 y R7;
+   - los datos que faltan: el plazo de la Auditoría + Visibilidad en IA (su tarjeta va sin punto de
+     plazo) y desde cuándo corren las ~2 semanas de la Auditoría de Visibilidad.
+
+**Cómo queda la lista.** Son 886 filas: 141 cambian, 690 se mantienen, 54 esperan R2, 1 es un dato a
+verificar y ninguna queda para ti. El texto nuevo del compromiso no trae palabras de cadencia, rayas
+ni «acá», así que las reglas duras del resumen dan lo mismo.
+
+---
+
+## Lo que queda para ti
+
+En orden de peso. El detalle está en la sección que se cita.
+
+1. **R2** (anexo A). Si se promete medir menciones en IA en los planes pagados, y si el informe del
+   Acompañamiento Esencial es mensual o quincenal. El anexo A trae el texto de cada lugar para cada
+   respuesta, también la frase del informe que cierra el párrafo del compromiso.
+2. **Un encargo aparte, fuera de E8: Google-Extended** (Simón; anexo D, punto 5). El chequeo
    (`chequeo.js`), el artículo de los 21 chequeos y la regla del 8-sep tratan a Google-Extended como
    entrenamiento puro. Hay que recategorizarlo, y eso mueve puntajes. El artículo «Cómo aparecer en
    ChatGPT» tiene el error contrario. En E8 solo se acota la frase de Diagnóstico (#623) para que no
    diga nada falso.
-7. **El bloque Resultado · Plazo · Condición no va como plantilla en cada tarjeta.** El crítico lo
-   objetó y le doy la razón (sección «Revisión»). Lo que el encargo pide entra igual, de otra forma:
-   - el plazo sigue como punto de cada tarjeta;
-   - la condición va una vez por página;
-   - el resultado común de Desarrollo web va una vez;
-   - el compromiso de los 3 meses va en un párrafo.
-
-   Si lo quieres por tarjeta, la versión anterior está en el registro, en el motivo de cada fila que no
-   se agrega.
-8. **Datos que faltan** (anexo D, punto 3):
+3. **Datos que faltan** (anexo D, punto 3):
    - el plazo de la Auditoría + Visibilidad en IA;
    - desde cuándo corren las ~2 semanas de la Auditoría de Visibilidad.
-9. **La postura de Desarrollo web** (anexo D, punto 9). La guía nueva le dice a quien ya tiene un sitio
+4. **La postura de Desarrollo web** (anexo D, punto 9). La guía nueva le dice a quien ya tiene un sitio
    que funciona que le sirve más Visibilidad en IA. Es la página de entrada de Ads, y el estudio de Marco
    dice que 2 de 2 cierres son de Desarrollo web.
-10. **El estudio de Marco necesita una corrección** (anexo D, punto 11). Dice que el 36 → 100 es «con el
-    mismo instrumento que está en el hero», y es el chequeo de la ley. Su addendum cruza los precios de la
-    Auditoría y de Visibilidad. Lo corrige el troncal antes de que alguien lo cite.
-11. **R4 y R7** (anexo C) y el resto de los datos del anexo D.
+5. **El estudio de Marco necesita una corrección** (anexo D, punto 11). Dice que el 36 → 100 es «con el
+   mismo instrumento que está en el hero», y es el chequeo de la ley. Su addendum cruza los precios de la
+   Auditoría y de Visibilidad. Lo corrige el troncal antes de que alguien lo cite.
+6. **R4 y R7** (anexo C) y el resto de los datos del anexo D.
 
 ---
 
@@ -94,12 +118,13 @@ En orden de peso. El detalle está en la sección que se cita.
 - **886 filas.** Son las 851 ranuras abiertas del inventario, el 100 %, y 35 filas nuevas del encargo de
   la oferta (30 del paso 4 y 5 del cierre). Las 630 ranuras cerradas no llevan fila y no se tocan: el
   hero, `.d-pres`, la bio, los cuerpos de los artículos, los precios, R3, R4 y R7.
-- **Por estado.**
-  - Las 851 ranuras: 136 cambian, 659 se mantienen, 53 esperan R2 y 3 son para ti (#617, #639 y #1440).
-  - Las 35 nuevas: 2 entran (la condición de Desarrollo web y el plazo de la Auditoría Completa), 3 son
-    para ti (la prueba de Trabajo y los dos párrafos del compromiso), 1 es un dato a verificar y 1 espera
-    R2. Las otras 28 no se agregan: eran el bloque por tarjeta.
-- **Qué tipo de cambios.** En las tablas hay 145 filas:
+- **Por estado, con tus decisiones del 14-oct.**
+  - Las 851 ranuras: 136 cambian, 662 se mantienen (entre ellas #617, #639 y #1440, que decidiste dejar
+    como están) y 53 esperan R2.
+  - Las 35 nuevas: 5 entran (la condición de Desarrollo web, el plazo de la Auditoría Completa, la prueba
+    de Trabajo y los dos párrafos del compromiso), 1 es un dato a verificar y 1 espera R2. Las otras 28
+    no se agregan: eran el bloque por tarjeta.
+- **Qué tipo de cambios.** En las tablas hay 142 filas (eran 145; #617, #639 y #1440 salieron el 14-oct):
   - **Unos 70 sacan repeticiones.** Son frases que decían lo mismo que otra de la misma página (A10), o
     que repetían el texto con que se llega desde la página anterior (P86). Por ejemplo, «las máquinas que
     hoy recomiendan tu negocio» estaba en el menú de las 21 rutas.
@@ -117,7 +142,8 @@ En orden de peso. El detalle está en la sección que se cita.
   - **6 son nuevos, del encargo de la oferta** (la sección siguiente).
 - **Reglas duras, medidas sobre el «después» completo.** Son las 21 rutas con head, JSON-LD y el texto
   de `v3-chequeo.js`, con tus decisiones pendientes aplicadas como si las aprobaras
-  (`scratchpad/e8/cierre/reglas.py`).
+  (`scratchpad/e8/cierre/reglas.py`). Con lo que decidiste el 14-oct dan lo mismo: las versiones a no
+  traen cadencia, y el compromiso final tampoco, ni raya ni «acá» (`scratchpad/e8/tanda3/clara/`).
   - Cadencia, `quincen|cada mes|mes a mes|al mes` sin distinguir mayúsculas: 51 antes y 51 después, el
     mismo 51 de la hoja (1.10). La búsqueda amplia también da lo mismo antes y después.
   - «acá»: 3 y 3, los tres del cuerpo del artículo de los 21 chequeos, que va tal cual. Raya, voseo,
@@ -156,7 +182,7 @@ tal cual: cada línea se pasó por la hoja de voz y cada afirmación se comprob�
        y Perplexity»: el mini-diagnóstico, «Medición en…», la línea y la meta de Visibilidad, Método, la
        tarjeta de Visibilidad y la meta de la home (#50).
    - `v3-chequeo.js:104` describe el mini-diagnóstico y no se cambia a Claude, porque a Claude no se le
-     pregunta a mano. Queda para ti si se pregunta siempre («Lo que queda para ti», punto 4).
+     pregunta a mano. Confirmaste el 14-oct que se pregunta siempre, así que se queda como está.
 2. **Nunca una cita en un modelo.** Salen las promesas de cita en:
    - la línea y la meta de Visibilidad (#1232, #1298) y su Esencial (#1256);
    - Método (#682) y Acompañamiento (#824);
@@ -171,15 +197,14 @@ tal cual: cada línea se pasó por la hoja de voz y cada afirmación se comprob�
    | Página | Resultado | Plazo | Condición |
    |---|---|---|---|
    | Desarrollo web | Una vez, en «Todo parte con esto» (#986): «Te dejamos el puntaje por escrito y, si tenías otro sitio, también el de antes.» | El punto de cada tarjeta, como hoy (~1, ~3 y ~4 a 6 semanas) | Una vez, en la nota de planes: «Cada plazo cuenta desde que nos llegan el anticipo, los textos y las imágenes. Para publicar necesitamos acceso a tu dominio.» |
-   | Visibilidad en IA | La Auditoría de Visibilidad ya lo dice en sus puntos (plan de citabilidad priorizado). El Esencial y el Pro, en el párrafo del compromiso, si lo confirmas | ~2 semanas en la tarjeta de la Auditoría; 3 meses en el compromiso | En el compromiso: alguien de tu equipo que apruebe los cambios |
+   | Visibilidad en IA | La Auditoría de Visibilidad ya lo dice en sus puntos (plan de citabilidad priorizado). El Esencial y el Pro, en el párrafo del compromiso | ~2 semanas en la tarjeta de la Auditoría; 3 meses en el compromiso | En el compromiso: alguien de tu equipo que apruebe los cambios, y acceso a donde se configura qué robots entran |
    | Auditoría SEO técnica | Lo dicen la tarjeta, el bloque B y la FAQ | Un punto nuevo en la Completa: «Entrega en 2 a 3 semanas desde el acceso a los datos». La combinada, cuando des el plazo | Los accesos, en la FAQ (#951), que ya los dice |
-   | Acompañamiento mensual | En el párrafo del compromiso, igual al de Visibilidad | 3 meses, el mínimo del plan | Alguien de tu equipo que apruebe los cambios |
+   | Acompañamiento mensual | En el párrafo del compromiso, igual al de Visibilidad | 3 meses, el mínimo del plan | Alguien de tu equipo que apruebe los cambios, y acceso a donde se configura qué robots entran |
 
    Redes y Paid Media no lo llevan, porque el encargo no lo trae. Para escribirlo faltarían datos tuyos,
    por ejemplo en cuántos días sale el primer calendario o la primera campaña.
 4. **La prueba propia.** Es un párrafo nuevo en la ficha de Verifica y Cumple, en Trabajo, la ubicación
-   que sugería el encargo: obra propia, sin permiso de cliente. Va para ti, por ser copy nuevo con cifras
-   públicas.
+   que sugería el encargo: obra propia, sin permiso de cliente. La aprobaste el 14-oct, con la versión a.
 
 ### Qué se adaptó, y por qué
 
@@ -204,8 +229,9 @@ tal cual: cada línea se pasó por la hoja de voz y cada afirmación se comprob�
   al dominio para publicar, que agregó Simón (cotización, `plantilla_generador.py:258`). Es la primera vez
   que el sitio nombra el anticipo. «El calendario que fijamos al arrancar» no está en ningún documento del
   proceso, y no entra;
-- el compromiso de los 3 meses pide a alguien de tu equipo que apruebe los cambios, y dice qué pasa si no
-  se publican. Salen dos cosas: «en los plazos que acordemos», una cláusula sin número, y «lo vas a ver en
+- el compromiso de los 3 meses pide a alguien de tu equipo que apruebe los cambios y, desde tu ajuste del
+  14-oct, acceso a donde se configura qué robots entran (Cloudflare u otro CDN). No dice qué pasa si no se
+  cumple. Del borrador salieron «en los plazos que acordemos», una cláusula sin número, y «lo vas a ver en
   el mismo informe», que amarra la promesa al informe de R2.
 
 **Resultados.** Prometen solo lo que el cliente puede comprobar: que los robots puedan entrar, su puntaje
@@ -273,7 +299,8 @@ ajustes y 1 de regla).
   pide que la decidas tú.
 
 Quedan además para ti, ya revisadas, la prueba de Trabajo, los dos párrafos del compromiso y el encargo
-aparte de Google-Extended.
+aparte de Google-Extended. Las tres primeras, y #1440 con #617 y #639, las decidiste el 14-oct (sección
+«Decisiones de Ramón»).
 
 ### Lo que objetó el crítico de voz
 
@@ -310,7 +337,7 @@ aparte de Google-Extended.
 | 13 y 782 | El cambio a Claude parte de una premisa falsa: Google-Extended también controla el grounding de Gemini Apps. La tarjeta vende el servicio que mide en ChatGPT, Gemini y Perplexity | veto | Respetado: «se mantiene», con Gemini. Comprobé la fuente de Google el 14-oct. La hoja muerta de `oferta-v3.json` tampoco se toca |
 | 50 | La meta promete un resultado y una comparación que el sitio dice que nadie garantiza. La trinca sigue al verbo: auditar tu presencia es preguntar a mano | ajuste | Aplicado: «Auditamos tu sitio y tu presencia en IA para que ChatGPT, Gemini y Perplexity puedan citarte. Diagnóstico gratis en 24 horas.» (125 caracteres). Revierte el motor de `a70e945`: va arriba |
 | 1291 | La corrección metía a Google-Extended en la bolsa del entrenamiento. Mejor que la FAQ no lo nombre | ajuste | Aplicado, junto con el del crítico |
-| 623 | Es falso para Gemini, pero corregir solo esta frase haría que la página describa mal su instrumento. Pedía no tocarla y abrir un encargo aparte | regla | Rechazada la parte de no tocarla: el acotado del crítico no contradice a `chequeo.js`, porque deja sus categorías como están y solo dice menos. El encargo aparte va igual a ti («Lo que queda para ti», punto 6) |
+| 623 | Es falso para Gemini, pero corregir solo esta frase haría que la página describa mal su instrumento. Pedía no tocarla y abrir un encargo aparte | regla | Rechazada la parte de no tocarla: el acotado del crítico no contradice a `chequeo.js`, porque deja sus categorías como están y solo dice menos. El encargo aparte va igual a ti («Lo que queda para ti», punto 2) |
 | 1298 | «Probabilidad de cita» se lee como una hora agendada | ajuste | Aplicado: «…análisis de tu presencia en ChatGPT, Gemini y Perplexity, claridad de entidad y contenido que puedan citar.» (136) |
 | 804 | El title del índice tiene 72 caracteres, sobre el tope de 65, y usa «Soluciones» | ajuste | Aplicado: «Servicios: SEO técnico, visibilidad en IA y desarrollo web» (58), sin sufijo a propósito |
 | 1131 | La pregunta promete una integración con la visibilidad en IA que la respuesta no menciona | ajuste | Aplicado: «¿Se integra con el SEO?», en el h3 y en el FAQPage |
@@ -365,7 +392,7 @@ final.
 | 951 | Auditoría | «y a Analytics, si lo tienes» | En la Auditoría, Analytics es opcional (`onboarding-cliente.md` §2), y Método ya lo dice así |
 | nueva | Auditoría | La misma corrección en la condición de la Auditoría Completa | Idem |
 | nueva | Visibilidad | La condición de la Auditoría de Visibilidad, más corta | «Las preguntas que haría tu cliente» salía tres veces en la página |
-| 1440 | Resultado del chequeo | De «se mantiene» a «para Ramón», con dos versiones | Gemini es cierto, pero no está asegurado que se pregunte (anexo D, punto 4) |
+| 1440 | Resultado del chequeo | De «se mantiene» a «para Ramón», con dos versiones | Gemini es cierto, pero no está asegurado que se pregunte (anexo D, punto 4). El 14-oct volvió a «se mantiene»: Ramón confirmó la pregunta |
 
 ## Revisión de conjunto
 
@@ -425,7 +452,7 @@ final.
 | 29 | Detrás de SpindleLab está una persona, no una agencia de veinte. Cada proyecto parte con el mismo chequeo que puedes correr arriba, sobre tu dominio, y termina con el mismo chequeo corrido otra vez. | Detrás de SpindleLab está una persona, no una agencia de veinte. Al terminar cada proyecto, volvemos a correr el chequeo de arriba sobre tu dominio. | Revisada en el paso 5. A10: «parte con el mismo chequeo» era la tercera vez en la home. Queda lo que solo esta frase dice, sin la adivinanza con dos puntos (tic 2) de la primera propuesta. |
 | 32 | Quién está detrás | Conocer a Ramón | Hoja §3: un botón dice qué pasa al hacer clic. Es la voz del visitante, no un singular de la marca. |
 | 34 | Ver todo | Ver el blog | Hoja §3: «Ver todo» no dice qué se ve. |
-| 50 | Auditamos tu sitio y tu presencia en IA para que ChatGPT, Claude y Perplexity te recomienden antes que tu competencia. Diagnóstico gratis en 24 horas. | Auditamos tu sitio y tu presencia en IA para que ChatGPT, Gemini y Perplexity puedan citarte. Diagnóstico gratis en 24 horas. | **Simón** · revisada en el paso 5. 5a: «te recomienden antes que tu competencia» prometía lo que el sitio dice que nadie garantiza. Redacción de Simón, con Gemini, porque auditar tu presencia es preguntar a mano (hoja 2.12). Revierte el motor de a70e945: ver «Lo que queda para Ramón». |
+| 50 | Auditamos tu sitio y tu presencia en IA para que ChatGPT, Claude y Perplexity te recomienden antes que tu competencia. Diagnóstico gratis en 24 horas. | Auditamos tu sitio y tu presencia en IA para que ChatGPT, Gemini y Perplexity puedan citarte. Diagnóstico gratis en 24 horas. | **Simón** · revisada en el paso 5. 5a: «te recomienden antes que tu competencia» prometía lo que el sitio dice que nadie garantiza. Redacción de Simón, con Gemini, porque auditar tu presencia es preguntar a mano (hoja 2.12). Revierte el motor de a70e945, como decidiste el 14-oct. |
 
 Cambian 6. No cambian 22 (1 espera R2).
 
@@ -491,7 +518,7 @@ Cambian 15. No cambian 75.
 | 1293 | La Auditoría de Visibilidad parte en $400.000 + IVA (pago único). El acompañamiento mensual parte en $590.000/mes + IVA (Esencial) y $790.000/mes + IVA (Pro). El valor final se cierra tras el diagnóstico gratuito, según el tamaño de tu sitio y las consultas a cubrir. | La Auditoría de Visibilidad parte en $400.000 + IVA (pago único). El acompañamiento mensual parte en $590.000/mes + IVA (Esencial) y $790.000/mes + IVA (Pro). El valor final se cierra tras el mini-diagnóstico gratuito, según el tamaño de tu sitio y las consultas a cubrir. | Va también al JSON-LD. Glosario 2.2: una sola forma por página. Precios idénticos. |
 | 1298 | Visibilidad en IA (AEO/GEO): que ChatGPT, Gemini y Perplexity citen a tu empresa, con análisis de presencia, claridad de entidad y contenido citable. | Visibilidad en IA (AEO/GEO): análisis de tu presencia en ChatGPT, Gemini y Perplexity, claridad de entidad y contenido que puedan citar. | **Simón** · revisada en el paso 5. Decidida (§7:213, la sigla queda). «Citen a tu empresa» contradecía la página. «Probabilidad de cita» se lee como una hora agendada. 136 caracteres. |
 | 1303 | Radiografía única: medición en ChatGPT, Gemini y Perplexity, quién gana esas respuestas, y plan de citabilidad priorizado. Entrega en ~2 semanas. | Pago único: medición en ChatGPT, Gemini y Perplexity, quién gana esas respuestas y plan de citabilidad priorizado. Entrega en ~2 semanas. | **Simón** · va también al JSON-LD. «Radiografía» es el nombre del mini-diagnóstico. «Pago único», como dice la FAQ de precio. |
-| nueva · párrafo del compromiso, bajo los planes | *(nuevo)* | En el Acompañamiento Esencial y en el Pro nos comprometemos a que, a los 3 meses (el mínimo del plan), tu sitio saque en el chequeo gratis más puntos que el día en que partimos, contando las mismas señales, y a que los robots de ChatGPT, Claude y Perplexity puedan entrar a él. Necesitamos a alguien de tu equipo que apruebe los cambios que proponemos; si no se publican, el puntaje no se mueve. El chequeo es público, así que lo compruebas tú. | **Para Ramón** · revisada en el paso 5. Encargo del 14-oct. El compromiso de los 3 meses, en un párrafo bajo los planes, igual que en Acompañamiento. Solo promete lo que el cliente comprueba con el chequeo. «Contando las mismas señales» es de Simón. |
+| nueva · párrafo del compromiso, bajo los planes | *(nuevo)* | En el Acompañamiento Esencial y en el Pro nos comprometemos a que, a los 3 meses (el mínimo del plan), tu sitio saque en el chequeo gratis más puntos que el día en que partimos, contando las mismas señales, y a que los robots de ChatGPT, Claude y Perplexity puedan entrar a él. Si tu sitio ya parte en 100, el compromiso es que no baje y que cerremos lo que encontremos pendiente. Necesitamos a alguien de tu equipo que apruebe los cambios, y acceso a donde se configura qué robots entran, como Cloudflare u otro CDN. El chequeo es público, así que lo compruebas tú. | Decidido por Ramón el 14-oct, con sus dos ajustes (sección «Decisiones de Ramón») · revisada en el paso 5. Encargo del 14-oct. El compromiso de los 3 meses, en un párrafo bajo los planes, igual que en Acompañamiento. Solo promete lo que controlamos y el cliente comprueba. «Contando las mismas señales» es de Simón. |
 
 Cambian 23. No cambian 55 (11 esperan R2).
 
@@ -526,7 +553,7 @@ Cambian 13. No cambian 66.
 | 870 | Porque el SEO y la visibilidad en IA se mueven en ciclos de semanas: rastreo, re-indexación y actualización de los modelos. En menos de tres meses no hay señal suficiente para evaluar con seriedad. | Porque el SEO y la visibilidad en IA se mueven en ciclos de semanas: rastreo, reindexación y actualización de los modelos. En menos de tres meses no hay señal suficiente para evaluar con seriedad. | Va también al JSON-LD. Ortografía (RAE). |
 | 878 | El plan Esencial parte en $590.000/mes + IVA y el Pro en $790.000/mes + IVA; el plan a medida se cotiza tras una reunión. El plan se dimensiona tras el diagnóstico gratuito, según el tamaño del sitio y tus objetivos. | El plan Esencial parte en $590.000/mes + IVA y el Pro en $790.000/mes + IVA; el plan a medida se cotiza tras una reunión. Cuál te conviene lo definimos después del mini-diagnóstico gratuito, según el tamaño del sitio y tus objetivos. | Va también al JSON-LD. Glosario 2.2 y sale la pasiva. Precios idénticos. |
 | 880 | Envíanos tu URL y en 24 horas tienes el diagnóstico gratuito: es el punto de partida para dimensionar tu plan. | Envíanos tu URL y en 24 horas tienes el mini-diagnóstico gratuito. | Glosario 2.2: la misma frase de los otros cuatro cierres. Sale el anuncio con dos puntos. |
-| nueva · párrafo del compromiso, bajo los planes | *(nuevo)* | En el Esencial y en el Pro nos comprometemos a que, a los 3 meses (el mínimo del plan), tu sitio saque en el chequeo gratis más puntos que el día en que partimos, contando las mismas señales, y a que los robots de ChatGPT, Claude y Perplexity puedan entrar a él. Necesitamos a alguien de tu equipo que apruebe los cambios que proponemos; si no se publican, el puntaje no se mueve. El chequeo es público, así que lo compruebas tú. | **Para Ramón** · revisada en el paso 5. Encargo del 14-oct. El mismo párrafo de Visibilidad, con los planes como los nombra esta página. Si no lo confirmas, no va en ninguna de las dos. |
+| nueva · párrafo del compromiso, bajo los planes | *(nuevo)* | En el Esencial y en el Pro nos comprometemos a que, a los 3 meses (el mínimo del plan), tu sitio saque en el chequeo gratis más puntos que el día en que partimos, contando las mismas señales, y a que los robots de ChatGPT, Claude y Perplexity puedan entrar a él. Si tu sitio ya parte en 100, el compromiso es que no baje y que cerremos lo que encontremos pendiente. Necesitamos a alguien de tu equipo que apruebe los cambios, y acceso a donde se configura qué robots entran, como Cloudflare u otro CDN. El chequeo es público, así que lo compruebas tú. | Decidido por Ramón el 14-oct, con sus dos ajustes (sección «Decisiones de Ramón») · revisada en el paso 5. Encargo del 14-oct. El mismo párrafo de Visibilidad, con los planes como los nombra esta página. |
 
 Cambian 8. No cambian 70 (21 esperan R2).
 
@@ -605,15 +632,14 @@ Cambian 8. No cambian 57 (8 esperan R2).
 | # | Antes | Después | Por qué |
 |---|---|---|---|
 | 616 | 21 chequeos, 100 puntos. Tres bloques, con su peso a la vista: leerte 30, entenderte 40, citarte 30. | 21 chequeos, 100 puntos. Tres bloques: leerte 30, entenderte 40, citarte 30. | Lo dicen los números y el rótulo de abajo. Cifras idénticas. |
-| 617 | El chequeo de esta página lee tu sitio; el mini-diagnóstico le pregunta a los motores. Los dos son gratis. | El chequeo de esta página lee tu sitio; el mini-diagnóstico lo hacemos a mano y te dice qué arreglar primero. Los dos son gratis. | **Para Ramón** · revisada en el paso 5. Decidida (§7:168). 5a: el sitio promete que el mini-diagnóstico le pregunta a los motores, y nada en el proceso lo asegura. (a) Se queda si confirmas que cada mini-diagnóstico corre esas preguntas. (b) La propuesta, si no. Sin respuesta, va la b. |
 | 623 | No todos los robots de IA hacen lo mismo: unos buscan en vivo cuando alguien pregunta (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User) y otros recogen texto para entrenar modelos futuros (GPTBot, ClaudeBot, Google-Extended, CCBot). Bloquear a los primeros te borra de las respuestas de hoy; bloquear a los segundos no te quita ni una cita y es una decisión legítima. Verificamos ambos por separado, probamos si tu servidor expulsa a los robots por su nombre, y que el sitio responda 200 por HTTPS. Si los bots en vivo no entran, nada de lo demás importa. | No todos los robots de IA hacen lo mismo: unos buscan en vivo cuando alguien pregunta (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User) y otros recogen texto para entrenar modelos futuros (GPTBot, ClaudeBot, Google-Extended, CCBot). Bloquear a los primeros te borra de las respuestas de hoy en ChatGPT, Claude y Perplexity; bloquear a los segundos no te quita ahí ni una cita y es una decisión legítima. Verificamos ambos por separado, probamos si tu servidor expulsa a los robots por su nombre, y que el sitio responda 200 por HTTPS. Si los bots en vivo no entran, nada de lo demás importa. | Revisada en el paso 5. 5a. Para Gemini no es cierto que bloquear Google-Extended no te quite ni una cita (Google: también controla el grounding de Gemini Apps). Se acota a los tres motores que el chequeo prueba. Las categorías del instrumento no cambian. |
 | 632 | Quienes aparecen recomendados casi nunca lo consiguen desde su propio sitio: los motores los citan desde rankings, directorios y artículos de terceros. Sin saber de dónde sale la recomendación, no hay nada que trabajar. | Los motores citan rankings, directorios y artículos de terceros, y no solo el sitio de quien recomiendan. Si no sabes de dónde sale la recomendación, no sabes qué trabajar. | 5a: «casi nunca lo consiguen desde su propio sitio» dice más que su fuente (test-menciones-ia.md:77, «no solo»). |
 | 636 | Automático, en segundos, sobre tu sitio. Te dice si estás técnicamente listo y qué corregir primero. | Automático y en segundos. Te dice si tu sitio está técnicamente listo y qué corregir primero. | A3: era una segunda serie de tres en la página. |
-| 639 | Lo hacemos a mano. Le preguntamos a ChatGPT, Gemini y Perplexity por tu categoría, y vemos quién aparece en tu lugar y qué fuentes citan. Una página, gratis, en 24 horas. | Lo hacemos a mano y te dice qué te frena y qué arreglar primero. Una página, gratis, en 24 horas. | **Para Ramón** · revisada en el paso 5. Decidida (§7:217). La misma decisión que la guía (#617) y el resultado del chequeo (#1440). (a) Se queda tal cual si confirmas. (b) La propuesta, si no. |
 | 651 | No. Este chequeo mide si tu sitio está preparado, no si hoy te citan. Los motores arman sus respuestas con fuentes de terceros (rankings, directorios, artículos), no solo con tu sitio. Puedes estar impecable por dentro y aun así no aparecer. Qué fuentes te faltan es justo lo que revisa el mini-diagnóstico. | No. Puedes estar impecable por dentro y aun así no aparecer, porque los motores también arman sus respuestas con lo que publican otros sitios. Qué fuentes te faltan es lo que revisa el mini-diagnóstico. | Va también al JSON-LD. A10: repetía la respuesta de arriba, la nota de «Lo que este chequeo no mide» y la lista de las corridas. |
 | 653 | No guardamos el dominio consultado ni te pedimos datos. El chequeo lee únicamente páginas públicas de tu sitio, las mismas que lee cualquier buscador. | No guardamos el dominio consultado ni te pedimos datos. | Va también al JSON-LD. A10: repetía la nota del instrumento (el mismo criterio de §7:164). Comprobado que chequeo.js no guarda nada. |
 
-Cambian 8. No cambian 43 (2 esperan R2).
+Cambian 6. No cambian 45 (2 esperan R2). La guía (#617) y el paso 02 (#639) se quedan como están: el
+mini-diagnóstico le pregunta a ChatGPT, Gemini y Perplexity (Ramón, 14-oct).
 
 ### Contacto
 
@@ -642,7 +668,7 @@ Cambian 1. No cambian 17.
 |---|---|---|---|
 | 1331 | Pon tu dominio y ves en segundos si los robots de ChatGPT, Claude y Perplexity pueden entrar a tu sitio, sea cual sea el rubro. Es el mismo chequeo con el que partimos cada proyecto. | Sea cual sea tu rubro, el chequeo gratis te muestra en segundos qué ve la IA en tu sitio. Es el mismo chequeo con el que partimos cada proyecto. | Revisada en el paso 5. La segunda frase es la decidida (§7:275). P86: la primera repetía la línea con que abre Diagnóstico, adonde lleva el botón. «El chequeo gratis» le da referente a la frase decidida. |
 | 1332 | Si hay que construirlo de nuevo, eso es Desarrollo web: tres planes, y el valor final se cierra tras el diagnóstico gratuito. | Si hay que construirlo de nuevo, eso es Desarrollo web: cuatro planes, y el valor final se cierra cuando conversamos tu proyecto. | Corregida al unificar. Sigue a la Desarrollo web nueva, con cuatro planes y el valor que se cierra al conversar (H #979 y #982). |
-| nueva · ficha de Verifica y Cumple | *(nuevo)* | El primer sitio que revisó fue el nuestro. spindlelab.cl sacó 36 de 100 el 9 de septiembre de 2026 y, con lo que encontró ya arreglado, 73 el 21 de septiembre. El 14 de octubre, ya con otra forma de puntuar, sacó 100. Lo que no se ve desde afuera, como si el aviso de cookies frena de verdad a los rastreadores, hoy no suma ni resta. | **Para Ramón** · revisada en el paso 5. Encargo del 14-oct. El chequeo de la Ley 21.719, no el del hero. 36 y 73 con la misma vara, ya públicos (21-sep). El 100, con otra. Dice lo que hoy no cuenta (Simón). Variante sin las cifras viejas, en el anexo D. |
+| nueva · ficha de Verifica y Cumple | *(nuevo)* | El primer sitio que revisó fue el nuestro. spindlelab.cl sacó 36 de 100 el 9 de septiembre de 2026 y, con lo que encontró ya arreglado, 73 el 21 de septiembre. El 14 de octubre, ya con otra forma de puntuar, sacó 100. Lo que no se ve desde afuera, como si el aviso de cookies frena de verdad a los rastreadores, hoy no suma ni resta. | Aprobada por Ramón el 14-oct, con la versión a · revisada en el paso 5. Encargo del 14-oct. El chequeo de la Ley 21.719, no el del hero. 36 y 73 con la misma vara, ya públicos (21-sep). El 100, con otra. Dice lo que hoy no cuenta (Simón). |
 
 Cambian 3. No cambian 29.
 
@@ -661,10 +687,10 @@ Cambian 1. No cambian 35.
 | 1472 | Pedir el diagnóstico gratis | Pedir el diagnóstico | Hoja §3: §7:192 decidió la estructura del cierre, no la palabra. La guía de encima ya dice «mini-diagnóstico gratuito». Vale para los cinco servicios. |
 | 1359 | Estudio de diseño y SEO técnico en Santiago. Construimos el sitio y dejamos resuelto que las máquinas que hoy recomiendan tu negocio puedan leerlo. | Estudio de diseño y SEO técnico en Santiago. Trabajamos para que tu empresa aparezca cuando tus clientes preguntan, en Google y en los motores de IA. | P86: la fórmula de la línea cerrada del campo Desarrollo no se repite fuera de ahí, y el menú está en las 21 rutas. Va el posicionamiento del manual §01, con «trabajamos para que». |
 | 1377 | Si quieres hablar de tu sitio, escríbenos. | Hablemos de tu sitio. | Hoja §3: el texto pegado al botón repetía su verbo. 21 rutas. |
-| 1440 | El chequeo revisa tu sitio. El diagnóstico te dice quién aparece hoy cuando alguien pregunta por tu rubro en ChatGPT, Gemini y Perplexity, y de qué fuentes lo están sacando. Te lo entregamos en una página, gratis, en 24 horas. | El chequeo revisa tu sitio. El diagnóstico lo hacemos a mano y te dice qué te frena y qué arreglar primero. Te lo entregamos en una página, gratis, en 24 horas. | **Para Ramón** · revisada en el paso 5. Decidida (§7:202). Gemini es correcto aquí; lo que no está asegurado es que se pregunte. (a) Se queda si confirmas que cada mini-diagnóstico corre esas preguntas. (b) La propuesta, si no. Sin respuesta, va la b. v3-chequeo.js va con ?v=3. |
 | 1444 | Revisando... | Revisando… | Puntos suspensivos «…» (1.12): era el único «...» que quedaba. v3-chequeo.js va con ?v=3. |
 
-Cambian 5. No cambian 79 (2 esperan R2).
+Cambian 4. No cambian 80 (2 esperan R2). El remate del resultado del chequeo (#1440) se queda como está,
+por la misma decisión que #617 y #639 (Ramón, 14-oct).
 
 ---
 
@@ -721,7 +747,7 @@ Pauta» (2.10).
 | 833 nota de planes | Todos los planes traen lo de arriba (implementación, contenido, monitoreo doble, informe quincenal y reunión mensual). Se diferencian en cuánta cobertura y volumen. Mínimo 3 meses; después, mes a mes con aviso de 30 días. | Todos los planes traen lo de arriba (implementación, contenido, monitoreo doble, informe quincenal y reunión mensual) y se diferencian en cobertura y volumen. | …(implementación, contenido, monitoreo doble, informe y reunión mensuales) y se diferencian en cobertura y volumen. | …(implementación, contenido, seguimiento de posiciones, informe [quincenal \| mensual] y reunión mensual) y se diferencian en cobertura y volumen. (En las tres sale el mínimo, que ya dicen la línea y la nota de la entrada) |
 | 838 Esencial | ~10 consultas medidas al mes en IA | = | = | se borra |
 | 840 Esencial | Informe quincenal + reunión mensual | = | Informe y reunión mensuales | = la de la cadencia |
-| nueva · frase final del párrafo del compromiso (solo si confirmas el compromiso de los 3 meses; la misma en Visibilidad) | (no existe) | Cada quince días te llega el informe, con el puntaje de hoy al lado del de la quincena anterior. | Cada mes te llega el informe, con el puntaje de hoy al lado del que tenías el mes anterior. | = la de la cadencia (es el puntaje del chequeo, no menciones) |
+| nueva · frase final del párrafo del compromiso (el compromiso entra desde el 14-oct; la misma en Visibilidad) | (no existe) | Cada quince días te llega el informe, con el puntaje de hoy al lado del de la quincena anterior. | Cada mes te llega el informe, con el puntaje de hoy al lado del que tenías el mes anterior. | = la de la cadencia (es el puntaje del chequeo, no menciones) |
 | 845 Pro | ~20 consultas medidas al mes (+ AI Overviews) | = | = | se borra |
 | 847 Pro | Share-of-voice frente a tus competidores | Tu presencia en IA comparada con la de tus competidores | igual que quincenal | se borra |
 | 860 h3 | Semana 2: Primer informe | = | Semana 2: Implementación | = la de la cadencia |
@@ -857,8 +883,8 @@ Notas para Simón:
 - Los precios son los de `oferta-v3.json`. Si alguno cambia antes del corte, cambia aquí también.
 - «Gemini» sale solo donde se le pregunta a mano (hoja 2.12).
 - Los títulos de los siete artículos son los de `_indice.json`, sin cambios.
-- Si en el anexo D, punto 4, el mini-diagnóstico no pregunta siempre a los motores, en el párrafo del
-  chequeo sale «en el mini-diagnóstico» y queda solo la Auditoría de Visibilidad.
+- El mini-diagnóstico pregunta siempre a los motores (Ramón, 14-oct, anexo D, punto 4), así que el
+  párrafo del chequeo conserva «en el mini-diagnóstico».
 
 ---
 
@@ -900,11 +926,9 @@ Si decides abrir el resto del paquete, estas son las variantes:
   arreglar primero. Gratis, en 24 horas.»
 - **B (la anterior):** la misma, con «qué mueve la aguja» en vez de «qué arreglar primero».
 
-Mi lectura: **A**. §7:250 ya sacó «qué mueve la aguja» del resto del sitio. Si en el anexo D,
-punto 4, decides que el mini-diagnóstico no siempre pregunta a los motores, la FAQ pasa a: «El
-chequeo es automático y revisa tu sitio. El mini-diagnóstico lo hacemos a mano y te dice en una
-página qué te frena y qué arreglar primero. Gratis, en 24 horas.» Si no contestas el punto 4, va esta
-última, como la b de #1440, #617 y #639.
+Mi lectura: **A**. §7:250 ya sacó «qué mueve la aguja» del resto del sitio. Desde el 14-oct la A es
+cierta tal como está, porque confirmaste que el mini-diagnóstico le pregunta a ChatGPT, Gemini y
+Perplexity (anexo D, punto 4). La variante sin la pregunta ya no hace falta.
 
 **El alcance de Método.** La entrada dice «Cada proyecto sigue el Método SpindleLab, nuestro
 proceso de auditoría SEO + visibilidad en IA», y Desarrollo web tiene sus propias cinco fases.
@@ -940,7 +964,8 @@ E8 no los toca. Siguen en la lista de R7.
 
 ## Anexo D · Datos a verificar antes de publicar
 
-1. **La prueba de Trabajo.** El texto propuesto está arriba, en «Lo que queda para ti», punto 3.
+1. **La prueba de Trabajo.** **Resuelto el 14-oct: va la versión a.** El texto está arriba, en «Decisiones de
+   Ramón (14-oct)», punto 3. Lo que sigue queda como respaldo de la cifra, y el último punto sigue pendiente.
    - **La vara.** Es el chequeo de la Ley 21.719 (`verifica.spindlelab.cl/api/chequeo`), no el del hero.
      Por eso va en la ficha de Verifica y Cumple y no dice «el chequeo» a secas (2.9).
    - **Las cifras.**
@@ -954,7 +979,7 @@ E8 no los toca. Siguen en la lista de R7.
      y deja sin confirmar «Permiso antes de cargar rastreadores». El 36 era sobre todo eso: Analytics y el
      Pixel de Meta cargaban antes del permiso. Por eso la última frase es obligatoria (Simón): sin ella,
      «36 → 100» sugiere que el instrumento comprobó el arreglo del consentimiento.
-   - **Si no quieres reusar el 36 ni el 73** (el corpus §8 dice que no se reusan): «El primer sitio que
+   - **La variante que no se usó, si no se reusaban el 36 ni el 73** (corpus §8): «El primer sitio que
      revisó fue el nuestro, y arreglamos lo que encontró. El 14 de octubre de 2026, spindlelab.cl sacó 100.
      Lo que no se ve desde afuera, como si el aviso de cookies frena de verdad a los rastreadores, no suma
      ni resta.»
@@ -963,17 +988,20 @@ E8 no los toca. Siguen en la lista de R7.
    - **Antes de publicar el v3.** spindlelab.cl va a ser el v3, con otro aviso de cookies y otro formulario.
      Hay que volver a correr el chequeo de la ley sobre la vista previa. La frase lleva esa fecha y ese
      puntaje, y si no da 100, se corrige.
-2. **El compromiso de los 3 meses** (Esencial y Pro, en Visibilidad y Acompañamiento). Lo confirmas tú.
+2. **El compromiso de los 3 meses** (Esencial y Pro, en Visibilidad y Acompañamiento). **Resuelto el
+   14-oct: entra, con dos ajustes.** El texto final está en «Decisiones de Ramón (14-oct)», punto 4.
    - **Casos borde:**
-     - un sitio que ya parte en 100, o cerca, no tiene cómo subir. Una salida es una condición que diga «si
-       partes bajo 90», y no la propongo sin tu visto bueno;
+     - un sitio que ya parte en 100 no tiene cómo subir. Resuelto con tu ajuste: si parte en 100, el
+       compromiso es que no baje y que cerremos lo que encontremos pendiente;
      - un Esencial solo de SEO técnico mueve parte del chequeo, no todo.
    - **Notas de operación de Simón:**
      - el informe de partida se guarda con fecha y con su lista de señales. Eso es lo que sostiene «contando
-       las mismas señales» cuando el chequeo cambie de versión;
+       las mismas señales» cuando el chequeo cambie de versión. Con el ajuste del 100, el informe anota
+       también lo pendiente: eso es lo que sostiene «lo que encontremos pendiente»;
      - el chequeo no ve las reglas de bots de IA que Cloudflare aplica en el borde (`chequeo.js:900-902`).
-       Si el cliente las tiene, «puedan entrar» necesita que nos dé acceso a esa configuración. Si quieres
-       decirlo en la página, la condición suma «y acceso a la configuración de tu dominio».
+       Si el cliente las tiene, «puedan entrar» necesita que nos dé acceso a esa configuración. Resuelto
+       con tu ajuste: la condición pide «acceso a donde se configura qué robots entran, como Cloudflare u
+       otro CDN».
 3. **Plazos sin fuente:**
    - **Auditoría de Visibilidad:** son ~2 semanas, pero ¿desde cuándo? ¿Desde la conversación de 20 minutos?
    - **Auditoría + Visibilidad en IA:** ¿los dos trabajos corren en paralelo? Si es así, vale el punto «Entrega
@@ -982,7 +1010,11 @@ E8 no los toca. Siguen en la lista de R7.
    - **Desarrollo web:** la nota de planes nombra por primera vez el anticipo, que sale de la cotización. Los
      «tres días» para mandar el material y las «48 horas» para aprobar, que traía el borrador, serían
      compromisos nuevos y no entran.
-4. **El mini-diagnóstico y los motores.**
+4. **El mini-diagnóstico y los motores.** **Resuelto el 14-oct: «Sí, a los tres».** #617, #639 y #1440 se
+   quedan como están, y la FAQ (R7) sigue siendo cierta. Para que el sitio diga la verdad, cada
+   mini-diagnóstico tiene que correr esas preguntas: la skill `mini-diagnostico` ya no puede dejar esa parte
+   «en términos de riesgo general» (SKILL.md:27-29). Queda anotado para el troncal, fuera de E8. Lo que
+   sigue es el respaldo que llevó a la pregunta.
    - **Lo que el sitio promete.** Dice que el mini-diagnóstico le pregunta a ChatGPT, Gemini y Perplexity:
      - en la guía (#617) y el paso 02 (#639) de Diagnóstico;
      - en su FAQ (R7, anexo C) y en el resultado del chequeo (#1440);
@@ -995,7 +1027,7 @@ E8 no los toca. Siguen en la lista de R7.
      - el 006 dice que no se corrió (README:37).
 
      La skill `mini-diagnostico` permite escribir esa parte «en términos de riesgo general» (SKILL.md:27-29).
-   - **Las dos salidas:**
+   - **Las dos salidas que tenías** (elegiste la primera):
      - **o** cada mini-diagnóstico corre esas preguntas, y el sitio queda como está;
      - **o** van las versiones b de #617, #639 y #1440 (en las tablas) y la b de la FAQ (anexo C). Es lo que
        va si no contestas: lo pidió el crítico, por regla. La bio y el artículo están cerrados: si eliges la
@@ -1051,28 +1083,41 @@ E8 no los toca. Siguen en la lista de R7.
 
 ## Para Diego (paso 7)
 
+- **La lista es `scratchpad/e8/registro-aplicar.json`**, no `registro-final.json`. Se aplican sus 141 filas
+  «cambia», y nada más. En cada una, `actual` y `propuesta` son el texto exacto del archivo, hoy y después:
+  - en el JSON, `actual` es el valor de la hoja (para la aserción `valor === actual`) y `propuesta` es el
+    valor nuevo. Donde la plantilla transforma la hoja (`partir` y `mayus` en «Título: cuerpo»,
+    `comillas`, el punto de los h2, los espacios duros, el «· » de la miga, lo que la home antepone o
+    rodea), lo que se ve está en `actual_visible` y `propuesta_visible`, que son los textos de las tablas;
+  - en la plantilla, `actual` es el ancla, que calza una sola vez, y `propuesta` es el reemplazo con su
+    marcado (`<b>`, enlaces, `${NB}`, el salto de línea del menú);
+  - tres hojas las comparten dos filas (`fuente.misma_hoja`): #1159 con #1160, #17 con #785 y #25 con
+    #793. Traen el mismo `actual` y la misma `propuesta`, así que se aplican una vez;
+  - las cuatro hojas nuevas (los dos compromisos, la prueba y el plazo de la Completa) traen `actual` vacío;
+  - `scratchpad/e8/tanda3/clara/comprobar_aplicar.py` lo comprueba contra el árbol de `c17a788`: 0 fallas.
 - **No hay bloque `oferta` en las tarjetas.** Lo nuevo del encargo entra en cinco hojas:
   - **El compromiso** va en `servicios-v3.json#/visibilidad-en-ia/secciones/1/compromiso` y en
-    `#/acompanamiento-mensual/secciones/1/compromiso`, y solo si Ramón lo confirma. `[slug].astro` lo pinta
+    `#/acompanamiento-mensual/secciones/1/compromiso` (Ramón lo confirmó el 14-oct). `[slug].astro` lo pinta
     como `<p class="d-cuerpo">` después de la lista de planes, dentro de `#planes`. No va al JSON-LD. Si
     R2 se aplica junto con el compromiso, la frase del informe (anexo A) va al final del mismo párrafo.
   - **El plazo de la Auditoría Completa** es un punto nuevo al final de su lista:
     `#/auditoria-seo-tecnica/secciones/1/planes/1/puntos/5`. El de la combinada (`…/planes/2/puntos/4`)
     entra solo con el dato de Ramón.
-  - **La prueba** va en `obra-v3.json#/casos/2/prueba`, solo si Ramón la aprueba. Es un
+  - **La prueba** va en `obra-v3.json#/casos/2/prueba` (Ramón la aprobó el 14-oct, versión a). Es un
     `<p class="d-cuerpo">` bajo la línea de la ficha, y solo la lee `trabajo.astro`. No va al JSON-LD ni a
     otra página. Antes de publicar se corre otra vez el chequeo de la ley sobre la vista previa, y la frase
     lleva esa fecha y ese puntaje.
 - **Desarrollo web.**
-  - La nota de `#planes`, la `d-chico` del `d-eti` y no la de la entrada, suma dos frases después del texto
-    de #982.
+  - La nota de `#planes` (la `d-chico` del `d-eti`) va en la fila «nota-plazos»: reemplaza la
+    `<p class="d-chico">` entera, con el cambio de #982 y las dos frases nuevas. La fila #982 cubre solo la
+    nota de la entrada (`d-nota-card`). Así cada reemplazo calza una vez y el orden no importa.
   - #986 suma una frase al final del ítem. Esa frase no lleva «chequeo»: el `split(CHEQUEO)` de la
     plantilla solo toma las dos primeras partes, y una segunda aparición cortaría el resto en silencio.
   - #1000, #1007 y #1015 se quedan en la lista.
 - **Hojas en "".** #837, #1093 y #790 quedan vacías, sin sacar el elemento, para no correr los punteros.
   La plantilla filtra los vacíos. #930, #1252 y #1253 ya no se vacían.
-- **#623.** Se conservan los `<b>` de `diagnostico.astro:151`. Cambia solo la oración «Bloquear a los
-  primeros…».
+- **#623.** El ancla es el párrafo entero de `diagnostico.astro:151`, con sus `<b>`. Cambia solo la oración
+  «Bloquear a los primeros…».
 - **#50.** El ancla es la de hoy, con Claude (`a70e945`), y la propuesta vuelve a Gemini con la promesa
   arreglada. Vale para og:description.
 - **#804.** Es el único title sin sufijo, a propósito: Google muestra el nombre del sitio aparte
@@ -1081,9 +1126,8 @@ E8 no los toca. Siguen en la lista de R7.
   cambia» del paso 7 tiene que admitir esta, y el conteo de cadencia sigue en 51.
 - **`oferta-v3.json#/momentos/1/planes/0/d` no se toca.** Simón vetó el cambio a Claude, y no hay aserción
   aparte.
-- **#617, #639 y #1440 (para Ramón).** No se aplican hasta su respuesta. Si llega a la lectura de P0.4 sin
-  contestar, va la b de cada una.
-- **`v3-chequeo.js?v=3`** va en sus dos referencias (#1444, y #1440 si va la b).
+- **#617, #639 y #1440 se quedan como están** (Ramón, 14-oct). En la lista van como «se mantiene».
+- **`v3-chequeo.js?v=3`** va en sus dos referencias, por #1444 («Revisando…»). #1440 ya no cambia.
 - **Medir:**
   - «$690.000 con Visibilidad en IA» en `nowrap`, a 390, en la home y el índice;
   - el panel del menú (#1359) a 1280 × 650, con el aviso de cookies abierto;
