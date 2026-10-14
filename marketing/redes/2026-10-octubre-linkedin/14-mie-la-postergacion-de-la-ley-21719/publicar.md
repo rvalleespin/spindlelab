@@ -4,8 +4,14 @@
 apruebe, así que el checklist de abajo se hace el mismo miércoles antes de publicar · **Canal:** perfil personal de Ramón · **Voz:** singular
 **Pieza visual:** ninguna. Texto puro.
 **Escribe:** agente-copywriter (Renata), a pedido directo de Ramón ("prepara el siguiente post de la semana", 13-oct)
-**Estado:** ✅ APROBADO por Ramón el 13-oct, sin cambios ("queda así, déjalo para el miércoles"). **Programado para el miércoles 14-oct, no publicado.**
-Si el miércoles se publica, se publica el texto de "Cuerpo" tal cual, salvo que el checklist encuentre novedad en el Senado.
+**Estado:** ✅ PUBLICADO Y VERIFICADO (14-oct-2026), perfil personal de Ramón, a pedido suyo ("publica").
+`linkedin.com/feed/update/urn:li:activity:7516116736371339265/`. Texto leído del editor antes de publicar: 5 párrafos, idénticos al aprobado
+(comparados uno a uno por script), sin raya larga. Captura posterior: "1 comentario", autor Ramón, tarjeta de `verifica.spindlelab.cl`.
+Primer comentario: el chequeo y los enlaces de La Tercera y Pauta, tal como estaba escrito.
+
+**Checklist del día, hecho (14-oct):** estado del proyecto releído (el último boletín encontrado, del 13-oct, dice Comisión de Constitución con suma
+urgencia, sin informe ni votación y sin discusión de fondo; no se pudo abrir la ficha del Senado) · `verifica.spindlelab.cl` releído en vivo (las tres señales,
+"sin registro", y el proyecto de postergación igual que el post) · canal revisado (el último original era el del 13-oct, 19 h y 38 impresiones).
 
 ## Origen del encargo
 

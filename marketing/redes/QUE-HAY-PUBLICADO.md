@@ -57,10 +57,11 @@ o que son suyas:**
 
 ---
 
-## Perfil personal de Ramón (360 seguidores)
+## Perfil personal de Ramón (380 seguidores)
 
 | Publicado | Pieza | Métricas | Registrado en |
 |---|---|---|---|
+| **✅ 14-oct** | "Si en tu empresa dijeron "esperemos, que la nueva ley de datos personales la postergan", esto es lo que hay hoy..." — el proyecto del Senado para postergar la Ley 21.719 (1-dic-2027 el del Gobierno, seis meses la oposición); mientras no se apruebe rige el 1-dic-2026; cierre en el chequeo de Verifica y Cumple | publicado, verificado (urn 7516116736371339265; 1 comentario) | `2026-10-octubre-linkedin/14-mie-la-postergacion-de-la-ley-21719/publicar.md` |
 | **✅ 13-oct** | "Si la página de tu servicio dice lo mismo que la de tus competidores, una IA tiene poco que sacar de ella..." — método de Search Engine Land (9-oct) para ver qué le falta a una página de servicio con las preguntas que sugiere la IA; cierre con el diagnóstico a mano y el chequeo | publicado, verificado (urn 7515818558875017216; programado para el 12-oct, salió el 13) | `2026-10-octubre-linkedin/12-lun-que-le-falta-a-tu-pagina-de-servicio/publicar.md` |
 | **✅ 7-oct** | "Si en tu empresa alguien preguntó si aparecen en ChatGPT, es probable que ya te hayan ofrecido un panel para medirlo..." — qué se puede medir gratis de la visibilidad en IA (informe de IA generativa de Search Console) y lo que ningún panel puede prometer; cierre con el chequeo y el diagnóstico de 24 h | publicado, verificado (urn 7513591632873730048) | `2026-10-octubre-linkedin/07-mie-visibilidad-en-ia-lo-que-se-mide/publicar.md` |
 | **✅ 5-oct** | "La Ley 21.719, la nueva ley de datos personales de Chile, le aplica a cualquier empresa que maneje datos de personas..." — el cuarto mito: la amonestación del primer año es una facultad, no un derecho, y queda en un registro público; cierre con el chequeo | publicado, verificado (urn 7512857562887786496) | `2026-10-octubre-linkedin/05-lun-cuarto-mito-amonestacion/publicar.md` |
