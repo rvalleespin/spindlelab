@@ -24,6 +24,18 @@
 - El titular vigente — *"Un motor de adquisición. No cuatro servicios sueltos."* — usa la construcción **"no es X, es Y"**, marcada como tic de IA en `antislop-web.md` de la propia casa. Y debajo la home lista **seis** servicios.
 - Lo que el estudio dice que la home tiene que mostrar, en este orden: **el caso, el precio, el chequeo.** No seis servicios.
 
+## ⚠️ Corrección del mismo día (14-oct, tarde)
+
+Ramón avisó que el sitio se está rehaciendo en otra sesión. **El v3 ya resuelve M2 y buena parte
+del encuadre:** publica toda la lista de precios en `oferta-v3.json`, agrupa los servicios en
+campos, cambió el titular con "no es X, es Y", pone el chequeo en el hero y **ya tiene portafolio
+con Verifica y Cumple rotulado "Producto propio"**. Los movimientos M1 y M2 de arriba se leen con
+el addendum final del estudio, no al pie de la letra.
+
+**Lo que sigue abierto es un número, no un caso:** el portafolio dice lo construido, no un
+resultado medido. Hoy, en vivo: spindlelab.cl **100/100** y verifica.spindlelab.cl **100/100**;
+lo publicable es el antes/después con fecha (36 el 10-sep → 100 el 14-oct), no el 100 solo.
+
 ## Pendientes que este rol no pudo cerrar
 
 - **Instagram de todo el campo:** sesión cloud sin navegador. Arrastrado desde el 25-ago. Requiere Chrome logueado.

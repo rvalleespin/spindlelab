@@ -164,3 +164,51 @@ Tres hechos convergen: 2 de 2 cierres fueron Desarrollo Web; el directo más gra
 - **"Informe AI Search Chile" de Focus Ads:** existe como recurso, contenido no visto. Vale bajarlo — es el único benchmark local de la categoría y mediría a quién cita la IA en Chile.
 - **Nitten, Agencia ROI, Seonet, Futture:** no re-revisados hoy (el barrido priorizó los cuatro con movimiento). Sus fichas siguen siendo del 2-ago/25-ago.
 - **Ley 21.719 (línea Verifica y Cumple):** el boletín **18.623-07** figura **"En tramitación"** con último movimiento **01/09/2026** ([tramitacion.senado.cl](https://tramitacion.senado.cl/appsenado/templates/tramitacion/index.php?boletin_ini=18623-07), leído 14-oct-2026). **La fecha vigente sigue siendo el 1-dic-2026** — el post programado para el 14-oct dice exactamente eso y no necesita corrección. **Riesgo a nombrar:** si la prórroga se aprueba a un año, la urgencia de esa línea se desinfla por 12 meses. Conviene un criterio escrito ahora, con fecha, antes de invertir más en ella.
+
+---
+
+## Addendum del 14-oct (misma tarde) — corrección contra el sitio **v3**, que ya existe
+
+Ramón avisó que el sitio se está rehaciendo en otra sesión y que las recomendaciones podían
+estar desfasadas. **Lo estaban en parte.** El sitio nuevo es el **v3** (`spindlelab-astro/src/pages/v3/`,
+rama `claude/magical-franklin-ckfki2`, QA cerrada y lista de publicación ensayada el 13-oct).
+Leído el código, no la página en vivo:
+
+**Ya resuelto en v3 — estas recomendaciones llegaron tarde y se retiran:**
+- **Precio en la home: hecho, y completo.** `src/data/oferta-v3.json` publica Desarrollo Web
+  $390.000 / $690.000 / $1.190.000 · Auditoría SEO $400.000 · Visibilidad en IA $490.000
+  ($690.000 combinada) · Acompañamiento $590.000 / $790.000 /mes · redes $390.000 / $590.000 ·
+  paid $350.000 / $550.000. El M2 del cuerpo de este estudio queda **cumplido por el v3**; lo
+  del 404 en `/precios` describía el sitio vivo (v2), no el que viene.
+- **Los seis servicios planos:** agrupados en "campos" con pestañas. Resuelto.
+- **El titular con "no es X, es Y":** cambiado. El v3 abre con el chequeo y *"Estás pagando para
+  que lleguen a tu sitio / ahí se corta el circuito"*, y la sección de quién dice *"No te
+  prometo. Te muestro."*
+- **El instrumento en el hero:** el chequeo de 21 señales es lo primero de la página, con el campo
+  de dominio. Es exactamente la diferenciación que §4 llama defendible, puesta donde más rinde.
+  **Esto es lo mejor del v3 y no hay que tocarlo.**
+- **El portafolio existe:** `/v3/trabajo.astro` con cuatro piezas — dos de Combeau (cliente, con
+  permiso), **Verifica y Cumple rotulado "Producto propio"** y Raigal rotulado "Pieza de concepto",
+  con el aviso de que no es un cliente. La corrección de Ramón ("VyC ya es un caso de diseño web")
+  **ya está implementada**.
+
+**Lo que sigue abierto, ahora más preciso:**
+1. **Falta el número, no el caso.** El portafolio registra *lo construido* ("una home"), no un
+   resultado medido — la propia QA del 5-oct lo dejó así a propósito. Y eso mantiene en pie el
+   hallazgo central: **nadie en el campo publica un número reproducible, y el v3 tampoco.**
+   Material disponible hoy, corrido en vivo el 14-oct contra `verifica.spindlelab.cl/api/chequeo`:
+   **spindlelab.cl 100/100** y **verifica.spindlelab.cl 100/100**.
+   ⚠️ **Cómo se publica importa:** un 100/100 en el chequeo propio es autorreferencial. Lo
+   creíble no es el 100, es **el antes y el después con fecha** — 36/100 el 10-sep → 100/100 el
+   14-oct — con la vara declarada y el visitante pudiendo correrla en el mismo hero.
+2. **La auditoría a $400.000 sigue siendo el techo del rango de entrada publicado** (Nitten
+   $350.000; TuWebChile $150.000, por verificar). El v3 no cambió ese flanco. Con el número al
+   lado se defiende; sin número es el punto por donde se compara.
+3. **Verifica y Cumple cambió de rol, y eso cambia la decisión que pide.** Ramón confirma: está
+   arriba y **sin clientes**. Ya cobró su valor como pieza de portafolio y como gancho (el toque 2
+   del outbound), pero sigue sin ingreso y la ventana legal se acorta (~48 días, con el proyecto
+   de postergación encima). La pregunta ya no es "cómo se vende": es **"¿se le pone más tiempo o
+   se congela como pieza y gancho?"**. Criterio propuesto en el mapa de ideas del laboratorio.
+
+**Lo que este addendum no pudo ver:** el v3 se leyó en el código de su rama, no renderizado ni en
+vivo. Nada de lo de arriba se verificó visualmente.
