@@ -1,6 +1,11 @@
 {
   "titulo": "Trabajo",
   "bajada": "Cuatro piezas: tres sitios en producción y un ejercicio de concepto. Está dicho cuál es cuál en cada una.",
+  "tipos": {
+    "cliente": "Cliente",
+    "propio": "Producto propio",
+    "concepto": "Pieza de concepto"
+  },
   "casos": [
     {
       "slug": "combeau-fotografia",
@@ -35,7 +40,7 @@
     {
       "slug": "verifica-y-cumple",
       "n": "Verifica y Cumple",
-      "rubro": "Herramienta propia",
+      "rubro": "Herramienta",
       "tipo": "propio",
       "rotulo": "Verifica y Cumple · Producto propio",
       "linea": "Chequeo gratuito de las señales técnicas que pide la Ley 21.719. Lo construimos y lo mantenemos nosotros.",
@@ -55,7 +60,7 @@
       "rubro": "Implantología",
       "tipo": "concepto",
       "rotulo": "Raigal · Implantología",
-      "linea": "Clínica de implantología y rehabilitación oral. Sitio completo, del argumento clínico a la ficha de tratamiento.",
+      "linea": "Clínica de implantología. Por ahora, solo la portada: costo y plazos, etapas, la especialista, lo que no se promete y preguntas frecuentes.",
       "url": null,
       "mock": "/assets/img/obra/mock-raigal-ancho.jpg",
       "altMock": "La pieza de concepto Raigal abierta en un notebook y en un teléfono, con su aviso de concepto arriba y el titular «Volver a morder»"

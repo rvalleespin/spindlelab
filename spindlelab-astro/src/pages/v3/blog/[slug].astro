@@ -40,6 +40,10 @@ import Miga from '../../../components/v3/Miga.astro';
 import { CONTACTO_V3 as CONTACTO, OG_V3 } from '../../../consts-v3';
 import '../../../styles/driftime.css';
 import indice from '../../../data/blog-v3/_indice.json';
+// El cierre (h2, guía y cuerpo) es el mismo del índice del blog: paginas-v3.json#/blog/cierre
+// (E8, paso 1). Antes estaba escrito igual en los dos archivos.
+import paginas from '../../../data/paginas-v3.json';
+const cierreBlog = (paginas as Record<string, any>).blog.cierre;
 
 const cuerpos = import.meta.glob('../../../data/blog-v3/*.html', { query: '?raw', import: 'default', eager: true });
 const datos = import.meta.glob('../../../data/blog-v3/*.json', { eager: true });
@@ -316,10 +320,10 @@ const siguiente = orden[(iAqui + 1) % orden.length];
          El segundo botón es «Escríbenos»: en un artículo, el otro camino es hablar, no
          seguir leyendo sobre el método. */}
     <section class="d-sec d-sec--quieta d-cierre-art" aria-labelledby="s-medir">
-      <div class="d-eti"><h2 class="d-h2" id="s-medir">Leer ayuda; medir, más.</h2></div>
+      <div class="d-eti"><h2 class="d-h2" id="s-medir">{cierreBlog.h2}</h2></div>
       <div class="d-cierre-art__txt">
-        <p class="d-guia">Pon tu dominio y ves en segundos si una IA te puede leer, si te entiende y si te puede citar.</p>
-        <p class="d-cuerpo">Es el mismo chequeo con el que partimos cada proyecto.</p>
+        <p class="d-guia">{cierreBlog.guia}</p>
+        <p class="d-cuerpo">{cierreBlog.cuerpo}</p>
         <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>
       </div>
     </section>

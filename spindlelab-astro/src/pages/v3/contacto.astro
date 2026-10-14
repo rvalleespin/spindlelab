@@ -44,30 +44,31 @@ const s = (paginas as Record<string, any>).contacto;
 const [proyecto, pasos, antes] = s.secciones;
 // «Tu URL.» y «24 horas.» no se parten: a 390 px el h1 dejaba «horas.» sola en la línea.
 const h1 = s.h1.replace('Tu URL', 'Tu\u00a0URL').replace('24 horas', '24\u00a0horas');
-const listo = proyecto.bloques?.[0] ?? { t: 'Listo.', d: 'Te escribimos dentro de 24 horas con tu mini-diagnóstico.' };
+// La línea bajo el h1, con «mini-diagnóstico, gratis.» sin partir (ver la cabecera).
+const JUNTO = 'mini-diagnóstico, gratis.';
+const iJunto = s.linea.indexOf(JUNTO);
+const lineaJunta: [string, string] | null = iJunto < 0 ? null : [s.linea.slice(0, iJunto), s.linea.slice(iJunto + JUNTO.length)];
+// La caja «Listo.» que reemplaza al formulario al enviar.
+const listo = proyecto.bloques[0];
 
-// RÓTULOS (QA 5-oct). Los h2 del JSON eran plantilla: «Cuéntanos de tu proyecto» (el titular
-// por defecto de cualquier formulario, y aquí no se pide un proyecto sino la URL de un sitio
-// que ya existe) y «Tres pasos, cero fricción» (jerga de producto, manual §01). Se nombra lo
-// que pasa. Mientras el JSON no cambie, el rótulo se fija aquí; está propuesto el cambio
-// en src/data/paginas-v3.json para que no dependa de esta página.
-const h2Form = 'Pide tu mini-diagnóstico';
-const h2Pasos = 'Qué pasa después';
-
-// El botón dice qué recibe la persona, no «Enviar» (antislop A5). v3-contacto.js le vuelve
-// a poner 'Enviar →' cuando el envío falla; el script de abajo lo devuelve a este texto.
-const etiquetaEnvio = 'Pedir mi mini-diagnóstico →';
-
-// FAQ (QA 5-oct, BLOQUEANTE). faq[2].r en el JSON dice «estamos acostumbrados a trabajar
-// bajo NDA»: afirma experiencia repetida con clientes financieros que nada en el repo
-// respalda (ventas/ registra un cliente entregado, no financiero, y ningún NDA). La versión
-// honesta es la que ya está a la vista en la página publicada (public/contacto/index.html,
-// FAQ visible) y la que el mismo JSON guarda en secciones[2].parrafos[2]. Se usa esa, y como
-// el texto visible y el FAQPage salen de este mismo arreglo, los dos quedan corregidos.
-// Cuando el JSON se arregle (propuesto), este reemplazo deja de hacer nada.
-const NDA_P = '¿Firman acuerdos de confidencialidad?';
-const NDA_R = 'Sí, sin problema. En sectores financieros es práctica habitual y trabajamos bajo NDA cuando el cliente lo requiere.';
-const faq = (s.faq ?? []).map((f: any) => (f.p === NDA_P ? { ...f, r: NDA_R } : f));
+// EL TEXTO SALE DE paginas-v3.json#/contacto, que desde E8 (paso 1, 14-oct) dice lo que se ve:
+// lo que esta página fijaba encima del JSON quedó escrito ahí (medido: 0 diferencias en las
+// 21 rutas contra la base 63f1e55). Del JSON no se leen, y no se borran, `lead` y los
+// `parrafos` de las tres secciones. Siguen escritos aquí los rótulos y ayudas del formulario.
+// · RÓTULOS (QA 5-oct): los h2 del JSON eran plantilla, «Cuéntanos de tu proyecto» (el
+//   titular por defecto de cualquier formulario, y aquí no se pide un proyecto sino la URL
+//   de un sitio que ya existe) y «Tres pasos, cero fricción» (jerga de producto, manual §01).
+//   Ahora nombran lo que pasa: secciones/0/h2 y secciones/1/h2.
+// · El botón dice qué recibe la persona, no «Enviar» (antislop A5): secciones/0/boton.
+//   v3-contacto.js le vuelve a poner 'Enviar →' cuando el envío falla; el script de abajo lo
+//   devuelve a este texto.
+// · FAQ (QA 5-oct, BLOQUEANTE): faq/2/r decía «estamos acostumbrados a trabajar bajo NDA»,
+//   experiencia repetida con clientes financieros que nada en el repo respalda (ventas/
+//   registra un cliente entregado, no financiero, y ningún NDA). Dice la versión honesta, la
+//   de la página publicada (public/contacto/index.html, FAQ visible). El texto visible y el
+//   FAQPage salen del mismo arreglo.
+const etiquetaEnvio = `${proyecto.boton} →`;
+const faq = s.faq ?? [];
 
 // El mismo mailto de la página publicada: asunto y arranque del cuerpo ya escritos.
 const mailto = `mailto:${EMAIL}?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20`;
@@ -111,12 +112,13 @@ const jsonLd = {
     <header class="d-cab d-cab--ct">
       <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Contacto' }]} />
       <h1 class="d-h1">{h1}</h1>
-      {/* Escrita en la página (el lead del JSON es otro texto, más largo): sexto texto de la
-           fila de contacto de spec §7, propuesto como campo `linea` en paginas-v3.json. Sin
-           «sin compromiso»: es frase de folleto y la pregunta 1 ya lo responde (QA2 6-oct).
-           «mini-diagnóstico, gratis.» no se parte: a 1440 dejaba «gratis.» sola en la segunda
-           línea, y un espacio duro solo movía el corte al guion («mini-/diagnóstico»). */}
-      <p class="d-linea">Escríbenos con la dirección de tu sitio y recibes el <span class="d-ct-junto">mini-diagnóstico, gratis.</span></p>
+      {/* El campo `linea` del JSON (el lead es otro texto, más largo, y no se lee): sexto
+           texto de la fila de contacto de spec §7. Sin «sin compromiso»: es frase de folleto
+           y la pregunta 1 ya lo responde (QA2 6-oct). Tipografía: «mini-diagnóstico,
+           gratis.» no se parte: a 1440 dejaba «gratis.» sola en la segunda línea, y un
+           espacio duro solo movía el corte al guion («mini-/diagnóstico»). Si la frase cambia
+           en el JSON, la línea sale entera y sin el span. */}
+      <p class="d-linea">{lineaJunta ? <Fragment>{lineaJunta[0]}<span class="d-ct-junto">{JUNTO}</span>{lineaJunta[1]}</Fragment> : s.linea}</p>
     </header>
 
     {/* El formulario ocupa el lugar que en un caso de driftime tiene la imagen a sangre: es
@@ -125,7 +127,7 @@ const jsonLd = {
       {/* Solo el h2: el párrafo que iba aquí repetía plazo y formato (h1, línea, paso 02 y
            pregunta 1 ya los dicen) y a 390 dejaba «Sitio web» bajo el aviso de cookies. */}
       <div class="d-ct-eti">
-        <h2 class="d-h2" id="s-form">{h2Form}</h2>
+        <h2 class="d-h2" id="s-form">{proyecto.h2}</h2>
       </div>
 
       <div class="d-ct-zona">
@@ -195,7 +197,7 @@ const jsonLd = {
     {/* Los pasos van pegados al formulario: son su respaldo (qué pasa al enviarlo). */}
     <section class="d-sec d-pasos-ct" aria-labelledby="s-pasos">
       <div class="d-eti">
-        <h2 class="d-h2" id="s-pasos">{h2Pasos}</h2>
+        <h2 class="d-h2" id="s-pasos">{pasos.h2}</h2>
       </div>
       <div class="d-filas">
         {(pasos.bloques ?? []).map((b: any, i: number) => (
@@ -204,9 +206,8 @@ const jsonLd = {
       </div>
     </section>
 
-    {/* Las preguntas visibles salen del MISMO arreglo que el FAQPage del JSON-LD (faq, con
-         la respuesta del NDA corregida arriba): lo que se marca como respuesta tiene que
-         estar a la vista, y decir lo mismo. */}
+    {/* Las preguntas visibles salen del MISMO arreglo que el FAQPage del JSON-LD (faq): lo
+         que se marca como respuesta tiene que estar a la vista, y decir lo mismo. */}
     <section class="d-sec d-faq" aria-labelledby="s-antes">
       <div class="d-eti"><h2 class="d-h2" id="s-antes">{antes.h2}</h2></div>
       <div class="d-filas">

@@ -4,14 +4,15 @@
     "title": "Nuestro método de auditoría SEO + visibilidad en IA · SpindleLab",
     "description": "Cuatro pasos medibles: diagnóstico técnico, estrategia AEO/GEO, implementación y monitoreo. Conoce el método de trabajo de SpindleLab paso a paso.",
     "h1": "Cómo trabajamos",
-    "lead": "No improvisamos: cada proyecto sigue el Método SpindleLab, nuestro proceso de cuatro fases de auditoría SEO + visibilidad en IA, refinado para sectores donde la confianza es crítica. Aquí está completo, fase por fase, para que sepas exactamente qué esperar antes de escribirnos.",
+    "linea": "Cuatro pasos medibles: diagnóstico técnico, estrategia AEO/GEO, implementación y monitoreo.",
+    "lead": "Cada proyecto sigue el Método SpindleLab, nuestro proceso de auditoría SEO + visibilidad en IA. Aquí está completo, fase por fase, para que sepas qué esperar antes de escribirnos.",
     "secciones": [
       {
         "h2": "Del diagnóstico al monitoreo",
         "bloques": [
           {
             "t": "Diagnóstico técnico",
-            "d": "Todo parte con tu URL. Auditamos el sitio en profundidad (rastreo, indexación, velocidad, datos estructurados y señales de confianza) y sintetizamos los hallazgos más relevantes en un mini-diagnóstico de una página que recibes gratis, en 24 horas. Luego conversamos 20 minutos para entender tu negocio, tus clientes y las búsquedas que te importan."
+            "d": "Todo parte con tu URL y el chequeo de 21 señales, el mismo que puedes correr tú en segundos. Después revisamos el sitio a mano (rastreo, indexación, velocidad, datos estructurados y señales de confianza) y sintetizamos los hallazgos más relevantes en un mini-diagnóstico de una página. Y conversamos 20 minutos para entender tu negocio y las búsquedas que te importan."
           },
           {
             "t": "Estrategia AEO/GEO",
@@ -23,7 +24,7 @@
           },
           {
             "t": "Monitoreo",
-            "d": "Lo que no se mide, se estanca. Cada quince días medimos menciones en IA con nuestro protocolo público, repetible por cualquiera, además de posiciones clásicas en Google y tráfico orgánico, y te lo reportamos en una página en lenguaje de negocio. La reunión mensual define las prioridades del ciclo siguiente."
+            "d": "Cada quince días medimos menciones en IA con nuestro protocolo público, repetible por cualquiera, además de posiciones clásicas en Google y tráfico orgánico, y te lo reportamos en una página en lenguaje de negocio. La reunión mensual define las prioridades del ciclo siguiente."
           }
         ],
         "parrafos": [
@@ -55,10 +56,11 @@
         ]
       },
       {
-        "h2": "Poco, pero importante",
+        "h2": "Lo que necesitamos de ti",
+        "bajada": "Poco, pero importante.",
         "lista": [
           "Tu URL: con eso parte el diagnóstico gratuito.",
-          "20 minutos: una conversación sobre tu negocio, tus clientes y qué significa \"ganar\" para ti.",
+          "20 minutos: una conversación para entender qué significa \"ganar\" para ti.",
           "Acceso de lectura: Google Search Console y Analytics para la auditoría completa. Nunca pedimos accesos de administrador.",
           "Una contraparte: alguien de tu equipo que pueda responder dudas y aprobar prioridades."
         ]
@@ -89,8 +91,9 @@
   "diagnostico": {
     "slug": "diagnostico",
     "title": "Chequeo gratis de visibilidad en IA: ¿te lee ChatGPT? · SpindleLab",
-    "description": "Pon tu dominio y revisamos al instante si ChatGPT, Gemini y Perplexity pueden leerte, entenderte y citarte. Gratis, con los 21 chequeos y su puntaje publicados.",
+    "description": "Pon tu dominio y revisamos al instante si ChatGPT, Claude y Perplexity pueden leerte, entenderte y citarte. Gratis, con los 21 chequeos y su puntaje publicados.",
     "h1": "¿Te puede leer la IA?",
+    "linea": "Pon tu dominio y revisamos al instante si los robots de ChatGPT, Claude y Perplexity pueden entrar a tu sitio, y si la IA puede entender qué haces y citarte.",
     "lead": "Cada vez más clientes preguntan antes de buscar. Pon tu dominio y revisamos al instante si ChatGPT, Gemini y Perplexity pueden entrar a tu sitio, entender qué haces y citarte.",
     "secciones": [
       {
@@ -102,7 +105,7 @@
           }
         ],
         "parrafos": [
-          "Ninguna herramienta del rubro publica su metodología. Acá está la nuestra completa, con el peso de cada bloque, para que puedas repetir el chequeo a mano si quieres.",
+          "La metodología completa, con el peso de cada bloque, para que puedas repetir el chequeo a mano si quieres.",
           "El chequeo de arriba lee tu sitio. Esto le pregunta a los motores. Es la medición que corremos cada mes en los planes con acompañamiento: cinco preguntas fijas por tres motores (ChatGPT, Gemini y Perplexity), siempre las mismas, con fecha y con la fuente de cada respuesta registrada. Cambiar las preguntas rompería la comparación entre meses."
         ]
       },
@@ -144,6 +147,23 @@
         ]
       }
     ],
+    "noMide": {
+      "h2": "Lo que este chequeo no mide",
+      "bloques": [
+        {
+          "t": "Y cómo medimos si la IA te nombra",
+          "d": "No mide si hoy te citan: para eso hay que preguntarle a los motores. En los planes con acompañamiento lo hacemos cada mes con las mismas preguntas y en los mismos motores, con fecha y con la fuente de cada respuesta registrada. Cambiar las preguntas rompería la comparación entre meses."
+        },
+        {
+          "t": "Lo que muestran las corridas",
+          "d": "Quienes aparecen recomendados casi nunca lo consiguen desde su propio sitio: los motores los citan desde rankings, directorios y artículos de terceros. Sin saber de dónde sale la recomendación, no hay nada que trabajar."
+        }
+      ]
+    },
+    "siguiente": {
+      "chico": "Una página, gratis, en 24 horas.",
+      "enlace": "Pedir el diagnóstico"
+    },
     "faq": [
       {
         "p": "¿El chequeo es realmente gratis?",
@@ -176,7 +196,7 @@
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Chequeo de visibilidad en IA",
+        "name": "Chequeo gratis",
         "item": "https://spindlelab.cl/diagnostico/"
       }
     ],
@@ -187,10 +207,12 @@
     "title": "Contacto: pide tu diagnóstico gratis · SpindleLab",
     "description": "Escríbenos a hola@spindlelab.cl con la URL de tu sitio y en 24 horas recibes un mini-diagnóstico gratuito de SEO técnico y presencia en IA.",
     "h1": "Un correo. Tu URL. 24 horas.",
+    "linea": "Escríbenos con la dirección de tu sitio y recibes el mini-diagnóstico, gratis.",
     "lead": "Así de simple es empezar: escríbenos con la dirección de tu sitio y en 24 horas tienes el mini-diagnóstico: una página con lo que está bien, lo que frena tu visibilidad y qué haríamos primero. Gratis y sin compromiso.",
     "secciones": [
       {
-        "h2": "Cuéntanos de tu proyecto",
+        "h2": "Pide tu mini-diagnóstico",
+        "boton": "Pedir mi mini-diagnóstico",
         "bloques": [
           {
             "t": "Listo.",
@@ -204,7 +226,7 @@
         ]
       },
       {
-        "h2": "Tres pasos, cero fricción",
+        "h2": "Qué pasa después",
         "bloques": [
           {
             "t": "Nos escribes",
@@ -259,13 +281,13 @@
       },
       {
         "p": "¿Firman acuerdos de confidencialidad?",
-        "r": "Sí, sin problema. En sectores financieros es práctica habitual y estamos acostumbrados a trabajar bajo NDA."
+        "r": "Sí, sin problema. En sectores financieros es práctica habitual y trabajamos bajo NDA cuando el cliente lo requiere."
       }
     ],
     "canonical": "https://spindlelab.cl/contacto/"
   },
   "servicios": {
-    "_nota": "Lo lee src/pages/v3/servicios/index.astro, y solo dos campos: breadcrumb (la miga visible y el BreadcrumbList, con la posición 2 cambiada a «Servicios») e itemList (el ItemList del JSON-LD, reordenado como las bandas de oferta-v3.json; si le falta un servicio, el build cae). Son los nodos de la página publicada (public/servicios/index.html): no borrar esta clave. El texto de la página vive en servicios/index.astro; title, description, h1, lead y secciones se quitaron el 13-oct-2026 porque nada los leía. slug y canonical tampoco se leen.",
+    "_nota": "Lo lee src/pages/v3/servicios/index.astro, y solo dos campos: breadcrumb (el BreadcrumbList; la posición 2 dice «Servicios», como la miga visible) e itemList (el ItemList del JSON-LD, con su nombre, reordenado por la página como las bandas de oferta-v3.json; si le falta un servicio, el build cae). Son los nodos de la página publicada (public/servicios/index.html), con los dos nombres que la v3 corrigió (E8, paso 1): no borrar esta clave. El texto de la página vive en servicios/index.astro y en oferta-v3.json; title, description, h1, lead y secciones se quitaron el 13-oct-2026 porque nada los leía. slug y canonical tampoco se leen.",
     "slug": "servicios",
     "breadcrumb": [
       {
@@ -277,13 +299,13 @@
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Soluciones",
+        "name": "Servicios",
         "item": "https://spindlelab.cl/servicios/"
       }
     ],
     "itemList": {
       "@type": "ItemList",
-      "name": "Soluciones de SpindleLab",
+      "name": "Servicios de SpindleLab",
       "itemListOrder": "https://schema.org/ItemListUnordered",
       "itemListElement": [
         {
@@ -349,5 +371,17 @@
       ]
     },
     "canonical": "https://spindlelab.cl/servicios/"
+  },
+  "blog": {
+    "_nota": "Lo lee src/pages/v3/blog/index.astro (todo) y src/pages/v3/blog/[slug].astro (solo cierre: es el mismo de los 7 artículos). Titulares, bajadas y fechas de los artículos NO van aquí: salen de data/blog-v3/_indice.json, que está cerrado.",
+    "title": "Blog: SEO técnico y visibilidad en IA · SpindleLab",
+    "description": "Cómo funcionan el SEO técnico y la visibilidad en motores de IA en Chile, explicado con la metodología a la vista y sin promesas de primeros lugares.",
+    "h1": "Lo que escribimos sobre búsqueda e IA",
+    "linea": "Cómo funciona esto por dentro, desde qué mira el chequeo hasta qué preguntar antes de contratar a alguien. La metodología está publicada a propósito.",
+    "cierre": {
+      "h2": "Leer ayuda; medir, más.",
+      "guia": "Pon tu dominio y ves en segundos si una IA te puede leer, si te entiende y si te puede citar.",
+      "cuerpo": "Es el mismo chequeo con el que partimos cada proyecto."
+    }
   }
 }

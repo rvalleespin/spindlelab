@@ -31,13 +31,16 @@ import Pieza from '../../../components/v3/Pieza.astro';
 import Miga from '../../../components/v3/Miga.astro';
 import '../../../styles/driftime.css';
 import indice from '../../../data/blog-v3/_indice.json';
+import paginas from '../../../data/paginas-v3.json';
 import { CONTACTO_V3 as CONTACTO, OG_V3 } from '../../../consts-v3';
 
 const url = 'https://spindlelab.cl/blog/';
+// El texto de la página (title, description, h1, línea y cierre) está en
+// paginas-v3.json#/blog desde E8 (paso 1, 14-oct); el cierre lo comparte blog/[slug].astro.
+const b = (paginas as Record<string, any>).blog;
 // Una sola fuente para la meta description y la del nodo CollectionPage: si se escriben
 // por separado, terminan diciendo cosas distintas.
-const DESCRIPCION =
-  'Cómo funcionan el SEO técnico y la visibilidad en motores de IA en Chile, explicado con la metodología a la vista y sin promesas de primeros lugares.';
+const DESCRIPCION: string = b.description;
 
 // Más nuevo primero. Por fecha y no por nombre de archivo: alfabético dejaba «21-chequeos»
 // arriba por casualidad y no por criterio. Empates (tres del 7-jul): el comparador nunca
@@ -101,7 +104,7 @@ const jsonLd = {
   ],
 };
 
-// FUENTES DEL COPY QUE NO VIENE DEL JSON:
+// FUENTES DEL COPY (hoy en paginas-v3.json#/blog):
 // · h1: el h2 de la sección «El Taller» de v3/index.astro.
 // · Línea: la entrada de la versión anterior de esta página, con la serie de tres pasada a
 //   «desde… hasta…» (QA 5-oct, antislop A3). Cada artículo sigue teniendo su lugar en ella.
@@ -115,7 +118,7 @@ const jsonLd = {
 ---
 
 <Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt}
-  title="Blog: SEO técnico y visibilidad en IA · SpindleLab"
+  title={b.title}
   description={DESCRIPCION}
   bodyClass="d-body"
 >
@@ -129,11 +132,11 @@ const jsonLd = {
   <main>
     <header class="d-cab">
       <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Blog' }]} />
-      <h1 class="d-h1">Lo que escribimos sobre búsqueda e IA</h1>
+      <h1 class="d-h1">{b.h1}</h1>
       {/* Dos elementos, no tres (antislop A3: una sola serie de tres por página, y esa es
            leer/entender/citar del cierre). «Desde… hasta…» cubre los artículos de en medio,
            como el de costos, sin enumerarlos. Redacción provisoria: la final es de Clara. */}
-      <p class="d-linea">Cómo funciona esto por dentro, desde qué mira el chequeo hasta qué preguntar antes de contratar a alguien. La metodología está publicada a propósito.</p>
+      <p class="d-linea">{b.linea}</p>
     </header>
 
     {/* Una sola lista, del más nuevo al más antiguo. La primera fila se abre: es la fila de
@@ -179,10 +182,10 @@ const jsonLd = {
          que dejaba el cuerpo de /v3/blog/ sin un camino a contacto. Método sigue en el menú
          y en el pie (rescate del v3 viejo, 13-oct). */}
     <section class="d-sec d-sec--quieta" aria-labelledby="s-medir">
-      <div class="d-eti"><h2 class="d-h2" id="s-medir">Leer ayuda; medir, más.</h2></div>
+      <div class="d-eti"><h2 class="d-h2" id="s-medir">{b.cierre.h2}</h2></div>
       <div class="d-cierre-blog">
-        <p class="d-guia">Pon tu dominio y ves en segundos si una IA te puede leer, si te entiende y si te puede citar.</p>
-        <p class="d-cuerpo">Es el mismo chequeo con el que partimos cada proyecto.</p>
+        <p class="d-guia">{b.cierre.guia}</p>
+        <p class="d-cuerpo">{b.cierre.cuerpo}</p>
         <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>
       </div>
     </section>

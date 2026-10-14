@@ -19,19 +19,23 @@
 // negro en .chq-r1). Spec §7. Esta página NO repite esas reglas: solo ubica el resultado
 // bajo el instrumento (márgenes). Medido con una respuesta simulada de /api/chequeo.
 //
-// EL COPY. Sale de paginas-v3.json salvo:
-//   · los tres bloques con su peso y las dos notas de «no mide» y «lo que muestran las
-//     corridas», que el JSON perdió y están en la página publicada
-//     (public/diagnostico/index.html), de donde se copian tal cual;
-//   · cuatro textos que el QA del 5-oct devolvió y que en el JSON siguen como antes (la
-//     corrección va propuesta a Clara/Simón; cuando el JSON cambie, se vuelve a leer de ahí):
-//     la línea bajo el h1 (nombraba a Gemini, que functions/api/chequeo.js no prueba en
-//     vivo, y omitía a Claude, que sí), la guía de la entrada (sin «Cada vez más…»), el
-//     rótulo de «Los 21 chequeos» (sin la comparación con «ninguna herramienta del rubro»,
-//     más amplia que su respaldo) y el rótulo del cierre (sin pregunta ni «sin compromiso»);
-//   · dos más que el QA del 6-oct devolvió: la meta description (también nombraba a
-//     Gemini) y la nota «Y cómo medimos si la IA te nombra.» (sus cifras, 5 preguntas × 3
-//     motores, no son las de los planes en servicios-v3.json, y repetía la guía).
+// EL COPY. Sale de paginas-v3.json#/diagnostico, que desde E8 (paso 1, 14-oct) dice lo que
+// se ve: lo que la página fijaba encima del JSON quedó escrito ahí (medido: 0 diferencias en
+// las 21 rutas contra la base 63f1e55). Eran seis textos que la QA devolvió:
+//   · 5-oct: la línea bajo el h1, `linea` (nombraba a Gemini, que functions/api/chequeo.js
+//     no prueba en vivo, y omitía a Claude, que sí; sin «Cada vez más…»), el rótulo de «Los
+//     21 chequeos», `secciones/0/parrafos/0` (sin la comparación con «ninguna herramienta
+//     del rubro», más amplia que su respaldo) y el «Siguiente» de la página, `siguiente` (sin
+//     pregunta ni «sin compromiso»);
+//   · 6-oct: la meta description, `description` (también nombraba a Gemini; veto de Simón),
+//     la miga, `breadcrumb/1` («Chequeo gratis», el nombre del menú) y la sección «Lo que este
+//     chequeo no mide», `noMide` (sus cifras, 5 preguntas × 3 motores, no eran las de los
+//     planes de servicios-v3.json, y repetía la guía).
+// Del JSON NO se leen, y no se borran: `lead`, `secciones/0/bloques` (la nota vieja de «no
+// mide»), los `parrafos` de las secciones 0 (el segundo), 1 y 3, y `secciones/4` (el cierre
+// viejo). Siguen escritos en la página: los tres bloques con su peso (copiados tal cual de
+// public/diagnostico/index.html; llevan <b>), la nota y la guía de la entrada, el texto del
+// instrumento y los botones.
 // Las cinco preguntas van juntas en «Lo que solemos responder», como el FAQPage.
 // Los desvíos de la plantilla Herramienta (spec §4) están declarados en spec §7.
 import Layout from '../../layouts/Layout.astro';
@@ -46,8 +50,9 @@ import '../../styles/chequeo-v3.css'; // el resultado del chequeo se pinta con e
 import '../../styles/driftime.css';
 
 const s = (paginas as Record<string, any>).diagnostico;
-// La quinta sección del JSON (el cierre) no se lee: su rótulo va reescrito abajo (ver cabecera).
+// La quinta sección del JSON (el cierre viejo) no se lee: el «Siguiente» sale de `siguiente`.
 const [chequeos, caminos, ley, responde] = s.secciones;
+const noMide = s.noMide;
 
 // Los h2 de sección van sin punto final, como en las otras 19 rutas («Lo que incluye», «Qué
 // pasa después»). El JSON los trae con punto; se quita al pintar (el mismo sinPunto de
@@ -58,28 +63,21 @@ const sinPunto = (t: string) => t.replace(/\.\s*$/, '');
 // producto propio, no un resultado del chequeo.
 const vyc = obra.casos.find((c: any) => c.slug === 'verifica-y-cumple') as any;
 
-// La meta description (y og:description, que el Layout saca de la misma prop) va escrita
-// aquí y no leída de s.description (QA 6-oct, spec §7): el JSON nombra a Gemini, que
-// functions/api/chequeo.js no prueba en vivo, y omite a Claude, que sí. Es la misma
-// corrección de la línea bajo el h1; sin esto, Google y la tarjeta al compartir decían
-// otra cosa que la página (antislop C8). Cuando el JSON cambie, se vuelve a leer de ahí.
-const descripcion = 'Pon tu dominio y revisamos al instante si ChatGPT, Claude y Perplexity pueden leerte, entenderte y citarte. Gratis, con los 21 chequeos y su puntaje publicados.';
-
+// La meta description (y og:description, que el Layout saca de la misma prop) dice lo mismo
+// que la línea bajo el h1: los motores que el chequeo prueba en vivo (QA 6-oct, spec §7;
+// antislop C8). Veto de Simón.
+//
 // UN NOMBRE PARA ESTA PÁGINA: «Chequeo gratis», el del menú y el pie (revisión cruzada,
-// 6-oct; spec §7, miga = menú). El JSON publicado la llama «Chequeo de visibilidad en IA» en
-// la miga; se sobrescribe la posición 2 al serializar, el patrón de servicios/index.astro.
-// El <title> conserva el nombre largo («Chequeo gratis de visibilidad en IA…»).
-const MIGA = 'Chequeo gratis';
+// 6-oct; spec §7, miga = menú). La miga visible y el BreadcrumbList salen de la misma hoja,
+// breadcrumb/1. El <title> conserva el nombre largo («Chequeo gratis de visibilidad en IA…»).
+const MIGA: string = s.breadcrumb[1].name;
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'BreadcrumbList',
       '@id': `${s.canonical}#breadcrumb`,
-      itemListElement: (s.breadcrumb ?? [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
-        { '@type': 'ListItem', position: 2, name: MIGA },
-      ]).map((li: any) => (li.position === 2 ? { ...li, name: MIGA } : li)),
+      itemListElement: s.breadcrumb,
     },
     ...(s.faq?.length
       ? [{
@@ -96,7 +94,7 @@ const jsonLd = {
 };
 ---
 
-<Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt} title={s.title} description={descripcion} bodyClass="d-body">
+<Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt} title={s.title} description={s.description} bodyClass="d-body">
   <meta slot="head" name="robots" content="noindex, nofollow" />
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <NavV3 />
@@ -110,7 +108,7 @@ const jsonLd = {
       {/* Los motores que nombra son los que el chequeo prueba en vivo (functions/api/chequeo.js:
            OAI-SearchBot/ChatGPT-User, Claude-SearchBot/Claude-User, PerplexityBot/Perplexity-User).
            Gemini no: Google-Extended cuenta como robot de entrenamiento. */}
-      <p class="d-linea">Pon tu dominio y revisamos al instante si los robots de ChatGPT, Claude y Perplexity pueden entrar a tu sitio, y si la IA puede entender qué haces y citarte.</p>
+      <p class="d-linea">{s.linea}</p>
 
       {/* EL INSTRUMENTO. Los id son contrato con el script: no tocar. */}
       <div class="d-instr d-instr-diag" id="chequeo">
@@ -146,7 +144,7 @@ const jsonLd = {
 
     {/* QUÉ REVISA */}
     <section class="d-sec" id="metodologia" aria-labelledby="s-che">
-      <div class="d-eti"><h2 class="d-h2" id="s-che">{sinPunto(chequeos.h2)}</h2><p class="d-chico">La metodología completa, con el peso de cada bloque, para que puedas repetir el chequeo a mano si quieres.</p></div>
+      <div class="d-eti"><h2 class="d-h2" id="s-che">{sinPunto(chequeos.h2)}</h2><p class="d-chico">{chequeos.parrafos[0]}</p></div>
       <div class="d-filas">
         <div class="d-plan">
           <h3 class="d-h3">¿Te pueden leer?</h3><span class="d-plan__precio">30 puntos</span>
@@ -164,20 +162,21 @@ const jsonLd = {
     </section>
 
     {/* QUÉ NO REVISA */}
-    {/* Sin guía (QA 5-oct, regla del 30 %). Quedan las dos notas de la página publicada.
-         La primera va escrita aquí y no leída de chequeos.bloques[0].d (QA 6-oct, spec §7):
-         el JSON decía «cinco preguntas fijas por tres motores (ChatGPT, Gemini y
+    {/* Sin guía (QA 5-oct, regla del 30 %). Las dos notas de la página publicada, en
+         `noMide` del JSON. La primera ya no es la de chequeos.bloques[0].d (QA 6-oct, spec
+         §7): el JSON decía «cinco preguntas fijas por tres motores (ChatGPT, Gemini y
          Perplexity)», que es el Índice de Citabilidad propio (marketing/metricas/
          test-menciones-ia.md), no lo que traen los planes (servicios-v3.json: ~10 consultas
          en 3 motores en Esencial, ~20 en 4 en Pro). Sin cifras, con la nota de
          servicios-v3.json: «mismas consultas, mismos motores, misma cadencia». Y abre
          diciendo qué no mide, que es lo que promete el h2 (antes repetía la guía de la
-         entrada: «El chequeo de arriba lee tu sitio. Esto le pregunta a los motores.»). */}
+         entrada: «El chequeo de arriba lee tu sitio. Esto le pregunta a los motores.»).
+         El ' ' entre bloques es el espacio que dejaba el marcado escrito a mano: así el HTML
+         sale igual, byte a byte, que antes de E8. */}
     <section class="d-sec" aria-labelledby="s-nom">
-      <div class="d-eti"><h2 class="d-h2" id="s-nom">Lo que este chequeo no mide</h2></div>
+      <div class="d-eti"><h2 class="d-h2" id="s-nom">{noMide.h2}</h2></div>
       <div class="d-filas d-filas-diag">
-        <div><h3 class="d-h3">Y cómo medimos si la IA te nombra</h3><p class="d-cuerpo">No mide si hoy te citan: para eso hay que preguntarle a los motores. En los planes con acompañamiento lo hacemos cada mes con las mismas preguntas y en los mismos motores, con fecha y con la fuente de cada respuesta registrada. Cambiar las preguntas rompería la comparación entre meses.</p></div>
-        <div><h3 class="d-h3">Lo que muestran las corridas</h3><p class="d-cuerpo">Quienes aparecen recomendados casi nunca lo consiguen desde su propio sitio: los motores los citan desde rankings, directorios y artículos de terceros. Sin saber de dónde sale la recomendación, no hay nada que trabajar.</p></div>
+        {noMide.bloques.map((b: any, i: number) => [i > 0 ? ' ' : '', <div><h3 class="d-h3">{b.t}</h3><p class="d-cuerpo">{b.d}</p></div>])}
       </div>
     </section>
 
@@ -217,7 +216,7 @@ const jsonLd = {
     {/* El CTA dice qué pasa al hacer clic (antislop A5). Los botones dicen «el diagnóstico»,
          sin «completo»: contacto lo ofrece como «mini-diagnóstico» y los dos adjetivos se
          contradecían justo en el clic (QA 5-oct; el nombre único queda para Clara). */}
-    <a class="d-siguiente d-siguiente-diag" href={CONTACTO}><span class="d-chico d-gris">Una página, gratis, en 24 horas.</span><span class="d-h1">Pedir el diagnóstico →</span></a>
+    <a class="d-siguiente d-siguiente-diag" href={CONTACTO}><span class="d-chico d-gris">{s.siguiente.chico}</span><span class="d-h1">{`${s.siguiente.enlace} →`}</span></a>
   </main>
 
   <FooterV3 />

@@ -64,30 +64,20 @@ import oferta from '../../data/oferta-v3.json';
 import { CONTACTO_V3 as CONTACTO, OG_V3_OBRA } from '../../consts-v3';
 const { casos } = obra;
 
-// CORRECCIONES AL DATO COMPARTIDO (QA independiente, 5-oct). obra-v3.json no se edita desde
-// una página: el cambio va propuesto a su dueño. Mientras tanto la página corrige lo suyo,
-// y cada corrección se retira sola cuando el JSON la trae.
-//  · Raigal: la línea decía «Sitio completo, del argumento clínico a la ficha de
+// CORRECCIONES AL DATO (QA independiente, 5-oct). Hasta E8 (paso 1, 14-oct) la página las
+// aplicaba encima de obra-v3.json, solo si el JSON traía la frase vieja exacta; desde ahí
+// están escritas en el JSON (medido: 0 diferencias en las 21 rutas contra la base 63f1e55).
+// `linea` y `rubro` de los casos solo los lee esta página.
+//  · Raigal, casos/3/linea: decía «Sitio completo, del argumento clínico a la ficha de
 //    tratamiento». Lo construido es UNA home (marketing/portafolio/01-raigal/ficha.md §Estado:
 //    las internas siguen abiertas; sitio/ tiene un solo index.html, sin enlaces internos).
-//    La línea nueva nombra solo las secciones que esa home tiene (verificadas en
-//    sitio/index.html: #valores, #procedimiento, #especialista, «Lo que no te vamos a
-//    prometer», #preguntas). QA2: «una home de una sola página» era redundante y la línea
-//    tenía 31 palabras contra 17-20 de las otras tres; queda en 22, con «por ahora» porque
-//    las internas siguen abiertas en la ficha. Redacción final: Clara.
-//    Solo se reemplaza si el JSON trae todavía la frase vieja, exacta.
-const LINEA_CORREGIDA: Record<string, { antes: string; ahora: string }> = {
-  raigal: {
-    antes: 'Clínica de implantología y rehabilitación oral. Sitio completo, del argumento clínico a la ficha de tratamiento.',
-    ahora: 'Clínica de implantología. Por ahora, solo la portada: costo y plazos, etapas, la especialista, lo que no se promete y preguntas frecuentes.',
-  },
-};
-//  · Verifica y Cumple: el rubro «Herramienta propia» junto al tipo «Producto propio» se
-//    leía «Herramienta propia · Producto propio» (QA2, A10). El rubro que se propone al
-//    dueño del JSON es «Herramienta»; mismo mecanismo: se retira solo cuando el JSON cambia.
-const RUBRO_CORREGIDO: Record<string, { antes: string; ahora: string }> = {
-  'verifica-y-cumple': { antes: 'Herramienta propia', ahora: 'Herramienta' },
-};
+//    La línea nombra solo las secciones que esa home tiene (verificadas en sitio/index.html:
+//    #valores, #procedimiento, #especialista, «Lo que no te vamos a prometer», #preguntas).
+//    QA2: «una home de una sola página» era redundante y la línea tenía 31 palabras contra
+//    17-20 de las otras tres; queda en 22, con «por ahora» porque las internas siguen
+//    abiertas en la ficha. Redacción final: Clara.
+//  · Verifica y Cumple, casos/2/rubro: «Herramienta propia» junto al tipo «Producto propio»
+//    se leía «Herramienta propia · Producto propio» (QA2, A10). Dice «Herramienta».
 
 // El precio de entrada de Desarrollo Web, del mismo dato que la home y el índice de
 // servicios: el primero de «$390.000 · $690.000 · $1.190.000». Spec §3: «Desde … + IVA».
@@ -101,11 +91,8 @@ const desdeWeb = oferta.momentos
 // se toca: solo se parte para pintar la barra.
 const partesNombre = (n: string) => n.split(' | ');
 
-const ROTULO: Record<string, string> = {
-  cliente: 'Cliente',
-  propio: 'Producto propio',
-  concepto: 'Pieza de concepto',
-};
+// El nombre de cada tipo de pieza (cliente, propio, concepto): `tipos` de obra-v3.json.
+const ROTULO: Record<string, string> = obra.tipos;
 
 // Cada pieza con su forma en la composición: una a sangre, un par 5 + 7, y una de 8
 // columnas con su pie al lado. Lo que pesa más en la página es trabajo de cliente; la pieza
@@ -145,12 +132,8 @@ const srcsetDe = (src: string, w: number) => `${src.replace(/\.jpg$/, '-800.jpg'
 const piezas = casos.map((c: any, i: number) => {
   const f = FORMAS[c.slug] ?? { forma: 'ancha', src: (x: any) => x.mock, alt: (x: any) => x.altMock, w: 1600, h: 1200 };
   const concepto = c.tipo === 'concepto';
-  const fix = LINEA_CORREGIDA[c.slug];
-  const fixRubro = RUBRO_CORREGIDO[c.slug];
   return {
     ...c,
-    linea: fix && c.linea === fix.antes ? fix.ahora : c.linea,
-    rubro: fixRubro && c.rubro === fixRubro.antes ? fixRubro.ahora : c.rubro,
     nombre: partesNombre(c.n),
     forma: f.forma,
     src: f.src(c),

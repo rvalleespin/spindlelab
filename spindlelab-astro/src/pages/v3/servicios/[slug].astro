@@ -13,27 +13,49 @@
 // (Service + BreadcrumbList + FAQPage, mismos @id). Layout ya emite organización, sitio y
 // persona; repetirlos duplicaría @id.
 // El BreadcrumbList dice lo mismo que la miga visible (spec §7, filas del índice y del
-// artículo; antislop C8): posición 2 «Servicios» (el JSON publicado dice «Soluciones», y el
-// mismo ítem quedaba con dos nombres en el grafo del sitio) y posición 3 el nombre en caja de
-// oración. Se sobrescribe al serializar, el mismo patrón de servicios/index.astro. QA2, 6-oct.
+// artículo; antislop C8): posición 2 «Servicios» y posición 3 el nombre en caja de oración.
+// QA2, 6-oct. Desde E8 (paso 1) los dos nombres están escritos en el JSON.
 //
-// LO QUE NO VIENE DEL JSON y de dónde sale (todo tiene fuente en el repo):
-// · La línea bajo el h1: la meta description del JSON + la «note» del hero de la página
-//   publicada (public/servicios/<slug>/index.html), con el «+ IVA» que exige la spec §7.
-// · La nota de precios: la «pack-note» de esa misma página publicada.
-// · Las marcas de los bloques: las «num» publicadas (Sí/No en visibilidad, A–D en los
-//   entregables de la auditoría, S1–S4 en el mes tipo). Redes y Paid Media numeran 01–04
-//   como las fases de Desarrollo Web: son procesos en orden.
-// · El titular del cierre de Paid Media: el publicado era «¿Listo para acelerar el motor?»,
-//   tell A5 del detector. Se rearma con su propio párrafo.
-// · Lo que corrigió la QA independiente del 5-oct sin tocar el JSON compartido: CORRIGE
-//   (precio con una notación, «equipo dedicado»), CAJA (caja de oración) y, en PROPIO,
-//   leadSin/lead, incluyeH2, cierreP y el encuadre de domino.jpg. Cada uno dice por qué.
-// · Lo de la 2.ª ronda (QA2, 6-oct): BreadcrumbList igual a la miga; líneas de Redes y
-//   Acompañamiento con el precio del plan que de verdad trae lo que nombran; ENLACES en el
-//   texto corrido; «Correr el chequeo» en tres cierres; cierre --quieta; galerías de Redes y
-//   Paid Media de una imagen; repeticiones y jerga («motor») fuera, en CORRIGE.
-// · Todo lo escrito en la página está registrado en la spec §7 (filas del 6-oct, Servicios).
+// TODO EL TEXTO SALE DEL JSON (E8, paso 1, 14-oct). Hasta ahí la página corregía el dato
+// antes de pintarlo (CORRIGE, LIMPIEZA, leadSin, CAJA y los campos de texto de PROPIO); esas
+// correcciones quedaron escritas en servicios-v3.json, que ahora dice exactamente lo que se
+// ve (medido: la extracción de las 21 rutas da 0 diferencias contra la base 63f1e55). La
+// receta, par por par, está en marketing/oficina/obras-web/spindlelab-v3/e8/herramientas/
+// migrar-paso1.mjs. Campos que antes vivían aquí y ahora están en el JSON de cada servicio:
+// · `linea` (bajo el h1): la meta description + la «note» del hero de la página publicada
+//   (public/servicios/<slug>/index.html), con el «+ IVA» que exige la spec §7. Las de Redes y
+//   Acompañamiento nombran el precio del plan que de verdad trae lo que dicen (QA2, 6-oct).
+// · `nota` (nota-card, [negrita, resto]): la «pack-note» de esa misma página publicada.
+// · `marcas` y `marcasSr`, en la sección de bloques: las «num» publicadas (Sí/No en
+//   visibilidad, A–D en los entregables de la auditoría, S1–S4 en el mes tipo). Redes y Paid
+//   Media numeran 01–04 como las fases de Desarrollo Web: son procesos en orden.
+// LO QUE LA QA YA SACÓ DEL JSON, CON SU MOTIVO (para no devolverlo en una edición):
+// · Precio con UNA notación en toda la página (spec §3 .precio): «$590.000/mes + IVA», nunca
+//   «590.000 CLP» ni «$590.000 /mes». El JSON-LD sigue declarando priceCurrency CLP.
+// · «Equipo dedicado» (Acompañamiento, plan y Offer): SpindleLab es una consultoría
+//   unipersonal (contexto-agente-spindlelab.md, línea 4); plural de tamaño sin respaldo
+//   (antislop A9, innegociable), y además iba en la Offer que leen los motores de IA. QA, 5-oct.
+// · «Sin compromiso» / «Sin costo ni compromiso»: frase de folleto (spec §7, fila de
+//   Contacto); el precio de la fila ya dice «Gratis». QA2, 6-oct.
+// · «Motor» (Redes y Paid Media, también en las Offer): jerga interna (B8). QA2, 6-oct.
+// · Repeticiones (A10): «nada de un volcado de 200 hallazgos» en la nota de Auditoría; «el
+//   creativo lo pones tú» en la nota de Redes; «bajo tu control», «la respetamos al peso» y
+//   «no hacia todo el mundo» en Paid Media; el h2 «Ejecución, contenido y medición» de
+//   Acompañamiento (repetía la tríada de la entrada; no «Lo que pasa cada mes», que chocaba
+//   con «Así se ve un mes tipo»).
+// · Entradas: la tendencia sin fuente de Visibilidad («Cada día más decisiones…», A2), el
+//   contraste de folleto de Acompañamiento («Calidad de agencia, trato directo de
+//   consultor», A4), la de Redes reescrita con hechos del mismo JSON (A2, A10, B8) y la de
+//   Paid Media sin repetir el presupuesto ni «motor».
+// · «Del mini-diagnóstico gratis a la auditoría» (Auditoría): «chequeo» es el automático de
+//   /v3/diagnostico/ (spec §7, fila de Nosotros; manual §08). «En celular y computador» (A7).
+// · La FAQ de pauta social de Redes dice desde qué plan («Desde el plan Orgánico + Pauta»):
+//   el Orgánico ($390.000) no trae pauta (brief §3, manual §08).
+// · Cierres de Acompañamiento y Paid Media: nombran el paso del botón (el diagnóstico en 24 h).
+//   El titular publicado de Paid Media era «¿Listo para acelerar el motor?» (A5).
+// · Caja de oración en el h1 y la miga (A6). El title y serviceName conservan el nombre de
+//   producto como está publicado (spec §7).
+// Todo lo escrito en la página está registrado en la spec §7 (filas del 6-oct, Servicios).
 //
 // LO QUE SE DEJA AFUERA A PROPÓSITO:
 // · El tinte de color del campo en la sección de bloques (la versión anterior lo tenía).
@@ -58,76 +80,10 @@ export function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-// ------------------------------------------------------------------ correcciones al dato
-// El JSON es compartido y no se edita desde una página: estas correcciones se aplican al
-// dato ANTES de pintarlo, en todo el objeto, así lo visible y el JSON-LD dicen lo mismo
-// (la FAQ visible y la FAQPage, el plan y su Offer). Quedan propuestas para el JSON.
-// · Precio con UNA notación en toda la página (spec §3 .precio): «$590.000/mes + IVA». El
-//   JSON trae «$590.000 /mes» en los planes y «590.000 CLP/mes» en la FAQ, contra la línea
-//   bajo el h1. El JSON-LD sigue declarando priceCurrency CLP.
-// · «Equipo dedicado»: SpindleLab es una consultoría unipersonal (contexto-agente-spindlelab.md,
-//   línea 4). Es un plural de tamaño sin respaldo (antislop A9, innegociable), y además iba
-//   dentro de la Offer que leen los motores de IA. QA independiente, 5-oct.
-type Par = [RegExp | string, string | ((m: string, ...g: string[]) => string)];
-const CORRIGE_TODOS: Par[] = [
-  [/(\d{1,3}(?:\.\d{3})+) CLP/g, (_m, n) => `$${n}`],
-  [/(\$\d{1,3}(?:\.\d{3})+) \/mes/g, '$1/mes'],
-  // «Sin compromiso»: frase de folleto (spec §7, fila de Contacto); el cierre ya dice gratuito.
-  // QA2, 6-oct. Estaba en los cierres de Auditoría y de Redes.
-  [/ Sin compromiso\./g, ''],
-];
-// Segunda ronda (QA2, 6-oct). Un texto que queda vacío ('') es un punto de plan que se saca:
-// se filtra al pintar.
-const CORRIGE: Record<string, Par[]> = {
-  'acompanamiento-mensual': [
-    // «Prioridad y tiempos acordados» ya es la última píldora del mismo plan: la bajada no la repite.
-    ['Equipo dedicado y varios frentes a la vez.', 'Varios frentes a la vez.'],
-    ['Equipo dedicado y multi-servicio: todo lo del Pro', 'Multi-servicio: todo lo del Pro'],
-  ],
-  'auditoria-seo-tecnica': [
-    // En esta página «chequeo» nombraba al mini-diagnóstico, y el pie llama «Chequeo gratis»
-    // al automático de /v3/diagnostico/ (spec §7, fila de Nosotros; manual §08).
-    ['Del chequeo gratis a la auditoría', 'Del mini-diagnóstico gratis a la auditoría'],
-    // La nota de planes repetía, palabra por palabra, el cierre de la entrada (A10).
-    [' Nada de un volcado de 200 hallazgos sin jerarquía.', ''],
-    ['en móvil y escritorio', 'en celular y computador'],   // A7
-    // El precio de la fila ya dice «Gratis»; «sin compromiso» es de folleto.
-    ['Sin costo ni compromiso', ''],
-  ],
-  'redes-sociales': [
-    // El «Sí.» viajaba al FAQPage sin decir desde qué plan: el Orgánico ($390.000) no trae
-    // pauta (brief §3, manual §08).
-    ['Sí. La gestión de la pauta social (social ads) es parte del servicio', 'Desde el plan Orgánico + Pauta. La gestión de la pauta social (social ads) es parte del servicio'],
-    // «Motor» es jerga interna (B8): la página ya se la había sacado a la entrada.
-    ['Más plataformas y volumen, integrado al resto del motor.', 'Más plataformas y más volumen.'],
-    ['integrado con el resto del motor de adquisición', 'integrado con SEO, IA y Paid Media'],
-    // «El creativo lo pones tú» iba cuatro veces (A10): sale de la nota de planes; queda en la
-    // línea, en lo que incluye y en la FAQ.
-    [', y en todos el creativo lo pones tú (o te conectamos con un partner).', '.'],
-  ],
-  'paid-media': [
-    // Siete veces que el presupuesto es tuyo (A10): queda en la línea, la nota y la FAQ.
-    ['El precio es el fee de gestión: estrategia, manejo de la cuenta, optimización con IA y reportes. La inversión en pauta la pones tú y la respetamos al peso, nunca la subimos sin tu confirmación. Mínimo 3 meses.',
-      'El fee cubre la estrategia, el manejo de la cuenta, la optimización con IA y los reportes. Mínimo 3 meses.'],
-    ['Inversión publicitaria aparte, bajo tu control', 'Inversión publicitaria aparte'],
-    // Un solo «no a todo el mundo» (queda en lo que incluye).
-    [', no hacia todo el mundo', ''],
-    // «Motor» (B8), también en la Offer que leen los motores de IA.
-    ['Integración con el resto del motor: ', 'Integración con tu SEO, redes y sitio: '],
-    ['integrada al motor.', 'integrada a tu SEO y tu sitio.'],
-    ['integración con el resto del motor.', 'integración con SEO, redes y sitio.'],
-    ['La pauta acelera un motor que ya gira con el orgánico: ', 'La pauta acelera lo que el orgánico ya mueve: '],
-    // Caja de oración, como el h1 de esa página (A6). Es el texto de un enlace (ENLACES).
-    ['Gestión de Redes Sociales', 'Gestión de redes sociales'],
-  ],
-};
-const pares: Par[] = [...CORRIGE_TODOS, ...(CORRIGE[slug!] ?? [])];
-const corrige = (v: any): any =>
-  typeof v === 'string' ? pares.reduce((a, [r, x]) => a.replace(r as any, x as any), v)
-  : Array.isArray(v) ? v.map(corrige)
-  : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, corrige(x)]))
-  : v;
-const s = corrige((servicios as Record<string, any>)[slug!]);
+// ------------------------------------------------------------------ el dato
+// Se pinta tal cual: el JSON ya dice lo que se ve (ver la cabecera). Lo visible y el JSON-LD
+// salen del mismo objeto, así la FAQ visible y la FAQPage, y el plan y su Offer, no se separan.
+const s = (servicios as Record<string, any>)[slug!];
 
 // ------------------------------------------------------------------ secciones por forma
 const secs: any[] = s.secciones ?? [];
@@ -144,18 +100,11 @@ const faq: { p: string; r: string }[] = s.faq ?? [];
 const comillas = (t: string) => t.replace(/"([^"]+)"/g, '«$1»');
 const mayus = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
 const sinPunto = (t: string) => t.replace(/\.\s*$/, '');
-// Restos de la extracción a JSON: el texto de un enlace quedó repetido en la frase. Está
-// igual en la página publicada; se corrige acá y se propone corregir el JSON.
-const LIMPIEZA: [RegExp, string][] = [
-  [/con nuestro protocolo público, protocolo público\./, 'con nuestro protocolo público.'],
-  [/con el protocolo público de medición, nuestro protocolo público y reproducible/, 'con nuestro protocolo público y reproducible'],
-];
-const limpia = (t: string) => LIMPIEZA.reduce((a, [r, x]) => a.replace(r, x), comillas(t));
 // «Rastreo e indexación: qué puede ver Google…» → título + cuerpo, como en la publicada
 // (allá el título iba en <b>).
 const partir = (t: string) => {
   const i = t.indexOf(': ');
-  return i > 0 && i <= 90 ? { t: t.slice(0, i), d: mayus(limpia(t.slice(i + 2))) } : { t: '', d: limpia(t) };
+  return i > 0 && i <= 90 ? { t: t.slice(0, i), d: mayus(comillas(t.slice(i + 2))) } : { t: '', d: comillas(t) };
 };
 
 // ------------------------------------------------------------------ enlaces en el texto corrido
@@ -264,83 +213,44 @@ interface Propio {
   //   Redes dominó curvo + escritorio · Paid Media hilo + dominó curvo.
   // Ninguna foto en más de dos páginas seguidas.
   galeria: { img: Img; forma: 'd-g-media' | 'd-g-alta' | 'd-g-ancha'; pos?: string }[];
-  marcas: string[];
-  marcasSr?: string[];
   // Los bloques son pasos en orden (el mes tipo, las quincenas): van en <ol>, como las fases
   // de Método y de Desarrollo web, con la marca aria-hidden. Sin esto van en <ul>: Sí/No de
   // Visibilidad y los entregables A–D de Auditoría no son una secuencia (rescate, 13-oct).
   secuencia?: boolean;
-  cierreH2?: string;
-  cierreP?: string;
   // El cierre suma «Correr el chequeo» → /v3/diagnostico/: la puerta de quien ya tiene sitio
   // (brief §2), el mismo par que Nosotros y el índice. QA2, 6-oct. No en Redes ni Paid Media:
   // el chequeo lee el sitio para la IA, que no es lo que esos dos servicios trabajan.
   cierreChequeo?: boolean;
-  incluyeH2?: string;
-  leadSin?: string[];
-  // Entrada reescrita entera cuando cortar no alcanza; cada afirmación con su fuente en el JSON.
-  lead?: string;
 }
 
+// Solo imágenes y forma. El texto de cada servicio (línea, nota, marcas, entrada, cierre)
+// está en servicios-v3.json desde E8, paso 1.
 const PROPIO: Record<string, Propio> = {
   'visibilidad-en-ia': {
-    linea: 'Que ChatGPT, Gemini y Perplexity citen a tu empresa. Tres planes, desde $400.000 + IVA.',
-    nota: ['Valores en pesos, + IVA.', 'Los acompañamientos son mensuales; el valor final se cierra tras el diagnóstico gratuito.'],
     sangre: { ...IMG.hilos, pos: '50% 22%' },
     galeria: [{ img: IMG.escritorio, forma: 'd-g-media', pos: '35% 50%' }, { img: IMG.dominoCurva, forma: 'd-g-alta', pos: '40% 50%' }],
-    marcas: ['Sí', 'Sí', 'No', 'No'],
-    marcasSr: ['Prometemos:', 'Prometemos:', 'No prometemos:', 'No prometemos:'],
-    // La primera frase («Cada día más decisiones de compra B2B empiezan en un chat…») era
-    // una tendencia sin fuente antes de entrar en materia: antislop A2. QA, 5-oct.
-    leadSin: ['Cada día más decisiones de compra B2B empiezan en un chat, no en una lista de resultados. '],
     cierreChequeo: true,
   },
   'auditoria-seo-tecnica': {
-    linea: 'En profundidad, con un informe priorizado por impacto. La auditoría, desde $490.000 + IVA; el mini-diagnóstico es gratis.',
-    nota: ['Valores en pesos, + IVA.', 'El valor final se cierra tras el mini-diagnóstico gratuito, según el tamaño del sitio.'],
     // domino.jpg tiene el 30 % de arriba en negro puro y, sobre el lienzo negro, la pieza
     // perdía el borde (QA, 5-oct). Se queda (es la única cabecera del pool que no repite la
     // de otra página) pero con el encuadre cerrado sobre las fichas: d-sangre--domino-svc.
     sangre: { ...IMG.domino },
     sangreClase: 'd-sangre--domino-svc',
     galeria: [{ img: IMG.ventana, forma: 'd-g-media', pos: '40% 50%' }, { img: IMG.hilo, forma: 'd-g-alta', pos: '30% 50%' }],
-    marcas: ['A', 'B', 'C', 'D'],
     cierreChequeo: true,
   },
   'acompanamiento-mensual': {
-    // El Esencial ($590.000) es UNA capa; las dos juntas son el Pro ($790.000). La línea
-    // anterior pegaba las dos capas al precio de entrada (QA2, 6-oct; brief §3, manual §08).
-    linea: 'Implementación continua e informes quincenales de SEO técnico o de visibilidad en IA, desde $590.000/mes + IVA; las dos juntas, desde $790.000/mes + IVA. Mínimo 3 meses.',
-    nota: ['Valores en pesos, + IVA.', 'Cumplidos los 3 meses, mes a mes con aviso de 30 días.'],
     // Ventana y no dominó curvo (revisión cruzada, 6-oct): la página anterior, Auditoría, abre
     // con dominó, y eran dos cabeceras seguidas de fichas.
     sangre: { ...IMG.ventana, pos: '50% 50%' },
     // La reunión mensual de decisiones es con el consultor, y el consultor es verificable.
     // hilos y no escritorio: escritorio es de la misma familia que la cabecera (ventana).
     galeria: [{ img: IMG.ramon, forma: 'd-g-alta', pos: '50% 30%' }, { img: IMG.hilos, forma: 'd-g-media', pos: '50% 50%' }],
-    marcas: ['S1', 'S2', 'S3', 'S4'],
-    marcasSr: ['Semana 1:', 'Semana 2:', 'Semana 3:', 'Semana 4:'],
     secuencia: true,
-    // El h2 del JSON («Ejecución, contenido y medición») repetía la tríada de la entrada,
-    // justo encima (antislop A3 y A10). La nota de planes dice «Todos los planes traen lo de
-    // arriba»: esto es lo de arriba. No «Lo que pasa cada mes»: chocaba con «Así se ve un mes tipo».
-    incluyeH2: 'Lo que incluye',
-    // «Calidad de agencia, trato directo de consultor.»: contraste de folleto (A4) que además
-    // afirma calidad sin respaldo. QA, 5-oct.
-    leadSin: [' Calidad de agencia, trato directo de consultor.'],
-    // El párrafo del JSON prometía «un plan de acompañamiento a tu medida» y el botón dice
-    // «Pedir el diagnóstico gratis». Ahora el texto nombra el paso del botón; la fuente es
-    // la FAQ («El plan se dimensiona tras el diagnóstico gratuito») y el plazo de 24 h de
-    // los otros cierres.
-    cierreP: 'Envíanos tu URL y en 24 horas tienes el diagnóstico gratuito: es el punto de partida para dimensionar tu plan.',
     cierreChequeo: true,
   },
   'redes-sociales': {
-    // El plan de $390.000 es Orgánico: UNA plataforma y sin pauta. La pauta y las dos redes
-    // parten en $590.000 (Orgánico + Pauta). La línea anterior pegaba las dos cosas al precio
-    // de entrada (QA2, 6-oct; brief §3, manual §08).
-    linea: 'LinkedIn o Meta, con estrategia, comunidad y reportes: desde $390.000/mes + IVA. Con pauta en Meta y las dos redes, desde $590.000/mes + IVA. El creativo lo pones tú.',
-    nota: ['Valores en pesos, + IVA.', 'No incluyen la inversión en pauta: esa la defines tú.'],
     // Dominó curvo de cabecera (revisión cruzada, 6-oct): pasa aquí desde Acompañamiento, que
     // ahora abre con ventana. Mismo encuadre que tenía allá.
     sangre: { ...IMG.dominoCurva, pos: '50% 62%' },
@@ -349,22 +259,9 @@ const PROPIO: Record<string, Propio> = {
     // siguiente (Paid Media). domino.jpg no va: su fondo negro puro se funde con el lienzo
     // (medido: se lee como un hueco), y además es la familia de la cabecera.
     galeria: [{ img: IMG.escritorio, forma: 'd-g-ancha', pos: '40% 50%' }],
-    marcas: ['01', '02', '03', '04'],
     secuencia: true,
-    // La entrada del JSON, frase por frase: «Tus clientes ya pasan el día en redes» (A2,
-    // carraspeo); la enumeración «calendario, pauta, comunidad y reportes» (ya está en la
-    // línea bajo el h1, A10); «el creativo lo pones tú» (era la quinta vez en la página);
-    // «Es una de las cuatro piezas del motor de adquisición» (jerga interna, B8: la página
-    // nunca dice cuáles son). Lo que queda se dice con hechos del mismo JSON: el calendario
-    // editorial alineado a tu cliente (lo que incluye, ítem 1), los reportes quincenales
-    // (ítem 4) y el ajuste del plan cada quincena (bloque 04). Sin copiar la frase del
-    // bloque 04 («ajustamos el plan según lo que de verdad funcionó»): repetida cuatro
-    // pantallas más abajo era A10.
-    lead: 'Ponemos tu marca en redes con un calendario editorial pensado para tu cliente, y lo corregimos cada quincena con lo que muestran los reportes.',
   },
   'paid-media': {
-    linea: 'Google Ads de alta intención, con el presupuesto bajo tu control. Gestión desde $350.000/mes + IVA.',
-    nota: ['El precio es el fee de gestión, + IVA.', 'La inversión en pauta la pones tú y va a tu tarjeta.'],
     sangre: { ...IMG.hilo, pos: '50% 45%' },
     // Dominó curvo y no domino.jpg: el negro puro de esa foto se fundía con el lienzo y la
     // pieza parecía empezar 100 px más abajo que la de al lado (QA, 5-oct).
@@ -374,21 +271,15 @@ const PROPIO: Record<string, Propio> = {
     // curvo: desde la revisión cruzada (6-oct) está en Visibilidad (galería), Redes (cabecera)
     // y aquí; Redes → Paid Media son dos páginas seguidas, nunca tres.
     galeria: [{ img: IMG.dominoCurva, forma: 'd-g-ancha', pos: '50% 55%' }],
-    marcas: ['01', '02', '03', '04'],
     secuencia: true,
-    // La entrada repetía el presupuesto bajo control (ya en la línea, la nota y la FAQ, A10)
-    // y cerraba con «motor» (jerga interna, B8). QA2, 6-oct.
-    leadSin: [', con el presupuesto siempre bajo control: la pieza que acelera cuando el motor orgánico ya gira'],
-    cierreH2: 'Vemos dónde conviene invertir',
-    cierreP: 'Envíanos tu URL y en 24 horas tienes el mini-diagnóstico gratuito, antes de que pongas un peso en pauta.',
   },
 };
 const pr = PROPIO[slug!];
-if (!pr) throw new Error(`[slug].astro: falta la entrada de PROPIO para «${slug}» (línea, nota, imágenes y marcas). Un servicio nuevo en servicios-v3.json la necesita.`);
+if (!pr) throw new Error(`[slug].astro: falta la entrada de PROPIO para «${slug}» (imágenes y forma). Un servicio nuevo en servicios-v3.json la necesita.`);
 const ListaBloques = pr.secuencia ? 'ol' : 'ul';
-const lead: string = pr.lead ?? (pr.leadSin ?? []).reduce((a, x) => a.replace(x, ''), s.lead ?? '');
-// Una palabra con guion («mini-diagnóstico») no se corta en el guion: sale de constantes
-// de este archivo, no de datos de terceros, así que set:html es seguro.
+const lead: string = s.lead ?? '';
+// Una palabra con guion («mini-diagnóstico») no se corta en el guion. Recibe texto YA
+// escapado (esc): la línea y la nota salen del JSON, así que set:html es seguro.
 const sinCorte = (t: string) => t.replace(/([\wáéíóúñÁÉÍÓÚÑ$.]+-[\wáéíóúñÁÉÍÓÚÑ.]+)/g, '<span class="d-nw-svc">$1</span>');
 
 // Caja de oración en todo lo visible: h1, miga y «Siguiente» (antislop A6: sin Title Case,
@@ -396,17 +287,12 @@ const sinCorte = (t: string) => t.replace(/([\wáéíóúñÁÉÍÓÚÑ$.]+-[\w�
 // está publicado; la miga del grafo dice lo mismo que la visible (ver jsonLd). «Paid Media»
 // se deja: es el nombre en inglés del canal.
 // «Siguiente» lee su nombre de SERVICIOS_V3 (consts-v3), que desde la revisión cruzada (6-oct)
-// trae los nombres en caja de oración: el menú, el pie y «Siguiente» dicen lo mismo. Este mapa
-// queda solo para el h1 y la miga, porque el JSON publicado trae el nombre en Title Case.
-const CAJA: Record<string, string> = {
-  'desarrollo-web': 'Desarrollo web',
-  'auditoria-seo-tecnica': 'Auditoría SEO técnica',
-  'acompanamiento-mensual': 'Acompañamiento mensual',
-  'redes-sociales': 'Gestión de redes sociales',
-};
-const h1: string = CAJA[slug!] ?? s.h1;
+// trae los nombres en caja de oración: el menú, el pie y «Siguiente» dicen lo mismo. El h1 y
+// la miga salen del JSON (h1 y breadcrumb/2), que desde E8 (paso 1) ya los trae en caja de
+// oración: hasta ahí los fijaba el mapa CAJA de esta página.
+const h1: string = s.h1;
 // La miga visible dice lo mismo que el h1, y el BreadcrumbList dice lo mismo que la miga.
-const nombre: string = CAJA[slug!] ?? s.breadcrumb?.[2]?.name ?? s.h1;
+const nombre: string = s.breadcrumb?.[2]?.name ?? s.h1;
 
 // Siguiente servicio: el que sigue en el menú, en ciclo (Paid Media → Desarrollo web).
 const aqui = SERVICIOS_V3.findIndex((x) => x.href === `/v3/servicios/${slug}/`);
@@ -417,8 +303,12 @@ const sigLabel: string = sig.label;
 // primera vez» es la primera que ve el lector). Solo lo visible; el FAQPage va en texto plano.
 const incluyeHtml = (secIncluye?.lista ?? []).map((t: string) => { const x = partir(t); return { t: x.t, d: enlaza(x.d) }; });
 const planesH2Html: string = secPlanes ? sinCorte(esc(sinPunto(secPlanes.h2))) : '';
-const planesNotaHtml: string = secPlanes?.nota ? enlaza(limpia(secPlanes.nota)) : '';
-const bloquesHtml: string[] = (secBloques?.bloques ?? []).map((b: any) => enlaza(limpia(b.d)));
+const planesNotaHtml: string = secPlanes?.nota ? enlaza(comillas(secPlanes.nota)) : '';
+const bloquesHtml: string[] = (secBloques?.bloques ?? []).map((b: any) => enlaza(comillas(b.d)));
+// Las marcas de los bloques (Sí/No, A–D, S1–S4, 01–04) y su lectura para lector de pantalla
+// viven junto a los bloques, en el JSON.
+const marcas: string[] = secBloques?.marcas ?? [];
+const marcasSr: string[] | undefined = secBloques?.marcasSr;
 const faqHtml: string[] = faq.map((f) => enlaza(f.r));
 
 const jsonLd = {
@@ -437,8 +327,8 @@ const jsonLd = {
       '@type': 'BreadcrumbList',
       '@id': `${s.canonical}#breadcrumb`,
       // Spec §7 (regla, C8): posición 2 «Servicios», posición 3 el nombre de la miga visible.
-      itemListElement: s.breadcrumb.map((li: any) =>
-        li.position === 2 ? { ...li, name: 'Servicios' } : li.position === 3 ? { ...li, name: nombre } : li),
+      // Los dos ya vienen así en el JSON.
+      itemListElement: s.breadcrumb,
     },
     {
       '@type': 'FAQPage',
@@ -463,7 +353,7 @@ const jsonLd = {
     <header class="d-cab">
       <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Servicios', href: '/v3/servicios/' }, { label: nombre }]} />
       <h1 class="d-h1">{h1}</h1>
-      <p class="d-linea" set:html={sinCorte(pr.linea)} />
+      <p class="d-linea" set:html={sinCorte(esc(s.linea))} />
       <div class="d-btns">
         {secPlanes && <a class="d-btn" href="#planes">Ver planes</a>}
         <a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a>
@@ -475,13 +365,13 @@ const jsonLd = {
     </figure>
 
     <div class="d-entrada">
-      <p class="d-nota-card"><b>{pr.nota[0]}</b> <Fragment set:html={sinCorte(pr.nota[1])} /></p>
+      <p class="d-nota-card"><b>{s.nota[0]}</b> <Fragment set:html={sinCorte(esc(s.nota[1]))} /></p>
       {lead && <p class="d-guia">{comillas(lead)}</p>}
     </div>
 
     {secIncluye && (
       <section class="d-sec" aria-labelledby="s-inc">
-        <div class="d-eti"><h2 class="d-h2" id="s-inc">{pr.incluyeH2 ?? sinPunto(secIncluye.h2)}</h2></div>
+        <div class="d-eti"><h2 class="d-h2" id="s-inc">{sinPunto(secIncluye.h2)}</h2></div>
         <div class="d-filas">
           {incluyeHtml.map((x: { t: string; d: string }) =>
             x.t ? (<div><h3 class="d-h3">{x.t}</h3><p class="d-cuerpo d-inc-svc" set:html={x.d} /></div>) : (<p class="d-guia" set:html={x.d} />))}
@@ -522,8 +412,8 @@ const jsonLd = {
         <ListaBloques class="d-filas">
           {secBloques.bloques.map((b: any, i: number) => (
             <li class="d-fase">
-              <span class="d-fase__n" aria-hidden={pr.marcasSr || pr.secuencia ? 'true' : undefined}>{pr.marcas[i] ?? String(i + 1).padStart(2, '0')}</span>
-              <h3 class="d-h3">{pr.marcasSr?.[i] && <span class="d-sr">{pr.marcasSr[i]} </span>}{b.t}</h3>
+              <span class="d-fase__n" aria-hidden={marcasSr || pr.secuencia ? 'true' : undefined}>{marcas[i] ?? String(i + 1).padStart(2, '0')}</span>
+              <h3 class="d-h3">{marcasSr?.[i] && <span class="d-sr">{marcasSr[i]} </span>}{b.t}</h3>
               <p class="d-cuerpo" set:html={bloquesHtml[i]} />
             </li>
           ))}
@@ -545,9 +435,9 @@ const jsonLd = {
          etiqueta no se pega (spec §7; se despegaba del párrafo y bajaba 90 px hasta el botón). */}
     {secCierre && (
       <section class="d-sec d-sec--quieta" aria-labelledby="s-cie">
-        <div class="d-eti"><h2 class="d-h2" id="s-cie">{pr.cierreH2 ?? sinPunto(secCierre.h2)}</h2></div>
+        <div class="d-eti"><h2 class="d-h2" id="s-cie">{sinPunto(secCierre.h2)}</h2></div>
         <div class="d-cierre-svc">
-          <p class="d-guia">{pr.cierreP ?? secCierre.parrafos?.[0]}</p>
+          <p class="d-guia">{secCierre.parrafos?.[0]}</p>
           <div class="d-btns">
             <a class="d-btn" href={CONTACTO}>Pedir el diagnóstico gratis</a>
             {pr.cierreChequeo && <a class="d-btn d-btn--alt" href="/v3/diagnostico/">Correr el chequeo</a>}
