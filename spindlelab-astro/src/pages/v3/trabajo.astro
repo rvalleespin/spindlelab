@@ -20,7 +20,8 @@
 // se pega (--quieta); la barra de «Bernardo Combeau | Model» va en gris, en el h2 y en la
 // etiqueta de la imagen; el grafo suma url, #breadcrumb y la lista de las cuatro piezas.
 // Segunda pasada: el cierre nombraba a Gemini, que el chequeo no prueba en vivo; ahora dice
-// ChatGPT, Claude y Perplexity, como el índice de servicios y el diagnóstico.
+// ChatGPT, Claude y Perplexity, como el índice de servicios y el diagnóstico (desde E8,
+// 14-oct, la guía del cierre no nombra motores: ver el comentario del cierre).
 // QA2 (6-oct): la medida del pie y del cierre va en el párrafo y en em (28.5em, ≤ 68
 // caracteres); el par del cierre es «Correr el chequeo» + «Pedir el diagnóstico» (Desarrollo
 // Web lo lleva el «Siguiente»); la cabecera baja a 112 px en celular para que la obra asome
@@ -75,9 +76,15 @@ const { casos } = obra;
 //    #valores, #procedimiento, #especialista, «Lo que no te vamos a prometer», #preguntas).
 //    QA2: «una home de una sola página» era redundante y la línea tenía 31 palabras contra
 //    17-20 de las otras tres; queda en 22, con «por ahora» porque las internas siguen
-//    abiertas en la ficha. Redacción final: Clara.
+//    abiertas en la ficha. Clara la dejó así en el pase de voz (E8, 14-oct): dice solo lo
+//    construido.
 //  · Verifica y Cumple, casos/2/rubro: «Herramienta propia» junto al tipo «Producto propio»
 //    se leía «Herramienta propia · Producto propio» (QA2, A10). Dice «Herramienta».
+//  · Verifica y Cumple, casos/2/prueba (E8, tanda 3, 14-oct): la prueba que Ramón aprobó, con
+//    la vara del chequeo de la Ley 21.719 (36 el 9-sep, 73 el 21-sep, 100 el 14-oct). Es un
+//    segundo <p class="d-cuerpo"> bajo la línea; solo la lee esta página y no va al JSON-LD.
+//    Antes de publicar se vuelve a correr ese chequeo sobre la vista previa: si no da 100, la
+//    frase se corrige con la fecha y el puntaje nuevos.
 
 // El precio de entrada de Desarrollo Web, del mismo dato que la home y el índice de
 // servicios: el primero de «$390.000 · $690.000 · $1.190.000». Spec §3: «Desde … + IVA».
@@ -241,6 +248,7 @@ const jsonLd = {
             </div>
             <div class="d-pie-trab__txt">
               <p class="d-cuerpo">{p.linea}</p>
+              {p.prueba && <p class="d-cuerpo">{p.prueba}</p>}
               {p.concepto && (
                 <p class="d-cuerpo"><b class="d-pie-trab__fuerte">{p.n} no existe.</b> Es un ejercicio para mostrar cómo trabajamos en este rubro, no un cliente.</p>
               )}
@@ -260,14 +268,15 @@ const jsonLd = {
         rubro. El paso gratis (el chequeo, que corre sobre cualquier sitio) y el precio de
         entrada de Desarrollo Web. Sin anunciar piezas futuras: el portafolio registra UNA
         pieza de concepto en el sitio (marketing/portafolio/README.md), no una serie por rubro.
-        Sección corta: --quieta, la etiqueta no se pega (spec §7). Los motores que nombra el
-        chequeo son los que functions/api/chequeo.js prueba (ChatGPT, Claude, Perplexity), con
-        las mismas palabras que el índice de servicios: Gemini no se prueba en vivo. */}
+        Sección corta: --quieta, la etiqueta no se pega (spec §7). Desde el pase de voz (E8,
+        14-oct) la guía no nombra motores: la línea de Diagnóstico, adonde lleva el botón, ya
+        los dice. Si alguna vez los vuelve a nombrar, son los que functions/api/chequeo.js
+        prueba (ChatGPT, Claude, Perplexity): Gemini no se prueba en vivo. */}
     <section class="d-sec d-sec--quieta" aria-labelledby="s-cierre">
       <div class="d-eti"><h2 class="d-h2" id="s-cierre">Antes de construir el tuyo</h2></div>
       <div class="d-cierre-trab">
-        <p class="d-guia">Pon tu dominio y ves en segundos si los robots de ChatGPT, Claude y Perplexity pueden entrar a tu sitio, sea cual sea el rubro. Es el mismo chequeo con el que partimos cada proyecto.</p>
-        <p class="d-cuerpo">Si hay que construirlo de nuevo, eso es Desarrollo web: tres planes, y el valor final se cierra tras el diagnóstico gratuito.</p>
+        <p class="d-guia">Sea cual sea tu rubro, el chequeo gratis te muestra en segundos qué ve la IA en tu sitio. Es el mismo chequeo con el que partimos cada proyecto.</p>
+        <p class="d-cuerpo">Si hay que construirlo de nuevo, eso es Desarrollo web: cuatro planes, y el valor final se cierra cuando conversamos tu proyecto.</p>
         <p class="d-precio d-precio-trab"><span class="d-pre-rot">Desde</span><span class="d-pre-sep" aria-hidden="true"></span> <span class="d-pre-junto-trab"><b>{desdeWeb}</b> <span class="d-pre-rot">+ IVA</span></span></p>
         {/* El par de cierre del sitio (spec §7, índice de servicios y Nosotros): el chequeo
             y el diagnóstico que el cuerpo nombra. Desarrollo Web lo lleva el «Siguiente»

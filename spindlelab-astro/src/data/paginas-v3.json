@@ -12,15 +12,15 @@
         "bloques": [
           {
             "t": "Diagnóstico técnico",
-            "d": "Todo parte con tu URL y el chequeo de 21 señales, el mismo que puedes correr tú en segundos. Después revisamos el sitio a mano (rastreo, indexación, velocidad, datos estructurados y señales de confianza) y sintetizamos los hallazgos más relevantes en un mini-diagnóstico de una página. Y conversamos 20 minutos para entender tu negocio y las búsquedas que te importan."
+            "d": "Todo parte con tu URL y el chequeo de 21 señales, el mismo que puedes correr tú en segundos. Después revisamos el sitio a mano (rastreo, indexación, velocidad, datos estructurados y señales de confianza) y conversamos 20 minutos para entender tu negocio y las búsquedas que te importan."
           },
           {
             "t": "Estrategia AEO/GEO",
-            "d": "Con la base técnica clara, medimos tu presencia en los motores de IA: ejecutamos las preguntas que haría tu cliente ideal en ChatGPT, Gemini y Perplexity, documentamos quién gana esas respuestas hoy, y diseñamos la hoja de ruta para que los modelos te citen y recomienden (claridad de entidad, contenido citable y autoridad)."
+            "d": "Con la base técnica clara, medimos tu presencia en los motores de IA: hacemos en ChatGPT, Gemini y Perplexity las preguntas que haría tu cliente y vemos quién gana hoy esas respuestas. Con eso armamos la hoja de ruta para que los modelos puedan citarte."
           },
           {
             "t": "Implementación",
-            "d": "Ejecutamos los cambios técnicos y de contenido en conjunto con tu equipo: correcciones de indexación y velocidad, datos estructurados listos para pegar, y páginas reestructuradas para responder preguntas con formato citable. Tú decides el ritmo: entrega de especificaciones para tu equipo, o ejecución directa nuestra."
+            "d": "Los cambios son técnicos y de contenido: correcciones de indexación y velocidad, datos estructurados listos para pegar y páginas reestructuradas para responder preguntas en formato citable. Tú decides si los ejecuta tu equipo, con nuestras especificaciones, o los ejecutamos nosotros."
           },
           {
             "t": "Monitoreo",
@@ -38,7 +38,7 @@
         "bloques": [
           {
             "t": "Priorizado por impacto",
-            "d": "Nunca entregamos 200 hallazgos sin jerarquía. Primero lo que mueve resultados; lo cosmético, al final o nunca."
+            "d": "Nunca entregamos hallazgos sin jerarquía. Primero lo que más te frena; lo cosmético, al final o nunca."
           },
           {
             "t": "Lenguaje de negocio",
@@ -59,16 +59,16 @@
         "h2": "Lo que necesitamos de ti",
         "bajada": "Poco, pero importante.",
         "lista": [
-          "Tu URL: con eso parte el diagnóstico gratuito.",
+          "Tu URL: con eso parte el mini-diagnóstico.",
           "20 minutos: una conversación para entender qué significa \"ganar\" para ti.",
-          "Acceso de lectura: Google Search Console y Analytics para la auditoría completa. Nunca pedimos accesos de administrador.",
+          "Acceso de lectura: Google Search Console, y Analytics si lo tienes, para la auditoría completa. Nos agregas como usuario, sin compartir tu contraseña.",
           "Una contraparte: alguien de tu equipo que pueda responder dudas y aprobar prioridades."
         ]
       },
       {
         "h2": "El primer paso es gratis.",
         "parrafos": [
-          "Envíanos tu URL y en 24 horas tienes el mini-diagnóstico. Los otros tres pasos, solo si el primero te convence."
+          "Envíanos tu URL y en 24 horas tienes el mini-diagnóstico. Las otras tres fases, solo si la primera te convence."
         ]
       }
     ],
@@ -114,7 +114,7 @@
         "bloques": [
           {
             "t": "El chequeo que acabas de correr",
-            "d": "Automático, en segundos, sobre tu sitio. Te dice si estás técnicamente listo y qué corregir primero."
+            "d": "Automático y en segundos. Te dice si tu sitio está técnicamente listo y qué corregir primero."
           },
           {
             "t": "El mini-diagnóstico",
@@ -156,7 +156,7 @@
         },
         {
           "t": "Lo que muestran las corridas",
-          "d": "Quienes aparecen recomendados casi nunca lo consiguen desde su propio sitio: los motores los citan desde rankings, directorios y artículos de terceros. Sin saber de dónde sale la recomendación, no hay nada que trabajar."
+          "d": "Los motores citan rankings, directorios y artículos de terceros, y no solo el sitio de quien recomiendan. Si no sabes de dónde sale la recomendación, no sabes qué trabajar."
         }
       ]
     },
@@ -175,11 +175,11 @@
       },
       {
         "p": "¿Un puntaje alto significa que ChatGPT me va a recomendar?",
-        "r": "No. Este chequeo mide si tu sitio está preparado, no si hoy te citan. Los motores arman sus respuestas con fuentes de terceros (rankings, directorios, artículos), no solo con tu sitio. Puedes estar impecable por dentro y aun así no aparecer. Qué fuentes te faltan es justo lo que revisa el mini-diagnóstico."
+        "r": "No. Puedes estar impecable por dentro y aun así no aparecer, porque los motores también arman sus respuestas con lo que publican otros sitios. Qué fuentes te faltan es lo que revisa el mini-diagnóstico."
       },
       {
         "p": "¿Guardan mi dominio?",
-        "r": "No guardamos el dominio consultado ni te pedimos datos. El chequeo lee únicamente páginas públicas de tu sitio, las mismas que lee cualquier buscador."
+        "r": "No guardamos el dominio consultado ni te pedimos datos."
       },
       {
         "p": "¿En qué se diferencia del mini-diagnóstico?",
@@ -216,7 +216,7 @@
         "bloques": [
           {
             "t": "Listo.",
-            "d": "Te escribimos dentro de 24 horas con tu mini-diagnóstico."
+            "d": "Te escribimos dentro de 24 horas con tu mini-diagnóstico, o para conversar tu proyecto si partes de cero."
           }
         ],
         "parrafos": [
@@ -230,7 +230,7 @@
         "bloques": [
           {
             "t": "Nos escribes",
-            "d": "Un correo con tu URL basta. Si quieres, agrega contexto: qué vendes, quién es tu cliente, qué te preocupa."
+            "d": "Un correo con tu URL basta. Si quieres, cuéntanos qué vendes y qué te preocupa de tu sitio."
           },
           {
             "t": "Recibes el diagnóstico",
@@ -272,12 +272,12 @@
     ],
     "faq": [
       {
-        "p": "¿El diagnóstico es realmente gratis?",
-        "r": "Sí: una página con los hallazgos más relevantes de tu sitio, en 24 horas, sin costo ni compromiso. Es nuestra forma de demostrar cómo trabajamos antes de que decidas nada."
+        "p": "¿El mini-diagnóstico es realmente gratis?",
+        "r": "Sí. Es nuestra forma de mostrarte cómo trabajamos antes de que decidas nada."
       },
       {
         "p": "¿Qué información necesitan para empezar?",
-        "r": "Solo la URL de tu sitio. Con eso generamos el mini-diagnóstico; si después quieres la auditoría completa, pediremos acceso de lectura a Search Console."
+        "r": "Solo la URL de tu sitio. Con eso hacemos el mini-diagnóstico; si después quieres la auditoría completa, te pedimos acceso de lectura a Search Console."
       },
       {
         "p": "¿Firman acuerdos de confidencialidad?",
@@ -380,7 +380,7 @@
     "linea": "Cómo funciona esto por dentro, desde qué mira el chequeo hasta qué preguntar antes de contratar a alguien. La metodología está publicada a propósito.",
     "cierre": {
       "h2": "Leer ayuda; medir, más.",
-      "guia": "Pon tu dominio y ves en segundos si una IA te puede leer, si te entiende y si te puede citar.",
+      "guia": "El chequeo revisa 21 señales de tu dominio en segundos, gratis. Cada señal que no pases viene con la instrucción para arreglarla.",
       "cuerpo": "Es el mismo chequeo con el que partimos cada proyecto."
     }
   }

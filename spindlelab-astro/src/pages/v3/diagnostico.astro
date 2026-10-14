@@ -132,7 +132,7 @@ const jsonLd = {
     {/* El primer «Pedirlo» de la página (brief §3: lo que tiene que pasar en /diagnostico/).
          Secundario y de 36 px: el protagonista sigue siendo el instrumento. */}
     <div class="d-entrada">
-      <p class="d-nota-card"><b>21 chequeos, 100 puntos.</b> Tres bloques, con su peso a la vista: leerte 30, entenderte 40, citarte 30.</p>
+      <p class="d-nota-card"><b>21 chequeos, 100 puntos.</b> Tres bloques: leerte 30, entenderte 40, citarte 30.</p>
       <div class="d-entrada-diag">
         {/* «mini-diagnóstico», no «diagnóstico completo» (QA final, conversión 8): el paso gratis
              tenía dos nombres en el mismo recorrido, y al lado Auditoría vende la «Auditoría
@@ -148,7 +148,7 @@ const jsonLd = {
       <div class="d-filas">
         <div class="d-plan">
           <h3 class="d-h3">¿Te pueden leer?</h3><span class="d-plan__precio">30 puntos</span>
-          <p class="d-cuerpo">No todos los robots de IA hacen lo mismo: unos <b>buscan en vivo</b> cuando alguien pregunta (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User) y otros <b>recogen texto para entrenar modelos futuros</b> (GPTBot, ClaudeBot, Google-Extended, CCBot). Bloquear a los primeros te borra de las respuestas de hoy; bloquear a los segundos no te quita ni una cita y es una decisión legítima. Verificamos ambos por separado, probamos si tu servidor expulsa a los robots por su nombre, y que el sitio responda 200 por HTTPS. Si los bots en vivo no entran, nada de lo demás importa.</p>
+          <p class="d-cuerpo">No todos los robots de IA hacen lo mismo: unos <b>buscan en vivo</b> cuando alguien pregunta (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User) y otros <b>recogen texto para entrenar modelos futuros</b> (GPTBot, ClaudeBot, Google-Extended, CCBot). Bloquear a los primeros te borra de las respuestas de hoy en ChatGPT, Claude y Perplexity; bloquear a los segundos no te quita ahí ni una cita y es una decisión legítima. Verificamos ambos por separado, probamos si tu servidor expulsa a los robots por su nombre, y que el sitio responda 200 por HTTPS. Si los bots en vivo no entran, nada de lo demás importa.</p>
         </div>
         <div class="d-plan">
           <h3 class="d-h3">¿Te entienden?</h3><span class="d-plan__precio">40 puntos</span>
@@ -215,7 +215,9 @@ const jsonLd = {
 
     {/* El CTA dice qué pasa al hacer clic (antislop A5). Los botones dicen «el diagnóstico»,
          sin «completo»: contacto lo ofrece como «mini-diagnóstico» y los dos adjetivos se
-         contradecían justo en el clic (QA 5-oct; el nombre único queda para Clara). */}
+         contradecían justo en el clic (QA 5-oct). El nombre único lo fijó el pase de voz de
+         Clara (E8, hoja de voz 2.2): «mini-diagnóstico» para la oferta y la forma corta,
+         «Pedir el diagnóstico», en los botones. */}
     <a class="d-siguiente d-siguiente-diag" href={CONTACTO}><span class="d-chico d-gris">{s.siguiente.chico}</span><span class="d-h1">{`${s.siguiente.enlace} →`}</span></a>
   </main>
 

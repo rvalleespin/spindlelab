@@ -60,11 +60,12 @@
 // decida. Versión propuesta: «El objetivo es que cuando alguien pregunte por tu rubro, tu
 // nombre ya esté ahí.». Su decisión, sea cual sea, va a la spec §7.
 //
-// ⚠️ PENDIENTE DE CLARA O RAMÓN (QA 5-oct, menor, A10): la fila 1 de «Cómo trabajo»
+// ⚠️ PENDIENTE DE RAMÓN (QA 5-oct, menor, A10): la fila 1 de «Cómo trabajo»
 // («Diagnóstico antes que contrato») y el párrafo del cierre dicen casi lo mismo, con
 // «Gratis, en 24 horas» en los dos. Son dos textos publicados; cuál se va no lo decide el
-// constructor. Opciones: quitar el párrafo del cierre (queda h2 + línea chica + botones) o
-// quitar la fila 1.
+// constructor. El pase de voz de Clara (E8, 14-oct) no lo tocó: lo dejó en el paquete de la
+// bio que decide Ramón (R4), con la variante del párrafo del cierre sin el «Gratis, en 24
+// horas» repetido (copy-secciones.md, anexo C).
 //
 // JSON-LD: AboutPage + BreadcrumbList, los mismos nodos e @id de antes. La Person
 // (#autor-ramon) la emite Layout.astro; acá solo se referencia, para no duplicar @id.
@@ -148,7 +149,7 @@ const jsonLd = {
     <header class="d-cab">
       <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Nosotros' }]} />
       <h1 class="d-h1 d-h1-nos">No te prometo. Te muestro.</h1>
-      <p class="d-linea">Detrás de SpindleLab está Ramón Vallejos: SEO técnico y visibilidad en motores de IA, con evidencia antes que promesas.</p>
+      <p class="d-linea">Detrás de SpindleLab está Ramón Vallejos: SEO técnico y visibilidad en motores de IA.</p>
       <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>
     </header>
 
