@@ -1,0 +1,1696 @@
+{
+ "obra": "E9 · piezas reales (Tanda A, primer juego)",
+ "autor": "Bruno (persona-director-creativo)",
+ "generado_utc": "2026-10-14T22:30:52.020Z",
+ "generado_chile": "2026-10-14T19:30:52-03:00",
+ "fecha_crudo": "2026-10-14",
+ "generador": "e9/piezas/generar.mjs",
+ "como_regenerar": "node generar.mjs (captura hoy y rinde) · node generar.mjs --sin-captura (rinde desde el crudo) · ver la cabecera del script",
+ "registro": "crudo/2026-10-14/registro.json",
+ "reglas": [
+  "Todo texto de una pieza es subcadena literal de su crudo o un conteo derivado con su fórmula (texto_origen); el render lo comprueba y si no cuadra la pieza no sale.",
+  "Lectura: texto al 100 % de opacidad sobre el color del campo (tokens leídos de driftime.css), contraste medido ≥ 4,5:1, margen ≥ 24 px. Esquina inferior: dominio · qué es · fecha.",
+  "Pantallas: capturas reales montadas con mockups/README.md (escena.html), sin texto agregado salvo la hora de la captura en la barra del teléfono.",
+  "Sin radio horneado (lo pone el sitio). Manrope del sitio; Gabarito no va en piezas. Sin generación: nada de Higgsfield.",
+  "Ninguna pieza lleva oro; se mide igual (oro.png / oro.jpg)."
+ ],
+ "piezas": [
+  {
+   "id": "k1-67-de-69",
+   "archivo": "salida/k1-67-de-69.png",
+   "archivo_jpg": "salida/k1-67-de-69.jpg",
+   "ancho": 1600,
+   "alto": 1760,
+   "jpg": {
+    "ancho": 1600,
+    "alto": 1760
+   },
+   "tratamiento": "lectura",
+   "campo": "navy",
+   "fondo": "#0e2a47",
+   "texto_color": "#e4f1ec",
+   "fuente": {
+    "crudo": [
+     "crudo/2026-10-14/locales/corridas-chequeo-2026-08-31.agregados.txt"
+    ],
+    "capturas": [
+     "local/corridas-chequeo-2026-08-31.agregados.txt"
+    ],
+    "capturado_utc": "2026-10-14T22:30:25.016Z",
+    "capturado_chile": "2026-10-14T19:30:25-03:00"
+   },
+   "texto_en_pieza": [
+    "Chequeo que falla",
+    "Tienes preguntas frecuentes marcadas",
+    "67 de 69",
+    "Sitios que lo fallan",
+    "Inmobiliarias",
+    "37 de 38",
+    "Contadores",
+    "30 de 31",
+    "Corridas del chequeo público",
+    "31-ago-2026"
+   ],
+   "texto_origen": [
+    {
+     "texto": "Chequeo que falla",
+     "origen": "literal en crudo/2026-10-14/locales/corridas-chequeo-2026-08-31.agregados.txt",
+     "px_css": 22,
+     "contraste": 12.56
+    },
+    {
+     "texto": "Tienes preguntas frecuentes marcadas",
+     "origen": "literal en crudo/2026-10-14/locales/corridas-chequeo-2026-08-31.agregados.txt",
+     "px_css": 40,
+     "contraste": 12.56
+    },
+    {
+     "texto": "67 de 69",
+     "origen": "derivado: fallan faq: 37 + 30 = 67; corridas ok: 38 + 31 = 69",
+     "px_css": 184,
+     "contraste": 12.56
+    },
+    {
+     "texto": "Sitios que lo fallan",
+     "origen": "literal en crudo/2026-10-14/locales/corridas-chequeo-2026-08-31.agregados.txt",
+     "px_css": 26,
+     "contraste": 12.56
+    },
+    {
+     "texto": "Inmobiliarias",
+     "origen": "literal en crudo/2026-10-14/locales/corridas-chequeo-2026-08-31.agregados.txt",
+     "px_css": 28,
+     "contraste": 12.56
+    },
+    {
+     "texto": "37 de 38",
+     "origen": "derivado: Inmobiliarias: fila «Tienes preguntas frecuentes marcadas (`faq`)» = 37; «Inmobiliarias — 38 corridas ok»",
+     "px_css": 28,
+     "contraste": 12.56
+    },
+    {
+     "texto": "Contadores",
+     "origen": "literal en crudo/2026-10-14/locales/corridas-chequeo-2026-08-31.agregados.txt",
+     "px_css": 28,
+     "contraste": 12.56
+    },
+    {
+     "texto": "30 de 31",
+     "origen": "derivado: Contadores: fila «Tienes preguntas frecuentes marcadas (`faq`)» = 30; «Contadores — 31 corridas ok»",
+     "px_css": 28,
+     "contraste": 12.56
+    },
+    {
+     "texto": "Corridas del chequeo público",
+     "origen": "literal en crudo/2026-10-14/locales/corridas-chequeo-2026-08-31.agregados.txt",
+     "px_css": 17,
+     "contraste": 12.56
+    },
+    {
+     "texto": "31-ago-2026",
+     "origen": "literal en crudo/2026-10-14/locales/corridas-chequeo-2026-08-31.agregados.txt",
+     "px_css": 17,
+     "contraste": 12.56
+    }
+   ],
+   "derivados": [
+    {
+     "texto": "67 de 69",
+     "formula": "fallan faq: 37 + 30 = 67; corridas ok: 38 + 31 = 69"
+    },
+    {
+     "texto": "37 de 38",
+     "formula": "Inmobiliarias: fila «Tienes preguntas frecuentes marcadas (`faq`)» = 37; «Inmobiliarias — 38 corridas ok»"
+    },
+    {
+     "texto": "30 de 31",
+     "formula": "Contadores: fila «Tienes preguntas frecuentes marcadas (`faq`)» = 30; «Contadores — 31 corridas ok»"
+    }
+   ],
+   "glifos": [
+    "·"
+   ],
+   "contraste_min": 12.56,
+   "oro": {
+    "criterio": "manual §07b: tono 38–54°, saturación ≥ 0,5, brillo ≥ 0,5; < 0,05 % es limpio",
+    "png": {
+     "pixeles": 0,
+     "total": 2816000,
+     "pct": 0,
+     "limpio": true,
+     "caja": null
+    },
+    "jpg": {
+     "pixeles": 0,
+     "total": 2816000,
+     "pct": 0,
+     "limpio": true,
+     "caja": null
+    },
+    "veredicto": "limpio"
+   },
+   "requiere_ok": true,
+   "tablero": {
+    "archivo": "salida/k1-67-de-69-tablero.png",
+    "archivo_jpg": "salida/k1-67-de-69-tablero.jpg",
+    "marca": "Espera tu OK (texto del tablero, no de la pieza: no sale del crudo y no va al sitio)"
+   },
+   "destino": "propuesta: Diagnóstico, junto a «¿Te pueden citar?» de la metodología. Solo si Ramón lo marca (R7).",
+   "etiqueta_propuesta": "Corridas del chequeo público · 31-ago-2026 · 69 sitios de dos rubros",
+   "nota": "La esquina lleva la fecha del dato (31-ago-2026), no la de hoy, y no lleva dominio: la regla es «sin un solo dominio». Solo agregados: ningún dominio en la pieza ni en el crudo. Lo medido es el chequeo «faq» (nodo FAQPage o QAPage en el JSON-LD), no «responder preguntas». Ojo para la decisión: la home v3 también falla esta señal (pendientes-traspaso-detalle.md:816); la portada publicada hoy la pasa.",
+   "html": "html/k1-67-de-69.html"
+  },
+  {
+   "id": "k2-chequeo-ia-85-54",
+   "archivo": "salida/k2-chequeo-ia-85-54.png",
+   "archivo_jpg": "salida/k2-chequeo-ia-85-54.jpg",
+   "ancho": 1600,
+   "alto": 706,
+   "jpg": {
+    "ancho": 1600,
+    "alto": 706
+   },
+   "tratamiento": "pantallas",
+   "campo": null,
+   "fondo": "#000000",
+   "texto_color": null,
+   "fuente": {
+    "url": "https://claude-magical-franklin-ckfk.spindlelab-v2.pages.dev/v3/diagnostico/",
+    "crudo": [
+     "crudo/2026-10-14/pantallas/chq-score-spindlelab.cl.png",
+     "crudo/2026-10-14/pantallas/chq-score-spindlelab.cl.txt",
+     "crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "crudo/2026-10-14/pantallas/chq-score-verifica.spindlelab.cl.png",
+     "crudo/2026-10-14/pantallas/chq-score-verifica.spindlelab.cl.txt",
+     "crudo/2026-10-14/verifica.spindlelab.cl/chequeo-ia.json"
+    ],
+    "capturado_utc": "2026-10-14T22:30:13.896Z",
+    "capturado_chile": "2026-10-14T19:30:13-03:00",
+    "api_capturada_utc": "2026-10-14T22:29:43.972Z"
+   },
+   "texto_en_pieza": [
+    "85/100",
+    "spindlelab.cl",
+    "Tienes lo esencial resuelto, pero hay huecos que te cuestan menciones.",
+    "Pedir el diagnóstico",
+    "54/100",
+    "verifica.spindlelab.cl",
+    "Los motores pueden llegar, pero les cuesta entenderte y no tienen mucho que citar.",
+    "Pedir el diagnóstico"
+   ],
+   "derivados": [],
+   "glifos": [],
+   "contraste_min": null,
+   "oro": {
+    "criterio": "manual §07b: tono 38–54°, saturación ≥ 0,5, brillo ≥ 0,5; < 0,05 % es limpio",
+    "png": {
+     "pixeles": 107,
+     "total": 1129600,
+     "pct": 0.0095,
+     "limpio": true,
+     "caja": [
+      449,
+      146,
+      1383,
+      553
+     ]
+    },
+    "jpg": {
+     "pixeles": 251,
+     "total": 1129600,
+     "pct": 0.0222,
+     "limpio": true,
+     "caja": [
+      441,
+      147,
+      1410,
+      563
+     ]
+    },
+    "veredicto": "limpio"
+   },
+   "requiere_ok": true,
+   "tablero": {
+    "archivo": "salida/k2-chequeo-ia-85-54-tablero.png",
+    "archivo_jpg": "salida/k2-chequeo-ia-85-54-tablero.jpg",
+    "marca": "Espera tu OK (texto del tablero, no de la pieza: no sale del crudo y no va al sitio)"
+   },
+   "destino": "propuesta: Diagnóstico o la ficha de Visibilidad en IA. Nunca junto al 36 → 73 → 100. Solo si Ramón lo marca.",
+   "etiqueta_propuesta": "Dos dominios propios en el chequeo de visibilidad en IA · 14-oct-2026",
+   "nota": "Las dos tarjetas de puntaje tal como las pinta /v3/diagnostico/ de la vista previa, con la respuesta servida desde el JSON crudo de hoy (no se llamó dos veces a la API). La lista completa de los 21 de cada dominio está en crudo/pantallas/chq-out-*.png por si se prefiere esa vista. AVISO: el veredicto de 70 a 89 del propio chequeo dice «…te cuestan menciones»; choca con el grep del brief §6 aunque no muestra ningún monitoreo.",
+   "html": "html/k2-chequeo-ia-85-54.html"
+  },
+  {
+   "id": "k3-panel-combeau",
+   "archivo": "salida/k3-panel-combeau.png",
+   "archivo_jpg": "salida/k3-panel-combeau.jpg",
+   "ancho": 3200,
+   "alto": 2400,
+   "jpg": {
+    "ancho": 1600,
+    "alto": 1200
+   },
+   "tratamiento": "pantallas",
+   "campo": null,
+   "fondo": "#C5CFC0",
+   "texto_color": null,
+   "fuente": {
+    "archivo": [
+     "marketing/encargos-otras-sesiones/revision-panel-admin-bernardo-capturas/11-encuadre-widget-portada.png",
+     "marketing/encargos-otras-sesiones/revision-panel-admin-bernardo-capturas/10-rediseno-mobile-editor-arreglado.png"
+    ],
+    "crudo": [
+     "crudo/2026-10-14/registro.json (local/combeau/*: sha256 y commit)"
+    ],
+    "capturado_utc": null,
+    "capturado_chile": null,
+    "entra_al_repo": "9f2e6a6 2026-09-23T15:05:27+00:00",
+    "fechado_en_revision": "2026-09-03"
+   },
+   "texto_en_pieza": [
+    "(capturas de pantalla: el texto es el del panel capturado)"
+   ],
+   "derivados": [],
+   "glifos": [],
+   "contraste_min": null,
+   "oro": {
+    "criterio": "manual §07b: tono 38–54°, saturación ≥ 0,5, brillo ≥ 0,5; < 0,05 % es limpio",
+    "png": {
+     "pixeles": 200,
+     "total": 7680000,
+     "pct": 0.0026,
+     "limpio": true,
+     "caja": [
+      448,
+      968,
+      2566,
+      1405
+     ]
+    },
+    "jpg": {
+     "pixeles": 48,
+     "total": 1920000,
+     "pct": 0.0025,
+     "limpio": true,
+     "caja": [
+      319,
+      304,
+      1271,
+      688
+     ]
+    },
+    "veredicto": "limpio"
+   },
+   "requiere_ok": true,
+   "tablero": {
+    "archivo": "salida/k3-panel-combeau-tablero.png",
+    "archivo_jpg": "salida/k3-panel-combeau-tablero.jpg",
+    "marca": "Espera tu OK (texto del tablero, no de la pieza: no sale del crudo y no va al sitio)"
+   },
+   "destino": "propuesta: Desarrollo web, junto a la obra de Combeau. Solo con permiso ESCRITO de Bernardo (su ficha dice «caso público NO autorizado»; brief-de-obra.md:81 dice verbal el 30-sep).",
+   "etiqueta_propuesta": "Combeau, fotografía · Cliente · panel de administración",
+   "nota": "Capturas existentes del panel (no se pueden recapturar: piden sesión). Escritorio: el encuadre de la portada con la vista previa del sitio (1600×1100, se ve el 16:10 de arriba). Teléfono: el editor arreglado (390×844 a 1x: en el PNG 2x se ve blando; en el JPEG de 1600 queda nítido). Se lee el nombre de pila de un modelo en el campo de descripción («Antonio»): es el alt de una foto publicada del cliente, no un prospecto. Fondo salvia, el de Combeau fotografía. Sin hora en la barra del teléfono: la captura no la tiene registrada.",
+   "html": "html/k3-panel-combeau.escena.json"
+  },
+  {
+   "id": "l1-robots-spindlelab",
+   "archivo": "salida/l1-robots-spindlelab.png",
+   "archivo_jpg": "salida/l1-robots-spindlelab.jpg",
+   "ancho": 1600,
+   "alto": 1600,
+   "jpg": {
+    "ancho": 1600,
+    "alto": 1600
+   },
+   "tratamiento": "lectura",
+   "campo": "navy",
+   "fondo": "#0e2a47",
+   "texto_color": "#e4f1ec",
+   "fuente": {
+    "url": "https://spindlelab.cl/robots.txt",
+    "crudo": [
+     "crudo/2026-10-14/spindlelab.cl/robots.txt",
+     "crudo/2026-10-14/registro.json"
+    ],
+    "capturas": [
+     "spindlelab.cl/robots.txt"
+    ],
+    "capturado_utc": "2026-10-14T22:29:42.874Z",
+    "capturado_chile": "2026-10-14T19:29:42-03:00"
+   },
+   "texto_en_pieza": [
+    "User-agent: GPTBot",
+    "Allow: /",
+    "User-agent: PerplexityBot",
+    "Allow: /",
+    "User-agent: ClaudeBot",
+    "Allow: /",
+    "spindlelab.cl",
+    "robots.txt",
+    "2026-10-14"
+   ],
+   "texto_origen": [
+    {
+     "texto": "User-agent: GPTBot",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/robots.txt",
+     "px_css": 59,
+     "contraste": 12.56
+    },
+    {
+     "texto": "Allow: /",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/robots.txt",
+     "px_css": 59,
+     "contraste": 12.56
+    },
+    {
+     "texto": "User-agent: PerplexityBot",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/robots.txt",
+     "px_css": 59,
+     "contraste": 12.56
+    },
+    {
+     "texto": "Allow: /",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/robots.txt",
+     "px_css": 59,
+     "contraste": 12.56
+    },
+    {
+     "texto": "User-agent: ClaudeBot",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/robots.txt",
+     "px_css": 59,
+     "contraste": 12.56
+    },
+    {
+     "texto": "Allow: /",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/robots.txt",
+     "px_css": 59,
+     "contraste": 12.56
+    },
+    {
+     "texto": "spindlelab.cl",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 17,
+     "contraste": 12.56
+    },
+    {
+     "texto": "robots.txt",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 17,
+     "contraste": 12.56
+    },
+    {
+     "texto": "2026-10-14",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 17,
+     "contraste": 12.56
+    }
+   ],
+   "derivados": [],
+   "glifos": [
+    "·"
+   ],
+   "contraste_min": 12.56,
+   "oro": {
+    "criterio": "manual §07b: tono 38–54°, saturación ≥ 0,5, brillo ≥ 0,5; < 0,05 % es limpio",
+    "png": {
+     "pixeles": 0,
+     "total": 2560000,
+     "pct": 0,
+     "limpio": true,
+     "caja": null
+    },
+    "jpg": {
+     "pixeles": 0,
+     "total": 2560000,
+     "pct": 0,
+     "limpio": true,
+     "caja": null
+    },
+    "veredicto": "limpio"
+   },
+   "requiere_ok": false,
+   "tablero": null,
+   "destino": "campo navy: Visibilidad en IA, Auditoría SEO técnica, Diagnóstico; artículos de visibilidad en IA (destacada).",
+   "etiqueta_propuesta": "spindlelab.cl · robots.txt · 14-oct-2026",
+   "nota": "Las líneas tal cual del archivo, en su orden. Solo los tres robots que nombra el plan; el archivo deja entrar además a OAI-SearchBot, ChatGPT-User, Google-Extended y anthropic-ai (ver el crudo).",
+   "html": "html/l1-robots-spindlelab.html"
+  },
+  {
+   "id": "l2-respuesta-robots-spindlelab",
+   "archivo": "salida/l2-respuesta-robots-spindlelab.png",
+   "archivo_jpg": "salida/l2-respuesta-robots-spindlelab.jpg",
+   "ancho": 1600,
+   "alto": 1360,
+   "jpg": {
+    "ancho": 1600,
+    "alto": 1360
+   },
+   "tratamiento": "lectura",
+   "campo": "petroleo",
+   "fondo": "#0f766e",
+   "texto_color": "#fff4e2",
+   "fuente": {
+    "url": "https://spindlelab.cl/",
+    "crudo": [
+     "crudo/2026-10-14/registro.json"
+    ],
+    "capturas": [
+     "spindlelab.cl/portada-gptbot",
+     "spindlelab.cl/portada-claudebot",
+     "spindlelab.cl/portada-perplexitybot",
+     "spindlelab.cl/portada-oai-searchbot",
+     "spindlelab.cl/portada-navegador"
+    ],
+    "capturado_utc": "2026-10-14T22:29:43.349Z",
+    "capturado_chile": "2026-10-14T19:29:43-03:00"
+   },
+   "texto_en_pieza": [
+    "GPTBot/1.4",
+    "200",
+    "ClaudeBot/1.0",
+    "200",
+    "PerplexityBot/1.0",
+    "200",
+    "OAI-SearchBot/1.4",
+    "200",
+    "Chrome/141.0.0.0",
+    "200",
+    "spindlelab.cl",
+    "GET /",
+    "2026-10-14"
+   ],
+   "texto_origen": [
+    {
+     "texto": "GPTBot/1.4",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 46,
+     "contraste": 5.03
+    },
+    {
+     "texto": "200",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 46,
+     "contraste": 5.03
+    },
+    {
+     "texto": "ClaudeBot/1.0",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 46,
+     "contraste": 5.03
+    },
+    {
+     "texto": "200",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 46,
+     "contraste": 5.03
+    },
+    {
+     "texto": "PerplexityBot/1.0",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 46,
+     "contraste": 5.03
+    },
+    {
+     "texto": "200",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 46,
+     "contraste": 5.03
+    },
+    {
+     "texto": "OAI-SearchBot/1.4",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 46,
+     "contraste": 5.03
+    },
+    {
+     "texto": "200",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 46,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Chrome/141.0.0.0",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 46,
+     "contraste": 5.03
+    },
+    {
+     "texto": "200",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 46,
+     "contraste": 5.03
+    },
+    {
+     "texto": "spindlelab.cl",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "GET /",
+     "origen": "derivado: registro: metodo «GET» + la ruta «/» de la url pedida (https://spindlelab.cl/)",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "2026-10-14",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 17,
+     "contraste": 5.03
+    }
+   ],
+   "derivados": [
+    {
+     "texto": "GET /",
+     "formula": "registro: metodo «GET» + la ruta «/» de la url pedida (https://spindlelab.cl/)"
+    }
+   ],
+   "glifos": [
+    "·"
+   ],
+   "contraste_min": 5.03,
+   "oro": {
+    "criterio": "manual §07b: tono 38–54°, saturación ≥ 0,5, brillo ≥ 0,5; < 0,05 % es limpio",
+    "png": {
+     "pixeles": 0,
+     "total": 2176000,
+     "pct": 0,
+     "limpio": true,
+     "caja": null
+    },
+    "jpg": {
+     "pixeles": 0,
+     "total": 2176000,
+     "pct": 0,
+     "limpio": true,
+     "caja": null
+    },
+    "veredicto": "limpio"
+   },
+   "requiere_ok": false,
+   "tablero": null,
+   "destino": "campo petróleo: Acompañamiento mensual; también Auditoría (re-render en navy con --campo=l2:navy).",
+   "etiqueta_propuesta": "spindlelab.cl · pedido con el user-agent de cada robot · 14-oct-2026",
+   "nota": "Pedido con el user-agent de cada robot, desde este entorno y no desde los servidores de OpenAI, Anthropic o Perplexity: prueba el filtro por nombre de agente, no por dirección de origen (el mismo límite que declara el chequeo). Google-Extended no tiene fila: es un token de robots.txt, no un user-agent (registro).",
+   "html": "html/l2-respuesta-robots-spindlelab.html"
+  },
+  {
+   "id": "l3-jsonld-spindlelab",
+   "archivo": "salida/l3-jsonld-spindlelab.png",
+   "archivo_jpg": "salida/l3-jsonld-spindlelab.jpg",
+   "ancho": 1600,
+   "alto": 1720,
+   "jpg": {
+    "ancho": 1600,
+    "alto": 1720
+   },
+   "tratamiento": "lectura",
+   "campo": "brasa",
+   "fondo": "#da3400",
+   "texto_color": "#ffffff",
+   "fuente": {
+    "crudo": [
+     "crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "crudo/2026-10-14/spindlelab.cl/portada.html",
+     "crudo/2026-10-14/registro.json",
+     "crudo/2026-10-14/spindlelab.cl/chequeo-ia.json"
+    ],
+    "capturas": [
+     "spindlelab.cl/jsonld"
+    ],
+    "capturado_utc": "2026-10-14T22:29:43.971Z",
+    "capturado_chile": "2026-10-14T19:29:43-03:00"
+   },
+   "texto_en_pieza": [
+    "<script type=\"application/ld+json\">",
+    "ProfessionalService",
+    "name",
+    "url",
+    "logo",
+    "email",
+    "description",
+    "areaServed",
+    "address",
+    "knowsAbout",
+    "sameAs",
+    "founder",
+    "makesOffer",
+    "WebSite",
+    "url",
+    "name",
+    "inLanguage",
+    "publisher",
+    "Person",
+    "name",
+    "jobTitle",
+    "image",
+    "url",
+    "worksFor",
+    "knowsAbout",
+    "alumniOf",
+    "FAQPage",
+    "mainEntity",
+    "spindlelab.cl",
+    "JSON-LD",
+    "2026-10-14"
+   ],
+   "texto_origen": [
+    {
+     "texto": "<script type=\"application/ld+json\">",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/portada.html",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "ProfessionalService",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 46,
+     "contraste": 4.7
+    },
+    {
+     "texto": "name",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "url",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "logo",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "email",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "description",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "areaServed",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "address",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "knowsAbout",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "sameAs",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "founder",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "makesOffer",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "WebSite",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 46,
+     "contraste": 4.7
+    },
+    {
+     "texto": "url",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "name",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "inLanguage",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "publisher",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "Person",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 46,
+     "contraste": 4.7
+    },
+    {
+     "texto": "name",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "jobTitle",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "image",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "url",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "worksFor",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "knowsAbout",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "alumniOf",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "FAQPage",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 46,
+     "contraste": 4.7
+    },
+    {
+     "texto": "mainEntity",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/jsonld.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "spindlelab.cl",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 17,
+     "contraste": 4.7
+    },
+    {
+     "texto": "JSON-LD",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 4.7
+    },
+    {
+     "texto": "2026-10-14",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 17,
+     "contraste": 4.7
+    }
+   ],
+   "derivados": [],
+   "glifos": [
+    "·"
+   ],
+   "contraste_min": 4.7,
+   "oro": {
+    "criterio": "manual §07b: tono 38–54°, saturación ≥ 0,5, brillo ≥ 0,5; < 0,05 % es limpio",
+    "png": {
+     "pixeles": 519,
+     "total": 2752000,
+     "pct": 0.0189,
+     "limpio": true,
+     "caja": [
+      101,
+      122,
+      1457,
+      1625
+     ]
+    },
+    "jpg": {
+     "pixeles": 633,
+     "total": 2752000,
+     "pct": 0.023,
+     "limpio": true,
+     "caja": [
+      101,
+      118,
+      1464,
+      1630
+     ]
+    },
+    "veredicto": "limpio"
+   },
+   "requiere_ok": false,
+   "tablero": null,
+   "destino": "campo brasa: Desarrollo web (el SEO técnico va en el código); también Auditoría (--campo=l3:navy).",
+   "etiqueta_propuesta": "spindlelab.cl · JSON-LD de la portada · 14-oct-2026",
+   "nota": "Cada nodo del @graph con todas sus propiedades (sin las que empiezan con @), en el orden del archivo. Es la portada publicada hoy (v2): el día que la v3 vaya a la raíz, este JSON-LD cambia y la pieza se vuelve a capturar.",
+   "html": "html/l3-jsonld-spindlelab.html"
+  },
+  {
+   "id": "l4-21-chequeos",
+   "archivo": "salida/l4-21-chequeos.png",
+   "archivo_jpg": "salida/l4-21-chequeos.jpg",
+   "ancho": 2400,
+   "alto": 1520,
+   "jpg": {
+    "ancho": 1600,
+    "alto": 1013
+   },
+   "tratamiento": "lectura",
+   "campo": "petroleo",
+   "fondo": "#0f766e",
+   "texto_color": "#fff4e2",
+   "fuente": {
+    "url": "https://spindlelab.cl/api/chequeo?dominio=spindlelab.cl",
+    "crudo": [
+     "crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "crudo/2026-10-14/locales/paginas-v3.diagnostico.json",
+     "crudo/2026-10-14/registro.json"
+    ],
+    "capturas": [
+     "spindlelab.cl/chequeo-ia",
+     "local/paginas-v3.diagnostico.json"
+    ],
+    "capturado_utc": "2026-10-14T22:29:43.972Z",
+    "capturado_chile": "2026-10-14T19:29:43-03:00"
+   },
+   "texto_en_pieza": [
+    "30",
+    "¿Te pueden leer?",
+    "Los índices de búsqueda de IA pueden entrar",
+    "7",
+    "Los asistentes de IA pueden visitarte en vivo",
+    "7",
+    "El servidor no expulsa a los robots de IA",
+    "8",
+    "Robots de entrenamiento: decisión consciente",
+    "2",
+    "El sitio responde por HTTPS",
+    "6",
+    "40",
+    "¿Te entienden?",
+    "Tienes datos estructurados",
+    "6",
+    "Tu negocio está declarado como entidad",
+    "8",
+    "Tu entidad tiene dirección y contacto",
+    "5",
+    "Te conectas con al menos 3 perfiles externos",
+    "6",
+    "Hay una persona con credenciales detrás",
+    "5",
+    "El título dice qué haces y dónde",
+    "4",
+    "Tienes meta description útil",
+    "4",
+    "Hay un solo H1",
+    "2",
+    "30",
+    "¿Te pueden citar?",
+    "Tienes llms.txt",
+    "4",
+    "Tienes preguntas frecuentes marcadas",
+    "6",
+    "Tienes sitemap.xml",
+    "4",
+    "Declaras la URL canónica",
+    "2",
+    "Declaras el idioma",
+    "2",
+    "Respondes preguntas en tus títulos",
+    "5",
+    "Tu contenido tiene fecha",
+    "4",
+    "Tu portada tiene contenido suficiente",
+    "3",
+    "spindlelab.cl",
+    "21 chequeos",
+    "2026-10-14"
+   ],
+   "texto_origen": [
+    {
+     "texto": "30",
+     "origen": "derivado: suma de «peso» de los items con bloque «acceso» en chequeo-ia.json (7 + 7 + 8 + 2 + 6)",
+     "px_css": 104,
+     "contraste": 5.03
+    },
+    {
+     "texto": "¿Te pueden leer?",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 24,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Los índices de búsqueda de IA pueden entrar",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "7",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Los asistentes de IA pueden visitarte en vivo",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "7",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "El servidor no expulsa a los robots de IA",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "8",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Robots de entrenamiento: decisión consciente",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "2",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "El sitio responde por HTTPS",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "6",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "40",
+     "origen": "derivado: suma de «peso» de los items con bloque «entidad» en chequeo-ia.json (6 + 8 + 5 + 6 + 5 + 4 + 4 + 2)",
+     "px_css": 104,
+     "contraste": 5.03
+    },
+    {
+     "texto": "¿Te entienden?",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 24,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Tienes datos estructurados",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "6",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Tu negocio está declarado como entidad",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "8",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Tu entidad tiene dirección y contacto",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "5",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Te conectas con al menos 3 perfiles externos",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "6",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Hay una persona con credenciales detrás",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "5",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "El título dice qué haces y dónde",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "4",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Tienes meta description útil",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "4",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Hay un solo H1",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "2",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "30",
+     "origen": "derivado: suma de «peso» de los items con bloque «citabilidad» en chequeo-ia.json (4 + 6 + 4 + 2 + 2 + 5 + 4 + 3)",
+     "px_css": 104,
+     "contraste": 5.03
+    },
+    {
+     "texto": "¿Te pueden citar?",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 24,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Tienes llms.txt",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "4",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Tienes preguntas frecuentes marcadas",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "6",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Tienes sitemap.xml",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "4",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Declaras la URL canónica",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "2",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Declaras el idioma",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "2",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Respondes preguntas en tus títulos",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "5",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Tu contenido tiene fecha",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "4",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "Tu portada tiene contenido suficiente",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "3",
+     "origen": "literal en crudo/2026-10-14/spindlelab.cl/chequeo-ia.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "spindlelab.cl",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "21 chequeos",
+     "origen": "derivado: items.length = 21 en chequeo-ia.json; la expresión «21 chequeos» es literal en paginas-v3.json (description)",
+     "px_css": 17,
+     "contraste": 5.03
+    },
+    {
+     "texto": "2026-10-14",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 17,
+     "contraste": 5.03
+    }
+   ],
+   "derivados": [
+    {
+     "texto": "30",
+     "formula": "suma de «peso» de los items con bloque «acceso» en chequeo-ia.json (7 + 7 + 8 + 2 + 6)"
+    },
+    {
+     "texto": "40",
+     "formula": "suma de «peso» de los items con bloque «entidad» en chequeo-ia.json (6 + 8 + 5 + 6 + 5 + 4 + 4 + 2)"
+    },
+    {
+     "texto": "30",
+     "formula": "suma de «peso» de los items con bloque «citabilidad» en chequeo-ia.json (4 + 6 + 4 + 2 + 2 + 5 + 4 + 3)"
+    },
+    {
+     "texto": "21 chequeos",
+     "formula": "items.length = 21 en chequeo-ia.json; la expresión «21 chequeos» es literal en paginas-v3.json (description)"
+    }
+   ],
+   "glifos": [
+    "·"
+   ],
+   "contraste_min": 5.03,
+   "oro": {
+    "criterio": "manual §07b: tono 38–54°, saturación ≥ 0,5, brillo ≥ 0,5; < 0,05 % es limpio",
+    "png": {
+     "pixeles": 0,
+     "total": 3648000,
+     "pct": 0,
+     "limpio": true,
+     "caja": null
+    },
+    "jpg": {
+     "pixeles": 0,
+     "total": 1620800,
+     "pct": 0,
+     "limpio": true,
+     "caja": null
+    },
+    "veredicto": "limpio"
+   },
+   "requiere_ok": false,
+   "tablero": null,
+   "destino": "Diagnóstico (la metodología 30/40/30 dibujada), destacada del artículo de los 21 chequeos, Acompañamiento mensual.",
+   "etiqueta_propuesta": "Los 21 chequeos y su peso · 14-oct-2026",
+   "nota": "Títulos, bloques y pesos tal como los devuelve /api/chequeo hoy (el instrumento, no el resultado de spindlelab.cl: la pieza no muestra qué pasó y qué no). Las sumas por bloque son derivadas. Contrastado con la tabla del artículo de los 21 chequeos: ver «cruce_articulo».",
+   "cruce_articulo": {
+    "filas_articulo": 21,
+    "coinciden": 21,
+    "distintas": []
+   },
+   "html": "html/l4-21-chequeos.html"
+  },
+  {
+   "id": "p1-verifica-12-cosas",
+   "archivo": "salida/p1-verifica-12-cosas.png",
+   "archivo_jpg": "salida/p1-verifica-12-cosas.jpg",
+   "ancho": 3200,
+   "alto": 2400,
+   "jpg": {
+    "ancho": 1600,
+    "alto": 1200
+   },
+   "tratamiento": "pantallas",
+   "campo": null,
+   "fondo": "#C3C8EE",
+   "texto_color": null,
+   "fuente": {
+    "url": "https://verifica.spindlelab.cl/",
+    "crudo": [
+     "crudo/2026-10-14/pantallas/verifica-ley-esc.png",
+     "crudo/2026-10-14/pantallas/verifica-ley-cel.png"
+    ],
+    "capturado_utc": "2026-10-14T22:29:53.387Z",
+    "capturado_chile": "2026-10-14T19:29:53-03:00"
+   },
+   "texto_en_pieza": [
+    "(capturas de pantalla de verifica.spindlelab.cl)",
+    "19:29"
+   ],
+   "derivados": [
+    {
+     "texto": "19:29",
+     "formula": "hora de Chile de la captura del teléfono (registro: 2026-10-14T19:29:53-03:00)"
+    }
+   ],
+   "glifos": [],
+   "contraste_min": null,
+   "oro": {
+    "criterio": "manual §07b: tono 38–54°, saturación ≥ 0,5, brillo ≥ 0,5; < 0,05 % es limpio",
+    "png": {
+     "pixeles": 79,
+     "total": 7680000,
+     "pct": 0.001,
+     "limpio": true,
+     "caja": [
+      896,
+      651,
+      2533,
+      1146
+     ]
+    },
+    "jpg": {
+     "pixeles": 6,
+     "total": 1920000,
+     "pct": 0.0003,
+     "limpio": true,
+     "caja": [
+      495,
+      328,
+      1188,
+      449
+     ]
+    },
+    "veredicto": "limpio"
+   },
+   "requiere_ok": false,
+   "tablero": null,
+   "destino": "Desarrollo web, Trabajo (Verifica y Cumple) y cualquier interna que muestre obra. Sin cifras de resultado.",
+   "etiqueta_propuesta": "Verifica y Cumple · Producto propio",
+   "nota": "Capturas de hoy del sitio en vivo, la sección «Lo que pide la ley» (las 12 cosas del artículo 14 ter) a 1440 y a 390, con la cabecera fija del propio sitio. Montaje del procedimiento de mockups/README.md, fondo lavanda de Verifica. La hora de la barra del teléfono es la de la captura (registro).",
+   "html": "html/p1-verifica-12-cosas.escena.json"
+  },
+  {
+   "id": "p2-verifica-como-revisamos",
+   "archivo": "salida/p2-verifica-como-revisamos.png",
+   "archivo_jpg": "salida/p2-verifica-como-revisamos.jpg",
+   "ancho": 2000,
+   "alto": 2200,
+   "jpg": {
+    "ancho": 1600,
+    "alto": 1760
+   },
+   "tratamiento": "pantallas",
+   "campo": null,
+   "fondo": "#C3C8EE",
+   "texto_color": null,
+   "fuente": {
+    "url": "https://verifica.spindlelab.cl/",
+    "crudo": [
+     "crudo/2026-10-14/pantallas/verifica-como-cel.png"
+    ],
+    "capturado_utc": "2026-10-14T22:30:04.156Z",
+    "capturado_chile": "2026-10-14T19:30:04-03:00"
+   },
+   "texto_en_pieza": [
+    "(captura de pantalla de verifica.spindlelab.cl)",
+    "19:30"
+   ],
+   "derivados": [
+    {
+     "texto": "19:30",
+     "formula": "hora de Chile de la captura (registro: 2026-10-14T19:30:04-03:00)"
+    }
+   ],
+   "glifos": [],
+   "contraste_min": null,
+   "oro": {
+    "criterio": "manual §07b: tono 38–54°, saturación ≥ 0,5, brillo ≥ 0,5; < 0,05 % es limpio",
+    "png": {
+     "pixeles": 50,
+     "total": 4400000,
+     "pct": 0.0011,
+     "limpio": true,
+     "caja": [
+      595,
+      349,
+      697,
+      377
+     ]
+    },
+    "jpg": {
+     "pixeles": 32,
+     "total": 2816000,
+     "pct": 0.0011,
+     "limpio": true,
+     "caja": [
+      489,
+      280,
+      558,
+      301
+     ]
+    },
+    "veredicto": "limpio"
+   },
+   "requiere_ok": false,
+   "tablero": null,
+   "destino": "Desarrollo web, Trabajo (Verifica y Cumple) y cualquier interna que muestre obra. Sin cifras de resultado.",
+   "etiqueta_propuesta": "Verifica y Cumple · Producto propio",
+   "nota": "Captura de hoy, a 390: la sección «Cómo revisamos tu sitio» (sin claves ni instalar nada; la fecha, lo que pide la ley y el resultado). Formato alto de los mockups (10:11). Se probó antes el bloque «Lo que sí revisamos» (fondo lima): da 0,16 % de oro por el antialias del texto oscuro sobre el lima, ver alternativas_descartadas.",
+   "html": "html/p2-verifica-como-revisamos.escena.json"
+  },
+  {
+   "id": "v1-ley-36-73-100",
+   "archivo": "salida/v1-ley-36-73-100.png",
+   "archivo_jpg": "salida/v1-ley-36-73-100.jpg",
+   "ancho": 2400,
+   "alto": 1200,
+   "jpg": {
+    "ancho": 1600,
+    "alto": 800
+   },
+   "tratamiento": "lectura",
+   "campo": "brasa",
+   "fondo": "#da3400",
+   "texto_color": "#ffffff",
+   "fuente": {
+    "url": "https://verifica.spindlelab.cl/api/chequeo?dominio=spindlelab.cl",
+    "crudo": [
+     "crudo/2026-10-14/locales/obra-v3.verifica-y-cumple.json",
+     "crudo/2026-10-14/locales/publicar-03-lo-que-no-se-ve.ley.txt",
+     "crudo/2026-10-14/registro.json"
+    ],
+    "capturas": [
+     "spindlelab.cl/chequeo-ley-21719",
+     "local/obra-v3.verifica-y-cumple.json",
+     "local/verifica-y-cumple@1a0ae0a.hallazgo.md",
+     "local/publicar-03-lo-que-no-se-ve.ley.txt"
+    ],
+    "capturado_utc": "2026-10-14T22:29:46.538Z",
+    "capturado_chile": "2026-10-14T19:29:46-03:00"
+   },
+   "texto_en_pieza": [
+    "36",
+    "9 de septiembre",
+    "73",
+    "21 de septiembre",
+    "100",
+    "14 de octubre",
+    "ya con otra forma de puntuar",
+    "spindlelab.cl",
+    "chequeo de la Ley 21.719",
+    "2026-10-14"
+   ],
+   "texto_origen": [
+    {
+     "texto": "36",
+     "origen": "literal en crudo/2026-10-14/locales/obra-v3.verifica-y-cumple.json",
+     "px_css": 176,
+     "contraste": 4.7
+    },
+    {
+     "texto": "9 de septiembre",
+     "origen": "literal en crudo/2026-10-14/locales/obra-v3.verifica-y-cumple.json",
+     "px_css": 26,
+     "contraste": 4.7
+    },
+    {
+     "texto": "73",
+     "origen": "literal en crudo/2026-10-14/locales/obra-v3.verifica-y-cumple.json",
+     "px_css": 176,
+     "contraste": 4.7
+    },
+    {
+     "texto": "21 de septiembre",
+     "origen": "literal en crudo/2026-10-14/locales/obra-v3.verifica-y-cumple.json",
+     "px_css": 26,
+     "contraste": 4.7
+    },
+    {
+     "texto": "100",
+     "origen": "literal en crudo/2026-10-14/locales/obra-v3.verifica-y-cumple.json",
+     "px_css": 176,
+     "contraste": 4.7
+    },
+    {
+     "texto": "14 de octubre",
+     "origen": "literal en crudo/2026-10-14/locales/obra-v3.verifica-y-cumple.json",
+     "px_css": 26,
+     "contraste": 4.7
+    },
+    {
+     "texto": "ya con otra forma de puntuar",
+     "origen": "literal en crudo/2026-10-14/locales/obra-v3.verifica-y-cumple.json",
+     "px_css": 21,
+     "contraste": 4.7
+    },
+    {
+     "texto": "spindlelab.cl",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 17,
+     "contraste": 4.7
+    },
+    {
+     "texto": "chequeo de la Ley 21.719",
+     "origen": "literal en crudo/2026-10-14/locales/publicar-03-lo-que-no-se-ve.ley.txt",
+     "px_css": 17,
+     "contraste": 4.7
+    },
+    {
+     "texto": "2026-10-14",
+     "origen": "literal en crudo/2026-10-14/registro.json",
+     "px_css": 17,
+     "contraste": 4.7
+    }
+   ],
+   "derivados": [],
+   "glifos": [
+    "→",
+    "·"
+   ],
+   "contraste_min": 4.7,
+   "oro": {
+    "criterio": "manual §07b: tono 38–54°, saturación ≥ 0,5, brillo ≥ 0,5; < 0,05 % es limpio",
+    "png": {
+     "pixeles": 120,
+     "total": 2880000,
+     "pct": 0.0042,
+     "limpio": true,
+     "caja": [
+      111,
+      654,
+      2238,
+      1115
+     ]
+    },
+    "jpg": {
+     "pixeles": 2,
+     "total": 1280000,
+     "pct": 0.0002,
+     "limpio": true,
+     "caja": [
+      158,
+      445,
+      1450,
+      738
+     ]
+    },
+    "veredicto": "limpio"
+   },
+   "requiere_ok": false,
+   "tablero": null,
+   "destino": "SOLO la ficha de Verifica y Cumple en /v3/trabajo/. Nunca junto al chequeo de IA, ni en la home, ni en el JSON-LD (regla del 14-oct).",
+   "etiqueta_propuesta": "spindlelab.cl en el chequeo de la Ley 21.719",
+   "nota": "Cifras y fechas literales de la prueba aprobada (obra-v3.json, casos[verifica-y-cumple].prueba). 36 y 73 corroboradas en ventas/casos-de-exito/verifica-y-cumple.md@1a0ae0a («Sacó 36 de 100», «73 de 100»); el 100 corroborado hoy: verifica.spindlelab.cl/api/chequeo?dominio=spindlelab.cl devolvió puntaje 100 (spindlelab.cl/chequeo-ley-21719.json). Las flechas son glifos, no texto.",
+   "corroboracion": {
+    "hoy_puntaje": 100,
+    "hoy_revisadoEn": "2026-10-14T22:29:47.020Z",
+    "hoy_pesoConfirmado": 14,
+    "hoy_pesoTotal": 20,
+    "hoy_sinConfirmar": 1
+   },
+   "html": "html/v1-ley-36-73-100.html"
+  }
+ ],
+ "no_hechas": [],
+ "capturas_fallidas": [
+  {
+   "id": "google-extended",
+   "url": null,
+   "status": null,
+   "motivo": "Google-Extended no aplica: es un token de robots.txt, no un user-agent. Google rastrea con Googlebot y el token solo decide si el texto se usa para Gemini; no hay forma de pedir la portada «como Google-Extended»."
+  },
+  {
+   "id": "verifica.spindlelab.cl/robots.txt",
+   "url": "https://verifica.spindlelab.cl/robots.txt",
+   "status": 200,
+   "motivo": "no es un robots.txt: status 200, content-type text/html; charset=utf-8 (el servidor devuelve la aplicación HTML)"
+  },
+  {
+   "id": "verifica.spindlelab.cl/llms.txt",
+   "url": "https://verifica.spindlelab.cl/llms.txt",
+   "status": 200,
+   "motivo": "no hay llms.txt: status 200, content-type text/html; charset=utf-8"
+  },
+  {
+   "id": "verifica.spindlelab.cl/sitemap.xml",
+   "url": "https://verifica.spindlelab.cl/sitemap.xml",
+   "status": 200,
+   "motivo": "no es un sitemap: status 200, content-type text/html; charset=utf-8"
+  }
+ ],
+ "alternativas_descartadas": [
+  {
+   "captura": "crudo/2026-10-14/pantallas/verifica-revisamos-cel.png",
+   "que": "Verifica y Cumple, bloque «Lo que sí revisamos» a 390 (fondo lima)",
+   "oro": {
+    "pixeles": 4726,
+    "total": 2962440,
+    "pct": 0.1595,
+    "limpio": false,
+    "caja": [
+     240,
+     513,
+     993,
+     1812
+    ]
+   },
+   "motivo": "Pasa el umbral de 0,05 % por el antialias del texto oscuro sobre el lima (bordes de letra en tonos oliva de 45 a 50°). No es una zona dorada a simple vista, pero el criterio de brief §6 es numérico: se reemplazó por «Cómo revisamos tu sitio»."
+  }
+ ],
+ "crudo_util_para_el_tablero": [
+  {
+   "archivo": "crudo/2026-10-14/pantallas/chq-out-spindlelab.cl.png",
+   "que": "el resultado completo del chequeo de IA de spindlelab.cl (85), los 21, en la UI de la vista previa"
+  },
+  {
+   "archivo": "crudo/2026-10-14/pantallas/chq-out-verifica.spindlelab.cl.png",
+   "que": "el resultado completo de verifica.spindlelab.cl (54)"
+  }
+ ],
+ "reutilizables_sin_regenerar": [
+  {
+   "archivo": "spindlelab-astro/public/assets/img/obra/mock-verifica-y-cumple-ancho.jpg",
+   "que": "portada de Verifica y Cumple («¿Estás seguro?») en notebook y teléfono, 5-oct"
+  },
+  {
+   "archivo": "spindlelab-astro/public/assets/img/obra/mock-verifica-y-cumple-alto.jpg",
+   "que": "la misma portada en el teléfono, 5-oct"
+  },
+  {
+   "archivo": "spindlelab-astro/public/assets/img/obra/mock-combeau-fotografia-ancho.jpg",
+   "que": "bernardocombeau.cl, 5-oct"
+  },
+  {
+   "archivo": "spindlelab-astro/public/assets/img/obra/mock-combeau-modelo-ancho.jpg",
+   "que": "bernardocombeau.cl/modelo/, 5-oct (el -alto-2 cuenta como oro: palmera, §07b)"
+  },
+  {
+   "archivo": "spindlelab-astro/public/assets/img/obra/mock-raigal-ancho.jpg",
+   "que": "Raigal, SOLO con el rótulo de concepto primero"
+  }
+ ]
+}

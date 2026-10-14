@@ -1,0 +1,27 @@
+{
+ "fuente": "https://verifica.spindlelab.cl/ (portada no archivada; ver sha256)",
+ "sha256_portada": "d6eb31476d5dcce370790775bf9c004c3e57a28761cf17cdba5762f91e945e06",
+ "etiquetas": [
+  "<script type=\"application/ld+json\">"
+ ],
+ "bloques": [
+  "\n{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebApplication\",\n      \"@id\": \"https://verifica.spindlelab.cl/#app\",\n      \"name\": \"Verifica y Cumple\",\n      \"url\": \"https://verifica.spindlelab.cl/\",\n      \"description\": \"Chequeo técnico gratuito de las señales que se ven en tu sitio y que pide la Ley 21.719, la nueva ley de datos personales de Chile.\",\n      \"applicationCategory\": \"BusinessApplication\",\n      \"operatingSystem\": \"Navegador web\",\n      \"inLanguage\": \"es-CL\",\n      \"provider\": {\n        \"@type\": \"Organization\",\n        \"@id\": \"https://spindlelab.cl/#org\",\n        \"name\": \"SpindleLab\",\n        \"legalName\": \"SpindleLab SpA\",\n        \"taxID\": \"78.474.925-8\",\n        \"url\": \"https://spindlelab.cl\"\n      },\n      \"offers\": { \"@type\": \"Offer\", \"price\": \"0\", \"priceCurrency\": \"CLP\", \"description\": \"Gratis, sin registro.\" }\n    }\n  ]\n}\n"
+ ],
+ "nodos": [
+  {
+   "tipo": "WebApplication",
+   "id": "https://verifica.spindlelab.cl/#app",
+   "propiedades": [
+    "name",
+    "url",
+    "description",
+    "applicationCategory",
+    "operatingSystem",
+    "inLanguage",
+    "provider",
+    "offers"
+   ]
+  }
+ ],
+ "errores": []
+}

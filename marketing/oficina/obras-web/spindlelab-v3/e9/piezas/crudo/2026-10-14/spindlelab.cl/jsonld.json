@@ -1,0 +1,62 @@
+{
+ "fuente": "spindlelab.cl/portada.html",
+ "sha256_portada": "f9724d9bfe388e7bf3d0fd4dc67d2696f29916ff747faedbb570ceef4b04a2e6",
+ "etiquetas": [
+  "<script type=\"application/ld+json\">",
+  "<script type=\"application/ld+json\">"
+ ],
+ "bloques": [
+  "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ProfessionalService\",\"@id\":\"https://spindlelab.cl/#org\",\"name\":\"SpindleLab\",\"url\":\"https://spindlelab.cl/\",\"logo\":\"https://spindlelab.cl/assets/img/favicon-512.png\",\"email\":\"hola@spindlelab.cl\",\"description\":\"SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B y financieras en Chile.\",\"areaServed\":{\"@type\":\"Country\",\"name\":\"Chile\"},\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Santiago\",\"addressCountry\":\"CL\"},\"knowsAbout\":[\"SEO técnico\",\"AEO\",\"GEO\",\"Visibilidad en IA\",\"E-E-A-T\",\"Datos estructurados\",\"Desarrollo web a medida\"],\"sameAs\":[\"https://www.linkedin.com/company/spindlelab/\",\"https://www.instagram.com/spindle.lab/\"],\"founder\":{\"@id\":\"https://spindlelab.cl/#autor-ramon\"},\"makesOffer\":[{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"@id\":\"https://spindlelab.cl/servicios/auditoria-seo-tecnica/#service\",\"name\":\"Auditoría SEO Técnica\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"@id\":\"https://spindlelab.cl/servicios/visibilidad-en-ia/#service\",\"name\":\"Visibilidad en IA (AEO/GEO)\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"@id\":\"https://spindlelab.cl/servicios/acompanamiento-mensual/#service\",\"name\":\"Acompañamiento Mensual\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"@id\":\"https://spindlelab.cl/servicios/redes-sociales/#service\",\"name\":\"Gestión de Redes Sociales\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"@id\":\"https://spindlelab.cl/servicios/paid-media/#service\",\"name\":\"Paid Media (Google)\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"@id\":\"https://spindlelab.cl/servicios/desarrollo-web/#service\",\"name\":\"Desarrollo Web\"}}]},{\"@type\":\"WebSite\",\"@id\":\"https://spindlelab.cl/#website\",\"url\":\"https://spindlelab.cl/\",\"name\":\"SpindleLab\",\"inLanguage\":\"es-CL\",\"publisher\":{\"@id\":\"https://spindlelab.cl/#org\"}},{\"@type\":\"Person\",\"@id\":\"https://spindlelab.cl/#autor-ramon\",\"name\":\"Ramón Vallejos\",\"jobTitle\":\"Consultor de SEO técnico y visibilidad en IA (AEO/GEO)\",\"image\":\"https://spindlelab.cl/assets/img/ramon-vallejos.jpg\",\"url\":\"https://spindlelab.cl/nosotros/\",\"worksFor\":{\"@id\":\"https://spindlelab.cl/#org\"},\"knowsAbout\":[\"SEO técnico\",\"AEO\",\"GEO\",\"Visibilidad en motores de IA\",\"Datos estructurados\",\"E-E-A-T\"],\"alumniOf\":[{\"@type\":\"CollegeOrUniversity\",\"name\":\"Universidad de Barcelona\"},{\"@type\":\"CollegeOrUniversity\",\"name\":\"Universidad Andrés Bello\"}]}]}",
+  "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"@id\":\"https://spindlelab.cl/#faq\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"¿Qué es SpindleLab?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SpindleLab es una consultoría chilena de SEO técnico y visibilidad en motores de IA (AEO/GEO). Ayudamos a empresas B2B y de sectores donde la confianza pesa (finanzas, salud, legal) a que Google y los buscadores de IA como ChatGPT, Gemini y Perplexity las encuentren, las entiendan y las recomienden.\"}},{\"@type\":\"Question\",\"name\":\"¿Qué es AEO/GEO y en qué se diferencia del SEO tradicional?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"El SEO clásico busca que rankees en la lista de resultados de Google. AEO/GEO (optimización para motores de respuesta y generativos) busca que la IA te cite como fuente cuando alguien pregunta. Son dos juegos distintos: rankear primero en Google no te mete en la respuesta de ChatGPT.\"}},{\"@type\":\"Question\",\"name\":\"¿Cómo miden si la IA te recomienda?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Con un protocolo repetible: hacemos las preguntas que haría tu cliente en los principales motores de IA y registramos, con fecha, si apareces, cómo te describen y a quién citan. Medimos antes y después, para que lo verifiques tú, no de memoria.\"}},{\"@type\":\"Question\",\"name\":\"¿Para qué tipo de empresas trabajan?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Nos enfocamos en sectores donde la confianza es crítica (finanzas, salud, legal, B2B), porque ahí las exigencias de autoridad (E-E-A-T) son mayores y es donde más movemos la aguja. Si tu rubro es otro, el diagnóstico gratis nos dirá si podemos ayudarte.\"}}]}"
+ ],
+ "nodos": [
+  {
+   "tipo": "ProfessionalService",
+   "id": "https://spindlelab.cl/#org",
+   "propiedades": [
+    "name",
+    "url",
+    "logo",
+    "email",
+    "description",
+    "areaServed",
+    "address",
+    "knowsAbout",
+    "sameAs",
+    "founder",
+    "makesOffer"
+   ]
+  },
+  {
+   "tipo": "WebSite",
+   "id": "https://spindlelab.cl/#website",
+   "propiedades": [
+    "url",
+    "name",
+    "inLanguage",
+    "publisher"
+   ]
+  },
+  {
+   "tipo": "Person",
+   "id": "https://spindlelab.cl/#autor-ramon",
+   "propiedades": [
+    "name",
+    "jobTitle",
+    "image",
+    "url",
+    "worksFor",
+    "knowsAbout",
+    "alumniOf"
+   ]
+  },
+  {
+   "tipo": "FAQPage",
+   "id": "https://spindlelab.cl/#faq",
+   "propiedades": [
+    "mainEntity"
+   ]
+  }
+ ],
+ "errores": []
+}
