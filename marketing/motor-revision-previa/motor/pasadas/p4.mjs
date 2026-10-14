@@ -111,6 +111,9 @@ export function candidatoC2({ p1, contenedores, gtmIds, htmlEjecutado, peticione
   if (!tieneMedicion) return { candidato: null, hecho: 'sin-analitica' };
   const leidos = contenedores.filter((c) => c.leido);
   if (gtmIds.length && !leidos.length) return { candidato: null, noEvaluable: 'Hay Tag Manager pero no se pudo leer el contenedor.' };
+  // Si la analitica nunca se disparo en la sesion (p. ej. la frena el aviso de consentimiento), no se pueden ver sus eventos.
+  const disparo = peticiones.some((p) => ['Google Tag', 'Google Analytics', 'Google Ads'].includes(p.clasif?.prov));
+  if (!disparo) return { candidato: null, noEvaluable: 'La analitica esta instalada pero no se disparo en la sesion (probable consentimiento previo): sus eventos no se pueden ver sin clics.' };
   const evInline = a.gtag_eventos_inline.filter((e) => !['page_view', 'config'].includes(e));
   const evObservados = [...new Set(peticiones.map((p) => p.clasif?.evento).filter(Boolean))];
   const hayEvento = leidos.some((c) => c.tags_de_evento.length || c.html_con_conversion || c.menciona_conversion || c.etiquetas_ads_con_label)
