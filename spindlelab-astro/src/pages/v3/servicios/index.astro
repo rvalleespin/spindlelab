@@ -131,7 +131,7 @@ const partir = (t: string) => {
 };
 ---
 <Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt}
-  title="Soluciones: SEO técnico, visibilidad en IA y desarrollo web · SpindleLab"
+  title="Servicios: SEO técnico, visibilidad en IA y desarrollo web"
   description="SEO técnico, visibilidad en motores de IA y desarrollo web a medida, con precios publicados. Chequeo gratis antes de contratar nada."
   bodyClass="d-body"
 >
@@ -146,11 +146,11 @@ const partir = (t: string) => {
     </header>
 
     <div class="d-entrada">
-      <p class="d-nota-card"><b>Valores en pesos, + IVA.</b> Los publicamos a propósito: la mayoría del rubro no lo hace.</p>
+      <p class="d-nota-card"><b>Valores en pesos, + IVA.</b> Los publicamos para que compares antes de escribirnos.</p>
       {/* Los dos destinos que anuncia van enlazados (QA 5-oct): el chequeo, que la description
            promete, quedaba a ~3.500 px. Sin repetir la fila de Desarrollo Web, que se comparte
            con la home, ni el «no lo vas a rehacer» del h2 de Visibilidad. */}
-      <p class="d-guia">El centro es tu sitio: lo construimos para que los motores de IA puedan leerlo. Si ya tienes uno y funciona, <a class="d-enlace-sidx" href="#m-visibilidad">hay una puerta para eso</a>. Y antes de contratar nada, <a class="d-enlace-sidx" href="/v3/diagnostico/">mira gratis cómo te leen hoy</a>.</p>
+      <p class="d-guia">El centro es tu sitio. Si hay que hacerlo de nuevo, lo construimos; si ya tienes uno y funciona, <a class="d-enlace-sidx" href="#m-visibilidad">hay una puerta para eso</a>. Y antes de contratar nada, <a class="d-enlace-sidx" href="/v3/diagnostico/">mira gratis cómo te leen hoy</a>.</p>
     </div>
 
     {/* Las bandas de los cuatro momentos. Cada fila es un enlace entero al servicio. */}
@@ -203,13 +203,14 @@ const partir = (t: string) => {
     {/* El texto describe lo que hace el botón (QA 5-oct, bloqueante): el chequeo es el
          automático de /v3/diagnostico/, sobre tu sitio; no mira la competencia, eso es el
          diagnóstico completo. Mismo destino que «Chequeo gratis» del pie y del menú.
-         Fuente del copy: /v3/diagnostico/ (línea, nota del instrumento y «Dos caminos»). Nombra
-         los mismos motores que esa línea (ChatGPT, Claude, Perplexity): Gemini no se prueba en
-         vivo en functions/api/chequeo.js (spec §7). */}
+         Desde el pase de voz (E8, 14-oct) la guía dice qué hace el chequeo (21 señales, cada
+         una con su instrucción) y no repite la línea de /v3/diagnostico/, adonde lleva el
+         botón. Si vuelve a nombrar motores, son los de esa línea (ChatGPT, Claude,
+         Perplexity): Gemini no se prueba en vivo en functions/api/chequeo.js (spec §7). */}
     <section class="d-sec d-sec--quieta" aria-labelledby="s-chequeo">
       <div class="d-eti"><h2 class="d-h2" id="s-chequeo">Empieza por el chequeo</h2></div>
       <div>
-        <p class="d-guia">Pon tu dominio y ves en segundos si los robots de ChatGPT, Claude y Perplexity pueden entrar a tu sitio. Gratis y sin dejar tu correo.</p>
+        <p class="d-guia">Es gratis y revisa 21 señales de tu dominio en segundos, sin pedirte el correo. Cada señal que no pases viene con la instrucción para arreglarla.</p>
         <div class="d-btns d-chequeo-sidx"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Pedir el diagnóstico</a></div>
       </div>
     </section>

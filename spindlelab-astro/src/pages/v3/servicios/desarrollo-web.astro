@@ -37,6 +37,16 @@
 // · width/height con las medidas reales de cada archivo (técnica #9) y srcset con la versión
 //   de 800 px donde existe (técnica #8).
 // · La miga es el componente Miga (técnica #12).
+//
+// PASE DE VOZ (E8, 14-oct; copy-secciones.md, «Desarrollo web»):
+// · El valor final «se cierra cuando conversamos tu proyecto», no tras el diagnóstico: quien
+//   parte de cero no tiene sitio que diagnosticar. La nota de #planes suma la condición de
+//   los cuatro planes (desde cuándo corre el plazo y el acceso al dominio); la nota de la
+//   entrada no la repite.
+// · «Visibilidad en IA» de la guía va enlazada, una vez (spec §7, regla del texto corrido).
+// · La frase que se suma al segundo punto de «Todo parte con esto» no dice «chequeo»: el
+//   split(CHEQUEO) de la lista solo toma las dos primeras partes, y una segunda aparición
+//   cortaría el resto en silencio.
 import Layout from '../../../layouts/Layout.astro';
 import { CONTACTO_V3 as CONTACTO, OG_V3_OBRA } from '../../../consts-v3';
 import NavV3 from '../../../components/v3/NavV3.astro';
@@ -50,8 +60,8 @@ import obra from '../../../data/obra-v3.json';
 // La palabra que se enlaza en la lista (QA final, conversión #5).
 const CHEQUEO = 'chequeo';
 const incluye = [
-  'Legible para motores de IA desde el primer commit: datos estructurados, contenido citable e indexación.',
-  'El mismo chequeo que corres gratis en la portada, pasado sobre tu sitio antes de entregarlo.',
+  'Legible para motores de IA: datos estructurados, contenido citable e indexación.',
+  'El mismo chequeo que corres gratis en la portada, pasado sobre tu sitio antes de entregarlo. Te dejamos el puntaje por escrito y, si tenías otro sitio, también el de antes.',
   'Un panel para editar textos e imágenes tú mismo, sin depender de nadie.',
   'Código propio y diseño a medida, con control total del rendimiento.',
   'Construcción con IA, revisión humana en cada fase antes de avanzar.',
@@ -84,34 +94,34 @@ const planes = [
     nombre: 'Plataforma a Medida',
     precio: 'Se cotiza',
     linea: 'Para proyectos con integraciones o lógica propia.',
-    puntos: ['Todo lo del Sitio Completo, y más', 'Páginas sin tope', 'Integraciones: CRM, reservas, pagos', 'Arquitectura propia', 'Multi-idioma'],
+    puntos: ['Todo lo del Sitio Completo', 'Páginas sin tope', 'Integraciones: CRM, reservas, pagos', 'Arquitectura propia', 'Multi-idioma'],
   },
 ];
 
 const fases = [
-  { n: '01', t: 'Descubrimiento', d: 'Conversamos sobre tu negocio, tu marca y qué necesita comunicar el sitio. Definimos la dirección de diseño con referentes concretos de tu rubro.' },
+  { n: '01', t: 'Descubrimiento', d: 'Conversamos sobre tu negocio y sobre a quién le tiene que hablar el sitio. Definimos la dirección de diseño con referentes concretos de tu rubro.' },
   { n: '02', t: 'Diseño', d: 'Proponemos las páginas clave (home y una página tipo) antes de escribir una sola línea de código. Ajustamos hasta que el diseño te representa.' },
-  { n: '03', t: 'Desarrollo con IA', d: 'Construimos el sitio con el agente de desarrollo de SpindleLab, con supervisión técnica humana en cada avance. Sigues el progreso en una URL de prueba.' },
+  { n: '03', t: 'Desarrollo con IA', d: 'Construimos el sitio con el agente de desarrollo de SpindleLab. Sigues cada avance en una URL de prueba.' },
   { n: '04', t: 'QA y contenido', d: 'Cargamos tu contenido final, probamos en distintos dispositivos, afinamos rendimiento y SEO, y hacemos las rondas de revisión incluidas en tu plan.' },
-  { n: '05', t: 'Lanzamiento', d: 'Configuramos dominio, SSL y analítica, y publicamos en producción. Quedas con 30 días de garantía para corregir errores de funcionamiento.' },
+  { n: '05', t: 'Lanzamiento', d: 'Publicamos el sitio en tu dominio. Quedas con 30 días de garantía para corregir errores de funcionamiento.' },
 ];
 
 const faq = [
   {
     p: '¿Usan plantillas o WordPress?',
-    r: 'No. Cada sitio se construye con código propio, a medida. Sin temas genéricos ni page builders: control total sobre rendimiento, diseño y SEO técnico.',
+    r: 'No. Cada sitio se construye con código propio, sin temas genéricos ni page builders. Así controlamos el rendimiento y el SEO técnico desde la base.',
   },
   {
     p: '¿Cuánto cuesta?',
-    r: 'Cada pack tiene un precio de partida («desde»): Página de Campaña desde $390.000 + IVA, Sitio Esencial desde $690.000 + IVA y Sitio Completo desde $1.190.000 + IVA; la Plataforma a Medida se cotiza tras una reunión. El valor final se cierra tras el diagnóstico gratuito, según las páginas y funcionalidades que necesites. Sin sorpresas.',
+    r: 'Cada plan tiene un precio de partida: Página de Campaña desde $390.000 + IVA, Sitio Esencial desde $690.000 + IVA y Sitio Completo desde $1.190.000 + IVA. La Plataforma a Medida se cotiza tras una reunión. El valor final se cierra cuando conversamos tu proyecto, según las páginas y funciones que necesites.',
   },
   {
     p: '¿Cómo afecta el desarrollo con IA a la calidad?',
-    r: 'La ejecución asistida por IA reduce tiempos, no supervisión: cada fase pasa por revisión humana antes de avanzar a la siguiente. La velocidad se traduce en plazos más cortos, no en menos control de calidad.',
+    r: 'La IA acorta los plazos, no la supervisión: cada fase pasa por revisión humana antes de avanzar a la siguiente.',
   },
   {
     p: '¿El sitio incluye SEO?',
-    r: 'Sí, de base: rendimiento, datos estructurados y arquitectura pensados desde el diseño. Si además necesitas visibilidad en motores de IA, ese trabajo se profundiza con el servicio de Visibilidad en IA.',
+    r: 'Sí. El SEO técnico va de base en todos los planes y se piensa desde el diseño. Si además necesitas visibilidad en motores de IA, ese trabajo se profundiza con el servicio de Visibilidad en IA.',
   },
 ];
 
@@ -218,7 +228,7 @@ const sumaDe = (fila: PiezaDw[]) => fila.reduce((t, p) => t + p.r, 0);
     <header class="d-cab">
       <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Servicios', href: '/v3/servicios/' }, { label: 'Desarrollo web' }]} />
       <h1 class="d-h1">Desarrollo web que los motores de IA pueden leer</h1>
-      <p class="d-linea">Sitios a medida con el SEO técnico puesto desde el primer commit. Tres planes, desde $390.000 + IVA.</p>
+      <p class="d-linea">Sitios a medida con el SEO técnico puesto desde el primer commit. Cuatro planes, desde $390.000 + IVA.</p>
       <div class="d-btns"><a class="d-btn" href="#planes">Ver planes</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>
     </header>
 
@@ -227,8 +237,8 @@ const sumaDe = (fila: PiezaDw[]) => fila.reduce((t, p) => t + p.r, 0);
     <figure class="d-sangre"><img src="/assets/img/d/escritorio.jpg" srcset="/assets/img/d/escritorio-800.jpg 800w, /assets/img/d/escritorio.jpg 1600w" sizes="(max-width: 767px) calc((100vw - 40px) * 1.791), calc(100vw - 80px)" alt="Escritorio de madera junto a la ventana, con un laptop, un cuaderno abierto y una taza" width="1600" height="670" loading="eager" fetchpriority="high" /></figure>
 
     <div class="d-entrada">
-      <p class="d-nota-card"><b>Valores en pesos, + IVA.</b> El valor final se cierra tras el diagnóstico gratuito.</p>
-      <p class="d-guia">A veces el problema no es lo que se audita: es lo que hay que reconstruir. Construimos el sitio para que las máquinas que hoy recomiendan tu negocio puedan leerlo, y te lo demostramos con el mismo chequeo sobre tu dominio.</p>
+      <p class="d-nota-card"><b>Valores en pesos, + IVA.</b> El valor final se cierra cuando conversamos tu proyecto.</p>
+      <p class="d-guia">Esto es para cuando no tienes sitio o hay que hacerlo de nuevo. Si el tuyo funciona, te sirve más <a class="d-enl-dw" href="/v3/servicios/visibilidad-en-ia/">Visibilidad en IA</a>.</p>
     </div>
 
     <section class="d-sec" aria-labelledby="s-inc">
@@ -250,7 +260,7 @@ const sumaDe = (fila: PiezaDw[]) => fila.reduce((t, p) => t + p.r, 0);
     </section>
 
     <section class="d-sec" id="planes" aria-labelledby="s-pla">
-      <div class="d-eti"><h2 class="d-h2" id="s-pla">Elige por dónde partir</h2><p class="d-chico">Valores en pesos, + IVA. El valor final se cierra tras el diagnóstico gratuito.</p></div>
+      <div class="d-eti"><h2 class="d-h2" id="s-pla">Elige por dónde partir</h2><p class="d-chico">Valores en pesos, + IVA. El valor final se cierra cuando conversamos tu proyecto. Cada plazo cuenta desde que nos llegan el anticipo, los textos y las imágenes. Para publicar necesitamos acceso a tu dominio.</p></div>
       <div class="d-filas">
         {planes.map((p) => (
           <div class="d-plan">
@@ -289,7 +299,7 @@ const sumaDe = (fila: PiezaDw[]) => fila.reduce((t, p) => t + p.r, 0);
     <section class="d-sec d-sec--quieta" aria-labelledby="s-cie">
       <div class="d-eti"><h2 class="d-h2" id="s-cie">Cuéntanos qué necesita comunicar tu sitio</h2></div>
       <div class="d-cierre-dw">
-        <p class="d-guia">Si ya tienes uno, empezamos con el diagnóstico gratuito. Si partes de cero, conversemos tu proyecto directamente.</p>
+        <p class="d-guia">Si ya tienes uno, empezamos con el mini-diagnóstico gratuito. Si partes de cero, conversemos tu proyecto directamente.</p>
         <div class="d-btns">
           <a class="d-btn" href={CONTACTO}>Escríbenos</a>
           <a class="d-btn d-btn--alt" href="/v3/diagnostico/">Correr el chequeo</a>

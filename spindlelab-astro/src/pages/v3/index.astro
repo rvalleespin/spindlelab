@@ -153,6 +153,11 @@ const fecha = (iso: string) =>
 //   semana 1: Search Console verificado y sitemap enviado, «Correcto», 11 páginas).
 // · dateModified: la fecha de esta versión. AL PUBLICAR LA V3 se cambia por el día en que
 //   sale (si no, el grafo diría que la portada no cambió desde hoy).
+// · La meta description (E8, 14-oct; Simón y Clara, fila 50, con el visto bueno de Ramón)
+//   vuelve a nombrar a Gemini y ya no promete que te recomienden antes que tu competencia:
+//   «puedan citarte». Revierte el motor de a70e945, que partía de que Google-Extended es solo
+//   de entrenamiento: según la documentación de Google, también controla el grounding de
+//   Gemini Apps, así que el sitio sí cuenta para Gemini (copy-secciones.md, revisión de Simón).
 const TITLE = 'SEO técnico y visibilidad en IA en Chile · SpindleLab';
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -174,7 +179,7 @@ const jsonLd = {
 
 <Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt}
   title={TITLE}
-  description="Auditamos tu sitio y tu presencia en IA para que ChatGPT, Claude y Perplexity te recomienden antes que tu competencia. Diagnóstico gratis en 24 horas."
+  description="Auditamos tu sitio y tu presencia en IA para que ChatGPT, Gemini y Perplexity puedan citarte. Diagnóstico gratis en 24 horas."
   bodyClass="d-body d-home"
 >
   <meta slot="head" name="robots" content="noindex, nofollow" />
@@ -265,9 +270,9 @@ const jsonLd = {
       <Pieza src="/assets/img/ramon-vallejos.jpg" alt="Ramón Vallejos, consultor de SpindleLab" ancho={896} alto={1200} />
       <div class="d-quien__txt">
         <h2 class="d-h2" id="t-quien">No te prometo. Te muestro.</h2>
-        <p class="d-guia d-gris">Detrás de SpindleLab está una persona, no una agencia de veinte. Cada proyecto parte con el mismo chequeo que puedes correr arriba, sobre tu dominio, y termina con el mismo chequeo corrido otra vez.</p>
+        <p class="d-guia d-gris">Detrás de SpindleLab está una persona, no una agencia de veinte. Al terminar cada proyecto, volvemos a correr el chequeo de arriba sobre tu dominio.</p>
         <div style="display:flex;flex-direction:column;gap:2px"><span>Ramón Vallejos</span><span class="d-chico d-gris">Consultor de SEO técnico y visibilidad en IA · Chile</span></div>
-        <div class="d-btns"><a class="d-btn" href="/v3/nosotros/">Quién está detrás</a></div>
+        <div class="d-btns"><a class="d-btn" href="/v3/nosotros/">Conocer a Ramón</a></div>
       </div>
     </section>
 
@@ -275,7 +280,7 @@ const jsonLd = {
     <section class="d-indice d-tapa" aria-labelledby="t-taller">
       <div class="d-indice__cab">
         <h2 class="d-h2" id="t-taller">Lo que escribimos sobre búsqueda e IA</h2>
-        <a class="d-btn d-btn--alt" href="/v3/blog/">Ver todo</a>
+        <a class="d-btn d-btn--alt" href="/v3/blog/">Ver el blog</a>
       </div>
       <ol>
         {posts.map((p: any) => (
@@ -289,5 +294,5 @@ const jsonLd = {
   <FocoPila bandas=".d-campo" />
   <FooterV3 />
 
-  <script src="/assets/js/v3-chequeo.js?v=2" is:inline defer></script>
+  <script src="/assets/js/v3-chequeo.js?v=3" is:inline defer></script>
 </Layout>

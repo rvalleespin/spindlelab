@@ -5,6 +5,8 @@
 // «Pedir el diagnóstico»). La lógica no cambia.
 // QA final (6-oct): los enlaces a contacto llevan ?sitio=<dominio> y el botón «Pedir el
 // diagnóstico» se repite dentro de .chq-score. Cambio de enlaces y de marcado, no de lógica.
+// E8 (14-oct): el botón mientras corre dice «Revisando…», con el carácter de puntos
+// suspensivos (pase de voz de Clara, fila 1444). Va con ?v=3 en sus dos referencias.
 (function(){
   var form = document.getElementById('chq-form');
   var input = document.getElementById('chq-dominio');
@@ -125,7 +127,7 @@
     if(!v){ fallar('Escribe tu dominio para empezar.'); input.focus(); return; }
     btn.disabled = true;
     var textoPrevio = btn.textContent;
-    btn.textContent = 'Revisando...';
+    btn.textContent = 'Revisando…';
     err.style.display = 'none';
     out.style.display = 'none';
 
