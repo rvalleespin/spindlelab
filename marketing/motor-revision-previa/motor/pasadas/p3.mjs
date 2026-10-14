@@ -30,10 +30,11 @@ const nombrarCausa = (cab, cuerpo) => HUELLAS.find(([, f]) => f(cab, cuerpo))?.[
 const DESAFIO = /Just a moment|Attention Required|cf-chl|Checking your browser|captcha|Access Denied/i;
 
 async function rondaBorde(url, agentes) {
-  const normal = await pedir(url, { ua: UA_NORMAL });
+  const normal = await pedir(url, { ua: UA_NORMAL, ms: 8000 });
   const filas = {};
+  if (!normal.ok) return { normal: { ok: false, error: normal.error }, agentes: {}, abortada: 'el sitio no respondio al agente normal en 8 s' };
   for (const [nombre, ua] of Object.entries(agentes)) {
-    const r = await pedir(url, { ua });
+    const r = await pedir(url, { ua, ms: 8000 });
     const bloqueado = r.ok && ([401, 403, 406, 429, 451, 503].includes(r.status) || (r.status < 300 && DESAFIO.test(r.cuerpo.slice(0, 4000)) && r.cuerpo.length < 20000));
     filas[nombre] = { ok: r.ok, status: r.status, bytes: r.cuerpo?.length ?? 0, bloqueado, causa: bloqueado ? nombrarCausa(r.cab, r.cuerpo) : null, error: r.error };
     await dormir(400);
@@ -47,7 +48,8 @@ export async function sondaBorde(url, robotsAgentes) {
   const rondas = [];
   for (let i = 0; i < 2; i++) { rondas.push(await rondaBorde(url, agentes)); await dormir(1500); }
   const normalOk = rondas.every((r) => r.normal.ok && r.normal.status < 400);
-  const estables = Object.keys(agentes).filter((n) => rondas.every((r) => r.agentes[n]?.bloqueado));
+  const mezclaAbortada = rondas.some((r) => r.abortada);
+  const estables = mezclaAbortada ? [] : Object.keys(agentes).filter((n) => rondas.every((r) => r.agentes[n]?.bloqueado));
   const causas = estables.map((n) => rondas[0].agentes[n].causa).filter(Boolean);
   const mezcla = Object.keys(agentes).some((n) => rondas.some((r) => r.agentes[n]?.bloqueado) && !rondas.every((r) => r.agentes[n]?.bloqueado));
   return { rondas, probados: Object.keys(agentes), omitidos_por_robots: Object.keys(AGENTES_IA).filter((n) => !(n in agentes)),
@@ -73,16 +75,24 @@ export async function leerContenedor(gtmId) {
 
 // Contacto estructural: un GET al destino del formulario NO es un envio.
 async function destinoFormulario(f, paginaUrl) {
-  const act = f.accion_abs || '';
-  if (!act || /^(javascript:|#)/i.test(f.action) || act === paginaUrl || act.startsWith(paginaUrl + '#')) return { estado: 'no-evaluable', porque: 'el envio lo maneja JavaScript o el CMS' };
+  const act = typeof f.accion_abs === 'string' ? f.accion_abs : '';
+  if (!act || /^(javascript:|#)/i.test(String(f.action || '')) || act === paginaUrl || act.startsWith(paginaUrl + '#')) return { estado: 'no-evaluable', porque: 'el envio lo maneja JavaScript o el CMS' };
   const r = await pedir(act, { ms: 12000 });
   if (!r.ok) return { estado: /ENOTFOUND|EAI_AGAIN/.test(r.error || '') ? 'roto-dns' : 'no-concluyente', porque: r.error };
   if ([404, 410].includes(r.status)) return { estado: 'roto-404', status: r.status };
   if ([401, 403, 429].includes(r.status)) return { estado: 'no-concluyente', porque: `HTTP ${r.status} (puede ser un firewall)` };
   return { estado: 'vivo', status: r.status };
 }
+// Control: si el resolutor no puede dar MX de un dominio que sabemos que tiene, NO se concluye nada.
+// (En el entorno cloud el resolutor falla con ENODATA hasta para gmail.com.)
+let _mxDisponible = null;
+async function mxDisponible() {
+  if (_mxDisponible === null) { try { _mxDisponible = (await dns.resolveMx('gmail.com')).length > 0; } catch { _mxDisponible = false; } }
+  return _mxDisponible;
+}
 async function mxDe(correo) {
   const dom = correo.split('@')[1]; if (!dom) return null;
+  if (!(await mxDisponible())) return { dominio: dom, tiene_mx: null, no_evaluable: 'el resolutor de este entorno no sirve registros MX (falla con gmail.com)' };
   try { const mx = await dns.resolveMx(dom); return { dominio: dom, tiene_mx: mx.length > 0 }; }
   catch (e) {
     if (e.code === 'ENODATA' || e.code === 'ENOTFOUND') {

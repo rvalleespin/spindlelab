@@ -158,7 +158,8 @@ export function hechosCapa1({ p1, runs, formulariosDOM }) {
   if (sinContacto) consecuencia.push('sin_ruta_de_contacto_visible');
   if (pideDatos && !politica) consecuencia.push('formulario_que_pide_datos_sin_enlace_a_politica');
   if (bots.length) consecuencia.push(`robots_txt_bloquea: ${bots.join(', ')}`);
-  if (!a.gtm.length && !a.ga4.length && !a.ua.length) consecuencia.push('sin_analitica');
+  const visto = runs.some((r) => r.peticiones.some((p) => p.clasif?.prov === 'Google Tag' || p.clasif?.prov === 'Google Analytics'));
+  if (!a.gtm.length && !a.ga4.length && !a.ua.length && !visto) consecuencia.push('sin_analitica');   // visto en la red cuenta: hay scripts que inyectan la analitica
   if (!p1.llms_txt) higiene.push('sin_llms_txt'); if (!p1.sitemap) higiene.push('sin_sitemap');
   if (!p1.html.jsonld.org.length) higiene.push('sin_entidad_en_jsonld'); if (!p1.html.descripcion) higiene.push('sin_meta_description');
   return { consecuencia, higiene };

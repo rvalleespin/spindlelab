@@ -107,7 +107,7 @@ const JS_DOM = `(() => {
     aviso: aviso ? { texto: (aviso.innerText || '').trim().slice(0, 160),
       botones: [...aviso.querySelectorAll('button,a,[role=button]')].map((b) => (b.innerText || '').trim()).filter(Boolean).slice(0, 5),
       implicito: /al continuar navegando|al seguir navegando|continuar navegando|al navegar/i.test(aviso.innerText || '') } : null,
-    formularios: [...document.forms].map((f) => ({ action: f.getAttribute('action') || '', accion_abs: f.action || '', metodo: (f.method || 'get').toLowerCase(),
+    formularios: [...document.forms].map((f) => ({ action: f.getAttribute('action') || '', accion_abs: (typeof f.action === 'string' ? f.action : (f.getAttribute('action') ? abs(f.getAttribute('action')) : '')), metodo: (f.method || 'get').toLowerCase(),
       campos: f.querySelectorAll('input:not([type=hidden]):not([type=submit]),textarea,select').length,
       visible: vis(f), pide_correo_o_tel: !!f.querySelector('input[type=email],input[type=tel],input[name*="mail" i],input[name*="tel" i],input[name*="fono" i]') })),
     enlaces: [...document.querySelectorAll('a[href]')].map((a) => ({ h: a.getAttribute('href') || '', t: (a.innerText || a.textContent || '').trim().slice(0, 80) })).slice(0, 600),
