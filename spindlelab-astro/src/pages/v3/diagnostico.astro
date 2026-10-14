@@ -223,8 +223,10 @@ const jsonLd = {
 
   <FooterV3 />
 
-  {/* ?v=2: el archivo cambió en la QA final (enlaces con ?sitio= y botón junto al puntaje) y
-       /assets/* se cachea 7 días. */}
+  {/* La versión sube cada vez que el archivo cambia, porque /assets/* se cachea 7 días; va
+       igual en la home. ?v=2: la QA final (enlaces con ?sitio= y botón junto al puntaje).
+       ?v=3: el pase de voz de E8 (14-oct), «Revisando…» con el carácter de puntos
+       suspensivos en vez de tres puntos sueltos (fila 1444). */}
   <script src="/assets/js/v3-chequeo.js?v=3" is:inline defer></script>
 </Layout>
 

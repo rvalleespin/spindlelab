@@ -69,6 +69,11 @@ const listo = proyecto.bloques[0];
 //   FAQPage salen del mismo arreglo.
 const etiquetaEnvio = `${proyecto.boton} →`;
 const faq = s.faq ?? [];
+// Solo en lo visible, como el h1: «realmente gratis?» no se parte. Con «mini-diagnóstico»
+// (pase de voz, E8) la primera pregunta dejaba «gratis?» sola en la última línea a 390 (E8,
+// QA ronda 1, defecto 5). El FAQPage sigue con espacio normal; si la pregunta cambia, el
+// reemplazo no calza y solo se pierde el espacio duro.
+const preguntaVisible = (p: string) => p.replace('realmente gratis?', 'realmente gratis?');
 
 // El mismo mailto de la página publicada: asunto y arranque del cuerpo ya escritos.
 const mailto = `mailto:${EMAIL}?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20`;
@@ -211,7 +216,7 @@ const jsonLd = {
     <section class="d-sec d-faq" aria-labelledby="s-antes">
       <div class="d-eti"><h2 class="d-h2" id="s-antes">{antes.h2}</h2></div>
       <div class="d-filas">
-        {faq.map((f: any) => (<div><h3 class="d-h3">{f.p}</h3><p class="d-cuerpo">{f.r}</p></div>))}
+        {faq.map((f: any) => (<div><h3 class="d-h3">{preguntaVisible(f.p)}</h3><p class="d-cuerpo">{f.r}</p></div>))}
       </div>
     </section>
   </main>

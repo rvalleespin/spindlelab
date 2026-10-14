@@ -32,6 +32,7 @@
 // · `compromiso`, en la sección de planes (E8, tanda 3, 14-oct): el compromiso de los 3 meses
 //   que Ramón aprobó, solo en Visibilidad y Acompañamiento. Va como última fila de #planes, un
 //   <p class="d-cuerpo"> entre filetes como las respuestas de las preguntas. No va al JSON-LD.
+//   Pasa por enlaza(): «chequeo gratis» lleva a /v3/diagnostico/ (ver ENLACES).
 //   Los dos puntos que el pase de voz dejó en "" (el primero de Esencial en Acompañamiento y
 //   en Paid Media; vacíos y no borrados, para no correr los punteros) no se pintan: los
 //   puntos pasan por filter(Boolean).
@@ -126,6 +127,11 @@ const ENLACES: [string, string][] = [
   ['servicio de acompañamiento mensual', '/v3/servicios/acompanamiento-mensual/'],
   ['Gestión de redes sociales', '/v3/servicios/redes-sociales/'],
   ['Paid Media (Google)', '/v3/servicios/paid-media/'],
+  // El compromiso de los 3 meses (Visibilidad y Acompañamiento) se mide con el chequeo y
+  // termina «El chequeo es público, así que lo compruebas tú»: el texto lo nombra, así que va
+  // enlazado, al mismo destino que «Correr el chequeo» del cierre (E8, QA ronda 1, defecto 3).
+  // Hoy la frase solo está en esos dos párrafos.
+  ['chequeo gratis', '/v3/diagnostico/'],
 ];
 const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const enlazadas = new Set<string>();
@@ -310,12 +316,18 @@ const sigLabel: string = sig.label;
 const incluyeHtml = (secIncluye?.lista ?? []).map((t: string) => { const x = partir(t); return { t: x.t, d: enlaza(x.d) }; });
 const planesH2Html: string = secPlanes ? sinCorte(esc(sinPunto(secPlanes.h2))) : '';
 const planesNotaHtml: string = secPlanes?.nota ? enlaza(comillas(secPlanes.nota)) : '';
+const compromisoHtml: string = secPlanes?.compromiso ? enlaza(secPlanes.compromiso) : '';
 const bloquesHtml: string[] = (secBloques?.bloques ?? []).map((b: any) => enlaza(comillas(b.d)));
 // Las marcas de los bloques (Sí/No, A–D, S1–S4, 01–04) y su lectura para lector de pantalla
 // viven junto a los bloques, en el JSON.
 const marcas: string[] = secBloques?.marcas ?? [];
 const marcasSr: string[] | undefined = secBloques?.marcasSr;
 const faqHtml: string[] = faq.map((f) => enlaza(f.r));
+// El h2 del cierre de Redes, del pase de voz (E8), dejaba «redes» sola en la última línea a
+// 1440 («…al que llevan tus / redes»). Espacio duro entre las dos últimas palabras, solo en lo
+// visible (E8, QA ronda 1, defecto 5). Si el JSON cambia ese h2, el reemplazo no calza y solo
+// se pierde el espacio duro. Los otros cierres no se tocan: el sistema no equilibra los h2.
+const cierreH2: string = secCierre ? sinPunto(secCierre.h2).replace('tus redes', 'tus redes') : '';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -408,7 +420,7 @@ const jsonLd = {
               {p.puntos?.filter(Boolean).length > 0 && <ul>{p.puntos.filter(Boolean).map((x: string) => <li>{x}</li>)}</ul>}
             </div>
           ))}
-          {secPlanes.compromiso && <p class="d-cuerpo">{secPlanes.compromiso}</p>}
+          {compromisoHtml && <p class="d-cuerpo" set:html={compromisoHtml} />}
         </div>
       </section>
     )}
@@ -442,7 +454,7 @@ const jsonLd = {
          etiqueta no se pega (spec §7; se despegaba del párrafo y bajaba 90 px hasta el botón). */}
     {secCierre && (
       <section class="d-sec d-sec--quieta" aria-labelledby="s-cie">
-        <div class="d-eti"><h2 class="d-h2" id="s-cie">{sinPunto(secCierre.h2)}</h2></div>
+        <div class="d-eti"><h2 class="d-h2" id="s-cie">{cierreH2}</h2></div>
         <div class="d-cierre-svc">
           <p class="d-guia">{secCierre.parrafos?.[0]}</p>
           <div class="d-btns">
