@@ -153,7 +153,10 @@ export function candidatoC4(entidad) {
 
 export function hechosCapa1({ p1, runs, formulariosDOM }) {
   const c = p1.html.contacto, a = p1.html.analitica, tieneForm = formulariosDOM.some((f) => f.visible);
-  const sinContacto = !tieneForm && !c.tel && !c.mailto.length && !c.whatsapp.length;
+  // El HTML sin ejecutar no ve los botones que inyecta JavaScript (p. ej. el de WhatsApp): se suman los enlaces del DOM ya ejecutado.
+  const enlacesDOM = runs.flatMap((r) => r.B.dom?.enlaces || []).map((e) => e.h || '');
+  const dom = { tel: enlacesDOM.some((h) => /^tel:/i.test(h)), mail: enlacesDOM.some((h) => /^mailto:/i.test(h)), wa: enlacesDOM.some((h) => /wa\.me|api\.whatsapp\.com|whatsapp:\/\//i.test(h)) };
+  const sinContacto = !tieneForm && !c.tel && !c.mailto.length && !c.whatsapp.length && !dom.tel && !dom.mail && !dom.wa;
   const pideDatos = formulariosDOM.some((f) => f.visible && f.pide_correo_o_tel);
   const politica = (runs[0].B.dom?.politica || []).length || p1.html.politica_en_html.length;
   const bots = p1.robots.agentes ? Object.entries(p1.robots.agentes).filter(([n, v]) => v.bloquea_en_robots && !/Google-Extended|CCBot|GPTBot|ClaudeBot/.test(n)).map(([n]) => n) : [];
