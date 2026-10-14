@@ -697,3 +697,32 @@ sitio se ve limpio quieto, y el aviso y las cookies aparecen juntos después del
 Terrantai lo demuestra: **mirar solo la captura del tramo pasivo concluye "no hay aviso" y es
 falso.** Para afirmar que un sitio no tiene aviso hay que mirar también la captura del segundo
 tramo. Los cinco "no encontré aviso" de los correos del 14-oct se comprobaron en esa captura.
+
+### Trampa 3: "Google recibe la visita" no es lo mismo con Consent Mode (14-oct)
+
+Una petición a `google-analytics.com/g/collect` **no prueba por sí sola que el sitio rastree antes del
+permiso.** Si lleva `gcs=G100` (y `npa=1`), es **Google Consent Mode con el consentimiento
+denegado**: Google recibe un ping sin cookies y el aviso del sitio **sí** está bloqueando el
+almacenamiento. `G111` significa consentimiento concedido; sin `gcs`, no hay Consent Mode.
+
+Verificado el 14-oct sobre los 14 cierres que dejó el copiloto: en `hoteles-australis.com`,
+`norusapartments.cl`, `hoteltorremayorlyon.com` y `leonerahotel.cl` las peticiones a Google llevan
+`gcs=G100`, así que la frase "el aviso informa pero no bloquea: Analytics recibe la visita antes de
+que acepten" era refutable en dos minutos por su desarrollador. Se reescribieron como cierres sin
+afirmación técnica.
+
+**Cómo se mide bien:** además de contar peticiones, leer el parámetro `gcs` y contar **cookies de
+medición** (`_ga`, `_gcl_au`, `_fbp`). Cero cookies con `G100` es un sitio que bloquea; peticiones sin
+`gcs` y con `_ga` puesta es un sitio que rastrea antes del permiso.
+
+⚠️ **Lo que esto pone en duda:** los toques 1 y 2 enviados el 25 y 29-sep a esos cuatro hoteles
+decían lo mismo. Si el sitio ya usaba Consent Mode ese día, esos correos llevaban una afirmación
+equivocada. No se puede saber qué pasaba entonces; se anota para no repetirla.
+
+### Trampa 4: el copiloto repite en presente lo que midió otro
+
+El copiloto no tiene navegador, así que **no puede remedir.** Sus cierres de toque 3 repitieron
+"sigue..." sobre mediciones de 19 días. De 14, **seis ya no se sostenían** y uno tenía jerga que el
+propio prompt prohíbe. Por la misma razón que el copiloto no escribe primeros contactos, **un toque 3
+que afirma un hecho técnico en presente debería remedirse antes de enviarse.** Mientras eso no esté
+automatizado, el cierre seguro es el que no afirma nada y deja el chequeo gratis.
