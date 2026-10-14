@@ -1,0 +1,92 @@
+{
+  "fijada": "2026-10-14T22:01:04.720Z",
+  "regla": "primeros N de los CSV en orden, no excluidos ni ya contactados; sin elegir por apariencia",
+  "muestra": [
+    {
+      "id": "K01",
+      "dominio": "amanda-salud.com",
+      "correo": "david.vidal@amanda-salud.com",
+      "fuente": "ventas/clinicas-sin-contactar-5oct.csv"
+    },
+    {
+      "id": "K02",
+      "dominio": "apsorad.cl",
+      "correo": "mramirez@apsorad.cl",
+      "fuente": "ventas/clinicas-sin-contactar-5oct.csv"
+    },
+    {
+      "id": "K03",
+      "dominio": "biofotonica.cl",
+      "correo": "gerencia@biofotonica.cl",
+      "fuente": "ventas/clinicas-sin-contactar-5oct.csv"
+    },
+    {
+      "id": "K04",
+      "dominio": "ccamusv.cl",
+      "correo": "cristian.camus@ccamusv.cl",
+      "fuente": "ventas/clinicas-sin-contactar-5oct.csv"
+    },
+    {
+      "id": "K05",
+      "dominio": "cela.cl",
+      "correo": "carlos.ceron@cela.cl",
+      "fuente": "ventas/clinicas-sin-contactar-5oct.csv"
+    },
+    {
+      "id": "K06",
+      "dominio": "chbs.cl",
+      "correo": "gerencia@chbs.cl",
+      "fuente": "ventas/clinicas-sin-contactar-5oct.csv"
+    },
+    {
+      "id": "K07",
+      "dominio": "clinicaimet.cl",
+      "correo": "luis.gomez@clinicaimet.cl",
+      "fuente": "ventas/clinicas-sin-contactar-5oct.csv"
+    },
+    {
+      "id": "K08",
+      "dominio": "clinicasachssalud.cl",
+      "correo": "avargas@clinicasachssalud.cl",
+      "fuente": "ventas/clinicas-sin-contactar-5oct.csv"
+    },
+    {
+      "id": "K09",
+      "dominio": "clinicavs.cl",
+      "correo": "claudiasanhueza@clinicavs.cl",
+      "fuente": "ventas/clinicas-sin-contactar-5oct.csv"
+    },
+    {
+      "id": "K10",
+      "dominio": "cruznacional.cl",
+      "correo": "bduch@cruznacional.cl",
+      "fuente": "ventas/clinicas-sin-contactar-5oct.csv"
+    }
+  ],
+  "omitidos_antes_de_completar": [
+    {
+      "dominio": "ahasonrie.cl",
+      "motivo": "ya descartado en el CSV: descartado - fuera de perfil"
+    },
+    {
+      "dominio": "alatheia.cl",
+      "motivo": "ya descartado en el CSV: descartado - fuera de perfil"
+    },
+    {
+      "dominio": "belenus.cl",
+      "motivo": "ya descartado en el CSV: descartado - fuera de perfil"
+    },
+    {
+      "dominio": "bollek.cl",
+      "motivo": "ya contactado (marketing/outbound/semana-03/lote-1-frente-b.md)"
+    },
+    {
+      "dominio": "clandent.cl",
+      "motivo": "ya descartado en el CSV: descartado - fuera de perfil"
+    },
+    {
+      "dominio": "clinicasyal.cl",
+      "motivo": "ya contactado (marketing/outbound/semana-03/lote-1-frente-b.md)"
+    }
+  ]
+}
