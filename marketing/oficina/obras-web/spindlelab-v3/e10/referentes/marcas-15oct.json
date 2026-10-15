@@ -1,0 +1,77 @@
+{
+  "fecha": "2026-10-15",
+  "fuente": "https://claude.ai/artifact/2iAvUGvexM1xndtBmbYQHH (colección marcas)",
+  "nota": "Copiadas desde la base de la página; los comentarios son de Ramón, tal cual.",
+  "marcas": [
+    {
+      "n": 1,
+      "id": "a1-gehl",
+      "voto": "si",
+      "comentario": "creo que es un buen acercamiento a lo que quiero. las fotos hay que hacerlas. podemos ocupar modelos de IA. pero me gusta la claridad y lo limpio. me falta creatividad. está siendo casi un sitio típico."
+    },
+    {
+      "n": 2,
+      "id": "a4-theready",
+      "voto": "si",
+      "principal": true,
+      "comentario": "me gusta mucho todo lo que dices que no se toma jajajaj creo que sale harto de lo que he visto. me gusta mucho la guinche, la tipografía y los colores",
+      "aclaracion_chat": "La guinche (huincha) es la cinta que se mueve y también el subrayado amarillo."
+    },
+    {
+      "n": 3,
+      "id": "a5-priyaparker",
+      "voto": "no"
+    },
+    {
+      "n": 4,
+      "id": "b1-nickparker",
+      "voto": "no"
+    },
+    {
+      "n": 5,
+      "id": "b3-stefaner",
+      "voto": "no"
+    },
+    {
+      "n": 6,
+      "id": "b4-asbury",
+      "voto": "no"
+    },
+    {
+      "n": 7,
+      "id": "b2-santamaria",
+      "voto": "no"
+    },
+    {
+      "n": 8,
+      "id": "c4-inkandswitch",
+      "voto": "no"
+    },
+    {
+      "n": 9,
+      "id": "c6-webalmanac",
+      "voto": null
+    },
+    {
+      "n": 10,
+      "id": "d3-selendygay",
+      "voto": "no"
+    },
+    {
+      "n": 11,
+      "id": "d1-olsonkundig",
+      "voto": "no"
+    },
+    {
+      "n": 12,
+      "id": "d6-hoare",
+      "voto": "no",
+      "comentario": "parece pastoral gringa"
+    }
+  ],
+  "decisiones_chat_15oct": {
+    "principal": "2 · The Ready",
+    "fotos": "con IA (Nano Banana o GPT), con clave de API de Ramón en el entorno; se generan en una sesión nueva",
+    "personas": "Personas generadas como ambiente, sin decir quiénes son: nada las presenta como equipo ni como clientes"
+  }
+}
