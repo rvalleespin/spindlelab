@@ -1,12 +1,14 @@
+<meta charset="utf-8">
 <title>Tablero interiores E9</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');
 :root {
   color-scheme: dark;
   --fondo: #111111;
   --hondo: #000000;
   --modulo: #1b1b1b;
+  --modulo-activo: #262626;
   --borde: #2c2c2c;
   --filete: rgba(247, 245, 240, 0.12);
   --papel: #f7f5f0;
@@ -25,11 +27,10 @@ body { margin: 0; background: var(--fondo); color: var(--papel); font: 400 16px/
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 .tab { max-width: 1240px; margin: 0 auto; padding-top: 40px; padding-bottom: 96px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-h1, h2, h3, h4 { font-weight: 500; letter-spacing: -0.02em; margin: 0; }
+h1, h2, h3 { font-weight: 500; letter-spacing: -0.02em; margin: 0; }
 h1 { font-size: clamp(1.9rem, 4.4vw, 3rem); line-height: 1.1; }
 h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.2; }
 h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.3; }
-h4 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
 p { margin: 0; }
 .meta { color: var(--gris); font-size: 0.875rem; margin-top: 10px; }
 .chico { font-size: 0.875rem; color: var(--gris); }
@@ -42,11 +43,12 @@ p { margin: 0; }
 .decide li::before { content: counter(d); color: var(--gris); font-variant-numeric: tabular-nums; }
 .responde { margin-top: 28px; background: var(--modulo); border-radius: var(--r); padding: 18px 20px; max-width: 900px; display: grid; gap: 8px; }
 .responde b { font-weight: 600; }
+.responde ol { margin: 0; padding: 0 0 0 22px; display: grid; gap: 6px; }
 
 /* índice */
 .indice { margin: 22px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
 .indice a { display: inline-flex; align-items: center; height: 34px; padding: 0 12px; border-radius: var(--r); background: var(--modulo); text-decoration: none; font-size: 0.875rem; font-weight: 500; }
-.indice a:hover, .indice a:focus-visible { background: #262626; }
+.indice a:hover, .indice a:focus-visible { background: var(--modulo-activo); }
 a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outline-offset: 3px; }
 
 /* secciones */
@@ -54,8 +56,9 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
 .sec > h2 { margin-bottom: 14px; }
 .nota-dir { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 18px 0 0; }
 .nota-dir div { border-top: 1px solid var(--filete); padding-top: 12px; }
-.nota-dir h4 { margin-bottom: 6px; color: var(--gris); font-weight: 500; font-size: 0.875rem; }
+.nota-dir__rot { margin-bottom: 6px; color: var(--gris); font-weight: 500; font-size: 0.875rem; }
 .cambia { margin: 26px 0 0; display: grid; gap: 10px; max-width: 900px; }
+.cambia b { font-weight: 600; }
 .decisiones { margin-top: 22px; border-top: 1px solid var(--filete); border-bottom: 1px solid var(--filete); }
 .decisiones summary { cursor: pointer; padding: 14px 0; font-weight: 500; list-style-position: inside; }
 .decisiones ul { margin: 0 0 18px; padding: 0 0 0 18px; display: grid; gap: 8px; font-size: 0.9375rem; color: var(--gris); }
@@ -94,6 +97,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
 /* piezas */
 .piezas { margin: 18px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--filete); }
 .piezas li { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 4px 20px; padding: 12px 0; border-bottom: 1px solid var(--filete); font-size: 0.9375rem; }
+.piezas li b { font-weight: 600; }
 .piezas li span { color: var(--gris); overflow-wrap: anywhere; }
 .piezas code, .chico code { font: 500 0.8125rem/1.4 ui-monospace, 'SFMono-Regular', Menlo, monospace; color: var(--papel); overflow-wrap: anywhere; }
 .aviso { margin-top: 18px; display: grid; gap: 8px; max-width: 900px; color: var(--gris); font-size: 0.9375rem; }
@@ -115,15 +119,22 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
   <ol class="decide">
     <li>Eliges una de dos direcciones para las páginas interiores: la 1 «Pantallas» o la 2 «Lectura de máquina». No hay tercera.</li>
     <li>Las dos están armadas sobre las páginas reales de Acompañamiento mensual y Desarrollo web, con el texto aprobado en E8: solo cambian la composición y las imágenes.</li>
-    <li>Ninguna usa las 6 fotos de ambiente. Todo es obra, pantallas o lecturas reales de nuestros dominios, cada una con su fecha.</li>
-    <li>Más abajo ves cómo queda la prueba (el compromiso de 3 meses, el 36 → 73 → 100 y la metodología 30/40/30) y tres pruebas nuevas marcadas «Espera tu OK»: marcas cuáles autorizas.</li>
+    <li>Ninguna usa las 6 fotos de ambiente: todo es obra, pantallas o lecturas reales de nuestros dominios, con su fecha.</li>
+    <li>Más abajo, la prueba en grande (el compromiso de 3 meses, el 36 → 73 → 100 y la metodología 30/40/30) y tres pruebas nuevas que esperan tu OK.</li>
     <li>Recomiendo la 2. El porqué está al final de las dos direcciones.</li>
   </ol>
   <div class="responde">
-    <p><b>Para responder basta una línea:</b> «Dirección 1» o «Dirección 2», y sí o no para cada prueba nueva: el 67 de 69, la captura con 85 y 54, y el panel de Combeau.</p>
-    <p class="chico">Para Combeau te pregunto además si hay permiso escrito de Bernardo: su ficha dice «caso público NO autorizado» y el brief de obra habla de un permiso verbal del 30-sep.</p>
+    <p><b>Para responder basta una línea, con cuatro cosas:</b></p>
+    <ol>
+      <li>«Dirección 1» o «Dirección 2».</li>
+      <li>Sí o no para cada prueba nueva: el 67 de 69, la captura con 85 y 54, y el panel de Combeau.</li>
+      <li>¿Lo que incluye, los planes, las preguntas y el cierre también cambian de forma? Sí o no. Si es sí, lo dibujo y lo ves antes de que Diego construya, con el texto de E8 igual.</li>
+      <li>El compromiso de los 3 meses: el texto aprobado tal cual, partido en tres, o redactado por Clara en tres partes que se leen solas y prometen lo mismo.</li>
+    </ol>
+    <p class="chico">Para Combeau, además: ¿hay permiso escrito de Bernardo? Su ficha dice «caso público NO autorizado» y el brief de obra, permiso verbal del 30-sep.</p>
   </div>
   <nav aria-label="En este tablero"><ul class="indice">
+    <li><a href="#comun">Vale para las dos</a></li>
     <li><a href="#d1">Dirección 1</a></li>
     <li><a href="#d2">Dirección 2</a></li>
     <li><a href="#prueba">La prueba</a></li>
@@ -132,20 +143,28 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
   </ul></nav>
 </header>
 
+<!-- ======================================================= VALE PARA LAS DOS -->
+<section class="sec" aria-labelledby="comun">
+  <h2 id="comun">Vale para las dos</h2>
+  <div class="cambia guia">
+    <p><b>La tira de columnas.</b> «Así se ve un mes tipo» (4) y «Cinco fases» (5) pasan a columnas, con las cifras S1 a S4 y 01 a 05 a 30 px y el mismo texto: corta la seguidilla de etiqueta a la izquierda y lista a la derecha.</p>
+    <p><b>Lo que sigue en filas.</b> «Lo que incluye» («Todo parte con esto» en Desarrollo web), los planes, las preguntas y el cierre quedan como hoy: 4 de las 5 secciones de texto de cada página. Es parte de lo primero que marcaste, pero esta obra cambia la cabecera, las imágenes y la prueba, no la forma de esas secciones (brief §2). Por eso es la tercera pregunta de arriba.</p>
+    <p><b>Las internas sin campo:</b> Método, Diagnóstico, Nosotros, Trabajo, Contacto, el blog y los artículos. Diagnóstico cambia el hilo por la metodología dibujada, Nosotros pierde la ventana y queda con el retrato, y el blog y los artículos cambian la destacada por una lectura de su tema. Trabajo y Contacto no tienen foto de ambiente.</p>
+  </div>
+</section>
+
 <!-- ======================================================= DIRECCIÓN 1 -->
 <section class="sec" aria-labelledby="d1">
   <h2 id="d1">Dirección 1 · Pantallas</h2>
   <div class="nota-dir">
-    <div><h4>Referencia dominante</h4><p>Los casos de driftime (CeHDI, Finnish Institute, Secure Energy): página negra, galerías entre las secciones.</p></div>
-    <div><h4>Rasgo que toma</h4><p>El ritmo de revista: texto, galería, texto, galería. Filas de alto común con cada pieza en su proporción.</p></div>
-    <div><h4>Qué sacrifica</h4><p>El color del campo en la página (sigue negra, como hoy) y pide mucho material: 6 a 10 piezas en cada una de las 13 internas.</p></div>
+    <div><p class="nota-dir__rot">Referencia dominante</p><p>Los casos de driftime (CeHDI, Finnish Institute, Secure Energy): página negra, galerías entre las secciones.</p></div>
+    <div><p class="nota-dir__rot">Rasgo que toma</p><p>El ritmo de revista: texto, galería, texto, galería. Filas de alto común con cada pieza en su proporción.</p></div>
+    <div><p class="nota-dir__rot">Qué sacrifica</p><p>El color del campo en la página (sigue negra, como hoy) y pide mucho material: 6 a 10 piezas en cada una de las 13 internas.</p></div>
   </div>
   <div class="cambia guia">
-    <p>Entre cada par de secciones va una galería: 6 piezas en Acompañamiento y 7 en Desarrollo web, donde hoy hay 3 y 6.</p>
     <p>La foto a sangre de la cabecera pasa a ser una pantalla real: el robots.txt de spindlelab.cl en Acompañamiento y la portada de Combeau en Desarrollo web.</p>
     <p>El color del campo vive solo dentro de las piezas: el fondo de estudio de los montajes y las lecturas de máquina.</p>
-    <p>«Así se ve un mes tipo» y «Cinco fases» pasan a una tira de columnas: corta la seguidilla de etiqueta a la izquierda y lista a la derecha. No depende de la dirección: va igual en la 2.</p>
-    <p class="chico">Siguen como hoy, en filas de etiqueta a la izquierda y lista a la derecha, en las dos direcciones: «Lo que incluye» («Todo parte con esto» en Desarrollo web), los planes, las preguntas y el cierre. Es parte de lo primero que marcaste, y no lo resuelve ninguna de las dos: el copy de E8 está cerrado y la forma de esas secciones no entró en esta obra (brief §2), que cambia la cabecera, las imágenes y la prueba. Si quieres que también cambien, es una decisión de alcance aparte, no de dirección.</p>
+    <p><b>Sin campo:</b> negras, como sus servicios. Método cambia sus tres fotos por piezas de sus fases: una a sangre en la cabecera y galerías entre las secciones.</p>
   </div>
   <details class="decisiones">
     <summary>Las decisiones, una por línea, contra la referencia</summary>
@@ -155,8 +174,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
       <li><b>Filas de dos con alto común:</b> retrato 0,75 + JSON-LD 1,33; robots 1,0 + respuesta 1,18; Verifica 1,33 + 0,91. Son las filas 05, 07 y 20 de CeHDI. Nada se recorta.</li>
       <li><b>«Una pieza y negro al lado»</b> (8 de 12 columnas) para los 21 chequeos y para Raigal; Combeau en notebook en 7 de 12, cargado a la derecha. Son las filas 04 y 08 de CeHDI: aire alrededor de lo que hay que mirar.</li>
       <li><b>Cabecera a sangre con una pantalla montada.</b> CeHDI abre con la obra en un notebook a sangre. Robots.txt y JSON-LD los monté desde el crudo de hoy de Bruno, en notebook y teléfono sobre el color del campo.</li>
-      <li><b>Tira de columnas</b> para el mes tipo (4) y las fases (5): las cifras S1 a S4 y 01 a 05 suben a 30 px; el texto no cambia. Igual en la 2.</li>
-      <li><b>Celular:</b> las filas de dos son carrusel con la siguiente pieza asomándose (lock §7), alto común de 66 % del ancho, para que una pieza 4:3 se vea entera.</li>
+      <li><b>Celular:</b> las filas de dos son carrusel con la siguiente pieza asomándose (lock §7), alto común de 66&nbsp;% del ancho, para que una pieza 4:3 se vea entera.</li>
     </ul>
   </details>
 
@@ -195,28 +213,26 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
 <section class="sec" aria-labelledby="d2">
   <h2 id="d2">Dirección 2 · Lectura de máquina</h2>
   <div class="nota-dir">
-    <div><h4>Referencia dominante</h4><p>Los campos de la home (son de driftime): la cabecera del servicio toma el color de su campo.</p></div>
-    <div><h4>Rasgo que toma</h4><p>El campo como pantalla de color con texto al 100 %, y la lectura de máquina en grande como imagen principal.</p></div>
-    <div><h4>Qué sacrifica</h4><p>La densidad de revista: 4 a 6 piezas por página. Y se aparta de los casos de driftime en la cabecera, que allá es negra.</p></div>
+    <div><p class="nota-dir__rot">Referencia dominante</p><p>Los campos de la home (son de driftime): la cabecera del servicio toma el color de su campo.</p></div>
+    <div><p class="nota-dir__rot">Rasgo que toma</p><p>El campo como pantalla de color con texto al 100&nbsp;%, y la lectura de máquina en grande como imagen principal.</p></div>
+    <div><p class="nota-dir__rot">Qué sacrifica</p><p>La densidad de revista: 4 a 6 piezas por página. Y se aparta de los casos de driftime en la cabecera, que allá es negra.</p></div>
   </div>
   <div class="cambia guia">
-    <p>La cabecera es una banda del campo: petróleo en Acompañamiento, brasa en Desarrollo web. El h1 sigue en 60 px y peso 500, sin display. Cierra el pendiente del color del campo en las internas (spec §7:195).</p>
+    <p>La banda es petróleo en Acompañamiento y brasa en Desarrollo web; el h1 sigue en 60 px y 500, sin display. Cierra el pendiente del color del campo en las internas (spec §7:195).</p>
     <p>En vez de la foto a sangre, la entrada va al lado de una lectura grande: la respuesta a cada robot en Acompañamiento, el JSON-LD en Desarrollo web.</p>
-    <p>Las lecturas van grandes y alternan con la obra: menos piezas, de 770 a 1.360 px de ancho a 1440, y cada una se lee.</p>
+    <p>Las lecturas van grandes y alternan con la obra: menos piezas, de 770 a 1.360 px de ancho a 1440.</p>
     <p>El compromiso de los 3 meses es una banda petróleo. El resto de la página sigue en negro.</p>
-    <p>«Así se ve un mes tipo» y «Cinco fases» pasan a la misma tira de columnas que en la 1: no depende de la dirección.</p>
-    <p class="chico">Siguen como hoy, en filas de etiqueta a la izquierda y lista a la derecha, en las dos direcciones: «Lo que incluye» («Todo parte con esto» en Desarrollo web), los planes, las preguntas y el cierre. Es parte de lo primero que marcaste, y no lo resuelve ninguna de las dos: el copy de E8 está cerrado y la forma de esas secciones no entró en esta obra (brief §2), que cambia la cabecera, las imágenes y la prueba. Si quieres que también cambien, es una decisión de alcance aparte, no de dirección.</p>
+    <p><b>Sin campo:</b> negras, sin banda. Un campo dice un pilar de la oferta (manual §04), y papel y módulo nunca son fondo de sección. Método lleva la entrada al lado de una pieza grande de una fase. Así el campo llega a 7 de las 13 internas (el índice y los seis servicios); con la 1, solo al índice.</p>
   </div>
   <details class="decisiones">
     <summary>Las decisiones, una por línea, contra la referencia</summary>
     <ul>
-      <li><b>Banda de unos 600 px a 1440 y 450 a 390, no pantalla completa.</b> Es el campo de la home en versión cabecera: quien entra desde «Continuidad» llega a petróleo. Texto, miga y línea en el color del texto del campo al 100 % (manual §04).</li>
+      <li><b>Banda de unos 600 px a 1440 y 450 a 390, no pantalla completa.</b> Es el campo de la home en versión cabecera: quien entra desde «Continuidad» llega a petróleo. Texto, miga y línea en el color del texto del campo al 100&nbsp;% (manual §04).</li>
       <li><b>h1 de 60 px en 500 dentro de la banda.</b> La regla del 5-oct (cero display en una interna) no se toca.</li>
       <li><b>Texto 5/12 y pieza 7/12</b> en lugar de la foto a sangre: es la nota y la entrada del caso de driftime, con una prueba en vez de un ambiente.</li>
       <li><b>4 piezas en Acompañamiento y 6 en Desarrollo web.</b> La respuesta a cada robot, los 21 chequeos a todo el ancho, robots.txt con el retrato; en Desarrollo web, el JSON-LD, los 21 chequeos y la obra.</li>
       <li><b>Los 21 chequeos a todo el ancho antes de los planes</b> en Acompañamiento: es lo que mide el compromiso («contando las mismas señales»). En Desarrollo web van pegados a «Te dejamos el puntaje por escrito».</li>
       <li><b>Las lecturas en el color del servicio.</b> Robots en petróleo y los 21 en brasa son variantes de las piezas de Bruno, rendidas con su generador (<code>--campo</code>): el mismo texto, comprobado contra el crudo.</li>
-      <li><b>Tira de columnas</b> para el mes tipo (4) y las fases (5), la misma de la 1: las cifras S1 a S4 y 01 a 05 suben a 30 px; el texto no cambia.</li>
       <li><b>Celular:</b> todo se apila a todo el ancho, sin carrusel.</li>
     </ul>
   </details>
@@ -253,22 +269,22 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
 
   <div class="reco">
     <h3>Por qué recomiendo la 2</h3>
-    <p>Lo que marcaste es que las internas pierden el pulso de la home. El pulso de la home son los campos de color con su imagen: la 2 lleva ese color a la cabecera de cada servicio y pone la prueba en grande, con menos piezas y todas legibles.</p>
+    <p>Marcaste que las internas pierden el pulso de la home, que son los campos de color con su imagen. La 2 lleva ese color a la cabecera de cada servicio y pone la prueba en grande, con menos piezas, legibles a 1440.</p>
     <p>La 1 es más fiel a los casos de driftime, pero llenar 6 a 10 lugares en cada una de 13 internas con material real obliga a repetir pantallas de texto (robots.txt, JSON-LD) en distintos ángulos. Eso es relleno con otro nombre.</p>
-    <p>Y en el teléfono la 1 pierde la cabecera: a 390, el robots.txt queda en un notebook con letras de unos 3 px, que no se leen; tapando el logo, podría ser cualquier estudio de desarrollo. En la 2, la respuesta a cada robot se lee entera a ese ancho. El carrusel de la 1 deja fuera de la pantalla, hasta que lo deslizas, 2 de las 6 piezas en Acompañamiento (se ve el 49 % y el 34 % de cada una) y 2 de las 7 en Desarrollo web (el 7 % y el 5 %).</p>
-    <p class="chico">Lo que la 2 no resuelve y la 1 tampoco: a 390, la lista de los 21 chequeos no se lee como pieza. En el teléfono se lee entera en Diagnóstico (el dibujo de abajo, que es texto real).</p>
+    <p>Y en el teléfono la 1 pierde la cabecera: a 390, el robots.txt queda en un notebook con letras de unos 3 px, que no se leen; tapando el logo, podría ser cualquier estudio de desarrollo. En la 2, a ese ancho se leen las cinco respuestas, robot por robot. El carrusel de la 1 deja fuera de la pantalla 2 de las 6 piezas en Acompañamiento (se ve el 49&nbsp;% y el 34&nbsp;% de cada una) y 2 de las 7 en Desarrollo web (el 7&nbsp;% y el 5&nbsp;%).</p>
+    <p class="chico">A 390, en ninguna de las dos se lee la fecha, que es lo que vuelve prueba a una lectura: queda a 5 a 7 px dentro de la imagen. En la Tanda B va además como leyenda de texto junto a la pieza. La lista de los 21 chequeos tampoco se lee como pieza a ese ancho; entera, se lee en Diagnóstico (abajo, en texto real).</p>
   </div>
 </section>
 
 <!-- ======================================================= LA PRUEBA -->
 <section class="sec" aria-labelledby="prueba">
   <h2 id="prueba">La prueba, en grande</h2>
-  <p class="guia">Cuatro recortes. Valen para cualquiera de las dos direcciones, salvo donde se dice.</p>
+  <p class="guia">Cuatro recortes, para las dos direcciones salvo donde se dice.</p>
 
   <div class="prueba">
     <h3>El compromiso de los 3 meses, en tres partes</h3>
-    <p>Las palabras son las aprobadas, en su orden. Solo se agregan los rótulos y el 600 en una frase por parte, para que se lea en 3 segundos: a los 3 meses, más puntos que el día en que partimos, alguien de tu equipo que apruebe los cambios.</p>
-    <p class="chico">Va en el orden en que está escrito: plazo, resultado, condición. Para que quede «Resultado · Plazo · Condición» hay que reescribir la frase; si lo prefieres así, lo hace Clara en la Tanda B.</p>
+    <p>Solo se agregan los rótulos y el 600 en una frase por parte: a los 3 meses, más puntos que el día en que partimos, alguien de tu equipo que apruebe los cambios.</p>
+    <p class="chico">Hoy es el texto aprobado tal cual, partido en tres en el orden en que está escrito: por eso «Plazo» termina en coma y «Resultado» parte en minúscula. Lo decides tú (punto 4 de arriba): o queda así, o Clara lo redacta en tres partes que se leen solas, sin cambiar lo que promete, y ahí puede ir en el orden «Resultado · Plazo · Condición».</p>
     <div class="lado"><p class="col__rot">En la Dirección 1: sobre negro, entre filetes</p>
       <div class="prueba__fotos">
         <div class="tira"><img src="img/prueba-compromiso-d1-1440.jpg" width="1440" height="687" loading="lazy" alt="El compromiso de Acompañamiento en tres columnas rotuladas Plazo, Resultado y Condición, sobre negro, a 1440"></div>
@@ -286,7 +302,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
   <div class="prueba">
     <h3>Trabajo: 36 → 73 → 100 como cifras fechadas, y la fila vuelve a cuadrar</h3>
     <p>Las cifras en 500, sin display, en la ficha de Verifica y Cumple: el único lugar del sitio con ese número. Los enlaces de las dos fichas quedan a la misma altura: hoy el de Verifica cae 148 a 185 px más abajo que el de Combeau modelo (medido de 1024 a 1920); con el cambio, 0 px.</p>
-    <p class="chico">Contra el párrafo aprobado, palabra por palabra: entra el rótulo «en el chequeo de la Ley 21.719» detrás de «spindlelab.cl»; salen «sacó» (dos veces), «el» (dos veces), «El», «y», cuatro comas y dos puntos; el 100 pasa delante de su fecha, y las notas del 73 y del 100 van detrás de su cifra y su fecha. «de 100» se queda pegado al 36: es la escala de las tres cifras. Las fechas y las notas son las del párrafo, y el texto final lo afina Clara en la Tanda B. Usé la letra del sitio y no la pieza de Bruno: dentro de la ficha, esa pieza mide unos 390 px de alto y la fila se volvía a descuadrar.</p>
+    <p class="chico">Contra el párrafo aprobado, palabra por palabra: entra el rótulo «en el chequeo de la Ley 21.719» detrás de «spindlelab.cl»; salen «sacó» (dos veces), «el» (dos veces), «El», «y», cuatro comas y dos puntos finales; el 100 pasa delante de su fecha, y las notas del 73 y del 100 van detrás de su cifra y su fecha. «de 100» se queda pegado al 36: es la escala de las tres cifras. Las fechas y las notas son las del párrafo, y el texto final lo afina Clara en la Tanda B. Va en la letra del sitio y no con la pieza de Bruno, que dentro de la ficha mide unos 390 px de alto y volvía a descuadrar la fila.</p>
     <div class="dos lado">
       <div><p class="col__rot">Hoy, 1440</p><div class="tira"><img src="img/prueba-trabajo-antes-1440.jpg" width="1440" height="1091" loading="lazy" alt="La fila de Trabajo hoy: el enlace de Verifica y Cumple queda más abajo que el de Combeau modelo porque su texto es más largo"></div></div>
       <div><p class="col__rot">Con E9, 1440</p><div class="tira"><img src="img/prueba-trabajo-despues-1440.jpg" width="1440" height="1171" loading="lazy" alt="La fila de Trabajo con E9: 36 de 100, 73 y 100 con su fecha debajo, y los dos enlaces a la misma altura"></div></div>
@@ -296,7 +312,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
 
   <div class="prueba">
     <h3>Diagnóstico: la metodología dibujada</h3>
-    <p>Sale la foto del hilo. Entran los tres bloques con ancho 30, 40 y 30, y sus 21 chequeos con su peso, tal como los devuelve el chequeo hoy. La nota de 14 px pasa a ser el titular del dibujo. Es texto, no imagen: se lee entero en el teléfono.</p>
+    <p>Sale la foto del hilo. Entran los tres bloques con ancho 30, 40 y 30, y sus 21 chequeos con su peso, como los devuelve el chequeo hoy. La nota de 14 px pasa a ser el titular del dibujo. Es texto, no imagen: se lee entero en el teléfono.</p>
     <div class="dos lado">
       <div><p class="col__rot">Hoy, 1440</p><div class="tira"><img src="img/prueba-diagnostico-antes-1440.jpg" width="1440" height="818" loading="lazy" alt="Diagnóstico hoy: la foto del hilo a sangre y la metodología en una nota de 14 px"></div></div>
       <div><p class="col__rot">Con E9, 1440</p><div class="tira"><img src="img/prueba-diagnostico-despues-1440.jpg" width="1440" height="791" loading="lazy" alt="Diagnóstico con E9: tres columnas de ancho 30, 40 y 30, con su número grande, su pregunta y la lista de sus chequeos con el peso de cada uno"></div></div>
@@ -306,7 +322,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
 
   <div class="prueba">
     <h3>Desarrollo web: «Te dejamos el puntaje por escrito»</h3>
-    <p>Pegada a esa línea va la lista de los 21 chequeos con su peso: es contra lo que se escribe el puntaje. Así queda sin tu OK. Con tu OK, ahí va la captura del chequeo con el puntaje real (abajo, en «Espera tu OK»).</p>
+    <p>Pegada a esa línea va la lista de los 21 chequeos con su peso, contra la que se escribe el puntaje. Así queda sin tu OK; con tu OK, ahí va la captura con el puntaje real (abajo).</p>
     <div class="prueba__fotos">
       <div class="tira"><img src="img/prueba-puntaje-d2-1440.jpg" width="1440" height="999" loading="lazy" alt="La lista de lo que incluye Desarrollo web con la pieza de los 21 chequeos en brasa justo debajo de la línea del puntaje por escrito, a 1440"></div>
       <div class="tira col--390"><img src="img/prueba-puntaje-d2-390.jpg" width="780" height="1584" loading="lazy" alt="Lo mismo a 390"></div>
@@ -317,7 +333,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
 <!-- ======================================================= ESPERA TU OK -->
 <section class="sec" aria-labelledby="ok">
   <h2 id="ok">Tres pruebas que esperan tu OK</h2>
-  <p class="guia">Cada una está dibujada en el lugar donde iría, con su marca. Ninguna se construye si no la marcas.</p>
+  <p class="guia">Cada una, dibujada donde iría y con su marca. Ninguna se construye sin tu OK.</p>
 
   <div class="ok">
     <div class="ok__cab"><span class="marca">Espera tu OK</span><h3>El 67 de 69, en Diagnóstico</h3></div>
@@ -336,7 +352,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
     <div class="ok__cab"><span class="marca">Espera tu OK</span><h3>La captura del chequeo con 85 y 54, en Desarrollo web</h3></div>
     <div class="pro">
       <p><b>Dónde:</b> pegada a «Te dejamos el puntaje por escrito». También serviría en Diagnóstico; nunca en una página con el 36 → 73 → 100.</p>
-      <p><b>A favor:</b> muestra cómo se entrega el puntaje, con la pantalla real y dos dominios nuestros. <b>En contra:</b> Verifica, producto nuestro, sale con 54; y el veredicto real del 85 dice «menciones», una palabra que el brief deja fuera de las piezas mientras R2 siga abierta.</p>
+      <p><b>A favor:</b> muestra cómo se entrega el puntaje, con la pantalla real y dos dominios nuestros. <b>En contra:</b> Verifica, producto nuestro, sale con 54; y el veredicto real del 85 dice «menciones», una palabra que el brief deja fuera de las piezas mientras R2 siga abierta. <b>Si dices que sí:</b> sale recortada al puntaje y al dominio de cada sitio, con la fecha al pie, sin el veredicto y sin los dos botones «Pedir el diagnóstico».</p>
       <p class="chico">Fuente: el chequeo de la vista previa, capturado hoy a las 19:30 por Bruno; la respuesta está guardada en el crudo.</p>
     </div>
     <div class="prueba__fotos lado">
@@ -349,7 +365,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
     <div class="ok__cab"><span class="marca">Espera tu OK</span><h3>El panel de Combeau, en Desarrollo web</h3></div>
     <div class="pro">
       <p><b>Dónde:</b> pegado a «Un panel para editar textos e imágenes tú mismo, sin depender de nadie».</p>
-      <p><b>A favor:</b> es la prueba directa de esa línea, en el sitio de un cliente real. <b>En contra:</b> falta el permiso escrito de Bernardo (su ficha dice «caso público NO autorizado»), y en el editor se lee el nombre de pila de un modelo, que es el alt de una foto publicada.</p>
+      <p><b>A favor:</b> es la prueba directa de esa línea, en el sitio de un cliente real. <b>En contra:</b> falta el permiso escrito de Bernardo (arriba, en el recuadro), y en el editor se lee el nombre de pila de un modelo, que es el alt de una foto publicada.</p>
       <p class="chico">Fuente: capturas del panel del 3-sep, en el repo desde el 23-sep; no se pueden recapturar porque piden sesión.</p>
     </div>
     <div class="prueba__fotos lado">
@@ -362,7 +378,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
 <!-- ======================================================= PIEZAS -->
 <section class="sec" aria-labelledby="piezas">
   <h2 id="piezas">Las piezas, con su fuente y su fecha</h2>
-  <p class="guia">Todo texto de una lectura está literal en su captura cruda (o es un conteo con su fórmula). Ninguna lleva oro: todas miden menos de 0,05 %.</p>
+  <p class="guia">Todo texto de una lectura está literal en su captura cruda (o es un conteo con su fórmula). Ninguna lleva oro: todas miden menos de 0,05&nbsp;%.</p>
   <ul class="piezas">
     <li><b>Robots.txt de spindlelab.cl</b><span>Navy (Bruno) y petróleo (variante). <code>spindlelab.cl/robots.txt</code>, capturado el 14-oct-2026 a las 19:29.</span></li>
     <li><b>Respuesta a cada robot</b><span>Petróleo. La portada pedida con el user-agent de GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot y Chrome: las cinco dieron 200. 14-oct-2026, 19:29.</span></li>
@@ -370,13 +386,13 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--papel); outlin
     <li><b>Los 21 chequeos y su peso</b><span>Petróleo (Bruno) y brasa (variante). Títulos y pesos tal como los devuelve <code>/api/chequeo</code>; coinciden con el artículo de los 21 chequeos. 14-oct-2026, 19:29.</span></li>
     <li><b>36 → 73 → 100</b><span>Brasa, de reserva (Bruno). Solo para la ficha de Verifica en Trabajo. 36 y 73 del registro del caso; el 100, medido de nuevo hoy a las 19:29.</span></li>
     <li><b>Verifica y Cumple: las 12 cosas y cómo revisamos</b><span>Lavanda. Capturas del sitio en vivo, 14-oct-2026 a las 19:29 y 19:30, montadas en notebook y teléfono.</span></li>
-    <li><b>Robots.txt y JSON-LD en el navegador</b><span>Petróleo y brasa. Los monté para este tablero desde el crudo de Bruno de hoy (mismos archivos, mismo sha256), con su escena de notebook y teléfono. Si eliges la 1, él los rehace con su generador.</span></li>
+    <li><b>Robots.txt y JSON-LD en el navegador</b><span>Petróleo y brasa. Los monté para este tablero desde el crudo de Bruno de hoy (mismos archivos, mismo sha256). Si eliges la 1, él los rehace con su generador.</span></li>
     <li><b>Obra: Combeau fotografía, Combeau modelo, Raigal</b><span>Mockups del 5-oct y la captura plana de Combeau del 6-oct, ya en el sitio. Raigal siempre con «Pieza de concepto · no es un cliente» primero.</span></li>
     <li><b>Retrato de Ramón</b><span>El del sitio, solo en Acompañamiento, donde ya está.</span></li>
     <li><b>Espera tu OK: 67 de 69, captura 85 y 54, panel de Combeau</b><span>Corridas del 31-ago; chequeo capturado hoy a las 19:30; panel del 3-sep. Arriba, con sus fuentes.</span></li>
   </ul>
   <div class="aviso">
-    <p><b>Ojo con una imagen que ya está en el sitio:</b> el teléfono de Combeau modelo (<code>mock-combeau-modelo-alto-2.jpg</code>) mide 0,059 % de oro con el criterio del manual (la palmera). Está hoy en Desarrollo web y en Trabajo. En los prototipos uso la versión ancha, que mide 0,0095 %; en Trabajo sigue la de hoy y se cambia en la Tanda B.</p>
+    <p><b>Ojo con una imagen que ya está en el sitio:</b> el teléfono de Combeau modelo (<code>mock-combeau-modelo-alto-2.jpg</code>) mide 0,059&nbsp;% de oro con el criterio del manual (la palmera). Está hoy en Desarrollo web y en Trabajo. En los prototipos uso la versión ancha, que mide 0,0095&nbsp;%; en Trabajo sigue la de hoy y se cambia en la Tanda B.</p>
     <p><b>verifica.spindlelab.cl no tiene robots.txt, llms.txt ni sitemap.xml:</b> las tres rutas devuelven la aplicación. Por eso no hay lecturas de máquina de Verifica, solo pantallas.</p>
     <p><b>Los prototipos</b> están en <code>tableros/e9-interiores/proto/</code>, armados desde el HTML construido de <code>72045f8</code> con <code>herramientas/armar-protos.py</code>; el sitio no se tocó.</p>
   </div>

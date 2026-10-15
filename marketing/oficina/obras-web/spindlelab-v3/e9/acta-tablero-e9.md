@@ -1,5 +1,168 @@
 # Acta de QA · SpindleLab v3 · E9, tablero de la compuerta (Tanda A)
 
+## Ronda 3 · menores · 14-oct-2026, 21:45 (Chile)
+
+**Javiera (`/web-qa-critico`), en contexto limpio.** Solo archivos, no mensajes. Lucía dice haber cerrado
+9, 10, 11, 12, 13, 14 y 16; Mauro, 6, 7, 8, 15, 16 y 17, y dejar el 4 como criterio de la Tanda B. Leí
+entera esta acta, el plan (`dazzling-snacking-river.md`), `e9/brief-e9.md`, `tablero.html` y el
+`git diff` de los dos contra `f97cd92`. Todas las cifras de abajo son mediciones mías de hoy, con
+scripts nuevos.
+
+**Auditado:** rama `claude/magical-franklin-ckfki2`, `f97cd92` más el árbol de trabajo sin commitear.
+`git status --ignored`: modificados **solo** `tableros/e9-interiores/tablero.html` (md5 `b1140ff4…`,
+escrito a las 21:31) y `e9/brief-e9.md` (md5 `4316eeea…`, 21:25); nada sin seguimiento; ignorados, solo
+`dist/`, `node_modules/` y `.wrangler/` (del 13-oct). Los dos md5 son los mismos al empezar y al terminar
+de medir. `git diff 72045f8 -- spindlelab-astro/`, con el árbol de trabajo: vacío. Las 50 imágenes del
+tablero, `e9/piezas/` y los prototipos no cambiaron.
+
+### Veredicto: **Aprobado** (se mantiene)
+
+De los 12 menores que dicen haber cerrado, cierro 11: 6, 7, 8, 9, 10, 12, 13, 14, 15, 16 y 17. **No
+cierro el 11** (Lucía): ahora dice cómo se lee el texto literal, pero convirtió la reescritura de Clara
+en el plan por defecto, y eso contradice el brief §3. **El pendiente del 4** quedó escrito como criterio,
+pero su comprobación ya pasa hoy sin que se haya arreglado nada (defecto 20). Encontré 4 menores nuevos
+(18 a 21). Ninguno bloquea: el Artifact se puede publicar. Tres cambian lo que Ramón responde y cuestan
+una línea cada uno, así que conviene cerrarlos antes de publicar: **11**, **18** (la ficha de K2 no dice
+que iría recortada) y **19** (si Ramón dice sí al alcance, nada dice quién ve el dibujo antes de
+construir).
+
+### Cómo lo verifiqué
+
+- Servidores: la carpeta del tablero en 8790 tal cual (`Content-type: text/html`, sin charset) y en 8791
+  con `charset=utf-8`; `spindlelab-astro/dist` en 8792, tras `npm run build` sobre `f97cd92` (27 páginas).
+- Chromium de Playwright (`/opt/pw-browsers/chromium-1194`), ventana de 390 × 844 y 1440 × 844,
+  desplazamiento previo, `loading=lazy` forzado a `eager` y `<details>` abiertos para medir.
+- Archivos de trabajo, que no se commitean:
+  `/tmp/claude-0/-home-user-spindlelab/756adde7-3da1-5186-9935-cf74aeaa7043/scratchpad/javiera-e9-r3/`.
+  Scripts `tablero.mjs` (contrato, desborde, encabezados, pesos y caras cargadas, contraste, foco,
+  codificación), `palabras.mjs` (palabras y frases repetidas, ronda 2 contra ronda 3) y `pagina.mjs`
+  (páginas enteras). Resultados en `tablero.json` y `extraccion-72045f8.json` (salida de
+  `e8/herramientas/extraer.mjs`).
+
+**Capturas mías** (`capturas/` de esa carpeta): `tablero-plegado-390.jpg` y `tablero-plegado-1440.jpg`
+(página entera, como la abre Ramón); `tablero-1440.jpg` (todo abierto; a 390, abierta mide 66.055 px,
+más que el máximo de un JPEG, y la medí sin captura); `tablero-sincharset-{390,1440}.jpg` (defecto 9);
+`tablero-primera-pantalla-{390,1440}.png`; `tab-{390,1440}-{responde,comun,d1-guia,d2-guia,reco,compromiso-nota,k2}.png`
+(cada parte que cambió, a tamaño real); `d2-390-l2-recorte.png` (la respuesta a cada robot en la tira
+de D2 a 390).
+
+### El tablero como Artifact, re-medido
+
+| Comprobación | Resultado |
+|---|---|
+| Primera línea | `<meta charset="utf-8">` (`od -c`) ✅ |
+| Sin `<!doctype>`, `<html>`, `<head>` ni `<body>` | ✅ 0 (la única coincidencia de `</head` es `</header>`) |
+| Servido sin charset (8790) | `document.characterSet` UTF-8, «Dirección 1 · Pantallas», 0 «Ã» o «Â», a 390 y a 1440 ✅ |
+| 390 | `scrollWidth` 390 = `clientWidth` 390, plegado y con todo abierto; 0 elementos pasan del borde ✅ |
+| 1440 | `scrollWidth` 1440 ✅ |
+| Encabezados | H1 · H2 · H2 H3 H3 · H2 H3 H3 H3 · H2 H3 H3 H3 H3 · H2 H3 H3 H3 · H2: un h1, sin saltos, 0 `<h4` ✅ |
+| Pesos | el texto usa 400, 500 y 600 de Manrope (los `<b>` y `.marca` en 600); caras cargadas 400, 500 y 600; la URL pide `wght@400;500;600` ✅ |
+| Tokens | `#262626` solo en `:root`, como `--modulo-activo`, y el hover del índice lo usa; 0 hex fuera de `:root` ✅ |
+| Hosts | el propio, `fonts.googleapis.com` y `fonts.gstatic.com` ✅ |
+| Imágenes | 50, 0 rotas, 0 respuestas 4xx, `width` y `height` iguales al archivo en las 50 ✅ |
+| Foco | 12 paradas (6 del índice, con «Vale para las dos», y 6 `summary`), contorno de 2 px en todas ✅ |
+| Contraste | mínimo 7,5:1 (gris de 14 px sobre el módulo) ✅ |
+| «Espera tu OK» | 11 apariciones (13 en la ronda 2: salió la frase de la lista de arriba); el brief pide 3 o más ✅ |
+
+### Los menores, uno por uno
+
+| # | Quién | Qué medí | Estado |
+|---|---|---|---|
+| 9 | Lucía | Arriba: primera línea, y servido sin charset se lee en UTF-8 | **Cerrado** |
+| 10 | Lucía | 0 `h4` (las notas de cada dirección son `p.nota-dir__rot`), sin salto; `.piezas li b`, `.cambia b` y `.responde b` en 600; 800 fuera de la URL y de las caras cargadas; hover en un token | **Cerrado** |
+| 11 | Lucía | Ver defecto 11 abajo | **Abierto** |
+| 12 | Lucía | Cada dirección trae su línea «Sin campo» y «Vale para las dos» nombra las seis internas sin campo. Lo contrasté con el build: Método sirve 3 fotos `d/` (dominó, hilo, ventana), Diagnóstico el hilo, Nosotros la ventana y el retrato, el blog el dominó, Contacto 0 `<img>`, y `/v3/servicios/` tiene las 4 bandas de campo, así que «7 de las 13» y «con la 1, solo al índice» son ciertos. «Un campo dice un pilar» y «papel y módulo nunca son fondo de sección» están en el manual §04 (líneas 113, 115 y 129-130). Queda una frase inexacta: defecto 21 | **Cerrado** |
+| 13 | Lucía | «todas legibles», «se lee entera» y «cada una se lee»: 0. Quedan «legibles a 1440» (l. 271) y «a ese ancho se leen las cinco respuestas, robot por robot» (l. 273), que es cierto: en la tira de D2 a 390 las cinco filas de `l2` se leen sin zoom y el pie con la fecha queda en unos 7 px (`d2-390-l2-recorte.png`; la tira es la misma de la ronda 2). La línea nueva (l. 274) dice que a 390 la fecha no se lee en ninguna de las dos y que en la Tanda B va además como leyenda | **Cerrado** |
+| 14 | Lucía | «Siguen como hoy»: 0 (eran 2). La tira se explica en un solo bloque, «Vale para las dos» (eran 4 lugares). Frases de 8 palabras repetidas en el texto abierto: de 138 a 21, y las 21 son rótulos («Las decisiones, una por línea…», el dato de cada página). «dos puntos finales» (l. 304). Palabras, con el corte de la ronda 2: plegado 2.303 → **2.307**, abierto 2.784 → **2.721**. Lo plegado no baja porque entraron las líneas que pedí en 12, 13 y 16; lo repetido sí salió | **Cerrado** |
+| 16 | Lucía y Mauro | Recuadro de respuesta, punto 3 (l. 131): «¿Lo que incluye, los planes, las preguntas y el cierre también cambian de forma? Sí o no.» «Vale para las dos» remite a ella («Por eso es la tercera pregunta de arriba»). Brief §8.4 (l. 84) y §2 (l. 13) | **Cerrado** (ver 19) |
+| 6 | Mauro | Brief §6 (l. 66): K2, si se autoriza, va recortada al puntaje y el dominio, sin el veredicto ni los dos «Pedir el diagnóstico»; el grep de «menciones» queda en 0 sin excepción | **Cerrado** (ver 18) |
+| 7 | Mauro | Lo reproduje: `npm run build` sobre `f97cd92` (`src/` y `public/` iguales a `72045f8`), `extraer.mjs --dist dist --esperadas 21` (21 rutas, 2.205 ranuras, 224 atributos, 2.308 textos de JSON-LD) y la expresión de cadencia campo por campo: **37 + 0 + 12 + 2 = 51**, el desglose del brief (l. 59). `v3-chequeo.js`: 0. No reproduzco «el 52, un grep directo sobre el HTML»: `grep -oiE` sobre las 21 `index.html` da **51**, y 51 también admitiendo `&nbsp;`. No cambia el criterio (manda el 51 con su desglose); conviene borrar el 52 o decir con qué corte salió | **Cerrado** |
+| 8 | Mauro | Brief §6 (l. 63). Con `mascara_tono` de `medir.py` (control: `#C9A227` da 100 de 100 px; brasa, petróleo y navy, 0): `mock-combeau-modelo-alto-2.jpg` **0,0594 %**, su `-800` **0,0551 %**, la ancha **0,0095 %** y su `-800` **0,0046 %**: las cuatro cifras del brief, exactas. La alta la sirven `servicios/desarrollo-web/` y `trabajo/`. La spec §6 («Más de un oro por vista. El oro es el punto del módulo») y §7:153 dicen lo que el brief cita | **Cerrado** |
+| 15 | Mauro | Brief §6 (l. 61). El crudo de `l3` (`spindlelab.cl/portada.html`) trae ProfessionalService, WebSite, Person y **FAQPage**; `dist/v3/index.html`, ProfessionalService, WebSite, Person y WebPage: el caso está bien descrito. K2, ver 20 | **Cerrado** |
+| 17 | Mauro | Brief §2 (l. 13): la tira en «Así se ve un mes tipo» y «Cinco fases», en las dos direcciones, con el texto de E8 | **Cerrado** |
+| 4 | Bruno (criterio, Mauro) | El criterio está (l. 62), pero no discrimina: ver 20 | **Abierto**, Tanda B |
+
+**El brief:** 88 líneas (83 en la ronda 2), dentro de las ~100; 2.497 palabras (eran 2.018, +24 %). Trae
+los criterios de 6, 7, 8, 15, 16 y 17 y el del 4, y la nota de revisión (l. 88) dice cuáles cierra.
+
+**Antislop sobre lo que cambió:** rayas, 0 en el tablero; verbos de folleto y «usted», 0 en las líneas
+nuevas; las dos preguntas nuevas («¿Lo que incluye…?», «¿hay permiso escrito de Bernardo?») son
+preguntas reales a Ramón. «Borrar 30 %» queda **abierto, con su porqué**: el tablero sigue en 2.307
+palabras plegado, pero ya no repite, y lo que entró es lo que pidió la QA.
+
+### Defectos vivos
+
+Sigo la numeración. Cerrados: 1 a 3 (ronda 2); 6 a 10 y 12 a 17 (hoy).
+
+4. **Menor · Bruno · «ClaudeBot/1.0» sin fuente archivada.** Sin cambios en `e9/piezas/`:
+   `crudo/2026-10-14/ua/ua-anthropic.txt`:3 sigue diciendo «User-agent: ClaudeBot». Ahora es criterio de
+   la Tanda B (brief l. 62), pero su comprobación no discrimina (defecto 20). **Cierre:** el de la ronda 1,
+   en la Tanda B.
+5. **Menor · Bruno · K2 trae dos «Pedir el diagnóstico».** Sin cambios en la pieza; el brief (l. 66) ya
+   dice cómo se recorta. **Cierre:** si Ramón autoriza K2, recortarla como dice el brief, en la Tanda B.
+11. **Menor · Lucía · el compromiso: la reescritura pasó de opción a plan, contra el brief.** La nota dice
+    ahora cómo se lee el texto literal («Plazo» termina en coma y «Resultado» parte en minúscula; lo vi en
+    los cuatro recortes, `tab-1440-compromiso-nota.png`), y eso era lo pedido. Pero cambió lo otro: en la
+    ronda 2 decía «si lo prefieres así, lo hace Clara en la Tanda B», y hoy dice «En la Tanda B Clara lo
+    redacta para que cada parte se lea sola» (l. 286). Eso choca con el brief §3, fila de los 5 servicios
+    (l. 21: «texto de `servicios-v3.json`, sin reescribir»), con el plan (Tanda B, punto 3: Clara «no
+    reabre el copy de E8») y con la línea de arriba del mismo bloque («Solo se agregan los rótulos»,
+    l. 285). Y el recuadro no se lo pregunta a Ramón: si no dice nada, se reescribe un texto aprobado. El
+    criterio de §6 («diferencias solo en … textos del bloque de prueba») no lo atraparía, porque el
+    compromiso es bloque de prueba. **Cierre:** devolverle la elección («Si quieres, en la Tanda B Clara lo
+    redacta para que cada parte se lea sola; si no, va como está»), o, si Mauro quiere la reescritura como
+    plan, que la escriba en §3 y la pregunte en §8. Lo compruebo con un grep de las dos líneas.
+18. **Menor · Lucía · la ficha de K2 no dice cómo saldría.** El brief (l. 66) decide que, si Ramón dice sí,
+    K2 va recortada al puntaje y el dominio, sin el veredicto ni los botones. El tablero sigue mostrando la
+    captura entera, y su «En contra» (l. 354) todavía pesa «el veredicto real del 85 dice "menciones"».
+    Ramón responde el punto 2 sobre una pieza distinta de la que se construiría, con un «en contra» que ya
+    no aplica. **Cierre:** una línea en la ficha: «Si dices sí, va recortada al puntaje y el dominio de cada
+    sitio, con su fecha, sin el veredicto ni los botones». Conviene antes de publicar.
+19. **Menor · Mauro y Lucía · el «sí» del alcance no dice quién ve el dibujo antes de construir.** El brief
+    §8.4 dice «si sí, Lucía lo dibuja antes de construir»; el recuadro, «lo dibujo antes de construir».
+    Ninguno dice si Ramón ve ese dibujo antes de que Diego construya. Son las filas, lo primero que marcó:
+    si se dibujan después de la compuerta y Ramón las ve en el sitio terminado, vuelve el «no me
+    convence» que este circuito existe para evitar. Sumar una compuerta tampoco es gratis (el estudio
+    trabaja con dos), y elegir es encuadre, no QA. **Cierre:** que §8.4 y el punto 3 del recuadro digan qué
+    pasa con el sí (Ramón ve el dibujo antes de que se construyan esas secciones, u otra obra con su
+    compuerta) y, si va en esta obra, un criterio en §6 que lo compruebe. Conviene antes de publicar,
+    porque cambia cómo responde Ramón.
+20. **Menor · Mauro · dos criterios de la Tanda B que hoy no atrapan lo que buscan.** (a) El del 4 (l. 62):
+    `grep -rlF "ClaudeBot/1.0" e9/piezas/crudo/` ya devuelve hoy `crudo/2026-10-14/registro.json`
+    (líneas 295 y 613, el user-agent que **mandamos**), que es justo lo que el defecto 4 dice que no es
+    una fuente: el criterio pasa sin arreglar nada. (b) La regla de recaptura (l. 61) dice «toda lectura
+    de `spindlelab.cl`» y el mismo párrafo reconoce que el 85 de K2 se midió sobre la v2, pero la viñeta de
+    K2 (l. 66) no dice que el puntaje se recaptura. El chequeo es público: si la v3 saca otro puntaje,
+    quien lo compruebe no encuentra el 85. **Cierre:** (a) el grep sobre `crudo/*/ua/` (o con
+    `--exclude=registro.json`); (b) en la viñeta de K2, que el puntaje entra en la regla de recaptura.
+    Antes de la Tanda B.
+21. **Menor · Lucía · «Trabajo y Contacto no tienen foto».** En «Vale para las dos» (l. 151). Contacto sirve
+    0 `<img>`, pero Trabajo sirve 4 (la obra), una de ellas el teléfono de Combeau modelo que el propio
+    tablero dice que cambia en la Tanda B (l. 394). Lo cierto es «no tienen foto de ambiente». **Cierre:**
+    esa palabra, cuando se toque el tablero.
+
+### Lo que está bien (que la Tanda B no lo rompa)
+
+- Los tres que pedí para antes de publicar (13, 14 y 16) están cerrados, y bien: la pregunta del alcance
+  está en la línea de respuesta, la recomendación ya no promete lo que el teléfono no muestra, y el
+  tablero dice una sola vez lo que vale para las dos direcciones.
+- Las cifras nuevas del brief se reproducen al decimal: 51 = 37 + 0 + 12 + 2 y los cuatro porcentajes de
+  oro. Y el brief ahora dice de dónde sale cada número.
+- Lo que cambió en el tablero es solo texto y CSS: imágenes, piezas y prototipos son los que medí en la
+  ronda 2, y el contrato de Artifact sigue cumplido a 390 y a 1440.
+- La higiene del tablero quedó cerrada: UTF-8 declarado, sin saltos de encabezado, tres caras cargadas y
+  las tres usadas, 0 hex fuera de los tokens.
+- Nadie tocó nada fuera de `tableros/e9-interiores/tablero.html` y `e9/brief-e9.md`.
+
+### Para la Tanda B
+
+4, 5 y 20 los compruebo al empezar la QA de la Tanda B. 11, 18 y 19, si se cierran antes de publicar, con
+un grep del tablero y del brief; 21, con el mismo grep cuando se toque el tablero. Si 19 se responde «sí,
+en esta obra», la QA de la Tanda B necesita el dibujo aprobado como fuente: sin él, esas cuatro secciones
+no tienen contra qué medirse.
+
+---
+
 ## Ronda 2 · 14-oct-2026, 21:15 (Chile)
 
 **Javiera (`/web-qa-critico`), en contexto limpio.** No escuché a Mauro, a Bruno ni a Lucía en esta
