@@ -1,5 +1,307 @@
 # Acta de QA · SpindleLab v3 · E9, tablero de la compuerta (Tanda A)
 
+## Ronda 2 · 14-oct-2026, 21:15 (Chile)
+
+**Javiera (`/web-qa-critico`), en contexto limpio.** No escuché a Mauro, a Bruno ni a Lucía en esta
+ronda tampoco: no leí sus mensajes, solo sus archivos, y todas las cifras de abajo son mediciones mías
+de hoy, con scripts nuevos (no reutilicé los resultados de la ronda 1, solo su método). Leí entero el
+plan aprobado (`dazzling-snacking-river.md`), `e9/brief-e9.md`, `tablero.html`, el `git diff` de la
+ronda 2, `e9/piezas/manifiesto.json`, el `registro.json` y el crudo, el §07b del manual y los dos
+detectores.
+
+**Auditado:** rama `claude/magical-franklin-ckfki2`. Empecé sobre `c254fd0` (no `72045f8`: encima
+están `69b190c` y `c254fd0`, las dos de la Tanda A) con la ronda 2 sin commitear en el árbol de trabajo:
+25 archivos, todos dentro de `tableros/e9-interiores/` (`tablero.html`, md5 `81a36f8c…`, escrito a las
+20:53; `armar-protos.py`; los dos prototipos de D2; `recortes/trabajo-despues.html`; `proto/e9/e9.css`;
+las 16 tiras de D2, las 2 de Trabajo y `medidas.json`). Mientras medía, el orquestador los commiteó en
+`67f785e` (21:17) junto con el acta de la ronda 1. Comprobé que es lo mismo que medí: `c254fd0..67f785e`
+son esos 25 archivos más el acta, el md5 de `tablero.html` no cambió, y ningún archivo del tablero, de
+`e9/piezas/` ni el brief es más nuevo que mi build de las 20:56. `e9/piezas/` y `e9/brief-e9.md` no
+cambiaron desde `69b190c`.
+`git diff 72045f8 -- spindlelab-astro/src spindlelab-astro/public`: vacío. Corrí `npm run build`
+(27 páginas) para comparar contra `dist/v3`.
+
+### Veredicto: **Aprobado**
+
+Los tres mayores de la ronda 1 están cerrados y los verifiqué midiendo, no leyendo el tablero: la tira
+de columnas está ahora en las dos direcciones y el tablero dice qué secciones siguen en filas (1), la
+recomendación usa las cifras medidas y la razón de los 3 px (2), y la nota de Trabajo declara palabra por
+palabra lo que sale, con «de 100» pegado al 36 (3). Sigue sin haber un solo bloqueante: todo texto de
+cada pieza está en su crudo, los cinco status y los tres puntajes los volví a pedir a las 20:58 y dan lo
+mismo, cero oro nuevo, cero prospectos, cero `assets/img/d/`, cero display, el copy de las dos páginas
+es el de `dist/v3` salvo etiquetas y rótulos, y el tablero cumple el contrato de Artifact a 390 y a 1440.
+
+**Quedan 14 menores** (9 de la ronda 1 que eran para antes de la Tanda B, y 5 nuevos). Ninguno impide
+mostrarle el tablero a Ramón: se puede publicar el Artifact. Tres son baratos y conviene cerrarlos antes
+de publicar porque tocan cómo decide Ramón: **16** (la pregunta de alcance que el tablero deja fuera de
+la línea de respuesta), **13** (la fecha de cada lectura no se lee en el teléfono) y **14** (el párrafo
+repetido). El resto se cierra antes de la Tanda B.
+
+### Cómo lo verifiqué
+
+- Servidores locales: `proto/` en 8775, `spindlelab-astro/dist` en 8776, la carpeta del tablero en 8777
+  (tal cual, sin charset) y en 8780 (con `text/html; charset=utf-8`, como lo sirve el Artifact),
+  `e9/piezas/` en 8778 y una copia aislada del generador de Bruno en 8779.
+- Chromium de Playwright (`/opt/pw-browsers/chromium-1194`), desplazamiento previo para asentar
+  `[data-reveal]`, `<details>` abiertos y `loading=lazy` forzado a `eager` donde mido imágenes.
+- Archivos de trabajo, que no se commitean:
+  `/tmp/claude-0/-home-user-spindlelab/756adde7-3da1-5186-9935-cf74aeaa7043/scratchpad/javiera-e9-r2/`.
+  Scripts: `literal.mjs` y `literal-var.mjs` (cada nodo de texto de cada pieza contra su crudo),
+  `regen/` (el generador de Bruno corrido en una copia, para las variantes de campo), `oro.py` (§07b,
+  con controles), `protos.mjs` (prototipo contra `dist`: texto, cadencia, display, filas, carrusel,
+  bandas, desborde), `trabajo.mjs` (texto y enlaces de Trabajo de 1024 a 1920), `legible.mjs` (tamaño
+  efectivo del texto de cada pieza), `raigal.mjs`, `tablero.mjs` y `tablero-utf8.mjs` (contrato del
+  Artifact, hosts, imágenes, foco, contraste), `tiras.py` y `tiras390.py` (tiras del tablero contra mis
+  renders), `alto.mjs`, `peso.mjs`, `texto-tab.mjs` y `palabras.mjs` (antislop sobre el copy).
+  Resultados en `literal.json`, `oro-piezas.json`, `oro-tiras.json`, `protos.json`, `tablero.json`,
+  `tablero-utf8.json`.
+
+**Capturas mías** (`capturas/` de esa carpeta): `tablero-utf8-390.jpg` y `tablero-utf8-1440.jpg` (página
+entera, como la verá Ramón) y `tablero-390.jpg` / `tablero-1440.jpg` (servido sin charset, defecto 9);
+`tab-{390,1440}-{cabecera,d2-cambia,reco,trabajo}.png` (las partes que cambiaron, a tamaño real);
+`d1-pantallas_*-{1440,390}.jpg` y `d2-lectura_*-{1440,390}.jpg` (las cuatro páginas prototipo);
+`dist_v3_*-1440.jpg` (el antes); `recortes_*-{1440,390}.jpg`; `raigal-390-d1-pantallas.png` y
+`raigal-390-d2-lectura.png`; `trabajo390-oro-recorte.png`.
+
+### Los tres mayores de la ronda 1
+
+| # | Qué se pidió | Qué medí | Estado |
+|---|---|---|---|
+| 1 | La tira en D2, o decirlo; y decir qué sigue en filas | En D2, «Así se ve un mes tipo» es tira de 4 columnas y «Cinco fases» de 5 (`section.e9-tira`, 4 y 5 `li` en x distintos a 1440), igual que en D1. Secciones que siguen en filas: Acompañamiento 4 de 5 en **las dos**; Desarrollo web 4 de 5 sin contar la obra en **las dos**. El tablero lo dice en las dos direcciones, con las mismas cuatro secciones que medí. Tiras de D2 re-rendidas: contra mis renders, diferencia media 1,4 a 1,7 sobre 255 a 1440; a 390, 1,4 a 7 tras alinear | **Cerrado** |
+| 2 | Cifra medida en la recomendación y la razón de los 3 px | «2 de las 6 piezas en Acompañamiento (el 49 % y el 34 %) y 2 de las 7 en Desarrollo web (el 7 % y el 5 %)»: medí 0,49 y 0,34 (`n2-jsonld-petroleo`, `l2`) y 0,07 y 0,05 (`p2`, `n2-jsonld-brasa`). La cabecera de D1 a 390 muestra `n1-robots-petroleo.jpg` a 350 px: la letra del notebook queda en unos 3 a 4 px de alto | **Cerrado** |
+| 3 | Declarar lo que sale del párrafo de Trabajo y no perder la escala | Diff palabra por palabra contra `dist/v3/trabajo/` a 1440: salen «sacó» ×2, «el» ×2, «El», «y», 4 comas y 2 puntos finales; entra «en el chequeo de la Ley 21.719»; el 100 pasa delante de «14 de octubre»; las notas van detrás. Es exactamente lo que declara el tablero. «36 de 100» visible, «de 100» en 15 px gris. Enlaces de las dos fichas: hoy Verifica cae 148, 175, 185 y 185 px (1024, 1280, 1440, 1920); con el cambio, 0 en los cuatro | **Cerrado** (ver 14 por «dos puntos») |
+
+### 1 · Cada pieza contra su crudo
+
+Rendí cada `e9/piezas/html/*.html` y comparé cada nodo de texto visible contra los archivos que declara
+el manifiesto (`literal.mjs`). Las variantes de campo del tablero (`l1 … --petroleo`, `l4 … --brasa`) las
+regeneré con el generador de Bruno en una copia aislada (`--sin-captura --solo=l1,l4
+--campo=l1:petroleo,l4:brasa`): los dos JPEG salen **idénticos byte a byte** a los de
+`piezas-tablero/` (md5 `ca9b00dd…` y `cba374ca…`) y su texto pasa el mismo control.
+
+| Pieza | Nodos | Resultado | Dominio, fecha, status (pedidos por mí a las 20:58) |
+|---|---|---|---|
+| `l1-robots-spindlelab` y variante petróleo | 11 y 11 | 9 literales en `robots.txt` + 2 glifos «·» | `robots.txt` de hoy: 200, sha256 `9413cbdd…`, **igual** al crudo |
+| `l2-respuesta-robots-spindlelab` | 15 | 12 literales en `registro.json`, «GET /» derivado con su fórmula, 2 glifos | Pedí la portada con los cinco user-agent del registro: **200 · 200 · 200 · 200 · 200** |
+| `l3-jsonld-spindlelab` | 52 | 52 literales | Ver defecto 15 |
+| `l4-21-chequeos` y variante brasa | 53 y 53 | 53 literales; 21 filas, 7+7+8+2+6 = 30, 6+8+5+6+5+4+4+2 = 40, 4+6+4+2+2+5+4+3 = 30 | `spindlelab.cl/api/chequeo?dominio=spindlelab.cl` responde hoy (puntaje 85) |
+| `v1-ley-36-73-100` (reserva) | 14 | 12 literales en `obra-v3.verifica-y-cumple.json` y el registro, 2 flechas | `verifica.spindlelab.cl/api/chequeo?dominio=spindlelab.cl`: **100**. El 36 y el 73 están en `ventas/casos-de-exito/verifica-y-cumple.md@1a0ae0a` |
+| `k1-67-de-69` | 11 | 8 literales; 67 de 69, 37 de 38 y 30 de 31 derivados: 37 + 30 = 67, 38 + 31 = 69. El extracto coincide con las líneas 1, 14, 16, 17, 20, 22, 80, 81, 84 y 86 de `corridas-chequeo-2026-08-31.md`; la 78 va recortada porque nombra un dominio | Sin dominio, por regla; dato del 31-ago |
+| `k2-chequeo-ia-85-54` | captura | texto en `chq-score-*.txt` | Pedí los dos puntajes: **85** y **54** |
+| `k1`, `k2`, `k3` `-tablero` | 1 cada una | «Espera tu OK», que el manifiesto declara como texto del tablero y no de la pieza | |
+| `n1` robots en el navegador | captura | Lo abrí con Read: es el `robots.txt` entero, en el orden del archivo | |
+| `n2` JSON-LD en el navegador | captura | `pantallas/jsonld-portada-bloque-1.json` es **igual** a `bloques[0]` del crudo una vez parseado (el crudo lo guarda como texto) | |
+
+Abrí con Read las piezas `l1`, `l2`, `l3`, `l4`, `v1`, `k1-tablero`, `k2-tablero`, `k3-tablero`, `p1` y
+`p2`: lo que se ve coincide con lo extraído, cada lectura lleva su pie «dominio · qué es · 2026-10-14» y
+las pantallas solo agregan la hora del teléfono (19:29 y 19:30, igual al registro).
+`verifica.spindlelab.cl/robots.txt`, `llms.txt` y `sitemap.xml`: 200 con `text/html`, como dice el tablero.
+
+### 2 · Reglas duras
+
+| Regla | Medición | Resultado |
+|---|---|---|
+| Cero datos inventados | Sección 1: ningún nodo fuera del crudo salvo glifos y derivados con fórmula | ✅ |
+| Cero prospectos | Los 69 dominios de `corridas-chequeo-2026-08-31-*.jsonl` con `grep -rlFf` sobre `e9/` y `tableros/e9-interiores/`: 0 archivos. Sus 66 nombres sin dominio (≥ 5 letras, palabra entera, sin distinguir mayúsculas) sobre brief, piezas, crudo, tablero y prototipos: 0 | ✅ |
+| Ningún oro en piezas | `oro.py` con el criterio §07b (tono 38–54°, S y V ≥ 0,5); control: `#C9A227` da 100 %, brasa, petróleo, navy, ciruela y el lima de Verifica dan 0 %. 61 archivos (salida, piezas del tablero, `proto/assets/img`): todas las piezas nuevas bajo 0,05 % (máximo 0,0234 %, antialias). Sobre el umbral solo `mock-combeau-modelo-alto-2.jpg` (0,0594 %) y su `-800` (0,0551 %), que ya están en el sitio y el tablero declara (defecto 8). `grep -ril c9a227` en piezas y tablero: solo en el CSS del sitio copiado a `proto/_astro/` (el punto del wordmark) | ✅ |
+| Un oro por vista | Componentes de oro ≥ 12 px en las 50 tiras: el punto del wordmark (una vez, en la primera tira a 390), restos de 12 px en el mockup de Combeau modelo y, en las de Trabajo, el teléfono de Combeau modelo; los dos ya están publicados | ✅ en lo nuevo |
+| Monitoreo de menciones y cadencia | Piezas (HTML, `texto_en_pieza`, etiquetas): 0 de `quincen|cada mes|mes a mes|al mes`. «menciones» solo en K2, dentro del veredicto literal, y el tablero lo declara (defecto 6). Prototipos contra `dist`, mismo corte de texto visible: Acompañamiento **15 y 15** (D1 y D2, a 1440 y a 390), Diagnóstico 1 y 1, Desarrollo web 0 y 0, Trabajo 0 y 0. «menciones» 2 y 2, 1 y 1. Copy del tablero y sus 50 alt: 0 de cadencia | ✅ no aumenta |
+| Raigal con rótulo primero | En D1 y D2, a 390 y a 1440: el `figcaption` lleva primero «Pieza de concepto · no es un cliente» (12 px, negro sobre papel) a 10 px del borde de la pieza, y después «Raigal · Implantología» | ✅ |
+| 36 → 73 → 100 solo en Trabajo | Texto visible: el 36 aparece solo en `recortes/trabajo-despues` (1 vez, igual que `dist/v3/trabajo/`), 0 en las cuatro páginas, Diagnóstico y los tres «Espera tu OK». `v1` no se usa en ningún prototipo. `dist/v3/trabajo/` sin `chq-*`. En el tablero, Trabajo y Diagnóstico son recortes de páginas distintas, rotulados | ✅ |
+| Tres pruebas nuevas marcadas | 3 `span.marca` «Espera tu OK», 13 apariciones en `tablero.html`, el sello en las tres piezas `-tablero` y el contorno punteado (`.e9-ok`) en los tres recortes | ✅ |
+| Sin generación pagada | Ni el generador ni las herramientas de Lucía llaman a Higgsfield ni a Unsplash | ✅ |
+| No se toca el sitio | `src/` y `public/` sin cambios contra `72045f8` | ✅ |
+
+### 3 · Las dos direcciones
+
+**Mediciones** (`protos.json`, `legible.mjs`, `alto.mjs`):
+
+| | D1 Pantallas | D2 Lectura de máquina |
+|---|---|---|
+| Fotos `assets/img/d/` | 0 en las dos páginas, a 1440 y 390 | 0 |
+| Display (≥ 700 en mayúsculas, o ≥ 800) en `main` | 0 nodos | 0 nodos |
+| h1 | 60 px, 500, sin mayúsculas | 60 px, 500, sin mayúsculas, dentro de la banda |
+| Texto contra `dist/v3` (1440) | Acompañamiento: 2 etiquetas nuevas y los rótulos Plazo, Resultado y Condición. Desarrollo web: etiquetas reordenadas y la del JSON-LD | Acompañamiento: los 3 rótulos y la etiqueta del retrato movida. Desarrollo web: **0 diferencias** |
+| Piezas | 6 y 7 (hoy 3 y 6, dos `d/` en cada una) | 4 y 6 |
+| Altos (1440 / 390) | 8.539 / 8.979 y 8.951 / 9.107 | 8.298 / 9.162 y 8.838 / 9.056 |
+| Bandas de campo a 1440 | ninguna | cabecera 589 px (petróleo) y 628 px (brasa); compromiso 320 px |
+| Secciones que siguen en filas | Acompañamiento 4 de 5; Desarrollo web 4 de 5 sin la obra | **igual** |
+| A 390 | 2 de 6 y 2 de 7 piezas empiezan fuera de pantalla; cabecera con letra de 3 a 4 px | todo apilado a 350 px; filas de `l2` y `l3` a 17–20 px |
+| Fecha de cada lectura a 390 | 5 a 6,4 px dentro de `l1`, `l2` y `l4` (los montajes `n1` y `n2` la llevan en `figcaption`, legible) | **7,4 px** dentro de `l1`, `l2` y `l3`; 5 px en `l4` (defecto 13) |
+| `verificar.mjs --base` sobre los 5 prototipos, 390 y 1440 | Sin hallazgos de contraste, desborde, h1, JSON-LD ni alt. Solo el comentario de prototipo del armador y los enlaces a `/v3/…`, 404 porque ese servidor solo tiene `proto/` | igual |
+| Desborde | `scrollWidth` 390 y 1440 | igual |
+
+Los altos a 390 del tablero los reproduzco exactos con una ventana de 390 × 844. Con 900 de alto, D1 y
+`dist` salen 13 px más largos porque la cabecera del sitio depende del alto de la ventana; la banda de
+D2 no. No es un defecto.
+
+**Mi lectura.** Siguen siendo dos direcciones y no un promedio: D1 toma los casos de driftime (negro,
+galería entre cada par de secciones) y D2 toma los campos de la home (color de margen a margen en la
+cabecera y en el compromiso). Desde esta ronda comparten la tira, y eso es lo correcto: lo que no depende
+de la dirección ya no inclina la comparación. Ahora se diferencian en lo que de verdad es dirección:
+la cabecera, la densidad de piezas y dónde vive el color.
+
+Contra lo que marcó Ramón: **(2) las fotos** quedan resueltas en las dos, con material real y fechado.
+**(3) la prueba** queda resuelta en grande a 1440 en las dos (compromiso a 20 px con rótulos, Trabajo a
+44 px, la metodología a 60 px), pero en el teléfono la fecha de cada lectura se lee a 5–7 px, que es justo
+lo que hace prueba a una pieza (defecto 13). **(1) las filas** quedan resueltas igual de a medias en las
+dos: una sección de cinco pasa a columnas y cuatro siguen en filas. El tablero ahora lo dice con todas
+sus letras y lo llama decisión de alcance, lo que es honesto; lo que falta es que esa decisión esté en
+la línea de respuesta (defecto 16), porque es la primera de las tres cosas que marcó Ramón y la que más
+probablemente vuelva como «no me convence» si no se le pregunta.
+
+Las medidas siguen favoreciendo a D2 en el teléfono por lo mismo que dice ahora la recomendación: lo
+principal de cada lectura se lee a 17–20 px, mientras la cabecera de D1 queda en 3 a 4 px. A 1440, D1
+tiene más ritmo de revista y D2 más color; las dos son legibles. La elección es de Ramón.
+
+### 4 · El tablero como Artifact
+
+| Comprobación | Resultado |
+|---|---|
+| Sin `<!doctype>`, `<html>`, `<head>` ni `<body>` | ✅ 0 coincidencias |
+| `<title>` | «Tablero interiores E9», 3 palabras ✅ |
+| `meta claude:viewport-fit-sides` y los dos `max()` de gutter | ✅ `content="cover"`; `.tab` con `padding-left` y `padding-right` en `max(16px, env(safe-area-inset-*, 0px))` |
+| Tokens en `:root`, `color-scheme: dark`, `body` con fondo | ✅ (`color-scheme` computado `dark`, `body` `rgb(17,17,17)`), salvo `#262626` suelto en la línea 49 (defecto 10) |
+| Hojas externas y hosts | Solo `@import` de `fonts.googleapis.com`. Hosts pedidos al rendir, a 390 y 1440: el propio, `fonts.googleapis.com` y `fonts.gstatic.com` ✅ |
+| 390 | `scrollWidth` 390 = `clientWidth` 390, 0 elementos pasan del borde, con todos los `<details>` abiertos ✅ |
+| 1440 | `scrollWidth` 1440 ✅ |
+| Imágenes | 50 referencias relativas, las 50 existen, 0 respuestas 4xx, 0 rotas; `width` y `height` iguales a las del archivo en las 50; la mayor 0,29 MB (`d2-desarrollo-web-1440-t2.jpg`), total **9,98 MB** ✅ |
+| Foco | Tab recorre 11 paradas (índice y `summary`), contorno de 2 px papel en todas ✅ |
+| Contraste | Mínimo 7,5:1 (gris de 14 px sobre el módulo) ✅ |
+| Codificación | Sin `<meta charset>`: servido por `http.server` sale en windows-1252 («DirecciÃ³n 1»); con `charset=utf-8` en la respuesta, bien (defecto 9) |
+| Encabezados | Un h1; sigue el salto h2 → h4 en las notas de cada dirección (defecto 10) |
+
+### 5 · Antislop
+
+**Checklist de cierre (`antislop-web.md` §E), sobre el copy del tablero (texto visible con los
+`<details>` abiertos, más los 50 alt):**
+
+- **Copy.** Verbos de folleto: 0. Relleno de apertura: no; la primera línea dice qué se elige. Tricolon
+  automático: no; las series son cosas reales (las tres pruebas, los tres casos). «No solo X sino Y»: 0.
+  Preguntas: una, «¿Te pueden citar?», que es el nombre del bloque del chequeo. Title Case: no. Registro:
+  tú con Ramón, primera persona de Lucía, sin «usted» ni españolismos. Rayas: 0. Prueba social sin
+  respaldo: 0. Emoji: 0. **Borrar 30 %: falla, con su porqué en el defecto 14**: el tablero pasó de 1.939
+  a 2.303 palabras plegado (de 2.382 a 2.784 abierto, +17 %), y parte del aumento es el mismo párrafo
+  de unas 85 palabras escrito dos veces y la tira explicada cuatro veces.
+- **Estructura.** Sin tarjetas iguales, sin «por qué elegirnos», sin métricas inventadas, sin
+  formulario. El orden responde a la decisión (qué se elige, las dos opciones, la recomendación, la
+  prueba, lo que espera el OK, las fuentes).
+- **Código.** `main`, `header`, `nav` y `section` reales, un h1; salto h2 → h4 (defecto 10). Radio 6 px,
+  el de la marca. Sin vidrio, sin degradé, sin sombras. Un hex suelto (defecto 10). Manrope 800 se carga
+  y lo usan sin querer los `<b>` de «Las piezas» (defecto 10). Alt: abrí con Read las tiras de D2 a
+  1440 (Acompañamiento t1 a t3, Desarrollo web t1 a t3), la t1 de Desarrollo web a 390 y las de Trabajo,
+  y sus alt describen lo que se ve, incluidos los tres que ahora nombran las columnas; los de los tramos
+  a 390 siguen siendo genéricos («segundo tramo») pero no falsos. Foco visible, contraste AA, imágenes dimensionadas. JSON-LD,
+  canonical, OG, índice, sitemap y `?v=N`: no aplican a un Artifact privado.
+- **Visual (`refero-design`, checklist entero).** Sin índigo propio (el azul es el de Verifica, dentro de
+  sus capturas). Tarjetas: `.responde` y `.reco` son dos llamados, no un sistema. Sin franja lateral. Sin
+  emoji. Oscuro por brief (driftime). Sin serif ni tierra. Tell 7: no hay promedio, y compartir la tira
+  no lo crea porque no es un rasgo de ninguna de las dos referencias. Tell 8: el color de campo conserva
+  su papel (el del servicio). Tell 9: el papel de la imagen se conserva con material real. Mayúsculas:
+  ninguna en el tablero; las de Verifica están dentro de sus capturas.
+
+**Pruebas de fuego** (sobre las direcciones):
+- **Logo tapado.** D2 pasa a 1440 y a 390: banda del campo y, debajo, lecturas del propio dominio. D1
+  pasa a 1440 y **falla a 390**: la cabecera es un notebook con letra de 3 a 4 px.
+- **Rubro cambiado.** Las lecturas de máquina solo calzan con este negocio. La galería de obra de
+  Desarrollo web calzaría con cualquier estudio, pero es obra propia, real y rotulada.
+- **Leído en voz alta.** El tablero suena a una persona explicando una decisión. La nota nueva de
+  Trabajo («salen "sacó" (dos veces), "el" (dos veces)…») es un inventario de auditor y se lee pesada,
+  pero va en gris chico y es la declaración que pedí.
+
+### Defectos vivos
+
+Mantengo la numeración de la ronda 1. Del 1 al 3, cerrados (arriba). Del 4 al 12, abiertos, con su
+estado de hoy. Del 13 al 17, nuevos.
+
+4. **Menor · Bruno · «ClaudeBot/1.0» sin fuente archivada.** Sin cambios: `ua-anthropic.txt` sigue
+   trayendo solo «User-agent: ClaudeBot», y la cadena con versión está en el registro solo porque es la
+   que mandamos. **Cierre:** el de la ronda 1 (archivar la cadena completa o dejar «ClaudeBot» sin
+   versión y volver a rendir `l2`), antes de la Tanda B.
+5. **Menor · Bruno · K2 trae dos «Pedir el diagnóstico» dentro de la imagen.** Sin cambios. **Cierre:** si
+   Ramón la autoriza, recortar al puntaje, el dominio y el veredicto.
+6. **Menor · Mauro · el criterio de «menciones» choca con K2.** El brief no cambió. **Cierre:** una línea
+   en el brief §6 (excepción para el texto literal del instrumento, o recorte del veredicto).
+7. **Menor · Mauro · 49 contra 51 para la misma invariante de cadencia.** El brief no cambió. **Cierre:**
+   decir qué corte da 49.
+8. **Menor · Mauro · el criterio de oro del brief solo mide `public/assets/img/e9/`.** Re-medido hoy:
+   `mock-combeau-modelo-alto-2.jpg` 0,0594 % y su `-800` 0,0551 %. **Cierre:** que mida toda imagen de
+   cada vista.
+9. **Menor · Lucía · el tablero no declara su codificación.** Medido hoy: sin `charset` en la respuesta,
+   Chromium lo lee en windows-1252. El Artifact lo envuelve con su esqueleto; el paquete local no.
+   **Cierre:** `<meta charset="utf-8">` como primera línea.
+10. **Menor · Lucía · higiene del marcado y el CSS.** Siguen el salto h2 → h4 en «Referencia dominante»,
+    «Rasgo que toma» y «Qué sacrifica», y `#262626` fuera de los tokens. **Corrijo la ronda 1:** Manrope
+    800 sí se usa, sin querer: los 10 `<b>` de «Las piezas, con su fuente y su fecha» no tienen regla de
+    peso, quedan en 700 y el navegador los sirve con el 800 cargado (medido: `fontWeight` 700, caras
+    cargadas 400, 500, 600 y 800). **Cierre:** `.piezas li b { font-weight: 600; }`, y recién entonces
+    quitar 800 de la URL; h3 o `p` en las notas; el hover a un token.
+11. **Menor · Lucía · el compromiso partido a mitad de frase.** Sin cambios: «Plazo» termina en coma y
+    «Resultado» parte en minúscula. **Cierre:** el de la ronda 1.
+12. **Menor · Lucía · la dirección elegida no se ve en las internas sin campo.** Sin cambios: D2 no dice
+    qué cabecera llevan Método, Diagnóstico, Nosotros, Trabajo, Contacto, el blog y los artículos.
+    **Cierre:** una línea por dirección.
+13. **Menor · Lucía · «todas legibles» y «se lee entera» no valen para la fecha en el teléfono.** A 390,
+    el pie «dominio · qué es · fecha» de cada lectura mide 7,4 px en D2 (`l1` petróleo, `l2`, `l3`) y
+    5,5 a 6,4 px en el carrusel de D1; en `l4` todo baja a 5 px (eso sí está declarado). La fecha es lo
+    que convierte una lectura en prueba, y en ninguna de las dos direcciones se lee en el teléfono. La
+    recomendación dice «con menos piezas y todas legibles» y «la respuesta a cada robot se lee entera».
+    No inclina la elección (pasa en las dos), por eso es menor. **Cierre:** «legibles a 1440» en vez de
+    «todas legibles», y una línea en la recomendación: a 390 la fecha va además como leyenda de texto
+    junto a la pieza (lo que el plan ya prevé para `Pieza.astro` en la Tanda B). Lo compruebo con
+    `legible.mjs` y un grep.
+14. **Menor · Lucía · el tablero creció repitiendo.** De 1.939 a 2.303 palabras plegado (+19 %). El
+    párrafo «Siguen como hoy, en filas…» va dos veces palabra por palabra (D1 y D2), y la tira se explica
+    en cuatro lugares (las dos guías y las dos listas de decisiones). Además, en la nota de Trabajo,
+    «cuatro comas y dos puntos» se lee como el signo «:»; lo medido son dos puntos finales. **Cierre:** un
+    bloque corto «Vale para las dos» antes de las direcciones, con la tira y lo que sigue en filas; en
+    cada dirección solo lo que difiere; y «dos puntos finales». Lo compruebo con `palabras.mjs`.
+15. **Menor · Mauro · la lectura del JSON-LD es la de la portada publicada hoy, no la de la v3.** `l3`
+    muestra un nodo `FAQPage`; la portada v3 no lo tiene (`dist/v3/index.html`: ProfessionalService,
+    WebSite, Person y WebPage), y el mismo tablero dice en el «En contra» del 67 de 69 que la home v3
+    falla esa señal. Si `l3` sale con la v3, quien la compruebe no encuentra lo que la pieza muestra. El
+    `robots.txt` de la v3 es igual al de hoy (mismo sha256), así que `l1` no tiene el problema. **Cierre:**
+    criterio nuevo en el brief §6 para la Tanda B: toda lectura de `spindlelab.cl` se recaptura contra lo
+    que va a quedar publicado (la vista previa v3, o el día de la publicación) y lleva esa fecha; si no
+    se recaptura, `l3` no se publica.
+16. **Menor · Mauro · la compuerta no pregunta lo que el tablero llama «decisión de alcance aparte».** Las
+    dos direcciones dejan 4 de 5 secciones en filas y el tablero lo dice, en gris de 14 px, pero el brief
+    §8 («Lo que decides en la compuerta») y el recuadro «Para responder basta una línea» solo piden
+    dirección y las tres pruebas. Las filas son lo primero que marcó Ramón: si responde solo «Dirección
+    2», vuelven en la Tanda B como «no me convence», que es lo que este circuito existe para evitar.
+    **Cierre:** un punto 4 en el brief §8 («¿Lo que incluye, los planes, las preguntas y el cierre también
+    cambian de forma? sí o no; si sí, es otra obra») y Lucía lo suma a la línea de respuesta. Conviene
+    antes de publicar el Artifact. Lo compruebo con un grep del tablero y del brief.
+17. **Menor · Mauro · la tira no está en el «Cambia» del brief §2.** El §2 lista cabecera, galerías,
+    color del campo, bloque de prueba y etiquetas; la tira de columnas (mes tipo y fases) va en las dos
+    direcciones y no figura. **Cierre:** sumarla al §2 cuando Ramón decida, para que la QA de la Tanda B
+    no la lea como desvío.
+
+### Lo que está bien (que la Tanda B no lo rompa)
+
+- **Los tres mayores se cerraron como se pidió y sin romper nada:** las tiras de D1 no cambiaron, las de
+  D2 coinciden con mis renders, y el texto de las dos páginas sigue siendo el de `dist/v3`.
+- **La recomendación ahora se sostiene en medidas que reproduje:** 2 de 6 (49 % y 34 %), 2 de 7 (7 % y
+  5 %), la cabecera de D1 a 3 o 4 px, y la respuesta a cada robot de D2 a 17–20 px.
+- **La declaración de Trabajo es exacta**, palabra por palabra, y «de 100» conserva la escala.
+- **Las piezas siguen siendo el estándar del plan:** crudo con sha256, hora y status; derivados con
+  fórmula; las variantes de campo se regeneran idénticas byte a byte; los datos de hoy a las 20:58
+  repiten los de las 19:29.
+- **Las restricciones, sin excepción:** cero `assets/img/d/`, cero display, cero oro nuevo, cero
+  prospectos, el 36 → 73 → 100 solo en Trabajo, Raigal con su rótulo primero, cadencia igual a `dist`.
+- **El tablero es honesto con lo que no resuelve:** dice qué sigue en filas, qué no se lee en el
+  teléfono (los 21 chequeos) y los «en contra» de cada prueba nueva.
+- Contrato de Artifact cumplido; 390 sin desborde; 50 imágenes presentes, 9,98 MB.
+
+### Para la Tanda B
+
+Los menores 4 a 12, 15 y 17 los compruebo al empezar la QA de la Tanda B; 13, 14 y 16, si se cierran
+antes de publicar, con `legible.mjs`, `palabras.mjs` y un grep del tablero y del brief. La regla nueva
+que dejo para `e9/acta-qa-E9.md`: cada lectura publicada se compara contra un crudo tomado de lo que va a
+quedar publicado, no del sitio de hoy (defecto 15).
+
+---
+
 ## Ronda 1 · 14-oct-2026
 
 **Javiera (`/web-qa-critico`), en contexto limpio.** No escuché a Mauro, a Bruno ni a Lucía, y no tomé
