@@ -221,13 +221,14 @@ def acompanamiento():
         b['s-faq'], b['s-cie'], b['siguiente'],
     ])
     # D2 · Lectura de máquina: banda petróleo + 4 piezas grandes
+    # La tira del mes tipo no depende de la dirección: va en las dos (acta E9, defecto 1).
     d2 = ''.join([
         banda(b['cab'], 'petroleo'),
         par(b['entrada'], 'l2'),
         b['s-inc'],
         gal(fila([p('l4')])),
         pla, comp2,
-        b['s-blo'],
+        tira(b['s-blo'], 4),
         gal(fila([p('l1p'), p('ramon')])),
         b['s-faq'], b['s-cie'], b['siguiente'],
     ])
@@ -265,9 +266,10 @@ def desarrollo(ok=None):
     inc2 = insertar_tras_linea(b['s-inc'], 2, f'<div class="e9-en-lista">{una("l4b")}</div>')
     obra2 = (f'<section class="e9-gal" aria-labelledby="s-obra">{obra_cab}'
              + fila([p('combeau-plana')]) + fila([p('modelo-ancho'), p('p2')]) + fila([p('raigal')], 'e9-fila--8') + '</section>')
+    # La tira de las fases no depende de la dirección: va en las dos (acta E9, defecto 1).
     d2 = ''.join([
         banda(b['cab'], 'brasa'), par(b['entrada'], 'l3'), inc2, obra2,
-        b['s-pla'], b['s-fas'], b['s-faq'], b['s-cie'], b['siguiente'],
+        b['s-pla'], tira(b['s-fas'], 5), b['s-faq'], b['s-cie'], b['siguiente'],
     ])
     escribir(os.path.join(PROTO, 'd1-pantallas/desarrollo-web.html'), pagina(html, d1, 'd1'))
     escribir(os.path.join(PROTO, 'd2-lectura/desarrollo-web.html'), pagina(html, d2, 'd2'))
@@ -289,10 +291,13 @@ def trabajo():
     if not m:
         raise SystemExit('no encontré el párrafo del 36 → 73 → 100 en Trabajo')
     a = m.group(1)
+    # Palabras del párrafo aprobado que salen (acta E9, defecto 3; declarado en tablero.html):
+    # «sacó» ×2, «el» ×2, «El», «y», las comas y los puntos de unión. «de 100» se queda en el
+    # 36: es la escala, y sin ella el 36 no dice de cuánto. El texto final lo afina Clara (Tanda B).
     nuevo = (f'<p class="d-cuerpo"{a}>El primer sitio que revisó fue el nuestro.</p>'
              f'<p class="d-rot"{a}>spindlelab.cl en el chequeo de la Ley 21.719</p>'
              f'<ol class="e9-cifras">'
-             f'<li><span class="e9-cifra">36</span><span class="e9-cifra__fecha">9 de septiembre de 2026</span></li>'
+             f'<li><span class="e9-cifra">36<span class="e9-cifra__de"> de 100</span></span><span class="e9-cifra__fecha">9 de septiembre de 2026</span></li>'
              f'<li><span class="e9-cifra">73</span><span class="e9-cifra__fecha">21 de septiembre</span><span class="e9-cifra__nota">con lo que encontró ya arreglado</span></li>'
              f'<li><span class="e9-cifra">100</span><span class="e9-cifra__fecha">14 de octubre</span><span class="e9-cifra__nota">ya con otra forma de puntuar</span></li>'
              f'</ol>'

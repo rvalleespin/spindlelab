@@ -124,6 +124,8 @@
 .e9-cifras li { display: flex; flex-direction: column; gap: 4px; position: relative; }
 .e9-cifras li + li::before { content: "→"; position: absolute; left: -22px; top: 0.55em; color: var(--d-gris); font-size: 1rem; }
 .e9-cifra { font-size: 2.75rem; line-height: 1; font-weight: 500; letter-spacing: -0.02em; color: var(--d-papel); font-variant-numeric: tabular-nums; }
+/* «de 100» va pegado al 36 (literal del párrafo aprobado): la escala de las tres cifras. */
+.e9-cifra__de { font-size: 0.9375rem; font-weight: 500; letter-spacing: 0; color: var(--d-gris); }
 .e9-cifra__fecha { font-size: 0.9375rem; font-weight: 500; color: var(--d-papel); }
 .e9-cifra__nota { font-size: 0.8125rem; line-height: 1.4; color: var(--d-gris); max-width: 11em; }
 @media (max-width: 767px) { .e9-cifras { gap: 0 24px; } .e9-cifra { font-size: 2.25rem; } }
