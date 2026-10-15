@@ -41,13 +41,14 @@
   - **cómo se le diría (castellano, para el correo):** «SIN REDACTAR: todavía es una sospecha, no se usa en un correo.»
   - **el hecho técnico detrás (no va en el correo):** Dentro del sitio el nombre aparece como: JSON-LD name: Amgestemp y og:site_name: Gestión Contable y Asesoría Tributaria Chile | AM Gestión Empresarial.
   - **se vende:** Auditoría de Visibilidad en IA (Visibilidad en IA). Un solo nombre del negocio, igual en el sitio y en los datos estructurados.
-  - **precio en el correo:** NO va en el correo: se cierra en la llamada (el sitio publica el "desde" del servicio, no del arreglo puntual)
+  - **precio en el correo:** Solo como referencia, no como cotización: Auditoría de Visibilidad en IA, desde $400.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.
+  - **línea de precio (referencia):** «Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.»
   - **servicio publicado más cercano:** Desde $400.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026) · **plazo:** no se ofrece plazo (ningún correo aprobado lo hace)
   - **frase de arreglo:** «Eso lo arreglo yo: dejo el nombre igual en el sitio y en los datos que leen Google y la IA.»
   - **puerta a la reunión:** «Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.»
   - **texto:** BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón. · **tono:** limpia
   - **registro:** singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural.
-  - **por definir (decide Ramón):** No hay precio publicado para un arreglo puntual: el sitio dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos.
+  - **por definir (decide Ramón):** No hay precio publicado para un arreglo puntual: el sitio publica el "desde" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada.
 - **cuatro condiciones:**
   - **1** (✔): Cada pieza se ve bien por separado.
   - **2** (◐): El costo (que ningún modelo consolide quién es) es blando.

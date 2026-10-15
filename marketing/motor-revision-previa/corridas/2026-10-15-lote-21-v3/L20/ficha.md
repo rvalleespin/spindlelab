@@ -42,13 +42,14 @@
   - **cómo se le diría (castellano, para el correo):** «En tu portada hay 7 enlaces que llevan a páginas que no existen (error 404), por ejemplo /.»
   - **el hecho técnico detrás (no va en el correo):** 7 enlace(s) internos de la portada responden 404 (revisados 30), en dos rondas.
   - **se vende:** Auditoría SEO Técnica, Completa (Auditoría SEO Técnica). Corregir los enlaces rotos de la portada y revisar el resto del sitio.
-  - **precio en el correo:** NO va en el correo: se cierra en la llamada (el sitio publica el "desde" del servicio, no del arreglo puntual)
+  - **precio en el correo:** Solo como referencia, no como cotización: Auditoría SEO Técnica, Completa, desde $490.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.
+  - **línea de precio (referencia):** «Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.»
   - **servicio publicado más cercano:** Desde $490.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026) · **plazo:** no se ofrece plazo (ningún correo aprobado lo hace)
   - **frase de arreglo:** «Eso se arregla: dejo cada enlace llevando a una página que existe y reviso que no queden más rotos.»
   - **puerta a la reunión:** «Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.»
   - **texto:** BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón. · **tono:** limpia
   - **registro:** singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural.
-  - **por definir (decide Ramón):** No hay precio publicado para un arreglo puntual: el sitio dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos.
+  - **por definir (decide Ramón):** No hay precio publicado para un arreglo puntual: el sitio publica el "desde" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada.
 - **cuatro condiciones:**
   - **1** (◐): Solo se nota al hacer clic en ese enlace.
   - **2** (◐): Cada clic roto es una visita perdida.

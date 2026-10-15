@@ -1,9 +1,22 @@
-# H03
+# Ficha H03
 
-**resultado:** descartado:excluido
+**resultado:** `descartado:excluido` · motor v0 · 2026-10-15T14:52:32.496Z · cloud (IP de datacenter, via proxy)
 
-{
-  "tipo": "tope-alcanzado",
-  "motivo": "3 toques verificados por el copiloto en la corrida del 13-oct. Ojo: un toque 1 reviso hotelescumbres.com, que no responde; el sitio vivo es el .cl",
-  "fecha": "2026-10-13"
-}
+> Detector de sospecha. Nada de esto está verificado. La propuesta es lo que se vendería **si** una persona confirma el hallazgo.
+
+## Hallazgo (el de mayor posición con estado estable)
+
+_Ninguno._
+
+## Ruta interna (no va en el correo)
+
+_Vacía._
+
+## Capa 1 (contexto)
+
+- con consecuencia: -
+- higiene: -
+
+## Evidencia
+
+

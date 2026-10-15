@@ -1,48 +1,23 @@
-# Entrega del motor de revisión previa para Emilia (15-oct-2026)
+# Entrega del motor de revisión previa para Emilia (15-oct-2026, versión 3)
 
-**De:** sesión de construcción del motor · **Para:** Emilia (agente-outbound) y el troncal
-**El motor no escribe el correo ni lo envía.** Entrega el hallazgo en el formato que Emilia ya consume.
-
-## Qué hay
+**El motor no escribe el correo ni lo envía.** Entrega el hallazgo y la oferta en el formato que Emilia ya consume. Origen: `corridas/2026-10-15-lote-21-v3/` (21 sitios de Dereck, 3 corridas de navegador cada uno).
 
 | Archivo | Para qué |
 |---|---|
-| `para-emilia.csv` | **Encabezado idéntico al de los lotes de Dereck:** `empresa,dominio,email,hallazgo_medido,estado`. Entra a Emilia sin tocar nada. |
-| `para-emilia-detalle.csv` | Lo que no cabe en esas 5 columnas, por dominio: cómo decirlo en castellano, el arreglo que se vende, cómo comprobarlo, qué NO afirmar. |
+| `para-emilia.csv` | **Encabezado idéntico al de los lotes de Dereck:** `empresa,dominio,email,hallazgo_medido,estado`. Entra sin tocar nada. `hallazgo_medido` va en el vocabulario de la sonda a propósito: **no va así al correo**. |
+| `para-emilia-detalle.csv` | Por dominio, lo que sí se usa para redactar: `como_decirlo_en_castellano`, `frase_de_arreglo`, `puerta_a_la_reunion`, `servicio_y_desde_publicado`, `precio_en_el_correo`, `linea_de_precio_de_referencia`, `como_comprobarlo`, `que_no_afirmar`, `otras_ofertas_para_la_llamada`. |
 
-Cada fila del detalle apunta a su `ficha.md` en `corridas/`, con las capturas de evidencia.
+## Reglas que Emilia no cambia
+1. **Los hechos.** Se redacta con `como_decirlo_en_castellano` y se respeta `que_no_afirmar`. Si una frase le parece mejor y afirma más, no va.
+2. **La puerta a la reunión** es la llamada de 20 minutos (decisión de Ramón, 15-oct). Va tal cual en `puerta_a_la_reunion`.
+3. **El precio.** Si la oferta es el **kit de Verifica y Cumple**, el correo lleva "Desde $149.000 + IVA, una vez". Para cualquier otra oferta lleva `linea_de_precio_de_referencia` ("Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada") y **no se cita un número como cotización**. El "desde" del servicio publicado está en el detalle por si Ramón quiere usarlo como referencia.
+4. **No hay plazo.** Ningún correo aprobado ofrece uno.
+5. **Registro singular** (firma Ramón). Las frases salen de una revisión de tono automática, pero las que no son del kit son **BORRADOR** hasta que Ramón las apruebe.
 
-## Cómo encaja en el circuito
+## Qué hacer con cada `estado`
+- `medido por el motor, 3 corridas...` → hay oferta: redactar. **Ramón aprueba cada envío.**
+- `Sin gancho estable` → no inventar uno.
+- `No enviar: ...` → sitio en orden, excluido, o no abre. Un 403 puede ser el firewall del sitio bloqueando la IP del motor, no un sitio caído.
 
-```
-Dereck (leads) → MOTOR (analiza el sitio: problema + qué se puede arreglar)
-              → para-emilia.csv → Emilia (escribe con la estrategia de venta que ya tiene)
-              → Ramón abre el sitio a mano y aprueba → envía
-```
-
-La estrategia de venta del correo **no se toca**: la forma, el largo, el asunto y el cierre siguen
-siendo los de `estrategia-outbound-verifica-y-cumple.md` §7. El motor aporta la materia prima.
-
-## Lo que Emilia necesita saber de esta entrega
-
-1. **Ningún hallazgo está verificado por una persona.** Están medidos en dos corridas y confirmados en
-   una tercera por el asistente, con capturas. La estrategia §2 y §3 piden abrir el sitio en un
-   navegador antes de que el hallazgo vaya en un correo: eso sigue pendiente y es de Ramón.
-2. **`hallazgo_medido` está en el vocabulario de la sonda a propósito** (cookies, proveedores), como en los
-   lotes anteriores. **No va así al correo.** La columna `como_decirlo_en_castellano` del detalle es la
-   consecuencia en llano, sin nombres de cookies. La estrategia §7 pide exactamente eso.
-3. **El arreglo y el precio salen solo de lo documentado.** El kit de Verifica y Cumple
-   ("Eso lo arreglo yo, con lo demás que el chequeo deje pendiente. Desde $149.000 + IVA, una vez") es
-   texto de correos ya aprobados. **No se ofrece plazo**, porque ningún correo aprobado lo hace.
-4. **Qué hacer con cada estado:**
-   - `medido 14-oct por el motor, confirmado en 3a corrida...` → hay hallazgo; verificar a mano y escribir.
-   - `Sin gancho estable...` → no inventar uno. Emilia lo pide o lo reusa, según su método.
-   - `No enviar: ...` → sitio en orden o descartado. Un 403 al abrirlo puede ser el firewall del sitio
-     bloqueando la IP de datacenter del motor, no un sitio caído.
-5. **Todos son el mismo hallazgo** (cookies de rastreo escritas antes de cualquier aviso). Con un gancho que
-   aplica a 13 de cada 20 sitios, conviene variar el párrafo del dolor, como pide la estrategia §7 (regla 6).
-
-## Lo que el motor NO hace
-
-No envía, no registra en el pipeline, no edita la lista de exclusión, no toca la estrategia. Consultó
-`ventas/lista-exclusion.csv` y lo ya contactado antes de medir cada dominio.
+## Lo que sigue pendiente (no es del motor)
+Ninguna oferta se ha enviado, así que no hay dato de conversión. La estrategia §3 pide abrir el sitio antes de enviar: el motor hace 3 corridas y guarda capturas, pero **ninguna persona ha verificado estos hallazgos**. Ver `marketing/encargos-otras-sesiones/encargo-motor-a-sesion-de-leads.md` §7 y §8.

@@ -42,13 +42,14 @@
   - **cómo se le diría (castellano, para el correo):** «SIN REDACTAR: todavía es una sospecha, no se usa en un correo.»
   - **el hecho técnico detrás (no va en el correo):** El destino del formulario (https://www.cela.cl/contact#contact_form) responde 404 al pedirlo.
   - **se vende:** Desarrollo Web a medida (Desarrollo Web). Corregir el destino del formulario o del correo y probarlo de punta a punta.
-  - **precio en el correo:** NO va en el correo: se cierra en la llamada (el sitio publica el "desde" del servicio, no del arreglo puntual)
+  - **precio en el correo:** Solo como referencia, no como cotización: Desarrollo Web a medida, página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl). El valor del arreglo se cierra en la llamada.
+  - **línea de precio (referencia):** «Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.»
   - **servicio publicado más cercano:** Página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl, leído el 15-oct-2026) · **plazo:** no se ofrece plazo (ningún correo aprobado lo hace)
   - **frase de arreglo:** «Eso lo arreglo yo y lo pruebo de punta a punta, para que cada consulta llegue.»
   - **puerta a la reunión:** «Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.»
   - **texto:** BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón. · **tono:** limpia
   - **registro:** singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural.
-  - **por definir (decide Ramón):** No hay precio publicado para un arreglo puntual: el sitio dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos.
+  - **por definir (decide Ramón):** No hay precio publicado para un arreglo puntual: el sitio publica el "desde" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada.
 - **cuatro condiciones:**
   - **1** (✔): El dueño ve un formulario o un correo que parecen normales.
   - **2** (✔): Cada consulta enviada por ahí se pierde.

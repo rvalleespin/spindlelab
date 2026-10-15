@@ -11,7 +11,7 @@ for (const dir of process.argv.slice(2)) {
   for (const d of fs.readdirSync(dir).filter((x) => /^[A-Z]\d+$/.test(x))) {
     const p = path.join(dir, d, 'ficha.json'); if (!fs.existsSync(p)) continue;
     const f = JSON.parse(fs.readFileSync(p, 'utf8'));
-    if (f.hallazgo) f.hallazgo.propuesta = propuesta(f.hallazgo, f.soporte);
+    if (f.hallazgo) f.hallazgo.propuesta = propuesta(f.hallazgo, f.soporte, (f.ofertas_adicionales || []).length);
     for (const c of f.ruta_interna || []) c.propuesta = propuesta(c, f.soporte);
     f.propuesta_agregada = new Date().toISOString();
     fs.writeFileSync(p, JSON.stringify(f, null, 2)); fs.writeFileSync(path.join(dir, d, 'ficha.md'), renderFicha(f)); n++;

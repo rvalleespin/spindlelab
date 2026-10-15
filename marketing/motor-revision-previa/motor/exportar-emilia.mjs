@@ -48,11 +48,11 @@ for (const par of pares) {
     else { medido = `Sin oferta estable. Solo sospechas: ${(f.ruta_interna || []).map((x) => x.id).join(', ') || 'ninguna'}`; estado = 'Sin gancho estable: no escribir hasta verificar a mano'; }
     principal.push(fila([empresa, f.dominio, email, medido, estado]));
     detalle.push(fila([id, f.dominio, r, h?.id || '', h ? (h.capa || 2) : '', h?.estado || '', p?.en_castellano || '', p?.frase_de_arreglo || '', p?.apertura_a_reunion || '',
-      p ? `${p.se_vende.producto} | ${p.se_vende.vehiculo_publicado}` : '', p?.se_vende.precio_en_el_correo || '', p?.estado_del_texto || '', h?.donde_mirar || '', h ? h.no_afirmable.join(' | ') : '',
+      p ? `${p.se_vende.producto} | ${p.se_vende.vehiculo_publicado}` : '', p?.se_vende.precio_en_el_correo || '', p?.se_vende.linea_de_precio || '', p?.estado_del_texto || '', h?.donde_mirar || '', h ? h.no_afirmable.join(' | ') : '',
       (f.ofertas_adicionales || []).join('; '), (f.ruta_interna || []).map((x) => `${x.id} (${x.estado})`).join('; '), (f.capa1?.higiene || []).join('; '), `${path.relative(RAIZ, path.join(dir, id))}/ficha.md`]));
   }
 }
 fs.mkdirSync(salida, { recursive: true });
 fs.writeFileSync(path.join(salida, 'para-emilia.csv'), ['empresa,dominio,email,hallazgo_medido,estado', ...principal].join('\n') + '\n');
-fs.writeFileSync(path.join(salida, 'para-emilia-detalle.csv'), ['id,dominio,resultado,oferta,capa,estado_evidencia,como_decirlo_en_castellano,frase_de_arreglo,puerta_a_la_reunion,servicio_y_desde_publicado,precio_en_el_correo,estado_del_texto,como_comprobarlo,que_no_afirmar,otras_ofertas_para_la_llamada,sospechas_no_van_en_el_correo,higiene,ficha', ...detalle].join('\n') + '\n');
+fs.writeFileSync(path.join(salida, 'para-emilia-detalle.csv'), ['id,dominio,resultado,oferta,capa,estado_evidencia,como_decirlo_en_castellano,frase_de_arreglo,puerta_a_la_reunion,servicio_y_desde_publicado,precio_en_el_correo,linea_de_precio_de_referencia,estado_del_texto,como_comprobarlo,que_no_afirmar,otras_ofertas_para_la_llamada,sospechas_no_van_en_el_correo,higiene,ficha', ...detalle].join('\n') + '\n');
 console.log(`${principal.length} filas -> ${salida}`);
