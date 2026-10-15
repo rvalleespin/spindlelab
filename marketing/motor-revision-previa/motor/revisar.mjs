@@ -6,7 +6,7 @@ import path from 'node:path';
 import { pasada0, limpiarDominio } from './pasadas/p0.mjs';
 import { pasada1 } from './pasadas/p1.mjs';
 import { sondear } from './lib/navegador.mjs';
-import { sondaBorde, sondaContacto, leerContenedor, entidadInterna } from './pasadas/p3.mjs';
+import { sondaBorde, sondaContacto, sondaEnlaces, leerContenedor, entidadInterna } from './pasadas/p3.mjs';
 import { veredicto } from './pasadas/p4.mjs';
 import { renderFicha } from './lib/render.mjs';
 
@@ -33,7 +33,8 @@ const p1 = await pasada1(p0);
 log('p1 ok');
 
 const runs = [];
-for (const n of [1, 2]) { log(`navegador, corrida ${n}`); runs.push(await sondear(p0.url_final, { outDir: salida, etiqueta: `r${n}` })); }
+// Tres corridas, siempre. La tercera usa zona horaria e idioma de Chile (antes era un paso manual aparte). Solo cuenta lo que aparece en las TRES.
+for (const n of [1, 2, 3]) { log(`navegador, corrida ${n}`); runs.push(await sondear(p0.url_final, { outDir: salida, etiqueta: `r${n}`, chile: n === 3 })); }
 const htmlEjecutado = (runs[0].html_ejecutado || '') + '\n' + (p0.html || '');
 runs.forEach((r, i) => { const { html_ejecutado, ...limpio } = r; escribir(`navegador-r${i + 1}.json`, limpio); });
 const corridas = runs.map(({ html_ejecutado, ...r }) => r);
@@ -47,15 +48,17 @@ const edge = await sondaBorde(p0.url_final, p1.robots.agentes);
 const formsDOM = corridas[0].B.dom?.formularios || [];
 const correos = [...new Set([...p1.html.contacto.mailto, ...((p0.html.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/gi) || []).map((x) => x.toLowerCase()).filter((x) => !/\.(png|jpg|svg|webp|gif)$/.test(x)))])];
 const contacto = await sondaContacto(formsDOM, correos, p0.url_final);
+log('enlaces de la portada');
+const enlaces = await sondaEnlaces(p0.url_final, corridas.flatMap((r) => (r.B.dom?.enlaces || []).map((e) => e.h)));
 const entidad = entidadInterna(p1.html);
 
-const v = veredicto({ p0, p1, runs: corridas, edge, contacto, entidad, contenedores, gtmIds, htmlEjecutado });
+const v = veredicto({ p0, p1, runs: corridas, edge, contacto, entidad, contenedores, gtmIds, htmlEjecutado, enlaces });
 Object.assign(ficha, {
   resultado: v.resultado, url: p0.url_final, html_no_alcanza: p0.html_no_alcanza || undefined,
-  hallazgo: v.hallazgo, ruta_interna: v.punteros, capa1: v.capa1, notas: v.notas,
+  hallazgo: v.hallazgo, ruta_interna: v.punteros, ofertas_adicionales: v.extras, capa1: v.capa1, notas: v.notas, corridas_de_navegador: corridas.length,
   mapa: { contacto: p1.html.contacto, analitica: p1.html.analitica, infraestructura: p1.infraestructura, robots: p1.robots, llms_txt: p1.llms_txt, sitemap: p1.sitemap, jsonld: p1.html.jsonld },
-  soporte: v.soporte, borde: edge, contacto_estructural: contacto, entidad,
-  evidencia: { capturas: corridas.flatMap((r, i) => [r.A.captura, r.B.captura]), corridas: ['navegador-r1.json', 'navegador-r2.json'] },
+  soporte: v.soporte, borde: edge, contacto_estructural: contacto, entidad, enlaces,
+  evidencia: { capturas: corridas.flatMap((r, i) => [r.A.captura, r.B.captura]), corridas: corridas.map((_, i) => `navegador-r${i + 1}.json`) },
   limites: ['Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.',
     'Contenedor de Tag Manager leído una vez (es un archivo estático).'],
 });

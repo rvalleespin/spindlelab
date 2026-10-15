@@ -21,9 +21,9 @@ function cookiesDe(run) {
 }
 
 export function candidatoC1(runs) {
-  const [c1, c2] = runs.map(cookiesDe);
-  const comunes = [...c1.keys()].filter((n) => c2.has(n));
-  const solo1 = [...c1.keys()].filter((n) => !c2.has(n)), solo2 = [...c2.keys()].filter((n) => !c1.has(n));
+  const mapas = runs.map(cookiesDe);   // dos corridas, o tres si el lote incluye la de confirmacion con zona horaria de Chile
+  const comunes = [...mapas[0].keys()].filter((n) => mapas.every((m) => m.has(n)));   // solo lo que aparece en TODAS
+  const solo1 = [...new Set(mapas.flatMap((m) => [...m.keys()]))].filter((n) => !comunes.includes(n)), solo2 = [];
   const verbos = runs.map((r) => {
     const carga = new Set(), envio = new Set(), gcs = new Set();
     for (const p of r.peticiones) if (p.clasif) {
@@ -32,10 +32,10 @@ export function candidatoC1(runs) {
     }
     return { carga: [...carga].sort(), envio: [...envio].sort(), gcs: [...gcs].sort() };
   });
-  const enAmbas = (k) => verbos[0][k].filter((x) => verbos[1][k].includes(x));
+  const enAmbas = (k) => verbos[0][k].filter((x) => verbos.every((v) => v[k].includes(x)));
   const aviso = runs.map((r) => ({ A: !!r.A.dom?.aviso, B: !!r.B.dom?.aviso, implicito: !!(r.A.dom?.aviso?.implicito || r.B.dom?.aviso?.implicito) }));
   const info = {
-    cookies: comunes.map((n) => ({ nombre: n, proveedor: c1.get(n).prov, primera_fase: c1.get(n).fase === c2.get(n).fase ? c1.get(n).fase : 'variable' })),
+    cookies: comunes.map((n) => ({ nombre: n, proveedor: mapas[0].get(n).prov, primera_fase: mapas.every((m) => m.get(n).fase === mapas[0].get(n).fase) ? mapas[0].get(n).fase : 'variable' })),
     solo_en_una_corrida: [...solo1, ...solo2],
     carga_en_ambas: enAmbas('carga'), envio_en_ambas: enAmbas('envio'), google_gcs: verbos.map((v) => v.gcs),
     aviso_en_dom: aviso, capturas: runs.map((r) => [r.A.captura, r.B.captura]),
@@ -172,25 +172,116 @@ export function hechosCapa1({ p1, runs, formulariosDOM }) {
   return { consecuencia, higiene };
 }
 
+// ---------------------------------------------------------------------------------------------------------------------------------
+// Capa 1: complicaciones del sitio que el dueno puede comprobar y que tienen una oferta. Entran desde el 15-oct (decision de Ramon):
+// "si el sitio tiene otra complicacion, siempre ofrecer una solucion". Ya no pasan la vara de capa 2 (cond. 4 casi siempre ✘): se declara asi.
+// Siguen sin 'verificado'. 'estable' = se repite en todas las corridas / rondas.
+const NOMBRE_F = {
+  F1: 'Un formulario que pide datos y no enlaza a ninguna política de privacidad', F2: 'No hay a la vista cómo contactar al negocio',
+  F3: 'El enlace de WhatsApp apunta a un número sin código de país', F4: 'No hay ninguna herramienta de medición instalada',
+  F5: 'robots.txt le prohíbe la entrada a agentes de IA de búsqueda', F6: 'El servidor rechaza a agentes de IA por su nombre (causa sin nombrar)',
+  F7: 'Enlaces de la portada que llevan a páginas que no existen', F8: 'El negocio no está declarado como entidad en datos estructurados',
+};
+const LINEA_F = { F1: 'Verifica y Cumple', F2: 'Desarrollo Web', F3: 'Desarrollo Web', F4: 'Acompañamiento', F5: 'Visibilidad en IA', F6: 'Visibilidad en IA', F7: 'Auditoría SEO Técnica', F8: 'Visibilidad en IA' };
+const BOTS_BUSQUEDA = ['OAI-SearchBot', 'ChatGPT-User', 'PerplexityBot', 'Claude-SearchBot', 'Claude-User', 'Perplexity-User'];
+const RE_CONTACTO = /contact|escr[ií]benos|cotiz|agenda|reserv|solicit|hablemos|conversemos/i;
+
+function F(id, estado, quien, donde, condiciones, afirmable, noAfirmable, datos, extra = {}) {
+  return { id, nombre: NOMBRE_F[id], linea: LINEA_F[id], capa: 1, estado, quien_comprueba: quien, donde_mirar: donde, condiciones, afirmable, no_afirmable: noAfirmable, advertencias: [], datos, ...extra };
+}
+
+export function candidatosCapa1({ p1, runs, edge, enlaces, htmlEjecutado }) {
+  const out = {}, todas = (fn) => runs.every(fn);
+  const domLinks = (r) => (r.B.dom?.enlaces || []).map((e) => ({ h: e.h || '', t: e.t || '' }));
+  const forms = (r) => r.B.dom?.formularios || [];
+  const c = p1.html.contacto;
+
+  // F1: formulario que pide correo o telefono y ningun enlace a politica (ni en el HTML ni en el DOM ya ejecutado).
+  if (todas((r) => forms(r).some((f) => f.pide_correo_o_tel)) && p1.html.politica_en_html.length === 0 && todas((r) => (r.B.dom?.politica || []).length === 0))
+    out.F1 = F('F1', 'estable', 'el dueño, en 30 segundos', 'Mirar el formulario de la portada y el pie de página: buscar un enlace a "política de privacidad".',
+      { 1: cond('medias', 'La ausencia de un enlace se nota poco.'), 2: cond('si', 'El formulario ya trata datos personales hoy.'), 3: cond('si', 'Se ve mirando el formulario y el pie.'), 4: cond('no', 'Cualquier chequeo gratis (incluido el de Verifica y Cumple) lo muestra: es capa 1.') },
+      'La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).',
+      ['que "no tiene política" en todo el sitio (solo se revisó la portada)', 'lo que la ley "exige"'], {});
+
+  // F2: sin ruta de contacto: ni formulario, ni telefono, ni correo, ni WhatsApp, ni un enlace de contacto.
+  if (todas((r) => !forms(r).length && !domLinks(r).some((l) => /^(tel:|mailto:)|wa\.me|api\.whatsapp\.com|whatsapp:\/\//i.test(l.h) || RE_CONTACTO.test(l.h + ' ' + l.t))) && !c.tel && !c.mailto.length && !c.whatsapp.length)
+    out.F2 = F('F2', 'estable', 'el dueño, en 30 segundos', 'Abrir la portada y buscar por dónde un cliente puede escribir o llamar.',
+      { 1: cond('no', 'Se ve mirando el sitio.'), 2: cond('si', 'Sin ruta de contacto, cada visita que quiere comprar se va.'), 3: cond('si', 'Se ve a simple vista.'), 4: cond('no', 'Cualquier herramienta lo ve: es capa 1.') },
+      'En la portada no hay formulario, ni teléfono, ni correo, ni WhatsApp, ni un enlace de contacto.', ['que el negocio no tenga contacto en otras páginas del sitio (solo se revisó la portada)'], {});
+
+  // F3: WhatsApp con un numero chileno de 9 digitos sin el 56.
+  const hrefs = [...c.whatsapp, ...runs.flatMap((r) => domLinks(r).map((l) => l.h))].filter((h) => /wa\.me|api\.whatsapp\.com/i.test(h));
+  const malos = [...new Set(hrefs.map((h) => (h.match(/wa\.me\/\+?(\d+)/i) || h.match(/[?&]phone=\+?(\d+)/i) || [])[1]).filter((n) => n && /^9\d{8}$/.test(n)))];
+  if (malos.length) out.F3 = F('F3', 'estable', 'el dueño, tocando el botón desde un celular', 'Tocar el botón de WhatsApp del sitio desde un celular y ver si abre el chat o un error.',
+    { 1: cond('medias', 'Solo se nota al tocarlo.'), 2: cond('si', 'Cada cliente que intenta escribir por ahí no llega.'), 3: cond('si', 'Se prueba tocándolo.'), 4: cond('no', 'Es capa 1.') },
+    `El enlace de WhatsApp usa un número de 9 dígitos sin código de país (${malos[0].slice(0, 2)}XXXXXXX).`, ['que "no abre": el motor no probó el enlace en WhatsApp (solo lee el formato del número)'],
+    { ejemplo: `wa.me/${malos[0].slice(0, 2)}XXXXXXX` }, { advertencias: ['[Probable] WhatsApp pide el formato internacional; el motor no tocó el enlace. Comprobarlo desde un celular antes de usarlo.'] });
+
+  // F4: ninguna medicion instalada (ni en el HTML, ni en la red, ni otras herramientas).
+  const a = p1.html.analitica;
+  const redMedicion = runs.some((r) => r.peticiones.some((p) => ['Google Tag', 'Google Analytics', 'Microsoft Clarity', 'Hotjar'].includes(p.clasif?.prov)));
+  if (!a.gtm.length && !a.ga4.length && !a.ua.length && !redMedicion && !/matomo|plausible\.io|fathom|mixpanel|posthog|amplitude|umami|heap-analytics/i.test(htmlEjecutado))
+    out.F4 = F('F4', 'estable', 'el dueño, con acceso a su panel', 'Preguntar a quien administra el sitio si hay Google Analytics u otra herramienta; o abrir el sitio con Tag Assistant.',
+      { 1: cond('no', 'No se ve, pero lo confirma cualquier extensión gratuita.'), 2: cond('medias', 'Sin medición no se sabe qué trae clientes.'), 3: cond('si', 'Se comprueba con Tag Assistant.'), 4: cond('no', 'Es capa 1.') },
+      'No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.', ['que "no mides nada" (puede haber medición del lado del servidor)'], {});
+
+  // F5: robots.txt cierra la puerta a los agentes de IA de busqueda / de usuario.
+  const bots = p1.robots.agentes ? BOTS_BUSQUEDA.filter((n) => p1.robots.agentes[n]?.bloquea_en_robots) : [];
+  if (bots.length) out.F5 = F('F5', 'estable', 'el dueño, abriendo tu-sitio/robots.txt', 'Abrir tu-sitio.cl/robots.txt en el navegador y buscar las líneas "Disallow: /" bajo esos agentes (o bajo "User-agent: *").',
+    { 1: cond('si', 'robots.txt no se mira nunca.'), 2: cond('medias', 'Esos agentes no pueden leer el sitio; el efecto en consultas no se mide aquí.'), 3: cond('si', 'Se abre en el navegador.'), 4: cond('no', 'Todos los chequeos de IA lo muestran: es capa 1.') },
+    `robots.txt prohíbe la entrada de ${bots.join(', ')}.`, ['que "por eso no te cita ChatGPT"'], { agentes: bots });
+
+  // F6: rechazo por nombre sin causa nombrada. Tope: sospecha (UA presentado desde una IP que no es la oficial).
+  if (edge.bloqueados_en_ambas.length && !edge.causa_nombrada && edge.normal_ok_en_ambas && !edge.discrepancia_entre_rondas)
+    out.F6 = F('F6', 'sospecha', 'quien administra el sitio (con una línea de comandos)', `curl -sI -A "${edge.bloqueados_en_ambas[0]}" <portada>, comparado con un navegador normal.`,
+      { 1: cond('si', 'El rechazo ocurre en el servidor.'), 2: cond('medias', 'Efecto no medido.'), 3: cond('medias', 'Solo quien administra el sitio.'), 4: cond('no', 'Sin causa nombrada es capa 1.') },
+      `Al presentarse con el nombre ${edge.bloqueados_en_ambas.join(', ')}, el servidor respondió con un rechazo, y con un navegador normal responde bien.`, ['que "bloquea al bot real"'], {},
+      { tope: 'Tope sospecha: el nombre del agente se presenta desde una IP que no es la oficial.' });
+
+  // F7: enlaces rotos en la portada.
+  if (enlaces?.rotos_en_ambas?.length) out.F7 = F('F7', 'estable', 'el dueño, haciendo clic', 'Hacer clic en los enlaces de la portada y el menú.',
+    { 1: cond('medias', 'Solo se nota al hacer clic en ese enlace.'), 2: cond('medias', 'Cada clic roto es una visita perdida.'), 3: cond('si', 'Se prueba con un clic.'), 4: cond('no', 'Cualquier verificador de enlaces lo ve: es capa 1.') },
+    `${enlaces.rotos_en_ambas.length} enlace(s) internos de la portada responden 404 (revisados ${enlaces.revisados}), en dos rondas.`, ['que sean todos los rotos del sitio (solo se revisó la portada)'],
+    { cantidad: enlaces.rotos_en_ambas.length, ejemplo: new URL(enlaces.rotos_en_ambas[0]).pathname });
+
+  // F8: ninguna entidad declarada en JSON-LD.
+  if (!p1.html.jsonld.org.length) out.F8 = F('F8', 'estable', 'el dueño, con una herramienta gratuita', 'Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar "application/ld+json" en el código de la página.',
+    { 1: cond('si', 'Los datos estructurados no se ven.'), 2: cond('medias', 'Sin entidad declarada, la IA y Google adivinan quién eres.'), 3: cond('si', 'Se comprueba con una herramienta gratuita.'), 4: cond('no', 'Los chequeos gratis lo muestran: es capa 1.') },
+    'El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.', ['que "Google no te entiende"'], {});
+  return out;
+}
+
+// Prioridad de la oferta PRINCIPAL (solo compiten los 'estable'). Contacto primero (regla de la casa), luego acceso, luego Verifica y Cumple
+// (solo si corresponde), luego lo demas. C2, C4 y F6 son sospechas: nunca principal. Decision de orden registrada en jerarquia v1.
+const ORDEN_OFERTA = ['C5', 'F2', 'F3', 'C3', 'F5', 'C1', 'F1', 'F7', 'F4', 'F8'];
+const ORDEN_SOSPECHA = ['C2', 'C4', 'F6'];
+
 export function veredicto(ctx) {
-  const { p0, p1, runs, edge, contacto, entidad, contenedores, gtmIds, htmlEjecutado } = ctx;
+  const { p0, p1, runs, edge, contacto, entidad, contenedores, gtmIds, htmlEjecutado, enlaces } = ctx;
   const formulariosDOM = runs[0].B.dom?.formularios || [];
   const c1 = candidatoC1(runs), c2 = candidatoC2({ p1, contenedores, gtmIds, htmlEjecutado, peticiones: runs[0].peticiones });
   const c3 = candidatoC3(edge), c4 = candidatoC4(entidad), c5 = candidatoC5(contacto);
-  const todos = { C1: c1.candidato, C2: c2.candidato, C3: c3.candidato, C4: c4.candidato, C5: c5.candidato };
-  const lista = ORDEN.map((id) => todos[id]).filter(Boolean);
-  const conProp = (c) => (c ? { ...c, propuesta: propuesta(c, { c1: c1.info }) } : c);
-  const elegible = conProp(lista.find((c) => c.estado === 'estable'));  // R1 + R2 + R3
-  const punteros = lista.filter((c) => c.id !== elegible?.id).map(conProp);  // la "ruta": no va en el correo
+  const f = candidatosCapa1({ p1, runs, edge, enlaces, htmlEjecutado });
+  const todos = { C1: c1.candidato, C2: c2.candidato, C3: c3.candidato, C4: c4.candidato, C5: c5.candidato, ...f };
+  const estables = ORDEN_OFERTA.map((id) => todos[id]).filter((c) => c && c.estado === 'estable');
+  const principal = estables[0] || null;
+  // C1 y F1 piden el mismo arreglo (Verifica y Cumple): cuentan como UNA sola cosa, sea cual sea la principal.
+  const vyc = (c) => ['C1', 'F1'].includes(c.id);
+  let extras = estables.slice(1).filter((c) => !(principal && vyc(principal) && vyc(c)));
+  if (extras.filter(vyc).length > 1) extras = extras.filter((c) => c.id !== 'F1');
+  const noEstables = Object.values(todos).filter((c) => c && c.estado !== 'estable');   // sospechas: nunca principal, nunca van al correo
+  const soporte = { c1: c1.info };
+  const conProp = (c, n = 0) => (c ? { ...c, propuesta: propuesta(c, soporte, n) } : c);
+  const hallazgo = conProp(principal, extras.length);
+  const ruta = [...extras, ...noEstables].map((c) => conProp(c));
   const capa1 = hechosCapa1({ p1, runs, formulariosDOM });
   const notas = [c3.capa1, c3.noConcluyente, c2.noEvaluable].filter(Boolean);
   let resultado;
-  if (elegible) resultado = 'hallazgo-capa-2';
-  else if (punteros.length) resultado = 'sin-gancho-capa-2';
+  if (hallazgo) resultado = hallazgo.capa === 1 ? 'oferta-capa-1' : 'hallazgo-capa-2';
+  else if (ruta.length) resultado = 'sin-gancho';
   else if (p0.html_no_alcanza && !runs[0].B.dom?.largo_texto) resultado = 'no-concluyente';
   else if (c3.noConcluyente) resultado = 'no-concluyente';
-  else if (capa1.consecuencia.length) resultado = 'solo-capa-1';
   else resultado = 'sin-hallazgo';
-  return { resultado, hallazgo: elegible || null, punteros, capa1, notas,
+  return { resultado, hallazgo, punteros: ruta, extras: extras.map((c) => c.id), capa1, notas,
     soporte: { c1: c1.info, c2: c2.info ?? null, c3: c3.contexto ?? null } };
 }

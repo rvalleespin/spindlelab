@@ -131,3 +131,18 @@ export function entidadInterna({ titulo, og_site_name, jsonld }) {
   const enTitle = marcas.length ? !ncs.filter((x) => x.fuente === 'title').some((t) => marcas.some((m) => t.n.includes(m.n) || m.n.includes(t.n))) : null;
   return { fuentes: ncs.map(({ fuente, valor }) => ({ fuente, valor })), nombres_en_conflicto: distintos.slice(0, 3).map(([a, b]) => [`${a.fuente}: ${a.valor}`, `${b.fuente}: ${b.valor}`]), marca_declarada_ausente_del_title: enTitle };
 }
+
+// F7: enlaces internos de la portada que responden 404/410. Dos rondas; solo cuenta lo que se repite. Un 403 o un timeout NO es un enlace roto.
+export async function sondaEnlaces(baseUrl, hrefs) {
+  const base = new URL(baseUrl);
+  const internos = [...new Set(hrefs.map((h) => { try { const u = new URL(h, base); if (u.host !== base.host || !/^https?:$/.test(u.protocol)) return null; u.hash = ''; return u.href; } catch { return null; } }).filter(Boolean))]
+    .filter((u) => u !== base.href && !/\.(pdf|jpe?g|png|webp|gif|svg|zip|docx?|xlsx?|mp4)(\?|$)/i.test(u) && !/wp-admin|wp-login|logout|cart|checkout/i.test(u)).slice(0, 30);
+  const ronda = async () => {
+    const rotos = new Set(); let i = 0;
+    await Promise.all(Array.from({ length: 4 }, async () => { while (i < internos.length) { const u = internos[i++]; const r = await pedir(u, { ms: 8000 }); if (r.ok && [404, 410].includes(r.status)) rotos.add(u); } }));
+    return rotos;
+  };
+  const r1 = await ronda(); await dormir(1000); const r2 = await ronda();
+  const enAmbas = [...r1].filter((u) => r2.has(u));
+  return { revisados: internos.length, rotos_en_ambas: enAmbas, discrepancia_entre_rondas: [...r1].filter((u) => !r2.has(u)).length + [...r2].filter((u) => !r1.has(u)).length };
+}
