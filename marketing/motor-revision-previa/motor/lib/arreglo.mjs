@@ -32,7 +32,7 @@ export const ARREGLO = {
     cierre: 'Gratis y sin registro: https://verifica.spindlelab.cl' },
   C5: { linea: 'Desarrollo Web', veh: 'WEB', frase: 'Eso lo arreglo yo y lo pruebo de punta a punta, para que cada consulta llegue.', borrador: true, alcance: 'Corregir el destino del formulario o del correo y probarlo de punta a punta.', por_definir: [SIN_PUNTUAL] },
   F2: { linea: 'Desarrollo Web', veh: 'WEB', frase: 'Eso se arregla: dejo a la vista por dónde te escriben y lo pruebo de punta a punta.', borrador: true, alcance: 'Poner a la vista un formulario, teléfono o WhatsApp y probarlo.', por_definir: [SIN_PUNTUAL] },
-  F3: { linea: 'Desarrollo Web', veh: 'WEB', frase: 'Eso se arregla en un minuto: dejo el número con el formato que WhatsApp pide y lo pruebo desde el celular.', borrador: true, alcance: 'Corregir el enlace de WhatsApp y probarlo desde un celular.', por_definir: [SIN_PUNTUAL] },
+  F3: { linea: 'Desarrollo Web', veh: 'WEB', frase: 'Eso se arregla: dejo el número con el formato que WhatsApp pide y lo pruebo desde el celular.', borrador: true, alcance: 'Corregir el enlace de WhatsApp y probarlo desde un celular.', por_definir: [SIN_PUNTUAL] },
   F7: { linea: 'Auditoría SEO Técnica', veh: 'SEO', frase: 'Eso se arregla: dejo cada enlace llevando a una página que existe y reviso que no queden más rotos.', borrador: true, alcance: 'Corregir los enlaces rotos de la portada y revisar el resto del sitio.', por_definir: [SIN_PUNTUAL] },
   C3: { linea: 'Visibilidad en IA', veh: 'IA', frase: 'Eso se arregla en el servidor, no en tu sitio. Lo hago yo, con quien lo administra.', borrador: true, alcance: 'Cambiar la regla del servidor, CDN o plugin de seguridad que rechaza a los agentes.',
     por_definir: ['La regla vive en infraestructura del prospecto: sin acceso no se puede hacer solo (marketing/capacidad-servicios.md marca esa brecha).', SIN_PUNTUAL] },
@@ -49,7 +49,7 @@ export const ARREGLO = {
 // debe reflejar en la estrategia (el motor no la toca).
 export function aperturaReunion(extras) {
   const llamada = 'una llamada de 20 minutos';
-  if (extras > 0) return `Vi ${extras === 1 ? 'otra cosa' : extras + ' cosas más'} que no te anoto acá. Si quieres, lo vemos en ${llamada}.`;
+  if (extras > 0) return `Vi ${extras === 1 ? 'otra cosa' : extras <= 3 ? extras + ' cosas más' : 'varias cosas más'} que no te anoto acá. Si quieres, lo vemos en ${llamada}.`;
   return `Si quieres, lo vemos en ${llamada} y te muestro cómo lo dejaría.`;
 }
 
@@ -60,7 +60,7 @@ export function revisarFrase(t) {
   if (/soluci[oó]n(es)?\b/i.test(t)) malas.push('"solución" (castellano de folleto)');
   if (/impulsa|potencia|a tu medida|lleva tu negocio|transforma/i.test(t)) malas.push('verbo de folleto');
   if (/(!|¡)/.test(t)) malas.push('exclamación');
-  if (/\b(en \d+ (d[ií]as|horas|semanas?)|una semana|esta semana|hoy mismo|ahora mismo)\b/i.test(t)) malas.push('plazo no documentado');
+  if (/\b(en (\d+|un|una|dos|tres|pocos|poco) (d[ií]as?|horas?|semanas?|minutos?|rato|momento)|en un (instante|santiam[eé]n)|una semana|esta semana|hoy mismo|ahora mismo|al tiro|rápido|rapidito)\b/i.test(t)) malas.push('plazo no documentado');
   if (/\b(garantiz|100%|perfect)/i.test(t)) malas.push('promesa de perfección');
   return malas;
 }
@@ -86,7 +86,8 @@ export function enCastellano(c, soporte) {
     case 'F2': return 'En la portada de tu sitio no encontré cómo contactarte: ni formulario, ni teléfono, ni correo, ni WhatsApp.';
     case 'F3': return `El botón de WhatsApp de tu sitio apunta a un número sin código de país (${d.ejemplo || '9XXXXXXXX'}), y WhatsApp pide el formato internacional (56 9 ...).`;
     case 'F4': return 'No veo ninguna herramienta de medición instalada en tu sitio, ni Google Analytics ni Tag Manager.';
-    case 'F5': return `Tu archivo robots.txt le prohíbe la entrada a ${lista(d.agentes || [])}, que son los que usan ChatGPT y Perplexity para leer sitios.`;
+    case 'F5': { const m = { 'OAI-SearchBot': 'ChatGPT', 'ChatGPT-User': 'ChatGPT', 'PerplexityBot': 'Perplexity', 'Perplexity-User': 'Perplexity', 'Claude-SearchBot': 'Claude', 'Claude-User': 'Claude' };
+      const marcas = [...new Set((d.agentes || []).map((a) => m[a]).filter(Boolean))]; return `Tu archivo robots.txt le cierra la puerta a ${lista(marcas)} cuando ${marcas.length === 1 ? 'intenta' : 'intentan'} leer tu sitio.`; }
     case 'F7': return `En tu portada hay ${d.cantidad === 1 ? 'un enlace que lleva' : (d.cantidad || 'varios') + ' enlaces que llevan'} a páginas que no existen (error 404)${d.ejemplo ? `, por ejemplo ${d.ejemplo}` : ''}.`;
     case 'F8': return 'Tu sitio no le dice a Google ni a la IA qué negocio eres en el formato que ellos leen (datos estructurados).';
     case 'C2': return 'Tu sitio tiene Google Analytics y, desde afuera, no veo que mida otra cosa que visitas: ni consultas, ni llamadas, ni clics a WhatsApp. Si ya lo tienes medido desde tu panel, entonces no aplica.';
