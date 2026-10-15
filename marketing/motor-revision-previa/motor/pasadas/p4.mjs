@@ -181,8 +181,12 @@ const NOMBRE_F = {
   F3: 'El enlace de WhatsApp apunta a un número sin código de país', F4: 'No hay ninguna herramienta de medición instalada',
   F5: 'robots.txt le prohíbe la entrada a agentes de IA de búsqueda', F6: 'El servidor rechaza a agentes de IA por su nombre (causa sin nombrar)',
   F7: 'Enlaces de la portada que llevan a páginas que no existen', F8: 'El negocio no está declarado como entidad en datos estructurados',
+  F9: 'El enlace a la política de privacidad o al aviso legal lleva a una página que no existe', F10: 'En la primera pantalla no hay cómo contactar, cotizar o comprar',
+  F11: 'El sitio no está preparado para el celular', F12: 'La portada descarga demasiado peso', F13: 'La información de la portada está mal estructurada',
+  F14: 'El formulario de contacto pide demasiados datos',
 };
-const LINEA_F = { F1: 'Verifica y Cumple', F2: 'Desarrollo Web', F3: 'Desarrollo Web', F4: 'Acompañamiento', F5: 'Visibilidad en IA', F6: 'Visibilidad en IA', F7: 'Auditoría SEO Técnica', F8: 'Visibilidad en IA' };
+const LINEA_F = { F1: 'Verifica y Cumple', F2: 'Desarrollo Web', F3: 'Desarrollo Web', F4: 'Acompañamiento', F5: 'Visibilidad en IA', F6: 'Visibilidad en IA', F7: 'Auditoría SEO Técnica', F8: 'Visibilidad en IA',
+  F9: 'Verifica y Cumple', F10: 'Desarrollo Web', F11: 'Desarrollo Web', F12: 'Auditoría SEO Técnica', F13: 'Auditoría SEO Técnica', F14: 'Desarrollo Web' };
 const BOTS_BUSQUEDA = ['OAI-SearchBot', 'ChatGPT-User', 'PerplexityBot', 'Claude-SearchBot', 'Claude-User', 'Perplexity-User'];
 const RE_CONTACTO = /contact|escr[ií]benos|cotiz|agenda|reserv|solicit|hablemos|conversemos/i;
 
@@ -190,7 +194,7 @@ function F(id, estado, quien, donde, condiciones, afirmable, noAfirmable, datos,
   return { id, nombre: NOMBRE_F[id], linea: LINEA_F[id], capa: 1, estado, quien_comprueba: quien, donde_mirar: donde, condiciones, afirmable, no_afirmable: noAfirmable, advertencias: [], datos, ...extra };
 }
 
-export function candidatosCapa1({ p1, runs, edge, enlaces, htmlEjecutado }) {
+export function candidatosCapa1({ p1, runs, edge, enlaces, htmlEjecutado, movil = [] }) {
   const out = {}, todas = (fn) => runs.every(fn);
   const domLinks = (r) => (r.B.dom?.enlaces || []).map((e) => ({ h: e.h || '', t: e.t || '' }));
   const forms = (r) => r.B.dom?.formularios || [];
@@ -223,7 +227,8 @@ export function candidatosCapa1({ p1, runs, edge, enlaces, htmlEjecutado }) {
   if (!a.gtm.length && !a.ga4.length && !a.ua.length && !redMedicion && !/matomo|plausible\.io|fathom|mixpanel|posthog|amplitude|umami|heap-analytics/i.test(htmlEjecutado))
     out.F4 = F('F4', 'estable', 'el dueño, con acceso a su panel', 'Preguntar a quien administra el sitio si hay Google Analytics u otra herramienta; o abrir el sitio con Tag Assistant.',
       { 1: cond('no', 'No se ve, pero lo confirma cualquier extensión gratuita.'), 2: cond('medias', 'Sin medición no se sabe qué trae clientes.'), 3: cond('si', 'Se comprueba con Tag Assistant.'), 4: cond('no', 'Es capa 1.') },
-      'No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.', ['que "no mides nada" (puede haber medición del lado del servidor)'], {});
+      'No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.', ['que "no mides nada" (puede haber medición del lado del servidor o la propia de la plataforma)'], { plataforma: p1.html.plataforma?.nombre || null },
+      { advertencias: p1.html.plataforma?.analitica_propia ? [`El sitio usa ${p1.html.plataforma.nombre}, que trae analítica propia: lo único afirmable es que no hay Google Analytics ni Tag Manager.`] : [] });
 
   // F5: robots.txt cierra la puerta a los agentes de IA de busqueda / de usuario.
   const bots = p1.robots.agentes ? BOTS_BUSQUEDA.filter((n) => p1.robots.agentes[n]?.bloquea_en_robots) : [];
@@ -239,36 +244,85 @@ export function candidatosCapa1({ p1, runs, edge, enlaces, htmlEjecutado }) {
       { tope: 'Tope sospecha: el nombre del agente se presenta desde una IP que no es la oficial.' });
 
   // F7: enlaces rotos en la portada.
-  if (enlaces?.rotos_en_ambas?.length) out.F7 = F('F7', 'estable', 'el dueño, haciendo clic', 'Hacer clic en los enlaces de la portada y el menú.',
+  const RE_POL = /privacy|privacidad|politica|pol%C3%ADtica|legal|terminos|t%C3%A9rminos|cookies|aviso/i;
+  const rotosPolitica = (enlaces?.rotos_en_ambas || []).filter((u) => RE_POL.test(u)), rotosOtros = (enlaces?.rotos_en_ambas || []).filter((u) => !RE_POL.test(u));
+  if (rotosPolitica.length) out.F9 = F('F9', 'estable', 'el dueño, haciendo clic', 'Hacer clic en el enlace de "política de privacidad" o "aviso legal" del pie de página.',
+    { 1: cond('si', 'Casi nadie hace clic en el pie de página.'), 2: cond('si', 'Es peor que no tener política: el sitio dice que existe y no abre.'), 3: cond('si', 'Se prueba con un clic.'), 4: cond('no', 'Cualquier verificador de enlaces lo ve: es capa 1.') },
+    `El enlace a ${new URL(rotosPolitica[0]).pathname} (política o aviso legal) responde 404, en dos rondas.`, ['lo que la ley "exige"', 'que el sitio no tenga política en otra dirección'], { ejemplo: new URL(rotosPolitica[0]).pathname });
+  if (rotosOtros.length) out.F7 = F('F7', 'estable', 'el dueño, haciendo clic', 'Hacer clic en los enlaces de la portada y el menú.',
     { 1: cond('medias', 'Solo se nota al hacer clic en ese enlace.'), 2: cond('medias', 'Cada clic roto es una visita perdida.'), 3: cond('si', 'Se prueba con un clic.'), 4: cond('no', 'Cualquier verificador de enlaces lo ve: es capa 1.') },
-    `${enlaces.rotos_en_ambas.length} enlace(s) internos de la portada responden 404 (revisados ${enlaces.revisados}), en dos rondas.`, ['que sean todos los rotos del sitio (solo se revisó la portada)'],
-    { cantidad: enlaces.rotos_en_ambas.length, ejemplo: new URL(enlaces.rotos_en_ambas[0]).pathname });
+    `${rotosOtros.length} enlace(s) internos de la portada responden 404 (revisados ${enlaces.revisados}), en dos rondas.`, ['que sean todos los rotos del sitio (solo se revisó la portada)'],
+    { cantidad: rotosOtros.length, ejemplo: new URL(rotosOtros[0]).pathname });
 
   // F8: ninguna entidad declarada en JSON-LD.
   if (!p1.html.jsonld.org.length) out.F8 = F('F8', 'estable', 'el dueño, con una herramienta gratuita', 'Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar "application/ld+json" en el código de la página.',
     { 1: cond('si', 'Los datos estructurados no se ven.'), 2: cond('medias', 'Sin entidad declarada, la IA y Google adivinan quién eres.'), 3: cond('si', 'Se comprueba con una herramienta gratuita.'), 4: cond('no', 'Los chequeos gratis lo muestran: es capa 1.') },
     'El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.', ['que "Google no te entiende"'], {});
+
+  // ---- Cuellos de botella de captacion y construccion de la informacion (15-oct) ----
+  // F10: en la primera pantalla de escritorio no hay NINGUNA accion para contactar, cotizar o comprar.
+  if (todas((r) => r.A.dom && !(r.A.dom.cta_en_pantalla || []).length && !r.A.dom.formulario_en_pantalla))
+    out.F10 = F('F10', 'estable', 'el dueño, mirando la primera pantalla', 'Abrir el sitio y, sin bajar, buscar un botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.',
+      { 1: cond('medias', 'El dueño ve su sitio todos los días y no ve lo que falta.'), 2: cond('si', 'Quien llega y no ve cómo seguir, se va.'), 3: cond('si', 'Se ve a simple vista.'), 4: cond('no', 'Es capa 1.') },
+      'En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.', ['que no exista contacto más abajo en la página'], {},
+      { advertencias: ['Mirar la captura del tramo A (escritorio) antes de usarlo: la heurística busca palabras de acción, y un botón con otro texto no cuenta.'] });
+
+  // F11: celular. Sin meta viewport el telefono muestra la version de escritorio en miniatura; con desborde horizontal obliga a deslizar.
+  const mov = movil.filter(Boolean);
+  if (mov.length && mov.every((m) => !m.meta_viewport || m.desborde_px > 20)) {
+    const sinMeta = mov.every((m) => !m.meta_viewport);
+    out.F11 = F('F11', 'estable', 'el dueño, abriendo el sitio en su celular', 'Abrir el sitio en un celular: ver si se muestra en miniatura o si hay que deslizar de lado.',
+      { 1: cond('medias', 'El dueño suele mirarlo desde el computador.'), 2: cond('si', 'Una parte grande de las visitas llega desde un celular.'), 3: cond('si', 'Se comprueba con su propio teléfono.'), 4: cond('no', 'Es capa 1.') },
+      sinMeta ? 'El sitio no declara cómo mostrarse en celular (falta la etiqueta viewport), en dos corridas móviles.' : `En una pantalla de celular el contenido se desborda ${Math.min(...mov.map((m) => m.desborde_px))} px o más hacia el lado, en dos corridas.`,
+      ['qué porcentaje de las visitas llega desde celular'], { tipo: sinMeta ? 'sin-viewport' : 'desborde', px: Math.min(...mov.map((m) => m.desborde_px)) });
+  }
+
+  // F12: portada pesada (bytes transferidos: no depende de desde donde se mida).
+  if (todas((r) => (r.peso?.total_bytes || 0) >= 5e6)) {
+    const mb = Math.round(Math.min(...runs.map((r) => r.peso.total_bytes)) / 1e5) / 10;
+    out.F12 = F('F12', 'estable', 'quien administra el sitio, con las herramientas del navegador', 'En el navegador: F12, pestaña Network, recargar y mirar el total transferido abajo.',
+      { 1: cond('si', 'Nadie mira cuánto pesa su portada.'), 2: cond('medias', 'En un celular con datos, una portada pesada tarda en abrir.'), 3: cond('si', 'Se ve en la pestaña Network.'), 4: cond('no', 'Cualquier medidor de velocidad lo ve: es capa 1.') },
+      `La portada descarga ${mb} MB al abrirse (mínimo de las ${runs.length} corridas).`, ['cuánto tarda en abrir para un visitante real (se mide desde un datacenter)'], { mb, mas_pesado: runs[0].peso.mas_pesados?.[0] || null });
+  }
+
+  // F13: informacion mal construida en la portada: sin H1, varios H1 o muy poco texto.
+  const tiposEstr = (r) => { const e = r.A.dom?.estructura; if (!e) return []; const t = []; if (e.h1 === 0) t.push('sin-h1'); if (e.h1 > 1) t.push('varios-h1'); if (e.palabras < 150) t.push('poco-texto'); return t; };
+  const comunes = tiposEstr(runs[0]).filter((t) => runs.every((r) => tiposEstr(r).includes(t)));
+  if (comunes.length) {
+    const e = runs[0].A.dom.estructura;
+    const frase = { 'sin-h1': 'no tiene un título principal (H1)', 'varios-h1': `tiene ${e.h1} títulos principales (H1) en vez de uno`, 'poco-texto': `tiene solo ${e.palabras} palabras de texto` };
+    out.F13 = F('F13', 'estable', 'el dueño, con el código de la página', 'Ver el código fuente (clic derecho > ver código) y buscar "<h1"; o contar las palabras de la portada.',
+      { 1: cond('si', 'La estructura del código no se ve.'), 2: cond('medias', 'Google y la IA usan esa estructura para entender de qué trata la página.'), 3: cond('si', 'Se ve en el código fuente.'), 4: cond('no', 'Cualquier auditor SEO gratuito lo ve: es capa 1.') },
+      `La portada ${comunes.map((t) => frase[t]).join(' y ')}.`, ['que el resto del sitio tenga el mismo problema'], { tipos: comunes, h1: e.h1, palabras: e.palabras });
+  }
+
+  // F14: formulario de contacto largo.
+  const campos = runs.map((r) => Math.max(0, ...(r.B.dom?.formularios || []).filter((f) => f.pide_correo_o_tel).map((f) => f.campos)));
+  if (campos.every((n) => n >= 7)) out.F14 = F('F14', 'estable', 'el dueño, mirando su formulario', 'Abrir el formulario de contacto y contar los campos que hay que llenar.',
+    { 1: cond('medias', 'El dueño no lo mira como lo mira un cliente.'), 2: cond('medias', 'Cada campo de más es una razón para no terminarlo.'), 3: cond('si', 'Se cuenta a simple vista.'), 4: cond('no', 'Es capa 1.') },
+    `El formulario de contacto pide ${Math.min(...campos)} datos o más.`, ['cuántos de esos campos son obligatorios', 'cuánta gente lo abandona'], { campos: Math.min(...campos) });
   return out;
 }
 
 // Prioridad de la oferta PRINCIPAL (solo compiten los 'estable'). Contacto primero (regla de la casa), luego acceso, luego Verifica y Cumple
 // (solo si corresponde), luego lo demas. C2, C4 y F6 son sospechas: nunca principal. Decision de orden registrada en jerarquia v1.
-const ORDEN_OFERTA = ['C5', 'F2', 'F3', 'C3', 'F5', 'C1', 'F1', 'F7', 'F4', 'F8'];
+// Primero lo que frena la captacion (contacto, primera pantalla, celular), luego acceso, luego Verifica y Cumple (solo si corresponde), luego fricción, estructura, peso, medición y entidad.
+const ORDEN_OFERTA = ['C5', 'F2', 'F3', 'F10', 'F11', 'C3', 'F5', 'C1', 'F1', 'F9', 'F14', 'F7', 'F13', 'F12', 'F4', 'F8'];
 const ORDEN_SOSPECHA = ['C2', 'C4', 'F6'];
 
 export function veredicto(ctx) {
-  const { p0, p1, runs, edge, contacto, entidad, contenedores, gtmIds, htmlEjecutado, enlaces } = ctx;
+  const { p0, p1, runs, edge, contacto, entidad, contenedores, gtmIds, htmlEjecutado, enlaces, movil } = ctx;
   const formulariosDOM = runs[0].B.dom?.formularios || [];
   const c1 = candidatoC1(runs), c2 = candidatoC2({ p1, contenedores, gtmIds, htmlEjecutado, peticiones: runs[0].peticiones });
   const c3 = candidatoC3(edge), c4 = candidatoC4(entidad), c5 = candidatoC5(contacto);
-  const f = candidatosCapa1({ p1, runs, edge, enlaces, htmlEjecutado });
+  const f = candidatosCapa1({ p1, runs, edge, enlaces, htmlEjecutado, movil });
   const todos = { C1: c1.candidato, C2: c2.candidato, C3: c3.candidato, C4: c4.candidato, C5: c5.candidato, ...f };
   const estables = ORDEN_OFERTA.map((id) => todos[id]).filter((c) => c && c.estado === 'estable');
   const principal = estables[0] || null;
   // C1 y F1 piden el mismo arreglo (Verifica y Cumple): cuentan como UNA sola cosa, sea cual sea la principal.
-  const vyc = (c) => ['C1', 'F1'].includes(c.id);
+  const vyc = (c) => ['C1', 'F1', 'F9'].includes(c.id);
   let extras = estables.slice(1).filter((c) => !(principal && vyc(principal) && vyc(c)));
-  if (extras.filter(vyc).length > 1) extras = extras.filter((c) => c.id !== 'F1');
+  if (extras.filter(vyc).length > 1) { const primero = extras.find(vyc); extras = extras.filter((c) => !vyc(c) || c === primero); }
   const noEstables = Object.values(todos).filter((c) => c && c.estado !== 'estable');   // sospechas: nunca principal, nunca van al correo
   const soporte = { c1: c1.info };
   const conProp = (c, n = 0) => (c ? { ...c, propuesta: propuesta(c, soporte, n) } : c);

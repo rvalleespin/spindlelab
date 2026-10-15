@@ -46,6 +46,14 @@ export function extraer(html, base) {
       meta_pixel: /connect\.facebook\.net|fbq\(/i.test(html), clarity: /clarity\.ms/i.test(html), hotjar: /hotjar/i.test(html),
       gtag_eventos_inline: [...html.matchAll(/gtag\(\s*['"]event['"]\s*,\s*['"]([^'"]+)['"]/g)].map((m) => m[1]) },
     politica_en_html: hrefs.filter((h) => RE_POLITICA.test(h)).map(abs).slice(0, 5),
+    plataforma: (() => {
+      if (/static\.parastorage\.com|wixstatic\.com|wix-thunderbolt/i.test(html)) return { nombre: 'Wix', analitica_propia: true };
+      if (/cdn\.shopify\.com|Shopify\.theme/i.test(html)) return { nombre: 'Shopify', analitica_propia: true };
+      if (/squarespace\.com|static1\.squarespace/i.test(html)) return { nombre: 'Squarespace', analitica_propia: true };
+      if (/webflow\.com|data-wf-page/i.test(html)) return { nombre: 'Webflow', analitica_propia: false };
+      if (/wp-content|wp-includes/i.test(html)) return { nombre: 'WordPress', tema: (html.match(/wp-content\/themes\/([^\/'"]+)/i) || [])[1] || null, analitica_propia: false };
+      return { nombre: null, analitica_propia: false };
+    })(),
     jsonld: { tipos: [...new Set(nodos.flatMap((n) => [].concat(n['@type'] || [])))], org: org.map((n) => ({ name: n.name, legalName: n.legalName })) },
   };
 }

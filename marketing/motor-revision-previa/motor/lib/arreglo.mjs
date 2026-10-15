@@ -41,6 +41,13 @@ export const ARREGLO = {
   F4: { linea: 'Acompañamiento', veh: 'MEDICION', frase: 'Eso se arregla: dejo medido lo que importa, que te escriban, te llamen o te hablen por WhatsApp, para que veas qué trae clientes.', borrador: true, alcance: 'Instalar analítica y medir consultas, llamadas y WhatsApp.', por_definir: [SIN_PUNTUAL] },
   C2: { linea: 'Acompañamiento', veh: 'MEDICION', frase: 'Eso se arregla: dejo medido lo que importa, que te escriban, te llamen o te hablen por WhatsApp, para que veas qué trae clientes y qué no.', borrador: true, alcance: 'Dejar medido lo que importa: consultas por formulario, llamadas y WhatsApp.', por_definir: [SIN_PUNTUAL] },
   C4: { linea: 'Visibilidad en IA', veh: 'IA', frase: 'Eso lo arreglo yo: dejo el nombre igual en el sitio y en los datos que leen Google y la IA.', borrador: true, alcance: 'Un solo nombre del negocio, igual en el sitio y en los datos estructurados.', por_definir: [SIN_PUNTUAL] },
+  F9: { linea: 'Verifica y Cumple', veh: 'VYC', frase: 'Eso lo arreglo yo, con lo demás que el chequeo deje pendiente. Desde $149.000 + IVA, una vez.', borrador: false,
+    alcance: 'Lo que el chequeo gratis deje pendiente. El kit no incluye asesoría legal: entrega la plantilla de política para que la revise el abogado del cliente. Eso se dice, no se esconde.', cierre: 'Gratis y sin registro: https://verifica.spindlelab.cl' },
+  F10: { linea: 'Desarrollo Web', veh: 'WEB', frase: 'Eso se arregla: dejo a la vista, desde la primera pantalla, la forma de escribirte y lo pruebo en el celular.', borrador: true, alcance: 'Poner una acción de contacto visible en la primera pantalla, en escritorio y en celular.', por_definir: [SIN_PUNTUAL] },
+  F11: { linea: 'Desarrollo Web', veh: 'WEB', frase: 'Eso lo arreglo yo y lo reviso en varios tamaños de pantalla.', borrador: true, alcance: 'Hacer que el sitio se vea bien en celular y comprobarlo en varios tamaños.', por_definir: [SIN_PUNTUAL] },
+  F12: { linea: 'Auditoría SEO Técnica', veh: 'SEO', frase: 'Eso se arregla: dejo la portada liviana y mido cuánto baja.', borrador: true, alcance: 'Reducir el peso de la portada y medir el antes y el después.', por_definir: [SIN_PUNTUAL] },
+  F13: { linea: 'Auditoría SEO Técnica', veh: 'SEO', frase: 'Eso lo arreglo yo: dejo la información ordenada, con un título que diga qué haces y para quién.', borrador: true, alcance: 'Ordenar la información de la portada: un título principal claro y el contenido que explica la oferta.', por_definir: [SIN_PUNTUAL] },
+  F14: { linea: 'Desarrollo Web', veh: 'WEB', frase: 'Eso se arregla: lo dejo en lo mínimo para que te escriban y lo pruebo.', borrador: true, alcance: 'Reducir el formulario de contacto a lo necesario y probarlo.', por_definir: [SIN_PUNTUAL] },
   F6: { linea: 'Visibilidad en IA', veh: 'IA', frase: 'Eso se arregla en el servidor, no en tu sitio. Lo hago yo, con quien lo administra.', borrador: true, alcance: 'Revisar la regla del servidor que rechaza a los agentes de IA.', por_definir: [SIN_PUNTUAL] },
 };
 
@@ -85,10 +92,16 @@ export function enCastellano(c, soporte) {
     case 'F1': return 'Tu formulario pide correo o teléfono y, en tu portada, no encontré ningún enlace a una política de privacidad.';
     case 'F2': return 'En la portada de tu sitio no encontré cómo contactarte: ni formulario, ni teléfono, ni correo, ni WhatsApp.';
     case 'F3': return `El botón de WhatsApp de tu sitio apunta a un número sin código de país (${d.ejemplo || '9XXXXXXXX'}), y WhatsApp pide el formato internacional (56 9 ...).`;
-    case 'F4': return 'No veo ninguna herramienta de medición instalada en tu sitio, ni Google Analytics ni Tag Manager.';
+    case 'F4': return 'No veo Google Analytics ni Tag Manager en tu sitio.';
     case 'F5': { const m = { 'OAI-SearchBot': 'ChatGPT', 'ChatGPT-User': 'ChatGPT', 'PerplexityBot': 'Perplexity', 'Perplexity-User': 'Perplexity', 'Claude-SearchBot': 'Claude', 'Claude-User': 'Claude' };
       const marcas = [...new Set((d.agentes || []).map((a) => m[a]).filter(Boolean))]; return `Tu archivo robots.txt le cierra la puerta a ${lista(marcas)} cuando ${marcas.length === 1 ? 'intenta' : 'intentan'} leer tu sitio.`; }
     case 'F7': return `En tu portada hay ${d.cantidad === 1 ? 'un enlace que lleva' : (d.cantidad || 'varios') + ' enlaces que llevan'} a páginas que no existen (error 404)${d.ejemplo ? `, por ejemplo ${d.ejemplo}` : ''}.`;
+    case 'F9': return `El enlace a tu política de privacidad (o aviso legal) lleva a una página que no existe${d.ejemplo ? `: ${d.ejemplo}` : ''}.`;
+    case 'F10': return 'En la primera pantalla de tu sitio no hay ningún botón para contactarte, cotizar o escribir por WhatsApp.';
+    case 'F11': return d.tipo === 'sin-viewport' ? 'Tu sitio no le dice al celular cómo mostrarse, así que en un teléfono se ve como el de un computador, en miniatura.' : 'En un celular, tu sitio se desborda hacia el lado y obliga a deslizar la pantalla.';
+    case 'F12': return `Tu portada descarga ${d.mb} MB solo al abrirse; en un celular con datos eso tarda.`;
+    case 'F13': return `Tu portada ${(d.tipos || []).map((t) => ({ 'sin-h1': 'no tiene un título principal', 'varios-h1': `tiene ${d.h1} títulos principales en vez de uno`, 'poco-texto': `tiene solo ${d.palabras} palabras de texto` }[t])).join(' y ')}.`;
+    case 'F14': return `Tu formulario de contacto pide ${d.campos} datos o más antes de poder enviarlo.`;
     case 'F8': return 'Tu sitio no le dice a Google ni a la IA qué negocio eres en el formato que ellos leen (datos estructurados).';
     case 'C2': return 'Tu sitio tiene Google Analytics y, desde afuera, no veo que mida otra cosa que visitas: ni consultas, ni llamadas, ni clics a WhatsApp. Si ya lo tienes medido desde tu panel, entonces no aplica.';
     default: return null;

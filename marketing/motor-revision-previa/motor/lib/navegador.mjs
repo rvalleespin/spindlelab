@@ -108,11 +108,15 @@ const JS_DOM = `(() => {
       botones: [...aviso.querySelectorAll('button,a,[role=button]')].map((b) => (b.innerText || '').trim()).filter(Boolean).slice(0, 5),
       implicito: /al continuar navegando|al seguir navegando|continuar navegando|al navegar/i.test(aviso.innerText || '') } : null,
     formularios: [...document.forms].map((f) => ({ action: f.getAttribute('action') || '', accion_abs: (typeof f.action === 'string' ? f.action : (f.getAttribute('action') ? abs(f.getAttribute('action')) : '')), metodo: (f.method || 'get').toLowerCase(),
-      campos: f.querySelectorAll('input:not([type=hidden]):not([type=submit]),textarea,select').length,
+      campos: f.querySelectorAll('input:not([type=hidden]):not([type=submit]):not([type=checkbox]):not([type=radio]),textarea,select').length, requeridos: f.querySelectorAll('[required]').length,
       visible: vis(f), pide_correo_o_tel: !!f.querySelector('input[type=email],input[type=tel],input[name*="mail" i],input[name*="tel" i],input[name*="fono" i]') })),
     enlaces: [...document.querySelectorAll('a[href]')].map((a) => ({ h: a.getAttribute('href') || '', t: (a.innerText || a.textContent || '').trim().slice(0, 80) })).slice(0, 600),
     politica: [...document.querySelectorAll('a[href]')].filter((a) => /privacidad|privacy|cookies|datos\\s*personales|protecci(o|ó)n\\s*de\\s*datos|pol(i|í)tica/i.test((a.getAttribute('href') || '') + ' ' + (a.innerText || ''))).map((a) => ({ h: abs(a.getAttribute('href')), t: (a.innerText || '').trim().slice(0, 60) })).slice(0, 10),
     largo_texto: txt.length, muestra: txt.slice(0, 500),
+    cta_en_pantalla: [...document.querySelectorAll('a,button,[role=button],input[type=submit]')].filter((e) => vis(e)).map((e) => ({ t: ((e.innerText || e.value || '').trim()).slice(0, 50), h: e.getAttribute('href') || '' }))
+      .filter((x) => /^(tel:|mailto:)|wa\\.me|whatsapp/i.test(x.h) || /cotiz|contact|escr[ií]b|whatsapp|llam|agend|reserv|solicit|hablemos|conversemos|comprar|carrito|inscrib|prueba|pide/i.test(x.t)).slice(0, 8),
+    formulario_en_pantalla: [...document.forms].some((f) => vis(f) && f.querySelector('input[type=email],input[type=tel],textarea')),
+    estructura: { h1: document.querySelectorAll('h1').length, h2: document.querySelectorAll('h2').length, palabras: txt.split(/\\s+/).filter(Boolean).length },
   });
 })()`;
 
@@ -139,7 +143,7 @@ export async function sondear(url, { outDir, etiqueta, esperaA = 11000, esperaB 
     const { sessionId } = await cdp.send('Target.attachToTarget', { targetId, flatten: true });
 
     let fase = 'A';
-    const peticiones = [], setCookies = [], porId = new Map();
+    const peticiones = [], setCookies = [], porId = new Map(), bytesPorId = new Map();
     const sesiones = new Set([sessionId]);
     cdp.on(async (m) => {
       if (m.method === 'Target.attachedToTarget') {
@@ -153,6 +157,8 @@ export async function sondear(url, { outDir, etiqueta, esperaA = 11000, esperaB 
         const url = m.params.request.url;
         porId.set(m.params.requestId, url);
         peticiones.push({ fase, url: url.slice(0, 400), metodo: m.params.request.method, tipo: m.params.type, clasif: clasificarPeticion(url) });
+      } else if (m.method === 'Network.loadingFinished') {
+        bytesPorId.set(m.params.requestId, m.params.encodedDataLength || 0);
       } else if (m.method === 'Network.responseReceivedExtraInfo') {
         const sc = m.params.headers?.['set-cookie'] || m.params.headers?.['Set-Cookie'];
         if (sc) for (const linea of String(sc).split('\n')) {
@@ -202,10 +208,51 @@ export async function sondear(url, { outDir, etiqueta, esperaA = 11000, esperaB 
     let html = '';
     try { html = (await cdp.send('Runtime.evaluate', { expression: 'document.documentElement.outerHTML', returnByValue: true }, sessionId)).result.value || ''; } catch {}
     try { await cdp.send('Target.closeTarget', { targetId }); } catch {}
-    return { url, cuando: new Date().toISOString(), A, B, peticiones, setCookies, html_len: html.length, html_ejecutado: html.slice(0, 400000) };
+    const pesos = [...bytesPorId].map(([id, b]) => ({ url: (porId.get(id) || '').slice(0, 160), bytes: b })).sort((x, y) => y.bytes - x.bytes);
+    const peso = { total_bytes: pesos.reduce((a, x) => a + x.bytes, 0), n_peticiones: porId.size, mas_pesados: pesos.slice(0, 4) };
+    return { url, cuando: new Date().toISOString(), A, B, peticiones, setCookies, peso, html_len: html.length, html_ejecutado: html.slice(0, 400000) };
   } finally {
     if (cdp) cdp.cerrar();
     try { proc.kill('SIGKILL'); } catch {}
     try { fs.rmSync(perfil, { recursive: true, force: true }); } catch {}
   }
+}
+
+
+// Corrida MOVIL (390x844, UA de iPhone): carga y espera ~7 s. Mide lo que un visitante con celular ve. Sin clics.
+export async function sondearMovil(url, { outDir, etiqueta, espera = 7000 } = {}) {
+  fs.mkdirSync(outDir, { recursive: true });
+  const perfil = fs.mkdtempSync(path.join(os.tmpdir(), 'motor-chrome-'));
+  const proxy = process.env.HTTPS_PROXY || process.env.https_proxy;
+  const args = ['--headless=new', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage', '--remote-debugging-port=0', `--user-data-dir=${perfil}`, '--no-first-run',
+    ...(proxy ? [`--proxy-server=${proxy}`] : []), 'about:blank'];
+  const proc = spawn(buscarChromium(), args, { stdio: 'ignore' });
+  let cdp;
+  try {
+    const puertoArch = path.join(perfil, 'DevToolsActivePort');
+    for (let i = 0; i < 60 && !fs.existsSync(puertoArch); i++) await dormir(250);
+    const [puerto, ruta] = fs.readFileSync(puertoArch, 'utf8').trim().split('\n');
+    cdp = new CDP(`ws://127.0.0.1:${puerto}${ruta}`); await cdp.listo;
+    const { browserContextId } = await cdp.send('Target.createBrowserContext', { disposeOnDetach: false });
+    const { targetId } = await cdp.send('Target.createTarget', { url: 'about:blank', browserContextId });
+    const { sessionId } = await cdp.send('Target.attachToTarget', { targetId, flatten: true });
+    await cdp.send('Page.enable', {}, sessionId); await cdp.send('Runtime.enable', {}, sessionId);
+    await cdp.send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 2, mobile: true }, sessionId);
+    await cdp.send('Emulation.setUserAgentOverride', { userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1', acceptLanguage: 'es-CL' }, sessionId);
+    await cdp.send('Emulation.setTimezoneOverride', { timezoneId: 'America/Santiago' }, sessionId);
+    await cdp.send('Page.navigate', { url }, sessionId); await dormir(espera);
+    const r = await cdp.send('Runtime.evaluate', { returnByValue: true, expression: `(() => {
+      const vis = (el) => { const r = el.getBoundingClientRect(), s = getComputedStyle(el); return r.width > 20 && r.height > 14 && s.visibility !== 'hidden' && s.display !== 'none' && +s.opacity > 0.05 && r.bottom > 0 && r.top < innerHeight; };
+      const de = document.documentElement;
+      const chicos = [...document.querySelectorAll('p,li,span,a')].filter((e) => (e.innerText || '').trim().length > 20 && vis(e)).map((e) => parseFloat(getComputedStyle(e).fontSize));
+      return JSON.stringify({ ancho_viewport: innerWidth, ancho_contenido: de.scrollWidth, desborde_px: de.scrollWidth - innerWidth, meta_viewport: !!document.querySelector('meta[name=viewport]'),
+        cta_en_pantalla: [...document.querySelectorAll('a,button,[role=button]')].filter((e) => vis(e)).map((e) => ({ t: (e.innerText || '').trim().slice(0, 40), h: e.getAttribute('href') || '' }))
+          .filter((x) => /^(tel:|mailto:)|wa\\.me|whatsapp/i.test(x.h) || /cotiz|contact|escr[ií]b|whatsapp|llam|agend|reserv|solicit|hablemos|conversemos|comprar|inscrib|prueba/i.test(x.t)).length,
+        fuente_minima_px: chicos.length ? Math.min(...chicos) : null, textos_chicos_pct: chicos.length ? Math.round(100 * chicos.filter((x) => x < 12).length / chicos.length) : null });
+    })()` }, sessionId);
+    const datos = JSON.parse(r.result.value);
+    const f = await cdp.send('Page.captureScreenshot', { format: 'jpeg', quality: 55 }, sessionId);
+    const archivo = `${etiqueta}-movil.jpg`; fs.writeFileSync(path.join(outDir, archivo), Buffer.from(f.data, 'base64'));
+    return { ...datos, captura: archivo };
+  } finally { if (cdp) cdp.cerrar(); try { proc.kill('SIGKILL'); } catch {} try { fs.rmSync(perfil, { recursive: true, force: true }); } catch {} }
 }
