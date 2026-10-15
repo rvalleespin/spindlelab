@@ -46,7 +46,10 @@ p { margin: 0; }
 .ref__n { font-family: var(--f-dato); font-size: 1.5rem; font-variant-numeric: tabular-nums; color: var(--gris); min-width: 2ch; }
 .ref__meta { font-family: var(--f-dato); font-size: 0.8125rem; color: var(--gris); overflow-wrap: anywhere; }
 .ref__vistas { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.28fr); gap: 12px; align-items: start; }
-.ref__vistas figure { margin: 0; border: 1px solid var(--filete); border-radius: 4px; overflow: hidden; background: var(--fondo); }
+.ref__vistas figure { margin: 0; display: grid; gap: 6px; }
+.ref__vistas figure a { display: block; border: 1px solid var(--filete); border-radius: 4px; overflow: hidden; background: var(--fondo); }
+.ref__vistas figcaption { font-family: var(--f-dato); font-size: 0.75rem; color: var(--gris); }
+.ref__com textarea::placeholder { color: var(--gris); opacity: 1; }
 .ref__completa summary, .ref__ojo summary { cursor: pointer; font-size: 0.9375rem; color: var(--gris); }
 .ref__ojo p { margin-top: 8px; max-width: 64ch; color: var(--gris); font-size: 0.9375rem; }
 .ref__completa img { margin-top: 10px; max-width: 480px; width: 100%; border: 1px solid var(--filete); border-radius: 4px; }
@@ -64,7 +67,8 @@ p { margin: 0; }
 :focus-visible { outline: 2px solid var(--foco); outline-offset: 2px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 @media (max-width: 640px) {
-  .ref__vistas { grid-template-columns: minmax(0, 1fr) minmax(0, 0.42fr); }
+  .ref__vistas { grid-template-columns: minmax(0, 1fr); }
+  .ref__m { width: min(100%, 300px); }
   .ref__notas div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .ref__voto { grid-template-columns: 1fr 1fr; }
   .ref__com { grid-column: 1 / -1; }
@@ -76,12 +80,14 @@ p { margin: 0; }
 <header class="cab">
   <p class="dato">SpindleLab · E10 · 15-oct-2026 · Lucía, dirección de arte</p>
   <h1>Referentes para el sitio nuevo</h1>
-  <p style="max-width:64ch">12 sitios reales en 4 líneas distintas. Ninguno tiene bandas de color y todos buscan verse cálidos y de confianza. Marca cada uno y, si quieres, deja una línea de por qué: con tus sí y tus no, Lucía arma las dos direcciones.</p>
+  <p style="max-width:64ch">12 sitios reales en 4 líneas distintas. Ninguno usa bandas de color como recurso principal y todos buscan verse cálidos y de confianza. Marca cada uno y, si quieres, deja una línea de por qué: con tus sí y tus no, Lucía arma las dos direcciones.</p>
   <ol>
     <li>Mira las dos capturas: escritorio y teléfono. Abajo está la página completa.</li>
     <li>Toca <b>Sí</b> o <b>No</b>. El comentario es opcional y se guarda solo.</li>
     <li>No hace falta marcar todos: con los que te llamen la atención basta.</li>
   </ol>
+  <p style="max-width:64ch">Un sí es un sí al rasgo que dice «Qué se toma», no al color ni al rubro de ese sitio. Lo que un sitio hace con la escritura no entra: el texto de tu sitio se queda.</p>
+  <p class="dato" style="max-width:64ch">Un dato para elegir: el punto dorado del wordmark (#C9A227) contrasta poco sobre los fondos claros de A, B y C (2,2 a 2,4 a 1) y bien sobre los oscuros de D (5,7 a 7,7 a 1), aunque sobre un negro cálido el dorado tira a mostaza. Se resuelve en el lock.</p>
   <p class="cuenta" aria-live="polite"><span>Marcados <b id="n-marcados">0</b> de 12</span><span>Sí <b id="n-si">0</b></span><span>No <b id="n-no">0</b></span></p>
   <p class="aviso" id="sin-db" hidden>Esta vista no puede guardar tus marcas. Respóndeme en el chat con los números, por ejemplo «sí: 2, 7, 11; no: 5».</p>
   <nav aria-label="Líneas"><ul class="indice"><li><a href="#linea-a">A · Editorial cálida</a></li><li><a href="#linea-b">B · De autor</a></li><li><a href="#linea-c">C · Documento técnico claro</a></li><li><a href="#linea-d">D · Oscura y cálida</a></li></ul></nav>
@@ -95,12 +101,12 @@ p { margin: 0; }
     <span class="ref__n">1</span>
     <div class="ref__nom">
       <h3>Gehl</h3>
-      <p class="ref__meta"><a href="https://gehlpeople.com" target="_blank" rel="noopener">gehlpeople.com</a> · servicios-b2b</p>
+      <p class="ref__meta"><a href="https://gehlpeople.com" target="_blank" rel="noopener">gehlpeople.com</a> · servicios B2B</p>
     </div>
   </header>
   <div class="ref__vistas">
-    <figure class="ref__d"><img src="a/a1-gehl-1440.jpg" alt="Gehl en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></figure>
-    <figure class="ref__m"><img src="a/a1-gehl-390.jpg" alt="Gehl en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></figure>
+    <figure class="ref__d"><a href="a/a1-gehl-1440.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de escritorio de Gehl"><img src="a/a1-gehl-1440.jpg" alt="Gehl en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></a><figcaption>Escritorio · toca para ampliar</figcaption></figure>
+    <figure class="ref__m"><a href="a/a1-gehl-390.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de teléfono de Gehl"><img src="a/a1-gehl-390.jpg" alt="Gehl en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></a><figcaption>Teléfono</figcaption></figure>
   </div>
   <details class="ref__completa"><summary>Ver la página completa</summary><img src="a/a1-gehl-completa.jpg" alt="Gehl, página completa reducida" loading="lazy"></details>
   <dl class="ref__notas">
@@ -121,12 +127,12 @@ p { margin: 0; }
     <span class="ref__n">2</span>
     <div class="ref__nom">
       <h3>The Ready</h3>
-      <p class="ref__meta"><a href="https://www.theready.com" target="_blank" rel="noopener">theready.com</a> · servicios-b2b</p>
+      <p class="ref__meta"><a href="https://www.theready.com" target="_blank" rel="noopener">theready.com</a> · servicios B2B</p>
     </div>
   </header>
   <div class="ref__vistas">
-    <figure class="ref__d"><img src="a/a4-theready-1440.jpg" alt="The Ready en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></figure>
-    <figure class="ref__m"><img src="a/a4-theready-390.jpg" alt="The Ready en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></figure>
+    <figure class="ref__d"><a href="a/a4-theready-1440.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de escritorio de The Ready"><img src="a/a4-theready-1440.jpg" alt="The Ready en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></a><figcaption>Escritorio · toca para ampliar</figcaption></figure>
+    <figure class="ref__m"><a href="a/a4-theready-390.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de teléfono de The Ready"><img src="a/a4-theready-390.jpg" alt="The Ready en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></a><figcaption>Teléfono</figcaption></figure>
   </div>
   <details class="ref__completa"><summary>Ver la página completa</summary><img src="a/a4-theready-completa.jpg" alt="The Ready, página completa reducida" loading="lazy"></details>
   <dl class="ref__notas">
@@ -151,8 +157,8 @@ p { margin: 0; }
     </div>
   </header>
   <div class="ref__vistas">
-    <figure class="ref__d"><img src="a/a5-priyaparker-1440.jpg" alt="Priya Parker en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></figure>
-    <figure class="ref__m"><img src="a/a5-priyaparker-390.jpg" alt="Priya Parker en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></figure>
+    <figure class="ref__d"><a href="a/a5-priyaparker-1440.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de escritorio de Priya Parker"><img src="a/a5-priyaparker-1440.jpg" alt="Priya Parker en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></a><figcaption>Escritorio · toca para ampliar</figcaption></figure>
+    <figure class="ref__m"><a href="a/a5-priyaparker-390.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de teléfono de Priya Parker"><img src="a/a5-priyaparker-390.jpg" alt="Priya Parker en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></a><figcaption>Teléfono</figcaption></figure>
   </div>
   <details class="ref__completa"><summary>Ver la página completa</summary><img src="a/a5-priyaparker-completa.jpg" alt="Priya Parker, página completa reducida" loading="lazy"></details>
   <dl class="ref__notas">
@@ -177,12 +183,12 @@ p { margin: 0; }
     <span class="ref__n">4</span>
     <div class="ref__nom">
       <h3>Nick Parker</h3>
-      <p class="ref__meta"><a href="https://nickparker.co.uk/" target="_blank" rel="noopener">nickparker.co.uk</a> · servicios-b2b</p>
+      <p class="ref__meta"><a href="https://nickparker.co.uk/" target="_blank" rel="noopener">nickparker.co.uk</a> · servicios B2B</p>
     </div>
   </header>
   <div class="ref__vistas">
-    <figure class="ref__d"><img src="b/b1-nickparker-1440.jpg" alt="Nick Parker en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></figure>
-    <figure class="ref__m"><img src="b/b1-nickparker-390.jpg" alt="Nick Parker en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></figure>
+    <figure class="ref__d"><a href="b/b1-nickparker-1440.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de escritorio de Nick Parker"><img src="b/b1-nickparker-1440.jpg" alt="Nick Parker en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></a><figcaption>Escritorio · toca para ampliar</figcaption></figure>
+    <figure class="ref__m"><a href="b/b1-nickparker-390.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de teléfono de Nick Parker"><img src="b/b1-nickparker-390.jpg" alt="Nick Parker en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></a><figcaption>Teléfono</figcaption></figure>
   </div>
   <details class="ref__completa"><summary>Ver la página completa</summary><img src="b/b1-nickparker-completa.jpg" alt="Nick Parker, página completa reducida" loading="lazy"></details>
   <dl class="ref__notas">
@@ -207,8 +213,8 @@ p { margin: 0; }
     </div>
   </header>
   <div class="ref__vistas">
-    <figure class="ref__d"><img src="b/b3-stefaner-1440.jpg" alt="Moritz Stefaner · Truth &amp; Beauty en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></figure>
-    <figure class="ref__m"><img src="b/b3-stefaner-390.jpg" alt="Moritz Stefaner · Truth &amp; Beauty en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></figure>
+    <figure class="ref__d"><a href="b/b3-stefaner-1440.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de escritorio de Moritz Stefaner · Truth &amp; Beauty"><img src="b/b3-stefaner-1440.jpg" alt="Moritz Stefaner · Truth &amp; Beauty en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></a><figcaption>Escritorio · toca para ampliar</figcaption></figure>
+    <figure class="ref__m"><a href="b/b3-stefaner-390.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de teléfono de Moritz Stefaner · Truth &amp; Beauty"><img src="b/b3-stefaner-390.jpg" alt="Moritz Stefaner · Truth &amp; Beauty en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></a><figcaption>Teléfono</figcaption></figure>
   </div>
   <details class="ref__completa"><summary>Ver la página completa</summary><img src="b/b3-stefaner-completa.jpg" alt="Moritz Stefaner · Truth &amp; Beauty, página completa reducida" loading="lazy"></details>
   <dl class="ref__notas">
@@ -233,8 +239,8 @@ p { margin: 0; }
     </div>
   </header>
   <div class="ref__vistas">
-    <figure class="ref__d"><img src="b/b4-asbury-1440.jpg" alt="Nick Asbury en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></figure>
-    <figure class="ref__m"><img src="b/b4-asbury-390.jpg" alt="Nick Asbury en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></figure>
+    <figure class="ref__d"><a href="b/b4-asbury-1440.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de escritorio de Nick Asbury"><img src="b/b4-asbury-1440.jpg" alt="Nick Asbury en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></a><figcaption>Escritorio · toca para ampliar</figcaption></figure>
+    <figure class="ref__m"><a href="b/b4-asbury-390.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de teléfono de Nick Asbury"><img src="b/b4-asbury-390.jpg" alt="Nick Asbury en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></a><figcaption>Teléfono</figcaption></figure>
   </div>
   <details class="ref__completa"><summary>Ver la página completa</summary><img src="b/b4-asbury-completa.jpg" alt="Nick Asbury, página completa reducida" loading="lazy"></details>
   <dl class="ref__notas">
@@ -259,8 +265,8 @@ p { margin: 0; }
     </div>
   </header>
   <div class="ref__vistas">
-    <figure class="ref__d"><img src="b/b2-santamaria-1440.jpg" alt="Jason Santa Maria en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></figure>
-    <figure class="ref__m"><img src="b/b2-santamaria-390.jpg" alt="Jason Santa Maria en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></figure>
+    <figure class="ref__d"><a href="b/b2-santamaria-1440.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de escritorio de Jason Santa Maria"><img src="b/b2-santamaria-1440.jpg" alt="Jason Santa Maria en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></a><figcaption>Escritorio · toca para ampliar</figcaption></figure>
+    <figure class="ref__m"><a href="b/b2-santamaria-390.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de teléfono de Jason Santa Maria"><img src="b/b2-santamaria-390.jpg" alt="Jason Santa Maria en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></a><figcaption>Teléfono</figcaption></figure>
   </div>
   <details class="ref__completa"><summary>Ver la página completa</summary><img src="b/b2-santamaria-completa.jpg" alt="Jason Santa Maria, página completa reducida" loading="lazy"></details>
   <dl class="ref__notas">
@@ -289,8 +295,8 @@ p { margin: 0; }
     </div>
   </header>
   <div class="ref__vistas">
-    <figure class="ref__d"><img src="c/c4-inkandswitch-1440.jpg" alt="Ink &amp; Switch · «Local-first software» en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></figure>
-    <figure class="ref__m"><img src="c/c4-inkandswitch-390.jpg" alt="Ink &amp; Switch · «Local-first software» en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></figure>
+    <figure class="ref__d"><a href="c/c4-inkandswitch-1440.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de escritorio de Ink &amp; Switch · «Local-first software»"><img src="c/c4-inkandswitch-1440.jpg" alt="Ink &amp; Switch · «Local-first software» en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></a><figcaption>Escritorio · toca para ampliar</figcaption></figure>
+    <figure class="ref__m"><a href="c/c4-inkandswitch-390.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de teléfono de Ink &amp; Switch · «Local-first software»"><img src="c/c4-inkandswitch-390.jpg" alt="Ink &amp; Switch · «Local-first software» en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></a><figcaption>Teléfono</figcaption></figure>
   </div>
   <details class="ref__completa"><summary>Ver la página completa</summary><img src="c/c4-inkandswitch-completa.jpg" alt="Ink &amp; Switch · «Local-first software», página completa reducida" loading="lazy"></details>
   <dl class="ref__notas">
@@ -315,8 +321,8 @@ p { margin: 0; }
     </div>
   </header>
   <div class="ref__vistas">
-    <figure class="ref__d"><img src="c/c6-webalmanac-1440.jpg" alt="Web Almanac de HTTP Archive · capítulo SEO 2022, en castellano en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></figure>
-    <figure class="ref__m"><img src="c/c6-webalmanac-390.jpg" alt="Web Almanac de HTTP Archive · capítulo SEO 2022, en castellano en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></figure>
+    <figure class="ref__d"><a href="c/c6-webalmanac-1440.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de escritorio de Web Almanac de HTTP Archive · capítulo SEO 2022, en castellano"><img src="c/c6-webalmanac-1440.jpg" alt="Web Almanac de HTTP Archive · capítulo SEO 2022, en castellano en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></a><figcaption>Escritorio · toca para ampliar</figcaption></figure>
+    <figure class="ref__m"><a href="c/c6-webalmanac-390.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de teléfono de Web Almanac de HTTP Archive · capítulo SEO 2022, en castellano"><img src="c/c6-webalmanac-390.jpg" alt="Web Almanac de HTTP Archive · capítulo SEO 2022, en castellano en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></a><figcaption>Teléfono</figcaption></figure>
   </div>
   <details class="ref__completa"><summary>Ver la página completa</summary><img src="c/c6-webalmanac-completa.jpg" alt="Web Almanac de HTTP Archive · capítulo SEO 2022, en castellano, página completa reducida" loading="lazy"></details>
   <dl class="ref__notas">
@@ -334,19 +340,19 @@ p { margin: 0; }
 </section>
 
 <section class="linea" id="linea-d">
-  <div class="linea__cab"><p class="linea__k">Línea D</p><h2>Oscura y cálida</h2><p class="linea__tesis">Lo oscuro como penumbra y no como pantalla: casi negro con algo de temperatura, texto a peso normal o ligero y una idea a la vez. Lectura honesta: en estas capturas el oscuro se ve más tibio que cálido. El pardo de Olson (11) apenas asoma, el carbón de Selendy (10) tira a frío y el verde de Hoare (12) está cerca del petróleo que marcaste. Si esta línea te gusta, el tablero de la compuerta tiene que probar un oscuro cálido de verdad antes de construir.</p><p class="linea__nota">Si marcas 1 (Gehl) y 11 (Olson Kundig), no es lo mismo: un sí a 1 es la foto de gente usando lo hecho como carga de la página, sobre claro; un sí a 11 es la home contada frase a frase sobre oscuro, y la foto que va debajo no entra.</p></div>
+  <div class="linea__cab"><p class="linea__k">Línea D</p><h2>Oscura y cálida</h2><p class="linea__tesis">Lo oscuro como penumbra y no como pantalla: casi negro con algo de temperatura, texto a peso normal o ligero y una idea a la vez. Lectura honesta: en estas capturas el oscuro se ve más tibio que cálido. El pardo de Olson (11) apenas asoma, el carbón de Selendy (10) tira a frío y el verde de Hoare (12) está cerca del petróleo que marcaste. Si esta línea te gusta, el tablero de la compuerta tiene que probar un oscuro cálido de verdad antes de construir.</p><p class="linea__nota">Si marcas 1 (Gehl) y 11 (Olson Kundig), no es lo mismo: un sí a 1 es la foto de gente usando lo hecho como carga de la página, sobre claro; un sí a 11 es una frase grande por pantalla sobre el pardo oscuro. De 11 no entran la foto de debajo ni su forma de escribir la home: el texto de tu sitio se queda.</p></div>
   
 <article class="ref" id="r10" data-id="d3-selendygay">
   <header class="ref__cab">
     <span class="ref__n">10</span>
     <div class="ref__nom">
       <h3>Selendy Gay</h3>
-      <p class="ref__meta"><a href="https://www.selendygay.com" target="_blank" rel="noopener">selendygay.com</a> · servicios-b2b</p>
+      <p class="ref__meta"><a href="https://www.selendygay.com" target="_blank" rel="noopener">selendygay.com</a> · servicios B2B</p>
     </div>
   </header>
   <div class="ref__vistas">
-    <figure class="ref__d"><img src="d/d3-selendygay-1440.jpg" alt="Selendy Gay en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></figure>
-    <figure class="ref__m"><img src="d/d3-selendygay-390.jpg" alt="Selendy Gay en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></figure>
+    <figure class="ref__d"><a href="d/d3-selendygay-1440.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de escritorio de Selendy Gay"><img src="d/d3-selendygay-1440.jpg" alt="Selendy Gay en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></a><figcaption>Escritorio · toca para ampliar</figcaption></figure>
+    <figure class="ref__m"><a href="d/d3-selendygay-390.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de teléfono de Selendy Gay"><img src="d/d3-selendygay-390.jpg" alt="Selendy Gay en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></a><figcaption>Teléfono</figcaption></figure>
   </div>
   <details class="ref__completa"><summary>Ver la página completa</summary><img src="d/d3-selendygay-completa.jpg" alt="Selendy Gay, página completa reducida" loading="lazy"></details>
   <dl class="ref__notas">
@@ -371,15 +377,15 @@ p { margin: 0; }
     </div>
   </header>
   <div class="ref__vistas">
-    <figure class="ref__d"><img src="d/d1-olsonkundig-1440.jpg" alt="Olson Kundig en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></figure>
-    <figure class="ref__m"><img src="d/d1-olsonkundig-390.jpg" alt="Olson Kundig en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></figure>
+    <figure class="ref__d"><a href="d/d1-olsonkundig-1440.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de escritorio de Olson Kundig"><img src="d/d1-olsonkundig-1440.jpg" alt="Olson Kundig en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></a><figcaption>Escritorio · toca para ampliar</figcaption></figure>
+    <figure class="ref__m"><a href="d/d1-olsonkundig-390.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de teléfono de Olson Kundig"><img src="d/d1-olsonkundig-390.jpg" alt="Olson Kundig en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></a><figcaption>Teléfono</figcaption></figure>
   </div>
   <details class="ref__completa"><summary>Ver la página completa</summary><img src="d/d1-olsonkundig-completa.jpg" alt="Olson Kundig, página completa reducida" loading="lazy"></details>
   <dl class="ref__notas">
     <div><dt>Qué se toma</dt><dd>Una frase grande por pantalla, abajo a la izquierda (Inter 500, 48 px), con mucho aire y sobre el pardo #181213, que tira a madera quemada. La forma de contar la home frase a frase es escritura y no se toma: en tu sitio irían frases que ya existen.</dd></div>
-    <div><dt>Por qué se siente cálido</dt><dd>Habla en plural de cómo trabajan («We embrace the tension…», «We believe…»), a una idea por vez y sin cifras ni promesas, y el negro del sitio es un pardo #181213 que tira a madera quemada y no a pantalla (se ve en el pie y mientras cargan los videos).</dd></div>
+    <div><dt>Por qué se siente cálido</dt><dd>Una idea por pantalla, con mucho aire y sin gritos tipográficos, y el negro del sitio es un pardo #181213 que tira a madera quemada y no a pantalla (se ve en el pie y mientras cargan los videos).</dd></div>
   </dl>
-  <details class="ref__ojo"><summary>Lo que no se toma y los riesgos</summary><p>Es un estudio de arquitectura y en el sitio real cada frase va sobre un video a sangre, así que su primera pantalla se parece a la de 1 · Gehl: lo que se toma es el relato, no la imagen. En SpindleLab las frases irían sobre el pardo liso o sobre las piezas reales de E9, y hay que comprobar en el tablero que siete frases sin foto no se lean vacías. Comparte con 4 · Nick Parker la prosa que hace de menú; lo propio de 11 es el ritmo, una frase grande por pantalla y en plural, frente al párrafo único en primera persona de Nick Parker. Se capturó en el modo sin movimiento, en el que el propio sitio muestra fotos fijas y el encabezado pasa a blanco. Lo que este sitio hace con la escritura no entra: el texto de tu sitio se queda como está.</p></details>
+  <details class="ref__ojo"><summary>Lo que no se toma y los riesgos</summary><p>Es un estudio de arquitectura y en el sitio real cada frase va sobre un video a sangre, así que su primera pantalla se parece a la de 1 · Gehl: lo que se toma es la frase grande sobre el pardo, no la imagen. En SpindleLab las frases irían sobre el pardo liso o sobre las piezas reales de E9, y hay que comprobar en el tablero que siete frases sin foto no se lean vacías. Comparte con 4 · Nick Parker la prosa que hace de menú; lo propio de 11 es el ritmo visual, una frase grande por pantalla, frente a la página corta de Nick Parker. Se capturó en el modo sin movimiento, en el que el propio sitio muestra fotos fijas y el encabezado pasa a blanco. Lo que este sitio hace con la escritura no entra: el texto de tu sitio se queda como está.</p></details>
   <div class="ref__voto" role="group" aria-label="Tu marca para el 11">
     <button type="button" class="v" data-v="si" aria-pressed="false">Sí</button>
     <button type="button" class="v" data-v="no" aria-pressed="false">No</button>
@@ -397,12 +403,12 @@ p { margin: 0; }
     </div>
   </header>
   <div class="ref__vistas">
-    <figure class="ref__d"><img src="d/d6-hoare-1440.jpg" alt="C. Hoare &amp; Co. en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></figure>
-    <figure class="ref__m"><img src="d/d6-hoare-390.jpg" alt="C. Hoare &amp; Co. en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></figure>
+    <figure class="ref__d"><a href="d/d6-hoare-1440.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de escritorio de C. Hoare &amp; Co."><img src="d/d6-hoare-1440.jpg" alt="C. Hoare &amp; Co. en escritorio, primera pantalla" loading="lazy" width="1440" height="900"></a><figcaption>Escritorio · toca para ampliar</figcaption></figure>
+    <figure class="ref__m"><a href="d/d6-hoare-390.jpg" target="_blank" rel="noopener" aria-label="Ampliar la captura de teléfono de C. Hoare &amp; Co."><img src="d/d6-hoare-390.jpg" alt="C. Hoare &amp; Co. en teléfono, primera pantalla" loading="lazy" width="780" height="1688"></a><figcaption>Teléfono</figcaption></figure>
   </div>
   <details class="ref__completa"><summary>Ver la página completa</summary><img src="d/d6-hoare-completa.jpg" alt="C. Hoare &amp; Co., página completa reducida" loading="lazy"></details>
   <dl class="ref__notas">
-    <div><dt>Qué se toma</dt><dd>El primer pantallazo partido: mitad verde casi negro rgb(0,51,46) con el titular en serif Trirong de 51,8 px a peso 300, en mayúsculas, y mitad foto de un salón con luz de lámpara y de ventana.</dd></div>
+    <div><dt>Qué se toma</dt><dd>El verde casi negro rgb(0,51,46) con el titular en una serif ligera (Trirong, 51,8 px, peso 300) y, a su lado, una foto con luz de lámpara sobre madera y tela. La partición de la pantalla en dos mitades no se toma.</dd></div>
     <div><dt>Por qué se siente cálido</dt><dd>El verde casi negro tira a bosque y no a pantalla, el titular va en una serif ligera y no en una grotesca gruesa, y la foto de al lado es luz de lámpara sobre madera y tela. Más abajo muestra a la familia socia en su oficina: no promete, muestra a quién responde.</dd></div>
   </dl>
   <details class="ref__ojo"><summary>Lo que no se toma y los riesgos</summary><p>El dorado no se toma. Hoare lo usa como acento de rótulos: el antetítulo «Private Banking» es texto dorado rgb(163,135,71), la flecha ↘ también, y más abajo los rótulos «Who we are» y «Services» van en dorado rgb(137,111,17), con más flechas. Ya en la primera pantalla hay dos oros. Esa no es la regla de SpindleLab, que usa un solo oro por vista, en el punto del wordmark, y nunca en texto. Verde profundo con dorado y serif en mayúsculas es el cliché de la banca privada; mal llevado suena a lujo antiguo para una consultora de una persona. Ese verde está cerca del petróleo de driftime que marcaste: aquí es un solo color de marca, no un sistema de campos. Bajo el primer pantallazo el sitio es blanco y crema con bloques verdes. Es banca privada (YMYL), no servicios B2B. Se toma solo el primer pantallazo, aunque debajo el sitio sea claro: es la excepción a la regla que dejó fuera a otros sitios con solo el hero oscuro, porque es el único ejemplo vivo de un verde casi negro con luz de lámpara. La partición titular a la izquierda y foto a la derecha es un recurso muy visto: no es lo que se toma.</p></details>
@@ -438,17 +444,19 @@ p { margin: 0; }
     document.getElementById('sin-db').hidden = false;
     tarjetas.forEach(t => { t.querySelectorAll('.v, textarea').forEach(el => el.disabled = true); });
   }
+  tarjetas.forEach(t => t.querySelectorAll('.v, textarea').forEach(el => el.disabled = true));
   const pUse = window.claude && window.claude.use ? window.claude.use('db') : Promise.resolve(null);
   pUse.then(async (db) => {
     if (!db) return sinGuardar();
     let puede = null;
     try { const u = await window.claude.use('user'); puede = u ? await u.can('data.write') : null; } catch (e) {}
     if (puede === false) return sinGuardar();
+    tarjetas.forEach(t => t.querySelectorAll('.v, textarea').forEach(el => el.disabled = false));
     const col = db.collection('marcas');
     col.onSnapshot((snap) => {
       for (const d of snap.docs) estado[d.id] = d.data() || {};
       pintar();
-    }, () => {});
+    }, () => { const a = document.getElementById('sin-db'); a.textContent = 'Se cortó la conexión con tus marcas. Recarga la página; si sigue, respóndeme en el chat con los números.'; a.hidden = false; });
     const enCurso = {};
     async function guardar(id, cambio, nota) {
       const t = tarjetas.find(x => x.dataset.id === id);

@@ -1,3 +1,148 @@
+# Acta de QA · SpindleLab v3 · E10, selección de referentes · ronda 3 (la última interna)
+
+> La escribe Javiera (`/web-qa-critico`) en contexto limpio: subagente nuevo, no escuchó a
+> Lucía ni al orquestador. Leyó el plan `dazzling-snacking-river.md`, las rondas 1 y 2 (abajo),
+> `referentes.json`, `referentes.md`, `referentes.html`, `files.json`, las capturas nuevas de
+> Priya Parker, el manual de marca (§02 y §04) y el contrato de Artifact (`artifact-design` y
+> `artifact-capabilities`, `db.d.ts`, `user.d.ts`, `claude.d.ts`, contrato 0.2.80).
+
+**Fecha:** 15-oct-2026 · **Rama:** `claude/magical-franklin-ckfki2`, HEAD `c6be9ff` (la carpeta `e10/` entró en ese commit mientras se auditaba; lo auditado es idéntico a él: `git diff HEAD` sobre `e10/` solo muestra esta acta) · **Ronda previa:** ronda 2, con reparos (2 mayores, 9 menores)
+
+**Qué se audita:** los 11 cierres que declara el orquestador, la coincidencia entre JSON, md y página, que el md no haya perdido secciones, y por primera vez `referentes.html`: contrato de Artifact, desborde, imágenes, contraste, foco y el script de `db`. **No entra:** los registros del paso 1 (`spec-visual.md` §7, `lock-driftime.md`, `pendientes-traspaso-revisados.md`).
+
+## Veredicto
+
+**APROBADO CON REPAROS.**
+
+La selección quedó bien cerrada **en el md**: el defecto 2 de la ronda 2 se resolvió por la vía (b) con una lectura honesta que ahora tiene Ramón delante, y de los 9 menores, 7 están cerrados con evidencia y 2 a medias (5 y 7). La página cumple el contrato de Artifact entero, no desborda en ninguna de las 15 combinaciones medidas, carga sus 36 imágenes y su script de `db` pasa todas las pruebas del contrato con un `db` simulado.
+
+Quedan **2 mayores**, los dos baratos:
+
+1. **La página que va a ver Ramón no lleva todas las correcciones del md.** La definición vieja de «un sí a 11» («la home contada frase a frase») sigue en el JSON y en la página, y el riesgo de la 11 sigue diciendo «lo que se toma es el relato». Es el defecto 1 de la ronda 2, vivo en la ronda 3.
+2. **En el teléfono las capturas no se pueden leer**: la de escritorio sale al 14,9 % de su tamaño y la del teléfono al 22,8 %, y no hay cómo ampliarlas. Los rasgos de la línea C y la letra de la B no se ven.
+
+**Diagnóstico del defecto que sigue vivo (regla de la tercera ronda).** No es un problema del brief ni de la selección. La selección vive en tres copias hechas a mano (md, JSON y página), sin un generador, y cada corrección quedó en una sola copia. Por eso no hace falta una ronda 4: los dos mayores se cierran **antes de publicar** y el cierre se comprueba con los comandos del final de esta ronda. Si esos comandos no salen limpios, la página no se publica y esto sube a Ramón con este diagnóstico.
+
+## Los cierres de la ronda 2, uno por uno
+
+| # R2 | Qué era | Estado | Evidencia |
+|---|---|---|---|
+| 1 · mayor | 4, 5, 6 y 11 ofrecían una forma de escribir | **Cerrado en 4, 5 y 6. A medias en 11.** El «qué se toma» de las cuatro ya toma solo lo que se ve, y cada una dice «el texto de tu sitio se queda». En el md la definición de «un sí a 11» está corregida (líneas 30-36). Pero en la misma tarjeta 11 el riesgo dice «lo que se toma es el relato, no la imagen» y «lo propio de 11 es el ritmo, una frase grande por pantalla y en plural»; su «por qué cálido» se apoya en las frases («Habla en plural… "We believe…"»). Y la nota de la línea D en el JSON y en la página sigue con la definición vieja: «un sí a 11 es la home contada frase a frase sobre oscuro» | `grep -c "home contada frase a frase\|lo que se toma es el relato"`: JSON 2, md 1, página 2 |
+| 2 · mayor | La línea D no mostraba un oscuro cálido | **Cerrado, vía (b).** La tesis dice «en estas capturas el oscuro se ve más tibio que cálido», nombra los tres oscuros con su lectura (pardo que apenas asoma, carbón que tira a frío, verde cerca del petróleo) y que el tablero tiene que probar un oscuro cálido. El «por qué cálido» de 10 ya no se apoya en el oscuro. Igual en JSON, md y página. Con esto el diagnóstico que la ronda 2 pedía subir a Ramón ya está delante de él | `referentes.md` línea 125; JSON `lineas[3].tesis`; página línea 337 |
+| 3 | Selendy: retrato a color y coral | **Cerrado.** «La imaginería principal» (ya no «la única»), el retrato a color y el coral `rgb(239,72,82)` declarados como no tomados, en los tres archivos | JSON 10 |
+| 4 | Olson: «con gente» | **Cerrado.** «en Olson, una bahía con un ferry» | md línea 32 |
+| 5 | Dato del punto dorado | **Cerrado en el md, ausente en la página.** Las cifras calzan con la ronda 2. Falta la mitad que importa a D: el manual dice que un negro cálido tira el dorado a mostaza (§04, línea 123). Y en `referentes.html` no aparece (`grep C9A227` → 0) | md línea 11 (ver defecto 1) |
+| 6 | Hoare, excepción sin explicar | **Cerrado.** «es la excepción… porque es el único ejemplo vivo de un verde casi negro con luz de lámpara» | JSON 12, riesgo |
+| 7 | Partición izquierda y derecha | **A medias.** La frase «no es lo que se toma» está en 2, 3 y 12, pero el «qué se toma» de 12 sigue siendo «el primer pantallazo partido: mitad verde… y mitad foto» (defecto 3) | JSON 12 |
+| 8 | Línea B de oficios creativos | **Cerrado.** «Los cuatro son de oficios creativos… mira el rasgo, no el rubro», en los tres archivos | tesis B |
+| 9 | URL de Ink & Switch | **Cerrado.** `https://www.inkandswitch.com/essay/local-first/` en JSON, md y página; da 200, 111.169 bytes, `<title>` «Local-first software…» | curl, abajo |
+| 10 | Asbury, letra de la captura | **Cerrado.** «en las capturas la serif que se ve no es Georgia» (va en el riesgo, no en la nota; vale igual) | JSON 6 |
+| 11 | Barra naranja de Priya Parker | **Cerrado.** 1440 y 390 rehechas (archivos de las 18:50 UTC, que son las 15:50 de Chile que dice la nota); ninguna muestra la barra. La de 1440 es idéntica a la de comprobación de la ronda 2. La completa la sigue mostrando, y la nota lo dice | Read de `a/a5-priyaparker-1440.jpg` y `-390.jpg` contra `../qa-referentes/ronda-2/priya-sin-barra-1440.jpg` |
+
+**JSON contra md:** los 12 `que_se_toma`, `por_que_calido`, `riesgo` y `url` y las 4 tesis son idénticos (comprobado con Python). Difieren la nota de D (vieja en el JSON, corregida en el md) y la de C (el md agrega la frase de Trail of Bits, que no cambia el sentido). **El md no perdió nada:** 12 tarjetas, 4 tesis, «Cómo se diferencian», «Qué significa un sí a 1 y un sí a 11», «Cómo se armó», «Cambios de la ronda 2» y los descartes completos al final.
+
+## Cómo se verificó
+
+- **URL:** `curl -sL` a las 12, 15-oct 18:55 UTC: las 12 dan **200** con su `<title>`. Ojo para quien repita: con `-A "Mozilla/5.0"` Olson Kundig devuelve 403 «Attention Required! | Cloudflare» (Cloudflare rechaza un agente que dice ser navegador y no lo es); con el agente de curl por defecto da 200 y 653.821 bytes, como en la ronda 2. No es un bloqueo nuevo.
+- **Página:** servida con `python3 -m http.server` y medida con Playwright y Chromium 1194 en dos modos: el archivo crudo (como se pidió) y envuelto en el esqueleto que pone el Artifact al publicar (doctype, charset y viewport con `viewport-fit=cover`), que además quita el mojibake. Script `../qa-referentes/ronda-3/pagina-r3.mjs`, resultado en `medicion-r3.json`.
+- **Tamaño real de las capturas en el teléfono:** `tamano-capturas.mjs` (390 × 844, DPR 3, modo móvil). Recorte: `tarjeta12-390-dpr3.png`.
+- **Capturas de la página:** `pagina-{390,768,1440}-{light,dark}.png` y `pagina-390-con-marcas.png` (con el `db` simulado), en `../qa-referentes/ronda-3/`.
+- **Coincidencia de archivos:** Python sobre JSON, md, página y `files.json`.
+- **`git diff` sobre `spindlelab-astro/`:** vacío.
+
+## La página contra el contrato de Artifact
+
+| Regla | Resultado |
+|---|---|
+| Sin `<!doctype>`, `<html>`, `<head>` ni `<body>` | **Cumple.** Ninguna de las cuatro etiquetas; abre con `<title>` |
+| `<title>` de 2 a 4 palabras, un nombre | **Cumple.** «Referentes del sitio», el nombre que fija el plan |
+| `claude:viewport-fit-sides` junto con el gutter | **Cumple.** La meta va al lado del título y `.envoltorio` lleva `padding-left/right: max(16px, env(safe-area-inset-left/right, 0px))` con `padding-block` aparte |
+| Colores como tokens en `:root`, oscuro bajo `@media (prefers-color-scheme: dark)` con `:root:not([data-theme="light"])` y bajo `:root[data-theme="dark"]` | **Cumple.** 10 tokens de color definidos primero en `:root`, redefinidos iguales en los dos bloques oscuros con `color-scheme: dark`. Ningún color literal fuera de `:root` |
+| `body` con fondo | **Cumple.** `background: var(--fondo)` |
+| Hojas externas solo de Google Fonts; ningún otro host | **Cumple.** Una hoja de `fonts.googleapis.com` (Newsreader, IBM Plex Sans y Mono, cada una con su respaldo), cero `<script src>`. Los otros hosts que aparecen son los 12 enlaces `<a href>` a los sitios, que abren afuera |
+| `files.json` | **Cumple.** 36 rutas relativas, las mismas 36 que pide la página, todas en disco; 5,10 MB en total. Página 44 KB |
+| Movimiento reducido, foco visible, `id` estable en cada campo | **Cumple.** `prefers-reduced-motion`, `:focus-visible` de 2 px y `id` en las 12 áreas de texto |
+
+## Mediciones de la página
+
+| Qué | Resultado |
+|---|---|
+| Desborde horizontal | `scrollWidth == clientWidth` en las **15** combinaciones: crudo a 390, 768 y 1440; con esqueleto a 390, 768 y 1440 en claro y en oscuro. Igual con los 24 `<details>` cerrados y abiertos. Ningún elemento sale del ancho |
+| Imágenes | **36 de 36** cargadas en todas las combinaciones; `width` y `height` en las 24 de primera pantalla, que coinciden con el archivo (1440 × 900 y 780 × 1688) |
+| Contraste | Texto mínimo **6,06:1** en claro (`--gris` sobre `--fondo`) y **6,50:1** en oscuro. Excepción: el placeholder de los comentarios usa el gris por defecto del navegador `#757575`: **4,08:1** en claro y **3,92:1** en oscuro (defecto 5) |
+| Encabezados | Un `h1`, un `h2` por línea, un `h3` por tarjeta; `main` y `nav` reales |
+| Tab | En modo sin guardar (botones y áreas deshabilitadas, que no reciben foco), 14 pasos en orden: el índice de líneas y luego, por tarjeta, enlace, «Ver la página completa» y «Lo que no se toma y los riesgos». Los 14 con contorno sólido de 2 px |
+| Tamaño de las capturas a 390 | Escritorio **215 px** de ancho (14,9 %), teléfono **89 px** (22,8 %), cero enlaces para ampliarlas (defecto 2) |
+
+### El script de `db`, contra el contrato
+
+Probado con un `db` simulado que se comporta como dice `db.d.ts` (instantánea al suscribirse, escritura propia visible al tiro, confirmación a los 300 ms):
+
+| Regla del contrato | Resultado |
+|---|---|
+| `await window.claude.use('db')`; `null` → modo sin guardar | **Cumple.** Sin `window.claude`: aviso visible, los 24 botones y las 12 áreas de texto deshabilitados, cero errores de consola |
+| `can('data.write')`: `false` deja sin guardar, `null` mantiene los controles | **Cumple.** Con `false`: cero suscripciones, cero escrituras, aviso visible. Con `null`: controles activos |
+| Suscripción una sola vez | **Cumple.** 1 `onSnapshot` sobre `marcas`, fuera del pintado. Una marca ya guardada (11, sí, con comentario) se pinta al cargar y la cuenta queda en 1 |
+| Nada de escritura al cargar | **Cumple.** 0 escrituras en 2 s |
+| Una escritura a la vez por documento | **Cumple.** Doble clic rápido en el 2: dos `set` en fila, el segundo después de confirmar el primero; máximo en vuelo por documento, 1. Comentario en el 4 y clic inmediato en «No»: dos `set` en fila y el segundo conserva el comentario |
+| Solo cuando cambia, agrupando ráfagas | **Cumple.** Un comentario escrito da 1 `set` tras la pausa de 1,2 s; salir del campo sin cambiarlo da 0 |
+| `invalid_argument` → solo lectura | **Cumple.** Pasa a modo sin guardar con «Esta vista no puede guardar. Respóndeme por el chat.» |
+| Error de la suscripción | **No se maneja** (defecto 6) |
+
+Para el publicador: la página necesita `capabilities: {db: {}}` (`can()` no pide declarar `user`). Los documentos se llaman como el `id` de la tarjeta (`a1-gehl`), no por su número; el JSON tiene los dos para cruzarlos al leer las marcas.
+
+## Defectos
+
+Ninguno bloqueante.
+
+| # | Sev. | Dónde | Qué está mal | Contra qué | Cómo se reproduce | Cómo se cierra |
+|---|---|---|---|---|---|---|
+| 1 | **mayor** | `referentes.html` y `referentes.json` (y la tarjeta 11 también en el md) | La página que va a ver Ramón no lleva las correcciones del md. **(a)** La nota de la línea D define «un sí a 11» como «la home contada frase a frase sobre oscuro»: la definición que la ronda 2 pidió corregir. **(b)** El riesgo de 11 dice «lo que se toma es el relato, no la imagen», «lo propio de 11 es el ritmo, una frase grande por pantalla y en plural» y «Comparte con 4 · Nick Parker la prosa que hace de menú», y su «por qué cálido» se apoya en las frases del sitio: la tarjeta se contradice con su propio «qué se toma». **(c)** La página no tiene la introducción del md: «un sí es un sí al rasgo, no al color ni al rubro», «el texto de tu sitio se queda» (en la página solo está dentro de cuatro desplegables cerrados) ni el dato del punto dorado. Con (a) y (b), un sí a 11 en la página sigue siendo un sí a reescribir la home | Ronda 2, defecto 1 y menor 5; plan: «El texto se queda… Solo cambia cómo se ve» | `grep -c "home contada frase a frase\|lo que se toma es el relato" referentes.*` → JSON 2, md 1, html 2 · `grep -c C9A227 referentes.html` → 0 | Reemplazar la nota D en el JSON y en la página por la definición del md (líneas 34-36). En la tarjeta 11, en los tres archivos: «lo que se toma es la frase grande sobre el pardo, no la imagen ni el relato»; quitar «y en plural» y la frase de la prosa que hace de menú; el «por qué cálido», con el pardo y el aire, sin citar las frases. Llevar a la cabecera de la página las tres líneas del md (rasgo, texto, punto dorado) y sumar al dato del punto la mitad que falta: sobre un negro cálido el manual advierte que el dorado tira a mostaza (§04, línea 123). Mejor aún: generar la página desde el JSON con un script, para que la próxima corrección caiga en un solo lugar |
+| 2 | **mayor** | `referentes.html`, `.ref__vistas` a 390 | En el teléfono, el aparato que nombra el plan, la captura de escritorio se ve a **215 px** (14,9 %) y la del teléfono a **89 px** (22,8 %), sin forma de ampliarlas. A esa escala TimesNow de 28 px queda en 4 px y Trirong de 51,8 px en 8 px. Lo que piden mirar la línea C (ficha de autoría, notas al margen) y la letra de la B (Lector, versalitas, Roslindale) no se ve; la foto y el color de A y D sí. La página empuja a reaccionar a la foto | Plan, paso 1.3: «una página privada… que se lee en el teléfono»; encargo, punto 4 (cada «qué se toma» es concreto: tiene que poder verse) | `tamano-capturas.mjs` → `{"escritorio":215,"telefono":89,"enlaces":0}`; `tarjeta12-390-dpr3.png` | Bajo 640 px, apilar las dos capturas a todo el ancho de la tarjeta (la del teléfono queda en unos 320 px, el 82 %), y dar una forma de abrir cada captura en grande: un enlace a su archivo (comprobarlo en la página publicada) o un toque que la despliegue a todo el ancho dentro de la página. Volver a correr `tamano-capturas.mjs` |
+| 3 | menor | 12 · Hoare, «qué se toma» | Sigue a medias el menor 7 de la ronda 2: el rasgo es «el primer pantallazo partido: mitad verde… y mitad foto» y el riesgo de la misma tarjeta dice que la partición no es lo que se toma | `anti-ai-slop.md`, «Hero with left text + right image» | JSON 12 | Reescribir el rasgo sin «partido» ni «mitad»: el campo verde casi negro con el titular en Trirong 300 en mayúsculas, y la foto de luz de lámpara |
+| 4 | menor | Cabecera y fichas de la página | La cabecera dice «Ninguno tiene bandas de color», y Ramón va a ver bandas en las completas de The Ready (amarilla y berenjena), Priya Parker (negro y lila) y Gehl (celeste); el md dice, bien, «como recurso principal». Y las fichas muestran el tipo crudo del JSON («servicios-b2b», «otro»), cuando el md lo dice en castellano («banca privada», «estudio de litigios comerciales») | Exactitud; marca 1 de Ramón | página líneas 79, 98, 396 | «Ninguno usa bandas de color como recurso principal» y el tipo como lo dice el md |
+| 5 | menor | Área de comentario | El placeholder usa el gris por defecto del navegador `#757575`: 4,08:1 en claro y 3,92:1 en oscuro, bajo 4,5:1. Es el único color de la página que no sale de un token | WCAG 1.4.3; contrato de tokens | `medicion-r3.json` → `contraste-*` | `.ref__com textarea::placeholder { color: var(--gris); }` (6,06:1 y 7,06:1) |
+| 6 | menor | Script de `db` | `onSnapshot(…, () => {})` traga el error terminal (`revoked`, o `unavailable` cuando el puente muere): la página sigue con los controles activos y, al fallar el guardado, dice «Prueba de nuevo», que no va a funcionar. Además los botones están activos y no hacen nada hasta que `use('db')` responde (hasta 10 s) | `db.d.ts`: «handle the lifecycle rejection codes on calls and the onSnapshot error callback» | lectura de la página, líneas 448-451 y 441 | En el callback de error, llamar a `sinGuardar()`; empezar con los controles deshabilitados y habilitarlos cuando llega el `db` |
+| 7 | menor | `referentes.md` | La tarjeta 12 repite casi palabra por palabra el bloque «Lo que no se toma: el dorado» dentro de su riesgo, y el md no anota los cambios de esta ronda como sí anotó los de la ronda 2 | Coherencia y trazabilidad | md líneas 145-146 y 161-166 | Dejar el dorado una vez y sumar «Cambios de la ronda 3» |
+
+## Detector anti-slop (ronda 3)
+
+Sobre la selección: sin cambios contra la ronda 2, salvo lo cerrado (✔ acento coral declarado; ! partición, a medias en 12, defecto 3). Sobre la página, que es una herramienta interna y no el sitio:
+
+```
+COPY       es-CL, tú consistente, cero rayas de remate (grep «—» → 0). Una afirmación de
+           más: «Ninguno tiene bandas de color» (defecto 4). Botones que dicen lo que hacen
+           («Sí», «No», «Guardado», «Marca quitada»). ✔
+ESTRUCTURA Numeración 1 a 12 con sentido (es la referencia para responder por número). ✔
+CÓDIGO     Contrato de Artifact completo, foco visible, movimiento reducido. Placeholder
+           fuera de los tokens (defecto 5). ✔ con un reparo
+VISUAL  !  Papel cálido con serif de titular (Newsreader sobre #f3f1ec): el racimo «crema con
+           serif» del propio detector. Abierto con porqué: es una mesa de revisión interna y
+           no compite con las capturas, pero viste la página con el aire de las líneas A y B.
+           No es defecto; se anota para que nadie lo lea como una dirección
+PRUEBAS    n/a  La página no es el sitio.
+```
+
+## Lo que está bien (y conviene no perder)
+
+- **La vía (b) quedó escrita como se pidió:** la tesis de D le dice a Ramón, en su idioma, que lo que ve es tibio y que el tablero tiene que probar el cálido. Eso convierte el riesgo en una pregunta suya y no en una sorpresa en la compuerta 2.
+- **El script de `db` está bien hecho:** pasó las ocho pruebas del contrato que se le pudieron hacer, incluido el caso difícil (comentario y clic al mismo tiempo, en fila y sin perder el comentario).
+- **La página es sólida:** cero desborde en 15 combinaciones, 36 imágenes, contraste del texto sobre 6:1 en los dos temas, contrato de Artifact sin una falta.
+- **7 de 9 menores cerrados del todo en una pasada**, con cifras que siguen calzando con la medición.
+
+## Cómo se cierra sin ronda 4
+
+Antes de publicar, quien cierre deja en el chat la salida de estos comandos, corridos en `referentes/`:
+
+1. `grep -c "home contada frase a frase\|lo que se toma es el relato\|y en plural" referentes.json referentes.md referentes.html` → **0** en los tres.
+2. `grep -c "C9A227" referentes.html` → **1 o más**, y `grep -c "rasgo" referentes.html` → **3 o más** (hoy 2; falta la línea «un sí es un sí al rasgo» en la cabecera).
+3. `NO_PROXY=127.0.0.1 node ../qa-referentes/ronda-3/tamano-capturas.mjs ../qa-referentes/ronda-3` (con `python3 -m http.server 8765` sirviendo `referentes/`) → `telefono` de **300 o más**, o `enlaces` de **24**.
+4. `node ../qa-referentes/ronda-3/pagina-r3.mjs ../qa-referentes/ronda-3` → sigue sin desborde y con 36 de 36.
+
+Los menores 3 a 7 se cierran en la misma pasada si se puede; si no, se publica igual y quedan anotados. Si los comandos 1 a 3 no salen como se indica, la página no se publica y el defecto 1 sube a Ramón con el diagnóstico de arriba.
+
+---
+
 # Acta de QA · SpindleLab v3 · E10, selección de referentes · ronda 2
 
 > La escribe Javiera (`/web-qa-critico`) en contexto limpio: subagente nuevo, no escuchó a
