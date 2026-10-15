@@ -22,7 +22,7 @@ const log = (...x) => console.error(`[${id}]`, ...x);
 
 const ficha = { id, dominio, motor: 'v0', cuando: new Date().toISOString(), entorno: process.env.CLAUDE_CODE_REMOTE ? 'cloud (IP de datacenter, via proxy)' : 'local', sin_corte: args.includes('--sin-corte') || undefined };
 
-const p0 = await pasada0(dominio, { correo: flag('--correo'), sinCorte: args.includes('--sin-corte') });
+const p0 = await pasada0(dominio, { correo: flag('--correo'), sinCorte: args.includes('--sin-corte'), remedir: args.includes('--remedir') });
 if (p0.corte) {
   Object.assign(ficha, { resultado: `descartado:${p0.corte}`, detalle: p0.detalle });
   escribir('ficha.json', ficha); escribir('ficha.md', `# ${id}\n\n**resultado:** descartado:${p0.corte}\n\n${JSON.stringify(p0.detalle, null, 2)}\n`);

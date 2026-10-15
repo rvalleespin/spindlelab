@@ -36,11 +36,12 @@ export function yaContactado(dominio) {
   return hallados;
 }
 
-export async function pasada0(dominio, { correo, sinCorte = false } = {}) {
+// remedir: se mide un prospecto YA contactado (para un seguimiento). Se salta 'ya contactado', pero la lista de exclusion SIGUE mandando.
+export async function pasada0(dominio, { correo, sinCorte = false, remedir = false } = {}) {
   const out = { pasada: 0, dominio, ...(sinCorte ? { sin_corte: true } : {}) };
   const ex = enExclusion(dominio, correo);
   if (ex && !sinCorte) return { ...out, corte: 'excluido', detalle: ex };
-  const cont = sinCorte ? [] : yaContactado(dominio);
+  const cont = (sinCorte || remedir) ? [] : yaContactado(dominio);
   if (cont.length) return { ...out, corte: 'ya-contactado', detalle: { en: cont.slice(0, 5) } };
 
   let r = null;
