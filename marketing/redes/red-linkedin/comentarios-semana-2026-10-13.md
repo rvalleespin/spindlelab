@@ -16,7 +16,7 @@ que no se puedan verificar. Si Ramón no leyó el texto completo de lo que comen
 
 | # | Persona | Publicación | Estado |
 |---|---|---|---|
-| 1 | Juan Carlos Hurtado Salas | 13-oct, IA generativa y datos de clientes | comentario listo, lo pega Ramón |
+| 1 | Juan Carlos Hurtado Salas | 13-oct, IA generativa y datos de clientes | ✅ **pegado por Ramón el 15-oct** (verificado en el navegador: visible con su nombre, "1 comentario"); Hurtado aceptó la conexión el 14-oct |
 | 2 | Feliciano Filgueira Caro | 6-oct, el balance del cliente al modelo de IA | comentario listo, lo pega Ramón |
 | 3 | Andrés Ossa Gillet | ~9-oct, artículo sobre supresión y partidas bautismales | **no comentar sin leer el artículo** |
 
@@ -90,3 +90,10 @@ que no se puedan verificar. Si Ramón no leyó el texto completo de lo que comen
    decodifica con `new Date(Number(BigInt(id) >> 22n))`. Si no, se deja el enlace de la actividad y se describe cuál es.
 3. Los resultados del `javascript_tool` se cortan cerca de los 800 a 1000 caracteres: leer de a una publicación o devolver resúmenes.
 4. Pendientes que entran a la próxima ronda: cuando acepten Marchessi, Sara Araya y Larrondo, sumarlos a la lectura.
+
+## Actualización del 15-oct-2026
+
+- **Hurtado** aceptó la invitación a conectar (se vio como "tu nuevo contacto" en las notificaciones) y es contacto de 1.er grado. Ramón pegó el comentario de la sección 1 en su post.
+  El post tenía 4 reacciones y ningún otro comentario antes del de Ramón.
+- **Marchessi, Sara Araya y Larrondo** aceptaron la conexión; los cuatro recibieron la invitación a seguir la página (ver `lista-abogados-contadores-2026-10-10.md`).
+- **Feliciano y Andrés:** sin cambios; el de Feliciano sigue disponible y el de Andrés espera a que Ramón lea el artículo.
