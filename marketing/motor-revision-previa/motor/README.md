@@ -46,6 +46,7 @@ node muestra.mjs 10 > ../corridas/muestra-preregistrada.json
 | 3 | `pasadas/p3.mjs` | Borde por diferencia de agente, contenedor de Tag Manager, contacto estructural, entidad interna. |
 | 4 | `pasadas/p4.mjs` | Cuatro condiciones con razón escrita, estado, topes y orden. |
 | + | `lib/arreglo.mjs` | **De hallazgo a lo que se vende:** producto, precio, frase de arreglo y cómo se le diría al dueño en castellano. Solo usa precios y textos documentados en el repo; lo demás va como `POR DEFINIR` y `BORRADOR`. Pasa por un revisor de tono (raya larga, "soluciones", plazos inventados). |
+| + | `exportar-emilia.mjs` | **Entrega para Emilia (agente-outbound):** un CSV con el encabezado exacto de los lotes de Dereck (`empresa,dominio,email,hallazgo_medido,estado`) y un detalle aparte con castellano, arreglo, precio y qué no afirmar. No escribe ni envía el correo. |
 | + | `reemitir.mjs` | Añade la propuesta a fichas ya generadas, sin abrir navegadores. |
 
 ## Topes que están en el código (no se aflojan sin decisión)

@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 const dir = path.resolve(process.argv[2] || '../corridas/2026-10-14');
 // Si una corrida se cayo sin ficha, se usa la de la carpeta hermana '<dir>-reintento' (el reintento queda declarado en el informe).
-const leer = (d) => { for (const base of [dir, dir + '-reintento']) { const p = path.join(base, d, 'ficha.json'); if (fs.existsSync(p)) return JSON.parse(fs.readFileSync(p, 'utf8')); } return null; };
+const leer = (d) => { for (const base of [dir + '-reintento', dir]) { const p = path.join(base, d, 'ficha.json'); if (fs.existsSync(p)) return JSON.parse(fs.readFileSync(p, 'utf8')); } return null; };
 const fichas = fs.readdirSync(dir).filter((d) => /^[A-Z]\d+$/.test(d)).sort().map(leer).filter(Boolean);
 const filas = fichas.map((f) => {
   const cand = [f.hallazgo, ...(f.ruta_interna || [])].filter(Boolean);
