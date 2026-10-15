@@ -3,7 +3,13 @@
 **Cuándo:** JUEVES 15-oct-2026, a pedido de Ramón ("ahora el post en la cuenta de empresa") · **Canal:** **página de empresa de SpindleLab** · **Voz:** plural (la marca)
 **Pieza visual:** ninguna. Texto puro.
 **Escribe:** agente-copywriter (Renata)
-**Estado:** 📝 BORRADOR v1, esperando la aprobación de Ramón. No publicado.
+**Estado:** ✅ PUBLICADO Y VERIFICADO (15-oct-2026), como SpindleLab (el compositor mostró "SpindleLab · Publicar para Cualquiera"), a pedido de Ramón ("publica").
+`urn:li:activity:7516494396259962881` (el identificador más alto de la lista de la página, posterior al post personal del mismo día, 7516492052893868032).
+Texto leído del editor antes de publicar: 6 párrafos, idénticos al borrador aprobado (comparados uno a uno por script), sin raya larga.
+Primer comentario publicado **como SpindleLab, "Autor"**, con los dos enlaces activos y la tarjeta de la guía de Google ("Guidelines for representing your business on Google").
+
+**Checklist del día, hecho:** canal de la página revisado (el último post era el del 13-oct) · la página tenía **12 seguidores** (eran 4 el 13-oct, antes de las 47 invitaciones) ·
+al publicar LinkedIn ofreció reactivar Premium con descuento: se rechazó ("No, gracias"); no se tocó "Promocionar".
 
 ## Origen
 
