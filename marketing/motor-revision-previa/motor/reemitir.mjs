@@ -8,7 +8,7 @@ import { renderFicha } from './lib/render.mjs';
 
 let n = 0;
 for (const dir of process.argv.slice(2)) {
-  for (const d of fs.readdirSync(dir).filter((x) => /^[A-Z]\d+$/.test(x))) {
+  for (const d of fs.readdirSync(dir).filter((x) => /^[A-Z]+\d+$/.test(x))) {
     const p = path.join(dir, d, 'ficha.json'); if (!fs.existsSync(p)) continue;
     const f = JSON.parse(fs.readFileSync(p, 'utf8'));
     if (f.hallazgo) f.hallazgo.propuesta = propuesta(f.hallazgo, f.soporte, (f.ofertas_adicionales || []).length);

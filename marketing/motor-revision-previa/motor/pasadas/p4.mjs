@@ -294,10 +294,10 @@ export function candidatosCapa1({ p1, p0, runs, edge, enlaces, htmlEjecutado, mo
   const comunes = tiposEstr(runs[0]).filter((t) => runs.every((r) => tiposEstr(r).includes(t)));
   if (comunes.length) {
     const e = runs[0].A.dom.estructura;
-    const frase = { 'sin-h1': 'no tiene un título principal (H1)', 'varios-h1': `tiene ${e.h1} títulos principales (H1) en vez de uno`, 'poco-texto': `tiene solo ${e.palabras} palabras de texto` };
+    const frase = { 'sin-h1': 'no tiene un título principal (H1)', 'varios-h1': `tiene ${e.h1} títulos principales (H1) en vez de uno`, 'poco-texto': `tiene solo ${e.palabras} palabras de texto visible` };
     out.F13 = F('F13', 'estable', 'el dueño, con el código de la página', 'Ver el código fuente (clic derecho > ver código) y buscar "<h1"; o contar las palabras de la portada.',
       { 1: cond('si', 'La estructura del código no se ve.'), 2: cond('medias', 'Google y la IA usan esa estructura para entender de qué trata la página.'), 3: cond('si', 'Se ve en el código fuente.'), 4: cond('no', 'Cualquier auditor SEO gratuito lo ve: es capa 1.') },
-      `La portada ${comunes.map((t) => frase[t]).join(' y ')}.`, ['que el resto del sitio tenga el mismo problema'], { tipos: comunes, h1: e.h1, palabras: e.palabras });
+      `La portada ${comunes.map((t) => frase[t]).join(' y ')}.`, ['que el resto del sitio tenga el mismo problema', 'que tenga poco texto en total: solo se cuentan las palabras visibles al cargar la portada, no el texto oculto'], { tipos: comunes, h1: e.h1, palabras: e.palabras });
   }
 
   // F14: formulario de contacto largo.

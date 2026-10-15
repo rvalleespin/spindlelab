@@ -4,6 +4,7 @@
 // Uso: node muestra.mjs [N=10] [--prefijo S] [--fuentes ruta1,ruta2] > ../corridas/muestra-preregistrada.json
 // Si el CSV no trae columna 'dominio', se saca del correo (se saltan los correos gratuitos). Se saltan las filas que Dereck ya marco descartadas.
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { leerCsv } from './lib/csv.mjs';
 import { enExclusion, yaContactado, limpiarDominio } from './pasadas/p0.mjs';
 
@@ -11,7 +12,7 @@ const N = +(process.argv[2] || 10);
 const arg = (n, d) => { const i = process.argv.indexOf(n); return i >= 0 ? process.argv[i + 1] : d; };
 const PREFIJO = arg('--prefijo', 'S');
 const GRATIS = /^(gmail|hotmail|outlook|yahoo|live|icloud|msn|vtr|123mail|protonmail)\./i;
-const RAIZ = path.resolve(new URL('../../../', import.meta.url).pathname);
+const RAIZ = path.resolve(fileURLToPath(new URL('../../../', import.meta.url)));
 const FUENTES = arg('--fuentes', 'ventas/contactos-google-maps-contadores.csv,ventas/contactos-google-maps-inmobiliarias.csv').split(',');
 const elegidos = [], omitidos = [], vistos = new Set();
 for (const f of FUENTES) {
@@ -20,8 +21,8 @@ for (const f of FUENTES) {
     if (/^(descartad|exclui|no escribir)/i.test(fila.estado || '')) { omitidos.push({ dominio: fila.dominio || fila.email, motivo: 'ya descartado en el CSV: ' + (fila.estado || '').slice(0, 50) }); continue; }
     const deCorreo = (fila.email || '').split('@')[1] || '';
     const dominio = limpiarDominio(fila.dominio || (GRATIS.test(deCorreo) ? '' : deCorreo)); if (!dominio || vistos.has(dominio)) continue; vistos.add(dominio);
-    const ex = enExclusion(dominio, fila.email); const cont = ex ? [] : yaContactado(dominio);
-    if (ex || cont.length) { omitidos.push({ dominio, motivo: ex ? `excluido (${ex.tipo})` : `ya contactado (${cont[0]})` }); continue; }
+    const ex = enExclusion(dominio, fila.email); const cont = ex ? { seguro: [], posible: [] } : yaContactado(dominio);
+    if (ex || cont.seguro.length) { omitidos.push({ dominio, motivo: ex ? `excluido (${ex.tipo})` : `ya contactado (${cont.seguro[0]})` }); continue; }
     elegidos.push({ id: PREFIJO + String(elegidos.length + 1).padStart(2, '0'), dominio, correo: fila.email, rubro: fila.rubro, fuente: f });
   }
 }

@@ -5,6 +5,7 @@
 // Respeta la lista de exclusion (si el prospecto pidio baja, NO se mide). Salida: remedicion.json y remedicion.md junto a la ficha original.
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 
 const fichaPath = path.resolve(process.argv[2] || '');
@@ -13,7 +14,7 @@ const i = process.argv.indexOf('--out');
 const antes = JSON.parse(fs.readFileSync(fichaPath, 'utf8'));
 const salida = path.resolve(i >= 0 ? process.argv[i + 1] : path.dirname(fichaPath), 'remedicion');
 fs.mkdirSync(salida, { recursive: true });
-const aqui = path.dirname(new URL(import.meta.url).pathname);
+const aqui = path.dirname(fileURLToPath(import.meta.url));
 
 if (!antes.hallazgo) { console.log(JSON.stringify({ sigue: null, motivo: 'la ficha original no tenia hallazgo: no hay nada que remedir' })); process.exit(0); }
 const r = spawnSync(process.execPath, ['--no-warnings', path.join(aqui, 'revisar.mjs'), antes.dominio, '--id', 'R', '--out', salida, '--remedir'], { env: { ...process.env, NODE_USE_ENV_PROXY: '1' }, encoding: 'utf8', timeout: 900000 });

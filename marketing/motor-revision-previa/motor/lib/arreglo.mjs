@@ -26,6 +26,11 @@ export const VEHICULOS = {
 // Sigue el modelo de la estrategia §7: "Los precios estan publicados en spindlelab.cl".
 export const LINEA_PRECIO_REFERENCIA = 'Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.';
 
+// Fuerza de la oferta para un PRIMER correo. La estrategia §14.3 dice "no se escribe si no hay una consecuencia que el dueño sienta". Lo que el dueño siente:
+// perder consultas (contacto) o un riesgo con sus datos (fuerte); fricciones que cuestan visitas (media); hechos verdaderos sin consecuencia visible (debil).
+// Esto NO bloquea nada: es un dato para que Ramon decida si una oferta debil se escribe sola o se guarda para la llamada.
+export const FUERZA = { C5: 'fuerte', F2: 'fuerte', F3: 'fuerte', F10: 'fuerte', C1: 'fuerte', F1: 'fuerte', F9: 'fuerte', C3: 'media', F5: 'media', F11: 'media', F14: 'media', F7: 'media', F13: 'débil', F12: 'débil', F4: 'débil', F8: 'débil', F6: 'débil', C2: 'débil', C4: 'débil' };
+
 const SIN_PUNTUAL = 'No hay precio publicado para un arreglo puntual: el sitio publica el "desde" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada.';
 
 export const ARREGLO = {
@@ -105,7 +110,7 @@ export function enCastellano(c, soporte) {
     case 'F10': return 'En la primera pantalla de tu sitio no hay ningún botón para contactarte, cotizar o escribir por WhatsApp.';
     case 'F11': return d.tipo === 'sin-viewport' ? 'Tu sitio no le dice al celular cómo mostrarse, así que en un teléfono se ve como el de un computador, en miniatura.' : 'En un celular, tu sitio se desborda hacia el lado y obliga a deslizar la pantalla.';
     case 'F12': return `Tu portada descarga ${d.mb} MB solo al abrirse; en un celular con datos eso tarda.`;
-    case 'F13': return `Tu portada ${(d.tipos || []).map((t) => ({ 'sin-h1': 'no tiene un título principal', 'varios-h1': `tiene ${d.h1} títulos principales en vez de uno`, 'poco-texto': `tiene solo ${d.palabras} palabras de texto` }[t])).join(' y ')}.`;
+    case 'F13': return `Tu portada ${(d.tipos || []).map((t) => ({ 'sin-h1': 'no tiene un título principal', 'poco-texto': `tiene solo ${d.palabras} palabras de texto visible` }[t])).filter(Boolean).join(' y ')}.`;
     case 'F14': return `Tu formulario de contacto pide ${d.campos} datos o más antes de poder enviarlo.`;
     case 'F8': return 'Tu sitio no le dice a Google ni a la IA qué negocio eres en el formato que ellos leen (datos estructurados).';
     case 'C2': return 'Tu sitio tiene Google Analytics y, desde afuera, no veo que mida otra cosa que visitas: ni consultas, ni llamadas, ni clics a WhatsApp. Si ya lo tienes medido desde tu panel, entonces no aplica.';
@@ -122,7 +127,7 @@ export function propuesta(candidato, soporte, extras = 0) {
     se_vende: { linea: a.linea, producto: v.nombre, alcance: a.alcance, vehiculo_publicado: `${v.desde} (${v.fuente})`,
       precio_en_el_correo: v.en_correo ? v.desde : `Solo como referencia, no como cotización: ${v.nombre}, ${v.desde.charAt(0).toLowerCase() + v.desde.slice(1)} (spindlelab.cl). El valor del arreglo se cierra en la llamada.`,
       linea_de_precio: v.en_correo ? null : LINEA_PRECIO_REFERENCIA, plazo: 'no se ofrece plazo (ningún correo aprobado lo hace)' },
-    frase_de_arreglo: a.frase, apertura_a_reunion: apertura, cierre_sugerido: a.cierre || null,
+    fuerza: FUERZA[candidato.id] || 'media', frase_de_arreglo: a.frase, apertura_a_reunion: apertura, cierre_sugerido: a.cierre || null,
     estado_del_texto: a.borrador ? 'BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.' : 'APROBADO: tomado de correos ya revisados.',
     por_definir: a.por_definir || [], revision_de_tono: problemas.length ? { problemas } : 'limpia',
     registro: 'singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural.',
