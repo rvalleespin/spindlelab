@@ -1,0 +1,68 @@
+{
+  "dominio": "bernardocombeau.cl",
+  "fecha": "2026-10-14",
+  "aeo": {
+    "puntaje": 76,
+    "error": null,
+    "items": {
+      "bots-indices": "ok",
+      "bots-asistentes": "ok",
+      "servidor-ua": "ok",
+      "bots-entrenamiento": "ok",
+      "https": "ok",
+      "jsonld": "ok",
+      "entidad": "ok",
+      "entidad-completa": "ok",
+      "sameas": "pendiente",
+      "autor": "ok",
+      "title": "ok",
+      "desc": "ok",
+      "h1": "ok",
+      "llms": "ok",
+      "faq": "pendiente",
+      "sitemap": "ok",
+      "canonical": "ok",
+      "lang": "ok",
+      "preguntas": "pendiente",
+      "fecha": "pendiente",
+      "sustancia": "pendiente"
+    },
+    "titulos": {
+      "bots-indices": "Los índices de búsqueda de IA pueden entrar",
+      "bots-asistentes": "Los asistentes de IA pueden visitarte en vivo",
+      "servidor-ua": "El servidor no expulsa a los robots de IA",
+      "bots-entrenamiento": "Robots de entrenamiento: decisión consciente",
+      "https": "El sitio responde por HTTPS",
+      "jsonld": "Tienes datos estructurados",
+      "entidad": "Tu negocio está declarado como entidad",
+      "entidad-completa": "Tu entidad tiene dirección y contacto",
+      "sameas": "Te conectas con al menos 3 perfiles externos",
+      "autor": "Hay una persona con credenciales detrás",
+      "title": "El título dice qué haces y dónde",
+      "desc": "Tienes meta description útil",
+      "h1": "Hay un solo H1",
+      "llms": "Tienes llms.txt",
+      "faq": "Tienes preguntas frecuentes marcadas",
+      "sitemap": "Tienes sitemap.xml",
+      "canonical": "Declaras la URL canónica",
+      "lang": "Declaras el idioma",
+      "preguntas": "Respondes preguntas en tus títulos",
+      "fecha": "Tu contenido tiene fecha",
+      "sustancia": "Tu portada tiene contenido suficiente"
+    },
+    "prioridades": [
+      "Te conectas con al menos 3 perfiles externos",
+      "Tienes preguntas frecuentes marcadas",
+      "Respondes preguntas en tus títulos"
+    ],
+    "arreglos": {
+      "Te conectas con al menos 3 perfiles externos": "Suma sameAs con tus perfiles reales (LinkedIn, Instagram, Google Business). Uno solo no basta.",
+      "Tienes preguntas frecuentes marcadas": "Marca tus preguntas frecuentes con FAQPage. Es el formato que la IA cita textual.",
+      "Respondes preguntas en tus títulos": "Escribe subtítulos con la pregunta que hace tu cliente. La IA cita el párrafo que responde una pregunta."
+    }
+  },
+  "vyc": {
+    "puntaje": 43,
+    "error": null
+  }
+}
