@@ -194,7 +194,7 @@ function F(id, estado, quien, donde, condiciones, afirmable, noAfirmable, datos,
   return { id, nombre: NOMBRE_F[id], linea: LINEA_F[id], capa: 1, estado, quien_comprueba: quien, donde_mirar: donde, condiciones, afirmable, no_afirmable: noAfirmable, advertencias: [], datos, ...extra };
 }
 
-export function candidatosCapa1({ p1, runs, edge, enlaces, htmlEjecutado, movil = [] }) {
+export function candidatosCapa1({ p1, p0, runs, edge, enlaces, htmlEjecutado, movil = [] }) {
   const out = {}, todas = (fn) => runs.every(fn);
   const domLinks = (r) => (r.B.dom?.enlaces || []).map((e) => ({ h: e.h || '', t: e.t || '' }));
   const forms = (r) => r.B.dom?.formularios || [];
@@ -278,15 +278,17 @@ export function candidatosCapa1({ p1, runs, edge, enlaces, htmlEjecutado, movil 
   }
 
   // F12: portada pesada (bytes transferidos: no depende de desde donde se mida).
-  if (todas((r) => (r.peso?.total_bytes || 0) >= 5e6)) {
-    const mb = Math.round(Math.min(...runs.map((r) => r.peso.total_bytes)) / 1e5) / 10;
+  if (todas((r) => (r.peso?.al_abrir_bytes || 0) >= 5e6)) {   // lo descargado en la carga inicial, sin haber bajado la pagina
+    const mb = Math.round(Math.min(...runs.map((r) => r.peso.al_abrir_bytes)) / 1e5) / 10;
     out.F12 = F('F12', 'estable', 'quien administra el sitio, con las herramientas del navegador', 'En el navegador: F12, pestaña Network, recargar y mirar el total transferido abajo.',
       { 1: cond('si', 'Nadie mira cuánto pesa su portada.'), 2: cond('medias', 'En un celular con datos, una portada pesada tarda en abrir.'), 3: cond('si', 'Se ve en la pestaña Network.'), 4: cond('no', 'Cualquier medidor de velocidad lo ve: es capa 1.') },
-      `La portada descarga ${mb} MB al abrirse (mínimo de las ${runs.length} corridas).`, ['cuánto tarda en abrir para un visitante real (se mide desde un datacenter)'], { mb, mas_pesado: runs[0].peso.mas_pesados?.[0] || null });
+      `La portada descarga ${mb} MB solo al abrirse, sin bajar la página (mínimo de las ${runs.length} corridas).`, ['cuánto tarda en abrir para un visitante real (se mide desde un datacenter)'], { mb, mas_pesado: runs[0].peso.mas_pesados?.[0] || null });
   }
 
   // F13: informacion mal construida en la portada: sin H1, varios H1 o muy poco texto.
-  const tiposEstr = (r) => { const e = r.A.dom?.estructura; if (!e) return []; const t = []; if (e.h1 === 0) t.push('sin-h1'); if (e.h1 > 1) t.push('varios-h1'); if (e.palabras < 150) t.push('poco-texto'); return t; };
+  // 'varios H1' NO se ofrece: Google dice que varios H1 esta bien (auditado 15-oct). 'sin H1' exige acuerdo entre el DOM ejecutado y el HTML crudo (L14 tenia H1 en el crudo y 0 en el DOM).
+  const h1Crudo = ((p0?.html || '').match(/<h1[\s>]/gi) || []).length;
+  const tiposEstr = (r) => { const e = r.A.dom?.estructura; if (!e) return []; const t = []; if (e.h1 === 0 && h1Crudo === 0) t.push('sin-h1'); if (e.palabras < 150) t.push('poco-texto'); return t; };
   const comunes = tiposEstr(runs[0]).filter((t) => runs.every((r) => tiposEstr(r).includes(t)));
   if (comunes.length) {
     const e = runs[0].A.dom.estructura;
@@ -315,7 +317,7 @@ export function veredicto(ctx) {
   const formulariosDOM = runs[0].B.dom?.formularios || [];
   const c1 = candidatoC1(runs), c2 = candidatoC2({ p1, contenedores, gtmIds, htmlEjecutado, peticiones: runs[0].peticiones });
   const c3 = candidatoC3(edge), c4 = candidatoC4(entidad), c5 = candidatoC5(contacto);
-  const f = candidatosCapa1({ p1, runs, edge, enlaces, htmlEjecutado, movil });
+  const f = candidatosCapa1({ p1, p0, runs, edge, enlaces, htmlEjecutado, movil });
   const todos = { C1: c1.candidato, C2: c2.candidato, C3: c3.candidato, C4: c4.candidato, C5: c5.candidato, ...f };
   const estables = ORDEN_OFERTA.map((id) => todos[id]).filter((c) => c && c.estado === 'estable');
   const principal = estables[0] || null;

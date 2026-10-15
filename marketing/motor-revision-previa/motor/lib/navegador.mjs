@@ -113,8 +113,21 @@ const JS_DOM = `(() => {
     enlaces: [...document.querySelectorAll('a[href]')].map((a) => ({ h: a.getAttribute('href') || '', t: (a.innerText || a.textContent || '').trim().slice(0, 80) })).slice(0, 600),
     politica: [...document.querySelectorAll('a[href]')].filter((a) => /privacidad|privacy|cookies|datos\\s*personales|protecci(o|ó)n\\s*de\\s*datos|pol(i|í)tica/i.test((a.getAttribute('href') || '') + ' ' + (a.innerText || ''))).map((a) => ({ h: abs(a.getAttribute('href')), t: (a.innerText || '').trim().slice(0, 60) })).slice(0, 10),
     largo_texto: txt.length, muestra: txt.slice(0, 500),
-    cta_en_pantalla: [...document.querySelectorAll('a,button,[role=button],input[type=submit]')].filter((e) => vis(e)).map((e) => ({ t: ((e.innerText || e.value || '').trim()).slice(0, 50), h: e.getAttribute('href') || '' }))
-      .filter((x) => /^(tel:|mailto:)|wa\\.me|whatsapp/i.test(x.h) || /cotiz|contact|escr[ií]b|whatsapp|llam|agend|reserv|solicit|hablemos|conversemos|comprar|carrito|inscrib|prueba|pide/i.test(x.t)).slice(0, 8),
+    cta_en_pantalla: (() => {
+      const sinTilde = (t) => (t || '').normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase();
+      const RE = /contact|escrib|whatsapp|llam|agend|reserv|solicit|cotiz|hablemos|conversemos|comprar|carrito|carro\\b|cart\\b|comienza|empieza|ahora|pide|inscrib|prueba|demo|consult|asesor|cita\\b|hora\\b|presupuesto|suscrib|registr/;
+      const RE_WIDGET = /whatsapp|joinchat|wa-|chat|llamar|phone|telefono/;
+      const hallados = [];
+      for (const e of document.querySelectorAll('a,button,[role=button],input[type=submit],div,span,i')) {
+        const t = sinTilde(e.innerText || e.value || ''), h = e.getAttribute('href') || '', meta = sinTilde((e.className && e.className.baseVal !== undefined ? e.className.baseVal : e.className) + ' ' + e.id + ' ' + (e.getAttribute('aria-label') || '') + ' ' + h);
+        const tag = e.tagName.toLowerCase(), esControl = ['a', 'button', 'input'].includes(tag) || e.getAttribute('role') === 'button';
+        const rr = e.getBoundingClientRect(), ss = getComputedStyle(e);
+        if (!(rr.width > 16 && rr.height > 10 && ss.visibility !== 'hidden' && ss.display !== 'none' && +ss.opacity > 0.05 && rr.bottom > 0 && rr.top < innerHeight)) continue;   // un enlace de menu mide ~18 px: no se le exige 20
+        if (/^(tel:|mailto:)|wa\\.me|whatsapp/i.test(h) || (esControl && t.length < 60 && RE.test(t)) || (getComputedStyle(e).position === 'fixed' && RE_WIDGET.test(meta))) hallados.push({ t: t.slice(0, 40), h });
+        if (hallados.length >= 8) break;
+      }
+      return hallados;
+    })(),
     formulario_en_pantalla: [...document.forms].some((f) => vis(f) && f.querySelector('input[type=email],input[type=tel],textarea')),
     estructura: { h1: document.querySelectorAll('h1').length, h2: document.querySelectorAll('h2').length, palabras: txt.split(/\\s+/).filter(Boolean).length },
   });
@@ -193,6 +206,7 @@ export async function sondear(url, { outDir, etiqueta, esperaA = 11000, esperaB 
 
     await cdp.send('Page.navigate', { url }, sessionId);
     await dormir(esperaA);
+    const bytesA = [...bytesPorId.values()].reduce((a, x) => a + x, 0);   // lo descargado hasta aqui: SIN haber bajado la pagina
     const A = { cookies: await cookies(), dom: await dom(), captura: await foto('A') };
 
     fase = 'B';
@@ -209,7 +223,7 @@ export async function sondear(url, { outDir, etiqueta, esperaA = 11000, esperaB 
     try { html = (await cdp.send('Runtime.evaluate', { expression: 'document.documentElement.outerHTML', returnByValue: true }, sessionId)).result.value || ''; } catch {}
     try { await cdp.send('Target.closeTarget', { targetId }); } catch {}
     const pesos = [...bytesPorId].map(([id, b]) => ({ url: (porId.get(id) || '').slice(0, 160), bytes: b })).sort((x, y) => y.bytes - x.bytes);
-    const peso = { total_bytes: pesos.reduce((a, x) => a + x.bytes, 0), n_peticiones: porId.size, mas_pesados: pesos.slice(0, 4) };
+    const peso = { total_bytes: pesos.reduce((a, x) => a + x.bytes, 0), al_abrir_bytes: bytesA, n_peticiones: porId.size, mas_pesados: pesos.slice(0, 4) };
     return { url, cuando: new Date().toISOString(), A, B, peticiones, setCookies, peso, html_len: html.length, html_ejecutado: html.slice(0, 400000) };
   } finally {
     if (cdp) cdp.cerrar();
