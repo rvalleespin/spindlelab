@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="es-CL"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esta página no existe · Verifica y Cumple</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://verifica.spindlelab.cl/">
+<!-- Existe para que las rutas que no están den 404 de verdad. Sin este archivo, Cloudflare
+     Pages devolvía la portada entera con un 200 en CUALQUIER ruta inventada, y un 200 no es
+     una página: le dice a los buscadores que /lo-que-sea existe y tiene contenido. -->
+<style>
+  @font-face {
+    font-family: "Archivo Black"; font-style: normal; font-weight: 400; font-display: swap;
+    src: url("/assets/fonts/archivo-black-latin.woff2") format("woff2");
+  }
+  :root { --azul-600:#2e5bff; --lima-400:#d6ff3d; --tinta-900:#17163a; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    min-height:100vh; background:var(--azul-600); color:#fff;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    display:flex; align-items:center; justify-content:center; padding:32px;
+  }
+  .caja { max-width:620px; }
+  .etiqueta {
+    display:inline-block; background:var(--lima-400); color:var(--tinta-900);
+    font-family:"Archivo Black",Impact,sans-serif; font-size:clamp(14px,3.5vw,17px);
+    letter-spacing:.09em; text-transform:uppercase; padding:9px 18px 7px; border-radius:999px;
+  }
+  h1 {
+    margin-top:26px; font-family:"Archivo Black",Impact,sans-serif; font-weight:400;
+    font-size:clamp(40px,10vw,84px); line-height:.95; letter-spacing:-.03em;
+  }
+  h1 .lima { color:var(--lima-400); }
+  p { margin-top:22px; font-size:clamp(17px,4vw,21px); line-height:1.5; color:rgba(255,255,255,.93); }
+  .volver {
+    display:inline-block; margin-top:32px; background:var(--lima-400); color:var(--tinta-900);
+    font-weight:800; font-size:clamp(16px,4vw,19px); text-decoration:none;
+    padding:16px 28px; border-radius:14px;
+  }
+  .volver:hover { background:#fff; }
+  .pie { margin-top:36px; font-size:15px; color:rgba(255,255,255,.72); }
+  .pie a { color:rgba(255,255,255,.92); }
+</style>
+</head><body>
+  <main class="caja">
+    <span class="etiqueta">Error 404</span>
+    <h1>Esta página <span class="lima">no existe.</span></h1>
+    <p>La dirección que escribiste no corresponde a ninguna página de este sitio. Puede que el
+       enlace esté viejo o que falte una letra.</p>
+    <a class="volver" href="/">Ir al chequeo gratis</a>
+    <p class="pie">Verifica y Cumple es un servicio de SpindleLab SpA ·
+       <a href="/privacidad/">Política de privacidad</a></p>
+  </main>
+</body></html>

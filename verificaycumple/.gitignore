@@ -1,0 +1,12 @@
+# ⚠️ ESTA CARPETA ENTERA SE PUBLICA. `pages_build_output_dir = "."` en wrangler.toml
+# significa que Cloudflare sirve TODO lo que haya acá, incluidos los archivos ocultos.
+#
+# El 15-oct-2026 se descubrió que `.wrangler/cache/wrangler-account.json` estaba versionado y
+# se servía en https://verifica.spindlelab.cl/.wrangler/cache/wrangler-account.json con un 200.
+# Adentro iba el ID de la cuenta y el NOMBRE, que es el correo personal de Ramón. Público, en
+# el sitio cuyo producto es la protección de datos.
+#
+# Antes de agregar un archivo acá, pregúntate si te da lo mismo que cualquiera lo abra.
+.wrangler/
+.DS_Store
+node_modules/
