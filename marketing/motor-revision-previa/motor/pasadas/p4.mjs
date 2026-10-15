@@ -205,7 +205,9 @@ export function candidatosCapa1({ p1, p0, runs, edge, enlaces, htmlEjecutado, mo
     out.F1 = F('F1', 'estable', 'el dueño, en 30 segundos', 'Mirar el formulario de la portada y el pie de página: buscar un enlace a "política de privacidad".',
       { 1: cond('medias', 'La ausencia de un enlace se nota poco.'), 2: cond('si', 'El formulario ya trata datos personales hoy.'), 3: cond('si', 'Se ve mirando el formulario y el pie.'), 4: cond('no', 'Cualquier chequeo gratis (incluido el de Verifica y Cumple) lo muestra: es capa 1.') },
       'La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).',
-      ['que "no tiene política" en todo el sitio (solo se revisó la portada)', 'lo que la ley "exige"'], {});
+      ['que "no tiene política" en todo el sitio (solo se revisó la portada)', 'lo que la ley "exige"'], {},
+      { advertencias: (() => { const t = [...new Set(runs.flatMap((r) => (r.B.dom?.enlaces || []).filter((e) => /terminos|t%C3%A9rminos|términos|terms|condiciones|aviso-legal|aviso legal/i.test((e.h || '') + ' ' + (e.t || ''))).map((e) => e.h)))];
+          return t.length ? [`Hay un enlace de Términos y Condiciones (${t[0].slice(0, 60)}) que el motor NO leyó: podría incluir cláusulas sobre datos personales. Decir "no encontré un enlace a una política de privacidad", nunca "no tiene política".`] : []; })() });
 
   // F2: sin ruta de contacto: ni formulario, ni telefono, ni correo, ni WhatsApp, ni un enlace de contacto.
   if (todas((r) => !forms(r).length && !domLinks(r).some((l) => /^(tel:|mailto:)|wa\.me|api\.whatsapp\.com|whatsapp:\/\//i.test(l.h) || RE_CONTACTO.test(l.h + ' ' + l.t))) && !c.tel && !c.mailto.length && !c.whatsapp.length)
