@@ -1,0 +1,1568 @@
+{
+  "url": "https://tungulu.cl/",
+  "cuando": "2026-10-15T14:55:48.652Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "googtrans",
+        "dominio": "tungulu.cl",
+        "expira_dias": 0
+      },
+      {
+        "nombre": "googtrans",
+        "dominio": ".tungulu.cl",
+        "expira_dias": 0
+      }
+    ],
+    "dom": {
+      "url": "https://tungulu.cl/",
+      "titulo": "Tungulu",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "",
+          "accion_abs": "",
+          "metodo": "post",
+          "campos": 5,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": true
+        },
+        {
+          "action": "//translate.googleapis.com/translate_voting?client=te",
+          "accion_abs": "https://translate.googleapis.com/translate_voting?client=te",
+          "metodo": "post",
+          "campos": 5,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#menu-principal",
+          "t": "SKIP TO NAVIGATION"
+        },
+        {
+          "h": "#main-content",
+          "t": "SKIP TO MAIN CONTENT"
+        },
+        {
+          "h": "https://secuream3.e-gdscloud.com/TunguluHotelBoutiqueyCabanas/",
+          "t": "Book Now"
+        },
+        {
+          "h": "https://tungulu.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://tungulu.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://tungulu.cl/hotel/",
+          "t": "HOTEL"
+        },
+        {
+          "h": "https://tungulu.cl/cabanas/",
+          "t": "CABINS"
+        },
+        {
+          "h": "https://tungulu.cl/programas/",
+          "t": "PROGRAMS"
+        },
+        {
+          "h": "https://tungulu.cl/restaurant/",
+          "t": "RESTAURANT"
+        },
+        {
+          "h": "https://tungulu.cl/tinajas/",
+          "t": "EARTHENWARE JARS"
+        },
+        {
+          "h": "https://tungulu.cl/contacto/",
+          "t": "CONTACT"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "https://translate.google.com",
+          "t": "Translate"
+        },
+        {
+          "h": "https://www.facebook.com/profile.php?id=100052543364816",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/tungulu.cl/",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "https://tungulu.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://tungulu.cl/",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "https://walink.co/9g9aqr",
+          "t": "RESERVE YOUR CERAMIC TUB"
+        },
+        {
+          "h": "https://walink.co/9g9aqr",
+          "t": "BOOK AT OUR HOTEL"
+        },
+        {
+          "h": "https://walink.co/9g9aqr",
+          "t": "RESERVE YOUR SHELTER"
+        },
+        {
+          "h": "https://walink.co/9g9aqr",
+          "t": "RESERVE YOUR CERAMIC TUB"
+        },
+        {
+          "h": "#",
+          "t": "+"
+        },
+        {
+          "h": "#",
+          "t": "−"
+        },
+        {
+          "h": "https://leafletjs.com",
+          "t": "Leaflet"
+        },
+        {
+          "h": "null",
+          "t": "null"
+        },
+        {
+          "h": "https://www.openstreetmap.org/copyright",
+          "t": "contributors"
+        },
+        {
+          "h": "mailto:reservas@tungulu.cl",
+          "t": "reservations@tungulu.cl"
+        },
+        {
+          "h": "https://ul.waze.com/ul?venue_id=188089705.1880897049.23783122&overview=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location",
+          "t": "Open in Waze"
+        },
+        {
+          "h": "https://www.facebook.com/tunguluhotelboutique/",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/tungulu.cl/",
+          "t": "Instagram"
+        },
+        {
+          "h": "#my_popup",
+          "t": "CONSULT"
+        },
+        {
+          "h": "https://tungulu.cl/",
+          "t": "Tungulu"
+        },
+        {
+          "h": "https://tungulu.cl/hotel/",
+          "t": "HOTEL"
+        },
+        {
+          "h": "https://tungulu.cl/cabanas/",
+          "t": "CABINS"
+        },
+        {
+          "h": "https://tungulu.cl/programas/",
+          "t": "PROGRAMS"
+        },
+        {
+          "h": "https://tungulu.cl/restaurant/",
+          "t": "RESTAURANT"
+        },
+        {
+          "h": "https://tungulu.cl/tinajas/",
+          "t": "EARTHENWARE JARS"
+        },
+        {
+          "h": "https://tungulu.cl/contacto/",
+          "t": "CONTACT"
+        },
+        {
+          "h": "https://secuream3.e-gdscloud.com/TunguluHotelBoutiqueyCabanas/",
+          "t": "Reserve"
+        },
+        {
+          "h": "https://wa.me/56942909059?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20reservas%20en%20Hotel%20Tungul%C3%BA.",
+          "t": "HOTEL TUNGULÚ\n\nHello, this is Reception. Can we help you with your reservation?"
+        },
+        {
+          "h": "https://wa.me/56942909059?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20reservas%20en%20Hotel%20Tungul%C3%BA.",
+          "t": "RECEPTION\nReservations? Write to us"
+        },
+        {
+          "h": "#",
+          "t": "16"
+        },
+        {
+          "h": "#",
+          "t": "17"
+        },
+        {
+          "h": "#",
+          "t": "18"
+        },
+        {
+          "h": "#",
+          "t": "19"
+        },
+        {
+          "h": "#",
+          "t": "20"
+        },
+        {
+          "h": "#",
+          "t": "21"
+        },
+        {
+          "h": "#",
+          "t": "22"
+        },
+        {
+          "h": "#",
+          "t": "23"
+        },
+        {
+          "h": "#",
+          "t": "24"
+        },
+        {
+          "h": "#",
+          "t": "25"
+        },
+        {
+          "h": "#",
+          "t": "26"
+        },
+        {
+          "h": "#",
+          "t": "27"
+        },
+        {
+          "h": "#",
+          "t": "28"
+        },
+        {
+          "h": "#",
+          "t": "29"
+        },
+        {
+          "h": "#",
+          "t": "30"
+        },
+        {
+          "h": "#",
+          "t": "31"
+        }
+      ],
+      "politica": [],
+      "largo_texto": 2957,
+      "muestra": "SKIP TO NAVIGATION\nSKIP TO MAIN CONTENT\nHOTEL\nCABINS\nPROGRAMS\nRESTAURANT\nEARTHENWARE JARS\nCONTACT\nWELCOME\nBOUTIQUE HOSPITALITY\nIN THE HEART OF THE SOUTH\nCheck-In\nCheck-Out\nAdults\n1\n2\n3\n4\n5\n6\n7\nChildren\n0\n1\n2\nRooms\n1\n2\n3\n4\n \nSEARCH\nUs\nORIGINS OF TUNGULU\n\nThe name Tungulú was inspired by Tenglo Island, located off the coast of Puerto Montt, the birthplace of the family that brought this project to life.\nTenglo comes from the Mapudungun word tüng-lu, meaning 'tranquil and peaceful place'. From this",
+      "cta_en_pantalla": [
+        {
+          "t": "contact",
+          "h": "https://tungulu.cl/contacto/"
+        },
+        {
+          "t": "contact",
+          "h": "https://tungulu.cl/contacto/"
+        },
+        {
+          "t": "hotel tungulu\n\nhello, this is reception.",
+          "h": "https://wa.me/56942909059?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20reservas%20en%20Hotel%20Tungul%C3%BA."
+        },
+        {
+          "t": "reception\nreservations? write to us",
+          "h": "https://wa.me/56942909059?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20reservas%20en%20Hotel%20Tungul%C3%BA."
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 4,
+        "palabras": 465
+      }
+    },
+    "captura": "r2-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "googtrans",
+        "dominio": "tungulu.cl",
+        "expira_dias": 0
+      },
+      {
+        "nombre": "googtrans",
+        "dominio": ".tungulu.cl",
+        "expira_dias": 0
+      }
+    ],
+    "dom": {
+      "url": "https://tungulu.cl/",
+      "titulo": "Tungulu",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "",
+          "accion_abs": "",
+          "metodo": "post",
+          "campos": 5,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": true
+        },
+        {
+          "action": "//translate.googleapis.com/translate_voting?client=te",
+          "accion_abs": "https://translate.googleapis.com/translate_voting?client=te",
+          "metodo": "post",
+          "campos": 5,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#menu-principal",
+          "t": "SKIP TO NAVIGATION"
+        },
+        {
+          "h": "#main-content",
+          "t": "SKIP TO MAIN CONTENT"
+        },
+        {
+          "h": "https://secuream3.e-gdscloud.com/TunguluHotelBoutiqueyCabanas/",
+          "t": "Book Now"
+        },
+        {
+          "h": "https://tungulu.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://tungulu.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://tungulu.cl/hotel/",
+          "t": "HOTEL"
+        },
+        {
+          "h": "https://tungulu.cl/cabanas/",
+          "t": "CABINS"
+        },
+        {
+          "h": "https://tungulu.cl/programas/",
+          "t": "PROGRAMS"
+        },
+        {
+          "h": "https://tungulu.cl/restaurant/",
+          "t": "RESTAURANT"
+        },
+        {
+          "h": "https://tungulu.cl/tinajas/",
+          "t": "EARTHENWARE JARS"
+        },
+        {
+          "h": "https://tungulu.cl/contacto/",
+          "t": "CONTACT"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "https://translate.google.com",
+          "t": "Translate"
+        },
+        {
+          "h": "https://www.facebook.com/profile.php?id=100052543364816",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/tungulu.cl/",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "https://tungulu.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://tungulu.cl/",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "https://walink.co/9g9aqr",
+          "t": "RESERVE YOUR CERAMIC TUB"
+        },
+        {
+          "h": "https://walink.co/9g9aqr",
+          "t": "BOOK AT OUR HOTEL"
+        },
+        {
+          "h": "https://walink.co/9g9aqr",
+          "t": "RESERVE YOUR SHELTER"
+        },
+        {
+          "h": "https://walink.co/9g9aqr",
+          "t": "RESERVE YOUR CERAMIC TUB"
+        },
+        {
+          "h": "#",
+          "t": "+"
+        },
+        {
+          "h": "#",
+          "t": "−"
+        },
+        {
+          "h": "https://leafletjs.com",
+          "t": "Leaflet"
+        },
+        {
+          "h": "null",
+          "t": "null"
+        },
+        {
+          "h": "https://www.openstreetmap.org/copyright",
+          "t": "contributors"
+        },
+        {
+          "h": "mailto:reservas@tungulu.cl",
+          "t": "reservations@tungulu.cl"
+        },
+        {
+          "h": "https://ul.waze.com/ul?venue_id=188089705.1880897049.23783122&overview=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location",
+          "t": "Open in Waze"
+        },
+        {
+          "h": "https://www.facebook.com/tunguluhotelboutique/",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/tungulu.cl/",
+          "t": "Instagram"
+        },
+        {
+          "h": "#my_popup",
+          "t": "CONSULT"
+        },
+        {
+          "h": "https://tungulu.cl/",
+          "t": "Tungulu"
+        },
+        {
+          "h": "https://tungulu.cl/hotel/",
+          "t": "HOTEL"
+        },
+        {
+          "h": "https://tungulu.cl/cabanas/",
+          "t": "CABINS"
+        },
+        {
+          "h": "https://tungulu.cl/programas/",
+          "t": "PROGRAMS"
+        },
+        {
+          "h": "https://tungulu.cl/restaurant/",
+          "t": "RESTAURANT"
+        },
+        {
+          "h": "https://tungulu.cl/tinajas/",
+          "t": "EARTHENWARE JARS"
+        },
+        {
+          "h": "https://tungulu.cl/contacto/",
+          "t": "CONTACT"
+        },
+        {
+          "h": "https://secuream3.e-gdscloud.com/TunguluHotelBoutiqueyCabanas/",
+          "t": "RESERVE"
+        },
+        {
+          "h": "https://wa.me/56942909059?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20reservas%20en%20Hotel%20Tungul%C3%BA.",
+          "t": "HOTEL TUNGULÚ\n\nHello, this is Reception. Can we help you with your reservation?"
+        },
+        {
+          "h": "https://wa.me/56942909059?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20reservas%20en%20Hotel%20Tungul%C3%BA.",
+          "t": "RECEPTION\nReservations? Write to us"
+        },
+        {
+          "h": "#",
+          "t": "16"
+        },
+        {
+          "h": "#",
+          "t": "17"
+        },
+        {
+          "h": "#",
+          "t": "18"
+        },
+        {
+          "h": "#",
+          "t": "19"
+        },
+        {
+          "h": "#",
+          "t": "20"
+        },
+        {
+          "h": "#",
+          "t": "21"
+        },
+        {
+          "h": "#",
+          "t": "22"
+        },
+        {
+          "h": "#",
+          "t": "23"
+        },
+        {
+          "h": "#",
+          "t": "24"
+        },
+        {
+          "h": "#",
+          "t": "25"
+        },
+        {
+          "h": "#",
+          "t": "26"
+        },
+        {
+          "h": "#",
+          "t": "27"
+        },
+        {
+          "h": "#",
+          "t": "28"
+        },
+        {
+          "h": "#",
+          "t": "29"
+        },
+        {
+          "h": "#",
+          "t": "30"
+        },
+        {
+          "h": "#",
+          "t": "31"
+        }
+      ],
+      "politica": [],
+      "largo_texto": 2965,
+      "muestra": "SKIP TO NAVIGATION\nSKIP TO MAIN CONTENT\nHOTEL\nCABINS\nPROGRAMS\nRESTAURANT\nEARTHENWARE JARS\nCONTACT\nWELCOME\nBOUTIQUE HOSPITALITY\nIN THE HEART OF THE SOUTH\nCheck-In\nCheck-Out\nAdults\n1\n2\n3\n4\n5\n6\n7\nChildren\n0\n1\n2\nRooms\n1\n2\n3\n4\n \nSEARCH\nUs\nORIGINS OF TUNGULU\n\nThe name Tungulú was inspired by Tenglo Island, located off the coast of Puerto Montt, the birthplace of the family that brought this project to life.\nTenglo comes from the Mapudungun word tüng-lu, meaning 'tranquil and peaceful place'. From this",
+      "cta_en_pantalla": [
+        {
+          "t": "reserve your shelter",
+          "h": "https://walink.co/9g9aqr"
+        },
+        {
+          "t": "contact",
+          "h": "https://tungulu.cl/contacto/"
+        },
+        {
+          "t": "reserve",
+          "h": "https://secuream3.e-gdscloud.com/TunguluHotelBoutiqueyCabanas/"
+        },
+        {
+          "t": "hotel tungulu\n\nhello, this is reception.",
+          "h": "https://wa.me/56942909059?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20reservas%20en%20Hotel%20Tungul%C3%BA."
+        },
+        {
+          "t": "reception\nreservations? write to us",
+          "h": "https://wa.me/56942909059?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20reservas%20en%20Hotel%20Tungul%C3%BA."
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 4,
+        "palabras": 466
+      }
+    },
+    "captura": "r2-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css?ver=1.10.4",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=8.7.3",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/base.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Readex+Pro:wght@500&family=Montserrat:wght@500",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/js/scripts/global/scrollBar.min.js?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/header-opt-overlap.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/el-button.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2025/07/logo-tungulu.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/header-el-logo-opt-swap.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/mod-nav-style-bordered-separated.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/el-social-icons.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/el-social-styles.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/opt-widget-collapse.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/footer-base.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/el-map.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/el-open-street-map.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/el-info-box.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/el-text-block.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/mod-nav-menu-label.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/el-section-title.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/mod-highlighted-text.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/mod-animations-transform.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/mod-transform.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/plugins/happyforms-upgrade/bundles/css/frontend.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/base-deferred.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/header-opt-scroll-slide.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/lib-magnific-popup.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/css/parts/header-el-mobile-nav.css?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css2?family=Aboreto&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1.6",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.1.6",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.14.2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=8.7.3",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/js/libs/cookie.min.js?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/js/scripts/global/helpers.min.js?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/js/scripts/header/headerBuilder.min.js?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/js/scripts/menu/menuOffsets.min.js?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/js/scripts/menu/menuSetUp.min.js?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/plugins/gtranslate/js/flags.js?ver=3.1.1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/js/scripts/global/widgetCollapse.min.js?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/js/libs/leaflet.min.js?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/js/scripts/elements/openStreetMap.min.js?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/js/libs/magnific-popup.min.js?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/js/scripts/elements/contentPopup.min.js?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/js/scripts/menu/mobileNavigation.min.js?ver=8.5.0",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/plugins/happyforms-upgrade/bundles/js/frontend.js?ver=1.38.9",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecg.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw5aXo.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2026/04/video_home_tungu.webm",
+      "metodo": "GET",
+      "tipo": "Media",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IiNiYmIiPjxwYXRoIGQ9Ik02IDlsNiA2IDYtNiIvPjwvc3ZnPg==",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2025/07/nosotros-2.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2025/07/fondo-3.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2025/07/home-1.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2025/07/1000x800.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2026/04/Nosotros-1-Huincha-fotos-2000x1490-CORTADA.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2026/04/Nosotros-2-Huincha-fotos-2000x1490-CORTADA.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2026/04/Nosotros-3-Huincha-fotos-2000x1490-CORTADA.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2026/04/Nosotros-4-Huincha-fotos-2000x1490-CORTADA.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2026/04/Nosotros-5-Huincha-fotos-2000x1490-CORTADA.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2026/04/Nosotros-6-Huincha-fotos-2000x1490-CORTADA.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2026/04/Nosotros-7-Huincha-fotos-2000x1490-CORTADA.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2026/03/tablas-y-cocteles.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2025/07/Aboreto-Regular.woff",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/themes/woodmart-8.5.0/fonts/woodmart-font-1-400.woff2?v=8.5.0",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2025/03/map-pointer.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2025/03/smartphone.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2025/03/clock.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2017/06/HugeiconsWaze.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/aboreto/v2/5DCXAKLhwDDQ4N8bpKPUAg.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "data:image/gif;base64,R0lGODlhAQABAIAAAP8AAAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://secuream3.e-gdscloud.com/TunguluHotelBoutiqueyCabanas/Integration/IntegrationJSON.asmx/GetBookingEngineSearchParameters",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/plugins/gtranslate/flags/svg/en-us.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/plugins/gtranslate/flags/svg/es.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19478/41085.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19479/41085.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19478/41086.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19479/41086.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19478/41084.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19479/41084.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19477/41085.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19480/41085.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19477/41086.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19480/41086.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19478/41087.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19479/41087.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19477/41084.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19480/41084.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19477/41087.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19480/41087.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19476/41085.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19481/41085.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19476/41086.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19481/41086.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19476/41084.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19481/41084.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19476/41087.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://a.tile.openstreetmap.fr/hot/16/19481/41087.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/wp-content/uploads/2025/07/pin-tungulu.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.zZZZhVqDDCw.L.W.O/am=QADA/d=0/rs=AN8SPfrXQhGDrY9gDk7kioTTjkwh79jveg/m=el_main_css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://translate.googleapis.com/_/translate_http/_/js/k=translate_http.tr.en_US.d13tOhRe_kg.O/am=QADA/d=1/ed=1/rs=AN8SPfoHECVysmFKMJFYIs3_hckFnz7ZFA/m=el_main",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/i/productlogos/translate/v14/24px.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_42x16dp.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/images/branding/product/2x/translate_24dp.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/favicon.ico",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tungulu.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.zZZZhVqDDCw.L.W.O/am=QADA/d=0/rs=AN8SPfrXQhGDrY9gDk7kioTTjkwh79jveg/m=el_main_css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_68x28dp.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/images/cleardot.gif",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://translate.googleapis.com/translate_static/img/loading.gif",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/images/cleardot.gif",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.zZZZhVqDDCw.L.W.O/am=QADA/d=0/rs=AN8SPfrXQhGDrY9gDk7kioTTjkwh79jveg/m=el_main_css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.zZZZhVqDDCw.L.W.O/am=QADA/d=0/rs=AN8SPfrXQhGDrY9gDk7kioTTjkwh79jveg/m=el_main_css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://translate-pa.googleapis.com/v1/translateHtml",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://translate-pa.googleapis.com/v1/translateHtml",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://translate-pa.googleapis.com/v1/translateHtml",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://translate-pa.googleapis.com/v1/translateHtml",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://translate.google.com/gen204?sl=es&tl=en&textlen=79&ttt=506&ttl=66&sr=1&ef=sda%2Ceopa&nca=te_time&client=te&logld=vTE_20261013",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://translate.googleapis.com/element/log?format=json&hasfast=true&authuser=0",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://translate.googleapis.com/element/log?format=json&hasfast=true&authuser=0",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://translate.googleapis.com/element/log?format=json&hasfast=true&authuser=0",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "__Secure-BUCKET",
+      "desde": "translate.google.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "NID",
+      "desde": "translate.google.com"
+    }
+  ],
+  "peso": {
+    "total_bytes": 27312285,
+    "al_abrir_bytes": 27311847,
+    "n_peticiones": 128,
+    "mas_pesados": [
+      {
+        "url": "https://tungulu.cl/wp-content/uploads/2025/07/fondo-3.svg",
+        "bytes": 6443253
+      },
+      {
+        "url": "https://tungulu.cl/wp-content/uploads/2025/07/nosotros-2.svg",
+        "bytes": 6249724
+      },
+      {
+        "url": "https://tungulu.cl/wp-content/uploads/2025/07/home-1.svg",
+        "bytes": 2636676
+      },
+      {
+        "url": "https://tungulu.cl/wp-content/uploads/2025/07/1000x800.svg",
+        "bytes": 2349188
+      }
+    ]
+  },
+  "html_len": 205098
+}

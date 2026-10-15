@@ -1,0 +1,2135 @@
+{
+  "url": "https://www.lodgecolbun.com/",
+  "cuando": "2026-10-15T14:55:55.680Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "PHPSESSID",
+        "dominio": "www.lodgecolbun.com",
+        "expira_dias": 0
+      },
+      {
+        "nombre": "px_session_id",
+        "dominio": "www.lodgecolbun.com",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_gcl_au",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "_ga_JYP0RTPRRK",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_ENDTSVCQ6Y",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_5H9FF2E3LS",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_SYSQR6EL6E",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_WXGY2Y0EHL",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_fbp",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 90
+      }
+    ],
+    "dom": {
+      "url": "https://www.lodgecolbun.com/",
+      "titulo": "Home - Colbún Lodge",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "https://api-1-eb-web.pxsol.io/search/insert",
+          "accion_abs": "https://api-1-eb-web.pxsol.io/search/insert",
+          "metodo": "post",
+          "campos": 7,
+          "requeridos": 0,
+          "visible": true,
+          "pide_correo_o_tel": true
+        },
+        {
+          "action": "/contact/newsletter",
+          "accion_abs": "https://www.lodgecolbun.com/contact/newsletter",
+          "metodo": "post",
+          "campos": 2,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "/en/app/",
+          "t": "Check In and Online Cancellation"
+        },
+        {
+          "h": "/?lng=es",
+          "t": "Español"
+        },
+        {
+          "h": "/pt/?lng=pt",
+          "t": "Português"
+        },
+        {
+          "h": "https://app.reservadirecto.com/auth_web?return_url=https%3A%2F%2Fwww.lodgecolbun.com%2Fauthorize.php%3Fredirect_url%3Dhttps%253A%252F%252Fwww.lodgecolbun.com%252F&origin_pos=LodgeColbun",
+          "t": "Log in"
+        },
+        {
+          "h": "/en/index.html",
+          "t": "THE LODGE"
+        },
+        {
+          "h": "/en/habitaciones.html",
+          "t": "ROOMS/CABINS"
+        },
+        {
+          "h": "/en/servicios.html",
+          "t": "SERVICES"
+        },
+        {
+          "h": "/en/index.html",
+          "t": ""
+        },
+        {
+          "h": "/en/promos.html",
+          "t": "PROMOTIONS"
+        },
+        {
+          "h": "/en/galeria.html",
+          "t": "GALLERY"
+        },
+        {
+          "h": "/en/contacto.html",
+          "t": "LOCATION AND CONTACT"
+        },
+        {
+          "h": "/en/habitaciones.html",
+          "t": "Rooms/Cabins\nWALK"
+        },
+        {
+          "h": "/en/servicios.html",
+          "t": "Services\nKNOWN"
+        },
+        {
+          "h": "/en/contacto.html",
+          "t": "Location and Contact\nDISCOVER"
+        },
+        {
+          "h": "/en/promos.html",
+          "t": "Promotions\nENJOY"
+        },
+        {
+          "h": "/en/galeria.html",
+          "t": "See Gallery"
+        },
+        {
+          "h": "tel:+56 9 8475 8096",
+          "t": "+56 9 8475 8096"
+        },
+        {
+          "h": "tel:+56 9 7669 7162",
+          "t": "+56 9 7669 7162"
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56984758096",
+          "t": "+56 9 8475 8096"
+        },
+        {
+          "h": "https://www.google.com/maps/search/Lodge Colbún, Colbún Alto, Colbún, Maule, Chile Maule - Chile",
+          "t": "Colbún Alto, Colbún, Maule, Chile"
+        },
+        {
+          "h": "mailto:reservas@lodgecolbun.com",
+          "t": "reservas@lodgecolbun.com"
+        },
+        {
+          "h": "https://www.facebook.com/lodgecolbun",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/lodgecolbun",
+          "t": ""
+        },
+        {
+          "h": "https://www.tripadvisor.com.ar/Hotel_Review-g1675381-d1759433-Reviews-Lodge_Colbun-Colbun_Maule_Region.html",
+          "t": ""
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56984758096",
+          "t": ""
+        },
+        {
+          "h": "/cookiespolicies.php?pos=LodgeColbun",
+          "t": "Cookies policy"
+        },
+        {
+          "h": "https://files-p.pxsol.com/23611/company/library/user/21326778216c9b4f8ca905a378b6a5a6da010f26e4e.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQI4Y7PQJFLSSFFFR%2F20260426%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260426T192518Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1200&X-Amz-Signature=7e46c64ed31effbee82dd6780ef679f0cf8250e9c01e7c69e5e4576ccde3db15",
+          "t": "Terminos y Condiciones"
+        },
+        {
+          "h": "/policies.php?pos=LodgeColbun",
+          "t": "Privacy Policy"
+        },
+        {
+          "h": "",
+          "t": "Textos"
+        },
+        {
+          "h": "https://www.pxsol.com/pos_source=LodgeColbun",
+          "t": "Sistema Hotelero"
+        },
+        {
+          "h": "/",
+          "t": "image/svg+xml"
+        },
+        {
+          "h": "https://www.lodgecolbun.com/promos/tu-escapada-de-primavera-con-un-descuento-exclusivo.html",
+          "t": "¡Reserva ahora!"
+        },
+        {
+          "h": "#",
+          "t": "16"
+        },
+        {
+          "h": "#",
+          "t": "17"
+        },
+        {
+          "h": "#",
+          "t": "18"
+        },
+        {
+          "h": "#",
+          "t": "19"
+        },
+        {
+          "h": "#",
+          "t": "20"
+        },
+        {
+          "h": "#",
+          "t": "21"
+        },
+        {
+          "h": "#",
+          "t": "22"
+        },
+        {
+          "h": "#",
+          "t": "23"
+        },
+        {
+          "h": "#",
+          "t": "24"
+        },
+        {
+          "h": "#",
+          "t": "25"
+        },
+        {
+          "h": "#",
+          "t": "26"
+        },
+        {
+          "h": "#",
+          "t": "27"
+        },
+        {
+          "h": "#",
+          "t": "28"
+        },
+        {
+          "h": "#",
+          "t": "29"
+        },
+        {
+          "h": "#",
+          "t": "30"
+        },
+        {
+          "h": "#",
+          "t": "31"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://www.lodgecolbun.com/cookiespolicies.php?pos=LodgeColbun",
+          "t": "Cookies policy"
+        },
+        {
+          "h": "https://www.lodgecolbun.com/policies.php?pos=LodgeColbun",
+          "t": "Privacy Policy"
+        }
+      ],
+      "largo_texto": 8402,
+      "muestra": "CLP $\nTHE LODGE\nROOMS/CABINS\nSERVICES\nPROMOTIONS\nGALLERY\nLOCATION AND CONTACT\nArrival\nDeparture date\nPromotional code\n2 Adults • 1 room\nBOOK NOW\nwelcome to\nColbún Lodge\n\nDescubre Lodge Colbún, un rincón excepcionalmente cuidado para los amantes de la naturaleza. Aquí, encontrarás un ambiente familiar donde los dueños serán tus anfitriones personales.\n\nNuestro Lodge ofrece una variedad de habitaciones y cabañas en dos áreas exclusivas, cada una con su propia piscina y acceso privado al lago. Sumé",
+      "cta_en_pantalla": [
+        {
+          "t": "location and contact",
+          "h": "/en/contacto.html"
+        },
+        {
+          "t": "",
+          "h": "https://api.whatsapp.com/send?phone=56984758096"
+        },
+        {
+          "t": "¡reserva ahora!",
+          "h": "https://www.lodgecolbun.com/promos/tu-escapada-de-primavera-con-un-descuento-exclusivo.html"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 0,
+        "palabras": 1393
+      }
+    },
+    "captura": "r1-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "PHPSESSID",
+        "dominio": "www.lodgecolbun.com",
+        "expira_dias": 0
+      },
+      {
+        "nombre": "px_session_id",
+        "dominio": "www.lodgecolbun.com",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_gcl_au",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "_fbp",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "_ga_SYSQR6EL6E",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_WXGY2Y0EHL",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_ENDTSVCQ6Y",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_5H9FF2E3LS",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_JYP0RTPRRK",
+        "dominio": ".lodgecolbun.com",
+        "expira_dias": 400
+      }
+    ],
+    "dom": {
+      "url": "https://www.lodgecolbun.com/",
+      "titulo": "Home - Colbún Lodge",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "https://api-1-eb-web.pxsol.io/search/insert",
+          "accion_abs": "https://api-1-eb-web.pxsol.io/search/insert",
+          "metodo": "post",
+          "campos": 7,
+          "requeridos": 0,
+          "visible": true,
+          "pide_correo_o_tel": true
+        },
+        {
+          "action": "/contact/newsletter",
+          "accion_abs": "https://www.lodgecolbun.com/contact/newsletter",
+          "metodo": "post",
+          "campos": 2,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "/en/app/",
+          "t": "Check In and Online Cancellation"
+        },
+        {
+          "h": "/?lng=es",
+          "t": "Español"
+        },
+        {
+          "h": "/pt/?lng=pt",
+          "t": "Português"
+        },
+        {
+          "h": "https://app.reservadirecto.com/auth_web?return_url=https%3A%2F%2Fwww.lodgecolbun.com%2Fauthorize.php%3Fredirect_url%3Dhttps%253A%252F%252Fwww.lodgecolbun.com%252F&origin_pos=LodgeColbun",
+          "t": "Log in"
+        },
+        {
+          "h": "/en/index.html",
+          "t": "THE LODGE"
+        },
+        {
+          "h": "/en/habitaciones.html",
+          "t": "ROOMS/CABINS"
+        },
+        {
+          "h": "/en/servicios.html",
+          "t": "SERVICES"
+        },
+        {
+          "h": "/en/index.html",
+          "t": ""
+        },
+        {
+          "h": "/en/promos.html",
+          "t": "PROMOTIONS"
+        },
+        {
+          "h": "/en/galeria.html",
+          "t": "GALLERY"
+        },
+        {
+          "h": "/en/contacto.html",
+          "t": "LOCATION AND CONTACT"
+        },
+        {
+          "h": "/en/habitaciones.html",
+          "t": "Rooms/Cabins\nWALK"
+        },
+        {
+          "h": "/en/servicios.html",
+          "t": "Services\nKNOWN"
+        },
+        {
+          "h": "/en/contacto.html",
+          "t": "Location and Contact\nDISCOVER"
+        },
+        {
+          "h": "/en/promos.html",
+          "t": "Promotions\nENJOY"
+        },
+        {
+          "h": "/en/galeria.html",
+          "t": "See Gallery"
+        },
+        {
+          "h": "tel:+56 9 8475 8096",
+          "t": "+56 9 8475 8096"
+        },
+        {
+          "h": "tel:+56 9 7669 7162",
+          "t": "+56 9 7669 7162"
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56984758096",
+          "t": "+56 9 8475 8096"
+        },
+        {
+          "h": "https://www.google.com/maps/search/Lodge Colbún, Colbún Alto, Colbún, Maule, Chile Maule - Chile",
+          "t": "Colbún Alto, Colbún, Maule, Chile"
+        },
+        {
+          "h": "mailto:reservas@lodgecolbun.com",
+          "t": "reservas@lodgecolbun.com"
+        },
+        {
+          "h": "https://www.facebook.com/lodgecolbun",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/lodgecolbun",
+          "t": ""
+        },
+        {
+          "h": "https://www.tripadvisor.com.ar/Hotel_Review-g1675381-d1759433-Reviews-Lodge_Colbun-Colbun_Maule_Region.html",
+          "t": ""
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56984758096",
+          "t": ""
+        },
+        {
+          "h": "/cookiespolicies.php?pos=LodgeColbun",
+          "t": "Cookies policy"
+        },
+        {
+          "h": "https://files-p.pxsol.com/23611/company/library/user/21326778216c9b4f8ca905a378b6a5a6da010f26e4e.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQI4Y7PQJFLSSFFFR%2F20260426%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260426T192518Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1200&X-Amz-Signature=7e46c64ed31effbee82dd6780ef679f0cf8250e9c01e7c69e5e4576ccde3db15",
+          "t": "Terminos y Condiciones"
+        },
+        {
+          "h": "/policies.php?pos=LodgeColbun",
+          "t": "Privacy Policy"
+        },
+        {
+          "h": "",
+          "t": "Textos"
+        },
+        {
+          "h": "https://www.pxsol.com/pos_source=LodgeColbun",
+          "t": "Sistema Hotelero"
+        },
+        {
+          "h": "/",
+          "t": "image/svg+xml"
+        },
+        {
+          "h": "https://www.lodgecolbun.com/promos/tu-escapada-de-primavera-con-un-descuento-exclusivo.html",
+          "t": "¡Reserva ahora!"
+        },
+        {
+          "h": "#",
+          "t": "16"
+        },
+        {
+          "h": "#",
+          "t": "17"
+        },
+        {
+          "h": "#",
+          "t": "18"
+        },
+        {
+          "h": "#",
+          "t": "19"
+        },
+        {
+          "h": "#",
+          "t": "20"
+        },
+        {
+          "h": "#",
+          "t": "21"
+        },
+        {
+          "h": "#",
+          "t": "22"
+        },
+        {
+          "h": "#",
+          "t": "23"
+        },
+        {
+          "h": "#",
+          "t": "24"
+        },
+        {
+          "h": "#",
+          "t": "25"
+        },
+        {
+          "h": "#",
+          "t": "26"
+        },
+        {
+          "h": "#",
+          "t": "27"
+        },
+        {
+          "h": "#",
+          "t": "28"
+        },
+        {
+          "h": "#",
+          "t": "29"
+        },
+        {
+          "h": "#",
+          "t": "30"
+        },
+        {
+          "h": "#",
+          "t": "31"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://www.lodgecolbun.com/cookiespolicies.php?pos=LodgeColbun",
+          "t": "Cookies policy"
+        },
+        {
+          "h": "https://www.lodgecolbun.com/policies.php?pos=LodgeColbun",
+          "t": "Privacy Policy"
+        }
+      ],
+      "largo_texto": 8402,
+      "muestra": "CLP $\nTHE LODGE\nROOMS/CABINS\nSERVICES\nPROMOTIONS\nGALLERY\nLOCATION AND CONTACT\nArrival\nDeparture date\nPromotional code\n2 Adults • 1 room\nBOOK NOW\nwelcome to\nColbún Lodge\n\nDescubre Lodge Colbún, un rincón excepcionalmente cuidado para los amantes de la naturaleza. Aquí, encontrarás un ambiente familiar donde los dueños serán tus anfitriones personales.\n\nNuestro Lodge ofrece una variedad de habitaciones y cabañas en dos áreas exclusivas, cada una con su propia piscina y acceso privado al lago. Sumé",
+      "cta_en_pantalla": [
+        {
+          "t": " +56 9 8475 8096",
+          "h": "tel:+56 9 8475 8096"
+        },
+        {
+          "t": " +56 9 7669 7162",
+          "h": "tel:+56 9 7669 7162"
+        },
+        {
+          "t": " +56 9 8475 8096",
+          "h": "https://api.whatsapp.com/send?phone=56984758096"
+        },
+        {
+          "t": " reservas@lodgecolbun.com",
+          "h": "mailto:reservas@lodgecolbun.com"
+        },
+        {
+          "t": "",
+          "h": "https://api.whatsapp.com/send?phone=56984758096"
+        },
+        {
+          "t": "¡reserva ahora!",
+          "h": "https://www.lodgecolbun.com/promos/tu-escapada-de-primavera-con-un-descuento-exclusivo.html"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 0,
+        "palabras": 1393
+      }
+    },
+    "captura": "r1-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-SYSQR6EL6E",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-SYSQR6EL6E"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=UA-34517567-10",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "UA-34517567-10"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/css/images/bnd_en.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/css/images/bnd_es.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/css/images/bnd_pt.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://accounts.google.com/gsi/intermediate",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://accounts.google.com/gsi/intermediatesupport",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://unpkg.com/tippy.js@6/animations/scale.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://unpkg.com/@popperjs/core@2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://unpkg.com/tippy.js@6",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/neo_modules/marketplace_buscador_v8/js.js?filev=1778144039",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://unpkg.com/leaflet@1.7.1/dist/leaflet.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images-new.pxsol.com/lTo-nmRoMBKKJqEWMOOLwUvG1lEscTdpsIGSeCyKjPs/rs:fill:500:500:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibrary%2Fuser%2F10539068592658f60423fa48fc5a3cafce757cae229.jpg@jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images-new.pxsol.com/4DDQInsf-r-TA7w9Gz74X92i0N0Q4gSr2tthqG4G7FU/rs:fill:500:500:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibrary%2Fuser%2F281162580962b3a1a4f946f1903a6d2426cc26444d0.jpg@jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images-new.pxsol.com/eYFHw-xvhsef15sGz7tCVli0k4tRt6SNNYfHdT27ifQ/rs:fill:1900:900:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibrary%2Fuser%2F14050632928b9ab855e98d273286871baeffb54d8ee.jpg@jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images-new.pxsol.com/eEG5M0Dppp1xcGqN1NGbfXaBTOPR2tYov6WNfXuJbqQ/rs:fill:1900:900:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibrary%2Fuser%2F10543732554f5b156e353593f4a306fe38e050fd622.jpg@jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images-new.pxsol.com/uPNXajxB3hmEvqmbJ_qfHPyTxTf_kCtPWvi8htwgLPg/rs:fill:1900:600:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibrary%2Fuser%2F105514602725129a1676d612fd7d76bf2dfecb5b6ce.jpg@jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images-new.pxsol.com/JXiynK1zMSnHCqDPsNHa4qXFuAl2Hnp0MLIs98l_FhM/rs:fill:1900:900:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibrary%2Fuser%2F28101265856abd4abe130158526b4c19ccb9dc70e85.jpg@jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.pxsol.com/js/domready.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.pxsol.com/css/images/logo_loginrd.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/js_3.js?pos=LodgeColbun&device=computer&filev=1792075590&posv=1790957728_2026-08-17T15:49:02.000Z_2026-08-17T15:49:02.000Z",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images-new.pxsol.com/Ki3v5GRRAlhTStvzK4nETP3QDQMdbHlWc-tf8lTBoc8/rs:fill:500:350:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibrary%2Fuser%2F715446780054de5d712810e6128db8e73941c1f0ef.jpg@jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/neo_modules/neo_popup/js.js?v=121792075590",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-TPTNCNX",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GTM-TPTNCNX"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-MSDQV2VD",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GTM-MSDQV2VD"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/en_US/fbevents.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://files-p.pxsol.com/23611/company/library/user/17771585750cefe4c16e5a5b2928aad7260b09ea2ee.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-JYP0RTPRRK&cx=c&gtm=4e6ad1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-JYP0RTPRRK"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-SYSQR6EL6E&gtm=45je6ad1v891978245za208zd891978245xf1&_p=1792076131791&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGAC&are=1&cid=1588666626.1792076132&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=115938465~115938469~118897920~1188",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-SYSQR6EL6E"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-SYSQR6EL6E&cid=1588666626.1792076132&gtm=45je6ad1v891978245za208zd891978245xf1&rcb=9&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1028619328/?random=1792076132030&cv=11&fst=1792076132030&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je6ad1v891978245za208zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.c",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/rmkt/collect/1028619328/?random=1792076132030&cv=11&fst=1792076132030&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je6ad1v891978245za208zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&rcb=9&frm=0&tiba=",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-WXGY2Y0EHL&gtm=45je6ad1v891978245za208zd891978245xf1&_p=1792076131791&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAACAC&are=1&cid=1588666626.1792076132&frm=0&ibt=1&ngs=1&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=1&tag_exp=115938465~115938469~11777679",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-WXGY2Y0EHL"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&ngs=1&ibt=1&tid=G-WXGY2Y0EHL&cid=1588666626.1792076132&gtm=45je6ad1v891978245za208zd891978245xf1&rcb=9&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-ENDTSVCQ6Y&gtm=45je6ad1v891978245za208zd891978245xf1&_p=1792076131791&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAACAC&are=1&cid=1588666626.1792076132&frm=0&ibt=1&ngs=1&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=1&tag_exp=115938465~115938469~11777679",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-ENDTSVCQ6Y"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&ngs=1&ibt=1&tid=G-ENDTSVCQ6Y&cid=1588666626.1792076132&gtm=45je6ad1v891978245za208zd891978245xf1&rcb=9&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-5H9FF2E3LS&gtm=45je6ad1v891978245za208zd891978245xf1&_p=1792076131791&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGAC&are=1&cid=1588666626.1792076132&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=115938465~115938469~117776796~1188",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-5H9FF2E3LS"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-5H9FF2E3LS&cid=1588666626.1792076132&gtm=45je6ad1v891978245za208zd891978245xf1&rcb=9&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=UA-34517567-10&cx=c&gtm=4e6ad1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "UA-34517567-10"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1028619328/?random=1792076132082&cv=11&fst=1792076132082&bg=ffffff&guid=ON&async=1&en=px_layer_ready&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbu",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/rmkt/collect/1028619328/?random=1792076132082&cv=11&fst=1792076132082&fmt=8&bg=ffffff&guid=ON&async=1&en=px_layer_ready&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&rcb=9&ecsid=d8",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=9&frm=0&apvc=1&auid=1051656639.1792076132&dt=Home%20-%20Colb%C3%BAn%20Lodge&tid=AW-1028619328&en=page_view&dl=https%3A%2F%2Fwww.lodgecolbun.com%2F&scrsrc=www.googletagmanager.com&rnd=1593895037.1792076132&navt=n&npa=0&ep.pos=LodgeColbun&ep.product_id=24647&ep.product_name=Lodge%20Colb%C3%BAn&ep.product_country=Chile&ep.product_state=Maule&ep.product_plaza=Col",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ad.doubleclick.net/ccm/s/collect?auid=1051656639.1792076132&gtm=45je6ad1v891978245za208zd891978245xecxf1&fmt=8",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=9&frm=0&apvc=0&auid=1051656639.1792076132&dt=Home%20-%20Colb%C3%BAn%20Lodge&tid=AW-1028619328&en=px_layer_ready&dl=https%3A%2F%2Fwww.lodgecolbun.com%2F&scrsrc=www.googletagmanager.com&rnd=1593895037.1792076132&navt=n&npa=0&ep.session_id=d8fd80ab-e654-4158-85e4-1222153e6bec&ep.page_url=https%3A%2F%2Fwww.lodgecolbun.com%2F&ep.pos=LodgeColbun&ep.product_id=24647",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://unpkg.com/tippy.js@6.3.7/animations/scale.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-SYSQR6EL6E&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQC&are=1&cid=1588666626.1792076132&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=115938465~115938469~117776796~118897920~1",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "px_layer_ready",
+        "tid": "G-SYSQR6EL6E"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-WXGY2Y0EHL&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAACQC&are=1&cid=1588666626.1792076132&frm=0&ibt=1&ngs=1&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=2&tag_exp=115938465~115938469~117776796~11889",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "px_layer_ready",
+        "tid": "G-WXGY2Y0EHL"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-ENDTSVCQ6Y&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAACQC&are=1&cid=1588666626.1792076132&frm=0&ibt=1&ngs=1&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=2&tag_exp=115938465~115938469~117776796~11889",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "px_layer_ready",
+        "tid": "G-ENDTSVCQ6Y"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-5H9FF2E3LS&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQC&are=1&cid=1588666626.1792076132&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=115938465~115938469~117776796~118897920~1",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "px_layer_ready",
+        "tid": "G-5H9FF2E3LS"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://unpkg.com/@popperjs/core@2.11.8/dist/umd/popper.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://unpkg.com/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-SYSQR6EL6E&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQC&ae=a&are=1&cid=1588666626.1792076132&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=3&tag_exp=115938465~115938469~117776796~118897",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "scroll",
+        "tid": "G-SYSQR6EL6E"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=AW-17159814377&cx=c&gtm=4e6ad1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "AW-17159814377"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=18&frm=0&apvc=0&ae=g&auid=1051656639.1792076132&dt=Home%20-%20Colb%C3%BAn%20Lodge&en=page_view&dl=https%3A%2F%2Fwww.lodgecolbun.com%2F&scrsrc=www.googletagmanager.com&rnd=1593895037.1792076132&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He6ad1v9235487263za200zd9235487263xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~117776796~118897920~118897930~120",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-JYP0RTPRRK&gtm=45je6ad1v9129411514za208zb891978245zd891978245xf1&_p=1792076131791&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAACAC&are=1&cid=1588666626.1792076132&frm=0&ibt=1&ir=1&ngs=1&pscdl=&rcb=14&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=1&tag_exp=115616985~",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-JYP0RTPRRK"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&ngs=1&ibt=1&tid=G-JYP0RTPRRK&cid=1588666626.1792076132&gtm=45je6ad1v9129411514za208zb891978245zd891978245xf1&rcb=14&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115616985~115938465~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api.js?posv=1790957728&filev=4",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/computer/module/idiomas/js.js?posv=1790957728&filev=4",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/neo_modules/marketplace_buscador_v3/js.js?posv=1790957728&filev=4",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/neo_modules/neo_swiper/js.js?posv=1790957728&filev=4",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/neo_modules/neo_social_proof/js.js?posv=1790957728&filev=4",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/neo_modules/neo_contact_info/js.js?posv=1790957728&filev=4",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/computer/module/newsletter/js.js?posv=1790957728&filev=4",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1028619328/?random=1792076132786&cv=11&fst=1792076132786&bg=ffffff&guid=ON&async=1&en=search_open&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.c",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/rmkt/collect/1028619328/?random=1792076132786&cv=11&fst=1792076132786&fmt=8&bg=ffffff&guid=ON&async=1&en=search_open&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&rcb=9&frm=0&tiba=",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/measurement/conversion?random=1792076132799&cv=11&tid=G-SYSQR6EL6E&fst=1792076132799&fmt=8&en=search_open&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&gacid=1588666626.1792076132&",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-SYSQR6EL6E&gtm=45je6ad1v891978245z8810790447za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQC&are=1&cid=1588666626.1792076132&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=4&tag_exp=115938465~115938469~117776796~",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "px_context",
+        "tid": "G-SYSQR6EL6E"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-SYSQR6EL6E&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQC&_prs=ok&are=1&cid=1588666626.1792076132&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=5&tag_exp=115938465~115938469~117776796~118",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "search_open",
+        "tid": "G-SYSQR6EL6E"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-WXGY2Y0EHL&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAACQC&ae=a&are=1&cid=1588666626.1792076132&frm=0&ibt=1&ngs=1&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=3&tag_exp=115938465~115938469~117776796~",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "scroll",
+        "tid": "G-WXGY2Y0EHL"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-ENDTSVCQ6Y&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAACQC&ae=a&are=1&cid=1588666626.1792076132&frm=0&ibt=1&ngs=1&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=3&tag_exp=115938465~115938469~117776796~",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "scroll",
+        "tid": "G-ENDTSVCQ6Y"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-5H9FF2E3LS&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQC&ae=a&are=1&cid=1588666626.1792076132&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=3&tag_exp=115938465~115938469~117776796~118897",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "scroll",
+        "tid": "G-5H9FF2E3LS"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/measurement/conversion?random=1792076132842&cv=11&tid=G-SYSQR6EL6E&fst=1792076132842&fmt=8&en=search_open&gtm=45je6ad1v891978245z8810790447za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&gacid=1588666626.",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-SYSQR6EL6E&gtm=45je6ad1v891978245z8810790447za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQC&_prs=ok&are=1&cid=1588666626.1792076132&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=6&tag_exp=115938465~115938469~11",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "search_open",
+        "tid": "G-SYSQR6EL6E"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://px-chat-widget-prod.pxsol.com/company-widget/apiKey/LodgeColbun?v=1790957728",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=9&frm=0&apvc=0&auid=1051656639.1792076132&dt=Home%20-%20Colb%C3%BAn%20Lodge&tid=AW-1028619328&en=search_open&dl=https%3A%2F%2Fwww.lodgecolbun.com%2F&scrsrc=www.googletagmanager.com&rnd=1593895037.1792076132&navt=n&npa=0&ep.page_url=https%3A%2F%2Fwww.lodgecolbun.com%2F&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://px-chat-widget-prod.pxsol.com/company-widget/apiKey/LodgeColbun?v=1790957728",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/css_3.css?pos=LodgeColbun&device=computer&posv=1790957728_2026-08-17T15:49:02.000Z&filev=1782498034",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://use.fontawesome.com/releases/v5.7.1/css/all.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/css/materialdesignicons.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/includes/toast/jquery.toast.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/includes/toast/jquery.toast.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api.js?render=explicit&_=1792076132714",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAAAZgABAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAGRAAAABoAAAAci6qHkUdERUYAAAWgAAAAIwAAACQAYABXR1BPUwAABhQAAAAuAAAANuAY7+xHU1VCAAAFxAAAAFAAAABm2fPczU9TLzIAAAHcAAAASgAAAGBP9V5RY21hcAAAAkQAAACIAAABYt6F0cBjdnQgAAACzAAAAAQAAAAEABEBRGdhc3AAAAWYAAAACAAAAAj//wADZ2x5ZgAAAywAAADMAAAD2MHtryVoZWFkAAABbAAAADAAAAA2E2+eoWhoZWEAAAGcAAAAHwAAACQC9gD",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh7USSwiPGQ.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://files-p.pxsol.com/23611/company/library/user/124418388647be47b9911c5027d27657ffa6c74b516.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://files-p.pxsol.com/23611/company/library/user/1599746344266f353bb15f6d6c13f69d0448be0d418.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://files-p.pxsol.com/23611/company/library/user/14050632928b9ab855e98d273286871baeffb54d8ee.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1028619328/?random=1792076133122&cv=11&fst=1792076133122&bg=ffffff&guid=ON&async=1&en=form_view&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/rmkt/collect/1028619328/?random=1792076133122&cv=11&fst=1792076133122&fmt=8&bg=ffffff&guid=ON&async=1&en=form_view&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&rcb=9&frm=0&tiba=Ho",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=9&frm=0&apvc=0&auid=1051656639.1792076132&dt=Home%20-%20Colb%C3%BAn%20Lodge&tid=AW-1028619328&en=form_view&dl=https%3A%2F%2Fwww.lodgecolbun.com%2F&scrsrc=www.googletagmanager.com&rnd=1593895037.1792076132&navt=n&npa=0&ep.form_id=pxmk_searchform&ep.page_url=https%3A%2F%2Fwww.lodgecolbun.com%2F&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/17159814377/?random=1792076133265&cv=11&fst=1792076133265&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6ad1z8f_AW-17159814377za20ozb9235487263zd9235487263xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/rmkt/collect/17159814377/?random=1792076133265&cv=11&fst=1792076133265&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6ad1z8f_AW-17159814377za20ozb9235487263zd9235487263xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.co",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=4&frm=0&apvc=0&auid=1051656639.1792076132&dt=Home%20-%20Colb%C3%BAn%20Lodge&tid=AW-17159814377&en=page_view&dl=https%3A%2F%2Fwww.lodgecolbun.com%2F&scrsrc=www.googletagmanager.com&rnd=1593895037.1792076132&navt=n&npa=0&gtm=45be6ad1z8f_AW-17159814377za20ozb9235487263zd9235487263xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~11889",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/css/fonts/materialdesignicons-webfont.woff2?v=7.1.96",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-user-list/1028619328/?random=1792076132082&cv=11&fst=1792072800000&bg=ffffff&guid=ON&async=1&en=px_layer_ready&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&rcb=9&ecsid=d",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-user-list/1028619328/?random=1792076132030&cv=11&fst=1792072800000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je6ad1v891978245za208zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&rcb=9&frm=0&tiba",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/signals/config/732386462626955?v=2.9.419&r=stable&domain=www.lodgecolbun.com&hme=7459fa3e38c2784dbaf309537bed5fa7e8560fab51fb61e53e5ffafeb46a02a9&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1028619328/?random=1792076133524&cv=11&fst=1792076133524&bg=ffffff&guid=ON&async=1&en=chat_message&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/rmkt/collect/1028619328/?random=1792076133524&cv=11&fst=1792076133524&fmt=8&bg=ffffff&guid=ON&async=1&en=chat_message&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&rcb=9&ecsid=s_59",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/measurement/conversion?random=1792076133533&cv=11&tid=G-SYSQR6EL6E&fst=1792076133533&fmt=8&en=chat_message&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&gacid=1588666626.1792076132",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-SYSQR6EL6E&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQC&are=1&cid=1588666626.1792076132&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=7&tag_exp=115938465~115938469~117776796~118897920~1",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "form_view",
+        "tid": "G-SYSQR6EL6E"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-SYSQR6EL6E&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQC&_prs=ok&are=1&cid=1588666626.1792076132&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=8&tag_exp=115938465~115938469~117776796~118",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "chat_message",
+        "tid": "G-SYSQR6EL6E"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=9&frm=0&apvc=0&auid=1051656639.1792076132&dt=Home%20-%20Colb%C3%BAn%20Lodge&tid=AW-1028619328&en=chat_message&dl=https%3A%2F%2Fwww.lodgecolbun.com%2F&scrsrc=www.googletagmanager.com&rnd=1593895037.1792076132&navt=n&npa=0&ep.session_id=s_590e01f5-2a98-4194-a48b-2863a477b161&ep.pos=LodgeColbun&ep.post=LodgeColbun&ep.hotel_id=24647&ep.page_url=https%3A%2F%2Fwww.",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-user-list/1028619328/?random=1792076132786&cv=11&fst=1792072800000&bg=ffffff&guid=ON&async=1&en=search_open&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&rcb=9&frm=0&tiba",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/nY0xPItgwtlvjEjk2TqdwOQz/recaptcha__en.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-user-list/1028619328/?random=1792076133122&cv=11&fst=1792072800000&bg=ffffff&guid=ON&async=1&en=form_view&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&rcb=9&frm=0&tiba=H",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-user-list/17159814377/?random=1792076133265&cv=11&fst=1792072800000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6ad1z8f_AW-17159814377za20ozb9235487263zd9235487263xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.c",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-user-list/1028619328/?random=1792076133524&cv=11&fst=1792072800000&bg=ffffff&guid=ON&async=1&en=chat_message&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&rcb=9&ecsid=s_5",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.pxsol.com/dist/chat-widget.min.js?k=20ea7f3be312517da7c1d6a0170e1fb57f&v=1790957728",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://px-chat-widget-prod.pxsol.com/company-widget/details",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://px-chat-widget-prod.pxsol.com/company-widget/details",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfWJEIUAAAAANStHukodcdKv4tnwSFLknAMB_FM&co=aHR0cHM6Ly93d3cubG9kZ2Vjb2xidW4uY29tOjQ0Mw..&hl=en&v=nY0xPItgwtlvjEjk2TqdwOQz&size=invisible&anchor-ms=20000&execute-ms=30000&cb=iwjai6wp12bc",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/fonts/materialdesignicons-webfont.woff2?v=7.4.47",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://files-public-web.s3-us-west-2.amazonaws.com/1050/company/library/user/2240538874615d186e8cef83ae4a299a7ded823d593.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/nY0xPItgwtlvjEjk2TqdwOQz/styles__ltr.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/nY0xPItgwtlvjEjk2TqdwOQz/recaptcha__en.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api2/webworker.js?hl=en&v=nY0xPItgwtlvjEjk2TqdwOQz",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/api2/logo_48.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/nY0xPItgwtlvjEjk2TqdwOQz/recaptcha__en.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images-new.pxsol.com/Wxq1GW6l-EJjiedrWY8MKoLULHdPU5xeYjkvJGyeoVM/rs:fill:1900:910:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibrary%2Fuser%2F10539068592658f60423fa48fc5a3cafce757cae229.jpg@jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images-new.pxsol.com/NnUd69aOu_A4GQyFpruaB4jWy3gwWBcBWzHU_9Eddm8/rs:fill:1900:910:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibrary%2Fuser%2F26344936800c214f8ecb8ca6e83f779b874d776429f.jpg@jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images-new.pxsol.com/sGYgAuphlmSFXGwspQrHwJcJGlboonG79y0hfr_Lnms/rs:fill:1900:910:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibrary%2Fuser%2F12523389368e9cb7730031ab8bb7f6e4c438f3a3b8a.jpg@jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://eva.reservadirecto.com/core/includes/google_one_tap_intermediate_iframe.php?origin=https%3A%2F%2Fwww.lodgecolbun.com&redirect_url=https%3A%2F%2Fwww.lodgecolbun.com%2F&pos=LodgeColbun",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=nY0xPItgwtlvjEjk2TqdwOQz&k=6LfWJEIUAAAAANStHukodcdKv4tnwSFLknAMB_FM&bft=0dAFcWeA7y_2rb564CwE0Iwgb855L7sZ4w_lNr9ra5tfJ-iEQ6pSaUoIvQY1LasH9PiQYqrEa13tI22ejyE14ekZzjioXB6c8GKQ",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.lodgecolbun.com/cdn-cgi/rum?",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/nY0xPItgwtlvjEjk2TqdwOQz/styles__ltr.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/nY0xPItgwtlvjEjk2TqdwOQz/recaptcha__en.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api2/reload?k=6LfWJEIUAAAAANStHukodcdKv4tnwSFLknAMB_FM",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/api2/refresh_2x.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/api2/audio_2x.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/api2/info_2x.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api2/payload?p=06AFcWeA5Uc6fc15ETrRYenvwbtHC4CoDe59aIX7SmOfX6Qdx6d_peDi8mabmwLydfGsVQ0YoxxtRrQzD-I5Cs6esWCHtl5WmK-G_i-iePqAcENs0u8HesakSr4jSyazdbb7yUdkd82BIux-RbNt9V7FrUdTGxkuHQheSzltACL1FOPuXHaFMTMo8AmSlSfoEK0dZLvwlfTq1dlDmBazSN8zHsvmYMo750tmuKmN8q_rXp75FMWBHaBQw&k=6LfWJEIUAAAAANStHukodcdKv4tnwSFLknAMB_FM",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://eva.reservadirecto.com/.webmcp/bridge.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://accounts.google.com/gsi/client",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://accounts.google.com/gsi/style",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://eva.reservadirecto.com/cdn-cgi/rum?",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://files-p.pxsol.com/23611/company/library/user/17771585750cefe4c16e5a5b2928aad7260b09ea2ee.png",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://google.com/.well-known/web-identity",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://accounts.google.com/gsi/fedcm.json",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://files-p.pxsol.com/23611/company/library/user/17771585750cefe4c16e5a5b2928aad7260b09ea2ee.png",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images-new.pxsol.com/yDpNMVQcWIgwTS5hFgtsXD2vkGF8WP4Jo6dUKPnVA8Y/rs:fill:32:32:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibrary%2Fuser%2F17771585750cefe4c16e5a5b2928aad7260b09ea2ee.png@png",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-JYP0RTPRRK&gtm=45je6ad1v9129411514za200zb891978245zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAACQC&are=1&cid=1588666626.1792076132&frm=0&ibt=1&ir=1&ngs=1&pscdl=&rcb=14&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&tag_exp=115616985~115938465~11",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": null,
+        "tid": "G-JYP0RTPRRK"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://accounts.google.com/gsi/fedcm/listaccounts",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-WXGY2Y0EHL&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAACQC&are=1&cid=1588666626.1792076132&frm=0&ibt=1&ngs=1&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&tag_exp=115938465~115938469~117776796~118897920~",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": null,
+        "tid": "G-WXGY2Y0EHL"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-ENDTSVCQ6Y&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAACQC&are=1&cid=1588666626.1792076132&frm=0&ibt=1&ngs=1&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&tag_exp=115938465~115938469~117776796~118897920~",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": null,
+        "tid": "G-ENDTSVCQ6Y"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-5H9FF2E3LS&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQC&are=1&cid=1588666626.1792076132&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&tag_exp=115938465~115938469~117776796~118897920~118897",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": null,
+        "tid": "G-5H9FF2E3LS"
+      }
+    },
+    {
+      "fase": "B",
+      "url": "https://images-new.pxsol.com/thvPE3xev5-6QxXvD312ac61KgEGpl3XNlodCXs-Ty0/rs:fill:1900:910:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibrary%2Fuser%2F3517343638e9a63d94c4edaef1e50a78e8bea0e380.jpg@jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1028619328/?random=1792076146034&cv=11&fst=1792076146034&bg=ffffff&guid=ON&async=1&en=form_view&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "B",
+      "url": "https://www.google.com/rmkt/collect/1028619328/?random=1792076146034&cv=11&fst=1792076146034&fmt=8&bg=ffffff&guid=ON&async=1&en=form_view&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&rcb=9&frm=0&tiba=Ho",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://www.google.com/ccm/collect?rcb=9&frm=0&apvc=0&auid=1051656639.1792076132&dt=Home%20-%20Colb%C3%BAn%20Lodge&tid=AW-1028619328&en=form_view&dl=https%3A%2F%2Fwww.lodgecolbun.com%2F&scrsrc=www.googletagmanager.com&rnd=1593895037.1792076132&navt=n&npa=0&ep.form_id=form_suscribe&ep.page_url=https%3A%2F%2Fwww.lodgecolbun.com%2F&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&t",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://www.google.com/pagead/1p-user-list/1028619328/?random=1792076146034&cv=11&fst=1792072800000&bg=ffffff&guid=ON&async=1&en=form_view&gtm=45je6ad1v891978245za200zd891978245xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~117776796~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fwww.lodgecolbun.com%2F&rcb=9&frm=0&tiba=H",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://images-new.pxsol.com/U7Ye7ga-kzz9KlP75PGDAZuiwh_Z17-l9Hfjhn-2ncA/rs:fill:1900:910:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibrary%2Fuser%2F12301021859ddc1107587d926d14d9da293820006f1.jpg@jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-SYSQR6EL6E&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQC&are=1&cid=1588666626.1792076132&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=9&tag_exp=115938465~115938469~117776796~118897920~1",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "form_view",
+        "tid": "G-SYSQR6EL6E"
+      }
+    },
+    {
+      "fase": "B",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-WXGY2Y0EHL&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAACQC&are=1&cid=1588666626.1792076132&frm=0&ibt=1&ngs=1&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=5&tag_exp=115938465~115938469~117776796~11889",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "form_view",
+        "tid": "G-WXGY2Y0EHL"
+      }
+    },
+    {
+      "fase": "B",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-ENDTSVCQ6Y&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAACQC&are=1&cid=1588666626.1792076132&frm=0&ibt=1&ngs=1&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=5&tag_exp=115938465~115938469~117776796~11889",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "form_view",
+        "tid": "G-ENDTSVCQ6Y"
+      }
+    },
+    {
+      "fase": "B",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-5H9FF2E3LS&gtm=45je6ad1v891978245za200zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQC&are=1&cid=1588666626.1792076132&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=5&tag_exp=115938465~115938469~117776796~118897920~1",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "form_view",
+        "tid": "G-5H9FF2E3LS"
+      }
+    },
+    {
+      "fase": "B",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-JYP0RTPRRK&gtm=45je6ad1v9129411514za200zb891978245zd891978245xf1&_p=1792076131791&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAACQC&are=1&cid=1588666626.1792076132&frm=0&ibt=1&ir=1&ngs=1&pscdl=&rcb=14&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=3&tag_exp=115616985~1159384",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "form_view",
+        "tid": "G-JYP0RTPRRK"
+      }
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "PHPSESSID",
+      "desde": "www.lodgecolbun.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "test_cookie",
+      "desde": "googleads.g.doubleclick.net"
+    },
+    {
+      "fase": "A",
+      "nombre": "test_cookie",
+      "desde": "googleads.g.doubleclick.net"
+    },
+    {
+      "fase": "A",
+      "nombre": "test_cookie",
+      "desde": "googleads.g.doubleclick.net"
+    },
+    {
+      "fase": "A",
+      "nombre": "test_cookie",
+      "desde": "googleads.g.doubleclick.net"
+    },
+    {
+      "fase": "A",
+      "nombre": "test_cookie",
+      "desde": "googleads.g.doubleclick.net"
+    },
+    {
+      "fase": "A",
+      "nombre": "test_cookie",
+      "desde": "googleads.g.doubleclick.net"
+    },
+    {
+      "fase": "A",
+      "nombre": "_GRECAPTCHA",
+      "desde": "www.google.com"
+    },
+    {
+      "fase": "B",
+      "nombre": "test_cookie",
+      "desde": "googleads.g.doubleclick.net"
+    }
+  ],
+  "peso": {
+    "total_bytes": 8975623,
+    "al_abrir_bytes": 8368409,
+    "n_peticiones": 165,
+    "mas_pesados": [
+      {
+        "url": "https://images-new.pxsol.com/NnUd69aOu_A4GQyFpruaB4jWy3gwWBcBWzHU_9Eddm8/rs:fill:1900:910:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibra",
+        "bytes": 709975
+      },
+      {
+        "url": "https://files-p.pxsol.com/23611/company/library/user/14050632928b9ab855e98d273286871baeffb54d8ee.jpg",
+        "bytes": 701933
+      },
+      {
+        "url": "https://files-p.pxsol.com/23611/company/library/user/17771585750cefe4c16e5a5b2928aad7260b09ea2ee.png",
+        "bytes": 660652
+      },
+      {
+        "url": "https://images-new.pxsol.com/eYFHw-xvhsef15sGz7tCVli0k4tRt6SNNYfHdT27ifQ/rs:fill:1900:900:1/q:80/plain/https%3A%2F%2Ffiles-p.pxsol.com%2F23611%2Fcompany%2Flibra",
+        "bytes": 441901
+      }
+    ]
+  },
+  "html_len": 363381
+}
