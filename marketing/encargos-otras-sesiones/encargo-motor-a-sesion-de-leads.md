@@ -2,6 +2,7 @@
 
 **De:** sesión del motor · **Para:** sesión de búsqueda de leads (Dereck, Emilia, copiloto) y el troncal · 15-oct-2026
 **Estado:** el motor funciona y está probado sobre 33 sitios reales. **Nada de esto se ha enviado jamás**: no hay dato de conversión.
+**Decidido por Ramón el 15-oct:** (1) el correo abre la **llamada de 20 minutos**; (2) los precios de lo que no es el kit **se cierran en la llamada**, pero el correo puede apuntar a la **base publicada en el sitio como referencia**. Ver la sección 8.
 **Dónde vive:** rama `claude/motor-revision-previa-build`, carpeta `marketing/motor-revision-previa/`. **Todavía no está en `main`**: hay que mergearla (con `merge_method: merge`, la confirma Ramón) para que otra sesión lo vea sin pedirlo por rama.
 **Qué NO hizo esta sesión:** no mandó correos, no tocó la estrategia de outbound, el pipeline, `ventas/` ni el sitio.
 
@@ -67,11 +68,11 @@ El motor elige **una** oferta principal por sitio (la de mayor prioridad que se 
 
 | Oferta | Qué se ve en el sitio | Servicio publicado (spindlelab.cl, 15-oct) | Precio en el correo |
 |---|---|---|---|
-| Cookies antes del aviso, formulario sin política, política que da 404 | Verificable en 30 s | Kit de Verifica y Cumple | **Sí:** "Desde $149.000 + IVA, una vez" (texto de correos ya aprobados) |
-| Contacto ausente o roto, WhatsApp mal formado, celular, formulario largo | Se prueba con un clic | Desarrollo Web (página desde $390.000, sitio desde $690.000) | **No.** Se cierra en la llamada |
-| Enlaces rotos, estructura, peso | Se ve en el código o en F12 | Auditoría SEO Técnica (desde $490.000) | **No** |
-| Robots.txt cerrado a la IA, sin entidad declarada | `/robots.txt`, herramienta gratis | Auditoría de Visibilidad en IA (desde $400.000) | **No** |
-| Sin Google Analytics ni Tag Manager | Extensión gratuita | Acompañamiento Esencial (desde $590.000 al mes) | **No** |
+| Cookies antes del aviso, formulario sin política, política que da 404 | Verificable en 30 s | Kit de Verifica y Cumple | **Precio del kit:** "Desde $149.000 + IVA, una vez" (texto de correos ya aprobados) |
+| Contacto ausente o roto, WhatsApp mal formado, celular, formulario largo | Se prueba con un clic | Desarrollo Web (página desde $390.000, sitio desde $690.000) | **Solo referencia:** "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada" |
+| Enlaces rotos, estructura, peso | Se ve en el código o en F12 | Auditoría SEO Técnica (desde $490.000) | **Solo referencia:** "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada" |
+| Robots.txt cerrado a la IA, sin entidad declarada | `/robots.txt`, herramienta gratis | Auditoría de Visibilidad en IA (desde $400.000) | **Solo referencia:** "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada" |
+| Sin Google Analytics ni Tag Manager | Extensión gratuita | Acompañamiento Esencial (desde $590.000 al mes) | **Solo referencia:** "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada" |
 
 ⚠️ **Los precios de `marketing/capacidad-servicios.md` §0 no coinciden con los del sitio** (por ejemplo Visibilidad en IA: $360k allá, "desde $400.000" en el sitio). El motor usa solo el sitio, que es lo que ve el prospecto. El archivo es de julio y conviene alinearlo.
 
@@ -109,10 +110,10 @@ El motor elige **una** oferta principal por sitio (la de mayor prioridad que se 
 - **Todo se mide desde una IP de datacenter.** Un sitio que trate distinto a un datacenter se ve distinto.
 - **Nadie ha verificado nada a mano.** La estrategia §3 pide abrir el sitio antes de enviar.
 
-## 8. Decisiones que no son del motor
+## 8. Decisiones (1 y 2 ya resueltas por Ramón)
 
-1. **La puerta a la reunión contradice dos reglas escritas.** La estrategia §7 dice "cierre bajo, sin pedir reunión" y `agente-outbound` dice "no agendemos 30 min en el primer toque". El motor entrega: *"Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría"* (o *"Vi otra cosa que no te anoto acá..."* si hay más ofertas). No pide horario ni respuesta, pero es una desviación. **El troncal debe actualizar la estrategia o rechazarla.** El motor no la toca.
-2. **Precio de los arreglos puntuales.** Solo el kit tiene uno. Para lo demás el sitio dice que el valor "se cierra tras el diagnóstico gratuito y una conversación de 20 minutos". Hoy el correo no lleva precio salvo el kit. ¿Se mantiene así?
+1. ✅ **Puerta a la reunión: decidido, la llamada de 20 minutos.** Contradice dos reglas escritas: la estrategia §7 dice "cierre bajo, sin pedir reunión" y `agente-outbound` dice "no agendemos 30 min en el primer toque". El motor entrega: *"Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría"* (o *"Vi otra cosa que no te anoto acá..."* si hay más ofertas). No pide horario ni respuesta. **Pendiente del troncal: reflejar esta decisión en la estrategia §7 y en la skill `agente-outbound`.** El motor no las toca.
+2. ✅ **Precios: decidido, se cierran en la llamada, con la base publicada como referencia.** Solo el kit tiene precio propio ("Desde $149.000 + IVA, una vez"). Para lo demás el correo lleva la línea *"Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada"*, y la ficha trae el "desde" del servicio publicado para quien quiera citarlo como referencia, nunca como cotización.
 3. **Verificación humana antes de enviar.** El motor hace 3 corridas (la tercera con zona horaria e idioma de Chile) y guarda capturas, y por el método de la auditoría los detectores nuevos aún tienen errores. **Propuesta:** Ramón abre el sitio a mano en los primeros 10 de cada tipo de oferta; cuando un tipo no da ningún falso positivo en 10, pasa a muestreo.
 4. **Quién dispara el motor y dónde.** Propuesta: Dereck, justo después de armar la lista de empresas, en la sesión que tenga Node y Chromium (el entorno cloud los tiene; en el Mac no hace falta el proxy).
 5. **La columna `oferta` en el registro de envíos y el pipeline**, para medir qué convierte. Son archivos del troncal; el motor no los edita.

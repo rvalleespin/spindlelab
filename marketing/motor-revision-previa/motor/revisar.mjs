@@ -57,7 +57,7 @@ const entidad = entidadInterna(p1.html);
 const v = veredicto({ p0, p1, runs: corridas, edge, contacto, entidad, contenedores, gtmIds, htmlEjecutado, enlaces, movil: moviles });
 Object.assign(ficha, {
   resultado: v.resultado, url: p0.url_final, html_no_alcanza: p0.html_no_alcanza || undefined,
-  hallazgo: v.hallazgo, ruta_interna: v.punteros, ofertas_adicionales: v.extras, capa1: v.capa1, notas: v.notas, corridas_de_navegador: corridas.length,
+  hallazgo: v.hallazgo, ruta_interna: v.punteros, ofertas_adicionales: v.extras, capa1: v.capa1, notas: [...v.notas, ...(p0.advertencias || [])], corridas_de_navegador: corridas.length,
   mapa: { contacto: p1.html.contacto, analitica: p1.html.analitica, infraestructura: p1.infraestructura, robots: p1.robots, llms_txt: p1.llms_txt, sitemap: p1.sitemap, jsonld: p1.html.jsonld },
   movil: moviles, peso: corridas.map((r) => r.peso), soporte: v.soporte, borde: edge, contacto_estructural: contacto, entidad, enlaces,
   evidencia: { capturas: [...corridas.flatMap((r) => [r.A.captura, r.B.captura]), ...moviles.filter(Boolean).map((m) => m.captura)], corridas: corridas.map((_, i) => `navegador-r${i + 1}.json`) },

@@ -1,9 +1,22 @@
-# H09
+# Ficha H09
 
-**resultado:** descartado:excluido
+**resultado:** `descartado:excluido` · motor v0 · 2026-10-15T14:55:23.607Z · cloud (IP de datacenter, via proxy)
 
-{
-  "tipo": "tope-alcanzado",
-  "motivo": "3 correos reales en 3 hilos (25-sep, 30-sep, 5-oct), confirmados por el copiloto el 14-oct",
-  "fecha": "2026-10-14"
-}
+> Detector de sospecha. Nada de esto está verificado. La propuesta es lo que se vendería **si** una persona confirma el hallazgo.
+
+## Hallazgo (el de mayor posición con estado estable)
+
+_Ninguno._
+
+## Ruta interna (no va en el correo)
+
+_Vacía._
+
+## Capa 1 (contexto)
+
+- con consecuencia: -
+- higiene: -
+
+## Evidencia
+
+

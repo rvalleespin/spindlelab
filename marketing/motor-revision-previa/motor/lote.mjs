@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 // Examina automaticamente TODOS los sitios de una lista de leads. Sin aporte humano en el analisis.
-//   node lote.mjs <leads.csv> --out <carpeta> [--concurrencia 3] [--max N] [--prefijo L]
+//   node lote.mjs <leads.csv> --out <carpeta> [--concurrencia 3] [--max N] [--prefijo L] [--sin-corte]
 // Entrada: CSV de Dereck (columnas `dominio` o `email`; opcionales `empresa`/`nombre`).
 // Salida:  <carpeta>/<ID>/ficha.{json,md} por sitio, y <carpeta>/entrega/para-emilia.csv + para-emilia-detalle.csv.
 // Reanudable: si se corta, vuelve a correr el mismo comando y salta lo ya hecho.
 // NO envia nada. NO toca ventas/, pipeline ni lista de exclusion (solo la lee, en la pasada 0).
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
 import { leerCsv } from './lib/csv.mjs';
 import { limpiarDominio } from './pasadas/p0.mjs';
@@ -15,8 +16,9 @@ const args = process.argv.slice(2);
 const arg = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
 const csvPath = args.find((a) => !a.startsWith('--') && !['--out', '--concurrencia', '--max', '--prefijo'].includes(args[args.indexOf(a) - 1]));
 if (!csvPath || !arg('--out')) { console.error('Uso: node lote.mjs <leads.csv> --out <carpeta> [--concurrencia 3] [--max N] [--prefijo L]'); process.exit(2); }
+const sinCorte = args.includes('--sin-corte');   // salta exclusion / ya contactado / parking. Para listas que ya se curaron aparte.
 const out = path.resolve(arg('--out')), conc = +arg('--concurrencia', 3), max = +arg('--max', 0), pref = arg('--prefijo', 'L');
-const aqui = path.dirname(new URL(import.meta.url).pathname);
+const aqui = path.dirname(fileURLToPath(import.meta.url));
 fs.mkdirSync(out, { recursive: true });
 
 const vistos = new Set(), leads = [];
@@ -31,7 +33,7 @@ console.error(`[lote] ${lista.length} sitios, concurrencia ${conc}`);
 
 const corre = (l) => new Promise((resolve) => {
   if (fs.existsSync(path.join(out, l.id, 'ficha.json'))) { console.error(`[${l.id}] ya estaba hecho`); return resolve('saltado'); }
-  const hijo = spawn(process.execPath, ['--no-warnings', path.join(aqui, 'revisar.mjs'), l.dominio, '--id', l.id, '--out', out, ...(l.correo ? ['--correo', l.correo] : [])],
+  const hijo = spawn(process.execPath, ['--no-warnings', path.join(aqui, 'revisar.mjs'), l.dominio, '--id', l.id, '--out', out, ...(l.correo ? ['--correo', l.correo] : []), ...(sinCorte ? ['--sin-corte'] : [])],
     { env: { ...process.env, NODE_USE_ENV_PROXY: '1' }, stdio: ['ignore', 'pipe', 'pipe'] });
   let linea = ''; hijo.stdout.on('data', (d) => { linea += d; }); hijo.stderr.on('data', () => {});
   const t = setTimeout(() => hijo.kill('SIGKILL'), 900000);
