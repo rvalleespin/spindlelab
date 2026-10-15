@@ -1,0 +1,792 @@
+{
+  "id": "X02",
+  "dominio": "alatheia.cl",
+  "motor": "v0",
+  "cuando": "2026-10-15T23:31:50.087Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "oferta-capa-1",
+  "url": "https://alatheia.cl/",
+  "hallazgo": {
+    "id": "F2",
+    "nombre": "No hay a la vista cómo contactar al negocio",
+    "linea": "Desarrollo Web",
+    "capa": 1,
+    "estado": "estable",
+    "quien_comprueba": "el dueño, en 30 segundos",
+    "donde_mirar": "Abrir la portada y buscar por dónde un cliente puede escribir o llamar.",
+    "condiciones": {
+      "1": {
+        "v": "no",
+        "razon": "Se ve mirando el sitio."
+      },
+      "2": {
+        "v": "si",
+        "razon": "Sin ruta de contacto, cada visita que quiere comprar se va."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se ve a simple vista."
+      },
+      "4": {
+        "v": "no",
+        "razon": "Cualquier herramienta lo ve: es capa 1."
+      }
+    },
+    "afirmable": "En la portada no hay formulario, ni teléfono, ni correo, ni WhatsApp, ni un enlace de contacto.",
+    "no_afirmable": [
+      "que el negocio no tenga contacto en otras páginas del sitio (solo se revisó la portada)"
+    ],
+    "advertencias": [],
+    "datos": {},
+    "propuesta": {
+      "en_castellano": "En la portada de tu sitio no encontré cómo contactarte: ni formulario, ni teléfono, ni correo, ni WhatsApp.",
+      "problema_tecnico": "En la portada no hay formulario, ni teléfono, ni correo, ni WhatsApp, ni un enlace de contacto.",
+      "donde_mirar": "Abrir la portada y buscar por dónde un cliente puede escribir o llamar.",
+      "se_vende": {
+        "linea": "Desarrollo Web",
+        "producto": "Desarrollo Web a medida",
+        "alcance": "Poner a la vista un formulario, teléfono o WhatsApp y probarlo.",
+        "vehiculo_publicado": "Página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl, leído el 15-oct-2026)",
+        "precio_en_el_correo": "Solo como referencia, no como cotización: Desarrollo Web a medida, página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+        "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "fuerte",
+      "frase_de_arreglo": "Eso se arregla: dejo a la vista por dónde te escriben y lo pruebo de punta a punta.",
+      "apertura_a_reunion": "Vi 3 cosas más que no te anoto acá. Si quieres, lo vemos en una llamada de 20 minutos.",
+      "cierre_sugerido": null,
+      "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+      "por_definir": [
+        "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+      ],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [
+    {
+      "id": "F10",
+      "nombre": "En la primera pantalla no hay cómo contactar, cotizar o comprar",
+      "linea": "Desarrollo Web",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, mirando la primera pantalla",
+      "donde_mirar": "Abrir el sitio y, sin bajar, buscar un botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+      "condiciones": {
+        "1": {
+          "v": "medias",
+          "razon": "El dueño ve su sitio todos los días y no ve lo que falta."
+        },
+        "2": {
+          "v": "si",
+          "razon": "Quien llega y no ve cómo seguir, se va."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se ve a simple vista."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Es capa 1."
+        }
+      },
+      "afirmable": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+      "no_afirmable": [
+        "que no exista contacto más abajo en la página"
+      ],
+      "advertencias": [
+        "Mirar la captura del tramo A (escritorio) antes de usarlo: la heurística busca palabras de acción, y un botón con otro texto no cuenta."
+      ],
+      "datos": {},
+      "propuesta": {
+        "en_castellano": "En la primera pantalla de tu sitio no hay ningún botón para contactarte, cotizar o escribir por WhatsApp.",
+        "problema_tecnico": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+        "donde_mirar": "Abrir el sitio y, sin bajar, buscar un botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+        "se_vende": {
+          "linea": "Desarrollo Web",
+          "producto": "Desarrollo Web a medida",
+          "alcance": "Poner una acción de contacto visible en la primera pantalla, en escritorio y en celular.",
+          "vehiculo_publicado": "Página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Desarrollo Web a medida, página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "fuerte",
+        "frase_de_arreglo": "Eso se arregla: dejo a la vista, desde la primera pantalla, la forma de escribirte y lo pruebo en el celular.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "C1",
+      "nombre": "Rastreadores que escriben antes de cualquier consentimiento",
+      "linea": "Verifica y Cumple",
+      "estado": "estable",
+      "quien_comprueba": "el dueño, en 30 segundos",
+      "donde_mirar": "Abrir el sitio en una ventana nueva y, sin tocar nada ~10 s, mirar las cookies (candado > Cookies, o F12 > Application > Cookies).",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Las cookies las escriben scripts de terceros; el dueño ve el sitio normal."
+        },
+        "2": {
+          "v": "si",
+          "razon": "Cookies de medición o publicidad escritas sin que nadie haya aceptado: _ga_Q15BK6F6FX, _ga, __hstc, hubspotutk, __hssrc, __hssc, _gcl_au. Se describe la señal, no la obligación."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se ve en el panel de cookies del navegador."
+        },
+        "4": {
+          "v": "si",
+          "razon": "Exige dos tramos, atribuir cada cookie a su script y leer Consent Mode (gcs); no lo entrega una API."
+        }
+      },
+      "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_Q15BK6F6FX, _ga, __hstc, hubspotutk, __hssrc, __hssc, _gcl_au.",
+      "no_afirmable": [
+        "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads, Google Analytics)",
+        "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+        "lo que la ley \"exige\"",
+        "cualquier cosa que no aparezca en las dos corridas"
+      ],
+      "advertencias": [],
+      "propuesta": {
+        "en_castellano": "Abrí tu sitio sin tocar nada ni aceptar nada, y ya había dejado en mi navegador cookies de Google y HubSpot.",
+        "problema_tecnico": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_Q15BK6F6FX, _ga, __hstc, hubspotutk, __hssrc, __hssc, _gcl_au.",
+        "donde_mirar": "Abrir el sitio en una ventana nueva y, sin tocar nada ~10 s, mirar las cookies (candado > Cookies, o F12 > Application > Cookies).",
+        "se_vende": {
+          "linea": "Verifica y Cumple",
+          "producto": "Kit de implementación de Verifica y Cumple",
+          "alcance": "Lo que el chequeo gratis deje pendiente. El kit no incluye asesoría legal: entrega la plantilla de política para que la revise el abogado del cliente. Eso se dice, no se esconde.",
+          "vehiculo_publicado": "Desde $149.000 + IVA, una vez (correos aprobados 23-sep y estrategia §1)",
+          "precio_en_el_correo": "Desde $149.000 + IVA, una vez",
+          "linea_de_precio": null,
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "fuerte",
+        "frase_de_arreglo": "Eso lo arreglo yo, con lo demás que el chequeo deje pendiente. Desde $149.000 + IVA, una vez.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": "Gratis y sin registro: https://verifica.spindlelab.cl",
+        "estado_del_texto": "APROBADO: tomado de correos ya revisados.",
+        "por_definir": [],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "F13",
+      "nombre": "La información de la portada está mal estructurada",
+      "linea": "Auditoría SEO Técnica",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, con el código de la página",
+      "donde_mirar": "Ver el código fuente (clic derecho > ver código) y buscar \"<h1\"; o contar las palabras de la portada.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "La estructura del código no se ve."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Google y la IA usan esa estructura para entender de qué trata la página."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se ve en el código fuente."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Cualquier auditor SEO gratuito lo ve: es capa 1."
+        }
+      },
+      "afirmable": "La portada tiene solo 9 palabras de texto visible.",
+      "no_afirmable": [
+        "que el resto del sitio tenga el mismo problema",
+        "que tenga poco texto en total: solo se cuentan las palabras visibles al cargar la portada, no el texto oculto"
+      ],
+      "advertencias": [],
+      "datos": {
+        "tipos": [
+          "poco-texto"
+        ],
+        "h1": 1,
+        "palabras": 9
+      },
+      "propuesta": {
+        "en_castellano": "Tu portada tiene solo 9 palabras de texto visible.",
+        "problema_tecnico": "La portada tiene solo 9 palabras de texto visible.",
+        "donde_mirar": "Ver el código fuente (clic derecho > ver código) y buscar \"<h1\"; o contar las palabras de la portada.",
+        "se_vende": {
+          "linea": "Auditoría SEO Técnica",
+          "producto": "Auditoría SEO Técnica, Completa",
+          "alcance": "Ordenar la información de la portada: un título principal claro y el contenido que explica la oferta.",
+          "vehiculo_publicado": "Desde $490.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría SEO Técnica, Completa, desde $490.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso lo arreglo yo: dejo la información ordenada, con un título que diga qué haces y para quién.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "F6",
+      "nombre": "El servidor rechaza a agentes de IA por su nombre (causa sin nombrar)",
+      "linea": "Visibilidad en IA",
+      "capa": 1,
+      "estado": "sospecha",
+      "quien_comprueba": "quien administra el sitio (con una línea de comandos)",
+      "donde_mirar": "curl -sI -A \"ClaudeBot\" <portada>, comparado con un navegador normal.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "El rechazo ocurre en el servidor."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Efecto no medido."
+        },
+        "3": {
+          "v": "medias",
+          "razon": "Solo quien administra el sitio."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Sin causa nombrada es capa 1."
+        }
+      },
+      "afirmable": "Al presentarse con el nombre ClaudeBot, el servidor respondió con un rechazo, y con un navegador normal responde bien.",
+      "no_afirmable": [
+        "que \"bloquea al bot real\""
+      ],
+      "advertencias": [],
+      "datos": {},
+      "tope": "Tope sospecha: el nombre del agente se presenta desde una IP que no es la oficial.",
+      "propuesta": {
+        "en_castellano": "SIN REDACTAR: todavía es una sospecha, no se usa en un correo.",
+        "problema_tecnico": "Al presentarse con el nombre ClaudeBot, el servidor respondió con un rechazo, y con un navegador normal responde bien.",
+        "donde_mirar": "curl -sI -A \"ClaudeBot\" <portada>, comparado con un navegador normal.",
+        "se_vende": {
+          "linea": "Visibilidad en IA",
+          "producto": "Auditoría de Visibilidad en IA",
+          "alcance": "Revisar la regla del servidor que rechaza a los agentes de IA.",
+          "vehiculo_publicado": "Desde $400.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría de Visibilidad en IA, desde $400.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso se arregla en el servidor, no en tu sitio. Lo hago yo, con quien lo administra.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [
+    "F10",
+    "C1",
+    "F13"
+  ],
+  "capa1": {
+    "consecuencia": [
+      "sin_ruta_de_contacto_visible"
+    ],
+    "higiene": [
+      "sin_llms_txt"
+    ]
+  },
+  "notas": [
+    "Hay rechazo por nombre de agente pero no se pudo nombrar la capa que lo causa: se queda en capa 1 (decisión D1)."
+  ],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 0,
+      "mailto": [],
+      "whatsapp": []
+    },
+    "analitica": {
+      "gtm": [],
+      "ga4": [],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "nginx",
+      "cloudflare": false,
+      "x_powered_by": null
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": true
+    },
+    "llms_txt": false,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "WebSite",
+        "Organization"
+      ],
+      "org": [
+        {
+          "name": "Alatheia"
+        }
+      ]
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": null,
+      "textos_chicos_pct": null,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": null,
+      "textos_chicos_pct": null,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 1514857,
+      "al_abrir_bytes": 1514857,
+      "n_peticiones": 127,
+      "mas_pesados": [
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=GT-NC66D9S",
+          "bytes": 166969
+        },
+        {
+          "url": "https://alatheia.cl/wp-content/plugins/revslider/public/js/sr7.js?ver=1790003368",
+          "bytes": 161140
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=AW-626938190&cx=c&gtm=4e6ae1",
+          "bytes": 152408
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=AW-626938190",
+          "bytes": 152405
+        }
+      ]
+    },
+    {
+      "total_bytes": 1514660,
+      "al_abrir_bytes": 1514660,
+      "n_peticiones": 127,
+      "mas_pesados": [
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=GT-NC66D9S",
+          "bytes": 166969
+        },
+        {
+          "url": "https://alatheia.cl/wp-content/plugins/revslider/public/js/sr7.js?ver=1790003368",
+          "bytes": 161140
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=AW-626938190",
+          "bytes": 152398
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=AW-626938190&cx=c&gtm=4e6ae1",
+          "bytes": 152371
+        }
+      ]
+    },
+    {
+      "total_bytes": 1515094,
+      "al_abrir_bytes": 1515094,
+      "n_peticiones": 127,
+      "mas_pesados": [
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=GT-NC66D9S",
+          "bytes": 167451
+        },
+        {
+          "url": "https://alatheia.cl/wp-content/plugins/revslider/public/js/sr7.js?ver=1790003368",
+          "bytes": 161140
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=AW-626938190",
+          "bytes": 152398
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=AW-626938190&cx=c&gtm=4e6ae1",
+          "bytes": 152371
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [
+        {
+          "nombre": "_ga_Q15BK6F6FX",
+          "proveedor": "Google Analytics",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_ga",
+          "proveedor": "Google Analytics",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "__hstc",
+          "proveedor": "HubSpot",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "hubspotutk",
+          "proveedor": "HubSpot",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "__hssrc",
+          "proveedor": "HubSpot",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "__hssc",
+          "proveedor": "HubSpot",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_gcl_au",
+          "proveedor": "Google Ads",
+          "primera_fase": "A"
+        }
+      ],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [
+        "Google Tag",
+        "HubSpot"
+      ],
+      "envio_en_ambas": [
+        "Google Ads",
+        "Google Analytics"
+      ],
+      "google_gcs": [
+        [],
+        [],
+        []
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": null,
+    "c3": {
+      "bloqueados": [
+        "ClaudeBot"
+      ],
+      "causa": null,
+      "discrepancia": false,
+      "normal_ok": true
+    }
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 128289
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 128289,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 128289,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 128289,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 403,
+            "bytes": 146,
+            "bloqueado": true,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 128289,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 128289,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 128289,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 128289
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 128289,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 128289,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 128289,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 403,
+            "bytes": 146,
+            "bloqueado": true,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 128289,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 128289,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 128289,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [
+      "ClaudeBot"
+    ],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": []
+      },
+      {
+        "forms": [],
+        "mails": []
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "Alatheia"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Alatheia"
+      },
+      {
+        "fuente": "title",
+        "valor": "Distribuidor de Equipos de Diagnóstico Médico"
+      },
+      {
+        "fuente": "title",
+        "valor": "Alatheia"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 0,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

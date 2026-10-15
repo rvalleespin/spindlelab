@@ -1,0 +1,4254 @@
+{
+  "url": "https://ahasonrie.cl/",
+  "cuando": "2026-10-15T23:32:44.204Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "ahasonrie.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "ahasonrie.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "ahasonrie.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "ahasonrie.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_gcl_au",
+        "dominio": ".ahasonrie.cl",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "shopify_client_id",
+        "dominio": "ahasonrie.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_ga_91TEW6KYVV",
+        "dominio": ".ahasonrie.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".ahasonrie.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_LRJ6Z24WLN",
+        "dominio": ".ahasonrie.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_clck",
+        "dominio": ".ahasonrie.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "__kla_id",
+        "dominio": "ahasonrie.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_fbp",
+        "dominio": ".ahasonrie.cl",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "_clsk",
+        "dominio": ".ahasonrie.cl",
+        "expira_dias": 1
+      }
+    ],
+    "dom": {
+      "url": "https://ahasonrie.cl/",
+      "titulo": "AHA | Llevanos DONDE quieras CUANDO quieras",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/cart",
+          "accion_abs": "https://ahasonrie.cl/cart",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://ahasonrie.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://ahasonrie.cl/cart/add",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://ahasonrie.cl/cart/add",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://ahasonrie.cl/cart/add",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://ahasonrie.cl/cart/add",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://ahasonrie.cl/cart/add",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/contact#contact_form",
+          "accion_abs": "https://ahasonrie.cl/contact#contact_form",
+          "metodo": "post",
+          "campos": 1,
+          "requeridos": 1,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#MainContent",
+          "t": "Ir directamente al contenido"
+        },
+        {
+          "h": "/collections/all",
+          "t": "Seguir comprando"
+        },
+        {
+          "h": "https://ahasonrie.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Inicia sesión"
+        },
+        {
+          "h": "/collections/pastillas",
+          "t": "PASTILLAS DENTALES"
+        },
+        {
+          "h": "/collections/cepillos",
+          "t": "CEPILLOS"
+        },
+        {
+          "h": "/collections/otros-productos",
+          "t": "CUIDADO DENTAL"
+        },
+        {
+          "h": "/collections/cuidado-personal",
+          "t": "CUIDADO PERSONAL"
+        },
+        {
+          "h": "/collections/ofertas/Packs",
+          "t": "PACKS"
+        },
+        {
+          "h": "/pages/nuestro-equipo",
+          "t": "NOSOTROS"
+        },
+        {
+          "h": "/pages/ingredientes",
+          "t": "INGREDIENTES"
+        },
+        {
+          "h": "/pages/cuidado-oral",
+          "t": "CUIDADO ORAL"
+        },
+        {
+          "h": "/pages/por-que-en-pastillas",
+          "t": "¿POR QUÉ EN PASTILLAS?"
+        },
+        {
+          "h": "/pages/nuestros-estudios",
+          "t": "NUESTROS ESTUDIOS"
+        },
+        {
+          "h": "/pages/como-cepillarse",
+          "t": "CÓMO CEPILLARSE"
+        },
+        {
+          "h": "/blogs/aha",
+          "t": "BLOG"
+        },
+        {
+          "h": "/pages/ventas-mayorista",
+          "t": "VENTAS MAYORISTA"
+        },
+        {
+          "h": "https://ahasonrie.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "https://www.facebook.com/AHASonrie",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/ahasonrie/",
+          "t": "Instagram"
+        },
+        {
+          "h": "https://www.tiktok.com/@ahasonrie",
+          "t": "TikTok"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/collections/pastillas",
+          "t": "PASTILLAS DENTALES"
+        },
+        {
+          "h": "/collections/cepillos",
+          "t": "CEPILLOS"
+        },
+        {
+          "h": "/collections/otros-productos",
+          "t": "CUIDADO DENTAL"
+        },
+        {
+          "h": "/collections/cuidado-personal",
+          "t": "CUIDADO PERSONAL"
+        },
+        {
+          "h": "/collections/ofertas/Packs",
+          "t": "PACKS"
+        },
+        {
+          "h": "/pages/nuestro-equipo",
+          "t": "NOSOTROS"
+        },
+        {
+          "h": "/pages/ingredientes",
+          "t": "INGREDIENTES"
+        },
+        {
+          "h": "/pages/cuidado-oral",
+          "t": "CUIDADO ORAL"
+        },
+        {
+          "h": "/pages/por-que-en-pastillas",
+          "t": "¿POR QUÉ EN PASTILLAS?"
+        },
+        {
+          "h": "/pages/nuestros-estudios",
+          "t": "NUESTROS ESTUDIOS"
+        },
+        {
+          "h": "/pages/como-cepillarse",
+          "t": "CÓMO CEPILLARSE"
+        },
+        {
+          "h": "/blogs/aha",
+          "t": "BLOG"
+        },
+        {
+          "h": "/pages/ventas-mayorista",
+          "t": "VENTAS MAYORISTA"
+        },
+        {
+          "h": "https://ahasonrie.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "/cart",
+          "t": "Carro"
+        },
+        {
+          "h": "/collections/ofertas",
+          "t": "COMPRAR AHORA"
+        },
+        {
+          "h": "/collections/todos-los-productos",
+          "t": "ELIGE LA TUYA!"
+        },
+        {
+          "h": "/collections/pastillas",
+          "t": "Pastillas Dentales"
+        },
+        {
+          "h": "/collections/pastillas",
+          "t": "Pastillas Dentales"
+        },
+        {
+          "h": "/collections/cepillos-aha",
+          "t": "Cepillos Aha"
+        },
+        {
+          "h": "/collections/cepillos-aha",
+          "t": "Cepillos Aha"
+        },
+        {
+          "h": "/collections/otros-productos-1",
+          "t": "Cuidado Dental"
+        },
+        {
+          "h": "/collections/otros-productos-1",
+          "t": "Cuidado Dental"
+        },
+        {
+          "h": "/collections/cuidado-personal",
+          "t": "Cuidado Personal"
+        },
+        {
+          "h": "/collections/cuidado-personal",
+          "t": "Cuidado Personal"
+        },
+        {
+          "h": "https://app.judge.me/reviews/stores/ahasonrie.cl",
+          "t": "de 304 reseñas"
+        },
+        {
+          "h": "/products/pasta-de-dientes-en-pastillas-menta-full-62-pastillas",
+          "t": "Pasta de Dientes en Pastillas Menta Full (62 uds) - Acción Blanqueadora"
+        },
+        {
+          "h": "/products/pasta-de-dientes-en-pastillas-menta-full-62-pastillas",
+          "t": "Pasta de Dientes en Pastillas Menta Full (62 uds) - Acción Blanqueadora"
+        },
+        {
+          "h": "/products/enjuague-bucal-en-pastilla-con-pre-bioticos",
+          "t": "Enjuague Bucal en Pastillas (100 uds) - Prebiótico y Sin Plástico"
+        },
+        {
+          "h": "/products/enjuague-bucal-en-pastilla-con-pre-bioticos",
+          "t": "Enjuague Bucal en Pastillas (100 uds) - Prebiótico y Sin Plástico"
+        },
+        {
+          "h": "/products/pasta-de-dientes-en-pastillas-blanqueadora-mentafull",
+          "t": "Pasta de Dientes en Pastillas Menta Full (186 uds) - Acción Blanqueadora"
+        },
+        {
+          "h": "/products/pasta-de-dientes-en-pastillas-blanqueadora-mentafull",
+          "t": "Pasta de Dientes en Pastillas Menta Full (186 uds) - Acción Blanqueadora"
+        },
+        {
+          "h": "/products/envase-pastillas-maqui-berries-xl",
+          "t": "Pasta de Dientes en Pastillas Maqui-Berries (186 uds) - Sin Agua y Sin Plástico"
+        },
+        {
+          "h": "/products/envase-pastillas-maqui-berries-xl",
+          "t": "Pasta de Dientes en Pastillas Maqui-Berries (186 uds) - Sin Agua y Sin Plástico"
+        },
+        {
+          "h": "/collections/pastillas-dentals-con-fluor",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/blogs/aha",
+          "t": "BLOG"
+        },
+        {
+          "h": "/pages/cuidado-oral",
+          "t": "Conoce más"
+        },
+        {
+          "h": "/products/pack-menta-full",
+          "t": "Pack Menta full"
+        },
+        {
+          "h": "/products/pack-menta-full",
+          "t": "Pack Menta full"
+        },
+        {
+          "h": "/products/pack-menta-cuidado-personal",
+          "t": "Pack Menta cuidado personal"
+        },
+        {
+          "h": "/products/pack-menta-cuidado-personal",
+          "t": "Pack Menta cuidado personal"
+        },
+        {
+          "h": "/products/pack-cuidado-dental-completo",
+          "t": "Pack Cuidado dental completo"
+        },
+        {
+          "h": "/products/pack-cuidado-dental-completo",
+          "t": "Pack Cuidado dental completo"
+        },
+        {
+          "h": "/products/pack-sonrisa-xl",
+          "t": "Pack Sonrisa XL: Enjuague + Pastillas 186u + Cepillo - Sin Plástico"
+        },
+        {
+          "h": "/products/pack-sonrisa-xl",
+          "t": "Pack Sonrisa XL: Enjuague + Pastillas 186u + Cepillo - Sin Plástico"
+        },
+        {
+          "h": "/products/pack-ritual-cero-plastico",
+          "t": "Pack Ritual Cero Plástico: Rutina Completa - Sin Plástico y Sin Agua"
+        },
+        {
+          "h": "/products/pack-ritual-cero-plastico",
+          "t": "Pack Ritual Cero Plástico: Rutina Completa - Sin Plástico y Sin Agua"
+        },
+        {
+          "h": "/products/pack-triple-menta-full-blanqueadora",
+          "t": "Pack Triple Menta Full (3x62 uds) - Acción Blanqueadora"
+        },
+        {
+          "h": "/products/pack-triple-menta-full-blanqueadora",
+          "t": "Pack Triple Menta Full (3x62 uds) - Acción Blanqueadora"
+        },
+        {
+          "h": "/products/pastilla-dental-menta-boldo-62-pastillas-x-5",
+          "t": "Pack Triple Pastillas Dentales (3x62 uds) - Sin Agua y Sin Plástico"
+        },
+        {
+          "h": "/products/pastilla-dental-menta-boldo-62-pastillas-x-5",
+          "t": "Pack Triple Pastillas Dentales (3x62 uds) - Sin Agua y Sin Plástico"
+        },
+        {
+          "h": "/products/pack-sonrisa-completa",
+          "t": "Pack Sonrisa Completa: Enjuague + 2 Pastillas + Cepillo - Sin Plástico"
+        },
+        {
+          "h": "/products/pack-sonrisa-completa",
+          "t": "Pack Sonrisa Completa: Enjuague + 2 Pastillas + Cepillo - Sin Plástico"
+        },
+        {
+          "h": "/collections/ofertas",
+          "t": "Ver todo"
+        },
+        {
+          "h": "https://app.judge.me/reviews/stores/ahasonrie.cl",
+          "t": "de 304 reseñas"
+        },
+        {
+          "h": "/blogs/aha",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/blogs/aha/cuidado-oral-zero-waste-en-chile-guia-practica-con-pasta-de-dientes-en-pastillas",
+          "t": "Cuidado oral zero waste en Chile: guía práctica..."
+        },
+        {
+          "h": "/blogs/aha/cuidado-oral-zero-waste-en-chile-guia-practica-con-pasta-de-dientes-en-pastillas",
+          "t": "Cuidado oral zero waste en Chile: guía práctica..."
+        },
+        {
+          "h": "/blogs/aha/higiene-bucal-para-viajeros-por-que-elegir-pastillas-dentales-en-lugar-de-tubos",
+          "t": "Higiene Bucal para Viajeros: Por qué elegir Pas..."
+        },
+        {
+          "h": "/blogs/aha/higiene-bucal-para-viajeros-por-que-elegir-pastillas-dentales-en-lugar-de-tubos",
+          "t": "Higiene Bucal para Viajeros: Por qué elegir Pas..."
+        },
+        {
+          "h": "/blogs/aha/pastillas-de-lavado-dental-pueden-ayudar-con-la-sensibilidad-dental",
+          "t": "¿Tienes dientes sensibles? Descubre cómo AHA pu..."
+        },
+        {
+          "h": "/blogs/aha/pastillas-de-lavado-dental-pueden-ayudar-con-la-sensibilidad-dental",
+          "t": "¿Tienes dientes sensibles? Descubre cómo AHA pu..."
+        },
+        {
+          "h": "/blogs/aha/cuida-tus-mucosas-de-las-aftas",
+          "t": "¡No todo son dientes! Cuida tus mucosas de las ..."
+        },
+        {
+          "h": "/blogs/aha/cuida-tus-mucosas-de-las-aftas",
+          "t": "¡No todo son dientes! Cuida tus mucosas de las ..."
+        },
+        {
+          "h": "/blogs/aha",
+          "t": "Ver todo"
+        },
+        {
+          "h": "https://www.instagram.com/ahasonrie/",
+          "t": "INSTAGRAM!"
+        },
+        {
+          "h": "#",
+          "t": "TIENDA"
+        },
+        {
+          "h": "/collections/ofertas/Packs",
+          "t": "PACKS"
+        },
+        {
+          "h": "/pages/nuestro-equipo",
+          "t": "NOSOTROS"
+        },
+        {
+          "h": "/pages/cuidado-oral",
+          "t": "NUESTRA FÓRMULA"
+        },
+        {
+          "h": "/blogs/aha",
+          "t": "BLOG"
+        },
+        {
+          "h": "/pages/ventas-mayorista",
+          "t": "VENTAS MAYORISTA"
+        },
+        {
+          "h": "mailto:ventas@ahasonrie.cl",
+          "t": "ventas@ahasonrie.cl"
+        },
+        {
+          "h": "/policies/terms-of-service",
+          "t": "Términos y Condiciones"
+        },
+        {
+          "h": "/policies/privacy-policy",
+          "t": "Políticas de Privacidad"
+        },
+        {
+          "h": "/policies/refund-policy",
+          "t": "Cambios y Devoluciones"
+        },
+        {
+          "h": "/policies/shipping-policy",
+          "t": "Políticas de Despacho"
+        },
+        {
+          "h": "https://www.facebook.com/AHASonrie",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/ahasonrie/",
+          "t": "Instagram"
+        },
+        {
+          "h": "https://www.tiktok.com/@ahasonrie",
+          "t": "TikTok"
+        },
+        {
+          "h": "/",
+          "t": "AHA"
+        },
+        {
+          "h": "https://thekickass.co",
+          "t": "TheKickassCo."
+        },
+        {
+          "h": "#",
+          "t": "Judge.me"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://ahasonrie.cl/policies/privacy-policy",
+          "t": "Políticas de Privacidad"
+        },
+        {
+          "h": "https://ahasonrie.cl/policies/shipping-policy",
+          "t": "Políticas de Despacho"
+        }
+      ],
+      "largo_texto": 9724,
+      "muestra": "Ir directamente al contenido\n🚚 DESPACHO GRATIS RM compras sobre $35.000 🚚\n🚚 DESCUENTO DESPACHO REGIONES (compras sobre $35.000) 🚚\n🚚 DESPACHO GRATIS RM compras sobre $35.000 🚚\n🚚 DESCUENTO DESPACHO REGIONES (compras sobre $35.000) 🚚\n🚚 DESPACHO GRATIS RM compras sobre $35.000 🚚\n🚚 DESCUENTO DESPACHO REGIONES (compras sobre $35.000) 🚚\n🚚 DESPACHO GRATIS RM compras sobre $35.000 🚚\n🚚 DESCUENTO DESPACHO REGIONES (compras sobre $35.000) 🚚\n🚚 DESPACHO GRATIS RM compras sobre $35.000 🚚\n🚚 D",
+      "cta_en_pantalla": [
+        {
+          "t": "carro",
+          "h": "/cart"
+        },
+        {
+          "t": "comprar ahora",
+          "h": "/collections/ofertas"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 4,
+        "h2": 19,
+        "palabras": 1535
+      }
+    },
+    "captura": "r2-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "ahasonrie.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "ahasonrie.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "ahasonrie.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "ahasonrie.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_gcl_au",
+        "dominio": ".ahasonrie.cl",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "shopify_client_id",
+        "dominio": "ahasonrie.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_ga_91TEW6KYVV",
+        "dominio": ".ahasonrie.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".ahasonrie.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_LRJ6Z24WLN",
+        "dominio": ".ahasonrie.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_clck",
+        "dominio": ".ahasonrie.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "__kla_id",
+        "dominio": "ahasonrie.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_fbp",
+        "dominio": ".ahasonrie.cl",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "_clsk",
+        "dominio": ".ahasonrie.cl",
+        "expira_dias": 1
+      }
+    ],
+    "dom": {
+      "url": "https://ahasonrie.cl/",
+      "titulo": "AHA | Llevanos DONDE quieras CUANDO quieras",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/cart",
+          "accion_abs": "https://ahasonrie.cl/cart",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://ahasonrie.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://ahasonrie.cl/cart/add",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://ahasonrie.cl/cart/add",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://ahasonrie.cl/cart/add",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://ahasonrie.cl/cart/add",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://ahasonrie.cl/cart/add",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/contact#contact_form",
+          "accion_abs": "https://ahasonrie.cl/contact#contact_form",
+          "metodo": "post",
+          "campos": 1,
+          "requeridos": 1,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#MainContent",
+          "t": "Ir directamente al contenido"
+        },
+        {
+          "h": "/collections/all",
+          "t": "Seguir comprando"
+        },
+        {
+          "h": "https://ahasonrie.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Inicia sesión"
+        },
+        {
+          "h": "/collections/pastillas",
+          "t": "PASTILLAS DENTALES"
+        },
+        {
+          "h": "/collections/cepillos",
+          "t": "CEPILLOS"
+        },
+        {
+          "h": "/collections/otros-productos",
+          "t": "CUIDADO DENTAL"
+        },
+        {
+          "h": "/collections/cuidado-personal",
+          "t": "CUIDADO PERSONAL"
+        },
+        {
+          "h": "/collections/ofertas/Packs",
+          "t": "PACKS"
+        },
+        {
+          "h": "/pages/nuestro-equipo",
+          "t": "NOSOTROS"
+        },
+        {
+          "h": "/pages/ingredientes",
+          "t": "INGREDIENTES"
+        },
+        {
+          "h": "/pages/cuidado-oral",
+          "t": "CUIDADO ORAL"
+        },
+        {
+          "h": "/pages/por-que-en-pastillas",
+          "t": "¿POR QUÉ EN PASTILLAS?"
+        },
+        {
+          "h": "/pages/nuestros-estudios",
+          "t": "NUESTROS ESTUDIOS"
+        },
+        {
+          "h": "/pages/como-cepillarse",
+          "t": "CÓMO CEPILLARSE"
+        },
+        {
+          "h": "/blogs/aha",
+          "t": "BLOG"
+        },
+        {
+          "h": "/pages/ventas-mayorista",
+          "t": "VENTAS MAYORISTA"
+        },
+        {
+          "h": "https://ahasonrie.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "https://www.facebook.com/AHASonrie",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/ahasonrie/",
+          "t": "Instagram"
+        },
+        {
+          "h": "https://www.tiktok.com/@ahasonrie",
+          "t": "TikTok"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/collections/pastillas",
+          "t": "PASTILLAS DENTALES"
+        },
+        {
+          "h": "/collections/cepillos",
+          "t": "CEPILLOS"
+        },
+        {
+          "h": "/collections/otros-productos",
+          "t": "CUIDADO DENTAL"
+        },
+        {
+          "h": "/collections/cuidado-personal",
+          "t": "CUIDADO PERSONAL"
+        },
+        {
+          "h": "/collections/ofertas/Packs",
+          "t": "PACKS"
+        },
+        {
+          "h": "/pages/nuestro-equipo",
+          "t": "NOSOTROS"
+        },
+        {
+          "h": "/pages/ingredientes",
+          "t": "INGREDIENTES"
+        },
+        {
+          "h": "/pages/cuidado-oral",
+          "t": "CUIDADO ORAL"
+        },
+        {
+          "h": "/pages/por-que-en-pastillas",
+          "t": "¿POR QUÉ EN PASTILLAS?"
+        },
+        {
+          "h": "/pages/nuestros-estudios",
+          "t": "NUESTROS ESTUDIOS"
+        },
+        {
+          "h": "/pages/como-cepillarse",
+          "t": "CÓMO CEPILLARSE"
+        },
+        {
+          "h": "/blogs/aha",
+          "t": "BLOG"
+        },
+        {
+          "h": "/pages/ventas-mayorista",
+          "t": "VENTAS MAYORISTA"
+        },
+        {
+          "h": "https://ahasonrie.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "/cart",
+          "t": "Carro"
+        },
+        {
+          "h": "/collections/ofertas",
+          "t": "COMPRAR AHORA"
+        },
+        {
+          "h": "/collections/todos-los-productos",
+          "t": "ELIGE LA TUYA!"
+        },
+        {
+          "h": "/collections/pastillas",
+          "t": "Pastillas Dentales"
+        },
+        {
+          "h": "/collections/pastillas",
+          "t": "Pastillas Dentales"
+        },
+        {
+          "h": "/collections/cepillos-aha",
+          "t": "Cepillos Aha"
+        },
+        {
+          "h": "/collections/cepillos-aha",
+          "t": "Cepillos Aha"
+        },
+        {
+          "h": "/collections/otros-productos-1",
+          "t": "Cuidado Dental"
+        },
+        {
+          "h": "/collections/otros-productos-1",
+          "t": "Cuidado Dental"
+        },
+        {
+          "h": "/collections/cuidado-personal",
+          "t": "Cuidado Personal"
+        },
+        {
+          "h": "/collections/cuidado-personal",
+          "t": "Cuidado Personal"
+        },
+        {
+          "h": "https://app.judge.me/reviews/stores/ahasonrie.cl",
+          "t": "de 304 reseñas"
+        },
+        {
+          "h": "/products/pasta-de-dientes-en-pastillas-menta-full-62-pastillas",
+          "t": "Pasta de Dientes en Pastillas Menta Full (62 uds) - Acción Blanqueadora"
+        },
+        {
+          "h": "/products/pasta-de-dientes-en-pastillas-menta-full-62-pastillas",
+          "t": "Pasta de Dientes en Pastillas Menta Full (62 uds) - Acción Blanqueadora"
+        },
+        {
+          "h": "/products/enjuague-bucal-en-pastilla-con-pre-bioticos",
+          "t": "Enjuague Bucal en Pastillas (100 uds) - Prebiótico y Sin Plástico"
+        },
+        {
+          "h": "/products/enjuague-bucal-en-pastilla-con-pre-bioticos",
+          "t": "Enjuague Bucal en Pastillas (100 uds) - Prebiótico y Sin Plástico"
+        },
+        {
+          "h": "/products/pasta-de-dientes-en-pastillas-blanqueadora-mentafull",
+          "t": "Pasta de Dientes en Pastillas Menta Full (186 uds) - Acción Blanqueadora"
+        },
+        {
+          "h": "/products/pasta-de-dientes-en-pastillas-blanqueadora-mentafull",
+          "t": "Pasta de Dientes en Pastillas Menta Full (186 uds) - Acción Blanqueadora"
+        },
+        {
+          "h": "/products/envase-pastillas-maqui-berries-xl",
+          "t": "Pasta de Dientes en Pastillas Maqui-Berries (186 uds) - Sin Agua y Sin Plástico"
+        },
+        {
+          "h": "/products/envase-pastillas-maqui-berries-xl",
+          "t": "Pasta de Dientes en Pastillas Maqui-Berries (186 uds) - Sin Agua y Sin Plástico"
+        },
+        {
+          "h": "/collections/pastillas-dentals-con-fluor",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/blogs/aha",
+          "t": "BLOG"
+        },
+        {
+          "h": "/pages/cuidado-oral",
+          "t": "Conoce más"
+        },
+        {
+          "h": "/products/pack-menta-full",
+          "t": "Pack Menta full"
+        },
+        {
+          "h": "/products/pack-menta-full",
+          "t": "Pack Menta full"
+        },
+        {
+          "h": "/products/pack-menta-cuidado-personal",
+          "t": "Pack Menta cuidado personal"
+        },
+        {
+          "h": "/products/pack-menta-cuidado-personal",
+          "t": "Pack Menta cuidado personal"
+        },
+        {
+          "h": "/products/pack-cuidado-dental-completo",
+          "t": "Pack Cuidado dental completo"
+        },
+        {
+          "h": "/products/pack-cuidado-dental-completo",
+          "t": "Pack Cuidado dental completo"
+        },
+        {
+          "h": "/products/pack-sonrisa-xl",
+          "t": "Pack Sonrisa XL: Enjuague + Pastillas 186u + Cepillo - Sin Plástico"
+        },
+        {
+          "h": "/products/pack-sonrisa-xl",
+          "t": "Pack Sonrisa XL: Enjuague + Pastillas 186u + Cepillo - Sin Plástico"
+        },
+        {
+          "h": "/products/pack-ritual-cero-plastico",
+          "t": "Pack Ritual Cero Plástico: Rutina Completa - Sin Plástico y Sin Agua"
+        },
+        {
+          "h": "/products/pack-ritual-cero-plastico",
+          "t": "Pack Ritual Cero Plástico: Rutina Completa - Sin Plástico y Sin Agua"
+        },
+        {
+          "h": "/products/pack-triple-menta-full-blanqueadora",
+          "t": "Pack Triple Menta Full (3x62 uds) - Acción Blanqueadora"
+        },
+        {
+          "h": "/products/pack-triple-menta-full-blanqueadora",
+          "t": "Pack Triple Menta Full (3x62 uds) - Acción Blanqueadora"
+        },
+        {
+          "h": "/products/pastilla-dental-menta-boldo-62-pastillas-x-5",
+          "t": "Pack Triple Pastillas Dentales (3x62 uds) - Sin Agua y Sin Plástico"
+        },
+        {
+          "h": "/products/pastilla-dental-menta-boldo-62-pastillas-x-5",
+          "t": "Pack Triple Pastillas Dentales (3x62 uds) - Sin Agua y Sin Plástico"
+        },
+        {
+          "h": "/products/pack-sonrisa-completa",
+          "t": "Pack Sonrisa Completa: Enjuague + 2 Pastillas + Cepillo - Sin Plástico"
+        },
+        {
+          "h": "/products/pack-sonrisa-completa",
+          "t": "Pack Sonrisa Completa: Enjuague + 2 Pastillas + Cepillo - Sin Plástico"
+        },
+        {
+          "h": "/collections/ofertas",
+          "t": "Ver todo"
+        },
+        {
+          "h": "https://app.judge.me/reviews/stores/ahasonrie.cl",
+          "t": "de 304 reseñas"
+        },
+        {
+          "h": "/blogs/aha",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/blogs/aha/cuidado-oral-zero-waste-en-chile-guia-practica-con-pasta-de-dientes-en-pastillas",
+          "t": "Cuidado oral zero waste en Chile: guía práctica..."
+        },
+        {
+          "h": "/blogs/aha/cuidado-oral-zero-waste-en-chile-guia-practica-con-pasta-de-dientes-en-pastillas",
+          "t": "Cuidado oral zero waste en Chile: guía práctica..."
+        },
+        {
+          "h": "/blogs/aha/higiene-bucal-para-viajeros-por-que-elegir-pastillas-dentales-en-lugar-de-tubos",
+          "t": "Higiene Bucal para Viajeros: Por qué elegir Pas..."
+        },
+        {
+          "h": "/blogs/aha/higiene-bucal-para-viajeros-por-que-elegir-pastillas-dentales-en-lugar-de-tubos",
+          "t": "Higiene Bucal para Viajeros: Por qué elegir Pas..."
+        },
+        {
+          "h": "/blogs/aha/pastillas-de-lavado-dental-pueden-ayudar-con-la-sensibilidad-dental",
+          "t": "¿Tienes dientes sensibles? Descubre cómo AHA pu..."
+        },
+        {
+          "h": "/blogs/aha/pastillas-de-lavado-dental-pueden-ayudar-con-la-sensibilidad-dental",
+          "t": "¿Tienes dientes sensibles? Descubre cómo AHA pu..."
+        },
+        {
+          "h": "/blogs/aha/cuida-tus-mucosas-de-las-aftas",
+          "t": "¡No todo son dientes! Cuida tus mucosas de las ..."
+        },
+        {
+          "h": "/blogs/aha/cuida-tus-mucosas-de-las-aftas",
+          "t": "¡No todo son dientes! Cuida tus mucosas de las ..."
+        },
+        {
+          "h": "/blogs/aha",
+          "t": "Ver todo"
+        },
+        {
+          "h": "https://www.instagram.com/ahasonrie/",
+          "t": "INSTAGRAM!"
+        },
+        {
+          "h": "#",
+          "t": "TIENDA"
+        },
+        {
+          "h": "/collections/ofertas/Packs",
+          "t": "PACKS"
+        },
+        {
+          "h": "/pages/nuestro-equipo",
+          "t": "NOSOTROS"
+        },
+        {
+          "h": "/pages/cuidado-oral",
+          "t": "NUESTRA FÓRMULA"
+        },
+        {
+          "h": "/blogs/aha",
+          "t": "BLOG"
+        },
+        {
+          "h": "/pages/ventas-mayorista",
+          "t": "VENTAS MAYORISTA"
+        },
+        {
+          "h": "mailto:ventas@ahasonrie.cl",
+          "t": "ventas@ahasonrie.cl"
+        },
+        {
+          "h": "/policies/terms-of-service",
+          "t": "Términos y Condiciones"
+        },
+        {
+          "h": "/policies/privacy-policy",
+          "t": "Políticas de Privacidad"
+        },
+        {
+          "h": "/policies/refund-policy",
+          "t": "Cambios y Devoluciones"
+        },
+        {
+          "h": "/policies/shipping-policy",
+          "t": "Políticas de Despacho"
+        },
+        {
+          "h": "https://www.facebook.com/AHASonrie",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/ahasonrie/",
+          "t": "Instagram"
+        },
+        {
+          "h": "https://www.tiktok.com/@ahasonrie",
+          "t": "TikTok"
+        },
+        {
+          "h": "/",
+          "t": "AHA"
+        },
+        {
+          "h": "https://thekickass.co",
+          "t": "TheKickassCo."
+        },
+        {
+          "h": "#",
+          "t": "Judge.me"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://ahasonrie.cl/policies/privacy-policy",
+          "t": "Políticas de Privacidad"
+        },
+        {
+          "h": "https://ahasonrie.cl/policies/shipping-policy",
+          "t": "Políticas de Despacho"
+        }
+      ],
+      "largo_texto": 9724,
+      "muestra": "Ir directamente al contenido\n🚚 DESPACHO GRATIS RM compras sobre $35.000 🚚\n🚚 DESCUENTO DESPACHO REGIONES (compras sobre $35.000) 🚚\n🚚 DESPACHO GRATIS RM compras sobre $35.000 🚚\n🚚 DESCUENTO DESPACHO REGIONES (compras sobre $35.000) 🚚\n🚚 DESPACHO GRATIS RM compras sobre $35.000 🚚\n🚚 DESCUENTO DESPACHO REGIONES (compras sobre $35.000) 🚚\n🚚 DESPACHO GRATIS RM compras sobre $35.000 🚚\n🚚 DESCUENTO DESPACHO REGIONES (compras sobre $35.000) 🚚\n🚚 DESPACHO GRATIS RM compras sobre $35.000 🚚\n🚚 D",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 4,
+        "h2": 19,
+        "palabras": 1535
+      }
+    },
+    "captura": "r2-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/base.css?v=14014763057593478951787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/storeifyapps-formbuilder-styles.css?v=152793041783719793381787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.trackdesk.com/tracking.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=AW-11102890437",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "AW-11102890437"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/global.js?v=149496944046504657681787191431",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/checkouts/internal/preloads.js?locale=es-CL",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.init-shop-cart-sync.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/storefront/assets/storefront/load_feature-1bd60354.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/storefront/assets/storefront/origin_trials-318ab40a.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/compiled_assets/scripts.js?v=61936181921355174781787191431",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/fonts/muli/muli_n4.e949947cfff05efcc994b2e2db40359a04fa9a92.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/fonts/muli/muli_n6.cc1d2d4222c93c9ee9f6de4489226d2e1332d85b.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-predictive-search.css?v=83512081251802922551787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.5.1/css/fileinput.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/T8cf3u/klaviyo.js?company_id=T8cf3u",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b24-fbf4-74cb-9c51-9325b7ca31ce/dealeasy-294/assets/lb-dealeasy.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b19-8138-7b12-ba03-4061e14014bf/judgeme-785/assets/loader.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13f84-badc-71f4-87a3-d8a2b78a2c34/countdown-timer-30-99/assets/countdown_timer_essential_apps.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a136b2-930e-78b4-9181-ac50e2e74da0/lb-upsell-459/assets/lb-selleasy.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.11.0.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/cart.js?v=83971781268232213281787191431",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-cart-drawer.css?v=35930391193938886121787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-cart.css?v=61086454150987525971787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-totals.css?v=86168756436424464851787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-price.css?v=65402837579211014041787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-discounts.css?v=152760482443307489271787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-loading-overlay.css?v=167310470843593579841787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/details-disclosure.js?v=153497636716254413831787191431",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/details-modal.js?v=4511761896672669691787191431",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/cart-notification.js?v=160453272920806432391787191431",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/cart-drawer.js?v=44260131999403604181787191431",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/files/Logo_Aha.png?v=1659631348&width=300",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/files/Banner_oficial_Medidas_oficiales_MOBILE_1200_x_1600_px.png?v=1753984142",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/section-multicolumn.css?v=176759480046128500901787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-image-with-text.css?v=106189373233589105561787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/section-collection-list.css?v=70863279319435850561787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-card.css?v=13116108056750117421787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/video-section.css?v=85459975000229754761787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-deferred-media.css?v=54092797763792720131787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/quick-add.js?v=107437208278634168461787191431",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/product-form.js?v=24702737604959294451787191431",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-rating.css?v=24573085263941240431787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/section-featured-blog.css?v=91096229938478081821787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-newsletter.css?v=103472482056003053551787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/newsletter-section.css?v=62410470717655853621787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://instagrid.instasell.co.in/_/pd/index.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://instagrid.instasell.co.in/_/pd/index.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/section-footer.css?v=83777583229853969691787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/predictive-search.js?v=31278710863581584031787191431",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.enormapps.com/faq-v2/frontend/js/embed.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/storeifyapps-formbuilder-script.js?v=54682315453152723831787191431",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://treebotapp.azurewebsites.net/Content/bindbot.min.js?token_treebot=e80b95db-94fa-4b37-aa1f-951bdd0ea802",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b24-fbf4-74cb-9c51-9325b7ca31ce/dealeasy-294/assets/dealeasy-widgets.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13fe6-a90e-729a-9d9a-7adc4932a43e/essential-post-purchase-upsell-1734/assets/app-embed-DTyUyRrD.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13fe6-a90e-729a-9d9a-7adc4932a43e/essential-post-purchase-upsell-1734/assets/stylex-BvJZgNY2.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13fe6-a90e-729a-9d9a-7adc4932a43e/essential-post-purchase-upsell-1734/assets/stylex-mm1DjMzv.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a136b2-930e-78b4-9181-ac50e2e74da0/lb-upsell-459/assets/lb-upsell.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a136b2-930e-78b4-9181-ac50e2e74da0/lb-upsell-459/assets/lb-upsell-components.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a136b2-930e-78b4-9181-ac50e2e74da0/lb-upsell-459/assets/lb-utils.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/storefront/standard-actions.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.init-shop-cart-sync_Ck8hl9Mr.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.document_DMcRsBXN.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.init_D3bsF6Gw.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.register_cLcgCW8c.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.tslib-es6_CHHZATl5.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.networkErrorMessages_DIkDbO6W.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.shop-cart-sync_BemtiYIw.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.defineInitFunction_CIjOjzsO.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.window_CAbVMZox.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.casing_U_9x-Om3.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.utils_DX-ZLLMT.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.v4_D2VNBPfk.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useUserRecognitionSignal_Cxwlw7Gj.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.storage_DQF5v-OM.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.hooks_DHyyKTJY.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.authorize_DINGMyE5.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useEventListener_ByQ0j2aH.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.validators_09U1U9sZ.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.clarity.ms/tag/ok7allij0r",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Microsoft Clarity",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/wpm/b957c9fdbw3fdd5ae0p166c77f8m3762736bm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/s/trekkie.storefront.32ff6085714fe9c4d5859e332c5de5f8759a859e.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/storefront/assets/shop_events_listener-4e26a9ce.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-list-menu.css?v=151968516119678728991787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-search.css?v=96455689198851321781787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-menu-drawer.css?v=182311192829367774911787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-cart-notification.css?v=183358051719344305851787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-cart-items.css?v=23917223812499722491787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-mega-menu.css?v=177496590996265276461787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-slider.css?v=111384418465749404671787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/template-collection.css?v=145944865380958730931787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/quick-add.css?v=33503823355406569531787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-rte.css?v=69919436638515329781787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/section-rich-text.css?v=155250126305810049721787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/files/Banner_Navidad_AHA_1920_x_780_px_4f4da74c-00df-4d18-bfca-21f972ea6d39.png?v=1784392472",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/fonts/josefin_sans/josefinsans_n4.70f7efd699799949e6d9f99bc20843a2c86a2e0f.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/fonts/poppins/poppins_n4.0ba78fa5af9b0e1a374041b3ceaadf0a43b41362.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/fonts/muli/muli_i7.34eedbf231efa20bd065d55f6f71485730632c7b.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/fonts/muli/muli_n7.c8c44d0404947d89610714223e630c4cbe005587.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/fonts/caveat/caveat_n4.5917c0342c441d7d06ab8d87640244127fee4e3b.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/fonts/muli/muli_i4.c0a1ea800bab5884ab82e4eb25a6bd25121bd08c.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/files/1_df7651cc-af86-46bf-81ca-ec3ab149820c.png?v=1737579201&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/files/2_e69db6b1-6873-42ae-9477-f8713fe95832.png?v=1737579532&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/files/3_5c8cb5f3-7902-4623-b282-9de313593817.png?v=1737579547&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/files/4_114ccce2-ad60-4437-9096-3bb0f4e0cbef.png?v=1737579557&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/files/5_4d83ba85-9652-4315-8f48-f8419af5833f.png?v=1737579568&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/files/AHA_GIF_MODODEUSO.gif?v=1739458206&width=750",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/collections/SHOP_Pastillas_Maqui_Berries_800X800_ddd6035e-7b5a-4339-bda2-594fb61c7fe6.png?v=1737572285",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/collections/SHOP_Cepillo_AHA_Verde_800X800_a924367e-b565-4af7-8670-e510ab3bf659.png?v=1737572592",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/collections/SHAMPOO.png?v=1737572255",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/collections/SHAMPOO_acfe1272-d5f3-41a6-9bd1-8ed2d09450fa.png?v=1737650575",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-article-card.css?v=40864579252276455821787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-list-payment.css?v=69253961410771838501787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/component-list-social.css?v=52211663153726659061787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/t/20/assets/disclosure.css?v=646595190999601341787191431",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/web-pixels@957c9fdbw3fdd5ae0p166c77f8m3762736b/web-pixel-1084194864@c63c5b72c8d77be5f2d27d14c081da38/sandbox/worker.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/web-pixels@957c9fdbw3fdd5ae0p166c77f8m3762736b/web-pixel-705462320@8acc938b1a30dc7624e304493ca567d7/sandbox/worker.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/web-pixels@957c9fdbw3fdd5ae0p166c77f8m3762736b/web-pixel-334626864@50acfdcd7b118f50e52df83f64624d06/sandbox/worker.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/web-pixels@957c9fdbw3fdd5ae0p166c77f8m3762736b/web-pixel-shopify-app-pixel@0530/sandbox/worker.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/web-pixels@957c9fdbw3fdd5ae0p166c77f8m3762736b/app/web-pixel-294486064@a3321ca85cf5aaf6b57585fcd8d67b3a~2/pixel.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/web-pixels@957c9fdbw3fdd5ae0p166c77f8m3762736b/app/web-pixel-136413232@bd2f978c17a94bbb8a74d43de2165dc5~2/pixel.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/web-pixels@957c9fdbw3fdd5ae0p166c77f8m3762736b/custom/web-pixel-38240304@1/sandbox/modern/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/web-pixels@957c9fdbw3fdd5ae0p166c77f8m3762736b/custom/web-pixel-shopify-custom-pixel@0530/sandbox/modern/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b24-fbf4-74cb-9c51-9325b7ca31ce/dealeasy-294/assets/index-GAMd4d19.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b24-fbf4-74cb-9c51-9325b7ca31ce/dealeasy-294/assets/app-globals-DQuL1Twl.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a136b2-930e-78b4-9181-ac50e2e74da0/lb-upsell-459/assets/p-7e27bc57.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a136b2-930e-78b4-9181-ac50e2e74da0/lb-upsell-459/assets/p-e1255160.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://akahal.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://akahal.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://akahal.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://akahal.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://akahal.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://akahal.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cart.js?ts=1792107141243",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b19-8138-7b12-ba03-4061e14014bf/judgeme-785/assets/widget_v3_base.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b19-8138-7b12-ba03-4061e14014bf/judgeme-785/assets/widget_base.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b19-8138-7b12-ba03-4061e14014bf/judgeme-785/assets/widget_common.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b19-8138-7b12-ba03-4061e14014bf/judgeme-785/assets/widget_others.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b19-8138-7b12-ba03-4061e14014bf/judgeme-785/assets/widget_main.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b19-8138-7b12-ba03-4061e14014bf/judgeme-785/assets/widget_form.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b19-8138-7b12-ba03-4061e14014bf/judgeme-785/assets/widget_v3_form.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://shop.app/pay/hop?analytics_trace_id=6b784b97-8862-4ac5-8592-00e2c4f40a0e&target_origin=https%3A%2F%2Fahasonrie.cl&client_handle=akahal.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/en_US/fbevents.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-LRJ6Z24WLN",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-LRJ6Z24WLN"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=GT-MJJMP7X",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GT-MJJMP7X"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://scripts.clarity.ms/0.8.72/clarity.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Microsoft Clarity",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://static-tracking.klaviyo.com/onsite/js/fender_analytics.231256e109566.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static-tracking.klaviyo.com/onsite/js/static.538435cd80ba9.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/runtime.1ae76712cbc54.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/sharedUtils.2c9ede6ce511c.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/vendors~fender_analytics~post_identification_sync~web_personalization~client_identity~server_side_cookies~reviews~atlas~~telemetry~static~in_app_forms~signup_forms.16c647742315e.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/vendors~in_app_forms~signup_forms~reviews~atlas~product_recommendations.2275e937808a4.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/vendors~reviews~wix_pixel.182d25bf6f0e4.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/reviews.5c46fa74fbaff.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/vendors~~telemetry~client_identity~onsite-personalization~onsite-triggering-v2~in_app_forms~signup_forms.c4bd31ede3deb.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static-tracking.klaviyo.com/onsite/js/telemetry.f9fd65ecb54a4.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static-tracking.klaviyo.com/onsite/js/post_identification_sync.8a1f42e3d6059.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/event_adapter.6f4b79ee7598b.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cart.js",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://instagrid.instasell.co.in/_/instagrid/v1/feedposts?shop=akahal.myshopify.com",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/11102890437/?random=1792107141413&cv=11&fst=1792107141413&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6ae1v9103749675za208zd9103749675xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fahasonrie.cl%2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/rmkt/collect/11102890437/?random=1792107141413&cv=11&fst=1792107141413&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6ae1v9103749675za208zd9103749675xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fahasonrie.cl%2F&rcb=15&frm=0&tiba=AHA",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-LRJ6Z24WLN&cx=c&gtm=4e6ae1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-LRJ6Z24WLN"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=GT-MJJMP7X&cx=c&gtm=4e6ae1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GT-MJJMP7X"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=15&frm=0&apvc=1&auid=1527598584.1792107141&dt=AHA%20%7C%20Llevanos%20DONDE%20quieras%20CUANDO%20quieras&tid=AW-11102890437&en=page_view&dl=https%3A%2F%2Fahasonrie.cl%2F&scrsrc=www.googletagmanager.com&rnd=1409431253.1792107141&navt=n&npa=0&did=dN2ZkMj%2CdNTU0Yz&gdid=dN2ZkMj.dNTU0Yz&gtm=45be6ae1v9103749675za208zd9103749675xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ad.doubleclick.net/ccm/s/collect?auid=1527598584.1792107141&gtm=45be6ae1v9103749675za208zd9103749675xecxf1&fmt=8",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/web-pixels/strict/app/web-pixel-1084194864@c63c5b72c8d77be5f2d27d14c081da38.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/web-pixels/strict/app/web-pixel-705462320@8acc938b1a30dc7624e304493ca567d7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/wpm/s957c9fdbw3fdd5ae0p166c77f8m3762736bm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/web-pixels/strict/app/web-pixel-shopify-app-pixel@0530.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/api/2026-04/graphql.json",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/api/2026-04/graphql.json",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cart.js",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAScAA0AAAAABrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAEgAAAABoAAAAcbyQ+3kdERUYAAARgAAAAHgAAACAAMwAGT1MvMgAAAZgAAABGAAAAVi+vS9xjbWFwAAAB8AAAAEAAAAFKwBMjvmdhc3AAAARYAAAACAAAAAj//wADZ2x5ZgAAAkAAAAEJAAABdH33LXtoZWFkAAABMAAAAC0AAAA2BroQKWhoZWEAAAFgAAAAHAAAACQD5QHQaG10eAAAAeAAAAAPAAAAFAYAAABsb2NhAAACMAAAAA4AAAAOAO4AeG1heHAAAAF8AAAAHAAAACAASg",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/web-pixels/strict/app/web-pixel-334626864@50acfdcd7b118f50e52df83f64624d06.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABNEAAABkBAMAAABayruYAAAAJFBMVEUAAADa2tr/////9/e6urpTU1O5ubn39/f///9ZWVlfX1/z8/O/OctmAAAACXRSTlMA//////////ZO3iNwAAALPElEQVR4AezdwY6bShMF4GP6krX9Bqgk9kiI/SzyAAir9lnlFfL6N26OWhXckDae9mClj/L7L1czMMbfbYDMOCgpKSkpwelyRmIEd6mEhTQpDabvu1C7vsf2ALM6cLlctquVtq2YDwC1jrfHEVDV8fagvln7p7XOlUKVi9SKWrncY5GQnN0DhLuZ1HZJa7WZPemU0GCc6hUMBtVue4BZHeD3v1caTn9KIyiPSimIvjw8Sq",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACY4AAADCCAMAAADT9DSoAAAANlBMVEUAAADa2tr/////9/e5ubn39/dTU1P29vbv7+/+/v74+Pjw8PD///9ZWVlfX1/z8/P5+fn///9RgilMAAAAEnRSTlMA///////////////2////9gn80juWAAAR/UlEQVR4AezdAW+jOBPG8QcgVPv9P+xqHQPvu9nrTWWd1enNuY7D/ydpS+gwdqRq44yN0WUBAAAAAAAA06u/sVPPbZZ0/Ie5LNvIEWbRu11msCsK7duYZM4OcaWzf1+rVk13fbTpj1SctXMWZJHluSLYTmxlUBlVxJlkZz/py2a/txeV/o1qls9B3q55/TALAAAAHa16Ke",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a136b2-930e-78b4-9181-ac50e2e74da0/lb-upsell-459/assets/p-1ac97248.entry.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b19-8138-7b12-ba03-4061e14014bf/judgeme-785/assets/widget_common.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/consent-tracking-api/v0.1/consent-tracking-api.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.merchant-center-analytics.goog/mc/collect?v=2&tid=MC-91TEW6KYVV&gtm=45Pe6ae1v9120679415za200zb9103749675zd9103749675xf1&_p=1792107139894&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&are=1&cid=1226150111.1792107142&excid=shp.1a43bb85-c958-45cb-bc84-06bcbd85f207&frm=0&pscdl=&rcb=8&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&u",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a136b2-930e-78b4-9181-ac50e2e74da0/lb-upsell-459/assets/p-b7ebbdd0.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b24-fbf4-74cb-9c51-9325b7ca31ce/dealeasy-294/assets/lb-cart-progress-bar.entry.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-LRJ6Z24WLN&gtm=45je6ae1v9103568971za200zb9103749675zd9103749675xf1&_p=1792107139894&_gaz=1&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&_eu=EAAAAGAC&are=1&cid=1226150111.1792107142&excid=shp.1a43bb85-c958-45cb-bc84-06bcbd85f207&frm=0&ir=1&pscdl=&rcb=13&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-LRJ6Z24WLN"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-LRJ6Z24WLN&cid=1226150111.1792107142&gtm=45je6ae1v9103568971za200zb9103749675zd9103749675xf1&rcb=13&aip=1&dma=0&gcs=G111&gcd=13t3t3t3t5l1&npa=0&frm=0&tag_exp=115616986~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b24-fbf4-74cb-9c51-9325b7ca31ce/dealeasy-294/assets/utils-CyvOwtl9.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/signals/config/931960711075130?v=2.9.419&r=stable&domain=ahasonrie.cl&hme=7459fa3e38c2784dbaf309537bed5fa7e8560fab51fb61e53e5ffafeb46a02a9&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b19-8138-7b12-ba03-4061e14014bf/judgeme-785/assets/widget_others.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b19-8138-7b12-ba03-4061e14014bf/judgeme-785/assets/widget_main.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/vendors~ClientStore~~~onsite-back-in-stock~Render.7f58957ee9121.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/vendors~.bf6126b032be2.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/5663.b76fe12927edb.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fast.a.klaviyo.com/custom-fonts/api/v1/company-fonts/onsite?company_id=T8cf3u",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/onsite-triggering-v2.2f57e7d62195c.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-user-list/11102890437/?random=1792107141413&cv=11&fst=1792105200000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6ae1v9103749675za208zd9103749675xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fahasonrie.cl%2F&rcb=15&frm=0&tiba=AH",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://o.clarity.ms/collect",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": {
+        "prov": "Microsoft Clarity",
+        "tipo": "envio"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.trackdesk.com/tracking.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0033/3538/9233/files/pushdaddy_a3.js?shop=akahal.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.logbase.io/lb-upsell-wrapper.js?shop=akahal.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://c.clarity.ms/c.gif",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": {
+        "prov": "Microsoft Clarity",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shop/files/Favicon_Aha.png?crop=center&height=32&v=1659634124&width=32",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/polyfills.DsjDEvpF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/app.DRGIQCKC.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/2c1ab0fe.CM6f73yn.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css2?family=Anton:ital,wght@0,400&family=Montserrat:ital,wght@0,400&family=Poppins:ital,wght@0,400&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.D8DBh9Ex.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://o.clarity.ms/collect",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": {
+        "prov": "Microsoft Clarity",
+        "tipo": "envio"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/4b4bc88f.C1a6xVCn.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/cf29e63b.C9Arw_Yg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://c.bing.com/c.gif?ctsa=mr&CtsSyncId=5909E50C56EE4EE09BB5E2EE281EBA8F&RedC=c.clarity.ms&MXFR=3F887B89819E6DF61D2E6C7A859E63C7",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/bfe75f31.Da-8n-k5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/9dba8418.mES_0aj5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/cb38e5c2.CcrOsxiM.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/2255f8fa.D3LUcKnx.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/d25d1b95.BNrSWxkY.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/f67abd2c.BmAqf0A5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://c.clarity.ms/c.gif?ctsa=mr&CtsSyncId=5909E50C56EE4EE09BB5E2EE281EBA8F&MUID=03F337BC140468B53C9A204F1558699B",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": {
+        "prov": "Microsoft Clarity",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/b8733b27.BBttGKMK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/e39bc11c.CDTmzikZ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/08a3b809.DQzvC0nF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.DEmmL7YI.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/69fae6d4.xhd8dleR.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/e12db40c.BqTK9s-1.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/60a453ce.Bmb1gxD_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/c639b2b4.CHd5hsMs.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/f8706cb6.DV2yW31D.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/dffdfb34.DQvwPbUo.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/3ca8ef7e.DZBlmpb2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/1f5e7811.CRJmAtvV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/1d34c07e.h4dJAaCz.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/2fdb3dd3.82qs4gzg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/22345fd4.BEQisVAx.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/0e67bd3b.Code15FP.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/74835653.DrikuLXf.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/a9fa9fda.CIUvPkY3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/ca3e798e.BOqEWvLH.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/47b970b2.DEvn-VEN.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/064f6ac1.DhHry1cX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://tracking.aws.judge.me/widgets/track_bulk_events?_events_count=2",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/efa0389a.Cecr3qLm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://o.clarity.ms/collect",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": {
+        "prov": "Microsoft Clarity",
+        "tipo": "envio"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/4b1c22b7.Dst2YZ83.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/17425706.B-bgva9B.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/cb5cf153.DFu2n6su.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/e3e348f2.Btk40x3S.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/71ae3d5c.DFq8HTdF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/78ab3dd0.DUvZCeLC.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/89e2d30a.BEdtcnXv.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/ed9f2238.CCpQu-GC.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/6fb6f9d8.MPZFB6Qf.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/1444e6bd.g3oqe_MA.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/0b8657b8.0PUZdbD-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/a422df8c.Dh78EFDc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/55098bf1.BDnhJcrE.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/f49d4216.B_n1YY-8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/79974aab.5A6iMpVz.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/7b0c98ea.DCus46X8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/d22d2b80.C0kWLBwu.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/f58f39d8.DB7amVo7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/e03065ab.BKWAnZ5t.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/0e9ee714.C3YOfcyG.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/39921a74.BAsfCzZS.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/7a8217fd.Bcpot4iC.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/8599b02a.Dquj-nAn.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/ec391382.DEv71521.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/24773686.CJ2m65vS.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/71b60e0a.DfPLdYsH.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/6bfea526.C9dxZtHW.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/ac5a19ff.Bf5gOTbO.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/598fef4e.DDth6wAs.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/e77f7fe0.ch-bEIfG.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/cc6ff67d.vJqqft5-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/bf513f9c.CgilKoOV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/dfca5da5.DkyH1mlv.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/dae24aab.DQZ42DTY.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/a25deb9a.BTKptNc9.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/01973ac7.rfjlKtau.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/58314944.CuSXuX8m.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/945a08d6.DM7cmuz2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/7bc8057b.DiZQe6iY.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/bff2ff9b.Dn6TEQSH.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/2b89a178.BYAg_i9L.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/b684bff6.DJz0vp3k.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/910cd6e2.WjoW3jD_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/347b440c.CjWuM8SH.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/9ce08e25.Q7xik5_w.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://o.clarity.ms/collect",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": {
+        "prov": "Microsoft Clarity",
+        "tipo": "envio"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/181d38d3.2aDpVkuK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/792bb671.B3OvVnSg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/9ca7d819.Arq4JMJo.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/f51e663e.8cuWutdE.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/21cc90a2.DHzOO82q.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/64de7b49.BndLcn8x.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/ca0c3e72.DZ-ElAxc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/8e79be58.BGkb-I-p.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/90e26f5f.DKskClPj.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/31cc568e.95lmLO5k.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/65f3d4da.Bb3QiqCm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/ca5e9c49.B4y3Fkdg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/f3e117aa.Dl7_0Pl9.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.DFGDASWE.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/b3389d5c.Biy-yNhq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/73a9b0a0.DIAKmVuz.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/25604ae0.56pfEpxV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/dada7e07.DNU9tHhL.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/81e109b1.DOkM2TK2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.RQAv_ETh.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/f692f62f.cpuMWhKF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/9babe369.Y8wvtrB5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/434e3b0a.oup8Ur0H.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/e0989459.DrtNlRh1.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/cdfd59e6.BHgyoVww.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/fc21c11a.CITPUCb7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/e129c76e.DgYHN7to.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/d4ea2faa.BMHVMi67.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/fe885b80.BHneQM7q.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/f78726c8.DzhcpOIY.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/e477f96c.L3qNV3HA.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/d7065744.B0JJhwie.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/7ee73f43.Cw_B096t.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/0c0ad074.B68TWZnw.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/87bfafec.CxwEzGHg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/051149c8.lHD9iIAq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/d2e6a587.rj6YS-In.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/c10167e6.Dok4sVvQ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/b9c0319a.AkPy_b2T.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/17e57de1.Dy1VBr4W.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/app.CcGlIMpn.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/wallet-prefilled-guest-return.BJvF0-q4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.CSqLrX64.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/OnePage.C_uC3EPz.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/VatNumberValidationField.BeXMNLwi.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShopPayLogo.87JMHPUK.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ExpressCheckoutButton.BnDF3H7t.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/BillingAddressForm.BdwN7V1K.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PhoneField.uZEuHncj.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Popover.Bi1nHaU-.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Choice.CrYuHUmO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/EmptyState.BEvzDDvy.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/TransitionHeight.CuRoM9zv.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/StickyPayButton.D-gNjNDa.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Switch.BS8yVgoP.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayProgressIntercepts.CIy8uDiZ.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Tipping.BcTJoNaV.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentIcon.gzvCNwz_.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://o.clarity.ms/collect",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": {
+        "prov": "Microsoft Clarity",
+        "tipo": "envio"
+      }
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentLine.DT05kVlY.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Section.CU18S7Ap.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/constants.xO_7ctnq.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Middot.D7Ujmshx.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/EstimatedDeliveryContent.B_THySFF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethods.DU0m5rdF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shop/files/Aha_Banner_Nosotros_FILOSOFIA_1200x400_1c1a543f-db03-49c2-b220-e886da9db526.png?v=1671814498&width=1100",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethodSelector.B0hio2RO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/SubscriptionPriceBreakdown.vTcdVGq4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/BelowTheFoldContent.BKRoWsh4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/RememberMeSection.JBO5WNhc.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentMethodProgressionHost.C0BOgdmL.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/RedirectionNotice.DgiInWJ-.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PayButtonSection.CZuxzxFG.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shop/files/Mentablanqueadora62un..jpg?v=1786381400&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shop/files/Menta_full_blanqueadora_62_pastillas_reducci_n_de_manchas.png?v=1779989305&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shop/files/Enjuaguebucalprebiotico.jpg?v=1786381438&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shop/files/Disenosintitulo.png?v=1780326074&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shop/files/menta_full_blanqueadora_aluminio.jpg?v=1784134288&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shop/files/devuelve_el_blanco_natural_a_tus_dientes.png?v=1778529452&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shop/files/DSC1242-Mejorado-NR.jpg?v=1744127862&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shop/files/aha_envase_186_maqui_berries.png?v=1744127862&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/hooks.BDst-6PZ.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayButtonClassName.D-F4uQ9M.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/MobileOrderSummary.BlloiNDx.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentOptionSelector.s-Kd_X2E.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/s/files/1/0562/3418/0656/files/LOGO_AHA_b01df205-8735-4c38-a91c-214f8751f975_x320.png?v=1672172625",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/s/files/1/0562/3418/0656/files/DSC1283-Mejorado-NR_70x70.jpg?v=1744143861",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/s/files/1/0562/3418/0656/files/DSC1144-Mejorado-NR_70x70.jpg?v=1744144491",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/s/files/1/0562/3418/0656/files/menta_full_blanqueadora_aluminio_70x70.jpg?v=1784134288",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/s/files/1/0562/3418/0656/products/AHA_CepilloAHARosa_70x70.png?v=1763475396",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/s/files/1/0562/3418/0656/files/587aca14-6751-49a3-b48d-70ea31a4930b_70x70.jpg?v=1767024507",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/s/files/1/0562/3418/0656/files/Menta_boldo_3_meses_sin_fluor_70x70.jpg?v=1751926086",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/s/files/1/0562/3418/0656/files/225b1a00-7552-4a5f-a7f0-5bd86a737fcb_70x70.jpg?v=1767024452",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/cdn/shop/files/A_HA_0002_1_418-2.jpg?v=1669313874&width=750",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://tracking.aws.judge.me/widgets/track_bulk_events?_events_count=1",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://ahasonrie.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://o.clarity.ms/collect",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": {
+        "prov": "Microsoft Clarity",
+        "tipo": "envio"
+      }
+    },
+    {
+      "fase": "B",
+      "url": "https://o.clarity.ms/collect",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": {
+        "prov": "Microsoft Clarity",
+        "tipo": "envio"
+      }
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "localization",
+      "desde": "ahasonrie.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_essential",
+      "desde": "ahasonrie.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_analytics",
+      "desde": "ahasonrie.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_marketing",
+      "desde": "ahasonrie.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "CLID",
+      "desde": "www.clarity.ms"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shop_app_essential",
+      "desde": "shop.app"
+    },
+    {
+      "fase": "A",
+      "nombre": "test_cookie",
+      "desde": "googleads.g.doubleclick.net"
+    },
+    {
+      "fase": "A",
+      "nombre": "SM",
+      "desde": "c.clarity.ms"
+    },
+    {
+      "fase": "A",
+      "nombre": "MUID",
+      "desde": "c.clarity.ms"
+    },
+    {
+      "fase": "A",
+      "nombre": "MUID",
+      "desde": "c.bing.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "MR",
+      "desde": "c.bing.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "SRM_B",
+      "desde": "c.bing.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "ANONCHK",
+      "desde": "c.clarity.ms"
+    }
+  ],
+  "peso": {
+    "total_bytes": 4153051,
+    "al_abrir_bytes": 3844142,
+    "n_peticiones": 413,
+    "mas_pesados": [
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-LRJ6Z24WLN",
+        "bytes": 197001
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-LRJ6Z24WLN&cx=c&gtm=4e6ae1",
+        "bytes": 196972
+      },
+      {
+        "url": "https://ahasonrie.cl/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.DEmmL7YI.js",
+        "bytes": 188469
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=GT-MJJMP7X&cx=c&gtm=4e6ae1",
+        "bytes": 156894
+      }
+    ]
+  },
+  "html_len": 478368
+}
