@@ -41,7 +41,9 @@ const corre = (l) => new Promise((resolve) => {
       fs.mkdirSync(path.join(out, l.id), { recursive: true });
       fs.writeFileSync(path.join(out, l.id, 'ficha.json'), JSON.stringify({ id: l.id, dominio: l.dominio, resultado: 'fallo', detalle: { codigo: code, nota: 'el motor no terminó con este sitio; se registra y se sigue' }, cuando: new Date().toISOString() }, null, 2));
     }
-    console.error(`[${l.id}] ${linea.trim() || 'fallo (codigo ' + code + ')'}`); resolve(code);
+    let msg = linea.trim();
+    if (!msg) { try { const f = JSON.parse(fs.readFileSync(path.join(out, l.id, 'ficha.json'), 'utf8')); msg = `${l.id} :: ${f.resultado}`; } catch { msg = 'fallo (codigo ' + code + ')'; } }   // un descartado no escribe en stdout
+    console.error(`[${l.id}] ${msg}`); resolve(code);
   });
 });
 let i = 0;
