@@ -1,9 +1,15 @@
 # Publicar: el nombre de tu negocio en Google Maps y en tu sitio
 
-**Cuándo:** propuesto para el VIERNES 16-oct-2026 (o el lunes 19; el texto no depende del día) · **Canal:** perfil personal de Ramón · **Voz:** singular
+**Cuándo:** propuesto para el VIERNES 16-oct-2026; **salió el JUEVES 15-oct** · **Canal:** perfil personal de Ramón · **Voz:** singular
 **Pieza visual:** ninguna. Texto puro.
 **Escribe:** agente-copywriter (Renata), a pedido directo de Ramón ("como llegamos con un post", 15-oct)
-**Estado:** 📝 BORRADOR v1, esperando la aprobación de Ramón. No publicado.
+**Estado:** ✅ PUBLICADO Y VERIFICADO (15-oct-2026, un día antes de lo propuesto), perfil personal de Ramón, a pedido suyo ("listo. publicar").
+`linkedin.com/feed/update/urn:li:activity:7516492052893868032/`. Texto leído del editor antes de publicar: 6 párrafos, idénticos al aprobado
+(comparados uno a uno por script), sin raya larga; el tercer párrafo (el consejo de la especialista) se quedó, Ramón no lo pidió quitar.
+Captura posterior: "1 comentario", autor Ramón, los dos enlaces del primer comentario activos.
+
+**Checklist del día, hecho (15-oct):** guía de Google leída en el navegador con "Name" desplegada (el mismo día, sin cambios) · `spindlelab.cl/diagnostico/` leído el mismo
+día (diagnóstico a mano, una página, gratis, 24 horas) · canal revisado (el último original era el del 14-oct) · enlaces en el primer comentario.
 
 ## Origen del encargo
 
