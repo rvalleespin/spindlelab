@@ -81,3 +81,17 @@ Aldo Di Domenico Bianchini, Juan Ignacio Seguel G., Cristóbal Rodríguez Morale
 
 **Siguiente paso con los 10:** a los diez se les envió además la invitación a seguir la página de SpindleLab (13-oct). Ahora lo que rinde es reaccionar y comentar
 lo que publican, no escribirles. Eso es un comentario en contenido de terceros, que la sesión no puede ejecutar (ver la sección 7 de la estrategia): lo haría Ramón.
+
+## Actualización del 15-oct-2026
+
+**Los 3 que seguían pendientes ya aceptaron:** María Francisca Marchessi Concha (Legal Counsel, IA, LegalTech, compliance, DPO), Sara Araya Rodríguez (asesora tributaria
+para pymes y emprendedores) y Luis Felipe Larrondo Ossandón (consultor contable y tributario). Se vio en la ventana "Invitar a seguir" de la página, donde aparecen como "1er".
+**Con eso aceptaron las 13 invitaciones del 10-oct.**
+
+**Invitaciones a seguir la página, 15-oct (a pedido de Ramón: "ocupa los créditos para buscar los perfiles"):** se enviaron 4, a esas tres personas y a Juan Carlos Hurtado Salas
+(consultor de protección de datos; aceptó la conexión del 13-oct). LinkedIn confirmó "Has invitado a 4 contactos a seguir tu página". **Quedan 7 de 50 créditos, que renuevan el 1-nov-2026.**
+(El contador de la ventana decía 11 antes de enviar, no 3 como se había anotado el 13-oct: LinkedIn parece devolver créditos.)
+
+**Por qué no se gastaron los 7 restantes:** en la parte de la lista que cargó (12 contactos, ordenados por antigüedad en la red) los otros elegibles eran de reclutamiento, salud,
+coordinación de proyectos, audiovisual y un gerente general de una importadora, fuera del criterio del 13-oct. **No se revisó el resto de la lista** (carga por tramos). Si Ramón quiere
+usarlos igual, o quiere que se revise la lista completa, se puede; los créditos renuevan el 1-nov.
