@@ -1,0 +1,204 @@
+{
+  "url": "https://www.goauditores.cl/",
+  "cuando": "2026-10-14T21:11:37.836Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "__cf_bm",
+        "dominio": ".www.goauditores.cl",
+        "expira_dias": 0
+      }
+    ],
+    "dom": {
+      "url": "https://www.goauditores.cl/",
+      "titulo": "Just a moment...",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 114,
+      "muestra": "CHECKING YOUR REQUEST\n\nwww.goauditores.cl\n\nPlease wait while we verify your request.\nThis will only take a moment."
+    },
+    "captura": "r1-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "__cf_bm",
+        "dominio": ".www.goauditores.cl",
+        "expira_dias": 0
+      }
+    ],
+    "dom": {
+      "url": "https://www.goauditores.cl/",
+      "titulo": "Just a moment...",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 114,
+      "muestra": "CHECKING YOUR REQUEST\n\nwww.goauditores.cl\n\nPlease wait while we verify your request.\nThis will only take a moment."
+    },
+    "captura": "r1-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://www.goauditores.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.goauditores.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.goauditores.cl/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=a4a993473a4a29b8",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.goauditores.cl/favicon.ico",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://www.goauditores.cl/4646d3af-421f-4b11-a205-ca1d4ad8e0e6",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/turnstile/v0/g/4df4a60fa397/api.js?onload=zeEi4&render=explicit",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.goauditores.cl/cdn-cgi/challenge-platform/h/g/fo/870894902:1792008913:8m-fElw9-v_dCucWWnq4puGylT4yNWdd39F1vS52WzQ/a4a993473a4a29b8/xUcLtrCUztxqy26PeQm4GbTgTNUN6.u6xHKxuJoz1Yw-1792012273-1.2.1.1-yRVcHxJoMm28dCKRE8EqH0py_KYOFXR25NFpvotX6hRueElj9SXeVOmmOlr0IFp7",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.goauditores.cl/favicon.ico",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://www.goauditores.cl/222780cf-9458-42dc-bc73-8d840488366e",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/av0/rch/gi500/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal?lang=auto&offlabel=true",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/8c7c17b1-65bb-4111-8d56-6dba72bef448",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/3661123558:1792008923:QdlSEqy9Xsg-66cOio2prPgw5dOS5idwD-StJQLwsgo/a4a9934d2cd2c970/LWivJEUtiPNdd8emlf6mpgEn2D9EwYWHxtJLrIR5YFQ-1792012274-1.2.1.1-cRo0DhkDKbI264bE_OW8kOxe48JbR5_odT9DKHocmO_yHLX01iBFz5pQm4odqgHW",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/13367cb4-dedd-41b6-afc9-2fbd462617dd",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/i/a4a9934d2cd2c970/LWivJEUtiPNdd8emlf6mpgEn2D9EwYWHxtJLrIR5YFQ-1792012274-1.2.1.1-cRo0DhkDKbI264bE_OW8kOxe48JbR5_odT9DKHocmO_yHLX01iBFz5pQm4odqgHW",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/a4a9934d2cd2c970/1792012275165/15315f8e99b99a3bbb4c097f0450cf425e4c9000a42dd5c172d35eaf8b670113/GfWLsZ5nacFMz_STP7bIaovMZ1Odr6LmDEZ_I2Xl1F8-1792012275-1.3.1.1-f0eYg1CrVCsKkMx0MRuN_MIeq_GItBeR5kvReimz1NysO49UP55OqLEtTK7jH38ZpU1sEE0JpAaYvDxOTspWFmpN8KqO40RTvbw.rotNaS7c2DrcKDaFw8VcJd8j6LQLvOQFzdUVYDeBwX.eOhaCS9yBs261vrvIeG3UPHgM6wyK",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/13367cb4-dedd-41b6-afc9-2fbd462617dd",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/13367cb4-dedd-41b6-afc9-2fbd462617dd",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/ci/a4a9934d2cd2c970/1792012275178/NrRcVY.Vz2Tccm8c.iZMJW0BDFqbEy6y0j2O160dny4-1792012275-1.3.1.1-T1RYJ4Ibr1akmlDZkzbtwBaelDL735wB3JOgw05KLSvvWW3KIlVYenOvbh6HuHOPVwNfXQqHh4U.g40a9UtvhuQNGC5rNRMvXnzRPK0bxLgE6yH1NFnv.RaBdK8lMD13nQ5tZMTv0_gGECsZzLRamSvr9c.gzVOE44D4hNY2u8YT9fEQp6mFknBwo6GOGLjApfWe_favd5BfEZ1Lg1cgL4CmyoLUJELxjUBWynL9.qpKvd",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/3661123558:1792008923:QdlSEqy9Xsg-66cOio2prPgw5dOS5idwD-StJQLwsgo/a4a9934d2cd2c970/LWivJEUtiPNdd8emlf6mpgEn2D9EwYWHxtJLrIR5YFQ-1792012274-1.2.1.1-cRo0DhkDKbI264bE_OW8kOxe48JbR5_odT9DKHocmO_yHLX01iBFz5pQm4odqgHW",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/28062776-d73e-4a1a-9da9-6c91902d1f9d",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "www.goauditores.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "www.goauditores.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "www.goauditores.cl"
+    }
+  ],
+  "html_len": 11410
+}

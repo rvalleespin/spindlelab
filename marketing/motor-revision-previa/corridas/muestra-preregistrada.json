@@ -1,0 +1,77 @@
+{
+  "fijada": "2026-10-14T21:03:49.925Z",
+  "regla": "primeros N de los CSV en orden, no excluidos ni ya contactados; sin elegir por apariencia",
+  "muestra": [
+    {
+      "id": "S01",
+      "dominio": "checkcontabilidades.cl",
+      "correo": "contacto@checkcontabilidades.cl",
+      "rubro": "Contadores",
+      "fuente": "ventas/contactos-google-maps-contadores.csv"
+    },
+    {
+      "id": "S02",
+      "dominio": "amgestemp.cl",
+      "correo": "contacto@amgestemp.cl",
+      "rubro": "Contadores",
+      "fuente": "ventas/contactos-google-maps-contadores.csv"
+    },
+    {
+      "id": "S03",
+      "dominio": "f5contable.cl",
+      "correo": "contacto@f5contable.cl",
+      "rubro": "Contadores",
+      "fuente": "ventas/contactos-google-maps-contadores.csv"
+    },
+    {
+      "id": "S04",
+      "dominio": "oscplus.cl",
+      "correo": "contacto@oscplus.cl",
+      "rubro": "Contadores",
+      "fuente": "ventas/contactos-google-maps-contadores.csv"
+    },
+    {
+      "id": "S05",
+      "dominio": "goauditores.cl",
+      "correo": "hola@goauditores.cl",
+      "rubro": "Contadores",
+      "fuente": "ventas/contactos-google-maps-contadores.csv"
+    },
+    {
+      "id": "S06",
+      "dominio": "clavetributariacontadores.cl",
+      "correo": "hola@clavetributariacontadores.cl",
+      "rubro": "Contadores",
+      "fuente": "ventas/contactos-google-maps-contadores.csv"
+    },
+    {
+      "id": "S07",
+      "dominio": "pcmservicioscontables.cl",
+      "correo": "pceronm5@gmail.com",
+      "rubro": "Contadores",
+      "fuente": "ventas/contactos-google-maps-contadores.csv"
+    },
+    {
+      "id": "S08",
+      "dominio": "contable.app",
+      "correo": "hola@contable.app",
+      "rubro": "Contadores",
+      "fuente": "ventas/contactos-google-maps-contadores.csv"
+    },
+    {
+      "id": "S09",
+      "dominio": "tuoficinacontable.cl",
+      "correo": "somos@tuoficinacontable.cl",
+      "rubro": "Contadores",
+      "fuente": "ventas/contactos-google-maps-contadores.csv"
+    },
+    {
+      "id": "S10",
+      "dominio": "akcontadores.cl",
+      "correo": "contacto@akcontadores.cl",
+      "rubro": "Contadores",
+      "fuente": "ventas/contactos-google-maps-contadores.csv"
+    }
+  ],
+  "omitidos_antes_de_completar": []
+}

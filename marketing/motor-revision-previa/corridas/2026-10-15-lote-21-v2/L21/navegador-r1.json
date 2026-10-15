@@ -1,0 +1,2722 @@
+{
+  "url": "https://cslab.cl/",
+  "cuando": "2026-10-15T14:31:13.111Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "cslab.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "cslab.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "cslab.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "cslab.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "__Secure-YNID",
+        "dominio": ".youtube.com",
+        "expira_dias": 180
+      },
+      {
+        "nombre": "__Secure-ROLLOUT_TOKEN",
+        "dominio": ".youtube.com",
+        "expira_dias": 180
+      }
+    ],
+    "dom": {
+      "url": "https://cslab.cl/",
+      "titulo": "CSLAB",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/search",
+          "accion_abs": "https://cslab.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart",
+          "accion_abs": "https://cslab.cl/cart",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#MainContent",
+          "t": "Ir directamente al contenido"
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Quiénes somos"
+        },
+        {
+          "h": "/pages/quimica",
+          "t": "Análisis Químicos"
+        },
+        {
+          "h": "/pages/microbiologico",
+          "t": "Análisis Microbiológicos"
+        },
+        {
+          "h": "/pages/analisis-fisico-organolepticos",
+          "t": "Análisis Físicos Organolépticos"
+        },
+        {
+          "h": "/pages/analisis-de-farmacos",
+          "t": "Análisis de Fármacos"
+        },
+        {
+          "h": "/pages/analisis-de-cosmeticos",
+          "t": "Análisis de Cosméticos"
+        },
+        {
+          "h": "/pages/ensayos-de-biocompatibilidad",
+          "t": "Ensayos de Biocompatibilidad"
+        },
+        {
+          "h": "/pages/ensayos-de-irritacion",
+          "t": "Ensayos de Irritación"
+        },
+        {
+          "h": "/pages/adme-tox",
+          "t": "ADME Tox"
+        },
+        {
+          "h": "/pages/analisis-microbiologicos-en-productos-hidrobiologicos",
+          "t": "Análisis Microbiológicos en Productos Hidrobiológicos"
+        },
+        {
+          "h": "/pages/analisis-quimicos-en-productos-hidrobiologicos",
+          "t": "Análisis Químicos en Productos Hidrobiológicos"
+        },
+        {
+          "h": "/pages/analisis-organolepticos",
+          "t": "Análisis Organolépticos"
+        },
+        {
+          "h": "/pages/asociatividad-y-acreditaciones",
+          "t": "Asociatividad y Acreditaciones"
+        },
+        {
+          "h": "/pages/tratamiento-de-quejas",
+          "t": "Tratamiento de quejas"
+        },
+        {
+          "h": "/pages/intranet-alimentos",
+          "t": "Intranet Alimentos"
+        },
+        {
+          "h": "/pages/intranet-microbiologico",
+          "t": "Intranet Microbiológico"
+        },
+        {
+          "h": "/pages/intranet-quimicos",
+          "t": "Intranet Químicos"
+        },
+        {
+          "h": "/pages/clientes-alimentos",
+          "t": "Clientes Alimentos"
+        },
+        {
+          "h": "/pages/clientes-farma",
+          "t": "Clientes Farma"
+        },
+        {
+          "h": "https://cslab.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Quiénes somos"
+        },
+        {
+          "h": "/pages/cslab-alimentos",
+          "t": "CSLAB Alimentos"
+        },
+        {
+          "h": "/pages/quimica",
+          "t": "Análisis Químicos"
+        },
+        {
+          "h": "/pages/microbiologico",
+          "t": "Análisis Microbiológicos"
+        },
+        {
+          "h": "/pages/analisis-fisico-organolepticos",
+          "t": "Análisis Físicos Organolépticos"
+        },
+        {
+          "h": "/pages/cslab-farma",
+          "t": "CSLAB Farma"
+        },
+        {
+          "h": "/pages/analisis-de-farmacos",
+          "t": "Análisis de Fármacos"
+        },
+        {
+          "h": "/pages/analisis-de-cosmeticos",
+          "t": "Análisis de Cosméticos"
+        },
+        {
+          "h": "/pages/ensayos-de-biocompatibilidad",
+          "t": "Ensayos de Biocompatibilidad"
+        },
+        {
+          "h": "/pages/ensayos-de-irritacion",
+          "t": "Ensayos de Irritación"
+        },
+        {
+          "h": "/pages/adme-tox",
+          "t": "ADME Tox"
+        },
+        {
+          "h": "/pages/sernapesca",
+          "t": "SERNAPESCA"
+        },
+        {
+          "h": "/pages/analisis-microbiologicos-en-productos-hidrobiologicos",
+          "t": "Análisis Microbiológicos en Productos Hidrobiológicos"
+        },
+        {
+          "h": "/pages/analisis-quimicos-en-productos-hidrobiologicos",
+          "t": "Análisis Químicos en Productos Hidrobiológicos"
+        },
+        {
+          "h": "/pages/analisis-organolepticos",
+          "t": "Análisis Organolépticos"
+        },
+        {
+          "h": "/pages/asociatividad-y-acreditaciones",
+          "t": "Asociatividad y Acreditaciones"
+        },
+        {
+          "h": "/pages/tratamiento-de-quejas",
+          "t": "Tratamiento de quejas"
+        },
+        {
+          "h": "/pages/intranet-alimentos",
+          "t": "Intranet Alimentos"
+        },
+        {
+          "h": "/pages/intranet-microbiologico",
+          "t": "Intranet Microbiológico"
+        },
+        {
+          "h": "/pages/intranet-quimicos",
+          "t": "Intranet Químicos"
+        },
+        {
+          "h": "/pages/clientes-alimentos",
+          "t": "Clientes Alimentos"
+        },
+        {
+          "h": "/pages/clientes-farma",
+          "t": "Clientes Farma"
+        },
+        {
+          "h": "https://cslab.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "https://cslab.cl/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "/cart",
+          "t": "Ver carrito"
+        },
+        {
+          "h": "/pages/servicios",
+          "t": "Explorar servicios"
+        },
+        {
+          "h": "/pages/sernapesca",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/sernapesca",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/cslab-alimentos",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/cslab-alimentos",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/cslab-farma",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/cslab-farma",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/sernapesca",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/sernapesca",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/cslab-alimentos",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/cslab-alimentos",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Conoce nuestra historia"
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Conoce nuestra historia"
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Quiénes Somos"
+        },
+        {
+          "h": "/blogs/noticias",
+          "t": "Noticias"
+        },
+        {
+          "h": "/pages/cslab-alimentos",
+          "t": "CSLab Alimentos"
+        },
+        {
+          "h": "/pages/cslab-farma",
+          "t": "CSLab Farma"
+        },
+        {
+          "h": "/pages/sernapesca",
+          "t": "Servicio SERNAPESCA"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Formulario Contacto"
+        },
+        {
+          "h": "/",
+          "t": "CSLAB"
+        },
+        {
+          "h": "https://es.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore",
+          "t": "Tecnología de Shopify"
+        },
+        {
+          "h": "/policies/privacy-policy",
+          "t": "Política de privacidad"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://cslab.cl/policies/privacy-policy",
+          "t": "Política de privacidad"
+        }
+      ],
+      "largo_texto": 4868,
+      "muestra": "Ir directamente al contenido\n\nCSLab Excelencia en Control de Calidad\n\nQuiénes somos\nServicios\nCalidad\nIntranet\nClientes\nIniciar sesión\nContacto\n\nExcelencia en Control de Calidad\n\nGarantizamos resultados confiables con tecnología avanzada, certificaciones y un compromiso absoluto con la excelencia.\n\nExplorar servicios\n\nHan confiado en nosotros\nPrincipales Servicios\n\nControl de servicios de análisis de laboratorio\n\nCSLab Alimentos\n\nCSLab Farma\n\nServicio SERNAPESCA\n\nServicio SERNAPESCA\n\nApoyo técni",
+      "cta_en_pantalla": [
+        {
+          "t": "Contacto",
+          "h": "https://cslab.cl/pages/contact"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 12,
+        "palabras": 669
+      }
+    },
+    "captura": "r1-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "cslab.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "cslab.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "cslab.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "cslab.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "__Secure-YNID",
+        "dominio": ".youtube.com",
+        "expira_dias": 180
+      },
+      {
+        "nombre": "__Secure-ROLLOUT_TOKEN",
+        "dominio": ".youtube.com",
+        "expira_dias": 180
+      }
+    ],
+    "dom": {
+      "url": "https://cslab.cl/",
+      "titulo": "CSLAB",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/search",
+          "accion_abs": "https://cslab.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart",
+          "accion_abs": "https://cslab.cl/cart",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#MainContent",
+          "t": "Ir directamente al contenido"
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Quiénes somos"
+        },
+        {
+          "h": "/pages/quimica",
+          "t": "Análisis Químicos"
+        },
+        {
+          "h": "/pages/microbiologico",
+          "t": "Análisis Microbiológicos"
+        },
+        {
+          "h": "/pages/analisis-fisico-organolepticos",
+          "t": "Análisis Físicos Organolépticos"
+        },
+        {
+          "h": "/pages/analisis-de-farmacos",
+          "t": "Análisis de Fármacos"
+        },
+        {
+          "h": "/pages/analisis-de-cosmeticos",
+          "t": "Análisis de Cosméticos"
+        },
+        {
+          "h": "/pages/ensayos-de-biocompatibilidad",
+          "t": "Ensayos de Biocompatibilidad"
+        },
+        {
+          "h": "/pages/ensayos-de-irritacion",
+          "t": "Ensayos de Irritación"
+        },
+        {
+          "h": "/pages/adme-tox",
+          "t": "ADME Tox"
+        },
+        {
+          "h": "/pages/analisis-microbiologicos-en-productos-hidrobiologicos",
+          "t": "Análisis Microbiológicos en Productos Hidrobiológicos"
+        },
+        {
+          "h": "/pages/analisis-quimicos-en-productos-hidrobiologicos",
+          "t": "Análisis Químicos en Productos Hidrobiológicos"
+        },
+        {
+          "h": "/pages/analisis-organolepticos",
+          "t": "Análisis Organolépticos"
+        },
+        {
+          "h": "/pages/asociatividad-y-acreditaciones",
+          "t": "Asociatividad y Acreditaciones"
+        },
+        {
+          "h": "/pages/tratamiento-de-quejas",
+          "t": "Tratamiento de quejas"
+        },
+        {
+          "h": "/pages/intranet-alimentos",
+          "t": "Intranet Alimentos"
+        },
+        {
+          "h": "/pages/intranet-microbiologico",
+          "t": "Intranet Microbiológico"
+        },
+        {
+          "h": "/pages/intranet-quimicos",
+          "t": "Intranet Químicos"
+        },
+        {
+          "h": "/pages/clientes-alimentos",
+          "t": "Clientes Alimentos"
+        },
+        {
+          "h": "/pages/clientes-farma",
+          "t": "Clientes Farma"
+        },
+        {
+          "h": "https://cslab.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Quiénes somos"
+        },
+        {
+          "h": "/pages/cslab-alimentos",
+          "t": "CSLAB Alimentos"
+        },
+        {
+          "h": "/pages/quimica",
+          "t": "Análisis Químicos"
+        },
+        {
+          "h": "/pages/microbiologico",
+          "t": "Análisis Microbiológicos"
+        },
+        {
+          "h": "/pages/analisis-fisico-organolepticos",
+          "t": "Análisis Físicos Organolépticos"
+        },
+        {
+          "h": "/pages/cslab-farma",
+          "t": "CSLAB Farma"
+        },
+        {
+          "h": "/pages/analisis-de-farmacos",
+          "t": "Análisis de Fármacos"
+        },
+        {
+          "h": "/pages/analisis-de-cosmeticos",
+          "t": "Análisis de Cosméticos"
+        },
+        {
+          "h": "/pages/ensayos-de-biocompatibilidad",
+          "t": "Ensayos de Biocompatibilidad"
+        },
+        {
+          "h": "/pages/ensayos-de-irritacion",
+          "t": "Ensayos de Irritación"
+        },
+        {
+          "h": "/pages/adme-tox",
+          "t": "ADME Tox"
+        },
+        {
+          "h": "/pages/sernapesca",
+          "t": "SERNAPESCA"
+        },
+        {
+          "h": "/pages/analisis-microbiologicos-en-productos-hidrobiologicos",
+          "t": "Análisis Microbiológicos en Productos Hidrobiológicos"
+        },
+        {
+          "h": "/pages/analisis-quimicos-en-productos-hidrobiologicos",
+          "t": "Análisis Químicos en Productos Hidrobiológicos"
+        },
+        {
+          "h": "/pages/analisis-organolepticos",
+          "t": "Análisis Organolépticos"
+        },
+        {
+          "h": "/pages/asociatividad-y-acreditaciones",
+          "t": "Asociatividad y Acreditaciones"
+        },
+        {
+          "h": "/pages/tratamiento-de-quejas",
+          "t": "Tratamiento de quejas"
+        },
+        {
+          "h": "/pages/intranet-alimentos",
+          "t": "Intranet Alimentos"
+        },
+        {
+          "h": "/pages/intranet-microbiologico",
+          "t": "Intranet Microbiológico"
+        },
+        {
+          "h": "/pages/intranet-quimicos",
+          "t": "Intranet Químicos"
+        },
+        {
+          "h": "/pages/clientes-alimentos",
+          "t": "Clientes Alimentos"
+        },
+        {
+          "h": "/pages/clientes-farma",
+          "t": "Clientes Farma"
+        },
+        {
+          "h": "https://cslab.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "https://cslab.cl/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "/cart",
+          "t": "Ver carrito"
+        },
+        {
+          "h": "/pages/servicios",
+          "t": "Explorar servicios"
+        },
+        {
+          "h": "/pages/sernapesca",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/sernapesca",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/cslab-alimentos",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/cslab-alimentos",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/cslab-farma",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/cslab-farma",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/sernapesca",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/sernapesca",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/cslab-alimentos",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/cslab-alimentos",
+          "t": "Ver en detalle"
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Conoce nuestra historia"
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Conoce nuestra historia"
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Quiénes Somos"
+        },
+        {
+          "h": "/blogs/noticias",
+          "t": "Noticias"
+        },
+        {
+          "h": "/pages/cslab-alimentos",
+          "t": "CSLab Alimentos"
+        },
+        {
+          "h": "/pages/cslab-farma",
+          "t": "CSLab Farma"
+        },
+        {
+          "h": "/pages/sernapesca",
+          "t": "Servicio SERNAPESCA"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Formulario Contacto"
+        },
+        {
+          "h": "/",
+          "t": "CSLAB"
+        },
+        {
+          "h": "https://es.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore",
+          "t": "Tecnología de Shopify"
+        },
+        {
+          "h": "/policies/privacy-policy",
+          "t": "Política de privacidad"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://cslab.cl/policies/privacy-policy",
+          "t": "Política de privacidad"
+        }
+      ],
+      "largo_texto": 4868,
+      "muestra": "Ir directamente al contenido\n\nCSLab Excelencia en Control de Calidad\n\nQuiénes somos\nServicios\nCalidad\nIntranet\nClientes\nIniciar sesión\nContacto\n\nExcelencia en Control de Calidad\n\nGarantizamos resultados confiables con tecnología avanzada, certificaciones y un compromiso absoluto con la excelencia.\n\nExplorar servicios\n\nHan confiado en nosotros\nPrincipales Servicios\n\nControl de servicios de análisis de laboratorio\n\nCSLab Alimentos\n\nCSLab Farma\n\nServicio SERNAPESCA\n\nServicio SERNAPESCA\n\nApoyo técni",
+      "cta_en_pantalla": [
+        {
+          "t": "Contacto",
+          "h": "https://cslab.cl/pages/contact"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 12,
+        "palabras": 669
+      }
+    },
+    "captura": "r1-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/base.css?v=102894101605516724301738038395",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/LogoCSLAB_Mesa_de_trabajo_1_3.jpg?v=1734492326&width=220",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/constants.js?v=132983761750457495441731600089",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/pubsub.js?v=158357773527763999511731600091",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/global.js?v=152862011079830610291731600089",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/details-disclosure.js?v=13653116266235556501731600089",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/details-modal.js?v=25581673532751508451731600089",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/search-form.js?v=133129549252120666541731600091",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/animations.js?v=88693664871331136111731600088",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/checkouts/internal/preloads.js?locale=es-CL",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/storefront/assets/storefront/load_feature-1bd60354.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/storefront/assets/storefront/origin_trials-318ab40a.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/compiled_assets/scripts.js?v=184325197989695213571733366557",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/component-cart-items.css?v=123238115697927560811731600089",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/fonts/roboto/roboto_n4.2019d890f07b1852f56ce63ba45b2db45d852cba.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://whatsapp-button.eazeapps.io/api/buttonInstallation/scriptTag?shopId=37157&v=1758649663",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b8a-bbd9-7b44-92a9-87bad565fb50/forms-2621/assets/shopify-forms-loader.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/wpm/bb5acf91awd18c8882p8c792781mb6692debm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/s/trekkie.storefront.32ff6085714fe9c4d5859e332c5de5f8759a859e.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/storefront/assets/shop_events_listener-4e26a9ce.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.11.0.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/component-slideshow.css?v=17933591812325749411731600089",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/component-slider.css?v=14039311878856620671731600089",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/cart-notification.js?v=133508293167896966491731600088",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Banner_CSLAB_2.png?v=1738040454",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/ISP_2.png?v=1738045370",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/section-rich-text.css?v=155250126305810049721731600091",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/video-section.css?v=163092437706280852751731600091",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/component-deferred-media.css?v=14096082462203297471731600089",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Frase_CSLAB.1_1600x.png?v=1737676264",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Frase_CSLAB_Tu_historia_1600x.png?v=1737471398",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.youtube.com/iframe_api",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/component-image-with-text.css?v=159347133892345898421731600089",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/section-multicolumn.css?v=81420361875458722681731600091",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/section-footer.css?v=60318643098753476351731600091",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/component-newsletter.css?v=4727253280200485261731600089",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/component-list-menu.css?v=151968516119678728991731600089",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/component-list-payment.css?v=69253961410771838501731600089",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/component-list-social.css?v=35792976012981934991731600089",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/storefront/standard-actions.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/web-pixels@b5acf91awd18c8882p8c792781mb6692deb/web-pixel-shopify-app-pixel@0530/sandbox/worker.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/web-pixels@b5acf91awd18c8882p8c792781mb6692deb/custom/web-pixel-shopify-custom-pixel@0530/sandbox/modern/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/component-search.css?v=165164710990765432851731600089",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/component-menu-drawer.css?v=147478906057189667651731600089",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/component-cart-notification.css?v=54116361853792938221731600089",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/t/1/assets/component-mega-menu.css?v=10110889665867715061731600089",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/fonts/roboto/roboto_n7.f38007a10afbbde8976c4056bfe890710d51dec2.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/LOGOTIPO-MULTI-X-RGB-01.png?v=1735835748",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/logo_eurofarma.png?v=1735835818",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/logo_vinolab.png?v=1735835912",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/imagen_2025-01-02_134103316.png?v=1735836068",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Banner_Post_de_Instagram_12.png?v=1733369165",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Banner_Post_de_Instagram_9.png?v=1733369165",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Logotipo_del_Instituto_de_Salud_Publica_de_Chile.png?v=1735186295",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Banner_Post_de_Instagram_13.png?v=1733369165",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Banner_Post_de_Instagram_11.png?v=1733369165",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Banner_Post_de_Instagram_15.png?v=1733369165",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Banner_Post_de_Instagram_10.png?v=1733369165",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Banner_Post_de_Instagram_8.png?v=1733369165",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Banner_Post_de_Instagram_5.png?v=1733369165",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/vitafarma_logo.jpg?v=1735835474",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Banner_Post_de_Instagram_14.png?v=1733369165",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/preview_images/Banner_CSLAB_3.png?v=1740595322&width=1100",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/sorting_5612711.png?v=1733198512",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/health_10877089.png?v=1733198796",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/fish_6660448.png?v=1733198871",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/CSLAB_Alimentos.png?v=1733199831",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/CSLAB_Farma.png?v=1733200116",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/web-pixels/strict/app/web-pixel-shopify-app-pixel@0530.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/fonts/roboto/roboto_i4.57ce898ccda22ee84f49e6b57ae302250655e2d4.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps/api/js?libraries=maps&key=AIzaSyCQoeK1NgneqylDrTe9BI80ATxqP-LdIf0&v=weekly&callback=google.maps.__ib__",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13b8a-bbd9-7b44-92a9-87bad565fb50/forms-2621/assets/index.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.youtube.com/s/player/21090930/www-widgetapi.vflset/www-widgetapi.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/chart-6765401_1280.jpg?v=1735081249",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/5.png?v=1733197969",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Sernapesca.png?v=1733200358",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://forms.shopifyapps.com/api/v2/form_instances?shopify_domain=mxbtvs-vw.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://forms.shopifyapps.com/api/v2/form_instances?shopify_domain=mxbtvs-vw.myshopify.com",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/9d/main.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/Banner_Post_de_Instagram_7.png?v=1733369165",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/9d/common.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/9d/util.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/9d/log.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/9d/map.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/9d/controls.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/9d/places_impl.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/9d/places.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shop/files/ISP_5.png?crop=center&height=32&v=1738047388&width=32",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/polyfills.DsjDEvpF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps/api/js/AuthenticationService.Authenticate?1shttps%3A%2F%2Fcslab.cl%2F&4sAIzaSyCQoeK1NgneqylDrTe9BI80ATxqP-LdIf0&8b0&callback=_xdc_._vk3iw3&key=AIzaSyCQoeK1NgneqylDrTe9BI80ATxqP-LdIf0&token=45000",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/app.B6IsY1jv.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/2c1ab0fe.YffFoKfv.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps/api/place/js/PlaceService.FindPlaceFromText?1sAvenida%20Carrascal%203585%2C%20Santiago%20de%20Chile&2e2&3m0&5m2&3m1&1sname%2Cgeometry&6m2&1sen-US&2e1&r_url=https%3A%2F%2Fcslab.cl%2F&callback=_xdc_._tze2o0&key=AIzaSyCQoeK1NgneqylDrTe9BI80ATxqP-LdIf0&token=12155",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.BcLa5yam.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/4b4bc88f.CBYlKWNU.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps_api_js_slo/log?hasfast=true",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/cf29e63b.qloxznj9.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/bfe75f31.DQxS90kb.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/9dba8418.BiyvWFwu.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/cb38e5c2.CgT1nSQE.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/2255f8fa.B0rplJv4.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/d25d1b95.BlWKy0Je.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/f67abd2c.CQeLothb.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/b8733b27.BccS5mP5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/e39bc11c.DSGGPmnY.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps_api_js_slo/log?hasfast=true",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/08a3b809.CyB3Y2ea.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.BtEbJ1nI.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/69fae6d4.BGGGDpd2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/e12db40c.C-XhEWq0.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/60a453ce.B-tk3EM0.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/c639b2b4.CHd5hsMs.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/f8706cb6.zVaYTkKh.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/dffdfb34.B_Nzhsvk.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/3ca8ef7e.C5RAWre_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/1f5e7811.C1Q3r3H5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/1d34c07e.h4dJAaCz.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/2fdb3dd3.Blv6awma.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/22345fd4.Da7907uh.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/0e67bd3b.DA-Iy2tv.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/74835653.Z0EFjB5n.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/a9fa9fda.Dn2CV4Mn.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/ca3e798e.BkBNGXRH.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/47b970b2.DL5-y42b.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/064f6ac1.5Y44XuHN.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/efa0389a.BLap036v.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/4b1c22b7.DzJsGR1o.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/17425706.DqASHjNj.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/cb5cf153.iS2-mqSS.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/e3e348f2.1tGY7DOR.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/71ae3d5c.siLuNk2v.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/78ab3dd0.nGKLF4zQ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/89e2d30a.VUOPPDBr.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/ed9f2238.CY-4HXpV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/6fb6f9d8.ejd6B2dx.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/1444e6bd.CYMCEsoa.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/0b8657b8.Dif4PyV5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/a422df8c.BNKi3Qbk.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/55098bf1.Cywoncfm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/f49d4216.B0rlBvIu.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/79974aab.eZNRe6LH.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/7b0c98ea.C_WN6-XD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/d22d2b80.qong52yr.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/f58f39d8.5U8DgYYR.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/e03065ab.Dm2oz693.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/0e9ee714.DoVIuvUc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/39921a74.yRBm_kRo.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/7a8217fd.COnW1XMK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/8599b02a.DR_oi9Wt.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://maps.googleapis.com/maps_api_js_slo/log?hasfast=true",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/ccdf3592.BlgdVy57.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/ec391382.Stkl0X5l.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/24773686.Ni0GhVB2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/71b60e0a.DfPLdYsH.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/6bfea526.B1ANhzTw.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/ac5a19ff.D-8uYp7L.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/598fef4e.BOU9-6Hh.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/e77f7fe0.C2zlo6vd.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/cc6ff67d.DqD45HTW.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/bf513f9c.Ct9ZFScx.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/dfca5da5.B-TB_mE1.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/dae24aab.D4jkMJVv.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/a25deb9a.KaLBRzRm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/01973ac7.C4DQyd6-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/58314944.Cn4qz0Fz.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/945a08d6.CfwXUeze.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/7bc8057b.BY1q-vN8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/bff2ff9b.2L9NWTrk.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/2b89a178.Dr8h4oyl.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/b684bff6.DYEF-LxV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/910cd6e2.BQFZha5F.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/347b440c.DplAPCH9.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/9ce08e25.iK-cWj4e.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/181d38d3.BqeEiEA5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/792bb671.B3OvVnSg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/9ca7d819.C2txVvHg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/f51e663e.U38ifP99.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/21cc90a2.DHzOO82q.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/64de7b49.2a-gPTCK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/ca0c3e72.CwKSQ2PG.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/8e79be58.Id_dLzST.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/90e26f5f.kmj5NuIi.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/31cc568e.95lmLO5k.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/65f3d4da.Bb3QiqCm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/ca5e9c49.8qszeAkD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/f3e117aa.BsgC3EI7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.NYTuUfrk.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/b3389d5c.CQMM_Ot-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/73a9b0a0.CBCK4630.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/25604ae0.56pfEpxV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/dada7e07.BQ_nr-iZ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/81e109b1.DOkM2TK2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.DxFIowVa.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/f692f62f.UyoxYSSt.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/9babe369.BMw1TEyn.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/434e3b0a.oup8Ur0H.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/e0989459.551QnlAh.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/cdfd59e6.CMprcary.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/fc21c11a.CwaEQeY-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/e129c76e.C5qK5yii.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/d4ea2faa.CvimHA0v.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/fe885b80.Q75uzx1J.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/f78726c8.DMD5opIg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/e477f96c.PENVJaYm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/d7065744.4mzlZR0q.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/7ee73f43.DAeJG9TK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/0c0ad074.jBki6Cgm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/87bfafec.CxwEzGHg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/051149c8.lHD9iIAq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/d2e6a587.DW0FbNJ_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/c10167e6.BiOzUBiZ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/b9c0319a.BtWtx2jX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/17e57de1.kv0vT2YP.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/app.CcGlIMpn.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/wallet-prefilled-guest-return.BJvF0-q4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.CAkY9kWF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/OnePage.C_uC3EPz.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/VatNumberValidationField.BeXMNLwi.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shop/files/5.png?v=1733197969&width=750",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShopPayLogo.87JMHPUK.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ExpressCheckoutButton.BnDF3H7t.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/BillingAddressForm.BdwN7V1K.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PhoneField.uZEuHncj.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Popover.Bi1nHaU-.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Choice.CrYuHUmO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/EmptyState.BEvzDDvy.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/TransitionHeight.CuRoM9zv.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/StickyPayButton.D-gNjNDa.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Switch.BS8yVgoP.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayProgressIntercepts.CIy8uDiZ.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shop/files/farmacos_1.png?v=1735180557&width=750",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Tipping.BcTJoNaV.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentIcon.gzvCNwz_.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentLine.DT05kVlY.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Section.CU18S7Ap.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/constants.xO_7ctnq.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Middot.D7Ujmshx.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shop/files/14_04b193fb-e1ad-40df-8ab9-8e68909d5f59.png?v=1733433119&width=150",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shop/files/15_4e54047f-1892-464a-8f6a-dd11d277cb60.png?v=1733433083&width=150",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shop/files/13_4c68f0f1-8b9b-4d46-b234-702ed34a0c23.png?v=1733433160&width=150",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/EstimatedDeliveryContent.B_THySFF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethods.DU0m5rdF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethodSelector.B0hio2RO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/SubscriptionPriceBreakdown.vTcdVGq4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/BelowTheFoldContent.BKRoWsh4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/RememberMeSection.JBO5WNhc.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentMethodProgressionHost.C0BOgdmL.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/RedirectionNotice.DgiInWJ-.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PayButtonSection.CZuxzxFG.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/hooks.CKE1iCma.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayButtonClassName.D-F4uQ9M.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/MobileOrderSummary.BlloiNDx.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentOptionSelector.s-Kd_X2E.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "localization",
+      "desde": "cslab.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_essential",
+      "desde": "cslab.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_analytics",
+      "desde": "cslab.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_marketing",
+      "desde": "cslab.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "__Secure-BUCKET",
+      "desde": "www.youtube.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "__Secure-YNID",
+      "desde": "www.youtube.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "YSC",
+      "desde": "www.youtube.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "__Secure-YEC",
+      "desde": "www.youtube.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "VISITOR_INFO1_LIVE",
+      "desde": "www.youtube.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "__Secure-ROLLOUT_TOKEN",
+      "desde": "www.youtube.com"
+    }
+  ],
+  "peso": {
+    "total_bytes": 3517770,
+    "n_peticiones": 275,
+    "mas_pesados": [
+      {
+        "url": "https://cdn.shopify.com/extensions/01a13b8a-bbd9-7b44-92a9-87bad565fb50/forms-2621/assets/index.js",
+        "bytes": 267545
+      },
+      {
+        "url": "https://cslab.cl/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.BtEbJ1nI.js",
+        "bytes": 187762
+      },
+      {
+        "url": "https://cslab.cl/cdn/shop/files/Banner_CSLAB_2.png?v=1738040454",
+        "bytes": 183343
+      },
+      {
+        "url": "https://cslab.cl/cdn/shop/files/Sernapesca.png?v=1733200358",
+        "bytes": 159783
+      }
+    ]
+  },
+  "html_len": 292165
+}

@@ -1,0 +1,58 @@
+#!/usr/bin/env node
+// Entrega para Emilia (agente-outbound). El motor NO escribe el correo ni lo envia: entrega el hallazgo y la oferta en el formato que ella consume.
+//   1) para-emilia.csv          -> EXACTAMENTE `empresa,dominio,email,hallazgo_medido,estado` (ella valida "header correcto")
+//   2) para-emilia-detalle.csv  -> lo demas, por dominio: castellano, oferta, puerta a la reunion, precio, como comprobarlo, que NO afirmar.
+// Uso: node exportar-emilia.mjs <carpeta-salida> <carpeta-corridas> [...]   (acepta tambien "<corridas>:<confirmacion>" por compatibilidad)
+import fs from 'node:fs';
+import path from 'node:path';
+import { leerCsv } from './lib/csv.mjs';
+
+const RAIZ = path.resolve(new URL('../../../', import.meta.url).pathname);
+const [salida, ...pares] = process.argv.slice(2);
+const FUENTES = fs.readdirSync(path.join(RAIZ, 'ventas')).filter((f) => /^(contactos|clinicas|abogados|nuevos|lote).*\.csv$/.test(f)).map((f) => 'ventas/' + f);
+const indice = new Map();   // dominio -> { empresa, email }
+for (const f of FUENTES) { try { for (const r of leerCsv(path.join(RAIZ, f))) {
+  const dom = (r.dominio || (r.email || '').split('@')[1] || '').toLowerCase().replace(/^www\./, '');
+  if (dom && !indice.has(dom)) indice.set(dom, { empresa: r.empresa || r.nombre || '', email: r.email || '' });
+} } catch {} }
+const esc = (v) => { const s = String(v ?? ''); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+const fila = (a) => a.map(esc).join(',');
+const lee = (dir, id) => { for (const d of [dir + '-reintento', dir]) { const p = path.join(d, id, 'ficha.json'); if (fs.existsSync(p)) return JSON.parse(fs.readFileSync(p, 'utf8')); } return null; };
+
+function hallazgoMedido(f) {
+  const h = f.hallazgo; if (!h) return '';
+  const n = f.corridas_de_navegador || 2, fuente = `Fuente: motor de revision previa, ${(f.cuando || '').slice(0, 10)}`;
+  if (h.id === 'C1' && f.soporte?.c1) {
+    const c1 = f.soporte.c1, fases = c1.cookies.map((c) => c.primera_fase);
+    const fase = fases.every((x) => x === 'A') ? 'ya estaban a los 11 s sin mover el mouse' : fases.some((x) => x === 'variable') ? null : 'aparecen solo tras mover el mouse, sin clics';
+    const aviso = c1.aviso_en_dom.every((a) => !a.A && !a.B) ? `sin aviso de cookies detectado en ninguna de las ${n} corridas (capturas guardadas)` : 'CON aviso en alguna corrida: no usar sin revisar a mano';
+    return `${c1.cookies.length} cookies de rastreo (${[...new Set(c1.cookies.map((c) => c.proveedor))].join(', ')}) sin tocar nada ni aceptar nada${fase ? '; ' + fase : ''}; igual en las ${n} corridas. ${aviso}. ${c1.envio_en_ambas.length ? 'peticiones con datos a ' + c1.envio_en_ambas.join(', ') : 'los scripts cargan y dejan cookie, sin envio observado'}. ${fuente}`;
+  }
+  return `${h.afirmable} Capa ${h.capa || 2}, estado ${h.estado}. ${fuente}`;
+}
+
+const principal = [], detalle = [];
+for (const par of pares) {
+  const dir = par.split(':')[0];
+  for (const id of fs.readdirSync(dir).filter((x) => /^[A-Z]\d+$/.test(x)).sort()) {
+    const f = lee(dir, id); if (!f) continue;
+    const meta = indice.get(f.dominio) || { empresa: '', email: '' };
+    const lista = fs.existsSync(path.join(dir, 'lista.json')) ? JSON.parse(fs.readFileSync(path.join(dir, 'lista.json'), 'utf8')).leads.find((l) => l.id === id) : null;
+    const empresa = lista?.empresa || meta.empresa, email = lista?.correo || meta.email;
+    const r = f.resultado || '', h = f.hallazgo, p = h?.propuesta;
+    let medido, estado;
+    if (r.startsWith('descartado')) { medido = `Descartado por el motor: ${r.replace('descartado:', '')}${f.detalle?.status ? ' (HTTP ' + f.detalle.status + ')' : ''}`; estado = 'No enviar: ' + (f.detalle?.status ? `el sitio respondio HTTP ${f.detalle.status} (puede ser su firewall bloqueando la IP del motor, no un sitio caido)` : 'descartado antes de medir'); }
+    else if (r === 'fallo') { medido = 'El motor no termino con este sitio'; estado = 'No enviar: sin medicion (fallo del motor)'; }
+    else if (h) { medido = hallazgoMedido(f); estado = `medido por el motor, ${f.corridas_de_navegador || 2} corridas; oferta: ${h.linea}. Sin verificacion humana (la estrategia §3 pide abrir el sitio antes de enviar; Ramon aprueba cada envio)`; }
+    else if (r === 'sin-hallazgo') { medido = 'Sin complicaciones relevantes segun el motor'; estado = 'No enviar: no hay nada verdadero que decir'; }
+    else { medido = `Sin oferta estable. Solo sospechas: ${(f.ruta_interna || []).map((x) => x.id).join(', ') || 'ninguna'}`; estado = 'Sin gancho estable: no escribir hasta verificar a mano'; }
+    principal.push(fila([empresa, f.dominio, email, medido, estado]));
+    detalle.push(fila([id, f.dominio, r, h?.id || '', h ? (h.capa || 2) : '', h?.estado || '', p?.en_castellano || '', p?.frase_de_arreglo || '', p?.apertura_a_reunion || '',
+      p ? `${p.se_vende.producto} | ${p.se_vende.vehiculo_publicado}` : '', p?.se_vende.precio_en_el_correo || '', p?.estado_del_texto || '', h?.donde_mirar || '', h ? h.no_afirmable.join(' | ') : '',
+      (f.ofertas_adicionales || []).join('; '), (f.ruta_interna || []).map((x) => `${x.id} (${x.estado})`).join('; '), (f.capa1?.higiene || []).join('; '), `${path.relative(RAIZ, path.join(dir, id))}/ficha.md`]));
+  }
+}
+fs.mkdirSync(salida, { recursive: true });
+fs.writeFileSync(path.join(salida, 'para-emilia.csv'), ['empresa,dominio,email,hallazgo_medido,estado', ...principal].join('\n') + '\n');
+fs.writeFileSync(path.join(salida, 'para-emilia-detalle.csv'), ['id,dominio,resultado,oferta,capa,estado_evidencia,como_decirlo_en_castellano,frase_de_arreglo,puerta_a_la_reunion,servicio_y_desde_publicado,precio_en_el_correo,estado_del_texto,como_comprobarlo,que_no_afirmar,otras_ofertas_para_la_llamada,sospechas_no_van_en_el_correo,higiene,ficha', ...detalle].join('\n') + '\n');
+console.log(`${principal.length} filas -> ${salida}`);
