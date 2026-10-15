@@ -1,5 +1,11 @@
 # Lock de referencia — driftime.com, medido
 
+> **Reemplazado el 15-oct-2026.** Ramón cambió la referencia del sitio (E10): no le gustaron los colores
+> de campo ni que la línea se sintiera fría o genérica. Este lock queda como registro de lo que se
+> construyó; la referencia nueva sale de `../e10/referentes/` y de la compuerta 2 de E10. Ver la fila
+> del 15-oct en el §7 de `../spec-visual.md`.
+
+
 **5-oct-2026.** Ramón fijó driftime como la vara del sitio entero, no solo del hero:
 `driftime.com` · `2025.driftime.com` · `/work/global-center-for-health-diplomacy-and-inclusion`
 · `/work/the-finnish-institute-of-uk-and-ireland` · `/work/secure-energy-project`.

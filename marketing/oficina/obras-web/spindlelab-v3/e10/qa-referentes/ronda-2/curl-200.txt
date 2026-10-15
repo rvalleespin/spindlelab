@@ -1,0 +1,15 @@
+# curl -sL, 2026-10-15 18:33 UTC · n | http_code redirecciones url_final bytes | <title> | palabras clave anti-robots
+1 | 200 1 https://www.gehlpeople.com/ 187772 | Gehl - A leading global urban strategy and design consultancy. | 
+2 | 200 0 https://www.theready.com/ 480102 | The Ready | Organizations Built to Benefit from Change |       1 Captcha;      4 captcha;
+3 | 200 0 https://www.priyaparker.com/ 943460 | Priya Parker - Your Guide to the Art of Gathering |       1 Captcha;      4 captcha;
+4 | 200 0 https://nickparker.co.uk/ 12457 | Nick Parker: Writing and brand voice, mostly | 
+5 | 200 0 https://truth-and-beauty.net/ 54270 | Truth & Beauty / Moritz Stefaner — independent data visualization expert | 
+6 | 200 0 https://www.nickasbury.com/ 191316 | Nick Asbury |       1 Captcha;      4 captcha;
+7 | 200 0 https://jasonsantamaria.com/ 14977 | Jason Santa Maria | 
+8 | 200 0 https://www.inkandswitch.com/local-first/ 152 | (sin title) | 
+9 | 200 0 https://almanac.httparchive.org/es/2022/seo 234887 | SEO | 2022 | Web Almanac por HTTP Archive | 
+10 | 200 0 https://www.selendygay.com/ 21053 | Selendy Gay PLLC | 
+11 | 200 0 https://olsonkundig.com/ 653821 | Olson Kundig — A collaborative global design practice whose work expands the context of bu |       1 challenge-platform;
+12 | 200 0 https://www.hoaresbank.co.uk/ 98308 | C. Hoare & Co. | private bank | 
+8b | 200 0 https://www.inkandswitch.com/essay/local-first/ 111169 | Local-first software: You own your data, in spite of the cloud | (la URL del JSON, fila 8, da 200 con 152 bytes: noindex + meta refresh a /essay/local-first)
+# Coincidencias de palabras clave: falsas alarmas. 2, 3 y 6: captchaSettings/recaptchaEnterpriseContext de Squarespace (formularios de donación). 11: script pasivo /cdn-cgi/challenge-platform/scripts/jsd/main.js de Cloudflare; el HTML trae el contenido y su <title>. Ninguna respuesta es un desafío.

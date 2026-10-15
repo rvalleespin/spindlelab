@@ -1,0 +1,831 @@
+{
+ "fecha": "2026-10-15",
+ "medido_con": "Playwright + Chromium 1194, 1440x900 y 390x844",
+ "referentes": {
+  "a1-gehl": {
+   "n": "1",
+   "url": "https://gehlpeople.com",
+   "status1440": 200,
+   "status390": 200,
+   "urlFinal": "https://www.gehlpeople.com/",
+   "title": "Gehl - A leading global urban strategy and design consultancy.",
+   "fondoHtml": "rgba(0, 0, 0, 0)",
+   "fondoBody": "rgba(0, 0, 0, 0)",
+   "altoPagina": 6342,
+   "scrollWidth390": 390,
+   "clientWidth390": 390,
+   "fuentesCargadas": [
+    "TimesNow 400 normal",
+    "Studio6 400 normal",
+    "Studio6 600 normal"
+   ],
+   "textosMayoresPrimeraPantalla1440": [
+    {
+     "txt": "Making cities",
+     "size": "40px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Studio6, sans-serif",
+     "color": "rgb(252, 251, 250)",
+     "bg": "none"
+    },
+    {
+     "txt": "for people",
+     "size": "40px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Studio6, sans-serif",
+     "color": "rgb(252, 251, 250)",
+     "bg": "none"
+    },
+    {
+     "txt": "The softer edge",
+     "size": "40px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Studio6, sans-serif",
+     "color": "rgb(252, 251, 250)",
+     "bg": "none"
+    },
+    {
+     "txt": "is the cutting edge",
+     "size": "40px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Studio6, sans-serif",
+     "color": "rgb(252, 251, 250)",
+     "bg": "none"
+    },
+    {
+     "txt": "Ever-adaptive",
+     "size": "40px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Studio6, sans-serif",
+     "color": "rgb(252, 251, 250)",
+     "bg": "none"
+    }
+   ]
+  },
+  "a4-theready": {
+   "n": "2",
+   "url": "https://www.theready.com",
+   "status1440": 200,
+   "status390": 200,
+   "urlFinal": "https://www.theready.com/",
+   "title": "The Ready | Organizations Built to Benefit from Change",
+   "fondoHtml": "rgba(0, 0, 0, 0)",
+   "fondoBody": "rgb(244, 244, 128)",
+   "altoPagina": 6815,
+   "scrollWidth390": 390,
+   "clientWidth390": 390,
+   "fuentesCargadas": [
+    "saans-vlkrwp 500 normal",
+    "IBM Plex Mono 500 normal",
+    "IBM Plex Sans 400 normal",
+    "proxima-nova 400 normal",
+    "brandon-grotesque 500 normal",
+    "brandon-grotesque 700 normal"
+   ],
+   "textosMayoresPrimeraPantalla1440": [
+    {
+     "txt": "We are",
+     "size": "137.96px",
+     "w": "500",
+     "style": "normal",
+     "fam": "saans-vlkrwp",
+     "color": "rgb(27, 9, 37)",
+     "bg": "rgb(244, 244, 128)"
+    },
+    {
+     "txt": "The Ready.",
+     "size": "137.96px",
+     "w": "500",
+     "style": "normal",
+     "fam": "saans-vlkrwp",
+     "color": "rgb(27, 9, 37)",
+     "bg": "rgb(244, 244, 128)"
+    },
+    {
+     "txt": "A Work Design Company ✳︎",
+     "size": "51.56px",
+     "w": "500",
+     "style": "normal",
+     "fam": "saans-vlkrwp",
+     "color": "rgb(27, 9, 37)",
+     "bg": "rgb(244, 244, 128)"
+    },
+    {
+     "txt": "Let's get started",
+     "size": "12.68px",
+     "w": "500",
+     "style": "normal",
+     "fam": "\"IBM Plex Mono\"",
+     "color": "rgb(255, 254, 250)",
+     "bg": "rgb(27, 9, 37)"
+    },
+    {
+     "txt": "Skip to Content",
+     "size": "11.816px",
+     "w": "500",
+     "style": "normal",
+     "fam": "\"IBM Plex Mono\"",
+     "color": "rgb(255, 254, 250)",
+     "bg": "rgb(27, 9, 37)"
+    }
+   ]
+  },
+  "a5-priyaparker": {
+   "n": "3",
+   "url": "https://www.priyaparker.com",
+   "status1440": 200,
+   "status390": 200,
+   "urlFinal": "https://www.priyaparker.com/",
+   "title": "Priya Parker - Your Guide to the Art of Gathering",
+   "fondoHtml": "rgba(0, 0, 0, 0)",
+   "fondoBody": "rgb(250, 250, 250)",
+   "altoPagina": 6196,
+   "scrollWidth390": 390,
+   "clientWidth390": 390,
+   "fuentesCargadas": [
+    "Inter 700 italic",
+    "Inter 400 normal",
+    "Inter 200 normal",
+    "Inter 700 normal",
+    "Chivo Mono 400 normal",
+    "Inter 600 normal",
+    "RecklessTRIAL-Light normal normal",
+    "Inter-Regular normal normal"
+   ],
+   "textosMayoresPrimeraPantalla1440": [
+    {
+     "txt": "Helping people in modern life, one (or at a time.",
+     "size": "52.9792px",
+     "w": "100",
+     "style": "normal",
+     "fam": "RecklessTRIAL-Light",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgb(250, 250, 250)"
+    },
+    {
+     "txt": "build connection",
+     "size": "52.9792px",
+     "w": "100",
+     "style": "normal",
+     "fam": "RecklessTRIAL-Light",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgb(250, 250, 250)"
+    },
+    {
+     "txt": "gathering",
+     "size": "52.9792px",
+     "w": "100",
+     "style": "normal",
+     "fam": "RecklessTRIAL-Light",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgb(250, 250, 250)"
+    },
+    {
+     "txt": "fight!)",
+     "size": "52.9792px",
+     "w": "100",
+     "style": "normal",
+     "fam": "RecklessTRIAL-Light",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgb(250, 250, 250)"
+    },
+    {
+     "txt": "JOIN GROUP LIFE",
+     "size": "14px",
+     "w": "200",
+     "style": "normal",
+     "fam": "Inter",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgba(255, 255, 255, 0)"
+    }
+   ]
+  },
+  "b1-nickparker": {
+   "n": "4",
+   "url": "https://nickparker.co.uk/",
+   "status1440": 200,
+   "status390": 200,
+   "urlFinal": "https://nickparker.co.uk/",
+   "title": "Nick Parker: Writing and brand voice, mostly",
+   "fondoHtml": "rgba(0, 0, 0, 0)",
+   "fondoBody": "rgb(245, 241, 241)",
+   "altoPagina": 1739,
+   "scrollWidth390": 390,
+   "clientWidth390": 390,
+   "fuentesCargadas": [
+    "Lector 400 normal",
+    "Lector 400 italic",
+    "Lector 700 normal"
+   ],
+   "textosMayoresPrimeraPantalla1440": [
+    {
+     "txt": "Hello, I’m Nick Parker.",
+     "size": "66.88px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Lector, \"Times New Roman\", Times, Georgia, serif",
+     "color": "rgb(40, 38, 38)",
+     "bg": "rgb(245, 241, 241)"
+    },
+    {
+     "txt": "Mostly, I’m a writer.",
+     "size": "33.92px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Lector, \"Times New Roman\", Times, Georgia, serif",
+     "color": "rgb(40, 38, 38)",
+     "bg": "rgb(245, 241, 241)"
+    },
+    {
+     "txt": "I’m the founder of , a language strategy studio that helps b",
+     "size": "24.48px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Lector, \"Times New Roman\", Times, Georgia, serif",
+     "color": "rgb(40, 38, 38)",
+     "bg": "rgb(245, 241, 241)"
+    },
+    {
+     "txt": "That Explains Things",
+     "size": "24.48px",
+     "w": "700",
+     "style": "normal",
+     "fam": "Lector, \"Times New Roman\", Times, Georgia, serif",
+     "color": "rgb(40, 38, 38)",
+     "bg": "rgb(245, 241, 241)"
+    },
+    {
+     "txt": "find their voice, tell their stories, and explain their thin",
+     "size": "24.48px",
+     "w": "400",
+     "style": "italic",
+     "fam": "Lector, \"Times New Roman\", Times, Georgia, serif",
+     "color": "rgb(40, 38, 38)",
+     "bg": "rgb(245, 241, 241)"
+    }
+   ]
+  },
+  "b3-stefaner": {
+   "n": "5",
+   "url": "https://truth-and-beauty.net/",
+   "status1440": 200,
+   "status390": 200,
+   "urlFinal": "https://truth-and-beauty.net/",
+   "title": "Truth & Beauty / Moritz Stefaner — independent data visualization expert",
+   "fondoHtml": "rgba(0, 0, 0, 0)",
+   "fondoBody": "rgb(43, 43, 43)",
+   "altoPagina": 3258,
+   "scrollWidth390": 390,
+   "clientWidth390": 390,
+   "fuentesCargadas": [
+    "Atlas Grotesk Web 300 normal",
+    "Atlas Grotesk Web 500 normal",
+    "Atlas Typewriter Web 300 normal",
+    "Atlas Typewriter Web 300 italic",
+    "Atlas Typewriter Web 400 normal",
+    "IBM Plex Serif 300 italic"
+   ],
+   "textosMayoresPrimeraPantalla1440": [
+    {
+     "txt": "Truth & Beauty — Moritz Stefaner, independent data visualiza",
+     "size": "36px",
+     "w": "500",
+     "style": "normal",
+     "fam": "\"Atlas Grotesk Web\", \"Atlas Grotesk\", -apple-system, BlinkMa",
+     "color": "rgb(255, 255, 255)",
+     "bg": "rgb(43, 43, 43)"
+    },
+    {
+     "txt": "Let me know!",
+     "size": "25.2px",
+     "w": "300",
+     "style": "italic",
+     "fam": "\"IBM Plex Serif\", serif",
+     "color": "lch(78.539 42.4701 41.6198)",
+     "bg": "rgb(43, 43, 43)"
+    },
+    {
+     "txt": "What I do",
+     "size": "24px",
+     "w": "500",
+     "style": "normal",
+     "fam": "\"Atlas Grotesk Web\", \"Atlas Grotesk\", -apple-system, BlinkMa",
+     "color": "rgb(255, 255, 255)",
+     "bg": "rgb(43, 43, 43)"
+    },
+    {
+     "txt": "Hi. My name is Moritz Stefaner.",
+     "size": "24px",
+     "w": "300",
+     "style": "normal",
+     "fam": "\"Atlas Grotesk Web\", \"Atlas Grotesk\", -apple-system, BlinkMa",
+     "color": "rgb(238, 238, 238)",
+     "bg": "rgb(43, 43, 43)"
+    },
+    {
+     "txt": "I live and breathe data visualization — as an independent de",
+     "size": "24px",
+     "w": "300",
+     "style": "normal",
+     "fam": "\"Atlas Grotesk Web\", \"Atlas Grotesk\", -apple-system, BlinkMa",
+     "color": "rgb(238, 238, 238)",
+     "bg": "rgb(43, 43, 43)"
+    }
+   ]
+  },
+  "b4-asbury": {
+   "n": "6",
+   "url": "https://www.nickasbury.com/",
+   "status1440": 200,
+   "status390": 200,
+   "urlFinal": "https://www.nickasbury.com/",
+   "title": "Nick Asbury",
+   "fondoHtml": "rgba(0, 0, 0, 0)",
+   "fondoBody": "rgb(255, 255, 255)",
+   "altoPagina": 5764,
+   "scrollWidth390": 390,
+   "clientWidth390": 390,
+   "fuentesCargadas": [],
+   "textosMayoresPrimeraPantalla1440": [
+    {
+     "txt": "Creative writer for hire, writer about branding and design, ",
+     "size": "53.016px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Georgia, serif",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "txt": "Nick Asbury",
+     "size": "32.28px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Georgia, serif",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "txt": "Work",
+     "size": "18.456px",
+     "w": "400",
+     "style": "normal",
+     "fam": "\"Times New Roman\", Times, serif",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "txt": "About",
+     "size": "18.456px",
+     "w": "400",
+     "style": "normal",
+     "fam": "\"Times New Roman\", Times, serif",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "txt": "Next",
+     "size": "18.456px",
+     "w": "400",
+     "style": "normal",
+     "fam": "\"Times New Roman\", Times, serif",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgb(255, 255, 255)"
+    }
+   ]
+  },
+  "b2-santamaria": {
+   "n": "7",
+   "url": "https://jasonsantamaria.com/",
+   "status1440": 200,
+   "status390": 200,
+   "urlFinal": "https://jasonsantamaria.com/",
+   "title": "Jason Santa Maria",
+   "fondoHtml": "rgb(242, 242, 239)",
+   "fondoBody": "rgba(0, 0, 0, 0)",
+   "altoPagina": 4848,
+   "scrollWidth390": 390,
+   "clientWidth390": 390,
+   "fuentesCargadas": [
+    "Roslindale 100 1000 normal",
+    "HEX Franklin 400 800 normal"
+   ],
+   "textosMayoresPrimeraPantalla1440": [
+    {
+     "txt": "is a designer with over 25 years of experience leading multi",
+     "size": "50.3995px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Roslindale, Georgia, \"Times New Roman\", Times, serif",
+     "color": "rgb(51, 51, 51)",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "txt": "Jason Santa Maria",
+     "size": "50.3995px",
+     "w": "700",
+     "style": "normal",
+     "fam": "Roslindale, Georgia, \"Times New Roman\", Times, serif",
+     "color": "rgb(51, 51, 51)",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "txt": "I care about craft, collaboration, and lifelong learning. I ",
+     "size": "50.3995px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Roslindale, Georgia, \"Times New Roman\", Times, serif",
+     "color": "rgb(51, 51, 51)",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "txt": "Home",
+     "size": "24px",
+     "w": "400",
+     "style": "normal",
+     "fam": "\"HEX Franklin\", \"Helvetica Neue\", Helvetica, Arial, Verdana,",
+     "color": "rgb(51, 51, 51)",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "txt": "Blog",
+     "size": "24px",
+     "w": "400",
+     "style": "normal",
+     "fam": "\"HEX Franklin\", \"Helvetica Neue\", Helvetica, Arial, Verdana,",
+     "color": "rgb(51, 51, 51)",
+     "bg": "rgb(255, 255, 255)"
+    }
+   ]
+  },
+  "c4-inkandswitch": {
+   "n": "8",
+   "url": "https://www.inkandswitch.com/local-first/",
+   "status1440": 200,
+   "status390": 200,
+   "urlFinal": "https://www.inkandswitch.com/essay/local-first/",
+   "title": "Local-first software: You own your data, in spite of the cloud",
+   "fondoHtml": "rgba(0, 0, 0, 0)",
+   "fondoBody": "rgb(252, 252, 252)",
+   "altoPagina": 36979,
+   "scrollWidth390": 390,
+   "clientWidth390": 390,
+   "fuentesCargadas": [
+    "Merriweather 300 900 normal",
+    "Merriweather Sans 300 900 normal",
+    "Fira Mono normal normal",
+    "Geogrotesque 400 normal"
+   ],
+   "textosMayoresPrimeraPantalla1440": [
+    {
+     "txt": "Local-first software",
+     "size": "32px",
+     "w": "300",
+     "style": "normal",
+     "fam": "\"Merriweather Sans\", sans-serif",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgb(252, 252, 252)"
+    },
+    {
+     "txt": "You own your data, in spite of the cloud",
+     "size": "24px",
+     "w": "400",
+     "style": "normal",
+     "fam": "\"Merriweather Sans\", sans-serif",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgb(252, 252, 252)"
+    },
+    {
+     "txt": "Tenfold: Celebrating 10 Years of Ink & Switch",
+     "size": "16px",
+     "w": "600",
+     "style": "normal",
+     "fam": "Geogrotesque, \"Merriweather Sans\", sans-serif",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "txt": "Cloud apps like Google Docs and Trello are popular because t",
+     "size": "16px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Merriweather, serif",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgb(252, 252, 252)"
+    },
+    {
+     "txt": "In this article we propose “local-first software”: a set of ",
+     "size": "16px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Merriweather, serif",
+     "color": "rgb(0, 0, 0)",
+     "bg": "rgb(252, 252, 252)"
+    }
+   ]
+  },
+  "c6-webalmanac": {
+   "n": "9",
+   "url": "https://almanac.httparchive.org/es/2022/seo",
+   "status1440": 200,
+   "status390": 200,
+   "urlFinal": "https://almanac.httparchive.org/es/2022/seo",
+   "title": "SEO | 2022 | Web Almanac por HTTP Archive",
+   "fondoHtml": "rgba(0, 0, 0, 0)",
+   "fondoBody": "rgba(0, 0, 0, 0)",
+   "altoPagina": 35170,
+   "scrollWidth390": 390,
+   "clientWidth390": 390,
+   "fuentesCargadas": [
+    "Lato 400 italic",
+    "Lato 700 italic",
+    "Lato 400 normal",
+    "Lato 700 normal",
+    "Lato 900 normal",
+    "Poppins 700 normal"
+   ],
+   "textosMayoresPrimeraPantalla1440": [
+    {
+     "txt": "SEO",
+     "size": "48px",
+     "w": "700",
+     "style": "normal",
+     "fam": "Poppins, sans-serif",
+     "color": "rgb(26, 43, 73)",
+     "bg": "none"
+    },
+    {
+     "txt": "Parte II Capítulo 10",
+     "size": "28px",
+     "w": "700",
+     "style": "normal",
+     "fam": "Poppins, sans-serif",
+     "color": "rgb(26, 43, 73)",
+     "bg": "none"
+    },
+    {
+     "txt": "Índice",
+     "size": "25px",
+     "w": "700",
+     "style": "normal",
+     "fam": "Poppins, sans-serif",
+     "color": "rgb(26, 43, 73)",
+     "bg": "none"
+    },
+    {
+     "txt": "Web Almanac",
+     "size": "20.8px",
+     "w": "700",
+     "style": "normal",
+     "fam": "Poppins, sans-serif",
+     "color": "rgb(255, 255, 255)",
+     "bg": "rgb(92, 104, 125)"
+    },
+    {
+     "txt": "Saltar navegación",
+     "size": "17px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Lato, sans-serif",
+     "color": "rgb(51, 51, 51)",
+     "bg": "rgb(247, 247, 121)"
+    }
+   ]
+  },
+  "c1-trailofbits": {
+   "n": "10",
+   "url": "https://www.trailofbits.com/",
+   "status1440": 200,
+   "status390": 200,
+   "urlFinal": "https://trailofbits.com/",
+   "title": "Trail of Bits: Security Research, Audits, and Tools",
+   "fondoHtml": "rgb(19, 19, 19)",
+   "fondoBody": "rgb(250, 250, 250)",
+   "altoPagina": 2283,
+   "scrollWidth390": 390,
+   "clientWidth390": 390,
+   "fuentesCargadas": [
+    "FH Lecturis 400 normal",
+    "Geist 100 900 normal",
+    "Geist Mono 100 900 normal",
+    "Geist 400 normal"
+   ],
+   "textosMayoresPrimeraPantalla1440": [
+    {
+     "txt": "Solving Difficult Security Problems",
+     "size": "80px",
+     "w": "400",
+     "style": "normal",
+     "fam": "\"FH Lecturis\", Geist, ui-sans-serif, system-ui, sans-serif",
+     "color": "rgb(24, 23, 23)",
+     "bg": "rgb(250, 250, 250)"
+    },
+    {
+     "txt": "How we made Trail of Bits AI-Native (so far)",
+     "size": "22px",
+     "w": "300",
+     "style": "normal",
+     "fam": "Geist, ui-sans-serif, system-ui, sans-serif",
+     "color": "rgb(24, 23, 23)",
+     "bg": "rgb(255, 255, 255)"
+    },
+    {
+     "txt": "Skip to main content",
+     "size": "16px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Geist, ui-sans-serif, system-ui, sans-serif",
+     "color": "rgb(24, 23, 23)",
+     "bg": "rgb(250, 250, 250)"
+    },
+    {
+     "txt": "(New)",
+     "size": "16px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Geist, ui-sans-serif, system-ui, sans-serif",
+     "color": "rgb(255, 255, 255)",
+     "bg": "rgb(19, 19, 19)"
+    },
+    {
+     "txt": "(opens in a new tab)",
+     "size": "16px",
+     "w": "400",
+     "style": "normal",
+     "fam": "Geist, ui-sans-serif, system-ui, sans-serif",
+     "color": "rgb(255, 255, 255)",
+     "bg": "rgb(19, 19, 19)"
+    }
+   ]
+  },
+  "d3-selendygay": {
+   "n": "11",
+   "url": "https://www.selendygay.com",
+   "status1440": 200,
+   "status390": 200,
+   "urlFinal": "https://www.selendygay.com/",
+   "title": "Selendy Gay PLLC",
+   "fondoHtml": "rgba(0, 0, 0, 0)",
+   "fondoBody": "rgb(247, 247, 237)",
+   "altoPagina": 4761,
+   "scrollWidth390": 390,
+   "clientWidth390": 390,
+   "fuentesCargadas": [
+    "freight-display-pro 400 normal",
+    "mr-eaves-xl-sans 400 normal",
+    "mr-eaves-xl-sans 700 normal",
+    "mr-eaves-xl-sans 700 italic",
+    "mr-eaves-xl-sans 400 italic",
+    "icomoon normal normal"
+   ],
+   "textosMayoresPrimeraPantalla1440": [
+    {
+     "txt": "The premier law firm for complex and high-stakes commercial ",
+     "size": "52px",
+     "w": "400",
+     "style": "normal",
+     "fam": "freight-display-pro, serif",
+     "color": "rgb(247, 247, 237)",
+     "bg": "rgb(32, 38, 37)"
+    },
+    {
+     "txt": "Selendy Gay Earns Back-to-Back Litigation Honors for High-Pr",
+     "size": "42px",
+     "w": "400",
+     "style": "normal",
+     "fam": "freight-display-pro, serif",
+     "color": "rgb(247, 247, 237)",
+     "bg": "rgb(32, 38, 37)"
+    },
+    {
+     "txt": "Law360 named Selendy Gay a Legal Lion for the second time in",
+     "size": "24px",
+     "w": "400",
+     "style": "normal",
+     "fam": "mr-eaves-xl-sans, \"Helvetica Neue\", Helvetica, Arial, sans-s",
+     "color": "rgb(247, 247, 237)",
+     "bg": "rgb(32, 38, 37)"
+    },
+    {
+     "txt": "Keep reading",
+     "size": "24px",
+     "w": "400",
+     "style": "normal",
+     "fam": "mr-eaves-xl-sans, \"Helvetica Neue\", Helvetica, Arial, sans-s",
+     "color": "rgb(239, 72, 82)",
+     "bg": "rgb(32, 38, 37)"
+    },
+    {
+     "txt": "Firm",
+     "size": "18px",
+     "w": "400",
+     "style": "normal",
+     "fam": "mr-eaves-xl-sans, \"Helvetica Neue\", Helvetica, Arial, sans-s",
+     "color": "rgb(247, 247, 237)",
+     "bg": "rgba(32, 38, 37, 0)"
+    }
+   ],
+   "bordeIzquierdoMin390px": 0
+  },
+  "d1-olsonkundig": {
+   "n": "12",
+   "url": "https://olsonkundig.com",
+   "status1440": 200,
+   "status390": 200,
+   "urlFinal": "https://olsonkundig.com/",
+   "title": "Olson Kundig — A collaborative global design practice whose work expands the context of built and natural landscapes.",
+   "fondoHtml": "rgb(24, 18, 19)",
+   "fondoBody": "rgb(24, 18, 19)",
+   "altoPagina": 6491,
+   "scrollWidth390": 390,
+   "clientWidth390": 390,
+   "fuentesCargadas": [
+    "InterVariable 200 700 normal"
+   ],
+   "textosMayoresPrimeraPantalla1440": [
+    {
+     "txt": "Olson Kundig is a collaborative global design practice whose",
+     "size": "48px",
+     "w": "500",
+     "style": "normal",
+     "fam": "InterVariable, sans-serif",
+     "color": "rgb(255, 255, 255)",
+     "bg": "rgb(24, 18, 19)"
+    },
+    {
+     "txt": "Skip to Content",
+     "size": "17px",
+     "w": "600",
+     "style": "normal",
+     "fam": "InterVariable, sans-serif",
+     "color": "rgb(255, 255, 255)",
+     "bg": "rgb(204, 149, 61)"
+    },
+    {
+     "txt": "For an optimal site experience, we invite you to enable moti",
+     "size": "15px",
+     "w": "300",
+     "style": "normal",
+     "fam": "InterVariable, sans-serif",
+     "color": "rgb(255, 255, 255)",
+     "bg": "rgb(24, 18, 19)"
+    }
+   ]
+  },
+  "d6-hoare": {
+   "n": "13",
+   "url": "https://www.hoaresbank.co.uk",
+   "status1440": 200,
+   "status390": 200,
+   "urlFinal": "https://www.hoaresbank.co.uk/",
+   "title": "C. Hoare & Co. | private bank",
+   "fondoHtml": "rgb(255, 255, 255)",
+   "fondoBody": "rgb(255, 255, 255)",
+   "altoPagina": 4619,
+   "scrollWidth390": 390,
+   "clientWidth390": 390,
+   "fuentesCargadas": [
+    "svgicons normal normal",
+    "Trirong 300 normal",
+    "Trirong 400 normal",
+    "Lato bold normal",
+    "Lato normal normal",
+    "swiper-icons 400 normal"
+   ],
+   "textosMayoresPrimeraPantalla1440": [
+    {
+     "txt": "Expertise, empathy and exceptional flexibility",
+     "size": "51.84px",
+     "w": "300",
+     "style": "normal",
+     "fam": "Trirong, Arial, sans-serif",
+     "color": "rgb(247, 248, 224)",
+     "bg": "rgb(0, 51, 46)"
+    },
+    {
+     "txt": "LOGIN",
+     "size": "13px",
+     "w": "700",
+     "style": "normal",
+     "fam": "Lato, Arial, sans-serif",
+     "color": "rgb(232, 236, 236)",
+     "bg": "rgba(255, 255, 255, 0.1)"
+    },
+    {
+     "txt": "Private Banking",
+     "size": "13px",
+     "w": "700",
+     "style": "normal",
+     "fam": "Lato, Arial, sans-serif",
+     "color": "rgb(163, 135, 71)",
+     "bg": "rgb(0, 51, 46)"
+    }
+   ]
+  }
+ }
+}

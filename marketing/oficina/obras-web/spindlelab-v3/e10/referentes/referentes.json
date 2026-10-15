@@ -1,0 +1,191 @@
+{
+  "fecha": "2026-10-15",
+  "lineas": [
+    {
+      "k": "a",
+      "nombre": "Editorial cálida",
+      "tesis": "Una consultora que se presenta como una publicación seria: lienzo claro y cálido, letra de lectura y fotografía de personas reales en su oficio, con el ritmo de una revista de negocios y no el grito de un estudio.",
+      "referentes": [
+        {
+          "n": 1,
+          "id": "a1-gehl",
+          "nombre": "Gehl",
+          "url": "https://gehlpeople.com",
+          "tipo": "servicios-b2b",
+          "que_se_toma": "Fotografía de personas usando lo que la firma hizo, a sangre en la primera pantalla, y el título de cada caso en una Times de lectura (TimesNow, 28 px) bajo su foto: cada proyecto se cuenta por lo que le pasa a la gente, no por el entregable.",
+          "por_que_calido": "Cada imagen tiene gente real en el lugar, y la serif de lectura en el texto baja el tono técnico hasta sonar a conversación.",
+          "riesgo": "Es una consultora de urbanismo y se puede leer como estudio de diseño. El hero es un carrusel (las tres capturas muestran fotos distintas) y los titulares van en sans. Más abajo hay una banda celeste con un globo, una fila de cifras y un muro de logos, que no se toman. SpindleLab no tiene hoy fotos de gente usando lo hecho: habría que producirlas con clientes reales y su permiso.",
+          "img1440": "a/a1-gehl-1440.jpg",
+          "img390": "a/a1-gehl-390.jpg",
+          "imgCompleta": "a/a1-gehl-completa.jpg"
+        },
+        {
+          "n": 2,
+          "id": "a4-theready",
+          "nombre": "The Ready",
+          "url": "https://www.theready.com",
+          "tipo": "servicios-b2b",
+          "que_se_toma": "La foto de taller sin pose (gente de pie ante una mesa llena de post-its, con grano) a sangre en la columna derecha, junto a un titular directo y grande sobre blanco roto rgb(255,254,250).",
+          "por_que_calido": "La foto es trabajo de verdad, desordenado y en curso, y el texto directo sobre blanco roto suena a alguien que se arremanga contigo, no a un proveedor.",
+          "riesgo": "No tiene serif (Saans con IBM Plex Mono). La cinta en movimiento «A Work Design Company», el botón óvalo y el subrayado amarillo sobre palabras (tell #4) son tics de agencia y no se toman. Más abajo tiene una banda amarilla, un muro de logos y una banda final berenjena. Se toma solo el primer pantallazo. La partición titular a la izquierda y foto a la derecha es un recurso muy visto: no es lo que se toma.",
+          "img1440": "a/a4-theready-1440.jpg",
+          "img390": "a/a4-theready-390.jpg",
+          "imgCompleta": "a/a4-theready-completa.jpg"
+        },
+        {
+          "n": 3,
+          "id": "a5-priyaparker",
+          "nombre": "Priya Parker",
+          "url": "https://www.priyaparker.com",
+          "tipo": "independiente",
+          "que_se_toma": "El retrato editorial a media pantalla, con luz natural y un sillón como único color, junto al titular en serif ligera (Reckless Light, 53 px); y debajo, una entradilla en la misma serif (unos 36 px) sobre fondo arena, como abre una revista, antes de cualquier oferta.",
+          "por_que_calido": "La primera pantalla es una persona mirándote y hablándote en letra de lectura, y más abajo aparece trabajando de verdad con grupos (asesoría, facilitación, charlas).",
+          "riesgo": "El trazo amarillo a mano alrededor de «fight!» y los subrayados del titular son el tell #4 (palabra decorada): no se toman. Bajo el primer pantallazo hay bloques de color plano (negro, lila), una ilustración saturada, y arriba una barra naranja que anuncia su libro: se toman solo el retrato y la entradilla. La entradilla va centrada. A 390 el titular queda encima de la foto y se lee mal. La fuente cargada es una licencia de prueba (RecklessTRIAL). La partición titular a la izquierda y foto a la derecha es un recurso muy visto: no es lo que se toma.",
+          "img1440": "a/a5-priyaparker-1440.jpg",
+          "img390": "a/a5-priyaparker-390.jpg",
+          "imgCompleta": "a/a5-priyaparker-completa.jpg"
+        }
+      ]
+    },
+    {
+      "k": "b",
+      "nombre": "De autor",
+      "tesis": "La confianza viene de ver quién responde: una persona con nombre, cara y voz en primera persona, y su obra real cargando la página en vez de bandas de color o efectos de agencia. Los cuatro son de oficios creativos (escritura, datos, diseño): mira el rasgo, no el rubro.",
+      "referentes": [
+        {
+          "n": 4,
+          "id": "b1-nickparker",
+          "nombre": "Nick Parker",
+          "url": "https://nickparker.co.uk/",
+          "tipo": "servicios-b2b",
+          "que_se_toma": "La letra Lector sobre un papel rosado muy claro (#F5F1F1) con texto casi negro, un retrato chico y un grabado antiguo en lugar de una foto de banco, y los enlaces destacados en versalitas negritas.",
+          "por_que_calido": "Abre con «Hello, I'm Nick Parker. Mostly, I'm a writer.», un retrato chico y un grabado antiguo de un pez en vez de una foto de stock: es una persona hablando, no una agencia.",
+          "riesgo": "Roza el cliché de papel claro con serif; lo salvan Lector (no una serif genérica) y que no hay terracota ni palabra en cursiva de adorno. La home es corta y sin casos: es un rasgo puntual, no un sistema completo. Los mini-logos de color delante de cada enlace, copiados, rozan el tic del emoji como ícono. Su párrafo de presentación que hace de menú es una forma de escribir la home: eso no se toma. Lo que este sitio hace con la escritura no entra: el texto de tu sitio se queda como está.",
+          "img1440": "b/b1-nickparker-1440.jpg",
+          "img390": "b/b1-nickparker-390.jpg",
+          "imgCompleta": "b/b1-nickparker-completa.jpg"
+        },
+        {
+          "n": 5,
+          "id": "b3-stefaner",
+          "nombre": "Moritz Stefaner · Truth & Beauty",
+          "url": "https://truth-and-beauty.net/",
+          "tipo": "independiente",
+          "que_se_toma": "El oscuro carbón #2B2B2B (no negro) con una grotesca en peso ligero (Atlas Grotesk 300, 24 px), un único llamado en serif cursiva y, debajo, los proyectos reales en una grilla de dos.",
+          "por_que_calido": "Es oscuro y no se siente frío: carbón #2B2B2B y no negro, texto en peso light, cero gritos tipográficos y un llamado que pregunta en vez de vender.",
+          "riesgo": "Fondo oscuro con un solo acento cálido, pegado al cliché «oscuro más un acento» (aunque el acento no es ácido). Si se toma, es el tono del primer pantallazo, no el modo de todo el sitio. Las miniaturas de proyectos traen sus propios colores saturados. No se parece a driftime: no hay display gigante ni campos de color. La apertura «Hi. My name is…» es escritura y no se toma. Lo que este sitio hace con la escritura no entra: el texto de tu sitio se queda como está.",
+          "img1440": "b/b3-stefaner-1440.jpg",
+          "img390": "b/b3-stefaner-390.jpg",
+          "imgCompleta": "b/b3-stefaner-completa.jpg"
+        },
+        {
+          "n": 6,
+          "id": "b4-asbury",
+          "nombre": "Nick Asbury",
+          "url": "https://www.nickasbury.com/",
+          "tipo": "independiente",
+          "que_se_toma": "El muro de piezas reales fotografiadas (libros, impresos, notas de prensa) en lugar de logos de clientes; en SpindleLab serían capturas y documentos reales, como robots.txt, JSON-LD y los puntajes, con un tratamiento parejo.",
+          "por_que_calido": "No hay promesa: es alguien diciendo quién es, con humor, y mostrando lo que hizo con sus manos. La prueba física reemplaza al «confían en nosotros».",
+          "riesgo": "Usa Georgia y Times del sistema, sin letra propia: vale la composición, no la tipografía. El muro mezcla piezas muy saturadas (azul eléctrico, rojo, morado) y en la página completa se ve ruidoso; para SpindleLab el muro serían capturas y documentos reales (robots.txt, JSON-LD, los puntajes) con un tratamiento parejo. Al pie quedan dos marcos vacíos que parecen embebidos sin cargar. Su hero de una sola frase y nada más no se toma: tu hero lleva el chequeo. Lo que este sitio hace con la escritura no entra: el texto de tu sitio se queda como está. Ojo: en las capturas la serif que se ve no es Georgia, porque el equipo de captura no la tiene instalada.",
+          "img1440": "b/b4-asbury-1440.jpg",
+          "img390": "b/b4-asbury-390.jpg",
+          "imgCompleta": "b/b4-asbury-completa.jpg"
+        },
+        {
+          "n": 7,
+          "id": "b2-santamaria",
+          "nombre": "Jason Santa Maria",
+          "url": "https://jasonsantamaria.com/",
+          "tipo": "independiente",
+          "que_se_toma": "La estructura de dossier: rótulos en mayúsculas condensadas a la izquierda (HEX Franklin 700: «About me», «My book», «Select words») y prosa a la derecha, abierta por una presentación en Roslindale de 50 px junto a un retrato circular, todo sobre una hoja enmarcada en #F2F2EF.",
+          "por_que_calido": "Se lee como el currículum de alguien que firma su trabajo: retrato sonriente, su firma manuscrita «jsm» en la esquina y frases como «vivo y trabajo en Filadelfia bajo una pila de libros».",
+          "riesgo": "Serif grande sobre fondo claro: es Roslindale, con carácter y sin acento de color, pero cambiada por una serif genérica cae en el look de IA. Es el sitio de un diseñador que no vende consultoría como oferta principal, y comparte registro con Nick Parker (4): si marcas los dos, lo que se repite es la presentación en serif con retrato chico.",
+          "img1440": "b/b2-santamaria-1440.jpg",
+          "img390": "b/b2-santamaria-390.jpg",
+          "imgCompleta": "b/b2-santamaria-completa.jpg"
+        }
+      ]
+    },
+    {
+      "k": "c",
+      "nombre": "Documento técnico claro",
+      "tesis": "El sitio se lee como un informe firmado: lo cargan las pruebas (cifras con su fuente, figuras numeradas, fechas y autores) sobre fondo claro, y la calidez la ponen las personas con nombre y una letra hecha para leer, no el color.",
+      "nota": "En esta línea no hay una home de firma de modelo. Se buscó la home de una firma de servicios cálida armada en torno a su archivo o su evidencia, y las que aparecieron eran frías, de plantilla o estaban tapadas por un desafío anti-robots. Las dos referencias son documentos, un ensayo y un informe: de ellas se toma la estructura de prueba (autores, fechas, notas al margen, figuras con su fuente), y la home de SpindleLab se compondría desde ahí.",
+      "referentes": [
+        {
+          "n": 8,
+          "id": "c4-inkandswitch",
+          "nombre": "Ink & Switch · «Local-first software»",
+          "url": "https://www.inkandswitch.com/essay/local-first/",
+          "tipo": "estudio",
+          "que_se_toma": "La columna de autoría al margen del título (cuatro nombres subrayados y el mes y el año) y las notas al margen a lo largo del texto, como en un paper: Merriweather para leer y Merriweather Sans para titular, sobre blanco #FCFCFC.",
+          "por_que_calido": "Lo firman cuatro personas con nombre, está escrito en primera persona plural y en una serif de lectura: se lee como una conversación entre colegas, no como un folleto.",
+          "riesgo": "Es un ensayo de un laboratorio de investigación, no la home de una firma de servicios, y a 1440 el bloque de texto es denso. Mezcla serif y sans sobre claro: hay que cuidar que no derive al cliché crema con serif (aquí no cae porque el fondo es blanco y no hay acento terracota). La franja negra de arriba es un aviso del propio sitio.",
+          "img1440": "c/c4-inkandswitch-1440.jpg",
+          "img390": "c/c4-inkandswitch-390.jpg",
+          "imgCompleta": "c/c4-inkandswitch-completa.jpg"
+        },
+        {
+          "n": 9,
+          "id": "c6-webalmanac",
+          "nombre": "Web Almanac de HTTP Archive · capítulo SEO 2022, en castellano",
+          "url": "https://almanac.httparchive.org/es/2022/seo",
+          "tipo": "otro",
+          "que_se_toma": "La ficha de autoría y vigencia bajo el título («Escrito por», «Revisado por», «Análisis por», con fecha de publicación y fecha de actualización) y las figuras numeradas con su pie y su fuente.",
+          "por_que_calido": "Cada capítulo nombra a quienes lo escribieron, lo revisaron y lo analizaron, lleva dos fechas, y las ilustraciones a mano le quitan frialdad al dato. Está en castellano y trata robots.txt, el mismo terreno de SpindleLab.",
+          "riesgo": "Cabecera gris pizarra a todo el ancho, Poppins con Lato (una geométrica muy vista) y una tarjeta de índice redondeada: el envoltorio es de plantilla y no se toma. Es un informe comunitario, no una firma. La edición en castellano es la de 2022 y arriba muestra una franja amarilla de «edición anterior»; la de 2025 existe solo en inglés.",
+          "img1440": "c/c6-webalmanac-1440.jpg",
+          "img390": "c/c6-webalmanac-390.jpg",
+          "imgCompleta": "c/c6-webalmanac-completa.jpg"
+        }
+      ]
+    },
+    {
+      "k": "d",
+      "nombre": "Oscura y cálida",
+      "tesis": "Lo oscuro como penumbra y no como pantalla: casi negro con algo de temperatura, texto a peso normal o ligero y una idea a la vez. Lectura honesta: en estas capturas el oscuro se ve más tibio que cálido. El pardo de Olson (11) apenas asoma, el carbón de Selendy (10) tira a frío y el verde de Hoare (12) está cerca del petróleo que marcaste. Si esta línea te gusta, el tablero de la compuerta tiene que probar un oscuro cálido de verdad antes de construir.",
+      "nota": "Si marcas 1 (Gehl) y 11 (Olson Kundig), no es lo mismo: un sí a 1 es la foto de gente usando lo hecho como carga de la página, sobre claro; un sí a 11 es la home contada frase a frase sobre oscuro, y la foto que va debajo no entra.",
+      "referentes": [
+        {
+          "n": 10,
+          "id": "d3-selendygay",
+          "nombre": "Selendy Gay",
+          "url": "https://www.selendygay.com",
+          "tipo": "servicios-b2b",
+          "que_se_toma": "Secciones que alternan carbón #202625 y marfil #F7F7ED, con una serif Freight Display de 52 px a peso normal y un solo dato grande con su sujeto («$40+ Billion recovered by our partners»). La imaginería principal son fotos en blanco y negro de las obras de arte de su propia oficina, con la ficha del autor en la esquina.",
+          "por_que_calido": "La calidez no la pone el oscuro, que es neutro: la ponen la serif a peso normal, el marfil de las secciones claras y que las fotos son de obras de su propia oficina, firmadas.",
+          "riesgo": "Temperatura neutra tirando a fría: el carbón tiene un dejo verde y las fotos son grises, así que la calidez la ponen solo la serif y el marfil, que juntos rozan el cliché crema con serif. A 390 el texto va pegado al borde, sin margen lateral (defecto real del sitio). Es un estudio de litigios (YMYL). Además de las fotos en blanco y negro, la sección People lleva un retrato a color de un socio, y el sitio usa un acento coral rgb(239,72,82) en botones y enlaces: el coral no se toma.",
+          "img1440": "d/d3-selendygay-1440.jpg",
+          "img390": "d/d3-selendygay-390.jpg",
+          "imgCompleta": "d/d3-selendygay-completa.jpg"
+        },
+        {
+          "n": 11,
+          "id": "d1-olsonkundig",
+          "nombre": "Olson Kundig",
+          "url": "https://olsonkundig.com",
+          "tipo": "estudio",
+          "que_se_toma": "Una frase grande por pantalla, abajo a la izquierda (Inter 500, 48 px), con mucho aire y sobre el pardo #181213, que tira a madera quemada. La forma de contar la home frase a frase es escritura y no se toma: en tu sitio irían frases que ya existen.",
+          "por_que_calido": "Habla en plural de cómo trabajan («We embrace the tension…», «We believe…»), a una idea por vez y sin cifras ni promesas, y el negro del sitio es un pardo #181213 que tira a madera quemada y no a pantalla (se ve en el pie y mientras cargan los videos).",
+          "riesgo": "Es un estudio de arquitectura y en el sitio real cada frase va sobre un video a sangre, así que su primera pantalla se parece a la de 1 · Gehl: lo que se toma es el relato, no la imagen. En SpindleLab las frases irían sobre el pardo liso o sobre las piezas reales de E9, y hay que comprobar en el tablero que siete frases sin foto no se lean vacías. Comparte con 4 · Nick Parker la prosa que hace de menú; lo propio de 11 es el ritmo, una frase grande por pantalla y en plural, frente al párrafo único en primera persona de Nick Parker. Se capturó en el modo sin movimiento, en el que el propio sitio muestra fotos fijas y el encabezado pasa a blanco. Lo que este sitio hace con la escritura no entra: el texto de tu sitio se queda como está.",
+          "img1440": "d/d1-olsonkundig-1440.jpg",
+          "img390": "d/d1-olsonkundig-390.jpg",
+          "imgCompleta": "d/d1-olsonkundig-completa.jpg"
+        },
+        {
+          "n": 12,
+          "id": "d6-hoare",
+          "nombre": "C. Hoare & Co.",
+          "url": "https://www.hoaresbank.co.uk",
+          "tipo": "otro",
+          "que_se_toma": "El primer pantallazo partido: mitad verde casi negro rgb(0,51,46) con el titular en serif Trirong de 51,8 px a peso 300, en mayúsculas, y mitad foto de un salón con luz de lámpara y de ventana.",
+          "por_que_calido": "El verde casi negro tira a bosque y no a pantalla, el titular va en una serif ligera y no en una grotesca gruesa, y la foto de al lado es luz de lámpara sobre madera y tela. Más abajo muestra a la familia socia en su oficina: no promete, muestra a quién responde.",
+          "riesgo": "El dorado no se toma. Hoare lo usa como acento de rótulos: el antetítulo «Private Banking» es texto dorado rgb(163,135,71), la flecha ↘ también, y más abajo los rótulos «Who we are» y «Services» van en dorado rgb(137,111,17), con más flechas. Ya en la primera pantalla hay dos oros. Esa no es la regla de SpindleLab, que usa un solo oro por vista, en el punto del wordmark, y nunca en texto. Verde profundo con dorado y serif en mayúsculas es el cliché de la banca privada; mal llevado suena a lujo antiguo para una consultora de una persona. Ese verde está cerca del petróleo de driftime que marcaste: aquí es un solo color de marca, no un sistema de campos. Bajo el primer pantallazo el sitio es blanco y crema con bloques verdes. Es banca privada (YMYL), no servicios B2B. Se toma solo el primer pantallazo, aunque debajo el sitio sea claro: es la excepción a la regla que dejó fuera a otros sitios con solo el hero oscuro, porque es el único ejemplo vivo de un verde casi negro con luz de lámpara. La partición titular a la izquierda y foto a la derecha es un recurso muy visto: no es lo que se toma.",
+          "img1440": "d/d6-hoare-1440.jpg",
+          "img390": "d/d6-hoare-390.jpg",
+          "imgCompleta": "d/d6-hoare-completa.jpg"
+        }
+      ]
+    }
+  ]
+}

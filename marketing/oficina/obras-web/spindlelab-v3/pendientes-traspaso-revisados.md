@@ -178,6 +178,12 @@ quedó fuera el 5-oct.
 > hecho el 14-oct, aprobado por Javiera en la ronda 2 (detalle abajo, en E8). Los ocho frentes
 > del estudio están cerrados. Lo que sigue espera respuestas de Ramón, salvo una propuesta de
 > Clara (la frase de la prueba de Trabajo) antes de su lectura de aprobación.
+>
+> **Estado al 15-oct:** E9 (interiores, imágenes y prueba visible) llegó a su tablero, y Ramón no
+> eligió ninguna dirección: quiere cambiar la referencia del sitio (fila del 15-oct en el §7 de
+> `spec-visual.md`). E9 queda descartado y su Tanda B no se construye; sus piezas reales se conservan.
+> Empezó **E10, referencia nueva**: 12 referentes en `e10/referentes/` para que Ramón marque. Las
+> decisiones R1 a R9 y las confirmaciones de E8 siguen abiertas y no dependen del aspecto.
 
 No necesita decisión. Se hace en esta rama, se mide y queda anotado en el §7 de la spec.
 
