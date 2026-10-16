@@ -11,7 +11,7 @@ Origen: `corridas/2026-10-15-lote-contactos-existentes/` (3 corridas de navegado
 | `para-emilia-detalle.csv` | Lo que se usa para redactar: `como_decirlo_en_castellano`, `frase_de_arreglo`, `puerta_a_la_reunion`, `linea_de_precio_de_referencia`, `que_no_afirmar` y, **nuevo**, `hechos_verificados` y `advertencias_de_la_verificacion` (lo que dos revisores independientes midieron por su cuenta). |
 
 ## Quién es quién (94 filas)
-- **24 `VERIFICADO por revisión independiente`**: 11 de cookies sin aviso, 3 de cookies **con aviso** (ver abajo), 8 de formulario sin política de privacidad, 2 de sin acción de contacto en la primera pantalla. **1 de ellos no tiene correo** (hay que buscarlo), así que hay **23 con adónde enviar**.
+- **18 `VERIFICADO por revisión independiente`** (tras cortar a 6 estudios que venden protección de datos, estrategia §9 y §11). **11 tienen borrador escrito** en `borradores/`; los otros 7 se dejaron fuera a propósito (hallazgo delicado, formulario de comentarios, plantilla sin terminar, sin correo, o descartados por ti antes).
 - **4 `No enviar: ya contactado`**: la verificación los sostuvo, pero un cruce más fino con Gmail (por el correo exacto, no por el dominio del sitio) mostró que ya recibieron un correo. Están en `corridas/.../ya-contactados-gmail.csv`.
 - **1 `retener`** (identidad del sitio dudosa), **1 `no concluyente`** (el dominio solo redirige a otro sitio), **3 `NO ENVIAR: la verificación no lo sostuvo`** (el sitio sí tenía contacto): no escribir.
 - **32 `NO ENVIAR: falta verificación`**: ofertas débiles o medias que nadie verificó. No escribir hasta decidir qué hacer con ellas.
