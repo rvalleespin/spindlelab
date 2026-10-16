@@ -9,7 +9,11 @@ import { fileURLToPath } from 'node:url';
 import { leerCsv } from './lib/csv.mjs';
 
 const RAIZ = path.resolve(fileURLToPath(new URL('../../../', import.meta.url)));   // fileURLToPath: .pathname deja %20 y %7E en rutas con espacios o ~ (iCloud)
-const [salida, ...pares] = process.argv.slice(2);
+const argv = process.argv.slice(2);
+const vi = argv.indexOf('--verificados');   // CSV que baja verificar.mjs (id,dominio,veredicto,nota): solo lo que Ramon marco "coincide" queda como verificado
+const verificados = new Map(vi >= 0 ? leerCsv(path.resolve(argv[vi + 1])).map((r) => [r.dominio, r]) : []);
+if (vi >= 0) argv.splice(vi, 2);
+const [salida, ...pares] = argv;
 const FUENTES = fs.readdirSync(path.join(RAIZ, 'ventas')).filter((f) => /^(contactos|clinicas|abogados|nuevos|lote).*\.csv$/.test(f)).map((f) => 'ventas/' + f);
 const indice = new Map();   // dominio -> { empresa, email }
 for (const f of FUENTES) { try { for (const r of leerCsv(path.join(RAIZ, f))) {
@@ -48,6 +52,13 @@ for (const par of pares) {
     else if (h) { medido = hallazgoMedido(f); estado = `medido por el motor, ${f.corridas_de_navegador || 2} corridas; oferta: ${h.linea}. Sin verificacion humana (la estrategia §3 pide abrir el sitio antes de enviar; Ramon aprueba cada envio)`; }
     else if (r === 'sin-hallazgo') { medido = 'Sin complicaciones relevantes segun el motor'; estado = 'No enviar: no hay nada verdadero que decir'; }
     else { medido = `Sin oferta estable. Solo sospechas: ${(f.ruta_interna || []).map((x) => x.id).join(', ') || 'ninguna'}`; estado = 'Sin gancho estable: no escribir hasta verificar a mano'; }
+    if (vi >= 0 && h && !r.startsWith('descartado')) {
+      const v = verificados.get(f.dominio)?.veredicto, nota = verificados.get(f.dominio)?.nota;
+      if (v === 'coincide') estado = 'VERIFICADO A MANO por Ramón (coincide). ' + estado.replace(/Sin verificacion humana[^;]*/, '').trim();
+      else if (v === 'no_coincide') estado = 'NO ENVIAR: Ramón verificó y no coincide' + (nota ? ` (${nota})` : '');
+      else if (v === 'dudoso') estado = 'NO ENVIAR hasta revisar: Ramón marcó dudoso' + (nota ? ` (${nota})` : '');
+      else estado = 'NO ENVIAR: falta verificación a mano. ' + estado;
+    }
     principal.push(fila([empresa, f.dominio, email, medido, estado]));
     detalle.push(fila([id, f.dominio, r, h?.id || '', h ? (h.capa || 2) : '', p?.fuerza || '', h?.estado || '', p?.en_castellano || '', p?.frase_de_arreglo || '', p?.apertura_a_reunion || '',
       p ? `${p.se_vende.producto} | ${p.se_vende.vehiculo_publicado}` : '', p?.se_vende.precio_en_el_correo || '', p?.se_vende.linea_de_precio || '', p?.estado_del_texto || '', h?.donde_mirar || '', h ? h.no_afirmable.join(' | ') : '',

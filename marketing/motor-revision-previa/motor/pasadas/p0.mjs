@@ -52,11 +52,30 @@ export function yaContactado(dominio) {
   return { seguro, posible };
 }
 
+// descartado antes: otra sesion o Dereck ya lo marco como no escribir (dominio reciclado, aparcado, distribuidor, sitio caido, hallazgo flaco).
+const MARCA_DESCARTE = /descartad|NO escribir|DOMINIO RECICLADO|aparcad|parked|no es cl[ií]nica|distribuidor de/i;
+export function descartadoAntes(dominio) {
+  const dir = path.join(RAIZ, 'ventas'); if (!fs.existsSync(dir)) return null;
+  const re = new RegExp('(^|[@.\\s/])' + dominio.replace(/\./g, '\\.') + '([^a-z0-9-]|$)', 'i');
+  for (const f of fs.readdirSync(dir).filter((x) => /\.csv$/i.test(x) && x !== 'lista-exclusion.csv')) {
+    try {
+      for (const r of leerCsv(path.join(dir, f))) {
+        const dom = String(r.dominio || (r.email || '').split('@')[1] || '').toLowerCase();
+        if (!(dom === dominio || re.test(dom))) continue;
+        const marca = [r.estado, r.hallazgo_medido, r.hallazgo].filter(Boolean).join(' ');
+        if (MARCA_DESCARTE.test(marca)) return { en: 'ventas/' + f, motivo: marca.slice(0, 160) };
+      }
+    } catch { /* csv raro: se ignora */ }
+  }
+  return null;
+}
+
 // remedir: se mide un prospecto YA contactado (para un seguimiento). Se salta 'ya contactado', pero la lista de exclusion SIGUE mandando.
 export async function pasada0(dominio, { correo, sinCorte = false, remedir = false } = {}) {
   const out = { pasada: 0, dominio, ...(sinCorte ? { sin_corte: true } : {}) };
   const ex = enExclusion(dominio, correo);
   if (ex && !sinCorte) return { ...out, corte: 'excluido', detalle: ex };
+  if (!sinCorte && !remedir) { const d = descartadoAntes(dominio); if (d) return { ...out, corte: 'descartado-antes', detalle: { ...d, nota: 'Ya estaba marcado como no escribir en una lista de ventas/. Si cambio, correr con --sin-corte.' } }; }
   const cont = (sinCorte || remedir) ? { seguro: [], posible: [] } : yaContactado(dominio);
   if (cont.seguro.length) return { ...out, corte: 'ya-contactado', detalle: { en: cont.seguro.slice(0, 5), nota: 'Hay un envio registrado. Confirmar en Gmail (in:sent to:dominio).' } };
 
