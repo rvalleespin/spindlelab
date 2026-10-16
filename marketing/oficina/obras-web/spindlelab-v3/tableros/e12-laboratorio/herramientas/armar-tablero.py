@@ -276,7 +276,7 @@ seccion_medido = f"""
     </div>
     <div class="galeria galeria--2">
       {figura(img['a_cursor'], 'Tarjeta de Accept & Proceed con el cursor encima: una pastilla gris translúcida que dice View Project', '«View Project»: el cursor dice adónde lleva, sin color.')}
-      {figura(img['a_tabla'], 'Tabla de episodios de Accept & Proceed con filetes de un pixel', 'El único lugar con filetes de 1 px: una tabla.')}
+      {figura(img['a_tabla'], 'Tabla de episodios de Accept & Proceed con filetes de un pixel', 'Filetes de 1 px: en las etiquetas de cada pieza y en una tabla.')}
     </div>
     <div class="galeria galeria--3">
       {figura(img['a_carga'], 'Nueve cuadros de la carga de una página de Accept & Proceed: primero rectángulos grises, después el contenido', 'La carga: cada bloque espera en un marco gris con su radio real y el contenido entra después.', 'fig--ancha')}
@@ -307,7 +307,7 @@ no_tomamos = [
     "El vidrio con desenfoque y el velo negro sobre la imagen.",
     "Los grises que no se leen (2,89:1 en Koto, 2,41:1 en A&amp;P) y la letra de 9 px.",
     "Que ignoren a quien pide menos movimiento: los dos lo hacen.",
-    "La entrada de 1,5 s de A&amp;P: la de Koto llega al 90 % en una cuarta parte de ese tiempo.",
+    "La entrada de 1,5 s de A&amp;P: la de Koto llega al 90 % en menos de un tercio de lo que tarda la de A&amp;P (261 contra 850 ms).",
     "La etiqueta con filete e icono que A&amp;P pone bajo cada pieza: su gris no aprueba contraste y, con nuestros ingredientes, serían nubes de cajas.",
 ]
 brief_puntos = [
@@ -321,7 +321,7 @@ brief_puntos = [
      f"<strong>Se toma.</strong> Lo táctil son los tres resortes que responden a quien visita, con techo por página; en el teléfono, lo que el hover muestra queda a la vista. El único color de la interfaz es el cobalto ({num(tono['#0029FF (brief)']['H'], 0)}° en OKLCH, no el índigo de {num(tono['indigo-500 (Tailwind)']['H'], 0)}°) y la imagen es siempre trabajo real."),
     ("Líneas de 1 px al 8 %", f"Koto: dos líneas, de {num(L['koto_separador_blanco10_sobre_060606'])} y {num(L['koto_filete_2d2d2d_sobre_060606'])} de contraste",
      f"<strong>Se queda, y se suma una al 18 %</strong> para el borde de cada sección: la tuya da {num(L['brief_08_sobre_papel']['contraste'])}, la de Koto {num(L['koto_filete_2d2d2d_sobre_060606'])}."),
-    ("Cobalto <code>#0029FF</code> o <code>#0B25B7</code> para estados activos, cursor y telemetría viva", "Koto tiene un solo color, puro, en un solo lugar",
+    ("Cobalto <code>#0029FF</code> o <code>#0B25B7</code> «únicamente para estados activos, cursores magnéticos y telemetría de código vivo»", "Koto tiene un solo color, puro, en un solo lugar",
      "<strong>Se queda el <code>#0029FF</code></strong>, el puro, y marca solo lo que responde a quien visita. El oscuro era la versión segura de lo mismo."),
     ("Titulares geométricos anchos en negrita; Space Grotesk o Plus Jakarta Sans", "Koto: condensada, liviana, cero negritas",
      f"<strong>Cambia.</strong> Medidas contra la letra de Koto, quedan {puesto('display', 'Space Grotesk')[0]}.ª y {puesto('display', 'Plus Jakarta Sans')[0]}.ª de {puesto('display', 'Space Grotesk')[1]}, y no se pueden condensar. Además las marcaste como cliché."),
@@ -340,7 +340,7 @@ brief_puntos = [
     ("«LAT. 33.44° S | SYS. ACTIVO | VOL. 04»", "Koto no tiene ningún dato de adorno",
      "<strong>No.</strong> Tu texto dice que no significan nada, y un número de adorno hace dudar de los verdaderos."),
     ("Cursor: círculo de color que dice «Ver despliegue»", "Koto y A&amp;P: el cursor dice adónde lleva, sin color",
-     "<strong>Sí:</strong> círculo cobalto que dice adónde lleva, solo sobre el trabajo y solo con mouse."),
+     "<strong>Sí:</strong> círculo cobalto que dice adónde lleva, solo sobre el trabajo y solo con mouse. <strong>Magnético, no:</strong> el círculo va donde va el puntero; ni Koto ni A&amp;P lo atraen, y uno que se corre hacia el centro de la pieza deja de decir dónde estás."),
     ("Craft y Logic lado a lado", "Ningún referente lo tiene",
      "<strong>Sí, con datos reales:</strong> la pieza al lado de lo que la prueba (su chequeo, su peso, sus datos), con fecha."),
     ("Sandboxes: «Ejecutar optimización», pasar a wireframe", "Ningún referente",

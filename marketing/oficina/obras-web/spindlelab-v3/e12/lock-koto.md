@@ -220,7 +220,7 @@ Las cajas de imagen y video cubren del 33 al 72 % de cada página: **el color lo
 | 90 % del salto del cursor en 75 ms | **Sí, como techo** | Calibra el resorte del cursor (§9). Koto va a 0 ms |
 | Entrada de 1,5 s `(0,.56,.46,1)` y Lenis | **No** | Koto manda: su entrada llega al 90 % en 261 ms y la de A&P en 850. Scroll nativo, como Koto |
 | Pares con columnas vacías, títulos en la columna 5 | **Solo en la dirección B** (§16) | Es la asimetría de A&P; la dirección A usa el muro de Koto |
-| Tabla con filetes de 1 px | **Solo en la dirección B** | Su único uso de líneas, y el modelo del índice como lista |
+| Tabla con filetes de 1 px | **Solo en la dirección B** | Su único uso de líneas fuera de las etiquetas, y el modelo del índice como lista |
 | Etiquetas con filete de 1 px y pictograma bajo cada pieza (sus tres pilares) | **La medida sí, la forma no** (§4, §7) | Una o dos por pieza, como A&P; en la línea mono, sin caja ni icono |
 | Gris `#8C8C8C` al 80 % (2,41:1), blanco sobre foto clara (1,25:1), legal a 7,5 px, home sin h1, menú hamburguesa hasta 1439 px | **No** | Defectos medidos |
 
