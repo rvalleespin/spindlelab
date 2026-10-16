@@ -22,6 +22,7 @@ este lock agrega se midió hoy con herramientas que quedan en `../tableros/e12-l
 | `contraste.py` | Contraste WCAG de cada par de uso de la paleta del brief, líneas compuestas, tono OKLCH del cobalto | `datos/contraste.json` |
 | `resortes.mjs` | Los resortes propuestos, con el `spring()` de Motion 13.5.0, contra las curvas medidas en Koto y A&P | `datos/resortes.json` |
 | `evidencia-next.sh` | Qué letra trae por defecto la plantilla de Next.js | `datos/create-next-app-layout.txt` |
+| `atmosfera.mjs` | Degradados (cuántos, con qué color y tono), dibujos grandes en `canvas` o `svg` y vidrio en la home y el índice de Koto y de A&P a 1440 (segunda vuelta, 16-oct) | `datos/atmosfera.json` |
 
 (`datos/` e `img/` cuelgan de `../tableros/e12-laboratorio/`.)
 
@@ -220,6 +221,7 @@ Las cajas de imagen y video cubren del 33 al 72 % de cada página: **el color lo
 | Entrada de 1,5 s `(0,.56,.46,1)` y Lenis | **No** | Koto manda: su entrada llega al 90 % en 261 ms y la de A&P en 850. Scroll nativo, como Koto |
 | Pares con columnas vacías, títulos en la columna 5 | **Solo en la dirección B** (§16) | Es la asimetría de A&P; la dirección A usa el muro de Koto |
 | Tabla con filetes de 1 px | **Solo en la dirección B** | Su único uso de líneas, y el modelo del índice como lista |
+| Etiquetas con filete de 1 px y pictograma bajo cada pieza (sus tres pilares) | **La medida sí, la forma no** (§4, §7) | Una o dos por pieza, como A&P; en la línea mono, sin caja ni icono |
 | Gris `#8C8C8C` al 80 % (2,41:1), blanco sobre foto clara (1,25:1), legal a 7,5 px, home sin h1, menú hamburguesa hasta 1439 px | **No** | Defectos medidos |
 
 ---
@@ -229,6 +231,8 @@ Las cajas de imagen y video cubren del 33 al 72 % de cada página: **el color lo
 | El brief pide | Lo medido | Decisión | Por qué |
 |---|---|---|---|
 | «Light Mode Editorial» | Koto: negro. A&P: papel `#F9F7F3` | **Claro** | Lo pide el brief, A&P prueba que funciona y el detector lo respalda (tell #3). El negro, a lo más en un momento, solo si la spec lo justifica |
+| Filosofía «Form & Intelligence» (alta costura visual frontend + arquitectura de software e IA propietaria) | Ninguno de los dos rotula su filosofía. Koto la dice en una frase llana y en dos tintas («Our values. Built on optimism. Driven by collaboration. Defined by craft.», `medicion/koto/resumen.md`, Contenido); A&P, en un titular («We're a team of designers, strategists, system-thinkers.», `medicion/accept-and-proceed/resumen.md` §6). Cero lemas en mono, cero conceptos entre comillas | **Se ajusta: queda como la estructura del sistema, no como lema** | Las dos mitades ya tienen forma en este lock y se pueden señalar: **la forma** es el trabajo plano en su marco y la letra en dos cortes (§5, §6); **la inteligencia**, la capa mono con datos que se recalculan (§11) y los sandboxes verdaderos (§12). Se juntan en Craft y Logic: la pieza al lado de lo que la prueba (§7). Como rótulo no va: es inglés en un sitio es-CL y un concepto que pide explicación (§14, rótulos). «IA propietaria» no va: el único proyecto con IA programada (Praxi) vive en otro repo y queda fuera salvo que Ramón diga que entra (inventario §8; brief de obra §4 y §8.5). Si Ramón la quiere escrita, es insumo de Clara |
+| Atmósfera: «microinteracciones táctiles» y «cero clichés de IA genérica (sin redes neuronales dibujadas ni gradientes púrpura)» | **Microinteracciones.** Koto: pocas, y cada una responde a algo que hizo el visitante (la pieza del índice se acorta 24 px y deja ver su bajada; el nav pasa del 70 al 100 % en 167 ms; la etiqueta del cursor solo sobre el trabajo); ninguna rebota (§2.6, §2.7). A&P: imagen a 1,03 en 0,3 s, botón `invert(1)` en 0,2 s, cursor de vidrio. **Clichés,** medido el 16-oct en la home y el índice a 1440 (`atmosfera.mjs` → `datos/atmosfera.json`): Koto trae 13 y 12 degradados, **todos neutros** (croma 0: el velo que va de transparente a negro al 70 u 80 % en la mitad de abajo de los destacados, y los del aviso de cookies), 0 con color y 0 púrpura; A&P, 0 degradados. **Ningún `canvas` ni `svg` de más de 200 × 200 px en las cuatro páginas:** nada dibujado. El único color de interfaz de Koto es el amarillo del logo; A&P no tiene ninguno (§2.2) | **Se toma** | Táctil, aquí, es lo que se puede medir: tres familias de movimiento (cursor, estado, entrada) que responden a lo que hizo el visitante, con resortes que conservan la velocidad si se los interrumpe y ζ ≥ 1 (§9), dentro de los techos de §14. En el teléfono el toque es literal y no hay hover: lo que el hover revela queda a la vista (§8). Sin púrpura: el cobalto está a 264,2° en OKLCH, a 13° del `indigo-500` (§5), y es el único color de interfaz. Sin degradados de color, sin `canvas` decorativo, sin redes, nodos ni partículas: el color y la imagen los pone el trabajo real (§5). El velo neutro de Koto no se toma (§3) |
 | Fondo `#F6F6F4` | A&P `#F9F7F3`, más cálido | **Se toma** | Casi neutro (croma OKLCH 0,003): no es el crema del tell #4 |
 | Superficies `#EFEFEA` y `#FFFFFF` | Koto: una placa `#141414` a 1,10:1 | **Se toman con rol** | `#EFEFEA` es la placa de Koto en claro (1,07:1); `#FFFFFF` solo donde el visitante escribe o lee lo que devolvió una máquina (§5). Ninguna de las dos es una tarjeta |
 | Texto `#111111` y `#666663` | Koto: blanco a 20,26 y gris a 7,02 | **Se toman** | El gris queda a 58 % del camino entre papel y tinta; el de Koto, a 64 %. Aprueba AA en las tres superficies (§5) |
@@ -237,15 +241,16 @@ Las cajas de imagen y video cubren del 33 al 72 % de cada página: **el color lo
 | Display geométrica ancha, Bold/Extrabold, tracking ajustado; Space Grotesk o Plus Jakarta Sans | Koto: condensada **liviana** (300), **cero negrita**. A&P: un peso, 400 | **Mona Sans condensada a 340** (§6) | Lo medido es lo contrario en los tres ejes: estrecha, liviana, sin negrita. Space Grotesk y Plus Jakarta salen por medición (30.º y 29.º de 34) y por la respuesta 4 |
 | Mono Geist Mono o JetBrains Mono | Koto: Mono Medium, 11 px MAYÚSCULAS | **DM Mono 500** (§6) | Geist Mono mide primera y sale por ser la mono por defecto de Next.js; JetBrains Mono mide 13.ª de 14 |
 | Bento brutalista con bordes de 1 px, bloques gigantes y cajas de datos | Koto: muro sin bordes. A&P: pares con columnas vacías, cero cajas con borde | **No hay bento** (§7) | Ningún referente lo usa; las cajas de datos piden datos que no hay (inventario §0.6); cajas con borde por defecto son el tell #2 |
+| Etiquetas de «ingredientes» técnicos al lado de cada proyecto: «[React]», «[Modelos RAG]», «[WebGL]», «[Estrategia C-Level]» (segundo texto, punto 2) | Koto: ninguna etiqueta con borde; el tipo y el año van en una ficha mono de una línea («SOCIAL MEDIA · 2026»), sin corchetes. A&P: bajo cada pieza, **etiquetas con filete de 1 px** `#8C8C8C` al 80 %, radio 3,4 px, 28 px de alto (24 a 390), con un pictograma de 20 × 20 y un separador de 1 px; nombran uno de sus **tres pilares** (New Ambition, New Expressions, New Connections), **una o dos por pieza** (12 y 8 de 20), y su texto gris queda a 2,41:1 (`medicion.json`: `interaccion.etiqueta`, `reticula.filetes1px`, `contenido.indice`; `capturas/trabajo-1440-pantalla1.jpg`, `etiquetas-detalle-1440.jpg`; en el tablero, `img/ap-etiquetas.jpg`) | **Con datos reales, en la línea mono (§7): hasta dos por pieza en el índice y todas en el caso. La etiqueta con filete, no** | De las cuatro del ejemplo, ninguna se usó en un proyecto (inventario §2): no van. Lo verificado son 30 ingredientes, de 2 a 9 por proyecto. De A&P se toma **la medida**: la etiqueta nombra una categoría y van una o dos por pieza; por eso el índice lleva hasta dos, los que más le hacen al cliente, y la lista completa va en el caso (Solución, §13). **La forma no**, por cuatro razones medidas: su gris no aprueba (2,41:1); el pictograma pide un icono por etiqueta, y con 30 ingredientes eso es una librería (la fila Iconos cierra en dos); con un vocabulario abierto, nueve cajas con borde bajo una pieza son la nube de etiquetas del portafolio de plantilla (tell #2); y Koto, que manda, no tiene ninguna. Sin corchetes (§14) |
 | Hero monumental pegado a los márgenes | Koto: 48 px en una esquina sobre el showreel. A&P: 35 px; la home abre con 810 px de video sin una frase | **Eje de la compuerta 2** (§16) | A, la escala de Koto con el trabajo como lo grande; B, la declaración grande en el corte liviano |
-| Párrafo mono como ficha de laboratorio «[ LAB_STATUS: ACTIVE ]», «[ DEPLOYMENT_CYCLE: 2026 ]» | Koto: ficha mono verdadera («SOCIAL MEDIA · 2026»), hora con huso | **La ficha sí, con datos verdaderos** (§11) | «LAB_STATUS» no tiene un estado detrás que pueda cambiar (inventario §5.2) |
+| Párrafo mono como ficha de laboratorio «[ LAB_STATUS: ACTIVE ]», «[ DEPLOYMENT_CYCLE: 2026 ]» y, en el segundo texto, «[ LAB_01 ]» | Koto: ficha mono verdadera («SOCIAL MEDIA · 2026»), hora con huso | **La ficha sí, con datos verdaderos** (§11) | «LAB_STATUS» no tiene un estado detrás que pueda cambiar y «LAB_01» numera sin una serie detrás (inventario §5.2). La frase que sigue a «[ LAB_01 ]» la resuelve el brief de obra §4 (texto de Clara) |
 | Craft vs Logic: frontend junto al pipeline técnico | Ningún referente | **Con datos reales** | La pieza (captura o grabación) al lado de lo que la prueba: su chequeo, su peso, sus datos estructurados, con fecha (inventario §4). Sin llamadas a API simuladas |
 | Casos: Hipótesis → Solución → Métrica C-Level (+X %) → Showcase | Koto: 0 porcentajes en 35 casos. A&P: «Metric» vacío en 20 | **Problema, Hipótesis, Solución, Resultado medido o «sin métrica»** (§13) | Respuesta 3. Aquí la casilla del resultado nunca queda vacía: dice el número con instrumento y fecha, o dice qué no se midió |
 | Framer Motion con resortes, sin `ease-in-out` | Koto: curvas propias, cero rebote. A&P: curva de 1,5 s | **Motion (sin React) con tres resortes calibrados** (§9) | Respuesta 2 |
 | Iconos de 1,5 px (Lucide) | Koto: ↗ y play | **↗ como carácter de la mono y un SVG de pausa** | Para dos iconos no hace falta una librería; Lucide es la de la plantilla shadcn |
 | Cursor círculo de color vibrante que dice «Ver Despliegue» o «Analizar Caso» | Koto: etiqueta sin color. A&P: pastilla gris | **Círculo cobalto que dice adónde lleva** (§8) | Ramón lo pide explícito; el color es la señal del brief en uno de sus tres usos |
 | Sandboxes: «Ejecutar optimización», pasar a wireframe | Ningún referente | **Solo los verdaderos** (§12) | Inventario §6: el chequeo existe; el modo esqueleto es la versión verdadera del wireframe |
-| Líneas de corte y registro cruzadas en las esquinas | Koto: «los filetes se cuentan con los dedos»; cero marcas de corte | **Una marca donde dos líneas reales se cruzan; la retícula completa solo en el modo esqueleto** (§10) | Si la marca no alinea nada, es adorno |
+| Líneas de corte y registro cruzadas en las esquinas | Koto: «los filetes se cuentan con los dedos»; cero marcas de corte. A&P: cero marcas de registro (`reticula.filetes1px`) | **Se ajusta, con un desvío del brief de obra (§19):** una cruz en `--linea-seccion` solo donde el borde de una sección cruza el límite de la barra lateral; la retícula completa solo en el modo esqueleto (§10) | Las marcas en las esquinas de cada contenedor no van: no alinean nada. La cruz que queda marca un límite real de la retícula que no se dibuja. El brief de obra §4 condiciona las marcas a que Koto las traiga, y no las trae: queda la mínima porque es la intención de Ramón (rigor de plano) y la respuesta 4 pide mantener la intención; si en la compuerta 2 se lee como adorno, sale |
 | «LAT. 33.44° S \| SYS. ACTIVO \| VOL. 04» | Koto: hora, estudios, conteos | **No** | «No significan nada crítico» es la definición de decoración; un número decorativo enseña a no creer en los demás (brief de obra §4) |
 | Next.js | | **No** | Respuesta 2 |
 
@@ -330,10 +335,10 @@ Las 34, con letra peor, asta y espacio, en `datos/letras.json`. Lámina a igual 
 **Las dos opciones** (las dos son la misma letra en dos cortes, como Koto: un archivo variable da el titular
 condensado liviano y el cuerpo regular):
 
-- **Mona Sans** (proyecto de GitHub, `github.com/github/mona-sans`; OFL con nombre reservado «Mona», que solo obliga si se modifica el archivo). Display a **wdth 89, wght 340**; cuerpo a **wdth 100, wght 390**. 4.ª en
+- **Mona Sans** (proyecto de GitHub, `github.com/github/mona-sans`; SIL OFL 1.1 con nombre reservado «Mona», que solo obliga si se modifica el archivo. Licencia: `https://github.com/google/fonts/blob/main/ofl/monasans/OFL.txt` y, en su repositorio, `https://github.com/github/mona-sans/blob/main/LICENSE`). Display a **wdth 89, wght 340**; cuerpo a **wdth 100, wght 390**. 4.ª en
   forma; la primera que iguala ancho y asta sin quedar en el borde de sus ejes, y la primera de las que no son la
   letra de interfaz de Google. Sus letras más distintas: J e y.
-- **Google Sans Flex** (© 2015 Google LLC; OFL según su tabla `name`). Display a **wdth 76, wght 300**; cuerpo a **wdth 100, wght 370**. **La que más
+- **Google Sans Flex** (© 2015 Google LLC; SIL OFL 1.1. Licencia: `https://github.com/google/fonts/blob/main/ofl/googlesansflex/OFL.txt`). Display a **wdth 76, wght 300**; cuerpo a **wdth 100, wght 370**. **La que más
   se parece**, en display y en cuerpo (en cuerpo, por 0,10).
 
 **Se usa Mona Sans, y por qué.** Google Sans Flex es la letra de los productos de Google: el dueño de una pyme la ve
@@ -366,7 +371,7 @@ da el corte condensado. Además las nombra la respuesta 4 de Ramón como cliché
 | 10 | IBM Plex Mono | 500 | 0,706 | 0,707 | 0,95 | 0,739 | mono de E10 |
 | 13 | **JetBrains Mono** | wght 585 | **0,651** | 0,670 | **0,91** | 0,753 | sale |
 
-**DM Mono 500** (The DM Mono Project Authors, `github.com/googlefonts/dm-mono`; OFL): la que más se parece en las letras clave (0,787, la mejor de las 14) y en la
+**DM Mono 500** (The DM Mono Project Authors, `github.com/googlefonts/dm-mono`; SIL OFL 1.1. Licencia: `https://github.com/google/fonts/blob/main/ofl/dmmono/OFL.txt`): la que más se parece en las letras clave (0,787, la mejor de las 14) y en la
 proporción de la x (0,709 contra 0,714). Es 5 % más angosta: con **interletra +0,03em** su paso queda en 0,63em, el de
 Koto. Se usa en MAYÚSCULAS a 11 px (rótulos) y en caja normal a 12 px (datos).
 
@@ -412,12 +417,26 @@ más reconocible de la plantilla de «laboratorio».
 - **Índice (dirección A):** barra lateral pegajosa de 320 px desde 1194 (título con su continuación en gris, conteo
   verdadero «(6)», el filtro por tipo: cliente, propio, concepto, herramienta) y **el muro de dos columnas** con las
   tres proporciones de Koto (4:5, 4:3, 5:3), 8 px entre piezas. Bajo cada pieza, en reposo y siempre a 390: nombre en
-  tinta, bajada en gris y **una línea mono** con tipo · año · ingredientes verificados (inventario §2).
+  tinta, bajada en gris y **una línea mono** con tipo · año · **hasta dos** ingredientes verificados (inventario §2).
 - **Índice (dirección B):** una lista en forma de tabla, con `--linea` entre filas (la tabla de A&P), columnas tipo ·
   año · ingredientes · resultado medido o «sin métrica», y la pieza a la vista al pasar o al enfocar la fila.
 - **Caso:** el de Koto (§13).
 - **Craft y Logic:** dos columnas de la misma retícula: la pieza (captura o grabación) y, al lado, en mono, lo que la
   prueba con fecha. No es un módulo con borde: es una fila.
+
+**Por qué una línea mono y no la etiqueta medida de A&P.** A&P es el único referente con etiquetas bajo la pieza:
+filete de 1 px `#8C8C8C` al 80 %, radio 3,4 px, 28 px de alto, pictograma de 20 × 20 con separador, una o dos por
+pieza (12 y 8 de 20), y cada una nombra uno de sus tres pilares (`medicion/accept-and-proceed/medicion.json`,
+`interaccion.etiqueta`; `capturas/trabajo-1440-pantalla1.jpg`). Se toma su medida, no su forma (§4, fila de las
+etiquetas): (1) su texto gris queda a 2,41:1 y en el gris de este lock la caja no agrega nada que la línea no diga;
+(2) A&P tiene un vocabulario cerrado de tres palabras con tres pictogramas, y aquí son 30 ingredientes distintos: un
+pictograma por ingrediente es una librería de iconos, que la fila Iconos de §4 cierra en dos; (3) con 2 a 9
+ingredientes por proyecto, la etiqueta con borde se vuelve una nube de cajas bajo cada pieza, el gesto de portafolio
+de plantilla (tell #2), y A&P nunca pasa de dos; (4) Koto, que manda, pone tipo y año en una línea mono sin caja. Lo
+que queda de A&P: **una o dos categorías por pieza**. Por eso la línea mono del índice lleva el tipo, el año y hasta
+dos ingredientes (los que más le hacen al cliente), y la lista completa va en el caso, en Solución (§13). Medida:
+«Propio · 2026 · Cloudflare Pages · Cloudflare KV» son 48 caracteres a 11 px de DM Mono (paso 0,63em): unos 333 px,
+una línea en la columna de 524,5 px del muro.
 
 ---
 
@@ -489,9 +508,18 @@ entra si separa o alinea algo real.**
 
 - **Líneas:** 1 px. `--linea-seccion` (`.18`, 1,47:1) en el borde superior de cada sección del caso y del índice;
   `--linea` (`.08`, 1,18:1) entre filas de una lista o una tabla.
-- **Marca de registro:** una cruz de 9 × 9 px en `--linea-seccion` **solo donde el borde de una sección cruza el
-  borde de la barra lateral** (x = 336 a 1440: 16 de margen + 320 de barra), que es un cruce real de la retícula.
-  Máximo dos por página; ninguna bajo 1194 px, donde no hay barra.
+- **Marca de registro:** una cruz de 9 × 9 px en `--linea-seccion` **solo donde el borde de una sección (la línea al
+  18 %, dibujada) cruza el límite de la barra lateral** (x = 336 a 1440: 16 de margen + 320 de barra). Ese límite es
+  real (ahí termina la ficha y empieza el cuerpo) pero **no se dibuja**: la cruz es lo único que lo marca, y por eso
+  alinea algo. Máximo dos por página; ninguna bajo 1194 px, donde no hay barra.
+- **Por qué en `--linea-seccion` y no en tinta:** la cruz es parte de la línea que marca, no una señal. En tinta
+  (17,45:1 contra el papel, contra 1,47:1 del borde que la lleva) se leería como una señal propia y se confundiría con
+  el foco del teclado, que es de tinta (§15). En el mismo gris, lo que se ve es el trazo vertical de 9 px atravesando el borde.
+- **Desvío del brief de obra, registrado (§19).** El brief de obra §4 («Planos y registro») admite marcas de corte
+  solo si la medición de Koto las trae, y trae cero (A&P tampoco: `reticula.filetes1px`). La cruz queda porque es la
+  forma mínima de la intención de Ramón («rigor de plano», «líneas de corte y registro») y la respuesta 4 pide
+  mantener la intención y reemplazar la forma de plantilla: lo que se reemplaza son las marcas en las esquinas de cada
+  contenedor. Es reversible en una línea: si en la compuerta 2 se lee como adorno, sale y no se reemplaza por nada.
 - **La retícula completa se dibuja solo en el modo esqueleto** (§12): las columnas leídas de
   `getComputedStyle(...).gridTemplateColumns` y los elementos contorneados. Ahí el plano es verdad; dibujado aparte
   sería decoración (inventario §6.1).
@@ -526,7 +554,7 @@ Del inventario §6.1. **Uno a la vista por página como máximo.**
 | **Esta página, como la lee un robot** | Por construir | El HTML que llega sin estilos, los encabezados, los datos estructurados y lo que el servidor le respondió a cada robot (`/api/chequeo?dominio=spindlelab.cl`). Se lee sobre `--hoja` |
 | **Modo esqueleto** | Por construir | Contornea los elementos reales y dibuja la retícula leída del CSS (§10). Reversible, quieto con movimiento reducido, sin esconder nada al lector de pantalla. Es la versión verdadera del «wireframe» del brief |
 | **Tu visita, medida** | Por construir | Peso, tiempo y datacenter de esta visita (§11) |
-| **La foto que sube Bernardo y la que ve su visitante** (786 KB → 92 KB) | Por construir | **Pide su OK escrito** |
+| **La foto que sube Bernardo y la que ve su visitante** (805 kB → 95 kB) | Por construir | **Pide su OK escrito** |
 
 **No:** «Ejecutar optimización» que reescribe un texto, un chat con respuestas escritas de antemano, una terminal
 que «despliega», pasar a wireframe cambiando colores (inventario §6.2).
@@ -553,7 +581,7 @@ de 493 px. A 390, una columna, con la ficha arriba.
 | Caso | Resultado medido | Puede ir |
 |---|---|---|
 | **Verifica y Cumple** | Chequeo de visibilidad **54 → 94**, el mismo instrumento dos veces (14-oct 22:29Z → 16-oct 17:51Z), tras publicar robots, llms.txt, sitemap y el schema completo el 15-oct (`9391a0b`, `7696d63`) | **Decide Ramón** |
-| **Combeau, fotografía** | Sin métrica de negocio. Oficio medido: una foto que él sube con 786 KB llega al visitante en 92 KB (WebP, 828 px) | El caso sí (permiso verbal, 30-sep); **la medición pide su OK escrito** |
+| **Combeau, fotografía** | Sin métrica de negocio. Oficio medido: una foto que él sube con 805 kB llega al visitante en 95 kB (WebP, 828 px; 804.697 y 94.576 bytes) | El caso sí (permiso verbal, 30-sep); **la medición pide su OK escrito** |
 | **Combeau, modelo** | Sin métrica. Video con carga diferida: 0 KB de video en la carga inicial | Igual que el anterior |
 | **El chequeo de 21 señales** | Herramienta: 21 señales, 30 + 40 + 30 = 100 | Sí |
 | **spindlelab.cl** | 85 en el chequeo (16-oct); 36 → 73 → 100 en Verifica y Cumple, solo en Trabajo y con el aviso del cambio de regla | **Decide Ramón** |
@@ -568,9 +596,10 @@ El juego funciona en Koto porque cada recurso tiene un trabajo y aparece poco. C
 | **Cobalto** | **3 usos por pantalla y 6 por página**, contando cada valor vivo, cada estado activo y el círculo | Lo que responde a ti (§5). Nunca texto de más de 16 px, fondo, banda, borde, botón ni enlace del cuerpo. Una pantalla sin nada que responda al visitante tiene cero cobalto, y está bien: Koto tiene cero color de interfaz |
 | **Rótulos mono en MAYÚSCULAS** | **Uno por bloque** y solo a 11 px | Nombra (tipo, año, lugar, sección, conteo). Nunca una frase, nunca un concepto que pida explicación, nunca entre corchetes |
 | **Datos mono** | Solo valores con fila en el inventario | 12 px, caja normal |
+| **Ingredientes en el índice** | **2 por pieza**; todos en el caso | En la línea mono, sin caja, sin icono, sin corchetes (§7). A&P: una o dos etiquetas por pieza |
 | **Corchetes** | **1 por página** | Solo alrededor de un enlace mono a un índice («[ Todo el trabajo ]»), como Koto |
 | **Dos tintas** | **1 por sección** | La continuación en gris dice qué le hace al cliente lo nombrado en tinta; la parte en tinta, hasta 8 palabras; la gris, de 6 a 13 (Koto) |
-| **Marca de registro** | **2 por página**; 0 bajo 1194 px | Donde el borde de sección cruza el borde de la barra (§10) |
+| **Marca de registro** | **2 por página**; 0 bajo 1194 px | En `--linea-seccion`, donde el borde de sección cruza el límite de la barra (§10). Desvío del brief de obra, reversible (§19) |
 | **Líneas** | Una por borde de sección y una entre filas de una lista | Nunca alrededor de un bloque |
 | **Cursor** | **Un tipo de círculo, un texto por tipo de pieza** | Solo sobre trabajo; nunca sobre enlaces, botones o texto |
 | **Entradas con resorte** | **1 por sección** | Medio o abridor; nunca texto de lectura, nunca línea por línea |
@@ -628,14 +657,18 @@ tinta es `#111111` y la señal, cobalto. Los documentos compartidos los toca la 
   pantalla y página completa de home, trabajo, caso y estudio a 1440 y 390; detalles de cursor, índice, filtro,
   widgets, encabezado, menú, tipos), `herramientas/correr.sh`.
 - A&P: `medicion/accept-and-proceed/resumen.md`, `medicion.json`, `capturas/`, `herramientas/`.
-- Este lock: `../tableros/e12-laboratorio/datos/letras.json`, `contraste.json`, `resortes.json`,
+- Este lock: `../tableros/e12-laboratorio/datos/letras.json`, `contraste.json`, `resortes.json`, `atmosfera.json`,
   `create-next-app-layout.txt`; `img/letras-comparadas.jpg`; `herramientas/letras.py`, `contraste.py`,
-  `resortes.mjs`, `evidencia-next.sh`. El tablero de la compuerta 1: `../tableros/e12-laboratorio/tablero.html`,
-  armado por `herramientas/armar-tablero.py` (21 imágenes en `img/`, 1,5 MB en total, la mayor de 168 KB; lista en
-  `img/manifiesto.json`), verificado por `herramientas/verificar.mjs`: a 360, 390, 768 y 1440 sin desborde, un `h1`,
-  22 de 22 imágenes cargadas, las tres letras cargadas, Motion cargado y 657 nodos de texto sin ninguno bajo 4,5:1;
-  las demos con mouse, con teclado y con movimiento reducido, y el teléfono sin círculo
-  (`verificacion/resultado.json` y cuatro capturas de las demos en `verificacion/`).
+  `resortes.mjs`, `atmosfera.mjs`, `evidencia-next.sh`. Licencias de las tres letras, copiadas por Javiera:
+  `e12/qa-paso-1/vuelta-1/crudo/licencia_*`. El tablero de la compuerta 1: `../tableros/e12-laboratorio/tablero.html`,
+  armado por `herramientas/armar-tablero.py` (22 imágenes en `img/`, 1,63 MB en total, la mayor de 168 kB, con
+  kB = 1.000 bytes como el inventario; lista en `img/manifiesto.json`), verificado por `herramientas/verificar.mjs`: a
+  360, 390, 768 y 1440 sin desborde, un `h1`, jerarquía de encabezados sin saltos, ningún texto bajo 11 px, 23 de 23
+  imágenes cargadas (Verifica va dos veces), las tres letras cargadas, Motion cargado y 685 nodos de texto sin
+  ninguno bajo 4,5:1; las demos con mouse, con teclado y con movimiento reducido, y el teléfono sin círculo; y, desde
+  la segunda vuelta, el contorno de las fichas claras, la cruz en `--linea-seccion`, los rótulos de la tabla de
+  resortes a 390, la hora sin respaldo fijo y la nota de carga una sola vez (`verificacion/resultado.json`; capturas
+  de las demos y de esos arreglos en `verificacion/`).
 
 ## 19 · Historial de correcciones
 
@@ -645,3 +678,9 @@ tinta es `#111111` y la señal, cobalto. Los documentos compartidos los toca la 
 | 16-oct | §2.8: los corchetes de Koto son **tres**, no dos: falta «LATEST NEWS [ ALL ]» del panel del reloj, que el texto medido no trae y la captura sí. La regla de §14 no cambia: los tres son un enlace a un índice | Preferencia (corrige un conteo) | Lucía, al mirar `detalle-widgets-1440.jpg` para el tablero |
 | 16-oct | §9: los resortes, medidos corriendo en el tablero, coinciden con lo calculado (1 a 13 ms de diferencia) | Preferencia (confirma) | `herramientas/verificar.mjs` |
 | 16-oct | §8: con teclado el círculo se esconde y **vuelve con el primer movimiento real del mouse**, también si el puntero sigue dentro de la pieza; el aviso de entrada que da el navegador cuando la página se desplaza bajo un mouse quieto (al tabular) no lo trae de vuelta | **Regla** (va a la spec: sin esto el círculo quedaba escondido hasta salir y volver a entrar) | Defecto encontrado en la verificación del tablero |
+| 16-oct, 2.ª vuelta | §4: tres filas que faltaban, contrastadas con lo medido: «Form & Intelligence» (queda como estructura: forma = trabajo y letra, inteligencia = capa mono y sandboxes; no como lema), la atmósfera (medido hoy con `atmosfera.mjs`: degradados de Koto todos neutros, 0 con color, 0 púrpura; A&P, 0; ningún dibujo grande) y las etiquetas de ingredientes (la etiqueta con filete de A&P, medida, y por qué no se toma su forma). La fila de la ficha suma «[ LAB_01 ]» | Preferencia (completa el contraste con el brief) | Acta del paso 1, defecto 2 |
+| 16-oct, 2.ª vuelta | §7 y §14: la línea mono del índice lleva **hasta dos ingredientes**; la lista completa, en el caso. Es la medida de A&P (una o dos etiquetas por pieza, 12 y 8 de 20) y la razón por la que la etiqueta con filete no entra | **Regla** (va a la spec) | Acta, defecto 2 |
+| 16-oct, 2.ª vuelta | §10 y §14: **desvío del brief de obra.** El brief de obra §4 admite marcas de corte solo si Koto las trae, y Koto trae cero (A&P, cero). La cruz se mantiene como forma mínima de la intención de Ramón, en `--linea-seccion` (el tablero la dibujaba en tinta: corregido, porque en tinta se lee como señal y compite con el foco), y el texto dice lo que se dibuja: el borde de sección cruza el **límite** de la barra, que no es una línea dibujada. Reversible: si en la compuerta 2 se lee como adorno, sale | **Regla** (color y lugar) y desvío registrado | Acta, defecto 4; brief de obra §4 y §10 |
+| 16-oct, 2.ª vuelta | §6.2 y §6.3: las URLs de la licencia de Mona Sans, Google Sans Flex y DM Mono (las tres SIL OFL 1.1) | Preferencia | Acta, defecto 11 |
+| 16-oct, 2.ª vuelta | §12, §13 y §18: una sola unidad, kB = 1.000 bytes (la del inventario corregido): la foto de Combeau es 805 kB → 95 kB, no «786 KB → 92 KB» (eran KiB); el tablero suma 1,63 MB, no «1,5 MB». Space Grotesk mide 1,325 veces el ancho de Koto: 1,33 en el lock y en el tablero, con el mismo redondeo | Preferencia (corrige unidades y redondeo) | Acta, defectos 13 y 14; inventario, «Correcciones» |
+| 16-oct, 2.ª vuelta | El tablero, sin cambiar el lock: las fichas claras con un solo atributo `style` (el contorno existía en el código y no en la página), los casos en `h3` (había un salto de `h2` a `h4`), el código dentro de los rótulos a 1em y sin mayúsculas (estaba en 8,8 px), la tabla de resortes con la fuente entera y un rótulo por celda bajo 834 px, el reloj sin hora fija de respaldo («--:--»), la muestra de la mono con el build verdadero de la vista previa (`f0d911c`, 14-oct) en vez de una fecha escrita a mano, y la nota de las mediciones de carga una sola vez | Preferencia (defectos del tablero) | Acta, defectos 3 y 5 a 10 |

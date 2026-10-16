@@ -5,11 +5,11 @@ Lee:
   capturas (las que se muestran se copian comprimidas a `img/`);
 - `e12/inventario-casos.json` (casos, métricas, telemetría y sandboxes verdaderos);
 - `e12/brief-de-obra.md` §8 (las preguntas de Mauro, con su opción recomendada);
-- `datos/letras.json`, `datos/contraste.json`, `datos/resortes.json` (lo medido para el lock);
+- `datos/letras.json`, `datos/contraste.json`, `datos/resortes.json`, `datos/atmosfera.json` (lo medido para el lock);
 - dos capturas planas de obra real de `spindlelab-astro/public/assets/img/obra/` (solo se leen y se copian).
 
 Escribe `tablero.html` (sin doctype, html, head ni body: lo envuelve el publicador) e `img/manifiesto.json`.
-Cada JPEG de `img/` queda en 450 KB o menos y el total en 14 MB o menos; si no, el script falla.
+Cada JPEG de `img/` queda en 450 kB o menos y el total en 14 MB o menos (kB = 1.000 bytes); si no, el script falla.
 
 Uso: python3 -I armar-tablero.py   (desde cualquier carpeta)
 """
@@ -18,6 +18,7 @@ import json
 import os
 import re
 import sys
+from decimal import ROUND_HALF_UP, Decimal
 
 from PIL import Image
 
@@ -37,8 +38,8 @@ MOTION = "https://cdn.jsdelivr.net/npm/motion@13.5.0/dist/motion.js"  # publicad
 FUENTES = ("https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,200..900"
            "&family=Google+Sans+Flex:wdth,wght@25..151,100..1000&family=DM+Mono:wght@500&display=swap")
 GITHUB = "https://github.com/rvalleespin/spindlelab/blob/claude/magical-franklin-ckfki2/"
-MAX_IMG = 450 * 1024
-MAX_TOTAL = 14 * 1024 * 1024
+MAX_IMG = 450_000  # kB = 1.000 bytes, la unidad del inventario y del lock
+MAX_TOTAL = 14_000_000
 
 
 def leer(ruta):
@@ -52,6 +53,7 @@ inv = leer(os.path.join(E12, "inventario-casos.json"))
 letras = leer(os.path.join(DATOS, "letras.json"))
 contraste = leer(os.path.join(DATOS, "contraste.json"))
 resortes = leer(os.path.join(DATOS, "resortes.json"))
+atm = leer(os.path.join(DATOS, "atmosfera.json"))  # herramientas/atmosfera.mjs, segunda vuelta
 brief = open(os.path.join(E12, "brief-de-obra.md"), encoding="utf-8").read()
 
 e = html.escape
@@ -59,14 +61,21 @@ manifiesto = []
 
 
 def num(x, dec=2):
-    return f"{x:.{dec}f}".replace(".", ",")
+    # Redondeo a la mitad hacia arriba sobre el valor escrito (1,325 → 1,33), el mismo que usa el lock. El formato de
+    # Python redondeaba 1.325 a 1,32 porque el binario guarda 1,32499…: defecto 14 del acta del paso 1.
+    q = Decimal(str(x)).quantize(Decimal(1).scaleb(-dec), rounding=ROUND_HALF_UP)
+    return f"{q:.{dec}f}".replace(".", ",")
 
 
 # ---------------------------------------------------------------- imágenes
-def foto(origen, nombre, ancho_max):
-    """Copia `origen` a img/<nombre>.jpg, reducido a `ancho_max` px y comprimido hasta 450 KB."""
+def foto(origen, nombre, ancho_max, recorte=None):
+    """Copia `origen` a img/<nombre>.jpg, reducido a `ancho_max` px y comprimido hasta 450 kB (450.000 bytes).
+
+    `recorte` (izquierda, arriba, derecha, abajo, en px de la captura) recorta antes de reducir."""
     destino = os.path.join(IMG, nombre + ".jpg")
     im = Image.open(origen).convert("RGB")
+    if recorte:
+        im = im.crop(recorte)
     if os.path.abspath(origen) == os.path.abspath(destino) and im.width <= ancho_max and os.path.getsize(destino) <= MAX_IMG:
         # La lámina de letras.py ya se escribe en img/: no se vuelve a comprimir en cada corrida (perdería calidad)
         tam = os.path.getsize(destino)
@@ -81,9 +90,9 @@ def foto(origen, nombre, ancho_max):
             break
     tam = os.path.getsize(destino)
     if tam > MAX_IMG:
-        sys.exit(f"{nombre}: {tam} bytes, pasa de 450 KB")
+        sys.exit(f"{nombre}: {tam} bytes, pasa de 450 kB")
     manifiesto.append({"img": f"img/{nombre}.jpg", "origen": os.path.relpath(origen, REPO), "ancho": im.width,
-                       "alto": im.height, "bytes": tam, "calidad": q})
+                       "alto": im.height, "bytes": tam, "calidad": q, **({"recorte": list(recorte)} if recorte else {})})
     return {"src": f"img/{nombre}.jpg", "w": im.width, "h": im.height}
 
 
@@ -114,6 +123,8 @@ img = {
     "a_escala": foto(A("tipografia-escala-1440.jpg"), "ap-escala-tipografica", 1200),
     "a_tabla": foto(A("lista-eva-filetes-1440.jpg"), "ap-tabla-filetes", 1200),
     "a_trabajo390": foto(A("trabajo-390-pantalla1.jpg"), "ap-trabajo-390", 780),
+    # La pieza de Vans con su nombre, su bajada y sus dos etiquetas de pilar (defecto 2 del acta: la etiqueta medida)
+    "a_etiquetas": foto(A("trabajo-1440-pantalla1.jpg"), "ap-etiquetas", 360, recorte=(32, 444, 392, 816)),
     "letras": foto(os.path.join(IMG, "letras-comparadas.jpg"), "letras-comparadas", 1600),
     "o_verifica": foto(os.path.join(OBRA, "verifica-y-cumple-ancho.jpg"), "obra-verifica-y-cumple", 1440),
     "o_combeau": foto(os.path.join(OBRA, "combeau-fotografia-ancho-2.jpg"), "obra-combeau-fotografia", 1440),
@@ -136,6 +147,14 @@ def par(texto, fondo):
     raise KeyError((texto, fondo))
 
 
+# Atmósfera (datos/atmosfera.json): ningún degradado con color ni púrpura, ningún dibujo grande, en las cuatro páginas
+ATM_K = [atm["paginas"][f"koto/{p}"] for p in ("home", "trabajo")]
+ATM_A = [atm["paginas"][f"acceptAndProceed/{p}"] for p in ("home", "trabajo")]
+assert all(x["degradadosConColor"] == 0 and x["degradadosPurpura"] == 0 and not x["canvasYSvgGrandes"] for x in ATM_K + ATM_A)
+# Etiquetas de A&P: cuántas piezas del índice llevan una y cuántas dos (medicion.json, contenido.indice)
+_tags = [len(p["tags"]) for p in ap["contenido"]["indice"]]
+AP_TAGS = (len(_tags), _tags.count(1), _tags.count(2))
+assert AP_TAGS == (20, 12, 8), AP_TAGS
 T = contraste["tokens"]
 L = contraste["lineas"]
 tono = contraste["tonos"]
@@ -275,7 +294,7 @@ tomamos = [
     "La interfaz que se retira: papel, una placa apenas más oscura, gris para lo que se lee y tinta para lo que se nombra. El color lo pone el trabajo.",
     "Una sola letra en dos cortes y sin negritas: titulares condensados y livianos, cuerpo regular, y una mono para los datos.",
     "Dos tintas en una frase: la parte en tinta nombra y la gris explica qué le hace al cliente. Así no damos nada por sabido.",
-    "El índice de Koto: un muro sin bordes, con el tipo, el año y lo que se usó en una línea mono bajo cada pieza.",
+    "El índice de Koto: un muro sin bordes, con el tipo, el año y hasta dos ingredientes verificados en una línea mono bajo cada pieza.",
     "El caso de Koto: ficha lateral con secciones y un punto en la sección que estás leyendo.",
     "La pieza del índice que se acorta cuando pasas el mouse.",
     "El reloj, los conteos y la ficha: datos que se recalculan.",
@@ -289,10 +308,17 @@ no_tomamos = [
     "Los grises que no se leen (2,89:1 en Koto, 2,41:1 en A&amp;P) y la letra de 9 px.",
     "Que ignoren a quien pide menos movimiento: los dos lo hacen.",
     "La entrada de 1,5 s de A&amp;P: la de Koto llega al 90 % en una cuarta parte de ese tiempo.",
+    "La etiqueta con filete e icono que A&amp;P pone bajo cada pieza: su gris no aprueba contraste y, con nuestros ingredientes, serían nubes de cajas.",
 ]
 brief_puntos = [
     ("Claro: <code>#F6F6F4</code>, <code>#EFEFEA</code>, <code>#FFFFFF</code>, <code>#111111</code>, <code>#666663</code>",
      "Koto es negro; A&amp;P es claro y funciona", "<strong>Se queda.</strong> Cada color con un rol (abajo, en los tokens). Los que llevan texto aprueban contraste en las tres superficies."),
+    ("Filosofía «Form &amp; Intelligence»: alta costura visual y arquitectura de software e IA propietaria",
+     "Koto no rotula su filosofía: la dice en una frase llana («Built on optimism. Driven by collaboration. Defined by craft.»). A&amp;P tampoco tiene lema",
+     "<strong>Queda como estructura, no como lema.</strong> La forma es el trabajo plano en su marco y la letra; la inteligencia, la línea mono con datos que se recalculan y los sandboxes verdaderos. Se juntan en Craft y Logic: la pieza al lado de lo que la prueba. «IA propietaria» no va: no hay un proyecto así a la vista."),
+    ("Atmósfera: microinteracciones táctiles, sin redes neuronales dibujadas ni gradientes púrpura",
+     f"Koto: pocas microinteracciones, y cada una responde a algo que hiciste (la pieza se acorta, el menú se aclara en 167 ms); ninguna rebota. Medido hoy en la home y el índice: Koto tiene {ATM_K[0]['degradados']} y {ATM_K[1]['degradados']} degradados, todos grises (el velo de la parte baja de los destacados y los del aviso de cookies); A&amp;P, {ATM_A[0]['degradados'] + ATM_A[1]['degradados']}. Ninguno con color, ninguno púrpura y ningún dibujo grande en canvas o SVG",
+     f"<strong>Se toma.</strong> Lo táctil son los tres resortes que responden a quien visita, con techo por página; en el teléfono, lo que el hover muestra queda a la vista. El único color de la interfaz es el cobalto ({num(tono['#0029FF (brief)']['H'], 0)}° en OKLCH, no el índigo de {num(tono['indigo-500 (Tailwind)']['H'], 0)}°) y la imagen es siempre trabajo real."),
     ("Líneas de 1 px al 8 %", f"Koto: dos líneas, de {num(L['koto_separador_blanco10_sobre_060606'])} y {num(L['koto_filete_2d2d2d_sobre_060606'])} de contraste",
      f"<strong>Se queda, y se suma una al 18 %</strong> para el borde de cada sección: la tuya da {num(L['brief_08_sobre_papel']['contraste'])}, la de Koto {num(L['koto_filete_2d2d2d_sobre_060606'])}."),
     ("Cobalto <code>#0029FF</code> o <code>#0B25B7</code> para estados activos, cursor y telemetría viva", "Koto tiene un solo color, puro, en un solo lugar",
@@ -303,10 +329,14 @@ brief_puntos = [
      f"<strong>Cambia a DM Mono.</strong> Geist Mono se parece mucho pero es la que trae la plantilla de Next.js; JetBrains Mono queda {puesto('mono', 'JetBrains Mono')[0]}.ª de {puesto('mono', 'JetBrains Mono')[1]}."),
     ("Bento brutalista con bordes y cajas de datos", "Ni Koto ni A&amp;P lo usan",
      "<strong>Cambia.</strong> Las cajas de datos pedirían datos que no tenemos. El dato va en una línea mono bajo cada pieza."),
+    ("Etiquetas de ingredientes al lado de cada proyecto: «[React]», «[Modelos RAG]», «[WebGL]», «[Estrategia C-Level]»",
+     f"Koto: ninguna etiqueta con borde; el tipo y el año van en una línea mono («SOCIAL MEDIA · 2026»). A&amp;P: bajo cada pieza, una o dos etiquetas con filete de 1 px y un icono ({AP_TAGS[1]} y {AP_TAGS[2]} de {AP_TAGS[0]} piezas), que nombran uno de sus tres pilares; su texto gris queda a {num(contraste['referentes']['acceptAndProceed']['grisAl80SobrePapel'])}:1."
+     f'<img class="puntos__img" src="{img["a_etiquetas"]["src"]}" width="{img["a_etiquetas"]["w"]}" height="{img["a_etiquetas"]["h"]}" alt="Pieza de Vans en el índice de Accept &amp; Proceed: la imagen, el nombre en negro, la bajada en gris y dos etiquetas con borde fino y un icono, New Ambition y New Expressions" loading="lazy" decoding="async">',
+     "<strong>Van en la línea mono, solo las verificadas: hasta dos por pieza en el índice</strong> y todas en el caso. De A&amp;P tomamos la medida (una o dos por pieza), no la forma: su gris no aprueba contraste, cada etiqueta pide un icono y, con 2 a 9 ingredientes por proyecto, serían nubes de cajas con borde. Las cuatro de tu ejemplo no se usaron en ningún proyecto. Sin corchetes."),
     ("Titular monumental pegado a los márgenes", "Koto: 48 px en una esquina. A&amp;P: 35 px",
      "<strong>Lo decides en la compuerta 2:</strong> una dirección lo trae y la otra usa la escala de Koto."),
-    ("Ficha mono «[ LAB_STATUS: ACTIVE ]»", "Koto: «SOCIAL MEDIA · 2026», la hora con su huso",
-     "<strong>La ficha sí, con datos verdaderos</strong> (la hora de Santiago, el tipo, el año). Corchetes solo alrededor de un enlace, como Koto."),
+    ("Ficha mono «[ LAB_STATUS: ACTIVE ]» y, en tu segundo texto, «[ LAB_01 ]»", "Koto: «SOCIAL MEDIA · 2026», la hora con su huso",
+     "<strong>La ficha sí, con datos verdaderos</strong> (la hora de Santiago, el tipo, el año). «LAB_STATUS» y «LAB_01» no: declaran un estado o numeran sin nada detrás. Corchetes solo alrededor de un enlace, como Koto."),
     ("«LAT. 33.44° S | SYS. ACTIVO | VOL. 04»", "Koto no tiene ningún dato de adorno",
      "<strong>No.</strong> Tu texto dice que no significan nada, y un número de adorno hace dudar de los verdaderos."),
     ("Cursor: círculo de color que dice «Ver despliegue»", "Koto y A&amp;P: el cursor dice adónde lleva, sin color",
@@ -319,8 +349,8 @@ brief_puntos = [
      "<strong>Problema, hipótesis, solución y resultado medido</strong>, o «sin métrica» dicho con todas sus letras."),
     ("Framer Motion con resortes", "Koto: curvas propias, nada rebota",
      "<strong>Motion</strong> (la misma librería, sin React) con tres resortes ajustados a los tiempos de Koto."),
-    ("Líneas de corte y registro", "Koto: los filetes se cuentan con los dedos",
-     "<strong>Una marca solo donde dos líneas reales se cruzan</strong>, dos por página; la retícula completa, en el modo esqueleto."),
+    ("Líneas de corte y registro cruzadas en las esquinas", "Koto: ninguna marca de corte; los filetes se cuentan con los dedos",
+     "<strong>Una cruz chica, del mismo gris que el borde, donde el borde de sección cruza el límite de la barra lateral</strong>; dos por página como máximo, y la retícula completa solo en el modo esqueleto. Koto no trae ninguna: es lo mínimo de tu idea, y si en la compuerta 2 se lee como adorno, sale."),
     ("Next.js", "", "<strong>No:</strong> Astro, como respondiste."),
 ]
 
@@ -352,9 +382,11 @@ fichas = [
 
 
 def ficha(nombre, hexa, rol, pares):
-    borde = ' style="outline:1px solid var(--linea-seccion)"' if hexa.upper() in ("#FFFFFF", "#F6F6F4", "#EFEFEA") else ""
+    # Un solo atributo style: con dos, el navegador descarta el segundo y el contorno de las fichas claras no existía
+    # (defecto 3 del acta del paso 1). Las tres claras llevan el contorno de sección para verse sobre el papel.
+    estilo = f"background:{hexa}" + (";outline:1px solid var(--linea-seccion);outline-offset:-1px" if hexa.upper() in ("#FFFFFF", "#F6F6F4", "#EFEFEA") else "")
     pp = "".join(f"<li><span>{e(k)}</span> <span class=\"dato\">{num(v)}:1</span></li>" for k, v in pares)
-    return (f'<li class="ficha"><span class="ficha__chip" style="background:{hexa}"{borde}></span>'
+    return (f'<li class="ficha"><span class="ficha__chip" style="{estilo}"></span>'
             f'<div><p class="ficha__nombre"><code>{nombre}</code> <span class="dato">{hexa}</span></p><p class="ficha__rol">{rol}</p>'
             f'<ul class="ficha__pares">{pp}</ul></div></li>')
 
@@ -382,15 +414,15 @@ reg_svg = """
 <div class="registro-caja">
 <svg class="registro-dibujo" viewBox="0 0 1440 360" role="img" aria-labelledby="reg-t reg-d">
   <title id="reg-t">Retícula de 1440 px con las líneas de registro</title>
-  <desc id="reg-d">Margen de 16 px, dieciséis columnas con 8 px entre ellas, una barra lateral de 320 px, el borde de una sección al 18 % y una cruz de registro donde ese borde cruza el borde de la barra.</desc>
+  <desc id="reg-d">Margen de 16 px, dieciséis columnas con 8 px entre ellas, la barra lateral de 320 px (sombreada solo en el dibujo: en la página no tiene fondo ni borde), el borde de una sección al 18 % y una cruz de registro del mismo gris donde ese borde cruza el límite de la barra, rodeada por un círculo que la señala.</desc>
   <rect x="0" y="0" width="1440" height="360" fill="var(--papel)"/>
   <g fill="var(--placa)">COLUMNAS</g>
   <rect x="16" y="40" width="320" height="300" fill="var(--placa)" opacity=".9"/>
   <line x1="16" y1="120.5" x2="1424" y2="120.5" stroke="rgba(17,17,17,.18)" stroke-width="1"/>
   <line x1="352" y1="200.5" x2="1424" y2="200.5" stroke="rgba(17,17,17,.08)" stroke-width="1"/>
   <line x1="352" y1="260.5" x2="1424" y2="260.5" stroke="rgba(17,17,17,.08)" stroke-width="1"/>
-  <g stroke="var(--tinta)" stroke-width="1"><line x1="331.5" y1="120.5" x2="340.5" y2="120.5"/><line x1="336.5" y1="116" x2="336.5" y2="125"/></g>
-  <circle cx="336.5" cy="120.5" r="22" fill="none" stroke="var(--tinta)" stroke-width="2"/>
+  <g stroke="rgba(17,17,17,.18)" stroke-width="1"><line x1="331.5" y1="120.5" x2="340.5" y2="120.5"/><line x1="336.5" y1="116" x2="336.5" y2="125"/></g>
+  <circle cx="336.5" cy="120.5" r="22" fill="none" stroke="var(--gris)" stroke-width="2" stroke-dasharray="4 4"/>
 </svg>
 NUMEROS
 </div>"""
@@ -460,12 +492,25 @@ def panel(clave, titulo, medidas):
 
 
 grafico = "".join(panel(*p) for p in PANELES)
+# Cada celda lleva su rótulo en data-rotulo: bajo 834 px el thead se esconde y el rótulo se ve con ::before (defecto 8).
+# La fuente de cada curva medida va entera, sin recortar (defecto 7).
+COLS = ("stiffness · damping · mass", "ζ", "50 %", "90 %", "99 %", "Sobrepaso")
+
+
+COLSPAN3 = ' colspan="3"'
+
+
+def celda(rotulo, valor, extra=""):
+    return f'<td data-rotulo="{e(rotulo)}"{extra}>{valor}</td>'
+
+
 filas_hitos = "".join(
-    f"<tr><th scope=\"row\">{k}</th><td>{v['stiffness']} · {v['damping']} · {v['mass']}</td><td>{num(v['zeta'], 3)}</td>"
-    f"<td>{v['t50']} ms</td><td>{v['t90']} ms</td><td>{v['t99']} ms</td><td>{num(v['sobrepaso'], 0)} %</td></tr>" for k, v in R.items())
+    f"<tr><th scope=\"row\">{k}</th>{celda(COLS[0], str(v['stiffness']) + ' · ' + str(v['damping']) + ' · ' + str(v['mass']))}"
+    f"{celda(COLS[1], num(v['zeta'], 3))}{celda(COLS[2], str(v['t50']) + ' ms')}{celda(COLS[3], str(v['t90']) + ' ms')}"
+    f"{celda(COLS[4], str(v['t99']) + ' ms')}{celda(COLS[5], num(v['sobrepaso'], 0) + ' %')}</tr>" for k, v in R.items())
 filas_medidas = "".join(
-    f"<tr><th scope=\"row\">{e(M[k]['fuente'].split(':')[0])}</th><td colspan=\"3\">{e(M[k]['fuente'].split(':', 1)[1].strip()[:90])}</td>"
-    f"<td>{M[k].get('t90')} ms</td><td>{M[k].get('t99') if M[k].get('t99') is not None else 'sin dato'}{' ms' if M[k].get('t99') is not None else ''}</td><td>0 %</td></tr>"
+    f"<tr><th scope=\"row\">{e(M[k]['fuente'].split(':')[0])}</th>{celda('Lo medido', e(M[k]['fuente'].split(':', 1)[1].strip()), COLSPAN3)}"
+    f"{celda(COLS[3], str(M[k].get('t90')) + ' ms')}{celda(COLS[4], (str(M[k]['t99']) + ' ms') if M[k].get('t99') is not None else 'sin dato')}{celda(COLS[5], '0 %')}</tr>"
     for k in ("apCursor", "kotoHover", "kotoFeedIn", "apEntrada"))
 
 ABRIR_LAMINA = f'<a href="{img["letras"]["src"]}">Abrir la lámina a tamaño completo</a>'
@@ -486,9 +531,10 @@ seccion_tokens = f"""
     <article class="opcion opcion--mono">
       <p class="rotulo">Mono · DM Mono 500 · interletra +0,03em</p>
       <p class="mono-11">Producto propio · 2026 · Cloudflare Pages</p>
-      <p class="mono-11">Santiago <span class="reloj">14:05</span> <span class="huso">UTC-3</span> · Trabajo (6)</p>
-      <p class="mono-12">Fecha del build: 16-oct-2026 · 21 señales, 30 + 40 + 30</p>
+      <p class="mono-11">Santiago <span class="reloj">--:--</span> <span class="huso">UTC-3</span> · Trabajo (6)</p>
+      <p class="mono-12">Build de la vista previa: f0d911c, 14-oct-2026 · 21 señales, 30 + 40 + 30</p>
       <p class="dato">Forma {num(dm['forma'], 3)} · letras clave {num(dm['clave'], 3)}, la mejor de {len(LM)} · 11 px en mayúsculas para rótulos, 12 px para datos</p>
+      <p class="nota">Las tres líneas son verdaderas, no de adorno: Verifica y Cumple es producto propio de 2026 en Cloudflare Pages; la hora la calcula tu navegador para Santiago; el índice tiene seis entradas; la vista previa del v3 sirve el build de <code>f0d911c</code>, del 14-oct, y el chequeo tiene 21 señales, con pesos de 30, 40 y 30 por bloque (inventario §2 y §4).</p>
     </article>
     <p class="recomiendo">{dos('Recomiendo Mona Sans.', f"Google Sans Flex se parece más a Koto ({num(gsf['forma'], 3)} contra {num(mona['forma'], 3)} en titulares y {num(gsf_c['forma'], 3)} contra {num(mona_c['forma'], 3)} en cuerpo), pero es la letra de Gmail y de los teléfonos Android: un estudio que vende aparecer en Google, escrito con la letra de Google, invita a leer «es de Google». Si prefieres la más cercana, dilo y va esa.")}</p>
     {figura(img['letras'], 'Lámina: la misma frase en la letra de Koto, en Mona Sans, en Google Sans Flex, en Space Grotesk y en Plus Jakarta Sans, y una línea de datos en cuatro letras mono', f"Medidas contra Koto a igual altura de mayúscula, con ancho y peso igualados. Space Grotesk y Plus Jakarta quedan {puesto('display', 'Space Grotesk')[0]}.ª y {puesto('display', 'Plus Jakarta Sans')[0]}.ª de {len(LD)}: no se pueden condensar y miden {num(LD['Space Grotesk']['anchoFrase'])} y {num(LD['Plus Jakarta Sans']['anchoFrase'])} veces el ancho de Koto. Geist Mono es la mono por defecto de Next.js; JetBrains Mono queda {puesto('mono', 'JetBrains Mono')[0]}.ª de {len(LM)}. {ABRIR_LAMINA}.", 'fig--ancha')}
@@ -498,7 +544,7 @@ seccion_tokens = f"""
     <ol class="leyenda">
       <li><span class="rotulo">1</span> Borde de sección al 18 %, de margen a margen: separa una sección de otra.</li>
       <li><span class="rotulo">2</span> Línea al 8 % entre filas de una lista.</li>
-      <li><span class="rotulo">3</span> La única marca de registro: una cruz de 9 px donde el borde de la sección cruza el borde de la barra lateral (x = 336). Dos por página como máximo, y ninguna bajo 1194 px.</li>
+      <li><span class="rotulo">3</span> La única marca de registro (el círculo punteado solo la señala en el dibujo): una cruz de 9 px, del mismo gris que el borde, donde el borde de la sección cruza el límite de la barra lateral (x = 336). Ese límite no se dibuja: la cruz es lo único que lo marca. Dos por página como máximo y ninguna bajo 1194 px. Koto no trae ninguna; es lo mínimo de tu idea de los planos, y si se lee como adorno, sale. Este tablero la lleva en las secciones 2 y 5.</li>
       <li><span class="rotulo">4</span> Las 16 columnas solo se ven en el modo esqueleto, leídas del CSS de la página. Dibujadas de adorno serían decoración.</li>
     </ol>
 
@@ -533,8 +579,8 @@ seccion_tokens = f"""
     <div class="grafico">{grafico}</div>
     <div class="tabla-envuelta">
       <table class="tabla">
-        <caption class="rotulo">Calculado con el <code>spring()</code> de Motion 13.5.0 (datos/resortes.json)</caption>
-        <thead><tr><th scope="col">Resorte o curva</th><th scope="col">stiffness · damping · mass</th><th scope="col">ζ</th><th scope="col">50 %</th><th scope="col">90 %</th><th scope="col">99 %</th><th scope="col">Sobrepaso</th></tr></thead>
+        <caption class="rotulo">Calculado con el <code>spring()</code> de Motion 13.5.0 (<code>datos/resortes.json</code>)</caption>
+        <thead><tr><th scope="col">Resorte o curva</th><th scope="col">stiffness · damping · mass</th><th scope="col"><span class="sin-mayus">ζ</span></th><th scope="col">50 %</th><th scope="col">90 %</th><th scope="col">99 %</th><th scope="col">Sobrepaso</th></tr></thead>
         <tbody>{filas_hitos}{filas_medidas}</tbody>
       </table>
     </div>
@@ -544,6 +590,19 @@ seccion_tokens = f"""
 
 # ---------------------------------------------------------------- sección 5: casos y datos
 TIPO = {"cliente": "Cliente", "propio": "Propio", "herramienta": "Herramienta propia", "concepto": "Concepto"}
+
+
+# La nota de las mediciones de carga se repetía igual en seis filas (defecto 10 del acta): va una vez, arriba de los
+# casos, y en cada fila queda su resumen. Después de los dos puntos, minúscula.
+NOTA_CARGA = "Los kB, sí, con fecha y método. Los ms, no como «velocidad para tus clientes»: son de laboratorio y desde EE.UU."
+assert sum(m.get("publicable") == NOTA_CARGA for p in inv["proyectos"] for m in p.get("metricas") or []) >= 2
+
+
+def publicable(m):
+    t = m.get("publicable", "sin decir")
+    if t == NOTA_CARGA:
+        return "kB sí, ms no"
+    return t[:1].lower() + t[1:]
 
 
 def caso(p):
@@ -556,14 +615,14 @@ def caso(p):
             valor = f"{m['a390']['kbTransferidos']} kB a 390 · {m['a1440']['kbTransferidos']} kB a 1440, transferidos"
         else:
             valor = "ver el inventario"
-        med.append(f"<li><span class=\"t1\">{e(m['nombre'])}</span>: <span class=\"dato\">{e(valor)}</span> <span class=\"t2\">({e(fecha[:10] if fecha[:4].isdigit() else fecha)}. Publicable: {e(m.get('publicable', 'sin decir'))})</span></li>")
+        med.append(f"<li><span class=\"t1\">{e(m['nombre'])}</span>: <span class=\"dato\">{e(valor)}</span> <span class=\"t2\">({e(fecha[:10] if fecha[:4].isdigit() else fecha)} · publicable: {e(publicable(m))})</span></li>")
     medido = "<ul class=\"lista lista--chica\">" + "".join(med) + "</ul>" if med else "<p class=\"t2\">Nada medido hoy.</p>"
     sin = "".join(f"<li>{e(s)}</li>" for s in (p.get("sinMetrica") or [])[:3])
     ingr = " · ".join(e(i["etiqueta"]) for i in p.get("ingredientes", []))
     return f"""
       <li class="caso">
         <p class="caso__ficha rotulo">{TIPO.get(p['tipo'], e(p['tipo']))} · {p['anio']}</p>
-        <h4>{e(p['nombre'])}</h4>
+        <h3>{e(p['nombre'])}</h3>
         <p class="caso__hizo">{e(p['queSeHizo'])}</p>
         <p class="caso__ingr dato">{ingr}</p>
         <div class="caso__col caso__col--medido"><p class="rotulo">Medido</p>{medido}</div>
@@ -585,6 +644,7 @@ seccion_casos = f"""
       {figura(img['o_verifica'], 'Portada de Verifica y Cumple: titular ¿Estás seguro? en blanco y lima sobre azul', 'Verifica y Cumple, plano en su marco: así va el trabajo, sin maqueta de computador.')}
       {figura(img['o_combeau'], 'Portada del sitio de Bernardo Combeau: retrato con luz verde y la frase sobre el retrato', 'Combeau, fotografía: el caso tiene permiso verbal; medirlo o grabarlo pide su OK escrito.')}
     </div>
+    <p class="nota"><strong>Las mediciones de carga y peso</strong> son de laboratorio, corridas desde EE.UU. Se pueden publicar los kB, con fecha y método; los ms no, como «velocidad para tus clientes». En cada caso queda como «kB sí, ms no».</p>
     <ol class="casos">{casos_html}</ol>
     <div class="tres-listas">
       <div><h3>Telemetría verdadera</h3><ul class="lista lista--chica">{tele}</ul></div>
@@ -633,14 +693,15 @@ CSS = """
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--papel); color: var(--tinta); font: 390 16px/1.4 var(--f-letra); font-stretch: 100%; -webkit-font-smoothing: antialiased; }
   .marco { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 16px 64px; }
-  h1, h2, h3, h4 { font-family: var(--f-letra); font-stretch: 89%; font-weight: 340; margin: 0; text-wrap: balance; }
+  h1, h2, h3 { font-family: var(--f-letra); font-stretch: 89%; font-weight: 340; margin: 0; text-wrap: balance; }
   h1 { font-size: clamp(36px, 3.4vw, 48px); line-height: 1; letter-spacing: -.01em; max-width: 22ch; }
   h2 { font-size: clamp(26px, 2.65vw, 38px); line-height: 1.1; letter-spacing: -.01em; }
   h3 { font-size: clamp(23px, 1.7vw, 24px); line-height: 1.2; margin-top: 40px; }
-  h4 { font-size: 23px; line-height: 1.2; }
   p, ul, ol, dl, figure { margin: 0; }
   a { color: var(--tinta); text-underline-offset: 3px; }
-  code { font-family: var(--f-mono); font-size: .8em; letter-spacing: .01em; word-break: break-word; }
+  code { font-family: var(--f-mono); font-size: max(11px, .8em); letter-spacing: .01em; word-break: break-word; }
+  /* dentro de un rótulo (11 px, mayúsculas) el código va a 1em y sin mayúsculas: spring(), datos/resortes.json */
+  .rotulo code, caption code, .valores dt code, .mono-11 code, thead code { font-size: 1em; text-transform: none; letter-spacing: 0; }
   strong, b, th, legend, caption { font-weight: inherit; }
   strong { color: var(--tinta); }
   :focus-visible { outline: 2px solid var(--tinta); outline-offset: 3px; }
@@ -668,8 +729,8 @@ CSS = """
     .seccion { grid-template-columns: 320px minmax(0, 1fr); gap: 16px; }
     .seccion__lado { position: sticky; top: 16px; align-self: start; padding-right: 24px; }
     .registro::before, .registro::after { content: ""; position: absolute; top: -5px; left: 315px; width: 9px; height: 9px; pointer-events: none; }
-    .registro::before { border-top: 1px solid var(--tinta); top: -1px; height: 0; }
-    .registro::after { border-left: 1px solid var(--tinta); left: 319px; width: 0; }
+    .registro::before { border-top: 1px solid var(--linea-seccion); top: -1px; height: 0; }
+    .registro::after { border-left: 1px solid var(--linea-seccion); left: 319px; width: 0; }
   }
 
   /* lo que pediste */
@@ -707,6 +768,7 @@ CSS = """
   .puntos p { color: var(--gris); }
   .puntos p > .rotulo { display: block; margin-bottom: 2px; }
   .puntos .puntos__decision { color: var(--tinta); }
+  .puntos__img { display: block; width: 100%; max-width: 240px; height: auto; margin-top: 10px; border-radius: 4px; }
   @media (min-width: 834px) { .puntos li { grid-template-columns: minmax(0, 1fr) minmax(0, .9fr) minmax(0, 1.3fr); gap: 16px; } }
 
   /* fichas de color */
@@ -792,6 +854,7 @@ CSS = """
   .tabla { border-collapse: collapse; width: 100%; font-size: 14px; }
   .tabla caption { text-align: left; padding-bottom: 8px; }
   .tabla th, .tabla td { text-align: left; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--linea); vertical-align: top; }
+  .sin-mayus { text-transform: none; }
   .tabla thead th { font: 500 11px/1.3 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--gris); border-bottom: 1px solid var(--linea-seccion); }
   .tabla td { color: var(--gris); font-family: var(--f-mono); font-size: 12px; white-space: nowrap; }
   .tabla td[colspan] { white-space: normal; }
@@ -801,16 +864,19 @@ CSS = """
     .tabla th, .tabla td { border: 0; padding: 0; }
     .tabla th[scope="row"] { grid-column: 1 / -1; }
     .tabla td[colspan] { grid-column: 1 / -1; }
+    .tabla td[data-rotulo="ζ"]::before { text-transform: none; }
+    .tabla td::before { content: attr(data-rotulo); display: block; font: 500 11px/1.3 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--gris); }
   }
 
   /* casos */
   .casos { list-style: none; padding: 0; border-top: 1px solid var(--linea-seccion); }
   .caso { display: grid; gap: 8px; padding: 18px 0; border-bottom: 1px solid var(--linea); }
+  .caso h3 { margin-top: 0; font-size: 23px; }
   .caso__hizo { color: var(--gris); max-width: 62ch; }
   .caso__col { display: grid; gap: 4px; align-content: start; margin-top: 8px; }
   @media (min-width: 1194px) {
     .caso { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto auto auto auto 1fr; gap: 8px 16px; }
-    .caso__ficha, .caso h4, .caso__hizo, .caso__ingr { grid-column: 1; }
+    .caso__ficha, .caso h3, .caso__hizo, .caso__ingr { grid-column: 1; }
     .caso__col { grid-row: 1 / span 5; margin-top: 0; }
     .caso__col--medido { grid-column: 2; }
     .caso__col--sin { grid-column: 3; }
@@ -973,7 +1039,7 @@ pagina = f"""<meta charset="utf-8">
   <header class="cab">
     <div class="cab__fila">
       <p class="rotulo">SpindleLab v3 · E12 · compuerta 1 · 16 de octubre de 2026</p>
-      <p class="rotulo">Santiago <span class="reloj">14:05</span> <span class="huso">UTC-3</span></p>
+      <p class="rotulo">Santiago <span class="reloj">--:--</span> <span class="huso">UTC-3</span></p>
     </div>
     <h1>El laboratorio: lo que medimos de Koto y qué hacemos con tu brief</h1>
     <p class="intro">{dos('Koto manda y tu brief orienta.', 'Aquí está lo medido, lo que se toma, lo que no y por qué, los tokens dibujados y lo que decides hoy para pasar a las dos direcciones.')}</p>
@@ -1025,4 +1091,5 @@ total = sum(m["bytes"] for m in manifiesto)
 if total > MAX_TOTAL:
     sys.exit(f"img/ suma {total} bytes, pasa de 14 MB")
 json.dump({"imagenes": manifiesto, "total": total}, open(os.path.join(IMG, "manifiesto.json"), "w"), ensure_ascii=False, indent=1)
-print(f"tablero.html {len(pagina)} bytes · {len(manifiesto)} imágenes · {total / 1024 / 1024:.2f} MB")
+mayor = max(m["bytes"] for m in manifiesto)
+print(f"tablero.html {len(pagina)} bytes · {len(manifiesto)} imágenes · {total / 1e6:.2f} MB (kB = 1.000 bytes) · la mayor {mayor / 1e3:.0f} kB")

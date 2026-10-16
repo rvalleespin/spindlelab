@@ -145,6 +145,20 @@
    "calidad": 82
   },
   {
+   "img": "img/ap-etiquetas.jpg",
+   "origen": "marketing/oficina/obras-web/spindlelab-v3/e12/medicion/accept-and-proceed/capturas/trabajo-1440-pantalla1.jpg",
+   "ancho": 360,
+   "alto": 372,
+   "bytes": 19564,
+   "calidad": 82,
+   "recorte": [
+    32,
+    444,
+    392,
+    816
+   ]
+  },
+  {
    "img": "img/letras-comparadas.jpg",
    "origen": "herramientas/letras.py",
    "ancho": 1600,
@@ -169,5 +183,5 @@
    "calidad": 82
   }
  ],
- "total": 1611702
+ "total": 1631266
 }

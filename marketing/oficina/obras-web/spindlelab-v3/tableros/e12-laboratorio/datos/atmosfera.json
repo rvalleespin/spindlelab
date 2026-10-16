@@ -1,0 +1,1447 @@
+{
+ "fecha": "2026-10-16T21:51:32.533Z",
+ "medidoPor": "Lucía (dirección de arte), herramientas/atmosfera.mjs",
+ "navegador": "141.0.7390.37",
+ "ancho": 1440,
+ "paginas": {
+  "koto/home": {
+   "url": "https://koto.com/",
+   "elementos": 2223,
+   "degradadosSinLeerColor": 0,
+   "degradados": 13,
+   "degradadosVisibles": 3,
+   "degradadosConColor": 0,
+   "degradadosPurpura": 0,
+   "detalle": [
+    {
+     "sel": "div.CybotCookiebotDialogContentWrapper > div.CybotCookiebotScrollAreaSide > div.CybotCookiebotFader.CybotCookiebotFaderLeft",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(to right, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "colores": [
+      {
+       "color": "rgb(22, 22, 22)",
+       "hex": "#161616",
+       "alfa": 1,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0.0862745 0.0862745 0.0862745 / 0.8)",
+       "hex": "#161616",
+       "alfa": 0.8,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0 0 0 / 0)",
+       "hex": "#000000",
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.CybotCookiebotDialogContentWrapper > div.CybotCookiebotScrollAreaSide > div.CybotCookiebotFader.CybotCookiebotFaderRight",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(to left, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "colores": [
+      {
+       "color": "rgb(22, 22, 22)",
+       "hex": "#161616",
+       "alfa": 1,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0.0862745 0.0862745 0.0862745 / 0.8)",
+       "hex": "#161616",
+       "alfa": 0.8,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0 0 0 / 0)",
+       "hex": "#000000",
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.CybotCookiebotScrollContainer > div.CybotCookiebotScrollArea > div.CybotCookiebotFader",
+     "w": 354,
+     "h": 17,
+     "visible": true,
+     "valor": "linear-gradient(to top, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "colores": [
+      {
+       "color": "rgb(22, 22, 22)",
+       "hex": "#161616",
+       "alfa": 1,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0.0862745 0.0862745 0.0862745 / 0.8)",
+       "hex": "#161616",
+       "alfa": 0.8,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0 0 0 / 0)",
+       "hex": "#000000",
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.CybotCookiebotScrollContainer.CybotCookiebotDialogHide > div.CybotCookiebotDialogTabPanel.CybotCookiebotDialogHide > div.CybotCookiebotFader",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(to top, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "colores": [
+      {
+       "color": "rgb(22, 22, 22)",
+       "hex": "#161616",
+       "alfa": 1,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0.0862745 0.0862745 0.0862745 / 0.8)",
+       "hex": "#161616",
+       "alfa": 0.8,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0 0 0 / 0)",
+       "hex": "#000000",
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.CybotCookiebotScrollContainer.CybotCookiebotDialogHide > div.CybotCookiebotDialogTabPanel.CybotCookiebotDialogHide > div.CybotCookiebotFader",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(to top, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "colores": [
+      {
+       "color": "rgb(22, 22, 22)",
+       "hex": "#161616",
+       "alfa": 1,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0.0862745 0.0862745 0.0862745 / 0.8)",
+       "hex": "#161616",
+       "alfa": 0.8,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0 0 0 / 0)",
+       "hex": "#000000",
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.CybotCookiebotScrollContainer.CybotCookiebotDialogHide > div.CybotCookiebotDialogTabPanel.CybotCookiebotDialogHide > div.CybotCookiebotFader",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(to top, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "colores": [
+      {
+       "color": "rgb(22, 22, 22)",
+       "hex": "#161616",
+       "alfa": 1,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0.0862745 0.0862745 0.0862745 / 0.8)",
+       "hex": "#161616",
+       "alfa": 0.8,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0 0 0 / 0)",
+       "hex": "#000000",
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      }
+     ]
+    },
+    {
+     "sel": "button.group.pointer-events-auto > span.relative.block > span.absolute.top-0",
+     "w": 366,
+     "h": 220,
+     "visible": true,
+     "valor": "linear-gradient(oklab(0 0 0 / 0) 0px, oklab(0 0 0 / 0) 50%, oklab(0.122118 0.00000555813 0.00000243634 / 0.8) 100%)",
+     "colores": [
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0.122118 0.00000555813 0.00000243634 / 0.8)",
+       "hex": null,
+       "alfa": 0.8,
+       "oklch": {
+        "L": 0.122,
+        "C": 0,
+        "H": 23.7
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.relative.h-full > div.relative.h-full > div.absolute.inset-0",
+     "w": 370,
+     "h": 222,
+     "visible": true,
+     "valor": "linear-gradient(oklab(0 0 0 / 0) 0px, oklab(0 0 0 / 0) 55%, oklab(0.122118 0.00000555813 0.00000243634 / 0.7) 100%)",
+     "colores": [
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0.122118 0.00000555813 0.00000243634 / 0.7)",
+       "hex": null,
+       "alfa": 0.7,
+       "oklch": {
+        "L": 0.122,
+        "C": 0,
+        "H": 23.7
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.relative.h-full > div.relative.h-full > div.absolute.inset-0",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(oklab(0 0 0 / 0) 0px, oklab(0 0 0 / 0) 55%, oklab(0.122118 0.00000555813 0.00000243634 / 0.7) 100%)",
+     "colores": [
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0.122118 0.00000555813 0.00000243634 / 0.7)",
+       "hex": null,
+       "alfa": 0.7,
+       "oklch": {
+        "L": 0.122,
+        "C": 0,
+        "H": 23.7
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.relative.h-full > div.relative.h-full > div.absolute.inset-0",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(oklab(0 0 0 / 0) 0px, oklab(0 0 0 / 0) 55%, oklab(0.122118 0.00000555813 0.00000243634 / 0.7) 100%)",
+     "colores": [
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0.122118 0.00000555813 0.00000243634 / 0.7)",
+       "hex": null,
+       "alfa": 0.7,
+       "oklch": {
+        "L": 0.122,
+        "C": 0,
+        "H": 23.7
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.relative.h-full > div.relative.h-full > div.absolute.inset-0",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(oklab(0 0 0 / 0) 0px, oklab(0 0 0 / 0) 55%, oklab(0.122118 0.00000555813 0.00000243634 / 0.7) 100%)",
+     "colores": [
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0.122118 0.00000555813 0.00000243634 / 0.7)",
+       "hex": null,
+       "alfa": 0.7,
+       "oklch": {
+        "L": 0.122,
+        "C": 0,
+        "H": 23.7
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.relative.h-full > div.relative.h-full > div.absolute.inset-0",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(oklab(0 0 0 / 0) 0px, oklab(0 0 0 / 0) 55%, oklab(0.122118 0.00000555813 0.00000243634 / 0.7) 100%)",
+     "colores": [
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0.122118 0.00000555813 0.00000243634 / 0.7)",
+       "hex": null,
+       "alfa": 0.7,
+       "oklch": {
+        "L": 0.122,
+        "C": 0,
+        "H": 23.7
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.relative.h-full > div.relative.h-full > div.absolute.inset-0",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(oklab(0 0 0 / 0) 0px, oklab(0 0 0 / 0) 55%, oklab(0.122118 0.00000555813 0.00000243634 / 0.7) 100%)",
+     "colores": [
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0.122118 0.00000555813 0.00000243634 / 0.7)",
+       "hex": null,
+       "alfa": 0.7,
+       "oklch": {
+        "L": 0.122,
+        "C": 0,
+        "H": 23.7
+       }
+      }
+     ]
+    }
+   ],
+   "vidrio": [
+    {
+     "sel": "html.__variable_687e12.__variable_7e9e98 > body.text-3.tracking-0 > div.CybotEdge.CybotCookiebotDialogActive",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 430,
+     "h": 42
+    },
+    {
+     "sel": "div > div > div.backdrop-blur-glass-strong.fixed",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.fixed.top-4 > a > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.sm:hidden > button > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "button > span.sm:hidden > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div > div > div.backdrop-blur-glass-medium.pointer-events-none",
+     "filter": "none",
+     "backdropFilter": "blur(20px)",
+     "w": 132,
+     "h": 40
+    },
+    {
+     "sel": "button > span.sm:hidden > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.pointer-events-none.absolute > button > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.pointer-events-none.absolute > button > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.flex.flex-col > div.flex.items-center > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 51,
+     "h": 27
+    },
+    {
+     "sel": "div.flex.flex-col > div.flex.items-center > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 51,
+     "h": 27
+    },
+    {
+     "sel": "div.flex.flex-col > div.flex.items-center > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 51,
+     "h": 27
+    },
+    {
+     "sel": "span.absolute.top-0 > span.mt-auto.flex > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 26,
+     "h": 27
+    },
+    {
+     "sel": "body.text-3.tracking-0 > div > div.backdrop-blur-glass-medium.pointer-events-none",
+     "filter": "none",
+     "backdropFilter": "blur(20px)",
+     "w": 1425,
+     "h": 900
+    },
+    {
+     "sel": "html.__variable_687e12.__variable_7e9e98 > body.text-3.tracking-0 > div.backdrop-blur-glass-medium.ease-[cubic-bezier(0.15,",
+     "filter": "none",
+     "backdropFilter": "blur(20px)",
+     "w": 1425,
+     "h": 900
+    },
+    {
+     "sel": "body.text-3.tracking-0 > div.fixed.top-0 > div.backdrop-blur-glass-medium.ease-[cubic-bezier(0.15,",
+     "filter": "none",
+     "backdropFilter": "blur(20px)",
+     "w": 1425,
+     "h": 900
+    },
+    {
+     "sel": "div.pointer-events-none.absolute > div.hidden.w-[370px] > div.backdrop-blur-glass-medium.h-12",
+     "filter": "none",
+     "backdropFilter": "blur(20px)",
+     "w": 370,
+     "h": 48
+    },
+    {
+     "sel": "div.ml-auto.flex > button > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 26,
+     "h": 26
+    },
+    {
+     "sel": "div.ml-auto.flex > button > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 26,
+     "h": 26
+    },
+    {
+     "sel": "div.ml-auto.flex > button > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    }
+   ],
+   "vidrioTotal": 36,
+   "canvasYSvgGrandes": []
+  },
+  "koto/trabajo": {
+   "url": "https://koto.com/work",
+   "elementos": 3391,
+   "degradadosSinLeerColor": 0,
+   "degradados": 12,
+   "degradadosVisibles": 2,
+   "degradadosConColor": 0,
+   "degradadosPurpura": 0,
+   "detalle": [
+    {
+     "sel": "div.CybotCookiebotDialogContentWrapper > div.CybotCookiebotScrollAreaSide > div.CybotCookiebotFader.CybotCookiebotFaderLeft",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(to right, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "colores": [
+      {
+       "color": "rgb(22, 22, 22)",
+       "hex": "#161616",
+       "alfa": 1,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0.0862745 0.0862745 0.0862745 / 0.8)",
+       "hex": "#161616",
+       "alfa": 0.8,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0 0 0 / 0)",
+       "hex": "#000000",
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.CybotCookiebotDialogContentWrapper > div.CybotCookiebotScrollAreaSide > div.CybotCookiebotFader.CybotCookiebotFaderRight",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(to left, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "colores": [
+      {
+       "color": "rgb(22, 22, 22)",
+       "hex": "#161616",
+       "alfa": 1,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0.0862745 0.0862745 0.0862745 / 0.8)",
+       "hex": "#161616",
+       "alfa": 0.8,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0 0 0 / 0)",
+       "hex": "#000000",
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.CybotCookiebotScrollContainer > div.CybotCookiebotScrollArea > div.CybotCookiebotFader",
+     "w": 354,
+     "h": 17,
+     "visible": true,
+     "valor": "linear-gradient(to top, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "colores": [
+      {
+       "color": "rgb(22, 22, 22)",
+       "hex": "#161616",
+       "alfa": 1,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0.0862745 0.0862745 0.0862745 / 0.8)",
+       "hex": "#161616",
+       "alfa": 0.8,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0 0 0 / 0)",
+       "hex": "#000000",
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.CybotCookiebotScrollContainer.CybotCookiebotDialogHide > div.CybotCookiebotDialogTabPanel.CybotCookiebotDialogHide > div.CybotCookiebotFader",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(to top, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "colores": [
+      {
+       "color": "rgb(22, 22, 22)",
+       "hex": "#161616",
+       "alfa": 1,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0.0862745 0.0862745 0.0862745 / 0.8)",
+       "hex": "#161616",
+       "alfa": 0.8,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0 0 0 / 0)",
+       "hex": "#000000",
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.CybotCookiebotScrollContainer.CybotCookiebotDialogHide > div.CybotCookiebotDialogTabPanel.CybotCookiebotDialogHide > div.CybotCookiebotFader",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(to top, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "colores": [
+      {
+       "color": "rgb(22, 22, 22)",
+       "hex": "#161616",
+       "alfa": 1,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0.0862745 0.0862745 0.0862745 / 0.8)",
+       "hex": "#161616",
+       "alfa": 0.8,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0 0 0 / 0)",
+       "hex": "#000000",
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.CybotCookiebotScrollContainer.CybotCookiebotDialogHide > div.CybotCookiebotDialogTabPanel.CybotCookiebotDialogHide > div.CybotCookiebotFader",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(to top, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "colores": [
+      {
+       "color": "rgb(22, 22, 22)",
+       "hex": "#161616",
+       "alfa": 1,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0.0862745 0.0862745 0.0862745 / 0.8)",
+       "hex": "#161616",
+       "alfa": 0.8,
+       "oklch": {
+        "L": 0.2,
+        "C": 0,
+        "H": 89.9
+       }
+      },
+      {
+       "color": "color(srgb 0 0 0 / 0)",
+       "hex": "#000000",
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.relative.h-full > div.relative.h-full > div.absolute.inset-0",
+     "w": 370,
+     "h": 222,
+     "visible": true,
+     "valor": "linear-gradient(oklab(0 0 0 / 0) 0px, oklab(0 0 0 / 0) 55%, oklab(0.122118 0.00000555813 0.00000243634 / 0.7) 100%)",
+     "colores": [
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0.122118 0.00000555813 0.00000243634 / 0.7)",
+       "hex": null,
+       "alfa": 0.7,
+       "oklch": {
+        "L": 0.122,
+        "C": 0,
+        "H": 23.7
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.relative.h-full > div.relative.h-full > div.absolute.inset-0",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(oklab(0 0 0 / 0) 0px, oklab(0 0 0 / 0) 55%, oklab(0.122118 0.00000555813 0.00000243634 / 0.7) 100%)",
+     "colores": [
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0.122118 0.00000555813 0.00000243634 / 0.7)",
+       "hex": null,
+       "alfa": 0.7,
+       "oklch": {
+        "L": 0.122,
+        "C": 0,
+        "H": 23.7
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.relative.h-full > div.relative.h-full > div.absolute.inset-0",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(oklab(0 0 0 / 0) 0px, oklab(0 0 0 / 0) 55%, oklab(0.122118 0.00000555813 0.00000243634 / 0.7) 100%)",
+     "colores": [
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0.122118 0.00000555813 0.00000243634 / 0.7)",
+       "hex": null,
+       "alfa": 0.7,
+       "oklch": {
+        "L": 0.122,
+        "C": 0,
+        "H": 23.7
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.relative.h-full > div.relative.h-full > div.absolute.inset-0",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(oklab(0 0 0 / 0) 0px, oklab(0 0 0 / 0) 55%, oklab(0.122118 0.00000555813 0.00000243634 / 0.7) 100%)",
+     "colores": [
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0.122118 0.00000555813 0.00000243634 / 0.7)",
+       "hex": null,
+       "alfa": 0.7,
+       "oklch": {
+        "L": 0.122,
+        "C": 0,
+        "H": 23.7
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.relative.h-full > div.relative.h-full > div.absolute.inset-0",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(oklab(0 0 0 / 0) 0px, oklab(0 0 0 / 0) 55%, oklab(0.122118 0.00000555813 0.00000243634 / 0.7) 100%)",
+     "colores": [
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0.122118 0.00000555813 0.00000243634 / 0.7)",
+       "hex": null,
+       "alfa": 0.7,
+       "oklch": {
+        "L": 0.122,
+        "C": 0,
+        "H": 23.7
+       }
+      }
+     ]
+    },
+    {
+     "sel": "div.relative.h-full > div.relative.h-full > div.absolute.inset-0",
+     "w": 0,
+     "h": 0,
+     "visible": false,
+     "valor": "linear-gradient(oklab(0 0 0 / 0) 0px, oklab(0 0 0 / 0) 55%, oklab(0.122118 0.00000555813 0.00000243634 / 0.7) 100%)",
+     "colores": [
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0 0 0 / 0)",
+       "hex": null,
+       "alfa": 0,
+       "oklch": {
+        "L": 0,
+        "C": 0,
+        "H": 0
+       }
+      },
+      {
+       "color": "oklab(0.122118 0.00000555813 0.00000243634 / 0.7)",
+       "hex": null,
+       "alfa": 0.7,
+       "oklch": {
+        "L": 0.122,
+        "C": 0,
+        "H": 23.7
+       }
+      }
+     ]
+    }
+   ],
+   "vidrio": [
+    {
+     "sel": "html.__variable_687e12.__variable_7e9e98 > body.text-3.tracking-0 > div.CybotEdge.CybotCookiebotDialogActive",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 430,
+     "h": 42
+    },
+    {
+     "sel": "div.relative.h-9 > div.absolute.top-1/2 > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div > div > div.backdrop-blur-glass-strong.fixed",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.fixed.top-4 > a > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.sm:hidden > button > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "button > span.sm:hidden > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div > div > div.backdrop-blur-glass-medium.pointer-events-none",
+     "filter": "none",
+     "backdropFilter": "blur(20px)",
+     "w": 132,
+     "h": 40
+    },
+    {
+     "sel": "button > span.sm:hidden > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.flex.gap-x-3 > div.ml-auto.shrink-0 > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 26,
+     "h": 26
+    },
+    {
+     "sel": "div.bg-off-black.flex > a.w-full > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.bg-off-black.flex > a.w-full > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.fixed.bottom-0 > button > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.bg-off-black.transition-width > span.whitespace-nowrap.transition-opacity > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 28,
+     "h": 28
+    },
+    {
+     "sel": "div.relative > div.pointer-events-none.h-[38px] > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 28,
+     "h": 28
+    },
+    {
+     "sel": "button.absolute.top-0 > span > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 86,
+     "h": 39
+    },
+    {
+     "sel": "button.absolute.top-0 > span > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 38,
+     "h": 38
+    },
+    {
+     "sel": "div.bg-off-black.transition-width > button.absolute.top-0 > span.group.backdrop-blur-glass-strong",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 38,
+     "h": 38
+    },
+    {
+     "sel": "main > div.fixed.top-0 > div.backdrop-blur-glass-strong.md:backdrop-blur-glass-medium",
+     "filter": "none",
+     "backdropFilter": "blur(20px)",
+     "w": 1425,
+     "h": 900
+    },
+    {
+     "sel": "div.flex.flex-col > a > div.backdrop-blur-glass-strong.flex",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 294,
+     "h": 101
+    },
+    {
+     "sel": "div.flex.flex-col > a > div.backdrop-blur-glass-strong.flex",
+     "filter": "none",
+     "backdropFilter": "blur(40px)",
+     "w": 294,
+     "h": 101
+    }
+   ],
+   "vidrioTotal": 47,
+   "canvasYSvgGrandes": []
+  },
+  "acceptAndProceed/home": {
+   "url": "https://www.acceptandproceed.com/",
+   "elementos": 753,
+   "degradadosSinLeerColor": 0,
+   "degradados": 0,
+   "degradadosVisibles": 0,
+   "degradadosConColor": 0,
+   "degradadosPurpura": 0,
+   "detalle": [],
+   "vidrio": [
+    {
+     "sel": "html.w-mod-js.w-mod-ix > body.body-light > header.header",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 1440,
+     "h": 64
+    },
+    {
+     "sel": "div.p-relative > div.cursor-area.no-blend-mode > div.play-button-wrapper.prev_slide",
+     "filter": "none",
+     "backdropFilter": "blur(5px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "body.body-light > div.custom-cursor-wrap > div.custom-cursor",
+     "filter": "none",
+     "backdropFilter": "blur(5px)",
+     "w": 16,
+     "h": 16
+    },
+    {
+     "sel": "html.w-mod-js.w-mod-ix > body.body-light > div.clock-overlay",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "main.main > div.home-s4.eva-animated-background > div.eva-bg-layer.home-section-version",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.eva-visible-details > div.eva-listen-button-wrap > div.eva-podcast-overlay",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.placeholder_wrap_content > div.eva-thumbnail-video-wrap > div.eva-video-overlay",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.eva-visible-details > div.eva-listen-button-wrap > div.eva-podcast-overlay",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.placeholder_wrap_content > div.eva-thumbnail-video-wrap.w-condition-invisible > div.eva-video-overlay",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.eva-visible-details > div.eva-listen-button-wrap > div.eva-podcast-overlay",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.placeholder_wrap_content > div.eva-thumbnail-video-wrap.w-condition-invisible > div.eva-video-overlay",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.eva-visible-details > div.eva-listen-button-wrap > div.eva-podcast-overlay",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.placeholder_wrap_content > div.eva-thumbnail-video-wrap.w-condition-invisible > div.eva-video-overlay",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.eva-visible-details > div.eva-listen-button-wrap > div.eva-podcast-overlay",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 0,
+     "h": 0
+    },
+    {
+     "sel": "div.placeholder_wrap_content > div.eva-thumbnail-video-wrap.w-condition-invisible > div.eva-video-overlay",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 0,
+     "h": 0
+    }
+   ],
+   "vidrioTotal": 15,
+   "canvasYSvgGrandes": []
+  },
+  "acceptAndProceed/trabajo": {
+   "url": "https://www.acceptandproceed.com/work",
+   "elementos": 749,
+   "degradadosSinLeerColor": 0,
+   "degradados": 0,
+   "degradadosVisibles": 0,
+   "degradadosConColor": 0,
+   "degradadosPurpura": 0,
+   "detalle": [],
+   "vidrio": [
+    {
+     "sel": "html.w-mod-js.w-mod-ix > body.body-light > header.header",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 1440,
+     "h": 64
+    },
+    {
+     "sel": "body.body-light > div.custom-cursor-wrap > div.custom-cursor",
+     "filter": "none",
+     "backdropFilter": "blur(5px)",
+     "w": 16,
+     "h": 16
+    },
+    {
+     "sel": "html.w-mod-js.w-mod-ix > body.body-light > div.clock-overlay",
+     "filter": "none",
+     "backdropFilter": "blur(15px)",
+     "w": 0,
+     "h": 0
+    }
+   ],
+   "vidrioTotal": 3,
+   "canvasYSvgGrandes": []
+  }
+ }
+}

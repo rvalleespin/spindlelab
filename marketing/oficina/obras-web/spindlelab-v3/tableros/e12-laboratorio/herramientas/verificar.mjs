@@ -13,6 +13,10 @@
 //   - el resorte con mouse, con teclado (flechas en los botones de opción, Enter en «Mover») y con movimiento
 //     reducido (el bloque salta, sin resorte);
 //   - el gráfico: la cruz y los valores al pasar el puntero.
+//   Segunda vuelta (defectos del acta del paso 1): la jerarquía de encabezados sin saltos y el texto más chico (piso
+//   de 11 px) a cada ancho; el contorno de las fichas claras; el color de la cruz de registro; los rótulos de la tabla de
+//   resortes bajo 834 px; que el HTML no traiga una hora fija ni la nota de carga repetida. Capturas nuevas de las
+//   fichas, la tabla a 390, el registro y la etiqueta medida de A&P.
 // Escribe `verificacion/resultado.json` y unas pocas capturas de las demos en `verificacion/` (JPEG chicos). Las
 // capturas de página completa van fuera del repo (carpeta temporal), solo para mirarlas.
 //
@@ -141,6 +145,24 @@ for (const ancho of [360, 390, 768, 1440]) {
       modoCursor: document.documentElement.className,
       contraste: { nodos: medidos, bajoDe45: bajos },
       alto: document.documentElement.scrollHeight,
+      saltos: (() => {
+        const hs = [...document.querySelectorAll('h1, h2, h3, h4, h5, h6')].map((h) => [+h.tagName[1], h.textContent.trim().slice(0, 40)]);
+        const out = [];
+        for (let k = 1; k < hs.length; k++) if (hs[k][0] > hs[k - 1][0] + 1) out.push(`h${hs[k - 1][0]} → h${hs[k][0]} «${hs[k][1]}»`);
+        return out;
+      })(),
+      letraMasChica: (() => {
+        let min = 99, donde = '';
+        document.querySelectorAll('body *').forEach((el) => {
+          if (el.closest('svg, script, style')) return;
+          if (![...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim())) return;
+          const cs = getComputedStyle(el);
+          if (cs.display === 'none' || cs.visibility === 'hidden') return;
+          const t = parseFloat(cs.fontSize);
+          if (t < min) { min = t; donde = el.tagName.toLowerCase() + ' «' + el.textContent.trim().slice(0, 30) + '»'; }
+        });
+        return { px: min, donde };
+      })(),
     };
   });
   m.errores = errores;
@@ -148,6 +170,8 @@ for (const ancho of [360, 390, 768, 1440]) {
   if (m.scrollWidth > m.anchoVentana) falla(`${ancho}: desborde, scrollWidth ${m.scrollWidth} > ${m.anchoVentana}`);
   if (m.salen.length) falla(`${ancho}: elementos que se salen: ${m.salen.join(' | ')}`);
   if (m.h1 !== 1) falla(`${ancho}: ${m.h1} h1`);
+  if (m.saltos.length) falla(`${ancho}: saltos de encabezado ${m.saltos.join(' | ')}`);
+  if (m.letraMasChica.px < 11) falla(`${ancho}: texto de ${m.letraMasChica.px} px en ${m.letraMasChica.donde}`);
   if (m.imgs.some((i) => !i.ok)) falla(`${ancho}: imágenes rotas`);
   if (!m.letras.mona || !m.letras.googleSansFlex || !m.letras.dmMono) falla(`${ancho}: letras sin cargar ${JSON.stringify(m.letras)}`);
   if (!m.motion) falla(`${ancho}: Motion no cargó`);
@@ -155,7 +179,7 @@ for (const ancho of [360, 390, 768, 1440]) {
   if (errores.length) falla(`${ancho}: errores ${errores.join(' | ')}`);
   const png = path.join(TMP, `tablero-${ancho}.png`);
   await pg.screenshot({ path: png, fullPage: true });
-  console.log(ancho, 'scrollWidth', m.scrollWidth, 'h1', m.h1, 'imgs', resultado.anchos[ancho].imgs.cargadas + '/' + m.imgs.length, 'contraste', m.contraste.nodos, 'bajos', m.contraste.bajoDe45.length, 'alto', m.alto, '→', png);
+  console.log(ancho, 'saltos', m.saltos.length, 'letra más chica', m.letraMasChica.px, 'scrollWidth', m.scrollWidth, 'h1', m.h1, 'imgs', resultado.anchos[ancho].imgs.cargadas + '/' + m.imgs.length, 'contraste', m.contraste.nodos, 'bajos', m.contraste.bajoDe45.length, 'alto', m.alto, '→', png);
   await ctx.close();
 }
 
@@ -354,6 +378,87 @@ for (const [nombre, opciones] of [
   resultado.demos[nombre] = d;
   console.log(nombre, JSON.stringify(d));
   await ctx.close();
+}
+
+// ---------------------------------------------------------------- 5 · defectos de la vuelta 1, medidos (1440 y 390)
+{
+  const d = {};
+  d.html = {
+    horaFija: /\b\d{1,2}:\d{2}\b(?![^<]*<\/script>)/.test(crudo.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, '').replace(/\d{1,2}:\d{2} (ms|UTC)/g, '')),
+    respaldoReloj: (crudo.match(/class="reloj">([^<]*)</g) || []).map((x) => x.split('>')[1].replace('<', '')),
+    notaCargaVeces: (crudo.match(/kB, con fecha y método/g) || []).length + (crudo.match(/Los kB, sí/g) || []).length,
+    styleDobles: (crudo.match(/<[^>]*\sstyle="[^"]*"[^>]*\sstyle="/g) || []).length,
+  };
+  if (d.html.respaldoReloj.some((v) => v !== '--:--')) falla('reloj: el HTML trae una hora fija de respaldo ' + d.html.respaldoReloj.join(', '));
+  if (d.html.notaCargaVeces !== 1) falla('la nota de las mediciones de carga va ' + d.html.notaCargaVeces + ' veces');
+  if (d.html.styleDobles) falla(d.html.styleDobles + ' elementos con dos atributos style');
+  const { ctx, pg } = await abrir({ viewport: { width: 1440, height: 900 } });
+  d.fichas = await pg.evaluate(() => [...document.querySelectorAll('.ficha')].map((f) => {
+    const c = f.querySelector('.ficha__chip'); const cs = getComputedStyle(c);
+    return { nombre: f.querySelector('.ficha__nombre code').textContent, fondo: cs.backgroundColor, contorno: `${cs.outlineStyle} ${cs.outlineWidth} ${cs.outlineColor}` };
+  }));
+  for (const f of d.fichas) if (['--papel', '--placa', '--hoja'].includes(f.nombre) && !/^solid 1px/.test(f.contorno)) falla(`ficha ${f.nombre}: sin contorno (${f.contorno})`);
+  d.registro = await pg.evaluate(() => {
+    const s = document.querySelector('section.registro');
+    const a = getComputedStyle(s, '::before'), b = getComputedStyle(s, '::after');
+    return { horizontal: a.borderTopColor + ' ' + a.borderTopWidth, vertical: b.borderLeftColor + ' ' + b.borderLeftWidth, x: s.getBoundingClientRect().left + parseFloat(b.left), lineaSeccion: getComputedStyle(document.documentElement).getPropertyValue('--linea-seccion').trim(), secciones: document.querySelectorAll('section.registro').length };
+  });
+  if (!/rgba\(17, 17, 17, 0\.18\)/.test(d.registro.horizontal) || !/rgba\(17, 17, 17, 0\.18\)/.test(d.registro.vertical)) falla('registro: la cruz no va en --linea-seccion ' + JSON.stringify(d.registro));
+  const capturar = async (sel, nombre, ancho, pad = 8, altoMax = 1400) => {
+    const el = pg.locator(sel).first();
+    await el.scrollIntoViewIfNeeded();
+    await pg.waitForTimeout(200);
+    const r = await el.boundingBox();
+    const png = path.join(TMP, nombre + '.png');
+    await pg.screenshot({ path: png, clip: { x: Math.max(0, r.x - pad), y: Math.max(0, r.y - pad), width: r.width + pad * 2, height: Math.min(r.height + pad * 2, altoMax) } });
+    aJpg(png, path.join(SALIDA, nombre + '.jpg'), ancho);
+  };
+  await capturar('.fichas', 'fichas-de-color-1440', 1100);
+  await capturar('.registro-caja', 'registro-1440', 1100);
+  // la cruz en una sección de verdad: el borde superior de «Casos», donde cruza el límite de la barra
+  {
+    const s = pg.locator('section#casos');
+    await pg.evaluate(() => { const n = document.querySelector('section#casos'); scrollTo(0, n.getBoundingClientRect().top + scrollY - 200); });
+    await pg.waitForTimeout(200);
+    const r = await s.boundingBox();
+    const png = path.join(TMP, 'cruz-casos-1440.png');
+    await pg.screenshot({ path: png, clip: { x: r.x + 336 - 16 - 60, y: r.y - 40, width: 120, height: 80 } });
+    aJpg(png, path.join(SALIDA, 'cruz-casos-1440.jpg'), 480, 90);
+  }
+  const punto = pg.locator('.puntos li', { hasText: 'Etiquetas de ingredientes' });
+  d.puntos = await pg.evaluate(() => [...document.querySelectorAll('.puntos li .puntos__pedido')].map((p) => p.textContent.replace(/^Pediste/, '').trim().slice(0, 60)));
+  for (const t of ['Form & Intelligence', 'Atmósfera', 'Etiquetas de ingredientes']) if (!d.puntos.some((p) => p.includes(t))) falla('tablero §3: falta el punto «' + t + '»');
+  await punto.scrollIntoViewIfNeeded();
+  {
+    const r = await punto.boundingBox();
+    const png = path.join(TMP, 'punto-etiquetas-1440.png');
+    await pg.screenshot({ path: png, clip: { x: r.x - 8, y: r.y - 8, width: r.width + 16, height: r.height + 16 } });
+    aJpg(png, path.join(SALIDA, 'punto-etiquetas-1440.jpg'), 1100);
+  }
+  d.captionTabla = await pg.evaluate(() => { const c = document.querySelector('.tabla caption code'); const cs = getComputedStyle(c); return { tam: cs.fontSize, mayusculas: cs.textTransform, texto: document.querySelector('.tabla caption').innerText }; });
+  if (d.captionTabla.tam !== '11px' || d.captionTabla.mayusculas !== 'none') falla('tabla: el código del rótulo ' + JSON.stringify(d.captionTabla));
+  d.fuentesTabla = await pg.evaluate(() => [...document.querySelectorAll('.tabla td[colspan]')].map((td) => td.textContent));
+  if (d.fuentesTabla.some((t) => (t.match(/\(/g) || []).length !== (t.match(/\)/g) || []).length)) falla('tabla: una fuente con el paréntesis sin cerrar');
+  await ctx.close();
+  const t = await abrir({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+  d.tabla390 = await t.pg.evaluate(() => {
+    const vacias = [...document.querySelectorAll('.tabla td')].filter((td) => { const b = getComputedStyle(td, '::before'); return b.display === 'none' || !b.content || b.content === 'none' || b.content === '""'; }).length;
+    const thead = getComputedStyle(document.querySelector('.tabla thead')).display;
+    return { celdas: document.querySelectorAll('.tabla td').length, sinRotulo: vacias, thead, ejemplo: getComputedStyle(document.querySelector('.tabla td'), '::before').content };
+  });
+  if (d.tabla390.sinRotulo) falla(`tabla a 390: ${d.tabla390.sinRotulo} celdas sin rótulo`);
+  {
+    const el = t.pg.locator('.tabla-envuelta');
+    await el.scrollIntoViewIfNeeded();
+    await t.pg.waitForTimeout(200);
+    const r = await el.boundingBox();
+    const png = path.join(TMP, 'tabla-resortes-390.png');
+    await t.pg.screenshot({ path: png, clip: { x: 0, y: r.y - 8, width: 390, height: Math.min(r.height + 16, 1400) } });
+    aJpg(png, path.join(SALIDA, 'tabla-resortes-390.jpg'), 780);
+  }
+  await t.ctx.close();
+  resultado.demos.vuelta2 = d;
+  console.log('vuelta 2', JSON.stringify({ html: d.html, registro: d.registro, fichas: d.fichas.map((f) => f.nombre + ' ' + f.contorno), caption: d.captionTabla, tabla390: d.tabla390 }));
 }
 
 await nav.close();
