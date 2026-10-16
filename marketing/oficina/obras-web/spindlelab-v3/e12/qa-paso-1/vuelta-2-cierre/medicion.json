@@ -1,0 +1,550 @@
+{
+ "fecha": "2026-10-16T22:24:51.167Z",
+ "puerto": 43081,
+ "anchos": {
+  "360": {
+   "scrollWidth": 360,
+   "clientWidth": 360,
+   "desborde": false,
+   "h1": 1,
+   "nuevasPresentes": {
+    "d15": true,
+    "d17_cita": true,
+    "d17_no": true,
+    "d18": true
+   },
+   "viejasPresentes": {
+    "d15": false,
+    "d17": false,
+    "d18": false
+   },
+   "rayasEnTextoVisible": 0,
+   "magnEnTextoVisible": 2,
+   "fuentes": [
+    [
+     "Mona Sans",
+     true
+    ],
+    [
+     "DM Mono",
+     true
+    ],
+    [
+     "Google Sans Flex",
+     true
+    ]
+   ],
+   "errores": []
+  },
+  "390": {
+   "scrollWidth": 390,
+   "clientWidth": 390,
+   "desborde": false,
+   "h1": 1,
+   "nuevasPresentes": {
+    "d15": true,
+    "d17_cita": true,
+    "d17_no": true,
+    "d18": true
+   },
+   "viejasPresentes": {
+    "d15": false,
+    "d17": false,
+    "d18": false
+   },
+   "rayasEnTextoVisible": 0,
+   "magnEnTextoVisible": 2,
+   "fuentes": [
+    [
+     "Mona Sans",
+     true
+    ],
+    [
+     "DM Mono",
+     true
+    ],
+    [
+     "Google Sans Flex",
+     true
+    ]
+   ],
+   "errores": []
+  },
+  "768": {
+   "scrollWidth": 768,
+   "clientWidth": 768,
+   "desborde": false,
+   "h1": 1,
+   "nuevasPresentes": {
+    "d15": true,
+    "d17_cita": true,
+    "d17_no": true,
+    "d18": true
+   },
+   "viejasPresentes": {
+    "d15": false,
+    "d17": false,
+    "d18": false
+   },
+   "rayasEnTextoVisible": 0,
+   "magnEnTextoVisible": 2,
+   "fuentes": [
+    [
+     "Mona Sans",
+     true
+    ],
+    [
+     "DM Mono",
+     true
+    ],
+    [
+     "Google Sans Flex",
+     true
+    ]
+   ],
+   "errores": []
+  },
+  "1440": {
+   "scrollWidth": 1440,
+   "clientWidth": 1440,
+   "desborde": false,
+   "h1": 1,
+   "nuevasPresentes": {
+    "d15": true,
+    "d17_cita": true,
+    "d17_no": true,
+    "d18": true
+   },
+   "viejasPresentes": {
+    "d15": false,
+    "d17": false,
+    "d18": false
+   },
+   "rayasEnTextoVisible": 0,
+   "magnEnTextoVisible": 2,
+   "fuentes": [
+    [
+     "Mona Sans",
+     true
+    ],
+    [
+     "DM Mono",
+     true
+    ],
+    [
+     "Google Sans Flex",
+     true
+    ]
+   ],
+   "errores": []
+  }
+ },
+ "elementos": {
+  "ap-filetes-pie-390": {
+   "selector": "figure:has(img[src=\"img/ap-tabla-filetes.jpg\"])",
+   "coincidencias": 1,
+   "captura": "ap-filetes-pie-390.jpg",
+   "caja": {
+    "x": 16,
+    "ancho": 358
+   },
+   "scrollWidth": 358,
+   "clientWidth": 358,
+   "dentroDelViewport": true,
+   "texto": "Filetes de 1 px: en las etiquetas de cada pieza y en una tabla.",
+   "nodos": [
+    {
+     "texto": "Filetes de 1 px: en las etiquetas de cada pieza y en una tab",
+     "px": 14,
+     "peso": "390",
+     "ratio": 5.32
+    }
+   ],
+   "minimoRatio": 5.32
+  },
+  "brief-cobalto-390": {
+   "selector": "ol.puntos > li:has-text(\"cursores magnéticos\")",
+   "coincidencias": 1,
+   "captura": "brief-cobalto-390.jpg",
+   "caja": {
+    "x": 16,
+    "ancho": 358
+   },
+   "scrollWidth": 358,
+   "clientWidth": 358,
+   "dentroDelViewport": true,
+   "texto": "PEDISTE Cobalto #0029FF o #0B25B7 «únicamente para estados activos, cursores magnéticos y telemetría de código vivo» LO MEDIDO Koto tiene un solo color, puro, en un solo lugar QUÉ HACEMOS Se queda el #0029FF, el puro, y marca solo lo que responde a quien visita. El oscuro era la versión segura de lo mismo.",
+   "nodos": [
+    {
+     "texto": "Pediste",
+     "px": 11,
+     "peso": "500",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Cobalto",
+     "px": 16,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "#0029FF",
+     "px": 12.8,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "o",
+     "px": 16,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "#0B25B7",
+     "px": 12.8,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "«únicamente para estados activos, cursores magnéticos y tele",
+     "px": 16,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Lo medido",
+     "px": 11,
+     "peso": "500",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Koto tiene un solo color, puro, en un solo lugar",
+     "px": 16,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Qué hacemos",
+     "px": 11,
+     "peso": "500",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Se queda el",
+     "px": 16,
+     "peso": "390",
+     "ratio": 17.45
+    },
+    {
+     "texto": "#0029FF",
+     "px": 12.8,
+     "peso": "390",
+     "ratio": 17.45
+    },
+    {
+     "texto": ", el puro, y marca solo lo que responde a quien visita. El o",
+     "px": 16,
+     "peso": "390",
+     "ratio": 17.45
+    }
+   ],
+   "minimoRatio": 5.32
+  },
+  "brief-cursor-390": {
+   "selector": "ol.puntos > li:has-text(\"Ver despliegue\")",
+   "coincidencias": 1,
+   "captura": "brief-cursor-390.jpg",
+   "caja": {
+    "x": 16,
+    "ancho": 358
+   },
+   "scrollWidth": 358,
+   "clientWidth": 358,
+   "dentroDelViewport": true,
+   "texto": "PEDISTE Cursor: círculo de color que dice «Ver despliegue» LO MEDIDO Koto y A&P: el cursor dice adónde lleva, sin color QUÉ HACEMOS Sí: círculo cobalto que dice adónde lleva, solo sobre el trabajo y solo con mouse. Magnético, no: el círculo va donde va el puntero; ni Koto ni A&P lo atraen, y uno que se corre hacia el centro de la pieza deja de decir dónde estás.",
+   "nodos": [
+    {
+     "texto": "Pediste",
+     "px": 11,
+     "peso": "500",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Cursor: círculo de color que dice «Ver despliegue»",
+     "px": 16,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Lo medido",
+     "px": 11,
+     "peso": "500",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Koto y A&P: el cursor dice adónde lleva, sin color",
+     "px": 16,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Qué hacemos",
+     "px": 11,
+     "peso": "500",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Sí:",
+     "px": 16,
+     "peso": "390",
+     "ratio": 17.45
+    },
+    {
+     "texto": "círculo cobalto que dice adónde lleva, solo sobre el trabajo",
+     "px": 16,
+     "peso": "390",
+     "ratio": 17.45
+    },
+    {
+     "texto": "Magnético, no:",
+     "px": 16,
+     "peso": "390",
+     "ratio": 17.45
+    },
+    {
+     "texto": "el círculo va donde va el puntero; ni Koto ni A&P lo atraen,",
+     "px": 16,
+     "peso": "390",
+     "ratio": 17.45
+    }
+   ],
+   "minimoRatio": 5.32
+  },
+  "no-tomamos-261-850-390": {
+   "selector": ".dos-listas li:has-text(\"261 contra 850\")",
+   "coincidencias": 1,
+   "captura": "no-tomamos-261-850-390.jpg",
+   "caja": {
+    "x": 16,
+    "ancho": 358
+   },
+   "scrollWidth": 358,
+   "clientWidth": 358,
+   "dentroDelViewport": true,
+   "texto": "La entrada de 1,5 s de A&P: la de Koto llega al 90 % en menos de un tercio de lo que tarda la de A&P (261 contra 850 ms).",
+   "nodos": [
+    {
+     "texto": "La entrada de 1,5 s de A&P: la de Koto llega al 90 % en meno",
+     "px": 16,
+     "peso": "390",
+     "ratio": 17.45
+    }
+   ],
+   "minimoRatio": 17.45
+  },
+  "ap-filetes-pie-1440": {
+   "selector": "figure:has(img[src=\"img/ap-tabla-filetes.jpg\"])",
+   "coincidencias": 1,
+   "captura": "ap-filetes-pie-1440.jpg",
+   "caja": {
+    "x": 892,
+    "ancho": 532
+   },
+   "scrollWidth": 532,
+   "clientWidth": 532,
+   "dentroDelViewport": true,
+   "texto": "Filetes de 1 px: en las etiquetas de cada pieza y en una tabla.",
+   "nodos": [
+    {
+     "texto": "Filetes de 1 px: en las etiquetas de cada pieza y en una tab",
+     "px": 14,
+     "peso": "390",
+     "ratio": 5.32
+    }
+   ],
+   "minimoRatio": 5.32
+  },
+  "brief-cobalto-1440": {
+   "selector": "ol.puntos > li:has-text(\"cursores magnéticos\")",
+   "coincidencias": 1,
+   "captura": "brief-cobalto-1440.jpg",
+   "caja": {
+    "x": 352,
+    "ancho": 1072
+   },
+   "scrollWidth": 1072,
+   "clientWidth": 1072,
+   "dentroDelViewport": true,
+   "texto": "PEDISTE Cobalto #0029FF o #0B25B7 «únicamente para estados activos, cursores magnéticos y telemetría de código vivo» LO MEDIDO Koto tiene un solo color, puro, en un solo lugar QUÉ HACEMOS Se queda el #0029FF, el puro, y marca solo lo que responde a quien visita. El oscuro era la versión segura de lo mismo.",
+   "nodos": [
+    {
+     "texto": "Pediste",
+     "px": 11,
+     "peso": "500",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Cobalto",
+     "px": 16,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "#0029FF",
+     "px": 12.8,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "o",
+     "px": 16,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "#0B25B7",
+     "px": 12.8,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "«únicamente para estados activos, cursores magnéticos y tele",
+     "px": 16,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Lo medido",
+     "px": 11,
+     "peso": "500",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Koto tiene un solo color, puro, en un solo lugar",
+     "px": 16,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Qué hacemos",
+     "px": 11,
+     "peso": "500",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Se queda el",
+     "px": 16,
+     "peso": "390",
+     "ratio": 17.45
+    },
+    {
+     "texto": "#0029FF",
+     "px": 12.8,
+     "peso": "390",
+     "ratio": 17.45
+    },
+    {
+     "texto": ", el puro, y marca solo lo que responde a quien visita. El o",
+     "px": 16,
+     "peso": "390",
+     "ratio": 17.45
+    }
+   ],
+   "minimoRatio": 5.32
+  },
+  "brief-cursor-1440": {
+   "selector": "ol.puntos > li:has-text(\"Ver despliegue\")",
+   "coincidencias": 1,
+   "captura": "brief-cursor-1440.jpg",
+   "caja": {
+    "x": 352,
+    "ancho": 1072
+   },
+   "scrollWidth": 1072,
+   "clientWidth": 1072,
+   "dentroDelViewport": true,
+   "texto": "PEDISTE Cursor: círculo de color que dice «Ver despliegue» LO MEDIDO Koto y A&P: el cursor dice adónde lleva, sin color QUÉ HACEMOS Sí: círculo cobalto que dice adónde lleva, solo sobre el trabajo y solo con mouse. Magnético, no: el círculo va donde va el puntero; ni Koto ni A&P lo atraen, y uno que se corre hacia el centro de la pieza deja de decir dónde estás.",
+   "nodos": [
+    {
+     "texto": "Pediste",
+     "px": 11,
+     "peso": "500",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Cursor: círculo de color que dice «Ver despliegue»",
+     "px": 16,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Lo medido",
+     "px": 11,
+     "peso": "500",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Koto y A&P: el cursor dice adónde lleva, sin color",
+     "px": 16,
+     "peso": "390",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Qué hacemos",
+     "px": 11,
+     "peso": "500",
+     "ratio": 5.32
+    },
+    {
+     "texto": "Sí:",
+     "px": 16,
+     "peso": "390",
+     "ratio": 17.45
+    },
+    {
+     "texto": "círculo cobalto que dice adónde lleva, solo sobre el trabajo",
+     "px": 16,
+     "peso": "390",
+     "ratio": 17.45
+    },
+    {
+     "texto": "Magnético, no:",
+     "px": 16,
+     "peso": "390",
+     "ratio": 17.45
+    },
+    {
+     "texto": "el círculo va donde va el puntero; ni Koto ni A&P lo atraen,",
+     "px": 16,
+     "peso": "390",
+     "ratio": 17.45
+    }
+   ],
+   "minimoRatio": 5.32
+  },
+  "no-tomamos-261-850-1440": {
+   "selector": ".dos-listas li:has-text(\"261 contra 850\")",
+   "coincidencias": 1,
+   "captura": "no-tomamos-261-850-1440.jpg",
+   "caja": {
+    "x": 900,
+    "ancho": 524
+   },
+   "scrollWidth": 524,
+   "clientWidth": 524,
+   "dentroDelViewport": true,
+   "texto": "La entrada de 1,5 s de A&P: la de Koto llega al 90 % en menos de un tercio de lo que tarda la de A&P (261 contra 850 ms).",
+   "nodos": [
+    {
+     "texto": "La entrada de 1,5 s de A&P: la de Koto llega al 90 % en meno",
+     "px": 16,
+     "peso": "390",
+     "ratio": 17.45
+    }
+   ],
+   "minimoRatio": 17.45
+  }
+ },
+ "navegador": "141.0.7390.37",
+ "servidorApagado": true
+}

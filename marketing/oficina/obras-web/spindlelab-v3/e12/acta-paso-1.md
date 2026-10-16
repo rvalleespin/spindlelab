@@ -639,3 +639,45 @@ Pruebas de refero: tarjeta (pasa), imagen (no aplica: el primer viewport es text
   `contraste-qa.json`, `auditoria-tablero.json`, `tab-recorrido.json`, `tablero-texto-1440.txt`.
 - `capturas/`: Koto y A&P re-medidos; el tablero a 360, 390, 768 y 1440 y entero a 390 y 1440; las demos; los
   recortes de los cierres (3, 4, 8) y del defecto 15.
+
+---
+
+# Vuelta 2 · cierre exprés (16-oct)
+
+**16-oct-2026, 19:10 a 19:30 (Chile) · Javiera, en subagente de contexto limpio** · sobre `7e9f380`, el único commit
+después de esta acta (`ef4509c`). Leí el diff, no el mensaje: solo cambia texto (una fila del brief, una celda del lock y
+tres frases en `armar-tablero.py`, las mismas tres en `tablero.html`; el diff por palabras no muestra nada más).
+
+## Veredicto final del paso 1: **Aprobado**
+
+Los cuatro defectos cierran con el criterio de la columna «Cierre» de §3. Se puede mandar el tablero a Ramón para la
+compuerta 1.
+
+| N.º | Evidencia | |
+|---|---|---|
+| 15 | `grep -c "nico lugar con filetes"`: 0 en `tablero.html`, `armar-tablero.py`, el lock y el brief. Pie nuevo (`tablero.html:290`, `armar-tablero.py:279`): «Filetes de 1 px: en las etiquetas de cada pieza y en una tabla.», que es lo medido (`accept-and-proceed/medicion.json`, `filetes1px`; `resumen.md:40`). Lock §3 (`lock-koto.md:223`): «Su único uso de líneas fuera de las etiquetas». Captura `ap-filetes-pie-{390,1440}.jpg` | Cerrado |
+| 16 | `brief-de-obra.md:78`, fila «Cursor magnético», con la cita del acento, veredicto «no», su porqué y el lock §8 («Magnetismo: No», `lock-koto.md:453`). `grep -ci magn`: 1 (era 0). Lo que afirma está medido: Koto «sigue al mouse sin retardo» (`koto/resumen.md:19`), A&P «sigue pegado, sin inercia visible» (`seguimiento` del cursor) | Cerrado |
+| 17 | Fila del cobalto: «únicamente para estados activos, cursores magnéticos y telemetría de código vivo», igual a `insumos-ramon-16oct.md:25`. Fila del cursor: «Magnético, no: el círculo va donde va el puntero; ni Koto ni A&P lo atraen…». «magn» en el texto visible: 2 a los cuatro anchos (era 0). Capturas `brief-cobalto-{390,1440}.jpg`, `brief-cursor-{390,1440}.jpg` | Cerrado |
+| 18 | «…en menos de un tercio de lo que tarda la de A&P (261 contra 850 ms)». `datos/resortes.json`: `medido.kotoFeedIn.t90` = 261 (`--animate-feed-in-transform` de Koto) y `medido.apEntrada.t90` = 850 (la entrada de 1,5 s de A&P); 261 / 850 = 0,307, menos de un tercio; la tabla del tablero dice lo mismo. «cuarta parte»: 0 en los cuatro archivos. Captura `no-tomamos-261-850-{390,1440}.jpg` | Cerrado |
+
+**Mediciones.**
+
+- **El tablero es la salida del script:** `python3 -I armar-tablero.py` sobre una copia de `HEAD` (`git archive`)
+  fuera del repo da un `tablero.html` idéntico byte a byte (`cmp`; sha256 `f62ad225…` en los dos) y las 22 imágenes
+  de `img/` iguales (`diff -rq`). El repo no se tocó.
+- **Render** (`herramientas/cierre-expres.mjs` → `medicion.json`; la carpeta servida con `python3 -m http.server` en
+  127.0.0.1:43081 y envuelta como el publicador; Chromium 141.0.7390.37): `scrollWidth` = `clientWidth` a 360, 390,
+  768 y 1440; 1 `h1` en los cuatro; las frases nuevas están y las viejas no; 0 errores; servidor apagado y puerto
+  libre comprobados. Los cuatro elementos tocados, a 390 y 1440: sin desborde propio, contraste mínimo 5,32:1 (gris
+  sobre papel) y 17,45:1 la tinta.
+- **Texto nuevo:** 0 rayas, 0 semirrayas, 0 verbos de folleto, ningún «no solo», ninguna pregunta; el tuteo se
+  mantiene («dónde estás»). En todo el texto visible del tablero: 0 rayas.
+
+**Observaciones (no son defecto ni bloquean):** el veredicto «Se ajusta: no» del brief mezcla dos de su leyenda; la
+fila de Next.js usa «No» solo, y es lo que va si se vuelve a tocar. `armar-tablero.py` escribe 261 y 850 a mano, no
+desde `resortes`: hoy cuadran, pero si se re-miden los resortes esa línea no cambia sola. Y un nit que viene de antes
+y es de todo el tablero: número y unidad van con espacio común (29 «%», 32 «ms», 32 «px», 14 «kB»; 0 con espacio
+duro), y a 390 la línea del 18 corta «90 / %» (se ve en la captura). En el tablero no hace falta tocarlo; para el
+sitio, que la spec pida espacio duro entre cifra y unidad.
+
+Archivos: `e12/qa-paso-1/vuelta-2-cierre/` (`herramientas/cierre-expres.mjs`, `medicion.json` y las 8 capturas).
