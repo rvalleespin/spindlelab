@@ -1,0 +1,1 @@
+globalThis.fetch = async () => new Response(JSON.stringify({error:{message:'API key not valid: AIzaFAKEclaveDePrueba1234567890 sk-proj-ABCDEF123456'}}),{status:400,headers:{'content-type':'application/json'}});
