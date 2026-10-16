@@ -193,6 +193,22 @@ quedó fuera el 5-oct.
 > (`marketing/encargos-otras-sesiones/encargo-e10-fotos-ia.md`), y después la compuerta 2, donde Ramón
 > elige dirección. R1 a R9 y las confirmaciones de E8 siguen abiertas. Registro: filas del 15 y 16-oct
 > en el §7 de `spec-visual.md`.
+>
+> **Estado al 16-oct, 14:05 (E12):** Ramón cambió de dirección: SpindleLab pasa a presentarse como estudio de
+> diseño y tecnología («laboratorio digital») que también hace SEO técnico y visibilidad en IA, con Koto como
+> referente y Accept & Proceed como segundo; stack Astro + Tailwind + Motion; casos solo con lo medido; precios y
+> oferta iguales (`e12/insumos-ramon-16oct.md`). **E10 queda en pausa como historia**, sin compuerta 2 (el
+> encargo de fotos con IA, también en pausa), y **E11 en pausa** antes de escribir direcciones. Accept & Proceed
+> está medido (`e12/medicion/accept-and-proceed/`); Koto, en medición. El brief de E12 espera la compuerta 1
+> (`e12/brief-de-obra.md`, cinco preguntas con su opción recomendada). La medición de los referentes sigue; las
+> dos direcciones se dibujan sobre las respuestas, o sobre la opción recomendada de cada pregunta, dicho en el
+> tablero, si Ramón no alcanza a responder antes. El giro toca documentos compartidos
+> (estrategia, manual, fichas, bios, outbound): va a la troncal en
+> `marketing/encargos-otras-sesiones/encargo-troncal-giro-laboratorio.md`, y desde esta rama no se edita
+> ninguno. **Lo que el giro le cambia a lo abierto:** R5 (el cargo de Ramón en el JSON-LD dice «Consultor de SEO
+> técnico y visibilidad en IA») queda desalineado con la identidad nueva y entra a la construcción de E12; R9
+> (Raigal) sigue antes de mostrar el índice; R1 a R4 y R6 a R8 siguen como estaban, y ninguna frena el tablero.
+> Registro: fila del 16-oct (E12) en el §7 de `spec-visual.md`.
 
 No necesita decisión. Se hace en esta rama, se mide y queda anotado en el §7 de la spec.
 
