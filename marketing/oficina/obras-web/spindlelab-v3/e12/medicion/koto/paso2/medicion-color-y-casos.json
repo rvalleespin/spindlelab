@@ -9,6 +9,8 @@
   "pixeles.py: cada píxel de la página contado una vez (a 1/4 de px CSS), separado en interfaz y medios, en clases (lienzo, placa, gris, blanco, crema, claro, color por familia, resto); cada medio, con su color dominante y si es un campo (el dominante cubre ≥ 30 %); para los campos claros y de color, el par de lectura estimado (el color frecuente que más contrasta y su contraste WCAG).",
   "menu-pie.mjs: menú abierto a 1440 y 390, pie de la home, el estudio y servicios, cierre de un caso, hover sobre una pieza del índice y un destacado de la home (fondos computados y diferencia de píxeles).",
   "velo.mjs: el velo que oscurece las demás piezas del índice: su clase y su opacidad leída en cada cuadro al entrar y al salir.",
+  "tinta.mjs: el único cambio de color atado al scroll de los 27 recorridos (/services: el texto de la sección a la vista pasa de gris a blanco): transición declarada y color leído en cada cuadro al cruzar.",
+  "contraste-negro.py: contraste WCAG 2.1 de cada par de la paleta sobre negro, el velo sobre los campos, el texto de interfaz sobre un campo claro y la señal (el cobalto del brief y el mismo tono aclarado hasta 3:1, 4,5:1 y 7:1).",
   "caso.mjs: anatomía de 13 casos a 1440 y de 3 a 390: barra lateral (título, ficha, índice y marcador activo arriba y a media página, créditos), cada marco de medio con su fila, proporción y radio, cada bloque de texto con rótulo, titular y párrafos (palabras, caracteres, líneas), citas con firma, y el cierre «Next up» leído al 90, 95, 98 y 100 % del recorrido."
  ],
  "limitaciones": [
@@ -828,6 +830,270 @@
      ]
     }
    ]
+  },
+  "paletaSobreNegro": {
+   "metodo": "E12 · paso 2 · la paleta sobre el negro de Koto: contraste WCAG 2.1 de cada par de uso, y la señal.\n\nUso: python3 -I contraste-negro.py <salida.json>\nLos valores de Koto son los medidos (paso 1 y paso 2: #060606, #141414, #202020, #2d2d2d, #989898,\n#ffffff, #595959). Las transparencias se componen sobre su fondo. Para la señal se recalcula el cobalto\ndel brief (#0029FF) sobre #060606 y se buscan, en el mismo tono OKLCH (264,2°), las versiones más\noscuras que dan 3:1 (forma) y 4,5:1 (texto chico) contra el lienzo, con el croma máximo que cabe en sRGB.",
+   "pares": [
+    {
+     "par": "blanco sobre lienzo #060606",
+     "texto": "#ffffff",
+     "fondo": "#060606",
+     "contraste": 20.26,
+     "minimo": 4.5,
+     "aprueba": true,
+     "nota": ""
+    },
+    {
+     "par": "gris #989898 sobre lienzo #060606",
+     "texto": "#989898",
+     "fondo": "#060606",
+     "contraste": 7.02,
+     "minimo": 4.5,
+     "aprueba": true,
+     "nota": ""
+    },
+    {
+     "par": "#595959 sobre lienzo #060606",
+     "texto": "#595959",
+     "fondo": "#060606",
+     "contraste": 2.89,
+     "minimo": 4.5,
+     "aprueba": false,
+     "nota": "el apagado de Koto: no se toma"
+    },
+    {
+     "par": "blanco sobre placa #141414",
+     "texto": "#ffffff",
+     "fondo": "#141414",
+     "contraste": 18.42,
+     "minimo": 4.5,
+     "aprueba": true,
+     "nota": ""
+    },
+    {
+     "par": "gris #989898 sobre placa #141414",
+     "texto": "#989898",
+     "fondo": "#141414",
+     "contraste": 6.39,
+     "minimo": 4.5,
+     "aprueba": true,
+     "nota": ""
+    },
+    {
+     "par": "#595959 sobre placa #141414",
+     "texto": "#595959",
+     "fondo": "#141414",
+     "contraste": 2.63,
+     "minimo": 4.5,
+     "aprueba": false,
+     "nota": "el apagado de Koto: no se toma"
+    },
+    {
+     "par": "blanco sobre placa activa #202020",
+     "texto": "#ffffff",
+     "fondo": "#202020",
+     "contraste": 16.29,
+     "minimo": 4.5,
+     "aprueba": true,
+     "nota": ""
+    },
+    {
+     "par": "gris #989898 sobre placa activa #202020",
+     "texto": "#989898",
+     "fondo": "#202020",
+     "contraste": 5.65,
+     "minimo": 4.5,
+     "aprueba": true,
+     "nota": ""
+    },
+    {
+     "par": "#595959 sobre placa activa #202020",
+     "texto": "#595959",
+     "fondo": "#202020",
+     "contraste": 2.33,
+     "minimo": 4.5,
+     "aprueba": false,
+     "nota": "el apagado de Koto: no se toma"
+    },
+    {
+     "par": "blanco al 70 % (nav en reposo) sobre lienzo",
+     "texto": "#b4b4b4",
+     "fondo": "#060606",
+     "contraste": 9.77,
+     "minimo": 4.5,
+     "aprueba": true,
+     "nota": ""
+    },
+    {
+     "par": "#cccccc (rótulo de tarjeta) sobre placa",
+     "texto": "#cccccc",
+     "fondo": "#141414",
+     "contraste": 11.47,
+     "minimo": 4.5,
+     "aprueba": true,
+     "nota": ""
+    },
+    {
+     "par": "línea #2d2d2d contra lienzo (borde de sección)",
+     "texto": "#2d2d2d",
+     "fondo": "#060606",
+     "contraste": 1.47,
+     "minimo": 1.0,
+     "aprueba": true,
+     "nota": "decorativa: separa, no informa"
+    },
+    {
+     "par": "blanco al 10 % contra lienzo (separador)",
+     "texto": "#1f1f1f",
+     "fondo": "#060606",
+     "contraste": 1.23,
+     "minimo": 1.0,
+     "aprueba": true,
+     "nota": "decorativa"
+    },
+    {
+     "par": "placa contra lienzo (forma)",
+     "texto": "#141414",
+     "fondo": "#060606",
+     "contraste": 1.1,
+     "minimo": 1.0,
+     "aprueba": true,
+     "nota": "Koto: la placa no lleva información por su borde"
+    },
+    {
+     "par": "velo del índice (negro al 70 %) sobre blanco de un campo",
+     "resultado": "#515151",
+     "contraVsLienzo": 2.55,
+     "nota": "lo que queda de un campo cuando otra pieza tiene el mouse"
+    },
+    {
+     "par": "velo del índice (negro al 70 %) sobre crema de un campo #f1f0eb",
+     "resultado": "#4d4c4b",
+     "contraVsLienzo": 2.36,
+     "nota": "lo que queda de un campo cuando otra pieza tiene el mouse"
+    },
+    {
+     "par": "velo del índice (negro al 70 %) sobre magenta de un campo #ff00c4",
+     "resultado": "#51043f",
+     "contraVsLienzo": 1.39,
+     "nota": "lo que queda de un campo cuando otra pieza tiene el mouse"
+    },
+    {
+     "par": "lienzo #060606 como texto sobre campo blanco #ffffff",
+     "texto": "#060606",
+     "fondo": "#ffffff",
+     "contraste": 20.26,
+     "minimo": 4.5,
+     "aprueba": true,
+     "nota": "solo dentro de la pieza (texto de la pieza)"
+    },
+    {
+     "par": "gris #989898 sobre campo blanco #ffffff",
+     "texto": "#989898",
+     "fondo": "#ffffff",
+     "contraste": 2.88,
+     "minimo": 4.5,
+     "aprueba": false,
+     "nota": "por qué ningún texto de la interfaz va sobre un campo claro"
+    },
+    {
+     "par": "lienzo #060606 como texto sobre campo crema #f1f0eb",
+     "texto": "#060606",
+     "fondo": "#f1f0eb",
+     "contraste": 17.76,
+     "minimo": 4.5,
+     "aprueba": true,
+     "nota": "solo dentro de la pieza (texto de la pieza)"
+    },
+    {
+     "par": "gris #989898 sobre campo crema #f1f0eb",
+     "texto": "#989898",
+     "fondo": "#f1f0eb",
+     "contraste": 2.53,
+     "minimo": 4.5,
+     "aprueba": false,
+     "nota": "por qué ningún texto de la interfaz va sobre un campo claro"
+    },
+    {
+     "par": "lienzo #060606 como texto sobre campo verde claro #eaf1ea",
+     "texto": "#060606",
+     "fondo": "#eaf1ea",
+     "contraste": 17.63,
+     "minimo": 4.5,
+     "aprueba": true,
+     "nota": "solo dentro de la pieza (texto de la pieza)"
+    },
+    {
+     "par": "gris #989898 sobre campo verde claro #eaf1ea",
+     "texto": "#989898",
+     "fondo": "#eaf1ea",
+     "contraste": 2.51,
+     "minimo": 4.5,
+     "aprueba": false,
+     "nota": "por qué ningún texto de la interfaz va sobre un campo claro"
+    }
+   ],
+   "senal": {
+    "cobaltoDelBrief": {
+     "hex": "#0029ff",
+     "oklch": [
+      0.4745,
+      0.298,
+      264.2
+     ],
+     "contraLienzo": 2.66,
+     "contraPlaca": 2.42,
+     "blancoSobreEl": 7.61,
+     "lienzoSobreEl": 2.66
+    },
+    "mismoTonoMasClaro": [
+     {
+      "objetivoContraLienzo": 3.0,
+      "hex": "#063dff",
+      "oklch": [
+       0.498,
+       0.282,
+       264.2
+      ],
+      "contraLienzo": 3.01,
+      "contraPlaca": 2.74,
+      "blancoSobreEl": 6.73,
+      "lienzoSobreEl": 3.01
+     },
+     {
+      "objetivoContraLienzo": 4.5,
+      "hex": "#316bff",
+      "oklch": [
+       0.581,
+       0.228,
+       264.2
+      ],
+      "contraLienzo": 4.51,
+      "contraPlaca": 4.1,
+      "blancoSobreEl": 4.49,
+      "lienzoSobreEl": 4.51
+     },
+     {
+      "objetivoContraLienzo": 7.0,
+      "hex": "#6595ff",
+      "oklch": [
+       0.684,
+       0.165,
+       264.2
+      ],
+      "contraLienzo": 7.04,
+      "contraPlaca": 6.4,
+      "blancoSobreEl": 2.88,
+      "lienzoSobreEl": 7.04
+     }
+    ],
+    "blancoComoSenal": {
+     "nota": "Koto: lo activo es blanco y lo que reposa, gris; la sección activa suma un punto blanco de 3 px",
+     "blancoContraLienzo": 20.26,
+     "grisContraLienzo": 7.02,
+     "blancoContraGris": 2.88
+    }
+   }
   },
   "porPagina": {
    "amazon-1440": {
@@ -19194,6 +19460,100 @@
      "pctQueSeAclara": 0.0
     }
    },
+   "tintaDeServicios": {
+    "secciones": [
+     {
+      "id": "section-our-services",
+      "color": "rgb(255, 255, 255)",
+      "transicion": "all"
+     },
+     {
+      "id": "section-our-services",
+      "color": "rgb(255, 255, 255)",
+      "transicion": "all"
+     },
+     {
+      "id": "section-strategy",
+      "color": "rgb(255, 255, 255)",
+      "transicion": "color 0.167s linear, background-color 0.167s linear, border-color 0.167s linear, outline-color 0.167s linear, text-decoration-color 0.167s linear, fill 0.167s linear, stroke 0.167s linear, --tw-gradient-from 0.167s linear, --tw-gradient-via 0.167s linear, --tw-gradient-to 0.167s linear"
+     },
+     {
+      "id": "section-brand",
+      "color": "rgb(152, 152, 152)",
+      "transicion": "color 0.167s linear, background-color 0.167s linear, border-color 0.167s linear, outline-color 0.167s linear, text-decoration-color 0.167s linear, fill 0.167s linear, stroke 0.167s linear, --tw-gradient-from 0.167s linear, --tw-gradient-via 0.167s linear, --tw-gradient-to 0.167s linear"
+     },
+     {
+      "id": "section-digital",
+      "color": "rgb(152, 152, 152)",
+      "transicion": "color 0.167s linear, background-color 0.167s linear, border-color 0.167s linear, outline-color 0.167s linear, text-decoration-color 0.167s linear, fill 0.167s linear, stroke 0.167s linear, --tw-gradient-from 0.167s linear, --tw-gradient-via 0.167s linear, --tw-gradient-to 0.167s linear"
+     },
+     {
+      "id": "section-campaign",
+      "color": "rgb(152, 152, 152)",
+      "transicion": "color 0.167s linear, background-color 0.167s linear, border-color 0.167s linear, outline-color 0.167s linear, text-decoration-color 0.167s linear, fill 0.167s linear, stroke 0.167s linear, --tw-gradient-from 0.167s linear, --tw-gradient-via 0.167s linear, --tw-gradient-to 0.167s linear"
+     },
+     {
+      "id": "section-clients",
+      "color": "rgb(255, 255, 255)",
+      "transicion": "all"
+     },
+     {
+      "id": "section-contact",
+      "color": "rgb(255, 255, 255)",
+      "transicion": "all"
+     }
+    ],
+    "cruce": {
+     "de": "section-strategy",
+     "a": "section-brand",
+     "antes": [
+      "rgb(255, 255, 255)",
+      "rgb(152, 152, 152)"
+     ],
+     "cambios": [
+      {
+       "t": 13,
+       "a": "rgb(255, 255, 255)",
+       "b": "rgb(152, 152, 152)"
+      },
+      {
+       "t": 281,
+       "a": "rgb(245, 245, 245)",
+       "b": "rgb(162, 162, 162)"
+      },
+      {
+       "t": 284,
+       "a": "rgb(234, 234, 234)",
+       "b": "rgb(173, 173, 173)"
+      },
+      {
+       "t": 308,
+       "a": "rgb(224, 224, 224)",
+       "b": "rgb(183, 183, 183)"
+      },
+      {
+       "t": 342,
+       "a": "rgb(204, 204, 204)",
+       "b": "rgb(203, 203, 203)"
+      },
+      {
+       "t": 365,
+       "a": "rgb(183, 183, 183)",
+       "b": "rgb(224, 224, 224)"
+      },
+      {
+       "t": 391,
+       "a": "rgb(173, 173, 173)",
+       "b": "rgb(234, 234, 234)"
+      },
+      {
+       "t": 418,
+       "a": "rgb(152, 152, 152)",
+       "b": "rgb(255, 255, 255)"
+      }
+     ]
+    }
+   },
    "veloDelIndice": {
     "elemento": {
      "sel": "div:nth-of-type(2) > div:nth-of-type(2) > a > div > div:nth-of-type(1) > div > div:nth-of-type(2)",
@@ -19358,6 +19718,42 @@
  },
  "casos": {
   "plantilla": {
+   "primeraFilaDespuesDeUnTexto": [
+    [
+     "16:9",
+     50
+    ],
+    [
+     "4:5 | 4:5",
+     12
+    ],
+    [
+     "1,62+1,62 | 4:5",
+     7
+    ],
+    [
+     "4:5 | 1,62+1,62",
+     4
+    ]
+   ],
+   "filasSeguidas": [
+    [
+     "16:9 → partida",
+     87
+    ],
+    [
+     "partida → 16:9",
+     83
+    ],
+    [
+     "16:9 → 16:9",
+     63
+    ],
+    [
+     "partida → partida",
+     23
+    ]
+   ],
    "casosMedidos1440": 13,
    "filasDeMediosPorPatron": [
     [

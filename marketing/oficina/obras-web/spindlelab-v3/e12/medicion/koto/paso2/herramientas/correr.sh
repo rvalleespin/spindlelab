@@ -30,6 +30,8 @@ export -f correr; export H W
 xargs -P "$N" -I{} bash -c 'correr "{}"' < "$W/trabajos.txt"
 node "$H/menu-pie.mjs" "$W/crudo" "$P/capturas"
 node "$H/velo.mjs" "$W/crudo"
+node "$H/tinta.mjs" "$W/crudo"
+python3 -I "$H/contraste-negro.py" "$W/crudo/contraste-negro.json"
 python3 -I "$H/pixeles.py" "$W/crudo" "$W/cuadros"
 python3 -I "$H/capturas.py" "$W/crudo" "$W/cuadros" "$P/capturas"
 python3 -I "$H/armar.py" "$W/crudo" "$P/medicion-color-y-casos.json"

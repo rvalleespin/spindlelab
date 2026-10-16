@@ -11,6 +11,13 @@ Nada se publica, `spindlelab-astro/` no se toca en este paso, ningún prospecto 
 fuente y fecha. Las capturas de Koto y de A&P son para estudio interno: ninguna de sus letras, imágenes, videos ni
 código va al sitio.
 
+> **Desde la compuerta 1 (16-oct, 19:20 a 19:45; `e12/brief-de-obra.md`, sección «Compuerta 1»).** La base es
+> **negra**, como Koto. El color lo rige **§20 «Compuerta 1: negro con juegos de color»** y el caso, **§21 «El caso,
+> como Koto»**, los dos medidos de nuevo el 16-oct (`medicion/koto/paso2/`). Lo que el paso 1 fijó para un lienzo
+> claro (la paleta del brief en §5, el claro de §1, §3 y §4, el cobalto de §8, §13, §14 y §15) **pasa a historia**:
+> la lista exacta está en §20.7. El resto del lock (letra, retícula, cursor, resortes, telemetría, sandboxes,
+> techos, accesibilidad) sigue, con los valores de §20 donde nombra un color.
+
 **De dónde sale cada valor.** Todo lo de Koto y de A&P está medido en el navegador por mí el 16-oct (Chromium 141,
 Playwright 1.63, `getComputedStyle`, DOM, hojas, `getAnimations()`, capturas a 1440 y 390):
 `e12/medicion/koto/` y `e12/medicion/accept-and-proceed/` (resumen, `medicion.json`, capturas, herramientas). Lo que
@@ -46,6 +53,9 @@ lleva; una sola respiración de carga igual en todas las páginas.
 | **Koto** | **Dominante** | Sistema de letra (un corte condensado liviano para titulares, uno regular para el cuerpo, una mono para datos), las dos tintas en una frase, la retícula de 16 px de margen y 8 de separación, el índice de trabajo, el caso con barra lateral y secciones, la etiqueta del cursor, la telemetría verdadera, los tiempos en cuadros con curva propia |
 | **Accept & Proceed** | Secundaria acotada a **dos** cosas | (1) Cómo se comporta un lienzo **claro** cuando la interfaz se retira: papel, negro, gris, una placa apenas más oscura, cero acento. (2) **La carga como diseño**: cada medio espera en un marco del color de la placa con su radio real. Nada más de A&P entra |
 | **El brief de Ramón** | Intención | Claro, tinta casi negra, una señal escasa en cobalto, mono para datos, cursor con círculo y texto, resortes, casos con método. Se toma la intención; la forma la fija lo medido (§4) |
+
+> **Compuerta 1 (16-oct).** Ramón eligió el negro. El trabajo (1) de A&P, «el lienzo claro», pasa a historia; lo que le
+> queda está en §20.7. El párrafo que sigue es el razonamiento del paso 1.
 
 **Lo que no se promedia.** Koto es negro y el brief es claro: no sale un gris medio. Se elige el claro (lo pide el
 brief y el detector, tell #3), y de Koto se preserva lo que no depende del negro: la retirada de la interfaz, la letra
@@ -257,6 +267,9 @@ Las cajas de imagen y video cubren del 33 al 72 % de cada página: **el color lo
 ---
 
 ## 5 · Paleta: tokens con rol, contraste y dónde va el cobalto
+
+> **Historia (compuerta 1, 16-oct).** Esta paleta clara ya no rige: Ramón eligió la base negra de Koto. La reemplaza
+> §20.2 (tokens sobre negro, con rol y contraste) y §20.4 (la señal). Queda como registro de lo aprobado en el paso 1.
 
 Tema claro único. Contraste calculado con WCAG 2.1 desde el hex (`datos/contraste.json`); las transparencias,
 compuestas sobre su fondo.
@@ -561,6 +574,10 @@ que «despliega», pasar a wireframe cambiando colores (inventario §6.2).
 
 ## 13 · Casos con método
 
+> **Compuerta 1 (16-oct).** La forma y el orden los fija ahora §21, medido en 13 casos: el resultado va **al final**,
+> como el «Outcome» de Koto, y «La pieza» son las filas de medios que siguen a cada sección. El punto activo del
+> índice va en blanco (§20.4), no en cobalto. La tabla «Con lo que hay hoy» sigue valiendo.
+
 **La forma es la del caso de Koto:** barra lateral pegajosa de 320 px con el nombre en tinta, la bajada en gris, la
 ficha mono verdadera (TIPO · AÑO · estado) y el índice de secciones con el punto activo en cobalto; a la derecha,
 cada sección con su borde superior `--linea-seccion`, el rótulo mono a la izquierda, el titular de 24 px y el cuerpo
@@ -657,6 +674,10 @@ tinta es `#111111` y la señal, cobalto. Los documentos compartidos los toca la 
   pantalla y página completa de home, trabajo, caso y estudio a 1440 y 390; detalles de cursor, índice, filtro,
   widgets, encabezado, menú, tipos), `herramientas/correr.sh`.
 - A&P: `medicion/accept-and-proceed/resumen.md`, `medicion.json`, `capturas/`, `herramientas/`.
+- Koto, de nuevo, para la compuerta 1 (§20 y §21): `medicion/koto/paso2/medicion-color-y-casos.json` (color de 22
+  páginas en px y en DOM, menú, pie, hover, velo, la tinta de `/services`, la paleta sobre negro y la anatomía de 13
+  casos), `capturas/` (tiras, momentos de color, Lyft completo a 1440 y 390, cierre, menú, pie) y
+  `herramientas/correr.sh`.
 - Este lock: `../tableros/e12-laboratorio/datos/letras.json`, `contraste.json`, `resortes.json`, `atmosfera.json`,
   `create-next-app-layout.txt`; `img/letras-comparadas.jpg`; `herramientas/letras.py`, `contraste.py`,
   `resortes.mjs`, `atmosfera.mjs`, `evidencia-next.sh`. Licencias de las tres letras, copiadas por Javiera:
@@ -684,3 +705,273 @@ tinta es `#111111` y la señal, cobalto. Los documentos compartidos los toca la 
 | 16-oct, 2.ª vuelta | §6.2 y §6.3: las URLs de la licencia de Mona Sans, Google Sans Flex y DM Mono (las tres SIL OFL 1.1) | Preferencia | Acta, defecto 11 |
 | 16-oct, 2.ª vuelta | §12, §13 y §18: una sola unidad, kB = 1.000 bytes (la del inventario corregido): la foto de Combeau es 805 kB → 95 kB, no «786 KB → 92 KB» (eran KiB); el tablero suma 1,63 MB, no «1,5 MB». Space Grotesk mide 1,325 veces el ancho de Koto: 1,33 en el lock y en el tablero, con el mismo redondeo | Preferencia (corrige unidades y redondeo) | Acta, defectos 13 y 14; inventario, «Correcciones» |
 | 16-oct, 2.ª vuelta | El tablero, sin cambiar el lock: las fichas claras con un solo atributo `style` (el contorno existía en el código y no en la página), los casos en `h3` (había un salto de `h2` a `h4`), el código dentro de los rótulos a 1em y sin mayúsculas (estaba en 8,8 px), la tabla de resortes con la fuente entera y un rótulo por celda bajo 834 px, el reloj sin hora fija de respaldo («--:--»), la muestra de la mono con el build verdadero de la vista previa (`f0d911c`, 14-oct) en vez de una fecha escrita a mano, y la nota de las mediciones de carga una sola vez | Preferencia (defectos del tablero) | Acta, defectos 3 y 5 a 10 |
+| 16-oct, compuerta 1 | **Base negra, medida de nuevo.** Ramón eligió el negro de Koto «con juegos de blanco u otros colores» y que los casos se hagan como Koto. Medí 9 páginas de la casa y 13 casos a 1440 (5 también a 390; `medicion/koto/paso2/`): el lienzo es `#060606` en las 640 paradas y nunca cambia; el blanco y los colores entran **dentro de los marcos del trabajo**, como campos de la marca de cada cliente (del 2,9 al 35,4 % de la página de un caso, mediana 23), y en las interiores de la casa casi no aparecen. Nuevo **§20** (la regla, los tokens sobre negro con su contraste, la señal, los techos y la diferencia con driftime) y nuevo **§21** (la plantilla del caso: barra lateral, cuatro formas de fila, largos de texto, cierre, 390). Pasan a historia la paleta clara de §5 y lo que dependía de ella (lista en §20.7); en §13 el resultado va al final, como el «Outcome» de Koto. Desvío del encargo del paso 2 avisado (§20.6): Koto no cambia el lienzo de una página interior | **Regla** (va a la spec) | Compuerta 1, puntos 4 y 6; `e12/encargo-paso-2.md` §6 |
+
+---
+
+## 20 · Compuerta 1: negro con juegos de color
+
+Ramón, 16-oct (punto 6): «tomar el negro, pero así como muestra el sitio, también hay juegos con sitios interno con
+blanco u otros colores». Lo comprobé en el navegador el mismo día: **9 páginas de la casa** (home, `/work`, `/about`,
+`/services`, `/latest`, una nota, `/careers`, `/contact`, `/privacy-policy`) y **13 casos** (Lyft, Amazon, Rakbank,
+Instagram, Norton, Stack Overflow, MachineX, Call of Duty, Washington Post, WhatsApp, Deezer, De-extinction,
+GoFundMe) a 1440, y home, `/work`, Lyft, Instagram y Stack Overflow también a 390; más el menú abierto, el pie, el
+hover del índice y del destacado. Cada página, bajada de media en media pantalla: **640 paradas**. Datos:
+`medicion/koto/paso2/medicion-color-y-casos.json`; capturas: `medicion/koto/paso2/capturas/` (una tira por página,
+`color-<caso>-1440.jpg` con la pantalla de más campo claro o de color de cada caso, menú, pie, hover); herramientas y
+cómo repetirlo: `medicion/koto/paso2/herramientas/correr.sh`.
+
+### 20.1 · Lo medido
+
+- **El lienzo no cambia nunca.** `html` es `#060606` en las 640 paradas de los 27 recorridos; `body` y `main`,
+  transparentes. De 11.039 puntos de la malla que cayeron sobre un fondo de CSS, **ninguno** tiene un canal sobre 60:
+  ninguna sección, página ni estado pinta un fondo claro o de color. Fuera de los medios, lienzo y placa son del 91,9
+  al 98,8 % de los píxeles; lo blanco o claro de la interfaz es del 0,15 al 0,81 %, y son las letras.
+- **El blanco y los colores están dentro de los marcos del trabajo.** En los 13 casos los medios cubren del **56,3 al
+  65,7 %** de la página a 1440. Un medio cuyo color dominante cubre al menos el 30 % es un **campo**: claro (blanco,
+  crema, tinte claro) en el **0 al 27,0 %** de la página (mediana 15,0), de color en el **0 al 25,8 %** (mediana 6,7);
+  juntos, del **2,9 %** (Call of Duty, todo oscuro) al **35,4 %** (GoFundMe), **mediana 23,0**. Del 5 al 62 % de los
+  medios de un caso son campo claro o de color (mediana 41 %). Así se ven las «secciones blancas» o «magenta» de un
+  caso: un marco de 1057 × 595 lleno de blanco con letras negras de la pieza, a 8 px del negro.
+- **El color es el del cliente, y cambia con cada caso.** De 116 campos claros, 31 son blanco (`#FDFDFD` a `#FFFFFF`)
+  y los demás son el neutro de la marca: `#F1F0EB` en Lyft, `#F4F3EF` en Amazon, `#EAF1EA` en De-extinction (11 de
+  11), `#EEE6D1` en Norton, `#FAF6EA` en WhatsApp. Los de color son su color de marca: magenta `#FF00C4` en Lyft,
+  violeta `#A339FE` en Deezer, rojo `#FF2E02` en Rakbank, naranja `#FF5D00` en Stack Overflow, amarillo `#FFFF82` en
+  Washington Post. Ninguno es un color de Koto.
+- **Las interiores de la casa casi no juegan.** Servicios, estudio, carreras, contacto y privacidad: del 0 al 0,9 % de
+  campo claro y 0 de color; los medios, del 0 al 37 % (una franja de imagen ancha arriba y fotos). El índice (`/work`)
+  es el que más color tiene (70,8 % de medios, 20 % de campo de color): son las portadas de los casos. La home, 4,8 %.
+- **Cómo entra: corte seco, con el scroll, como entra una imagen.** El campo tiene el borde del marco (radio 6 px) y 8
+  px de negro alrededor; no hay transición ni fundido del lienzo. El MutationObserver no vio **ningún cambio de fondo**
+  en los 27 recorridos. El único cambio de color atado al scroll está en `/services`: el texto de la sección a la
+  vista pasa de `#989898` a blanco y la anterior vuelve a gris, `color .167s linear` (medido cuadro a cuadro: el cruce
+  dura de 137 a 167 ms). Es tinta, no fondo.
+- **Qué más lo dispara: el hover del índice.** Al pasar el mouse sobre una pieza, **las demás se cubren de negro al 70
+  %** (`bg-black/70`, opacidad de 0 a 1 en **167 ms lineales**, y de vuelta igual; solo desde `md`): se oscurece el
+  45,6 % de la ventana y el color queda solo en la pieza señalada. En el destacado de la home el hover no cambia ningún
+  color (0 %: aparece la etiqueta del cursor). Un campo blanco bajo el velo queda en `#515151` (2,55:1 contra el lienzo).
+- **El texto de la interfaz nunca va sobre un campo.** Todo el texto corrido, los titulares y los rótulos de sección
+  van sobre `#060606`, `#141414` o `#202020` (tabla de §20.2). Sobre un medio solo caen rótulos de 9 a 12 px que flotan
+  al borde de una imagen o en una placa: la hora (mono 11, blanco al 70 %), «Interactive» (9 px), «Menu» a 390, las
+  etiquetas de una nota y la tarjeta «Say Hello»; ningún párrafo ni titular. Lo que se lee sobre un campo claro es
+  texto **de la pieza**, horneado en la imagen: estimado en píxeles, su par oscuro sobre claro tiene mediana 13,9:1
+  (p75 17,9); sobre los campos de color, mediana 4,6:1 (es estimación, no DOM).
+- **Menú y pie, también negros.** Menú a 1440: tarjeta `#141414` de 320 px (radio 4) sobre la página desenfocada (negro
+  al 80 %, 20 px de desenfoque); a 390, capa negra al 70 % con 40 px de desenfoque (`menu-abierto-1440.jpg`,
+  `menu-abierto-390.jpg`). El pie es transparente sobre el lienzo y su texto legal va en `#595959` a 14 px (2,89:1: no
+  aprueba). **El caso no tiene pie:** cierra con «Next up» (§21).
+
+### 20.2 · La regla y los tokens sobre negro
+
+1. **Lienzo `#060606` en todas las páginas, siempre.** No cambia por página, por sección, por scroll ni por hover.
+2. **El blanco y los colores entran solo como campos dentro de un marco de medio:** la pieza (identidad, pantalla,
+   afiche, sistema) compuesta sobre su propio fondo blanco, crema o de color, en un marco de radio 6 px con 8 px de
+   negro alrededor, a ancho de columna (16:9) o a media columna (4:5, 1,62), con las formas de fila de §21.
+3. **El color de un campo es del trabajo, nunca de la interfaz:** en un caso real, el de la marca del cliente; en una
+   pieza de concepto, el de su identidad inventada. Ninguna ruta, servicio, sección ni estado de la interfaz tiene un
+   color propio.
+4. **Dónde:** en las páginas de caso (reales y de concepto) y en las portadas del índice; en la home, a lo más la pieza
+   destacada. Las interiores de la casa (servicios, estudio, contacto, legales) son negras; si llevan color, es una
+   franja de imagen del trabajo.
+5. **Ningún texto de la interfaz sobre un campo.** El gris del cuerpo da 2,51 a 2,88:1 sobre los claros medidos. El
+   texto dentro de un campo es de la pieza y se diseña con su par: 4,5:1 o más (3:1 si mide 24 px o más). Si una pieza
+   se arma en HTML y no como imagen, ese texto entra en `npm run verificar` como cualquier otro.
+6. **Sin transición del lienzo.** Lo que cambia con un estado: el velo del índice y la tinta de lo activo, los dos en
+   167 ms lineales; con movimiento reducido, instantáneos.
+
+| Token | Valor | Rol, y solo ese | Dónde **no** |
+|---|---|---|---|
+| `--lienzo` | `#060606` | El fondo de todas las páginas | Nunca cambia |
+| `--placa` | `#141414` | Encabezado plegado, menú, panel de telemetría y **el marco donde espera cada medio** mientras carga | Tarjeta de contenido, banda de sección |
+| `--placa-activa` | `#202020` | La sección activa en la barra de 390 (§21.3); el hover de una fila de lista | Fondo de nada que no sea un estado |
+| `--blanco` | `#FFFFFF` | Lo nombrado y lo activo: titulares, la primera parte de la frase en dos tintas, la sección activa, el foco | |
+| `--gris` | `#989898` | La continuación, el cuerpo, los rótulos y el nav en reposo | Sobre un campo claro; un enlace que no se distingue de otra forma |
+| `--linea-seccion` | `#2D2D2D` | El borde superior de cada sección del caso y del índice, y la marca de registro de §10 (Koto, medido) | Alrededor de un bloque |
+| `--linea` | blanco al 10 % | Separadores dentro de una sección o entre filas de una lista | Bordes de tarjeta |
+| `--velo` | `#060606` al 70 % | Las piezas del índice que no tienen el mouse | Cualquier otra cosa; en táctil no existe |
+| `--senal` | §20.4 | Lo que responde a ti | §20.4 |
+| campos | del trabajo | Dentro de un marco de medio (punto 2) | La interfaz entera |
+
+No hay tercer gris: el `#595959` de Koto da 2,89:1 sobre el lienzo, 2,63 sobre la placa y 2,33 sobre la placa activa.
+
+| Par de uso (contraste WCAG 2.1, `herramientas/contraste-negro.py`) | Contraste | Mínimo | |
+|---|---|---|---|
+| blanco sobre lienzo · placa · placa activa | 20,26 · 18,42 · 16,29 | 4,5 | aprueba |
+| gris `#989898` sobre lienzo · placa · placa activa | 7,02 · 6,39 · **5,65** | 4,5 | aprueba; sobre la placa activa nada más oscuro que el gris |
+| blanco al 70 % (nav en reposo) sobre lienzo | 9,77 | 4,5 | aprueba |
+| foco: contorno blanco de 2 px contra el lienzo | 20,26 | 3 | aprueba |
+| `#060606` (texto de una pieza) sobre campo `#FFFFFF` · `#F1F0EB` · `#EAF1EA` | 20,26 · 17,76 · 17,63 | 4,5 | aprueba |
+| gris `#989898` sobre esos campos | 2,88 · 2,53 · 2,51 | 4,5 | **no**: por eso la regla 5 |
+| línea `#2D2D2D` · blanco al 10 % · placa, contra el lienzo | 1,47 · 1,23 · 1,10 | | decorativas: separan, no informan |
+| velo sobre un campo blanco · crema · magenta | queda `#515151` · `#4D4C4B` · `#51043F` | | lo que se ve de las piezas sin mouse |
+
+### 20.3 · Techos, para que el juego no se vuelva tic
+
+| Recurso | Techo | De dónde |
+|---|---|---|
+| Campos claros y de color en una página de caso | **Del 10 al 35 %** del área a 1440, contados como §20.1 | Koto: de 2,9 a 35,4 %, mediana 23. Menos de 10 % se lee como un caso sin juego; sobre 35 %, el negro deja de ser la base |
+| Medios en una página de caso | **Un tercio o más** del área a 1440 | Koto: del 56 al 66 %; el piso es el criterio 6 del encargo |
+| Medios claros o de color seguidos | **Cuatro como máximo**; después, un medio oscuro, una foto o una sección de texto | Koto: mediana 4; los 7 de Amazon y WhatsApp son la excepción, no la regla |
+| Colores de campo por caso | Los de la marca de ese caso; **ninguno vuelve como color de la interfaz** | Koto: cambian de un caso al siguiente y ninguno es suyo |
+| Interiores de la casa | **0 campos**; el color, si hay, en una franja de imagen o en fotos | Koto: del 0 al 0,9 % de campo claro, 0 de color |
+| Índice | El color solo en las portadas; ninguna caja de color sin imagen | Koto: 20 % de campo de color, todo en portadas |
+| Velo | Solo en el índice, solo con puntero fino, 167 ms | Koto |
+| Texto de la interfaz sobre un campo | **0** | Koto: 0 |
+
+### 20.4 · La señal sobre negro
+
+El cobalto del paso 1 no sirve sobre este lienzo: `#0029FF` da **2,66:1** contra `#060606` (2,42 contra la placa),
+bajo el 3:1 de una forma y el 4,5:1 de un texto.
+
+| Opción | Valores | Contraste |
+|---|---|---|
+| **(a) La de Koto, la que rige** | Lo activo en blanco, lo que reposa en gris; la sección activa del índice suma un punto blanco de 3 px a su izquierda (medido: x 17, 3 × 3 px); la barra de 390 marca la sección en `--placa-activa`. Cero color de interfaz | blanco 20,26 y gris 7,02 contra el lienzo; blanco contra gris 2,88 (el punto, no el color, marca la activa) |
+| (b) El cobalto del brief, aclarado en el mismo tono (OKLCH 264,2°) | `#316BFF` (L 0,581 · C 0,228) | 4,51 contra el lienzo, 4,10 contra la placa, **4,49 contra un campo blanco**: pasa el 3:1 de una forma sobre el negro, la placa y un campo blanco. Texto encima: `#060606` a 4,51; blanco a 4,49 (no aprueba a 11 px) |
+
+**Rige (a)**, porque la compuerta 1 pide regirse por la referencia en diseño (punto 7) y Koto no tiene color de
+interfaz: el color de la página es del trabajo, y una señal azul fija sería el único color que no lo es. Lo que eso
+cambia: el círculo del cursor (§8) pasa a **blanco con el texto en `#060606`** (20,26:1) y un anillo de 1 px `#060606`
+para que se vea también sobre un campo blanco (blanco contra blanco es 1:1; el anillo, 20,26:1). El anillo es decisión
+de este lock, no de Koto: allí la etiqueta del cursor es de vidrio y no tiene que verse sobre blanco. El punto activo del
+caso (§13, §21) y el estado apretado (§15) van en blanco; la telemetría que responde a ti (§11) va en blanco y la que
+no, en gris; el foco es un contorno blanco de 2 px a 3 px de distancia, y el círculo se sigue escondiendo con el
+teclado (§8). **(b) queda medido** por si Ramón, en la compuerta 2, quiere el azul del brief: con `#316BFF`, sus usos y
+techos son los de la fila del cobalto en §14, y el texto del círculo va en `#060606`.
+
+### 20.5 · En qué se diferencia de driftime, en una frase que se comprueba mirando
+
+**Tapa las imágenes: en Koto (y aquí) queda una página negra con texto blanco y gris, sin un solo bloque de color; en
+driftime quedaban los cuatro campos de color de los servicios.** Aquí el color nunca es de la interfaz ni fijo por
+servicio (lo que Ramón rechazó el 15-oct, `spec-visual.md` §7): viene dentro de cada pieza y cambia de un caso al
+siguiente.
+
+### 20.6 · Lo que esto le dice al encargo del paso 2
+
+El encargo (`e12/encargo-paso-2.md` §2, vista 5, y criterio 4) pide una página interior donde **el lienzo** pase de
+negro a blanco u otro color. **Lo medido no lo respalda:** en Koto el lienzo no cambia en ninguna de las 640 paradas,
+ni en las interiores de la casa ni en los casos. El encargo prevé el caso (§9: «si la medición de Koto muestra el
+juego de color en otro tipo de página, Lucía elige la equivalente y lo dice»): **la página que muestra el juego es la
+de caso**, y la vista 5 equivalente es un caso (real o de concepto) con sus campos medidos como §20.1, o el índice con
+sus portadas. Una interior de la casa con el lienzo claro sería un **desvío de Koto**, no su juego: si Ramón lo
+quiere al verlo en la compuerta 2, se rotula como desvío y se decide ahí. Mauro ajusta el criterio 4 del encargo; este
+lock no lo edita.
+
+### 20.7 · Lo que pasa a historia y lo que queda
+
+- **A historia:** la paleta clara de §5 entera; en §1, el trabajo (1) de A&P («el lienzo claro») y el párrafo «Se elige
+  el claro»; en §3, la fila del lienzo de Koto («No el negro»), la del velo negro («No»: en negro se toma, como
+  `--velo` del índice), la del vidrio («No»: sobre negro se lee, y queda en el menú como en Koto) y la primera de A&P;
+  en §4, las filas «Light Mode Editorial», fondo, superficies, texto, líneas y cobalto; en §8, la forma del círculo en
+  cobalto y la nota del foco de tinta sobre cobalto (2,48:1); en §10, los dos valores de línea (los mismos nombres,
+  ahora `--linea-seccion` `#2D2D2D` y `--linea` blanco al 10 %); en §13 y §14, el cobalto (pasa a `--senal`, §20.4);
+  en §15, el foco de tinta y el par gris sobre placa (pasan a la tabla de §20.2).
+- **Lo que queda de A&P:** (2) la carga como diseño (cada medio espera en `--placa` con su radio real, sin brillo que
+  corre); el techo del cursor (90 % del salto en 75 ms, §9); y, solo en la dirección B, las columnas vacías y la lista
+  con filetes (§16).
+- **Lo que sigue igual:** la letra (§6, con la letra por dirección del encargo), la retícula (§7), el cursor salvo su
+  color (§8), los resortes (§9), las marcas (§10), la telemetría (§11), los sandboxes (§12), los techos (§14, con
+  `--senal`), la accesibilidad (§15) y los ejes de §16, ahora los dos sobre negro.
+
+## 21 · El caso, como Koto
+
+Ramón, 16-oct (punto 4): «hacer los casos como los hace la referencia». Medí la anatomía de **13 casos a 1440** y de
+3 a 390 (`caso.mjs` → `medicion-color-y-casos.json`, `casos.porCaso` y `casos.plantilla`). El de detalle es **Lyft**
+(ficha estándar: 26 de los 35 casos usan Challenge / Strategy / Identity / Application / Outcome):
+`capturas/caso-lyft-1440-primera.jpg`, `caso-lyft-1440-completa-01.jpg` y `-02.jpg` (a la mitad), `caso-lyft-390-*`,
+`detalle-lateral-activa-1440.jpg`, `caso-lyft-1440-cierre-1..3.jpg`.
+
+### 21.1 · La barra lateral (1440)
+
+Pegajosa (`position: sticky; top: 0; height: 100svh`), **320 px**, a 16 px del borde. De arriba abajo:
+
+- **Nombre y bajada en dos tintas**, Condensed 24: el nombre en blanco, la bajada en gris («Lyft / Your Lyft is
+  arriving»; bajadas de 1 a 6 palabras, casi siempre 3 o 4).
+- **Ficha mono** de 11 px en MAYÚSCULAS, gris: «TRAVEL · 2025» (el separador es un punto gris de 2 px).
+- **Índice de secciones**, Regular 16, filas de 36 px: la activa en blanco con un **punto blanco de 3 px** a su
+  izquierda; las demás en gris. Medido: arriba está activa «Challenge»; a media página, «Identity».
+- **Abajo, créditos** (10 de 13 casos): «Thanks» en blanco 14 y un texto gris de 14 cortado con «Read more». En 4 de
+  13, además, una **tarjeta** que enlaza a una nota («Deep dive»: miniatura de 76 px, título blanco 16, bajada gris,
+  rótulo mono de 9 px).
+
+### 21.2 · La columna, en orden (1440)
+
+Columna de **1057 px** (12 columnas), a la derecha de la barra; **8 px** entre todos los bloques.
+
+1. **Medio principal** a ancho de columna, **16:9** (1057 × 595), radio 6. 13 de 13.
+2. **Introducción:** borde superior 1 px `--linea-seccion`, 24 px arriba y 12 abajo. A la izquierda, un **titular**
+   Condensed 24 blanco de 1 a 7 palabras (9 de 13); a la derecha, el cuerpo: Regular 16 / 1,25 gris en una caja de
+   **493 px**, de 1 a 5 párrafos.
+3. **Secciones**, cada una con su **texto** (borde, **rótulo mono** de 11 px a la izquierda, a la derecha un titular
+   opcional de 24 px, en 4 de 13 casos, y los párrafos) seguido de **sus filas de medios**. Mediana **5 secciones**
+   por caso (de 1 en Washington Post a 14 en Amazon); **2 filas por sección** (p75 5, máximo 15). Las secciones del
+   medio (Identity, Application) cargan la mayoría: en Lyft, 0 · 1 · 7 · 6 · 1.
+4. **Cita** del cliente, solo en 2 de 13 (Instagram, Rakbank): Condensed 24 blanco, de 42 y 68 palabras, en una caja de
+   590 px corrida 234 px a la derecha; firma en mono 11: el nombre en blanco, el cargo en gris.
+5. **Cierre «Next up»** (§21.4).
+
+**Las filas de medios tienen cuatro formas, ninguna más** (269 filas en 13 casos):
+
+| Forma | Cajas a 1440 | Filas | |
+|---|---|---|---|
+| Uno a ancho de columna, **16:9** | 1057 × 595 | 159 (59 %) | Abre la sección en 50 de 73 secciones con medios |
+| **Par 4:5 \| 4:5** | 525 × 656 cada uno | 62 (23 %) | |
+| **4:5 \| dos 1,62 apilados** | 525 × 656 y 525 × 324 + 8 + 324 | 23 (9 %) | |
+| **Dos 1,62 apilados \| 4:5** | lo mismo, al revés | 25 (9 %) | Las dos versiones se alternan |
+
+**El ritmo:** una fila a ancho de columna y una partida se turnan (de 256 pares de filas seguidas, 170 cambian de
+una a otra y 63 son dos 16:9); **dos filas partidas seguidas son raras: 23 (9 %)**.
+
+Todas con radio 6 y 8 px entre ellas. **Ninguna va a sangre a 1440**: todas quedan dentro de la columna. Los videos
+son medios iguales a las imágenes (se cargan en su marco `--placa`).
+
+**Texto:** párrafos de **8 a 133 palabras, mediana 54** (p25 42, p75 66), de 1 a 15 líneas en la caja de 493 px;
+titulares de sección de 1 a 16 palabras, mediana 4. El texto es poco al lado de las imágenes: Lyft tiene 230 palabras
+en 5 bloques contra 23 medios en 16 filas. Las páginas miden de 9.078 px (WhatsApp) a 39.589 px (Amazon); Lyft, 11.912.
+
+### 21.3 · Cómo se ve a 390
+
+- **Arriba, el medio principal a sangre en 4:5** (390 × 488, sin radio), con un botón ← en una placa.
+- Nombre y bajada en Condensed 23 (dos tintas), la ficha mono y **la introducción en el encabezado**, a 15 px.
+- Cada sección: borde, rótulo mono, párrafo a 358 px; sus filas mantienen la forma: el 16:9 a 374 × 210, los pares a
+  183 px cada uno (4:5 a 183 × 229; los 1,62 apilados pasan a 183 × 110), radio 6, 8 px.
+- **El índice pasa a una barra flotante abajo:** una placa `#141414` con el nombre del caso en mono 11 gris y la
+  sección activa en mono 11 blanca sobre `#202020`, con un + que abre el índice
+  (`caso-lyft-390-primera.jpg`).
+- «Next up» al final, en la página (no fijo), con el título a 23 px.
+
+### 21.4 · El cierre (1440)
+
+«Next up» está **fijo abajo, detrás del caso** (711 px de alto). Al llegar al final, el contenido se corre hacia la
+izquierda y se oscurece (la última imagen pasa de x 352 a −706 en el último tramo de scroll) mientras aparece: el
+video del siguiente crece de 208 × 117 a 416 × 234, y los textos pasan de opacidad 0 al 95 % del recorrido a 0,31 al
+98 % y a 1 al 100 %. Contenido: «NEXT UP» en mono 11 gris; el nombre del siguiente caso (Condensed 32 blanco) y su
+bajada (32 gris); un bloque de contacto («Want to discuss a project?» en blanco 14, una frase gris y «GET IN TOUCH»);
+y «[ VIEW ALL PROJECTS ] (35)» en mono 11 gris, el corchete de §14 con el conteo verdadero. **El caso no tiene pie.**
+
+### 21.5 · La plantilla de nuestros casos
+
+La misma anatomía, con el método de §13 puesto en el orden de Koto y los datos del inventario:
+
+| Bloque | 1440 | 390 | Contenido |
+|---|---|---|---|
+| Barra lateral | 320 px pegajosa | Encabezado + barra flotante abajo | Nombre y bajada en dos tintas; ficha mono verdadera (TIPO · AÑO, y «CONCEPTO» en las piezas de concepto, visible sin scroll); índice con punto blanco de 3 px; abajo, créditos de quién hizo qué (sin inventar nombres) |
+| Medio principal | 16:9 a 1057 × 595, radio 6 | 4:5 a sangre, sin radio | La pieza entera, plana en su marco: pide **los dos encuadres** (16:9 y 4:5) |
+| **Problema** (la introducción de Koto) | Titular 24 a la izquierda, 1 a 3 párrafos a la derecha | En el encabezado | Lo que le pasaba al cliente o al sitio |
+| **Hipótesis** (Strategy) | Rótulo mono + 1 o 2 párrafos + 0 o 1 fila (Lyft: 1) | Igual, a 358 px | Qué creíamos y cómo íbamos a saber si funcionó |
+| **Solución** (Identity) | Rótulo + párrafos + **el grueso de las filas** (Lyft: 7) | Igual | Lo que se hizo, con los ingredientes verificados (§7) |
+| **La pieza** (Application) | Rótulo + 1 párrafo + **el otro grueso** (Lyft: 6) | Igual | La pieza aplicada: pantallas, piezas, sistema; aquí entran los campos claros y de color (§20) |
+| **Resultado medido** o **Sin métrica** (Outcome) | Rótulo + 1 párrafo + 1 fila (Lyft: 1) | Igual | El número con instrumento y fecha, o qué no se midió. En un concepto: «Sin métrica: es un concepto, no tuvo usuarios» (el texto final es de Clara) |
+| Cita | Solo si existe y con permiso escrito | | Nunca en un concepto; nunca inventada |
+| Siguiente | «Siguiente»: nombre y bajada del próximo caso, su medio, contacto y «[ Todo el trabajo ] (n)» | En la página | n es el conteo verdadero del índice |
+
+- **Filas:** solo las cuatro formas de §21.2. La sección abre con una 16:9 (Koto: 50 de 73); una fila partida (par o
+  «4:5 + dos 1,62») va después de una 16:9 y no de otra partida (Koto: 9 %). **Ninguna a sangre a 1440.**
+- **Largos:** párrafos de 42 a 66 palabras (p25 a p75 de Koto), uno a tres por sección; titulares de 2 a 7 palabras.
+- **Cantidad:** el piso es el tercio del área en medios (criterio 6 del encargo); el caso más corto de Koto (WhatsApp)
+  tiene 11 filas y 15 medios, con 56 % del área en medios. Un caso nuestro con menos material crece hasta donde llega
+  lo real, sin relleno.
+- **Color:** los campos de cada caso son los de su marca (§20.2, regla 3) y caben en los techos de §20.3.
+- **Movimiento:** el cierre de Koto va atado al scroll (el caso se corre y se oscurece); aquí, como en §3 y §9, nada se
+  ata a la posición del scroll: «Siguiente» entra una vez con el resorte **entrada**.
+- **Lo que cambia de §13:** el resultado va al final, como el «Outcome» de Koto, y «La pieza» deja de ser una galería
+  aparte: son las filas que siguen a cada sección, con el grueso en Solución y La pieza.

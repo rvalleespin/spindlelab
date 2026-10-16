@@ -2,7 +2,8 @@
 
 Uso: python3 -I armar.py <dir-crudo> <salida.json>
 Junta: reconocer.json (qué páginas hay), recorrido-*.json + pixeles.json (color por página, en px y en
-DOM), menu-pie.json y velo.json (menú, pie, hover), caso-*.json (anatomía de 13 casos) y capturas.json.
+DOM), menu-pie.json, velo.json y tinta.json (menú, pie, hover, el cambio de tinta de /services),
+contraste-negro.json (los pares de la paleta sobre negro y la señal), caso-*.json (anatomía de 13 casos) y capturas.json.
 Calcula los agregados que usa el lock (§20 y §21): cuánto ocupa el negro, dónde entra el claro o el
 color, el contraste de cada par de texto, y la plantilla del caso (filas, proporciones, largos).
 """
@@ -21,6 +22,8 @@ pix = J("pixeles.json")
 rec = J("reconocer.json")
 mp = J("menu-pie.json")
 velo = J("velo.json")
+tinta = J("tinta.json")
+contraste = J("contraste-negro.json")
 capt = J("capturas.json")
 
 CASA = ["home", "trabajo", "estudio", "servicios", "noticias", "articulo", "carreras", "contacto", "privacidad"]
@@ -115,6 +118,8 @@ menu_pie = {
     "menu390": {"pagina": "estudio", "abierto": resumir_vista(mp["menu390"].get("abierto")), "captura": mp["menu390"].get("captura")},
     "pie": {k[4:]: {"footer": v.get("footer"), "vista": resumir_vista(v["vista"]), "captura": v["captura"]} for k, v in mp.items() if k.startswith("pie_")},
     "hoverIndice": hover_indice, "hoverDestacado": hover_dest,
+    "tintaDeServicios": {"secciones": [{k: s[k] for k in ("id", "color", "transicion")} for s in tinta["secciones"]], "cruce": {"de": tinta["cruce"]["de"], "a": tinta["cruce"]["a"], "antes": tinta["cruce"]["antes"],
+                         "cambios": [x for i, x in enumerate(tinta["cruce"]["curva"]) if i == 0 or (x["a"], x["b"]) != (tinta["cruce"]["curva"][i - 1]["a"], tinta["cruce"]["curva"][i - 1]["b"])]}},
     "veloDelIndice": {"elemento": velo["velo"], "piezaConMouse": velo["piezaConMouse"], "piezaMedida": velo["piezaMedida"],
                       "entrar": [(x["t"], x.get("op")) for x in velo["entrar"]], "salir": [(x["t"], x.get("op")) for x in velo["salir"]]},
 }
@@ -211,7 +216,20 @@ for f in sorted(glob.glob(os.path.join(dir_crudo, "caso-*.json"))):
         "cierre": d["cierre"],
     }
 
+abre, seguidas = collections.Counter(), collections.Counter()
+for k, v in casos.items():
+    if not k.endswith("-1440"):
+        continue
+    b = v["bloques"]
+    for i, x in enumerate(b):
+        if x["tipo"] == "texto" and i + 1 < len(b) and b[i + 1]["tipo"] == "fila de medios":
+            abre[b[i + 1]["patron"]] += 1
+    pats = [x["patron"] for x in b if x["tipo"] == "fila de medios"]
+    for a, c in zip(pats, pats[1:]):
+        seguidas[("16:9" if a == "16:9" else "partida") + " → " + ("16:9" if c == "16:9" else "partida")] += 1
 plantilla = {
+    "primeraFilaDespuesDeUnTexto": abre.most_common(),
+    "filasSeguidas": seguidas.most_common(),
     "casosMedidos1440": len(secciones_n),
     "filasDeMediosPorPatron": filas_tot.most_common(),
     "filasDeMediosTotal": sum(filas_tot.values()),
@@ -236,6 +254,8 @@ out = {
         "pixeles.py: cada píxel de la página contado una vez (a 1/4 de px CSS), separado en interfaz y medios, en clases (lienzo, placa, gris, blanco, crema, claro, color por familia, resto); cada medio, con su color dominante y si es un campo (el dominante cubre ≥ 30 %); para los campos claros y de color, el par de lectura estimado (el color frecuente que más contrasta y su contraste WCAG).",
         "menu-pie.mjs: menú abierto a 1440 y 390, pie de la home, el estudio y servicios, cierre de un caso, hover sobre una pieza del índice y un destacado de la home (fondos computados y diferencia de píxeles).",
         "velo.mjs: el velo que oscurece las demás piezas del índice: su clase y su opacidad leída en cada cuadro al entrar y al salir.",
+        "tinta.mjs: el único cambio de color atado al scroll de los 27 recorridos (/services: el texto de la sección a la vista pasa de gris a blanco): transición declarada y color leído en cada cuadro al cruzar.",
+        "contraste-negro.py: contraste WCAG 2.1 de cada par de la paleta sobre negro, el velo sobre los campos, el texto de interfaz sobre un campo claro y la señal (el cobalto del brief y el mismo tono aclarado hasta 3:1, 4,5:1 y 7:1).",
         "caso.mjs: anatomía de 13 casos a 1440 y de 3 a 390: barra lateral (título, ficha, índice y marcador activo arriba y a media página, créditos), cada marco de medio con su fila, proporción y radio, cada bloque de texto con rótulo, titular y párrafos (palabras, caracteres, líneas), citas con firma, y el cierre «Next up» leído al 90, 95, 98 y 100 % del recorrido.",
     ],
     "limitaciones": [
@@ -259,6 +279,7 @@ out = {
             "camposDeColorEnCasos_contrasteDelParDeLectura": cuartiles(pares_color),
             "paresDeTextoSobreFondoCss_todasLasPaginas": todos_pares_l[:30],
         },
+        "paletaSobreNegro": contraste,
         "porPagina": por_pagina,
         "menuPieYHover": menu_pie,
     },
