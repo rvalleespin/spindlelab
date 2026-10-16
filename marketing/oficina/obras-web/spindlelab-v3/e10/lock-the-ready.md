@@ -4,6 +4,11 @@
 como referencia del sitio v3. Sale de lo que Ramón marcó en la página de referentes
 (`referentes/marcas-15oct.json`):
 
+> **Corregido el 16-oct tras la ronda 1 de QA** (`acta-paso-2.md`, defectos 3 a 6). Lo medido de The Ready
+> (§1 a §9) no cambia. Cambia lo que se toma: **§10b es nuevo** y dice, recurso por recurso, qué se hizo
+> propio y cómo; §5, §10, §12, §13, §14 y §15 se corrigieron para que digan lo mismo; §17 fija el orden del
+> hero y §18 es el historial de esta corrección.
+
 - **The Ready, idea principal.** «me gusta mucho todo lo que dices que no se toma (…) me gusta mucho
   la guinche, la tipografía y los colores». La guinche (huincha) es, aclarado en el chat, **la cinta
   que se mueve y el subrayado amarillo**.
@@ -148,6 +153,13 @@ captura: ~`#18082A`): el ovillo junto al h1 de la oferta, los tres íconos de in
 y mover, los cuadrados concéntricos de la portada del caso, los rulos de la banda amarilla de la
 home. Más la mancha naranja de borde orgánico. Uno o dos por página; nosotros no tiene ninguno.
 
+**Lo que se construye no es este marcador** (corregido el 16-oct, defecto 6): de The Ready se toman la
+idea (resaltar la consecuencia, al final de la frase), el alto que cubre la letra entera y el dibujo de
+izquierda a derecha en ~470 ms, completo con movimiento reducido. **La forma es propia**: una pasada de
+plumón con bordes que ondulan, entrada en ángulo, salida que sube y dos vetas donde el plumón se secó
+(`tableros/e10-direcciones/proto/e10/marcador.svg`, generado por `herramientas/marcas.mjs`), en el
+resaltador propio (§10b). No es el trazo recto de remate cuadrado que se midió arriba.
+
 ## 6 · Botones, grilla, líneas y ritmo (medidos)
 
 - **Óvalo.** `border-radius: 100 %` sobre una caja de 317×99 px a 1440 (212×88 o 255×88 a 390).
@@ -232,28 +244,33 @@ corrida a la derecha con los rótulos a la izquierda (lo mismo que hace la ficha
 
 ## 10 · Qué se toma y qué no
 
+Corregido el 16-oct (ronda 1, defecto 6): la versión anterior de esta tabla tomaba casi todo «tal cual»,
+y el tablero salió con los siete colores de The Ready idénticos al hex, su óvalo, su encabezado, su banda
+final, su collage y sus garabatos en sus mismos lugares: con el logo tapado, Taller se leía como The Ready.
+Ahora la tabla dice qué se toma de verdad (lo que Ramón marcó: la letra, la huincha y el juego) y remite a
+**§10b** para todo lo que se hizo propio.
+
 | De The Ready | ¿Se toma? | Cómo, y por qué |
 |---|---|---|
-| Papel `#FFFEFA` como lienzo, ciruela `#1B0925` para titulares, botones y la banda final, casi negro `#0D0C0E` para el cuerpo | **Sí** | Es el sistema que Ramón marcó («los colores»). Reemplaza el lienzo negro y el texto papel de driftime |
-| Amarillo `#F4F480`: el marcador y bandas enteras | **Sí, con techo** (§13) | Es la huincha. No cuenta como oro (§12) |
-| Lima `#E6FA97` | **Sí, un solo rol:** portada de las páginas de obra (Trabajo) | Es el rol que tiene en The Ready: solo en casos |
-| Lavanda `#EDD1FF` | **Solo** como óvalo de la banda final ciruela; **nunca** como banda | Tono 277°: es la familia violeta del tell #1 de refero. Como botón sobre ciruela es un acento; como banda de cita vuelve la página una paleta SaaS |
-| Gris cálido `#ECECE2` | **Solo el pie** | En The Ready su rol grande es la banda del muro de logos, que no existe aquí |
-| Naranja `#EC6227`, la mancha con rótulo | **Solo en la dirección Taller**, una por página | Es la pieza más de agencia de la paleta, y su tono (18,0°) queda a 3,7° del brasa `#DA3400` (14,3°), el campo de driftime que Ramón descartó |
-| Saans en todos los titulares, en caja de oración, peso 500, −0,02em | **Sí, con Instrument Sans** (§11) | «La tipografía». Saans tiene licencia comercial |
-| La escala 138 / 91 / 52 / 31 a 1440 y 87 / 60 / 36 / 24 a 390 | **Sí**, con el tope de palabra larga de §13 | Medida |
+| Papel `#FFFEFA`, ciruela `#1B0925` y casi negro `#0D0C0E` | **No: propios** (§10b) | El papel `#F7F5F0` y el ciruela `#341F34` son los del manual de SpindleLab (§04); una sola tinta. Los de The Ready quedan como opción del tablero, dicha como suya |
+| Amarillo `#F4F480`: el marcador y bandas enteras | **El rol sí, el valor no** (§10b) | El rol es la huincha que Ramón marcó. El valor es el resaltador propio `#EEF26E` (§12); el exacto, solo si Ramón lo elige en el tablero |
+| Lima `#E6FA97`, lavanda `#EDD1FF`, naranja `#EC6227` | **No** (§10b) | Sus roles los hacen el papel (portada de Trabajo), el botón papel (pie) y el sello en tinta. Vuelven solo con la opción «colores exactos», en su rol de allá |
+| Saans en todos los titulares, en caja de oración, peso 500, −0,02em | **Sí, con Instrument Sans** (§11) | «La tipografía». Saans tiene licencia comercial: la letra es otra |
+| La escala 138 / 91 / 52 / 31 a 1440 y 87 / 60 / 36 / 24 a 390 | **Sí, en las dos direcciones** y en todas las páginas, con el tope de palabra larga de §13 | Medida. Desde la ronda 1 también en Pizarra limpia (defecto 5) |
 | IBM Plex Sans para el cuerpo e IBM Plex Mono para rótulos, navegación y botones | **Sí, las mismas** | Son libres (OFL) |
 | Rótulos mono en MAYÚSCULAS con +0,03em; botones con +0,1em | **Sí**, solo en mono y solo a 11-13 px | Es el contrapunto del sistema. Reabre una regla aprobada (§15) |
 | Interlínea 1,2 del cuerpo | **No: 1,45** | 1,2 es apretado para castellano con tildes y eñes a 17 px. Desvío escrito, no gusto |
-| La cinta | **Sí, reconstruida** (§14) | Mismo alto, letra, dirección y velocidad (30 px/s). Distinto: se puede pausar, la velocidad va por tiempo y no por cuadro, no es un `h1`, y el separador es el interpunto «·» en ciruela del manual §06, no el ✳︎, que es firma de The Ready |
-| El marcador detrás de la frase: 1em, remate cuadrado, 0,12em de vuelo, dibujo a la derecha en ~470 ms | **Sí, tal cual medido** | Es la otra mitad de la huincha. Se construye con CSS (fondo con `box-decoration-break: clone`) o con un SVG `aria-hidden` |
-| Los garabatos en ciruela | **Sí, en la dirección Taller**, uno por página | Son lo único de verdad a mano. Hay que producirlos (Bruno): trazo de rotulador, ciruela, sin texto |
-| Óvalo grande como llamado principal; hover que invierte y crece ×1,10 | **Sí** | Con ancho mínimo para que el texto no se parta (su defecto a 390) |
-| Botón rectángulo de radio 0 en el encabezado | **Sí** | |
-| Filete ciruela de 1 px que nace del borde izquierdo | **Sí** | Es barato, propio de la referencia y ordena el titular |
+| La cinta | **Sí, reconstruida y propia** (§10b, §14) | Mismo alto, letra, dirección y velocidad (30 px/s). Distinto: se puede pausar, la velocidad va por tiempo y no por cuadro, no es un `h1`, y el separador es el interpunto «·» en ciruela del manual §06, no el ✳︎, que es firma de The Ready |
+| El marcador detrás de la frase | **La idea y el tiempo sí; la forma es propia** (§5, §10b) | Corregido: la versión anterior decía «tal cual medido» y no era lo construido. Se toman la consecuencia al final, el alto que cubre la letra y el dibujo de ~470 ms; la forma es una pasada de plumón propia |
+| Los garabatos en ciruela, puestos junto al h1 de la oferta, en la banda amarilla y en la portada del caso | **No** (§10b) | Se reemplazan por **marcas de revisión** propias, una por página en Taller, donde hacen un trabajo |
+| La mancha naranja de borde orgánico con un rótulo mono | **No** (§10b) | Se reemplaza por el **sello** (Taller) |
+| Óvalo grande como llamado principal; hover que invierte y crece ×1,10 en 0,6 s | **No** (§10b) | Botón de la marca (radio 6) con el resaltador que lo cruza al pasar el cursor; el botón grande es solo el del chequeo |
+| Encabezado de 90 px a todo el ancho con filete y botón rectángulo de radio 0 | **No** (§10b) | El módulo de navegación de SpindleLab (manual §02), pasado a papel |
+| Banda final ciruela con el display en papel y el óvalo lavanda | **La idea sí; el color y lo que lleva, no** (§10b) | Banda final en el ciruela del manual, botón papel y el wordmark gigante del sitio v3 con el punto dorado |
+| Filete ciruela de 1 px que nace del borde izquierdo | **Sí, declarado** (§10b) | Es un filete de grilla; lo propio es dónde se corta en el hero |
 | Margen lateral 75 px a 1440 y 24 a 390; ~96 px de aire por sección | **Sí** | Gehl mide casi lo mismo (72 y 20): las dos referencias coinciden |
-| Fotos de radio 0, con grano en el archivo, saturadas, gente trabajando de espaldas o de perfil | **Sí, generadas con IA** | Con la regla nueva: personas como ambiente, nunca presentadas como equipo ni como clientes, y medidas por oro (§07b) |
-| Collage de fotos que se montan y tocan los bordes | **Solo en la dirección Taller** | |
+| Fotos de radio 0, con grano en el archivo, saturadas, gente trabajando de espaldas o de perfil | **Sí, generadas con IA** | Con la regla nueva: personas como ambiente, nunca presentadas como equipo ni como clientes, y medidas por oro (§07b). El contenido (empresas chilenas, el mundo del cliente) es propio: lo fija la pauta de Bruno |
+| Collage de fotos que se montan sobre una cuadrícula y tocan los bordes | **No** (§10b) | Corregido: Taller lo tenía. Las obras van en la fila del sitio v3 |
 | Muro de 300 logos, «11 years. 300 clients.», carrusel de testimonios | **No** | Cero prueba social inventada |
 | Grilla de retratos del equipo | **No** | SpindleLab es una persona; las personas generadas no pueden posar como equipo |
 | Video incrustado | **No** | No existe material |
@@ -265,7 +282,7 @@ corrida a la derecha con los rótulos a la izquierda (lo mismo que hace la ficha
 | De Gehl | ¿Se toma? | Cómo |
 |---|---|---|
 | **Un solo fondo** por página salvo la banda final | **Sí, en la dirección Pizarra limpia** | Es «lo limpio» medido: Gehl no cambia de fondo en toda la página |
-| **Techo de densidad** | **Sí, en Pizarra limpia:** el texto cubre como máximo **15 %** de la página a 1440 | Gehl 10-12 %; The Ready 14-30 % |
+| **Techo de densidad** | **Sí, en Pizarra limpia:** el texto de lectura (sin la letra display de 40 px o más) cubre como máximo **15 %** de la página a 1440 | Gehl 10-12 %; The Ready 14-30 %. Corregido el 16-oct: con la escala display de vuelta en Pizarra (defecto 5), los titulares de 138 y 91 px ocupan área sin cargar lectura; contando todo, Pizarra queda en 8,7 a 18,1 % y el texto de lectura en 3,4 a 8,4 % (`../tableros/e10-direcciones/img/medidas.json`) |
 | **Aire entre bloques parejo:** 40 + 40 px | **Sí, en Pizarra limpia**, dentro de las secciones de 96 px de The Ready | Cumple un trabajo distinto: el de The Ready separa secciones, el de Gehl separa bloques dentro de una |
 | **Columna de lectura corrida**, rótulo a la izquierda | **Sí, en las dos** | Las dos referencias lo hacen. Con tope de **68 caracteres por línea** (`max-width` en em), no los 89-106 de Gehl |
 | **Foto a sangre** | **Sí, como banda propia**: 100 % del ancho, 16:9 o 21:9 a 1440, 4:5 a 390 | **Nada escrito encima** salvo una etiqueta de pieza: el manual §07b prohíbe texto y velos sobre las fotos, y Gehl sí pone el titular encima. El hero conserva su titular y su chequeo fuera de la foto |
@@ -273,6 +290,36 @@ corrida a la derecha con los rótulos a la izquierda (lo mismo que hace la ficha
 | Serif de lectura (Times Now) | **No** | Es de pago, Ramón no la marcó, y sería la cuarta familia (detector C7). Si se quiere una serif para el cuerpo largo de los casos, la coherente es **IBM Plex Serif** (OFL, de la misma familia que Plex Sans y Mono), y queda como opción abierta, no como parte del lock |
 | Rótulos grises `#C4BDB3` | **No** | 1,80:1 |
 | Carrusel en el hero | **No** | |
+
+## 10b · Lo propio, recurso por recurso (ronda 1 de QA, 16-oct)
+
+El encargo era «ningún recurso copiado tal cual de The Ready, debe ser propio». La primera versión cumplió
+con la cinta y el marcador y tomó el resto al hex y al milisegundo. Esta tabla dice, para cada recurso que
+Javiera encontró copiado (`acta-paso-2.md`, defecto 6) y para los que quedaban sin declarar, **qué se hace
+propio y por dónde**: el valor, la forma o la composición. Todo está construido en los prototipos
+(`tableros/e10-direcciones/proto/e10/`) y se ve en el tablero.
+
+| Recurso de The Ready | Lo que el tablero tenía el 16-oct a las 12:30 | Lo que se hace ahora | Por dónde es propio |
+|---|---|---|---|
+| **Paleta** (papel `#FFFEFA`, ciruela `#1B0925`, casi negro `#0D0C0E`, amarillo `#F4F480`, lima, lavanda, naranja) | Los siete, idénticos al hex (`tokens.css`) | Papel `#F7F5F0` y ciruela `#341F34` del manual de SpindleLab (§04: el papel del sistema y el ciruela del campo Alcance), **una sola tinta** para titulares y cuerpo; resaltador `#EEF26E`; oro `#C9A227`. Sin lima, lavanda ni naranja | **Valor**: dos de cuatro son de la marca; el resaltador es más fluor y más verde que el de ellos (61,8° y 0,545 contra 60,0° y 0,475) y sigue fuera del oro (§12). Contraste: ciruela sobre papel 13,85:1, sobre el resaltador 12,62:1. **Si Ramón quiere los exactos, lo decide en el tablero** sabiendo que son los de The Ready (`?paleta=the-ready` los muestra) |
+| **Óvalo**: 317×99, Plex Mono 12,7 px +0,1em; al pasar el cursor se invierte y crece ×1,10 en 0,6 s con `cubic-bezier(.19, 1, .22, 1)` | Igual en tamaño, interletra, inversión, escala, tiempo y curva | Sale. El llamado es el **botón de la marca**: radio 6 (manual §07), 50 px de alto, Plex Mono +0,1em. Al pasar el cursor **no se invierte ni crece**: lo cruza el resaltador de izquierda a derecha en 0,47 s, el mismo tiempo que el marcador. **El botón grande es uno solo: el del chequeo** (manual §07, «nunca un botón grande, salvo el del chequeo») | **Forma** (el radio y el campo de la marca) y **movimiento** (el resaltador, no la inversión). Cierra de paso el defecto 7: ya no hay óvalo que monte el campo |
+| **Encabezado**: 90 px a todo el ancho, papel, filete ciruela abajo, botón rectángulo de radio 0 que se invierte en 0,6 s | Igual | Sale. Va el **módulo de navegación** de SpindleLab (manual §02: «la única placa es la del módulo de navegación»): placa compacta arriba a la izquierda con sus tres casillas (wordmark · Escríbenos · menú), pasada a papel con filete ciruela y radio 6. En la opción B del oro (§12) la placa va en ciruela | **Composición**: es el componente del sitio v3, no el de ellos |
+| **Banda final** ciruela con el display en papel, un filete que nace del borde y el óvalo lavanda | Igual, con su ciruela y su lavanda | Se toma la idea (el llamado final en una banda oscura con el display grande). Lo que lleva es propio: el ciruela del manual, el botón papel de la marca y el **wordmark gigante del sitio v3** con el único oro de la vista | **Valor y composición** |
+| **Collage** de fotos montadas sobre una cuadrícula de papel que tocan los dos bordes («Who we are») | En Taller, con su cuadrícula de 48 px y sus desfases | Sale. Las obras van en la **fila del sitio v3** (spec §3 y §7, 6-oct): las cuatro del mismo alto, cada una en su proporción, de borde a borde, dentro del hero y después del titular, como en el build | **Composición**: la de SpindleLab, y en el orden del sitio (§17) |
+| **Garabatos** en ciruela: el ovillo junto al h1 de la oferta, los rulos en la banda amarilla, el dibujo a sangre de la portada del caso | Un ovillo junto al h1 de Acompañamiento, rulos en la banda amarilla de la home, un lazo en la portada lima de Trabajo: sus lugares | Salen. Van **marcas de revisión**, las de quien revisa un sitio con un plumón, una por página en Taller y donde hacen un trabajo: una **flecha** que apunta al campo del chequeo (home), un **visto** junto a la prueba de los robots que responden 200 (Acompañamiento), un **anillo** alrededor de «Correr el chequeo» (Trabajo). Nunca detrás de texto. Provisionales generadas con semilla (`herramientas/marcas.mjs`); las definitivas las traza Bruno con esa forma y en ese lugar | **Forma y lugar**: no adornan un titular, señalan una acción o una prueba. El oficio es el de SpindleLab («revisé el sitio») |
+| **Mancha** naranja de borde orgánico con un rótulo mono adentro | Igual, naranja exacto, en el chequeo de la home y junto a Raigal | Sale. Va el **sello**: el rótulo que ya existía dentro de un marco de esquinas rectas con doble filete, girado −4°, en tinta y sin color de fondo. Uno por página en Taller: «Chequeo de visibilidad en IA» (home) y «Pieza de concepto · no es un cliente» (Trabajo, donde lo estampado es justo la aclaración) | **Forma y color**: viene del monograma de la marca (manual §03, «sello editorial de esquinas rectas») |
+| **Marcador** | Propio en la forma, pero el lock decía «tal cual medido» | Sin cambio en lo construido; corregidos §5 y §10 para que digan lo que es | **Forma** (pasada de plumón propia); se toman la idea y el tiempo |
+| **Cinta** | Propia | Sin cambio | **Comportamiento y separador**: pausable, por tiempo, no es un encabezado, interpunto del manual §06 |
+| **Filete** de 1 px que nace del borde | Igual | Se toma, declarado: es un recurso de grilla, no una firma. Lo propio es dónde se corta: en el hero de Taller el hilo llega hasta «el circuito» y se corta antes de tocarlo (el territorio «el circuito se corta», manual §06b) | **Composición** en el único lugar donde dice algo |
+| **Letra y escala** | Instrument Sans con su escala | Sin cambio: es lo que Ramón marcó («la tipografía») | Se toma **la escala y la caja**; la letra es otra (§11) |
+| **Fotos** de radio 0 con grano, gente trabajando | Espacios dirigidos | Sin cambio en la forma; el contenido lo fija la pauta de Bruno (empresas chilenas, el mundo del cliente, nunca equipo ni clientes) | **Contenido** |
+
+**La prueba del logo tapado** (pedida en el acta, defectos 5 y 6) está escrita en el tablero, pantalla por
+pantalla, con su captura (`../tableros/e10-direcciones/img/var-tapado-*.jpg`, `herramientas/variantes.mjs`). Resumen: Taller ya no se
+lee como The Ready (no queda su encabezado, su óvalo, su collage, sus garabatos ni su mancha), sino como un
+sitio de su familia, por la letra, el resaltador y la cinta, que son lo que Ramón eligió. Pizarra limpia
+ya no es el sitio típico del hero para abajo; sus dos pantallas más débiles son la 3.ª de la home (depende
+de la foto F5) y «Lo que incluye».
 
 ## 11 · Sustitutos
 
@@ -330,29 +377,37 @@ PIL): cuenta como oro un color con **tono de 38 a 54°, saturación ≥ 0,5 y br
 |---|---|---|---|---|
 | Oro SpindleLab `#C9A227` | 45,6° | 0,806 | 0,788 | **sí** (control) |
 | **Amarillo The Ready `#F4F480`** | **60,0°** | **0,475** | 0,957 | **no** |
+| **Resaltador propio `#EEF26E`** (desde el 16-oct, §10b) | **61,8°** | 0,545 | 0,949 | **no** |
+| Papel propio `#F7F5F0` | 42,9° | 0,028 | 0,969 | no |
 | Lima `#E6FA97` | 72,1° | 0,396 | 0,980 | no |
 | Gris cálido `#ECECE2` | 60,0° | 0,042 | 0,925 | no |
 | Naranja `#EC6227` | 18,0° | 0,835 | 0,925 | no |
 
 **El amarillo no cae en el rango:** queda 5,6° por encima del límite de tono y 7 puntos (de 255) por
-debajo del de saturación. **No hace falta ajustarlo.** Pero está cerca, así que se fija una guarda: el
-amarillo es exactamente `#F4F480` y no se calienta. De los vecinos probados, uno solo entra al rango
-(54°, saturación 0,55: `#F4E76E`); cualquier variante más cálida o más saturada que el original
-queda prohibida, y una foto con amarillos se mide igual que una con oro.
+debajo del de saturación. **No hace falta ajustarlo.** Pero está cerca, así que se fija una guarda.
+
+**Corregido el 16-oct (§10b):** el valor que se usa es el **resaltador propio `#EEF26E`**, más fluor y un
+poco más verde que el de ellos, 7,8° por encima del límite de tono. La guarda queda así: **el resaltador
+nunca es más cálido que 60°** (más cerca del oro). Puede ser más saturado mientras se aleje del oro por el
+tono, como este; de los vecinos probados, uno solo entra al rango (54°, saturación 0,55: `#F4E76E`), y
+queda prohibido. Una foto con amarillos se mide igual que una con oro. El `#F4F480` exacto vuelve solo si
+Ramón elige los colores de The Ready en el tablero.
 
 **El punto dorado es el que tiene el problema, no el amarillo.** Sobre el papel de The Ready da
-**2,40:1**; sobre amarillo 2,08, lima 2,13, lavanda 1,75 y gris 2,03. La regla que ya está en el
-manual (§02) dice que bajo 3:1 el punto va en el color del texto y esa vista queda con cero oros.
-**Solo sobre ciruela llega: 7,80:1.** Entonces:
+**2,40:1**; sobre amarillo 2,08, lima 2,13, lavanda 1,75 y gris 2,03. Con la paleta propia: sobre el
+papel `#F7F5F0` **2,22:1** (el valor que ya traía el manual §02) y sobre el resaltador 2,02. La regla que
+ya está en el manual (§02) dice que bajo 3:1 el punto va en el color del texto y esa vista queda con cero
+oros. **Solo sobre ciruela llega: 6,24:1 sobre el ciruela del manual** (7,80 sobre el de The Ready).
+Entonces (las dos opciones se ven en el tablero, «Lo que también decides», con su captura):
 
-- **Recomendado (aplica el manual tal como está):** en el encabezado, el wordmark va en ciruela con el
-  punto en ciruela; **el punto dorado aparece en la banda final ciruela y en el pie**, si el pie va en
+- **A · recomendada (aplica el manual tal como está):** en el módulo de navegación, el wordmark va en
+  ciruela con el punto en ciruela; **el punto dorado es el del wordmark gigante de la banda final**
   ciruela. El oro queda donde el sitio invita a conversar: el punto donde te encuentran, al final.
   Cero oros en el resto de las vistas, que el manual da por válido.
-- **Si Ramón quiere el oro en la primera pantalla:** el wordmark del encabezado va sobre un módulo
-  ciruela (la «única placa» del manual, que hoy es negra, pasa a ciruela), con el punto a 7,80:1.
-- **En los dos casos:** la banda donde está el punto dorado no lleva amarillo (ni marcador, ni texto
-  amarillo en el óvalo). El amarillo y el oro nunca comparten banda.
+- **B · si Ramón quiere el oro en la primera pantalla:** el módulo de navegación pasa a ciruela (la
+  «única placa» del manual, que hoy es negra), con el punto a 6,24:1, y el punto del pie va en papel.
+- **En los dos casos:** la banda donde está el punto dorado no lleva el resaltador (ni marcador, ni
+  barrido en el botón). El amarillo y el oro nunca comparten banda.
 
 ## 13 · Reglas para que el juego no se vuelva tic
 
@@ -362,13 +417,13 @@ y convertido en techo:
 | Recurso | Máximo | Rol, y solo ese |
 |---|---|---|
 | **Cinta** | **1 por página**; **3 páginas en todo el sitio** (Taller) o **1, la home** (Pizarra limpia). Nunca dos a la vista | Bajo el hero o como cambio de tema entre dos secciones. Texto: solo palabras que ya están en el copy de E8 (por ejemplo, los cuatro nombres de servicio que ya son títulos en la home). Ninguna frase nueva |
-| **Marcador amarillo** | **4 frases por página**; **2 a la vista** en Taller y **1** en Pizarra limpia | La consecuencia de la frase, al final, de 2 a 6 palabras. Nunca una palabra suelta de adorno; nunca junto a otro cambio en la misma frase (cursiva, otra letra, otro color); nunca en enlaces, botones, precios ni cifras sin fuente. Si la frase no tiene una consecuencia que subrayar, no lleva marcador (tell #4) |
-| **Banda amarilla** | **1 por página** en Taller; **0** en Pizarra limpia (salvo la cinta de la home, si va sobre amarillo) | Lo que el cliente gana. Nunca dos bandas de color seguidas |
-| **Banda ciruela** | **1 por página**, la última | El llamado final, con el display en papel y el óvalo |
-| **Lima** | La portada de una página de obra | Nada más |
-| **Garabato a mano** | **1 por página** (Taller); **0** (Pizarra limpia) | Al costado de un titular o a sangre en un borde; nunca detrás de texto |
-| **Mancha naranja** | **1 por página**, solo Taller | Un rótulo mono adentro, no un botón |
-| **Óvalo** | **1 a la vista** | El llamado principal. El resto de los enlaces son texto o el rectángulo del encabezado |
+| **Marcador (resaltador)** | **4 frases por página** en las dos; **2 a la vista** en Taller y **1** en Pizarra limpia (corregido el 16-oct: Pizarra tenía uno por página y ahora llega a 4, de a uno a la vista) | La consecuencia de la frase, al final, de 2 a 6 palabras. Nunca una palabra suelta de adorno; nunca junto a otro cambio en la misma frase (cursiva, otra letra, otro color); nunca en enlaces, botones, precios ni cifras sin fuente. Si la frase no tiene una consecuencia que subrayar, no lleva marcador (tell #4) |
+| **Banda del resaltador** | **1 por página** en Taller; **0** en Pizarra limpia | Lo que el cliente gana. Nunca dos bandas de color seguidas. Ahí el botón lo cruza el papel, no el amarillo |
+| **Banda ciruela** | **1 por página**, la última | El llamado final, con el display en papel, el botón papel y el wordmark gigante con el único oro |
+| **Lima, lavanda, naranja** | **0** en el sistema propio | Solo con la opción «colores exactos de The Ready», en su rol de allá (portada de Trabajo, botón del pie, fondo del sello) |
+| **Marca de revisión a mano** (flecha, visto, anillo) | **1 por página** (Taller); **0** (Pizarra limpia) | Señala una acción o una prueba: el campo del chequeo, la prueba de los robots, el botón del chequeo. Nunca detrás de texto, nunca un adorno junto a un titular |
+| **Sello** | **1 por página**, solo Taller; puede haber 0 | Un rótulo mono que ya existía, adentro; no un botón ni un texto nuevo |
+| **Botón grande** | **Uno: el del chequeo** (manual §07) | El resto de los llamados son el botón de la marca (50 px) o texto. No hay óvalo |
 | **Mono en mayúsculas** | Solo a 11-13 px | Rótulos, navegación, migas y botones. Nunca un titular, nunca una frase |
 | **Display a 390** | El tamaño de cada titular a 390 se fija por **su palabra más larga**: tiene que caber en 342 px | Medido en Instrument Sans 500: «circuito» cabe a 86,9 px; «Visibilidad» pide ≤ 73 px; «Continuidad» ≤ 61; «Acompañamiento» ≤ 42. Nunca se corta una palabra con guion en un titular |
 
@@ -388,14 +443,19 @@ más de 5 segundos tiene que poder pausarse):
 
 **El marcador** es adorno: nada se entiende solo por él (el texto se lee igual sin la banda), en modo
 de colores forzados desaparece sin perder contenido, y con movimiento reducido aparece completo, sin
-dibujarse. El texto encima mantiene su contraste (ciruela sobre amarillo, 16,27:1).
+dibujarse. El texto encima mantiene su contraste (ciruela sobre el resaltador propio, 12,62:1; sobre el
+de The Ready, 16,27:1).
 
-**Contraste.** Todas las combinaciones de texto que se toman aprueban AA con margen (§3: la más baja,
-casi negro sobre naranja, 5,89:1). Las que no se toman: los rótulos grises de Gehl (1,80:1). El punto
-dorado, que no es texto, sigue la regla de 3:1 del manual (§12).
+**Contraste.** Con la paleta propia: ciruela sobre papel 13,85:1, papel sobre ciruela 13,85:1, ciruela
+sobre el resaltador 12,62:1, el texto de ejemplo del campo (`#6B5A6B`) 5,84:1. Medido sobre los seis
+prototipos con `npm run verificar` a 390 y 1440: ningún hallazgo de contraste. Las combinaciones de
+The Ready (opción del tablero) también aprueban AA (§3: la más baja, casi negro sobre naranja, 5,89:1).
+No se toman los rótulos grises de Gehl (1,80:1). El punto dorado, que no es texto, sigue la regla de 3:1
+del manual (§12).
 
-**Foco.** El de The Ready se toma: contorno de 2 px a 4 px de distancia, casi negro sobre papel y papel
-sobre ciruela. **Óvalo** con ancho mínimo para que su texto no se parta a 390.
+**Foco.** El de The Ready se toma: contorno de 2 px a 4 px de distancia, ciruela sobre papel y papel
+sobre ciruela. En el chequeo el foco lo muestra la barra entera (campo y botón). Los botones tienen 50 px
+de alto y las pestañas 44 a 390.
 
 **Peso.** Tres familias y sus pesos medidos: Instrument Sans (un variable), IBM Plex Sans 400 y 700,
 IBM Plex Mono 500. Ninguna letra declarada sin uso.
@@ -403,21 +463,25 @@ IBM Plex Mono 500. Ninguna letra declarada sin uso.
 ## 15 · Lo que esto reabre del manual (decide Ramón en la compuerta 2)
 
 El manual v3.0 copia driftime. Tomar The Ready cambia decisiones que Ramón aprobó; ninguna se aplica
-sin su sí:
+sin su sí. **Corregido el 16-oct** (ronda 1, defecto 3): la tabla ahora está también en el tablero, en
+«Lo que también decides», fila por fila con su fecha, junto con la decisión de los colores y la del punto
+dorado; y con lo propio de §10b cambia menos de lo que decía la versión anterior (el radio de 6 px se
+queda en los controles y el papel y el ciruela son los del manual).
 
-| Manual hoy | Con The Ready | Aprobado |
+| Manual hoy | Con cualquiera de las dos direcciones | Se aprobó |
 |---|---|---|
-| §04 Lienzo negro puro `#000000`, texto papel | Lienzo papel `#FFFEFA`, titulares ciruela, cuerpo casi negro | 27-sep |
-| §04 Cuatro campos de color, uno por pilar | Bandas con humor y con rol (§13), no por pilar | 5-oct (ratificado con driftime) |
-| §05 Manrope en titulares y cuerpo | Instrument Sans en titulares, IBM Plex Sans en cuerpo, IBM Plex Mono en rótulos | 29-sep |
-| §05 Display en MAYÚSCULAS 800 en cinco lugares | Todos los titulares en caja de oración, 500 | 5-oct |
-| §05 Rótulos en caja normal, sin interletra positiva | Rótulos y botones mono en MAYÚSCULAS con +0,03 y +0,1em | 5-oct |
-| §06 El punto dorado en el módulo de cada vista | El punto dorado solo sobre ciruela (§12) | (regla de 3:1 ya vigente) |
-| §07 Radio único de 6 px, botones chicos, cero píldoras | Óvalo grande, rectángulo de radio 0, fotos de radio 0 | 6-oct |
-| §07 Movimiento: entrada, Lenis, campos pegajosos | Se suman la cinta y el dibujo del marcador | (sin fecha: lo escribió la spec) |
+| §04 Lienzo negro puro `#000000`, texto papel | Lienzo papel `#F7F5F0` (el del manual) con una sola tinta ciruela `#341F34` | 27-sep, Ramón |
+| §04 Cuatro campos de color a pantalla entera, uno por pilar | Taller: una banda del resaltador por página («lo que ganas») y la ciruela al final. Pizarra limpia: un solo fondo, solo el pie en ciruela | 5-oct, ratificado al fijar driftime como vara |
+| §05 Manrope en titulares y cuerpo | Instrument Sans en titulares, IBM Plex Sans en cuerpo, IBM Plex Mono en rótulos y botones | 29-sep, Ramón |
+| §05 Display en MAYÚSCULAS 800 en cinco lugares; titulares internos chicos (h1 60, h2 30) | Todos los titulares en caja de oración, 500, grandes en todas las páginas (138 / 91 / 52) | 5-oct, Ramón |
+| §05 Rótulos en caja normal, sin interletra positiva | Rótulos, navegación y botones en mono, MAYÚSCULAS, +0,03 y +0,1em | 5-oct, Ramón |
+| §06 y §02 El punto dorado en el módulo de cada vista | Sobre papel no llega a 3:1: A, el oro en el pie ciruela; B, el módulo pasa a ciruela (§12) | Un oro por vista: 5-oct (spec §1 y §7); la regla de 3:1 del punto: manual v3.0, 7-oct |
+| §07 Radio único de 6 px, botones chicos (36 px), cero píldoras | El radio de 6 px **se queda** en botones, campo, módulo y pestañas; fotos y piezas con radio 0; botones de 50 px en mono; sin óvalo ni píldoras | 5-oct ratificado; escrito en la spec el 6-oct |
+| §07 Movimiento: entrada, Lenis, campos pegajosos | Se suman la cinta (pausable) y el dibujo del resaltador; los campos pegajosos salen porque no hay campos | Sin fecha: lo escribió la spec, no hay un sí de Ramón registrado |
 
 Gabarito para el wordmark, el punto como única firma gráfica, la regla de un oro por vista, el texto
-de E8, los precios, el chequeo y el formulario **no cambian**.
+de E8, los precios, el chequeo y el formulario **no cambian**. La regla de personas generadas como
+ambiente (manual §07b) ya la aprobó Ramón el 15-oct.
 
 ## 16 · Evidencia
 
@@ -433,3 +497,29 @@ de E8, los precios, el chequeo y el formulario **no cambian**.
   `foto-grano-hero-x2.png`.
 - `lock/gehl/`: `home|caso-1440.jpg`, `-390.jpg` y sus completas.
 - `lock/tipos-comparados.png`.
+- Ronda 1 de QA (16-oct), en `../tableros/e10-direcciones/`: `img/orden-hero.json` (orden del hero),
+  `img/variantes.json` y `img/var-*.jpg` (logo tapado, colores, punto dorado), `texto-igual.json`
+  (texto y orden de lectura, 12 de 12), `img/medidas.json` (densidad total y de lectura).
+
+## 17 · Lo que el lock no cambia: el orden del hero
+
+El lock fija el lenguaje, no el recorrido. **El hero va en el orden del sitio construido**, que es una
+decisión de Ramón con criterio de conversión (spec §0.4, «dirección A, el instrumento primero en la
+home»; spec §4, «instrumento → display → fila de 4 obras»): el chequeo arriba, después el ojillo y el
+titular, después la fila de obras. Las dos direcciones lo respetan (corregido el 16-oct, defecto 4: la
+primera versión ponía el titular primero y, en Taller, bajaba las obras debajo de «Qué hacemos»).
+Medido en `../tableros/e10-direcciones/img/orden-hero.json`: a 1440 el sitio pone el chequeo en y 142 y el titular en 340; Taller,
+151 y 453; Pizarra limpia, 151 y 502. Y en las tres páginas el orden de lectura es el del build (12 de 12
+vistas, `texto-igual.json`); la composición se hace con CSS, no moviendo bloques. Cambiar ese orden sería
+una decisión aparte de Ramón, nunca un efecto de la dirección de arte.
+
+## 18 · Historial de correcciones
+
+| Fecha | Corrección | Tipo | Origen |
+|---|---|---|---|
+| 16-oct | El marcador es propio en la forma; se toman la idea y el tiempo. §5 y §10 decían «tal cual medido» | **regla** | Javiera, ronda 1, defecto 6 |
+| 16-oct | Nada se toma de The Ready al hex ni al milisegundo sin decirlo: §10b, recurso por recurso. Paleta propia (papel y ciruela del manual, resaltador `#EEF26E`); sin óvalo, encabezado de 90 px, collage, garabatos ni mancha; entran el módulo, el botón y el chequeo de la marca, las marcas de revisión y el sello | **regla** | Javiera, ronda 1, defecto 6 |
+| 16-oct | Los colores exactos de The Ready son una decisión de Ramón en el tablero, dicha como suya, no un valor por defecto | **regla** | Javiera, ronda 1, defecto 6 |
+| 16-oct | El orden del hero es el del sitio (spec §0.4) y el orden de lectura es el del build en todas las páginas; `texto-igual.mjs` lo exige | **regla** | Javiera, ronda 1, defecto 4 |
+| 16-oct | La escala display (138 / 91 / 52) va en todas las páginas de las dos direcciones; en Pizarra limpia los servicios se ordenan en dos puertas de entrada y dos que siguen; el techo de densidad de Pizarra se mide sobre el texto de lectura | **regla** | Javiera, ronda 1, defecto 5 |
+| 16-oct | Las reglas del manual que cambian, con su fecha, y la opción del punto dorado van en el tablero, no solo en el lock | **regla** | Javiera, ronda 1, defecto 3 |

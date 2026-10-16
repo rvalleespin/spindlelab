@@ -10,6 +10,7 @@
 // Sirve proto/ antes:  python3 -m http.server 8770 --directory proto
 // Uso: node herramientas/renderizar.mjs [filtro]     (desde tableros/e10-direcciones/)
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -19,7 +20,8 @@ const REPO = path.resolve(AQUI, '../../../../../..');
 const { chromium } = await import(pathToFileURL(path.join(REPO, 'spindlelab-astro/node_modules/playwright/index.mjs')).href);
 const BASE = process.env.BASE || 'http://127.0.0.1:8770';
 const IMG = path.join(AQUI, 'img');
-const TMP = process.env.TMP_E10 || path.join(AQUI, '.tmp');
+// Capturas intermedias FUERA del repo (en la ronda 1 terminaron 36 MB de PNG en .tmp/ dentro de un commit).
+const TMP = process.env.TMP_E10 || path.join(os.tmpdir(), 'e10-tablero');
 fs.mkdirSync(IMG, { recursive: true }); fs.mkdirSync(TMP, { recursive: true });
 const filtro = process.argv[2] || '';
 
