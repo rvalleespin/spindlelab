@@ -1,0 +1,132 @@
+{
+ "fecha": "2026-10-16T21:24:55.276Z",
+ "intentoHome": 1,
+ "cursorShowreel": {
+  "texto": "PLAY",
+  "rect": [
+   691,
+   409,
+   58,
+   23
+  ],
+  "styleInline": "top: 420px; left: 720px; opacity: 1;",
+  "caja": {
+   "fondo": "oklab(0.122118 0.00000555813 0.00000243634 / 0.2)",
+   "desenfoque": "blur(40px)",
+   "radio": "2px",
+   "padding": "6px"
+  },
+  "letra": {
+   "familia": "gtKotoheimMono",
+   "tam": "11px",
+   "caja": "uppercase"
+  }
+ },
+ "cursorSistema": "none",
+ "seguimiento": [
+  [
+   12,
+   900,
+   500
+  ],
+  [
+   58,
+   900,
+   500
+  ],
+  [
+   61,
+   900,
+   500
+  ],
+  [
+   78,
+   900,
+   500
+  ],
+  [
+   95,
+   900,
+   500
+  ],
+  [
+   112,
+   900,
+   500
+  ]
+ ],
+ "barra": [
+  {
+   "tag": "div",
+   "clase": "flex flex-col",
+   "x": 28,
+   "w": 296,
+   "pad": "0px 0px",
+   "fondo": "rgba(0, 0, 0, 0)",
+   "pos": "static"
+  },
+  {
+   "tag": "div",
+   "clase": "flex flex-col gap-y-4 md:pt-6 md:pb-3",
+   "x": 28,
+   "w": 296,
+   "pad": "0px 0px",
+   "fondo": "rgba(0, 0, 0, 0)",
+   "pos": "static"
+  },
+  {
+   "tag": "div",
+   "clase": "pt-15 pb-12 md:px-3 md:pt-9 md:pb-0",
+   "x": 16,
+   "w": 320,
+   "pad": "12px 12px",
+   "fondo": "rgba(0, 0, 0, 0)",
+   "pos": "static"
+  },
+  {
+   "tag": "div",
+   "clase": "flex flex-col md:gap-y-6",
+   "x": 16,
+   "w": 320,
+   "pad": "0px 0px",
+   "fondo": "rgba(0, 0, 0, 0)",
+   "pos": "static"
+  },
+  {
+   "tag": "div",
+   "clase": "flex h-full flex-col pt-[46px] md:pt-12",
+   "x": 16,
+   "w": 320,
+   "pad": "0px 0px",
+   "fondo": "rgba(0, 0, 0, 0)",
+   "pos": "static"
+  },
+  {
+   "tag": "div",
+   "clase": "md:w-sidebar w-full shrink-0 pt-4 md:sticky md:top-0 md:h-svh md:py-4 ",
+   "x": 16,
+   "w": 320,
+   "pad": "0px 0px",
+   "fondo": "rgba(0, 0, 0, 0)",
+   "pos": "sticky"
+  },
+  {
+   "tag": "div",
+   "clase": "flex flex-col gap-x-4 px-4 md:flex-row",
+   "x": 0,
+   "w": 1425,
+   "pad": "16px 16px",
+   "fondo": "rgba(0, 0, 0, 0)",
+   "pos": "static"
+  },
+  {
+   "tag": "main",
+   "clase": "",
+   "x": 0,
+   "w": 1425,
+   "pad": "0px 0px",
+   "fondo": "rgba(0, 0, 0, 0)",
+   "pos": "static"
+  }
+ ]
+}

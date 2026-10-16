@@ -1,0 +1,157 @@
+{
+ "fecha": "2026-10-16T21:23:44.072Z",
+ "navegador": "141.0.7390.37",
+ "koto": {
+  "intento": 1,
+  "home": {
+   "display": {
+    "sel": "[data-ref-showreel-title-title]",
+    "texto": "We’re Koto",
+    "familia": "gtKotoheimCondensed, \"gtKotoheimCondensed Fallback\", sans-serif",
+    "tam": "48px",
+    "peso": "300",
+    "interlinea": "48px",
+    "interletra": "-0.48px",
+    "color": "rgb(255, 255, 255)",
+    "fondo": "rgba(0, 0, 0, 0)",
+    "x": 28,
+    "w": 179,
+    "transicion": "all",
+    "padIzq": "0px",
+    "padDer": "0px"
+   },
+   "fondoHtml": "rgb(6, 6, 6)",
+   "fondoBody": "rgba(0, 0, 0, 0)",
+   "contenedorTitulo": {
+    "sel": "[data-ref-showreel-title-container] > div",
+    "texto": "We’re Koto\n\nThe Creative Company",
+    "familia": "gtKotoheim, \"gtKotoheim Fallback\", sans-serif",
+    "tam": "12px",
+    "peso": "400",
+    "interlinea": "18px",
+    "interletra": "normal",
+    "color": "rgb(255, 255, 255)",
+    "fondo": "rgba(0, 0, 0, 0)",
+    "x": 16,
+    "w": 1408,
+    "transicion": "all",
+    "padIzq": "0px",
+    "padDer": "0px"
+   },
+   "navWork": {
+    "texto": "Work",
+    "transicionPropiedad": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+    "duracion": "0.167s",
+    "curva": "linear",
+    "color": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+    "familia": "gtKotoheimMono, \"gtKotoheimMono Fallback\", sans-serif",
+    "tam": "11px"
+   },
+   "anchoDocumento": 1440
+  },
+  "cursor": {
+   "etiquetas": [],
+   "cursorSistemaBajoElMouse": "none"
+  },
+  "trabajo": {
+   "h1": {
+    "sel": "[data-ref-sidebar-title] > h1",
+    "texto": "Our work",
+    "familia": "gtKotoheimCondensed, \"gtKotoheimCondensed Fallback\", sans-serif",
+    "tam": "24px",
+    "peso": "300",
+    "interlinea": "28.8px",
+    "interletra": "normal",
+    "color": "rgb(255, 255, 255)",
+    "fondo": "rgba(0, 0, 0, 0)",
+    "x": 28,
+    "w": 296,
+    "transicion": "all",
+    "padIzq": "0px",
+    "padDer": "0px"
+   },
+   "barra": {
+    "ancho": 296,
+    "x": 28
+   },
+   "fondoHtml": "rgb(6, 6, 6)"
+  }
+ },
+ "ap": {
+  "intento": 1,
+  "trabajo": {
+   "h1": {
+    "sel": "h1",
+    "texto": "Work",
+    "familia": "\"Messina Sans\", sans-serif",
+    "tam": "35px",
+    "peso": "400",
+    "interlinea": "48px",
+    "interletra": "-0.35px",
+    "color": "rgb(0, 0, 0)",
+    "fondo": "rgba(0, 0, 0, 0)",
+    "x": 732,
+    "w": 664,
+    "transicion": "all",
+    "padIzq": "0px",
+    "padDer": "0px"
+   },
+   "bajada": {
+    "sel": "p.h4.text-grey.page-title",
+    "texto": "We expand what is possible for brands and turn their ambitio",
+    "familia": "\"Messina Sans\", sans-serif",
+    "tam": "35px",
+    "peso": "400",
+    "interlinea": "42px",
+    "interletra": "-0.35px",
+    "color": "rgba(140, 140, 140, 0.8)",
+    "fondo": "rgba(0, 0, 0, 0)",
+    "x": 732,
+    "w": 664,
+    "transicion": "all",
+    "padIzq": "0px",
+    "padDer": "0px"
+   },
+   "fondoBody": "rgb(249, 247, 243)",
+   "fondoHtml": "rgba(0, 0, 0, 0)",
+   "contenedor": {
+    "sel": "div.container.main-grid",
+    "texto": "",
+    "familia": "\"Messina Sans\", sans-serif",
+    "tam": "14px",
+    "peso": "400",
+    "interlinea": "20px",
+    "interletra": "normal",
+    "color": "rgb(0, 0, 0)",
+    "fondo": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "w": 1440,
+    "transicion": "all",
+    "padIzq": "44px",
+    "padDer": "44px"
+   },
+   "cursorReposo": {
+    "tam": "16x16",
+    "fondo": "rgba(23, 23, 23, 0.2)",
+    "desenfoque": "blur(5px)",
+    "radio": "100px",
+    "transicion": "0.2s ease-out"
+   },
+   "cursorSistemaBody": "none"
+  },
+  "cursorSobreProyecto": {
+   "clases": "custom-cursor grow",
+   "tam": "139.5x40",
+   "fondo": "rgba(23, 23, 23, 0.2)",
+   "desenfoque": "blur(5px)",
+   "texto": "View Project",
+   "transicion": "0.2s ease-out"
+  },
+  "tarjeta": {
+   "href": "/work/vans",
+   "x": 204,
+   "y": 420,
+   "ccText": "View Project"
+  }
+ }
+}

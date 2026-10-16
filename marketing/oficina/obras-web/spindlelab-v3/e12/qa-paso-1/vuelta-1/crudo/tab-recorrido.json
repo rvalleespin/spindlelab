@@ -1,0 +1,95 @@
+{
+ "fecha": "2026-10-16T21:31:42.237Z",
+ "paradas": [
+  {
+   "el": "a[#pediste]",
+   "texto": "1 · LO QUE PEDISTE",
+   "contorno": "solid 2px rgb(17, 17, 17)",
+   "enPantalla": true,
+   "ancho": 125,
+   "alto": 38
+  },
+  {
+   "el": "a[#medido]",
+   "texto": "2 · MEDIDO",
+   "contorno": "solid 2px rgb(17, 17, 17)",
+   "enPantalla": true,
+   "ancho": 69,
+   "alto": 38
+  },
+  {
+   "el": "a[#tomamos]",
+   "texto": "3 · QUÉ TOMAMOS",
+   "contorno": "solid 2px rgb(17, 17, 17)",
+   "enPantalla": true,
+   "ancho": 104,
+   "alto": 38
+  },
+  {
+   "el": "a[#tokens]",
+   "texto": "4 · TOKENS",
+   "contorno": "solid 2px rgb(17, 17, 17)",
+   "enPantalla": true,
+   "ancho": 69,
+   "alto": 38
+  },
+  {
+   "el": "a[#casos]",
+   "texto": "5 · CASOS Y DATOS",
+   "contorno": "solid 2px rgb(17, 17, 17)",
+   "enPantalla": true,
+   "ancho": 118,
+   "alto": 38
+  },
+  {
+   "el": "a[#decides]",
+   "texto": "6 · LO QUE DECIDES",
+   "contorno": "solid 2px rgb(17, 17, 17)",
+   "enPantalla": true,
+   "ancho": 125,
+   "alto": 38
+  },
+  {
+   "el": "a[https://github.com/rvalleespin/spindlelab/blob/claude/magica]",
+   "texto": "e12/insumos-ramon-16oct.md",
+   "contorno": "solid 2px rgb(17, 17, 17)",
+   "enPantalla": true,
+   "ancho": 190,
+   "alto": 21
+  },
+  {
+   "el": "a[img/letras-comparadas.jpg]",
+   "texto": "Abrir la lámina a tamaño completo",
+   "contorno": "solid 2px rgb(17, 17, 17)",
+   "enPantalla": true,
+   "ancho": 228,
+   "alto": 19
+  },
+  {
+   "el": "a[#casos]",
+   "texto": "VER EL CASO ↗ Verifica y Cumple Chequeo ",
+   "contorno": "solid 2px rgb(17, 17, 17)",
+   "enPantalla": true,
+   "ancho": 720,
+   "alto": 457
+  },
+  {
+   "el": "input=entrada",
+   "texto": "entrada",
+   "contorno": "solid 2px rgb(17, 17, 17)",
+   "enPantalla": true,
+   "ancho": 18,
+   "alto": 18
+  },
+  {
+   "el": "button#mover",
+   "texto": "MOVER",
+   "contorno": "solid 2px rgb(17, 17, 17)",
+   "enPantalla": true,
+   "ancho": 75,
+   "alto": 44
+  }
+ ],
+ "sinContorno": [],
+ "fueraDePantalla": []
+}
