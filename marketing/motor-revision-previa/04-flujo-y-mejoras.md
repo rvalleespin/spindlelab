@@ -17,16 +17,16 @@ Rendimiento: 11 de 94 medidos (12 %) y 11 de 467 contactos (2,4 %).
 No se tocó: Apollo y Dereck, el registro de envíos, el pipeline, la estrategia, el CRM, Valen, el copiloto ni el sitio.
 
 ## 3. Evaluación: qué funciona y qué no
-- **Funcionó, y es lo mejor que salió:** la verificación independiente. De 33 hallazgos "fuertes", 5 no se sostenían y 3 cambiaban de frase. Sin ella, 1 de cada 6 correos afirmaba algo falso.
+- **Funcionó, y es lo mejor que salió:** la verificación independiente. De 33 hallazgos "fuertes", 5 no se sostenían y 3 cambiaban de frase. Sin ella, 5 de 33 correos (15 %) habrían afirmado algo falso.
 - **Funcionó:** la lectura independiente de borradores. Encontró 3 correos a estudios que venden lo mismo que nosotros y frases que afirmaban más de lo medido.
-- **No funcionó:** el orden. Los descartes baratos (competidor, "fuera de perfil", correo ya contactado, hosting) se aplicaron DESPUÉS de medir y verificar. Se gastaron ~66 revisiones y ~55 minutos en 6 sitios que no debían escribirse.
-- **No funcionó:** el catálogo distingue poco. 38 de 94 salieron con "cookies" o "formulario sin política", y casi todos sirven la misma oferta. Un hallazgo chico (una cookie) no da una razón para contestar.
-- **Riesgo estructural:** 6 de 11 destinatarios son catch-all, 4 son correos genéricos o cargos que no deciden, y 10 de los 11 primeros candidatos eran abogados, un rubro que en parte vende lo mismo.
+- **No funcionó:** el orden. Los descartes baratos (competidor, "fuera de perfil", correo ya contactado, hosting) se aplicaron DESPUÉS de medir y verificar. De los 33 sitios verificados, 10 (30 %) no se debían escribir por un descarte barato (4 ya contactados y 6 que venden protección de datos): se gastaron unas 20 revisiones de las 66.
+- **No funcionó:** el catálogo distingue poco. 31 de los 94 medidos salieron con "cookies" (21) o "formulario sin política" (10), y casi todos sirven la misma oferta. Un hallazgo chico (una cookie) no da una razón para contestar.
+- **Riesgo estructural:** 6 de los 11 destinatarios son catch-all, al menos 4 son correos genéricos o cargos que no deciden, y 7 de los 11 son abogados, un rubro donde 6 de 13 verificados venden lo mismo que nosotros.
 
 ## 4. Mejoras, en orden de impacto sobre la respuesta
-1. **Medir la respuesta.** Hasta hoy ~5 % (7 de 142). Sin una columna `oferta`, `ola` y `variante` en el registro de envíos no se sabe qué hallazgo convierte. Prueba A/B mínima: 15 correos con este método contra 15 con el anterior.
-2. **Filtrar antes de medir.** Un solo script de preparación que aplique todos los descartes baratos y el cruce con Gmail por correo exacto (el cruce por dominio falló en 4 de 28). Ahorra más de la mitad del tiempo de medición.
-3. **Subir la calidad del destinatario.** Pedir al buscador de leads un decisor con nombre (no `contacto@`, `info@` ni un cargo de pasante) y marcar el catch-all desde el origen. Cambiar de rubro: abogados es el más difícil (6 de 10 venden protección de datos).
+1. **Medir la respuesta.** Hasta hoy ~5 % (7 de 142 correos, 5 de ellas respuestas activas). Sin una columna `oferta`, `ola` y `variante` en el registro de envíos no se sabe qué hallazgo convierte. Prueba A/B mínima: 15 correos con este método contra 15 con el anterior.
+2. **Filtrar antes de medir.** Un solo script de preparación que aplique todos los descartes baratos y el cruce con Gmail por correo exacto (el cruce por dominio falló en 4 de 28). Ahorra parte del tiempo de medición y de verificación [Probable].
+3. **Subir la calidad del destinatario.** Pedir al buscador de leads un decisor con nombre (no `contacto@`, `info@` ni un cargo de pasante) y marcar el catch-all desde el origen. Cambiar de rubro: abogados es el más difícil (6 de 13 verificados venden protección de datos).
 4. **Ordenar por consecuencia, no por tipo.** Un puntaje interno (nunca en el correo): formulario que pide teléfono y no explica qué hace con él, cookies de publicidad más grabación de sesión, y contacto escondido pesan más que una cookie suelta. Solo se escribe sobre un umbral.
 5. **Verificar solo lo que se va a escribir,** y volver determinista lo repetible: identidad del sitio (dominio del correo contra el del sitio), redirecciones, hosting, plantilla. Ya quedó en el motor para redirecciones, hosting y plantilla; falta la identidad.
 6. **Ampliar el lint de borradores:** derivación presente, "propia" si hay captcha, plazo respaldado, sin frases repetidas entre correos. La segunda ronda de lectura casi siempre pidió lo mismo.
