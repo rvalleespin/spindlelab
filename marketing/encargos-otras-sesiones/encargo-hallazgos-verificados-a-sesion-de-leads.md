@@ -9,8 +9,8 @@
 
 ## 2. Qué recibes
 `marketing/motor-revision-previa/entregas/para-emilia-2026-10-16-contactos-existentes/` (ver su `LEEME.md`). Sin Apollo: salió de los contactos que ya tenías en `ventas/`.
-- **28 verificados** para redactar (C1 cookies, F1 formulario sin política, F10 sin contacto en la primera pantalla). Cada uno trae `hechos_verificados` (lo que dos revisores independientes midieron por su cuenta) y `advertencias_de_la_verificacion`.
-- 3 de los 28 son **cookies CON aviso**: otra frase y gancho más débil. Nunca decir que no tienen aviso.
+- **24 verificados** para redactar (C1 cookies, F1 formulario sin política, F10 sin contacto en la primera pantalla); 1 no tiene correo, así que **23 con adónde enviar**. Otros 4 verificados ya recibieron correo (cruce por correo exacto en Gmail) y salen como `No enviar: ya contactado`. Cada uno trae `hechos_verificados` (lo que dos revisores independientes midieron por su cuenta) y `advertencias_de_la_verificacion`.
+- 3 de los 24 son **cookies CON aviso**: otra frase y gancho más débil. Nunca decir que no tienen aviso.
 - **No escribir:** 1 retenido por identidad, 1 no concluyente (el dominio solo redirige a otro sitio), 3 que la verificación refutó, 32 sin verificar, y los descartados.
 
 ## 3. Qué hizo el motor distinto hoy
