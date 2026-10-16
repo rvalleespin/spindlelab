@@ -14,3 +14,6 @@ Primera ola, toque 1. **No se envió nada.** Los crea la sesión del motor; Ram�
 
 Los seguimientos del día 3 y el cierre del día 7 **no** se crean hasta que el toque 1 salga: van como respuesta en el mismo hilo (`replyToMessageId` del mensaje enviado).
 Antes de enviar: abrir uno y comprobar que el enlace muestra el dominio (`verifica.spindlelab.cl`) y no una dirección larga de google.com.
+
+## Enviados
+Los 5 salieron el **16-oct-2026 a las 18:07 (hora de Santiago)**, confirmados en Gmail (`in:sent`), cada uno en su propio hilo. Ids de hilo y de mensaje en `envios-motor-2026-10.csv`. Seguimiento del día 3: **lunes 19-oct**, solo si no hubo respuesta, como respuesta en el mismo hilo.
