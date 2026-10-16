@@ -19,6 +19,10 @@
 #   · defecto 5: el filete que nace del borde, dicho como de The Ready y con su techo;
 #   · defecto 2: «Lo comprobado» suma la regla de escala medida en 14 anchos (img/anchos.json), el chequeo apilado a 390
 #     (img/ronda2.json) y la segunda comparación de texto, con JavaScript encendido (img/texto-js-encendido.txt).
+# Ronda 3 de QA (aprobado; arreglos de pasada):
+#   · el comentario de cabecera del CSS ya no nombra el punto dorado, que salió del tablero en la ronda 2;
+#   · defecto 1: «Lo comprobado» dice que el desborde se mide también con el clip del body apagado (anchos.mjs), que
+#     es lo que escondía la flecha del chequeo de Taller entre 1024 y 1258 px, y dónde va ahora la flecha.
 # Uso: python3 -I herramientas/armar-tablero.py   (desde tableros/e10-direcciones/)
 import html, json, os
 
@@ -283,8 +287,8 @@ pagina = f'''<meta charset="utf-8">
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap');
   /* Tablero de trabajo de un solo tema claro, a propósito: las capturas son de páginas claras y se comparan
      sobre el mismo papel. Una columna: qué se decide, cada dirección con sus tres páginas (1440 y 390 lado a
-     lado, el resto de cada página plegado) y su prueba del logo tapado, lo que también decides (manual, colores
-     y punto dorado), y al final los espacios de foto y lo comprobado. */
+     lado, el resto de cada página plegado) y su prueba del logo tapado, lo que también decides (manual y
+     colores; el logo, en una nota corta), y al final los espacios de foto y lo comprobado. */
   :root {{
     color-scheme: light;
     --papel: #F7F5F0;      /* fondo (el papel del manual) */
@@ -429,7 +433,7 @@ pagina = f'''<meta charset="utf-8">
     <ul class="chequeos">
       <li>Texto visible igual al del sitio construido en {iguales} de {vistas} vistas (3 páginas, 2 direcciones, 1440 y 390), y en el mismo orden de lectura en {orden} de {vistas}. Se comparó dos veces: con JavaScript apagado en las dos, y con JavaScript encendido, donde la única diferencia es el control «Cookies» que el aviso de cookies del sitio suma al pie y que los prototipos no cargan. Solo se agregan los rótulos de foto y la cinta, que repite palabras ya publicadas.</li>
       <li>El hero en el orden del sitio, a 1440: sitio {y_hero('build', 1440)}; Taller {y_hero('taller', 1440)}; Pizarra limpia {y_hero('pizarra', 1440)}. A 390: sitio {y_hero('build', 390)}; Taller {y_hero('taller', 390)}; Pizarra limpia {y_hero('pizarra', 390)}.</li>
-      <li>La escala en todos los anchos: cada titular va al tamaño de su escalón o, si no cabe, al que deja caber su palabra más larga en su caja. Medido en 14 anchos, de 360 a 1920, en las seis páginas ({vistas_anchos} vistas): {"ningún titular fuera de su caja ni encima de una foto o de otro texto, y la página nunca más ancha que la pantalla" if anchos_ok else "hay vistas con falla, ver img/anchos.json"}. Hasta 1023 px rige la composición de una columna y desde 1024 la de escritorio; las capturas a 768 y 1024 quedan en la carpeta img como evidencia.</li>
+      <li>La escala en todos los anchos: cada titular va al tamaño de su escalón o, si no cabe, al que deja caber su palabra más larga en su caja. Medido en 14 anchos, de 360 a 1920, en las seis páginas ({vistas_anchos} vistas): {"ningún titular fuera de su caja ni encima de una foto o de otro texto, y la página nunca más ancha que la pantalla, tampoco al medirla sin el recorte que esconde lo que se sale. Así apareció la flecha del chequeo de Taller, que se cortaba entre 1024 y 1258 px: de 1024 a 1299 ahora va bajo el chequeo" if anchos_ok else "hay vistas con falla, ver img/anchos.json"}. Hasta 1023 px rige la composición de una columna y desde 1024 la de escritorio; las capturas a 768 y 1024 quedan en la carpeta img como evidencia.</li>
       <li>A 390 el chequeo apila el campo y el botón, como el sitio: «constructoraandesur.cl» se lee entero, con {chq[0]["util"] if chq else "?"} px útiles{"" if chq_ok else " (revisar img/ronda2.json)"}. Contraste: ningún hallazgo con <code>npm run verificar</code> sobre los seis prototipos, a 390 y a 1440{"" if not desborde else "; desborde a 390 en " + ", ".join(desborde)}.</li>
       <li>La cinta corre a {coma(vel[0])} a {coma(vel[-1])} px por segundo, se pausa con su botón y queda quieta con movimiento reducido{"" if cintas_ok else " (con fallas, ver img/cinta-prueba.json)"}.</li>
       <li>La letra de los titulares va en Instrument Sans a 540 y no a 500: a 540 el grosor del trazo iguala el de Saans, la letra de The Ready, y la tinta de una línea de titular queda {coma(100 * (1 - peso[540]["tinta_rel"]), 0)} % por debajo de la de Saans (a 500, {coma(100 * (1 - peso[500]["tinta_rel"]), 0)} %). La prueba está en el lock, §11.</li>

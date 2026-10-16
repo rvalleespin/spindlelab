@@ -46,6 +46,13 @@
 .t-instr .chq-form button { min-height: 64px; padding: 0 30px; font-size: 12.7px; }
 .t-instr .d-nota { margin-top: 14px; max-width: 560px; }
 .t-instr::after { left: calc(100% + 18px); top: 22px; width: 196px; height: 120px; }
+/* De 1024 a 1299 la flecha no cabe a la derecha: el chequeo llena el ancho útil y salía de la pantalla, cortada por el
+   clip del body (ronda 3 de QA, defecto 1). Va bajo el chequeo, dentro de su caja, a la derecha de la nota, apuntando
+   arriba al botón, al tamaño de una columna. El corte va en 1300 y no en 1259 porque la media query cuenta la barra de
+   desplazamiento: con una de 17 px, a 1259 se volvía a cortar (lock §13, «Flecha del chequeo»). */
+@media (min-width: 1024px) and (max-width: 1299px) {
+  .t-instr::after { left: auto; right: 0; top: 108px; width: 104px; height: 64px; rotate: 64deg; }
+}
 /* «Ahí se corta / el circuito»: la segunda línea entra con sangría y el hilo que nace del borde llega hasta ella
    y se corta antes de tocarla (el territorio «el circuito se corta», manual §06b): eso es lo propio del filete. */
 .t-hero .d-titular { margin-top: 88px; }

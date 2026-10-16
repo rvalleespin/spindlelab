@@ -3,6 +3,10 @@
 // Para cada página de cada dirección y cada ancho (360 a 1920), mide:
 //   · desborde del documento: scrollWidth contra clientWidth (el body lleva overflow-x: clip, que lo esconde;
 //     por eso se mide el documento y no lo que se ve);
+//   · el mismo desborde CON EL CLIP APAGADO (html y body con overflow-x: visible): con el clip puesto, lo que sale de la
+//     pantalla no agranda el documento y scrollWidth no lo ve, y los ::before/::after no tienen caja que se pueda pedir.
+//     Apagado, cuentan todos (ronda 3 de QA, defecto 1: la flecha del chequeo de Taller, un ::after, salía de la
+//     pantalla entre 1024 y 1258 y este script no la veía). Si sobra, se listan los elementos que pasan el borde;
 //   · titulares fuera de su caja: cada h1-h4 y cada letra display (≥ 28 px) cuyo texto pasa el borde derecho de su
 //     caja o de la pantalla, y cada PALABRA que no cabe en el ancho de su caja (eso es lo que corta «Acompañamier…»);
 //   · titulares fuera de su columna: la caja de un ítem flex o de grilla crece hasta el ancho de su palabra y se sale
@@ -120,17 +124,38 @@ for (const w of ANCHOS) {
           }
         }
       }
-      return { sw: document.documentElement.scrollWidth, cw, fuera, palabras: [...new Set(palabras)], encima: [...new Set(encima)], tamanos };
+      // con el clip apagado: lo que el overflow-x: clip del body esconde (también los ::before/::after)
+      const de = document.documentElement, prev = [de.style.overflowX, document.body.style.overflowX];
+      de.style.setProperty('overflow-x', 'visible', 'important'); document.body.style.setProperty('overflow-x', 'visible', 'important');
+      // si sobra, quién: los elementos que pasan el borde sin un contenedor que los recorte (la pista de la cinta pasa el
+      // borde dentro de su caja recortada, y eso no agranda nada), y los ::before/::after absolutos, con la caja que dan
+      // su left y su width (sin contar un rotate)
+      const swSinClip = de.scrollWidth, sobran = [];
+      const recortado = (e) => { for (let p = e.parentElement; p && p !== document.body; p = p.parentElement) if (getComputedStyle(p).overflowX !== 'visible') return true; return false; };
+      if (swSinClip > cw) for (const e of document.querySelectorAll('body *')) {
+        if (recortado(e)) continue;
+        const nom = `${e.tagName.toLowerCase()}.${String(e.className).trim().split(/\s+/)[0]}`, b = e.getBoundingClientRect();
+        if (b.width && b.right > cw + 1) sobran.push(`${nom} →${Math.round(b.right)}`);
+        for (const ps of ['::before', '::after']) {
+          const c = getComputedStyle(e, ps); if (c.content === 'none' || c.content === 'normal' || c.position !== 'absolute') continue;
+          const der = b.left + parseFloat(c.left) + parseFloat(c.width); if (der > cw + 1) sobran.push(`${nom}${ps} →${Math.round(der)}`);
+        }
+      }
+      de.style.overflowX = prev[0]; document.body.style.overflowX = prev[1];
+      return { sw: de.scrollWidth, swSinClip, cw, fuera, palabras: [...new Set(palabras)], encima: [...new Set(encima)], sobran: [...new Set(sobran)].slice(0, 12), tamanos };
     });
-    const mal = r.sw > r.cw || r.fuera.length || r.palabras.length || r.encima.length;
+    const mal = r.sw > r.cw || r.swSinClip > r.cw || r.fuera.length || r.palabras.length || r.encima.length;
     if (mal) fallas++;
     res[`${u}@${w}`] = r;
-    console.log(`${mal ? '✗' : '✓'} ${w} ${u} sw ${r.sw}/${r.cw}` + (mal ? '\n    ' + [...r.palabras.map((x) => 'palabra ' + x), ...r.fuera.map((x) => 'fuera ' + x), ...r.encima.map((x) => 'encima ' + x)].slice(0, 8).join('\n    ') : ''));
+    console.log(`${mal ? '✗' : '✓'} ${w} ${u} sw ${r.sw}/${r.cw} sin clip ${r.swSinClip}/${r.cw}` + (mal ? '\n    ' + [...r.palabras.map((x) => 'palabra ' + x), ...r.fuera.map((x) => 'fuera ' + x), ...r.encima.map((x) => 'encima ' + x), ...(r.swSinClip > r.cw ? r.sobran.map((x) => 'sin clip ' + x) : [])].slice(0, 8).join('\n    ') : ''));
     await pg.close();
   }
   await ctx.close();
 }
 await nav.close();
-if (SALIDA) fs.writeFileSync(path.resolve(AQUI, SALIDA), JSON.stringify({ fecha: new Date().toISOString(), anchos: ANCHOS, vistas_con_falla: fallas, vistas: res }, null, 1));
+const vs = Object.values(res);
+const resumen = { vistas: vs.length, desborde_con_clip: vs.filter((v) => v.sw > v.cw).length, desborde_sin_clip: vs.filter((v) => v.swSinClip > v.cw).length };
+if (SALIDA) fs.writeFileSync(path.resolve(AQUI, SALIDA), JSON.stringify({ fecha: new Date().toISOString(), anchos: ANCHOS, vistas_con_falla: fallas, ...resumen, vistas: res }, null, 1));
+console.log(`${resumen.vistas} vistas · desborde con el clip puesto: ${resumen.desborde_con_clip} · con el clip apagado: ${resumen.desborde_sin_clip}`);
 console.log(fallas ? `${fallas} vistas con falla` : 'ninguna vista con falla');
 process.exit(fallas ? 1 : 0);

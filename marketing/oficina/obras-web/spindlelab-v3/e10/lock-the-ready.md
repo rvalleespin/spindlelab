@@ -15,6 +15,10 @@ como referencia del sitio v3. Sale de lo que Ramón marcó en la página de refe
 > composiciones, el marcador con su única excepción y el techo del filete; §11, la prueba de peso (Instrument Sans
 > a 540); §12 queda como historia: el wordmark y la regla de un oro por vista ya no son restricción; §17 suma el
 > chequeo a 390. El historial, en §18.
+>
+> **Ajustado el 16-oct tras la ronda 3** (aprobada; un defecto menor y dos arreglos de pasada). §7 trae el tamaño de
+> archivo que se sirve por tramo de F1, F5 y F7; §13, dónde va la flecha del chequeo en cada tramo, la medición del
+> desborde también con el clip apagado y la cifra corregida del marcador; §16 y §18, la evidencia y el historial.
 
 - **The Ready, idea principal.** «me gusta mucho todo lo que dices que no se toma (…) me gusta mucho
   la guinche, la tipografía y los colores». La guinche (huincha) es, aclarado en el chat, **la cinta
@@ -210,6 +214,27 @@ resaltador propio (§10b). No es el trazo recto de remate cuadrado que se midió
   hojas de otoño (2.519); el atardecer aporta 353. Una foto generada al estilo The Ready
   puede traer oro; se mide igual que las del pool. (Medición; desde el 16-oct el oro no es restricción para las
   fotos, §12.)
+
+**Tamaño de archivo por tramo: F1, F5 y F7** (16-oct, observación de la ronda 3 de QA). La pauta medía la cobertura a
+1440 y a 390. Pero en la composición de una columna (hasta 1023 px, §13) estas tres fotos van a todo el ancho y en
+4:5, así que la tableta pide más píxeles que el escritorio. **Regla: en cada tramo se sirve un archivo que cubre dpr 2
+en el ancho más grande del tramo.** Dos fuentes por foto, con `<picture>` y `media="(max-width: 1023px)"`: la de la
+columna (4:5) y la de escritorio (su proporción); dentro de cada una, anchos en `srcset` para que el navegador elija
+por densidad. Medido en los prototipos (los espacios, de 360 a 1920):
+
+| Foto | Escritorio, desde 1024 (medido a 1440) | Tableta, 600 a 1023 (a 1023) | Teléfono, hasta 599 (a 390) |
+|---|---|---|---|
+| **F1** (Taller, «Qué hacemos») | 0,58 · 420×724 css (fijo desde 1440; 307×530 a 1024) → **840×1448 px** | 4:5 a todo el ancho · 1023×1279 css (768×960 a 768) → **2048×2560 px** | 4:5 · 390×488 css → 780×975 px; a 599, 599×749 → **1200×1500 px** |
+| **F5** y **F7** (Pizarra, bandas a sangre) | 21:9 a todo el ancho · 1440×617 css (1024×439 a 1024; 1920×823 a 1920, que a dpr 1 cubre el mismo archivo) → **2880×1234 px** | 4:5 a todo el ancho · 1023×1279 css → **2048×2560 px** | 4:5 · 390×488 css → 780×975 px; a 599 → **1200×1500 px** |
+
+Los archivos de la columna salen de **un solo original 4:5 de 2048×2560** (el de teléfono es el mismo, reducido:
+780, 1200, 1536 y 2048 de ancho en el `srcset`). **Ningún proveedor llega sin escalar**, y menos en F5 y F7, donde
+el 4:5 se recorta de un 16:9: el recorte 4:5 más grande da, con Gemini, 768×960 en F1 (0,75× a 1023) y 614×768 en
+F5 y F7 (0,6×); con OpenAI, 1024×1280 (1,0×) y 819×1024 (0,8×). Escalado necesario hasta 2048 de ancho: ×2,67 (F1)
+y ×3,33 (F5 y F7) con Gemini, ×2 y ×2,5 con OpenAI; en escritorio, ×1,09 en F1 con Gemini (OpenAI ya da 891×1536) y ×2,14 o
+×1,88 en F5 y F7. Eso cambia la pauta (la cobertura de tableta, el escalado y el 2× a 1440), y la pauta es de Bruno:
+no se editó acá. Las otras seis fotos también crecen en la columna (a 1023: F3, F4 y F6 a todo el ancho; F2 a 749 y
+F8 a 914 css) y siguen la misma regla; sus tamaños se escriben con la spec de la dirección elegida.
 
 ## 8 · Cómo arma cada tipo de página
 
@@ -465,11 +490,12 @@ y convertido en techo:
 | Recurso | Máximo | Rol, y solo ese |
 |---|---|---|
 | **Cinta** | **1 por página**; **3 páginas en todo el sitio** (Taller) o **1, la home** (Pizarra limpia). Nunca dos a la vista | Bajo el hero o como cambio de tema entre dos secciones. Texto: solo palabras que ya están en el copy de E8 (por ejemplo, los cuatro nombres de servicio que ya son títulos en la home). Ninguna frase nueva |
-| **Marcador (resaltador)** | **4 frases por página** en las dos; **2 a la vista** en Taller y **1** en Pizarra limpia (corregido el 16-oct: Pizarra tenía uno por página y ahora llega a 4, de a uno a la vista) | La consecuencia de la frase, **al final de su oración**. Largo según dónde (medido en The Ready, §5; corregido en la ronda 2, que decía «2 a 6» para todo): **en un titular, de 2 a 6 palabras**; **en una entradilla, una cita o el cuerpo, la parte final de la oración, hasta 9**. Nunca una palabra suelta de adorno; nunca junto a otro cambio en la misma frase (cursiva, otra letra, otro color); nunca en enlaces, botones, precios ni cifras sin fuente. Si la frase no tiene una consecuencia que subrayar, no lleva marcador (tell #4). **Una sola excepción, escrita:** en el titular del hero el marcador va en «se corta» y no al final («Ahí se corta el circuito»), porque en castellano la consecuencia está en el verbo (lo que pasa es que *se corta*; «el circuito» ya lo nombra la línea) y la composición parte la línea justo después: «se corta» cierra la primera línea y el hilo que nace del borde se corta antes de «el circuito». No hay otra: en Trabajo el marcador pasó de «cuál es cuál» a «cuál es cuál en cada una.», que cierra la oración. Medido en `../tableros/e10-direcciones/img/ronda2.json`: 9 marcadores por dirección, 8 cierran su oración y el noveno es la excepción |
+| **Marcador (resaltador)** | **Hasta 4 frases por página** en las dos; **2 a la vista** en Taller y **1** en Pizarra limpia (corregido el 16-oct: Pizarra tenía uno por página y ahora llega a 4, de a uno a la vista). Medido: Taller 4 / 2 / 3 y Pizarra 4 / 2 / 2 (home, Acompañamiento, Trabajo); a la vista, 1, salvo Trabajo de Taller con 2 de 390 a 1024 | La consecuencia de la frase, **al final de su oración**. Largo según dónde (medido en The Ready, §5; corregido en la ronda 2, que decía «2 a 6» para todo): **en un titular, de 2 a 6 palabras**; **en una entradilla, una cita o el cuerpo, la parte final de la oración, hasta 9**. Nunca una palabra suelta de adorno; nunca junto a otro cambio en la misma frase (cursiva, otra letra, otro color); nunca en enlaces, botones, precios ni cifras sin fuente. Si la frase no tiene una consecuencia que subrayar, no lleva marcador (tell #4). **Una sola excepción, escrita:** en el titular del hero el marcador va en «se corta» y no al final («Ahí se corta el circuito»), porque en castellano la consecuencia está en el verbo (lo que pasa es que *se corta*; «el circuito» ya lo nombra la línea) y la composición parte la línea justo después: «se corta» cierra la primera línea y el hilo que nace del borde se corta antes de «el circuito». No hay otra: en Trabajo el marcador pasó de «cuál es cuál» a «cuál es cuál en cada una.», que cierra la oración. Medido en `../tableros/e10-direcciones/img/ronda2.json` (y otra vez el 16-oct, tras la ronda 3, con `marcador3.mjs` de Javiera): Taller tiene 9 marcadores y 8 cierran su oración; Pizarra limpia, 8 y 7 (no lleva el de «el sitio se arma solo.» en Trabajo). En las dos, el que no cierra es la excepción, «se corta» |
 | **Banda del resaltador** | **1 por página** en Taller; **0** en Pizarra limpia | Lo que el cliente gana. Nunca dos bandas de color seguidas. Ahí el botón lo cruza el papel, no el amarillo |
 | **Banda ciruela** | **1 por página**, la última | El llamado final, con el display en papel, el botón papel y el wordmark gigante (el logo actual; se rediseña después, §12) |
 | **Lima, lavanda, naranja** | **0** en el sistema propio | Solo con la opción «colores exactos de The Ready», en su rol de allá (portada de Trabajo, botón del pie, fondo del sello) |
 | **Marca de revisión a mano** (flecha, visto, anillo) | **1 por página** (Taller); **0** (Pizarra limpia) | Señala una acción o una prueba: el campo del chequeo, la prueba de los robots, el botón del chequeo. Nunca detrás de texto, nunca un adorno junto a un titular. Las de los prototipos son **provisionales**, generadas con semilla (`herramientas/marcas.mjs`) para fijar forma y lugar; las definitivas las traza Bruno a mano, y el tablero lo dice |
+| **Flecha del chequeo** (Taller, home; ronda 3 de QA, defecto 1) | **Entera dentro de la pantalla en todo ancho.** Nunca se esconde un desborde con `overflow`: si no cabe, cambia de lugar | Tres lugares, uno por tramo. **Hasta 1023** (una columna): sobre el campo, a la derecha del sello, bajando al botón (104×64, girada −64°). **De 1024 a 1299**: bajo el chequeo, dentro de su caja, a la derecha de la nota, subiendo al botón (104×64, girada 64°). **Desde 1300**: a la derecha del chequeo, a 18 px, apuntando al botón (196×120). Antes iba a la derecha desde 1024, pero entre 1024 y 1258 el chequeo llena el ancho útil y la flecha salía de la pantalla (de 1024 a 1119 se veía solo la punta); el `overflow-x: clip` del `body` la cortaba sin agrandar el documento. El corte va en 1300 y no en 1259 porque la media query mide la ventana **con** la barra de desplazamiento: con una barra de 17 px, a 1259 la flecha se volvía a cortar; desde 1300 queda a 30 px del borde con barra y a 47 sin ella. Medido en `../tableros/e10-direcciones/img/flecha.json` (`herramientas/flecha.mjs`: el trazo del SVG, no su caja, en 112 anchos de 360 a 1920, px a px de 1016 a 1032 y de 1250 a 1310, con y sin barra): entera en las 224 vistas, a 6 px o más de todo texto, y el documento sin desborde con el clip apagado. Aviso, no falla, fuera de lo que se cambió: a 360 el trazo roza el filete de afuera del sello (−1 px); se resuelve con la spec de la dirección elegida |
 | **Filete que nace del borde** (de The Ready, declarado; ronda 2, defecto 5) | **2 por página** contando el hilo del hero (Taller); **0** (Pizarra limpia, que separa con el filete de la ficha a todo el ancho). Nunca dos a la vista | Abre la serie de lo que se ofrece: el hilo del hero (que se corta antes de «el circuito»), el filete sobre «Desarrollo» (abre los cuatro servicios) y el de «Elige la cobertura» (abre los planes). Nunca donde la sección ya abre con un filete a todo el ancho ni junto a la cinta, que lleva los suyos. Medido: Taller 2 / 1 / 0 por página, 1 a la vista (`img/ronda2.json`). Antes iba sobre cada titular de sección: 5 / 5 / 1 |
 | **Sello** | **1 por página**, solo Taller; puede haber 0 | Un rótulo mono que ya existía, adentro; no un botón ni un texto nuevo |
 | **Botón grande** | **Uno: el del chequeo** (manual §07) | El resto de los llamados son el botón de la marca (50 px) o texto. No hay óvalo |
@@ -481,6 +507,10 @@ y convertido en techo:
 600, 700, 768, 820, 900, 1024, 1180, 1280, 1366, 1440 y 1920) por las seis páginas, 84 vistas. En ninguna hay un
 titular fuera de su caja o de su columna, una palabra más ancha que su caja, un titular encima de una foto o de otro
 texto, ni un documento más ancho que la pantalla (antes: 20 vistas con falla, `scrollWidth` hasta 1191 contra 768).
+**Desde la ronda 3, el documento se mide dos veces:** con el clip del `body` puesto y con el clip apagado (`html` y
+`body` con `overflow-x: visible`), porque el clip esconde lo que sale de la pantalla y un `::after` no tiene caja que
+se pueda pedir. Con el clip apagado, la versión anterior daba 1163 a 1024 y 1259 a 1180 en la home de Taller (la
+flecha); hoy, 0 desbordes en los dos modos en las 84 vistas.
 Tamaños que resultan (px):
 
 | Titular | 360 | 390 | 768 | 1024 | 1180 | 1440 |
@@ -581,6 +611,11 @@ de elegir dirección (§12). El tablero lo dice en una nota corta y ya no pide d
   el archivo de Saans no está en el repo y se le pasa la ruta), `img/ronda2.json` (chequeo a 360, 390 y 768,
   filetes y marcadores, `herramientas/ronda2.mjs`), `img/texto-js-encendido.txt` (texto con JavaScript encendido,
   por el método de Javiera) y las capturas a 768 y 1024 (`img/*-768-t*.jpg`, `img/*-1024-t*.jpg`).
+- Ronda 3 de QA (16-oct), en `../tableros/e10-direcciones/`: `img/flecha.json` (la flecha del chequeo de Taller en 112
+  anchos, con y sin barra de desplazamiento, `herramientas/flecha.mjs`), `img/anchos.json` rehecho con el desborde
+  medido también con el clip apagado, y `img/taller-home-1024-t*.jpg` capturadas de nuevo: antes medían 1163 de ancho,
+  porque la flecha ensanchaba la página completa; hoy, 1024. Las capturas del tablero (1440 y 390) no cambiaron: las 12
+  vistas re-renderizadas son iguales al píxel a las de antes del arreglo.
 
 ## 17 · Lo que el lock no cambia: el orden del hero
 
@@ -617,3 +652,4 @@ fila. Los nodos del formulario (`chq-*`, atributos, placeholder, aria) siguen si
 | 16-oct | Hasta 767 px el chequeo apila campo y botón, como el build | **regla** | Javiera, ronda 2, defecto 6 |
 | 16-oct | Instrument Sans va a 540 en toda la letra display: iguala el asta de Saans 500 y deja la tinta a −4 % | **preferencia** medida | Javiera, ronda 2, defecto 7, y ronda 1, defecto 10 |
 | 16-oct | El wordmark y la regla de un oro por vista quedan abiertos: el logo se rediseña después de elegir dirección. La guarda del resaltador contra el oro y las opciones A y B del punto pasan a historia (§12); el tablero cambia «Dónde va el punto dorado» por una nota corta | **regla** | Ramón, 16-oct |
+| 16-oct | Ronda 3 (aprobada), arreglos de pasada. La flecha del chequeo de Taller va entera en todo ancho: de 1024 a 1299, bajo el chequeo (§13, «Flecha del chequeo»); nunca se esconde un desborde con `overflow`, y `anchos.mjs` mide el documento también con el clip apagado. En cada tramo se sirve un archivo que cubre dpr 2 en su ancho más grande; F1, F5 y F7, en §7 (el cambio de la pauta es de Bruno). Cifra del marcador corregida: Taller 9 (8 cierran), Pizarra 8 (7 cierran); la regla no cambia | **regla** (flecha, desborde y fotos por tramo); la cifra es un dato | Javiera, ronda 3, defecto 1 y «sin severidad»; observación para la spec |
