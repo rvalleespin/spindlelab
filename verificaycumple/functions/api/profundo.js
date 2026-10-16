@@ -922,6 +922,33 @@ export function armarInforme(medicion, dominio) {
         ? 'Tu sitio no terminó de cargar, así que no alcanzamos a ver si retiene los rastreadores hasta que alguien responde: eso queda sin confirmar. '
         : 'Y mientras no lo tocamos no corrió ninguno de los rastreadores que buscamos. ') +
       'No revisamos qué pasa cuando alguien acepta o rechaza.');
+  } else if (!algoCorrio && !gal.propias.length && !gal.terceras.length && !parcial) {
+    // EL FALSO ROJO (16-oct). Este ítem preguntaba "¿aparece un aviso?" sin preguntar antes
+    // "¿hace falta uno?", y por eso le descontaba 3 de 13 a todo sitio que no escribe nada.
+    // Medido en casa: verifica.spindlelab.cl salía 77/100 por no tener aviso de cookies, con
+    // los otros tres ítems en verde porque no carga un rastreador ni escribe una cookie. Un
+    // aviso ahí no tendría nada que retener, y ponérselo para subir el puntaje es exactamente
+    // el banner decorativo que este chequeo denuncia.
+    //
+    // Es el espejo del falso verde que ya costó cuatro arreglos: ahí se daba por buena una
+    // señal que no se podía confirmar, acá se daba por mala una que no corresponde. Las dos
+    // versiones inventan una conclusión que la medición no sostiene.
+    //
+    // La condición es estricta a propósito y las tres partes importan:
+    //   !algoCorrio             ningún rastreador DEL CATÁLOGO cargó, escribió cookie ni envió.
+    //   sin cookies de ningún tipo  cierra el hueco del catálogo. El rastreador que no
+    //                           reconocemos deja su cookie igual, y con una sola cookie no
+    //                           podemos afirmar que no hay nada que consentir. Es la misma
+    //                           puerta que el ítem de cookies ya cuida con `gal.terceras`.
+    //   !parcial                la página cargó completa, así que "no pasó nada" es una
+    //                           observación y no el efecto de haber mirado a medias.
+    // Si falta cualquiera de las tres, el ítem sigue saliendo pendiente.
+    add('aviso', 'aviso', 'Si aparece un aviso al entrar', 'no-aplica', 3,
+      `No apareció ningún aviso de cookies, y en los ${segundosMirados} segundos que miramos, tu ` +
+      'sitio tampoco escribió ninguna cookie ni cargó ninguno de los rastreadores que buscamos. ' +
+      'No hay nada esperando un permiso, así que esto no lo contamos ni a favor ni en contra.',
+      'Nada que hacer por ahora. Si más adelante sumas analítica, publicidad o un chat, ahí sí vas ' +
+      'a necesitar un aviso que los retenga hasta que la persona responda.');
   } else {
     add('aviso', 'aviso', 'Si aparece un aviso al entrar', 'pendiente', 3,
       `Estuvimos ${segundosMirados} segundos en tu sitio, movimos el mouse y bajamos la página, y no apareció ningún aviso de cookies.` +
@@ -931,7 +958,9 @@ export function armarInforme(medicion, dominio) {
 
   /* --- Puntaje: solo sobre lo confirmado --------------------------- */
   // Misma fórmula que el chequeo rápido, para que los dos números signifiquen lo mismo.
-  const puntuables = items.filter((i) => i.estado !== 'sin-confirmar');
+  // `no-aplica` sale del puntaje por la misma razon que `sin-confirmar`: no es un logro ni
+  // una falta, asi que no puede mover el numero en ninguna direccion.
+  const puntuables = items.filter((i) => i.estado !== 'sin-confirmar' && i.estado !== 'no-aplica');
   const pesoTotal = items.reduce((a, i) => a + i.peso, 0);
   const pesoConfirmado = puntuables.reduce((a, i) => a + i.peso, 0);
   const obtenido = puntuables.reduce((a, i) => a + (i.estado === 'ok' ? i.peso : 0), 0);
@@ -989,6 +1018,7 @@ export function armarInforme(medicion, dominio) {
     pesoTotal,
     pendientes: items.filter((i) => i.estado === 'pendiente').length,
     sinConfirmar: items.filter((i) => i.estado === 'sin-confirmar').length,
+    noAplica: items.filter((i) => i.estado === 'no-aplica').length,
     segundosMirados,
     parcial,
     bloqueado,
