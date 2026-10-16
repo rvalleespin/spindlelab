@@ -80,6 +80,7 @@ entra sin chocar.
 
 | Publicado | Pieza | Enlace |
 |---|---|---|
+| **16-oct** | **Reel nuevo de la campaña de Verifica**, con guion y montaje de otra sesión. Los overlays salieron de `marketing/redes/2026-10-octubre-verifica/05-overlays-video/`, que replica el sistema visual de las piezas anteriores (azul/lima + Archivo Black, cero SpindleLab). El recuadro del cierre es el mismo `.tarjeta` del reel del 30-sep, por eso los dos cierran igual. **No lo he visto yo**: lo reporta Ramón | `instagram.com/reel/DekpyOSRqtD/` |
 | **30-sep** | **Historias de las dos piezas**, compartidas por Ramón a mano **en las dos cuentas**: la personal y la de la empresa. Es el empujón que el plan pedía: la pieza vive en la grilla, la historia es lo que mueve gente | — |
 | **30-sep** | **Reel "¿Estás seguro?"** de la campaña de Verifica, 16 s. Encuadre 9:16, portada en la pregunta, **etiqueta de IA activada**, y **sin audio de tendencia**: salió con una pista de silencio que hubo que agregarle para que el subidor web lo aceptara | `instagram.com/reel/Dd6dAemM6E2/` |
 | **29-sep** | **Carrusel "Las 12 cosas"** de la campaña de Verifica, 6 láminas. Con **etiqueta de IA activada** (la sheriff es una imagen fotorrealista generada con IA). Fuente en `marketing/redes/2026-10-octubre-verifica/03-carrusel-las-12-cosas/` | `instagram.com/p/Dd3uPldESqj/` |
