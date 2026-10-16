@@ -1,0 +1,941 @@
+{
+  "meta": {
+    "archivo": "e12/inventario-praxi.md (gemelo legible por máquina)",
+    "fecha": "2026-10-16",
+    "medicionUtc": {
+      "desde": "2026-10-16T22:56:02Z",
+      "hasta": "2026-10-16T23:12:00Z"
+    },
+    "autor": "Diego, con el criterio de Simón",
+    "rama": "claude/magical-franklin-ckfki2",
+    "manda": [
+      "e12/brief-de-obra.md, sección «Compuerta 1», punto 3",
+      "e12/encargo-paso-2.md §5 y §7.12-7.13"
+    ],
+    "regla": "Una etiqueta o un número que no tenga fila aquí no existe.",
+    "tiposDeFuente": {
+      "servido": "respuesta HTTP bajada hoy",
+      "medido": "instrumento corrido hoy con su salida guardada",
+      "repo": "archivo o commit de praxis-coach o su historial en GitHub",
+      "dicho": "lo afirma un documento del repo de Praxi y no se pudo volver a medir hoy"
+    },
+    "repoPraxi": {
+      "ruta": "/home/user/praxis-coach",
+      "commit": "a360d7a",
+      "clonSuperficial": true,
+      "cabezaDeMainEnGithub": "a360d7a",
+      "soloLectura": true
+    }
+  },
+  "proyecto": {
+    "id": "praxi",
+    "nombre": "Praxi",
+    "nombresAnteriores": [
+      "Respinfitness (package.json)",
+      "Praxis (renombrada el 22-jul, commit 1916dd8)"
+    ],
+    "tipo": "propio",
+    "anio": 2026,
+    "periodo": {
+      "primerCommit": {
+        "sha": "c501964",
+        "fechaUtc": "2026-07-21T20:56:18Z",
+        "mensaje": "MVP inicial: coach de hipertrofia (Respinfitness)"
+      },
+      "ultimoCommit": {
+        "sha": "a360d7a",
+        "fechaUtc": "2026-08-25T18:18:11Z",
+        "mensaje": "Merge pull request #131"
+      }
+    },
+    "commitsEnMain": 349,
+    "pullRequests": {
+      "total": 131,
+      "primero": {
+        "numero": 1,
+        "fechaUtc": "2026-07-26T12:23:57Z"
+      },
+      "ultimo": {
+        "numero": 131,
+        "fechaUtc": "2026-08-25T18:15:49Z"
+      }
+    },
+    "fuenteHistorial": "API de GitHub (list_commits, 4 páginas de 100; list_pull_requests), leída el 16-oct",
+    "queEs": "Coach de hipertrofia por chat, en español de Chile. La persona cuenta cómo entrenó en una frase; la app guarda las series y decide con su historial cuándo subir el peso.",
+    "paraQuien": "Gente que entrena con pesas y quiere progresar con método, en Chile. La landing dice para quién no es: rehabilitar una lesión, tratamiento médico o nutricional.",
+    "claim": {
+      "vigente": "Se acuerda de cada serie que hiciste.",
+      "marca": "Entrena sabiendo por qué",
+      "nota": "Desde el 3-ago la venta es la memoria, no el porqué (CLAUDE.md:523-532)."
+    },
+    "titularCobro": "SpindleLab SpA (CLAUDE.md:722-723, lib/comercio.ts)",
+    "precios": {
+      "nota": "Precios de Praxi, no de SpindleLab",
+      "gratis": "10 mensajes por semana y registro completo, sin fecha de término",
+      "mensualClp": 7990,
+      "anualClp": 59900,
+      "diasDePrueba": 7,
+      "fuente": "lib/flow/planes.ts, lib/acceso.ts"
+    },
+    "quienLoHizo": "Ramón, con sesiones de Claude Code (los commits llevan Co-Authored-By: Claude); dos sesiones en paralelo, app y marca+sitio",
+    "permiso": {
+      "estado": "no aplica",
+      "detalle": "Producto propio de Ramón; él lo propuso como caso el 16-oct (compuerta 1, punto 3)."
+    },
+    "estadoAl16oct": {
+      "url": "https://praxi.coach/",
+      "status": 402,
+      "cabecera": "x-vercel-error: DEPLOYMENT_DISABLED",
+      "cuerpo": "Payment required / DEPLOYMENT_DISABLED",
+      "medidoUtc": "2026-10-16T22:56:02Z",
+      "rutasMedidas": [
+        "/",
+        "https://www.praxi.coach/",
+        "/planes",
+        "/robots.txt"
+      ],
+      "nota": "Es Vercel, no el muro de pago de la app. Ningún enlace a praxi.coach mientras no responda 200.",
+      "crudo": [
+        "e12/praxi/crudo/estado-praxi.coach-headers.txt",
+        "e12/praxi/crudo/estado-praxi.coach-cuerpo.txt"
+      ]
+    }
+  },
+  "verificacionDeHoy": {
+    "sobre": "Copia de a360d7a sin .git en el scratchpad; npm ci (619 paquetes), Node 22.22.0",
+    "tests": {
+      "pasados": 384,
+      "total": 384,
+      "archivos": 35,
+      "herramienta": "vitest run"
+    },
+    "gateDeMarca": {
+      "resultado": "8/8",
+      "comando": "npm run design-check"
+    },
+    "typecheck": {
+      "resultado": "limpio",
+      "comando": "tsc --noEmit"
+    },
+    "build": {
+      "resultado": "OK",
+      "comando": "next build",
+      "rutas": 47,
+      "paginas": 22,
+      "rutasApi": 20,
+      "envEnLineaDeComandos": [
+        "NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:9 (puerto vacío)",
+        "NEXT_PUBLIC_SUPABASE_ANON_KEY=<texto inventado>",
+        "NEXT_PUBLIC_APP_URL=http://127.0.0.1:3917"
+      ],
+      "seEscribioEnv": false
+    },
+    "testsPorPieza": {
+      "lib/domain/rir": 10,
+      "lib/domain/effectiveSet": 8,
+      "lib/domain/deload": 5,
+      "lib/domain/mesociclo": 7,
+      "lib/coach/signals": 12,
+      "lib/coach/healthGuardrail": 7,
+      "lib/coach/guardrailMenores": 9,
+      "lib/coach/pareceRegistro": 5,
+      "lib/csp": 15,
+      "lib/email/plantillas": 38,
+      "lib/seo/estructurados": 18
+    },
+    "crudo": "e12/praxi/crudo/verificacion-copia.txt"
+  },
+  "rutas": [
+    {
+      "parte": "sitio público",
+      "rutas": [
+        "/",
+        "/planes",
+        "/empezar",
+        "/terminos",
+        "/privacidad",
+        "/eliminar-cuenta",
+        "/baja"
+      ],
+      "sinCuenta": true
+    },
+    {
+      "parte": "entrada",
+      "rutas": [
+        "/login",
+        "/reset",
+        "/auth/callback"
+      ],
+      "sinCuenta": true
+    },
+    {
+      "parte": "app",
+      "rutas": [
+        "/onboarding",
+        "/home",
+        "/chat",
+        "/registro",
+        "/progreso",
+        "/perfil",
+        "/planes/listo"
+      ],
+      "sinCuenta": false,
+      "sinSesion": "307 a /login (medido)"
+    },
+    {
+      "parte": "servidor",
+      "rutas": [
+        "20 rutas en app/api/"
+      ],
+      "nota": "El muro de pago se cumple aquí: 402 con motivo \"plan\""
+    },
+    {
+      "parte": "base",
+      "rutas": [
+        "25 migraciones en supabase/migrations/"
+      ],
+      "nota": "RLS en todas las tablas; UPDATE por columna en profiles (0019)"
+    }
+  ],
+  "stack": [
+    {
+      "ingrediente": "Next.js 14.2.35 (App Router, React 18, TypeScript estricto)",
+      "efecto": null,
+      "evidencia": "package.json; build OK"
+    },
+    {
+      "ingrediente": "Tailwind + shadcn/ui",
+      "efecto": null,
+      "evidencia": "tailwind.config.ts; components/ui (2)"
+    },
+    {
+      "ingrediente": "Supabase (auth correo, Postgres, RLS, Storage privado)",
+      "efecto": "Cada persona ve y borra solo lo suyo; sus exámenes van a un bucket privado",
+      "evidencia": "25 migraciones; 0002, 0015, 0019"
+    },
+    {
+      "ingrediente": "API de Anthropic solo en servidor: claude-sonnet-5 (conversa), claude-haiku-4-5 (extrae)",
+      "efecto": "Escribes como a una persona y el registro queda guardado sin formularios",
+      "evidencia": "lib/anthropic.ts:14,17; import \"server-only\""
+    },
+    {
+      "ingrediente": "Lógica de entrenamiento en código con tests",
+      "efecto": "El peso sube con dos sesiones confirmadas; la descarga llega por fatiga corroborada",
+      "evidencia": "lib/domain/*, lib/coach/signals.ts; 42 tests"
+    },
+    {
+      "ingrediente": "Guardrails de salud y edad en código",
+      "efecto": "Ante dolor, mareo o señales de trastorno alimentario no diagnostica y deriva; a un menor no le recomienda suplementos",
+      "evidencia": "healthGuardrail.ts, guardrailMenores.ts; 16 tests"
+    },
+    {
+      "ingrediente": "Mercado Pago, formulario embebido",
+      "efecto": "Pagas con tarjeta sin salir de Praxi ni tener cuenta en Mercado Pago; la tarjeta no toca su servidor",
+      "evidencia": "components/mp-card-form.tsx, lib/mp/; CLAUDE.md:144-164"
+    },
+    {
+      "ingrediente": "Resend",
+      "efecto": "Correo con fecha exacta del cobro, monto y cómo cancelar",
+      "evidencia": "lib/email/plantillas.ts; 38 tests"
+    },
+    {
+      "ingrediente": "Vercel (hosting y 3 crons)",
+      "efecto": null,
+      "evidencia": "vercel.json; server: Vercel"
+    },
+    {
+      "ingrediente": "CSP con nonce por petición",
+      "efecto": null,
+      "evidencia": "middleware.ts, lib/csp.ts; 15 tests"
+    },
+    {
+      "ingrediente": "PostHog por proxy propio; Conversions API de Meta desde el servidor, sin píxel",
+      "efecto": null,
+      "evidencia": "next.config.mjs (/ingest), lib/growth/meta.ts"
+    },
+    {
+      "ingrediente": "PWA",
+      "efecto": "Se instala en el teléfono",
+      "evidencia": "app/manifest.ts, public/sw.js"
+    },
+    {
+      "ingrediente": "Gate de marca en el build (design-check, 8 reglas)",
+      "efecto": "Un color fuera del contrato no llega a producción",
+      "evidencia": "scripts/design-check.mjs; prebuild; 8/8 hoy"
+    },
+    {
+      "ingrediente": "JSON-LD Organization, WebSite, SoftwareApplication, FAQPage",
+      "efecto": "Un motor de IA puede leer qué es, cuánto cuesta y qué responde",
+      "evidencia": "lib/seo/estructurados.ts (18 tests); medido en el HTML local de /"
+    },
+    {
+      "ingrediente": "Vitest",
+      "efecto": null,
+      "evidencia": "384/384"
+    }
+  ],
+  "noTiene": [
+    "RAG",
+    "embeddings",
+    "base vectorial",
+    "modelo propio",
+    "ajuste fino",
+    "Astro",
+    "Motion",
+    "WebGL"
+  ],
+  "ia": {
+    "hace": [
+      "Extrae con Haiku obligado a una herramienta de esquema fijo (extraer_registro, tool_choice forzado); ante la duda, es_registro=false (lib/coach/extract.ts, endurecido el 19-ago). Mismo patrón para peso, planes y documentos.",
+      "Filtra en código antes de llamar al modelo (lib/coach/pareceRegistro.ts; 805 ms de mediana, dicho en CLAUDE.md:589-590).",
+      "Decide en código: RIR objetivo por semana, subir carga, serie efectiva, descarga (lib/domain/*), y se lo entrega al modelo como texto (lib/coach/signals.ts).",
+      "Conversa con Sonnet y un prompt en dos capas: método estático cacheado + contexto por persona después del corte (caché: 20-25 % de ahorro en 48 llamadas, dicho en CLAUDE.md:69-76).",
+      "Guardrails de salud y edad detectados en código e inyectados en cada turno que corresponde."
+    ],
+    "noDecide": [
+      "el peso de la próxima sesión",
+      "la descarga",
+      "qué serie cuenta",
+      "el acceso a lo de pago (402 en servidor antes del modelo)",
+      "el precio"
+    ],
+    "fraseVerificable": "El modelo entiende lo que le escribes y conversa; cuándo subir el peso lo calcula código con tests."
+  },
+  "capturas": {
+    "origen": "Copia local (next start en 127.0.0.1:3917), nunca producción",
+    "instrumento": {
+      "script": "e12/praxi/herramientas/capturar-praxi.mjs",
+      "chromium": "141.0.7390.37",
+      "anchos": [
+        "1440x900 @1x",
+        "390x844 @2x móvil"
+      ]
+    },
+    "limitacion": "Este Chromium no reproduce H.264: el hero y el login se ven con su póster, que es el repliegue programado por Praxi.",
+    "medidoPorVista": [
+      {
+        "ruta": "/",
+        "ancho": "1440",
+        "status": 200,
+        "h1": 1,
+        "alto": 7514,
+        "anchoDocumento": 1440,
+        "erroresConsola": 0,
+        "origenesExternos": 0,
+        "jsonld": [
+          "Organization",
+          "WebSite",
+          "SoftwareApplication",
+          "FAQPage"
+        ]
+      },
+      {
+        "ruta": "/login",
+        "ancho": "1440",
+        "status": 200,
+        "h1": 0,
+        "alto": 900,
+        "anchoDocumento": 1440,
+        "erroresConsola": 0,
+        "origenesExternos": 0,
+        "jsonld": []
+      },
+      {
+        "ruta": "/planes",
+        "ancho": "1440",
+        "status": 200,
+        "h1": 1,
+        "alto": 1945,
+        "anchoDocumento": 1440,
+        "erroresConsola": 0,
+        "origenesExternos": 0,
+        "jsonld": []
+      },
+      {
+        "ruta": "/empezar",
+        "ancho": "1440",
+        "status": 200,
+        "h1": 1,
+        "alto": 900,
+        "anchoDocumento": 1440,
+        "erroresConsola": 0,
+        "origenesExternos": 0,
+        "jsonld": []
+      },
+      {
+        "ruta": "/",
+        "ancho": "390",
+        "status": 200,
+        "h1": 1,
+        "alto": 11754,
+        "anchoDocumento": 390,
+        "erroresConsola": 0,
+        "origenesExternos": 0,
+        "jsonld": [
+          "Organization",
+          "WebSite",
+          "SoftwareApplication",
+          "FAQPage"
+        ]
+      },
+      {
+        "ruta": "/login",
+        "ancho": "390",
+        "status": 200,
+        "h1": 0,
+        "alto": 844,
+        "anchoDocumento": 390,
+        "erroresConsola": 0,
+        "origenesExternos": 0,
+        "jsonld": []
+      },
+      {
+        "ruta": "/planes",
+        "ancho": "390",
+        "status": 200,
+        "h1": 1,
+        "alto": 2277,
+        "anchoDocumento": 390,
+        "erroresConsola": 0,
+        "origenesExternos": 0,
+        "jsonld": []
+      },
+      {
+        "ruta": "/empezar",
+        "ancho": "390",
+        "status": 200,
+        "h1": 1,
+        "alto": 844,
+        "anchoDocumento": 390,
+        "erroresConsola": 0,
+        "origenesExternos": 0,
+        "jsonld": []
+      }
+    ],
+    "archivos": [
+      {
+        "ruta": "e12/praxi/capturas/empezar-1440-primera.jpg",
+        "bytes": 46002,
+        "sha256": "6f61924947c66def9310015ae5a820d5067ee1dfe56dd65afd3d98694266b00d",
+        "dimensiones": "1440x900",
+        "contenidoDeDemostracion": false,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/empezar-390-primera.jpg",
+        "bytes": 98703,
+        "sha256": "e7a198ca63d0d4224db83daa299de6408eb80b9be88291db36fd08e622932c62",
+        "dimensiones": "780x1688",
+        "contenidoDeDemostracion": false,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/landing-1440-completa.jpg",
+        "bytes": 418902,
+        "sha256": "eaac143a7e788d2029a32f0421818fc0efe89881b40b0182604259a87148ee9f",
+        "dimensiones": "1080x5636",
+        "contenidoDeDemostracion": true,
+        "llevaLanding3SinProcedencia": true
+      },
+      {
+        "ruta": "e12/praxi/capturas/landing-1440-primera.jpg",
+        "bytes": 119601,
+        "sha256": "9d463ac25986a105dad128396fb248a66955c9583af370391a1f0645337fe7d2",
+        "dimensiones": "1440x900",
+        "contenidoDeDemostracion": false,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/landing-1440-sec00.jpg",
+        "bytes": 98906,
+        "sha256": "3a79c6f8ae893b1ba61252a84d3d5e3a8e5c0659bce22219c4b949f79d356e46",
+        "dimensiones": "1440x632",
+        "contenidoDeDemostracion": false,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/landing-1440-sec02.jpg",
+        "bytes": 24855,
+        "sha256": "265b11bb368a5b159c54b338a9c707ba1146ff67dac702412264dc6b5ba22fdb",
+        "dimensiones": "1440x311",
+        "contenidoDeDemostracion": false,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/landing-1440-sec03.jpg",
+        "bytes": 58539,
+        "sha256": "ff57c4bf5ef34f9d45bdabd1c09c781e55f798698ba38f87f55137898f950628",
+        "dimensiones": "1440x500",
+        "contenidoDeDemostracion": true,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/landing-1440-sec06.jpg",
+        "bytes": 92148,
+        "sha256": "c7669cea8236488b48cbcc34f37b3a235f828270defd297c747c55a60ac646d1",
+        "dimensiones": "1440x783",
+        "contenidoDeDemostracion": false,
+        "llevaLanding3SinProcedencia": true
+      },
+      {
+        "ruta": "e12/praxi/capturas/landing-1440-sec08.jpg",
+        "bytes": 101073,
+        "sha256": "e7a340ededba33403b6aca3c5aa92b4a1efde1e6668dae3eb537bea96523ccca",
+        "dimensiones": "1440x1065",
+        "contenidoDeDemostracion": true,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/landing-1440-sec09.jpg",
+        "bytes": 71972,
+        "sha256": "4e5f679af4dcf0532962e10816ce4434a96d8847bb85208cda29aa5236f064ff",
+        "dimensiones": "1440x526",
+        "contenidoDeDemostracion": false,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/landing-1440-sec10.jpg",
+        "bytes": 118694,
+        "sha256": "25779b56b4a99fff6d883c48c49fee210866b13f251664289a2f0223c698a1d3",
+        "dimensiones": "1440x974",
+        "contenidoDeDemostracion": false,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/landing-390-completa.jpg",
+        "bytes": 431124,
+        "sha256": "1358f168bcfaecfa6963dd4bdb5142930cf1a5256f85199b0acd34a3a97544fd",
+        "dimensiones": "390x11754",
+        "contenidoDeDemostracion": true,
+        "llevaLanding3SinProcedencia": true
+      },
+      {
+        "ruta": "e12/praxi/capturas/landing-390-primera.jpg",
+        "bytes": 144050,
+        "sha256": "5aab971dbc0f1b928909e4d222e4561621f2220dc9a118c5228901187f26e0ce",
+        "dimensiones": "780x1688",
+        "contenidoDeDemostracion": false,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/landing-390-sec03.jpg",
+        "bytes": 129779,
+        "sha256": "839149af01f19b0708308e06b9c9d53614dfbd1ba6f5e5f2e10ad72740fd36b3",
+        "dimensiones": "780x1806",
+        "contenidoDeDemostracion": true,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/landing-390-sec08.jpg",
+        "bytes": 211705,
+        "sha256": "e5221f8b3e381da4e943e53c324e3054dcc8e5f279cbbfc7fa2b037f146163a0",
+        "dimensiones": "780x3626",
+        "contenidoDeDemostracion": true,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/login-1440-primera.jpg",
+        "bytes": 45604,
+        "sha256": "05da8735808915b28310c9d5d887429e846f3ac87783441db1198a10a7263575",
+        "dimensiones": "1440x900",
+        "contenidoDeDemostracion": false,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/login-390-primera.jpg",
+        "bytes": 67596,
+        "sha256": "3f25c770d221b2a50ea40204f671f2c8c75f20a44f655a5bcc0db7a14e0d1587",
+        "dimensiones": "780x1688",
+        "contenidoDeDemostracion": false,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/planes-1440-completa.jpg",
+        "bytes": 138081,
+        "sha256": "17f3af558841b63d9b5ceec5d2555b609d6577be1d40a644dfad4e3d8276950c",
+        "dimensiones": "1440x1945",
+        "contenidoDeDemostracion": false,
+        "llevaLanding3SinProcedencia": false
+      },
+      {
+        "ruta": "e12/praxi/capturas/planes-390-primera.jpg",
+        "bytes": 100066,
+        "sha256": "5570334e78dcf80370fb26b9f3f891cc0c4c5dcc42a44b7a56000d0c72b72c9c",
+        "dimensiones": "780x1688",
+        "contenidoDeDemostracion": false,
+        "llevaLanding3SinProcedencia": false
+      }
+    ],
+    "rotuloSiVaAlSitio": "Datos de ejemplo de la landing de Praxi"
+  },
+  "material": [
+    {
+      "archivo": "e12/praxi/material/praxi-hero-secuencia.mp4",
+      "de": "public/video/hero-1..5-*.mp4 (1.110.278 bytes en total)",
+      "generado": true,
+      "como": "Seedance 2.0 con el personaje PraxiChileno (landing.tsx:128-143, PERSONAJE.md)",
+      "nota": "Concatenados en el orden del hero, cortes secos; el clip de la reunión muestra letras sin sentido en la pared",
+      "ruta": "e12/praxi/material/praxi-hero-secuencia.mp4",
+      "bytes": 636311,
+      "sha256": "96cb735dcc0f5237442339a5fe0c7db3c7ef49b351b673b63af2adcb5a016070",
+      "dimensiones": "568x320"
+    },
+    {
+      "archivo": "e12/praxi/material/praxi-hero-poster.jpg",
+      "de": "public/video/hero-poster.jpg",
+      "generado": true,
+      "ruta": "e12/praxi/material/praxi-hero-poster.jpg",
+      "bytes": 98843,
+      "sha256": "557afea114bb464f3f6a260409352a744cf2977f2ce1667850335abe2ae907a9",
+      "dimensiones": "1000x562"
+    },
+    {
+      "archivo": "e12/praxi/material/praxi-reel-a-memoria-720.mp4",
+      "de": "brand/lanzamiento/campana-meta/final-meta-a-memoria.mp4 (1080x1920, 15,4 s, 5.043.113 bytes)",
+      "generado": true,
+      "como": "Atleta generado (PraxiAtleta, campana-meta/NOTA.md:91); chat y textos en HTML",
+      "nota": "Recodificado a 720x1280, sin audio como el original",
+      "ruta": "e12/praxi/material/praxi-reel-a-memoria-720.mp4",
+      "bytes": 1013890,
+      "sha256": "849e3dbcaa2f206e20d71a336112a3375cbd0e0d122ca4f7d6589d6cac3e4bce",
+      "dimensiones": "720x1280"
+    },
+    {
+      "archivo": "e12/praxi/material/praxi-reel-a-memoria-poster.jpg",
+      "de": "cuadro de los 8,2 s del reel A",
+      "generado": true,
+      "ruta": "e12/praxi/material/praxi-reel-a-memoria-poster.jpg",
+      "bytes": 58944,
+      "sha256": "3b25f3531cfaf76bde640c78938c02364eed9e9e94e5975fdbfc0e1dd4edfef4",
+      "dimensiones": "720x1280"
+    },
+    {
+      "archivo": "e12/praxi/material/praxi-carrusel-v2-s1.jpg",
+      "de": "brand/lanzamiento/carrusel-v2/s1.png",
+      "generado": true,
+      "como": "Foto del banco hero-chileno (imágenes calibradas en Higgsfield, commit 8eb10b5); texto en HTML",
+      "ruta": "e12/praxi/material/praxi-carrusel-v2-s1.jpg",
+      "bytes": 139271,
+      "sha256": "6c28b650ada00933c974cc7d11cc085647061b673d36c99db5bf3ed8fe473e54",
+      "dimensiones": "1080x1350"
+    },
+    {
+      "archivo": "e12/praxi/material/praxi-carrusel-v2-s3.jpg",
+      "de": "brand/lanzamiento/carrusel-v2/s3.png",
+      "generado": true,
+      "nota": "Lleva «12/16 series efectivas» como ejemplo",
+      "ruta": "e12/praxi/material/praxi-carrusel-v2-s3.jpg",
+      "bytes": 154426,
+      "sha256": "e7a76346615ce2fcf16cb55c0ae2a1e234fb2aef44ddd46349bf5a3dc5c75195",
+      "dimensiones": "1080x1350"
+    },
+    {
+      "archivo": "e12/praxi/material/praxi-carrusel-v2-s4.jpg",
+      "de": "brand/lanzamiento/carrusel-v2/s4.png",
+      "generado": true,
+      "ruta": "e12/praxi/material/praxi-carrusel-v2-s4.jpg",
+      "bytes": 120242,
+      "sha256": "db798e13495f1be203e71047acc67398a2a14f97f224b59266f66ea5e97eb0c3",
+      "dimensiones": "1080x1350"
+    },
+    {
+      "archivo": "e12/praxi/material/praxi-portada-facebook.jpg",
+      "de": "brand/lanzamiento/pieza-04-portada/pieza-04.png",
+      "generado": "se trata como generado",
+      "nota": "accion.png sin procedencia escrita; DIRECCION-DE-ARTE.md:33 manda los fondos de fierro a Higgsfield",
+      "ruta": "e12/praxi/material/praxi-portada-facebook.jpg",
+      "bytes": 50871,
+      "sha256": "fa922ca05e8b4912f70c36d7a4050e50935210857efc4107c964adf0538de3bd",
+      "dimensiones": "1640x624"
+    },
+    {
+      "archivo": "e12/praxi/material/praxi-avatar-oscuro.png",
+      "de": "brand/avatar/a-oscuro.png",
+      "generado": false,
+      "como": "Renderizado desde el wordmark del código (brand/avatar/NOTA.md)",
+      "ruta": "e12/praxi/material/praxi-avatar-oscuro.png",
+      "bytes": 14560,
+      "sha256": "d0335e74789483691a8dc3b3e7aaa2b9e8b928dc2248f26934a25fce420830b6",
+      "dimensiones": "1080x1080"
+    },
+    {
+      "archivo": "e12/praxi/material/praxi-avatar-amarillo.png",
+      "de": "brand/avatar/b-amarillo.png",
+      "generado": false,
+      "ruta": "e12/praxi/material/praxi-avatar-amarillo.png",
+      "bytes": 14506,
+      "sha256": "9d2c0aea7a8e72cd28bc0bea02a2fe97f6fbdd030a7c9aeaf8d5cab755e289c8",
+      "dimensiones": "1080x1080"
+    }
+  ],
+  "materialNoCopiado": [
+    {
+      "de": "public/video/01..05-*.mp4",
+      "motivo": "Fondo del login (generado); se ve en la captura del login"
+    },
+    {
+      "de": "public/landing-1.jpg, landing-2.jpg, landing-3.jpg",
+      "motivo": "Sin procedencia escrita (entraron el 28-jul, 26b9687). landing-3 sale en la sección 06 de la landing; landing-2 es el og:image"
+    },
+    {
+      "de": "public/icon-*.png",
+      "motivo": "El de 512 conserva fondo violeta #18152C (tono ≈ 248°) del sistema anterior"
+    },
+    {
+      "de": "brand/lanzamiento/siembra, pieza-06-reel, hero-chileno, pieza-01/02/05",
+      "motivo": "Material crudo o marcado «No publicar» (brand/lanzamiento/LEEME.md)"
+    }
+  ],
+  "identidad": {
+    "fuente": "praxis-coach/brand/brand.json (contrato que el gate hace cumplir)",
+    "acento": {
+      "hex": "#E2F349",
+      "textoEncima": "#15170A",
+      "contraste": "15,41:1 (dicho, brand/README.md)",
+      "reemplazo": "morado #8069F2, prohibido desde el 26-jul (commit 56fdae2)"
+    },
+    "fondos": [
+      "#0F1117",
+      "#171A21",
+      "#1E222B"
+    ],
+    "linea": "#262B36",
+    "texto": "#F1F3F7",
+    "textoApagado": "#9AA2B1",
+    "letra": {
+      "display": "Gabarito 500/600/700",
+      "cuerpo": "Inter",
+      "nota": "Heredada del manual antiguo de SpindleLab el 22-jul (commit 59308a1)"
+    },
+    "radios": [
+      9,
+      11,
+      13
+    ],
+    "voz": "Tuteo chileno, nunca voseo; hype 1; Sabio con algo de Héroe",
+    "wordmark": "«Praxi.» Gabarito 600, punto en el acento; vive en components/wordmark.tsx",
+    "notaParaLaObra": "El caso lleva la identidad de Praxi, no la de SpindleLab; dejar el manual antiguo no obliga a recolorear el caso."
+  },
+  "sePuedeDecir": [
+    {
+      "frase": "Sitio y app hechos por Ramón entre el 21-jul y el 25-ago-2026",
+      "fuente": "GitHub"
+    },
+    {
+      "frase": "349 commits y 131 pull requests",
+      "fuente": "GitHub, 16-oct"
+    },
+    {
+      "frase": "384 tests en verde sobre el último commit, el 16-oct",
+      "fuente": "medido"
+    },
+    {
+      "frase": "Cuándo subir el peso, cuándo descargar y qué serie cuenta los calcula código con tests, no el modelo",
+      "fuente": "repo + 42 tests"
+    },
+    {
+      "frase": "Un modelo convierte la frase en series guardadas, obligado a un esquema; ante la duda no guarda",
+      "fuente": "lib/coach/extract.ts"
+    },
+    {
+      "frase": "Guardrails de salud y edad en código, para todos",
+      "fuente": "repo + 16 tests"
+    },
+    {
+      "frase": "Cobro con tarjeta dentro de la app; la tarjeta no pasa por su servidor",
+      "fuente": "repo"
+    },
+    {
+      "frase": "Un color fuera del contrato no llega a producción: el build se cae",
+      "fuente": "repo + gate 8/8"
+    },
+    {
+      "frase": "La landing declara Organization, WebSite, SoftwareApplication y FAQPage, y un test exige que lo declarado esté visible",
+      "fuente": "repo + HTML local"
+    },
+    {
+      "frase": "La landing la aprobó Ramón el 4-ago tras siete rondas",
+      "fuente": "dicho: bitacora-diseno.md:207-250"
+    },
+    {
+      "frase": "Las personas del material son generadas, con un personaje reutilizable",
+      "fuente": "repo"
+    },
+    {
+      "frase": "Hoy el sitio no está en línea",
+      "fuente": "medido"
+    }
+  ],
+  "noSePuedeDecir": [
+    {
+      "que": "Números de usuarios, retención, conversión, ventas o ingresos",
+      "porque": "Sin medición publicable. Conteo interno del 24-ago (dicho, docs/encargos/2026-08-24-traspaso-sesion-app-para-pm.md:184-200): 14 perfiles, 3 de pago (1 cortesía, 2 cancelados), un pago aprobado (6-ago), ningún suscriptor recurrente, último mensaje 17-ago; campaña de Meta: 548 personas y 0 registros antes del arreglo del embudo (2026-08-19-cierre-fix-registro-para-pm.md:43-45). No se puede re-medir sin entrar a su base. El caso dice «Sin métrica»."
+    },
+    {
+      "que": "Resultados físicos (músculo, kilos, velocidad de progreso)",
+      "porque": "Rubro salud; las cifras de la landing son de ejemplo"
+    },
+    {
+      "que": "«IA propietaria», «modelos RAG», «despliegue de modelos», porcentajes de mejora",
+      "porque": "No lo hace; usa la API de Anthropic con dos modelos comerciales"
+    },
+    {
+      "que": "«En producción», «disponible», enlaces a praxi.coach",
+      "porque": "402 DEPLOYMENT_DISABLED hoy"
+    },
+    {
+      "que": "«Basado en evidencia» como sello",
+      "porque": "Es posicionamiento (el coach cita a Schoenfeld y RP/Israetel), no validación externa"
+    },
+    {
+      "que": "Ahorro de caché, costo por persona (0,68 USD), 0,81 USD de vida del proyecto",
+      "porque": "Dicho, sin crudo aquí, dato interno; solo si Ramón quiere"
+    },
+    {
+      "que": "Que el material es fotografía",
+      "porque": "Es generado"
+    }
+  ],
+  "historiaKoto": [
+    {
+      "seccion": "Ficha",
+      "hay": "Propio · 2026 · Sitio y app · Next.js, Supabase, API de Anthropic, Mercado Pago · 21-jul a 25-ago · fuera de línea"
+    },
+    {
+      "seccion": "Desafío",
+      "hay": "Las apps se olvidan de lo que hiciste (queja más repetida, investigación del 3-ago) y ChatGPT explica el porqué gratis",
+      "material": [
+        "capturas/landing-1440-sec02.jpg"
+      ],
+      "fuente": "docs/2026-08-03-inteligencia-mercado-praxi.md §1"
+    },
+    {
+      "seccion": "Estrategia",
+      "hay": "Vender la memoria; jerga fuera de la portada; precio contra el gimnasio; gratis que no se vence",
+      "material": [
+        "capturas/landing-1440-primera.jpg",
+        "capturas/landing-1440-sec10.jpg"
+      ],
+      "fuente": "CLAUDE.md:523-541"
+    },
+    {
+      "seccion": "Identidad",
+      "hay": "Contrato de marca en archivos y gate en el build; del morado de demo de IA al amarillo del logo",
+      "material": [
+        "material/praxi-avatar-oscuro.png",
+        "material/praxi-avatar-amarillo.png"
+      ],
+      "fuente": "brand/README.md; commit 56fdae2"
+    },
+    {
+      "seccion": "Aplicación",
+      "hay": "Landing (7 rondas, video en el hero), app (chat que guarda, Inicio con lo último, Progreso con una cifra), campaña",
+      "material": [
+        "material/praxi-hero-secuencia.mp4",
+        "capturas/landing-*-sec03.jpg",
+        "capturas/landing-*-sec08.jpg",
+        "material/praxi-reel-a-memoria-720.mp4",
+        "material/praxi-carrusel-v2-*.jpg"
+      ],
+      "falta": "Pantallas de la app (pedir a Ramón)"
+    },
+    {
+      "seccion": "Cómo piensa",
+      "hay": "El modelo entiende y conversa; el código decide",
+      "material": [
+        "capturas/landing-1440-sec09.jpg"
+      ]
+    },
+    {
+      "seccion": "Resultado",
+      "hay": "Sin métrica. De oficio: 384 tests, gate 8/8, build limpio, 16-oct"
+    }
+  ],
+  "recomendacionVista3": "Sigue Combeau. Praxi cubre un tercio de página sin relleno, pero «La pieza» quedaría sin la app. Praxi entra al índice como «Propio» y su página se arma con las capturas de la app o con la decisión de ir sin ellas.",
+  "pedirARamon": [
+    "Capturas de la app a 390 desde una cuenta de prueba suya (Inicio, Coach con un registro guardado, Registro/entrenamiento, Progreso, Perfil), corriendo Praxi en su Mac con su .env.local; o decidir ir sin ellas.",
+    "¿Se cuenta que Praxi está en pausa (402 DEPLOYMENT_DISABLED)? Si lo reactiva, se mide de nuevo antes de enlazar.",
+    "Procedencia y licencia de landing-1.jpg, landing-2.jpg y landing-3.jpg.",
+    "¿Se nombran los modelos (Sonnet 5, Haiku 4.5) o basta «la API de Anthropic»?",
+    "Los datos de uso del 24-ago no se publican salvo decisión suya; recomendación: «Sin métrica».",
+    "¿El caso dice que lo construyó con agentes de IA (los commits lo dicen)?"
+  ],
+  "senales": {
+    "ruta": "/trabajo/praxi/",
+    "jsonld": [
+      "CreativeWork (autor #autor-ramon, dateCreated 2026-07-21, about: SoftwareApplication «Praxi», operatingSystem Web)",
+      "BreadcrumbList"
+    ],
+    "noDeclarar": [
+      "offers",
+      "Review",
+      "AggregateRating",
+      "Organization de Praxi con url o sameAs a praxi.coach",
+      "isAccessibleForFree",
+      "precios",
+      "MedicalWebPage"
+    ],
+    "tipo": "Propio, nunca cliente",
+    "paraCitas": "Frase de entidad en texto arriba; alt de capturas con «datos de ejemplo» cuando corresponda"
+  },
+  "observacionesDelProducto": [
+    "/login no tiene <h1> (medido, 1440 y 390).",
+    "La landing escribe «2.1» y «3.8» con punto y «+7,5» con coma en la misma sección, contra su propia regla de lib/formato.ts.",
+    "public/icon-512.png conserva fondo violeta #18152C del sistema anterior.",
+    "El clip hero-4-reunion muestra letras sin sentido en la pared (rasgo de generación)."
+  ],
+  "crudos": [
+    {
+      "ruta": "e12/praxi/crudo/capturas-praxi.json",
+      "bytes": 13388,
+      "sha256": "1e5445cb93e79103aefcfe2f57e05e0d11a9fedde17c2b2fe50de1b19bead336",
+      "dimensiones": null
+    },
+    {
+      "ruta": "e12/praxi/crudo/estado-praxi.coach-cuerpo.txt",
+      "bytes": 78,
+      "sha256": "2a5378f6ea1113048aec04a9e73e2eb5328ab7266aa990fe0dd32cfdc24e0f30",
+      "dimensiones": null
+    },
+    {
+      "ruta": "e12/praxi/crudo/estado-praxi.coach-headers.txt",
+      "bytes": 1484,
+      "sha256": "4036077f0f93766c67cdf8cc98945ef84c5183eecb0a98d9220abd423e9819f9",
+      "dimensiones": null
+    },
+    {
+      "ruta": "e12/praxi/crudo/verificacion-copia.txt",
+      "bytes": 2182,
+      "sha256": "a2d76606775876ade23beae263a4c033130571019aea522f166c87d25635732a",
+      "dimensiones": null
+    },
+    {
+      "ruta": "e12/praxi/herramientas/capturar-praxi.mjs",
+      "bytes": 7383,
+      "sha256": "66464296a4efcb15d1ed7e34c6c7dea52a5cfd66657ffccef868c9cdcbd86439",
+      "dimensiones": null
+    }
+  ],
+  "noSePudo": [
+    {
+      "que": "Capturas públicas de praxi.coach en web.archive.org",
+      "porque": "El proxy de la sesión cortó la conexión (16-oct, 23:08 UTC)"
+    }
+  ],
+  "cierre": {
+    "praxisCoachLog": "a360d7a",
+    "praxisCoachStatus": "limpio",
+    "envCreado": false,
+    "servidorLocal": "apagado al terminar",
+    "serviciosDePraxiLlamados": [],
+    "spindlelabAstroTocado": false,
+    "generacionPagada": false
+  },
+  "correcciones": [
+    {
+      "fecha": "2026-10-16 20:12 (Chile)",
+      "correccion": "Primera versión",
+      "origen": "Diego, con Simón"
+    }
+  ]
+}

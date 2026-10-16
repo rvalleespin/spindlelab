@@ -1,0 +1,59 @@
+# Verificación sobre una copia de praxis-coach (a360d7a, sin .git) en el scratchpad de la sesión
+# Fecha UTC: 2026-10-16T23:10:33Z · node v22.22.0 · npm 10.9.4
+
+## vitest run (por archivo: tests pasados/total)
+lib/acceso.test.ts  15/15
+lib/csp.test.ts  15/15
+lib/edad.test.ts  9/9
+lib/formato.test.ts  10/10
+lib/nombre.test.ts  11/11
+lib/coach/dossier.test.ts  5/5
+lib/coach/fichaEjercicio.test.ts  16/16
+lib/coach/gamification.test.ts  13/13
+lib/coach/guardrailMenores.test.ts  9/9
+lib/coach/healthGuardrail.test.ts  7/7
+lib/coach/pareceRegistro.test.ts  5/5
+lib/coach/pareceUnPlan.test.ts  6/6
+lib/coach/rutinaDia.test.ts  9/9
+lib/coach/signals.test.ts  12/12
+lib/coach/starters.test.ts  13/13
+lib/coach/tarjetaDelDia.test.ts  2/2
+lib/coach/ultimoRegistro.test.ts  9/9
+lib/domain/deload.test.ts  5/5
+lib/domain/effectiveSet.test.ts  8/8
+lib/domain/materializar.test.ts  10/10
+lib/domain/mesociclo.test.ts  7/7
+lib/domain/nutricion.test.ts  5/5
+lib/domain/perimetros.test.ts  22/22
+lib/domain/peso.test.ts  5/5
+lib/domain/rir.test.ts  10/10
+lib/email/plantillas.test.ts  38/38
+lib/email/recordatorio.test.ts  25/25
+lib/flow/estado.test.ts  18/18
+lib/flow/planes.test.ts  13/13
+lib/growth/activacion.test.ts  11/11
+lib/growth/atribucion.test.ts  6/6
+lib/growth/motivo-registro.test.ts  6/6
+lib/mp/webhook.test.ts  6/6
+lib/seo/estructurados.test.ts  18/18
+lib/supabase/conTimeout.test.ts  5/5
+TOTAL 384/384 en 35 archivos · numFailedTests=0
+
+## npm run design-check
+
+  DESIGN CHECK · brand/brand.json
+
+  ✅ forbidden_colors     primary=#E2F349 accent=— (ninguno prohibido)
+  ✅ restricted_hues      primary hue=66° · rango vetado [235, 285] → fuera
+  ✅ max_fonts            2 familia(s) [gabarito, inter] ≤ 2
+  ✅ max_radius_values    3 valor(es) de radio [9, 11, 13] ≤ 3
+  ✅ archetype_coherence  sage exige hype <= 1 · real=1
+  ✅ animated_props_safe  2 archivo(s) CSS · cero transiciones sobre props que causan reflow
+  ✅ anti_slop_patterns   forbidden_patterns[] tiene 8 entrada(s) ≥ 7
+  ✅ app_tokens_match_contract 16 declaración(es) en app/globals.css devuelven el hex exacto del contrato
+
+  PASS · 8/8 checks en verde
+
+
+## tsc --noEmit
+exit 0
