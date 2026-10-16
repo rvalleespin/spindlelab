@@ -4,6 +4,16 @@
 **No es un guion cerrado** — son los hechos verificados y cómo usarlos, cada quien lo dice
 a su manera en el momento.
 
+> ⚠️ **Antes de usar esto en una llamada (aviso del 16-oct-2026).** El "36 → 73" de abajo
+> es cierto con la regla de puntuación que regía el 21-sep, y el post de LinkedIn que lo
+> cuenta se queda como está. Pero **el número ya no coincide con lo que el chequeo reporta
+> hoy**: el 23-sep se repuntuó (las señales que no se pueden confirmar desde afuera salen
+> del puntaje) y al 16-oct `spindlelab.cl` marca **100** en el chequeo rápido y **100** en
+> el profundo, con los 12 puntos del Art. 14 ter completos. Si lo citas en una llamada y la
+> persona corre el chequeo, va a ver otro número. **Corre el chequeo y usa el número del
+> día**; si pregunta por la diferencia, la respuesta es la repuntuación, no una corrección
+> a posteriori.
+
 ## El caso en una línea
 
 Construí una herramienta gratuita que audita en segundos las señales técnicas que exige la

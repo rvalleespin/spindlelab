@@ -234,7 +234,7 @@ dicha desde adentro. Ninguno de los dos vende, y los dos venden.
 
 ---
 
-## <a id="5-geo"></a>5. Registro singular — el post de GEO (dom 21-sep-2026)
+## <a id="5-geo"></a>5. Registro singular — el post de GEO (lun 21-sep-2026)
 
 **Estado:** ✅ publicado y en el aire. Texto capturado literal el 22-sep-2026.
 **Canal:** perfil personal. Texto puro. **84 impresiones · 1 comentario — el de mejor alcance
