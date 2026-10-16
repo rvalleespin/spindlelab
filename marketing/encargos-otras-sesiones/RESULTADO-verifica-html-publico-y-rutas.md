@@ -111,8 +111,50 @@ Siete pendientes, y **ninguno es de infraestructura: son todos de schema y metad
 | 4 | La meta description tiene 193 caracteres (el tope útil es 165) |
 | 4 | No hay `datePublished` ni `dateModified` |
 
-Suman **38 puntos de peso**. Es la siguiente tanda y es de una sola pasada: todo se resuelve
-agregando un bloque de JSON-LD a `index.html` y recortando una meta.
+Suman **38 puntos de peso**.
+
+### ✅ Hechos el mismo día (commit `7696d63`)
+
+El disparador fue encontrar que un competidor del rubro sacaba **72** con el mismo instrumento,
+diez puntos arriba de nuestro propio producto. Los siete dejaron de ser mejora opcional.
+
+| | |
+|---|---|
+| 14-oct | 54 |
+| 15-oct, tras robots/sitemap/404 | 62 |
+| 15-oct, tras el schema | **94** |
+
+Qué se hizo: nodo `ProfessionalService` completo (RUT, dirección, correo, `contactPoint`),
+`Person` con cargo, `knowsAbout` y `alumniOf`, `FAQPage` con seis preguntas, `datePublished` y
+`dateModified` en `WebApplication` y en un `WebPage` nuevo, y la meta description de 193 a 137
+caracteres.
+
+**Los datos salieron del schema canónico de `spindlelab.cl`, no de la cabeza de nadie.** Los
+`sameAs` solo con perfiles comprobados uno por uno: Facebook devuelve 400 y quedó fuera.
+
+⚠️ **Las seis preguntas se VEN en la página** (sección `#preguntas`, dos columnas en escritorio,
+una en móvil, comprobado sin scroll horizontal a 375 px). El HTML se generó leyendo el propio
+schema, así que no pueden quedar distintos. Marcar preguntas que nadie puede leer es spam de
+datos estructurados.
+
+⚠️ **La dirección (Los Leones 2270, Santiago) salió del perfil de empresa de Instagram.** Si no
+es la correcta, hay que corregirla en el `@graph` de `index.html`.
+
+### El único pendiente que queda
+
+**"Te conectas con al menos 3 perfiles externos" (peso 6).** El schema declara 2: LinkedIn de
+la empresa e Instagram. **No hay un tercero que exista.** Facebook da 400 y el Fiverr es de
+Ramón, no de la empresa.
+
+**Esto no se arregla escribiendo código: hace falta crear un perfil real.** El de más valor es
+un **Perfil de Empresa de Google**, que además es gratis y ayuda en búsqueda local. Es de Ramón.
+
+### Un error encontrado de paso, en el OTRO sitio
+
+El `@graph` de `spindlelab.cl` declara `https://www.instagram.com/spindle.lab/` en su `sameAs`.
+**Ese handle ya no existe**: la cuenta es `spindlelab.cl`. El sitio principal le está diciendo a
+buscadores y modelos que el Instagram está en una dirección que no es. Es una línea y vive en el
+otro repositorio.
 
 ---
 
