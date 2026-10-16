@@ -1,0 +1,488 @@
+{
+  "base": "http://127.0.0.1:3917",
+  "chromium": "141.0.7390.37",
+  "fecha_utc": "2026-10-16T23:03:46.864Z",
+  "capturas": [
+    {
+      "ruta": "/",
+      "ancho": "1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "status": 200,
+      "archivos": [
+        "landing-1440-primera.png",
+        "landing-1440-completa.png"
+      ],
+      "secciones": [
+        {
+          "archivo": "landing-1440-sec00.png",
+          "clase": "hero",
+          "id": null,
+          "titulo": "Se acuerda de cada serie que hiciste.",
+          "alto": 631
+        },
+        {
+          "archivo": "landing-1440-sec01.png",
+          "clase": "trust-strip shown",
+          "id": null,
+          "titulo": "",
+          "alto": 54
+        },
+        {
+          "archivo": "landing-1440-sec02.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Llevas tres meses en 60 kg",
+          "alto": 310
+        },
+        {
+          "archivo": "landing-1440-sec03.png",
+          "clase": "blk shown",
+          "id": "como-funciona",
+          "titulo": "Tú le cuentas en una frase. Él lo vuelve método.",
+          "alto": 499
+        },
+        {
+          "archivo": "landing-1440-sec04.png",
+          "clase": "band shown",
+          "id": null,
+          "titulo": "Sudar es fácil. Saber por qué, no.",
+          "alto": 400
+        },
+        {
+          "archivo": "landing-1440-sec05.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Praxi rinde para algunos. Seamos honestos con quién.",
+          "alto": 409
+        },
+        {
+          "archivo": "landing-1440-sec06.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Un coach que acumula lo que haces.",
+          "alto": 781
+        },
+        {
+          "archivo": "landing-1440-sec07.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Lo que ya probaste, y por qué se quedó corto.",
+          "alto": 568
+        },
+        {
+          "archivo": "landing-1440-sec08.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Tu progreso, en números.",
+          "alto": 1064
+        },
+        {
+          "archivo": "landing-1440-sec09.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Debajo del chat hay reglas, no una corazonada.",
+          "alto": 525
+        },
+        {
+          "archivo": "landing-1440-sec10.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Menos de un tercio de lo que pagas por el gimnasio.",
+          "alto": 973
+        },
+        {
+          "archivo": "landing-1440-sec11.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Lo que probablemente te estás preguntando.",
+          "alto": 784
+        },
+        {
+          "archivo": "landing-1440-sec12.png",
+          "clase": "cta-final shown",
+          "id": null,
+          "titulo": "Entrena sabiendo por qué.",
+          "alto": 321
+        }
+      ],
+      "titulo": "Praxi · Entrena sabiendo por qué",
+      "h1": [
+        "Se acuerda de cada serie que hiciste."
+      ],
+      "alto": 7514,
+      "ancho_doc": 1440,
+      "h264": "",
+      "videos": [
+        {
+          "src": "http://127.0.0.1:3917/video/hero-1-entrena.mp4",
+          "paused": true,
+          "readyState": 0,
+          "error": 4
+        },
+        {
+          "src": "http://127.0.0.1:3917/video/02-escaleras.mp4",
+          "paused": true,
+          "readyState": 0,
+          "error": 4
+        }
+      ],
+      "jsonld_tipos": [
+        "Organization",
+        "WebSite",
+        "SoftwareApplication",
+        "FAQPage"
+      ],
+      "robots": null,
+      "canonical": "https://praxi.coach/",
+      "externas": [],
+      "consola": [],
+      "fallidas": [
+        "http://127.0.0.1:3917/login?_rsc=19zvn · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/login?nuevo=1&_rsc=19zvn · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/planes?_rsc=19zvn · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/terminos?_rsc=19zvn · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/privacidad?_rsc=19zvn · net::ERR_ABORTED"
+      ]
+    },
+    {
+      "ruta": "/login",
+      "ancho": "1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "status": 200,
+      "archivos": [
+        "login-1440-primera.png"
+      ],
+      "secciones": [],
+      "titulo": "Praxi · Entrena sabiendo por qué",
+      "h1": [],
+      "alto": 900,
+      "ancho_doc": 1440,
+      "h264": "",
+      "videos": [],
+      "jsonld_tipos": [],
+      "robots": "noindex, follow",
+      "canonical": null,
+      "externas": [],
+      "consola": [],
+      "fallidas": [
+        "http://127.0.0.1:3917/video/02-escaleras.mp4 · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/video/03-equipo.mp4 · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/video/04-salir.mp4 · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/video/05-cocina.mp4 · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/login?_rsc=g0rnx · net::ERR_ABORTED"
+      ]
+    },
+    {
+      "ruta": "/planes",
+      "ancho": "1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "status": 200,
+      "archivos": [
+        "planes-1440-primera.png",
+        "planes-1440-completa.png"
+      ],
+      "secciones": [],
+      "titulo": "Planes y precios de Praxi — desde $7.990 al mes",
+      "h1": [
+        "Nada de lo que entrenas se pierde."
+      ],
+      "alto": 1945,
+      "ancho_doc": 1440,
+      "h264": "",
+      "videos": [],
+      "jsonld_tipos": [],
+      "robots": null,
+      "canonical": "https://praxi.coach/planes",
+      "externas": [],
+      "consola": [],
+      "fallidas": [
+        "http://127.0.0.1:3917/login?_rsc=167oa · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/terminos?_rsc=167oa · net::ERR_ABORTED"
+      ]
+    },
+    {
+      "ruta": "/empezar",
+      "ancho": "1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "status": 200,
+      "archivos": [
+        "empezar-1440-primera.png",
+        "empezar-1440-completa.png"
+      ],
+      "secciones": [],
+      "titulo": "Praxi · Entrena sabiendo por qué",
+      "h1": [
+        "Lo que te llevas gratis"
+      ],
+      "alto": 900,
+      "ancho_doc": 1440,
+      "h264": "",
+      "videos": [],
+      "jsonld_tipos": [],
+      "robots": "noindex, follow",
+      "canonical": null,
+      "externas": [],
+      "consola": [],
+      "fallidas": [
+        "http://127.0.0.1:3917/empezar?_rsc=10x2r · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/login?nuevo=1&_rsc=17224 · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/planes?_rsc=17224 · net::ERR_ABORTED"
+      ]
+    },
+    {
+      "ruta": "/",
+      "ancho": "390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 2,
+      "status": 200,
+      "archivos": [
+        "landing-390-primera.png",
+        "landing-390-completa.png"
+      ],
+      "secciones": [
+        {
+          "archivo": "landing-390-sec00.png",
+          "clase": "hero",
+          "id": null,
+          "titulo": "Se acuerda de cada serie que hiciste.",
+          "alto": 870
+        },
+        {
+          "archivo": "landing-390-sec01.png",
+          "clase": "trust-strip shown",
+          "id": null,
+          "titulo": "",
+          "alto": 167
+        },
+        {
+          "archivo": "landing-390-sec02.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Llevas tres meses en 60 kg",
+          "alto": 376
+        },
+        {
+          "archivo": "landing-390-sec03.png",
+          "clase": "blk shown",
+          "id": "como-funciona",
+          "titulo": "Tú le cuentas en una frase. Él lo vuelve método.",
+          "alto": 902
+        },
+        {
+          "archivo": "landing-390-sec04.png",
+          "clase": "band shown",
+          "id": null,
+          "titulo": "Sudar es fácil. Saber por qué, no.",
+          "alto": 340
+        },
+        {
+          "archivo": "landing-390-sec05.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Praxi rinde para algunos. Seamos honestos con quién.",
+          "alto": 783
+        },
+        {
+          "archivo": "landing-390-sec06.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Un coach que acumula lo que haces.",
+          "alto": 1226
+        },
+        {
+          "archivo": "landing-390-sec07.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Lo que ya probaste, y por qué se quedó corto.",
+          "alto": 677
+        },
+        {
+          "archivo": "landing-390-sec08.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Tu progreso, en números.",
+          "alto": 1812
+        },
+        {
+          "archivo": "landing-390-sec09.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Debajo del chat hay reglas, no una corazonada.",
+          "alto": 1008
+        },
+        {
+          "archivo": "landing-390-sec10.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Menos de un tercio de lo que pagas por el gimnasio.",
+          "alto": 2213
+        },
+        {
+          "archivo": "landing-390-sec11.png",
+          "clase": "blk shown",
+          "id": null,
+          "titulo": "Lo que probablemente te estás preguntando.",
+          "alto": 828
+        },
+        {
+          "archivo": "landing-390-sec12.png",
+          "clase": "cta-final shown",
+          "id": null,
+          "titulo": "Entrena sabiendo por qué.",
+          "alto": 302
+        }
+      ],
+      "titulo": "Praxi · Entrena sabiendo por qué",
+      "h1": [
+        "Se acuerda de cada serie que hiciste."
+      ],
+      "alto": 11754,
+      "ancho_doc": 390,
+      "h264": "",
+      "videos": [
+        {
+          "src": "http://127.0.0.1:3917/video/hero-1-entrena.mp4",
+          "paused": true,
+          "readyState": 0,
+          "error": 4
+        },
+        {
+          "src": "http://127.0.0.1:3917/video/02-escaleras.mp4",
+          "paused": true,
+          "readyState": 0,
+          "error": 4
+        }
+      ],
+      "jsonld_tipos": [
+        "Organization",
+        "WebSite",
+        "SoftwareApplication",
+        "FAQPage"
+      ],
+      "robots": null,
+      "canonical": "https://praxi.coach/",
+      "externas": [],
+      "consola": [],
+      "fallidas": [
+        "http://127.0.0.1:3917/login?_rsc=19zvn · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/?_rsc=1p60s · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/terminos?_rsc=19zvn · net::ERR_ABORTED"
+      ]
+    },
+    {
+      "ruta": "/login",
+      "ancho": "390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 2,
+      "status": 200,
+      "archivos": [
+        "login-390-primera.png"
+      ],
+      "secciones": [],
+      "titulo": "Praxi · Entrena sabiendo por qué",
+      "h1": [],
+      "alto": 844,
+      "ancho_doc": 390,
+      "h264": "",
+      "videos": [],
+      "jsonld_tipos": [],
+      "robots": "noindex, follow",
+      "canonical": null,
+      "externas": [],
+      "consola": [],
+      "fallidas": [
+        "http://127.0.0.1:3917/video/02-escaleras.mp4 · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/video/03-equipo.mp4 · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/video/04-salir.mp4 · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/video/05-cocina.mp4 · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/login?_rsc=g0rnx · net::ERR_ABORTED"
+      ]
+    },
+    {
+      "ruta": "/planes",
+      "ancho": "390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 2,
+      "status": 200,
+      "archivos": [
+        "planes-390-primera.png",
+        "planes-390-completa.png"
+      ],
+      "secciones": [],
+      "titulo": "Planes y precios de Praxi — desde $7.990 al mes",
+      "h1": [
+        "Nada de lo que entrenas se pierde."
+      ],
+      "alto": 2277,
+      "ancho_doc": 390,
+      "h264": "",
+      "videos": [],
+      "jsonld_tipos": [],
+      "robots": null,
+      "canonical": "https://praxi.coach/planes",
+      "externas": [],
+      "consola": [],
+      "fallidas": [
+        "http://127.0.0.1:3917/planes?_rsc=i20yk · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/login?_rsc=167oa · net::ERR_ABORTED"
+      ]
+    },
+    {
+      "ruta": "/empezar",
+      "ancho": "390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 2,
+      "status": 200,
+      "archivos": [
+        "empezar-390-primera.png",
+        "empezar-390-completa.png"
+      ],
+      "secciones": [],
+      "titulo": "Praxi · Entrena sabiendo por qué",
+      "h1": [
+        "Lo que te llevas gratis"
+      ],
+      "alto": 844,
+      "ancho_doc": 390,
+      "h264": "",
+      "videos": [],
+      "jsonld_tipos": [],
+      "robots": "noindex, follow",
+      "canonical": null,
+      "externas": [],
+      "consola": [],
+      "fallidas": [
+        "http://127.0.0.1:3917/empezar?_rsc=10x2r · net::ERR_ABORTED",
+        "http://127.0.0.1:3917/login?nuevo=1&_rsc=17224 · net::ERR_ABORTED"
+      ]
+    }
+  ]
+}
