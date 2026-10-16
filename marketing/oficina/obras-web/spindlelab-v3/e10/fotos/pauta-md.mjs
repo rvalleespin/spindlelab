@@ -1,4 +1,4 @@
-// pauta-md.mjs · arma pauta.md desde pauta.json (Bruno, E10, v3 del 16-oct-2026).
+// pauta-md.mjs · arma pauta.md desde pauta.json (Bruno, E10, v4 del 16-oct-2026).
 // Lo llama `node generar.mjs --sincronizar`; generar.mjs no genera si pauta.md no es el que sale de
 // aquí. Determinista: el mismo pauta.json da el mismo pauta.md, byte a byte. Sin dependencias.
 //
@@ -12,7 +12,7 @@ const sinPunto = (s) => String(s).replace(/\.$/, '');
 const mayuscula = (s) => s.replace(/^./, (c) => c.toUpperCase());
 
 export function armarPautaMd(pauta, a) {
-  const { clave, formatos, usd, veces, costoUSD, DIRECCIONES, COBERTURA_MIN, ESPACIOS_REL } = a;
+  const { clave, formatos, usd, veces, por, costoUSD, DIRECCIONES, COBERTURA_MIN, ESPACIOS_REL, anchosDe, coberturaMin } = a;
   const nombreDir = (d) => DIRECCIONES[d] ?? d;
   const fotos = pauta.fotos;
   const reservas = pauta.reservas ?? [];
@@ -102,15 +102,32 @@ nuestro.
 
   // ------------------------------------------------------------ §2 las fotos
   const advertencias = [];
+  for (const f of fotos) {
+    const fm = formatos(pauta, f);
+    for (const prov of ['gemini', 'openai']) {
+      for (const ancho of anchosDe(f)) {
+        const v = fm[prov].vistas[ancho];
+        if (!v.alcanza) advertencias.push({ id: f.id, escala: Boolean(v.archivo), texto: `${clave(f)} con ${prov === 'gemini' ? 'Gemini' : 'OpenAI'} a ${ancho}: ${v.recorte.join('×')} para ${f.espacio[`css_${ancho}`].join('×')} css (${veces(v.cobertura)})` });
+      }
+    }
+  }
   const filasFormato = fotos.map((f) => {
     const fm = formatos(pauta, f);
     const celda = (prov, ancho) => {
       const v = fm[prov].vistas[ancho];
-      if (!v.alcanza) advertencias.push(`${clave(f)} con ${prov === 'gemini' ? 'Gemini' : 'OpenAI'} a ${ancho}: ${v.recorte.join('×')} para ${f.espacio[`css_${ancho}`].join('×')} css (${veces(v.cobertura)})`);
       return `${v.recorte.join('×')} · ${veces(v.cobertura)}${v.alcanza ? '' : ' ⚠'}`;
     };
     return fila([`**${f.id}**`, nombreDir(f.direccion), `\`${f.gemini.aspectRatio}\` → ${fm.gemini.fuente.join('×')}`, celda('gemini', '1440'), celda('gemini', '390'), `\`${f.openai.size}\``, celda('openai', '1440'), celda('openai', '390')]);
   });
+  const ids = (xs) => [...new Set(xs.map((x) => x.id))];
+  const conTableta = fotos.filter((f) => anchosDe(f).includes('1023'));
+  const con1440 = fotos.filter((f) => f.cobertura_min?.['1440'] !== undefined);
+  const conArchivos = fotos.filter((f) => f.archivo);
+  const mismas = lista(ids(conTableta)) === lista(ids(con1440));
+  const pideLock = !conTableta.length ? ''
+    : mismas
+      ? ` El lock §7 («Tamaño de archivo por tramo») pide dpr 2 en cada tramo: en ${lista(ids(conTableta))}, ${coberturaMin(con1440[0], '1440')}× a 1440 y ${COBERTURA_MIN[1023]}× también en la tableta, medida a 1023, que va aparte, abajo («Tableta y escalado»).`
+      : ` El lock §7 («Tamaño de archivo por tramo») pide ${COBERTURA_MIN[1023]}× también en la tableta, medida a 1023 en ${lista(ids(conTableta))}${con1440.length ? `, y ${coberturaMin(con1440[0], '1440')}× a 1440 en ${lista(ids(con1440))}` : ''}; la tableta va aparte, abajo («Tableta y escalado»).`;
 
   p(`## 2 · Las fotos
 
@@ -130,24 +147,61 @@ ${fotos.map((f) => fila([`**${f.id}**`, nombreDir(f.direccion), f.titulo_es, `${
 
 Lo que entrega cada proveedor y el recorte desde el centro para cada ancho, calculados por
 \`generar.mjs\` con las medidas del tablero. Al lado, la **cobertura**: cuántos px del archivo caen en
-cada px CSS del espacio. El tablero pide ${COBERTURA_MIN[1440]}× a 1440 y ${COBERTURA_MIN[390]}× a 390 (nota de \`espacios-foto.json\`); ⚠ es que no llega.
+cada px CSS del espacio. El tablero pide ${COBERTURA_MIN[1440]}× a 1440 y ${COBERTURA_MIN[390]}× a 390 (nota de \`espacios-foto.json\`).${pideLock}
+⚠ es que el recorte no llega sin escalar.
 
 | F | Dirección | Gemini | Recorte a 1440 | Recorte a 390 | OpenAI | Recorte a 1440 | Recorte a 390 |
 |---|---|---|---|---|---|---|---|
 ${filasFormato.join('\n')}
 `);
-  const proveedoresCortos = [...new Set(advertencias.map((x) => x.split(' con ')[1].split(' a ')[0]))];
+  const sinArchivo = advertencias.filter((x) => !x.escala);
+  const aEscalar = advertencias.filter((x) => x.escala);
   p(advertencias.length
-    ? `**Lo que no llega (${advertencias.length}):** ${advertencias.join(' · ')}.
+    ? `**Lo que no llega sin escalar (${advertencias.length}):** ${advertencias.map((x) => x.texto).join(' · ')}.
 
-${proveedoresCortos.length === 1 && proveedoresCortos[0] === 'Gemini'
-    ? `Todo lo que falta es de Gemini: \`${pauta.modelos.gemini.modelo}\` entrega alrededor de un megapíxel, así que una banda a sangre de
-1440 y su recorte a 4:5 no alcanzan. OpenAI llega en todas. Si a la vista se notan blandas, esas fichas
-se generan con \`--proveedor=openai\` o con un modelo de Gemini que acepte \`--tamano=2K\`.`
-    : 'Si a la vista se notan blandas, esas fichas se generan con el otro proveedor o con un modelo que acepte `--tamano=2K`.'}
-No bloquea: se mira en la revisión (§5).
+${aEscalar.length ? `Los dos modelos entregan entre uno y uno y medio megapíxeles, así que ${lista(ids(aEscalar))} no cubren dpr 2 en
+todos sus tramos tal como salen: se escalan después de generar hasta el archivo de cada tramo (abajo, «Tableta y
+escalado»), y el registro anota el factor con las medidas que de verdad llegaron. ` : ''}${sinArchivo.length ? `${lista(ids(sinArchivo))} no tiene${ids(sinArchivo).length > 1 ? 'n' : ''} archivos por tramo: si a la vista se nota${ids(sinArchivo).length > 1 ? 'n' : ''} blanda${ids(sinArchivo).length > 1 ? 's' : ''}, se genera${ids(sinArchivo).length > 1 ? 'n' : ''} con el otro proveedor o con un
+modelo que acepte \`--tamano=2K\`. ` : ''}No bloquea: se mira en la revisión (§5).
 `
-    : 'Todas llegan a la cobertura que pide el tablero.\n');
+    : 'Todas llegan a la cobertura que piden el tablero y el lock.\n');
+
+  if (conArchivos.length) {
+    const es = pauta.escalado ?? {};
+    const d = es.decision_f5_f7;
+    const factor = (v) => (v.escala > 1 ? `**${por(v.escala)}**` : `alcanza (${por(v.escala)}: se reduce)`);
+    const filasEsc = [];
+    for (const f of conArchivos) {
+      const fm = formatos(pauta, f);
+      for (const [nombre, x] of Object.entries(f.archivo)) {
+        const g = fm.gemini.vistas[x.sirve[0]];
+        const o = fm.openai.vistas[x.sirve[0]];
+        filasEsc.push(fila([`**${f.id}**`, nombreDir(f.direccion), `${nombre} (${g.proporcion})`, lista(x.sirve), x.px.join('×'), lista((x.srcset ?? []).map(String)), `${g.recorte.join('×')} → ${factor(g)}`, `${o.recorte.join('×')} → ${factor(o)}`]));
+      }
+    }
+    p(`### Tableta y escalado (lock §7)
+
+${es.regla ?? ''}
+
+La tableta se mide a 1023 px de ancho de ventana: ${lista(conTableta.map((f) => `${f.id} ${f.espacio.css_1023.join('×')} css`))}. Cada
+archivo se escala desde el recorte del original generado; el factor es el ancho del archivo dividido por el ancho del
+recorte. El archivo de columna sirve a la tableta y al teléfono: los anchos del \`srcset\` salen de él, reducidos.
+
+| F | Dirección | Archivo | Sirve a | px | srcset | Gemini: recorte → factor | OpenAI: recorte → factor |
+|---|---|---|---|---|---|---|---|
+${filasEsc.join('\n')}
+
+**Escalador.** ${es.escalador ?? ''}
+
+**Registro.** ${es.registro ?? ''}
+${d ? `
+**F5 y F7: la decisión (Bruno).** ${d.decision}
+
+${d.por_que.map((x) => `- ${x}`).join('\n')}
+
+**Lo que no adopto de entrada.** ${d.alternativa}
+` : ''}`);
+  }
 
   p(`### Cómo se arma el prompt
 
@@ -219,8 +273,14 @@ ${e.negativo_en.map((x) => `- ${x}`).join('\n')}
     const rec = (ancho) => {
       const g = fm.gemini.vistas[ancho];
       const o = fm.openai.vistas[ancho];
-      return `${g.proporcion} · Gemini ${g.recorte.join('×')} (${veces(g.cobertura)}), OpenAI ${o.recorte.join('×')} (${veces(o.cobertura)}). ${f.recorte[ancho]}`;
+      const esc = (v) => (v.archivo && v.escala > 1 ? `, se escala ${por(v.escala)}` : '');
+      return `${g.proporcion} · Gemini ${g.recorte.join('×')} (${veces(g.cobertura)}${esc(g)}), OpenAI ${o.recorte.join('×')} (${veces(o.cobertura)}${esc(o)}). ${f.recorte[ancho]}`;
     };
+    const tableta = anchosDe(f).includes('1023');
+    const extra = [
+      ...(tableta ? [`- **Recorte a 1023 (tableta):** ${rec('1023')}`] : []),
+      ...(f.archivo ? [`- **Archivos por tramo (lock §7):** ${Object.entries(f.archivo).map(([n, x]) => `${n} ${x.px.join('×')} para ${lista(x.sirve)}${x.srcset ? ` (srcset ${lista(x.srcset.map(String))})` : ''}`).join(' · ')}. Cobertura pedida: ${lista(anchosDe(f).map((an) => `${coberturaMin(f, an)}× a ${an}`))}.`] : []),
+    ].map((x) => `${x}\n`).join('');
     p(`#### ${f.id} · ${nombreDir(f.direccion)} · ${f.titulo_es}
 
 **Qué muestra:** ${f.muestra_es}
@@ -228,11 +288,11 @@ ${e.negativo_en.map((x) => `- ${x}`).join('\n')}
 - **Dónde va:** ${f.espacio.pagina} · ${f.espacio.seccion}
 - **Rótulo en el tablero:** «${f.espacio.rotulo_tablero}»
 - **Dirección:** ${nombreDir(f.direccion)} · encuadre ${nombreDir(f.direccion)} · **prioridad ${f.prioridad}**
-- **Espacio:** ${f.espacio.css_1440.join('×')} css a 1440 · ${f.espacio.css_390.join('×')} css a 390
+- **Espacio:** ${f.espacio.css_1440.join('×')} css a 1440 · ${f.espacio.css_390.join('×')} css a 390${tableta ? ` · ${f.espacio.css_1023.join('×')} css a 1023 (tableta, lock §7)` : ''}
 - **Salida:** Gemini \`${f.gemini.aspectRatio}\` → ${fm.gemini.fuente.join('×')} · OpenAI \`${f.openai.size}\`
 - **Recorte a 1440:** ${rec('1440')}
 - **Recorte a 390:** ${rec('390')}
-- **Personas:** ${f.personas}
+${extra}- **Personas:** ${f.personas}
 - **Negativo propio** (más los comunes): ${f.negativo_en.join('; ')}
 - **Riesgo:** ${f.riesgos_es}
 - **Alt propuesto:** «${f.alt_es}»
@@ -276,7 +336,7 @@ ${r.escena_en}
 |---|---|---|---|---|---|
 ${(eq.tabla ?? []).map((t) => {
     const f = fotos.find((x) => x.id === t.tablero && x.direccion === t.direccion);
-    return fila([`**${t.tablero}**`, nombreDir(t.direccion), f ? f.espacio.pagina.split(' (')[0] : '_sin ficha_', f ? `${f.espacio.css_1440.join('×')} · ${f.espacio.css_390.join('×')}` : '', t.pauta_v1 ?? '_vacío_', t.nota || '']);
+    return fila([`**${t.tablero}**`, nombreDir(t.direccion), f ? f.espacio.pagina.split(' (')[0] : '_sin ficha_', f ? `${f.espacio.css_1440.join('×')} · ${f.espacio.css_390.join('×')}${f.espacio.css_1023 ? ` · ${f.espacio.css_1023.join('×')} a 1023 (lock §7)` : ''}` : '', t.pauta_v1 ?? '_vacío_', t.nota || '']);
   }).join('\n')}
 ${reservas.length ? `
 Fotos de la v1 que salieron: ${reservas.map((r) => `${r.pauta_v1} → ${r.id}`).join(', ')} (§2, «Reservas»).
@@ -299,13 +359,18 @@ terminal. Nunca en el chat ni en un archivo del repo.
 
 - falta \`espacios-foto.json\`;
 - un espacio del tablero no tiene ficha, o una ficha no tiene espacio;
-- la página o la medida de un espacio cambió desde que se escribió la ficha;
+- la página o la medida de un espacio cambió desde que se escribió la ficha (también la de tableta, cuando el
+  tablero la traiga como \`ancho_px_1023\` y \`alto_px_1023\`);
 - la tabla de equivalencia (§3) tiene una celda vacía, una fila de más o una de menos;
-- una ficha no escribió su recorte a 1440 o a 390, o pide un formato que el proveedor no tiene;
+- una ficha no escribió su recorte a 1440, a 390 o, si tiene tableta, a 1023, o pide un formato que el
+  proveedor no tiene;
+- una ficha con tableta no trae sus archivos por tramo, o un archivo no tiene la proporción del tramo que
+  sirve, no lo cubre a la cobertura pedida o tiene un \`srcset\` que no termina en él (lock §7);
 - \`prompt_completo_en\` o este \`pauta.md\` no son los que salen de \`pauta.json\` (falta \`--sincronizar\`).
 
-Que un recorte no llegue a la cobertura del tablero, o que cambie el rótulo de un espacio, se avisa
-pero no bloquea. \`node generar.mjs --verificar\` hace solo esta comprobación.
+Que un recorte no llegue a su cobertura sin escalar, que cambie el rótulo de un espacio o que
+\`espacios-foto.json\` todavía no traiga la medida de tableta de una ficha, se avisa pero no bloquea.
+\`node generar.mjs --verificar\` hace solo esta comprobación.
 
 **La regla del tope.** Sin \`--tope\` el script **no genera nada**: lista lo que pediría, con el recorte
 de cada ficha, cuántas llamadas y cuánto costaría, y no toca la red. Con \`--tope=N\` genera como máximo
@@ -354,7 +419,9 @@ verifican en la consola del proveedor antes de una corrida grande.
 - Su línea en \`salida/registro.json\`: archivo, número del tablero, dirección, página, sección y medida
   del espacio, proveedor, modelo, parámetros, **el prompt exacto**, **fecha UTC y de Chile**,
   **sha256**, bytes, ancho y alto, mime, el oro medido (porcentaje, píxeles y caja), la ruta de la
-  máscara, los segundos, los datos de la respuesta y \`estado: "por revisar"\`. Los intentos fallidos
+  máscara, los segundos, los datos de la respuesta y \`estado: "por revisar"\`. En ${lista(ids(conArchivos)) || 'las fichas con archivos por tramo'}, además,
+  \`escalado\`: por archivo, el recorte que sale de las medidas reales, el objetivo y el factor, con
+  \`escalador\` y \`factor_aplicado\` vacíos para que los anote el acabado (§6). Los intentos fallidos
   también quedan, en \`fallos\`, con su motivo. **La clave nunca se escribe.**
 - Si encuentra oro: \`salida/oro/<F>-<dirección>-<n>-oro.png\`, la foto en gris con el oro en magenta,
   para ver de un vistazo dónde cae. Es un dato para cuando exista la marca nueva, no un motivo de
@@ -402,8 +469,9 @@ ${(pauta.pruebas ?? []).map((x) => fila([x.prueba, x.resultado])).join('\n')}
 
 - **No genera ni elige fotos.** Eso va en la sesión con clave, y ninguna foto va al sitio sin que
   Ramón la vea.
-- **No aplica el acabado** (balance, grano, recorte, JPG): sin dependencias no hay procesamiento de
-  imagen. Va en la sesión que arma el tablero (§6).
+- **No aplica el acabado** (recorte, escalado, balance, grano, JPG): sin dependencias no hay
+  procesamiento de imagen. Va en la sesión que arma el tablero (§6). El script solo calcula el factor de
+  escalado y lo deja en el registro.
 - **No decide los espacios.** Los pone Lucía en el tablero; esta pauta los sigue y el script
   comprueba que calcen.
 - **No toca \`spindlelab-astro/\`**, ni el texto de E8, los precios, el chequeo o el formulario.

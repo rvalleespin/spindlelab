@@ -77,7 +77,7 @@ contenedor trae otra versión, cambia esa ruta y dilo en el commit.
 Todo desde `…/v3/e10/fotos/`, salvo donde se nombra otra carpeta.
 
 1. **Verificar, sin red.** `node generar.mjs --verificar` tiene que terminar en código 0: «9 espacios, 9
-   fichas, ningún vacío». Los 5 avisos de cobertura de Gemini (F1 a 390; F5 y F7 a 1440 y a 390) son
+   fichas, ningún vacío». Los avisos de cobertura (F1, F5 y F7 no cubren dpr 2 sin escalar, `pauta.md` §2, «Tableta y escalado») y el de la tableta que `espacios-foto.json` aún no trae son
    conocidos y no bloquean. Si termina en 2, **no generes ni fuerces la pauta**: algo cambió en el
    tablero o en la pauta. Lee la salida y avísale a Ramón. Después, `node generar.mjs --prioridad=1
    --variantes=2` lista lo que pediría y cuánto cuesta, también sin red.
@@ -118,7 +118,7 @@ Todo desde `…/v3/e10/fotos/`, salvo donde se nombra otra carpeta.
 5. **Elegir una por espacio** (9). Si una ficha no se resuelve dentro del tope, ese espacio queda con su
    rótulo y se dice por qué. Nunca una foto de banco ni una forzada.
 6. **Acabado común** (`pauta.md` §6), igual para las 9, con Python y Pillow: recorte a la proporción del
-   espacio a 1440 y a 390 (los px de cada ficha están en `pauta.md` §2), balance neutro (si el modelo
+   espacio a 1440 y a 390 (los px de cada ficha están en `pauta.md` §2; F1, F5 y F7 suman la tableta y se escalan a sus archivos por tramo, anotando escalador y factor en `registro.json`: §2, «Tableta y escalado»), balance neutro (si el modelo
    calentó la imagen se enfría, nunca al revés), el mismo grano fino en todas, sin viñeta ni virado, JPG
    de calidad ~82 y su versión de 800 px. Nombres nuevos, nunca sobre una ruta que ya existe. Lugar
    propuesto: `…/v3/tableros/e10-direcciones/proto/assets/img/e10/fotos/`.
@@ -202,7 +202,7 @@ Todo desde `…/v3/e10/fotos/`, salvo donde se nombra otra carpeta.
   reporte.
 - **`main` y el sitio publicado:** nada va ahí, y ninguna foto entra a `spindlelab-astro/public/`.
 - **Lo que Javiera dejó para la spec:** la flecha del chequeo de Taller entre 1024 y 1258 px y el
-  tamaño de las fotos en tableta no son de este encargo.
+  tamaño en tableta de las otras seis fotos no son de este encargo (el de F1, F5 y F7 ya está en la pauta, lock §7).
 
 ## Si algo falla
 

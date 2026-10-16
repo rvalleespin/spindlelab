@@ -23,6 +23,12 @@
 //     salida/registro.json.
 //   · Lo que se manda es lo que se revisó: si pauta.json cambió y no se corrió --sincronizar
 //     (prompt_completo_en y pauta.md), no genera.
+//   · Tramos (lock §7, «Tamaño de archivo por tramo», 16-oct): la cobertura se mide a 1440, a 390 y, en
+//     las fichas que traen su medida de tableta (espacio.css_1023: F1, F5 y F7), a 1023. Esas fichas
+//     llevan sus archivos por tramo (archivo.columna y archivo.escritorio): si un archivo no tiene la
+//     proporción de su tramo o no lo cubre, NO genera. Lo que no llega sin escalar se avisa con el
+//     factor, y el registro anota ese factor con las medidas que de verdad llegaron; el escalador y el
+//     factor aplicado los anota el acabado (pauta.md §6).
 //
 // Uso rápido:
 //   node generar.mjs                              lista toda la pauta y la comprobación (sin red)
@@ -53,8 +59,18 @@ const ESPACIOS_REL = 'tableros/e10-direcciones/espacios-foto.json';
 const DIRECCIONES = { taller: 'Taller', pizarra: 'Pizarra limpia' };
 const DIRECCION_DE_NOMBRE = Object.fromEntries(Object.entries(DIRECCIONES).map(([k, v]) => [v, k]));
 const TAMANOS_OPENAI = new Set(['1024x1024', '1536x1024', '1024x1536']);
-// Cobertura que pide el tablero (nota de espacios-foto.json): 1× a 1440 y 2× a 390.
-const COBERTURA_MIN = { 1440: 1, 390: 2 };
+// Cobertura mínima (px del archivo por px CSS) por tramo. El tablero pide 1× a 1440 y 2× a 390 (nota de
+// espacios-foto.json); el lock §7 («Tamaño de archivo por tramo», 16-oct) suma la tableta, medida a 1023,
+// con 2×. Una ficha la sube con cobertura_min: F1, F5 y F7 piden 2× también a 1440, porque el lock pide
+// dpr 2 en cada tramo.
+const COBERTURA_MIN = { 1440: 1, 390: 2, 1023: 2 };
+// Los tramos: escritorio (1440), teléfono (390) y tableta (1023). La tableta se mide solo en las fichas
+// que traen su medida (espacio.css_1023); las otras seis la reciben con la spec de la dirección elegida.
+const ANCHOS = ['1440', '390', '1023'];
+const anchosDe = (f) => ANCHOS.filter((a) => a !== '1023' || f.espacio?.css_1023);
+const coberturaMin = (f, ancho) => f.cobertura_min?.[ancho] ?? COBERTURA_MIN[ancho];
+const quienPide = (f, ancho) => (ancho === '1023' || f.cobertura_min?.[ancho] !== undefined ? 'el lock §7 pide' : 'el tablero pide');
+const medidaValida = (m) => Array.isArray(m) && m.length === 2 && m.every((x) => Number.isFinite(x) && x > 0);
 
 const PROVEEDORES = {
   gemini: {
@@ -250,8 +266,18 @@ function proporcion([w, h]) {
 
 const px = (s) => s.split(/[×x]/).map(Number);
 
-// Lo que entrega cada proveedor para una ficha, el recorte desde el centro para cada ancho y
-// cuántos px del archivo caen en cada px CSS del espacio (cobertura).
+// El recorte desde el centro a la proporción r, sin redondear: el factor de escalado se calcula sobre esto.
+const recortar = (w, h, r) => (w / h > r ? [h * r, h] : [w, w / r]);
+
+// El archivo de la ficha que sirve a un ancho (ficha.archivo, lock §7), o null.
+function archivoDe(f, ancho) {
+  const e = Object.entries(f.archivo ?? {}).find(([, a]) => a?.sirve?.includes(ancho));
+  return e && medidaValida(e[1].px) ? { nombre: e[0], ...e[1] } : null;
+}
+
+// Lo que entrega cada proveedor para una ficha, el recorte desde el centro para cada ancho,
+// cuántos px del archivo caen en cada px CSS del espacio (cobertura) y, si la ficha tiene archivos
+// por tramo, el factor hasta el archivo que sirve a ese ancho (escala > 1: hay que escalar).
 function formatos(pauta, f) {
   const fuentes = {
     gemini: px(pauta.modelos.gemini.salidas_px[f.gemini?.aspectRatio] ?? '0×0'),
@@ -260,22 +286,83 @@ function formatos(pauta, f) {
   const out = {};
   for (const [prov, [w, h]] of Object.entries(fuentes)) {
     out[prov] = { fuente: [w, h], vistas: {} };
-    for (const ancho of ['1440', '390']) {
+    for (const ancho of anchosDe(f)) {
       const css = f.espacio[`css_${ancho}`];
       const { r, nombre } = proporcion(css);
-      const [cw, ch] = w / h > r ? [Math.round(h * r), h] : [w, Math.round(w / r)];
+      const [ew, eh] = recortar(w, h, r);
+      const [cw, ch] = [Math.round(ew), Math.round(eh)];
       const cobertura = cw / css[0];
+      const archivo = archivoDe(f, ancho);
       out[prov].vistas[ancho] = {
         proporcion: nombre, recorte: [cw, ch], cobertura,
-        corta: Math.max(1 - cw / w, 1 - ch / h), alcanza: cobertura >= COBERTURA_MIN[ancho] - 0.005,
+        corta: Math.max(1 - cw / w, 1 - ch / h), alcanza: cobertura >= coberturaMin(f, ancho) - 0.005,
+        archivo, escala: archivo && ew ? archivo.px[0] / ew : null,
       };
     }
   }
   return out;
 }
 
+// Los archivos por tramo (lock §7). Una ficha con tableta los trae; cada tramo que la ficha mide lo sirve
+// un solo archivo; el archivo tiene la proporción de los tramos que sirve y cubre su cobertura mínima; el
+// srcset va de menor a mayor y termina en el archivo.
+function revisarArchivos(f, k) {
+  const mal = [];
+  if (f.cobertura_min !== undefined) {
+    const malas = Object.entries(f.cobertura_min ?? {}).filter(([a, n]) => !ANCHOS.includes(a) || !(Number.isFinite(n) && n >= 1));
+    if (!f.cobertura_min || typeof f.cobertura_min !== 'object' || malas.length) mal.push(`${k}: cobertura_min tiene que ser { "<ancho>": n } con ancho ${ANCHOS.join(', ')} y n ≥ 1.`);
+  }
+  if (!f.archivo) {
+    if (f.espacio.css_1023) mal.push(`${k}: tiene medida de tableta y le faltan sus archivos por tramo (archivo.columna y archivo.escritorio, lock §7).`);
+    return mal;
+  }
+  for (const ancho of anchosDe(f)) {
+    const n = Object.values(f.archivo).filter((a) => a?.sirve?.includes(ancho)).length;
+    if (n !== 1) mal.push(`${k}: a ${ancho} ${n ? 'lo sirven dos archivos' : 'no lo sirve ningún archivo'} (archivo.<nombre>.sirve).`);
+  }
+  for (const [nombre, a] of Object.entries(f.archivo)) {
+    if (!medidaValida(a?.px) || !Array.isArray(a?.sirve) || !a.sirve.length) { mal.push(`${k}: archivo.${nombre} necesita px [ancho, alto] y sirve [anchos].`); continue; }
+    for (const ancho of a.sirve) {
+      const css = f.espacio[`css_${ancho}`];
+      if (!ANCHOS.includes(ancho) || !css) { mal.push(`${k}: archivo.${nombre} sirve a «${ancho}», que la ficha no mide.`); continue; }
+      const pa = proporcion(a.px);
+      const pc = proporcion(css);
+      if (Math.abs(pa.r - pc.r) / pc.r > 0.01) mal.push(`${k}: archivo.${nombre} es ${pa.nombre} (${a.px.join('×')}) y a ${ancho} el espacio es ${pc.nombre}.`);
+      const min = coberturaMin(f, ancho);
+      if (a.px[0] < min * css[0] - 0.5) mal.push(`${k}: archivo.${nombre} (${a.px.join('×')}) no cubre ${min}× a ${ancho} (${css.join('×')} css).`);
+    }
+    const s = a.srcset;
+    if (s !== undefined && !(Array.isArray(s) && s.length && s.every((x, i) => Number.isInteger(x) && x > 0 && (i === 0 || x > s[i - 1])) && s.at(-1) === a.px[0])) {
+      mal.push(`${k}: archivo.${nombre}.srcset tiene que ir de menor a mayor y terminar en ${a.px[0]}.`);
+    }
+  }
+  return mal;
+}
+
+// Lo que hay que escalar después de generar (lock §7), con las medidas que de verdad llegaron: por
+// archivo, el recorte, el objetivo y el factor. escalador y factor_aplicado los anota el acabado.
+function escaladoDe(f, w, h) {
+  if (!f.archivo) return null;
+  const archivos = {};
+  for (const [nombre, a] of Object.entries(f.archivo)) {
+    const { r } = proporcion(f.espacio[`css_${a.sirve[0]}`]);
+    const [ew, eh] = recortar(w, h, r);
+    archivos[nombre] = {
+      sirve: a.sirve, recorte: [Math.round(ew), Math.round(eh)], objetivo: a.px,
+      factor: Number((a.px[0] / ew).toFixed(3)), srcset: a.srcset ?? null, escalador: null, factor_aplicado: null,
+    };
+  }
+  return {
+    regla: 'lock §7, «Tamaño de archivo por tramo»: un archivo por tramo que cubre dpr 2 en su ancho más grande',
+    archivos,
+    nota: 'factor > 1: se escala hasta el objetivo; ≤ 1: alcanza y solo se reduce. escalador y factor_aplicado los anota el acabado (pauta.md §6).',
+  };
+}
+
 const iguales = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 const veces = (n) => `${n.toFixed(2).replace('.', ',')}×`;
+// El factor de escalado se escribe delante (×2,67), como en el lock; la cobertura, detrás (1,97×).
+const por = (n) => `×${n.toFixed(2).replace('.', ',')}`;
 
 function conciliar(pauta, espacios) {
   const bloqueos = [];
@@ -293,11 +380,13 @@ function conciliar(pauta, espacios) {
     vistas.set(k, f);
     if (!/^F\d+$/.test(String(f.id))) bloqueos.push(`${f.id}: no tiene forma de número del tablero (F<n>). Una foto sin espacio va en «reservas», no en «fotos».`);
     if (!f.espacio?.css_1440 || !f.espacio?.css_390) { bloqueos.push(`${k}: le falta espacio.css_1440 o espacio.css_390.`); continue; }
+    if ('css_1023' in f.espacio && !medidaValida(f.espacio.css_1023)) { bloqueos.push(`${k}: espacio.css_1023 no es [ancho, alto] en px CSS.`); continue; }
     if (!pauta.modelos.gemini.salidas_px[f.gemini?.aspectRatio]) bloqueos.push(`${k}: gemini.aspectRatio «${f.gemini?.aspectRatio}» no está en modelos.gemini.salidas_px.`);
     if (!TAMANOS_OPENAI.has(f.openai?.size)) bloqueos.push(`${k}: openai.size «${f.openai?.size}» no es 1024x1024, 1536x1024 ni 1024x1536.`);
-    for (const ancho of ['1440', '390']) {
+    for (const ancho of anchosDe(f)) {
       if (!String(f.recorte?.[ancho] ?? '').trim()) bloqueos.push(`${k}: falta recorte.${ancho} (qué se recorta y qué tiene que quedar dentro a ${ancho}).`);
     }
+    bloqueos.push(...revisarArchivos(f, k));
   }
 
   // Contra el tablero.
@@ -309,7 +398,9 @@ function conciliar(pauta, espacios) {
     for (const e of espacios.lista) {
       const dir = DIRECCION_DE_NOMBRE[e.direccion];
       const k = `${e.id}-${dir ?? e.direccion}`;
-      const fila = { clave: k, id: e.id, direccion: dir, pagina: e.pagina, css_1440: [e.ancho_px_1440, e.alto_px_1440], css_390: [e.ancho_px_390, e.alto_px_390], estado: 'calza' };
+      // La tableta (lock §7) llega a espacios-foto.json como ancho_px_1023 y alto_px_1023; mientras no esté, null.
+      const tableta = e.ancho_px_1023 != null || e.alto_px_1023 != null ? [e.ancho_px_1023, e.alto_px_1023] : null;
+      const fila = { clave: k, id: e.id, direccion: dir, pagina: e.pagina, css_1440: [e.ancho_px_1440, e.alto_px_1440], css_390: [e.ancho_px_390, e.alto_px_390], css_1023: tableta, estado: 'calza' };
       filas.push(fila);
       if (!dir) { bloqueos.push(`Espacio ${e.id}: dirección «${e.direccion}» desconocida.`); fila.estado = 'dirección desconocida'; continue; }
       if (vistosEsp.has(k)) { bloqueos.push(`Espacio ${k}: aparece dos veces en ${ESPACIOS_REL}.`); fila.estado = 'repetido'; continue; }
@@ -326,7 +417,11 @@ function conciliar(pauta, espacios) {
       if (f.espacio?.pagina !== e.pagina) dif.push(`página «${f.espacio?.pagina}» → «${e.pagina}»`);
       if (!iguales(f.espacio?.css_1440, fila.css_1440)) dif.push(`a 1440 ${f.espacio?.css_1440?.join('×')} → ${fila.css_1440.join('×')}`);
       if (!iguales(f.espacio?.css_390, fila.css_390)) dif.push(`a 390 ${f.espacio?.css_390?.join('×')} → ${fila.css_390.join('×')}`);
-      if (dif.length) { bloqueos.push(`${k}: el espacio cambió en el tablero (${dif.join('; ')}). Revisa la ficha (proporción, recortes) y copia los valores nuevos.`); fila.estado = 'el espacio cambió'; }
+      if (fila.css_1023 && !iguales(f.espacio?.css_1023, fila.css_1023)) dif.push(`a 1023 ${f.espacio?.css_1023?.join('×') ?? 'sin medida de tableta'} → ${fila.css_1023.join('×')}`);
+      if (dif.length) { bloqueos.push(`${k}: el espacio cambió en el tablero (${dif.join('; ')}). Revisa la ficha (proporción, recortes${fila.css_1023 ? ' y archivos por tramo' : ''}) y copia los valores nuevos.`); fila.estado = 'el espacio cambió'; }
+      if (!fila.css_1023 && f.espacio?.css_1023) {
+        avisos.push(`${k}: ${ESPACIOS_REL} todavía no trae la medida de tableta; la ficha usa la del lock §7 (${f.espacio.css_1023.join('×')} a 1023). Cuando Lucía la agregue (ancho_px_1023 y alto_px_1023), se compara como las otras.`);
+      }
       if (e.rotulo && f.espacio?.rotulo_tablero && e.rotulo !== f.espacio.rotulo_tablero) {
         avisos.push(`${k}: el rótulo del tablero cambió («${f.espacio.rotulo_tablero}» → «${e.rotulo}»). Mira si la foto sigue siendo la que pide.`);
       }
@@ -339,14 +434,16 @@ function conciliar(pauta, espacios) {
     }
   }
 
-  // Cobertura: no bloquea (estos modelos no llegan a 2× en las bandas), pero se dice.
+  // Cobertura: no bloquea (estos modelos no llegan a 2× en las bandas ni en la tableta), pero se dice, con
+  // el factor hasta el archivo del tramo cuando la ficha lo tiene (lock §7: se escala después de generar).
   for (const f of fotos) {
-    if (!f.espacio?.css_1440 || !f.espacio?.css_390 || !pauta.modelos.gemini.salidas_px[f.gemini?.aspectRatio] || !TAMANOS_OPENAI.has(f.openai?.size)) continue;
+    if (!f.espacio?.css_1440 || !f.espacio?.css_390 || ('css_1023' in f.espacio && !medidaValida(f.espacio.css_1023)) || !pauta.modelos.gemini.salidas_px[f.gemini?.aspectRatio] || !TAMANOS_OPENAI.has(f.openai?.size)) continue;
     const fm = formatos(pauta, f);
     for (const prov of ['gemini', 'openai']) {
-      for (const ancho of ['1440', '390']) {
+      for (const ancho of anchosDe(f)) {
         const v = fm[prov].vistas[ancho];
-        if (!v.alcanza) avisos.push(`${clave(f)} con ${prov}: a ${ancho} el recorte da ${v.recorte.join('×')} para ${f.espacio[`css_${ancho}`].join('×')} css (${veces(v.cobertura)}; el tablero pide ${COBERTURA_MIN[ancho]}×).`);
+        const escalar = v.archivo && v.escala > 1 ? `: se escala ${por(v.escala)} hasta ${v.archivo.px.join('×')} (archivo de ${v.archivo.nombre})` : '';
+        if (!v.alcanza) avisos.push(`${clave(f)} con ${prov}: a ${ancho} el recorte da ${v.recorte.join('×')} para ${f.espacio[`css_${ancho}`].join('×')} css (${veces(v.cobertura)}; ${quienPide(f, ancho)} ${coberturaMin(f, ancho)}×)${escalar}.`);
       }
     }
   }
@@ -356,7 +453,9 @@ function conciliar(pauta, espacios) {
 function imprimirConciliacion(c) {
   decir(`Pauta contra el tablero (${ESPACIOS_REL}):`);
   for (const fila of c.filas) {
-    decir(`  ${fila.clave.padEnd(11)} ${fila.estado === 'calza' ? '✓' : '✗'} ${fila.estado.padEnd(18)} ${fila.pagina.split(' (')[0]} · ${fila.css_1440.join('×')} a 1440 · ${fila.css_390.join('×')} a 390${fila.foto ? ` · ${fila.foto.titulo_es}` : ''}`);
+    const enFicha = medidaValida(fila.foto?.espacio?.css_1023) ? fila.foto.espacio.css_1023 : null;
+    const tableta = fila.css_1023 ? ` · ${fila.css_1023.join('×')} a 1023` : enFicha ? ` · ${enFicha.join('×')} a 1023 (lock §7)` : '';
+    decir(`  ${fila.clave.padEnd(11)} ${fila.estado === 'calza' ? '✓' : '✗'} ${fila.estado.padEnd(18)} ${fila.pagina.split(' (')[0]} · ${fila.css_1440.join('×')} a 1440 · ${fila.css_390.join('×')} a 390${tableta}${fila.foto ? ` · ${fila.foto.titulo_es}` : ''}`);
   }
   if (c.avisos.length) {
     decir('');
@@ -816,7 +915,7 @@ async function numerosUsados(dir) {
   return usados;
 }
 
-const AYUDAS_MD = { clave, formatos, usd, veces, costoUSD, DIRECCIONES, COBERTURA_MIN, ESPACIOS_REL };
+const AYUDAS_MD = { clave, formatos, usd, veces, por, costoUSD, DIRECCIONES, COBERTURA_MIN, ESPACIOS_REL, anchosDe, coberturaMin, quienPide };
 
 // Todo lo que impide generar: la pauta contra el tablero, y la pauta contra sí misma (prompt y pauta.md).
 async function comprobar(pauta) {
@@ -857,11 +956,13 @@ function listar(pauta, plan, args, usados, c) {
     const nombres = plan.filter((x) => x.foto === f).map((x) => `${clave(f)}-${base + x.v}.png`).join(', ');
     const vista = (a) => {
       const v = fm.vistas[a];
-      return `${a}: ${f.espacio[`css_${a}`].join('×')} css (${v.proporcion}) ← ${v.recorte.join('×')} (${veces(v.cobertura)}${v.alcanza ? '' : ' ⚠'})`;
+      const escalar = v.archivo && v.escala > 1 ? `, se escala ${por(v.escala)} hasta ${v.archivo.px.join('×')}` : '';
+      return `${a}: ${f.espacio[`css_${a}`].join('×')} css (${v.proporcion}) ← ${v.recorte.join('×')} (${veces(v.cobertura)}${v.alcanza ? '' : ' ⚠'}${escalar})`;
     };
     decir(`  ${clave(f).padEnd(11)} P${f.prioridad}  ${f.espacio.pagina.split(' (')[0]} · ${f.espacio.seccion.split(/[.:](?:\s|$)/)[0]}`);
     decir(`        ${f.titulo_es} · ${formato}`);
     decir(`        ${vista('1440')} · ${vista('390')}`);
+    if (anchosDe(f).includes('1023')) decir(`        ${vista('1023')} · tableta, lock §7`);
     decir(`        → salida/${nombres}`);
   }
   const total = plan.length;
@@ -945,7 +1046,7 @@ async function generar(pauta, plan, args, tope, c) {
         titulo: foto.titulo_es,
         pagina: foto.espacio.pagina,
         seccion: foto.espacio.seccion,
-        espacio_css: { 1440: foto.espacio.css_1440, 390: foto.espacio.css_390 },
+        espacio_css: Object.fromEntries(anchosDe(foto).map((a) => [a, foto.espacio[`css_${a}`]])),
         proveedor,
         modelo,
         parametros: r.parametros,
@@ -959,6 +1060,7 @@ async function generar(pauta, plan, args, tope, c) {
         mime: info.mime,
         oro: oro ?? { nota: `no medido (${info.mime}); medir el PNG final con --medir` },
         mascara_oro: archivoOro,
+        escalado: escaladoDe(foto, info.ancho, info.alto),
         segundos: Math.round((Date.now() - t0) / 1000),
         respuesta: r.respuesta,
         estado: 'por revisar',
@@ -966,7 +1068,9 @@ async function generar(pauta, plan, args, tope, c) {
       await escribirAtomico(rutaRegistro, `${JSON.stringify(registro, null, 2)}\n`);
       hechas++;
       const textoOro = oro ? `oro ${String(oro.pct).replace('.', ',')} % (dato)${oro.alerta ? ' · máscara en ' + archivoOro : ''}` : 'oro sin medir';
-      decir(`    ✓ ${archivo} · ${info.ancho}×${info.alto} · ${(r.bytes.length / 1024).toFixed(0)} KB · ${textoOro}`);
+      const esc = registro.imagenes.at(-1).escalado;
+      const textoEscala = esc ? ` · a escalar: ${Object.entries(esc.archivos).map(([n, a]) => `${n} ${a.factor > 1 ? por(a.factor) : 'alcanza'}`).join(', ')}` : '';
+      decir(`    ✓ ${archivo} · ${info.ancho}×${info.alto} · ${(r.bytes.length / 1024).toFixed(0)} KB · ${textoOro}${textoEscala}`);
     } catch (e) {
       fallidas++;
       const f = fechas();

@@ -1,11 +1,11 @@
 {
   "obra": "spindlelab-v3 · E10 · fotos generadas con IA",
-  "version": 3,
+  "version": 4,
   "fecha": "2026-10-16",
   "autor": "Bruno (dirección creativa)",
   "fuentes": [
     "e10/referentes/marcas-15oct.json (The Ready idea principal; Gehl segundo sí: «las fotos hay que hacerlas, podemos ocupar modelos de IA»; Hoare: «parece pastoral gringa»)",
-    "e10/lock-the-ready.md §7 (fotos medidas), §9 (Gehl), §10 y §10b (qué se toma y qué se hace propio), §13 (techos). El §12 (amarillo contra oro) queda en pausa con el logo",
+    "e10/lock-the-ready.md §7 (fotos medidas y, desde el 16-oct, «Tamaño de archivo por tramo»: la tableta de F1, F5 y F7), §9 (Gehl), §10 y §10b (qué se toma y qué se hace propio), §13 (techos y las dos composiciones). El §12 (amarillo contra oro) queda en pausa con el logo",
     "marketing/brand/manual-de-marca.md §07b (personas generadas: nunca como equipo ni clientes). La regla de un oro por vista (§06) y el oro dentro de la foto (§07b) quedan abiertos: el logo se rediseña después de elegir dirección (Ramón, 16-oct)",
     "tableros/e10-direcciones/espacios-foto.json (los espacios de foto del tablero de Lucía: número, dirección, página y medida) y proto/e10/tokens.css (la paleta propia: papel #F7F5F0, ciruela #341F34, resaltador #EEF26E)",
     "e10/acta-paso-2.md (Javiera: ronda 1, defectos 1, 2 y 12; ronda 2, defecto 1 y la observación sobre el logo y el oro)"
@@ -94,12 +94,13 @@
     "acabado": {
       "nota": "Lo que hace que todas se vean de una misma marca no es solo el prompt: es un acabado común aplicado DESPUÉS de elegir, igual para todas. No lo hace generar.mjs (sin dependencias no hay procesamiento de imagen); va en la sesión que arma el tablero.",
       "pasos": [
-        "1 · Recorte a la proporción del espacio, a 1440 y a 390 cuando son distintas (los px están en pauta.md §2, «Formato y recorte»), desde el centro salvo lo que diga el recorte de la ficha.",
-        "2 · Balance: un gris de la escena tiene que leerse gris. Si el modelo calentó la imagen, se enfría hasta neutro; nunca se calienta.",
-        "3 · Grano monocromo fino, el mismo en todas, calibrado contra lock/the-ready/foto-grano-hero-x2.png a 100 % (Lucía midió ruido de alta frecuencia 12,1 en su hero contra 8,1 en una foto sin tratar). Si el modelo ya trajo grano parejo, no se suma.",
-        "4 · Sin viñeta, sin virado, sin subir saturación más de lo que trae: la familia se rompe primero por ahí.",
-        "5 · Oro: en pausa con el logo (reglas.oro). Si se quiere el dato del archivo final, `node generar.mjs --medir=<archivo.png>`; no decide nada.",
-        "6 · Exportar JPG (calidad ~82) y su versión de 800 px (`-800.jpg`), como el pool. Nombre nuevo, nunca sobrescribir una ruta publicada (caché larga; manual §07b y CLAUDE.md)."
+        "1 · Recorte a la proporción del espacio, a 1440 y a 390 cuando son distintas (los px están en pauta.md §2, «Formato y recorte»), desde el centro salvo lo que diga el recorte de la ficha. F1, F5 y F7 suman la tableta (lock §7): el mismo 4:5 que a 390, que es su archivo de columna.",
+        "2 · Escalado (F1, F5 y F7, lock §7): cada recorte hasta su archivo (pauta.md §2, «Tableta y escalado»): columna 2048×2560, y escritorio 840×1448 en F1 o 2880×1234 en F5 y F7. Con el escalador de la pauta (escalado.escalador), antes del balance y del grano. En salida/registro.json, en la línea de la imagen, se completan escalado.archivos.<archivo>.escalador y factor_aplicado.",
+        "3 · Balance: un gris de la escena tiene que leerse gris. Si el modelo calentó la imagen, se enfría hasta neutro; nunca se calienta.",
+        "4 · Grano monocromo fino, el mismo en todas, calibrado contra lock/the-ready/foto-grano-hero-x2.png a 100 % (Lucía midió ruido de alta frecuencia 12,1 en su hero contra 8,1 en una foto sin tratar). Si el modelo ya trajo grano parejo, no se suma. En F1, F5 y F7 va sobre el archivo ya escalado, no antes: escalar el grano lo vuelve manchas.",
+        "5 · Sin viñeta, sin virado, sin subir saturación más de lo que trae: la familia se rompe primero por ahí.",
+        "6 · Oro: en pausa con el logo (reglas.oro). Si se quiere el dato del archivo final, `node generar.mjs --medir=<archivo.png>`; no decide nada.",
+        "7 · Exportar JPG (calidad ~82) y su versión de 800 px (`-800.jpg`), como el pool. F1, F5 y F7 exportan además los anchos del srcset de cada archivo para el <picture> del lock §7: columna 780, 1200, 1536 y 2048; escritorio 420 y 840 (F1) o 1440 y 2880 (F5 y F7). Nombre nuevo, nunca sobrescribir una ruta publicada (caché larga; manual §07b y CLAUDE.md)."
       ]
     }
   },
@@ -149,6 +150,21 @@
     },
     "sin_negativo_nativo": "Ninguno de los dos modelos tiene un campo de negativo: lo que no debe salir va dicho en positivo dentro del texto (papeles con líneas borrosas, objetos sin marca) y como línea final «Avoid: …»."
   },
+  "escalado": {
+    "regla": "Lock §7, «Tamaño de archivo por tramo» (Lucía, 16-oct, tras la ronda 3 de QA): en cada tramo se sirve un archivo que cubre dpr 2 en el ancho más grande del tramo. En la composición de una columna (hasta 1023 px) F1, F5 y F7 van a todo el ancho y en 4:5, así que la tableta pide más píxeles que el escritorio. Van dos fuentes por foto, con <picture> y media=\"(max-width: 1023px)\": la de la columna (4:5, sirve a la tableta y al teléfono) y la de escritorio (su proporción), cada una con sus anchos en srcset. Ningún proveedor llega sin escalar, así que se escala después de generar, hasta el archivo de cada tramo (archivo en la ficha). Las otras seis fotos siguen la misma regla con los tamaños que fije la spec de la dirección elegida; hasta entonces no tienen tableta en esta pauta.",
+    "escalador": "Pillow, Image.LANCZOS, sobre el recorte de cada archivo y no sobre la imagen entera, antes del balance y del grano: el grano común (§6) se pone una vez sobre el archivo ya escalado, y de ahí salen las reducciones del srcset. Es determinista, no cuesta y no inventa detalle. Un escalador con IA rellena textura, y la textura inventada es justo el acabado de render que esta pauta descarta. Si al 100 % un archivo escalado se lee blando en su tramo (el de columna mirado al 50 %, que es como se ve a 1023 css con dpr 2), se prueba un escalador con IA en esa ficha sola, con el preflight de costo dicho antes, y se queda el que no se lea como render. El elegido se usa en las tres, por la familia.",
+    "registro": "generar.mjs anota en la línea de cada imagen con archivos por tramo un campo «escalado»: por archivo, el recorte que sale de las medidas que de verdad llegaron, el objetivo y el factor. El acabado completa «escalador» y «factor_aplicado» en esa misma línea.",
+    "decision_f5_f7": {
+      "decision": "F5 y F7 se siguen generando en una sola foto apaisada (16:9 en Gemini, 1536x1024 en OpenAI), con el mismo proveedor que el resto de la corrida, y se escalan. Con Gemini, el 4:5 ×3,33 hasta 2048×2560 y el 21:9 ×2,14 hasta 2880×1234; con OpenAI, ×2,5 y ×1,88. Cumple lo que pide el lock: el recorte 4:5 queda en 2048 de ancho y el 21:9 en 2880.",
+      "por_que": [
+        "Una foto por espacio. La banda y la columna son la misma escena con el mismo alt. Un 4:5 generado aparte sería otra mesa y otra persona en la tableta, con el doble de selección y de gasto.",
+        "Cambiar el formato no ayuda con Gemini: en 4:3 el 4:5 baja a ×2,96, pero la banda sube a ×2,43, y la banda de 1440 es lo que más se ve y lo que Ramón mira en la compuerta 2. El 16:9 sigue siendo el mejor reparto entre los dos recortes.",
+        "Son las dos fotos de Pizarra limpia: la mitad o más del cuadro es aire (muro, piso, ventana, neblina), que es lo que mejor aguanta un escalado. La persona de F5 va chica y de espaldas, y F7 no lleva gente.",
+        "No cambio el proveedor solo para estas dos. Con OpenAI los factores bajan, pero mezclar dos modelos dentro de Pizarra limpia (F8 de Pizarra saldría con el otro) rompe la familia (revisión, punto 7) más de lo que se gana en escalado."
+      ],
+      "alternativa": "Si en la revisión el 4:5 escalado se lee blando, la salida no es escalar más fuerte: es pedir F5 y F7 a un modelo de Gemini que acepte imageSize (--modelo=… --tamano=2K o 4K; el script ya lo manda), que entrega el recorte con poco o ningún escalado. No la adopto de entrada porque su precio no está en esta pauta (el script estima con el del modelo por defecto) y no está probada con la clave de Ramón. La decide él, con el costo a la vista."
+    }
+  },
   "fotos": [
     {
       "id": "F1",
@@ -166,6 +182,10 @@
           390,
           488
         ],
+        "css_1023": [
+          1023,
+          1279
+        ],
         "rotulo_tablero": "Foto por generar · F1 · gente de pie en una mesa con hojas y notas"
       },
       "prioridad": 1,
@@ -176,9 +196,44 @@
       "openai": {
         "size": "1024x1536"
       },
+      "cobertura_min": {
+        "1440": 2
+      },
       "recorte": {
         "390": "A 4:5 desde el centro, con la mujer inclinada sobre la mesa dentro del cuadro.",
+        "1023": "El mismo encuadre 4:5 que a 390, escalado hasta el archivo de columna (2048×2560); de ese archivo salen también los del teléfono. La mujer inclinada sobre la mesa queda dentro del cuadro y nadie queda cortado por la cara.",
         "1440": "A 0,58 desde el centro (con Gemini se va una franja chica arriba y abajo; con OpenAI, los costados). La mesa sigue entrando desde abajo a la izquierda y nadie queda cortado por la cara."
+      },
+      "archivo": {
+        "escritorio": {
+          "sirve": [
+            "1440"
+          ],
+          "px": [
+            840,
+            1448
+          ],
+          "srcset": [
+            420,
+            840
+          ]
+        },
+        "columna": {
+          "sirve": [
+            "1023",
+            "390"
+          ],
+          "px": [
+            2048,
+            2560
+          ],
+          "srcset": [
+            780,
+            1200,
+            1536,
+            2048
+          ]
+        }
       },
       "escena_en": "Vertical photograph. In the glass-walled office corner of a small industrial supplies distributor in Quilicura, Santiago, three people stand around a long white table covered with printed pages and rows of pink, lime-green and pale-blue sticky notes. A woman in her thirties in a deep plum knit sweater leans over the table to place a note, seen in profile. An older man in a navy fleece vest stands with his back to the camera, arms crossed, studying the table. A third person is cut off by the right edge of the frame: only a forearm in a denim sleeve and a pen. Through the glass wall behind them, out of focus, the warehouse: grey steel shelving with grey and blue plastic crates. The table runs diagonally from the lower left corner into the depth of the frame.",
       "negativo_en": [
@@ -323,6 +378,10 @@
           390,
           488
         ],
+        "css_1023": [
+          1023,
+          1279
+        ],
         "rotulo_tablero": "Foto por generar · F5 · una mesa larga junto a la ventana, con la cordillera"
       },
       "prioridad": 1,
@@ -333,9 +392,44 @@
       "openai": {
         "size": "1536x1024"
       },
+      "cobertura_min": {
+        "1440": 2
+      },
       "recorte": {
         "390": "A 4:5 desde el centro: la persona y la cordillera tienen que quedar en la mitad central del ancho.",
-        "1440": "Se genera en 16:9 para sacar las dos. A 21:9 desde el centro: se va un 25 % del alto, mitad arriba y mitad abajo, así que arriba y abajo de la persona y la cordillera tiene que haber aire."
+        "1023": "El mismo encuadre 4:5 que a 390, escalado hasta el archivo de columna (2048×2560); de ese archivo salen también los del teléfono. A todo el ancho de la tableta, la persona y la cordillera son lo único que se ve: las dos dentro de la mitad central del ancho.",
+        "1440": "Se genera en 16:9 para sacar las dos proporciones de una sola foto (escalado.decision_f5_f7). A 21:9 desde el centro: se va un 25 % del alto, mitad arriba y mitad abajo, así que arriba y abajo de la persona y la cordillera tiene que haber aire. Se escala hasta el archivo de escritorio (2880×1234)."
+      },
+      "archivo": {
+        "escritorio": {
+          "sirve": [
+            "1440"
+          ],
+          "px": [
+            2880,
+            1234
+          ],
+          "srcset": [
+            1440,
+            2880
+          ]
+        },
+        "columna": {
+          "sirve": [
+            "1023",
+            "390"
+          ],
+          "px": [
+            2048,
+            2560
+          ],
+          "srcset": [
+            780,
+            1200,
+            1536,
+            2048
+          ]
+        }
       },
       "escena_en": "Wide horizontal photograph of an open-plan office on a high floor in Providencia, Santiago, late morning. A long white table runs parallel to a wall of floor-to-ceiling windows. Beyond the glass: the city's mid-rise buildings and, far behind them, the Andes with patches of snow, softened by a light haze. One person in a charcoal sweater works alone at the far end of the table on a laptop, seen from behind at a distance, small in the frame and close to the center. Most of the frame is quiet: pale floor, the empty length of the table, the window light. One potted plant by the window. Keep the person and the mountains inside the central half of the frame and leave calm space above and below, because the image will be cropped both to a wide 21:9 band and to a 4:5 vertical.",
       "negativo_en": [
@@ -402,6 +496,10 @@
           390,
           488
         ],
+        "css_1023": [
+          1023,
+          1279
+        ],
         "rotulo_tablero": "Foto por generar · F7 · la mesa de una sala chica, después de la reunión"
       },
       "prioridad": 1,
@@ -412,9 +510,44 @@
       "openai": {
         "size": "1536x1024"
       },
+      "cobertura_min": {
+        "1440": 2
+      },
       "recorte": {
         "390": "A 4:5 desde el centro: la mesa con la hoja y las tazas entera dentro de la mitad central del ancho. Si quedó corrida, el recorte se mueve hacia ella; nunca se achica la mesa.",
-        "1440": "Se genera en 16:9 para sacar las dos, igual que F5 (las dos bandas de Pizarra limpia se hacen igual). A 21:9 desde el centro: se va un 25 % del alto, mitad arriba y mitad abajo; la mesa y lo que tiene encima no se cortan."
+        "1023": "El mismo encuadre 4:5 que a 390, escalado hasta el archivo de columna (2048×2560); de ese archivo salen también los del teléfono. La mesa con la hoja y las tazas entera; si quedó corrida, el recorte se mueve hacia ella, igual que a 390.",
+        "1440": "Se genera en 16:9 para sacar las dos proporciones de una sola foto, igual que F5 (las dos bandas de Pizarra limpia se hacen igual; escalado.decision_f5_f7). A 21:9 desde el centro: se va un 25 % del alto, mitad arriba y mitad abajo; la mesa y lo que tiene encima no se cortan. Se escala hasta el archivo de escritorio (2880×1234)."
+      },
+      "archivo": {
+        "escritorio": {
+          "sirve": [
+            "1440"
+          ],
+          "px": [
+            2880,
+            1234
+          ],
+          "srcset": [
+            1440,
+            2880
+          ]
+        },
+        "columna": {
+          "sirve": [
+            "1023",
+            "390"
+          ],
+          "px": [
+            2048,
+            2560
+          ],
+          "srcset": [
+            780,
+            1200,
+            1536,
+            2048
+          ]
+        }
       },
       "escena_en": "Wide horizontal photograph of a small, quiet meeting room in an office in Ñuñoa, Santiago, just after a meeting, taken from a few steps back at table height. A white round table with two chairs, one of them pushed back, stands in the middle of the frame. On the table: a single sheet of paper with a hand-drawn grid of four weeks and a few colored dots in pink, lime green and blue, a closed matte grey laptop and two plain white cups. Soft daylight from a large window on the left falls across the table; on the right, a pale wall with one plant. Keep the table and everything on it inside the central half of the frame, and leave calm, empty space above and below it (quiet wall above, floor below), because the image will be cropped both to a wide 21:9 band and to a 4:5 vertical.",
       "negativo_en": [
@@ -574,8 +707,8 @@
   "equivalencia_lucia": {
     "archivo": "tableros/e10-direcciones/espacios-foto.json",
     "numeracion": "Una sola, la del tablero. Desde la v2 cada ficha lleva el F<n> del espacio de Lucía y su dirección, y las salidas se nombran <F>-<dirección>-<n>.png (por ejemplo F8-taller-1.png). La tabla de abajo es el registro de la renumeración: qué número tenía cada foto en la v1 de esta pauta, que es el que espacios-foto.json anota como «pauta_bruno_16oct».",
-    "estado": "Conciliada el 16-oct a las 11:11 (Chile) contra espacios-foto.json escrito a las 10:22: 9 espacios, 8 números, 9 fichas, ningún vacío. La conciliación anterior (10:15) quedó vieja cuando, a las 10:22, el tablero cambió F2 de 398×498 a 443×554 a 1440; generar.mjs lo bloqueó (acta, ronda 2, defecto 1). Las cuatro fotos de la v1 sin espacio (F3, F4, F11 y F12) siguen en «reservas» y no se generan.",
-    "regla": "generar.mjs compara esta pauta con espacios-foto.json en cada corrida y se niega a generar (código 2) si falta el archivo, si un espacio no tiene ficha, si una ficha no tiene espacio, si la página o la medida de un espacio cambiaron, si la tabla tiene una celda vacía o si una ficha no escribió sus dos recortes. `node generar.mjs --verificar` muestra la comprobación sin generar. Si una foto queda sin espacio, sale a «reservas»; si aparece un espacio nuevo, se le escribe su ficha con el número del tablero.",
+    "estado": "Conciliada el 16-oct a las 11:11 (Chile) contra espacios-foto.json escrito a las 10:22: 9 espacios, 8 números, 9 fichas, ningún vacío. La conciliación anterior (10:15) quedó vieja cuando, a las 10:22, el tablero cambió F2 de 398×498 a 443×554 a 1440; generar.mjs lo bloqueó (acta, ronda 2, defecto 1). Las cuatro fotos de la v1 sin espacio (F3, F4, F11 y F12) siguen en «reservas» y no se generan. En la v4 (16-oct, 13:42) la conciliación es la misma; F1, F5 y F7 suman la medida de tableta del lock §7 (1023×1279), que espacios-foto.json todavía no trae: avisa y no bloquea hasta que Lucía la agregue (ancho_px_1023 y alto_px_1023), y desde ahí se compara como las otras.",
+    "regla": "generar.mjs compara esta pauta con espacios-foto.json en cada corrida y se niega a generar (código 2) si falta el archivo, si un espacio no tiene ficha, si una ficha no tiene espacio, si la página o la medida de un espacio cambiaron (también la de tableta, cuando el tablero la traiga), si la tabla tiene una celda vacía, si una ficha no escribió sus recortes (a 1440, a 390 y, si tiene tableta, a 1023) o si una ficha con tableta no trae archivos por tramo que tengan su proporción y la cubran. `node generar.mjs --verificar` muestra la comprobación sin generar. Si una foto queda sin espacio, sale a «reservas»; si aparece un espacio nuevo, se le escribe su ficha con el número del tablero.",
     "tabla": [
       {
         "tablero": "F1",
@@ -641,9 +774,34 @@
     "5 · Equipo o cliente: ¿alguien podría leer a esta gente como el equipo de SpindleLab o como un cliente? (mira a cámara, posa, una le explica a otra, va junto a Ramón o en Trabajo) → no va.",
     "6 · Chile creíble, sin «pastoral gringa»: ladrillo rojo de loft, ampolletas Edison, enchufes americanos, letreros en inglés, otoño, suburbio → se descarta.",
     "7 · Familia: puesta junto a las otras elegidas, ¿parece del mismo fotógrafo? Si una está más cálida, más limpia o más «render», se rehace o se corrige en el acabado.",
-    "8 · Ramón la ve antes de que vaya al tablero publicado."
+    "8 · Escalado (F1, F5 y F7): cada archivo escalado se mira al 100 % y en su tramo (el de columna al 50 %, como se ve a 1023 css con dpr 2). Nada de textura inventada, halos en los bordes ni neblina con dibujo. Si se lee blando o como render, se sigue lo de pauta.md §2, «Tableta y escalado», y no se entrega así.",
+    "9 · Ramón la ve antes de que vaya al tablero publicado."
   ],
   "pruebas": [
+    {
+      "prueba": "v4 · `--verificar` contra el `espacios-foto.json` vigente, que todavía no trae la medida de tableta",
+      "resultado": "9 espacios, 9 fichas, ✓ en todos; F1, F5 y F7 muestran 1023×1279 a 1023 (lock §7). 17 avisos: 3 de la medida de tableta que el tablero aún no trae y 14 de cobertura sin escalar, cada uno con su factor (Gemini: F1 ×1,09 y ×2,67, F5 y F7 ×2,14 y ×3,33; OpenAI: F1 ×2, F5 y F7 ×1,88 y ×2,5). Código 0"
+    },
+    {
+      "prueba": "v4 · Copia aislada con `ancho_px_1023` y `alto_px_1023` (1023×1279) en F1, F5 y F7 de `espacios-foto.json`, como lo dejará Lucía",
+      "resultado": "Calza; los 3 avisos de la medida de tableta desaparecen y quedan los 14 de cobertura. Código 0"
+    },
+    {
+      "prueba": "v4 · Nueve copias aisladas, cada una con una cosa que no calza: la tableta de F5 a 1023×1300 en el tablero · el tablero trae tableta en F2, que no la tiene · el archivo de columna de F1 en 1:1 · el de escritorio de F5 en 2400×1029 · F7 sin recorte a 1023 · un srcset de F1 que termina en 800 · F1 sin archivos · F7 con la columna sirviendo solo a 390 · un recorte editado sin sincronizar",
+      "resultado": "Las nueve terminan con código 2 y la causa nombrada (qué espacio, qué medida antes y después, qué archivo y por qué). Sin `cobertura_min` en F1 calza (código 0) y el aviso de F1 a 1440 con Gemini desaparece: el 2× a 1440 sale de la ficha, no de una regla general"
+    },
+    {
+      "prueba": "v4 · Copia aislada contra una API falsa (fetch reemplazado por un PNG gris del tamaño de cada proveedor, sockets reales bloqueados, clave falsa): `--solo=F1,F5,F2 --tope=3` con Gemini y `--solo=F7,F1 --tope=2 --proveedor=openai`",
+      "resultado": "5 imágenes, 0 fallos, 5 llamadas a la API falsa y 0 sockets reales. El registro anota `espacio_css` con 1023 en F1, F5 y F7, y `escalado` con el recorte real, el objetivo y el factor de cada archivo (Gemini: F1 1,094 y 2,667, F5 2,143 y 3,333; OpenAI: F1 0,943, que alcanza, y 2, F7 1,875 y 2,5), con `escalador` y `factor_aplicado` vacíos. F2 no trae `escalado`. La línea de cada imagen dice qué falta escalar. El prompt registrado es idéntico a `prompt_completo_en` y la clave falsa no aparece en `salida/`. Código 0"
+    },
+    {
+      "prueba": "v4 · Sin `--tope` y sin clave, con la misma precarga · `--tope=9` sin clave",
+      "resultado": "Lista las 9 fichas, con la línea de tableta en F1, F5 y F7: 18 imágenes, USD 0,70 con Gemini y 4,50 con OpenAI (high), los mismos de la v3. 0 llamadas, no crea `salida/`, código 0. Con `--tope=9` sin clave: el nombre de la variable que falta, código 2, 0 llamadas"
+    },
+    {
+      "prueba": "v4 · `--sincronizar` dos veces seguidas",
+      "resultado": "La segunda deja `pauta.json` y `pauta.md` iguales byte a byte. `prompt_completo_en` no cambió en ninguna ficha: las escenas no se tocaron"
+    },
     {
       "prueba": "v3 · `--verificar` contra el `espacios-foto.json` vigente (escrito a las 10:22)",
       "resultado": "9 espacios, 9 fichas, ✓ en todos, F2 con 443×554. 5 avisos de cobertura, todos de Gemini y los mismos de la v2 (F1 a 390: 1,97×; F5 y F7: 0,93× a 1440 y 1,57× a 390). Código 0"
@@ -728,6 +886,7 @@
   "historial": [
     "v1 · 16-oct, 09:03 · 12 fotos con numeración propia (F1 a F12). Revisada antes de que existiera espacios-foto.json.",
     "v2 · 16-oct, 10:15 · Acta de Javiera, ronda 1. Defecto 1: una sola numeración, la del tablero (9 fichas para 9 espacios, F8 una por dirección); F3, F4, F11 y F12 de la v1 salen a reservas; tabla de equivalencia llena; generar.mjs bloquea si la pauta y los espacios no calzan. Defecto 2: la foto de la banda de Acompañamiento en Pizarra limpia (v1 F9, ahora F7) se reescribe en 16:9 con sus dos recortes, como la banda de la home; el encuadre ya no es un campo de la ficha, sale de su dirección, así que el mesón (v1 F10, ahora F2) pasa a encuadre Taller con la escena reescrita. Defecto 12: el alt de la reserva R3 (v1 F11) ya no nombra un barrio.",
-    "v3 · 16-oct, 11:11 · Acta de Javiera, ronda 2, defecto 1: la pauta vuelve a calzar con espacios-foto.json de las 10:22 (F2 pasa de 398×498 a 443×554 a 1440; sigue en 4:5, así que el recorte es el mismo y la cobertura sigue sobre el 1×: 2,02× con Gemini y 2,31× con OpenAI). F1, F2 y F8 de Taller dicen dónde van hoy: F1 en «Qué hacemos» y no en el hero; F2 sin garabato al lado; F8 junto a los botones del cierre, sin óvalo; las dos en la banda del resaltador #EEF26E. La paleta del estilo es la propia de tokens.css (papel #F7F5F0, tinta ciruela #341F34): salen la paleta de The Ready (#FFFEFA, #1B0925, #E6FA97, #EDD1FF) y la mancha naranja. Decisión de Ramón del 16-oct (el logo se rediseña después de elegir dirección): el oro sale de los negativos, comunes y propios (dorado, latón, ámbar, mostaza, ocre, amarillo, madera, cartón, chispas, cobre), de los lugares prohibidos y de los motivos de descarte; quedan los de texto, logos y marcas, manos y caras deformes, personas como ambiente, «pastoral gringa», estética genérica de IA y acabado de render. generar.mjs sigue midiendo el oro, solo como dato: `--medir` ya no termina en 1 por oro. §3 y §7 reescritos con lo que es cierto hoy."
+    "v3 · 16-oct, 11:11 · Acta de Javiera, ronda 2, defecto 1: la pauta vuelve a calzar con espacios-foto.json de las 10:22 (F2 pasa de 398×498 a 443×554 a 1440; sigue en 4:5, así que el recorte es el mismo y la cobertura sigue sobre el 1×: 2,02× con Gemini y 2,31× con OpenAI). F1, F2 y F8 de Taller dicen dónde van hoy: F1 en «Qué hacemos» y no en el hero; F2 sin garabato al lado; F8 junto a los botones del cierre, sin óvalo; las dos en la banda del resaltador #EEF26E. La paleta del estilo es la propia de tokens.css (papel #F7F5F0, tinta ciruela #341F34): salen la paleta de The Ready (#FFFEFA, #1B0925, #E6FA97, #EDD1FF) y la mancha naranja. Decisión de Ramón del 16-oct (el logo se rediseña después de elegir dirección): el oro sale de los negativos, comunes y propios (dorado, latón, ámbar, mostaza, ocre, amarillo, madera, cartón, chispas, cobre), de los lugares prohibidos y de los motivos de descarte; quedan los de texto, logos y marcas, manos y caras deformes, personas como ambiente, «pastoral gringa», estética genérica de IA y acabado de render. generar.mjs sigue midiendo el oro, solo como dato: `--medir` ya no termina en 1 por oro. §3 y §7 reescritos con lo que es cierto hoy.",
+    "v4 · 16-oct, 13:42 · Lock §7, «Tamaño de archivo por tramo» (Lucía, tras la ronda 3): F1, F5 y F7 suman la tableta (espacio.css_1023 = 1023×1279, 4:5 a todo el ancho), su recorte a 1023 (el mismo 4:5 que a 390) y sus archivos por tramo: columna 2048×2560 (srcset 780, 1200, 1536 y 2048) y escritorio 840×1448 en F1 o 2880×1234 en F5 y F7. Piden 2× en cada tramo (cobertura_min 2 a 1440; para las demás el tablero sigue pidiendo 1×). generar.mjs mide a 1440, 390 y 1023, avisa el factor de escalado, bloquea si un archivo no tiene la proporción de su tramo o no lo cubre, y anota en el registro el factor con las medidas reales; el escalador lo anota el acabado (Pillow LANCZOS por defecto, escalado.escalador). F5 y F7 siguen en 16:9 y se escalan (escalado.decision_f5_f7). Las escenas y los prompts no cambian. espacios-foto.json no se tocó: la medida de tableta la agrega Lucía, y hasta entonces es un aviso."
   ]
 }
