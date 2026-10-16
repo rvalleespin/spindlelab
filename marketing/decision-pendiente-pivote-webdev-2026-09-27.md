@@ -52,8 +52,9 @@ escrito: *cuando una métrica se pone en rojo, abrir un frente nuevo en vez de a
 de corte ya escrito*. Pasó el 4-ago (frente EE.UU.) y el 3-sep (laboratorio). Gemini no podía
 saberlo y lo está proponiendo sin querer.
 
-Además compite por las mismas 6-10 h/semana que la entrega de Módulo 369 (arranca 6-oct) y la
-ventana de Verifica y Cumple (cierra 1-dic).
+Además compite por atención con la entrega de Módulo 369 (arranca 6-oct) y la ventana de Verifica
+y Cumple (cierra 1-dic). **No es un problema de horas disponibles** (ver corrección de Ramón del
+28-sep: se dedica al proyecto a tiempo completo); es un problema de foco simultáneo y de orden.
 
 ## La alternativa que conserva la idea buena y cuesta casi nada
 La hipótesis —*se vende mejor entrando por el sitio web*— **se prueba sin tocar una línea del

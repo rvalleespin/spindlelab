@@ -7,6 +7,28 @@
 
 ---
 
+## 0 · ⚠️ ACTUALIZACIÓN DEL 28-SEP — el centro cambió, lee esto antes que nada
+
+**Ramón decidió el 28-sep que el centro del motor es EL SITIO WEB**, no la visibilidad como
+categoría. Queda canonizado en `marketing/oficina/clientes/spindlelab.md`. El resto de este brief
+sigue vigente, con este ajuste:
+
+- **El AEO deja de venderse como servicio central y pasa a ser la especificación del producto:**
+  la razón por la que este sitio vale más que el de al lado.
+- **Cuidado con el argumento fácil:** «a medida, sin plantillas» **lo dice toda la competencia**
+  (verificado: Brand&Co, AnonimoDsn y Agencia Bull usan esa misma frase). No es diferenciador,
+  es higiene. **No construyas el hero sobre eso.**
+- **El argumento defendible es:** *un sitio que nace legible para las máquinas que hoy recomiendan
+  tu negocio, y que se puede comprobar.* Se sostiene porque el chequeo lo demuestra gratis y
+  porque las agencias que hacen sitios entregan sitios que fallan ese examen (Bull 46/100,
+  Brand&Co 51/100 — el patrón se cuenta, los nombres no se publican).
+- **El hero propuesto más abajo sigue sirviendo:** la pregunta sobre si la IA te nombra, con el
+  campo del chequeo. Lo que cambia es lo que viene después: la respuesta al problema es **el
+  sitio**, no un servicio de visibilidad.
+- **Sigue habiendo puerta para quien ya tiene sitio y no lo va a rehacer.** No se cierra.
+
+---
+
 ## 1 · La tesis, que es de dónde cuelga todo lo demás
 
 Así se presentan las dos agencias revisadas:

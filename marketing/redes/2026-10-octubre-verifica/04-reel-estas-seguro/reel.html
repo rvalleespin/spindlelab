@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8">
+<title>Verifica y Cumple - Reel "Estas seguro?"</title>
+<style>
+  /* ------------------------------------------------------------------
+     Reel 1080x1920, 480 cuadros a 30 fps (16 s). Cada cuadro se pide por
+     ?f=N y se dibuja SOLO en funcion de N: el render es determinista y se
+     puede rehacer un tramo suelto sin tocar el resto.
+
+     EL ANGULO (encuadre de Ramon, 28-sep, tercera vuelta)
+     Esta pieza NO es sobre un problema, es sobre la CONFIANZA. El dueno de
+     un sitio pide datos; la persona se los da confiando en que no terminen
+     en otra parte; esa confianza depende de algo que no se ve. La ley llego
+     para poner las mismas reglas a todos, y Verifica existe para que el
+     dueno SEPA si su sitio esta a la altura de esa confianza.
+
+     Dos versiones anteriores se descartaron y conviene saber por que, para
+     no volver:
+       v1: contaba la medicion (100 en el chequeo rapido, 0 en el profundo).
+           Ponia el foco en lo buenos que somos midiendo, no en el que mira.
+       v2: "seis empresas ya saben que entro". Mas concreto, pero seguia
+           siendo un hallazgo nuestro en vez de una razon suya.
+
+     LIMITE QUE NO SE CRUZA: en el tramo 5 NO se dice "te decimos si tu sitio
+     es seguro". El chequeo no dictamina cumplimiento y el sitio lo declara.
+     Se dice lo que de verdad hace: mostrar que pasa cuando alguien entra y
+     que falta publicar.
+
+     Cero susto y cero cifra de multa.
+     Sistema visual de Verifica, NO de SpindleLab.
+     ------------------------------------------------------------------ */
+
+  @font-face {
+    font-family: "Archivo Black";
+    font-style: normal; font-weight: 400; font-display: block;
+    src: url("archivo-black-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: "Archivo Black";
+    font-style: normal; font-weight: 400; font-display: block;
+    src: url("archivo-black-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+
+  :root {
+    --azul-600:  #2e5bff;
+    --lima-400:  #d6ff3d;
+    --rosa-500:  #ff3ea0;
+    --tinta-900: #17163a;
+    --tinta-500: #56547a;
+    --display: "Archivo Black", Impact, sans-serif;
+    --cuerpo: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--azul-600); }
+  body { -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
+
+  .reel { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--azul-600); }
+
+  .cielo {
+    position: absolute; inset: -80px -120px; z-index: 0;
+    background: url("hero-nubes.webp") center 50% / cover no-repeat;
+    opacity: .60;
+  }
+  .velo {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(to bottom,
+      rgba(14,30,110,.70) 0%, rgba(14,30,110,.62) 28%,
+      rgba(14,30,110,.42) 46%, rgba(14,30,110,.14) 62%,
+      rgba(14,30,110,.06) 100%);
+  }
+
+  /* La sheriff entra EXACTO en "para eso llego la ley". Ella es eso: la ley
+     que llega, y llega de tu lado. Antes del cuadro 240 no esta, y ese cielo
+     vacio es a proposito: todavia no llega nadie. */
+  .sheriff {
+    position: absolute; z-index: 3;
+    left: -35px; top: 952px; width: 1150px; height: auto;
+    transform-origin: 50% 100%;
+    filter: drop-shadow(0 26px 40px rgba(10,20,80,.34));
+  }
+
+  .marca {
+    position: absolute; z-index: 6; top: 232px; left: 0; right: 0;
+    display: flex; align-items: center; justify-content: center; gap: 18px;
+  }
+  .marca .estrella { width: 46px; height: 46px; display: block; }
+  .marca .nombre {
+    font-family: var(--display); font-size: 33px; color: #fff;
+    letter-spacing: .15em; text-transform: uppercase;
+  }
+
+  .bloque { position: absolute; inset: 0; z-index: 5; }
+  .tipo { position: absolute; left: 62px; right: 62px; top: 372px; }
+  /* Mientras la sheriff no llega, el texto baja al centro: si se queda arriba,
+     la mitad de abajo del cuadro queda vacia y la pieza se ve coja. Desde el
+     tramo 4 vuelve arriba, porque abajo ya galopa ella. */
+  .tipo.centrada { top: 470px; }
+  /* ⚠️ LIMITE MEDIDO: a 120px caben ~13 caracteres por linea en los 956px utiles.
+     Una linea mas larga se parte sola y deja una palabra colgando; paso con
+     "QUIEN TE LOS DA" (15) que salio en dos lineas y dejo "DA" solo. Si escribes
+     una linea nueva, cuentala. */
+  .linea {
+    font-family: var(--display); font-size: 120px; line-height: .93;
+    letter-spacing: -.022em; color: #fff; transform-origin: 0% 50%;
+    text-shadow: 0 6px 30px rgba(10,20,80,.32);
+  }
+  .linea.lima { color: var(--lima-400); }
+  /* El primer tramo es la pregunta sola y tiene que pegar: va mas grande que
+     todo lo demas y centrado, porque no compite con nada en el cuadro. */
+  .tipo.pregunta { top: 560px; text-align: center; }
+  .tipo.pregunta .linea { font-size: 168px; line-height: .90; letter-spacing: -.04em; }
+  .tipo.pregunta .sub { text-align: center; }
+
+  .sub {
+    margin-top: 32px; font-family: var(--cuerpo); font-size: 39px; font-weight: 600;
+    line-height: 1.28; color: rgba(255,255,255,.94); transform-origin: 0% 50%;
+    text-shadow: 0 4px 22px rgba(10,20,80,.42);
+  }
+  .antetitulo {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 26px;
+    font-family: var(--display); font-size: 34px; letter-spacing: .12em;
+    color: var(--lima-400); text-transform: uppercase; transform-origin: 0% 50%;
+  }
+  .antetitulo .estrella { width: 38px; height: 38px; display: block; }
+
+  .tarjeta {
+    position: absolute; left: 50px; right: 50px; top: 1252px; z-index: 5;
+    background: var(--lima-400); border-radius: 30px;
+    padding: 34px 36px 40px; text-align: center;
+    transform-origin: 50% 50%;
+    box-shadow: 0 30px 60px rgba(10,20,80,.30);
+  }
+  .tarjeta .rotulo {
+    font-family: var(--cuerpo); font-size: 31px; font-weight: 800;
+    letter-spacing: .13em; text-transform: uppercase; color: rgba(23,22,58,.74);
+  }
+  .tarjeta .dir {
+    margin-top: 14px; font-family: var(--display); font-size: 70px; line-height: 1;
+    letter-spacing: -.028em; color: var(--tinta-900);
+  }
+  .tarjeta .nota {
+    margin-top: 16px; font-family: var(--cuerpo); font-size: 31px; font-weight: 600;
+    color: var(--tinta-500);
+  }
+</style>
+</head>
+<body>
+<div class="reel">
+
+  <div class="cielo" id="cielo"></div>
+  <div class="velo"></div>
+
+  <img class="sheriff" id="sheriff" src="hero-fiscalizador.png" alt="">
+
+  <div class="marca">
+    <svg class="estrella" viewBox="0 0 100 100" aria-hidden="true">
+      <polygon fill="#ff3ea0" stroke="#fff" stroke-width="5" stroke-linejoin="round"
+        points="50,2 61.76,33.82 95.65,35.17 69.02,56.18 78.21,88.83 50,70 21.79,88.83 30.98,56.18 4.35,35.17 38.24,33.82"/>
+    </svg>
+    <span class="nombre">Verifica y Cumple</span>
+  </div>
+
+  <!-- 1. La pregunta, que funciona en los dos sentidos a la vez: estas seguro
+          de que esta bien, y esta tu sitio seguro para ellos. -->
+  <section class="bloque">
+    <div class="tipo pregunta">
+      <div class="linea" data-d="0">&iquest;EST&Aacute;S</div>
+      <div class="linea lima" data-d="5">SEGURO?</div>
+      <div class="sub" data-d="16">Tu sitio pide datos.<br>Nombre, correo, tel&eacute;fono.</div>
+    </div>
+  </section>
+
+  <!-- 2. Lo que de verdad esta en juego, y no es un tramite. -->
+  <section class="bloque">
+    <div class="tipo centrada">
+      <div class="linea" data-d="0">TE LOS DAN</div>
+      <div class="linea" data-d="5">CONFIANDO</div>
+      <div class="linea lima" data-d="10">EN TI.</div>
+      <div class="sub" data-d="20">En que no terminen en otra parte.</div>
+    </div>
+  </section>
+
+  <!-- 3. Por que no basta con mirar. -->
+  <section class="bloque">
+    <div class="tipo centrada">
+      <div class="linea" data-d="0">PERO ESO</div>
+      <div class="linea lima" data-d="6">NO SE VE.</div>
+      <div class="sub" data-d="16">Pasa por dentro de tu sitio, apenas alguien<br>entra. No en la p&aacute;gina que t&uacute; miras.</div>
+    </div>
+  </section>
+
+  <!-- 4. Aca entra ella, y no es casualidad: la ley que llega, de tu lado. -->
+  <section class="bloque">
+    <div class="tipo">
+      <div class="linea" data-d="0">PARA ESO</div>
+      <div class="linea lima" data-d="6">LLEG&Oacute; LA LEY.</div>
+      <div class="sub" data-d="16">Las mismas reglas para todos, y las personas<br>sabiendo a qu&eacute; atenerse.</div>
+    </div>
+  </section>
+
+  <!-- 5. Y para eso estamos nosotros. Sin prometer de mas. -->
+  <section class="bloque">
+    <div class="tipo">
+      <div class="linea" data-d="0">Y PARA ESO</div>
+      <div class="linea" data-d="5">ESTAMOS</div>
+      <div class="linea lima" data-d="10">NOSOTROS.</div>
+      <div class="sub" data-d="20">Te mostramos qu&eacute; hace tu sitio cuando alguien<br>entra, y qu&eacute; te falta publicar.</div>
+    </div>
+  </section>
+
+  <!-- 6. El cierre con la direccion completa: en Instagram el enlace del pie
+          no se puede tocar. Nunca "link en la bio". -->
+  <section class="bloque">
+    <div class="tipo">
+      <div class="antetitulo" data-d="0">
+        <svg class="estrella" viewBox="0 0 100 100" aria-hidden="true">
+          <polygon fill="#ff3ea0" stroke="#d6ff3d" stroke-width="5" stroke-linejoin="round"
+            points="50,2 61.76,33.82 95.65,35.17 69.02,56.18 78.21,88.83 50,70 21.79,88.83 30.98,56.18 4.35,35.17 38.24,33.82"/>
+        </svg>
+        Toma un minuto
+      </div>
+      <div class="linea" data-d="5">M&Iacute;RALO</div>
+      <div class="linea lima" data-d="10">GRATIS.</div>
+    </div>
+    <div class="tarjeta" data-d="26" data-ease="back">
+      <div class="rotulo">Revisa el tuyo en</div>
+      <div class="dir">verifica.spindlelab.cl</div>
+      <div class="nota">Sin registro. No pedimos tu correo.</div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var F = parseInt(new URLSearchParams(location.search).get("f") || "0", 10);
+  if (!isFinite(F) || F < 0) F = 0;
+  var TOTAL = 480;                     // 16 s a 30 cuadros
+
+  var clamp = function (t) { return t < 0 ? 0 : t > 1 ? 1 : t; };
+  var seg = function (a, b) { return clamp((F - a) / (b - a)); };
+  var outCubic = function (t) { return 1 - Math.pow(1 - t, 3); };
+  var outBack = function (t) {
+    var c1 = 1.70158, c3 = c1 + 1;
+    return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+  };
+
+  var avance = clamp(F / (TOTAL - 1));
+  document.getElementById("cielo").style.transform =
+    "translate3d(" + (-86 * avance).toFixed(2) + "px, " + (18 * avance).toFixed(2) + "px, 0)";
+
+  // Entra en el cuadro 240, justo con "PARA ESO LLEGO LA LEY". Ella ES eso.
+  var ENTRA = 240;
+  var entrada = outCubic(seg(ENTRA, ENTRA + 60));
+  var x = -1420 * (1 - entrada) + 16 * outCubic(seg(ENTRA + 60, TOTAL));
+  var galope = Math.sin(F * 0.40) * 13;
+  var cabeceo = Math.sin(F * 0.40 + 0.7) * 0.9;
+  var acerca = 1 + 0.02 * outCubic(seg(ENTRA, TOTAL));
+  document.getElementById("sheriff").style.transform =
+    "translate3d(" + x.toFixed(2) + "px, " + galope.toFixed(2) + "px, 0)" +
+    " scale(" + acerca.toFixed(4) + ") rotate(" + cabeceo.toFixed(3) + "deg)";
+
+  var TIEMPOS = [[0, 72], [72, 156], [156, 240], [240, 318], [318, 408], [408, TOTAL]];
+
+  Array.prototype.forEach.call(document.querySelectorAll(".bloque"), function (bl, i) {
+    var s = TIEMPOS[i][0], e = TIEMPOS[i][1];
+    if (F < s || F >= e) { bl.style.display = "none"; return; }
+
+    var ultimo = (i === TIEMPOS.length - 1);
+    var salida = ultimo ? 0 : outCubic(seg(e - 6, e));
+
+    Array.prototype.forEach.call(bl.querySelectorAll("[data-d]"), function (el) {
+      var d = parseFloat(el.dataset.d);
+      var t = seg(s + d, s + d + 9);
+      var p = (el.dataset.ease === "back") ? outBack(t) : outCubic(t);
+      var visible = clamp(t * 1.6);
+      el.style.opacity = (visible * (1 - salida)).toFixed(4);
+      el.style.transform =
+        "translate3d(0, " + ((1 - p) * 54 - salida * 36).toFixed(2) + "px, 0)" +
+        " scale(" + (0.962 + 0.038 * p).toFixed(4) + ")";
+    });
+  });
+
+  document.documentElement.dataset.listo = "1";
+})();
+</script>
+</body></html>
