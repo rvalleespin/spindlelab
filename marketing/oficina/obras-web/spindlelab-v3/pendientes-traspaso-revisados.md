@@ -209,6 +209,25 @@ quedó fuera el 5-oct.
 > técnico y visibilidad en IA») queda desalineado con la identidad nueva y entra a la construcción de E12; R9
 > (Raigal) sigue antes de mostrar el índice; R1 a R4 y R6 a R8 siguen como estaban, y ninguna frena el tablero.
 > Registro: fila del 16-oct (E12) en el §7 de `spec-visual.md`.
+>
+> **Estado al 16-oct, 19:50 (E12, compuerta 1 aprobada):** el paso 1 quedó hecho y aprobado por Javiera en el cierre
+> exprés de la vuelta 2 (`e12/acta-paso-1.md`, `f248882`): medición de Koto y A&P, brief, inventario de casos, lock y
+> tablero (`tableros/e12-laboratorio/`). Ramón aprobó la compuerta 1 entre las 19:20 y las 19:45 con nueve puntos
+> (`e12/brief-de-obra.md`, sección «Compuerta 1»): las preguntas 1 a 4 con la opción recomendada; Combeau sin pedir
+> más permiso (dicho por él); **Praxi entra como caso**; los casos con la estructura de Koto; **cuatro piezas de
+> concepto** (industrial B2B, clínica, estudio legal y servicios) con identidad, sitio y movimiento; **base negra con
+> juegos de blanco u otros colores**, en vez del claro; **el manual de marca antiguo deja de regir el diseño**; una
+> letra por dirección (A Google Sans Flex, B Mona Sans, DM Mono en las dos); y dos o tres caminos de wordmark de Bruno
+> en la compuerta 2. **Sigue el paso 2** (`e12/encargo-paso-2.md`): Lucía rehace paleta y letra sobre negro y mide
+> el juego de color de Koto; Diego, con Simón, suma Praxi, las grabaciones de Combeau y los conceptos al inventario;
+> Bruno hace los cuatro conceptos y los caminos de logo; Clara, el texto; después, las dos direcciones (A Archivo y B
+> Banco) en `tableros/e12-direcciones/` y la QA de Javiera en contexto limpio, antes de la compuerta 2. Nada se
+> publica y `spindlelab-astro/` no se toca. **Lo que esto le cambia a lo abierto:** R9 (Raigal) se amplía a las
+> cuatro piezas de concepto, que Ramón revisa antes de que salgan; R5 sigue para la construcción; R1 a R4 y R6 a R8,
+> igual. **Para la troncal:** el manual de marca antiguo quedó sin efecto en diseño y la identidad nueva sale después
+> de la compuerta 2; qué hacen mientras tanto las piezas de redes y el outbound que usan el manual viejo lo decide
+> ella (`marketing/encargos-otras-sesiones/encargo-troncal-giro-laboratorio.md` §5). Registro: fila del 16-oct
+> (compuerta 1 de E12) en el §7 de `spec-visual.md`.
 
 No necesita decisión. Se hace en esta rama, se mide y queda anotado en el §7 de la spec.
 
