@@ -1,0 +1,1176 @@
+{
+ "medidoEn": "2026-10-16T17:54:20.472Z",
+ "metodo": "Chromium 141 headless (Playwright 1.63.0 de spindlelab-astro), desde el contenedor de la sesión por su proxy con verificación TLS. Caché desactivado y contexto nuevo en cada corrida; 3 corridas por página y ancho; espera de 4000 ms tras el evento load; sin scroll, sin aceptar cookies, sin limitar CPU ni red. Bytes = encodedDataLength de CDP (lo transferido, con cabeceras). Medición de laboratorio, no de usuarios reales.",
+ "paginas": [
+  {
+   "nombre": "spindlelab.cl (producción, v2)",
+   "url": "https://spindlelab.cl/",
+   "ancho": "390",
+   "mediana": {
+    "ttfb": 217,
+    "fcp": 732,
+    "lcp": 732,
+    "dcl": 1077,
+    "load": 1202,
+    "cls": 0,
+    "pedidos": 18,
+    "bytesTransferidos": 929485,
+    "bytesTerceros": 10664
+   },
+   "corridas": [
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1729,
+     "ttfb": 615,
+     "dcl": 1502,
+     "load": 1716,
+     "fcp": 1148,
+     "lcp": 1148,
+     "lcpElemento": "H1",
+     "cls": 0,
+     "documentoBytesDecodificados": 51790,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 18,
+     "bytesTransferidos": 929408,
+     "bytesTerceros": 10664,
+     "hostsTerceros": [
+      "static.cloudflareinsights.com"
+     ],
+     "bytesPorTipo": {
+      "Document": 12890,
+      "Stylesheet": 7627,
+      "Script": 23636,
+      "Font": 70116,
+      "Image": 793036,
+      "Media": 0,
+      "XHR": 732,
+      "Other": 21371
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1211,
+     "ttfb": 217,
+     "dcl": 1077,
+     "load": 1202,
+     "fcp": 696,
+     "lcp": 696,
+     "lcpElemento": "H1",
+     "cls": 0,
+     "documentoBytesDecodificados": 51790,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 18,
+     "bytesTransferidos": 929501,
+     "bytesTerceros": 10646,
+     "hostsTerceros": [
+      "static.cloudflareinsights.com"
+     ],
+     "bytesPorTipo": {
+      "Document": 12910,
+      "Stylesheet": 7659,
+      "Font": 70121,
+      "Script": 23646,
+      "Image": 793058,
+      "Media": 0,
+      "XHR": 736,
+      "Other": 21371
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1030,
+     "ttfb": 174,
+     "dcl": 952,
+     "load": 1003,
+     "fcp": 732,
+     "lcp": 732,
+     "lcpElemento": "H1",
+     "cls": 0,
+     "documentoBytesDecodificados": 51790,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 18,
+     "bytesTransferidos": 929485,
+     "bytesTerceros": 10664,
+     "hostsTerceros": [
+      "static.cloudflareinsights.com"
+     ],
+     "bytesPorTipo": {
+      "Document": 12915,
+      "Stylesheet": 7635,
+      "Font": 70115,
+      "Script": 23660,
+      "Image": 793047,
+      "Media": 0,
+      "XHR": 734,
+      "Other": 21379
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "spindlelab.cl (producción, v2)",
+   "url": "https://spindlelab.cl/",
+   "ancho": "1440",
+   "mediana": {
+    "ttfb": 298,
+    "fcp": 820,
+    "lcp": 820,
+    "dcl": 1130,
+    "load": 1200,
+    "cls": 0.084,
+    "pedidos": 18,
+    "bytesTransferidos": 929452,
+    "bytesTerceros": 10646
+   },
+   "corridas": [
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 932,
+     "ttfb": 165,
+     "dcl": 883,
+     "load": 915,
+     "fcp": 608,
+     "lcp": 608,
+     "lcpElemento": "H1",
+     "cls": 0.084,
+     "documentoBytesDecodificados": 51790,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 18,
+     "bytesTransferidos": 929452,
+     "bytesTerceros": 10664,
+     "hostsTerceros": [
+      "static.cloudflareinsights.com"
+     ],
+     "bytesPorTipo": {
+      "Document": 12861,
+      "Stylesheet": 7635,
+      "Script": 23673,
+      "Image": 793053,
+      "Font": 70123,
+      "Media": 0,
+      "XHR": 728,
+      "Other": 21379
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1260,
+     "ttfb": 298,
+     "dcl": 1175,
+     "load": 1257,
+     "fcp": 888,
+     "lcp": 888,
+     "lcpElemento": "H1",
+     "cls": 0.084,
+     "documentoBytesDecodificados": 51790,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 18,
+     "bytesTransferidos": 929477,
+     "bytesTerceros": 10646,
+     "hostsTerceros": [
+      "static.cloudflareinsights.com"
+     ],
+     "bytesPorTipo": {
+      "Document": 12902,
+      "Stylesheet": 7635,
+      "Font": 70124,
+      "Script": 23650,
+      "Image": 793059,
+      "Media": 0,
+      "XHR": 728,
+      "Other": 21379
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1208,
+     "ttfb": 344,
+     "dcl": 1130,
+     "load": 1200,
+     "fcp": 820,
+     "lcp": 820,
+     "lcpElemento": "H1",
+     "cls": 0.005,
+     "documentoBytesDecodificados": 51790,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 18,
+     "bytesTransferidos": 929449,
+     "bytesTerceros": 10639,
+     "hostsTerceros": [
+      "static.cloudflareinsights.com"
+     ],
+     "bytesPorTipo": {
+      "Document": 12878,
+      "Stylesheet": 7635,
+      "Font": 70124,
+      "Script": 23643,
+      "Image": 793052,
+      "Media": 0,
+      "XHR": 730,
+      "Other": 21387
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "bernardocombeau.cl",
+   "url": "https://bernardocombeau.cl/",
+   "ancho": "390",
+   "mediana": {
+    "ttfb": 188,
+    "fcp": 548,
+    "lcp": 1536,
+    "dcl": 227,
+    "load": 1373,
+    "cls": 0,
+    "pedidos": 15,
+    "bytesTransferidos": 527852,
+    "bytesTerceros": 0
+   },
+   "corridas": [
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1472,
+     "ttfb": 570,
+     "dcl": 595,
+     "load": 1465,
+     "fcp": 820,
+     "lcp": 1652,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 8544,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 15,
+     "bytesTransferidos": 527893,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 2684,
+      "Stylesheet": 2917,
+      "Image": 520394,
+      "Other": 1898
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 496,
+     "ttfb": 188,
+     "dcl": 227,
+     "load": 493,
+     "fcp": 504,
+     "lcp": 624,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 8544,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 15,
+     "bytesTransferidos": 527840,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 2701,
+      "Stylesheet": 2877,
+      "Image": 520379,
+      "Other": 1883
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1423,
+     "ttfb": 164,
+     "dcl": 193,
+     "load": 1373,
+     "fcp": 548,
+     "lcp": 1536,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 8544,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 15,
+     "bytesTransferidos": 527852,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 2711,
+      "Stylesheet": 2864,
+      "Image": 520379,
+      "Other": 1898
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "bernardocombeau.cl",
+   "url": "https://bernardocombeau.cl/",
+   "ancho": "1440",
+   "mediana": {
+    "ttfb": 125,
+    "fcp": 780,
+    "lcp": 832,
+    "dcl": 169,
+    "load": 684,
+    "cls": 0,
+    "pedidos": 12,
+    "bytesTransferidos": 417337,
+    "bytesTerceros": 0
+   },
+   "corridas": [
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 634,
+     "ttfb": 125,
+     "dcl": 169,
+     "load": 609,
+     "fcp": 780,
+     "lcp": 780,
+     "lcpElemento": "H1",
+     "cls": 0,
+     "documentoBytesDecodificados": 8544,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 12,
+     "bytesTransferidos": 417325,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 2662,
+      "Image": 409910,
+      "Stylesheet": 2855,
+      "Other": 1898
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 693,
+     "ttfb": 113,
+     "dcl": 130,
+     "load": 684,
+     "fcp": 524,
+     "lcp": 832,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 8544,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 12,
+     "bytesTransferidos": 417343,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 2662,
+      "Stylesheet": 2917,
+      "Image": 409866,
+      "Other": 1898
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1398,
+     "ttfb": 492,
+     "dcl": 509,
+     "load": 1387,
+     "fcp": 872,
+     "lcp": 1524,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 8544,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 12,
+     "bytesTransferidos": 417337,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 2690,
+      "Stylesheet": 2825,
+      "Image": 409924,
+      "Other": 1898
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "bernardocombeau.cl/modelo/",
+   "url": "https://bernardocombeau.cl/modelo/",
+   "ancho": "390",
+   "mediana": {
+    "ttfb": 218,
+    "fcp": 460,
+    "lcp": 1296,
+    "dcl": 417,
+    "load": 1214,
+    "cls": 0,
+    "pedidos": 11,
+    "bytesTransferidos": 571218,
+    "bytesTerceros": 0
+   },
+   "corridas": [
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1396,
+     "ttfb": 247,
+     "dcl": 643,
+     "load": 1392,
+     "fcp": 664,
+     "lcp": 1532,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 29288,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 11,
+     "bytesTransferidos": 571224,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 6287,
+      "Stylesheet": 5523,
+      "Image": 557530,
+      "Other": 1884
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1022,
+     "ttfb": 195,
+     "dcl": 417,
+     "load": 1014,
+     "fcp": 460,
+     "lcp": 1084,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 29288,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 11,
+     "bytesTransferidos": 571218,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 6307,
+      "Stylesheet": 5483,
+      "Image": 557530,
+      "Other": 1898
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1227,
+     "ttfb": 218,
+     "dcl": 415,
+     "load": 1214,
+     "fcp": 448,
+     "lcp": 1296,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 29288,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 11,
+     "bytesTransferidos": 571147,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 6285,
+      "Stylesheet": 5422,
+      "Image": 557542,
+      "Other": 1898
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "bernardocombeau.cl/modelo/",
+   "url": "https://bernardocombeau.cl/modelo/",
+   "ancho": "1440",
+   "mediana": {
+    "ttfb": 138,
+    "fcp": 408,
+    "lcp": 1044,
+    "dcl": 316,
+    "load": 943,
+    "cls": 0,
+    "pedidos": 11,
+    "bytesTransferidos": 571128,
+    "bytesTerceros": 0
+   },
+   "corridas": [
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 362,
+     "ttfb": 138,
+     "dcl": 316,
+     "load": 358,
+     "fcp": 408,
+     "lcp": 492,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 29288,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 11,
+     "bytesTransferidos": 571133,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 6287,
+      "Image": 557501,
+      "Stylesheet": 5476,
+      "Other": 1869
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 962,
+     "ttfb": 185,
+     "dcl": 369,
+     "load": 958,
+     "fcp": 412,
+     "lcp": 1048,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 29288,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 11,
+     "bytesTransferidos": 571128,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 6280,
+      "Stylesheet": 5436,
+      "Image": 557528,
+      "Other": 1884
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 958,
+     "ttfb": 103,
+     "dcl": 263,
+     "load": 943,
+     "fcp": 304,
+     "lcp": 1044,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 29288,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 11,
+     "bytesTransferidos": 571090,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 6245,
+      "Stylesheet": 5473,
+      "Image": 557488,
+      "Other": 1884
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "verifica.spindlelab.cl",
+   "url": "https://verifica.spindlelab.cl/",
+   "ancho": "390",
+   "mediana": {
+    "ttfb": 290,
+    "fcp": 524,
+    "lcp": 1132,
+    "dcl": 807,
+    "load": 1083,
+    "cls": 0,
+    "pedidos": 8,
+    "bytesTransferidos": 270140,
+    "bytesTerceros": 11096
+   },
+   "corridas": [
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1127,
+     "ttfb": 517,
+     "dcl": 1064,
+     "load": 1114,
+     "fcp": 696,
+     "lcp": 1160,
+     "lcpElemento": "SECTION",
+     "cls": 0,
+     "documentoBytesDecodificados": 172059,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 8,
+     "bytesTransferidos": 270112,
+     "bytesTerceros": 11096,
+     "hostsTerceros": [
+      "static.cloudflareinsights.com",
+      "cloudflareinsights.com"
+     ],
+     "bytesPorTipo": {
+      "Document": 50250,
+      "Image": 198157,
+      "Font": 10609,
+      "Script": 10704,
+      "Preflight": 0,
+      "XHR": 392
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 980,
+     "ttfb": 290,
+     "dcl": 807,
+     "load": 970,
+     "fcp": 524,
+     "lcp": 1016,
+     "lcpElemento": "SECTION",
+     "cls": 0,
+     "documentoBytesDecodificados": 172059,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 8,
+     "bytesTransferidos": 270140,
+     "bytesTerceros": 11096,
+     "hostsTerceros": [
+      "static.cloudflareinsights.com",
+      "cloudflareinsights.com"
+     ],
+     "bytesPorTipo": {
+      "Document": 50264,
+      "Image": 198164,
+      "Font": 10616,
+      "Script": 10704,
+      "Preflight": 0,
+      "XHR": 392
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1094,
+     "ttfb": 241,
+     "dcl": 714,
+     "load": 1083,
+     "fcp": 476,
+     "lcp": 1132,
+     "lcpElemento": "SECTION",
+     "cls": 0,
+     "documentoBytesDecodificados": 172059,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 8,
+     "bytesTransferidos": 270149,
+     "bytesTerceros": 11096,
+     "hostsTerceros": [
+      "static.cloudflareinsights.com",
+      "cloudflareinsights.com"
+     ],
+     "bytesPorTipo": {
+      "Document": 50266,
+      "Image": 198171,
+      "Font": 10616,
+      "Script": 10704,
+      "Preflight": 0,
+      "XHR": 392
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "verifica.spindlelab.cl",
+   "url": "https://verifica.spindlelab.cl/",
+   "ancho": "1440",
+   "mediana": {
+    "ttfb": 246,
+    "fcp": 636,
+    "lcp": 1012,
+    "dcl": 789,
+    "load": 1015,
+    "cls": 0.067,
+    "pedidos": 8,
+    "bytesTransferidos": 270136,
+    "bytesTerceros": 11096
+   },
+   "corridas": [
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1018,
+     "ttfb": 246,
+     "dcl": 789,
+     "load": 1015,
+     "fcp": 636,
+     "lcp": 1012,
+     "lcpElemento": "SECTION",
+     "cls": 0.067,
+     "documentoBytesDecodificados": 172059,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 8,
+     "bytesTransferidos": 270116,
+     "bytesTerceros": 11075,
+     "hostsTerceros": [
+      "static.cloudflareinsights.com",
+      "cloudflareinsights.com"
+     ],
+     "bytesPorTipo": {
+      "Document": 50254,
+      "Image": 198171,
+      "Font": 10616,
+      "Script": 10683,
+      "Preflight": 0,
+      "XHR": 392
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 960,
+     "ttfb": 216,
+     "dcl": 770,
+     "load": 919,
+     "fcp": 532,
+     "lcp": 1148,
+     "lcpElemento": "SECTION",
+     "cls": 0.067,
+     "documentoBytesDecodificados": 172059,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 8,
+     "bytesTransferidos": 270146,
+     "bytesTerceros": 11103,
+     "hostsTerceros": [
+      "static.cloudflareinsights.com",
+      "cloudflareinsights.com"
+     ],
+     "bytesPorTipo": {
+      "Document": 50256,
+      "Image": 198171,
+      "Font": 10616,
+      "Script": 10711,
+      "Preflight": 0,
+      "XHR": 392
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1140,
+     "ttfb": 527,
+     "dcl": 1134,
+     "load": 1136,
+     "fcp": 788,
+     "lcp": 952,
+     "lcpElemento": "SECTION",
+     "cls": 0.067,
+     "documentoBytesDecodificados": 172059,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 8,
+     "bytesTransferidos": 270136,
+     "bytesTerceros": 11096,
+     "hostsTerceros": [
+      "static.cloudflareinsights.com",
+      "cloudflareinsights.com"
+     ],
+     "bytesPorTipo": {
+      "Document": 50256,
+      "Image": 198171,
+      "Font": 10613,
+      "Script": 10704,
+      "Preflight": 0,
+      "XHR": 392
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "v3, vista previa noindex: /v3/",
+   "url": "https://claude-magical-franklin-ckfk.spindlelab-v2.pages.dev/v3/",
+   "ancho": "390",
+   "mediana": {
+    "ttfb": 229,
+    "fcp": 740,
+    "lcp": 792,
+    "dcl": 1030,
+    "load": 1065,
+    "cls": 0,
+    "pedidos": 18,
+    "bytesTransferidos": 400676,
+    "bytesTerceros": 0
+   },
+   "corridas": [
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1464,
+     "ttfb": 446,
+     "dcl": 1434,
+     "load": 1456,
+     "fcp": 1268,
+     "lcp": 1268,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 38416,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 18,
+     "bytesTransferidos": 400650,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 8894,
+      "Stylesheet": 19274,
+      "Font": 95595,
+      "Image": 230980,
+      "Script": 24502,
+      "Other": 21405
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1071,
+     "ttfb": 181,
+     "dcl": 1030,
+     "load": 1065,
+     "fcp": 728,
+     "lcp": 776,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 38416,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 18,
+     "bytesTransferidos": 400676,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 8892,
+      "Stylesheet": 19304,
+      "Font": 95587,
+      "Image": 230982,
+      "Script": 24516,
+      "Other": 21395
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 938,
+     "ttfb": 229,
+     "dcl": 914,
+     "load": 926,
+     "fcp": 740,
+     "lcp": 792,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 38416,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 18,
+     "bytesTransferidos": 400770,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 8990,
+      "Stylesheet": 19288,
+      "Font": 95595,
+      "Script": 24516,
+      "Image": 230976,
+      "Other": 21405
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "v3, vista previa noindex: /v3/",
+   "url": "https://claude-magical-franklin-ckfk.spindlelab-v2.pages.dev/v3/",
+   "ancho": "1440",
+   "mediana": {
+    "ttfb": 152,
+    "fcp": 672,
+    "lcp": 672,
+    "dcl": 804,
+    "load": 853,
+    "cls": 0.106,
+    "pedidos": 21,
+    "bytesTransferidos": 442810,
+    "bytesTerceros": 0
+   },
+   "corridas": [
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 1678,
+     "ttfb": 152,
+     "dcl": 1651,
+     "load": 1673,
+     "fcp": 1176,
+     "lcp": 1176,
+     "lcpElemento": "H1",
+     "cls": 0.106,
+     "documentoBytesDecodificados": 38416,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 21,
+     "bytesTransferidos": 442810,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 8898,
+      "Stylesheet": 19274,
+      "Font": 95599,
+      "Script": 24500,
+      "Image": 273148,
+      "Other": 21391
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 870,
+     "ttfb": 147,
+     "dcl": 804,
+     "load": 853,
+     "fcp": 672,
+     "lcp": 672,
+     "lcpElemento": "H1",
+     "cls": 0.106,
+     "documentoBytesDecodificados": 38416,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 21,
+     "bytesTransferidos": 442830,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 8896,
+      "Stylesheet": 19286,
+      "Font": 95593,
+      "Script": 24520,
+      "Image": 273144,
+      "Other": 21391
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 817,
+     "ttfb": 231,
+     "dcl": 779,
+     "load": 800,
+     "fcp": 672,
+     "lcp": 672,
+     "lcpElemento": "H1",
+     "cls": 0,
+     "documentoBytesDecodificados": 38416,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 21,
+     "bytesTransferidos": 442800,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 8894,
+      "Stylesheet": 19272,
+      "Font": 95591,
+      "Script": 24500,
+      "Image": 273144,
+      "Other": 21399
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "v3, vista previa noindex: /v3/trabajo/",
+   "url": "https://claude-magical-franklin-ckfk.spindlelab-v2.pages.dev/v3/trabajo/",
+   "ancho": "390",
+   "mediana": {
+    "ttfb": 181,
+    "fcp": 648,
+    "lcp": 760,
+    "dcl": 793,
+    "load": 821,
+    "cls": 0,
+    "pedidos": 16,
+    "bytesTransferidos": 501938,
+    "bytesTerceros": 0
+   },
+   "corridas": [
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 829,
+     "ttfb": 157,
+     "dcl": 730,
+     "load": 821,
+     "fcp": 648,
+     "lcp": 836,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 31666,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 16,
+     "bytesTransferidos": 501962,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 7650,
+      "Stylesheet": 18807,
+      "Font": 95605,
+      "Script": 18387,
+      "Image": 340108,
+      "Other": 21405
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 841,
+     "ttfb": 194,
+     "dcl": 818,
+     "load": 837,
+     "fcp": 688,
+     "lcp": 708,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 31666,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 16,
+     "bytesTransferidos": 501875,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 7656,
+      "Stylesheet": 18748,
+      "Font": 95585,
+      "Script": 18391,
+      "Image": 340096,
+      "Other": 21399
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 809,
+     "ttfb": 181,
+     "dcl": 793,
+     "load": 800,
+     "fcp": 616,
+     "lcp": 760,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 31666,
+     "protocolo": "http/1.1",
+     "ancho": 390,
+     "pedidos": 16,
+     "bytesTransferidos": 501938,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 7644,
+      "Stylesheet": 18799,
+      "Font": 95599,
+      "Script": 18395,
+      "Image": 340096,
+      "Other": 21405
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "v3, vista previa noindex: /v3/trabajo/",
+   "url": "https://claude-magical-franklin-ckfk.spindlelab-v2.pages.dev/v3/trabajo/",
+   "ancho": "1440",
+   "mediana": {
+    "ttfb": 124,
+    "fcp": 564,
+    "lcp": 684,
+    "dcl": 758,
+    "load": 769,
+    "cls": 0,
+    "pedidos": 16,
+    "bytesTransferidos": 482278,
+    "bytesTerceros": 0
+   },
+   "corridas": [
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 893,
+     "ttfb": 261,
+     "dcl": 870,
+     "load": 885,
+     "fcp": 700,
+     "lcp": 776,
+     "lcpElemento": "IMG",
+     "cls": 0.001,
+     "documentoBytesDecodificados": 31666,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 16,
+     "bytesTransferidos": 482243,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 7652,
+      "Stylesheet": 18773,
+      "Font": 95585,
+      "Image": 320434,
+      "Script": 18396,
+      "Other": 21403
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 773,
+     "ttfb": 118,
+     "dcl": 758,
+     "load": 769,
+     "fcp": 564,
+     "lcp": 684,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 31666,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 16,
+     "bytesTransferidos": 482283,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 7650,
+      "Stylesheet": 18812,
+      "Font": 95595,
+      "Script": 18395,
+      "Image": 320432,
+      "Other": 21399
+     }
+    },
+    {
+     "status": 200,
+     "msHastaLoadDesdeNode": 665,
+     "ttfb": 124,
+     "dcl": 652,
+     "load": 662,
+     "fcp": 536,
+     "lcp": 652,
+     "lcpElemento": "IMG",
+     "cls": 0,
+     "documentoBytesDecodificados": 31666,
+     "protocolo": "http/1.1",
+     "ancho": 1440,
+     "pedidos": 16,
+     "bytesTransferidos": 482278,
+     "bytesTerceros": 0,
+     "hostsTerceros": [],
+     "bytesPorTipo": {
+      "Document": 7650,
+      "Stylesheet": 18820,
+      "Font": 95593,
+      "Script": 18388,
+      "Image": 320430,
+      "Other": 21397
+     }
+    }
+   ]
+  }
+ ]
+}

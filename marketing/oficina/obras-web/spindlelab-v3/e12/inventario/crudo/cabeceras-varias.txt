@@ -1,0 +1,110 @@
+### imagen servida por Netlify Image CDN (pedida como lo pide un navegador)
+### GET https://bernardocombeau.cl/.netlify/images?url=%2Fuploads%2Fbeto3.jpg&w=828&h=828&q=80 · 2026-10-16T18:03:22Z
+
+HTTP/2 200 
+age: 2
+cache-control: public,max-age=0,must-revalidate
+cache-status: "Netlify Edge"; fwd=miss; fwd-status=200; stored
+content-security-policy: script-src 'none'
+content-type: image/webp
+date: Fri, 16 Oct 2026 18:03:24 GMT
+etag: "6a57b1e38c757369fe3ac7991d28d745814d7be77a7dd659d5c865b286d95ff0"
+netlify-vary: query=crop|fit|fm|format|h|height|position|q|quality|timestamp|url|w|width,header=Netlify-Image-Accept
+server: Netlify
+strict-transport-security: max-age=31536000
+x-nf-request-id: 01M52Y421JZPCBBJ6287K3V4VT
+content-length: 94576
+
+### la misma foto, original subido desde el panel
+### GET https://bernardocombeau.cl/uploads/beto3.jpg · 2026-10-16T18:03:23Z
+
+HTTP/2 200 
+accept-ranges: bytes
+age: 0
+cache-control: public,max-age=0,must-revalidate
+cache-status: "Netlify Edge"; fwd=miss; fwd-status=200; stored
+content-type: image/jpeg
+date: Fri, 16 Oct 2026 18:03:24 GMT
+etag: "32db20e962dd93a4bef522cd03c2600c-ssl"
+server: Netlify
+strict-transport-security: max-age=31536000
+x-nf-request-id: 01M52Y439108ZJ0A0A39VH4MKQ
+content-length: 804697
+
+### login del panel (client_id y state omitidos)
+### GET https://bernardocombeau.cl/api/auth · 2026-10-16T18:03:24Z
+
+HTTP/2 302 
+age: 1
+cache-control: no-cache
+cache-status: "Netlify Durable"; fwd=bypass
+cache-status: "Netlify Edge"; fwd=miss; fwd-status=302
+date: Fri, 16 Oct 2026 18:03:26 GMT
+location: https://github.com/login/oauth/authorize?client_id=<omitido>&redirect_uri=https%3A%2F%2Fbernardocombeau.cl%2Fapi%2Fcallback&scope=repo%2Cuser&state=<omitido>
+netlify-vary: query
+server: Netlify
+strict-transport-security: max-age=31536000
+x-content-type-options: nosniff
+x-nf-request-id: 01M52Y43KF57691Z1CEZ5B7M7D
+content-length: 0
+
+### video del hero de spindlelab.cl (HEAD)
+### GET https://spindlelab.cl/hero-hilo-de-oro.mp4 · 2026-10-16T18:03:25Z
+
+HTTP/2 200 
+date: Fri, 16 Oct 2026 18:03:26 GMT
+content-type: video/mp4
+content-length: 5091275
+x-content-type-options: nosniff
+access-control-allow-origin: *
+cache-control: public, max-age=2592000
+etag: "fc5be6460b35e1a733da16544e5a1b08"
+referrer-policy: strict-origin-when-cross-origin
+server: cloudflare
+age: 6558
+accept-ranges: bytes
+cf-cache-status: HIT
+cf-ray: a4b8faf32fd6ddd5-MIA
+alt-svc: h3=":443"; ma=86400
+
+### vista previa v3 (noindex)
+### GET https://claude-magical-franklin-ckfk.spindlelab-v2.pages.dev/v3/ · 2026-10-16T18:03:26Z
+
+HTTP/2 200 
+date: Fri, 16 Oct 2026 18:03:27 GMT
+content-type: text/html; charset=utf-8
+access-control-allow-origin: *
+cache-control: public, max-age=0, must-revalidate
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+x-robots-tag: noindex
+server: cloudflare
+cf-ray: a4b8faf96e15187e-IAD
+alt-svc: h3=":443"; ma=86400
+
+### dominio viejo de Verifica
+### GET https://verificaycumple.pages.dev/ · 2026-10-16T18:03:26Z
+
+HTTP/2 301 
+date: Fri, 16 Oct 2026 18:03:27 GMT
+content-length: 0
+location: https://verifica.spindlelab.cl/
+server: cloudflare
+cf-ray: a4b8fafb2fd2065a-IAD
+alt-svc: h3=":443"; ma=86400
+
+### spindlelab.cl/v3/ en producción
+### GET https://spindlelab.cl/v3/ · 2026-10-16T18:03:27Z
+
+HTTP/2 404 
+date: Fri, 16 Oct 2026 18:03:28 GMT
+content-type: text/html; charset=utf-8
+x-content-type-options: nosniff
+access-control-allow-origin: *
+cache-control: no-store
+referrer-policy: strict-origin-when-cross-origin
+server: cloudflare
+cf-cache-status: DYNAMIC
+cf-ray: a4b8fafd1e0dbff6-ATL
+alt-svc: h3=":443"; ma=86400
+

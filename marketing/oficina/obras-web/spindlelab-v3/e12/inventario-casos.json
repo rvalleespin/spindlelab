@@ -1,0 +1,1453 @@
+{
+ "meta": {
+  "obra": "E12 · SpindleLab v3 · inventario de verdad para el índice de laboratorio y los casos",
+  "fecha": "2026-10-16",
+  "horaChile": "mediciones entre 14:50 y 15:05 (UTC-3); el encargo dice 14:05, el reloj del contenedor marcó 14:50 al empezar a medir",
+  "autor": "Diego (diseño y desarrollo web), con el criterio de Simón (SEO y visibilidad en IA)",
+  "rama": "claude/magical-franklin-ckfki2",
+  "base": "347e07f",
+  "mainLeido": "28dbb85 (origin/main al 16-oct 14:17; trae verificaycumple/ desde 241c1ab)",
+  "manda": "e12/insumos-ramon-16oct.md (respuestas 1 a 4)",
+  "reglas": [
+   "Cero prueba social inventada; ningún prospecto nombrado; ninguna cifra sin fuente y fecha.",
+   "Lo que no se midió dice «sin métrica».",
+   "Una etiqueta de ingrediente sin evidencia en este archivo no existe.",
+   "spindlelab-astro/ no se tocó; nada se publicó."
+  ],
+  "convenciones": {
+   "publicable": "sí · solo en Trabajo (E9) · decide Ramón · pide OK escrito de Bernardo · no",
+   "tipoEvidencia": "servido (HTML o cabecera de hoy) · medido (instrumento corrido hoy) · repo (archivo o commit) · dicho (una persona lo afirmó, sin respaldo guardado)"
+  }
+ },
+ "proyectos": [
+  {
+   "id": "combeau-fotografia",
+   "nombre": "Bernardo Combeau, fotografía",
+   "tipo": "cliente",
+   "anio": 2026,
+   "queSeHizo": "Sitio de fotografía de retrato con panel de administración: él carga sus series y el sitio se arma solo. Plan Esencial de Desarrollo web, más una ampliación (una sección adicional) cobrada y entregada.",
+   "fuenteQueSeHizo": [
+    "spindlelab-astro/src/data/obra-v3.json:16",
+    "ventas/proyectos-en-curso.md:16 y nota «Ampliación cobrada y entregada»"
+   ],
+   "paraQuien": "Bernardo Combeau, fotógrafo de retrato, Santiago. Se puede nombrar (ver permiso).",
+   "permiso": {
+    "estado": "verbal",
+    "detalle": "Ramón confirmó el 30-sep-2026, en sesión, que Bernardo dio el permiso de caso público. No hay correo ni mensaje archivado.",
+    "dondeConsta": [
+     "ventas/proyectos-en-curso.md:16 (commit 75bfffc, 10-oct)",
+     "marketing/portafolio/README.md:10"
+    ],
+    "contradicciones": [
+     "marketing/oficina/clientes/bernardo-combeau.md:15 dice «Caso público NO autorizado todavía» (desactualizado; la ficha es documento compartido, la corrige la troncal).",
+     "ventas/pipeline.md:26 dice «Permiso de caso público: aún no pedido» (desactualizado; mismo caso)."
+    ],
+    "permisoEscritoEnElRepo": false,
+    "loQueElPermisoNoCubre": [
+     "Publicar una medición fechada de su sitio (el 76 de hoy, el peso de sus páginas).",
+     "Grabar su sitio o su panel en video.",
+     "Usar su foto en un antes y después de optimización."
+    ],
+    "pedir": "Un WhatsApp de Bernardo que diga que sí a las tres cosas de arriba (brief de obra E12 §8.5)."
+   },
+   "url": "https://bernardocombeau.cl/",
+   "estado": "En producción. Lanzado el 24-jul-2026; hosting en Netlify desde el 8-sep (antes Vercel). Pagado al 100 %.",
+   "fuenteEstado": [
+    "ventas/proyectos-en-curso.md:16 y «Estado de pagos»",
+    "marketing/encargos-otras-sesiones/cierre-oauth-bernardo-y-vercel-desinstalado-23sep.md:20, :33"
+   ],
+   "repo": "rvalleespin/bernardo-combeau (carpeta bernardo-site/, según la configuración del panel servida en /admin/). No accesible desde esta sesión: el stack sale de lo servido.",
+   "ingredientes": [
+    {
+     "etiqueta": "Astro",
+     "efecto": "Las páginas llegan armadas como HTML: la portada no carga ningún script externo y trae uno solo en línea.",
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "meta generator «Astro v7.3.1»; hojas en /_astro/",
+       "fuente": "e12/inventario/crudo/servido-bernardocombeau.cl.extracto.json"
+      },
+      {
+       "tipo": "servido",
+       "detalle": "portada: 0 scripts externos, 1 en línea",
+       "fuente": "e12/inventario/crudo/servido-bernardocombeau.cl.extracto.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Decap CMS",
+     "efecto": "Él carga sus series solo, desde un panel, sin pedirnos nada.",
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "/admin/ carga unpkg.com/decap-cms@3.15.1; backend «github», publish_mode «simple»",
+       "fuente": "e12/inventario/crudo/servido-bernardocombeau.cl.extracto.json"
+      },
+      {
+       "tipo": "repo",
+       "detalle": "«está usando el panel de administración directamente (creó series de prueba él mismo)»",
+       "fuente": "ventas/proyectos-en-curso.md:16"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Login con GitHub",
+     "efecto": "Entra al panel con su cuenta de GitHub.",
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "/api/auth responde 302 a github.com/login/oauth/authorize (client_id y state omitidos)",
+       "fuente": "e12/inventario/crudo/cabeceras-varias.txt"
+      },
+      {
+       "tipo": "repo",
+       "detalle": "login OAuth verificado el 23-sep",
+       "fuente": "marketing/encargos-otras-sesiones/cierre-oauth-bernardo-y-vercel-desinstalado-23sep.md, «Estado final»"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Netlify",
+     "efecto": null,
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "server: Netlify; x-nf-request-id",
+       "fuente": "e12/inventario/crudo/servido-bernardocombeau.cl.headers.txt"
+      },
+      {
+       "tipo": "repo",
+       "detalle": "migración a Netlify del 8-sep",
+       "fuente": "marketing/encargos-otras-sesiones/cierre-oauth-bernardo-y-vercel-desinstalado-23sep.md:20"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Netlify Image CDN",
+     "efecto": "Él sube la foto tal cual y el sitio la sirve recortada y en WebP: el original de una foto de la portada pesa 786 KB y se entrega en 92 KB a 828 px.",
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "11 rutas /.netlify/images en la portada y 52 en /modelo/",
+       "fuente": "e12/inventario/crudo/servido-bernardocombeau.cl.extracto.json"
+      },
+      {
+       "tipo": "medido",
+       "detalle": "beto3.jpg: original image/jpeg 804.697 bytes; servida w=828 q=80 como image/webp 94.576 bytes (16-oct 18:03Z)",
+       "fuente": "e12/inventario/crudo/cabeceras-varias.txt"
+      }
+     ],
+     "nota": "ventas/pipeline.md:25 dice que en Bernardo las fotos «se publican tal cual». Es cierto del archivo guardado (el original queda en /uploads/ con 786 KB) y falso de lo que ve el visitante, que recibe la versión del CDN."
+    },
+    {
+     "etiqueta": "Datos estructurados (Person y LocalBusiness)",
+     "efecto": "Una máquina puede leer quién es, a qué se dedica y dónde trabaja.",
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "JSON-LD Person + LocalBusiness en / y /modelo/",
+       "fuente": "e12/inventario/crudo/servido-bernardocombeau.cl.extracto.json"
+      },
+      {
+       "tipo": "repo",
+       "detalle": "antes de la revisión del 3-sep: «JSON-LD: cero en todo el sitio, confirmado»",
+       "fuente": "marketing/oficina/memoria/diego-web.md:66"
+      },
+      {
+       "tipo": "medido",
+       "detalle": "chequeo: «Tienes datos estructurados» ok, «Tu negocio está declarado como entidad» ok",
+       "fuente": "e12/inventario/crudo/chequeo-bernardocombeau.cl.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "llms.txt",
+     "efecto": null,
+     "evidencia": [
+      {
+       "tipo": "medido",
+       "detalle": "chequeo: «Tienes llms.txt» ok",
+       "fuente": "e12/inventario/crudo/chequeo-bernardocombeau.cl.json"
+      }
+     ]
+    }
+   ],
+   "ingredientesQueNoTiene": [
+    "Tailwind: 0 variables --tw- en sus dos hojas de estilo (nav.CF0EkcfM.css, index.BwiNCL_U.css), medido 16-oct.",
+    "React, WebGL, IA, «modelos RAG»: nada de eso aparece en lo servido.",
+    "Vercel: lo usó hasta el 8-sep; hoy no."
+   ],
+   "metricas": [
+    {
+     "nombre": "Chequeo de visibilidad en IA de SpindleLab",
+     "valor": "76/100",
+     "detalle": "21 de 21 señales confirmadas; faltan: 3 perfiles externos (sameAs), preguntas frecuentes marcadas, títulos como pregunta, fecha en el schema, contenido suficiente en la portada.",
+     "fecha": "2026-10-16T17:51:03Z",
+     "metodo": "curl -s \"https://spindlelab.cl/api/chequeo?dominio=bernardocombeau.cl\"; lee solo la portada",
+     "crudo": "e12/inventario/crudo/chequeo-bernardocombeau.cl.json",
+     "publicable": "pide OK escrito de Bernardo",
+     "antes": "sin métrica: no hay corrida del chequeo sobre este sitio antes de hoy en el repo. Lo único anterior es cualitativo (cero JSON-LD el 3-sep)."
+    },
+    {
+     "nombre": "Carga y peso de la portada (laboratorio)",
+     "fecha": "2026-10-16T17:54Z a 17:57Z",
+     "metodo": "Laboratorio, no usuarios reales: Chromium 141.0.7390.37 headless (Playwright 1.63.0) desde el contenedor de la sesión, que sale por el proxy por la costa este de EE.UU. (cf-ray EWR/IAD), sin limitar red ni CPU, caché frío, sin aceptar cookies, sin scroll, mediana de 3 corridas, 4 s de espera tras load. Chromium negoció HTTP/1.1 a través del proxy; un visitante real usa HTTP/2 o 3. Los kB transferidos dependen poco de esto; los ms, mucho.",
+     "crudo": "e12/inventario/crudo/carga-playwright.json",
+     "herramienta": "e12/inventario/herramientas/medir-carga.mjs",
+     "a390": {
+      "ttfbMs": 188,
+      "fcpMs": 548,
+      "lcpMs": 1536,
+      "loadMs": 1373,
+      "cls": 0,
+      "pedidos": 15,
+      "kbTransferidos": 515,
+      "kbTerceros": 0
+     },
+     "a1440": {
+      "ttfbMs": 125,
+      "fcpMs": 780,
+      "lcpMs": 832,
+      "loadMs": 684,
+      "cls": 0,
+      "pedidos": 12,
+      "kbTransferidos": 408,
+      "kbTerceros": 0
+     },
+     "publicable": "Los kB, sí, con fecha y método. Los ms, no como «velocidad para tus clientes»: son de laboratorio y desde EE.UU."
+    },
+    {
+     "nombre": "Encabezado principal (h1) por ruta",
+     "valor": "7 de 11 rutas sin h1; el de la portada se lee pegado («Se construyedirigiendo»)",
+     "fecha": "2026-10-16T17:59Z",
+     "metodo": "curl -L de las 11 rutas, contando <h1 en el HTML servido",
+     "crudo": "e12/inventario/crudo/h1-bernardocombeau.cl.tsv",
+     "publicable": "no: es un defecto abierto, no un resultado",
+     "antes": "Igual el 10-oct (marketing/encargos-otras-sesiones/encargo-h1-sitio-bernardo-10oct.md §2). El encargo sigue sin aplicar."
+    }
+   ],
+   "sinMetrica": [
+    "Visitas, consultas o contactos que le trajo el sitio: no hay analítica detectable en lo servido ni dato en el repo.",
+    "Lighthouse o PageSpeed: no se corrió.",
+    "Datos de campo (CrUX): no se consultaron.",
+    "Tiempo de entrega de punta a punta: el repo no tiene la fecha de inicio."
+   ],
+   "noSePuedeDecir": [
+    "Ningún resultado de negocio (más clientes, más reservas, +X %): no existe medición.",
+    "Que su sitio está impecable en SEO: 7 de 11 rutas sin h1.",
+    "Su puntaje o el peso de sus páginas en público, sin su OK escrito."
+   ]
+  },
+  {
+   "id": "combeau-modelo",
+   "nombre": "Bernardo Combeau | Model",
+   "tipo": "cliente",
+   "anio": 2026,
+   "queSeHizo": "Book de modelo en inglés dentro del mismo dominio, con su propia marca y navegación; video y reel que cargan solo cuando hacen falta.",
+   "fuenteQueSeHizo": [
+    "spindlelab-astro/src/data/obra-v3.json:33",
+    "servido 16-oct"
+   ],
+   "paraQuien": "El mismo cliente.",
+   "permiso": {
+    "estado": "verbal",
+    "detalle": "El mismo permiso del 30-sep cubre los dos sitios.",
+    "dondeConsta": [
+     "ventas/proyectos-en-curso.md:16"
+    ],
+    "permisoEscritoEnElRepo": false
+   },
+   "url": "https://bernardocombeau.cl/modelo/",
+   "estado": "En producción.",
+   "ingredientes": [
+    {
+     "etiqueta": "Astro",
+     "efecto": null,
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "meta generator «Astro v7.3.1»",
+       "fuente": "e12/inventario/crudo/servido-bernardocombeau.cl.extracto.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Decap CMS",
+     "efecto": "Él mantiene también este book desde el panel.",
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "/admin/: colección «Modelo» con 9 archivos (bernardo-site/src/data/modelo/*.json), de 8 colecciones en total",
+       "fuente": "e12/inventario/crudo/servido-bernardocombeau.cl.extracto.json"
+      }
+     ],
+     "nota": "Que el book se edita desde el panel se ve en la configuración servida; que él lo haya editado, no consta."
+    },
+    {
+     "etiqueta": "Netlify Image CDN",
+     "efecto": null,
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "52 rutas /.netlify/images",
+       "fuente": "e12/inventario/crudo/servido-bernardocombeau.cl.extracto.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Video con carga diferida",
+     "efecto": "La página no baja el video ni el reel hasta que hacen falta: en la medición, 0 KB de video en la carga inicial.",
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "<video preload=\"none\" data-src=…> desde un CDN externo y reel de YouTube sin cookies (youtube-nocookie.com) con data-src",
+       "fuente": "servido 16-oct (HTML no guardado: trae datos de contacto); hash en e12/inventario/crudo/servido-bernardocombeau.cl.extracto.json"
+      },
+      {
+       "tipo": "medido",
+       "detalle": "bytes por tipo en la carga: 0 de media",
+       "fuente": "e12/inventario/crudo/carga-playwright.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Datos estructurados (Person y LocalBusiness)",
+     "efecto": null,
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "JSON-LD Person + LocalBusiness",
+       "fuente": "e12/inventario/crudo/servido-bernardocombeau.cl.extracto.json"
+      }
+     ]
+    }
+   ],
+   "ingredientesQueNoTiene": [
+    "Marcado de idioma: el book está en inglés y la página declara html lang=\"es\" (servido 16-oct). No se puede etiquetar «bilingüe»."
+   ],
+   "metricas": [
+    {
+     "nombre": "Carga y peso de /modelo/ (laboratorio)",
+     "fecha": "2026-10-16T17:54Z a 17:57Z",
+     "metodo": "Laboratorio, no usuarios reales: Chromium 141.0.7390.37 headless (Playwright 1.63.0) desde el contenedor de la sesión, que sale por el proxy por la costa este de EE.UU. (cf-ray EWR/IAD), sin limitar red ni CPU, caché frío, sin aceptar cookies, sin scroll, mediana de 3 corridas, 4 s de espera tras load. Chromium negoció HTTP/1.1 a través del proxy; un visitante real usa HTTP/2 o 3. Los kB transferidos dependen poco de esto; los ms, mucho.",
+     "crudo": "e12/inventario/crudo/carga-playwright.json",
+     "herramienta": "e12/inventario/herramientas/medir-carga.mjs",
+     "a390": {
+      "ttfbMs": 218,
+      "fcpMs": 460,
+      "lcpMs": 1296,
+      "loadMs": 1214,
+      "cls": 0,
+      "pedidos": 11,
+      "kbTransferidos": 558,
+      "kbTerceros": 0
+     },
+     "a1440": {
+      "ttfbMs": 138,
+      "fcpMs": 408,
+      "lcpMs": 1044,
+      "loadMs": 943,
+      "cls": 0,
+      "pedidos": 11,
+      "kbTransferidos": 558,
+      "kbTerceros": 0
+     },
+     "publicable": "Los kB, sí, con fecha y método. Los ms, no como «velocidad para tus clientes»: son de laboratorio y desde EE.UU."
+    },
+    {
+     "nombre": "h1",
+     "valor": "0 en /modelo/; 1 en /modelo/work, /modelo/motion y /modelo/commercials",
+     "fecha": "2026-10-16T17:59Z",
+     "metodo": "curl -L",
+     "crudo": "e12/inventario/crudo/h1-bernardocombeau.cl.tsv",
+     "publicable": "no"
+    }
+   ],
+   "sinMetrica": [
+    "Contrataciones o castings que haya traído el book.",
+    "Chequeo propio: el chequeo lee solo la raíz del dominio, así que /modelo/ comparte el 76 de la portada y no tiene número propio."
+   ],
+   "noSePuedeDecir": [
+    "«Bilingüe» o «internacionalizado»: lang=\"es\" sobre texto en inglés.",
+    "Que el video se produjo en el estudio: el repo no lo dice."
+   ]
+  },
+  {
+   "id": "verifica-y-cumple",
+   "nombre": "Verifica y Cumple",
+   "tipo": "propio",
+   "anio": 2026,
+   "queSeHizo": "Chequeo gratuito de las señales técnicas de la Ley 21.719 que se ven desde afuera en un sitio (política enlazada, HTTPS, permiso antes de rastreadores, casilla de consentimiento), con un chequeo profundo que abre un navegador remoto. Es un servicio de SpindleLab desde el 21-sep.",
+   "fuenteQueSeHizo": [
+    "ventas/casos-de-exito/verifica-y-cumple.md (en main)",
+    "laboratorio/01-cumplimiento-ley-21719/brief.md",
+    "verificaycumple/functions/api/ (en main, 241c1ab)"
+   ],
+   "paraQuien": "Producto propio.",
+   "permiso": {
+    "estado": "propio",
+    "dondeConsta": [
+     "ventas/casos-de-exito/verifica-y-cumple.md: «Es un servicio de SpindleLab (decisión de Ramón, 21-sep-2026)»"
+    ],
+    "permisoEscritoEnElRepo": true
+   },
+   "url": "https://verifica.spindlelab.cl/",
+   "estado": "En producción desde el 23-sep (primera versión 3-sep en verificaycumple.pages.dev, que hoy redirige con 301).",
+   "fuenteEstado": [
+    "marketing/lanzamiento-vyc-23sep/LEEME.md:5",
+    "e12/inventario/crudo/cabeceras-varias.txt"
+   ],
+   "ingredientes": [
+    {
+     "etiqueta": "HTML y CSS escritos a mano",
+     "efecto": "Una sola página, sin framework: 8 pedidos y 264 KB en la carga.",
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "sin meta generator, CSS en línea, un index.html",
+       "fuente": "e12/inventario/crudo/servido-verifica.spindlelab.cl.html"
+      },
+      {
+       "tipo": "repo",
+       "detalle": "verificaycumple/public/index.html",
+       "fuente": "origin/main 241c1ab"
+      },
+      {
+       "tipo": "medido",
+       "detalle": "8 pedidos, 264 KB",
+       "fuente": "e12/inventario/crudo/carga-playwright.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Cloudflare Pages",
+     "efecto": null,
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "server: cloudflare, cf-ray",
+       "fuente": "e12/inventario/crudo/servido-verifica.spindlelab.cl.headers.txt"
+      },
+      {
+       "tipo": "repo",
+       "detalle": "wrangler.toml: pages_build_output_dir = \"public\"",
+       "fuente": "origin/main:verificaycumple/wrangler.toml"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Cloudflare Pages Functions",
+     "efecto": "El chequeo corre en el servidor, en segundos, sobre el dominio que escribas.",
+     "evidencia": [
+      {
+       "tipo": "medido",
+       "detalle": "/api/chequeo?dominio=spindlelab.cl respondió 200 en 0,52 s",
+       "fuente": "e12/inventario/crudo/vyc-chequeo-spindlelab.cl.json"
+      },
+      {
+       "tipo": "repo",
+       "detalle": "functions/api/chequeo.js, doce-puntos.js, profundo.js",
+       "fuente": "origin/main:verificaycumple/functions/api/"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Cloudflare Browser Rendering",
+     "efecto": "El chequeo profundo abre un navegador de verdad para ver qué se dispara antes del permiso.",
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "profundo.js habla CDP con un navegador remoto; wrangler.toml documenta el token CF_BROWSER_TOKEN",
+       "fuente": "origin/main:verificaycumple/functions/api/profundo.js, wrangler.toml"
+      }
+     ],
+     "nota": "No se corrió hoy: gasta la cuota del mes de Ramón. Etiqueta respaldada por el repo, no por una corrida."
+    },
+    {
+     "etiqueta": "Cloudflare KV",
+     "efecto": "Un tope de abuso para el chequeo profundo.",
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "[[kv_namespaces]] binding VYC_TOPES",
+       "fuente": "origin/main:verificaycumple/wrangler.toml"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Cloudflare Web Analytics",
+     "efecto": null,
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "static.cloudflareinsights.com/beacon.min.js",
+       "fuente": "e12/inventario/crudo/servido-verifica.spindlelab.cl.html"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Web3Forms",
+     "efecto": null,
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "formulario hacia web3forms.com/submit",
+       "fuente": "e12/inventario/crudo/servido-verifica.spindlelab.cl.html"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Datos estructurados (WebApplication, WebPage, ProfessionalService, Person, FAQPage)",
+     "efecto": null,
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "JSON-LD con esos cinco tipos, fechas 2026-09-23 / 2026-10-15",
+       "fuente": "e12/inventario/crudo/servido-verifica.spindlelab.cl.html"
+      },
+      {
+       "tipo": "repo",
+       "detalle": "agregados el 15-oct",
+       "fuente": "commit 7696d63"
+      }
+     ]
+    },
+    {
+     "etiqueta": "robots.txt, llms.txt y sitemap.xml",
+     "efecto": null,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "publicados el 15-oct; antes las tres rutas devolvían la portada con 200",
+       "fuente": "commit 9391a0b"
+      },
+      {
+       "tipo": "medido",
+       "detalle": "chequeo: llms.txt ok, sitemap.xml ok",
+       "fuente": "e12/inventario/crudo/chequeo-verifica.spindlelab.cl.json"
+      }
+     ]
+    }
+   ],
+   "metricas": [
+    {
+     "nombre": "Chequeo de visibilidad en IA de SpindleLab (el mismo instrumento dos veces)",
+     "valor": "54/100 el 14-oct → 94/100 el 16-oct",
+     "detalle": "Entre las dos corridas se publicaron robots, llms.txt, sitemap y 404 (9391a0b, 15-oct) y el schema completo con preguntas visibles (7696d63, 15-oct). El 14-oct faltaban 9 señales; hoy falta 1 (3 perfiles externos). functions/api/chequeo.js no cambió en main entre ambas fechas (último cambio a453333, 23-sep).",
+     "fecha": "2026-10-14T22:29:46Z y 2026-10-16T17:51:04Z",
+     "metodo": "GET https://spindlelab.cl/api/chequeo?dominio=verifica.spindlelab.cl",
+     "crudo": [
+      "e9/piezas/crudo/2026-10-14/verifica.spindlelab.cl/chequeo-ia.json",
+      "e12/inventario/crudo/chequeo-verifica.spindlelab.cl.json"
+     ],
+     "publicable": "decide Ramón (e11/material.md §6: los puntajes del chequeo propio esperan su OK)",
+     "nota": "Es el único antes y después del repo medido con el mismo instrumento y con los dos crudos guardados. El commit 7696d63 nombra un 62 intermedio y el puntaje de un competidor: sin crudo, no se usan.",
+     "desglose": "Señales que pasaron a ok: entidad 8, entidad con dirección 5, persona detrás 5, descripción 4, preguntas frecuentes 6, fecha 4 (schema, 7696d63) = 32; llms.txt 4 y sitemap 4 (9391a0b) = 8. Total 40: 54 + 40 = 94. Sigue pendiente sameAs (6)."
+    },
+    {
+     "nombre": "Chequeo de Verifica y Cumple sobre sí mismo",
+     "valor": "100",
+     "detalle": "Sobre 18 de 24 puntos de peso: «Permiso antes de cargar rastreadores» queda sin confirmar desde afuera.",
+     "fecha": "2026-10-16T17:52:43Z",
+     "metodo": "GET https://verifica.spindlelab.cl/api/chequeo?dominio=verifica.spindlelab.cl",
+     "crudo": "e12/inventario/crudo/vyc-chequeo-verifica.spindlelab.cl.json",
+     "publicable": "decide Ramón; si sale, con el «18 de 24» al lado"
+    },
+    {
+     "nombre": "Carga y peso de la portada (laboratorio)",
+     "fecha": "2026-10-16T17:54Z a 17:57Z",
+     "metodo": "Laboratorio, no usuarios reales: Chromium 141.0.7390.37 headless (Playwright 1.63.0) desde el contenedor de la sesión, que sale por el proxy por la costa este de EE.UU. (cf-ray EWR/IAD), sin limitar red ni CPU, caché frío, sin aceptar cookies, sin scroll, mediana de 3 corridas, 4 s de espera tras load. Chromium negoció HTTP/1.1 a través del proxy; un visitante real usa HTTP/2 o 3. Los kB transferidos dependen poco de esto; los ms, mucho.",
+     "crudo": "e12/inventario/crudo/carga-playwright.json",
+     "herramienta": "e12/inventario/herramientas/medir-carga.mjs",
+     "a390": {
+      "ttfbMs": 290,
+      "fcpMs": 524,
+      "lcpMs": 1132,
+      "loadMs": 1083,
+      "cls": 0,
+      "pedidos": 8,
+      "kbTransferidos": 264,
+      "kbTerceros": 11
+     },
+     "a1440": {
+      "ttfbMs": 246,
+      "fcpMs": 636,
+      "lcpMs": 1012,
+      "loadMs": 1015,
+      "cls": 0.067,
+      "pedidos": 8,
+      "kbTransferidos": 264,
+      "kbTerceros": 11
+     },
+     "publicable": "Los kB, sí, con fecha y método. Los ms, no como «velocidad para tus clientes»: son de laboratorio y desde EE.UU."
+    }
+   ],
+   "sinMetrica": [
+    "Cuántos chequeos se han corrido: el chequeo no guarda dominios y no hay contador.",
+    "Kits o suscripciones vendidos: el repo no registra ninguno.",
+    "Chequeo profundo: no se corrió hoy (cuota)."
+   ],
+   "noSePuedeDecir": [
+    "Que certifica cumplimiento: «Nunca certifica cumplimiento» (caso de éxito).",
+    "El 62 del 15-oct y el puntaje del competidor del commit 7696d63: sin crudo.",
+    "Que tiene usuarios o clientes: no hay dato."
+   ]
+  },
+  {
+   "id": "chequeo-visibilidad-ia",
+   "nombre": "Chequeo de visibilidad en IA (21 señales)",
+   "tipo": "herramienta",
+   "anio": 2026,
+   "queSeHizo": "Lee la portada de cualquier dominio y reporta 21 señales en tres bloques (¿te pueden leer? 30, ¿te entienden? 40, ¿te pueden citar? 30), incluida la prueba de pedir la portada con el nombre de tres robots de IA.",
+   "fuenteQueSeHizo": [
+    "spindlelab-astro/functions/api/chequeo.js (1258 líneas)",
+    "e11/material.md §3"
+   ],
+   "paraQuien": "Producto propio; cualquiera lo corre sobre su dominio, gratis y sin correo.",
+   "permiso": {
+    "estado": "propio",
+    "permisoEscritoEnElRepo": true,
+    "dondeConsta": [
+     "repo"
+    ]
+   },
+   "url": "https://spindlelab.cl/diagnostico/ (página) · https://spindlelab.cl/api/chequeo?dominio= (API)",
+   "estado": "En producción desde el 27-ago-2026 (commit 4bdfb62); último cambio del código en main el 23-sep (a453333). La rama v3 tiene el mismo archivo (git diff vacío contra main).",
+   "ingredientes": [
+    {
+     "etiqueta": "Cloudflare Pages Functions",
+     "efecto": "El chequeo corre en el servidor: tu navegador no hace nada más que preguntar.",
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "functions/api/chequeo.js, onRequestGet",
+       "fuente": "spindlelab-astro/functions/api/chequeo.js:1246"
+      },
+      {
+       "tipo": "medido",
+       "detalle": "3 corridas hoy, 200 en 0,6 a 1,4 s, cache-control: no-store",
+       "fuente": "e12/inventario/crudo/chequeo-spindlelab.cl.headers.txt"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Prueba con el user-agent de tres robots de IA",
+     "efecto": "Te dice si tu servidor echa a los robots de ChatGPT o Perplexity aunque tu robots.txt los deje entrar.",
+     "evidencia": [
+      {
+       "tipo": "medido",
+       "detalle": "detalle de «El servidor no expulsa a los robots de IA»: OAI-SearchBot, ChatGPT-User y PerplexityBot",
+       "fuente": "e12/inventario/crudo/chequeo-spindlelab.cl.json"
+      }
+     ]
+    }
+   ],
+   "metricas": [
+    {
+     "nombre": "Señales y pesos",
+     "valor": "21 señales; 30 + 40 + 30 = 100",
+     "fecha": "2026-10-16",
+     "metodo": "conteo de items en las tres respuestas de hoy",
+     "crudo": "e12/inventario/crudo/chequeo-spindlelab.cl.json",
+     "publicable": "sí"
+    }
+   ],
+   "sinMetrica": [
+    "Cuántas veces se ha corrido: no guarda dominios; el evento chequeo_completado de GA4 solo cuenta a quien aceptó cookies y no está exportado."
+   ],
+   "noSePuedeDecir": [
+    "Que un puntaje alto te hace aparecer en ChatGPT (la propia página lo niega).",
+    "Que prueba Gemini en vivo: no lo prueba (e11/material.md §3).",
+    "Que ve las reglas de bots del borde de Cloudflare: lo advierte en cada respuesta."
+   ]
+  },
+  {
+   "id": "raigal",
+   "nombre": "Raigal",
+   "tipo": "concepto",
+   "anio": 2026,
+   "queSeHizo": "Portada de una clínica de implantología que no existe: costo y plazos, etapas, la especialista (ficticia), lo que no se promete y preguntas frecuentes. Ejercicio rotulado.",
+   "fuenteQueSeHizo": [
+    "marketing/portafolio/01-raigal/ficha.md",
+    "spindlelab-astro/src/data/obra-v3.json:64"
+   ],
+   "paraQuien": "Nadie: «Raigal no existe».",
+   "permiso": {
+    "estado": "propio, rotulado",
+    "detalle": "Ramón lo revisa antes de mostrárselo a un prospecto (R9).",
+    "dondeConsta": [
+     "e11/material.md §5",
+     "marketing/portafolio/01-raigal/ficha.md:90 («[ ] Revisión humana antes de usar esto con un prospecto»)"
+    ],
+    "permisoEscritoEnElRepo": true
+   },
+   "url": null,
+   "estado": "Construida la portada; no está publicada en ninguna URL. En el v3 aparece solo como maqueta (mock-raigal-ancho.jpg).",
+   "ingredientes": [
+    {
+     "etiqueta": "HTML y CSS a mano, en un archivo",
+     "efecto": null,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "marketing/portafolio/01-raigal/sitio/index.html, 40 KB, sin scripts salvo el JSON-LD",
+       "fuente": "repo"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Datos estructurados (Dentist, Person, MedicalProcedure, FAQPage)",
+     "efecto": null,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "JSON-LD con esos cuatro tipos",
+       "fuente": "marketing/portafolio/01-raigal/sitio/index.html"
+      }
+     ]
+    }
+   ],
+   "nota": "Sus etiquetas solo pueden decir «en la maqueta», porque no hay nada servido que comprobar.",
+   "metricas": [],
+   "sinMetrica": [
+    "Todo: sin URL no hay chequeo, carga ni peso servido. Y por regla de la serie, una pieza de concepto no lleva cifras de resultado (marketing/portafolio/README.md, regla 3)."
+   ],
+   "noSePuedeDecir": [
+    "Que es un cliente, un caso o que tuvo pacientes.",
+    "Ninguna cifra de resultado."
+   ]
+  },
+  {
+   "id": "spindlelab-cl",
+   "nombre": "spindlelab.cl (este sitio)",
+   "tipo": "propio",
+   "anio": 2026,
+   "queSeHizo": "El sitio en producción (v2) y el v3 en construcción, sin publicar, con vista previa noindex.",
+   "paraQuien": "Propio.",
+   "permiso": {
+    "estado": "propio",
+    "permisoEscritoEnElRepo": true,
+    "dondeConsta": [
+     "repo"
+    ]
+   },
+   "url": "https://spindlelab.cl/ · v3: https://claude-magical-franklin-ckfk.spindlelab-v2.pages.dev/v3/ (noindex por cabecera y por meta)",
+   "estado": "Producción v2. El v3 no está en producción (spindlelab.cl/v3/ da 404); la vista previa sirve el build de f0d911c (14-oct): /v3/trabajo/ es idéntica byte a byte a dist/.",
+   "entraAlIndice": "Lo deciden Lucía y Mauro: puede ser una entrada o ser la parte Logic de la home.",
+   "ingredientes": [
+    {
+     "etiqueta": "Astro",
+     "efecto": null,
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "meta generator «Astro v4.16.19» en producción y en la vista previa",
+       "fuente": "e12/inventario/crudo/servido-spindlelab.cl.html"
+      },
+      {
+       "tipo": "repo",
+       "detalle": "astro 4.16.19 instalado",
+       "fuente": "spindlelab-astro/package.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Tailwind CSS",
+     "efecto": null,
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "217 variables --tw- en /_astro/index.DELdUd0E.css",
+       "fuente": "medido 16-oct con curl + grep"
+      },
+      {
+       "tipo": "repo",
+       "detalle": "tailwindcss 3.4.19, @astrojs/tailwind 5.1.5",
+       "fuente": "spindlelab-astro/package.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Cloudflare Pages + Pages Functions",
+     "efecto": "El chequeo vive en el mismo sitio.",
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "server: cloudflare, cf-ray",
+       "fuente": "e12/inventario/crudo/servido-spindlelab.cl.headers.txt"
+      },
+      {
+       "tipo": "repo",
+       "detalle": "functions/api/chequeo.js",
+       "fuente": "spindlelab-astro/functions/"
+      }
+     ]
+    },
+    {
+     "etiqueta": "GA4 y Meta Pixel tras el aviso de cookies",
+     "efecto": "No miden a nadie que no haya dicho que sí.",
+     "evidencia": [
+      {
+       "tipo": "servido",
+       "detalle": "gtag y fbq en el HTML; /js/consent-banner.js?v=3",
+       "fuente": "e12/inventario/crudo/servido-spindlelab.cl.html"
+      },
+      {
+       "tipo": "medido",
+       "detalle": "Verifica y Cumple: política enlazada ok; el permiso previo no se puede confirmar desde afuera",
+       "fuente": "e12/inventario/crudo/vyc-chequeo-spindlelab.cl.json"
+      },
+      {
+       "tipo": "medido",
+       "detalle": "en la carga sin aceptar: 10 KB de terceros, todos de Cloudflare",
+       "fuente": "e12/inventario/crudo/carga-playwright.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Lenis (solo v3)",
+     "efecto": "Scroll suave, apagado para quien pide menos movimiento.",
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "Layout.astro:213-246; lenis 1.3.26",
+       "fuente": "spindlelab-astro/src/layouts/Layout.astro"
+      },
+      {
+       "tipo": "servido",
+       "detalle": "en el JS de la vista previa (hoisted.Bkkmjuy0.js), no en el de producción",
+       "fuente": "medido 16-oct con curl + grep"
+      }
+     ]
+    }
+   ],
+   "ingredientesQueNoTiene": [
+    "Motion: todavía no está instalado (lo pide el brief para la construcción).",
+    "Next.js, React: no."
+   ],
+   "metricas": [
+    {
+     "nombre": "Chequeo de visibilidad en IA sobre spindlelab.cl (producción)",
+     "valor": "85/100",
+     "detalle": "Faltan: 3 perfiles externos (declara 2), títulos como pregunta, fecha en el schema. Igual que el 14-oct (85, mismas tres).",
+     "fecha": "2026-10-16T17:51:02Z (y 2026-10-14T22:29:44Z)",
+     "metodo": "GET /api/chequeo?dominio=spindlelab.cl",
+     "crudo": [
+      "e12/inventario/crudo/chequeo-spindlelab.cl.json",
+      "e9/piezas/crudo/2026-10-14/spindlelab.cl/chequeo-ia.json"
+     ],
+     "publicable": "decide Ramón (e11/material.md §6)"
+    },
+    {
+     "nombre": "Verifica y Cumple sobre spindlelab.cl",
+     "valor": "36 (9-sep) → 73 (21-sep) → 100 (14-oct y 16-oct)",
+     "detalle": "El 100 es sobre 14 de 20 puntos de peso: el permiso antes de rastreadores no se confirma desde afuera. El 23-sep cambió la forma de puntuar; el 36 y el 73 son de la regla anterior.",
+     "fecha": "36 y 73: dichos por Ramón (caso de éxito, commit 9ebf384, 21-sep; post publicado el 21-sep), sin respuesta cruda guardada · 100: 2026-10-14T22:29:47Z y 2026-10-16T17:52:42Z con crudo",
+     "metodo": "GET https://verifica.spindlelab.cl/api/chequeo?dominio=spindlelab.cl",
+     "crudo": [
+      "e9/piezas/crudo/2026-10-14/spindlelab.cl/chequeo-ley-21719.json",
+      "e12/inventario/crudo/vyc-chequeo-spindlelab.cl.json"
+     ],
+     "publicable": "solo en Trabajo (E9), con el cambio de regla y el «14 de 20» dichos"
+    },
+    {
+     "nombre": "Carga y peso de la home en producción (v2) (laboratorio)",
+     "fecha": "2026-10-16T17:54Z a 17:57Z",
+     "metodo": "Laboratorio, no usuarios reales: Chromium 141.0.7390.37 headless (Playwright 1.63.0) desde el contenedor de la sesión, que sale por el proxy por la costa este de EE.UU. (cf-ray EWR/IAD), sin limitar red ni CPU, caché frío, sin aceptar cookies, sin scroll, mediana de 3 corridas, 4 s de espera tras load. Chromium negoció HTTP/1.1 a través del proxy; un visitante real usa HTTP/2 o 3. Los kB transferidos dependen poco de esto; los ms, mucho.",
+     "crudo": "e12/inventario/crudo/carga-playwright.json",
+     "herramienta": "e12/inventario/herramientas/medir-carga.mjs",
+     "a390": {
+      "ttfbMs": 217,
+      "fcpMs": 732,
+      "lcpMs": 732,
+      "loadMs": 1202,
+      "cls": 0,
+      "pedidos": 18,
+      "kbTransferidos": 908,
+      "kbTerceros": 10
+     },
+     "a1440": {
+      "ttfbMs": 298,
+      "fcpMs": 820,
+      "lcpMs": 820,
+      "loadMs": 1200,
+      "cls": 0.084,
+      "pedidos": 18,
+      "kbTransferidos": 908,
+      "kbTerceros": 10
+     },
+     "publicable": "Los kB, sí, con fecha y método. Los ms, no como «velocidad para tus clientes»: son de laboratorio y desde EE.UU."
+    },
+    {
+     "nombre": "Carga y peso de la home v3 (vista previa) (laboratorio)",
+     "fecha": "2026-10-16T17:54Z a 17:57Z",
+     "metodo": "Laboratorio, no usuarios reales: Chromium 141.0.7390.37 headless (Playwright 1.63.0) desde el contenedor de la sesión, que sale por el proxy por la costa este de EE.UU. (cf-ray EWR/IAD), sin limitar red ni CPU, caché frío, sin aceptar cookies, sin scroll, mediana de 3 corridas, 4 s de espera tras load. Chromium negoció HTTP/1.1 a través del proxy; un visitante real usa HTTP/2 o 3. Los kB transferidos dependen poco de esto; los ms, mucho.",
+     "crudo": "e12/inventario/crudo/carga-playwright.json",
+     "herramienta": "e12/inventario/herramientas/medir-carga.mjs",
+     "a390": {
+      "ttfbMs": 229,
+      "fcpMs": 740,
+      "lcpMs": 792,
+      "loadMs": 1065,
+      "cls": 0,
+      "pedidos": 18,
+      "kbTransferidos": 391,
+      "kbTerceros": 0
+     },
+     "a1440": {
+      "ttfbMs": 152,
+      "fcpMs": 672,
+      "lcpMs": 672,
+      "loadMs": 853,
+      "cls": 0.106,
+      "pedidos": 21,
+      "kbTransferidos": 432,
+      "kbTerceros": 0
+     },
+     "publicable": "Los kB, sí, con fecha y método. Los ms, no como «velocidad para tus clientes»: son de laboratorio y desde EE.UU."
+    },
+    {
+     "nombre": "Carga y peso de /v3/trabajo/ (vista previa) (laboratorio)",
+     "fecha": "2026-10-16T17:54Z a 17:57Z",
+     "metodo": "Laboratorio, no usuarios reales: Chromium 141.0.7390.37 headless (Playwright 1.63.0) desde el contenedor de la sesión, que sale por el proxy por la costa este de EE.UU. (cf-ray EWR/IAD), sin limitar red ni CPU, caché frío, sin aceptar cookies, sin scroll, mediana de 3 corridas, 4 s de espera tras load. Chromium negoció HTTP/1.1 a través del proxy; un visitante real usa HTTP/2 o 3. Los kB transferidos dependen poco de esto; los ms, mucho.",
+     "crudo": "e12/inventario/crudo/carga-playwright.json",
+     "herramienta": "e12/inventario/herramientas/medir-carga.mjs",
+     "a390": {
+      "ttfbMs": 181,
+      "fcpMs": 648,
+      "lcpMs": 760,
+      "loadMs": 821,
+      "cls": 0,
+      "pedidos": 16,
+      "kbTransferidos": 490,
+      "kbTerceros": 0
+     },
+     "a1440": {
+      "ttfbMs": 124,
+      "fcpMs": 564,
+      "lcpMs": 684,
+      "loadMs": 769,
+      "cls": 0,
+      "pedidos": 16,
+      "kbTransferidos": 471,
+      "kbTerceros": 0
+     },
+     "publicable": "Los kB, sí, con fecha y método. Los ms, no como «velocidad para tus clientes»: son de laboratorio y desde EE.UU."
+    },
+    {
+     "nombre": "Video del hero en producción",
+     "valor": "5.091.275 bytes (4,9 MB)",
+     "fecha": "2026-10-16T18:03Z",
+     "metodo": "HEAD",
+     "crudo": "e12/inventario/crudo/cabeceras-varias.txt",
+     "publicable": "sí",
+     "nota": "En la medición de laboratorio no llegó a bajarse (0 KB de media): los 908 KB no lo incluyen. Un visitante cuyo navegador lo reproduce baja hasta 4,9 MB más."
+    },
+    {
+     "nombre": "Barrido de cierre del v3 (QA del 6-oct)",
+     "valor": "paradas de foco tapadas: 111 hacia adelante y 14 hacia atrás → 0; UTM que llegan al formulario: se perdían al segundo salto → 8 de 8 recorridos",
+     "fecha": "2026-10-06",
+     "metodo": "acta de Javiera",
+     "crudo": "acta-qa-final.md:29-30",
+     "publicable": "decide Ramón; es proceso interno, no resultado de negocio"
+    }
+   ],
+   "hallazgos": [
+    "CLS de 0,106 en la home v3 a 1440 en 2 de 3 corridas de laboratorio (umbral de «bueno»: 0,1). Va a la construcción de E12, no se arregla aquí.",
+    "spindlelab.cl declara 2 perfiles en sameAs; el chequeo pide 3."
+   ],
+   "sinMetrica": [
+    "Visitas, contactos o conversión del sitio: GA4 existe pero no hay exportación en el repo; el checkpoint del día 77 trae Ads (104 clics, 0 contactos) y eso decide Ramón (e11/material.md §6).",
+    "Puntaje del chequeo para la home v3: el chequeo lee la raíz del dominio, no /v3/. La línea base para el criterio 12 se toma en construcción (el 6-oct el acta registró 83 sobre el build de entonces)."
+   ],
+   "noSePuedeDecir": [
+    "Que el v3 está publicado.",
+    "Tiempos de laboratorio como velocidad para los visitantes."
+   ]
+  }
+ ],
+ "fuera": [
+  {
+   "nombre": "Módulo 369 (María Loreto Hernández)",
+   "tipo": "cliente",
+   "por": "Sin permiso de caso; en construcción (Fase 1 desde el 6-oct; maqueta v3 del 7-oct en su repo). No se midió.",
+   "fuente": "ventas/proyectos-en-curso.md:15; origin/claude/obra-modulo369"
+  },
+  {
+   "nombre": "Praxi",
+   "tipo": "propio",
+   "por": "Otra marca y otro repo (Next.js 14 + Supabase, coach de IA). Dormido: praxi.coach daba 402 el 23-sep y Ramón pidió no tocarlo. Es el único proyecto con IA programada, y no entra sin decisión de Ramón (brief E12 §5).",
+   "fuente": "marketing/oficina/clientes/praxi.md; cierre-oauth-bernardo-y-vercel-desinstalado-23sep.md §3"
+  },
+  {
+   "nombre": "SimpleTrust",
+   "tipo": "cliente (servicio SEO)",
+   "por": "Sin permiso; la solicitud de testimonio nunca se envió.",
+   "fuente": "ventas/pipeline.md:32"
+  },
+  {
+   "nombre": "Aplomo y Deslinde",
+   "tipo": "concepto",
+   "por": "Fuera del sitio por decisión de Ramón (una sola pieza de concepto); sin revisión fina.",
+   "fuente": "marketing/portafolio/README.md, tabla «Piezas»"
+  },
+  {
+   "nombre": "Índice de Citabilidad",
+   "tipo": "herramienta",
+   "por": "Retirado: /indice/ redirige con 301 a /diagnostico/ y la medición mensual no se siguió.",
+   "fuente": "spindlelab-astro/public/_redirects:1-2"
+  },
+  {
+   "nombre": "Mini-diagnósticos entregados",
+   "tipo": "servicio",
+   "por": "Son de prospectos, con nombre y dominio. Sirven como hallazgos generalizados (e11/material.md §1-2), nunca como caso.",
+   "fuente": "marketing/diagnosticos/"
+  }
+ ],
+ "telemetria": {
+  "verdadera": [
+   {
+    "que": "El resultado del chequeo del visitante",
+    "origen": "/api/chequeo: puntaje, 21 ítems, detalle de la prueba por robot, revisadoEn",
+    "cuando": "en vivo, por visita",
+    "existe": true,
+    "nota": "v3-chequeo.js hoy no muestra revisadoEn; mostrar la hora es un cambio chico."
+   },
+   {
+    "que": "El puntaje de spindlelab.cl, con su fecha",
+    "origen": "chequear() exportado de chequeo.js, corrido en el build; o /api/chequeo en vivo",
+    "cuando": "en cada build o en vivo",
+    "existe": false,
+    "condicion": "OK de Ramón para mostrar el número propio"
+   },
+   {
+    "que": "Commit y fecha del build",
+    "origen": "CF_PAGES_COMMIT_SHA y CF_PAGES_BRANCH (variables del build de Cloudflare Pages) o git log -1 en el build",
+    "cuando": "en cada despliegue",
+    "existe": false,
+    "nota": "Es la fecha del build, no la del último cambio de contenido; decirlo así."
+   },
+   {
+    "que": "El peso de la página",
+    "origen": "en el build, sumando dist/; o en el navegador del visitante con Resource Timing (transferSize)",
+    "cuando": "por build o por visita",
+    "existe": false,
+    "nota": "transferSize es 0 si el recurso venía en caché o de otro origen sin Timing-Allow-Origin: mostrar «esta visita» y no un número fijo."
+   },
+   {
+    "que": "Lo que tardó esta visita",
+    "origen": "Navigation Timing y PerformanceObserver (LCP) en el navegador del visitante",
+    "cuando": "por visita",
+    "existe": false,
+    "nota": "Es su equipo y su red, y se dice."
+   },
+   {
+    "que": "Desde qué datacenter de Cloudflare le respondimos, con qué protocolo",
+    "origen": "GET /cdn-cgi/trace en el mismo dominio (colo, http, tls)",
+    "cuando": "por visita",
+    "existe": true,
+    "crudo": "e12/inventario/crudo/cdn-cgi-trace-spindlelab.cl.txt",
+    "nota": "Nunca mostrar la línea ip=, que es la IP del visitante. Desde este contenedor responde EWR o CDG; desde Santiago, el colo que toque."
+   },
+   {
+    "que": "La hora de Santiago",
+    "origen": "Intl.DateTimeFormat con timeZone America/Santiago",
+    "cuando": "en vivo",
+    "existe": false
+   },
+   {
+    "que": "Las 21 señales y sus pesos",
+    "origen": "leídos de chequeo.js en el build",
+    "cuando": "en cada build",
+    "existe": true
+   },
+   {
+    "que": "Los datos estructurados y los encabezados de la propia página",
+    "origen": "el DOM: script[type=\"application/ld+json\"], h1 a h3",
+    "cuando": "en vivo",
+    "existe": true
+   },
+   {
+    "que": "El robots.txt propio",
+    "origen": "fetch(\"/robots.txt\")",
+    "cuando": "en vivo",
+    "existe": true
+   },
+   {
+    "que": "Fecha de publicación y de actualización de cada artículo",
+    "origen": "datePublished y dateModified de su JSON-LD",
+    "cuando": "en cada build",
+    "existe": true
+   },
+   {
+    "que": "Chequeo de la Ley 21.719 del visitante",
+    "origen": "https://verifica.spindlelab.cl/api/chequeo (responde con access-control-allow-origin: *)",
+    "cuando": "en vivo",
+    "existe": true,
+    "crudo": "e12/inventario/crudo/vyc-chequeo-spindlelab.cl.headers.txt",
+    "nota": "Verifica tiene línea editorial propia (E9): mejor enlazar que incrustar."
+   }
+  ],
+  "falsaODecorativa": [
+   {
+    "que": "«[ LAB_STATUS: ACTIVE ]», «SYS. ACTIVO»",
+    "por": "No hay un estado detrás que pueda cambiar."
+   },
+   {
+    "que": "«[ DEPLOYMENT_CYCLE: 2026 ]», «VOL. 04», «LAB_01»",
+    "por": "Numeración sin referente. Si numera algo real (las 5 entradas del índice), dice qué."
+   },
+   {
+    "que": "«LAT. 33.44° S»",
+    "por": "Es la latitud aproximada del centro de Santiago, no la del estudio, y no cambia: es decoración aunque sea cierta. La dirección exacta no está confirmada: el schema de Verifica dice «Los Leones 2270», sacada de Instagram y marcada para confirmar (commit 7696d63); el de spindlelab.cl dice solo «Santiago, CL». Si va una coordenada, que sea de la ciudad y diga de dónde sale."
+   },
+   {
+    "que": "Latencia de modelos, llamadas a API simuladas, diagrama de flujo de datos con números",
+    "por": "No hay modelos ni pipeline de datos en ninguna pieza (ver ingredientes)."
+   },
+   {
+    "que": "Contadores de proyectos, clientes o chequeos corridos",
+    "por": "Hay 2 clientes de desarrollo web (1 con permiso). El chequeo no guarda dominios. El evento de GA4 cuenta solo a quien aceptó cookies."
+   },
+   {
+    "que": "Uptime, «99,9 %»",
+    "por": "No hay monitoreo."
+   },
+   {
+    "que": "Una fecha de despliegue escrita a mano",
+    "por": "Se queda vieja al siguiente despliegue: si va, la escribe el build."
+   }
+  ]
+ },
+ "sandboxes": {
+  "verdaderos": [
+   {
+    "nombre": "El chequeo en vivo",
+    "estado": "existe",
+    "que": "El visitante escribe su dominio; el servidor lo lee y le dice qué robot entró y qué falta.",
+    "piezas": "spindlelab-astro/public/assets/js/v3-chequeo.js + /api/chequeo",
+    "nota": "Es el único que corre sobre el sitio del visitante. Los demás corren sobre el nuestro."
+   },
+   {
+    "nombre": "Esta página, como la lee un robot",
+    "estado": "por construir",
+    "que": "Muestra el HTML que llega sin estilos ni scripts, los encabezados, los datos estructurados y lo que respondió el servidor a cada robot.",
+    "como": "fetch(location.href) para el texto servido; el DOM para JSON-LD y encabezados; /api/chequeo?dominio=spindlelab.cl para las respuestas por robot (la prueba con el nombre de cada robot solo puede hacerse en el servidor: el navegador no deja cambiar el user-agent)."
+   },
+   {
+    "nombre": "Modo esqueleto",
+    "estado": "por construir",
+    "que": "Contornea los elementos reales de la página y dibuja las columnas de la retícula leídas de su CSS.",
+    "como": "Una clase en <html> que pone outline a los bloques y una capa que lee getComputedStyle(...).gridTemplateColumns. Sin animación con movimiento reducido; reversible; no oculta contenido al lector de pantalla.",
+    "condicion": "Es verdadero solo si muestra el DOM y la CSS reales. Un dibujo aparte presentado como «el esqueleto» es decoración."
+   },
+   {
+    "nombre": "Tu visita, medida",
+    "estado": "por construir",
+    "que": "Cuánto pesó y cuánto tardó esta página en tu navegador, y qué datacenter respondió.",
+    "como": "Resource Timing, Navigation Timing, PerformanceObserver de LCP, /cdn-cgi/trace sin la IP."
+   },
+   {
+    "nombre": "La foto que sube Bernardo y la que ve su visitante",
+    "estado": "por construir",
+    "que": "La misma foto: 786 KB como la sube, 92 KB como la sirve el sitio.",
+    "condicion": "OK escrito de Bernardo."
+   }
+  ],
+  "noVerdaderos": [
+   {
+    "nombre": "«Ejecutar optimización» que reescribe un texto",
+    "por": "Finge un proceso que no ocurre."
+   },
+   {
+    "nombre": "Chat o «RAG» con respuestas escritas de antemano",
+    "por": "No hay IA programada en ninguna pieza."
+   },
+   {
+    "nombre": "Terminal que «despliega» con líneas inventadas",
+    "por": "Logs que nadie generó."
+   },
+   {
+    "nombre": "Pasar de Light Mode a Wireframe cambiando colores",
+    "por": "Es un tema visual, no la estructura. Como estética, decide Lucía; como «sandbox», no."
+   }
+  ]
+ },
+ "noSePuedeDecir": [
+  {
+   "que": "Ningún resultado de negocio de un cliente (+X %, leads, retención, ventas)",
+   "por": "No existe ninguna medición de resultado de cliente en el repo.",
+   "fuente": "ventas/proyectos-en-curso.md; e11/material.md §5-6"
+  },
+  {
+   "que": "«IA propietaria», «modelos RAG», «despliegue de modelos», «WebGL», «React», «Estrategia C-Level» como ingredientes",
+   "por": "Ninguna pieza los usa. La única con IA programada es Praxi, que está fuera.",
+   "fuente": "ingredientes de este inventario"
+  },
+  {
+   "que": "El 40 % y el +150 % del segundo texto de Ramón",
+   "por": "Son ejemplos, no datos.",
+   "fuente": "e12/insumos-ramon-16oct.md §5"
+  },
+  {
+   "que": "El 76 de bernardocombeau.cl, el peso de sus páginas o su foto en un antes y después",
+   "por": "Pide su OK escrito; el permiso verbal es del caso, no de sus mediciones.",
+   "fuente": "brief de obra E12 §8.5"
+  },
+  {
+   "que": "El 85 de spindlelab.cl y el 54 → 94 de Verifica",
+   "por": "Los puntajes del chequeo propio esperan el OK de Ramón.",
+   "fuente": "e11/material.md §6"
+  },
+  {
+   "que": "El 36 → 73 → 100 fuera de Trabajo, o sin decir que cambió la regla y que el 100 es sobre 14 de 20 puntos",
+   "por": "E9 lo deja solo en Trabajo; el caso de éxito trae el aviso del 16-oct.",
+   "fuente": "e9/brief-e9.md §3; ventas/casos-de-exito/verifica-y-cumple.md (main)"
+  },
+  {
+   "que": "Tiempos de carga de este inventario como velocidad para los visitantes o como Core Web Vitals",
+   "por": "Laboratorio, desde EE.UU., sin limitar la red.",
+   "fuente": "e12/inventario/crudo/carga-playwright.json"
+  },
+  {
+   "que": "«Bilingüe» para el book de modelo",
+   "por": "lang=\"es\" sobre texto en inglés.",
+   "fuente": "e12/inventario/crudo/servido-bernardocombeau.cl.extracto.json"
+  },
+  {
+   "que": "Que el sitio de Combeau es un ejemplo de SEO técnico",
+   "por": "7 de 11 rutas sin h1; el encargo del 10-oct sigue sin aplicar.",
+   "fuente": "e12/inventario/crudo/h1-bernardocombeau.cl.tsv"
+  },
+  {
+   "que": "«Clientes» en plural en desarrollo web con nombre",
+   "por": "Hay dos ganados y uno solo con permiso.",
+   "fuente": "ventas/pipeline.md:25-26"
+  },
+  {
+   "que": "Que Verifica y Cumple certifica cumplimiento",
+   "por": "Describe señales; no certifica.",
+   "fuente": "ventas/casos-de-exito/verifica-y-cumple.md"
+  },
+  {
+   "que": "Cualquier dato de un prospecto (nombre, dominio, puntaje, el competidor del commit 7696d63)",
+   "por": "Sin permiso.",
+   "fuente": "manual de marca; CLAUDE.md"
+  }
+ ],
+ "paraOtros": [
+  {
+   "para": "Ramón",
+   "que": "Pedirle a Bernardo por escrito: el caso, una medición fechada de su sitio, grabar su sitio y su panel, y usar una foto en el antes y después."
+  },
+  {
+   "para": "Ramón",
+   "que": "Decidir si se muestran los puntajes propios (85 de spindlelab.cl; 54 → 94 de Verifica)."
+  },
+  {
+   "para": "Troncal",
+   "que": "La ficha de Bernardo (:15) y el pipeline (:26) siguen diciendo que no hay permiso; proyectos-en-curso dice que sí, verbal. Alinear (documentos compartidos: no los toco)."
+  },
+  {
+   "para": "Sesión del sitio de Bernardo",
+   "que": "El encargo de h1 del 10-oct sigue sin aplicar (7 de 11), y /modelo/ declara lang=\"es\" con el texto en inglés."
+  },
+  {
+   "para": "Construcción E12",
+   "que": "CLS de 0,106 en la home v3 a 1440 (laboratorio, 2 de 3 corridas)."
+  }
+ ],
+ "stackPorSitio": {
+  "medido": "2026-10-16, HTML y cabeceras servidos (ver crudos)",
+  "spindlelab.cl (v2)": {
+   "generador": "Astro 4.16.19",
+   "hosting": "Cloudflare Pages",
+   "css": "Tailwind",
+   "js": "3 scripts externos (uno enlazado dos veces), 4 en línea; 23 KB",
+   "cms": null,
+   "imagenes": "archivos propios",
+   "funciones": [
+    "/api/chequeo"
+   ],
+   "analitica": "GA4 + Meta Pixel tras consentimiento; beacon de Cloudflare",
+   "jsonld": [
+    "ProfessionalService",
+    "WebSite",
+    "Person",
+    "FAQPage"
+   ]
+  },
+  "v3 (vista previa noindex)": {
+   "generador": "Astro 4.16.19",
+   "hosting": "Cloudflare Pages, x-robots-tag: noindex",
+   "css": "Tailwind",
+   "js": "3 externos, 5 en línea; 24 KB; incluye Lenis 1.3.26",
+   "cms": null,
+   "imagenes": "archivos propios",
+   "funciones": [
+    "/api/chequeo"
+   ],
+   "analitica": "GA4 + Meta Pixel tras consentimiento (mismo Layout)",
+   "jsonld": [
+    "ProfessionalService",
+    "WebSite",
+    "Person",
+    "WebPage"
+   ]
+  },
+  "bernardocombeau.cl": {
+   "generador": "Astro 7.3.1",
+   "hosting": "Netlify",
+   "css": "CSS propio por componente (sin Tailwind)",
+   "js": "0 externos, 1 en línea en la portada",
+   "cms": "Decap CMS 3.15.1, backend GitHub, login OAuth en /api/auth",
+   "imagenes": "Netlify Image CDN (WebP)",
+   "funciones": [
+    "/api/auth"
+   ],
+   "analitica": null,
+   "jsonld": [
+    "Person",
+    "LocalBusiness"
+   ]
+  },
+  "verifica.spindlelab.cl": {
+   "generador": null,
+   "hosting": "Cloudflare Pages",
+   "css": "CSS en línea, a mano",
+   "js": "1 externo (analítica), 2 en línea",
+   "cms": null,
+   "imagenes": "PNG y WebP propios",
+   "funciones": [
+    "/api/chequeo",
+    "/api/doce-puntos",
+    "/api/profundo"
+   ],
+   "analitica": "Cloudflare Web Analytics",
+   "jsonld": [
+    "WebApplication",
+    "WebPage",
+    "ProfessionalService",
+    "Person",
+    "FAQPage"
+   ],
+   "otros": [
+    "Cloudflare Browser Rendering (repo)",
+    "Cloudflare KV (repo)",
+    "Web3Forms (servido)"
+   ]
+  }
+ },
+ "crudos": [
+  {
+   "archivo": "e12/inventario/crudo/cabeceras-varias.txt",
+   "bytes": 3619,
+   "sha256": "c625bbeb8d1c73b3095d9219b19940886e09e386736d7f3c9855b88a92c637eb"
+  },
+  {
+   "archivo": "e12/inventario/crudo/carga-playwright.json",
+   "bytes": 25398,
+   "sha256": "8c94664e779eed3e2634fdbd748722ff2242af160c36624627b666870eb78403"
+  },
+  {
+   "archivo": "e12/inventario/crudo/cdn-cgi-trace-spindlelab.cl.txt",
+   "bytes": 327,
+   "sha256": "98f01b15b0af60c6645e1db1fd4160f56e0033acfb89d748b2349f25e9cf72dd"
+  },
+  {
+   "archivo": "e12/inventario/crudo/chequeo-bernardocombeau.cl.headers.txt",
+   "bytes": 610,
+   "sha256": "add2fdc888305acc7a320d7e88475fced0c55f2d8b65cb3ae94862bcec452fe2"
+  },
+  {
+   "archivo": "e12/inventario/crudo/chequeo-bernardocombeau.cl.json",
+   "bytes": 6040,
+   "sha256": "9f5ee6978ae747c7b00ddbc41efc5a77f05819e7d038e5fb27d1ec7d773522c9"
+  },
+  {
+   "archivo": "e12/inventario/crudo/chequeo-spindlelab.cl.headers.txt",
+   "bytes": 606,
+   "sha256": "a4e0c874e072694f3ee93bc1926e7d34c1cbbe2f91cef18ec27101cd724f734d"
+  },
+  {
+   "archivo": "e12/inventario/crudo/chequeo-spindlelab.cl.json",
+   "bytes": 5864,
+   "sha256": "ba857844150d665201b1ee1032c4a3e080addd6172009b014ded1933ffe447be"
+  },
+  {
+   "archivo": "e12/inventario/crudo/chequeo-verifica.spindlelab.cl.headers.txt",
+   "bytes": 612,
+   "sha256": "c9c0b033ebe09afbfb9f6c5a3c5156be7392b9ef6467c8ecba05b74dc184c8d9"
+  },
+  {
+   "archivo": "e12/inventario/crudo/chequeo-verifica.spindlelab.cl.json",
+   "bytes": 5377,
+   "sha256": "6c5c8adb6e4912cccb0fd6417b20d03044c5855e5a038176b6055577589a16c8"
+  },
+  {
+   "archivo": "e12/inventario/crudo/h1-bernardocombeau.cl.tsv",
+   "bytes": 341,
+   "sha256": "ae3389ba02bf07d455f371fc4cca8a1b67e1487911a33b3a12cee6a78484f410"
+  },
+  {
+   "archivo": "e12/inventario/crudo/servido-bernardocombeau.cl-admin.headers.txt",
+   "bytes": 474,
+   "sha256": "be3bb07db095255b9fd7b21498e1114c2c48baedf9ec4e2eb085ddecf6652af0"
+  },
+  {
+   "archivo": "e12/inventario/crudo/servido-bernardocombeau.cl-modelo.headers.txt",
+   "bytes": 473,
+   "sha256": "54634d1cbad37f80b87ec8e424a321c1904e9d6b949ed48418dee55e262239bf"
+  },
+  {
+   "archivo": "e12/inventario/crudo/servido-bernardocombeau.cl.extracto.json",
+   "bytes": 3372,
+   "sha256": "52f64cf94ef8871cf210b81ad7d30c2db571a8336778a3bab29738d53af332c6"
+  },
+  {
+   "archivo": "e12/inventario/crudo/servido-bernardocombeau.cl.headers.txt",
+   "bytes": 472,
+   "sha256": "ed654c43c4d51e238adacf9e93f21b846f11bf35ae6cb22e0876211cd44085eb"
+  },
+  {
+   "archivo": "e12/inventario/crudo/servido-spindlelab.cl.headers.txt",
+   "bytes": 720,
+   "sha256": "f2d2dfa9938aa8dc8bfb1382e46e33a9abe44b48fae3205efd872053c755773e"
+  },
+  {
+   "archivo": "e12/inventario/crudo/servido-spindlelab.cl.html",
+   "bytes": 51423,
+   "sha256": "3b5dbc0b7f56ef431ff81d7907c4a47d88f3c761e7568c579567b2bd855023bc"
+  },
+  {
+   "archivo": "e12/inventario/crudo/servido-verifica.spindlelab.cl.headers.txt",
+   "bytes": 734,
+   "sha256": "9694c1829b0cecdf915917241b013ab2e372ec33f6c24185d07fe1502aea48c2"
+  },
+  {
+   "archivo": "e12/inventario/crudo/servido-verifica.spindlelab.cl.html",
+   "bytes": 172059,
+   "sha256": "1c14e50c0f126bb765bef4553ae83b10e5a85bb3f766b355b8de25b8decf0040"
+  },
+  {
+   "archivo": "e12/inventario/crudo/vyc-chequeo-spindlelab.cl.headers.txt",
+   "bytes": 656,
+   "sha256": "79291b807ee2da04191174b285214faf9f55f31e47966fcd8a52b1c85dca3508"
+  },
+  {
+   "archivo": "e12/inventario/crudo/vyc-chequeo-spindlelab.cl.json",
+   "bytes": 3718,
+   "sha256": "15440bbd29ef5f5bcfc7dde1c568495c03db10061bf63633fff541d222d3983a"
+  },
+  {
+   "archivo": "e12/inventario/crudo/vyc-chequeo-verifica.spindlelab.cl.headers.txt",
+   "bytes": 658,
+   "sha256": "c88c99f7a6bdfe5cc53d16eddfcf03c3d7f935a18a03e2b7c9454cc6a3c0f2b5"
+  },
+  {
+   "archivo": "e12/inventario/crudo/vyc-chequeo-verifica.spindlelab.cl.json",
+   "bytes": 3125,
+   "sha256": "7db4b19f1a9f610512cde855a885b1145630648d8787fe38419bf2910a2ff1de"
+  }
+ ]
+}

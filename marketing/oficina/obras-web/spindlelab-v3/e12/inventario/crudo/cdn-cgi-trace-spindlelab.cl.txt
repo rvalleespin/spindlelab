@@ -1,0 +1,15 @@
+# GET https://spindlelab.cl/cdn-cgi/trace · 2026-10-16T18:04:46Z · la línea ip= se quita a propósito: es la IP de quien pide y no se guarda ni se muestra
+fl=11f635
+h=spindlelab.cl
+ts=1792173887.000
+visit_scheme=https
+colo=EWR
+sliver=none
+http=http/2
+loc=US
+tls=TLSv1.3
+sni=plaintext
+warp=off
+gateway=off
+rbi=off
+kex=X25519

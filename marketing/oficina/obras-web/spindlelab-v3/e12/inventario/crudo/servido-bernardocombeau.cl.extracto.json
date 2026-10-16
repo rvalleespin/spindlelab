@@ -1,0 +1,132 @@
+{
+ "medidoEn": "2026-10-16T17:51Z",
+ "metodo": "curl -sS con user-agent de Chrome 141; extracto con python3 (re/json) del HTML servido. El HTML completo no se guarda en el repo porque trae datos de contacto del cliente; el sha256 permite comprobar que el extracto sale de esa respuesta si se vuelve a bajar idéntica.",
+ "paginas": {
+  "portada": {
+   "url": "https://bernardocombeau.cl/",
+   "bytes": 8544,
+   "sha256": "8e785562ae5999e3f7d701daf30a18c4dfc6461cb3758fffd7b915809a4a5403",
+   "htmlLang": "es",
+   "title": "Bernardo Combeau — Fotografía",
+   "metaGenerator": [
+    "Astro v7.3.1"
+   ],
+   "scriptsExternos": [],
+   "scriptsEnLinea": 1,
+   "hojasDeEstilo": [
+    "/_astro/nav.CF0EkcfM.css"
+   ],
+   "rutasAstro": 1,
+   "rutasNetlifyImages": 11,
+   "jsonldTipos": [
+    "Person",
+    "LocalBusiness"
+   ],
+   "h1": 1,
+   "decapBackend": [],
+   "decapScript": []
+  },
+  "modelo": {
+   "url": "https://bernardocombeau.cl/modelo/",
+   "bytes": 29288,
+   "sha256": "8b26150c559a90776d51fd830b4967365fba7e4ad8406efb571035fb8b6c6df5",
+   "htmlLang": "es",
+   "title": "Bernardo Combeau — Model",
+   "metaGenerator": [
+    "Astro v7.3.1"
+   ],
+   "scriptsExternos": [],
+   "scriptsEnLinea": 3,
+   "hojasDeEstilo": [
+    "/_astro/nav.CF0EkcfM.css",
+    "/_astro/index.BwiNCL_U.css"
+   ],
+   "rutasAstro": 2,
+   "rutasNetlifyImages": 52,
+   "jsonldTipos": [
+    "Person",
+    "LocalBusiness"
+   ],
+   "h1": 0,
+   "decapBackend": [],
+   "decapScript": []
+  },
+  "admin": {
+   "url": "https://bernardocombeau.cl/admin/",
+   "bytes": 115164,
+   "sha256": "7f911aa0d0913549c32bc0ac7d391b8a5f7624c6f3191bc25514caf956f6cdf8",
+   "htmlLang": null,
+   "title": "Administración — Bernardo Combeau",
+   "metaGenerator": [],
+   "scriptsExternos": [
+    "https://unpkg.com/decap-cms@3.15.1/dist/decap-cms.js"
+   ],
+   "scriptsEnLinea": 2,
+   "hojasDeEstilo": [],
+   "rutasAstro": 0,
+   "rutasNetlifyImages": 0,
+   "jsonldTipos": [],
+   "h1": 0,
+   "decapBackend": [
+    "github"
+   ],
+   "decapScript": [
+    "decap-cms@3.15.1"
+   ],
+   "decapColecciones": [
+    {
+     "name": "home",
+     "label": "Home"
+    },
+    {
+     "name": "sobremi",
+     "label": "Sobre mí"
+    },
+    {
+     "name": "estudio",
+     "label": "Estudio"
+    },
+    {
+     "name": "servicios",
+     "label": "Servicios"
+    },
+    {
+     "name": "contacto",
+     "label": "Contacto"
+    },
+    {
+     "name": "modelo",
+     "label": "Modelo"
+    },
+    {
+     "name": "retratos",
+     "label": "Retratos"
+    },
+    {
+     "name": "proyectos",
+     "label": "Proyectos"
+    }
+   ],
+   "decapArchivos": [
+    "bernardo-site/src/data/home.json",
+    "bernardo-site/src/data/nav.json",
+    "bernardo-site/src/data/sobremi.json",
+    "bernardo-site/src/data/estudio.json",
+    "bernardo-site/src/data/servicios.json",
+    "bernardo-site/src/data/contacto.json",
+    "bernardo-site/src/data/modelo/portada.json",
+    "bernardo-site/src/data/modelo/galeria.json",
+    "bernardo-site/src/data/modelo/identity.json",
+    "bernardo-site/src/data/modelo/selected-work.json",
+    "bernardo-site/src/data/modelo/motion.json",
+    "bernardo-site/src/data/modelo/polaroids.json",
+    "bernardo-site/src/data/modelo/details.json",
+    "bernardo-site/src/data/modelo/booking.json",
+    "bernardo-site/src/data/modelo/compcard.json"
+   ],
+   "decapMediaFolder": [
+    "bernardo-site/public/uploads"
+   ]
+  }
+ }
+}
