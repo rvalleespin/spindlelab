@@ -936,12 +936,19 @@
     background: var(--info-bg); color: var(--texto-suave);
     border: 1.5px dashed var(--texto-suave);
   }
+  /* `no-aplica` se ve como `sin-confirmar` (gris, fuera del puntaje) pero con el borde
+     entero: no es una duda, es una señal que miramos y que no corresponde. */
+  .marca-estado.no-aplica {
+    background: var(--info-bg); color: var(--texto-suave);
+    border: 1.5px solid var(--texto-suave);
+  }
   /* El estado también va escrito, chico, sobre el título: el título ahora es neutro y viene
      de la API, así que sin esto un pendiente se leía igual que uno en orden. */
   .item-estado { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 2px; }
   .item-estado.ok { color: var(--ok); }
   .item-estado.pendiente { color: var(--pendiente); }
   .item-estado.sin-confirmar { color: var(--texto-suave); }
+  .item-estado.no-aplica { color: var(--texto-suave); }
   .item-texto { min-width: 0; }
   .item-texto strong { display: block; font-size: 0.95rem; }
   .item-texto .detalle { display: block; font-size: 0.87rem; color: var(--texto-suave); margin-top: 2px; }
@@ -1832,12 +1839,18 @@
     });
   });
 
-  // Los tres estados de una señal. El signo es decoración (aria-hidden): el estado se lee
+  // Los cuatro estados de una señal. El signo es decoración (aria-hidden): el estado se lee
   // en el texto chico que va sobre el título, que también ven los que no usan lector.
+  //
+  // `no-aplica` NO es opcional de agregar acá (16-oct). La API manda `ok: estado === 'ok'`,
+  // así que un no-aplica llega con `ok: false`, y el respaldo de `estadoDe` de más abajo lo
+  // pintaría como PENDIENTE ROJO: exactamente el falso rojo que el servidor acaba de dejar
+  // de dar. Un estado nuevo en la API sin su entrada acá sale en rojo, no sale neutro.
   const ESTADOS = {
     ok: { signo: '✓', texto: 'En orden' },
     pendiente: { signo: '!', texto: 'Pendiente' },
     'sin-confirmar': { signo: '?', texto: 'No lo pudimos ver' },
+    'no-aplica': { signo: '–', texto: 'No te hace falta' },
   };
   // Una respuesta sin "estado" (una versión anterior de la API) solo trae ok verdadero o
   // falso, y ahí el tercer estado no existe.
