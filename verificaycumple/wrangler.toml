@@ -17,9 +17,23 @@
 name = "verificaycumple"
 compatibility_date = "2026-09-08"
 
-# El proyecto no tiene comando de compilación y su directorio raíz ya es `verificaycumple`,
-# así que lo que se publica es esta misma carpeta.
-pages_build_output_dir = "."
+# LO QUE SE PUBLICA ES `public/`, Y SOLO ESO. (16-oct-2026)
+#
+# Antes decía ".", o sea la carpeta entera. Eso no era un detalle de configuración: era la
+# causa de que `.wrangler/cache/wrangler-account.json` —con el correo personal de Ramón— se
+# sirviera en una URL pública con 200, y de que este mismo archivo se sirviera también.
+#
+# El problema de fondo era tratar "la carpeta del proyecto" y "lo que se publica" como la misma
+# cosa. Con `public/` dejan de serlo: lo interno no se publica porque NO ESTÁ AHÍ, no porque
+# alguien se acordó de excluirlo.
+#
+# ⚠️ `functions/` va en la RAÍZ, al lado de `public/`, nunca adentro. La doc de Cloudflare lo
+# dice textual: "Make sure that the /functions directory is at the root of your Pages project
+# (and not in the static root, such as /dist)".
+#
+# ⚠️ Si algún día hacen falta `_headers`, `_redirects` o `_routes.json`, esos SÍ van DENTRO de
+# `public/`. Son lo contrario de la regla de arriba.
+pages_build_output_dir = "public"
 
 # NO PONER UN BLOQUE [vars] ACÁ. 28-sep, aprendido a golpes:
 #
