@@ -135,6 +135,65 @@ resuelva, esta pieza no se graba.
 
 ---
 
+## Escaleta de grabación · Rep 3, el aviso que no retiene nada
+
+Una sola toma, vertical 9:16, 25 segundos. La barra `/` marca dónde respirar.
+**Es la pieza publicable del set**, así que es la que más vale grabar bien.
+
+| # | Tiempo | Movimiento | Entrega |
+|---|---|---|---|
+| 1 | 0:00 – 0:09 | **La concesión** | Tono neutro, casi de aprobación. Acá le estás dando crédito a alguien que hizo la pega. Si suena a burla, la pieza entera pasa a ser una acusación y se cae |
+| 2 | 0:09 – 0:20 | **La medición** | Factual y plano. Los segundos pesan solos, no hay que empujarlos. Nada de "y fíjate que" |
+| 3 | 0:20 – 0:25 | **El remate** | Dos frases cortas, con una pausa entre ellas. Sin sonrisa. Y **no agregar nada después** |
+
+**1 · 0:00 – 0:09 · la concesión**
+
+> Medí el sitio de una institución grande. / Tenía el aviso de cookies bien hecho. / Cuatro botones,
+> con rechazar y personalizar. //
+
+**2 · 0:09 – 0:20 · la medición**
+
+> Abrí el sitio en un navegador limpio / y no toqué nada. / A los trece segundos ya habían salido
+> los datos de mi visita. / A los quince, / a cuatro destinos distintos. //
+
+**3 · 0:20 – 0:25 · el remate**
+
+> El aviso está. / Y no está reteniendo nada.
+
+### Las tres cosas que pueden arruinarla
+
+1. **El tono de la primera frase.** Todo el valor de esta pieza está en que no acusa. Le habla a
+   alguien que ya hizo el esfuerzo, pagó por su aviso y cree estar cubierto. Dicha con sorna, se
+   convierte en el contenido que hace todo el mercado.
+2. **Agregar algo después del remate.** La tentación va a ser cerrar con "así que si quieres que
+   revise el tuyo". **No.** El silencio es la pieza. El link va en el primer comentario, no en la
+   boca.
+3. **Dramatizar los números.** "A los trece segundos" dicho rápido y normal pesa más que dicho con
+   énfasis. El dato ya es fuerte.
+
+### Los números exactos, por si alguien pregunta en los comentarios
+
+Envíos de datos de la visita: **12,8s** a Analytics, **12,9s** al Pixel de Meta, **13,4s** a Google
+Ads, **15,4s** al Pixel de TikTok. Antes de eso, seis rastreadores corriendo (el primero a los
+**7,0s**), **diez cookies** escritas y **diecisiete dominios** de terceros contactados. Puntaje
+**0 en la revisión profunda y 30 en la rápida**. Todo medido el 16-oct en un navegador sin cookies
+ni historial, sin un solo clic deliberado.
+
+⚠️ **El sitio no se nombra**, ni en el video ni en los comentarios. Regla dura del material del
+producto, y es lo que permite que un prospecto se mida sin miedo.
+
+⚠️ **Nunca decir "no cumple".** La pieza describe lo que se observó. Quien decide si alguien cumple
+es otro.
+
+### Antes y después
+
+**Antes de la toma buena:** peluche en el micrófono · diez segundos de prueba escuchados con
+audífonos · teléfono a la altura de los ojos, apoyado · dos metros de distancia al fondo · luz de
+frente · el texto en otro teléfono.
+
+**Después:** tres tomas completas y se elige una · subtítulos corregidos a mano, con atención a los
+números · sin música, sin audio de tendencia · vertical.
+
 ## Chequeo de duplicación, rehecho el 16-oct
 
 **Para qué sirve esto, en concreto:** el 21 y 22-sep salieron cuatro piezas del mismo producto en 24
