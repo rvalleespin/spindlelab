@@ -2,7 +2,213 @@
 
 > Escrita por Javiera (`/web-qa-critico`) en contexto limpio: subagente nuevo que leyó el plan,
 > el lock, el tablero, los prototipos, la pauta y el código. No vio la conversación donde se
-> construyó. Cada cifra de abajo sale de un script mío, guardado en `qa-paso-2/ronda-1/herramientas/`.
+> construyó. Cada cifra de abajo sale de un script mío, guardado en `qa-paso-2/ronda-<n>/herramientas/`.
+> La ronda más nueva va arriba.
+
+---
+
+## Ronda 2 · 16-oct-2026
+
+**Rama/commit auditado:** `claude/magical-franklin-ckfki2`. Leí el árbol en `fe965d2` con cambios sin commit
+(lock y herramientas del oro); a las 13:45 entró el commit `d4b82c8` con esos mismos contenidos: la suma sha1 de
+los 164 archivos revisados (lock, `lock/`, `fotos/`, tablero, prototipos, `img/`) es igual al empezar y al
+terminar, así que lo auditado es `d4b82c8` (igual a `origin`). **Ronda previa:** la 1, rechazado.
+
+**Decisión de Ramón que llegó durante la revisión** (la trajo el coordinador, 16-oct): «no te preocupes por el
+logo de la marca, es muy probable que lo tenga que cambiar por la nueva imagen del sitio». Desde esta ronda, el
+wordmark (Gabarito con el punto `#C9A227`) y la regla de un solo oro por vista **no son criterio de aprobación**:
+no medí oro por vista y no cuento como defecto ni el amarillo contra el oro ni la falta o el exceso de oro. Queda
+como observación al final.
+
+### Veredicto: APROBADO CON REPAROS
+
+El tablero puede ir a Ramón para la compuerta 2. Las dos direcciones son distintas de verdad (medido, abajo), el
+texto es el de E8 en el mismo orden que el build, el hero vuelve a poner el chequeo primero y lo que en la ronda 1
+era de The Ready tal cual ahora es propio o está declarado como tomado. De los doce defectos de la ronda 1, ocho
+están cerrados, dos a medias (9 y 11) y dos siguen abiertos (8 y 10, menores). Dos reparos, con plazo:
+
+1. **Antes de abrir la sesión con clave:** la pauta tiene que volver a calzar con el tablero (defecto 1). Hoy
+   `node generar.mjs --verificar` termina con código 2. El script hace bien su trabajo (no deja gastar), pero el
+   encargo, tal como está escrito, no corre.
+2. **Antes de escribir `spec-visual.md`:** la regla de la escala display tiene que cubrir los anchos entre 390 y
+   1440, y 360 (defecto 2). A 768 y 1024 el h1 de Acompañamiento se corta y en Taller «Desarrollo» queda debajo
+   de la foto.
+
+Los menores (3 a 7; tres vienen de la ronda 1) se cierran en la spec o se declaran en `desvios.md`; no piden
+una ronda 3. Si alguno de los que ya van dos rondas abiertos (3, 4 y 7) llega vivo a la spec, el problema no es
+de oficio: se lleva a Ramón como decisión.
+
+### Fuentes y lo que faltaba
+
+Igual que en la ronda 1: no hay `brief-de-obra.md` ni `desvios.md` de E10, y la spec vigente es la de driftime,
+que uso solo para la decisión del hero (§0.4). Criterios: la sección «Verificación» del plan aprobado y los
+cinco puntos del encargo de esta ronda.
+
+### Cómo se verificó
+
+- Chromium 141 con el Playwright de `spindlelab-astro`. `npm run build` corrido hoy (27 páginas, `dist/`
+  ignorado; `git diff 7ac6534..HEAD -- spindlelab-astro` vacío). `proto/` en 127.0.0.1:8780, `dist/` en 8781, y
+  el tablero en 8792 **envuelto como lo publica Artifact** (doctype y viewport agregados por fuera,
+  `herramientas/servir-tablero.py`).
+- Mis scripts, distintos de los de Lucía y Bruno, en `qa-paso-2/ronda-2/herramientas/`; los datos en
+  `qa-paso-2/ronda-2/datos/` y las capturas en `qa-paso-2/ronda-2/capturas/`.
+- **Texto:** con JavaScript **encendido** en el build y en el prototipo (Lucía lo compara apagado), `innerText`
+  del cuerpo después de recorrer la página, sin mayúsculas (la caja es estilo), palabra por palabra y por
+  secuencia (`difflib`), quitando solo los rótulos de foto y la cinta del prototipo.
+- **Lock en vivo:** tres valores sorteados con semilla 202610162 entre diez candidatos, distintos de los de la
+  ronda 1.
+- **Desborde:** `scrollWidth` contra `clientWidth` evaluado en la página, a 360, 390, 768 y 1440, y un barrido de
+  titulares que salen de su caja de 360 a 1920.
+- **generar.mjs:** con un precargado que registra y bloquea `fetch`, `net`, `tls`, `http`, `https` y `dns`
+  (`sinred.mjs`), con claves falsas, y en una copia aislada (pauta que calza) con una API falsa que responde 400
+  repitiendo la clave (`api400.mjs`) o 200 con un PNG (`api200.mjs`).
+
+### Mediciones
+
+| Qué | Resultado |
+|---|---|
+| Lock, valor 1: fondo de la portada del caso | En vivo (`/case-studies/navy-federal`, 200): `rgb(230, 250, 151)` = `#E6FA97`. Lock §3: lima `#E6FA97` ✓ |
+| Lock, valor 2: h2 de sección a 1440 | En vivo (home, 200): 91,304 px, Saans 500, interletra −1,826 px (−0,02em), interlínea 90,72 px (0,99). Lock §2: 91,3 · 500 · −0,02em · 0,99 ✓ |
+| Lock, valor 3: alto de «Who we are» a 1440 | En vivo (200): 6852 px. Lock (`paginas.nosotros.alto1440`): 6852 ✓ |
+| Letra sustituta | Tabla `name` (id 14) de los archivos servidos: Instrument Sans, IBM Plex Sans, IBM Plex Mono y Gabarito → OFL. En `lock/tipos-comparados.png` Instrument Sans calza con Saans en ritmo, x y espacio; se ve más liviana, y los prototipos siguen en 500 (defecto 7) |
+| Amarillo contra oro | `#EEF26E`: tono 61,8°, saturación 0,545: fuera del rango 38–54°; el cálculo del lock §12 es correcto. Ya no es criterio de aprobación |
+| Texto visible vs `dist/v3` | 12/12 vistas iguales; secuencia 0,9975 a 0,9987. La única diferencia es «· Cookies» del pie (lo crea el aviso de cookies del build), que ahora el tablero declara (`datos/texto-comparacion.txt`) |
+| Hero y chequeo | Orden chequeo → titular → obras, en y: build 142 / 340 / 580 a 1440 y 126 / 448 / 542 a 390; Taller 151 / 453 / 771 y 202 / 502 / 653; Pizarra 151 / 502 / 809 y 140 / 473 / 618 ✓. Los 6 nodos del formulario (`chq-*`, atributos, placeholder, aria) idénticos al build en las dos ✓. El botón ya no monta el campo ✓ |
+| Desborde | 390: `scrollWidth == clientWidth` en las 6 páginas ✓. 360: Acompañamiento 364 en las dos. 768 a 1180: ver defecto 2 |
+| Cinta | 30,0 a 30,2 px/s · Enter en el botón la detiene (Δ 0,0 px en 1,5 s) y `aria-pressed` pasa a `true` · 44×44 · con `reducedMotion: reduce`, 0 px/s y solo se mueve si se pide · `cinta--fuera` fuera de pantalla · `aria-hidden`, fuera de todo encabezado, 1 `h1` por página ✓ |
+| Techos del lock §13 | Marcador por página: Taller 4 / 2 / 3, Pizarra 4 / 2 / 2; a la vista, máximo 1 a 1440 en las dos y 2 en Taller Trabajo a 390 (techo 2) ✓. Banda del resaltador: 1 por página en Taller, 0 en Pizarra ✓. Sello en la home y Trabajo de Taller ✓. Cinta: Taller en home y Acompañamiento, Pizarra solo en la home ✓ |
+| Espacios de foto | Los 18 espacios medidos en el render (9 a 1440, 9 a 390) calzan al px con `espacios-foto.json` ✓ |
+| Contraste | 1.548 nodos de texto en las 12 vistas, fondos compuestos y el marcador como fondo: 0 fallas, mínimo 6,24:1 ✓ |
+| Foco y semántica | Tab: 25 a 38 enfocables por página, todos con contorno visible (el campo lo muestra el formulario con `:focus-within`, 2 px); orden = DOM = build. 1 `main`, 1 `h1`, sin saltos de encabezado, `noindex`, imágenes con `width`/`height`, obras del hero `eager`/`high` como en el build ✓ |
+| Fotos viejas `assets/img/d/` | 0 en las 12 vistas (el build tiene 6 en la home y 2 en Acompañamiento) ✓ |
+| Red y 404 | Prototipos: 0 pedidos fuera de 127.0.0.1, 0 respuestas ≥ 400 ✓ |
+| ¿Distintas? | A 1440, columna de texto dominante: Taller x = 75 (68 % de los bloques en la home y en Trabajo), Pizarra x = 525 (53 a 60 %, con rótulos en 75). Piezas a sangre: Taller 5 / 2 / 3, Pizarra 1 / 1 / 0. Taller tiene banda del resaltador, sello y marcas; Pizarra tiene la ficha rótulo y columna y las bandas de foto a todo el ancho ✓ |
+| Tablero como Artifact | Sin doctype, `html`, `head` ni `body` · `<title>` de 3 palabras · `claude:viewport-fit-sides` + `max(16px, env(safe-area-inset-*))` (gutter medido 16 px) · tokens en `:root` · `body` con fondo · única URL externa: Google Fonts (pide a fonts.googleapis.com y fonts.gstatic.com) ✓. 57 imágenes, 0 rotas, máx. 436 KB, total 10,5 MB ✓. 390 / 768 / 1440 sin desborde con los pliegues abiertos ✓. Las capturas son el render de hoy: alto idéntico en las 12 vistas y diferencia de píxeles solo en las filas de la cinta ✓. Solo tema claro, con el porqué en el CSS (aceptado en la ronda 1) |
+| generar.mjs sin clave y sin tope | 0 intentos de red, no crea `salida/`. Código 2, pero por el defecto 1, no por la clave |
+| generar.mjs con tope y sin clave (copia que calza) | Código 2, mensaje con la variable exacta, dónde se pone y dónde se crea; sin red ni carpeta ✓. `--proveedor=openai` sin su clave: igual, nombra `OPENAI_API_KEY` ✓ |
+| generar.mjs con claves falsas | Sin tope y con `--ver`: 0 red, la clave no aparece ✓. Con tope, contra un 400 que repite la clave: va en `x-goog-api-key`, no en la URL; sale «[clave oculta]» en stderr y en `registro.json`, y la corrida se corta ✓. Contra un 200 con PNG: guarda `F8-taller-1.png` y `F8-pizarra-1.png`, mide el oro y escribe la máscara ✓. Código leído: la clave solo se lee del entorno y nunca se escribe |
+
+### Defectos
+
+| # | Severidad | Dueño | Dónde | Qué está mal | Contra qué | Cómo se reproduce / cómo se cierra |
+|---|---|---|---|---|---|---|
+| 1 | **mayor** | Bruno | `e10/fotos/pauta.json` y `pauta.md` contra `tableros/e10-direcciones/espacios-foto.json` | La pauta describe el tablero de antes de los arreglos de Lucía. **F2-taller:** la ficha dice 398×498 a 1440 y el espacio mide 443×554 (render y `espacios-foto.json`), así que `node generar.mjs --verificar`, `node generar.mjs` y el comando recomendado de §4 terminan con «NO SE PUEDE GENERAR» (código 2). `pauta.md` §3 («Conciliada… ningún vacío») y §7 («`--verificar` ✓ en todos») ya no son ciertos. Además: F1 dice «Hero: foto vertical a sangre… como el hero de The Ready» y hoy va junto a «Tu sitio está escrito para personas»; F2 dice «a su derecha, el garabato a sangre» y su riesgo habla de la banda `#F4F480`; F8 dice «al lado del óvalo “Correr el chequeo”»; el estilo pone como eco de la paleta `#FFFEFA`, `#1B0925`, `#E6FA97` y `#EDD1FF` y dice que «el naranja `#EC6227` es la mancha de Taller». Ya no hay garabatos, óvalo, mancha, lima ni lavanda, y el resaltador es `#EEF26E` | Encargo («los F<n> coinciden con espacios-foto.json»); plan, paso 3 | `node generar.mjs --verificar` (salida en `datos/generar-sin-clave-sin-tope.txt`). **Cierre:** copiar 443×554, revisar el recorte y la cobertura de F2, reescribir sección y riesgo de F1, F2 y F8 y la paleta del estilo con el tablero vigente, `--sincronizar`, y `--verificar` en código 0 |
+| 2 | **mayor** | Lucía | Escala display de las dos direcciones, entre 390 y 1440 (y 360) | La regla del lock §13 fija el titular por su palabra más larga **solo a 390**. Entre 768 y 1180 los titulares van a 138 y 91 px y no caben: el h1 «Acompañamiento mensual» (138 px) mide 1191 px de texto en una caja de 693 a 768 y de 949 a 1024, y como el `body` lleva `overflow-x: clip` se ve cortado («Acompañar…», «Acompañamier…») en las dos direcciones. En la home de Taller, «Desarrollo» (91 px) llega a x 494 con la caja en 309 (768) y 416 (1024) y queda debajo de la foto de la obra; «Continuidad» igual. El documento queda con `scrollWidth` 907 a 1191 contra `clientWidth` 768 a 1180, escondido por el `clip` (`scrollTo` lo mueve 139 a 423 px). A 360, el h1 a 42 px mide 340 en una caja de 312 (`scrollWidth` 364): el resto del defecto 11 de la ronda 1, ahora en las dos | Lock §13 («Display a 390») y §10 («la escala en todas las páginas»); C6 y desborde | `herramientas/tableta.mjs`, `palabras.mjs`; `capturas/pizarra-acomp-768.png`, `pizarra-acomp-1024.png`, `taller-acomp-1024-h1.png`, `taller-home-768-desarrollo.png`, `taller-home-1024-desarrollo.png`. **Cierre:** la regla de §13 se escribe para todo ancho (el tamaño de cada titular según su palabra más larga y el ancho de su caja, con tope en 138 / 91), se aplica en los prototipos y se mide a 360, 768 y 1024 sin texto fuera de su caja |
+| 3 | menor | Lucía | Marcador en «se corta» (hero, las dos) y en «cuál es cuál» (Trabajo, las dos) | **Segunda ronda.** «se corta» está explicado en el tablero («en castellano la consecuencia está en el verbo») pero el lock §13 sigue diciendo «la consecuencia, al final» sin excepción. «cuál es cuál» no está al final («…cuál es cuál en cada una.») y no está declarado en ningún lado | Lock §13; refero, palabra resaltada sin regla | `capturas/mk-cual.png`. **Cierre:** la excepción escrita en §13 con su porqué, o mover el marcador |
+| 4 | menor | Lucía | `tablero.html` (líneas 304 y 308) y `espacios-foto.json` (F1) | **Segunda ronda** (9a y 9d de la ronda 1). «Las personas son ambiente de la empresa del cliente» y «en la oficina vidriada de una empresa cliente» chocan con la regla «nunca como clientes» que el mismo párrafo enuncia (la pauta de Bruno lo dice bien: «en su propia empresa»). Y el tablero presenta la flecha, el visto y el anillo como «marcas de revisión a mano», sin decir que son provisionales con semilla y que las definitivas las traza Bruno (lo dicen el lock §10b y el comentario del SVG) | Regla de personas generadas; prueba de fuego (lo que se le muestra a Ramón es lo que hay) | `grep -n "cliente" tablero.html`. **Cierre:** «en su propia empresa» o equivalente en los tres lugares; una línea en el tablero que diga que las marcas son provisionales |
+| 5 | menor | Lucía | Filete de 1 px que nace del borde, en Taller | `taller.css:25` lo pone «sobre cada titular de sección»: 5 en la home, 5 en Acompañamiento y 1 en Trabajo, el mismo trabajo que hace en The Ready (sobre o bajo el titular). El lock §10b dice que se toma y que «lo propio es dónde se corta: en el hero»; eso cubre 1 de los 5. El §13 no le pone techo ni rol | Encargo («ningún recurso copiado tal cual»); lock §10b y §13 | `herramientas/filetes.mjs`. **Cierre:** rol y techo en §13, o decirlo en el tablero como se dijo de los colores («es de ellos») |
+| 6 | menor | Lucía | Chequeo a 390, las dos | El build apila campo y botón (campo de 338 px, 310 útiles). Los prototipos los ponen en una fila: el campo queda con 135 px útiles en Taller y 142 en Pizarra. «ferreteriaroma.cl» (136 px) ya no cabe en Taller, y «constructoraandesur.cl» (186 px) no cabe en ninguna: el dominio se escribe corriéndose dentro del campo. No está declarado en el lock §17 | Plan («el chequeo… tal cual»); C6 (control usable) | `herramientas/codigo.mjs`; `capturas/hero-taller-home-390.jpg`. **Cierre:** apilar a 390 como el build, o declararlo y probarlo con un dominio largo |
+| 7 | menor | Lucía | Lock §11 y prototipos | **Segunda ronda** (defecto 10). Instrument Sans 500 se ve más liviana que Saans Medium en el comparativo; el lock sigue diciendo «se ajusta en el tablero si el 500 se ve más liviano» y no hay prueba anotada | Lock §11 | **Cierre:** probar 530 a 560 contra el comparativo y anotar el resultado (aunque sea «se queda en 500, porque…») |
+
+### Lo de la ronda 1, uno por uno
+
+| Ronda 1 | Estado hoy |
+|---|---|
+| 1 · los F<n> no coincidían | **Cerrado** en la numeración (una sola, la del tablero; tabla de equivalencia llena; `generar.mjs` bloquea). La medida de F2 se desfasó después: es el defecto 1 de esta ronda, distinto |
+| 2 · F9 y F10 con proporción y encuadre ajenos | **Cerrado.** F7 (ex F9) en 16:9 con sus dos recortes; F2 (ex F10) con encuadre Taller y escena reescrita |
+| 3 · el tablero no mostraba lo que cambia del manual | **Cerrado.** Tabla de ocho reglas con su fecha, la decisión de colores y la del punto |
+| 4 · orden del hero | **Cerrado.** Medido arriba; el texto sigue el orden del build en 12/12 |
+| 5 · Pizarra genérica | **Cerrado.** Escala display en todas las páginas, servicios con peso distinto (dos puertas y un par), hasta 4 marcadores; el tablero nombra sus dos pantallas débiles |
+| 6 · recursos de The Ready tal cual | **Cerrado**, salvo el filete (defecto 5): paleta propia (la exacta queda como opción dicha como de ellos), sin óvalo, encabezado, collage, garabatos ni mancha; marcas de revisión y sello propios |
+| 7 · el óvalo tapaba el campo | **Cerrado.** No hay óvalo; el botón no toca el campo |
+| 8 · marcador fuera de la regla | **Abierto** (defecto 3) |
+| 9 · tablero | (b) JavaScript y «Cookies»: **cerrado**. (c) decimales: **cerrado**. (a) provisionales y (d) «cliente»: **abiertos** (defecto 4) |
+| 10 · peso de la letra | **Abierto** (defecto 7) |
+| 11 · código | Dimensiones: **cerrado** (0 imágenes sin `width`/`height`). Plex Sans 600: **cerrado** (700). 360 px: **abierto**, dentro del defecto 2 |
+| 12 · alt de F11 con barrio | **Cerrado.** R3 dice «una calle con árboles de hojas verdes» |
+
+### Las preguntas del encargo
+
+- **¿Distintas, o una es la otra con menos cosas?** Distintas, aunque más cerca que en la ronda 1: comparten
+  paleta, letra, escala, módulo, botones, marcador y pie. Lo que las separa ya no es la cantidad sino la
+  composición: Taller arma desde la izquierda con piezas a sangre y asimetría, y Pizarra lee en una columna
+  corrida a la derecha con los rótulos a la izquierda (cifras arriba). Pizarra no es Taller sin cosas: tiene una
+  grilla que Taller no tiene.
+- **¿Taller tiene la energía que pidió Ramón?** Sí, y menos ruidosa que en la ronda 1: la cinta en dos páginas,
+  el resaltador de plumón en el titular de 138, una banda del resaltador por página, la flecha y el sello girado
+  junto al chequeo, el anillo en el botón y las fotos con gente a sangre. No es un sitio típico. Lo que perdió al
+  dejar de copiar (el óvalo, la mancha, los garabatos) lo reemplazó con piezas que hacen trabajo.
+- **¿Pizarra limpia es clara sin volverse genérica?** Sí, del hero a los servicios. La letra grande y el
+  resaltador la sacan de lo típico. Sus pantallas más débiles son «Lo que incluye» y el mes tipo en filas, y el
+  tablero lo dice con todas sus letras: Ramón elige sabiendo eso.
+
+### Detector anti-slop (antislop-web §E + refero)
+
+```
+COPY        ✓ sin verbos de folleto  ✓ sin relleno de apertura  ✓ sin tricolon  ✓ sin «no solo X sino Y»
+            ✓ sin pregunta retórica  ✓ sin Title Case  ✓ tú en todo el tablero  ✓ 0 rayas
+            ✓ cero prueba social      ✓ decimales con coma
+            ✗ «empresa cliente» contra la regla de personas (defecto 4)
+            · el copy de las páginas es el de E8 (igual al build, medido); no se reauditó
+ESTRUCTURA  ✓ servicios con peso distinto en las dos  ✓ tres planes reales en tres columnas (Taller)
+            ✓ sin «¿por qué elegirnos?»  ✓ FAQ de E8  ✓ «36 → 73 → 100» con su fuente (E8)
+            ✓ formulario de un campo  ✓ hero no es 100vh centrado  ✓ orden de secciones = build
+CÓDIGO      ✓ 1 main, 1 h1, sin saltos, landmarks  ✓ valores del lock, no por defecto
+            ✓ sin degradé ni glass  ✓ 0 emoji (flechas de fuente)  ✓ alt reales; marcas y rótulos aparte
+            ✓ foco visible en todo el recorrido  ✓ contraste AA en 1.548 nodos  ✓ label del campo
+            ✓ imágenes dimensionadas, hero eager/high, font-display swap
+            · JSON-LD, canonical y OG heredados del build; prototipos con noindex. Índice, sitemap y ?v=N: no aplican
+            ✗ titulares fuera de su caja entre 768 y 1180 y a 360 (defecto 2)
+VISUAL      ✓ acento no índigo (ciruela del manual y resaltador propio)  ✓ sin tarjetas de adorno (las dos piezas
+              enmarcadas son piezas de lectura de E9)  ✓ sin franja lateral  ✓ modo claro  ✓ sin serif editorial
+            · palabra resaltada: pedido de Ramón, con regla y techo medido; dos usos sin declarar (defecto 3)
+            ✓ la referencia fuerte no se promedió: Taller conserva cinta, marcador, escala y bandas; Pizarra toma de
+              Gehl la columna y la foto a sangre sin diluir la letra
+            ✓ roles de token: resaltador solo en marcador, banda «lo que ganas» y barrido del botón
+            ✓ espacios de foto honestos (proporción exacta, rótulo, dirección de arte)
+            ✓ MAYÚSCULAS solo en mono con interletra
+            · filete del borde tomado sin techo (defecto 5)
+```
+
+### Pruebas de fuego
+
+- **Logo tapado.** Taller: inconfundible en la primera pantalla y ya no se la atribuiría a The Ready; se lee como
+  de su familia, por la letra, el resaltador y la cinta, que es lo que Ramón eligió. Pizarra: el hero sostiene;
+  «Lo que incluye» podría ser de otra consultora ordenada (el tablero lo dice).
+- **Rubro cambiado.** Taller calza con cualquier agencia «con juego», pero el chequeo arriba, la flecha que
+  apunta al campo y el visto junto a los robots que responden 200 son de este negocio. Pizarra, de los planes
+  para abajo, calza con cualquier servicio por suscripción.
+- **Leído en voz alta.** «Estás pagando para que lleguen a tu sitio. Ahí se corta el circuito.» Suena a persona
+  (texto de E8, intacto). El tablero también: «Elige una dirección: Taller o Pizarra limpia.»
+
+### Lo que está bien (no perderlo en la corrección)
+
+1. **El lock sigue siendo verificable:** seis valores sorteados en dos rondas, seis calzan con el sitio en vivo.
+   Y ahora dice, recurso por recurso (§10b), qué se tomó y qué se hizo propio: es la mejor defensa contra la
+   copia que tiene la obra.
+2. **Las correcciones se hicieron en el sistema, no en la captura:** la paleta, el botón, el módulo y la fila de
+   obras salen de SpindleLab; el orden del hero sale del build; el texto sigue igual en 12/12 con dos métodos
+   distintos (el de Lucía y el mío).
+3. **La cinta y el marcador siguen pasando donde The Ready no pasa** (pausa, movimiento reducido, velocidad por
+   tiempo, fuera de los encabezados), y el contraste está limpio en todas las vistas.
+4. **`generar.mjs` es más guardián que en la ronda 1:** bloqueó solo el desfase de F2 que encontré, sin gastar;
+   la clave no sale por ningún lado.
+5. **El tablero no esconde lo débil:** las pantallas flojas de Pizarra, la familia de The Ready en Taller y las
+   reglas del manual que cambian están escritas para Ramón.
+
+### Observación sin severidad: el logo y la regla del oro quedan abiertos
+
+Por la decisión de Ramón del 16-oct, el wordmark y la regla de un solo oro por vista quedan abiertos para el
+sistema nuevo. Dependen de eso y quedan en pausa, sin ser defecto: la sección 3 del tablero («Dónde va el punto
+dorado»), la fila §06/§02 de la tabla del manual, el lock §12 (la guarda del resaltador contra el oro), la línea
+«un solo oro por página» de «Lo comprobado» y la medición de oro dentro de las fotos (manual §07b), que la pauta
+y `generar.mjs` siguen haciendo. Lucía decide si la sección 3 se queda en el tablero como «en pausa» o sale, para
+que Ramón no decida algo que ya dijo que va a cambiar. En esta ronda no medí oro.
+
+### Evidencia
+
+- `e10/qa-paso-2/ronda-2/capturas/`: heroes de build y de las dos direcciones a 1440 y 390; los cortes a 768 y
+  1024 (defecto 2); el marcador de cerca (en línea, en papel sobre la banda y en «cuál es cuál»); el anillo; el
+  foco del campo; la portada del caso de The Ready en vivo.
+- `e10/qa-paso-2/ronda-2/herramientas/`: `vivo.mjs` (lock en vivo), `texto.mjs` y `texto-cmp.py` (texto),
+  `hero.mjs` (orden y formulario), `cap.mjs`, `desborde.mjs`, `bisecar.mjs`, `palabras.mjs` y `tableta.mjs`
+  (desborde), `cinta.mjs`, `techos.mjs` (marcador, bandas y espacios de foto), `contraste.mjs`, `foco.mjs` y
+  `foco2.mjs`, `codigo.mjs` y `jerarquia.mjs`, `distintas.mjs`, `filetes.mjs`, `zoom.mjs`, `tablero.mjs` y
+  `servir-tablero.py`, y `sinred.mjs`, `api400.mjs` y `api200.mjs` (precargados para `generar.mjs`). Esperan
+  `proto/` en 127.0.0.1:8780, `dist/` en 8781 y el tablero envuelto en 8792; reciben la carpeta de salida como
+  argumento.
+- `e10/qa-paso-2/ronda-2/datos/`: el texto con JavaScript encendido y su comparación, el desborde por página y
+  ancho, y las salidas de `generar.mjs`.
 
 ---
 

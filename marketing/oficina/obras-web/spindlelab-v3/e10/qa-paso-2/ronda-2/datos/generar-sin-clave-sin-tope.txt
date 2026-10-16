@@ -1,0 +1,66 @@
+Pauta E10 v2 · 9 fichas para 8 números del tablero · elegidas 9 · 2 variante(s) por ficha
+Claves en el entorno: GEMINI_API_KEY no está · OPENAI_API_KEY no está
+Proveedor que se usaría: gemini (gemini-2.5-flash-image) · sin clave: se muestra Gemini, el primero que se usaría
+
+  F1-taller   P1  Home · Hero
+        Mesa de notas en la oficina de una bodega · 9:16 → 768×1344
+        1440: 420×724 css (0,58) ← 768×1324 (1,83×) · 390: 390×488 css (4:5) ← 768×960 (1,97× ⚠)
+        → salida/F1-taller-1.png, F1-taller-2.png
+  F2-taller   P1  Home · Campo «Visibilidad», dentro de la banda amarilla («lo que ganas»)
+        El mensaje que llega al mesón · 4:5 → 896×1152
+        1440: 398×498 css (4:5) ← 896×1120 (2,25×) · 390: 280×351 css (4:5) ← 896×1120 (3,20×)
+        → salida/F2-taller-1.png, F2-taller-2.png
+  F3-taller   P1  Home · Encabeza «Continuidad» (Acompañamiento mensual), columna izquierda del par Continuidad y Alcance
+        Planilla de cuatro columnas en el entrepiso · 4:3 → 1184×864
+        1440: 617×463 css (4:3) ← 1152×864 (1,87×) · 390: 390×293 css (4:3) ← 1152×864 (2,95×)
+        → salida/F3-taller-1.png, F3-taller-2.png
+  F4-taller   P1  Home · Encabeza «Alcance» (redes y Google Ads), columna derecha del par, bajada 120 px (la asimetría de The Ready)
+        Un mensaje en la maestranza · 3:2 → 1248×832
+        1440: 617×411 css (3:2) ← 1248×832 (2,02×) · 390: 390×260 css (3:2) ← 1248×832 (3,20×)
+        → salida/F4-taller-1.png, F4-taller-2.png
+  F5-pizarra  P1  Home · Banda a sangre entre «Qué hacemos» y los servicios
+        Una persona al fondo de una mesa larga, con la cordillera · 16:9 → 1344×768
+        1440: 1440×617 css (21:9) ← 1344×576 (0,93× ⚠) · 390: 390×488 css (4:5) ← 614×768 (1,57× ⚠)
+        → salida/F5-pizarra-1.png, F5-pizarra-2.png
+  F6-taller   P1  Acompañamiento mensual · A sangre derecha, al lado de «Una auditoría te dice qué hacer; este servicio lo hace y lo sostiene»
+        Hojas en fila en la pared de una sala del centro · 3:2 → 1248×832
+        1440: 655×436 css (3:2) ← 1248×832 (1,91×) · 390: 390×260 css (3:2) ← 1248×832 (3,20×)
+        → salida/F6-taller-1.png, F6-taller-2.png
+  F7-pizarra  P1  Acompañamiento mensual · Banda a sangre bajo la cabecera, donde el build tenía d/ventana.jpg (que sale)
+        La mesa después de la reunión · 16:9 → 1344×768
+        1440: 1440×617 css (21:9) ← 1344×576 (0,93× ⚠) · 390: 390×488 css (4:5) ← 614×768 (1,57× ⚠)
+        → salida/F7-pizarra-1.png, F7-pizarra-2.png
+  F8-taller   P1  Trabajo · «Antes de construir el tuyo», el cierre de Trabajo
+        Bocetos de estructura en papel, de cerca · 4:3 → 1184×864
+        1440: 508×381 css (4:3) ← 1152×864 (2,27×) · 390: 342×257 css (4:3) ← 1152×864 (3,37×)
+        → salida/F8-taller-1.png, F8-taller-2.png
+  F8-pizarra  P1  Trabajo · «Antes de construir el tuyo», el cierre de Trabajo
+        Bocetos de estructura en papel, sobre una mesa con aire · 4:3 → 1184×864
+        1440: 844×633 css (4:3) ← 1152×864 (1,36×) · 390: 342×257 css (4:3) ← 1152×864 (3,37×)
+        → salida/F8-pizarra-1.png, F8-pizarra-2.png
+
+Pediría 18 imagen(es), 18 llamada(s). Costo estimado: USD 0,70 con gemini; con openai (calidad high): USD 4,50.
+Precios de lista conocidos; verificar en la consola del proveedor antes de una corrida grande.
+
+Pauta contra el tablero (tableros/e10-direcciones/espacios-foto.json):
+  F1-taller   ✓ calza              Home · 420×724 a 1440 · 390×488 a 390 · Mesa de notas en la oficina de una bodega
+  F2-taller   ✗ el espacio cambió  Home · 443×554 a 1440 · 280×351 a 390 · El mensaje que llega al mesón
+  F3-taller   ✓ calza              Home · 617×463 a 1440 · 390×293 a 390 · Planilla de cuatro columnas en el entrepiso
+  F4-taller   ✓ calza              Home · 617×411 a 1440 · 390×260 a 390 · Un mensaje en la maestranza
+  F5-pizarra  ✓ calza              Home · 1440×617 a 1440 · 390×488 a 390 · Una persona al fondo de una mesa larga, con la cordillera
+  F6-taller   ✓ calza              Acompañamiento mensual · 655×436 a 1440 · 390×260 a 390 · Hojas en fila en la pared de una sala del centro
+  F7-pizarra  ✓ calza              Acompañamiento mensual · 1440×617 a 1440 · 390×488 a 390 · La mesa después de la reunión
+  F8-taller   ✓ calza              Trabajo · 508×381 a 1440 · 342×257 a 390 · Bocetos de estructura en papel, de cerca
+  F8-pizarra  ✓ calza              Trabajo · 844×633 a 1440 · 342×257 a 390 · Bocetos de estructura en papel, sobre una mesa con aire
+
+Avisos (no bloquean): 5
+  · F1-taller con gemini: a 390 el recorte da 768×960 para 390×488 css (1,97×; el tablero pide 2×).
+  · F5-pizarra con gemini: a 1440 el recorte da 1344×576 para 1440×617 css (0,93×; el tablero pide 1×).
+  · F5-pizarra con gemini: a 390 el recorte da 614×768 para 390×488 css (1,57×; el tablero pide 2×).
+  · F7-pizarra con gemini: a 1440 el recorte da 1344×576 para 1440×617 css (0,93×; el tablero pide 1×).
+  · F7-pizarra con gemini: a 390 el recorte da 614×768 para 390×488 css (1,57×; el tablero pide 2×).
+
+NO SE PUEDE GENERAR: 1 cosa(s) no calzan.
+  ✗ F2-taller: el espacio cambió en el tablero (a 1440 398×498 → 443×554). Revisa la ficha (proporción, recortes) y copia los valores nuevos.
+
+Modo lista: no se llamó a la red y no se generó nada. Con --tope tampoco se generaría hasta que lo de arriba calce.
