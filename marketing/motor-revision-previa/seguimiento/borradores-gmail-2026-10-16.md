@@ -17,3 +17,17 @@ Antes de enviar: abrir uno y comprobar que el enlace muestra el dominio (`verifi
 
 ## Enviados
 Los 5 salieron el **16-oct-2026 a las 18:07 (hora de Santiago)**, confirmados en Gmail (`in:sent`), cada uno en su propio hilo. Ids de hilo y de mensaje en `envios-motor-2026-10.csv`. Seguimiento del día 3: **lunes 19-oct**, solo si no hubo respuesta, como respuesta en el mismo hilo.
+
+## Segunda ola (6 correos genéricos o con cargo poco claro), borradores creados el 16-oct-2026, 21:25 UTC
+Ramón pidió no esperar la tasa de rebote: el objetivo es afinar la búsqueda de leads enviando. **No se envió nada.** Antes de crearlos se revisó `list_drafts` (solo había un borrador a su propio correo) y `in:sent` por cada dirección (cero resultados).
+
+| Id | Sitio | Para | Asunto | Id del borrador |
+|---|---|---|---|---|
+| X26 | pfeffer.cl | pfeffer@pfeffer.cl | el formulario de pfeffer.cl | r2440315703861331090 |
+| X41 | gazmuri-cia.cl | aorezzoli@gazmuri-cia.cl | el formulario de gazmuri-cia.cl | r3023943771877241363 |
+| X46 | pfvabogados.com | camilocereno@pfvabogados.com | pfvabogados.com y su formulario | r-2608374908331042641 |
+| X49 | palavicino.cl | rolando.gonzalez@palavicino.cl | el formulario de palavicino.cl | r-7263119459256372345 |
+| X50 | cisternasycia.cl | adintrans@cisternasycia.cl | el formulario de cisternasycia.cl | r5407696317083063891 |
+| X52 | bacs.cl | atromo@bacs.cl | bacs.cl y la política de privacidad | r4634207068474301855 |
+
+Misma regla anti duplicado: estas 6 direcciones ya tienen borrador, no crear otro.
