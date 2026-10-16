@@ -1,0 +1,86 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Overlay — Verifica y Cumple</title>
+<!--
+  PLANTILLA DE OVERLAY TRANSPARENTE para montar sobre video en CapCut.
+
+  Es el sistema visual de VERIFICA, no el de SpindleLab: acá no entra #0e141b,
+  ni hilo de oro, ni Gabarito, ni Manrope. Eso es la otra marca.
+
+  Se renderiza con fondo transparente (ver render.sh). El texto lleva sombra
+  porque no sabemos qué hay debajo: sobre un cielo claro un texto blanco sin
+  sombra desaparece.
+
+  El cuadro se elige por ?f=N igual que en el reel, así el render es
+  determinista y se puede rehacer uno suelto.
+-->
+<style>
+  @font-face {
+    font-family: "Archivo Black"; font-style: normal; font-weight: 400; font-display: block;
+    src: url("archivo-black-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+      U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+      U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: "Archivo Black"; font-style: normal; font-weight: 400; font-display: block;
+    src: url("archivo-black-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+      U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+      U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  :root {
+    --azul-600: #2e5bff;
+    --lima-400: #d6ff3d;
+    --rosa-500: #ff3ea0;
+    --tinta-900: #17163a;
+    --tinta-500: #56547a;
+    --crema-100: #fffaf0;
+    --blanco: #ffffff;
+    --display: "Archivo Black", Impact, sans-serif;
+    --cuerpo: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  /* El fondo NO se declara: lo deja transparente el flag del render. Si acá pones
+     un background, el PNG sale opaco y el overlay tapa el video. */
+  html, body { margin: 0; padding: 0; background: transparent; }
+  body { width: 1080px; height: 1920px; position: relative; overflow: hidden; }
+
+  .etiqueta {
+    font-family: var(--cuerpo); font-size: 33px; font-weight: 700;
+    letter-spacing: .13em; text-transform: uppercase; color: var(--lima-400);
+    text-shadow: 0 2px 14px rgba(10,20,80,.55);
+  }
+  .linea {
+    font-family: var(--display); font-size: 120px; line-height: .93;
+    letter-spacing: -.022em; color: var(--blanco);
+    text-shadow: 0 6px 30px rgba(10,20,80,.32), 0 2px 8px rgba(10,20,80,.45);
+  }
+  .linea.grande { font-size: 168px; line-height: .90; letter-spacing: -.04em; }
+  .cuerpo {
+    font-family: var(--cuerpo); font-size: 39px; line-height: 1.28; color: var(--blanco);
+    text-shadow: 0 2px 12px rgba(10,20,80,.5);
+  }
+  .bloque { position: absolute; left: 80px; right: 80px; bottom: 300px; }
+  .bloque .etiqueta { margin: 0 0 22px; }
+  .bloque .cuerpo { margin: 26px 0 0; }
+</style>
+
+<div class="bloque">
+  <div class="etiqueta" id="etiqueta">Ley 21.719</div>
+  <div class="linea grande" id="linea">¿ESTÁS<br>SEGURO?</div>
+  <div class="cuerpo" id="cuerpo">Tu sitio pide datos. Mira qué hace con ellos.</div>
+</div>
+
+<script>
+  // Los cuadros del overlay. Uno por tramo del video; el montaje en CapCut decide
+  // cuánto dura cada uno. ?f=N elige el cuadro.
+  const CUADROS = [
+    { etiqueta: 'Ley 21.719',  linea: '¿ESTÁS<br>SEGURO?',      cuerpo: 'Tu sitio pide datos. Mira qué hace con ellos.' },
+    { etiqueta: 'Sin registro', linea: 'REVISA<br>EL TUYO.',     cuerpo: 'verifica.spindlelab.cl' },
+  ];
+  const f = Number(new URLSearchParams(location.search).get('f') || 0);
+  const c = CUADROS[Math.max(0, Math.min(CUADROS.length - 1, f))];
+  document.getElementById('etiqueta').innerHTML = c.etiqueta;
+  document.getElementById('linea').innerHTML = c.linea;
+  document.getElementById('cuerpo').innerHTML = c.cuerpo;
+</script>
