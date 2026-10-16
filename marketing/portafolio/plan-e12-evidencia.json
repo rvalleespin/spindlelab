@@ -1,0 +1,219 @@
+{
+ "que_es": "Comprobación de nombres del plan E12 de portafolio (Bruno). NIC Chile por whois web; sitio servido con curl. Regenerar con el mismo script descrito en plan-e12.md §6.",
+ "elegidos": [
+  {
+   "dominio": "tonela.cl",
+   "estado": "libre",
+   "consultado": "2026-10-16 20:45:44 CLST"
+  },
+  {
+   "dominio": "ocelo.cl",
+   "estado": "libre",
+   "consultado": "2026-10-16 20:45:45 CLST"
+  },
+  {
+   "dominio": "sesenta.cl",
+   "estado": "libre",
+   "consultado": "2026-10-16 20:45:46 CLST"
+  },
+  {
+   "dominio": "doceavo.cl",
+   "estado": "libre",
+   "consultado": "2026-10-16 20:45:47 CLST"
+  }
+ ],
+ "existentes_01_a_03": [
+  {
+   "dominio": "raigal.cl",
+   "estado": "registrado",
+   "titular": "persona natural (nombre omitido a propósito)",
+   "creado": "2025-03-07",
+   "consultado": "2026-10-16 20:45:47 CLST",
+   "sitio": {
+    "http": "200",
+    "url_final": "https://raigal.cl/",
+    "titulo": "Raigal — Arquitectura y Construcción"
+   }
+  },
+  {
+   "dominio": "aplomo.cl",
+   "estado": "registrado",
+   "titular": "persona natural (nombre omitido a propósito)",
+   "creado": "2008-07-01",
+   "consultado": "2026-10-16 20:45:49 CLST",
+   "sitio": {
+    "http": "404",
+    "url_final": "https://www.aplomochile.com/",
+    "titulo": "Error"
+   }
+  },
+  {
+   "dominio": "deslinde.cl",
+   "estado": "registrado",
+   "titular": "M&F Servicios Integrales",
+   "creado": "2018-11-03",
+   "consultado": "2026-10-16 20:45:51 CLST",
+   "sitio": {
+    "http": "200",
+    "url_final": "https://www.deslinde.cl/",
+    "titulo": "Deslinde – Gestión Inmobiliaria y Arquitectura Urbana"
+   }
+  }
+ ],
+ "descartados": [
+  {
+   "dominio": "izo.cl",
+   "estado": "registrado",
+   "titular": "AUDIQUALITY S.A.",
+   "creado": "2011-02-23",
+   "consultado": "2026-10-16 20:45:54 CLST"
+  },
+  {
+   "dominio": "brago.cl",
+   "estado": "registrado",
+   "titular": "Sociedad Constructora Brago",
+   "creado": "2025-01-13",
+   "consultado": "2026-10-16 20:45:54 CLST"
+  },
+  {
+   "dominio": "overol.cl",
+   "estado": "registrado",
+   "titular": "persona natural (nombre omitido a propósito)",
+   "creado": "2010-02-15",
+   "consultado": "2026-10-16 20:45:55 CLST"
+  },
+  {
+   "dominio": "arqueo.cl",
+   "estado": "registrado",
+   "titular": "persona natural (nombre omitido a propósito)",
+   "creado": "2018-04-19",
+   "consultado": "2026-10-16 20:45:56 CLST"
+  },
+  {
+   "dominio": "tabula.cl",
+   "estado": "registrado",
+   "titular": "persona natural (nombre omitido a propósito)",
+   "creado": "2016-08-10",
+   "consultado": "2026-10-16 20:45:56 CLST"
+  },
+  {
+   "dominio": "cuadre.cl",
+   "estado": "registrado",
+   "titular": "persona natural (nombre omitido a propósito)",
+   "creado": "2025-07-17",
+   "consultado": "2026-10-16 20:45:57 CLST"
+  },
+  {
+   "dominio": "partida.cl",
+   "estado": "registrado",
+   "titular": "persona natural (nombre omitido a propósito)",
+   "creado": "2025-11-24",
+   "consultado": "2026-10-16 20:45:58 CLST"
+  },
+  {
+   "dominio": "fierro.cl",
+   "estado": "registrado",
+   "titular": "persona natural (nombre omitido a propósito)",
+   "creado": "2021-10-18",
+   "consultado": "2026-10-16 20:45:58 CLST"
+  },
+  {
+   "dominio": "almanaque.cl",
+   "estado": "registrado",
+   "titular": "Grupo Hosting Titular temporal por mandato del cliente Organización: Grupo Hosting",
+   "creado": "2026-08-31",
+   "consultado": "2026-10-16 20:45:59 CLST"
+  },
+  {
+   "dominio": "vence.cl",
+   "estado": "registrado",
+   "titular": "Grupo Hosting Titular temporal por mandato del cliente Organización: Grupo Hosting",
+   "creado": "2026-04-23",
+   "consultado": "2026-10-16 20:46:00 CLST"
+  }
+ ],
+ "libres_no_elegidos": [
+  {
+   "dominio": "trobo.cl",
+   "estado": "libre",
+   "consultado": "2026-10-16 20:46:00 CLST"
+  },
+  {
+   "dominio": "izal.cl",
+   "estado": "libre",
+   "consultado": "2026-10-16 20:46:01 CLST"
+  },
+  {
+   "dominio": "estroba.cl",
+   "estado": "libre",
+   "consultado": "2026-10-16 20:46:02 CLST"
+  },
+  {
+   "dominio": "mesal.cl",
+   "estado": "libre",
+   "consultado": "2026-10-16 20:46:02 CLST"
+  },
+  {
+   "dominio": "cuadral.cl",
+   "estado": "libre",
+   "consultado": "2026-10-16 20:46:03 CLST"
+  }
+ ],
+ "busqueda_web_16oct": {
+  "Ocelo": "«\"Ocelo\" óptica OR oftalmología OR clínica Chile» y «\"Ocelo\" marca OR empresa OR lentes OR anteojos»: ningún negocio con ese nombre",
+  "Sesenta": "«\"Sesenta\" abogados laboral Chile estudio»: ningún estudio con ese nombre",
+  "Tonela": "«\"Tonela\" empresa Chile izaje OR eslingas OR industrial» y «\"Tonela\" OR \"Doceavo\" marca empresa Chile»: ninguna empresa con ese nombre",
+  "Doceavo": "«\"Doceavo\" contabilidad OR contadores OR contable Chile» y la búsqueda conjunta: ninguna empresa con ese nombre"
+ },
+ "higgsfield_16oct": {
+  "balance": {
+   "credits": 0,
+   "subscription_plan_type": "free"
+  },
+  "recargas_sueltas": "no disponibles para este espacio de trabajo (credit_purchase_links vacío; el widget dice que la recarga automática y las recargas sueltas no están disponibles)",
+  "planes_usd": {
+   "PLUS_mensual": 49,
+   "PLUS_anual_por_mes": 39,
+   "PLUS_creditos_mes": 1000,
+   "ULTRA_mensual": 129,
+   "ULTRA_anual_por_mes": 99,
+   "ULTRA_creditos_mes": 3000
+  },
+  "equivalencias_del_widget": {
+   "1000_creditos": "= 600 generaciones Nano Banana Pro; ~200 videos Kling 3.0"
+  },
+  "ilimitados_que_lista_el_widget_PLUS": "365 días: Nano Banana, Seedream 4.5, Seedream 5.0 Lite, Flux.2 Pro 1K, Kling O1 Image, GPT Image; 7 días: Nano Banana 2, Wan 3.0. Texto del widget: «Buy until: Oct 17»",
+  "herramientas_usadas": [
+   "balance",
+   "models_explore (recommend, get, list)",
+   "show_plans_and_credits (solo lectura)"
+  ],
+  "generaciones": 0,
+  "creditos_gastados": 0
+ },
+ "costos_historicos_en_el_repo": {
+  "soul_location": "0,03 créditos por imagen (2-sep-2026, marketing/oficina/memoria/bruno-direccion-creativa.md y sprint-concepto-02sep/rutas.md)",
+  "kling3_0_turbo": "7,5 créditos, 5 s vertical (2-sep-2026, sprint-concepto-02sep/rutas.md)",
+  "veo3_1_fast": "22 créditos por clip de 8 s (jul-2026, handoff-2026-07-23-piezas-agosto.md)",
+  "gemini_openai_directo": "~USD 0,04 (Gemini) y ~USD 0,25 (OpenAI, calidad alta) por imagen, precios de lista citados en encargo-e10-fotos-ia.md"
+ },
+ "nota_titulares": "Los titulares que son personas naturales se omiten: para la regla 2 basta saber que el dominio está tomado; el nombre de una persona no le sirve a nadie aquí.",
+ "hechos_de_norma_consultados_16oct": {
+  "EN_1492_codigo_de_colores": {
+   "valor": "violeta 1 t, verde 2 t, amarillo 3 t, gris 4 t, rojo 5 t, marrón 6 t, azul 8 t, naranja 10 t o más; etiqueta azul cosida en las de poliéster",
+   "fuentes": [
+    "https://www.certex.dk/en/knowhow/articles-about-textile-slings/color-coding-of-polyester-slings",
+    "https://www.mennens.nl/en/lifting-knowhow/safe-lifting/colour-coding-of-polyester-slings",
+    "https://www.dolezych.de/en/newsblog/guide/color-codes-for-lifting-slings-and-round-slings/"
+   ],
+   "matiz": "EN 1492-1 eslingas planas, EN 1492-2 redondas; capacidades intermedias no siguen el código (Dolezych). Los factores de modo se verifican aparte antes de programar la tabla."
+  },
+  "pendientes_de_verificar_por_Simon": [
+   "factores de modo de amarre EN 1492-1",
+   "criterios de descarte y frecuencia de inspección",
+   "Código del Trabajo arts. 159 a 163 y 168, y qué cuenta como día hábil para el art. 168",
+   "calendario del SII del año mostrado (F29, Operación Renta)",
+   "qué se mide en una evaluación refractiva y qué no se puede prometer"
+  ]
+ }
+}
