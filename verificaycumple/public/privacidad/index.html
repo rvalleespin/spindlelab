@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de privacidad · Verifica y Cumple</title>
+<meta name="description" content="Qué datos pasan por Verifica y Cumple, para qué los usamos y quién más los procesa. Punto por punto, siguiendo los 12 que exige la Ley 21.719.">
+<link rel="canonical" href="https://verifica.spindlelab.cl/privacidad/">
+<meta name="robots" content="index, follow">
+
+<!-- El mismo ícono en línea que la portada (index.html). Sin él, el navegador pide
+     /favicon.ico, que acá no existe: en local es un error 404 en la consola, y en Pages
+     vuelve la portada entera como si fuera el ícono. Si cambia allá, cambia acá. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23ff3ea0'/%3E%3Cpath d='M30 52 L44 66 L72 36' fill='none' stroke='%23fff' stroke-width='11' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<!-- Tarjeta para cuando alguien comparte esta página (WhatsApp, LinkedIn, correo). Sin esto
+     LinkedIn arma la vista previa sola y sin imagen. Todas las URL van al dominio nuevo, no a
+     pages.dev, para que ningún link compartido quede apuntando al dominio viejo. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Verifica y Cumple">
+<meta property="og:title" content="Política de privacidad · Verifica y Cumple">
+<meta property="og:description" content="Qué datos pasan por Verifica y Cumple, para qué los usamos y quién más los procesa. Punto por punto, siguiendo los 12 que exige la Ley 21.719.">
+<meta property="og:url" content="https://verifica.spindlelab.cl/privacidad/">
+<meta property="og:locale" content="es_CL">
+<meta property="og:image" content="https://verifica.spindlelab.cl/assets/img/og-verificaycumple.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="Verifica y Cumple, chequeo técnico gratuito para la Ley 21.719. Una fiscalizadora a caballo bajo la pregunta ¿Estás seguro?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://verifica.spindlelab.cl/assets/img/og-verificaycumple.jpg">
+
+<style>
+  /* Misma fuente propia que la portada, servida desde este dominio — nada de Google Fonts. */
+  @font-face {
+    font-family: "Archivo Black";
+    font-style: normal; font-weight: 400; font-display: swap;
+    src: url("../assets/fonts/archivo-black-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: "Archivo Black";
+    font-style: normal; font-weight: 400; font-display: swap;
+    src: url("../assets/fonts/archivo-black-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  :root {
+    --vivo-azul: #2e5bff;
+    --vivo-rosa: #ff3ea0;
+    --vivo-rosa-osc: #c21e78;
+    --vivo-verde: #d6ff3d;
+    --vivo-tinta: #17163a;
+    --vivo-panel: #fffaf0;
+    --vivo-suave: #56547a;
+    --borde: rgba(23,22,58,.14);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--vivo-panel);
+    color: var(--vivo-tinta);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--vivo-rosa-osc); }
+  a:focus-visible { outline: 3px solid var(--vivo-rosa); outline-offset: 2px; }
+  .envoltura { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+  header.sitio {
+    background: var(--vivo-azul);
+    border-top: 8px solid var(--vivo-verde);
+    padding: 20px 0;
+  }
+  header.sitio .envoltura { display: flex; align-items: center; gap: 10px; }
+  .marca {
+    display: flex; align-items: center; gap: 10px; text-decoration: none;
+    color: #fff; font-family: "Archivo Black", Impact, serif; text-transform: uppercase;
+    font-size: .98rem; letter-spacing: 0;
+  }
+  .marca svg { width: 28px; height: 28px; flex: 0 0 auto; }
+  .sello-anillo { fill: none; stroke: #fff; stroke-width: 6; opacity: .7; }
+  .sello-nucleo { fill: var(--vivo-rosa); stroke: none; }
+  .sello-check { fill: none; stroke: #fff; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+
+  main { padding: 56px 0 70px; }
+  .eyebrow {
+    display: inline-block; font-family: "Archivo Black", Impact, serif;
+    font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+    background: var(--vivo-rosa); color: #fff;
+    padding: 6px 12px; border-radius: 999px; margin: 0 0 16px;
+  }
+  h1 {
+    font-family: "Archivo Black", Impact, serif; font-weight: 400;
+    text-transform: uppercase;
+    font-size: clamp(2rem, 6vw, 3.2rem); line-height: .96;
+    margin: 0 0 12px; letter-spacing: -.03em;
+  }
+  .version { font-size: .85rem; color: var(--vivo-suave); margin: 0 0 34px; }
+  .intro { color: var(--vivo-suave); margin: 0 0 40px; font-size: 1.04rem; }
+
+  .punto { border-top: 1px solid var(--borde); padding: 26px 0; }
+  .punto:first-of-type { border-top: none; padding-top: 0; }
+  /* El rosa vivo sobre la crema da 3,1:1 y el rótulo es chico: no se lee bien. El rosa
+     oscuro de los enlaces da más de 4,5:1 y sigue siendo el mismo color de marca. */
+  .punto-num {
+    font-family: "Archivo Black", Impact, serif; font-size: .78rem;
+    letter-spacing: .08em; text-transform: uppercase;
+    color: var(--vivo-rosa-osc); display: block; margin: 0 0 6px;
+  }
+  .punto h2 { font-size: 1.15rem; margin: 0 0 10px; letter-spacing: -.01em; }
+  .punto p { margin: 0 0 10px; color: var(--vivo-suave); }
+  .punto p:last-child { margin-bottom: 0; }
+  .punto strong { color: var(--vivo-tinta); }
+
+  .aviso-legal {
+    background: var(--vivo-tinta); color: rgba(255,255,255,.82);
+    border: none; border-radius: 0;
+    padding: 22px 24px; margin: 40px 0; font-size: .93rem; line-height: 1.6;
+  }
+  .aviso-legal strong { color: var(--vivo-verde); }
+
+  footer.sitio { background: var(--vivo-tinta); padding: 34px 0 42px; }
+  footer.sitio p { font-size: .85rem; color: rgba(255,255,255,.72); margin: 0 0 6px; }
+  footer.sitio a { color: var(--vivo-verde); }
+</style>
+</head>
+<body>
+
+<header class="sitio">
+  <div class="envoltura">
+    <a class="marca" href="/">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <circle class="sello-anillo" cx="50" cy="50" r="45"></circle>
+        <circle class="sello-nucleo" cx="50" cy="50" r="36"></circle>
+        <path class="sello-check" d="M32 52 L44 64 L70 36"></path>
+      </svg>
+      <span>Verifica y Cumple</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="envoltura">
+    <p class="eyebrow">Los 12 puntos que pide la ley</p>
+    <h1>Política de privacidad</h1>
+    <p class="version">Versión 1.4 · actualizada el 23 de septiembre de 2026.</p>
+    <!-- Hasta la 1.2 decía "los mismos 12 puntos que el chequeo le pide a cualquier otro
+         sitio", y no es cierto: el chequeo mira si hay una política enlazada, no lee su
+         contenido. Los 12 puntos son los que el Art. 14 ter pide publicar (brief §2.6). -->
+    <p class="intro">
+      Escribes un dominio, revisamos ese sitio y te decimos qué encontramos. Esta página cuenta qué
+      datos pasan por el sitio, para qué los usamos y quién más los procesa. Va ordenada por los 12 puntos
+      que la Ley 21.719 obliga a publicar a cualquiera que trate datos personales en Chile
+      (Art. 14 ter).
+    </p>
+
+    <div class="punto">
+      <span class="punto-num">01 · Política de tratamiento</span>
+      <h2>Esta política</h2>
+      <p>Esta es la versión 1.4. Si la cambiamos, actualizamos la fecha de arriba.</p>
+      <p>En esta versión contamos qué pasa cuando te escribimos nosotros primero: qué datos tuyos tratamos, de dónde salieron y cómo pedirnos que dejemos de hacerlo (puntos 04 y 10). Faltaba, y era justo el caso en que la iniciativa es nuestra y no tuya.</p>
+      <p>La 1.3, del mismo día, nombró a Google, donde vive nuestro correo, contó dónde procesa tus datos cada proveedor y con qué términos trabajamos con cada uno (punto 08), aclaró que Web3Forms guarda una copia de lo que envías (punto 09) y sumó las preguntas, porque el formulario ya no recibe solo pedidos.</p>
+      <p>La 1.2, del 22 de septiembre, sumó el conteo de visitas sin cookies. La 1.1, del mismo día, sumó el formulario para pedir el kit o la revisión trimestral. La 1.0 es del 21 de septiembre.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">02 · El responsable</span>
+      <h2>Quién trata los datos</h2>
+      <p><strong>SpindleLab SpA</strong>, RUT 78.474.925-8, representada por su fundador Ramón Vallejos Espíndola. Verifica y Cumple es un servicio de SpindleLab.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">03 · Medio de contacto</span>
+      <h2>Cómo escribirnos</h2>
+      <!-- Cada dirección de correo va entre email_off. En verifica.spindlelab.cl la zona de
+           Cloudflare tiene activa la ofuscación de correos, que reescribe cualquier dirección
+           del HTML como "[email protected]" y la recompone con un script. Sin JavaScript, o en
+           un lector que no lo ejecute, el medio de contacto que pide el Art. 14 ter quedaba
+           ilegible. En verificaycumple.pages.dev esto no pasaba. -->
+      <p>Si quieres pedirnos algo sobre tus datos, o preguntar por esta política, escríbenos a <!--email_off--><a href="mailto:hola@spindlelab.cl?subject=Privacidad%3A%20Verifica%20y%20Cumple">hola@spindlelab.cl</a><!--/email_off-->.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">04 · Categorías de datos</span>
+      <h2>Qué datos procesamos, y para qué</h2>
+      <p><strong>El chequeo</strong> solo procesa el dominio que escribes, para armar tu informe. No te pide nombre, correo ni ningún otro dato personal tuyo. Lo procesamos porque tú lo pediste al presionar "Revisar mi sitio", y esa es la base de legitimidad. Ese dominio no lo compartimos, no lo vendemos y no se lo cedemos a nadie. Solo pasa por Cloudflare, que es donde corre el chequeo (punto 08).</p>
+      <!-- Desde la 1.3 el formulario también recibe preguntas ("Tengo una pregunta"), así que
+           la finalidad cubre las dos cosas. La IP la registra Web3Forms al recibir el envío
+           (su acuerdo de tratamiento, anexo 1, "Technical metadata such as IP address"). -->
+      <p><strong>El formulario</strong> es aparte. Sirve para pedir el kit o la revisión trimestral, o para hacernos una pregunta, y ahí sí te pedimos datos: tu nombre, tu correo, tu sitio, lo que quieras contarnos o preguntarnos y, si vienes del resultado de un chequeo, el puntaje que sacó.</p>
+      <p>Al enviarlo, Web3Forms, el servicio que lo procesa, registra además datos técnicos del envío, como tu dirección IP y la hora. Usamos todo eso solo para responderte. Si pediste el kit o la revisión trimestral, para decirte qué incluye y cuánto sale; si nos preguntaste algo, para contestarte.</p>
+      <p>La base de legitimidad es tu propia solicitud, y además te pedimos un acto de consentimiento explícito con una casilla que viene sin marcar (punto 11). De los tres proveedores del punto 08, estos datos pasan por dos. Web3Forms nos lo reenvía, y Google es donde vive nuestro correo.</p>
+      <p><strong>El conteo de visitas.</strong> Contamos cuántas personas entran al sitio con Cloudflare Web Analytics, que no usa cookies ni guarda nada en tu navegador. Registra qué página se vio, desde qué sitio llegaste, el país, el tipo de dispositivo, el navegador y cuánto tardó en cargar. Nosotros lo vemos siempre sumado, sin saber quién eres. Lo usamos solo para saber si el chequeo le sirve a alguien.</p>
+      <!-- Punto agregado en la 1.4. Faltaba, y es el tratamiento donde SpindleLab toma la
+           iniciativa: escribirle a alguien que no nos buscó. El Art. 14 ter d) y j) piden
+           declarar las categorías, el universo de personas, la finalidad, la base y de dónde
+           salieron los datos; el Art. 8° le da a esa persona el derecho a oponerse en cualquier
+           momento cuando el tratamiento es de marketing directo. Vender cumplimiento de esta
+           ley haciendo outbound sin declararlo era la contradicción más fácil de que nos la
+           devolvieran. La redacción de la base de legitimidad la tiene que revisar un abogado. -->
+      <p><strong>Si te escribimos nosotros primero.</strong> A veces contactamos por correo a empresas que podrían necesitar esto, sin que nos hayan buscado antes. En ese caso tratamos datos de contacto profesional: tu nombre, tu cargo, tu correo de trabajo y el sitio de tu empresa. La finalidad es una sola, presentarte el chequeo y lo que hacemos.</p>
+      <p>Esos datos salen de bases de prospección comercial y de lo que la propia empresa publica en su sitio. La base de legitimidad es nuestro interés legítimo en ofrecer nuestros servicios a otras empresas, y por eso mismo <strong>puedes oponerte en cualquier momento</strong>: respondes al correo pidiéndolo, o escribes a <!--email_off--><a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a><!--/email_off-->, y dejamos de escribirte. No hace falta que expliques por qué. Guardamos tu correo en una lista de exclusión solo para no volver a contactarte por error.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">05 · Medidas de seguridad</span>
+      <h2>Cómo protegemos lo poco que pasa por acá</h2>
+      <p>Todo el sitio viaja cifrado por HTTPS, así que lo que escribes en él no se puede leer en el camino. El chequeo corre en Cloudflare, en un proceso que no guarda nada y no tiene una base de datos detrás. El dominio que escribes y tu resultado existen solo el tiempo que toma responderte.</p>
+      <p>El formulario lo procesa Web3Forms, que nos lo reenvía a nuestro correo, alojado en Google Workspace. No tenemos una base de datos propia con los pedidos ni con las preguntas. Quedan en ese correo y en la copia que guarda Web3Forms (punto 09). Los tres proveedores que usamos se comprometen en sus términos a medidas de seguridad que incluyen cifrar los datos (punto 08).</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">06 · Los cinco derechos</span>
+      <h2>Acceso, rectificación, supresión, oposición y portabilidad</h2>
+      <p>Son cinco cosas que puedes pedirnos sobre tus datos: una copia de lo que tengamos tuyo, que lo corrijamos, que lo borremos, que dejemos de usarlo o que te lo entreguemos para llevártelo a otra parte.</p>
+      <p>Si solo usaste el chequeo, no guardamos ningún dato personal tuyo, así que no tenemos ningún registro sobre el que puedas ejercerlos. Si nos escribiste por el formulario o a nuestro correo, sí los tenemos, y los ejerces escribiendo a <!--email_off--><a href="mailto:hola@spindlelab.cl?subject=Mis%20datos%3A%20Verifica%20y%20Cumple">hola@spindlelab.cl</a><!--/email_off-->. Respondemos directo, sin formularios de por medio.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">07 · Recurrir ante la Agencia</span>
+      <h2>Si no te respondemos, o no estás conforme</h2>
+      <p>Puedes recurrir ante la Agencia de Protección de Datos Personales, el organismo que la Ley 21.719 crea para fiscalizar esto.</p>
+    </div>
+
+    <!-- Hasta la 1.2 este punto nombraba solo a Cloudflare y a Web3Forms y cerraba con "No
+         compartimos tus datos con nadie más", pero los pedidos quedan en el correo de SpindleLab,
+         que es Google Workspace (dig MX spindlelab.cl -> smtp.google.com). Tampoco decía el
+         nivel de protección, que el Art. 14 ter pone en este mismo punto.
+         Cada dato sale de lo que el proveedor publica, leído el 23-sep-2026:
+         - Cloudflare: https://www.cloudflare.com/cloudflare-customer-dpa/ (v6.4, 3-abr-2026):
+           "forms part of the Main Agreement", "Cloudflare is a Processor", centros de datos
+           "geographically-distributed", Cloudflare, Inc., San Francisco.
+         - Web3Forms: https://web3forms.com/dpa (v1.0, 13-jul-2026; la página en vivo tiene un
+           desafío antibots, se leyó la copia de web.archive.org del 31-jul-2026): Web3Creative
+           "operates from India", "is the Processor", encargados en el anexo 3 (AWS, Cloudflare,
+           Hetzner en Alemania/Finlandia, CleanTalk y Akismet reciben IP y correo), copia de los
+           envíos con "time-to-live of three years". Servidores en "United States US-East
+           Region": https://docs.web3forms.com/getting-started/faq
+         - Google: https://cloud.google.com/terms/data-processing-addendum (a donde redirige el
+           de Workspace): "incorporated into the Agreement(s)", "Google is a processor",
+           10.1 "any country where Google or its Subprocessors maintain facilities".
+         - Que el formulario llega a nuestra casilla de Google Workspace, la del punto 03, no es
+           una suposición: un envío de prueba real del 22-sep-2026 llegó ahí. (La dirección no
+           se escribe en este comentario para que la ofuscación de Cloudflare no tenga nada que
+           reescribir fuera de los email_off.)
+         Lo legal se queda en lo que dice el brief §2.6 sobre el Art. 27-28, sin ir más allá.
+         Hasta el primer borrador de la 1.3 este punto decía "nos apoyamos en las cláusulas
+         contractuales", o sea, que esos términos genéricos SON las cláusulas que pide la ley.
+         Eso es una conclusión legal que el brief no respalda: el Art. 28 pide garantías que den
+         a las personas derechos exigibles, y ninguno de los tres textos está escrito para Chile
+         (los de Cloudflare y Web3Forms traen cláusulas solo para la UE, el Reino Unido y
+         Suiza). Por eso el párrafo cuenta lo que hay, sin concluir que cumple. Si un abogado
+         lo evalúa y lo respalda, recién ahí se puede volver a afirmar. -->
+    <div class="punto">
+      <span class="punto-num">08 · Transferencias internacionales</span>
+      <h2>Quién más procesa tus datos, dónde y con qué protección</h2>
+      <p>No tenemos servidores propios. El sitio funciona sobre tres proveedores de afuera, así que tus datos se pueden procesar fuera de Chile. Esto es lo que hace cada uno.</p>
+      <p><strong>Cloudflare</strong> (Cloudflare, Inc., de Estados Unidos) sirve el sitio, corre el chequeo y hace el conteo de visitas del punto 04. Para eso procesa datos técnicos de tu conexión, como tu dirección IP, y el dominio que revisas. Lo hace en su red de centros de datos repartidos por el mundo, así que tu visita puede pasar por servidores fuera de Chile.</p>
+      <p><strong>Web3Forms</strong> (un servicio de la empresa Web3Creative, que opera desde India) recibe lo que escribes en el formulario, nos lo reenvía por correo y guarda una copia (punto 09). Según su documentación, sus servidores están en Estados Unidos. Según su acuerdo de tratamiento de datos, se apoya además en otros proveedores, con servidores en Estados Unidos, en la Unión Europea y en otros países. Dos de ellos, CleanTalk y Akismet, reciben tu correo y tu IP para filtrar spam.</p>
+      <p><strong>Google</strong> (Google Workspace) es donde vive nuestro correo, <!--email_off-->hola@spindlelab.cl<!--/email_off-->. Ahí llegan los pedidos y las preguntas del formulario, y cualquier correo que nos escribas directo. Según sus términos, Google puede procesar esos datos en cualquier país donde Google o sus proveedores tengan instalaciones.</p>
+      <p><strong>Con qué protección.</strong> Cuando los datos salen de Chile, que es lo que la ley llama una transferencia internacional, el Art. 27-28 pide cláusulas contractuales o un nivel adecuado de protección.</p>
+      <p>Lo que hoy tenemos con cada uno de estos tres proveedores son sus términos de tratamiento de datos. Esos términos dicen que forman parte del contrato de servicio, y en ellos cada proveedor se compromete a procesar los datos solo por cuenta nuestra y según nuestras instrucciones, y a tomar medidas de seguridad que incluyen cifrarlos.</p>
+      <p>Esos términos no están escritos para la ley chilena. Puedes leerlos tú mismo: los de <a href="https://www.cloudflare.com/cloudflare-customer-dpa/">Cloudflare</a>, los de <a href="https://web3forms.com/dpa">Web3Forms</a> y los de <a href="https://cloud.google.com/terms/data-processing-addendum">Google</a> (en inglés).</p>
+      <p>Fuera de estos tres proveedores, y de los proveedores que cada uno usa y declara en esos términos, no compartimos, vendemos ni cedemos tus datos a nadie.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">09 · Plazo de conservación</span>
+      <h2>Cuánto tiempo se guarda</h2>
+      <p>El dominio que revisas y el resultado de tu chequeo no se guardan en ninguna parte.</p>
+      <p>Los pedidos y las preguntas del formulario quedan en nuestro correo (Google Workspace) mientras sirvan para la conversación que empezaste, o hasta que nos pidas borrarlos. Web3Forms guarda además una copia de cada envío, y según su acuerdo de tratamiento de datos la conserva hasta tres años. Si nos pides borrar tus datos, los borramos de nuestro correo y le pedimos a Web3Forms que borre su copia.</p>
+      <p>Los registros técnicos de conexión y el conteo de visitas los mantiene Cloudflare (no nosotros), con su propia política de retención.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">10 · Origen de los datos</span>
+      <h2>De dónde salen</h2>
+      <p>Directamente de ti: el dominio que escribes en el chequeo y, si nos escribes por el formulario, lo que pones ahí.</p>
+      <!-- El Art. 14 ter j) pide decir la fuente y si son de acceso público. Hasta la 1.3 este
+           punto decía solo "directamente de ti", y era incompleto desde el momento en que
+           empezamos a escribir correos fríos. -->
+      <p>Con una excepción, la del punto 04: si te escribimos nosotros primero, tus datos de contacto profesional no salieron de ti, sino de bases de prospección comercial y de lo que tu empresa publica en su propio sitio. Puedes pedirnos que te digamos de dónde salieron los tuyos, y te respondemos.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">11 · Revocar el consentimiento</span>
+      <h2>Sobre pedirte permiso</h2>
+      <!-- Hasta la 1.2 decía que el chequeo y el conteo no piden permiso "porque ninguno de los
+           dos recolecta datos personales tuyos". Desde que el punto 08 cuenta que Cloudflare
+           procesa tu IP para esas mismas dos cosas, esa frase se contradecía, y además era una
+           justificación legal que el brief no respalda. Ahora dice qué pasa, sin el "porque".
+           "Ningún dato personal" y no "ningún dato" a secas: el chequeo sí te pide un dominio
+           (punto 04). Y "datos técnicos de tu conexión, como tu IP", con las mismas palabras del
+           punto 08, porque el conteo también registra país, dispositivo y navegador (punto 04). -->
+      <p>El chequeo y el conteo de visitas no te piden consentimiento. Ninguno de los dos te pide un dato personal ni guarda nada en tu navegador. Lo único tuyo que pasa por ellos son datos técnicos de tu conexión, como tu dirección IP. Cloudflare los procesa para servirte la página (punto 08) y nosotros no los guardamos.</p>
+      <p>El formulario sí te pide permiso. Tiene una casilla que viene sin marcar y que marcas tú; si no la marcas, no se envía. Si prefieres no marcar nada, escríbenos directo a <!--email_off-->hola@spindlelab.cl<!--/email_off-->. Y si ya nos enviaste un pedido o una pregunta y te arrepientes, escríbenos y lo borramos, y le pedimos a Web3Forms que borre su copia.</p>
+      <!-- La promesa de actualizar antes la hizo la 1.0 y sigue vigente, por eso queda en presente.
+           Hasta la 1.3 el párrafo agregaba "Lo cumplimos: la 1.1 salió en el mismo momento que el
+           formulario" — es un hecho cierto, pero ya está contado en el punto 01 (la 1.1 sumó el
+           formulario) y acá solo servía para felicitarse. Si se quiere de vuelta, va en el punto 01,
+           no acá. -->
+      <p>Si algún día sumamos algo más que te pida datos, actualizamos esta política antes de encenderlo.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">12 · Decisiones automatizadas</span>
+      <h2>El chequeo lo hace un programa, no una persona</h2>
+      <p>El puntaje y las señales de tu resultado salen de reglas automáticas, sin revisión humana caso por caso. No es una decisión legal sobre ti ni sobre tu empresa. Es una lectura del código público de tu sitio, el mismo que le llega a cualquier navegador, y cada resultado lo dice así, nunca como un veredicto de cumplimiento.</p>
+    </div>
+
+    <div class="aviso-legal">
+      <strong>Esto describe lo que hacemos con los datos. No reemplaza asesoría legal.</strong> Si
+      tienes dudas sobre cómo la ley aplica a tu caso, eso lo tiene que ver un abogado.
+    </div>
+  </div>
+</main>
+
+<footer class="sitio">
+  <div class="envoltura">
+    <p>Verifica y Cumple es un servicio de <a href="https://spindlelab.cl">SpindleLab</a>. Arreglamos la parte técnica de los sitios web.</p>
+    <p><a href="/">← Volver al chequeo</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

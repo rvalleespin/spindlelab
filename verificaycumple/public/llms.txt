@@ -1,0 +1,53 @@
+# Verifica y Cumple
+
+> Chequeo técnico gratis de un sitio web frente a la Ley 21.719 de datos personales de Chile.
+> Dice qué hace el sitio con los datos de quien lo visita y qué le falta publicar. No dictamina
+> si una empresa cumple la ley: eso lo dice un abogado mirando el caso, no un chequeo
+> automático mirando una página.
+
+Verifica y Cumple es un servicio de SpindleLab SpA (RUT 78.474.925-8), una consultoría chilena.
+Se usa escribiendo un dominio en la portada. No pide registro ni correo electrónico.
+
+## Qué mide, y con qué límite
+
+- **Chequeo rápido.** Lee el código de la página sin ejecutarlo. Responde en segundos. Por eso
+  ve que hay un gestor de etiquetas pero no puede saber qué corre adentro, y varios puntos
+  quedan declarados como "sin confirmar" en vez de darse por buenos.
+- **Revisión con navegador.** Abre el sitio en un navegador de verdad, lo mira unos 25 segundos
+  y no toca nada. Así ve qué rastreadores parten solos, qué cookies se escriben antes de que
+  nadie dé permiso, si salen datos de la visita y si aparece un aviso al entrar.
+- **Los 12 puntos del Art. 14 ter.** Abre la política de privacidad publicada y busca cada uno
+  de los doce puntos que ese artículo pide tener a la vista. Busca si el punto aparece
+  mencionado, no si lo que dice alcanza.
+
+Tres reglas que el informe no cruza: lo que no se pudo comprobar se declara sin confirmar y no
+suma ni resta en el puntaje; cargar un script, escribir una cookie y enviar datos se informan
+como tres cosas distintas; y si la revisión falla, lo dice, nunca se presenta como "tu sitio
+está limpio".
+
+## La ley
+
+La Ley 21.719 moderniza la protección de datos personales en Chile. Sus modificaciones entran
+en la Ley 19.628, así que los artículos que se citan son de la 19.628. El Art. 14 ter es el del
+deber de información y transparencia: las doce cosas que un responsable de datos tiene que
+mantener publicadas.
+
+## Servicios de pago
+
+- **Kit de implementación**, desde $149.000 + IVA, una vez. Instalación del gestor de
+  consentimiento, corrección de las señales que el chequeo dejó pendientes, plantilla de
+  política de privacidad para que la revise un abogado, y el chequeo corrido de nuevo al final.
+- **Revisión trimestral**, desde $39.000 + IVA al mes. Se revisa el sitio al cierre de cada
+  trimestre y se informa qué se rompió desde la revisión anterior.
+
+Ninguno de los dos incluye la revisión legal del caso, que es de abogado.
+
+## Páginas
+
+- [Portada y chequeo](https://verifica.spindlelab.cl/): el formulario, el informe, los 12 puntos y los precios.
+- [Política de privacidad](https://verifica.spindlelab.cl/privacidad/): qué datos pide el propio sitio y qué hace con ellos.
+- [SpindleLab](https://spindlelab.cl/): la consultoría detrás del servicio.
+
+## Contacto
+
+hola@spindlelab.cl
