@@ -107,3 +107,75 @@ muestra ningún sitio. «Ley 21.719» sí rotula la fuente de lo que se afirma.
    nuevo volvió a Manrope. **Las dos cosas no pueden ser ciertas a la vez.** No la resolví acá
    porque no es decisión de esta pieza, pero alguien tiene que resolverla antes de que haya más
    material en las dos tipografías.
+
+---
+
+# Medición del material grabado (16-oct) y capa de ajustes
+
+Ramón mandó un fotograma del montaje en CapCut. **Todo lo de abajo está medido sobre él**, no
+estimado a ojo.
+
+## Lo que midió el fotograma
+
+| Qué | Medición | Qué significa |
+|---|---|---|
+| Media global | RGB 134 / 122 / 113 | **Ya viene cálido** (R > G > B por 21 puntos). No hay que agregar temperatura |
+| Cara, lado izq vs der | 110 vs 164 | Luz de cámara-derecha, con modelado real. **No está plana: no hay que "arreglarla"** |
+| Tercios verticales | 162 arriba · 129 medio · **83 abajo** | Caída natural hacia abajo. Juega a favor: los subtítulos blancos de abajo se leen solos |
+| Negro / blanco reales | 2 y 242 | El rango ya está casi completo. **Subir contraste fuerte aplastaría** |
+| Recorte | 1,67 % ≤ 5 · 0,31 % ≥ 250 | Alguito de sombra tapada y de alta quemada. El canal rojo llega a 255 en la frente y el cojín |
+| Polera | tono 279° (violeta) · 23,5 % lum | Dominante magenta en las sombras, típico de sensor de teléfono |
+| Pared arriba izq vs der | 68° al 6 % vs 31° al 15 % | **Balance de blancos mixto** a lo ancho del cuadro: izquierda neutra, derecha cálida |
+| **Tope de la cabeza** | **y = 16,4 % del cuadro = 314 px en 1920** | Ver abajo: obligó a rehacer los recuadros |
+
+## Capa de ajustes para CapCut
+
+Panel **Ajustar**. Valores pensados para este material, no genéricos.
+
+| Control | Valor | Por qué |
+|---|---|---|
+| Luminosidad / Brillo | **0** | La exposición está bien. Media 134 sobre 255 |
+| Contraste | **+5** | El rango ya va de 2 a 242; más que esto aplasta |
+| Saturación | **+3** | Levantar lo justo, la imagen está algo plana |
+| **Luces** | **−15** | Recupera el rojo quemado de la frente y el cojín |
+| Sombras | **+8** | Abre la polera sin matar la caída de abajo |
+| Temperatura | **−5** | **Contraintuitivo pero medido:** ya está cálida. Enfría lo justo y la piel deja de verse rojiza |
+| Tono (tinte) | **−4** hacia verde | Compensa el violeta de las sombras (polera en 279°) |
+| Nitidez | **+12** | Material de teléfono. **Sobre +18 la piel se vuelve crujiente** |
+| Viñeta | **+10** | Sujeta el ojo y de paso oscurece las esquinas de arriba, donde va la tarjeta |
+
+**No toques HSL.** La tentación es bajar el naranja para calmar la lámpara, pero tu piel vive en el
+mismo naranja: bajas una y bajas la otra.
+
+## Sobre la lámpara, medido antes de opinar
+
+Se ve fuerte y la primera reacción es quererla apagar. **Medida, no compite con el dorado de la
+marca:** la pantalla da entre **24° y 32°** de tono, y el dorado `#C9A227` está en **45,6°**. Son
+familias distintas, así que no rompe la regla del acento único.
+
+Y lo más saturado del cuadro **no es la lámpara**: son las altas quemadas del cojín y un brillo en
+la frente, que el ajuste de Luces arregla. **La dejaría como está.** Es una lámpara de tu casa, y
+que el fondo sea real es parte de por qué la pieza funciona.
+
+## ⚠️ El hallazgo que obligó a rehacer los recuadros
+
+**Tu cabeza empieza a los 314 px** del cuadro de 1920. Los recuadros de `recuadro/` arrancan a los
+300 px y miden unos 450 px de alto: **te tapaban la cara**.
+
+**Usa `recuadro-compacto/`.** Misma pieza y mismos tokens, pero relleno 44 en vez de 61, texto en
+`--t-h2` (61 px) en vez de `--t-h1`, y arranque a 40 px. Alturas reales medidas sobre el PNG:
+
+| Archivo | Alto | Termina en | Cabeza empieza en |
+|---|---|---|---|
+| `01-gancho` | 238 px | 275 | 314 ✅ |
+| `02-ley` | 228 px | 265 | 314 ✅ |
+| `03-pregunta` | 166 px | 203 | 314 ✅ |
+| `04-venta` | 166 px | 203 | 314 ✅ |
+| `05-cierre` | 264 px | 301 | 314 ✅ |
+
+Verificado componiendo los cinco **sobre tu fotograma real**, no sobre un fondo de control:
+`_fuente-recuadro/PRUEBA-sobre-tu-fotograma.jpg`.
+
+**Y queda descartado el juego `sin-velo` para este material.** La zona de arriba mide 148 de
+luminancia media con máximos de 252: texto blanco sin fondo ahí no se lee. Las opciones reales son
+`recuadro-compacto` (recomendado) o `con-velo`.

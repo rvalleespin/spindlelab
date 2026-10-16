@@ -1,0 +1,20 @@
+<!doctype html><html lang="es-CL"><head><meta charset="utf-8"><style>
+@font-face { font-family:'Manrope'; src:url('manrope-latin.woff2') format('woff2'); font-weight:200 800; unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215; }
+@font-face { font-family:'Manrope'; src:url('manrope-latin-ext.woff2') format('woff2'); font-weight:200 800; unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); font-weight:400 900; }
+:root { --d-modulo:#161616; --d-filete:rgba(247,245,240,.12); --d-papel:#f7f5f0;
+  --d-gris:#9aa4b0; --d-oro:#c9a227; --d-m:90px; --d-linea:3px; --d-r:17px;
+  --t-h2:61px; --t-rot:36px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1080px; height:1920px; background:transparent; }
+body { position:relative; font-family:'Manrope',system-ui,sans-serif; font-weight:400;
+  -webkit-font-smoothing:antialiased; text-rendering:geometricPrecision; }
+/* Compacta: relleno 44 en vez de 61, para caber sobre la cabeza (tope medido en 314px). */
+.pieza { position:absolute; left:var(--d-m); right:var(--d-m); top:40px;
+  background:rgba(22,22,22,.92); border-radius:var(--d-r); padding:44px; color:var(--d-papel); }
+.h2 { font-size:var(--t-h2); font-weight:500; line-height:1.18; letter-spacing:-.02em; }
+.rot { font-size:var(--t-rot); font-weight:500; line-height:1.4; color:var(--d-gris); }
+.rot + .h2 { margin-top:12px; }
+.wm { font-family:'Gabarito',sans-serif; font-weight:800; letter-spacing:-.035em; font-size:36px; }
+.wm i { font-style:normal; color:var(--d-oro); }
+</style></head><body><div class="pieza"><div class="h2">¿Y a quién le preguntas?</div></div></body></html>
