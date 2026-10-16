@@ -14,7 +14,7 @@ Origen: `corridas/2026-10-15-lote-contactos-existentes/` (3 corridas de navegado
 - **28 `VERIFICADO por revisión independiente`**: 12 de cookies sin aviso, 3 de cookies **con aviso** (ver abajo), 10 de formulario sin política de privacidad, 3 de sin acción de contacto en la primera pantalla.
 - **1 `retener`** (identidad del sitio dudosa), **1 `no concluyente`** (el dominio solo redirige a otro sitio), **3 `NO ENVIAR: la verificación no lo sostuvo`** (el sitio sí tenía contacto): no escribir.
 - **32 `NO ENVIAR: falta verificación`**: ofertas débiles o medias que nadie verificó. No escribir hasta decidir qué hacer con ellas.
-- 27 `No enviar` por descartados antes, sitio caído o sin nada que decir.
+- 29 `No enviar` o `Sin gancho`: descartados antes, sitio caído, sin nada que decir o sin una oferta estable.
 
 ## Reglas que Emilia no cambia
 1. **Los hechos**: se redacta con `como_decirlo_en_castellano` y `hechos_verificados`, y se respetan `que_no_afirmar` y `advertencias_de_la_verificacion`.
