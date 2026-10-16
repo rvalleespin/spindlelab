@@ -53,3 +53,57 @@ solo vas a poner un overlay, pon ese.
   (defecto documentado en §10.4 del manual, encontrado en la pieza "AHORA ABRE TU TELÉFONO").
 - **El texto del overlay no repite el subtítulo.** El subtítulo lleva tus palabras; el overlay lleva
   la idea. Si dicen lo mismo, el overlay es ruido.
+
+---
+
+# Tercer juego: `recuadro/` — la pieza del sitio
+
+**Agregado el 16-oct a pedido de Ramón**, que quería el mismo recuadro que usan las gráficas de
+Instagram. No es una variante de las otras dos: **es otro sistema**, y por eso no se mezcla con
+ellas en el mismo video.
+
+## De dónde sale
+
+Tokens copiados literal de `marketing/brand/instagram-v3/base.css` (rama
+`claude/cata-evalua-manual-v3`), que a su vez los copió de `driftime.css`, el sitio nuevo:
+
+| Token | Valor | Qué es |
+|---|---|---|
+| `--d-modulo` | `#161616` | el fondo de la pieza |
+| `--d-r` | `17px` | **el único radio del sistema** (6 px del sitio × 2,77) |
+| `--d-r4` | `11px` | solo la etiqueta |
+| `--d-m` | `90px` | margen a los cuatro lados |
+| `--d-fila` | `61px` | relleno interno |
+| `--d-filete` | `rgba(247,245,240,.12)` · 3px | el separador |
+| `--d-gris` | `#9aa4b0` | texto secundario |
+| `--d-oro` | `#c9a227` | **solo el punto del wordmark** |
+
+**Una sola desviación, deliberada:** la pieza va al **92 % de opacidad** en vez de opaca. Sobre
+video, un módulo 100 % negro se lee como parche pegado; al 92 % se lee como módulo del sitio y deja
+respirar el material de atrás. Si lo prefieres opaco, se sube el deslizador en CapCut.
+
+## Las cinco
+
+Mismos tiempos y mismas entradas que la tabla de arriba.
+
+| # | Archivo | Qué lleva |
+|---|---|---|
+| 1 | `01-gancho.png` | h1 a tres líneas, sin etiqueta |
+| 2 | `02-ley.png` | etiqueta de vidrio **«Ley 21.719»** + h1 + filete + cuerpo |
+| 3 | `03-pregunta.png` | h1 a dos líneas |
+| 4 | `04-venta.png` | h1 + filete + cuerpo |
+| 5 | `05-cierre.png` | rótulo + `verifica.spindlelab.cl` + wordmark con el punto dorado |
+
+**La etiqueta solo va donde dice algo verdadero.** La primera versión llevaba «spindlelab.cl» en la
+pieza del gancho, y se sacó: en el kit la etiqueta rotula lo que la pieza *muestra*, y esa pieza no
+muestra ningún sitio. «Ley 21.719» sí rotula la fuente de lo que se afirma.
+
+## ⚠️ Dos cosas antes de usarlo
+
+1. **No mezclar juegos.** `con-velo`/`sin-velo` son tipográficos en Gabarito; `recuadro` es el
+   sistema del sitio en Manrope. Mezclarlos en el mismo video se ve como dos marcas.
+2. **Hay una inconsistencia en el repo que no inventé yo.** El manual (§tipografía) dice Gabarito
+   para titulares e **Inter** para cuerpo. El kit de Instagram v3 usa **Manrope**, porque el sitio
+   nuevo volvió a Manrope. **Las dos cosas no pueden ser ciertas a la vez.** No la resolví acá
+   porque no es decisión de esta pieza, pero alguien tiene que resolverla antes de que haya más
+   material en las dos tipografías.

@@ -1,0 +1,47 @@
+<!doctype html><html lang="es-CL"><head><meta charset="utf-8">
+<style>
+/* Tokens copiados de marketing/brand/instagram-v3/base.css (rama claude/cata-evalua-manual-v3).
+   Si este archivo y ese dicen distinto, el que esta mal es este. */
+@font-face { font-family:'Manrope'; src:url('manrope-latin.woff2') format('woff2'); font-weight:200 800; unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215; }
+@font-face { font-family:'Manrope'; src:url('manrope-latin-ext.woff2') format('woff2'); font-weight:200 800; unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); font-weight:400 900; }
+:root {
+  --d-modulo:#161616; --d-filete:rgba(247,245,240,.12); --d-papel:#f7f5f0;
+  --d-gris:#9aa4b0; --d-oro:#c9a227;
+  --d-m:90px; --d-g:28px; --d-linea:3px; --d-r:17px; --d-r4:11px; --d-fila:61px; --d-bloque:39px;
+  --t-h1:100px; --t-h2:61px; --t-cuerpo:47px; --t-rot:36px; --t-etq:33px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1080px; height:1920px; background:transparent; }
+body { position:relative; font-family:'Manrope',system-ui,sans-serif; font-weight:400;
+       -webkit-font-smoothing:antialiased; text-rendering:geometricPrecision; }
+
+/* La pieza del kit: modulo con el unico radio del sistema. Sobre video va al 92 %,
+   para que se lea como modulo del sitio y no como un parche opaco. */
+.pieza {
+  position:absolute; left:var(--d-m); right:var(--d-m); top:300px;
+  background:rgba(22,22,22,.92);
+  border-radius:var(--d-r);
+  padding:var(--d-fila);
+  overflow:hidden;
+  color:var(--d-papel);
+}
+/* Etiqueta de vidrio, arriba a la izquierda. Negro 66 % + desenfoque 17. */
+.etq { position:absolute; left:28px; top:28px; }
+.etq span { display:inline-block; background:rgba(0,0,0,.66);
+  -webkit-backdrop-filter:blur(17px); backdrop-filter:blur(17px);
+  color:var(--d-papel); font-size:var(--t-etq); font-weight:500; line-height:1.5;
+  padding:14px 22px; border-radius:var(--d-r4); white-space:nowrap; }
+.con-etq { padding-top:calc(var(--d-fila) + 78px + 28px); }
+
+.h1 { font-size:var(--t-h1); font-weight:500; line-height:1.1; letter-spacing:-.02em; text-wrap:balance; }
+.h2 { font-size:var(--t-h2); font-weight:500; line-height:1.4; letter-spacing:-.02em; text-wrap:balance; }
+.cuerpo { font-size:var(--t-cuerpo); line-height:1.6; color:var(--d-gris); text-wrap:pretty; }
+.rot { font-size:var(--t-rot); font-weight:500; line-height:1.5; color:var(--d-gris); }
+.filete { margin-top:var(--d-bloque); padding-top:var(--d-bloque); border-top:var(--d-linea) solid var(--d-filete); }
+.wm { font-family:'Gabarito',sans-serif; font-weight:800; letter-spacing:-.035em; line-height:1;
+      font-size:76px; white-space:nowrap; display:inline-block; }
+.wm i { font-style:normal; color:var(--d-oro); }
+</style></head><body>
+<div class="pieza"><div class="h1">¿Hace cuánto que nadie revisa tu sitio?</div></div>
+</body></html>
