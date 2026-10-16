@@ -27,7 +27,10 @@ const filtro = process.argv[2] || '';
 
 const PAGINAS = [];
 for (const d of ['taller', 'pizarra']) for (const p of ['home', 'acompanamiento-mensual', 'trabajo']) PAGINAS.push([`${d}-${p}`, `/${d}/${p}.html`]);
-const ANCHOS = [[1440, 900, 1], [390, 844, 2]];
+// ANCHOS=768,1024 (ronda 2 de QA, defecto 2): los anchos de tableta, a deviceScaleFactor 1 y JPEG 72, como evidencia de
+// la regla de escala en img/ (no van al tablero). Sin la variable: 1440 y 390, que son los del tablero.
+const ANCHOS = process.env.ANCHOS ? process.env.ANCHOS.split(',').map((w) => [+w, w >= 1024 ? 768 : 1024, 1]) : [[1440, 900, 1], [390, 844, 2]];
+const CALIDAD = process.env.ANCHOS ? 72 : 82;
 
 const nav = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
 const medidas = {};
@@ -50,10 +53,10 @@ hechos = []
 for k in range(n):
     t = im.crop((0, k * paso, w, min(h, (k + 1) * paso)))
     nom = base + ('-t%d' % (k + 1) if n > 1 else '') + '.jpg'
-    t.save(img + '/' + nom, 'JPEG', quality=82, optimize=True, progressive=True)
+    t.save(img + '/' + nom, 'JPEG', quality=int(sys.argv[4]), optimize=True, progressive=True)
     hechos.append([nom, t.size[0], t.size[1]])
 print(json.dumps(hechos))
-`, png, `${nombre}-${ancho}`, IMG], { encoding: 'utf8' });
+`, png, `${nombre}-${ancho}`, IMG, String(CALIDAD)], { encoding: 'utf8' });
   return JSON.parse(out);
 }
 

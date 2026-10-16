@@ -87,7 +87,9 @@ for (const p of ['home', 'trabajo']) {
 }
 
 // 3 · El punto dorado: A (en el pie) y B (en el módulo), módulo y pie, a 1440 y a 390
-for (const [op, q] of [['a', ''], ['b', '?oro=arriba']]) {
+// Desde el 16-oct (decisión de Ramón: el logo se rediseña después de elegir dirección) el punto dorado no se decide en el
+// tablero: estas capturas solo se rehacen con ORO=1, como historia del lock §12.
+for (const [op, q] of (process.env.ORO ? [['a', ''], ['b', '?oro=arriba']] : [])) {
   for (const [ancho, alto, dsf] of [[1440, 900, 1], [390, 844, 2]]) {
     const { ctx, pg } = await abrir(`/taller/home.html${q}`, { ancho, alto, dsf });
     const cab = `var-oro-${op}-modulo-${ancho}.jpg`;

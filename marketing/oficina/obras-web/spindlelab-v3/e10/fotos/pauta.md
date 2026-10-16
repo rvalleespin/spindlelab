@@ -1,6 +1,6 @@
 # Pauta de fotos con IA · E10 (spindlelab-v3)
 
-Bruno (dirección creativa) · v2, 2026-10-16 · **Estado: lista para generar en una sesión con
+Bruno (dirección creativa) · v3, 2026-10-16 · **Estado: lista para generar en una sesión con
 clave. Aquí no se generó ninguna foto** (no hay `GEMINI_API_KEY` ni `OPENAI_API_KEY` en este entorno).
 
 > Este archivo se escribe solo: sale de `pauta.json` con `node generar.mjs --sincronizar`. No se
@@ -14,9 +14,14 @@ clave. Aquí no se generó ninguna foto** (no hay `GEMINI_API_KEY` ni `OPENAI_AP
 | `pauta-md.mjs` | Arma este archivo; lo llama `generar.mjs --sincronizar` |
 | `salida/` | Se crea en la primera corrida: `<F>-<dirección>-<n>.png`, `registro.json` y `oro/` con las máscaras |
 
-Insumos: `e10/lock-the-ready.md` (§7 fotos, §9 Gehl, §10 qué se toma, §12 amarillo y oro, §13
-techos), `e10/referentes/marcas-15oct.json`, el manual de marca §06 y §07b, los espacios de foto del
-tablero (`tableros/e10-direcciones/espacios-foto.json`) y el acta de Javiera (`e10/acta-paso-2.md`).
+Insumos: `e10/lock-the-ready.md` (§7 fotos, §9 Gehl, §10 y §10b qué se toma, §13 techos; el §12,
+amarillo y oro, en pausa con el logo), `e10/referentes/marcas-15oct.json`, el manual de marca §07b
+(personas), los espacios de foto del tablero (`tableros/e10-direcciones/espacios-foto.json`), la paleta propia de
+`tableros/e10-direcciones/proto/e10/tokens.css` y el acta de Javiera (`e10/acta-paso-2.md`).
+
+> **El logo y el oro, en pausa.** Ramón, 16-oct: el logo se rediseña después de elegir dirección. El
+> punto dorado y la regla de un oro por vista no restringen estas fotos: la pauta ya no prohíbe dorado,
+> amarillo ni madera, y ninguna foto se descarta por oro. `generar.mjs` lo sigue midiendo, solo como dato.
 
 ---
 
@@ -33,15 +38,15 @@ la dirección donde va.
 
 | Rasgo | La regla | Por qué |
 |---|---|---|
-| **Luz** | Solo de día, media mañana, balance neutro (~5500 K), suave y pareja, con sombras leves. Lámparas y ampolletas **apagadas** | The Ready fotografía con lámparas encendidas, jardín al sol y hojas de otoño, y eso es oro: la primera pantalla de nosotros da 0,52 % (lock §7), y **la foto de su hero da 1,055 %** (medido el 16-oct, §7 de esta pauta). Si una foto generada sale «como The Ready», sale con oro |
+| **Luz** | Solo de día, media mañana, balance neutro (~5500 K), suave y pareja, con sombras leves. Lámparas y ampolletas **apagadas** | The Ready fotografía con lámparas encendidas, jardín al sol y hojas de otoño (lock §7): junto con la casa de campo de Hoare, es lo que Ramón llamó «pastoral gringa». La luz de día neutra es lo que hace que estas fotos sean de Santiago y no de un catálogo gringo |
 | **Grano** | Grano fino de película, negros levemente levantados, sin virado ni viñeta. Al final se iguala con un solo grano en todas (§6) | The Ready trae el grano en el archivo, no como capa encima: ruido 12,1 contra 8,1 de una foto sin tratar (lock §7, `lock/the-ready/foto-grano-hero-x2.png`) |
 | **Lente y altura** | Cámara de cuadro completo con 35 mm, a la altura del ojo o un poco más arriba, perspectiva natural, sin gran angular | Lo documental de las dos referencias; el gran angular delata el render |
 | **Encuadre Taller** | Cerca y lleno: capas delante y detrás, gente y objetos cortados por el borde, la acción a medio hacer. Dos o tres personas como máximo. | The Ready a fondo: «más gente trabajando» |
 | **Encuadre Pizarra limpia** | Abierto y quieto: al menos la mitad del cuadro es aire (muro, piso, mesa o ventana), una persona como máximo y chica en el cuadro, líneas limpias. | El aire de Gehl: una persona chica en un cuadro grande (lock §9) |
-| **Paleta** | Base en neutros fríos: blanco roto (eco del papel `#FFFEFA`), hormigón, grafito, marino y ciruela profundo (eco de `#1B0925`). Acentos chicos: lima (eco de `#E6FA97`), lavanda (`#EDD1FF`), rosado de nota adhesiva y celeste | Alineada al lock §3: la foto conversa con la página sin repetir sus bandas |
-| **Colores prohibidos en la foto** | Dorado, latón, ámbar, mostaza, ocre y **amarillo**. Madera color miel o anaranjada (pino, roble claro barnizado). Atardecer, tungsteno y dominante anaranjada | El amarillo `#F4F480` es del marcador y vive en la página: en la foto competiría con él y se acercaría al oro (lock §12). El naranja `#EC6227` es la mancha de Taller y también vive en la página |
+| **Paleta** | Base en neutros fríos: blanco roto (eco del papel `#F7F5F0`), hormigón, grafito, marino y ciruela profundo (eco de la tinta `#341F34`). Acentos chicos de nota adhesiva: rosado, lima, lavanda y celeste | La foto conversa con la paleta propia de `tokens.css` (papel y una sola tinta ciruela) sin repetir sus bandas. Los acentos son de la escena, no de la página: la paleta propia no tiene lima ni lavanda, y si Ramón elige en el tablero los colores exactos de The Ready, donde sí están, también calzan |
+| **El oro y el punto dorado** | En pausa. Ninguna foto se descarta por oro, y la pauta ya no prohíbe dorado, amarillo ni madera | Ramón, 16-oct: el logo se rediseña después de elegir dirección. `generar.mjs` sigue midiendo el oro y lo anota como dato para la marca nueva |
 | **Lugares (sí)** | Oficina vidriada de una bodega o distribuidora (Quilicura, Pudahuel), maestranza o taller metalmecánico (San Bernardo), oficina en altura con la cordillera de fondo (Providencia), sala de reuniones en edificio antiguo del centro (cielo alto, terrazo, ventana de aluminio), mesón de una ferretería o distribuidora, sala chica de oficina en Ñuñoa y calle de Providencia con plátanos orientales en primavera (hoja verde) | Oficinas y talleres reales de Chile, no stock gringo |
-| **Lugares (no)** | Loft de ladrillo rojo con ampolletas Edison (el interior de The Ready), casa de campo, jardín, otoño, interiores ingleses o de suburbio (lo que Ramón llamó «pastoral gringa»), cowork de diseño con neones o muros de plantas y carpintería (el pino es oro), soldadura (las chispas son oro) | De Hoare, Ramón dijo «parece pastoral gringa» |
+| **Lugares (no)** | Loft de ladrillo rojo con ampolletas Edison (el interior de The Ready), casa de campo, jardín, otoño, interiores ingleses o de suburbio (lo que Ramón llamó «pastoral gringa») y cowork de diseño con neones o muros de plantas | De Hoare, Ramón dijo «parece pastoral gringa» |
 | **Personas** | Adultos chilenos y latinoamericanos de 25 a 60 años, de cuerpos, tonos de piel y pelo variados, con ropa de trabajo común en grafito, marino, ciruela, mezclilla, blanco roto o salvia. Absortos en la tarea, de espaldas, de perfil o de tres cuartos de espalda. **Nadie mira a cámara, nadie posa ni sonríe para la foto.** Manos relajadas y anatómicamente correctas, muchas veces tapadas en parte por objetos | Gente trabajando de verdad (The Ready), sin la grilla de retratos del equipo, que no se toma (lock §10) |
 | **Texto y marcas** | Los papeles muestran solo líneas y bloques grises borrosos. Las pantallas van de espaldas o fuera de foco. Ningún logo en tapas de notebook, ropa, tazas, cajas ni muros | Texto inventado nítido es la señal más rápida de imagen generada |
 | **Forma en la página** | Radio 0, sin velo, nada escrito encima salvo una etiqueta de pieza | Lock §7 y §10; manual §07b |
@@ -77,8 +82,8 @@ y no se generan. La equivalencia con la numeración vieja está en §3.
 
 | F | Dirección | Foto | Página · sección | Espacio a 1440 | Espacio a 390 | Personas |
 |---|---|---|---|---|---|---|
-| **F1** | Taller | Mesa de notas en la oficina de una bodega | Home · Hero | 420×724 | 390×488 | 3 |
-| **F2** | Taller | El mensaje que llega al mesón | Home · Campo «Visibilidad», dentro de la banda amarilla («lo que ganas») | 398×498 | 280×351 | 2 |
+| **F1** | Taller | Mesa de notas en la oficina de una bodega | Home · A sangre derecha en «Qué hacemos», al lado de «Tu sitio está escrito para personas…» | 420×724 | 390×488 | 3 |
+| **F2** | Taller | El mensaje que llega al mesón | Home · Campo «Visibilidad», en la banda del resaltador («lo que ganas»), a la derecha del texto, el precio y los botones | 443×554 | 280×351 | 2 |
 | **F3** | Taller | Planilla de cuatro columnas en el entrepiso | Home · Encabeza «Continuidad» (Acompañamiento mensual), columna izquierda del par Continuidad y Alcance | 617×463 | 390×293 | 2 |
 | **F4** | Taller | Un mensaje en la maestranza | Home · Encabeza «Alcance» (redes y Google Ads), columna derecha del par, bajada 120 px (la asimetría de The Ready) | 617×411 | 390×260 | 2 |
 | **F5** | Pizarra limpia | Una persona al fondo de una mesa larga, con la cordillera | Home · Banda a sangre entre «Qué hacemos» y los servicios | 1440×617 | 390×488 | 1 |
@@ -96,7 +101,7 @@ cada px CSS del espacio. El tablero pide 1× a 1440 y 2× a 390 (nota de `espaci
 | F | Dirección | Gemini | Recorte a 1440 | Recorte a 390 | OpenAI | Recorte a 1440 | Recorte a 390 |
 |---|---|---|---|---|---|---|---|
 | **F1** | Taller | `9:16` → 768×1344 | 768×1324 · 1,83× | 768×960 · 1,97× ⚠ | `1024x1536` | 891×1536 · 2,12× | 1024×1280 · 2,63× |
-| **F2** | Taller | `4:5` → 896×1152 | 896×1120 · 2,25× | 896×1120 · 3,20× | `1024x1536` | 1024×1280 · 2,57× | 1024×1280 · 3,66× |
+| **F2** | Taller | `4:5` → 896×1152 | 896×1120 · 2,02× | 896×1120 · 3,20× | `1024x1536` | 1024×1280 · 2,31× | 1024×1280 · 3,66× |
 | **F3** | Taller | `4:3` → 1184×864 | 1152×864 · 1,87× | 1152×864 · 2,95× | `1536x1024` | 1365×1024 · 2,21× | 1365×1024 · 3,50× |
 | **F4** | Taller | `3:2` → 1248×832 | 1248×832 · 2,02× | 1248×832 · 3,20× | `1536x1024` | 1536×1024 · 2,49× | 1536×1024 · 3,94× |
 | **F5** | Pizarra limpia | `16:9` → 1344×768 | 1344×576 · 0,93× ⚠ | 614×768 · 1,57× ⚠ | `1536x1024` | 1536×658 · 1,07× | 819×1024 · 2,10× |
@@ -165,11 +170,13 @@ People: Chilean and Latin American adults of varied ages (25 to 60), body types 
 No people in the frame. The place looks recently used: a chair pushed back, a cup left on the table.
 ```
 
-**Negativos comunes** (van al final de todas, después de los propios de cada foto):
+**Negativos comunes** (van al final de todas, después de los propios de cada foto). Cubren la luz y
+los lugares de la «pastoral gringa», el texto inventado, los logos y las marcas, la gente que posa o
+mira a cámara, las manos y caras deformes, la estética genérica de IA y el acabado de render. Desde la
+v3 no hay ninguno por el oro: dorado, latón, amarillo, madera clara, cartón y chispas salieron, también
+de los negativos propios de cada ficha.
 
-- gold, brass, amber, mustard, ochre or yellow objects and tones
 - golden-hour or sunset light, warm tungsten or Edison bulbs, orange color cast
-- honey-colored or orange wood, cardboard boxes in the foreground
 - autumn leaves, gardens, countryside
 - exposed red-brick loft, American suburban or English country interiors, chandeliers, period furniture
 - readable text, letters, numbers, signs, logos, brand names, watermarks
@@ -184,7 +191,7 @@ No people in the frame. The place looks recently used: a chair pushed back, a cu
 
 **Qué muestra:** Tres personas de pie alrededor de una mesa blanca larga con hojas impresas y notas de colores, en la oficina vidriada de una distribuidora; la bodega al fondo.
 
-- **Dónde va:** Home (/v3/) · Hero: foto vertical a sangre en el borde derecho, del filete del encabezado a la cinta (como el hero de The Ready). El titular y el chequeo quedan a la izquierda, fuera de la foto.
+- **Dónde va:** Home (/v3/) · A sangre derecha en «Qué hacemos», al lado de «Tu sitio está escrito para personas…»: foto vertical a lo alto de la sección, con el texto y «Ver el método» a la izquierda. Gente trabajando es la energía de Taller. Desde la ronda 1 de QA no va en el hero, que volvió al orden del sitio (chequeo, titular, fila de obras).
 - **Rótulo en el tablero:** «Foto por generar · F1 · gente de pie en una mesa con hojas y notas»
 - **Dirección:** Taller · encuadre Taller · **prioridad 1**
 - **Espacio:** 420×724 css a 1440 · 390×488 css a 390
@@ -192,10 +199,10 @@ No people in the frame. The place looks recently used: a chair pushed back, a cu
 - **Recorte a 1440:** 0,58 · Gemini 768×1324 (1,83×), OpenAI 891×1536 (2,12×). A 0,58 desde el centro (con Gemini se va una franja chica arriba y abajo; con OpenAI, los costados). La mesa sigue entrando desde abajo a la izquierda y nadie queda cortado por la cara.
 - **Recorte a 390:** 4:5 · Gemini 768×960 (1,97×), OpenAI 1024×1280 (2,63×). A 4:5 desde el centro, con la mujer inclinada sobre la mesa dentro del cuadro.
 - **Personas:** 3
-- **Negativo propio** (más los comunes): yellow sticky notes; wooden table; anyone facing the camera
+- **Negativo propio** (más los comunes): anyone facing the camera
 - **Riesgo:** Es la foto más cercana a The Ready y la que más fácil se lee como «taller de consultores». Lo que la salva es la bodega detrás del vidrio: si sale borrada o parece una oficina de agencia, no sirve.
 - **Alt propuesto:** «Tres personas de pie alrededor de una mesa blanca con hojas impresas y notas de colores, en la oficina vidriada de una bodega.»
-- **Salidas:** `salida/F1-taller-<n>.png` · en la v1 era F1
+- **Salidas:** `salida/F1-taller-<n>.png` · en la v1 era F1. Desde la ronda 1 de QA no va en el hero: va a sangre derecha en «Qué hacemos» (sección reescrita en la v3).
 
 Escena (la parte propia del prompt, en inglés):
 
@@ -207,18 +214,18 @@ Vertical photograph. In the glass-walled office corner of a small industrial sup
 
 **Qué muestra:** De cerca y en capas, desde el otro lado del mesón de una ferretería y distribuidora: una vendedora de veintitantos responde un mensaje en su teléfono, de perfil; un compañero cortado por el borde saca una caja de la estantería; en primer plano, fuera de foco, el borde del mesón con un rollo de manguera y una caja de tornillos.
 
-- **Dónde va:** Home (/v3/) · Campo «Visibilidad», dentro de la banda amarilla («lo que ganas»): que te encuentren cuando preguntan por tu rubro es la consulta que llega al mesón. A su derecha, el garabato a sangre.
+- **Dónde va:** Home (/v3/) · Campo «Visibilidad», en la banda del resaltador («lo que ganas»), a la derecha del texto, el precio y los botones: que te encuentren cuando preguntan por tu rubro es la consulta que llega al mesón.
 - **Rótulo en el tablero:** «Foto por generar · F2 · alguien responde a un cliente en el mesón»
 - **Dirección:** Taller · encuadre Taller · **prioridad 1**
-- **Espacio:** 398×498 css a 1440 · 280×351 css a 390
+- **Espacio:** 443×554 css a 1440 · 280×351 css a 390
 - **Salida:** Gemini `4:5` → 896×1152 · OpenAI `1024x1536`
-- **Recorte a 1440:** 4:5 · Gemini 896×1120 (2,25×), OpenAI 1024×1280 (2,57×). A 4:5 desde el centro (Gemini entrega un poco más alta que 4:5). La vendedora y su teléfono quedan en el centro; el compañero puede salir del cuadro, no la vendedora.
+- **Recorte a 1440:** 4:5 · Gemini 896×1120 (2,02×), OpenAI 1024×1280 (2,31×). A 4:5 desde el centro (Gemini entrega un poco más alta que 4:5). La vendedora y su teléfono quedan en el centro; el compañero puede salir del cuadro, no la vendedora.
 - **Recorte a 390:** 4:5 · Gemini 896×1120 (3,20×), OpenAI 1024×1280 (3,66×). El mismo archivo y el mismo recorte que a 1440: el espacio es 4:5 en las dos.
 - **Personas:** 2
-- **Negativo propio** (más los comunes): brand logos on products; price tags with numbers; readable phone screen; yellow tools, yellow packaging or yellow safety signs; a customer standing across the counter
-- **Riesgo:** Las ferreterías están llenas de empaques con marca y de amarillo (herramientas, cintas, señalética). Esta foto va sobre la banda amarilla #F4F480: cualquier amarillo de la foto se pega con la banda y se acerca al oro. Si el fondo trae marcas legibles o amarillo saturado, se descarta. Y si el compañero queda de frente o mirando a la vendedora, la escena se lee como alguien que la supervisa: se descarta.
+- **Negativo propio** (más los comunes): brand logos on products; price tags with numbers; readable phone screen; a customer standing across the counter
+- **Riesgo:** Las ferreterías están llenas de empaques con marca y de letreros: si el fondo trae marcas o letras legibles, se descarta. Va sobre la banda del resaltador #EEF26E: si la foto trae una superficie amarilla grande contra su borde, se funde con la banda y la foto pierde el canto; eso se mira al ponerla, no es un negativo del prompt. Y si el compañero queda de frente o mirando a la vendedora, la escena se lee como alguien que la supervisa: se descarta.
 - **Alt propuesto:** «Detrás del mesón de una ferretería, una vendedora responde un mensaje en su teléfono mientras un compañero saca una caja de la estantería.»
-- **Salidas:** `salida/F2-taller-<n>.png` · en la v1 era F10. Encuadre cambiado de Pizarra limpia a Taller y escena reescrita (acta, defecto 2). Ya no va en Pizarra limpia: no tiene espacio ahí.
+- **Salidas:** `salida/F2-taller-<n>.png` · en la v1 era F10. Encuadre cambiado de Pizarra limpia a Taller y escena reescrita (acta, defecto 2). Ya no va en Pizarra limpia: no tiene espacio ahí. El 16-oct a las 10:22 el espacio pasó de 398×498 a 443×554 a 1440 (a 390 sigue en 280×351). La proporción no cambió (4:5): el recorte es el mismo y la cobertura a 1440 baja a 2,02× con Gemini y 2,31× con OpenAI, sobre el 1× que pide el tablero (v3).
 
 Escena (la parte propia del prompt, en inglés):
 
@@ -238,7 +245,7 @@ Vertical photograph taken from the customer side of the sales counter of a hardw
 - **Recorte a 1440:** 4:3 · Gemini 1152×864 (1,87×), OpenAI 1365×1024 (2,21×). A 4:3 desde el centro (Gemini entrega un poco más ancha). Las cuatro columnas de la planilla enteras.
 - **Recorte a 390:** 4:3 · Gemini 1152×864 (2,95×), OpenAI 1365×1024 (3,50×). El mismo archivo y el mismo recorte: el espacio es 4:3 en las dos.
 - **Personas:** 2
-- **Negativo propio** (más los comunes): yellow sticky notes; readable handwriting; anyone facing the camera
+- **Negativo propio** (más los comunes): readable handwriting; anyone facing the camera
 - **Riesgo:** Seudoletras nítidas en las notas. Si se leen como palabras inventadas, se descarta.
 - **Alt propuesto:** «Dos personas de espaldas mueven notas de colores en una planilla de cuatro columnas pegada en la pared.»
 - **Salidas:** `salida/F3-taller-<n>.png` · en la v1 era F6
@@ -261,15 +268,15 @@ Horizontal photograph in the mezzanine office of a distribution warehouse in Pud
 - **Recorte a 1440:** 3:2 · Gemini 1248×832 (2,02×), OpenAI 1536×1024 (2,49×). Ninguno: Gemini y OpenAI entregan 3:2 exacta. Se elige la variante en que el hombre del teléfono no queda cortado por el borde.
 - **Recorte a 390:** 3:2 · Gemini 1248×832 (3,20×), OpenAI 1536×1024 (3,94×). El mismo archivo: el espacio es 3:2 en las dos.
 - **Personas:** 2
-- **Negativo propio** (más los comunes): welding sparks; brass or copper parts; safety signs; readable phone screen
-- **Riesgo:** Que salga un taller de catálogo (todo limpio) o que aparezcan carteles de seguridad amarillos.
+- **Negativo propio** (más los comunes): safety signs; readable phone screen
+- **Riesgo:** Que salga un taller de catálogo (todo limpio) o que aparezcan carteles de seguridad con letras.
 - **Alt propuesto:** «En una maestranza, un hombre lee un mensaje en su teléfono junto a un banco de trabajo con piezas de acero.»
 - **Salidas:** `salida/F4-taller-<n>.png` · en la v1 era F5
 
 Escena (la parte propia del prompt, en inglés):
 
 ```text
-Horizontal photograph inside a small metalworking shop (a maestranza) in San Bernardo, Santiago: concrete floor, a steel workbench with galvanized parts and a vise, a lathe in the background, daylight from translucent roof panels. A man in his fifties in a navy work jacket stands by the bench reading a message on his phone, seen in three-quarter back view; the screen faces away from the camera. Far in the background, out of focus, another worker carries a steel bar. No welding and no sparks.
+Horizontal photograph inside a small metalworking shop (a maestranza) in San Bernardo, Santiago: concrete floor, a steel workbench with galvanized parts and a vise, a lathe in the background, daylight from translucent roof panels. A man in his fifties in a navy work jacket stands by the bench reading a message on his phone, seen in three-quarter back view; the screen faces away from the camera. Far in the background, out of focus, another worker carries a steel bar.
 ```
 
 #### F5 · Pizarra limpia · Una persona al fondo de una mesa larga, con la cordillera
@@ -284,7 +291,7 @@ Horizontal photograph inside a small metalworking shop (a maestranza) in San Ber
 - **Recorte a 1440:** 21:9 · Gemini 1344×576 (0,93×), OpenAI 1536×658 (1,07×). Se genera en 16:9 para sacar las dos. A 21:9 desde el centro: se va un 25 % del alto, mitad arriba y mitad abajo, así que arriba y abajo de la persona y la cordillera tiene que haber aire.
 - **Recorte a 390:** 4:5 · Gemini 614×768 (1,57×), OpenAI 819×1024 (2,10×). A 4:5 desde el centro: la persona y la cordillera tienen que quedar en la mitad central del ancho.
 - **Personas:** 1
-- **Negativo propio** (más los comunes): sunset or orange sky; other people at desks; glass towers reflecting golden light
+- **Negativo propio** (más los comunes): sunset or orange sky; other people at desks
 - **Riesgo:** Que la cordillera salga de postal (cielo azul saturado, nieve de catálogo) o que el modelo llene la planta de gente. La neblina de Santiago es la que la vuelve creíble.
 - **Alt propuesto:** «Una persona trabaja sola al fondo de una mesa larga, frente a un ventanal con edificios y la cordillera al fondo.»
 - **Salidas:** `salida/F5-pizarra-<n>.png` · en la v1 era F2
@@ -307,7 +314,7 @@ Wide horizontal photograph of an open-plan office on a high floor in Providencia
 - **Recorte a 1440:** 3:2 · Gemini 1248×832 (1,91×), OpenAI 1536×1024 (2,35×). Ninguno: Gemini y OpenAI entregan 3:2 exacta. Va a sangre por la derecha, así que el borde derecho de la foto es el de la pantalla: nada importante pegado a ese borde.
 - **Recorte a 390:** 3:2 · Gemini 1248×832 (3,20×), OpenAI 1536×1024 (3,94×). El mismo archivo: el espacio es 3:2 también a 390 (no pasa a 4:5).
 - **Personas:** 2
-- **Negativo propio** (más los comunes): beige masking tape; wooden paneling; readable pages; anyone facing the camera
+- **Negativo propio** (más los comunes): beige masking tape; readable pages; anyone facing the camera
 - **Riesgo:** En la página de un servicio, dos personas frente a hojas se pueden leer como «el consultor con su cliente». Por eso ninguna explica nada a la otra: las dos miran la pared. Si en la variante una le habla a la otra, se descarta.
 - **Alt propuesto:** «Dos personas pegan hojas impresas en fila en la pared de una sala de reuniones de techo alto.»
 - **Salidas:** `salida/F6-taller-<n>.png` · en la v1 era F7. Sección corregida: va a sangre derecha junto a la entrada, y es 3:2 también a 390.
@@ -330,7 +337,7 @@ Horizontal photograph in the meeting room of a mid-sized company in an older bui
 - **Recorte a 1440:** 21:9 · Gemini 1344×576 (0,93×), OpenAI 1536×658 (1,07×). Se genera en 16:9 para sacar las dos, igual que F5 (las dos bandas de Pizarra limpia se hacen igual). A 21:9 desde el centro: se va un 25 % del alto, mitad arriba y mitad abajo; la mesa y lo que tiene encima no se cortan.
 - **Recorte a 390:** 4:5 · Gemini 614×768 (1,57×), OpenAI 819×1024 (2,10×). A 4:5 desde el centro: la mesa con la hoja y las tazas entera dentro de la mitad central del ancho. Si quedó corrida, el recorte se mueve hacia ella; nunca se achica la mesa.
 - **Personas:** 0
-- **Negativo propio** (más los comunes): people; food; readable writing on the sheet; wooden table; more tables or chairs filling the sides of the room
+- **Negativo propio** (más los comunes): people; food; readable writing on the sheet; more tables or chairs filling the sides of the room
 - **Riesgo:** Que se parezca demasiado a d/ventana.jpg del pool (mesa junto a la ventana): la diferencia tiene que ser la luz de día neutra y la grilla del mes. Que el modelo, al ver una foto ancha, llene la sala de sillas y mesas: los costados van casi vacíos. Y que la mesa quede pegada arriba o abajo: el recorte a 21:9 la cortaría.
 - **Alt propuesto:** «Mesa redonda después de una reunión: una hoja con una grilla de cuatro semanas y puntos de colores, un notebook cerrado y dos tazas.»
 - **Salidas:** `salida/F7-pizarra-<n>.png` · en la v1 era F9. Reescrita para su espacio, una banda a sangre de 21:9 que pasa a 4:5 a 390 (acta, defecto 2).
@@ -345,7 +352,7 @@ Wide horizontal photograph of a small, quiet meeting room in an office in Ñuño
 
 **Qué muestra:** De cerca y lleno: hojas blancas superpuestas con esquemas de páginas web dibujados a mano en plumón ciruela (cajas y líneas, sin letras), cortadas por los cuatro bordes; una nota rosada y una lima, el plumón destapado y su tapa al lado. Sin personas.
 
-- **Dónde va:** Trabajo (/v3/trabajo/) · «Antes de construir el tuyo», el cierre de Trabajo: el boceto es lo que viene antes de construir. En Taller va en la banda amarilla, al lado del óvalo «Correr el chequeo».
+- **Dónde va:** Trabajo (/v3/trabajo/) · «Antes de construir el tuyo», el cierre de Trabajo: el boceto es lo que viene antes de construir. En Taller va en la banda del resaltador, a la derecha del texto de cierre y de los botones «Correr el chequeo» y «Pedir el diagnóstico».
 - **Rótulo en el tablero:** «Foto por generar · F8 · bocetos de páginas hechos a mano en papel»
 - **Dirección:** Taller · encuadre Taller · **prioridad 1**
 - **Espacio:** 508×381 css a 1440 · 342×257 css a 390
@@ -353,10 +360,10 @@ Wide horizontal photograph of a small, quiet meeting room in an office in Ñuño
 - **Recorte a 1440:** 4:3 · Gemini 1152×864 (2,27×), OpenAI 1365×1024 (2,69×). A 4:3 desde el centro (Gemini entrega un poco más ancha). Las hojas pueden salir cortadas por los bordes: es el encuadre de Taller.
 - **Recorte a 390:** 4:3 · Gemini 1152×864 (3,37×), OpenAI 1365×1024 (3,99×). El mismo archivo y el mismo recorte: el espacio es 4:3 en las dos.
 - **Personas:** 0
-- **Negativo propio** (más los comunes): hands; letters or placeholder text in the sketches; yellow sticky notes; wooden table
-- **Riesgo:** Que los bocetos traigan letras inventadas. Va sobre la banda amarilla, al lado del óvalo: nada amarillo en la foto. Es Trabajo y no lleva gente a propósito: junto a la obra, cualquier persona se lee como el cliente.
+- **Negativo propio** (más los comunes): hands; letters or placeholder text in the sketches
+- **Riesgo:** Que los bocetos traigan letras inventadas. Va sobre la banda del resaltador #EEF26E: una superficie amarilla grande contra el borde de la foto se fundiría con la banda (se mira al ponerla). Es Trabajo y no lleva gente a propósito: junto a la obra, cualquier persona se lee como el cliente.
 - **Alt propuesto:** «Bocetos a mano de la estructura de páginas web, en plumón ciruela sobre hojas blancas superpuestas, con dos notas de colores.»
-- **Salidas:** `salida/F8-taller-<n>.png` · en la v1 era F8. La v1 tenía una sola ficha para las dos direcciones, con encuadre de Pizarra limpia. Ahora hay una por dirección, cada una con su encuadre.
+- **Salidas:** `salida/F8-taller-<n>.png` · en la v1 era F8. La v1 tenía una sola ficha para las dos direcciones, con encuadre de Pizarra limpia. Ahora hay una por dirección, cada una con su encuadre. En la v3, la sección dice dónde va hoy: en la banda del resaltador, junto a los botones del cierre, sin óvalo.
 
 Escena (la parte propia del prompt, en inglés):
 
@@ -376,7 +383,7 @@ Close horizontal photograph from above at a slight angle, filled edge to edge wi
 - **Recorte a 1440:** 4:3 · Gemini 1152×864 (1,36×), OpenAI 1365×1024 (1,62×). A 4:3 desde el centro (Gemini entrega un poco más ancha). Las tres hojas enteras; la mesa vacía alrededor no se recorta para acercarlas.
 - **Recorte a 390:** 4:3 · Gemini 1152×864 (3,37×), OpenAI 1365×1024 (3,99×). El mismo archivo y el mismo recorte: el espacio es 4:3 en las dos.
 - **Personas:** 0
-- **Negativo propio** (más los comunes): hands; letters or placeholder text in the sketches; yellow sticky notes; wooden table; clutter or extra objects
+- **Negativo propio** (más los comunes): hands; letters or placeholder text in the sketches; clutter or extra objects
 - **Riesgo:** Que los bocetos traigan letras inventadas. Que el modelo llene la mesa de objetos: el aire es lo que la hace de Pizarra limpia. Es Trabajo y no lleva gente a propósito: junto a la obra, cualquier persona se lee como el cliente.
 - **Alt propuesto:** «Bocetos a mano de la estructura de páginas web, en plumón ciruela sobre tres hojas blancas en una mesa.»
 - **Salidas:** `salida/F8-pizarra-<n>.png` · en la v1 era F8. La versión de Pizarra limpia: tres hojas sobre una mesa con aire, con el encuadre de esa dirección.
@@ -428,20 +435,20 @@ Horizontal photograph of a long aisle in a tidy distribution warehouse in Santia
 
 **Numeración:** Una sola, la del tablero. Desde la v2 cada ficha lleva el F<n> del espacio de Lucía y su dirección, y las salidas se nombran <F>-<dirección>-<n>.png (por ejemplo F8-taller-1.png). La tabla de abajo es el registro de la renumeración: qué número tenía cada foto en la v1 de esta pauta, que es el que espacios-foto.json anota como «pauta_bruno_16oct».
 
-**Estado:** Conciliada el 16-oct a las 10:15 (Chile) contra espacios-foto.json escrito a las 09:28: 9 espacios, 8 números, 9 fichas, ningún vacío. Las cuatro fotos de la v1 sin espacio (F3, F4, F11 y F12) salieron a «reservas» y no se generan.
+**Estado:** Conciliada el 16-oct a las 11:11 (Chile) contra espacios-foto.json escrito a las 10:22: 9 espacios, 8 números, 9 fichas, ningún vacío. La conciliación anterior (10:15) quedó vieja cuando, a las 10:22, el tablero cambió F2 de 398×498 a 443×554 a 1440; generar.mjs lo bloqueó (acta, ronda 2, defecto 1). Las cuatro fotos de la v1 sin espacio (F3, F4, F11 y F12) siguen en «reservas» y no se generan.
 
 **Qué bloquea:** generar.mjs compara esta pauta con espacios-foto.json en cada corrida y se niega a generar (código 2) si falta el archivo, si un espacio no tiene ficha, si una ficha no tiene espacio, si la página o la medida de un espacio cambiaron, si la tabla tiene una celda vacía o si una ficha no escribió sus dos recortes. `node generar.mjs --verificar` muestra la comprobación sin generar. Si una foto queda sin espacio, sale a «reservas»; si aparece un espacio nuevo, se le escribe su ficha con el número del tablero.
 
 | Tablero | Dirección | Página | Espacio a 1440 · a 390 | En la v1 de esta pauta | Nota |
 |---|---|---|---|---|---|
-| **F1** | Taller | Home | 420×724 · 390×488 | F1 |  |
-| **F2** | Taller | Home | 398×498 · 280×351 | F10 | Encuadre cambiado de Pizarra limpia a Taller y escena reescrita (acta, defecto 2). Ya no va en Pizarra limpia: no tiene espacio ahí. |
+| **F1** | Taller | Home | 420×724 · 390×488 | F1 | Desde la ronda 1 de QA no va en el hero: va a sangre derecha en «Qué hacemos» (sección reescrita en la v3). |
+| **F2** | Taller | Home | 443×554 · 280×351 | F10 | Encuadre cambiado de Pizarra limpia a Taller y escena reescrita (acta, defecto 2). Ya no va en Pizarra limpia: no tiene espacio ahí. El 16-oct a las 10:22 el espacio pasó de 398×498 a 443×554 a 1440 (a 390 sigue en 280×351). La proporción no cambió (4:5): el recorte es el mismo y la cobertura a 1440 baja a 2,02× con Gemini y 2,31× con OpenAI, sobre el 1× que pide el tablero (v3). |
 | **F3** | Taller | Home | 617×463 · 390×293 | F6 |  |
 | **F4** | Taller | Home | 617×411 · 390×260 | F5 |  |
 | **F5** | Pizarra limpia | Home | 1440×617 · 390×488 | F2 |  |
 | **F6** | Taller | Acompañamiento mensual | 655×436 · 390×260 | F7 | Sección corregida: va a sangre derecha junto a la entrada, y es 3:2 también a 390. |
 | **F7** | Pizarra limpia | Acompañamiento mensual | 1440×617 · 390×488 | F9 | Reescrita para su espacio, una banda a sangre de 21:9 que pasa a 4:5 a 390 (acta, defecto 2). |
-| **F8** | Taller | Trabajo | 508×381 · 342×257 | F8 | La v1 tenía una sola ficha para las dos direcciones, con encuadre de Pizarra limpia. Ahora hay una por dirección, cada una con su encuadre. |
+| **F8** | Taller | Trabajo | 508×381 · 342×257 | F8 | La v1 tenía una sola ficha para las dos direcciones, con encuadre de Pizarra limpia. Ahora hay una por dirección, cada una con su encuadre. En la v3, la sección dice dónde va hoy: en la banda del resaltador, junto a los botones del cierre, sin óvalo. |
 | **F8** | Pizarra limpia | Trabajo | 844×633 · 342×257 | F8 | La versión de Pizarra limpia: tres hojas sobre una mesa con aire, con el encuadre de esa dirección. |
 
 Fotos de la v1 que salieron: F3 → R1, F4 → R2, F11 → R3, F12 → R4 (§2, «Reservas»).
@@ -502,7 +509,7 @@ verifican en la consola del proveedor antes de una corrida grande.
 | `--calidad=low` · `medium` · `high` | Solo OpenAI (por defecto `high`) |
 | `--tamano=1K` · `2K` · `4K` | Solo Gemini, para modelos que acepten `imageSize` (el 2.5 Flash no lo necesita) |
 | `--ver` | Imprime el prompt completo de cada ficha elegida (sin red) |
-| `--medir=a.png,b.png` | Mide el oro de PNG ya guardados, por ejemplo después del acabado (sin red) |
+| `--medir=a.png,b.png` | Mide el oro de PNG ya guardados, por ejemplo después del acabado (sin red). Es un dato: el oro está en pausa con el logo |
 | `--sincronizar` | Reescribe `prompt_completo_en` y este `pauta.md` desde `pauta.json`, y muestra la comprobación |
 | `--salida=DIR` | Otra carpeta de salida (para pruebas) |
 | `--ayuda` | La ayuda |
@@ -520,7 +527,8 @@ verifican en la consola del proveedor antes de una corrida grande.
   máscara, los segundos, los datos de la respuesta y `estado: "por revisar"`. Los intentos fallidos
   también quedan, en `fallos`, con su motivo. **La clave nunca se escribe.**
 - Si encuentra oro: `salida/oro/<F>-<dirección>-<n>-oro.png`, la foto en gris con el oro en magenta,
-  para ver de un vistazo dónde cae.
+  para ver de un vistazo dónde cae. Es un dato para cuando exista la marca nueva, no un motivo de
+  descarte (§1, «El oro y el punto dorado»).
 
 **Qué valida antes de guardar:** que los bytes sean de verdad una imagen (firma PNG, JPEG o WebP, y
 dimensiones legibles de al menos 256 px). Si el proveedor responde 200 pero sin imagen (un bloqueo de
@@ -532,8 +540,8 @@ haberse generado y cobrado. Un 400, 401, 403 o 404 corta la corrida, porque se r
 Cualquier mensaje que traiga algo con forma de clave (`AIza…`, `sk-…`) sale tapado como
 `[clave oculta]`.
 
-**Códigos de salida:** 0 todo bien · 1 alguna falló, o `--medir` encontró oro sobre el umbral ·
-2 la pauta no calza con el tablero o no está sincronizada, uso o clave (falta la clave, argumento
+**Códigos de salida:** 0 todo bien (también cuando `--medir` encuentra oro: es un dato) · 1 alguna
+falló · 2 la pauta no calza con el tablero o no está sincronizada, uso o clave (falta la clave, argumento
 malo) · 3 no salió ninguna.
 
 **La red:** desde este entorno, el `fetch` nativo de Node llega a los dos proveedores sin
@@ -543,12 +551,12 @@ sugiere `NODE_USE_ENV_PROXY=1 node generar.mjs …`, que hace que Node use el pr
 
 ## 5 · Revisión de cada foto (antes de que vaya al tablero)
 
-1. Oro: el registro trae oro.pct de cada imagen. Más de 0,05 % (el máximo del pool limpio) → abrir la máscara salida/oro/<F>-<dirección>-<n>-oro.png. Si la zona se ve a simple vista, se descarta o esa vista no lleva el punto dorado.
+1. Oro: en pausa con el logo (reglas.oro). El registro trae oro.pct y, si hay, la máscara en salida/oro/; es un dato para la marca nueva, no un motivo de descarte.
 2. Manos y caras al 100 %: cinco dedos, sin fusiones, sin caras derretidas al fondo.
 3. Texto: nada legible inventado. Seudoletras nítidas → se descarta, o se recorta si quedan fuera.
 4. Marcas: ninguna en tapas de notebook, ropa, tazas, cajas, muros.
 5. Equipo o cliente: ¿alguien podría leer a esta gente como el equipo de SpindleLab o como un cliente? (mira a cámara, posa, una le explica a otra, va junto a Ramón o en Trabajo) → no va.
-6. Chile creíble: señales gringas (ladrillo rojo de loft, ampolletas Edison, enchufes americanos, letreros en inglés, otoño dorado, suburbio) → se descarta.
+6. Chile creíble, sin «pastoral gringa»: ladrillo rojo de loft, ampolletas Edison, enchufes americanos, letreros en inglés, otoño, suburbio → se descarta.
 7. Familia: puesta junto a las otras elegidas, ¿parece del mismo fotógrafo? Si una está más cálida, más limpia o más «render», se rehace o se corrige en el acabado.
 8. Ramón la ve antes de que vaya al tablero publicado.
 
@@ -559,16 +567,27 @@ Lo que hace que todas se vean de una misma marca no es solo el prompt: es un aca
 1. Recorte a la proporción del espacio, a 1440 y a 390 cuando son distintas (los px están en pauta.md §2, «Formato y recorte»), desde el centro salvo lo que diga el recorte de la ficha.
 2. Balance: un gris de la escena tiene que leerse gris. Si el modelo calentó la imagen, se enfría hasta neutro; nunca se calienta.
 3. Grano monocromo fino, el mismo en todas, calibrado contra lock/the-ready/foto-grano-hero-x2.png a 100 % (Lucía midió ruido de alta frecuencia 12,1 en su hero contra 8,1 en una foto sin tratar). Si el modelo ya trajo grano parejo, no se suma.
-4. Sin viñeta, sin virado, sin subir saturación más de lo que trae (subir saturación empuja píxeles cerca del oro sobre el umbral de 0,5).
-5. Medir oro otra vez sobre el archivo final: `node generar.mjs --medir=<archivo.png>`.
+4. Sin viñeta, sin virado, sin subir saturación más de lo que trae: la familia se rompe primero por ahí.
+5. Oro: en pausa con el logo (reglas.oro). Si se quiere el dato del archivo final, `node generar.mjs --medir=<archivo.png>`; no decide nada.
 6. Exportar JPG (calidad ~82) y su versión de 800 px (`-800.jpg`), como el pool. Nombre nuevo, nunca sobrescribir una ruta publicada (caché larga; manual §07b y CLAUDE.md).
 
 ## 7 · Pruebas hechas el 16-oct (sin clave y sin gastar)
 
+Cada prueba dice con qué versión se hizo. Las de la v3 son contra el `espacios-foto.json` vigente; las
+anteriores quedan como registro de lo que se probó entonces, contra el tablero de ese momento.
+
 | Prueba | Resultado |
 |---|---|
-| v2 · Sin `--tope`, sin clave, las 9 fichas, con un preload que registra y bloquea cualquier intento de red | Lista las 9 fichas (8 números del tablero) con su recorte y cobertura: 18 imágenes, USD 0,70 con Gemini y 4,50 con OpenAI (high), y la comprobación «calza». **0 intentos de red**, no crea `salida/`. Código 0 |
-| v2 · `--verificar` contra el `espacios-foto.json` real | 9 espacios, 9 fichas, ✓ en todos. 5 avisos de cobertura, todos de Gemini (F1 a 390: 1,97×; F5 y F7: 0,93× a 1440 y 1,57× a 390). Código 0 |
+| v3 · `--verificar` contra el `espacios-foto.json` vigente (escrito a las 10:22) | 9 espacios, 9 fichas, ✓ en todos, F2 con 443×554. 5 avisos de cobertura, todos de Gemini y los mismos de la v2 (F1 a 390: 1,97×; F5 y F7: 0,93× a 1440 y 1,57× a 390). Código 0 |
+| v3 · La pauta v2 (la de antes de este arreglo) contra ese mismo `espacios-foto.json`, en una copia aislada | Código 2: «F2-taller: el espacio cambió en el tablero (a 1440 398×498 → 443×554)». Es el defecto 1 de la ronda 2, y el script lo bloqueaba sin gastar: 0 intentos de red |
+| v3 · Sin `--tope` y sin clave, con un precargado que registra y bloquea fetch, net, tls, http, https y dns | Lista las 9 fichas con su recorte y cobertura: 18 imágenes, USD 0,70 con Gemini y 4,50 con OpenAI (high), y la comprobación «calza». **0 intentos de red**, no crea `salida/`. Código 0 |
+| v3 · `--tope=9` sin ninguna clave, mismo precargado | Termina con el nombre exacto de la variable que falta y dónde se configura. Código 2, 0 intentos de red, sin carpeta |
+| v3 · Copia aislada contra una API falsa de Gemini (200 con un PNG gris del tamaño de cada proporción, con un parche de 40×40 en #C9A227 y otro en #EEF26E), clave falsa, red real bloqueada, `--tope=9` | 9 imágenes, una por espacio del tablero, 0 fallos. En las 9 el prompt enviado es idéntico a `prompt_completo_en` y lleva el encuadre de su dirección. **Ninguno trae negativos por oro** (sin gold, brass, amber, mustard, ochre, yellow, wood, honey, cardboard, sparks, welding ni copper); «golden-hour» sigue, como luz de la «pastoral gringa». El oro se mide como dato: 1.600 px (0,154 a 0,156 %), solo el parche #C9A227; el #EEF26E no cuenta. La clave va en `x-goog-api-key`, nunca en la URL, y no aparece en `salida/`, stdout ni stderr. Código 0 |
+| v3 · `--medir` sobre una de esas imágenes, con 0,155 % de oro | Informa los píxeles, la caja y que «queda anotado; el oro está en pausa con el logo y no descarta la foto». **Código 0** (en la v2 era 1) |
+| v3 · Contra una API falsa que responde 400 repitiendo la clave | Sale «[clave oculta]», se corta la corrida después de 1 llamada y la clave no aparece en stdout, stderr ni `registro.json`. Código 3 |
+| v3 · `--sincronizar` dos veces seguidas | La segunda deja `pauta.json` y `pauta.md` iguales byte a byte |
+| v2 · Sin `--tope`, sin clave, las 9 fichas, con un preload que registra y bloquea cualquier intento de red (contra el `espacios-foto.json` de la mañana) | Lista las 9 fichas (8 números del tablero) con su recorte y cobertura: 18 imágenes, USD 0,70 con Gemini y 4,50 con OpenAI (high), y la comprobación «calza». **0 intentos de red**, no crea `salida/`. Código 0 |
+| v2 · `--verificar` contra el `espacios-foto.json` de la mañana (ya no es el vigente) | 9 espacios, 9 fichas, ✓ en todos. 5 avisos de cobertura, todos de Gemini (F1 a 390: 1,97×; F5 y F7: 0,93× a 1440 y 1,57× a 390). Código 0. Dejó de calzar a las 10:22, cuando el tablero cambió F2 a 443×554: la v2 terminaba con código 2 (acta, ronda 2, defecto 1). La v3 lo arregla (arriba) |
 | v2 · Doce copias aisladas, cada una con una cosa que no calza, con clave falsa y `--tope=18`: sin `espacios-foto.json` · un espacio cambia de medida · aparece un espacio nuevo · sale un espacio · una celda vacía en la tabla · una fila menos en la tabla · una escena editada sin sincronizar · falta un recorte · una ficha con encuadre ajeno · una ficha F10 sin espacio · un tamaño de OpenAI que no existe · una ficha repetida | Las doce terminan con código 2 y la causa nombrada (qué espacio, qué medida antes y después). **0 llamadas a la API** y sin crear `salida/` en las doce |
 | v2 · La pauta v1 con el script v2 y el primer comando que documentaba la v1 (`--prioridad=1 --tope=12`) | Código 2, 80 cosas que no calzan, 0 llamadas. Es el caso del acta (defecto 1): ya no genera fotos sin espacio ni deja espacios vacíos |
 | v2 · `pauta.md` editado a mano · el rótulo de un espacio cambiado en el tablero | El primero bloquea (código 2, 0 llamadas). El segundo genera y avisa el cambio de rótulo, porque no cambian ni la página ni la medida |
@@ -578,7 +597,7 @@ Lo que hace que todas se vean de una misma marca no es solo el prompt: es un aca
 | v2 · `--sincronizar` dos veces seguidas | La segunda deja `pauta.json` y `pauta.md` iguales byte a byte |
 | v1, repetida en la v2 · `--tope` sin ninguna clave · `--proveedor=openai` sin su clave · clave hecha solo de espacios | Termina con el nombre exacto de la variable que falta, dónde se configura y dónde se crea la clave. Código 2, sin crear carpetas ni tocar la red |
 | v1, repetida en la v2 · `--tope=abc` · `--tope=0` · argumento desconocido · `--verificar=si` · una clave pasada por error como argumento (`--clave=sk-…`) | Mensaje claro, código 2. La clave sale como `--clave=[clave oculta]` |
-| v1, sigue valiendo · Medición de oro contra `medir.py` (PIL) en tres capturas del lock | **Idéntica píxel a píxel**: nosotros 6.740 px (0,520 %, el 0,52 % del lock), home 1.170 px (0,090 %), foto del hero 3.732 px (1,055 %); la del hero, repetida con el script v2, da lo mismo. El amarillo `#F4F480` no se cuenta como oro; `#C9A227` sí |
+| v1, sigue valiendo como medida · Medición de oro contra `medir.py` (PIL) en tres capturas del lock. Desde la v3 el oro es un dato, no un criterio | **Idéntica píxel a píxel**: nosotros 6.740 px (0,520 %, el 0,52 % del lock), home 1.170 px (0,090 %), foto del hero 3.732 px (1,055 %); la del hero, repetida con el script v2, da lo mismo. El amarillo `#F4F480` no se cuenta como oro; `#C9A227` sí |
 
 ## 8 · Lo que esta pauta no hace
 
@@ -596,3 +615,4 @@ Lo que hace que todas se vean de una misma marca no es solo el prompt: es un aca
 
 - v1 · 16-oct, 09:03 · 12 fotos con numeración propia (F1 a F12). Revisada antes de que existiera espacios-foto.json.
 - v2 · 16-oct, 10:15 · Acta de Javiera, ronda 1. Defecto 1: una sola numeración, la del tablero (9 fichas para 9 espacios, F8 una por dirección); F3, F4, F11 y F12 de la v1 salen a reservas; tabla de equivalencia llena; generar.mjs bloquea si la pauta y los espacios no calzan. Defecto 2: la foto de la banda de Acompañamiento en Pizarra limpia (v1 F9, ahora F7) se reescribe en 16:9 con sus dos recortes, como la banda de la home; el encuadre ya no es un campo de la ficha, sale de su dirección, así que el mesón (v1 F10, ahora F2) pasa a encuadre Taller con la escena reescrita. Defecto 12: el alt de la reserva R3 (v1 F11) ya no nombra un barrio.
+- v3 · 16-oct, 11:11 · Acta de Javiera, ronda 2, defecto 1: la pauta vuelve a calzar con espacios-foto.json de las 10:22 (F2 pasa de 398×498 a 443×554 a 1440; sigue en 4:5, así que el recorte es el mismo y la cobertura sigue sobre el 1×: 2,02× con Gemini y 2,31× con OpenAI). F1, F2 y F8 de Taller dicen dónde van hoy: F1 en «Qué hacemos» y no en el hero; F2 sin garabato al lado; F8 junto a los botones del cierre, sin óvalo; las dos en la banda del resaltador #EEF26E. La paleta del estilo es la propia de tokens.css (papel #F7F5F0, tinta ciruela #341F34): salen la paleta de The Ready (#FFFEFA, #1B0925, #E6FA97, #EDD1FF) y la mancha naranja. Decisión de Ramón del 16-oct (el logo se rediseña después de elegir dirección): el oro sale de los negativos, comunes y propios (dorado, latón, ámbar, mostaza, ocre, amarillo, madera, cartón, chispas, cobre), de los lugares prohibidos y de los motivos de descarte; quedan los de texto, logos y marcas, manos y caras deformes, personas como ambiente, «pastoral gringa», estética genérica de IA y acabado de render. generar.mjs sigue midiendo el oro, solo como dato: `--medir` ya no termina en 1 por oro. §3 y §7 reescritos con lo que es cierto hoy.

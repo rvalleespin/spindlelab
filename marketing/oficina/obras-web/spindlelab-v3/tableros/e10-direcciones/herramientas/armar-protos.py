@@ -26,13 +26,20 @@
 #   · defecto 5: Pizarra limpia separa los servicios en dos puertas de entrada y dos que siguen, y lleva el
 #     resaltador en hasta cuatro frases por página (uno a la vista), en vez de uno.
 #
+# Ronda 2 de QA (acta-paso-2.md), lo que cambió acá:
+#   · defecto 2: la regla de escala del lock §13 en todos los anchos. escala() le pone a cada titular su --palabra (la
+#     palabra más larga en em, de img/palabras.json, × 1,01); el CSS hace min(escalón, caja ÷ palabra). Los titulares que
+#     se ven juntos (SERIES) llevan la de la más larga del grupo. En el hero la unidad es la línea (UNIDAD_HERO).
+#     Si cambia un texto, se corre antes herramientas/palabras.mjs (con proto/ servido) y después este script.
+#   · defectos 3 y 8: el marcador de la entrada de Trabajo va al final de la frase («cuál es cuál en cada una.»).
+#
 # Una imagen cambia: en Trabajo, «Bernardo Combeau | Model» pasa de mock-combeau-modelo-alto-2.jpg
 # (cuenta como oro: 0,059 %, la palmera; e9/piezas/manifiesto.json) a mock-combeau-modelo-ancho.jpg
 # (0,0095 %, limpio), porque la vista lleva el punto dorado en el pie. Su alt es el que ya usa la home.
 #
 # Uso: python3 -I herramientas/armar-protos.py   (desde tableros/e10-direcciones/)
 #      y servir proto/ con: python3 -m http.server 8770 --directory proto
-import os, re, shutil
+import html as htmlmod, json, os, re, shutil
 
 AQUI = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPO = os.path.abspath(os.path.join(AQUI, '../../../../../..'))
@@ -42,6 +49,59 @@ PIEZAS = os.path.join(REPO, 'marketing/oficina/obras-web/spindlelab-v3/e9/piezas
 PROTO = os.path.join(AQUI, 'proto')
 
 DIRS = {'taller': 'Taller', 'pizarra': 'Pizarra limpia'}
+
+# ------------------------------------------------------------------ regla de escala (lock §13)
+PALABRAS_JSON = os.path.join(AQUI, 'img/palabras.json')
+EM = json.load(open(PALABRAS_JSON, encoding='utf-8'))['em'] if os.path.exists(PALABRAS_JSON) else None
+MARGEN = 1.01
+# Titulares que se ven juntos: van al mismo tamaño, el de la palabra más larga del grupo (con su caja, que es la misma).
+SERIES = [
+    ('Desarrollo', 'Visibilidad'),                      # las dos puertas de Pizarra (en Taller la serie de 4 va en taller.css)
+    ('Continuidad', 'Alcance'),                         # el par de Taller y el de Pizarra
+    ('Esencial', 'Pro', 'A medida'),                    # los tres planes, lado a lado
+    ('Bernardo Combeau', 'Bernardo Combeau | Model', 'Verifica y Cumple', 'Raigal'),  # las cuatro obras (Pizarra: misma columna)
+]
+# El hero: la composición no deja partir «Ahí se corta»; en Taller la segunda línea entra con sangría de 1,15em.
+UNIDAD_HERO = {'taller': lambda E: max(E['Ahí se corta'], 1.15 + E['el circuito']),
+               'pizarra': lambda E: max(E['Ahí se corta'], E['el circuito'])}
+DISPLAY = re.compile(r'<(h1|h2|h3|p|span)\b[^>]*\bclass="(?:[^"]*\s)?(?:d-display|d-h1|d-h2|d-h3|d-guia|d-fase__n)(?:\s[^"]*)?"[^>]*>')
+
+
+def texto_de(el):
+    el = re.sub(r'<span class="d-sr">.*?</span>', ' ', el, flags=re.S)
+    return re.sub(r'\s+', ' ', htmlmod.unescape(re.sub(r'<br\s*/?>', ' ', re.sub(r'<(?!br)[^>]+>', '', el)))).strip()
+
+
+def palabra_de(texto, direccion):
+    if EM is None:
+        raise SystemExit('falta img/palabras.json: sirve proto/ y corre node herramientas/palabras.mjs, después este script')
+    faltan = [w for w in texto.split() if w not in EM]
+    if faltan:
+        raise SystemExit(f'img/palabras.json no tiene {faltan}: corre node herramientas/palabras.mjs y vuelve a armar')
+    if texto.startswith('Ahí se corta'):
+        return UNIDAD_HERO[direccion](EM)
+    for serie in SERIES:
+        if texto in serie:
+            return max(EM[w] for t in serie for w in t.split())
+    return max(EM[w] for w in texto.split())
+
+
+def escala(h, direccion):
+    """Le pone a cada titular en letra display su --palabra (lock §13). No cambia el texto."""
+    out, pos = [], 0
+    for m in DISPLAY.finditer(h):
+        if m.start() < pos:
+            continue
+        el = balanceado(h, m.start(), m.group(1))
+        t = texto_de(el)
+        if not t:
+            continue
+        v = f'--palabra:{palabra_de(t, direccion) * MARGEN:.3f}'
+        abre = m.group(0)
+        nuevo = (abre.replace(' style="', f' style="{v};', 1) if ' style="' in abre else abre[:-1] + f' style="{v}">')
+        out.append(h[pos:m.start()] + nuevo)
+        pos = m.end()
+    return ''.join(out) + h[pos:]
 
 
 def leer(p):
@@ -168,9 +228,10 @@ def pagina(html, nuevo_main, direccion, nombre):
     # El punto del pie gigante: el único oro de la vista, sobre ciruela (lock §12, opción A).
     h = cambiar(h, '<p class="d-gigante" aria-hidden="true">SpindleLab.</p>',
                 '<p class="d-gigante" aria-hidden="true">SpindleLab<span class="oro">.</span></p>', 'pie gigante')
-    css = (f'<link rel="stylesheet" href="/e10/base.css?v=4">'
-           f'<link rel="stylesheet" href="/e10/{direccion}.css?v=4">'
-           f'<script src="/e10/e10.js?v=4" defer></script>')
+    h = escala(h, direccion)
+    css = (f'<link rel="stylesheet" href="/e10/base.css?v=5">'
+           f'<link rel="stylesheet" href="/e10/{direccion}.css?v=5">'
+           f'<script src="/e10/e10.js?v=5" defer></script>')
     h = h.replace('</head>', css + '</head>', 1)
     h = re.sub(r'<html([^>]*)>', lambda m: f'<html{m.group(1)} data-dir="{direccion}" data-pagina="{nombre}">', h, count=1)
     h = h.replace('<head>', f'<head>\n<!-- Prototipo E10 · dirección {DIRS[direccion]} · tablero de la compuerta 2. Base: dist/ del build. No es el sitio. -->', 1)
@@ -329,7 +390,8 @@ def trabajo():
     # ── TALLER
     t_cab = cab.replace('class="d-cab d-cab--trab"', 'class="d-cab d-cab--trab t-cab"', 1)
     # Portada en papel (la lima era el rol de The Ready para sus casos; vuelve solo si Ramón elige sus colores).
-    t_portada = f'<div class="t-portada">{t_cab}' + mk(entrada, 'cuál es cuál') + '</div>'
+    # El marcador al final de la frase, en la consecuencia (lock §13; ronda 2, defectos 3 y 8): «cuál es cuál en cada una.»
+    t_portada = f'<div class="t-portada">{t_cab}' + mk(entrada, 'cuál es cuál en cada una.') + '</div>'
     # «Pieza de concepto · no es un cliente» va en el sello: lo que se estampa es justo la aclaración.
     t_arts = [mk(arts['combeau-fotografia'], 'el sitio se arma solo.').replace('d-obra-trab--ancha', 'd-obra-trab--ancha t-obra t-obra--1', 1),
               arts['combeau-modelo'].replace('d-obra-trab--alta', 'd-obra-trab--alta t-obra t-obra--2', 1),
@@ -348,7 +410,7 @@ def trabajo():
     p_cie = mk(cierre, 'qué ve la IA en tu sitio.').replace('class="d-sec d-sec--quieta"', 'class="d-sec d-sec--quieta p-cierre"', 1)
     p_cie = p_cie.replace('</section>', slot('F8', 'bocetos de páginas hechos a mano en papel', '1.3333', None, 'p-cierre__foto') + '</section>')
     pagina(html, ''.join([cab.replace('class="d-cab d-cab--trab"', 'class="d-cab d-cab--trab p-cab"', 1),
-                          mk(entrada, 'cuál es cuál').replace('d-entrada-trab', 'd-entrada-trab p-entrada', 1), p_obras, p_cie, sig]), 'pizarra', 'trabajo')
+                          mk(entrada, 'cuál es cuál en cada una.').replace('d-entrada-trab', 'd-entrada-trab p-entrada', 1), p_obras, p_cie, sig]), 'pizarra', 'trabajo')
 
 
 # ------------------------------------------------------------------ activos
@@ -363,7 +425,22 @@ def copiar_activos():
         shutil.copy2(os.path.join(PIEZAS, f), os.path.join(destino, 'e10', f))
 
 
+def serie_taller():
+    """La serie de los cuatro servicios de Taller cruza cajas distintas, así que va escrita en taller.css con la palabra
+    de cada uno: este paso la reescribe desde img/palabras.json para que no se desalinee."""
+    ruta = os.path.join(PROTO, 'e10/taller.css')
+    css = leer(ruta)
+    for var, w in (('--serv-d', 'Desarrollo'), ('--serv-v', 'Visibilidad'), ('--serv-c', 'Continuidad')):
+        css, n = re.subn(rf'{var}: [0-9.]+;', f'{var}: {EM[w] * MARGEN:.4f};', css)
+        if n != 1:
+            raise SystemExit(f'taller.css: {var} aparece {n} veces')
+    escribir(ruta, css)
+
+
 if __name__ == '__main__':
+    if EM is None:
+        raise SystemExit('falta img/palabras.json: sirve proto/ y corre node herramientas/palabras.mjs, después este script')
+    serie_taller()
     copiar_activos()
     home()
     acompanamiento()

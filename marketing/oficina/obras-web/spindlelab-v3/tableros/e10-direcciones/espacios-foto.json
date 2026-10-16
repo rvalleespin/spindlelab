@@ -9,8 +9,8 @@
   "ancho_px_390": 390,
   "alto_px_390": 488,
   "rotulo": "Foto por generar · F1 · gente de pie en una mesa con hojas y notas",
-  "que_muestra": "Tres personas de pie alrededor de una mesa larga con hojas impresas y notas de colores, en la oficina vidriada de una empresa cliente (una distribuidora, la bodega al fondo). De espaldas o de perfil, nadie posa a cámara. Luz de día, grano en el archivo.",
-  "por_que_aqui": "A sangre derecha, al lado de «Tu sitio está escrito para personas…» (la frase grande de «Qué hacemos»): gente trabajando es la energía de Taller. Desde la ronda 1 de QA ya no va en el hero, que vuelve al orden del sitio (instrumento, titular, fila de obras). Es gente en su trabajo, no un equipo de SpindleLab ni un cliente (regla nueva de personas generadas).",
+  "que_muestra": "Tres personas de pie alrededor de una mesa larga con hojas impresas y notas de colores, en la oficina vidriada de una distribuidora, con la bodega al fondo: gente en su propio trabajo. De espaldas o de perfil, nadie posa a cámara. Luz de día, grano en el archivo.",
+  "por_que_aqui": "A sangre derecha, al lado de «Tu sitio está escrito para personas…» (la frase grande de «Qué hacemos»): gente trabajando es la energía de Taller. Desde la ronda 1 de QA ya no va en el hero, que vuelve al orden del sitio (instrumento, titular, fila de obras). Es gente en su propio trabajo, nunca presentada como equipo de SpindleLab ni como cliente (regla de personas generadas, manual §07b).",
   "pauta_bruno_16oct": "F1",
   "notas": "Medidas en px CSS del render (img/medidas.json): a 1440 con deviceScaleFactor 1 y a 390 con 2, así que el archivo tiene que tener al menos el doble del ancho a 390 y 1× a 1440 (mejor 2× para pantallas retina). Las personas son ambiente: nada las presenta como equipo de SpindleLab ni como clientes (regla nueva, manual §07b); ninguna va al lado del retrato de Ramón. Se mide el oro igual que en el pool. «pauta_bruno_16oct» es la foto de e10/fotos/pauta.json que corresponde, como estaba el 16-oct a las 00:21; si Bruno renumera, manda su tabla de equivalencia."
  },
@@ -85,7 +85,7 @@
   "alto_px_390": 260,
   "rotulo": "Foto por generar · F6 · dos personas comparan hojas pegadas en la pared",
   "que_muestra": "En la sala de reuniones de una empresa mediana, de cielo alto, dos personas pegan hojas impresas en fila en la pared y las comparan; una de perfil, otra de espaldas.",
-  "por_que_aqui": "A sangre derecha, al lado de «Una auditoría te dice qué hacer; este servicio lo hace y lo sostiene»: el trabajo en marcha, en la empresa del cliente.",
+  "por_que_aqui": "A sangre derecha, al lado de «Una auditoría te dice qué hacer; este servicio lo hace y lo sostiene»: el trabajo en marcha, en la sala de una empresa mediana, hecho por su propia gente.",
   "pauta_bruno_16oct": "F7",
   "notas": "Medidas en px CSS del render (img/medidas.json): a 1440 con deviceScaleFactor 1 y a 390 con 2, así que el archivo tiene que tener al menos el doble del ancho a 390 y 1× a 1440 (mejor 2× para pantallas retina). Las personas son ambiente: nada las presenta como equipo de SpindleLab ni como clientes (regla nueva, manual §07b); ninguna va al lado del retrato de Ramón. Se mide el oro igual que en el pool. «pauta_bruno_16oct» es la foto de e10/fotos/pauta.json que corresponde, como estaba el 16-oct a las 00:21; si Bruno renumera, manda su tabla de equivalencia."
  },

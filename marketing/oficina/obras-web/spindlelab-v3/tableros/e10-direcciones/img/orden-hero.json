@@ -1,5 +1,5 @@
 {
- "fecha": "2026-10-16T13:23:47.228Z",
+ "fecha": "2026-10-16T14:37:53.500Z",
  "regla": "spec §0.4: el instrumento primero en la home",
  "mismo_orden_que_el_build": true,
  "casos": [
@@ -39,16 +39,16 @@
    "cual": "taller",
    "ancho": 390,
    "chequeo": 202,
-   "h1": 502,
-   "primera_obra": 653,
+   "h1": 560,
+   "primera_obra": 715,
    "orden": "chequeo → h1 → primera_obra"
   },
   {
    "cual": "pizarra",
    "ancho": 390,
    "chequeo": 140,
-   "h1": 473,
-   "primera_obra": 618,
+   "h1": 529,
+   "primera_obra": 681,
    "orden": "chequeo → h1 → primera_obra"
   }
  ]

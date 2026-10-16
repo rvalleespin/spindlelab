@@ -1,0 +1,312 @@
+{
+ "fecha": "2026-10-16T14:39:37.823Z",
+ "chequeo": [
+  {
+   "direccion": "taller",
+   "ancho": 360,
+   "dominio": "constructoraandesur.cl",
+   "util": 278,
+   "entero": true,
+   "apilado": true,
+   "boton_ancho": 298
+  },
+  {
+   "direccion": "taller",
+   "ancho": 360,
+   "dominio": "ferreteriaroma.cl",
+   "util": 278,
+   "entero": true,
+   "apilado": true,
+   "boton_ancho": 298
+  },
+  {
+   "direccion": "taller",
+   "ancho": 390,
+   "dominio": "constructoraandesur.cl",
+   "util": 308,
+   "entero": true,
+   "apilado": true,
+   "boton_ancho": 328
+  },
+  {
+   "direccion": "taller",
+   "ancho": 390,
+   "dominio": "ferreteriaroma.cl",
+   "util": 308,
+   "entero": true,
+   "apilado": true,
+   "boton_ancho": 328
+  },
+  {
+   "direccion": "taller",
+   "ancho": 768,
+   "dominio": "constructoraandesur.cl",
+   "util": 468,
+   "entero": true,
+   "apilado": false,
+   "boton_ancho": 167
+  },
+  {
+   "direccion": "taller",
+   "ancho": 768,
+   "dominio": "ferreteriaroma.cl",
+   "util": 468,
+   "entero": true,
+   "apilado": false,
+   "boton_ancho": 167
+  },
+  {
+   "direccion": "pizarra",
+   "ancho": 360,
+   "dominio": "constructoraandesur.cl",
+   "util": 278,
+   "entero": true,
+   "apilado": true,
+   "boton_ancho": 298
+  },
+  {
+   "direccion": "pizarra",
+   "ancho": 360,
+   "dominio": "ferreteriaroma.cl",
+   "util": 278,
+   "entero": true,
+   "apilado": true,
+   "boton_ancho": 298
+  },
+  {
+   "direccion": "pizarra",
+   "ancho": 390,
+   "dominio": "constructoraandesur.cl",
+   "util": 308,
+   "entero": true,
+   "apilado": true,
+   "boton_ancho": 328
+  },
+  {
+   "direccion": "pizarra",
+   "ancho": 390,
+   "dominio": "ferreteriaroma.cl",
+   "util": 308,
+   "entero": true,
+   "apilado": true,
+   "boton_ancho": 328
+  },
+  {
+   "direccion": "pizarra",
+   "ancho": 768,
+   "dominio": "constructoraandesur.cl",
+   "util": 455,
+   "entero": true,
+   "apilado": false,
+   "boton_ancho": 180
+  },
+  {
+   "direccion": "pizarra",
+   "ancho": 768,
+   "dominio": "ferreteriaroma.cl",
+   "util": 455,
+   "entero": true,
+   "apilado": false,
+   "boton_ancho": 180
+  }
+ ],
+ "filetes": {
+  "taller/home": {
+   "n": 2,
+   "a_la_vista": 1,
+   "donde": [
+    {
+     "en": "h1::after «Ahí se cortael circuito»",
+     "y": 453,
+     "ancho": "185.391px"
+    },
+    {
+     "en": "h2::before «Desarrollo»",
+     "y": 2311,
+     "ancho": "295px"
+    }
+   ]
+  },
+  "taller/acompanamiento-mensual": {
+   "n": 1,
+   "a_la_vista": 1,
+   "donde": [
+    {
+     "en": "h2::before «Elige la cobertura»",
+     "y": 2364,
+     "ancho": "295px"
+    }
+   ]
+  },
+  "taller/trabajo": {
+   "n": 0,
+   "a_la_vista": 0,
+   "donde": []
+  },
+  "pizarra/home": {
+   "n": 0,
+   "a_la_vista": 0,
+   "donde": []
+  },
+  "pizarra/acompanamiento-mensual": {
+   "n": 0,
+   "a_la_vista": 0,
+   "donde": []
+  },
+  "pizarra/trabajo": {
+   "n": 0,
+   "a_la_vista": 0,
+   "donde": []
+  }
+ },
+ "marcadores": {
+  "taller/home": [
+   {
+    "texto": "se corta",
+    "palabras": 2,
+    "en": "h1.d-display",
+    "titular": true,
+    "cierra_la_frase": false,
+    "despues": "el circuito"
+   },
+   {
+    "texto": "la consulta que pagaste termina en otra parte.",
+    "palabras": 8,
+    "en": "p.d-guia",
+    "titular": false,
+    "cierra_la_frase": true,
+    "despues": ""
+   },
+   {
+    "texto": "puedan citarte cuando preguntan por tu rubro.",
+    "palabras": 7,
+    "en": "p.d-desc",
+    "titular": false,
+    "cierra_la_frase": true,
+    "despues": ""
+   },
+   {
+    "texto": "Te muestro.",
+    "palabras": 2,
+    "en": "h2.d-h2",
+    "titular": true,
+    "cierra_la_frase": true,
+    "despues": ""
+   }
+  ],
+  "taller/acompanamiento-mensual": [
+   {
+    "texto": "lo hace y lo sostiene.",
+    "palabras": 5,
+    "en": "p.d-guia",
+    "titular": false,
+    "cierra_la_frase": true,
+    "despues": "Implementación continua, contenido que p"
+   },
+   {
+    "texto": "lo compruebas tú.",
+    "palabras": 3,
+    "en": "p.d-cuerpo",
+    "titular": false,
+    "cierra_la_frase": true,
+    "despues": ""
+   }
+  ],
+  "taller/trabajo": [
+   {
+    "texto": "cuál es cuál en cada una.",
+    "palabras": 6,
+    "en": "p.d-guia",
+    "titular": false,
+    "cierra_la_frase": true,
+    "despues": ""
+   },
+   {
+    "texto": "el sitio se arma solo.",
+    "palabras": 5,
+    "en": "p.d-cuerpo",
+    "titular": false,
+    "cierra_la_frase": true,
+    "despues": ""
+   },
+   {
+    "texto": "qué ve la IA en tu sitio.",
+    "palabras": 7,
+    "en": "p.d-guia",
+    "titular": false,
+    "cierra_la_frase": true,
+    "despues": "Es el mismo chequeo con el que partimos "
+   }
+  ],
+  "pizarra/home": [
+   {
+    "texto": "se corta",
+    "palabras": 2,
+    "en": "h1.d-display",
+    "titular": true,
+    "cierra_la_frase": false,
+    "despues": "el circuito"
+   },
+   {
+    "texto": "la consulta que pagaste termina en otra parte.",
+    "palabras": 8,
+    "en": "p.d-guia",
+    "titular": false,
+    "cierra_la_frase": true,
+    "despues": ""
+   },
+   {
+    "texto": "puedan citarte cuando preguntan por tu rubro.",
+    "palabras": 7,
+    "en": "p.d-desc",
+    "titular": false,
+    "cierra_la_frase": true,
+    "despues": ""
+   },
+   {
+    "texto": "Te muestro.",
+    "palabras": 2,
+    "en": "h2.d-h2",
+    "titular": true,
+    "cierra_la_frase": true,
+    "despues": ""
+   }
+  ],
+  "pizarra/acompanamiento-mensual": [
+   {
+    "texto": "lo hace y lo sostiene.",
+    "palabras": 5,
+    "en": "p.d-guia",
+    "titular": false,
+    "cierra_la_frase": true,
+    "despues": "Implementación continua, contenido que p"
+   },
+   {
+    "texto": "lo compruebas tú.",
+    "palabras": 3,
+    "en": "p.d-cuerpo",
+    "titular": false,
+    "cierra_la_frase": true,
+    "despues": ""
+   }
+  ],
+  "pizarra/trabajo": [
+   {
+    "texto": "cuál es cuál en cada una.",
+    "palabras": 6,
+    "en": "p.d-guia",
+    "titular": false,
+    "cierra_la_frase": true,
+    "despues": ""
+   },
+   {
+    "texto": "qué ve la IA en tu sitio.",
+    "palabras": 7,
+    "en": "p.d-guia",
+    "titular": false,
+    "cierra_la_frase": true,
+    "despues": "Es el mismo chequeo con el que partimos "
+   }
+  ]
+ }
+}

@@ -1,6 +1,7 @@
 # armar-tablero.py — tablero.html de la compuerta 2 de E10 (Lucía, 16-oct-2026).
 # Lee img/medidas.json (renderizar.mjs), img/variantes.json (variantes.mjs), img/orden-hero.json (orden-hero.mjs),
-# espacios-foto.json, texto-igual.json, img/cinta-prueba.json e img/oro.json, y escribe tablero.html para publicarse
+# espacios-foto.json, texto-igual.json, img/cinta-prueba.json, img/anchos.json (anchos.mjs), img/ronda2.json (ronda2.mjs)
+# e img/peso.json (peso.mjs), y escribe tablero.html para publicarse
 # como Artifact privado (sin doctype/html/head/body; imágenes por ruta img/…).
 # Ronda 1 de QA (acta-paso-2.md), lo que se agregó:
 #   · defecto 3: «Lo que también decides»: lo que tu elección cambia del manual, regla por regla con su fecha, y el
@@ -9,6 +10,15 @@
 #   · defecto 5: la prueba del logo tapado sobre la 2.ª y la 3.ª pantalla de Pizarra limpia, escrita;
 #   · defecto 6: la decisión de los colores (propios o los exactos de The Ready) con las dos capturas, y la prueba del
 #     logo tapado sobre Taller.
+# Ronda 2 de QA y decisión de Ramón del 16-oct («no te preocupes por el logo de la marca, es muy probable que lo tenga que
+# cambiar por la nueva imagen del sitio»):
+#   · «Dónde va el punto dorado» sale; queda una nota corta: el logo se rediseña después de elegir dirección. El oro deja
+#     de ser criterio en «Lo comprobado» y en la tabla del manual;
+#   · defecto 4: las personas de las fotos son gente en su propio trabajo (fuera «empresa del cliente») y las marcas de
+#     revisión se presentan como provisionales;
+#   · defecto 5: el filete que nace del borde, dicho como de The Ready y con su techo;
+#   · defecto 2: «Lo comprobado» suma la regla de escala medida en 14 anchos (img/anchos.json), el chequeo apilado a 390
+#     (img/ronda2.json) y la segunda comparación de texto, con JavaScript encendido (img/texto-js-encendido.txt).
 # Uso: python3 -I herramientas/armar-tablero.py   (desde tableros/e10-direcciones/)
 import html, json, os
 
@@ -19,7 +29,9 @@ H = json.load(open(os.path.join(AQUI, 'img/orden-hero.json'), encoding='utf-8'))
 F = json.load(open(os.path.join(AQUI, 'espacios-foto.json'), encoding='utf-8'))
 T = json.load(open(os.path.join(AQUI, 'texto-igual.json'), encoding='utf-8'))
 C = json.load(open(os.path.join(AQUI, 'img/cinta-prueba.json'), encoding='utf-8'))
-O = json.load(open(os.path.join(AQUI, 'img/oro.json'), encoding='utf-8'))
+A = json.load(open(os.path.join(AQUI, 'img/anchos.json'), encoding='utf-8'))
+R2 = json.load(open(os.path.join(AQUI, 'img/ronda2.json'), encoding='utf-8'))
+PESO = json.load(open(os.path.join(AQUI, 'img/peso.json'), encoding='utf-8'))
 e = html.escape
 
 
@@ -37,9 +49,9 @@ DIRS = {
         'nombre': 'Taller',
         'bajada': 'The Ready a fondo en la letra y el juego. Lo demás, de SpindleLab.',
         'define': [
-            'De The Ready, lo que marcaste: titulares de 138 px en caja de oración, la cinta en la home y en Acompañamiento, y el resaltador en hasta cuatro frases por página, siempre la que remata la idea.',
+            'De The Ready, lo que marcaste: titulares de 138 px en caja de oración, la cinta en la home y en Acompañamiento, y el resaltador en hasta cuatro frases por página, siempre la que remata la idea. También es de ellos el filete de 1 px que nace del borde: va dos veces por página como máximo (el hilo del hero y el que abre los servicios o los planes).',
             'De SpindleLab: tu papel y tu ciruela, el módulo de navegación, el chequeo y los botones del sitio, y la fila de obras en el hero.',
-            'Marcas de revisión a mano, una por página y donde hacen un trabajo: una flecha que apunta al chequeo, un visto junto a la prueba de los robots, un anillo alrededor de «Correr el chequeo». Y un sello con su rótulo en vez de la mancha naranja.',
+            'Marcas de revisión a mano, una por página y donde hacen un trabajo: una flecha que apunta al chequeo, un visto junto a la prueba de los robots, un anillo alrededor de «Correr el chequeo». Las que ves son provisionales: las generé con una semilla para fijar su forma y su lugar, y las definitivas las traza Bruno a mano. Y un sello con su rótulo en vez de la mancha naranja.',
             'Una banda del resaltador por página para lo que ganas, y fotos de gente trabajando que tocan los bordes de la pantalla.',
             'Lo que sacrifica: la calma. Hay más cosas compitiendo y pide 6 de las 8 fotos por generar.',
         ],
@@ -82,11 +94,11 @@ MANUAL = [
     ('§05 · Manrope en titulares y cuerpo.', '29-sep, tú',
      'Instrument Sans en titulares, IBM Plex Sans en el cuerpo, IBM Plex Mono en rótulos y botones.', 'Igual.'),
     ('§05 · Display en MAYÚSCULAS 800 en cinco lugares; los demás titulares, chicos (h1 de 60 px, h2 de 30).', '5-oct, tú',
-     'Todos los titulares en caja de oración, peso 500, y grandes en todas las páginas: 138, 91 y 52 px.', 'Igual.'),
+     'Todos los titulares en caja de oración, peso 540, y grandes en todas las páginas: 138, 91 y 52 px, o lo que deje caber la palabra más larga en su caja.', 'Igual.'),
     ('§05 · Rótulos en caja normal, sin interletra positiva.', '5-oct, tú',
      'Rótulos, navegación y botones en Plex Mono, en MAYÚSCULAS, con +0,03em y +0,1em.', 'Igual.'),
     ('§06 y §02 · El punto dorado va en el módulo de navegación, en cada vista.', '5-oct (un oro por vista); la regla de 3:1 del punto, manual v3.0, 7-oct',
-     'Sobre papel el oro no llega a 3:1: o el punto va en el pie ciruela (A) o el módulo pasa a ciruela (B). Lo decides abajo.', 'Igual.'),
+     'Queda abierto: el logo se rediseña después de elegir dirección (lo dijiste el 16-oct).', 'Igual.'),
     ('§07 · Radio único de 6 px, botones chicos de 36 px, cero píldoras.', '5-oct, ratificado; escrito en la spec el 6-oct',
      'El radio de 6 px se queda en botones, campo del chequeo, módulo y pestañas; las fotos y las piezas van con radio 0; los botones suben a 50 px, en mono.', 'Igual.'),
     ('§07 · Movimiento: entrada, scroll suave y campos pegajosos.', 'Sin fecha: lo escribió la spec, no hay un sí tuyo registrado',
@@ -95,8 +107,8 @@ MANUAL = [
 
 PROPIA = [('Papel', '#F7F5F0', 'el de tu manual (§04): fondo de todas las páginas'),
           ('Ciruela', '#341F34', 'el de tu manual (§04): la única tinta y la banda final'),
-          ('Resaltador', '#EEF26E', 'propio: más fluor y un poco más verde que el de ellos, fuera del tono del oro'),
-          ('Oro', '#C9A227', 'solo el punto del wordmark, uno por vista')]
+          ('Resaltador', '#EEF26E', 'propio: más fluor y un poco más verde que el de ellos'),
+          ('Oro', '#C9A227', 'el punto del wordmark actual; el logo se rediseña después')]
 EXACTA = [('Papel', '#FFFEFA', ''), ('Ciruela', '#1B0925', ''), ('Casi negro', '#0D0C0E', ''), ('Amarillo', '#F4F480', ''),
           ('Lima', '#E6FA97', ''), ('Lavanda', '#EDD1FF', ''), ('Naranja', '#EC6227', '')]
 
@@ -223,25 +235,12 @@ def bloque_colores():
       </article>'''
 
 
-def bloque_oro():
-    op = {(o['opcion'], o['ancho']): o for o in V['oro']}
-    def fig(o, cual, que):
-        w, h = tam(o[cual])
-        return f'<figure class="vista"><figcaption>{e(que)}</figcaption>{img(o[cual], w, h, que)}</figure>'
-    a14, b14, a39, b39 = op[('A', 1440)], op[('B', 1440)], op[('A', 390)], op[('B', 390)]
-    return f'''
-      <article class="decision" id="oro">
-        <h3>3 · Dónde va el punto dorado</h3>
-        <div class="dos">
-          <div><p class="rotulo">A · recomendada · lo que ves en los prototipos</p>
-            <p>El punto del módulo va en ciruela: sobre papel el oro da 2,22:1, bajo el 3:1 de tu manual. El único oro de la vista es el punto del wordmark grande del pie, sobre ciruela (6,24:1): el punto donde te encuentran, al final, donde se invita a conversar. La primera pantalla queda sin oro, que el manual da por válido.</p>
-            {fig(a14, 'modulo', 'A · el módulo a 1440')}{fig(a14, 'pie', 'A · el pie a 1440')}
-            <div class="par par--chico">{fig(a39, 'modulo', 'A · el módulo a 390')}{fig(a39, 'pie', 'A · el pie a 390')}</div></div>
-          <div><p class="rotulo">B · el oro en la primera pantalla</p>
-            <p>El módulo pasa a ciruela (la «única placa» de tu manual, hoy negra) y lleva el punto dorado arriba, a 6,24:1. Entonces el punto del pie va en papel, como dice el manual §02: un oro por vista. Pesa más arriba y el resaltador nunca comparte banda con el oro.</p>
-            {fig(b14, 'modulo', 'B · el módulo a 1440')}{fig(b14, 'pie', 'B · el pie a 1440')}
-            <div class="par par--chico">{fig(b39, 'modulo', 'B · el módulo a 390')}{fig(b39, 'pie', 'B · el pie a 390')}</div></div>
-        </div>
+def nota_logo():
+    """Decisión de Ramón del 16-oct: el logo se rediseña después de elegir dirección. Reemplaza a «Dónde va el punto dorado»."""
+    return '''
+      <article class="decision" id="logo">
+        <h3>El logo, después</h3>
+        <p class="sin-cambio">El wordmark de Gabarito con el punto dorado que ves en los prototipos es el actual, puesto para que las páginas se lean completas. No es parte de lo que eliges: como dijiste el 16-oct, el logo se rediseña después de elegir dirección, con la imagen nueva del sitio. Mientras tanto no rige la regla de un solo oro por vista.</p>
       </article>'''
 
 
@@ -261,7 +260,12 @@ orden = sum(1 for p in T['paginas'] if p['mismo_orden_de_lectura'])
 desborde = [k for k, v in M.items() if k.endswith('-390') and v['scrollWidth'] != 390]
 cintas_ok = all(c['ok'] for c in C['casos'])
 vel = sorted({c['velocidad_px_s'] for c in C['casos']})
-oro_ok = all(p['fuera_del_punto']['limpio'] for p in O['paginas'])
+vistas_anchos = len(A['vistas'])
+anchos_ok = A['vistas_con_falla'] == 0
+chq = [c for c in R2['chequeo'] if c['dominio'] == 'constructoraandesur.cl' and c['ancho'] == 390]
+chq_ok = all(c['entero'] and c['apilado'] for c in R2['chequeo'] if c['ancho'] < 768)
+peso = {m['peso']: m for m in PESO['medidas'] if m['nombre'].startswith('Instrument')}
+fil = {k: v['n'] for k, v in R2['filetes'].items()}
 dens = {d: [M[f'{d}-{p}-1440']['densidad_texto'] for p, _, _ in PAGINAS] for d in DIRS}
 lect = {d: [M[f'{d}-{p}-1440']['densidad_lectura'] for p, _, _ in PAGINAS] for d in DIRS}
 hero = {(c['cual'], c['ancho']): c for c in H['casos']}
@@ -378,7 +382,7 @@ pagina = f'''<meta charset="utf-8">
     <h1>Dos direcciones para el sitio, las dos desde The Ready</h1>
     <ol>
       <li><mark>Elige una dirección: Taller o Pizarra limpia.</mark></li>
-      <li>Decide también tres cosas que tu elección trae: las reglas del manual que cambian, los colores (propios o los exactos de The Ready) y dónde va el punto dorado. Están en «Lo que también decides», después de las dos direcciones.</li>
+      <li>Decide también dos cosas que tu elección trae: las reglas del manual que cambian y los colores (propios o los exactos de The Ready). Están en «Lo que también decides», después de las dos direcciones. El logo no se decide aquí: se rediseña después, como dijiste.</li>
       <li>Si quieres algo de la otra, dilo por su nombre (por ejemplo, «la cinta de Pizarra en Taller»).</li>
       <li>Las dos usan el texto de E8 tal cual y en el mismo orden que el sitio: el chequeo arriba, después el titular y la fila de obras, como decidiste (spec §0.4). Solo se agregan los rótulos de foto y la cinta.</li>
       <li>Lo que elijas se escribe como especificación visual antes de construir.</li>
@@ -400,16 +404,16 @@ pagina = f'''<meta charset="utf-8">
     <article class="decision" id="manual">
       <h3>1 · Lo que tu elección cambia del manual</h3>
       {tabla_manual()}
-      <p class="sin-cambio"><b>No cambia:</b> Gabarito para el wordmark, el punto como única firma, un solo oro por vista, el texto de E8, los precios, el chequeo y el formulario. La regla de personas generadas como ambiente (nunca como tu equipo ni como clientes) ya la aprobaste el 15-oct.</p>
+      <p class="sin-cambio"><b>No cambia:</b> el texto de E8, los precios, el chequeo y el formulario. La regla de personas generadas como ambiente (nunca como tu equipo ni como clientes) ya la aprobaste el 15-oct. <b>Queda abierto</b>, por tu decisión del 16-oct: el wordmark y la regla de un solo oro, porque el logo se rediseña después.</p>
     </article>
     {bloque_colores()}
-    {bloque_oro()}
+    {nota_logo()}
   </section>
 
   <section class="anexo" id="fotos" aria-labelledby="t-fotos">
     <p class="rotulo">Fotos por generar</p>
     <h2 id="t-fotos">Espacios de foto</h2>
-    <p>Cada espacio gris con la cruz es una foto nueva, del tamaño y la proporción exactos. Las personas son ambiente de la empresa del cliente: nada las presenta como equipo de SpindleLab ni como clientes, y ninguna va al lado de tu retrato. La obra, las pantallas y tu retrato son reales.</p>
+    <p>Cada espacio gris con la cruz es una foto nueva, del tamaño y la proporción exactos. Las personas son gente en su propio trabajo (una distribuidora, una ferretería, una maestranza, una sala de reuniones): nada las presenta como equipo de SpindleLab ni como clientes tuyos, y ninguna va al lado de tu retrato. La obra, las pantallas y tu retrato son reales.</p>
     <div class="tabla" role="region" aria-label="Lista de espacios de foto" tabindex="0">
       <table>
         <thead><tr><th scope="col">Foto</th><th scope="col">Dirección</th><th scope="col">Página</th><th scope="col">Proporción</th><th scope="col">A 1440 (px)</th><th scope="col">A 390 (px)</th><th scope="col">Qué muestra</th></tr></thead>
@@ -423,14 +427,15 @@ pagina = f'''<meta charset="utf-8">
     <p class="rotulo">Medido en el navegador</p>
     <h2 id="t-comprobado">Lo comprobado</h2>
     <ul class="chequeos">
-      <li>Texto visible igual al del sitio construido en {iguales} de {vistas} vistas (3 páginas, 2 direcciones, 1440 y 390), y en el mismo orden de lectura en {orden} de {vistas}. Se comparó con JavaScript apagado en las dos: con JavaScript, el sitio suma en el pie el control «Cookies» del aviso de cookies, que los prototipos no cargan. Solo se agregan los rótulos de foto y la cinta, que repite palabras ya publicadas.</li>
+      <li>Texto visible igual al del sitio construido en {iguales} de {vistas} vistas (3 páginas, 2 direcciones, 1440 y 390), y en el mismo orden de lectura en {orden} de {vistas}. Se comparó dos veces: con JavaScript apagado en las dos, y con JavaScript encendido, donde la única diferencia es el control «Cookies» que el aviso de cookies del sitio suma al pie y que los prototipos no cargan. Solo se agregan los rótulos de foto y la cinta, que repite palabras ya publicadas.</li>
       <li>El hero en el orden del sitio, a 1440: sitio {y_hero('build', 1440)}; Taller {y_hero('taller', 1440)}; Pizarra limpia {y_hero('pizarra', 1440)}. A 390: sitio {y_hero('build', 390)}; Taller {y_hero('taller', 390)}; Pizarra limpia {y_hero('pizarra', 390)}.</li>
-      <li>Sin desborde a 390 en ninguna página{"" if not desborde else ": revisar " + ", ".join(desborde)}. Contraste: ningún hallazgo con <code>npm run verificar</code> sobre los seis prototipos, a 390 y a 1440.</li>
+      <li>La escala en todos los anchos: cada titular va al tamaño de su escalón o, si no cabe, al que deja caber su palabra más larga en su caja. Medido en 14 anchos, de 360 a 1920, en las seis páginas ({vistas_anchos} vistas): {"ningún titular fuera de su caja ni encima de una foto o de otro texto, y la página nunca más ancha que la pantalla" if anchos_ok else "hay vistas con falla, ver img/anchos.json"}. Hasta 1023 px rige la composición de una columna y desde 1024 la de escritorio; las capturas a 768 y 1024 quedan en la carpeta img como evidencia.</li>
+      <li>A 390 el chequeo apila el campo y el botón, como el sitio: «constructoraandesur.cl» se lee entero, con {chq[0]["util"] if chq else "?"} px útiles{"" if chq_ok else " (revisar img/ronda2.json)"}. Contraste: ningún hallazgo con <code>npm run verificar</code> sobre los seis prototipos, a 390 y a 1440{"" if not desborde else "; desborde a 390 en " + ", ".join(desborde)}.</li>
       <li>La cinta corre a {coma(vel[0])} a {coma(vel[-1])} px por segundo, se pausa con su botón y queda quieta con movimiento reducido{"" if cintas_ok else " (con fallas, ver img/cinta-prueba.json)"}.</li>
-      <li>Un solo oro por página: el punto del wordmark en el pie ciruela{"" if oro_ok else " (hay oro fuera del punto, ver img/oro.json)"}. El resaltador no cuenta como oro.</li>
+      <li>La letra de los titulares va en Instrument Sans a 540 y no a 500: a 540 el grosor del trazo iguala el de Saans, la letra de The Ready, y la tinta de una línea de titular queda {coma(100 * (1 - peso[540]["tinta_rel"]), 0)} % por debajo de la de Saans (a 500, {coma(100 * (1 - peso[500]["tinta_rel"]), 0)} %). La prueba está en el lock, §11.</li>
       <li>Texto sobre el área de la página a 1440: Taller {coma(min(dens["taller"]))} a {coma(max(dens["taller"]))} %, Pizarra limpia {coma(min(dens["pizarra"]))} a {coma(max(dens["pizarra"]))} %. Sin la letra display (40 px o más), que ocupa área pero se lee de un golpe: Taller {coma(min(lect["taller"]))} a {coma(max(lect["taller"]))} %, Pizarra limpia {coma(min(lect["pizarra"]))} a {coma(max(lect["pizarra"]))} %. Con la letra grande de vuelta en Pizarra, la densidad ya no es lo que más separa a las dos: las separan el color, las marcas a mano, la gente en las fotos y la estructura.</li>
-      <li>En Trabajo, «Bernardo Combeau | Model» usa la captura en notebook en vez de la del teléfono: la del teléfono tiene una palmera que cuenta como oro.</li>
-      <li>El subrayado del hero va en «se corta», al final de la primera línea: en castellano la consecuencia está en el verbo.</li>
+      <li>En Trabajo, «Bernardo Combeau | Model» usa la captura en notebook en vez de la del teléfono. Se cambió cuando regía la regla del oro (la del teléfono tiene una palmera dorada); con esa regla abierta, puede volver.</li>
+      <li>El resaltador va siempre al final de su oración, salvo una excepción: «se corta», en el titular del hero, porque en castellano la consecuencia está en el verbo y la línea se parte justo ahí. En Trabajo pasó de «cuál es cuál» a «cuál es cuál en cada una.», que cierra la frase.</li>
     </ul>
   </section>
 </div>

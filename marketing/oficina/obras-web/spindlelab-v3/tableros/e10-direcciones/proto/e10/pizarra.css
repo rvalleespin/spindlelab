@@ -8,21 +8,23 @@
    consecuencia de hasta cuatro frases por página (uno a la vista), y la cinta una vez (la home, con las 21 señales).
    Los servicios de la home dejan de pesar lo mismo: dos puertas de entrada a escala de titular y dos que siguen.
    Sin bandas de color, sin sello, sin marcas a mano: eso es Taller. Lo propio (paleta, módulo, chequeo y botones)
-   viene de base.css (lock §10b). Orden de lectura: el del build en las tres páginas (defecto 4). */
+   viene de base.css (lock §10b). Orden de lectura: el del build en las tres páginas (defecto 4).
+   Ronda 2 de QA: la escala sigue la regla del lock §13 en todos los anchos (defecto 2; las puertas, los que siguen, los
+   planes y las obras, cada grupo como serie) y la letra display va a 540 (defectos 7 y 10). */
 :root {
   --fs-hero: 138px; --fs-h1: 138px; --fs-h2: 91px; --fs-h2b: 52px; --fs-h3: 31px; --fs-lead: 28px;
   --fs-pie: 138px; --fs-sig: 91px; --fs-cinta: 31px; --fs-precio: 26px;
   --izq: minmax(0, 4fr); --der: minmax(0, 8fr);
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   :root { --fs-hero: 86.9px; --fs-h1: 59.6px; --fs-h2: 44px; --fs-h2b: 36.3px; --fs-h3: 22px; --fs-lead: 22px;
     --fs-pie: 60px; --fs-sig: 44px; --fs-cinta-cel: 24px; --fs-precio: 22px; }
 }
 
-.d-h1 { font-size: var(--fs-h1); line-height: .9; }
-.d-h2, .d-display { font-size: var(--fs-h2); line-height: .99; }
-.d-h3 { font-size: var(--fs-h3); line-height: 1.16; }
-.d-guia { font: 500 var(--fs-lead)/1.22 var(--f-display); letter-spacing: -.012em; color: var(--ciruela); text-wrap: pretty; max-width: 26em; }
+.d-h1 { font-size: min(var(--fs-h1), var(--caja, 100cqi) / var(--palabra)); line-height: .9; }
+.d-h2, .d-display { font-size: min(var(--fs-h2), var(--caja, 100cqi) / var(--palabra)); line-height: .99; }
+.d-h3 { font-size: min(var(--fs-h3), var(--caja, 100cqi) / var(--palabra)); line-height: 1.16; }
+.d-guia { font: var(--peso-display) min(var(--fs-lead), var(--caja, 100cqi) / var(--palabra))/1.22 var(--f-display); letter-spacing: -.012em; color: var(--ciruela); text-wrap: pretty; max-width: 26em; }
 .d-cuerpo, .d-desc { line-height: 1.5; max-width: 40em; }
 .d-chico { font-size: 15px; line-height: 1.5; }
 
@@ -48,13 +50,13 @@
 .p-ficha .chq-form button { min-height: 60px; }
 .p-hero .d-titular { padding: 72px 0 0; }
 .p-hero .d-ojillo { font: 400 22px/1.35 var(--f-cuerpo); color: var(--tinta); margin-bottom: 22px; }
-.p-hero h1 { font-size: var(--fs-hero); line-height: .88; max-width: 7.2em; }
+.p-hero h1 { font-size: min(var(--fs-hero), var(--caja, 100cqi) / var(--palabra)); line-height: .88; max-width: 7.2em; }
 /* La cinta, una sola vez: las 21 señales que mira el chequeo, bajo la fila de obras; más chica que en Taller */
 [data-cinta="pizarra-home"] .cinta__grupo { line-height: 1.75; }
 /* Trabajo entregado: una fila tranquila de cuatro, alineada abajo, con el pie en mono (Gehl, «Featured projects») */
 .p-entregado { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); align-items: end; padding: 64px var(--m) var(--sec); }
 .p-pres { align-items: start; }
-.p-pres .d-guia { grid-column: 2; font-size: 36px; line-height: 1.18; max-width: 22em; }
+.p-pres .d-guia { grid-column: 2; --caja: calc((100cqi - var(--gap)) * 8 / 12); font-size: min(36px, var(--caja, 100cqi) / var(--palabra)); line-height: 1.18; max-width: 22em; }
 .p-pres .d-btns { grid-column: 2; margin-top: 40px; }
 .p-sangre { width: 100%; }
 /* Los servicios. Dos puertas de entrada (Desarrollo, Visibilidad): el nombre a 91 px a todo el ancho y la ficha
@@ -74,7 +76,7 @@
 .p-siguen { display: grid; grid-template-columns: var(--izq) minmax(0, 4fr) minmax(0, 4fr); column-gap: var(--gap); padding: 0 var(--m) var(--sec); border-top: 1px solid var(--ciruela); }
 .p-sigue { grid-column: auto; padding: 56px 24px 0 0; border-top: 0; }
 .p-sigue:first-child { grid-column: 2; }
-.p-sigue .d-display { font-size: var(--fs-h2b); line-height: 1.02; }
+.p-sigue .d-display { font-size: min(var(--fs-h2b), var(--caja, 100cqi) / var(--palabra)); line-height: 1.02; }
 .p-sigue .d-pills { margin: 20px 0 16px; }
 .p-sigue .d-desc { font-size: 17px; }
 .p-sigue .d-btn { padding: 0 16px; }
@@ -85,7 +87,7 @@
 .p-quien .d-pieza img { aspect-ratio: 896 / 1200; }
 .p-quien .d-quien__txt { grid-column: 2; display: grid; gap: 28px; align-content: start; }
 .p-quien .d-h2 { max-width: 9em; }
-.p-quien .d-quien__txt > div:not(.d-btns) > span:first-child { font: 500 24px/1.2 var(--f-display); color: var(--ciruela); }
+.p-quien .d-quien__txt > div:not(.d-btns) > span:first-child { font: var(--peso-display) 24px/1.2 var(--f-display); color: var(--ciruela); }
 .p-indice { row-gap: 48px; }
 .p-indice > .d-indice__cab { display: contents; }
 .p-indice .d-indice__cab > .d-h2 { grid-column: 1 / -1; max-width: 14em; }
@@ -94,7 +96,7 @@
 .p-indice li a { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; gap: 20px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--ciruela); text-decoration: none; }
 .p-indice li:first-child a { padding-top: 0; }
 .p-indice .d-h3 { font-size: 26px; }
-.p-indice .d-flecha { color: var(--ciruela); font: 500 26px/1 var(--f-display); }
+.p-indice .d-flecha { color: var(--ciruela); font: var(--peso-display) 26px/1 var(--f-display); }
 .p-indice li a:hover .d-h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .14em; }
 
 /* ── ACOMPAÑAMIENTO ─────────────────────────────────────────────────────────────────────── */
@@ -106,7 +108,7 @@
 .p-cab .d-btns { margin-top: 28px; }
 .p-entrada { align-items: start; }
 .p-entrada .d-nota-card { grid-column: 1; font-size: 15px; line-height: 1.5; padding-right: 32px; }
-.p-entrada .d-guia { grid-column: 2; }
+.p-entrada .d-guia { grid-column: 2; --caja: calc((100cqi - var(--gap)) * 8 / 12); }
 .d-filas > div, .d-filas > li { padding: 24px 0; border-bottom: 1px solid var(--ciruela); display: grid; gap: 8px; }
 .d-filas > div:first-child, .d-filas > li:first-child { padding-top: 0; }
 /* Lo que incluye: el retrato (en el HTML va después de la lista, donde estaba la galería del build) bajo el rótulo */
@@ -117,14 +119,14 @@
 .d-plan .d-cuerpo, .d-plan ul { grid-column: 2; }
 .d-plan .d-cuerpo { grid-row: 1; }
 .d-plan ul { grid-row: 2 / span 2; display: grid; gap: 6px; }
-.d-plan .d-h3 { font-size: var(--fs-h3); }
-.d-plan__precio { font: 500 17px/1.3 var(--f-display); color: var(--ciruela); }
+.d-plan .d-h3 { font-size: min(var(--fs-h3), var(--caja, 100cqi) / var(--palabra)); --caja: calc((100cqi - 24px) * 5 / 12); }
+.d-plan__precio { font: var(--peso-display) 17px/1.3 var(--f-display); color: var(--ciruela); }
 .d-plan li { padding-left: 16px; position: relative; }
 .d-plan li::before { content: ''; position: absolute; left: 0; top: .66em; width: 6px; height: 1px; background: var(--ciruela); }
 .p-comp { grid-column: 2; display: grid; gap: 40px; padding-top: 16px; }
 .p-comp .d-cuerpo { font-size: 19px; line-height: 1.5; }
 .p-mes .d-fase { grid-template-columns: 88px minmax(0, 1fr); gap: 4px 16px; }
-.p-mes .d-fase__n { grid-row: 1 / span 2; font: 500 var(--fs-h2b)/1 var(--f-display); color: var(--ciruela); }
+.p-mes .d-fase__n { grid-row: 1 / span 2; --caja: 88px; font: var(--peso-display) min(var(--fs-h2b), var(--caja, 100cqi) / var(--palabra))/1 var(--f-display); color: var(--ciruela); }
 .d-faq .d-h3 { font-size: 21px; }
 .d-cierre-svc, .d-cierre-trab { display: grid; gap: 24px; justify-items: start; }
 
@@ -132,19 +134,19 @@
 .p-cab.d-cab--trab { padding-bottom: 0; }
 .p-cab.d-cab--trab > .d-h1 { margin-bottom: 0; }
 .p-entrada.d-entrada-trab { border-top: 0; padding-top: 56px; }
-.p-entrada.d-entrada-trab .d-guia { grid-column: 2; }
+.p-entrada.d-entrada-trab .d-guia { grid-column: 2; --caja: calc((100cqi - var(--gap)) * 8 / 12); }
 .p-obra { row-gap: 28px; }
 .p-obra > .d-obra-trab__img { grid-column: 2; grid-row: 1; display: block; }
 .p-obra > .d-pie-trab { display: contents; }
 .p-obra .d-pie-trab__id { grid-column: 1; grid-row: 1; display: grid; gap: 12px; align-content: start; padding-right: 32px; }
-.p-obra .d-pie-trab__id .d-h3 { font-size: var(--fs-h2b); line-height: 1.02; }
+.p-obra .d-pie-trab__id .d-h3 { font-size: min(var(--fs-h2b), var(--caja, 100cqi) / var(--palabra)); line-height: 1.02; }
 .p-obra .d-pie-trab__txt { grid-column: 2; grid-row: 2; display: grid; gap: 16px; justify-items: start; }
 .p-v1 { width: 100%; margin: 8px 0; }
 .p-cierre .d-cierre-trab, .p-cierre__foto { grid-column: 2; }
 .p-cierre__foto { margin-top: 8px; }
 
-/* ── 390 ────────────────────────────────────────────────────────────────────────────────── */
-@media (max-width: 767px) {
+/* ── Una columna: hasta 1023 px (390 y tableta vertical; ver base.css) ───────────────────── */
+@media (max-width: 1023px) {
   /* La flecha de cada artículo no se muestra a 390, igual que en el build (texto igual, ver texto-igual.json) */
   .d-indice .d-flecha { display: none; }
   .d-sec, .p-pres, .p-quien, .p-indice, .p-entrada, .p-obra, .p-ficha, .p-cab, .p-puerta, .p-siguen { grid-template-columns: minmax(0, 1fr); row-gap: 24px; }
@@ -159,8 +161,8 @@
   .p-ficha .chq-form button { min-height: 50px; }
   .p-hero .d-titular { padding: 48px 0 0; }
   .p-hero .d-ojillo { font-size: 18px; }
-  /* «Ahí se corta» tiene que caber en 342 px: el tamaño lo fija la línea más larga (lock §13) */
-  .p-hero h1 { font-size: min(var(--fs-hero), calc((100vw - 2 * var(--m)) / 5.7)); }
+  /* A una columna, cada titular en columna toma el ancho entero del contenedor (regla de escala, lock §13) */
+  .p-pres .d-guia, .p-entrada .d-guia, .p-entrada.d-entrada-trab .d-guia, .d-plan .d-h3 { --caja: 100cqi; }
   .p-entregado { grid-template-columns: 1fr 1fr; row-gap: 28px; padding: 40px var(--m) var(--sec); }
   .p-pres .d-guia { font-size: 24px; }
   .p-puerta .d-pills { flex-direction: row; }
@@ -168,9 +170,6 @@
   .p-siguen { padding: 0 var(--m) var(--sec); }
   .p-sigue { padding: 48px 0 0; }
   .p-sigue + .p-sigue { border-top: 1px solid var(--ciruela); margin-top: 48px; }
-  /* Palabras largas a 390 (lock §13): «Acompañamiento» ≤ 42 px; «acompañamiento» en el titular de las preguntas, igual */
-  [data-pagina="acompanamiento-mensual"] .p-cab > .d-h1 { font-size: 42px; }
-  .d-faq .d-h2 { font-size: 40px; }
   .p-cab > .d-h1 { margin: 16px 0 24px; }
   .p-obra-par { gap: 12px; }
   .p-quien > .d-pieza { max-width: 220px; }
@@ -180,5 +179,6 @@
   #planes .d-filas > .d-plan { grid-template-columns: 1fr; }
   .d-plan .d-h3, .d-plan__precio, .d-plan .d-cuerpo, .d-plan ul { grid-column: 1; grid-row: auto; }
   .p-mes .d-fase { grid-template-columns: 56px minmax(0, 1fr); }
+  .p-mes .d-fase__n { --caja: 56px; }
   .p-cierre__foto { margin-top: 24px; }
 }

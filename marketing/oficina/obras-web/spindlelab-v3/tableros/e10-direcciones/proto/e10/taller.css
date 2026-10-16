@@ -5,25 +5,31 @@
    Lo propio (lock §10b, ronda 1 de QA, defecto 6): la paleta del manual, el módulo de navegación, el chequeo y
    los botones de la marca, la fila de obras del sitio en el hero, las marcas de revisión (flecha, visto, anillo)
    donde hacen un trabajo, y el sello en vez de la mancha. Sin óvalo, sin cuadrícula, sin ovillos ni rulos.
-   Orden de lectura: el del build en las tres páginas (defecto 4). */
+   Orden de lectura: el del build en las tres páginas (defecto 4).
+   Ronda 2 de QA (acta-paso-2.md): la escala sigue la regla del lock §13 en todos los anchos (defecto 2: cada titular
+   = min(escalón, caja ÷ palabra); los cuatro servicios, como serie), el filete que nace del borde baja a su techo
+   (defecto 5: dos por página contando el hilo del hero) y la letra display va a 540 (defectos 7 y 10). */
 :root {
   --fs-d1: 138px; --fs-d2: 91px; --fs-d3: 52px; --fs-d4: 31px; --fs-cita: 44px; --fs-lead: 22px;
   --fs-pie: 138px; --fs-sig: 91px; --fs-cinta: 51.6px; --fs-precio: 31px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   :root { --fs-d1: 86.9px; --fs-d2: 59.6px; --fs-d3: 36.3px; --fs-d4: 24px; --fs-cita: 29px; --fs-lead: 19px;
     --fs-pie: 60px; --fs-sig: 46px; --fs-precio: 26px; --fs-cinta-cel: 36.3px; }
 }
 
 /* ── Piezas comunes ─────────────────────────────────────────────────────────────────────── */
 .d-sec, .t-pres, .t-campo, .t-indice, .t-quien { padding: var(--sec) var(--m); position: relative; }
-.d-h2 { font-size: var(--fs-d2); line-height: .99; }
-.d-h3 { font-size: var(--fs-d4); line-height: 1.16; }
-.d-guia { font-size: var(--fs-lead); line-height: 1.4; }
+.d-h2 { font-size: min(var(--fs-d2), var(--caja, 100cqi) / var(--palabra)); line-height: .99; }
+.d-h3 { font-size: min(var(--fs-d4), var(--caja, 100cqi) / var(--palabra)); line-height: 1.16; }
+.d-guia { font-size: min(var(--fs-lead), var(--caja, 100cqi) / var(--palabra)); line-height: 1.4; }
 .d-cuerpo, .d-desc { font-size: var(--fs-body, 17px); line-height: 1.45; }
 .d-chico { font-size: 15px; line-height: 1.45; }
-/* El filete ciruela de 1 px que nace del borde izquierdo (lock §6, tomado: §10b): sobre cada titular de sección. */
-.d-eti > .d-h2::before, .t-campo .d-display::before, .t-pres .d-guia::before {
+/* El filete ciruela de 1 px que nace del borde izquierdo (lock §6, tomado: §10b). Techo (lock §13, ronda 2, defecto 5):
+   DOS por página contando el hilo del hero, nunca dos a la vista, nunca donde la sección ya abre con un filete a todo el
+   ancho ni junto a la cinta. Rol: abrir la serie de lo que se ofrece. Home: el hilo del hero y el filete sobre «Desarrollo»
+   (abre los cuatro servicios). Acompañamiento: sobre «Elige la cobertura» (abre los planes). Trabajo: ninguno. */
+.t-campo--desarrollo .d-display::before, #planes .d-eti > .d-h2::before {
   content: ''; display: block; height: 1px; background: var(--ciruela); width: calc(var(--m) + 220px); margin: 0 0 32px calc(-1 * var(--m)); }
 /* La banda «lo que ganas»: el resaltador entero. Ahí el botón lo cruza el papel, no el amarillo. */
 .t-banda-amarilla { background: var(--amarillo); }
@@ -44,7 +50,7 @@
    y se corta antes de tocarla (el territorio «el circuito se corta», manual §06b): eso es lo propio del filete. */
 .t-hero .d-titular { margin-top: 88px; }
 .t-hero .d-ojillo { font: 400 var(--fs-lead)/1.3 var(--f-cuerpo); color: var(--tinta); margin-bottom: 18px; }
-.t-hero h1 { position: relative; font-size: var(--fs-d1); line-height: .86; padding-left: 1.15em; text-indent: -1.15em; }
+.t-hero h1 { position: relative; font-size: min(var(--fs-d1), var(--caja, 100cqi) / var(--palabra)); line-height: .86; padding-left: 1.15em; text-indent: -1.15em; }
 .t-hero h1::after { content: ''; position: absolute; left: calc(-1 * var(--m)); top: 1.36em; width: calc(var(--m) + .8em); height: 1px; background: var(--ciruela); }
 /* La fila de obras del sitio (spec §3 y §7, 6-oct): todas del mismo alto, cada una en su proporción, de borde a
    borde. No es el collage sobre cuadrícula de The Ready. */
@@ -54,13 +60,21 @@
 .t-fila .d-etq { padding: 10px 14px 0; }
 
 /* «Qué hacemos»: la frase grande con el resaltador en la consecuencia; la foto de gente (F1) a sangre derecha */
-.t-pres { display: grid; grid-template-columns: minmax(0, 1fr) 420px; grid-template-rows: 1fr auto auto 1fr; column-gap: 72px; padding-right: 0; }
-.t-pres .d-guia { grid-column: 1; grid-row: 2; font: 500 var(--fs-cita)/1.12 var(--f-display); letter-spacing: -.02em; color: var(--ciruela); max-width: 880px; text-wrap: pretty; }
+.t-pres { display: grid; grid-template-columns: minmax(0, 1fr) min(420px, var(--pagina) * .3); grid-template-rows: 1fr auto auto 1fr; column-gap: 72px; padding-right: 0; }
+.t-pres .d-guia { grid-column: 1; grid-row: 2; --caja: calc(100cqi - min(420px, var(--pagina) * .3) - 72px); font: var(--peso-display) min(var(--fs-cita), var(--caja, 100cqi) / var(--palabra))/1.12 var(--f-display); letter-spacing: -.02em; color: var(--ciruela); max-width: 880px; text-wrap: pretty; }
 .t-pres .d-btns { grid-column: 1; grid-row: 3; margin-top: 40px; }
-.t-pres__foto { grid-column: 2; grid-row: 1 / -1; width: 420px; }
+.t-pres__foto { grid-column: 2; grid-row: 1 / -1; width: 100%; }
 
-/* Los servicios: cada uno con su ritmo. Desarrollo, fila con la obra real a sangre */
-.t-campo .d-display { font-size: var(--fs-d2); line-height: .99; }
+/* Los servicios: cada uno con su ritmo. Desarrollo, fila con la obra real a sangre.
+   Los cuatro nombres son una serie (lock §13): van al mismo tamaño, el que deja caber al que menos cabe en su caja.
+   Cajas a 1024 o más: Desarrollo 5/12 de la sección menos 56 px; Visibilidad 7/11 menos 72; Continuidad y Alcance, la
+   mitad del par menos 56. Palabras (img/palabras.json × 1,01): Desarrollo --serv-d, Visibilidad --serv-v, Continuidad --serv-c. */
+.t-campo .d-display { --serv-d: 4.6804; --serv-v: 4.8031; --serv-c: 5.6263;
+  font-size: min(var(--fs-d2),
+    (var(--pagina) - 2 * var(--m) - 56px) * 5 / 12 / var(--serv-d),
+    (var(--pagina) - 2 * var(--m) - 72px) * 7 / 11 / var(--serv-v),
+    (var(--pagina) - 2 * var(--m) - 56px) / 2 / var(--serv-c));
+  line-height: .99; }
 .t-campo .d-pills { margin: 28px 0 22px; }
 .t-campo .d-desc { font-size: var(--fs-lead); line-height: 1.4; max-width: 560px; }
 .t-campo .d-desc b { font-weight: 700; color: var(--ciruela); }
@@ -82,34 +96,34 @@
 .t-par .t-campo { padding: var(--sec) 0; }
 .t-par .t-campo:nth-child(2) { margin-top: 120px; }
 .t-campo--media .t-campo__foto { margin-bottom: 40px; }
-.t-campo--media .d-display::before { width: 100%; margin-left: 0; }
 
 /* Quién: el retrato a sangre izquierda, el titular grande con el resaltador en «Te muestro.» */
 .t-quien { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: center; padding-left: 0; border-top: 1px solid var(--ciruela); }
 .t-quien .d-pieza img { aspect-ratio: 896 / 1200; }
 .t-quien .d-quien__txt { display: grid; gap: 28px; }
-.t-quien .d-h2 { font-size: var(--fs-d2); }
+.t-quien .d-h2 { font-size: min(var(--fs-d2), var(--caja, 100cqi) / var(--palabra)); }
 .t-quien .d-guia { max-width: 560px; }
-.t-quien .d-quien__txt > div:not(.d-btns) > span:first-child { font: 500 var(--fs-d4)/1.16 var(--f-display); letter-spacing: -.02em; color: var(--ciruela); }
+.t-quien .d-quien__txt > div:not(.d-btns) > span:first-child { font: var(--peso-display) var(--fs-d4)/1.16 var(--f-display); letter-spacing: -.02em; color: var(--ciruela); }
 
 /* Lo que escribimos: filas con filete, fecha mono, título en display */
 .t-indice { border-top: 1px solid var(--ciruela); }
 .t-indice .d-indice__cab { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 48px; }
-.t-indice .d-h2 { font-size: var(--fs-d3); line-height: 1.1; max-width: 760px; }
+.t-indice .d-indice__cab > .d-btn { flex: none; }
+.t-indice .d-h2 { font-size: min(var(--fs-d3), var(--caja, 100cqi) / var(--palabra)); line-height: 1.1; max-width: 760px; }
 .t-indice li a { display: grid; grid-template-columns: 180px minmax(0, 1fr) auto; gap: 24px; align-items: baseline; padding: 24px 0; border-top: 1px solid var(--ciruela); text-decoration: none; }
 .t-indice li:last-child a { border-bottom: 1px solid var(--ciruela); }
-.t-indice .d-h3 { font-size: var(--fs-d4); }
-.t-indice .d-flecha { font: 500 var(--fs-d4)/1 var(--f-display); color: var(--ciruela); }
+.t-indice .d-h3 { font-size: min(var(--fs-d4), var(--caja, 100cqi) / var(--palabra)); }
+.t-indice .d-flecha { font: var(--peso-display) var(--fs-d4)/1 var(--f-display); color: var(--ciruela); }
 .t-indice li a:hover .d-h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .14em; }
 
 /* ── ACOMPAÑAMIENTO ─────────────────────────────────────────────────────────────────────── */
 .t-cab { position: relative; padding: 64px var(--m) var(--sec); }
-.t-cab .d-h1 { font-size: var(--fs-d1); line-height: .9; margin: 28px 0 40px; max-width: 9em; }
+.t-cab .d-h1 { font-size: min(var(--fs-d1), var(--caja, 100cqi) / var(--palabra)); line-height: .9; margin: 28px 0 40px; max-width: 9em; }
 .t-cab .d-linea { font-size: var(--fs-lead); line-height: 1.4; max-width: 620px; }
 .t-cab .d-btns { margin-top: 40px; gap: 16px; }
 .t-entrada { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: 56px; align-items: center; padding: 0 0 var(--sec) var(--m); }
 .t-entrada .d-entrada { display: grid; gap: 32px; }
-.t-entrada .d-guia { font: 500 var(--fs-d4)/1.22 var(--f-display); letter-spacing: -.015em; color: var(--ciruela); text-wrap: pretty; }
+.t-entrada .d-guia { font: var(--peso-display) min(var(--fs-d4), var(--caja, 100cqi) / var(--palabra))/1.22 var(--f-display); letter-spacing: -.015em; color: var(--ciruela); text-wrap: pretty; }
 .t-entrada .d-nota-card { font-size: 15px; padding-top: 16px; border-top: 1px solid var(--ciruela); max-width: 480px; }
 .t-entrada__foto { width: 100%; }
 /* Lo que incluye: titular a la izquierda, la lista a la derecha y, bajo el titular, el retrato (en el HTML va
@@ -125,30 +139,32 @@
 .t-lista .d-cuerpo { max-width: 560px; }
 /* Planes: tres caminos en tres columnas con filete */
 #planes .d-eti { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 56px; align-items: end; margin-bottom: 56px; }
+#planes .d-eti > .d-h2 { --caja: calc((100cqi - 56px) * 7 / 12); }
 #planes .d-eti .d-chico { max-width: 520px; }
 #planes .d-filas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
 .d-plan { border-top: 1px solid var(--ciruela); padding-top: 24px; display: grid; align-content: start; gap: 14px; }
-.d-plan .d-h3 { font-size: var(--fs-d3); line-height: 1.05; }
-.d-plan__precio { font: 500 22px/1.2 var(--f-display); color: var(--ciruela); }
+.d-plan .d-h3 { font-size: min(var(--fs-d3), var(--caja, 100cqi) / var(--palabra)); line-height: 1.05; }
+.d-plan__precio { font: var(--peso-display) 22px/1.2 var(--f-display); color: var(--ciruela); }
 .d-plan ul { display: grid; gap: 8px; margin-top: 8px; }
 .d-plan li { padding-left: 20px; position: relative; }
 .d-plan li::before { content: ''; position: absolute; left: 0; top: .62em; width: 7px; height: 7px; background: var(--ciruela); }
 /* El compromiso, en la banda del resaltador, con la pieza real al lado (los robots respondiendo 200) y el visto */
 .t-comp { margin: var(--sec) calc(-1 * var(--m)) calc(-1 * var(--sec)); padding: var(--sec) var(--m); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 72px; align-items: center; }
-.t-comp .d-cuerpo { font: 500 var(--fs-d4)/1.25 var(--f-display); letter-spacing: -.012em; color: var(--ciruela); text-wrap: pretty; }
+.t-comp .d-cuerpo { font: var(--peso-display) var(--fs-d4)/1.25 var(--f-display); letter-spacing: -.012em; color: var(--ciruela); text-wrap: pretty; }
 .t-comp .d-enl-svc { text-decoration-thickness: 1px; text-underline-offset: .14em; }
 .t-comp__pieza { --marca: url('/e10/marca-visto.svg'); }
 .t-comp__pieza::after { right: -36px; bottom: -64px; width: 116px; height: 94px; }
 .t-mes .d-h2 { margin-bottom: 56px; }
 .t-mes .d-filas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
 .t-mes .d-fase { border-top: 1px solid var(--ciruela); padding-top: 22px; display: grid; align-content: start; gap: 12px; }
-.t-mes .d-fase__n { font: 500 var(--fs-d2)/.9 var(--f-display); letter-spacing: -.02em; color: var(--ciruela); }
+.t-mes .d-fase__n { font: var(--peso-display) min(var(--fs-d2), var(--caja, 100cqi) / var(--palabra))/.9 var(--f-display); letter-spacing: -.02em; color: var(--ciruela); }
 .d-faq { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; border-top: 1px solid var(--ciruela); }
 .d-faq .d-filas > div { padding: 26px 0; border-top: 1px solid var(--ciruela); display: grid; gap: 10px; }
 .d-faq .d-filas > div:last-child { border-bottom: 1px solid var(--ciruela); }
 .d-faq .d-h3 { font-size: 26px; }
-/* «acompañamiento» no cabe a 91 px en la columna de 5/12: el titular de las preguntas baja a 52 (regla de palabra larga, lock §13) */
-.d-faq .d-h2 { font-size: var(--fs-d3); line-height: 1.05; }
+/* El titular de las preguntas va en el escalón de 52 (en la columna de 5/12 «acompañamiento» no cabe a 91) y la regla lo
+   baja más si su caja no alcanza (lock §13) */
+.d-faq .d-h2 { font-size: min(var(--fs-d3), var(--caja, 100cqi) / var(--palabra)); line-height: 1.05; }
 .d-sec--quieta { border-top: 1px solid var(--ciruela); }
 .d-sec--quieta .d-h2 { max-width: 12em; }
 .d-cierre-svc, .d-cierre-trab { display: grid; gap: 28px; margin-top: 40px; max-width: 760px; }
@@ -158,15 +174,15 @@
 .t-portada { position: relative; padding: 64px var(--m) var(--sec); border-bottom: 1px solid var(--ciruela); }
 html[data-paleta="the-ready"] .t-portada { background: var(--lima); }
 html[data-paleta="the-ready"] .t-portada .mk { background-image: url('/e10/marcador-papel-tr.svg'); } /* sobre su lima, su marcador papel */
-.t-portada .d-h1 { font-size: var(--fs-d1); line-height: .9; margin: 28px 0 44px; }
-.t-portada .d-guia { font: 500 var(--fs-cita)/1.12 var(--f-display); letter-spacing: -.02em; color: var(--ciruela); max-width: 860px; }
+.t-portada .d-h1 { font-size: min(var(--fs-d1), var(--caja, 100cqi) / var(--palabra)); line-height: .9; margin: 28px 0 44px; }
+.t-portada .d-guia { font: var(--peso-display) min(var(--fs-cita), var(--caja, 100cqi) / var(--palabra))/1.12 var(--f-display); letter-spacing: -.02em; color: var(--ciruela); max-width: 860px; }
 .t-portada .t-cab { padding: 0; }
 .t-obra { position: relative; display: grid; gap: 0 56px; padding: var(--sec) var(--m); border-top: 1px solid var(--ciruela); }
 .t-obra:first-child { border-top: 0; }
 .t-obra .d-obra-trab__img { display: block; }
 .d-pie-trab { display: grid; gap: 20px; align-content: start; }
 .d-pie-trab__id { display: grid; gap: 10px; }
-.d-pie-trab .d-h3 { font-size: var(--fs-d3); line-height: 1.05; }
+.d-pie-trab .d-h3 { font-size: min(var(--fs-d3), var(--caja, 100cqi) / var(--palabra)); line-height: 1.05; }
 .d-pie-trab__txt { display: grid; gap: 18px; justify-items: start; }
 .d-pie-trab__enlace { gap: 8px; }
 .t-obra--1 { grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); padding-left: 0; align-items: end; }
@@ -187,17 +203,17 @@ html[data-paleta="the-ready"] .t-obra--4 .d-etq--concepto.sello { background: va
 .t-cierre { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 0 72px; align-items: start; }
 .t-cierre .d-eti { grid-column: 1 / -1; }
 .t-cierre .d-cierre-trab { grid-column: 1; margin-top: 48px; }
-.t-cierre .d-guia { font: 500 var(--fs-d4)/1.25 var(--f-display); letter-spacing: -.015em; color: var(--ciruela); }
+.t-cierre .d-guia { font: var(--peso-display) min(var(--fs-d4), var(--caja, 100cqi) / var(--palabra))/1.25 var(--f-display); letter-spacing: -.015em; color: var(--ciruela); }
 .t-cierre .d-btns { gap: 28px; margin-top: 18px; }
 .t-anillo { --marca: url('/e10/marca-anillo.svg'); }
 .t-anillo::after { left: -30px; right: -34px; top: -22px; bottom: -24px; background-size: 100% 100%; }
 .t-cierre__foto { grid-column: 2; grid-row: 2; margin-top: 48px; }
 
-/* ── 390 ────────────────────────────────────────────────────────────────────────────────── */
-@media (max-width: 767px) {
+/* ── Una columna: hasta 1023 px (390 y tableta vertical; ver base.css) ───────────────────── */
+@media (max-width: 1023px) {
   /* La flecha de cada artículo no se muestra a 390, igual que en el build (texto igual, ver texto-igual.json) */
   .d-indice .d-flecha { display: none; }
-  .d-eti > .d-h2::before, .t-campo .d-display::before, .t-pres .d-guia::before { width: calc(var(--m) + 120px); margin-bottom: 22px; }
+  .t-campo--desarrollo .d-display::before, #planes .d-eti > .d-h2::before { width: calc(var(--m) + 120px); margin-bottom: 22px; }
   .t-hero { padding: 40px var(--m) var(--sec); }
   .t-instr { grid-template-columns: minmax(0, 1fr); row-gap: 0; width: auto; }
   .t-instr > .sello { grid-row: auto; margin: 4px 0 26px 4px; }
@@ -207,17 +223,18 @@ html[data-paleta="the-ready"] .t-obra--4 .d-etq--concepto.sello { background: va
   /* La flecha baja desde la derecha del sello hasta el campo */
   .t-instr::after { left: auto; right: 2px; top: 6px; width: 104px; height: 64px; rotate: -64deg; }
   .t-hero .d-titular { margin-top: 56px; }
-  /* «Ahí se corta» tiene que caber en 342 px: el tamaño lo fija la línea más larga (lock §13) */
-  .t-hero h1 { font-size: min(var(--fs-d1), calc((100vw - 2 * var(--m)) / 5.7)); padding-left: 0; text-indent: 0; }
+  /* «Ahí se corta» no se parte: el tamaño lo fija esa línea (regla de escala, lock §13); a 390 sin sangría */
+  .t-hero h1 { padding-left: 0; text-indent: 0; }
   .t-hero h1::after { display: none; }
   .t-fila { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 8px; align-items: end; margin-top: 48px; }
   .t-fila .d-etq { padding: 8px 4px 0; }
   .t-pres { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; padding-right: var(--m); }
   .t-pres .d-guia, .t-pres .d-btns { grid-row: auto; }
+  .t-pres .d-guia { --caja: 100cqi; }
+  /* La serie de los servicios a 390: los cuatro a todo el ancho de la sección */
+  .t-campo .d-display { font-size: min(var(--fs-d2), (var(--pagina) - 2 * var(--m)) / var(--serv-c)); }
   .t-pres__foto { grid-column: 1; grid-row: auto; width: auto; margin: 40px calc(-1 * var(--m)) 0; }
   .t-campo--desarrollo, .t-campo--visibilidad, .t-par, .t-quien, .t-entrada, .t-lista, .d-faq, .t-cierre, #planes .d-eti { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-  /* «acompañamiento» pide 42 px o menos a 390 (lock §13): el titular de las preguntas también */
-  .d-faq .d-h2 { font-size: 40px; }
   .t-obra-par { margin-right: 0; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
   .t-obra-par .d-pieza:nth-child(2) { width: auto; margin: 56px 0 0; }
   .t-campo--visibilidad .t-campo__foto { width: 82%; margin-top: 8px; }
@@ -230,14 +247,13 @@ html[data-paleta="the-ready"] .t-obra--4 .d-etq--concepto.sello { background: va
   .t-indice li a { grid-template-columns: minmax(0, 1fr) auto; gap: 8px 16px; }
   .t-indice li a time { grid-column: 1 / -1; }
   .t-cab { padding: 40px var(--m) var(--sec); }
-  /* «Acompañamiento» pide 42 px o menos a 390 (lock §13) */
-  [data-pagina="acompanamiento-mensual"] .t-cab .d-h1 { font-size: 42px; }
   .t-entrada { padding: 0 0 var(--sec); }
   .t-entrada .d-entrada { padding: 0 var(--m); }
   .t-lista > .d-eti, .t-lista > .d-filas, .t-lista > .d-pieza { grid-column: 1; grid-row: auto; }
   .t-lista > .d-pieza { width: 70%; }
   #planes .d-filas { grid-template-columns: 1fr; gap: 32px; }
   .t-comp { grid-template-columns: 1fr; gap: 40px; }
+  #planes .d-eti > .d-h2 { --caja: 100cqi; }
   .t-comp__pieza::after { right: -8px; bottom: -44px; width: 78px; height: 63px; }
   .t-mes .d-filas { grid-template-columns: 1fr 1fr; gap: 32px 16px; }
   .t-mes .d-h2 { margin-bottom: 32px; }

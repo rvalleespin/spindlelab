@@ -7,8 +7,6 @@
    por lo propio de SpindleLab, recurso por recurso, como dice el lock §10b. */
 @import url('/e10/tokens.css');
 
-@import url('/e10/tokens.css');
-
 /* ── Letras (OFL; archivos en /fuentes, sin pedir nada afuera) ─────────────────────────────── */
 @font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 400 700; font-display: swap;
   src: url('/fuentes/instrument-sans-latin.woff2') format('woff2');
@@ -40,8 +38,14 @@
 
 
 /* ── Medidas compartidas (lock §6): margen 75 px a 1440 y 24 a 390; aire de sección ~96 px ── */
-:root { --m: 75px; --sec: 96px; --gap: 24px; --radio: 6px; --dibujo: .47s cubic-bezier(.3, .7, .3, 1); }
-@media (max-width: 767px) { :root { --m: 24px; --sec: 56px; --gap: 16px; } }
+/* --peso-display: Instrument Sans a 540, no a 500 (lock §11, ronda 2 de QA, defectos 7 y 10): a 540 el asta iguala la de
+   Saans Medium (+2 a +5 %) y la tinta de un titular queda a −4 % (a 500, −10 %). Medido en img/peso.json. */
+:root { --m: 75px; --sec: 96px; --gap: 24px; --radio: 6px; --dibujo: .47s cubic-bezier(.3, .7, .3, 1); --peso-display: 540; }
+/* Dos composiciones (lock §13, ronda 2 de QA, defecto 2): la de una columna hasta 1023 px (teléfono y tableta vertical) y
+   la de escritorio desde 1024. Entre 768 y 1023 las columnas de 5/12 del escritorio dejaban 200 a 230 px: la letra display
+   no cabía y el cuerpo quedaba en una palabra por línea. El margen es lineal entre los dos medidos (lock §6: 24 px a 390 y
+   75 a 1440), con piso de 24: a 390 sigue en 24 y a 768 queda en 42. */
+@media (max-width: 1023px) { :root { --m: clamp(24px, calc(24px + (100vw - 390px) * .04857), 75px); --sec: 56px; --gap: 16px; } }
 
 /* ── Base ────────────────────────────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
@@ -58,12 +62,31 @@ button, input { font: inherit; color: inherit; }
 .d-sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 :focus-visible { outline: 2px solid var(--tinta); outline-offset: 4px; }
 main { display: block; }
-/* Toda letra display: Instrument Sans 500, caja de oración, −0,02em (lock §2). Nunca en MAYÚSCULAS. */
-.d-display, .d-h1, .d-h2, .d-h3 { font-family: var(--f-display); font-weight: 500; letter-spacing: -.02em; color: var(--ciruela); text-wrap: balance; }
+/* Toda letra display: Instrument Sans 540 (lock §11), caja de oración, −0,02em (lock §2). Nunca en MAYÚSCULAS. */
+.d-display, .d-h1, .d-h2, .d-h3 { font-family: var(--f-display); font-weight: var(--peso-display); letter-spacing: -.02em; color: var(--ciruela); text-wrap: balance; }
+
+/* ── La regla de escala (lock §13, en todos los anchos; ronda 2 de QA, defecto 2) ────────────────────────────
+   tamaño de un titular = min(su escalón, ancho de su caja ÷ su palabra más larga en em)
+   · El escalón es la escala medida de The Ready (138 / 91 / 52 / 31 en escritorio; 86,9 / 59,6 / 36,3 / 24 en celular).
+   · --palabra: la palabra más larga del titular, en em, medida con la letra cargada (img/palabras.json, × 1,01 de margen).
+     La pone armar-protos.py en el atributo style de cada titular. En el hero la unidad es la LÍNEA «Ahí se corta», que la
+     composición no deja partir. Los titulares que se ven juntos (una serie) llevan la de la más larga de la serie.
+     Sin --palabra (0,01) manda el escalón.
+   · --caja: el ancho de la caja del titular. Por omisión, 100cqi del contenedor más cercano (la lista de abajo: cada una
+     es la caja donde vive un titular). Donde el titular es una columna de una grilla, la hoja de la dirección escribe la
+     cuenta (por ejemplo, 7/12 del contenedor menos el espacio entre columnas).
+   · --pagina: el ancho de la página sin la barra de desplazamiento (100cqi de html), para las series que cruzan cajas.
+   Nunca se corta una palabra con guion en un titular; nunca se apaga el desborde con overflow. */
+@property --palabra { syntax: '<number>'; inherits: false; initial-value: 0.01; }
+@property --pagina { syntax: '<length>'; inherits: true; initial-value: 0px; }
+html { container-type: inline-size; }
+body { --pagina: 100cqi; }
+.d-titular, .d-cab, .d-campo, .d-campo__cab, .d-sec, .d-eti, .d-pres, .d-quien__txt, .d-indice, .d-indice__cab, .d-entrada,
+.d-plan, .d-fase, .d-pie-trab__id, .d-cierre-trab, .d-cierre-svc, .d-siguiente, .d-pie__arriba > div { container-type: inline-size; }
 /* El mono en MAYÚSCULAS vive solo a 11-13 px: rótulos, navegación, migas, pies de pieza y botones (lock §13). */
 .d-rot, .d-etq, .d-miga, .d-pre-rot, .d-pill, .d-btn, .d-indice time, .d-pie__legal, .d-pie h2, .d-chico.d-gris:not(p),
 .mono { font: 500 12px/1.25 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--tinta); }
-@media (max-width: 767px) { .d-rot, .d-etq, .d-miga, .d-pre-rot, .d-pill, .d-indice time, .d-pie__legal, .d-pie h2 { font-size: 12.5px; } }
+@media (max-width: 1023px) { .d-rot, .d-etq, .d-miga, .d-pre-rot, .d-pill, .d-indice time, .d-pie__legal, .d-pie h2 { font-size: 12.5px; } }
 
 /* ── El módulo de navegación (propio: manual §02, «la única placa es la del módulo de navegación»).
    No es el encabezado de The Ready (barra de 90 px a todo el ancho, filete abajo y botón rectángulo de radio 0):
@@ -73,8 +96,8 @@ header[data-modulo-nav] { position: relative; z-index: 5; padding: 24px var(--m)
 header[data-modulo-nav] > div { display: inline-block; background: var(--papel); border: 1px solid var(--ciruela); border-radius: var(--radio); overflow: hidden; }
 header[data-modulo-nav] > div > div { display: flex; align-items: stretch; height: 54px; }
 header[data-modulo-nav] a.font-wordmark { display: flex; align-items: center; padding: 0 20px 0 18px; font: 600 23px/1 var(--f-marca); letter-spacing: -.025em; color: var(--ciruela); text-decoration: none; }
-/* Opción A (recomendada, lock §12): el punto del módulo en ciruela. Sobre papel el oro da 2,22:1, bajo el 3:1 del
-   manual §02; el oro de la vista está en el pie ciruela. La opción B (?oro=arriba) está más abajo. */
+/* El punto del módulo en ciruela (era la opción A del lock §12). Desde el 16-oct el logo y la regla del oro están en pausa
+   (decisión de Ramón: el logo se rediseña después de elegir dirección); esto queda como está, sin ser regla. */
 header[data-modulo-nav] .text-gold { color: var(--ciruela); }
 header[data-modulo-nav] a[href$="/contacto/"] { display: flex; align-items: center; padding: 0 18px; border-left: 1px solid var(--ciruela);
   font: 500 12px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ciruela); text-decoration: none;
@@ -84,15 +107,14 @@ header[data-modulo-nav] a[href$="/contacto/"]:hover { background-size: 100% 100%
 #icono-abrir { display: grid; gap: 6px; width: 20px; }
 #icono-abrir span { display: block; height: 1.5px; background: var(--ciruela); }
 header[data-modulo-nav] :focus-visible { outline-offset: -4px; }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   header[data-modulo-nav] { padding-top: 16px; }
   header[data-modulo-nav] > div > div { height: 48px; }
   header[data-modulo-nav] a.font-wordmark { font-size: 20px; padding: 0 14px; }
   header[data-modulo-nav] a[href$="/contacto/"] { padding: 0 14px; }
   #menu-btn { width: 48px; }
 }
-/* Opción B (?oro=arriba, solo para mostrarla en el tablero): el módulo pasa a ciruela y lleva el punto dorado en la
-   primera pantalla (6,24:1). Entonces el punto del pie va en papel, como dice el manual §02: un oro por vista. */
+/* Historia (lock §12, en pausa desde el 16-oct): la opción B del punto dorado, ?oro=arriba. El tablero ya no la muestra. */
 html[data-oro="arriba"] header[data-modulo-nav] > div { background: var(--ciruela); }
 html[data-oro="arriba"] header[data-modulo-nav] a, html[data-oro="arriba"] header[data-modulo-nav] a.font-wordmark { color: var(--papel); }
 html[data-oro="arriba"] header[data-modulo-nav] a[href$="/contacto/"], html[data-oro="arriba"] #menu-btn { border-left-color: color-mix(in srgb, var(--papel) 30%, transparent); background-image: none; }
@@ -119,11 +141,11 @@ html[data-oro="arriba"] .d-gigante .oro { color: var(--papel); }
 .d-pills { display: flex; flex-wrap: wrap; gap: 8px; }
 .d-pill { display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px; border: 1px solid var(--ciruela); background: transparent; color: var(--ciruela); border-radius: var(--radio); cursor: default; }
 .d-pill[aria-selected="true"], .d-pill--rotulo { background: var(--ciruela); color: var(--papel); }
-@media (max-width: 767px) { .d-pill { min-height: 44px; } }
+@media (max-width: 1023px) { .d-pill { min-height: 44px; } }
 
 /* Precio: la cifra en display; «Desde» y «+ IVA» en mono. */
 .d-precio { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; color: var(--ciruela); }
-.d-precio b { font: 500 var(--fs-precio, 26px)/1.15 var(--f-display); letter-spacing: -.01em; }
+.d-precio b { font: var(--peso-display) var(--fs-precio, 26px)/1.15 var(--f-display); letter-spacing: -.01em; }
 .d-pre-alt, .d-pre-junto-trab { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
 .d-pre-sep { display: none; }
 
@@ -156,11 +178,11 @@ html[data-paleta="the-ready"] .mk--papel { background-image: url('/e10/marcador-
 .cinta { overflow: hidden; }
 /* Desde 20 px antes del botón hasta el borde, papel: la cinta se corta limpio y no corre por detrás del botón */
 .cinta-caja::after { content: ''; position: absolute; top: 0; bottom: 0; right: 0; width: calc(var(--m) + 64px); background: var(--papel); }
-@media (max-width: 767px) { .cinta-caja::after { width: 76px; } }
+@media (max-width: 1023px) { .cinta-caja::after { width: 76px; } }
 .cinta__pista { display: flex; width: max-content; will-change: transform; padding-left: var(--m);
   animation: cinta-corre var(--dur, 40s) linear infinite; }
 .cinta__grupo { display: flex; align-items: center; flex: none; white-space: nowrap; color: var(--ciruela);
-  font: 500 var(--fs-cinta, 51.6px)/1.4 var(--f-display); letter-spacing: -.02em; }
+  font: var(--peso-display) var(--fs-cinta, 51.6px)/1.4 var(--f-display); letter-spacing: -.02em; }
 .cinta__grupo > span { padding-right: .5em; }
 @keyframes cinta-corre { from { transform: translateX(0); } to { transform: translateX(calc(-1 * var(--ancho, 0px))); } }
 .cinta--pausada .cinta__pista, .cinta--fuera .cinta__pista { animation-play-state: paused; }
@@ -172,11 +194,11 @@ html[data-paleta="the-ready"] .mk--papel { background-image: url('/e10/marcador-
 .cinta__pausa .ico-mover { display: none; }
 .cinta--pausada .cinta__pausa .ico-pausa { display: none; }
 .cinta--pausada .cinta__pausa .ico-mover { display: block; }
-@media (max-width: 767px) { .cinta__grupo { font-size: var(--fs-cinta-cel, 36.3px); } .cinta__pausa { right: 12px; } }
+@media (max-width: 1023px) { .cinta__grupo { font-size: var(--fs-cinta-cel, 36.3px); } .cinta__pausa { right: 12px; } }
 
 /* ── Espacio de foto por generar (placeholder dirigido: tamaño y proporción exactos, rótulo visible) ── */
 .foto-slot { position: relative; margin: 0; background: #DDD9CF url('/e10/cruz.svg') center / 100% 100% no-repeat; aspect-ratio: var(--r); overflow: hidden; }
-@media (max-width: 767px) { .foto-slot[style*="--r-cel"] { aspect-ratio: var(--r-cel); } }
+@media (max-width: 1023px) { .foto-slot[style*="--r-cel"] { aspect-ratio: var(--r-cel); } }
 .foto-slot__rot { position: absolute; left: 12px; top: 12px; width: fit-content; max-width: calc(100% - 24px);
   background: var(--papel); color: var(--ciruela); font: 500 12px/1.35 var(--f-mono); letter-spacing: .02em; padding: 6px 9px; border: 1px solid var(--ciruela); }
 
@@ -199,17 +221,17 @@ html[data-paleta="the-ready"] .sello { background: var(--naranja); }
 
 /* ── Siguiente ── */
 .d-siguiente { display: block; text-decoration: none; padding: var(--sec) var(--m); border-top: 1px solid var(--ciruela); }
-.d-siguiente .d-h1 { display: block; margin-top: 14px; font-size: var(--fs-sig, 91px); line-height: 1; }
+.d-siguiente .d-h1 { display: block; margin-top: 14px; font-size: min(var(--fs-sig, 91px), var(--caja, 100cqi) / var(--palabra)); line-height: 1; }
 .d-siguiente:hover .d-h1 { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .12em; }
 
 /* ── Pie: la banda ciruela del manual (§04), la última. Display en papel, el botón en papel (sin óvalo ni lavanda)
-   y el wordmark gigante del sitio v3 con el único oro de la vista: el punto, sobre ciruela (6,24:1). Aquí no va
-   el resaltador: el amarillo y el oro nunca comparten banda (lock §12). ── */
+   y el wordmark gigante del sitio v3 (el logo se rediseña después de elegir dirección: decisión de Ramón, 16-oct).
+   El pie no lleva resaltador: cierra en ciruela y papel. ── */
 .d-pie { background: var(--ciruela); color: var(--papel); padding: var(--sec) var(--m) 40px; position: relative; }
 .d-pie * { color: inherit; }
 .d-pie__arriba { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px var(--gap); align-items: start; }
 .d-pie__arriba > div:first-child { gap: 28px !important; }
-.d-pie__arriba .d-guia { font: 500 var(--fs-pie, 138px)/.9 var(--f-display); letter-spacing: -.02em; max-width: none !important; color: var(--papel); text-wrap: balance; }
+.d-pie__arriba .d-guia { font: var(--peso-display) min(var(--fs-pie, 138px), var(--caja, 100cqi) / var(--palabra))/.9 var(--f-display); letter-spacing: -.02em; max-width: none !important; color: var(--papel); text-wrap: balance; }
 .d-pie .d-btn { background-color: var(--papel); background-image: none; color: var(--ciruela); border-color: var(--papel); transition: background-color .25s, color .25s; }
 .d-pie .d-btn:hover { background-color: transparent; color: var(--papel); }
 html[data-paleta="the-ready"] .d-pie .d-btn { background-color: var(--lavanda); border-color: var(--lavanda); color: var(--tinta); }
@@ -223,7 +245,7 @@ html[data-paleta="the-ready"] .d-pie .d-btn { background-color: var(--lavanda); 
 .d-gigante .oro { color: var(--oro); }
 .d-pie__legal { display: flex; justify-content: space-between; gap: 16px; padding-top: 18px; border-top: 1px solid color-mix(in srgb, var(--papel) 40%, transparent); }
 .d-pie :focus-visible { outline-color: var(--papel); }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .d-pie__arriba { grid-template-columns: 1fr; }
   .d-gigante { margin-top: 48px; }
   .d-pie__legal { flex-direction: column; gap: 4px; }
@@ -239,8 +261,11 @@ html[data-paleta="the-ready"] .d-pie .d-btn { background-color: var(--lavanda); 
 .chq-form input:focus-visible { outline: none; }
 .chq-form input::placeholder { color: var(--suave); opacity: 1; }
 .chq-form button { flex: none; min-height: 56px; border-radius: 4px; padding: 0 26px; }
+/* A 390, campo y botón apilados, como en el build (ronda 2 de QA, defecto 6): el campo a todo el ancho deja ~310 px
+   útiles y un dominio largo («constructoraandesur.cl», 186 px) se lee entero; en fila quedaban 135 a 142. */
 @media (max-width: 767px) {
+  .chq-form { flex-direction: column; }
   .chq-form input { height: 50px; font-size: 18px; padding: 0 10px; }
-  .chq-form button { min-height: 50px; padding: 0 16px; }
+  .chq-form button { width: 100%; min-height: 50px; padding: 0 16px; }
 }
 .d-nota { font-size: 15px; line-height: 1.4; }

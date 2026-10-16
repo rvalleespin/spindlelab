@@ -17,7 +17,8 @@
 //     toca la red. --tope es el número máximo de imágenes que la corrida puede pedir.
 //   · La clave nunca se imprime ni se guarda: ni en el registro, ni en los errores (se tapa).
 //   · Cada archivo que llega se valida como imagen (firma y dimensiones) antes de guardarlo, y
-//     se le mide el oro con el criterio del manual §07b (el mismo cálculo HSV de PIL).
+//     se le mide el oro con el criterio del manual §07b (el mismo cálculo HSV de PIL). Desde la v3
+//     (16-oct) es solo un dato: el logo se rediseña después de elegir dirección y el oro no descarta.
 //   · Cada imagen queda en salida/<F>-<dirección>-<n>.png (F8-taller-1.png), con su línea en
 //     salida/registro.json.
 //   · Lo que se manda es lo que se revisó: si pauta.json cambió y no se corrió --sincronizar
@@ -71,7 +72,7 @@ const PROVEEDORES = {
 };
 const TIEMPO_MAX_MS = 240_000;
 const REINTENTABLES = new Set([429, 500, 502, 503, 504]);
-const ORO_ALERTA_PCT = 0.05; // el máximo del pool limpio (manual §07b)
+const ORO_ALERTA_PCT = 0.05; // el máximo del pool limpio (manual §07b); en pausa con el logo: solo se anota
 
 // ---------------------------------------------------------------- la clave no sale nunca
 const SECRETOS = [process.env.GEMINI_API_KEY, process.env.OPENAI_API_KEY]
@@ -155,7 +156,8 @@ Tampoco genera si la pauta no calza con los espacios del tablero (${ESPACIOS_REL
   --tamano=T          Gemini: imageSize 1K, 2K o 4K (solo modelos que lo acepten; el
                       2.5 Flash no lo necesita)
   --ver               imprime el prompt completo de cada foto elegida (sin red)
-  --medir=a.png,b.png mide oro en PNG ya guardados (sin red)
+  --medir=a.png,b.png mide oro en PNG ya guardados (sin red; es un dato, el oro está
+                      en pausa con el logo)
   --sincronizar       reescribe prompt_completo_en en pauta.json desde sus partes, y pauta.md
   --salida=DIR        carpeta de salida (por defecto salida/; para pruebas)
 
@@ -735,7 +737,7 @@ function medirOro(img) {
     pixeles: n,
     pct: Number(pct.toFixed(3)),
     caja: n ? { x0, y0, x1, y1 } : null,
-    alerta: pct > ORO_ALERTA_PCT ? `más de ${String(ORO_ALERTA_PCT).replace('.', ',')} %: mirar la máscara; si la zona se ve, cuenta como oro` : null,
+    alerta: pct > ORO_ALERTA_PCT ? `más de ${String(ORO_ALERTA_PCT).replace('.', ',')} %: queda anotado; el oro está en pausa con el logo y no descarta la foto` : null,
     _mascara: mascara,
   };
 }
@@ -766,7 +768,7 @@ async function medirArchivos(lista) {
       if (!img) { decir(`· ${a}: PNG entrelazado o de menos de 8 bits; medir con medir.py.`); continue; }
       const oro = medirOro(img);
       decir(`· ${a}: ${img.w}×${img.h} · oro ${oro.pct.toString().replace('.', ',')} % (${oro.pixeles} px)${oro.caja ? ` en x ${oro.caja.x0}-${oro.caja.x1}, y ${oro.caja.y0}-${oro.caja.y1}` : ''}${oro.alerta ? ` · ${oro.alerta}` : ''}`);
-      if (oro.alerta) peor = Math.max(peor, 1);
+      // Desde la v3 el oro no cambia el código de salida: es un dato mientras el logo esté abierto.
     } catch (e) { avisar(`✗ ${a}: ${e.message}`); peor = 2; }
   }
   return peor;
@@ -963,7 +965,7 @@ async function generar(pauta, plan, args, tope, c) {
       });
       await escribirAtomico(rutaRegistro, `${JSON.stringify(registro, null, 2)}\n`);
       hechas++;
-      const textoOro = oro ? `oro ${String(oro.pct).replace('.', ',')} %${oro.alerta ? ' · MIRAR ' + archivoOro : ''}` : 'oro sin medir';
+      const textoOro = oro ? `oro ${String(oro.pct).replace('.', ',')} % (dato)${oro.alerta ? ' · máscara en ' + archivoOro : ''}` : 'oro sin medir';
       decir(`    ✓ ${archivo} · ${info.ancho}×${info.alto} · ${(r.bytes.length / 1024).toFixed(0)} KB · ${textoOro}`);
     } catch (e) {
       fallidas++;

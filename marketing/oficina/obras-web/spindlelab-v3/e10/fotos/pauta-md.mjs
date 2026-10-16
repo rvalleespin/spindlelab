@@ -1,4 +1,4 @@
-// pauta-md.mjs · arma pauta.md desde pauta.json (Bruno, E10, v2 del 16-oct-2026).
+// pauta-md.mjs · arma pauta.md desde pauta.json (Bruno, E10, v3 del 16-oct-2026).
 // Lo llama `node generar.mjs --sincronizar`; generar.mjs no genera si pauta.md no es el que sale de
 // aquí. Determinista: el mismo pauta.json da el mismo pauta.md, byte a byte. Sin dependencias.
 //
@@ -45,9 +45,14 @@ clave. Aquí no se generó ninguna foto** (no hay \`GEMINI_API_KEY\` ni \`OPENAI
 | \`pauta-md.mjs\` | Arma este archivo; lo llama \`generar.mjs --sincronizar\` |
 | \`salida/\` | Se crea en la primera corrida: \`<F>-<dirección>-<n>.png\`, \`registro.json\` y \`oro/\` con las máscaras |
 
-Insumos: \`e10/lock-the-ready.md\` (§7 fotos, §9 Gehl, §10 qué se toma, §12 amarillo y oro, §13
-techos), \`e10/referentes/marcas-15oct.json\`, el manual de marca §06 y §07b, los espacios de foto del
-tablero (\`${ESPACIOS_REL}\`) y el acta de Javiera (\`e10/acta-paso-2.md\`).
+Insumos: \`e10/lock-the-ready.md\` (§7 fotos, §9 Gehl, §10 y §10b qué se toma, §13 techos; el §12,
+amarillo y oro, en pausa con el logo), \`e10/referentes/marcas-15oct.json\`, el manual de marca §07b
+(personas), los espacios de foto del tablero (\`${ESPACIOS_REL}\`), la paleta propia de
+\`tableros/e10-direcciones/proto/e10/tokens.css\` y el acta de Javiera (\`e10/acta-paso-2.md\`).
+
+> **El logo y el oro, en pausa.** Ramón, 16-oct: el logo se rediseña después de elegir dirección. El
+> punto dorado y la regla de un oro por vista no restringen estas fotos: la pauta ya no prohíbe dorado,
+> amarillo ni madera, y ninguna foto se descarta por oro. \`generar.mjs\` lo sigue midiendo, solo como dato.
 
 ---
 
@@ -64,13 +69,13 @@ la dirección donde va.
 
 | Rasgo | La regla | Por qué |
 |---|---|---|
-| **Luz** | Solo de día, media mañana, balance neutro (~5500 K), suave y pareja, con sombras leves. Lámparas y ampolletas **apagadas** | The Ready fotografía con lámparas encendidas, jardín al sol y hojas de otoño, y eso es oro: la primera pantalla de nosotros da 0,52 % (lock §7), y **la foto de su hero da 1,055 %** (medido el 16-oct, §7 de esta pauta). Si una foto generada sale «como The Ready», sale con oro |
+| **Luz** | Solo de día, media mañana, balance neutro (~5500 K), suave y pareja, con sombras leves. Lámparas y ampolletas **apagadas** | The Ready fotografía con lámparas encendidas, jardín al sol y hojas de otoño (lock §7): junto con la casa de campo de Hoare, es lo que Ramón llamó «pastoral gringa». La luz de día neutra es lo que hace que estas fotos sean de Santiago y no de un catálogo gringo |
 | **Grano** | Grano fino de película, negros levemente levantados, sin virado ni viñeta. Al final se iguala con un solo grano en todas (§6) | The Ready trae el grano en el archivo, no como capa encima: ruido 12,1 contra 8,1 de una foto sin tratar (lock §7, \`lock/the-ready/foto-grano-hero-x2.png\`) |
 | **Lente y altura** | Cámara de cuadro completo con 35 mm, a la altura del ojo o un poco más arriba, perspectiva natural, sin gran angular | Lo documental de las dos referencias; el gran angular delata el render |
 | **Encuadre Taller** | ${e.encuadre.taller.es} | The Ready a fondo: «más gente trabajando» |
 | **Encuadre Pizarra limpia** | ${e.encuadre.pizarra.es} | El aire de Gehl: una persona chica en un cuadro grande (lock §9) |
-| **Paleta** | Base en neutros fríos: blanco roto (eco del papel \`#FFFEFA\`), hormigón, grafito, marino y ciruela profundo (eco de \`#1B0925\`). Acentos chicos: lima (eco de \`#E6FA97\`), lavanda (\`#EDD1FF\`), rosado de nota adhesiva y celeste | Alineada al lock §3: la foto conversa con la página sin repetir sus bandas |
-| **Colores prohibidos en la foto** | Dorado, latón, ámbar, mostaza, ocre y **amarillo**. Madera color miel o anaranjada (pino, roble claro barnizado). Atardecer, tungsteno y dominante anaranjada | El amarillo \`#F4F480\` es del marcador y vive en la página: en la foto competiría con él y se acercaría al oro (lock §12). El naranja \`#EC6227\` es la mancha de Taller y también vive en la página |
+| **Paleta** | Base en neutros fríos: blanco roto (eco del papel \`#F7F5F0\`), hormigón, grafito, marino y ciruela profundo (eco de la tinta \`#341F34\`). Acentos chicos de nota adhesiva: rosado, lima, lavanda y celeste | La foto conversa con la paleta propia de \`tokens.css\` (papel y una sola tinta ciruela) sin repetir sus bandas. Los acentos son de la escena, no de la página: la paleta propia no tiene lima ni lavanda, y si Ramón elige en el tablero los colores exactos de The Ready, donde sí están, también calzan |
+| **El oro y el punto dorado** | En pausa. Ninguna foto se descarta por oro, y la pauta ya no prohíbe dorado, amarillo ni madera | Ramón, 16-oct: el logo se rediseña después de elegir dirección. \`generar.mjs\` sigue midiendo el oro y lo anota como dato para la marca nueva |
 | **Lugares (sí)** | ${mayuscula(lista(e.lugares.si))} | Oficinas y talleres reales de Chile, no stock gringo |
 | **Lugares (no)** | ${mayuscula(lista(e.lugares.no))} | De Hoare, Ramón dijo «parece pastoral gringa» |
 | **Personas** | Adultos chilenos y latinoamericanos de 25 a 60 años, de cuerpos, tonos de piel y pelo variados, con ropa de trabajo común en grafito, marino, ciruela, mezclilla, blanco roto o salvia. Absortos en la tarea, de espaldas, de perfil o de tres cuartos de espalda. **Nadie mira a cámara, nadie posa ni sonríe para la foto.** Manos relajadas y anatómicamente correctas, muchas veces tapadas en parte por objetos | Gente trabajando de verdad (The Ready), sin la grilla de retratos del equipo, que no se toma (lock §10) |
@@ -197,7 +202,11 @@ ${e.personas_en}
 ${e.sin_personas_en}
 \`\`\`
 
-**Negativos comunes** (van al final de todas, después de los propios de cada foto):
+**Negativos comunes** (van al final de todas, después de los propios de cada foto). Cubren la luz y
+los lugares de la «pastoral gringa», el texto inventado, los logos y las marcas, la gente que posa o
+mira a cámara, las manos y caras deformes, la estética genérica de IA y el acabado de render. Desde la
+v3 no hay ninguno por el oro: dorado, latón, amarillo, madera clara, cartón y chispas salieron, también
+de los negativos propios de cada ficha.
 
 ${e.negativo_en.map((x) => `- ${x}`).join('\n')}
 
@@ -330,7 +339,7 @@ verifican en la consola del proveedor antes de una corrida grande.
 | \`--calidad=low\` · \`medium\` · \`high\` | Solo OpenAI (por defecto \`high\`) |
 | \`--tamano=1K\` · \`2K\` · \`4K\` | Solo Gemini, para modelos que acepten \`imageSize\` (el 2.5 Flash no lo necesita) |
 | \`--ver\` | Imprime el prompt completo de cada ficha elegida (sin red) |
-| \`--medir=a.png,b.png\` | Mide el oro de PNG ya guardados, por ejemplo después del acabado (sin red) |
+| \`--medir=a.png,b.png\` | Mide el oro de PNG ya guardados, por ejemplo después del acabado (sin red). Es un dato: el oro está en pausa con el logo |
 | \`--sincronizar\` | Reescribe \`prompt_completo_en\` y este \`pauta.md\` desde \`pauta.json\`, y muestra la comprobación |
 | \`--salida=DIR\` | Otra carpeta de salida (para pruebas) |
 | \`--ayuda\` | La ayuda |
@@ -348,7 +357,8 @@ verifican en la consola del proveedor antes de una corrida grande.
   máscara, los segundos, los datos de la respuesta y \`estado: "por revisar"\`. Los intentos fallidos
   también quedan, en \`fallos\`, con su motivo. **La clave nunca se escribe.**
 - Si encuentra oro: \`salida/oro/<F>-<dirección>-<n>-oro.png\`, la foto en gris con el oro en magenta,
-  para ver de un vistazo dónde cae.
+  para ver de un vistazo dónde cae. Es un dato para cuando exista la marca nueva, no un motivo de
+  descarte (§1, «El oro y el punto dorado»).
 
 **Qué valida antes de guardar:** que los bytes sean de verdad una imagen (firma PNG, JPEG o WebP, y
 dimensiones legibles de al menos 256 px). Si el proveedor responde 200 pero sin imagen (un bloqueo de
@@ -360,8 +370,8 @@ haberse generado y cobrado. Un 400, 401, 403 o 404 corta la corrida, porque se r
 Cualquier mensaje que traiga algo con forma de clave (\`AIza…\`, \`sk-…\`) sale tapado como
 \`[clave oculta]\`.
 
-**Códigos de salida:** 0 todo bien · 1 alguna falló, o \`--medir\` encontró oro sobre el umbral ·
-2 la pauta no calza con el tablero o no está sincronizada, uso o clave (falta la clave, argumento
+**Códigos de salida:** 0 todo bien (también cuando \`--medir\` encuentra oro: es un dato) · 1 alguna
+falló · 2 la pauta no calza con el tablero o no está sincronizada, uso o clave (falta la clave, argumento
 malo) · 3 no salió ninguna.
 
 **La red:** desde este entorno, el \`fetch\` nativo de Node llega a los dos proveedores sin
@@ -380,6 +390,9 @@ ${e.acabado.nota}
 ${e.acabado.pasos.map((x) => x.replace(/^(\d+) · /, '$1. ')).join('\n')}
 
 ## 7 · Pruebas hechas el 16-oct (sin clave y sin gastar)
+
+Cada prueba dice con qué versión se hizo. Las de la v${pauta.version} son contra el \`espacios-foto.json\` vigente; las
+anteriores quedan como registro de lo que se probó entonces, contra el tablero de ese momento.
 
 | Prueba | Resultado |
 |---|---|

@@ -1,0 +1,109 @@
+{
+ "nota": "Saans 500 contra Instrument Sans (variable) de 500 a 600. Asta: ancho en px de la columna vertical de «l» y de «n» a 400 px. Tinta: 1 − luminancia por px de ancho de línea, en tres frases a 138 px, como proporción de Saans (1 = igual). Render de Chromium sin suavizado subpíxel ni hinting. herramientas/peso.mjs.",
+ "frases": [
+  "Ahí se corta el circuito",
+  "Acompañamiento mensual",
+  "No te prometo. Te muestro."
+ ],
+ "medidas": [
+  {
+   "nombre": "Saans 500",
+   "peso": 500,
+   "asta_l": 43,
+   "asta_n": 44,
+   "tinta_por_px": [
+    34.454,
+    36.339,
+    34.326
+   ],
+   "asta_l_rel": 1,
+   "asta_n_rel": 1,
+   "tinta_rel": 1
+  },
+  {
+   "nombre": "Instrument Sans 500",
+   "peso": 500,
+   "asta_l": 42,
+   "asta_n": 42,
+   "tinta_por_px": [
+    30.851,
+    32.598,
+    30.678
+   ],
+   "asta_l_rel": 0.977,
+   "asta_n_rel": 0.955,
+   "tinta_rel": 0.895
+  },
+  {
+   "nombre": "Instrument Sans 520",
+   "peso": 520,
+   "asta_l": 43,
+   "asta_n": 43,
+   "tinta_por_px": [
+    31.977,
+    33.787,
+    31.798
+   ],
+   "asta_l_rel": 1,
+   "asta_n_rel": 0.977,
+   "tinta_rel": 0.928
+  },
+  {
+   "nombre": "Instrument Sans 540",
+   "peso": 540,
+   "asta_l": 45,
+   "asta_n": 45,
+   "tinta_por_px": [
+    32.999,
+    34.808,
+    32.777
+   ],
+   "asta_l_rel": 1.047,
+   "asta_n_rel": 1.023,
+   "tinta_rel": 0.957
+  },
+  {
+   "nombre": "Instrument Sans 560",
+   "peso": 560,
+   "asta_l": 47,
+   "asta_n": 47,
+   "tinta_por_px": [
+    34.187,
+    35.994,
+    33.939
+   ],
+   "asta_l_rel": 1.093,
+   "asta_n_rel": 1.068,
+   "tinta_rel": 0.99
+  },
+  {
+   "nombre": "Instrument Sans 580",
+   "peso": 580,
+   "asta_l": 49,
+   "asta_n": 49,
+   "tinta_por_px": [
+    35.234,
+    37.085,
+    34.97
+   ],
+   "asta_l_rel": 1.14,
+   "asta_n_rel": 1.114,
+   "tinta_rel": 1.021
+  },
+  {
+   "nombre": "Instrument Sans 600",
+   "peso": 600,
+   "asta_l": 50,
+   "asta_n": 51,
+   "tinta_por_px": [
+    36.187,
+    38.09,
+    35.93
+   ],
+   "asta_l_rel": 1.163,
+   "asta_n_rel": 1.159,
+   "tinta_rel": 1.048
+  }
+ ],
+ "lamina": "../../e10/lock/peso-instrument-saans.png"
+}

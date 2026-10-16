@@ -1,10 +1,78 @@
 {
- "fecha": "2026-10-16T13:23:41.791Z",
+ "fecha": "2026-10-16T14:38:46.815Z",
  "regla": "lock-the-ready.md §4 y §14",
  "casos": [
   {
    "direccion": "taller",
    "pagina": "home",
+   "ancho": 1440,
+   "velocidad_px_s": 29.9,
+   "hacia": "izquierda",
+   "boton": {
+    "rotulo": "Pausar cinta",
+    "enfocable": true,
+    "caja": [
+     44,
+     44
+    ]
+   },
+   "pausa": {
+    "aria_pressed": "true",
+    "movio_px_en_1_2s": 0
+   },
+   "reanuda": {
+    "aria_pressed": "false",
+    "movio_px_en_1s": 30
+   },
+   "semantica": {
+    "aria_hidden": "true",
+    "dentro_de_encabezado": false,
+    "h1_en_la_pagina": 1
+   },
+   "movimiento_reducido": {
+    "quieta": true,
+    "primer_item_x": 75,
+    "boton_dice_pausada": "true"
+   },
+   "ok": true
+  },
+  {
+   "direccion": "taller",
+   "pagina": "home",
+   "ancho": 390,
+   "velocidad_px_s": 29.9,
+   "hacia": "izquierda",
+   "boton": {
+    "rotulo": "Pausar cinta",
+    "enfocable": true,
+    "caja": [
+     44,
+     44
+    ]
+   },
+   "pausa": {
+    "aria_pressed": "true",
+    "movio_px_en_1_2s": 0
+   },
+   "reanuda": {
+    "aria_pressed": "false",
+    "movio_px_en_1s": 30.5
+   },
+   "semantica": {
+    "aria_hidden": "true",
+    "dentro_de_encabezado": false,
+    "h1_en_la_pagina": 1
+   },
+   "movimiento_reducido": {
+    "quieta": true,
+    "primer_item_x": 24,
+    "boton_dice_pausada": "true"
+   },
+   "ok": true
+  },
+  {
+   "direccion": "taller",
+   "pagina": "acompanamiento-mensual",
    "ancho": 1440,
    "velocidad_px_s": 29.9,
    "hacia": "izquierda",
@@ -38,8 +106,42 @@
   },
   {
    "direccion": "taller",
-   "pagina": "home",
+   "pagina": "acompanamiento-mensual",
    "ancho": 390,
+   "velocidad_px_s": 30.2,
+   "hacia": "izquierda",
+   "boton": {
+    "rotulo": "Pausar cinta",
+    "enfocable": true,
+    "caja": [
+     44,
+     44
+    ]
+   },
+   "pausa": {
+    "aria_pressed": "true",
+    "movio_px_en_1_2s": 0
+   },
+   "reanuda": {
+    "aria_pressed": "false",
+    "movio_px_en_1s": 30.5
+   },
+   "semantica": {
+    "aria_hidden": "true",
+    "dentro_de_encabezado": false,
+    "h1_en_la_pagina": 1
+   },
+   "movimiento_reducido": {
+    "quieta": true,
+    "primer_item_x": 24,
+    "boton_dice_pausada": "true"
+   },
+   "ok": true
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "home",
+   "ancho": 1440,
    "velocidad_px_s": 30.2,
    "hacia": "izquierda",
    "boton": {
@@ -65,108 +167,6 @@
    },
    "movimiento_reducido": {
     "quieta": true,
-    "primer_item_x": 24,
-    "boton_dice_pausada": "true"
-   },
-   "ok": true
-  },
-  {
-   "direccion": "taller",
-   "pagina": "acompanamiento-mensual",
-   "ancho": 1440,
-   "velocidad_px_s": 29.9,
-   "hacia": "izquierda",
-   "boton": {
-    "rotulo": "Pausar cinta",
-    "enfocable": true,
-    "caja": [
-     44,
-     44
-    ]
-   },
-   "pausa": {
-    "aria_pressed": "true",
-    "movio_px_en_1_2s": 0
-   },
-   "reanuda": {
-    "aria_pressed": "false",
-    "movio_px_en_1s": 30.5
-   },
-   "semantica": {
-    "aria_hidden": "true",
-    "dentro_de_encabezado": false,
-    "h1_en_la_pagina": 1
-   },
-   "movimiento_reducido": {
-    "quieta": true,
-    "primer_item_x": 75,
-    "boton_dice_pausada": "true"
-   },
-   "ok": true
-  },
-  {
-   "direccion": "taller",
-   "pagina": "acompanamiento-mensual",
-   "ancho": 390,
-   "velocidad_px_s": 29.9,
-   "hacia": "izquierda",
-   "boton": {
-    "rotulo": "Pausar cinta",
-    "enfocable": true,
-    "caja": [
-     44,
-     44
-    ]
-   },
-   "pausa": {
-    "aria_pressed": "true",
-    "movio_px_en_1_2s": 0
-   },
-   "reanuda": {
-    "aria_pressed": "false",
-    "movio_px_en_1s": 30.5
-   },
-   "semantica": {
-    "aria_hidden": "true",
-    "dentro_de_encabezado": false,
-    "h1_en_la_pagina": 1
-   },
-   "movimiento_reducido": {
-    "quieta": true,
-    "primer_item_x": 24,
-    "boton_dice_pausada": "true"
-   },
-   "ok": true
-  },
-  {
-   "direccion": "pizarra",
-   "pagina": "home",
-   "ancho": 1440,
-   "velocidad_px_s": 29.9,
-   "hacia": "izquierda",
-   "boton": {
-    "rotulo": "Pausar cinta",
-    "enfocable": true,
-    "caja": [
-     44,
-     44
-    ]
-   },
-   "pausa": {
-    "aria_pressed": "true",
-    "movio_px_en_1_2s": 0
-   },
-   "reanuda": {
-    "aria_pressed": "false",
-    "movio_px_en_1s": 30.5
-   },
-   "semantica": {
-    "aria_hidden": "true",
-    "dentro_de_encabezado": false,
-    "h1_en_la_pagina": 1
-   },
-   "movimiento_reducido": {
-    "quieta": true,
     "primer_item_x": 75,
     "boton_dice_pausada": "true"
    },
@@ -176,7 +176,7 @@
    "direccion": "pizarra",
    "pagina": "home",
    "ancho": 390,
-   "velocidad_px_s": 29.9,
+   "velocidad_px_s": 30.2,
    "hacia": "izquierda",
    "boton": {
     "rotulo": "Pausar cinta",
@@ -192,7 +192,7 @@
    },
    "reanuda": {
     "aria_pressed": "false",
-    "movio_px_en_1s": 30.5
+    "movio_px_en_1s": 30
    },
    "semantica": {
     "aria_hidden": "true",

@@ -6,8 +6,8 @@
 :root {
   --papel: #F7F5F0;    /* el papel del manual §04: lienzo de todas las páginas y texto sobre ciruela */
   --ciruela: #341F34;  /* el ciruela del manual §04: la única tinta (titulares, cuerpo, rótulos, botones, filetes, marcas a mano) y la banda final */
-  --amarillo: #EEF26E; /* el resaltador: detrás de la frase que remata y una banda «lo que ganas» por página (Taller). Nunca más cálido que 60° (§12) */
-  --oro: #C9A227;      /* solo el punto del wordmark, solo sobre ciruela (6,24:1), uno por vista */
+  --amarillo: #EEF26E; /* el resaltador: detrás de la frase que remata y una banda «lo que ganas» por página (Taller) */
+  --oro: #C9A227;      /* el punto del wordmark actual. En pausa desde el 16-oct: el logo se rediseña después de elegir dirección (lock §12) */
   --tinta: var(--ciruela); /* alias: el sistema propio tiene una sola tinta */
   --suave: #6B5A6B;    /* solo el texto de ejemplo del campo del chequeo (5,84:1 sobre papel) */
 

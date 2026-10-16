@@ -1,5 +1,6 @@
 # espacios-foto.py — escribe espacios-foto.json desde las medidas del render (img/medidas.json). Lucía, 16-oct-2026.
 # Uso: python3 -I herramientas/espacios-foto.py   (después de renderizar.mjs)
+# Ronda 2 de QA (defecto 4): las personas son gente en su propio trabajo; ningún texto dice «empresa cliente».
 import json, os
 AQUI = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 M = json.load(open(os.path.join(AQUI, 'img/medidas.json'), encoding='utf-8'))
@@ -8,8 +9,8 @@ PAG = {'home': 'Home (/v3/)', 'acompanamiento-mensual': 'Acompañamiento mensual
 # id: (dirección, página, proporción escrita, rótulo, qué muestra, por qué aquí, pauta de Bruno del 16-oct)
 F = [
  ('F1', 'taller', 'home', '0,58 vertical a 1440 · 4:5 a 390', 'gente de pie en una mesa con hojas y notas',
-  'Tres personas de pie alrededor de una mesa larga con hojas impresas y notas de colores, en la oficina vidriada de una empresa cliente (una distribuidora, la bodega al fondo). De espaldas o de perfil, nadie posa a cámara. Luz de día, grano en el archivo.',
-  'A sangre derecha, al lado de «Tu sitio está escrito para personas…» (la frase grande de «Qué hacemos»): gente trabajando es la energía de Taller. Desde la ronda 1 de QA ya no va en el hero, que vuelve al orden del sitio (instrumento, titular, fila de obras). Es gente en su trabajo, no un equipo de SpindleLab ni un cliente (regla nueva de personas generadas).', 'F1'),
+  'Tres personas de pie alrededor de una mesa larga con hojas impresas y notas de colores, en la oficina vidriada de una distribuidora, con la bodega al fondo: gente en su propio trabajo. De espaldas o de perfil, nadie posa a cámara. Luz de día, grano en el archivo.',
+  'A sangre derecha, al lado de «Tu sitio está escrito para personas…» (la frase grande de «Qué hacemos»): gente trabajando es la energía de Taller. Desde la ronda 1 de QA ya no va en el hero, que vuelve al orden del sitio (instrumento, titular, fila de obras). Es gente en su propio trabajo, nunca presentada como equipo de SpindleLab ni como cliente (regla de personas generadas, manual §07b).', 'F1'),
  ('F2', 'taller', 'home', '4:5', 'alguien responde a un cliente en el mesón',
   'Detrás del mesón de una ferretería o distribuidora, una persona responde el mensaje de un cliente en el teléfono, de perfil; la pantalla no se lee. Estanterías ordenadas fuera de foco.',
   'Va en la banda del resaltador de Visibilidad («lo que ganas»): que te encuentren cuando preguntan por tu rubro es la consulta que llega al mesón.', 'F10'),
@@ -24,7 +25,7 @@ F = [
   'Es la foto a sangre de Gehl hecha banda propia, sin nada escrito encima (manual §07b): separa «Qué hacemos» de los servicios y es la única foto grande de la home en Pizarra limpia.', 'F2'),
  ('F6', 'taller', 'acompanamiento-mensual', '3:2', 'dos personas comparan hojas pegadas en la pared',
   'En la sala de reuniones de una empresa mediana, de cielo alto, dos personas pegan hojas impresas en fila en la pared y las comparan; una de perfil, otra de espaldas.',
-  'A sangre derecha, al lado de «Una auditoría te dice qué hacer; este servicio lo hace y lo sostiene»: el trabajo en marcha, en la empresa del cliente.', 'F7'),
+  'A sangre derecha, al lado de «Una auditoría te dice qué hacer; este servicio lo hace y lo sostiene»: el trabajo en marcha, en la sala de una empresa mediana, hecho por su propia gente.', 'F7'),
  ('F7', 'pizarra', 'acompanamiento-mensual', '21:9 a 1440 · 4:5 a 390', 'la mesa de una sala chica, después de la reunión',
   'Una sala chica y quieta después de una reunión: mesa blanca, una silla corrida, una hoja con una grilla de cuatro semanas, el notebook cerrado y dos tazas. Sin personas.',
   'Banda a sangre bajo la cabecera, donde el build tenía d/ventana.jpg (que sale). Sin personas: Pizarra limpia deja la gente para Taller y cuenta el servicio con objetos.', 'F9'),
