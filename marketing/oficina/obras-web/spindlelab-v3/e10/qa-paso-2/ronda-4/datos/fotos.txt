@@ -1,0 +1,42 @@
+F1 (taller/home.html)
+    360: css 360×450 (0.8, a todo el ancho) → dpr 2: 720×900
+    390: css 390×487.5 (0.8, a todo el ancho) → dpr 2: 780×975
+    599: css 599×748.75 (0.8, a todo el ancho) → dpr 2: 1198×1498
+    600: css 600×750 (0.8, a todo el ancho) → dpr 2: 1200×1500
+    768: css 768×960 (0.8, a todo el ancho) → dpr 2: 1536×1920
+   1000: css 1000×1250 (0.8, a todo el ancho) → dpr 2: 2000×2500
+   1023: css 1023×1278.75 (0.8, a todo el ancho) → dpr 2: 2046×2558
+   1024: css 307.19×529.63 (0.58) → dpr 2: 614×1059
+   1280: css 384×662.06 (0.58) → dpr 2: 768×1324
+   1440: css 420×724.13 (0.58) → dpr 2: 840×1448
+   1920: css 420×724.13 (0.58) → dpr 2: 840×1448
+   espacios-foto.json: 1440 420×724 (medido 420×724) · 390 390×488 (medido 390×488) · tableta: no la trae
+   pauta.json: css_1440 420×724 · css_390 390×488 · css_1023 1023×1279 (medido a 1023: 1023×1279)
+F5 (pizarra/home.html)
+    360: css 360×450 (0.8, a todo el ancho) → dpr 2: 720×900
+    390: css 390×487.5 (0.8, a todo el ancho) → dpr 2: 780×975
+    599: css 599×748.75 (0.8, a todo el ancho) → dpr 2: 1198×1498
+    600: css 600×750 (0.8, a todo el ancho) → dpr 2: 1200×1500
+    768: css 768×960 (0.8, a todo el ancho) → dpr 2: 1536×1920
+   1000: css 1000×1250 (0.8, a todo el ancho) → dpr 2: 2000×2500
+   1023: css 1023×1278.75 (0.8, a todo el ancho) → dpr 2: 2046×2558
+   1024: css 1024×438.86 (2.3333, a todo el ancho) → dpr 2: 2048×878
+   1280: css 1280×548.58 (2.3333, a todo el ancho) → dpr 2: 2560×1097
+   1440: css 1440×617.14 (2.3333, a todo el ancho) → dpr 2: 2880×1234
+   1920: css 1920×822.86 (2.3333, a todo el ancho) → dpr 2: 3840×1646
+   espacios-foto.json: 1440 1440×617 (medido 1440×617) · 390 390×488 (medido 390×488) · tableta: no la trae
+   pauta.json: css_1440 1440×617 · css_390 390×488 · css_1023 1023×1279 (medido a 1023: 1023×1279)
+F7 (pizarra/acompanamiento-mensual.html)
+    360: css 360×450 (0.8, a todo el ancho) → dpr 2: 720×900
+    390: css 390×487.5 (0.8, a todo el ancho) → dpr 2: 780×975
+    599: css 599×748.75 (0.8, a todo el ancho) → dpr 2: 1198×1498
+    600: css 600×750 (0.8, a todo el ancho) → dpr 2: 1200×1500
+    768: css 768×960 (0.8, a todo el ancho) → dpr 2: 1536×1920
+   1000: css 1000×1250 (0.8, a todo el ancho) → dpr 2: 2000×2500
+   1023: css 1023×1278.75 (0.8, a todo el ancho) → dpr 2: 2046×2558
+   1024: css 1024×438.86 (2.3333, a todo el ancho) → dpr 2: 2048×878
+   1280: css 1280×548.58 (2.3333, a todo el ancho) → dpr 2: 2560×1097
+   1440: css 1440×617.14 (2.3333, a todo el ancho) → dpr 2: 2880×1234
+   1920: css 1920×822.86 (2.3333, a todo el ancho) → dpr 2: 3840×1646
+   espacios-foto.json: 1440 1440×617 (medido 1440×617) · 390 390×488 (medido 390×488) · tableta: no la trae
+   pauta.json: css_1440 1440×617 · css_390 390×488 · css_1023 1023×1279 (medido a 1023: 1023×1279)

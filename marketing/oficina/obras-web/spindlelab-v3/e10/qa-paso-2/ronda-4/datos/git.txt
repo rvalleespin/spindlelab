@@ -1,0 +1,67 @@
+# Ronda 4 · evidencia de git (2026-10-16 17:10 UTC)
+
+## Commits auditados (arreglos de los menores de la ronda 3)
+b2e410f 2026-10-16 16:47:43 +0000 E10, fotos: la pauta cubre la tableta de F1, F5 y F7 (lock §7) (Bruno)
+3c8830d 2026-10-16 16:45:52 +0000 E11: material real para el texto (Renata)
+933adcf 2026-10-16 16:32:22 +0000 E11: diagnóstico del texto vigente de la home, Acompañamiento mensual y Trabajo
+9b4a39b 2026-10-16 16:31:35 +0000 E10, paso 2: arreglos de pasada de la ronda 3 (Lucía)
+bdf07d4 2026-10-16 16:30:04 +0000 E11: brief de texto de Mauro (home, Acompañamiento mensual y Trabajo)
+
+## Entró durante la auditoría (no toca lo auditado)
+2618cb4 2026-10-16 16:55:02 +0000 E12: cambio de dirección de Ramón (16-oct), textual, con sus cuatro respuestas; encargo de fotos de E10 en pausa
+
+ .../encargo-e10-fotos-ia.md                        |   6 ++
+ .../spindlelab-v3/e12/insumos-ramon-16oct.md       | 105 +++++++++++++++++++++
+ 2 files changed, 111 insertions(+)
+
+## git diff b971a82 HEAD -- tablero.html
+diff --git a/marketing/oficina/obras-web/spindlelab-v3/tableros/e10-direcciones/tablero.html b/marketing/oficina/obras-web/spindlelab-v3/tableros/e10-direcciones/tablero.html
+index 5bd01a9..66a412f 100644
+--- a/marketing/oficina/obras-web/spindlelab-v3/tableros/e10-direcciones/tablero.html
++++ b/marketing/oficina/obras-web/spindlelab-v3/tableros/e10-direcciones/tablero.html
+@@ -5,8 +5,8 @@
+   @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap');
+   /* Tablero de trabajo de un solo tema claro, a propósito: las capturas son de páginas claras y se comparan
+      sobre el mismo papel. Una columna: qué se decide, cada dirección con sus tres páginas (1440 y 390 lado a
+-     lado, el resto de cada página plegado) y su prueba del logo tapado, lo que también decides (manual, colores
+-     y punto dorado), y al final los espacios de foto y lo comprobado. */
++     lado, el resto de cada página plegado) y su prueba del logo tapado, lo que también decides (manual y
++     colores; el logo, en una nota corta), y al final los espacios de foto y lo comprobado. */
+   :root {
+     color-scheme: light;
+     --papel: #F7F5F0;      /* fondo (el papel del manual) */
+@@ -308,7 +308,7 @@
+     <ul class="chequeos">
+       <li>Texto visible igual al del sitio construido en 12 de 12 vistas (3 páginas, 2 direcciones, 1440 y 390), y en el mismo orden de lectura en 12 de 12. Se comparó dos veces: con JavaScript apagado en las dos, y con JavaScript encendido, donde la única diferencia es el control «Cookies» que el aviso de cookies del sitio suma al pie y que los prototipos no cargan. Solo se agregan los rótulos de foto y la cinta, que repite palabras ya publicadas.</li>
+       <li>El hero en el orden del sitio, a 1440: sitio chequeo en y 142, titular en 340; Taller chequeo en y 151, titular en 453; Pizarra limpia chequeo en y 151, titular en 502. A 390: sitio chequeo en y 126, titular en 448; Taller chequeo en y 202, titular en 560; Pizarra limpia chequeo en y 140, titular en 529.</li>
+-      <li>La escala en todos los anchos: cada titular va al tamaño de su escalón o, si no cabe, al que deja caber su palabra más larga en su caja. Medido en 14 anchos, de 360 a 1920, en las seis páginas (84 vistas): ningún titular fuera de su caja ni encima de una foto o de otro texto, y la página nunca más ancha que la pantalla. Hasta 1023 px rige la composición de una columna y desde 1024 la de escritorio; las capturas a 768 y 1024 quedan en la carpeta img como evidencia.</li>
++      <li>La escala en todos los anchos: cada titular va al tamaño de su escalón o, si no cabe, al que deja caber su palabra más larga en su caja. Medido en 14 anchos, de 360 a 1920, en las seis páginas (84 vistas): ningún titular fuera de su caja ni encima de una foto o de otro texto, y la página nunca más ancha que la pantalla, tampoco al medirla sin el recorte que esconde lo que se sale. Así apareció la flecha del chequeo de Taller, que se cortaba entre 1024 y 1258 px: de 1024 a 1299 ahora va bajo el chequeo. Hasta 1023 px rige la composición de una columna y desde 1024 la de escritorio; las capturas a 768 y 1024 quedan en la carpeta img como evidencia.</li>
+       <li>A 390 el chequeo apila el campo y el botón, como el sitio: «constructoraandesur.cl» se lee entero, con 308 px útiles. Contraste: ningún hallazgo con <code>npm run verificar</code> sobre los seis prototipos, a 390 y a 1440.</li>
+       <li>La cinta corre a 29,9 a 30,2 px por segundo, se pausa con su botón y queda quieta con movimiento reducido.</li>
+       <li>La letra de los titulares va en Instrument Sans a 540 y no a 500: a 540 el grosor del trazo iguala el de Saans, la letra de The Ready, y la tinta de una línea de titular queda 4 % por debajo de la de Saans (a 500, 10 %). La prueba está en el lock, §11.</li>
+
+## img/ que difieren de b971a82
+M	marketing/oficina/obras-web/spindlelab-v3/tableros/e10-direcciones/img/anchos.json
+A	marketing/oficina/obras-web/spindlelab-v3/tableros/e10-direcciones/img/flecha.json
+M	marketing/oficina/obras-web/spindlelab-v3/tableros/e10-direcciones/img/medidas.json
+M	marketing/oficina/obras-web/spindlelab-v3/tableros/e10-direcciones/img/taller-home-1024-t1.jpg
+M	marketing/oficina/obras-web/spindlelab-v3/tableros/e10-direcciones/img/taller-home-1024-t2.jpg
+
+## git diff --stat b37c6fc HEAD -- spindlelab-astro/ (vacío = sin cambios)
+(fin)
+
+## Rayas (— o –) en las líneas añadidas desde b971a82
+marketing/oficina/obras-web/spindlelab-v3/tableros/e10-direcciones/tablero.html: 0
+marketing/oficina/obras-web/spindlelab-v3/e10/lock-the-ready.md: 0
+marketing/oficina/obras-web/spindlelab-v3/spec-visual.md: 0
+marketing/oficina/obras-web/spindlelab-v3/e10/fotos/pauta.md: 0
+marketing/oficina/obras-web/spindlelab-v3/e10/fotos/pauta.json: 0
+marketing/encargos-otras-sesiones/encargo-e10-fotos-ia.md: 0
+
+## Comentario CSS de cabecera de tablero.html (líneas 6 a 9)
+  /* Tablero de trabajo de un solo tema claro, a propósito: las capturas son de páginas claras y se comparan
+     sobre el mismo papel. Una columna: qué se decide, cada dirección con sus tres páginas (1440 y 390 lado a
+     lado, el resto de cada página plegado) y su prueba del logo tapado, lo que también decides (manual y
+     colores; el logo, en una nota corta), y al final los espacios de foto y lo comprobado. */
+
+## tablero.html es la salida de armar-tablero.py (corrido en una copia en el scratchpad): idéntico byte a byte

@@ -7,6 +7,134 @@
 
 ---
 
+## Ronda 4 · exprés (menores de la ronda 3) · 16-oct-2026
+
+**Rama/commit auditado:** `claude/magical-franklin-ckfki2` en `b2e410f`. Los arreglos son `9b4a39b` (Lucía: flecha,
+`anchos.mjs`, lock §7 y §13, spec §7, comentario y «Lo comprobado» del tablero, capturas a 1024) y `b2e410f` (Bruno:
+pauta v4 con la tableta de F1, F5 y F7). Medí de 16:49 a 17:20 UTC. A las 16:55 UTC entró `2618cb4` (E12: Ramón
+cambió de dirección y el encargo de fotos de E10 queda **en pausa**); toca solo el encargo y `e12/`, nada de lo
+auditado: los 349 archivos revisados (tablero, prototipos, `img/`, lock, `fotos/`, spec y `spindlelab-astro/`) son
+iguales a `b2e410f` en el árbol al terminar (`git diff b2e410f` vacío en esas rutas). **Ronda previa:** la 3, aprobado.
+
+**Qué se pidió revisar:** solo lo que dejó la ronda 3: el defecto 1 (la flecha del chequeo de Taller cortada entre
+1024 y 1258 px, y `anchos.mjs` midiendo también con el clip apagado), los dos «sin severidad» (la cifra del marcador
+en el lock §13 y el comentario CSS de `tablero.html`) y la observación para la spec y la sesión con clave (de qué
+tamaño se sirven las fotos en tableta). Más las comprobaciones de que nada más se movió: capturas del tablero, texto
+y build. El logo y el oro siguen fuera de criterio.
+
+### Veredicto: APROBADO
+
+Los cuatro pendientes de la ronda 3 están cerrados, cada uno medido abajo con un script mío. La flecha queda entera
+en las 162 vistas de 1000 a 1300 px (con y sin barra de desplazamiento), las 6 páginas no se desbordan en 252 vistas
+de 360 a 1920 con el clip puesto ni apagado, y `anchos.mjs` **sí** detecta el caso viejo: contra una copia con el CSS
+de antes falla con código 1 en la home de Taller, donde la versión anterior del script daba código 0. Las capturas
+del tablero a 1440 y 390 son las mismas, byte a byte; el texto sigue igual al build en 12 de 12 vistas.
+
+Queda **un defecto menor**, del cierre de la observación de la tableta: `espacios-foto.json` no trae la medida de
+tableta que el lock §7 y la pauta ya usan, así que `generar.mjs --verificar` la avisa y no la compara. Con el encargo
+de fotos en pausa desde `2618cb4`, no frena nada hoy. No pide otra ronda.
+
+### Fuentes y lo que faltaba
+
+Igual que en las rondas 1 a 3: no hay `brief-de-obra.md` ni `desvios.md` de E10. Criterios: la sección de defectos
+y observaciones de la ronda 3, el lock (§7 y §13) y los nueve puntos del encargo de esta ronda. El cambio de lugar de
+la flecha no es un desvío sin declarar: está escrito en el lock §13 («Flecha del chequeo») con su porqué.
+
+### Cómo se verificó
+
+- Chromium 141 con el Playwright de `spindlelab-astro`. `proto/` servido con `python3 -m http.server 8770 --directory
+  proto` desde `tableros/e10-direcciones`, `dist/` en 8771 (`npm run build` corrido hoy: 27 páginas, código 0) y el
+  tablero envuelto como lo publica Artifact en 8792. Servidores apagados al terminar.
+- Herramientas mías en `qa-paso-2/ronda-4/herramientas/`. La flecha se mide dos veces por vista: la **caja**
+  (getComputedStyle del `::after`, con el giro aplicado, sobre la caja del `.t-instr`) y el **trazo** (dos capturas de la
+  franja, con la flecha y con el `::after` oculto, diferencia píxel a píxel). Las dos, sin barra (como corre Playwright)
+  y **con barra** (sin `--hide-scrollbars`, 15 px), porque el corte en 1300 depende de eso.
+- Lo que escribe en el repo se corrió en copias que escriben fuera: `renderizar-tmp.mjs` y `texto-igual-tmp.mjs` son
+  las del tablero con dos líneas cambiadas (ruta del repo y carpeta de salida; el resto idéntico, con `diff` en la
+  cabecera). La prueba de `anchos.mjs` contra el CSS viejo usa una copia de `proto/` en el scratchpad
+  (`probar-anchos.sh`). `git status` del repo, limpio fuera de `ronda-4/` al terminar.
+
+### Mediciones
+
+| # | Qué | Resultado | Evidencia |
+|---|---|---|---|
+| 1 | Flecha del chequeo de Taller, de 1000 a 1300 px cada 4 px, más 1023, 1024, 1258, 1259, 1299, 1300 y 1301; sin barra y con barra (162 vistas) | **Entera en las 162.** Caja dentro de la pantalla en 162. Trazo: nunca toca el borde y su cantidad de píxeles es constante en cada tramo (432 hasta 1023, 433 de 1024 a 1299, 1314 desde 1300), o sea que no se corta en ningún ancho. Margen del trazo al borde derecho, mínimo: 64 px hasta 1023, 109 de 1024 a 1299, 47 desde 1300 sin barra y 32 con barra. `scrollWidth` con el clip apagado igual a la pantalla en las 162. Giro −64° / 64° / sin giro según el tramo, tamaños 104×64 y 196×120, como dice el lock §13. De 1024 a 1299, la punta queda 12 px bajo el borde del chequeo y el trazo bajo el botón (x 977 a 1010 con el botón en 843 a 1038, a 1180); texto más cercano a 27 px o más | `datos/flecha.json`; `capturas/flecha-sin-barra-{1023,1024,1180,1258,1280,1299,1300}.png` y las mismas `con-barra` |
+| 2 | Desborde de las 6 páginas, 21 anchos (360, 390, 430, 600, 700, 768, 820, 900, 1000, 1023, 1024, 1100, 1180, 1258, 1259, 1280, 1299, 1300, 1366, 1440 y 1920), sin barra y con barra (252 vistas) | `scrollWidth == clientWidth` **con el clip puesto en 252 de 252 y con el clip apagado (html y body `overflow-x: visible`) en 252 de 252**. 0 nodos de texto fuera de su caja o de la pantalla. El barrido marca «el titular pisa el ojillo» en las dos homes desde 1024, con los mismos valores que en la ronda 3 (4440 y 787 px²): son las cajas de línea; la tinta no se toca (0 px en común; 5 px de aire en Taller, 11 en Pizarra, medido con capturas aisladas). No es defecto | `datos/desborde-sin-barra.json` y `-con-barra.json`; `datos/ojillo.txt`, `capturas/ojillo-*.png` |
+| 3 | `anchos.mjs` con el clip apagado: ¿detectaría el caso? | Contra los prototipos de hoy: 84 vistas, desborde 0 con el clip y 0 sin él, código 0. **Contra una copia fuera del repo con el `taller.css` de antes del arreglo (`9b4a39b^`): código 1**, 4 vistas con falla en la home de Taller: 1024 (sin clip 1163), 1100 (1239), 1180 (1259) y 1258 (1259), nombrando `div.d-instr::after` en las tres primeras. El `anchos.mjs` de antes contra la misma copia: código 0, «ninguna vista con falla». El repo no se tocó | `herramientas/probar-anchos.sh`; `datos/anchos-repo-actual.txt`, `anchos-repo-contra-css-viejo.txt`, `anchos-viejo-contra-css-viejo.txt` |
+| 4 | Cifra del marcador en el lock §13 | Mido **Taller 9 (4 / 2 / 3) y 8 cierran su oración; Pizarra 8 (4 / 2 / 2) y 7 cierran**; en las dos, el que no cierra es «se corta» del hero, y Pizarra no lleva «el sitio se arma solo.». Es lo que dice el lock ✓. A la vista a la vez: 1 en todas, salvo Trabajo de Taller con 2 de 360 a 1180 y 1 a 1440 (ver «sin severidad») | `herramientas/marcador4.mjs`, `datos/marcador.txt` |
+| 5 | `tablero.html` | El comentario CSS de las líneas 6 a 9 ya no nombra el punto dorado («manual y colores; el logo, en una nota corta») ✓. `git diff b971a82 -- tablero.html`: 3 líneas por 3, las dos del comentario y el ítem «La escala en todos los anchos» de «Lo comprobado»; nada más ✓. Es la salida de `armar-tablero.py` byte a byte (corrido en una copia). A 360, 390, 768, 1024 y 1440, con los pliegues abiertos: `scrollWidth == clientWidth` (también sin clip), 1 `h1`, 49 imágenes y 0 rotas, 0 rayas en el texto, solo pide fonts.googleapis.com y fonts.gstatic.com ✓ | `datos/git.txt`, `datos/tablero.txt`, `capturas/tablero-lo-comprobado-{390,1440}.png` |
+| 6 | Lock §7, tamaño de archivo por tramo de F1, F5 y F7 | Cada cifra css de la tabla calza con el render: F1 a 0,58, 420×724 a 1440 y a 1920 (fijo) → 840×1448 a dpr 2, y 307×530 a 1024; en columna 4:5, 1023×1278,75 a 1023 → 2046×2558 (archivo 2048×2560), 768×960 a 768, 390×487,5 a 390 → 780×975, 599×748,75 a 599 → 1200×1500. F5 y F7 a 21:9: 1440×617,14 → 2880×1234, 1024×438,86, 1920×822,86; en columna, lo mismo que F1. Los factores de escalado del lock (×2,67, ×3,33, ×2, ×2,5, ×1,09, ×2,14, ×1,88) son los que da `generar.mjs`. Contra `espacios-foto.json`: 1440 y 390 calzan en las tres; **la tableta no está en ese archivo** (defecto 1). `pauta.json` trae `css_1023` 1023×1279, igual al render. La spec §7 (fila «Fotos por tramo») apunta al lock §7 ✓. `node generar.mjs --verificar` desde `e10/fotos`, con un precargado que bloquea la red: **código 0**, 9 espacios, 9 fichas, «La pauta calza con el tablero», 17 avisos que no bloquean (3 de la tableta que falta en `espacios-foto.json`, 14 de escalado), 0 intentos de red | `herramientas/fotos4.mjs`, `datos/fotos.txt`, `datos/generar-verificar.txt` |
+| 7 | ¿Cambiaron las capturas del tablero? | Las 12 vistas (6 páginas × 1440 y 390, con `renderizar.mjs` sin otro cambio que la carpeta de salida) re-renderizadas en una carpeta temporal: **36 de 36 tramos con `compare -metric AE` = 0 y los bytes iguales** a los de `img/`; las medidas, iguales a `img/medidas.json` en las 12. Lo que difiere en `img/` desde `b971a82`: `taller-home-1024-t1.jpg` y `-t2.jpg` (antes 1163 px de ancho por la flecha, hoy 1024; re-renderizadas hoy: AE 0), más `anchos.json`, `medidas.json` y `flecha.json` (nuevo). Ninguna de las que muestra el tablero | `datos/comparacion-img.txt`, `datos/render.txt` |
+| 8 | Texto y build | `texto-igual.mjs` (copia que escribe fuera): **12 de 12 iguales, 0 diferencias**, mismo orden de lectura; el JSON es el del repo salvo la fecha. `git diff b37c6fc -- spindlelab-astro/` vacío ✓ | `datos/texto-igual.txt` y `.json`, `datos/git.txt` |
+| 9 | Texto visible que cambió | Tablero: un ítem de «Lo comprobado» («…tampoco al medirla sin el recorte que esconde lo que se sale. Así apareció la flecha del chequeo de Taller, que se cortaba entre 1024 y 1258 px: de 1024 a 1299 ahora va bajo el chequeo.»). Lock: §7 y §13 nuevos. **0 rayas (U+2014 ni U+2013)** en las líneas agregadas del tablero, el lock, la spec, la pauta y el encargo (contadas en UTF-8). Sin promesas nuevas: dicen dónde va la flecha y cómo se midió; no prometen nada al cliente ✓ | `datos/git.txt` |
+
+### Defectos
+
+| # | Severidad | Dueño | Dónde | Qué está mal | Contra qué | Cómo se reproduce / cómo se cierra |
+|---|---|---|---|---|---|---|
+| 1 | menor | Lucía | `tableros/e10-direcciones/espacios-foto.json`, fichas F1, F5 y F7 | El lock §7 fija la tableta (1023×1279 css, archivo 2048×2560) y `pauta.json` ya trae `css_1023`, pero el contrato del tablero no tiene `ancho_px_1023` ni `alto_px_1023`. `generar.mjs --verificar` lo deja en 3 avisos y no compara la tableta: la cuenta de tableta cierra contra el render (medido aquí) y contra la pauta, no contra el tablero. Si el lado de la tableta cambiara, nada lo bloquearía | Ronda 3: «la pauta y el tablero vuelven a ser un solo contrato… y `generar.mjs` lo exige antes de gastar» | `datos/generar-verificar.txt` (los 3 primeros avisos); `datos/fotos.txt`. **Cierre:** agregar 1023 y 1279 en las tres fichas y correr `--verificar` hasta que esos 3 avisos pasen a ✓. Con el encargo de fotos en pausa (`2618cb4`), vale solo si E10 vuelve; si E10 queda como historia, basta anotarlo así en la spec |
+
+Sin severidad, para la spec o de pasada:
+- `anchos.mjs` detecta bien, pero con un desborde de 1 px (el CSS viejo a 1258: 1259 contra 1258) no nombra al
+  culpable: la tolerancia de +1 de la lista `sobran` lo deja fuera e imprime una línea vacía. Y mide sin barra de
+  desplazamiento: el caso con barra, que es el que llevó el corte a 1300, solo lo mira `flecha.mjs` y solo para la
+  flecha. (Mi barrido con barra, 126 vistas, da 0.)
+- Lock §13, marcador: «a la vista, 1, salvo Trabajo de Taller con 2 de 390 a 1024». Mido 2 también a 360 (ventana de
+  780 px de alto) y a 1180 (820), y 1 a 1440 (900). Está dentro del techo de Taller (2); la cifra depende del alto
+  de la ventana y conviene decir con cuál se midió.
+- Lock §7, la regla dice «un archivo que cubre dpr 2 en el ancho más grande del tramo», pero el escritorio no tiene
+  tope: F5 y F7 a 1920 miden 1920×823 css y el archivo de 2880×1234 los cubre a 1,5×. La tabla lo dice («a dpr 1
+  cubre el mismo archivo»); la regla escrita no calza con ella en ese tramo. Para la spec: «en escritorio, dpr 2
+  hasta 1440».
+
+### Lo de la ronda 3, uno por uno
+
+| Pendiente | Estado hoy |
+|---|---|
+| R3-1 · la flecha del chequeo, cortada por el clip entre 1024 y 1258 | **Cerrado.** Cambia de lugar por tramo (lock §13), entera en 162 vistas de 1000 a 1300, con y sin barra; y `anchos.mjs` mide con el clip apagado y detecta el caso viejo (código 1) |
+| R3 sin severidad · la cifra del marcador en el lock §13 | **Cerrado.** Taller 9 y 8, Pizarra 8 y 7: lo que mido |
+| R3 sin severidad · el comentario CSS de `tablero.html` | **Cerrado.** Sin punto dorado; el diff contra `b971a82` solo trae eso y el ítem de «Lo comprobado» |
+| R3 observación · de qué tamaño se sirven las fotos en tableta | **Cerrado en el lock §7, la spec §7 y la pauta v4**, con cifras que calzan con el render y con `generar.mjs`. Deja el defecto 1 (falta en `espacios-foto.json`) |
+
+### Detector anti-slop (solo lo que cambió)
+
+```
+COPY        ✓ 0 rayas en lo agregado  ✓ sin verbos de folleto ni relleno  ✓ sin promesas nuevas
+            ✓ tú en el tablero («de 1024 a 1299 ahora va bajo el chequeo»)  · el copy de las páginas no cambió (12/12)
+CÓDIGO      ✓ el desborde se arregla moviendo la pieza, no con overflow  ✓ la regla nueva está en el lock con su porqué
+            ✓ la herramienta de control ahora ve el ::after (probado contra el CSS viejo)
+VISUAL      ✓ la flecha sigue señalando el botón del chequeo en los tres tramos  ✓ 1440 y 390 sin un píxel distinto
+```
+
+### Pruebas de fuego
+
+No cambian desde la ronda 3: lo único que se mueve en las páginas es dónde va la flecha entre 1024 y 1299, y las
+vistas del tablero (1440 y 390) son las mismas byte a byte.
+
+### Lo que está bien (no perderlo en la spec)
+
+1. **El desborde se arregló en el sistema y no se escondió:** la flecha cambia de lugar por tramo, y el corte en 1300
+   (y no en 1259) está justificado por la barra de desplazamiento, que es lo que mido con barra: 32 px de margen.
+2. **La herramienta de control aprendió el caso:** `anchos.mjs` mide el documento con el clip apagado y falla con
+   código 1 contra el CSS viejo. Es lo que le faltaba en la ronda 3.
+3. **Lo que Ramón mira no se movió:** 36 tramos del tablero idénticos al byte, y las capturas a 1024 que sí cambiaron
+   son evidencia, no tablero, y son el render de hoy.
+4. **Las cifras de fotos por tramo se pueden reproducir:** cada tamaño css del lock §7 calza con el render y cada
+   factor de escalado con `generar.mjs`.
+
+### Evidencia
+
+- `e10/qa-paso-2/ronda-4/capturas/`: la flecha a 1023, 1024, 1180, 1258, 1280, 1299 y 1300, sin barra y con barra;
+  el ojillo y el titular del hero de las dos homes a 1024 y 1440; el ítem cambiado de «Lo comprobado» a 390 y 1440.
+  Las capturas completas no se duplican: las de `img/` son el render de hoy, medido al byte.
+- `e10/qa-paso-2/ronda-4/herramientas/`: `flecha4.mjs`, `desborde4.mjs` (la de la ronda 3 con base, anchos y modo con
+  barra), `ojillo4.mjs`, `marcador4.mjs`, `fotos4.mjs`, `tablero4.mjs`, `probar-anchos.sh`, `renderizar-tmp.mjs`,
+  `texto-igual-tmp.mjs`, y copias sin cambios de `servir-tablero.py` y `sinred.mjs`.
+- `e10/qa-paso-2/ronda-4/datos/`: `flecha.json`, el desborde con y sin barra, las tres corridas de `anchos.mjs`, el
+  marcador, las fotos, `generar-verificar.txt`, la comparación de `img/`, el texto y `git.txt` (commits, diffs, rayas).
+
+---
+
 ## Ronda 3 · 16-oct-2026 (la última interna)
 
 **Rama/commit auditado:** `claude/magical-franklin-ckfki2`. Empecé sobre `3bf0d41` con los arreglos sin commit; a las

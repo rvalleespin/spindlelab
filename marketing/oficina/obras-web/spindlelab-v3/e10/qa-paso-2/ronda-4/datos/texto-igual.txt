@@ -1,0 +1,13 @@
+ok   taller home 1440 fragmentos 75/75 texto igual mismo orden rótulos 4 cinta taller-home publicada
+ok   pizarra home 1440 fragmentos 75/75 texto igual mismo orden rótulos 1 cinta pizarra-home publicada
+ok   taller home 390 fragmentos 75/75 texto igual mismo orden rótulos 4 cinta taller-home publicada
+ok   pizarra home 390 fragmentos 75/75 texto igual mismo orden rótulos 1 cinta pizarra-home publicada
+ok   taller acompanamiento-mensual 1440 fragmentos 88/88 texto igual mismo orden rótulos 1 cinta taller-acompanamiento publicada
+ok   pizarra acompanamiento-mensual 1440 fragmentos 88/88 texto igual mismo orden rótulos 1 
+ok   taller acompanamiento-mensual 390 fragmentos 88/88 texto igual mismo orden rótulos 1 cinta taller-acompanamiento publicada
+ok   pizarra acompanamiento-mensual 390 fragmentos 88/88 texto igual mismo orden rótulos 1 
+ok   taller trabajo 1440 fragmentos 55/55 texto igual mismo orden rótulos 1 
+ok   pizarra trabajo 1440 fragmentos 55/55 texto igual mismo orden rótulos 1 
+ok   taller trabajo 390 fragmentos 55/55 texto igual mismo orden rótulos 1 
+ok   pizarra trabajo 390 fragmentos 55/55 texto igual mismo orden rótulos 1 
+IGUAL: en las 12 vistas (3 páginas × 2 direcciones × 2 anchos) el texto visible es el del build y está en el mismo orden de lectura; solo se agregan los rótulos de foto y la cinta, comprobados aparte. Con JavaScript apagado en las dos: con JavaScript, el build suma en el pie el control «Cookies» que crea consent-banner.js, que los prototipos no cargan
