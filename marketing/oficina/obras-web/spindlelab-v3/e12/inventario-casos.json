@@ -16,8 +16,10 @@
   ],
   "convenciones": {
    "publicable": "sí · solo en Trabajo (E9) · decide Ramón · pide OK escrito de Bernardo · no",
-   "tipoEvidencia": "servido (HTML o cabecera de hoy) · medido (instrumento corrido hoy) · repo (archivo o commit) · dicho (una persona lo afirmó, sin respaldo guardado)"
-  }
+   "tipoEvidencia": "servido (HTML o cabecera de hoy) · medido (instrumento corrido hoy) · repo (archivo o commit) · dicho (una persona lo afirmó, sin respaldo guardado)",
+   "unidad": "kB = 1.000 bytes y MB = 1.000.000 bytes en todo el inventario; redondeo al entero salvo donde va un decimal. Los bytes exactos están en cada crudo. Hasta el 16-oct a las 18:45 el inventario mezclaba KiB (bytes ÷ 1.024) escritos «KB» o «kB» con kB: ver «correcciones»."
+  },
+  "corregido": "2026-10-16, 18:45 (Chile): defecto 13 del acta del paso 1 (e12/acta-paso-1.md §2). Ver «correcciones»."
  },
  "proyectos": [
   {
@@ -124,7 +126,7 @@
     },
     {
      "etiqueta": "Netlify Image CDN",
-     "efecto": "Él sube la foto tal cual y el sitio la sirve recortada y en WebP: el original de una foto de la portada pesa 786 KB y se entrega en 92 KB a 828 px.",
+     "efecto": "Él sube la foto tal cual y el sitio la sirve recortada y en WebP: el original de una foto de la portada pesa 805 kB y se entrega en 95 kB a 828 px.",
      "evidencia": [
       {
        "tipo": "servido",
@@ -137,7 +139,7 @@
        "fuente": "e12/inventario/crudo/cabeceras-varias.txt"
       }
      ],
-     "nota": "ventas/pipeline.md:25 dice que en Bernardo las fotos «se publican tal cual». Es cierto del archivo guardado (el original queda en /uploads/ con 786 KB) y falso de lo que ve el visitante, que recibe la versión del CDN."
+     "nota": "ventas/pipeline.md:25 dice que en Bernardo las fotos «se publican tal cual». Es cierto del archivo guardado (el original queda en /uploads/ con 805 kB) y falso de lo que ve el visitante, que recibe la versión del CDN."
     },
     {
      "etiqueta": "Datos estructurados (Person y LocalBusiness)",
@@ -201,7 +203,7 @@
       "loadMs": 1373,
       "cls": 0,
       "pedidos": 15,
-      "kbTransferidos": 515,
+      "kbTransferidos": 528,
       "kbTerceros": 0
      },
      "a1440": {
@@ -211,19 +213,24 @@
       "loadMs": 684,
       "cls": 0,
       "pedidos": 12,
-      "kbTransferidos": 408,
+      "kbTransferidos": 417,
       "kbTerceros": 0
      },
      "publicable": "Los kB, sí, con fecha y método. Los ms, no como «velocidad para tus clientes»: son de laboratorio y desde EE.UU."
     },
     {
      "nombre": "Encabezado principal (h1) por ruta",
-     "valor": "7 de 11 rutas sin h1; el de la portada se lee pegado («Se construyedirigiendo»)",
-     "fecha": "2026-10-16T17:59Z",
-     "metodo": "curl -L de las 11 rutas, contando <h1 en el HTML servido",
-     "crudo": "e12/inventario/crudo/h1-bernardocombeau.cl.tsv",
+     "valor": "7 de 11 rutas sin h1; el de la portada, leído como textContent, junta dos palabras: «Se construyedirigiendo»",
+     "fecha": "2026-10-16T17:59Z (conteo de las 11 rutas) · 2026-10-16T21:43Z (lectura del h1 de la portada)",
+     "metodo": "Conteo: curl -L de las 11 rutas, contando <h1 en el HTML servido. Lectura de la frase: Chromium 141.0.7390.37 headless con Playwright (medir-h1-portada.mjs) saca el <h1> del cuerpo de la respuesta, sin JS («Se construye<br>dirigiendo»), y después de load lee su textContent («…Se construyedirigiendo a la persona…») y su innerText, que sí separa las dos palabras con un salto de línea. Lo pegado es lo que lee una máquina que junta el texto del nodo (buscadores, lectores de IA, extractores); a la vista no se ve pegado.",
+     "crudo": [
+      "e12/inventario/crudo/h1-bernardocombeau.cl.tsv",
+      "e12/inventario/crudo/h1-portada-bernardocombeau.cl.json"
+     ],
+     "herramienta": "e12/inventario/herramientas/medir-h1-portada.mjs",
+     "fuente": "La frase y su causa son del encargo del 10-oct: marketing/encargos-otras-sesiones/encargo-h1-sitio-bernardo-10oct.md §3 (los <br> salen del split de fraseHero en index.astro:50). Hoy se volvió a medir y sigue igual.",
      "publicable": "no: es un defecto abierto, no un resultado",
-     "antes": "Igual el 10-oct (marketing/encargos-otras-sesiones/encargo-h1-sitio-bernardo-10oct.md §2). El encargo sigue sin aplicar."
+     "antes": "Igual el 10-oct (marketing/encargos-otras-sesiones/encargo-h1-sitio-bernardo-10oct.md §2 y §3). El encargo sigue sin aplicar."
     }
    ],
    "sinMetrica": [
@@ -296,7 +303,7 @@
     },
     {
      "etiqueta": "Video con carga diferida",
-     "efecto": "La página no baja el video ni el reel hasta que hacen falta: en la medición, 0 KB de video en la carga inicial.",
+     "efecto": "La página no baja el video ni el reel hasta que hacen falta: en la medición, 0 kB de video en la carga inicial.",
      "evidencia": [
       {
        "tipo": "servido",
@@ -339,7 +346,7 @@
       "loadMs": 1214,
       "cls": 0,
       "pedidos": 11,
-      "kbTransferidos": 558,
+      "kbTransferidos": 571,
       "kbTerceros": 0
      },
      "a1440": {
@@ -349,7 +356,7 @@
       "loadMs": 943,
       "cls": 0,
       "pedidos": 11,
-      "kbTransferidos": 558,
+      "kbTransferidos": 571,
       "kbTerceros": 0
      },
      "publicable": "Los kB, sí, con fecha y método. Los ms, no como «velocidad para tus clientes»: son de laboratorio y desde EE.UU."
@@ -400,7 +407,7 @@
    "ingredientes": [
     {
      "etiqueta": "HTML y CSS escritos a mano",
-     "efecto": "Una sola página, sin framework: 8 pedidos y 264 KB en la carga.",
+     "efecto": "Una sola página, sin framework: 8 pedidos y 270 kB en la carga.",
      "evidencia": [
       {
        "tipo": "servido",
@@ -414,7 +421,7 @@
       },
       {
        "tipo": "medido",
-       "detalle": "8 pedidos, 264 KB",
+       "detalle": "8 pedidos, 270 kB",
        "fuente": "e12/inventario/crudo/carga-playwright.json"
       }
      ]
@@ -566,7 +573,7 @@
       "loadMs": 1083,
       "cls": 0,
       "pedidos": 8,
-      "kbTransferidos": 264,
+      "kbTransferidos": 270,
       "kbTerceros": 11
      },
      "a1440": {
@@ -576,7 +583,7 @@
       "loadMs": 1015,
       "cls": 0.067,
       "pedidos": 8,
-      "kbTransferidos": 264,
+      "kbTransferidos": 270,
       "kbTerceros": 11
      },
      "publicable": "Los kB, sí, con fecha y método. Los ms, no como «velocidad para tus clientes»: son de laboratorio y desde EE.UU."
@@ -690,7 +697,7 @@
      "evidencia": [
       {
        "tipo": "repo",
-       "detalle": "marketing/portafolio/01-raigal/sitio/index.html, 40 KB, sin scripts salvo el JSON-LD",
+       "detalle": "marketing/portafolio/01-raigal/sitio/index.html, 40 kB (40.093 bytes), sin scripts salvo el JSON-LD",
        "fuente": "repo"
       }
      ]
@@ -799,7 +806,7 @@
       },
       {
        "tipo": "medido",
-       "detalle": "en la carga sin aceptar: 10 KB de terceros, todos de Cloudflare",
+       "detalle": "en la carga sin aceptar: 11 kB de terceros, todos de Cloudflare",
        "fuente": "e12/inventario/crudo/carga-playwright.json"
       }
      ]
@@ -863,8 +870,8 @@
       "loadMs": 1202,
       "cls": 0,
       "pedidos": 18,
-      "kbTransferidos": 908,
-      "kbTerceros": 10
+      "kbTransferidos": 929,
+      "kbTerceros": 11
      },
      "a1440": {
       "ttfbMs": 298,
@@ -873,8 +880,8 @@
       "loadMs": 1200,
       "cls": 0.084,
       "pedidos": 18,
-      "kbTransferidos": 908,
-      "kbTerceros": 10
+      "kbTransferidos": 929,
+      "kbTerceros": 11
      },
      "publicable": "Los kB, sí, con fecha y método. Los ms, no como «velocidad para tus clientes»: son de laboratorio y desde EE.UU."
     },
@@ -891,7 +898,7 @@
       "loadMs": 1065,
       "cls": 0,
       "pedidos": 18,
-      "kbTransferidos": 391,
+      "kbTransferidos": 401,
       "kbTerceros": 0
      },
      "a1440": {
@@ -901,7 +908,7 @@
       "loadMs": 853,
       "cls": 0.106,
       "pedidos": 21,
-      "kbTransferidos": 432,
+      "kbTransferidos": 443,
       "kbTerceros": 0
      },
      "publicable": "Los kB, sí, con fecha y método. Los ms, no como «velocidad para tus clientes»: son de laboratorio y desde EE.UU."
@@ -919,7 +926,7 @@
       "loadMs": 821,
       "cls": 0,
       "pedidos": 16,
-      "kbTransferidos": 490,
+      "kbTransferidos": 502,
       "kbTerceros": 0
      },
      "a1440": {
@@ -929,19 +936,19 @@
       "loadMs": 769,
       "cls": 0,
       "pedidos": 16,
-      "kbTransferidos": 471,
+      "kbTransferidos": 482,
       "kbTerceros": 0
      },
      "publicable": "Los kB, sí, con fecha y método. Los ms, no como «velocidad para tus clientes»: son de laboratorio y desde EE.UU."
     },
     {
      "nombre": "Video del hero en producción",
-     "valor": "5.091.275 bytes (4,9 MB)",
+     "valor": "5.091.275 bytes (5,1 MB)",
      "fecha": "2026-10-16T18:03Z",
      "metodo": "HEAD",
      "crudo": "e12/inventario/crudo/cabeceras-varias.txt",
      "publicable": "sí",
-     "nota": "En la medición de laboratorio no llegó a bajarse (0 KB de media): los 908 KB no lo incluyen. Un visitante cuyo navegador lo reproduce baja hasta 4,9 MB más."
+     "nota": "En la medición de laboratorio no llegó a bajarse (0 kB de media): los 929 kB no lo incluyen. Un visitante cuyo navegador lo reproduce baja hasta 5,1 MB más."
     },
     {
      "nombre": "Barrido de cierre del v3 (QA del 6-oct)",
@@ -1150,7 +1157,7 @@
    {
     "nombre": "La foto que sube Bernardo y la que ve su visitante",
     "estado": "por construir",
-    "que": "La misma foto: 786 KB como la sube, 92 KB como la sirve el sitio.",
+    "que": "La misma foto: 805 kB como la sube, 95 kB como la sirve el sitio.",
     "condicion": "OK escrito de Bernardo."
    }
   ],
@@ -1255,6 +1262,10 @@
   {
    "para": "Construcción E12",
    "que": "CLS de 0,106 en la home v3 a 1440 (laboratorio, 2 de 3 corridas)."
+  },
+  {
+   "para": "Lucía",
+   "que": "Los kB cambiaron (ver «correcciones»): el tablero de E12 los lee de este JSON (kbTransferidos y el valor del h1 de Combeau), así que se corrige al rearmarlo; lock-koto.md:529 y :556 dicen «786 KB → 92 KB», que en la unidad del inventario son 805 kB → 95 kB."
   }
  ],
  "stackPorSitio": {
@@ -1263,7 +1274,7 @@
    "generador": "Astro 4.16.19",
    "hosting": "Cloudflare Pages",
    "css": "Tailwind",
-   "js": "3 scripts externos (uno enlazado dos veces), 4 en línea; 23 KB",
+   "js": "3 scripts externos (uno enlazado dos veces), 4 en línea; 23,6 kB a 390",
    "cms": null,
    "imagenes": "archivos propios",
    "funciones": [
@@ -1281,7 +1292,7 @@
    "generador": "Astro 4.16.19",
    "hosting": "Cloudflare Pages, x-robots-tag: noindex",
    "css": "Tailwind",
-   "js": "3 externos, 5 en línea; 24 KB; incluye Lenis 1.3.26",
+   "js": "3 externos, 5 en línea; 24,5 kB a 390; incluye Lenis 1.3.26",
    "cms": null,
    "imagenes": "archivos propios",
    "funciones": [
@@ -1390,6 +1401,16 @@
    "sha256": "ae3389ba02bf07d455f371fc4cca8a1b67e1487911a33b3a12cee6a78484f410"
   },
   {
+   "archivo": "e12/inventario/crudo/h1-portada-bernardocombeau.cl.json",
+   "bytes": 1215,
+   "sha256": "4e2434bfa607387bf2708c7e88bf8dec78adb6fe57b00239e0061350c8dd2134"
+  },
+  {
+   "archivo": "e12/inventario/crudo/imagenes-spindlelab.cl.json",
+   "bytes": 2759,
+   "sha256": "fa5250c83c0d6b94e7f72411ae2af868685b6f40d8c374b4c31030295dd95b5b"
+  },
+  {
    "archivo": "e12/inventario/crudo/servido-bernardocombeau.cl-admin.headers.txt",
    "bytes": 474,
    "sha256": "be3bb07db095255b9fd7b21498e1114c2c48baedf9ec4e2eb085ddecf6652af0"
@@ -1448,6 +1469,46 @@
    "archivo": "e12/inventario/crudo/vyc-chequeo-verifica.spindlelab.cl.json",
    "bytes": 3125,
    "sha256": "7db4b19f1a9f610512cde855a885b1145630648d8787fe38419bf2910a2ff1de"
+  }
+ ],
+ "correcciones": [
+  {
+   "fecha": "2026-10-16T21:45Z",
+   "origen": "e12/acta-paso-1.md §2, defecto 13 (Javiera, vuelta 1)",
+   "que": "El valor del h1 de Combeau decía que la portada «se lee pegado» con un método y un crudo que solo contaban h1.",
+   "como": "Se midió la frase con su propio método (medir-h1-portada.mjs → h1-portada-bernardocombeau.cl.json, 21:43Z): servido «Se construye<br>dirigiendo», textContent «Se construyedirigiendo», innerText con salto de línea. El valor dice ahora «leído como textContent», y la métrica trae los dos crudos y la fuente (encargo del 10-oct §3)."
+  },
+  {
+   "fecha": "2026-10-16T21:45Z",
+   "origen": "e12/acta-paso-1.md §2, defecto 13 (Javiera, vuelta 1)",
+   "que": "Una sola unidad. El acta vio «786 KB → 92 KB» en KiB junto a cargas en kB. Releído contra los crudos, también las cargas estaban en KiB (bytes ÷ 1.024, como imprimía medir-carga.mjs) aunque el rótulo decía «kB»: 515 era 527.852 bytes. Solo los 40 kB de Raigal estaban ya en kB. Ahora todo va en kB = 1.000 bytes y MB = 1.000.000 bytes.",
+   "como": [
+    "Combeau, foto beto3.jpg: 786 → 805 kB (804.697 bytes); 92 → 95 kB (94.576 bytes).",
+    "Bernardo Combeau, fotografía, Carga y peso de la portada (laboratorio) a 390: 515 → 528 kB transferidos; 0 → 0 kB de terceros",
+    "Bernardo Combeau, fotografía, Carga y peso de la portada (laboratorio) a 1440: 408 → 417 kB transferidos; 0 → 0 kB de terceros",
+    "Bernardo Combeau | Model, Carga y peso de /modelo/ (laboratorio) a 390: 558 → 571 kB transferidos; 0 → 0 kB de terceros",
+    "Bernardo Combeau | Model, Carga y peso de /modelo/ (laboratorio) a 1440: 558 → 571 kB transferidos; 0 → 0 kB de terceros",
+    "Verifica y Cumple, Carga y peso de la portada (laboratorio) a 390: 264 → 270 kB transferidos; 11 → 11 kB de terceros",
+    "Verifica y Cumple, Carga y peso de la portada (laboratorio) a 1440: 264 → 270 kB transferidos; 11 → 11 kB de terceros",
+    "spindlelab.cl (este sitio), Carga y peso de la home en producción (v2) (laboratorio) a 390: 908 → 929 kB transferidos; 10 → 11 kB de terceros",
+    "spindlelab.cl (este sitio), Carga y peso de la home en producción (v2) (laboratorio) a 1440: 908 → 929 kB transferidos; 10 → 11 kB de terceros",
+    "spindlelab.cl (este sitio), Carga y peso de la home v3 (vista previa) (laboratorio) a 390: 391 → 401 kB transferidos; 0 → 0 kB de terceros",
+    "spindlelab.cl (este sitio), Carga y peso de la home v3 (vista previa) (laboratorio) a 1440: 432 → 443 kB transferidos; 0 → 0 kB de terceros",
+    "spindlelab.cl (este sitio), Carga y peso de /v3/trabajo/ (vista previa) (laboratorio) a 390: 490 → 502 kB transferidos; 0 → 0 kB de terceros",
+    "spindlelab.cl (este sitio), Carga y peso de /v3/trabajo/ (vista previa) (laboratorio) a 1440: 471 → 482 kB transferidos; 0 → 0 kB de terceros",
+    "Verifica, ingrediente «HTML y CSS escritos a mano»: 264 → 270 kB.",
+    "spindlelab.cl, terceros sin aceptar cookies: 10 → 11 kB.",
+    "Video del hero: 4,9 → 5,1 MB (5.091.275 bytes).",
+    "JS en la carga: 23 → 23,6 kB (spindlelab.cl, mediana a 390: 23.646 bytes); 24 → 24,5 kB (v3, mediana a 390: 24.516 bytes).",
+    "Raigal: «40 KB» → «40 kB (40.093 bytes)», mismo número.",
+    "medir-carga.mjs imprime ahora kB = bytes ÷ 1.000; su crudo (carga-playwright.json) guarda bytes y no cambió."
+   ]
+  },
+  {
+   "fecha": "2026-10-16T21:45Z",
+   "origen": "al pasar a kB las imágenes de spindlelab.cl (inventario-casos.md §4.2)",
+   "que": "«774 son imágenes (los posters de cuatro videos, de 167 a 191 KB cada uno)» no tenía crudo por pedido y contaba cuatro posters: son cinco. Medido (medir-imagenes.mjs → imagenes-spindlelab.cl.json, 21:44Z): 793 kB de imágenes, todas posters de video; cuatro de 171 a 196 kB y el del hero, 41 kB.",
+   "como": "Corregido en inventario-casos.md §4.2. El JSON no traía esa frase."
   }
  ]
 }

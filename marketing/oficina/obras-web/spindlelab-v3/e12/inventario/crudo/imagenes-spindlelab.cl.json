@@ -1,0 +1,101 @@
+{
+ "url": "https://spindlelab.cl/",
+ "medidoEn": "2026-10-16T21:44:01.253Z",
+ "navegador": "Chromium 141.0.7390.37 headless (Playwright)",
+ "metodo": "Una corrida por ancho, caché desactivado y contexto nuevo, sin scroll, sin aceptar cookies, 4000 ms tras load. Por cada respuesta de tipo Image: URL, bytes transferidos (encodedDataLength de CDP, con cabeceras) y content-length. Medición de laboratorio, no de usuarios reales.",
+ "unidad": "kB = 1.000 bytes",
+ "anchos": [
+  {
+   "ancho": "390",
+   "imagenes": [
+    {
+     "url": "https://spindlelab.cl/video/problema.jpg",
+     "tipo": "Image",
+     "status": 200,
+     "contentType": "image/jpeg",
+     "contentLength": 193382,
+     "bytesTransferidos": 194196
+    },
+    {
+     "url": "https://spindlelab.cl/video/hero-hilo-de-oro.jpg",
+     "tipo": "Image",
+     "status": 200,
+     "contentType": "image/jpeg",
+     "contentLength": 40337,
+     "bytesTransferidos": 41158
+    },
+    {
+     "url": "https://spindlelab.cl/video/servicios-oficina.jpg",
+     "tipo": "Image",
+     "status": 200,
+     "contentType": "image/jpeg",
+     "contentLength": 189850,
+     "bytesTransferidos": 190655
+    },
+    {
+     "url": "https://spindlelab.cl/video/metodo.jpg",
+     "tipo": "Image",
+     "status": 200,
+     "contentType": "image/jpeg",
+     "contentLength": 194894,
+     "bytesTransferidos": 195706
+    },
+    {
+     "url": "https://spindlelab.cl/video/evidencia-oficina.jpg",
+     "tipo": "Image",
+     "status": 200,
+     "contentType": "image/jpeg",
+     "contentLength": 170533,
+     "bytesTransferidos": 171345
+    }
+   ],
+   "bytesImagenes": 793060
+  },
+  {
+   "ancho": "1440",
+   "imagenes": [
+    {
+     "url": "https://spindlelab.cl/video/hero-hilo-de-oro.jpg",
+     "tipo": "Image",
+     "status": 200,
+     "contentType": "image/jpeg",
+     "contentLength": 40337,
+     "bytesTransferidos": 41158
+    },
+    {
+     "url": "https://spindlelab.cl/video/metodo.jpg",
+     "tipo": "Image",
+     "status": 200,
+     "contentType": "image/jpeg",
+     "contentLength": 194894,
+     "bytesTransferidos": 195706
+    },
+    {
+     "url": "https://spindlelab.cl/video/evidencia-oficina.jpg",
+     "tipo": "Image",
+     "status": 200,
+     "contentType": "image/jpeg",
+     "contentLength": 170533,
+     "bytesTransferidos": 171345
+    },
+    {
+     "url": "https://spindlelab.cl/video/servicios-oficina.jpg",
+     "tipo": "Image",
+     "status": 200,
+     "contentType": "image/jpeg",
+     "contentLength": 189850,
+     "bytesTransferidos": 190662
+    },
+    {
+     "url": "https://spindlelab.cl/video/problema.jpg",
+     "tipo": "Image",
+     "status": 200,
+     "contentType": "image/jpeg",
+     "contentLength": 193382,
+     "bytesTransferidos": 194196
+    }
+   ],
+   "bytesImagenes": 793067
+  }
+ ]
+}

@@ -5,6 +5,9 @@
 // aceptar el aviso de cookies y sin hacer scroll. Los tiempos dicen cómo se comportó cada página
 // aquí y hoy; no son Core Web Vitals de campo ni lo que ve un visitante en Santiago con 4G.
 //
+// Unidad: kB = 1.000 bytes. Hasta el 16-oct a las 18:45 la consola dividía por 1.024 y lo escribía «KB»,
+// y de ahí salieron los KiB rotulados kB del inventario (acta del paso 1, defecto 13). El JSON guarda bytes.
+//
 // Uso: node medir-carga.mjs <salida.json> [corridas=3]
 import { pathToFileURL } from 'node:url';
 import { writeFileSync } from 'node:fs';
@@ -157,7 +160,7 @@ for (const [nombre, url] of PAGINAS) {
     salida.paginas.push(fila);
     console.log(
       `${nombre} @${ancho.nombre}: ttfb ${fila.mediana.ttfb} · fcp ${fila.mediana.fcp} · lcp ${fila.mediana.lcp} · load ${fila.mediana.load} ms · ` +
-        `${fila.mediana.pedidos} pedidos · ${Math.round((fila.mediana.bytesTransferidos || 0) / 1024)} KB (${Math.round((fila.mediana.bytesTerceros || 0) / 1024)} KB de terceros) · cls ${fila.mediana.cls}`
+        `${fila.mediana.pedidos} pedidos · ${Math.round((fila.mediana.bytesTransferidos || 0) / 1000)} kB (${Math.round((fila.mediana.bytesTerceros || 0) / 1000)} kB de terceros) · cls ${fila.mediana.cls}`
     );
   }
 }

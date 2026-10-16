@@ -1,0 +1,28 @@
+{
+ "url": "https://bernardocombeau.cl/",
+ "medidoEn": "2026-10-16T21:43:40.857Z",
+ "status": 200,
+ "navegador": "Chromium 141.0.7390.37 headless (Playwright), 1440 × 900, desde el contenedor de la sesión por su proxy",
+ "metodo": "Cuerpo de la respuesta de page.goto (HTML servido, sin JS): se extrae cada <h1>…</h1> con una expresión regular. Después del evento load: document.querySelectorAll(\"h1\") y, de cada uno, textContent e innerText.",
+ "htmlServido": {
+  "bytes": 8544,
+  "sha256": "8e785562ae5999e3f7d701daf30a18c4dfc6461cb3758fffd7b915809a4a5403",
+  "guardado": false
+ },
+ "h1Servidos": [
+  "<h1>Un buen retrato no se toma. Se construye<br>dirigiendo a la persona hasta su mejor versión.<br><br></h1>"
+ ],
+ "h1EnElDom": [
+  {
+   "outerHTML": "<h1>Un buen retrato no se toma. Se construye<br>dirigiendo a la persona hasta su mejor versión.<br><br></h1>",
+   "textContent": "Un buen retrato no se toma. Se construyedirigiendo a la persona hasta su mejor versión.",
+   "innerText": "Un buen retrato no se toma. Se construye\ndirigiendo a la persona hasta su mejor versión.\n\n"
+  }
+ ],
+ "lectura": [
+  {
+   "textContentTraeConstruyedirigiendo": true,
+   "innerTextSeparaConSalto": true
+  }
+ ]
+}
