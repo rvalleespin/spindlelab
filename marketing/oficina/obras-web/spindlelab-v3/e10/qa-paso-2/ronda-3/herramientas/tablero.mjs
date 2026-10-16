@@ -3,7 +3,7 @@
 import { chromium } from '/home/user/spindlelab/spindlelab-astro/node_modules/playwright/index.mjs';
 const OUT = process.argv[2];
 const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
-for (const w of [390, 768, 1440]) {
+for (const w of [360, 390, 768, 1024, 1440]) {
   const p = await (await b.newContext({ viewport: { width: w, height: 900 } })).newPage();
   const hosts = new Set(), malas = [];
   p.on('request', r => { const u = new URL(r.url()); if (u.hostname !== '127.0.0.1') hosts.add(u.hostname); });
@@ -14,6 +14,6 @@ for (const w of [390, 768, 1440]) {
   await p.waitForLoadState('networkidle');
   const r = await p.evaluate(() => ({ sw: document.documentElement.scrollWidth, cw: document.documentElement.clientWidth, imgs: document.images.length, rotas: [...document.images].filter(i => !i.naturalWidth).map(i => i.getAttribute('src')), title: document.title, fondo: getComputedStyle(document.body).backgroundColor, fuente: getComputedStyle(document.querySelector('h1')).fontFamily, h1: document.querySelectorAll('h1').length, gutter: getComputedStyle(document.querySelector('.marco')).paddingLeft }));
   console.log(w, JSON.stringify(r), 'hosts', [...hosts], 'malas', malas);
-  if (w !== 768) await p.screenshot({ path: `${OUT}/tablero-${w}.jpg`, fullPage: true, type: 'jpeg', quality: 55 });
+  if ([390, 1440].includes(w)) await p.screenshot({ path: `${OUT}/tablero-${w}.jpg`, fullPage: true, type: 'jpeg', quality: 55 });
 }
 await b.close();

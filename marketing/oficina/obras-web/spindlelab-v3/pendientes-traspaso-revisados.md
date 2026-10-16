@@ -184,6 +184,15 @@ quedó fuera el 5-oct.
 > `spec-visual.md`). E9 queda descartado y su Tanda B no se construye; sus piezas reales se conservan.
 > Empezó **E10, referencia nueva**: 12 referentes en `e10/referentes/` para que Ramón marque. Las
 > decisiones R1 a R9 y las confirmaciones de E8 siguen abiertas y no dependen del aspecto.
+>
+> **Estado al 16-oct:** Ramón eligió The Ready como referencia principal y Gehl como segunda (15-oct),
+> y E10 paso 2 quedó hecho y aprobado por Javiera en la ronda 3 (`990b91d`, `e10/acta-paso-2.md`): el
+> lock de The Ready, dos direcciones (Taller y Pizarra limpia) en `tableros/e10-direcciones/` y la pauta
+> de 9 fotos con IA. Ramón dejó abiertos el logo y la regla del oro: el logo se rediseña después de
+> elegir dirección. Siguen las fotos, en una sesión nueva con su clave
+> (`marketing/encargos-otras-sesiones/encargo-e10-fotos-ia.md`), y después la compuerta 2, donde Ramón
+> elige dirección. R1 a R9 y las confirmaciones de E8 siguen abiertas. Registro: filas del 15 y 16-oct
+> en el §7 de `spec-visual.md`.
 
 No necesita decisión. Se hace en esta rama, se mide y queda anotado en el §7 de la spec.
 

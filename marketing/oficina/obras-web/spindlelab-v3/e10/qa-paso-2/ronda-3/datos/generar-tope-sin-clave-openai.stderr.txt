@@ -1,0 +1,10 @@
+No hay clave para generar. Falta la variable OPENAI_API_KEY (OpenAI, modelo gpt-image-1).
+
+Dónde se configura:
+  · Sesión en la nube (Claude Code): menú del entorno en la barra de título de la sesión,
+    «Editar», y ahí la variable de entorno (o el secreto) con ese nombre exacto. La toma solo
+    una sesión NUEVA abierta después del cambio; la que ya estaba abierta no la ve.
+  · Terminal local: export OPENAI_API_KEY=… en esa terminal
+    (o en ~/.zshrc) y correr el script desde ahí.
+  · La clave se crea en https://platform.openai.com/api-keys.
+Nunca la pegues en el chat ni la escribas en un archivo del repo.

@@ -6,6 +6,14 @@
 > el capítulo §10 (Instagram) y el kit `instagram-v3/` son propuesta, no regla. Las secciones
 > que describen el sitio (§01–§09) copian `driftime.css` y la spec v3, ya medidos.
 
+> ⚠️ **EN REVISIÓN DESDE EL 16-OCT: el wordmark y la regla del oro** (decisión de Ramón: *«no te
+> preocupes por el logo de la marca, es muy probable que lo tenga que cambiar por la nueva imagen
+> del sitio»*). El logo se rediseña **después** de que Ramón elija la dirección nueva del sitio
+> (E10, referencia The Ready). Hasta entonces, el wordmark (§02: Gabarito con el punto `#C9A227`),
+> la regla de un solo oro por vista (§06) y la medición de oro en las fotos (§07b) siguen escritos
+> como están para lo que ya existe, pero **no restringen** las direcciones nuevas ni sus fotos.
+> Registro: `spec` §7, filas del 15 y 16-oct.
+
 > Fuente de verdad del sistema de marca. **Esta versión copia el sistema del sitio v3**, que
 > es el lenguaje de driftime.com traducido a SpindleLab y ya construido en
 > `spindlelab-astro/src/styles/driftime.css` y las páginas `/v3/`. Se escribió para que
@@ -55,6 +63,8 @@ decisión aparte.
 | **driftime.com como la vara del sitio entero** | **Aprobado por Ramón** | 5-oct-2026 (`lock`, línea 3) |
 | Campos brasa y ciruela · radio único de 6 px | Ratificados al fijar driftime como vara: driftime tiene los cuatro campos y un radio de 6 px (`lock` §3-4); la `spec` los da por regla (§1 y §7, 6-oct) | 5-oct-2026 |
 | **Instagram copia el sistema del sitio** (las siete decisiones de §10) | Fijadas el 7-oct a partir del pedido de Ramón; él las ve en el kit antes de la primera publicación | 7-oct-2026 |
+| **Personas generadas como ambiente** en fotos con IA, nunca presentadas como equipo ni clientes (§07b) | **Aprobado por Ramón** | 15-oct-2026 |
+| Wordmark (§02) y regla de un oro por vista (§06) | **En revisión** por decisión de Ramón: el logo se rediseña después de elegir la dirección nueva del sitio | 16-oct-2026 |
 
 ---
 
@@ -369,12 +379,20 @@ procedimiento de `marketing/oficina/obras-web/spindlelab-v3/mockups/README.md`.
 - **Arriba a la izquierda** por regla; **abajo a la izquierda** en una captura plana de un sitio.
 - **Raigal va siempre con el rótulo de concepto, primero.** El rótulo va en la pieza misma, visible sin scroll y en cualquier captura de la primera pantalla. Cero cifras de resultado, cero testimonios (`marketing/portafolio/README.md`:23-37). Si el rótulo no se lee al tamaño en que se va a ver la pieza, Raigal no va en esa pieza: por eso no está en la imagen OG (`OG/README.md`).
 
-### Fotos nuevas de Unsplash *(regla nueva, decisión 6 del 7-oct)*
+### Fotos nuevas: de Unsplash o generadas con IA *(decisión 6 del 7-oct; personas e IA, 15-oct)*
 
 - **Sí:** objetos, materiales y lugares.
-- **Nunca:** personas presentadas como el equipo o como clientes. Nunca pantallas con datos inventados.
+- **Personas, solo como ambiente** *(regla nueva, Ramón, 15-oct)*: puede haber personas, también
+  generadas con IA (Gemini u OpenAI, con la clave de Ramón), si son gente anónima trabajando en su
+  propia empresa. **Nunca presentadas como el equipo de SpindleLab ni como clientes:** sin nombre,
+  pie de foto ni etiqueta de lugar o empresa; sin escena de asesoría (alguien que le explica algo a
+  otro con un informe o una pantalla); nadie posa ni mira a cámara; ninguna en la sección «Quién»,
+  en Nosotros, junto al retrato de Ramón, en Trabajo ni junto a una obra, una cifra, un testimonio o
+  un caso; el alt nunca dice «equipo», «cliente» ni «nuestro». Ninguna foto generada va al sitio sin
+  que Ramón la vea. Cómo se generan: `marketing/oficina/obras-web/spindlelab-v3/e10/fotos/pauta.md`.
+- **Nunca:** pantallas con datos inventados.
 - Las elige Ramón (`spec` §7, 6-oct: «Ramón está eligiendo en Unsplash»; `acta-qa-final.md`:51).
-- Se miden por oro antes de usarlas (abajo) y van como pieza, sin velo.
+- Se miden por oro antes de usarlas (abajo; desde el 16-oct, en las fotos de las direcciones nuevas el oro es solo un dato: ver la nota del comienzo) y van como pieza, sin velo.
 
 ### Oro dentro de una foto
 
@@ -660,6 +678,7 @@ El patrón aprobado de `marketing/brand/og-v3/`:
 
 ## Historial
 
+- **16 oct 2026 (sin cambio de versión):** dos decisiones de Ramón de E10, la referencia nueva del sitio. **§07b:** personas generadas con IA como ambiente, nunca como equipo ni clientes (15-oct); reemplaza la línea «Nunca: personas presentadas como el equipo o como clientes», que la nueva conserva como prohibición. **Arriba del manual y en la tabla de estado:** el wordmark y la regla de un oro por vista quedan en revisión (16-oct); el logo se rediseña después de elegir dirección. §02, §06 y la medición de oro de §07b no se reescriben hasta que exista el logo nuevo. Registro: `spec` §7, filas del 15 y 16-oct.
 - **v3.0 (7 oct 2026):** el manual copia el sistema del sitio v3 para que Instagram se vea como el sitio. **Por qué:** pedido de Ramón del 7-oct (*«como este sitio ya está casi listo, dame un manual de marca que sea una copia del sitio de referencia. quiero avanzar con publicaciones en instagram»*). La v2.0 se había escrito antes de construir el sitio y quedó atrás en tokens, forma, oro y movimiento; el sitio y la `spec` (con su historial medido) pasan a ser la fuente de cada valor.
   - **Cabecera:** las piezas de redes ahora las rige este manual (§10) y no `marketing/redes/README.md`; Verifica y Cumple tiene su línea propia; la rama de la v3 es `claude/magical-franklin-ckfki2`; la tabla de estado suma driftime como vara (5-oct) y las decisiones de Instagram (7-oct).
   - **§02 Wordmark:** el punto va en papel en el pie gigante y en el color del texto sobre brasa, petróleo o papel; la única placa es la del módulo de navegación; el mínimo de 120 px tiene la excepción medida del módulo; Gabarito es un archivo estático de peso 600; se anotan los dos trackings.

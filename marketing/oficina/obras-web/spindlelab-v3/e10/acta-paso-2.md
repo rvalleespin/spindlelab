@@ -7,6 +7,178 @@
 
 ---
 
+## Ronda 3 · 16-oct-2026 (la última interna)
+
+**Rama/commit auditado:** `claude/magical-franklin-ckfki2`. Empecé sobre `3bf0d41` con los arreglos sin commit; a las
+14:50 UTC, mientras empezaba, entró `990b91d` («arreglos de la ronda 2 cerrados») con esos mismos contenidos: la suma
+sha1 de los 211 archivos revisados (lock, `lock/`, `fotos/`, tablero, prototipos, `img/`, `espacios-foto.json`) es igual
+al empezar (14:50 UTC) y al terminar (15:09 UTC), y esas rutas quedan limpias contra `990b91d`. Lo auditado es `990b91d`. **Ronda previa:** la 2,
+aprobado con reparos.
+
+**Qué se pidió revisar:** Lucía dice haber cerrado los defectos 2 a 7 de la ronda 2 y lo que quedaba de la ronda 1
+(8 a 11); Bruno, el 1. Y la decisión de Ramón del 16-oct («no te preocupes por el logo de la marca, es muy probable que
+lo tenga que cambiar por la nueva imagen del sitio»): el wordmark y la regla de un oro por vista quedan abiertos, y lo
+que el tablero decía del punto dorado se cambia por una nota corta. **El logo y el oro no son criterio en esta ronda:
+no medí oro.**
+
+### Veredicto: APROBADO
+
+El tablero puede ir a Ramón para la compuerta 2, y la sesión con clave puede arrancar: `node generar.mjs --verificar`
+termina en código 0. **Los once cierres declarados están cerrados**, cada uno medido abajo con un script mío, y los tres
+que llevaban dos rondas abiertos (marcador, «empresa cliente» y marcas provisionales, peso de la letra) también. No
+queda ningún defecto vivo de una ronda anterior, así que no hay nada que escalar a Ramón.
+
+Queda **un defecto menor nuevo**, que no cambia lo que Ramón elige ni lo que se ve en las capturas del tablero (1440 y
+390): la flecha del chequeo de Taller se corta por el borde de la pantalla entre 1024 y 1258 px, escondida por el
+`overflow-x: clip` del `body`. Se cierra en `spec-visual.md` (o en `desvios.md`), no pide una ronda 4.
+
+### Fuentes y lo que faltaba
+
+Igual que en las rondas 1 y 2: no hay `brief-de-obra.md` ni `desvios.md` de E10. Criterios: la sección «Verificación»
+del plan aprobado, los defectos de las rondas 1 y 2, el lock (§13 sobre todo) y los puntos del encargo de esta ronda.
+
+### Cómo se verificó
+
+- Chromium 141 con el Playwright de `spindlelab-astro`. `npm run build` corrido hoy (27 páginas; `git diff
+  7ac6534 -- spindlelab-astro` vacío y `git status` limpio en esa carpeta). `proto/` en 127.0.0.1:8780, `dist/` en
+  8781 y el tablero en 8792 envuelto como lo publica Artifact (`servir-tablero.py`).
+- Reutilicé mis herramientas de la ronda 2 y escribí otras en `qa-paso-2/ronda-3/herramientas/`, distintas de las de
+  Lucía: el desborde se mide **también con el clip del `body` apagado** (la ronda 2 encontró que el clip escondía
+  titulares), en 14 anchos y no solo en los cinco pedidos; las marcas de revisión (`::after`) se miden contra la
+  pantalla por los dos lados; los espacios de foto contra los **dos** archivos (`espacios-foto.json` y `pauta.json`).
+- `generar.mjs` siempre con un precargado que registra y bloquea la red (`sinred.mjs`), y los casos con clave en una
+  copia aislada en el scratchpad, con una API falsa que responde 400 repitiendo la clave o 200 con un PNG.
+
+### Mediciones
+
+| Qué | Resultado |
+|---|---|
+| Texto visible vs `dist/v3`, JavaScript encendido | 12/12 vistas (3 páginas × 2 direcciones × 1440 y 390): secuencia 0,9975 a 0,9987; la única diferencia es «· Cookies» del pie, que crea el aviso de cookies del build y el tablero declara ✓ (`datos/texto-comparacion.txt`) |
+| Desborde con el clip puesto | 84 vistas (6 páginas × 14 anchos, de 360 a 1920, incluidos 360, 390, 768, 1024 y 1440): `scrollWidth == clientWidth` en las 84 ✓ |
+| Texto fuera de su caja | 0 en las 84 vistas (rango de cada nodo de texto contra la caja de su elemento y contra la pantalla) ✓ |
+| Desborde con el clip apagado | 82 de 84 iguales a la pantalla. Las 2 que no: home de Taller a 1024 (1163) y a 1180 (1259), y la causa es solo la flecha del chequeo (bisección: `.t-instr::after`). Defecto 1 |
+| Escala display (defecto 2 y el 360 del 11) | h1 en px, de 360 a 1440: hero 56,5 / 62 / 86,9 / 138 (Taller) y 58,4 / 64 / 86,9 / 138 (Pizarra); «Acompañamiento mensual» 38 / 41,7 / 83,3 / 106,5 / 125,5 / 138; servicios de Taller a 1024: 72,7. Calza con la tabla del lock §13. A 768, Pizarra Acompañamiento: h1 de 59,6 px en una línea de 526 px dentro de 726 de caja; a 1024, «Desarrollo» llega a 412 con la caja en 416 y ya no queda bajo la foto ✓ (`capturas/pizarra-acomp-768-h1.png`, `taller-home-1024-desarrollo.png`, `taller-acomp-1024-h1.png`) |
+| Chequeo a 360 y 390 (defecto 6) | En las dos direcciones, campo y botón apilados como en el build: 278 px útiles a 360 y 308 a 390 (build: 280 y 310). «constructoraandesur.cl» escrito de verdad: no se corre dentro del campo (`scrollWidth == clientWidth` del input). Foco: el formulario muestra 2 px con el campo enfocado; Tab al botón, 2 px ciruela. Desde 768, en fila (468 y 455 px útiles) ✓ (`capturas/chequeo-*-390.png`, `-360.png`) |
+| Hero y formulario | Orden chequeo → titular → obras: build 142 / 340 / 580 a 1440 y 126 / 448 / 542 a 390; Taller 151 / 453 / 771 y 202 / 560 / 715; Pizarra 151 / 502 / 809 y 140 / 529 / 681. Son las cifras que da el tablero. Los 6 nodos del formulario, idénticos al build en las dos ✓ |
+| Cinta | 30,0 a 30,3 px/s · Enter en el botón la detiene (0,0 px/s) y `aria-pressed` pasa a `true` · 44×44 · con `reducedMotion: reduce` parte quieta (0,0 px/s, `aria-pressed=true`) y solo se mueve si se pide · fuera de pantalla, pausada · `aria-hidden`, fuera de todo encabezado. Taller en home y Acompañamiento; Pizarra solo en la home ✓ |
+| Contraste | 3.844 nodos de texto en 30 vistas (6 páginas × 360, 390, 768, 1024 y 1440), fondos compuestos y el marcador como fondo: 0 fallas, mínimo 6,24:1 (el punto del wordmark sobre ciruela). `npm run verificar --base` sobre los seis prototipos a 390: 0 hallazgos de contraste, desborde, `h1`, `alt` ni JSON-LD (marca el comentario de cabecera del prototipo y los enlaces a `/v3/`, que dan 404 porque el prototipo se sirve solo: esperados) ✓ |
+| Espacios de foto, al píxel | Los 18 espacios (9 a 1440 con dpr 1, 9 a 390 con dpr 2) calzan con `espacios-foto.json` **y** con `pauta.json` (`css_1440`, `css_390`), y el rótulo es el mismo en el render, en `espacios-foto.json` y en la pauta. A 360, 768 y 1024, la proporción del render es la declarada y el espacio queda dentro de la pantalla ✓ (`datos/fotos.txt`) |
+| Lugar de cada foto contra la pauta (defecto 1) | F1 junto a «Tu sitio está escrito para personas»; F2 en la banda del resaltador junto a «Visibilidad», su texto y «Desde $400.000 + IVA»; F8 de Taller en la banda, junto a «Correr el chequeo» y «Pedir el diagnóstico»; F6 junto a «Una auditoría te dice qué hacer…». Es lo que dice la «sección» de cada ficha ✓ (`datos/fotos-lugar.txt`) |
+| Pauta sin el tablero viejo (defecto 1) | En `pauta.json`, fuera de historial y pruebas: ya no hay óvalo, garabato, mancha ni los hex de The Ready; lima y lavanda quedan solo como color de nota adhesiva, dicho como tal; el oro, «en pausa con el logo» en las reglas, el estilo y la revisión ✓ |
+| `generar.mjs --verificar` | **Código 0.** 9 espacios, 9 fichas, «ningún vacío»; 5 avisos de cobertura de Gemini que no bloquean (F1 a 390: 1,97×; F5 y F7: 0,93× a 1440 y 1,57× a 390). 0 intentos de red ✓ |
+| `generar.mjs` sin clave | Sin tope: código 0, lista la pauta, 0 red, no crea `salida/`. Con `--tope=2`: **código 2**, «No hay clave para generar. Falta la variable GEMINI_API_KEY… o OPENAI_API_KEY», dónde se configura en la nube y en local, «nunca la pegues en el chat»; con `--proveedor=openai` nombra solo `OPENAI_API_KEY`. 0 red y sin `salida/` en los dos ✓ |
+| `generar.mjs` con clave falsa | `--ver`: 0 red, la clave no aparece. Contra un 400 que repite la clave: va en cabecera (la URL no la tiene), sale «[clave oculta]», la corrida se corta (código 3). Contra un 200 con PNG: guarda `F8-taller-1.png` y `F8-pizarra-1.png`, la clave no está en `registro.json` ni en la salida, y el oro sale como «(dato)» ✓ |
+| Tablero como Artifact | Sin `doctype`, `html`, `head` ni `body` (0) · `<title>` «Tablero direcciones E10» (3 palabras) · `claude:viewport-fit-sides` con `max(16px, env(safe-area-inset-left/right, 0px))`, gutter medido 16 px · 10 tokens en `:root` · `body` con fondo papel · única URL en el código: fonts.googleapis.com (pide fonts.googleapis.com y fonts.gstatic.com); 0 `<script>`, 0 `<link>` ✓ |
+| Imágenes del tablero | 49 (todas distintas), 0 que falten en disco, 0 rotas y 0 respuestas ≥ 400 en el render; la mayor 431 KB (`taller-acompanamiento-mensual-1440-t1.jpg`), total 10,45 MB; 0 sin `alt`, 0 sin `width`/`height` ✓ |
+| Tablero en pantalla | 360, 390, 768, 1024 y 1440 con los pliegues abiertos: `scrollWidth == clientWidth`, 1 `h1`, 0 rayas en el texto ✓ |
+| ¿Las capturas del tablero son el render de hoy? | Las 12 vistas re-renderizadas (como `renderizar.mjs`: página completa, movimiento reducido, 1440 a dpr 1 y 390 a dpr 2) contra sus tramos `img/*-t<n>.jpg` unidos: mismo alto y 0 filas con diferencia en las 12 ✓. Las de logo tapado y colores son de las 14:36, después del último cambio de CSS (14:34) |
+| El punto dorado en el tablero | «Dónde va el punto dorado» salió. Queda la nota «El logo, después» («no es parte de lo que eliges… mientras tanto no rige la regla de un solo oro por vista»), la fila §06/§02 de la tabla del manual dice «Queda abierto» y la lista del paso 2 dice «El logo no se decide aquí» ✓ |
+| Marcador (defecto 3) | 17 marcadores (Taller 4 / 2 / 3, Pizarra 4 / 2 / 2): 15 cierran su oración y los 2 restantes son la excepción escrita en §13 («se corta» del hero). «cuál es cuál en cada una.» cierra la frase. A la vista: máximo 1, salvo Taller Trabajo a 390 con 2 (techo de Taller: 2) ✓ |
+| Personas y marcas (defecto 4) | 0 «empresa cliente» en tablero, `espacios-foto.json`, pauta, lock y prototipos (el «cliente» de F2 es el que le escribe a la ferretería). El tablero dice que las marcas «son provisionales… las definitivas las traza Bruno a mano» ✓ |
+| Filete del borde (defecto 5) | Taller a 1440: 2 en la home (el hilo del hero y el de «Desarrollo»), 1 en Acompañamiento («Elige la cobertura»), 0 en Trabajo; Pizarra 0. Es el techo y el rol del lock §13, y el tablero lo dice como de The Ready ✓ |
+| Peso (defectos 7 y 10) | El lock §11 trae la prueba (asta y tinta de 500 a 600, tabla y `lock/peso-instrument-saans.png`) y elige 540. En la página: `h1` computado a 540, y la variable lo dibuja de verdad («Acompañamiento» a 200 px mide 1673,2 / 1680,7 / 1692,0 a 500 / 540 / 600) ✓ |
+| Techos del lock §13 | Taller: 1 banda del resaltador, 1 marca de revisión y hasta 1 sello por página; Pizarra: 0, 0 y 0 ✓ |
+| Foco y semántica | Tab: el mismo orden que el build en las 6 páginas (salvo los 4 controles del aviso de cookies del build y la pausa de la cinta); todos con contorno visible, el campo por `:focus-within`. 1 `main`, 1 `h1`, sin saltos de encabezado, `noindex`, hero `eager`/`high`, 0 imágenes sin dimensiones, 0 fotos viejas de `assets/img/d/`, 0 pedidos fuera de 127.0.0.1 ✓ |
+| ¿Siguen siendo distintas? | A 1440, columna dominante: Taller x = 75 (68 % de los bloques en home y Trabajo), Pizarra x = 525 (53 a 60 %). Piezas a sangre: Taller 5 / 2 / 3, Pizarra 1 / 1 / 0 ✓ |
+| Lock en vivo | No lo repetí: §1 a §9 (lo medido de The Ready) no cambiaron desde la ronda 2, salvo una fila nueva en §5 (palabras por marcador), que calza con `medicion-the-ready.json` (titulares de 2 a 5 palabras; cuerpo, de 4 a 11). Seis valores en vivo ya calzaron en las rondas 1 y 2 |
+
+### Defectos
+
+| # | Severidad | Dueño | Dónde | Qué está mal | Contra qué | Cómo se reproduce / cómo se cierra |
+|---|---|---|---|---|---|---|
+| 1 | menor | Lucía | Home de Taller, la flecha del chequeo (`.t-instr::after`, `taller.css:48`) | Desde 1024 rige la composición de escritorio, y la flecha va a `left: calc(100% + 18px)`, 196 px de ancho, a la derecha de un chequeo que ya llena el ancho útil. Entre 1024 y 1258 px cae fuera de la pantalla y el `overflow-x: clip` del `body` la corta: de 1024 a 1119 se ve el 29 % (x 967 → 1163 con la pantalla en 1024: queda la punta), a 1180 el 60 %, y entera desde 1259. Con el clip apagado el documento mide 1163 (a 1024) y 1259 (a 1180). `anchos.mjs` no lo ve porque mide con el clip puesto y no mira los `::after` | Lock §13 («nunca se esconde un desborde con `overflow`»; composición de escritorio desde 1024); «Lo comprobado» del tablero | `herramientas/marcas3.mjs` y `desborde3.mjs`; `capturas/flecha-taller-1024.png`, `flecha-taller-1180.png`, `hero-taller-1024.png`. **Cierre (en la spec, no en otra ronda):** la posición de la flecha para 1024 a 1258 (dentro del margen o como en una columna) y la medición de `anchos.mjs` también con el clip apagado |
+
+Sin severidad, para arreglar de pasada:
+- El lock §13 dice «9 marcadores por dirección, 8 cierran su oración»; Pizarra tiene 8 (4 / 2 / 2) y 7 los cierran. La
+  regla se cumple; la cifra no.
+- `tablero.html`, comentario CSS de las líneas 6 a 9: todavía dice «lo que también decides (manual, colores y punto
+  dorado)». No se ve, pero quedó viejo.
+
+### Lo de las rondas 1 y 2, uno por uno
+
+| Defecto | Estado hoy |
+|---|---|
+| R2-1 · la pauta no calzaba con el tablero (Bruno) | **Cerrado.** `--verificar` en código 0; F2 en 443×554; F1, F2 y F8 dicen dónde van hoy y calzan con el render; paleta del estilo propia; sin óvalo, garabato ni mancha |
+| R2-2 · escala display entre 390 y 1440 (y 360) | **Cerrado.** Regla para todo ancho y dos composiciones (lock §13); 84 vistas sin texto fuera de su caja ni documento más ancho, con clip y sin clip para los titulares. Dejó el defecto 1 de esta ronda, que es otro (la flecha, no la letra) |
+| R2-3 / R1-8 · marcador fuera de la regla | **Cerrado.** Excepción escrita con su porqué; «cuál es cuál en cada una.» |
+| R2-4 / R1-9 (a y d) · «empresa cliente» y marcas provisionales | **Cerrado** |
+| R2-5 · filete del borde sin techo | **Cerrado.** Rol y techo en §13; medido 2 / 1 / 0 |
+| R2-6 · chequeo en fila a 390 | **Cerrado.** Apilado hasta 767 px, como el build |
+| R2-7 / R1-10 · peso de la letra | **Cerrado.** Prueba medida en §11; 540 aplicado |
+| R1-11 · 360 px | **Cerrado** dentro del R2-2 |
+| Observación de la ronda 2 · el punto dorado en el tablero | **Hecho.** Nota corta «El logo, después»; las opciones A y B salieron |
+
+### Detector anti-slop (antislop-web §E + refero)
+
+```
+COPY        ✓ sin verbos de folleto  ✓ sin relleno de apertura  ✓ sin tricolon  ✓ sin «no solo X sino Y»
+            ✓ sin pregunta retórica  ✓ sin Title Case  ✓ tú en todo el tablero  ✓ 0 rayas
+            ✓ cero prueba social      ✓ «empresa cliente» corregido
+            · el copy de las páginas es el de E8 (igual al build, medido); no se reauditó
+ESTRUCTURA  ✓ servicios con peso distinto en las dos  ✓ tres planes reales  ✓ sin «¿por qué elegirnos?»
+            ✓ FAQ de E8  ✓ formulario de un campo  ✓ hero no es 100vh centrado  ✓ orden de secciones = build
+CÓDIGO      ✓ 1 main, 1 h1, sin saltos, landmarks  ✓ valores del lock, no por defecto (peso 540 medido)
+            ✓ sin degradé ni glass  ✓ 0 emoji  ✓ alt reales; marcas y rótulos aparte
+            ✓ foco visible y en el orden del build  ✓ contraste AA en 3.844 nodos  ✓ label del campo
+            ✓ imágenes dimensionadas, hero eager/high, font-display swap
+            · JSON-LD, canonical y OG heredados del build; prototipos con noindex. Índice, sitemap y ?v=N: no aplican
+            ✗ la flecha del chequeo, cortada por el clip entre 1024 y 1258 (defecto 1)
+VISUAL      ✓ acento no índigo  ✓ sin tarjetas de adorno  ✓ sin franja lateral  ✓ modo claro  ✓ sin serif editorial
+            ✓ palabra resaltada con regla, techo y su única excepción escrita
+            ✓ la referencia fuerte no se promedió: Taller conserva cinta, marcador, escala y bandas; Pizarra, la columna
+              y la foto a sangre de Gehl sin diluir la letra
+            ✓ roles de token  ✓ espacios de foto honestos (proporción exacta, rótulo, dirección)  ✓ MAYÚSCULAS con interletra
+            ✓ filete del borde con rol y techo
+```
+
+### Pruebas de fuego
+
+- **Logo tapado.** Igual que en la ronda 2: Taller es inconfundible en la primera pantalla y se lee de la familia de
+  The Ready por lo que Ramón eligió (letra, resaltador y cinta), no como The Ready. Pizarra sostiene el hero; «Lo que
+  incluye» sigue siendo su pantalla más débil, y el tablero lo dice.
+- **Rubro cambiado.** Taller calzaría con otra agencia «con juego», pero el chequeo arriba, la flecha al campo y el visto
+  junto a los robots son de este negocio. Pizarra, de los planes para abajo, calza con cualquier suscripción.
+- **Leído en voz alta.** «Estás pagando para que lleguen a tu sitio. Ahí se corta el circuito.» Suena a persona. El
+  tablero también: «El logo no se decide aquí: se rediseña después, como dijiste.»
+
+### Lo que está bien (no perderlo en la spec)
+
+1. **Los arreglos se hicieron en el sistema y se midieron:** la regla de escala es una cuenta (escalón contra caja ÷
+   palabra) que se puede escribir en la spec tal cual, y da las mismas cifras en el lock, en el render y en mi barrido.
+2. **El peso se decidió con una prueba, no a ojo:** asta y tinta contra Saans, con lámina. Es el estándar para la spec.
+3. **La pauta y el tablero vuelven a ser un solo contrato:** 18 espacios al píxel en los tres lugares, el mismo rótulo,
+   y `generar.mjs` lo exige antes de gastar.
+4. **`generar.mjs` falla limpio:** sin clave no toca la red ni crea carpetas, nombra la variable exacta y dónde se pone;
+   con una clave, no la deja salir por ningún lado.
+5. **El tablero respeta la decisión de Ramón sin borrar la historia:** el logo queda como nota, y el lock §12 guarda lo
+   medido del amarillo y el oro para cuando llegue el logo nuevo.
+
+### Observación para la spec y la sesión con clave (sin severidad)
+
+La pauta mide la cobertura a 1440 y a 390, que es lo que pidió el plan. En la composición de una columna, de 600 a
+1023 px, F1, F5 y F7 van a todo el ancho (768×960 css a 768): un archivo de Gemini en 4:5 (768×960) cubre 1× a 768 y
+no alcanza en pantallas de densidad 2. No afecta esta compuerta; la spec tiene que decir de qué tamaño se sirven las
+fotos en tableta, y Bruno, si eso cambia el proveedor o el escalado.
+
+### Evidencia
+
+- `e10/qa-paso-2/ronda-3/capturas/`: heroes de las dos direcciones a 1024 y 1440 (Taller también a 1180 y 1280), la
+  flecha de cerca a 1024, 1180 y 1280 (defecto 1), el chequeo a 360 y 390 con el dominio largo escrito, los casos de la
+  ronda 2 a 768 y 1024 ya corregidos, y el comienzo del tablero a 390 y 1440. Las capturas completas de las páginas no
+  se duplican: las del tablero (`tableros/e10-direcciones/img/`) son el render de hoy, medido.
+- `e10/qa-paso-2/ronda-3/herramientas/`: nuevas `desborde3.mjs` (14 anchos, con y sin clip, texto fuera de caja),
+  `bisecar3.mjs`, `sinclip.mjs`, `marcas3.mjs`, `hero3.mjs`, `chequeo3.mjs`, `fotos3.mjs`, `fotos-lugar.mjs`,
+  `marcador3.mjs`, `filetes3b.mjs`, `peso3.mjs`, `foco3.mjs` y `frescas.mjs`; y las de la ronda 2 que reutilicé
+  (`texto.mjs`, `texto-cmp.py`, `cinta.mjs`, `contraste.mjs` con anchos por variable, `techos.mjs`, `hero.mjs`,
+  `chequeo.mjs`, `codigo.mjs`, `jerarquia.mjs`, `foco.mjs`, `distintas.mjs`, `tableta.mjs`, `tablero.mjs`, `cap.mjs`,
+  `servir-tablero.py`, `sinred.mjs`, `api400.mjs` y `api200.mjs`). Esperan `proto/` en 127.0.0.1:8780, `dist/` en
+  8781 y el tablero envuelto en 8792.
+- `e10/qa-paso-2/ronda-3/datos/`: el texto con JavaScript encendido y su comparación, el desborde de las 84 vistas
+  (`desborde.json`), contraste, cinta, chequeo, espacios de foto, marcador, filetes, foco, el contrato del tablero y
+  las salidas de `generar.mjs` (verificar, sin clave, 400 y 200).
+
+---
+
 ## Ronda 2 · 16-oct-2026
 
 **Rama/commit auditado:** `claude/magical-franklin-ckfki2`. Leí el árbol en `fe965d2` con cambios sin commit

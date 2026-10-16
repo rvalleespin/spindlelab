@@ -1,0 +1,19 @@
+Pauta contra el tablero (tableros/e10-direcciones/espacios-foto.json):
+  F1-taller   ✓ calza              Home · 420×724 a 1440 · 390×488 a 390 · Mesa de notas en la oficina de una bodega
+  F2-taller   ✓ calza              Home · 443×554 a 1440 · 280×351 a 390 · El mensaje que llega al mesón
+  F3-taller   ✓ calza              Home · 617×463 a 1440 · 390×293 a 390 · Planilla de cuatro columnas en el entrepiso
+  F4-taller   ✓ calza              Home · 617×411 a 1440 · 390×260 a 390 · Un mensaje en la maestranza
+  F5-pizarra  ✓ calza              Home · 1440×617 a 1440 · 390×488 a 390 · Una persona al fondo de una mesa larga, con la cordillera
+  F6-taller   ✓ calza              Acompañamiento mensual · 655×436 a 1440 · 390×260 a 390 · Hojas en fila en la pared de una sala del centro
+  F7-pizarra  ✓ calza              Acompañamiento mensual · 1440×617 a 1440 · 390×488 a 390 · La mesa después de la reunión
+  F8-taller   ✓ calza              Trabajo · 508×381 a 1440 · 342×257 a 390 · Bocetos de estructura en papel, de cerca
+  F8-pizarra  ✓ calza              Trabajo · 844×633 a 1440 · 342×257 a 390 · Bocetos de estructura en papel, sobre una mesa con aire
+
+Avisos (no bloquean): 5
+  · F1-taller con gemini: a 390 el recorte da 768×960 para 390×488 css (1,97×; el tablero pide 2×).
+  · F5-pizarra con gemini: a 1440 el recorte da 1344×576 para 1440×617 css (0,93×; el tablero pide 1×).
+  · F5-pizarra con gemini: a 390 el recorte da 614×768 para 390×488 css (1,57×; el tablero pide 2×).
+  · F7-pizarra con gemini: a 1440 el recorte da 1344×576 para 1440×617 css (0,93×; el tablero pide 1×).
+  · F7-pizarra con gemini: a 390 el recorte da 614×768 para 390×488 css (1,57×; el tablero pide 2×).
+
+La pauta calza con el tablero: 9 espacios, 9 fichas, ningún vacío en la tabla.
