@@ -2,7 +2,7 @@
 
 **Canal:** perfil personal de Ramón · **Voz:** singular · video nativo, vertical 9:16
 **Estado:** ✅ **PUBLICADO en Instagram el 16-oct-2026** por Ramón, cuenta de empresa
-`@spindlelab.cl`. ⬜ **Falta el link para registrarlo en el inventario** (ver abajo).
+`@spindlelab.cl`. ✅ **Registrado en el inventario** con su enlace: https://www.instagram.com/reel/DekpyOSRqtD/
 ⬜ La versión de LinkedIn no se ha publicado.
 **Guion:** `practica-camara/GUION-APROBADO-ley-sitio-viejo.md` · **Overlays:**
 `2026-10-octubre-verifica/06-overlays-reel-ramon/`

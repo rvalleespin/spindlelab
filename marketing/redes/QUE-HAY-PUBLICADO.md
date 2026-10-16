@@ -65,6 +65,24 @@ primera lectura con sentido es **mañana**.
 
 ## Instagram · cuenta `spindlelab.cl` (19 seguidores)
 
+### Publicado
+
+| Publicado | Pieza | Enlace |
+|---|---|---|
+| **✅ 16-oct-2026** | **Reel cara a cámara de Ramón** — "Tu sitio lleva años sin que nadie lo revise". Primer video con su cara en toda la operación. Una toma, interior, 50 s. Overlays en el **sistema visual de Verifica** (Archivo Black, acento lima), no en el de SpindleLab. Caption en **plural**, con la ley explicada antes de la conclusión y sin ninguna fecha de vigencia | [instagram.com/reel/DekpyOSRqtD](https://www.instagram.com/reel/DekpyOSRqtD/) |
+| **oct** | Reel "¿Estás seguro?" — campaña de Verifica | [instagram.com/reel/Dd6dAemM6E2](https://www.instagram.com/reel/Dd6dAemM6E2/) |
+| **oct** | Carrusel "Las 12 cosas" — campaña de Verifica | [instagram.com/p/Dd3uPldESqj](https://www.instagram.com/p/Dd3uPldESqj/) |
+
+**Fuentes en el repo:** el reel del 16-oct en
+`marketing/redes/2026-10-octubre-linkedin/20-reel-sitio-sin-revisar/publicar.md` (guion, caption,
+chequeo de duplicación y las cuatro versiones rechazadas); sus overlays en
+`marketing/redes/2026-10-octubre-verifica/06-overlays-reel-ramon/`.
+
+⚠️ **Los enlaces van limpios, sin los parámetros de seguimiento** (`utm_source`, `psln`, `srtk`)
+que Instagram agrega al copiar. Esos identifican la sesión de quien copió el link y no tienen nada
+que hacer en un archivo del repo.
+
+
 **Capturado del canal el 25-sep-2026.** ⚠️ **Verifica y Cumple pasó a tener línea editorial
 propia ese día** (decisión de Ramón): su campaña NO usa el sistema oscuro de SpindleLab. Ver
 `marketing/encargos-otras-sesiones/verifica-campana-linea-propia.md`. Esta sección existe porque el repo estaba equivocado
@@ -181,18 +199,3 @@ verificable y sin nada que vender. Vale la pena mirarlo antes de decidir el pró
   mano y abortar por ese día. **No reintentar la automatización sin que Ramón ajuste los permisos
   de la sesión primero.** Publicar en el propio perfil (posts y primer comentario propio) no tiene
   este problema — se hizo sin bloqueos el mismo día.
-
----
-
-## ⬜ Pendiente de registrar con su link (16-oct-2026)
-
-| Publicado | Pieza | Qué falta |
-|---|---|---|
-| **16-oct** | **Reel cara a cámara de Ramón**, "Tu sitio lleva años sin que nadie lo revise" · Instagram, cuenta de empresa `@spindlelab.cl` · overlays en el sistema de Verifica · caption en plural | **El link del Reel.** Ramón confirmó que lo subió; esta sesión no puede verificarlo desde acá. Sin el link no entra a la tabla de arriba, porque el protocolo de la casa pide evidencia verificable antes de registrar estado externo como hecho |
-
-**Por qué no se da por registrado sin el link:** la regla existe por el incidente del 17-20 jul (dos
-sesiones anotaron estados contradictorios sin verificar) y **hoy volvió a costar caro**: esta sesión
-trabajó medio día con un inventario viejo, concluyó que había seis días hábiles de silencio, y era
-falso. El link es lo que convierte "lo subí" en registro.
-
-**Fuente de la pieza:** `marketing/redes/2026-10-octubre-linkedin/20-reel-sitio-sin-revisar/publicar.md`
