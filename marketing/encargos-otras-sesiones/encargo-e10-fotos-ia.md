@@ -1,5 +1,11 @@
 # Encargo · E10: generar las fotos con IA y ponerlas en el tablero de direcciones
 
+> **EN PAUSA desde el 16-oct-2026, 14:00 (Chile). No generes nada.** Ramón cambió de dirección
+> el 16-oct (obra E12: estudio de diseño y tecnología, referencia Koto). Las direcciones de E10
+> («Taller» y «Pizarra limpia») quedan como historia, y estas fotos eran para ellas. Si una sesión
+> abre este encargo, no gasta la clave: lee `marketing/oficina/obras-web/spindlelab-v3/e12/insumos-ramon-16oct.md`
+> y espera un encargo nuevo de E12.
+
 - **Para:** una sesión nueva de Claude Code en la nube, abierta en la rama
   `claude/magical-franklin-ckfki2` **después** de que Ramón agregue su clave de API al entorno.
 - **De:** Mauro (estudio web, `/web-encuadre`), 16-oct-2026.
