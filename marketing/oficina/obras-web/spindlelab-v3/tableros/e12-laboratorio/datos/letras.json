@@ -1,0 +1,3468 @@
+{
+ "fecha": "2026-10-16",
+ "medidoPor": "Lucía (dirección de arte), E12",
+ "metodo": "Instancia ajustada por candidata: el ancho (eje wdth) hasta que «Un estudio de diseño y tecnología» mida lo mismo que en la referencia a igual altura de mayúscula, y el peso (eje wght) hasta que el asta de la H (a 1/4 de la mayúscula) y de la n (a 1/2 de la x) sume lo mismo, a 400 px de mayúscula. En esa instancia: forma = IoU medio de las máscaras de cada letra a 160 px de mayúscula, alineadas por la línea de base y centradas por su caja de tinta (1 = idéntica); clave = a e g t y r R G Q; anchoFrase y asta relativos a la referencia (1 = igual); espacio en em. Render de FreeType con raqm (Pillow), sin hinting de pantalla. Las letras de Koto se bajaron a un temporal y se borraron.",
+ "fraseDePrueba": "Un estudio de diseño y tecnología",
+ "fraseMono": "SANTIAGO 14:05 UTC-3 (6)",
+ "referencias": {
+  "display": {
+   "info": {
+    "familia": "GT Kotoheim Condensed Light",
+    "nombreCompleto": "GT Kotoheim Condensed Light",
+    "version": "Version 3.000;Glyphs 3.4 (3416)",
+    "diseñador": "Noel Leu",
+    "licenciaUrl": null,
+    "ejes": {},
+    "usWeightClass": 300
+   },
+   "instancia": {},
+   "xSobreCap": 0.65,
+   "espacioEm": 0.205,
+   "astaPx400": [
+    37,
+    36
+   ],
+   "castellano": true
+  },
+  "cuerpo": {
+   "info": {
+    "familia": "GT Kotoheim VF",
+    "nombreCompleto": "GT Kotoheim VF",
+    "version": "Version 3.000;Glyphs 3.4 (3416)",
+    "diseñador": "Noel Leu",
+    "licenciaUrl": null,
+    "ejes": {
+     "wdth": [
+      75.0,
+      75.0,
+      100.0
+     ],
+     "wght": [
+      100.0,
+      100.0,
+      1000.0
+     ],
+     "slnt": [
+      0.0,
+      0.0,
+      6.0
+     ]
+    },
+    "usWeightClass": 250
+   },
+   "instancia": {
+    "wdth": 100,
+    "wght": 350
+   },
+   "xSobreCap": 0.654,
+   "espacioEm": 0.254,
+   "astaPx400": [
+    46,
+    43
+   ],
+   "castellano": true
+  },
+  "mono": {
+   "info": {
+    "familia": "GT Kotoheim Mono Medium VF",
+    "nombreCompleto": "GT Kotoheim Mono Medium VF",
+    "version": "Version 1.000;Glyphs 3.4 (3414)",
+    "diseñador": "Noel Leu",
+    "licenciaUrl": null,
+    "ejes": {
+     "wdth": [
+      75.0,
+      100.0,
+      125.0
+     ],
+     "slnt": [
+      0.0,
+      0.0,
+      6.0
+     ]
+    },
+    "usWeightClass": 500
+   },
+   "instancia": {
+    "wdth": 100
+   },
+   "xSobreCap": 0.714,
+   "espacioEm": 0.63,
+   "astaPx400": [
+    66,
+    62
+   ],
+   "castellano": true
+  }
+ },
+ "display": {
+  "Archivo": {
+   "archivo": "https://fonts.gstatic.com/s/archivo/v25/k3kQo8UDI-1M0wlSfdnoLg.woff2",
+   "info": {
+    "familia": "Archivo SemiBold",
+    "nombreCompleto": "Archivo SemiBold",
+    "version": "Version 2.001",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "http://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      100.0,
+      600.0,
+      900.0
+     ],
+     "wdth": [
+      62.0,
+      100.0,
+      125.0
+     ]
+    },
+    "usWeightClass": 600
+   },
+   "instancia": {
+    "wght": 238.0,
+    "wdth": 83.0
+   },
+   "castellano": true,
+   "forma": 0.51,
+   "clave": 0.366,
+   "anchoFrase": 1.003,
+   "xSobreCap": 0.767,
+   "asta": 1.0,
+   "espacioEm": 0.179,
+   "peores": [
+    [
+     "y",
+     0.114
+    ],
+    [
+     "a",
+     0.195
+    ],
+    [
+     "K",
+     0.225
+    ],
+    [
+     "R",
+     0.228
+    ],
+    [
+     "g",
+     0.265
+    ]
+   ]
+  },
+  "Mona Sans": {
+   "archivo": "https://fonts.gstatic.com/s/monasans/v4/o-0IIpQmx24alC5A4PNr5TRA.woff2",
+   "info": {
+    "familia": "Mona Sans ExtraLight",
+    "nombreCompleto": "Mona Sans ExtraLight",
+    "version": "Version 2.000",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://openfontlicense.org",
+    "ejes": {
+     "wdth": [
+      75.0,
+      100.0,
+      125.0
+     ],
+     "wght": [
+      200.0,
+      200.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 200
+   },
+   "instancia": {
+    "wght": 343.0,
+    "wdth": 89.0
+   },
+   "castellano": true,
+   "forma": 0.608,
+   "clave": 0.49,
+   "anchoFrase": 1.003,
+   "xSobreCap": 0.716,
+   "asta": 1.0,
+   "espacioEm": 0.227,
+   "peores": [
+    [
+     "J",
+     0.085
+    ],
+    [
+     "y",
+     0.111
+    ],
+    [
+     "m",
+     0.365
+    ],
+    [
+     "g",
+     0.373
+    ],
+    [
+     "R",
+     0.376
+    ]
+   ]
+  },
+  "Encode Sans": {
+   "archivo": "https://fonts.gstatic.com/s/encodesans/v23/LDI2apOFNxEwR-Bd1O9uYPOreec.woff2",
+   "info": {
+    "familia": "Encode Sans Condensed Thin",
+    "nombreCompleto": "Encode Sans Condensed Thin",
+    "version": "Version 3.002",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      100.0,
+      100.0,
+      900.0
+     ],
+     "wdth": [
+      75.0,
+      75.0,
+      125.0
+     ]
+    },
+    "usWeightClass": 100
+   },
+   "instancia": {
+    "wght": 351.0,
+    "wdth": 84.0
+   },
+   "castellano": true,
+   "forma": 0.499,
+   "clave": 0.431,
+   "anchoFrase": 1.005,
+   "xSobreCap": 0.731,
+   "asta": 1.0,
+   "espacioEm": 0.222,
+   "peores": [
+    [
+     "J",
+     0.037
+    ],
+    [
+     "y",
+     0.184
+    ],
+    [
+     "W",
+     0.211
+    ],
+    [
+     "f",
+     0.237
+    ],
+    [
+     "M",
+     0.252
+    ]
+   ]
+  },
+  "Pathway Extreme": {
+   "archivo": "https://fonts.gstatic.com/s/pathwayextreme/v7/neIczCC3pJ0rsaH2_sD-QttXPfDPonvkQ-pxx5gufvP2fG7LZQ.woff2",
+   "info": {
+    "familia": "Pathway Extreme 8pt Thin 12pt",
+    "nombreCompleto": "Pathway Extreme 8pt Thin 12pt Regular",
+    "version": "Version 1.001;gftools[0.9.26]",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      100.0,
+      100.0,
+      900.0
+     ],
+     "wdth": [
+      75.0,
+      100.0,
+      100.0
+     ]
+    },
+    "usWeightClass": 100
+   },
+   "instancia": {
+    "wght": 182.0,
+    "wdth": 78.0
+   },
+   "castellano": true,
+   "forma": 0.538,
+   "clave": 0.354,
+   "anchoFrase": 1.008,
+   "xSobreCap": 0.771,
+   "asta": 1.014,
+   "espacioEm": 0.208,
+   "peores": [
+    [
+     "y",
+     0.083
+    ],
+    [
+     "j",
+     0.206
+    ],
+    [
+     "a",
+     0.242
+    ],
+    [
+     "f",
+     0.253
+    ],
+    [
+     "g",
+     0.261
+    ]
+   ]
+  },
+  "Bricolage Grotesque": {
+   "archivo": "https://fonts.gstatic.com/s/bricolagegrotesque/v9/3y9K6as8bTXq_nANBjzKo3IeZx8z6up5BeSl5jBNz_19PpbpMVGIInE.woff2",
+   "info": {
+    "familia": "Bricolage Grotesque 96pt ExtraBold",
+    "nombreCompleto": "Bricolage Grotesque 96pt ExtraBold Regular",
+    "version": "Version 1.001;gftools[0.9.33.dev8+g029e19f]",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      200.0,
+      800.0,
+      800.0
+     ],
+     "wdth": [
+      75.0,
+      100.0,
+      100.0
+     ]
+    },
+    "usWeightClass": 800
+   },
+   "instancia": {
+    "wght": 225.0,
+    "wdth": 78.0
+   },
+   "castellano": true,
+   "forma": 0.544,
+   "clave": 0.367,
+   "anchoFrase": 1.012,
+   "xSobreCap": 0.797,
+   "asta": 1.014,
+   "espacioEm": 0.207,
+   "peores": [
+    [
+     "J",
+     0.079
+    ],
+    [
+     "g",
+     0.162
+    ],
+    [
+     "a",
+     0.233
+    ],
+    [
+     "Q",
+     0.238
+    ],
+    [
+     "O",
+     0.299
+    ]
+   ]
+  },
+  "Anek Latin": {
+   "archivo": "https://fonts.gstatic.com/s/aneklatin/v11/co3DmWZulTRoU4a8dqrWo6Tppg.woff2",
+   "info": {
+    "familia": "Anek Latin Medium",
+    "nombreCompleto": "Anek Latin Medium",
+    "version": "Version 1.003",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      100.0,
+      500.0,
+      800.0
+     ],
+     "wdth": [
+      75.0,
+      100.0,
+      125.0
+     ]
+    },
+    "usWeightClass": 500
+   },
+   "instancia": {
+    "wght": 293.0,
+    "wdth": 89.0
+   },
+   "castellano": true,
+   "forma": 0.558,
+   "clave": 0.333,
+   "anchoFrase": 1.012,
+   "xSobreCap": 0.769,
+   "asta": 1.0,
+   "espacioEm": 0.181,
+   "peores": [
+    [
+     "y",
+     0.125
+    ],
+    [
+     "f",
+     0.182
+    ],
+    [
+     "J",
+     0.218
+    ],
+    [
+     "t",
+     0.263
+    ],
+    [
+     "j",
+     0.294
+    ]
+   ]
+  },
+  "Saira": {
+   "archivo": "https://fonts.gstatic.com/s/saira/v23/memwYa2wxmKQyNknTZM.woff2",
+   "info": {
+    "familia": "Saira Thin",
+    "nombreCompleto": "Saira Thin",
+    "version": "Version 1.101",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      100.0,
+      100.0,
+      900.0
+     ],
+     "wdth": [
+      50.0,
+      100.0,
+      125.0
+     ]
+    },
+    "usWeightClass": 100
+   },
+   "instancia": {
+    "wght": 367.0,
+    "wdth": 78.0
+   },
+   "castellano": true,
+   "forma": 0.599,
+   "clave": 0.479,
+   "anchoFrase": 1.001,
+   "xSobreCap": 0.741,
+   "asta": 1.0,
+   "espacioEm": 0.195,
+   "peores": [
+    [
+     "J",
+     0.063
+    ],
+    [
+     "c",
+     0.272
+    ],
+    [
+     "C",
+     0.303
+    ],
+    [
+     "a",
+     0.331
+    ],
+    [
+     "G",
+     0.334
+    ]
+   ]
+  },
+  "Roboto Flex": {
+   "archivo": "https://fonts.gstatic.com/s/robotoflex/v30/NaNNepOXO_NexZs0b5QrzlOHb8wCikXpYqmZsWI-__OGbt8jZktqc2V3Zs0KvDLdBP8SBZtOs2IifRuUZQMsPJtUsR4DEK6cULNeUx9XgTnH37Ha_FIAp4Fm0PP1hw45DntW2x0wZGzhPmr1YNMYKYn9_1IQXGwJAiUJVUMdN5YUW4O8HtSoXjC1z3QSabshNFVe3e0O5j3ZjrZCu23Qd6u4OPE.woff2",
+   "info": {
+    "familia": "Roboto Flex",
+    "nombreCompleto": "Roboto Flex Regular",
+    "version": "Version 3.200;gftools[0.9.32]",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      100.0,
+      400.0,
+      1000.0
+     ],
+     "wdth": [
+      25.0,
+      100.0,
+      151.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 243.0,
+    "wdth": 25.0
+   },
+   "castellano": true,
+   "forma": 0.627,
+   "clave": 0.505,
+   "anchoFrase": 1.033,
+   "xSobreCap": 0.722,
+   "asta": 1.0,
+   "espacioEm": 0.244,
+   "peores": [
+    [
+     "y",
+     0.136
+    ],
+    [
+     "a",
+     0.332
+    ],
+    [
+     "k",
+     0.354
+    ],
+    [
+     "f",
+     0.392
+    ],
+    [
+     "M",
+     0.422
+    ]
+   ]
+  },
+  "Instrument Sans": {
+   "archivo": "https://fonts.gstatic.com/s/instrumentsans/v4/pxicypc9vsFDm051Uf6KVwgkfoSbT2lB.woff2",
+   "info": {
+    "familia": "Instrument Sans",
+    "nombreCompleto": "Instrument Sans Regular",
+    "version": "Version 1.000;gftools[0.9.28]",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wdth": [
+      75.0,
+      100.0,
+      100.0
+     ],
+     "wght": [
+      400.0,
+      400.0,
+      700.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 400.0,
+    "wdth": 86.0
+   },
+   "castellano": true,
+   "forma": 0.661,
+   "clave": 0.517,
+   "anchoFrase": 1.009,
+   "xSobreCap": 0.708,
+   "asta": 1.137,
+   "espacioEm": 0.171,
+   "peores": [
+    [
+     "y",
+     0.135
+    ],
+    [
+     "J",
+     0.307
+    ],
+    [
+     "a",
+     0.34
+    ],
+    [
+     "M",
+     0.423
+    ],
+    [
+     "G",
+     0.461
+    ]
+   ]
+  },
+  "Sofia Sans Condensed": {
+   "archivo": "https://fonts.gstatic.com/s/sofiasanscondensed/v6/r05EGKVS5aVKd567NYXawnFKJaTtoAuLnIcIptE.woff2",
+   "info": {
+    "familia": "Sofia Sans Condensed",
+    "nombreCompleto": "Sofia Sans Condensed Regular",
+    "version": "Version 4.101",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      1.0,
+      400.0,
+      1000.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 356.0
+   },
+   "castellano": true,
+   "forma": 0.562,
+   "clave": 0.389,
+   "anchoFrase": 0.946,
+   "xSobreCap": 0.74,
+   "asta": 1.014,
+   "espacioEm": 0.167,
+   "peores": [
+    [
+     "J",
+     0.036
+    ],
+    [
+     "y",
+     0.098
+    ],
+    [
+     "a",
+     0.234
+    ],
+    [
+     "g",
+     0.267
+    ],
+    [
+     "f",
+     0.323
+    ]
+   ]
+  },
+  "Roboto Condensed": {
+   "archivo": "https://fonts.gstatic.com/s/robotocondensed/v31/ieVl2ZhZI2eCN5jzbjEETS9weq8-19K7DQ.woff2",
+   "info": {
+    "familia": "Roboto Condensed",
+    "nombreCompleto": "Roboto Condensed Regular",
+    "version": "Version 3.008; 2023",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "http://www.apache.org/licenses/LICENSE-2.0",
+    "ejes": {
+     "wght": [
+      100.0,
+      400.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 330.0
+   },
+   "castellano": true,
+   "forma": 0.603,
+   "clave": 0.448,
+   "anchoFrase": 1.031,
+   "xSobreCap": 0.743,
+   "asta": 1.0,
+   "espacioEm": 0.226,
+   "peores": [
+    [
+     "y",
+     0.109
+    ],
+    [
+     "a",
+     0.293
+    ],
+    [
+     "f",
+     0.373
+    ],
+    [
+     "z",
+     0.389
+    ],
+    [
+     "m",
+     0.421
+    ]
+   ]
+  },
+  "Oswald": {
+   "archivo": "https://fonts.gstatic.com/s/oswald/v57/TK3iWkUHHAIjg752GT8G.woff2",
+   "info": {
+    "familia": "Oswald",
+    "nombreCompleto": "Oswald Regular",
+    "version": "Version 4.103;gftools[0.9.33.dev8+g029e19f]",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      200.0,
+      400.0,
+      700.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 294.0
+   },
+   "castellano": true,
+   "forma": 0.418,
+   "clave": 0.326,
+   "anchoFrase": 0.78,
+   "xSobreCap": 0.714,
+   "asta": 1.0,
+   "espacioEm": 0.203,
+   "peores": [
+    [
+     "y",
+     0.052
+    ],
+    [
+     "J",
+     0.062
+    ],
+    [
+     "d",
+     0.167
+    ],
+    [
+     "q",
+     0.171
+    ],
+    [
+     "b",
+     0.175
+    ]
+   ]
+  },
+  "Fira Sans Condensed": {
+   "archivo": "https://fonts.gstatic.com/s/firasanscondensed/v11/wEOsEADFm8hSaQTFG18FErVhsC9x-tarWV3PuMR0cg.woff2",
+   "info": {
+    "familia": "Fira Sans Condensed Light",
+    "nombreCompleto": "Fira Sans Condensed Light",
+    "version": "Version 4.203",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "http://scripts.sil.org/OFL",
+    "ejes": {},
+    "usWeightClass": 300
+   },
+   "instancia": {},
+   "castellano": true,
+   "forma": 0.551,
+   "clave": 0.361,
+   "anchoFrase": 1.124,
+   "xSobreCap": 0.764,
+   "asta": 0.918,
+   "espacioEm": 0.249,
+   "peores": [
+    [
+     "J",
+     0.037
+    ],
+    [
+     "y",
+     0.143
+    ],
+    [
+     "f",
+     0.15
+    ],
+    [
+     "l",
+     0.189
+    ],
+    [
+     "a",
+     0.27
+    ]
+   ]
+  },
+  "Barlow Condensed": {
+   "archivo": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B47rxz3bWuQ.woff2",
+   "info": {
+    "familia": "Barlow Condensed Light",
+    "nombreCompleto": "Barlow Condensed Light",
+    "version": "Version 1.408",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "http://scripts.sil.org/OFL",
+    "ejes": {},
+    "usWeightClass": 300
+   },
+   "instancia": {},
+   "castellano": true,
+   "forma": 0.434,
+   "clave": 0.329,
+   "anchoFrase": 0.895,
+   "xSobreCap": 0.72,
+   "asta": 0.836,
+   "espacioEm": 0.2,
+   "peores": [
+    [
+     "y",
+     0.077
+    ],
+    [
+     "M",
+     0.08
+    ],
+    [
+     "Q",
+     0.163
+    ],
+    [
+     "O",
+     0.202
+    ],
+    [
+     "W",
+     0.208
+    ]
+   ]
+  },
+  "Asap Condensed": {
+   "archivo": "https://fonts.gstatic.com/s/asapcondensed/v18/pxieypY1o9NHyXh3WvSbGSggdO8nSllDims.woff2",
+   "info": {
+    "familia": "Asap Condensed Light",
+    "nombreCompleto": "Asap Condensed Light",
+    "version": "Version 3.001; ttfautohint (v1.8.4.7-5d5b)",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {},
+    "usWeightClass": 300
+   },
+   "instancia": {},
+   "castellano": true,
+   "forma": 0.547,
+   "clave": 0.392,
+   "anchoFrase": 0.975,
+   "xSobreCap": 0.748,
+   "asta": 1.041,
+   "espacioEm": 0.137,
+   "peores": [
+    [
+     "y",
+     0.088
+    ],
+    [
+     "J",
+     0.095
+    ],
+    [
+     "l",
+     0.142
+    ],
+    [
+     "g",
+     0.242
+    ],
+    [
+     "a",
+     0.256
+    ]
+   ]
+  },
+  "Google Sans Flex": {
+   "archivo": "https://fonts.gstatic.com/s/googlesansflex/v23/t5svIQcYNIWbFgDgAAzZ34auoVyXkJCOvp3SFWJbN5hF8Ju1x6sKCyp0l9sI40swNJwInycYAJzz0m7kJ4qFQOJBOjLvDSndo26GGn8.woff2",
+   "info": {
+    "familia": "Google Sans Flex 18pt",
+    "nombreCompleto": "Google Sans Flex 18pt Regular",
+    "version": "Version 4.005;[3fe7d0b9f]",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://openfontlicense.org",
+    "ejes": {
+     "wdth": [
+      25.0,
+      100.0,
+      151.0
+     ],
+     "wght": [
+      1.0,
+      400.0,
+      1000.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 301.0,
+    "wdth": 76.0
+   },
+   "castellano": true,
+   "forma": 0.676,
+   "clave": 0.519,
+   "anchoFrase": 1.004,
+   "xSobreCap": 0.709,
+   "asta": 1.014,
+   "espacioEm": 0.194,
+   "peores": [
+    [
+     "y",
+     0.143
+    ],
+    [
+     "a",
+     0.414
+    ],
+    [
+     "j",
+     0.432
+    ],
+    [
+     "k",
+     0.444
+    ],
+    [
+     "K",
+     0.458
+    ]
+   ]
+  },
+  "Hubot Sans": {
+   "archivo": "https://fonts.gstatic.com/s/hubotsans/v5/pe0rMIiULYxOvxVLbVwhEtCaBg.woff2",
+   "info": {
+    "familia": "Hubot Sans Condensed ExtraLight",
+    "nombreCompleto": "Hubot Sans Condensed ExtraLight",
+    "version": "Version 2.000",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://openfontlicense.org",
+    "ejes": {
+     "wdth": [
+      75.0,
+      75.0,
+      125.0
+     ],
+     "wght": [
+      200.0,
+      200.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 200
+   },
+   "instancia": {
+    "wght": 330.0,
+    "wdth": 90.0
+   },
+   "castellano": true,
+   "forma": 0.56,
+   "clave": 0.528,
+   "anchoFrase": 1.007,
+   "xSobreCap": 0.715,
+   "asta": 1.0,
+   "espacioEm": 0.157,
+   "peores": [
+    [
+     "J",
+     0.115
+    ],
+    [
+     "y",
+     0.154
+    ],
+    [
+     "m",
+     0.221
+    ],
+    [
+     "k",
+     0.303
+    ],
+    [
+     "K",
+     0.322
+    ]
+   ]
+  },
+  "Radio Canada": {
+   "archivo": "https://fonts.gstatic.com/s/radiocanada/v26/XRXT3ISXn0dBMcibU6jlAqrddhoC.woff2",
+   "info": {
+    "familia": "Radio Canada",
+    "nombreCompleto": "Radio Canada Regular",
+    "version": "Version 2.104;gftools[0.9.28.dev5+ged2979d]",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      300.0,
+      400.0,
+      700.0
+     ],
+     "wdth": [
+      75.0,
+      100.0,
+      100.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 302.0,
+    "wdth": 78.0
+   },
+   "castellano": true,
+   "forma": 0.588,
+   "clave": 0.416,
+   "anchoFrase": 1.005,
+   "xSobreCap": 0.739,
+   "asta": 1.0,
+   "espacioEm": 0.206,
+   "peores": [
+    [
+     "y",
+     0.13
+    ],
+    [
+     "j",
+     0.249
+    ],
+    [
+     "a",
+     0.254
+    ],
+    [
+     "G",
+     0.355
+    ],
+    [
+     "g",
+     0.36
+    ]
+   ]
+  },
+  "Noto Sans": {
+   "archivo": "https://fonts.gstatic.com/s/notosans/v42/o-0IIpQlx3QUlC5A4PNr5TRA.woff2",
+   "info": {
+    "familia": "Noto Sans",
+    "nombreCompleto": "Noto Sans Regular",
+    "version": "Version 2.015",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://openfontlicense.org",
+    "ejes": {
+     "wght": [
+      100.0,
+      400.0,
+      900.0
+     ],
+     "wdth": [
+      62.5,
+      100.0,
+      100.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 327.0,
+    "wdth": 77.0
+   },
+   "castellano": true,
+   "forma": 0.6,
+   "clave": 0.422,
+   "anchoFrase": 1.004,
+   "xSobreCap": 0.746,
+   "asta": 1.0,
+   "espacioEm": 0.212,
+   "peores": [
+    [
+     "J",
+     0.038
+    ],
+    [
+     "y",
+     0.112
+    ],
+    [
+     "a",
+     0.275
+    ],
+    [
+     "f",
+     0.275
+    ],
+    [
+     "c",
+     0.291
+    ]
+   ]
+  },
+  "Open Sans": {
+   "archivo": "https://fonts.gstatic.com/s/opensans/v44/mem8YaGs126MiZpBA-UFVZ0b.woff2",
+   "info": {
+    "familia": "Open Sans",
+    "nombreCompleto": "Open Sans Regular",
+    "version": "Version 3.003",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "http://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      300.0,
+      400.0,
+      800.0
+     ],
+     "wdth": [
+      75.0,
+      100.0,
+      100.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 355.0,
+    "wdth": 84.0
+   },
+   "castellano": true,
+   "forma": 0.604,
+   "clave": 0.409,
+   "anchoFrase": 1.002,
+   "xSobreCap": 0.749,
+   "asta": 1.0,
+   "espacioEm": 0.213,
+   "peores": [
+    [
+     "J",
+     0.039
+    ],
+    [
+     "y",
+     0.116
+    ],
+    [
+     "a",
+     0.278
+    ],
+    [
+     "g",
+     0.283
+    ],
+    [
+     "c",
+     0.291
+    ]
+   ]
+  },
+  "Nunito Sans": {
+   "archivo": "https://fonts.gstatic.com/s/nunitosans/v19/pe0AMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8kJ3xzA.woff2",
+   "info": {
+    "familia": "Nunito Sans 12pt ExtraLight 12pt",
+    "nombreCompleto": "Nunito Sans 12pt ExtraLight 12pt Regular",
+    "version": "Version 3.101;gftools[0.9.27]",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      200.0,
+      200.0,
+      1000.0
+     ],
+     "wdth": [
+      75.0,
+      100.0,
+      125.0
+     ]
+    },
+    "usWeightClass": 200
+   },
+   "instancia": {
+    "wght": 346.0,
+    "wdth": 76.0
+   },
+   "castellano": true,
+   "forma": 0.585,
+   "clave": 0.498,
+   "anchoFrase": 1.008,
+   "xSobreCap": 0.689,
+   "asta": 1.014,
+   "espacioEm": 0.22,
+   "peores": [
+    [
+     "J",
+     0.066
+    ],
+    [
+     "y",
+     0.151
+    ],
+    [
+     "l",
+     0.153
+    ],
+    [
+     "W",
+     0.274
+    ],
+    [
+     "a",
+     0.33
+    ]
+   ]
+  },
+  "Sofia Sans Semi Condensed": {
+   "archivo": "https://fonts.gstatic.com/s/sofiasanssemicondensed/v8/46k9laPnUDrQoNsWDCGXXxYlujh5Wv0nwP4RwxURsWM08g.woff2",
+   "info": {
+    "familia": "Sofia Sans Semi Condensed",
+    "nombreCompleto": "Sofia Sans Semi Condensed Regular",
+    "version": "Version 4.101",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      1.0,
+      400.0,
+      1000.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 339.0
+   },
+   "castellano": true,
+   "forma": 0.487,
+   "clave": 0.397,
+   "anchoFrase": 1.161,
+   "xSobreCap": 0.739,
+   "asta": 1.0,
+   "espacioEm": 0.216,
+   "peores": [
+    [
+     "J",
+     0.037
+    ],
+    [
+     "y",
+     0.169
+    ],
+    [
+     "f",
+     0.187
+    ],
+    [
+     "m",
+     0.211
+    ],
+    [
+     "K",
+     0.245
+    ]
+   ]
+  },
+  "Barlow Semi Condensed": {
+   "archivo": "https://fonts.gstatic.com/s/barlowsemicondensed/v16/wlpigxjLBV1hqnzfr-F8sEYMB0Yybp0mudRf06i_B2sl.woff2",
+   "info": {
+    "familia": "Barlow Semi Condensed Light",
+    "nombreCompleto": "Barlow Semi Condensed Light",
+    "version": "Version 1.408",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "http://scripts.sil.org/OFL",
+    "ejes": {},
+    "usWeightClass": 300
+   },
+   "instancia": {},
+   "castellano": true,
+   "forma": 0.565,
+   "clave": 0.405,
+   "anchoFrase": 1.02,
+   "xSobreCap": 0.72,
+   "asta": 0.822,
+   "espacioEm": 0.2,
+   "peores": [
+    [
+     "y",
+     0.114
+    ],
+    [
+     "M",
+     0.224
+    ],
+    [
+     "Q",
+     0.304
+    ],
+    [
+     "L",
+     0.355
+    ],
+    [
+     "a",
+     0.362
+    ]
+   ]
+  },
+  "Antonio": {
+   "archivo": "https://fonts.gstatic.com/s/antonio/v22/gNMEW3NwSYq_9WD3yHQiFQ.woff2",
+   "info": {
+    "familia": "Antonio",
+    "nombreCompleto": "Antonio Regular",
+    "version": "Version 1.002",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "http://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      100.0,
+      400.0,
+      700.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 172.0
+   },
+   "castellano": true,
+   "forma": 0.249,
+   "clave": 0.193,
+   "anchoFrase": 0.769,
+   "xSobreCap": 0.851,
+   "asta": 1.014,
+   "espacioEm": 0.228,
+   "peores": [
+    [
+     "y",
+     0.021
+    ],
+    [
+     "H",
+     0.061
+    ],
+    [
+     "g",
+     0.067
+    ],
+    [
+     "U",
+     0.069
+    ],
+    [
+     "Q",
+     0.108
+    ]
+   ]
+  },
+  "Big Shoulders Text": {
+   "archivo": "https://fonts.gstatic.com/s/bigshoulderstext/v28/55xxezRtP9G3CGPIf49hxc8P0eytUxBcm4Z6.woff2",
+   "info": {
+    "familia": "Big Shoulders Text Thin",
+    "nombreCompleto": "Big Shoulders Text Thin",
+    "version": "Version 2.002",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      100.0,
+      100.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 100
+   },
+   "instancia": {
+    "wght": 361.0
+   },
+   "castellano": true,
+   "forma": 0.295,
+   "clave": 0.226,
+   "anchoFrase": 0.747,
+   "xSobreCap": 0.75,
+   "asta": 1.0,
+   "espacioEm": 0.206,
+   "peores": [
+    [
+     "y",
+     0.063
+    ],
+    [
+     "H",
+     0.082
+    ],
+    [
+     "U",
+     0.082
+    ],
+    [
+     "Q",
+     0.136
+    ],
+    [
+     "q",
+     0.14
+    ]
+   ]
+  },
+  "Schibsted Grotesk": {
+   "archivo": "https://fonts.gstatic.com/s/schibstedgrotesk/v7/Jqz55SSPQuCQF3t8uOwiUL-taUTtap9Gayo.woff2",
+   "info": {
+    "familia": "Schibsted Grotesk",
+    "nombreCompleto": "Schibsted Grotesk Regular",
+    "version": "Version 1.100;gftools[0.9.25]",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      400.0,
+      400.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 400.0
+   },
+   "castellano": true,
+   "forma": 0.365,
+   "clave": 0.334,
+   "anchoFrase": 1.243,
+   "xSobreCap": 0.75,
+   "asta": 1.329,
+   "espacioEm": 0.254,
+   "peores": [
+    [
+     "K",
+     0.153
+    ],
+    [
+     "H",
+     0.179
+    ],
+    [
+     "k",
+     0.189
+    ],
+    [
+     "m",
+     0.198
+    ],
+    [
+     "A",
+     0.211
+    ]
+   ]
+  },
+  "Libre Franklin": {
+   "archivo": "https://fonts.gstatic.com/s/librefranklin/v20/jizDREVItHgc8qDIbSTKq4XkRiUf2zc.woff2",
+   "info": {
+    "familia": "Libre Franklin Thin",
+    "nombreCompleto": "Libre Franklin Thin",
+    "version": "Version 3.000",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://openfontlicense.org",
+    "ejes": {
+     "wght": [
+      100.0,
+      100.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 100
+   },
+   "instancia": {
+    "wght": 279.0
+   },
+   "castellano": true,
+   "forma": 0.411,
+   "clave": 0.359,
+   "anchoFrase": 1.167,
+   "xSobreCap": 0.714,
+   "asta": 1.014,
+   "espacioEm": 0.217,
+   "peores": [
+    [
+     "K",
+     0.16
+    ],
+    [
+     "k",
+     0.165
+    ],
+    [
+     "y",
+     0.165
+    ],
+    [
+     "m",
+     0.173
+    ],
+    [
+     "L",
+     0.185
+    ]
+   ]
+  },
+  "Public Sans": {
+   "archivo": "https://fonts.gstatic.com/s/publicsans/v21/ijwRs572Xtc6ZYQws9YVwnNGfJ4.woff2",
+   "info": {
+    "familia": "Public Sans Thin",
+    "nombreCompleto": "Public Sans Thin",
+    "version": "Version 2.001",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "SIL Open Font License, Version 1.1: https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web; USWDS Modified Version: https://github.com/uswds/public-sans/blob/master/LICENSE.md",
+    "ejes": {
+     "wght": [
+      100.0,
+      100.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 100
+   },
+   "instancia": {
+    "wght": 223.0
+   },
+   "castellano": true,
+   "forma": 0.415,
+   "clave": 0.388,
+   "anchoFrase": 1.184,
+   "xSobreCap": 0.714,
+   "asta": 1.014,
+   "espacioEm": 0.252,
+   "peores": [
+    [
+     "H",
+     0.105
+    ],
+    [
+     "K",
+     0.164
+    ],
+    [
+     "y",
+     0.174
+    ],
+    [
+     "J",
+     0.188
+    ],
+    [
+     "k",
+     0.191
+    ]
+   ]
+  },
+  "Hanken Grotesk": {
+   "archivo": "https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpd59A.woff2",
+   "info": {
+    "familia": "Hanken Grotesk",
+    "nombreCompleto": "Hanken Grotesk Regular",
+    "version": "Version 3.013",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      100.0,
+      400.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 295.0
+   },
+   "castellano": true,
+   "forma": 0.416,
+   "clave": 0.36,
+   "anchoFrase": 1.195,
+   "xSobreCap": 0.707,
+   "asta": 1.0,
+   "espacioEm": 0.26,
+   "peores": [
+    [
+     "K",
+     0.153
+    ],
+    [
+     "l",
+     0.155
+    ],
+    [
+     "k",
+     0.17
+    ],
+    [
+     "y",
+     0.18
+    ],
+    [
+     "r",
+     0.189
+    ]
+   ]
+  },
+  "Inter Tight": {
+   "archivo": "https://fonts.gstatic.com/s/intertight/v9/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2",
+   "info": {
+    "familia": "Inter Tight",
+    "nombreCompleto": "Inter Tight Regular",
+    "version": "Version 3.004",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      100.0,
+      400.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 305.0
+   },
+   "castellano": true,
+   "forma": 0.421,
+   "clave": 0.378,
+   "anchoFrase": 1.139,
+   "xSobreCap": 0.75,
+   "asta": 1.0,
+   "espacioEm": 0.249,
+   "peores": [
+    [
+     "H",
+     0.137
+    ],
+    [
+     "N",
+     0.15
+    ],
+    [
+     "M",
+     0.171
+    ],
+    [
+     "y",
+     0.172
+    ],
+    [
+     "U",
+     0.19
+    ]
+   ]
+  },
+  "Inter": {
+   "archivo": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+   "info": {
+    "familia": "Inter",
+    "nombreCompleto": "Inter Regular",
+    "version": "Version 4.001;git-66647c0bb",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://openfontlicense.org",
+    "ejes": {
+     "wght": [
+      100.0,
+      400.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 291.0
+   },
+   "castellano": true,
+   "forma": 0.408,
+   "clave": 0.38,
+   "anchoFrase": 1.215,
+   "xSobreCap": 0.75,
+   "asta": 1.0,
+   "espacioEm": 0.281,
+   "peores": [
+    [
+     "H",
+     0.13
+    ],
+    [
+     "N",
+     0.162
+    ],
+    [
+     "y",
+     0.18
+    ],
+    [
+     "m",
+     0.19
+    ],
+    [
+     "M",
+     0.192
+    ]
+   ]
+  },
+  "Geist": {
+   "archivo": "https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwcGFU.woff2",
+   "info": {
+    "familia": "Geist",
+    "nombreCompleto": "Geist Regular",
+    "version": "Version 1.800",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://openfontlicense.org",
+    "ejes": {
+     "wght": [
+      100.0,
+      400.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 287.0
+   },
+   "castellano": true,
+   "forma": 0.366,
+   "clave": 0.329,
+   "anchoFrase": 1.191,
+   "xSobreCap": 0.746,
+   "asta": 1.0,
+   "espacioEm": 0.25,
+   "peores": [
+    [
+     "k",
+     0.129
+    ],
+    [
+     "m",
+     0.168
+    ],
+    [
+     "L",
+     0.17
+    ],
+    [
+     "y",
+     0.188
+    ],
+    [
+     "M",
+     0.189
+    ]
+   ]
+  },
+  "Space Grotesk": {
+   "archivo": "https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPbF4Cw.woff2",
+   "info": {
+    "familia": "Space Grotesk Light",
+    "nombreCompleto": "Space Grotesk Light",
+    "version": "Version 2.000",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      300.0,
+      300.0,
+      700.0
+     ]
+    },
+    "usWeightClass": 300
+   },
+   "instancia": {
+    "wght": 309.0
+   },
+   "castellano": true,
+   "forma": 0.392,
+   "clave": 0.389,
+   "anchoFrase": 1.325,
+   "xSobreCap": 0.694,
+   "asta": 1.0,
+   "espacioEm": 0.258,
+   "peores": [
+    [
+     "L",
+     0.169
+    ],
+    [
+     "w",
+     0.186
+    ],
+    [
+     "M",
+     0.186
+    ],
+    [
+     "R",
+     0.188
+    ],
+    [
+     "h",
+     0.197
+    ]
+   ]
+  },
+  "Plus Jakarta Sans": {
+   "archivo": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yw.woff2",
+   "info": {
+    "familia": "Plus Jakarta Sans",
+    "nombreCompleto": "Plus Jakarta Sans Regular",
+    "version": "Version 2.071;gftools[0.9.30]",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      200.0,
+      400.0,
+      800.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 332.0
+   },
+   "castellano": true,
+   "forma": 0.404,
+   "clave": 0.375,
+   "anchoFrase": 1.199,
+   "xSobreCap": 0.715,
+   "asta": 1.0,
+   "espacioEm": 0.167,
+   "peores": [
+    [
+     "J",
+     0.066
+    ],
+    [
+     "k",
+     0.179
+    ],
+    [
+     "y",
+     0.183
+    ],
+    [
+     "K",
+     0.191
+    ],
+    [
+     "H",
+     0.194
+    ]
+   ]
+  }
+ },
+ "cuerpo": {
+  "Archivo": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 301.0
+   },
+   "forma": 0.548,
+   "clave": 0.392,
+   "anchoFrase": 0.99,
+   "xSobreCap": 0.767,
+   "asta": 1.0,
+   "espacioEm": 0.213,
+   "peores": [
+    [
+     "y",
+     0.141
+    ],
+    [
+     "a",
+     0.23
+    ],
+    [
+     "g",
+     0.3
+    ],
+    [
+     "R",
+     0.3
+    ],
+    [
+     "s",
+     0.311
+    ]
+   ]
+  },
+  "Mona Sans": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 391.0
+   },
+   "forma": 0.606,
+   "clave": 0.517,
+   "anchoFrase": 0.998,
+   "xSobreCap": 0.719,
+   "asta": 1.0,
+   "espacioEm": 0.229,
+   "peores": [
+    [
+     "J",
+     0.111
+    ],
+    [
+     "y",
+     0.147
+    ],
+    [
+     "m",
+     0.342
+    ],
+    [
+     "R",
+     0.389
+    ],
+    [
+     "H",
+     0.39
+    ]
+   ]
+  },
+  "Encode Sans": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 404.0
+   },
+   "forma": 0.577,
+   "clave": 0.415,
+   "anchoFrase": 0.933,
+   "xSobreCap": 0.733,
+   "asta": 1.0,
+   "espacioEm": 0.244,
+   "peores": [
+    [
+     "J",
+     0.04
+    ],
+    [
+     "y",
+     0.181
+    ],
+    [
+     "G",
+     0.199
+    ],
+    [
+     "C",
+     0.213
+    ],
+    [
+     "a",
+     0.282
+    ]
+   ]
+  },
+  "Pathway Extreme": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 320.0
+   },
+   "forma": 0.541,
+   "clave": 0.389,
+   "anchoFrase": 1.11,
+   "xSobreCap": 0.771,
+   "asta": 1.011,
+   "espacioEm": 0.255,
+   "peores": [
+    [
+     "m",
+     0.147
+    ],
+    [
+     "y",
+     0.157
+    ],
+    [
+     "j",
+     0.238
+    ],
+    [
+     "n",
+     0.294
+    ],
+    [
+     "r",
+     0.294
+    ]
+   ]
+  },
+  "Bricolage Grotesque": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 291.0
+   },
+   "forma": 0.518,
+   "clave": 0.38,
+   "anchoFrase": 1.111,
+   "xSobreCap": 0.779,
+   "asta": 1.011,
+   "espacioEm": 0.262,
+   "peores": [
+    [
+     "J",
+     0.087
+    ],
+    [
+     "g",
+     0.267
+    ],
+    [
+     "s",
+     0.279
+    ],
+    [
+     "K",
+     0.288
+    ],
+    [
+     "k",
+     0.297
+    ]
+   ]
+  },
+  "Anek Latin": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 343.0
+   },
+   "forma": 0.555,
+   "clave": 0.333,
+   "anchoFrase": 1.009,
+   "xSobreCap": 0.764,
+   "asta": 1.0,
+   "espacioEm": 0.212,
+   "peores": [
+    [
+     "y",
+     0.154
+    ],
+    [
+     "f",
+     0.214
+    ],
+    [
+     "C",
+     0.268
+    ],
+    [
+     "J",
+     0.279
+    ],
+    [
+     "G",
+     0.284
+    ]
+   ]
+  },
+  "Saira": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 361.0
+   },
+   "forma": 0.566,
+   "clave": 0.481,
+   "anchoFrase": 1.055,
+   "xSobreCap": 0.741,
+   "asta": 1.0,
+   "espacioEm": 0.233,
+   "peores": [
+    [
+     "J",
+     0.082
+    ],
+    [
+     "C",
+     0.27
+    ],
+    [
+     "G",
+     0.285
+    ],
+    [
+     "c",
+     0.339
+    ],
+    [
+     "K",
+     0.345
+    ]
+   ]
+  },
+  "Roboto Flex": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 310.0
+   },
+   "forma": 0.637,
+   "clave": 0.465,
+   "anchoFrase": 0.971,
+   "xSobreCap": 0.723,
+   "asta": 1.0,
+   "espacioEm": 0.244,
+   "peores": [
+    [
+     "y",
+     0.143
+    ],
+    [
+     "a",
+     0.368
+    ],
+    [
+     "Q",
+     0.37
+    ],
+    [
+     "G",
+     0.379
+    ],
+    [
+     "C",
+     0.398
+    ]
+   ]
+  },
+  "Instrument Sans": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 400.0
+   },
+   "forma": 0.647,
+   "clave": 0.513,
+   "anchoFrase": 0.995,
+   "xSobreCap": 0.708,
+   "asta": 1.011,
+   "espacioEm": 0.2,
+   "peores": [
+    [
+     "y",
+     0.148
+    ],
+    [
+     "J",
+     0.294
+    ],
+    [
+     "G",
+     0.373
+    ],
+    [
+     "A",
+     0.386
+    ],
+    [
+     "a",
+     0.39
+    ]
+   ]
+  },
+  "Google Sans Flex": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 373.0
+   },
+   "forma": 0.706,
+   "clave": 0.558,
+   "anchoFrase": 0.987,
+   "xSobreCap": 0.712,
+   "asta": 1.011,
+   "espacioEm": 0.225,
+   "peores": [
+    [
+     "y",
+     0.154
+    ],
+    [
+     "j",
+     0.419
+    ],
+    [
+     "a",
+     0.439
+    ],
+    [
+     "A",
+     0.49
+    ],
+    [
+     "G",
+     0.492
+    ]
+   ]
+  },
+  "Hubot Sans": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 373.0
+   },
+   "forma": 0.574,
+   "clave": 0.518,
+   "anchoFrase": 0.963,
+   "xSobreCap": 0.717,
+   "asta": 1.0,
+   "espacioEm": 0.177,
+   "peores": [
+    [
+     "J",
+     0.132
+    ],
+    [
+     "y",
+     0.164
+    ],
+    [
+     "m",
+     0.302
+    ],
+    [
+     "k",
+     0.391
+    ],
+    [
+     "K",
+     0.391
+    ]
+   ]
+  },
+  "Radio Canada": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 343.0
+   },
+   "forma": 0.599,
+   "clave": 0.422,
+   "anchoFrase": 1.033,
+   "xSobreCap": 0.742,
+   "asta": 1.0,
+   "espacioEm": 0.25,
+   "peores": [
+    [
+     "y",
+     0.141
+    ],
+    [
+     "a",
+     0.281
+    ],
+    [
+     "C",
+     0.289
+    ],
+    [
+     "G",
+     0.307
+    ],
+    [
+     "f",
+     0.345
+    ]
+   ]
+  },
+  "Noto Sans": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 367.0
+   },
+   "forma": 0.589,
+   "clave": 0.423,
+   "anchoFrase": 1.029,
+   "xSobreCap": 0.749,
+   "asta": 1.0,
+   "espacioEm": 0.26,
+   "peores": [
+    [
+     "J",
+     0.043
+    ],
+    [
+     "y",
+     0.154
+    ],
+    [
+     "C",
+     0.253
+    ],
+    [
+     "G",
+     0.253
+    ],
+    [
+     "f",
+     0.302
+    ]
+   ]
+  },
+  "Open Sans": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 390.0
+   },
+   "forma": 0.589,
+   "clave": 0.392,
+   "anchoFrase": 1.024,
+   "xSobreCap": 0.749,
+   "asta": 1.0,
+   "espacioEm": 0.26,
+   "peores": [
+    [
+     "J",
+     0.044
+    ],
+    [
+     "y",
+     0.156
+    ],
+    [
+     "G",
+     0.251
+    ],
+    [
+     "C",
+     0.258
+    ],
+    [
+     "g",
+     0.319
+    ]
+   ]
+  },
+  "Nunito Sans": {
+   "instancia": {
+    "wdth": 100,
+    "wght": 382.0
+   },
+   "forma": 0.615,
+   "clave": 0.502,
+   "anchoFrase": 0.998,
+   "xSobreCap": 0.689,
+   "asta": 1.0,
+   "espacioEm": 0.256,
+   "peores": [
+    [
+     "J",
+     0.075
+    ],
+    [
+     "l",
+     0.14
+    ],
+    [
+     "y",
+     0.171
+    ],
+    [
+     "G",
+     0.264
+    ],
+    [
+     "A",
+     0.37
+    ]
+   ]
+  },
+  "Antonio": {
+   "instancia": {
+    "wght": 360.0
+   },
+   "forma": 0.234,
+   "clave": 0.172,
+   "anchoFrase": 0.67,
+   "xSobreCap": 0.852,
+   "asta": 1.011,
+   "espacioEm": 0.238,
+   "peores": [
+    [
+     "y",
+     0.028
+    ],
+    [
+     "U",
+     0.066
+    ],
+    [
+     "H",
+     0.072
+    ],
+    [
+     "g",
+     0.073
+    ],
+    [
+     "h",
+     0.078
+    ]
+   ]
+  },
+  "Big Shoulders Text": {
+   "instancia": {
+    "wght": 505.0
+   },
+   "forma": 0.28,
+   "clave": 0.231,
+   "anchoFrase": 0.661,
+   "xSobreCap": 0.749,
+   "asta": 1.0,
+   "espacioEm": 0.209,
+   "peores": [
+    [
+     "y",
+     0.068
+    ],
+    [
+     "U",
+     0.077
+    ],
+    [
+     "H",
+     0.084
+    ],
+    [
+     "h",
+     0.12
+    ],
+    [
+     "O",
+     0.122
+    ]
+   ]
+  },
+  "Schibsted Grotesk": {
+   "instancia": {
+    "wght": 400.0
+   },
+   "forma": 0.576,
+   "clave": 0.425,
+   "anchoFrase": 1.037,
+   "xSobreCap": 0.75,
+   "asta": 1.09,
+   "espacioEm": 0.254,
+   "peores": [
+    [
+     "y",
+     0.183
+    ],
+    [
+     "a",
+     0.293
+    ],
+    [
+     "g",
+     0.339
+    ],
+    [
+     "A",
+     0.367
+    ],
+    [
+     "G",
+     0.387
+    ]
+   ]
+  },
+  "Libre Franklin": {
+   "instancia": {
+    "wght": 361.0
+   },
+   "forma": 0.619,
+   "clave": 0.424,
+   "anchoFrase": 0.979,
+   "xSobreCap": 0.714,
+   "asta": 1.0,
+   "espacioEm": 0.215,
+   "peores": [
+    [
+     "J",
+     0.121
+    ],
+    [
+     "y",
+     0.143
+    ],
+    [
+     "g",
+     0.259
+    ],
+    [
+     "G",
+     0.362
+    ],
+    [
+     "Q",
+     0.365
+    ]
+   ]
+  },
+  "Public Sans": {
+   "instancia": {
+    "wght": 321.0
+   },
+   "forma": 0.622,
+   "clave": 0.442,
+   "anchoFrase": 0.995,
+   "xSobreCap": 0.715,
+   "asta": 1.011,
+   "espacioEm": 0.246,
+   "peores": [
+    [
+     "J",
+     0.119
+    ],
+    [
+     "y",
+     0.153
+    ],
+    [
+     "g",
+     0.269
+    ],
+    [
+     "G",
+     0.357
+    ],
+    [
+     "Q",
+     0.36
+    ]
+   ]
+  },
+  "Hanken Grotesk": {
+   "instancia": {
+    "wght": 359.0
+   },
+   "forma": 0.673,
+   "clave": 0.457,
+   "anchoFrase": 1.004,
+   "xSobreCap": 0.707,
+   "asta": 1.0,
+   "espacioEm": 0.26,
+   "peores": [
+    [
+     "y",
+     0.159
+    ],
+    [
+     "l",
+     0.29
+    ],
+    [
+     "G",
+     0.379
+    ],
+    [
+     "g",
+     0.404
+    ],
+    [
+     "r",
+     0.419
+    ]
+   ]
+  },
+  "Inter Tight": {
+   "instancia": {
+    "wght": 377.0
+   },
+   "forma": 0.642,
+   "clave": 0.467,
+   "anchoFrase": 0.935,
+   "xSobreCap": 0.75,
+   "asta": 1.0,
+   "espacioEm": 0.238,
+   "peores": [
+    [
+     "y",
+     0.147
+    ],
+    [
+     "a",
+     0.357
+    ],
+    [
+     "Q",
+     0.39
+    ],
+    [
+     "G",
+     0.425
+    ],
+    [
+     "z",
+     0.426
+    ]
+   ]
+  },
+  "Inter": {
+   "instancia": {
+    "wght": 357.0
+   },
+   "forma": 0.639,
+   "clave": 0.466,
+   "anchoFrase": 1.024,
+   "xSobreCap": 0.75,
+   "asta": 1.0,
+   "espacioEm": 0.281,
+   "peores": [
+    [
+     "y",
+     0.163
+    ],
+    [
+     "a",
+     0.369
+    ],
+    [
+     "Q",
+     0.391
+    ],
+    [
+     "G",
+     0.424
+    ],
+    [
+     "z",
+     0.426
+    ]
+   ]
+  },
+  "Geist": {
+   "instancia": {
+    "wght": 363.0
+   },
+   "forma": 0.614,
+   "clave": 0.435,
+   "anchoFrase": 1.005,
+   "xSobreCap": 0.746,
+   "asta": 1.0,
+   "espacioEm": 0.25,
+   "peores": [
+    [
+     "y",
+     0.156
+    ],
+    [
+     "a",
+     0.316
+    ],
+    [
+     "l",
+     0.332
+    ],
+    [
+     "g",
+     0.349
+    ],
+    [
+     "k",
+     0.399
+    ]
+   ]
+  },
+  "Space Grotesk": {
+   "instancia": {
+    "wght": 378.0
+   },
+   "forma": 0.634,
+   "clave": 0.512,
+   "anchoFrase": 1.104,
+   "xSobreCap": 0.697,
+   "asta": 1.0,
+   "espacioEm": 0.257,
+   "peores": [
+    [
+     "Q",
+     0.322
+    ],
+    [
+     "a",
+     0.332
+    ],
+    [
+     "O",
+     0.355
+    ],
+    [
+     "C",
+     0.373
+    ],
+    [
+     "G",
+     0.388
+    ]
+   ]
+  },
+  "Plus Jakarta Sans": {
+   "instancia": {
+    "wght": 427.0
+   },
+   "forma": 0.665,
+   "clave": 0.529,
+   "anchoFrase": 1.003,
+   "xSobreCap": 0.721,
+   "asta": 1.0,
+   "espacioEm": 0.171,
+   "peores": [
+    [
+     "J",
+     0.068
+    ],
+    [
+     "y",
+     0.175
+    ],
+    [
+     "a",
+     0.408
+    ],
+    [
+     "M",
+     0.428
+    ],
+    [
+     "k",
+     0.469
+    ]
+   ]
+  }
+ },
+ "mono": {
+  "Geist Mono": {
+   "archivo": "https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFrcdmg.woff2",
+   "info": {
+    "familia": "Geist Mono",
+    "nombreCompleto": "Geist Mono Regular",
+    "version": "Version 1.701",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://openfontlicense.org",
+    "ejes": {
+     "wght": [
+      100.0,
+      400.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 556.0
+   },
+   "castellano": true,
+   "forma": 0.755,
+   "clave": 0.71,
+   "anchoFrase": 0.936,
+   "xSobreCap": 0.751,
+   "asta": 1.0,
+   "espacioEm": 0.6,
+   "peores": [
+    [
+     "W",
+     0.236
+    ],
+    [
+     "M",
+     0.243
+    ],
+    [
+     "4",
+     0.275
+    ],
+    [
+     "Y",
+     0.56
+    ],
+    [
+     "9",
+     0.588
+    ]
+   ]
+  },
+  "JetBrains Mono": {
+   "archivo": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2",
+   "info": {
+    "familia": "JetBrains Mono",
+    "nombreCompleto": "JetBrains Mono Regular",
+    "version": "Version 2.211",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      100.0,
+      400.0,
+      800.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 585.0
+   },
+   "castellano": true,
+   "forma": 0.651,
+   "clave": 0.67,
+   "anchoFrase": 0.911,
+   "xSobreCap": 0.753,
+   "asta": 1.0,
+   "espacioEm": 0.6,
+   "peores": [
+    [
+     "M",
+     0.126
+    ],
+    [
+     "4",
+     0.221
+    ],
+    [
+     "W",
+     0.271
+    ],
+    [
+     "7",
+     0.413
+    ],
+    [
+     "H",
+     0.48
+    ]
+   ]
+  },
+  "Chivo Mono": {
+   "archivo": "https://fonts.gstatic.com/s/chivomono/v11/mFT0WbgRxKvF_Z5eQMO9gx8D1Q.woff2",
+   "info": {
+    "familia": "Chivo Mono Medium",
+    "nombreCompleto": "Chivo Mono Medium",
+    "version": "Version 1.008",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      100.0,
+      500.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 500
+   },
+   "instancia": {
+    "wght": 450.0
+   },
+   "castellano": true,
+   "forma": 0.727,
+   "clave": 0.69,
+   "anchoFrase": 0.969,
+   "xSobreCap": 0.745,
+   "asta": 1.0,
+   "espacioEm": 0.6,
+   "peores": [
+    [
+     "M",
+     0.283
+    ],
+    [
+     "4",
+     0.347
+    ],
+    [
+     "W",
+     0.375
+    ],
+    [
+     "9",
+     0.468
+    ],
+    [
+     "R",
+     0.539
+    ]
+   ]
+  },
+  "Fragment Mono": {
+   "archivo": "https://fonts.gstatic.com/s/fragmentmono/v6/4iCr6K5wfMRRjxp0DA6-2CLnB4NHhg.woff2",
+   "info": {
+    "familia": "Fragment Mono",
+    "nombreCompleto": "Fragment Mono Regular",
+    "version": "Version 1.011; ttfautohint (v1.8.4.7-5d5b)",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {},
+    "usWeightClass": 400
+   },
+   "instancia": {},
+   "castellano": true,
+   "forma": 0.666,
+   "clave": 0.647,
+   "anchoFrase": 0.981,
+   "xSobreCap": 0.75,
+   "asta": 0.781,
+   "espacioEm": 0.618,
+   "peores": [
+    [
+     "1",
+     0.157
+    ],
+    [
+     "M",
+     0.177
+    ],
+    [
+     "W",
+     0.318
+    ],
+    [
+     "4",
+     0.337
+    ],
+    [
+     "9",
+     0.458
+    ]
+   ]
+  },
+  "Martian Mono": {
+   "archivo": "https://fonts.gstatic.com/s/martianmono/v6/2V0aKIcADoYhV6w87xrTKjsSBanI.woff2",
+   "info": {
+    "familia": "Martian Mono SemiExpanded",
+    "nombreCompleto": "Martian Mono SemiExpanded Regular",
+    "version": "Version 1.000",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      100.0,
+      400.0,
+      800.0
+     ],
+     "wdth": [
+      75.0,
+      112.5,
+      112.5
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 490.0,
+    "wdth": 100
+   },
+   "castellano": true,
+   "forma": 0.733,
+   "clave": 0.753,
+   "anchoFrase": 0.97,
+   "xSobreCap": 0.755,
+   "asta": 1.0,
+   "espacioEm": 0.7,
+   "peores": [
+    [
+     "M",
+     0.165
+    ],
+    [
+     "W",
+     0.254
+    ],
+    [
+     "7",
+     0.414
+    ],
+    [
+     "4",
+     0.447
+    ],
+    [
+     "Y",
+     0.63
+    ]
+   ]
+  },
+  "Red Hat Mono": {
+   "archivo": "https://fonts.gstatic.com/s/redhatmono/v16/jVyN7nDnA2uf2zVvFAhhzEsUWOxS.woff2",
+   "info": {
+    "familia": "Red Hat Mono",
+    "nombreCompleto": "Red Hat Mono Regular",
+    "version": "Version 1.030",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://openfontlicense.org",
+    "ejes": {
+     "wght": [
+      300.0,
+      400.0,
+      700.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 550.0
+   },
+   "castellano": true,
+   "forma": 0.735,
+   "clave": 0.743,
+   "anchoFrase": 0.952,
+   "xSobreCap": 0.713,
+   "asta": 1.0,
+   "espacioEm": 0.6,
+   "peores": [
+    [
+     "M",
+     0.155
+    ],
+    [
+     "4",
+     0.264
+    ],
+    [
+     "W",
+     0.352
+    ],
+    [
+     "7",
+     0.478
+    ],
+    [
+     "9",
+     0.482
+    ]
+   ]
+  },
+  "Roboto Mono": {
+   "archivo": "https://fonts.gstatic.com/s/robotomono/v31/L0x5DF4xlVMF-BfR8bXMIjhLq38.woff2",
+   "info": {
+    "familia": "Roboto Mono",
+    "nombreCompleto": "Roboto Mono Regular",
+    "version": "Version 3.001",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://openfontlicense.org",
+    "ejes": {
+     "wght": [
+      100.0,
+      400.0,
+      700.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 492.0
+   },
+   "castellano": true,
+   "forma": 0.72,
+   "clave": 0.721,
+   "anchoFrase": 0.936,
+   "xSobreCap": 0.743,
+   "asta": 1.0,
+   "espacioEm": 0.6,
+   "peores": [
+    [
+     "M",
+     0.144
+    ],
+    [
+     "1",
+     0.213
+    ],
+    [
+     "W",
+     0.289
+    ],
+    [
+     "4",
+     0.306
+    ],
+    [
+     "7",
+     0.481
+    ]
+   ]
+  },
+  "DM Mono": {
+   "archivo": "https://fonts.gstatic.com/s/dmmono/v16/aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2",
+   "info": {
+    "familia": "DM Mono Medium",
+    "nombreCompleto": "DM Mono Medium",
+    "version": "Version 1.000; ttfautohint (v1.8.2.53-6de2)",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "http://scripts.sil.org/OFL",
+    "ejes": {},
+    "usWeightClass": 500
+   },
+   "instancia": {},
+   "castellano": true,
+   "forma": 0.751,
+   "clave": 0.787,
+   "anchoFrase": 0.952,
+   "xSobreCap": 0.709,
+   "asta": 0.945,
+   "espacioEm": 0.6,
+   "peores": [
+    [
+     "M",
+     0.216
+    ],
+    [
+     "4",
+     0.275
+    ],
+    [
+     "W",
+     0.387
+    ],
+    [
+     "7",
+     0.417
+    ],
+    [
+     "9",
+     0.503
+    ]
+   ]
+  },
+  "Space Mono": {
+   "archivo": "https://fonts.gstatic.com/s/spacemono/v17/i7dPIFZifjKcF5UAWdDRYEF8RQ.woff2",
+   "info": {
+    "familia": "Space Mono",
+    "nombreCompleto": "Space Mono Regular",
+    "version": "Version 1.003; ttfautohint (v1.8.4.7-5d5b)",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://openfontlicense.org",
+    "ejes": {},
+    "usWeightClass": 400
+   },
+   "instancia": {},
+   "castellano": true,
+   "forma": 0.627,
+   "clave": 0.628,
+   "anchoFrase": 0.971,
+   "xSobreCap": 0.709,
+   "asta": 0.719,
+   "espacioEm": 0.612,
+   "peores": [
+    [
+     "4",
+     0.242
+    ],
+    [
+     "M",
+     0.327
+    ],
+    [
+     "W",
+     0.393
+    ],
+    [
+     "9",
+     0.461
+    ],
+    [
+     "3",
+     0.48
+    ]
+   ]
+  },
+  "Azeret Mono": {
+   "archivo": "https://fonts.gstatic.com/s/azeretmono/v21/3XFuErsiyJsY9O_Gepph-HHhZfk.woff2",
+   "info": {
+    "familia": "Azeret Mono Thin",
+    "nombreCompleto": "Azeret Mono Thin",
+    "version": "Version 1.002",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      100.0,
+      100.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 100
+   },
+   "instancia": {
+    "wght": 441.0
+   },
+   "castellano": true,
+   "forma": 0.725,
+   "clave": 0.669,
+   "anchoFrase": 1.032,
+   "xSobreCap": 0.789,
+   "asta": 1.0,
+   "espacioEm": 0.65,
+   "peores": [
+    [
+     "4",
+     0.336
+    ],
+    [
+     "M",
+     0.402
+    ],
+    [
+     "W",
+     0.474
+    ],
+    [
+     "9",
+     0.549
+    ],
+    [
+     "J",
+     0.579
+    ]
+   ]
+  },
+  "Source Code Pro": {
+   "archivo": "https://fonts.gstatic.com/s/sourcecodepro/v32/HI_SiYsKILxRpg3hIP6sJ7fM7PqlPevW.woff2",
+   "info": {
+    "familia": "Source Code Pro ExtraLight",
+    "nombreCompleto": "Source Code Pro ExtraLight Regular",
+    "version": "Version 1.026;hotconv 1.1.0;makeotfexe 2.6.0",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://openfontlicense.org",
+    "ejes": {
+     "wght": [
+      200.0,
+      200.0,
+      900.0
+     ]
+    },
+    "usWeightClass": 200
+   },
+   "instancia": {
+    "wght": 525.0
+   },
+   "castellano": true,
+   "forma": 0.72,
+   "clave": 0.681,
+   "anchoFrase": 1.015,
+   "xSobreCap": 0.747,
+   "asta": 1.0,
+   "espacioEm": 0.6,
+   "peores": [
+    [
+     "M",
+     0.19
+    ],
+    [
+     "W",
+     0.306
+    ],
+    [
+     "4",
+     0.311
+    ],
+    [
+     "6",
+     0.523
+    ],
+    [
+     "9",
+     0.525
+    ]
+   ]
+  },
+  "Spline Sans Mono": {
+   "archivo": "https://fonts.gstatic.com/s/splinesansmono/v13/R70BjzAei_CDNLfgZxrW6wrZOF2WX5KZmA.woff2",
+   "info": {
+    "familia": "Spline Sans Mono",
+    "nombreCompleto": "Spline Sans Mono Regular",
+    "version": "Version 1.004",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://scripts.sil.org/OFL",
+    "ejes": {
+     "wght": [
+      300.0,
+      400.0,
+      700.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 516.0
+   },
+   "castellano": true,
+   "forma": 0.721,
+   "clave": 0.699,
+   "anchoFrase": 0.915,
+   "xSobreCap": 0.75,
+   "asta": 1.0,
+   "espacioEm": 0.6,
+   "peores": [
+    [
+     "M",
+     0.157
+    ],
+    [
+     "4",
+     0.23
+    ],
+    [
+     "W",
+     0.236
+    ],
+    [
+     "7",
+     0.506
+    ],
+    [
+     "2",
+     0.626
+    ]
+   ]
+  },
+  "Ubuntu Sans Mono": {
+   "archivo": "https://fonts.gstatic.com/s/ubuntusansmono/v3/jVyR7mzgBHrR5yE7ZyRg0QRJMKI45grIfA.woff2",
+   "info": {
+    "familia": "Ubuntu Sans Mono",
+    "nombreCompleto": "Ubuntu Sans Mono Regular",
+    "version": "Version 1.006",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "https://ubuntu.com/legal/font-licence",
+    "ejes": {
+     "wght": [
+      400.0,
+      400.0,
+      700.0
+     ]
+    },
+    "usWeightClass": 400
+   },
+   "instancia": {
+    "wght": 500.0
+   },
+   "castellano": true,
+   "forma": 0.661,
+   "clave": 0.639,
+   "anchoFrase": 0.897,
+   "xSobreCap": 0.753,
+   "asta": 1.0,
+   "espacioEm": 0.56,
+   "peores": [
+    [
+     "M",
+     0.122
+    ],
+    [
+     "W",
+     0.188
+    ],
+    [
+     "4",
+     0.342
+    ],
+    [
+     "G",
+     0.489
+    ],
+    [
+     "5",
+     0.516
+    ]
+   ]
+  },
+  "IBM Plex Mono": {
+   "archivo": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2",
+   "info": {
+    "familia": "IBM Plex Mono Medium",
+    "nombreCompleto": "IBM Plex Mono Medium",
+    "version": "Version 2.3",
+    "diseñador": null,
+    "licencia": "",
+    "licenciaUrl": "http://scripts.sil.org/OFL",
+    "ejes": {},
+    "usWeightClass": 500
+   },
+   "instancia": {},
+   "castellano": true,
+   "forma": 0.706,
+   "clave": 0.707,
+   "anchoFrase": 0.952,
+   "xSobreCap": 0.739,
+   "asta": 0.992,
+   "espacioEm": 0.6,
+   "peores": [
+    [
+     "M",
+     0.136
+    ],
+    [
+     "4",
+     0.25
+    ],
+    [
+     "W",
+     0.267
+    ],
+    [
+     "7",
+     0.388
+    ],
+    [
+     "1",
+     0.603
+    ]
+   ]
+  }
+ },
+ "fuera": {
+  "Instrument Sans": "letra de E10 (criterio 2 del brief de obra: ninguna dirección repite la letra de E10)",
+  "IBM Plex Mono": "mono de E10 (criterio 2 del brief de obra)",
+  "Space Grotesk": "la nombra el brief y la respuesta 4 de Ramón como cliché de sitio hecho con IA",
+  "Plus Jakarta Sans": "la nombra el brief y la respuesta 4 de Ramón como cliché de sitio hecho con IA",
+  "Geist": "letra por defecto de la plantilla de Next.js (create-next-app): la firma del sitio armado por IA",
+  "Geist Mono": "mono por defecto de la plantilla de Next.js (create-next-app), junto con Geist",
+  "Inter": "la letra de interfaz más usada; es el cuerpo de la marca hoy y no tiene corte condensado",
+  "Inter Tight": "variante de Inter: mismo problema"
+ },
+ "lamina": "img/letras-comparadas.jpg"
+}

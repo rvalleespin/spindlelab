@@ -1,0 +1,315 @@
+{
+ "fecha": "2026-10-16",
+ "medidoPor": "Lucía (dirección de arte), E12",
+ "metodo": "WCAG 2.1, luminancia relativa sRGB; transparencias compuestas sobre su fondo; tono en OKLCH (Ottosson).",
+ "tokens": {
+  "papel": "#F6F6F4",
+  "placa": "#EFEFEA",
+  "hoja": "#FFFFFF",
+  "tinta": "#111111",
+  "gris": "#666663",
+  "senal": "#0029FF",
+  "senalOscura": "#0B25B7"
+ },
+ "pares": [
+  {
+   "texto": "#111111",
+   "fondo": "#F6F6F4",
+   "uso": "tinta sobre papel: lo que se nombra, titulares, enlaces",
+   "contraste": 17.45,
+   "minimo": 4.5,
+   "tipo": "texto",
+   "aprueba": true
+  },
+  {
+   "texto": "#666663",
+   "fondo": "#F6F6F4",
+   "uso": "gris sobre papel: la continuación de la frase, cuerpo corrido, rótulos",
+   "contraste": 5.32,
+   "minimo": 4.5,
+   "tipo": "texto",
+   "aprueba": true
+  },
+  {
+   "texto": "#0029FF",
+   "fondo": "#F6F6F4",
+   "uso": "cobalto #0029FF sobre papel: dato vivo en mono 11-12 px, estado activo",
+   "contraste": 7.03,
+   "minimo": 4.5,
+   "tipo": "texto",
+   "aprueba": true
+  },
+  {
+   "texto": "#0B25B7",
+   "fondo": "#F6F6F4",
+   "uso": "cobalto oscuro #0B25B7 sobre papel (la otra opción del brief)",
+   "contraste": 9.89,
+   "minimo": 4.5,
+   "tipo": "texto",
+   "aprueba": true
+  },
+  {
+   "texto": "#111111",
+   "fondo": "#EFEFEA",
+   "uso": "tinta sobre placa: lo que se nombra, titulares, enlaces",
+   "contraste": 16.37,
+   "minimo": 4.5,
+   "tipo": "texto",
+   "aprueba": true
+  },
+  {
+   "texto": "#666663",
+   "fondo": "#EFEFEA",
+   "uso": "gris sobre placa: la continuación de la frase, cuerpo corrido, rótulos",
+   "contraste": 4.99,
+   "minimo": 4.5,
+   "tipo": "texto",
+   "aprueba": true
+  },
+  {
+   "texto": "#0029FF",
+   "fondo": "#EFEFEA",
+   "uso": "cobalto #0029FF sobre placa: dato vivo en mono 11-12 px, estado activo",
+   "contraste": 6.59,
+   "minimo": 4.5,
+   "tipo": "texto",
+   "aprueba": true
+  },
+  {
+   "texto": "#0B25B7",
+   "fondo": "#EFEFEA",
+   "uso": "cobalto oscuro #0B25B7 sobre placa (la otra opción del brief)",
+   "contraste": 9.28,
+   "minimo": 4.5,
+   "tipo": "texto",
+   "aprueba": true
+  },
+  {
+   "texto": "#111111",
+   "fondo": "#FFFFFF",
+   "uso": "tinta sobre hoja: lo que se nombra, titulares, enlaces",
+   "contraste": 18.88,
+   "minimo": 4.5,
+   "tipo": "texto",
+   "aprueba": true
+  },
+  {
+   "texto": "#666663",
+   "fondo": "#FFFFFF",
+   "uso": "gris sobre hoja: la continuación de la frase, cuerpo corrido, rótulos",
+   "contraste": 5.76,
+   "minimo": 4.5,
+   "tipo": "texto",
+   "aprueba": true
+  },
+  {
+   "texto": "#0029FF",
+   "fondo": "#FFFFFF",
+   "uso": "cobalto #0029FF sobre hoja: dato vivo en mono 11-12 px, estado activo",
+   "contraste": 7.61,
+   "minimo": 4.5,
+   "tipo": "texto",
+   "aprueba": true
+  },
+  {
+   "texto": "#0B25B7",
+   "fondo": "#FFFFFF",
+   "uso": "cobalto oscuro #0B25B7 sobre hoja (la otra opción del brief)",
+   "contraste": 10.7,
+   "minimo": 4.5,
+   "tipo": "texto",
+   "aprueba": true
+  },
+  {
+   "texto": "#FFFFFF",
+   "fondo": "#0029FF",
+   "uso": "blanco sobre cobalto: el texto del cursor (mono 11 px)",
+   "contraste": 7.61,
+   "minimo": 4.5,
+   "tipo": "texto",
+   "aprueba": true
+  },
+  {
+   "texto": "#FFFFFF",
+   "fondo": "#0B25B7",
+   "uso": "blanco sobre cobalto oscuro (la otra opción)",
+   "contraste": 10.7,
+   "minimo": 4.5,
+   "tipo": "texto",
+   "aprueba": true
+  },
+  {
+   "texto": "#0029FF",
+   "fondo": "#F6F6F4",
+   "uso": "el círculo del cursor y el punto activo contra el papel (no texto: 3:1)",
+   "contraste": 7.03,
+   "minimo": 3.0,
+   "tipo": "forma",
+   "aprueba": true
+  },
+  {
+   "texto": "#111111",
+   "fondo": "#F6F6F4",
+   "uso": "foco de teclado: contorno de 2 px en tinta (no texto: 3:1)",
+   "contraste": 17.45,
+   "minimo": 3.0,
+   "tipo": "forma",
+   "aprueba": true
+  },
+  {
+   "texto": "#111111",
+   "fondo": "#0029FF",
+   "uso": "foco sobre el círculo del cursor, si coinciden (no texto: 3:1)",
+   "contraste": 2.48,
+   "minimo": 3.0,
+   "tipo": "forma",
+   "aprueba": false
+  },
+  {
+   "texto": "#EFEFEA",
+   "fondo": "#F6F6F4",
+   "uso": "placa contra papel: no carga información, se mide para saber cuánto se ve",
+   "contraste": 1.07,
+   "minimo": 1.0,
+   "tipo": "forma",
+   "aprueba": true
+  },
+  {
+   "texto": "#FFFFFF",
+   "fondo": "#F6F6F4",
+   "uso": "hoja (campo, salida del sandbox) contra papel",
+   "contraste": 1.08,
+   "minimo": 1.0,
+   "tipo": "forma",
+   "aprueba": true
+  }
+ ],
+ "lineas": {
+  "brief_08_sobre_papel": {
+   "compuesto": "#E4E4E2",
+   "contraste": 1.18
+  },
+  "brief_08_sobre_placa": {
+   "compuesto": "#DDDDD9",
+   "contraste": 1.18
+  },
+  "koto_filete_2d2d2d_sobre_060606": 1.47,
+  "koto_separador_blanco10_sobre_060606": 1.23,
+  "alfa_de_tinta_que_iguala_el_filete_de_koto": 0.177,
+  "alfa_de_tinta_que_iguala_el_separador_de_koto": 0.098,
+  "linea_seccion_propuesta": {
+   "alfa": 0.18,
+   "compuesto": "#CDCDCB",
+   "contraste": 1.47
+  }
+ },
+ "dosTintas": {
+  "koto": {
+   "gris": "#989898",
+   "sobre": "#060606",
+   "contrasteGris": 7.02,
+   "contrasteNombrado": 20.26,
+   "posicionDelGris": 0.636
+  },
+  "brief": {
+   "gris": "#666663",
+   "sobre": "#F6F6F4",
+   "contrasteGris": 5.32,
+   "contrasteNombrado": 17.45,
+   "posicionDelGris": 0.584
+  },
+  "grisEnLaPosicionDeKoto": {
+   "hex": "#5A5A59",
+   "contraste": 6.38,
+   "posicion": 0.636
+  }
+ },
+ "referentes": {
+  "koto": {
+   "placa": {
+    "hex": "#141414",
+    "contrasteSobreLienzo": 1.1
+   },
+   "corrido": {
+    "hex": "#989898",
+    "contrasteSobreLienzo": 7.02
+   },
+   "nombrado": {
+    "hex": "#FFFFFF",
+    "contrasteSobreLienzo": 20.26
+   },
+   "apagado": {
+    "hex": "#595959",
+    "contrasteSobreLienzo": 2.89
+   },
+   "filete": {
+    "hex": "#2D2D2D",
+    "contrasteSobreLienzo": 1.47
+   }
+  },
+  "acceptAndProceed": {
+   "negroSobrePapel": 19.63,
+   "grisAl80SobrePapel": 2.41,
+   "placaContraPapel": 1.11
+  }
+ },
+ "tonos": {
+  "#0029FF (brief)": {
+   "L": 0.475,
+   "C": 0.298,
+   "H": 264.2
+  },
+  "#0B25B7 (brief, opción)": {
+   "L": 0.384,
+   "C": 0.222,
+   "H": 265.3
+  },
+  "indigo-500 (Tailwind)": {
+   "L": 0.585,
+   "C": 0.204,
+   "H": 277.1
+  },
+  "violet-500 (Tailwind)": {
+   "L": 0.606,
+   "C": 0.219,
+   "H": 292.7
+  },
+  "indigo-600 (Tailwind)": {
+   "L": 0.511,
+   "C": 0.23,
+   "H": 277.0
+  },
+  "blue-600 (Tailwind)": {
+   "L": 0.546,
+   "C": 0.215,
+   "H": 262.9
+  },
+  "azul Klein (IKB, aprox.)": {
+   "L": 0.379,
+   "C": 0.195,
+   "H": 263.2
+  },
+  "tintaYPapel": {
+   "tinta": {
+    "L": 0.178,
+    "C": 0.0,
+    "H": 89.9
+   },
+   "papel": {
+    "L": 0.973,
+    "C": 0.003,
+    "H": 106.4
+   },
+   "placa": {
+    "L": 0.951,
+    "C": 0.007,
+    "H": 106.5
+   },
+   "gris": {
+    "L": 0.509,
+    "C": 0.005,
+    "H": 106.6
+   }
+  }
+ }
+}

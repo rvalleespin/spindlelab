@@ -1,0 +1,238 @@
+{
+ "fecha": "2026-10-16T21:16:40.111Z",
+ "medidoPor": "Lucía (dirección de arte), herramientas/verificar.mjs",
+ "navegador": "141.0.7390.37",
+ "anchos": {
+  "360": {
+   "anchoVentana": 360,
+   "scrollWidth": 360,
+   "salen": [],
+   "h1": 1,
+   "title": "Tablero laboratorio E12",
+   "imgs": {
+    "total": 22,
+    "cargadas": 22,
+    "rotas": [],
+    "sinAlt": []
+   },
+   "letras": {
+    "mona": true,
+    "googleSansFlex": true,
+    "dmMono": true,
+    "cargadas": [
+     "DM Mono 500 normal",
+     "Google Sans Flex 100 1000 25% 151%",
+     "Mona Sans 200 900 75% 125%"
+    ]
+   },
+   "motion": true,
+   "modoCursor": "sin-circulo",
+   "contraste": {
+    "nodos": 657,
+    "bajoDe45": []
+   },
+   "alto": 33537,
+   "errores": []
+  },
+  "390": {
+   "anchoVentana": 390,
+   "scrollWidth": 390,
+   "salen": [],
+   "h1": 1,
+   "title": "Tablero laboratorio E12",
+   "imgs": {
+    "total": 22,
+    "cargadas": 22,
+    "rotas": [],
+    "sinAlt": []
+   },
+   "letras": {
+    "mona": true,
+    "googleSansFlex": true,
+    "dmMono": true,
+    "cargadas": [
+     "DM Mono 500 normal",
+     "Google Sans Flex 100 1000 25% 151%",
+     "Mona Sans 200 900 75% 125%"
+    ]
+   },
+   "motion": true,
+   "modoCursor": "sin-circulo",
+   "contraste": {
+    "nodos": 657,
+    "bajoDe45": []
+   },
+   "alto": 32544,
+   "errores": []
+  },
+  "768": {
+   "anchoVentana": 768,
+   "scrollWidth": 768,
+   "salen": [],
+   "h1": 1,
+   "title": "Tablero laboratorio E12",
+   "imgs": {
+    "total": 22,
+    "cargadas": 22,
+    "rotas": [],
+    "sinAlt": []
+   },
+   "letras": {
+    "mona": true,
+    "googleSansFlex": true,
+    "dmMono": true,
+    "cargadas": [
+     "DM Mono 500 normal",
+     "Google Sans Flex 100 1000 25% 151%",
+     "Mona Sans 200 900 75% 125%"
+    ]
+   },
+   "motion": true,
+   "modoCursor": "con-circulo",
+   "contraste": {
+    "nodos": 657,
+    "bajoDe45": []
+   },
+   "alto": 30958,
+   "errores": []
+  },
+  "1440": {
+   "anchoVentana": 1440,
+   "scrollWidth": 1440,
+   "salen": [],
+   "h1": 1,
+   "title": "Tablero laboratorio E12",
+   "imgs": {
+    "total": 22,
+    "cargadas": 22,
+    "rotas": [],
+    "sinAlt": []
+   },
+   "letras": {
+    "mona": true,
+    "googleSansFlex": true,
+    "dmMono": true,
+    "cargadas": [
+     "DM Mono 500 normal",
+     "Google Sans Flex 100 1000 25% 151%",
+     "Mona Sans 200 900 75% 125%"
+    ]
+   },
+   "motion": true,
+   "modoCursor": "con-circulo",
+   "contraste": {
+    "nodos": 657,
+    "bajoDe45": []
+   },
+   "alto": 20298,
+   "errores": []
+  }
+ },
+ "demos": {
+  "cursorMouse": {
+   "modo": "con-circulo",
+   "dentro": {
+    "x": 568,
+    "y": 449.703125,
+    "ancho": 88,
+    "display": "grid",
+    "visibility": "visible",
+    "texto": "Ver el caso",
+    "fondo": "rgb(0, 41, 255)",
+    "puntero": {
+     "x": 568,
+     "y": 449.703125
+    }
+   },
+   "punteroSistemaSobrePieza": "none",
+   "punteroSistemaFuera": "pointer",
+   "salto": {
+    "px": 300,
+    "empiezaAMoverseMs": 42,
+    "llegaAl90Ms": 67,
+    "cuadros": 33,
+    "final": 868,
+    "sobrepasoPx": 0
+   },
+   "fuera": {
+    "x": 868,
+    "y": 449.703125,
+    "ancho": 0,
+    "display": "grid",
+    "visibility": "visible",
+    "texto": "Ver el caso",
+    "fondo": "rgb(0, 41, 255)"
+   }
+  },
+  "grafico": {
+   "cruz": "visible",
+   "valores": "260 ms · resorte 90 % · Koto 90 % · A&P 56 %"
+  },
+  "resorteMouse": {
+   "entrada": {
+    "lectura": "Resorte entrada: en tu navegador llegó al 90 % a 277 ms (calculado: 264 ms).",
+    "x": "matrix(1, 0, 0, 1, 920, 0)"
+   },
+   "estado": {
+    "lectura": "Resorte estado: en tu navegador llegó al 90 % a 142 ms (calculado: 139 ms).",
+    "x": "none"
+   },
+   "cursor": {
+    "lectura": "Resorte cursor: en tu navegador llegó al 90 % a 76 ms (calculado: 75 ms).",
+    "x": "matrix(1, 0, 0, 1, 920, 0)"
+   }
+  },
+  "teclado": {
+   "circuloAntes": 88,
+   "tabsHastaLaPieza": true,
+   "claseHtml": "con-circulo teclado",
+   "foco": {
+    "estilo": "solid",
+    "ancho": "2px",
+    "color": "rgb(17, 17, 17)",
+    "separacion": "3px"
+   },
+   "rotuloQuieto": "1",
+   "circulo": {
+    "visibility": "hidden",
+    "ancho": 0
+   },
+   "vuelveConElMouse": {
+    "clase": "con-circulo",
+    "visibility": "visible",
+    "ancho": 88,
+    "x": 472,
+    "y": 321,
+    "puntero": {
+     "x": 472,
+     "y": 321
+    }
+   },
+   "resorteElegido": "estado",
+   "focoEnMover": "mover",
+   "focoBoton": "solid 2px",
+   "lecturaTrasEnter": "Resorte estado: en tu navegador llegó al 90 % a 147 ms (calculado: 139 ms).",
+   "lecturaTrasEspacio": "Resorte estado: en tu navegador llegó al 90 % a 154 ms (calculado: 139 ms)."
+  },
+  "reducido": {
+   "claseHtml": "sin-circulo",
+   "circulo": "none",
+   "rotulo": "1",
+   "punteroSistema": "pointer",
+   "resorte": {
+    "saltoPx": 920,
+    "enElPrimerCuadro": true,
+    "lectura": "Movimiento reducido: sin resorte, el bloque salta a su lugar.",
+    "animaciones": 0
+   }
+  },
+  "telefono": {
+   "claseHtml": "sin-circulo",
+   "circulo": "none",
+   "rotulo": "1",
+   "punteroSistema": "pointer"
+  }
+ },
+ "fallas": [],
+ "aprobado": true
+}
