@@ -1,0 +1,627 @@
+{
+  "obra": "spindlelab-v3 · E10 · fotos generadas con IA",
+  "version": 1,
+  "fecha": "2026-10-16",
+  "autor": "Bruno (dirección creativa)",
+  "fuentes": [
+    "e10/referentes/marcas-15oct.json (The Ready idea principal; Gehl segundo sí: «las fotos hay que hacerlas, podemos ocupar modelos de IA»; Hoare: «parece pastoral gringa»)",
+    "e10/lock-the-ready.md §7 (fotos medidas), §9 (Gehl), §10 (qué se toma), §12 (amarillo y oro), §13 (techos)",
+    "marketing/brand/manual-de-marca.md §06 (un oro por vista) y §07b (oro dentro de una foto; personas nunca como equipo ni clientes)"
+  ],
+  "fuente_de_verdad": "Este archivo. El script compone el prompt con escena_en + encuadre + estilo + personas + negativos; prompt_completo_en es el resultado, escrito por `node generar.mjs --sincronizar`. Si alguien edita una parte y no sincroniza, el script se niega a generar.",
+  "reglas": {
+    "personas": "Las personas generadas son ambiente: gente anónima trabajando en su propia empresa. Nada las presenta como equipo de SpindleLab ni como clientes: sin pie de foto, sin nombre, sin etiqueta de lugar o empresa, sin escena de asesoría (alguien que le explica algo a otro con un informe o una pantalla), sin pose y sin mirar a cámara.",
+    "donde_no_van": [
+      "Ninguna foto generada con personas en la sección «Quién» de la home, en Nosotros ni en la misma banda que el retrato real de Ramón: al lado de él se leerían como su equipo.",
+      "Ninguna foto generada con personas en Trabajo ni junto a una obra: ahí se leerían como el cliente.",
+      "Nunca junto a una cifra, un testimonio o un caso."
+    ],
+    "alt": "Describe lo que se ve, una imagen y un alt (spec §7). Nunca «equipo», «cliente», «nuestro», «taller con»; nunca el nombre de un barrio o una empresa como si fuera un lugar real fotografiado.",
+    "oro": "Criterio del manual §07b: tono 38–54°, saturación ≥ 0,5, brillo ≥ 0,5 (el mismo cálculo HSV de PIL que marketing/brand/instagram-v3/medir.py). El script lo mide en cada imagen. Si marca una zona que se ve a simple vista, la foto se descarta o la vista donde va no lleva el punto dorado. Un amarillo más cálido que #F4F480 se trata igual.",
+    "forma_en_pagina": "Radio 0, sin velo, nada escrito encima salvo una etiqueta de pieza (lock §7 y §10; manual §07b).",
+    "texto_y_marcas": "Nada legible inventado: papeles con líneas borrosas, pantallas de espaldas o fuera de foco; ningún logo ni marca en ropa, tazas, notebooks, cajas o muros.",
+    "aprobacion": "Ninguna foto va al sitio sin que Ramón la vea. Se generan con su clave en una sesión nueva; aquí no se generó ninguna."
+  },
+  "estilo": {
+    "resumen_es": "Fotografía documental de trabajo real en empresas chilenas chicas y medianas, vista desde el lado de la empresa que vende (no de la consultora que asesora). Luz de día neutra de media mañana, lente de 35 mm a la altura del ojo, color natural y algo saturado sobre neutros fríos (blanco roto, hormigón, grafito, marino, ciruela) con acentos chicos de lima, lavanda, rosado y celeste, grano fino de película. Lugares de Santiago: oficinas, bodegas, maestranzas, mesones. Gente chilena y latinoamericana diversa, trabajando de verdad, de espaldas o de perfil. Nada dorado, nada amarillo, nada de loft de ladrillo con ampolletas, nada de campo ni de otoño.",
+    "por_que": [
+      "The Ready muestra gente trabajando de pie ante mesas con notas, de espaldas o de perfil, con grano en el archivo y saturación alta (lock §7). Eso se toma.",
+      "Sus interiores son lofts de ladrillo de Estados Unidos con ampolletas encendidas, jardín al sol y hojas de otoño: es justo lo que Ramón llamó «pastoral gringa» en Hoare, y es lo que trae el 0,52 % de oro de su página de nosotros (lock §7). Eso no se toma: aquí la luz es de día y neutra, y los lugares son de Santiago.",
+      "SpindleLab es una persona y el texto lo dice («una persona, no una agencia de veinte»). Una foto de cinco consultores en un taller contradice la home. Por eso la gente de las fotos está en SU empresa (bodega, maestranza, mesón, sala de reuniones), no en una sesión con un asesor.",
+      "Gehl aporta el aire: una persona chica en un cuadro grande, foto documental a sangre, color natural (lock §9). Esa es la dirección Pizarra limpia."
+    ],
+    "comun_en": "Documentary editorial photograph of real, everyday work in Santiago, Chile, shot as candid reportage. Places are ordinary working spaces of small and mid-sized Chilean companies: painted concrete or plastered walls, aluminium-framed windows, white or pale grey laminate tables, grey steel shelving, grey and blue plastic crates, a few office plants. Light: natural daylight only, late morning, neutral white balance (about 5500 K), soft and even with gentle shadows; ceiling lights and lamps are switched off. Camera: full-frame camera with a 35 mm lens, eye level or slightly above, natural perspective, no wide-angle distortion. Color: natural and fairly saturated, true to life, built on cool neutrals (off-white, concrete grey, charcoal, navy, deep plum) with small accents of lime green, lavender, pink and sky blue. Finish: subtle fine film grain, slightly lifted blacks, no heavy color grading, no vignette. Everything looks used and real, a little untidy, never a staged showroom.",
+    "texto_en": "All paper shows only soft, blurred grey lines, boxes and simple bar shapes, with no readable letters or numbers. Screens are turned away from the camera or show only out-of-focus blocks of color. Every object is unbranded: plain mugs, matte grey laptops with a blank lid, clothing without logos or printing, walls without signs.",
+    "personas_en": "People: Chilean and Latin American adults of varied ages (25 to 60), body types and skin tones, with ordinary faces and natural hair, in everyday work clothes in charcoal, navy, deep plum, denim, off-white or sage (knit sweaters, fleece vests, denim shirts, plain work jackets). They are absorbed in the task: seen from behind, in profile or three-quarter back view, faces partly turned away. Nobody looks at the camera, nobody poses or smiles for the photo. Hands are relaxed and anatomically correct, often partly hidden by objects. They are anonymous people at work in their own company, not a team portrait.",
+    "sin_personas_en": "No people in the frame. The place looks recently used: a chair pushed back, a cup left on the table.",
+    "encuadre": {
+      "taller": {
+        "es": "Cerca y lleno: capas delante y detrás, gente y objetos cortados por el borde, la acción a medio hacer. Dos o tres personas como máximo.",
+        "en": "Framing: close and busy, with layered foreground and background; people and objects are cropped by the edges of the frame; the action is in progress and the frame feels full."
+      },
+      "pizarra": {
+        "es": "Abierto y quieto: al menos la mitad del cuadro es aire (muro, piso, mesa o ventana), una persona como máximo y chica en el cuadro, líneas limpias.",
+        "en": "Framing: wide and calm, with generous empty space (at least half of the frame is quiet wall, floor, table or window); at most one person, small in the frame; clean lines, orderly."
+      }
+    },
+    "paleta": {
+      "base": [
+        "blanco roto (papel #FFFEFA)",
+        "gris hormigón",
+        "grafito",
+        "marino",
+        "ciruela profundo (eco de #1B0925)"
+      ],
+      "acentos_chicos": [
+        "lima (eco de #E6FA97)",
+        "lavanda (eco de #EDD1FF)",
+        "rosado de nota adhesiva",
+        "celeste"
+      ],
+      "prohibido": [
+        "dorado, latón, ámbar, mostaza, ocre y amarillo (el amarillo #F4F480 es del marcador y no se repite en la foto)",
+        "madera color miel o anaranjada (pino, roble claro barnizado: cae en el tono del oro)",
+        "luz de atardecer, ampolletas de tungsteno, dominante anaranjada"
+      ],
+      "naranja": "El naranja #EC6227 es de la dirección Taller y vive en la página (la mancha), no en la foto."
+    },
+    "lugares": {
+      "si": [
+        "oficina vidriada de una bodega o distribuidora (Quilicura, Pudahuel)",
+        "maestranza o taller metalmecánico (San Bernardo)",
+        "oficina en altura con la cordillera de fondo (Providencia)",
+        "sala de reuniones en edificio antiguo del centro (cielo alto, terrazo, ventana de aluminio)",
+        "mesón de una ferretería o distribuidora",
+        "sala chica de oficina en Ñuñoa",
+        "calle de Providencia con plátanos orientales en primavera (hoja verde)"
+      ],
+      "no": [
+        "loft de ladrillo rojo con ampolletas Edison (el interior de The Ready)",
+        "casa de campo, jardín, otoño, interiores ingleses o de suburbio (lo que Ramón llamó «pastoral gringa»)",
+        "cowork de diseño con neones o muros de plantas",
+        "carpintería (el pino es oro), soldadura (las chispas son oro)"
+      ]
+    },
+    "negativo_en": [
+      "gold, brass, amber, mustard, ochre or yellow objects and tones",
+      "golden-hour or sunset light, warm tungsten or Edison bulbs, orange color cast",
+      "honey-colored or orange wood, cardboard boxes in the foreground",
+      "autumn leaves, gardens, countryside",
+      "exposed red-brick loft, American suburban or English country interiors, chandeliers, period furniture",
+      "readable text, letters, numbers, signs, logos, brand names, watermarks",
+      "people looking at the camera, posed group portrait, stock-photo smiles, handshakes, thumbs up",
+      "deformed or extra fingers, fused hands, distorted faces",
+      "robots, glowing circuits, neon, holograms, futuristic interfaces, blue tech glow",
+      "HDR look, plastic CGI skin, oversharpening, lens flare, bokeh balls"
+    ],
+    "acabado": {
+      "nota": "Lo que hace que todas se vean de una misma marca no es solo el prompt: es un acabado común aplicado DESPUÉS de elegir, igual para todas. No lo hace generar.mjs (sin dependencias no hay procesamiento de imagen); va en la sesión que arma el tablero.",
+      "pasos": [
+        "1 · Recorte a la proporción final de la ficha (centro, salvo la nota de recorte de cada foto).",
+        "2 · Balance: un gris de la escena tiene que leerse gris. Si el modelo calentó la imagen, se enfría hasta neutro; nunca se calienta.",
+        "3 · Grano monocromo fino, el mismo en todas, calibrado contra lock/the-ready/foto-grano-hero-x2.png a 100 % (Lucía midió ruido de alta frecuencia 12,1 en su hero contra 8,1 en una foto sin tratar). Si el modelo ya trajo grano parejo, no se suma.",
+        "4 · Sin viñeta, sin virado, sin subir saturación más de lo que trae (subir saturación empuja píxeles cerca del oro sobre el umbral de 0,5).",
+        "5 · Medir oro otra vez sobre el archivo final: `node generar.mjs --medir=<archivo.png>`.",
+        "6 · Exportar JPG (calidad ~82) y su versión de 800 px (`-800.jpg`), como el pool. Nombre nuevo, nunca sobrescribir una ruta publicada (caché larga; manual §07b y CLAUDE.md)."
+      ]
+    }
+  },
+  "modelos": {
+    "gemini": {
+      "modelo": "gemini-2.5-flash-image",
+      "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/<modelo>:generateContent",
+      "variable": "GEMINI_API_KEY",
+      "parametros": "generationConfig.responseModalities = [\"IMAGE\"], imageConfig.aspectRatio = el de la ficha",
+      "salidas_px": {
+        "1:1": "1024×1024",
+        "2:3": "832×1248",
+        "3:2": "1248×832",
+        "3:4": "864×1184",
+        "4:3": "1184×864",
+        "4:5": "896×1152",
+        "5:4": "1152×896",
+        "9:16": "768×1344",
+        "16:9": "1344×768",
+        "21:9": "1536×672"
+      },
+      "salidas_nota": "Tamaños de la documentación de Google para este modelo; el registro anota lo que de verdad llegó.",
+      "precio_ref_usd_por_imagen": 0.039,
+      "precio_nota": "Precio de lista conocido (1.290 tokens de salida a USD 30 por millón). Verificar en la consola antes de una corrida grande."
+    },
+    "openai": {
+      "modelo": "gpt-image-1",
+      "endpoint": "https://api.openai.com/v1/images/generations",
+      "variable": "OPENAI_API_KEY",
+      "parametros": "size = el de la ficha (1024x1024, 1536x1024 o 1024x1536), quality = high por defecto (--calidad), n = 1, output_format = png",
+      "precio_ref_usd_por_imagen": {
+        "low": {
+          "1024x1024": 0.011,
+          "otro": 0.016
+        },
+        "medium": {
+          "1024x1024": 0.042,
+          "otro": 0.063
+        },
+        "high": {
+          "1024x1024": 0.167,
+          "otro": 0.25
+        }
+      },
+      "precio_nota": "Precios de lista conocidos de gpt-image-1. Verificar en la consola antes de una corrida grande. La organización tiene que estar verificada en OpenAI para usar este modelo.",
+      "nota": "No tiene 21:9 ni 4:5: se genera en 3:2 o 2:3 y se recorta."
+    },
+    "sin_negativo_nativo": "Ninguno de los dos modelos tiene un campo de negativo: lo que no debe salir va dicho en positivo dentro del texto (papeles con líneas borrosas, objetos sin marca) y como línea final «Avoid: …»."
+  },
+  "fotos": [
+    {
+      "id": "F1",
+      "titulo_es": "Mesa de notas en la oficina de una bodega",
+      "muestra_es": "Tres personas de pie alrededor de una mesa blanca larga con hojas impresas y notas de colores, en la oficina vidriada de una distribuidora; la bodega al fondo.",
+      "direcciones": [
+        "taller"
+      ],
+      "encuadre": "taller",
+      "pagina": "Home (/v3/)",
+      "seccion": "Hero: columna derecha a sangre, del filete del encabezado a la cinta (como el hero de The Ready). El titular y el chequeo quedan a la izquierda, fuera de la foto.",
+      "proporcion": "0,58 vertical",
+      "uso": "391×671 css a 1440 (782×1342 a 2x); a 390 baja bajo el titular a todo el ancho, en 4:5.",
+      "gemini": {
+        "aspectRatio": "9:16",
+        "salida": "768×1344"
+      },
+      "openai": {
+        "size": "1024x1536"
+      },
+      "recorte": "1440: quitar 20 px de alto (768×1324). 390: 4:5 desde el centro, con la mujer inclinada dentro.",
+      "personas": 3,
+      "prioridad": 1,
+      "escena_en": "Vertical photograph. In the glass-walled office corner of a small industrial supplies distributor in Quilicura, Santiago, three people stand around a long white table covered with printed pages and rows of pink, lime-green and pale-blue sticky notes. A woman in her thirties in a deep plum knit sweater leans over the table to place a note, seen in profile. An older man in a navy fleece vest stands with his back to the camera, arms crossed, studying the table. A third person is cut off by the right edge of the frame: only a forearm in a denim sleeve and a pen. Through the glass wall behind them, out of focus, the warehouse: grey steel shelving with grey and blue plastic crates. The table runs diagonally from the lower left corner into the depth of the frame.",
+      "negativo_en": [
+        "yellow sticky notes",
+        "wooden table",
+        "anyone facing the camera"
+      ],
+      "alt_es": "Tres personas de pie alrededor de una mesa blanca con hojas impresas y notas de colores, en la oficina vidriada de una bodega.",
+      "riesgos_es": "Es la foto más cercana a The Ready y la que más fácil se lee como «taller de consultores». Lo que la salva es la bodega detrás del vidrio: si sale borrada o parece una oficina de agencia, no sirve.",
+      "prompt_completo_en": "Vertical photograph. In the glass-walled office corner of a small industrial supplies distributor in Quilicura, Santiago, three people stand around a long white table covered with printed pages and rows of pink, lime-green and pale-blue sticky notes. A woman in her thirties in a deep plum knit sweater leans over the table to place a note, seen in profile. An older man in a navy fleece vest stands with his back to the camera, arms crossed, studying the table. A third person is cut off by the right edge of the frame: only a forearm in a denim sleeve and a pen. Through the glass wall behind them, out of focus, the warehouse: grey steel shelving with grey and blue plastic crates. The table runs diagonally from the lower left corner into the depth of the frame.\n\nFraming: close and busy, with layered foreground and background; people and objects are cropped by the edges of the frame; the action is in progress and the frame feels full.\n\nDocumentary editorial photograph of real, everyday work in Santiago, Chile, shot as candid reportage. Places are ordinary working spaces of small and mid-sized Chilean companies: painted concrete or plastered walls, aluminium-framed windows, white or pale grey laminate tables, grey steel shelving, grey and blue plastic crates, a few office plants. Light: natural daylight only, late morning, neutral white balance (about 5500 K), soft and even with gentle shadows; ceiling lights and lamps are switched off. Camera: full-frame camera with a 35 mm lens, eye level or slightly above, natural perspective, no wide-angle distortion. Color: natural and fairly saturated, true to life, built on cool neutrals (off-white, concrete grey, charcoal, navy, deep plum) with small accents of lime green, lavender, pink and sky blue. Finish: subtle fine film grain, slightly lifted blacks, no heavy color grading, no vignette. Everything looks used and real, a little untidy, never a staged showroom.\n\nAll paper shows only soft, blurred grey lines, boxes and simple bar shapes, with no readable letters or numbers. Screens are turned away from the camera or show only out-of-focus blocks of color. Every object is unbranded: plain mugs, matte grey laptops with a blank lid, clothing without logos or printing, walls without signs.\n\nPeople: Chilean and Latin American adults of varied ages (25 to 60), body types and skin tones, with ordinary faces and natural hair, in everyday work clothes in charcoal, navy, deep plum, denim, off-white or sage (knit sweaters, fleece vests, denim shirts, plain work jackets). They are absorbed in the task: seen from behind, in profile or three-quarter back view, faces partly turned away. Nobody looks at the camera, nobody poses or smiles for the photo. Hands are relaxed and anatomically correct, often partly hidden by objects. They are anonymous people at work in their own company, not a team portrait.\n\nAvoid: yellow sticky notes; wooden table; anyone facing the camera; gold, brass, amber, mustard, ochre or yellow objects and tones; golden-hour or sunset light, warm tungsten or Edison bulbs, orange color cast; honey-colored or orange wood, cardboard boxes in the foreground; autumn leaves, gardens, countryside; exposed red-brick loft, American suburban or English country interiors, chandeliers, period furniture; readable text, letters, numbers, signs, logos, brand names, watermarks; people looking at the camera, posed group portrait, stock-photo smiles, handshakes, thumbs up; deformed or extra fingers, fused hands, distorted faces; robots, glowing circuits, neon, holograms, futuristic interfaces, blue tech glow; HDR look, plastic CGI skin, oversharpening, lens flare, bokeh balls."
+    },
+    {
+      "id": "F2",
+      "titulo_es": "Una persona al fondo de una mesa larga, con la cordillera",
+      "muestra_es": "Planta libre en altura en Providencia: una mesa blanca larga junto al ventanal, una sola persona chica al fondo trabajando en un notebook, edificios y la cordillera con nieve detrás.",
+      "direcciones": [
+        "pizarra"
+      ],
+      "encuadre": "pizarra",
+      "pagina": "Home (/v3/)",
+      "seccion": "Banda a sangre entre «Qué hacemos» y el primer campo (la foto a sangre de Gehl, como banda propia, sin nada escrito encima).",
+      "proporcion": "21:9 a 1440 · 4:5 a 390",
+      "uso": "100 % del ancho a 1440 (1440×617 css). A 390, 4:5 a todo el ancho.",
+      "gemini": {
+        "aspectRatio": "16:9",
+        "salida": "1344×768"
+      },
+      "openai": {
+        "size": "1536x1024"
+      },
+      "recorte": "Se genera en 16:9 para sacar las dos: 21:9 desde el centro (1344×576) y 4:5 desde el centro (614×768). La persona y la cordillera tienen que quedar en la mitad central del ancho. A 1440 se ve casi 1:1 (sin 2x): es el límite de estos modelos; el grano del acabado lo disimula.",
+      "personas": 1,
+      "prioridad": 1,
+      "escena_en": "Wide horizontal photograph of an open-plan office on a high floor in Providencia, Santiago, late morning. A long white table runs parallel to a wall of floor-to-ceiling windows. Beyond the glass: the city's mid-rise buildings and, far behind them, the Andes with patches of snow, softened by a light haze. One person in a charcoal sweater works alone at the far end of the table on a laptop, seen from behind at a distance, small in the frame and close to the center. Most of the frame is quiet: pale floor, the empty length of the table, the window light. One potted plant by the window. Keep the person and the mountains inside the central half of the frame and leave calm space above and below, because the image will be cropped both to a wide 21:9 band and to a 4:5 vertical.",
+      "negativo_en": [
+        "sunset or orange sky",
+        "other people at desks",
+        "glass towers reflecting golden light"
+      ],
+      "alt_es": "Una persona trabaja sola al fondo de una mesa larga, frente a un ventanal con edificios y la cordillera al fondo.",
+      "riesgos_es": "Que la cordillera salga de postal (cielo azul saturado, nieve de catálogo) o que el modelo llene la planta de gente. La neblina de Santiago es la que la vuelve creíble.",
+      "prompt_completo_en": "Wide horizontal photograph of an open-plan office on a high floor in Providencia, Santiago, late morning. A long white table runs parallel to a wall of floor-to-ceiling windows. Beyond the glass: the city's mid-rise buildings and, far behind them, the Andes with patches of snow, softened by a light haze. One person in a charcoal sweater works alone at the far end of the table on a laptop, seen from behind at a distance, small in the frame and close to the center. Most of the frame is quiet: pale floor, the empty length of the table, the window light. One potted plant by the window. Keep the person and the mountains inside the central half of the frame and leave calm space above and below, because the image will be cropped both to a wide 21:9 band and to a 4:5 vertical.\n\nFraming: wide and calm, with generous empty space (at least half of the frame is quiet wall, floor, table or window); at most one person, small in the frame; clean lines, orderly.\n\nDocumentary editorial photograph of real, everyday work in Santiago, Chile, shot as candid reportage. Places are ordinary working spaces of small and mid-sized Chilean companies: painted concrete or plastered walls, aluminium-framed windows, white or pale grey laminate tables, grey steel shelving, grey and blue plastic crates, a few office plants. Light: natural daylight only, late morning, neutral white balance (about 5500 K), soft and even with gentle shadows; ceiling lights and lamps are switched off. Camera: full-frame camera with a 35 mm lens, eye level or slightly above, natural perspective, no wide-angle distortion. Color: natural and fairly saturated, true to life, built on cool neutrals (off-white, concrete grey, charcoal, navy, deep plum) with small accents of lime green, lavender, pink and sky blue. Finish: subtle fine film grain, slightly lifted blacks, no heavy color grading, no vignette. Everything looks used and real, a little untidy, never a staged showroom.\n\nAll paper shows only soft, blurred grey lines, boxes and simple bar shapes, with no readable letters or numbers. Screens are turned away from the camera or show only out-of-focus blocks of color. Every object is unbranded: plain mugs, matte grey laptops with a blank lid, clothing without logos or printing, walls without signs.\n\nPeople: Chilean and Latin American adults of varied ages (25 to 60), body types and skin tones, with ordinary faces and natural hair, in everyday work clothes in charcoal, navy, deep plum, denim, off-white or sage (knit sweaters, fleece vests, denim shirts, plain work jackets). They are absorbed in the task: seen from behind, in profile or three-quarter back view, faces partly turned away. Nobody looks at the camera, nobody poses or smiles for the photo. Hands are relaxed and anatomically correct, often partly hidden by objects. They are anonymous people at work in their own company, not a team portrait.\n\nAvoid: sunset or orange sky; other people at desks; glass towers reflecting golden light; gold, brass, amber, mustard, ochre or yellow objects and tones; golden-hour or sunset light, warm tungsten or Edison bulbs, orange color cast; honey-colored or orange wood, cardboard boxes in the foreground; autumn leaves, gardens, countryside; exposed red-brick loft, American suburban or English country interiors, chandeliers, period furniture; readable text, letters, numbers, signs, logos, brand names, watermarks; people looking at the camera, posed group portrait, stock-photo smiles, handshakes, thumbs up; deformed or extra fingers, fused hands, distorted faces; robots, glowing circuits, neon, holograms, futuristic interfaces, blue tech glow; HDR look, plastic CGI skin, oversharpening, lens flare, bokeh balls."
+    },
+    {
+      "id": "F3",
+      "titulo_es": "Manos ordenando hojas en tres pilas",
+      "muestra_es": "Dos pares de manos ordenan hojas impresas en tres pilas sobre una mesa blanca, con notas de colores, un plumón ciruela y una taza; sin caras.",
+      "direcciones": [
+        "taller"
+      ],
+      "encuadre": "taller",
+      "pagina": "Home (/v3/) · y Acompañamiento",
+      "seccion": "Collage de la home, pieza A (junto a «Qué hacemos»). En Acompañamiento puede ir en «Así se ve un mes tipo», Semana 1.",
+      "proporcion": "5:4",
+      "uso": "Pieza de collage, 300 a 480 css de ancho a 1440 (The Ready: 0,64 a 1,53).",
+      "gemini": {
+        "aspectRatio": "5:4",
+        "salida": "1152×896"
+      },
+      "openai": {
+        "size": "1536x1024"
+      },
+      "recorte": "OpenAI: 5:4 desde el centro (1280×1024).",
+      "personas": 2,
+      "prioridad": 1,
+      "escena_en": "Close photograph taken from slightly above, at about 45 degrees, of a white table where two pairs of hands sort printed pages into three loose piles. The pages look like printouts of web pages but show only blurred grey blocks and lines. Pink, lime-green and pale-blue sticky notes are scattered around; a deep plum felt marker lies uncapped; a plain white mug sits at the edge of the frame. One hand slides a page from one pile to another; the other hand holds a sticky note. Only sleeves are visible: a navy fleece and a denim shirt. No faces in the frame.",
+      "negativo_en": [
+        "faces",
+        "more than two pairs of hands",
+        "yellow sticky notes",
+        "readable words on the pages or notes"
+      ],
+      "alt_es": "Manos que ordenan hojas impresas en tres pilas sobre una mesa blanca, con notas de colores y un plumón.",
+      "riesgos_es": "Manos en primer plano: es donde más fallan los modelos. Revisar dedos al 100 % en cada variante.",
+      "prompt_completo_en": "Close photograph taken from slightly above, at about 45 degrees, of a white table where two pairs of hands sort printed pages into three loose piles. The pages look like printouts of web pages but show only blurred grey blocks and lines. Pink, lime-green and pale-blue sticky notes are scattered around; a deep plum felt marker lies uncapped; a plain white mug sits at the edge of the frame. One hand slides a page from one pile to another; the other hand holds a sticky note. Only sleeves are visible: a navy fleece and a denim shirt. No faces in the frame.\n\nFraming: close and busy, with layered foreground and background; people and objects are cropped by the edges of the frame; the action is in progress and the frame feels full.\n\nDocumentary editorial photograph of real, everyday work in Santiago, Chile, shot as candid reportage. Places are ordinary working spaces of small and mid-sized Chilean companies: painted concrete or plastered walls, aluminium-framed windows, white or pale grey laminate tables, grey steel shelving, grey and blue plastic crates, a few office plants. Light: natural daylight only, late morning, neutral white balance (about 5500 K), soft and even with gentle shadows; ceiling lights and lamps are switched off. Camera: full-frame camera with a 35 mm lens, eye level or slightly above, natural perspective, no wide-angle distortion. Color: natural and fairly saturated, true to life, built on cool neutrals (off-white, concrete grey, charcoal, navy, deep plum) with small accents of lime green, lavender, pink and sky blue. Finish: subtle fine film grain, slightly lifted blacks, no heavy color grading, no vignette. Everything looks used and real, a little untidy, never a staged showroom.\n\nAll paper shows only soft, blurred grey lines, boxes and simple bar shapes, with no readable letters or numbers. Screens are turned away from the camera or show only out-of-focus blocks of color. Every object is unbranded: plain mugs, matte grey laptops with a blank lid, clothing without logos or printing, walls without signs.\n\nPeople: Chilean and Latin American adults of varied ages (25 to 60), body types and skin tones, with ordinary faces and natural hair, in everyday work clothes in charcoal, navy, deep plum, denim, off-white or sage (knit sweaters, fleece vests, denim shirts, plain work jackets). They are absorbed in the task: seen from behind, in profile or three-quarter back view, faces partly turned away. Nobody looks at the camera, nobody poses or smiles for the photo. Hands are relaxed and anatomically correct, often partly hidden by objects. They are anonymous people at work in their own company, not a team portrait.\n\nAvoid: faces; more than two pairs of hands; yellow sticky notes; readable words on the pages or notes; gold, brass, amber, mustard, ochre or yellow objects and tones; golden-hour or sunset light, warm tungsten or Edison bulbs, orange color cast; honey-colored or orange wood, cardboard boxes in the foreground; autumn leaves, gardens, countryside; exposed red-brick loft, American suburban or English country interiors, chandeliers, period furniture; readable text, letters, numbers, signs, logos, brand names, watermarks; people looking at the camera, posed group portrait, stock-photo smiles, handshakes, thumbs up; deformed or extra fingers, fused hands, distorted faces; robots, glowing circuits, neon, holograms, futuristic interfaces, blue tech glow; HDR look, plastic CGI skin, oversharpening, lens flare, bokeh balls."
+    },
+    {
+      "id": "F4",
+      "titulo_es": "Escritorio de pie en la oficina de una bodega",
+      "muestra_es": "Una mujer de unos cincuenta, chaleco polar salvia, escribe en un notebook en un escritorio de pie armado sobre una estantería; de perfil; la bodega fuera de foco detrás.",
+      "direcciones": [
+        "taller"
+      ],
+      "encuadre": "taller",
+      "pagina": "Home (/v3/)",
+      "seccion": "Collage de la home, pieza B.",
+      "proporcion": "4:5",
+      "uso": "Pieza de collage, 250 a 380 css de ancho a 1440.",
+      "gemini": {
+        "aspectRatio": "4:5",
+        "salida": "896×1152"
+      },
+      "openai": {
+        "size": "1024x1536"
+      },
+      "recorte": "OpenAI: 4:5 desde el centro (1024×1280).",
+      "personas": 1,
+      "prioridad": 1,
+      "escena_en": "Vertical photograph in the small office of a warehouse in Santiago. A woman in her late forties with dark hair tied back, wearing a sage fleece vest over a lavender shirt, works at a standing desk built on a steel shelf, typing on a matte grey laptop with a blank lid. She is seen in profile, focused, and the screen faces away from the camera. Behind her, out of focus, rows of grey steel shelving with blue and grey plastic crates and a pallet jack. A sheet of paper taped to the shelf shows only blurred lines.",
+      "negativo_en": [
+        "readable screen",
+        "high-visibility vests",
+        "cardboard boxes"
+      ],
+      "alt_es": "Una mujer escribe en un notebook en un escritorio de pie, en la oficina de una bodega con estanterías al fondo.",
+      "riesgos_es": "Que el notebook salga con una manzana o un logo en la tapa.",
+      "prompt_completo_en": "Vertical photograph in the small office of a warehouse in Santiago. A woman in her late forties with dark hair tied back, wearing a sage fleece vest over a lavender shirt, works at a standing desk built on a steel shelf, typing on a matte grey laptop with a blank lid. She is seen in profile, focused, and the screen faces away from the camera. Behind her, out of focus, rows of grey steel shelving with blue and grey plastic crates and a pallet jack. A sheet of paper taped to the shelf shows only blurred lines.\n\nFraming: close and busy, with layered foreground and background; people and objects are cropped by the edges of the frame; the action is in progress and the frame feels full.\n\nDocumentary editorial photograph of real, everyday work in Santiago, Chile, shot as candid reportage. Places are ordinary working spaces of small and mid-sized Chilean companies: painted concrete or plastered walls, aluminium-framed windows, white or pale grey laminate tables, grey steel shelving, grey and blue plastic crates, a few office plants. Light: natural daylight only, late morning, neutral white balance (about 5500 K), soft and even with gentle shadows; ceiling lights and lamps are switched off. Camera: full-frame camera with a 35 mm lens, eye level or slightly above, natural perspective, no wide-angle distortion. Color: natural and fairly saturated, true to life, built on cool neutrals (off-white, concrete grey, charcoal, navy, deep plum) with small accents of lime green, lavender, pink and sky blue. Finish: subtle fine film grain, slightly lifted blacks, no heavy color grading, no vignette. Everything looks used and real, a little untidy, never a staged showroom.\n\nAll paper shows only soft, blurred grey lines, boxes and simple bar shapes, with no readable letters or numbers. Screens are turned away from the camera or show only out-of-focus blocks of color. Every object is unbranded: plain mugs, matte grey laptops with a blank lid, clothing without logos or printing, walls without signs.\n\nPeople: Chilean and Latin American adults of varied ages (25 to 60), body types and skin tones, with ordinary faces and natural hair, in everyday work clothes in charcoal, navy, deep plum, denim, off-white or sage (knit sweaters, fleece vests, denim shirts, plain work jackets). They are absorbed in the task: seen from behind, in profile or three-quarter back view, faces partly turned away. Nobody looks at the camera, nobody poses or smiles for the photo. Hands are relaxed and anatomically correct, often partly hidden by objects. They are anonymous people at work in their own company, not a team portrait.\n\nAvoid: readable screen; high-visibility vests; cardboard boxes; gold, brass, amber, mustard, ochre or yellow objects and tones; golden-hour or sunset light, warm tungsten or Edison bulbs, orange color cast; honey-colored or orange wood, cardboard boxes in the foreground; autumn leaves, gardens, countryside; exposed red-brick loft, American suburban or English country interiors, chandeliers, period furniture; readable text, letters, numbers, signs, logos, brand names, watermarks; people looking at the camera, posed group portrait, stock-photo smiles, handshakes, thumbs up; deformed or extra fingers, fused hands, distorted faces; robots, glowing circuits, neon, holograms, futuristic interfaces, blue tech glow; HDR look, plastic CGI skin, oversharpening, lens flare, bokeh balls."
+    },
+    {
+      "id": "F5",
+      "titulo_es": "Un mensaje en la maestranza",
+      "muestra_es": "En una maestranza de San Bernardo, un hombre de unos cincuenta con chaqueta de trabajo marino lee un mensaje en el teléfono junto al banco de trabajo; otro trabajador al fondo.",
+      "direcciones": [
+        "taller"
+      ],
+      "encuadre": "taller",
+      "pagina": "Home (/v3/)",
+      "seccion": "Campo «Alcance», o pieza C del collage.",
+      "proporcion": "3:2",
+      "uso": "Media fila del campo (como hoy las fotos del pool) o pieza de collage.",
+      "gemini": {
+        "aspectRatio": "3:2",
+        "salida": "1248×832"
+      },
+      "openai": {
+        "size": "1536x1024"
+      },
+      "recorte": "Ninguno.",
+      "personas": 2,
+      "prioridad": 2,
+      "escena_en": "Horizontal photograph inside a small metalworking shop (a maestranza) in San Bernardo, Santiago: concrete floor, a steel workbench with galvanized parts and a vise, a lathe in the background, daylight from translucent roof panels. A man in his fifties in a navy work jacket stands by the bench reading a message on his phone, seen in three-quarter back view; the screen faces away from the camera. Far in the background, out of focus, another worker carries a steel bar. No welding and no sparks.",
+      "negativo_en": [
+        "welding sparks",
+        "brass or copper parts",
+        "safety signs",
+        "readable phone screen"
+      ],
+      "alt_es": "En una maestranza, un hombre lee un mensaje en su teléfono junto a un banco de trabajo con piezas de acero.",
+      "riesgos_es": "Que salga un taller de catálogo (todo limpio) o que aparezcan carteles de seguridad amarillos.",
+      "prompt_completo_en": "Horizontal photograph inside a small metalworking shop (a maestranza) in San Bernardo, Santiago: concrete floor, a steel workbench with galvanized parts and a vise, a lathe in the background, daylight from translucent roof panels. A man in his fifties in a navy work jacket stands by the bench reading a message on his phone, seen in three-quarter back view; the screen faces away from the camera. Far in the background, out of focus, another worker carries a steel bar. No welding and no sparks.\n\nFraming: close and busy, with layered foreground and background; people and objects are cropped by the edges of the frame; the action is in progress and the frame feels full.\n\nDocumentary editorial photograph of real, everyday work in Santiago, Chile, shot as candid reportage. Places are ordinary working spaces of small and mid-sized Chilean companies: painted concrete or plastered walls, aluminium-framed windows, white or pale grey laminate tables, grey steel shelving, grey and blue plastic crates, a few office plants. Light: natural daylight only, late morning, neutral white balance (about 5500 K), soft and even with gentle shadows; ceiling lights and lamps are switched off. Camera: full-frame camera with a 35 mm lens, eye level or slightly above, natural perspective, no wide-angle distortion. Color: natural and fairly saturated, true to life, built on cool neutrals (off-white, concrete grey, charcoal, navy, deep plum) with small accents of lime green, lavender, pink and sky blue. Finish: subtle fine film grain, slightly lifted blacks, no heavy color grading, no vignette. Everything looks used and real, a little untidy, never a staged showroom.\n\nAll paper shows only soft, blurred grey lines, boxes and simple bar shapes, with no readable letters or numbers. Screens are turned away from the camera or show only out-of-focus blocks of color. Every object is unbranded: plain mugs, matte grey laptops with a blank lid, clothing without logos or printing, walls without signs.\n\nPeople: Chilean and Latin American adults of varied ages (25 to 60), body types and skin tones, with ordinary faces and natural hair, in everyday work clothes in charcoal, navy, deep plum, denim, off-white or sage (knit sweaters, fleece vests, denim shirts, plain work jackets). They are absorbed in the task: seen from behind, in profile or three-quarter back view, faces partly turned away. Nobody looks at the camera, nobody poses or smiles for the photo. Hands are relaxed and anatomically correct, often partly hidden by objects. They are anonymous people at work in their own company, not a team portrait.\n\nAvoid: welding sparks; brass or copper parts; safety signs; readable phone screen; gold, brass, amber, mustard, ochre or yellow objects and tones; golden-hour or sunset light, warm tungsten or Edison bulbs, orange color cast; honey-colored or orange wood, cardboard boxes in the foreground; autumn leaves, gardens, countryside; exposed red-brick loft, American suburban or English country interiors, chandeliers, period furniture; readable text, letters, numbers, signs, logos, brand names, watermarks; people looking at the camera, posed group portrait, stock-photo smiles, handshakes, thumbs up; deformed or extra fingers, fused hands, distorted faces; robots, glowing circuits, neon, holograms, futuristic interfaces, blue tech glow; HDR look, plastic CGI skin, oversharpening, lens flare, bokeh balls."
+    },
+    {
+      "id": "F6",
+      "titulo_es": "Planilla de cuatro columnas en el entrepiso",
+      "muestra_es": "Dos personas de espaldas mueven notas de colores en una planilla de cuatro columnas hecha con cinta ciruela sobre una pizarra, en el entrepiso de una bodega en Pudahuel.",
+      "direcciones": [
+        "taller"
+      ],
+      "encuadre": "taller",
+      "pagina": "Home (/v3/)",
+      "seccion": "Campo «Continuidad».",
+      "proporcion": "4:3",
+      "uso": "Media fila del campo.",
+      "gemini": {
+        "aspectRatio": "4:3",
+        "salida": "1184×864"
+      },
+      "openai": {
+        "size": "1536x1024"
+      },
+      "recorte": "OpenAI: 4:3 desde el centro (1365×1024).",
+      "personas": 2,
+      "prioridad": 2,
+      "escena_en": "Horizontal photograph in the mezzanine office of a distribution warehouse in Pudahuel, Santiago. Two people stand with their backs to the camera in front of a large wall planner: a grid of four columns made with dark plum tape on a whiteboard, filled with pink, lime-green and pale-blue sticky notes and a few hand-drawn check marks, with no readable writing. A young man in a denim shirt moves a note from one column to the next; a woman in a deep plum sweater holds a plain white cup and watches. Through an interior window on the right, the warehouse floor with shelving below.",
+      "negativo_en": [
+        "yellow sticky notes",
+        "readable handwriting",
+        "anyone facing the camera"
+      ],
+      "alt_es": "Dos personas de espaldas mueven notas de colores en una planilla de cuatro columnas pegada en la pared.",
+      "riesgos_es": "Seudoletras nítidas en las notas. Si se leen como palabras inventadas, se descarta.",
+      "prompt_completo_en": "Horizontal photograph in the mezzanine office of a distribution warehouse in Pudahuel, Santiago. Two people stand with their backs to the camera in front of a large wall planner: a grid of four columns made with dark plum tape on a whiteboard, filled with pink, lime-green and pale-blue sticky notes and a few hand-drawn check marks, with no readable writing. A young man in a denim shirt moves a note from one column to the next; a woman in a deep plum sweater holds a plain white cup and watches. Through an interior window on the right, the warehouse floor with shelving below.\n\nFraming: close and busy, with layered foreground and background; people and objects are cropped by the edges of the frame; the action is in progress and the frame feels full.\n\nDocumentary editorial photograph of real, everyday work in Santiago, Chile, shot as candid reportage. Places are ordinary working spaces of small and mid-sized Chilean companies: painted concrete or plastered walls, aluminium-framed windows, white or pale grey laminate tables, grey steel shelving, grey and blue plastic crates, a few office plants. Light: natural daylight only, late morning, neutral white balance (about 5500 K), soft and even with gentle shadows; ceiling lights and lamps are switched off. Camera: full-frame camera with a 35 mm lens, eye level or slightly above, natural perspective, no wide-angle distortion. Color: natural and fairly saturated, true to life, built on cool neutrals (off-white, concrete grey, charcoal, navy, deep plum) with small accents of lime green, lavender, pink and sky blue. Finish: subtle fine film grain, slightly lifted blacks, no heavy color grading, no vignette. Everything looks used and real, a little untidy, never a staged showroom.\n\nAll paper shows only soft, blurred grey lines, boxes and simple bar shapes, with no readable letters or numbers. Screens are turned away from the camera or show only out-of-focus blocks of color. Every object is unbranded: plain mugs, matte grey laptops with a blank lid, clothing without logos or printing, walls without signs.\n\nPeople: Chilean and Latin American adults of varied ages (25 to 60), body types and skin tones, with ordinary faces and natural hair, in everyday work clothes in charcoal, navy, deep plum, denim, off-white or sage (knit sweaters, fleece vests, denim shirts, plain work jackets). They are absorbed in the task: seen from behind, in profile or three-quarter back view, faces partly turned away. Nobody looks at the camera, nobody poses or smiles for the photo. Hands are relaxed and anatomically correct, often partly hidden by objects. They are anonymous people at work in their own company, not a team portrait.\n\nAvoid: yellow sticky notes; readable handwriting; anyone facing the camera; gold, brass, amber, mustard, ochre or yellow objects and tones; golden-hour or sunset light, warm tungsten or Edison bulbs, orange color cast; honey-colored or orange wood, cardboard boxes in the foreground; autumn leaves, gardens, countryside; exposed red-brick loft, American suburban or English country interiors, chandeliers, period furniture; readable text, letters, numbers, signs, logos, brand names, watermarks; people looking at the camera, posed group portrait, stock-photo smiles, handshakes, thumbs up; deformed or extra fingers, fused hands, distorted faces; robots, glowing circuits, neon, holograms, futuristic interfaces, blue tech glow; HDR look, plastic CGI skin, oversharpening, lens flare, bokeh balls."
+    },
+    {
+      "id": "F7",
+      "titulo_es": "Hojas en fila en la pared de una sala del centro",
+      "muestra_es": "En una sala de reuniones de cielo alto en el centro de Santiago, dos personas pegan hojas impresas en fila en la pared y las comparan; una de perfil, otra de espaldas.",
+      "direcciones": [
+        "taller"
+      ],
+      "encuadre": "taller",
+      "pagina": "Acompañamiento (/v3/servicios/acompanamiento-mensual/)",
+      "seccion": "Cabecera, bajo el h1 (donde hoy va d/ventana.jpg).",
+      "proporcion": "3:2",
+      "uso": "Ancho de la columna de contenido a 1440; a 390, 4:5 desde el centro.",
+      "gemini": {
+        "aspectRatio": "3:2",
+        "salida": "1248×832"
+      },
+      "openai": {
+        "size": "1536x1024"
+      },
+      "recorte": "390: 4:5 centrado en la mujer que pega la hoja.",
+      "personas": 2,
+      "prioridad": 1,
+      "escena_en": "Horizontal photograph in the meeting room of a mid-sized company in an older building in downtown Santiago: high ceiling, white plastered walls, a tall aluminium-framed window, grey terrazzo floor. Two people tape printed pages in a long row on the wall with white paper tape, comparing them; the pages show only blurred blocks and lines. A woman in her thirties with curly dark hair, in a navy shirt, reaches up to press a page to the wall, seen in profile. A man in his forties in a charcoal sweater stands a step back, seen from behind, looking along the row. On the table in the foreground, out of focus: a closed laptop, sticky notes and a plain mug.",
+      "negativo_en": [
+        "beige masking tape",
+        "wooden paneling",
+        "readable pages",
+        "anyone facing the camera"
+      ],
+      "alt_es": "Dos personas pegan hojas impresas en fila en la pared de una sala de reuniones de techo alto.",
+      "riesgos_es": "En la página de un servicio, dos personas frente a hojas se pueden leer como «el consultor con su cliente». Por eso ninguna explica nada a la otra: las dos miran la pared. Si en la variante una le habla a la otra, se descarta.",
+      "prompt_completo_en": "Horizontal photograph in the meeting room of a mid-sized company in an older building in downtown Santiago: high ceiling, white plastered walls, a tall aluminium-framed window, grey terrazzo floor. Two people tape printed pages in a long row on the wall with white paper tape, comparing them; the pages show only blurred blocks and lines. A woman in her thirties with curly dark hair, in a navy shirt, reaches up to press a page to the wall, seen in profile. A man in his forties in a charcoal sweater stands a step back, seen from behind, looking along the row. On the table in the foreground, out of focus: a closed laptop, sticky notes and a plain mug.\n\nFraming: close and busy, with layered foreground and background; people and objects are cropped by the edges of the frame; the action is in progress and the frame feels full.\n\nDocumentary editorial photograph of real, everyday work in Santiago, Chile, shot as candid reportage. Places are ordinary working spaces of small and mid-sized Chilean companies: painted concrete or plastered walls, aluminium-framed windows, white or pale grey laminate tables, grey steel shelving, grey and blue plastic crates, a few office plants. Light: natural daylight only, late morning, neutral white balance (about 5500 K), soft and even with gentle shadows; ceiling lights and lamps are switched off. Camera: full-frame camera with a 35 mm lens, eye level or slightly above, natural perspective, no wide-angle distortion. Color: natural and fairly saturated, true to life, built on cool neutrals (off-white, concrete grey, charcoal, navy, deep plum) with small accents of lime green, lavender, pink and sky blue. Finish: subtle fine film grain, slightly lifted blacks, no heavy color grading, no vignette. Everything looks used and real, a little untidy, never a staged showroom.\n\nAll paper shows only soft, blurred grey lines, boxes and simple bar shapes, with no readable letters or numbers. Screens are turned away from the camera or show only out-of-focus blocks of color. Every object is unbranded: plain mugs, matte grey laptops with a blank lid, clothing without logos or printing, walls without signs.\n\nPeople: Chilean and Latin American adults of varied ages (25 to 60), body types and skin tones, with ordinary faces and natural hair, in everyday work clothes in charcoal, navy, deep plum, denim, off-white or sage (knit sweaters, fleece vests, denim shirts, plain work jackets). They are absorbed in the task: seen from behind, in profile or three-quarter back view, faces partly turned away. Nobody looks at the camera, nobody poses or smiles for the photo. Hands are relaxed and anatomically correct, often partly hidden by objects. They are anonymous people at work in their own company, not a team portrait.\n\nAvoid: beige masking tape; wooden paneling; readable pages; anyone facing the camera; gold, brass, amber, mustard, ochre or yellow objects and tones; golden-hour or sunset light, warm tungsten or Edison bulbs, orange color cast; honey-colored or orange wood, cardboard boxes in the foreground; autumn leaves, gardens, countryside; exposed red-brick loft, American suburban or English country interiors, chandeliers, period furniture; readable text, letters, numbers, signs, logos, brand names, watermarks; people looking at the camera, posed group portrait, stock-photo smiles, handshakes, thumbs up; deformed or extra fingers, fused hands, distorted faces; robots, glowing circuits, neon, holograms, futuristic interfaces, blue tech glow; HDR look, plastic CGI skin, oversharpening, lens flare, bokeh balls."
+    },
+    {
+      "id": "F8",
+      "titulo_es": "Bocetos de estructura en papel",
+      "muestra_es": "Hojas blancas con esquemas de páginas web dibujados a mano en plumón ciruela (cajas y líneas, sin letras), dos notas de colores y el plumón destapado; sin personas.",
+      "direcciones": [
+        "taller",
+        "pizarra"
+      ],
+      "encuadre": "pizarra",
+      "pagina": "Trabajo (/v3/trabajo/)",
+      "seccion": "«Antes de construir el tuyo», el cierre de la página.",
+      "proporcion": "4:3",
+      "uso": "Media columna a 1440; a 390, todo el ancho.",
+      "gemini": {
+        "aspectRatio": "4:3",
+        "salida": "1184×864"
+      },
+      "openai": {
+        "size": "1536x1024"
+      },
+      "recorte": "OpenAI: 4:3 desde el centro (1365×1024).",
+      "personas": 0,
+      "prioridad": 2,
+      "escena_en": "Horizontal photograph, from above at a slight angle, of a light grey table with several sheets of white paper showing hand-drawn page layouts: rectangles, boxes and lines drawn with a deep plum felt marker, like wireframes of web pages, with no letters, no words and no numbers. Two sheets overlap; one has a pink sticky note and another a lime-green one. An uncapped plum marker lies across the paper. Daylight from a window on the left, soft shadows.",
+      "negativo_en": [
+        "hands",
+        "letters or placeholder text in the sketches",
+        "yellow sticky notes",
+        "wooden table"
+      ],
+      "alt_es": "Bocetos a mano de la estructura de páginas web, en plumón ciruela sobre hojas blancas, con dos notas de colores.",
+      "riesgos_es": "Que los bocetos traigan letras inventadas. Es la única foto de Trabajo y no lleva gente a propósito: junto a la obra, cualquier persona se lee como el cliente.",
+      "prompt_completo_en": "Horizontal photograph, from above at a slight angle, of a light grey table with several sheets of white paper showing hand-drawn page layouts: rectangles, boxes and lines drawn with a deep plum felt marker, like wireframes of web pages, with no letters, no words and no numbers. Two sheets overlap; one has a pink sticky note and another a lime-green one. An uncapped plum marker lies across the paper. Daylight from a window on the left, soft shadows.\n\nFraming: wide and calm, with generous empty space (at least half of the frame is quiet wall, floor, table or window); at most one person, small in the frame; clean lines, orderly.\n\nDocumentary editorial photograph of real, everyday work in Santiago, Chile, shot as candid reportage. Places are ordinary working spaces of small and mid-sized Chilean companies: painted concrete or plastered walls, aluminium-framed windows, white or pale grey laminate tables, grey steel shelving, grey and blue plastic crates, a few office plants. Light: natural daylight only, late morning, neutral white balance (about 5500 K), soft and even with gentle shadows; ceiling lights and lamps are switched off. Camera: full-frame camera with a 35 mm lens, eye level or slightly above, natural perspective, no wide-angle distortion. Color: natural and fairly saturated, true to life, built on cool neutrals (off-white, concrete grey, charcoal, navy, deep plum) with small accents of lime green, lavender, pink and sky blue. Finish: subtle fine film grain, slightly lifted blacks, no heavy color grading, no vignette. Everything looks used and real, a little untidy, never a staged showroom.\n\nAll paper shows only soft, blurred grey lines, boxes and simple bar shapes, with no readable letters or numbers. Screens are turned away from the camera or show only out-of-focus blocks of color. Every object is unbranded: plain mugs, matte grey laptops with a blank lid, clothing without logos or printing, walls without signs.\n\nNo people in the frame. The place looks recently used: a chair pushed back, a cup left on the table.\n\nAvoid: hands; letters or placeholder text in the sketches; yellow sticky notes; wooden table; gold, brass, amber, mustard, ochre or yellow objects and tones; golden-hour or sunset light, warm tungsten or Edison bulbs, orange color cast; honey-colored or orange wood, cardboard boxes in the foreground; autumn leaves, gardens, countryside; exposed red-brick loft, American suburban or English country interiors, chandeliers, period furniture; readable text, letters, numbers, signs, logos, brand names, watermarks; people looking at the camera, posed group portrait, stock-photo smiles, handshakes, thumbs up; deformed or extra fingers, fused hands, distorted faces; robots, glowing circuits, neon, holograms, futuristic interfaces, blue tech glow; HDR look, plastic CGI skin, oversharpening, lens flare, bokeh balls."
+    },
+    {
+      "id": "F9",
+      "titulo_es": "La mesa después de la reunión",
+      "muestra_es": "Sala chica y quieta en Ñuñoa: mesa redonda blanca, una silla corrida, una hoja con una grilla de cuatro semanas y puntos de colores, notebook cerrado, dos tazas; sin personas.",
+      "direcciones": [
+        "pizarra"
+      ],
+      "encuadre": "pizarra",
+      "pagina": "Acompañamiento (/v3/servicios/acompanamiento-mensual/)",
+      "seccion": "Cabecera, bajo el h1 (donde hoy va d/ventana.jpg).",
+      "proporcion": "3:2",
+      "uso": "Ancho de la columna de contenido a 1440; a 390, 4:5 desde el centro.",
+      "gemini": {
+        "aspectRatio": "3:2",
+        "salida": "1248×832"
+      },
+      "openai": {
+        "size": "1536x1024"
+      },
+      "recorte": "390: 4:5 centrado en la hoja de la grilla.",
+      "personas": 0,
+      "prioridad": 1,
+      "escena_en": "Horizontal photograph of a small, quiet meeting room in an office in Ñuñoa, Santiago, just after a meeting. A white round table with two chairs, one pushed back. On the table: a single sheet of paper with a hand-drawn grid of four weeks and a few colored dots in pink, lime green and blue, a closed matte grey laptop, two plain white cups. Light from a large window on the left falls across the table. The rest of the frame is calm: a pale wall, the window, one plant.",
+      "negativo_en": [
+        "people",
+        "food",
+        "readable writing on the sheet",
+        "wooden table"
+      ],
+      "alt_es": "Mesa redonda después de una reunión: una hoja con una grilla de cuatro semanas y puntos de colores, un notebook cerrado y dos tazas.",
+      "riesgos_es": "Que se parezca demasiado a d/ventana.jpg del pool (mesa junto a la ventana). La diferencia tiene que ser la luz de día neutra y la grilla del mes.",
+      "prompt_completo_en": "Horizontal photograph of a small, quiet meeting room in an office in Ñuñoa, Santiago, just after a meeting. A white round table with two chairs, one pushed back. On the table: a single sheet of paper with a hand-drawn grid of four weeks and a few colored dots in pink, lime green and blue, a closed matte grey laptop, two plain white cups. Light from a large window on the left falls across the table. The rest of the frame is calm: a pale wall, the window, one plant.\n\nFraming: wide and calm, with generous empty space (at least half of the frame is quiet wall, floor, table or window); at most one person, small in the frame; clean lines, orderly.\n\nDocumentary editorial photograph of real, everyday work in Santiago, Chile, shot as candid reportage. Places are ordinary working spaces of small and mid-sized Chilean companies: painted concrete or plastered walls, aluminium-framed windows, white or pale grey laminate tables, grey steel shelving, grey and blue plastic crates, a few office plants. Light: natural daylight only, late morning, neutral white balance (about 5500 K), soft and even with gentle shadows; ceiling lights and lamps are switched off. Camera: full-frame camera with a 35 mm lens, eye level or slightly above, natural perspective, no wide-angle distortion. Color: natural and fairly saturated, true to life, built on cool neutrals (off-white, concrete grey, charcoal, navy, deep plum) with small accents of lime green, lavender, pink and sky blue. Finish: subtle fine film grain, slightly lifted blacks, no heavy color grading, no vignette. Everything looks used and real, a little untidy, never a staged showroom.\n\nAll paper shows only soft, blurred grey lines, boxes and simple bar shapes, with no readable letters or numbers. Screens are turned away from the camera or show only out-of-focus blocks of color. Every object is unbranded: plain mugs, matte grey laptops with a blank lid, clothing without logos or printing, walls without signs.\n\nNo people in the frame. The place looks recently used: a chair pushed back, a cup left on the table.\n\nAvoid: people; food; readable writing on the sheet; wooden table; gold, brass, amber, mustard, ochre or yellow objects and tones; golden-hour or sunset light, warm tungsten or Edison bulbs, orange color cast; honey-colored or orange wood, cardboard boxes in the foreground; autumn leaves, gardens, countryside; exposed red-brick loft, American suburban or English country interiors, chandeliers, period furniture; readable text, letters, numbers, signs, logos, brand names, watermarks; people looking at the camera, posed group portrait, stock-photo smiles, handshakes, thumbs up; deformed or extra fingers, fused hands, distorted faces; robots, glowing circuits, neon, holograms, futuristic interfaces, blue tech glow; HDR look, plastic CGI skin, oversharpening, lens flare, bokeh balls."
+    },
+    {
+      "id": "F10",
+      "titulo_es": "El mensaje que llega al mesón",
+      "muestra_es": "Detrás del mesón de una ferretería y distribuidora, una vendedora de veintitantos responde el mensaje de un cliente en su teléfono, de perfil; estanterías ordenadas fuera de foco.",
+      "direcciones": [
+        "taller",
+        "pizarra"
+      ],
+      "encuadre": "pizarra",
+      "pagina": "Home (/v3/)",
+      "seccion": "Campo «Visibilidad».",
+      "proporcion": "4:5",
+      "uso": "Media fila del campo (vertical).",
+      "gemini": {
+        "aspectRatio": "4:5",
+        "salida": "896×1152"
+      },
+      "openai": {
+        "size": "1024x1536"
+      },
+      "recorte": "OpenAI: 4:5 desde el centro (1024×1280).",
+      "personas": 1,
+      "prioridad": 2,
+      "escena_en": "Vertical photograph at the sales counter of a hardware and industrial supplies store in Santiago. A saleswoman in her twenties, in a plain navy polo shirt, stands behind the counter answering a customer's message on her phone, seen in profile; the screen faces away from the camera. Behind her, out of focus, orderly shelves with grey bins, coils of hose and hand tools, with no labels readable. On the counter: a plain notebook and a pen. Calm, even daylight coming from the shop window.",
+      "negativo_en": [
+        "brand logos on products",
+        "price tags with numbers",
+        "readable phone screen",
+        "yellow safety signs"
+      ],
+      "alt_es": "Una vendedora responde un mensaje en su teléfono detrás del mesón de una ferretería.",
+      "riesgos_es": "Las ferreterías están llenas de empaques con marca y de amarillo (herramientas, cintas). Si el fondo trae marcas legibles o amarillo saturado, se descarta.",
+      "prompt_completo_en": "Vertical photograph at the sales counter of a hardware and industrial supplies store in Santiago. A saleswoman in her twenties, in a plain navy polo shirt, stands behind the counter answering a customer's message on her phone, seen in profile; the screen faces away from the camera. Behind her, out of focus, orderly shelves with grey bins, coils of hose and hand tools, with no labels readable. On the counter: a plain notebook and a pen. Calm, even daylight coming from the shop window.\n\nFraming: wide and calm, with generous empty space (at least half of the frame is quiet wall, floor, table or window); at most one person, small in the frame; clean lines, orderly.\n\nDocumentary editorial photograph of real, everyday work in Santiago, Chile, shot as candid reportage. Places are ordinary working spaces of small and mid-sized Chilean companies: painted concrete or plastered walls, aluminium-framed windows, white or pale grey laminate tables, grey steel shelving, grey and blue plastic crates, a few office plants. Light: natural daylight only, late morning, neutral white balance (about 5500 K), soft and even with gentle shadows; ceiling lights and lamps are switched off. Camera: full-frame camera with a 35 mm lens, eye level or slightly above, natural perspective, no wide-angle distortion. Color: natural and fairly saturated, true to life, built on cool neutrals (off-white, concrete grey, charcoal, navy, deep plum) with small accents of lime green, lavender, pink and sky blue. Finish: subtle fine film grain, slightly lifted blacks, no heavy color grading, no vignette. Everything looks used and real, a little untidy, never a staged showroom.\n\nAll paper shows only soft, blurred grey lines, boxes and simple bar shapes, with no readable letters or numbers. Screens are turned away from the camera or show only out-of-focus blocks of color. Every object is unbranded: plain mugs, matte grey laptops with a blank lid, clothing without logos or printing, walls without signs.\n\nPeople: Chilean and Latin American adults of varied ages (25 to 60), body types and skin tones, with ordinary faces and natural hair, in everyday work clothes in charcoal, navy, deep plum, denim, off-white or sage (knit sweaters, fleece vests, denim shirts, plain work jackets). They are absorbed in the task: seen from behind, in profile or three-quarter back view, faces partly turned away. Nobody looks at the camera, nobody poses or smiles for the photo. Hands are relaxed and anatomically correct, often partly hidden by objects. They are anonymous people at work in their own company, not a team portrait.\n\nAvoid: brand logos on products; price tags with numbers; readable phone screen; yellow safety signs; gold, brass, amber, mustard, ochre or yellow objects and tones; golden-hour or sunset light, warm tungsten or Edison bulbs, orange color cast; honey-colored or orange wood, cardboard boxes in the foreground; autumn leaves, gardens, countryside; exposed red-brick loft, American suburban or English country interiors, chandeliers, period furniture; readable text, letters, numbers, signs, logos, brand names, watermarks; people looking at the camera, posed group portrait, stock-photo smiles, handshakes, thumbs up; deformed or extra fingers, fused hands, distorted faces; robots, glowing circuits, neon, holograms, futuristic interfaces, blue tech glow; HDR look, plastic CGI skin, oversharpening, lens flare, bokeh balls."
+    },
+    {
+      "id": "F11",
+      "titulo_es": "Alguien entra al local",
+      "muestra_es": "Calle tranquila de Providencia en primavera: la puerta de vidrio de un local chico sin letreros, vereda limpia, plátanos con hoja verde; una persona de espaldas a punto de entrar.",
+      "direcciones": [
+        "pizarra"
+      ],
+      "encuadre": "pizarra",
+      "pagina": "Home (/v3/)",
+      "seccion": "Campo «Alcance».",
+      "proporcion": "16:9",
+      "uso": "Media fila del campo; a 390, 4:5 desde el centro.",
+      "gemini": {
+        "aspectRatio": "16:9",
+        "salida": "1344×768"
+      },
+      "openai": {
+        "size": "1536x1024"
+      },
+      "recorte": "OpenAI: 16:9 desde el centro (1536×864). 390: 4:5 centrado en la puerta.",
+      "personas": 1,
+      "prioridad": 3,
+      "escena_en": "Wide horizontal photograph of a quiet street in Providencia, Santiago, late morning in spring: the entrance of a small business in a low building, a glass door, a clean concrete sidewalk, plane trees with fresh green leaves. The facade has no signs and no lettering at all. A person in a navy jacket is about to walk in through the door, seen from behind, slightly blurred by motion. Plenty of empty sidewalk and wall in the frame.",
+      "negativo_en": [
+        "shop signs",
+        "street signs",
+        "cars as the main subject",
+        "autumn colors"
+      ],
+      "alt_es": "Una persona entra a un local pequeño en una calle de Providencia con árboles de hojas verdes.",
+      "riesgos_es": "Una calle comercial sin un solo letrero es rara; si el modelo los pone, se descarta o se recorta fuera.",
+      "prompt_completo_en": "Wide horizontal photograph of a quiet street in Providencia, Santiago, late morning in spring: the entrance of a small business in a low building, a glass door, a clean concrete sidewalk, plane trees with fresh green leaves. The facade has no signs and no lettering at all. A person in a navy jacket is about to walk in through the door, seen from behind, slightly blurred by motion. Plenty of empty sidewalk and wall in the frame.\n\nFraming: wide and calm, with generous empty space (at least half of the frame is quiet wall, floor, table or window); at most one person, small in the frame; clean lines, orderly.\n\nDocumentary editorial photograph of real, everyday work in Santiago, Chile, shot as candid reportage. Places are ordinary working spaces of small and mid-sized Chilean companies: painted concrete or plastered walls, aluminium-framed windows, white or pale grey laminate tables, grey steel shelving, grey and blue plastic crates, a few office plants. Light: natural daylight only, late morning, neutral white balance (about 5500 K), soft and even with gentle shadows; ceiling lights and lamps are switched off. Camera: full-frame camera with a 35 mm lens, eye level or slightly above, natural perspective, no wide-angle distortion. Color: natural and fairly saturated, true to life, built on cool neutrals (off-white, concrete grey, charcoal, navy, deep plum) with small accents of lime green, lavender, pink and sky blue. Finish: subtle fine film grain, slightly lifted blacks, no heavy color grading, no vignette. Everything looks used and real, a little untidy, never a staged showroom.\n\nAll paper shows only soft, blurred grey lines, boxes and simple bar shapes, with no readable letters or numbers. Screens are turned away from the camera or show only out-of-focus blocks of color. Every object is unbranded: plain mugs, matte grey laptops with a blank lid, clothing without logos or printing, walls without signs.\n\nPeople: Chilean and Latin American adults of varied ages (25 to 60), body types and skin tones, with ordinary faces and natural hair, in everyday work clothes in charcoal, navy, deep plum, denim, off-white or sage (knit sweaters, fleece vests, denim shirts, plain work jackets). They are absorbed in the task: seen from behind, in profile or three-quarter back view, faces partly turned away. Nobody looks at the camera, nobody poses or smiles for the photo. Hands are relaxed and anatomically correct, often partly hidden by objects. They are anonymous people at work in their own company, not a team portrait.\n\nAvoid: shop signs; street signs; cars as the main subject; autumn colors; gold, brass, amber, mustard, ochre or yellow objects and tones; golden-hour or sunset light, warm tungsten or Edison bulbs, orange color cast; honey-colored or orange wood, cardboard boxes in the foreground; autumn leaves, gardens, countryside; exposed red-brick loft, American suburban or English country interiors, chandeliers, period furniture; readable text, letters, numbers, signs, logos, brand names, watermarks; people looking at the camera, posed group portrait, stock-photo smiles, handshakes, thumbs up; deformed or extra fingers, fused hands, distorted faces; robots, glowing circuits, neon, holograms, futuristic interfaces, blue tech glow; HDR look, plastic CGI skin, oversharpening, lens flare, bokeh balls."
+    },
+    {
+      "id": "F12",
+      "titulo_es": "Pasillo de bodega en orden",
+      "muestra_es": "Pasillo largo de una bodega ordenada: estanterías grises a los dos lados con cajas plásticas grises, azules y algunas lima, en fila; piso de hormigón con una línea blanca; sin personas.",
+      "direcciones": [
+        "pizarra"
+      ],
+      "encuadre": "pizarra",
+      "pagina": "Home (/v3/)",
+      "seccion": "Campo «Continuidad».",
+      "proporcion": "4:3",
+      "uso": "Media fila del campo.",
+      "gemini": {
+        "aspectRatio": "4:3",
+        "salida": "1184×864"
+      },
+      "openai": {
+        "size": "1536x1024"
+      },
+      "recorte": "OpenAI: 4:3 desde el centro (1365×1024).",
+      "personas": 0,
+      "prioridad": 3,
+      "escena_en": "Horizontal photograph of a long aisle in a tidy distribution warehouse in Santiago: grey steel shelving on both sides holding rows of identical plastic crates in grey and blue, with a few lime-green ones, evenly spaced. Even daylight from translucent roof panels, polished concrete floor with a painted walkway line in white. Symmetrical, calm and orderly.",
+      "negativo_en": [
+        "yellow floor markings",
+        "cardboard boxes",
+        "people",
+        "forklift painted yellow"
+      ],
+      "alt_es": "Pasillo de una bodega ordenada, con estanterías grises y cajas plásticas en fila.",
+      "riesgos_es": "Las bodegas reales tienen líneas de piso amarillas y grúas horquilla amarillas: es el oro más probable de toda la pauta. Medir con cuidado.",
+      "prompt_completo_en": "Horizontal photograph of a long aisle in a tidy distribution warehouse in Santiago: grey steel shelving on both sides holding rows of identical plastic crates in grey and blue, with a few lime-green ones, evenly spaced. Even daylight from translucent roof panels, polished concrete floor with a painted walkway line in white. Symmetrical, calm and orderly.\n\nFraming: wide and calm, with generous empty space (at least half of the frame is quiet wall, floor, table or window); at most one person, small in the frame; clean lines, orderly.\n\nDocumentary editorial photograph of real, everyday work in Santiago, Chile, shot as candid reportage. Places are ordinary working spaces of small and mid-sized Chilean companies: painted concrete or plastered walls, aluminium-framed windows, white or pale grey laminate tables, grey steel shelving, grey and blue plastic crates, a few office plants. Light: natural daylight only, late morning, neutral white balance (about 5500 K), soft and even with gentle shadows; ceiling lights and lamps are switched off. Camera: full-frame camera with a 35 mm lens, eye level or slightly above, natural perspective, no wide-angle distortion. Color: natural and fairly saturated, true to life, built on cool neutrals (off-white, concrete grey, charcoal, navy, deep plum) with small accents of lime green, lavender, pink and sky blue. Finish: subtle fine film grain, slightly lifted blacks, no heavy color grading, no vignette. Everything looks used and real, a little untidy, never a staged showroom.\n\nAll paper shows only soft, blurred grey lines, boxes and simple bar shapes, with no readable letters or numbers. Screens are turned away from the camera or show only out-of-focus blocks of color. Every object is unbranded: plain mugs, matte grey laptops with a blank lid, clothing without logos or printing, walls without signs.\n\nNo people in the frame. The place looks recently used: a chair pushed back, a cup left on the table.\n\nAvoid: yellow floor markings; cardboard boxes; people; forklift painted yellow; gold, brass, amber, mustard, ochre or yellow objects and tones; golden-hour or sunset light, warm tungsten or Edison bulbs, orange color cast; honey-colored or orange wood, cardboard boxes in the foreground; autumn leaves, gardens, countryside; exposed red-brick loft, American suburban or English country interiors, chandeliers, period furniture; readable text, letters, numbers, signs, logos, brand names, watermarks; people looking at the camera, posed group portrait, stock-photo smiles, handshakes, thumbs up; deformed or extra fingers, fused hands, distorted faces; robots, glowing circuits, neon, holograms, futuristic interfaces, blue tech glow; HDR look, plastic CGI skin, oversharpening, lens flare, bokeh balls."
+    }
+  ],
+  "equivalencia_lucia": {
+    "archivo": "tableros/e10-direcciones/espacios-foto.json",
+    "estado": "pendiente: el archivo no existía cuando se escribió esta pauta (16-oct). Cuando exista, se llena `lucia` con su F<n> y se corrige `seccion` si su espacio es otro.",
+    "tabla": [
+      {
+        "bruno": "F1",
+        "lucia": null,
+        "nota": ""
+      },
+      {
+        "bruno": "F2",
+        "lucia": null,
+        "nota": ""
+      },
+      {
+        "bruno": "F3",
+        "lucia": null,
+        "nota": ""
+      },
+      {
+        "bruno": "F4",
+        "lucia": null,
+        "nota": ""
+      },
+      {
+        "bruno": "F5",
+        "lucia": null,
+        "nota": ""
+      },
+      {
+        "bruno": "F6",
+        "lucia": null,
+        "nota": ""
+      },
+      {
+        "bruno": "F7",
+        "lucia": null,
+        "nota": ""
+      },
+      {
+        "bruno": "F8",
+        "lucia": null,
+        "nota": ""
+      },
+      {
+        "bruno": "F9",
+        "lucia": null,
+        "nota": ""
+      },
+      {
+        "bruno": "F10",
+        "lucia": null,
+        "nota": ""
+      },
+      {
+        "bruno": "F11",
+        "lucia": null,
+        "nota": ""
+      },
+      {
+        "bruno": "F12",
+        "lucia": null,
+        "nota": ""
+      }
+    ]
+  },
+  "revision": [
+    "1 · Oro: el registro trae oro.pct de cada imagen. Más de 0,05 % (el máximo del pool limpio) → abrir la máscara salida/oro/<F>-<n>-oro.png. Si la zona se ve a simple vista, se descarta o esa vista no lleva el punto dorado.",
+    "2 · Manos y caras al 100 %: cinco dedos, sin fusiones, sin caras derretidas al fondo.",
+    "3 · Texto: nada legible inventado. Seudoletras nítidas → se descarta, o se recorta si quedan fuera.",
+    "4 · Marcas: ninguna en tapas de notebook, ropa, tazas, cajas, muros.",
+    "5 · Equipo o cliente: ¿alguien podría leer a esta gente como el equipo de SpindleLab o como un cliente? (mira a cámara, posa, una le explica a otra, va junto a Ramón o en Trabajo) → no va.",
+    "6 · Chile creíble: señales gringas (ladrillo rojo de loft, ampolletas Edison, enchufes americanos, letreros en inglés, otoño dorado, suburbio) → se descarta.",
+    "7 · Familia: puesta junto a las otras elegidas, ¿parece del mismo fotógrafo? Si una está más cálida, más limpia o más «render», se rehace o se corrige en el acabado.",
+    "8 · Ramón la ve antes de que vaya al tablero publicado."
+  ]
+}

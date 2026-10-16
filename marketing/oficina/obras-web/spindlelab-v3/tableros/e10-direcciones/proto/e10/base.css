@@ -1,0 +1,103 @@
+/* base.css — lo que comparten las dos direcciones del tablero E10 (Lucía, 16-oct-2026).
+   Letras libres del lock §11, paleta de tokens.css, accesibilidad, y las tres piezas de juego que
+   las dos usan con distinto techo: la cinta (§4 y §14), el marcador (§5) y el espacio de foto.
+   La composición de cada dirección está en taller.css y en pizarra-limpia.css. */
+@import url('/e10/tokens.css');
+
+/* ── Letras (OFL; archivos en /fuentes, sin pedir nada afuera) ─────────────────────────────── */
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url('/fuentes/instrument-sans-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url('/fuentes/instrument-sans-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url('/fuentes/instrument-sans-flechas.woff2') format('woff2'); unicode-range: U+2192, U+2197; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url('/fuentes/plex-sans-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url('/fuentes/plex-sans-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url('/fuentes/plex-sans-flechas.woff2') format('woff2'); unicode-range: U+2192, U+2197; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap;
+  src: url('/fuentes/plex-mono-500-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap;
+  src: url('/fuentes/plex-mono-500-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap;
+  src: url('/fuentes/plex-mono-500-flechas.woff2') format('woff2'); unicode-range: U+2192, U+2197; }
+/* Gabarito: solo el wordmark (manual §02). Estático, peso 600. */
+@font-face { font-family: 'Gabarito'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('/fuentes/Gabarito.woff2') format('woff2'); }
+
+/* ── Base ────────────────────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 17px/1.45 var(--f-cuerpo);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: clip; }
+h1, h2, h3, p, ol, ul, figure { margin: 0; }
+ol, ul { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+b, strong { font-weight: 700; }
+button, input { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+.d-sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+:focus-visible { outline: 2px solid var(--tinta); outline-offset: 4px; }
+
+/* El mono en MAYÚSCULAS vive solo a 11-13 px: rótulos, navegación, migas y botones (lock §13). */
+.mono { font: 500 12px/1.2 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; }
+
+/* ── Encabezado (el de The Ready: papel, filete ciruela de 1 px abajo, botón rectángulo radio 0) ── */
+header[data-modulo-nav] { position: relative; z-index: 5; background: var(--papel); border-bottom: 1px solid var(--ciruela); }
+header[data-modulo-nav] > div > div { display: flex; align-items: center; height: 90px; padding: 0 var(--m); gap: 0; }
+header[data-modulo-nav] a.font-wordmark { font: 600 31px/1 var(--f-marca); letter-spacing: -.025em; color: var(--ciruela); text-decoration: none; margin-right: auto; padding: 8px 0; }
+/* El punto del encabezado va en ciruela: el oro de la página está en la banda final (lock §12, opción A). */
+header[data-modulo-nav] .text-gold { color: var(--ciruela); }
+header[data-modulo-nav] a[href$="/contacto/"] { display: inline-flex; align-items: center; justify-content: center; height: 50px; padding: 0 28px;
+  font: 500 11px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: background-color .6s cubic-bezier(.19, 1, .22, 1), color .6s cubic-bezier(.19, 1, .22, 1); }
+#menu-btn { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; margin-left: 12px; margin-right: -12px; background: none; border: 0; cursor: pointer; }
+#icono-abrir { display: grid; gap: 8px; width: 30px; }
+#icono-abrir span { display: block; height: 1.5px; background: var(--ciruela); }
+
+/* ── La cinta (lock §4 y §14): 30 px/s por tiempo, pausable, quieta con movimiento reducido, aria-hidden ── */
+.cinta-caja { position: relative; border-top: 1px solid var(--ciruela); border-bottom: 1px solid var(--ciruela); }
+.cinta { overflow: hidden; }
+.cinta__pista { display: flex; width: max-content; will-change: transform;
+  animation: cinta-corre var(--dur, 40s) linear infinite; }
+.cinta__grupo { display: flex; align-items: center; flex: none; white-space: nowrap; color: var(--ciruela);
+  font: 500 51.6px/1.4 var(--f-display); letter-spacing: -.02em; }
+.cinta__grupo > span { padding-right: .5em; }
+.cinta__sep { color: var(--ciruela); }
+@keyframes cinta-corre { from { transform: translateX(0); } to { transform: translateX(calc(-1 * var(--ancho, 0px))); } }
+.cinta--pausada .cinta__pista, .cinta--fuera .cinta__pista { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .cinta-caja:not(.cinta--elegida) .cinta__pista { animation: none; } }
+.cinta__pausa { position: absolute; right: var(--m); top: 50%; translate: 0 -50%; width: 44px; height: 44px; display: grid; place-items: center;
+  background: var(--papel); color: var(--ciruela); border: 1px solid var(--ciruela); border-radius: 0; cursor: pointer; padding: 0; }
+.cinta__pausa:hover { background: var(--ciruela); color: var(--papel); }
+.cinta__pausa svg { width: 14px; height: 14px; display: block; }
+.cinta__pausa .ico-mover { display: none; }
+.cinta--pausada .cinta__pausa .ico-pausa { display: none; }
+.cinta--pausada .cinta__pausa .ico-mover { display: block; }
+
+/* ── El marcador a mano (SVG propio, marcador.svg): detrás de la frase, 2 a 6 palabras, al final ── */
+.mk { background: url('/e10/marcador.svg') left center / 100% 100% no-repeat; padding: 0 .12em; margin: 0 -.12em;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; color: var(--ciruela);
+  transition: background-size .47s cubic-bezier(.3, .7, .3, 1); }
+.mk--espera { background-size: 0% 100%; }
+@media (prefers-reduced-motion: reduce) { .mk { transition: none; } }
+@media (forced-colors: active) { .mk { background: none; } }
+
+/* ── Espacio de foto por generar (placeholder dirigido: tamaño y proporción exactos, rótulo visible) ── */
+.foto-slot { position: relative; margin: 0; background: #D8D4CB url('/e10/cruz.svg') center / 100% 100% no-repeat; aspect-ratio: var(--r); overflow: hidden; }
+.foto-slot__rot { position: absolute; left: 12px; top: 12px; right: 12px; width: fit-content; max-width: calc(100% - 24px);
+  background: var(--papel); color: var(--ciruela); font: 500 12px/1.35 var(--f-mono); letter-spacing: .02em; padding: 6px 9px; border: 1px solid var(--ciruela); }
+
+/* ── Piezas de lectura (re-rendidas en papel con el generador de E9): filete ciruela de 1 px ── */
+.pieza-lectura img { outline: 1px solid var(--ciruela); outline-offset: -1px; }
+
+/* ── Garabato (Taller): decorativo, nunca detrás de texto ── */
+.garabato { pointer-events: none; user-select: none; }

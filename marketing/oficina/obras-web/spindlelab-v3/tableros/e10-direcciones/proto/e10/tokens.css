@@ -1,0 +1,18 @@
+/* tokens.css — paleta y letras del lock E10 (lock-the-ready.md §2, §3 y §11). Lucía, 16-oct-2026.
+   Son los valores medidos en The Ready; los roles están en el lock (§10 y §13) y se repiten aquí
+   porque el rol es parte del token. Esta hoja la lee también e9/piezas/generar.mjs --paleta=e10. */
+:root {
+  --papel: #FFFEFA;    /* lienzo de todas las páginas; texto sobre ciruela */
+  --ciruela: #1B0925;  /* titulares, botones, filetes de 1 px, garabatos y la banda final; nada más */
+  --tinta: #0D0C0E;    /* cuerpo y rótulos mono */
+  --amarillo: #F4F480; /* el marcador detrás de la frase y una banda «lo que ganas»; nunca más cálido (§12) */
+  --lima: #E6FA97;     /* solo la portada de una página de obra (Trabajo, en Taller) */
+  --lavanda: #EDD1FF;  /* solo el óvalo de la banda final ciruela; nunca una banda */
+  --naranja: #EC6227;  /* solo en Taller: una mancha con un rótulo mono, una por página */
+  --oro: #C9A227;      /* solo el punto del wordmark, solo sobre ciruela (7,80:1), uno por vista */
+
+  --f-display: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+  --f-cuerpo: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --f-marca: 'Gabarito', var(--f-display);
+}
