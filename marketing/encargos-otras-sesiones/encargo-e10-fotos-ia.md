@@ -9,7 +9,7 @@
   (`/web-qa-critico`) revisa en un subagente nuevo; Mauro (`/web-encuadre`) publica, cierra y le avisa
   a Ramón. Carga cada skill cuando le toque.
 
-URL del tablero: (la completa el orquestador)
+URL del tablero: https://claude.ai/artifact/1cbk3JGS4vRR8xvqh4SFB9 (privado; publicado el 16-oct a las 12:27, Chile)
 
 ## Contexto en cinco líneas
 
