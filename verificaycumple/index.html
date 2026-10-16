@@ -7,7 +7,7 @@
 <!-- La descripción se ancla en el sitio y no en la fecha a propósito: hay un proyecto en el
      Senado para mover la vigencia a 2027, y un "antes del 1 de diciembre de 2026" envejece
      mal. Lo que no envejece es que un formulario de contacto ya trata datos personales. -->
-<meta name="description" content="Si tienes un formulario de contacto, ya te aplica la Ley 21.719, la nueva ley de datos personales. Revisa gratis qué tiene publicado tu sitio y qué le falta. Sin registro y sin dejar tu correo.">
+<meta name="description" content="Si tu sitio pide datos, ya te aplica la Ley 21.719. Revisa gratis qué tiene publicado y qué le falta. Sin registro y sin dejar tu correo.">
 <link rel="canonical" href="https://verifica.spindlelab.cl/">
 <!-- Ícono de la pestaña: el sello, en línea para no sumar otra petición. Sin él, el navegador
      pide /favicon.ico, que acá no existe: en local es un error 404 en la consola, y en Pages
@@ -36,6 +36,14 @@
 
 <!-- Verifica y Cumple es un servicio de SpindleLab SpA, no una organización aparte: por eso
      el proveedor apunta al mismo @id que declara spindlelab.cl, con razón social y RUT. -->
+<!-- El grafo de datos estructurados. Cada nodo está acá porque el chequeo de IA de
+     SpindleLab lo echaba de menos, y porque es cierto: la organización con su RUT y su
+     dirección, la persona detrás con su formación, las fechas, y las preguntas.
+     ⚠️ El FAQPage refleja preguntas que SE VEN en la página (sección #preguntas). Si se
+     borra esa sección, hay que borrar este nodo: marcar preguntas que el visitante no
+     puede leer es justo lo que Google llama spam de datos estructurados.
+     ⚠️ `dateModified` se actualiza a mano cuando cambia el contenido de verdad. Una fecha
+     que miente es peor que no tener fecha. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -49,15 +57,166 @@
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Navegador web",
       "inLanguage": "es-CL",
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-10-15",
       "provider": {
-        "@type": "Organization",
-        "@id": "https://spindlelab.cl/#org",
-        "name": "SpindleLab",
-        "legalName": "SpindleLab SpA",
-        "taxID": "78.474.925-8",
-        "url": "https://spindlelab.cl"
+        "@id": "https://spindlelab.cl/#org"
       },
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CLP", "description": "Gratis, sin registro." }
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CLP",
+        "description": "Gratis, sin registro."
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://verifica.spindlelab.cl/#pagina",
+      "url": "https://verifica.spindlelab.cl/",
+      "name": "Verifica y Cumple · Chequeo técnico Ley 21.719",
+      "inLanguage": "es-CL",
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-10-15",
+      "isPartOf": {
+        "@id": "https://verifica.spindlelab.cl/#app"
+      },
+      "publisher": {
+        "@id": "https://spindlelab.cl/#org"
+      },
+      "mainEntity": {
+        "@id": "https://verifica.spindlelab.cl/#preguntas"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://spindlelab.cl/#org",
+      "name": "SpindleLab",
+      "legalName": "SpindleLab SpA",
+      "taxID": "78.474.925-8",
+      "url": "https://spindlelab.cl/",
+      "email": "hola@spindlelab.cl",
+      "description": "SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B en Chile.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Chile"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Los Leones 2270",
+        "addressLocality": "Santiago",
+        "addressRegion": "Región Metropolitana",
+        "addressCountry": "CL"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "atención al cliente",
+        "email": "hola@spindlelab.cl",
+        "areaServed": "CL",
+        "availableLanguage": [
+          "es"
+        ]
+      },
+      "knowsAbout": [
+        "Ley 21.719",
+        "Ley 19.628",
+        "Protección de datos personales",
+        "Gestión de consentimiento",
+        "SEO técnico",
+        "Visibilidad en IA"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/spindlelab/",
+        "https://www.instagram.com/spindlelab.cl/"
+      ],
+      "founder": {
+        "@id": "https://spindlelab.cl/#autor-ramon"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://spindlelab.cl/#autor-ramon",
+      "name": "Ramón Vallejos",
+      "jobTitle": "Consultor de SEO técnico y visibilidad en IA (AEO/GEO)",
+      "url": "https://spindlelab.cl/nosotros/",
+      "worksFor": {
+        "@id": "https://spindlelab.cl/#org"
+      },
+      "knowsAbout": [
+        "SEO técnico",
+        "AEO",
+        "GEO",
+        "Visibilidad en motores de IA",
+        "Datos estructurados",
+        "Ley 21.719"
+      ],
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Universidad de Barcelona"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Universidad Andrés Bello"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/ramon-marketing-ia/"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://verifica.spindlelab.cl/#preguntas",
+      "inLanguage": "es-CL",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Esto dice si mi empresa cumple la Ley 21.719?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, y no puede. El chequeo mira lo que tu sitio tiene publicado y lo que hace cuando alguien entra. Si tu empresa cumple la ley lo dice un abogado mirando tu caso, porque el cumplimiento incluye cosas que no están en la página."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Tengo que registrarme o dejar mi correo para revisar mi sitio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Escribes el dominio y ves el informe. No pedimos registro ni correo, y el chequeo es gratis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué diferencia hay entre el chequeo rápido y la revisión con navegador?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El rápido lee el código de tu página sin ejecutarlo y responde en segundos; por eso ve que hay un gestor de etiquetas pero no puede saber qué corre adentro, y varios puntos quedan sin confirmar. La revisión con navegador abre tu sitio de verdad, lo mira unos 25 segundos y no toca nada: así ve qué rastreadores parten solos, qué cookies se escriben antes de que nadie dé permiso y si aparece un aviso al entrar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué son los 12 puntos del artículo 14 ter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Son las doce cosas que la ley pide que tu sitio tenga publicadas sobre qué haces con los datos de las personas: tu política con su fecha y versión, quién responde por los datos, a quién escribirle, qué datos pides y para qué, y ocho más. Abrimos tu política y buscamos cada una. Buscamos si el punto aparece, no si lo que dice alcanza."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Desde cuándo rige la Ley 21.719?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Entra en plena vigencia el 1 de diciembre de 2026, pero hay un proyecto en el Senado para moverla y la fecha puede cambiar. Lo que no cambia con esa votación es lo que tu sitio tiene o no tiene publicado hoy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta arreglar lo que salga pendiente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El kit de implementación parte en $149.000 más IVA, una vez. Instala el gestor de consentimiento, corrige las señales que tu chequeo dejó pendientes, incluye una plantilla de política de privacidad para que la revise tu abogado, y vuelve a correr el chequeo al final para que veas el cambio. No incluye la revisión legal de tu caso, que es de abogado."
+          }
+        }
+      ]
     }
   ]
 }
@@ -1020,6 +1179,19 @@
   /* El enlace al texto de la ley va sobre azul: el color de enlace general (verde oscuro)
      ahí no se lee. */
   section.referencia a { color: var(--vivo-verde); }
+  /* --- Preguntas frecuentes: crema para leer, después del azul de los precios --- */
+  .preguntas { padding: 76px 0; background: var(--crema-100); }
+  .preguntas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 44px; margin-top: 34px; }
+  .pregunta { padding: 24px 0; border-top: 1px solid var(--arena-300); }
+  .pregunta:nth-child(1), .pregunta:nth-child(2) { border-top: none; padding-top: 0; }
+  .pregunta h3 { font-size: 21px; line-height: 1.25; color: var(--tinta-900); margin-bottom: 10px; }
+  .pregunta p { font-size: 17px; line-height: 1.6; color: var(--tinta-500); }
+  @media (max-width: 760px) {
+    .preguntas { padding: 54px 0; }
+    .preguntas-grid { grid-template-columns: 1fr; gap: 0; }
+    .pregunta:nth-child(2) { border-top: 1px solid var(--arena-300); padding-top: 24px; }
+  }
+
   .art14-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 40px; }
   .art14-item { display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.25); }
   .art14-item:nth-child(1), .art14-item:nth-child(2) { border-top: none; }
@@ -1538,6 +1710,45 @@
               <button type="button" class="boton-ayuda boton-secundario pedir-otro">Enviar otro mensaje</button>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Las preguntas, VISIBLES. Existen por dos razones y las dos importan: la gente las
+       hace de verdad, y el nodo FAQPage del grafo las refleja. Si se borran de acá, hay
+       que borrar el nodo: marcar preguntas que nadie puede leer es spam de datos
+       estructurados.
+       ⚠️ El texto de acá y el del schema tienen que decir lo mismo. Se generaron de la
+       misma fuente; si editas uno, edita el otro. -->
+  <section class="preguntas" id="preguntas">
+    <div class="envoltura">
+      <p class="etiqueta-seccion reveal">Lo que nos preguntan</p>
+      <h2 class="titulo-seccion reveal">Preguntas que llegan seguido</h2>
+      <div class="preguntas-grid">
+        <div class="pregunta">
+          <h3>¿Esto dice si mi empresa cumple la Ley 21.719?</h3>
+          <p>No, y no puede. El chequeo mira lo que tu sitio tiene publicado y lo que hace cuando alguien entra. Si tu empresa cumple la ley lo dice un abogado mirando tu caso, porque el cumplimiento incluye cosas que no están en la página.</p>
+        </div>
+        <div class="pregunta">
+          <h3>¿Tengo que registrarme o dejar mi correo para revisar mi sitio?</h3>
+          <p>No. Escribes el dominio y ves el informe. No pedimos registro ni correo, y el chequeo es gratis.</p>
+        </div>
+        <div class="pregunta">
+          <h3>¿Qué diferencia hay entre el chequeo rápido y la revisión con navegador?</h3>
+          <p>El rápido lee el código de tu página sin ejecutarlo y responde en segundos; por eso ve que hay un gestor de etiquetas pero no puede saber qué corre adentro, y varios puntos quedan sin confirmar. La revisión con navegador abre tu sitio de verdad, lo mira unos 25 segundos y no toca nada: así ve qué rastreadores parten solos, qué cookies se escriben antes de que nadie dé permiso y si aparece un aviso al entrar.</p>
+        </div>
+        <div class="pregunta">
+          <h3>¿Qué son los 12 puntos del artículo 14 ter?</h3>
+          <p>Son las doce cosas que la ley pide que tu sitio tenga publicadas sobre qué haces con los datos de las personas: tu política con su fecha y versión, quién responde por los datos, a quién escribirle, qué datos pides y para qué, y ocho más. Abrimos tu política y buscamos cada una. Buscamos si el punto aparece, no si lo que dice alcanza.</p>
+        </div>
+        <div class="pregunta">
+          <h3>¿Desde cuándo rige la Ley 21.719?</h3>
+          <p>Entra en plena vigencia el 1 de diciembre de 2026, pero hay un proyecto en el Senado para moverla y la fecha puede cambiar. Lo que no cambia con esa votación es lo que tu sitio tiene o no tiene publicado hoy.</p>
+        </div>
+        <div class="pregunta">
+          <h3>¿Cuánto cuesta arreglar lo que salga pendiente?</h3>
+          <p>El kit de implementación parte en $149.000 más IVA, una vez. Instala el gestor de consentimiento, corrige las señales que tu chequeo dejó pendientes, incluye una plantilla de política de privacidad para que la revise tu abogado, y vuelve a correr el chequeo al final para que veas el cambio. No incluye la revisión legal de tu caso, que es de abogado.</p>
         </div>
       </div>
     </div>
