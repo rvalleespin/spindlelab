@@ -12,7 +12,10 @@ import { descartadoAntes } from './pasadas/p0.mjs';
 const RAIZ = path.resolve(fileURLToPath(new URL('../../../', import.meta.url)));   // fileURLToPath: .pathname deja %20 y %7E en rutas con espacios o ~ (iCloud)
 const argv = process.argv.slice(2);
 const vi = argv.indexOf('--verificados');   // CSV que baja verificar.mjs (id,dominio,veredicto,nota): solo lo que Ramon marco "coincide" queda como verificado
-const verificados = new Map(vi >= 0 ? leerCsv(path.resolve(argv[vi + 1])).map((r) => [r.dominio, r]) : []);
+// Acepta el CSV que baja verificar.mjs (id,dominio,veredicto,nota) o el JSON de la verificacion independiente (final: confirmado | confirmado_con_aviso | refutado | no_concluyente | retener_identidad).
+const MAPA_FINAL = { confirmado: 'coincide', confirmado_con_aviso: 'coincide', refutado: 'no_coincide', no_concluyente: 'dudoso', retener_identidad: 'dudoso' };
+const cargaVerif = (f) => /\.json$/i.test(f) ? JSON.parse(fs.readFileSync(f, 'utf8')).map((o) => ({ dominio: o.dominio, veredicto: MAPA_FINAL[o.final] || 'dudoso', nota: o.nota, por: o.por, con_aviso: o.final === 'confirmado_con_aviso', hechos: (o.hechos || []).join(' || '), advertencias: (o.advertencias || []).join(' || ') })) : leerCsv(f);
+const verificados = new Map(vi >= 0 ? cargaVerif(path.resolve(argv[vi + 1])).map((r) => [r.dominio, r]) : []);
 if (vi >= 0) argv.splice(vi, 2);
 const [salida, ...pares] = argv;
 const FUENTES = fs.readdirSync(path.join(RAIZ, 'ventas')).filter((f) => /^(contactos|clinicas|abogados|nuevos|lote).*\.csv$/.test(f)).map((f) => 'ventas/' + f);
@@ -31,7 +34,9 @@ function hallazgoMedido(f) {
   if (h.id === 'C1' && f.soporte?.c1) {
     const c1 = f.soporte.c1, fases = c1.cookies.map((c) => c.primera_fase);
     const fase = fases.every((x) => x === 'A') ? 'ya estaban a los 11 s sin mover el mouse' : fases.some((x) => x === 'variable') ? null : 'aparecen solo tras mover el mouse, sin clics';
-    const aviso = c1.aviso_en_dom.every((a) => !a.A && !a.B) ? `sin aviso de cookies detectado en ninguna de las ${n} corridas (capturas guardadas)` : 'CON aviso en alguna corrida: no usar sin revisar a mano';
+    const conAviso = c1.aviso_en_dom.some((a) => a.A || a.B);
+    if (conAviso) return `El sitio TIENE aviso de cookies, y aun así ${c1.cookies.length} cookies de rastreo (${[...new Set(c1.cookies.map((c) => c.proveedor))].join(', ')}) quedaron escritas antes de elegir nada; igual en las ${n} corridas. NO decir que no tiene aviso. ${fuente}`;
+    const aviso = `sin aviso de cookies detectado en ninguna de las ${n} corridas (capturas guardadas)`;
     return `${c1.cookies.length} cookies de rastreo (${[...new Set(c1.cookies.map((c) => c.proveedor))].join(', ')}) sin tocar nada ni aceptar nada${fase ? '; ' + fase : ''}; igual en las ${n} corridas. ${aviso}. ${c1.envio_en_ambas.length ? 'peticiones con datos a ' + c1.envio_en_ambas.join(', ') : 'los scripts cargan y dejan cookie, sin envio observado'}. ${fuente}`;
   }
   return `${h.afirmable} Capa ${h.capa || 2}, estado ${h.estado}. ${fuente}`;
@@ -58,20 +63,20 @@ for (const par of pares) {
     else { medido = `Sin oferta estable. Solo sospechas: ${(f.ruta_interna || []).map((x) => x.id).join(', ') || 'ninguna'}`; estado = 'Sin gancho estable: no escribir hasta verificar a mano'; }
     if (vi >= 0 && h && !r.startsWith('descartado')) {
       const v = verificados.get(f.dominio)?.veredicto, nota = verificados.get(f.dominio)?.nota;
-      if (v === 'coincide') estado = 'VERIFICADO A MANO por Ramón (coincide). ' + estado.replace(/Sin verificacion humana[^;]*/, '').trim();
-      else if (v === 'no_coincide') estado = 'NO ENVIAR: Ramón verificó y no coincide' + (nota ? ` (${nota})` : '');
-      else if (v === 'dudoso') estado = 'NO ENVIAR hasta revisar: Ramón marcó dudoso' + (nota ? ` (${nota})` : '');
+      if (v === 'coincide') estado = `VERIFICADO por ${verificados.get(f.dominio).por || 'Ramón a mano'}${verificados.get(f.dominio).con_aviso ? '; OJO: el sitio SÍ tiene aviso de cookies, decir "tiene aviso, pero las cookies ya estaban antes de elegir"' : ''}${nota ? '; ' + nota : ''}. Oferta: ${h.linea}`;
+      else if (v === 'no_coincide') estado = `NO ENVIAR: la verificación (${verificados.get(f.dominio).por || 'Ramón'}) no lo sostuvo` + (nota ? ` (${nota})` : '');
+      else if (v === 'dudoso') estado = `NO ENVIAR hasta revisar: la verificación (${verificados.get(f.dominio).por || 'Ramón'}) lo dejó dudoso` + (nota ? ` (${nota})` : '');
       else estado = 'NO ENVIAR: falta verificación a mano. ' + estado;
     }
     principal.push(fila([empresa, f.dominio, email, medido, estado]));
     detalle.push(fila([id, f.dominio, r, h?.id || '', h ? (h.capa || 2) : '', p?.fuerza || '', h?.estado || '', p?.en_castellano || '', p?.frase_de_arreglo || '', p?.apertura_a_reunion || '',
       p ? `${p.se_vende.producto} | ${p.se_vende.vehiculo_publicado}` : '', p?.se_vende.precio_en_el_correo || '', p?.se_vende.linea_de_precio || '', p?.estado_del_texto || '', h?.donde_mirar || '', h ? h.no_afirmable.join(' | ') : '',
-      (f.ofertas_adicionales || []).join('; '), (f.ruta_interna || []).map((x) => `${x.id} (${x.estado})`).join('; '), (f.capa1?.higiene || []).join('; '), `${path.relative(RAIZ, path.join(dir, id))}/ficha.md`]));
+      (f.ofertas_adicionales || []).join('; '), (f.ruta_interna || []).map((x) => `${x.id} (${x.estado})`).join('; '), (f.capa1?.higiene || []).join('; '), `${path.relative(RAIZ, path.join(dir, id))}/ficha.md`, verificados.get(f.dominio)?.hechos || '', verificados.get(f.dominio)?.advertencias || '']));
   }
 }
 const hayFichas = pares.some((par) => { const d = par.split(':')[0]; return fs.existsSync(d) && fs.readdirSync(d).some((x) => /^[A-Z]+\d+$/.test(x) && (fs.existsSync(path.join(d, x, 'ficha.json')) || fs.existsSync(path.join(d + '-reintento', x, 'ficha.json')))); });
 if (hayFichas && !principal.length) { console.error('ERROR: hay fichas en las carpetas indicadas pero no se genero ninguna fila. Revisar los identificadores de las carpetas (esperados: letras + numeros, p. ej. AB01).'); process.exit(1); }
 fs.mkdirSync(salida, { recursive: true });
 fs.writeFileSync(path.join(salida, 'para-emilia.csv'), ['empresa,dominio,email,hallazgo_medido,estado', ...principal].join('\n') + '\n');
-fs.writeFileSync(path.join(salida, 'para-emilia-detalle.csv'), ['id,dominio,resultado,oferta,capa,fuerza,estado_evidencia,como_decirlo_en_castellano,frase_de_arreglo,puerta_a_la_reunion,servicio_y_desde_publicado,precio_en_el_correo,linea_de_precio_de_referencia,estado_del_texto,como_comprobarlo,que_no_afirmar,otras_ofertas_para_la_llamada,sospechas_no_van_en_el_correo,higiene,ficha', ...detalle].join('\n') + '\n');
+fs.writeFileSync(path.join(salida, 'para-emilia-detalle.csv'), ['id,dominio,resultado,oferta,capa,fuerza,estado_evidencia,como_decirlo_en_castellano,frase_de_arreglo,puerta_a_la_reunion,servicio_y_desde_publicado,precio_en_el_correo,linea_de_precio_de_referencia,estado_del_texto,como_comprobarlo,que_no_afirmar,otras_ofertas_para_la_llamada,sospechas_no_van_en_el_correo,higiene,ficha,hechos_verificados,advertencias_de_la_verificacion', ...detalle].join('\n') + '\n');
 console.log(`${principal.length} filas -> ${salida}`);

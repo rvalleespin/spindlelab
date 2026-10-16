@@ -7,7 +7,7 @@ import { pedir } from '../lib/http.mjs';
 
 const RAIZ = path.resolve(fileURLToPath(new URL('../../../../', import.meta.url)));
 const NO_PROPIOS = /(^|\.)(facebook|instagram|linkedin|twitter|x|youtube|tiktok|wa|wix|wixsite|business|google|linktr|linktree|yelp|tripadvisor|booking|portalinmobiliario|yapo|mercadolibre|goo|bit)\.(com|cl|me|ee|ly|site)$/i;
-const PARKING = /domain (is )?for sale|this domain|dominio (en venta|disponible)|parked|buy this domain|godaddy|sedo\.com|hugedomains/i;
+const PARKING = /domain (is )?for sale|this domain|dominio (en venta|disponible)|parked|buy this domain|godaddy|sedo\.com|hugedomains|sitio en construcci[oó]n|p[aá]gina en construcci[oó]n|coming soon|under conn?struction|bluehosting|haulmer|default web site page|welcome to nginx|apache2 (ubuntu )?default page/i;   // incluye paginas de relleno de hosting: el dueño diria "ese no es mi sitio"
 
 export function limpiarDominio(d) {
   return String(d).trim().toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '');
@@ -52,6 +52,10 @@ export function yaContactado(dominio) {
   return { seguro, posible };
 }
 
+// Redireccion a otro sitio: mismo dominio registrable (ultimas dos etiquetas) = www o subdominio, no cuenta.
+const base = (h) => h.replace(/^www\./, '').split('.').slice(-2).join('.');
+const redirigeFuera = (dominio, host) => !!host && base(host) !== base(dominio);
+
 // descartado antes: otra sesion o Dereck ya lo marco como no escribir (dominio reciclado, aparcado, distribuidor, sitio caido, hallazgo flaco).
 const MARCA_DESCARTE = /descartad|NO escribir|DOMINIO RECICLADO|aparcad|parked|no es cl[ií]nica|distribuidor de/i;
 export function descartadoAntes(dominio) {
@@ -89,12 +93,16 @@ export async function pasada0(dominio, { correo, sinCorte = false, remedir = fal
   const final = new URL(r.url);
   const host = final.host.replace(/^www\./, '');
   if (NO_PROPIOS.test(host) && host !== dominio) return { ...out, corte: 'no-es-sitio-propio', detalle: { final: final.host } };
-  if (!sinCorte && PARKING.test(r.cuerpo.slice(0, 20000)) && r.cuerpo.length < 20000) return { ...out, corte: 'parking', detalle: {} };
-
   const texto = r.cuerpo.replace(/<(script|style|noscript)[\s\S]*?<\/\1>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  // Se mide el texto visible, no el HTML: una pagina de relleno puede pesar cientos de KB por assets en linea.
+  if (!sinCorte && texto.length < 4000 && PARKING.test(texto)) return { ...out, corte: 'parking', detalle: { texto: texto.slice(0, 120) } };
   const spa = /<div[^>]+id=["'](root|app|__next|__nuxt)["']/i.test(r.cuerpo);
   return { ...out, corte: null, url_final: r.url, status: r.status, cabeceras: r.cab, html: r.cuerpo,
-    advertencias: cont.posible.length ? [`El dominio se menciona en ${cont.posible.slice(0, 3).join(', ')} pero ningun registro prueba un envio. Confirmar en Gmail (in:sent to:dominio) antes de escribir.`] : [],
+    advertencias: [
+      ...(cont.posible.length ? [`El dominio se menciona en ${cont.posible.slice(0, 3).join(', ')} pero ningun registro prueba un envio. Confirmar en Gmail (in:sent to:dominio) antes de escribir.`] : []),
+      ...(redirigeFuera(dominio, host) ? [`El dominio ${dominio} redirige a ${host}: lo medido (cookies, formulario, contacto) es del sitio de destino. No decir "tu sitio ${dominio}" sin confirmar que el destinatario administra ${host}.`] : []),
+      ...(/sample page/i.test(r.cuerpo) && /hello world/i.test(r.cuerpo) ? ['Parece una plantilla de WordPress sin personalizar ("Sample Page", "Hello world!"): puede ser un sitio abandonado o un dominio que ya no es el sitio real. Redactar con cautela.'] : []),
+    ],
     html_no_alcanza: texto.length < 500 && spa, largo_texto_html: texto.length, spa_detectada: spa,
     redirige_a_otro_host: host !== dominio ? host : null };
 }

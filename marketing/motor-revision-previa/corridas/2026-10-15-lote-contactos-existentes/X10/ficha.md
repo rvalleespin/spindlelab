@@ -9,16 +9,16 @@
 ### C1 · Rastreadores que escriben antes de cualquier consentimiento
 - **capa:** 2 · **estado:** estable
 - **línea:** Verifica y Cumple · **lo comprueba:** el dueño, en 30 segundos
-- **dónde mirar:** Abrir el sitio en una ventana nueva y, sin tocar nada ~10 s, mirar las cookies (candado > Cookies, o F12 > Application > Cookies).
-- **se puede afirmar:** Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _fbp.
-- **NO se puede afirmar:** que algún proveedor "recibió la visita" salvo que haya envío observado en ambas corridas (hoy: ninguno); que el sitio "no tiene aviso" sin ver la captura del tramo B; lo que la ley "exige"; cualquier cosa que no aparezca en las dos corridas
+- **dónde mirar:** Abrir el sitio en una ventana nueva, NO responder el aviso, y mirar las cookies (candado > Cookies, o F12 > Application > Cookies): ya hay de medición o publicidad.
+- **se puede afirmar:** El sitio muestra un aviso de cookies, pero antes de elegir nada en él ya había guardado: _fbp.
+- **NO se puede afirmar:** que algún proveedor "recibió la visita" salvo que haya envío observado en ambas corridas (hoy: ninguno); lo que la ley "exige"; cualquier cosa que no aparezca en las dos corridas; que el sitio "no tiene aviso" (sí lo tiene); que el aviso sea ilegal o insuficiente; que las cookies se escriban aun después de pulsar Rechazar (no se probó)
 - **Propuesta (el arreglo que se vende)**
-  - **cómo se le diría (castellano, para el correo):** «Abrí tu sitio sin tocar nada ni aceptar nada, y ya había dejado en mi navegador cookies de Meta.»
-  - **el hecho técnico detrás (no va en el correo):** Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _fbp.
+  - **cómo se le diría (castellano, para el correo):** «Tu sitio tiene aviso de cookies, pero antes de que yo eligiera nada ahí ya habían quedado en mi navegador cookies de Meta.»
+  - **el hecho técnico detrás (no va en el correo):** El sitio muestra un aviso de cookies, pero antes de elegir nada en él ya había guardado: _fbp.
   - **se vende:** Kit de implementación de Verifica y Cumple (Verifica y Cumple). Lo que el chequeo gratis deje pendiente. El kit no incluye asesoría legal: entrega la plantilla de política para que la revise el abogado del cliente. Eso se dice, no se esconde.
   - **precio en el correo:** Desde $149.000 + IVA, una vez
   - **servicio publicado más cercano:** Desde $149.000 + IVA, una vez (correos aprobados 23-sep y estrategia §1) · **plazo:** no se ofrece plazo (ningún correo aprobado lo hace)
-  - **fuerza para un primer correo:** fuerte
+  - **fuerza para un primer correo:** media
   - **frase de arreglo:** «Eso lo arreglo yo, con lo demás que el chequeo deje pendiente. Desde $149.000 + IVA, una vez.»
   - **puerta a la reunión:** «Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.»
   - **cierre sugerido:** Gratis y sin registro: https://verifica.spindlelab.cl

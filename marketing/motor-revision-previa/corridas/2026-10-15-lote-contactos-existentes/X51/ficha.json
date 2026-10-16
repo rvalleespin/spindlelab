@@ -101,7 +101,7 @@
       ],
       "advertencias": [],
       "propuesta": {
-        "en_castellano": "Abrí tu sitio sin tocar nada ni aceptar nada, y ya había dejado en mi navegador cookies de Meta.",
+        "en_castellano": "Tu sitio tiene aviso de cookies, pero antes de que yo eligiera nada ahí ya habían quedado en mi navegador cookies de Meta.",
         "problema_tecnico": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _fbp.",
         "donde_mirar": "Abrir el sitio en una ventana nueva y, sin tocar nada ~10 s, mirar las cookies (candado > Cookies, o F12 > Application > Cookies).",
         "se_vende": {
@@ -113,7 +113,7 @@
           "linea_de_precio": null,
           "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
         },
-        "fuerza": "fuerte",
+        "fuerza": "media",
         "frase_de_arreglo": "Eso lo arreglo yo, con lo demás que el chequeo deje pendiente. Desde $149.000 + IVA, una vez.",
         "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
         "cierre_sugerido": "Gratis y sin registro: https://verifica.spindlelab.cl",
@@ -766,5 +766,6 @@
   "limites": [
     "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
     "Contenedor de Tag Manager leído una vez (es un archivo estático)."
-  ]
+  ],
+  "propuesta_agregada": "2026-10-16T15:11:07.198Z"
 }

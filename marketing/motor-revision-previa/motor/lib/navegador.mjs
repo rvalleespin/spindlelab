@@ -115,7 +115,7 @@ const JS_DOM = `(() => {
     largo_texto: txt.length, muestra: txt.slice(0, 500),
     cta_en_pantalla: (() => {
       const sinTilde = (t) => (t || '').normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase();
-      const RE = /contact|escrib|whatsapp|llam|agend|reserv|solicit|cotiz|hablemos|conversemos|comprar|carrito|carro\\b|cart\\b|comienza|empieza|ahora|pide|inscrib|prueba|demo|consult|asesor|cita\\b|hora\\b|presupuesto|suscrib|registr/;
+      const RE = /contat|contact|escrib|whatsapp|llam|agend|reserv|solicit|cotiz|hablemos|conversemos|comprar|carrito|carro\\b|cart\\b|comienza|empieza|ahora|pide|inscrib|prueba|demo|consult|asesor|cita\\b|hora\\b|presupuesto|suscrib|registr/;
       const RE_WIDGET = /whatsapp|joinchat|wa-|chat|llamar|phone|telefono/;
       const hallados = [];
       for (const e of document.querySelectorAll('a,button,[role=button],input[type=submit],div,span,i')) {
@@ -125,6 +125,11 @@ const JS_DOM = `(() => {
         if (!(rr.width > 16 && rr.height > 10 && ss.visibility !== 'hidden' && ss.display !== 'none' && +ss.opacity > 0.05 && rr.bottom > 0 && rr.top < innerHeight)) continue;   // un enlace de menu mide ~18 px: no se le exige 20
         if (/^(tel:|mailto:)|wa\\.me|whatsapp/i.test(h) || (esControl && t.length < 60 && RE.test(t)) || (getComputedStyle(e).position === 'fixed' && RE_WIDGET.test(meta))) hallados.push({ t: t.slice(0, 40), h });
         if (hallados.length >= 8) break;
+      }
+      if (!hallados.length) for (const e of document.querySelectorAll('p,span,li,a,div,h1,h2,h3,h4')) {   // telefono escrito como texto en la primera pantalla tambien es una via de contacto
+        if (e.children.length > 3) continue; const tx = (e.innerText || '').trim(); if (tx.length < 6 || tx.length > 90) continue;
+        if (!/(\\+?\\s?56)?[\\s-]*\\(?(9|2)\\)?[\\s-]*\\d{4}[\\s-]*\\d{4}/.test(tx)) continue;
+        const rr = e.getBoundingClientRect(); if (rr.width > 16 && rr.height > 8 && rr.bottom > 0 && rr.top < innerHeight) { hallados.push({ t: 'telefono visible: ' + tx.slice(0, 30), h: '' }); break; }
       }
       return hallados;
     })(),

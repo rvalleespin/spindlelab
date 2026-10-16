@@ -1,9 +1,22 @@
-# X65
+# Ficha X65
 
-**resultado:** descartado:descartado-antes
+**resultado:** `descartado:descartado-antes` · motor v0 · 2026-10-16T13:40:10.559Z · cloud (IP de datacenter, via proxy)
 
-{
-  "en": "ventas/contactos-google-maps-28sep.csv",
-  "motivo": "descartado seccion 9 Cero rastreadores, cero cookies, cero formularios",
-  "nota": "Ya estaba marcado como no escribir en una lista de ventas/. Si cambio, correr con --sin-corte."
-}
+> Detector de sospecha. Nada de esto está verificado. La propuesta es lo que se vendería **si** una persona confirma el hallazgo.
+
+## Hallazgo (el de mayor posición con estado estable)
+
+_Ninguno._
+
+## Ruta interna (no va en el correo)
+
+_Vacía._
+
+## Capa 1 (contexto)
+
+- con consecuencia: -
+- higiene: -
+
+## Evidencia
+
+

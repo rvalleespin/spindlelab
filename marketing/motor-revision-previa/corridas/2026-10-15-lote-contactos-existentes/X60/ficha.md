@@ -1,9 +1,22 @@
-# X60
+# Ficha X60
 
-**resultado:** descartado:descartado-antes
+**resultado:** `descartado:descartado-antes` · motor v0 · 2026-10-16T13:39:38.057Z · cloud (IP de datacenter, via proxy)
 
-{
-  "en": "ventas/contactos-diarioemprende-30sep.csv",
-  "motivo": "descartado dominio aparcado Dominio aparcado en GoDaddy (api.aws.parking.godaddy.com, lander_type); el negocio ya no esta ahi",
-  "nota": "Ya estaba marcado como no escribir en una lista de ventas/. Si cambio, correr con --sin-corte."
-}
+> Detector de sospecha. Nada de esto está verificado. La propuesta es lo que se vendería **si** una persona confirma el hallazgo.
+
+## Hallazgo (el de mayor posición con estado estable)
+
+_Ninguno._
+
+## Ruta interna (no va en el correo)
+
+_Vacía._
+
+## Capa 1 (contexto)
+
+- con consecuencia: -
+- higiene: -
+
+## Evidencia
+
+

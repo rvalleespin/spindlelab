@@ -88,11 +88,15 @@ const MARCA = { 'Google Analytics': 'Google', 'Google Ads': 'Google', 'Meta': 'M
   'Hotjar': 'Hotjar', 'Reddit': 'Reddit', 'HubSpot': 'HubSpot', 'TikTok': 'TikTok', 'Pinterest': 'Pinterest', 'LinkedIn': 'LinkedIn' };
 const lista = (xs) => { const u = [...new Set(xs)]; return u.length < 2 ? u.join('') : u.slice(0, -1).join(', ') + ' y ' + u[u.length - 1]; };
 
+// C1 con aviso de cookies visible: la afirmacion cambia. El dueño tiene aviso; lo que pasa es que los rastreadores se escriben ANTES de que alguien elija.
+export const c1ConAviso = (soporte) => !!soporte?.c1?.aviso_en_dom?.some((a) => a.A || a.B);
+
 export function enCastellano(c, soporte) {
   const d = c.datos || {};
   switch (c.id) {
     case 'C1': {
       const cs = (soporte?.c1?.cookies || []).filter((x) => MARCA[x.proveedor]); if (!cs.length) return null;
+      if (c1ConAviso(soporte)) return `Tu sitio tiene aviso de cookies, pero antes de que yo eligiera nada ahí ya habían quedado en mi navegador cookies de ${lista([...new Set(cs.map((x) => MARCA[x.proveedor]))])}.`;
       if (cs.some((x) => x.primera_fase === 'variable')) return `Abrí tu sitio sin aceptar nada ni hacer un solo clic, y quedaron en mi navegador cookies de ${lista(cs.map((x) => MARCA[x.proveedor]))}.`;   // la fase cambia entre corridas: no se dice cuando
       const enA = cs.filter((x) => x.primera_fase === 'A').map((x) => MARCA[x.proveedor]), tras = cs.filter((x) => x.primera_fase !== 'A').map((x) => MARCA[x.proveedor]);
       if (!tras.length) return `Abrí tu sitio sin tocar nada ni aceptar nada, y ya había dejado en mi navegador cookies de ${lista(enA)}.`;
@@ -127,7 +131,8 @@ export function propuesta(candidato, soporte, extras = 0) {
     se_vende: { linea: a.linea, producto: v.nombre, alcance: a.alcance, vehiculo_publicado: `${v.desde} (${v.fuente})`,
       precio_en_el_correo: v.en_correo ? v.desde : `Solo como referencia, no como cotización: ${v.nombre}, ${v.desde.charAt(0).toLowerCase() + v.desde.slice(1)} (spindlelab.cl). El valor del arreglo se cierra en la llamada.`,
       linea_de_precio: v.en_correo ? null : LINEA_PRECIO_REFERENCIA, plazo: 'no se ofrece plazo (ningún correo aprobado lo hace)' },
-    fuerza: FUERZA[candidato.id] || 'media', frase_de_arreglo: a.frase, apertura_a_reunion: apertura, cierre_sugerido: a.cierre || null,
+    fuerza: (candidato.id === 'C1' && c1ConAviso(soporte)) ? 'media' : (FUERZA[candidato.id] || 'media'),   // con aviso visible el gancho es más débil y requiere cuidado al decirlo
+    frase_de_arreglo: a.frase, apertura_a_reunion: apertura, cierre_sugerido: a.cierre || null,
     estado_del_texto: a.borrador ? 'BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.' : 'APROBADO: tomado de correos ya revisados.',
     por_definir: a.por_definir || [], revision_de_tono: problemas.length ? { problemas } : 'limpia',
     registro: 'singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural.',
