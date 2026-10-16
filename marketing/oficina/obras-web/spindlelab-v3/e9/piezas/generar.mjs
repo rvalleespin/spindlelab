@@ -15,6 +15,12 @@
 //   node generar.mjs --sin-captura         rinde desde el crudo más nuevo (o --fecha=AAAA-MM-DD)
 //   node generar.mjs --solo=l1,k2          rinde solo esas piezas (prefijo del id)
 //   node generar.mjs --campo=l1:brasa      rinde una pieza de lectura en otro campo (archivo aparte)
+//   node generar.mjs --sin-captura --paleta=e10 --solo=l2,l4,v1
+//                                          rinde las de lectura en la paleta del lock E10 (papel y ciruela de
+//                                          tableros/e10-direcciones/proto/e10/tokens.css; Instrument Sans,
+//                                          IBM Plex Sans y Mono). Sale aparte, en salida-e10/, html-e10/ y
+//                                          manifiesto-e10.json: no toca las piezas de E9. Campos: papel (el
+//                                          de siempre), ciruela, amarillo, lima (--campo=v1:lima).
 //   CHROME=<ruta> si el Chromium no está en /opt/pw-browsers (en la Mac, sin CHROME usa el de Playwright).
 //
 // Reglas que el script hace cumplir: cero datos tipeados, cero dominios de prospectos (las corridas del
@@ -54,12 +60,25 @@ const py = (...a) => JSON.parse(execFileSync('python3', ['-I', path.join(AQUI, '
 function git(...a) { try { return execFileSync('git', ['-C', REPO, ...a], { encoding: 'utf8' }); } catch { return null; } }
 
 // Tokens de campo leídos de driftime.css (la fuente de verdad del sitio), no copiados a mano.
-const CSS = fs.readFileSync(path.join(REPO, 'spindlelab-astro/src/styles/driftime.css'), 'utf8');
+// Con --paleta=e10 (Lucía, 16-oct-2026) se leen de los tokens del lock E10, también sin copiarlos a mano.
+const E10 = ARG.paleta === 'e10';
+const E10_DIR = path.join(AQUI, '../../tableros/e10-direcciones/proto');
 const CAMPOS = {};
-for (const c of ['brasa', 'navy', 'petroleo', 'ciruela']) {
-  const f = CSS.match(new RegExp(`--d-${c}:\\s*(#[0-9a-fA-F]{6})`)); const t = CSS.match(new RegExp(`--d-${c}-t:\\s*(#[0-9a-fA-F]{6})`));
-  if (!f || !t) throw new Error(`no encontré --d-${c} / --d-${c}-t en driftime.css`);
-  CAMPOS[c] = { fondo: f[1].toLowerCase(), texto: t[1].toLowerCase() };
+if (E10) {
+  const TK = fs.readFileSync(path.join(E10_DIR, 'e10/tokens.css'), 'utf8');
+  const tk = (n) => { const m = TK.match(new RegExp(`--${n}:\\s*(#[0-9a-fA-F]{6})`)); if (!m) throw new Error(`no encontré --${n} en tokens.css de E10`); return m[1].toLowerCase(); };
+  // Texto ciruela sobre los claros y papel sobre ciruela: los pares del lock §3 (16,27 a 18,71:1).
+  CAMPOS.papel = { fondo: tk('papel'), texto: tk('ciruela') };
+  CAMPOS.ciruela = { fondo: tk('ciruela'), texto: tk('papel') };
+  CAMPOS.amarillo = { fondo: tk('amarillo'), texto: tk('ciruela') };
+  CAMPOS.lima = { fondo: tk('lima'), texto: tk('ciruela') };
+} else {
+  const CSS = fs.readFileSync(path.join(REPO, 'spindlelab-astro/src/styles/driftime.css'), 'utf8');
+  for (const c of ['brasa', 'navy', 'petroleo', 'ciruela']) {
+    const f = CSS.match(new RegExp(`--d-${c}:\\s*(#[0-9a-fA-F]{6})`)); const t = CSS.match(new RegExp(`--d-${c}-t:\\s*(#[0-9a-fA-F]{6})`));
+    if (!f || !t) throw new Error(`no encontré --d-${c} / --d-${c}-t en driftime.css`);
+    CAMPOS[c] = { fondo: f[1].toLowerCase(), texto: t[1].toLowerCase() };
+  }
 }
 // Fondos de estudio de los mockups (mockups/README.md y manual §07b). Ninguno cerca del oro.
 const ESTUDIO = { verifica: '#C3C8EE', 'combeau-fotografia': '#C5CFC0' };
@@ -68,8 +87,10 @@ const FECHA = ARG.fecha || (ARG['sin-captura']
   ? fs.readdirSync(path.join(AQUI, 'crudo')).filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)).sort().pop()
   : chile(new Date()).slice(0, 10));
 const CRUDO = path.join(AQUI, 'crudo', FECHA);
-const SALIDA = path.join(AQUI, 'salida');
-const HTML = path.join(AQUI, 'html');
+const SALIDA = path.join(AQUI, E10 ? 'salida-e10' : 'salida');
+const HTML = path.join(AQUI, E10 ? 'html-e10' : 'html');
+const MANIFIESTO = path.join(AQUI, E10 ? 'manifiesto-e10.json' : 'manifiesto.json');
+const FUENTE_CHECK = E10 ? "500 40px 'Instrument Sans'" : '500 40px Manrope';
 
 // ───────────────────────────── 1 · CAPTURA ─────────────────────────────
 // User-agents reales, leídos de la documentación de cada empresa en el momento de capturar.
@@ -341,7 +362,27 @@ body{background:${c.fondo};color:${c.texto};font-family:'Manrope',sans-serif;fon
 .pie{position:absolute;left:48px;right:48px;bottom:40px;font-size:17px;line-height:1.3;font-weight:500;letter-spacing:0}
 .g{padding:0}
 .fil{border-top:1px solid color-mix(in srgb, ${c.texto} 32%, transparent)}
+${E10 ? BASE_CSS_E10(c) : ''}`;
+// Paleta E10 (lock-the-ready.md §2, §3 y §11): las cifras y los titulares en Instrument Sans 500 en caja de
+// oración, las listas en IBM Plex Sans, y el pie como rótulo de IBM Plex Mono 500 en mayúsculas (+0,03em).
+// Filete de 1 px en el color del texto, entero, como los de The Ready. Fuentes del tablero E10, por ruta relativa.
+function BASE_CSS_E10(c) {
+  const F = '../../../tableros/e10-direcciones/proto/fuentes/';
+  const lat = 'unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD';
+  return `
+@font-face{font-family:'Instrument Sans';font-weight:400 700;src:url('${F}instrument-sans-latin.woff2') format('woff2');${lat}}
+@font-face{font-family:'Instrument Sans';font-weight:400 700;src:url('${F}instrument-sans-flechas.woff2') format('woff2');unicode-range:U+2192,U+2197}
+@font-face{font-family:'IBM Plex Sans';font-weight:400 700;src:url('${F}plex-sans-latin.woff2') format('woff2');${lat}}
+@font-face{font-family:'IBM Plex Mono';font-weight:500;src:url('${F}plex-mono-500-latin.woff2') format('woff2');${lat}}
+body{font-family:'Instrument Sans',sans-serif}
+li,.pr,.x{font-family:'IBM Plex Sans',sans-serif}
+.pie{font:500 15px/1.3 'IBM Plex Mono',monospace;letter-spacing:.03em;text-transform:uppercase}
+.fil{border-top:1px solid ${c.texto}}
+li:last-child,.fila:last-child{border-bottom-color:${c.texto}!important}
+/* Instrument Sans es más angosta que Manrope: a -0,045em los ceros de «100» se tocan. */
+.n{letter-spacing:-.02em!important}
 `;
+}
 // Ajuste: baja el tamaño de un bloque marcado .ajusta hasta que su línea más ancha entre en el ancho.
 const AJUSTA = `<script>document.fonts.ready.then(()=>{for(const b of document.querySelectorAll('.ajusta')){let s=parseFloat(getComputedStyle(b).fontSize);const max=b.clientWidth;const anchas=()=>Math.max(...[...b.querySelectorAll('[data-t]')].map(e=>{const r=document.createRange();r.selectNodeContents(e);return r.getBoundingClientRect().width}));while(anchas()>max&&s>12){s-=1;b.style.fontSize=s+'px'}}document.body.dataset.listo='1'})</script>`;
 const pagina = (titulo, w, h, c, cuerpo, css = '') => `<!doctype html><html lang="es-CL"><head><meta charset="utf-8"><title>${esc(titulo)}</title><style>${BASE_CSS(w, h, c)}${css}</style></head><body>${cuerpo}${AJUSTA}</body></html>`;
@@ -587,13 +628,15 @@ function contraste(a, b) {
 async function render() {
   const R = JSON.parse(leer('registro.json'));
   const piezas = definirPiezas(R);
+  // E10: las de lectura salen en papel (texto ciruela); otro campo, con --campo=<id>:<campo>.
+  if (E10) for (const p of piezas) if (p.tratamiento === 'lectura') p.campo = 'papel';
   const solo = ARG.solo ? String(ARG.solo).split(',') : null;
   const variantes = ARG.campo ? String(ARG.campo).split(',').map((s) => s.split(':')) : [];
   // Un render completo parte de cero: así no quedan piezas viejas que el manifiesto ya no nombra.
   if (!solo && !variantes.length) for (const d of [SALIDA, HTML]) fs.rmSync(d, { recursive: true, force: true });
   fs.mkdirSync(SALIDA, { recursive: true }); fs.mkdirSync(HTML, { recursive: true });
   const nav = await chromium.launch({ executablePath: CHROME, args: ['--allow-file-access-from-files'] });
-  const viejo = fs.existsSync(path.join(AQUI, 'manifiesto.json')) ? JSON.parse(fs.readFileSync(path.join(AQUI, 'manifiesto.json'), 'utf8')) : null;
+  const viejo = fs.existsSync(MANIFIESTO) ? JSON.parse(fs.readFileSync(MANIFIESTO, 'utf8')) : null;
   const hechas = []; const no_hechas = [];
 
   const trabajos = [];
@@ -617,16 +660,16 @@ async function render() {
         const f = path.join(HTML, `${p.id}.html`); escribir(f, html);
         await pg.goto(pathToFileURL(f).href); await pg.waitForLoadState('networkidle');
         await pg.waitForFunction(() => document.body.dataset.listo === '1');
-        medicion = await pg.evaluate(() => {
+        medicion = await pg.evaluate((FUENTE_CHECK) => {
           const opac = (e) => { let o = 1; for (let n = e; n && n.nodeType === 1; n = n.parentElement) o *= +getComputedStyle(n).opacity; return o; };
           const textos = [...document.querySelectorAll('[data-t]')].map((e) => { const r = e.getBoundingClientRect(); const cs = getComputedStyle(e); return { t: e.textContent.replace(/\s+/g, ' ').trim(), f: e.dataset.t, color: cs.color, op: opac(e), caja: [r.left, r.top, r.right, r.bottom].map(Math.round), px: parseFloat(cs.fontSize) }; });
           const sueltos = []; const tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
           while (tw.nextNode()) { const n = tw.currentNode; if (!n.textContent.trim()) continue; const el = n.parentElement; if (el.closest('[data-t],.g,script,style,title')) continue; sueltos.push(n.textContent.trim()); }
           const imgs = [...document.images].map((i) => ({ src: i.src, ok: i.complete && i.naturalWidth > 0 }));
-          return { bg: getComputedStyle(document.body).backgroundColor, textos, sueltos, glifos: [...document.querySelectorAll('.g')].map((e) => e.textContent.trim()), fuente: document.fonts.check('500 40px Manrope'), imgs, W: innerWidth, H: innerHeight };
-        });
+          return { bg: getComputedStyle(document.body).backgroundColor, textos, sueltos, glifos: [...document.querySelectorAll('.g')].map((e) => e.textContent.trim()), fuente: document.fonts.check(FUENTE_CHECK), imgs, W: innerWidth, H: innerHeight };
+        }, FUENTE_CHECK);
         // Comprobaciones: fuente cargada, nada fuera de caja, nada suelto, cada texto con su fuente.
-        if (medicion.textos.length && !medicion.fuente) throw new Error('Manrope no cargó');
+        if (medicion.textos.length && !medicion.fuente) throw new Error(`${FUENTE_CHECK} no cargó`);
         if (medicion.imgs.some((i) => !i.ok)) throw new Error('una imagen no cargó');
         if (medicion.sueltos.length) throw new Error(`texto sin fuente declarada: ${medicion.sueltos.join(' | ')}`);
         const fuentes = { ...(p.fuentes || {}), ...(p.fuentesExtra || {}) };
@@ -724,7 +767,8 @@ img{display:block;width:${p.w}px;height:${p.h}px}
   const previas = viejo && solo ? viejo.piezas.filter((x) => !hechas.some((h) => h.id === x.id)) : [];
   const t0 = new Date();
   const manifiesto = {
-    obra: 'E9 · piezas reales (Tanda A, primer juego)', autor: 'Bruno (persona-director-creativo)',
+    obra: E10 ? 'E10 · piezas reales de E9 re-rendidas en la paleta del lock E10 (tablero de direcciones)' : 'E9 · piezas reales (Tanda A, primer juego)', autor: E10 ? 'Bruno (generador); paleta E10 de Lucía' : 'Bruno (persona-director-creativo)',
+    ...(E10 ? { paleta: 'e10: tokens de tableros/e10-direcciones/proto/e10/tokens.css (papel, ciruela, amarillo, lima); Instrument Sans 500, IBM Plex Sans, IBM Plex Mono 500. Los datos y las reglas de texto son los mismos de E9.' } : {}),
     generado_utc: t0.toISOString(), generado_chile: chile(t0), fecha_crudo: FECHA,
     generador: 'e9/piezas/generar.mjs', como_regenerar: 'node generar.mjs (captura hoy y rinde) · node generar.mjs --sin-captura (rinde desde el crudo) · ver la cabecera del script',
     registro: `crudo/${FECHA}/registro.json`,
@@ -755,7 +799,7 @@ img{display:block;width:${p.w}px;height:${p.h}px}
       { archivo: 'spindlelab-astro/public/assets/img/obra/mock-raigal-ancho.jpg', que: 'Raigal, SOLO con el rótulo de concepto primero' },
     ],
   };
-  escribir(path.join(AQUI, 'manifiesto.json'), JSON.stringify(manifiesto, null, 1));
+  escribir(MANIFIESTO, JSON.stringify(manifiesto, null, 1));
   console.log(`manifiesto: ${manifiesto.piezas.length} piezas, ${no_hechas.length} no hechas, ${fallidas.length} capturas fallidas`);
 }
 
