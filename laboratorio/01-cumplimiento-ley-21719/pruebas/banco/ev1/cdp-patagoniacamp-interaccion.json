@@ -1,0 +1,142 @@
+{
+  "slug": "patagoniacamp",
+  "url": "https://patagoniacamp.com/",
+  "nota": "Segunda pasada. Solo mousemove + rueda. Cero clics, cero aceptacion de banner.",
+  "antesDeGesto": {
+    "totalPeticiones": 96,
+    "rastreadores": {}
+  },
+  "despuesDeGesto": {
+    "totalPeticiones": 103,
+    "rastreadores": {
+      "Google Analytics (GA4 /g/collect)": {
+        "n": 1,
+        "ejemplo": "https://www.google-analytics.com/g/collect?v=2&tid=G-F1HZ7KFXB8&gtm=45je69n0h2v9196587456za200zb9200881523zd9200881523xf1&_p=1790202223415&gcd=13l3l3l3l1l1&npa=0&dma=0&cid=1867289487.1790202224&frm=0&"
+      },
+      "Google Analytics (gtag.js G-)": {
+        "n": 2,
+        "ejemplo": "https://www.googletagmanager.com/gtag/js?id=G-F1HZ7KFXB8"
+      },
+      "Google Tag Manager (GTM-)": {
+        "n": 1,
+        "ejemplo": "https://www.googletagmanager.com/gtm.js?id=GTM-TGZWCN7M"
+      },
+      "Meta Pixel (fbevents.js)": {
+        "n": 1,
+        "ejemplo": "https://connect.facebook.net/en_US/fbevents.js"
+      },
+      "Meta (signals/config)": {
+        "n": 1,
+        "ejemplo": "https://connect.facebook.net/signals/config/1161345311533888?v=2.9.406&r=stable&domain=www.patagoniacamp.com&hme=8a9e6a9b82926b8f07fd0a2edd8b8f1ef075648059d1bb52ec651feab764c219&ex_m=117%2C236%2C168%2"
+      },
+      "Google Ads / doubleclick": {
+        "n": 9,
+        "ejemplo": "https://ad.doubleclick.net/ccm/s/collect?auid=1923744922.1790202223&gtm=45He69n0h2v9200881523za200zd9200881523xeaxf1&fmt=8"
+      }
+    }
+  },
+  "avisoCookiesEnPantalla": [],
+  "totalCookies": 20,
+  "cookies": [
+    {
+      "name": "__cf_bm",
+      "domain": ".hsforms.net",
+      "dias": 0
+    },
+    {
+      "name": "__cf_bm",
+      "domain": ".hs-scripts.com",
+      "dias": 0
+    },
+    {
+      "name": "pll_language",
+      "domain": "www.patagoniacamp.com",
+      "dias": 365
+    },
+    {
+      "name": "_gcl_au",
+      "domain": ".patagoniacamp.com",
+      "dias": 90
+    },
+    {
+      "name": "__cf_bm",
+      "domain": ".hs-banner.com",
+      "dias": 0
+    },
+    {
+      "name": "__cf_bm",
+      "domain": ".hsadspixel.net",
+      "dias": 0
+    },
+    {
+      "name": "__cf_bm",
+      "domain": ".hs-analytics.net",
+      "dias": 0
+    },
+    {
+      "name": "_ga_F1HZ7KFXB8",
+      "domain": ".patagoniacamp.com",
+      "dias": 400
+    },
+    {
+      "name": "_ga",
+      "domain": ".patagoniacamp.com",
+      "dias": 400
+    },
+    {
+      "name": "_fbp",
+      "domain": ".patagoniacamp.com",
+      "dias": 90
+    },
+    {
+      "name": "lw_screen_width",
+      "domain": "www.patagoniacamp.com",
+      "dias": "sesion"
+    },
+    {
+      "name": "IDE",
+      "domain": ".doubleclick.net",
+      "dias": 400
+    },
+    {
+      "name": "__cf_bm",
+      "domain": ".hsforms.com",
+      "dias": 0
+    },
+    {
+      "name": "_pk_id.95.2f99",
+      "domain": "www.patagoniacamp.com",
+      "dias": 393
+    },
+    {
+      "name": "_pk_ses.95.2f99",
+      "domain": "www.patagoniacamp.com",
+      "dias": 0
+    },
+    {
+      "name": "__hstc",
+      "domain": ".patagoniacamp.com",
+      "dias": 180
+    },
+    {
+      "name": "hubspotutk",
+      "domain": ".patagoniacamp.com",
+      "dias": 180
+    },
+    {
+      "name": "__hssrc",
+      "domain": ".patagoniacamp.com",
+      "dias": "sesion"
+    },
+    {
+      "name": "__hssc",
+      "domain": ".patagoniacamp.com",
+      "dias": 0
+    },
+    {
+      "name": "__cf_bm",
+      "domain": ".hubspot.com",
+      "dias": 0
+    }
+  ]
+}

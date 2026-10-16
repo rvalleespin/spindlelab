@@ -1,0 +1,70 @@
+[S01] p0 ok https://checkcontabilidades.cl/ 
+[S01] p1 ok
+[S01] navegador, corrida 1
+[S01] navegador, corrida 2
+[S01] contenedores GTM-KJCBNHMV
+[S01] sonda de borde
+[S02] p0 ok https://amgestemp.cl/ 
+[S02] p1 ok
+[S02] navegador, corrida 1
+[S02] navegador, corrida 2
+[S02] contenedores -
+[S02] sonda de borde
+[S03] p0 ok https://f5contable.cl/ 
+[S03] p1 ok
+[S03] navegador, corrida 1
+[S03] navegador, corrida 2
+[S03] contenedores GTM-M827FDHH
+[S03] sonda de borde
+[S04] p0 ok https://oscplus.cl/ 
+[S04] p1 ok
+[S04] navegador, corrida 1
+[S04] navegador, corrida 2
+[S04] contenedores -
+[S04] sonda de borde
+[S05] p0 ok https://www.goauditores.cl/ 
+[S05] p1 ok
+[S05] navegador, corrida 1
+[S05] navegador, corrida 2
+[S05] contenedores -
+[S05] sonda de borde
+[S06] p0 ok https://clavetributariacontadores.cl/ 
+[S06] p1 ok
+[S06] navegador, corrida 1
+[S06] navegador, corrida 2
+[S06] contenedores -
+[S06] sonda de borde
+[S07] p0 ok https://www.pcmservicioscontables.cl/ 
+[S07] p1 ok
+[S07] navegador, corrida 1
+[S07] navegador, corrida 2
+[S07] contenedores GTM-TJDQGWD8
+[S07] sonda de borde
+file:///home/user/spindlelab/marketing/motor-revision-previa/motor/pasadas/p3.mjs:77
+  if (!act || /^(javascript:|#)/i.test(f.action) || act === paginaUrl || act.startsWith(paginaUrl + '#')) return { estado: 'no-evaluable', porque: 'el envio lo maneja JavaScript o el CMS' };
+                                                                             ^
+
+TypeError: act.startsWith is not a function
+    at destinoFormulario (file:///home/user/spindlelab/marketing/motor-revision-previa/motor/pasadas/p3.mjs:77:78)
+    at sondaContacto (file:///home/user/spindlelab/marketing/motor-revision-previa/motor/pasadas/p3.mjs:98:136)
+    at file:///home/user/spindlelab/marketing/motor-revision-previa/motor/revisar.mjs:48:24
+
+Node.js v22.22.0
+[S08] p0 ok https://contable.app/ 
+[S08] p1 ok
+[S08] navegador, corrida 1
+[S08] navegador, corrida 2
+[S08] contenedores GTM-WHMKLJC
+[S08] sonda de borde
+[S09] p0 ok https://www.tuoficinacontable.cl/ 
+[S09] p1 ok
+[S09] navegador, corrida 1
+[S09] navegador, corrida 2
+[S09] contenedores -
+[S09] sonda de borde
+[S10] p0 ok https://akcontadores.cl/ 
+[S10] p1 ok
+[S10] navegador, corrida 1
+[S10] navegador, corrida 2
+[S10] contenedores GTM-TJCMH7ZB
+[S10] sonda de borde

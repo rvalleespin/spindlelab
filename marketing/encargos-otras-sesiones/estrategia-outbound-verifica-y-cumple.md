@@ -486,3 +486,243 @@ Nada de eso se ha enviado. Los 12 borradores viejos de Gmail ya los borró Ramó
   versión con fecha. Mandar el link, no explicar.
 - **Quiere avanzar** → el formulario del sitio lo lleva al pedido con el dominio y el contexto
   del chequeo. El estado se registra en el pipeline, no en el CSV del lote.
+
+---
+
+## 11. Dos filtros que se pagan solos (5-oct-2026, lote de 51 abogados)
+
+### El prospecto que vende lo mismo que nosotros: filtrarlo ANTES de sondear
+
+La sección 9 ya decía "descarta si el prospecto ya vende esto". En abogados eso no es una
+excepción, es **12% del lote**: de 51 estudios, 5 tienen protección de datos como área de
+práctica y 1 tiene un socio con diplomado en el tema. `fontaineycia.cl` llega a ofrecer su propio
+instrumento para medir la preparación de una empresa ante la ley.
+
+**Entonces el filtro va primero, no después de gastar la sonda.** Se baja la portada y se busca:
+
+```
+protecci.n de datos | datos personales | 21\.719 | 21719
+```
+
+- Aparece como **área de práctica o servicio** → descartar, es el competidor.
+- Aparece solo en el **pie** (su propia política) o en el **CV de un socio** → se evalúa aparte,
+  pero con cuidado: va a defenderse mejor que cualquiera.
+- No aparece → sigue a la sonda.
+
+Esto ordenó el lote de hoy: 8 sondas que no se gastaron.
+
+### Un 200 no es una página
+
+Para afirmar que alguien tiene o no tiene política de privacidad, **hay que leer la página**. El
+código HTTP no sirve: `atasociados.cl`, `betancourtabogados.cl` y `rgcabogado.cl` respondieron
+**200 en las seis rutas de política que probamos** y también en una ruta inventada. Sirven la
+portada en cualquier parte. Ninguno tiene política.
+
+**La prueba:** pedir `/<algo-que-no-existe>/` y comparar tamaño y título con la ruta real. Si
+devuelve lo mismo, no hay página. Es la misma familia de error que "6 peticiones y 0 cookies"
+siendo la pantalla de error de Chrome: **el indicador respondió, la cosa no está ahí.**
+
+Y al revés: `altlegal.cl` sí tenía política real (161 KB, título propio, vocabulario de la ley).
+Si no se comprueba, se descarta a quien sí vale y se le escribe a quien no.
+
+### Lo que el recuento volvió a salvar
+
+`castaneda.cl` dio **10 cookies en la primera corrida y 6 en la segunda**. Las cuatro que se
+fueron eran justo las del hallazgo que iba a llevar el correo. Se reescribió con lo que sí
+aguantó las dos corridas. Van tres lotes seguidos en que la segunda corrida bota una frase.
+
+Y una que se cayó por leer mal el indicador: decir que `chll.cl` "usa la versión vieja de
+Analytics que Google abandonó" era falso. Tiene la cookie de una propiedad antigua **y** una
+propiedad nueva. Tener las dos no es usar solo la vieja.
+
+### El rendimiento real de un vertical
+
+De 51 vírgenes de abogados salieron **10 correos: 20%**. La merma que teníamos estimada era del
+69% (o sea 31% de rendimiento). **Abogados rinde menos**, y la causa principal es la primera
+sección de acá: el prospecto vende lo mismo.
+
+Conviene medir esto por vertical antes de comprometer sesiones completas a uno.
+
+---
+
+## 12. El correo doble del 13-oct, y los dos arreglos (13-oct-2026)
+
+**Los 10 abogados del lote del 6-oct recibieron su toque 2 DOS VECES el 13-oct**, con unos 90
+segundos de diferencia, con texto distinto y en dos hilos distintos. Verificado uno por uno en
+cuatro de ellos (`acia.cl`, `totalabogados.cl`, `sycabogados.cl`, `defiendete.cl`).
+
+**Romina Araya, de Total Abogados, respondió 13 minutos después del segundo**: *"no estamos
+interesados en el servicio por ahora. Favor, les solicito no volver a enviarnos correos de este
+tipo."* Es la primera baja explícita de la campaña y llegó justo después del correo doble.
+
+### La causa: `in:sent` no ve los borradores sin enviar
+
+1. La corrida del **12-oct** redactó el toque 2 de 15 direcciones, entre ellas los 10 abogados, y
+   etiquetó los hilos con `copiloto/toque-2-listo`.
+2. Esos 15 borradores **quedaron sin enviar**.
+3. La corrida del **13-oct** contó los toques con `in:sent to:DIRECCION`. **Esa búsqueda no
+   devuelve borradores.** Vio un solo envío real (el del 6-oct), concluyó que *"quedaron con la
+   etiqueta puesta de entrada por error, sin que el toque 2 real se mandara nunca"* y **volvió a
+   redactar el mismo toque 2 para los 10**.
+4. Ramón mandó la carpeta de borradores completa. Salieron los dos.
+
+El diagnóstico del copiloto era razonable y era equivocado: la etiqueta no estaba puesta de más,
+estaba puesta por el borrador que él mismo había escrito el día anterior. **Contar envíos no es
+contar toques cuando hay borradores en cola.**
+
+> **Arreglo 1, obligatorio:** antes de redactar cualquier seguimiento, llamar a `list_drafts` y
+> **descartar toda dirección que ya tenga un borrador pendiente**. El conteo por dirección sigue
+> siendo `in:sent to:DIRECCION`, pero el resultado se suma a los borradores en cola. Un borrador
+> pendiente cuenta como toque ya escrito: no se vuelve a escribir.
+
+### El arreglo que destraba las dos colas: `replyToMessageId`
+
+El copiloto viene arrastrando lo que llama "el bug de hilos": cada seguimiento sale en un hilo
+nuevo, el hilo viejo se queda sin la etiqueta nueva, y por eso las colas de toque 2 y toque 3
+devuelven 69 y 201 candidatos de los que la mayoría ya está cerrada. Eso le costó dos corridas
+completas de conteo manual.
+
+**No es un bug, es un parámetro que no se está usando.** `create_draft` no acepta `threadId`,
+pero **sí acepta `replyToMessageId`**: se le pasa el id del último mensaje del hilo del prospecto
+y el borrador queda dentro de ese hilo. Verificado el 13-oct con la confirmación de baja a Romina:
+volvió con el `threadId` del hilo original.
+
+> **Arreglo 2:** todo seguimiento se redacta con `replyToMessageId` apuntando al último mensaje
+> del hilo del prospecto. Con eso la etiqueta y el hilo dejan de separarse, las colas se vacían de
+> falsos pendientes, y un duplicado se ve a simple vista porque queda en el mismo hilo.
+
+### Lo que esto costó, para tenerlo presente
+
+Dos correos en 90 segundos a un estudio de abogados, en una campaña cuyo argumento es el cuidado
+de los datos de terceros. Es el peor contexto posible para parecer descuidado, y la baja llegó al
+tiro. **No hay que leerlo como mala suerte: el embudo ya tenía el fallo y la cola lo iba a
+repetir con el resto del lote.**
+
+### Y el tope de la exclusión
+
+El copiloto no edita el repo, así que deja los topes anotados en su resumen y alguien los tiene
+que pasar al CSV. Entre las corridas del 12 y el 13-oct dejó anotados 42 dominios con tope
+alcanzado (+6 que infirió sin confirmar). El 13-oct se agregaron 34 filas y la lista pasó de 37 a
+**72**. **Quedan los del resumen del 13-oct todavía sin pasar**, y la propia nota del copiloto
+avisa que los 6 últimos los infirió por patrón, no por conteo: esos se confirman antes de cerrar.
+
+Mientras los topes no estén en el CSV, la cola vuelve a ofrecer a gente que ya recibió sus tres
+correos. La etiqueta sola no alcanza.
+
+---
+
+## 13. El copiloto lee `main`, y ahí faltaba medio pipeline (13-oct-2026)
+
+Durante varias corridas el copiloto reportó que **diez direcciones no aparecían en ningún CSV de
+`ventas/`** y que por eso no podía elegirles la línea de baja ni escribirles. Hizo lo correcto al
+frenarse. Pero la causa no era de él.
+
+**El copiloto clona `origin/main`.** Once archivos de ventas vivían solo en la rama de trabajo, y
+varios se habían perdido del árbol cuando un commit de una línea arrastró 957 archivos sin querer.
+Entre ellos, `ventas/contactos-diarioemprende-30sep.csv`: **seis de esas diez direcciones estaban
+ahí**, en un archivo que main no tenía.
+
+Las otras cuatro (`cascada.net`, `santuariodelrio.cl`, `lunadepirque.cl`, `harenua.com`) son del
+lote de hoteles del 25-sep, que existía **solo dentro de un `.txt` de marketing**. La regla del
+prompt dice buscar el origen en `ventas/*.csv`, así que no estaban donde la regla manda mirar.
+
+Ambas cosas quedaron resueltas el 13-oct: los once archivos están publicados en main, y el lote de
+hoteles tiene su propio banco en `ventas/contactos-hoteles-25sep.csv` con las 43 direcciones.
+
+### La regla que queda
+
+> **Si un lead va a recibir correo, su origen tiene que estar en un `ventas/*.csv` que esté en
+> `main`.** No en una rama, no en un `.md`, no dentro del prompt de una rutina. Un banco que no
+> está en main, para el copiloto no existe.
+
+Y la de verificación, que es la que lo habría pillado meses antes: cuando una rutina cloud reporta
+que le falta un dato del repo, **comprobar en `origin/main`, no en el worktree donde uno está
+parado**. Lo que uno ve en su rama no es lo que la rutina clona.
+
+### Por qué importa más de lo que parece
+
+No eran diez correos. Entre lo que faltaba estaban los bancos de DiarioEmprende, de clínicas, de
+inmobiliarias, el cruce completo del pipeline y el de abogados. El copiloto llevaba más de una
+semana trabajando con la mitad del pipeline invisible, y eso no se manifiesta como un error: se
+manifiesta como una cola que nunca encuentra candidatos.
+
+---
+
+## 14. El criterio de corte, y dos trampas de la medición (14-oct-2026)
+
+### Qué se escribe y qué no: la decisión de Ramón
+
+Ramón pidió decidir como experto en marketing y ventas, con la consigna de que **el envío de
+correos es una parte central del embudo y los hallazgos siguen siendo importantes** aunque sean
+chicos. El criterio que quedó:
+
+1. **Se escribe todo lo que sea un hecho verdadero, comprobable en 30 segundos por el dueño y
+   relevante para él**, aunque sea pequeño. Costo de un borrador: casi cero. Costo de no escribirlo:
+   un lead medido que se enfría.
+2. **No se escribe si el sitio está en orden**: ahí no hay nada verdadero que decir y un correo
+   inventado quema credibilidad. (`tantakuy.cl`, `estudioveragua.cl`.)
+3. **No se escribe si no hay una consecuencia que el dueño sienta.** Dos cookies de Analytics, sin
+   formularios, sin grabación de sesión y sin publicidad: el correo diría "dos cookies" y nada más
+   (`amanda-salud.com`). Con un formulario sin política, aunque el sitio esté limpio, **sí**.
+4. **Un contacto que no es el decisor no descarta el lead.** Se escribe y se cierra pidiendo la
+   derivación en una línea ("si no eres tú quien ve el sitio, ¿con quién lo hablo?"). Aplicado a
+   `vets.cl` (contabilidad y RR.HH.) y `redimplantologia.cl` (asistente dental).
+5. **El sitio limpio con un formulario sin política es una forma legítima y probada**: es la del
+   correo a Focus Contable, el que mejor resultado dio de toda la campaña (pidió el diagnóstico al
+   día siguiente). Se reconoce lo bueno en una frase, sin rótulo, y se dice lo que falta.
+
+Y una corrección a un juicio mío: **"el vertical abogados rinde 20%" medía la tasa de lead a correo
+escrito, no la de respuesta.** La respuesta de ese lote quedó contaminada por el correo duplicado del
+13-oct, así que no es evidencia en contra del rubro.
+
+### Trampa 1: "tiene aviso de cookies" no se lee del HTML
+
+El 14-oct afirmé que `vets.cl` tenía aviso de cookies instalado. Era falso: la palabra
+`cookieconsent` venía de un **atributo** (`data-cookieconsent="ignore"`) del script de HubSpot, y el
+"privacy policy" venía de un plugin de chat de WhatsApp. **El aviso se confirma en la captura de
+pantalla, en los dos tramos.** Verificado a la vista el mismo día:
+
+| Sitio | Qué dijo la búsqueda de texto | Qué mostró la captura |
+|---|---|---|
+| `vets.cl` | "tiene aviso" | **no hay aviso**, ni antes ni después |
+| `cascada.travel` | "tiene aviso" | aviso real, con botones Aceptar y Rechazar |
+| `terrantai.com` | "tiene aviso" | aviso real, pero **aparece recién tras el primer gesto** |
+| `dermacne.cl` | "tiene aviso" | aviso real, con Aceptar y Denegar |
+
+Los correos ya enviados a Cascada y Terrantai estaban bien. El de Terrantai lo hace explícito: el
+sitio se ve limpio quieto, y el aviso y las cookies aparecen juntos después del movimiento.
+
+### Trampa 2: el aviso puede aparecer después del gesto
+
+Terrantai lo demuestra: **mirar solo la captura del tramo pasivo concluye "no hay aviso" y es
+falso.** Para afirmar que un sitio no tiene aviso hay que mirar también la captura del segundo
+tramo. Los cinco "no encontré aviso" de los correos del 14-oct se comprobaron en esa captura.
+
+### Trampa 3: "Google recibe la visita" no es lo mismo con Consent Mode (14-oct)
+
+Una petición a `google-analytics.com/g/collect` **no prueba por sí sola que el sitio rastree antes del
+permiso.** Si lleva `gcs=G100` (y `npa=1`), es **Google Consent Mode con el consentimiento
+denegado**: Google recibe un ping sin cookies y el aviso del sitio **sí** está bloqueando el
+almacenamiento. `G111` significa consentimiento concedido; sin `gcs`, no hay Consent Mode.
+
+Verificado el 14-oct sobre los 14 cierres que dejó el copiloto: en `hoteles-australis.com`,
+`norusapartments.cl`, `hoteltorremayorlyon.com` y `leonerahotel.cl` las peticiones a Google llevan
+`gcs=G100`, así que la frase "el aviso informa pero no bloquea: Analytics recibe la visita antes de
+que acepten" era refutable en dos minutos por su desarrollador. Se reescribieron como cierres sin
+afirmación técnica.
+
+**Cómo se mide bien:** además de contar peticiones, leer el parámetro `gcs` y contar **cookies de
+medición** (`_ga`, `_gcl_au`, `_fbp`). Cero cookies con `G100` es un sitio que bloquea; peticiones sin
+`gcs` y con `_ga` puesta es un sitio que rastrea antes del permiso.
+
+⚠️ **Lo que esto pone en duda:** los toques 1 y 2 enviados el 25 y 29-sep a esos cuatro hoteles
+decían lo mismo. Si el sitio ya usaba Consent Mode ese día, esos correos llevaban una afirmación
+equivocada. No se puede saber qué pasaba entonces; se anota para no repetirla.
+
+### Trampa 4: el copiloto repite en presente lo que midió otro
+
+El copiloto no tiene navegador, así que **no puede remedir.** Sus cierres de toque 3 repitieron
+"sigue..." sobre mediciones de 19 días. De 14, **seis ya no se sostenían** y uno tenía jerga que el
+propio prompt prohíbe. Por la misma razón que el copiloto no escribe primeros contactos, **un toque 3
+que afirma un hecho técnico en presente debería remedirse antes de enviarse.** Mientras eso no esté
+automatizado, el cierre seguro es el que no afirma nada y deja el chequeo gratis.

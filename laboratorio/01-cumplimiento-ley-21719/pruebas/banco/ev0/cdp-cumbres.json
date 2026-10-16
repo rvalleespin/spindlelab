@@ -1,0 +1,642 @@
+{
+  "url": "https://hotelescumbres.cl/",
+  "slug": "cumbres",
+  "urlFinal": "https://www.hotelescumbres.com/",
+  "titulo": "Hoteles Boutique en Chile | Hoteles Cumbres",
+  "ms": 10579,
+  "requests": [
+    {
+      "url": "https://hotelescumbres.cl/",
+      "method": "GET",
+      "type": "Document",
+      "initiator": "other",
+      "t": 1790201955.385033
+    },
+    {
+      "url": "https://www.hotelescumbres.com/",
+      "method": "GET",
+      "type": "Document",
+      "initiator": "other",
+      "t": 1790201955.460901
+    },
+    {
+      "url": "https://app.secureprivacy.ai/script/64e5ec4b2e76d017f538e6e8.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "t": 1790201955.773084
+    },
+    {
+      "url": "https://cmp.secureprivacy.ai/secure-privacy-v2.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.075696
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i&display=swap&subset=latin,latin-ext",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "t": 1790201956.077046
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap&subset=latin,latin-ext",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "t": 1790201956.077391
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i&display=swap&subset=latin,latin-ext",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "t": 1790201956.077437
+    },
+    {
+      "url": "https://www.hotelescumbres.com/css/custom/8051/1/main/bb155e219e428b2d00c50f98e7ad5509/main.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "t": 1790201956.078125
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration-tools/rate-components/public/rates-proxy.js?v1.4.0",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "t": 1790201956.121391
+    },
+    {
+      "url": "https://cdn.asksuite.com/infochat.js?dataConfig=https://control.asksuite.com/api/companies/hoteles-cumbres",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "t": 1790201956.122023
+    },
+    {
+      "url": "https://api-prod.secureprivacy.ai/api/banner/dynamic?Domain=64e5ec4b2e76d017f538e6e8&DeviceId=0.29078787814828055",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "t": 1790201956.175922
+    },
+    {
+      "url": "https://api-prod.secureprivacy.ai/api/banner/dynamic?Domain=64e5ec4b2e76d017f538e6e8&DeviceId=0.29078787814828055",
+      "method": "OPTIONS",
+      "type": "Other",
+      "initiator": "preflight",
+      "t": 1790201956.176262
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-TL2MM4B",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.278986
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-5B6GC3B",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.279152
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wijpeg-er6umm7cwc5lj149ra49hlp5f/grupo-hoteles-cumbres-hotel-cumbres-san-pedro-de-atacama-laguna.jpg?width=1920",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.279224
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wijpeg-er6umm7cwc5lj149ra49hlp5f/grupo-hoteles-cumbres-hotel-cumbres-san-pedro-de-atacama-laguna.jpg?width=800",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.279263
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wijpeg-er6umm7cwc5lj149ra49hlp5f/grupo-hoteles-cumbres-hotel-cumbres-san-pedro-de-atacama-laguna.jpg?height=700",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.279288
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/svg/svg-icons.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.279557
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wipng-1hqm17g90tngdcfx0e9rmccx8/grupo-hoteles-cumbres-icono-destinos-unicos.png?width=130",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.281616
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wipng-c4txf8hlmnegiahp9iplgduin/grupo-hoteles-cumbres-icono-experiencias.png?width=130",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.281651
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wipng-fuyduaqjaomjmdmoz0zi6r2r/grupo-hoteles-cumbres-icono-arquitectura.png?width=130",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.281668
+    },
+    {
+      "url": "https://www.hotelescumbres.com/frontend/galaxy-helpers/public/galaxy-helpers.js?v=l-7a8ea0ac-7880-4970-aac2-07112d45d31a",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "t": 1790201956.282535
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXiWtFCc.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "t": 1790201956.291254
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/karla/v33/qkB9XvYC6trAT55ZBi1ueQVIjQTD-JrIH2G7nytkHRyQ8p4wUje6bmMorHA.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "t": 1790201956.291466
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "t": 1790201956.291553
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/bundle.js?v52b88bb4b29eb79847cf9ec8c78f9b64",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "t": 1790201956.324345
+    },
+    {
+      "url": "https://www.hotelescumbres.com/iRbfLw/2o/XP/y3ok/KamLW6SsmPqLQ/LNwcfQXmGrDfXtJ3/cCo1dEgB/LU5eZ/xUNZA8",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "t": 1790201956.324473
+    },
+    {
+      "url": "https://www.hotelescumbres.com/_bm/get_params?type=web-jsto&v=yUwumWIkyn0u7Q4VC0dBYtSKT8j0lxuwNlBJrYkJVVY=",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "t": 1790201956.451742
+    },
+    {
+      "url": "https://www.hotelescumbres.com/_bm/get_params?type=web-jsto&v=yUwumWIkyn0u7Q4VC0dBYtSKT8j0lxuwNlBJrYkJVVY=",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "t": 1790201956.452113
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/2471-befdb169c46a2d6f71a7.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.537243
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/svg/svg-icons.svg",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "t": 1790201956.541415
+    },
+    {
+      "url": "https://companies.asksuite.com/hoteles-cumbres.json?firstAccess=1",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "t": 1790201956.543966
+    },
+    {
+      "url": "https://api.tsa-db.com/v1/data/BID/359192",
+      "method": "OPTIONS",
+      "type": "Other",
+      "initiator": "preflight",
+      "t": 1790201956.624532
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wisvg-6nfgwpthxmq4cs4zgq917o3bu/hoteles-cumbres-logo-negro.svg?width=500",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.576295
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wisvg-1nlnvw0wa0qkkijb12p011xgy/grupo-hoteles-cumbres-logo-white.svg?width=500",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.576343
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/chunk-shufflejs-eb1276ef44ab56e82d39.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.617671
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/chunk-tc-gallery-0a893e44a3a79401ae56.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.617779
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/chunk-tc-main-feature-a3f62ea1180448b64db2.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.617947
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/chunk-tc-hotel-dropdown-95e7f5aa5b274ed029f0.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.618246
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/chunk-tc-cms-highlight-box-408e27a620ac706ed472.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.618524
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/chunk-tc-hero-list-5c2ba8a37cfcf5a42698.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.61862
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/chunk-tc-footer-two-app-b1e5e7175e8dcd1e9355.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.618723
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/chunk-tc-introduction-c08deeaeec6400ff8b17.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.618818
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/chunk-tc-back-to-top-59cc0ef0b96608699235.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.618914
+    },
+    {
+      "url": "https://api.tsa-db.com/v1/data/BID/359192",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "t": 1790201956.623766
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=AW-17863497478&cx=c&gtm=4e69n0h2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.668951
+    },
+    {
+      "url": "https://www.google-analytics.com/analytics.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.673122
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/hero-slider-item-9492c869fa778651607d.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.679149
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/hero-list-d1209aae8484bf012228.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.679288
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/introduction-d6ae9b8009818595c466.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.680081
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/cms-highlight-box-865c9f99512c97e19b50.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.680192
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/6125-b6d7e878897d9aef6d58.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.682139
+    },
+    {
+      "url": "https://www.hotelescumbres.com/integration/tc-theme/public/js/chunk/footer-two-app-ddedd61fc9802a42ab9f.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201956.682261
+    },
+    {
+      "url": "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.698269
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wijpeg-eqbfvjeflysb2bdvv38g6kj8i/grupo-hoteles-cumbres-hotel-cumbres-san-pedro-de-atacama-terraza-exterior.jpg?width=1920",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.736712
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wijpeg-cubgdejthur9e218es3ut0lfb/fachada-4.jpg?width=1920",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.736779
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wijpeg-289k0j9ik49b8azhotal7eqxc/facade-hotel-01.jpg?width=1920",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.73681
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wisvg-2t5pow6yxfh4y7ela8uwbjrpz/file.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.741171
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wisvg-9wzg0uevduog77sxy3nrn9665/file.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.741217
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wipng-3jokklwx9g96gqx5wc5a48ckg/file.png",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201956.74124
+    },
+    {
+      "url": "https://api-prod.secureprivacy.ai/api/banner/v2/template/64e5ec4b2e76d017f538e6e8?Language=es&Location=CL",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "t": 1790201956.807059
+    },
+    {
+      "url": "https://api-prod.secureprivacy.ai/api/banner/v2/template/64e5ec4b2e76d017f538e6e8?Language=es&Location=CL",
+      "method": "OPTIONS",
+      "type": "Other",
+      "initiator": "preflight",
+      "t": 1790201956.807448
+    },
+    {
+      "url": "https://image-tc.galaxy.tf/wipng-d87thd6fcncz8q6lrkgjcf02z/favicon.png",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "other",
+      "t": 1790201956.812024
+    },
+    {
+      "url": "https://cdn.asksuite.com/infochat.css?v=1788383668818",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "script",
+      "t": 1790201956.977292
+    },
+    {
+      "url": "https://cdn.asksuite.com/inner-botchatframe.html?v=1788383668818",
+      "method": "GET",
+      "type": "Document",
+      "initiator": "script",
+      "t": 1790201956.983029
+    },
+    {
+      "url": "https://api-prod.secureprivacy.ai/api/banner/v2/preferenceCenter/64e5ec4b2e76d017f538e6e8?Language=es&Location=CL",
+      "method": "GET",
+      "type": "XHR",
+      "initiator": "script",
+      "t": 1790201957.110992
+    },
+    {
+      "url": "https://api-prod.secureprivacy.ai/api/banner/v2/preferenceCenter/64e5ec4b2e76d017f538e6e8?Language=es&Location=CL",
+      "method": "OPTIONS",
+      "type": "Other",
+      "initiator": "preflight",
+      "t": 1790201957.112347
+    },
+    {
+      "url": "https://app.secureprivacy.ai/assets/fonts/google/Raleway.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "script",
+      "t": 1790201957.11958
+    },
+    {
+      "url": "https://app.secureprivacy.ai/assets/images/logoWhite.png",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "other",
+      "t": 1790201957.119808
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/raleway/v26/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCIPrE.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "t": 1790201957.223544
+    },
+    {
+      "url": "https://pagead2.googlesyndication.com/ccm/collect?rcb=14&frm=0&apvc=1&tid=AW-17863497478&en=page_view&dl=https%3A%2F%2Fwww.hotelescumbres.com&scrsrc=www.googletagmanager.com&rnd=899015777.1790201957&navt=n&npa=1&did=dNmNhOT&gdid=dNmNhOT&_tu=CA&gtm=45be69n0h2v9240499962z877268011za20gzb77268011zd77268011xecxf1&gcs=G100&gcd=13p3p3p3p5l1&dma_cps=-&dma=0&tag_exp=115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153&tft=1790201957312&tfd=1928&tids=AW-17863497478&fmt=8",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201957.313488
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-SH5MZ9X363&cx=c&gtm=4e69n0h2",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201957.334007
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-3R5SJEDWK4&cx=c&gtm=4e69m1",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201957.339139
+    },
+    {
+      "url": "https://app.secureprivacy.ai/assets/images/logoWhite.png",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201957.412796
+    },
+    {
+      "url": "https://app.secureprivacy.ai/assets/fonts/google/Raleway.css",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "script",
+      "t": 1790201957.412928
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/raleway/v26/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCIPrE.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "t": 1790201957.41647
+    },
+    {
+      "url": "https://cmp.secureprivacy.ai/assets/images/sp-logo.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "other",
+      "t": 1790201957.418047
+    },
+    {
+      "url": "blob:https://www.hotelescumbres.com/71a59dc1-4c97-4cf2-a4b7-3cba136088a7",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "other",
+      "t": 1790201957.561636
+    },
+    {
+      "url": "https://images.asksuite.com/afc83890-de35-4637-b435-e40afc79b7c1.png",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "other",
+      "t": 1790201957.645715
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/roboto/v16/CrYjSnGjrRCn0pd9VQsnFOvvDin1pK8aKteLpeZ5c0A.woff",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "t": 1790201957.648718
+    },
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-3R5SJEDWK4&gtm=45je69m1v888369804z8830021505za20gzb830021505zd830021505xf1&_p=1790201956278&gcs=G100&gcd=13p3p3p3p5l1&npa=1&dma_cps=-&dma=0&gdid=dNmNhOT&cid=325471896.1790201957&frm=0&gtm_up=1&ngs=1&pscdl=denied&rcb=9&sr=800x600&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uam=&uamb=0&uap=macOS&uapv=26.6.2&uaw=0&ul=es-419&_s=1&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153&dl=https%3A%2F%2Fwww.hotelescumbres.com%2F&sid=1790201957&sct=1&seg=0&dt=Hoteles%20Boutique%20en%20Chile%20%7C%20Hoteles%20Cumbres&_tu=CA&en=page_view&_fv=1&_ss=1&ep.hotel_name=not_applicable&ep.hotel_id=not_applicable&ep.hotel_bid=359192&ep.hotel_brand_name=MB%20Cumbres%20group&ep.hotel_chain_id=not_applicable&ep.hotel_city=not_applicable&ep.hotel_continent=not_applicable&ep.hotel_country=not_applicable&ep.hotel_state=not_applicable&ep.hotel_sub_brand_name=BB%20Hoteles%20Cumbres&ep.hotel_tc_region=not_applicable&ep.hotel_booking_engine=not_applicable&ep.page_has_tvs=no&ep.page_footer=ft2&ep.page_header=hd1&ep.page_language=es&ep.page_section=group_property&ep.page_subsection=not_applicable&ep.site_cms=galaxy&ep.site_galaxy_product=essentials&ep.page_template=th1&ep.site_tvs=tvs_yes&ep.hotel_property_type=group_property&ep.hotel_star_rating=not_applicable&ep.hotel_room_types_count=not_applicable&epn.site_number_of_languages=4&ep.site_global_product=web&ep.page_content_group=not_applicable&ep.site_be_version=be4&epn.page_tvs_videos_count=0&ep.item_type=brand&ep.ih_var_booking_engine_version=web&up.user_logged_in=no&tfd=2568",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201957.952588
+    },
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-SH5MZ9X363&gtm=45je69n0h2v9165311208z877268011za20gzb77268011zd77268011xf1&_p=1790201956278&gcs=G100&gcd=13p3p3p3p5l1&npa=1&dma_cps=-&dma=0&gdid=dNmNhOT&_eu=EAAAAGAC&cid=325471896.1790201957&frm=0&gtm_up=1&ir=1&pscdl=denied&rcb=15&sr=800x600&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uam=&uamb=0&uap=macOS&uapv=26.6.2&uaw=0&ul=es-419&gaf=2&_s=1&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153&dl=https%3A%2F%2Fwww.hotelescumbres.com%2F&sid=1790201957&sct=1&seg=0&dt=Hoteles%20Boutique%20en%20Chile%20%7C%20Hoteles%20Cumbres&_tu=CA&en=page_view&_fv=1&_ss=1&ep.page_subsection=not_applicable&ep.page_language=es&ep.hotel_city=not_applicable&ep.hotel_country=not_applicable&ep.hotel_brand_name=BB%20Hoteles%20Cumbres&ep.hotel_id=not_applicable&ep.hotel_name=not_applicable&up.user_logged_in_session=no&tfd=2573",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201957.957409
+    }
+  ],
+  "cookies": [
+    {
+      "name": "cf_clearance",
+      "value": "N4v.I9BTeoMc.0q6_qfrz6FfT2zsG1CZcSw90xbyVTI-1790201957-1.2.1.1-HgTf_Qpnh27901EvLT1lRoUYztlUasLvYGk5SM411qNuQAE75OQNDqT.ISG9YI646_DRrlXm_JLUrp7izZeF_wCptOqtXloF7tjtDCZF1s1EGkEe5Lq5Xqz8Jl.49CDtjowyS_KtzQTYmW1oPqeR0G8EfHlOj7aL4jEekFEqEDulW8mN8gcI3UJwqMW_g3YVE4iC_NEnCLvTrU441kfKjI2mSIGFCDoDMekJP.keGYrcOxLflnCT35p6_KuMEs0aWhT3vQRLOhA7Xpr5F9dxpvpHsHpt2eITooppEmviIQzr23sboJOLnuM6dmxpccIvs7SoAGOw.r3ViKAmw9.TcsuYsYI3i_o2ntPd4MEWqCI",
+      "domain": ".asksuite.com",
+      "path": "/",
+      "expires": 1821737957.678636,
+      "size": 438,
+      "httpOnly": true,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443,
+      "partitionKey": {
+        "topLevelSite": "https://hotelescumbres.com",
+        "hasCrossSiteAncestor": true
+      }
+    }
+  ],
+  "probe": {
+    "titulo": "Hoteles Boutique en Chile | Hoteles Cumbres",
+    "urlFinal": "https://www.hotelescumbres.com/",
+    "localStorage": [
+      "s_e_c_u_r_e_k_e_y",
+      "tc_359192",
+      "bmint_e",
+      "sp_consent",
+      "sp_dynamic",
+      "bmint_k",
+      "bmint_t",
+      "bmint_j"
+    ],
+    "candidatos": [],
+    "casillas": [],
+    "fijos": [
+      {
+        "tag": "IFRAME",
+        "cls": "",
+        "id": "ifrmCookieBanner",
+        "rect": {
+          "x": 0,
+          "y": 796,
+          "w": 1280,
+          "h": 104
+        },
+        "texto": ""
+      }
+    ],
+    "enlaces": [
+      {
+        "texto": "Términos y Condiciones",
+        "href": "https://www.hotelescumbres.com/terminos-y-condiciones"
+      }
+    ],
+    "totalEnlaces": 41
+  },
+  "errores": []
+}

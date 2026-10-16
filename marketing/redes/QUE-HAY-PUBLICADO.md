@@ -8,7 +8,7 @@ estaba en el aire, y eso costó un post: el 22-sep se publicó en la página un 
 > `linkedin.com/company/135255820/admin/page-posts/published/` para la página ·
 > `linkedin.com/in/me/recent-activity/all/` para el perfil personal.
 
-## Página de empresa (4 seguidores)
+## Página de empresa (12 seguidores)
 
 | Publicado | Pieza | Métricas | Registrado en |
 |---|---|---|---|
@@ -16,7 +16,52 @@ estaba en el aire, y eso costó un post: el 22-sep se publicó en la página un 
 | ~8-sep | "Un motor de adquisición. No cuatro servicios sueltos" (carrusel, 4 imgs) | — | corpus §6 |
 | ~1-sep | "Estás pagando para que lleguen" (el circuito / dominó) | 1 reacción · 1 comentario · 2 compartidos | corpus §2 + `01-mar-circuito-domino/` |
 | **22-sep** | ⛔ Explicador Ley 21.719 (plural) — **publicado y retirado el mismo día, por repetido** | 53 impresiones en ~40 min | `24-jue-ley-21719/publicar.md` |
+| **✅ 13-oct** | "Si en tu empresa alguien preguntó si aparecen en ChatGPT..." — qué se puede medir gratis de la visibilidad en IA (Search Console), en plural; adaptación del post personal del 7-oct | publicado, verificado (urn 7515830695420821504) | `2026-10-octubre-linkedin/13-mar-pagina-visibilidad-en-ia/publicar.md` |
+| **✅ 15-oct** | "Si tu negocio aparece en Google Maps con un nombre y en tu sitio con otro, conviene dejarlos iguales..." — el nombre del perfil de empresa en Google y en el sitio, en plural; adaptación del post personal del mismo día | publicado, verificado (urn 7516494396259962881; 1 comentario como SpindleLab) | `2026-10-octubre-linkedin/15-jue-pagina-nombre-del-negocio/publicar.md` |
 | **✅ 25-sep** | Los tres mitos de la Ley 21.719 (delegado voluntario, sin 72h, el 4% con dos condiciones) | **398 impresiones** · ✏️ **editado esa tarde: el 4% es solo de las gravísimas** | `24-jue-tres-mitos-ley21719/publicar.md` · corpus ficha 9 (texto corregido) |
+
+## Cómo se mide si esto sirvió (desde el 30-sep-2026)
+
+⚠️ **NO se mide con las "Solicitudes" de Cloudflare.** Esa cifra cuenta archivos servidos, no
+personas: una visita son muchas solicitudes, y las pruebas de desarrollo entran en el mismo
+número. El 30-sep se miró ese gráfico y no contestaba nada.
+
+**Se mide con los contadores de uso**, que viven en el KV `vyc-topes` y cuentan **chequeos
+corridos**, que es lo único que importa. Cero cookies, cero terceros, cero scripts: se escriben
+del lado del servidor. Guardan números, nunca una IP ni el dominio que alguien consultó.
+
+```bash
+cd ~/vyc-ley21719/verificaycumple
+npx wrangler kv key list --namespace-id fbf273b71b4642f0989be319d86a6b0b --remote
+# y para leer una:
+npx wrangler kv key get "uso:rapido:2026-10-01" --namespace-id fbf273b71b4642f0989be319d86a6b0b --remote
+```
+
+Las llaves:
+
+| Llave | Qué cuenta |
+|---|---|
+| `uso:rapido:<fecha>` | chequeos rápidos que corrieron ese día |
+| `uso:profundo:<fecha>` | revisiones con navegador que corrieron ese día |
+| `uso:origen:<fecha>:<origen>` | de dónde llegó la gente |
+
+**Y cada pedido que llegue por el formulario trae su propio origen**, en el campo *"Llego de"* del
+correo. Con pocos pedidos eso vale más que el agregado: un pedido es un dato, y saber que **ese**
+vino de Instagram contesta la pregunta entera.
+
+Los orígenes son una lista cerrada: `instagram`, `linkedin`, `facebook`, `whatsapp`, `correo`,
+`buscador`, `propio`, `directo`, `otro`. Duran **90 días**, así que se pueden comparar semanas.
+
+⚠️ **No confundirlos con `tope:*`**, que son otra cosa: el presupuesto diario contra abuso, y
+vencen a las 30 horas.
+
+⚠️ **No hay endpoint público para leerlos**, a propósito: sería publicarle a cualquiera cuánta
+gente usa esto.
+
+**Estado al 30-sep, 13:00:** el KV está en cero. Los contadores se estrenaron hoy, así que la
+primera lectura con sentido es **mañana**.
+
+---
 
 ## Instagram · cuenta `spindlelab.cl` (19 seguidores)
 
@@ -37,6 +82,10 @@ entra sin chocar.
 
 | Publicado | Pieza | Enlace |
 |---|---|---|
+| **30-sep** | **Historias de las dos piezas**, compartidas por Ramón a mano **en las dos cuentas**: la personal y la de la empresa. Es el empujón que el plan pedía: la pieza vive en la grilla, la historia es lo que mueve gente | — |
+| **30-sep** | **Reel "¿Estás seguro?"** de la campaña de Verifica, 16 s. Encuadre 9:16, portada en la pregunta, **etiqueta de IA activada**, y **sin audio de tendencia**: salió con una pista de silencio que hubo que agregarle para que el subidor web lo aceptara | `instagram.com/reel/Dd6dAemM6E2/` |
+| **29-sep** | **Carrusel "Las 12 cosas"** de la campaña de Verifica, 6 láminas. Con **etiqueta de IA activada** (la sheriff es una imagen fotorrealista generada con IA). Fuente en `marketing/redes/2026-10-octubre-verifica/03-carrusel-las-12-cosas/` | `instagram.com/p/Dd3uPldESqj/` |
+| **visto el 29-sep** | Reel **"Llegó la caballería / ¿Tienes un formulario de contacto?"** (pieza 01 de la campaña). Estaba anotado como "sin publicar" y **está publicado**: se vio en la grilla. No sé la fecha de salida | `instagram.com/p/DdwDroUsR9p/` |
 | **⛔ 25-sep** | "100 de 100, contando solo lo que alcanzamos a ver" — **publicado y eliminado el mismo día por Ramón**: quedaba fuera de la línea de la campaña de Verifica, que se decidió aparte esa tarde | era `instagram.com/p/DduVT6Dkr0N/` |
 | 3-sep | "Cinco cosas que las empresas serias están haciendo para perder clientes" (carrusel) | mecanismo "comenta CIRCUITO" |
 
@@ -44,22 +93,39 @@ entra sin chocar.
 *"SEO técnico y visibilidad en IA para empresas chilenas. / Le preguntamos a ChatGPT por tu
 negocio. / Chequea tu sitio gratis ↓"*
 
+⚠️ **La cuenta lleva la etiqueta "Perfil generado con IA"** bajo el nombre, en todas las
+publicaciones. **No la pone una pieza: es de la cuenta**, y estaba desde antes del 29-sep (se
+comprobó mirando una publicación anterior). Para una marca que vende decir la verdad sobre los
+datos, conviene resolverla. Se apela desde la app.
+
 ⚠️ **Pendientes de Ramón en esta cuenta, las dos cosas que no se pueden hacer desde el computador
 o que son suyas:**
-- **El enlace del bio.** Instagram solo deja editar los sitios web **desde la app del teléfono**.
-  Hoy va a `spindlelab.cl/diagnostico`; para la campaña de Verifica tiene que ir a
-  `verifica.spindlelab.cl`. Cuando lo cambie, la última línea del bio debería decir algo como
-  *"Ahora: chequea gratis tu sitio para la Ley 21.719 ↓"*, o el bio promete una cosa y el enlace
-  lleva a otra.
+- **El enlace del bio: ✅ puesto el 30-sep, con una cosa pendiente.** Ramón agregó
+  `verifica.spindlelab.cl/?utm_source=instagram`, etiquetado "Verifica y cumple". La marca de
+  origen está bien puesta, y hace falta: el navegador interno de Instagram **no manda referer**
+  (comprobado en producción), así que sin ella el tráfico de la campaña se contaría como
+  "directo". **Lo mismo hay que hacer con el sticker de enlace de las historias.**
+
+  ⚠️ **Quedó SEGUNDO, y en el perfil solo se ve el primero.** La línea visible dice
+  *"spindlelab.cl/diagnostico y 1 más"*: el de Verifica está detrás de ese "y 1 más". Quien
+  venga de la campaña y toque lo que se ve, aterriza en el otro producto. **Mientras la campaña
+  corra, Verifica va primero** (Editar perfil → Enlaces).
+
+  Y la última línea del bio debería decir algo como *"Ahora: chequea gratis tu sitio para la Ley
+  21.719 ↓"*, o el bio promete una cosa y el enlace lleva a otra.
 - **La etiqueta "Perfil generado con IA"** está encendida y la ve cualquiera. En una consultoría
   que vende criterio conviene decidirlo a propósito, no dejarlo por omisión.
 
 ---
 
-## Perfil personal de Ramón (360 seguidores)
+## Perfil personal de Ramón (380 seguidores)
 
 | Publicado | Pieza | Métricas | Registrado en |
 |---|---|---|---|
+| **✅ 15-oct** | "Si tu negocio aparece en Google Maps con un nombre y en tu sitio con otro, conviene dejarlos iguales..." — qué pide Google del nombre del perfil de empresa (el real, sin eslogan, horario, teléfono, servicio ni ubicación) y el consejo de una especialista de SEO local de igualarlo en el sitio; cierre en el diagnóstico a mano gratis | publicado, verificado (urn 7516492052893868032; 1 comentario; programado para el 16-oct, salió el 15) | `2026-10-octubre-linkedin/16-vie-nombre-del-negocio-en-google/publicar.md` |
+| **✅ 14-oct** | "Si en tu empresa dijeron "esperemos, que la nueva ley de datos personales la postergan", esto es lo que hay hoy..." — el proyecto del Senado para postergar la Ley 21.719 (1-dic-2027 el del Gobierno, seis meses la oposición); mientras no se apruebe rige el 1-dic-2026; cierre en el chequeo de Verifica y Cumple | publicado, verificado (urn 7516116736371339265; 1 comentario) | `2026-10-octubre-linkedin/14-mie-la-postergacion-de-la-ley-21719/publicar.md` |
+| **✅ 13-oct** | "Si la página de tu servicio dice lo mismo que la de tus competidores, una IA tiene poco que sacar de ella..." — método de Search Engine Land (9-oct) para ver qué le falta a una página de servicio con las preguntas que sugiere la IA; cierre con el diagnóstico a mano y el chequeo | publicado, verificado (urn 7515818558875017216; programado para el 12-oct, salió el 13) | `2026-10-octubre-linkedin/12-lun-que-le-falta-a-tu-pagina-de-servicio/publicar.md` |
+| **✅ 7-oct** | "Si en tu empresa alguien preguntó si aparecen en ChatGPT, es probable que ya te hayan ofrecido un panel para medirlo..." — qué se puede medir gratis de la visibilidad en IA (informe de IA generativa de Search Console) y lo que ningún panel puede prometer; cierre con el chequeo y el diagnóstico de 24 h | publicado, verificado (urn 7513591632873730048) | `2026-10-octubre-linkedin/07-mie-visibilidad-en-ia-lo-que-se-mide/publicar.md` |
 | **✅ 5-oct** | "La Ley 21.719, la nueva ley de datos personales de Chile, le aplica a cualquier empresa que maneje datos de personas..." — el cuarto mito: la amonestación del primer año es una facultad, no un derecho, y queda en un registro público; cierre con el chequeo | publicado, verificado (urn 7512857562887786496) | `2026-10-octubre-linkedin/05-lun-cuarto-mito-amonestacion/publicar.md` · corpus ficha 13 (con las dos versiones rechazadas) |
 | **✅ 2-oct** | "Si llevas meses buscando el video que se haga viral, tu sitio web probablemente lleva esos mismos meses sin tocarse..." — el sitio es la tienda principal, las redes la vitrina; cierre de Desarrollo Web a medida | publicado, verificado (urn 7511845341839953921; 102 impresiones el 5-oct) | `2026-10-octubre-linkedin/02-vie-el-sitio-es-la-tienda/publicar.md` · corpus ficha 12 |
 | **✅ 30-sep** | "Cuando el chequeo de Verifica y Cumple no alcanza a ver algo... lo dice" — el mecanismo de declinar en vez de inventar un puntaje | publicado, verificado (94 impresiones el 2-oct) | `30-mie-lo-que-no-vemos/publicar.md` · corpus ficha 11 |

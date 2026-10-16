@@ -1,0 +1,55 @@
+# Configuración del proyecto de Pages `verificaycumple`.
+#
+# POR QUÉ EXISTE ESTE ARCHIVO (28-sep-2026)
+# El chequeo profundo necesita tres cosas que el sitio estático nunca necesitó: el ID de la
+# cuenta, un token de Browser Rendering y un espacio de KV para el tope de abuso. Las dos
+# primeras son variables y la tercera es un enlace a otro recurso, y ese enlace NO tiene
+# comando en wrangler: o se hace en el panel, o se declara acá. Cloudflare lo documenta en
+# developers.cloudflare.com/pages/functions/wrangler-configuration/
+#
+# ⚠️ ESTE ARCHIVO PASA A SER LA FUENTE DE VERDAD. Lo que se configure en el panel deja de
+# aplicar para lo que esté declarado acá. Se comprobó antes de crearlo que las secciones de
+# Variables y de Vinculaciones del panel estaban VACÍAS, así que no se pisa nada.
+#
+# El token NO va acá y no debe ir nunca: es un secreto y este archivo está en el repositorio.
+# Se carga aparte con `wrangler pages secret put CF_BROWSER_TOKEN`, que lo pide por teclado.
+
+name = "verificaycumple"
+compatibility_date = "2026-09-08"
+
+# LO QUE SE PUBLICA ES `public/`, Y SOLO ESO. (16-oct-2026)
+#
+# Antes decía ".", o sea la carpeta entera. Eso no era un detalle de configuración: era la
+# causa de que `.wrangler/cache/wrangler-account.json` —con el correo personal de Ramón— se
+# sirviera en una URL pública con 200, y de que este mismo archivo se sirviera también.
+#
+# El problema de fondo era tratar "la carpeta del proyecto" y "lo que se publica" como la misma
+# cosa. Con `public/` dejan de serlo: lo interno no se publica porque NO ESTÁ AHÍ, no porque
+# alguien se acordó de excluirlo.
+#
+# ⚠️ `functions/` va en la RAÍZ, al lado de `public/`, nunca adentro. La doc de Cloudflare lo
+# dice textual: "Make sure that the /functions directory is at the root of your Pages project
+# (and not in the static root, such as /dist)".
+#
+# ⚠️ Si algún día hacen falta `_headers`, `_redirects` o `_routes.json`, esos SÍ van DENTRO de
+# `public/`. Son lo contrario de la regla de arriba.
+pages_build_output_dir = "public"
+
+# NO PONER UN BLOQUE [vars] ACÁ. 28-sep, aprendido a golpes:
+#
+# Este archivo tenía CF_ACCOUNT_ID declarado como var, y eso volvió al archivo la fuente de
+# verdad del entorno completo del proyecto. Consecuencia: los SECRETOS que viven a nivel de
+# proyecto (CF_BROWSER_TOKEN) dejaban de sobrevivir a un build desde Git. Se cargaba bien, el
+# diagnóstico lo veía, y al siguiente despliegue desaparecía. Pasó dos veces con el mismo
+# patrón antes de que entendiéramos por qué.
+#
+# Lo único que NECESITA estar acá es el enlace del KV, porque es lo único de los tres ajustes
+# que no tiene comando en wrangler. Las variables de texto sí lo tienen, así que no ganan nada
+# estando acá y a cambio se llevan puesto el secreto.
+
+[[kv_namespaces]]
+# El código lo busca como `env.VYC_TOPES`. Sin esto el chequeo profundo DECLINA, y hace bien:
+# es un endpoint público que abre navegadores remotos, y sin tope una tarde de golpes se come
+# las horas del mes.
+binding = "VYC_TOPES"
+id = "fbf273b71b4642f0989be319d86a6b0b"

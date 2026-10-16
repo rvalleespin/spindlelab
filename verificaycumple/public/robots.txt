@@ -1,0 +1,38 @@
+# Verifica y Cumple — verifica.spindlelab.cl
+# Un servicio de SpindleLab SpA. Chequeo técnico gratis de un sitio frente a la Ley 21.719.
+#
+# Los robots de IA son bienvenidos a propósito, con el mismo criterio que spindlelab.cl: si el
+# negocio de la casa es que las máquinas puedan leer y recomendar un sitio, cerrarles la puerta
+# al propio sería contradecirse.
+
+User-agent: *
+Allow: /
+
+# Robots de IA, permitidos explícitamente
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# La API no se rastrea: cada llamada abre una revisión de verdad y gasta cuota. No hay nada
+# que indexar ahí, solo respuestas en JSON de dominios que alguien consultó.
+User-agent: *
+Disallow: /api/
+
+Sitemap: https://verifica.spindlelab.cl/sitemap.xml

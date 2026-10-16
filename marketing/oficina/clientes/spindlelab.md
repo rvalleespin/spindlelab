@@ -318,3 +318,48 @@ tenían criterio escrito de antes y ninguno se había activado. **Ramón aprobó
 **Lo que NO se hace, y quedó decidido:** subir el volumen de outbound. La tasa de respuesta
 cumple el umbral; el corte del embudo está aguas abajo (0 llamadas). Más entrada no arregla un
 problema de salida. *(Revisión de esta regla: al cerrar el plan, el 5-oct.)*
+
+### 🔴 DECISIÓN DE POSICIONAMIENTO — 28-sep-2026 (Ramón). Reemplaza el eje anterior.
+
+**El centro del motor pasa a ser EL SITIO WEB.** Textual de Ramón: *«el centro de este motor se
+debe centrar en la importancia de tener un buen sitio web. Un sitio que no sale plantilla sino que
+de un buen armado y siguiendo lo que la marca quiere/necesita»*.
+
+**Qué reemplaza:** el eje era «Visibilidad: SEO técnico + IA (AEO/GEO)», con Desarrollo Web como
+una de las cuatro piezas. Ahora Desarrollo Web es la puerta de entrada y el eje del discurso.
+
+**Por qué (evidencia, no intuición):**
+- **2 de 2 ventas fueron sitio web**, y la segunda la trajo el primero. Del embudo de AEO: 142
+  correos → 0 clientes. Ads: 104 clics de alta intención → 0 conversiones.
+- Nadie despierta pensando «no aparezco en ChatGPT»; sí despierta pensando «mi web está vieja».
+  La web es demanda que ya existe y ya tiene presupuesto asignado.
+
+### ⚠️ La trampa de esta decisión, y cómo se esquiva (troncal, mismo día)
+**«Sitio a medida, no plantilla» NO es un diferenciador: es lo que dice toda la competencia.**
+Verificado el 27-28 sep: Brand&Co dice «sin plantillas ni WordPress», AnonimoDsn dice «diseño
+UX/UI custom», Agencia Bull dice «no vende paquetes estándar, cada proyecto empieza con un
+diagnóstico». Si el mensaje central es «hacemos buenos sitios a medida», SpindleLab entra al
+océano rojo con menos historia, menos casos y menos logos que todos ellos.
+
+**El argumento que sí es defendible y que ninguno puede copiar:**
+> **Un sitio que nace legible para las máquinas que hoy recomiendan tu negocio — y que se puede
+> comprobar.**
+
+El AEO deja de venderse como categoría y pasa a ser **la especificación del producto**: la razón
+por la que este sitio vale más que el de al lado. Se sostiene con dos hechos propios:
+1. **El chequeo público lo demuestra antes de cobrar.** Ninguna de las 12 agencias revisadas
+   ofrece un número instantáneo, gratis, sin registro y con metodología publicada.
+2. **Las agencias que hacen sitios entregan sitios que fallan el examen** (medido 27-28 sep:
+   Agencia Bull **46/100**, Brand&Co **51/100**). *El patrón se puede contar; los nombres no se
+   publican — regla de marca.*
+
+**Consecuencia práctica:** el sitio se vende por lo que hace (te encuentran, te citan, convierte),
+no por cómo se construye («a medida» es higiene, no argumento).
+
+**Lo que NO cambia con esta decisión:**
+- Los precios (decisión del 27-sep).
+- La regla de no prometer monitoreo continuo de menciones en IA (`capacidad-servicios.md` ❌).
+- La puerta para el cliente **que ya tiene sitio y no lo va a rehacer**: se le mide el suyo y se
+  le muestra el problema. Es la mayoría del nicho legal, donde está la tracción de outbound.
+
+**Revisión:** al cierre del plan de 90 días (5-oct) y de nuevo a 60 días de la v3 publicada.

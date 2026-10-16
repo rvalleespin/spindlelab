@@ -59,6 +59,58 @@ Todo lo de acá salió de hacer esas dos, no de teoría.
    label SENT y un tamaño que delate el adjunto) y recién ahí **registra en `ventas/pipeline.md`**
    (etapa "4. Propuesta formal enviada") con próximo paso con fecha. Commit y push.
 
+## Cuando la cotización sale DESPUÉS de una llamada (14-oct-2026)
+
+No es el caso de "mándame los precios". Es el de alguien que acaba de contarte su problema en
+una reunión. Ahí el documento **abre en lo que te dijo, no en lo que vendes**, y cambian tres
+cosas.
+
+### 1. Sale el mismo día
+
+Una propuesta que llega a los tres días llega a otra persona: la que ya se enfrió. Si el día no
+alcanza para el PDF completo, sale igual con las tres secciones de abajo y las opciones de
+inversión; lo demás se completa después. **La velocidad es parte de la propuesta.**
+
+### 2. Abre con tres secciones, antes de "El proyecto"
+
+**«Lo que nos contaste».** Dos o tres líneas, con sus palabras, no con las nuestras. Si en la
+llamada dijo "me escriben por Instagram y se me pierden", eso se escribe así. Es la sección que
+le demuestra que escuchamos, y la que hace que lea el resto.
+
+**«Lo que encontramos».** Máximo tres hallazgos, cada uno en una línea, **cada uno con su
+evidencia**. Lo medido, no lo supuesto: el puntaje de partida, qué agentes no pueden entrar, qué
+no es citable, qué falta en la ruta de contacto. Si un hallazgo no se puede comprobar abriendo su
+sitio, no va.
+
+**«Qué hacemos con cada cosa».** Una pieza por cada fuga, en el mismo orden que los hallazgos.
+Acá es donde el documento deja de ser un diagnóstico y pasa a ser una propuesta.
+
+Después sigue el documento como siempre: El proyecto, las opciones de inversión, las fases, las
+condiciones.
+
+### 3. La regla que no se cruza: cero plata proyectada
+
+**Nunca se escribe cuánto dinero está perdiendo**, ni "recuperando el 50 % ganas X al mes". No lo
+sabemos, no lo controlamos, y una cifra inventada destruye lo único que esta marca vende, que es
+que lo que dice se puede comprobar. Se nombra **lo que se midió** y **lo que se va a hacer**, y
+el dueño saca su propia cuenta, que además la hace mejor que nosotros porque conoce su ticket.
+
+Misma regla para el plazo: se promete lo que controlamos (que los cambios estén hechos, que el
+puntaje suba desde donde parta), nunca una cita en un modelo ni un número de clientes nuevos.
+
+### Cómo suena
+
+| ❌ No | ✅ Sí |
+|---|---|
+| "Tu sitio deja escapar entre 20 y 25 millones al mes" | "De las 21 señales, 8 están en rojo. Las tres primeras son de acceso: hoy los asistentes de IA no pueden entrar." |
+| "Te ofrecemos la solución perfecta a tu problema" | "Esto se arregla. Lo hacemos nosotros y toma una semana." |
+| Diez hallazgos en una lista | Tres, el primero el de mayor impacto, con la ruta completa visible detrás |
+
+### En el generador
+
+El bloque opcional `LLAMADA` va antes de "El proyecto". Se activa llenándolo; si queda vacío, el
+documento sale como siempre y no cambia nada para las cotizaciones que no vienen de una llamada.
+
 ## Reglas del documento (aprendidas en la 014 y la 015)
 
 - **"El proyecto" habla solo del proyecto del cliente:** qué pidió, cómo crece, qué va a manejar

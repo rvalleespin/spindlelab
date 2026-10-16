@@ -111,6 +111,52 @@ meta.setStyle(TableStyle([
 ]))
 A(meta)
 
+# ---------- Lo que nos contaste / encontramos / hacemos (solo si viene de una llamada) ----------
+# Opcional. Si LLAMADA queda en None, el documento sale como siempre.
+# Regla dura (SKILL.md): cero plata proyectada. Cada hallazgo con su evidencia o no va.
+LLAMADA = None
+# LLAMADA = {
+#     "contaste": [
+#         "Nos dijiste que te escriben por Instagram y se te pierden entre los mensajes.",
+#         "Y que no sabes cuántos de los que entran al sitio terminan contactándote.",
+#     ],
+#     # (hallazgo, evidencia comprobable por el cliente) — máximo tres
+#     "encontramos": [
+#         ("Los asistentes de IA no pueden entrar a tu sitio",
+#          "Tu robots.txt bloquea a OAI-SearchBot y a PerplexityBot. Se ve en tusitio.cl/robots.txt."),
+#         ("No hay dónde dejar los datos sin escribir por Instagram",
+#          "La página de contacto es un correo escrito, sin formulario."),
+#         ("Tienes analítica, pero no mide contactos",
+#          "Carga Google Analytics y no hay ningún evento de conversión configurado."),
+#     ],
+#     # una pieza por fuga, en el mismo orden
+#     "hacemos": [
+#         "Abrimos el acceso y lo verificamos con el mismo chequeo, antes y después.",
+#         "Un formulario en la página que ya recibe visitas, con el aviso de privacidad al día.",
+#         "Dejamos el evento de contacto midiendo, para que veas cuántos llegan de verdad.",
+#     ],
+# }
+
+if LLAMADA:
+    A(Paragraph("Lo que nos contaste", st_h))
+    for linea in LLAMADA["contaste"]:
+        A(Paragraph(linea, st_body))
+    A(Spacer(1, 6))
+
+    A(Paragraph("Lo que encontramos", st_h))
+    filas_h = [[Paragraph("<b>Lo que vimos</b>", st_cell_w), Paragraph("<b>Dónde lo puedes comprobar</b>", st_cell_w)]]
+    for hallazgo, evidencia in LLAMADA["encontramos"]:
+        filas_h.append([Paragraph(hallazgo, st_cell), Paragraph(evidencia, st_cell)])
+    th = Table(filas_h, colWidths=[72*mm, 94*mm], repeatRows=1)
+    th.setStyle(TableStyle(TABLA_BASE))
+    A(th)
+    A(Spacer(1, 6))
+
+    A(Paragraph("Qué hacemos con cada cosa", st_h))
+    for pieza in LLAMADA["hacemos"]:
+        A(Paragraph("•&nbsp;" + pieza, st_body))
+    A(Spacer(1, 4))
+
 # ---------- Concepto ----------
 A(Paragraph("El proyecto", st_h))
 A(Paragraph(

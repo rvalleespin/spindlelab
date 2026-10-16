@@ -1,0 +1,15 @@
+dominio,lo_que_decia_el_borrador_del_copiloto,medicion_14oct,decision
+lodgecolbun.com,"sigue mandando la visita a Google Ads","64 peticiones a Google sin Consent Mode (37 de Ads), 12 cookies incl. _ga, _gcl_au, IDE, _fbp",se mantiene
+antumalal.com,"sigue mandando la visita a Google Ads","23 peticiones a Google sin Consent Mode (22 de Ads), 12 cookies",se mantiene
+casasolcor.cl,"sigue mandando la visita a Google antes de cualquier aviso","1 page_view a Analytics sin Consent Mode y cookie _ga",se mantiene
+hotelaguadeldesierto.cl,"sigue mandando la visita a Google antes de pedir permiso","1 page_view a Analytics sin Consent Mode y cookie _ga",se mantiene
+plazasanfrancisco.cl,"sigue mandando la visita a Google antes de pedir permiso","3 peticiones sin Consent Mode (2 a doubleclick floodlight) y 2 con consentimiento denegado; sin cookie _ga. Se sostiene con reservas",se mantiene
+rioserrano.com,"El Pixel de Meta sigue dejando su cookie sin aviso","cookie _fbp presente, ningun gestor de consentimiento cargado ni visible. La palabra 'Pixel' viola la regla del prompt",reescrito: 'la cookie de Meta'
+marbella.cl,"El gestor de cookies sigue sin bloquear: los rastreadores disparan igual","NO hay gestor de consentimiento: ninguna peticion a una CMP, ningun aviso visible. Si hay 23 cookies y 13 peticiones a Google sin Consent Mode",reescrito: 'no tiene aviso de cookies y los rastreadores se activan'
+wyndhampettra.com,"Cookiebot sigue instalado pero sin bloquear","NO hay Cookiebot: ninguna peticion a Cookiebot, ningun dialogo en el DOM ni en captura. Si hay 15 cookies y rastreadores activos",reescrito: 'no tiene aviso de cookies y los rastreadores se activan'
+hoteles-australis.com,"el aviso informa pero no bloquea: Analytics recibe la visita antes de que acepten","0 cookies. Las peticiones a Google llevan gcs=G100 y npa=1: Consent Mode con consentimiento DENEGADO, pings sin cookies",reescrito: cierre sin afirmacion tecnica
+norusapartments.cl,"el aviso informa pero no bloquea: Analytics recibe la visita antes de que aceptes","Cookies solo propias, ninguna de Google. Peticiones con gcs=G100 y npa=1 (consentimiento denegado)",reescrito: cierre sin afirmacion tecnica
+hoteltorremayorlyon.com,"el aviso informa pero no bloquea: Analytics recibe la visita antes de que nadie acepte","Cookies solo propias, ninguna de Google. Peticiones con gcs=G100 y npa=1 (consentimiento denegado)",reescrito: cierre sin afirmacion tecnica
+leonerahotel.cl,"sigue mandando la visita a Google antes de pedir permiso","1 sola peticion a Analytics, con gcs=G100 (consentimiento denegado); solo la cookie _fbp",reescrito: cierre sin afirmacion tecnica
+blackcathostal.com,"sigue pidiendo datos en dos formularios sin politica publicada","2 formularios; el sitio tiene Terminos y Condiciones pero ninguna politica de privacidad; 0 cookies",se mantiene
+lagogrey.com,"sigue pidiendo datos en dos formularios sin politica publicada","2 formularios (suscripcion por correo de Divi); ningun texto legal en la pagina; 2 cookies",se mantiene

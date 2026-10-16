@@ -1,0 +1,722 @@
+{
+  "id": "L17",
+  "dominio": "clinicaimet.cl",
+  "motor": "v0",
+  "cuando": "2026-10-15T14:28:05.753Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "hallazgo-capa-2",
+  "url": "https://www.andessaludmagallanes.cl/",
+  "hallazgo": {
+    "id": "C1",
+    "nombre": "Rastreadores que escriben antes de cualquier consentimiento",
+    "linea": "Verifica y Cumple",
+    "estado": "estable",
+    "quien_comprueba": "el dueño, en 30 segundos",
+    "donde_mirar": "Abrir el sitio en una ventana nueva y, sin tocar nada ~10 s, mirar las cookies (candado > Cookies, o F12 > Application > Cookies).",
+    "condiciones": {
+      "1": {
+        "v": "si",
+        "razon": "Las cookies las escriben scripts de terceros; el dueño ve el sitio normal."
+      },
+      "2": {
+        "v": "si",
+        "razon": "Cookies de medición o publicidad escritas sin que nadie haya aceptado: _ga_JVCKBLBR7S, _ga, _gcl_au, _ga_43FT6HNZXM, _ga_LLJ15R8MQD, _ga_4FCKSSZQLY, _fbp. Se describe la señal, no la obligación."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se ve en el panel de cookies del navegador."
+      },
+      "4": {
+        "v": "si",
+        "razon": "Exige dos tramos, atribuir cada cookie a su script y leer Consent Mode (gcs); no lo entrega una API."
+      }
+    },
+    "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_JVCKBLBR7S, _ga, _gcl_au, _ga_43FT6HNZXM, _ga_LLJ15R8MQD, _ga_4FCKSSZQLY, _fbp.",
+    "no_afirmable": [
+      "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads, Google Analytics)",
+      "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+      "lo que la ley \"exige\"",
+      "cualquier cosa que no aparezca en las dos corridas"
+    ],
+    "advertencias": [],
+    "propuesta": {
+      "en_castellano": "Abrí tu sitio sin tocar nada ni aceptar nada, y ya había dejado en mi navegador cookies de Google y Meta.",
+      "problema_tecnico": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_JVCKBLBR7S, _ga, _gcl_au, _ga_43FT6HNZXM, _ga_LLJ15R8MQD, _ga_4FCKSSZQLY, _fbp.",
+      "donde_mirar": "Abrir el sitio en una ventana nueva y, sin tocar nada ~10 s, mirar las cookies (candado > Cookies, o F12 > Application > Cookies).",
+      "se_vende": {
+        "linea": "Verifica y Cumple",
+        "producto": "Kit de implementación de Verifica y Cumple",
+        "alcance": "Lo que el chequeo gratis deje pendiente. El kit no incluye asesoría legal: entrega la plantilla de política para que la revise el abogado del cliente. Eso se dice, no se esconde.",
+        "vehiculo_publicado": "Desde $149.000 + IVA, una vez (correos aprobados 23-sep y estrategia §1)",
+        "precio_en_el_correo": "Desde $149.000 + IVA, una vez",
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "frase_de_arreglo": "Eso lo arreglo yo, con lo demás que el chequeo deje pendiente. Desde $149.000 + IVA, una vez.",
+      "apertura_a_reunion": "Vi 2 cosas más que no te anoto acá. Si quieres, lo vemos en una llamada de 20 minutos.",
+      "cierre_sugerido": "Gratis y sin registro: https://verifica.spindlelab.cl",
+      "estado_del_texto": "APROBADO: tomado de correos ya revisados.",
+      "por_definir": [],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [
+    {
+      "id": "F13",
+      "nombre": "La información de la portada está mal estructurada",
+      "linea": "Auditoría SEO Técnica",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, con el código de la página",
+      "donde_mirar": "Ver el código fuente (clic derecho > ver código) y buscar \"<h1\"; o contar las palabras de la portada.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "La estructura del código no se ve."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Google y la IA usan esa estructura para entender de qué trata la página."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se ve en el código fuente."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Cualquier auditor SEO gratuito lo ve: es capa 1."
+        }
+      },
+      "afirmable": "La portada no tiene un título principal (H1).",
+      "no_afirmable": [
+        "que el resto del sitio tenga el mismo problema"
+      ],
+      "advertencias": [],
+      "datos": {
+        "tipos": [
+          "sin-h1"
+        ],
+        "h1": 0,
+        "palabras": 628
+      },
+      "propuesta": {
+        "en_castellano": "Tu portada no tiene un título principal.",
+        "problema_tecnico": "La portada no tiene un título principal (H1).",
+        "donde_mirar": "Ver el código fuente (clic derecho > ver código) y buscar \"<h1\"; o contar las palabras de la portada.",
+        "se_vende": {
+          "linea": "Auditoría SEO Técnica",
+          "producto": "Auditoría SEO Técnica, Completa",
+          "alcance": "Ordenar la información de la portada: un título principal claro y el contenido que explica la oferta.",
+          "vehiculo_publicado": "Desde $490.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "NO va en el correo: se cierra en la llamada (el sitio publica el \"desde\" del servicio, no del arreglo puntual)",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "frase_de_arreglo": "Eso lo arreglo yo: dejo la información ordenada, con un título que diga qué haces y para quién.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "F12",
+      "nombre": "La portada descarga demasiado peso",
+      "linea": "Auditoría SEO Técnica",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "quien administra el sitio, con las herramientas del navegador",
+      "donde_mirar": "En el navegador: F12, pestaña Network, recargar y mirar el total transferido abajo.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Nadie mira cuánto pesa su portada."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "En un celular con datos, una portada pesada tarda en abrir."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se ve en la pestaña Network."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Cualquier medidor de velocidad lo ve: es capa 1."
+        }
+      },
+      "afirmable": "La portada descarga 8.3 MB al abrirse (mínimo de las 3 corridas).",
+      "no_afirmable": [
+        "cuánto tarda en abrir para un visitante real (se mide desde un datacenter)"
+      ],
+      "advertencias": [],
+      "datos": {
+        "mb": 8.3,
+        "mas_pesado": {
+          "url": "https://www.andessaludmagallanes.cl/wp-content/uploads/2026/10/CANCER-DE-MAMAS-MOVIL.png",
+          "bytes": 1107838
+        }
+      },
+      "propuesta": {
+        "en_castellano": "Tu portada descarga 8.3 MB solo al abrirse; en un celular con datos eso tarda.",
+        "problema_tecnico": "La portada descarga 8.3 MB al abrirse (mínimo de las 3 corridas).",
+        "donde_mirar": "En el navegador: F12, pestaña Network, recargar y mirar el total transferido abajo.",
+        "se_vende": {
+          "linea": "Auditoría SEO Técnica",
+          "producto": "Auditoría SEO Técnica, Completa",
+          "alcance": "Reducir el peso de la portada y medir el antes y el después.",
+          "vehiculo_publicado": "Desde $490.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "NO va en el correo: se cierra en la llamada (el sitio publica el \"desde\" del servicio, no del arreglo puntual)",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "frase_de_arreglo": "Eso se arregla: dejo la portada liviana y mido cuánto baja.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [
+    "F13",
+    "F12"
+  ],
+  "capa1": {
+    "consecuencia": [],
+    "higiene": [
+      "sin_meta_description"
+    ]
+  },
+  "notas": [],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 7,
+      "mailto": [],
+      "whatsapp": [
+        "https://api.whatsapp.com/send/?phone=56229148982&#038;text=Hola!%20quiero%20agendar%20una%20cita",
+        "https://api.whatsapp.com/send/?phone=56229148982&#038;text=Hola!%20quiero%20agendar%20una%20cita",
+        "https://api.whatsapp.com/send/?phone=56229148982&#038;text=Hola!%20quiero%20agendar%20una%20cita"
+      ]
+    },
+    "analitica": {
+      "gtm": [
+        "GTM-KGHF75ZM",
+        "GTM-PBMKZ89N",
+        "GTM-PQTDJ5V6"
+      ],
+      "ga4": [],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "LiteSpeed",
+      "cloudflare": false,
+      "x_powered_by": null
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": true
+    },
+    "llms_txt": true,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "WebSite",
+        "Organization",
+        "Hospital"
+      ],
+      "org": [
+        {
+          "name": "Clínica Andes Salud Magallanes"
+        }
+      ]
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 6,
+      "fuente_minima_px": 14,
+      "textos_chicos_pct": 0,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 6,
+      "fuente_minima_px": 14,
+      "textos_chicos_pct": 0,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 8278945,
+      "n_peticiones": 232,
+      "mas_pesados": [
+        {
+          "url": "https://www.andessaludmagallanes.cl/wp-content/uploads/2026/10/CANCER-DE-MAMAS-MOVIL.png",
+          "bytes": 1107838
+        },
+        {
+          "url": "https://www.andessaludmagallanes.cl/wp-content/uploads/2026/10/CANCER-DE-MAMAS-DESKTOP-1280x291.png",
+          "bytes": 487315
+        },
+        {
+          "url": "https://www.andessaludmagallanes.cl/wp-content/uploads/2026/08/Banner-Movil-1080x1080-2.jpg",
+          "bytes": 482670
+        },
+        {
+          "url": "https://www.andessaludmagallanes.cl/wp-content/uploads/2023/03/Frontis-AS-Magallanes.jpeg",
+          "bytes": 416317
+        }
+      ]
+    },
+    {
+      "total_bytes": 8450784,
+      "n_peticiones": 231,
+      "mas_pesados": [
+        {
+          "url": "https://www.andessaludmagallanes.cl/wp-content/uploads/2026/10/CANCER-DE-MAMAS-MOVIL.png",
+          "bytes": 1107830
+        },
+        {
+          "url": "https://www.andessaludmagallanes.cl/wp-content/uploads/2026/10/CANCER-DE-MAMAS-DESKTOP-1280x291.png",
+          "bytes": 487315
+        },
+        {
+          "url": "https://www.andessaludmagallanes.cl/wp-content/uploads/2026/08/Banner-Movil-1080x1080-2.jpg",
+          "bytes": 482684
+        },
+        {
+          "url": "https://www.andessaludmagallanes.cl/wp-content/uploads/2023/03/Frontis-AS-Magallanes.jpeg",
+          "bytes": 416149
+        }
+      ]
+    },
+    {
+      "total_bytes": 8274320,
+      "n_peticiones": 230,
+      "mas_pesados": [
+        {
+          "url": "https://www.andessaludmagallanes.cl/wp-content/uploads/2026/10/CANCER-DE-MAMAS-MOVIL.png",
+          "bytes": 1107830
+        },
+        {
+          "url": "https://www.andessaludmagallanes.cl/wp-content/uploads/2026/10/CANCER-DE-MAMAS-DESKTOP-1280x291.png",
+          "bytes": 487315
+        },
+        {
+          "url": "https://www.andessaludmagallanes.cl/wp-content/uploads/2026/08/Banner-Movil-1080x1080-2.jpg",
+          "bytes": 482670
+        },
+        {
+          "url": "https://www.andessaludmagallanes.cl/wp-content/uploads/2023/03/Frontis-AS-Magallanes.jpeg",
+          "bytes": 416294
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [
+        {
+          "nombre": "_ga_JVCKBLBR7S",
+          "proveedor": "Google Analytics",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_ga",
+          "proveedor": "Google Analytics",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_gcl_au",
+          "proveedor": "Google Ads",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_ga_43FT6HNZXM",
+          "proveedor": "Google Analytics",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_ga_LLJ15R8MQD",
+          "proveedor": "Google Analytics",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_ga_4FCKSSZQLY",
+          "proveedor": "Google Analytics",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_fbp",
+          "proveedor": "Meta",
+          "primera_fase": "A"
+        }
+      ],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [
+        "Google Tag",
+        "Meta"
+      ],
+      "envio_en_ambas": [
+        "Google Ads",
+        "Google Analytics"
+      ],
+      "google_gcs": [
+        [],
+        [],
+        []
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": {
+      "gtm": [
+        "GTM-KGHF75ZM",
+        "GTM-PBMKZ89N"
+      ],
+      "contenedores": [
+        {
+          "id": "GTM-KGHF75ZM",
+          "leido": true,
+          "funciones": [
+            "__e",
+            "__u",
+            "__v",
+            "__f",
+            "__c",
+            "__gclidw",
+            "__sp",
+            "__awct",
+            "__googtag",
+            "__gaawe",
+            "__fsl",
+            "__hl",
+            "__html"
+          ],
+          "tags_de_evento": [
+            "__awct",
+            "__gaawe"
+          ],
+          "html_personalizado": 6
+        },
+        {
+          "id": "GTM-PBMKZ89N",
+          "leido": true,
+          "funciones": [
+            "__e",
+            "__aev",
+            "__v",
+            "__jsm",
+            "__u",
+            "__f",
+            "__googtag",
+            "__gaawe",
+            "__cl"
+          ],
+          "tags_de_evento": [
+            "__gaawe"
+          ],
+          "html_personalizado": 0
+        }
+      ],
+      "eventos_inline": [],
+      "eventos_observados_en_sesion": [
+        "page_view",
+        "scroll"
+      ],
+      "ads_instalado": false
+    },
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 600000
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 600000,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 600000,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 600000,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 600000,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 600000,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 600000,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 600000,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 600000
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 600000,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 600000,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 600000,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 600000,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 600000,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 600000,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 600000,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": []
+      },
+      {
+        "forms": [],
+        "mails": []
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "Clínica Andes Salud Magallanes"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Clínica Andes Salud Magallanes"
+      },
+      {
+        "fuente": "title",
+        "valor": "El mejor cuidado en tu región"
+      },
+      {
+        "fuente": "title",
+        "valor": "Clínica Andes Salud Magallanes"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 29,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

@@ -181,7 +181,7 @@ rápido y sirve:** si hay más de dos en un post, suena a máquina aunque cada f
 
 ---
 
-## <a id="4-plural-ley"></a>4. Registro plural — la marca, página de LinkedIn (lun 21-sep-2026)
+## <a id="4-plural-ley"></a><a id="3-plural-linkedin"></a>4. Registro plural — la marca, página de LinkedIn (lun 21-sep-2026)
 
 **Estado:** ✅ publicado y en el aire. Texto capturado literal desde LinkedIn el 22-sep-2026.
 **Canal:** página de empresa de SpindleLab. Texto puro, sin imagen. **1 reacción · 1 compartido.**

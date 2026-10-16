@@ -120,7 +120,44 @@ transitorio y **no se pudo verificar**; el 5-oct se publicó sin esa línea.
 | **Comentar en publicaciones ajenas** (temas afines o gente que necesita el servicio) | Hay 4 candidatos reales y 4 comentarios redactados (28-sep). Ejecución bloqueada; solo con una persona pegando. |
 | **Instagram con la línea propia de Verifica y Cumple** (reel y story) | Otra sesión; las piezas esperan el ojo de Ramón. Pendientes suyos: el enlace del bio (solo desde el teléfono) y la etiqueta "Perfil generado con IA". |
 | **X como canal de publicación** | Hoy solo se usa para escucha. Publicar desde la cuenta de Ramón no se ha explorado ni decidido. |
-| **La página de empresa** | No se revisó desde el 25-sep. Decidir su papel: archivo de lo que se reusa. |
+| **La página de empresa** | Retomada el 13-oct: se publicó en plural el post de visibilidad en IA (adaptado del personal del 7-oct). Sigue con 4 seguidores. El 13-oct se invitó a 47 contactos a seguirla (quedan 3 créditos, renuevan el 1-nov). Pendiente: fijar un ritmo (un reuso en plural por semana). Ver `red-linkedin/lista-abogados-contadores-2026-10-10.md`: 10 de las 13 invitaciones a conectar ya fueron aceptadas. |
+| **Red: a quién seguir y con quién conectar** | Ver la sección 8b. Primera tanda de seguimientos hecha el 7-oct; las invitaciones a conectar esperan la aprobación de Ramón por lista. |
+
+### 8b. Red de Ramón en LinkedIn (7-oct-2026)
+
+**Criterio:** seguir a quien le sirva de radar y de contexto para lo que publica: expertos del rubro que ya salieron en la
+investigación y voces de cumplimiento de datos en Chile. Seguir no avisa a la persona ni envía nada. **Conectar sí envía una
+invitación, y eso solo se hace con la aprobación de Ramón sobre una lista.** Verificar siempre la identidad (insignia,
+cargo, seguidores): hay homónimos (otra "aleyda solis" en Nicaragua, otra "Aleyda" en Pakistán, "Lily Raya" en Irán).
+
+**Seguidos el 7-oct (verificados, quedaron en "Siguiendo"):** Aleyda Solís (Orainti, 124.879 seg.), Lily Ray (Amsive,
+60.308), Cyrus Shepard (Zyppy, 38.891), Marie Haynes (Marie Haynes Consulting, 17.004), Barry Schwartz (Search Engine
+Roundtable, 61.726) y Glenn Gabe (G-Squared Interactive; en la búsqueda no ofrece "Seguir", sí en su perfil).
+**Ya seguía:** Juan Carlos Hurtado Salas (consultor de protección de datos, Santiago; 2º grado, con dos contactos en común).
+
+**Voces chilenas de la Ley 21.719, seguidas el 7-oct (verificadas, "Siguiendo"):** Josefina Navarrete Bada (abogada, Prieto
+Abogados, Universidad de Chile; 581 seguidores; publicó sobre el proyecto que cambiaría el art. sexto transitorio) y Jorge
+Martelli (Director de Operaciones de TitanSec, ciberseguridad y Ley 21.719; 2º grado, contactos en común Nicolás Fontaine y
+Matías Herrera). A Jorge se le dio "Seguir" desde el menú "..." de su perfil porque el botón principal era "Conectar"
+(que habría enviado una invitación); no se envió ninguna.
+
+**Conectar con Juan Carlos Hurtado Salas (13-oct, aprobado por Ramón):** invitación enviada sin nota; el botón pasó a
+"Pendiente". Se hizo junto con su primer comentario sugerido; ver `marketing/redes/red-linkedin/comentarios-semana-2026-10-13.md`.
+
+**Comentarios sobre publicaciones de la red:** cada semana se leen las publicaciones recientes de los contactos y se dejan
+2 o 3 comentarios listos para que Ramón los pegue (la sesión no puede escribir en contenido de terceros). Primera tanda en
+el archivo anterior; incluye el método y los descartados.
+
+**Vistos y NO seguidos, con el motivo:**
+- **Presencia360** (servicios y consultoría de TI, 143 seguidores): "combina auditoría automatizada y análisis especializado para
+  mejorar cumplimiento normativo, SEO, rendimiento, seguridad y experiencia de usuario". **Es un competidor directo del chequeo.**
+  Seguirlo es decisión de Ramón.
+- **Morgan y Cía.**: hay dos páginas distintas (asesoría de inversión/CFO remoto, 54 seguidores; despacho de abogados, 3
+  seguidores) y no se pudo confirmar cuál escribió el post. Aporta poco a la red.
+- **"A G P D Chile"** (asociación gremial que LinkedIn sugirió): no se encontró como página de empresa; falta verificar qué es.
+
+**Para otro frente:** las invitaciones a conectar con abogados y contadores de Chile, que son los dos oficios con los que el
+chequeo se complementa ("la política de privacidad la redacta un abogado"), por lista y con su visto bueno.
 
 ## 9. Pendientes para la sesión que lleva el canal
 
@@ -132,7 +169,7 @@ transitorio y **no se pudo verificar**; el 5-oct se publicó sin esa línea.
    ⚠️ **El texto íntegro de la v1 y la v2 del 5-oct no quedó guardado en ninguna parte** y no se
    reconstruyó: un ejemplo inventado para ilustrar una regla arruina el corpus. Si alguien tiene
    esos textos en un chat, vale la pena pegarlos.
-   De paso, `SKILL.md` ganó el **tercer tic** (el post que explica bien y no vende: salida
+   De paso, `SKILL.md` ganó el **cuarto tic** (numerado tercero cuando se escribió esta nota) (el post que explica bien y no vende: salida
    comercial + conectores de relleno + el "no es X, es Y" repetido + remates figurados, tope dos).
 2. ✅ **HECHO (5-oct, sesión de redes). Octubre en el calendario editorial.**
    `marketing/calendario-editorial.md` tiene una sección de octubre con los slots reales (2 y 5-oct

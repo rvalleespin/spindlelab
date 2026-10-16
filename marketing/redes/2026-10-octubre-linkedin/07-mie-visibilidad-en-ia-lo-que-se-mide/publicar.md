@@ -3,7 +3,15 @@
 **Cuándo:** MIÉRCOLES 7-oct-2026 · **Canal:** perfil personal de Ramón · **Voz:** singular
 **Pieza visual:** ninguna. Texto puro.
 **Escribe:** agente-copywriter (Renata), a pedido directo de Ramón · **Aprobó el texto:** Ramón, 5-oct, sin cambios ("queda así, déjalo para el miércoles")
-**Estado:** ✅ Aprobado, en cola para el miércoles 7-oct. **No publicado aún.**
+**Estado:** ✅ PUBLICADO Y VERIFICADO (7-oct-2026), perfil personal de Ramón, a pedido suyo ("tenemos post para hoy. publica").
+`linkedin.com/feed/update/urn:li:activity:7513591632873730048/`. Texto leído del editor antes de publicar (6 párrafos,
+sin cambios respecto de lo aprobado). Captura posterior: "1 comentario", autor Ramón, los dos links activos y tarjeta de
+`spindlelab.cl/diagnostico`.
+
+**Checklist del día, hecho:** canal revisado (el último post original era el del 5-oct) · `spindlelab.cl/diagnostico/`
+releído en vivo (21 chequeos, diagnóstico a mano gratis en 24 horas, y lo que mide el puntaje, sin cambios) · página de
+ayuda de Google releída (nota del 31-ago, AI Overviews y AI Mode, definición de impresión y razones para no ver el informe,
+sin cambios) · link en el primer comentario.
 
 ## Origen del encargo
 
