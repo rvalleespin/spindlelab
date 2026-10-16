@@ -119,15 +119,18 @@ solo se sostiene si uno de los tres es barato de producir.
 | ~~mar 13-oct~~ | — | ~~Reel cara a cámara~~ | ⛔ **vacío.** El guion se aprobó el 10-oct pero la grabación no alcanzó a ocurrir, y a las 15:00 del martes la ventana B2B del día ya había pasado. **Se decidió no apurar la pieza más importante del mes para alcanzar una ventana mala** (ver nota abajo) |
 | **jue 15-oct** | **D** | **Reel cara a cámara: las dos versiones de tu sitio.** LinkedIn nativo primero, Instagram después | 🟡 **guion aprobado**, `13-mar-reel-cara-a-camara/guion.md` (el nombre de la carpeta queda con el 13; moverla rompería los links de esta tabla). Falta grabar; publicar necesita OK aparte |
 | ↳ *respaldo del reel* | C | **El sitio con el nombre equivocado, en texto.** Caso concreto, ya no el mismo argumento | ⬜ **en reserva**, `13-mar-respaldo-mensaje-cerrado/publicar.md`. **Dejó de ser un clon del reel el 13-oct**: ahora cubre el jueves si no se graba, y si el reel sale queda como pieza propia para otra semana (no el mismo día) |
-| **lun 19-oct** | B | La base de datos que te dejó la temporada: datos personales a seis semanas de la ley | ⬜ **ya escrito** (movido del jue 15), en el banco al final de `08-jue-cyber-examen-del-sitio/publicar.md`. Al reusarlo se cambia el arranque: la referencia al Cyber envejece, entra temporada alta |
-| **mié 21-oct** | A | Costco: el tráfico desde IA es poco y convierte mejor | ⬜ **movido del lun 26.** Dato verificado en el transcript del 24-sep. **Falta la apertura**: Ramón descartó partir por la noticia |
+| **lun 19-oct** | **D** | **El reel cara a cámara, en LinkedIn.** Video nativo en el perfil personal · ya salió en Instagram el 16-oct | ✅ **grabado, montado y publicado en Instagram.** Caption y primer comentario listos en `20-reel-sitio-sin-revisar/publicar.md`, **distintos a los de Instagram** (en LinkedIn el link del primer comentario sí se toca). Ramón lo comparte en sus stories y pide apoyo a contactos |
+| ~~lun 19-oct~~ | B | ~~La base de datos que te dejó la temporada~~ | ↪️ **movido al mié 21** para dejarle el lunes al reel. **Y de paso evitó un choque**: ese post también era de datos personales, así que los dos el mismo lunes habrían competido entre sí |
+| **mié 21-oct** | B | La base de datos que te dejó la temporada: datos personales a seis semanas de la ley | ⬜ **ya escrito**, en el banco al final de `08-jue-cyber-examen-del-sitio/publicar.md`. Al reusarlo se cambia el arranque. **Ojo con la fecha**: el post del 14-oct dijo que el Gobierno pidió postergar la vigencia, así que "a seis semanas" hay que revisarlo o sacarlo |
+| ~~mié 21-oct~~ | A | ~~Costco: el tráfico desde IA es poco y convierte mejor~~ | ↪️ **movido al lun 26**, que estaba ocupado por "Para que la IA te recomiende", el que lleva dos postergaciones y sigue sin gancho. **Ese se cae del mes** |
+| **lun 26-oct** | A | Costco: el tráfico desde IA es poco y convierte mejor | ⬜ **movido del lun 26.** Dato verificado en el transcript del 24-sep. **Falta la apertura**: Ramón descartó partir por la noticia |
 | **jue 22-oct** | C | **Carrusel "Por dónde se te escapa la gente"** · **página de LinkedIn**, documento deslizable, y Ramón lo comparte desde su perfil | 🟡 **copy escrito**, `23-vie-carrusel-fugas/copy.md`. **Bloqueado por el manual nuevo**: el copy no depende de él, el diseño sí. Si el reel rindió y se prefiere un segundo video, este se corre |
-| lun 26-oct | A | "Para que la IA te recomiende, tu sitio no basta" | ⬜ aprobado el 22-sep y pospuesto dos veces. **Necesita gancho nuevo**: comparte ideas con el del 7-oct. Si el 26 sigue sin gancho, se cae del mes |
+| ⛔ *fuera del mes* | A | ~~"Para que la IA te recomiende, tu sitio no basta"~~ | ⛔ **se cayó.** Aprobado el 22-sep y pospuesto tres veces sin que apareciera el gancho. Vuelve al banco; si alguien le encuentra la apertura, entra en noviembre |
 | mié 28-oct | B | El cierre de la ventana de la ley | ⬜ |
 | vie 30-oct | — | Cierre de mes (no es publicación, por eso sí va en viernes) | ⬜ |
 
-**Alternancia verificada tras el corrimiento del 13 (recalculada el mar 13):** B → A → **D** → B → A →
-C → A → B. Sin dos del mismo tipo seguidos.
+**Alternancia recalculada el vie 16, con el reel en el lunes 19:** B → A → **D** → B → C → A → B.
+Sin dos del mismo tipo seguidos.
 
 > **Lo que el corrimiento del reel arrastró, para que quede explícito.** El reel pasa del 13 al 15;
 > el post de datos personales del 15 al 19; el de Costco del 26 al 21. **"Cookies y la ley chilena"
