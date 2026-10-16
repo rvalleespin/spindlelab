@@ -8,10 +8,11 @@
 1. [Registro singular — LinkedIn personal, 1-sep-2026](#1-singular)
 2. [Registro plural — Instagram / página, 1-sep-2026](#2-plural)
 3. [Registro singular — LinkedIn personal, 22-sep-2026](#3-singular-ley)
-4. [Registro plural — página de empresa, 21-sep-2026](#4-plural-ley)
+4. [Registro plural — página de empresa en LinkedIn, 21-sep-2026](#4-plural-ley)
 5. [Registro singular — el post de GEO, 21-sep-2026](#5-geo)
 6. [Registro plural — "Un motor de adquisición", ~8-sep-2026](#6-motor)
-7. [Dónde hay más material](#3-mas)
+7. [El descarte del outbound, 30-sep y 1-oct-2026](#8-outbound-rechazado)
+8. [Dónde hay más material](#3-mas)
 
 ---
 
@@ -90,15 +91,14 @@ Comenta CIRCUITO y te mando el link del chequeo por DM, gratis y sin registro. (
 
 ---
 
----
-
 ## <a id="3-singular-ley"></a>3. Registro singular — Ramón, LinkedIn personal (mar 22-sep-2026)
 
-**Estado:** ✅ publicado y confirmado. **Corrección de fecha (verificada en LinkedIn el
-22-sep):** el post **se creó el 21-sep por la noche** y el 22-sep Ramón lo **editó** a esta
-versión — LinkedIn lo muestra como "16 horas • Editado". O sea que el borrador que Ramón trajo a
-revisión **ya estaba publicado** cuando pidió corregirlo; esta es la versión final en el aire, y
-el texto de abajo coincide literal con lo entregado. **58 impresiones · 1 comentario.**
+**Estado:** ✅ publicado y confirmado por Ramón. El texto de abajo coincide literal con la
+versión entregada. **Corrección de fecha (verificada en LinkedIn el 22-sep):** el post **se
+creó el 21-sep por la noche** y el 22-sep Ramón lo **editó** a esta versión — LinkedIn lo
+muestra como "16 horas • Editado". O sea que el borrador que Ramón trajo a revisión **ya estaba
+publicado** cuando pidió corregirlo; esta es la versión final en el aire. **58 impresiones ·
+1 comentario.**
 **Canal:** LinkedIn, cuenta personal. Texto puro + link en el primer comentario.
 **Pieza:** lanzamiento del chequeo de Ley 21.719 (Verifica y Cumple, servicio de SpindleLab).
 
@@ -162,12 +162,13 @@ rápido y sirve:** si hay más de dos en un post, suena a máquina aunque cada f
 
 ---
 
----
+## <a id="4-plural-ley"></a><a id="3-plural-linkedin"></a>4. Registro plural — la marca, página de LinkedIn (lun 21-sep-2026)
 
-## <a id="4-plural-ley"></a>4. Registro plural — la marca, página de LinkedIn (lun 21-sep-2026)
-
-**Estado:** ✅ publicado y en el aire. Texto capturado literal desde LinkedIn el 22-sep-2026.
-**Canal:** página de empresa de SpindleLab. Texto puro, sin imagen. **1 reacción · 1 compartido.**
+**Estado:** ✅ publicado y en el aire, `urn:li:activity:7507924615218823168`. Texto capturado
+literal desde LinkedIn el 22-sep-2026.
+**Canal:** página de empresa de SpindleLab. Texto puro, sin imagen, con el link en el primer
+comentario (también como página). **1 reacción · 1 compartido.**
+**Fuente:** `ventas/casos-de-exito/verifica-y-cumple.md`
 
 **Por qué es la mejor referencia plural que hay.** Es el registro de marca haciendo lo más difícil
 de su posicionamiento ("Mostramos, no prometemos"): **contar un fallo propio que nadie le pidió
@@ -176,6 +177,11 @@ que llevaba meses tragándose los mensajes es la parte que duele, no tiene nada 
 y se cuenta igual. La frase que sostiene la pieza —*"construyes el instrumento, lo apuntas primero
 a ti mismo, y arreglas lo que encuentra. No lo que se ve mejor en una reunión de ventas"*— es el
 argumento entero de la marca en dos líneas, sin adjetivos.
+
+Y lo hace **sin volverse una confesión personal**: la marca dice "nuestro sitio sacó 36 de 100" y
+"no tenemos cómo saber cuántos correos se perdieron" en primera persona del plural, sin una sola
+frase de venta y sin nombrar la multa. Es la prueba de que "decir la parte incómoda" no obliga a
+cambiar al singular.
 
 ### Cuerpo
 
@@ -199,10 +205,20 @@ Si tienes un formulario de contacto, ya estás tratando datos personales. La ley
 
 Dejamos el chequeo en el primer comentario, por si quieres ver qué encuentra en el tuyo.
 
+### Primer comentario
+
+Acá está: https://verificaycumple.pages.dev
+
+Escribes tu dominio y en segundos sabes qué te falta. Gratis, sin registro, y no guardamos el dominio que revisas. Cada señal que no pases viene con la instrucción de cómo corregirla.
+
 ### El compartir desde el perfil personal (mismo día, registro singular)
 
-**Esta es la plantilla de cómo se comparte un post de la página.** No resume el post: agrega el
-ángulo personal que la marca en plural no puede decir, en tres líneas. **20 impresiones.**
+Media hora después, Ramón compartió este post desde su perfil.
+`urn:li:activity:7507939759005298689`. **Esta es la plantilla de cómo se comparte un post de la
+página**, y además **es el formato más corto del registro singular y el menos documentado**: no
+resume el post de abajo ni repite lo que ya dijo en el propio. Elige **un solo hilo** del post
+compartido y lo dice en primera persona, en tres líneas — el ángulo personal que la marca en
+plural no puede decir. **20 impresiones.**
 
 > Lo comparto porque la parte incómoda no es el puntaje.
 >
@@ -215,8 +231,6 @@ El mismo hecho, contado dos veces sin repetirse: **el plural cuenta qué hizo el
 el singular cuenta qué le pasó a la persona.** El plural cierra con la regla de oficio; el singular
 cierra con *"si no corro el chequeo sobre mi propio sitio, sigue roto"*, que es la misma idea
 dicha desde adentro. Ninguno de los dos vende, y los dos venden.
-
----
 
 ---
 
@@ -279,7 +293,7 @@ Estamos publicando la serie del circuito todo septiembre. Síguenos para no perd
 
 ---
 
-## <a id="8-outbound-rechazado"></a>8. El descarte del outbound (30-sep y 1-oct-2026)
+## <a id="8-outbound-rechazado"></a>7. El descarte del outbound (30-sep y 1-oct-2026)
 
 **Estado:** ❌ enviado y después rechazado por el estilo. Diez correos fríos del lote de
 DiarioEmprende salieron el 30-sep; Ramón los leyó y dijo *"están muy largos y/o demasiado
@@ -329,7 +343,7 @@ está resuelto de entrada"*) y un cierre que no empuja.
 
 ---
 
-## <a id="3-mas"></a>7. Dónde hay más material
+## <a id="3-mas"></a>8. Dónde hay más material
 
 - **Piezas listas y pasadas por revisión, aún no publicadas:**
   `marketing/redes/2026-09-septiembre/*/publicar.md`. Útiles para ver la intención y el

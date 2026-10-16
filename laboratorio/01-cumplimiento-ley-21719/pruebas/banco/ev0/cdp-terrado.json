@@ -1,0 +1,1415 @@
+{
+  "url": "https://terrado.cl/",
+  "slug": "terrado",
+  "urlFinal": "https://terrado.cl/",
+  "titulo": "Hoteles Terrado - Encantados de Tenerte Aquí",
+  "ms": 10317,
+  "requests": [
+    {
+      "url": "https://terrado.cl/",
+      "method": "GET",
+      "type": "Document",
+      "initiator": "other",
+      "t": 1790201992.83386
+    },
+    {
+      "url": "https://terrado.cl/content/themes/meat-theme/dist/css/app.css?id=56be4d62745968f892c2a7ecfa8ca318",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "t": 1790201992.942467
+    },
+    {
+      "url": "https://terrado.cl/content/plugins/sitepress-multilingual-cms/res/js/cookies/language-cookie.js?rnd=67707",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "t": 1790201992.942552
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-MFFDFVV5",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201992.943987
+    },
+    {
+      "url": "https://connect.facebook.net/en_US/fbevents.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201992.944216
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/js/splide.min.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "t": 1790201992.945876
+    },
+    {
+      "url": "https://terrado.cl/content/themes/meat-theme/dist/js/manifest.js?id=5c555aba4e42ed56bf600a16800797f6",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "t": 1790201992.9459
+    },
+    {
+      "url": "https://terrado.cl/content/themes/meat-theme/dist/js/vendor.js?id=41e76b682bc95fd38f6db9b3cf4d3b5c",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "t": 1790201992.945918
+    },
+    {
+      "url": "https://terrado.cl/content/themes/meat-theme/dist/js/app.js?id=d0963e75be77bb55ad9ee709e272d3ce",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "parser",
+      "t": 1790201992.94593
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap",
+      "method": "GET",
+      "type": "Stylesheet",
+      "initiator": "parser",
+      "t": 1790201992.962705
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/raleway/v37/1Ptug8zYS_SKggPNyC0IT4ttDfA.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "t": 1790201993.006792
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Hp2ywxg089UriCZOIHTWEBlw.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "t": 1790201993.006834
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "t": 1790201993.006912
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnogkk7yRZrPA.woff2",
+      "method": "GET",
+      "type": "Font",
+      "initiator": "parser",
+      "t": 1790201993.007
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/facebook-grey.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.025949
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/instagram-grey.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.025984
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/tiktok-grey.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.026001
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/youtuber-grey.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.026016
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/linkedin-grey.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.026031
+    },
+    {
+      "url": "https://terrado.cl/content/themes/meat-theme/dist/images/logo-header.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.026042
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/03/BANNER-web-neuvas-medidas_dektop-vertical-scaled.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.026054
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/slogan-color-black.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.026064
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/06/Terrado-Suite-Antogagasta_d.png",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.026078
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/04/Home_ExperienciaTerrado_1.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.026088
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/04/Home_card_Hoteles.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.026099
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/04/Home_card_destinos.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.026109
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/lines-rotation.gif",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.026119
+    },
+    {
+      "url": "https://connect.facebook.net/signals/config/766049728684349?v=2.9.406&r=stable&domain=terrado.cl&hme=8a9e6a9b82926b8f07fd0a2edd8b8f1ef075648059d1bb52ec651feab764c219&ex_m=117%2C236%2C168%2C27%2C81%2C82%2C160%2C77%2C76%2C11%2C178%2C101%2C20%2C152%2C140%2C46%2C84%2C89%2C148%2C173%2C180%2C8%2C4%2C5%2C7%2C6%2C3%2C102%2C114%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C161%2C86%2C125%2C22%2C24%2C51%2C47%2C49%2C48%2C94%2C103%2C107%2C123%2C159%2C162%2C53%2C124%2C29%2C26%2C132%2C78%2C43%2C164%2C163%2C165%2C156%2C154%2C30%2C42%2C66%2C122%2C175%2C79%2C21%2C127%2C92%2C75%2C23%2C96%2C97%2C129%2C95%2C150%2C149%2C153%2C108%2C174%2C177%2C41%2C56%2C126%2C54%2C182%2C109%2C181%2C203%2C250%2C83%2C264%2C263%2C262%2C14%2C25%2C28%2C40%2C62%2C116%2C68%2C10%2C72%2C110%2C111%2C112%2C118%2C143%2C38%2C36%2C145%2C146%2C147%2C142%2C141%2C169%2C85%2C172%2C170%2C171%2C57%2C67%2C136%2C19%2C176%2C52%2C313%2C314%2C315%2C312%2C328%2C353%2C243%2C232%2C69%2C233%2C231%2C356%2C347%2C59%2C244%2C120%2C144%2C91%2C134%2C61%2C133%2C139%2C138%2C65%2C73%2C71%2C166%2C87%2C88%2C128%2C44%2C39%2C60%2C63%2C113%2C179%2C1%2C137%2C16%2C135%2C12%2C2%2C64%2C104%2C15%2C74%2C70%2C131%2C100%2C99%2C184%2C185%2C105%2C106%2C9%2C115%2C183%2C58%2C157%2C98%2C90%2C80%2C130%2C119%2C50%2C158%2C0%2C93%2C151%2C155%2C167%2C45%2C121%2C13%2C186",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201993.066265
+    },
+    {
+      "url": "https://terrado.cl/content/themes/meat-theme/dist/images/logo-header-mob.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.141331
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/06/1-banner-promo-Amigas-Relax.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.146264
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/06/2-banner-promo-Spa-Relax.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.146419
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/06/3-banner-promo-Romantica-1.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.146536
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/06/4-banner-promo-Romantica-2.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.146637
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/06/5-banner-promo-Novios.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.146733
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/04/Home_Icono_Recepcion24Hrs.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.146891
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/04/Home_Icono_MovilidadReducida.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.146961
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/04/Home_Icono_Wifi.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.147026
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/04/Home_Icono_UbicacionPrivilegiada.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.147093
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/04/Home_Icono_Gym.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.147157
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/04/Home_Icono_LibreHumo.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.147221
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/04/Home_OtrosServicios_Gastronomia.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.147303
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/04/Home_OtrosServicios_Eventos.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.147384
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/04/Home_OtrosServicios_Corporativo.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.147459
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/04/Home_OtrosServicios_OtrosServicios.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.147541
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/tripadvisor.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.147687
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/05/Logo-Terrado-Suites-Iquique_Positivo-Negro.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.147759
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/08/logo_google.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.147842
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/05/Logo-Terrado-Cavancha_Negativo-Positivo.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.147914
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/05/Logo-Terrado-Arturo-Prat_Negativo-Negro-1.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.148008
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/04/Logo-Studio-56-Generico-Negativo-sin-fondo-06.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.148124
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/05/Logo-Terrado-Suites-Antofagasta_Positivo-negro.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.148224
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/05/Logo-Terrado-Rancagua_Positivo-Negro.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.148316
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/05/Home_Newsletter_Desktop.jpg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.150863
+    },
+    {
+      "url": "https://terrado.cl/content/themes/meat-theme/dist/images/logo-footer.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.150969
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/08/TSI-300x120-2.png",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.151031
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/08/CAVANCHA-300x120-2.png",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.151081
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/08/PRAT-300x120-2.png",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.151132
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/08/STUDIO-56-ANTOFAGASTA-300x120-2.png",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.151184
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/08/STUDIO-56-IQUIQUE-300x120-2.png",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.151238
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/08/TSA-300x120-2.png",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.151286
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/08/RANCAGUA-300x120-2.png",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.151337
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2026/08/LYON-300x120-2.png",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.151394
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/mail-white.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.151557
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/phone-white.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.151637
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/clock-white.svg",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "script",
+      "t": 1790201993.151722
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit&hl=",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201993.167621
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/facebook-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.201666
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/instagram-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.201705
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/tiktok-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.201727
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/youtuber-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.20175
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/linkedin-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.201769
+    },
+    {
+      "url": "https://terrado.cl/content/themes/meat-theme/dist/images/logo-header.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.201787
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/facebook-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.201806
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/instagram-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.201823
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/tiktok-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.201841
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/youtuber-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.201863
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/linkedin-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.201878
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/facebook-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.201898
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/instagram-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.201913
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/tiktok-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.20193
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/youtuber-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.201946
+    },
+    {
+      "url": "https://terrado.cl/content/uploads/2025/03/linkedin-grey.svg",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.20196
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-XQ0JXN46PY&cx=c&gtm=4e69m1",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201993.247117
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=AW-17727174105&cx=c&gtm=4e69m1",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201993.247555
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-WXZM6489YG&cx=c&gtm=4e69m1",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201993.253943
+    },
+    {
+      "url": "https://www.clarity.ms/tag/uq1re7oxqh?ref=gtm",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201993.254521
+    },
+    {
+      "url": "https://tracker.metricool.com/c3po.jpg?hash=fe73f93eebd7dd656bcac8758c7de570",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.255084
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=11&frm=0&apvc=1&ae=g&auid=866437365.1790201993&dt=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&en=page_view&dl=https%3A%2F%2Fterrado.cl%2F&scrsrc=www.googletagmanager.com&rnd=930002395.1790201993&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He69m1v9180801086za200zd9180801086xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616985~115938465~115938469~118897920~118897930~120385423~120469145~120469153&tft=1790201993255&tfd=422&fmt=8",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.255933
+    },
+    {
+      "url": "https://ad.doubleclick.net/ccm/s/collect?auid=866437365.1790201993&gtm=45He69m1v9180801086za200zd9180801086xeaxf1&fmt=8",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.256099
+    },
+    {
+      "url": "https://connect.facebook.net/signals/config/818881330107619?v=2.9.406&r=stable&domain=terrado.cl&hme=8a9e6a9b82926b8f07fd0a2edd8b8f1ef075648059d1bb52ec651feab764c219&ex_m=117%2C236%2C168%2C27%2C81%2C82%2C160%2C77%2C76%2C11%2C178%2C101%2C20%2C152%2C140%2C46%2C84%2C89%2C148%2C173%2C180%2C8%2C4%2C5%2C7%2C6%2C3%2C102%2C114%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C161%2C86%2C125%2C22%2C24%2C51%2C47%2C49%2C48%2C94%2C103%2C107%2C123%2C159%2C162%2C53%2C124%2C29%2C26%2C132%2C78%2C43%2C164%2C163%2C165%2C156%2C154%2C30%2C42%2C66%2C122%2C175%2C79%2C21%2C127%2C92%2C75%2C23%2C96%2C97%2C129%2C95%2C150%2C149%2C153%2C108%2C174%2C177%2C41%2C56%2C126%2C54%2C182%2C109%2C181%2C203%2C250%2C83%2C264%2C263%2C262%2C14%2C25%2C28%2C40%2C62%2C116%2C68%2C10%2C72%2C110%2C111%2C112%2C118%2C143%2C38%2C36%2C145%2C146%2C147%2C142%2C141%2C169%2C85%2C172%2C170%2C171%2C57%2C67%2C136%2C19%2C176%2C52%2C313%2C314%2C315%2C312%2C328%2C353%2C243%2C232%2C69%2C233%2C231%2C356%2C347%2C59%2C244%2C120%2C144%2C91%2C134%2C61%2C133%2C139%2C138%2C65%2C73%2C71%2C166%2C87%2C88%2C128%2C44%2C39%2C60%2C63%2C113%2C179%2C1%2C137%2C16%2C135%2C12%2C2%2C64%2C104%2C15%2C74%2C70%2C131%2C100%2C99%2C184%2C185%2C105%2C106%2C9%2C115%2C183%2C58%2C157%2C98%2C90%2C80%2C130%2C119%2C50%2C158%2C0%2C93%2C151%2C155%2C167%2C45%2C121%2C13%2C186%2C260%2C258%2C253%2C255%2C256%2C257%2C254%2C242%2C259%2C261%2C252%2C210%2C211%2C343%2C346%2C345%2C342%2C344%2C224%2C218%2C222%2C223%2C221%2C216%2C381%2C294%2C298%2C301%2C302%2C303%2C299%2C304%2C297%2C292%2C306%2C307%2C296%2C305%2C309%2C300%2C295%2C308%2C310%2C293%2C235%2C291%2C227%2C219%2C220%2C246%2C217%2C215%2C268%2C237%2C208%2C209%2C205%2C206%2C207%2C204%2C202%2C213%2C214%2C212%2C316%2C374%2C336%2C337%2C339%2C340%2C338%2C335%2C334%2C225%2C271%2C278%2C279%2C272%2C274%2C277%2C275%2C276%2C273%2C270%2C289%2C283%2C286%2C282%2C290%2C287%2C281%2C285%2C288%2C284%2C280%2C330%2C350",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201993.289093
+    },
+    {
+      "url": "https://www.gstatic.com/recaptcha/releases/kemdRjWFxNjgsGdhRslyEPwU/recaptcha__es_419.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201993.291074
+    },
+    {
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/17727174105/?random=1790201993315&cv=11&fst=1790201993315&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be69m1v9235281165z89180801086za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938469~118012007~118897920~118897930~120213116~120385423~120469145~120469153&u_w=800&u_h=600&url=https%3A%2F%2Fterrado.cl%2F&rcb=3&frm=0&tiba=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=866437365.1790201993&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uamb=0&uam=&uap=macOS&uapv=26.6.2&uaw=0&data=event%3Dgtag.config&ept=9&rfmt=3&fmt=4",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201993.329031
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/17727174105/?random=1790201993315&cv=11&fst=1790201993315&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be69m1v9235281165z89180801086za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938469~118012007~118897920~118897930~120213116~120385423~120469145~120469153&u_w=800&u_h=600&url=https%3A%2F%2Fterrado.cl%2F&rcb=3&frm=0&tiba=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=866437365.1790201993&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uamb=0&uam=&uap=macOS&uapv=26.6.2&uaw=0&data=event%3Dgtag.config&ept=68&gcp=5",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.329355
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=3&frm=0&apvc=0&auid=866437365.1790201993&dt=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&tid=AW-17727174105&en=page_view&dl=https%3A%2F%2Fterrado.cl%2F&scrsrc=www.googletagmanager.com&rnd=930002395.1790201993&navt=n&npa=0&gtm=45be69m1v9235281165z89180801086za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938469~118012007~118897920~118897930~120213116~120385423~120469145~120469153&tft=1790201993329&tfd=497&tids=AW-17727174105&fmt=8",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.330107
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-XQ0JXN46PY&gtm=45je69m1v9232303324z89180801086za20gzb9180801086zd9180801086xf1&_p=1790201992943&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=907360614&_eu=AAAAAGAC&cid=1698983957.1790201993&ec_mode=a&frm=0&pscdl=noapi&rcb=11&sr=800x600&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uam=&uamb=0&uap=macOS&uapv=26.6.2&uaw=0&ul=es-419&gaf=2&_s=1&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153&sid=1790201993&sct=1&seg=0&dl=https%3A%2F%2Fterrado.cl%2F&dt=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=541",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.375242
+    },
+    {
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-XQ0JXN46PY&cid=1698983957.1790201993&gtm=45je69m1v9232303324z89180801086za20gzb9180801086zd9180801086xf1&rcb=11&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "t": 1790201993.375646
+    },
+    {
+      "url": "https://www.google.cl/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-XQ0JXN46PY&cid=1698983957.1790201993&gtm=45je69m1v9232303324z89180801086za20gzb9180801086zd9180801086xf1&rcb=11&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153&z=1038239490",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.376151
+    },
+    {
+      "url": "https://www.google.com/pagead/1p-user-list/17727174105/?random=1790201993315&cv=11&fst=1790200800000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be69m1v9235281165z89180801086za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938469~118012007~118897920~118897930~120213116~120385423~120469145~120469153&u_w=800&u_h=600&url=https%3A%2F%2Fterrado.cl%2F&rcb=3&frm=0&tiba=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=866437365.1790201993&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uamb=0&uam=&uap=macOS&uapv=26.6.2&uaw=0&data=event%3Dgtag.config&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS0wEAQM4h3D6ZK0vXILMnzpCV1GYkEper0kyz4uH0I-NkKdO-83Qqy-J-qUyq8Q9D5NeE6CvuJy0mGaMYBIOAy7a2XUrfOZwSLs9w3lTH4Wjs57F7IkrICN1Ue_rExFDnagdODq3mfbw0cTlqPwh2aUPDVHmPH4kf-XEsoipj4ZG4crpB593jlWPA4oODycPrqr_ivhP-bTeVm5xzcwo2B1OlA0bQwI25eUasWRVxA5_9L4JKy9zYfG5TS7eXiyQMe2MLo4fMLjrps8iSbFgX5QX5eiPF&random=2031867888&rmt_tld=0&ipr=y",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.380989
+    },
+    {
+      "url": "https://www.google.cl/pagead/1p-user-list/17727174105/?random=1790201993315&cv=11&fst=1790200800000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be69m1v9235281165z89180801086za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938469~118012007~118897920~118897930~120213116~120385423~120469145~120469153&u_w=800&u_h=600&url=https%3A%2F%2Fterrado.cl%2F&rcb=3&frm=0&tiba=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=866437365.1790201993&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uamb=0&uam=&uap=macOS&uapv=26.6.2&uaw=0&data=event%3Dgtag.config&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS0wEAQM4h3D6ZK0vXILMnzpCV1GYkEper0kyz4uH0I-NkKdO-83Qqy-J-qUyq8Q9D5NeE6CvuJy0mGaMYBIOAy7a2XUrfOZwSLs9w3lTH4Wjs57F7IkrICN1Ue_rExFDnagdODq3mfbw0cTlqPwh2aUPDVHmPH4kf-XEsoipj4ZG4crpB593jlWPA4oODycPrqr_ivhP-bTeVm5xzcwo2B1OlA0bQwI25eUasWRVxA5_9L4JKy9zYfG5TS7eXiyQMe2MLo4fMLjrps8iSbFgX5QX5eiPF&random=2031867888&rmt_tld=1&ipr=y",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.381044
+    },
+    {
+      "url": "https://connect.facebook.net/signals/config/1166146791579312?v=2.9.406&r=stable&domain=terrado.cl&hme=8a9e6a9b82926b8f07fd0a2edd8b8f1ef075648059d1bb52ec651feab764c219&ex_m=117%2C236%2C168%2C27%2C81%2C82%2C160%2C77%2C76%2C11%2C178%2C101%2C20%2C152%2C140%2C46%2C84%2C89%2C148%2C173%2C180%2C8%2C4%2C5%2C7%2C6%2C3%2C102%2C114%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C161%2C86%2C125%2C22%2C24%2C51%2C47%2C49%2C48%2C94%2C103%2C107%2C123%2C159%2C162%2C53%2C124%2C29%2C26%2C132%2C78%2C43%2C164%2C163%2C165%2C156%2C154%2C30%2C42%2C66%2C122%2C175%2C79%2C21%2C127%2C92%2C75%2C23%2C96%2C97%2C129%2C95%2C150%2C149%2C153%2C108%2C174%2C177%2C41%2C56%2C126%2C54%2C182%2C109%2C181%2C203%2C250%2C83%2C264%2C263%2C262%2C14%2C25%2C28%2C40%2C62%2C116%2C68%2C10%2C72%2C110%2C111%2C112%2C118%2C143%2C38%2C36%2C145%2C146%2C147%2C142%2C141%2C169%2C85%2C172%2C170%2C171%2C57%2C67%2C136%2C19%2C176%2C52%2C313%2C314%2C315%2C312%2C328%2C353%2C243%2C232%2C69%2C233%2C231%2C356%2C347%2C59%2C244%2C120%2C144%2C91%2C134%2C61%2C133%2C139%2C138%2C65%2C73%2C71%2C166%2C87%2C88%2C128%2C44%2C39%2C60%2C63%2C113%2C179%2C1%2C137%2C16%2C135%2C12%2C2%2C64%2C104%2C15%2C74%2C70%2C131%2C100%2C99%2C184%2C185%2C105%2C106%2C9%2C115%2C183%2C58%2C157%2C98%2C90%2C80%2C130%2C119%2C50%2C158%2C0%2C93%2C151%2C155%2C167%2C45%2C121%2C13%2C186%2C260%2C258%2C253%2C255%2C256%2C257%2C254%2C242%2C259%2C261%2C252%2C210%2C211%2C343%2C346%2C345%2C342%2C344%2C224%2C218%2C222%2C223%2C221%2C216%2C381%2C294%2C298%2C301%2C302%2C303%2C299%2C304%2C297%2C292%2C306%2C307%2C296%2C305%2C309%2C300%2C295%2C308%2C310%2C293%2C235%2C291%2C227%2C219%2C220%2C246%2C217%2C215%2C268%2C237%2C208%2C209%2C205%2C206%2C207%2C204%2C202%2C213%2C214%2C212%2C316%2C374%2C336%2C337%2C339%2C340%2C338%2C335%2C334%2C225%2C271%2C278%2C279%2C272%2C274%2C277%2C275%2C276%2C273%2C270%2C289%2C283%2C286%2C282%2C290%2C287%2C281%2C285%2C288%2C284%2C280%2C330%2C350",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201993.391417
+    },
+    {
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/11427838655/?random=1790201993423&cv=11&fst=1790201993423&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je69m1v9134493205z89180801086za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&u_w=800&u_h=600&url=https%3A%2F%2Fterrado.cl%2F&rcb=17&frm=0&tiba=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=866437365.1790201993&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uamb=0&uam=&uap=macOS&uapv=26.6.2&uaw=0&data=event%3Dgtag.config&ept=9&rfmt=3&fmt=4",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201993.434699
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/11427838655/?random=1790201993423&cv=11&fst=1790201993423&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je69m1v9134493205z89180801086za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&u_w=800&u_h=600&url=https%3A%2F%2Fterrado.cl%2F&rcb=17&frm=0&tiba=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=866437365.1790201993&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uamb=0&uam=&uap=macOS&uapv=26.6.2&uaw=0&data=event%3Dgtag.config&ept=68&gcp=5",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.435228
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-WXZM6489YG&gtm=45je69m1v9134493205z89180801086za20gzb9180801086zd9180801086xf1&_p=1790201992943&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGAC&_ng=1&cid=1698983957.1790201993&frm=0&ir=1&pscdl=noapi&rcb=17&sr=800x600&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uam=&uamb=0&uap=macOS&uapv=26.6.2&uaw=0&ul=es-419&gaf=2&_s=1&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&sid=1790201993&sct=1&seg=0&dl=https%3A%2F%2Fterrado.cl%2F&dt=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&en=page_view&_fv=1&_ss=1&tfd=606",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.439993
+    },
+    {
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&_ng=1&tid=G-WXZM6489YG&cid=1698983957.1790201993&gtm=45je69m1v9134493205z89180801086za20gzb9180801086zd9180801086xf1&rcb=17&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153",
+      "method": "POST",
+      "type": "Ping",
+      "initiator": "script",
+      "t": 1790201993.440295
+    },
+    {
+      "url": "https://www.googleadservices.com/pagead/conversion/11427838655/?random=1790201993440&cv=11&fst=1790201993440&fmt=7&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je69m1v9134493205za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&u_w=800&u_h=600&url=https%3A%2F%2Fterrado.cl%2F&rcb=17&frm=0&tiba=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&npa=0&pscdl=noapi&auid=866437365.1790201993&label=PC3-CN2br6QcEL_1m8kq&hn=www.googleadservices.com&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uamb=0&uam=&uap=macOS&uapv=26.6.2&uaw=0&ec_mode=a&oid=GG_247966038.1790201993&oidsrc=3&ecsid2=164695485.1790201993&_tu=ABA&gcl_ctr=1~0~0~0&data=event%3Dgtag.config&gap.last_random=0&gap.last_label=0&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.443331
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=17&frm=0&apvc=0&auid=866437365.1790201993&dt=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&tid=AW-11427838655&en=page_view&dl=https%3A%2F%2Fterrado.cl%2F&scrsrc=www.googletagmanager.com&rnd=930002395.1790201993&navt=n&npa=0&gtm=45je69m1v9134493205z89180801086za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&tft=1790201993444&tfd=611&tids=AW-11427838655&fmt=8",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.44588
+    },
+    {
+      "url": "https://www.google.cl/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&_ng=1&tid=G-WXZM6489YG&cid=1698983957.1790201993&gtm=45je69m1v9134493205z89180801086za20gzb9180801086zd9180801086xf1&rcb=17&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&z=2061224965",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.446871
+    },
+    {
+      "url": "https://www.googleadservices.com/ccm/conversion/11427838655/?random=1790201993440&cv=11&fst=1790201993440&fmt=3&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je69m1v9134493205za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&u_w=800&u_h=600&url=https%3A%2F%2Fterrado.cl%2F&rcb=17&frm=0&tiba=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&npa=0&pscdl=noapi&auid=866437365.1790201993&label=PC3-CN2br6QcEL_1m8kq&hn=www.googleadservices.com&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uamb=0&uam=&uap=macOS&uapv=26.6.2&uaw=0&ec_mode=a&oid=GG_247966038.1790201993&oidsrc=3&ecsid2=164695485.1790201993&_tu=ABA&gcl_ctr=1~0~0~0&data=event%3Dgtag.config&gap.last_random=0&gap.last_label=0&category=acrcp_v1_512&em=tv.1&emd=tvd.1",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.446917
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LeBMuIqAAAAALb_uLH304im6OaXCiKsLWt7jqKp&co=aHR0cHM6Ly90ZXJyYWRvLmNsOjQ0Mw..&hl=es-419&v=kemdRjWFxNjgsGdhRslyEPwU&size=invisible&anchor-ms=20000&execute-ms=30000&cb=pwc4n6kjbici",
+      "method": "GET",
+      "type": "Document",
+      "initiator": "script",
+      "t": 1790201993.494868
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LeBMuIqAAAAALb_uLH304im6OaXCiKsLWt7jqKp&co=aHR0cHM6Ly90ZXJyYWRvLmNsOjQ0Mw..&hl=es-419&v=kemdRjWFxNjgsGdhRslyEPwU&size=invisible&anchor-ms=20000&execute-ms=30000&cb=y04nww1zp1zk",
+      "method": "GET",
+      "type": "Document",
+      "initiator": "script",
+      "t": 1790201993.501514
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LeBMuIqAAAAALb_uLH304im6OaXCiKsLWt7jqKp&co=aHR0cHM6Ly90ZXJyYWRvLmNsOjQ0Mw..&hl=es-419&v=kemdRjWFxNjgsGdhRslyEPwU&size=invisible&anchor-ms=20000&execute-ms=30000&cb=jp8nd6wknlh",
+      "method": "GET",
+      "type": "Document",
+      "initiator": "script",
+      "t": 1790201993.506068
+    },
+    {
+      "url": "https://www.google.com/pagead/1p-user-list/11427838655/?random=1790201993423&cv=11&fst=1790200800000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je69m1v9134493205z89180801086za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&u_w=800&u_h=600&url=https%3A%2F%2Fterrado.cl%2F&rcb=17&frm=0&tiba=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=866437365.1790201993&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uamb=0&uam=&uap=macOS&uapv=26.6.2&uaw=0&data=event%3Dgtag.config&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEAQM4h3Atsq7mul31X9yjVqFSJaug1PMZwAL0h7T2kCg7oxQlg8sa3NfQjl0h_IHcVa4ROVi8M0xAFUVjjXgRhe41bqSbmW_iIZhCE_s0YU8rz5p1XABcmMwE4Cu9bpl4qWPV-fR0986nGcGChkmc31fF_f-yMTpUlNYEFMC-Qt24ilcJp0KS9Taaz-nwMXzhcSpuUXOGHRe5EoVaEPOSLEkgxqmt_Ef65xBi2Scw3DVbvndnP0ZFOApmCegWIAu49q8iOYIzIxZvtumMyvEimHo2WVb67X6UcoV38IOImTS4&random=2005803665&rmt_tld=0&ipr=y",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.497671
+    },
+    {
+      "url": "https://www.google.cl/pagead/1p-user-list/11427838655/?random=1790201993423&cv=11&fst=1790200800000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je69m1v9134493205z89180801086za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&u_w=800&u_h=600&url=https%3A%2F%2Fterrado.cl%2F&rcb=17&frm=0&tiba=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=866437365.1790201993&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uamb=0&uam=&uap=macOS&uapv=26.6.2&uaw=0&data=event%3Dgtag.config&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS4QEAQM4h3Atsq7mul31X9yjVqFSJaug1PMZwAL0h7T2kCg7oxQlg8sa3NfQjl0h_IHcVa4ROVi8M0xAFUVjjXgRhe41bqSbmW_iIZhCE_s0YU8rz5p1XABcmMwE4Cu9bpl4qWPV-fR0986nGcGChkmc31fF_f-yMTpUlNYEFMC-Qt24ilcJp0KS9Taaz-nwMXzhcSpuUXOGHRe5EoVaEPOSLEkgxqmt_Ef65xBi2Scw3DVbvndnP0ZFOApmCegWIAu49q8iOYIzIxZvtumMyvEimHo2WVb67X6UcoV38IOImTS4&random=2005803665&rmt_tld=1&ipr=y",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "parser",
+      "t": 1790201993.497726
+    },
+    {
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/11427838655/?random=776591257&cv=11&fst=1790201993440&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je69m1v9134493205za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&u_w=800&u_h=600&url=https%3A%2F%2Fterrado.cl%2F&rcb=17&frm=0&tiba=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&npa=0&pscdl=noapi&auid=866437365.1790201993&label=PC3-CN2br6QcEL_1m8kq&hn=www.googleadservices.com&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uamb=0&uam=&uap=macOS&uapv=26.6.2&uaw=0&ec_mode=a&oidsrc=3&ecsid2=164695485.1790201993&_tu=ABA&gcl_ctr=1~0~0~0&data=event%3Dgtag.config&gap.last_random=0&gap.last_label=0&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5&ct_cookie_present=false&eoid=CkcKEQjw8c3VBhCU86WJ8qeu_tMBEjIACZjU4LDflFW-W_5kTtcsA44I1iE2kRPGxCWpHTMp-FrdkeYA_IJ9-vzUN3JJvCkr_vD_BwE&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCJPasQII29yxAgiH27ECCNPFsQII68yxAgjtzrECCNXPsQII9NqxAgji6rECCOjusQIIkuuxAgjJ47ECCJfUsQIIyduxAgjN5rECCI7nsQIIseGxAgiz4bECCKbdsQIIsN6xAgiA27ECCM3hsQI&cerd=ChCCsL4tueu-Ldftvi2d6bc4&fsk=ChAI8PHN1QYQ_dfp-t61lKEuEiwAqTZTSFUPRGk3L7wOs-zZzOJzfpNyBEDHPnS7UFeMSpmV9CLymV7gObKfSRoCLlQ&pscrd=IhMIsvWZj96FlwMV4kbdAh2GSBX_OhNodHRwczovL3RlcnJhZG8uY2wvQldDaEVJOFBITjFRWVF6SktULXM3QV9LdUJBUklzQUU3Mk03cEJYSUdDc0xpcTJvMC1KVTlaOEE5S3RONUNzSGt4R3ZPM0ZTOWd4dzU0cjY3b1d5NjJNNW96DAgJYggIABAAGAAgAA",
+      "method": "POST",
+      "type": "Fetch",
+      "initiator": "script",
+      "t": 1790201993.498837
+    },
+    {
+      "url": "https://scripts.clarity.ms/0.8.70/clarity.js",
+      "method": "GET",
+      "type": "Script",
+      "initiator": "script",
+      "t": 1790201993.508735
+    },
+    {
+      "url": "https://www.google.com/pagead/1p-conversion/11427838655/?random=776591257&cv=11&fst=1790201993440&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je69m1v9134493205za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&u_w=800&u_h=600&url=https%3A%2F%2Fterrado.cl%2F&rcb=17&frm=0&tiba=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&npa=0&pscdl=noapi&auid=866437365.1790201993&label=PC3-CN2br6QcEL_1m8kq&hn=www.googleadservices.com&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uamb=0&uam=&uap=macOS&uapv=26.6.2&uaw=0&ec_mode=a&oidsrc=3&ecsid2=164695485.1790201993&_tu=ABA&gcl_ctr=1~0~0~0&data=event%3Dgtag.config&gap.last_random=0&gap.last_label=0&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5&ct_cookie_present=false&eoid=CkcKEQjw8c3VBhCU86WJ8qeu_tMBEjIACZjU4LDflFW-W_5kTtcsA44I1iE2kRPGxCWpHTMp-FrdkeYA_IJ9-vzUN3JJvCkr_vD_BwE&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCJPasQII29yxAgiH27ECCNPFsQII68yxAgjtzrECCNXPsQII9NqxAgji6rECCOjusQIIkuuxAgjJ47ECCJfUsQIIyduxAgjN5rECCI7nsQIIseGxAgiz4bECCKbdsQIIsN6xAgiA27ECCM3hsQI&cerd=ChCCsL4tueu-Ldftvi2d6bc4&fsk=ChAI8PHN1QYQ_dfp-t61lKEuEiwAqTZTSFUPRGk3L7wOs-zZzOJzfpNyBEDHPnS7UFeMSpmV9CLymV7gObKfSRoCLlQ&pscrd=IhMIsvWZj96FlwMV4kbdAh2GSBX_OhNodHRwczovL3RlcnJhZG8uY2wvQldDaEVJOFBITjFRWVF6SktULXM3QV9LdUJBUklzQUU3Mk03cEJYSUdDc0xpcTJvMC1KVTlaOEE5S3RONUNzSGt4R3ZPM0ZTOWd4dzU0cjY3b1d5NjJNNW96DAgJYggIABAAGAAgAA&is_vtc=1&cid=CAQS4QEAQM4h3OMjhRHz06cFCVvZzZ2R-OuHo7EKWZSIEUCRyLy5ZhTIqITmCkPIHOQF4MH2meUQqGoctZ5-623ch-QmJYNTWfhkP-PMEJltAwlQxJIG6Z7I3J8xhWZS4LjTTY1X9f8sNk0P201VBTFuNvOSVjy9WBdvD_WenqNSYgxZVWCuPyP3e9y1wmSYx9pqxgBU2TPGm8jYtExK7jjVNKEEcZK7QzPVgEAIDtLAZTgh3gl2CSuI9ChTcadFJxxwZWSyGmBDP4M9AuBwVPujiTGjRU3WorfybWxu94aLTzrZz-o&random=4133830527",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "parser",
+      "t": 1790201993.625985
+    },
+    {
+      "url": "https://www.google.cl/pagead/1p-conversion/11427838655/?random=776591257&cv=11&fst=1790201993440&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je69m1v9134493205za20gzb9180801086zd9180801086xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&u_w=800&u_h=600&url=https%3A%2F%2Fterrado.cl%2F&rcb=17&frm=0&tiba=Hoteles%20Terrado%20-%20Encantados%20de%20Tenerte%20Aqu%C3%AD&npa=0&pscdl=noapi&auid=866437365.1790201993&label=PC3-CN2br6QcEL_1m8kq&hn=www.googleadservices.com&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uamb=0&uam=&uap=macOS&uapv=26.6.2&uaw=0&ec_mode=a&oidsrc=3&ecsid2=164695485.1790201993&_tu=ABA&gcl_ctr=1~0~0~0&data=event%3Dgtag.config&gap.last_random=0&gap.last_label=0&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5&ct_cookie_present=false&eoid=CkcKEQjw8c3VBhCU86WJ8qeu_tMBEjIACZjU4LDflFW-W_5kTtcsA44I1iE2kRPGxCWpHTMp-FrdkeYA_IJ9-vzUN3JJvCkr_vD_BwE&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCJPasQII29yxAgiH27ECCNPFsQII68yxAgjtzrECCNXPsQII9NqxAgji6rECCOjusQIIkuuxAgjJ47ECCJfUsQIIyduxAgjN5rECCI7nsQIIseGxAgiz4bECCKbdsQIIsN6xAgiA27ECCM3hsQI&cerd=ChCCsL4tueu-Ldftvi2d6bc4&fsk=ChAI8PHN1QYQ_dfp-t61lKEuEiwAqTZTSFUPRGk3L7wOs-zZzOJzfpNyBEDHPnS7UFeMSpmV9CLymV7gObKfSRoCLlQ&is_vtc=1&cid=CAQS4QEAQM4h3OMjhRHz06cFCVvZzZ2R-OuHo7EKWZSIEUCRyLy5ZhTIqITmCkPIHOQF4MH2meUQqGoctZ5-623ch-QmJYNTWfhkP-PMEJltAwlQxJIG6Z7I3J8xhWZS4LjTTY1X9f8sNk0P201VBTFuNvOSVjy9WBdvD_WenqNSYgxZVWCuPyP3e9y1wmSYx9pqxgBU2TPGm8jYtExK7jjVNKEEcZK7QzPVgEAIDtLAZTgh3gl2CSuI9ChTcadFJxxwZWSyGmBDP4M9AuBwVPujiTGjRU3WorfybWxu94aLTzrZz-o&random=4133830527&ipr=y&pscrd=IhMIsvWZj96FlwMV4kbdAh2GSBX_OhNodHRwczovL3RlcnJhZG8uY2wvQldDaEVJOFBITjFRWVF6SktULXM3QV9LdUJBUklzQUU3Mk03cEJYSUdDc0xpcTJvMC1KVTlaOEE5S3RONUNzSGt4R3ZPM0ZTOWd4dzU0cjY3b1d5NjJNNW96DAgJYggIABAAGAAgAIIBE3ABiAEB4gEBAvEBhjdld_FE3D8",
+      "method": "GET",
+      "type": "Fetch",
+      "initiator": "parser",
+      "t": 1790201993.626395
+    },
+    {
+      "url": "https://a.clarity.ms/collect",
+      "method": "POST",
+      "type": "XHR",
+      "initiator": "script",
+      "t": 1790201993.695346
+    },
+    {
+      "url": "https://c.clarity.ms/c.gif",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "other",
+      "t": 1790201993.746053
+    },
+    {
+      "url": "https://terrado.cl/content/themes/meat-theme/dist/images/favicons/favicon-32x32.png",
+      "method": "GET",
+      "type": "Other",
+      "initiator": "other",
+      "t": 1790201993.750422
+    },
+    {
+      "url": "https://c.bing.com/c.gif?ctsa=mr&CtsSyncId=70C511F8F7B94F188AC99DEDCF3D788C&RedC=c.clarity.ms&MXFR=2F86805ED66F671A0C4B9783D26F6955",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "other",
+      "t": 1790201993.911918
+    },
+    {
+      "url": "https://c.clarity.ms/c.gif?ctsa=mr&CtsSyncId=70C511F8F7B94F188AC99DEDCF3D788C&MUID=189CA14AE14860FA2338B697E0346189",
+      "method": "GET",
+      "type": "Image",
+      "initiator": "other",
+      "t": 1790201994.097348
+    },
+    {
+      "url": "https://a.clarity.ms/collect",
+      "method": "POST",
+      "type": "XHR",
+      "initiator": "script",
+      "t": 1790201994.70437
+    }
+  ],
+  "cookies": [
+    {
+      "name": "wp-wpml_current_language",
+      "value": "es",
+      "domain": "terrado.cl",
+      "path": "/",
+      "expires": -1,
+      "size": 26,
+      "httpOnly": false,
+      "secure": false,
+      "session": true,
+      "sameSite": "Lax",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_fbp",
+      "value": "fb.1.1790201993280.54654506532748761",
+      "domain": ".terrado.cl",
+      "path": "/",
+      "expires": 1797977993,
+      "size": 40,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "sameSite": "Lax",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_ga_XQ0JXN46PY",
+      "value": "GS2.1.s1790201993$o1$g0$t1790201993$j60$l0$h907360614",
+      "domain": ".terrado.cl",
+      "path": "/",
+      "expires": 1824761993.37176,
+      "size": 67,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1698983957.1790201993",
+      "domain": ".terrado.cl",
+      "path": "/",
+      "expires": 1824761993.439079,
+      "size": 30,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "CLID",
+      "value": "a3df1923893945f597f24c806dcd6534.20260923.20270923",
+      "domain": "www.clarity.ms",
+      "path": "/",
+      "expires": 1821737993.436976,
+      "size": 54,
+      "httpOnly": true,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_ga_WXZM6489YG",
+      "value": "GS2.1.s1790201993$o1$g0$t1790201993$j60$l0$h0",
+      "domain": ".terrado.cl",
+      "path": "/",
+      "expires": 1824761993.43889,
+      "size": 59,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.866437365.1790201993.-.-.1790201993.164695485.1790201993.1790201993",
+      "domain": ".terrado.cl",
+      "path": "/",
+      "expires": 1797977993,
+      "size": 78,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "IDE",
+      "value": "AHWqTUlqKGpZE8Uj8Enji4uHMA4BWMvH_R1601OLSHCzqGuOkNFToX843oI9A4VD",
+      "domain": ".doubleclick.net",
+      "path": "/",
+      "expires": 1824761993.4586,
+      "size": 67,
+      "httpOnly": true,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_clck",
+      "value": "1er4txg%5E2%5Eg9p%5E0%5E2457",
+      "domain": ".terrado.cl",
+      "path": "/",
+      "expires": 1821737993,
+      "size": 33,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "MUID",
+      "value": "189CA14AE14860FA2338B697E0346189",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": 1823897995.09701,
+      "size": 36,
+      "httpOnly": false,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "High",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "MR",
+      "value": "0",
+      "domain": ".c.bing.com",
+      "path": "/",
+      "expires": 1790806795.097067,
+      "size": 3,
+      "httpOnly": false,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "SRM_B",
+      "value": "189CA14AE14860FA2338B697E0346189",
+      "domain": ".c.bing.com",
+      "path": "/",
+      "expires": 1823897995.09708,
+      "size": 37,
+      "httpOnly": false,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "SM",
+      "value": "C",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": -1,
+      "size": 3,
+      "httpOnly": false,
+      "secure": true,
+      "session": true,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "MUID",
+      "value": "189CA14AE14860FA2338B697E0346189",
+      "domain": ".clarity.ms",
+      "path": "/",
+      "expires": 1823897994.228158,
+      "size": 36,
+      "httpOnly": false,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "High",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "MR",
+      "value": "0",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": 1790806794.228177,
+      "size": 3,
+      "httpOnly": false,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "ANONCHK",
+      "value": "0",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": 1790202594.228188,
+      "size": 8,
+      "httpOnly": false,
+      "secure": true,
+      "session": false,
+      "sameSite": "None",
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    },
+    {
+      "name": "_clsk",
+      "value": "1280xdf%5E1790201994522%5E1%5E1%5Ea.clarity.ms%2Fcollect",
+      "domain": ".terrado.cl",
+      "path": "/",
+      "expires": 1790288394,
+      "size": 61,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sourcePort": 443
+    }
+  ],
+  "probe": {
+    "titulo": "Hoteles Terrado - Encantados de Tenerte Aquí",
+    "urlFinal": "https://terrado.cl/",
+    "localStorage": [
+      "lastExternalReferrer",
+      "_gcl_ls",
+      "lastExternalReferrerTime"
+    ],
+    "candidatos": [
+      {
+        "tag": "DIV",
+        "cls": "popup--cookie__content",
+        "id": "",
+        "pos": "static",
+        "z": "auto",
+        "rect": {
+          "x": 70,
+          "y": 652,
+          "w": 410,
+          "h": 178
+        },
+        "texto": "Uso de cookies Este sitio utiliza cookies para almacenar preferencias, analizar la interacción y mejorar la experiencia general del usuario. Política de cookies RECHAZAR ACEPTAR"
+      },
+      {
+        "tag": "DIV",
+        "cls": "popup--cookie__box-titles",
+        "id": "",
+        "pos": "static",
+        "z": "auto",
+        "rect": {
+          "x": 70,
+          "y": 652,
+          "w": 410,
+          "h": 110
+        },
+        "texto": "Uso de cookies Este sitio utiliza cookies para almacenar preferencias, analizar la interacción y mejorar la experiencia general del usuario. Política de cookies"
+      },
+      {
+        "tag": "DIV",
+        "cls": "popup--cookie__title",
+        "id": "",
+        "pos": "static",
+        "z": "auto",
+        "rect": {
+          "x": 70,
+          "y": 652,
+          "w": 410,
+          "h": 27
+        },
+        "texto": "Uso de cookies"
+      },
+      {
+        "tag": "DIV",
+        "cls": "popup--cookie__description",
+        "id": "",
+        "pos": "static",
+        "z": "auto",
+        "rect": {
+          "x": 70,
+          "y": 689,
+          "w": 410,
+          "h": 42
+        },
+        "texto": "Este sitio utiliza cookies para almacenar preferencias, analizar la interacción y mejorar la experiencia general del usuario."
+      },
+      {
+        "tag": "DIV",
+        "cls": "popup--cookie__box-btns",
+        "id": "",
+        "pos": "static",
+        "z": "auto",
+        "rect": {
+          "x": 70,
+          "y": 782,
+          "w": 410,
+          "h": 48
+        },
+        "texto": "RECHAZAR ACEPTAR"
+      },
+      {
+        "tag": "DIV",
+        "cls": "card--testimonial__content",
+        "id": "",
+        "pos": "static",
+        "z": "auto",
+        "rect": {
+          "x": 2814,
+          "y": 5595,
+          "w": 293,
+          "h": 352
+        },
+        "texto": "5,0 Todo lo necesario para volver Muy buen hotel. Agradable el personal. La ubicación es precisa. El desayuno es aceptable y abundante. Volvería. Diego Pablo Gaete 29 octubre 2024"
+      },
+      {
+        "tag": "DIV",
+        "cls": "card--testimonial__box-top",
+        "id": "",
+        "pos": "static",
+        "z": "auto",
+        "rect": {
+          "x": 2814,
+          "y": 5595,
+          "w": 293,
+          "h": 145
+        },
+        "texto": "5,0 Todo lo necesario para volver Muy buen hotel. Agradable el personal. La ubicación es precisa. El desayuno es aceptable y abundante. Volvería."
+      },
+      {
+        "tag": "DIV",
+        "cls": "card--testimonial__text",
+        "id": "",
+        "pos": "static",
+        "z": "auto",
+        "rect": {
+          "x": 2814,
+          "y": 5677,
+          "w": 293,
+          "h": 63
+        },
+        "texto": "Muy buen hotel. Agradable el personal. La ubicación es precisa. El desayuno es aceptable y abundante. Volvería."
+      },
+      {
+        "tag": "DIV",
+        "cls": "footer--default__box-bottom",
+        "id": "",
+        "pos": "static",
+        "z": "auto",
+        "rect": {
+          "x": 75,
+          "y": 7126,
+          "w": 1130,
+          "h": 97
+        },
+        "texto": "Términos y condiciones Términos y condiciones Políticas de Privacidad Políticas de Privacidad © 2026 Hoteles Terrado. Todos los Derechos Reservados"
+      },
+      {
+        "tag": "DIV",
+        "cls": "footer--default__box-bottom__content",
+        "id": "",
+        "pos": "static",
+        "z": "auto",
+        "rect": {
+          "x": 75,
+          "y": 7126,
+          "w": 1130,
+          "h": 97
+        },
+        "texto": "Términos y condiciones Términos y condiciones Políticas de Privacidad Políticas de Privacidad © 2026 Hoteles Terrado. Todos los Derechos Reservados"
+      },
+      {
+        "tag": "DIV",
+        "cls": "footer--default__box-bottom__menu",
+        "id": "",
+        "pos": "static",
+        "z": "auto",
+        "rect": {
+          "x": 75,
+          "y": 7159,
+          "w": 367,
+          "h": 40
+        },
+        "texto": "Términos y condiciones Términos y condiciones Políticas de Privacidad Políticas de Privacidad"
+      },
+      {
+        "tag": "DIV",
+        "cls": "footer--default__box-bottom__menu__items",
+        "id": "",
+        "pos": "static",
+        "z": "auto",
+        "rect": {
+          "x": 75,
+          "y": 7159,
+          "w": 367,
+          "h": 23
+        },
+        "texto": "Términos y condiciones Términos y condiciones Políticas de Privacidad Políticas de Privacidad"
+      }
+    ],
+    "casillas": [],
+    "fijos": [
+      {
+        "tag": "HEADER",
+        "cls": "header header--default headroom headroom--top headroom--not-bottom",
+        "id": "header",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 119
+        },
+        "texto": "CONOCE MÁS Otros Servicios Nosotros Blogs Centro de ayuda TELÉFONO RESERVAS 600 5820 800 CONTACTO reservas1@terrado.cl Explora aquí todo lo que tenemos para ofrecer Consultas recomendadas: HOTELES DES"
+      },
+      {
+        "tag": "ARTICLE",
+        "cls": "popup popup--cookie popup--cookie--show",
+        "id": "",
+        "rect": {
+          "x": 50,
+          "y": 632,
+          "w": 450,
+          "h": 218
+        },
+        "texto": "Uso de cookies Este sitio utiliza cookies para almacenar preferencias, analizar la interacción y mejorar la experiencia general del usuario. Política de cookies RECHAZAR ACEPTAR"
+      },
+      {
+        "tag": "DIV",
+        "cls": "Vue-Toastification__container top-left",
+        "id": "",
+        "rect": {
+          "x": 16,
+          "y": 16,
+          "w": 600,
+          "h": 900
+        },
+        "texto": ""
+      },
+      {
+        "tag": "DIV",
+        "cls": "Vue-Toastification__container top-center",
+        "id": "",
+        "rect": {
+          "x": 340,
+          "y": 16,
+          "w": 600,
+          "h": 900
+        },
+        "texto": ""
+      },
+      {
+        "tag": "DIV",
+        "cls": "Vue-Toastification__container top-right",
+        "id": "",
+        "rect": {
+          "x": 664,
+          "y": 16,
+          "w": 600,
+          "h": 900
+        },
+        "texto": ""
+      },
+      {
+        "tag": "DIV",
+        "cls": "Vue-Toastification__container bottom-left",
+        "id": "",
+        "rect": {
+          "x": 16,
+          "y": -16,
+          "w": 600,
+          "h": 900
+        },
+        "texto": ""
+      },
+      {
+        "tag": "DIV",
+        "cls": "Vue-Toastification__container bottom-center",
+        "id": "",
+        "rect": {
+          "x": 340,
+          "y": -16,
+          "w": 600,
+          "h": 900
+        },
+        "texto": ""
+      },
+      {
+        "tag": "DIV",
+        "cls": "Vue-Toastification__container bottom-right",
+        "id": "",
+        "rect": {
+          "x": 664,
+          "y": -16,
+          "w": 600,
+          "h": 900
+        },
+        "texto": ""
+      }
+    ],
+    "enlaces": [
+      {
+        "texto": "Política de cookies",
+        "href": "https://terrado.cl/content/uploads/2026/06/Politica-de-Cookies.pdf"
+      },
+      {
+        "texto": "Términos y condiciones Términos y condiciones",
+        "href": "https://terrado.cl/terminos-y-condiciones/"
+      },
+      {
+        "texto": "Políticas de Privacidad Políticas de Privacidad",
+        "href": "https://terrado.cl/politicas-de-privacidad/"
+      }
+    ],
+    "totalEnlaces": 171
+  },
+  "errores": []
+}
