@@ -1,0 +1,73 @@
+{
+ "fecha": "2026-10-16T22:09:34.678Z",
+ "unidad": "kB = 1.000 bytes",
+ "combeauH1": {
+  "status": 200,
+  "htmlSha256": "8e785562ae5999e3f7d701daf30a18c4dfc6461cb3758fffd7b915809a4a5403",
+  "h1Servidos": [
+   "<h1>Un buen retrato no se toma. Se construye<br>dirigiendo a la persona hasta su mejor versión.<br><br></h1>"
+  ],
+  "dom": [
+   {
+    "textContent": "Un buen retrato no se toma. Se construyedirigiendo a la persona hasta su mejor versión.",
+    "innerText": "Un buen retrato no se toma. Se construye\ndirigiendo a la persona hasta su mejor versión.\n\n"
+   }
+  ],
+  "textContentPegado": true,
+  "innerTextSeparado": true
+ },
+ "beto3": {
+  "original": {
+   "url": "https://bernardocombeau.cl/uploads/beto3.jpg",
+   "status": 200,
+   "tipo": "image/jpeg",
+   "bytes": 804697,
+   "kB": 805
+  },
+  "cdn828": {
+   "url": "https://bernardocombeau.cl/.netlify/images?url=%2Fuploads%2Fbeto3.jpg&w=828&h=828&q=80",
+   "status": 200,
+   "tipo": "image/webp",
+   "bytes": 94576,
+   "kB": 95
+  }
+ },
+ "spindlelabPosters": [
+  {
+   "url": "https://spindlelab.cl/video/hero-hilo-de-oro.jpg",
+   "status": 200,
+   "tipo": "image/jpeg",
+   "bytes": 40337,
+   "kB": 40
+  },
+  {
+   "url": "https://spindlelab.cl/video/problema.jpg",
+   "status": 200,
+   "tipo": "image/jpeg",
+   "bytes": 193382,
+   "kB": 193
+  },
+  {
+   "url": "https://spindlelab.cl/video/servicios-oficina.jpg",
+   "status": 200,
+   "tipo": "image/jpeg",
+   "bytes": 189850,
+   "kB": 190
+  },
+  {
+   "url": "https://spindlelab.cl/video/metodo.jpg",
+   "status": 200,
+   "tipo": "image/jpeg",
+   "bytes": 194894,
+   "kB": 195
+  },
+  {
+   "url": "https://spindlelab.cl/video/evidencia-oficina.jpg",
+   "status": 200,
+   "tipo": "image/jpeg",
+   "bytes": 170533,
+   "kB": 171
+  }
+ ],
+ "spindlelabPostersTotalKB": 789
+}

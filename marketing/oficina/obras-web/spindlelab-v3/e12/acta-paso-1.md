@@ -336,3 +336,306 @@ editorial (pasa: no es «calma editorial»).
 - `capturas/`: re-medición de Koto y A&P (`koto-trabajo-1440-remedido.jpg`, `koto-home-1440-remedido.jpg`,
   `koto-cursor-showreel-remedido.jpg`, `ap-trabajo-1440-remedido.jpg`); el tablero a 360, 390, 768 y 1440 (primera
   pantalla), entero a 390 y 1440 en tramos; las demos y los recortes de los defectos 3, 6 y 8.
+
+---
+---
+
+# Acta de QA · E12 paso 1 · vuelta 2
+
+**16-oct-2026, 19:05 a 19:20 (Chile) · Javiera (QA crítico web), en subagente de contexto limpio** · rama
+`claude/magical-franklin-ckfki2`, revisado sobre `bcd2a8b` (los tres commits de arreglo: `0938ddd` brief, `b3a1105`
+inventario, `bcd2a8b` lock y tablero) · aprueba nadie: esto es evidencia; decide Ramón.
+
+**Qué se revisó:** lo mismo que en la vuelta 1 (`medicion/`, `brief-de-obra.md`, `inventario-casos.md` y su JSON,
+`lock-koto.md`, `tableros/e12-laboratorio/tablero.html`), contra `insumos-ramon-16oct.md`, el encargo, `CLAUDE.md`, el
+manual y los dos detectores. Primero, cada uno de los 14 defectos de la vuelta 1; después, los seis puntos del encargo
+otra vez, con herramientas propias (no corrí `verificar.mjs`, `atmosfera.mjs` ni las de Diego). Leí los diffs, no los
+mensajes de commit. Chromium 141.0.7390.37 headless, Playwright, por el proxy de la sesión. Herramientas, crudos y
+capturas en `e12/qa-paso-1/vuelta-2/`.
+
+## Veredicto: **Con reparos**
+
+**Los 14 defectos de la vuelta 1 están cerrados**, cada uno medido o leído en el archivo (tabla de §1). La medición
+de Koto y A&P sigue siendo verdadera (18 filas re-medidas hoy, unos 50 valores, incluidos los que el lock agregó en su segunda
+vuelta: degradados, dibujos grandes y las etiquetas de A&P), el inventario repite sus chequeos señal por señal, no
+hay ninguna cifra inventada ni ningún prospecto nombrado, y el tablero pasa contrato, cuatro anchos, imágenes y demos.
+
+**Los reparos son cuatro defectos nuevos, todos de texto** (§3). Tres estaban ya en `d2056ec` y se me pasaron en la
+vuelta 1; uno (el 15) se volvió una contradicción a la vista cuando el tablero sumó la fila de las etiquetas:
+
+- **Antes de mandarle el enlace a Ramón: 15, 16 y 17.** El tablero le dice a Ramón algo de A&P que la medición
+  desmiente (15), y una idea suya, el **cursor magnético**, no aparece contestada ni en el brief ni en el tablero
+  aunque el lock §8 ya la decide (16 y 17). Es la misma clase de hueco que el defecto 1: que Ramón no encuentre una
+  idea suya contestada.
+- **En la misma pasada:** 18 (nit).
+
+Son cuatro líneas de texto. No hace falta una vuelta 3 completa: se comprueban con `grep` sobre los tres archivos y
+una captura del tablero §2 y §3 (las búsquedas exactas van en la columna «Cierre»).
+
+---
+
+## 1 · Los 14 defectos de la vuelta 1, uno por uno
+
+| N.º | Dueño | Cómo lo verifiqué | Resultado |
+|---|---|---|---|
+| 1 | Mauro | `brief-de-obra.md` §4 releído fila por fila contra `insumos-ramon-16oct.md`: filas nuevas para «Form & Intelligence», las dos de atmósfera («microinteracciones táctiles»; «sin redes neuronales ni gradientes púrpura»), el párrafo «[ LAB_01 ] … para líderes con visión» con «LAB_STATUS» y «DEPLOYMENT_CYCLE», la mono y la iconografía (las dos, «lo fija el lock §4»). Cada una con veredicto y porqué | **Cerrado.** (Queda una idea sin fila: el cursor magnético, defecto 16 nuevo) |
+| 2 | Lucía | Lock §4: tres filas nuevas contrastadas con lo medido (filosofía, atmósfera, etiquetas); §7 dice por qué la línea mono y no la etiqueta de A&P, con cuatro razones medidas. Tablero §3: los tres puntos están («Pediste · Lo medido · Qué hacemos»), con `img/ap-etiquetas.jpg` (mirada: la pieza de Vans con «New Ambition» y «New Expressions»; el `alt` lo describe) | **Cerrado.** Re-medí lo que esas filas afirman (§2.1): coincide |
+| 3 | Lucía | `crudo/auditoria-tablero.json`, `fichas`: un solo `style` por ficha; las tres claras con `outline: solid 1px` (`--linea-seccion`). `capturas/fichas-de-color-1440.jpg`: la ficha del papel se ve | **Cerrado** |
+| 4 | Lucía | (a) `::before` y `::after` de `.registro` computados: `1px rgba(17, 17, 17, 0.18)`, en las dos secciones; el SVG usa `rgba(17,17,17,.18)`, `.08` y `var(--gris)`, sin tinta. (b) El texto dice «donde el borde de la sección cruza el límite de la barra lateral (x = 336). Ese límite no se dibuja»; medido: el lado termina en x = 336 sin borde, el trazo vertical en x = 335. (c) Lock §10 y §19: «desvío del brief de obra, registrado», reversible. `capturas/registro-cruz-1440-x6.png` | **Cerrado** |
+| 5 | Lucía | Jerarquía en los cuatro anchos: 0 saltos (`saltos: []`); los casos son `h3` | **Cerrado** |
+| 6 | Lucía | `code` del `caption`: `spring() 11px none`, `datos/resortes.json 11px none`. Texto más chico del tablero: 11 px en los cuatro anchos | **Cerrado** |
+| 7 | Lucía | 0 bloques con paréntesis desbalanceados (`li, td, p, figcaption, dd, th`); la fila de A&P termina «…el resumen lo redondea a 80 ms)» | **Cerrado** |
+| 8 | Lucía | A 390: `thead` oculto y **34 de 34** celdas con su rótulo visible (`td::before` con `attr(data-rotulo)`). `capturas/tabla-resortes-390.jpg` | **Cerrado** |
+| 9 | Lucía | (a) La muestra dice «Build de la vista previa: f0d911c, 14-oct-2026». Comprobado: `f0d911c` es el último commit que toca `spindlelab-astro/` (14-oct 19:38Z) y `/v3/trabajo/` de la vista previa es idéntica byte a byte a `dist/` (sha256 `e7c9a92a…` en los dos). (b) Sin JS, las dos `.reloj` dicen «--:--»; con JS, la hora de Santiago y el huso los calcula `Intl` (vi 19:11 y 19:12 UTC-3) | **Cerrado** |
+| 10 | Lucía | «Los kB, sí, con fecha y método» aparece 0 veces; la nota va una vez arriba de los casos («Se pueden publicar los kB… En cada caso queda como «kB sí, ms no»»). «Publicable:» con mayúscula: 0 | **Cerrado** |
+| 11 | Lucía | Lock §6.2 y §6.3 traen las cuatro URLs; las cuatro responden 200 hoy y son SIL OFL 1.1 (`crudo/licencias-urls.txt`) | **Cerrado** |
+| 12 | Mauro | (a) §4 Telemetría: A&P, el reloj; Koto, cuatro (hora del visitante con huso, cinco estudios, conteos, ficha), como `medicion/koto/resumen.md:24-25`. (b) «seis» en §4 Índice y §8.3; el tablero §6 también. (c) §2: «4 respuestas de 69 correos, 5,8 %, contra 1 de 72 en salud, 1,4 %; `checkpoint-dia77-2026-09-21.md:36-37`»: las dos líneas citadas dicen eso | **Cerrado** |
+| 13 | Inventario | Volví a leer la portada de Combeau (`herramientas/verificar-servido.mjs` → `crudo/verificar-servido.json`): servido `Se construye<br>dirigiendo`, `textContent` «Se construyedirigiendo», `innerText` con salto de línea, mismo sha256 de HTML que el crudo de Diego (`8e785562…`). El valor dice ahora «leído como textContent», con método, dos crudos y la fuente del 10-oct. Unidad: `beto3.jpg` 804.697 B = 805 kB y 94.576 B = 95 kB; 0 «KB» o KiB en el inventario fuera de la tabla de correcciones; los 24 crudos con sha256 y bytes iguales a los del JSON | **Cerrado** |
+| 14 | Lucía | Tablero: «1,33 y 1,20» (0 veces «1,32»); 0 veces «1,5 MB». Lock §6.2 «1,33», §18 «1,63 MB» = 1.631.266 B en disco | **Cerrado** |
+
+---
+
+## 2 · Lo medido, con su evidencia (los seis puntos del encargo)
+
+### 2.1 · La medición es real (punto 1)
+
+`herramientas/remedir-referentes.mjs` y `herramientas/remedir-koto-marco.mjs`, 16-oct 22:06 a 22:08Z, 1440 × 900 y
+390 × 844 táctil. Crudos: `crudo/referentes-remedidos.json`, `crudo/koto-marco-remedido.json`.
+
+| Sitio | Valor | `medicion.json` / lock | Hoy (QA) | |
+|---|---|---|---|---|
+| Koto | Display a 1440 | gtKotoheimCondensed 300, 48 px, 1,0, −0,01em | gtKotoheimCondensed 300, 48 px, 48 px, −0,48 px | coincide |
+| Koto | Display a 390 | 36 px, 1,0 | 36 px, 36 px | coincide |
+| Koto | Fondo | `#060606` | `rgb(6, 6, 6)` | coincide |
+| Koto | Margen lateral | 16 px | contenedor con `padding` 16 px (x = 16, 1408 de ancho); el título queda en x = 28 porque su caja trae otro `padding` de 12 dentro del showreel, que va a sangre | coincide |
+| Koto | Transición del nav | color, 167 ms, lineal, blanco al 70 % | `0.167s linear`, `oklab(0.99… / 0.7)` | coincide |
+| Koto | Cursor sobre el showreel | «PLAY», vidrio negro al 20 %, `blur(40px)`, radio 2, padding 6, Mono 11 MAYÚSCULAS | `[data-ref-cursor]` «Play» en `uppercase`, gtKotoheimMono 11 px, `oklab(0.122 … / 0.2)`, `blur(40px)`, 2 px, 6 px; puntero del sistema `none` | coincide |
+| Koto | Barra de `/work` y su titular | 320 px desde x = 16; 24 px, 300 | 320 px desde x = 16; «Our work» 24 px, 300 | coincide |
+| Koto | `prefers-reduced-motion` | 0 reglas | 0 reglas | coincide |
+| Koto | Degradados en home y `/work` (lock §4, nuevo) | 13 y 12, todos neutros, 0 con color, 0 púrpura | 13 y 12; croma máximo 0 en todos; 0 púrpura | coincide |
+| Koto | Dibujos grandes en `canvas` o `svg` (nuevo) | 0 | 0 en las dos páginas | coincide |
+| A&P | Display a 1440 (h1 de Work) | Messina Sans 400, 35 px, 48, −0,35 px | igual | coincide |
+| A&P | Fondo | `#F9F7F3` | `rgb(249, 247, 243)` | coincide |
+| A&P | Margen lateral | 44 px | `padding` 44 / 44 | coincide |
+| A&P | Transición del cursor | `.2s ease-out` | `0.2s ease-out` | coincide |
+| A&P | Cursor en reposo / sobre un proyecto | 16 × 16 gris al 20 %, `blur(5px)`; pastilla 139,5 × 40 «View Project» | igual, sobre `/work/vans`; puntero del sistema `none` | coincide |
+| A&P | Lenis | 1.1.8 | presente (`html.lenis`) | coincide |
+| A&P | Etiquetas bajo cada pieza (lock §4 y §7, nuevo) | filete 1 px `#8C8C8C` al 80 %, radio 3,4, 28 px, pictograma 20 × 20, separador 1 px; una o dos por pieza (12 y 8 de 20) | `1px solid rgba(140, 140, 140, 0.8)`, 3,4 px, 28 px, icono 20 × 20, separador de 1 px; 28 etiquetas en 20 piezas: 12 con una y 8 con dos; texto 14 px al mismo gris | coincide |
+| A&P | Degradados y dibujos grandes (nuevo) | 0 y 0 | 0 y 0 en home y `/work` | coincide |
+
+**18 de 18 filas coinciden.** Las capturas existen y son de esos sitios: las 66 de `koto/medicion.json` y las 62 de
+`accept-and-proceed/medicion.json` están en disco (incluida la nueva `etiquetas-detalle-1440.jpg`, que es la pieza de
+Vans); mis capturas de hoy (`capturas/koto-trabajo-1440.jpg`, `koto-home-1440.jpg`, `koto-home-390.jpg`,
+`koto-cursor-showreel-1440.jpg`, `ap-cursor-proyecto-1440.jpg`, `ap-home-1440.jpg`) muestran las mismas
+composiciones; en `/work` de Koto se ve el reloj del visitante («19:06 UTC-3») y los conteos del filtro («09»).
+
+### 2.2 · El inventario es verdadero (punto 2)
+
+`herramientas/repetir-chequeo.sh` (22:09Z), sobre dos sitios (Combeau no estaba en la vuelta 1):
+
+| Dominio | Inventario (17:51Z) | QA (22:09Z) | |
+|---|---|---|---|
+| bernardocombeau.cl | 76, 21 señales, peso 100 | **76**, 21, 100; 16 ok y los mismos 5 pendientes (perfiles externos, preguntas frecuentes, títulos como pregunta, fecha, contenido de la portada) | igual, señal por señal |
+| spindlelab.cl | 85, 21, 100 | **85**; 18 ok, los mismos 3 pendientes | igual, señal por señal |
+| Pesos por bloque | 30 + 40 + 30 | 30 + 40 + 30 en los dos | igual |
+
+Crudos con cabeceras: `crudo/chequeo-bernardocombeau.cl.json`, `crudo/chequeo-spindlelab.cl.json`.
+Lo que cambió en el inventario desde la vuelta 1, releído en lo servido (`crudo/verificar-servido.json`): el `h1` de
+Combeau (defecto 13), `beto3.jpg` en 805 y 95 kB, y los posters de la portada de spindlelab.cl: **cinco**, cuatro de
+170.533 a 194.894 B de cuerpo y el del hero de 40.337 B (el inventario da 171 a 196 kB y 41 kB porque cuenta bytes
+transferidos con cabeceras, como dice su método; cuadra). Recorrí el JSON: las 16 cifras de los seis proyectos tienen
+`fecha`, `metodo` y `crudo`; los 30 ingredientes, su `evidencia`; los 24 crudos, sha256 y bytes iguales.
+
+### 2.3 · Honestidad en todo lo que verá Ramón (punto 3)
+
+- **Cifras inventadas:** ninguna. El 40 % y el +150 % solo en «Lo que no se puede decir», rotulados como ejemplos. Las
+  frases de muestra de letra van rotuladas («Texto de muestra, no el definitivo»). Cada cifra de los casos, con fecha,
+  método y si se publica.
+- **Telemetría:** las tres líneas mono de la muestra son verdaderas (tipo y año de Verifica; la hora y el huso
+  calculados para Santiago; «Trabajo (6)» son las seis entradas del inventario; el build `f0d911c` del 14-oct,
+  comprobado en §1, defecto 9). Sin JS no queda ninguna hora fija.
+- **Prospectos:** ninguno nombrado en el brief, el lock ni el tablero. Bernardo Combeau es cliente con permiso verbal
+  del caso, y sus mediciones van marcadas «pide OK escrito». El competidor del commit `7696d63`, sin nombre.
+- **Lo que dice de A&P:** una frase la medición la desmiente (defecto 15).
+- **Raya de muletilla:** 0 en el tablero, el brief, el lock y el inventario. **Verbos de folleto:** 0.
+
+### 2.4 · El brief (punto 4)
+
+Las cuatro respuestas de Ramón se respetan (§1, §4, §6.1, §6.2, §6.4); cinco preguntas con opción recomendada (§8);
+13 criterios verificables (§7). Recorrí de nuevo cada idea de `insumos-ramon-16oct.md` (las cuatro secciones del brief
+pegado, los cinco puntos del segundo texto y las cuatro respuestas) contra §4: todas tienen fila con veredicto y
+porqué **menos una**: «Úsalo únicamente para estados activos, **cursores magnéticos** y telemetría de código vivo»
+(insumos §2, acento). El lock §8 la decide («Magnetismo: No», con lo medido), pero ni el brief ni el tablero la
+contestan (defectos 16 y 17). Las fuentes de PP Neue Montreal y Söhne, que Ramón dio como ejemplos, quedan contestadas
+por la fila de la display (lo medido es lo contrario: estrecha y liviana) y son de pago: no es defecto.
+
+### 2.5 · El lock (punto 5)
+
+- §4 contrasta cada punto del brief con lo medido, incluidas las tres filas nuevas; el magnetismo está en §8, con su
+  porqué. **Una fila no cuadra con la medición**: §3, «Tabla con filetes de 1 px … Su único uso de líneas» (defecto
+  15); el propio §2.4 y la fila de etiquetas de §4 dicen lo contrario.
+- Letras: Mona Sans, Google Sans Flex y DM Mono, SIL OFL 1.1, con la URL de su licencia (las cuatro, 200 hoy). Ninguno
+  de los dos detectores las marca; Space Grotesk, Plus Jakarta y Geist Mono quedan fuera con su porqué medido.
+- Contraste recalculado con mi fórmula (`herramientas/contraste-qa.py` → `crudo/contraste-qa.json`): los 24 pares
+  igual que en la vuelta 1. **El cobalto como texto** aparece solo en la lectura del resorte (16 px sobre la placa,
+  6,59:1; medido en la demo: `rgb(0, 41, 255)` sobre `rgb(239, 239, 234)`), y el blanco sobre el círculo da 7,61:1:
+  **pasa AA donde se usa.** Las fichas claras llevan ahora un contorno de 1,47:1 contra el papel: es decorativo (el
+  hex va escrito al lado) y se ve.
+- Motion 13.5.0, publicado el 1-oct: 15 días, cumple.
+
+### 2.6 · El tablero (punto 6)
+
+`herramientas/auditar-tablero.mjs` (envuelve el archivo como el publicador y lo sirve en 127.0.0.1) →
+`crudo/auditoria-tablero.json`; `herramientas/tab-recorrido.mjs` → `crudo/tab-recorrido.json`; texto visible a 1440
+en `crudo/tablero-texto-1440.txt`.
+
+| Ítem | Medido | |
+|---|---|---|
+| `<title>` | «Tablero laboratorio E12», 3 palabras | cumple |
+| `meta claude:viewport-fit-sides` | `cover` | cumple |
+| Gutter con safe-area | `max(16px, env(safe-area-inset-left/right, 0px))` | cumple |
+| Tokens en `:root` · fondo en `body` | 10 tokens · `var(--papel)` | cumple |
+| Hojas externas | solo Google Fonts (Mona Sans, Google Sans Flex, DM Mono, `display=swap`) | cumple |
+| Scripts externos | solo `cdn.jsdelivr.net/npm/motion@13.5.0/dist/motion.js` | cumple |
+| Sin doctype / html / head / body | ninguno | cumple |
+| Atributos `style` duplicados | 0 (eran 3) | cumple |
+
+| Ancho | `scrollWidth` / `clientWidth` | Salen | h1 | Saltos | img cargadas | Textos | Bajo AA | Más chico | Errores |
+|---|---|---|---|---|---|---|---|---|---|
+| 360 (táctil, dpr 2) | 360 / 360 | 0 | 1 | 0 | 23 / 23 | 723 | 0 | 11 px | 0 |
+| 390 (táctil, dpr 2) | 390 / 390 | 0 | 1 | 0 | 23 / 23 | 723 | 0 | 11 px | 0 |
+| 768 | 768 / 768 | 0 | 1 | 0 | 23 / 23 | 723 | 0 | 11 px | 0 |
+| 1440 | 1440 / 1440 | 0 | 1 | 0 | 23 / 23 | 730 | 0 | 11 px | 0 |
+
+Landmarks: un `header`, un `nav`, un `main`, un `footer`. **Imágenes:** 22 archivos en `img/` = 22 en el manifiesto;
+1.631.266 B en disco = total del manifiesto = lo que dice el lock §18 («1,63 MB, la mayor de 168 kB»: 168.461 B); en el
+navegador se transfieren las 22 con los bytes del disco; las 23 `img` (Verifica va dos veces) tienen `width`/`height`
+iguales a su tamaño real y `alt`. Miré la nueva, `ap-etiquetas.jpg`, contra su `alt`: lo describe.
+
+| Demo | Medido | |
+|---|---|---|
+| Cursor con mouse | círculo de 88 px `rgb(0, 41, 255)` «Ver el caso» centrado en el puntero (712, 424); puntero del sistema `none` sobre el medio y `pointer` fuera; salto de 240 px sin pasarse (0 px); al salir, ancho 0 | funciona |
+| Cursor con teclado | Tab a la pieza: clase `teclado`, círculo `hidden`, foco `solid 2px rgb(17,17,17)` a 3 px, rótulo quieto; vuelve al mover el mouse | funciona |
+| Recorrido de Tab (carga limpia) | 11 paradas en orden (6 del índice, los insumos, la lámina, la pieza, los radios, «Mover»), las 11 con contorno | funciona |
+| Resorte | flecha cambia el radio; Enter y Espacio mueven (155 y 143 ms, calculado 139); con mouse 90, 142 y 276 ms (calculados 75, 139, 264) | funciona |
+| Movimiento reducido | `sin-circulo`, círculo `display: none`, puntero del sistema, rótulo a la vista; «Mover»: 0 animaciones, el bloque ya en 920 px | funciona |
+| Teléfono (390, táctil) | sin círculo; tocar la pieza lleva a `#casos`; controles de 44 px de alto | funciona |
+| Gráfico | la cruz aparece y se lee «260 ms · resorte 90 % · Koto 90 % · A&P 56 %»; los mismos números están en la tabla | funciona |
+
+**Texto:** 0 rayas, 0 verbos de folleto, tú en todo el tablero. Palabras visibles: 5.784 (`wc -w` sobre el texto
+visible a 1440): la nota repetida salió y entraron las tres filas que pedía el defecto 2. **Lo que dice de Koto y A&P contra la medición:**
+coincide salvo una frase (defecto 15) y un cociente (defecto 18).
+
+Capturas: `capturas/tablero-{360,390,768,1440}-primera.jpg`, la página entera en tramos
+(`tablero-390-completa-01…09.jpg`, `tablero-1440-completa-01…06.jpg`), las demos (`demo-cursor-mouse-1440.jpg`,
+`demo-cursor-teclado-1440.jpg`, `demo-resorte-1440.jpg`) y los cierres y defectos (`fichas-de-color-1440.jpg`,
+`registro-cruz-1440.png` y su ampliación `-x6.png`, `tabla-resortes-390.jpg`, `filetes-ap-contradiccion-1440.jpg`).
+
+---
+
+## 3 · Defectos de la vuelta 2
+
+Numeración seguida de la vuelta 1. Los 15, 17 y 18 ya estaban en `d2056ec`: se me pasaron en la vuelta 1, no los
+trajeron los arreglos.
+
+| N.º | Severidad | Dueño | Dónde | Qué (reproducible) | Cierre |
+|---|---|---|---|---|---|
+| 15 | Menor | Lucía | `tablero.html:290` (pie de `img/ap-tabla-filetes.jpg`, §2) y `lock-koto.md:223` (§3, fila «Tabla con filetes de 1 px») | El tablero dice «**El único lugar con filetes de 1 px: una tabla.**» y el lock, «Su único uso de líneas». La medición dice tres usos: las etiquetas bajo cada pieza, la tabla de episodios y el subrayado de sus enlaces (`accept-and-proceed/medicion.json`, `reticula.filetes1px`; resumen: «solo en las etiquetas y en una tabla de episodios»). Re-medido hoy: 28 etiquetas con `1px solid rgba(140, 140, 140, 0.8)` en `/work`. El mismo tablero lo contradice dos veces: el pie «A 390: … cada pieza con nombre y etiquetas» y la fila de etiquetas de §3 («una o dos etiquetas con filete de 1 px»); en la captura, las etiquetas con filete se ven justo encima del pie (`capturas/filetes-ap-contradiccion-1440.jpg`). Incumple el punto 6 del encargo | «Filetes de 1 px: en las etiquetas de cada pieza y en una tabla» (tablero, en `armar-tablero.py:279`) y «su único uso de líneas fuera de las etiquetas» (lock §3). `grep -c "nico lugar con filetes"` da 0 |
+| 16 | Menor | Mauro | `brief-de-obra.md` §4 (tabla «Las ideas de Ramón, una por una») | Ramón escribió «Úsalo únicamente para estados activos, **cursores magnéticos** y telemetría de código vivo» (insumos §2, acento). El brief promete «una fila por idea» y no la tiene: `grep -ci "magn" brief-de-obra.md` da 0. El lock §8 ya la decide («Magnetismo: No: el círculo va donde va el puntero»; ninguno de los dos referentes lo tiene) | Una fila (o una frase en «Cursor con texto»): «Cursor magnético · No (lo fija el lock §8)», con su porqué |
+| 17 | Menor | Lucía | `tablero.html`, §3 «Tu brief, punto por punto», fila del cobalto | El «Pediste» cita a Ramón sin la palabra: «Cobalto … para estados activos, **cursor** y telemetría viva»; lo que escribió es «cursores magnéticos». Y el tablero no dice en ninguna parte que el magnetismo no va (`grep -ci "magn" tablero.html` da 0). Ramón lee una cita suya recortada y no encuentra la respuesta a lo recortado | Citar «cursores magnéticos» y, en la fila del cursor, el «no» del lock §8 en una línea («el círculo va donde va el puntero: ni Koto ni A&P lo atraen») |
+| 18 | Nit | Lucía | `tablero.html:309`, §3 «No tomamos» | «La entrada de 1,5 s de A&P: la de Koto llega al 90 % en **una cuarta parte** de ese tiempo». Datos (`datos/resortes.json` y la tabla del propio tablero): Koto llega al 90 % en 261 ms; A&P, en 850 ms. Es el 31 % (un tercio) contra el 90 % de A&P y el 17 % contra sus 1,5 s; ninguno es un cuarto | «…en menos de un tercio (261 contra 850 ms al 90 %)» |
+
+**Observaciones que no son defecto:** el lock §13 conserva «0 KB de video» en mayúsculas (cero es cero en cualquier
+unidad; si se toca, «0 kB»); el lock §18 cuenta «685 nodos de texto» y yo cuento 723 a 730 con otro criterio de qué es
+un nodo visible: los dos dan 0 bajo AA; el brief §4 «Planos y registro» todavía dice que registrar la cruz «es el
+defecto 4 del acta»: ya está registrada en el lock §19; «publicable: no: es un defecto abierto» lleva dos dos puntos
+seguidos, viene así del JSON. Las anclas del índice miden 38 px de alto a 390 (el piso de 44 es del sitio, no de este
+tablero).
+
+---
+
+## 4 · Los dos detectores, completos (sobre el tablero)
+
+**`antislop-web.md` §E**
+
+```
+COPY            [x] sin verbos de folleto (0)  [x] sin relleno de apertura
+                [x] sin tricolon automático  [x] sin "no solo X sino Y" (0)
+                [x] sin pregunta retórica ni "¿Listo para…?"  (las 5 preguntas de §6 son decisiones reales)
+                [x] sin Title Case  [x] registro es-CL consistente: tú en todo el tablero
+                [x] sin raya como remate (0)  [x] cero prueba social sin respaldo
+                [x] borrar 30 % no mejora la página: la nota repetida salió; lo que entró son respuestas a ideas de Ramón
+ESTRUCTURA      [x] sin tres tarjetas idénticas (no hay tarjetas; la placa del resorte agrupa un control)
+                [x] sin "¿por qué elegirnos?"  [-] FAQ: no aplica, no hay
+                [x] sin fila de métricas inventadas  [-] formulario: no aplica
+                [x] hero no es 100vh centrado vacío  [x] orden: pediste → medido → tomamos → tokens → casos → decides
+CÓDIGO          [x] landmarks + un h1 + jerarquía sin saltos (0 saltos en los cuatro anchos)
+                [x] cero valores por defecto sin justificar: radios 6/4/2 y tiempos salen de Koto (lock §17, §9)
+                [x] sin degradé-mancha ni glass  [x] cero emoji (↗ es un carácter)
+                [x] alt reales (la imagen nueva, mirada)  [x] foco visible (11 de 11), contraste AA (0 bajo), labels en los radios
+                [x] imágenes dimensionadas (23/23); [-] hero eager: no hay imagen en el primer viewport; [x] font-display swap
+                [-] JSON-LD + canonical + OG: no aplica, es un tablero privado de trabajo, no una página del sitio
+                [-] índice y sitemap, ?v=N: no aplica, nada se publica
+VISUAL          [x] detector de refero-design corrido entero (abajo)
+PRUEBAS         [x] logo tapado  [x] rubro cambiado  [x] leído en voz alta (§5)
+```
+
+**`anti-ai-slop.md` (refero)**
+
+```
+[x] Acento no índigo: cobalto 264,2° OKLCH, a 13° de indigo-500 y con 50 % más croma
+[x] Tarjetas solo con interacción: la única caja (placa del resorte) contiene un control
+[x] Sin franja lateral de acento  [x] Sin emoji
+[x] Claro: lo pide el brief de Ramón («Light Mode Editorial»)
+[x] Sin serif editorial  [x] Sin paleta terrosa: papel con croma OKLCH 0,003
+[x] Sin palabra destacada decorativa: las dos tintas son regla medida de Koto con rol escrito (lock §14)
+[x] Rasgos fuertes preservados: el paso de negro a claro está justificado por escrito (lock §1) y el cobalto no se apaga
+[x] Roles de token preservados: el cobalto conserva el rol que le dio Ramón (estado activo, cursor, dato vivo)
+[x] Rol de los medios: capturas reales de Koto, A&P, Verifica y Combeau, sin imágenes generadas
+[x] Mayúsculas con interletra: rótulos mono +0,03em
+[x] Captura junto a productos reales  [x] letras elegidas con medición  [x] colores del brief y de lo medido
+[x] Tensión: barra de 320 px a la izquierda, contenido corrido; la retícula de Koto
+[x] Cada decisión tiene su porqué en el lock
+```
+
+Pruebas de refero: tarjeta (pasa), imagen (no aplica: el primer viewport es texto, a propósito), marca (pasa), copy
+(pasa ahora: la nota repetida salió), identidad (pasa), editorial (pasa).
+
+## 5 · Las tres pruebas de fuego
+
+- **Logo tapado:** pasa. Lo que identifica la página son mediciones y piezas propias que no pueden ser de otro estudio.
+- **Rubro cambiado:** pasa. Con otro rubro no queda nada: todo es la obra E12 de SpindleLab.
+- **Leído en voz alta:** pasa. «Koto manda y tu brief orienta. Aquí está lo medido, lo que se toma, lo que no y por
+  qué» suena a alguien que le explica algo a Ramón en una reunión.
+
+## 6 · Lo que está bien y no se toca
+
+- **Los arreglos son de verdad, no de forma:** la cruz cambió de color y su texto ahora dice lo que hay; la tabla se
+  lee a 390; la hora sin JS no miente; el build citado es el que sirve la vista previa, byte a byte.
+- **El defecto 13 se cerró midiendo**, no reescribiendo: una herramienta nueva, un crudo con sha256 y, de paso, un
+  error que nadie había visto (cinco posters, no cuatro) corregido con su propia medición.
+- **La fila de etiquetas del lock §4 y §7** es el ejemplo de cómo contrastar una idea con lo medido: toma la medida
+  de A&P (una o dos por pieza) y deja la forma con cuatro razones que se pueden comprobar.
+- **La atmósfera medida** (`atmosfera.mjs`) convierte «sin gradientes púrpura» en un número; re-medido, cuadra.
+- Todo lo de la vuelta 1 que estaba bien sigue igual: contrato, cuatro anchos sin desborde, 0 nodos bajo AA, foco en
+  las 11 paradas, el cursor que se esconde con teclado y no existe con movimiento reducido ni en el teléfono.
+
+## 7 · Lo que no medí
+
+- No repetí la medición completa de Koto y A&P: 18 filas, las del encargo y las que el lock agregó hoy.
+- No re-medí las etiquetas de A&P a 390 (24 px de alto según `medicion.json`) ni la carga y el peso de
+  `medir-carga.mjs`.
+- No repetí `letras.py`; verifiqué la licencia de las tres letras.
+- No corrí lectores de pantalla.
+
+## 8 · Archivos de esta vuelta
+
+`e12/qa-paso-1/vuelta-2/`
+
+- `herramientas/`: `remedir-referentes.mjs`, `remedir-koto-marco.mjs`, `repetir-chequeo.sh`, `verificar-servido.mjs`,
+  `contraste-qa.py`, `auditar-tablero.mjs`, `tab-recorrido.mjs`.
+- `crudo/`: `referentes-remedidos.json`, `koto-marco-remedido.json`, `chequeo-bernardocombeau.cl.json` y
+  `chequeo-spindlelab.cl.json` (con cabeceras), `verificar-servido.json` (sin HTML de Combeau), `licencias-urls.txt`,
+  `contraste-qa.json`, `auditoria-tablero.json`, `tab-recorrido.json`, `tablero-texto-1440.txt`.
+- `capturas/`: Koto y A&P re-medidos; el tablero a 360, 390, 768 y 1440 y entero a 390 y 1440; las demos; los
+  recortes de los cierres (3, 4, 8) y del defecto 15.

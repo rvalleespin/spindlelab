@@ -1,0 +1,399 @@
+{
+ "fecha": "2026-10-16T22:06:29.817Z",
+ "navegador": "141.0.7390.37",
+ "koto": {
+  "intentoHome": 1,
+  "atmosferaHomeConAviso": {
+   "degradados": 13,
+   "conColor": 0,
+   "purpura": 0,
+   "ejemplos": [
+    {
+     "tag": "div",
+     "clase": "CybotCookiebotFader CybotCookiebotFaderLeft",
+     "valor": "linear-gradient(to right, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "cromaMax": 0
+    },
+    {
+     "tag": "div",
+     "clase": "CybotCookiebotFader CybotCookiebotFaderRight",
+     "valor": "linear-gradient(to left, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "cromaMax": 0
+    },
+    {
+     "tag": "div",
+     "clase": "CybotCookiebotFader",
+     "valor": "linear-gradient(to top, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "cromaMax": 0
+    },
+    {
+     "tag": "div",
+     "clase": "CybotCookiebotFader",
+     "valor": "linear-gradient(to top, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "cromaMax": 0
+    }
+   ],
+   "dibujosGrandes": []
+  },
+  "home": {
+   "display": {
+    "texto": "We’re Koto",
+    "familia": "gtKotoheimCondensed, \"gtKotoheimCondensed Fallback\", sans-serif",
+    "tam": "48px",
+    "peso": "300",
+    "interlinea": "48px",
+    "interletra": "-0.48px",
+    "color": "rgb(255, 255, 255)",
+    "fondo": "rgba(0, 0, 0, 0)",
+    "x": 28,
+    "y": 780,
+    "w": 179,
+    "h": 48,
+    "transicion": "all",
+    "padIzq": "0px",
+    "padDer": "0px",
+    "borde": "0px solid rgb(255, 255, 255)",
+    "radio": "0px"
+   },
+   "fondoHtml": "rgb(6, 6, 6)",
+   "contenedorTitulo": {
+    "texto": "We’re Koto\n\nThe Creative Company",
+    "familia": "gtKotoheim, \"gtKotoheim Fallback\", sans-serif",
+    "tam": "12px",
+    "peso": "400",
+    "interlinea": "18px",
+    "interletra": "normal",
+    "color": "rgb(255, 255, 255)",
+    "fondo": "rgba(0, 0, 0, 0)",
+    "x": 16,
+    "y": 780,
+    "w": 1408,
+    "h": 96,
+    "transicion": "all",
+    "padIzq": "0px",
+    "padDer": "0px",
+    "borde": "0px solid rgb(255, 255, 255)",
+    "radio": "0px"
+   },
+   "navWork": {
+    "texto": "Work",
+    "propiedad": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+    "duracion": "0.167s",
+    "curva": "linear",
+    "color": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)"
+   },
+   "fuentesCargadas": [
+    "gtKotoheimMono",
+    "gtKotoheim",
+    "gtKotoheimCondensed"
+   ],
+   "reducidoReglas": 0
+  },
+  "cursor": {
+   "existeDataRefCursor": true,
+   "etiqueta": {
+    "texto": "Play",
+    "familia": "gtKotoheimMono, \"gtKotoheimMono Fallback\", sans-serif",
+    "tam": "11px",
+    "mayus": "uppercase",
+    "color": "rgb(255, 255, 255)",
+    "rect": [
+     715,
+     426,
+     28,
+     11
+    ]
+   },
+   "caja": {
+    "fondo": "oklab(0.122118 0.00000555813 0.00000243634 / 0.2)",
+    "desenfoque": "blur(40px)",
+    "radio": "2px",
+    "padding": "6px"
+   },
+   "cursorSistema": "none"
+  },
+  "atmosferaTrabajoConAviso": {
+   "degradados": 12,
+   "conColor": 0,
+   "purpura": 0,
+   "ejemplos": [
+    {
+     "tag": "div",
+     "clase": "CybotCookiebotFader CybotCookiebotFaderLeft",
+     "valor": "linear-gradient(to right, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "cromaMax": 0
+    },
+    {
+     "tag": "div",
+     "clase": "CybotCookiebotFader CybotCookiebotFaderRight",
+     "valor": "linear-gradient(to left, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "cromaMax": 0
+    },
+    {
+     "tag": "div",
+     "clase": "CybotCookiebotFader",
+     "valor": "linear-gradient(to top, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "cromaMax": 0
+    },
+    {
+     "tag": "div",
+     "clase": "CybotCookiebotFader",
+     "valor": "linear-gradient(to top, rgb(22, 22, 22), color(srgb 0.0862745 0.0862745 0.0862745 / 0.8), color(srgb 0 0 0 / 0))",
+     "cromaMax": 0
+    }
+   ],
+   "dibujosGrandes": []
+  },
+  "trabajo": {
+   "h1": {
+    "texto": "Our work",
+    "familia": "gtKotoheimCondensed, \"gtKotoheimCondensed Fallback\", sans-serif",
+    "tam": "24px",
+    "peso": "300",
+    "interlinea": "28.8px",
+    "interletra": "normal",
+    "color": "rgb(255, 255, 255)",
+    "fondo": "rgba(0, 0, 0, 0)",
+    "x": 28,
+    "y": 124,
+    "w": 296,
+    "h": 28.8,
+    "transicion": "all",
+    "padIzq": "0px",
+    "padDer": "0px",
+    "borde": "0px solid rgb(255, 255, 255)",
+    "radio": "0px"
+   },
+   "barra": {
+    "ancho": 296,
+    "x": 28
+   },
+   "fondoHtml": "rgb(6, 6, 6)",
+   "conteos": [
+    "09",
+    "05",
+    "09",
+    "08",
+    "04",
+    "06"
+   ]
+  },
+  "home390": {
+   "display": {
+    "texto": "We’re Koto",
+    "familia": "gtKotoheimCondensed, \"gtKotoheimCondensed Fallback\", sans-serif",
+    "tam": "36px",
+    "peso": "300",
+    "interlinea": "36px",
+    "interletra": "normal",
+    "color": "rgb(255, 255, 255)",
+    "fondo": "rgba(0, 0, 0, 0)",
+    "x": 16,
+    "y": 680,
+    "w": 137.9,
+    "h": 36,
+    "transicion": "all",
+    "padIzq": "0px",
+    "padDer": "0px",
+    "borde": "0px solid rgb(255, 255, 255)",
+    "radio": "0px"
+   },
+   "contenedor": {
+    "texto": "We’re Koto\n\nThe Creative Company",
+    "familia": "gtKotoheim, \"gtKotoheim Fallback\", sans-serif",
+    "tam": "12px",
+    "peso": "400",
+    "interlinea": "18px",
+    "interletra": "normal",
+    "color": "rgb(255, 255, 255)",
+    "fondo": "rgba(0, 0, 0, 0)",
+    "x": 16,
+    "y": 680,
+    "w": 358,
+    "h": 72,
+    "transicion": "all",
+    "padIzq": "0px",
+    "padDer": "0px",
+    "borde": "0px solid rgb(255, 255, 255)",
+    "radio": "0px"
+   }
+  }
+ },
+ "ap": {
+  "intento": 1,
+  "atmosferaTrabajo": {
+   "degradados": 0,
+   "conColor": 0,
+   "purpura": 0,
+   "ejemplos": [],
+   "dibujosGrandes": []
+  },
+  "trabajo": {
+   "h1": {
+    "texto": "Work",
+    "familia": "\"Messina Sans\", sans-serif",
+    "tam": "35px",
+    "peso": "400",
+    "interlinea": "48px",
+    "interletra": "-0.35px",
+    "color": "rgb(0, 0, 0)",
+    "fondo": "rgba(0, 0, 0, 0)",
+    "x": 732,
+    "y": 138,
+    "w": 664,
+    "h": 48,
+    "transicion": "all",
+    "padIzq": "0px",
+    "padDer": "0px",
+    "borde": "0px none rgb(0, 0, 0)",
+    "radio": "0px"
+   },
+   "fondoBody": "rgb(249, 247, 243)",
+   "contenedor": {
+    "texto": "",
+    "familia": "\"Messina Sans\", sans-serif",
+    "tam": "14px",
+    "peso": "400",
+    "interlinea": "20px",
+    "interletra": "normal",
+    "color": "rgb(0, 0, 0)",
+    "fondo": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 64,
+    "w": 1440,
+    "h": 0,
+    "transicion": "all",
+    "padIzq": "44px",
+    "padDer": "44px",
+    "borde": "0px none rgb(0, 0, 0)",
+    "radio": "0px"
+   },
+   "cursorReposo": {
+    "tam": "16x16",
+    "fondo": "rgba(23, 23, 23, 0.2)",
+    "desenfoque": "blur(5px)",
+    "radio": "100px",
+    "transicion": "0.2s ease-out"
+   },
+   "cursorSistemaBody": "none",
+   "lenis": true,
+   "etiquetas": {
+    "total": 28,
+    "primera": {
+     "texto": "New Ambition",
+     "alto": 28,
+     "ancho": 138.5,
+     "borde": "1px solid rgba(140, 140, 140, 0.8)",
+     "radio": "3.4px",
+     "icono": "20x20",
+     "separador": {
+      "ancho": 1,
+      "fondo": "rgba(140, 140, 140, 0.8)",
+      "borde": "0px none rgba(140, 140, 140, 0.8)"
+     },
+     "textoEstilo": {
+      "texto": "New Ambition",
+      "color": "rgba(140, 140, 140, 0.8)",
+      "tam": "14px"
+     }
+    },
+    "porPieza": [
+     {
+      "href": "/work/vans",
+      "etiquetas": 2
+     },
+     {
+      "href": "/work/ibm-watsonx-orchestrate",
+      "etiquetas": 1
+     },
+     {
+      "href": "/work/neko-health-nyc-announcement",
+      "etiquetas": 1
+     },
+     {
+      "href": "/work/ibm-ai-governance",
+      "etiquetas": 1
+     },
+     {
+      "href": "/work/nike-climate-week-2025",
+      "etiquetas": 1
+     },
+     {
+      "href": "/work/addium",
+      "etiquetas": 1
+     },
+     {
+      "href": "/work/anton",
+      "etiquetas": 2
+     },
+     {
+      "href": "/work/the-warehouse-project-destination-manchester",
+      "etiquetas": 1
+     },
+     {
+      "href": "/work/antikythera",
+      "etiquetas": 2
+     },
+     {
+      "href": "/work/ibm-sustainability-activation",
+      "etiquetas": 2
+     },
+     {
+      "href": "/work/new-york-climate-week-nike-move-to-zero",
+      "etiquetas": 1
+     },
+     {
+      "href": "/work/ibm-ai-academy",
+      "etiquetas": 1
+     },
+     {
+      "href": "/work/dickies",
+      "etiquetas": 1
+     },
+     {
+      "href": "/work/nike-move-to-zero",
+      "etiquetas": 2
+     },
+     {
+      "href": "/work/nike-house-of-innovation",
+      "etiquetas": 2
+     },
+     {
+      "href": "/work/awo",
+      "etiquetas": 1
+     },
+     {
+      "href": "/work/nasa-jpl-grace-and-psyche",
+      "etiquetas": 1
+     },
+     {
+      "href": "/work/move-to-zero",
+      "etiquetas": 2
+     },
+     {
+      "href": "/work/nike-gallery-your-move",
+      "etiquetas": 2
+     },
+     {
+      "href": "/work/second-sea",
+      "etiquetas": 1
+     }
+    ]
+   }
+  },
+  "cursorSobreProyecto": {
+   "href": "/work/vans",
+   "clases": "custom-cursor grow",
+   "tam": "139.5x40",
+   "fondo": "rgba(23, 23, 23, 0.2)",
+   "texto": "View Project"
+  },
+  "atmosferaHome": {
+   "degradados": 0,
+   "conColor": 0,
+   "purpura": 0,
+   "ejemplos": [],
+   "dibujosGrandes": []
+  }
+ }
+}

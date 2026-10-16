@@ -1,0 +1,1453 @@
+{
+ "fecha": "2026-10-16T22:11:49.151Z",
+ "contrato": {
+  "title": "Tablero laboratorio E12",
+  "palabrasTitle": 3,
+  "viewportFitSides": true,
+  "gutterSafeArea": true,
+  "tokensEnRoot": [
+   "--papel",
+   "--placa",
+   "--hoja",
+   "--tinta",
+   "--gris",
+   "--linea",
+   "--linea-seccion",
+   "--senal",
+   "--f-letra",
+   "--f-mono"
+  ],
+  "fondoEnBody": true,
+  "temaOscuro": "no (solo claro; color-scheme: light)",
+  "hojasExternas": [
+   "https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,200..900&family=Google+Sans+Flex:wdth,wght@25..151,100..1000&family=DM+Mono:wght@500&display=swap"
+  ],
+  "scriptsExternos": [
+   "https://cdn.jsdelivr.net/npm/motion@13.5.0/dist/motion.js"
+  ],
+  "scriptsConVersionExacta": true,
+  "esqueleto": {
+   "doctype": false,
+   "html": false,
+   "head": false,
+   "body": false
+  },
+  "atributosStyleDuplicados": [],
+  "rayas": 0
+ },
+ "anchos": {
+  "360": {
+   "clientWidth": 360,
+   "scrollWidth": 360,
+   "bodyScrollWidth": 360,
+   "salen": [],
+   "h1": 1,
+   "saltos": [],
+   "landmarks": {
+    "header": 1,
+    "nav": 1,
+    "main": 1,
+    "footer": 1
+   },
+   "imgs": [
+    {
+     "src": "img/koto-portada-1440.jpg",
+     "ok": true,
+     "natural": "1200x750",
+     "atributos": "1200x750",
+     "alt": true
+    },
+    {
+     "src": "img/koto-trabajo-1440.jpg",
+     "ok": true,
+     "natural": "1440x900",
+     "atributos": "1440x900",
+     "alt": true
+    },
+    {
+     "src": "img/koto-caso-1440.jpg",
+     "ok": true,
+     "natural": "1440x900",
+     "atributos": "1440x900",
+     "alt": true
+    },
+    {
+     "src": "img/koto-ficha-caso.jpg",
+     "ok": true,
+     "natural": "336x385",
+     "atributos": "336x385",
+     "alt": true
+    },
+    {
+     "src": "img/koto-dos-tintas.jpg",
+     "ok": true,
+     "natural": "720x220",
+     "atributos": "720x220",
+     "alt": true
+    },
+    {
+     "src": "img/koto-cursor-destacado.jpg",
+     "ok": true,
+     "natural": "888x450",
+     "atributos": "888x450",
+     "alt": true
+    },
+    {
+     "src": "img/koto-telemetria.jpg",
+     "ok": true,
+     "natural": "1200x750",
+     "atributos": "1200x750",
+     "alt": true
+    },
+    {
+     "src": "img/koto-pieza-reposo.jpg",
+     "ok": true,
+     "natural": "541x409",
+     "atributos": "541x409",
+     "alt": true
+    },
+    {
+     "src": "img/koto-pieza-hover.jpg",
+     "ok": true,
+     "natural": "541x409",
+     "atributos": "541x409",
+     "alt": true
+    },
+    {
+     "src": "img/koto-trabajo-390.jpg",
+     "ok": true,
+     "natural": "780x1688",
+     "atributos": "780x1688",
+     "alt": true
+    },
+    {
+     "src": "img/koto-caso-390.jpg",
+     "ok": true,
+     "natural": "780x1688",
+     "atributos": "780x1688",
+     "alt": true
+    },
+    {
+     "src": "img/ap-trabajo-1440.jpg",
+     "ok": true,
+     "natural": "1440x900",
+     "atributos": "1440x900",
+     "alt": true
+    },
+    {
+     "src": "img/ap-indice-patron.jpg",
+     "ok": true,
+     "natural": "1200x1500",
+     "atributos": "1200x1500",
+     "alt": true
+    },
+    {
+     "src": "img/ap-cursor.jpg",
+     "ok": true,
+     "natural": "704x466",
+     "atributos": "704x466",
+     "alt": true
+    },
+    {
+     "src": "img/ap-tabla-filetes.jpg",
+     "ok": true,
+     "natural": "1200x693",
+     "atributos": "1200x693",
+     "alt": true
+    },
+    {
+     "src": "img/ap-carga.jpg",
+     "ok": true,
+     "natural": "1480x1018",
+     "atributos": "1480x1018",
+     "alt": true
+    },
+    {
+     "src": "img/ap-escala-tipografica.jpg",
+     "ok": true,
+     "natural": "920x1374",
+     "atributos": "920x1374",
+     "alt": true
+    },
+    {
+     "src": "img/ap-trabajo-390.jpg",
+     "ok": true,
+     "natural": "780x1688",
+     "atributos": "780x1688",
+     "alt": true
+    },
+    {
+     "src": "img/ap-etiquetas.jpg",
+     "ok": true,
+     "natural": "360x372",
+     "atributos": "360x372",
+     "alt": true
+    },
+    {
+     "src": "img/letras-comparadas.jpg",
+     "ok": true,
+     "natural": "1600x976",
+     "atributos": "1600x976",
+     "alt": true
+    },
+    {
+     "src": "img/obra-verifica-y-cumple.jpg",
+     "ok": true,
+     "natural": "1440x810",
+     "atributos": "1440x810",
+     "alt": true
+    },
+    {
+     "src": "img/obra-verifica-y-cumple.jpg",
+     "ok": true,
+     "natural": "1440x810",
+     "atributos": "1440x810",
+     "alt": true
+    },
+    {
+     "src": "img/obra-combeau-fotografia.jpg",
+     "ok": true,
+     "natural": "1440x616",
+     "atributos": "1440x616",
+     "alt": true
+    }
+   ],
+   "textos": 723,
+   "bajoAA": [],
+   "cobaltoComoTexto": [],
+   "tamanos": {
+    "11": 154,
+    "12": 91,
+    "14": 55,
+    "15": 148,
+    "16": 178,
+    "18": 4,
+    "20": 27,
+    "23": 26,
+    "26": 10,
+    "36": 3,
+    "12.8": 24,
+    "11.2": 3
+   },
+   "menorTamano": 11,
+   "fichas": [
+    {
+     "fondo": "rgb(246, 246, 244)",
+     "contorno": "solid 1px",
+     "borde": "none 0px",
+     "styleAttr": "background:#F6F6F4;outline:1px solid var(--linea-seccion);outline-offset:-1px"
+    },
+    {
+     "fondo": "rgb(239, 239, 234)",
+     "contorno": "solid 1px",
+     "borde": "none 0px",
+     "styleAttr": "background:#EFEFEA;outline:1px solid var(--linea-seccion);outline-offset:-1px"
+    },
+    {
+     "fondo": "rgb(255, 255, 255)",
+     "contorno": "solid 1px",
+     "borde": "none 0px",
+     "styleAttr": "background:#FFFFFF;outline:1px solid var(--linea-seccion);outline-offset:-1px"
+    },
+    {
+     "fondo": "rgb(17, 17, 17)",
+     "contorno": "none 0px",
+     "borde": "none 0px",
+     "styleAttr": "background:#111111"
+    },
+    {
+     "fondo": "rgb(102, 102, 99)",
+     "contorno": "none 0px",
+     "borde": "none 0px",
+     "styleAttr": "background:#666663"
+    },
+    {
+     "fondo": "rgb(0, 41, 255)",
+     "contorno": "none 0px",
+     "borde": "none 0px",
+     "styleAttr": "background:#0029FF"
+    }
+   ],
+   "registro": [
+    {
+     "id": "medido",
+     "antes": null,
+     "despues": null,
+     "bordeSeccion": "rgba(17, 17, 17, 0.18)",
+     "ladoBorde": "0px none · borde derecho del lado en x=344"
+    },
+    {
+     "id": "casos",
+     "antes": null,
+     "despues": null,
+     "bordeSeccion": "rgba(17, 17, 17, 0.18)",
+     "ladoBorde": "0px none · borde derecho del lado en x=344"
+    }
+   ],
+   "registroSvg": [
+    "rgba(17,17,17,.18)",
+    "rgba(17,17,17,.08)",
+    "var(--gris)"
+   ],
+   "tablaResortes": [
+    {
+     "theadVisible": false,
+     "celdas": 34,
+     "celdasConRotuloVisible": 34,
+     "captionCode": [
+      "spring() 11px none",
+      "datos/resortes.json 11px none"
+     ]
+    }
+   ],
+   "texto": {
+    "palabras": 5826,
+    "publicableNotas": 0,
+    "notaLarga": 0,
+    "publicableMayusTrasDosPuntos": 16,
+    "parentesisAbiertoMedicionJs": false,
+    "fechaDelBuild": [
+     "Commit y fecha del build CF_PAGES_COMMIT_SHA y CF_PAGES_BRANCH (variables del build de Cloudflare Pages)"
+    ],
+    "cinco": [
+     "Las cinco preguntas del brief de Mauro, con la opción que r"
+    ],
+    "seis": [
+     "avegador para Santiago; el índice tiene seis entradas; la vista previa del v3 sirve ",
+     "n material, sin ruta /laboratorio/. Con seis entradas, una sola de cliente (inventar"
+    ],
+    "unoTreintaYDos": [],
+    "unoCincoMB": [],
+    "kbMayus": [],
+    "formIntelligence": 1,
+    "rayas": 0,
+    "reloj": [
+     "19:11",
+     "19:11"
+    ]
+   },
+   "parentesisDesbalanceados": [],
+   "motion": true,
+   "claseHtml": "sin-circulo",
+   "alto": 36194,
+   "errores": [],
+   "bytesImg": {
+    "koto-portada-1440.jpg": 15904,
+    "koto-trabajo-1440.jpg": 161649,
+    "koto-caso-1440.jpg": 112682,
+    "koto-ficha-caso.jpg": 9840,
+    "koto-dos-tintas.jpg": 29654,
+    "koto-cursor-destacado.jpg": 23438,
+    "koto-telemetria.jpg": 55182,
+    "koto-pieza-reposo.jpg": 3993,
+    "koto-pieza-hover.jpg": 6724,
+    "koto-trabajo-390.jpg": 112449,
+    "koto-caso-390.jpg": 118943,
+    "ap-trabajo-1440.jpg": 77374,
+    "ap-indice-patron.jpg": 155292,
+    "ap-cursor.jpg": 36912,
+    "ap-tabla-filetes.jpg": 48280,
+    "ap-carga.jpg": 118201,
+    "ap-escala-tipografica.jpg": 100330,
+    "ap-trabajo-390.jpg": 91066,
+    "ap-etiquetas.jpg": 19564,
+    "letras-comparadas.jpg": 168461,
+    "obra-verifica-y-cumple.jpg": 103321,
+    "obra-combeau-fotografia.jpg": 62007
+   }
+  },
+  "390": {
+   "clientWidth": 390,
+   "scrollWidth": 390,
+   "bodyScrollWidth": 390,
+   "salen": [],
+   "h1": 1,
+   "saltos": [],
+   "landmarks": {
+    "header": 1,
+    "nav": 1,
+    "main": 1,
+    "footer": 1
+   },
+   "imgs": [
+    {
+     "src": "img/koto-portada-1440.jpg",
+     "ok": true,
+     "natural": "1200x750",
+     "atributos": "1200x750",
+     "alt": true
+    },
+    {
+     "src": "img/koto-trabajo-1440.jpg",
+     "ok": true,
+     "natural": "1440x900",
+     "atributos": "1440x900",
+     "alt": true
+    },
+    {
+     "src": "img/koto-caso-1440.jpg",
+     "ok": true,
+     "natural": "1440x900",
+     "atributos": "1440x900",
+     "alt": true
+    },
+    {
+     "src": "img/koto-ficha-caso.jpg",
+     "ok": true,
+     "natural": "336x385",
+     "atributos": "336x385",
+     "alt": true
+    },
+    {
+     "src": "img/koto-dos-tintas.jpg",
+     "ok": true,
+     "natural": "720x220",
+     "atributos": "720x220",
+     "alt": true
+    },
+    {
+     "src": "img/koto-cursor-destacado.jpg",
+     "ok": true,
+     "natural": "888x450",
+     "atributos": "888x450",
+     "alt": true
+    },
+    {
+     "src": "img/koto-telemetria.jpg",
+     "ok": true,
+     "natural": "1200x750",
+     "atributos": "1200x750",
+     "alt": true
+    },
+    {
+     "src": "img/koto-pieza-reposo.jpg",
+     "ok": true,
+     "natural": "541x409",
+     "atributos": "541x409",
+     "alt": true
+    },
+    {
+     "src": "img/koto-pieza-hover.jpg",
+     "ok": true,
+     "natural": "541x409",
+     "atributos": "541x409",
+     "alt": true
+    },
+    {
+     "src": "img/koto-trabajo-390.jpg",
+     "ok": true,
+     "natural": "780x1688",
+     "atributos": "780x1688",
+     "alt": true
+    },
+    {
+     "src": "img/koto-caso-390.jpg",
+     "ok": true,
+     "natural": "780x1688",
+     "atributos": "780x1688",
+     "alt": true
+    },
+    {
+     "src": "img/ap-trabajo-1440.jpg",
+     "ok": true,
+     "natural": "1440x900",
+     "atributos": "1440x900",
+     "alt": true
+    },
+    {
+     "src": "img/ap-indice-patron.jpg",
+     "ok": true,
+     "natural": "1200x1500",
+     "atributos": "1200x1500",
+     "alt": true
+    },
+    {
+     "src": "img/ap-cursor.jpg",
+     "ok": true,
+     "natural": "704x466",
+     "atributos": "704x466",
+     "alt": true
+    },
+    {
+     "src": "img/ap-tabla-filetes.jpg",
+     "ok": true,
+     "natural": "1200x693",
+     "atributos": "1200x693",
+     "alt": true
+    },
+    {
+     "src": "img/ap-carga.jpg",
+     "ok": true,
+     "natural": "1480x1018",
+     "atributos": "1480x1018",
+     "alt": true
+    },
+    {
+     "src": "img/ap-escala-tipografica.jpg",
+     "ok": true,
+     "natural": "920x1374",
+     "atributos": "920x1374",
+     "alt": true
+    },
+    {
+     "src": "img/ap-trabajo-390.jpg",
+     "ok": true,
+     "natural": "780x1688",
+     "atributos": "780x1688",
+     "alt": true
+    },
+    {
+     "src": "img/ap-etiquetas.jpg",
+     "ok": true,
+     "natural": "360x372",
+     "atributos": "360x372",
+     "alt": true
+    },
+    {
+     "src": "img/letras-comparadas.jpg",
+     "ok": true,
+     "natural": "1600x976",
+     "atributos": "1600x976",
+     "alt": true
+    },
+    {
+     "src": "img/obra-verifica-y-cumple.jpg",
+     "ok": true,
+     "natural": "1440x810",
+     "atributos": "1440x810",
+     "alt": true
+    },
+    {
+     "src": "img/obra-verifica-y-cumple.jpg",
+     "ok": true,
+     "natural": "1440x810",
+     "atributos": "1440x810",
+     "alt": true
+    },
+    {
+     "src": "img/obra-combeau-fotografia.jpg",
+     "ok": true,
+     "natural": "1440x616",
+     "atributos": "1440x616",
+     "alt": true
+    }
+   ],
+   "textos": 723,
+   "bajoAA": [],
+   "cobaltoComoTexto": [],
+   "tamanos": {
+    "11": 154,
+    "12": 91,
+    "14": 55,
+    "15": 148,
+    "16": 178,
+    "18": 4,
+    "20": 27,
+    "23": 26,
+    "26": 10,
+    "36": 3,
+    "12.8": 24,
+    "11.2": 3
+   },
+   "menorTamano": 11,
+   "fichas": [
+    {
+     "fondo": "rgb(246, 246, 244)",
+     "contorno": "solid 1px",
+     "borde": "none 0px",
+     "styleAttr": "background:#F6F6F4;outline:1px solid var(--linea-seccion);outline-offset:-1px"
+    },
+    {
+     "fondo": "rgb(239, 239, 234)",
+     "contorno": "solid 1px",
+     "borde": "none 0px",
+     "styleAttr": "background:#EFEFEA;outline:1px solid var(--linea-seccion);outline-offset:-1px"
+    },
+    {
+     "fondo": "rgb(255, 255, 255)",
+     "contorno": "solid 1px",
+     "borde": "none 0px",
+     "styleAttr": "background:#FFFFFF;outline:1px solid var(--linea-seccion);outline-offset:-1px"
+    },
+    {
+     "fondo": "rgb(17, 17, 17)",
+     "contorno": "none 0px",
+     "borde": "none 0px",
+     "styleAttr": "background:#111111"
+    },
+    {
+     "fondo": "rgb(102, 102, 99)",
+     "contorno": "none 0px",
+     "borde": "none 0px",
+     "styleAttr": "background:#666663"
+    },
+    {
+     "fondo": "rgb(0, 41, 255)",
+     "contorno": "none 0px",
+     "borde": "none 0px",
+     "styleAttr": "background:#0029FF"
+    }
+   ],
+   "registro": [
+    {
+     "id": "medido",
+     "antes": null,
+     "despues": null,
+     "bordeSeccion": "rgba(17, 17, 17, 0.18)",
+     "ladoBorde": "0px none · borde derecho del lado en x=374"
+    },
+    {
+     "id": "casos",
+     "antes": null,
+     "despues": null,
+     "bordeSeccion": "rgba(17, 17, 17, 0.18)",
+     "ladoBorde": "0px none · borde derecho del lado en x=374"
+    }
+   ],
+   "registroSvg": [
+    "rgba(17,17,17,.18)",
+    "rgba(17,17,17,.08)",
+    "var(--gris)"
+   ],
+   "tablaResortes": [
+    {
+     "theadVisible": false,
+     "celdas": 34,
+     "celdasConRotuloVisible": 34,
+     "captionCode": [
+      "spring() 11px none",
+      "datos/resortes.json 11px none"
+     ]
+    }
+   ],
+   "texto": {
+    "palabras": 5826,
+    "publicableNotas": 0,
+    "notaLarga": 0,
+    "publicableMayusTrasDosPuntos": 16,
+    "parentesisAbiertoMedicionJs": false,
+    "fechaDelBuild": [
+     "Commit y fecha del build CF_PAGES_COMMIT_SHA y CF_PAGES_BRANCH (variables del build de Cloudflare Pages)"
+    ],
+    "cinco": [
+     "Las cinco preguntas del brief de Mauro, con la opción que r"
+    ],
+    "seis": [
+     "avegador para Santiago; el índice tiene seis entradas; la vista previa del v3 sirve ",
+     "n material, sin ruta /laboratorio/. Con seis entradas, una sola de cliente (inventar"
+    ],
+    "unoTreintaYDos": [],
+    "unoCincoMB": [],
+    "kbMayus": [],
+    "formIntelligence": 1,
+    "rayas": 0,
+    "reloj": [
+     "19:11",
+     "19:11"
+    ]
+   },
+   "parentesisDesbalanceados": [],
+   "motion": true,
+   "claseHtml": "sin-circulo",
+   "alto": 35028,
+   "errores": [],
+   "bytesImg": {
+    "koto-portada-1440.jpg": 15904,
+    "koto-trabajo-1440.jpg": 161649,
+    "koto-ficha-caso.jpg": 9840,
+    "koto-caso-1440.jpg": 112682,
+    "koto-dos-tintas.jpg": 29654,
+    "koto-cursor-destacado.jpg": 23438,
+    "koto-telemetria.jpg": 55182,
+    "koto-pieza-reposo.jpg": 3993,
+    "koto-pieza-hover.jpg": 6724,
+    "koto-trabajo-390.jpg": 112449,
+    "koto-caso-390.jpg": 118943,
+    "ap-trabajo-1440.jpg": 77374,
+    "ap-indice-patron.jpg": 155292,
+    "ap-cursor.jpg": 36912,
+    "ap-tabla-filetes.jpg": 48280,
+    "ap-escala-tipografica.jpg": 100330,
+    "ap-carga.jpg": 118201,
+    "ap-trabajo-390.jpg": 91066,
+    "ap-etiquetas.jpg": 19564,
+    "letras-comparadas.jpg": 168461,
+    "obra-verifica-y-cumple.jpg": 103321,
+    "obra-combeau-fotografia.jpg": 62007
+   }
+  },
+  "768": {
+   "clientWidth": 768,
+   "scrollWidth": 768,
+   "bodyScrollWidth": 768,
+   "salen": [],
+   "h1": 1,
+   "saltos": [],
+   "landmarks": {
+    "header": 1,
+    "nav": 1,
+    "main": 1,
+    "footer": 1
+   },
+   "imgs": [
+    {
+     "src": "img/koto-portada-1440.jpg",
+     "ok": true,
+     "natural": "1200x750",
+     "atributos": "1200x750",
+     "alt": true
+    },
+    {
+     "src": "img/koto-trabajo-1440.jpg",
+     "ok": true,
+     "natural": "1440x900",
+     "atributos": "1440x900",
+     "alt": true
+    },
+    {
+     "src": "img/koto-caso-1440.jpg",
+     "ok": true,
+     "natural": "1440x900",
+     "atributos": "1440x900",
+     "alt": true
+    },
+    {
+     "src": "img/koto-ficha-caso.jpg",
+     "ok": true,
+     "natural": "336x385",
+     "atributos": "336x385",
+     "alt": true
+    },
+    {
+     "src": "img/koto-dos-tintas.jpg",
+     "ok": true,
+     "natural": "720x220",
+     "atributos": "720x220",
+     "alt": true
+    },
+    {
+     "src": "img/koto-cursor-destacado.jpg",
+     "ok": true,
+     "natural": "888x450",
+     "atributos": "888x450",
+     "alt": true
+    },
+    {
+     "src": "img/koto-telemetria.jpg",
+     "ok": true,
+     "natural": "1200x750",
+     "atributos": "1200x750",
+     "alt": true
+    },
+    {
+     "src": "img/koto-pieza-reposo.jpg",
+     "ok": true,
+     "natural": "541x409",
+     "atributos": "541x409",
+     "alt": true
+    },
+    {
+     "src": "img/koto-pieza-hover.jpg",
+     "ok": true,
+     "natural": "541x409",
+     "atributos": "541x409",
+     "alt": true
+    },
+    {
+     "src": "img/koto-trabajo-390.jpg",
+     "ok": true,
+     "natural": "780x1688",
+     "atributos": "780x1688",
+     "alt": true
+    },
+    {
+     "src": "img/koto-caso-390.jpg",
+     "ok": true,
+     "natural": "780x1688",
+     "atributos": "780x1688",
+     "alt": true
+    },
+    {
+     "src": "img/ap-trabajo-1440.jpg",
+     "ok": true,
+     "natural": "1440x900",
+     "atributos": "1440x900",
+     "alt": true
+    },
+    {
+     "src": "img/ap-indice-patron.jpg",
+     "ok": true,
+     "natural": "1200x1500",
+     "atributos": "1200x1500",
+     "alt": true
+    },
+    {
+     "src": "img/ap-cursor.jpg",
+     "ok": true,
+     "natural": "704x466",
+     "atributos": "704x466",
+     "alt": true
+    },
+    {
+     "src": "img/ap-tabla-filetes.jpg",
+     "ok": true,
+     "natural": "1200x693",
+     "atributos": "1200x693",
+     "alt": true
+    },
+    {
+     "src": "img/ap-carga.jpg",
+     "ok": true,
+     "natural": "1480x1018",
+     "atributos": "1480x1018",
+     "alt": true
+    },
+    {
+     "src": "img/ap-escala-tipografica.jpg",
+     "ok": true,
+     "natural": "920x1374",
+     "atributos": "920x1374",
+     "alt": true
+    },
+    {
+     "src": "img/ap-trabajo-390.jpg",
+     "ok": true,
+     "natural": "780x1688",
+     "atributos": "780x1688",
+     "alt": true
+    },
+    {
+     "src": "img/ap-etiquetas.jpg",
+     "ok": true,
+     "natural": "360x372",
+     "atributos": "360x372",
+     "alt": true
+    },
+    {
+     "src": "img/letras-comparadas.jpg",
+     "ok": true,
+     "natural": "1600x976",
+     "atributos": "1600x976",
+     "alt": true
+    },
+    {
+     "src": "img/obra-verifica-y-cumple.jpg",
+     "ok": true,
+     "natural": "1440x810",
+     "atributos": "1440x810",
+     "alt": true
+    },
+    {
+     "src": "img/obra-verifica-y-cumple.jpg",
+     "ok": true,
+     "natural": "1440x810",
+     "atributos": "1440x810",
+     "alt": true
+    },
+    {
+     "src": "img/obra-combeau-fotografia.jpg",
+     "ok": true,
+     "natural": "1440x616",
+     "atributos": "1440x616",
+     "alt": true
+    }
+   ],
+   "textos": 723,
+   "bajoAA": [],
+   "cobaltoComoTexto": [],
+   "tamanos": {
+    "11": 154,
+    "12": 91,
+    "14": 55,
+    "15": 148,
+    "16": 178,
+    "18": 4,
+    "20": 27,
+    "23": 26,
+    "26": 10,
+    "36": 3,
+    "12.8": 24,
+    "11.2": 3
+   },
+   "menorTamano": 11,
+   "fichas": [
+    {
+     "fondo": "rgb(246, 246, 244)",
+     "contorno": "solid 1px",
+     "borde": "none 0px",
+     "styleAttr": "background:#F6F6F4;outline:1px solid var(--linea-seccion);outline-offset:-1px"
+    },
+    {
+     "fondo": "rgb(239, 239, 234)",
+     "contorno": "solid 1px",
+     "borde": "none 0px",
+     "styleAttr": "background:#EFEFEA;outline:1px solid var(--linea-seccion);outline-offset:-1px"
+    },
+    {
+     "fondo": "rgb(255, 255, 255)",
+     "contorno": "solid 1px",
+     "borde": "none 0px",
+     "styleAttr": "background:#FFFFFF;outline:1px solid var(--linea-seccion);outline-offset:-1px"
+    },
+    {
+     "fondo": "rgb(17, 17, 17)",
+     "contorno": "none 0px",
+     "borde": "none 0px",
+     "styleAttr": "background:#111111"
+    },
+    {
+     "fondo": "rgb(102, 102, 99)",
+     "contorno": "none 0px",
+     "borde": "none 0px",
+     "styleAttr": "background:#666663"
+    },
+    {
+     "fondo": "rgb(0, 41, 255)",
+     "contorno": "none 0px",
+     "borde": "none 0px",
+     "styleAttr": "background:#0029FF"
+    }
+   ],
+   "registro": [
+    {
+     "id": "medido",
+     "antes": null,
+     "despues": null,
+     "bordeSeccion": "rgba(17, 17, 17, 0.18)",
+     "ladoBorde": "0px none · borde derecho del lado en x=752"
+    },
+    {
+     "id": "casos",
+     "antes": null,
+     "despues": null,
+     "bordeSeccion": "rgba(17, 17, 17, 0.18)",
+     "ladoBorde": "0px none · borde derecho del lado en x=752"
+    }
+   ],
+   "registroSvg": [
+    "rgba(17,17,17,.18)",
+    "rgba(17,17,17,.08)",
+    "var(--gris)"
+   ],
+   "tablaResortes": [
+    {
+     "theadVisible": false,
+     "celdas": 34,
+     "celdasConRotuloVisible": 34,
+     "captionCode": [
+      "spring() 11px none",
+      "datos/resortes.json 11px none"
+     ]
+    }
+   ],
+   "texto": {
+    "palabras": 5829,
+    "publicableNotas": 0,
+    "notaLarga": 0,
+    "publicableMayusTrasDosPuntos": 16,
+    "parentesisAbiertoMedicionJs": false,
+    "fechaDelBuild": [
+     "Commit y fecha del build CF_PAGES_COMMIT_SHA y CF_PAGES_BRANCH (variables del build de Cloudflare Pages)"
+    ],
+    "cinco": [
+     "Las cinco preguntas del brief de Mauro, con la opción que r"
+    ],
+    "seis": [
+     "avegador para Santiago; el índice tiene seis entradas; la vista previa del v3 sirve ",
+     "n material, sin ruta /laboratorio/. Con seis entradas, una sola de cliente (inventar"
+    ],
+    "unoTreintaYDos": [],
+    "unoCincoMB": [],
+    "kbMayus": [],
+    "formIntelligence": 1,
+    "rayas": 0,
+    "reloj": [
+     "19:12",
+     "19:12"
+    ]
+   },
+   "parentesisDesbalanceados": [],
+   "motion": true,
+   "claseHtml": "con-circulo",
+   "alto": 32618,
+   "errores": [],
+   "bytesImg": {
+    "koto-trabajo-1440.jpg": 161649,
+    "koto-portada-1440.jpg": 15904,
+    "koto-ficha-caso.jpg": 9840,
+    "koto-caso-1440.jpg": 112682,
+    "koto-dos-tintas.jpg": 29654,
+    "koto-cursor-destacado.jpg": 23438,
+    "koto-telemetria.jpg": 55182,
+    "koto-caso-390.jpg": 118943,
+    "koto-trabajo-390.jpg": 112449,
+    "koto-pieza-hover.jpg": 6724,
+    "koto-pieza-reposo.jpg": 3993,
+    "ap-trabajo-1440.jpg": 77374,
+    "ap-indice-patron.jpg": 155292,
+    "ap-cursor.jpg": 36912,
+    "ap-tabla-filetes.jpg": 48280,
+    "ap-carga.jpg": 118201,
+    "ap-escala-tipografica.jpg": 100330,
+    "ap-trabajo-390.jpg": 91066,
+    "ap-etiquetas.jpg": 19564,
+    "letras-comparadas.jpg": 168461,
+    "obra-verifica-y-cumple.jpg": 103321,
+    "obra-combeau-fotografia.jpg": 62007
+   }
+  },
+  "1440": {
+   "clientWidth": 1440,
+   "scrollWidth": 1440,
+   "bodyScrollWidth": 1440,
+   "salen": [],
+   "h1": 1,
+   "saltos": [],
+   "landmarks": {
+    "header": 1,
+    "nav": 1,
+    "main": 1,
+    "footer": 1
+   },
+   "imgs": [
+    {
+     "src": "img/koto-portada-1440.jpg",
+     "ok": true,
+     "natural": "1200x750",
+     "atributos": "1200x750",
+     "alt": true
+    },
+    {
+     "src": "img/koto-trabajo-1440.jpg",
+     "ok": true,
+     "natural": "1440x900",
+     "atributos": "1440x900",
+     "alt": true
+    },
+    {
+     "src": "img/koto-caso-1440.jpg",
+     "ok": true,
+     "natural": "1440x900",
+     "atributos": "1440x900",
+     "alt": true
+    },
+    {
+     "src": "img/koto-ficha-caso.jpg",
+     "ok": true,
+     "natural": "336x385",
+     "atributos": "336x385",
+     "alt": true
+    },
+    {
+     "src": "img/koto-dos-tintas.jpg",
+     "ok": true,
+     "natural": "720x220",
+     "atributos": "720x220",
+     "alt": true
+    },
+    {
+     "src": "img/koto-cursor-destacado.jpg",
+     "ok": true,
+     "natural": "888x450",
+     "atributos": "888x450",
+     "alt": true
+    },
+    {
+     "src": "img/koto-telemetria.jpg",
+     "ok": true,
+     "natural": "1200x750",
+     "atributos": "1200x750",
+     "alt": true
+    },
+    {
+     "src": "img/koto-pieza-reposo.jpg",
+     "ok": true,
+     "natural": "541x409",
+     "atributos": "541x409",
+     "alt": true
+    },
+    {
+     "src": "img/koto-pieza-hover.jpg",
+     "ok": true,
+     "natural": "541x409",
+     "atributos": "541x409",
+     "alt": true
+    },
+    {
+     "src": "img/koto-trabajo-390.jpg",
+     "ok": true,
+     "natural": "780x1688",
+     "atributos": "780x1688",
+     "alt": true
+    },
+    {
+     "src": "img/koto-caso-390.jpg",
+     "ok": true,
+     "natural": "780x1688",
+     "atributos": "780x1688",
+     "alt": true
+    },
+    {
+     "src": "img/ap-trabajo-1440.jpg",
+     "ok": true,
+     "natural": "1440x900",
+     "atributos": "1440x900",
+     "alt": true
+    },
+    {
+     "src": "img/ap-indice-patron.jpg",
+     "ok": true,
+     "natural": "1200x1500",
+     "atributos": "1200x1500",
+     "alt": true
+    },
+    {
+     "src": "img/ap-cursor.jpg",
+     "ok": true,
+     "natural": "704x466",
+     "atributos": "704x466",
+     "alt": true
+    },
+    {
+     "src": "img/ap-tabla-filetes.jpg",
+     "ok": true,
+     "natural": "1200x693",
+     "atributos": "1200x693",
+     "alt": true
+    },
+    {
+     "src": "img/ap-carga.jpg",
+     "ok": true,
+     "natural": "1480x1018",
+     "atributos": "1480x1018",
+     "alt": true
+    },
+    {
+     "src": "img/ap-escala-tipografica.jpg",
+     "ok": true,
+     "natural": "920x1374",
+     "atributos": "920x1374",
+     "alt": true
+    },
+    {
+     "src": "img/ap-trabajo-390.jpg",
+     "ok": true,
+     "natural": "780x1688",
+     "atributos": "780x1688",
+     "alt": true
+    },
+    {
+     "src": "img/ap-etiquetas.jpg",
+     "ok": true,
+     "natural": "360x372",
+     "atributos": "360x372",
+     "alt": true
+    },
+    {
+     "src": "img/letras-comparadas.jpg",
+     "ok": true,
+     "natural": "1600x976",
+     "atributos": "1600x976",
+     "alt": true
+    },
+    {
+     "src": "img/obra-verifica-y-cumple.jpg",
+     "ok": true,
+     "natural": "1440x810",
+     "atributos": "1440x810",
+     "alt": true
+    },
+    {
+     "src": "img/obra-verifica-y-cumple.jpg",
+     "ok": true,
+     "natural": "1440x810",
+     "atributos": "1440x810",
+     "alt": true
+    },
+    {
+     "src": "img/obra-combeau-fotografia.jpg",
+     "ok": true,
+     "natural": "1440x616",
+     "atributos": "1440x616",
+     "alt": true
+    }
+   ],
+   "textos": 730,
+   "bajoAA": [],
+   "cobaltoComoTexto": [],
+   "tamanos": {
+    "11": 161,
+    "12": 91,
+    "14": 55,
+    "15": 146,
+    "16": 177,
+    "18": 4,
+    "23": 6,
+    "24": 47,
+    "38": 10,
+    "48": 3,
+    "19.2": 3,
+    "12.8": 24,
+    "11.2": 3
+   },
+   "menorTamano": 11,
+   "fichas": [
+    {
+     "fondo": "rgb(246, 246, 244)",
+     "contorno": "solid 1px",
+     "borde": "none 0px",
+     "styleAttr": "background:#F6F6F4;outline:1px solid var(--linea-seccion);outline-offset:-1px"
+    },
+    {
+     "fondo": "rgb(239, 239, 234)",
+     "contorno": "solid 1px",
+     "borde": "none 0px",
+     "styleAttr": "background:#EFEFEA;outline:1px solid var(--linea-seccion);outline-offset:-1px"
+    },
+    {
+     "fondo": "rgb(255, 255, 255)",
+     "contorno": "solid 1px",
+     "borde": "none 0px",
+     "styleAttr": "background:#FFFFFF;outline:1px solid var(--linea-seccion);outline-offset:-1px"
+    },
+    {
+     "fondo": "rgb(17, 17, 17)",
+     "contorno": "none 0px",
+     "borde": "none 0px",
+     "styleAttr": "background:#111111"
+    },
+    {
+     "fondo": "rgb(102, 102, 99)",
+     "contorno": "none 0px",
+     "borde": "none 0px",
+     "styleAttr": "background:#666663"
+    },
+    {
+     "fondo": "rgb(0, 41, 255)",
+     "contorno": "none 0px",
+     "borde": "none 0px",
+     "styleAttr": "background:#0029FF"
+    }
+   ],
+   "registro": [
+    {
+     "id": "medido",
+     "antes": "1px rgba(17, 17, 17, 0.18) en x=331 w=9px",
+     "despues": "1px rgba(17, 17, 17, 0.18) en x=335 h=9px",
+     "bordeSeccion": "rgba(17, 17, 17, 0.18)",
+     "ladoBorde": "0px none · borde derecho del lado en x=336"
+    },
+    {
+     "id": "casos",
+     "antes": "1px rgba(17, 17, 17, 0.18) en x=331 w=9px",
+     "despues": "1px rgba(17, 17, 17, 0.18) en x=335 h=9px",
+     "bordeSeccion": "rgba(17, 17, 17, 0.18)",
+     "ladoBorde": "0px none · borde derecho del lado en x=336"
+    }
+   ],
+   "registroSvg": [
+    "rgba(17,17,17,.18)",
+    "rgba(17,17,17,.08)",
+    "var(--gris)"
+   ],
+   "tablaResortes": [
+    {
+     "theadVisible": true,
+     "celdas": 34,
+     "celdasConRotuloVisible": 0,
+     "captionCode": [
+      "spring() 11px none",
+      "datos/resortes.json 11px none"
+     ]
+    }
+   ],
+   "texto": {
+    "palabras": 5840,
+    "publicableNotas": 0,
+    "notaLarga": 0,
+    "publicableMayusTrasDosPuntos": 16,
+    "parentesisAbiertoMedicionJs": false,
+    "fechaDelBuild": [
+     "Commit y fecha del build CF_PAGES_COMMIT_SHA y CF_PAGES_BRANCH (variables del build de Cloudflare Pages)"
+    ],
+    "cinco": [
+     "Las cinco preguntas del brief de Mauro, con la opción que r"
+    ],
+    "seis": [
+     "avegador para Santiago; el índice tiene seis entradas; la vista previa del v3 sirve ",
+     "n material, sin ruta /laboratorio/. Con seis entradas, una sola de cliente (inventar"
+    ],
+    "unoTreintaYDos": [],
+    "unoCincoMB": [],
+    "kbMayus": [],
+    "formIntelligence": 1,
+    "rayas": 0,
+    "reloj": [
+     "19:12",
+     "19:12"
+    ]
+   },
+   "parentesisDesbalanceados": [],
+   "motion": true,
+   "claseHtml": "con-circulo",
+   "alto": 21440,
+   "errores": [],
+   "bytesImg": {
+    "koto-trabajo-1440.jpg": 161649,
+    "koto-portada-1440.jpg": 15904,
+    "koto-ficha-caso.jpg": 9840,
+    "koto-dos-tintas.jpg": 29654,
+    "koto-cursor-destacado.jpg": 23438,
+    "koto-telemetria.jpg": 55182,
+    "koto-caso-1440.jpg": 112682,
+    "koto-pieza-hover.jpg": 6724,
+    "koto-caso-390.jpg": 118943,
+    "koto-pieza-reposo.jpg": 3993,
+    "koto-trabajo-390.jpg": 112449,
+    "ap-trabajo-1440.jpg": 77374,
+    "ap-indice-patron.jpg": 155292,
+    "ap-cursor.jpg": 36912,
+    "ap-tabla-filetes.jpg": 48280,
+    "ap-escala-tipografica.jpg": 100330,
+    "ap-carga.jpg": 118201,
+    "ap-trabajo-390.jpg": 91066,
+    "ap-etiquetas.jpg": 19564,
+    "letras-comparadas.jpg": 168461,
+    "obra-verifica-y-cumple.jpg": 103321,
+    "obra-combeau-fotografia.jpg": 62007
+   }
+  }
+ },
+ "demos": {
+  "mouseDentro": {
+   "clase": "con-circulo",
+   "centro": [
+    712,
+    424
+   ],
+   "ancho": 88,
+   "visibilidad": "visible",
+   "display": "grid",
+   "fondo": "rgb(0, 41, 255)",
+   "texto": "Ver el caso",
+   "puntero": [
+    712,
+    424
+   ]
+  },
+  "cursorSistemaSobreMedio": "none",
+  "salto": {
+   "px": 240,
+   "llegaAl90msDesdeElEvento": 110,
+   "maxX": 832,
+   "destino": 832,
+   "sobrepasoPx": 0
+  },
+  "mouseFuera": {
+   "clase": "con-circulo",
+   "centro": [
+    772,
+    282
+   ],
+   "ancho": 0,
+   "visibilidad": "visible",
+   "display": "grid",
+   "fondo": "rgb(0, 41, 255)",
+   "texto": "Ver el caso"
+  },
+  "cursorSistemaFuera": "pointer",
+  "teclado": {
+   "enfocado": "pieza",
+   "contorno": "solid 2px rgb(17, 17, 17) a 3px",
+   "rotuloQuieto": "1",
+   "clase": "con-circulo teclado",
+   "circuloVisible": "hidden",
+   "circuloAncho": 0
+  },
+  "vuelveConMouse": {
+   "clase": "con-circulo",
+   "centro": [
+    742,
+    434
+   ],
+   "ancho": 88,
+   "visibilidad": "visible",
+   "display": "grid",
+   "fondo": "rgb(0, 41, 255)",
+   "texto": "Ver el caso"
+  },
+  "tab": {
+   "paradas": 2,
+   "sinContorno": [],
+   "lista": [
+    "input=entrada 18x18",
+    "button#mover 75x44"
+   ]
+  },
+  "resorteTeclado": {
+   "elegidoConFlecha": "estado",
+   "lectura": "Resorte estado: en tu navegador llegó al 90 % a 155 ms (calculado: 139 ms).",
+   "vivo": {
+    "color": "rgb(0, 41, 255)",
+    "tam": "16px",
+    "fondo": "rgb(239, 239, 234)"
+   }
+  },
+  "resorteEspacio": "Resorte estado: en tu navegador llegó al 90 % a 143 ms (calculado: 139 ms).",
+  "resorteMouse": {
+   "cursor": "Resorte cursor: en tu navegador llegó al 90 % a 90 ms (calculado: 75 ms).",
+   "estado": "Resorte estado: en tu navegador llegó al 90 % a 142 ms (calculado: 139 ms).",
+   "entrada": "Resorte entrada: en tu navegador llegó al 90 % a 276 ms (calculado: 264 ms)."
+  },
+  "grafico": {
+   "cruz": "visible",
+   "tip": "260 ms · resorte 90 % · Koto 90 % · A&P 56 %"
+  },
+  "reducido": {
+   "clase": "sin-circulo",
+   "circulo": "none",
+   "cursorSistema": "pointer",
+   "rotuloAlPasar": "1",
+   "animacionesTrasMover": 0,
+   "transformInmediato": "matrix(1, 0, 0, 1, 920, 0)",
+   "lectura": "Movimiento reducido: sin resorte, el bloque salta a su lugar."
+  },
+  "telefono": {
+   "clase": "sin-circulo",
+   "circulo": "none",
+   "trasToque": "#casos",
+   "areas": [
+    "1 · Lo que pediste 125x38",
+    "2 · Medido 69x38",
+    "3 · Qué tomamos 104x38",
+    "4 · Tokens 69x38",
+    "5 · Casos y datos 118x38",
+    "6 · Lo que decides 125x38",
+    "cursor 74x44",
+    "estado 77x44",
+    "entrada 84x44",
+    "Mover 75x44"
+   ]
+  }
+ },
+ "imagenesEnDisco": {
+  "archivos": 22,
+  "enManifiesto": 22,
+  "totalBytes": 1631266,
+  "totalManifiesto": 1631266,
+  "mayorBytes": 168461,
+  "difierenDelManifiesto": []
+ },
+ "navegador": "141.0.7390.37",
+ "sinJs": {
+  "reloj": [
+   "--:--",
+   "--:--"
+  ],
+  "muestraMono": [
+   "4Los tokens, dibujados\n  \n    Tus colores, con un rol cada uno. Contraste calculado desde el hex con la fórmula de WCAG; el mínimo para texto es 4,5:1.\n    --pa",
+   "Build de la vista previa: f0d911c, 14-oct-2026 · 21 señales, 30 + 40 + 30",
+   "Las tres líneas son verdaderas, no de adorno: Verifica y Cumple es producto propio de 2026 en Cloudflare Pages; la hora la calcula tu navegador para Santiago; e"
+  ]
+ }
+}

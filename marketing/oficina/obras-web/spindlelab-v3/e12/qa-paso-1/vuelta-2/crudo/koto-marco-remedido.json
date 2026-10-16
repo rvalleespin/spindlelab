@@ -1,0 +1,121 @@
+{
+ "fecha": "2026-10-16T22:07:50.860Z",
+ "home": {
+  "cadenaDelTitulo": [
+   {
+    "tag": "span",
+    "x": 28,
+    "w": 179,
+    "pad": "0px",
+    "radio": "0px",
+    "dataRef": "data-ref-showreel-title-title"
+   },
+   {
+    "tag": "h1",
+    "x": 28,
+    "w": 511,
+    "pad": "0px",
+    "radio": "0px",
+    "dataRef": ""
+   },
+   {
+    "tag": "div",
+    "x": 16,
+    "w": 523,
+    "pad": "12px",
+    "radio": "0px",
+    "dataRef": "data-ref-showreel-title"
+   },
+   {
+    "tag": "div",
+    "x": 16,
+    "w": 1408,
+    "pad": "0px",
+    "radio": "0px",
+    "dataRef": ""
+   },
+   {
+    "tag": "div",
+    "x": 0,
+    "w": 1440,
+    "pad": "16px",
+    "radio": "0px",
+    "dataRef": "data-ref-showreel-title-container"
+   },
+   {
+    "tag": "div",
+    "x": 0,
+    "w": 1440,
+    "pad": "0px",
+    "radio": "0px",
+    "dataRef": ""
+   },
+   {
+    "tag": "div",
+    "x": 16,
+    "w": 1393,
+    "pad": "0px",
+    "radio": "0px",
+    "dataRef": ""
+   },
+   {
+    "tag": "div",
+    "x": 16,
+    "w": 1393,
+    "pad": "0px",
+    "radio": "0px",
+    "dataRef": ""
+   },
+   {
+    "tag": "div",
+    "x": 16,
+    "w": 1393,
+    "pad": "0px",
+    "radio": "0px",
+    "dataRef": ""
+   }
+  ],
+  "mediosAnchos": [
+   {
+    "tag": "iframe",
+    "x": -1,
+    "y": 0,
+    "w": 1441,
+    "h": 901,
+    "radio": "0px"
+   },
+   {
+    "tag": "video",
+    "x": 541,
+    "y": 1800,
+    "w": 868,
+    "h": 488,
+    "radio": "0px"
+   },
+   {
+    "tag": "video",
+    "x": 541,
+    "y": 2300,
+    "w": 868,
+    "h": 488,
+    "radio": "0px"
+   },
+   {
+    "tag": "video",
+    "x": 541,
+    "y": 2800,
+    "w": 868,
+    "h": 488,
+    "radio": "0px"
+   }
+  ]
+ },
+ "trabajo": {
+  "barra": {
+   "x": 16,
+   "w": 320,
+   "clase": "relative transition-[width] duration-[400ms] ease-[cubic-bezier(0.65,0.00,0.35,1"
+  },
+  "piezas": []
+ }
+}
