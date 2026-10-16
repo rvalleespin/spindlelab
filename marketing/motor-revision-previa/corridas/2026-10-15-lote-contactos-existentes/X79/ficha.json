@@ -1,0 +1,555 @@
+{
+  "id": "X79",
+  "dominio": "hoteltorremayorlyon.com",
+  "motor": "v0",
+  "cuando": "2026-10-16T13:48:01.138Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "oferta-capa-1",
+  "url": "https://www.hoteltorremayorlyon.com/",
+  "hallazgo": {
+    "id": "F8",
+    "nombre": "El negocio no está declarado como entidad en datos estructurados",
+    "linea": "Visibilidad en IA",
+    "capa": 1,
+    "estado": "estable",
+    "quien_comprueba": "el dueño, con una herramienta gratuita",
+    "donde_mirar": "Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar \"application/ld+json\" en el código de la página.",
+    "condiciones": {
+      "1": {
+        "v": "si",
+        "razon": "Los datos estructurados no se ven."
+      },
+      "2": {
+        "v": "medias",
+        "razon": "Sin entidad declarada, la IA y Google adivinan quién eres."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se comprueba con una herramienta gratuita."
+      },
+      "4": {
+        "v": "no",
+        "razon": "Los chequeos gratis lo muestran: es capa 1."
+      }
+    },
+    "afirmable": "El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.",
+    "no_afirmable": [
+      "que \"Google no te entiende\""
+    ],
+    "advertencias": [],
+    "datos": {},
+    "propuesta": {
+      "en_castellano": "Tu sitio no le dice a Google ni a la IA qué negocio eres en el formato que ellos leen (datos estructurados).",
+      "problema_tecnico": "El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.",
+      "donde_mirar": "Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar \"application/ld+json\" en el código de la página.",
+      "se_vende": {
+        "linea": "Visibilidad en IA",
+        "producto": "Auditoría de Visibilidad en IA",
+        "alcance": "Declarar el negocio como entidad en datos estructurados.",
+        "vehiculo_publicado": "Desde $400.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+        "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría de Visibilidad en IA, desde $400.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+        "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "débil",
+      "frase_de_arreglo": "Eso lo arreglo yo: dejo declarado qué negocio eres, con tu dirección y tu contacto, en el formato que leen Google y la IA.",
+      "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+      "cierre_sugerido": null,
+      "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+      "por_definir": [
+        "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+      ],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [],
+  "ofertas_adicionales": [],
+  "capa1": {
+    "consecuencia": [],
+    "higiene": [
+      "sin_llms_txt",
+      "sin_entidad_en_jsonld"
+    ]
+  },
+  "notas": [],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 0,
+      "mailto": [],
+      "whatsapp": []
+    },
+    "analitica": {
+      "gtm": [
+        "GTM-WVW86LK"
+      ],
+      "ga4": [
+        "G-B4TFZ94RBP"
+      ],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "Apache",
+      "cloudflare": false,
+      "x_powered_by": null
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": true
+    },
+    "llms_txt": false,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [],
+      "org": []
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 2,
+      "fuente_minima_px": null,
+      "textos_chicos_pct": null,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 2,
+      "fuente_minima_px": null,
+      "textos_chicos_pct": null,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 3156480,
+      "al_abrir_bytes": 3156480,
+      "n_peticiones": 63,
+      "mas_pesados": [
+        {
+          "url": "https://images.booking-channel.com/templates/cadenas/air/images/hotels/SYN3074/1500/lyon-oferta.png",
+          "bytes": 581707
+        },
+        {
+          "url": "https://images.booking-channel.com/templates/cadenas/air/images/hotels/SYN3074/1500/popupamigas.jpg.jpg",
+          "bytes": 322150
+        },
+        {
+          "url": "https://www.hoteltorremayorlyon.com/igm/synergycms_searchengine/build/static/js/main.js?_=2610150923",
+          "bytes": 272711
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtm.js?id=GTM-WVW86LK",
+          "bytes": 214590
+        }
+      ]
+    },
+    {
+      "total_bytes": 3155872,
+      "al_abrir_bytes": 3155872,
+      "n_peticiones": 61,
+      "mas_pesados": [
+        {
+          "url": "https://images.booking-channel.com/templates/cadenas/air/images/hotels/SYN3074/1500/lyon-oferta.png",
+          "bytes": 581707
+        },
+        {
+          "url": "https://images.booking-channel.com/templates/cadenas/air/images/hotels/SYN3074/1500/popupamigas.jpg.jpg",
+          "bytes": 322150
+        },
+        {
+          "url": "https://www.hoteltorremayorlyon.com/igm/synergycms_searchengine/build/static/js/main.js?_=2610150923",
+          "bytes": 272711
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtm.js?id=GTM-WVW86LK",
+          "bytes": 214492
+        }
+      ]
+    },
+    {
+      "total_bytes": 3191301,
+      "al_abrir_bytes": 3191301,
+      "n_peticiones": 62,
+      "mas_pesados": [
+        {
+          "url": "https://images.booking-channel.com/templates/cadenas/air/images/hotels/SYN3074/1500/lyon-oferta.png",
+          "bytes": 581707
+        },
+        {
+          "url": "https://images.booking-channel.com/templates/cadenas/air/images/hotels/SYN3074/1500/popupamigas.jpg.jpg",
+          "bytes": 322150
+        },
+        {
+          "url": "https://www.hoteltorremayorlyon.com/igm/synergycms_searchengine/build/static/js/main.js?_=2610150923",
+          "bytes": 272712
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtm.js?id=GTM-WVW86LK",
+          "bytes": 214590
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [
+        "Google Tag"
+      ],
+      "envio_en_ambas": [
+        "Google Analytics"
+      ],
+      "google_gcs": [
+        [
+          "G100"
+        ],
+        [
+          "G100"
+        ],
+        [
+          "G100"
+        ]
+      ],
+      "aviso_en_dom": [
+        {
+          "A": true,
+          "B": true,
+          "implicito": false
+        },
+        {
+          "A": true,
+          "B": true,
+          "implicito": false
+        },
+        {
+          "A": true,
+          "B": true,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": {
+      "gtm": [
+        "GTM-WVW86LK"
+      ],
+      "contenedores": [
+        {
+          "id": "GTM-WVW86LK",
+          "leido": true,
+          "funciones": [
+            "__e",
+            "__jsm",
+            "__v",
+            "__c",
+            "__u",
+            "__f",
+            "__remm",
+            "__j",
+            "__aev",
+            "__awec",
+            "__k",
+            "__gas",
+            "__awct",
+            "__paused",
+            "__gclidw",
+            "__gaawe",
+            "__googtag",
+            "__baut",
+            "__cvt_k8gsg",
+            "__awud",
+            "__cvt_k8hmj",
+            "__cvt_mqdkz",
+            "__cl",
+            "__hl",
+            "__evl",
+            "__html"
+          ],
+          "tags_de_evento": [
+            "__awct",
+            "__gaawe",
+            "__baut"
+          ],
+          "html_personalizado": 42
+        }
+      ],
+      "eventos_inline": [],
+      "eventos_observados_en_sesion": [
+        "page_view"
+      ],
+      "ads_instalado": false
+    },
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 298488
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 298488,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 298488,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 298488,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 298488,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 298488,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 298488,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 298488,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 298488
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 298488,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 298488,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 298488,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 298488,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 298488,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 298488,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 298488,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "hoteltorremayor.cl",
+            "dominio": "hoteltorremayor.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      },
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "hoteltorremayor.cl",
+            "dominio": "hoteltorremayor.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "Hotel Torremayor Lyon"
+      },
+      {
+        "fuente": "title",
+        "valor": "Hotel Torremayor Lyon en Santiago de Chile. Web Oficial"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 30,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

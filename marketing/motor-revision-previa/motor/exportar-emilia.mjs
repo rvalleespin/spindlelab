@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { leerCsv } from './lib/csv.mjs';
+import { descartadoAntes } from './pasadas/p0.mjs';
 
 const RAIZ = path.resolve(fileURLToPath(new URL('../../../', import.meta.url)));   // fileURLToPath: .pathname deja %20 y %7E en rutas con espacios o ~ (iCloud)
 const argv = process.argv.slice(2);
@@ -44,9 +45,12 @@ for (const par of pares) {
     const meta = indice.get(f.dominio) || { empresa: '', email: '' };
     const lista = fs.existsSync(path.join(dir, 'lista.json')) ? JSON.parse(fs.readFileSync(path.join(dir, 'lista.json'), 'utf8')).leads.find((l) => l.id === id) : null;
     const empresa = lista?.empresa || meta.empresa, email = lista?.correo || meta.email;
-    const r = f.resultado || '', h = f.hallazgo, p = h?.propuesta;
+    let r = f.resultado || ''; const h = f.hallazgo, p = h?.propuesta;
+    const previo = !r.startsWith('descartado') && descartadoAntes(f.dominio);   // fichas medidas antes de que el motor cortara por descartes previos
+    if (previo) r = 'descartado:descartado-antes';
     let medido, estado;
-    if (r.startsWith('descartado')) { medido = `Descartado por el motor: ${r.replace('descartado:', '')}${f.detalle?.status ? ' (HTTP ' + f.detalle.status + ')' : ''}`; estado = 'No enviar: ' + (f.detalle?.status ? `el sitio respondio HTTP ${f.detalle.status} (puede ser su firewall bloqueando la IP del motor, no un sitio caido)` : 'descartado antes de medir'); }
+    if (previo) { medido = `Descartado antes en ${previo.en}: ${previo.motivo}`; estado = 'No enviar: ya estaba marcado como no escribir'; }
+    else if (r.startsWith('descartado')) { medido = `Descartado por el motor: ${r.replace('descartado:', '')}${f.detalle?.status ? ' (HTTP ' + f.detalle.status + ')' : ''}`; estado = 'No enviar: ' + (f.detalle?.status ? `el sitio respondio HTTP ${f.detalle.status} (puede ser su firewall bloqueando la IP del motor, no un sitio caido)` : 'descartado antes de medir'); }
     else if (r === 'fallo') { medido = 'El motor no termino con este sitio'; estado = 'No enviar: sin medicion (fallo del motor)'; }
     else if (h && p?.fuerza === 'débil') { medido = hallazgoMedido(f); estado = `OFERTA DÉBIL: verdadera, pero sin una consecuencia que el dueño sienta (estrategia §14.3). Decidir si se escribe sola o se guarda para la llamada. Medido por el motor, ${f.corridas_de_navegador || 2} corridas; ${h.linea}. Sin verificacion humana`; }
     else if (h) { medido = hallazgoMedido(f); estado = `medido por el motor, ${f.corridas_de_navegador || 2} corridas; oferta: ${h.linea}. Sin verificacion humana (la estrategia §3 pide abrir el sitio antes de enviar; Ramon aprueba cada envio)`; }

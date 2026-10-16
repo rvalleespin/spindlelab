@@ -1,6 +1,6 @@
 {
   "url": "https://xinermed.cl/",
-  "cuando": "2026-10-16T12:40:11.691Z",
+  "cuando": "2026-10-16T13:14:25.115Z",
   "A": {
     "cookies": [
       {
@@ -832,20 +832,6 @@
     },
     {
       "fase": "A",
-      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecg.woff2",
-      "metodo": "GET",
-      "tipo": "Font",
-      "clasif": null
-    },
-    {
-      "fase": "A",
-      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2",
-      "metodo": "GET",
-      "tipo": "Font",
-      "clasif": null
-    },
-    {
-      "fase": "A",
       "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2",
       "metodo": "GET",
       "tipo": "Font",
@@ -860,7 +846,21 @@
     },
     {
       "fase": "A",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecg.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
       "url": "https://fonts.gstatic.com/s/poppins/v24/pxiGyp8kv8JHgFVrJJLucHtA.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2",
       "metodo": "GET",
       "tipo": "Font",
       "clasif": null
@@ -909,7 +909,7 @@
     },
     {
       "fase": "A",
-      "url": "blob:https://xinermed.cl/4adc56d1-277f-4233-acf1-90a317778e2b",
+      "url": "blob:https://xinermed.cl/1391168f-ed1a-4578-96fc-143e899c6433",
       "metodo": "GET",
       "tipo": "Script",
       "clasif": null
@@ -965,16 +965,16 @@
     },
     {
       "fase": "A",
-      "url": "https://xinermed.cl/wp-content/uploads/2026/02/cropped-Icono-xinermed-32x32.webp",
+      "url": "https://xinermed.cl/wp-includes/js/wp-emoji-release.min.js?ver=7.1.3",
       "metodo": "GET",
-      "tipo": "Other",
+      "tipo": "Script",
       "clasif": null
     },
     {
       "fase": "A",
-      "url": "https://xinermed.cl/wp-includes/js/wp-emoji-release.min.js?ver=7.1.3",
+      "url": "https://xinermed.cl/wp-content/uploads/2026/02/cropped-Icono-xinermed-32x32.webp",
       "metodo": "GET",
-      "tipo": "Script",
+      "tipo": "Other",
       "clasif": null
     },
     {
@@ -1001,8 +1001,8 @@
   ],
   "setCookies": [],
   "peso": {
-    "total_bytes": 1022729,
-    "al_abrir_bytes": 937795,
+    "total_bytes": 1022733,
+    "al_abrir_bytes": 937799,
     "n_peticiones": 91,
     "mas_pesados": [
       {

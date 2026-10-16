@@ -1,0 +1,13 @@
+{
+  "id": "X60",
+  "dominio": "verdepoly.com",
+  "motor": "v0",
+  "cuando": "2026-10-16T13:39:38.057Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "descartado:descartado-antes",
+  "detalle": {
+    "en": "ventas/contactos-diarioemprende-30sep.csv",
+    "motivo": "descartado dominio aparcado Dominio aparcado en GoDaddy (api.aws.parking.godaddy.com, lander_type); el negocio ya no esta ahi",
+    "nota": "Ya estaba marcado como no escribir en una lista de ventas/. Si cambio, correr con --sin-corte."
+  }
+}

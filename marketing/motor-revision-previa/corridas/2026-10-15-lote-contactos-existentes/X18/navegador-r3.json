@@ -1,6 +1,6 @@
 {
   "url": "https://xinermed.cl/",
-  "cuando": "2026-10-16T12:40:37.384Z",
+  "cuando": "2026-10-16T13:14:50.649Z",
   "A": {
     "cookies": [
       {
@@ -909,13 +909,6 @@
     },
     {
       "fase": "A",
-      "url": "blob:https://xinermed.cl/01d739e4-e839-4d82-9753-168839536bfe",
-      "metodo": "GET",
-      "tipo": "Script",
-      "clasif": null
-    },
-    {
-      "fase": "A",
       "url": "https://xinermed.cl/wp-content/uploads/complianz/css/banner-1-optin.css?v=52",
       "metodo": "GET",
       "tipo": "Stylesheet",
@@ -926,6 +919,13 @@
       "url": "https://xinermed.cl/wp-json/complianz/v1/cookie_data",
       "metodo": "GET",
       "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://xinermed.cl/979c4e55-19da-4057-ab9b-5b17d57c83cb",
+      "metodo": "GET",
+      "tipo": "Script",
       "clasif": null
     },
     {
@@ -1001,17 +1001,17 @@
   ],
   "setCookies": [],
   "peso": {
-    "total_bytes": 1022715,
-    "al_abrir_bytes": 937772,
+    "total_bytes": 1022768,
+    "al_abrir_bytes": 937834,
     "n_peticiones": 91,
     "mas_pesados": [
       {
         "url": "https://xinermed.cl/wp-content/plugins/metform/build/frontend/app/index.js?ver=6ea98acae644b20be40c",
-        "bytes": 143546
+        "bytes": 143555
       },
       {
         "url": "https://xinermed.cl/wp-content/uploads/2026/04/Mario-jerez-e1777486648441.webp",
-        "bytes": 112120
+        "bytes": 112129
       },
       {
         "url": "https://xinermed.cl/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff2",

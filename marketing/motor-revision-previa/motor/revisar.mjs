@@ -54,7 +54,11 @@ log('enlaces de la portada');
 const enlaces = await sondaEnlaces(p0.url_final, corridas.flatMap((r) => (r.B.dom?.enlaces || []).map((e) => e.h)));
 const entidad = entidadInterna(p1.html);
 
-const v = veredicto({ p0, p1, runs: corridas, edge, contacto, entidad, contenedores, gtmIds, htmlEjecutado, enlaces, movil: moviles });
+// Si el navegador no pudo cargar la portada en NINGUNA corrida (error de red, pagina en blanco), no se mide nada: "no hay contacto" sobre una pagina vacia es un falso hallazgo.
+const sinCarga = corridas.every((r) => { const d = r.B.dom || {}; return String(d.url || '').startsWith('chrome-error') || ((d.largo_texto || 0) === 0 && !(d.estructura?.palabras)); });
+const v = sinCarga
+  ? { resultado: 'no-concluyente', hallazgo: null, punteros: [], extras: [], capa1: { consecuencia: [], higiene: [] }, soporte: {}, notas: ['El navegador no pudo cargar la portada en ninguna de las corridas (error de red o página en blanco). Puede ser el firewall del sitio contra una IP de datacenter. No se afirma nada: reintentar desde otra red o abrir el sitio a mano.'] }
+  : veredicto({ p0, p1, runs: corridas, edge, contacto, entidad, contenedores, gtmIds, htmlEjecutado, enlaces, movil: moviles });
 Object.assign(ficha, {
   resultado: v.resultado, url: p0.url_final, html_no_alcanza: p0.html_no_alcanza || undefined,
   hallazgo: v.hallazgo, ruta_interna: v.punteros, ofertas_adicionales: v.extras, capa1: v.capa1, notas: [...v.notas, ...(p0.advertencias || [])], corridas_de_navegador: corridas.length,

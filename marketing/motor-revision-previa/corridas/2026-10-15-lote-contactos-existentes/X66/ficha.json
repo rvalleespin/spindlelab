@@ -1,0 +1,13 @@
+{
+  "id": "X66",
+  "dominio": "cgsconsultoria.cl",
+  "motor": "v0",
+  "cuando": "2026-10-16T13:40:10.711Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "descartado:descartado-antes",
+  "detalle": {
+    "en": "ventas/contactos-google-maps-28sep.csv",
+    "motivo": "descartado seccion 9 Cero rastreadores, cero cookies, cero formularios",
+    "nota": "Ya estaba marcado como no escribir en una lista de ventas/. Si cambio, correr con --sin-corte."
+  }
+}
