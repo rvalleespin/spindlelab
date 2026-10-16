@@ -1,0 +1,207 @@
+{
+ "fecha": "2026-10-16T12:27:36.855Z",
+ "criterio": "manual §07b: tono 38-54°, saturación ≥ 0,5, brillo ≥ 0,5; < 0,05 % es limpio (e9/piezas/medir.py)",
+ "captura": "1440, página completa, antialias de texto en gris",
+ "paginas": [
+  {
+   "direccion": "taller",
+   "pagina": "home",
+   "caja_del_punto": [
+    1192,
+    7132,
+    1254,
+    7433
+   ],
+   "toda_la_pagina": {
+    "pixeles": 1783,
+    "total": 10776960,
+    "pct": 0.0165,
+    "limpio": true,
+    "caja": [
+     683,
+     1729,
+     1251,
+     7369
+    ]
+   },
+   "fuera_del_punto": {
+    "pixeles": 68,
+    "total": 10776960,
+    "pct": 0.0006,
+    "limpio": true,
+    "caja": [
+     683,
+     1729,
+     1228,
+     2871
+    ]
+   },
+   "veredicto": "un solo oro: el punto del pie, sobre ciruela"
+  },
+  {
+   "direccion": "taller",
+   "pagina": "acompanamiento-mensual",
+   "caja_del_punto": [
+    1192,
+    6881,
+    1254,
+    7182
+   ],
+   "toda_la_pagina": {
+    "pixeles": 1715,
+    "total": 10415520,
+    "pct": 0.0165,
+    "limpio": true,
+    "caja": [
+     1204,
+     7071,
+     1251,
+     7118
+    ]
+   },
+   "fuera_del_punto": {
+    "pixeles": 0,
+    "total": 10415520,
+    "pct": 0,
+    "limpio": true,
+    "caja": null
+   },
+   "veredicto": "un solo oro: el punto del pie, sobre ciruela"
+  },
+  {
+   "direccion": "taller",
+   "pagina": "trabajo",
+   "caja_del_punto": [
+    1192,
+    5587,
+    1254,
+    5888
+   ],
+   "toda_la_pagina": {
+    "pixeles": 1793,
+    "total": 8552160,
+    "pct": 0.021,
+    "limpio": true,
+    "caja": [
+     621,
+     1986,
+     1296,
+     5825
+    ]
+   },
+   "fuera_del_punto": {
+    "pixeles": 78,
+    "total": 8552160,
+    "pct": 0.0009,
+    "limpio": true,
+    "caja": [
+     621,
+     1986,
+     1296,
+     2699
+    ]
+   },
+   "veredicto": "un solo oro: el punto del pie, sobre ciruela"
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "home",
+   "caja_del_punto": [
+    1192,
+    5695,
+    1254,
+    5996
+   ],
+   "toda_la_pagina": {
+    "pixeles": 1758,
+    "total": 8706240,
+    "pct": 0.0202,
+    "limpio": true,
+    "caja": [
+     645,
+     1126,
+     1257,
+     5932
+    ]
+   },
+   "fuera_del_punto": {
+    "pixeles": 43,
+    "total": 8706240,
+    "pct": 0.0005,
+    "limpio": true,
+    "caja": [
+     645,
+     1126,
+     1257,
+     2976
+    ]
+   },
+   "veredicto": "un solo oro: el punto del pie, sobre ciruela"
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "acompanamiento-mensual",
+   "caja_del_punto": [
+    1192,
+    6528,
+    1254,
+    6829
+   ],
+   "toda_la_pagina": {
+    "pixeles": 1715,
+    "total": 9907200,
+    "pct": 0.0173,
+    "limpio": true,
+    "caja": [
+     1204,
+     6718,
+     1251,
+     6765
+    ]
+   },
+   "fuera_del_punto": {
+    "pixeles": 0,
+    "total": 9907200,
+    "pct": 0,
+    "limpio": true,
+    "caja": null
+   },
+   "veredicto": "un solo oro: el punto del pie, sobre ciruela"
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "trabajo",
+   "caja_del_punto": [
+    1192,
+    6959,
+    1254,
+    7260
+   ],
+   "toda_la_pagina": {
+    "pixeles": 1826,
+    "total": 10527840,
+    "pct": 0.0173,
+    "limpio": true,
+    "caja": [
+     888,
+     2048,
+     1251,
+     7196
+    ]
+   },
+   "fuera_del_punto": {
+    "pixeles": 111,
+    "total": 10527840,
+    "pct": 0.0011,
+    "limpio": true,
+    "caja": [
+     888,
+     2048,
+     1208,
+     2951
+    ]
+   },
+   "veredicto": "un solo oro: el punto del pie, sobre ciruela"
+  }
+ ]
+}

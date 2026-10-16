@@ -27,6 +27,7 @@
     "por_que": [
       "The Ready muestra gente trabajando de pie ante mesas con notas, de espaldas o de perfil, con grano en el archivo y saturación alta (lock §7). Eso se toma.",
       "Sus interiores son lofts de ladrillo de Estados Unidos con ampolletas encendidas, jardín al sol y hojas de otoño: es justo lo que Ramón llamó «pastoral gringa» en Hoare, y es lo que trae el 0,52 % de oro de su página de nosotros (lock §7). Eso no se toma: aquí la luz es de día y neutra, y los lugares son de Santiago.",
+      "Medido el 16-oct con `node generar.mjs --medir` (igual píxel a píxel que medir.py: 6.740, 1.170 y 3.732 px en las tres pruebas): la foto del hero de The Ready (lock/the-ready/foto-grano-hero-x2.png) da 1,055 % de oro, el doble que la primera pantalla de nosotros (0,52 %). Su luz cálida es justo lo que no se toma; si una foto generada sale «como The Ready», sale con oro.",
       "SpindleLab es una persona y el texto lo dice («una persona, no una agencia de veinte»). Una foto de cinco consultores en un taller contradice la home. Por eso la gente de las fotos está en SU empresa (bodega, maestranza, mesón, sala de reuniones), no en una sesión con un asesor.",
       "Gehl aporta el aire: una persona chica en un cuadro grande, foto documental a sangre, color natural (lock §9). Esa es la dirección Pizarra limpia."
     ],
@@ -550,7 +551,7 @@
   ],
   "equivalencia_lucia": {
     "archivo": "tableros/e10-direcciones/espacios-foto.json",
-    "estado": "pendiente: el archivo no existía cuando se escribió esta pauta (16-oct). Cuando exista, se llena `lucia` con su F<n> y se corrige `seccion` si su espacio es otro.",
+    "estado": "pendiente. Revisado el 16-oct a las 09:03 (Chile): tableros/e10-direcciones/ tiene proto/ (con la clase .foto-slot para el espacio marcado) pero todavía no espacios-foto.json ni páginas. Cuando exista, se llena `lucia` con su F<n> y se corrige `seccion` si su espacio es otro; generar.mjs avisa mientras la tabla siga vacía.",
     "tabla": [
       {
         "bruno": "F1",

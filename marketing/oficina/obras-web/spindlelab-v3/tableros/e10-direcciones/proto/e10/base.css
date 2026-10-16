@@ -1,7 +1,7 @@
 /* base.css — lo que comparten las dos direcciones del tablero E10 (Lucía, 16-oct-2026).
    Letras libres del lock §11, paleta de tokens.css, accesibilidad, y las tres piezas de juego que
    las dos usan con distinto techo: la cinta (§4 y §14), el marcador (§5) y el espacio de foto.
-   La composición de cada dirección está en taller.css y en pizarra-limpia.css. */
+   La composición de cada dirección está en taller.css y en pizarra.css. */
 @import url('/e10/tokens.css');
 
 /* ── Letras (OFL; archivos en /fuentes, sin pedir nada afuera) ─────────────────────────────── */
@@ -33,10 +33,14 @@
 @font-face { font-family: 'Gabarito'; font-style: normal; font-weight: 600; font-display: swap;
   src: url('/fuentes/Gabarito.woff2') format('woff2'); }
 
+/* ── Medidas compartidas (lock §6): margen 75 px a 1440 y 24 a 390; aire de sección ~96 px ── */
+:root { --m: 75px; --sec: 96px; --gap: 24px; }
+@media (max-width: 767px) { :root { --m: 24px; --sec: 56px; --gap: 16px; } }
+
 /* ── Base ────────────────────────────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 17px/1.45 var(--f-cuerpo);
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 var(--fs-body, 17px)/1.45 var(--f-cuerpo);
   -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: clip; }
 h1, h2, h3, p, ol, ul, figure { margin: 0; }
 ol, ul { padding: 0; list-style: none; }
@@ -47,57 +51,164 @@ button, input { font: inherit; color: inherit; }
 [hidden] { display: none !important; }
 .d-sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 :focus-visible { outline: 2px solid var(--tinta); outline-offset: 4px; }
-
-/* El mono en MAYÚSCULAS vive solo a 11-13 px: rótulos, navegación, migas y botones (lock §13). */
-.mono { font: 500 12px/1.2 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; }
+main { display: block; }
+/* Toda letra display: Instrument Sans 500, caja de oración, −0,02em (lock §2). Nunca en MAYÚSCULAS. */
+.d-display, .d-h1, .d-h2, .d-h3 { font-family: var(--f-display); font-weight: 500; letter-spacing: -.02em; color: var(--ciruela); text-wrap: balance; }
+/* El mono en MAYÚSCULAS vive solo a 11-13 px: rótulos, navegación, migas, pies de pieza y botones (lock §13). */
+.d-rot, .d-etq, .d-miga, .d-pre-rot, .d-pill, .d-btn, .d-indice time, .d-pie__legal, .d-pie h2, .d-chico.d-gris:not(p),
+.mono { font: 500 12px/1.25 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--tinta); }
+@media (max-width: 767px) { .d-rot, .d-etq, .d-miga, .d-pre-rot, .d-pill, .d-indice time, .d-pie__legal, .d-pie h2 { font-size: 12.5px; } }
 
 /* ── Encabezado (el de The Ready: papel, filete ciruela de 1 px abajo, botón rectángulo radio 0) ── */
 header[data-modulo-nav] { position: relative; z-index: 5; background: var(--papel); border-bottom: 1px solid var(--ciruela); }
-header[data-modulo-nav] > div > div { display: flex; align-items: center; height: 90px; padding: 0 var(--m); gap: 0; }
+header[data-modulo-nav] > div > div { display: flex; align-items: center; height: 90px; padding: 0 var(--m); }
 header[data-modulo-nav] a.font-wordmark { font: 600 31px/1 var(--f-marca); letter-spacing: -.025em; color: var(--ciruela); text-decoration: none; margin-right: auto; padding: 8px 0; }
-/* El punto del encabezado va en ciruela: el oro de la página está en la banda final (lock §12, opción A). */
+/* El punto del encabezado va en ciruela: sobre papel el oro da 2,40:1. El oro de la vista está en el pie (lock §12, opción A). */
 header[data-modulo-nav] .text-gold { color: var(--ciruela); }
 header[data-modulo-nav] a[href$="/contacto/"] { display: inline-flex; align-items: center; justify-content: center; height: 50px; padding: 0 28px;
-  font: 500 11px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: background-color .6s cubic-bezier(.19, 1, .22, 1), color .6s cubic-bezier(.19, 1, .22, 1); }
+  background: var(--ciruela); color: var(--papel); border: 1px solid var(--ciruela); border-radius: 0;
+  font: 500 11px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; text-decoration: none;
+  transition: background-color .6s cubic-bezier(.19, 1, .22, 1), color .6s cubic-bezier(.19, 1, .22, 1); }
+header[data-modulo-nav] a[href$="/contacto/"]:hover { background: var(--papel); color: var(--ciruela); }
 #menu-btn { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; margin-left: 12px; margin-right: -12px; background: none; border: 0; cursor: pointer; }
 #icono-abrir { display: grid; gap: 8px; width: 30px; }
 #icono-abrir span { display: block; height: 1.5px; background: var(--ciruela); }
+@media (max-width: 767px) {
+  header[data-modulo-nav] > div > div { height: 72px; }
+  header[data-modulo-nav] a.font-wordmark { font-size: 25px; }
+  header[data-modulo-nav] a[href$="/contacto/"] { height: 44px; padding: 0 14px; }
+  #menu-btn { width: 44px; height: 44px; margin-left: 6px; margin-right: -8px; }
+  #icono-abrir { width: 26px; gap: 7px; }
+}
+
+/* ── Botones ──
+   .d-btn: rectángulo de radio 0, ciruela, mono +0,1em; al pasar el cursor se invierte (el del encabezado de The Ready).
+   .d-btn--alt: el mismo rectángulo, en línea de 1 px.
+   .ovalo: el llamado principal, UNO a la vista (lock §13). Óvalo grande; al pasar el cursor se invierte y crece ×1,10. */
+.d-btns { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.d-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; padding: 0 26px; border: 1px solid var(--ciruela); border-radius: 0;
+  background: var(--ciruela); color: var(--papel); letter-spacing: .1em; text-decoration: none; text-align: center; cursor: pointer;
+  transition: background-color .6s cubic-bezier(.19, 1, .22, 1), color .6s cubic-bezier(.19, 1, .22, 1); }
+.d-btn:hover { background: var(--papel); color: var(--ciruela); }
+.d-btn--alt { background: transparent; color: var(--ciruela); }
+.d-btn--alt:hover { background: var(--ciruela); color: var(--papel); }
+.ovalo { display: inline-grid; place-items: center; min-width: 280px; height: 96px; padding: 0 40px; border-radius: 100%;
+  background: var(--ciruela); color: var(--papel); border: 1px solid var(--ciruela); cursor: pointer; white-space: nowrap;
+  font: 500 12.7px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; text-decoration: none;
+  transition: transform .6s cubic-bezier(.19, 1, .22, 1), background-color .6s cubic-bezier(.19, 1, .22, 1), color .6s cubic-bezier(.19, 1, .22, 1); }
+.ovalo:hover { background: var(--papel); color: var(--ciruela); transform: scale(1.1); }
+@media (max-width: 767px) { .ovalo { min-width: 236px; height: 84px; padding: 0 28px; font-size: 13px; } }
+
+/* Pestañas y rótulo de servicio: mono en mayúsculas, rectángulo de radio 0. La activa, llena. */
+.d-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.d-pill { display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px; border: 1px solid var(--ciruela); background: transparent; color: var(--ciruela); border-radius: 0; cursor: default; }
+.d-pill[aria-selected="true"], .d-pill--rotulo { background: var(--ciruela); color: var(--papel); }
+@media (max-width: 767px) { .d-pill { min-height: 44px; } }
+
+/* Precio: la cifra en display; «Desde» y «+ IVA» en mono. */
+.d-precio { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; color: var(--ciruela); }
+.d-precio b { font: 500 var(--fs-precio, 26px)/1.15 var(--f-display); letter-spacing: -.01em; }
+.d-pre-alt, .d-pre-junto-trab { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.d-pre-sep { display: none; }
+
+/* Migas */
+.d-miga__lista { display: flex; flex-wrap: wrap; gap: 0 2px; }
+.d-miga a { text-decoration: none; }
+.d-miga a:hover { text-decoration: underline; }
+
+/* Piezas de obra: radio 0 (lock §7); el pie, rótulo mono debajo. */
+.d-pieza { position: relative; margin: 0; }
+.d-pieza picture, .d-pieza img { display: block; width: 100%; }
+.d-pieza img { height: 100%; object-fit: cover; border-radius: 0; }
+.d-etq { display: flex; flex-wrap: wrap; gap: 4px 12px; padding-top: 10px; color: var(--tinta); }
+.d-etq--concepto { color: var(--ciruela); font-weight: 500; }
+.d-obra-trab__img { text-decoration: none; }
+
+/* ── El marcador a mano (SVG propio, marcador.svg): detrás de la frase, 2 a 6 palabras, al final (lock §5 y §13) ── */
+.mk { background: url('/e10/marcador.svg') left center / 100% 100% no-repeat; padding: 0 .12em; margin: 0 -.12em;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; color: var(--ciruela);
+  transition: background-size .47s cubic-bezier(.3, .7, .3, 1); }
+.mk--papel { background-image: url('/e10/marcador-papel.svg'); }
+.mk--espera { background-size: 0% 100%; }
+@media (prefers-reduced-motion: reduce) { .mk { transition: none; } }
+@media (forced-colors: active) { .mk { background: none; } }
 
 /* ── La cinta (lock §4 y §14): 30 px/s por tiempo, pausable, quieta con movimiento reducido, aria-hidden ── */
-.cinta-caja { position: relative; border-top: 1px solid var(--ciruela); border-bottom: 1px solid var(--ciruela); }
+.cinta-caja { position: relative; border-top: 1px solid var(--ciruela); border-bottom: 1px solid var(--ciruela); background: var(--papel); }
 .cinta { overflow: hidden; }
-.cinta__pista { display: flex; width: max-content; will-change: transform;
+/* Desde 20 px antes del botón hasta el borde, papel: la cinta se corta limpio y no corre por detrás del botón */
+.cinta-caja::after { content: ''; position: absolute; top: 0; bottom: 0; right: 0; width: calc(var(--m) + 64px); background: var(--papel); }
+@media (max-width: 767px) { .cinta-caja::after { width: 76px; } }
+.cinta__pista { display: flex; width: max-content; will-change: transform; padding-left: var(--m);
   animation: cinta-corre var(--dur, 40s) linear infinite; }
 .cinta__grupo { display: flex; align-items: center; flex: none; white-space: nowrap; color: var(--ciruela);
-  font: 500 51.6px/1.4 var(--f-display); letter-spacing: -.02em; }
+  font: 500 var(--fs-cinta, 51.6px)/1.4 var(--f-display); letter-spacing: -.02em; }
 .cinta__grupo > span { padding-right: .5em; }
-.cinta__sep { color: var(--ciruela); }
 @keyframes cinta-corre { from { transform: translateX(0); } to { transform: translateX(calc(-1 * var(--ancho, 0px))); } }
 .cinta--pausada .cinta__pista, .cinta--fuera .cinta__pista { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) { .cinta-caja:not(.cinta--elegida) .cinta__pista { animation: none; } }
 .cinta__pausa { position: absolute; right: var(--m); top: 50%; translate: 0 -50%; width: 44px; height: 44px; display: grid; place-items: center;
-  background: var(--papel); color: var(--ciruela); border: 1px solid var(--ciruela); border-radius: 0; cursor: pointer; padding: 0; }
+  z-index: 1; background: var(--papel); color: var(--ciruela); border: 1px solid var(--ciruela); border-radius: 0; cursor: pointer; padding: 0; }
 .cinta__pausa:hover { background: var(--ciruela); color: var(--papel); }
 .cinta__pausa svg { width: 14px; height: 14px; display: block; }
 .cinta__pausa .ico-mover { display: none; }
 .cinta--pausada .cinta__pausa .ico-pausa { display: none; }
 .cinta--pausada .cinta__pausa .ico-mover { display: block; }
-
-/* ── El marcador a mano (SVG propio, marcador.svg): detrás de la frase, 2 a 6 palabras, al final ── */
-.mk { background: url('/e10/marcador.svg') left center / 100% 100% no-repeat; padding: 0 .12em; margin: 0 -.12em;
-  -webkit-box-decoration-break: clone; box-decoration-break: clone; color: var(--ciruela);
-  transition: background-size .47s cubic-bezier(.3, .7, .3, 1); }
-.mk--espera { background-size: 0% 100%; }
-@media (prefers-reduced-motion: reduce) { .mk { transition: none; } }
-@media (forced-colors: active) { .mk { background: none; } }
+@media (max-width: 767px) { .cinta__grupo { font-size: var(--fs-cinta-cel, 36.3px); } .cinta__pausa { right: 12px; } }
 
 /* ── Espacio de foto por generar (placeholder dirigido: tamaño y proporción exactos, rótulo visible) ── */
-.foto-slot { position: relative; margin: 0; background: #D8D4CB url('/e10/cruz.svg') center / 100% 100% no-repeat; aspect-ratio: var(--r); overflow: hidden; }
-.foto-slot__rot { position: absolute; left: 12px; top: 12px; right: 12px; width: fit-content; max-width: calc(100% - 24px);
+.foto-slot { position: relative; margin: 0; background: #DDD9CF url('/e10/cruz.svg') center / 100% 100% no-repeat; aspect-ratio: var(--r); overflow: hidden; }
+@media (max-width: 767px) { .foto-slot[style*="--r-cel"] { aspect-ratio: var(--r-cel); } }
+.foto-slot__rot { position: absolute; left: 12px; top: 12px; width: fit-content; max-width: calc(100% - 24px);
   background: var(--papel); color: var(--ciruela); font: 500 12px/1.35 var(--f-mono); letter-spacing: .02em; padding: 6px 9px; border: 1px solid var(--ciruela); }
 
-/* ── Piezas de lectura (re-rendidas en papel con el generador de E9): filete ciruela de 1 px ── */
-.pieza-lectura img { outline: 1px solid var(--ciruela); outline-offset: -1px; }
+/* ── Piezas de lectura (E9 re-rendidas en papel con el generador, --paleta=e10): filete ciruela de 1 px ── */
+.pieza-lectura { margin: 0; }
+.pieza-lectura img { width: 100%; outline: 1px solid var(--ciruela); outline-offset: -1px; }
+
+/* ── Mancha naranja (solo Taller, una por página): el fondo de un rótulo mono que ya existía ── */
+.mancha { display: inline-grid !important; place-items: center; text-align: center; width: 176px; aspect-ratio: 1.12; padding: 18px 26px;
+  background: url("/e10/mancha.svg") center / 100% 100% no-repeat; color: var(--tinta) !important; rotate: -7deg; text-wrap: balance; }
 
 /* ── Garabato (Taller): decorativo, nunca detrás de texto ── */
-.garabato { pointer-events: none; user-select: none; }
+.garabato { pointer-events: none; user-select: none; display: block; }
+
+/* ── Siguiente ── */
+.d-siguiente { display: block; text-decoration: none; padding: var(--sec) var(--m); border-top: 1px solid var(--ciruela); }
+.d-siguiente .d-h1 { display: block; margin-top: 14px; font-size: var(--fs-sig, 91px); line-height: 1; }
+.d-siguiente:hover .d-h1 { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .12em; }
+
+/* ── Pie: la banda ciruela, la última (lock §13). El único oro de la vista: el punto del wordmark (7,80:1) ── */
+.d-pie { background: var(--ciruela); color: var(--papel); padding: var(--sec) var(--m) 40px; position: relative; }
+.d-pie * { color: inherit; }
+.d-pie__arriba { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px var(--gap); align-items: start; }
+.d-pie__arriba > div:first-child { gap: 28px !important; }
+.d-pie__arriba .d-guia { font: 500 var(--fs-pie, 138px)/.9 var(--f-display); letter-spacing: -.02em; max-width: none !important; color: var(--papel); text-wrap: balance; }
+.d-pie .d-btn { /* el óvalo lavanda de la banda final de The Ready */
+  display: inline-grid; place-items: center; min-width: 280px; height: 96px; padding: 0 40px; border-radius: 100%; background: var(--lavanda); color: var(--tinta);
+  border: 1px solid var(--lavanda); font-size: 12.7px; transition: transform .6s cubic-bezier(.19, 1, .22, 1), background-color .6s, color .6s; }
+.d-pie .d-btn:hover { background: var(--papel); color: var(--ciruela); transform: scale(1.1); }
+.d-pie a.d-chico { font: 500 13px/1.3 var(--f-mono); letter-spacing: .03em; color: var(--papel); text-decoration: underline; text-underline-offset: 4px; }
+.d-pie__nav { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); padding-top: 12px; }
+.d-pie h2 { color: var(--papel); }
+.d-pie__lista { display: grid; gap: 8px; }
+.d-pie__lista a { text-decoration: none; font-size: 17px; }
+.d-pie__lista a:hover, .d-pie__lista a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
+.d-gigante { font: 600 calc((100vw - 2 * var(--m)) / 5.15)/.82 var(--f-marca); letter-spacing: -.035em; color: var(--papel); margin: 72px 0 24px -.04em; white-space: nowrap; }
+.d-gigante .oro { color: var(--oro); }
+.d-pie__legal { display: flex; justify-content: space-between; gap: 16px; padding-top: 18px; border-top: 1px solid color-mix(in srgb, var(--papel) 40%, transparent); }
+.d-pie :focus-visible { outline-color: var(--papel); }
+@media (max-width: 767px) {
+  .d-pie__arriba { grid-template-columns: 1fr; }
+  .d-pie .d-btn { min-width: 236px; height: 84px; }
+  .d-gigante { margin-top: 48px; }
+  .d-pie__legal { flex-direction: column; gap: 4px; }
+}
+
+/* ── Formulario del chequeo (inerte en el prototipo) ── */
+.chq-form { display: flex; align-items: center; }
+.chq-form input { height: 64px; flex: 1 1 auto; min-width: 0; padding: 0 20px; border: 1px solid var(--ciruela); border-radius: 0; background: var(--papel);
+  font: 400 20px/1 var(--f-cuerpo); color: var(--tinta); }
+.chq-form input::placeholder { color: #625B66; opacity: 1; }
+.chq-form button { flex: none; }
+.d-nota { font-size: 15px; line-height: 1.4; }

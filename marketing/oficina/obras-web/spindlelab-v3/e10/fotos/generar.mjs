@@ -31,6 +31,8 @@ import { fileURLToPath } from 'node:url';
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const PAUTA = path.join(DIR, 'pauta.json');
+// Los espacios de foto que Lucía numera en el tablero (puede no existir todavía).
+const ESPACIOS_LUCIA = path.resolve(DIR, '../../tableros/e10-direcciones/espacios-foto.json');
 
 const PROVEEDORES = {
   gemini: {
@@ -175,6 +177,14 @@ async function sincronizar(pauta) {
     ? `pauta.json: prompt_completo_en reescrito en ${antes.join(', ')}. Revisa el diff antes de generar.`
     : 'pauta.json ya estaba al día; no cambió nada de fondo.');
   return 0;
+}
+
+// Si Lucía ya publicó sus espacios y la tabla de equivalencia sigue vacía, se avisa (no bloquea).
+async function avisoLucia(pauta) {
+  try { await readFile(ESPACIOS_LUCIA); } catch { return null; }
+  const vacias = (pauta.equivalencia_lucia?.tabla ?? []).filter((t) => !t.lucia).map((t) => t.bruno);
+  if (!vacias.length) return null;
+  return `Ojo: ya existe ${path.relative(DIR, ESPACIOS_LUCIA)} (los espacios de foto de Lucía) y equivalencia_lucia sigue sin llenar en ${vacias.join(', ')}. Alinea los F<n> en pauta.json antes de generar, o las fotos quedarán con números que no son los del tablero.`;
 }
 
 const numero = (id) => Number(String(id).replace(/\D/g, ''));
@@ -536,7 +546,7 @@ function medirOro(img) {
     pixeles: n,
     pct: Number(pct.toFixed(3)),
     caja: n ? { x0, y0, x1, y1 } : null,
-    alerta: pct > ORO_ALERTA_PCT ? `más de ${ORO_ALERTA_PCT} %: mirar la máscara; si la zona se ve, cuenta como oro` : null,
+    alerta: pct > ORO_ALERTA_PCT ? `más de ${String(ORO_ALERTA_PCT).replace('.', ',')} %: mirar la máscara; si la zona se ve, cuenta como oro` : null,
     _mascara: mascara,
   };
 }
@@ -612,7 +622,7 @@ async function numerosUsados(dir) {
 }
 
 // ---------------------------------------------------------------- listar (sin red)
-function listar(pauta, plan, args, usados) {
+function listar(pauta, plan, args, usados, aviso) {
   const pedido = proveedorPedido(args);
   const conClave = ['gemini', 'openai'].filter((p) => claveDe(p));
   const proveedor = pedido ?? conClave[0] ?? 'gemini';
@@ -642,6 +652,7 @@ function listar(pauta, plan, args, usados) {
   decir(`Precios de lista conocidos${args.modelo ? ' del modelo por defecto' : ''}; verificar en la consola del proveedor antes de una corrida grande.`);
   const malas = desincronizadas(pauta);
   if (malas.length) decir(`Ojo: prompt_completo_en está desactualizado en ${malas.join(', ')}. Corre --sincronizar antes de generar.`);
+  if (aviso) decir(aviso);
   decir('');
   decir(`Modo lista: no se llamó a la red y no se generó nada. Para generar, repite con --tope=${total} (o menos: el tope corta por prioridad).`);
   return 0;
@@ -770,8 +781,10 @@ async function main() {
   const variantes = entero(args.variantes ?? '2', 'variantes', 1, 8);
   const plan = armarPlan(fotos, variantes);
   const usados = await numerosUsados(path.resolve(args.salida ?? path.join(DIR, 'salida')));
-  if (args.tope === undefined) return listar(pauta, plan, args, usados);
+  const aviso = await avisoLucia(pauta);
+  if (args.tope === undefined) return listar(pauta, plan, args, usados, aviso);
   const tope = entero(args.tope, 'tope', 1, 200);
+  if (aviso) avisar(aviso);
   return generar(pauta, plan, args, tope);
 }
 

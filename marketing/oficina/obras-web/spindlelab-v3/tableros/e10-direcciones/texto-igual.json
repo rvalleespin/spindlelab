@@ -1,0 +1,389 @@
+{
+ "fecha": "2026-10-16T12:25:41.896Z",
+ "metodo": "herramientas/texto-igual.mjs (ver la cabecera)",
+ "resultado": "IGUAL: en las 12 vistas (3 páginas × 2 direcciones × 2 anchos) el texto visible es el del build; solo se agregan los rótulos de foto y la cinta, comprobados aparte",
+ "paginas": [
+  {
+   "direccion": "taller",
+   "pagina": "home",
+   "ancho": 1440,
+   "prototipo": "proto/taller/home.html",
+   "build": "dist/v3/index.html",
+   "texto_igual": true,
+   "fragmentos_build": 75,
+   "fragmentos_prototipo": 75,
+   "faltan": [],
+   "sobran": [],
+   "mismo_orden_de_lectura": false,
+   "excepciones": {
+    "rotulos_foto": [
+     "Foto por generar · F1 · gente de pie en una mesa con hojas y notas",
+     "Foto por generar · F2 · alguien responde a un cliente en el mesón",
+     "Foto por generar · F3 · notas en una planilla de cuatro columnas",
+     "Foto por generar · F4 · un mensaje que llega al taller"
+    ],
+    "rotulos_bien_formados": true,
+    "cinta": [
+     {
+      "clave": "taller-home",
+      "items": [
+       "Desarrollo",
+       "Visibilidad",
+       "Continuidad",
+       "Alcance"
+      ],
+      "origen": "spindlelab-astro/dist/v3/index.html",
+      "todos_publicados": true,
+      "ausentes": []
+     }
+    ]
+   },
+   "fotos_viejas_assets_img_d": 0,
+   "ok": true
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "home",
+   "ancho": 1440,
+   "prototipo": "proto/pizarra/home.html",
+   "build": "dist/v3/index.html",
+   "texto_igual": true,
+   "fragmentos_build": 75,
+   "fragmentos_prototipo": 75,
+   "faltan": [],
+   "sobran": [],
+   "mismo_orden_de_lectura": false,
+   "excepciones": {
+    "rotulos_foto": [
+     "Foto por generar · F5 · una mesa larga junto a la ventana, con la cordillera"
+    ],
+    "rotulos_bien_formados": true,
+    "cinta": [
+     {
+      "clave": "pizarra-home",
+      "items": [
+       "Los índices de búsqueda de IA pueden entrar",
+       "Los asistentes de IA pueden visitarte en vivo",
+       "El servidor no expulsa a los robots de IA",
+       "Robots de entrenamiento: decisión consciente",
+       "El sitio responde por HTTPS",
+       "Tienes datos estructurados",
+       "Tu negocio está declarado como entidad",
+       "Tu entidad tiene dirección y contacto",
+       "Te conectas con al menos 3 perfiles externos",
+       "Hay una persona con credenciales detrás",
+       "El título dice qué haces y dónde",
+       "Tienes meta description útil",
+       "Hay un solo H1",
+       "Tienes llms.txt",
+       "Tienes preguntas frecuentes marcadas",
+       "Tienes sitemap.xml",
+       "Declaras la URL canónica",
+       "Declaras el idioma",
+       "Respondes preguntas en tus títulos",
+       "Tu contenido tiene fecha",
+       "Tu portada tiene contenido suficiente"
+      ],
+      "origen": "spindlelab-astro/dist/v3/blog/21-chequeos-visibilidad-ia/index.html",
+      "todos_publicados": true,
+      "ausentes": []
+     }
+    ]
+   },
+   "fotos_viejas_assets_img_d": 0,
+   "ok": true
+  },
+  {
+   "direccion": "taller",
+   "pagina": "home",
+   "ancho": 390,
+   "prototipo": "proto/taller/home.html",
+   "build": "dist/v3/index.html",
+   "texto_igual": true,
+   "fragmentos_build": 75,
+   "fragmentos_prototipo": 75,
+   "faltan": [],
+   "sobran": [],
+   "mismo_orden_de_lectura": false,
+   "excepciones": {
+    "rotulos_foto": [
+     "Foto por generar · F1 · gente de pie en una mesa con hojas y notas",
+     "Foto por generar · F2 · alguien responde a un cliente en el mesón",
+     "Foto por generar · F3 · notas en una planilla de cuatro columnas",
+     "Foto por generar · F4 · un mensaje que llega al taller"
+    ],
+    "rotulos_bien_formados": true,
+    "cinta": [
+     {
+      "clave": "taller-home",
+      "items": [
+       "Desarrollo",
+       "Visibilidad",
+       "Continuidad",
+       "Alcance"
+      ],
+      "origen": "spindlelab-astro/dist/v3/index.html",
+      "todos_publicados": true,
+      "ausentes": []
+     }
+    ]
+   },
+   "fotos_viejas_assets_img_d": 0,
+   "ok": true
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "home",
+   "ancho": 390,
+   "prototipo": "proto/pizarra/home.html",
+   "build": "dist/v3/index.html",
+   "texto_igual": true,
+   "fragmentos_build": 75,
+   "fragmentos_prototipo": 75,
+   "faltan": [],
+   "sobran": [],
+   "mismo_orden_de_lectura": false,
+   "excepciones": {
+    "rotulos_foto": [
+     "Foto por generar · F5 · una mesa larga junto a la ventana, con la cordillera"
+    ],
+    "rotulos_bien_formados": true,
+    "cinta": [
+     {
+      "clave": "pizarra-home",
+      "items": [
+       "Los índices de búsqueda de IA pueden entrar",
+       "Los asistentes de IA pueden visitarte en vivo",
+       "El servidor no expulsa a los robots de IA",
+       "Robots de entrenamiento: decisión consciente",
+       "El sitio responde por HTTPS",
+       "Tienes datos estructurados",
+       "Tu negocio está declarado como entidad",
+       "Tu entidad tiene dirección y contacto",
+       "Te conectas con al menos 3 perfiles externos",
+       "Hay una persona con credenciales detrás",
+       "El título dice qué haces y dónde",
+       "Tienes meta description útil",
+       "Hay un solo H1",
+       "Tienes llms.txt",
+       "Tienes preguntas frecuentes marcadas",
+       "Tienes sitemap.xml",
+       "Declaras la URL canónica",
+       "Declaras el idioma",
+       "Respondes preguntas en tus títulos",
+       "Tu contenido tiene fecha",
+       "Tu portada tiene contenido suficiente"
+      ],
+      "origen": "spindlelab-astro/dist/v3/blog/21-chequeos-visibilidad-ia/index.html",
+      "todos_publicados": true,
+      "ausentes": []
+     }
+    ]
+   },
+   "fotos_viejas_assets_img_d": 0,
+   "ok": true
+  },
+  {
+   "direccion": "taller",
+   "pagina": "acompanamiento-mensual",
+   "ancho": 1440,
+   "prototipo": "proto/taller/acompanamiento-mensual.html",
+   "build": "dist/v3/servicios/acompanamiento-mensual/index.html",
+   "texto_igual": true,
+   "fragmentos_build": 88,
+   "fragmentos_prototipo": 88,
+   "faltan": [],
+   "sobran": [],
+   "mismo_orden_de_lectura": false,
+   "excepciones": {
+    "rotulos_foto": [
+     "Foto por generar · F6 · dos personas comparan hojas pegadas en la pared"
+    ],
+    "rotulos_bien_formados": true,
+    "cinta": [
+     {
+      "clave": "taller-acompanamiento",
+      "items": [
+       "Priorizar y ejecutar",
+       "Primer informe",
+       "Contenido y ajustes",
+       "Cierre y decisiones"
+      ],
+      "origen": "spindlelab-astro/dist/v3/servicios/acompanamiento-mensual/index.html",
+      "todos_publicados": true,
+      "ausentes": []
+     }
+    ]
+   },
+   "fotos_viejas_assets_img_d": 0,
+   "ok": true
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "acompanamiento-mensual",
+   "ancho": 1440,
+   "prototipo": "proto/pizarra/acompanamiento-mensual.html",
+   "build": "dist/v3/servicios/acompanamiento-mensual/index.html",
+   "texto_igual": true,
+   "fragmentos_build": 88,
+   "fragmentos_prototipo": 88,
+   "faltan": [],
+   "sobran": [],
+   "mismo_orden_de_lectura": false,
+   "excepciones": {
+    "rotulos_foto": [
+     "Foto por generar · F7 · la mesa de una sala chica, después de la reunión"
+    ],
+    "rotulos_bien_formados": true,
+    "cinta": []
+   },
+   "fotos_viejas_assets_img_d": 0,
+   "ok": true
+  },
+  {
+   "direccion": "taller",
+   "pagina": "acompanamiento-mensual",
+   "ancho": 390,
+   "prototipo": "proto/taller/acompanamiento-mensual.html",
+   "build": "dist/v3/servicios/acompanamiento-mensual/index.html",
+   "texto_igual": true,
+   "fragmentos_build": 88,
+   "fragmentos_prototipo": 88,
+   "faltan": [],
+   "sobran": [],
+   "mismo_orden_de_lectura": false,
+   "excepciones": {
+    "rotulos_foto": [
+     "Foto por generar · F6 · dos personas comparan hojas pegadas en la pared"
+    ],
+    "rotulos_bien_formados": true,
+    "cinta": [
+     {
+      "clave": "taller-acompanamiento",
+      "items": [
+       "Priorizar y ejecutar",
+       "Primer informe",
+       "Contenido y ajustes",
+       "Cierre y decisiones"
+      ],
+      "origen": "spindlelab-astro/dist/v3/servicios/acompanamiento-mensual/index.html",
+      "todos_publicados": true,
+      "ausentes": []
+     }
+    ]
+   },
+   "fotos_viejas_assets_img_d": 0,
+   "ok": true
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "acompanamiento-mensual",
+   "ancho": 390,
+   "prototipo": "proto/pizarra/acompanamiento-mensual.html",
+   "build": "dist/v3/servicios/acompanamiento-mensual/index.html",
+   "texto_igual": true,
+   "fragmentos_build": 88,
+   "fragmentos_prototipo": 88,
+   "faltan": [],
+   "sobran": [],
+   "mismo_orden_de_lectura": false,
+   "excepciones": {
+    "rotulos_foto": [
+     "Foto por generar · F7 · la mesa de una sala chica, después de la reunión"
+    ],
+    "rotulos_bien_formados": true,
+    "cinta": []
+   },
+   "fotos_viejas_assets_img_d": 0,
+   "ok": true
+  },
+  {
+   "direccion": "taller",
+   "pagina": "trabajo",
+   "ancho": 1440,
+   "prototipo": "proto/taller/trabajo.html",
+   "build": "dist/v3/trabajo/index.html",
+   "texto_igual": true,
+   "fragmentos_build": 55,
+   "fragmentos_prototipo": 55,
+   "faltan": [],
+   "sobran": [],
+   "mismo_orden_de_lectura": true,
+   "excepciones": {
+    "rotulos_foto": [
+     "Foto por generar · F8 · bocetos de páginas hechos a mano en papel"
+    ],
+    "rotulos_bien_formados": true,
+    "cinta": []
+   },
+   "fotos_viejas_assets_img_d": 0,
+   "ok": true
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "trabajo",
+   "ancho": 1440,
+   "prototipo": "proto/pizarra/trabajo.html",
+   "build": "dist/v3/trabajo/index.html",
+   "texto_igual": true,
+   "fragmentos_build": 55,
+   "fragmentos_prototipo": 55,
+   "faltan": [],
+   "sobran": [],
+   "mismo_orden_de_lectura": true,
+   "excepciones": {
+    "rotulos_foto": [
+     "Foto por generar · F8 · bocetos de páginas hechos a mano en papel"
+    ],
+    "rotulos_bien_formados": true,
+    "cinta": []
+   },
+   "fotos_viejas_assets_img_d": 0,
+   "ok": true
+  },
+  {
+   "direccion": "taller",
+   "pagina": "trabajo",
+   "ancho": 390,
+   "prototipo": "proto/taller/trabajo.html",
+   "build": "dist/v3/trabajo/index.html",
+   "texto_igual": true,
+   "fragmentos_build": 55,
+   "fragmentos_prototipo": 55,
+   "faltan": [],
+   "sobran": [],
+   "mismo_orden_de_lectura": true,
+   "excepciones": {
+    "rotulos_foto": [
+     "Foto por generar · F8 · bocetos de páginas hechos a mano en papel"
+    ],
+    "rotulos_bien_formados": true,
+    "cinta": []
+   },
+   "fotos_viejas_assets_img_d": 0,
+   "ok": true
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "trabajo",
+   "ancho": 390,
+   "prototipo": "proto/pizarra/trabajo.html",
+   "build": "dist/v3/trabajo/index.html",
+   "texto_igual": true,
+   "fragmentos_build": 55,
+   "fragmentos_prototipo": 55,
+   "faltan": [],
+   "sobran": [],
+   "mismo_orden_de_lectura": true,
+   "excepciones": {
+    "rotulos_foto": [
+     "Foto por generar · F8 · bocetos de páginas hechos a mano en papel"
+    ],
+    "rotulos_bien_formados": true,
+    "cinta": []
+   },
+   "fotos_viejas_assets_img_d": 0,
+   "ok": true
+  }
+ ]
+}

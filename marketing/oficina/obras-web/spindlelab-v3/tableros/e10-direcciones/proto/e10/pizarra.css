@@ -1,0 +1,147 @@
+/* pizarra.css — Dirección «Pizarra limpia»: la letra y el color de The Ready como acento, sobre la claridad
+   y el aire de Gehl (Lucía, 16-oct-2026).
+   Lo que manda: un solo fondo (papel) hasta la banda final ciruela; columna de rótulos a la izquierda y
+   columna de lectura corrida a la derecha (Gehl, x = 474 y 755 px; The Ready hace lo mismo en la ficha
+   del caso); aire parejo; texto ≤ 15 % de la página; la foto a sangre como banda propia, sin nada encima.
+   De The Ready: Instrument Sans en caja de oración (grande solo en el hero), Plex Sans, Plex Mono en
+   mayúsculas para rótulos, ciruela, el rectángulo de radio 0 y el filete de 1 px. La cinta va UNA vez
+   (la home, con las 21 señales del chequeo) y el marcador uno a la vista, donde hace trabajo. Sin bandas
+   amarillas, sin lima, sin naranja, sin garabatos. El óvalo, solo en la banda final. */
+:root {
+  --fs-hero: 112px; --fs-h1: 72px; --fs-h2: 46px; --fs-h3: 24px; --fs-lead: 28px;
+  --fs-pie: 91px; --fs-sig: 64px; --fs-cinta: 31px; --fs-precio: 24px;
+  --izq: minmax(0, 4fr); --der: minmax(0, 8fr);
+}
+@media (max-width: 767px) {
+  :root { --fs-hero: 58px; --fs-h1: 44px; --fs-h2: 32px; --fs-h3: 21px; --fs-lead: 22px; --fs-pie: 52px; --fs-sig: 38px;
+    --fs-cinta-cel: 24px; --fs-precio: 22px; }
+}
+
+.d-h1 { font-size: var(--fs-h1); line-height: .98; }
+.d-h2, .d-display { font-size: var(--fs-h2); line-height: 1.06; }
+.d-h3 { font-size: var(--fs-h3); line-height: 1.2; }
+.d-guia { font: 500 var(--fs-lead)/1.22 var(--f-display); letter-spacing: -.012em; color: var(--ciruela); text-wrap: pretty; max-width: 26em; }
+.d-cuerpo, .d-desc { line-height: 1.5; max-width: 40em; }
+.d-chico { font-size: 15px; line-height: 1.5; }
+
+/* La ficha de dos columnas (rótulo | lectura), parejo en toda la página. Filete de 1 px entre secciones. */
+.d-sec, .p-pres, .p-campo, .p-quien, .p-indice, .p-entrada, .p-obra, .p-ficha, .p-galeria {
+  display: grid; grid-template-columns: var(--izq) var(--der); column-gap: var(--gap); padding: var(--sec) var(--m); border-top: 1px solid var(--ciruela); }
+.d-sec > .d-eti, .p-campo > .d-campo__cab > .d-display { grid-column: 1; }
+.d-sec > :not(.d-eti) { grid-column: 2; }
+.d-eti { display: grid; gap: 16px; align-content: start; padding-right: 32px; }
+.d-filas > * + * { margin-top: 0; }
+
+/* ── HOME ───────────────────────────────────────────────────────────────────────────────── */
+.p-hero { padding: 88px var(--m) 0; }
+.p-hero .d-ojillo { font: 400 22px/1.35 var(--f-cuerpo); color: var(--tinta); margin-bottom: 22px; }
+.p-hero h1 { font-size: var(--fs-hero); line-height: .92; max-width: 7.2em; }
+.p-ficha { margin: 80px calc(-1 * var(--m)) 0; padding-bottom: 72px; }
+.p-ficha .d-instr { display: contents; }
+.p-ficha .p-rotulo { grid-column: 1; padding-top: 22px; }
+.p-ficha .chq-form, .p-ficha .d-nota, .p-ficha .chq-error, .p-ficha #chq-out { grid-column: 2; max-width: 680px; }
+.p-ficha .chq-form input { height: 60px; }
+.p-ficha #chq-btn { height: 60px; padding: 0 28px; border: 1px solid var(--ciruela); border-radius: 0; background: var(--ciruela); color: var(--papel); cursor: pointer;
+  font: 500 12px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; }
+.p-ficha .d-nota { margin-top: 14px; }
+/* La cinta, una sola vez: las 21 señales que mira el chequeo, más chica y más lenta de leer que en Taller */
+[data-cinta="pizarra-home"] .cinta__grupo { line-height: 1.75; }
+/* Trabajo entregado: una fila tranquila de cuatro, alineada abajo, con el pie en mono (Gehl, «Featured projects») */
+.p-entregado { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); align-items: end; padding: 72px var(--m) var(--sec); }
+.p-pres { align-items: start; }
+.p-pres .d-guia { grid-column: 2; }
+.p-pres .d-btns { grid-column: 2; margin-top: 36px; }
+.p-sangre { width: 100%; }
+.p-campo { padding-top: 56px; padding-bottom: 56px; row-gap: 20px; }
+.p-servicios .p-campo:first-child { border-top: 0; }
+.p-campo > .d-campo__cab { display: contents; }
+.p-campo .d-display { grid-row: 1 / span 3; }
+.p-campo .d-pills, .p-campo .d-panel, .p-campo .p-obra-par { grid-column: 2; }
+.p-campo .d-desc { font-size: 19px; line-height: 1.45; }
+.p-campo .d-desc b { font-weight: 600; color: var(--ciruela); }
+.p-campo .d-precio { margin-top: 16px !important; }
+.p-campo .d-btns { margin-top: 20px !important; }
+.p-obra-par { display: flex; gap: var(--gap); align-items: flex-end; margin-top: 20px; }
+.p-obra-par .d-pieza { flex: var(--r) 1 0; min-width: 0; }
+.p-quien { align-items: start; }
+.p-quien > .d-pieza { grid-column: 1; max-width: 320px; }
+.p-quien .d-pieza img { aspect-ratio: 896 / 1200; }
+.p-quien .d-quien__txt { grid-column: 2; display: grid; gap: 24px; align-content: start; }
+.p-quien .d-quien__txt > div:not(.d-btns) > span:first-child { font: 500 22px/1.2 var(--f-display); color: var(--ciruela); }
+.p-indice > .d-indice__cab { grid-column: 1; display: grid; gap: 24px; align-content: start; justify-items: start; padding-right: 32px; }
+.p-indice > ol { grid-column: 2; }
+.p-indice li a { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; gap: 20px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--ciruela); text-decoration: none; }
+.p-indice li:first-child a { padding-top: 0; }
+.p-indice .d-flecha { color: var(--ciruela); font: 500 var(--fs-h3)/1 var(--f-display); }
+.p-indice li a:hover .d-h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .14em; }
+
+/* ── ACOMPAÑAMIENTO ─────────────────────────────────────────────────────────────────────── */
+.p-cab { display: grid; grid-template-columns: var(--izq) var(--der); column-gap: var(--gap); padding: 64px var(--m) 72px; }
+.p-cab > .d-miga, .p-cab > .d-h1 { grid-column: 1 / -1; }
+.p-cab > .d-h1 { margin: 24px 0 48px; }
+.p-cab > .d-linea, .p-cab > .d-btns { grid-column: 2; }
+.p-cab .d-linea { font-size: 19px; line-height: 1.5; max-width: 38em; }
+.p-cab .d-btns { margin-top: 28px; }
+.p-entrada { align-items: start; }
+.p-entrada .d-nota-card { grid-column: 1; font-size: 15px; line-height: 1.5; padding-right: 32px; }
+.p-entrada .d-guia { grid-column: 2; }
+.d-filas > div, .d-filas > li { padding: 24px 0; border-bottom: 1px solid var(--ciruela); display: grid; gap: 8px; }
+.d-filas > div:first-child, .d-filas > li:first-child { padding-top: 0; }
+.d-eti .d-pieza { max-width: 240px; margin-top: 24px; }
+.d-eti .d-pieza img { aspect-ratio: 896 / 1200; }
+#planes .d-filas > .d-plan { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 6px 24px; }
+.d-plan .d-h3, .d-plan__precio { grid-column: 1; }
+.d-plan .d-cuerpo, .d-plan ul { grid-column: 2; }
+.d-plan .d-cuerpo { grid-row: 1; }
+.d-plan ul { grid-row: 2 / span 2; display: grid; gap: 6px; }
+.d-plan__precio { font: 500 17px/1.3 var(--f-display); color: var(--ciruela); }
+.d-plan li { padding-left: 16px; position: relative; }
+.d-plan li::before { content: ''; position: absolute; left: 0; top: .66em; width: 6px; height: 1px; background: var(--ciruela); }
+.p-comp { grid-column: 2; display: grid; gap: 40px; padding-top: 40px; }
+.p-comp .d-cuerpo { font-size: 19px; line-height: 1.5; }
+.p-mes .d-fase { grid-template-columns: 88px minmax(0, 1fr); gap: 4px 16px; }
+.p-mes .d-fase__n { grid-row: 1 / span 2; font: 500 var(--fs-h2)/1 var(--f-display); color: var(--ciruela); }
+.d-faq .d-h3 { font-size: 21px; }
+.d-cierre-svc, .d-cierre-trab { display: grid; gap: 24px; justify-items: start; }
+
+/* ── TRABAJO ────────────────────────────────────────────────────────────────────────────── */
+.p-cab.d-cab--trab { padding-bottom: 0; }
+.p-cab.d-cab--trab > .d-h1 { margin-bottom: 0; }
+.p-entrada.d-entrada-trab { border-top: 0; padding-top: 48px; }
+.p-entrada.d-entrada-trab .d-guia { grid-column: 2; }
+.p-obra { row-gap: 28px; }
+.p-obra > .d-obra-trab__img { grid-column: 2; grid-row: 1; display: block; }
+.p-obra > .d-pie-trab { display: contents; }
+.p-obra .d-pie-trab__id { grid-column: 1; grid-row: 1; display: grid; gap: 10px; align-content: start; padding-right: 32px; }
+.p-obra .d-pie-trab__id .d-h3 { font-size: 31px; line-height: 1.1; }
+.p-obra .d-pie-trab__txt { grid-column: 2; grid-row: 2; display: grid; gap: 16px; justify-items: start; }
+.p-v1 { width: 100%; margin: 8px 0; }
+.p-cierre .d-cierre-trab, .p-cierre__foto { grid-column: 2; }
+.p-cierre__foto { margin-top: 48px; }
+
+/* ── 390 ────────────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  /* La flecha de cada artículo no se muestra a 390, igual que en el build (texto igual, ver texto-igual.json) */
+  .d-indice .d-flecha { display: none; }
+  .d-sec, .p-pres, .p-campo, .p-quien, .p-indice, .p-entrada, .p-obra, .p-ficha, .p-galeria, .p-cab { grid-template-columns: minmax(0, 1fr); row-gap: 20px; }
+  .d-sec > *, .p-pres > *, .p-campo .d-display, .p-campo .d-pills, .p-campo .d-panel, .p-campo .p-obra-par, .p-quien > *, .p-indice > *,
+  .p-entrada > *, .p-galeria > *, .p-cab > *, .p-ficha .p-rotulo, .p-ficha .chq-form, .p-ficha .d-nota, .p-ficha .chq-error, .p-ficha #chq-out,
+  .p-obra > .d-obra-trab__img, .p-obra .d-pie-trab__id, .p-obra .d-pie-trab__txt, .p-comp, .p-cierre__foto { grid-column: 1 !important; grid-row: auto !important; }
+  .d-eti, .p-indice > .d-indice__cab, .p-obra .d-pie-trab__id, .p-entrada .d-nota-card { padding-right: 0; }
+  .p-hero { padding-top: 48px; }
+  .p-hero h1 { font-size: min(var(--fs-hero), calc((100vw - 2 * var(--m)) / 5.7)); }
+  .p-ficha { margin-top: 48px; padding-bottom: 48px; row-gap: 12px; }
+  .p-ficha .p-rotulo { padding-top: 0; }
+  .p-ficha .chq-form { flex-direction: column; align-items: stretch; gap: 8px; }
+  .p-entregado { grid-template-columns: 1fr 1fr; row-gap: 28px; padding: 48px var(--m) var(--sec); }
+  [data-pagina="acompanamiento-mensual"] .p-cab > .d-h1 { font-size: 42px; }
+  .p-cab > .d-h1 { margin: 16px 0 12px; }
+  .p-obra-par { gap: 12px; }
+  .p-quien > .d-pieza { max-width: 220px; }
+  .p-indice li a { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; }
+  .p-indice li a time { grid-column: 1 / -1; }
+  #planes .d-filas > .d-plan { grid-template-columns: 1fr; }
+  .d-plan .d-h3, .d-plan__precio, .d-plan .d-cuerpo, .d-plan ul { grid-column: 1; grid-row: auto; }
+  .p-mes .d-fase { grid-template-columns: 56px minmax(0, 1fr); }
+  .p-cierre__foto { margin-top: 24px; }
+}
