@@ -78,6 +78,11 @@ primera lectura con sentido es **mañana**.
 chequeo de duplicación y las cuatro versiones rechazadas); sus overlays en
 `marketing/redes/2026-10-octubre-verifica/06-overlays-reel-ramon/`.
 
+⚠️ **El reel del 16-oct se subió como material orgánico y no se puede promocionar** (Ramón,
+16-oct). Para la sesión de paid media: **no es candidato a pauta**, aunque el conector de Meta
+tenga una herramienta para promocionar publicaciones de Instagram. Y es coherente con la decisión
+del 5-oct de que octubre va solo en orgánico.
+
 ⚠️ **Los enlaces van limpios, sin los parámetros de seguimiento** (`utm_source`, `psln`, `srtk`)
 que Instagram agrega al copiar. Esos identifican la sesión de quien copió el link y no tienen nada
 que hacer en un archivo del repo.
