@@ -1,0 +1,11 @@
+{
+  "id": "X16",
+  "dominio": "redsalud.cl",
+  "motor": "v0",
+  "cuando": "2026-10-16T12:37:11.034Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "descartado:no-responde",
+  "detalle": {
+    "error": "UND_ERR_HEADERS_OVERFLOW"
+  }
+}

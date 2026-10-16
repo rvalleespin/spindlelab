@@ -1,0 +1,13 @@
+{
+  "id": "X14",
+  "dominio": "policenter.cl",
+  "motor": "v0",
+  "cuando": "2026-10-16T12:37:10.780Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "descartado:descartado-antes",
+  "detalle": {
+    "en": "ventas/clinicas-sin-contactar-5oct.csv",
+    "motivo": "descartado - sitio caido El dominio no responde (HTTP 000)",
+    "nota": "Ya estaba marcado como no escribir en una lista de ventas/. Si cambio, correr con --sin-corte."
+  }
+}
