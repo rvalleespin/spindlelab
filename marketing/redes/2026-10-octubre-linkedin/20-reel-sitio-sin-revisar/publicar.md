@@ -1,7 +1,9 @@
 # Publicar — Reel cara a cámara: "Tu sitio lleva años sin que nadie lo revise"
 
 **Canal:** perfil personal de Ramón · **Voz:** singular · video nativo, vertical 9:16
-**Estado:** ⬜ **sin aprobar.** Nada se publica sin OK de Ramón en el chat.
+**Estado:** ✅ **PUBLICADO en Instagram el 16-oct-2026** por Ramón, cuenta de empresa
+`@spindlelab.cl`. ⬜ **Falta el link para registrarlo en el inventario** (ver abajo).
+⬜ La versión de LinkedIn no se ha publicado.
 **Guion:** `practica-camara/GUION-APROBADO-ley-sitio-viejo.md` · **Overlays:**
 `2026-10-octubre-verifica/06-overlays-reel-ramon/`
 
@@ -28,17 +30,46 @@ tu cara. Si dudas, fuera.
 así que el dominio va escrito completo dentro del caption y no hay "primer comentario con el link".
 Es la misma regla que ya está en el reel publicado de Verifica.
 
-### Caption de Instagram (copiar y pegar)
+### Caption de Instagram — ✅ EL QUE SE PUBLICÓ (16-oct-2026)
 
-Hay una pregunta que aparece siempre cuando sale el tema de la ley de datos personales, y no es sobre la ley.
+**Cuenta de empresa, así que registro plural** para lo que hace el negocio (*armamos*, *lo miremos
+nosotros*) y *tú* para hablarle a quien lee. Es la mezcla que manda el manual.
 
-A quién le preguntas, si el que te hizo el sitio ya no está.
+Hay una ley nueva en Chile que protege los datos de las personas. Si tu sitio tiene un formulario de contacto, te incluye, aunque tu empresa sea chica.
 
-Casi nunca hay que rehacerlo. Hay que mirarlo y saber qué le falta.
+Y no, casi nunca hay que rehacer el sitio. Hay que mirarlo y saber qué le falta.
 
-El chequeo es gratis y no pide registro: verifica.spindlelab.cl
+Armamos un chequeo gratis que lo revisa en treinta segundos y no pide registro.
+verifica.spindlelab.cl
 
-Y si quieres que lo mire yo, escríbeme por DM y te mando una página con lo que encontré, en 24 horas.
+Si prefieres que lo miremos nosotros, escríbenos por DM.
+
+### Las cuatro versiones que Ramón rechazó, y por qué
+
+Cuatro, y las cuatro por motivos distintos. Vale anotarlo porque los cuatro se repiten solos:
+
+1. **La del acertijo.** Abría con *"Hay una pregunta que aparece siempre… y no es sobre la ley"*.
+   En Instagram la primera línea es lo único visible antes del "más": una que esconde en vez de
+   decir se lee como carnada.
+2. **La de LinkedIn disfrazada.** Era el caption de LinkedIn con el link cambiado. Cuatro párrafos
+   repitiendo lo que el video ya dice, así que quien lo vio lo leyó dos veces.
+3. **La del detrás de cámara** (*"primera vez que me grabo…"*). **Rechazada por canal:** es una
+   cuenta de empresa. Ese texto solo funcionaría en el perfil personal.
+4. **La de la conclusión sin contexto.** Abría con *"Casi nunca hay que rehacer un sitio"* sin
+   decir antes de qué ley hablamos. **Es exactamente el mismo error que Ramón ya había corregido
+   en el guion**, y se repitió: *"nadie sabe lo de la ley. no asumas."* En Instagram pesa más
+   todavía, porque el caption se lee antes de darle play.
+
+**La regla que queda:** en una cuenta donde casi nadie conoce la ley, **toda pieza empieza
+diciendo qué ley es y a quién le aplica**, aunque el formato sea corto. La conclusión va después.
+
+### Dos cosas que el caption lleva adentro a propósito
+
+- **"Aunque tu empresa sea chica"** es lo que desarma la objeción, y está verificado: la ley aplica
+  a toda organización que trate datos en Chile sin importar el tamaño, y una pyme con formulario de
+  contacto ya los está tratando.
+- **Ninguna fecha.** El 14-oct Ramón publicó que el Gobierno pidió postergar la vigencia. Un
+  caption que dijera "entra en diciembre" lo contradeciría con su propio post de esta semana.
 
 ### Antes de subirlo, tres cosas del pipeline ya pagadas
 

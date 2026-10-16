@@ -181,3 +181,18 @@ verificable y sin nada que vender. Vale la pena mirarlo antes de decidir el pró
   mano y abortar por ese día. **No reintentar la automatización sin que Ramón ajuste los permisos
   de la sesión primero.** Publicar en el propio perfil (posts y primer comentario propio) no tiene
   este problema — se hizo sin bloqueos el mismo día.
+
+---
+
+## ⬜ Pendiente de registrar con su link (16-oct-2026)
+
+| Publicado | Pieza | Qué falta |
+|---|---|---|
+| **16-oct** | **Reel cara a cámara de Ramón**, "Tu sitio lleva años sin que nadie lo revise" · Instagram, cuenta de empresa `@spindlelab.cl` · overlays en el sistema de Verifica · caption en plural | **El link del Reel.** Ramón confirmó que lo subió; esta sesión no puede verificarlo desde acá. Sin el link no entra a la tabla de arriba, porque el protocolo de la casa pide evidencia verificable antes de registrar estado externo como hecho |
+
+**Por qué no se da por registrado sin el link:** la regla existe por el incidente del 17-20 jul (dos
+sesiones anotaron estados contradictorios sin verificar) y **hoy volvió a costar caro**: esta sesión
+trabajó medio día con un inventario viejo, concluyó que había seis días hábiles de silencio, y era
+falso. El link es lo que convierte "lo subí" en registro.
+
+**Fuente de la pieza:** `marketing/redes/2026-10-octubre-linkedin/20-reel-sitio-sin-revisar/publicar.md`
