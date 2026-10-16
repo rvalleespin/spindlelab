@@ -3,7 +3,7 @@
 **Cuándo:** LUNES 19-oct-2026 · **Canal:** perfil personal de Ramón · **Voz:** singular
 **Pieza visual:** ninguna. Texto puro.
 **Escribe:** agente-copywriter (Renata), a pedido directo de Ramón ("no publiques hoy, prepara el del lunes", 16-oct)
-**Estado:** 📝 BORRADOR v1, esperando la aprobación de Ramón. No publicado.
+**Estado:** 📝 BORRADOR v2 (la v1 se corrigió el 16-oct por la apertura repetida), esperando la aprobación de Ramón. No publicado.
 
 ## Origen del encargo
 
@@ -17,15 +17,23 @@ Google responde que "introducirá métricas adicionales con el tiempo"). Eso ref
 
 ## Cuerpo (copiar y pegar)
 
-Si en tu analítica las visitas desde ChatGPT cayeron a partir del 9 de octubre y las "directas" subieron, lo más probable es que no sea tu sitio.
+Tu informe de analítica puede mostrar una caída de ChatGPT entre el 9 y el 13 de octubre que en buena parte fue un error de medición.
 
-Un análisis de unas 500 páginas que recogió Search Engine Roundtable comparó del 9 al 13 de octubre con la semana anterior: las visitas de ChatGPT bajaron 31.000 al día y las directas subieron 26.000 al día en esas mismas páginas. Los enlaces de ChatGPT dejaron de llevar la etiqueta que los identifica y esas visitas se anotaron como directas. Quien hizo el análisis informó el 15 de octubre que era un error y que ChatGPT volvió a etiquetarlos.
+Un análisis de unas 500 páginas que recogió Search Engine Roundtable comparó esos días con la semana anterior: las visitas de ChatGPT bajaron 31.000 al día y las directas subieron 26.000 al día en esas mismas páginas. Los enlaces de ChatGPT dejaron de llevar la etiqueta que los identifica y esas visitas se anotaron como directas. Quien hizo el análisis informó el 15 de octubre que era un error y que ChatGPT volvió a etiquetarlos.
 
 Antes de decirle a tu jefe o a tu cliente que ChatGPT sube o baja, conviene recordar que ese número depende de que ChatGPT etiquete bien sus enlaces. Y el informe de IA de Google, por ahora, solo muestra impresiones, no clics.
 
 Saber si la IA te recomienda no depende de esa analítica. Le pregunto a ChatGPT, Gemini y Perplexity por tu rubro, veo quién aparece en tu lugar y qué fuentes citan, y te lo entrego en una página, gratis, en 24 horas.
 
-Dejo el artículo en el primer comentario.
+Los enlaces van en el primer comentario.
+
+## Cambios de la v2 (16-oct, a pedido de Ramón: "el inicio condicional se está repitiendo mucho")
+
+- **Apertura:** la v1 empezaba con "Si en tu analítica las visitas desde ChatGPT cayeron...". Seis de los últimos siete posts del perfil empezaban con "Si" (2, 7, 13, 14 y 15-oct, y esta v1).
+  Ahora abre con una afirmación en la situación de quien lee, sin condicional: "Tu informe de analítica puede mostrar una caída de ChatGPT [...] que en buena parte fue un error de medición".
+  Mantiene el contexto en la primera línea y la fecha. "En buena parte" sale de las cifras: 26.000 de las 31.000 visitas perdidas aparecieron como directas (84%).
+- **Cierre:** "Dejo el artículo en el primer comentario" pasó a "Los enlaces van en el primer comentario". La fórmula "Dejo X en el primer comentario" estaba en los posts del 7, 13, 14 y 15-oct.
+- **Lo demás no cambia.**
 
 ## Primer comentario (AL TIRO)
 
@@ -77,7 +85,7 @@ Es la misma que sostuvo el post del 7-oct.
 
 ## Por qué esta versión
 
-- **Abre en la situación de quien lee** (el informe que muestra la caída) y da el contexto en la primera línea.
+- **Abre en la situación de quien lee** (el informe que muestra la caída), sin condicional, y da el contexto en la primera línea.
 - **Lo verificado desarma una conclusión equivocada**, igual que el post del 5-oct: no cuenta una noticia, evita que alguien le informe a su jefe un dato malo.
 - **Termina en un paso hacia la venta:** el diagnóstico a mano gratis, presentado como lo que no depende de esa analítica.
 - **Sin toques de IA conocidos:** sin dos puntos como anuncio, sin "no es X, es Y", sin frase que juzgue la anterior, sin raya larga, sin remate figurado.

@@ -89,6 +89,19 @@ transiciones reales: *"Y lo llamativo es la fecha."* · *"Así que si te llega u
 *"No significa que no haya nada que hacer."* · *"Piensa lo que significa."* Eso es lo que hace
 que un análisis técnico se lea como conversación.
 
+## El tercer tic: abrir todos los posts con "Si..." (16-oct-2026)
+
+Ramón lo señaló: *"el inicio condicional se está repitiendo mucho"*. Seis de los siete posts del perfil entre el 2 y el 15-oct empezaban con "Si" (*"Si en tu empresa alguien preguntó...",
+"Si la página de tu servicio dice lo mismo...", "Si tu negocio aparece..."*). Un condicional es una buena apertura una vez; en cada post es una plantilla, y el lector que sigue el perfil lo nota.
+
+**Cómo se evita:** varía la forma de la primera línea entre posts consecutivos y no repitas la misma dos veces seguidas. Formas que ya funcionaron o sirven:
+un hecho pelado con fecha (*"La Ley 21.719, la nueva ley de datos personales de Chile, le aplica a cualquier empresa..."*), una afirmación en la situación del lector sin condicional
+(*"Tu informe de analítica puede mostrar una caída de ChatGPT [...] que en buena parte fue un error de medición"*), un dato sorprendente, o una pregunta (una vez, no como hábito).
+"Si" queda como una opción entre varias: como mucho uno de cada cuatro posts. Lo mismo vale para el cierre: *"Dejo X en el primer comentario"* es el cierre real de Ramón, pero repetido en
+cuatro posts seguidos se lee plantilla; alterna con *"Los enlaces van en el primer comentario"* o cierra directamente en la oferta.
+
+**Chequeo rápido antes de entregar:** mira las primeras palabras de los últimos cinco posts publicados (`marketing/redes/QUE-HAY-PUBLICADO.md`) y comprueba que el borrador no repita ni la forma ni el cierre.
+
 ## Lo que no aparece nunca en el texto aprobado
 
 Guion largo (—) como golpe de efecto · transiciones de relleno ("Dicho eso", "Cabe
