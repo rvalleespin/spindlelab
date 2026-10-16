@@ -4,6 +4,12 @@
 // pantalla. Marcador (§5): se dibuja de izquierda a derecha en ~470 ms al entrar en pantalla; con
 // movimiento reducido está completo desde el principio.
 (() => {
+  // Solo para las comparaciones del tablero (compuerta 2): ?paleta=the-ready muestra los colores exactos de The
+  // Ready y ?oro=arriba la opción B del punto dorado (lock §12). Sin parámetros, el prototipo es la dirección propia.
+  const q = new URLSearchParams(location.search);
+  if (q.get('paleta') === 'the-ready') document.documentElement.dataset.paleta = 'the-ready';
+  if (q.get('oro') === 'arriba') document.documentElement.dataset.oro = 'arriba';
+
   const VELOCIDAD = 30; // px por segundo
   const reducido = matchMedia('(prefers-reduced-motion: reduce)').matches;
 

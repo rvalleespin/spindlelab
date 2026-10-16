@@ -1,0 +1,109 @@
+{
+ "fecha": "2026-10-16T13:25:53.872Z",
+ "logo_tapado": [
+  {
+   "direccion": "pizarra",
+   "pagina": "home",
+   "pantalla": 2,
+   "desde_y": 900,
+   "archivo": "img/var-tapado-pizarra-home-p2.jpg"
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "home",
+   "pantalla": 3,
+   "desde_y": 1800,
+   "archivo": "img/var-tapado-pizarra-home-p3.jpg"
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "acompanamiento-mensual",
+   "pantalla": 2,
+   "desde_y": 900,
+   "archivo": "img/var-tapado-pizarra-acompanamiento-mensual-p2.jpg"
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "acompanamiento-mensual",
+   "pantalla": 3,
+   "desde_y": 1800,
+   "archivo": "img/var-tapado-pizarra-acompanamiento-mensual-p3.jpg"
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "trabajo",
+   "pantalla": 2,
+   "desde_y": 900,
+   "archivo": "img/var-tapado-pizarra-trabajo-p2.jpg"
+  },
+  {
+   "direccion": "pizarra",
+   "pagina": "trabajo",
+   "pantalla": 3,
+   "desde_y": 1800,
+   "archivo": "img/var-tapado-pizarra-trabajo-p3.jpg"
+  },
+  {
+   "direccion": "taller",
+   "pagina": "home",
+   "pantalla": 1,
+   "desde_y": 0,
+   "archivo": "img/var-tapado-taller-home-p1.jpg"
+  },
+  {
+   "direccion": "taller",
+   "pagina": "home",
+   "pantalla": 2,
+   "desde_y": 900,
+   "archivo": "img/var-tapado-taller-home-p2.jpg"
+  }
+ ],
+ "colores": [
+  {
+   "paleta": "propia",
+   "pagina": "home",
+   "archivo": "img/var-paleta-propia-taller-home.jpg"
+  },
+  {
+   "paleta": "the-ready",
+   "pagina": "home",
+   "archivo": "img/var-paleta-the-ready-taller-home.jpg"
+  },
+  {
+   "paleta": "propia",
+   "pagina": "trabajo",
+   "archivo": "img/var-paleta-propia-taller-trabajo.jpg"
+  },
+  {
+   "paleta": "the-ready",
+   "pagina": "trabajo",
+   "archivo": "img/var-paleta-the-ready-taller-trabajo.jpg"
+  }
+ ],
+ "oro": [
+  {
+   "opcion": "A",
+   "ancho": 1440,
+   "modulo": "img/var-oro-a-modulo-1440.jpg",
+   "pie": "img/var-oro-a-pie-1440.jpg"
+  },
+  {
+   "opcion": "A",
+   "ancho": 390,
+   "modulo": "img/var-oro-a-modulo-390.jpg",
+   "pie": "img/var-oro-a-pie-390.jpg"
+  },
+  {
+   "opcion": "B",
+   "ancho": 1440,
+   "modulo": "img/var-oro-b-modulo-1440.jpg",
+   "pie": "img/var-oro-b-pie-1440.jpg"
+  },
+  {
+   "opcion": "B",
+   "ancho": 390,
+   "modulo": "img/var-oro-b-modulo-390.jpg",
+   "pie": "img/var-oro-b-pie-390.jpg"
+  }
+ ]
+}

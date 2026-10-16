@@ -6,9 +6,9 @@
 //   · Cada nodo se agrupa en su ancestro «de texto» más externo (p, h1-h6, li, a, button, label, figcaption,
 //     span, b, time…): ese es un FRAGMENTO, con su texto visible unido y los espacios normalizados. Envolver
 //     palabras en un <span> (el marcador) no cambia el fragmento; reordenar bloques tampoco cambia el conjunto.
-//   · Se compara el MULTICONJUNTO de fragmentos del build y del prototipo: tiene que ser idéntico. Se informa
-//     además si el ORDEN de lectura es el mismo (la secuencia de caracteres sin espacios; los prototipos pueden
-//     reordenar bloques: es composición).
+//   · Se compara el MULTICONJUNTO de fragmentos del build y del prototipo: tiene que ser idéntico. Y el ORDEN de
+//     lectura tiene que ser el mismo (la secuencia de caracteres sin espacios): desde la ronda 1 de QA (defecto 4)
+//     los prototipos no reordenan bloques; la composición se hace con CSS. Antes solo se informaba.
 //   · El placeholder del campo del chequeo se cuenta como fragmento (se ve).
 // Excepciones declaradas (lo único que el prototipo agrega), cada una comprobada aparte:
 //   · los rótulos «Foto por generar · F<n> · …» (data-rotulo-foto): tienen que empezar así;
@@ -99,12 +99,13 @@ for (const [nombre, ruta] of Object.entries(PAGINAS)) {
         return { ...c, origen: 'spindlelab-astro/dist/' + ORIGEN_CINTA[c.clave], todos_publicados: ausentes.length === 0, ausentes };
       });
       const iguales = faltan.length === 0 && sobran.length === 0;
-      const ok = iguales && rotulosOk && cintas.every((c) => c.todos_publicados) && pr.imagenes_d === 0;
+      const mismoOrden = base.orden === pr.orden;
+      const ok = iguales && mismoOrden && rotulosOk && cintas.every((c) => c.todos_publicados) && pr.imagenes_d === 0;
       if (!ok) todo = false;
       salida.paginas.push({
         direccion: d, pagina: nombre, ancho: w, prototipo: `proto/${d}/${nombre}.html`, build: `dist${ruta}index.html`,
         texto_igual: iguales, fragmentos_build: base.fragmentos.length, fragmentos_prototipo: pr.fragmentos.length,
-        faltan, sobran, mismo_orden_de_lectura: base.orden === pr.orden,
+        faltan, sobran, mismo_orden_de_lectura: mismoOrden,
         excepciones: { rotulos_foto: pr.rotulos, rotulos_bien_formados: rotulosOk, cinta: cintas },
         fotos_viejas_assets_img_d: pr.imagenes_d, ok,
       });
@@ -116,7 +117,7 @@ for (const [nombre, ruta] of Object.entries(PAGINAS)) {
   }
 }
 await nav.close();
-salida.resultado = todo ? 'IGUAL: en las 12 vistas (3 páginas × 2 direcciones × 2 anchos) el texto visible es el del build; solo se agregan los rótulos de foto y la cinta, comprobados aparte' : 'HAY DIFERENCIAS: ver «faltan» y «sobran»';
+salida.resultado = todo ? 'IGUAL: en las 12 vistas (3 páginas × 2 direcciones × 2 anchos) el texto visible es el del build y está en el mismo orden de lectura; solo se agregan los rótulos de foto y la cinta, comprobados aparte. Con JavaScript apagado en las dos: con JavaScript, el build suma en el pie el control «Cookies» que crea consent-banner.js, que los prototipos no cargan' : 'HAY DIFERENCIAS: ver «faltan», «sobran» y «mismo_orden_de_lectura»';
 fs.writeFileSync(path.join(AQUI, 'texto-igual.json'), JSON.stringify(salida, null, 1));
 console.log(salida.resultado);
 process.exit(todo ? 0 : 1);

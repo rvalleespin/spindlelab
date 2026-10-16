@@ -1,12 +1,12 @@
 {
- "fecha": "2026-10-16T12:23:37.564Z",
+ "fecha": "2026-10-16T13:23:41.791Z",
  "regla": "lock-the-ready.md §4 y §14",
  "casos": [
   {
    "direccion": "taller",
    "pagina": "home",
    "ancho": 1440,
-   "velocidad_px_s": 30.1,
+   "velocidad_px_s": 29.9,
    "hacia": "izquierda",
    "boton": {
     "rotulo": "Pausar cinta",
@@ -39,6 +39,74 @@
   {
    "direccion": "taller",
    "pagina": "home",
+   "ancho": 390,
+   "velocidad_px_s": 30.2,
+   "hacia": "izquierda",
+   "boton": {
+    "rotulo": "Pausar cinta",
+    "enfocable": true,
+    "caja": [
+     44,
+     44
+    ]
+   },
+   "pausa": {
+    "aria_pressed": "true",
+    "movio_px_en_1_2s": 0
+   },
+   "reanuda": {
+    "aria_pressed": "false",
+    "movio_px_en_1s": 30
+   },
+   "semantica": {
+    "aria_hidden": "true",
+    "dentro_de_encabezado": false,
+    "h1_en_la_pagina": 1
+   },
+   "movimiento_reducido": {
+    "quieta": true,
+    "primer_item_x": 24,
+    "boton_dice_pausada": "true"
+   },
+   "ok": true
+  },
+  {
+   "direccion": "taller",
+   "pagina": "acompanamiento-mensual",
+   "ancho": 1440,
+   "velocidad_px_s": 29.9,
+   "hacia": "izquierda",
+   "boton": {
+    "rotulo": "Pausar cinta",
+    "enfocable": true,
+    "caja": [
+     44,
+     44
+    ]
+   },
+   "pausa": {
+    "aria_pressed": "true",
+    "movio_px_en_1_2s": 0
+   },
+   "reanuda": {
+    "aria_pressed": "false",
+    "movio_px_en_1s": 30.5
+   },
+   "semantica": {
+    "aria_hidden": "true",
+    "dentro_de_encabezado": false,
+    "h1_en_la_pagina": 1
+   },
+   "movimiento_reducido": {
+    "quieta": true,
+    "primer_item_x": 75,
+    "boton_dice_pausada": "true"
+   },
+   "ok": true
+  },
+  {
+   "direccion": "taller",
+   "pagina": "acompanamiento-mensual",
    "ancho": 390,
    "velocidad_px_s": 29.9,
    "hacia": "izquierda",
@@ -71,43 +139,9 @@
    "ok": true
   },
   {
-   "direccion": "taller",
-   "pagina": "acompanamiento-mensual",
+   "direccion": "pizarra",
+   "pagina": "home",
    "ancho": 1440,
-   "velocidad_px_s": 30.2,
-   "hacia": "izquierda",
-   "boton": {
-    "rotulo": "Pausar cinta",
-    "enfocable": true,
-    "caja": [
-     44,
-     44
-    ]
-   },
-   "pausa": {
-    "aria_pressed": "true",
-    "movio_px_en_1_2s": 0
-   },
-   "reanuda": {
-    "aria_pressed": "false",
-    "movio_px_en_1s": 30
-   },
-   "semantica": {
-    "aria_hidden": "true",
-    "dentro_de_encabezado": false,
-    "h1_en_la_pagina": 1
-   },
-   "movimiento_reducido": {
-    "quieta": true,
-    "primer_item_x": 75,
-    "boton_dice_pausada": "true"
-   },
-   "ok": true
-  },
-  {
-   "direccion": "taller",
-   "pagina": "acompanamiento-mensual",
-   "ancho": 390,
    "velocidad_px_s": 29.9,
    "hacia": "izquierda",
    "boton": {
@@ -124,41 +158,7 @@
    },
    "reanuda": {
     "aria_pressed": "false",
-    "movio_px_en_1s": 30
-   },
-   "semantica": {
-    "aria_hidden": "true",
-    "dentro_de_encabezado": false,
-    "h1_en_la_pagina": 1
-   },
-   "movimiento_reducido": {
-    "quieta": true,
-    "primer_item_x": 24,
-    "boton_dice_pausada": "true"
-   },
-   "ok": true
-  },
-  {
-   "direccion": "pizarra",
-   "pagina": "home",
-   "ancho": 1440,
-   "velocidad_px_s": 30.2,
-   "hacia": "izquierda",
-   "boton": {
-    "rotulo": "Pausar cinta",
-    "enfocable": true,
-    "caja": [
-     44,
-     44
-    ]
-   },
-   "pausa": {
-    "aria_pressed": "true",
-    "movio_px_en_1_2s": 0
-   },
-   "reanuda": {
-    "aria_pressed": "false",
-    "movio_px_en_1s": 30
+    "movio_px_en_1s": 30.5
    },
    "semantica": {
     "aria_hidden": "true",
@@ -192,7 +192,7 @@
    },
    "reanuda": {
     "aria_pressed": "false",
-    "movio_px_en_1s": 30
+    "movio_px_en_1s": 30.5
    },
    "semantica": {
     "aria_hidden": "true",

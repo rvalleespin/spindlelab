@@ -10,10 +10,21 @@
 #   · la cinta (aria-hidden, data-cinta): repite palabras que ya están publicadas (lista CINTAS abajo,
 #     con su página de origen), y su botón de pausa (sin texto visible, aria-label «Pausar cinta»);
 #   · el marcador amarillo (un <span class="mk"> alrededor de palabras que ya estaban);
-#   · imágenes sin texto visible: garabatos, la mancha naranja (fondo de un rótulo que ya existía) y las
-#     piezas de lectura de E9 re-rendidas en la paleta E10 (e9/piezas/salida-e10/, sin figcaption).
+#   · clases sobre etiquetas que ya estaban: el sello (un rótulo que ya existía), la marca de revisión (un
+#     ::after decorativo, sin elemento) y las piezas de lectura de E9 re-rendidas en la paleta E10
+#     (e9/piezas/salida-e10/, sin figcaption).
 # Se quitan los scripts (gtag, Pixel, Lenis, menú, chequeo, aviso de cookies): el chequeo queda inerte.
-# herramientas/texto-igual.mjs comprueba que el texto visible es el del build.
+# herramientas/texto-igual.mjs comprueba que el texto visible es el del build Y que el orden de lectura es el
+# mismo (ronda 1 de QA, defecto 4): los bloques no se reordenan; la composición se hace con CSS.
+#
+# Ronda 1 de QA (acta-paso-2.md), lo que cambió acá:
+#   · defecto 4: el hero vuelve al orden del sitio en las dos direcciones (instrumento → titular → fila de obras,
+#     spec §0.4); la fila de obras vuelve al hero en Taller; el retrato de Acompañamiento va después de la lista
+#     de «Lo que incluye», donde estaba la galería en el build.
+#   · defecto 6: fuera el óvalo, los garabatos de The Ready (ovillo, rulos, lazo) y la mancha naranja; entran el
+#     botón y el chequeo propios, las marcas de revisión (marcas.mjs) y el sello (lock §10b).
+#   · defecto 5: Pizarra limpia separa los servicios en dos puertas de entrada y dos que siguen, y lleva el
+#     resaltador en hasta cuatro frases por página (uno a la vista), en vez de uno.
 #
 # Una imagen cambia: en Trabajo, «Bernardo Combeau | Model» pasa de mock-combeau-modelo-alto-2.jpg
 # (cuenta como oro: 0,059 %, la palmera; e9/piezas/manifiesto.json) a mock-combeau-modelo-ancho.jpg
@@ -132,10 +143,6 @@ def cinta(clave, clase_extra=''):
             f'{PAUSA}</div>')
 
 
-def garabato(nombre, clase_extra):
-    return f'<img class="garabato {clase_extra}" src="/e10/{nombre}.svg" alt="" aria-hidden="true">'
-
-
 def lectura(archivo, w, h, alt, clase_extra=''):
     return (f'<figure class="pieza-lectura {clase_extra}" style="--r:{w / h:.4f}">'
             f'<img src="/assets/img/e10/{archivo}" alt="{alt}" width="{w}" height="{h}" loading="eager" decoding="sync"></figure>')
@@ -161,9 +168,9 @@ def pagina(html, nuevo_main, direccion, nombre):
     # El punto del pie gigante: el único oro de la vista, sobre ciruela (lock §12, opción A).
     h = cambiar(h, '<p class="d-gigante" aria-hidden="true">SpindleLab.</p>',
                 '<p class="d-gigante" aria-hidden="true">SpindleLab<span class="oro">.</span></p>', 'pie gigante')
-    css = (f'<link rel="stylesheet" href="/e10/base.css?v=3">'
-           f'<link rel="stylesheet" href="/e10/{direccion}.css?v=3">'
-           f'<script src="/e10/e10.js?v=3" defer></script>')
+    css = (f'<link rel="stylesheet" href="/e10/base.css?v=4">'
+           f'<link rel="stylesheet" href="/e10/{direccion}.css?v=4">'
+           f'<script src="/e10/e10.js?v=4" defer></script>')
     h = h.replace('</head>', css + '</head>', 1)
     h = re.sub(r'<html([^>]*)>', lambda m: f'<html{m.group(1)} data-dir="{direccion}" data-pagina="{nombre}">', h, count=1)
     h = h.replace('<head>', f'<head>\n<!-- Prototipo E10 · dirección {DIRS[direccion]} · tablero de la compuerta 2. Base: dist/ del build. No es el sitio. -->', 1)
@@ -200,41 +207,48 @@ def home():
     tit = mk(titular, 'se corta')
     region = re.match(r'<div class="d-fila d-fila--hero"[^>]*>', filahero).group(0)
 
-    # ── TALLER: The Ready a fondo
-    t_instr = clase(instr, 'd-rot', 'mancha')
-    t_instr = cambiar(t_instr, 'id="chq-btn" type="submit"', 'id="chq-btn" type="submit" class="ovalo"')
-    t_hero = (f'<section class="d-hero t-hero" aria-labelledby="h1"><div class="t-hero__txt">{tit}{t_instr}</div>'
-              + slot('F1', 'gente de pie en una mesa con hojas y notas', '0.58', '0.8', 't-hero__foto') + '</section>')
+    # ── TALLER: The Ready a fondo, con lo propio de SpindleLab (lock §10b)
+    # El hero en el orden del sitio (spec §0.4, decisión de Ramón): instrumento → titular → fila de obras.
+    t_instr = clase(instr, 'd-rot', 'sello')
+    t_instr = clase(t_instr, 'd-instr', 't-instr con-marca')
+    t_fila = region.replace('class="d-fila d-fila--hero"', 'class="t-fila"') + ''.join(piezas_hero) + '</div>'
+    t_hero = f'<section class="d-hero t-hero" aria-labelledby="h1">{t_instr}{tit}{t_fila}</section>'
+    # «Qué hacemos»: la frase grande con el resaltador en la consecuencia, y la foto de gente (F1) a sangre derecha:
+    # «tu sitio está escrito para personas».
     t_pres = mk(pres, 'la consulta que pagaste termina en otra parte.').replace('class="d-pres"', 'class="d-pres t-pres"', 1)
     t_pres = cambiar(t_pres, 'class="d-btn"', 'class="d-btn d-btn--alt"')
-    t_col = region.replace('class="d-fila d-fila--hero"', 'class="t-collage"') + ''.join(
-        p.replace('class="d-pieza"', f'class="d-pieza t-col t-col--{i + 1}"', 1) for i, p in enumerate(piezas_hero)) + '</div>'
+    t_pres = t_pres[:-len('</section>')] + slot('F1', 'gente de pie en una mesa con hojas y notas', '0.58', '0.8', 't-pres__foto') + '</section>'
     t_des = seccion('desarrollo', 't-campo t-campo--desarrollo', cab('desarrollo') + fila('desarrollo').replace('d-fila d-fila--2', 'd-fila t-obra-par', 1))
     t_vis = seccion('visibilidad', 't-campo t-banda-amarilla t-campo--visibilidad',
                     mk(cab('visibilidad'), 'puedan citarte cuando preguntan por tu rubro.', 'papel')
-                    + slot('F2', 'alguien responde a un cliente en el mesón', '0.8', None, 't-campo__foto')
-                    + garabato('garabato-rulos', 't-garabato-rulos'))
+                    + slot('F2', 'alguien responde a un cliente en el mesón', '0.8', None, 't-campo__foto'))
     t_con = seccion('continuidad', 't-campo t-campo--media', slot('F3', 'notas en una planilla de cuatro columnas', '1.3333', None, 't-campo__foto') + cab('continuidad'))
     t_alc = seccion('alcance', 't-campo t-campo--media', slot('F4', 'un mensaje que llega al taller', '1.5', None, 't-campo__foto') + cab('alcance'))
     t_quien = mk(quien, 'Te muestro.').replace('class="d-quien d-tapa"', 'class="d-quien t-quien"', 1)
     t_quien = cambiar(t_quien, 'class="d-btn"', 'class="d-btn d-btn--alt"')
-    t_main = ''.join([t_hero, cinta('taller-home'), t_pres, t_col, t_des, t_vis,
+    t_main = ''.join([t_hero, cinta('taller-home'), t_pres, t_des, t_vis,
                       f'<div class="t-par">{t_con}{t_alc}</div>', t_quien,
                       indice.replace('class="d-indice d-tapa"', 'class="d-indice t-indice"', 1)])
     pagina(html, t_main, 'taller', 'home')
 
     # ── PIZARRA LIMPIA: la letra y el color de The Ready sobre el aire de Gehl
+    # El hero en el orden del sitio: la ficha del chequeo (rótulo | campo) primero, después el titular.
     p_instr = cambiar(instr, '<p class="d-rot">', '<p class="d-rot p-rotulo">')
-    p_hero = f'<section class="d-hero p-hero" aria-labelledby="h1">{tit}<div class="p-ficha">{p_instr}</div></section>'
+    p_hero = f'<section class="d-hero p-hero" aria-labelledby="h1"><div class="p-ficha">{p_instr}</div>{tit}</section>'
     p_ent = region.replace('class="d-fila d-fila--hero"', 'class="p-entregado"') + ''.join(piezas_hero) + '</div>'
-    p_pres = pres.replace('class="d-pres"', 'class="d-pres p-pres"', 1)
+    p_pres = mk(pres, 'la consulta que pagaste termina en otra parte.').replace('class="d-pres"', 'class="d-pres p-pres"', 1)
     p_pres = cambiar(p_pres, 'class="d-btn"', 'class="d-btn d-btn--alt"')
     p_sangre = slot('F5', 'una mesa larga junto a la ventana, con la cordillera', '2.3333', '0.8', 'p-sangre')
-    p_serv = ''.join(seccion(k, 'p-campo', cab(k) + (fila(k).replace('d-fila d-fila--2', 'd-fila p-obra-par', 1) if k == 'desarrollo' else ''))
-                     for k in campos)
-    p_quien = quien.replace('class="d-quien d-tapa"', 'class="d-quien p-quien"', 1)
+    # Los servicios dejan de pesar lo mismo (ronda 1, defecto 5): Desarrollo y Visibilidad son las dos puertas de
+    # entrada («tu sitio te frena» / «tu sitio existe»), a escala de titular; Continuidad y Alcance son lo que
+    # sigue, en un par compacto. Mismo orden del build.
+    p_des = seccion('desarrollo', 'p-campo p-puerta', cab('desarrollo') + fila('desarrollo').replace('d-fila d-fila--2', 'd-fila p-obra-par', 1))
+    p_vis = seccion('visibilidad', 'p-campo p-puerta', mk(cab('visibilidad'), 'puedan citarte cuando preguntan por tu rubro.'))
+    p_sig = ''.join(seccion(k, 'p-campo p-sigue', cab(k)) for k in ('continuidad', 'alcance'))
+    p_serv = f'<div class="p-servicios">{p_des}{p_vis}<div class="p-siguen">{p_sig}</div></div>'
+    p_quien = mk(quien, 'Te muestro.').replace('class="d-quien d-tapa"', 'class="d-quien p-quien"', 1)
     p_quien = cambiar(p_quien, 'class="d-btn"', 'class="d-btn d-btn--alt"')
-    p_main = ''.join([p_hero, cinta('pizarra-home'), p_ent, p_pres, p_sangre, f'<div class="p-servicios">{p_serv}</div>', p_quien,
+    p_main = ''.join([p_hero, p_ent, cinta('pizarra-home'), p_pres, p_sangre, p_serv, p_quien,
                       indice.replace('class="d-indice d-tapa"', 'class="d-indice p-indice"', 1)])
     pagina(html, p_main, 'pizarra', 'home')
 
@@ -256,27 +270,28 @@ def acompanamiento():
         p = mk(comp, 'lo compruebas tú.', 'papel' if 'amarilla' in banda_cls else '')
         return planes_sin.replace('</section>', f'<div class="{banda_cls}">{p}{extra}</div></section>')
 
+    # El retrato va en «Lo que incluye», DESPUÉS de la lista: en el build la galería con el retrato viene justo después
+    # de esa sección, así que el orden de lectura no cambia (ronda 1, defecto 4). Cada dirección lo pone con CSS bajo
+    # el titular. Va solo: una foto generada con gente al lado de Ramón se leería como su equipo (regla nueva, §07b).
+    inc = cambiar(sec['s-inc'], '</section>', retrato + '</section>', 'cierre de Lo que incluye')
+
     # ── TALLER
     t_cab = cab.replace('class="d-cab"', 'class="d-cab t-cab"', 1)
-    t_cab = cambiar(t_cab, '<a class="d-btn" href="#planes">', '<a class="d-btn ovalo" href="#planes">')
-    t_cab = t_cab.replace('</header>', garabato('garabato-ovillo', 't-garabato-ovillo') + '</header>')
     t_ent = (f'<div class="t-entrada">{mk(entrada, "lo hace y lo sostiene.")}'
              + slot('F6', 'dos personas comparan hojas pegadas en la pared', '1.5', None, 't-entrada__foto') + '</div>')
-    # El retrato sube a la columna izquierda de «Lo que incluye», bajo el titular: quien lo hace, junto a lo que
-    # incluye. Va solo: una foto generada con gente al lado de Ramón se leería como su equipo (regla nueva, §07b).
-    inc = cambiar(sec['s-inc'], '</h2>', '</h2>' + retrato, 'titular de Lo que incluye')
-    t_pla = con_comp('t-banda-amarilla t-comp', lectura(*L2, 't-comp__pieza'))
-    t_sig = sig.replace('class="d-chico d-gris"', 'class="d-chico d-gris mancha"', 1)
+    # La marca de revisión «comprobado» (un visto a mano) va sobre la prueba de los robots que responden 200.
+    t_pla = con_comp('t-banda-amarilla t-comp', lectura(*L2, 't-comp__pieza con-marca'))
     t_main = ''.join([t_cab, t_ent, inc.replace('class="d-sec"', 'class="d-sec t-lista"', 1), t_pla,
                       cinta('taller-acompanamiento'), sec['s-blo'].replace('class="d-sec"', 'class="d-sec t-mes"', 1),
-                      sec['s-faq'], sec['s-cie'], t_sig])
+                      sec['s-faq'], sec['s-cie'], sig])
     pagina(html, t_main, 'taller', 'acompanamiento-mensual')
 
     # ── PIZARRA LIMPIA
     p_cab = cab.replace('class="d-cab"', 'class="d-cab p-cab"', 1)
     p_sangre = slot('F7', 'la mesa de una sala chica, después de la reunión', '2.3333', '0.8', 'p-sangre')
     p_pla = con_comp('p-comp', lectura(*L4, 'p-comp__pieza'))
-    p_main = ''.join([p_cab, p_sangre, entrada.replace('class="d-entrada"', 'class="d-entrada p-entrada"', 1), inc, p_pla,
+    p_ent = mk(entrada, 'lo hace y lo sostiene.').replace('class="d-entrada"', 'class="d-entrada p-entrada"', 1)
+    p_main = ''.join([p_cab, p_sangre, p_ent, inc.replace('class="d-sec"', 'class="d-sec p-lista"', 1), p_pla,
                       sec['s-blo'].replace('class="d-sec"', 'class="d-sec p-mes"', 1), sec['s-faq'], sec['s-cie'], sig])
     pagina(html, p_main, 'pizarra', 'acompanamiento-mensual')
 
@@ -313,22 +328,24 @@ def trabajo():
 
     # ── TALLER
     t_cab = cab.replace('class="d-cab d-cab--trab"', 'class="d-cab d-cab--trab t-cab"', 1)
-    t_portada = (f'<div class="t-portada-lima">{t_cab}'
-                 + mk(entrada, 'cuál es cuál', 'papel') + garabato('garabato-lazo', 't-garabato-lazo') + '</div>')
+    # Portada en papel (la lima era el rol de The Ready para sus casos; vuelve solo si Ramón elige sus colores).
+    t_portada = f'<div class="t-portada">{t_cab}' + mk(entrada, 'cuál es cuál') + '</div>'
+    # «Pieza de concepto · no es un cliente» va en el sello: lo que se estampa es justo la aclaración.
     t_arts = [mk(arts['combeau-fotografia'], 'el sitio se arma solo.').replace('d-obra-trab--ancha', 'd-obra-trab--ancha t-obra t-obra--1', 1),
               arts['combeau-modelo'].replace('d-obra-trab--alta', 'd-obra-trab--alta t-obra t-obra--2', 1),
               con_pieza(arts['verifica-y-cumple'], lectura(*V1, 't-v1')).replace('d-obra-trab--media', 'd-obra-trab--media t-obra t-obra--3', 1),
-              arts['raigal'].replace('d-obra-trab--final', 'd-obra-trab--final t-obra t-obra--4', 1).replace('class="d-etq--concepto"', 'class="d-etq--concepto mancha"', 1)]
+              arts['raigal'].replace('d-obra-trab--final', 'd-obra-trab--final t-obra t-obra--4', 1).replace('class="d-etq--concepto"', 'class="d-etq--concepto sello"', 1)]
     t_obras = abre.replace('class="d-obras-trab"', 'class="d-obras-trab t-obras"') + ''.join(t_arts) + '</div>'
     t_cie = mk(cierre, 'qué ve la IA en tu sitio.', 'papel').replace('class="d-sec d-sec--quieta"', 'class="d-sec d-sec--quieta t-banda-amarilla t-cierre"', 1)
-    t_cie = cambiar(t_cie, '<a class="d-btn" href="/v3/diagnostico/">', '<a class="d-btn ovalo" href="/v3/diagnostico/">')
+    # La marca de revisión «haz esto» (un anillo a mano) rodea el botón del chequeo.
+    t_cie = cambiar(t_cie, '<a class="d-btn" href="/v3/diagnostico/">', '<a class="d-btn con-marca t-anillo" href="/v3/diagnostico/">')
     t_cie = t_cie.replace('</section>', slot('F8', 'bocetos de páginas hechos a mano en papel', '1.3333', None, 't-cierre__foto') + '</section>')
     pagina(html, ''.join([t_portada, t_obras, t_cie, sig]), 'taller', 'trabajo')
 
     # ── PIZARRA LIMPIA
     p_arts = [arts['combeau-fotografia'], arts['combeau-modelo'], con_pieza(arts['verifica-y-cumple'], lectura(*V1, 'p-v1')), arts['raigal']]
     p_obras = abre.replace('class="d-obras-trab"', 'class="d-obras-trab p-obras"') + ''.join(a.replace('class="d-obra-trab ', 'class="d-obra-trab p-obra ', 1) for a in p_arts) + '</div>'
-    p_cie = cierre.replace('class="d-sec d-sec--quieta"', 'class="d-sec d-sec--quieta p-cierre"', 1)
+    p_cie = mk(cierre, 'qué ve la IA en tu sitio.').replace('class="d-sec d-sec--quieta"', 'class="d-sec d-sec--quieta p-cierre"', 1)
     p_cie = p_cie.replace('</section>', slot('F8', 'bocetos de páginas hechos a mano en papel', '1.3333', None, 'p-cierre__foto') + '</section>')
     pagina(html, ''.join([cab.replace('class="d-cab d-cab--trab"', 'class="d-cab d-cab--trab p-cab"', 1),
                           mk(entrada, 'cuál es cuál').replace('d-entrada-trab', 'd-entrada-trab p-entrada', 1), p_obras, p_cie, sig]), 'pizarra', 'trabajo')

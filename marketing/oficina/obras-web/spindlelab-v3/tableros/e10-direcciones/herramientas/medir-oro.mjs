@@ -24,12 +24,12 @@ for (const d of ['taller', 'pizarra']) for (const p of ['home', 'acompanamiento-
   const png = path.join(TMP, `oro-${d}-${p}.png`);
   await pg.screenshot({ path: png, fullPage: true }); await pg.close();
   const todo = JSON.parse(execFileSync('python3', ['-I', MEDIR, 'oro', png], { encoding: 'utf8' }));
-  // lo mismo sin la caja del punto del pie: lo que queda es oro fuera del punto
+  // lo mismo sin la caja del punto del pie (pintada del ciruela del manual, #341F34): lo que queda es oro fuera del punto
   const sin = JSON.parse(execFileSync('python3', ['-I', '-c', `
 import sys, json
 from PIL import Image, ImageDraw
 im = Image.open(sys.argv[1]).convert('RGB'); x0, y0, x1, y1 = json.loads(sys.argv[2])
-ImageDraw.Draw(im).rectangle([x0, y0, x1, y1], fill=(27, 9, 37)); im.save(sys.argv[3])
+ImageDraw.Draw(im).rectangle([x0, y0, x1, y1], fill=(52, 31, 52)); im.save(sys.argv[3])
 print(json.dumps(1))`, png, JSON.stringify(punto), png.replace('.png', '-sin-punto.png')], { encoding: 'utf8' })) && JSON.parse(execFileSync('python3', ['-I', MEDIR, 'oro', png.replace('.png', '-sin-punto.png')], { encoding: 'utf8' }));
   const r = { direccion: d, pagina: p, caja_del_punto: punto, toda_la_pagina: todo, fuera_del_punto: sin, veredicto: sin.limpio ? 'un solo oro: el punto del pie, sobre ciruela' : 'HAY ORO FUERA DEL PUNTO' };
   out.push(r); console.log(d, p, 'página', todo.pct + '%', 'fuera del punto', sin.pct + '%', sin.pixeles + ' px', r.veredicto);

@@ -2,7 +2,7 @@
  "taller-home-1440": {
   "scrollWidth": 1440,
   "ancho": 1440,
-  "alto": 7484,
+  "alto": 7576,
   "fuentes": {
    "Instrument Sans": true,
    "IBM Plex Sans": true,
@@ -18,7 +18,6 @@
    "/assets/img/obra/mock-raigal-ancho-800.jpg",
    "/assets/img/obra/combeau-fotografia-ancho-2-800.jpg",
    "/assets/img/obra/verifica-y-cumple-ancho-800.jpg",
-   "/e10/garabato-rulos.svg",
    "/assets/img/ramon-vallejos.jpg"
   ],
   "espacios": [
@@ -27,28 +26,28 @@
     "ancho": 420,
     "alto": 724,
     "x": 1020,
-    "y": 91
+    "y": 1395
    },
    {
     "id": "F2",
-    "ancho": 398,
-    "alto": 498,
-    "x": 720,
-    "y": 3179
+    "ancho": 443,
+    "alto": 554,
+    "x": 922,
+    "y": 3261
    },
    {
     "id": "F3",
     "ancho": 617,
     "alto": 463,
     "x": 75,
-    "y": 3868
+    "y": 4007
    },
    {
     "id": "F4",
     "ancho": 617,
     "alto": 411,
     "x": 748,
-    "y": 3988
+    "y": 4127
    }
   ],
   "marcadores": 4,
@@ -59,28 +58,29 @@
     "alto": 74
    }
   ],
-  "ovalos": 2,
+  "ovalos": 1,
   "ovalos_a_la_vez": 1,
-  "densidad_texto": 15,
+  "densidad_texto": 14.8,
+  "densidad_lectura": 5.1,
   "h1": 1,
   "errores": [],
   "tramos": [
    [
     "taller-home-1440-t1.jpg",
     1440,
-    3742
+    3788
    ],
    [
     "taller-home-1440-t2.jpg",
     1440,
-    3742
+    3788
    ]
   ]
  },
  "taller-home-390": {
   "scrollWidth": 390,
   "ancho": 390,
-  "alto": 9048,
+  "alto": 8893,
   "fuentes": {
    "Instrument Sans": true,
    "IBM Plex Sans": true,
@@ -94,7 +94,6 @@
    "/assets/img/obra/mock-combeau-modelo-ancho-800.jpg",
    "/assets/img/obra/mock-verifica-y-cumple-alto-800.jpg",
    "/assets/img/obra/mock-raigal-ancho-800.jpg",
-   "/e10/garabato-rulos.svg",
    "/assets/img/ramon-vallejos.jpg"
   ],
   "espacios": [
@@ -103,28 +102,28 @@
     "ancho": 390,
     "alto": 488,
     "x": 0,
-    "y": 736
+    "y": 1855
    },
    {
     "id": "F2",
     "ancho": 280,
     "alto": 351,
     "x": 24,
-    "y": 4094
+    "y": 3973
    },
    {
     "id": "F3",
     "ancho": 390,
     "alto": 293,
     "x": 0,
-    "y": 4557
+    "y": 4436
    },
    {
     "id": "F4",
     "ancho": 390,
     "alto": 260,
     "x": 0,
-    "y": 5475
+    "y": 5354
    }
   ],
   "marcadores": 4,
@@ -135,43 +134,44 @@
     "alto": 53
    }
   ],
-  "ovalos": 2,
+  "ovalos": 1,
   "ovalos_a_la_vez": 1,
-  "densidad_texto": 22.3,
+  "densidad_texto": 22.6,
+  "densidad_lectura": 16.5,
   "h1": 1,
   "errores": [],
   "tramos": [
    [
     "taller-home-390-t1.jpg",
     780,
-    3620
+    3558
    ],
    [
     "taller-home-390-t2.jpg",
     780,
-    3620
+    3558
    ],
    [
     "taller-home-390-t3.jpg",
     780,
-    3620
+    3558
    ],
    [
     "taller-home-390-t4.jpg",
     780,
-    3620
+    3558
    ],
    [
     "taller-home-390-t5.jpg",
     780,
-    3616
+    3554
    ]
   ]
  },
  "taller-acompanamiento-mensual-1440": {
   "scrollWidth": 1440,
   "ancho": 1440,
-  "alto": 7233,
+  "alto": 7027,
   "fuentes": {
    "Instrument Sans": true,
    "IBM Plex Sans": true,
@@ -181,7 +181,6 @@
   "rotas": [],
   "fotosD": 0,
   "imagenes": [
-   "/e10/garabato-ovillo.svg",
    "/assets/img/ramon-vallejos.jpg",
    "/assets/img/e10/l2-respuesta-robots-spindlelab.jpg"
   ],
@@ -191,7 +190,7 @@
     "ancho": 655,
     "alto": 436,
     "x": 786,
-    "y": 811
+    "y": 760
    }
   ],
   "marcadores": 2,
@@ -202,28 +201,29 @@
     "alto": 74
    }
   ],
-  "ovalos": 2,
+  "ovalos": 1,
   "ovalos_a_la_vez": 1,
-  "densidad_texto": 21.5,
+  "densidad_texto": 22.1,
+  "densidad_lectura": 11.7,
   "h1": 1,
   "errores": [],
   "tramos": [
    [
     "taller-acompanamiento-mensual-1440-t1.jpg",
     1440,
-    3617
+    3514
    ],
    [
     "taller-acompanamiento-mensual-1440-t2.jpg",
     1440,
-    3616
+    3513
    ]
   ]
  },
  "taller-acompanamiento-mensual-390": {
   "scrollWidth": 390,
   "ancho": 390,
-  "alto": 9766,
+  "alto": 9331,
   "fuentes": {
    "Instrument Sans": true,
    "IBM Plex Sans": true,
@@ -233,7 +233,6 @@
   "rotas": [],
   "fotosD": 0,
   "imagenes": [
-   "/e10/garabato-ovillo.svg",
    "/assets/img/ramon-vallejos.jpg",
    "/assets/img/e10/l2-respuesta-robots-spindlelab.jpg"
   ],
@@ -243,7 +242,7 @@
     "ancho": 390,
     "alto": 260,
     "x": 0,
-    "y": 1165
+    "y": 909
    }
   ],
   "marcadores": 2,
@@ -254,43 +253,44 @@
     "alto": 53
    }
   ],
-  "ovalos": 2,
+  "ovalos": 1,
   "ovalos_a_la_vez": 1,
-  "densidad_texto": 32.5,
+  "densidad_texto": 33.9,
+  "densidad_lectura": 26.3,
   "h1": 1,
   "errores": [],
   "tramos": [
    [
     "taller-acompanamiento-mensual-390-t1.jpg",
     780,
-    3907
+    3733
    ],
    [
     "taller-acompanamiento-mensual-390-t2.jpg",
     780,
-    3907
+    3733
    ],
    [
     "taller-acompanamiento-mensual-390-t3.jpg",
     780,
-    3907
+    3733
    ],
    [
     "taller-acompanamiento-mensual-390-t4.jpg",
     780,
-    3907
+    3733
    ],
    [
     "taller-acompanamiento-mensual-390-t5.jpg",
     780,
-    3904
+    3730
    ]
   ]
  },
  "taller-trabajo-1440": {
   "scrollWidth": 1440,
   "ancho": 1440,
-  "alto": 5939,
+  "alto": 5881,
   "fuentes": {
    "Instrument Sans": true,
    "IBM Plex Sans": true,
@@ -300,7 +300,6 @@
   "rotas": [],
   "fotosD": 0,
   "imagenes": [
-   "/e10/garabato-lazo.svg",
    "/assets/img/obra/mock-combeau-fotografia-ancho.jpg",
    "/assets/img/obra/mock-combeau-modelo-ancho.jpg",
    "/assets/img/obra/mock-verifica-y-cumple-ancho.jpg",
@@ -313,34 +312,35 @@
     "ancho": 508,
     "alto": 381,
     "x": 858,
-    "y": 4243
+    "y": 4239
    }
   ],
   "marcadores": 3,
   "marcadores_a_la_vez": 1,
   "cintas": [],
-  "ovalos": 2,
+  "ovalos": 1,
   "ovalos_a_la_vez": 1,
-  "densidad_texto": 12.1,
+  "densidad_texto": 12.2,
+  "densidad_lectura": 4.1,
   "h1": 1,
   "errores": [],
   "tramos": [
    [
     "taller-trabajo-1440-t1.jpg",
     1440,
-    2970
+    2941
    ],
    [
     "taller-trabajo-1440-t2.jpg",
     1440,
-    2969
+    2940
    ]
   ]
  },
  "taller-trabajo-390": {
   "scrollWidth": 390,
   "ancho": 390,
-  "alto": 6084,
+  "alto": 5929,
   "fuentes": {
    "Instrument Sans": true,
    "IBM Plex Sans": true,
@@ -350,7 +350,6 @@
   "rotas": [],
   "fotosD": 0,
   "imagenes": [
-   "/e10/garabato-lazo.svg",
    "/assets/img/obra/mock-combeau-fotografia-ancho-800.jpg",
    "/assets/img/obra/mock-combeau-modelo-ancho-800.jpg",
    "/assets/img/obra/mock-verifica-y-cumple-ancho-800.jpg",
@@ -363,44 +362,40 @@
     "ancho": 342,
     "alto": 257,
     "x": 24,
-    "y": 4635
+    "y": 4514
    }
   ],
   "marcadores": 3,
   "marcadores_a_la_vez": 2,
   "cintas": [],
-  "ovalos": 2,
+  "ovalos": 1,
   "ovalos_a_la_vez": 1,
-  "densidad_texto": 23.3,
+  "densidad_texto": 23.8,
+  "densidad_lectura": 17.9,
   "h1": 1,
   "errores": [],
   "tramos": [
    [
     "taller-trabajo-390-t1.jpg",
     780,
-    3042
+    3953
    ],
    [
     "taller-trabajo-390-t2.jpg",
     780,
-    3042
+    3953
    ],
    [
     "taller-trabajo-390-t3.jpg",
     780,
-    3042
-   ],
-   [
-    "taller-trabajo-390-t4.jpg",
-    780,
-    3042
+    3952
    ]
   ]
  },
  "pizarra-home-1440": {
   "scrollWidth": 1440,
   "ancho": 1440,
-  "alto": 6046,
+  "alto": 6627,
   "fuentes": {
    "Instrument Sans": true,
    "IBM Plex Sans": true,
@@ -424,10 +419,10 @@
     "ancho": 1440,
     "alto": 617,
     "x": 0,
-    "y": 1849
+    "y": 1859
    }
   ],
-  "marcadores": 1,
+  "marcadores": 4,
   "marcadores_a_la_vez": 1,
   "cintas": [
    {
@@ -437,26 +432,27 @@
   ],
   "ovalos": 1,
   "ovalos_a_la_vez": 1,
-  "densidad_texto": 10.5,
+  "densidad_texto": 15.8,
+  "densidad_lectura": 6.9,
   "h1": 1,
   "errores": [],
   "tramos": [
    [
     "pizarra-home-1440-t1.jpg",
     1440,
-    3023
+    3314
    ],
    [
     "pizarra-home-1440-t2.jpg",
     1440,
-    3023
+    3313
    ]
   ]
  },
  "pizarra-home-390": {
   "scrollWidth": 390,
   "ancho": 390,
-  "alto": 7234,
+  "alto": 7188,
   "fuentes": {
    "Instrument Sans": true,
    "IBM Plex Sans": true,
@@ -478,10 +474,10 @@
     "ancho": 390,
     "alto": 488,
     "x": 0,
-    "y": 1815
+    "y": 1697
    }
   ],
-  "marcadores": 1,
+  "marcadores": 4,
   "marcadores_a_la_vez": 1,
   "cintas": [
    {
@@ -491,36 +487,37 @@
   ],
   "ovalos": 1,
   "ovalos_a_la_vez": 1,
-  "densidad_texto": 20.9,
+  "densidad_texto": 23.1,
+  "densidad_lectura": 17,
   "h1": 1,
   "errores": [],
   "tramos": [
    [
     "pizarra-home-390-t1.jpg",
     780,
-    3617
+    3594
    ],
    [
     "pizarra-home-390-t2.jpg",
     780,
-    3617
+    3594
    ],
    [
     "pizarra-home-390-t3.jpg",
     780,
-    3617
+    3594
    ],
    [
     "pizarra-home-390-t4.jpg",
     780,
-    3617
+    3594
    ]
   ]
  },
  "pizarra-acompanamiento-mensual-1440": {
   "scrollWidth": 1440,
   "ancho": 1440,
-  "alto": 6880,
+  "alto": 7927,
   "fuentes": {
    "Instrument Sans": true,
    "IBM Plex Sans": true,
@@ -539,34 +536,35 @@
     "ancho": 1440,
     "alto": 617,
     "x": 0,
-    "y": 548
+    "y": 734
    }
   ],
-  "marcadores": 1,
+  "marcadores": 2,
   "marcadores_a_la_vez": 1,
   "cintas": [],
   "ovalos": 1,
   "ovalos_a_la_vez": 1,
-  "densidad_texto": 12.8,
+  "densidad_texto": 18.1,
+  "densidad_lectura": 8.4,
   "h1": 1,
   "errores": [],
   "tramos": [
    [
     "pizarra-acompanamiento-mensual-1440-t1.jpg",
     1440,
-    3440
+    3964
    ],
    [
     "pizarra-acompanamiento-mensual-1440-t2.jpg",
     1440,
-    3440
+    3963
    ]
   ]
  },
  "pizarra-acompanamiento-mensual-390": {
   "scrollWidth": 390,
   "ancho": 390,
-  "alto": 8361,
+  "alto": 8477,
   "fuentes": {
    "Instrument Sans": true,
    "IBM Plex Sans": true,
@@ -585,49 +583,50 @@
     "ancho": 390,
     "alto": 488,
     "x": 0,
-    "y": 615
+    "y": 640
    }
   ],
-  "marcadores": 1,
+  "marcadores": 2,
   "marcadores_a_la_vez": 1,
   "cintas": [],
   "ovalos": 1,
   "ovalos_a_la_vez": 1,
-  "densidad_texto": 29.9,
+  "densidad_texto": 31.7,
+  "densidad_lectura": 25.5,
   "h1": 1,
   "errores": [],
   "tramos": [
    [
     "pizarra-acompanamiento-mensual-390-t1.jpg",
     780,
-    3345
+    3391
    ],
    [
     "pizarra-acompanamiento-mensual-390-t2.jpg",
     780,
-    3345
+    3391
    ],
    [
     "pizarra-acompanamiento-mensual-390-t3.jpg",
     780,
-    3345
+    3391
    ],
    [
     "pizarra-acompanamiento-mensual-390-t4.jpg",
     780,
-    3345
+    3391
    ],
    [
     "pizarra-acompanamiento-mensual-390-t5.jpg",
     780,
-    3342
+    3390
    ]
   ]
  },
  "pizarra-trabajo-1440": {
   "scrollWidth": 1440,
   "ancho": 1440,
-  "alto": 7311,
+  "alto": 7586,
   "fuentes": {
    "Instrument Sans": true,
    "IBM Plex Sans": true,
@@ -649,34 +648,35 @@
     "ancho": 844,
     "alto": 633,
     "x": 521,
-    "y": 5482
+    "y": 5692
    }
   ],
-  "marcadores": 1,
+  "marcadores": 2,
   "marcadores_a_la_vez": 1,
   "cintas": [],
   "ovalos": 1,
   "ovalos_a_la_vez": 1,
-  "densidad_texto": 5.6,
+  "densidad_texto": 8.7,
+  "densidad_lectura": 3.4,
   "h1": 1,
   "errores": [],
   "tramos": [
    [
     "pizarra-trabajo-1440-t1.jpg",
     1440,
-    3656
+    3793
    ],
    [
     "pizarra-trabajo-1440-t2.jpg",
     1440,
-    3655
+    3793
    ]
   ]
  },
  "pizarra-trabajo-390": {
   "scrollWidth": 390,
   "ancho": 390,
-  "alto": 5511,
+  "alto": 5601,
   "fuentes": {
    "Instrument Sans": true,
    "IBM Plex Sans": true,
@@ -698,32 +698,33 @@
     "ancho": 342,
     "alto": 257,
     "x": 24,
-    "y": 4130
+    "y": 4234
    }
   ],
-  "marcadores": 1,
+  "marcadores": 2,
   "marcadores_a_la_vez": 1,
   "cintas": [],
   "ovalos": 1,
   "ovalos_a_la_vez": 1,
-  "densidad_texto": 20.4,
+  "densidad_texto": 22.1,
+  "densidad_lectura": 17.6,
   "h1": 1,
   "errores": [],
   "tramos": [
    [
     "pizarra-trabajo-390-t1.jpg",
     780,
-    3674
+    3734
    ],
    [
     "pizarra-trabajo-390-t2.jpg",
     780,
-    3674
+    3734
    ],
    [
     "pizarra-trabajo-390-t3.jpg",
     780,
-    3674
+    3734
    ]
   ]
  }

@@ -1,7 +1,7 @@
 {
- "fecha": "2026-10-16T12:25:41.896Z",
+ "fecha": "2026-10-16T13:22:13.843Z",
  "metodo": "herramientas/texto-igual.mjs (ver la cabecera)",
- "resultado": "IGUAL: en las 12 vistas (3 páginas × 2 direcciones × 2 anchos) el texto visible es el del build; solo se agregan los rótulos de foto y la cinta, comprobados aparte",
+ "resultado": "IGUAL: en las 12 vistas (3 páginas × 2 direcciones × 2 anchos) el texto visible es el del build y está en el mismo orden de lectura; solo se agregan los rótulos de foto y la cinta, comprobados aparte. Con JavaScript apagado en las dos: con JavaScript, el build suma en el pie el control «Cookies» que crea consent-banner.js, que los prototipos no cargan",
  "paginas": [
   {
    "direccion": "taller",
@@ -14,7 +14,7 @@
    "fragmentos_prototipo": 75,
    "faltan": [],
    "sobran": [],
-   "mismo_orden_de_lectura": false,
+   "mismo_orden_de_lectura": true,
    "excepciones": {
     "rotulos_foto": [
      "Foto por generar · F1 · gente de pie en una mesa con hojas y notas",
@@ -52,7 +52,7 @@
    "fragmentos_prototipo": 75,
    "faltan": [],
    "sobran": [],
-   "mismo_orden_de_lectura": false,
+   "mismo_orden_de_lectura": true,
    "excepciones": {
     "rotulos_foto": [
      "Foto por generar · F5 · una mesa larga junto a la ventana, con la cordillera"
@@ -104,7 +104,7 @@
    "fragmentos_prototipo": 75,
    "faltan": [],
    "sobran": [],
-   "mismo_orden_de_lectura": false,
+   "mismo_orden_de_lectura": true,
    "excepciones": {
     "rotulos_foto": [
      "Foto por generar · F1 · gente de pie en una mesa con hojas y notas",
@@ -142,7 +142,7 @@
    "fragmentos_prototipo": 75,
    "faltan": [],
    "sobran": [],
-   "mismo_orden_de_lectura": false,
+   "mismo_orden_de_lectura": true,
    "excepciones": {
     "rotulos_foto": [
      "Foto por generar · F5 · una mesa larga junto a la ventana, con la cordillera"
@@ -194,7 +194,7 @@
    "fragmentos_prototipo": 88,
    "faltan": [],
    "sobran": [],
-   "mismo_orden_de_lectura": false,
+   "mismo_orden_de_lectura": true,
    "excepciones": {
     "rotulos_foto": [
      "Foto por generar · F6 · dos personas comparan hojas pegadas en la pared"
@@ -229,7 +229,7 @@
    "fragmentos_prototipo": 88,
    "faltan": [],
    "sobran": [],
-   "mismo_orden_de_lectura": false,
+   "mismo_orden_de_lectura": true,
    "excepciones": {
     "rotulos_foto": [
      "Foto por generar · F7 · la mesa de una sala chica, después de la reunión"
@@ -251,7 +251,7 @@
    "fragmentos_prototipo": 88,
    "faltan": [],
    "sobran": [],
-   "mismo_orden_de_lectura": false,
+   "mismo_orden_de_lectura": true,
    "excepciones": {
     "rotulos_foto": [
      "Foto por generar · F6 · dos personas comparan hojas pegadas en la pared"
@@ -286,7 +286,7 @@
    "fragmentos_prototipo": 88,
    "faltan": [],
    "sobran": [],
-   "mismo_orden_de_lectura": false,
+   "mismo_orden_de_lectura": true,
    "excepciones": {
     "rotulos_foto": [
      "Foto por generar · F7 · la mesa de una sala chica, después de la reunión"

@@ -77,13 +77,15 @@ for (const [nombre, url] of PAGINAS) {
     const m = await pg.evaluate(() => {
       const W = innerWidth, H = document.documentElement.scrollHeight;
       // densidad de texto: suma del área de las cajas de línea de cada nodo de texto visible / área de la página
-      let area = 0;
+      // densidad de lectura: lo mismo sin la letra display (≥ 40 px), que ocupa área pero no carga de lectura (ronda 1)
+      let area = 0, areaLectura = 0;
       const tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
       while (tw.nextNode()) {
         const n = tw.currentNode; if (!n.data.trim()) continue;
         const el = n.parentElement; if (!el || !el.checkVisibility({ visibilityProperty: true }) || el.closest('.d-sr,[aria-hidden="true"]')) continue;
         const r = document.createRange(); r.selectNodeContents(n);
-        for (const q of r.getClientRects()) area += q.width * q.height;
+        const display = parseFloat(getComputedStyle(el).fontSize) >= 40;
+        for (const q of r.getClientRects()) { area += q.width * q.height; if (!display) areaLectura += q.width * q.height; }
       }
       const marcadores = [...document.querySelectorAll('.mk')].map((e) => { const r = e.getBoundingClientRect(); return { y: r.top + scrollY, alto: r.height, texto: e.textContent }; });
       // a la vista a la vez: máximo de marcadores que caben en una ventana de innerHeight
@@ -103,6 +105,7 @@ for (const [nombre, url] of PAGINAS) {
         ovalos_a_la_vez: (() => { const ys = [...document.querySelectorAll('.ovalo, .d-pie .d-btn')].map((e) => { const r = e.getBoundingClientRect(); return [r.top + scrollY, r.bottom + scrollY]; });
           return Math.max(0, ...ys.map(([a]) => ys.filter(([c, d]) => c >= a && d <= a + innerHeight).length)); })(),
         densidad_texto: +(100 * area / (W * H)).toFixed(1),
+        densidad_lectura: +(100 * areaLectura / (W * H)).toFixed(1),
         h1: document.querySelectorAll('h1').length,
       };
     });
@@ -111,7 +114,7 @@ for (const [nombre, url] of PAGINAS) {
     medidas[`${nombre}-${w}`] = { ...m, errores, tramos: aJpg(png, nombre, w) };
     const f = Object.entries(m.fuentes).filter(([, ok]) => !ok).map(([k]) => k);
     console.log(nombre, w, 'alto', m.alto, 'scrollWidth', m.scrollWidth, f.length ? 'SIN ' + f.join(',') : 'letras ok', m.rotas.length ? 'ROTAS ' + m.rotas : '',
-      'd/', m.fotosD, 'texto', m.densidad_texto + '%', 'mk', m.marcadores, '(a la vez', m.marcadores_a_la_vez + ')', errores.length ? 'ERRORES ' + errores.join(' | ') : '');
+      'd/', m.fotosD, 'texto', m.densidad_texto + '%', 'lectura', m.densidad_lectura + '%', 'mk', m.marcadores, '(a la vez', m.marcadores_a_la_vez + ')', errores.length ? 'ERRORES ' + errores.join(' | ') : '');
     await ctx.close();
   }
 }

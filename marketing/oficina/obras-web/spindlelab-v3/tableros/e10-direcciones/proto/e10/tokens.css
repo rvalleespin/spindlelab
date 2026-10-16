@@ -1,18 +1,32 @@
-/* tokens.css — paleta y letras del lock E10 (lock-the-ready.md §2, §3 y §11). Lucía, 16-oct-2026.
-   Son los valores medidos en The Ready; los roles están en el lock (§10 y §13) y se repiten aquí
-   porque el rol es parte del token. Esta hoja la lee también e9/piezas/generar.mjs --paleta=e10. */
+/* tokens.css — paleta y letras del lock E10 (lock-the-ready.md §10b, §11 y §12). Lucía, 16-oct-2026.
+   PROPIA desde la ronda 1 de QA (acta-paso-2.md, defecto 6): el papel y el ciruela son los del manual
+   de SpindleLab (§04), una sola tinta en vez de las dos de The Ready, y el resaltador con valor propio.
+   Lima, lavanda y naranja salen del sistema propio. El rol es parte del token y se repite aquí.
+   Esta hoja la lee también e9/piezas/generar.mjs --paleta=e10 (el primer valor de cada nombre). */
 :root {
-  --papel: #FFFEFA;    /* lienzo de todas las páginas; texto sobre ciruela */
-  --ciruela: #1B0925;  /* titulares, botones, filetes de 1 px, garabatos y la banda final; nada más */
-  --tinta: #0D0C0E;    /* cuerpo y rótulos mono */
-  --amarillo: #F4F480; /* el marcador detrás de la frase y una banda «lo que ganas»; nunca más cálido (§12) */
-  --lima: #E6FA97;     /* solo la portada de una página de obra (Trabajo, en Taller) */
-  --lavanda: #EDD1FF;  /* solo el óvalo de la banda final ciruela; nunca una banda */
-  --naranja: #EC6227;  /* solo en Taller: una mancha con un rótulo mono, una por página */
-  --oro: #C9A227;      /* solo el punto del wordmark, solo sobre ciruela (7,80:1), uno por vista */
+  --papel: #F7F5F0;    /* el papel del manual §04: lienzo de todas las páginas y texto sobre ciruela */
+  --ciruela: #341F34;  /* el ciruela del manual §04: la única tinta (titulares, cuerpo, rótulos, botones, filetes, marcas a mano) y la banda final */
+  --amarillo: #EEF26E; /* el resaltador: detrás de la frase que remata y una banda «lo que ganas» por página (Taller). Nunca más cálido que 60° (§12) */
+  --oro: #C9A227;      /* solo el punto del wordmark, solo sobre ciruela (6,24:1), uno por vista */
+  --tinta: var(--ciruela); /* alias: el sistema propio tiene una sola tinta */
+  --suave: #6B5A6B;    /* solo el texto de ejemplo del campo del chequeo (5,84:1 sobre papel) */
 
   --f-display: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
   --f-cuerpo: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   --f-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
   --f-marca: 'Gabarito', var(--f-display);
+}
+
+/* Solo para el tablero: la opción «los colores exactos de The Ready» (decisión de Ramón en la compuerta 2).
+   Se enciende con ?paleta=the-ready (e10.js). Son SUS valores, medidos en lock §3: si Ramón la elige, la
+   elige sabiendo eso. Con ella vuelven sus tres acentos, cada uno en el rol que tiene allá. */
+html[data-paleta="the-ready"] {
+  --papel: #FFFEFA;
+  --ciruela: #1B0925;
+  --tinta: #0D0C0E;
+  --amarillo: #F4F480;
+  --lima: #E6FA97;     /* la portada de la página de obra (Taller) */
+  --lavanda: #EDD1FF;  /* el botón de la banda final */
+  --naranja: #EC6227;  /* el fondo del sello (Taller) */
+  --suave: #625B66;
 }

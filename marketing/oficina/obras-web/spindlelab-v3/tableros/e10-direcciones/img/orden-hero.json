@@ -1,0 +1,55 @@
+{
+ "fecha": "2026-10-16T13:23:47.228Z",
+ "regla": "spec §0.4: el instrumento primero en la home",
+ "mismo_orden_que_el_build": true,
+ "casos": [
+  {
+   "cual": "build",
+   "ancho": 1440,
+   "chequeo": 142,
+   "h1": 340,
+   "primera_obra": 580,
+   "orden": "chequeo → h1 → primera_obra"
+  },
+  {
+   "cual": "taller",
+   "ancho": 1440,
+   "chequeo": 151,
+   "h1": 453,
+   "primera_obra": 771,
+   "orden": "chequeo → h1 → primera_obra"
+  },
+  {
+   "cual": "pizarra",
+   "ancho": 1440,
+   "chequeo": 151,
+   "h1": 502,
+   "primera_obra": 809,
+   "orden": "chequeo → h1 → primera_obra"
+  },
+  {
+   "cual": "build",
+   "ancho": 390,
+   "chequeo": 126,
+   "h1": 448,
+   "primera_obra": 542,
+   "orden": "chequeo → h1 → primera_obra"
+  },
+  {
+   "cual": "taller",
+   "ancho": 390,
+   "chequeo": 202,
+   "h1": 502,
+   "primera_obra": 653,
+   "orden": "chequeo → h1 → primera_obra"
+  },
+  {
+   "cual": "pizarra",
+   "ancho": 390,
+   "chequeo": 140,
+   "h1": 473,
+   "primera_obra": 618,
+   "orden": "chequeo → h1 → primera_obra"
+  }
+ ]
+}

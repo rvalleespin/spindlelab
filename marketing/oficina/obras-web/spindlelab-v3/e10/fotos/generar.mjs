@@ -7,20 +7,31 @@
 // Node 22, sin dependencias: fetch, crypto y zlib nativos.
 //
 // Reglas que este script hace cumplir (pauta.md, «Uso»):
+//   · Una sola numeración, la del tablero: cada ficha de pauta.json es un espacio de foto de
+//     tableros/e10-direcciones/espacios-foto.json (número + dirección). Si la pauta y los espacios
+//     no calzan (falta el archivo, un espacio sin ficha, una ficha sin espacio, otra página u otra
+//     medida, la tabla de equivalencia con vacíos, una ficha sin sus dos recortes), NO genera:
+//     termina con código 2 y la lista de lo que no calza. --verificar lo muestra sin generar.
+//   · El encuadre de cada ficha es el de su dirección: no es un campo que se pueda equivocar.
 //   · Sin --tope no genera nada: lista lo que pediría, cuántas llamadas y cuánto costaría, y no
 //     toca la red. --tope es el número máximo de imágenes que la corrida puede pedir.
 //   · La clave nunca se imprime ni se guarda: ni en el registro, ni en los errores (se tapa).
 //   · Cada archivo que llega se valida como imagen (firma y dimensiones) antes de guardarlo, y
 //     se le mide el oro con el criterio del manual §07b (el mismo cálculo HSV de PIL).
-//   · Cada imagen queda en salida/<F>-<n>.png, con su línea en salida/registro.json.
+//   · Cada imagen queda en salida/<F>-<dirección>-<n>.png (F8-taller-1.png), con su línea en
+//     salida/registro.json.
+//   · Lo que se manda es lo que se revisó: si pauta.json cambió y no se corrió --sincronizar
+//     (prompt_completo_en y pauta.md), no genera.
 //
 // Uso rápido:
-//   node generar.mjs                              lista toda la pauta (sin red)
-//   node generar.mjs --prioridad=1                lista solo las imprescindibles
-//   node generar.mjs --prioridad=1 --tope=12      genera las imprescindibles, 2 variantes c/u
-//   node generar.mjs --solo=F1,F3 --variantes=3 --tope=6 --proveedor=openai
+//   node generar.mjs                              lista toda la pauta y la comprobación (sin red)
+//   node generar.mjs --verificar                  solo la comprobación contra el tablero (sin red)
+//   node generar.mjs --tope=18                    genera las 9 fichas, 2 variantes c/u
+//   node generar.mjs --solo=F1,F8 --variantes=3 --tope=9 --proveedor=openai
+//   node generar.mjs --direccion=pizarra --tope=6 solo las de Pizarra limpia
 //   node generar.mjs --ver --solo=F2              imprime el prompt completo (sin red)
-//   node generar.mjs --medir=salida/F1-1.png      mide oro en archivos PNG (sin red)
+//   node generar.mjs --medir=salida/F1-taller-1.png   mide oro en archivos PNG (sin red)
+//   node generar.mjs --sincronizar                reescribe prompt_completo_en y pauta.md
 //   node generar.mjs --ayuda
 
 import { readFile, writeFile, mkdir, rename, readdir } from 'node:fs/promises';
@@ -28,11 +39,21 @@ import { createHash } from 'node:crypto';
 import { inflateSync, deflateSync } from 'node:zlib';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { armarPautaMd } from './pauta-md.mjs';
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const PAUTA = path.join(DIR, 'pauta.json');
-// Los espacios de foto que Lucía numera en el tablero (puede no existir todavía).
+const PAUTA_MD = path.join(DIR, 'pauta.md');
+// Los espacios de foto que Lucía numera en el tablero: la numeración que manda.
 const ESPACIOS_LUCIA = path.resolve(DIR, '../../tableros/e10-direcciones/espacios-foto.json');
+const ESPACIOS_REL = 'tableros/e10-direcciones/espacios-foto.json';
+
+// Las dos direcciones: la clave corta de la pauta y el nombre que usa espacios-foto.json.
+const DIRECCIONES = { taller: 'Taller', pizarra: 'Pizarra limpia' };
+const DIRECCION_DE_NOMBRE = Object.fromEntries(Object.entries(DIRECCIONES).map(([k, v]) => [v, k]));
+const TAMANOS_OPENAI = new Set(['1024x1024', '1536x1024', '1024x1536']);
+// Cobertura que pide el tablero (nota de espacios-foto.json): 1× a 1440 y 2× a 390.
+const COBERTURA_MIN = { 1440: 1, 390: 2 };
 
 const PROVEEDORES = {
   gemini: {
@@ -84,7 +105,7 @@ class NoEsImagen extends Error {}        // llegó algo que no es una imagen vá
 const OPCIONES = {
   solo: 'valor', prioridad: 'valor', direccion: 'valor', variantes: 'valor', tope: 'valor',
   proveedor: 'valor', modelo: 'valor', calidad: 'valor', tamano: 'valor', salida: 'valor',
-  medir: 'valor', ver: 'bandera', sincronizar: 'bandera', ayuda: 'bandera',
+  medir: 'valor', ver: 'bandera', sincronizar: 'bandera', verificar: 'bandera', ayuda: 'bandera',
 };
 
 function leerArgs(argv) {
@@ -116,9 +137,12 @@ function ayuda() {
   decir(`generar.mjs · fotos E10 con IA (pauta.json al lado de este archivo)
 
 Sin --tope NO genera: lista lo que pediría y su costo, sin tocar la red.
+Tampoco genera si la pauta no calza con los espacios del tablero (${ESPACIOS_REL}).
 
-  --solo=F1,F3        solo esas fotos
-  --prioridad=N       solo fotos con prioridad ≤ N (1 = imprescindible para el tablero)
+  --verificar         compara la pauta con los espacios del tablero y nada más (sin red)
+  --solo=F1,F8        solo esos números del tablero (F8 trae sus dos fichas, una por
+                      dirección); también se puede pedir una sola: --solo=F8-taller
+  --prioridad=N       solo fotos con prioridad ≤ N (hoy las 9 fichas son prioridad 1)
   --direccion=D       solo fotos de la dirección «taller» o «pizarra»
   --variantes=N       variantes por foto (por defecto 2, máximo 8)
   --tope=N            OBLIGATORIO para generar: máximo de imágenes de la corrida (1 a 200).
@@ -132,8 +156,10 @@ Sin --tope NO genera: lista lo que pediría y su costo, sin tocar la red.
                       2.5 Flash no lo necesita)
   --ver               imprime el prompt completo de cada foto elegida (sin red)
   --medir=a.png,b.png mide oro en PNG ya guardados (sin red)
-  --sincronizar       reescribe prompt_completo_en en pauta.json desde sus partes
+  --sincronizar       reescribe prompt_completo_en en pauta.json desde sus partes, y pauta.md
   --salida=DIR        carpeta de salida (por defecto salida/; para pruebas)
+
+Salidas: salida/<F>-<dirección>-<n>.png, por ejemplo F8-taller-1.png.
 
 Claves: GEMINI_API_KEY u OPENAI_API_KEY en el entorno. Nunca en el chat ni en el repo.`);
   return 0;
@@ -148,10 +174,14 @@ async function leerPauta() {
   catch (e) { throw new ErrorUso(`pauta.json no es JSON válido: ${e.message}`); }
 }
 
+const clave = (f) => `${f.id}-${f.direccion}`;
+
+// El encuadre sale de la dirección de la ficha: una ficha de Taller no puede llevar el de Pizarra.
 function componer(pauta, foto) {
   const e = pauta.estilo;
-  const encuadre = e.encuadre?.[foto.encuadre]?.en;
-  if (!encuadre) throw new ErrorUso(`${foto.id}: encuadre «${foto.encuadre}» no existe en estilo.encuadre.`);
+  if (!(foto.direccion in DIRECCIONES)) throw new ErrorUso(`${foto.id}: dirección «${foto.direccion}» no es «taller» ni «pizarra».`);
+  const encuadre = e.encuadre?.[foto.direccion]?.en;
+  if (!encuadre) throw new ErrorUso(`${foto.id}: falta estilo.encuadre.${foto.direccion}.`);
   const negativos = [...(foto.negativo_en ?? []), ...(e.negativo_en ?? [])];
   return [
     foto.escena_en.trim(),
@@ -164,8 +194,14 @@ function componer(pauta, foto) {
 }
 
 function desincronizadas(pauta) {
-  return pauta.fotos.filter((f) => componer(pauta, f) !== f.prompt_completo_en).map((f) => f.id);
+  return pauta.fotos.filter((f) => componer(pauta, f) !== f.prompt_completo_en).map(clave);
 }
+
+async function leerMd() {
+  try { return await readFile(PAUTA_MD, 'utf8'); } catch { return null; }
+}
+
+const mdAlDia = async (pauta) => (await leerMd()) === armarPautaMd(pauta, AYUDAS_MD);
 
 async function sincronizar(pauta) {
   const antes = desincronizadas(pauta);
@@ -173,30 +209,183 @@ async function sincronizar(pauta) {
   const tmp = `${PAUTA}.tmp`;
   await writeFile(tmp, `${JSON.stringify(pauta, null, 2)}\n`);
   await rename(tmp, PAUTA);
+  const md = armarPautaMd(pauta, AYUDAS_MD);
+  const mdCambio = (await leerMd()) !== md;
+  if (mdCambio) await escribirAtomico(PAUTA_MD, md);
   decir(antes.length
     ? `pauta.json: prompt_completo_en reescrito en ${antes.join(', ')}. Revisa el diff antes de generar.`
-    : 'pauta.json ya estaba al día; no cambió nada de fondo.');
+    : 'pauta.json: prompt_completo_en ya estaba al día.');
+  decir(mdCambio ? 'pauta.md: reescrito desde pauta.json.' : 'pauta.md: ya estaba al día.');
+  const c = conciliar(pauta, await leerEspacios());
+  decir('');
+  imprimirConciliacion(c);
   return 0;
 }
 
-// Si Lucía ya publicó sus espacios y la tabla de equivalencia sigue vacía, se avisa (no bloquea).
-async function avisoLucia(pauta) {
-  try { await readFile(ESPACIOS_LUCIA); } catch { return null; }
-  const vacias = (pauta.equivalencia_lucia?.tabla ?? []).filter((t) => !t.lucia).map((t) => t.bruno);
-  if (!vacias.length) return null;
-  return `Ojo: ya existe ${path.relative(DIR, ESPACIOS_LUCIA)} (los espacios de foto de Lucía) y equivalencia_lucia sigue sin llenar en ${vacias.join(', ')}. Alinea los F<n> en pauta.json antes de generar, o las fotos quedarán con números que no son los del tablero.`;
+// ---------------------------------------------------------------- la pauta contra el tablero
+// Lo que manda es espacios-foto.json de Lucía: el número y la dirección de cada espacio, su página
+// y su medida en px CSS a 1440 y a 390. Cada ficha guarda una copia de eso (espacio) y la tabla de
+// equivalencia registra de qué foto de la v1 viene. Si algo no calza, se bloquea la generación.
+async function leerEspacios() {
+  let texto;
+  try { texto = await readFile(ESPACIOS_LUCIA, 'utf8'); }
+  catch { return { error: `No encuentro ${ESPACIOS_REL}: sin los espacios del tablero no hay contra qué comprobar los F<n>.` }; }
+  try {
+    const lista = JSON.parse(texto);
+    if (!Array.isArray(lista)) throw new Error('no es una lista');
+    return { lista };
+  } catch (e) { return { error: `${ESPACIOS_REL} no se puede leer como lista JSON (${e.message}).` }; }
+}
+
+const RAZONES = [[0.5625, '9:16'], [0.58, '0,58'], [0.8, '4:5'], [1, '1:1'], [1.25, '5:4'], [4 / 3, '4:3'], [1.5, '3:2'], [16 / 9, '16:9'], [7 / 3, '21:9']];
+
+// La proporción de un espacio medido en px CSS (los px vienen redondeados: 390×488 es 4:5).
+function proporcion([w, h]) {
+  const r = w / h;
+  const [cerca, nombre] = RAZONES.reduce((m, x) => (Math.abs(x[0] - r) < Math.abs(m[0] - r) ? x : m));
+  return Math.abs(cerca - r) / cerca <= 0.01 ? { r: cerca, nombre } : { r, nombre: r.toFixed(2).replace('.', ',') };
+}
+
+const px = (s) => s.split(/[×x]/).map(Number);
+
+// Lo que entrega cada proveedor para una ficha, el recorte desde el centro para cada ancho y
+// cuántos px del archivo caen en cada px CSS del espacio (cobertura).
+function formatos(pauta, f) {
+  const fuentes = {
+    gemini: px(pauta.modelos.gemini.salidas_px[f.gemini?.aspectRatio] ?? '0×0'),
+    openai: px(f.openai?.size ?? '0x0'),
+  };
+  const out = {};
+  for (const [prov, [w, h]] of Object.entries(fuentes)) {
+    out[prov] = { fuente: [w, h], vistas: {} };
+    for (const ancho of ['1440', '390']) {
+      const css = f.espacio[`css_${ancho}`];
+      const { r, nombre } = proporcion(css);
+      const [cw, ch] = w / h > r ? [Math.round(h * r), h] : [w, Math.round(w / r)];
+      const cobertura = cw / css[0];
+      out[prov].vistas[ancho] = {
+        proporcion: nombre, recorte: [cw, ch], cobertura,
+        corta: Math.max(1 - cw / w, 1 - ch / h), alcanza: cobertura >= COBERTURA_MIN[ancho] - 0.005,
+      };
+    }
+  }
+  return out;
+}
+
+const iguales = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+const veces = (n) => `${n.toFixed(2).replace('.', ',')}×`;
+
+function conciliar(pauta, espacios) {
+  const bloqueos = [];
+  const avisos = [];
+  const fotos = pauta.fotos ?? [];
+  const tabla = pauta.equivalencia_lucia?.tabla ?? [];
+
+  // La pauta por sí sola: direcciones válidas, sin duplicados, recortes escritos, formatos que existen.
+  const vistas = new Map();
+  for (const f of fotos) {
+    const k = clave(f);
+    if (!(f.direccion in DIRECCIONES)) bloqueos.push(`${f.id}: la dirección «${f.direccion}» no es «taller» ni «pizarra».`);
+    if ('encuadre' in f && f.encuadre !== f.direccion) bloqueos.push(`${k}: trae encuadre «${f.encuadre}»; el encuadre de una ficha es el de su dirección.`);
+    if (vistas.has(k)) bloqueos.push(`${k}: hay dos fichas con el mismo número y la misma dirección.`);
+    vistas.set(k, f);
+    if (!/^F\d+$/.test(String(f.id))) bloqueos.push(`${f.id}: no tiene forma de número del tablero (F<n>). Una foto sin espacio va en «reservas», no en «fotos».`);
+    if (!f.espacio?.css_1440 || !f.espacio?.css_390) { bloqueos.push(`${k}: le falta espacio.css_1440 o espacio.css_390.`); continue; }
+    if (!pauta.modelos.gemini.salidas_px[f.gemini?.aspectRatio]) bloqueos.push(`${k}: gemini.aspectRatio «${f.gemini?.aspectRatio}» no está en modelos.gemini.salidas_px.`);
+    if (!TAMANOS_OPENAI.has(f.openai?.size)) bloqueos.push(`${k}: openai.size «${f.openai?.size}» no es 1024x1024, 1536x1024 ni 1024x1536.`);
+    for (const ancho of ['1440', '390']) {
+      if (!String(f.recorte?.[ancho] ?? '').trim()) bloqueos.push(`${k}: falta recorte.${ancho} (qué se recorta y qué tiene que quedar dentro a ${ancho}).`);
+    }
+  }
+
+  // Contra el tablero.
+  const filas = [];
+  if (espacios.error) {
+    bloqueos.push(espacios.error);
+  } else {
+    const vistosEsp = new Set();
+    for (const e of espacios.lista) {
+      const dir = DIRECCION_DE_NOMBRE[e.direccion];
+      const k = `${e.id}-${dir ?? e.direccion}`;
+      const fila = { clave: k, id: e.id, direccion: dir, pagina: e.pagina, css_1440: [e.ancho_px_1440, e.alto_px_1440], css_390: [e.ancho_px_390, e.alto_px_390], estado: 'calza' };
+      filas.push(fila);
+      if (!dir) { bloqueos.push(`Espacio ${e.id}: dirección «${e.direccion}» desconocida.`); fila.estado = 'dirección desconocida'; continue; }
+      if (vistosEsp.has(k)) { bloqueos.push(`Espacio ${k}: aparece dos veces en ${ESPACIOS_REL}.`); fila.estado = 'repetido'; continue; }
+      vistosEsp.add(k);
+      const f = vistas.get(k);
+      const t = tabla.filter((x) => x.tablero === e.id && x.direccion === dir);
+      if (t.length !== 1 || !t[0].pauta_v1) {
+        bloqueos.push(`Espacio ${k}: la tabla de equivalencia ${t.length === 0 ? 'no tiene su fila' : t.length > 1 ? 'lo tiene repetido' : 'tiene la celda pauta_v1 vacía'}.`);
+        fila.estado = 'tabla con vacío';
+      }
+      if (!f) { bloqueos.push(`Espacio ${k} (${e.pagina}, ${e.ancho_px_1440}×${e.alto_px_1440}): no tiene ficha en la pauta. Escribe su ficha con ese número y esa dirección.`); fila.estado = 'sin ficha'; continue; }
+      fila.foto = f;
+      const dif = [];
+      if (f.espacio?.pagina !== e.pagina) dif.push(`página «${f.espacio?.pagina}» → «${e.pagina}»`);
+      if (!iguales(f.espacio?.css_1440, fila.css_1440)) dif.push(`a 1440 ${f.espacio?.css_1440?.join('×')} → ${fila.css_1440.join('×')}`);
+      if (!iguales(f.espacio?.css_390, fila.css_390)) dif.push(`a 390 ${f.espacio?.css_390?.join('×')} → ${fila.css_390.join('×')}`);
+      if (dif.length) { bloqueos.push(`${k}: el espacio cambió en el tablero (${dif.join('; ')}). Revisa la ficha (proporción, recortes) y copia los valores nuevos.`); fila.estado = 'el espacio cambió'; }
+      if (e.rotulo && f.espacio?.rotulo_tablero && e.rotulo !== f.espacio.rotulo_tablero) {
+        avisos.push(`${k}: el rótulo del tablero cambió («${f.espacio.rotulo_tablero}» → «${e.rotulo}»). Mira si la foto sigue siendo la que pide.`);
+      }
+    }
+    for (const f of fotos) {
+      if (!vistosEsp.has(clave(f))) bloqueos.push(`Ficha ${clave(f)}: no tiene espacio en ${ESPACIOS_REL}. Sale a «reservas» (no se genera) o se le pide el espacio a Lucía.`);
+    }
+    for (const t of tabla) {
+      if (!vistosEsp.has(`${t.tablero}-${t.direccion}`)) bloqueos.push(`Tabla de equivalencia: la fila ${t.tablero}-${t.direccion} no es un espacio del tablero.`);
+    }
+  }
+
+  // Cobertura: no bloquea (estos modelos no llegan a 2× en las bandas), pero se dice.
+  for (const f of fotos) {
+    if (!f.espacio?.css_1440 || !f.espacio?.css_390 || !pauta.modelos.gemini.salidas_px[f.gemini?.aspectRatio] || !TAMANOS_OPENAI.has(f.openai?.size)) continue;
+    const fm = formatos(pauta, f);
+    for (const prov of ['gemini', 'openai']) {
+      for (const ancho of ['1440', '390']) {
+        const v = fm[prov].vistas[ancho];
+        if (!v.alcanza) avisos.push(`${clave(f)} con ${prov}: a ${ancho} el recorte da ${v.recorte.join('×')} para ${f.espacio[`css_${ancho}`].join('×')} css (${veces(v.cobertura)}; el tablero pide ${COBERTURA_MIN[ancho]}×).`);
+      }
+    }
+  }
+  return { bloqueos, avisos, filas, sinArchivo: Boolean(espacios.error) };
+}
+
+function imprimirConciliacion(c) {
+  decir(`Pauta contra el tablero (${ESPACIOS_REL}):`);
+  for (const fila of c.filas) {
+    decir(`  ${fila.clave.padEnd(11)} ${fila.estado === 'calza' ? '✓' : '✗'} ${fila.estado.padEnd(18)} ${fila.pagina.split(' (')[0]} · ${fila.css_1440.join('×')} a 1440 · ${fila.css_390.join('×')} a 390${fila.foto ? ` · ${fila.foto.titulo_es}` : ''}`);
+  }
+  if (c.avisos.length) {
+    decir('');
+    decir(`Avisos (no bloquean): ${c.avisos.length}`);
+    for (const a of c.avisos) decir(`  · ${a}`);
+  }
+  decir('');
+  if (c.bloqueos.length) {
+    decir(`NO SE PUEDE GENERAR: ${c.bloqueos.length} cosa(s) no calzan.`);
+    for (const b of c.bloqueos) decir(`  ✗ ${b}`);
+  } else {
+    decir(`La pauta calza con el tablero: ${c.filas.length} espacios, ${c.filas.length} fichas, ningún vacío en la tabla.`);
+  }
 }
 
 const numero = (id) => Number(String(id).replace(/\D/g, ''));
+const ORDEN_DIR = { taller: 0, pizarra: 1 };
 
 function seleccionar(pauta, args) {
   let fotos = [...pauta.fotos];
   if (args.solo) {
-    const pedidas = args.solo.split(',').map((s) => s.trim().toUpperCase()).filter(Boolean);
-    const ids = new Set(fotos.map((f) => f.id));
-    const malas = pedidas.filter((p) => !ids.has(p));
-    if (malas.length) throw new ErrorUso(`No existen en la pauta: ${malas.join(', ')}. Hay: ${[...ids].join(', ')}.`);
-    fotos = fotos.filter((f) => pedidas.includes(f.id));
+    const pedidas = args.solo.split(',').map((s) => s.trim()).filter(Boolean)
+      .map((s) => s.replace(/^f/i, 'F').replace(/-(taller|pizarra)$/i, (m) => m.toLowerCase()));
+    const disponibles = new Set([...fotos.map((f) => f.id), ...fotos.map(clave)]);
+    const malas = pedidas.filter((p) => !disponibles.has(p));
+    if (malas.length) {
+      const reservas = (pauta.reservas ?? []).map((r) => r.id);
+      const enReserva = malas.filter((m) => reservas.includes(m.toUpperCase()));
+      throw new ErrorUso(`No existen en la pauta: ${malas.join(', ')}.${enReserva.length ? ` ${enReserva.join(', ')} es una reserva: no tiene espacio en el tablero y no se genera.` : ''} Hay: ${fotos.map(clave).join(', ')}.`);
+    }
+    fotos = fotos.filter((f) => pedidas.includes(f.id) || pedidas.includes(clave(f)));
   }
   if (args.prioridad) {
     const p = entero(args.prioridad, 'prioridad', 1, 9);
@@ -204,11 +393,11 @@ function seleccionar(pauta, args) {
   }
   if (args.direccion) {
     const d = args.direccion.toLowerCase();
-    if (!['taller', 'pizarra'].includes(d)) throw new ErrorUso('--direccion es «taller» o «pizarra».');
-    fotos = fotos.filter((f) => f.direcciones.includes(d));
+    if (!(d in DIRECCIONES)) throw new ErrorUso('--direccion es «taller» o «pizarra».');
+    fotos = fotos.filter((f) => f.direccion === d);
   }
   if (!fotos.length) throw new ErrorUso('La selección quedó vacía: revisa --solo, --prioridad y --direccion.');
-  return fotos.sort((a, b) => a.prioridad - b.prioridad || numero(a.id) - numero(b.id));
+  return fotos.sort((a, b) => a.prioridad - b.prioridad || numero(a.id) - numero(b.id) || ORDEN_DIR[a.direccion] - ORDEN_DIR[b.direccion]);
 }
 
 // Primero una variante de cada foto (en orden de prioridad), después las segundas: si el tope
@@ -610,37 +799,67 @@ async function leerRegistro(ruta) {
   }
 }
 
+// Salidas <F>-<dirección>-<n>.<ext>: el número del tablero y la dirección, para que F8 de Taller y
+// F8 de Pizarra limpia no se pisen.
 async function numerosUsados(dir) {
   const usados = new Map();
   let nombres = [];
   try { nombres = await readdir(dir); } catch { /* aún no existe */ }
   for (const n of nombres) {
-    const m = /^(F\d+)-(\d+)\.(png|jpg|webp)$/i.exec(n);
-    if (m) usados.set(m[1].toUpperCase(), Math.max(usados.get(m[1].toUpperCase()) ?? 0, Number(m[2])));
+    const m = /^(F\d+)-(taller|pizarra)-(\d+)\.(png|jpg|webp)$/i.exec(n);
+    if (!m) continue;
+    const k = `${m[1].toUpperCase()}-${m[2].toLowerCase()}`;
+    usados.set(k, Math.max(usados.get(k) ?? 0, Number(m[3])));
   }
   return usados;
 }
 
+const AYUDAS_MD = { clave, formatos, usd, veces, costoUSD, DIRECCIONES, COBERTURA_MIN, ESPACIOS_REL };
+
+// Todo lo que impide generar: la pauta contra el tablero, y la pauta contra sí misma (prompt y pauta.md).
+async function comprobar(pauta) {
+  const c = conciliar(pauta, await leerEspacios());
+  try {
+    const malas = desincronizadas(pauta);
+    if (malas.length) c.bloqueos.push(`prompt_completo_en está desactualizado en ${malas.join(', ')}: corre «node generar.mjs --sincronizar» y revisa el diff. Lo que se manda tiene que ser lo que se revisó.`);
+  } catch (e) { c.bloqueos.push(`No se pudo componer un prompt: ${e.message}`); }
+  try {
+    if (!(await mdAlDia(pauta))) c.bloqueos.push('pauta.md no es el que sale de pauta.json: corre «node generar.mjs --sincronizar». pauta.md es lo que se revisa.');
+  } catch (e) { c.bloqueos.push(`No se pudo armar pauta.md: ${e.message}`); }
+  return c;
+}
+
 // ---------------------------------------------------------------- listar (sin red)
-function listar(pauta, plan, args, usados, aviso) {
+function listar(pauta, plan, args, usados, c) {
+  // Una ficha sin dirección o sin espacio no se puede ni listar: se muestra la comprobación y nada más.
+  if (plan.some((x) => !(x.foto.direccion in DIRECCIONES) || !x.foto.espacio?.css_1440 || !x.foto.espacio?.css_390)) {
+    imprimirConciliacion(c);
+    return 2;
+  }
   const pedido = proveedorPedido(args);
   const conClave = ['gemini', 'openai'].filter((p) => claveDe(p));
   const proveedor = pedido ?? conClave[0] ?? 'gemini';
   const calidad = calidadOpenAI(args);
   const modelo = args.modelo ?? PROVEEDORES[proveedor].modelo;
-  const fotos = [...new Map(plan.map((x) => [x.foto.id, x.foto])).values()];
+  const fotos = [...new Map(plan.map((x) => [clave(x.foto), x.foto])).values()];
   const variantes = Math.max(...plan.map((x) => x.v));
 
-  decir(`Pauta E10 · ${pauta.fotos.length} fotos en la pauta · elegidas ${fotos.length} · ${variantes} variante(s) por foto`);
+  decir(`Pauta E10 v${pauta.version} · ${pauta.fotos.length} fichas para ${new Set(pauta.fotos.map((f) => f.id)).size} números del tablero · elegidas ${fotos.length} · ${variantes} variante(s) por ficha`);
   decir(`Claves en el entorno: GEMINI_API_KEY ${claveDe('gemini') ? 'está' : 'no está'} · OPENAI_API_KEY ${claveDe('openai') ? 'está' : 'no está'}`);
   decir(`Proveedor que se usaría: ${proveedor} (${modelo})${!pedido && !conClave.length ? ' · sin clave: se muestra Gemini, el primero que se usaría' : ''}`);
   decir('');
   for (const f of fotos) {
-    const formato = proveedor === 'gemini' ? `${f.gemini.aspectRatio} → ${f.gemini.salida}` : `${f.openai.size}`;
-    const base = usados.get(f.id) ?? 0;
-    const nombres = plan.filter((x) => x.foto.id === f.id).map((x) => `${f.id}-${base + x.v}.png`).join(', ');
-    decir(`  ${f.id.padEnd(4)} P${f.prioridad}  ${f.direcciones.join('+').padEnd(15)} ${f.proporcion.padEnd(22)} ${formato.padEnd(18)} ${f.pagina} · ${f.seccion.split('. ')[0].replace(/\.$/, '')}`);
-    decir(`        ${f.muestra_es}`);
+    const fm = formatos(pauta, f)[proveedor];
+    const formato = proveedor === 'gemini' ? `${f.gemini.aspectRatio} → ${fm.fuente.join('×')}` : f.openai.size;
+    const base = usados.get(clave(f)) ?? 0;
+    const nombres = plan.filter((x) => x.foto === f).map((x) => `${clave(f)}-${base + x.v}.png`).join(', ');
+    const vista = (a) => {
+      const v = fm.vistas[a];
+      return `${a}: ${f.espacio[`css_${a}`].join('×')} css (${v.proporcion}) ← ${v.recorte.join('×')} (${veces(v.cobertura)}${v.alcanza ? '' : ' ⚠'})`;
+    };
+    decir(`  ${clave(f).padEnd(11)} P${f.prioridad}  ${f.espacio.pagina.split(' (')[0]} · ${f.espacio.seccion.split(/[.:](?:\s|$)/)[0]}`);
+    decir(`        ${f.titulo_es} · ${formato}`);
+    decir(`        ${vista('1440')} · ${vista('390')}`);
     decir(`        → salida/${nombres}`);
   }
   const total = plan.length;
@@ -650,21 +869,24 @@ function listar(pauta, plan, args, usados, aviso) {
   decir('');
   decir(`Pediría ${total} imagen(es), ${total} llamada(s). Costo estimado: ${usd(costo)} con ${proveedor}${proveedor === 'openai' ? ` (calidad ${calidad})` : ''}; con ${otro}${otro === 'openai' ? ` (calidad ${calidad})` : ''}: ${usd(costoOtro)}.`);
   decir(`Precios de lista conocidos${args.modelo ? ' del modelo por defecto' : ''}; verificar en la consola del proveedor antes de una corrida grande.`);
-  const malas = desincronizadas(pauta);
-  if (malas.length) decir(`Ojo: prompt_completo_en está desactualizado en ${malas.join(', ')}. Corre --sincronizar antes de generar.`);
-  if (aviso) decir(aviso);
   decir('');
-  decir(`Modo lista: no se llamó a la red y no se generó nada. Para generar, repite con --tope=${total} (o menos: el tope corta por prioridad).`);
+  imprimirConciliacion(c);
+  decir('');
+  if (c.bloqueos.length) {
+    decir('Modo lista: no se llamó a la red y no se generó nada. Con --tope tampoco se generaría hasta que lo de arriba calce.');
+    return 2;
+  }
+  decir(`Modo lista: no se llamó a la red y no se generó nada. Para generar, repite con --tope=${total} (o menos: el tope deja primero una variante de cada ficha).`);
   return 0;
 }
 
 // ---------------------------------------------------------------- generar
-async function generar(pauta, plan, args, tope) {
-  const malas = desincronizadas(pauta);
-  if (malas.length) {
-    throw new ErrorUso(`pauta.json cambió y prompt_completo_en no está al día en ${malas.join(', ')}. Corre «node generar.mjs --sincronizar», revisa el diff y vuelve a correr: lo que se manda tiene que ser lo que se revisó.`);
+async function generar(pauta, plan, args, tope, c) {
+  if (c.bloqueos.length) {
+    imprimirConciliacion(c);
+    throw new ErrorUso(`No se genera nada: la pauta no calza con el tablero o no está sincronizada (${c.bloqueos.length} cosa(s), arriba). Corrígelas y corre «node generar.mjs --verificar» hasta que diga que calza.`);
   }
-  const { proveedor, clave } = resolverProveedor(args);
+  const { proveedor, clave: claveApi } = resolverProveedor(args);
   const calidad = calidadOpenAI(args);
   const tamano = tamanoGemini(args);
   if (tamano && proveedor !== 'gemini') throw new ErrorUso('--tamano es solo para Gemini.');
@@ -680,21 +902,24 @@ async function generar(pauta, plan, args, tope) {
   const fuera = plan.slice(tope);
   const costo = corrida.reduce((t, x) => t + costoUSD(pauta, proveedor, x.foto, calidad), 0);
   decir(`Proveedor ${proveedor} · modelo ${modelo}${proveedor === 'openai' ? ` · calidad ${calidad}` : ''}${tamano ? ` · imageSize ${tamano}` : ''}`);
+  decir(`La pauta calza con el tablero (${c.filas.length} espacios).`);
+  const otroProveedor = proveedor === 'gemini' ? 'openai' : 'gemini';
+  for (const a of c.avisos.filter((x) => !x.includes(` con ${otroProveedor}:`))) decir(`  · aviso: ${a}`);
   decir(`Corrida: ${corrida.length} imagen(es) de ${plan.length} pedidas (tope ${tope}) · costo estimado ${usd(costo)} · salida en ${salida}`);
-  if (fuera.length) decir(`Quedan fuera por el tope: ${fuera.map((x) => `${x.foto.id} v${x.v}`).join(', ')}`);
+  if (fuera.length) decir(`Quedan fuera por el tope: ${fuera.map((x) => `${clave(x.foto)} v${x.v}`).join(', ')}`);
   decir('');
 
   let hechas = 0, fallidas = 0;
   for (const [k, item] of corrida.entries()) {
     const { foto } = item;
     const prompt = componer(pauta, foto);
-    const n = (usados.get(foto.id) ?? 0) + 1;
-    const etiqueta = `${foto.id}-${n}`;
+    const n = (usados.get(clave(foto)) ?? 0) + 1;
+    const etiqueta = `${clave(foto)}-${n}`;
     decir(`[${k + 1}/${corrida.length}] ${etiqueta} · ${foto.titulo_es}`);
     const t0 = Date.now();
     try {
       const llamar = proveedor === 'gemini' ? llamarGemini : llamarOpenAI;
-      const r = await conReintentos(() => llamar({ prompt, foto, modelo, calidad, tamano, clave }));
+      const r = await conReintentos(() => llamar({ prompt, foto, modelo, calidad, tamano, clave: claveApi }));
       const info = validarImagen(r.bytes);
       if (r.mimeDeclarado && r.mimeDeclarado !== info.mime) decir(`    aviso: el proveedor dijo ${r.mimeDeclarado} y llegó ${info.mime}; se guarda como ${info.ext}`);
       let oro = null;
@@ -703,7 +928,7 @@ async function generar(pauta, plan, args, tope) {
       if (img) oro = medirOro(img);
       const archivo = `${etiqueta}.${info.ext}`;
       await escribirAtomico(path.join(salida, archivo), r.bytes);
-      usados.set(foto.id, n);
+      usados.set(clave(foto), n);
       let archivoOro = null;
       if (oro?.pixeles) {
         archivoOro = `oro/${etiqueta}-oro.png`;
@@ -714,10 +939,11 @@ async function generar(pauta, plan, args, tope) {
       registro.imagenes.push({
         archivo,
         foto: foto.id,
+        direccion: foto.direccion,
         titulo: foto.titulo_es,
-        direcciones: foto.direcciones,
-        pagina: foto.pagina,
-        seccion: foto.seccion,
+        pagina: foto.espacio.pagina,
+        seccion: foto.espacio.seccion,
+        espacio_css: { 1440: foto.espacio.css_1440, 390: foto.espacio.css_390 },
         proveedor,
         modelo,
         parametros: r.parametros,
@@ -743,7 +969,7 @@ async function generar(pauta, plan, args, tope) {
       fallidas++;
       const f = fechas();
       const tipo = e instanceof ErrorApi ? `api ${e.estado}` : e instanceof SinImagen ? 'sin imagen' : e instanceof NoEsImagen ? 'no es imagen' : e?.name === 'TimeoutError' ? 'tiempo agotado' : 'red u otro';
-      registro.fallos.push({ foto: foto.id, proveedor, modelo, fecha_utc: f.utc, fecha_chile: f.chile, tipo, error: ocultar(e?.message ?? String(e)), prompt });
+      registro.fallos.push({ foto: foto.id, direccion: foto.direccion, proveedor, modelo, fecha_utc: f.utc, fecha_chile: f.chile, tipo, error: ocultar(e?.message ?? String(e)), prompt });
       await escribirAtomico(rutaRegistro, `${JSON.stringify(registro, null, 2)}\n`);
       avisar(`    ✗ ${tipo}: ${e?.message ?? e}`);
       if (tipo === 'red u otro' && (process.env.HTTPS_PROXY || process.env.https_proxy) && process.env.NODE_USE_ENV_PROXY !== '1') {
@@ -769,10 +995,15 @@ async function main() {
   if (args.medir) return medirArchivos(args.medir.split(','));
   const pauta = await leerPauta();
   if (args.sincronizar) return sincronizar(pauta);
+  if (args.verificar) {
+    const c = await comprobar(pauta);
+    imprimirConciliacion(c);
+    return c.bloqueos.length ? 2 : 0;
+  }
   const fotos = seleccionar(pauta, args);
   if (args.ver) {
     for (const f of fotos) {
-      decir(`==== ${f.id} · ${f.titulo_es} · ${f.pagina} · ${f.proporcion}`);
+      decir(`==== ${clave(f)} · ${f.titulo_es} · ${f.espacio.pagina} · ${f.espacio.css_1440.join('×')} a 1440`);
       decir(componer(pauta, f));
       decir('');
     }
@@ -781,11 +1012,10 @@ async function main() {
   const variantes = entero(args.variantes ?? '2', 'variantes', 1, 8);
   const plan = armarPlan(fotos, variantes);
   const usados = await numerosUsados(path.resolve(args.salida ?? path.join(DIR, 'salida')));
-  const aviso = await avisoLucia(pauta);
-  if (args.tope === undefined) return listar(pauta, plan, args, usados, aviso);
+  const c = await comprobar(pauta);
+  if (args.tope === undefined) return listar(pauta, plan, args, usados, c);
   const tope = entero(args.tope, 'tope', 1, 200);
-  if (aviso) avisar(aviso);
-  return generar(pauta, plan, args, tope);
+  return generar(pauta, plan, args, tope, c);
 }
 
 process.on('uncaughtException', (e) => { avisar(`Error inesperado: ${e?.message ?? e}`); process.exit(1); });
