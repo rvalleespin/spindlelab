@@ -1,6 +1,6 @@
 /**
  * "Volver a medirlo" cuando la revisión nueva no sale: el informe que la persona estaba
- * leyendo NO puede desaparecer. Se levanta `verificaycumple/index.html` en un Chrome de
+ * leyendo NO puede desaparecer. Se levanta `verificaycumple/public/index.html` en un Chrome de
  * verdad, servido por HTTP, y las tres APIs las contesta el código real de `functions/api/`.
  *
  *   node prueba-portada-rehacer.mjs
@@ -58,8 +58,14 @@ import os from 'node:os';
 import { spawn } from 'node:child_process';
 import { rutaEnElRepo } from './rutas.mjs';
 
-const SITIO = process.env.VYC_SITIO
-  || path.dirname(rutaEnElRepo('verificaycumple/index.html', 'VYC_INDEX_HTML'));
+// ⚠️ LA RAÍZ DEL PROYECTO Y LO QUE SE PUBLICA SON DOS COSAS DISTINTAS, desde el 16-oct-2026.
+// `functions/` vive en la raíz; el sitio vive en `public/`, que es lo único que Cloudflare
+// sirve. Antes eran la misma carpeta, y esa confusión es exactamente lo que tuvo el correo
+// personal de Ramón colgado en una URL pública con 200. Acá van separadas a propósito: si
+// vuelven a ser una sola, el error vuelve.
+const RAIZ = process.env.VYC_SITIO
+  || path.dirname(path.dirname(rutaEnElRepo('verificaycumple/public/index.html', 'VYC_INDEX_HTML')));
+const SITIO = path.join(RAIZ, 'public');
 const CHROME = process.env.CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const MEDIDAS = new URL('./medidas-25sep/', import.meta.url);
 
@@ -73,7 +79,7 @@ const falso = (n, r) => eq(n, !!r, false);
 
 for (const f of ['index.html', 'privacidad/index.html', 'functions/api/chequeo.js',
   'functions/api/profundo.js', 'functions/api/doce-puntos.js']) {
-  if (!fs.existsSync(path.join(SITIO, f))) {
+  if (!fs.existsSync(path.join(f.startsWith('functions/') ? RAIZ : SITIO, f))) {
     console.log(`No encuentro ${f} bajo ${SITIO}. Pasa VYC_SITIO con la carpeta verificaycumple/.`);
     process.exit(1);
   }
@@ -83,9 +89,9 @@ if (!fs.existsSync(CHROME)) {
   process.exit(1);
 }
 
-const chequeoMod = await import(path.join(SITIO, 'functions/api/chequeo.js'));
-const profundoMod = await import(path.join(SITIO, 'functions/api/profundo.js'));
-const doceMod = await import(path.join(SITIO, 'functions/api/doce-puntos.js'));
+const chequeoMod = await import(path.join(RAIZ, 'functions/api/chequeo.js'));
+const profundoMod = await import(path.join(RAIZ, 'functions/api/profundo.js'));
+const doceMod = await import(path.join(RAIZ, 'functions/api/doce-puntos.js'));
 
 const PORTADA_REAL = fs.readFileSync(path.join(SITIO, 'index.html'), 'utf8');
 const POLITICA_REAL = fs.readFileSync(path.join(SITIO, 'privacidad/index.html'), 'utf8');

@@ -235,7 +235,7 @@ function kvFalso() {
  * casos pasan por las dos implementaciones y tienen que coincidir.    *
  * ================================================================== */
 {
-  const INDEX = rutaEnElRepo('verificaycumple/index.html', 'VYC_INDEX_HTML');
+  const INDEX = rutaEnElRepo('verificaycumple/public/index.html', 'VYC_INDEX_HTML');
   const html = fs.readFileSync(INDEX, 'utf8');
 
   eq('el formulario tiene el campo oculto del origen',

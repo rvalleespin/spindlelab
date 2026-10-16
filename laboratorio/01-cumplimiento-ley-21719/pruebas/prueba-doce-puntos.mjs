@@ -36,9 +36,15 @@
 import path from 'node:path';
 import { rutaEnElRepo } from './rutas.mjs';
 
-const SITIO = process.env.VYC_SITIO
-  || path.dirname(rutaEnElRepo('verificaycumple/index.html', 'VYC_INDEX_HTML'));
-const doce = await import(SITIO + '/functions/api/doce-puntos.js');
+// ⚠️ LA RAÍZ DEL PROYECTO Y LO QUE SE PUBLICA SON DOS COSAS DISTINTAS, desde el 16-oct-2026.
+// `functions/` vive en la raíz; el sitio vive en `public/`, que es lo único que Cloudflare
+// sirve. Antes eran la misma carpeta, y esa confusión es exactamente lo que tuvo el correo
+// personal de Ramón colgado en una URL pública con 200. Acá van separadas a propósito: si
+// vuelven a ser una sola, el error vuelve.
+const RAIZ = process.env.VYC_SITIO
+  || path.dirname(path.dirname(rutaEnElRepo('verificaycumple/public/index.html', 'VYC_INDEX_HTML')));
+const SITIO = path.join(RAIZ, 'public');
+const doce = await import(RAIZ + '/functions/api/doce-puntos.js');
 
 let ok = 0, malo = 0;
 // Minúsculas y sin tildes, para comparar frases sin pelear con la acentuación. Se escribe con
@@ -1494,7 +1500,7 @@ async function pedir(dominio, rutas, opciones = {}) {
 
 // El tope que el endpoint importa de profundo.js, para comprobar que es el MISMO número y no
 // una copia que se pueda desincronizar.
-const { TOPE_IP_DIA: doceTope } = await import(SITIO + '/functions/api/profundo.js');
+const { TOPE_IP_DIA: doceTope } = await import(RAIZ + '/functions/api/profundo.js');
 
 {
   const r = await pedir('ejemplo.cl', {

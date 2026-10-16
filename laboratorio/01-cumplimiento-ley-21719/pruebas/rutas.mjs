@@ -80,7 +80,9 @@ export function rutaEnElRepo(rel, env) {
     console.log(`  (código: ${process.env[env]} — forzado con ${env})`);
     return process.env[env];
   }
-  // VYC_SITIO es el convenio de `prueba-portada-doce.mjs`: la carpeta `verificaycumple/`.
+  // VYC_SITIO es el convenio de `prueba-portada-doce.mjs`: la carpeta `verificaycumple/`,
+  // o sea la RAÍZ del proyecto. Ojo: desde el 16-oct el sitio vive en `verificaycumple/public/`,
+  // así que una ruta relativa de un archivo publicado empieza por `verificaycumple/public/`.
   if (process.env.VYC_SITIO && rel.startsWith('verificaycumple/')) {
     const c = path.join(process.env.VYC_SITIO, rel.slice('verificaycumple/'.length));
     if (fs.existsSync(c)) { console.log(`  (código: ${c} — forzado con VYC_SITIO)`); return c; }
