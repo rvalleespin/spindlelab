@@ -135,6 +135,44 @@ resuelva, esta pieza no se graba.
 
 ---
 
+## Chequeo de duplicación, rehecho el 16-oct
+
+**Para qué sirve esto, en concreto:** el 21 y 22-sep salieron cuatro piezas del mismo producto en 24
+horas a la misma audiencia, y una hubo que retirarla a los 40 minutos por repetida. Nadie lo había
+registrado, así que se planificó a ciegas. Este chequeo es lo que evita eso. **Y en esta pasada
+eliminó dos guiones de este archivo**, abajo cuáles.
+
+### Lo que el inventario dice (`marketing/redes/QUE-HAY-PUBLICADO.md`)
+
+| Pieza publicada | Alcance | Qué bloquea |
+|---|---|---|
+| **25-sep · Los tres mitos** (delegado voluntario, sin 72h, el 4% con dos condiciones) | **398 impresiones**, el techo del inventario | Los tres desmentidos están usados. **El del delegado solo sirve como rep, no como pieza** |
+| **30-sep · "Cuando el chequeo no alcanza a ver algo, lo dice"** | 94 | **Mata el guion de "describe, no certifica"**: es exactamente el mismo mecanismo, hace 16 días |
+| **5-oct · El cuarto mito** (la amonestación es facultad, no derecho) | — | Cierra el ángulo de la amonestación y el del "le aplica a cualquier empresa" |
+| **25-sep · "Construí Verifica y Cumple"**, con link directo en el cuerpo | **45, el piso del inventario** | No bloquea, pero avisa: la pieza con el producto adentro es la que menos alcance tuvo |
+| **2-oct · El sitio es la tienda principal** | 102 | No choca con nada de Verifica |
+| **oct · Carrusel "Las 12 cosas"** (Instagram) | — | **Mata el guion de la lista de los 12 puntos.** Mismo contenido, mismo mes |
+| **oct · Reel "¿Estás seguro?"** (Instagram) | — | **Contenido no verificado por esta sesión.** Puede chocar con cualquiera de los guiones de medición |
+
+### El dato que ordena qué escribir
+
+**398 contra 45.** El desmentido con artículo al lado llegó casi nueve veces más lejos que el post
+que presentaba el producto con su link. Y el de 84 que mencionaba la estrategia tampoco vendía nada.
+**La forma que funciona en esta cuenta es el desmentido y la observación de oficio, sin producto
+adentro.** No es una teoría de contenido, son los números de la cuenta.
+
+Consecuencia: los desmentidos que quedan sin usar son material valioso, y los tres mejores ya se
+gastaron el 25-sep. Lo que está **fresco y sin publicar es todo lo medido el 16-oct**: los siete
+segundos, el método de no hacer clic, y el caso del aviso que no retiene nada.
+
+### Límites de este chequeo, dichos explícitos
+
+1. **Esta sesión no ve el canal, solo el repo.** La regla de la casa es mirar el canal y no el
+   inventario, justamente porque el inventario se atrasa, **y acá se atrasó**: las dos piezas de
+   Instagram de octubre no estaban en él. Ramón tiene que confirmar que esas dos son las únicas.
+2. **El reel "¿Estás seguro?" no está leído.** Si su contenido es la medición en navegador limpio,
+   choca de frente con los guiones 1, 2 y 3 y hay que reordenar.
+
 ## Lo que se cayó y por qué (16-oct)
 
 **1. "El 4% de tus ventas" — ELIMINADA.** Dos motivos independientes, cada uno suficiente:
