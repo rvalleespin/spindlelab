@@ -1,0 +1,292 @@
+{
+ "caso-praxi": {
+  "pagina_px": [
+   1440,
+   9490
+  ],
+  "negro_fuera_de_medios": 0.9676,
+  "medios": 16,
+  "area_medios": 0.4983,
+  "campos": 2,
+  "area_campos": 0.0601,
+  "filas_de_campos_seguidas_max": 1,
+  "detalle_campos": [
+   {
+    "caja": [
+     352,
+     5390,
+     1072,
+     603
+    ],
+    "tipo": "claro",
+    "dominante": "#E8F848",
+    "parte": 0.933
+   },
+   {
+    "caja": [
+     892,
+     6658,
+     532,
+     329
+    ],
+    "tipo": "claro",
+    "dominante": "#E8F848",
+    "parte": 0.891
+   }
+  ]
+ },
+ "caso-sesenta": {
+  "pagina_px": [
+   1440,
+   10267
+  ],
+  "negro_fuera_de_medios": 0.9706,
+  "medios": 20,
+  "area_medios": 0.5915,
+  "campos": 6,
+  "area_campos": 0.2227,
+  "filas_de_campos_seguidas_max": 2,
+  "detalle_campos": [
+   {
+    "caja": [
+     352,
+     72,
+     1072,
+     603
+    ],
+    "tipo": "color",
+    "dominante": "#284888",
+    "parte": 0.411
+   },
+   {
+    "caja": [
+     352,
+     4948,
+     1072,
+     603
+    ],
+    "tipo": "color",
+    "dominante": "#284888",
+    "parte": 0.441
+   },
+   {
+    "caja": [
+     352,
+     5559,
+     532,
+     665
+    ],
+    "tipo": "color",
+    "dominante": "#284888",
+    "parte": 0.412
+   },
+   {
+    "caja": [
+     892,
+     5559,
+     532,
+     665
+    ],
+    "tipo": "color",
+    "dominante": "#284888",
+    "parte": 0.52
+   },
+   {
+    "caja": [
+     352,
+     7516,
+     1072,
+     603
+    ],
+    "tipo": "color",
+    "dominante": "#284888",
+    "parte": 0.418
+   },
+   {
+    "caja": [
+     352,
+     8127,
+     1072,
+     603
+    ],
+    "tipo": "color",
+    "dominante": "#284888",
+    "parte": 0.549
+   }
+  ]
+ },
+ "desarrollo-web": {
+  "pagina_px": [
+   1440,
+   5925
+  ],
+  "negro_fuera_de_medios": 0.9517,
+  "medios": 4,
+  "area_medios": 0.1499,
+  "campos": 3,
+  "area_campos": 0.1323,
+  "filas_de_campos_seguidas_max": 2,
+  "detalle_campos": [
+   {
+    "caja": [
+     16,
+     460,
+     1408,
+     589
+    ],
+    "tipo": "claro",
+    "dominante": "#D8E8D8",
+    "parte": 0.52
+   },
+   {
+    "caja": [
+     724,
+     1851,
+     346,
+     433
+    ],
+    "tipo": "claro",
+    "dominante": "#E8F848",
+    "parte": 0.895
+   },
+   {
+    "caja": [
+     1078,
+     1851,
+     346,
+     433
+    ],
+    "tipo": "color",
+    "dominante": "#284888",
+    "parte": 0.366
+   }
+  ]
+ },
+ "home": {
+  "pagina_px": [
+   1440,
+   7573
+  ],
+  "negro_fuera_de_medios": 0.9521,
+  "medios": 9,
+  "area_medios": 0.3285,
+  "campos": 4,
+  "area_campos": 0.1662,
+  "filas_de_campos_seguidas_max": 2,
+  "detalle_campos": [
+   {
+    "caja": [
+     16,
+     72,
+     1054,
+     540
+    ],
+    "tipo": "color",
+    "dominante": "#284888",
+    "parte": 0.628
+   },
+   {
+    "caja": [
+     370,
+     1666,
+     523,
+     654
+    ],
+    "tipo": "claro",
+    "dominante": "#E8F848",
+    "parte": 0.904
+   },
+   {
+    "caja": [
+     370,
+     2457,
+     1054,
+     593
+    ],
+    "tipo": "color",
+    "dominante": "#284888",
+    "parte": 0.452
+   },
+   {
+    "caja": [
+     370,
+     4480,
+     700,
+     394
+    ],
+    "tipo": "color",
+    "dominante": "#2858F8",
+    "parte": 0.767
+   }
+  ]
+ },
+ "trabajo": {
+  "pagina_px": [
+   1440,
+   3355
+  ],
+  "negro_fuera_de_medios": 0.9603,
+  "medios": 10,
+  "area_medios": 0.5301,
+  "campos": 5,
+  "area_campos": 0.2695,
+  "filas_de_campos_seguidas_max": 3,
+  "detalle_campos": [
+   {
+    "caja": [
+     352,
+     1309,
+     532,
+     399
+    ],
+    "tipo": "claro",
+    "dominante": "#F8F8F8",
+    "parte": 0.717
+   },
+   {
+    "caja": [
+     352,
+     1835,
+     532,
+     319
+    ],
+    "tipo": "claro",
+    "dominante": "#D8E8D8",
+    "parte": 0.503
+   },
+   {
+    "caja": [
+     892,
+     72,
+     532,
+     399
+    ],
+    "tipo": "claro",
+    "dominante": "#E8F848",
+    "parte": 0.902
+   },
+   {
+    "caja": [
+     892,
+     576,
+     532,
+     665
+    ],
+    "tipo": "color",
+    "dominante": "#284888",
+    "parte": 0.413
+   },
+   {
+    "caja": [
+     892,
+     1367,
+     532,
+     665
+    ],
+    "tipo": "claro",
+    "dominante": "#F8F8F8",
+    "parte": 0.407
+   }
+  ]
+ }
+}

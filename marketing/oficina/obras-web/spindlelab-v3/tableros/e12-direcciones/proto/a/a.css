@@ -29,10 +29,10 @@
   --linea-seccion: #2d2d2d;  /* borde superior de cada sección */
   --linea: rgba(255, 255, 255, .1);
   --velo: rgba(6, 6, 6, .7); /* las piezas del índice sin el mouse */
-  /* El círculo del cursor: §20.4 (b), el cobalto del brief aclarado en su tono (OKLCH 264,2°). 4,51:1 contra el
-     lienzo, 4,10 contra la placa y 4,49 contra un campo blanco: pasa el 3:1 de una forma en los tres. Texto encima
-     en lienzo, 4,51:1. Es el ÚNICO color de la interfaz y vive solo en el círculo (ver direccion-a.md). */
-  --circulo: #316bff;
+  /* El círculo del cursor: §20.4 (a), la que rige: blanco con el texto en lienzo (20,26:1) y un anillo de 1 px en
+     lienzo para que se vea también sobre un campo blanco. Cero color de interfaz, como Koto. */
+  --circulo: #ffffff;
+  --circulo-anillo: 0 0 0 1px #060606;
 
   --m: 16px;  /* margen de Koto, a 1440 y a 390 */
   --g: 8px;   /* separación de Koto */
@@ -192,14 +192,18 @@ h1, h2, h3, .t-display {
 /* ---------- Cursor: círculo solo sobre el trabajo (§8) ---------- */
 .circulo {
   position: fixed; left: 0; top: 0; z-index: 40; width: 88px; height: 88px; margin: -44px 0 0 -44px;
-  border-radius: 50%; background: var(--circulo); color: var(--lienzo);
+  border-radius: 50%; background: var(--circulo); color: var(--lienzo); box-shadow: var(--circulo-anillo);
   display: grid; place-items: center; text-align: center; padding: 10px; pointer-events: none;
   font-family: var(--f-mono); font-weight: 500; font-size: 11px; line-height: 1.2; letter-spacing: .03em; text-transform: uppercase;
   transform: scale(0); will-change: transform;
 }
 .sin-circulo .circulo { display: none; }
+/* La opción (b) de §20.4, para verla en la compuerta: ?senal=cobalto. El cobalto del brief aclarado en su tono
+   (OKLCH 264,2°): 4,51:1 contra el lienzo, 4,10 contra la placa, 4,49 contra un campo blanco; texto en lienzo, 4,51:1.
+   Vive solo en el círculo: un token, una línea. */
+html[data-senal="cobalto"] { --circulo: #316bff; --circulo-anillo: none; }
 .con-circulo .medio-enlace[data-ir] { cursor: none; }
-.teclado .con-circulo .medio-enlace[data-ir] { cursor: pointer; }
+.teclado.con-circulo .medio-enlace[data-ir] { cursor: pointer; }
 .medio-enlace .quieto { display: none; }
 .teclado .medio-enlace:focus-visible .quieto { /* con teclado, el texto del círculo queda quieto dentro de la pieza */
   display: block; position: absolute; z-index: 3; left: 12px; bottom: 12px; padding: 7px 8px 6px; border-radius: 2px;
@@ -394,7 +398,11 @@ h1, h2, h3, .t-display {
 .columna { display: flex; flex-direction: column; gap: var(--g); min-width: 0; }
 .columna > .medio-principal { margin-bottom: 0; }
 @media (max-width: 1023.98px) {
+  /* Koto a 390: el medio principal a sangre arriba, después el nombre, la ficha y la introducción */
+  .caso { display: flex; flex-direction: column; }
+  .caso .columna { display: contents; }
   .caso .medio-principal { order: -1; margin-inline: calc(var(--m) * -1); }
+  .caso .lateral { padding-top: 20px; }
   .caso .medio-principal .medio { border-radius: 0; aspect-ratio: 4 / 5; }
   .caso .medio-principal .pie { padding-inline: var(--m); }
 }

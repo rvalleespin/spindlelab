@@ -501,7 +501,8 @@ def praxi():
 <p class="chico">{e(tx('praxi.solucion.ingredientes.intro'))}</p>
 <ul class="ingredientes">{ingredientes}</ul>'''),
         seccion_caso("la-pieza", nombres[3], tx("praxi.pieza.h2"), [tx("praxi.pieza.p1"), tx("praxi.pieza.p2")],
-                     [fila("169", [M("praxi-facebook-169.webp", "La portada de Facebook de Praxi: un hombre que levanta una barra en penumbra y, a la derecha, «Praxi.» y «Entrena sabiendo por qué»", "169")], raiz, pie_gen),
+                     [fila("169", [M("praxi-amarillo-169.webp", "La marca de Praxi: la P negra con su punto, grande, sobre el amarillo del acento", "169")], raiz),
+                      fila("169", [M("praxi-facebook-169.webp", "La portada de Facebook de Praxi: un hombre que levanta una barra en penumbra y, a la derecha, «Praxi.» y «Entrena sabiendo por qué»", "169")], raiz, pie_gen),
                       fila("45-162", [video('praxi-reel-45.webm', 'praxi-reel-poster-45.webp', 'El reel de campaña de Praxi: un atleta entrena y encima aparece la conversación con el coach', raiz, '45'),
                                       M("praxi-avatar-amarillo-162.webp", "El avatar de Praxi: la P negra con su punto sobre el amarillo de la marca", "162"),
                                       M("praxi-avatar-oscuro-162.webp", "El avatar de Praxi en su versión oscura: la P blanca con el punto amarillo", "162")], raiz, pie_gen),
@@ -733,7 +734,7 @@ def desarrollo_web():
       <a class="boton boton--claro" href="{ruta(T['dw.cierre.boton1']['destino'], raiz)}">{e(tx('dw.cierre.boton1'))}{flecha()}</a>
       <a class="boton boton--placa" href="{ruta(T['dw.cierre.boton2']['destino'], raiz)}">{e(tx('dw.cierre.boton2'))}</a>
     </div>
-    <p style="margin-top:32px"><span class="rotulo">{e(sig['rotulo'])}</span><br><a class="t-titulo t-display subrayado" href="{sig['destino']}">{e(sig['texto'].replace(' →', ''))}</a> {flecha()}</p>
+    <p style="margin-top:32px"><span class="rotulo">{e(sig['rotulo'])}</span><br><a class="t-titulo t-display subrayado" href="{sig['destino']}">{e(sig['texto'].replace(' →', ''))} {flecha()}</a></p>
   </div>
 </section>'''
     cuerpo = "\n".join([cab, incluye, obra, planes, fases, faq, cierre])

@@ -172,6 +172,8 @@ guardar(escala(recorte(abrir(mat / "praxi-carrusel-v2-s1.jpg"), 4 / 5), 1050), "
         rel(mat / "praxi-carrusel-v2-s1.jpg"), "foto generada: lleva pie")
 guardar(escala(recorte(abrir(mat / "praxi-carrusel-v2-s3.jpg"), 4 / 5), 1050), "praxi-carrusel-3-45.webp",
         rel(mat / "praxi-carrusel-v2-s3.jpg"), "foto generada y cifra de ejemplo: lleva pie")
+guardar(campo(avatar_am, 16 / 9, 1600, PRAXI_AMARILLO, margen=0.0), "praxi-amarillo-169.webp",
+        rel(mat / "praxi-avatar-amarillo.png"), "la identidad en su campo, como abre Koto la identidad de un caso")
 guardar(campo(avatar_am, 1.62, 1050, PRAXI_AMARILLO, margen=0.0), "praxi-avatar-amarillo-162.webp",
         rel(mat / "praxi-avatar-amarillo.png"))
 guardar(campo(avatar_os, 1.62, 1050, PRAXI_FONDO, margen=0.0), "praxi-avatar-oscuro-162.webp",

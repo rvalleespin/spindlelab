@@ -7,6 +7,8 @@
   html.classList.remove('sin-js');
   html.classList.add('js');
   var M = window.Motion || null;
+  // La señal del círculo: blanca (lock §20.4 a) salvo que se pida la opción (b) para compararla: ?senal=cobalto
+  try { if (new URLSearchParams(location.search).get('senal') === 'cobalto') html.setAttribute('data-senal', 'cobalto'); } catch (e) {}
   var reducir = window.matchMedia('(prefers-reduced-motion: reduce)');
   var fino = window.matchMedia('(hover: hover) and (pointer: fine)');
   var RES = {
