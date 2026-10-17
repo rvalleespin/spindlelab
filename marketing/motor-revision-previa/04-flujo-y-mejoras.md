@@ -35,3 +35,13 @@ No se tocó: Apollo y Dereck, el registro de envíos, el pipeline, la estrategia
 
 ## 5. Lo que sigue siendo una hipótesis
 Que el hallazgo mejore la respuesta, que el chequeo gratis lea los sitios de los correos, y que la medición desde una IP de EE. UU. se parezca a lo que ve un dueño en Chile.
+
+## 6. Reactivación de contactos ya escritos (17-oct-2026)
+**Hallazgo del historial en Gmail (lectura de los 134 dominios descartados por "ya contactados"):** no era una reserva dormida. 65 de los 134 recibieron un correo entre el 22-sep y el 15-oct (el Copiloto Verifica y Cumple, con hallazgos de cookies y toque 2 con precio); 69 llevan más de 4 semanas sin recibir nada. De los 134: 132 sin respuesta, 1 negativa, 1 sin clasificar. Sesgo: los que sí respondieron están en el registro o el pipeline y quedaron fuera de esta muestra, así que 98 % de silencio NO es una tasa de respuesta.
+**Embudo de la reactivación:** 69 elegibles, 69 medidos, 28 con hallazgo fuerte, 22 elegidos a verificar (se dejaron 12 que solo tienen cookies de Google Analytics, 2 estudios que venden protección de datos y 4 que ya tenían un descarte), 16 confirmados, 5 refutados, 1 no concluyente. 1 retenido por identidad dudosa (propiedadescima.com redirige a inmocimapropiedades.cl) y 1 por cookies que aparecen solo al mover el mouse (gpremium.cl). 15 borradores.
+**Qué aprendió el flujo:**
+- Verificar F3 (botón de WhatsApp sin código de país) y F9 (enlace legal roto): son hallazgos que un encargado de marketing siente sin traducción. El workflow ahora los cubre y marca `vende_proteccion_datos`.
+- 5 de 22 refutados por el verificador (3 por contacto visible que el motor no contó: botón flotante de WhatsApp, teléfono en texto con href "#"; 1 por formulario oculto en un modal; 1 por cookies que aparecen solo con el primer movimiento del mouse). El motor sigue contando mal el teléfono como texto con href "#" y el botón flotante de WhatsApp: **mejora pendiente en `lib/navegador.mjs` (F10/F2)**.
+- La revisión independiente de borradores corrigió en 10 de 15: precio sin "desde", paso de verificación con "candado" (Chrome ya no lo muestra), una afirmación de ausencia de aviso donde el HTML sí trae un plugin que no se pinta desde IP de nube, y la coletilla "más concreto".
+- Los links largos de Gmail (`google.com/url?q=...`) salieron del uso de `create_draft` con `body`: ver `borradores/html_correo.py`.
+**Riesgo conocido:** el Copiloto Verifica y Cumple busca `in:sent` + `verifica.spindlelab.cl` y puede redactar su propio toque 2 sobre los correos del motor.

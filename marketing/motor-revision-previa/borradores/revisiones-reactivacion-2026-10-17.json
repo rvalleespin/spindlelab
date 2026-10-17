@@ -1,0 +1,253 @@
+{
+ "resumen": {
+  "ok": 5,
+  "ajustar": 10,
+  "no_enviar": 0
+ },
+ "revisiones": [
+  {
+   "id": "R30",
+   "veredicto": "ajustar",
+   "problemas": [
+    {
+     "tipo": "afirma_de_mas",
+     "frase": "Dejar un aviso legal y una política de privacidad que sí se abran cuesta $149.000 + IVA y queda en dos o tres días; la plantilla de la política la revisa tu abogado.",
+     "por_que": "Promete por el precio del kit dos documentos, pero el kit documentado (estrategia outbound §1, ficha F9) entrega la plantilla de política para que la revise el abogado del cliente, y no menciona un aviso legal. Además solo la política queda con revisión de abogado, así que el aviso legal suena a texto legal entregado listo. 'La revisa tu abogado' también se lee como algo ya resuelto, no como 'para que la revise', que es la frase aprobada en los primeros toques ya enviados.",
+     "correccion": "Arreglarlo cuesta $149.000 + IVA y queda en dos o tres días: una plantilla de política de privacidad para que la revise tu abogado, y los dos enlaces del pie funcionando. Si quieres, lo vemos en una llamada de 20 minutos."
+    },
+    {
+     "tipo": "tono_o_voz",
+     "frase": "y los dos llevan a una página de error: ahí no hay nada.",
+     "por_que": "'Ahí no hay nada' repite lo que ya dijo 'página de error' con una coletilla que lo evalúa y no agrega ningún hecho. Es el tic que Ramón rechazó por escrito el 22-sep (voz-spindlelab). La consecuencia ya viene en la frase siguiente.",
+     "correccion": "En el pie de oscplus.cl hay dos enlaces, \"Aviso legal\" y \"Privacidad\", y los dos llevan a una página de error. Quien quiera leer qué se hace con sus datos no tiene dónde, al menos desde el pie de la página."
+    }
+   ],
+   "comentario": "Los hechos aguantan: los dos 404 (/legal-notice y /privacy) los midieron ambos revisores, el puente ('fines de agosto', correo del 26-ago) es exacto, la baja dice la fuente real (Google Maps, correo del sitio), la derivación está y el cuerpo tiene 139 palabras sin raya, sin exclamaciones y sin jerga. Si fuera el dueño del sitio lo entendería y lo comprobaría en 30 segundos; corregiría el alcance de lo que se vende y, antes de enviar, volvería a abrir los dos enlaces del pie, porque el sitio puede arreglarlos en cualquier momento. Los $149.000 + IVA no están en capacidad-servicios.md sino en la estrategia §1 (ahí dice 'desde') y en los primeros toques ya enviados, que lo dicen sin 'desde'; con las correcciones el cuerpo queda en unas 134 palabras."
+  },
+  {
+   "id": "R34",
+   "veredicto": "ajustar",
+   "problemas": [
+    {
+     "tipo": "claridad_para_quien_decide",
+     "frase": "Puedes verlo tú: toca uno de los botones Contratar desde tu celular y mira a qué número abre el chat.",
+     "por_que": "Los revisores no probaron los botones en un celular y dicen que el resultado depende del teléfono y de la cuenta de WhatsApp de quien toca. Esa comprobación no reproduce lo que se midió (el enlace) y no le dice al dueño qué resultado sería el malo. Si en su teléfono abre bien, el correo queda como equivocado aunque el enlace esté mal armado.",
+     "correccion": "Puedes verlo tú: en el computador, pasa el cursor sobre uno de los botones Contratar y mira la dirección que aparece abajo en el navegador. Termina en wa.me/962830584, sin el 56."
+    },
+    {
+     "tipo": "claridad_para_quien_decide",
+     "frase": "En la sección Planes de tuoficinacontable.cl, los cuatro botones Contratar abren WhatsApp con el número escrito sin el 56 de Chile (962830584). WhatsApp espera el número completo, y esos son los botones de quien ya decidió contratar.",
+     "por_que": "La mecánica va primero y la consecuencia, que es lo que le importa a un gerente, queda al final y solo insinuada. Además \"el número escrito\" hace pensar que el número se ve en la página, y solo está dentro de los enlaces. Falta el \"revisé\" en singular que pidieron los revisores, porque esto salió de leer los enlaces y no de usar los botones. \"Abren WhatsApp\" afirma un comportamiento que nadie probó en un celular.",
+     "correccion": "Revisé tuoficinacontable.cl y los cuatro botones Contratar de la sección Planes son los que toca quien ya decidió contratar. Enlazan a WhatsApp con el número sin el 56 de Chile (962830584), y WhatsApp espera el número completo."
+    },
+    {
+     "tipo": "afirma_de_mas",
+     "frase": "El botón verde flotante sí lo tiene bien.",
+     "por_que": "Lo verificado es que el flotante usa 56962830584, o sea que trae el código de país. \"Bien\" también dice que el número es el correcto, y que sea el mismo número es una inferencia que los revisores marcaron como tal.",
+     "correccion": "El botón verde flotante sí trae el 56."
+    },
+    {
+     "tipo": "otro",
+     "frase": "los botones de whatsapp de tuoficinacontable.cl",
+     "por_que": "El asunto habla de los botones de WhatsApp del sitio en general, pero el hallazgo es solo de los cuatro Contratar de Planes, y la advertencia pide no generalizar porque el flotante está bien. El dueño que lo abra pensando en el botón flotante no va a encontrar el problema.",
+     "correccion": "los botones contratar de tuoficinacontable.cl"
+    },
+    {
+     "tipo": "claridad_para_quien_decide",
+     "frase": "Lo corrijo y lo pruebo en el celular.",
+     "por_que": "\"Lo\" no tiene antecedente claro: el párrafo anterior habla de que el dueño toque un botón y mire un chat. No queda dicho qué se corrige (el número de esos cuatro enlaces).",
+     "correccion": "Eso se arregla: dejo el número con el 56 y lo pruebo desde el celular."
+    }
+   ],
+   "comentario": "Lo importante está bien. El puente (septiembre, visibilidad en Google y ChatGPT) coincide con el historial (3 y 9 de sept), la baja dice \\\"del sitio de ustedes\\\" como corresponde a la fuente google-maps, y el precio usa la línea de referencia sin cifra. Tiene 135 palabras sin el saludo, la derivación y la llamada de 20 minutos, y ninguna raya larga ni exclamación. Yo lo enviaría después de ajustar tres cosas: abrir con quién toca el botón y decir \\\"revisé\\\", cambiar la comprobación a la dirección del enlace (lo que sí se midió) y dejar el asunto en los botones contratar. No hay afirmación falsa, así que no es \\\"no_enviar\\\"."
+  },
+  {
+   "id": "R24",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Como dueño abriría la portada, bajaría a Contacto, vería el pie con solo \"Paragon Advisors - 2023\" y no tendría nada que desmentir, porque el correo se limita a la portada y no toca los PDF de Documentos. Cumple las reglas duras: 113 palabras sin saludo, sin raya larga ni exclamaciones, puente \"En julio\" exacto (envíos del 10 y 29 de julio), baja con Apollo correcta y derivación presente. Una nota para Ramón, que no pide corregir nada: capacidad-servicios.md no trae la cifra de $149.000 + IVA; el respaldo está en el LEEME del motor (\"Desde $149.000 + IVA\") y en los correos que ya enviaste."
+  },
+  {
+   "id": "R46",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Lo enviaría tal cual. Cada afirmación está acotada a la portada y respaldada por los dos revisores. El puente coincide con Gmail (correos del 3 y 10 de sep sobre el título y los datos para la IA). La baja nombra la fuente real (el correo está en la cabecera del sitio) y el cuerpo tiene 118 palabras. Único retoque opcional: \"y más concreto\" no agrega información y deja el correo anterior como vago, así que \"Hoy es por otra cosa.\" suena más a Ramón."
+  },
+  {
+   "id": "R42",
+   "veredicto": "ajustar",
+   "problemas": [
+    {
+     "tipo": "regla_dura",
+     "frase": "Dejar un aviso de cookies que pregunte antes cuesta $149.000 + IVA y queda en dos o tres días.",
+     "por_que": "El texto aprobado del kit es \"Desde $149.000 + IVA, una vez\" (ficha R42: precio_en_el_correo; LEEME del 23-sep, que explica que el 'desde' está porque el valor sube si el sitio tiene más de lo que se alcanzó a ver). Aquí solo se miró la portada, que además carga Tag Manager, Analytics, Clarity y un chat. 'Cuesta $149.000' es una cotización cerrada sobre un sitio visto a medias, y la llamada podría tener que desmentirla. Ojo: capacidad-servicios.md no trae este precio; la fuente es la ficha y los correos aprobados. El plazo de dos o tres días no se toca.",
+     "correccion": "Dejar un aviso de cookies que pregunte antes cuesta desde $149.000 + IVA, una vez, y queda en dos o tres días."
+    },
+    {
+     "tipo": "tono_o_voz",
+     "frase": "Hoy es por algo distinto y más concreto.",
+     "por_que": "Es la coletilla que anuncia y se evalúa a sí misma, el tic que Ramón rechazó por escrito (voz-spindlelab, 22 y 23 sep). Además 'más concreto' sugiere que el correo anterior fue vago, y la frase es idéntica en los 15 borradores de la tanda, lo que la hace sonar a plantilla.",
+     "correccion": "Hoy te escribo por otra cosa."
+    }
+   ],
+   "comentario": "Los hechos están bien respaldados (cookies de Analytics y Clarity a los 11 s sin interacción, ningún aviso en la portada, nada sobre lo que exige la ley ni sobre que alguien 'recibió' la visita), el puente es exacto (correos del 3 y 10 de septiembre sobre visibilidad en IA), la baja dice bien que el correo salió del sitio, la derivación está y el cuerpo tiene 141 palabras. Yo lo enviaría después de devolver el 'desde' al precio y cambiar la coletilla; antes confirmaría que Julio sea de verdad quien decide, porque el nombre sale solo de la dirección julio@ (en R57 se prefirió 'Hola:' en el mismo caso), y tendría presente que sería el tercer correo a este dominio, contra el tope de dos que se usó el 23-sep."
+  },
+  {
+   "id": "R62",
+   "veredicto": "ajustar",
+   "problemas": [
+    {
+     "tipo": "afirma_de_mas",
+     "frase": "Dejar un aviso de cookies que pregunte antes cuesta $149.000 + IVA y queda en dos o tres días.",
+     "por_que": "Todo lo publicado y aprobado del kit lo escribe como \"Desde $149.000 + IVA, una vez\" (sitio, post del 24-sep, ficha del motor), y E9 aclara que el valor final se ajusta a lo que muestre el chequeo. Este sitio tiene cinco medidores (dos propiedades de Analytics, Ads, Meta, Clarity) y lo mantiene un tercero (Convecta). Con \"cuesta $149.000\" a secas el correo fija un precio más firme que el publicado. El plazo no se marca como error, solo el precio.",
+     "correccion": "Dejar un aviso de cookies que pregunte antes cuesta desde $149.000 + IVA y queda en dos o tres días."
+    },
+    {
+     "tipo": "claridad_para_quien_decide",
+     "frase": "mira las cookies desde el candado de la barra del navegador.",
+     "por_que": "Es el paso con el que el dueño comprueba el hallazgo y, según recuerdo, Chrome (el navegador más usado) ya no muestra un candado sino un ícono de ajustes junto a la dirección; no pude confirmarlo en esta sesión. Si no lo encuentra, no verifica y el correo pierde su apoyo. Es una frase compartida con los otros correos de cookies. Menor y opcional.",
+     "correccion": "Puedes verlo tú: abre el sitio en una ventana de incógnito y mira las cookies desde el ícono a la izquierda de la dirección. (Con este cambio y el de \"desde\" el cuerpo queda en 148 palabras, bajo el tope de 150.)"
+    }
+   ],
+   "comentario": "Si fuera el dueño del sitio, abriría la ventana de incógnito para comprobarlo y probablemente se lo pasaría a quien mantiene la web (Convecta). El correo es sobrio y verificable. Todo lo que afirma sobre el sitio está respaldado por los dos revisores: nueve cookies propias a los 11 s, sin aviso en la portada, y el chat de Cliengo no se presenta como aviso. El puente es exacto (un solo correo, 9-sep, sobre ChatGPT) y la baja dice la fuente correcta (el correo coor@ está en el sitio como mailto). Quedan dos ajustes de una palabra o una frase: \\\"desde\\\" en el precio y el ícono de Chrome."
+  },
+  {
+   "id": "R57",
+   "veredicto": "ajustar",
+   "problemas": [
+    {
+     "tipo": "claridad_para_quien_decide",
+     "frase": "El formulario \"Contáctanos\" de la portada de gesinpropiedades.cl pide nombre, correo y teléfono, y ni en el menú ni en el pie encontré un enlace a una política de privacidad de la empresa que diga qué se hace con esos datos.",
+     "por_que": "El correo da el hallazgo pero nunca dice en llano qué significa para quien llena el formulario, y la ley no se puede citar, así que no queda otra consecuencia a mano. Después aparece \"Arreglarlo cuesta $149.000\" sin que se haya nombrado qué hay que arreglar. La propia ficha marca este hallazgo como poco visible (\"la ausencia de un enlace se nota poco\"), y la estrategia §7 pide una frase llana de qué significa antes de la mecánica. R30, del mismo lote, ya lo hace (\"Quien quiera leer qué se hace con sus datos no tiene dónde, al menos desde el pie\"). Ojo con el alcance: solo se cargó la portada, así que la frase debe hablar de lo que se ve desde ahí y no decir \"no hay política\".",
+     "correccion": "El formulario \"Contáctanos\" de la portada de gesinpropiedades.cl pide nombre, correo y teléfono. Quien lo llena no ve dónde leer qué se hace con esos datos. Ni en el menú ni en el pie encontré un enlace a una política de privacidad de la empresa.  (Sube de 122 a unas 126 palabras. Mantiene \"de la empresa\" por el reCAPTCHA y no afirma nada fuera de la portada.)"
+    }
+   ],
+   "comentario": "Los hechos coinciden con lo que vieron los dos revisores, el puente (8-sep, visibilidad en Google y ChatGPT) es exacto, y el saludo \"Hola:\" más la derivación son correctos. La baja nombra la fuente real (el mailto está en la propia portada), el asunto va en minúsculas, y no hay raya larga, exclamaciones, jerga ni leyes. Lo único que cambiaría es decir en llano qué le pasa a quien llena el formulario, porque hoy \"Arreglarlo\" llega sin que se haya nombrado el problema. Nota para el troncal: el $149.000 sale de la estrategia de Verifica y Cumple (§1, publicado como \"desde\"), no de capacidad-servicios.md, que no trae ese precio."
+  },
+  {
+   "id": "R35",
+   "veredicto": "ajustar",
+   "problemas": [
+    {
+     "tipo": "claridad_para_quien_decide",
+     "frase": "mi navegador ya tenía guardadas cookies de Google (analítica y publicidad) y de Meta (Facebook e Instagram).",
+     "por_que": "Cuenta la mecánica (qué quedó guardado, con la lista de proveedores) y nunca dice en llano qué le pasó al visitante, así que el dueño tiene que deducir por qué importa. La estrategia (§7, regla 1) y el corpus de voz piden la consecuencia primero y rechazan la medición en vocabulario de la sonda; la forma aprobada es \"Entré y no toqué nada, ni acepté nada. En diez segundos tu sitio ya le había avisado a Google que yo estaba ahí\". Los hechos verificados sí lo permiten para Google (envío observado a Analytics y a Ads en la carga inicial) y para Meta solo que dejó su cookie, no que recibió la visita.",
+     "correccion": "Entré a akcontadores.cl sin tocar nada ni aceptar nada. En unos diez segundos tu sitio ya le había avisado a Google que yo estaba ahí, y Meta había dejado su cookie en mi navegador. En la portada no vi ningún aviso de cookies donde el visitante pueda aceptar o rechazar. (El cuerpo queda en 143 palabras, bajo el tope de 150.)"
+    }
+   ],
+   "comentario": "Si fuera el dueño del sitio, con este cambio lo enviaría: los hechos están respaldados, el puente es exacto (correos del 3 y 9 de septiembre sobre Google y ChatGPT), la baja dice la fuente real (Google Maps, o sea el sitio), tiene 137 palabras, el precio, la llamada de 20 minutos y la derivación están, y no hay raya larga, signos de exclamación ni nombres técnicos de cookies. Antes de enviar, Ramón debería abrir akcontadores.cl en incógnito él mismo: el correo invita al dueño a comprobarlo y la medición salió de una IP de datacenter. La ventana \\\"Podemos Ayudarte!\\\" es un formulario de captación, no un aviso de cookies, y el correo hace bien en no mencionarla."
+  },
+  {
+   "id": "R32",
+   "veredicto": "ajustar",
+   "problemas": [
+    {
+     "tipo": "afirma_de_mas",
+     "frase": "recoge nombre, correo y teléfono",
+     "por_que": "Los revisores solo pueden decir que el formulario \"pide\" esos datos. Un revisor leyó el código y el formulario parece no enviar nada (comentario \"no hay backend real\", muestra \"Mensaje enviado\" y se limpia). Nadie lo probó. Las advertencias dicen expresamente que no se afirme \"recogen/almacenan datos\"; lo seguro es \"pide email y teléfono\". \"Recoge\" afirma un tratamiento que puede no existir, y el dueño puede rebatirlo con un \"ese formulario ni guarda nada\".",
+     "correccion": "El formulario \"Envía un mensaje\" de clavetributariacontadores.cl pide nombre, correo y teléfono, y en la portada no encontré un enlace a una política de privacidad que diga qué se hace con esos datos."
+    }
+   ],
+   "comentario": "Con el cambio de \\\"recoge\\\" por \\\"pide\\\" queda listo. Las demás partes cuadran: el puente (un solo envío, 26-ago, sobre meta description y datos estructurados para Google e IA) es exacto, la baja con \\\"del sitio de ustedes\\\" corresponde a la fuente google-maps, el dominio no está en la lista de exclusión, el cuerpo tiene 117 palabras (146 con la baja) y la oferta es la misma de los envíos anteriores. Antes de enviar yo haría lo que dice tu nota: abrir el formulario y mandar un mensaje de prueba. Si de verdad no envía nada, el hallazgo real es otro (los mensajes de sus clientes no llegan) y conviene reescribir el correo en torno a eso, no vender el aviso de privacidad."
+  },
+  {
+   "id": "R44",
+   "veredicto": "ajustar",
+   "problemas": [
+    {
+     "tipo": "claridad_para_quien_decide",
+     "frase": "El formulario de contacto de la portada de a2rcontadores.cl pide nombre, empresa, teléfono y correo, y ni junto al formulario ni en el pie encontré un enlace a una política de privacidad de la empresa que diga qué se hace con esos datos.",
+     "por_que": "Describe lo que miró (mecánica) pero nunca dice qué significa para quien dirige el estudio. La estrategia (§7) pide 'qué significa en una frase llana' y 'la consecuencia primero, en castellano'. Aquí la consecuencia queda enterrada en una cláusula relativa de una sola oración larga, y un gerente que lee 'no hay enlace' puede quedarse en '¿y?'. R30, que es el mismo tipo de hallazgo, sí trae esa frase. La consecuencia se puede decir sin tocar la ley y sin pasar de lo medido: es lo que ve quien llena el formulario desde la portada.",
+     "correccion": "El formulario de la portada de a2rcontadores.cl pide nombre, empresa, teléfono y correo. Ni junto al formulario ni en el pie encontré un enlace a una política de privacidad de la empresa, así que quien lo llena no tiene a la vista qué se hace con esos datos.\n\n(Cuerpo sin saludo ni baja queda en 129 palabras: se quitó 'de contacto' y la 'y' para no pasar el tope de 130 del correo de Verifica y Cumple. Se dice 'a la vista' y no 'no sabe' ni 'no tiene dónde' porque solo se revisó la portada.)"
+    }
+   ],
+   "comentario": "Si fuera el dueño de a2rcontadores.cl entendería qué se miró, cómo comprobarlo gratis y cuánto cuesta arreglarlo, pero me quedaría preguntándome por qué importa; con una frase sobre lo que ve quien llena el formulario, el correo queda listo. Todo lo demás cuadra: hechos acotados a la portada y sin chocar con las advertencias (no dice que el sitio no tenga política en otra ruta, ni habla de ley, cookies o reCAPTCHA), puente exacto (envíos del 3 y 10 de septiembre, tema de visibilidad), \"Hola:\" correcto para un buzón genérico, baja con la fuente real (contacto@a2rcontadores.cl aparece en el pie del sitio y la fila viene de Google Maps), precio del kit y llamada de 20 minutos correctos, 124 palabras, sin raya larga ni exclamaciones."
+  },
+  {
+   "id": "R33",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Si fuera el dueño del sitio lo enviaría tal cual: todo lo que afirma está respaldado por los dos revisores y por las tres corridas (cookies de Google y de Meta a los 11 s, sin aviso en la portada, nada sobre la política de privacidad que sí existe, nada sobre Meta \"recibiendo\" la visita ni sobre la ley). El puente calza con Gmail (dos correos, 3 y 9 de septiembre, sobre Google y ChatGPT), tiene 137 palabras sin saludo, la baja nombra la fuente real (el correo está en el sitio, fuente google-maps), y el contacto no está en la lista de exclusión. Un detalle opcional, no un error: en Chrome el ícono junto a la dirección ya no es un candado, así que \"mira las cookies desde el candado\" podría decirse \"desde el ícono a la izquierda de la dirección\"; es el mismo texto de los correos ya enviados, por lo que no lo cambiaría solo en este."
+  },
+  {
+   "id": "R48",
+   "veredicto": "ajustar",
+   "problemas": [
+    {
+     "tipo": "claridad_para_quien_decide",
+     "frase": "mi navegador ya tenía guardadas cookies de Google Analytics y de Meta (Facebook e Instagram). En la portada no vi ningún aviso de cookies donde el visitante pueda aceptar o rechazar.",
+     "por_que": "Cuenta la mecánica (cookies guardadas, nombres de herramientas) y nunca dice qué significa para el dueño. La estrategia §7 pide la consecuencia primero y en castellano, sin nombres de proveedor (la versión de Ramón: 'tu sitio ya le había avisado a Google que yo estaba ahí'). Esa frase está respaldada: el envío a Google Analytics salió en el tramo pasivo en las 3 corridas del motor y lo vieron los dos revisores. De Meta solo consta la cookie (no se vio ningún envío a facebook.com/tr), y fue una sola cookie de Meta, no varias; por eso Meta queda como 'cookie' y no como 'recibió'.",
+     "correccion": "Entré a taxwork.cl sin hacer nada y, en unos diez segundos, el sitio ya le había avisado a Google que yo estaba ahí, y en mi navegador quedó una cookie de Meta (Facebook e Instagram). En la portada no vi ningún aviso de cookies donde el visitante pueda aceptar o rechazar."
+    },
+    {
+     "tipo": "tono_o_voz",
+     "frase": "Hoy es por algo distinto y más concreto.",
+     "por_que": "Es el texto que se anuncia a sí mismo, con coletilla evaluativa ('más concreto'), el tic que Ramón rechazó por escrito. Además deja dicho que el correo anterior no era concreto, y es idéntica en los 15 borradores de reactivación, así que se lee a plantilla masiva.",
+     "correccion": "Esta vez es por otra cosa."
+    },
+    {
+     "tipo": "regla_dura",
+     "frase": "Dejar un aviso de cookies que pregunte antes cuesta $149.000 + IVA y queda en dos o tres días.",
+     "por_que": "El texto aprobado del kit para este contacto (ficha y detalle de R48, estrategia §1) es 'Desde $149.000 + IVA, una vez'. El 'desde' es deliberado: el valor sube si el sitio tiene más de lo que se alcanzó a ver, y este sitio carga Tag Manager con etiquetas de Google y Meta, un Analytics antiguo y un widget de WhatsApp. Como primer precio que ve este contacto, una cifra fija compromete a Ramón. El plazo 'dos o tres días' no se toca.",
+     "correccion": "Dejar un aviso de cookies que pregunte antes cuesta desde $149.000 + IVA, una vez, y queda en dos o tres días."
+    },
+    {
+     "tipo": "claridad_para_quien_decide",
+     "frase": "mira las cookies desde el candado de la barra del navegador",
+     "por_que": "Es el único paso que le permite al dueño comprobar lo que dice el correo. Chrome, el navegador mayoritario en Chile, reemplazó el candado por un ícono de ajustes en 2023. Si no lo encuentra, la comprobación falla justo donde el correo gana credibilidad.",
+     "correccion": "Puedes verlo tú: abre el sitio en una ventana de incógnito y mira las cookies desde el ícono junto a la dirección."
+    }
+   ],
+   "comentario": "Si fuera el dueño de taxwork.cl, abriría el sitio en incógnito para ver si es cierto y respondería o reenviaría el correo a quien ve la web. Hoy me preguntaría 'ya, ¿y qué?' al leer que hay cookies guardadas. Con los cuatro cambios el cuerpo queda en unas 143 palabras, bajo el tope de 150. Antes de enviar, Ramón debería hacer él mismo el chequeo de 10 segundos desde Chile, porque la medición vino de una IP de datacenter y el correo lo afirma en primera persona ('entré', 'mi navegador')."
+  },
+  {
+   "id": "R50",
+   "veredicto": "ajustar",
+   "problemas": [
+    {
+     "tipo": "afirma_de_mas",
+     "frase": "En la portada no vi ningún aviso de cookies donde el visitante pueda aceptar o rechazar.",
+     "por_que": "Las advertencias de la verificación dicen que el correo no debe decir \"sin aviso\". El HTML de rento.cl trae un plugin de aviso de cookies (Hu-manity, con 'blocking': false) que solo se sirve a navegadores normales y que, desde la IP de nube, no pintó nada. Un revisor no pudo descartar que un visitante desde Chile sí lo vea, porque el script tiene reglas por región. El correo invita al dueño a abrir el sitio en incógnito. Si ve un aviso, esta frase queda desmentida y el resto del correo pierde crédito. Lo que sí se sostiene en cualquier caso es que las cookies se escriben antes de que el visitante elija, porque el plugin no bloquea nada.",
+     "correccion": "Quitar la frase y cerrar la oración anterior así: \"Entré a rento.cl sin hacer nada y, en unos diez segundos, mi navegador ya tenía guardadas varias cookies de Google (analítica y publicidad) y de Meta (Facebook e Instagram), antes de que yo aceptara o rechazara algo.\" Es verdad con o sin aviso, y deja la consecuencia a la vista."
+    },
+    {
+     "tipo": "puente_inexacto",
+     "frase": "A fines de agosto te escribí por cómo aparece tu sitio en Google y ChatGPT.",
+     "por_que": "El historial de Gmail registra dos envíos a contacto@rento.cl: el 27 de agosto y el 1 de septiembre, este último en el mismo hilo. El último envío es de septiembre. Según el criterio de los otros borradores (R34, R46, R35, que usan el mes del último envío), el puente debería reconocer también el segundo correo. El tema coincide: el primero hablaba de que la IA recomiende el sitio.",
+     "correccion": "\"Entre fines de agosto y comienzos de septiembre te escribí por cómo aparece tu sitio en Google y ChatGPT. Hoy es por algo distinto y más concreto.\""
+    },
+    {
+     "tipo": "afirma_de_mas",
+     "frase": "Dejar un aviso de cookies que pregunte antes cuesta $149.000 + IVA y queda en dos o tres días.",
+     "por_que": "\"Dejar un aviso\" da por hecho que el sitio no tiene ninguno. Si el dueño responde \"ya tenemos aviso\" (el plugin está instalado), la oferta suena desinformada. El arreglo real es que el sitio pregunte antes de guardar las cookies, y eso vale con o sin plugin. El precio coincide con el del kit.",
+     "correccion": "\"Que el sitio pregunte antes de guardar esas cookies cuesta $149.000 + IVA y queda en dos o tres días. Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.\""
+    },
+    {
+     "tipo": "afirma_de_mas",
+     "frase": "Puedes verlo tú: abre el sitio en una ventana de incógnito y mira las cookies desde el candado de la barra del navegador.",
+     "por_que": "Si el dueño ve un aviso de cookies al abrir el sitio, puede esperar a aceptarlo o aceptarlo sin pensar, y entonces la prueba ya no muestra lo que el correo afirma. Hay que pedirle que mire antes de aceptar nada.",
+     "correccion": "\"Puedes verlo tú: abre el sitio en una ventana de incógnito, sin aceptar nada, y mira las cookies desde el candado de la barra del navegador.\""
+    },
+    {
+     "tipo": "otro",
+     "frase": "Sin gestor de consentimiento en el HTML.",
+     "por_que": "Esta nota del borrador no se envía, pero está contradicha por el segundo revisor, que sí encontró el script de Hu-manity.co con 'blocking': false. Un revisor dice una cosa y el otro la contraria. Si Ramón toma la llamada con esa nota, puede decirle al dueño algo falso.",
+     "correccion": "Cambiar la nota por: \"El HTML trae un plugin de aviso de cookies (Hu-manity, 'blocking': false) que no se pintó en la medición desde IP de nube. Las cookies se escriben antes de cualquier elección. No decir 'no tienen aviso'. Medido solo desde IP de datacenter.\""
+    }
+   ],
+   "comentario": "Si yo fuera el dueño de rento.cl, abriría el sitio en incógnito desde Santiago, como me pide el correo. Si viera el aviso de Hu-manity, concluiría que quien escribe no miró bien y descartaría el correo. Con las cuatro correcciones, que son frases sueltas y no cambian la estructura, el correo queda seguro. El cuerpo queda en unas 138 palabras. El resto de las reglas se cumple: no hay raya larga ni exclamaciones, el asunto es específico y en minúsculas, la llamada es de 20 minutos, el precio es $149.000 + IVA, hay derivación y la línea de baja dice la fuente real (el correo salió del sitio, según el CSV de google-maps). No se afirma que Meta recibió la visita ni se cita ninguna ley."
+  },
+  {
+   "id": "R68",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Si fuera el dueño de urbac.cl, abriría el sitio en incógnito, vería las cookies de Google Analytics que ya sé que tengo y se lo pasaría a quien me administra la web. Todo lo afirmado está respaldado por los dos revisores y la captura no muestra aviso de cookies, y no vi ningún error de puente, precio, fuente del correo ni reglas duras (131 palabras). Es el gancho más flojo de los C1, porque solo hay cookies de Google, y la medición vino de un servidor fuera de Chile, así que Ramón debería abrir urbac.cl en incógnito desde Chile antes de enviar."
+  },
+  {
+   "id": "R69",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Como dueño entendería qué vieron, lo comprobaría en un minuto en incógnito, y el precio, la llamada de 20 minutos y el \"¿con quién lo hablo?\" son claros; me quedaría preguntando por qué importa más allá de la falta de aviso, y eso lo resuelve la llamada. Antes de enviar, Ramón debería abrir el sitio en incógnito desde su conexión en Chile, porque \"Entré\" y \"no vi\" salen de una medición desde un servidor en la nube y el verificador no descarta un aviso por país (advertencia que las notas de R69 no traen, a diferencia de R42 y R48), y debe saber que el precio está respaldado por la estrategia §1 y la ficha de R69, no por capacidad-servicios.md, que no lista el kit."
+  }
+ ]
+}
