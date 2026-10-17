@@ -1,0 +1,854 @@
+{
+  "url": "https://gestall.cl/",
+  "cuando": "2026-10-16T23:40:42.179Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "ASP.NET_SessionId",
+        "dominio": "gestall.cl",
+        "expira_dias": 0
+      },
+      {
+        "nombre": "_fbp",
+        "dominio": ".gestall.cl",
+        "expira_dias": 90
+      }
+    ],
+    "dom": {
+      "url": "https://gestall.cl/",
+      "titulo": "Gestall Gestión Inmobiliaria",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "./",
+          "accion_abs": "https://gestall.cl/",
+          "metodo": "post",
+          "campos": 9,
+          "requeridos": 0,
+          "visible": true,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "tel:+569 9001 2163",
+          "t": "+569 9001 2163"
+        },
+        {
+          "h": "tel: +562 2217 4166\n",
+          "t": "+562 2217 4166"
+        },
+        {
+          "h": "mailto:info@gestall.cl\n",
+          "t": "info@gestall.cl"
+        },
+        {
+          "h": "/index.aspx",
+          "t": ""
+        },
+        {
+          "h": "/index.aspx",
+          "t": "INICIO"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas",
+          "t": "PROPIEDADES"
+        },
+        {
+          "h": "/quienesSomos.aspx",
+          "t": "QUIÉNES SOMOS"
+        },
+        {
+          "h": "/servicios.aspx",
+          "t": "SERVICIOS"
+        },
+        {
+          "h": "/blog.aspx",
+          "t": "BLOG"
+        },
+        {
+          "h": "/contacto.aspx",
+          "t": "CONTACTO"
+        },
+        {
+          "h": "mailto:info@gestall.cl\n",
+          "t": ""
+        },
+        {
+          "h": "mailto:info@gestall.cl\n",
+          "t": "info@gestall.cl"
+        },
+        {
+          "h": "tel:+569 9001 2163",
+          "t": ""
+        },
+        {
+          "h": "tel:+569 9001 2163",
+          "t": "+569 9001 2163"
+        },
+        {
+          "h": "#home",
+          "t": "COMPRAR"
+        },
+        {
+          "h": "#home",
+          "t": "ARRENDAR"
+        },
+        {
+          "h": "#profile",
+          "t": "POR CÓDIGO"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "BUSCAR"
+        },
+        {
+          "h": "#",
+          "t": "BUSCAR"
+        },
+        {
+          "h": "/5687",
+          "t": "5.687\nVenta UF 9.930\nCasa en Colina\n Condominio Barrio La Laguna\n 3 dorm. 3 baño"
+        },
+        {
+          "h": "/5685",
+          "t": "5.685\nVenta UF 8.800\nDepartamento en Providencia\n Santa Maria / Av. El Cerro, Pe"
+        },
+        {
+          "h": "/5984",
+          "t": "5.984\nVenta UF 10.500\nDepartamento en Las Condes\n martin de Zamora/ Metro Colón\n"
+        },
+        {
+          "h": "/5969",
+          "t": "5.969\nVenta UF 1.750\nDepartamento en La Cisterna\n Santa Clara / Metro Lo Ovalle\n"
+        },
+        {
+          "h": "/5961",
+          "t": "5.961\nVenta UF 6.000\nDepartamento en Las Condes\n Piacenza / Av. Cristobal Colón\n"
+        },
+        {
+          "h": "/5727",
+          "t": "5.727\nVenta UF 2.850\nDepartamento en Santiago\n Portugal / Metro Santa Isabel\n 2 "
+        },
+        {
+          "h": "Todos_los_tipos/Venta_y_Arriendo/Las_Condes",
+          "t": "Las Condes"
+        },
+        {
+          "h": "Todos_los_tipos/Venta_y_Arriendo/Lo_Barnechea",
+          "t": "Lo Barnechea"
+        },
+        {
+          "h": "Todos_los_tipos/Venta_y_Arriendo/Providencia",
+          "t": "Providencia"
+        },
+        {
+          "h": "Todos_los_tipos/Venta_y_Arriendo/Vitacura",
+          "t": "Vitacura"
+        },
+        {
+          "h": "#",
+          "t": "ACTUALIDAD/NOTICIAS/NOVEDADES\n¿Qué es un Leaseback?\n\n Gestall Gestión Inmobiliar"
+        },
+        {
+          "h": "#",
+          "t": "LEGALES\nLA IMPORTANCIA DE REGULARIZAR UNA PROPIEDAD\n\nLa regularización de propie"
+        },
+        {
+          "h": "#",
+          "t": "LEGALES\nInscripción en el Conservador de Bienes Raíces\n\n¿En qué consiste la insc"
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56990012163",
+          "t": "Contáctanos"
+        },
+        {
+          "h": "/index.aspx",
+          "t": ""
+        },
+        {
+          "h": "/index.aspx",
+          "t": "Inicio"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas",
+          "t": "Propiedades"
+        },
+        {
+          "h": "/quienesSomos.aspx",
+          "t": "Quiénes somos"
+        },
+        {
+          "h": "/servicios.aspx",
+          "t": "Servicios"
+        },
+        {
+          "h": "/blog.aspx",
+          "t": "Blog"
+        },
+        {
+          "h": "/contacto.aspx",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://goo.gl/maps/38xBhaERQMGB3dPb7",
+          "t": "Av. Las Condes 12.265 – Torre 1 Oficina 20, Las Condes"
+        },
+        {
+          "h": "mailto:info@gestall.cl\n",
+          "t": "info@gestall.cl"
+        },
+        {
+          "h": "tel:+569 9001 2163",
+          "t": "+569 9001 2163"
+        },
+        {
+          "h": "tel: +562 2217 4166\n",
+          "t": "+562 2217 4166"
+        },
+        {
+          "h": "https://www.facebook.com/gestall.cl",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/gestall.cl",
+          "t": ""
+        },
+        {
+          "h": "https://twitter.com/Gestall2",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/company/gestall-gesti%C3%B3n-inmobiliaria",
+          "t": ""
+        },
+        {
+          "h": "http://www.convecta.cl/",
+          "t": "Convecta"
+        }
+      ],
+      "politica": [],
+      "largo_texto": 2512,
+      "muestra": "INICIO\nPROPIEDADES\nQUIÉNES SOMOS\nSERVICIOS\nBLOG\nCONTACTO\nMás de 20 años avalan nuestra calidad de servicio\nCOMPRAR\nARRENDAR\nPOR CÓDIGO\nTipo propiedad\nCasa\nDepartamento\nOficina\nSitio\nLocal Comercial\nParcela\nEstacionamiento\nTipo propiedad\nRegión\nReg. Araucanía\nReg. Los Lagos\nReg. Maule\nReg. Metropolitana\nReg. Valparaiso\nRegión\nComuna\nColina\nCunco\nEstación Central\nHuechuraba\nIndependencia\nLa Cisterna\nLa Reina\nLas Condes\nLo Barnechea\nMaipú\nÑuñoa\nProvidencia\nPuchuncaví\nPudahuel\nPuerto Varas\nSan Migue",
+      "cta_en_pantalla": [
+        {
+          "t": "contacto",
+          "h": "/contacto.aspx"
+        },
+        {
+          "t": "",
+          "h": "mailto:info@gestall.cl\n"
+        },
+        {
+          "t": "",
+          "h": "tel:+569 9001 2163"
+        },
+        {
+          "t": "comprar",
+          "h": "#home"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 12,
+        "palabras": 379
+      }
+    },
+    "captura": "r3-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "ASP.NET_SessionId",
+        "dominio": "gestall.cl",
+        "expira_dias": 0
+      },
+      {
+        "nombre": "_fbp",
+        "dominio": ".gestall.cl",
+        "expira_dias": 90
+      }
+    ],
+    "dom": {
+      "url": "https://gestall.cl/",
+      "titulo": "Gestall Gestión Inmobiliaria",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "./",
+          "accion_abs": "https://gestall.cl/",
+          "metodo": "post",
+          "campos": 9,
+          "requeridos": 0,
+          "visible": true,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "tel:+569 9001 2163",
+          "t": "+569 9001 2163"
+        },
+        {
+          "h": "tel: +562 2217 4166\n",
+          "t": "+562 2217 4166"
+        },
+        {
+          "h": "mailto:info@gestall.cl\n",
+          "t": "info@gestall.cl"
+        },
+        {
+          "h": "/index.aspx",
+          "t": ""
+        },
+        {
+          "h": "/index.aspx",
+          "t": "INICIO"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas",
+          "t": "PROPIEDADES"
+        },
+        {
+          "h": "/quienesSomos.aspx",
+          "t": "QUIÉNES SOMOS"
+        },
+        {
+          "h": "/servicios.aspx",
+          "t": "SERVICIOS"
+        },
+        {
+          "h": "/blog.aspx",
+          "t": "BLOG"
+        },
+        {
+          "h": "/contacto.aspx",
+          "t": "CONTACTO"
+        },
+        {
+          "h": "mailto:info@gestall.cl\n",
+          "t": ""
+        },
+        {
+          "h": "mailto:info@gestall.cl\n",
+          "t": "info@gestall.cl"
+        },
+        {
+          "h": "tel:+569 9001 2163",
+          "t": ""
+        },
+        {
+          "h": "tel:+569 9001 2163",
+          "t": "+569 9001 2163"
+        },
+        {
+          "h": "#home",
+          "t": "COMPRAR"
+        },
+        {
+          "h": "#home",
+          "t": "ARRENDAR"
+        },
+        {
+          "h": "#profile",
+          "t": "POR CÓDIGO"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "BUSCAR"
+        },
+        {
+          "h": "#",
+          "t": "BUSCAR"
+        },
+        {
+          "h": "/5687",
+          "t": "5.687\nVenta UF 9.930\nCasa en Colina\n Condominio Barrio La Laguna\n 3 dorm. 3 baño"
+        },
+        {
+          "h": "/5685",
+          "t": "5.685\nVenta UF 8.800\nDepartamento en Providencia\n Santa Maria / Av. El Cerro, Pe"
+        },
+        {
+          "h": "/5984",
+          "t": "5.984\nVenta UF 10.500\nDepartamento en Las Condes\n martin de Zamora/ Metro Colón\n"
+        },
+        {
+          "h": "/5969",
+          "t": "5.969\nVenta UF 1.750\nDepartamento en La Cisterna\n Santa Clara / Metro Lo Ovalle\n"
+        },
+        {
+          "h": "/5961",
+          "t": "5.961\nVenta UF 6.000\nDepartamento en Las Condes\n Piacenza / Av. Cristobal Colón\n"
+        },
+        {
+          "h": "/5727",
+          "t": "5.727\nVenta UF 2.850\nDepartamento en Santiago\n Portugal / Metro Santa Isabel\n 2 "
+        },
+        {
+          "h": "Todos_los_tipos/Venta_y_Arriendo/Las_Condes",
+          "t": "Las Condes"
+        },
+        {
+          "h": "Todos_los_tipos/Venta_y_Arriendo/Lo_Barnechea",
+          "t": "Lo Barnechea"
+        },
+        {
+          "h": "Todos_los_tipos/Venta_y_Arriendo/Providencia",
+          "t": "Providencia"
+        },
+        {
+          "h": "Todos_los_tipos/Venta_y_Arriendo/Vitacura",
+          "t": "Vitacura"
+        },
+        {
+          "h": "#",
+          "t": "ACTUALIDAD/NOTICIAS/NOVEDADES\n¿Qué es un Leaseback?\n\n Gestall Gestión Inmobiliar"
+        },
+        {
+          "h": "#",
+          "t": "LEGALES\nLA IMPORTANCIA DE REGULARIZAR UNA PROPIEDAD\n\nLa regularización de propie"
+        },
+        {
+          "h": "#",
+          "t": "LEGALES\nInscripción en el Conservador de Bienes Raíces\n\n¿En qué consiste la insc"
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56990012163",
+          "t": "Contáctanos"
+        },
+        {
+          "h": "/index.aspx",
+          "t": ""
+        },
+        {
+          "h": "/index.aspx",
+          "t": "Inicio"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas",
+          "t": "Propiedades"
+        },
+        {
+          "h": "/quienesSomos.aspx",
+          "t": "Quiénes somos"
+        },
+        {
+          "h": "/servicios.aspx",
+          "t": "Servicios"
+        },
+        {
+          "h": "/blog.aspx",
+          "t": "Blog"
+        },
+        {
+          "h": "/contacto.aspx",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://goo.gl/maps/38xBhaERQMGB3dPb7",
+          "t": "Av. Las Condes 12.265 – Torre 1 Oficina 20, Las Condes"
+        },
+        {
+          "h": "mailto:info@gestall.cl\n",
+          "t": "info@gestall.cl"
+        },
+        {
+          "h": "tel:+569 9001 2163",
+          "t": "+569 9001 2163"
+        },
+        {
+          "h": "tel: +562 2217 4166\n",
+          "t": "+562 2217 4166"
+        },
+        {
+          "h": "https://www.facebook.com/gestall.cl",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/gestall.cl",
+          "t": ""
+        },
+        {
+          "h": "https://twitter.com/Gestall2",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/company/gestall-gesti%C3%B3n-inmobiliaria",
+          "t": ""
+        },
+        {
+          "h": "http://www.convecta.cl/",
+          "t": "Convecta"
+        }
+      ],
+      "politica": [],
+      "largo_texto": 2489,
+      "muestra": "INICIO\nPROPIEDADES\nQUIÉNES SOMOS\nSERVICIOS\nBLOG\nCONTACTO\n¡Encuentra tu nuevo hogar!\nCOMPRAR\nARRENDAR\nPOR CÓDIGO\nTipo propiedad\nCasa\nDepartamento\nOficina\nSitio\nLocal Comercial\nParcela\nEstacionamiento\nTipo propiedad\nRegión\nReg. Araucanía\nReg. Los Lagos\nReg. Maule\nReg. Metropolitana\nReg. Valparaiso\nRegión\nComuna\nColina\nCunco\nEstación Central\nHuechuraba\nIndependencia\nLa Cisterna\nLa Reina\nLas Condes\nLo Barnechea\nMaipú\nÑuñoa\nProvidencia\nPuchuncaví\nPudahuel\nPuerto Varas\nSan Miguel\nSantiago\nVichuquén\nVi",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 12,
+        "palabras": 374
+      }
+    },
+    "captura": "r3-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:700,800|Roboto:400,500,700",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/vendor/bootstrap/css/bootstrap.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/vendor/icons/css/materialdesignicons.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/vendor/select2/css/select2-bootstrap.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/vendor/select2/css/select2.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/css/owl.carousel.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/css/samar.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/css/loading.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/css/cnvct/custom_v03.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/img/global/logo.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl/gestall/img/propiedades/5687_3koK0mhIhWtAiAq1GUmp20230123203717.jpg?sv=2021-06-08&ss=f&srt=sco&sp=r&se=2026-02-01T23:44:43Z&st=2022-09-12T15:44:43Z&spr=https&sig=8wumTxX67AEf8bZxCO8ZoRk9Jw6m8UWq2%2FYFAqMdnJw%3D",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl/gestall/img/propiedades/5685_0YuMhYYytVqtjVBFerx320230306213628.jpg?sv=2021-06-08&ss=f&srt=sco&sp=r&se=2026-02-01T23:44:43Z&st=2022-09-12T15:44:43Z&spr=https&sig=8wumTxX67AEf8bZxCO8ZoRk9Jw6m8UWq2%2FYFAqMdnJw%3D",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl/gestall/img/propiedades/5984_mGuBkq2UE3ODlJEdTVtb20230606214612.jpg?sv=2021-06-08&ss=f&srt=sco&sp=r&se=2026-02-01T23:44:43Z&st=2022-09-12T15:44:43Z&spr=https&sig=8wumTxX67AEf8bZxCO8ZoRk9Jw6m8UWq2%2FYFAqMdnJw%3D",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl/gestall/img/propiedades/5969_YAraZfHbPycShJNJcPNw20241113023246.jpg?sv=2021-06-08&ss=f&srt=sco&sp=r&se=2026-02-01T23:44:43Z&st=2022-09-12T15:44:43Z&spr=https&sig=8wumTxX67AEf8bZxCO8ZoRk9Jw6m8UWq2%2FYFAqMdnJw%3D",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl/gestall/img/propiedades/5961_x5azyhmlBWaxGMnQlwds20250625201706.jpg?sv=2021-06-08&ss=f&srt=sco&sp=r&se=2026-02-01T23:44:43Z&st=2022-09-12T15:44:43Z&spr=https&sig=8wumTxX67AEf8bZxCO8ZoRk9Jw6m8UWq2%2FYFAqMdnJw%3D",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl/gestall/img/propiedades/5727_mW81ZIdunkgCvgdTekrs20240514020816.jpg?sv=2021-06-08&ss=f&srt=sco&sp=r&se=2026-02-01T23:44:43Z&st=2022-09-12T15:44:43Z&spr=https&sig=8wumTxX67AEf8bZxCO8ZoRk9Jw6m8UWq2%2FYFAqMdnJw%3D",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/img/comunas/condes.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/img/comunas/lo-barnechea.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/img/comunas/providencia1.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/img/comunas/vitacura1.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl//gestall/img/cms/50_eSJ95Ts6gqwqXps5lqe820240723205414.jpg?sv=2021-06-08&ss=f&srt=sco&sp=r&se=2026-02-01T23:44:43Z&st=2022-09-12T15:44:43Z&spr=https&sig=8wumTxX67AEf8bZxCO8ZoRk9Jw6m8UWq2%2FYFAqMdnJw%3D",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/img/global/logo.png?sv=2021-06-08&ss=f&srt=sco&sp=r&se=2026-02-01T23:44:43Z&st=2022-09-12T15:44:43Z&spr=https&sig=8wumTxX67AEf8bZxCO8ZoRk9Jw6m8UWq2%2FYFAqMdnJw%3D",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl//gestall/img/cms/49_cseCyOvGHdTeEp2curri20231113204824.jpg?sv=2021-06-08&ss=f&srt=sco&sp=r&se=2026-02-01T23:44:43Z&st=2022-09-12T15:44:43Z&spr=https&sig=8wumTxX67AEf8bZxCO8ZoRk9Jw6m8UWq2%2FYFAqMdnJw%3D",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl//gestall/img/cms/48_gkDdcL2FTKncO4iJYMsB20231113201558.jpeg?sv=2021-06-08&ss=f&srt=sco&sp=r&se=2026-02-01T23:44:43Z&st=2022-09-12T15:44:43Z&spr=https&sig=8wumTxX67AEf8bZxCO8ZoRk9Jw6m8UWq2%2FYFAqMdnJw%3D",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/img/global/logoPie1.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/vendor/jquery/jquery.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/vendor/select2/js/select2.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/js/owl.carousel.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/js/custom.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/js/cnvct/global.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/js/cnvct/inicio_v02.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/js/cnvct/custom.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css?family=Quicksand",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/en_US/fbevents.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/img/slider/slider01.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/quicksand/v37/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/img/web/banner.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/vendor/icons/fonts/materialdesignicons-webfont.woff2?v=2.1.99",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/signals/config/1069423246873424?v=2.9.419&r=stable&domain=gestall.cl&hme=7459fa3e38c2784dbaf309537bed5fa7e8560fab51fb61e53e5ffafeb46a02a9&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/img/favIcon/favicon-32x32.png",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gestall.cl/assets/img/slider/slider02.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gestall.cl/assets/img/slider/slider03.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "ASP.NET_SessionId",
+      "desde": "gestall.cl"
+    }
+  ],
+  "peso": {
+    "total_bytes": 5372467,
+    "al_abrir_bytes": 5078089,
+    "n_peticiones": 44,
+    "mas_pesados": [
+      {
+        "url": "https://gestall.cl/assets/img/comunas/vitacura1.jpg",
+        "bytes": 679924
+      },
+      {
+        "url": "https://gestall.cl/assets/img/comunas/lo-barnechea.jpg",
+        "bytes": 678657
+      },
+      {
+        "url": "https://gestall.cl/assets/img/comunas/condes.jpg",
+        "bytes": 443846
+      },
+      {
+        "url": "https://gestall.cl/assets/img/slider/slider02.jpg",
+        "bytes": 385816
+      }
+    ]
+  },
+  "html_len": 42505
+}

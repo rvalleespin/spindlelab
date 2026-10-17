@@ -15,8 +15,10 @@ const VEREDICTO = {
     detalle_para_correo: { type: 'string', description: 'Hechos concretos y comprobables que podrían ir en el correo (sin redactar el correo). Vacío si no confirma.' },
     advertencias: { type: 'array', items: { type: 'string' }, description: 'Cosas que NO se deben afirmar o que dependen del criterio' },
     motivo: { type: 'string', description: 'Si refutas o no concluyes: por qué' },
+    vende_proteccion_datos: { type: 'boolean', description: 'true si en el menú, los servicios o las áreas de práctica de la portada la empresa OFRECE como servicio protección de datos personales, privacidad, ciberseguridad o cumplimiento de la ley de datos (es competidor y no se le escribe). No refutes por esto, solo márcalo.' },
+    vende_nota: { type: 'string', description: 'El texto del sitio que respalda vende_proteccion_datos (vacío si es false)' },
   },
-  required: ['id', 'veredicto', 'que_vi', 'detalle_para_correo', 'advertencias', 'motivo'],
+  required: ['id', 'veredicto', 'que_vi', 'detalle_para_correo', 'advertencias', 'motivo', 'vende_proteccion_datos', 'vende_nota'],
 }
 
 const LENTES = [
@@ -30,7 +32,7 @@ const prompt = (id, lente) => `Eres un verificador independiente. Un detector au
 
 ${lente.texto}
 
-DATOS: abre el archivo ${ARCHIVO} (arreglo JSON) y toma el objeto cuyo "id" es "${id}". Trae: dominio, oferta (C1 | F1 | F10 | F2), afirmable (la afirmación del motor), no_afirmable, cookies (solo C1) y dir (carpeta con las capturas del motor).
+DATOS: abre el archivo ${ARCHIVO} (arreglo JSON) y toma el objeto cuyo "id" es "${id}". Trae: dominio, oferta (C1 | F1 | F10 | F2 | F3 | F9), afirmable (la afirmación del motor), no_afirmable, cookies (solo C1) y dir (carpeta con las capturas del motor).
 
 INDEPENDENCIA: NO leas el código del motor ni ficha.md ni ficha.json. Haz primero tu PROPIA medición del sitio en vivo. Recién después puedes mirar las capturas del motor (dir/r1-A.jpg y dir/r1-B.jpg, con la herramienta Read) para comparar.
 
@@ -41,6 +43,11 @@ CÓMO MEDIR (Playwright ya está instalado; escribe tu script como archivo .cjs 
 - Si oferta = F1 (formulario en la portada que pide correo o teléfono y ningún enlace a política de privacidad): carga la portada, lista los formularios visibles con sus campos (type/name/placeholder) y busca TODOS los enlaces de la página (incluido el pie) cuyo texto o href mencione privacidad, datos personales, política(s), protección de datos o similar. Confirma solo si hay un formulario visible que pide correo o teléfono y no hay ningún enlace de ese tipo. Anota si hay enlace a "Términos y condiciones" u otro aviso legal (advertencia).
 - Si oferta = F10 (en la primera pantalla no hay botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar): viewport 1280x720 y también 390x844; captura la primera pantalla de cada una y mírala con Read. Lista los enlaces/botones visibles sobre el pliegue. Confirma solo si de verdad no hay ninguna acción de contacto visible en la primera pantalla en ninguno de los dos tamaños. Un ítem de menú llamado "Contacto"/"Contato" o equivalente, un teléfono visible escrito como texto o un chat flotante cuentan como acción de contacto: en ese caso refuta. Ítems como "Oficinas" o "Equipo" no cuentan, pero anótalo como advertencia.
 - Si oferta = F2 (sin ruta de contacto en la portada): igual que F10 pero sobre toda la portada y su pie: teléfono, correo, WhatsApp, formulario o enlace a página de contacto. Confirma solo si no hay ninguna. Verifica además que la página cargó de verdad (si sale en blanco o con error de red, es no_concluyente) y que es el sitio real de la empresa (no una página de hosting 'en construcción' ni una plantilla sin personalizar; si el dominio redirige a otro sitio o el sitio parece de otra organización, dilo en advertencias con la palabra ALERTA DE IDENTIDAD).
+
+- Si oferta = F3 (el enlace de WhatsApp del sitio usa un número sin código de país): lista TODOS los enlaces de la portada (y del pie) que apunten a wa.me, api.whatsapp.com o whatsapp://. Anota el número exacto tal como está escrito en el enlace. Confirma solo si el enlace de WhatsApp existe y su número NO trae código de país (por ejemplo 9 dígitos que empiezan con 9, sin el 56). Si el número trae 56 o +56, refuta. No hagas clic. Puedes pedir (GET) la URL del enlace tal cual para ver qué responde WhatsApp, pero anota que eso no equivale a probarlo en un celular. Anota si el número se ve escrito en la página con el código (advertencia).
+- Si oferta = F9 (el enlace a la política de privacidad o al aviso legal lleva a una página que no existe): encuentra en la portada y el pie los enlaces cuyo texto o href mencione privacidad, política, aviso legal, términos o datos personales. Para cada uno carga el destino con el navegador (GET) y registra el estado HTTP y lo que se ve (¿página de error 404, o la portada, o una política real?). Confirma solo si al menos un enlace de ese tipo lleva a una página que no existe (404 o equivalente que se ve como error) y NO hay otro enlace que lleve a una política de privacidad real. Si hay otro enlace que sí funciona, refuta o pon no_concluyente y explícalo. Un 200 con texto de 'página no encontrada' cuenta como página que no existe.
+
+MIENTRAS ESTÁS EN EL SITIO (para cualquier oferta): mira el menú, los servicios o las áreas de práctica de la portada y marca vende_proteccion_datos=true si la empresa ofrece como servicio propio protección de datos personales, privacidad, ciberseguridad o cumplimiento de la ley de datos. Es solo un marcador, no cambia tu veredicto sobre el hallazgo.
 
 Si el sitio no carga o carga distinto desde tu medición, no concluyas por intuición: di no_concluyente y por qué.
 
@@ -56,7 +63,7 @@ const resultados = await pipeline(
     const conf = v.filter((x) => x.veredicto === 'confirma').length
     const ref = v.filter((x) => x.veredicto === 'refuta').length
     const final = v.length < 2 ? 'incompleto' : conf === 2 ? 'confirmado' : ref >= 1 ? 'refutado' : 'no_concluyente'
-    return { id, final, veredictos: v }
+    return { id, final, vende_proteccion_datos: v.some((x) => x.vende_proteccion_datos === true), veredictos: v }
   },
 )
 phase('Veredicto')

@@ -1,0 +1,370 @@
+[
+ {
+  "id": "R21",
+  "dominio": "vicapital.cl",
+  "empresa": "Vicapital",
+  "oferta": "F10",
+  "afirmable": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+  "no_afirmable": [
+   "que no exista contacto más abajo en la página"
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R21"
+ },
+ {
+  "id": "R23",
+  "dominio": "altis.cl",
+  "empresa": "Servicios Financieros ALTIS S.A.",
+  "oferta": "F2",
+  "afirmable": "En la portada no hay formulario, ni teléfono, ni correo, ni WhatsApp, ni un enlace de contacto.",
+  "no_afirmable": [
+   "que el negocio no tenga contacto en otras páginas del sitio (solo se revisó la portada)"
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R23"
+ },
+ {
+  "id": "R24",
+  "dominio": "paragonadvisors.cl",
+  "empresa": "Paragon Private Advisors",
+  "oferta": "F1",
+  "afirmable": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+  "no_afirmable": [
+   "que \"no tiene política\" en todo el sitio (solo se revisó la portada)",
+   "lo que la ley \"exige\""
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R24"
+ },
+ {
+  "id": "R25",
+  "dominio": "redlaser.cl",
+  "empresa": "Redlaser",
+  "oferta": "F10",
+  "afirmable": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+  "no_afirmable": [
+   "que no exista contacto más abajo en la página"
+  ],
+  "cookies": [
+   "_gcl_au"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R25"
+ },
+ {
+  "id": "R30",
+  "dominio": "oscplus.cl",
+  "empresa": "OSC Plus",
+  "oferta": "F9",
+  "afirmable": "El enlace a /legal-notice (política o aviso legal) responde 404, en dos rondas.",
+  "no_afirmable": [
+   "lo que la ley \"exige\"",
+   "que el sitio no tenga política en otra dirección"
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R30"
+ },
+ {
+  "id": "R32",
+  "dominio": "clavetributariacontadores.cl",
+  "empresa": "Clave Tributaria Contadores",
+  "oferta": "F1",
+  "afirmable": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+  "no_afirmable": [
+   "que \"no tiene política\" en todo el sitio (solo se revisó la portada)",
+   "lo que la ley \"exige\""
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R32"
+ },
+ {
+  "id": "R33",
+  "dominio": "contable.app",
+  "empresa": "Contable.app",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _gcl_au, _ga, _ga_05M5Q3X1N3, _fbp.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads, Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_gcl_au",
+   "_ga",
+   "_ga_05M5Q3X1N3",
+   "_fbp"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R33"
+ },
+ {
+  "id": "R34",
+  "dominio": "tuoficinacontable.cl",
+  "empresa": "Tu Oficina Contable",
+  "oferta": "F3",
+  "afirmable": "El enlace de WhatsApp usa un número de 9 dígitos sin código de país (96XXXXXXX).",
+  "no_afirmable": [
+   "que \"no abre\": el motor no probó el enlace en WhatsApp (solo lee el formato del número)"
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R34"
+ },
+ {
+  "id": "R35",
+  "dominio": "akcontadores.cl",
+  "empresa": "AK Contadores",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _gcl_au, _ga_D9WPPCQNW2, _ga, _fbp.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads, Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_gcl_au",
+   "_ga_D9WPPCQNW2",
+   "_ga",
+   "_fbp"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R35"
+ },
+ {
+  "id": "R42",
+  "dominio": "mcontabilidad.cl",
+  "empresa": "Morales Contabilidad",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_4WWBGH6K5C, _ga, _clck, _clsk.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics, Microsoft Clarity)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_4WWBGH6K5C",
+   "_ga",
+   "_clck",
+   "_clsk"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R42"
+ },
+ {
+  "id": "R44",
+  "dominio": "a2rcontadores.cl",
+  "empresa": "A2R Contadores",
+  "oferta": "F1",
+  "afirmable": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+  "no_afirmable": [
+   "que \"no tiene política\" en todo el sitio (solo se revisó la portada)",
+   "lo que la ley \"exige\""
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R44"
+ },
+ {
+  "id": "R46",
+  "dominio": "neosit.cl",
+  "empresa": "Neosit",
+  "oferta": "F1",
+  "afirmable": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+  "no_afirmable": [
+   "que \"no tiene política\" en todo el sitio (solo se revisó la portada)",
+   "lo que la ley \"exige\""
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R46"
+ },
+ {
+  "id": "R48",
+  "dominio": "taxwork.cl",
+  "empresa": "Taxwork Contadores Auditores",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_PCTG4KSHMK, _ga, _fbp.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_PCTG4KSHMK",
+   "_ga",
+   "_fbp"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R48"
+ },
+ {
+  "id": "R50",
+  "dominio": "rento.cl",
+  "empresa": "Rento Propiedades",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _gcl_au, _ga_BSLHZCYFD1, _ga_1MWKW5BMPY, _ga, _gid, _gat_gtag_UA_106407276_3, _fbp.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads, Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_gcl_au",
+   "_ga_BSLHZCYFD1",
+   "_ga_1MWKW5BMPY",
+   "_ga",
+   "_gid",
+   "_gat_gtag_UA_106407276_3",
+   "_fbp"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R50"
+ },
+ {
+  "id": "R57",
+  "dominio": "gesinpropiedades.cl",
+  "empresa": "Gesin Propiedades",
+  "oferta": "F1",
+  "afirmable": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+  "no_afirmable": [
+   "que \"no tiene política\" en todo el sitio (solo se revisó la portada)",
+   "lo que la ley \"exige\""
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R57"
+ },
+ {
+  "id": "R58",
+  "dominio": "ppartnersgroup.com",
+  "empresa": "Property Partners",
+  "oferta": "F10",
+  "afirmable": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+  "no_afirmable": [
+   "que no exista contacto más abajo en la página"
+  ],
+  "cookies": [
+   "_gcl_au",
+   "_ga",
+   "_fbp",
+   "_ga_KNTJQ1SM0E"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R58"
+ },
+ {
+  "id": "R59",
+  "dominio": "gpremium.cl",
+  "empresa": "Grupo Premium Propiedades",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _gcl_au, _ga_5BDFWX7PY3, _ga, _gid, _gat_UA-186246262-1, _fbp.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads, Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_gcl_au",
+   "_ga_5BDFWX7PY3",
+   "_ga",
+   "_gid",
+   "_gat_UA-186246262-1",
+   "_fbp"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R59"
+ },
+ {
+  "id": "R60",
+  "dominio": "propiedadescima.com",
+  "empresa": "Cima Propiedades",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_ZR07YY1F68, _ga, _ga_5CH92BLCPN, _fbp.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_ZR07YY1F68",
+   "_ga",
+   "_ga_5CH92BLCPN",
+   "_fbp"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R60"
+ },
+ {
+  "id": "R62",
+  "dominio": "corredoresintegrados.cl",
+  "empresa": "Corredores Integrados",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _gid, _gat, _fbp, _clck, _clsk, _ga, _gcl_au, _ga_0Q2JL4S2BT, _ga_9NQ624P4CD.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads, Google Analytics, Microsoft Clarity)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_gid",
+   "_gat",
+   "_fbp",
+   "_clck",
+   "_clsk",
+   "_ga",
+   "_gcl_au",
+   "_ga_0Q2JL4S2BT",
+   "_ga_9NQ624P4CD"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R62"
+ },
+ {
+  "id": "R63",
+  "dominio": "silvecpropiedades.cl",
+  "empresa": "SILVEC Propiedades",
+  "oferta": "F1",
+  "afirmable": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+  "no_afirmable": [
+   "que \"no tiene política\" en todo el sitio (solo se revisó la portada)",
+   "lo que la ley \"exige\""
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R63"
+ },
+ {
+  "id": "R68",
+  "dominio": "urbac.cl",
+  "empresa": "Urbac Corredores",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_L7M7BRHW68, _gcl_au, _ga, _gid, _gat_UA-102700061-1.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_L7M7BRHW68",
+   "_gcl_au",
+   "_ga",
+   "_gid",
+   "_gat_UA-102700061-1"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R68"
+ },
+ {
+  "id": "R69",
+  "dominio": "goycooleapropiedades.cl",
+  "empresa": "Goycoolea Propiedades",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _gcl_au, _ga, _ga_C14F0ZR28E, _fbp.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_gcl_au",
+   "_ga",
+   "_ga_C14F0ZR28E",
+   "_fbp"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-16-reactivacion/R69"
+ }
+]

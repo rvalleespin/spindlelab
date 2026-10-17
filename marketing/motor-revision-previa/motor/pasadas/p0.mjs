@@ -75,12 +75,12 @@ export function descartadoAntes(dominio) {
 }
 
 // remedir: se mide un prospecto YA contactado (para un seguimiento). Se salta 'ya contactado', pero la lista de exclusion SIGUE mandando.
-export async function pasada0(dominio, { correo, sinCorte = false, remedir = false } = {}) {
+export async function pasada0(dominio, { correo, sinCorte = false, remedir = false, aunContactado = false } = {}) {
   const out = { pasada: 0, dominio, ...(sinCorte ? { sin_corte: true } : {}) };
   const ex = enExclusion(dominio, correo);
   if (ex && !sinCorte) return { ...out, corte: 'excluido', detalle: ex };
   if (!sinCorte && !remedir) { const d = descartadoAntes(dominio); if (d) return { ...out, corte: 'descartado-antes', detalle: { ...d, nota: 'Ya estaba marcado como no escribir en una lista de ventas/. Si cambio, correr con --sin-corte.' } }; }
-  const cont = (sinCorte || remedir) ? { seguro: [], posible: [] } : yaContactado(dominio);
+  const cont = (sinCorte || remedir || aunContactado) ? { seguro: [], posible: [] } : yaContactado(dominio);   // aunContactado: reactivacion, se mide a quien ya recibio correos; exclusion y descartes siguen vigentes
   if (cont.seguro.length) return { ...out, corte: 'ya-contactado', detalle: { en: cont.seguro.slice(0, 5), nota: 'Hay un envio registrado. Confirmar en Gmail (in:sent to:dominio).' } };
 
   let r = null;

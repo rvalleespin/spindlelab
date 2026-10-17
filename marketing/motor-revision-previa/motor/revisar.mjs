@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Motor de revision previa. Detector de SOSPECHA: dice donde mirar. No produce el hallazgo del correo.
-// Uso:  NODE_USE_ENV_PROXY=1 node revisar.mjs <dominio> --id S01 --out ../corridas/<carpeta> [--correo x@y.cl] [--sin-corte]
+// Uso:  NODE_USE_ENV_PROXY=1 node revisar.mjs <dominio> --id S01 --out ../corridas/<carpeta> [--correo x@y.cl] [--sin-corte] [--aun-contactados]
 import fs from 'node:fs';
 import path from 'node:path';
 import { pasada0, limpiarDominio } from './pasadas/p0.mjs';
@@ -22,7 +22,7 @@ const log = (...x) => console.error(`[${id}]`, ...x);
 
 const ficha = { id, dominio, motor: 'v0', cuando: new Date().toISOString(), entorno: process.env.CLAUDE_CODE_REMOTE ? 'cloud (IP de datacenter, via proxy)' : 'local', sin_corte: args.includes('--sin-corte') || undefined };
 
-const p0 = await pasada0(dominio, { correo: flag('--correo'), sinCorte: args.includes('--sin-corte'), remedir: args.includes('--remedir') });
+const p0 = await pasada0(dominio, { correo: flag('--correo'), sinCorte: args.includes('--sin-corte'), remedir: args.includes('--remedir'), aunContactado: args.includes('--aun-contactados') });
 if (p0.corte) {
   Object.assign(ficha, { resultado: `descartado:${p0.corte}`, detalle: p0.detalle });
   escribir('ficha.json', ficha); escribir('ficha.md', `# ${id}\n\n**resultado:** descartado:${p0.corte}\n\n${JSON.stringify(p0.detalle, null, 2)}\n`);

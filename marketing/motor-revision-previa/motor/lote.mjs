@@ -16,6 +16,7 @@ const args = process.argv.slice(2);
 const arg = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
 const csvPath = args.find((a) => !a.startsWith('--') && !['--out', '--concurrencia', '--max', '--prefijo'].includes(args[args.indexOf(a) - 1]));
 if (!csvPath || !arg('--out')) { console.error('Uso: node lote.mjs <leads.csv> --out <carpeta> [--concurrencia 3] [--max N] [--prefijo L]'); process.exit(2); }
+const aunContactados = args.includes('--aun-contactados');   // reactivacion: mide a quien ya recibio correos (exclusion y descartes siguen aplicando)
 const sinCorte = args.includes('--sin-corte');   // salta exclusion / ya contactado / parking. Para listas que ya se curaron aparte.
 const out = path.resolve(arg('--out')), conc = +arg('--concurrencia', 3), max = +arg('--max', 0), pref = arg('--prefijo', 'L');
 const aqui = path.dirname(fileURLToPath(import.meta.url));
@@ -33,7 +34,7 @@ console.error(`[lote] ${lista.length} sitios, concurrencia ${conc}`);
 
 const corre = (l) => new Promise((resolve) => {
   if (fs.existsSync(path.join(out, l.id, 'ficha.json'))) { console.error(`[${l.id}] ya estaba hecho`); return resolve('saltado'); }
-  const hijo = spawn(process.execPath, ['--no-warnings', path.join(aqui, 'revisar.mjs'), l.dominio, '--id', l.id, '--out', out, ...(l.correo ? ['--correo', l.correo] : []), ...(sinCorte ? ['--sin-corte'] : [])],
+  const hijo = spawn(process.execPath, ['--no-warnings', path.join(aqui, 'revisar.mjs'), l.dominio, '--id', l.id, '--out', out, ...(l.correo ? ['--correo', l.correo] : []), ...(sinCorte ? ['--sin-corte'] : []), ...(aunContactados ? ['--aun-contactados'] : [])],
     { env: { ...process.env, NODE_USE_ENV_PROXY: '1' }, stdio: ['ignore', 'pipe', 'pipe'] });
   let linea = ''; hijo.stdout.on('data', (d) => { linea += d; }); hijo.stderr.on('data', () => {});
   const t = setTimeout(() => hijo.kill('SIGKILL'), 900000);

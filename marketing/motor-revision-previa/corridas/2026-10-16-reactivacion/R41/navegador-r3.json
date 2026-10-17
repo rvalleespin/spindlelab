@@ -1,0 +1,270 @@
+{
+  "url": "https://aucont.cl/",
+  "cuando": "2026-10-16T23:33:22.474Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "PHPSESSID",
+        "dominio": "aucont.cl",
+        "expira_dias": 0
+      }
+    ],
+    "dom": {
+      "url": "https://aucont.cl/",
+      "titulo": "Inicio",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [
+        {
+          "h": "https://aucont.cl/",
+          "t": "INICIO"
+        },
+        {
+          "h": "Servicios/",
+          "t": "SERVICIOS"
+        },
+        {
+          "h": "Contactos/",
+          "t": "CONTACTOS"
+        },
+        {
+          "h": "mailto:irwin.cordova@aucont.cl",
+          "t": "irwin.cordova@aucont.cl"
+        }
+      ],
+      "politica": [],
+      "largo_texto": 790,
+      "muestra": "AUCONT\n\nAsesoria y Auditoria Contable\n\nINICIO\nSERVICIOS\nCONTACTOS\nAsesorias Contable y Auditoria\nNuestros servicios\nAsesorías\n\n \n\nDesde que nace  el emprendimiento. \n\nSiempre habrá una recomendación con estrategias fiables. \n\nAdministración \n\n \n\nLa gestión de tu empresa es la orientación futura para que crezca al máximo el negocio  \n\nContabilidad\n\n \n\nLa oportunidad de la calidad en los servicios, siempre está en la decisión de las buenas alternativas. \n\nCONTACTO\n\n \n\nirwin.cordova@aucont.cl\n\n \n\nC",
+      "cta_en_pantalla": [
+        {
+          "t": "contactos",
+          "h": "Contactos/"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 1,
+        "palabras": 99
+      }
+    },
+    "captura": "r3-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "PHPSESSID",
+        "dominio": "aucont.cl",
+        "expira_dias": 0
+      }
+    ],
+    "dom": {
+      "url": "https://aucont.cl/",
+      "titulo": "Inicio",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [
+        {
+          "h": "https://aucont.cl/",
+          "t": "INICIO"
+        },
+        {
+          "h": "Servicios/",
+          "t": "SERVICIOS"
+        },
+        {
+          "h": "Contactos/",
+          "t": "CONTACTOS"
+        },
+        {
+          "h": "mailto:irwin.cordova@aucont.cl",
+          "t": "irwin.cordova@aucont.cl"
+        }
+      ],
+      "politica": [],
+      "largo_texto": 790,
+      "muestra": "AUCONT\n\nAsesoria y Auditoria Contable\n\nINICIO\nSERVICIOS\nCONTACTOS\nAsesorias Contable y Auditoria\nNuestros servicios\nAsesorías\n\n \n\nDesde que nace  el emprendimiento. \n\nSiempre habrá una recomendación con estrategias fiables. \n\nAdministración \n\n \n\nLa gestión de tu empresa es la orientación futura para que crezca al máximo el negocio  \n\nContabilidad\n\n \n\nLa oportunidad de la calidad en los servicios, siempre está en la decisión de las buenas alternativas. \n\nCONTACTO\n\n \n\nirwin.cordova@aucont.cl\n\n \n\nC",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 1,
+        "palabras": 99
+      }
+    },
+    "captura": "r3-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/js/common-bundle.js?ts=20260617232012",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/js/a19ed7390e42001d2c6efb7f5775675d-bundle.js?ts=20260617232012",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/css/common-bundle.css?ts=20260617232012",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin,latin-ext,vietnamese",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css?family=Poppins:700,700i,400,400i&subset=devanagari,latin-ext,latin",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/css/a19ed7390e42001d2c6efb7f5775675d-bundle.css?ts=20260617232012",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/gallery_gen/ea8bd3bd009ee429f288c7aca9e11a95_fit.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/gallery_gen/635342e8354f3d2da738b631e3eedc65_fit.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/gallery_gen/9a4c719a922b2aa0e4a33d70f66a451c_fit.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/gallery_gen/06760df76ad9256a7b0c3a2aa11fef7d_fit.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecg.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/gallery/undraw_finance_0bdk-ts1561553957.svg?ts=1781727612",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/gallery/undraw_goals_w8tw-ts1561554489.svg?ts=1781727612",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/gallery/undraw_business_analytics_l92d-ts1561554383.svg?ts=1781727612",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/gallery_gen/30ab1e9d0eb5a07782cbbd801b7c52ae_fit.jpg?ts=1781727612",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/favicon.ico",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://aucont.cl/gallery_gen/7196d35a2b5f17a3adf5fba25a9c4461_fit.jpg?ts=1781727612",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "PHPSESSID",
+      "desde": "aucont.cl"
+    }
+  ],
+  "peso": {
+    "total_bytes": 1504948,
+    "al_abrir_bytes": 1504948,
+    "n_peticiones": 20,
+    "mas_pesados": [
+      {
+        "url": "https://aucont.cl/gallery_gen/30ab1e9d0eb5a07782cbbd801b7c52ae_fit.jpg?ts=1781727612",
+        "bytes": 319352
+      },
+      {
+        "url": "https://aucont.cl/gallery_gen/7196d35a2b5f17a3adf5fba25a9c4461_fit.jpg?ts=1781727612",
+        "bytes": 310262
+      },
+      {
+        "url": "https://aucont.cl/css/common-bundle.css?ts=20260617232012",
+        "bytes": 252306
+      },
+      {
+        "url": "https://aucont.cl/js/common-bundle.js?ts=20260617232012",
+        "bytes": 172569
+      }
+    ]
+  },
+  "html_len": 12569
+}
