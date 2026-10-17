@@ -80,7 +80,9 @@ Fuentes abiertas de nuevo, una por una, contra lo que dice el sitio:
 | Tipo | Concepto · industrial B2B · izaje |
 | Año | 2026 |
 | Qué se hizo | Identidad (etiqueta cosida, color de la norma, letra), placas, portadas, sitio (home e interior) y recorrido grabado |
-| Medio principal | `movimiento/recorrido.mp4` (16:9, 1440 × 810) y `capturas/home-390-primera.png` (4:5) |
+| Medio principal | `movimiento/recorrido.mp4` (16:9, 1440 × 810, 10 s, póster `movimiento/poster.jpg`) y `capturas/medio-4x5-390.png` (4:5) |
 | Portadas | `identidad/portadas/portada-4x5.png`, `-4x3.png`, `-5x3.png` |
 | Resultado | Sin métrica: es un concepto, no tuvo usuarios |
 | Generación pagada | Ninguna (0 créditos). Fotos cotizadas en `caso.md` |
+| Texto | `texto.md` (Clara), con lo que se borró y por qué |
+| Caso | `caso.md`, al estilo de Koto: ficha lateral, desafío, estrategia, identidad, aplicación y qué muestra, con sus filas de medios |

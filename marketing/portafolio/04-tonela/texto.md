@@ -142,6 +142,8 @@ Las cinco son las que el comprador le hace hoy a una IA o a un PDF en inglés. M
   cada uso.
 - Al margen: Criterios: EN 1492-1 (planas) y EN 1492-2 (redondas), y lo que publica cada fabricante. Estrobos, cadenas
   y grilletes se revisan contra sus propias normas y no están en esta página.
+- La cinta en revisión (dibujo bajo la portada, decorativo): la ficha cosida dice «Revisión anual · Apta · Se da de
+  baja», con las dos casillas vacías. Sin resultado marcado: es una plantilla.
 - **Cuándo** · H2: Tres revisiones, y solo una es del taller. Antes de cada uso (quien la usa) · Durante el trabajo
   (quien la usa) · Al menos una vez al año (una persona competente, el taller).
 - **Qué se revisa** · H2: Seis lugares donde una eslinga avisa. La etiqueta · La cinta · Los bordes · Las costuras ·

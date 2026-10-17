@@ -123,8 +123,8 @@ for (const p of paginas) {
 }
 
 // medio principal del caso: 16:9 a 1440 × 810 y 4:5 a 390 × 488 (dpr 2)
-for (const [w, h, dpr, nombre] of [[1440, 810, 1, 'medio-16x9-1440.png'], [390, 488, 2, 'medio-4x5-390.png']]) {
-  const { ctx, page } = await abrir('/sitio/', w, h, dpr);
+for (const [w, h, dpr, nombre, ruta] of [[1440, 810, 1, 'medio-16x9-1440.png', '/sitio/'], [390, 488, 2, 'medio-4x5-390.png', '/sitio/'], [390, 488, 2, 'inspeccion-4x5-390.png', '/sitio/inspeccion/']]) {
+  const { ctx, page } = await abrir(ruta, w, h, dpr);
   await page.screenshot({ path: path.join(salida, nombre) });
   await ctx.close();
   console.log('ok', nombre);
