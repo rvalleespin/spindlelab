@@ -35,14 +35,14 @@ como nombre se lee como invento.
 | **Fermín Achondo Lizana** | Nulidad del despido y tutela | «No se encontraron registros» para «Fermín Achondo Lizana», «Fermin Achondo Lizana», «Fermín Achondo» y los apellidos «Achondo Lizana» |
 
 - **Fuente:** `pjud.cl/transparencia/busqueda-de-abogados`, «Búsqueda por Nombre», consultado el **16-oct-2026 entre
-  las 23:30 y las 23:45 (Chile)**. Se guardó solo el conteo de coincidencias, ningún dato de nadie
+  las 23:30 y las 23:45 (Chile)** y de nuevo el 17-oct a las 00:2x. Se guardó solo el conteo de coincidencias, ningún dato de nadie
   (`_herramientas/pjud-nombres.mjs` y `pjud-nombres.json`). Control: «Juan Pérez» devuelve resultados (la primera
   página muestra 5), así que un cero significa algo.
-- **Una nota de método:** el buscador rechaza las ráfagas («La URL solicitada ha sido rechazada»). En la última
-  corrida guardada, dos consultas de Fermín y el control «Pérez Caris» quedaron como `null` por eso, no como cero;
-  las mismas consultas habían devuelto «No se encontraron registros» media hora antes, en la prueba a mano. La
-  herramienta ya abre una sesión nueva por consulta y espera entre una y otra. **Se repite** el día que la pieza entre
-  al índice de `/trabajo/`, con calma.
+- **Una nota de método:** el buscador rechaza las ráfagas («La URL solicitada ha sido rechazada») y una respuesta
+  rechazada no es un cero. La herramienta abre una sesión nueva por consulta, espera entre una y otra y marca como
+  `null` lo que no se pudo leer. La corrida guardada (17-oct, 00:2x Chile) tiene las diez consultas válidas: los dos
+  controles con resultados y las ocho de los nombres ficticios con «No se encontraron registros». **Se repite** el día
+  que la pieza entre al índice de `/trabajo/`, con calma.
 - **Sin foto, sin cara, sin número de registro, sin rol de causa.** Donde iría el dato, el sitio dice por qué no
   está. Una búsqueda web de «"Velarde Quintral" OR "Achondo Lizana" abogado Chile» (16-oct) no devolvió a nadie con
   esos nombres.
