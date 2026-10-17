@@ -10,7 +10,7 @@ import { pathToFileURL } from "node:url";
 const { chromium } = await import(pathToFileURL("/home/user/spindlelab/spindlelab-astro/node_modules/playwright/index.mjs").href);
 const base = process.argv[2];
 const vetadas = ["Google Sans", "Mona Sans", "DM Mono", "Instrument Sans", "IBM Plex", "Gabarito", "Inter", "Manrope", "Archivo", "Newsreader", "Zilla Slab", "Libre Franklin", "Big Shoulders", "Barlow", "Atkinson", "Recursive"];
-const browser = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome", args: ["--lang=es-CL"] });
+const browser = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome", args: ["--lang=es-CL"], env: { ...process.env, LANG: "es_CL.UTF-8", LANGUAGE: "es_CL" } }); // el campo de fecha sale en dd-mm-aaaa
 let fallas = 0;
 
 for (const ruta of ["/?hoy=2026-10-17", "/que-dice-tu-carta/?hoy=2026-10-17"]) {

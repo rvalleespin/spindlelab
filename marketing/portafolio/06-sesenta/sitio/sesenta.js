@@ -150,6 +150,7 @@
     }
     var n = Math.max(0, quedan);
     resultado.innerHTML = "";
+    if (quedan > 0) cifraPie.textContent = n === 1 ? "día hábil te queda" : "días hábiles te quedan";
     bajarA(n, function () {
       cifraPie.textContent = n === 1 ? "día hábil te queda" : quedan > 0 ? "días hábiles te quedan" : "días hábiles, según esta cuenta";
       cifra.setAttribute("aria-label", n + (n === 1 ? " día hábil" : " días hábiles"));
@@ -228,7 +229,7 @@
     } else dibujar();
     if ("ResizeObserver" in window) {
       if (observador) observador.disconnect();
-      var ancho = 0;
+      var ancho = art.offsetWidth;
       observador = new ResizeObserver(function () {
         if (art.offsetWidth && Math.abs(art.offsetWidth - ancho) > 1) { ancho = art.offsetWidth; if (art.querySelector(".tinta-circulo")) circular(art, false); }
       });

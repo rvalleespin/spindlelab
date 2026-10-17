@@ -23,7 +23,7 @@ const anchos = [
   { w: 1440, h: 900, dpr: 1 },
   { w: 390, h: 844, dpr: 2 },
 ];
-const browser = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome", args: ["--lang=es-CL"] });
+const browser = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome", args: ["--lang=es-CL"], env: { ...process.env, LANG: "es_CL.UTF-8", LANGUAGE: "es_CL" } }); // el campo de fecha sale en dd-mm-aaaa
 const informe = [];
 
 export async function medir(page) {
@@ -101,7 +101,9 @@ if (import.meta.url === pathToFileURL(process.argv[1]).href) {
         await page.waitForTimeout(400);
       }
       await page.evaluate(() => scrollTo(0, 0));
-      await page.screenshot({ path: path.join(salida, `${sufijo}-completa.png`), fullPage: true });
+      // la página completa va en JPEG: la sarga del lienzo (una trama fina en diagonal) no se comprime en PNG
+      // y cada captura pasaba de 7 a 10 MB; el primer viewport, que es el que se mira, sigue en PNG
+      await page.screenshot({ path: path.join(salida, `${sufijo}-completa.jpg`), fullPage: true, type: "jpeg", quality: 90 });
       const m = await medir(page);
       informe.push({ captura: sufijo, ...m, rotulo: primera.rotulo, errores, terceros: [...new Set(terceros)] });
       await ctx.close();

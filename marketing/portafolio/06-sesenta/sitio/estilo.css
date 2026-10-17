@@ -545,7 +545,16 @@ input[type="date"].campo { flex: 1; min-width: 0; color-scheme: light; }
   .cifra-caja { gap: 14px; }
   .cifra-pie { font-size: 19px; padding-bottom: 8px; }
   .lt-marca span, .lt-marca small { font-size: 12px; }
-  .linea-tiempo { height: 104px; }
+  /* a 390 las cuatro marcas no caben en una fila: hoy y el día 90 van arriba de la línea */
+  .linea-tiempo { height: 132px; }
+  .lt-pista, .lt-reclamo { top: 60px; }
+  .lt-tramo { top: 57px; }
+  .lt-reclamo { top: 60px; }
+  .lt-marca { top: 42px; }
+  .lt-marca::before { height: 36px; }
+  .lt-marca.alterna { top: 0; display: flex; flex-direction: column-reverse; gap: 6px; }
+  .lt-marca.alterna.derecha { align-items: flex-end; }
+  .lt-marca.alterna[hidden] { display: none; }
 
   .carta-grilla { display: flex; flex-direction: column; gap: 28px; }
   .carta-lado { display: contents; }

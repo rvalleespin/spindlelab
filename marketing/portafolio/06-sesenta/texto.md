@@ -174,7 +174,7 @@ En texto, con encabezados, sin acordeón. Cada respuesta termina con su artícul
 
 - Rótulo: SÉPTIMO OTROSÍ
 - **H2:** Escríbenos
-- Bajada: Cuéntanos qué pasó con tus palabras. Te responde una de las dos personas de aquí al lado.
+- Bajada: Cuéntanos qué pasó con tus palabras. Te responde una de las dos personas de aquí abajo.
 - Campos: **Tu nombre** · **Cómo te respondemos** (ayuda: Un correo o un teléfono) · **Día en que dejaste de
   trabajar** (opcional) · **Qué artículo dice tu carta** (159 · 160 · 161 · No dice ninguno · No sé) · **Qué pasó**
   (opcional)

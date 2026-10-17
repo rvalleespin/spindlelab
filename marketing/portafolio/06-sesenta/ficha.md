@@ -128,10 +128,17 @@ separaciones del 1-ene-2026 al 31-dic-2027 y dice que es referencial.
   nofollow`.
 - Contador de días hábiles con los feriados nacionales de 2026 y 2027 escritos en el código; lector de la carta con
   los cuatro casos; hoja imprimible de la primera reunión (`@media print`).
-- Recorrido grabado con Playwright cuadro a cuadro y armado con ffmpeg.
+- Recorrido de 10 s grabado con Playwright cuadro a cuadro (30 por segundo, 1440 × 810) y armado con ffmpeg en
+  H.264 y VP9, con póster JPEG (`movimiento/`). «Hoy» se fija con `?hoy=AAAA-MM-DD` para que las capturas y la
+  grabación cuenten siempre igual (separación 14-sep-2026, hoy 17-oct-2026: quedan 35; día 60, viernes 27-nov-2026;
+  día 90, martes 5-ene-2027, comprobado aparte en Python).
+- Comprobación: `_herramientas/capturar.mjs` (contraste de cada nodo de texto, desborde, `h1`, JSON-LD, sello visible,
+  terceros, consola) y `_herramientas/comprobar.mjs` (360, 390, 768 y 1440; foco; movimiento reducido; letras vetadas).
+  Resultado del 17-oct: cero fallas en las cuatro capturas y en las ocho combinaciones.
 
 ## Historial de correcciones
 
 | Fecha | Corrección | Origen |
 |---|---|---|
 | 16-oct, 23:50 | Primera versión: hechos del Código del Trabajo, la regla del sábado (DT), feriados y nombres | Bruno, con el método de Simón |
+| 17-oct, 00:30 | Ingredientes del sitio y del recorrido, con la cuenta de ejemplo verificada | Bruno |
