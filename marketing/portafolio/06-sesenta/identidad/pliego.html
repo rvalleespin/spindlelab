@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<title>Sesenta · pliego de identidad (concepto)</title>
+<link rel="stylesheet" href="identidad.css">
+<style>
+  body { width: 1920px; height: 1080px; }
+  .pliego { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+  .cabeza { position: absolute; left: 64px; right: 64px; top: 34px; display: flex; justify-content: space-between; align-items: center; }
+  .cabeza p { font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--celeste); }
+  .cabeza .esquina { position: static; font-size: 12px; padding: 7px 10px 6px; }
+  .zona { position: absolute; }
+  .zona h2 { font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--celeste); display: flex; gap: 12px; align-items: center; margin-bottom: 26px; }
+  .zona h2 b { color: var(--blanco); font-weight: 800; }
+  .zona h2::after { content: ""; flex: 1; height: 1px; background: rgba(255, 255, 255, 0.24); }
+  .porque { font-size: 16px; line-height: 1.5; color: var(--celeste); max-width: 33em; }
+  .porque strong { color: var(--blanco); font-weight: 700; }
+
+  /* A · logo */
+  .logo { left: 64px; top: 104px; width: 900px; }
+  .firma { display: flex; align-items: center; gap: 44px; }
+  .firma .sello { height: 196px; }
+  .firma .palabra { height: 66px; }
+  .chicos { display: flex; align-items: flex-end; gap: 28px; margin-top: 26px; }
+  .chicos figure { display: grid; gap: 8px; justify-items: start; }
+  .chicos figcaption { font-size: 12px; color: var(--celeste); letter-spacing: 0.04em; }
+  .chicos .sobre-papel { background: var(--papel); padding: 12px 16px; border-radius: 2px; box-shadow: var(--sombra-papel); }
+  .chicos .sobre-papel img { height: 64px; transform: rotate(-6deg); }
+  .logo .porque { margin-top: 20px; font-size: 15px; }
+
+  /* B · color */
+  .color { left: 1020px; top: 104px; width: 836px; }
+  .tiras { display: grid; grid-template-columns: 2.2fr 1fr 1fr 1.25fr 1.15fr; height: 330px; border-radius: 2px; overflow: hidden; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.24); }
+  .tiras div { padding: 16px 14px; display: flex; flex-direction: column; justify-content: space-between; }
+  .tiras b { font-size: 20px; font-weight: 800; letter-spacing: -0.01em; }
+  .tiras span { font-size: 13px; line-height: 1.4; }
+  .tiras code { font-family: var(--courier); font-size: 13px; }
+  .t-azul { background: var(--azul); background-image: var(--sarga); color: var(--blanco); box-shadow: inset -1px 0 0 rgba(255,255,255,.24); }
+  .t-blanco { background: var(--blanco); color: var(--azul); }
+  .t-celeste { background: var(--celeste); color: var(--azul); }
+  .t-papel { background: var(--papel); color: var(--tinta); }
+  .t-tinta { background: var(--tinta); color: var(--blanco); }
+  .t-celeste span, .t-blanco span { color: var(--azul); }
+  .color .porque { margin-top: 22px; }
+
+  /* C · letra */
+  .letra { left: 64px; top: 640px; width: 900px; }
+  .muestras { display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: end; }
+  .muestras .grande { font-size: 176px; }
+  .pesos { display: grid; gap: 10px; }
+  .pesos p { font-size: 38px; line-height: 1.05; letter-spacing: -0.03em; }
+  .pesos small { display: block; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--celeste); font-weight: 600; margin-bottom: 2px; }
+  .muestra-courier { margin-top: 24px; display: flex; gap: 28px; align-items: center; }
+  .muestra-courier .papel { padding: 14px 18px; font-size: 16px; line-height: 1.5; transform: rotate(-1deg); }
+  .muestra-courier .porque { font-size: 15px; max-width: 26em; }
+
+  /* D · recurso */
+  .recurso { left: 1020px; top: 640px; width: 836px; }
+  .baja { display: flex; align-items: flex-end; gap: 22px; }
+  .baja .grande { font-size: 176px; }
+  .baja .paso { font-size: 96px; color: var(--celeste); }
+  .baja .paso.chico { font-size: 56px; }
+  .baja .flechas { font-size: 15px; color: var(--celeste); padding-bottom: 16px; }
+  .suma-mini { position: absolute; right: 0; top: 52px; width: 330px; padding: 14px 18px; font-size: 13px; line-height: 1.5; transform: rotate(2deg); }
+  .suma-mini b { font-weight: 700; }
+  .recurso .porque { margin-top: 26px; }
+  .pie { position: absolute; left: 64px; right: 64px; bottom: 26px; display: flex; justify-content: space-between; font-size: 12px; color: var(--celeste); letter-spacing: 0.03em; }
+</style>
+</head>
+<body>
+<div class="pliego lienzo">
+  <div class="cabeza">
+    <p>Sesenta · pliego de identidad</p>
+    <span class="esquina">CONCEPTO DE SPINDLELAB · SESENTA NO EXISTE</span>
+  </div>
+
+  <section class="zona logo">
+    <h2><b>Logo</b> la palabra y el sello</h2>
+    <div class="firma">
+      <img class="sello" src="logo/sesenta-sello-blanco.svg" alt="Sello 60">
+      <img class="palabra" src="logo/sesenta-palabra-blanco.svg" alt="SESENTA">
+    </div>
+    <div class="chicos">
+      <figure><img src="logo/sesenta-60-32.svg" width="64" height="64" alt=""><figcaption>32 px, al doble</figcaption></figure>
+      <figure><img src="logo/sesenta-60-32.svg" width="32" height="32" alt=""><figcaption>32 px</figcaption></figure>
+      <figure><img src="logo/sesenta-60-16.svg" width="16" height="16" alt=""><figcaption>16 px</figcaption></figure>
+      <figure><img src="logo/sesenta-firma-blanco.svg" style="height:34px" alt=""><figcaption>Encabezado</figcaption></figure>
+      <figure><div class="sobre-papel"><img src="logo/sesenta-sello-azul.svg" alt=""></div><figcaption>Sobre un documento</figcaption></figure>
+    </div>
+    <p class="porque"><strong>SESENTA en Schibsted Grotesk 900 y el 60 como timbre de doble filete,</strong> como el de cargo que deja la oficina de partes. Sobre el azul va en blanco; sobre el papel, en tinta azul y torcido, como cae un timbre de goma. A 32 y 16 px queda el 60 solo.</p>
+  </section>
+
+  <section class="zona color">
+    <h2><b>Color</b> cinco, con un rol cada uno</h2>
+    <div class="tiras">
+      <div class="t-azul"><b>Azul</b><span>Lienzo. El azul del overol, no el marino de los estudios.<br><code>#22408A</code></span></div>
+      <div class="t-blanco"><b>Blanco</b><span>Lo que se lee sobre el azul<br><code>9,68:1</code></span></div>
+      <div class="t-celeste"><b>Celeste</b><span>Secundario sobre el azul<br><code>5,66:1</code></span></div>
+      <div class="t-papel"><b>Papel</b><span>Solo documentos. Sobre el azul <code>8,57:1</code><br><code>#F3F1EA</code></span></div>
+      <div class="t-tinta"><b>Tinta</b><span>Texto del documento; fondo de las placas sobre tinta<br><code>16,71:1</code></span></div>
+    </div>
+    <p class="porque"><strong>El rubro se viste de marino y dorado; el cliente de este estudio va al trabajo de azul.</strong> El azul es el lienzo, y una sarga hecha con CSS le da la trama de la tela. El papel y la tinta aparecen solo cuando hay un documento en pantalla. El azul vuelve sobre el papel una sola vez: como tinta del timbre.</p>
+  </section>
+
+  <section class="zona letra">
+    <h2><b>Letra</b> dos familias, una para cada cosa</h2>
+    <div class="muestras">
+      <p class="grande">60</p>
+      <div class="pesos">
+        <p style="font-weight:900"><small>Schibsted Grotesk 900 · la marca y el número</small>Tienes 60 días hábiles</p>
+        <p style="font-weight:800;font-size:30px"><small>800 · títulos</small>Qué artículo dice tu carta</p>
+        <p style="font-weight:400;font-size:22px;letter-spacing:0"><small>400 · lectura</small>Se cuentan de lunes a sábado, sin domingos ni feriados.</p>
+      </div>
+    </div>
+    <div class="muestra-courier">
+      <p class="papel"><b>EN LO PRINCIPAL:</b> qué hacer hoy.<br><b>PRIMER OTROSÍ:</b> cuántos días te quedan.</p>
+      <p class="porque"><strong>Courier Prime, solo dentro de un documento:</strong> la carta, el finiquito, la hoja de la primera reunión, la suma. Las dos con licencia OFL 1.1, servidas desde la carpeta de la pieza.</p>
+    </div>
+  </section>
+
+  <section class="zona recurso">
+    <h2><b>Recurso propio</b> el 60 que baja y la suma del escrito</h2>
+    <div class="baja">
+      <p class="grande">60</p>
+      <p class="grande paso">47</p>
+      <p class="grande paso chico">35</p>
+    </div>
+    <p class="papel suma-mini"><b>EN LO PRINCIPAL:</b> qué hacer hoy.<br><b>PRIMER OTROSÍ:</b> cuántos días te quedan.<br><b>SEGUNDO OTROSÍ:</b> qué dice tu carta.<br><b>TERCER OTROSÍ:</b> antes de firmar el finiquito.</p>
+    <p class="porque"><strong>Quien llega trae dos cosas: una fecha y una carta.</strong> La fecha se vuelve el número: pones el día en que dejaste de trabajar y el 60 baja, cifra por cifra, hasta los días hábiles que te quedan (art. 168, de lunes a sábado). La carta se vuelve la manera de titular: cada sección es un otrosí, como en un escrito.</p>
+  </section>
+
+  <p class="pie"><span>Concepto de SpindleLab, 2026. Sesenta no existe; sus abogados tampoco.</span><span>Contrastes medidos con la fórmula de WCAG 2.1 · ficha.md §4</span></p>
+</div>
+</body>
+</html>

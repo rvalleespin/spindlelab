@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<title>Sesenta · placas (concepto)</title>
+<link rel="stylesheet" href="identidad.css">
+<style>
+  .placa { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+  .placa[hidden] { display: none; }
+  .placa.tinta { background-color: var(--tinta); background-image: none; }
+  .centro { position: absolute; inset: 0; display: grid; place-items: center; }
+  .nota { position: absolute; left: 28px; bottom: 22px; font-size: 12px; line-height: 1.4; color: var(--celeste); max-width: 46em; }
+  .nota b { color: var(--blanco); font-weight: 700; }
+
+  /* suma (16:9) */
+  .p-suma .escrito { position: absolute; left: 56px; top: 92px; width: 476px; padding: 32px 34px 30px; font-size: 15px; line-height: 1.66; transform: rotate(-1.6deg); }
+  .p-suma .escrito .cab { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(17,17,17,.2); padding-bottom: 10px; margin-bottom: 14px; }
+  .p-suma .escrito b { font-weight: 700; }
+  .p-suma .escrito .timbre { position: absolute; right: 22px; bottom: 18px; width: 92px; transform: rotate(-8deg); }
+  .p-suma .pantalla { position: absolute; left: 604px; top: 196px; width: 400px; display: grid; gap: 16px; }
+  .p-suma .pantalla h3 { font-size: 46px; line-height: 1.02; font-weight: 800; letter-spacing: -0.032em; }
+  .p-suma .pantalla p.b { font-size: 16px; line-height: 1.45; color: var(--celeste); }
+  .p-suma .flecha { position: absolute; left: 540px; top: 268px; width: 56px; }
+
+  /* logo (16:9) */
+  .p-logo .fila { display: flex; align-items: center; gap: 52px; }
+  .p-logo .fila .s { height: 236px; }
+  .p-logo .fila .w { height: 82px; }
+
+  /* sello (4:5) */
+  .p-sello .grande-sello { position: absolute; left: 50%; top: 64px; transform: translateX(-50%); width: 330px; }
+  .p-sello .cotas { position: absolute; left: 50%; top: 64px; transform: translateX(-50%); width: 330px; height: 296px; pointer-events: none; }
+  .p-sello .cotas span { position: absolute; font-family: var(--courier); font-size: 10.5px; color: var(--blanco); background: inherit; white-space: nowrap; }
+  .p-sello .tamanos { position: absolute; left: 0; right: 0; bottom: 92px; display: flex; justify-content: center; align-items: flex-end; gap: 34px; }
+  .p-sello .tamanos figure { display: grid; gap: 8px; justify-items: center; font-size: 11px; color: var(--celeste); }
+  .p-sello .tamanos .chip { padding: 10px; background: var(--azul); border-radius: 2px; }
+  .tinta.p-sello .tamanos .chip { background: transparent; }
+
+  /* paleta (4:5) */
+  .p-paleta .bandas { position: absolute; left: 28px; right: 28px; top: 56px; bottom: 70px; display: grid; grid-template-rows: 2.4fr 1fr 1fr 1.2fr 1.1fr; border-radius: 2px; overflow: hidden; box-shadow: 0 0 0 1px rgba(255,255,255,.22); }
+  .p-paleta .bandas div { display: flex; justify-content: space-between; align-items: flex-end; padding: 12px 16px; }
+  .p-paleta .bandas b { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; }
+  .p-paleta .bandas span { font-size: 12px; text-align: right; line-height: 1.4; }
+  .p-paleta .bandas code { font-family: var(--courier); font-size: 12px; }
+  .b-azul { background: var(--azul); background-image: var(--sarga); color: #fff; }
+  .b-blanco { background: #fff; color: var(--azul); }
+  .b-celeste { background: var(--celeste); color: var(--azul); }
+  .b-papel { background: var(--papel); color: var(--tinta); }
+  .b-tinta { background: var(--tinta); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.18); }
+
+  /* letra (4:5) */
+  .p-letra .g { position: absolute; left: 22px; top: 40px; font-size: 300px; }
+  .p-letra .lista { position: absolute; left: 30px; right: 30px; bottom: 64px; display: grid; gap: 14px; }
+  .p-letra .lista p { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid rgba(255,255,255,.24); padding-top: 10px; }
+  .p-letra .lista span { font-size: 11px; color: var(--celeste); letter-spacing: .08em; text-transform: uppercase; font-weight: 700; }
+
+  /* courier (1,62) */
+  .p-courier .hojita { position: absolute; left: 34px; right: 34px; top: 30px; padding: 20px 22px; font-size: 13px; line-height: 1.6; transform: rotate(-1deg); }
+  .p-courier .hojita .t { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+
+  /* otrosí (1,62) */
+  .p-otrosi .bloque { position: absolute; left: 34px; right: 34px; top: 54px; display: grid; gap: 14px; }
+  .p-otrosi .bloque h3 { font-size: 38px; line-height: 1.02; font-weight: 800; letter-spacing: -0.03em; }
+
+  /* contador (16:9) */
+  .p-contador .viejo { position: absolute; left: 60px; top: 56px; font-size: 300px; color: transparent; -webkit-text-stroke: 2px var(--celeste); }
+  .p-contador .nuevo { position: absolute; left: 470px; top: 56px; font-size: 300px; }
+  .p-contador .pie-cifra { position: absolute; left: 830px; top: 226px; font-size: 20px; font-weight: 700; line-height: 1.2; width: 180px; }
+  .p-contador .flecha { position: absolute; left: 400px; top: 166px; width: 60px; }
+  .p-contador .linea { position: absolute; left: 60px; right: 60px; top: 362px; height: 70px; }
+  .p-contador .pista { position: absolute; left: 0; right: 0; top: 18px; height: 2px; background: rgba(255,255,255,.24); }
+  .p-contador .tr { position: absolute; top: 15px; height: 8px; }
+  .p-contador .mk { position: absolute; top: 0; display: grid; gap: 6px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+  .p-contador .mk::before { content: ""; width: 2px; height: 40px; background: #fff; }
+  .p-contador .mk small { display: block; font-weight: 400; color: var(--celeste); }
+  .p-contador .resultado { position: absolute; left: 60px; top: 470px; font-size: 18px; line-height: 1.5; max-width: 40em; }
+  .p-contador .resultado span { color: var(--celeste); }
+
+  /* hoja (1,62) */
+  .p-hoja .hj { position: absolute; left: 40px; right: 40px; top: 26px; padding: 18px 22px; font-size: 12.5px; line-height: 1.5; transform: rotate(1deg); }
+  .p-hoja .hj .t { font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-bottom: 2px solid var(--tinta); padding-bottom: 8px; margin-bottom: 10px; display: flex; justify-content: space-between; }
+  .p-hoja .hj li { list-style: none; display: grid; grid-template-columns: 20px 1fr; margin-bottom: 4px; }
+  .p-hoja .hj li::before { content: ""; width: 11px; height: 11px; border: 1.3px solid var(--tinta); margin-top: 3px; }
+  .p-hoja .hj { padding-bottom: 22px; }
+  .p-hoja .hj ul { padding-right: 76px; }
+  .p-hoja .hj .timbre { position: absolute; right: 18px; bottom: 14px; width: 74px; transform: rotate(-9deg); }
+
+  /* tarjeta (1,62) */
+  .p-tarjeta .frente, .p-tarjeta .dorso { position: absolute; width: 250px; height: 150px; border-radius: 3px; box-shadow: var(--sombra-papel); }
+  .p-tarjeta .frente { left: 34px; top: 40px; background: var(--azul); background-image: var(--sarga); transform: rotate(-4deg); display: grid; place-items: center; box-shadow: 0 0 0 1px rgba(255,255,255,.25), var(--sombra-papel); }
+  .p-tarjeta .frente img { width: 150px; }
+  .p-tarjeta .dorso { right: 30px; bottom: 34px; background: var(--papel); color: var(--tinta); font-family: var(--courier); padding: 16px 18px; font-size: 11.5px; line-height: 1.45; transform: rotate(3deg); }
+  .p-tarjeta .dorso b { font-size: 13px; }
+  .p-tarjeta .dorso .timbre { position: absolute; right: 14px; bottom: 12px; width: 52px; transform: rotate(-8deg); }
+
+  /* finiquito (16:9) */
+  .p-finiquito .fq { position: absolute; left: 300px; top: 150px; width: 470px; padding: 24px 30px 26px; font-size: 13px; line-height: 1.62; }
+  .p-finiquito .fq .t { text-align: center; font-weight: 700; letter-spacing: .06em; margin-bottom: 10px; }
+  .p-finiquito .fq p { position: relative; }
+  .p-finiquito .fq .m { position: absolute; left: -24px; top: 1px; width: 18px; height: 18px; border-radius: 50%; background: var(--azul); color: #fff; font-family: var(--sans); font-size: 10.5px; font-weight: 800; text-align: center; line-height: 18px; }
+  .p-finiquito .fq .lin { display: block; height: 1px; background: var(--tinta); opacity: .6; margin: 14px 0; }
+  .p-finiquito .n { position: absolute; width: 230px; font-size: 13px; line-height: 1.45; color: var(--celeste); }
+  .p-finiquito .n b { display: block; color: #fff; font-size: 14px; margin-bottom: 2px; }
+  .p-finiquito .n::after { content: ""; position: absolute; top: 9px; width: 30px; height: 1px; background: var(--celeste); }
+  .p-finiquito .n.izq { left: 40px; text-align: right; }
+  .p-finiquito .n.izq::after { right: -40px; }
+  .p-finiquito .n.der { left: 800px; }
+  .p-finiquito .n.der::after { left: -40px; }
+  .p-finiquito h3 { position: absolute; left: 40px; top: 150px; width: 230px; font-size: 30px; line-height: 1.02; font-weight: 800; letter-spacing: -0.03em; text-align: right; }
+
+  /* pregunta (16:9) */
+  .p-pregunta .q { position: absolute; left: 56px; top: 96px; width: 520px; display: grid; gap: 18px; }
+  .p-pregunta .q h3 { font-size: 40px; line-height: 1.05; font-weight: 800; letter-spacing: -0.03em; }
+  .p-pregunta .q p { font-size: 17px; line-height: 1.5; }
+  .p-pregunta .q p.f { font-size: 13px; color: var(--celeste); }
+  .p-pregunta .code { position: absolute; left: 620px; top: 96px; width: 390px; padding: 18px 20px; font-size: 11.5px; line-height: 1.5; white-space: pre; transform: rotate(1deg); }
+  .p-pregunta .code .k { color: var(--azul); font-weight: 700; }
+
+  /* portadas */
+  .p-portada .sesenta-gigante { position: absolute; font-weight: 900; letter-spacing: -0.075em; line-height: 0.74; color: #fff; }
+  .p-portada .suma-p { position: absolute; padding: 14px 16px 12px; font-size: 12px; line-height: 1.55; transform: rotate(-2.2deg); }
+  .p-portada .suma-p b { font-weight: 700; }
+  .p-portada .sello-p { position: absolute; }
+</style>
+</head>
+<body>
+
+<!-- 16:9 · Estrategia: la suma del escrito y la pantalla que sale de ella -->
+<section class="placa p-suma" data-p="suma">
+  <div class="escrito papel">
+    <p class="cab"><span>Escrito</span><span>La suma</span></p>
+    <p><b>EN LO PRINCIPAL:</b> qué hacer hoy.<br><b>PRIMER OTROSÍ:</b> cuántos días te quedan.<br><b>SEGUNDO OTROSÍ:</b> qué dice tu carta.<br><b>TERCER OTROSÍ:</b> antes de firmar el finiquito.<br><b>CUARTO OTROSÍ:</b> qué traer a la primera reunión.<br><b>QUINTO OTROSÍ:</b> cómo se cobra.<br><b>SEXTO OTROSÍ:</b> preguntas.<br><b>SÉPTIMO OTROSÍ:</b> escribirnos.</p>
+    <img class="timbre" src="logo/sesenta-sello-azul.svg" alt="">
+  </div>
+  <svg class="flecha" viewBox="0 0 56 14" aria-hidden="true"><path d="M0 7h52M45 1l7 6-7 6" fill="none" stroke="#b9c6e6" stroke-width="2"/></svg>
+  <div class="pantalla">
+    <p class="rotulo">Primer otrosí</p>
+    <h3>Cuántos días te quedan</h3>
+    <p class="b">Cada sección del sitio es un otrosí del escrito: el rótulo viene del tribunal y el título, de la pregunta de la persona.</p>
+  </div>
+</section>
+
+<!-- 16:9 · Identidad: la palabra y el sello -->
+<section class="placa p-logo" data-p="logo">
+  <div class="centro"><div class="fila"><img class="s" src="logo/sesenta-sello-blanco.svg" alt=""><img class="w" src="logo/sesenta-palabra-blanco.svg" alt=""></div></div>
+  <p class="nota"><b>SESENTA</b> en Schibsted Grotesk 900 y el 60 como timbre de doble filete.</p>
+</section>
+
+<!-- 4:5 · el sello y sus tamaños -->
+<section class="placa p-sello" data-p="sello">
+  <img class="grande-sello" src="logo/sesenta-sello-blanco.svg" alt="">
+  <div class="tamanos">
+    <figure><span class="chip"><img src="logo/sesenta-60-512.svg" width="72" height="72" alt=""></span><figcaption>Ícono</figcaption></figure>
+    <figure><span class="chip"><img src="logo/sesenta-60-32.svg" width="32" height="32" alt=""></span><figcaption>32 px</figcaption></figure>
+    <figure><span class="chip"><img src="logo/sesenta-60-16.svg" width="16" height="16" alt=""></span><figcaption>16 px</figcaption></figure>
+  </div>
+  <p class="nota">Doble filete, esquinas de timbre de goma. A 32 px el filete se simplifica; a 16, el 60 solo.</p>
+</section>
+
+<!-- 4:5 · paleta -->
+<section class="placa p-paleta" data-p="paleta">
+  <div class="bandas">
+    <div class="b-azul"><b>Azul</b><span>Lienzo · el azul del overol<br><code>#22408A</code></span></div>
+    <div class="b-blanco"><b>Blanco</b><span>Sobre azul <code>9,68:1</code></span></div>
+    <div class="b-celeste"><b>Celeste</b><span>Secundario sobre azul <code>5,66:1</code></span></div>
+    <div class="b-papel"><b>Papel</b><span>Solo documentos · sobre azul <code>8,57:1</code></span></div>
+    <div class="b-tinta"><b>Tinta</b><span>Sobre papel <code>16,71:1</code></span></div>
+  </div>
+  <p class="nota">Cinco colores, un rol cada uno. Nada más.</p>
+</section>
+
+<!-- 4:5 · letra -->
+<section class="placa p-letra" data-p="letra">
+  <p class="grande g">60</p>
+  <div class="lista">
+    <p><b style="font-size:34px;font-weight:900;letter-spacing:-.03em">Aa 900</b><span>Marca y número</span></p>
+    <p><b style="font-size:30px;font-weight:800;letter-spacing:-.03em">Aa 800</b><span>Títulos</span></p>
+    <p><b style="font-size:26px;font-weight:400">Aa 400</b><span>Lectura</span></p>
+    <p><b style="font-family:var(--courier);font-size:22px;font-weight:700">Aa</b><span>Courier Prime · solo documentos</span></p>
+  </div>
+  <p class="nota">Schibsted Grotesk y Courier Prime, OFL 1.1.</p>
+</section>
+
+<!-- 1,62 · Courier, solo en documentos -->
+<section class="placa p-courier" data-p="courier">
+  <div class="hojita papel">
+    <p class="t">Courier Prime</p>
+    <p>Comunico a usted que, con esta fecha, la empresa ha decidido poner término a su contrato de trabajo por la causal del <b>artículo 161</b> del Código del Trabajo <span class="tachado" style="width:12ch"></span>.</p>
+  </div>
+  <p class="nota">Solo dentro de un documento: la carta, el finiquito, la hoja, la suma.</p>
+</section>
+
+<!-- 1,62 · el rótulo de otrosí -->
+<section class="placa p-otrosi" data-p="otrosi">
+  <div class="bloque"><p class="rotulo">Segundo otrosí</p><h3>Qué artículo dice tu carta</h3><p style="font-size:15px;line-height:1.45;max-width:30em">Busca el número que cita tu carta de despido. De ese artículo depende qué se discute y quién prueba qué.</p></div>
+  <p class="nota">El rótulo del escrito sobre el título en palabras de la persona.</p>
+</section>
+
+<!-- 16:9 · el contador -->
+<section class="placa p-contador" data-p="contador">
+  <p class="grande viejo">60</p>
+  <svg class="flecha" viewBox="0 0 60 14" aria-hidden="true"><path d="M0 7h56M49 1l7 6-7 6" fill="none" stroke="#b9c6e6" stroke-width="2"/></svg>
+  <p class="grande nuevo">35</p>
+  <p class="pie-cifra">días hábiles te quedan</p>
+  <div class="linea">
+    <div class="pista"></div>
+    <div class="tr" style="left:0;width:27.8%;background:#b9c6e6"></div>
+    <div class="tr" style="left:27.8%;width:38.9%;background:#fff"></div>
+    <div class="tr" style="left:66.7%;width:33.3%;top:18px;height:2px;background:repeating-linear-gradient(90deg,#b9c6e6 0 6px,transparent 6px 11px)"></div>
+    <div class="mk" style="left:0"><span>Dejaste de trabajar<small>14 sep</small></span></div>
+    <div class="mk" style="left:27.8%"><span>Hoy<small>17 oct</small></span></div>
+    <div class="mk" style="left:66.7%"><span>Día 60<small>27 nov</small></span></div>
+    <div class="mk" style="left:100%;transform:translateX(-100%);justify-items:end;text-align:right"><span>Día 90<small>5 ene, con reclamo</small></span></div>
+  </div>
+  <p class="resultado">Tu día 60 es el viernes 27 de noviembre de 2026. <span>De lunes a sábado, sin domingos ni feriados; art. 168. Referencial.</span></p>
+</section>
+
+<!-- 1,62 · la hoja de la primera reunión -->
+<section class="placa p-hoja" data-p="hoja">
+  <div class="hj papel">
+    <p class="t"><span>Primera reunión · qué traer</span><span>Sesenta</span></p>
+    <ul>
+      <li>La carta de despido y el sobre.</li>
+      <li>El finiquito, firmado o no.</li>
+      <li>Tu contrato y sus anexos.</li>
+      <li>Tus últimas liquidaciones.</li>
+      <li>El certificado de cotizaciones de tu AFP.</li>
+    </ul>
+    <img class="timbre" src="logo/sesenta-sello-azul.svg" alt="">
+  </div>
+</section>
+
+<!-- 1,62 · la tarjeta -->
+<section class="placa p-tarjeta" data-p="tarjeta">
+  <div class="frente"><img src="logo/sesenta-firma-blanco.svg" alt=""></div>
+  <div class="dorso"><img class="timbre" src="logo/sesenta-sello-azul.svg" alt=""><b>Rocío Velarde Quintral</b><br>Abogada · personaje ficticio<br>Despido y autodespido<br><br>Santiago centro<br>Dirección ficticia</div>
+</section>
+
+<!-- 16:9 · antes de firmar el finiquito -->
+<section class="placa p-finiquito" data-p="finiquito">
+  <h3>Antes de firmar el finiquito</h3>
+  <div class="fq papel">
+    <p class="t">FINIQUITO DE CONTRATO DE TRABAJO</p>
+    <p><span class="m">1</span><b>PRIMERO.</b> El contrato terminó por la causal del artículo <span class="tachado" style="width:4ch"></span> del Código del Trabajo.</p>
+    <p style="margin-top:10px"><span class="m">2</span><b>SEGUNDO.</b> El empleador paga en este acto: $ <span class="tachado" style="width:8ch"></span></p>
+    <p style="margin-top:10px"><span class="m">3</span><b>TERCERO.</b> Las cotizaciones previsionales se encuentran íntegramente pagadas.</p>
+    <p style="margin-top:10px"><span class="m">4</span><b>CUARTO.</b> Reserva de derechos:</p>
+    <span class="lin"></span><span class="lin"></span>
+    <p><span class="m">5</span>Firmado ante <span class="tachado" style="width:14ch"></span>, ministro de fe.</p>
+  </div>
+  <p class="n izq" style="top:261px"><b>2 · Cada monto</b>Si no estás de acuerdo con uno, igual te pagan lo que no se discute.</p>
+  <p class="n izq" style="top:345px"><b>4 · La reserva</b>Escribe que te reservas el derecho a demandar. Antes de firmar.</p>
+  <p class="n der" style="top:211px"><b>1 · La causal</b>Que sea la misma de tu carta.</p>
+  <p class="n der" style="top:293px"><b>3 · Las cotizaciones</b>El ministro de fe debe pedir que acrediten que están pagadas.</p>
+  <p class="n der" style="top:410px"><b>5 · Dónde se firma</b>Ante un ministro de fe, o en el sitio de la Dirección del Trabajo, que es voluntario.</p>
+</section>
+
+<!-- 16:9 · qué muestra: la pregunta y la respuesta en texto plano -->
+<section class="placa p-pregunta" data-p="pregunta">
+  <div class="q">
+    <p class="rotulo">La pregunta</p>
+    <h3>¿Cuánto plazo tengo para demandar por despido injustificado?</h3>
+    <p>60 días hábiles contados desde la separación, es decir, desde el día en que dejaste de trabajar. Se cuentan de lunes a sábado y no cuentan domingos ni feriados.</p>
+    <p class="f">Código del Trabajo, art. 168 · en texto plano, con encabezado, sin acordeón</p>
+  </div>
+<pre class="code papel"><span class="k">"@type"</span>: "LegalService",
+<span class="k">"name"</span>: "Sesenta",
+<span class="k">"disambiguatingDescription"</span>:
+  "Concepto de SpindleLab: este
+   estudio no existe, no atiende a
+   nadie y no llevó ninguna causa.",
+<span class="k">"employee"</span>: [ "#velarde", "#achondo" ]
+
+<span class="k">"@type"</span>: "FAQPage",
+<span class="k">"mainEntity"</span>: [ 6 preguntas ]
+
+Sin Review ni AggregateRating.
+noindex, nofollow.</pre>
+</section>
+
+<!-- Portadas: un 60 enorme cortado por el marco, con la suma encima -->
+<section class="placa p-portada" data-p="portada-45">
+  <p class="sesenta-gigante" style="font-size:520px;left:-14px;top:150px">60</p>
+  <p class="suma-p papel" style="left:120px;top:430px;width:318px"><b>EN LO PRINCIPAL:</b> qué hacer hoy.<br><b>PRIMER OTROSÍ:</b> cuántos días te quedan.<br><b>SEGUNDO OTROSÍ:</b> qué dice tu carta.<br><b>TERCER OTROSÍ:</b> antes de firmar el finiquito.</p>
+  <img class="sello-p" src="logo/sesenta-palabra-blanco.svg" style="left:28px;top:30px;width:150px" alt="">
+</section>
+<section class="placa p-portada" data-p="portada-43">
+  <p class="sesenta-gigante" style="font-size:440px;left:168px;top:0px">60</p>
+  <p class="suma-p papel" style="left:28px;top:226px;width:300px"><b>EN LO PRINCIPAL:</b> qué hacer hoy.<br><b>PRIMER OTROSÍ:</b> cuántos días te quedan.<br><b>SEGUNDO OTROSÍ:</b> qué dice tu carta.<br><b>TERCER OTROSÍ:</b> antes de firmar el finiquito.</p>
+  <img class="sello-p" src="logo/sesenta-palabra-blanco.svg" style="left:28px;top:30px;width:132px" alt="">
+</section>
+<section class="placa p-portada" data-p="portada-53">
+  <p class="sesenta-gigante" style="font-size:380px;left:156px;top:-10px">60</p>
+  <p class="suma-p papel" style="left:28px;top:186px;width:288px"><b>EN LO PRINCIPAL:</b> qué hacer hoy.<br><b>PRIMER OTROSÍ:</b> cuántos días te quedan.<br><b>SEGUNDO OTROSÍ:</b> qué dice tu carta.</p>
+  <img class="sello-p" src="logo/sesenta-palabra-blanco.svg" style="left:28px;top:28px;width:124px" alt="">
+</section>
+
+<span class="esquina">CONCEPTO</span>
+
+<script>
+  var q = new URLSearchParams(location.search);
+  var p = q.get("p") || "logo", f = q.get("f") || "lienzo";
+  document.querySelectorAll(".placa").forEach(function (s) {
+    var es = s.getAttribute("data-p") === p;
+    s.hidden = !es;
+    if (es) s.classList.add(f === "tinta" ? "tinta" : "lienzo");
+  });
+</script>
+</body>
+</html>

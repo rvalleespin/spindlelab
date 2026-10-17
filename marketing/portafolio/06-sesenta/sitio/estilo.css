@@ -277,7 +277,7 @@ h3 { font-size: 24px; line-height: 1.2; font-weight: 700; letter-spacing: -0.012
   border: 2px solid var(--blanco); border-radius: 0;
   font-size: 18px; font-variant-numeric: tabular-nums;
 }
-.campo:focus-visible { outline: 2px solid var(--blanco); outline-offset: 3px; }
+.campo:focus, .campo:focus-within, .campo:focus-visible { outline: 2px solid var(--blanco); outline-offset: 3px; }
 input[type="date"].campo { flex: 1; min-width: 0; color-scheme: light; }
 .error { font-size: 15px; font-weight: 600; color: var(--blanco); padding-left: 12px; border-left: 3px solid var(--blanco); }
 .error[hidden] { display: none; }
@@ -370,7 +370,7 @@ input[type="date"].campo { flex: 1; min-width: 0; color-scheme: light; }
   background: var(--papel); box-shadow: var(--sombra-papel); border-radius: 2px;
 }
 .fq-bloque {
-  grid-column: 2; position: relative;
+  grid-column: 2; position: relative; background: var(--papel);
   color: var(--tinta); font-family: var(--courier); font-size: 15px; line-height: 1.6;
   padding: 0 48px 20px;
 }
@@ -416,7 +416,7 @@ input[type="date"].campo { flex: 1; min-width: 0; color-scheme: light; }
 .hoja ul { display: grid; gap: 14px; }
 .hoja li { display: grid; grid-template-columns: 28px 1fr; gap: 6px; font-size: 16px; line-height: 1.45; }
 .hoja li::before { content: ""; width: 16px; height: 16px; border: 1.5px solid var(--tinta); margin-top: 4px; }
-.hoja-pie { margin-top: 30px; padding-top: 16px; border-top: 1px dashed var(--linea-papel); display: grid; gap: 10px; font-size: 14px; }
+.hoja-pie { margin-top: 30px; padding-top: 16px; border-top: 1px dashed var(--linea-papel); display: grid; gap: 10px; font-size: 14px; padding-right: 116px; }
 .hoja-pie .rellenar { display: inline-block; width: 160px; border-bottom: 1px solid var(--tinta); transform: translateY(-3px); }
 .hoja .timbre { width: 96px; position: absolute; right: 30px; bottom: 26px; transform: rotate(-8deg); opacity: 0.92; }
 .hoja { position: relative; }
@@ -582,6 +582,11 @@ input[type="date"].campo { flex: 1; min-width: 0; color-scheme: light; }
   .traer-izq { position: static; }
   .hoja { padding: 30px 22px 28px; transform: none; }
   .hoja .timbre { width: 76px; right: 14px; bottom: 16px; }
+  .hoja-pie { padding-right: 84px; }
+  .hoja .doc-titulo span:last-child { display: none; }
+  .fq-montos div { flex-wrap: wrap; column-gap: 8px; row-gap: 0; }
+  .fq-montos .puntos { display: none; }
+  .fq-montos div > span:first-child { flex: 1 1 60%; }
   .cobro-lista li { grid-template-columns: minmax(0, 1fr); row-gap: 6px; font-size: 17px; }
   .preguntas-grilla { grid-template-columns: minmax(0, 1fr); margin-top: 36px; }
   .formulario { padding: 22px 18px; }
