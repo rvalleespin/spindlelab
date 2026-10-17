@@ -1,0 +1,545 @@
+{
+  "medido": "2026-10-17T03:37:55.200Z",
+  "navegador": "Chromium 141 (chromium-1194) headless",
+  "sitios": {
+    "koto": {
+      "url": "https://koto.com/",
+      "anchos": {
+        "390": {
+          "intento": 1,
+          "arriba": {
+            "selector": "a[href=\"/\"]:has(svg[viewBox=\"0 0 52 26\"])",
+            "caja": {
+              "x": 20,
+              "y": 23.3,
+              "ancho": 59,
+              "alto": 29.5
+            },
+            "contenedores": [
+              {
+                "etiqueta": "div",
+                "clase": "w-[59px] origin-left transition-transform duration-[417ms] ease-[cubic-bezier(0.03,0.00,0.0,1.00)] sm:w-[42px] sm:scale-[1.2380952381]",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "a",
+                "clase": "",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "relative z-10 flex shrink-0 origin-left items-center justify-center pl-1 sm:pl-[14px]",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "relative flex h-[44px] w-full items-center sm:h-12 sm:pr-2",
+                "transform": "none"
+              }
+            ],
+            "tipo": "svg",
+            "svg": {
+              "viewBox": "0 0 52 26",
+              "ancho": 59,
+              "alto": 29.5,
+              "proporcion": 2,
+              "trazados": 5,
+              "tipos": [
+                "path",
+                "path",
+                "path",
+                "path",
+                "path"
+              ],
+              "relleno": [
+                "rgb(255, 232, 0)"
+              ],
+              "clase": "w-full",
+              "tieneTexto": false,
+              "titulo": null,
+              "aria": null,
+              "largoMarcado": 5814
+            },
+            "fondoBajoLogo": "rgb(6, 6, 6)"
+          },
+          "plegado": {
+            "selector": "a[href=\"/\"]:has(svg[viewBox=\"0 0 52 26\"])",
+            "caja": {
+              "x": 20,
+              "y": 23.3,
+              "ancho": 59,
+              "alto": 29.5
+            },
+            "contenedores": [
+              {
+                "etiqueta": "div",
+                "clase": "w-[59px] origin-left transition-transform duration-[417ms] ease-[cubic-bezier(0.03,0.00,0.0,1.00)] sm:w-[42px] sm:scale-100",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "a",
+                "clase": "",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "relative z-10 flex shrink-0 origin-left items-center justify-center pl-1 sm:pl-[14px]",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "relative flex h-[44px] w-full items-center sm:h-12 sm:pr-2",
+                "transform": "none"
+              }
+            ],
+            "tipo": "svg",
+            "svg": {
+              "viewBox": "0 0 52 26",
+              "ancho": 59,
+              "alto": 29.5,
+              "proporcion": 2,
+              "trazados": 5,
+              "tipos": [
+                "path",
+                "path",
+                "path",
+                "path",
+                "path"
+              ],
+              "relleno": [
+                "rgb(255, 232, 0)"
+              ],
+              "clase": "w-full",
+              "tieneTexto": false,
+              "titulo": null,
+              "aria": null,
+              "largoMarcado": 5814
+            },
+            "fondoBajoLogo": "rgb(6, 6, 6)"
+          }
+        },
+        "1440": {
+          "intento": 1,
+          "arriba": {
+            "selector": "a[href=\"/\"]:has(svg[viewBox=\"0 0 52 26\"])",
+            "caja": {
+              "x": 30,
+              "y": 29.5,
+              "ancho": 42,
+              "alto": 21
+            },
+            "contenedores": [
+              {
+                "etiqueta": "div",
+                "clase": "w-[59px] origin-left transition-transform duration-[417ms] ease-[cubic-bezier(0.03,0.00,0.0,1.00)] sm:w-[42px] sm:scale-[1.2380952381]",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "a",
+                "clase": "",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "relative z-10 flex shrink-0 origin-left items-center justify-center pl-1 sm:pl-[14px]",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "relative flex h-[44px] w-full items-center sm:h-12 sm:pr-2",
+                "transform": "none"
+              }
+            ],
+            "tipo": "svg",
+            "svg": {
+              "viewBox": "0 0 52 26",
+              "ancho": 52,
+              "alto": 26,
+              "proporcion": 2,
+              "trazados": 5,
+              "tipos": [
+                "path",
+                "path",
+                "path",
+                "path",
+                "path"
+              ],
+              "relleno": [
+                "rgb(255, 232, 0)"
+              ],
+              "clase": "w-full",
+              "tieneTexto": false,
+              "titulo": null,
+              "aria": null,
+              "largoMarcado": 5814
+            },
+            "navVecino": {
+              "texto": "Work",
+              "letra": "gtKotoheimMono",
+              "tamano": "11px",
+              "peso": "400",
+              "mayusculas": "uppercase",
+              "interletra": "normal",
+              "color": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+              "x": 132,
+              "distanciaDesdeLogo": 60
+            },
+            "altoLogoSobreTamanoNav": 1.91,
+            "fondoBajoLogo": "rgb(6, 6, 6)"
+          },
+          "plegado": {
+            "selector": "a[href=\"/\"]:has(svg[viewBox=\"0 0 52 26\"])",
+            "caja": {
+              "x": 30,
+              "y": 29.5,
+              "ancho": 42,
+              "alto": 21
+            },
+            "contenedores": [
+              {
+                "etiqueta": "div",
+                "clase": "w-[59px] origin-left transition-transform duration-[417ms] ease-[cubic-bezier(0.03,0.00,0.0,1.00)] sm:w-[42px] sm:scale-100",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "a",
+                "clase": "",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "relative z-10 flex shrink-0 origin-left items-center justify-center pl-1 sm:pl-[14px]",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "relative flex h-[44px] w-full items-center sm:h-12 sm:pr-2",
+                "transform": "none"
+              }
+            ],
+            "tipo": "svg",
+            "svg": {
+              "viewBox": "0 0 52 26",
+              "ancho": 42,
+              "alto": 21,
+              "proporcion": 2,
+              "trazados": 5,
+              "tipos": [
+                "path",
+                "path",
+                "path",
+                "path",
+                "path"
+              ],
+              "relleno": [
+                "rgb(255, 232, 0)"
+              ],
+              "clase": "w-full",
+              "tieneTexto": false,
+              "titulo": null,
+              "aria": null,
+              "largoMarcado": 5814
+            },
+            "navVecino": {
+              "texto": "Latest",
+              "letra": "gtKotoheimMono",
+              "tamano": "11px",
+              "peso": "400",
+              "mayusculas": "uppercase",
+              "interletra": "normal",
+              "color": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+              "x": 105.1,
+              "distanciaDesdeLogo": 33.1
+            },
+            "altoLogoSobreTamanoNav": 1.91,
+            "fondoBajoLogo": "rgb(6, 6, 6)"
+          },
+          "favicon": [
+            {
+              "rel": "icon",
+              "href": "https://koto.com/favicon.ico",
+              "sizes": "48x48",
+              "type": "image/x-icon"
+            },
+            {
+              "rel": "icon",
+              "href": "https://koto.com/icon.svg?d8f470aa67c7ab93",
+              "sizes": "any",
+              "type": "image/svg+xml"
+            },
+            {
+              "rel": "apple-touch-icon",
+              "href": "https://koto.com/apple-icon.png?2650b40c4769b36d",
+              "sizes": "180x180",
+              "type": "image/png"
+            }
+          ],
+          "faviconBajado": [
+            {
+              "href": "https://koto.com/favicon.ico",
+              "estado": 200,
+              "tipo": "image/x-icon",
+              "bytes": 15086,
+              "archivo": "koto-favicon-48x48.ico"
+            },
+            {
+              "href": "https://koto.com/icon.svg?d8f470aa67c7ab93",
+              "estado": 200,
+              "tipo": "image/svg+xml",
+              "bytes": 1881,
+              "archivo": "koto-favicon-any.svg"
+            },
+            {
+              "href": "https://koto.com/apple-icon.png?2650b40c4769b36d",
+              "estado": 200,
+              "tipo": "image/png",
+              "bytes": 2107,
+              "archivo": "koto-favicon-180x180.png"
+            }
+          ]
+        }
+      }
+    },
+    "ap": {
+      "url": "https://acceptandproceed.com/",
+      "anchos": {
+        "390": {
+          "intento": 1,
+          "arriba": {
+            "selector": "a.header-logo-link",
+            "caja": {
+              "x": 16,
+              "y": 0,
+              "ancho": 164,
+              "alto": 64
+            },
+            "contenedores": [
+              {
+                "etiqueta": "a",
+                "clase": "header-logo-link w-inline-block w--current",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "container header-container",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "placeholder_wrap_content",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "placeholder_wrap fill-parent limited-fade-in fade-in-content",
+                "transform": "none"
+              }
+            ],
+            "tipo": "imagen",
+            "imagen": {
+              "src": "https://cdn.prod.website-files.com/6654e635871c288079200113/6659d2f46d79a94ef65697a1_a-and-p-logo-2x.png",
+              "natural": [
+                328,
+                43
+              ],
+              "ancho": 164,
+              "alto": 21.5,
+              "proporcion": 7.628,
+              "alt": ""
+            },
+            "fondoBajoLogo": "rgb(249, 247, 243)"
+          },
+          "plegado": {
+            "selector": "a.header-logo-link",
+            "caja": {
+              "x": 16,
+              "y": -64,
+              "ancho": 164,
+              "alto": 64
+            },
+            "contenedores": [
+              {
+                "etiqueta": "a",
+                "clase": "header-logo-link w-inline-block w--current",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "container header-container",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "placeholder_wrap_content",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "placeholder_wrap fill-parent limited-fade-in fade-in-content",
+                "transform": "none"
+              }
+            ],
+            "tipo": "imagen",
+            "imagen": {
+              "src": "https://cdn.prod.website-files.com/6654e635871c288079200113/6659d2f46d79a94ef65697a1_a-and-p-logo-2x.png",
+              "natural": [
+                328,
+                43
+              ],
+              "ancho": 164,
+              "alto": 21.5,
+              "proporcion": 7.628,
+              "alt": ""
+            },
+            "fondoBajoLogo": "rgb(249, 247, 243)"
+          }
+        },
+        "1440": {
+          "intento": 1,
+          "arriba": {
+            "selector": "a.header-logo-link",
+            "caja": {
+              "x": 44,
+              "y": 0,
+              "ancho": 164,
+              "alto": 64
+            },
+            "contenedores": [
+              {
+                "etiqueta": "a",
+                "clase": "header-logo-link w-inline-block w--current",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "container header-container",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "placeholder_wrap_content",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "placeholder_wrap fill-parent limited-fade-in fade-in-content",
+                "transform": "none"
+              }
+            ],
+            "tipo": "imagen",
+            "imagen": {
+              "src": "https://cdn.prod.website-files.com/6654e635871c288079200113/6659d2f46d79a94ef65697a1_a-and-p-logo-2x.png",
+              "natural": [
+                328,
+                43
+              ],
+              "ancho": 164,
+              "alto": 21.5,
+              "proporcion": 7.628,
+              "alt": ""
+            },
+            "navVecino": {
+              "texto": "Work",
+              "letra": "\"Messina Sans\"",
+              "tamano": "17px",
+              "peso": "400",
+              "mayusculas": "none",
+              "interletra": "-0.17px",
+              "color": "rgb(0, 0, 0)",
+              "x": 703,
+              "distanciaDesdeLogo": 495
+            },
+            "altoLogoSobreTamanoNav": 3.76,
+            "fondoBajoLogo": "rgb(249, 247, 243)"
+          },
+          "plegado": {
+            "selector": "a.header-logo-link",
+            "caja": {
+              "x": 44,
+              "y": -64,
+              "ancho": 164,
+              "alto": 64
+            },
+            "contenedores": [
+              {
+                "etiqueta": "a",
+                "clase": "header-logo-link w-inline-block w--current",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "container header-container",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "placeholder_wrap_content",
+                "transform": "none"
+              },
+              {
+                "etiqueta": "div",
+                "clase": "placeholder_wrap fill-parent limited-fade-in fade-in-content",
+                "transform": "none"
+              }
+            ],
+            "tipo": "imagen",
+            "imagen": {
+              "src": "https://cdn.prod.website-files.com/6654e635871c288079200113/6659d2f46d79a94ef65697a1_a-and-p-logo-2x.png",
+              "natural": [
+                328,
+                43
+              ],
+              "ancho": 164,
+              "alto": 21.5,
+              "proporcion": 7.628,
+              "alt": ""
+            },
+            "navVecino": {
+              "texto": "Work",
+              "letra": "\"Messina Sans\"",
+              "tamano": "17px",
+              "peso": "400",
+              "mayusculas": "none",
+              "interletra": "-0.17px",
+              "color": "rgb(0, 0, 0)",
+              "x": 703,
+              "distanciaDesdeLogo": 495
+            },
+            "altoLogoSobreTamanoNav": 3.76,
+            "fondoBajoLogo": "rgb(249, 247, 243)"
+          },
+          "favicon": [
+            {
+              "rel": "shortcut icon",
+              "href": "https://cdn.prod.website-files.com/6654e635871c288079200113/6686b48f7cb170d35720d5ad_20.png",
+              "sizes": null,
+              "type": "image/x-icon"
+            },
+            {
+              "rel": "apple-touch-icon",
+              "href": "https://cdn.prod.website-files.com/6654e635871c288079200113/6686b3f4c905cf5ddff11a27_Group%201473.png",
+              "sizes": null,
+              "type": null
+            }
+          ],
+          "faviconBajado": [
+            {
+              "href": "https://cdn.prod.website-files.com/6654e635871c288079200113/6686b48f7cb170d35720d5ad_20.png",
+              "estado": 200,
+              "tipo": "image/png",
+              "bytes": 519,
+              "archivo": "ap-favicon-shortcut-icon.png"
+            },
+            {
+              "href": "https://cdn.prod.website-files.com/6654e635871c288079200113/6686b3f4c905cf5ddff11a27_Group%201473.png",
+              "estado": 200,
+              "tipo": "image/png",
+              "bytes": 2577,
+              "archivo": "ap-favicon-apple-touch-icon.png"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

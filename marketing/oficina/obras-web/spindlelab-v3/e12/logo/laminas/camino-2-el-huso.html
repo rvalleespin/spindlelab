@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1920">
+<title>Logo, camino 2: El huso</title>
+<style>
+@font-face { font-family: 'DM Mono'; font-weight: 500; font-style: normal;
+  src: url('../fuentes/dm-mono-500-latin.woff2') format('woff2'); }
+:root { --lienzo: #060606; --placa: #141414; --placa-activa: #202020; --blanco: #FFFFFF; --gris: #989898;
+  --linea-seccion: #2D2D2D; --linea: rgba(255,255,255,.10); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--lienzo); color: var(--blanco); }
+body { font-family: 'DM Mono', monospace; font-weight: 500; -webkit-font-smoothing: antialiased; }
+.rot { font-size: 13px; line-height: 1; text-transform: uppercase; letter-spacing: .03em; color: var(--gris); }
+.rot b { color: var(--blanco); font-weight: 500; }
+/* el menú, como en el sitio */
+.nav { position: relative; display: flex; align-items: center; overflow: hidden; }
+.nav.negro { background: var(--lienzo); }
+.nav.blanco { background: #FFFFFF; }
+.nav .logo { display: block; height: 24px; width: auto; flex: none; }
+.nav ul { list-style: none; display: flex; gap: 36px; margin-left: 60px; }
+.nav li, .nav .hora, .nav .menu { font-size: 11px; line-height: 1; text-transform: uppercase; letter-spacing: .03em; white-space: nowrap; }
+.nav.negro li, .nav.negro .hora, .nav.negro .menu { color: rgba(255,255,255,.7); }
+.nav.blanco li, .nav.blanco .hora, .nav.blanco .menu { color: rgba(6,6,6,.7); }
+.nav .hora { margin-left: auto; }
+.nav.ancho-1440 { height: 80px; padding: 0 16px; }
+.nav.ancho-390 { height: 72px; padding: 0 16px; justify-content: space-between; }
+.nav.ancho-390 .menu { margin-left: auto; }
+
+body { width: 1920px; height: 1080px; overflow: hidden; position: relative; }
+header.top { position: absolute; left: 64px; right: 64px; top: 48px; display: flex; justify-content: space-between; }
+.heroe { position: absolute; left: 64px; top: 104px; width: 1060px; display: flex; flex-direction: column; gap: 34px; }
+.grande img { display: block; height: 150px; width: auto; }
+.grande figcaption { margin-top: 14px; }
+aside { position: absolute; left: 1184px; right: 64px; top: 104px; }
+aside h1 { font-size: 13px; line-height: 1; letter-spacing: .03em; text-transform: uppercase; color: var(--gris); font-weight: 500; }
+aside .nombre { font-size: 36px; line-height: 1.05; letter-spacing: -.01em; margin-top: 12px; }
+aside .difiere { font-size: 14px; line-height: 1.45; color: var(--gris); margin-top: 10px; }
+aside ol { list-style: none; margin-top: 18px; display: grid; gap: 8px; counter-reset: l; }
+aside ol li { font-size: 15px; line-height: 1.42; padding-left: 26px; position: relative; counter-increment: l; }
+aside ol li::before { content: counter(l); position: absolute; left: 0; color: var(--gris); }
+aside .ref { font-size: 13px; line-height: 1.45; color: var(--gris); margin-top: 14px; }
+.favs { position: absolute; left: 1184px; right: 64px; top: 494px; display: flex; gap: 24px; }
+.fav { display: grid; gap: 8px; }
+.fav .rot { font-size: 11px; }
+.fila { display: flex; align-items: flex-end; gap: 12px; }
+.tabs { display: grid; gap: 6px; }
+.tab { width: 176px; height: 30px; display: flex; align-items: center; gap: 8px; padding: 0 10px; border-radius: 8px 8px 0 0; overflow: hidden; }
+.tab img { flex: none; }
+.tab span { font-family: system-ui, sans-serif; font-weight: 400; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tab.oscura { background: #35363a; } .tab.oscura span { color: #e8eaed; }
+.tab.clara { background: #f1f3f4; } .tab.clara span { color: #202124; }
+.pix { image-rendering: pixelated; outline: 1px solid var(--linea); }
+.navs { position: absolute; left: 64px; right: 64px; top: 624px; display: grid; grid-template-columns: 860px 860px; justify-content: space-between; row-gap: 18px; }
+.col { display: grid; gap: 8px; align-content: start; }
+.nav { outline: 1px solid var(--linea); }
+.par { display: flex; gap: 16px; }
+footer.pie { position: absolute; left: 64px; right: 64px; bottom: 36px; display: flex; justify-content: space-between; align-items: flex-end; gap: 48px; }
+footer.pie ul { list-style: none; font-size: 12px; line-height: 1.5; color: var(--gris); }
+footer.pie .rot { font-size: 11px; text-align: right; line-height: 1.5; }
+</style>
+</head>
+<body>
+  <header class="top">
+    <p class="rot"><b>E12 · Logo de SpindleLab</b> · camino 2 de 3</p>
+    <p class="rot">Compuerta 2 · borrador para Ramón · 17-oct-2026</p>
+  </header>
+  <main>
+    <div class="heroe">
+      <figure class="grande">
+        <img src="../camino-2-el-huso/camino-2-el-huso-A-blanco.svg" alt="SpindleLab, camino 2, dirección A">
+        <figcaption class="rot"><b>A · Archivo · Google Sans Flex</b> · wght 600 · wdth 100 · opsz 24 · asta 0,185 de la mayúscula</figcaption>
+      </figure>
+      <figure class="grande">
+        <img src="../camino-2-el-huso/camino-2-el-huso-B-blanco.svg" alt="SpindleLab, camino 2, dirección B">
+        <figcaption class="rot"><b>B · Banco · Mona Sans</b> · wght 600 · wdth 100 · asta 0,171 de la mayúscula</figcaption>
+      </figure>
+    </div>
+    <aside>
+      <h1>Camino 2</h1>
+      <p class="nombre">El huso</p>
+      <p class="difiere">Un signo propio: la «i» se vuelve un huso, la vara que atraviesa la tortera.</p>
+      <ol><li>Spindle es huso: la «i» de la palabra es uno, la vara que atraviesa el disco y asoma arriba, donde iba el punto.</li><li>Una idea hecha con una letra, como la cara que Koto esconde en su nombre, y más pesada que la interfaz, como la de ellos.</li><li>A 16 px queda el huso solo, un signo que no tiene ningún otro estudio; si se lee como cabeza de alfiler, la idea se pierde.</li></ol>
+      <p class="ref">De Koto toma la idea hecha con las letras del nombre, el logo más pesado que el texto y el favicon que es un trozo del logo; no toma su cara, su letra redonda ni su amarillo.</p>
+    </aside>
+    <div class="favs">
+        <div class="fav">
+          <div class="fila">
+            <div class="tabs">
+              <div class="tab oscura"><img src="../camino-2-el-huso/favicon.svg" width="16" height="16" alt=""><span>SpindleLab · Estudio de diseño y tecnología</span></div>
+              <div class="tab clara"><img src="../camino-2-el-huso/favicon.svg" width="16" height="16" alt=""><span>SpindleLab · Estudio de diseño y tecnología</span></div>
+            </div>
+            <img src="../camino-2-el-huso/favicon.svg" width="32" height="32" alt="">
+            <img src="../camino-2-el-huso/favicon-16.png" width="80" height="80" class="pix" alt="">
+          </div>
+          <p class="rot">Favicon A y B · 16 y 32 px reales · el de 16 ampliado ×5</p>
+        </div>
+    </div>
+    <div class="navs">
+      <section class="col">
+        <p class="rot"><b>A · Archivo · Google Sans Flex</b> · menú a 1440, primeros 860 px · tamaño real · logo a 24 px</p>
+        <div class="nav negro ancho-1440" style="width:860px"><img class="logo" src="../camino-2-el-huso/camino-2-el-huso-A-blanco.svg" alt="SpindleLab"><ul><li>Trabajo</li><li>Servicios</li><li>Método</li><li>Nosotros</li><li>Escríbenos</li></ul><span class="hora">--:--</span></div>
+        <div class="nav blanco ancho-1440" style="width:860px"><img class="logo" src="../camino-2-el-huso/camino-2-el-huso-A-negro.svg" alt="SpindleLab"><ul><li>Trabajo</li><li>Servicios</li><li>Método</li><li>Nosotros</li><li>Escríbenos</li></ul><span class="hora">--:--</span></div>
+      </section>
+      <section class="col">
+        <p class="rot"><b>B · Banco · Mona Sans</b> · menú a 1440, primeros 860 px · tamaño real · logo a 24 px</p>
+        <div class="nav negro ancho-1440" style="width:860px"><img class="logo" src="../camino-2-el-huso/camino-2-el-huso-B-blanco.svg" alt="SpindleLab"><ul><li>Trabajo</li><li>Servicios</li><li>Método</li><li>Nosotros</li><li>Escríbenos</li></ul><span class="hora">--:--</span></div>
+        <div class="nav blanco ancho-1440" style="width:860px"><img class="logo" src="../camino-2-el-huso/camino-2-el-huso-B-negro.svg" alt="SpindleLab"><ul><li>Trabajo</li><li>Servicios</li><li>Método</li><li>Nosotros</li><li>Escríbenos</li></ul><span class="hora">--:--</span></div>
+      </section>
+
+      <section class="col">
+        <p class="rot"><b>A · Archivo · Google Sans Flex</b> · menú a 390 · tamaño real · sobre negro y sobre blanco</p>
+        <div class="par"><div class="nav negro ancho-390" style="width:390px"><img class="logo" src="../camino-2-el-huso/camino-2-el-huso-A-blanco.svg" alt="SpindleLab"><span class="menu">Menú</span></div><div class="nav blanco ancho-390" style="width:390px"><img class="logo" src="../camino-2-el-huso/camino-2-el-huso-A-negro.svg" alt="SpindleLab"><span class="menu">Menú</span></div></div>
+      </section>
+      <section class="col">
+        <p class="rot"><b>B · Banco · Mona Sans</b> · menú a 390 · tamaño real · sobre negro y sobre blanco</p>
+        <div class="par"><div class="nav negro ancho-390" style="width:390px"><img class="logo" src="../camino-2-el-huso/camino-2-el-huso-B-blanco.svg" alt="SpindleLab"><span class="menu">Menú</span></div><div class="nav blanco ancho-390" style="width:390px"><img class="logo" src="../camino-2-el-huso/camino-2-el-huso-B-negro.svg" alt="SpindleLab"><span class="menu">Menú</span></div></div>
+      </section>
+    </div>
+  </main>
+  <footer class="pie">
+    <ul><li>Google Sans Flex: SIL OFL 1.1 · Copyright 2015 The Google Sans Flex Authors</li><li>Mona Sans: SIL OFL 1.1, nombre reservado «Mona Sans» · Copyright (c) 2023, GitHub</li></ul>
+    <p class="rot">Trazados a mano en SVG desde letras libres, sin letra cargada · e12/logo/construccion.json<br>Monocromo: blanco sobre #060606 y #060606 sobre blanco · sin oro, sin Gabarito</p>
+  </footer>
+
+<script>
+(function () {
+  // la hora del visitante con su huso (lock §11): se calcula al abrir, no hay hora escrita a mano
+  var d = new Date();
+  var hh = String(d.getHours()).padStart(2, '0'), mm = String(d.getMinutes()).padStart(2, '0');
+  var off = -d.getTimezoneOffset() / 60;
+  var huso = 'UTC' + (off >= 0 ? '+' : '') + (Number.isInteger(off) ? off : off.toFixed(1));
+  document.querySelectorAll('.hora').forEach(function (e) { e.textContent = hh + ':' + mm + ' ' + huso; });
+})();
+</script>
+
+</body>
+</html>

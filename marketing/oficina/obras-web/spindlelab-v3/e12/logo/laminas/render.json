@@ -1,0 +1,1065 @@
+{
+  "fecha": "2026-10-17T04:00:04.705Z",
+  "favicons": [
+    {
+      "camino": "camino-1-la-palabra",
+      "archivo": "camino-1-la-palabra/favicon-A-16.png",
+      "lado": 16
+    },
+    {
+      "camino": "camino-1-la-palabra",
+      "archivo": "camino-1-la-palabra/favicon-A-32.png",
+      "lado": 32
+    },
+    {
+      "camino": "camino-1-la-palabra",
+      "archivo": "camino-1-la-palabra/favicon-B-16.png",
+      "lado": 16
+    },
+    {
+      "camino": "camino-1-la-palabra",
+      "archivo": "camino-1-la-palabra/favicon-B-32.png",
+      "lado": 32
+    },
+    {
+      "camino": "camino-2-el-huso",
+      "archivo": "camino-2-el-huso/favicon-16.png",
+      "lado": 16
+    },
+    {
+      "camino": "camino-2-el-huso",
+      "archivo": "camino-2-el-huso/favicon-32.png",
+      "lado": 32
+    },
+    {
+      "camino": "camino-3-dos-cortes",
+      "archivo": "camino-3-dos-cortes/favicon-A-16.png",
+      "lado": 16
+    },
+    {
+      "camino": "camino-3-dos-cortes",
+      "archivo": "camino-3-dos-cortes/favicon-A-32.png",
+      "lado": 32
+    },
+    {
+      "camino": "camino-3-dos-cortes",
+      "archivo": "camino-3-dos-cortes/favicon-B-16.png",
+      "lado": 16
+    },
+    {
+      "camino": "camino-3-dos-cortes",
+      "archivo": "camino-3-dos-cortes/favicon-B-32.png",
+      "lado": 32
+    }
+  ],
+  "laminas": [
+    {
+      "camino": "camino-1-la-palabra",
+      "archivo": "laminas/camino-1-la-palabra.png",
+      "choques": [],
+      "bloques": [
+        {
+          "s": "header.top",
+          "x0": 64,
+          "y0": 46,
+          "x1": 1856,
+          "y1": 63
+        },
+        {
+          "s": ".heroe",
+          "x0": 64,
+          "y0": 104,
+          "x1": 1124,
+          "y1": 494
+        },
+        {
+          "s": "aside",
+          "x0": 1184,
+          "y0": 104,
+          "x1": 1856,
+          "y1": 431
+        },
+        {
+          "s": ".favs",
+          "x0": 1184,
+          "y0": 494,
+          "x1": 1856,
+          "y1": 604
+        },
+        {
+          "s": ".navs",
+          "x0": 64,
+          "y0": 622,
+          "x1": 1856,
+          "y1": 924
+        },
+        {
+          "s": "footer.pie",
+          "x0": 64,
+          "y0": 1008,
+          "x1": 1856,
+          "y1": 1044
+        }
+      ],
+      "imagenes": 18,
+      "imagenesSinCargar": [],
+      "altoLogoMenu": [
+        24
+      ],
+      "desborde": [],
+      "letras": [
+        "DM Mono 500"
+      ],
+      "textoBajo11px": 0
+    },
+    {
+      "camino": "camino-2-el-huso",
+      "archivo": "laminas/camino-2-el-huso.png",
+      "choques": [],
+      "bloques": [
+        {
+          "s": "header.top",
+          "x0": 64,
+          "y0": 46,
+          "x1": 1856,
+          "y1": 63
+        },
+        {
+          "s": ".heroe",
+          "x0": 64,
+          "y0": 104,
+          "x1": 1124,
+          "y1": 494
+        },
+        {
+          "s": "aside",
+          "x0": 1184,
+          "y0": 104,
+          "x1": 1856,
+          "y1": 429
+        },
+        {
+          "s": ".favs",
+          "x0": 1184,
+          "y0": 494,
+          "x1": 1572,
+          "y1": 593
+        },
+        {
+          "s": ".navs",
+          "x0": 64,
+          "y0": 622,
+          "x1": 1856,
+          "y1": 924
+        },
+        {
+          "s": "footer.pie",
+          "x0": 64,
+          "y0": 1008,
+          "x1": 1856,
+          "y1": 1044
+        }
+      ],
+      "imagenes": 14,
+      "imagenesSinCargar": [],
+      "altoLogoMenu": [
+        24
+      ],
+      "desborde": [],
+      "letras": [
+        "DM Mono 500"
+      ],
+      "textoBajo11px": 0
+    },
+    {
+      "camino": "camino-3-dos-cortes",
+      "archivo": "laminas/camino-3-dos-cortes.png",
+      "choques": [],
+      "bloques": [
+        {
+          "s": "header.top",
+          "x0": 64,
+          "y0": 46,
+          "x1": 1856,
+          "y1": 63
+        },
+        {
+          "s": ".heroe",
+          "x0": 64,
+          "y0": 104,
+          "x1": 1124,
+          "y1": 494
+        },
+        {
+          "s": "aside",
+          "x0": 1184,
+          "y0": 104,
+          "x1": 1856,
+          "y1": 431
+        },
+        {
+          "s": ".favs",
+          "x0": 1184,
+          "y0": 494,
+          "x1": 1856,
+          "y1": 604
+        },
+        {
+          "s": ".navs",
+          "x0": 64,
+          "y0": 622,
+          "x1": 1856,
+          "y1": 924
+        },
+        {
+          "s": "footer.pie",
+          "x0": 64,
+          "y0": 990,
+          "x1": 1856,
+          "y1": 1044
+        }
+      ],
+      "imagenes": 18,
+      "imagenesSinCargar": [],
+      "altoLogoMenu": [
+        24
+      ],
+      "desborde": [],
+      "letras": [
+        "DM Mono 500"
+      ],
+      "textoBajo11px": 0
+    }
+  ],
+  "menu": [
+    {
+      "camino": "camino-1-la-palabra",
+      "dir": "A",
+      "ancho": 1440,
+      "fondo": "negro",
+      "archivo": "laminas/menu/camino-1-la-palabra-A-1440-negro.png",
+      "logo": {
+        "x": 16,
+        "y": 28,
+        "ancho": 123.2,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Trabajo",
+          "x": 199.2,
+          "derecha": 247.7
+        },
+        {
+          "t": "Servicios",
+          "x": 283.7,
+          "derecha": 346.1
+        },
+        {
+          "t": "Método",
+          "x": 382.1,
+          "derecha": 423.7
+        },
+        {
+          "t": "Nosotros",
+          "x": 459.7,
+          "derecha": 515.1
+        },
+        {
+          "t": "Escríbenos",
+          "x": 551.1,
+          "derecha": 620.5
+        },
+        {
+          "t": "01:00 UTC-3",
+          "x": 1347.8,
+          "derecha": 1424
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-1-la-palabra",
+      "dir": "A",
+      "ancho": 1440,
+      "fondo": "blanco",
+      "archivo": "laminas/menu/camino-1-la-palabra-A-1440-blanco.png",
+      "logo": {
+        "x": 16,
+        "y": 28,
+        "ancho": 123.2,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Trabajo",
+          "x": 199.2,
+          "derecha": 247.7
+        },
+        {
+          "t": "Servicios",
+          "x": 283.7,
+          "derecha": 346.1
+        },
+        {
+          "t": "Método",
+          "x": 382.1,
+          "derecha": 423.7
+        },
+        {
+          "t": "Nosotros",
+          "x": 459.7,
+          "derecha": 515.1
+        },
+        {
+          "t": "Escríbenos",
+          "x": 551.1,
+          "derecha": 620.5
+        },
+        {
+          "t": "01:00 UTC-3",
+          "x": 1347.8,
+          "derecha": 1424
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-1-la-palabra",
+      "dir": "A",
+      "ancho": 390,
+      "fondo": "negro",
+      "archivo": "laminas/menu/camino-1-la-palabra-A-390-negro.png",
+      "logo": {
+        "x": 16,
+        "y": 24,
+        "ancho": 123.2,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Menú",
+          "x": 346.3,
+          "derecha": 374
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-1-la-palabra",
+      "dir": "A",
+      "ancho": 390,
+      "fondo": "blanco",
+      "archivo": "laminas/menu/camino-1-la-palabra-A-390-blanco.png",
+      "logo": {
+        "x": 16,
+        "y": 24,
+        "ancho": 123.2,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Menú",
+          "x": 346.3,
+          "derecha": 374
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-1-la-palabra",
+      "dir": "B",
+      "ancho": 1440,
+      "fondo": "negro",
+      "archivo": "laminas/menu/camino-1-la-palabra-B-1440-negro.png",
+      "logo": {
+        "x": 16,
+        "y": 28,
+        "ancho": 135.1,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Trabajo",
+          "x": 211.1,
+          "derecha": 259.6
+        },
+        {
+          "t": "Servicios",
+          "x": 295.6,
+          "derecha": 358
+        },
+        {
+          "t": "Método",
+          "x": 394,
+          "derecha": 435.5
+        },
+        {
+          "t": "Nosotros",
+          "x": 471.5,
+          "derecha": 527
+        },
+        {
+          "t": "Escríbenos",
+          "x": 563,
+          "derecha": 632.3
+        },
+        {
+          "t": "01:00 UTC-3",
+          "x": 1347.8,
+          "derecha": 1424
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-1-la-palabra",
+      "dir": "B",
+      "ancho": 1440,
+      "fondo": "blanco",
+      "archivo": "laminas/menu/camino-1-la-palabra-B-1440-blanco.png",
+      "logo": {
+        "x": 16,
+        "y": 28,
+        "ancho": 135.1,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Trabajo",
+          "x": 211.1,
+          "derecha": 259.6
+        },
+        {
+          "t": "Servicios",
+          "x": 295.6,
+          "derecha": 358
+        },
+        {
+          "t": "Método",
+          "x": 394,
+          "derecha": 435.5
+        },
+        {
+          "t": "Nosotros",
+          "x": 471.5,
+          "derecha": 527
+        },
+        {
+          "t": "Escríbenos",
+          "x": 563,
+          "derecha": 632.3
+        },
+        {
+          "t": "01:00 UTC-3",
+          "x": 1347.8,
+          "derecha": 1424
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-1-la-palabra",
+      "dir": "B",
+      "ancho": 390,
+      "fondo": "negro",
+      "archivo": "laminas/menu/camino-1-la-palabra-B-390-negro.png",
+      "logo": {
+        "x": 16,
+        "y": 24,
+        "ancho": 135.1,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Menú",
+          "x": 346.3,
+          "derecha": 374
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-1-la-palabra",
+      "dir": "B",
+      "ancho": 390,
+      "fondo": "blanco",
+      "archivo": "laminas/menu/camino-1-la-palabra-B-390-blanco.png",
+      "logo": {
+        "x": 16,
+        "y": 24,
+        "ancho": 135.1,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Menú",
+          "x": 346.3,
+          "derecha": 374
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-2-el-huso",
+      "dir": "A",
+      "ancho": 1440,
+      "fondo": "negro",
+      "archivo": "laminas/menu/camino-2-el-huso-A-1440-negro.png",
+      "logo": {
+        "x": 16,
+        "y": 28,
+        "ancho": 130.1,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Trabajo",
+          "x": 206.1,
+          "derecha": 254.7
+        },
+        {
+          "t": "Servicios",
+          "x": 290.7,
+          "derecha": 353
+        },
+        {
+          "t": "Método",
+          "x": 389,
+          "derecha": 430.6
+        },
+        {
+          "t": "Nosotros",
+          "x": 466.6,
+          "derecha": 522.1
+        },
+        {
+          "t": "Escríbenos",
+          "x": 558.1,
+          "derecha": 627.4
+        },
+        {
+          "t": "01:00 UTC-3",
+          "x": 1347.8,
+          "derecha": 1424
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-2-el-huso",
+      "dir": "A",
+      "ancho": 1440,
+      "fondo": "blanco",
+      "archivo": "laminas/menu/camino-2-el-huso-A-1440-blanco.png",
+      "logo": {
+        "x": 16,
+        "y": 28,
+        "ancho": 130.1,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Trabajo",
+          "x": 206.1,
+          "derecha": 254.7
+        },
+        {
+          "t": "Servicios",
+          "x": 290.7,
+          "derecha": 353
+        },
+        {
+          "t": "Método",
+          "x": 389,
+          "derecha": 430.6
+        },
+        {
+          "t": "Nosotros",
+          "x": 466.6,
+          "derecha": 522.1
+        },
+        {
+          "t": "Escríbenos",
+          "x": 558.1,
+          "derecha": 627.4
+        },
+        {
+          "t": "01:00 UTC-3",
+          "x": 1347.8,
+          "derecha": 1424
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-2-el-huso",
+      "dir": "A",
+      "ancho": 390,
+      "fondo": "negro",
+      "archivo": "laminas/menu/camino-2-el-huso-A-390-negro.png",
+      "logo": {
+        "x": 16,
+        "y": 24,
+        "ancho": 130.1,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Menú",
+          "x": 346.3,
+          "derecha": 374
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-2-el-huso",
+      "dir": "A",
+      "ancho": 390,
+      "fondo": "blanco",
+      "archivo": "laminas/menu/camino-2-el-huso-A-390-blanco.png",
+      "logo": {
+        "x": 16,
+        "y": 24,
+        "ancho": 130.1,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Menú",
+          "x": 346.3,
+          "derecha": 374
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-2-el-huso",
+      "dir": "B",
+      "ancho": 1440,
+      "fondo": "negro",
+      "archivo": "laminas/menu/camino-2-el-huso-B-1440-negro.png",
+      "logo": {
+        "x": 16,
+        "y": 28,
+        "ancho": 139.4,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Trabajo",
+          "x": 215.4,
+          "derecha": 264
+        },
+        {
+          "t": "Servicios",
+          "x": 300,
+          "derecha": 362.3
+        },
+        {
+          "t": "Método",
+          "x": 398.3,
+          "derecha": 439.9
+        },
+        {
+          "t": "Nosotros",
+          "x": 475.9,
+          "derecha": 531.4
+        },
+        {
+          "t": "Escríbenos",
+          "x": 567.4,
+          "derecha": 636.7
+        },
+        {
+          "t": "01:00 UTC-3",
+          "x": 1347.8,
+          "derecha": 1424
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-2-el-huso",
+      "dir": "B",
+      "ancho": 1440,
+      "fondo": "blanco",
+      "archivo": "laminas/menu/camino-2-el-huso-B-1440-blanco.png",
+      "logo": {
+        "x": 16,
+        "y": 28,
+        "ancho": 139.4,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Trabajo",
+          "x": 215.4,
+          "derecha": 264
+        },
+        {
+          "t": "Servicios",
+          "x": 300,
+          "derecha": 362.3
+        },
+        {
+          "t": "Método",
+          "x": 398.3,
+          "derecha": 439.9
+        },
+        {
+          "t": "Nosotros",
+          "x": 475.9,
+          "derecha": 531.4
+        },
+        {
+          "t": "Escríbenos",
+          "x": 567.4,
+          "derecha": 636.7
+        },
+        {
+          "t": "01:00 UTC-3",
+          "x": 1347.8,
+          "derecha": 1424
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-2-el-huso",
+      "dir": "B",
+      "ancho": 390,
+      "fondo": "negro",
+      "archivo": "laminas/menu/camino-2-el-huso-B-390-negro.png",
+      "logo": {
+        "x": 16,
+        "y": 24,
+        "ancho": 139.4,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Menú",
+          "x": 346.3,
+          "derecha": 374
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-2-el-huso",
+      "dir": "B",
+      "ancho": 390,
+      "fondo": "blanco",
+      "archivo": "laminas/menu/camino-2-el-huso-B-390-blanco.png",
+      "logo": {
+        "x": 16,
+        "y": 24,
+        "ancho": 139.4,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Menú",
+          "x": 346.3,
+          "derecha": 374
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-3-dos-cortes",
+      "dir": "A",
+      "ancho": 1440,
+      "fondo": "negro",
+      "archivo": "laminas/menu/camino-3-dos-cortes-A-1440-negro.png",
+      "logo": {
+        "x": 16,
+        "y": 28,
+        "ancho": 115,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Trabajo",
+          "x": 191,
+          "derecha": 239.6
+        },
+        {
+          "t": "Servicios",
+          "x": 275.6,
+          "derecha": 337.9
+        },
+        {
+          "t": "Método",
+          "x": 373.9,
+          "derecha": 415.5
+        },
+        {
+          "t": "Nosotros",
+          "x": 451.5,
+          "derecha": 507
+        },
+        {
+          "t": "Escríbenos",
+          "x": 543,
+          "derecha": 612.3
+        },
+        {
+          "t": "01:00 UTC-3",
+          "x": 1347.8,
+          "derecha": 1424
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-3-dos-cortes",
+      "dir": "A",
+      "ancho": 1440,
+      "fondo": "blanco",
+      "archivo": "laminas/menu/camino-3-dos-cortes-A-1440-blanco.png",
+      "logo": {
+        "x": 16,
+        "y": 28,
+        "ancho": 115,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Trabajo",
+          "x": 191,
+          "derecha": 239.6
+        },
+        {
+          "t": "Servicios",
+          "x": 275.6,
+          "derecha": 337.9
+        },
+        {
+          "t": "Método",
+          "x": 373.9,
+          "derecha": 415.5
+        },
+        {
+          "t": "Nosotros",
+          "x": 451.5,
+          "derecha": 507
+        },
+        {
+          "t": "Escríbenos",
+          "x": 543,
+          "derecha": 612.3
+        },
+        {
+          "t": "01:00 UTC-3",
+          "x": 1347.8,
+          "derecha": 1424
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-3-dos-cortes",
+      "dir": "A",
+      "ancho": 390,
+      "fondo": "negro",
+      "archivo": "laminas/menu/camino-3-dos-cortes-A-390-negro.png",
+      "logo": {
+        "x": 16,
+        "y": 24,
+        "ancho": 115,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Menú",
+          "x": 346.3,
+          "derecha": 374
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-3-dos-cortes",
+      "dir": "A",
+      "ancho": 390,
+      "fondo": "blanco",
+      "archivo": "laminas/menu/camino-3-dos-cortes-A-390-blanco.png",
+      "logo": {
+        "x": 16,
+        "y": 24,
+        "ancho": 115,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Menú",
+          "x": 346.3,
+          "derecha": 374
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-3-dos-cortes",
+      "dir": "B",
+      "ancho": 1440,
+      "fondo": "negro",
+      "archivo": "laminas/menu/camino-3-dos-cortes-B-1440-negro.png",
+      "logo": {
+        "x": 16,
+        "y": 28,
+        "ancho": 126.5,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Trabajo",
+          "x": 202.5,
+          "derecha": 251
+        },
+        {
+          "t": "Servicios",
+          "x": 287,
+          "derecha": 349.4
+        },
+        {
+          "t": "Método",
+          "x": 385.4,
+          "derecha": 427
+        },
+        {
+          "t": "Nosotros",
+          "x": 463,
+          "derecha": 518.4
+        },
+        {
+          "t": "Escríbenos",
+          "x": 554.4,
+          "derecha": 623.7
+        },
+        {
+          "t": "01:00 UTC-3",
+          "x": 1347.8,
+          "derecha": 1424
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-3-dos-cortes",
+      "dir": "B",
+      "ancho": 1440,
+      "fondo": "blanco",
+      "archivo": "laminas/menu/camino-3-dos-cortes-B-1440-blanco.png",
+      "logo": {
+        "x": 16,
+        "y": 28,
+        "ancho": 126.5,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Trabajo",
+          "x": 202.5,
+          "derecha": 251
+        },
+        {
+          "t": "Servicios",
+          "x": 287,
+          "derecha": 349.4
+        },
+        {
+          "t": "Método",
+          "x": 385.4,
+          "derecha": 427
+        },
+        {
+          "t": "Nosotros",
+          "x": 463,
+          "derecha": 518.4
+        },
+        {
+          "t": "Escríbenos",
+          "x": 554.4,
+          "derecha": 623.7
+        },
+        {
+          "t": "01:00 UTC-3",
+          "x": 1347.8,
+          "derecha": 1424
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-3-dos-cortes",
+      "dir": "B",
+      "ancho": 390,
+      "fondo": "negro",
+      "archivo": "laminas/menu/camino-3-dos-cortes-B-390-negro.png",
+      "logo": {
+        "x": 16,
+        "y": 24,
+        "ancho": 126.5,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Menú",
+          "x": 346.3,
+          "derecha": 374
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    },
+    {
+      "camino": "camino-3-dos-cortes",
+      "dir": "B",
+      "ancho": 390,
+      "fondo": "blanco",
+      "archivo": "laminas/menu/camino-3-dos-cortes-B-390-blanco.png",
+      "logo": {
+        "x": 16,
+        "y": 24,
+        "ancho": 126.5,
+        "alto": 24
+      },
+      "items": [
+        {
+          "t": "Menú",
+          "x": 346.3,
+          "derecha": 374
+        }
+      ],
+      "desborde": false,
+      "letraMenu": "\"DM Mono\", monospace"
+    }
+  ],
+  "errores": []
+}

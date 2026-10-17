@@ -1,0 +1,279 @@
+{
+  "fecha": "2026-10-17",
+  "unidad": "altura de mayúscula = 100 unidades del SVG",
+  "caminos": {
+    "camino-1-la-palabra": {
+      "A": {
+        "letra": "Google Sans Flex",
+        "archivo": "https://fonts.gstatic.com/s/googlesansflex/v23/t5t2IQcYNIWbFgDgAAzZ34auoVyXkJCOjsOqNGFbN5hF8LG572o.woff2",
+        "instancia": {
+          "opsz": 24,
+          "GRAD": 0,
+          "ROND": 0,
+          "wdth": 100,
+          "wght": 430
+        },
+        "licencia": "SIL OFL 1.1 · Copyright 2015 The Google Sans Flex Authors · fuentes/OFL-google-sans-flex.txt (https://github.com/google/fonts/blob/main/ofl/googlesansflex/OFL.txt)",
+        "altoMayuscula": 100.0,
+        "asta": 12.79,
+        "astaSobreMayuscula": 0.128,
+        "ancho": 679.08,
+        "alto": 132.27,
+        "proporcion": 5.134,
+        "aAltoDe24px": {
+          "ancho_px": 123.2,
+          "mayuscula_px": 18.1,
+          "asta_px": 2.32
+        },
+        "ajustesAMano": {
+          "trackingMilesimasDeMayuscula": -10,
+          "pares": {
+            "eL": -14
+          }
+        },
+        "archivos": [
+          "camino-1-la-palabra-A-blanco.svg",
+          "camino-1-la-palabra-A-negro.svg"
+        ],
+        "favicon": {
+          "archivo": "favicon-A.svg",
+          "dibujo": "la «S» de la palabra, sola",
+          "alto_mayuscula_32": 22,
+          "ancho": 15.12,
+          "alto": 22.97
+        }
+      },
+      "B": {
+        "letra": "Mona Sans",
+        "archivo": "https://fonts.gstatic.com/s/monasans/v4/o-0IIpQmx24alC5A4PNr5TRA.woff2",
+        "instancia": {
+          "wdth": 100,
+          "wght": 430
+        },
+        "licencia": "SIL OFL 1.1, nombre reservado «Mona Sans» · Copyright (c) 2023, GitHub · fuentes/OFL-mona-sans.txt (https://github.com/github/mona-sans/blob/main/LICENSE)",
+        "altoMayuscula": 100.0,
+        "asta": 12.02,
+        "astaSobreMayuscula": 0.12,
+        "ancho": 698.14,
+        "alto": 124.05,
+        "proporcion": 5.628,
+        "aAltoDe24px": {
+          "ancho_px": 135.1,
+          "mayuscula_px": 19.3,
+          "asta_px": 2.32
+        },
+        "ajustesAMano": {
+          "trackingMilesimasDeMayuscula": -10,
+          "pares": {
+            "eL": -12
+          }
+        },
+        "archivos": [
+          "camino-1-la-palabra-B-blanco.svg",
+          "camino-1-la-palabra-B-negro.svg"
+        ],
+        "favicon": {
+          "archivo": "favicon-B.svg",
+          "dibujo": "la «S» de la palabra, sola",
+          "alto_mayuscula_32": 22,
+          "ancho": 17.06,
+          "alto": 22.51
+        }
+      }
+    },
+    "camino-2-el-huso": {
+      "A": {
+        "letra": "Google Sans Flex",
+        "archivo": "https://fonts.gstatic.com/s/googlesansflex/v23/t5t2IQcYNIWbFgDgAAzZ34auoVyXkJCOjsOqNGFbN5hF8LG572o.woff2",
+        "instancia": {
+          "opsz": 24,
+          "GRAD": 0,
+          "ROND": 0,
+          "wdth": 100,
+          "wght": 600
+        },
+        "licencia": "SIL OFL 1.1 · Copyright 2015 The Google Sans Flex Authors · fuentes/OFL-google-sans-flex.txt (https://github.com/google/fonts/blob/main/ofl/googlesansflex/OFL.txt)",
+        "altoMayuscula": 100.0,
+        "asta": 18.5,
+        "astaSobreMayuscula": 0.185,
+        "ancho": 717.52,
+        "alto": 132.32,
+        "proporcion": 5.423,
+        "aAltoDe24px": {
+          "ancho_px": 130.1,
+          "mayuscula_px": 18.1,
+          "asta_px": 3.36
+        },
+        "medidas": {
+          "asta": 18.5,
+          "tortera_ancho": 53.649,
+          "tortera_alto": 31.449,
+          "centro_tortera_sobre_base": 79.557,
+          "punta_sobre_base": 101.756,
+          "punto_original_arriba": 105.428,
+          "altura_x": 71.695,
+          "tortera_sobre_avance_i": 1.458
+        },
+        "ajustesAMano": {
+          "trackingMilesimasDeMayuscula": -14,
+          "pares": {
+            "pi": 6,
+            "in": 6,
+            "eL": -16
+          }
+        },
+        "archivos": [
+          "camino-2-el-huso-A-blanco.svg",
+          "camino-2-el-huso-A-negro.svg"
+        ]
+      },
+      "B": {
+        "letra": "Mona Sans",
+        "archivo": "https://fonts.gstatic.com/s/monasans/v4/o-0IIpQmx24alC5A4PNr5TRA.woff2",
+        "instancia": {
+          "wdth": 100,
+          "wght": 600
+        },
+        "licencia": "SIL OFL 1.1, nombre reservado «Mona Sans» · Copyright (c) 2023, GitHub · fuentes/OFL-mona-sans.txt (https://github.com/github/mona-sans/blob/main/LICENSE)",
+        "altoMayuscula": 100.0,
+        "asta": 17.15,
+        "astaSobreMayuscula": 0.171,
+        "ancho": 720.91,
+        "alto": 124.08,
+        "proporcion": 5.81,
+        "aAltoDe24px": {
+          "ancho_px": 139.4,
+          "mayuscula_px": 19.3,
+          "asta_px": 3.32
+        },
+        "medidas": {
+          "asta": 17.146,
+          "tortera_ancho": 49.725,
+          "tortera_alto": 29.149,
+          "centro_tortera_sobre_base": 80.323,
+          "punta_sobre_base": 100.898,
+          "punto_original_arriba": 99.569,
+          "altura_x": 73.035,
+          "tortera_sobre_avance_i": 1.394
+        },
+        "ajustesAMano": {
+          "trackingMilesimasDeMayuscula": -14,
+          "pares": {
+            "pi": 6,
+            "in": 6,
+            "eL": -14
+          }
+        },
+        "archivos": [
+          "camino-2-el-huso-B-blanco.svg",
+          "camino-2-el-huso-B-negro.svg"
+        ]
+      },
+      "favicon": {
+        "archivo": "favicon.svg",
+        "dibujo": "el huso solo: vara de 4 × 25 y tortera de 16 × 10 en una retícula de 32 (a 16 px: 2 × 12,5 y 8 × 5 px)"
+      }
+    },
+    "camino-3-dos-cortes": {
+      "A": {
+        "letra": "Google Sans Flex",
+        "archivo": "https://fonts.gstatic.com/s/googlesansflex/v23/t5t2IQcYNIWbFgDgAAzZ34auoVyXkJCOjsOqNGFbN5hF8LG572o.woff2",
+        "instancia": {
+          "opsz": 24,
+          "GRAD": 0,
+          "ROND": 0,
+          "wdth": 100,
+          "wght": 359
+        },
+        "licencia": "SIL OFL 1.1 · Copyright 2015 The Google Sans Flex Authors · fuentes/OFL-google-sans-flex.txt (https://github.com/google/fonts/blob/main/ofl/googlesansflex/OFL.txt)",
+        "altoMayuscula": 100.0,
+        "asta": 10.78,
+        "astaSobreMayuscula": 0.108,
+        "ancho": 633.54,
+        "alto": 132.16,
+        "proporcion": 4.794,
+        "aAltoDe24px": {
+          "ancho_px": 115.1,
+          "mayuscula_px": 18.2,
+          "asta_px": 1.96
+        },
+        "medidas": {
+          "hueco_e_L": 14.39,
+          "mayuscula_mono": 71.17,
+          "asta_mono": 10.78,
+          "altura_x_sans": 71.17
+        },
+        "ajustesAMano": {
+          "trackingMilesimasDeMayuscula": -8,
+          "pares": {}
+        },
+        "letraLab": {
+          "letra": "DM Mono 500",
+          "licencia": "SIL OFL 1.1 · Copyright 2020 The DM Mono Project Authors · fuentes/OFL-dm-mono.txt (https://github.com/google/fonts/blob/main/ofl/dmmono/OFL.txt)"
+        },
+        "archivos": [
+          "camino-3-dos-cortes-A-blanco.svg",
+          "camino-3-dos-cortes-A-negro.svg"
+        ],
+        "favicon": {
+          "archivo": "favicon-A.svg",
+          "dibujo": "la «S» de la sans y la «L» de la mono a la altura de su x, como en la palabra",
+          "ancho": 24.2,
+          "alto": 20.87,
+          "mayuscula_S": 20.0,
+          "mayuscula_L": 14.23
+        }
+      },
+      "B": {
+        "letra": "Mona Sans",
+        "archivo": "https://fonts.gstatic.com/s/monasans/v4/o-0IIpQmx24alC5A4PNr5TRA.woff2",
+        "instancia": {
+          "wdth": 100,
+          "wght": 393
+        },
+        "licencia": "SIL OFL 1.1, nombre reservado «Mona Sans» · Copyright (c) 2023, GitHub · fuentes/OFL-mona-sans.txt (https://github.com/github/mona-sans/blob/main/LICENSE)",
+        "altoMayuscula": 100.0,
+        "asta": 10.9,
+        "astaSobreMayuscula": 0.109,
+        "ancho": 653.67,
+        "alto": 124.04,
+        "proporcion": 5.27,
+        "aAltoDe24px": {
+          "ancho_px": 126.5,
+          "mayuscula_px": 19.3,
+          "asta_px": 2.11
+        },
+        "medidas": {
+          "hueco_e_L": 15.62,
+          "mayuscula_mono": 71.94,
+          "asta_mono": 10.89,
+          "altura_x_sans": 71.94
+        },
+        "ajustesAMano": {
+          "trackingMilesimasDeMayuscula": -8,
+          "pares": {}
+        },
+        "letraLab": {
+          "letra": "DM Mono 500",
+          "licencia": "SIL OFL 1.1 · Copyright 2020 The DM Mono Project Authors · fuentes/OFL-dm-mono.txt (https://github.com/google/fonts/blob/main/ofl/dmmono/OFL.txt)"
+        },
+        "archivos": [
+          "camino-3-dos-cortes-B-blanco.svg",
+          "camino-3-dos-cortes-B-negro.svg"
+        ],
+        "favicon": {
+          "archivo": "favicon-B.svg",
+          "dibujo": "la «S» de la sans y la «L» de la mono a la altura de su x, como en la palabra",
+          "ancho": 26.24,
+          "alto": 20.46,
+          "mayuscula_S": 20.0,
+          "mayuscula_L": 14.39
+        }
+      }
+    }
+  },
+  "dmMono500": {
+    "asta": 15.14,
+    "astaSobreMayuscula": 0.151
+  }
+}

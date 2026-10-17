@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menú del sitio con el logo</title>
+<style>
+@font-face { font-family: 'DM Mono'; font-weight: 500; font-style: normal;
+  src: url('../fuentes/dm-mono-500-latin.woff2') format('woff2'); }
+:root { --lienzo: #060606; --placa: #141414; --placa-activa: #202020; --blanco: #FFFFFF; --gris: #989898;
+  --linea-seccion: #2D2D2D; --linea: rgba(255,255,255,.10); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--lienzo); color: var(--blanco); }
+body { font-family: 'DM Mono', monospace; font-weight: 500; -webkit-font-smoothing: antialiased; }
+.rot { font-size: 13px; line-height: 1; text-transform: uppercase; letter-spacing: .03em; color: var(--gris); }
+.rot b { color: var(--blanco); font-weight: 500; }
+/* el menú, como en el sitio */
+.nav { position: relative; display: flex; align-items: center; overflow: hidden; }
+.nav.negro { background: var(--lienzo); }
+.nav.blanco { background: #FFFFFF; }
+.nav .logo { display: block; height: 24px; width: auto; flex: none; }
+.nav ul { list-style: none; display: flex; gap: 36px; margin-left: 60px; }
+.nav li, .nav .hora, .nav .menu { font-size: 11px; line-height: 1; text-transform: uppercase; letter-spacing: .03em; white-space: nowrap; }
+.nav.negro li, .nav.negro .hora, .nav.negro .menu { color: rgba(255,255,255,.7); }
+.nav.blanco li, .nav.blanco .hora, .nav.blanco .menu { color: rgba(6,6,6,.7); }
+.nav .hora { margin-left: auto; }
+.nav.ancho-1440 { height: 80px; padding: 0 16px; }
+.nav.ancho-390 { height: 72px; padding: 0 16px; justify-content: space-between; }
+.nav.ancho-390 .menu { margin-left: auto; }
+
+body { min-height: 100vh; }
+body.blanco { background: #FFFFFF; }
+</style>
+</head>
+<body>
+  <div id="nav"></div>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var clave = q.get('camino'), dir = q.get('dir'), fondo = q.get('fondo') || 'negro';
+  var ancho = window.innerWidth >= 834 ? 1440 : 390;
+  var color = fondo === 'negro' ? 'blanco' : 'negro';
+  if (!({"camino-1-la-palabra": 1, "camino-2-el-huso": 2, "camino-3-dos-cortes": 3})[clave] || !/^[AB]$/.test(dir)) { document.body.textContent = 'falta ?camino=…&dir=A|B'; return; }
+  document.body.className = fondo;
+  var src = '../' + clave + '/' + clave + '-' + dir + '-' + color + '.svg';
+  var cuerpo = '<img class="logo" src="' + src + '" alt="SpindleLab">' +
+    (ancho === 1440 ? '<ul><li>Trabajo</li><li>Servicios</li><li>Método</li><li>Nosotros</li><li>Escríbenos</li></ul><span class="hora">--:--</span>' : '<span class="menu">Menú</span>');
+  document.getElementById('nav').outerHTML = '<div class="nav ' + fondo + ' ancho-' + ancho + '">' + cuerpo + '</div>';
+})();
+</script>
+
+<script>
+(function () {
+  // la hora del visitante con su huso (lock §11): se calcula al abrir, no hay hora escrita a mano
+  var d = new Date();
+  var hh = String(d.getHours()).padStart(2, '0'), mm = String(d.getMinutes()).padStart(2, '0');
+  var off = -d.getTimezoneOffset() / 60;
+  var huso = 'UTC' + (off >= 0 ? '+' : '') + (Number.isInteger(off) ? off : off.toFixed(1));
+  document.querySelectorAll('.hora').forEach(function (e) { e.textContent = hh + ':' + mm + ' ' + huso; });
+})();
+</script>
+
+</body>
+</html>
