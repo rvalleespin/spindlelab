@@ -1,0 +1,97 @@
+{
+ "que_es": "Comprobación de los nombres de los dos oftalmólogos ficticios de Ocelo en el Registro Nacional de Prestadores Individuales (RNPI) de la Superintendencia de Salud. Solo se pide el CONTEO de prestadores registrados cuyo nombre calza con la consulta (endpoint público getPrestadoresCount, el mismo que usa la página para contar por profesión); no se baja ningún dato personal. 'Juan Pérez' es el control: tiene que dar más de cero para que un cero signifique algo.",
+ "fuente": "https://rnpi.superdesalud.gob.cl/",
+ "consultado": "2026-10-16 21:00:02 -03",
+ "resultados": [
+  {
+   "consulta": "Juan Pérez",
+   "profesion": "Médico Cirujano",
+   "registrados": 37
+  },
+  {
+   "consulta": "Juan Pérez",
+   "profesion": "Tecnólogos Médicos",
+   "registrados": 7
+  },
+  {
+   "consulta": "Leonor Ibarbia Saelzer",
+   "profesion": "Médico Cirujano",
+   "registrados": 0
+  },
+  {
+   "consulta": "Leonor Ibarbia Saelzer",
+   "profesion": "Tecnólogos Médicos",
+   "registrados": 0
+  },
+  {
+   "consulta": "Leonor Ibarbia",
+   "profesion": "Médico Cirujano",
+   "registrados": 0
+  },
+  {
+   "consulta": "Leonor Ibarbia",
+   "profesion": "Tecnólogos Médicos",
+   "registrados": 0
+  },
+  {
+   "consulta": "Ibarbia Saelzer",
+   "profesion": "Médico Cirujano",
+   "registrados": 0
+  },
+  {
+   "consulta": "Ibarbia Saelzer",
+   "profesion": "Tecnólogos Médicos",
+   "registrados": 0
+  },
+  {
+   "consulta": "Ibarbia",
+   "profesion": "Médico Cirujano",
+   "registrados": 0
+  },
+  {
+   "consulta": "Ibarbia",
+   "profesion": "Tecnólogos Médicos",
+   "registrados": 0
+  },
+  {
+   "consulta": "Matías Cerdeña Olave",
+   "profesion": "Médico Cirujano",
+   "registrados": 0
+  },
+  {
+   "consulta": "Matías Cerdeña Olave",
+   "profesion": "Tecnólogos Médicos",
+   "registrados": 0
+  },
+  {
+   "consulta": "Matías Cerdeña",
+   "profesion": "Médico Cirujano",
+   "registrados": 0
+  },
+  {
+   "consulta": "Matías Cerdeña",
+   "profesion": "Tecnólogos Médicos",
+   "registrados": 0
+  },
+  {
+   "consulta": "Cerdeña Olave",
+   "profesion": "Médico Cirujano",
+   "registrados": 0
+  },
+  {
+   "consulta": "Cerdeña Olave",
+   "profesion": "Tecnólogos Médicos",
+   "registrados": 0
+  },
+  {
+   "consulta": "Cerdeña",
+   "profesion": "Médico Cirujano",
+   "registrados": 0
+  },
+  {
+   "consulta": "Cerdeña",
+   "profesion": "Tecnólogos Médicos",
+   "registrados": 0
+  }
+ ]
+}
