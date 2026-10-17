@@ -31,3 +31,8 @@ Ramón pidió no esperar la tasa de rebote: el objetivo es afinar la búsqueda d
 | X52 | bacs.cl | atromo@bacs.cl | bacs.cl y la política de privacidad | r4634207068474301855 |
 
 Misma regla anti duplicado: estas 6 direcciones ya tienen borrador, no crear otro.
+
+### Corrección del 17-oct-2026: links largos en los 6 borradores de la segunda ola
+Ramón vio los links largos. Causa (medida leyendo los borradores con `get_draft`): `create_draft` con solo `body` autoenlaza los dominios y deja como TEXTO VISIBLE la dirección `https://www.google.com/url?q=...&source=gmail&ust=...`. Pasar `body` junto con `htmlBody` tampoco sirve: Gmail autoenlaza también la parte de texto.
+**Arreglo:** los 6 se actualizaron con `update_draft` usando SOLO `htmlBody`, con la firma de tabla de la primera ola (no la firma de imagen de Gmail, no usar `includeSignature`). Solo `verifica.spindlelab.cl` y `spindlelab.cl` llevan enlace; el dominio del prospecto va en texto plano. Verificado después con `list_drafts` FULL: el texto visible de cada enlace es corto; la dirección de google.com queda solo en el `href`, igual que en los 5 correos de la primera ola ya enviados.
+Generador: `borradores/html_correo.py` (borrador → htmlBody). **Regla para quien siga:** nunca crear un borrador con solo `body` ni con `body` + `htmlBody`.

@@ -11,13 +11,13 @@
   "cuerpo": [
    "Hola:",
    "A fines de agosto te escribí por cómo aparece tu sitio en Google y ChatGPT. Hoy es por algo distinto y más concreto.",
-   "En el pie de oscplus.cl hay dos enlaces, \"Aviso legal\" y \"Privacidad\", y los dos llevan a una página de error: ahí no hay nada. Quien quiera leer qué se hace con sus datos no tiene dónde, al menos desde el pie de la página.",
+   "En el pie de oscplus.cl hay dos enlaces, \"Aviso legal\" y \"Privacidad\", y los dos llevan a una página de error. Quien quiera leer qué se hace con sus datos no tiene dónde, al menos desde el pie de la página.",
    "Puedes verlo tú: baja hasta el pie de la portada y haz clic en cada uno.",
-   "Dejar un aviso legal y una política de privacidad que sí se abran cuesta $149.000 + IVA y queda en dos o tres días; la plantilla de la política la revisa tu abogado. Si quieres, lo vemos en una llamada de 20 minutos.",
+   "Arreglarlo cuesta $149.000 + IVA y queda en dos o tres días: una plantilla de política de privacidad para que la revise tu abogado, y los dos enlaces del pie funcionando. Si quieres, lo vemos en una llamada de 20 minutos.",
    "Si no eres tú quien ve el sitio, ¿con quién lo hablo?"
   ],
   "notas": "Verificado por 2 revisores (17-oct): /legal-notice y /privacy responden 404 desde el pie. No se afirma que el sitio no tenga política en otra dirección. Un revisor vio además que en /contacto el texto de consentimiento del formulario sale sin armar ('{{ ... |trans }}'); no se usa porque lo vio solo uno.",
-  "palabras": 139
+  "palabras": 133
  },
  {
   "id": "R34",
@@ -27,17 +27,17 @@
   "oferta": "F3",
   "ola": "Reactivación A",
   "baja": "Si no quieres que te escriba, dime y no insisto. Saqué tu correo del sitio de ustedes; en verifica.spindlelab.cl/privacidad digo qué datos trato y cómo pedir que deje de hacerlo.",
-  "asunto": "los botones de whatsapp de tuoficinacontable.cl",
+  "asunto": "los botones contratar de tuoficinacontable.cl",
   "cuerpo": [
    "Hola:",
    "A comienzos de septiembre te escribí por cómo aparece tu sitio en Google y ChatGPT. Hoy es por algo distinto y más concreto.",
-   "En la sección Planes de tuoficinacontable.cl, los cuatro botones Contratar abren WhatsApp con el número escrito sin el 56 de Chile (962830584). WhatsApp espera el número completo, y esos son los botones de quien ya decidió contratar. El botón verde flotante sí lo tiene bien.",
-   "Puedes verlo tú: toca uno de los botones Contratar desde tu celular y mira a qué número abre el chat.",
-   "Lo corrijo y lo pruebo en el celular. Si quieres, lo vemos en una llamada de 20 minutos. Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+   "Revisé tuoficinacontable.cl y los cuatro botones Contratar de la sección Planes son los que toca quien ya decidió contratar. Enlazan a WhatsApp con el número sin el 56 de Chile (962830584), y WhatsApp espera el número completo. El botón verde flotante sí trae el 56.",
+   "Puedes verlo tú: en el computador, pasa el cursor sobre un botón Contratar y mira la dirección que aparece abajo. Termina en wa.me/962830584, sin el 56.",
+   "Lo arreglo con el 56 y lo pruebo desde el celular. Si quieres, lo vemos en una llamada de 20 minutos. Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
    "Si no eres tú quien ve el sitio, ¿con quién lo hablo?"
   ],
-  "notas": "Verificado por 2 revisores: los 4 botones CONTRATAR de Planes enlazan a wa.me/962830584 (sin 56); el flotante usa 56962830584. NO se afirma que 'no abre' ni que se pierdan clientes: nadie lo probó en un celular. Oferta Desarrollo Web: precio solo como referencia.",
-  "palabras": 135
+  "notas": "Verificado por 2 revisores: los 4 botones CONTRATAR de Planes enlazan a wa.me/962830584 (sin 56); el flotante usa 56962830584. NO se afirma que 'no abre' ni que se pierdan clientes: nadie lo probó en un celular. El revisor independiente pidió comprobar con el cursor sobre el botón (la dirección del enlace), que es lo que sí se midió. Oferta Desarrollo Web: precio solo como referencia.",
+  "palabras": 144
  },
  {
   "id": "R24",

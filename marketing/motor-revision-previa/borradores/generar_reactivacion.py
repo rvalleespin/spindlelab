@@ -7,7 +7,7 @@ BAJA_APOLLO="Si no quieres que te escriba, dime y no insisto. Saqué tu correo d
 BAJA_SITIO="Si no quieres que te escriba, dime y no insisto. Saqué tu correo del sitio de ustedes; en verifica.spindlelab.cl/privacidad digo qué datos trato y cómo pedir que deje de hacerlo."
 PRECIO_F1="Arreglarlo cuesta $149.000 + IVA y queda en dos o tres días: un aviso junto al formulario y una plantilla de política para que la revise tu abogado."
 PRECIO_C1="Dejar un aviso de cookies que pregunte antes cuesta $149.000 + IVA y queda en dos o tres días."
-PRECIO_F9="Dejar un aviso legal y una política de privacidad que sí se abran cuesta $149.000 + IVA y queda en dos o tres días; la plantilla de la política la revisa tu abogado."
+PRECIO_F9="Arreglarlo cuesta $149.000 + IVA y queda en dos o tres días: una plantilla de política de privacidad para que la revise tu abogado, y los dos enlaces del pie funcionando."
 LLAMADA="Si quieres, lo vemos en una llamada de 20 minutos."
 LLAMADA_MUESTRO="Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría."
 LINEA_PRECIO="Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada."
@@ -31,16 +31,16 @@ def f1(id,dom,para,saludo,tanda,cuando,hecho,notas,baja=BAJA_SITIO,contacto='(co
 # ---- Tanda A
 add(id='R30',dominio='oscplus.cl',para='contacto@oscplus.cl',contacto='(correo genérico)',oferta='F9',ola='Reactivación A',baja=BAJA_SITIO,asunto='los enlaces legales de oscplus.cl',
  cuerpo=["Hola:",puente('agosto'),
- "En el pie de oscplus.cl hay dos enlaces, \"Aviso legal\" y \"Privacidad\", y los dos llevan a una página de error: ahí no hay nada. Quien quiera leer qué se hace con sus datos no tiene dónde, al menos desde el pie de la página.",
+ "En el pie de oscplus.cl hay dos enlaces, \"Aviso legal\" y \"Privacidad\", y los dos llevan a una página de error. Quien quiera leer qué se hace con sus datos no tiene dónde, al menos desde el pie de la página.",
  "Puedes verlo tú: baja hasta el pie de la portada y haz clic en cada uno.",
  PRECIO_F9+" "+LLAMADA,DERIVA],
  notas="Verificado por 2 revisores (17-oct): /legal-notice y /privacy responden 404 desde el pie. No se afirma que el sitio no tenga política en otra dirección. Un revisor vio además que en /contacto el texto de consentimiento del formulario sale sin armar ('{{ ... |trans }}'); no se usa porque lo vio solo uno.")
-add(id='R34',dominio='tuoficinacontable.cl',para='somos@tuoficinacontable.cl',contacto='(correo genérico)',oferta='F3',ola='Reactivación A',baja=BAJA_SITIO,asunto='los botones de whatsapp de tuoficinacontable.cl',
+add(id='R34',dominio='tuoficinacontable.cl',para='somos@tuoficinacontable.cl',contacto='(correo genérico)',oferta='F3',ola='Reactivación A',baja=BAJA_SITIO,asunto='los botones contratar de tuoficinacontable.cl',
  cuerpo=["Hola:",puente('sep'),
- "En la sección Planes de tuoficinacontable.cl, los cuatro botones Contratar abren WhatsApp con el número escrito sin el 56 de Chile (962830584). WhatsApp espera el número completo, y esos son los botones de quien ya decidió contratar. El botón verde flotante sí lo tiene bien.",
- "Puedes verlo tú: toca uno de los botones Contratar desde tu celular y mira a qué número abre el chat.",
- "Lo corrijo y lo pruebo en el celular. "+LLAMADA+" "+LINEA_PRECIO,DERIVA],
- notas="Verificado por 2 revisores: los 4 botones CONTRATAR de Planes enlazan a wa.me/962830584 (sin 56); el flotante usa 56962830584. NO se afirma que 'no abre' ni que se pierdan clientes: nadie lo probó en un celular. Oferta Desarrollo Web: precio solo como referencia.")
+ "Revisé tuoficinacontable.cl y los cuatro botones Contratar de la sección Planes son los que toca quien ya decidió contratar. Enlazan a WhatsApp con el número sin el 56 de Chile (962830584), y WhatsApp espera el número completo. El botón verde flotante sí trae el 56.",
+ "Puedes verlo tú: en el computador, pasa el cursor sobre un botón Contratar y mira la dirección que aparece abajo. Termina en wa.me/962830584, sin el 56.",
+ "Lo arreglo con el 56 y lo pruebo desde el celular. "+LLAMADA+" "+LINEA_PRECIO,DERIVA],
+ notas="Verificado por 2 revisores: los 4 botones CONTRATAR de Planes enlazan a wa.me/962830584 (sin 56); el flotante usa 56962830584. NO se afirma que 'no abre' ni que se pierdan clientes: nadie lo probó en un celular. El revisor independiente pidió comprobar con el cursor sobre el botón (la dirección del enlace), que es lo que sí se midió. Oferta Desarrollo Web: precio solo como referencia.")
 f1('R24','paragonadvisors.cl','alberto.bezanilla@paragonadvisors.cl','Hola Alberto:','A','jul',
  "El formulario de la sección Contacto de paragonadvisors.cl pide nombre, teléfono y correo, y en la portada no encontré un enlace a una política de privacidad que diga qué se hace con esos datos.",
  "Verificado por 2 revisores. El formulario está al final de la portada, no en la primera pantalla. El pie solo dice 'Paragon Advisors - 2023', sin enlaces. La sección Documentos lista 5 PDF que nadie abrió: por eso el correo dice 'en la portada'. Asesora de inversiones: tono sobrio.",baja=BAJA_APOLLO,contacto='Alberto Bezanilla')
