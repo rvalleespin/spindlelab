@@ -129,8 +129,10 @@ def md(d):
                 res = e["resultado"]
                 if e.get("condicion"):
                     res += f" ⚠ {e['condicion']} Si no: «{e['alternativa']['resultado']}»"
-                out.append(f"| {i} | **{e['nombre']}** | {e['bajada']} | {e['linea']} | {res} |")
+                out.append(f"| {i} | **{e['nombre']}** | {e['bajada']} | {e['linea']}<br><sub>home y servicio: {e['linea_corta']}</sub> | {res} |")
             out += ["", "<sub>Fuentes por entrada: " + " · ".join(f"{e['nombre']}: {e['fuente']}" for e in p["entradas"]) + "</sub>"]
+            filas = [f"«{k}» → {v}" for e in p["entradas"] for k, v in e.get("filas_inventario", {}).items()]
+            out += ["", "<sub>Cada herramienta de la línea mono y su fila en el inventario: " + " · ".join(dict.fromkeys(filas)) + "</sub>"]
             for e in p["entradas"]:
                 if e.get("nota"):
                     out.append(f"\n<sub>{e['nombre']}: {e['nota']}</sub>")
@@ -174,7 +176,7 @@ def lector(d):
     def entradas(ids):
         for i in ids:
             e = porId[i]
-            out.append(f"[PIEZA DEL ÍNDICE] {e['nombre']}. {e['bajada']} ({e['linea']})")
+            out.append(f"[PIEZA DEL ÍNDICE] {e['nombre']}. {e['bajada']} ({e['linea_corta']})")
 
     for p in d["paginas"]:
         out += ["", "=" * 60, f"PÁGINA: {p['ruta']}", "=" * 60]
