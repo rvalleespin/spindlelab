@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="es-CL" data-fondo="tinta">
+<head>
+<meta charset="utf-8">
+<title>Ocelo · placas (concepto)</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="identidad.css">
+<style>
+  /* ---------- 1 · La carta (16:9) ---------- */
+  [data-p="carta"] { display: grid; place-items: center; }
+  [data-p="carta"] .carta { --C: 52px; --lmw: 120px; --ldw: 200px; width: 960px; }
+  [data-p="carta"] .pie { position: absolute; left: 48px; bottom: 26px; font-size: 12px; }
+
+  /* ---------- 2 · El logotipo en su retícula (16:9) ---------- */
+  [data-p="logotipo"] .marco { position: absolute; left: 96px; right: 96px; top: 128px; }
+  [data-p="logotipo"] .logo-r { width: 100%; height: auto; color: var(--texto); overflow: visible; }
+  [data-p="logotipo"] .logo-r .rejilla { stroke-width: 0.03; }
+  [data-p="logotipo"] .logo-r .cota { stroke: var(--texto-2); stroke-width: 0.04; fill: none; }
+  [data-p="logotipo"] .logo-r text { font-family: var(--mono); font-size: 0.42px; fill: var(--texto-2); letter-spacing: 0.04px; }
+  [data-p="logotipo"] .notas { position: absolute; left: 96px; right: 96px; bottom: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; border-top: 1px solid var(--linea); padding-top: 16px; }
+  [data-p="logotipo"] .notas p { font-size: 12px; color: var(--texto-2); }
+  [data-p="logotipo"] .notas b { display: block; color: var(--texto); font-weight: 600; margin-bottom: 6px; }
+
+  /* ---------- 3 · La C de Landolt (4:5) ---------- */
+  [data-p="landolt"] .grande { position: absolute; left: 50%; top: 92px; width: 330px; transform: translateX(-50%); color: var(--texto); overflow: visible; }
+  [data-p="landolt"] .grande .rejilla { stroke-width: 0.025; }
+  [data-p="landolt"] .grande .cota { stroke: var(--texto-2); stroke-width: 0.035; fill: none; }
+  [data-p="landolt"] .grande text { font-family: var(--mono); font-size: 0.3px; fill: var(--texto-2); }
+  [data-p="landolt"] .tamanos { position: absolute; left: 40px; right: 40px; bottom: 74px; display: flex; align-items: flex-end; justify-content: space-between; border-top: 1px solid var(--linea); padding-top: 26px; }
+  [data-p="landolt"] .tamanos figure { margin: 0; display: grid; justify-items: center; gap: 12px; }
+  [data-p="landolt"] .tamanos svg { color: var(--texto); }
+  [data-p="landolt"] .tamanos figcaption { font-family: var(--mono); font-size: 12px; color: var(--texto-2); }
+  [data-p="landolt"] .pie { position: absolute; left: 40px; bottom: 30px; font-size: 12px; color: var(--texto-2); }
+
+  /* ---------- 4 · La letra (4:5) ---------- */
+  [data-p="letra"] { padding: 64px 40px 40px; display: flex; flex-direction: column; }
+  [data-p="letra"] .nombre { font-size: 12px; color: var(--texto-2); }
+  [data-p="letra"] .glifos { margin-top: 28px; font-size: 124px; font-weight: 600; line-height: 1; letter-spacing: 0.02em; }
+  [data-p="letra"] .glifos span { display: inline-block; margin-right: 0.18em; }
+  [data-p="letra"] .nota-g { margin-top: 14px; font-size: 12px; color: var(--texto-2); }
+  [data-p="letra"] .alfabeto { margin-top: 40px; font-size: 20.14px; line-height: 1.45; color: var(--texto-2); letter-spacing: 0.02em; }
+  [data-p="letra"] .frase { margin-top: auto; font-size: 31.93px; font-weight: 600; line-height: 1.08; letter-spacing: -0.01em; }
+  [data-p="letra"] .pesos { margin-top: 26px; display: grid; grid-template-columns: repeat(4, auto); justify-content: space-between; border-top: 1px solid var(--linea); padding-top: 14px; font-size: 16px; }
+  [data-p="letra"] .pesos span:nth-child(1) { font-weight: 300; }
+  [data-p="letra"] .pesos span:nth-child(2) { font-weight: 400; }
+  [data-p="letra"] .pesos span:nth-child(3) { font-weight: 600; }
+  [data-p="letra"] .pesos span:nth-child(4) { font-weight: 800; }
+  [data-p="letra"] .pie { margin-top: 18px; font-size: 12px; color: var(--texto-2); }
+
+  /* ---------- 5 · La mono (1,62) ---------- */
+  [data-p="mono"] { padding: 54px 32px 26px; display: flex; flex-direction: column; }
+  [data-p="mono"] .nombre { font-size: 12px; color: var(--texto-2); }
+  [data-p="mono"] .grande { margin-top: auto; font-family: var(--mono); font-size: 50.6px; font-weight: 600; letter-spacing: 0.02em; line-height: 1; }
+  [data-p="mono"] .grande span { color: var(--texto-2); font-weight: 400; }
+  [data-p="mono"] .linea { margin-top: 18px; font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; border-top: 1px solid var(--linea); padding-top: 12px; display: flex; justify-content: space-between; }
+
+  /* ---------- 6 · El duocromo (16:9) ---------- */
+  [data-p="duocromo"] .campo { position: absolute; left: 40px; right: 40px; top: 52px; bottom: 76px; display: grid; grid-template-columns: 1fr 1fr; color: var(--tinta); }
+  [data-p="duocromo"] .lado { padding: 32px 36px 34px; display: flex; flex-direction: column; }
+  [data-p="duocromo"] .a { background: var(--rojo); }
+  [data-p="duocromo"] .b { background: var(--verde); }
+  [data-p="duocromo"] .anillos { display: flex; gap: 18px; }
+  [data-p="duocromo"] .anillos svg { width: 40px; height: 40px; }
+  [data-p="duocromo"] h3 { margin-top: auto; font-size: 101px; font-weight: 700; letter-spacing: -0.02em; line-height: 0.9; }
+  [data-p="duocromo"] h3 small { display: block; font-size: 25.36px; font-weight: 600; letter-spacing: 0; margin-bottom: 14px; }
+  [data-p="duocromo"] .lado p { margin-top: 18px; font-size: 25.36px; font-weight: 500; line-height: 1.2; max-width: 15em; }
+  [data-p="duocromo"] .pie { position: absolute; left: 40px; right: 40px; bottom: 28px; display: flex; justify-content: space-between; font-size: 12px; color: var(--texto-2); }
+
+  /* ---------- 7 · El informe (1,62) ---------- */
+  [data-p="informe"] .hoja { position: absolute; left: 44px; right: 44px; top: 48px; bottom: -40px; background: var(--hoja); color: var(--tinta); padding: 22px 26px; border: 1px solid var(--linea-luz); }
+  [data-p="informe"] .enc { display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; border-bottom: 2px solid var(--tinta); }
+  [data-p="informe"] .enc svg { height: 11px; width: auto; color: var(--tinta); }
+  [data-p="informe"] .enc p { font-size: 9.5px; color: var(--gris-luz); }
+  [data-p="informe"] table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  [data-p="informe"] th, [data-p="informe"] td { text-align: left; padding: 8px 0; border-bottom: 1px solid var(--linea-luz); font-weight: 400; }
+  [data-p="informe"] thead th { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris-luz); padding-top: 10px; }
+  [data-p="informe"] tbody th { font-weight: 600; width: 46%; }
+  [data-p="informe"] td { font-family: var(--mono); color: var(--gris-luz); }
+
+  /* ---------- 8 · La placa de la puerta (1,62) ---------- */
+  [data-p="puerta"] { background: var(--fondo); }
+  [data-p="puerta"] .muro { position: absolute; inset: 0; opacity: 0.55; }
+  [data-p="puerta"] .metal {
+    position: absolute; left: 50%; top: 50%; width: 300px; height: 170px; transform: translate(-50%, -46%);
+    background: var(--placa-fondo); color: var(--placa-texto);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 18px 28px -14px rgba(0, 0, 0, 0.55), 0 2px 4px rgba(0, 0, 0, 0.25);
+    display: grid; grid-template-rows: 1fr auto; padding: 30px 28px 20px;
+  }
+  html[data-fondo="tinta"] [data-p="puerta"] .metal { --placa-fondo: #f5f5f2; --placa-texto: #0f0f0f; --tornillo: #c9cbc5; }
+  html[data-fondo="lienzo"] [data-p="puerta"] .metal { --placa-fondo: #16181a; --placa-texto: #f5f5f2; --tornillo: #3a3e42; box-shadow: 0 18px 28px -14px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(0, 0, 0, 0.18); }
+  [data-p="puerta"] .metal svg.logo { width: 156px; height: auto; align-self: center; }
+  [data-p="puerta"] .metal p { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.4; }
+  [data-p="puerta"] .tornillo { position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--tornillo); }
+  [data-p="puerta"] .tornillo::after { content: ""; position: absolute; left: 1px; right: 1px; top: 4px; height: 1px; background: rgba(0, 0, 0, 0.35); transform: rotate(var(--g, 30deg)); }
+  [data-p="puerta"] .t1 { left: 10px; top: 10px; } [data-p="puerta"] .t2 { right: 10px; top: 10px; --g: -20deg; }
+  [data-p="puerta"] .t3 { left: 10px; bottom: 10px; --g: 70deg; } [data-p="puerta"] .t4 { right: 10px; bottom: 10px; --g: 5deg; }
+
+  /* ---------- 9 · Lo que no se puede prometer (16:9) ---------- */
+  [data-p="prometer"] { padding: 60px 56px 40px; }
+  [data-p="prometer"] .titulo { font-size: 12px; color: var(--texto-2); }
+  [data-p="prometer"] ul { list-style: none; margin: 26px 0 0; padding: 0; }
+  [data-p="prometer"] li { display: grid; grid-template-columns: 1.35fr 1fr; gap: 40px; align-items: baseline; padding: 20px 0 22px; border-top: 1px solid var(--linea); }
+  [data-p="prometer"] li:last-child { border-bottom: 1px solid var(--linea); }
+  [data-p="prometer"] s { font-size: 40.19px; font-weight: 500; line-height: 1.06; letter-spacing: -0.01em; color: var(--texto-2); text-decoration-thickness: 2px; text-decoration-color: var(--texto); }
+  [data-p="prometer"] li p { font-size: 16px; line-height: 1.4; }
+
+  /* ---------- 10 · El interruptor (4:5) ---------- */
+  [data-p="interruptor"] .capa { position: absolute; inset: 0; display: grid; place-items: center; }
+  [data-p="interruptor"] .capa.oscura { background: var(--sala); color: var(--luz); --texto-2: var(--gris-sala); clip-path: inset(0 50% 0 0); }
+  [data-p="interruptor"] .capa.clara { background: var(--luz); color: var(--tinta); --texto-2: var(--gris-luz); clip-path: inset(0 0 0 50%); }
+  html[data-fondo="lienzo"] [data-p="interruptor"] .capa.oscura { clip-path: inset(0 0 0 50%); }
+  html[data-fondo="lienzo"] [data-p="interruptor"] .capa.clara { clip-path: inset(0 50% 0 0); }
+  [data-p="interruptor"] .carta { --C: 38px; --lmw: 0px; --ldw: 0px; margin-top: 40px; }
+  [data-p="interruptor"] .boton { position: absolute; left: 25%; top: 70px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 10px; border: 1px solid currentColor; border-radius: 999px; padding: 8px 18px 8px 11px; font-size: 16px; font-weight: 600; white-space: nowrap; }
+  [data-p="interruptor"] .boton svg { width: 20px; height: 20px; }
+  [data-p="interruptor"] .pie { position: absolute; left: 0; right: 0; bottom: 30px; text-align: center; font-size: 12px; color: var(--texto-2); }
+  [data-p="interruptor"] .capa.clara .boton { left: 75%; }
+  html[data-fondo="lienzo"] [data-p="interruptor"] .capa.oscura .boton { left: 75%; }
+  html[data-fondo="lienzo"] [data-p="interruptor"] .capa.clara .boton { left: 25%; }
+  html[data-fondo="lienzo"] [data-p="interruptor"] .esquina { color: var(--luz); }
+  [data-p="interruptor"] .boton { font-size: 15px; padding: 7px 14px 7px 9px; }
+  [data-p="interruptor"] .corte { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: var(--rojo); opacity: 0; }
+
+  /* ---------- Portadas, con la luz encendida ---------- */
+  .portada { background: var(--luz); color: var(--tinta); --texto-2: var(--gris-luz); --linea: var(--linea-luz); }
+  .portada .c-grande { position: absolute; left: 32px; top: 30px; color: var(--tinta); }
+  .portada .carta { position: absolute; left: 0; right: 0; --lmw: 0px; --ldw: 0px; }
+  .portada .franja { position: absolute; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: 1fr 1fr; }
+  .portada .franja i { display: block; }
+  .portada .franja i:first-child { background: var(--rojo); }
+  .portada .franja i:last-child { background: var(--verde); }
+  .portada .esquina { color: var(--tinta); }
+  [data-p="portada-45"] .c-grande { width: 92px; height: 92px; }
+  [data-p="portada-45"] .carta { --C: 52px; top: 170px; }
+  [data-p="portada-45"] .franja { height: 64px; }
+  [data-p="portada-43"] .c-grande { width: 64px; height: 64px; top: 26px; left: 28px; }
+  [data-p="portada-43"] .carta { --C: 44px; top: 112px; }
+  [data-p="portada-43"] .franja { height: 44px; }
+  [data-p="portada-53"] .c-grande { width: 56px; height: 56px; top: 24px; left: 26px; }
+  [data-p="portada-53"] .carta { --C: 42px; top: 98px; }
+  [data-p="portada-53"] .franja { height: 36px; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="g-o" viewBox="0 0 5 5"><circle cx="2.5" cy="2.5" r="2" fill="none" stroke="currentColor" stroke-width="1"/></symbol>
+    <symbol id="g-c" viewBox="0 0 5 5"><path d="M4.9495 2A2.5 2.5 0 1 0 4.9495 3H3.9142A1.5 1.5 0 1 1 3.9142 2Z" fill="currentColor"/></symbol>
+    <symbol id="g-e" viewBox="0 0 5 5"><path d="M0 0h5v1H1v1h4v1H1v1h4v1H0z" fill="currentColor"/></symbol>
+    <symbol id="g-l" viewBox="0 0 5 5"><path d="M0 0h1v4h4v1H0z" fill="currentColor"/></symbol>
+    <symbol id="logo-compacto" viewBox="0 0 33 5">
+      <use href="#g-o" x="0" width="5" height="5"/><use href="#g-c" x="7" width="5" height="5"/><use href="#g-e" x="14" width="5" height="5"/><use href="#g-l" x="21" width="5" height="5"/><use href="#g-o" x="28" width="5" height="5"/>
+    </symbol>
+    <symbol id="logo-fila" viewBox="0 0 45 5">
+      <use href="#g-o" x="0" width="5" height="5"/><use href="#g-c" x="10" width="5" height="5"/><use href="#g-e" x="20" width="5" height="5"/><use href="#g-l" x="30" width="5" height="5"/><use href="#g-o" x="40" width="5" height="5"/>
+    </symbol>
+    <filter id="grano" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.16"/></feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+
+<!-- 1 · La carta -->
+<section class="placa r169" data-p="carta">
+  <p class="esquina">CONCEPTO</p>
+  <div class="carta">
+    <div class="fr e10"><span class="lm">1,0</span><svg class="logo w" viewBox="0 0 45 5" role="img" aria-label="Ocelo"><use href="#logo-fila"/></svg><span class="ld"></span></div>
+    <div class="fr e09"><span class="lm">0,9</span><span class="w">Medir</span><span class="ld">¿Soy candidato?</span></div>
+    <div class="fr e08"><span class="lm">0,8</span><span class="w">Láser</span><span class="ld">LASIK o PRK</span></div>
+    <div class="fr e07"><span class="lm">0,7</span><span class="w">Lente</span><span class="ld">Monofocal o multifocal</span></div>
+    <div class="fr e06"><span class="lm">0,6</span><span class="w">Nunca</span><span class="ld">Lo que no te vamos a prometer</span></div>
+    <div class="fr e05"><span class="lm">0,5</span><span class="w">Quién</span><span class="ld">Quiénes operarían</span></div>
+    <div class="fr e04"><span class="lm">0,4</span><span class="w">Dudas</span><span class="ld">Preguntas, en texto</span></div>
+    <div class="fr e03"><span class="lm">0,3</span><span class="w">Pedir</span><span class="ld">Pedir una evaluación</span></div>
+    <div class="fr e02"><span class="lm">0,2</span><span class="w frase">Concepto de SpindleLab: Ocelo no existe.</span><span class="ld"></span></div>
+  </div>
+  <p class="pie mono gris">logMAR · cada fila, 0,1 log más chica: un factor de 1,2589</p>
+</section>
+
+<!-- 2 · El logotipo en su retícula -->
+<section class="placa r169" data-p="logotipo">
+  <p class="esquina">CONCEPTO</p>
+  <div class="marco">
+    <svg class="logo-r" viewBox="-0.6 -1.6 34.2 7.4" role="img" aria-label="Ocelo, dibujado en la retícula de cinco por cinco">
+      <g class="rejilla">
+        <path d="M0 0v5M1 0v5M2 0v5M3 0v5M4 0v5M5 0v5M0 0h5M0 1h5M0 2h5M0 3h5M0 4h5M0 5h5"/>
+        <path transform="translate(7 0)" d="M0 0v5M1 0v5M2 0v5M3 0v5M4 0v5M5 0v5M0 0h5M0 1h5M0 2h5M0 3h5M0 4h5M0 5h5"/>
+        <path transform="translate(14 0)" d="M0 0v5M1 0v5M2 0v5M3 0v5M4 0v5M5 0v5M0 0h5M0 1h5M0 2h5M0 3h5M0 4h5M0 5h5"/>
+        <path transform="translate(21 0)" d="M0 0v5M1 0v5M2 0v5M3 0v5M4 0v5M5 0v5M0 0h5M0 1h5M0 2h5M0 3h5M0 4h5M0 5h5"/>
+        <path transform="translate(28 0)" d="M0 0v5M1 0v5M2 0v5M3 0v5M4 0v5M5 0v5M0 0h5M0 1h5M0 2h5M0 3h5M0 4h5M0 5h5"/>
+      </g>
+      <use href="#logo-compacto" width="33" height="5"/>
+      <g class="cota">
+        <path d="M0 -0.7h5M0 -0.95v0.5M5 -0.95v0.5"/>
+        <path d="M5 5.7h2M5 5.45v0.5M7 5.45v0.5"/>
+        <path d="M14 5.7h1M14 5.45v0.5M15 5.45v0.5"/>
+      </g>
+      <text x="2.5" y="-1.05" text-anchor="middle">5 MÓDULOS</text>
+      <text x="6" y="6.4" text-anchor="middle">2</text>
+      <text x="14.5" y="6.4" text-anchor="middle">1</text>
+    </svg>
+  </div>
+  <div class="notas">
+    <p><b>Retícula de 5 × 5</b>La de las letras de la carta: cinco módulos de alto, trazo de uno.</p>
+    <p><b>O, C y E son optotipos</b>La C es la de Landolt (ISO 8596). La L no es optotipo: se dibuja con las mismas reglas.</p>
+    <p><b>Dos módulos entre letras</b>En la carta, la palabra se abre a cinco: el ancho de una letra.</p>
+  </div>
+</section>
+
+<!-- 3 · La C de Landolt -->
+<section class="placa r45" data-p="landolt">
+  <p class="esquina">CONCEPTO</p>
+  <svg class="grande" viewBox="-0.9 -0.9 6.8 6.8" role="img" aria-label="La C de Landolt en su retícula, con sus cotas">
+    <path class="rejilla" d="M0 0v5M1 0v5M2 0v5M3 0v5M4 0v5M5 0v5M0 0h5M0 1h5M0 2h5M0 3h5M0 4h5M0 5h5"/>
+    <use href="#g-c" width="5" height="5"/>
+    <g class="cota">
+      <path d="M5.45 2v1M5.3 2h0.3M5.3 3h0.3"/>
+      <path d="M0 5.45h5M0 5.3v0.3M5 5.3v0.3"/>
+      <path d="M0 -0.45h1M0 -0.6v0.3M1 -0.6v0.3"/>
+    </g>
+    <text x="5.62" y="2.6">1</text>
+    <text x="2.5" y="5.95" text-anchor="middle">5</text>
+    <text x="0.5" y="-0.72" text-anchor="middle">1</text>
+  </svg>
+  <div class="tamanos">
+    <figure><svg width="64" height="64" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg><figcaption>64</figcaption></figure>
+    <figure><svg width="48" height="48" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c" transform="rotate(90 2.5 2.5)"/></svg><figcaption>48</figcaption></figure>
+    <figure><svg width="32" height="32" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c" transform="rotate(180 2.5 2.5)"/></svg><figcaption>32</figcaption></figure>
+    <figure><svg width="24" height="24" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c" transform="rotate(270 2.5 2.5)"/></svg><figcaption>24</figcaption></figure>
+    <figure><svg width="16" height="16" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg><figcaption>16 px</figcaption></figure>
+  </div>
+  <p class="pie mono">C de Landolt · anillo de 5, trazo de 1, abertura de 1</p>
+</section>
+
+<!-- 4 · La letra -->
+<section class="placa r45" data-p="letra">
+  <p class="esquina">CONCEPTO</p>
+  <p class="nombre mono">Atkinson Hyperlegible Next</p>
+  <p class="glifos" aria-label="I mayúscula, l minúscula, uno, O mayúscula, cero"><span>Il1</span><span>O0</span></p>
+  <p class="nota-g mono">Letras que no se confunden</p>
+  <p class="alfabeto">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>abcdefghijklmnñopqrstuvwxyz<br>0123456789 ¿? ¡! áéíóú ü</p>
+  <p class="frase">Antes de hablar de operar, te medimos los ojos.</p>
+  <p class="pesos"><span>Ligera</span><span>Regular</span><span>Seminegra</span><span>Negra</span></p>
+  <p class="pie mono">Braille Institute, 2025 · licencia OFL 1.1</p>
+</section>
+
+<!-- 5 · La mono -->
+<section class="placa r162" data-p="mono">
+  <p class="esquina">CONCEPTO</p>
+  <p class="nombre mono">Atkinson Hyperlegible Mono</p>
+  <p class="grande"><span>0,9</span> MEDIR</p>
+  <p class="linea"><span>Paquimetría</span><span>Topografía</span><span>Refracción</span></p>
+</section>
+
+<!-- 6 · El duocromo -->
+<section class="placa r169" data-p="duocromo">
+  <p class="esquina">CONCEPTO</p>
+  <div class="campo">
+    <div class="lado a">
+      <div class="anillos" aria-hidden="true"><svg viewBox="0 0 5 5"><use href="#g-c"/></svg><svg viewBox="0 0 5 5"><use href="#g-c" transform="rotate(90 2.5 2.5)"/></svg><svg viewBox="0 0 5 5"><use href="#g-c" transform="rotate(180 2.5 2.5)"/></svg></div>
+      <h3><small>Rojo</small>LASIK</h3>
+      <p>Pide una córnea con grosor suficiente.</p>
+    </div>
+    <div class="lado b">
+      <div class="anillos" aria-hidden="true"><svg viewBox="0 0 5 5"><use href="#g-c"/></svg><svg viewBox="0 0 5 5"><use href="#g-c" transform="rotate(90 2.5 2.5)"/></svg><svg viewBox="0 0 5 5"><use href="#g-c" transform="rotate(180 2.5 2.5)"/></svg></div>
+      <h3><small>Verde</small>PRK</h3>
+      <p>Sirve cuando la córnea es delgada.</p>
+    </div>
+  </div>
+  <p class="pie mono"><span>Test duocromo · solo para comparar dos opciones</span><span>Letras de 24 px o más</span></p>
+</section>
+
+<!-- 7 · El informe -->
+<section class="placa r162" data-p="informe">
+  <p class="esquina">CONCEPTO</p>
+  <div class="hoja">
+    <div class="enc"><svg viewBox="0 0 33 5" role="img" aria-label="Ocelo"><use href="#logo-compacto"/></svg><p class="mono">Informe de evaluación · sin datos</p></div>
+    <table>
+      <thead><tr><th>Medición</th><th>Ojo derecho</th><th>Ojo izquierdo</th></tr></thead>
+      <tbody>
+        <tr><th>Refracción</th><td>—</td><td>—</td></tr>
+        <tr><th>Topografía</th><td>—</td><td>—</td></tr>
+        <tr><th>Paquimetría</th><td>—</td><td>—</td></tr>
+        <tr><th>Lágrima</th><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 8 · La placa de la puerta -->
+<section class="placa r162" data-p="puerta">
+  <p class="esquina">CONCEPTO</p>
+  <svg class="muro" width="525" height="324" aria-hidden="true"><rect width="525" height="324" filter="url(#grano)"/></svg>
+  <div class="metal">
+    <i class="tornillo t1"></i><i class="tornillo t2"></i><i class="tornillo t3"></i><i class="tornillo t4"></i>
+    <svg class="logo" viewBox="0 0 33 5" role="img" aria-label="Ocelo"><use href="#logo-compacto"/></svg>
+    <p>Cirugía refractiva<br>y de cataratas</p>
+  </div>
+</section>
+
+<!-- 9 · Lo que no se puede prometer -->
+<section class="placa r169" data-p="prometer">
+  <p class="esquina">CONCEPTO</p>
+  <p class="titulo mono">0,6 · Lo que no te vamos a prometer</p>
+  <ul>
+    <li><s>Que vas a ver perfecto sin lentes.</s><p>Nadie lo puede garantizar antes de operar. Puede quedar una graduación pequeña, que se corrige con lentes o con un retoque.</p></li>
+    <li><s>Que nunca más vas a usar lentes.</s><p>Pasados los 40 llega la presbicia, operado o no.</p></li>
+    <li><s>Que de noche vas a ver igual que antes.</s><p>Pueden aparecer halos o destellos alrededor de las luces. A veces se van con el tiempo; a veces no.</p></li>
+  </ul>
+</section>
+
+<!-- 10 · El interruptor -->
+<section class="placa r45" data-p="interruptor">
+  <p class="esquina sobre-luz">CONCEPTO</p>
+  <div class="capa oscura" aria-hidden="true">
+    <span class="boton"><svg viewBox="0 0 5 5"><use href="#g-c" transform="rotate(90 2.5 2.5)"/></svg>Encender la luz</span>
+    <div class="carta">
+      <div class="fr e10"><span class="lm"></span><svg class="logo w" viewBox="0 0 45 5"><use href="#logo-fila"/></svg><span class="ld"></span></div>
+      <div class="fr e09"><span class="lm"></span><span class="w">Medir</span><span class="ld"></span></div>
+      <div class="fr e08"><span class="lm"></span><span class="w">Láser</span><span class="ld"></span></div>
+      <div class="fr e07"><span class="lm"></span><span class="w">Lente</span><span class="ld"></span></div>
+      <div class="fr e06"><span class="lm"></span><span class="w">Nunca</span><span class="ld"></span></div>
+      <div class="fr e05"><span class="lm"></span><span class="w">Quién</span><span class="ld"></span></div>
+      <div class="fr e04"><span class="lm"></span><span class="w">Dudas</span><span class="ld"></span></div>
+      <div class="fr e03"><span class="lm"></span><span class="w">Pedir</span><span class="ld"></span></div>
+    </div>
+    <p class="pie mono">La sala parte a oscuras · la luz se enciende</p>
+  </div>
+  <div class="capa clara">
+    <span class="boton"><svg viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c" transform="rotate(270 2.5 2.5)"/></svg>Apagar la luz</span>
+    <div class="carta">
+      <div class="fr e10"><span class="lm"></span><svg class="logo w" viewBox="0 0 45 5" role="img" aria-label="Ocelo"><use href="#logo-fila"/></svg><span class="ld"></span></div>
+      <div class="fr e09"><span class="lm"></span><span class="w">Medir</span><span class="ld"></span></div>
+      <div class="fr e08"><span class="lm"></span><span class="w">Láser</span><span class="ld"></span></div>
+      <div class="fr e07"><span class="lm"></span><span class="w">Lente</span><span class="ld"></span></div>
+      <div class="fr e06"><span class="lm"></span><span class="w">Nunca</span><span class="ld"></span></div>
+      <div class="fr e05"><span class="lm"></span><span class="w">Quién</span><span class="ld"></span></div>
+      <div class="fr e04"><span class="lm"></span><span class="w">Dudas</span><span class="ld"></span></div>
+      <div class="fr e03"><span class="lm"></span><span class="w">Pedir</span><span class="ld"></span></div>
+    </div>
+    <p class="pie mono">La sala parte a oscuras · la luz se enciende</p>
+  </div>
+</section>
+
+<!-- Portadas para /trabajo/, con la luz encendida -->
+<section class="placa r45 portada" data-p="portada-45">
+  <p class="esquina">CONCEPTO</p>
+  <svg class="c-grande" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg>
+  <div class="carta">
+    <div class="fr e10"><span class="lm"></span><svg class="logo w" viewBox="0 0 45 5" role="img" aria-label="Ocelo"><use href="#logo-fila"/></svg><span class="ld"></span></div>
+    <div class="fr e09"><span class="lm"></span><span class="w">Medir</span><span class="ld"></span></div>
+    <div class="fr e08"><span class="lm"></span><span class="w">Láser</span><span class="ld"></span></div>
+    <div class="fr e07"><span class="lm"></span><span class="w">Lente</span><span class="ld"></span></div>
+    <div class="fr e06"><span class="lm"></span><span class="w">Nunca</span><span class="ld"></span></div>
+    <div class="fr e05"><span class="lm"></span><span class="w">Quién</span><span class="ld"></span></div>
+    <div class="fr e04"><span class="lm"></span><span class="w">Dudas</span><span class="ld"></span></div>
+    <div class="fr e03"><span class="lm"></span><span class="w">Pedir</span><span class="ld"></span></div>
+  </div>
+  <div class="franja" aria-hidden="true"><i></i><i></i></div>
+</section>
+<section class="placa r43 portada" data-p="portada-43">
+  <p class="esquina">CONCEPTO</p>
+  <svg class="c-grande" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg>
+  <div class="carta">
+    <div class="fr e10"><span class="lm"></span><svg class="logo w" viewBox="0 0 45 5" role="img" aria-label="Ocelo"><use href="#logo-fila"/></svg><span class="ld"></span></div>
+    <div class="fr e09"><span class="lm"></span><span class="w">Medir</span><span class="ld"></span></div>
+    <div class="fr e08"><span class="lm"></span><span class="w">Láser</span><span class="ld"></span></div>
+    <div class="fr e07"><span class="lm"></span><span class="w">Lente</span><span class="ld"></span></div>
+  </div>
+  <div class="franja" aria-hidden="true"><i></i><i></i></div>
+</section>
+<section class="placa r53 portada" data-p="portada-53">
+  <p class="esquina">CONCEPTO</p>
+  <svg class="c-grande" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg>
+  <div class="carta">
+    <div class="fr e10"><span class="lm"></span><svg class="logo w" viewBox="0 0 45 5" role="img" aria-label="Ocelo"><use href="#logo-fila"/></svg><span class="ld"></span></div>
+    <div class="fr e09"><span class="lm"></span><span class="w">Medir</span><span class="ld"></span></div>
+    <div class="fr e08"><span class="lm"></span><span class="w">Láser</span><span class="ld"></span></div>
+  </div>
+  <div class="franja" aria-hidden="true"><i></i><i></i></div>
+</section>
+
+<script>
+  // ?p=<placa>&f=tinta|lienzo: deja solo esa placa, para rasterizarla al tamaño exacto
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var p = q.get("p"), f = q.get("f");
+    if (f) document.documentElement.dataset.fondo = f;
+    if (p) document.querySelectorAll(".placa").forEach(function (s) { if (s.dataset.p !== p) s.remove(); });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/* Ocelo · identidad. Hoja común del pliego, las placas y las portadas.
+   Tokens de ficha.md §5. Fondo «tinta» = la sala a oscuras; fondo «lienzo» = la luz encendida. */
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("fuentes/atkinson-hyperlegible-next.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible Mono";
+  src: url("fuentes/atkinson-hyperlegible-mono.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+}
+
+:root {
+  --sala: #16181a;
+  --luz: #f5f5f2;
+  --tinta: #0f0f0f;
+  --gris-sala: #9ea3a8;
+  --gris-luz: #565b60;
+  --linea-sala: #2e3236;
+  --linea-luz: #d4d6d0;
+  --rojo: #e0352b;
+  --verde: #23a04a;
+  --cap: 0.668;
+  --sans: "Atkinson Hyperlegible Next", sans-serif;
+  --mono: "Atkinson Hyperlegible Mono", monospace;
+
+  --fondo: var(--sala);
+  --texto: var(--luz);
+  --texto-2: var(--gris-sala);
+  --linea: var(--linea-sala);
+  --hoja: var(--luz);
+}
+html[data-fondo="lienzo"] {
+  --fondo: var(--luz);
+  --texto: var(--tinta);
+  --texto-2: var(--gris-luz);
+  --linea: var(--linea-luz);
+  --hoja: #ffffff;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--fondo); color: var(--texto); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+p, h1, h2, h3 { margin: 0; }
+svg { display: block; }
+.mono { font-family: var(--mono); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.3; }
+.gris { color: var(--texto-2); }
+
+/* El rótulo de esquina de cada placa (como los de las placas de Koto) */
+.esquina {
+  position: absolute; top: 18px; right: 20px; z-index: 5;
+  font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; line-height: 1;
+  color: var(--texto);
+}
+.esquina.sobre-luz { color: var(--tinta); }
+.esquina.sobre-sala { color: var(--luz); }
+
+.placa { position: relative; overflow: hidden; background: var(--fondo); color: var(--texto); }
+.r169 { width: 1057px; height: 595px; }
+.r45 { width: 525px; height: 656px; }
+.r162 { width: 525px; height: 324px; }
+.r43 { width: 525px; height: 394px; }
+.r53 { width: 525px; height: 315px; }
+
+/* ---------- La carta (componente) ---------- */
+.carta { --C: 56px; --lmw: 64px; --ldw: 64px; display: grid; }
+.carta .fr { display: grid; grid-template-columns: var(--lmw) 1fr var(--ldw); align-items: center; padding-top: calc(var(--C) * var(--e)); }
+.carta .fr:first-child { padding-top: 0; }
+.carta .lm { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0.04em; color: var(--texto-2); line-height: 1; }
+.carta .w {
+  justify-self: center; font-weight: 700; text-transform: uppercase; line-height: 1;
+  font-size: calc(var(--C) * var(--e) / var(--cap)); letter-spacing: 0.62em; margin-right: -0.62em;
+  text-box: trim-both cap alphabetic; white-space: nowrap;
+}
+.carta .w.frase { text-transform: none; letter-spacing: 0.01em; margin-right: 0; font-weight: 600; }
+.carta .logo { width: calc(var(--C) * 9); height: var(--C); }
+.carta svg.logo.w { margin-right: 0; letter-spacing: 0; } /* el logotipo no lleva el espacio de cola de las palabras */
+.carta .ld { font-size: 12px; color: var(--texto-2); line-height: 1.2; justify-self: end; text-align: right; }
+.e10 { --e: 1; } .e09 { --e: 0.7943; } .e08 { --e: 0.631; } .e07 { --e: 0.5012; } .e06 { --e: 0.3981; }
+.e05 { --e: 0.3162; } .e04 { --e: 0.2512; } .e03 { --e: 0.1995; } .e02 { --e: 0.1585; }
+
+/* Retícula de construcción */
+.rejilla { stroke: var(--linea); fill: none; }
