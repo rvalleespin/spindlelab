@@ -1,0 +1,264 @@
+{
+ "consultado": "2026-10-16T23:30-03:00 (Chile), por Bruno con el método de Simón",
+ "fuente_calendario": "Calendario Tributario del SII, https://misiir.sii.cl/cgi_calendario/calendario.cgi?OPT=3&VIEW=2&YEAR=2026&MONTH=<m>&DAY=1&TYPE=<F29|F22|DJ|F50|BBRR> (vista por trámite), y OPT=2&TYPE=ALL (vista por día) para octubre",
+ "nota_marzo_junio": "La vista por trámite de DJ para marzo y junio, y la vista por día del 17 al 27 de marzo y del 24 al 30 de junio, devuelven una página vacía (HTTP 200, Content-Length 0), repetido cuatro veces. Las fechas de DJ salen entonces de la Res. Ex. SII N° 123 de 2025.",
+ "f29_2026_por_mes": {
+  "1": {
+   "pec_general": 11,
+   "pel_general": 12,
+   "pec_fe": 19,
+   "pel_fe": 20,
+   "sin_mov": 28,
+   "notas": []
+  },
+  "2": {
+   "pec_general": 11,
+   "pel_general": 12,
+   "pec_fe": 19,
+   "pel_fe": 20,
+   "sin_mov": 28,
+   "notas": []
+  },
+  "3": {
+   "pec_general": 11,
+   "pel_general": 12,
+   "pec_fe": 19,
+   "pel_fe": 20,
+   "sin_mov": 28,
+   "notas": []
+  },
+  "4": {
+   "pec_general": 12,
+   "pel_general": 13,
+   "pec_fe": 19,
+   "pel_fe": 20,
+   "sin_mov": 28,
+   "notas": []
+  },
+  "5": {
+   "pec_general": 11,
+   "pel_general": 12,
+   "pec_fe": 19,
+   "pel_fe": 20,
+   "sin_mov": 28,
+   "notas": []
+  },
+  "6": {
+   "pec_general": 11,
+   "pel_general": 12,
+   "pec_fe": 19,
+   "pel_fe": 22,
+   "sin_mov": 28,
+   "notas": []
+  },
+  "7": {
+   "pec_general": 12,
+   "pel_general": 13,
+   "pec_fe": 19,
+   "pel_fe": 20,
+   "sin_mov": 28,
+   "notas": []
+  },
+  "8": {
+   "pec_general": 11,
+   "pel_general": 12,
+   "pec_fe": 19,
+   "pel_fe": 20,
+   "sin_mov": 28,
+   "notas": [
+    {
+     "dia": 21,
+     "texto": "Comunas de Chillán y Chillán Viejo: vencimiento del día 20 pasa al día hábil siguiente"
+    }
+   ]
+  },
+  "9": {
+   "pec_general": 13,
+   "pel_general": 14,
+   "pec_fe": 20,
+   "pel_fe": 21,
+   "sin_mov": 28,
+   "notas": []
+  },
+  "10": {
+   "pec_general": 11,
+   "pel_general": 13,
+   "pec_fe": 19,
+   "pel_fe": 20,
+   "sin_mov": 28,
+   "notas": []
+  },
+  "11": {
+   "pec_general": 11,
+   "pel_general": 12,
+   "pec_fe": 19,
+   "pel_fe": 20,
+   "sin_mov": 28,
+   "notas": []
+  },
+  "12": {
+   "pec_general": 13,
+   "pel_general": 14,
+   "pec_fe": 20,
+   "pel_fe": 21,
+   "sin_mov": 28,
+   "notas": []
+  }
+ },
+ "f29_claves": {
+  "pec_general": "Internet con Pago Electrónico de Cuentas (PEC), contribuyentes en general",
+  "pel_general": "Internet con Pago en Línea (PEL), contribuyentes en general: día 12, o el hábil siguiente si cae en sábado, domingo o feriado",
+  "pec_fe": "PEC, facturadores electrónicos y emisores de boletas de honorarios electrónicas que declaran y pagan en sii.cl",
+  "pel_fe": "PEL, mismos contribuyentes: día 20, o el hábil siguiente",
+  "sin_mov": "F29 por Internet sin movimiento y sin pago"
+ },
+ "f22_2026": [
+  {
+   "dia": 1,
+   "texto": "Declaración Anual en Formulario 22 (Renta) Comienza el plazo de presentación de Declaración de Renta (F22) sin pago."
+  },
+  {
+   "dia": 8,
+   "texto": "Declaración Anual en Formulario 22 (Renta) Comienza plazo presentación de Declaración de Renta de Formulario 22 con pago. Primer vencimiento presentación de la Declaración de Renta de Formulario 22 (declaraciones presentadas desde el 1 de abril) a través de Internet para que la devolución sea por depósito el 29 de abril o por cheque el 29 de mayo."
+  },
+  {
+   "dia": 23,
+   "texto": "Declaración Anual en Formulario 22 (Renta) Segundo vencimiento presentación de la Declaración de Renta (declaraciones presentadas desde el 9 de abril) a través de Internet para que la devolución sea por depósito el 15 de mayo o por cheque el 29 de mayo."
+  },
+  {
+   "dia": 24,
+   "texto": "Declaración Anual en Formulario 22 (Renta) Si detecta un error en la declaración sin pago enviada a través de Internet, podrá reemplazarla, acción que podrá efectuar hasta el día 26 de abril. Con posterioridad a dicha fecha, para efectuar modificaciones deberá esperar el inicio del proceso de Declaraciones Rectificatorias."
+  },
+  {
+   "dia": 29,
+   "texto": "Declaración Anual en Formulario 22 (Renta) Devolución a través de depósito, a quienes hayan presentado su Declaración de Renta, entre el 1 y el 8 de abril. Vencimiento presentación de la Declaración de Renta por Internet con pago, para los contribuyentes que utilicen como forma de pago el Pago Electrónico de Cuentas PEC con mandato al banco para cargo en cuenta corriente o al vencimiento con mandato al banco."
+  },
+  {
+   "dia": 30,
+   "texto": "Declaración Anual en Formulario 22 (Renta) Vencimiento presentación de la Declaración de Renta por Internet con pago, para contribuyentes que utilicen como forma de pago el Pago en línea PEL con cargo a la cuenta corriente o con cargo a tarjeta de crédito. Vencimiento presentación de la Declaración de Renta (F22) por Internet con pago."
+  },
+  {
+   "dia": 8,
+   "texto": "Declaración Anual en Formulario 22 (Renta) Tercer vencimiento presentación de la Declaración de Renta (declaraciones presentadas desde el 24 de abril) a través de Internet para que la devolución sea por depósito el 27 de mayo o por cheque el 29 de mayo. Vencimiento presentación de la Declaración de Renta (F22) por Internet sin pago."
+  },
+  {
+   "dia": 15,
+   "texto": "Declaración Anual en Formulario 22 (Renta) Devolución a través de depósito, a quienes hayan presentado su Declaración de Renta, entre el 9 y el 23 de abril."
+  },
+  {
+   "dia": 27,
+   "texto": "Declaración Anual en Formulario 22 (Renta) Devolución a través de depósito, a quienes hayan presentado su Declaración de Renta, entre el 24 de abril y el 8 de mayo."
+  },
+  {
+   "dia": 29,
+   "texto": "Declaración Anual en Formulario 22 (Renta) Devolución a través de cheque a quienes hayan presentado su Declaración de Renta, entre el 1 de abril y el 8 de mayo."
+  }
+ ],
+ "dj_2026_calendario": {
+  "DJ-01": [
+   {
+    "dia": 30,
+    "texto": "Declaraciones Juradas de Operación Renta Declaración Jurada 1959 sobre Información de los abonos recibidos en Cuentas."
+   }
+  ],
+  "DJ-02": [
+   {
+    "dia": 4,
+    "texto": "Declaraciones Juradas de Operación Renta Declaración Jurada 1922 (Bancos, Corredores de bolsa o Entidad intermediaria) sobre información de fondos de terceros presentada por administradoras de fondos de inversión, fondos mutuos y fondos de inversión privado y por los bancos, corredores de bolsa e instituciones intermediarias que hayan efectuado inversiones a su nombre por cuenta de terceros en los fondos señalados, y sobre el cumplimiento de requisitos y condiciones establecidas en los artículos 81, 82 y 86 de la Ley NÂ° 20.712, y en el artículo 107 de la Ley sobre Impuesto a la Renta, no acog"
+   }
+  ],
+  "DJ-04": [
+   {
+    "dia": 28,
+    "texto": "Declaraciones Juradas de Operación Renta"
+   },
+   {
+    "dia": 30,
+    "texto": "Declaraciones Juradas de Operación Renta * Se presentan junto con el Formulario 22 Declaración Jurada 1947 presentada por los contribuyentes acogidos al régimen Pro Pyme Transparente con contabilidad simplificada. Declaración Jurada 1948 sobre retiros, remesas y/o dividendos distribuidos, o cantidades distribuidas a cualquier título y créditos correspondientes, efectuados por contribuyentes sujetos al régimen Régimen Semi Integrado con contabilidad completa y Pro Pyme General y sobre saldo de retiros en exceso pendientes de imputación."
+   }
+  ],
+  "DJ-05": [
+   {
+    "dia": 5,
+    "texto": "Declaraciones Juradas de Operación Renta Declaración Jurada 1962 sobre información de Fondos de Inversión Publicos, Privados o Fondos Mutuos y saldos al cierre del ejercicio de sus partícipes o aportantes."
+   },
+   {
+    "dia": 15,
+    "texto": "Declaraciones Juradas de Operación Renta Declaración Jurada 1837 sobre Créditos y PPM puestos a disposición de los Socios."
+   }
+  ],
+  "DJ-07": [
+   {
+    "dia": 31,
+    "texto": "Declaraciones Juradas de Operación Renta Declaración Jurada 1959 sobre Información de los abonos recibidos en Cuentas, según artículo 85 ter del Código Tributario."
+   }
+  ]
+ },
+ "dj_2026_resolucion": {
+  "fuente": "Resolución Ex. SII N° 123, 25-sep-2025, https://www.sii.cl/normativa_legislacion/resoluciones/2025/reso123.pdf",
+  "27 de marzo": "1829, 1840, 1841, 1843, 1879, 1887, 1933, 1944, 1953, 1956, 1943, 1947 y 1948 (sociedad con socios personas naturales)",
+  "23 de marzo": "1812, 1832, 1862, 1895, 1897, 1899, 1904, 1909, 1914, 1919, 1932, 1949 y 1955",
+  "3 de marzo": "1811, 1822, 1834, 1891, 1900, 1902 y 1903",
+  "junto con el F22": "1947 y 1948 (empresarios individuales)",
+  "30 de junio": "1847, 1866, 1867, 1907, 1913, 1926, 1930, 1937, 1945, 1946, 1929, 1950, 1951, 1952, 1958, 1960, 1961, 1963 y 1964",
+  "30 de enero y 31 de julio": "1959"
+ },
+ "contribuciones_2026": {
+  "BBRR-11": [
+   {
+    "dia": 30,
+    "texto": "Pago de Contribuciones Vencimiento cuarta cuota de Contribuciones ."
+   }
+  ],
+  "BBRR-04": [
+   {
+    "dia": 30,
+    "texto": "Pago de Contribuciones Vencimiento primera cuota de Contribuciones ."
+   }
+  ],
+  "BBRR-06": [
+   {
+    "dia": 30,
+    "texto": "Pago de Contribuciones Vencimiento segunda cuota de Contribuciones ."
+   }
+  ],
+  "BBRR-09": [
+   {
+    "dia": 30,
+    "texto": "Pago de Contribuciones Vencimiento tercera cuota de Contribuciones ."
+   }
+  ]
+ },
+ "cotizaciones": {
+  "fuente": "Superintendencia de Pensiones, «¿Cuál es el plazo para pagar las cotizaciones previsionales?», https://www.spensiones.cl/portal/institucional/594/w3-article-2728.html, consultada el 16-oct-2026",
+  "texto": "dentro de los 10 primeros días del mes siguiente [...] se puede prorrogar hasta el primer día hábil siguiente si dicho plazo expirare en día sábado, domingo o festivo. Cuando la o el empleador realice la declaración y pago de cotizaciones a través de un medio electrónico, el plazo se extenderá hasta el día 13 de cada mes, aun cuando éste fuere día sábado, domingo o festivo."
+ },
+ "feriados_2026": {
+  "fuente": "https://www.feriados.cl/ (con su respaldo legal), consultado el 16-oct-2026",
+  "nacionales": [
+   "01-01 Año Nuevo",
+   "03-04 Viernes Santo",
+   "04-04 Sábado Santo",
+   "01-05 Día Nacional del Trabajo",
+   "21-05 Glorias Navales",
+   "21-06 Pueblos Indígenas",
+   "29-06 San Pedro y San Pablo",
+   "16-07 Virgen del Carmen",
+   "15-08 Asunción de la Virgen",
+   "18-09 Independencia Nacional",
+   "19-09 Glorias del Ejército",
+   "12-10 Encuentro de Dos Mundos (Ley 3.810, Ley 19.668)",
+   "31-10 Iglesias Evangélicas y Protestantes (Ley 20.299)",
+   "01-11 Todos los Santos",
+   "08-12 Inmaculada Concepción",
+   "25-12 Navidad"
+  ]
+ },
+ "f29_fuera_de_plazo": {
+  "fuente": [
+   "https://www.sii.cl/preguntas_frecuentes/impuestos_mensuales/001_130_1228.htm",
+   "https://www.sii.cl/preguntas_frecuentes/impuestos_mensuales/001_130_1062.htm"
+  ],
+  "resumen": "Un F29 declarado y pagado fuera de plazo paga reajustes, intereses por cada mes o fracción de atraso y la multa sobre los montos reajustados; uno sin pago presentado fuera de plazo también puede generar multa (se gira en Formulario 45)."
+ }
+}
