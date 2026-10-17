@@ -129,6 +129,12 @@ for (const [clave, s] of Object.entries(SITIOS)) {
     await p.waitForTimeout(800);
     const reg = { intento, arriba: await leerLogo(p, s.logo) };
     const loc = p.locator(s.logo).first();
+    // el nombre accesible del enlace del logo, como lo ve un lector de pantalla (árbol de accesibilidad)
+    reg.arriba.nombreAccesible = {
+      texto: await loc.evaluate(a => a.textContent.trim()),
+      ariaLabel: await loc.getAttribute('aria-label'),
+      arbol: await loc.ariaSnapshot().catch(e => 'error: ' + e.message.slice(0, 80)),
+    };
     const caja = await loc.boundingBox();
     if (caja) {
       const pad = 12;

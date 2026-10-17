@@ -31,7 +31,7 @@ CAMINOS = [
         "nombre": "La palabra",
         "difiere": "Construcción: ninguna. Es el nombre compuesto en la letra de la dirección, sin un trazo dibujado.",
         "porque": [
-            "El nombre en la letra del sitio y nada más, como Accept & Proceed: su logo es su nombre en Messina Sans, en el único peso de la casa.",
+            "El nombre en la letra del sitio y nada más, como Accept & Proceed: su logo es su nombre en la letra de su menú, en el único peso de la casa.",
             "Cambia con la dirección (Google Sans Flex en A, Mona Sans en B, las dos a 430) y deja que la forma la ponga el trabajo.",
             "Es el más seguro y el que menos dice: a 16 px queda una «S» que podría ser de cualquiera.",
         ],
@@ -47,7 +47,7 @@ CAMINOS = [
         "porque": [
             "Spindle es huso: la «i» de la palabra es uno, la vara que atraviesa el disco y asoma arriba, donde iba el punto.",
             "Una idea hecha con una letra, como la cara que Koto esconde en su nombre, y más pesada que la interfaz, como la de ellos.",
-            "A 16 px queda el huso solo, un signo que no tiene ningún otro estudio; si se lee como cabeza de alfiler, la idea se pierde.",
+            "A 16 px queda el huso solo, un signo y no una letra; si se lee como alfiler o como seta, la idea se pierde, y aquí se ve si pasa.",
         ],
         "referencia": "De Koto toma la idea hecha con las letras del nombre, el logo más pesado que el texto y el favicon que es un trozo del logo; no toma su cara, su letra redonda ni su amarillo.",
         "favicon": "El huso solo, dibujado en una retícula de 32: a 16 px, vara de 2 px y tortera de 8 × 5 px.",

@@ -37,10 +37,11 @@
         ],
         "favicon": {
           "archivo": "favicon-A.svg",
-          "dibujo": "la «S» de la palabra, sola",
+          "dibujo": "la «S» de la palabra, sola, en el corte óptico del favicon",
+          "peso": 600,
           "alto_mayuscula_32": 22,
-          "ancho": 15.12,
-          "alto": 22.97
+          "ancho": 16.16,
+          "alto": 23.02
         }
       },
       "B": {
@@ -74,10 +75,11 @@
         ],
         "favicon": {
           "archivo": "favicon-B.svg",
-          "dibujo": "la «S» de la palabra, sola",
+          "dibujo": "la «S» de la palabra, sola, en el corte óptico del favicon",
+          "peso": 600,
           "alto_mayuscula_32": 22,
-          "ancho": 17.06,
-          "alto": 22.51
+          "ancho": 17.75,
+          "alto": 22.53
         }
       }
     },
@@ -217,11 +219,12 @@
         ],
         "favicon": {
           "archivo": "favicon-A.svg",
-          "dibujo": "la «S» de la sans y la «L» de la mono a la altura de su x, como en la palabra",
-          "ancho": 24.2,
-          "alto": 20.87,
+          "dibujo": "la «S» de la sans (corte óptico del favicon) y la «L» de la mono a la altura de su x, como en la palabra",
+          "peso": 600,
+          "ancho": 25.53,
+          "alto": 20.93,
           "mayuscula_S": 20.0,
-          "mayuscula_L": 14.23
+          "mayuscula_L": 14.34
         }
       },
       "B": {
@@ -263,11 +266,12 @@
         ],
         "favicon": {
           "archivo": "favicon-B.svg",
-          "dibujo": "la «S» de la sans y la «L» de la mono a la altura de su x, como en la palabra",
-          "ancho": 26.24,
-          "alto": 20.46,
+          "dibujo": "la «S» de la sans (corte óptico del favicon) y la «L» de la mono a la altura de su x, como en la palabra",
+          "peso": 600,
+          "ancho": 27.15,
+          "alto": 20.49,
           "mayuscula_S": 20.0,
-          "mayuscula_L": 14.39
+          "mayuscula_L": 14.61
         }
       }
     }

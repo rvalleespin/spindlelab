@@ -87,6 +87,11 @@ AJUSTES = {
 # Corte de cada camino. Camino 1: el peso del texto (A&P: el logo en el único peso de la casa, 400).
 # Camino 2: más pesado que la interfaz, como el de Koto (asta/mayúscula 0,18 medido contra un cuerpo de 350).
 # Camino 3: el peso cuya asta iguala la de «LAB» (DM Mono 500 puesta a la altura de la x): se calcula.
+# El favicon va en un corte más pesado que el wordmark: a 16 px, un asta de 430 (o de 360) cae en medio píxel
+# y se pinta gris (visto el 17-oct en favicon-A-16.png). Es corrección óptica de tamaño chico, como hace Koto
+# con su K; el dibujo de la letra es el mismo.
+PESO_FAVICON = 600
+
 PESOS = {
     "camino-1-la-palabra": {"A": 430, "B": 430},
     "camino-2-el-huso": {"A": 600, "B": 600},
@@ -388,7 +393,7 @@ def favicon_letras(partes, alto_mayus, color=BLANCO, fondo=TINTA, lado=32.0):
     b = union(cajas)
     w, h = b[2] - b[0], b[3] - b[1]
     dx = (lado - w) / 2 - b[0]
-    dy = (lado - h) / 2 - b[1]
+    dy = 2 * round(((lado - h) / 2 - b[1]) / 2)      # la línea de base cae en una unidad par: 1 px entero a 16
     f = lambda v: f"{v:.2f}".rstrip("0").rstrip(".")
     cuerpo = "".join(f'<path d="{d}" transform="translate({f(dx)} {f(dy)})"/>' for d in trazos)
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {int(lado)} {int(lado)}">'
@@ -407,11 +412,14 @@ def favicon_s_lab(c, mono, color=BLANCO, fondo=TINTA, lado=32.0):
     bL0 = caja_glifo(mono, gL, escm, 0)
     hueco = 1.6
     dxL = bS[2] + hueco - bL0[0]
-    trazos = [trazo(c, gS, esc, 0), trazo(mono, gL, escm, dxL)]
     b = union([bS, caja_glifo(mono, gL, escm, dxL)])
     w, h = b[2] - b[0], b[3] - b[1]
     dx = (lado - w) / 2 - b[0]
-    dy = (lado - h) / 2 - b[1]
+    dy = 2 * round(((lado - h) / 2 - b[1]) / 2)      # línea de base en unidad par
+    # el asta de la «L» empieza en una unidad par: a 16 px queda en un píxel entero y no en dos grises
+    borde = dx + dxL + bL0[0]
+    dxL += 2 * round(borde / 2) - borde
+    trazos = [trazo(c, gS, esc, 0), trazo(mono, gL, escm, dxL)]
     f = lambda v: f"{v:.2f}".rstrip("0").rstrip(".")
     cuerpo = "".join(f'<path d="{d}" transform="translate({f(dx)} {f(dy)})"/>' for d in trazos)
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {int(lado)} {int(lado)}">'
@@ -463,15 +471,17 @@ def main():
             reg["caminos"][clave][dirx] = r
             # favicons
             if clave == "camino-1-la-palabra":
-                s, m = favicon_letras([(c, "S", 0)], 22)
+                cf = Corte(rutas[dirx], {**LETRAS[dirx]["fijos"], "wght": PESO_FAVICON})
+                s, m = favicon_letras([(cf, "S", 0)], 22)
                 nombre = f"favicon-{dirx}.svg"
                 open(os.path.join(carpeta, nombre), "w").write(s)
-                r["favicon"] = {"archivo": nombre, "dibujo": "la «S» de la palabra, sola", "alto_mayuscula_32": 22, **m}
+                r["favicon"] = {"archivo": nombre, "dibujo": "la «S» de la palabra, sola, en el corte óptico del favicon", "peso": PESO_FAVICON, "alto_mayuscula_32": 22, **m}
             elif clave == "camino-3-dos-cortes":
-                s, m = favicon_s_lab(c, mono)
+                cf = Corte(rutas[dirx], {**LETRAS[dirx]["fijos"], "wght": PESO_FAVICON})
+                s, m = favicon_s_lab(cf, mono)
                 nombre = f"favicon-{dirx}.svg"
                 open(os.path.join(carpeta, nombre), "w").write(s)
-                r["favicon"] = {"archivo": nombre, "dibujo": "la «S» de la sans y la «L» de la mono a la altura de su x, como en la palabra", **m}
+                r["favicon"] = {"archivo": nombre, "dibujo": "la «S» de la sans (corte óptico del favicon) y la «L» de la mono a la altura de su x, como en la palabra", "peso": PESO_FAVICON, **m}
         if clave == "camino-2-el-huso":
             open(os.path.join(carpeta, "favicon.svg"), "w").write(favicon_huso())
             reg["caminos"][clave]["favicon"] = {"archivo": "favicon.svg", "dibujo": "el huso solo: vara de 4 × 25 y tortera de 16 × 10 en una retícula de 32 (a 16 px: 2 × 12,5 y 8 × 5 px)"}

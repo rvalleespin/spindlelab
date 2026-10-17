@@ -1,12 +1,12 @@
 {
-  "medido": "2026-10-17T03:37:55.200Z",
+  "medido": "2026-10-17T04:05:50.266Z",
   "navegador": "Chromium 141 (chromium-1194) headless",
   "sitios": {
     "koto": {
       "url": "https://koto.com/",
       "anchos": {
         "390": {
-          "intento": 1,
+          "intento": 2,
           "arriba": {
             "selector": "a[href=\"/\"]:has(svg[viewBox=\"0 0 52 26\"])",
             "caja": {
@@ -60,7 +60,12 @@
               "aria": null,
               "largoMarcado": 5814
             },
-            "fondoBajoLogo": "rgb(6, 6, 6)"
+            "fondoBajoLogo": "rgb(6, 6, 6)",
+            "nombreAccesible": {
+              "texto": "",
+              "ariaLabel": null,
+              "arbol": "- link:\n  - /url: /\n  - img"
+            }
           },
           "plegado": {
             "selector": "a[href=\"/\"]:has(svg[viewBox=\"0 0 52 26\"])",
@@ -119,7 +124,7 @@
           }
         },
         "1440": {
-          "intento": 1,
+          "intento": 2,
           "arriba": {
             "selector": "a[href=\"/\"]:has(svg[viewBox=\"0 0 52 26\"])",
             "caja": {
@@ -185,7 +190,12 @@
               "distanciaDesdeLogo": 60
             },
             "altoLogoSobreTamanoNav": 1.91,
-            "fondoBajoLogo": "rgb(6, 6, 6)"
+            "fondoBajoLogo": "rgb(6, 6, 6)",
+            "nombreAccesible": {
+              "texto": "",
+              "ariaLabel": null,
+              "arbol": "- link:\n  - /url: /\n  - img"
+            }
           },
           "plegado": {
             "selector": "a[href=\"/\"]:has(svg[viewBox=\"0 0 52 26\"])",
@@ -347,7 +357,12 @@
               "proporcion": 7.628,
               "alt": ""
             },
-            "fondoBajoLogo": "rgb(249, 247, 243)"
+            "fondoBajoLogo": "rgb(249, 247, 243)",
+            "nombreAccesible": {
+              "texto": "",
+              "ariaLabel": null,
+              "arbol": "- link:\n  - /url: /"
+            }
           },
           "plegado": {
             "selector": "a.header-logo-link",
@@ -450,7 +465,12 @@
               "distanciaDesdeLogo": 495
             },
             "altoLogoSobreTamanoNav": 3.76,
-            "fondoBajoLogo": "rgb(249, 247, 243)"
+            "fondoBajoLogo": "rgb(249, 247, 243)",
+            "nombreAccesible": {
+              "texto": "",
+              "ariaLabel": null,
+              "arbol": "- link:\n  - /url: /"
+            }
           },
           "plegado": {
             "selector": "a.header-logo-link",
