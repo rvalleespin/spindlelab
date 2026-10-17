@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ocelo · Cirugía refractiva y de cataratas (concepto)</title>
+<meta name="description" content="Concepto de SpindleLab: un centro de cirugía refractiva y de cataratas que no existe, ordenado como el examen de la vista.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ocelo · Cirugía refractiva y de cataratas (concepto)">
+<meta property="og:description" content="Concepto de SpindleLab: Ocelo no existe. Un sitio ordenado como el examen de la vista.">
+<meta property="og:locale" content="es_CL">
+<meta name="theme-color" content="#16181a">
+<link rel="icon" href="marca/c-landolt.svg" type="image/svg+xml">
+<link rel="preload" href="fuentes/atkinson-hyperlegible-next.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="estilo.css">
+<script>
+  try {
+    var q = new URLSearchParams(location.search).get("luz");
+    var s = q !== null ? q : localStorage.getItem("ocelo-luz");
+    if (s === "1") document.documentElement.dataset.luz = "encendida";
+  } catch (e) {}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "#clinica",
+      "name": "Ocelo",
+      "description": "Centro de cirugía refractiva y de cataratas en Providencia, Santiago.",
+      "disambiguatingDescription": "Concepto de SpindleLab: esta clínica no existe y no atiende pacientes. Es una pieza de portafolio.",
+      "medicalSpecialty": "https://schema.org/Surgical",
+      "knowsAbout": ["Cirugía refractiva", "LASIK", "PRK", "Cirugía de cataratas", "Lentes intraoculares"],
+      "address": { "@type": "PostalAddress", "addressLocality": "Providencia", "addressRegion": "Región Metropolitana", "addressCountry": "CL" },
+      "availableService": [{ "@id": "#lasik" }, { "@id": "#prk" }, { "@id": "#catarata" }],
+      "employee": [{ "@id": "#ibarbia" }, { "@id": "#cerdena" }]
+    },
+    {
+      "@type": "IndividualPhysician",
+      "@id": "#ibarbia",
+      "name": "Leonor Ibarbia Saelzer",
+      "description": "Cirugía refractiva: LASIK y PRK.",
+      "disambiguatingDescription": "Persona ficticia, parte de un concepto de SpindleLab. No es una prestadora registrada.",
+      "medicalSpecialty": "https://schema.org/Surgical",
+      "practicesAt": { "@id": "#clinica" }
+    },
+    {
+      "@type": "IndividualPhysician",
+      "@id": "#cerdena",
+      "name": "Matías Cerdeña Olave",
+      "description": "Cataratas y lentes intraoculares.",
+      "disambiguatingDescription": "Persona ficticia, parte de un concepto de SpindleLab. No es un prestador registrado.",
+      "medicalSpecialty": "https://schema.org/Surgical",
+      "practicesAt": { "@id": "#clinica" }
+    },
+    {
+      "@type": "MedicalProcedure",
+      "@id": "#lasik",
+      "name": "LASIK",
+      "description": "Se levanta una lámina fina de la córnea, se corrige debajo con láser y se vuelve a poner.",
+      "procedureType": "https://schema.org/SurgicalProcedure",
+      "bodyLocation": "Córnea"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "@id": "#prk",
+      "name": "PRK",
+      "description": "Se corrige la córnea con láser en la superficie, sin lámina.",
+      "procedureType": "https://schema.org/SurgicalProcedure",
+      "bodyLocation": "Córnea"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "@id": "#catarata",
+      "name": "Cirugía de catarata",
+      "description": "Se saca el cristalino nublado y se pone un lente intraocular.",
+      "procedureType": "https://schema.org/SurgicalProcedure",
+      "bodyLocation": "Cristalino"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "#preguntas",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Puedo operarme la miopía si tengo la córnea delgada?", "acceptedAnswer": { "@type": "Answer", "text": "Depende de cuán delgada sea y de cuánta graduación haya que corregir. El LASIK necesita más córnea que el PRK, porque hace una lámina; con una córnea delgada, el PRK a veces sigue siendo posible. Lo dice la paquimetría, no una regla general." } },
+        { "@type": "Question", "name": "¿LASIK o PRK: cuál es mejor?", "acceptedAnswer": { "@type": "Answer", "text": "Ninguno en general. Con el LASIK la vista se aclara más rápido; el PRK no hace lámina y por eso sirve en córneas más delgadas, a cambio de una recuperación más lenta y unos primeros días más molestos. Te conviene el que tu córnea permite." } },
+        { "@type": "Question", "name": "¿A qué edad se opera una catarata?", "acceptedAnswer": { "@type": "Answer", "text": "No hay una edad. Se opera cuando la catarata ya te impide hacer lo que necesitas, como manejar de noche o leer. Si los síntomas son leves, a veces basta con cambiar los lentes." } },
+        { "@type": "Question", "name": "¿Me voy a quedar sin lentes para siempre?", "acceptedAnswer": { "@type": "Answer", "text": "No te lo podemos asegurar. La cirugía puede bajar cuánto los usas, pero pasados los 40 casi todos necesitan lentes para leer, operados o no, y para manejar de noche a veces siguen haciendo falta." } },
+        { "@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": { "@type": "Answer", "text": "No publicamos un precio porque depende de la evaluación: la técnica que corresponda, si se opera uno o los dos ojos y, en catarata, el lente que elijas. Te lo decimos por escrito después de medirte." } },
+        { "@type": "Question", "name": "¿Puedo ir manejando a la evaluación?", "acceptedAnswer": { "@type": "Answer", "text": "Mejor no. Para mirar el fondo del ojo te dilatamos la pupila, y la vista queda borrosa y sensible a la luz por unas horas." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="g-o" viewBox="0 0 5 5"><circle cx="2.5" cy="2.5" r="2" fill="none" stroke="currentColor" stroke-width="1"/></symbol>
+    <symbol id="g-c" viewBox="0 0 5 5"><path d="M4.9495 2A2.5 2.5 0 1 0 4.9495 3H3.9142A1.5 1.5 0 1 1 3.9142 2Z" fill="currentColor"/></symbol>
+    <symbol id="g-e" viewBox="0 0 5 5"><path d="M0 0h5v1H1v1h4v1H1v1h4v1H0z" fill="currentColor"/></symbol>
+    <symbol id="g-l" viewBox="0 0 5 5"><path d="M0 0h1v4h4v1H0z" fill="currentColor"/></symbol>
+    <symbol id="g-i" viewBox="0 0 5 5"><path d="M2 0h1v5H2z" fill="currentColor"/></symbol>
+    <symbol id="g-m" viewBox="0 0 5 5"><path d="M0 0h1.15L2.5 2.05 3.85 0H5v5H4V1.75L2.5 4.05 1 1.75V5H0z" fill="currentColor"/></symbol>
+    <symbol id="logo-compacto" viewBox="0 0 33 5">
+      <use href="#g-o" x="0" width="5" height="5"/><use href="#g-c" x="7" width="5" height="5"/><use href="#g-e" x="14" width="5" height="5"/><use href="#g-l" x="21" width="5" height="5"/><use href="#g-o" x="28" width="5" height="5"/>
+    </symbol>
+    <symbol id="logo-fila" viewBox="0 0 45 5">
+      <use href="#g-o" x="0" width="5" height="5"/><use href="#g-c" x="10" width="5" height="5"/><use href="#g-e" x="20" width="5" height="5"/><use href="#g-l" x="30" width="5" height="5"/><use href="#g-o" x="40" width="5" height="5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a class="sr" href="#contenido">Saltar al contenido</a>
+
+<header class="cabeza">
+  <p class="rotulo"><b>CONCEPTO DE SPINDLELAB · OCELO NO EXISTE</b><span>NADA DE ESTO OCURRIÓ · NO ES UNA INDICACIÓN MÉDICA</span></p>
+  <div class="barra">
+    <a class="marca" href="./" aria-label="Ocelo, inicio"><svg viewBox="0 0 33 5" aria-hidden="true"><use href="#logo-compacto"/></svg></a>
+    <nav aria-label="Principal">
+      <a href="la-evaluacion/">La evaluación</a>
+      <a href="#pedir">Pedir evaluación</a>
+      <button class="luz" type="button" data-luz aria-pressed="false" aria-describedby="luz-ayuda">
+        <svg viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg><span class="luz-txt">Encender la luz</span>
+      </button>
+    </nav>
+    <p class="sr" id="luz-ayuda">La página parte a oscuras porque después de operarse la luz molesta unos días. Puedes encenderla.</p>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="primera" aria-labelledby="titulo">
+    <div class="intro">
+      <p class="mono gris">Cirugía refractiva y de cataratas · Providencia</p>
+      <div class="abajo">
+      <h1 id="titulo">Antes de hablar de operar, te medimos los ojos.</h1>
+      <p class="bajada">Si dejar los lentes o sacarte una catarata te conviene lo decide un examen: el grosor y la forma de tu córnea, si tu graduación dejó de cambiar, tu edad y tu lágrima. A veces la respuesta es que no.</p>
+      <a class="enlace-c" href="la-evaluacion/">Ver qué se mide en la evaluación <svg class="c" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg></a>
+      </div>
+    </div>
+
+    <nav class="carta" aria-label="La carta: cada fila lleva a una sección">
+      <ol>
+        <li><div class="fila f10" style="--k:0">
+          <span class="lm" aria-hidden="true">1,0</span>
+          <span class="palabra">
+            <svg class="logo-fila" viewBox="0 0 45 5" role="img" aria-label="Ocelo"><use href="#logo-fila"/></svg>
+            <svg class="logo-compacto" viewBox="0 0 33 5" aria-hidden="true"><use href="#logo-compacto"/></svg>
+          </span>
+          <span class="al-lado"></span>
+        </div></li>
+        <li><a class="fila f09" style="--k:1" href="#candidato"><span class="lm" aria-hidden="true">0,9</span><span class="palabra">Medir</span><span class="al-lado">¿Soy candidato? <svg class="c" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg></span></a></li>
+        <li><a class="fila f08" style="--k:2" href="#comparar" data-comparar="tab-lasik"><span class="lm" aria-hidden="true">0,8</span><span class="palabra">Láser</span><span class="al-lado">LASIK o PRK <svg class="c" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg></span></a></li>
+        <li><a class="fila f07" style="--k:3" href="#comparar" data-comparar="tab-lente"><span class="lm" aria-hidden="true">0,7</span><span class="palabra">Lente</span><span class="al-lado">Monofocal o multifocal <svg class="c" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg></span></a></li>
+        <li><a class="fila f06" style="--k:4" href="#prometer"><span class="lm" aria-hidden="true">0,6</span><span class="palabra">Nunca</span><span class="al-lado">Lo que no te vamos a prometer <svg class="c" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg></span></a></li>
+        <li><a class="fila f05" style="--k:5" href="#quienes"><span class="lm" aria-hidden="true">0,5</span><span class="palabra">Quién</span><span class="al-lado">Quiénes operarían <svg class="c" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg></span></a></li>
+        <li><a class="fila f04" style="--k:6" href="#preguntas"><span class="lm" aria-hidden="true">0,4</span><span class="palabra">Dudas</span><span class="al-lado">Preguntas, en texto <svg class="c" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg></span></a></li>
+        <li><a class="fila f03" style="--k:7" href="#pedir"><span class="lm" aria-hidden="true">0,3</span><span class="palabra">Pedir</span><span class="al-lado">Pedir una evaluación <svg class="c" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg></span></a></li>
+        <li><p class="fila f02 rotulo-fila" style="--k:8"><span class="lm" aria-hidden="true">0,2</span><span class="palabra">Concepto de SpindleLab: Ocelo no existe.</span><span class="al-lado"></span></p></li>
+      </ol>
+    </nav>
+  </section>
+
+  <section class="seccion" id="candidato" aria-labelledby="t-candidato">
+    <p class="riel"><span class="mono">0,9</span><span class="mono">Medir</span></p>
+    <div class="cuerpo">
+      <h2 id="t-candidato">¿Soy candidato?</h2>
+      <p class="bajada">Lo deciden estas mediciones. Ninguna se ve en el espejo.</p>
+      <ul class="mediciones">
+        <li><span class="mono">Paquimetría</span><h3>El grosor de tu córnea</h3><p>El láser saca tejido de la córnea, así que tiene que quedar suficiente. Si es delgada, el LASIK puede quedar descartado y el PRK seguir en pie.</p></li>
+        <li><span class="mono">Topografía</span><h3>La forma de tu córnea</h3><p>Un mapa de su superficie. Busca un queratocono, aunque sea inicial: con uno, no se opera la córnea.</p></li>
+        <li><span class="mono">Refracción</span><h3>Que tu graduación haya dejado de cambiar</h3><p>Si tu receta cambió en el último año, todavía no es momento: operarías una graduación que se va a mover.</p></li>
+        <li><span class="mono">Edad</span><h3>Tu edad</h3><p>Desde los 18 años, y mejor pasados los 21. Pasados los 40 llega la presbicia, y el láser que corrige la miopía no la corrige.</p></li>
+        <li><span class="mono">Lágrima</span><h3>Tu lágrima</h3><p>Con ojo seco severo, la cirugía lo puede empeorar. Se mide antes, no después.</p></li>
+      </ul>
+      <div class="catarata"><span class="mono gris">Catarata</span><p>Si lo tuyo es catarata, la pregunta es otra. No hay una edad para operarla: se opera cuando ya te quita lo que necesitas hacer, como manejar de noche o leer.</p></div>
+      <div class="seguir"><a class="enlace-c" href="la-evaluacion/">Ver la evaluación completa, paso por paso <svg class="c" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg></a></div>
+    </div>
+  </section>
+
+  <section class="seccion comparar" id="comparar" aria-labelledby="t-comparar">
+    <p class="riel"><span class="mono">0,8 · 0,7</span><span class="mono">Láser · Lente</span></p>
+    <div class="cuerpo">
+      <h2 id="t-comparar">¿Más nítido en el rojo o en el verde?</h2>
+      <p class="bajada">En el examen, esa pregunta afina tu graduación: se miran letras negras sobre los dos colores y se compara. Acá la usamos igual, para comparar dos opciones lado a lado.</p>
+      <div class="pestanas" role="tablist" aria-label="Qué comparar">
+        <button type="button" role="tab" id="tab-lasik" aria-controls="panel-lasik" aria-selected="true">LASIK o PRK</button>
+        <button type="button" role="tab" id="tab-lente" aria-controls="panel-lente" aria-selected="false" tabindex="-1">Monofocal o multifocal</button>
+      </div>
+    </div>
+    <div class="duocromo-marco">
+      <div class="duocromo" id="panel-lasik" role="tabpanel" aria-labelledby="tab-lasik">
+        <div class="lado a">
+          <div class="anillos" aria-hidden="true">
+            <svg viewBox="0 0 5 5"><use href="#g-c"/></svg><svg viewBox="0 0 5 5"><use href="#g-c" transform="rotate(90 2.5 2.5)"/></svg><svg viewBox="0 0 5 5"><use href="#g-c" transform="rotate(180 2.5 2.5)"/></svg>
+          </div>
+          <h3><small>Rojo</small>LASIK</h3>
+          <ul>
+            <li>Se levanta una lámina fina de la córnea, se corrige debajo y se vuelve a poner.</li>
+            <li>Pide una córnea con grosor suficiente.</li>
+            <li>La vista se aclara más rápido.</li>
+          </ul>
+        </div>
+        <div class="lado b">
+          <div class="anillos" aria-hidden="true">
+            <svg viewBox="0 0 5 5"><use href="#g-c"/></svg><svg viewBox="0 0 5 5"><use href="#g-c" transform="rotate(90 2.5 2.5)"/></svg><svg viewBox="0 0 5 5"><use href="#g-c" transform="rotate(180 2.5 2.5)"/></svg>
+          </div>
+          <h3><small>Verde</small>PRK</h3>
+          <ul>
+            <li>Se corrige en la superficie, sin lámina.</li>
+            <li>Sirve cuando la córnea es delgada.</li>
+            <li>La recuperación es más lenta y los primeros días molesta más.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="duocromo" id="panel-lente" role="tabpanel" aria-labelledby="tab-lente" hidden>
+        <div class="lado a">
+          <div class="anillos" aria-hidden="true">
+            <svg viewBox="0 0 5 5"><use href="#g-c" transform="rotate(270 2.5 2.5)"/></svg><svg viewBox="0 0 5 5"><use href="#g-c"/></svg><svg viewBox="0 0 5 5"><use href="#g-c" transform="rotate(90 2.5 2.5)"/></svg>
+          </div>
+          <h3><small>Rojo · lente intraocular</small>Monofocal</h3>
+          <ul>
+            <li>Enfoca a una sola distancia, casi siempre lejos.</li>
+            <li>Para leer vas a usar lentes.</li>
+            <li>Menos halos alrededor de las luces.</li>
+          </ul>
+        </div>
+        <div class="lado b">
+          <div class="anillos" aria-hidden="true">
+            <svg viewBox="0 0 5 5"><use href="#g-c" transform="rotate(270 2.5 2.5)"/></svg><svg viewBox="0 0 5 5"><use href="#g-c"/></svg><svg viewBox="0 0 5 5"><use href="#g-c" transform="rotate(90 2.5 2.5)"/></svg>
+          </div>
+          <h3><small>Verde · lente intraocular</small>Multifocal</h3>
+          <ul>
+            <li>Enfoca lejos y cerca a la vez.</li>
+            <li>Puede que uses menos lentes para leer.</li>
+            <li>La mayoría ve un halo leve alrededor de las luces de noche.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="despues">
+      <p class="duocromo-pie" id="pie-comparar">Ninguna es mejor en general. Te conviene la que tu córnea permite, y en catarata pesa cuánto manejas de noche: lo conversamos con tu biometría en la mano.</p>
+    </div>
+  </section>
+
+  <section class="seccion" id="prometer" aria-labelledby="t-prometer">
+    <p class="riel"><span class="mono">0,6</span><span class="mono">Nunca</span></p>
+    <div class="cuerpo">
+      <h2 id="t-prometer">Lo que no te vamos a prometer</h2>
+      <p class="bajada">El rubro vende un resultado. Preferimos decirte antes lo que ninguna cirugía garantiza.</p>
+      <ul class="promesas">
+        <li><s>Que vas a ver perfecto sin lentes.</s><p>Nadie lo puede garantizar antes de operar. Puede quedar una graduación pequeña, que se corrige con lentes o con un retoque.</p></li>
+        <li><s>Que nunca más vas a usar lentes.</s><p>Pasados los 40 llega la presbicia, operado o no.</p></li>
+        <li><s>Que de noche vas a ver igual que antes.</s><p>Pueden aparecer halos o destellos alrededor de las luces. A veces se van con el tiempo; a veces no.</p></li>
+        <li><s>Que tus ojos no se van a secar.</s><p>Casi todos tienen ojo seco después del LASIK. Suele pasar en un mes; en algunas personas dura más.</p></li>
+        <li><s>Que después de la catarata no vas a volver a ver borroso.</s><p>Años después, la cápsula que sostiene el lente se puede nublar. Se abre con un láser, en la consulta.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="seccion" id="quienes" aria-labelledby="t-quienes">
+    <p class="riel"><span class="mono">0,5</span><span class="mono">Quién</span></p>
+    <div class="cuerpo">
+      <h2 id="t-quienes">Quiénes operarían</h2>
+      <p class="bajada">Ocelo es un concepto y estas dos personas también. No ponemos foto ni número de registro: un número inventado podría ser el de alguien que existe.</p>
+      <div class="personas">
+        <article class="persona">
+          <svg class="iniciales" viewBox="-0.5 -0.5 12 6" width="216" height="108" role="img" aria-label="Iniciales LI dibujadas en una retícula de cinco por cinco">
+            <g class="rejilla">
+              <path d="M0 0v5M1 0v5M2 0v5M3 0v5M4 0v5M5 0v5M6 0v5M7 0v5M8 0v5M9 0v5M10 0v5M11 0v5M0 0h11M0 1h11M0 2h11M0 3h11M0 4h11M0 5h11"/>
+            </g>
+            <use href="#g-l" x="0" y="0" width="5" height="5"/><use href="#g-i" x="6" y="0" width="5" height="5"/>
+          </svg>
+          <div>
+            <h3>Leonor Ibarbia Saelzer</h3>
+            <p>Cirugía refractiva: LASIK y PRK.</p>
+            <p class="mono">Persona ficticia</p>
+          </div>
+        </article>
+        <article class="persona">
+          <svg class="iniciales" viewBox="-0.5 -0.5 12 6" width="216" height="108" role="img" aria-label="Iniciales MC dibujadas en una retícula de cinco por cinco">
+            <g class="rejilla">
+              <path d="M0 0v5M1 0v5M2 0v5M3 0v5M4 0v5M5 0v5M6 0v5M7 0v5M8 0v5M9 0v5M10 0v5M11 0v5M0 0h11M0 1h11M0 2h11M0 3h11M0 4h11M0 5h11"/>
+            </g>
+            <use href="#g-m" x="0" y="0" width="5" height="5"/><use href="#g-c" x="6" y="0" width="5" height="5"/>
+          </svg>
+          <div>
+            <h3>Matías Cerdeña Olave</h3>
+            <p>Cataratas y lentes intraoculares.</p>
+            <p class="mono">Persona ficticia</p>
+          </div>
+        </article>
+      </div>
+      <p class="nota">Revisamos los dos nombres en el Registro Nacional de Prestadores Individuales de la Superintendencia de Salud el 16 de octubre de 2026. Ninguno es el de un prestador registrado.</p>
+    </div>
+  </section>
+
+  <section class="seccion" id="preguntas" aria-labelledby="t-preguntas">
+    <p class="riel"><span class="mono">0,4</span><span class="mono">Dudas</span></p>
+    <div class="cuerpo">
+      <h2 id="t-preguntas">Preguntas, contestadas en texto</h2>
+      <ul class="preguntas">
+        <li><h3>¿Puedo operarme la miopía si tengo la córnea delgada?</h3><p>Depende de cuán delgada sea y de cuánta graduación haya que corregir. El LASIK necesita más córnea que el PRK, porque hace una lámina; con una córnea delgada, el PRK a veces sigue siendo posible. Lo dice la paquimetría, no una regla general.</p></li>
+        <li><h3>¿LASIK o PRK: cuál es mejor?</h3><p>Ninguno en general. Con el LASIK la vista se aclara más rápido; el PRK no hace lámina y por eso sirve en córneas más delgadas, a cambio de una recuperación más lenta y unos primeros días más molestos. Te conviene el que tu córnea permite.</p></li>
+        <li><h3>¿A qué edad se opera una catarata?</h3><p>No hay una edad. Se opera cuando la catarata ya te impide hacer lo que necesitas, como manejar de noche o leer. Si los síntomas son leves, a veces basta con cambiar los lentes.</p></li>
+        <li><h3>¿Me voy a quedar sin lentes para siempre?</h3><p>No te lo podemos asegurar. La cirugía puede bajar cuánto los usas, pero pasados los 40 casi todos necesitan lentes para leer, operados o no, y para manejar de noche a veces siguen haciendo falta.</p></li>
+        <li><h3>¿Cuánto cuesta?</h3><p>No publicamos un precio porque depende de la evaluación: la técnica que corresponda, si se opera uno o los dos ojos y, en catarata, el lente que elijas. Te lo decimos por escrito después de medirte.</p></li>
+        <li><h3>¿Puedo ir manejando a la evaluación?</h3><p>Mejor no. Para mirar el fondo del ojo te dilatamos la pupila, y la vista queda borrosa y sensible a la luz por unas horas.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="seccion pedir" id="pedir" aria-labelledby="t-pedir">
+    <p class="riel"><span class="mono">0,3</span><span class="mono">Pedir</span></p>
+    <div class="cuerpo">
+      <div>
+        <h2 id="t-pedir">Pedir una evaluación</h2>
+        <p class="bajada">Déjanos tu nombre y cómo contactarte. Te llamamos para darte hora y decirte qué hacer antes, por ejemplo, cuántos días dejar los lentes de contacto.</p>
+      </div>
+      <div class="mueve">
+        <h3>Lo que mueve el precio</h3>
+        <ul>
+          <li>La técnica que corresponda.</li>
+          <li>Si son uno o los dos ojos.</li>
+          <li>En catarata, el lente que elijas.</li>
+        </ul>
+      </div>
+      <form data-concepto novalidate>
+        <div class="campo">
+          <label for="nombre">Tu nombre</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" data-requerido aria-describedby="err-nombre">
+          <p class="error" id="err-nombre" hidden><svg class="c" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c" transform="rotate(90 2.5 2.5)"/></svg>Escribe tu nombre.</p>
+        </div>
+        <div class="campo">
+          <label for="contacto">Correo o teléfono</label>
+          <input type="text" id="contacto" name="contacto" autocomplete="email" data-requerido aria-describedby="ayuda-contacto err-contacto">
+          <p class="ayuda" id="ayuda-contacto">Solo para darte hora.</p>
+          <p class="error" id="err-contacto" hidden><svg class="c" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c" transform="rotate(90 2.5 2.5)"/></svg>Escribe un correo o un teléfono para poder llamarte.</p>
+        </div>
+        <fieldset>
+          <legend>Qué te trae</legend>
+          <label class="opcion"><input type="radio" name="motivo" value="lentes"> Quiero dejar los lentes</label>
+          <label class="opcion"><input type="radio" name="motivo" value="catarata"> Tengo catarata</label>
+          <label class="opcion"><input type="radio" name="motivo" value="no-se"> Todavía no sé</label>
+        </fieldset>
+        <div class="enviar">
+          <button class="boton" type="submit">Pedir evaluación <svg class="c" viewBox="0 0 5 5" aria-hidden="true"><use href="#g-c"/></svg></button>
+          <p>Es un concepto: este formulario no envía nada.</p>
+        </div>
+        <p class="confirmacion" role="status" tabindex="-1" hidden>No se envió nada: Ocelo es un concepto de SpindleLab. Si esto fuera real, te llamaríamos para darte hora.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="grande"><svg viewBox="0 0 45 5" aria-hidden="true"><use href="#logo-fila"/></svg></div>
+  <div class="filas">
+    <p>Ocelo · Providencia, Santiago.<br><span class="gris">Dirección ficticia.</span></p>
+    <p>Concepto de SpindleLab, 2026. Ocelo no existe y sus médicos tampoco. Nada de esta página es una indicación médica: si tienes una duda sobre tus ojos, pregúntale a un oftalmólogo.</p>
+    <p><a href="la-evaluacion/">La evaluación</a><a href="#pedir">Pedir evaluación</a></p>
+  </div>
+</footer>
+<script src="ocelo.js" defer></script>
+</body>
+</html>
