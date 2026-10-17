@@ -23,8 +23,8 @@ día que la pieza entre al índice.
 
 ## Hechos de norma (los únicos números que aparecen en la pieza)
 
-Verificados el 16-oct-2026 entre las 21:00 y las 21:35 (hora de Chile). **Los busqué y los crucé yo (Bruno) en esta
-corrida; Simón no pasó por esta ficha y su visto bueno queda pendiente.** La norma misma (EN 1492-1:2000+A1:2008) es
+Verificados el 16-oct-2026 entre las 21:00 y las 21:35 (hora de Chile). Los buscó y los cruzó Bruno el 16-oct; **Simón los
+volvió a consultar el 17-oct** (sección «Verificación de Simón», abajo). La norma misma (EN 1492-1:2000+A1:2008) es
 de pago y no la tengo: donde dice «norma», lo que hay es su ficha oficial o un fabricante que declara fabricar bajo
 ella. Si un catálogo y otro discrepan, gana la etiqueta de la eslinga, y el sitio lo dice.
 
@@ -39,6 +39,26 @@ ella. Si un catálogo y otro discrepan, gana la etiqueta de la eslinga, y el sit
 | 7 | Lo que la norma no cubre | El izaje de personas | BSI, misma ficha |
 | 8 | Cuándo se revisa | Antes de cada uso, por quien la usa; revisiones frecuentes durante el uso; examen por una persona competente, que fija el período, **al menos una vez al año**, con registro | CERTEX, *Rejection criteria roundslings and webbing slings*: <https://www.certex.dk/en/knowhow/articles-about-textile-slings/rejection-criteria-roundslings-and-webbing-slings> |
 | 9 | Cuándo se da de baja | Marcación perdida o ilegible; cortes transversales o longitudinales en la cinta o en sus bordes; costuras dañadas o cortadas, también en los ojales; daño por calor o por roce; ataque químico (la cinta se debilita y se ablanda en un punto); desgaste superficial fuerte y localizado; herrajes dañados o deformados; cualquier duda sobre si sirve | CERTEX, mismo artículo |
+
+### Verificación de Simón (17-oct-2026, 02:10 a 02:20 UTC)
+
+Fuentes abiertas de nuevo, una por una, contra lo que dice el sitio:
+
+| Hecho | Lo que dice la fuente hoy | Veredicto |
+|---|---|---|
+| 1 · Código de color | CERTEX: violeta 1 t, verde 2 t, amarillo 3 t, gris 4 t, rojo 5 t, marrón 6 t, azul 8 t, naranja 10 t y más; «EN 1492-1 para planas y EN 1492-2 para redondas» | Coincide |
+| 3 · Etiqueta azul | CERTEX: «Polyester slings must have a blue label sewn on with the statutory marking» | Coincide |
+| 4 · Factores de modo | Hoja Hoffmann 086170 (texto extraído del PDF): 1000 directo · 800 ahorcado · 2000 «double up to 7°» · 1400 «7°–45°» · 1000 «45°–60°» kg, «Euro-slings EN 1492-1». LEEA COPSULE 16.5.2: directo 1, ahorcado 0,8, canasto paralelo 2, canasto 0–45° 1,4; **no publica el tramo de 45° a 60°** | Coincide. El tramo de 45° a 60° descansa solo en Hoffmann; el sitio lo cita |
+| 5 · Sobre 60° | Ninguna de las dos fuentes da factor sobre 60° | El sitio dice «no se iza» y «la tabla termina»: es la lectura prudente, no una cita |
+| 6 · Temperatura | BSI: poliéster y poliamida «−40 °C to 100 °C» (polipropileno, hasta 80 °C) | Coincide |
+| 7 · Personas | BSI: el izaje de personas queda fuera del alcance (también metal fundido, ácidos, vidrio en planchas, material fisible) | Coincide |
+| 8 · Frecuencia | CERTEX: antes de cada uso; revisiones frecuentes durante el uso; períodos fijados por una persona competente; «visually examined at least annually by a competent person»; registro | Coincide |
+| 9 · Descarte | CERTEX: marcación perdida o ilegible; cortes transversales o longitudinales; roce de bordes; cortes en costuras u ojales; ataque químico (debilita y ablanda, la superficie se descascara); calor o roce (aspecto vidrioso, fibras fundidas); roce fuerte y localizado; herrajes dañados o deformados; ante la duda | Coincide. **Cuatro frases del sitio iban más allá de la fuente** (la soldadura, «manchas que no salen», «un hilo suelto», «lo primero que toca un canto») y se reescribieron con Clara (`texto.md`, §3) |
+
+**Capa de datos (lo que lee un motor).** `Organization` + `Service` + `WebPage` + `FAQPage` en la home y
+`Organization` + `Service` + `WebPage` (con `citation`) + `BreadcrumbList` en la interior. La ficción va en
+`disambiguatingDescription` de la empresa y del servicio. Sin `Review`, `AggregateRating`, dirección, teléfono ni
+`sameAs`. `noindex, nofollow` en las dos. El texto del `FAQPage` es el mismo que el visible. Nada que corregir.
 
 **Lo que se calculó a partir de eso:** las capacidades de la tabla de carga son el producto de 1 y 2 (8 capacidades ×
 5 modos = 40 cifras). Ninguna otra cifra aparece: ni anchos, ni largos, ni precios, ni plazos.

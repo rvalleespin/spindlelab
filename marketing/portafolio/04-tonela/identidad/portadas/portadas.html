@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<title>Tonela · portadas para /trabajo/ (concepto)</title>
+<link rel="stylesheet" href="../base.css">
+<style>
+  /* Portadas del muro de /trabajo/ (lock §2.4): columna de 525 px en tres alturas, 4:5, 4:3 y 5:3. Se exportan
+     al doble. Ocho bandas a sangre, el ancho crece con la capacidad, cada una con su tonelaje en Big Shoulders
+     Stencil y la etiqueta TONELA cosida a lo largo de la verde. ?p=4x5|4x3|5x3; sin parámetro, las tres. */
+  body.hoja { padding: 24px; display: flex; gap: 24px; align-items: flex-start; background: #8a8c8e; }
+  body.sola { overflow: hidden; }
+  body.sola .portada:not(.vista) { display: none; }
+  .portada { position: relative; width: 525px; overflow: hidden; display: flex; flex: none; background: var(--tinta); }
+  .f45 { height: 656px; } .f43 { height: 394px; } .f53 { height: 315px; }
+  .banda { position: relative; flex: none; width: calc((var(--t) + 3) * 525px / 63); height: 100%; }
+  .banda::before { /* la sombra del pliegue arriba */
+    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 16%; background: linear-gradient(180deg, rgba(0,0,0,.28), rgba(0,0,0,0)); }
+  .banda::after { /* el ojal cosido abajo */
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: var(--ojal); border-top: 1.5px dashed currentColor;
+    background: repeating-linear-gradient(135deg, rgba(0,0,0,0) 0 5px, rgba(0,0,0,.16) 5px 6.5px) 0 7px / 100% 30% no-repeat, linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.06)); }
+  .banda + .banda { box-shadow: inset 1px 0 0 rgba(0,0,0,.18); }
+  .t { position: absolute; left: 0; right: 0; bottom: calc(var(--ojal) + 10px); text-align: center; font: 800 var(--tam)/.84 var(--stencil); }
+  .t small { font-size: .42em; margin-left: .04em; }
+  .portada { --ojal: 64px; }
+  .f43 { --ojal: 46px; } .f53 { --ojal: 38px; }
+  .banda { --tam: calc((var(--t) + 3) * 525px / 63 * .78); }
+  .banda[data-t="10"] { --tam: calc((var(--t) + 3) * 525px / 63 * .56); }
+  .f53 .banda { --tam: calc((var(--t) + 3) * 525px / 63 * .62); }
+  .f53 .banda[data-t="10"] { --tam: calc((var(--t) + 3) * 525px / 63 * .48); }
+  /* la etiqueta, cosida a lo largo de la cinta verde */
+  .cosida { position: absolute; left: 50%; top: var(--alto-etq); width: 112px; height: auto; transform: translate(-50%, 0) rotate(-90deg); transform-origin: 50% 50%;
+    box-shadow: 0 2px 0 rgba(0,0,0,.25); border-radius: 2px; }
+  .f45 { --alto-etq: 150px; } .f43 { --alto-etq: 96px; } .f53 { --alto-etq: 70px; }
+  .esquina { top: 12px; right: 12px; left: auto; --fondo: var(--lienzo); --frente: var(--tinta); }
+</style>
+</head>
+<body>
+<section class="portada f45" data-id="4x5" aria-label="Tonela, concepto: ocho eslingas por capacidad">
+  <span class="esquina">Concepto</span>
+  <div class="banda cinta" data-t="1" style="--t:1"><span class="t">1<small>t</small></span></div>
+  <div class="banda cinta" data-t="2" style="--t:2"><img class="cosida" src="../logo/tonela-etiqueta.svg" alt="Tonela"><span class="t">2<small>t</small></span></div>
+  <div class="banda cinta" data-t="3" style="--t:3"><span class="t">3<small>t</small></span></div>
+  <div class="banda cinta" data-t="4" style="--t:4"><span class="t">4<small>t</small></span></div>
+  <div class="banda cinta" data-t="5" style="--t:5"><span class="t">5<small>t</small></span></div>
+  <div class="banda cinta" data-t="6" style="--t:6"><span class="t">6<small>t</small></span></div>
+  <div class="banda cinta" data-t="8" style="--t:8"><span class="t">8<small>t</small></span></div>
+  <div class="banda cinta" data-t="10" style="--t:10"><span class="t">10<small>t</small></span></div>
+</section>
+<section class="portada f43" data-id="4x3" aria-label="Tonela, concepto: ocho eslingas por capacidad">
+  <span class="esquina">Concepto</span>
+  <div class="banda cinta" data-t="1" style="--t:1"><span class="t">1<small>t</small></span></div>
+  <div class="banda cinta" data-t="2" style="--t:2"><img class="cosida" src="../logo/tonela-etiqueta.svg" alt="Tonela"><span class="t">2<small>t</small></span></div>
+  <div class="banda cinta" data-t="3" style="--t:3"><span class="t">3<small>t</small></span></div>
+  <div class="banda cinta" data-t="4" style="--t:4"><span class="t">4<small>t</small></span></div>
+  <div class="banda cinta" data-t="5" style="--t:5"><span class="t">5<small>t</small></span></div>
+  <div class="banda cinta" data-t="6" style="--t:6"><span class="t">6<small>t</small></span></div>
+  <div class="banda cinta" data-t="8" style="--t:8"><span class="t">8<small>t</small></span></div>
+  <div class="banda cinta" data-t="10" style="--t:10"><span class="t">10<small>t</small></span></div>
+</section>
+<section class="portada f53" data-id="5x3" aria-label="Tonela, concepto: ocho eslingas por capacidad">
+  <span class="esquina">Concepto</span>
+  <div class="banda cinta" data-t="1" style="--t:1"><span class="t">1<small>t</small></span></div>
+  <div class="banda cinta" data-t="2" style="--t:2"><img class="cosida" src="../logo/tonela-etiqueta.svg" alt="Tonela"><span class="t">2<small>t</small></span></div>
+  <div class="banda cinta" data-t="3" style="--t:3"><span class="t">3<small>t</small></span></div>
+  <div class="banda cinta" data-t="4" style="--t:4"><span class="t">4<small>t</small></span></div>
+  <div class="banda cinta" data-t="5" style="--t:5"><span class="t">5<small>t</small></span></div>
+  <div class="banda cinta" data-t="6" style="--t:6"><span class="t">6<small>t</small></span></div>
+  <div class="banda cinta" data-t="8" style="--t:8"><span class="t">8<small>t</small></span></div>
+  <div class="banda cinta" data-t="10" style="--t:10"><span class="t">10<small>t</small></span></div>
+</section>
+<script>
+  (function () {
+    var p = new URLSearchParams(location.search).get('p');
+    if (p) { document.body.classList.add('sola'); var el = document.querySelector('.portada[data-id="' + p + '"]'); if (el) el.classList.add('vista'); }
+    else document.body.classList.add('hoja');
+  })();
+</script>
+</body>
+</html>

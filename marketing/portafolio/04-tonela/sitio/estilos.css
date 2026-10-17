@@ -396,15 +396,19 @@ p { margin: 0 0 .8em; }
   .concepto { position: fixed; left: 8px; right: 8px; bottom: 8px; z-index: 30; margin: 0; padding: 9px 14px 9px 32px; }
   .concepto-titulo { font-size: 15px; }
   .concepto-texto { font-size: 13px; }
-  .portada { padding-top: 28px; }
+  .portada { padding-top: 12px; }
+  .portada-texto .rotulo { margin-bottom: 14px; }
   .portada .reticula { min-height: 0; }
   .portada-texto { grid-column: 1 / -1; }
-  .portada h1 { font-size: 50px; margin-bottom: 18px; }
+  .portada h1 { font-size: 46px; margin-bottom: 18px; }
   .entrada { font-size: 18px; }
   .portada-acciones { gap: 18px; margin-top: 20px; }
-  .estante { grid-column: 1 / -1; min-height: 300px; margin-top: 36px; }
-  .banda-t { font-size: calc(10px + var(--t) * 2px); bottom: 46px; }
-  .banda::after { height: 38px; }
+  /* en el teléfono las bandas van primero: la marca se reconoce antes de leer */
+  .estante { grid-column: 1 / -1; order: -1; min-height: 150px; margin: 0 0 20px; }
+  .estante-barra { top: 10px; height: 12px; }
+  .bandas { inset: 16px 0 0 0; }
+  .banda-t { font-size: calc(11px + var(--t) * 1.9px); bottom: 36px; }
+  .banda::after { height: 28px; }
   .bandas { gap: 4px; }
   .seccion { padding: 72px 0; }
   .modos { grid-template-columns: repeat(2, minmax(0, 1fr)); }

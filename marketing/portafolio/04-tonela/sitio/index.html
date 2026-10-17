@@ -26,15 +26,24 @@
       "name": "Tonela",
       "description": "Proveedor de eslingas de poliéster, estrobos de cable, cadenas y grilletes, con taller de inspección de esos elementos, para faenas, puertos y obras del norte de Chile.",
       "disambiguatingDescription": "Concepto de SpindleLab (2026). Tonela no existe: es una empresa inventada para mostrar trabajo de identidad y desarrollo web. No tiene clientes, faenas, dirección, RUT ni datos de contacto, y nada de lo que describe este sitio ocurrió.",
-      "areaServed": { "@type": "AdministrativeArea", "name": "Región de Antofagasta, Chile" },
-      "creator": { "@type": "Organization", "name": "SpindleLab", "url": "https://spindlelab.cl" }
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Región de Antofagasta, Chile"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "SpindleLab",
+        "url": "https://spindlelab.cl"
+      }
     },
     {
       "@type": "Service",
       "@id": "#inspeccion",
       "name": "Inspección y certificación de eslingas textiles",
       "serviceType": "Examen periódico de eslingas de poliéster planas y redondas",
-      "provider": { "@id": "#tonela" },
+      "provider": {
+        "@id": "#tonela"
+      },
       "disambiguatingDescription": "Servicio de una empresa ficticia (concepto de SpindleLab). No se presta.",
       "url": "inspeccion/"
     },
@@ -42,22 +51,54 @@
       "@type": "WebPage",
       "name": "Tonela · Eslingas por color y tabla de carga (concepto)",
       "inLanguage": "es-CL",
-      "about": { "@id": "#tonela" },
+      "about": {
+        "@id": "#tonela"
+      },
       "isFamilyFriendly": true
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "¿Qué eslinga uso para levantar 3 toneladas en canasto?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Depende del ángulo. Con los ramales paralelos (hasta 7°) el canasto duplica la capacidad: una verde de 2 t llega a 4 t. Entre 7° y 45° el factor es 1,4: la verde llega a 2,8 t y no alcanza; sirve la amarilla de 3 t, que llega a 4,2 t. Entre 45° y 60° el factor es 1: desde la amarilla hacia arriba. Sobre 60° no se iza. Es una referencia según EN 1492-1: manda la etiqueta de la eslinga y el plan de izaje lo firma una persona calificada." } },
-        { "@type": "Question", "name": "¿Cada cuánto hay que inspeccionar una eslinga?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Antes de cada uso la revisa quien la va a usar, y durante el trabajo se mira seguido. Además, una persona competente la examina a fondo en períodos que fija según el uso y el ambiente, al menos una vez al año, y deja registro." } },
-        { "@type": "Question", "name": "¿Cuándo se da de baja una eslinga?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Cuando la etiqueta se perdió o no se lee; cuando la cinta o sus bordes tienen cortes; cuando las costuras o los ojales están dañados; cuando hay daño por calor, por roce o por químicos; cuando un herraje está dañado o deformado; y ante cualquier duda sobre si sirve." } },
-        { "@type": "Question", "name": "¿Qué significa el color de una eslinga?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Su capacidad en tiro directo, según la EN 1492: violeta 1 t, verde 2 t, amarilla 3 t, gris 4 t, roja 5 t, café 6 t, azul 8 t y naranja de 10 t para arriba. Las capacidades intermedias no siguen el código, y el dato que manda es el de la etiqueta." } },
-        { "@type": "Question", "name": "¿Por qué el ahorcado levanta menos que el tiro directo?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Porque la eslinga se dobla sobre sí misma en el punto donde estrangula la carga, y el factor de modo baja a 0,8: una roja de 5 t en ahorcado queda en 4 t." } }
+        {
+          "@type": "Question",
+          "name": "¿Qué eslinga uso para levantar 3 toneladas en canasto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende del ángulo. Con los dos ramales paralelos (hasta 7°), el canasto duplica la capacidad: una verde de 2 t llega a 4 t y alcanza. Si los ramales se abren entre 7° y 45°, el factor baja a 1,4: la verde llega a 2,8 t y ya no alcanza, y la que sirve es la amarilla de 3 t, que llega a 4,2 t. Entre 45° y 60°, el canasto vale lo mismo que el tiro directo: desde la amarilla hacia arriba. Sobre 60° no se iza. La capacidad que manda es la de la etiqueta, y el plan lo firma una persona calificada en la faena."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cada cuánto hay que inspeccionar una eslinga?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Antes de cada uso la revisa quien la va a usar, y durante el trabajo se mira seguido. Además, una persona competente la examina a fondo en períodos que fija según el uso y el ambiente, al menos una vez al año, y deja registro de cada examen. Esa revisión anual es la que hacemos en el taller. La de antes de cada uso no se puede delegar: la hace quien iza."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo se da de baja una eslinga?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cuando la etiqueta se perdió o no se lee, cuando la cinta o sus bordes tienen cortes, cuando las costuras o los ojales están dañados, cuando hay daño por calor, por roce o por químicos, cuando un herraje está dañado o deformado, y ante cualquier duda sobre si sirve. Una eslinga sin etiqueta no se usa aunque se vea nueva: sin etiqueta nadie sabe cuánto levanta. Los criterios, dibujados uno por uno."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué significa el color de una eslinga?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Su capacidad en tiro directo, según la norma europea EN 1492: violeta 1 t, verde 2 t, amarilla 3 t, gris 4 t, roja 5 t, café 6 t, azul 8 t y naranja de 10 t para arriba. Vale para las eslingas planas y para las redondas. Sirve para reconocerla de lejos, no para calcular: las capacidades intermedias no siguen el código, y el dato que manda es el de la etiqueta. En las de poliéster, esa etiqueta es azul."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué el ahorcado levanta menos que el tiro directo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Porque la eslinga se dobla sobre sí misma en el punto donde estrangula la carga, y el factor de modo baja a 0,8. Una roja de 5 t en ahorcado queda en 4 t; una azul de 8 t, en 6,4 t."
+          }
+        }
       ]
     }
   ]
@@ -184,7 +225,7 @@
             <text id="ang-carga-texto" x="360" y="0" text-anchor="middle" font-family="Barlow Semi Condensed, sans-serif" font-weight="600" font-size="16" fill="#F1F2EF">CARGA</text>
             <path id="ang-eslinga" d="" fill="none" stroke="#237A33" stroke-width="14" stroke-linejoin="round"/>
             <g transform="translate(360 30)"><circle cx="0" cy="0" r="13" fill="none" stroke="#121314" stroke-width="6"/><path d="M0 13v14c0 15-22 15-22 1" fill="none" stroke="#121314" stroke-width="7" stroke-linecap="round"/></g>
-            <g id="ang-prohibido" opacity="0"><rect x="186" y="150" width="348" height="54" fill="#121314"/><text x="360" y="186" text-anchor="middle" font-family="Big Shoulders, sans-serif" font-weight="800" font-size="30" fill="#F1F2EF">SOBRE 60°, NO SE IZA</text></g>
+            <g id="ang-prohibido" opacity="0"><rect x="186" y="300" width="348" height="54" fill="#121314"/><text x="360" y="336" text-anchor="middle" font-family="Big Shoulders, sans-serif" font-weight="800" font-size="30" fill="#F1F2EF">SOBRE 60°, NO SE IZA</text></g>
           </svg>
         </div>
         <div class="angulo-mando">
@@ -384,7 +425,7 @@
       <p class="nota">Bodega en Antofagasta: ficticia. Teléfono y correo: ficticios.</p>
     </div>
     <div class="pie-ficcion">
-      <p><strong>Tonela es un concepto de SpindleLab (2026).</strong> Una empresa que no existe, sin clientes, faenas ni certificaciones. Lo que muestra el sitio es oficio: identidad, contenido y datos estructurados.</p>
+      <p><strong>Tonela es un concepto de SpindleLab (2026).</strong> La empresa no existe: no tiene clientes, faenas ni certificaciones. El sitio muestra oficio de identidad, contenido y datos estructurados.</p>
     </div>
     <div class="pie-fuentes">
       <p class="rotulo">De dónde salen las cifras</p>

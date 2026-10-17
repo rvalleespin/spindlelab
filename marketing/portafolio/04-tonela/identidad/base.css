@@ -1,0 +1,65 @@
+/* Tonela · identidad (pliego, placas y portadas). Concepto de SpindleLab: Tonela no existe.
+   Mismos tokens que sitio/estilos.css. Las láminas se diseñan al tamaño de medio de Koto (1057 × 595 y sus
+   formas de fila) y se exportan al doble. DM Mono solo para el rótulo de esquina «CONCEPTO»: es la nota de la
+   agencia sobre la pieza, no una letra de Tonela. */
+
+@font-face { font-family: "Big Shoulders"; src: url("fuentes/big-shoulders-var.woff2") format("woff2"); font-weight: 100 900; }
+@font-face { font-family: "Big Shoulders Stencil"; src: url("fuentes/big-shoulders-stencil-var.woff2") format("woff2"); font-weight: 100 900; }
+@font-face { font-family: "Barlow Semi Condensed"; src: url("fuentes/barlow-semi-condensed-400.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Barlow Semi Condensed"; src: url("fuentes/barlow-semi-condensed-500.woff2") format("woff2"); font-weight: 500; }
+@font-face { font-family: "Barlow Semi Condensed"; src: url("fuentes/barlow-semi-condensed-600.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "Barlow Semi Condensed"; src: url("fuentes/barlow-semi-condensed-700.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "DM Mono"; src: url("fuentes/dm-mono-500.woff2") format("woff2"); font-weight: 500; }
+
+:root {
+  --lienzo: #F1F2EF; --tinta: #121314; --blanco: #FFFFFF;
+  --gris: #5A5D60; --gris-sobre-tinta: #9A9DA0; --filete: #C8CBC5; --filete-tinta: #34373A;
+  --c1: #6B3FA0; --sobre-1: #FFFFFF;
+  --c2: #237A33; --sobre-2: #FFFFFF;
+  --c3: #F2C200; --sobre-3: #121314;
+  --c4: #8C8F91; --sobre-4: #121314;
+  --c5: #D22B2B; --sobre-5: #FFFFFF;
+  --c6: #7A4A2A; --sobre-6: #FFFFFF;
+  --c8: #1F5FBF; --sobre-8: #FFFFFF;
+  --c10: #F07D00; --sobre-10: #121314;
+  --display: "Big Shoulders", sans-serif;
+  --stencil: "Big Shoulders Stencil", "Big Shoulders", sans-serif;
+  --texto: "Barlow Semi Condensed", sans-serif;
+  --mono: "DM Mono", monospace;
+  --fondo: var(--lienzo); --frente: var(--tinta); --suave: var(--gris); --linea: var(--filete);
+}
+.tinta { --fondo: var(--tinta); --frente: var(--lienzo); --suave: var(--gris-sobre-tinta); --linea: var(--filete-tinta); }
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--fondo); color: var(--frente); font: 400 12px/1.4 var(--texto); font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+img, svg { display: block; }
+
+/* cada color de capacidad, con su par de texto */
+[data-t="1"] { --c: var(--c1); --s: var(--sobre-1); }
+[data-t="2"] { --c: var(--c2); --s: var(--sobre-2); }
+[data-t="3"] { --c: var(--c3); --s: var(--sobre-3); }
+[data-t="4"] { --c: var(--c4); --s: var(--sobre-4); }
+[data-t="5"] { --c: var(--c5); --s: var(--sobre-5); }
+[data-t="6"] { --c: var(--c6); --s: var(--sobre-6); }
+[data-t="8"] { --c: var(--c8); --s: var(--sobre-8); }
+[data-t="10"] { --c: var(--c10); --s: var(--sobre-10); }
+
+/* la cinta: color de la capacidad + el tejido hecho con CSS */
+.cinta {
+  background-color: var(--c); color: var(--s);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0,0,0,.075) 0 1px, rgba(0,0,0,0) 1px 3px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, rgba(0,0,0,0) 1px 2px);
+}
+
+/* rótulo de esquina: la nota de la agencia, siempre sobre su propio fondo */
+.esquina {
+  position: absolute; top: 14px; right: 14px; z-index: 10;
+  font: 500 9px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase;
+  padding: 5px 7px 4px; background: var(--fondo); color: var(--frente); box-shadow: inset 0 0 0 1px var(--frente);
+}
+.esquina.izq { right: auto; left: 14px; }
+
+.rotulo { font: 600 8.5px/1.2 var(--texto); letter-spacing: .1em; text-transform: uppercase; color: var(--suave); margin: 0; }

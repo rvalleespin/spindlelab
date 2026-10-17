@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1057">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<title>Tonela · pliego de identidad (concepto)</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  /* 1057 × 595: el medio 16:9 de Koto. Se exporta al doble (2114 × 1190) y a 1920 × 1080. */
+  html, body { width: 1057px; height: 595px; overflow: hidden; }
+  .pliego { position: relative; width: 1057px; height: 595px; padding: 22px 26px 18px; display: grid;
+    grid-template-rows: 16px 1fr 12px; row-gap: 12px; }
+  .cabeza { display: flex; gap: 18px; align-items: baseline; }
+  .cabeza b { font: 800 15px/1 var(--display); letter-spacing: .01em; color: var(--tinta); }
+  .cuerpo { display: grid; grid-template-columns: 418px 1fr; grid-template-rows: 262px 1fr; gap: 12px 14px; min-height: 0; }
+  .bloque { position: relative; min-height: 0; border-top: 1.5px solid var(--tinta); padding-top: 8px; display: flex; flex-direction: column; gap: 8px; }
+  .bloque > .rotulo b { color: var(--tinta); font-weight: 700; margin-right: 6px; }
+  .porque { font: 400 10.5px/1.38 var(--texto); color: var(--tinta); margin: 0; }
+  .porque strong { font-weight: 600; }
+
+  /* 01 · logo */
+  .logo-panel { background: var(--tinta); border-radius: 3px; height: 150px; display: grid; place-items: center; position: relative; }
+  .logo-panel img { width: 262px; height: auto; }
+  .logo-fila { display: grid; grid-template-columns: 128px 44px 30px 1fr; gap: 12px; align-items: center; }
+  .logo-fila figure { margin: 0; display: flex; flex-direction: column; gap: 5px; align-items: flex-start; }
+  .logo-fila figcaption { font: 500 8.5px/1 var(--texto); color: var(--gris); letter-spacing: .04em; }
+  .logo-fila .principal { width: 128px; height: auto; }
+
+  /* 02 · color */
+  .muestras { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px; height: 168px; }
+  .muestra { border-radius: 2px; padding: 7px 7px 6px; display: flex; flex-direction: column; justify-content: space-between; }
+  .muestra .t { font: 800 30px/.9 var(--stencil); }
+  .muestra .t small { font-size: .5em; margin-left: 1px; }
+  .muestra dl { margin: 0; font: 500 8.5px/1.3 var(--texto); }
+  .muestra dt { font-weight: 700; font-size: 10px; text-transform: lowercase; }
+  .muestra dd { margin: 0; }
+  .base { display: grid; grid-template-columns: 1fr 1fr 2.2fr; gap: 4px; }
+  .ficha-color { border-radius: 2px; padding: 7px 8px; font: 500 8.5px/1.3 var(--texto); box-shadow: inset 0 0 0 1px var(--tinta); }
+  .ficha-color b { display: block; font: 700 10px/1.2 var(--texto); }
+  .ficha-color.lienzo { background: var(--lienzo); color: var(--tinta); }
+  .ficha-color.tinta-c { background: var(--tinta); color: var(--lienzo); }
+  .base .porque { align-self: center; padding-left: 8px; }
+
+  /* 03 · letra */
+  .letras { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+  .esp { display: flex; flex-direction: column; gap: 3px; }
+  .esp .muestra-g { font: 800 80px/.82 var(--display); letter-spacing: -.01em; }
+  .esp .muestra-s { font: 800 64px/.86 var(--stencil); }
+  .esp .muestra-s small { font-size: .45em; margin-left: 2px; }
+  .esp .nombre { font: 600 9px/1.2 var(--texto); letter-spacing: .06em; text-transform: uppercase; color: var(--gris); }
+  .esp.ancho { grid-column: 1 / -1; border-top: 1px solid var(--filete); padding-top: 6px; }
+  .esp .muestra-b { font: 500 13.5px/1.3 var(--texto); }
+  .esp .cifras { font: 600 18px/1 var(--texto); letter-spacing: .02em; }
+  .alfabeto { font: 700 13px/1.2 var(--display); letter-spacing: .03em; margin: 2px 0 0; }
+
+  /* 04 · recurso propio */
+  .recurso { display: grid; grid-template-columns: 1fr 168px; gap: 14px; min-height: 0; }
+  table.carga { width: 100%; border-collapse: collapse; font: 600 10px/1 var(--texto); }
+  .carga thead th { font: 600 7.5px/1.15 var(--texto); letter-spacing: .07em; text-transform: uppercase; color: var(--gris); text-align: right; padding: 0 6px 4px; vertical-align: bottom; }
+  .carga thead th:first-child { text-align: left; padding-left: 0; }
+  .carga thead th b { display: block; color: var(--tinta); font-size: 8.5px; letter-spacing: .02em; text-transform: none; }
+  .carga tbody tr { border-top: 1px solid var(--filete); }
+  .carga tbody tr:last-child { border-bottom: 1px solid var(--filete); }
+  .carga tbody th { padding: 0; width: 26%; }
+  .carga .fila { display: flex; justify-content: space-between; align-items: center; height: 17px; padding: 0 6px; font: 800 12px/1 var(--stencil); }
+  .carga .fila small { font: 600 8px/1 var(--texto); }
+  .carga td { text-align: right; padding: 0 6px; font: 700 12.5px/1 var(--display); color: var(--gris); }
+  .carga td.activo, .carga th.activo { background: var(--tinta); color: var(--lienzo); }
+  .carga thead th.activo b { color: var(--lienzo); }
+  .recurso .lado { display: flex; flex-direction: column; justify-content: space-between; gap: 8px; }
+  .referencial { font: 500 8.5px/1.35 var(--texto); color: var(--gris); margin: 0; }
+
+  .pie { display: flex; justify-content: space-between; font: 500 8.5px/1.2 var(--texto); color: var(--gris); }
+  .pie b { color: var(--tinta); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="pliego">
+  <span class="esquina">Concepto</span>
+  <header class="cabeza"><b>TONELA</b><p class="rotulo">Pliego de identidad · proveedor de izaje (ficticio), Antofagasta · concepto de SpindleLab, 2026</p></header>
+
+  <main class="cuerpo">
+    <section class="bloque">
+      <p class="rotulo"><b>01</b>El logo: una etiqueta cosida</p>
+      <div class="logo-panel"><img src="logo/tonela-etiqueta-clara.svg" alt="Tonela, la etiqueta clara sobre tinta"></div>
+      <div class="logo-fila">
+        <figure><img class="principal" src="logo/tonela-etiqueta.svg" alt="Tonela, etiqueta en tinta"><figcaption>Principal, tinta</figcaption></figure>
+        <figure><img src="logo/tonela-simbolo-32.svg" width="32" height="32" alt="Símbolo a 32 px"><figcaption>32 px</figcaption></figure>
+        <figure><img src="logo/tonela-simbolo-16.svg" width="16" height="16" alt="Símbolo a 16 px"><figcaption>16 px</figcaption></figure>
+        <p class="porque"><strong>Por qué.</strong> La etiqueta es el documento de cada eslinga: dice qué levanta, de qué es y bajo qué norma. La marca se cose igual, con su costura punteada y el zigzag del remate de una cinta. A 32 y 16 px queda la T sola.</p>
+      </div>
+    </section>
+
+    <section class="bloque">
+      <p class="rotulo"><b>02</b>El color: los ocho de la EN 1492, y ninguno propio</p>
+      <div class="muestras">
+        <div class="muestra cinta" data-t="1"><span class="t">1<small>t</small></span><dl><dt>violeta</dt><dd>#6B3FA0</dd><dd>blanco 7,38:1</dd></dl></div>
+        <div class="muestra cinta" data-t="2"><span class="t">2<small>t</small></span><dl><dt>verde</dt><dd>#237A33</dd><dd>blanco 5,38:1</dd></dl></div>
+        <div class="muestra cinta" data-t="3"><span class="t">3<small>t</small></span><dl><dt>amarillo</dt><dd>#F2C200</dd><dd>tinta 11,07:1</dd></dl></div>
+        <div class="muestra cinta" data-t="4"><span class="t">4<small>t</small></span><dl><dt>gris</dt><dd>#8C8F91</dd><dd>tinta 5,72:1</dd></dl></div>
+        <div class="muestra cinta" data-t="5"><span class="t">5<small>t</small></span><dl><dt>rojo</dt><dd>#D22B2B</dd><dd>blanco 5,10:1</dd></dl></div>
+        <div class="muestra cinta" data-t="6"><span class="t">6<small>t</small></span><dl><dt>café</dt><dd>#7A4A2A</dd><dd>blanco 7,39:1</dd></dl></div>
+        <div class="muestra cinta" data-t="8"><span class="t">8<small>t</small></span><dl><dt>azul</dt><dd>#1F5FBF</dd><dd>blanco 6,09:1</dd></dl></div>
+        <div class="muestra cinta" data-t="10"><span class="t">10<small>t</small></span><dl><dt>naranja</dt><dd>#F07D00</dd><dd>tinta 6,77:1</dd></dl></div>
+      </div>
+      <div class="base">
+        <div class="ficha-color lienzo"><b>Lienzo #F1F2EF</b>blanco frío, el fondo</div>
+        <div class="ficha-color tinta-c"><b>Tinta #121314</b>la marca · 16,55:1</div>
+        <p class="porque"><strong>Por qué.</strong> Cada color significa su tonelaje y nada más: ni botones, ni fondos, ni íconos. Cada uno lleva el texto en el par que pasa 4,5:1. El verde de partida, #2E8B3A, daba 4,31:1 con los dos y se oscureció.</p>
+      </div>
+    </section>
+
+    <section class="bloque">
+      <p class="rotulo"><b>03</b>La letra: tres cortes libres (OFL), servidos desde la carpeta</p>
+      <div class="letras">
+        <div class="esp"><span class="muestra-g">Aa 60°</span><span class="nombre">Big Shoulders 800 · marca y titulares</span><p class="alfabeto">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>abcdefghijklmnñopqrstuvwxyz 0123456789</p></div>
+        <div class="esp"><span class="muestra-s">10<small>t</small></span><span class="nombre">Big Shoulders Stencil · lo que en bodega se pinta con plantilla</span></div>
+        <div class="esp ancho"><span class="muestra-b">Antes de venderte una eslinga te preguntamos cómo vas a izar.</span><span class="cifras">0,8 · 1,4 · 2,8 · 11,2 t</span><span class="nombre">Barlow Semi Condensed · cuerpo y tablas, cifras de ancho fijo</span></div>
+      </div>
+    </section>
+
+    <section class="bloque">
+      <p class="rotulo"><b>04</b>El recurso propio: la tabla de carga por color</p>
+      <div class="recurso">
+        <table class="carga" aria-label="Capacidad por color y modo de amarre, en toneladas (referencial)">
+          <thead><tr><th>Eslinga</th><th>Directo<b>× 1</b></th><th>Ahorcado<b>× 0,8</b></th><th>Paralelo<b>× 2</b></th><th class="activo">7° a 45°<b>× 1,4</b></th><th>45° a 60°<b>× 1</b></th></tr></thead>
+          <tbody>
+            <tr data-t="1"><th><span class="fila cinta">1 t<small>violeta</small></span></th><td>1</td><td>0,8</td><td>2</td><td class="activo">1,4</td><td>1</td></tr>
+            <tr data-t="2"><th><span class="fila cinta">2 t<small>verde</small></span></th><td>2</td><td>1,6</td><td>4</td><td class="activo">2,8</td><td>2</td></tr>
+            <tr data-t="3"><th><span class="fila cinta">3 t<small>amarilla</small></span></th><td>3</td><td>2,4</td><td>6</td><td class="activo">4,2</td><td>3</td></tr>
+            <tr data-t="4"><th><span class="fila cinta">4 t<small>gris</small></span></th><td>4</td><td>3,2</td><td>8</td><td class="activo">5,6</td><td>4</td></tr>
+            <tr data-t="5"><th><span class="fila cinta">5 t<small>roja</small></span></th><td>5</td><td>4</td><td>10</td><td class="activo">7</td><td>5</td></tr>
+            <tr data-t="6"><th><span class="fila cinta">6 t<small>café</small></span></th><td>6</td><td>4,8</td><td>12</td><td class="activo">8,4</td><td>6</td></tr>
+            <tr data-t="8"><th><span class="fila cinta">8 t<small>azul</small></span></th><td>8</td><td>6,4</td><td>16</td><td class="activo">11,2</td><td>8</td></tr>
+            <tr data-t="10"><th><span class="fila cinta">10 t<small>naranja</small></span></th><td>10</td><td>8</td><td>20</td><td class="activo">14</td><td>10</td></tr>
+          </tbody>
+        </table>
+        <div class="lado">
+          <p class="porque"><strong>Por qué.</strong> La norma ya pinta las eslingas por capacidad. Tonela no inventa un color: usa ese código como paleta y como manera de recorrer el sitio, y publica la tabla que un proveedor guarda.</p>
+          <p class="referencial">Tabla referencial: factores de modo EN 1492-1 (hoja Hoffmann 086170, LEEA). Manda la etiqueta de cada eslinga; el plan de izaje lo firma una persona calificada.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie"><span>Fuentes: CERTEX, Mennens, Hoffmann, LEEA y BSI, consultadas el 16 y el 17-oct-2026.</span><span><b>Tonela no existe</b> y nada de esto ocurrió.</span></footer>
+</div>
+</body>
+</html>
