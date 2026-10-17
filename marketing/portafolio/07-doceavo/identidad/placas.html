@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<title>Doceavo · placas</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="identidad.css">
+<style>
+  /* ---------- a · el año en doce (16:9) */
+  .p-anio { display: grid; grid-template-columns: 380px 1fr; gap: 0 44px; padding: 56px 56px 44px 84px; height: 100%; }
+  .p-anio .izq { display: flex; flex-direction: column; justify-content: space-between; padding-top: 2px; }
+  .p-anio .rot { --mono: 1; font-size: 12px; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; }
+  .p-anio .frac { --mono: 1; font-size: 150px; line-height: .8; font-weight: 640; letter-spacing: -.04em; margin: 0 0 30px -6px; white-space: nowrap; }
+  .frac .sl { color: var(--sec); font-weight: 400; }
+  .p-anio .txt { font-size: 15.5px; line-height: 1.45; max-width: 300px; }
+  .p-anio .ley { --mono: 1; display: flex; gap: 14px; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--sec); margin-top: 14px; }
+  .ley i { display: inline-block; width: 7px; height: 7px; margin-right: 5px; }
+  .ley .lv { background: var(--rj); border-radius: 50%; }
+  .ley .ll { background: var(--lleno); }
+
+  /* ---------- b · el papel columnar y el rojo (16:9) */
+  .p-papel { height: 100%; }
+  .p-papel .muestras { position: absolute; left: 40px; top: 56px; bottom: 40px; width: 200px; display: flex; flex-direction: column; gap: 10px; }
+  .p-papel .mu { display: grid; grid-template-columns: 46px 1fr; gap: 10px; align-items: center; }
+  .p-papel .mu b { display: block; width: 46px; height: 46px; }
+  .p-papel .mu span { --mono: 1; font-size: 11px; line-height: 1.35; color: var(--sec); }
+  .p-papel .mu span strong { display: block; color: var(--fg); font-size: 12px; letter-spacing: .04em; }
+  .p-papel .hojita { position: absolute; left: 286px; top: 48px; right: -40px; bottom: -30px; background: var(--lienzo); color: var(--tinta); padding: 26px 30px 0 80px; }
+  .p-papel .hojita::before { content: ""; position: absolute; top: 0; bottom: 0; left: 52px; width: 5px; border-left: 1px solid var(--linea); border-right: 1px solid var(--verde); }
+  .p-papel .hojita .libro-p { --fg: var(--tinta); --sec: var(--verde); --ln: var(--linea); --rj: var(--rojo); --lleno: var(--tinta); --sobre-lleno: var(--lienzo); }
+  .p-papel .hojita .tit { font-size: 30px; font-weight: 650; letter-spacing: -.03em; margin-bottom: 14px; }
+
+  /* ---------- c · ¿cuándo vence el F29? (16:9) */
+  .p-f29 { display: grid; grid-template-columns: 1fr 330px; gap: 0 56px; padding: 64px 64px 52px 84px; height: 100%; }
+  .p-f29 .rot { --mono: 1; font-size: 12px; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; color: var(--sec); margin-bottom: 18px; }
+  .p-f29 h2 { font-size: 60px; line-height: 1; letter-spacing: -.035em; font-weight: 660; margin: 0 0 24px; }
+  .p-f29 .r { font-size: 18px; line-height: 1.5; max-width: 520px; }
+  .p-f29 .f { --mono: 1; font-size: 11.5px; color: var(--sec); margin-top: 16px; }
+  .p-f29 .cifras { display: flex; flex-direction: column; justify-content: center; border-left: 1px solid var(--ln); padding-left: 34px; gap: 18px; }
+  .p-f29 .cf { --mono: 1; font-size: 120px; line-height: .85; font-weight: 560; letter-spacing: -.04em; color: var(--rj); }
+  .p-f29 .cl { font-size: 14px; color: var(--sec); margin-top: 6px; }
+  .p-f29 .cf + .cl { margin-bottom: 8px; }
+
+  /* ---------- d · el logo (4:5) */
+  .p-logo { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 34px; }
+  .p-logo .simbolo { width: 150px; height: auto; }
+  .p-logo .pal { font-size: 78px; font-weight: 720; letter-spacing: -.04em; line-height: 1; }
+  .p-logo .cap { --mono: 1; position: absolute; left: 0; right: 0; bottom: 44px; text-align: center; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--sec); }
+
+  /* ---------- e · un logo por mes (4:5) */
+  .p-meses { padding: 64px 52px 40px; height: 100%; }
+  .p-meses .rot { --mono: 1; font-size: 11.5px; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 30px; }
+  .p-meses ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ln); border-left: 1px solid var(--ln); }
+  .p-meses li { border-right: 1px solid var(--ln); border-bottom: 1px solid var(--ln); height: 118px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+  .p-meses li .simbolo { width: 34px; height: auto; }
+  .p-meses li span { --mono: 1; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--sec); }
+  .p-meses li.ahora { background: var(--lleno); }
+  .p-meses li.ahora .simbolo { --lleno: var(--sobre-lleno); --fg: var(--sobre-lleno); }
+  .p-meses li.ahora span { color: var(--sobre-lleno); }
+
+  /* ---------- f · la letra (4:5) */
+  .p-letra { padding: 60px 48px 40px; height: 100%; display: flex; flex-direction: column; }
+  .p-letra .rot { --mono: 1; font-size: 11.5px; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; color: var(--sec); }
+  .p-letra .nom { font-size: 66px; font-weight: 700; letter-spacing: -.04em; line-height: 1; margin: 12px 0 18px; }
+  .p-letra .abc { font-size: 22px; line-height: 1.35; }
+  .p-letra .par { margin-top: auto; border-top: 1.5px solid var(--fg); }
+  .p-letra .fila { display: grid; grid-template-columns: 80px 1fr; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--ln); }
+  .p-letra .fila span:first-child { --mono: 1; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--sec); }
+  .p-letra .fila .s { font-size: 30px; letter-spacing: -.01em; }
+  .p-letra .fila .mo { --mono: 1; font-size: 30px; }
+
+  /* ---------- g · cifras en columna (1,62) */
+  .p-cifras { padding: 40px 40px 34px 40px; height: 100%; }
+  .p-cifras .rot { --mono: 1; font-size: 11px; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
+  .p-cifras .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
+  .p-cifras table { border-collapse: collapse; width: 100%; }
+  .p-cifras td, .p-cifras th { --mono: 1; font-size: 15px; padding: 4px 0; border-bottom: 1px solid var(--ln); text-align: right; font-weight: 450; }
+  .p-cifras th { text-align: left; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--sec); font-weight: 600; }
+  .p-cifras td.c { color: var(--rj); font-weight: 650; }
+  .p-cifras thead th { border-bottom: 1.5px solid var(--fg); font-size: 10px; }
+
+  /* ---------- h · el eje MONO (1,62) */
+  .p-eje { padding: 40px 40px 30px; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+  .p-eje .fila { display: grid; grid-template-columns: 74px 1fr; align-items: baseline; border-bottom: 1px solid var(--ln); padding: 6px 0; }
+  .p-eje .fila span:first-child { --mono: 1; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--sec); }
+  .p-eje .fila span:last-child { font-size: 50px; font-weight: 650; letter-spacing: -.02em; line-height: 1.05; }
+
+  /* ---------- i · la hoja del mes (1,62) */
+  .p-hoja { padding: 30px 64px 0; height: 100%; }
+
+  /* ---------- j · el informe del mes (4:5) */
+  .p-informe { padding: 34px 30px 0; height: 100%; }
+  .p-informe .doc { background: var(--papel); color: var(--tinta); height: calc(100% + 20px); padding: 30px 30px; position: relative; }
+  .p-informe .doc::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 10px; background: var(--tinta); }
+  .p-informe .cab { display: flex; justify-content: space-between; align-items: flex-start; margin: 10px 0 18px; }
+  .p-informe .cab .simbolo { width: 17px; height: auto; --lleno: var(--tinta); --fg: var(--tinta); }
+  .p-informe .cab .marca { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 720; letter-spacing: -.04em; }
+  .p-informe .cab .meta { --mono: 1; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--verde); text-align: right; line-height: 1.5; }
+  .p-informe h3 { font-size: 26px; letter-spacing: -.03em; margin: 0 0 14px; font-weight: 660; }
+  .p-informe h4 { --mono: 1; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--verde); margin: 16px 0 4px; font-weight: 650; }
+  .p-informe .fl { display: grid; grid-template-columns: 30px 1fr 100px; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--linea); font-size: 13px; align-items: baseline; }
+  .p-informe .fl .d { --mono: 1; font-weight: 650; text-align: right; }
+  .p-informe .fl .d.v { color: var(--rojo); }
+  .p-informe .fl .monto { --mono: 1; border-bottom: 1px solid var(--tinta); height: 14px; color: var(--verde); font-size: 10px; text-align: left; }
+  .p-informe .pie-doc { --mono: 1; position: absolute; left: 30px; right: 30px; bottom: 36px; font-size: 10px; color: var(--verde); border-top: 3px double var(--tinta); padding-top: 8px; letter-spacing: .04em; }
+
+  /* ---------- k · los lomos del archivador (1,62) */
+  .p-lomo { height: 100%; display: flex; align-items: flex-end; padding: 0 22px; gap: 4px; }
+  .p-lomo .lomo { flex: 1; height: 262px; background: var(--fg); color: var(--fondo); position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; }
+  .p-lomo .lomo .vent { background: var(--fondo); color: var(--fg); width: 26px; height: 112px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 6px 0; }
+  .p-lomo .lomo .vent span { --mono: 1; writing-mode: vertical-rl; transform: rotate(180deg); font-size: 11.5px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
+  .p-lomo .lomo .vent .simbolo { width: 14px; height: auto; }
+  .p-lomo .lomo .hoyo { width: 22px; height: 22px; border-radius: 50%; background: var(--fondo); margin-top: auto; margin-bottom: 30px; box-shadow: inset 0 0 0 4px var(--fg), inset 0 0 0 5px var(--fondo); }
+  .p-lomo .lomo .an { --mono: 1; font-size: 9.5px; letter-spacing: .06em; margin-top: 8px; color: var(--fondo); opacity: .9; }
+  .p-lomo .estante { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: var(--ln); }
+  .p-lomo .lomo.ahora { height: 284px; }
+  .p-lomo .lomo.ahora .vent { background: var(--fg); color: var(--fondo); box-shadow: inset 0 0 0 1.5px var(--fondo); }
+  .p-lomo .lomo.ahora .vent .simbolo { --lleno: var(--fondo); --fg: var(--fondo); }
+
+  /* ---------- portadas */
+  .portada { height: 100%; }
+  .portada::before { content: ""; position: absolute; top: 0; bottom: 0; left: 34px; width: 5px; border-left: 1px solid var(--ln); border-right: 1px solid var(--sec); z-index: 1; }
+  .portada .marca { position: absolute; display: flex; align-items: center; gap: 8px; font-size: 21px; font-weight: 720; letter-spacing: -.04em; z-index: 3; }
+  .portada .marca .simbolo { width: 14px; height: auto; }
+  .portada .frac { position: absolute; --mono: 1; font-weight: 640; letter-spacing: -.04em; line-height: .76; z-index: 2; white-space: nowrap; margin: 0; }
+  .portada .ano-p { position: absolute; z-index: 2; }
+</style>
+</head>
+<body>
+<div id="placa"></div>
+<script type="module">
+import * as D from "../sitio/datos.js";
+const q = new URLSearchParams(location.search);
+const p = q.get("p") || "anio";
+const f = q.get("f") || "lienzo";
+const HOY = { m: 10, d: 16 };
+const R = { anio: "r169", papel: "r169", f29: "r169", logo: "r45", meses: "r45", letra: "r45", informe: "r45", cifras: "r162", eje: "r162", hoja: "r162", lomo: "r162", "portada-45": "r45", "portada-43": "r43", "portada-53": "r53" };
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+
+// el año con números (las fechas de pago de cada mes en rojo)
+function anoNumeros() {
+  let s = "";
+  for (let m = 1; m <= 12; m++) {
+    const pts = new Set(D.vence(m, { pec: false, sin: false }).map((v) => v.d));
+    const off = (D.dow(m, 1) + 6) % 7;
+    let d = "<i></i>".repeat(off);
+    for (let k = 1; k <= D.diasEnMes(m); k++) d += `<span class="${pts.has(k) ? "v" : ""}${D.libre(m, k) ? " lb" : ""}">${k}</span>`;
+    s += `<li class="${m === HOY.m ? "ahora" : ""}"><span class="n">${D.MES[m - 1]}</span><span class="d">${d}</span></li>`;
+  }
+  return `<ol class="ano">${s}</ol>`;
+}
+// el año en puntos
+function anoPuntos() {
+  let s = "";
+  for (let m = 1; m <= 12; m++) {
+    const pts = new Set(D.vence(m, { pec: false, sin: false }).map((v) => v.d));
+    const off = (D.dow(m, 1) + 6) % 7;
+    let d = '<i class="x"></i>'.repeat(off);
+    for (let k = 1; k <= D.diasEnMes(m); k++) d += `<i class="${pts.has(k) ? "v" : D.libre(m, k) ? "lb" : ""}"></i>`;
+    s += `<li class="${m === HOY.m ? "ahora" : ""}"><span class="n">${D.MES_CORTO[m - 1]}</span><span class="d">${d}</span></li>`;
+  }
+  return `<ol class="puntos">${s}</ol>`;
+}
+const filasOctubre = () => {
+  const vs = D.vence(10, { pec: false, sin: true });
+  const filas = [];
+  for (let d = 12; d <= 21; d++) {
+    const v = vs.filter((x) => x.d === d);
+    const f = D.feriado(10, d);
+    let cls = "", q = "", h = "";
+    if (d === HOY.d) { cls = "h"; q = "Hoy. Lo próximo: martes 20, el F29."; }
+    else if (v.length) { cls = d < HOY.d ? "p" : "v"; q = v.map((x) => x.largo).join(" · "); h = v[0].hacemos; }
+    else if (f) q = `<em>Feriado: ${f}.</em>`;
+    filas.push(`<tr class="${cls}"><td><span class="dn">${d}</span><span class="dw">${D.DIA_CORTO[D.dow(10, d)]}</span>${d === HOY.d ? '<span class="tag">hoy</span>' : ""}</td><td class="q">${q}</td><td>${h}</td></tr>`);
+  }
+  return `<table class="libro-p"><thead><tr><th style="width:120px">Día</th><th>Vence</th><th>Hacemos</th></tr></thead><tbody>${filas.join("")}</tbody></table>`;
+};
+
+const placas = {
+  anio: () => `<div class="p-anio">
+      <div class="izq">
+        <div><p class="rot">2026 en doce</p></div>
+        <div>
+          <p class="frac">1<span class="sl">/</span>12</p>
+          <p class="txt">Cada mes es un doceavo del año, y cada uno trae sus fechas. En rojo, lo que vence: el F29, las cotizaciones y lo de una vez al año. Lleno, el mes en curso.</p>
+          <p class="ley"><span><i class="lv"></i>vence</span><span><i class="ll"></i>el mes en curso</span></p>
+        </div>
+      </div>
+      ${anoNumeros()}
+    </div>`,
+  papel: () => `<div class="p-papel">
+      <div class="muestras">
+        <div class="mu"><b style="background:#DCE6D3;box-shadow:inset 0 0 0 1px #A9C0A0"></b><span><strong>Lienzo</strong>#DCE6D3 · el papel</span></div>
+        <div class="mu"><b style="background:#A9C0A0"></b><span><strong>Línea</strong>#A9C0A0 · renglón y columna</span></div>
+        <div class="mu"><b style="background:#4A5A44"></b><span><strong>Verde</strong>#4A5A44 · lo que ya pasó</span></div>
+        <div class="mu"><b style="background:#141414;box-shadow:inset 0 0 0 1px #34402F"></b><span><strong>Tinta</strong>#141414 · lo lleno: hoy</span></div>
+        <div class="mu"><b style="background:#B3261A;border-radius:50%"></b><span><strong>Rojo</strong>#B3261A · solo lo que vence</span></div>
+      </div>
+      <div class="hojita"><p class="tit">Octubre, día por día</p>${filasOctubre()}</div>
+    </div>`,
+  f29: () => `<div class="p-f29">
+      <div>
+        <p class="rot">Preguntas · lo que responde el sitio</p>
+        <h2>¿Cuándo vence el F29?</h2>
+        <p class="r">El día 12 de cada mes, o el 20 si facturas electrónico y declaras y pagas en sii.cl. Si ese día cae en sábado, domingo o feriado, pasa al día hábil siguiente. En octubre de 2026 fueron el martes 13, porque el 12 fue feriado, y el martes 20.</p>
+        <p class="f">Fuente: calendario tributario del SII, consultado el 16 de octubre de 2026.</p>
+      </div>
+      <div class="cifras">
+        <div><p class="cf">12</p><p class="cl">en general, pago en línea</p></div>
+        <div><p class="cf">20</p><p class="cl">si facturas electrónico y pagas en sii.cl</p></div>
+      </div>
+    </div>`,
+  logo: () => `<div class="p-logo">${D.simbolo(10, { trazo: .55 })}<p class="pal">doceavo</p><p class="cap">octubre · la casilla llena es el mes en curso</p></div>`,
+  meses: () => {
+    let s = "";
+    for (let m = 1; m <= 12; m++) s += `<li class="${m === HOY.m ? "ahora" : ""}">${D.simbolo(m)}<span>${D.MES[m - 1]}</span></li>`;
+    return `<div class="p-meses"><p class="rot">Un logo por mes</p><ol>${s}</ol></div>`;
+  },
+  letra: () => `<div class="p-letra">
+      <p class="rot">Recursive · OFL · Arrow Type</p>
+      <p class="nom">Recursive</p>
+      <p class="abc">Aa Bb Cc Dd Ee Ññ Oo Vv<br>¿Cuándo vence el F29?</p>
+      <div class="par">
+        <p class="fila"><span>Mono 0</span><span class="s">11 · 12 · 19 · 20</span></p>
+        <p class="fila"><span>Mono 1</span><span class="mo">11 · 12 · 19 · 20</span></p>
+        <p class="fila"><span>Leer</span><span class="s" style="font-size:22px">sans, peso 400 a 720</span></p>
+        <p class="fila"><span>Cifras</span><span class="mo" style="font-size:22px">mono, mismas letras</span></p>
+      </div>
+    </div>`,
+  cifras: () => {
+    const fila = (m) => `<tr><th>${D.MES_CORTO[m - 1]}</th><td>${D.F29[m][1]}</td><td class="c">${D.F29[m][3]}</td><td>${D.F29[m][4]}</td></tr>`;
+    const tabla = (a, b) => `<table><thead><tr><th>Mes</th><th style="text-align:right">12</th><th style="text-align:right">20</th><th style="text-align:right">28</th></tr></thead><tbody>${Array.from({ length: b - a + 1 }, (_, i) => fila(a + i)).join("")}</tbody></table>`;
+    return `<div class="p-cifras"><p class="rot">F29 · 2026 · las cifras encolumnadas</p><div class="cols">${tabla(1, 6)}${tabla(7, 12)}</div></div>`;
+  },
+  eje: () => `<div class="p-eje">
+      <p class="fila"><span>Mono 0</span><span style="--mono:0">martes 20</span></p>
+      <p class="fila"><span>Mono 0,5</span><span style="--mono:.5">martes 20</span></p>
+      <p class="fila"><span>Mono 1</span><span style="--mono:1">martes 20</span></p>
+    </div>`,
+  hoja: () => `<div class="p-hoja"><div class="taco-c"></div><div class="taco-h">${D.hojaVence(10, HOY).replace('<p class="taco-t"><span class="taco-m">Octubre</span> <span class="taco-a">2026</span></p>', '<p class="t"><b>Octubre</b><span>2026</span></p>')}</div><div class="canto">${D.canto(10)}</div></div>`,
+  informe: () => `<div class="p-informe"><div class="doc">
+      <div class="cab"><span class="marca">${D.simbolo(10)}doceavo</span><span class="meta">Informe mensual<br>octubre 2026 · plantilla</span></div>
+      <h3>Lo de octubre</h3>
+      <h4>Lo pagado</h4>
+      <p class="fl"><span class="d">13</span><span>Cotizaciones de septiembre</span><span class="monto">$</span></p>
+      <p class="fl"><span class="d">20</span><span>F29 de septiembre</span><span class="monto">$</span></p>
+      <h4>Lo que viene en noviembre</h4>
+      <p class="fl"><span class="d v">12</span><span>F29, en general</span><span class="monto"></span></p>
+      <p class="fl"><span class="d v">13</span><span>Cotizaciones de octubre</span><span class="monto"></span></p>
+      <p class="fl"><span class="d v">20</span><span>F29, si facturas electrónico</span><span class="monto"></span></p>
+      <h4>Lo que nos falta</h4>
+      <p class="fl"><span class="d"></span><span></span><span class="monto"></span></p>
+      <p class="fl"><span class="d"></span><span></span><span class="monto"></span></p>
+      <p class="pie-doc">Plantilla sin datos: Doceavo no existe y no tiene clientes.</p>
+    </div></div>`,
+  lomo: () => {
+    let s = "";
+    for (let m = 1; m <= 12; m++) s += `<div class="lomo${m === HOY.m ? " ahora" : ""}"><div class="vent"><span>${D.MES_CORTO[m - 1]}</span>${D.simbolo(m)}</div><span class="an">2026</span><span class="hoyo"></span></div>`;
+    return `<div class="p-lomo">${s}<div class="estante"></div></div>`;
+  },
+};
+const portada = (r) => {
+  // 4:5: el año arriba y la fracción abajo; 4:3 y 5:3: la fracción a la izquierda y el año a la derecha
+  const c = {
+    "portada-45": { marca: "left:58px;top:30px", ano: "left:58px;top:96px", px: 8, cg: 3, g: "20px 26px", nf: 10, frac: "left:52px;bottom:40px;font-size:150px" },
+    "portada-43": { marca: "left:58px;top:28px", ano: "right:30px;top:60px", px: 6, cg: 2, g: "12px 16px", nf: 9, frac: "left:52px;bottom:34px;font-size:96px" },
+    "portada-53": { marca: "left:58px;top:24px", ano: "right:28px;top:54px", px: 5, cg: 2, g: "9px 14px", nf: 8.5, frac: "left:52px;bottom:28px;font-size:88px" },
+  }[r];
+  return `<div class="portada renglones">
+    <p class="marca" style="${c.marca}">${D.simbolo(10)}doceavo</p>
+    <div class="ano-p" style="${c.ano};--c:${c.px}px;--cg:${c.cg}px;--g:${c.g};--nf:${c.nf}px">${anoPuntos()}</div>
+    <p class="frac" style="${c.frac}">1<span class="sl">/</span>12</p>
+  </div>`;
+};
+
+const el = document.getElementById("placa");
+const clase = R[p];
+el.className = `placa ${clase} ${f}${p === "papel" ? "" : ""}`;
+el.innerHTML = (p.startsWith("portada") ? portada(p) : placas[p]()) + `<span class="concepto">Concepto</span>`;
+document.title = `Doceavo · ${p} · ${f}`;
+document.body.dataset.listo = "1";
+</script>
+</body>
+</html>

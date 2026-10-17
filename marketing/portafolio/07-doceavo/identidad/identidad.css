@@ -1,0 +1,114 @@
+/* Doceavo · identidad: pliego, placas y portadas. Mismos tokens que el sitio. */
+@font-face {
+  font-family: "Recursive";
+  src: url("fuentes/recursive.woff2") format("woff2");
+  font-weight: 300 1000;
+  font-style: oblique 0deg 15deg;
+}
+:root {
+  --lienzo: #DCE6D3; --tinta: #141414; --verde: #4A5A44; --linea: #A9C0A0; --renglon: #D2DEC8; --papel: #EEF3E9;
+  --rojo: #B3261A; --rojo-noche: #E8553F; --verde-noche: #9DB092; --linea-noche: #34402F;
+  --mono: 0; --slnt: 0; --crsv: 0;
+}
+*, *::before, *::after { box-sizing: border-box; font-variation-settings: "MONO" var(--mono), "CASL" 0, "CRSV" var(--crsv), "slnt" var(--slnt); }
+html, body { margin: 0; background: #060606; }
+body { font-family: "Recursive", sans-serif; color: var(--tinta); }
+p { margin: 0; }
+.m { --mono: 1; }
+
+/* ---------------------------------------------------------------- la placa */
+.placa {
+  --fondo: var(--lienzo); --fg: var(--tinta); --sec: var(--verde); --ln: var(--linea); --rj: var(--rojo); --lleno: var(--tinta); --sobre-lleno: var(--lienzo);
+  position: relative; overflow: hidden; background: var(--fondo); color: var(--fg);
+}
+.placa.tinta {
+  --fondo: var(--tinta); --fg: var(--lienzo); --sec: var(--verde-noche); --ln: var(--linea-noche); --rj: var(--rojo-noche); --lleno: var(--lienzo); --sobre-lleno: var(--tinta);
+}
+.r169 { width: 1057px; height: 595px; }
+.r45 { width: 525px; height: 656px; }
+.r162 { width: 525px; height: 324px; }
+.r43 { width: 525px; height: 394px; }
+.r53 { width: 525px; height: 315px; }
+.concepto {
+  position: absolute; top: 16px; right: 16px; z-index: 5; --mono: 1;
+  font-size: 10.5px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--fg); border: 1px solid var(--fg); padding: 3px 6px 2px; line-height: 1.2; background: var(--fondo);
+}
+.pie-placa { position: absolute; left: 22px; bottom: 16px; z-index: 5; --mono: 1; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--sec); }
+.renglones { background-image: repeating-linear-gradient(to bottom, transparent 0 27px, var(--ln) 27px 28px); }
+.margen-doble::before { content: ""; position: absolute; top: 0; bottom: 0; left: 58px; width: 5px; border-left: 1px solid var(--ln); border-right: 1px solid var(--sec); opacity: .9; }
+
+/* el símbolo */
+.simbolo .lleno { fill: var(--lleno); }
+.simbolo .vacio { fill: none; stroke: var(--fg); }
+
+/* mini meses con números */
+.ano { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); border-left: 1px solid var(--ln); border-top: 1px solid var(--ln); }
+.ano li { border-right: 1px solid var(--ln); border-bottom: 1px solid var(--ln); padding: 8px 9px 6px; }
+.ano .n { --mono: 1; display: block; font-size: 10.5px; font-weight: 650; letter-spacing: .06em; text-transform: uppercase; }
+.ano .d { --mono: 1; display: grid; grid-template-columns: repeat(7, 1fr); font-size: 10.5px; line-height: 17px; text-align: center; letter-spacing: -.02em; margin-top: 3px; }
+.ano .d span { position: relative; }
+.ano .d .lb { color: var(--sec); }
+.ano .d .v { color: var(--rj); font-weight: 700; }
+.ano .d .v::after { content: ""; position: absolute; left: 50%; bottom: -1px; width: 3.5px; height: 3.5px; margin-left: -1.75px; border-radius: 50%; background: var(--rj); }
+.ano li.ahora { background: var(--lleno); color: var(--sobre-lleno); }
+.placa:not(.tinta) .ano li.ahora .lb { color: var(--verde-noche); }
+.placa:not(.tinta) .ano li.ahora .v { color: var(--rojo-noche); }
+.placa:not(.tinta) .ano li.ahora .v::after { background: var(--rojo-noche); }
+.placa.tinta .ano li.ahora .lb { color: var(--verde); }
+.placa.tinta .ano li.ahora .v { color: var(--rojo); }
+.placa.tinta .ano li.ahora .v::after { background: var(--rojo); }
+
+/* mini meses en puntos */
+.puntos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, auto); gap: var(--g, 18px); }
+.puntos li { display: grid; gap: 6px; }
+.puntos .n { --mono: 1; font-size: var(--nf, 10px); font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
+.puntos .d { display: grid; grid-template-columns: repeat(7, var(--c, 7px)); gap: var(--cg, 3px); }
+.puntos .d i { width: var(--c, 7px); height: var(--c, 7px); background: var(--ln); }
+.puntos .d i.x { background: transparent; }
+.puntos .d i.lb { background: transparent; box-shadow: inset 0 0 0 1px var(--ln); }
+.puntos .d i.v { background: var(--rj); border-radius: 50%; box-shadow: none; }
+.puntos li.ahora .d i { background: var(--lleno); }
+.puntos li.ahora .d i.x { background: transparent; }
+.puntos li.ahora .d i.lb { background: transparent; box-shadow: inset 0 0 0 1px var(--lleno); }
+.puntos li.ahora .d i.v { background: var(--rj); }
+.puntos li.ahora .n { color: var(--fg); }
+.puntos li.ahora .n::before { content: ""; display: inline-block; width: 7px; height: 7px; background: var(--lleno); margin-right: 6px; vertical-align: 0; }
+
+/* filas de libro */
+.libro-p { width: 100%; border-collapse: collapse; }
+.libro-p th { --mono: 1; text-align: left; font-size: 10.5px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; color: var(--sec); padding: 0 12px 8px; border-bottom: 1.5px solid var(--fg); }
+.libro-p td { padding: 9px 12px; border-bottom: 1px solid var(--ln); font-size: 15px; vertical-align: top; }
+.libro-p td + td { border-left: 1px solid var(--ln); }
+.libro-p th:first-child, .libro-p td:first-child { padding-left: 0; }
+.libro-p .dn { --mono: 1; font-weight: 650; font-size: 17px; }
+.libro-p .dw { --mono: 1; color: var(--sec); font-size: 12px; margin-left: 6px; }
+.libro-p tr.v .dn { color: var(--rj); }
+.libro-p tr.v .q::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--rj); margin-right: 8px; }
+.libro-p tr.p td { color: var(--sec); }
+.libro-p tr.p .q::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--sec); margin-right: 8px; }
+.libro-p tr.h td { background: var(--lleno); color: var(--sobre-lleno); border-color: var(--lleno); }
+.libro-p tr.h .dn { color: var(--sobre-lleno); }
+.libro-p tr.h .dw { color: var(--sec); }
+.libro-p .tag { --mono: 1; font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--sobre-lleno); color: var(--lleno); padding: 1px 5px; margin-left: 8px; }
+
+/* el taco */
+.taco-c { height: 14px; background: var(--tinta); background-image: linear-gradient(var(--verde-noche), var(--verde-noche)), linear-gradient(var(--verde-noche), var(--verde-noche)); background-size: 22px 3px; background-repeat: no-repeat; background-position: 22% 50%, 78% 50%; }
+.placa.tinta .taco-c { background-color: #000; }
+.taco-h { background-color: var(--papel); color: var(--tinta); background-image: radial-gradient(circle at 5px 5px, var(--fondo) 2.2px, transparent 2.8px); background-size: 11px 10px; background-repeat: repeat-x; background-position: 3px 2px; padding: 18px 20px 12px; }
+.taco-h .t { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+.taco-h .t b { font-size: 24px; font-weight: 660; letter-spacing: -.025em; }
+.taco-h .t span { --mono: 1; font-size: 13px; color: var(--verde); }
+.taco-h ol { list-style: none; margin: 0; padding: 0; }
+.taco-h li { display: grid; grid-template-columns: 26px 34px 1fr auto; gap: 0 10px; align-items: baseline; padding: 5px 0; border-top: 1px solid var(--linea); font-size: 14px; }
+.taco-h .vd { --mono: 1; font-weight: 650; text-align: right; }
+.taco-h .vw, .taco-h .ve { --mono: 1; font-size: 12px; color: var(--verde); }
+.taco-h li.vence .vd { color: var(--rojo); }
+.taco-h li.vencio { color: var(--verde); }
+.taco-h li.hoy-l { background: var(--tinta); color: var(--lienzo); margin: 0 -8px; padding-inline: 8px; }
+.taco-h li.hoy-l .vw { color: var(--verde-noche); }
+.canto i { display: block; height: 4px; background: var(--papel); border-bottom: 1px solid var(--linea); margin: 0 2px; }
+.placa.tinta .canto i { border-bottom-color: var(--linea-noche); }
+
+/* ---------------------------------------------------------------- pliego */
+.pliego { width: 1920px; height: 1080px; position: relative; overflow: hidden; background: var(--lienzo); }

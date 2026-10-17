@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<title>Doceavo · pliego de identidad</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="identidad.css">
+<style>
+  .pliego { --fondo: var(--lienzo); --fg: var(--tinta); --sec: var(--verde); --ln: var(--linea); --rj: var(--rojo); --lleno: var(--tinta); --sobre-lleno: var(--lienzo); color: var(--tinta); }
+  .pliego::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(to bottom, transparent 0 35px, rgba(169, 192, 160, .5) 35px 36px); background-position: 0 92px; }
+  .pliego::after { content: ""; position: absolute; top: 0; bottom: 0; left: 118px; width: 5px; border-left: 1px solid var(--linea); border-right: 1px solid var(--verde); }
+  .cab { position: absolute; left: 0; right: 0; top: 0; height: 92px; border-bottom: 1px solid var(--tinta); display: flex; align-items: center; padding: 0 64px 0 160px; background: var(--lienzo); z-index: 2; }
+  .cab .sm { position: absolute; left: 0; width: 118px; display: flex; justify-content: center; }
+  .cab .sm .simbolo { width: 30px; height: auto; }
+  .cab h1 { margin: 0; font-size: 34px; font-weight: 720; letter-spacing: -.04em; }
+  .cab .sub { --mono: 1; margin-left: 22px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--verde); }
+  .cab .concepto { position: static; margin-left: auto; font-size: 13px; padding: 5px 9px 4px; }
+  .zona { position: absolute; z-index: 2; }
+  .rot { --mono: 1; font-size: 12.5px; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; display: flex; gap: 14px; align-items: baseline; border-bottom: 1.5px solid var(--tinta); padding-bottom: 8px; margin-bottom: 22px; }
+  .rot span { color: var(--verde); font-weight: 500; }
+  .porque { font-size: 16px; line-height: 1.45; max-width: 520px; }
+  .porque b { font-weight: 650; }
+
+  /* logo */
+  .z-logo { left: 160px; top: 128px; width: 820px; }
+  .lockup { display: flex; align-items: flex-end; gap: 30px; margin: 34px 0 34px; }
+  .lockup .simbolo { width: 96px; height: auto; }
+  .lockup .pal { font-size: 150px; font-weight: 720; letter-spacing: -.045em; line-height: .74; }
+  .meses-fila { display: flex; gap: 0; margin-top: 26px; border-top: 1px solid var(--linea); border-left: 1px solid var(--linea); width: max-content; }
+  .fila-mc { display: flex; align-items: flex-end; gap: 30px; margin-top: 26px; }
+  .fila-mc .meses-fila { margin-top: 0; }
+  .meses-fila div { width: 46px; height: 70px; border-right: 1px solid var(--linea); border-bottom: 1px solid var(--linea); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; }
+  .meses-fila .simbolo { width: 17px; height: auto; }
+  .meses-fila span { --mono: 1; font-size: 11px; color: var(--verde); }
+  .meses-fila .ahora { background: var(--tinta); }
+  .meses-fila .ahora .simbolo { --lleno: var(--lienzo); --fg: var(--lienzo); }
+  .meses-fila .ahora span { color: var(--lienzo); }
+  .chicos { display: flex; align-items: flex-end; gap: 18px; }
+  .chicos figure { margin: 0; display: grid; gap: 6px; justify-items: start; }
+  .chicos figcaption { --mono: 1; font-size: 11px; color: var(--verde); letter-spacing: .04em; }
+  .chicos img { image-rendering: pixelated; display: block; }
+
+  /* color */
+  .z-color { left: 1060px; top: 128px; width: 700px; }
+  .tokens { width: 100%; border-collapse: collapse; }
+  .tokens td { padding: 9px 12px; border-bottom: 1px solid var(--linea); font-size: 15px; vertical-align: middle; }
+  .tokens td:first-child { padding-left: 0; width: 64px; }
+  .tokens .sw { width: 52px; height: 34px; }
+  .tokens .t { font-weight: 650; }
+  .tokens .h, .tokens .c { --mono: 1; font-size: 13.5px; }
+  .tokens .c { text-align: right; color: var(--verde); }
+  .regla { display: flex; gap: 22px; margin-top: 18px; font-size: 16px; }
+  .regla span { display: flex; align-items: center; gap: 8px; }
+  .regla i { display: inline-block; width: 14px; height: 14px; }
+
+  /* letra */
+  .z-letra { left: 160px; top: 686px; width: 820px; }
+  .esp { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; }
+  .esp .grande { font-size: 84px; font-weight: 700; letter-spacing: -.04em; line-height: .95; }
+  .esp .grande.mo { --mono: 1; letter-spacing: -.02em; }
+  .esp .lbl { --mono: 1; font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--verde); margin: 12px 0 2px; }
+  .esp .chica { font-size: 17px; line-height: 1.4; }
+  .esp .chica.mo { --mono: 1; font-size: 15.5px; }
+
+  /* recurso */
+  .z-recurso { left: 1060px; top: 600px; width: 700px; }
+  .rec { display: grid; grid-template-columns: auto 1fr; gap: 0 40px; align-items: start; }
+  .rec .puntos { --c: 8px; --cg: 3px; --g: 16px 20px; --nf: 10px; }
+
+  .pie { position: absolute; left: 160px; right: 64px; bottom: 30px; z-index: 2; display: flex; justify-content: space-between; --mono: 1; font-size: 12px; color: var(--verde); letter-spacing: .03em; border-top: 3px double var(--tinta); padding-top: 10px; background: var(--lienzo); }
+</style>
+</head>
+<body>
+<div class="pliego" id="pliego">
+  <header class="cab">
+    <span class="sm"><span data-s="10"></span></span>
+    <h1>doceavo</h1><span class="sub">Identidad · estudio contable para pymes · Concepción</span>
+    <span class="concepto">Concepto · 2026</span>
+  </header>
+
+  <section class="zona z-logo">
+    <p class="rot">Logo <span>la palabra y el año en doce casillas</span></p>
+    <div class="lockup"><span data-s="10" data-t=".55"></span><span class="pal">doceavo</span></div>
+    <p class="porque"><b>El símbolo es el año.</b> Doce casillas, enero arriba a la izquierda y diciembre abajo a la derecha. La del mes en curso va llena, así que el logo cambia solo cada mes: el sitio lo dibuja con la fecha del día, y el ícono de la pestaña también.</p>
+    <div class="fila-mc">
+      <div class="meses-fila" id="meses"></div>
+      <div class="chicos">
+        <figure><img src="logo/simbolo-32.svg" width="64" height="64" alt=""><figcaption>32 px ×2</figcaption></figure>
+        <figure><img src="logo/simbolo-32.svg" width="32" height="32" alt=""><figcaption>32</figcaption></figure>
+        <figure><img src="logo/simbolo-16.svg" width="16" height="16" alt=""><figcaption>16</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="zona z-color">
+    <p class="rot">Color <span>el papel del libro contable y una tinta</span></p>
+    <table class="tokens">
+      <tr><td><div class="sw" style="background:#DCE6D3;box-shadow:inset 0 0 0 1px #A9C0A0"></div></td><td class="t">Lienzo</td><td class="h">#DCE6D3</td><td>El papel</td><td class="c">14,30:1</td></tr>
+      <tr><td><div class="sw" style="background:#141414"></div></td><td class="t">Tinta</td><td class="h">#141414</td><td>La letra, y lo lleno: el mes y el día de hoy</td><td class="c"></td></tr>
+      <tr><td><div class="sw" style="background:#4A5A44"></div></td><td class="t">Verde</td><td class="h">#4A5A44</td><td>Lo secundario y lo que ya pasó</td><td class="c">5,75:1</td></tr>
+      <tr><td><div class="sw" style="background:#A9C0A0"></div></td><td class="t">Línea</td><td class="h">#A9C0A0</td><td>Renglón y columna; nunca texto</td><td class="c">1,52:1</td></tr>
+      <tr><td><div class="sw" style="background:#B3261A"></div></td><td class="t">Rojo</td><td class="h">#B3261A</td><td>Solo lo que vence</td><td class="c">5,08:1</td></tr>
+      <tr><td><div class="sw" style="background:#E8553F;box-shadow:inset 0 0 0 9px #141414"></div></td><td class="t">Rojo noche</td><td class="h">#E8553F</td><td>El mismo rojo sobre tinta</td><td class="c">5,09:1</td></tr>
+    </table>
+    <p class="regla"><span><i style="background:#141414"></i>Lleno: en curso</span><span><i style="background:#B3261A;border-radius:50%"></i>Rojo: vence</span><span style="color:var(--verde)">Nada más tiene color.</span></p>
+  </section>
+
+  <section class="zona z-recurso">
+    <p class="rot">Recurso propio <span>el año en doce, sobre papel columnar</span></p>
+    <div class="rec">
+      <div id="ano"></div>
+      <p class="porque" style="font-size:15.5px"><b>El almanaque al revés.</b> En un almanaque el rojo es feriado; aquí es plazo. Cada punto es una fecha del calendario del SII de 2026: el F29, las cotizaciones y lo de una vez al año. El papel es el de un libro contable: verde pálido, renglón y columna, doble raya donde va un total.</p>
+    </div>
+  </section>
+
+  <section class="zona z-letra">
+    <p class="rot">Letra <span>Recursive · OFL · una familia, dos voces</span></p>
+    <div class="esp">
+      <div><p class="grande">Aa 20</p><p class="lbl">Mono 0 · para leer</p><p class="chica">El IVA de septiembre se declara hasta el martes 20 de octubre.</p></div>
+      <div><p class="grande mo">Aa 20</p><p class="lbl">Mono 1 · para las cifras</p><p class="chica mo">13 · 20 · 28 · 12 · 13 · 20</p></div>
+    </div>
+    <p class="porque" style="margin-top:18px">Recursive tiene un eje que la vuelve monoespaciada sin cambiar de familia: el texto se lee en sans y las fechas se encolumnan en mono, con las mismas letras. Sin el eje casual.</p>
+  </section>
+
+  <p class="pie"><span>Doceavo es un concepto de SpindleLab: el estudio y su contadora no existen. Las fechas son las del calendario del SII de 2026, consultadas el 16-oct-2026.</span><span>07 · Doceavo</span></p>
+</div>
+<script type="module">
+import * as D from "../sitio/datos.js";
+for (const el of document.querySelectorAll("[data-s]")) el.outerHTML = D.simbolo(Number(el.dataset.s), el.dataset.t ? { trazo: Number(el.dataset.t) } : {});
+let m = "";
+for (let k = 1; k <= 12; k++) m += `<div class="${k === 10 ? "ahora" : ""}">${D.simbolo(k)}<span>${D.MES_CORTO[k - 1]}</span></div>`;
+document.getElementById("meses").innerHTML = m;
+let s = "";
+for (let k = 1; k <= 12; k++) {
+  const pts = new Set(D.vence(k, { pec: false, sin: false }).map((v) => v.d));
+  let d = '<i class="x"></i>'.repeat((D.dow(k, 1) + 6) % 7);
+  for (let j = 1; j <= D.diasEnMes(k); j++) d += `<i class="${pts.has(j) ? "v" : D.libre(k, j) ? "lb" : ""}"></i>`;
+  s += `<li class="${k === 10 ? "ahora" : ""}"><span class="n">${D.MES_CORTO[k - 1]}</span><span class="d">${d}</span></li>`;
+}
+document.getElementById("ano").innerHTML = `<ol class="puntos">${s}</ol>`;
+document.body.dataset.listo = "1";
+</script>
+</body>
+</html>
