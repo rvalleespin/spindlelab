@@ -1,7 +1,8 @@
 // Lint de tono y reglas duras de los borradores. NO reemplaza la lectura de Ramón.
 import fs from 'node:fs';
 import { revisarFrase } from '../motor/lib/arreglo.mjs';
-const D = JSON.parse(fs.readFileSync(new URL('./borradores-primer-toque.json', import.meta.url), 'utf8'));
+const ARCH = process.argv[2] || 'borradores-primer-toque.json';   // node lint.mjs [archivo.json]
+const D = JSON.parse(fs.readFileSync(new URL('./' + ARCH, import.meta.url), 'utf8'));
 const prohibidas = [/—/, /¡|!/, /no sé si alcanzaste/i, /si te sirve avanzar/i, /solucion/i, /impulsa/i, /_ga|_fbp|_gcl|doubleclick|pixel|píxel|plugin|tramo/i, /la ley exige|incumpl|multa|ilegal|ley 21|ley 19/i, /garantiz|100%|sin falta/i];
 let mal = 0;
 for (const d of D) {
@@ -18,5 +19,5 @@ for (const d of D) {
   console.log(`${d.id} ${d.dominio.padEnd(24)} ${String(palabras).padStart(3)} pal. ${probs.length ? '⚠ ' + probs.join(' | ') : 'ok'}`);
   mal += probs.length;
 }
-fs.writeFileSync(new URL('./borradores-primer-toque.json', import.meta.url), JSON.stringify(D, null, 1));
+fs.writeFileSync(new URL('./' + ARCH, import.meta.url), JSON.stringify(D, null, 1));
 console.log(mal ? `${mal} problemas` : 'lint limpio');
