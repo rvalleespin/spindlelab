@@ -1,0 +1,607 @@
+{
+  "obra": "E12 · SpindleLab v3 · estudio de diseño y tecnología",
+  "paso": "2 · texto de las páginas de la compuerta 2",
+  "quien": "Clara (copy de interfaz) con Renata (copy de venta)",
+  "encargo": "16-oct-2026, 19:50 (Chile) · escrito el 17-oct-2026",
+  "estado": "Borrador para la compuerta 2. Pasado por la lectura fría (lectura-fria.md). Nada se publica: lo revisa Ramón.",
+  "manda": [
+    "e12/brief-de-obra.md, sección «Compuerta 1» (los nueve puntos de Ramón del 16-oct)",
+    "e12/encargo-paso-2.md",
+    "e12/lock-koto.md §2.8, §7, §11, §14, §20 y §21",
+    "e12/inventario-casos.md y e12/inventario-praxi.md (una etiqueta o un número sin fila no existe)",
+    "e11/diagnostico-texto.md (el error a no repetir: dar por sabido al cliente)",
+    "spindlelab-astro/src/data/oferta-v3.json y servicios-v3.json (nombres y precios, comparados como texto)"
+  ],
+  "roles": {
+    "rotulo": "Nombre corto en mono (tipo, lugar, sección, conteo, label de un campo). Nunca una frase.",
+    "h1": "El titular de la página. Si trae «tinta» y «gris», va en dos tintas en la misma línea: la parte en tinta nombra, la gris dice qué le hace al lector.",
+    "h2": "Titular de sección. «nivel»: 3 marca un subtítulo dentro de la sección.",
+    "entradilla": "El párrafo que sigue al titular y lo explica.",
+    "parrafo": "Texto corrido.",
+    "boton": "Botón o enlace con acción. «destino» dice adónde lleva.",
+    "nota": "Texto chico: ayuda de un campo, pie de imagen, aviso. «uso» precisa: ayuda, pie, alt, placeholder, glosario, precio.",
+    "ficha": "Datos en mono. «campos» con rótulo y valor.",
+    "cita": "Cita textual, con su fuente."
+  },
+  "convenciones": [
+    "Tuteo en todo el sitio. Castellano de Chile.",
+    "«tinta» + «gris» = una sola frase en dos tintas (Koto, lock §2.8 y §14: hasta 8 palabras en tinta, de 6 a 13 en gris, una vez por sección).",
+    "«condicion» marca un texto que espera una decisión. Si la decisión es «no», el elemento sale o se usa su «alternativa».",
+    "«fuente» dice de dónde sale el hecho. Lo que no tiene fuente no es un hecho: es redacción.",
+    "El texto es el mismo en la dirección A y en la B (criterio 14 del encargo). Lo que cambia es cómo se muestra."
+  ],
+  "comun": {
+    "nav": [
+      { "rol": "boton", "texto": "Trabajo", "destino": "/v3/trabajo/" },
+      { "rol": "boton", "texto": "Servicios", "destino": "/v3/servicios/" },
+      { "rol": "boton", "texto": "Método", "destino": "/v3/metodo/" },
+      { "rol": "boton", "texto": "Nosotros", "destino": "/v3/nosotros/" },
+      { "rol": "boton", "texto": "Escríbenos", "destino": "/v3/contacto/" }
+    ],
+    "telemetria": [
+      { "rol": "rotulo", "texto": "Santiago", "nota": "Va con la hora en vivo y su huso («Santiago 14:05 UTC-3»), lock §11. La escribe el navegador, no este archivo." }
+    ],
+    "cursor": [
+      { "rol": "nota", "uso": "cursor", "texto": "Ver el caso", "donde": "Sobre una pieza real del índice o de la home" },
+      { "rol": "nota", "uso": "cursor", "texto": "Ver el concepto", "donde": "Sobre una pieza de concepto" }
+    ]
+  },
+  "paginas": [
+    {
+      "id": "home",
+      "ruta": "/v3/",
+      "title": "SpindleLab · Estudio de diseño y tecnología en Santiago",
+      "description": "Diseñamos y programamos sitios y herramientas a medida, y los dejamos listos para que Google y la IA entiendan a qué se dedica tu empresa. Precios publicados y un chequeo gratis para tu sitio.",
+      "secciones": [
+        {
+          "id": "hero",
+          "nombre": "Primera pantalla: la declaración y el chequeo como su prueba",
+          "trabajo": "Decir qué es SpindleLab y qué hace, para quién, y que también hace SEO técnico y visibilidad en IA; y dejar el chequeo a mano para comprobarlo con el sitio propio. Compuerta 1, punto 1.",
+          "opciones": [
+            {
+              "id": "hero-ramon",
+              "marca": "Opción 1 · la frase de Ramón, textual",
+              "autor": "Ramón (insumos-ramon-16oct.md §5)",
+              "recomendada": false,
+              "elementos": [
+                { "id": "home.hero.ramon.h1", "rol": "h1", "tinta": "Diseñamos experiencias.", "gris": "Programamos inteligencia.", "texto": "Diseñamos experiencias. Programamos inteligencia." },
+                { "id": "home.hero.ramon.entradilla", "rol": "entradilla", "texto": "Un estudio de diseño y tecnología construyendo infraestructura digital a medida para líderes con visión." }
+              ],
+              "notas": "Va como la escribió Ramón, sin el «[ LAB_01 ]» del principio (brief §4: los corchetes solo van alrededor de un enlace a un índice) y en caja de oración (antislop A6: si va en mayúsculas, que lo haga la hoja de estilo). El resultado de la lectura fría está en «decision_hero»."
+            },
+            {
+              "id": "hero-estudio",
+              "marca": "Opción 2 · Clara: quiénes somos y qué hacemos, como abre Koto",
+              "autor": "Clara",
+              "recomendada": false,
+              "elementos": [
+                { "id": "home.hero.estudio.h1", "rol": "h1", "tinta": "SpindleLab es un estudio de diseño y tecnología.", "gris": "Diseñamos y programamos sitios y herramientas a medida para empresas.", "texto": "SpindleLab es un estudio de diseño y tecnología. Diseñamos y programamos sitios y herramientas a medida para empresas." },
+                { "id": "home.hero.estudio.entradilla", "rol": "entradilla", "texto": "También hacemos SEO técnico y visibilidad en IA: que Google pueda leer tu sitio, y que ChatGPT y otros asistentes puedan nombrar a tu empresa cuando alguien les pregunta por tu rubro." }
+              ],
+              "notas": "El registro de Koto («We’re Koto / The Creative Company»): el nombre y lo que es, en una frase. Lo concreto va en gris."
+            },
+            {
+              "id": "hero-sitio",
+              "marca": "Opción 3 · Clara: lo que hacemos y lo que eso te deja",
+              "autor": "Clara",
+              "recomendada": false,
+              "elementos": [
+                { "id": "home.hero.sitio.rotulo", "rol": "rotulo", "texto": "Estudio de diseño y tecnología" },
+                { "id": "home.hero.sitio.h1", "rol": "h1", "tinta": "Diseñamos y programamos sitios a medida.", "gris": "Y los dejamos listos para que Google y ChatGPT entiendan tu negocio.", "texto": "Diseñamos y programamos sitios a medida. Y los dejamos listos para que Google y ChatGPT entiendan tu negocio." },
+                { "id": "home.hero.sitio.entradilla", "rol": "entradilla", "texto": "También apps y herramientas, como un coach de entrenamiento con IA. Y si tu sitio ya existe y no lo vas a rehacer, hacemos SEO técnico y visibilidad en IA: revisamos qué le impide a Google y a la IA leerlo, y lo arreglamos." }
+              ],
+              "notas": "Recomendada después de la lectura fría (ver «decision_hero»)."
+            }
+          ],
+          "elementos": [
+            { "id": "home.chequeo.rotulo", "rol": "rotulo", "texto": "Chequeo gratis" },
+            { "id": "home.chequeo.intro", "rol": "parrafo", "texto": "Escribe tu dominio y en segundos ves si los robots de ChatGPT, Claude y Perplexity pueden entrar a tu sitio y entender a qué te dedicas.", "fuente": "inventario-casos §2.4; e11/material.md §3" },
+            { "id": "home.chequeo.label", "rol": "rotulo", "uso": "label", "texto": "Tu dominio" },
+            { "id": "home.chequeo.placeholder", "rol": "nota", "uso": "placeholder", "texto": "tuempresa.cl" },
+            { "id": "home.chequeo.boton", "rol": "boton", "texto": "Revisar mi sitio", "destino": "corre /api/chequeo en la misma pantalla (v3-chequeo.js; ids chq-* sin cambio)" },
+            { "id": "home.chequeo.ayuda", "rol": "nota", "uso": "ayuda", "texto": "21 revisiones. Gratis, sin dejar tu correo, y no guardamos el dominio que escribes. Si construimos tu sitio, te lo pasamos antes de entregarlo.", "fuente": "chequeo.js (21 ítems); /v3/diagnostico/ («Gratis y sin dejar tu correo», FAQ «¿Guardan mi dominio?»); Desarrollo web, «Todo parte con esto»" }
+          ],
+          "descartes": [
+            "«Diseño y tecnología para empresas que quieren que las encuentren»: pasa el test de rubro, pero «que las encuentren» promete un resultado que nadie puede garantizar.",
+            "«Sitios que se ven bien y que la IA puede leer»: la mitad «se ven bien» lo dice cualquier agencia.",
+            "Volver al circuito («Estás pagando para que lleguen a tu sitio»): con el giro, la primera pantalla dice qué hacemos; el circuito exige contexto que no cabe arriba (E11, B.1)."
+          ],
+          "borrado": [
+            "«Chequeo de visibilidad en IA» como título del campo: el lector no sabe qué es (E11, fila 1). Queda «Chequeo gratis» y la frase que dice qué revisa.",
+            "«Ver cómo lo lee»: no decía quién lee. El botón dice lo que pasa al hacer clic."
+          ]
+        },
+        {
+          "id": "obra",
+          "nombre": "Índice corto de trabajo",
+          "trabajo": "Mostrar que lo de arriba ya existe, con cuatro piezas de tipos distintos, y llevar al índice.",
+          "elementos": [
+            { "id": "home.obra.h2", "rol": "h2", "tinta": "Trabajo.", "gris": "Lo que diseñamos y programamos, para clientes y para nosotros.", "texto": "Trabajo. Lo que diseñamos y programamos, para clientes y para nosotros." },
+            { "id": "home.obra.entradas", "rol": "nota", "uso": "referencia", "texto": "Cuatro entradas del índice, con el mismo nombre, bajada y línea mono que en /trabajo/: Combeau, fotografía · Praxi · Verifica y Cumple · Sesenta (concepto). Ver «trabajo.entradas»." },
+            { "id": "home.obra.todo", "rol": "boton", "texto": "[ Todo el trabajo ] (10)", "destino": "/v3/trabajo/", "nota": "El único corchete de la página (lock §14). El 10 es el conteo verdadero del índice: si cambia el número de entradas, cambia aquí." }
+          ]
+        },
+        {
+          "id": "prueba",
+          "nombre": "La pieza y lo que la prueba (Craft y Logic)",
+          "trabajo": "Cumplir lo que dice el posicionamiento: lo que construimos se puede medir. Una pieza al lado de un dato revisable, con fecha.",
+          "elementos": [
+            { "id": "home.prueba.h2", "rol": "h2", "tinta": "Cada pieza, con su prueba.", "gris": "Al lado de lo que hicimos, un dato que puedes revisar, con su fecha.", "texto": "Cada pieza, con su prueba. Al lado de lo que hicimos, un dato que puedes revisar, con su fecha." },
+            { "id": "home.prueba.combeau.pieza", "rol": "h2", "nivel": 3, "texto": "El sitio de Bernardo Combeau, fotógrafo de retrato." },
+            { "id": "home.prueba.combeau.dato", "rol": "parrafo", "texto": "Él sube la foto tal cual, con 805 kB. Quien entra a su sitio recibe la misma foto recortada a su pantalla, en 95 kB: pesa ocho veces menos.", "fuente": "inventario-casos §2.1 (Netlify Image CDN: 804.697 → 94.576 bytes, WebP a 828 px)" },
+            { "id": "home.prueba.combeau.ficha", "rol": "ficha", "campos": [ { "rotulo": "Medido", "valor": "16-oct-2026" } ], "condicion": "Medición de un sitio de cliente: la permite la compuerta 1, punto 2 («no se necesita más permiso», dicho por Ramón)." },
+            { "id": "home.prueba.praxi.pieza", "rol": "h2", "nivel": 3, "texto": "Praxi, una app de entrenamiento con un coach de IA." },
+            { "id": "home.prueba.praxi.dato", "rol": "parrafo", "texto": "La IA entiende lo que le escribes y conversa. Cuándo subir el peso lo calcula código, revisado por 384 pruebas automáticas. Pasaron todas.", "fuente": "inventario-praxi §0.1, §5 y §8.1 (384/384 en 35 archivos)" },
+            { "id": "home.prueba.praxi.ficha", "rol": "ficha", "campos": [ { "rotulo": "Medido", "valor": "16-oct-2026" } ] },
+            { "id": "home.prueba.vyc.pieza", "rol": "h2", "nivel": 3, "texto": "Verifica y Cumple, nuestro chequeo gratis de la ley de datos personales.", "condicion": "Decide Ramón en la compuerta 2 (encargo §10.3: mostrar los puntajes propios)." },
+            { "id": "home.prueba.vyc.dato", "rol": "parrafo", "texto": "Su sitio sacaba 54 de 100 en el chequeo de esta página. Le publicamos la ficha que les dice a las máquinas qué es y quién responde, y el índice de sus páginas. Dos días después sacó 94.", "fuente": "inventario-casos §4.1 (14-oct 22:29Z → 16-oct 17:51Z, mismo instrumento, crudos guardados)", "condicion": "Decide Ramón (encargo §10.3).", "alternativa": { "pieza": "El chequeo de esta página.", "dato": "21 revisiones que suman 100 puntos, con la metodología publicada para que cualquiera la revise." } },
+            { "id": "home.prueba.vyc.ficha", "rol": "ficha", "campos": [ { "rotulo": "Medido", "valor": "14 y 16-oct-2026" } ], "condicion": "Igual que la fila." }
+          ],
+          "borrado": [
+            "La palabra «Logic» y «Craft»: son el nombre interno de la idea, en inglés. El lector ve «la pieza» y «su prueba».",
+            "«Datos estructurados», «llms.txt», «sitemap» en el dato de Verifica: van en palabras del dueño («la ficha que les dice a las máquinas qué es», «el índice de sus páginas»)."
+          ]
+        },
+        {
+          "id": "servicios",
+          "nombre": "Servicios, Desarrollo web primero",
+          "trabajo": "Que cada lector encuentre su caso por la situación en que está, con el precio a la vista, y que cada término técnico venga explicado la primera vez.",
+          "elementos": [
+            { "id": "home.servicios.h2", "rol": "h2", "tinta": "Servicios.", "gris": "Lo que hacemos, cada uno con su precio publicado.", "texto": "Servicios. Lo que hacemos, cada uno con su precio publicado." },
+
+            { "id": "home.servicios.dw.situacion", "rol": "rotulo", "uso": "situacion", "texto": "Tu sitio te frena, o no existe." },
+            { "id": "home.servicios.dw.nombre", "rol": "h2", "nivel": 3, "texto": "Desarrollo web" },
+            { "id": "home.servicios.dw.texto", "rol": "parrafo", "texto": "Lo diseñamos y lo programamos a medida, sin plantilla. Queda listo para que Google y la IA entiendan a qué te dedicas, y antes de entregarlo le pasamos el chequeo gratis de esta página." },
+            { "id": "home.servicios.dw.precio", "rol": "nota", "uso": "precio", "texto": "Desde $390.000 + IVA", "fuente": "oferta-v3.json momentos[0].planes[0].p" },
+            { "id": "home.servicios.dw.boton", "rol": "boton", "texto": "Ver Desarrollo web", "destino": "/v3/servicios/desarrollo-web/" },
+
+            { "id": "home.servicios.via.situacion", "rol": "rotulo", "uso": "situacion", "texto": "Tu sitio existe y no lo vas a rehacer." },
+            { "id": "home.servicios.via.nombre", "rol": "h2", "nivel": 3, "texto": "Visibilidad en IA" },
+            { "id": "home.servicios.via.texto", "rol": "parrafo", "texto": "Cuando alguien le pregunta a ChatGPT, Gemini o Perplexity por tu rubro, la respuesta se arma con lo que esas herramientas leen de tu sitio y con lo que otros publican de ti. Trabajamos las dos cosas para que tu empresa pueda aparecer.", "fuente": "servicios-v3.json visibilidad-en-ia.lead; e11/material.md E17" },
+            { "id": "home.servicios.via.escena", "rol": "nota", "uso": "escena", "texto": "En septiembre revisamos el sitio de un estudio de abogados con más de 250 artículos. Google podía leerlos; los buscadores de ChatGPT, Claude y Perplexity recibían un error. Lo bloqueaba una regla de su proveedor que nadie en el estudio había decidido.", "fuente": "e11/material.md E1 (verificado el 9-sep; «más de 250» y sin nombre)" },
+            { "id": "home.servicios.via.precio", "rol": "nota", "uso": "precio", "texto": "Desde $400.000 + IVA", "fuente": "servicios-v3.json visibilidad-en-ia (Auditoría de Visibilidad)" },
+            { "id": "home.servicios.via.boton", "rol": "boton", "texto": "Ver Visibilidad en IA", "destino": "/v3/servicios/visibilidad-en-ia/" },
+
+            { "id": "home.servicios.aud.situacion", "rol": "rotulo", "uso": "situacion", "texto": "Quieres saber qué frena a tu sitio en Google." },
+            { "id": "home.servicios.aud.nombre", "rol": "h2", "nivel": 3, "texto": "Auditoría SEO técnica" },
+            { "id": "home.servicios.aud.texto", "rol": "parrafo", "texto": "El SEO técnico es lo que permite que Google encuentre tus páginas, las lea y las muestre. La auditoría revisa tu sitio completo y te dice qué falla y qué arreglar primero." },
+            { "id": "home.servicios.aud.precio", "rol": "nota", "uso": "precio", "texto": "Desde $490.000 + IVA", "fuente": "servicios-v3.json auditoria-seo-tecnica (Auditoría Completa)" },
+            { "id": "home.servicios.aud.boton", "rol": "boton", "texto": "Ver Auditoría SEO técnica", "destino": "/v3/servicios/auditoria-seo-tecnica/" },
+
+            { "id": "home.servicios.aco.situacion", "rol": "rotulo", "uso": "situacion", "texto": "Ya giras y quieres sostenerlo." },
+            { "id": "home.servicios.aco.nombre", "rol": "h2", "nivel": 3, "texto": "Acompañamiento mensual" },
+            { "id": "home.servicios.aco.texto", "rol": "parrafo", "texto": "Una auditoría te dice qué hacer; este servicio lo hace, mes a mes, en SEO técnico, en visibilidad en IA o en las dos. Mínimo tres meses.", "fuente": "servicios-v3.json acompanamiento-mensual.lead y .linea" },
+            { "id": "home.servicios.aco.precio", "rol": "nota", "uso": "precio", "texto": "Desde $590.000/mes + IVA", "fuente": "servicios-v3.json acompanamiento-mensual (Esencial)" },
+            { "id": "home.servicios.aco.boton", "rol": "boton", "texto": "Ver Acompañamiento mensual", "destino": "/v3/servicios/acompanamiento-mensual/" },
+
+            { "id": "home.servicios.tambien", "rol": "parrafo", "texto": "También: Paid Media (Google), tus anuncios de búsqueda en Google, desde $350.000/mes + IVA, y Gestión de redes sociales en LinkedIn, Instagram y Facebook, desde $390.000/mes + IVA.", "enlaces": { "Paid Media (Google)": "/v3/servicios/paid-media/", "Gestión de redes sociales": "/v3/servicios/redes-sociales/" }, "fuente": "oferta-v3.json tambien; servicios-v3.json paid-media y redes-sociales (planes[0].precio)", "nota": "Compuerta 1, punto 1: en la home, una línea." }
+          ],
+          "borrado": [
+            "«Desarrollo», «Visibilidad», «Continuidad», «Alcance» como palabras grandes: eran nombres internos (E11, fila 8). Manda la situación del lector, que era lo que funcionaba (E11, C.1.1).",
+            "«Rastreo, indexación, Core Web Vitals y datos estructurados»: se cambia por lo que eso le hace al negocio.",
+            "«Implementación continua e informes quincenales»: la cadencia de informes es R2, abierta. No se promete aquí."
+          ]
+        },
+        {
+          "id": "quien",
+          "nombre": "Quién está detrás",
+          "trabajo": "Contestar quién hace esto antes de que lo pregunten, sin inflar el tamaño.",
+          "elementos": [
+            { "id": "home.quien.h2", "rol": "h2", "tinta": "Detrás de SpindleLab está Ramón Vallejos.", "gris": "Diseña y programa con agentes de IA, y suma partners para lo que no hace.", "texto": "Detrás de SpindleLab está Ramón Vallejos. Diseña y programa con agentes de IA, y suma partners para lo que no hace.", "fuente": "nosotros.astro:85 («con agentes de IA a mi lado y partners para lo que no hacemos en casa»)" },
+            { "id": "home.quien.cv", "rol": "parrafo", "texto": "Antes pasó más de cinco años en agencias: Universal McCann; Graphene IPG, con la cuenta de LATAM Airlines en cuatro países; Incrementa y Maggiore.", "fuente": "nosotros.astro:89-94 (CV cerrado, e11/material.md §5)" },
+            { "id": "home.quien.publicado", "rol": "parrafo", "texto": "Los precios, el método y el chequeo están publicados, para que compares antes de escribirnos." },
+            { "id": "home.quien.boton", "rol": "boton", "texto": "Conocer a Ramón", "destino": "/v3/nosotros/" }
+          ],
+          "notas": "Ramón va en tercera persona y el estudio en plural. Así no se cruzan «una persona» y «volvemos» en el mismo párrafo, que fue lo que notó el lector abogado en E11."
+        },
+        {
+          "id": "contacto",
+          "nombre": "Contacto",
+          "trabajo": "Decir qué pasa al escribir: qué recibes, en cuánto tiempo y si cuesta. Y separar el chequeo del mini-diagnóstico.",
+          "elementos": [
+            { "id": "home.contacto.h2", "rol": "h2", "tinta": "Escríbenos con la dirección de tu sitio.", "gris": "En 24 horas te mandamos el mini-diagnóstico, gratis.", "texto": "Escríbenos con la dirección de tu sitio. En 24 horas te mandamos el mini-diagnóstico, gratis.", "fuente": "paginas-v3.json contacto" },
+            { "id": "home.contacto.que-es", "rol": "parrafo", "texto": "Es una página con lo que está bien en tu sitio, lo que lo frena y qué haríamos primero. Lo hace una persona, que además le pregunta a ChatGPT, Gemini y Perplexity por tu rubro, cosa que el chequeo de arriba no hace.", "fuente": "paginas-v3.json contacto.lead; e11/material.md §3 («lo hace el mini-diagnóstico a mano»)" },
+            { "id": "home.contacto.de-cero", "rol": "parrafo", "texto": "Si partes de cero, en el mismo plazo te escribimos para conversar tu proyecto.", "fuente": "paginas-v3.json contacto (bloque «Listo.»)" },
+            { "id": "home.contacto.boton", "rol": "boton", "texto": "Escribir a SpindleLab", "destino": "/v3/contacto/" },
+            { "id": "home.contacto.correo", "rol": "nota", "texto": "O directo a hola@spindlelab.cl" }
+          ],
+          "borrado": [
+            "«Hablemos de tu sitio.»: no decía qué se recibe ni en cuánto (E11, fila 17)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trabajo",
+      "ruta": "/v3/trabajo/",
+      "title": "Trabajo · SpindleLab",
+      "description": "Sitios, una app y herramientas que diseñamos y programamos, y cuatro marcas inventadas para rubros que atendemos. Cada entrada dice de quién es y qué se midió.",
+      "secciones": [
+        {
+          "id": "cabecera",
+          "nombre": "Título, bajada y filtro",
+          "trabajo": "Decir qué hay y cómo leer el tipo de cada entrada, sobre todo qué es un concepto, antes de que el lector lo pregunte.",
+          "elementos": [
+            { "id": "trabajo.h1", "rol": "h1", "tinta": "Trabajo.", "gris": "Lo que diseñamos y programamos, y cómo lo resolveríamos en tu rubro.", "texto": "Trabajo. Lo que diseñamos y programamos, y cómo lo resolveríamos en tu rubro." },
+            { "id": "trabajo.entradilla", "rol": "entradilla", "texto": "Cada entrada dice de quién es. Cliente es un encargo pagado. Propio lo hicimos para nosotros, sin encargo. Concepto es una marca inventada para mostrar cómo trabajaríamos un rubro: no existe, no tuvo clientes y no lleva cifras." },
+            { "id": "trabajo.conteo", "rol": "rotulo", "texto": "(10)", "nota": "Conteo verdadero de entradas; sale del dato, no se escribe a mano." },
+            { "id": "trabajo.filtro", "rol": "rotulo", "uso": "filtro", "opciones": [ "Todo (10)", "Cliente (2)", "Propio (4)", "Concepto (4)" ], "nota": "El filtro filtra de verdad (encargo §2, vista 2). Los conteos salen del dato. Tres tipos y no cuatro: el lock §7 separaba «herramienta», pero Verifica y Cumple también es una herramienta gratis y la diferencia no se podía explicar en una línea. Si Lucía la quiere de vuelta, la entradilla suma una frase." },
+            { "id": "trabajo.columnas", "rol": "rotulo", "uso": "tabla (dirección B)", "opciones": [ "Nombre", "Tipo", "Año", "Ingredientes", "Resultado" ] }
+          ]
+        }
+      ],
+      "entradas": [
+        {
+          "id": "combeau-fotografia",
+          "nombre": "Combeau, fotografía",
+          "bajada": "El sitio de un fotógrafo de retrato. Él sube sus series desde un panel, y el sitio las publica con cada foto ajustada a la pantalla de quien la mira.",
+          "tipo": "Cliente", "anio": "2026",
+          "ingredientes": [ "Decap CMS", "Netlify Image CDN" ],
+          "linea": "Cliente · 2026 · Decap CMS · Netlify Image CDN",
+          "resultado": "Sin métrica de negocio. Una foto que sube con 805 kB llega en 95 kB (16-oct-2026).",
+          "fuente": "inventario-casos §2.1 (las dos etiquetas y su efecto: «él carga sus series solo», «805 kB → 95 kB»)"
+        },
+        {
+          "id": "praxi",
+          "nombre": "Praxi",
+          "bajada": "Una app de entrenamiento con un coach de IA que se acuerda de cada serie. El modelo conversa; cuándo subir el peso lo calcula el código.",
+          "tipo": "Propio", "anio": "2026",
+          "ingredientes": [ "API de Anthropic", "Lógica de entrenamiento en código" ],
+          "linea": "Propio · 2026 · API de Anthropic · Lógica de entrenamiento en código",
+          "resultado": "Sin métrica de uso. 384 de 384 pruebas automáticas en verde (16-oct-2026).",
+          "fuente": "inventario-praxi §4 y §8.1"
+        },
+        {
+          "id": "sesenta",
+          "nombre": "Sesenta",
+          "bajada": "Un estudio de abogados laborales que no existe, del lado del trabajador. Su portada cuenta los días hábiles que te quedan para demandar.",
+          "tipo": "Concepto", "anio": "2026",
+          "ingredientes": [],
+          "linea": "Concepto · 2026",
+          "resultado": "Sin métrica: es un concepto.",
+          "fuente": "marketing/portafolio/06-sesenta/ficha.md §4.1 y §6",
+          "ingredientes_propuestos": [ "Contador de días hábiles con los feriados de 2026 y 2027" ],
+          "nota": "Los ingredientes de los conceptos están en su ficha (§6) y todavía no tienen fila en el inventario: hasta que Diego la ponga, la línea dice solo «Concepto · 2026»."
+        },
+        {
+          "id": "verifica-y-cumple",
+          "nombre": "Verifica y Cumple",
+          "bajada": "Revisa gratis lo que la ley de datos personales le pide a cualquier sitio con formulario. Responde en segundos, y su revisión a fondo abre un navegador de verdad.",
+          "tipo": "Propio", "anio": "2026",
+          "ingredientes": [ "Cloudflare Pages Functions", "Cloudflare Browser Rendering" ],
+          "linea": "Propio · 2026 · Cloudflare Pages Functions · Cloudflare Browser Rendering",
+          "resultado": "54 → 94 en el chequeo de esta página, 14 y 16-oct-2026.",
+          "condicion": "El 54 → 94 lo decide Ramón (encargo §10.3).",
+          "alternativa": { "resultado": "Sin métrica de uso: no guarda los dominios que revisa." },
+          "fuente": "inventario-casos §2.3 y §4.1"
+        },
+        {
+          "id": "ocelo",
+          "nombre": "Ocelo",
+          "bajada": "Una clínica de ojos que no existe, en Providencia. En vez de prometer que vas a dejar los lentes, te muestra el examen que dice si te puedes operar.",
+          "tipo": "Concepto", "anio": "2026",
+          "ingredientes": [],
+          "linea": "Concepto · 2026",
+          "resultado": "Sin métrica: es un concepto.",
+          "fuente": "marketing/portafolio/05-ocelo/caso.md (Desafío, Estrategia) y ficha.md §6"
+        },
+        {
+          "id": "combeau-modelo",
+          "nombre": "Combeau, modelo",
+          "bajada": "El mismo cliente, el otro oficio: su book de modelo, en inglés, que también se edita desde el panel. Los videos se descargan solo cuando alguien los abre.",
+          "tipo": "Cliente", "anio": "2026",
+          "ingredientes": [ "Decap CMS", "Video con carga diferida" ],
+          "linea": "Cliente · 2026 · Decap CMS · Video con carga diferida",
+          "resultado": "Sin métrica de negocio. La página abre sin descargar ningún video (16-oct-2026).",
+          "fuente": "inventario-casos §2.2 («0 kB de video en la carga inicial»)"
+        },
+        {
+          "id": "doceavo",
+          "nombre": "Doceavo",
+          "bajada": "Un estudio contable que no existe, en Concepción. Su portada te dice cuándo vence tu próxima declaración mensual, y su logo cambia cada mes.",
+          "tipo": "Concepto", "anio": "2026",
+          "ingredientes": [],
+          "linea": "Concepto · 2026",
+          "resultado": "Sin métrica: es un concepto.",
+          "fuente": "marketing/portafolio/07-doceavo/caso.md (Estrategia, Identidad)"
+        },
+        {
+          "id": "chequeo",
+          "nombre": "El chequeo de 21 señales",
+          "bajada": "Escribes un dominio y en segundos ves si ChatGPT, Claude y Perplexity pueden entrar y entender a qué se dedica. También avisa si el servidor los echa aunque tu configuración los deje pasar.",
+          "tipo": "Propio", "anio": "2026",
+          "ingredientes": [ "Cloudflare Pages Functions", "Prueba con robots de IA" ],
+          "linea": "Propio · 2026 · Cloudflare Pages Functions · Prueba con robots de IA",
+          "resultado": "21 revisiones, 100 puntos. No guarda los dominios, así que no sabemos cuántas veces se ha usado.",
+          "fuente": "inventario-casos §2.4 y §4.4"
+        },
+        {
+          "id": "tonela",
+          "nombre": "Tonela",
+          "bajada": "Un proveedor de izaje que no existe, en Antofagasta: eslingas, cadenas y grilletes. Ordena su sitio con el color que la norma le da a cada capacidad de carga.",
+          "tipo": "Concepto", "anio": "2026",
+          "ingredientes": [],
+          "linea": "Concepto · 2026",
+          "resultado": "Sin métrica: es un concepto.",
+          "fuente": "marketing/portafolio/04-tonela/caso.md (Desafío, Estrategia)"
+        },
+        {
+          "id": "spindlelab",
+          "nombre": "spindlelab.cl",
+          "bajada": "Este sitio. El chequeo de la portada corre en nuestro servidor, y Google Analytics y el píxel de Meta no cargan hasta que aceptas las cookies.",
+          "tipo": "Propio", "anio": "2026",
+          "ingredientes": [ "Cloudflare Pages Functions", "Analítica tras el aviso de cookies" ],
+          "linea": "Propio · 2026 · Cloudflare Pages Functions · Analítica tras el aviso de cookies",
+          "resultado": "En el chequeo de la ley de datos personales: 36 de 100 el 9-sep-2026 y 73 el 21-sep. El 23-sep cambió la forma de puntuar, y desde el 14-oct saca 100 sobre 14 de los 20 puntos de peso.",
+          "fuente": "inventario-casos §2.6 y §4.1 (36 y 73 son dichos, sin crudo; el 100, con crudo). Solo en Trabajo y con el aviso del cambio de regla (e9/brief-e9.md §3)"
+        }
+      ],
+      "orden": "Las entradas van en el orden de «entradas»: una de cliente primero, y los conceptos intercalados para que no queden todos al final ni parezcan relleno. Es una propuesta: el orden lo fija Lucía en el tablero.",
+      "borrado": [
+        "«en producción» (E11, fila 26): dice «publicado» o nada.",
+        "«Está dicho cuál es cuál en cada una»: contestaba una sospecha que el lector todavía no tenía. La entradilla dice qué es cada tipo."
+      ]
+    },
+    {
+      "id": "caso-praxi",
+      "ruta": "/v3/trabajo/praxi/",
+      "title": "Praxi, una app de entrenamiento con un coach de IA · Trabajo · SpindleLab",
+      "description": "Diseñamos y programamos Praxi, una app de entrenamiento por chat. La IA entiende lo que le escribes y conversa; cuándo subir el peso lo calcula código con pruebas automáticas.",
+      "estructura": "La de Koto medida (lock §21.5): barra lateral pegajosa, medio principal, cinco secciones con su rótulo y sus filas de medios, y el cierre «Siguiente». Las secciones van con los rótulos de §21.5 (Problema · Hipótesis · Solución · La pieza · Sin métrica).",
+      "secciones": [
+        {
+          "id": "lateral",
+          "nombre": "Barra lateral (a 390: el encabezado y la barra flotante)",
+          "trabajo": "Nombrar el caso, decir qué tipo de trabajo es y llevar a cada sección.",
+          "elementos": [
+            { "id": "praxi.h1", "rol": "h1", "tinta": "Praxi", "gris": "Se acuerda de cada serie", "texto": "Praxi. Se acuerda de cada serie" },
+            { "id": "praxi.ficha", "rol": "ficha", "campos": [
+              { "rotulo": "Tipo", "valor": "Propio" },
+              { "rotulo": "Año", "valor": "2026" },
+              { "rotulo": "Qué es", "valor": "Sitio y app" },
+              { "rotulo": "Hecho", "valor": "21-jul a 25-ago-2026" },
+              { "rotulo": "Estado", "valor": "Fuera de línea", "condicion": "Decide Ramón si se dice que está en pausa (inventario-praxi §10.2). Si dice que no, el campo sale y el resto no cambia." }
+            ], "linea": "Propio · 2026 · Sitio y app", "fuente": "inventario-praxi §2 y §9 (Ficha)" },
+            { "id": "praxi.indice", "rol": "rotulo", "uso": "índice de secciones", "opciones": [ "Problema", "Hipótesis", "Solución", "La pieza", "Sin métrica" ] },
+            { "id": "praxi.creditos.rotulo", "rol": "rotulo", "texto": "Quién lo hizo" },
+            { "id": "praxi.creditos", "rol": "nota", "texto": "Marca, sitio, app y campaña: Ramón Vallejos, con agentes de IA.", "fuente": "inventario-praxi §2 («Quién lo hizo»: los commits llevan Co-Authored-By: Claude)", "condicion": "Decide Ramón si el caso dice «con agentes de IA» (inventario-praxi §10.6). El sitio ya lo dice de su método («Construcción con IA, revisión humana en cada fase»)." }
+          ]
+        },
+        {
+          "id": "medio",
+          "nombre": "Medio principal",
+          "trabajo": "Mostrar la pieza entera, y decir sin letra chica qué es generado.",
+          "elementos": [
+            { "id": "praxi.medio.alt", "rol": "nota", "uso": "alt", "texto": "Cinco escenas cortas de un hombre que entrena, come en casa, camina, está en una reunión y en una cena: el video del inicio del sitio de Praxi." },
+            { "id": "praxi.medio.pie", "rol": "nota", "uso": "pie", "texto": "El video del inicio de Praxi. Las personas están generadas con IA.", "fuente": "inventario-praxi §7 (Seedance 2.0, personaje PraxiChileno)" }
+          ]
+        },
+        {
+          "id": "problema",
+          "nombre": "Problema",
+          "trabajo": "Contar el problema en palabras de cualquiera, sin jerga de gimnasio.",
+          "elementos": [
+            { "id": "praxi.problema.rotulo", "rol": "rotulo", "texto": "Problema" },
+            { "id": "praxi.problema.h2", "rol": "h2", "texto": "Las apps de entrenamiento olvidan lo que hiciste." },
+            { "id": "praxi.problema.p1", "rol": "parrafo", "texto": "Quien entrena con pesas se hace la misma pregunta cada semana: si subir el peso o no. La respuesta depende de lo que hizo las semanas anteriores, y en las reseñas de las apps de entrenamiento la queja que más se repite es que no se acuerdan.", "fuente": "Praxi, docs/2026-08-03-inteligencia-mercado-praxi.md §1.2 y §2.1 (marcado [D], con citas de reseñas)" },
+            { "id": "praxi.problema.p2", "rol": "parrafo", "texto": "Praxi partió vendiendo otra cosa: un coach que te explica el porqué de cada decisión. Eso ChatGPT ya lo hace gratis, y lo hace bien. Había que ofrecer algo que un chat general no puede hacer.", "fuente": "Praxi, inteligencia-mercado §1.1 (D'hoe et al., 2026); CLAUDE.md de Praxi, «Lo que se vende es la MEMORIA»" }
+          ]
+        },
+        {
+          "id": "hipotesis",
+          "nombre": "Hipótesis",
+          "trabajo": "Decir qué se creyó y cómo se iba a saber si funcionaba.",
+          "elementos": [
+            { "id": "praxi.hipotesis.rotulo", "rol": "rotulo", "texto": "Hipótesis" },
+            { "id": "praxi.hipotesis.h2", "rol": "h2", "texto": "Vender la memoria, no la explicación." },
+            { "id": "praxi.hipotesis.p1", "rol": "parrafo", "texto": "Si Praxi se acuerda de cada serie, puede decirte cuándo subir el peso, y eso no lo hace un chat que no guarda lo que entrenaste. La portada pasó de «Entrena sabiendo por qué» a «Se acuerda de cada serie que hiciste», y las palabras técnicas del entrenamiento salieron de la portada, porque en Chile casi nadie las busca en Google.", "fuente": "inventario-praxi §2 (Claim) y §9 (Estrategia); CLAUDE.md de Praxi, «La jerga no va en la portada»" },
+            { "id": "praxi.hipotesis.p2", "rol": "parrafo", "texto": "Para saber si funcionaba, se definió a una persona activada: alguien que vuelve a registrar, con su peso, un ejercicio que ya había registrado antes. Ese momento quedó medido en el servidor.", "fuente": "Praxi, docs/encargos/2026-08-05-instrumentacion-medicion.md §A.3 (línea 97); CLAUDE.md de Praxi, «Medición y publicidad», bloque A completo", "condicion": "Falta su fila en inventario-praxi.md (Diego). Si no entra, el párrafo sale y la sección queda con el primero." }
+          ]
+        },
+        {
+          "id": "solucion",
+          "nombre": "Solución",
+          "trabajo": "Explicar qué hace la IA y qué no, que es lo que el caso tiene de único, y cada ingrediente con lo que le hace a quien usa la app.",
+          "elementos": [
+            { "id": "praxi.solucion.rotulo", "rol": "rotulo", "texto": "Solución" },
+            { "id": "praxi.solucion.h2", "rol": "h2", "texto": "El modelo conversa. El código decide." },
+            { "id": "praxi.solucion.p1", "rol": "parrafo", "texto": "A Praxi le escribes como a una persona: «hoy hice press banca, tres series de 10 con 60 kilos». Un modelo de IA de Anthropic convierte esa frase en series guardadas. Está obligado a responder en un formato fijo y, si no está seguro de que le contaste un entrenamiento, no guarda nada.", "fuente": "inventario-praxi §5.1 (extract.ts, tool_choice forzado; «ante la duda, no se guarda nada» desde el 19-ago). La frase es la del ejemplo de la landing, no de una persona" },
+            { "id": "praxi.solucion.p2", "rol": "parrafo", "texto": "Las decisiones que importan no las toma el modelo. Cuándo subir el peso, cuándo hacer una semana más liviana para recuperarte y qué serie cuenta los calcula código, revisado por pruebas automáticas: programas que comprueban, cada vez que algo cambia, que cada regla siga dando lo mismo. El peso sube solo después de dos sesiones confirmadas, nunca por una suelta. El modelo recibe esas cuentas hechas y te las explica.", "fuente": "inventario-praxi §5.3 y §4 (lib/domain/, signals.ts; 42 tests en esas piezas)" },
+            { "id": "praxi.solucion.p3", "rol": "parrafo", "texto": "Con la salud pasa lo mismo. Si mencionas dolor, mareo o señales de un trastorno alimentario, el coach no diagnostica y te manda a un profesional, y esa regla también vive en el código. Tiene una razón: el 22 de agosto, probando con una cuenta de 16 años, el coach recomendó creatina aunque sus instrucciones se lo prohibían. Desde ese día, la edad se revisa en código y no se le deja al modelo.", "fuente": "inventario-praxi §4 y §5.5; Praxi, lib/coach/guardrailMenores.ts:6-21 (leído el 17-oct)" },
+            { "id": "praxi.solucion.p4", "rol": "parrafo", "texto": "Se paga con tarjeta sin salir de la app y sin cuenta en Mercado Pago. El número de la tarjeta lo reciben los campos de Mercado Pago y nunca pasa por el servidor de Praxi.", "fuente": "inventario-praxi §4 (mp-card-form.tsx; CLAUDE.md de Praxi :144-164)" },
+            { "id": "praxi.solucion.ingredientes.rotulo", "rol": "rotulo", "texto": "Ingredientes" },
+            { "id": "praxi.solucion.ingredientes", "rol": "ficha", "campos": [
+              { "rotulo": "API de Anthropic, solo en el servidor", "valor": "Le escribes como a una persona y el registro queda guardado, sin formularios." },
+              { "rotulo": "Lógica de entrenamiento en código", "valor": "El peso sube con dos sesiones confirmadas; la semana liviana llega por cansancio comprobado, no por calendario." },
+              { "rotulo": "Reglas de salud y de edad en código", "valor": "Si mencionas dolor o mareo, el coach no diagnostica y te deriva. A un menor no le recomienda suplementos." },
+              { "rotulo": "Supabase", "valor": "Cada persona ve y borra solo lo suyo, y sus exámenes se guardan en un espacio privado." },
+              { "rotulo": "Mercado Pago, dentro de la app", "valor": "Pagas sin salir de Praxi, y la tarjeta no pasa por su servidor." },
+              { "rotulo": "Resend", "valor": "Te llega por correo la fecha exacta del cobro, el monto y cómo cancelar." },
+              { "rotulo": "Control de marca en cada publicación", "valor": "Un color fuera de la paleta no llega al sitio: la publicación se detiene." },
+              { "rotulo": "Datos estructurados", "valor": "Google y los asistentes de IA pueden leer qué es Praxi, cuánto cuesta y qué responde." },
+              { "rotulo": "Se instala en el teléfono", "valor": "Se abre a pantalla completa, como una app." }
+            ], "fuente": "inventario-praxi §4 (la columna «Lo que le hace al usuario»; solo los que tienen efecto que contar)" }
+          ],
+          "borrado": [
+            "Los nombres de los modelos (Sonnet 5, Haiku 4.5): queda «un modelo de IA de Anthropic» hasta que Ramón diga si se nombran (inventario-praxi §10.4).",
+            "RIR, deload, mesociclo: van como «qué serie cuenta», «una semana más liviana para recuperarte».",
+            "Next.js, Vercel, Tailwind, PWA como etiquetas: no tienen un efecto que contar al lector (inventario-praxi §4) y el brief §2 dice que un término sin lo que le hace al cliente no va. «PWA» queda como «Se instala en el teléfono»."
+          ]
+        },
+        {
+          "id": "pieza",
+          "nombre": "La pieza",
+          "trabajo": "Mostrar la marca, el sitio y la campaña, y rotular lo que es de ejemplo o generado junto a la imagen.",
+          "elementos": [
+            { "id": "praxi.pieza.rotulo", "rol": "rotulo", "texto": "La pieza" },
+            { "id": "praxi.pieza.h2", "rol": "h2", "texto": "Sitio, app y campaña, con una sola marca." },
+            { "id": "praxi.pieza.p1", "rol": "parrafo", "texto": "La marca de Praxi vive en dos archivos que el código hace cumplir: uno con los colores, la letra y las formas, y otro con cómo habla. Si alguien pone un color que no está ahí, el sitio no se publica. El color principal partió morado, el de casi cualquier demo de IA, y pasó al amarillo del punto del logo.", "fuente": "inventario-praxi §7 (brand.json, voice.json; el acento pasó de #8069F2 a #E2F349 el 26-jul) y §4 (design-check en prebuild, 8/8)" },
+            { "id": "praxi.pieza.p2", "rol": "parrafo", "texto": "La portada la aprobó Ramón después de siete rondas de corrección. La campaña usa el mismo chat como pieza: un reel donde la conversación con el coach aparece sobre el video.", "fuente": "inventario-praxi §8.1 (dicho: bitacora-diseno.md:207-250) y §7 (reel «a memoria»)" },
+            { "id": "praxi.pieza.pie-ejemplo", "rol": "nota", "uso": "pie", "texto": "Datos de ejemplo de la portada de Praxi: no son de una persona.", "donde": "Bajo las capturas de la conversación y de «Tu progreso, en números» (inventario-praxi §6)" },
+            { "id": "praxi.pieza.pie-generado", "rol": "nota", "uso": "pie", "texto": "Las personas de las fotos y del video están generadas con IA. El texto encima es de la pieza.", "donde": "Bajo el reel, el carrusel y la portada de Facebook" },
+            { "id": "praxi.pieza.hueco", "rol": "nota", "texto": "Faltan las pantallas de la app por dentro. Para verlas hace falta una cuenta y su base de datos, y no las vamos a armar con datos inventados.", "condicion": "Solo si Ramón no entrega las capturas de la app (inventario-praxi §10.1). Si las entrega, esta nota sale." }
+          ]
+        },
+        {
+          "id": "resultado",
+          "nombre": "Sin métrica",
+          "trabajo": "Cerrar con lo que se midió y lo que no, sin adornar.",
+          "elementos": [
+            { "id": "praxi.resultado.rotulo", "rol": "rotulo", "texto": "Sin métrica" },
+            { "id": "praxi.resultado.h2", "rol": "h2", "texto": "Lo medido es el oficio." },
+            { "id": "praxi.resultado.p1", "rol": "parrafo", "texto": "No tenemos un número de usuarios, de uso ni de ventas de Praxi que podamos publicar, así que no ponemos ninguno. El 16 de octubre de 2026, sobre la última versión, pasaron las 384 pruebas automáticas, el control de marca dio 8 de 8 y el sitio se armó sin errores.", "fuente": "inventario-praxi §0.4, §8.1 y crudo/verificacion-copia.txt" },
+            { "id": "praxi.resultado.p2", "rol": "parrafo", "texto": "Hoy praxi.coach está fuera de línea, y por eso esta página no lo enlaza.", "fuente": "inventario-praxi §0.3 (402 DEPLOYMENT_DISABLED, 16-oct 22:56 UTC)", "condicion": "La misma decisión del campo «Estado» de la ficha." }
+          ]
+        },
+        {
+          "id": "siguiente",
+          "nombre": "Siguiente",
+          "trabajo": "Llevar al próximo caso o a escribir, sin pie de página (Koto, lock §21.4).",
+          "elementos": [
+            { "id": "praxi.siguiente.rotulo", "rol": "rotulo", "texto": "Siguiente" },
+            { "id": "praxi.siguiente.caso", "rol": "h2", "tinta": "Sesenta", "gris": "El plazo antes que el juicio", "texto": "Sesenta. El plazo antes que el juicio", "nota": "Lleva el rótulo «Concepto» a la vista. La bajada es la de su caso (06-sesenta/caso.md)." },
+            { "id": "praxi.siguiente.contacto", "rol": "parrafo", "tinta": "Si quieres algo así para tu empresa,", "gris": "escríbenos y te respondemos en 24 horas.", "texto": "Si quieres algo así para tu empresa, escríbenos y te respondemos en 24 horas.", "fuente": "paginas-v3.json contacto" },
+            { "id": "praxi.siguiente.boton", "rol": "boton", "texto": "Escribir a SpindleLab", "destino": "/v3/contacto/" },
+            { "id": "praxi.siguiente.todo", "rol": "boton", "texto": "[ Todo el trabajo ] (10)", "destino": "/v3/trabajo/" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "desarrollo-web",
+      "ruta": "/v3/servicios/desarrollo-web/",
+      "title": "Desarrollo web a medida · SpindleLab",
+      "description": "Diseñamos y programamos tu sitio a medida, listo para que Google y la IA entiendan a qué te dedicas. Cuatro planes, desde $390.000 + IVA.",
+      "secciones": [
+        {
+          "id": "cabecera",
+          "nombre": "Cabecera",
+          "trabajo": "Decir qué es, para quién es y para quién no, con el precio de partida.",
+          "elementos": [
+            { "id": "dw.miga", "rol": "rotulo", "uso": "miga", "opciones": [ "Inicio", "Servicios", "Desarrollo web" ] },
+            { "id": "dw.h1", "rol": "h1", "tinta": "Desarrollo web.", "gris": "Diseñamos y programamos tu sitio, y lo dejamos listo para Google y la IA.", "texto": "Desarrollo web. Diseñamos y programamos tu sitio, y lo dejamos listo para Google y la IA." },
+            { "id": "dw.entradilla", "rol": "entradilla", "texto": "Es para cuando no tienes sitio, o el que tienes hay que hacerlo de nuevo. Cuatro planes, desde $390.000 + IVA. Si tu sitio funciona y no lo vas a rehacer, te sirve más Visibilidad en IA.", "enlaces": { "Visibilidad en IA": "/v3/servicios/visibilidad-en-ia/" } },
+            { "id": "dw.boton.planes", "rol": "boton", "texto": "Ver los planes", "destino": "#planes" },
+            { "id": "dw.boton.escribir", "rol": "boton", "texto": "Escribir a SpindleLab", "destino": "/v3/contacto/" }
+          ]
+        },
+        {
+          "id": "incluye",
+          "nombre": "Lo que va en todos los planes",
+          "trabajo": "Decir qué se lleva el cliente, con cada término técnico explicado en la misma línea.",
+          "elementos": [
+            { "id": "dw.incluye.h2", "rol": "h2", "tinta": "En todos los planes.", "gris": "Lo que te llevas, partas por donde partas.", "texto": "En todos los planes. Lo que te llevas, partas por donde partas." },
+            { "id": "dw.incluye.1", "rol": "parrafo", "texto": "Diseño propio, sin plantilla. Partimos de referentes de tu rubro, no de un tema comprado.", "fuente": "fases, 01 Descubrimiento; FAQ «¿Usan plantillas o WordPress?»" },
+            { "id": "dw.incluye.2", "rol": "parrafo", "texto": "Código propio, sin WordPress ni constructores de páginas. Así controlamos cuánto pesa cada página y qué tan rápido carga.", "fuente": "desarrollo-web.astro, «Código propio y diseño a medida, con control total del rendimiento»" },
+            { "id": "dw.incluye.3", "rol": "parrafo", "texto": "Listo para que Google y la IA te lean. El sitio lleva una ficha escondida en el código que les dice qué negocio eres, dónde estás y quién responde, y sus páginas quedan listas para que Google las guarde y las muestre.", "fuente": "desarrollo-web.astro, «Legible para motores de IA: datos estructurados, contenido citable e indexación»" },
+            { "id": "dw.incluye.4", "rol": "parrafo", "texto": "El chequeo gratis de la portada, pasado sobre tu sitio antes de entregarlo. Te dejamos el puntaje por escrito y, si tenías otro sitio, también el de antes.", "enlaces": { "chequeo": "/v3/diagnostico/" }, "fuente": "desarrollo-web.astro (decidido en E8); promesa de proceso, e11/material.md §5" },
+            { "id": "dw.incluye.5", "rol": "parrafo", "texto": "Un panel para cambiar textos e imágenes tú mismo, sin pedírselo a nadie.", "fuente": "desarrollo-web.astro, «Todo parte con esto»", "condicion": "Choca con los planes: «Blog o CMS que administras tú» solo aparece en el Sitio Completo (oferta-v3.json), aunque Bernardo tiene panel con el Esencial. Decide Ramón si va en todos los planes o pasa al Sitio Completo." },
+            { "id": "dw.incluye.6", "rol": "parrafo", "texto": "Lo construimos con agentes de IA, y una persona revisa cada fase antes de avanzar.", "fuente": "desarrollo-web.astro, «Construcción con IA, revisión humana en cada fase antes de avanzar»" },
+            { "id": "dw.incluye.7", "rol": "parrafo", "texto": "Dominio, certificado de seguridad (el candado junto a la dirección), medición de visitas y 30 días de garantía después de publicar.", "fuente": "desarrollo-web.astro, «Dominio, SSL, analítica y 30 días de garantía post-lanzamiento»" }
+          ],
+          "borrado": [
+            "«Todo parte con esto» como título: no decía qué es «esto».",
+            "«Legible para motores de IA: datos estructurados, contenido citable e indexación»: tres términos sin explicar en una línea."
+          ]
+        },
+        {
+          "id": "obra",
+          "nombre": "Sitios que construimos",
+          "trabajo": "Mostrar obra al lado del precio, con el tipo de cada pieza dicho.",
+          "elementos": [
+            { "id": "dw.obra.h2", "rol": "h2", "tinta": "Lo que construimos.", "gris": "Para clientes, para nosotros y como concepto, con lo que se midió.", "texto": "Lo que construimos. Para clientes, para nosotros y como concepto, con lo que se midió." },
+            { "id": "dw.obra.entradas", "rol": "nota", "uso": "referencia", "texto": "Tres entradas del índice, con su nombre, bajada y línea mono: Combeau, fotografía · Praxi · Sesenta (concepto). Ver «trabajo.entradas»." },
+            { "id": "dw.obra.boton", "rol": "boton", "texto": "Ver todo el trabajo", "destino": "/v3/trabajo/" }
+          ]
+        },
+        {
+          "id": "planes",
+          "nombre": "Planes",
+          "trabajo": "Los cuatro planes tal como están en oferta-v3.json, y lo que quiere decir cada término de esa lista.",
+          "elementos": [
+            { "id": "dw.planes.h2", "rol": "h2", "tinta": "Elige por dónde partir.", "gris": "Cuatro planes, cada uno con su precio de partida.", "texto": "Elige por dónde partir. Cuatro planes, cada uno con su precio de partida." },
+            { "id": "dw.planes.lista", "rol": "nota", "uso": "planes", "texto": "Los cuatro planes van tal cual en oferta-v3.json momentos[0].planes: nombre, precio, línea y puntos, sin cambiar una palabra. Página de Campaña · Desde $390.000 + IVA · Sitio Esencial · Desde $690.000 + IVA · Sitio Completo · Desde $1.190.000 + IVA · Plataforma a Medida · Se cotiza.", "fuente": "oferta-v3.json" },
+            { "id": "dw.planes.nota", "rol": "nota", "texto": "Valores en pesos, + IVA. El valor final se cierra cuando conversamos tu proyecto. Cada plazo cuenta desde que nos llegan el anticipo, los textos y las imágenes. Para publicar necesitamos acceso a tu dominio.", "fuente": "desarrollo-web.astro #planes (sin cambio)" },
+            { "id": "dw.planes.glosario.rotulo", "rol": "rotulo", "texto": "Qué quiere decir" },
+            { "id": "dw.planes.glosario", "rol": "nota", "uso": "glosario", "items": [
+              "SEO técnico: lo que permite que Google encuentre tus páginas, las lea y las muestre.",
+              "Schema: la ficha escondida en el código que le dice a Google y a la IA qué negocio eres.",
+              "Indexación: que Google guarde tus páginas para poder mostrarlas cuando alguien busca.",
+              "Velocidad: cuánto demora tu sitio en aparecer, sobre todo en el celular.",
+              "Puesta a punto AEO/GEO: dejar el sitio listo para que ChatGPT y otros asistentes de IA lo lean y puedan nombrarte en sus respuestas.",
+              "CMS: el panel donde cambias textos, fotos o artículos sin tocar el código.",
+              "Integraciones: conectar el sitio con otros sistemas, como tu CRM (donde registras a tus clientes), tus reservas o tus pagos."
+            ], "nota": "Explica los términos de los puntos de cada plan, que no se tocan porque son la oferta." }
+          ]
+        },
+        {
+          "id": "fases",
+          "nombre": "Cinco fases",
+          "trabajo": "Bajar el miedo a no saber qué pasa después de pagar.",
+          "elementos": [
+            { "id": "dw.fases.h2", "rol": "h2", "tinta": "Cinco fases.", "gris": "Apruebas cada una antes de pasar a la siguiente.", "texto": "Cinco fases. Apruebas cada una antes de pasar a la siguiente." },
+            { "id": "dw.fase.1", "rol": "parrafo", "rotulo": "01 · Descubrimiento", "texto": "Conversamos sobre tu negocio y sobre a quién le tiene que hablar el sitio. Definimos la dirección de diseño con referentes concretos de tu rubro." },
+            { "id": "dw.fase.2", "rol": "parrafo", "rotulo": "02 · Diseño", "texto": "Te mostramos las páginas clave, la portada y una página tipo, antes de programar. Ajustamos hasta que el diseño te represente." },
+            { "id": "dw.fase.3", "rol": "parrafo", "rotulo": "03 · Desarrollo con IA", "texto": "Programamos el sitio con agentes de IA y lo revisamos a mano. Sigues cada avance en una dirección de prueba." },
+            { "id": "dw.fase.4", "rol": "parrafo", "rotulo": "04 · Pruebas y contenido", "texto": "Cargamos tu contenido final, lo probamos en celular y en computador, afinamos la velocidad y el SEO técnico, y hacemos las rondas de revisión de tu plan." },
+            { "id": "dw.fase.5", "rol": "parrafo", "rotulo": "05 · Lanzamiento", "texto": "Publicamos el sitio en tu dominio. Tienes 30 días de garantía para corregir errores de funcionamiento." }
+          ],
+          "borrado": [
+            "«QA y contenido» pasa a «Pruebas y contenido»: QA es jerga.",
+            "«con el agente de desarrollo de SpindleLab»: suena a un producto que el lector no conoce."
+          ]
+        },
+        {
+          "id": "preguntas",
+          "nombre": "Preguntas",
+          "trabajo": "Contestar las dudas reales antes de escribir.",
+          "elementos": [
+            { "id": "dw.faq.h2", "rol": "h2", "texto": "Preguntas sobre el desarrollo" },
+            { "id": "dw.faq.1.p", "rol": "h2", "nivel": 3, "texto": "¿Usan plantillas o WordPress?" },
+            { "id": "dw.faq.1.r", "rol": "parrafo", "texto": "No. Cada sitio se programa desde cero, sin temas comprados ni constructores de páginas. Así controlamos la velocidad y el SEO técnico desde la base." },
+            { "id": "dw.faq.2.p", "rol": "h2", "nivel": 3, "texto": "¿Cuánto cuesta?" },
+            { "id": "dw.faq.2.r", "rol": "parrafo", "texto": "Cada plan tiene un precio de partida: Página de Campaña desde $390.000 + IVA, Sitio Esencial desde $690.000 + IVA y Sitio Completo desde $1.190.000 + IVA. La Plataforma a Medida se cotiza tras una reunión. El valor final se cierra cuando conversamos tu proyecto, según las páginas y funciones que necesites.", "fuente": "desarrollo-web.astro FAQ (sin cambio)" },
+            { "id": "dw.faq.3.p", "rol": "h2", "nivel": 3, "texto": "¿Qué cambia que lo construyan con IA?" },
+            { "id": "dw.faq.3.r", "rol": "parrafo", "texto": "Los plazos. La IA acorta el trabajo de programar, no la revisión: una persona aprueba cada fase antes de pasar a la siguiente." },
+            { "id": "dw.faq.4.p", "rol": "h2", "nivel": 3, "texto": "¿El sitio incluye SEO?" },
+            { "id": "dw.faq.4.r", "rol": "parrafo", "texto": "Sí. El SEO técnico va en todos los planes y se piensa desde el diseño. Si además quieres trabajar cómo te nombran ChatGPT, Gemini y Perplexity, eso se profundiza en Visibilidad en IA." },
+            { "id": "dw.faq.5.p", "rol": "h2", "nivel": 3, "texto": "¿Qué necesitan de mí para partir?" },
+            { "id": "dw.faq.5.r", "rol": "parrafo", "texto": "El anticipo, los textos y las imágenes: el plazo de tu plan cuenta desde que nos llegan. Para publicar, acceso a tu dominio.", "fuente": "desarrollo-web.astro #planes, nota" }
+          ]
+        },
+        {
+          "id": "cierre",
+          "nombre": "Cierre",
+          "trabajo": "Una acción para cada caso: partir de cero o revisar el sitio que ya hay.",
+          "elementos": [
+            { "id": "dw.cierre.h2", "rol": "h2", "tinta": "Cuéntanos qué necesita tu sitio.", "gris": "Te respondemos en 24 horas.", "texto": "Cuéntanos qué necesita tu sitio. Te respondemos en 24 horas.", "fuente": "paginas-v3.json contacto" },
+            { "id": "dw.cierre.p", "rol": "parrafo", "texto": "Si partes de cero, conversamos tu proyecto. Si ya tienes sitio, empezamos con el mini-diagnóstico: una página con lo que está bien, lo que lo frena y qué haríamos primero, gratis." },
+            { "id": "dw.cierre.boton1", "rol": "boton", "texto": "Escribir a SpindleLab", "destino": "/v3/contacto/" },
+            { "id": "dw.cierre.boton2", "rol": "boton", "texto": "Revisar mi sitio gratis", "destino": "/v3/diagnostico/" },
+            { "id": "dw.siguiente", "rol": "boton", "rotulo": "Siguiente", "texto": "Visibilidad en IA →", "destino": "/v3/servicios/visibilidad-en-ia/" }
+          ]
+        }
+      ]
+    }
+  ],
+  "decision_hero": {
+    "recomendada": "hero-sitio",
+    "por_que": "Pendiente de la lectura fría.",
+    "lectura_fria": "lectura-fria.md"
+  },
+  "afirmaciones_por_verificar": [
+    { "texto": "54 → 94 de Verifica y Cumple (home y /trabajo/)", "estado": "Decide Ramón (encargo §10.3). Si no, va la alternativa de cada elemento." },
+    { "texto": "«Fuera de línea» en la ficha de Praxi y su párrafo final", "estado": "Decide Ramón (inventario-praxi §10.2). Medido el 16-oct: 402 DEPLOYMENT_DISABLED." },
+    { "texto": "«con agentes de IA» en los créditos de Praxi", "estado": "Decide Ramón (inventario-praxi §10.6)." },
+    { "texto": "La definición de «persona activada» de Praxi", "estado": "Está en el repo de Praxi (instrumentacion-medicion.md:97) pero no en inventario-praxi.md: Diego le pone fila o el párrafo sale." },
+    { "texto": "«Un panel para cambiar textos e imágenes tú mismo» en todos los planes de Desarrollo web", "estado": "Choca con los planes (el CMS solo figura en el Sitio Completo). Decide Ramón." },
+    { "texto": "805 kB → 95 kB de Combeau, con su nombre", "estado": "Medido el 16-oct. Se publica por la compuerta 1, punto 2 (dicho por Ramón, sin respaldo escrito en el repo)." },
+    { "texto": "Ingredientes de los cuatro conceptos en el índice", "estado": "Están en cada ficha (§6), sin fila en el inventario todavía. Hasta entonces, la línea dice solo «Concepto · 2026»." },
+    { "texto": "«la queja que más se repite» sobre las apps de entrenamiento (caso Praxi)", "estado": "Fuente: la investigación de Praxi del 3-ago, marcada [D] con citas de reseñas. Es un documento interno de Praxi: si Javiera pide fila en inventario-praxi.md, se le pide a Diego." }
+  ],
+  "pendientes": [
+    "Los rótulos de las secciones de caso no coinciden: Praxi lleva los del lock §21.5 (Problema · Hipótesis · Solución · La pieza · Sin métrica) y los cuatro conceptos de Bruno llevan los de Koto (Desafío · Estrategia · Identidad · Aplicación · Qué muestra). En el índice conviven: Lucía elige un solo juego y yo ajusto el que quede fuera.",
+    "La página de caso de concepto (vista 4, Sesenta) usa el texto de Bruno en 06-sesenta/caso.md: este archivo no lo reescribe. Su registro lo reviso en la pasada siguiente.",
+    "Si la vista 3 vuelve a ser Combeau (inventario-praxi §0.7), su caso no está escrito aquí: hay que escribirlo con inventario-casos §2.1 y §2.2."
+  ]
+}

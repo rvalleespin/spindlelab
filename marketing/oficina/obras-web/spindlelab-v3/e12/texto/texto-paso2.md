@@ -1,0 +1,514 @@
+# E12 · Paso 2 · El texto de las páginas de la compuerta 2
+
+**16-oct-2026, 19:50 (Chile) · escrito el 17-oct-2026 · Clara (copy de interfaz) con Renata (copy de venta)** · rama `claude/magical-franklin-ckfki2` · fuente: `texto-paso2.json` (este archivo sale de ahí con `herramientas/md.py`; no se edita a mano).
+
+**Estado:** Borrador para la compuerta 2. Pasado por la lectura fría (lectura-fria.md). Nada se publica: lo revisa Ramón.
+
+**Manda:** e12/brief-de-obra.md, sección «Compuerta 1» (los nueve puntos de Ramón del 16-oct); e12/encargo-paso-2.md; e12/lock-koto.md §2.8, §7, §11, §14, §20 y §21; e12/inventario-casos.md y e12/inventario-praxi.md (una etiqueta o un número sin fila no existe); e11/diagnostico-texto.md (el error a no repetir: dar por sabido al cliente); spindlelab-astro/src/data/oferta-v3.json y servicios-v3.json (nombres y precios, comparados como texto).
+
+## Cómo leer esto
+
+- Tuteo en todo el sitio. Castellano de Chile.
+- «tinta» + «gris» = una sola frase en dos tintas (Koto, lock §2.8 y §14: hasta 8 palabras en tinta, de 6 a 13 en gris, una vez por sección).
+- «condicion» marca un texto que espera una decisión. Si la decisión es «no», el elemento sale o se usa su «alternativa».
+- «fuente» dice de dónde sale el hecho. Lo que no tiene fuente no es un hecho: es redacción.
+- El texto es el mismo en la dirección A y en la B (criterio 14 del encargo). Lo que cambia es cómo se muestra.
+- Cada línea empieza con su rol entre comillas invertidas: `rotulo`, `h1`, `h2`, `entradilla`, `parrafo`, `boton`, `nota`, `ficha`, `cita`. *La parte en cursiva* es la continuación en gris.
+- `Fuente` dice de dónde sale el hecho; `Condición`, qué decisión espera.
+
+## La decisión del hero
+
+**Recomendada:** `hero-sitio`. Pendiente de la lectura fría.
+
+
+## /v3/ · home
+
+- `title` SpindleLab · Estudio de diseño y tecnología en Santiago
+- `description` Diseñamos y programamos sitios y herramientas a medida, y los dejamos listos para que Google y la IA entiendan a qué se dedica tu empresa. Precios publicados y un chequeo gratis para tu sitio.
+
+### Primera pantalla: la declaración y el chequeo como su prueba
+
+*Trabajo del bloque:* Decir qué es SpindleLab y qué hace, para quién, y que también hace SEO técnico y visibilidad en IA; y dejar el chequeo a mano para comprobarlo con el sitio propio. Compuerta 1, punto 1.
+
+
+#### Opción 1 · la frase de Ramón, textual
+
+- `h1` Diseñamos experiencias. *Programamos inteligencia.*
+- `entradilla` Un estudio de diseño y tecnología construyendo infraestructura digital a medida para líderes con visión.
+
+<sub>Va como la escribió Ramón, sin el «[ LAB_01 ]» del principio (brief §4: los corchetes solo van alrededor de un enlace a un índice) y en caja de oración (antislop A6: si va en mayúsculas, que lo haga la hoja de estilo). El resultado de la lectura fría está en «decision_hero».</sub>
+
+#### Opción 2 · Clara: quiénes somos y qué hacemos, como abre Koto
+
+- `h1` SpindleLab es un estudio de diseño y tecnología. *Diseñamos y programamos sitios y herramientas a medida para empresas.*
+- `entradilla` También hacemos SEO técnico y visibilidad en IA: que Google pueda leer tu sitio, y que ChatGPT y otros asistentes puedan nombrar a tu empresa cuando alguien les pregunta por tu rubro.
+
+<sub>El registro de Koto («We’re Koto / The Creative Company»): el nombre y lo que es, en una frase. Lo concreto va en gris.</sub>
+
+#### Opción 3 · Clara: lo que hacemos y lo que eso te deja
+
+- `rotulo` Estudio de diseño y tecnología
+- `h1` Diseñamos y programamos sitios a medida. *Y los dejamos listos para que Google y ChatGPT entiendan tu negocio.*
+- `entradilla` También apps y herramientas, como un coach de entrenamiento con IA. Y si tu sitio ya existe y no lo vas a rehacer, hacemos SEO técnico y visibilidad en IA: revisamos qué le impide a Google y a la IA leerlo, y lo arreglamos.
+
+<sub>Recomendada después de la lectura fría (ver «decision_hero»).</sub>
+
+#### Común a las tres opciones
+
+- `rotulo` Chequeo gratis
+- `parrafo` Escribe tu dominio y en segundos ves si los robots de ChatGPT, Claude y Perplexity pueden entrar a tu sitio y entender a qué te dedicas.  
+  <sub>Fuente: inventario-casos §2.4; e11/material.md §3</sub>
+- `rotulo · label` Tu dominio
+- `nota · placeholder` tuempresa.cl
+- `boton` Revisar mi sitio  
+  → `corre /api/chequeo en la misma pantalla (v3-chequeo.js; ids chq-* sin cambio)`
+- `nota · ayuda` 21 revisiones. Gratis, sin dejar tu correo, y no guardamos el dominio que escribes. Si construimos tu sitio, te lo pasamos antes de entregarlo.  
+  <sub>Fuente: chequeo.js (21 ítems); /v3/diagnostico/ («Gratis y sin dejar tu correo», FAQ «¿Guardan mi dominio?»); Desarrollo web, «Todo parte con esto»</sub>
+
+**Descartes del titular**
+
+- «Diseño y tecnología para empresas que quieren que las encuentren»: pasa el test de rubro, pero «que las encuentren» promete un resultado que nadie puede garantizar.
+- «Sitios que se ven bien y que la IA puede leer»: la mitad «se ven bien» lo dice cualquier agencia.
+- Volver al circuito («Estás pagando para que lleguen a tu sitio»): con el giro, la primera pantalla dice qué hacemos; el circuito exige contexto que no cabe arriba (E11, B.1).
+
+**Lo que se borró del texto anterior, y por qué**
+
+- «Chequeo de visibilidad en IA» como título del campo: el lector no sabe qué es (E11, fila 1). Queda «Chequeo gratis» y la frase que dice qué revisa.
+- «Ver cómo lo lee»: no decía quién lee. El botón dice lo que pasa al hacer clic.
+
+### Índice corto de trabajo
+
+*Trabajo del bloque:* Mostrar que lo de arriba ya existe, con cuatro piezas de tipos distintos, y llevar al índice.
+
+- `h2` Trabajo. *Lo que diseñamos y programamos, para clientes y para nosotros.*
+- `nota · referencia` Cuatro entradas del índice, con el mismo nombre, bajada y línea mono que en /trabajo/: Combeau, fotografía · Praxi · Verifica y Cumple · Sesenta (concepto). Ver «trabajo.entradas».
+- `boton` [ Todo el trabajo ] (10)  
+  → `/v3/trabajo/`  
+  <sub>Nota: El único corchete de la página (lock §14). El 10 es el conteo verdadero del índice: si cambia el número de entradas, cambia aquí.</sub>
+
+### La pieza y lo que la prueba (Craft y Logic)
+
+*Trabajo del bloque:* Cumplir lo que dice el posicionamiento: lo que construimos se puede medir. Una pieza al lado de un dato revisable, con fecha.
+
+- `h2` Cada pieza, con su prueba. *Al lado de lo que hicimos, un dato que puedes revisar, con su fecha.*
+- `h3` El sitio de Bernardo Combeau, fotógrafo de retrato.
+- `parrafo` Él sube la foto tal cual, con 805 kB. Quien entra a su sitio recibe la misma foto recortada a su pantalla, en 95 kB: pesa ocho veces menos.  
+  <sub>Fuente: inventario-casos §2.1 (Netlify Image CDN: 804.697 → 94.576 bytes, WebP a 828 px)</sub>
+- `ficha`   - **Medido:** 16-oct-2026  
+  ⚠ **Condición:** Medición de un sitio de cliente: la permite la compuerta 1, punto 2 («no se necesita más permiso», dicho por Ramón).
+- `h3` Praxi, una app de entrenamiento con un coach de IA.
+- `parrafo` La IA entiende lo que le escribes y conversa. Cuándo subir el peso lo calcula código, revisado por 384 pruebas automáticas. Pasaron todas.  
+  <sub>Fuente: inventario-praxi §0.1, §5 y §8.1 (384/384 en 35 archivos)</sub>
+- `ficha`   - **Medido:** 16-oct-2026
+- `h3` Verifica y Cumple, nuestro chequeo gratis de la ley de datos personales.  
+  ⚠ **Condición:** Decide Ramón en la compuerta 2 (encargo §10.3: mostrar los puntajes propios).
+- `parrafo` Su sitio sacaba 54 de 100 en el chequeo de esta página. Le publicamos la ficha que les dice a las máquinas qué es y quién responde, y el índice de sus páginas. Dos días después sacó 94.  
+  <sub>Fuente: inventario-casos §4.1 (14-oct 22:29Z → 16-oct 17:51Z, mismo instrumento, crudos guardados)</sub>  
+  ⚠ **Condición:** Decide Ramón (encargo §10.3).  
+  **Si la respuesta es no:** pieza: «El chequeo de esta página.»; dato: «21 revisiones que suman 100 puntos, con la metodología publicada para que cualquiera la revise.»
+- `ficha`   - **Medido:** 14 y 16-oct-2026  
+  ⚠ **Condición:** Igual que la fila.
+
+**Lo que se borró del texto anterior, y por qué**
+
+- La palabra «Logic» y «Craft»: son el nombre interno de la idea, en inglés. El lector ve «la pieza» y «su prueba».
+- «Datos estructurados», «llms.txt», «sitemap» en el dato de Verifica: van en palabras del dueño («la ficha que les dice a las máquinas qué es», «el índice de sus páginas»).
+
+### Servicios, Desarrollo web primero
+
+*Trabajo del bloque:* Que cada lector encuentre su caso por la situación en que está, con el precio a la vista, y que cada término técnico venga explicado la primera vez.
+
+- `h2` Servicios. *Lo que hacemos, cada uno con su precio publicado.*
+- `rotulo · situacion` Tu sitio te frena, o no existe.
+- `h3` Desarrollo web
+- `parrafo` Lo diseñamos y lo programamos a medida, sin plantilla. Queda listo para que Google y la IA entiendan a qué te dedicas, y antes de entregarlo le pasamos el chequeo gratis de esta página.
+- `nota · precio` Desde $390.000 + IVA  
+  <sub>Fuente: oferta-v3.json momentos[0].planes[0].p</sub>
+- `boton` Ver Desarrollo web  
+  → `/v3/servicios/desarrollo-web/`
+- `rotulo · situacion` Tu sitio existe y no lo vas a rehacer.
+- `h3` Visibilidad en IA
+- `parrafo` Cuando alguien le pregunta a ChatGPT, Gemini o Perplexity por tu rubro, la respuesta se arma con lo que esas herramientas leen de tu sitio y con lo que otros publican de ti. Trabajamos las dos cosas para que tu empresa pueda aparecer.  
+  <sub>Fuente: servicios-v3.json visibilidad-en-ia.lead; e11/material.md E17</sub>
+- `nota · escena` En septiembre revisamos el sitio de un estudio de abogados con más de 250 artículos. Google podía leerlos; los buscadores de ChatGPT, Claude y Perplexity recibían un error. Lo bloqueaba una regla de su proveedor que nadie en el estudio había decidido.  
+  <sub>Fuente: e11/material.md E1 (verificado el 9-sep; «más de 250» y sin nombre)</sub>
+- `nota · precio` Desde $400.000 + IVA  
+  <sub>Fuente: servicios-v3.json visibilidad-en-ia (Auditoría de Visibilidad)</sub>
+- `boton` Ver Visibilidad en IA  
+  → `/v3/servicios/visibilidad-en-ia/`
+- `rotulo · situacion` Quieres saber qué frena a tu sitio en Google.
+- `h3` Auditoría SEO técnica
+- `parrafo` El SEO técnico es lo que permite que Google encuentre tus páginas, las lea y las muestre. La auditoría revisa tu sitio completo y te dice qué falla y qué arreglar primero.
+- `nota · precio` Desde $490.000 + IVA  
+  <sub>Fuente: servicios-v3.json auditoria-seo-tecnica (Auditoría Completa)</sub>
+- `boton` Ver Auditoría SEO técnica  
+  → `/v3/servicios/auditoria-seo-tecnica/`
+- `rotulo · situacion` Ya giras y quieres sostenerlo.
+- `h3` Acompañamiento mensual
+- `parrafo` Una auditoría te dice qué hacer; este servicio lo hace, mes a mes, en SEO técnico, en visibilidad en IA o en las dos. Mínimo tres meses.  
+  <sub>Fuente: servicios-v3.json acompanamiento-mensual.lead y .linea</sub>
+- `nota · precio` Desde $590.000/mes + IVA  
+  <sub>Fuente: servicios-v3.json acompanamiento-mensual (Esencial)</sub>
+- `boton` Ver Acompañamiento mensual  
+  → `/v3/servicios/acompanamiento-mensual/`
+- `parrafo` También: Paid Media (Google), tus anuncios de búsqueda en Google, desde $350.000/mes + IVA, y Gestión de redes sociales en LinkedIn, Instagram y Facebook, desde $390.000/mes + IVA.  
+  enlaces: «Paid Media (Google)» → `/v3/servicios/paid-media/`, «Gestión de redes sociales» → `/v3/servicios/redes-sociales/`  
+  <sub>Fuente: oferta-v3.json tambien; servicios-v3.json paid-media y redes-sociales (planes[0].precio)</sub>  
+  <sub>Nota: Compuerta 1, punto 1: en la home, una línea.</sub>
+
+**Lo que se borró del texto anterior, y por qué**
+
+- «Desarrollo», «Visibilidad», «Continuidad», «Alcance» como palabras grandes: eran nombres internos (E11, fila 8). Manda la situación del lector, que era lo que funcionaba (E11, C.1.1).
+- «Rastreo, indexación, Core Web Vitals y datos estructurados»: se cambia por lo que eso le hace al negocio.
+- «Implementación continua e informes quincenales»: la cadencia de informes es R2, abierta. No se promete aquí.
+
+### Quién está detrás
+
+*Trabajo del bloque:* Contestar quién hace esto antes de que lo pregunten, sin inflar el tamaño.
+
+- `h2` Detrás de SpindleLab está Ramón Vallejos. *Diseña y programa con agentes de IA, y suma partners para lo que no hace.*  
+  <sub>Fuente: nosotros.astro:85 («con agentes de IA a mi lado y partners para lo que no hacemos en casa»)</sub>
+- `parrafo` Antes pasó más de cinco años en agencias: Universal McCann; Graphene IPG, con la cuenta de LATAM Airlines en cuatro países; Incrementa y Maggiore.  
+  <sub>Fuente: nosotros.astro:89-94 (CV cerrado, e11/material.md §5)</sub>
+- `parrafo` Los precios, el método y el chequeo están publicados, para que compares antes de escribirnos.
+- `boton` Conocer a Ramón  
+  → `/v3/nosotros/`
+
+<sub>Ramón va en tercera persona y el estudio en plural. Así no se cruzan «una persona» y «volvemos» en el mismo párrafo, que fue lo que notó el lector abogado en E11.</sub>
+
+### Contacto
+
+*Trabajo del bloque:* Decir qué pasa al escribir: qué recibes, en cuánto tiempo y si cuesta. Y separar el chequeo del mini-diagnóstico.
+
+- `h2` Escríbenos con la dirección de tu sitio. *En 24 horas te mandamos el mini-diagnóstico, gratis.*  
+  <sub>Fuente: paginas-v3.json contacto</sub>
+- `parrafo` Es una página con lo que está bien en tu sitio, lo que lo frena y qué haríamos primero. Lo hace una persona, que además le pregunta a ChatGPT, Gemini y Perplexity por tu rubro, cosa que el chequeo de arriba no hace.  
+  <sub>Fuente: paginas-v3.json contacto.lead; e11/material.md §3 («lo hace el mini-diagnóstico a mano»)</sub>
+- `parrafo` Si partes de cero, en el mismo plazo te escribimos para conversar tu proyecto.  
+  <sub>Fuente: paginas-v3.json contacto (bloque «Listo.»)</sub>
+- `boton` Escribir a SpindleLab  
+  → `/v3/contacto/`
+- `nota` O directo a hola@spindlelab.cl
+
+**Lo que se borró del texto anterior, y por qué**
+
+- «Hablemos de tu sitio.»: no decía qué se recibe ni en cuánto (E11, fila 17).
+
+## /v3/trabajo/ · trabajo
+
+- `title` Trabajo · SpindleLab
+- `description` Sitios, una app y herramientas que diseñamos y programamos, y cuatro marcas inventadas para rubros que atendemos. Cada entrada dice de quién es y qué se midió.
+
+### Título, bajada y filtro
+
+*Trabajo del bloque:* Decir qué hay y cómo leer el tipo de cada entrada, sobre todo qué es un concepto, antes de que el lector lo pregunte.
+
+- `h1` Trabajo. *Lo que diseñamos y programamos, y cómo lo resolveríamos en tu rubro.*
+- `entradilla` Cada entrada dice de quién es. Cliente es un encargo pagado. Propio lo hicimos para nosotros, sin encargo. Concepto es una marca inventada para mostrar cómo trabajaríamos un rubro: no existe, no tuvo clientes y no lleva cifras.
+- `rotulo` (10)  
+  <sub>Nota: Conteo verdadero de entradas; sale del dato, no se escribe a mano.</sub>
+- `rotulo · filtro` Todo (10) · Cliente (2) · Propio (4) · Concepto (4)  
+  <sub>Nota: El filtro filtra de verdad (encargo §2, vista 2). Los conteos salen del dato. Tres tipos y no cuatro: el lock §7 separaba «herramienta», pero Verifica y Cumple también es una herramienta gratis y la diferencia no se podía explicar en una línea. Si Lucía la quiere de vuelta, la entradilla suma una frase.</sub>
+- `rotulo · tabla (dirección B)` Nombre · Tipo · Año · Ingredientes · Resultado
+
+### Las entradas del índice
+
+*Las entradas van en el orden de «entradas»: una de cliente primero, y los conceptos intercalados para que no queden todos al final ni parezcan relleno. Es una propuesta: el orden lo fija Lucía en el tablero.*
+
+| # | Nombre | Bajada (gris) | Línea mono | Resultado (columna de B) |
+|---|---|---|---|---|
+| 1 | **Combeau, fotografía** | El sitio de un fotógrafo de retrato. Él sube sus series desde un panel, y el sitio las publica con cada foto ajustada a la pantalla de quien la mira. | Cliente · 2026 · Decap CMS · Netlify Image CDN | Sin métrica de negocio. Una foto que sube con 805 kB llega en 95 kB (16-oct-2026). |
+| 2 | **Praxi** | Una app de entrenamiento con un coach de IA que se acuerda de cada serie. El modelo conversa; cuándo subir el peso lo calcula el código. | Propio · 2026 · API de Anthropic · Lógica de entrenamiento en código | Sin métrica de uso. 384 de 384 pruebas automáticas en verde (16-oct-2026). |
+| 3 | **Sesenta** | Un estudio de abogados laborales que no existe, del lado del trabajador. Su portada cuenta los días hábiles que te quedan para demandar. | Concepto · 2026 | Sin métrica: es un concepto. |
+| 4 | **Verifica y Cumple** | Revisa gratis lo que la ley de datos personales le pide a cualquier sitio con formulario. Responde en segundos, y su revisión a fondo abre un navegador de verdad. | Propio · 2026 · Cloudflare Pages Functions · Cloudflare Browser Rendering | 54 → 94 en el chequeo de esta página, 14 y 16-oct-2026. ⚠ El 54 → 94 lo decide Ramón (encargo §10.3). Si no: «Sin métrica de uso: no guarda los dominios que revisa.» |
+| 5 | **Ocelo** | Una clínica de ojos que no existe, en Providencia. En vez de prometer que vas a dejar los lentes, te muestra el examen que dice si te puedes operar. | Concepto · 2026 | Sin métrica: es un concepto. |
+| 6 | **Combeau, modelo** | El mismo cliente, el otro oficio: su book de modelo, en inglés, que también se edita desde el panel. Los videos se descargan solo cuando alguien los abre. | Cliente · 2026 · Decap CMS · Video con carga diferida | Sin métrica de negocio. La página abre sin descargar ningún video (16-oct-2026). |
+| 7 | **Doceavo** | Un estudio contable que no existe, en Concepción. Su portada te dice cuándo vence tu próxima declaración mensual, y su logo cambia cada mes. | Concepto · 2026 | Sin métrica: es un concepto. |
+| 8 | **El chequeo de 21 señales** | Escribes un dominio y en segundos ves si ChatGPT, Claude y Perplexity pueden entrar y entender a qué se dedica. También avisa si el servidor los echa aunque tu configuración los deje pasar. | Propio · 2026 · Cloudflare Pages Functions · Prueba con robots de IA | 21 revisiones, 100 puntos. No guarda los dominios, así que no sabemos cuántas veces se ha usado. |
+| 9 | **Tonela** | Un proveedor de izaje que no existe, en Antofagasta: eslingas, cadenas y grilletes. Ordena su sitio con el color que la norma le da a cada capacidad de carga. | Concepto · 2026 | Sin métrica: es un concepto. |
+| 10 | **spindlelab.cl** | Este sitio. El chequeo de la portada corre en nuestro servidor, y Google Analytics y el píxel de Meta no cargan hasta que aceptas las cookies. | Propio · 2026 · Cloudflare Pages Functions · Analítica tras el aviso de cookies | En el chequeo de la ley de datos personales: 36 de 100 el 9-sep-2026 y 73 el 21-sep. El 23-sep cambió la forma de puntuar, y desde el 14-oct saca 100 sobre 14 de los 20 puntos de peso. |
+
+<sub>Fuentes por entrada: Combeau, fotografía: inventario-casos §2.1 (las dos etiquetas y su efecto: «él carga sus series solo», «805 kB → 95 kB») · Praxi: inventario-praxi §4 y §8.1 · Sesenta: marketing/portafolio/06-sesenta/ficha.md §4.1 y §6 · Verifica y Cumple: inventario-casos §2.3 y §4.1 · Ocelo: marketing/portafolio/05-ocelo/caso.md (Desafío, Estrategia) y ficha.md §6 · Combeau, modelo: inventario-casos §2.2 («0 kB de video en la carga inicial») · Doceavo: marketing/portafolio/07-doceavo/caso.md (Estrategia, Identidad) · El chequeo de 21 señales: inventario-casos §2.4 y §4.4 · Tonela: marketing/portafolio/04-tonela/caso.md (Desafío, Estrategia) · spindlelab.cl: inventario-casos §2.6 y §4.1 (36 y 73 son dichos, sin crudo; el 100, con crudo). Solo en Trabajo y con el aviso del cambio de regla (e9/brief-e9.md §3)</sub>
+
+<sub>Sesenta: Los ingredientes de los conceptos están en su ficha (§6) y todavía no tienen fila en el inventario: hasta que Diego la ponga, la línea dice solo «Concepto · 2026».</sub>
+
+**Lo que se borró del texto anterior, y por qué**
+
+- «en producción» (E11, fila 26): dice «publicado» o nada.
+- «Está dicho cuál es cuál en cada una»: contestaba una sospecha que el lector todavía no tenía. La entradilla dice qué es cada tipo.
+
+## /v3/trabajo/praxi/ · caso-praxi
+
+- `title` Praxi, una app de entrenamiento con un coach de IA · Trabajo · SpindleLab
+- `description` Diseñamos y programamos Praxi, una app de entrenamiento por chat. La IA entiende lo que le escribes y conversa; cuándo subir el peso lo calcula código con pruebas automáticas.
+- *Estructura:* La de Koto medida (lock §21.5): barra lateral pegajosa, medio principal, cinco secciones con su rótulo y sus filas de medios, y el cierre «Siguiente». Las secciones van con los rótulos de §21.5 (Problema · Hipótesis · Solución · La pieza · Sin métrica).
+
+### Barra lateral (a 390: el encabezado y la barra flotante)
+
+*Trabajo del bloque:* Nombrar el caso, decir qué tipo de trabajo es y llevar a cada sección.
+
+- `h1` Praxi *Se acuerda de cada serie*
+- `ficha` 
+  - **Tipo:** Propio
+  - **Año:** 2026
+  - **Qué es:** Sitio y app
+  - **Hecho:** 21-jul a 25-ago-2026
+  - **Estado:** Fuera de línea  
+  línea mono: «Propio · 2026 · Sitio y app»  
+  <sub>Fuente: inventario-praxi §2 y §9 (Ficha)</sub>
+- `rotulo · índice de secciones` Problema · Hipótesis · Solución · La pieza · Sin métrica
+- `rotulo` Quién lo hizo
+- `nota` Marca, sitio, app y campaña: Ramón Vallejos, con agentes de IA.  
+  <sub>Fuente: inventario-praxi §2 («Quién lo hizo»: los commits llevan Co-Authored-By: Claude)</sub>  
+  ⚠ **Condición:** Decide Ramón si el caso dice «con agentes de IA» (inventario-praxi §10.6). El sitio ya lo dice de su método («Construcción con IA, revisión humana en cada fase»).
+
+### Medio principal
+
+*Trabajo del bloque:* Mostrar la pieza entera, y decir sin letra chica qué es generado.
+
+- `nota · alt` Cinco escenas cortas de un hombre que entrena, come en casa, camina, está en una reunión y en una cena: el video del inicio del sitio de Praxi.
+- `nota · pie` El video del inicio de Praxi. Las personas están generadas con IA.  
+  <sub>Fuente: inventario-praxi §7 (Seedance 2.0, personaje PraxiChileno)</sub>
+
+### Problema
+
+*Trabajo del bloque:* Contar el problema en palabras de cualquiera, sin jerga de gimnasio.
+
+- `rotulo` Problema
+- `h2` Las apps de entrenamiento olvidan lo que hiciste.
+- `parrafo` Quien entrena con pesas se hace la misma pregunta cada semana: si subir el peso o no. La respuesta depende de lo que hizo las semanas anteriores, y en las reseñas de las apps de entrenamiento la queja que más se repite es que no se acuerdan.  
+  <sub>Fuente: Praxi, docs/2026-08-03-inteligencia-mercado-praxi.md §1.2 y §2.1 (marcado [D], con citas de reseñas)</sub>
+- `parrafo` Praxi partió vendiendo otra cosa: un coach que te explica el porqué de cada decisión. Eso ChatGPT ya lo hace gratis, y lo hace bien. Había que ofrecer algo que un chat general no puede hacer.  
+  <sub>Fuente: Praxi, inteligencia-mercado §1.1 (D'hoe et al., 2026); CLAUDE.md de Praxi, «Lo que se vende es la MEMORIA»</sub>
+
+### Hipótesis
+
+*Trabajo del bloque:* Decir qué se creyó y cómo se iba a saber si funcionaba.
+
+- `rotulo` Hipótesis
+- `h2` Vender la memoria, no la explicación.
+- `parrafo` Si Praxi se acuerda de cada serie, puede decirte cuándo subir el peso, y eso no lo hace un chat que no guarda lo que entrenaste. La portada pasó de «Entrena sabiendo por qué» a «Se acuerda de cada serie que hiciste», y las palabras técnicas del entrenamiento salieron de la portada, porque en Chile casi nadie las busca en Google.  
+  <sub>Fuente: inventario-praxi §2 (Claim) y §9 (Estrategia); CLAUDE.md de Praxi, «La jerga no va en la portada»</sub>
+- `parrafo` Para saber si funcionaba, se definió a una persona activada: alguien que vuelve a registrar, con su peso, un ejercicio que ya había registrado antes. Ese momento quedó medido en el servidor.  
+  <sub>Fuente: Praxi, docs/encargos/2026-08-05-instrumentacion-medicion.md §A.3 (línea 97); CLAUDE.md de Praxi, «Medición y publicidad», bloque A completo</sub>  
+  ⚠ **Condición:** Falta su fila en inventario-praxi.md (Diego). Si no entra, el párrafo sale y la sección queda con el primero.
+
+### Solución
+
+*Trabajo del bloque:* Explicar qué hace la IA y qué no, que es lo que el caso tiene de único, y cada ingrediente con lo que le hace a quien usa la app.
+
+- `rotulo` Solución
+- `h2` El modelo conversa. El código decide.
+- `parrafo` A Praxi le escribes como a una persona: «hoy hice press banca, tres series de 10 con 60 kilos». Un modelo de IA de Anthropic convierte esa frase en series guardadas. Está obligado a responder en un formato fijo y, si no está seguro de que le contaste un entrenamiento, no guarda nada.  
+  <sub>Fuente: inventario-praxi §5.1 (extract.ts, tool_choice forzado; «ante la duda, no se guarda nada» desde el 19-ago). La frase es la del ejemplo de la landing, no de una persona</sub>
+- `parrafo` Las decisiones que importan no las toma el modelo. Cuándo subir el peso, cuándo hacer una semana más liviana para recuperarte y qué serie cuenta los calcula código, revisado por pruebas automáticas: programas que comprueban, cada vez que algo cambia, que cada regla siga dando lo mismo. El peso sube solo después de dos sesiones confirmadas, nunca por una suelta. El modelo recibe esas cuentas hechas y te las explica.  
+  <sub>Fuente: inventario-praxi §5.3 y §4 (lib/domain/, signals.ts; 42 tests en esas piezas)</sub>
+- `parrafo` Con la salud pasa lo mismo. Si mencionas dolor, mareo o señales de un trastorno alimentario, el coach no diagnostica y te manda a un profesional, y esa regla también vive en el código. Tiene una razón: el 22 de agosto, probando con una cuenta de 16 años, el coach recomendó creatina aunque sus instrucciones se lo prohibían. Desde ese día, la edad se revisa en código y no se le deja al modelo.  
+  <sub>Fuente: inventario-praxi §4 y §5.5; Praxi, lib/coach/guardrailMenores.ts:6-21 (leído el 17-oct)</sub>
+- `parrafo` Se paga con tarjeta sin salir de la app y sin cuenta en Mercado Pago. El número de la tarjeta lo reciben los campos de Mercado Pago y nunca pasa por el servidor de Praxi.  
+  <sub>Fuente: inventario-praxi §4 (mp-card-form.tsx; CLAUDE.md de Praxi :144-164)</sub>
+- `rotulo` Ingredientes
+- `ficha` 
+  - **API de Anthropic, solo en el servidor:** Le escribes como a una persona y el registro queda guardado, sin formularios.
+  - **Lógica de entrenamiento en código:** El peso sube con dos sesiones confirmadas; la semana liviana llega por cansancio comprobado, no por calendario.
+  - **Reglas de salud y de edad en código:** Si mencionas dolor o mareo, el coach no diagnostica y te deriva. A un menor no le recomienda suplementos.
+  - **Supabase:** Cada persona ve y borra solo lo suyo, y sus exámenes se guardan en un espacio privado.
+  - **Mercado Pago, dentro de la app:** Pagas sin salir de Praxi, y la tarjeta no pasa por su servidor.
+  - **Resend:** Te llega por correo la fecha exacta del cobro, el monto y cómo cancelar.
+  - **Control de marca en cada publicación:** Un color fuera de la paleta no llega al sitio: la publicación se detiene.
+  - **Datos estructurados:** Google y los asistentes de IA pueden leer qué es Praxi, cuánto cuesta y qué responde.
+  - **Se instala en el teléfono:** Se abre a pantalla completa, como una app.  
+  <sub>Fuente: inventario-praxi §4 (la columna «Lo que le hace al usuario»; solo los que tienen efecto que contar)</sub>
+
+**Lo que se borró del texto anterior, y por qué**
+
+- Los nombres de los modelos (Sonnet 5, Haiku 4.5): queda «un modelo de IA de Anthropic» hasta que Ramón diga si se nombran (inventario-praxi §10.4).
+- RIR, deload, mesociclo: van como «qué serie cuenta», «una semana más liviana para recuperarte».
+- Next.js, Vercel, Tailwind, PWA como etiquetas: no tienen un efecto que contar al lector (inventario-praxi §4) y el brief §2 dice que un término sin lo que le hace al cliente no va. «PWA» queda como «Se instala en el teléfono».
+
+### La pieza
+
+*Trabajo del bloque:* Mostrar la marca, el sitio y la campaña, y rotular lo que es de ejemplo o generado junto a la imagen.
+
+- `rotulo` La pieza
+- `h2` Sitio, app y campaña, con una sola marca.
+- `parrafo` La marca de Praxi vive en dos archivos que el código hace cumplir: uno con los colores, la letra y las formas, y otro con cómo habla. Si alguien pone un color que no está ahí, el sitio no se publica. El color principal partió morado, el de casi cualquier demo de IA, y pasó al amarillo del punto del logo.  
+  <sub>Fuente: inventario-praxi §7 (brand.json, voice.json; el acento pasó de #8069F2 a #E2F349 el 26-jul) y §4 (design-check en prebuild, 8/8)</sub>
+- `parrafo` La portada la aprobó Ramón después de siete rondas de corrección. La campaña usa el mismo chat como pieza: un reel donde la conversación con el coach aparece sobre el video.  
+  <sub>Fuente: inventario-praxi §8.1 (dicho: bitacora-diseno.md:207-250) y §7 (reel «a memoria»)</sub>
+- `nota · pie` Datos de ejemplo de la portada de Praxi: no son de una persona.  
+  <sub>Dónde: Bajo las capturas de la conversación y de «Tu progreso, en números» (inventario-praxi §6)</sub>
+- `nota · pie` Las personas de las fotos y del video están generadas con IA. El texto encima es de la pieza.  
+  <sub>Dónde: Bajo el reel, el carrusel y la portada de Facebook</sub>
+- `nota` Faltan las pantallas de la app por dentro. Para verlas hace falta una cuenta y su base de datos, y no las vamos a armar con datos inventados.  
+  ⚠ **Condición:** Solo si Ramón no entrega las capturas de la app (inventario-praxi §10.1). Si las entrega, esta nota sale.
+
+### Sin métrica
+
+*Trabajo del bloque:* Cerrar con lo que se midió y lo que no, sin adornar.
+
+- `rotulo` Sin métrica
+- `h2` Lo medido es el oficio.
+- `parrafo` No tenemos un número de usuarios, de uso ni de ventas de Praxi que podamos publicar, así que no ponemos ninguno. El 16 de octubre de 2026, sobre la última versión, pasaron las 384 pruebas automáticas, el control de marca dio 8 de 8 y el sitio se armó sin errores.  
+  <sub>Fuente: inventario-praxi §0.4, §8.1 y crudo/verificacion-copia.txt</sub>
+- `parrafo` Hoy praxi.coach está fuera de línea, y por eso esta página no lo enlaza.  
+  <sub>Fuente: inventario-praxi §0.3 (402 DEPLOYMENT_DISABLED, 16-oct 22:56 UTC)</sub>  
+  ⚠ **Condición:** La misma decisión del campo «Estado» de la ficha.
+
+### Siguiente
+
+*Trabajo del bloque:* Llevar al próximo caso o a escribir, sin pie de página (Koto, lock §21.4).
+
+- `rotulo` Siguiente
+- `h2` Sesenta *El plazo antes que el juicio*  
+  <sub>Nota: Lleva el rótulo «Concepto» a la vista. La bajada es la de su caso (06-sesenta/caso.md).</sub>
+- `parrafo` Si quieres algo así para tu empresa, *escríbenos y te respondemos en 24 horas.*  
+  <sub>Fuente: paginas-v3.json contacto</sub>
+- `boton` Escribir a SpindleLab  
+  → `/v3/contacto/`
+- `boton` [ Todo el trabajo ] (10)  
+  → `/v3/trabajo/`
+
+## /v3/servicios/desarrollo-web/ · desarrollo-web
+
+- `title` Desarrollo web a medida · SpindleLab
+- `description` Diseñamos y programamos tu sitio a medida, listo para que Google y la IA entiendan a qué te dedicas. Cuatro planes, desde $390.000 + IVA.
+
+### Cabecera
+
+*Trabajo del bloque:* Decir qué es, para quién es y para quién no, con el precio de partida.
+
+- `rotulo · miga` Inicio · Servicios · Desarrollo web
+- `h1` Desarrollo web. *Diseñamos y programamos tu sitio, y lo dejamos listo para Google y la IA.*
+- `entradilla` Es para cuando no tienes sitio, o el que tienes hay que hacerlo de nuevo. Cuatro planes, desde $390.000 + IVA. Si tu sitio funciona y no lo vas a rehacer, te sirve más Visibilidad en IA.  
+  enlaces: «Visibilidad en IA» → `/v3/servicios/visibilidad-en-ia/`
+- `boton` Ver los planes  
+  → `#planes`
+- `boton` Escribir a SpindleLab  
+  → `/v3/contacto/`
+
+### Lo que va en todos los planes
+
+*Trabajo del bloque:* Decir qué se lleva el cliente, con cada término técnico explicado en la misma línea.
+
+- `h2` En todos los planes. *Lo que te llevas, partas por donde partas.*
+- `parrafo` Diseño propio, sin plantilla. Partimos de referentes de tu rubro, no de un tema comprado.  
+  <sub>Fuente: fases, 01 Descubrimiento; FAQ «¿Usan plantillas o WordPress?»</sub>
+- `parrafo` Código propio, sin WordPress ni constructores de páginas. Así controlamos cuánto pesa cada página y qué tan rápido carga.  
+  <sub>Fuente: desarrollo-web.astro, «Código propio y diseño a medida, con control total del rendimiento»</sub>
+- `parrafo` Listo para que Google y la IA te lean. El sitio lleva una ficha escondida en el código que les dice qué negocio eres, dónde estás y quién responde, y sus páginas quedan listas para que Google las guarde y las muestre.  
+  <sub>Fuente: desarrollo-web.astro, «Legible para motores de IA: datos estructurados, contenido citable e indexación»</sub>
+- `parrafo` El chequeo gratis de la portada, pasado sobre tu sitio antes de entregarlo. Te dejamos el puntaje por escrito y, si tenías otro sitio, también el de antes.  
+  enlaces: «chequeo» → `/v3/diagnostico/`  
+  <sub>Fuente: desarrollo-web.astro (decidido en E8); promesa de proceso, e11/material.md §5</sub>
+- `parrafo` Un panel para cambiar textos e imágenes tú mismo, sin pedírselo a nadie.  
+  <sub>Fuente: desarrollo-web.astro, «Todo parte con esto»</sub>  
+  ⚠ **Condición:** Choca con los planes: «Blog o CMS que administras tú» solo aparece en el Sitio Completo (oferta-v3.json), aunque Bernardo tiene panel con el Esencial. Decide Ramón si va en todos los planes o pasa al Sitio Completo.
+- `parrafo` Lo construimos con agentes de IA, y una persona revisa cada fase antes de avanzar.  
+  <sub>Fuente: desarrollo-web.astro, «Construcción con IA, revisión humana en cada fase antes de avanzar»</sub>
+- `parrafo` Dominio, certificado de seguridad (el candado junto a la dirección), medición de visitas y 30 días de garantía después de publicar.  
+  <sub>Fuente: desarrollo-web.astro, «Dominio, SSL, analítica y 30 días de garantía post-lanzamiento»</sub>
+
+**Lo que se borró del texto anterior, y por qué**
+
+- «Todo parte con esto» como título: no decía qué es «esto».
+- «Legible para motores de IA: datos estructurados, contenido citable e indexación»: tres términos sin explicar en una línea.
+
+### Sitios que construimos
+
+*Trabajo del bloque:* Mostrar obra al lado del precio, con el tipo de cada pieza dicho.
+
+- `h2` Lo que construimos. *Para clientes, para nosotros y como concepto, con lo que se midió.*
+- `nota · referencia` Tres entradas del índice, con su nombre, bajada y línea mono: Combeau, fotografía · Praxi · Sesenta (concepto). Ver «trabajo.entradas».
+- `boton` Ver todo el trabajo  
+  → `/v3/trabajo/`
+
+### Planes
+
+*Trabajo del bloque:* Los cuatro planes tal como están en oferta-v3.json, y lo que quiere decir cada término de esa lista.
+
+- `h2` Elige por dónde partir. *Cuatro planes, cada uno con su precio de partida.*
+- `nota · planes` Los cuatro planes van tal cual en oferta-v3.json momentos[0].planes: nombre, precio, línea y puntos, sin cambiar una palabra. Página de Campaña · Desde $390.000 + IVA · Sitio Esencial · Desde $690.000 + IVA · Sitio Completo · Desde $1.190.000 + IVA · Plataforma a Medida · Se cotiza.  
+  <sub>Fuente: oferta-v3.json</sub>
+- `nota` Valores en pesos, + IVA. El valor final se cierra cuando conversamos tu proyecto. Cada plazo cuenta desde que nos llegan el anticipo, los textos y las imágenes. Para publicar necesitamos acceso a tu dominio.  
+  <sub>Fuente: desarrollo-web.astro #planes (sin cambio)</sub>
+- `rotulo` Qué quiere decir
+- `nota · glosario` 
+  - SEO técnico: lo que permite que Google encuentre tus páginas, las lea y las muestre.
+  - Schema: la ficha escondida en el código que le dice a Google y a la IA qué negocio eres.
+  - Indexación: que Google guarde tus páginas para poder mostrarlas cuando alguien busca.
+  - Velocidad: cuánto demora tu sitio en aparecer, sobre todo en el celular.
+  - Puesta a punto AEO/GEO: dejar el sitio listo para que ChatGPT y otros asistentes de IA lo lean y puedan nombrarte en sus respuestas.
+  - CMS: el panel donde cambias textos, fotos o artículos sin tocar el código.
+  - Integraciones: conectar el sitio con otros sistemas, como tu CRM (donde registras a tus clientes), tus reservas o tus pagos.  
+  <sub>Nota: Explica los términos de los puntos de cada plan, que no se tocan porque son la oferta.</sub>
+
+### Cinco fases
+
+*Trabajo del bloque:* Bajar el miedo a no saber qué pasa después de pagar.
+
+- `h2` Cinco fases. *Apruebas cada una antes de pasar a la siguiente.*
+- `parrafo` **01 · Descubrimiento** · Conversamos sobre tu negocio y sobre a quién le tiene que hablar el sitio. Definimos la dirección de diseño con referentes concretos de tu rubro.
+- `parrafo` **02 · Diseño** · Te mostramos las páginas clave, la portada y una página tipo, antes de programar. Ajustamos hasta que el diseño te represente.
+- `parrafo` **03 · Desarrollo con IA** · Programamos el sitio con agentes de IA y lo revisamos a mano. Sigues cada avance en una dirección de prueba.
+- `parrafo` **04 · Pruebas y contenido** · Cargamos tu contenido final, lo probamos en celular y en computador, afinamos la velocidad y el SEO técnico, y hacemos las rondas de revisión de tu plan.
+- `parrafo` **05 · Lanzamiento** · Publicamos el sitio en tu dominio. Tienes 30 días de garantía para corregir errores de funcionamiento.
+
+**Lo que se borró del texto anterior, y por qué**
+
+- «QA y contenido» pasa a «Pruebas y contenido»: QA es jerga.
+- «con el agente de desarrollo de SpindleLab»: suena a un producto que el lector no conoce.
+
+### Preguntas
+
+*Trabajo del bloque:* Contestar las dudas reales antes de escribir.
+
+- `h2` Preguntas sobre el desarrollo
+- `h3` ¿Usan plantillas o WordPress?
+- `parrafo` No. Cada sitio se programa desde cero, sin temas comprados ni constructores de páginas. Así controlamos la velocidad y el SEO técnico desde la base.
+- `h3` ¿Cuánto cuesta?
+- `parrafo` Cada plan tiene un precio de partida: Página de Campaña desde $390.000 + IVA, Sitio Esencial desde $690.000 + IVA y Sitio Completo desde $1.190.000 + IVA. La Plataforma a Medida se cotiza tras una reunión. El valor final se cierra cuando conversamos tu proyecto, según las páginas y funciones que necesites.  
+  <sub>Fuente: desarrollo-web.astro FAQ (sin cambio)</sub>
+- `h3` ¿Qué cambia que lo construyan con IA?
+- `parrafo` Los plazos. La IA acorta el trabajo de programar, no la revisión: una persona aprueba cada fase antes de pasar a la siguiente.
+- `h3` ¿El sitio incluye SEO?
+- `parrafo` Sí. El SEO técnico va en todos los planes y se piensa desde el diseño. Si además quieres trabajar cómo te nombran ChatGPT, Gemini y Perplexity, eso se profundiza en Visibilidad en IA.
+- `h3` ¿Qué necesitan de mí para partir?
+- `parrafo` El anticipo, los textos y las imágenes: el plazo de tu plan cuenta desde que nos llegan. Para publicar, acceso a tu dominio.  
+  <sub>Fuente: desarrollo-web.astro #planes, nota</sub>
+
+### Cierre
+
+*Trabajo del bloque:* Una acción para cada caso: partir de cero o revisar el sitio que ya hay.
+
+- `h2` Cuéntanos qué necesita tu sitio. *Te respondemos en 24 horas.*  
+  <sub>Fuente: paginas-v3.json contacto</sub>
+- `parrafo` Si partes de cero, conversamos tu proyecto. Si ya tienes sitio, empezamos con el mini-diagnóstico: una página con lo que está bien, lo que lo frena y qué haríamos primero, gratis.
+- `boton` Escribir a SpindleLab  
+  → `/v3/contacto/`
+- `boton` Revisar mi sitio gratis  
+  → `/v3/diagnostico/`
+- `boton` **Siguiente** · Visibilidad en IA →  
+  → `/v3/servicios/visibilidad-en-ia/`
+
+## Afirmaciones por verificar antes de publicar
+
+- **54 → 94 de Verifica y Cumple (home y /trabajo/).** Decide Ramón (encargo §10.3). Si no, va la alternativa de cada elemento.
+- **«Fuera de línea» en la ficha de Praxi y su párrafo final.** Decide Ramón (inventario-praxi §10.2). Medido el 16-oct: 402 DEPLOYMENT_DISABLED.
+- **«con agentes de IA» en los créditos de Praxi.** Decide Ramón (inventario-praxi §10.6).
+- **La definición de «persona activada» de Praxi.** Está en el repo de Praxi (instrumentacion-medicion.md:97) pero no en inventario-praxi.md: Diego le pone fila o el párrafo sale.
+- **«Un panel para cambiar textos e imágenes tú mismo» en todos los planes de Desarrollo web.** Choca con los planes (el CMS solo figura en el Sitio Completo). Decide Ramón.
+- **805 kB → 95 kB de Combeau, con su nombre.** Medido el 16-oct. Se publica por la compuerta 1, punto 2 (dicho por Ramón, sin respaldo escrito en el repo).
+- **Ingredientes de los cuatro conceptos en el índice.** Están en cada ficha (§6), sin fila en el inventario todavía. Hasta entonces, la línea dice solo «Concepto · 2026».
+- **«la queja que más se repite» sobre las apps de entrenamiento (caso Praxi).** Fuente: la investigación de Praxi del 3-ago, marcada [D] con citas de reseñas. Es un documento interno de Praxi: si Javiera pide fila en inventario-praxi.md, se le pide a Diego.
+
+## Pendientes que no son míos
+
+- Los rótulos de las secciones de caso no coinciden: Praxi lleva los del lock §21.5 (Problema · Hipótesis · Solución · La pieza · Sin métrica) y los cuatro conceptos de Bruno llevan los de Koto (Desafío · Estrategia · Identidad · Aplicación · Qué muestra). En el índice conviven: Lucía elige un solo juego y yo ajusto el que quede fuera.
+- La página de caso de concepto (vista 4, Sesenta) usa el texto de Bruno en 06-sesenta/caso.md: este archivo no lo reescribe. Su registro lo reviso en la pasada siguiente.
+- Si la vista 3 vuelve a ser Combeau (inventario-praxi §0.7), su caso no está escrito aquí: hay que escribirlo con inventario-casos §2.1 y §2.2.
+
+## Historial de correcciones
+
+| Fecha | Corrección | Origen |
+|---|---|---|
