@@ -1,0 +1,909 @@
+{
+ "fecha": "2026-10-17T06:01:58.296Z",
+ "paginas": {
+  "home": {
+   "title": "SpindleLab · Estudio de diseño y tecnología en Santiago",
+   "description": "Diseñamos y programamos sitios y herramientas a medida, y los dejamos listos para que Google y la IA puedan leerlos. Precios publicados y un chequeo gratis para tu sitio.",
+   "faltan": {
+    "a": [
+     {
+      "id": "home.obra.entradas",
+      "parte": "texto",
+      "texto": "Cuatro entradas del índice, con el mismo nombre y bajada que en /trabajo/, y en la línea mono solo tipo · año (sin herramientas): Combeau, fotografía · Praxi · ",
+      "condicion": false,
+      "alternativa": false
+     }
+    ],
+    "b": [
+     {
+      "id": "home.obra.entradas",
+      "parte": "texto",
+      "texto": "Cuatro entradas del índice, con el mismo nombre y bajada que en /trabajo/, y en la línea mono solo tipo · año (sin herramientas): Combeau, fotografía · Praxi · ",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "home.prueba.vyc.pieza",
+      "parte": "texto",
+      "texto": "Verifica y Cumple, nuestro chequeo gratis de la ley de datos personales.",
+      "condicion": true,
+      "alternativa": false
+     },
+     {
+      "id": "home.prueba.vyc.dato",
+      "parte": "texto",
+      "texto": "Su sitio sacaba 54 de 100 en el chequeo gratis de esta página. Le agregamos lo que le faltaba, como un bloque de datos que el visitante no ve, pero que Google y",
+      "condicion": true,
+      "alternativa": true
+     },
+     {
+      "id": "home.prueba.vyc.ficha",
+      "parte": "valor",
+      "texto": "14 y 16-oct-2026",
+      "condicion": true,
+      "alternativa": false
+     }
+    ]
+   },
+   "total": 66
+  },
+  "trabajo": {
+   "title": "Trabajo · SpindleLab",
+   "description": "Sitios, una app y herramientas que diseñamos y programamos, y cuatro marcas inventadas para rubros que atendemos. Cada entrada dice de quién es y qué se midió.",
+   "faltan": {
+    "a": [
+     {
+      "id": "entrada.combeau-fotografia",
+      "parte": "resultado",
+      "texto": "Sin métrica de negocio. Una foto que sube con 805 kB llega en 95 kB (16-oct-2026)."
+     },
+     {
+      "id": "entrada.praxi",
+      "parte": "resultado",
+      "texto": "Sin métrica de uso. 384 de 384 pruebas automáticas en verde (16-oct-2026)."
+     },
+     {
+      "id": "entrada.sesenta",
+      "parte": "resultado",
+      "texto": "Sin métrica: es un concepto."
+     },
+     {
+      "id": "entrada.verifica-y-cumple",
+      "parte": "resultado",
+      "texto": "54 → 94 en nuestro chequeo de visibilidad en IA, 14 y 16-oct-2026."
+     },
+     {
+      "id": "entrada.ocelo",
+      "parte": "resultado",
+      "texto": "Sin métrica: es un concepto."
+     },
+     {
+      "id": "entrada.combeau-modelo",
+      "parte": "resultado",
+      "texto": "Sin métrica de negocio. La página abre sin descargar ningún video (16-oct-2026)."
+     },
+     {
+      "id": "entrada.doceavo",
+      "parte": "resultado",
+      "texto": "Sin métrica: es un concepto."
+     },
+     {
+      "id": "entrada.chequeo",
+      "parte": "resultado",
+      "texto": "21 revisiones, 100 puntos. No guarda los dominios, así que no sabemos cuántas veces se ha usado."
+     },
+     {
+      "id": "entrada.tonela",
+      "parte": "resultado",
+      "texto": "Sin métrica: es un concepto."
+     },
+     {
+      "id": "entrada.spindlelab",
+      "parte": "resultado",
+      "texto": "En el chequeo de la ley de datos personales sacó 36 de 100 el 9-sep-2026; lo arreglamos y el 21-sep sacó 73. Después cambiamos cómo puntúa ese chequeo, así que "
+     }
+    ],
+    "b": [
+     {
+      "id": "entrada.praxi",
+      "parte": "linea",
+      "texto": "Propio · 2026 · API de Anthropic · Lógica de entrenamiento en código"
+     },
+     {
+      "id": "entrada.praxi",
+      "parte": "linea_corta",
+      "texto": "Propio · 2026"
+     },
+     {
+      "id": "entrada.sesenta",
+      "parte": "linea",
+      "texto": "Concepto · 2026"
+     },
+     {
+      "id": "entrada.sesenta",
+      "parte": "linea_corta",
+      "texto": "Concepto · 2026"
+     },
+     {
+      "id": "entrada.verifica-y-cumple",
+      "parte": "linea",
+      "texto": "Propio · 2026 · Cloudflare Pages Functions"
+     },
+     {
+      "id": "entrada.verifica-y-cumple",
+      "parte": "linea_corta",
+      "texto": "Propio · 2026"
+     },
+     {
+      "id": "entrada.verifica-y-cumple",
+      "parte": "resultado",
+      "texto": "54 → 94 en nuestro chequeo de visibilidad en IA, 14 y 16-oct-2026."
+     },
+     {
+      "id": "entrada.ocelo",
+      "parte": "linea",
+      "texto": "Concepto · 2026"
+     },
+     {
+      "id": "entrada.ocelo",
+      "parte": "linea_corta",
+      "texto": "Concepto · 2026"
+     },
+     {
+      "id": "entrada.combeau-modelo",
+      "parte": "linea",
+      "texto": "Cliente · 2026 · Decap CMS · Video con carga diferida"
+     },
+     {
+      "id": "entrada.doceavo",
+      "parte": "linea",
+      "texto": "Concepto · 2026"
+     },
+     {
+      "id": "entrada.doceavo",
+      "parte": "linea_corta",
+      "texto": "Concepto · 2026"
+     },
+     {
+      "id": "entrada.chequeo",
+      "parte": "linea",
+      "texto": "Propio · 2026 · Cloudflare Pages Functions · Prueba con robots de IA"
+     },
+     {
+      "id": "entrada.chequeo",
+      "parte": "linea_corta",
+      "texto": "Propio · 2026"
+     },
+     {
+      "id": "entrada.tonela",
+      "parte": "linea",
+      "texto": "Concepto · 2026"
+     },
+     {
+      "id": "entrada.tonela",
+      "parte": "linea_corta",
+      "texto": "Concepto · 2026"
+     },
+     {
+      "id": "entrada.spindlelab",
+      "parte": "linea",
+      "texto": "Propio · 2026 · Cloudflare Pages Functions · Analítica tras el aviso de cookies"
+     },
+     {
+      "id": "entrada.spindlelab",
+      "parte": "linea_corta",
+      "texto": "Propio · 2026"
+     }
+    ]
+   },
+   "total": 55
+  },
+  "caso-praxi": {
+   "title": "Praxi, una app de entrenamiento con un coach de IA · Trabajo · SpindleLab",
+   "description": "Diseñamos y programamos Praxi, una app de entrenamiento por chat. La IA entiende lo que le escribes y conversa; cuándo subir el peso lo calcula código con pruebas automáticas.",
+   "faltan": {
+    "a": [
+     {
+      "id": "praxi.ficha",
+      "parte": "rotulo",
+      "texto": "Tipo",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.ficha",
+      "parte": "rotulo",
+      "texto": "Año",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.ficha",
+      "parte": "rotulo",
+      "texto": "Qué es",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.hipotesis.p2",
+      "parte": "texto",
+      "texto": "Para saber si funcionaba, se fijó una señal: que alguien volviera a anotar, con su peso, un ejercicio que ya había anotado antes. Esa señal quedó medida en el s",
+      "condicion": true,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "Le escribes como a una persona y queda registrado, sin formularios. (API de Anthropic, solo en el servidor)",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "El peso sube con dos sesiones confirmadas, y la semana liviana llega por cansancio comprobado, no por calendario. (Lógica de entrenamiento en código)",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "Si mencionas dolor o mareo, el coach no diagnostica y te deriva; a un menor no le recomienda suplementos. (Reglas de salud y de edad en código)",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "Cada persona ve y borra solo lo suyo, y sus exámenes se guardan en un espacio privado. (Supabase)",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "Pagas sin salir de Praxi, y la tarjeta no pasa por su servidor. (Mercado Pago, dentro de la app)",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "Te llega por correo la fecha exacta del cobro, el monto y cómo cancelar. (Resend)",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "Un color fuera de la paleta de la marca no llega al sitio: la publicación se detiene. (Revisión de marca en cada publicación)",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "Google y los asistentes de IA pueden leer qué es Praxi, cuánto cuesta y qué responde. (Datos estructurados)",
+      "condicion": false,
+      "alternativa": false
+     }
+    ],
+    "b": [
+     {
+      "id": "praxi.hipotesis.p2",
+      "parte": "texto",
+      "texto": "Para saber si funcionaba, se fijó una señal: que alguien volviera a anotar, con su peso, un ejercicio que ya había anotado antes. Esa señal quedó medida en el s",
+      "condicion": true,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "Le escribes como a una persona y queda registrado, sin formularios. (API de Anthropic, solo en el servidor)",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "El peso sube con dos sesiones confirmadas, y la semana liviana llega por cansancio comprobado, no por calendario. (Lógica de entrenamiento en código)",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "Si mencionas dolor o mareo, el coach no diagnostica y te deriva; a un menor no le recomienda suplementos. (Reglas de salud y de edad en código)",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "Cada persona ve y borra solo lo suyo, y sus exámenes se guardan en un espacio privado. (Supabase)",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "Pagas sin salir de Praxi, y la tarjeta no pasa por su servidor. (Mercado Pago, dentro de la app)",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "Te llega por correo la fecha exacta del cobro, el monto y cómo cancelar. (Resend)",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "Un color fuera de la paleta de la marca no llega al sitio: la publicación se detiene. (Revisión de marca en cada publicación)",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "praxi.solucion.ingredientes",
+      "parte": "item",
+      "texto": "Google y los asistentes de IA pueden leer qué es Praxi, cuánto cuesta y qué responde. (Datos estructurados)",
+      "condicion": false,
+      "alternativa": false
+     }
+    ]
+   },
+   "total": 60
+  },
+  "desarrollo-web": {
+   "title": "Desarrollo web a medida · SpindleLab",
+   "description": "Diseñamos y programamos tu sitio a medida, listo para que Google y la IA puedan leerlo. Cuatro planes, desde $390.000 + IVA.",
+   "faltan": {
+    "a": [
+     {
+      "id": "dw.obra.entradas",
+      "parte": "texto",
+      "texto": "Tres entradas del índice, con su nombre, bajada y línea mono: Combeau, fotografía · Praxi · Sesenta (concepto). Ver «trabajo.entradas».",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "dw.planes.lista",
+      "parte": "texto",
+      "texto": "Los cuatro planes van tal cual en oferta-v3.json momentos[0].planes: nombre, precio, línea y puntos, sin cambiar una palabra. Página de Campaña · Desde $390.000",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "dw.siguiente",
+      "parte": "texto",
+      "texto": "Visibilidad en IA →",
+      "condicion": false,
+      "alternativa": false
+     }
+    ],
+    "b": [
+     {
+      "id": "dw.obra.entradas",
+      "parte": "texto",
+      "texto": "Tres entradas del índice, con su nombre, bajada y línea mono: Combeau, fotografía · Praxi · Sesenta (concepto). Ver «trabajo.entradas».",
+      "condicion": false,
+      "alternativa": false
+     },
+     {
+      "id": "dw.planes.lista",
+      "parte": "texto",
+      "texto": "Los cuatro planes van tal cual en oferta-v3.json momentos[0].planes: nombre, precio, línea y puntos, sin cambiar una palabra. Página de Campaña · Desde $390.000",
+      "condicion": false,
+      "alternativa": false
+     }
+    ]
+   },
+   "total": 59
+  }
+ },
+ "sesenta": {
+  "lineas": 77,
+  "faltan": {
+   "a": [
+    "Pieza de concepto del portafolio E12, la de la vista 4. Estructura de caso de Koto (lock e12/lock-koto.md §21):",
+    "ficha lateral, medio principal, secciones con sus filas de medios en las cuatro formas de Koto y el cierre sin",
+    "métrica. Escrito por Bruno el 17-oct-2026 con los hechos de ficha.md §4; Clara le pasa el registro antes de que",
+    "entre a /trabajo/ y Ramón lo revisa. Nada de esto se publica en este paso.",
+    "Medio principal: movimiento/recorrido.mp4 (16:9, 10 s, H.264; también recorrido.webm; póster",
+    "movimiento/poster.jpg) a 1440; a 390, identidad/portadas/sesenta-4x5.png (4:5, el 60 cortado por el marco con",
+    "(Sin filas: el desafío va en texto, como la introducción de Koto.)*",
+    "El pliego completo, con el porqué de cada parte, está en identidad/pliego.png (1920 × 1080).",
+    "Cierre: «Siguiente», con el próximo caso del índice (lo arma la vista 2; no es parte de esta pieza).",
+    "Lo que subiría de nivel con fotografía (no se generó nada)",
+    "Donde haría falta foto, la pieza la resuelve con lo que da el oficio: el 60 tipográfico, los documentos compuestos en",
+    "HTML (la carta, el finiquito, la hoja, la tarjeta) con sus datos tachados, el timbre y la sarga del lienzo. Ninguna",
+    "Lo que la subiría, si Ramón lo aprueba (plan §9 y §11):",
+    "1. Una mesa vista desde arriba con un sobre, un finiquito sin firmar y un lápiz pasta azul, sin personas, 16:9.",
+    "Nuestros documentos se componen encima en HTML; si en el render no se ven verdaderos, van en su placa y la foto",
+    "queda sola. Entraría en Aplicación, como fila 9 en lugar de la hoja y la tarjeta.",
+    "2. Una chaqueta de trabajo azul colgada en el respaldo de una silla, 4:5. Le daría a la identidad el objeto del",
+    "que sale el color; entraría en Identidad, en el par de la fila 3.",
+    "Costo estimado del plan: unos 10 créditos de Higgsfield (2 fotos, 2 variantes cada una, con margen). La cuenta",
+    "está en 0 créditos y sin recargas sueltas, así que el costo real es un mes del plan PLUS, USD 49, que alcanza para",
+    "las cuatro piezas (unos 75 créditos en total). Cada foto generada se diría generada en el caso. Decide Ramón en la",
+    "Cuenta de filas y de color (para Javiera)",
+    "12 filas con el medio principal, 19 medios. Koto, caso más corto: 11 filas y 15 medios. Ninguna fila partida",
+    "sigue a otra partida (orden: 16:9, 16:9, par, 16:9, partida, 16:9, par, 16:9, partida, 16:9, 16:9, 16:9).",
+    "Campos claros y de color (un medio cuyo color dominante cubre el 30 % o más, lock §20.1): el recorrido, la paleta,",
+    "la Courier, la home a 1440, el par a 390, la hoja, el lector a 390, el lector a 1440 y la interior a 1440. Son cerca",
+    "del 50 % del área de medios y, con los medios en torno al 60 % de la página como en Koto, cerca del 30 % de la",
+    "página, dentro del 10 a 35 % del lock §20.3. Es una estimación con las áreas de cada forma; la medición final la",
+    "hace la vista 2 con la página armada. Si pasa de 35, el primer cambio es sacar medios/interior-1440.png y dejar la",
+    "Seguidos: el tramo más largo de campos es de tres (home a 1440, el par a 390), cortado por el finiquito sobre",
+    "tinta; el segundo, también de tres (lector a 390, lector a 1440, interior a 1440), lo corta la sección de texto de",
+    "«Concepto» en cada medio: el sello fijo de la cabecera del sitio sale en todas las capturas y en cada cuadro del",
+    "recorrido; las placas y las portadas llevan la etiqueta de papel en la esquina; el pliego, arriba a la derecha.",
+    "python3 -I _herramientas/logo.py # logo en trazados",
+    "python3 -m http.server 8746 --bind 127.0.0.1 --directory sitio &",
+    "node _herramientas/identidad.mjs # pliego, placas, portadas",
+    "node _herramientas/capturar.mjs http://127.0.0.1:8746 # capturas + contraste, desborde, JSON-LD",
+    "node _herramientas/comprobar.mjs http://127.0.0.1:8746 # 360/390/768/1440, foco, movimiento reducido, letras",
+    "node _herramientas/medios.mjs http://127.0.0.1:8746 # medios del caso",
+    "node movimiento/recorrido.mjs http://127.0.0.1:8746 /tmp/cuadros",
+    "ffmpeg -framerate 30 -i /tmp/cuadros/c%04d.png -c:v libx264 -preset slow -crf 17 -pix_fmt yuv420p -movflags +faststart movimiento/recorrido.mp4",
+    "ffmpeg -framerate 30 -i /tmp/cuadros/c%04d.png -c:v libvpx-vp9 -b:v 0 -crf 30 -row-mt 1 -pix_fmt yuv420p movimiento/recorrido.webm",
+    "ffmpeg -i /tmp/cuadros/c0225.png -q:v 3 movimiento/poster.jpg",
+    "El recorrido se graba cuadro a cuadro y no con recordVideo de Playwright (que pedía el encargo): recordVideo",
+    "graba VP8 a unos 0,9 Mbit/s y queda blando para un medio de 1057 px (plan §5.5). Cuadro a cuadro, con el reloj de la",
+    "página detenido en cada cuadro, sale nítido e idéntico cada vez. Tiene scroll, un hover (la suma, en «Primer otrosí»),",
+    "la fecha escrita en el campo, el 60 que baja hasta 35 y el clic en el 161."
+   ],
+   "b": [
+    "Pieza de concepto del portafolio E12, la de la vista 4. Estructura de caso de Koto (lock e12/lock-koto.md §21):",
+    "ficha lateral, medio principal, secciones con sus filas de medios en las cuatro formas de Koto y el cierre sin",
+    "métrica. Escrito por Bruno el 17-oct-2026 con los hechos de ficha.md §4; Clara le pasa el registro antes de que",
+    "entre a /trabajo/ y Ramón lo revisa. Nada de esto se publica en este paso.",
+    "Medio principal: movimiento/recorrido.mp4 (16:9, 10 s, H.264; también recorrido.webm; póster",
+    "movimiento/poster.jpg) a 1440; a 390, identidad/portadas/sesenta-4x5.png (4:5, el 60 cortado por el marco con",
+    "(Sin filas: el desafío va en texto, como la introducción de Koto.)*",
+    "El pliego completo, con el porqué de cada parte, está en identidad/pliego.png (1920 × 1080).",
+    "Cierre: «Siguiente», con el próximo caso del índice (lo arma la vista 2; no es parte de esta pieza).",
+    "Lo que subiría de nivel con fotografía (no se generó nada)",
+    "Donde haría falta foto, la pieza la resuelve con lo que da el oficio: el 60 tipográfico, los documentos compuestos en",
+    "HTML (la carta, el finiquito, la hoja, la tarjeta) con sus datos tachados, el timbre y la sarga del lienzo. Ninguna",
+    "Lo que la subiría, si Ramón lo aprueba (plan §9 y §11):",
+    "1. Una mesa vista desde arriba con un sobre, un finiquito sin firmar y un lápiz pasta azul, sin personas, 16:9.",
+    "Nuestros documentos se componen encima en HTML; si en el render no se ven verdaderos, van en su placa y la foto",
+    "queda sola. Entraría en Aplicación, como fila 9 en lugar de la hoja y la tarjeta.",
+    "2. Una chaqueta de trabajo azul colgada en el respaldo de una silla, 4:5. Le daría a la identidad el objeto del",
+    "que sale el color; entraría en Identidad, en el par de la fila 3.",
+    "Costo estimado del plan: unos 10 créditos de Higgsfield (2 fotos, 2 variantes cada una, con margen). La cuenta",
+    "está en 0 créditos y sin recargas sueltas, así que el costo real es un mes del plan PLUS, USD 49, que alcanza para",
+    "las cuatro piezas (unos 75 créditos en total). Cada foto generada se diría generada en el caso. Decide Ramón en la",
+    "Cuenta de filas y de color (para Javiera)",
+    "12 filas con el medio principal, 19 medios. Koto, caso más corto: 11 filas y 15 medios. Ninguna fila partida",
+    "sigue a otra partida (orden: 16:9, 16:9, par, 16:9, partida, 16:9, par, 16:9, partida, 16:9, 16:9, 16:9).",
+    "Campos claros y de color (un medio cuyo color dominante cubre el 30 % o más, lock §20.1): el recorrido, la paleta,",
+    "la Courier, la home a 1440, el par a 390, la hoja, el lector a 390, el lector a 1440 y la interior a 1440. Son cerca",
+    "del 50 % del área de medios y, con los medios en torno al 60 % de la página como en Koto, cerca del 30 % de la",
+    "página, dentro del 10 a 35 % del lock §20.3. Es una estimación con las áreas de cada forma; la medición final la",
+    "hace la vista 2 con la página armada. Si pasa de 35, el primer cambio es sacar medios/interior-1440.png y dejar la",
+    "Seguidos: el tramo más largo de campos es de tres (home a 1440, el par a 390), cortado por el finiquito sobre",
+    "tinta; el segundo, también de tres (lector a 390, lector a 1440, interior a 1440), lo corta la sección de texto de",
+    "«Concepto» en cada medio: el sello fijo de la cabecera del sitio sale en todas las capturas y en cada cuadro del",
+    "recorrido; las placas y las portadas llevan la etiqueta de papel en la esquina; el pliego, arriba a la derecha.",
+    "python3 -I _herramientas/logo.py # logo en trazados",
+    "python3 -m http.server 8746 --bind 127.0.0.1 --directory sitio &",
+    "node _herramientas/identidad.mjs # pliego, placas, portadas",
+    "node _herramientas/capturar.mjs http://127.0.0.1:8746 # capturas + contraste, desborde, JSON-LD",
+    "node _herramientas/comprobar.mjs http://127.0.0.1:8746 # 360/390/768/1440, foco, movimiento reducido, letras",
+    "node _herramientas/medios.mjs http://127.0.0.1:8746 # medios del caso",
+    "node movimiento/recorrido.mjs http://127.0.0.1:8746 /tmp/cuadros",
+    "ffmpeg -framerate 30 -i /tmp/cuadros/c%04d.png -c:v libx264 -preset slow -crf 17 -pix_fmt yuv420p -movflags +faststart movimiento/recorrido.mp4",
+    "ffmpeg -framerate 30 -i /tmp/cuadros/c%04d.png -c:v libvpx-vp9 -b:v 0 -crf 30 -row-mt 1 -pix_fmt yuv420p movimiento/recorrido.webm",
+    "ffmpeg -i /tmp/cuadros/c0225.png -q:v 3 movimiento/poster.jpg",
+    "El recorrido se graba cuadro a cuadro y no con recordVideo de Playwright (que pedía el encargo): recordVideo",
+    "graba VP8 a unos 0,9 Mbit/s y queda blando para un medio de 1057 px (plan §5.5). Cuadro a cuadro, con el reloj de la",
+    "página detenido en cada cuadro, sale nítido e idéntico cada vez. Tiene scroll, un hover (la suma, en «Primer otrosí»),",
+    "la fecha escrita en el campo, el 60 que baja hasta 35 y el clic en el 161."
+   ]
+  }
+ },
+ "aContraB": {
+  "home": {
+   "soloA": [
+    "TRABAJO SERVICIOS MÉTODO NOSOTROS ESCRÍBENOS SANTIAGO 03:01 UTC-3 ESTUDIO DE DISEÑO Y TECNOLOGÍA Diseñamos y programamos sitios a medida.",
+    "CLIENTE · 2026 Combeau, fotografía El sitio de un fotógrafo de retrato.",
+    "CHEQUEO GRATIS Escribe la dirección de tu sitio y en segundos ves si ChatGPT y otros asistentes de IA pueden leerlo y entender a qué te dedicas.",
+    "Trabajo.",
+    "Combeau, fotografía El sitio de un fotógrafo de retrato.",
+    "CLIENTE · 2026 Praxi Una app de entrenamiento con un coach de IA que se acuerda de cada serie.",
+    "PROPIO · 2026 Verifica y Cumple Revisa gratis las señales técnicas que la Ley 21.719, de datos personales, le pide a un sitio con formulario.",
+    "PROPIO · 2026 Sesenta Un estudio de abogados laborales que no existe, del lado del trabajador.",
+    "CONCEPTO · 2026 Las marcas rotuladas Concepto son inventadas:",
+    "Él sube sus fotos tal como las tiene, sin achicarlas, y el sitio las ajusta solo a la pantalla de cada visitante.",
+    "En Praxi la IA conversa, pero no decide cuánto peso levantas:",
+    "MEDIDO 16-oct-2026 Verifica y Cumple, nuestro chequeo gratis de la ley de datos personales.",
+    "Su sitio sacaba 54 de 100 en el chequeo gratis de esta página.",
+    "Le agregamos lo que le faltaba, como un bloque de datos que el visitante no ve, pero que Google y la IA leen para saber qué es el sitio y quién está detrás.",
+    "Dos días después sacó 94.",
+    "Puedes comprobarlo:",
+    "escribe verifica.spindlelab.cl en el chequeo de esta página.",
+    "MEDIDO 14 y 16-oct-2026 Servicios.",
+    "Desarrollo web Lo diseñamos y lo programamos a medida, sin plantilla.",
+    "Desde $390.000 + IVA VER DESARROLLO WEB Tu sitio existe y no lo vas a rehacer.",
+    "Visibilidad en IA Cuando alguien le pregunta por tu rubro a ChatGPT o a otro asistente de IA, como Gemini o Perplexity, la respuesta sale de lo que esas herramientas leen en internet:",
+    "Desde $400.000 + IVA VER VISIBILIDAD EN IA Quieres saber qué frena a tu sitio en Google.",
+    "Auditoría SEO técnica El SEO técnico es lo que permite que Google encuentre tus páginas, las lea y las muestre.",
+    "Desde $490.000 + IVA VER AUDITORÍA SEO TÉCNICA Tu sitio ya funciona y quieres que siga mejorando.",
+    "Acompañamiento mensual Una auditoría te dice qué hacer; este servicio lo hace, mes a mes, en SEO técnico, en visibilidad en IA o en las dos.",
+    "Desde $590.000/mes + IVA VER ACOMPAÑAMIENTO MENSUAL También:",
+    "CONOCER A RAMÓN Escríbenos con la dirección de tu sitio.",
+    "ESCRIBIR A SPINDLELAB O directo a hola@spindlelab.cl hola@spindlelab.cl SANTIAGO 03:01 UTC-3"
+   ],
+   "soloB": [
+    "IR AL CONTENIDO TRABAJO SERVICIOS MÉTODO NOSOTROS ESCRÍBENOS SANTIAGO 03:02 UTC-3 ESTA VISITA 564 kB ESTUDIO DE DISEÑO Y TECNOLOGÍA Diseñamos y programamos sitios a medida.",
+    "CHEQUEO GRATIS -- /100 Escribe la dirección de tu sitio y en segundos ves si ChatGPT y otros asistentes de IA pueden leerlo y entender a qué te dedicas.",
+    "¿Te pueden leer?",
+    "30 ¿Te entienden?",
+    "40 ¿Te pueden citar?",
+    "30 Trabajo.",
+    "Combeau, fotografía Cliente · 2026 NOMBRE TIPO AÑO Combeau, fotografía El sitio de un fotógrafo de retrato.",
+    "Cliente 2026 Praxi Una app de entrenamiento con un coach de IA que se acuerda de cada serie.",
+    "Propio 2026 Verifica y Cumple Revisa gratis las señales técnicas que la Ley 21.719, de datos personales, le pide a un sitio con formulario.",
+    "Propio 2026 Sesenta Un estudio de abogados laborales que no existe, del lado del trabajador.",
+    "Concepto 2026 Las marcas rotuladas Concepto son inventadas:",
+    "805 kB → 95 kB Él sube sus fotos tal como las tiene, sin achicarlas, y el sitio las ajusta solo a la pantalla de cada visitante.",
+    "384 / 384 En Praxi la IA conversa, pero no decide cuánto peso levantas:",
+    "MEDIDO 16-oct-2026 7 7 8 2 6 ¿Te pueden leer?",
+    "30 6 8 5 6 5 4 4 2 ¿Te entienden?",
+    "40 4 6 4 2 2 5 4 3 ¿Te pueden citar?",
+    "30 El chequeo gratis de esta página.",
+    "30 + 40 + 30 Mira 21 cosas de un sitio y las suma sobre 100 puntos, con la metodología publicada para que cualquiera la revise.",
+    "Servicios.",
+    "Desarrollo web Desde $390.000 + IVA VER DESARROLLO WEB → Lo diseñamos y lo programamos a medida, sin plantilla.",
+    "Tu sitio existe y no lo vas a rehacer.",
+    "Visibilidad en IA Desde $400.000 + IVA VER VISIBILIDAD EN IA → Cuando alguien le pregunta por tu rubro a ChatGPT o a otro asistente de IA, como Gemini o Perplexity, la respuesta sale de lo que esas herramientas leen en internet:",
+    "Quieres saber qué frena a tu sitio en Google.",
+    "Auditoría SEO técnica Desde $490.000 + IVA VER AUDITORÍA SEO TÉCNICA → El SEO técnico es lo que permite que Google encuentre tus páginas, las lea y las muestre.",
+    "Tu sitio ya funciona y quieres que siga mejorando.",
+    "Acompañamiento mensual Desde $590.000/mes + IVA VER ACOMPAÑAMIENTO MENSUAL → Una auditoría te dice qué hacer; este servicio lo hace, mes a mes, en SEO técnico, en visibilidad en IA o en las dos.",
+    "También:",
+    "CONOCER A RAMÓN → Escríbenos con la dirección de tu sitio.",
+    "ESCRIBIR A SPINDLELAB O directo a hola@spindlelab.cl"
+   ]
+  },
+  "trabajo": {
+   "soloA": [
+    "TRABAJO SERVICIOS MÉTODO NOSOTROS ESCRÍBENOS SANTIAGO 03:02 UTC-3 Trabajo.",
+    "(10) Cada entrada dice de quién es.",
+    "Todo (10) Cliente (2) Propio (4) Concepto (4) Combeau, fotografía El sitio de un fotógrafo de retrato.",
+    "CLIENTE · 2026 · DECAP CMS · NETLIFY IMAGE CDN Verifica y Cumple Revisa gratis las señales técnicas que la Ley 21.719, de datos personales, le pide a un sitio con formulario.",
+    "PROPIO · 2026 · CLOUDFLARE PAGES FUNCTIONS Ocelo Una clínica de ojos que no existe, en Providencia.",
+    "CONCEPTO · 2026 Doceavo Un estudio contable que no existe, en Concepción.",
+    "CONCEPTO · 2026 Tonela Un proveedor de izaje que no existe, en Antofagasta:",
+    "CONCEPTO · 2026 Praxi Una app de entrenamiento con un coach de IA que se acuerda de cada serie.",
+    "PROPIO · 2026 · API DE ANTHROPIC · LÓGICA DE ENTRENAMIENTO EN CÓDIGO Sesenta Un estudio de abogados laborales que no existe, del lado del trabajador.",
+    "CONCEPTO · 2026 Combeau, modelo El mismo cliente, el otro oficio:",
+    "CLIENTE · 2026 · DECAP CMS · VIDEO CON CARGA DIFERIDA El chequeo de 21 señales Escribes un dominio y en segundos ves si ChatGPT, Claude y Perplexity pueden entrar y entender a qué se dedica.",
+    "PROPIO · 2026 · CLOUDFLARE PAGES FUNCTIONS · PRUEBA CON ROBOTS DE IA spindlelab.cl Este sitio.",
+    "PROPIO · 2026 · CLOUDFLARE PAGES FUNCTIONS · ANALÍTICA TRAS EL AVISO DE COOKIES hola@spindlelab.cl SANTIAGO 03:02 UTC-3"
+   ],
+   "soloB": [
+    "IR AL CONTENIDO TRABAJO SERVICIOS MÉTODO NOSOTROS ESCRÍBENOS SANTIAGO 03:02 UTC-3 ESTA VISITA 674 kB Trabajo.",
+    "Cada entrada dice de quién es.",
+    "(10) TODO (10) CLIENTE (2) PROPIO (4) CONCEPTO (4) Combeau, fotografía Cliente · 2026 · Decap CMS · Netlify Image CDN NOMBRE TIPO AÑO CON QUÉ ESTÁ HECHO RESULTADO Combeau, fotografía El sitio de un fotógrafo de retrato.",
+    "Cliente 2026 Decap CMS · Netlify Image CDN Sin métrica de negocio.",
+    "Una foto que sube con 805 kB llega en 95 kB (16-oct-2026).",
+    "Praxi Una app de entrenamiento con un coach de IA que se acuerda de cada serie.",
+    "Propio 2026 API de Anthropic · Lógica de entrenamiento en código Sin métrica de uso.",
+    "384 de 384 pruebas automáticas en verde (16-oct-2026).",
+    "Sesenta Un estudio de abogados laborales que no existe, del lado del trabajador.",
+    "Concepto 2026 — Sin métrica:",
+    "es un concepto.",
+    "Verifica y Cumple Revisa gratis las señales técnicas que la Ley 21.719, de datos personales, le pide a un sitio con formulario.",
+    "Propio 2026 Cloudflare Pages Functions Sin métrica de uso:",
+    "no guarda los dominios que revisa.",
+    "Ocelo Una clínica de ojos que no existe, en Providencia.",
+    "Combeau, modelo El mismo cliente, el otro oficio:",
+    "Cliente 2026 Decap CMS · Video con carga diferida Sin métrica de negocio.",
+    "La página abre sin descargar ningún video (16-oct-2026).",
+    "Doceavo Un estudio contable que no existe, en Concepción.",
+    "El chequeo de 21 señales Escribes un dominio y en segundos ves si ChatGPT, Claude y Perplexity pueden entrar y entender a qué se dedica.",
+    "Propio 2026 Cloudflare Pages Functions · Prueba con robots de IA 21 revisiones, 100 puntos.",
+    "No guarda los dominios, así que no sabemos cuántas veces se ha usado.",
+    "Tonela Un proveedor de izaje que no existe, en Antofagasta:",
+    "spindlelab.cl Este sitio.",
+    "Propio 2026 Cloudflare Pages Functions · Analítica tras el aviso de cookies En el chequeo de la ley de datos personales sacó 36 de 100 el 9-sep-2026; lo arreglamos y el 21-sep sacó 73.",
+    "Después cambiamos cómo puntúa ese chequeo, así que el puntaje de hoy no se compara con esos dos."
+   ]
+  },
+  "praxi": {
+   "soloA": [
+    "TRABAJO SERVICIOS MÉTODO NOSOTROS ESCRÍBENOS SANTIAGO 03:02 UTC-3 Praxi Se acuerda de cada serie PROPIO · 2026 · SITIO Y APP Hecho 21-jul a 25-ago-2026 Estado Fuera de línea Problema Hipótesis Solución La pieza Sin métrica QUIÉN LO HIZO Marca, sitio, app y campaña:",
+    "Las apps de entrenamiento olvidan lo que hiciste.",
+    "Si quieres una herramienta como Praxi para tu empresa, escríbenos y te respondemos en 24 horas.",
+    "ESCRIBIR A SPINDLELAB SIGUIENTE Sesenta El plazo antes que el juicio CONCEPTO · 2026 [ TODO EL TRABAJO ] (10)"
+   ],
+   "soloB": [
+    "IR AL CONTENIDO TRABAJO SERVICIOS MÉTODO NOSOTROS ESCRÍBENOS SANTIAGO 03:02 UTC-3 ESTA VISITA 505 kB Praxi.",
+    "Se acuerda de cada serie TIPO Propio AÑO 2026 QUÉ ES Sitio y app HECHO 21-jul a 25-ago-2026 ESTADO Fuera de línea Problema Hipótesis Solución La pieza Sin métrica QUIÉN LO HIZO Marca, sitio, app y campaña:",
+    "PROBLEMA Las apps de entrenamiento olvidan lo que hiciste.",
+    "384 / 384 VITEST RUN · 35 ARCHIVOS 8 / 8 NPM RUN DESIGN-CHECK exit 0 TSC --NOEMIT lib/acceso.test.ts 15/15 lib/csp.test.ts 15/15 lib/edad.test.ts 9/9 lib/formato.test.ts 10/10 lib/nombre.test.ts 11/11 lib/coach/dossier.test.ts 5/5 lib/coach/fichaEjercicio.test.ts 16/16 lib/coach/gamification.test.ts 13/13 lib/coach/guardrailMenores.test.ts 9/9 lib/coach/healthGuardrail.test.ts 7/7 lib/coach/pareceRegistro.test.ts 5/5 lib/coach/pareceUnPlan.test.ts 6/6 lib/coach/rutinaDia.test.ts 9/9 lib/coach/signals.test.ts 12/12 lib/coach/starters.test.ts 13/13 lib/coach/tarjetaDelDia.test.ts 2/2 lib/coach/ultimoRegistro.test.ts 9/9 lib/domain/deload.test.ts 5/5 lib/domain/effectiveSet.test.ts 8/8 lib/domain/materializar.test.ts 10/10 lib/domain/mesociclo.test.ts 7/7 lib/domain/nutricion.test.ts 5/5 lib/domain/perimetros.test.ts 22/22 lib/domain/peso.test.ts 5/5 lib/domain/rir.test.ts 10/10 lib/email/plantillas.test.ts 38/38 lib/email/recordatorio.test.ts 25/25 lib/flow/estado.test.ts 18/18 lib/flow/planes.test.ts 13/13 lib/growth/activacion.test.ts 11/11 lib/growth/atribucion.test.ts 6/6 lib/growth/motivo-registro.test.ts 6/6 lib/mp/webhook.test.ts 6/6 lib/seo/estructurados.test.ts 18/18 lib/supabase/conTimeout.test.ts 5/5 A360D7A · 2026-10-16T23:10:33Z e12/praxi/crudo/verificacion-copia.txt Si quieres una herramienta como Praxi para tu empresa, escríbenos y te respondemos en 24 horas.",
+    "ESCRIBIR A SPINDLELAB SIGUIENTE Sesenta.",
+    "El plazo antes que el juicio Concepto · 2026 [ TODO EL TRABAJO ] (10)"
+   ]
+  },
+  "sesenta": {
+   "soloA": [
+    "TRABAJO SERVICIOS MÉTODO NOSOTROS ESCRÍBENOS SANTIAGO 03:02 UTC-3 Sesenta El plazo antes que el juicio CONCEPTO · 2026 Problema Hipótesis Solución La pieza Sin métrica LO HECHO Identidad (palabra, sello, símbolo, color, letra, recurso propio), sitio (home e interior), movimiento El rubro le grita a alguien asustado.",
+    "Escríbenos con la dirección de tu sitio.",
+    "En 24 horas te mandamos el mini-diagnóstico, gratis.",
+    "ESCRIBIR A SPINDLELAB SIGUIENTE Verifica y Cumple Revisa gratis las señales técnicas que la Ley 21.719, de datos personales, le pide a un sitio con formulario.",
+    "No es asesoría legal ni certifica que cumples.",
+    "PROPIO · 2026 · CLOUDFLARE PAGES FUNCTIONS [ TODO EL TRABAJO ] (10)"
+   ],
+   "soloB": [
+    "IR AL CONTENIDO TRABAJO SERVICIOS MÉTODO NOSOTROS ESCRÍBENOS SANTIAGO 03:02 UTC-3 ESTA VISITA 518 kB Sesenta El plazo antes que el juicio TIPO Concepto AÑO 2026 RUBRO Estudio legal · derecho laboral, del lado del trabajador (Santiago centro, ficticio) Problema Hipótesis Solución La pieza Sin métrica PROBLEMA El rubro le grita a alguien asustado.",
+    "ESCRIBIR A SPINDLELAB SIGUIENTE Verifica y Cumple Propio · 2026 · Cloudflare Pages Functions [ TODO EL TRABAJO ] (10)"
+   ]
+  },
+  "desarrollo-web": {
+   "soloA": [
+    "TRABAJO SERVICIOS MÉTODO NOSOTROS ESCRÍBENOS SANTIAGO 03:02 UTC-3 INICIO SERVICIOS DESARROLLO WEB Desarrollo web.",
+    "VER LOS PLANES ESCRIBIR A SPINDLELAB Doceavo · CONCEPTO · 2026 En todos los planes.",
+    "Combeau, fotografía El sitio de un fotógrafo de retrato.",
+    "CLIENTE · 2026 · DECAP CMS · NETLIFY IMAGE CDN Praxi Una app de entrenamiento con un coach de IA que se acuerda de cada serie.",
+    "PROPIO · 2026 · API DE ANTHROPIC · LÓGICA DE ENTRENAMIENTO EN CÓDIGO Sesenta Un estudio de abogados laborales que no existe, del lado del trabajador.",
+    "CONCEPTO · 2026 Las marcas rotuladas Concepto son inventadas:",
+    "VER TODO EL TRABAJO Elige por dónde partir.",
+    "01 · Descubrimiento Conversamos sobre tu negocio y sobre a quién le tiene que hablar el sitio.",
+    "02 · Diseño Te mostramos las páginas clave, la portada y una página tipo, antes de programar.",
+    "03 · Desarrollo con IA Programamos el sitio con agentes de IA y Ramón revisa el código.",
+    "04 · Pruebas y contenido Cargamos tu contenido final, lo probamos en celular y en computador, afinamos la velocidad y el SEO técnico, y hacemos las rondas de revisión de tu plan.",
+    "05 · Lanzamiento Publicamos el sitio en tu dominio.",
+    "ESCRIBIR A SPINDLELAB REVISAR MI SITIO GRATIS SIGUIENTE Visibilidad en IA hola@spindlelab.cl SANTIAGO 03:02 UTC-3"
+   ],
+   "soloB": [
+    "IR AL CONTENIDO TRABAJO SERVICIOS MÉTODO NOSOTROS ESCRÍBENOS SANTIAGO 03:02 UTC-3 ESTA VISITA 473 kB INICIO · SERVICIOS · DESARROLLO WEB Desarrollo web.",
+    "VER LOS PLANES ESCRIBIR A SPINDLELAB En todos los planes.",
+    "Combeau, fotografía Cliente · 2026 NOMBRE TIPO AÑO Combeau, fotografía El sitio de un fotógrafo de retrato.",
+    "Cliente 2026 Praxi Una app de entrenamiento con un coach de IA que se acuerda de cada serie.",
+    "Propio 2026 Sesenta Un estudio de abogados laborales que no existe, del lado del trabajador.",
+    "Concepto 2026 Las marcas rotuladas Concepto son inventadas:",
+    "VER TODO EL TRABAJO → Elige por dónde partir.",
+    "01 · DESCUBRIMIENTO Conversamos sobre tu negocio y sobre a quién le tiene que hablar el sitio.",
+    "02 · DISEÑO Te mostramos las páginas clave, la portada y una página tipo, antes de programar.",
+    "03 · DESARROLLO CON IA Programamos el sitio con agentes de IA y Ramón revisa el código.",
+    "04 · PRUEBAS Y CONTENIDO Cargamos tu contenido final, lo probamos en celular y en computador, afinamos la velocidad y el SEO técnico, y hacemos las rondas de revisión de tu plan.",
+    "05 · LANZAMIENTO Publicamos el sitio en tu dominio.",
+    "ESCRIBIR A SPINDLELAB REVISAR MI SITIO GRATIS SIGUIENTE VISIBILIDAD EN IA →"
+   ]
+  }
+ },
+ "tics": {
+  "a-home": {
+   "rayas": [],
+   "preguntas": [],
+   "voseo": [],
+   "usted": [
+    "Su sitio",
+    "su sitio",
+    "su sitio"
+   ],
+   "folleto": []
+  },
+  "a-home-390": {
+   "rayas": [],
+   "preguntas": [],
+   "voseo": [],
+   "usted": [
+    "Su sitio",
+    "su sitio",
+    "su sitio"
+   ],
+   "folleto": []
+  },
+  "a-trabajo": {
+   "rayas": [],
+   "preguntas": [],
+   "voseo": [],
+   "usted": [
+    "su sitio"
+   ],
+   "folleto": []
+  },
+  "a-trabajo-390": {
+   "rayas": [],
+   "preguntas": [],
+   "voseo": [],
+   "usted": [
+    "su sitio"
+   ],
+   "folleto": []
+  },
+  "a-praxi": {
+   "rayas": [],
+   "preguntas": [],
+   "voseo": [],
+   "usted": [],
+   "folleto": []
+  },
+  "a-praxi-390": {
+   "rayas": [],
+   "preguntas": [],
+   "voseo": [],
+   "usted": [],
+   "folleto": []
+  },
+  "a-sesenta": {
+   "rayas": [],
+   "preguntas": [
+    "¿te despidieron?",
+    "¿Qué artículo dice tu carta?"
+   ],
+   "voseo": [],
+   "usted": [],
+   "folleto": []
+  },
+  "a-sesenta-390": {
+   "rayas": [],
+   "preguntas": [
+    "¿te despidieron?",
+    "¿Qué artículo dice tu carta?"
+   ],
+   "voseo": [],
+   "usted": [],
+   "folleto": []
+  },
+  "a-desarrollo-web": {
+   "rayas": [],
+   "preguntas": [
+    "¿Usan plantillas o WordPress?",
+    "¿Cuánto cuesta?",
+    "¿Qué cambia que lo construyan con IA?",
+    "¿El sitio incluye SEO?",
+    "¿Qué necesitan de mí para partir?",
+    "¿Ustedes escriben los textos y sacan las fotos?"
+   ],
+   "voseo": [],
+   "usted": [],
+   "folleto": []
+  },
+  "a-desarrollo-web-390": {
+   "rayas": [],
+   "preguntas": [
+    "¿Usan plantillas o WordPress?",
+    "¿Cuánto cuesta?",
+    "¿Qué cambia que lo construyan con IA?",
+    "¿El sitio incluye SEO?",
+    "¿Qué necesitan de mí para partir?",
+    "¿Ustedes escriben los textos y sacan las fotos?"
+   ],
+   "voseo": [],
+   "usted": [],
+   "folleto": []
+  },
+  "b-home": {
+   "rayas": [],
+   "preguntas": [
+    "¿Te pueden leer?",
+    "¿Te entienden?",
+    "¿Te pueden citar?",
+    "¿Te pueden leer?",
+    "¿Te entienden?",
+    "¿Te pueden citar?"
+   ],
+   "voseo": [],
+   "usted": [
+    "su sitio",
+    "su sitio"
+   ],
+   "folleto": []
+  },
+  "b-home-390": {
+   "rayas": [],
+   "preguntas": [
+    "¿Te pueden leer?",
+    "¿Te entienden?",
+    "¿Te pueden citar?",
+    "¿Te pueden leer?",
+    "¿Te entienden?",
+    "¿Te pueden citar?"
+   ],
+   "voseo": [],
+   "usted": [
+    "su sitio",
+    "su sitio"
+   ],
+   "folleto": []
+  },
+  "b-trabajo": {
+   "rayas": [
+    "\tConcepto\t2026\t—\tSin métrica: es un concepto.",
+    "\tConcepto\t2026\t—\tSin métrica: es un concepto.",
+    "\tConcepto\t2026\t—\tSin métrica: es un concepto.",
+    "\tConcepto\t2026\t—\tSin métrica: es un concepto."
+   ],
+   "preguntas": [],
+   "voseo": [],
+   "usted": [
+    "su sitio"
+   ],
+   "folleto": []
+  },
+  "b-trabajo-390": {
+   "rayas": [
+    "—",
+    "—",
+    "—",
+    "—"
+   ],
+   "preguntas": [],
+   "voseo": [],
+   "usted": [
+    "su sitio"
+   ],
+   "folleto": []
+  },
+  "b-praxi": {
+   "rayas": [],
+   "preguntas": [],
+   "voseo": [],
+   "usted": [],
+   "folleto": []
+  },
+  "b-praxi-390": {
+   "rayas": [],
+   "preguntas": [],
+   "voseo": [],
+   "usted": [],
+   "folleto": []
+  },
+  "b-sesenta": {
+   "rayas": [],
+   "preguntas": [
+    "¿te despidieron?",
+    "¿Qué artículo dice tu carta?"
+   ],
+   "voseo": [],
+   "usted": [],
+   "folleto": []
+  },
+  "b-sesenta-390": {
+   "rayas": [],
+   "preguntas": [
+    "¿te despidieron?",
+    "¿Qué artículo dice tu carta?"
+   ],
+   "voseo": [],
+   "usted": [],
+   "folleto": []
+  },
+  "b-desarrollo-web": {
+   "rayas": [],
+   "preguntas": [
+    "¿Usan plantillas o WordPress?",
+    "¿Cuánto cuesta?",
+    "¿Qué cambia que lo construyan con IA?",
+    "¿El sitio incluye SEO?",
+    "¿Qué necesitan de mí para partir?",
+    "¿Ustedes escriben los textos y sacan las fotos?"
+   ],
+   "voseo": [],
+   "usted": [],
+   "folleto": []
+  },
+  "b-desarrollo-web-390": {
+   "rayas": [],
+   "preguntas": [
+    "¿Usan plantillas o WordPress?",
+    "¿Cuánto cuesta?",
+    "¿Qué cambia que lo construyan con IA?",
+    "¿El sitio incluye SEO?",
+    "¿Qué necesitan de mí para partir?",
+    "¿Ustedes escriben los textos y sacan las fotos?"
+   ],
+   "voseo": [],
+   "usted": [],
+   "folleto": []
+  }
+ }
+}
