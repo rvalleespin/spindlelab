@@ -105,9 +105,12 @@ número, teléfono, RUT ni registro.
 ## 6 · Ingredientes reales para la fila del inventario (encargo §5)
 
 - **Tipo:** concepto (identidad + sitio + movimiento), 2026. **Rubro:** clínica, oftalmología.
-- **Lo construido:** pliego de identidad; placas en 16:9, 4:5 y 1,62 sobre lienzo (luz) y sobre tinta (sala);
-  portadas 4:5, 4:3 y 5:3 con la luz encendida; home e interior «La evaluación» en HTML y CSS a mano, con el
-  interruptor de luz y el comparador; recorrido grabado.
+- **Lo construido (17-oct):** pliego de identidad (`identidad/pliego.png`, 1920 × 1080); diez placas en 16:9, 4:5 y
+  1,62, cada una sobre lienzo (luz) y sobre tinta (sala), con «CONCEPTO» en la esquina (`identidad/placas/`);
+  portadas 4:5, 4:3 y 5:3 con la luz encendida (`identidad/portadas/`); logotipo y símbolo en SVG
+  (`identidad/logo/`); home e interior «La evaluación» en HTML y CSS a mano, con el interruptor de luz y el
+  comparador (`sitio/`), capturadas a 1440 y 390, a oscuras y con luz (`capturas/`); medios del caso en las formas de
+  Koto (`medios/`); recorrido de 10 s en H.264 y VP9 con su póster (`movimiento/`). El caso, en `caso.md`.
 - **Capa técnica:** JSON-LD `MedicalClinic` + dos `Physician` + `MedicalProcedure` + `FAQPage` en la home, y
   `MedicalWebPage` + `BreadcrumbList` + `MedicalTest` en la interior; la ficción dentro
   (`disambiguatingDescription` en la clínica y en cada persona); sin `Review` ni `AggregateRating`; `noindex,
@@ -115,3 +118,6 @@ número, teléfono, RUT ni registro.
 - **Fuentes:** locales (`woff2` en `sitio/fuentes/`), cero peticiones a terceros.
 - **Sin métrica:** es un concepto, Ocelo no existe y no atendió a nadie.
 - **Generación:** 0 llamadas, 0 créditos.
+- **Comprobado el 17-oct:** desborde 0 a 360, 390, 768 y 1440; un `h1` por página; cero nodos de texto bajo AA a
+  1440 y 390; rótulo «Concepto» visible sin scroll; foco visible; nada se mueve con movimiento reducido; cero
+  terceros; consola limpia (`capturas/comprobacion.json`, `_herramientas/comprobar.mjs`).
