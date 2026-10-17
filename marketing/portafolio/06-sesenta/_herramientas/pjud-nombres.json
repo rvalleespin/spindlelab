@@ -1,0 +1,67 @@
+{
+ "fuente": "https://www.pjud.cl/transparencia/busqueda-de-abogados (Búsqueda por Nombre)",
+ "consultado": "2026-10-17T02:41:45.456Z",
+ "nota": "Solo conteos; la primera página del buscador muestra hasta 5 filas, así que en los controles el número es un piso",
+ "resultados": [
+  {
+   "tipo": "control",
+   "consulta": "Juan Pérez",
+   "coincidencias": 5,
+   "aviso": null
+  },
+  {
+   "tipo": "control",
+   "consulta": "Pérez Caris",
+   "coincidencias": null,
+   "aviso": "respuesta rechazada o vacía: repetir"
+  },
+  {
+   "tipo": "ficticio",
+   "consulta": "Rocío Velarde Quintral",
+   "coincidencias": 0,
+   "aviso": "No se encontraron registros"
+  },
+  {
+   "tipo": "ficticio",
+   "consulta": "Rocio Velarde Quintral",
+   "coincidencias": 0,
+   "aviso": "No se encontraron registros"
+  },
+  {
+   "tipo": "ficticio",
+   "consulta": "Rocío Velarde",
+   "coincidencias": 0,
+   "aviso": "No se encontraron registros"
+  },
+  {
+   "tipo": "ficticio",
+   "consulta": "Velarde Quintral",
+   "coincidencias": 0,
+   "aviso": "No se encontraron registros"
+  },
+  {
+   "tipo": "ficticio",
+   "consulta": "Fermín Achondo Lizana",
+   "coincidencias": null,
+   "aviso": "respuesta rechazada o vacía: repetir"
+  },
+  {
+   "tipo": "ficticio",
+   "consulta": "Fermin Achondo Lizana",
+   "coincidencias": null,
+   "aviso": "respuesta rechazada o vacía: repetir"
+  },
+  {
+   "tipo": "ficticio",
+   "consulta": "Fermín Achondo",
+   "coincidencias": 0,
+   "aviso": "No se encontraron registros"
+  },
+  {
+   "tipo": "ficticio",
+   "consulta": "Achondo Lizana",
+   "coincidencias": 0,
+   "aviso": "No se encontraron registros"
+  }
+ ]
+}
