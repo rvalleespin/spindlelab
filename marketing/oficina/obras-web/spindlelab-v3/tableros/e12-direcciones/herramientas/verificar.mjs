@@ -8,7 +8,8 @@
 //   - los <details>: cuántos hay, que se abren con un clic y con el teclado (Enter sobre su summary), y que lo que traen
 //     se ve una vez abiertos;
 //   - todas las imágenes cargadas (naturalWidth > 0), con los <details> abiertos y cada marco de página recorrido;
-//   - todos los videos: su metadata carga (duración y ancho) desde la fuente que elige el navegador, y ninguno corre solo;
+//   - todos los videos: su póster carga, su metadata carga (duración y ancho) desde la fuente que elige el navegador, y
+//     ninguno corre solo (las fuentes H.264 se comprueban con ffprobe en armar-tablero.py: este Chromium no las lee);
 //   - las tres letras cargadas (DM Mono, Google Sans Flex y Mona Sans) y nada más de terceros que Google Fonts;
 //   - el contraste de cada nodo de texto contra su primer fondo opaco (piso 4,5:1, o 3:1 desde 24 px);
 //   - errores de consola, de página y de red.
@@ -190,11 +191,12 @@ for (const ancho of [360, 390, 768, 1440]) {
         v.addEventListener('error', () => fin('error'), { once: true });
         setTimeout(() => fin('tiempo'), 20000);
       });
-      out.push({ ...antes, ...r, mp4Soportado: v.canPlayType((v.querySelector('source[src$=".mp4"]') || {}).type || 'video/mp4') });
+      const poster = await new Promise((res) => { const i = new Image(); i.onload = () => res(i.naturalWidth > 0); i.onerror = () => res(false); i.src = v.poster; setTimeout(() => res(false), 20000); });
+      out.push({ ...antes, ...r, posterCarga: poster, mp4Soportado: v.canPlayType((v.querySelector('source[src$=".mp4"]') || {}).type || 'video/mp4') });
     }
     return out;
   });
-  const vMal = m.videos.filter((v) => v.estado !== 'ok' || !(v.dur > 1) || !(v.w > 0) || !v.pausado || v.autoplay || v.preload !== 'none' || !v.controles || !v.poster);
+  const vMal = m.videos.filter((v) => v.estado !== 'ok' || !(v.dur > 1) || !(v.w > 0) || !v.pausado || v.autoplay || v.preload !== 'none' || !v.controles || !v.poster || !v.posterCarga);
   if (vMal.length) falla(`${ancho}: videos con problemas ${JSON.stringify(vMal)}`);
   // e) medidas del documento abierto
   Object.assign(m, await pg.evaluate(() => {
@@ -288,7 +290,8 @@ for (const ancho of [360, 390, 768, 1440]) {
   console.log(ancho, 'desborde', m.cerrado.scrollWidth, m.scrollWidth, 'h1', m.h1, 'saltos', m.saltos.length, 'letra', m.letraMasChica.px,
     'details', JSON.stringify(m.details), 'imgs', `${m.imgs.length - rotas.length}/${m.imgs.length}`, 'videos', `${m.videos.length - vMal.length}/${m.videos.length}`,
     resultado.anchos[ancho].videos.fuentes.join(','), 'contraste', m.contraste.nodos, 'peor', m.contraste.peor, 'bajos', m.contraste.bajos.length, 'alto', m.alto, 'errores', errores.length);
-  // capturas para mirar: cada sección abierta, recortes de alto acotado
+  // capturas para mirar: cada sección abierta, recortes de alto acotado, con cada imagen ya decodificada
+  await pg.evaluate(() => Promise.all([...document.images].map((i) => i.decode().catch(() => 0))));
   const secciones = await pg.evaluate(() => [...document.querySelectorAll('header.cab, main > section')].map((s) => { const r = s.getBoundingClientRect(); return { id: s.id || 'cab', y: Math.round(r.top + scrollY), h: Math.round(r.height) }; }));
   for (const s of secciones) {
     const png = path.join(TMP, `${ancho}-${s.id}.png`);

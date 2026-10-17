@@ -312,3 +312,4 @@ composición depende del instrumento.
 | Fecha | Qué | Origen |
 |---|---|---|
 | 17-oct, 02:00 | Primera versión | Lucía, encargo del paso 2 |
+| 17-oct | El tablero de la compuerta 2 recomprimió en su lugar, con el mismo ancho, las capturas que pasaban de 450 kB: `b-home-1440-1de2.jpg` (458 → 411 kB, JPEG 80), `b-sesenta-1440-2de3.jpg` (530 → 433 kB, JPEG 72), `b-desarrollo-web-1440-1de2.jpg` (505 → 445 kB, JPEG 80) (`datos/recompresion.json`) | Lucía, tablero de la compuerta 2 |

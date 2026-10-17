@@ -11,7 +11,9 @@ Lee, sin escribir en ninguna:
   video) y, de cada pieza, su pliego, las dos primeras pantallas de su home y su recorrido;
 - `e12/texto/texto-paso2.json` (las tres opciones del hero) y `e12/texto/lectura-fria.md` (lo que entendieron);
 - `e12/inventario-praxi.md` (§8.1 y §10) y `datos/estado-praxi.txt` (lo que respondió praxi.coach el día del tablero,
-  medido con `herramientas/estado-praxi.sh`).
+  medido con `herramientas/estado-praxi.sh`);
+- `datos/diferencias-texto.json` (el texto visible de A contra el de B, medido con `herramientas/diferencias-texto.mjs`):
+  cada palabra que está en un solo lado tiene que quedar explicada en la lista DIFERENCIAS, o el script falla.
 
 Escribe:
 - `tablero.html` (sin doctype, html, head ni body: lo envuelve el publicador);
@@ -429,7 +431,7 @@ DUR = {}
 def seccion_direccion(k):
     d = DIRECCIONES[k]
     letra = k.upper()
-    distinta = "".join(f"<li>{x}</li>" for x in d["distinta"])
+    distinta = "".join(f"<li><span>{x}</span></li>" for x in d["distinta"])
     valores = "".join(f"<div><dt>{e(a)}</dt><dd>{b}</dd></div>" for a, b in d["valores"])
     clips = []
     for vid in d["recorridos"]:
@@ -523,6 +525,10 @@ assert sin_md(p11["Total"][3]) == "~75", p11["Total"]
 assert "USD 0,04 por imagen" in p11_sec
 
 
+def minus(t):
+    return t[:1].lower() + t[1:]
+
+
 def tanda(c):
     fotos, clips = int(sin_md(c[1])), int(sin_md(c[2]))
     partes = [f"{fotos} foto{'s' if fotos != 1 else ''}"]
@@ -565,7 +571,7 @@ for p in PIEZAS:
         <div class="concepto__cab">
           <p><span class="sello">Concepto</span> <span class="rotulo">{e(p['rubro'])}</span></p>
           <h3>{e(p['marca'])}{mas_lejos}</h3>
-          <p class="t2">{md(p['quien'])}. Lienzo: {md(p['lienzo'])}. Recurso propio: {md(p['recurso'])}.</p>
+          <p class="t2">{md(p['quien'])}. Lienzo: {md(minus(p['lienzo']))}. Recurso propio: {md(minus(p['recurso']))}.</p>
           <p class="nota">Nombre: <code>{s}.cl</code> {md(nombre[1]).lower()} en NIC Chile el 16-oct; búsqueda web: {md(nombre[2]).lower()}. {md(nombre[3])}.</p>
         </div>
         {figura(pliego, f'Pliego de identidad de {p["marca"]}, concepto: logo, colores con su rol, letra y su recurso propio', 'Pliego de identidad.')}
@@ -594,6 +600,77 @@ seccion_conceptos = f"""
     </div>
   </div>
 </section>"""
+
+# ---------------------------------------------------------------- 5b · el texto de A contra el de B (criterio 14)
+texto_c = leer_json(os.path.join(E12, "texto", "texto-paso2.json"))
+DIF = leer_json(os.path.join(DATOS, "diferencias-texto.json"))
+_trabajo_t = next(p for p in texto_c["paginas"] if p["id"] == "trabajo")
+assert all(x["linea_corta"] == f"{x['tipo']} · {x['anio']}" for x in _trabajo_t["entradas"])
+assert "Fuera de la home y de Desarrollo web (línea solo con tipo y año)" in leer(os.path.join(E12, "texto", "lectura-fria.md"))
+
+
+def palabras(t):
+    return set(re.findall(r"[^\W_]+", t.lower()))
+
+
+CRUDO_PRAXI = palabras(leer(os.path.join(E12, "praxi", "crudo", "verificacion-copia.txt")) + " e12/praxi/crudo/verificacion-copia.txt vitest run archivos npm design check exit tsc noemit")
+INTERFAZ_B = {"ir", "al", "contenido", "menú", "esta", "visita"}
+ENCABEZADOS_B = {"nombre", "tipo", "año", "hecho", "resultado"}
+DIFERENCIAS = [
+    # (vista, palabras solo en A, palabras solo en B, qué cambia, por qué)
+    ("home", {"14", "54", "94", "agregamos", "bloque", "comprobarlo", "faltaba", "nuestro", "quién", "sacaba", "sacó", "ve"},
+     {"cualquiera", "metodología", "publicada", "puntos", "revise", "sobre", "suma"},
+     "En «Cada pieza, con su prueba», A muestra el 54 → 94 de Verifica y Cumple con su fecha; B, la alternativa que dejó Clara («Mira 21 cosas de un sitio y las suma sobre 100 puntos…»).",
+     "Los puntajes propios esperan tu sí: A los dejó puestos y B no. Con tu respuesta (abajo, «Lo demás que está abierto») quedan iguales."),
+    ("home", set(), {"2", "3", "4", "5", "6", "7", "8", "40", "citar", "entienden"},
+     "La regla de las 21 señales del chequeo: sus tres títulos («¿Te pueden leer?», «¿Te entienden?», «¿Te pueden citar?») y lo que pesa cada señal.",
+     "Es el instrumento de B; los títulos son los que ya muestra el resultado del chequeo en producción y los pesos salen de <code>chequeo.js</code>."),
+    ("trabajo", set(), {"100", "16", "36", "384", "73", "805", "9", "95", "arreglamos", "así", "automáticas", "cambiamos", "compara", "cuántas", "descargar", "después", "dominios", "ese", "esos", "guarda", "ha", "kb", "llega", "métrica", "negocio", "ningún", "oct", "pruebas", "puntaje", "puntos", "puntúa", "página", "revisiones", "sabemos", "sacó", "sep", "usado", "uso", "veces", "verde"},
+     "La columna «Resultado» del índice, una línea por entrada (Clara la escribió para cada una).",
+     "El muro de A sigue al índice de Koto (nombre, bajada y línea mono) y deja el resultado para cada caso. Ojo: en B esa columna lleva el 36 → 73 de spindlelab.cl, que también es un puntaje propio."),
+    ("praxi", set(), CRUDO_PRAXI,
+     "En «Sin métrica», la placa con el crudo de la verificación: 384 de 384 tests en 35 archivos, 8 de 8 de la revisión de marca, <code>tsc</code> sin errores, la lista de archivos y la fecha.",
+     "Es el dato vivo de B, copiado tal cual de <code>e12/praxi/crudo/verificacion-copia.txt</code>; A dice lo mismo en una frase."),
+    ("sesenta", {"hecho", "identidad", "palabra", "sello", "símbolo", "color", "letra", "recurso", "e", "movimiento"}, {"derecho", "laboral", "lado", "trabajador", "centro", "ficticio"},
+     "La ficha lateral: A lleva «Lo hecho» (identidad, sitio y movimiento); B, el rubro («Estudio legal · derecho laboral, del lado del trabajador, Santiago centro, ficticio»).",
+     "Las dos salen de la ficha de <code>06-sesenta/caso.md</code>; cada dirección tomó una fila distinta. Se iguala con la dirección elegida."),
+    ("sesenta", {"21", "24", "719", "asesoría", "certifica", "cumples", "diagnóstico", "dirección", "gratis", "horas", "ley", "mandamos", "mini", "personales", "revisa", "señales", "técnicas"}, set(),
+     "El cierre: A pone el contacto de la home y la bajada de Verifica y Cumple, que es el caso siguiente; B, solo el botón y el nombre del siguiente.",
+     "El caso de Bruno no trae texto de cierre. Clara lo escribe para las dos (es su pendiente)."),
+    ("desarrollo-web", {"decap", "netlify", "image", "cdn", "api", "anthropic"}, set(),
+     "Bajo las portadas de «Lo que construimos», A pone la línea con las herramientas (Decap CMS, Netlify Image CDN, API de Anthropic).",
+     "Es un defecto de A: después de la lectura fría, Clara dejó para la home y esta página la línea corta, solo tipo y año (<code>linea_corta</code> en <code>texto-paso2.json</code>). Se corrige al construir la elegida."),
+    ("desarrollo-web", {"doceavo"}, set(),
+     "El nombre de la franja ancha de A: «Doceavo · Concepto · 2026».",
+     "Es el juego de color de A en esta página; B no lleva esa franja."),
+]
+for v in ("trabajo", "desarrollo-web"):
+    DIFERENCIAS.append((v, {"hola", "cl"}, set(), "El pie con <code>hola@spindlelab.cl</code> que A pone en las páginas de la casa (en la home no cuenta como diferencia porque B también da la dirección en su contacto).", "A deja sin pie solo los casos, como Koto; B termina todas sus páginas en el contacto, sin pie."))
+for v in ("home", "trabajo", "praxi", "sesenta", "desarrollo-web"):
+    DIFERENCIAS.append((v, set(), INTERFAZ_B | ENCABEZADOS_B, "Interfaz de B: «Ir al contenido», «Menú» a 390, «Esta visita» y los encabezados de sus tablas (Nombre, Tipo, Año, Con qué está hecho, Resultado).", "Son de B: la telemetría de la visita, el menú plegado y las columnas que Clara escribió para su tabla."))
+for v, d in DIF["vistas"].items():
+    cubre_a = set().union(*[x[1] for x in DIFERENCIAS if x[0] == v])
+    cubre_b = set().union(*[x[2] for x in DIFERENCIAS if x[0] == v])
+    sueltas_a = [w for w in d["soloA"] if w not in cubre_a]
+    sueltas_b = [w for w in d["soloB"] if w not in cubre_b]
+    assert not sueltas_a and not sueltas_b, (v, sueltas_a, sueltas_b)
+for x in DIFERENCIAS:
+    assert (x[1] & set(DIF["vistas"][x[0]]["soloA"])) or (x[2] & set(DIF["vistas"][x[0]]["soloB"])), ("diferencia que ya no está", x[0], x[3][:40])
+NOMBRE_VISTA = {"home": "Home", "trabajo": "/trabajo/", "praxi": "Praxi", "sesenta": "Sesenta", "desarrollo-web": "Desarrollo web"}
+# una fila por diferencia, con las vistas donde aparece juntas («las cinco» si está en todas)
+filas = {}
+for v, _, _, que, por in DIFERENCIAS:
+    filas.setdefault((que, por), []).append(v)
+filas_dif = []
+for (que, por), vs in filas.items():
+    donde = "Las cinco" if len(vs) == 5 else " y ".join(NOMBRE_VISTA[v] for v in vs)
+    filas_dif.append(f'<tr><th scope="row">{donde}</th><td data-rotulo="Qué cambia">{que}</td><td data-rotulo="Por qué">{por}</td></tr>')
+total_a = sum(len(d["soloA"]) for d in DIF["vistas"].values())
+total_b = sum(len(d["soloB"]) for d in DIF["vistas"].values())
+diferencias_html = f"""<details class="plegable"><summary><h3>El texto de A contra el de B: lo que cambia y por qué</h3><span class="mas" aria-hidden="true"></span></summary>
+      <p class="nota">El texto de Clara es el mismo en las dos; esto es lo que cada dirección muestra de más o de menos. Medido palabra por palabra en las cinco vistas, a 1440 y a 390, sin la hora ni el peso de la visita (<code>herramientas/diferencias-texto.mjs</code>, <code>datos/diferencias-texto.json</code>): {total_a} palabras solo en A y {total_b} solo en B, todas explicadas aquí. Lo que no está en esta lista es igual en A y en B.</p>
+      <div class="tabla-envuelta"><table class="tabla tabla--dif"><thead><tr><th scope="col">Vista</th><th scope="col">Qué cambia</th><th scope="col">Por qué</th></tr></thead><tbody>{''.join(filas_dif)}</tbody></table></div>
+    </details>"""
 
 # ---------------------------------------------------------------- 5 · texto: el hero y la lectura fría
 texto = leer_json(os.path.join(E12, "texto", "texto-paso2.json"))
@@ -629,7 +706,12 @@ for i, o in enumerate(hero["opciones"]):
           <div><dt>Segunda lectura</dt><dd>{md(v2)}</dd></div>
         </dl>
       </li>""")
-no_corr_html = "".join(f"<li><strong>{md(t)}</strong> {md(' '.join(r.split()))}</li>" for t, r in no_corr_items)
+def resto(r):
+    r = " ".join(r.split())
+    return md(r) if r[:1] in ",.;:" else " " + md(r)
+
+
+no_corr_html = "".join(f"<li><strong>{md(t)}</strong>{resto(r)}</li>" for t, r in no_corr_items)
 seccion_texto = f"""
 <section id="texto" class="seccion" aria-labelledby="t-texto">
   <div class="seccion__lado"><p class="rotulo">5</p><h2 id="t-texto">El texto: el hero en sus tres opciones</h2></div>
@@ -638,8 +720,10 @@ seccion_texto = f"""
     <p class="nota">Las dos direcciones están construidas con la opción 3. Las muestras de abajo son la frase en la letra y la escala de cada dirección, reducidas al ancho de esta columna para que el corte de línea sea el de la home a 1440. Es una lectura simulada, no un test con personas: sirve para ver dónde se pierde alguien que no sabe de SEO, no para contar cuántos (<code>e12/texto/lectura-fria.md</code>).</p>
     <ol class="opciones">{''.join(hero_html)}</ol>
     <details class="plegable"><summary><h3>Lo que los lectores pidieron y no se arregla escribiendo</h3><span class="mas" aria-hidden="true"></span></summary>
+      <p class="nota">Tal como lo dejó Clara en <code>lectura-fria.md</code>: piden una decisión tuya o un dato que no está en el repo.</p>
       <ol class="lista-larga">{no_corr_html}</ol>
     </details>
+    {diferencias_html}
   </div>
 </section>"""
 
@@ -661,7 +745,16 @@ _h = (int(m_fecha[2]) - 3) % 24  # Santiago en octubre: UTC-3
 HORA_CL = f"{_h:02d}:{m_fecha[3]}"
 assert m_fecha[1] == "2026-10-17", m_fecha[1]
 hay_html = "".join(f"<li><span>{md(a)}</span><span class=\"fuente\">{md(b)}</span></li>" for a, b in s81)
-pedir_html = "".join(f"<li><strong>{md(t)}</strong> {md(' '.join(r.split()))}</li>" for t, r in pedir)
+PEDIR = [
+    ("Capturas de la app", "<strong>Capturas de la app:</strong> Inicio, el Coach guardando un registro, Registro con la tarjeta del día, Progreso y Perfil, a 390 de ancho, desde una cuenta de prueba tuya y nunca la de un usuario. Como praxi.coach está apagado, sería corriendo Praxi en tu Mac. O dime que el caso va sin ellas."),
+    ("¿Se cuenta que Praxi está en pausa?", "<strong>¿Contamos que Praxi está en pausa?</strong> Si lo reactivas, se mide de nuevo y recién ahí se enlaza."),
+    ("De dónde salen `landing-1.jpg`, `landing-2.jpg` y `landing-3.jpg`", "<strong>¿De dónde salen las tres fotos de la landing</strong> (<code>landing-1.jpg</code> a <code>landing-3.jpg</code>): generadas, de banco o compradas, y con qué licencia? Mientras no se sepa, no entran al caso."),
+    ("¿Se nombran los modelos", "<strong>¿Nombramos los modelos</strong> (Sonnet 5 y Haiku 4.5) o basta con «la API de Anthropic»?"),
+    ("Los datos de uso del 24-ago no se publican", "<strong>Los datos de uso del 24-ago no se publican</strong>, salvo que tú lo decidas; recomendamos «Sin métrica»."),
+    ("Permiso:", "<strong>Permiso:</strong> no hace falta el de nadie más, porque es tuyo. Solo dinos si el caso cuenta que lo construiste con agentes de IA, como dicen los commits."),
+]
+assert [t for t, _ in pedir] == [t for t, _ in PEDIR], [t for t, _ in pedir]
+pedir_html = "".join(f"<li>{h}</li>" for _, h in PEDIR)
 seccion_praxi = f"""
 <section id="praxi" class="seccion" aria-labelledby="t-praxi">
   <div class="seccion__lado"><p class="rotulo">6</p><h2 id="t-praxi">Praxi: lo que hay y lo que te pedimos</h2></div>
@@ -673,9 +766,9 @@ seccion_praxi = f"""
     </dl>
     <div class="dos-listas">
       <div><h3>Lo que se puede decir, con su fuente</h3><ul class="hay">{hay_html}</ul></div>
-      <div><h3>Lo que hay que pedirte</h3><ol class="lista-larga">{pedir_html}</ol></div>
+      <div><h3>Lo que te pedimos</h3><ol class="lista-larga">{pedir_html}</ol></div>
     </div>
-    <p class="nota">Del inventario de Diego del 16-oct, <code>e12/inventario-praxi.md</code> §8.1 y §10. El repo de Praxi solo se leyó: sigue en su último commit y sin cambios.</p>
+    <p class="nota">Del inventario de Diego del 16-oct, <code>e12/inventario-praxi.md</code> §8.1 (tal cual) y §10 (dicho de tú a tú). El repo de Praxi solo se leyó: sigue en su último commit y sin cambios.</p>
   </div>
 </section>"""
 
@@ -726,7 +819,7 @@ seccion_decidiste = f"""
       <h3>Cómo juega Koto con el negro, medido para tu punto del color</h3>
       <div class="par par--koto">
         {figura(koto_lyft, 'Koto, caso Lyft a 1440: sobre el lienzo negro, un campo crema con una pantalla de la app y otro magenta, cada uno dentro de su marco', 'Koto, caso Lyft a 1440. Captura para estudio interno: nada de Koto va al sitio.')}
-        <div>
+        <div class="koto__texto">
           <p>El 16-oct recorrí {K_RECORRIDOS} páginas de koto.com bajando de media en media pantalla: <strong>{K_PARADAS} paradas, y el lienzo es <code>#060606</code> en todas.</strong> El blanco y los colores están dentro de los marcos del trabajo, con el color de cada cliente.</p>
           <p>En <code>{e(lyft['url'])}</code> a 1440: imagen en el {num(lyft_r['medios_pct'])} % de la página, campos claros en el {num(lyft_r['campoClaro_pctPagina'])} % (el crema <code>#F1F0EB</code> de Lyft) y de color en el {num(lyft_r['campoDeColor_pctPagina'])} % (su magenta <code>#FF00C4</code>), a 8 px del negro y con radio 6.</p>
           <p class="nota">Así es como A y B juegan con el color: el que pone cada pieza. Lo que no se toma es lo que rechazaste de driftime: un color fijo por servicio. Tapa las imágenes y en las dos queda una página negra con texto blanco y gris. Detalle: <code>e12/lock-koto.md</code> §20.</p>
@@ -803,6 +896,7 @@ CSS = """
   .pedidos .t1 { font-size: 18px; line-height: 1.35; }
   .cita { color: var(--gris); font-size: 15px; }
   .par--koto { align-items: start; }
+  .koto__texto { display: grid; gap: 10px; }
 
   /* figuras y pares */
   .galeria { display: grid; gap: 16px; }
@@ -861,6 +955,7 @@ CSS = """
   .concepto__cab p:first-child { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
   .pregunta { display: grid; gap: 6px; padding: 14px 16px; border-radius: 4px; background: var(--placa); color: var(--gris); }
   .costo p { max-width: 72ch; color: var(--gris); }
+  .estados .fig img { width: auto; max-width: 100%; }
   .especimenes { display: grid; gap: 16px; }
   @media (min-width: 834px) { .especimenes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .especimen { container-type: inline-size; display: grid; gap: 8px; align-content: start; padding: 16px; border-radius: 4px; background: var(--placa); min-width: 0; }
@@ -894,11 +989,14 @@ CSS = """
   .tabla thead th { font: 500 11px/1.3 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--gris); border-bottom: 1px solid var(--linea-seccion); }
   .tabla tbody th { font-weight: 400; color: var(--blanco); }
   .tabla td { color: var(--gris); }
+  .tabla--dif td { font-size: 14px; }
+  @media (min-width: 834px) { .tabla--dif th[scope="row"] { width: 120px; } }
   @media (max-width: 833px) {
     .tabla thead { display: none; }
     .tabla tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 12px; padding: 10px 0; border-bottom: 1px solid var(--linea); }
     .tabla th, .tabla td { border: 0; padding: 0; }
     .tabla th[scope="row"] { grid-column: 1 / -1; }
+    .tabla--dif td { grid-column: 1 / -1; }
     .tabla td::before { content: attr(data-rotulo); display: block; font: 500 11px/1.3 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--gris); }
   }
   .pie { border-top: 1px solid var(--linea-seccion); padding-top: 16px; color: var(--gris); font-size: 14px; display: grid; gap: 6px; max-width: 90ch; }
