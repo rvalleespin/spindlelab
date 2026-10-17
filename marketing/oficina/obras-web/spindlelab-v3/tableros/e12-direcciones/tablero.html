@@ -1,0 +1,576 @@
+<meta charset="utf-8">
+<title>Tablero direcciones E12</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,200..900&family=Google+Sans+Flex:wdth,wght@25..151,100..1000&family=DM+Mono:wght@500&display=swap">
+<style>
+  /* Tablero de trabajo en negro, a propósito: las dos direcciones van sobre el lienzo #060606 de Koto y se comparan
+     sobre él. Un solo tema; contraste AA medido (blanco 20,26:1 y gris #989898 7,02:1 sobre el lienzo, 6,39:1 sobre la
+     placa). La letra del tablero es la del sistema y no la de ninguna dirección, para no inclinar la elección: Google
+     Sans Flex y Mona Sans aparecen solo donde se muestran (el nombre de cada dirección y las muestras del hero). Desde
+     1194 px cada sección lleva su título en una barra de 320 px, como el caso de Koto. */
+  :root {
+    color-scheme: dark;
+    --lienzo: #060606;
+    --placa: #141414;
+    --placa-activa: #202020;
+    --blanco: #FFFFFF;
+    --gris: #989898;
+    --linea: rgba(255,255,255,.10);
+    --linea-seccion: #2D2D2D;
+    --f-texto: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --f-mono: 'DM Mono', ui-monospace, Menlo, monospace;
+    --f-a: 'Google Sans Flex', system-ui, sans-serif;
+    --f-b: 'Mona Sans', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--lienzo); color: var(--blanco); font: 400 16px/1.45 var(--f-texto); -webkit-font-smoothing: antialiased; }
+  .marco { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 16px 64px; }
+  h1, h2, h3 { font-weight: 400; margin: 0; text-wrap: balance; }
+  h1 { font-size: clamp(32px, 3.4vw, 48px); line-height: 1.05; letter-spacing: -.01em; max-width: 24ch; }
+  h2 { font-size: clamp(26px, 2.4vw, 34px); line-height: 1.1; letter-spacing: -.01em; }
+  h3 { font-size: clamp(20px, 1.6vw, 22px); line-height: 1.25; }
+  p, ul, ol, dl, figure { margin: 0; }
+  a { color: var(--blanco); text-underline-offset: 3px; }
+  code { font-family: var(--f-mono); font-size: max(11px, .82em); letter-spacing: .01em; overflow-wrap: anywhere; }
+  strong { font-weight: 600; color: var(--blanco); }
+  :focus-visible { outline: 2px solid var(--blanco); outline-offset: 3px; }
+  .rotulo { font: 500 11px/1.3 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--gris); }
+  .rotulo code { font-size: 1em; text-transform: none; }
+  .t1 { color: var(--blanco); }
+  .t2 { color: var(--gris); }
+  .intro { font-size: clamp(19px, 1.7vw, 23px); line-height: 1.3; max-width: 36em; text-wrap: pretty; }
+  .nota { color: var(--gris); max-width: 68ch; font-size: 15px; }
+  .nota strong { color: var(--blanco); }
+  .bloque { display: grid; gap: 12px; }
+
+  /* cabecera */
+  .cab { display: grid; gap: 20px; padding: 8px 0 40px; }
+  .cab__fila { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+  .indice { display: flex; flex-wrap: wrap; gap: 0 20px; list-style: none; padding: 0; }
+  .indice a { font: 500 11px/1.3 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--blanco); text-decoration: none; display: inline-block; padding: 14px 0; }
+  .indice a:hover { text-decoration: underline; }
+
+  /* secciones */
+  .seccion { position: relative; border-top: 1px solid var(--linea-seccion); padding: 20px 0 64px; display: grid; gap: 24px; }
+  .seccion__lado { display: grid; gap: 8px; align-content: start; }
+  .seccion__cuerpo { display: grid; gap: 28px; min-width: 0; }
+  @media (min-width: 1194px) {
+    .seccion { grid-template-columns: 320px minmax(0, 1fr); gap: 16px; }
+    .seccion__lado { position: sticky; top: 16px; align-self: start; padding-right: 24px; }
+  }
+  .nombre-a { font-family: var(--f-a); font-stretch: 76%; font-weight: 300; font-size: clamp(32px, 3.2vw, 48px); line-height: 1; }
+  .nombre-b { font-family: var(--f-b); font-stretch: 89%; font-weight: 340; font-size: clamp(36px, 3.8vw, 56px); line-height: .98; }
+
+  /* 1 · lo que decidiste */
+  .pedidos { list-style: none; padding: 0; display: grid; gap: 14px; counter-reset: p; max-width: 52em; }
+  .pedidos li { counter-increment: p; display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 2px 8px; }
+  .pedidos li::before { content: counter(p); font: 500 11px/1.9 var(--f-mono); color: var(--gris); grid-row: span 2; }
+  .pedidos .t1 { font-size: 18px; line-height: 1.35; }
+  .cita { color: var(--gris); font-size: 15px; }
+  .par--koto { align-items: start; }
+
+  /* figuras y pares */
+  .galeria { display: grid; gap: 16px; }
+  @media (min-width: 834px) { .galeria--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .fig { display: grid; gap: 8px; align-content: start; min-width: 0; }
+  .fig img, .fig video { display: block; width: 100%; height: auto; border-radius: 6px; background: var(--placa); }
+  .fig figcaption { font-size: 14px; line-height: 1.4; color: var(--gris); max-width: 64ch; }
+  .par { display: grid; gap: 16px; align-items: start; }
+  @media (min-width: 834px) {
+    .par { grid-template-columns: minmax(0, 3.3fr) minmax(0, 1fr); }
+    .par--koto { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  }
+  .pantalla--tel { max-width: 300px; }
+  @media (min-width: 834px) { .pantalla--tel { max-width: none; } }
+
+  /* vistas */
+  .vista { display: grid; gap: 16px; padding-top: 16px; border-top: 1px solid var(--linea-seccion); }
+  .pie-vista { color: var(--gris); max-width: 70ch; }
+  .visor-caja { display: grid; gap: 8px; min-width: 0; }
+  .visor { height: clamp(360px, 72vh, 820px); overflow-y: auto; overflow-x: hidden; border-radius: 6px; background: var(--placa); outline: 1px solid var(--linea); scrollbar-color: #4A4A4A var(--placa); }
+  .visor img { display: block; width: 100%; height: auto; }
+  .visor-caja--tel { max-width: 300px; }
+  @media (min-width: 834px) { .visor-caja--tel { max-width: none; } }
+
+  /* plegables */
+  .plegable { border-top: 1px solid var(--linea-seccion); }
+  .plegable > summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; padding: 8px 0; cursor: pointer; }
+  .plegable > summary::-webkit-details-marker { display: none; }
+  .plegable > summary:hover h3 { text-decoration: underline; text-underline-offset: 4px; }
+  .mas { flex: none; width: 32px; height: 32px; border-radius: 4px; background: var(--placa); display: grid; place-items: center; }
+  .mas::before { content: "+"; font: 500 16px/1 var(--f-mono); color: var(--blanco); }
+  .plegable[open] > summary .mas::before { content: "\2212"; }
+  .plegable[open] { display: grid; gap: 16px; padding-bottom: 8px; }
+  details.vista { padding-top: 0; }
+  details.vista[open] { padding-bottom: 8px; }
+
+  /* tres líneas y valores */
+  .tres { list-style: none; padding: 0; counter-reset: t; display: grid; gap: 10px; border-top: 1px solid var(--linea-seccion); padding-top: 12px; max-width: 60em; }
+  .tres li { counter-increment: t; display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 8px; font-size: 17px; line-height: 1.4; }
+  .tres li::before { content: counter(t); font: 500 11px/2 var(--f-mono); color: var(--gris); }
+  .valores { display: grid; border-top: 1px solid var(--linea-seccion); }
+  .valores div { display: grid; gap: 4px; padding: 12px 0; border-bottom: 1px solid var(--linea); }
+  .valores dt { font: 500 11px/1.4 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--gris); }
+  .valores dd { margin: 0; color: var(--gris); max-width: 72ch; }
+  @media (min-width: 834px) { .valores div { grid-template-columns: 180px minmax(0, 1fr); gap: 16px; } }
+  .valores--chico dd { font-size: 15px; }
+
+  /* sellos */
+  .sello { display: inline-block; vertical-align: middle; border: 1px solid var(--blanco); border-radius: 2px; padding: 4px 7px; font: 500 11px/1 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--blanco); }
+  .sello--suave { border-color: #4A4A4A; color: var(--gris); margin-left: 8px; }
+
+  /* 3 · logo, 4 · conceptos, 5 · opciones */
+  .caminos, .conceptos, .opciones { list-style: none; padding: 0; display: grid; gap: 40px; }
+  .camino, .concepto, .opcion { display: grid; gap: 14px; padding-top: 16px; border-top: 1px solid var(--linea-seccion); min-width: 0; }
+  .concepto__cab { display: grid; gap: 8px; }
+  .concepto__cab p:first-child { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+  .pregunta { display: grid; gap: 6px; padding: 14px 16px; border-radius: 4px; background: var(--placa); color: var(--gris); }
+  .costo p { max-width: 72ch; color: var(--gris); }
+  .especimenes { display: grid; gap: 16px; }
+  @media (min-width: 834px) { .especimenes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .especimen { container-type: inline-size; display: grid; gap: 8px; align-content: start; padding: 16px; border-radius: 4px; background: var(--placa); min-width: 0; }
+  .esp { letter-spacing: -.01em; overflow-wrap: break-word; }
+  /* el h1 de A mide 48 px en una columna de 1054 px; el de B, 87,84 px en una de 1408 */
+  .esp-a { font-family: var(--f-a); font-stretch: 76%; font-weight: 300; font-size: max(16px, 4.554cqw); line-height: 1; }
+  .esp-b { font-family: var(--f-b); font-stretch: 89%; font-weight: 340; font-size: max(18px, 6.239cqw); line-height: .98; }
+  .entradilla { color: var(--gris); max-width: 62ch; }
+
+  /* 6 · Praxi */
+  .dos-listas { display: grid; gap: 28px; }
+  @media (min-width: 1194px) { .dos-listas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .dos-listas > div { display: grid; gap: 12px; align-content: start; min-width: 0; }
+  .hay { list-style: none; padding: 0; border-top: 1px solid var(--linea-seccion); }
+  .hay li { display: grid; gap: 4px; padding: 10px 0; border-bottom: 1px solid var(--linea); }
+  .hay .fuente { color: var(--gris); font-size: 14px; }
+  .lista-larga { padding-left: 20px; display: grid; gap: 10px; color: var(--gris); max-width: 72ch; }
+  .lista-larga li::marker { font: 500 12px var(--f-mono); color: var(--gris); }
+
+  /* 7 · decides */
+  .decide { list-style: none; padding: 0; counter-reset: d; border-top: 1px solid var(--linea-seccion); }
+  .decide > li { counter-increment: d; padding: 18px 0; border-bottom: 1px solid var(--linea); display: grid; gap: 10px; min-width: 0; }
+  .decide h3::before { content: counter(d) " · "; color: var(--gris); }
+  .decide p { color: var(--gris); max-width: 72ch; }
+  .abiertas { list-style: none; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--linea-seccion); }
+  .abiertas li { padding: 12px 0; border-bottom: 1px solid var(--linea); max-width: 80ch; }
+  .tabla-envuelta { max-width: 100%; }
+  .tabla { border-collapse: collapse; width: 100%; font-size: 15px; }
+  .tabla caption { text-align: left; padding-bottom: 8px; }
+  .tabla th, .tabla td { text-align: left; padding: 9px 12px 9px 0; border-bottom: 1px solid var(--linea); vertical-align: top; }
+  .tabla thead th { font: 500 11px/1.3 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--gris); border-bottom: 1px solid var(--linea-seccion); }
+  .tabla tbody th { font-weight: 400; color: var(--blanco); }
+  .tabla td { color: var(--gris); }
+  @media (max-width: 833px) {
+    .tabla thead { display: none; }
+    .tabla tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 12px; padding: 10px 0; border-bottom: 1px solid var(--linea); }
+    .tabla th, .tabla td { border: 0; padding: 0; }
+    .tabla th[scope="row"] { grid-column: 1 / -1; }
+    .tabla td::before { content: attr(data-rotulo); display: block; font: 500 11px/1.3 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--gris); }
+  }
+  .pie { border-top: 1px solid var(--linea-seccion); padding-top: 16px; color: var(--gris); font-size: 14px; display: grid; gap: 6px; max-width: 90ch; }
+</style>
+<div class="marco">
+  <header class="cab">
+    <div class="cab__fila">
+      <p class="rotulo">SpindleLab v3 · E12 · compuerta 2 · 17 de octubre de 2026</p>
+      <p class="rotulo">Santiago <span class="reloj">--:--</span> <span class="huso">UTC-3</span></p>
+    </div>
+    <h1>Dos direcciones sobre negro: Archivo y Banco</h1>
+    <p class="intro"><span class="t1">Eliges una, un camino de logo y un hero.</span> <span class="t2">Todo lo que ves está construido y corrido en el navegador, con el texto real y el chequeo de verdad. Nada está publicado y nada se generó con pago.</span></p>
+    <nav aria-label="Secciones del tablero"><ul class="indice">
+      <li><a href="#decidiste">1 · Lo que decidiste</a></li><li><a href="#a">2 · A Archivo</a></li><li><a href="#b">2 · B Banco</a></li>
+      <li><a href="#logo">3 · Logo</a></li><li><a href="#conceptos">4 · Conceptos</a></li><li><a href="#texto">5 · El hero</a></li>
+      <li><a href="#praxi">6 · Praxi</a></li><li><a href="#decides">7 · Lo que decides</a></li>
+    </ul></nav>
+  </header>
+  <main>
+    
+<section id="decidiste" class="seccion" aria-labelledby="t-decidiste">
+  <div class="seccion__lado"><p class="rotulo">1</p><h2 id="t-decidiste">Lo que decidiste en la compuerta 1</h2></div>
+  <div class="seccion__cuerpo">
+    <ol class="pedidos"><li><p class="t1">Las cinco preguntas del brief van con la opción recomendada: el mismo comprador, la declaración arriba con el chequeo como su prueba en la misma pantalla, <code>/trabajo/</code> como índice con una página por caso, y Redes y Paid Media en una línea de la home.</p><p class="cita">«de acuerdo con todo lo que propones»</p></li><li><p class="t1">Dos casos reales nuevos: Combeau sin pedir más permiso, porque ya lo pediste, y Praxi como sitio y app.</p><p class="cita">«no se necesita más permiso. ya lo pedí hace un rato» · «podría entrar praxi como caso ya que creó un sitio y una app»</p></li><li><p class="t1">Los casos se cuentan como Koto: ficha lateral pegajosa, secciones, imágenes grandes y el resultado medido o «Sin métrica».</p><p class="cita">«hacer los casos como los hace la referencia»</p></li><li><p class="t1">Cuatro piezas de concepto, una por rubro que vendemos (industrial B2B, clínica, estudio legal y servicios), con identidad, sitio y movimiento, rotuladas «Concepto».</p><p class="cita">«para casos vamos a tener que abrirnos a crear algunas piezas para hacer un buen portafolio. no solo es poner cosas medidas si no que también mostrar el nivel de trabajo que puedo llegar a hacer»</p></li><li><p class="t1">Base negra como Koto, con juegos de blanco u otros colores en páginas o secciones interiores.</p><p class="cita">«tomar el negro, pero así como muestra el sitio, también hay juegos con sitios interno con blanco u otros colores»</p></li><li><p class="t1">En diseño manda la referencia y el manual antiguo deja de regir: una letra por dirección (A, Google Sans Flex; B, Mona Sans; DM Mono en las dos) y Bruno propone los caminos de logo en esta compuerta.</p><p class="cita">«en diseño regirse por la referencia. el manual antiguo se olvida. ahora tenemos que cambiar»</p></li></ol>
+    <p class="nota">Se mantiene: Astro, Tailwind y Motion; casos reales solo con lo medido; cero prueba social inventada; ningún prospecto nombrado; precios y oferta iguales a <code>oferta-v3.json</code> y <code>servicios-v3.json</code>; nada publicado y nada generado con pago. Si «no te contesté los 4 puntos» quería decir que siguen abiertos, se cierran en esta compuerta. Registro completo: <code>e12/brief-de-obra.md</code>, sección «Compuerta 1».</p>
+    <div class="bloque koto">
+      <h3>Cómo juega Koto con el negro, medido para tu punto del color</h3>
+      <div class="par par--koto">
+        <figure class="fig "><img src="img/t-koto-lyft-1440.jpg" width="720" height="450" alt="Koto, caso Lyft a 1440: sobre el lienzo negro, un campo crema con una pantalla de la app y otro magenta, cada uno dentro de su marco" loading="lazy" decoding="async"><figcaption>Koto, caso Lyft a 1440. Captura para estudio interno: nada de Koto va al sitio.</figcaption></figure>
+        <div>
+          <p>El 16-oct recorrí 27 páginas de koto.com bajando de media en media pantalla: <strong>640 paradas, y el lienzo es <code>#060606</code> en todas.</strong> El blanco y los colores están dentro de los marcos del trabajo, con el color de cada cliente.</p>
+          <p>En <code>https://koto.com/projects/lyft</code> a 1440: imagen en el 61,4 % de la página, campos claros en el 15,0 % (el crema <code>#F1F0EB</code> de Lyft) y de color en el 8,3 % (su magenta <code>#FF00C4</code>), a 8 px del negro y con radio 6.</p>
+          <p class="nota">Así es como A y B juegan con el color: el que pone cada pieza. Lo que no se toma es lo que rechazaste de driftime: un color fijo por servicio. Tapa las imágenes y en las dos queda una página negra con texto blanco y gris. Detalle: <code>e12/lock-koto.md</code> §20.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    
+<section id="a" class="seccion" aria-labelledby="t-a">
+  <div class="seccion__lado"><p class="rotulo">2 · Dirección A</p><h2 id="t-a" class="nombre-a">A · Archivo</h2></div>
+  <div class="seccion__cuerpo">
+    <p class="intro"><span class="t1">El trabajo es lo grande.</span> <span class="t2">Un lienzo negro donde la interfaz se retira, en gris, chica y sin negrita, y lo que ocupa la pantalla son las capturas y grabaciones del trabajo en su marco.</span></p>
+    <div class="bloque"><p class="rotulo">Qué la hace distinta</p><ol class="tres"><li>Carga la pantalla el trabajo: la cinta en la primera pantalla, el índice como muro de imágenes (53,0 % de <code>/trabajo/</code>) y casos con 49,8 a 59,2 % de imagen.</li><li>El titular a la escala de Koto: 48 px en la home a 1440, en Google Sans Flex liviana (peso 300, ancho 76 %).</li><li>El color lo pone cada pieza dentro de su marco y la interfaz no tiene ninguno: ni en Desarrollo web cambia el lienzo.</li></ol></div>
+    <dl class="valores"><div><dt>Qué sacrifica</dt><dd>El hero monumental: la frase va a 48 px, no a escala de cartel. Y depende del material grabado: sin capturas buenas, A se cae.</dd></div><div><dt>Riesgo de la letra</dt><dd>Google Sans Flex es la letra de los productos de Google: un estudio que vende aparecer en Google, escrito con ella, puede leerse como «de Google». La elegiste sabiéndolo; aquí la puedes pesar mirándola.</dd></div><div><dt>Logo provisorio</dt><dd>Camino 2, «El huso» (sección 3). Va de muestra: el camino lo eliges tú.</dd></div><div><dt>Medido a 1440</dt><dd>Negro fuera de los medios: home 95,2 %, <code>/trabajo/</code> 96,0 % (piso 80 %). El chequeo, dentro de la primera pantalla a 1440 × 900 y a 390 × 844.</dd></div></dl>
+    <div class="bloque"><h3>Recorridos</h3><div class="galeria galeria--2"><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-a-home-1440-recorrido.jpg" width="1440" height="900" aria-label="Recorrido de la home de la dirección A, a 1440"><source src="video/t-a-home-1440.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/a-home-1440.webm" type='video/webm'></video><figcaption>Recorrido de la home a 1440 × 900, 14,2 s, grabado del navegador con el mouse de verdad: el movimiento corre con Motion, no es una animación aparte.</figcaption></figure><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-a-trabajo-1440-recorrido.jpg" width="1440" height="900" aria-label="Recorrido de /trabajo/ de la dirección A, a 1440"><source src="video/t-a-trabajo-1440.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/a-trabajo-1440.webm" type='video/webm'></video><figcaption>Recorrido de /trabajo/ a 1440 × 900, 12,7 s, grabado del navegador con el mouse de verdad: el movimiento corre con Motion, no es una animación aparte.</figcaption></figure></div></div>
+    <div class="bloque"><h3>Las cinco vistas</h3><p class="nota">La home y el índice van abiertos; las otras tres se abren con un toque. Cada vista trae su primera pantalla a 1440 y a 390 y, debajo, la página completa en un marco que se baja por dentro.</p></div>
+    <div class="vista" id="a-home"><h3>Vista 1 · La home</h3>
+      <p class="pie-vista">La cinta de ocho piezas llena la primera pantalla y la ficha de la pieza que pasa cambia con ella. La declaración va a 48 px con el chequeo al lado: campo y botón dentro de los 900 px (el botón termina en el px 755).</p>
+      <div class="par">
+        <figure class="fig pantalla"><img src="img/a-home-1440-primera.jpg" width="1440" height="900" alt="Dirección A, La home, a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+        <figure class="fig pantalla pantalla--tel"><img src="img/a-home-390-primera.jpg" width="780" height="1688" alt="Dirección A, La home, a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+      </div>
+      <div class="par par--visor">
+        <div class="visor-caja"><p class="rotulo">Página completa a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="Dirección A, La home, página completa a 1440: se desplaza dentro del marco"><img src="img/a-home-1440-01.jpg" width="1440" height="4000" alt="Dirección A, La home, página completa a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/a-home-1440-02.jpg" width="1440" height="3573" alt="Dirección A, La home, página completa a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+        <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="Dirección A, La home, página completa a 390: se desplaza dentro del marco"><img src="img/a-home-390-01.jpg" width="780" height="4000" alt="Dirección A, La home, página completa a 390, tramo 1 de 5" loading="lazy" decoding="async"><img src="img/a-home-390-02.jpg" width="780" height="4000" alt="Dirección A, La home, página completa a 390, tramo 2 de 5" loading="lazy" decoding="async"><img src="img/a-home-390-03.jpg" width="780" height="4000" alt="Dirección A, La home, página completa a 390, tramo 3 de 5" loading="lazy" decoding="async"><img src="img/a-home-390-04.jpg" width="780" height="4000" alt="Dirección A, La home, página completa a 390, tramo 4 de 5" loading="lazy" decoding="async"><img src="img/a-home-390-05.jpg" width="780" height="360" alt="Dirección A, La home, página completa a 390, tramo 5 de 5" loading="lazy" decoding="async"></div></div>
+      </div></div><div class="vista" id="a-trabajo"><h3>Vista 2 · /trabajo/, el índice</h3>
+      <p class="pie-vista">El muro de dos columnas en tres proporciones (4:5, 4:3 y 5:3), sin bordes. El filtro filtra de verdad y el conteo es el de las entradas. Imagen: 53,0 % de la página.</p>
+      <div class="par">
+        <figure class="fig pantalla"><img src="img/a-trabajo-1440-primera.jpg" width="1440" height="900" alt="Dirección A, /trabajo/, el índice, a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+        <figure class="fig pantalla pantalla--tel"><img src="img/a-trabajo-390-primera.jpg" width="780" height="1688" alt="Dirección A, /trabajo/, el índice, a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+      </div>
+      <div class="par par--visor">
+        <div class="visor-caja"><p class="rotulo">Página completa a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="Dirección A, /trabajo/, el índice, página completa a 1440: se desplaza dentro del marco"><img src="img/a-trabajo-1440-01.jpg" width="1440" height="3355" alt="Dirección A, /trabajo/, el índice, página completa a 1440, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+        <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="Dirección A, /trabajo/, el índice, página completa a 390: se desplaza dentro del marco"><img src="img/a-trabajo-390-01.jpg" width="780" height="4000" alt="Dirección A, /trabajo/, el índice, página completa a 390, tramo 1 de 3" loading="lazy" decoding="async"><img src="img/a-trabajo-390-02.jpg" width="780" height="4000" alt="Dirección A, /trabajo/, el índice, página completa a 390, tramo 2 de 3" loading="lazy" decoding="async"><img src="img/a-trabajo-390-03.jpg" width="780" height="3020" alt="Dirección A, /trabajo/, el índice, página completa a 390, tramo 3 de 3" loading="lazy" decoding="async"></div></div>
+      </div></div><details class="vista plegable" id="a-praxi"><summary><h3>Vista 3 · Caso real: Praxi</h3><span class="mas" aria-hidden="true"></span></summary>
+      <p class="pie-vista">La barra lateral pegajosa con la ficha y el índice de secciones, el video del inicio de Praxi y las cinco secciones. Imagen: 49,8 % de la página.</p>
+      <div class="par">
+        <figure class="fig pantalla"><img src="img/a-caso-praxi-1440-primera.jpg" width="1440" height="900" alt="Dirección A, Caso real: Praxi, a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+        <figure class="fig pantalla pantalla--tel"><img src="img/a-caso-praxi-390-primera.jpg" width="780" height="1688" alt="Dirección A, Caso real: Praxi, a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+      </div>
+      <div class="par par--visor">
+        <div class="visor-caja"><p class="rotulo">Página completa a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="Dirección A, Caso real: Praxi, página completa a 1440: se desplaza dentro del marco"><img src="img/a-caso-praxi-1440-01.jpg" width="1440" height="4000" alt="Dirección A, Caso real: Praxi, página completa a 1440, tramo 1 de 3" loading="lazy" decoding="async"><img src="img/a-caso-praxi-1440-02.jpg" width="1440" height="4000" alt="Dirección A, Caso real: Praxi, página completa a 1440, tramo 2 de 3" loading="lazy" decoding="async"><img src="img/a-caso-praxi-1440-03.jpg" width="1440" height="1490" alt="Dirección A, Caso real: Praxi, página completa a 1440, tramo 3 de 3" loading="lazy" decoding="async"></div></div>
+        <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="Dirección A, Caso real: Praxi, página completa a 390: se desplaza dentro del marco"><img src="img/a-caso-praxi-390-01.jpg" width="780" height="4000" alt="Dirección A, Caso real: Praxi, página completa a 390, tramo 1 de 4" loading="lazy" decoding="async"><img src="img/a-caso-praxi-390-02.jpg" width="780" height="4000" alt="Dirección A, Caso real: Praxi, página completa a 390, tramo 2 de 4" loading="lazy" decoding="async"><img src="img/a-caso-praxi-390-03.jpg" width="780" height="4000" alt="Dirección A, Caso real: Praxi, página completa a 390, tramo 3 de 4" loading="lazy" decoding="async"><img src="img/a-caso-praxi-390-04.jpg" width="780" height="1470" alt="Dirección A, Caso real: Praxi, página completa a 390, tramo 4 de 4" loading="lazy" decoding="async"></div></div>
+      </div></details><details class="vista plegable" id="a-sesenta"><summary><h3>Vista 4 · Caso de concepto: Sesenta</h3><span class="mas" aria-hidden="true"></span></summary>
+      <p class="pie-vista">La misma plantilla con el texto de Bruno; «Concepto · 2026» en la ficha, sin scroll, a 1440 y a 390. Imagen: 59,2 %; campos de color: 22,3 %.</p>
+      <div class="par">
+        <figure class="fig pantalla"><img src="img/a-caso-sesenta-1440-primera.jpg" width="1440" height="900" alt="Dirección A, Caso de concepto: Sesenta, a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+        <figure class="fig pantalla pantalla--tel"><img src="img/a-caso-sesenta-390-primera.jpg" width="780" height="1688" alt="Dirección A, Caso de concepto: Sesenta, a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+      </div>
+      <div class="par par--visor">
+        <div class="visor-caja"><p class="rotulo">Página completa a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="Dirección A, Caso de concepto: Sesenta, página completa a 1440: se desplaza dentro del marco"><img src="img/a-caso-sesenta-1440-01.jpg" width="1440" height="4000" alt="Dirección A, Caso de concepto: Sesenta, página completa a 1440, tramo 1 de 3" loading="lazy" decoding="async"><img src="img/a-caso-sesenta-1440-02.jpg" width="1440" height="4000" alt="Dirección A, Caso de concepto: Sesenta, página completa a 1440, tramo 2 de 3" loading="lazy" decoding="async"><img src="img/a-caso-sesenta-1440-03.jpg" width="1440" height="2267" alt="Dirección A, Caso de concepto: Sesenta, página completa a 1440, tramo 3 de 3" loading="lazy" decoding="async"></div></div>
+        <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="Dirección A, Caso de concepto: Sesenta, página completa a 390: se desplaza dentro del marco"><img src="img/a-caso-sesenta-390-01.jpg" width="780" height="4000" alt="Dirección A, Caso de concepto: Sesenta, página completa a 390, tramo 1 de 4" loading="lazy" decoding="async"><img src="img/a-caso-sesenta-390-02.jpg" width="780" height="4000" alt="Dirección A, Caso de concepto: Sesenta, página completa a 390, tramo 2 de 4" loading="lazy" decoding="async"><img src="img/a-caso-sesenta-390-03.jpg" width="780" height="4000" alt="Dirección A, Caso de concepto: Sesenta, página completa a 390, tramo 3 de 4" loading="lazy" decoding="async"><img src="img/a-caso-sesenta-390-04.jpg" width="780" height="228" alt="Dirección A, Caso de concepto: Sesenta, página completa a 390, tramo 4 de 4" loading="lazy" decoding="async"></div></div>
+      </div></details><details class="vista plegable" id="a-desarrollo-web"><summary><h3>Vista 5 · Desarrollo web, el juego de color</h3><span class="mas" aria-hidden="true"></span></summary>
+      <p class="pie-vista">El lienzo no cambia, como en Koto: el color entra con una franja de Doceavo, las tres portadas de «Lo que construimos» y la fase a la vista, que pasa de gris a blanco al bajar. Los cuatro planes, tal cual <code>oferta-v3.json</code>.</p>
+      <div class="par">
+        <figure class="fig pantalla"><img src="img/a-desarrollo-web-1440-primera.jpg" width="1440" height="900" alt="Dirección A, Desarrollo web, el juego de color, a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+        <figure class="fig pantalla pantalla--tel"><img src="img/a-desarrollo-web-390-primera.jpg" width="780" height="1688" alt="Dirección A, Desarrollo web, el juego de color, a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+      </div>
+      <div class="par par--visor">
+        <div class="visor-caja"><p class="rotulo">Página completa a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="Dirección A, Desarrollo web, el juego de color, página completa a 1440: se desplaza dentro del marco"><img src="img/a-desarrollo-web-1440-01.jpg" width="1440" height="4000" alt="Dirección A, Desarrollo web, el juego de color, página completa a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/a-desarrollo-web-1440-02.jpg" width="1440" height="1925" alt="Dirección A, Desarrollo web, el juego de color, página completa a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+        <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="Dirección A, Desarrollo web, el juego de color, página completa a 390: se desplaza dentro del marco"><img src="img/a-desarrollo-web-390-01.jpg" width="780" height="4000" alt="Dirección A, Desarrollo web, el juego de color, página completa a 390, tramo 1 de 5" loading="lazy" decoding="async"><img src="img/a-desarrollo-web-390-02.jpg" width="780" height="4000" alt="Dirección A, Desarrollo web, el juego de color, página completa a 390, tramo 2 de 5" loading="lazy" decoding="async"><img src="img/a-desarrollo-web-390-03.jpg" width="780" height="4000" alt="Dirección A, Desarrollo web, el juego de color, página completa a 390, tramo 3 de 5" loading="lazy" decoding="async"><img src="img/a-desarrollo-web-390-04.jpg" width="780" height="4000" alt="Dirección A, Desarrollo web, el juego de color, página completa a 390, tramo 4 de 5" loading="lazy" decoding="async"><img src="img/a-desarrollo-web-390-05.jpg" width="780" height="762" alt="Dirección A, Desarrollo web, el juego de color, página completa a 390, tramo 5 de 5" loading="lazy" decoding="async"></div></div>
+      </div></details>
+    <details class="plegable"><summary><h3>Dos estados que una captura de página no muestra</h3><span class="mas" aria-hidden="true"></span></summary>
+      <div class="galeria galeria--2 estados"><figure class="fig "><img src="img/t-a-cursor-1440.jpg" width="1000" height="700" alt="Dirección A: el círculo blanco con «Ver el caso» sobre Combeau en el índice, la pieza recortada y la vecina bajo el velo" loading="lazy" decoding="async"><figcaption>El cursor sobre una pieza del índice: círculo blanco con «Ver el caso»; las demás quedan bajo el velo al 70 %.</figcaption></figure><figure class="fig "><img src="img/t-a-chequeo-1440.jpg" width="346" height="1013" alt="Dirección A: el panel del chequeo con el resultado 94 de 100 y la lista de las 21 señales" loading="lazy" decoding="async"><figcaption>El chequeo corrido de verdad contra <code>/api/chequeo</code> sobre verifica.spindlelab.cl, sitio propio: 94/100 con sus 21 ítems.</figcaption></figure></div>
+    </details>
+  </div>
+</section>
+    
+<section id="b" class="seccion" aria-labelledby="t-b">
+  <div class="seccion__lado"><p class="rotulo">2 · Dirección B</p><h2 id="t-b" class="nombre-b">B · Banco</h2></div>
+  <div class="seccion__cuerpo">
+    <p class="intro"><span class="t1">El dato vivo es lo grande.</span> <span class="t2">La declaración a escala de cartel, el chequeo de verdad como su prueba y el índice como una tabla con filetes donde cada fila abre su pieza.</span></p>
+    <div class="bloque"><p class="rotulo">Qué la hace distinta</p><ol class="tres"><li>Carga la pantalla el dato vivo: el chequeo con la regla de sus 21 señales en la primera pantalla, la cifra que prueba cada pieza y la hora y el peso de tu visita.</li><li>La declaración a 88 px en Mona Sans liviana (peso 340, ancho 89 %), sin una sola imagen en la primera pantalla de la home.</li><li>El índice es una tabla con un visor que muestra la pieza al pasar o enfocar (2,9 % de imagen en <code>/trabajo/</code>), y los planes van en una hoja blanca.</li></ol></div>
+    <dl class="valores"><div><dt>Qué sacrifica</dt><dd>El muro de imágenes de Koto: en el índice el trabajo se ve de a una pieza, en un visor de 346 px. Y más texto por pantalla, con el riesgo de leerse como panel.</dd></div><div><dt>Logo provisorio</dt><dd>Camino 3, «Dos cortes» (sección 3): la mono, que en B es la voz del dato, entra en el nombre. Va de muestra: el camino lo eliges tú.</dd></div><div><dt>Medido a 1440</dt><dd>Negro fuera de los medios: home 89,9 %, <code>/trabajo/</code> 87,6 % (piso 80 %). El chequeo, dentro de la primera pantalla a 1440 × 900 y a 390 × 844.</dd></div></dl>
+    <div class="bloque"><h3>Recorridos</h3><div class="galeria galeria--2"><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-b-home-1440-recorrido.jpg" width="1440" height="900" aria-label="Recorrido de la home de la dirección B, a 1440"><source src="video/t-b-home-1440.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/b-home-1440.webm" type='video/webm'></video><figcaption>Recorrido de la home a 1440 × 900, 17,1 s, grabado del navegador con el mouse de verdad: el movimiento corre con Motion, no es una animación aparte.</figcaption></figure><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-b-trabajo-1440-recorrido.jpg" width="1440" height="900" aria-label="Recorrido de /trabajo/ de la dirección B, a 1440"><source src="video/t-b-trabajo-1440.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/b-trabajo-1440.webm" type='video/webm'></video><figcaption>Recorrido de /trabajo/ a 1440 × 900, 15,7 s, grabado del navegador con el mouse de verdad: el movimiento corre con Motion, no es una animación aparte.</figcaption></figure></div></div>
+    <div class="bloque"><h3>Las cinco vistas</h3><p class="nota">La home y el índice van abiertos; las otras tres se abren con un toque. Cada vista trae su primera pantalla a 1440 y a 390 y, debajo, la página completa en un marco que se baja por dentro.</p></div>
+    <div class="vista" id="b-home"><h3>Vista 1 · La home</h3>
+      <p class="pie-vista">La declaración a 88 px y el panel del chequeo con la regla de las 21 señales, sin una sola imagen en la primera pantalla: campo y botón terminan en el px 629 de 900.</p>
+      <div class="par">
+        <figure class="fig pantalla"><img src="img/b-home-1440-primera.jpg" width="1440" height="900" alt="Dirección B, La home, a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+        <figure class="fig pantalla pantalla--tel"><img src="img/b-home-390-primera.jpg" width="780" height="1688" alt="Dirección B, La home, a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+      </div>
+      <div class="par par--visor">
+        <div class="visor-caja"><p class="rotulo">Página completa a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="Dirección B, La home, página completa a 1440: se desplaza dentro del marco"><img src="img/b-home-1440-1de2.jpg" width="1440" height="4000" alt="Dirección B, La home, página completa a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/b-home-1440-2de2.jpg" width="1440" height="1774" alt="Dirección B, La home, página completa a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+        <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="Dirección B, La home, página completa a 390: se desplaza dentro del marco"><img src="img/b-home-390-1de4.jpg" width="780" height="4000" alt="Dirección B, La home, página completa a 390, tramo 1 de 4" loading="lazy" decoding="async"><img src="img/b-home-390-2de4.jpg" width="780" height="4000" alt="Dirección B, La home, página completa a 390, tramo 2 de 4" loading="lazy" decoding="async"><img src="img/b-home-390-3de4.jpg" width="780" height="4000" alt="Dirección B, La home, página completa a 390, tramo 3 de 4" loading="lazy" decoding="async"><img src="img/b-home-390-4de4.jpg" width="780" height="3462" alt="Dirección B, La home, página completa a 390, tramo 4 de 4" loading="lazy" decoding="async"></div></div>
+      </div></div><div class="vista" id="b-trabajo"><h3>Vista 2 · /trabajo/, el índice</h3>
+      <p class="pie-vista">Una tabla de diez filas con filetes (Nombre · Tipo · Año · Con qué está hecho · Resultado) y un visor pegajoso que muestra la pieza al pasar o enfocar una fila. A 390, una lista con su imagen. Imagen: 2,9 % de la página.</p>
+      <div class="par">
+        <figure class="fig pantalla"><img src="img/b-trabajo-1440-primera.jpg" width="1440" height="900" alt="Dirección B, /trabajo/, el índice, a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+        <figure class="fig pantalla pantalla--tel"><img src="img/b-trabajo-390-primera.jpg" width="780" height="1688" alt="Dirección B, /trabajo/, el índice, a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+      </div>
+      <div class="par par--visor">
+        <div class="visor-caja"><p class="rotulo">Página completa a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="Dirección B, /trabajo/, el índice, página completa a 1440: se desplaza dentro del marco"><img src="img/b-trabajo-1440-1de1.jpg" width="1440" height="2151" alt="Dirección B, /trabajo/, el índice, página completa a 1440, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+        <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="Dirección B, /trabajo/, el índice, página completa a 390: se desplaza dentro del marco"><img src="img/b-trabajo-390-1de3.jpg" width="780" height="4000" alt="Dirección B, /trabajo/, el índice, página completa a 390, tramo 1 de 3" loading="lazy" decoding="async"><img src="img/b-trabajo-390-2de3.jpg" width="780" height="4000" alt="Dirección B, /trabajo/, el índice, página completa a 390, tramo 2 de 3" loading="lazy" decoding="async"><img src="img/b-trabajo-390-3de3.jpg" width="780" height="3992" alt="Dirección B, /trabajo/, el índice, página completa a 390, tramo 3 de 3" loading="lazy" decoding="async"></div></div>
+      </div></div><details class="vista plegable" id="b-praxi"><summary><h3>Vista 3 · Caso real: Praxi</h3><span class="mas" aria-hidden="true"></span></summary>
+      <p class="pie-vista">La barra de 346 px con la ficha como tabla; en «Sin métrica», la placa con el crudo de la verificación (384 de 384 tests, el 16-oct). Imagen: 50,5 % de la página.</p>
+      <div class="par">
+        <figure class="fig pantalla"><img src="img/b-praxi-1440-primera.jpg" width="1440" height="900" alt="Dirección B, Caso real: Praxi, a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+        <figure class="fig pantalla pantalla--tel"><img src="img/b-praxi-390-primera.jpg" width="780" height="1688" alt="Dirección B, Caso real: Praxi, a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+      </div>
+      <div class="par par--visor">
+        <div class="visor-caja"><p class="rotulo">Página completa a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="Dirección B, Caso real: Praxi, página completa a 1440: se desplaza dentro del marco"><img src="img/b-praxi-1440-1de3.jpg" width="1440" height="4000" alt="Dirección B, Caso real: Praxi, página completa a 1440, tramo 1 de 3" loading="lazy" decoding="async"><img src="img/b-praxi-1440-2de3.jpg" width="1440" height="4000" alt="Dirección B, Caso real: Praxi, página completa a 1440, tramo 2 de 3" loading="lazy" decoding="async"><img src="img/b-praxi-1440-3de3.jpg" width="1440" height="2686" alt="Dirección B, Caso real: Praxi, página completa a 1440, tramo 3 de 3" loading="lazy" decoding="async"></div></div>
+        <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="Dirección B, Caso real: Praxi, página completa a 390: se desplaza dentro del marco"><img src="img/b-praxi-390-1de4.jpg" width="780" height="4000" alt="Dirección B, Caso real: Praxi, página completa a 390, tramo 1 de 4" loading="lazy" decoding="async"><img src="img/b-praxi-390-2de4.jpg" width="780" height="4000" alt="Dirección B, Caso real: Praxi, página completa a 390, tramo 2 de 4" loading="lazy" decoding="async"><img src="img/b-praxi-390-3de4.jpg" width="780" height="4000" alt="Dirección B, Caso real: Praxi, página completa a 390, tramo 3 de 4" loading="lazy" decoding="async"><img src="img/b-praxi-390-4de4.jpg" width="780" height="2278" alt="Dirección B, Caso real: Praxi, página completa a 390, tramo 4 de 4" loading="lazy" decoding="async"></div></div>
+      </div></details><details class="vista plegable" id="b-sesenta"><summary><h3>Vista 4 · Caso de concepto: Sesenta</h3><span class="mas" aria-hidden="true"></span></summary>
+      <p class="pie-vista">El texto de Bruno sin cambiar una palabra; «Concepto» en la ficha, en el sello de cada placa y en el video. Imagen: 57,4 %; campos de color: 29,3 %.</p>
+      <div class="par">
+        <figure class="fig pantalla"><img src="img/b-sesenta-1440-primera.jpg" width="1440" height="900" alt="Dirección B, Caso de concepto: Sesenta, a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+        <figure class="fig pantalla pantalla--tel"><img src="img/b-sesenta-390-primera.jpg" width="780" height="1688" alt="Dirección B, Caso de concepto: Sesenta, a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+      </div>
+      <div class="par par--visor">
+        <div class="visor-caja"><p class="rotulo">Página completa a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="Dirección B, Caso de concepto: Sesenta, página completa a 1440: se desplaza dentro del marco"><img src="img/b-sesenta-1440-1de3.jpg" width="1440" height="4000" alt="Dirección B, Caso de concepto: Sesenta, página completa a 1440, tramo 1 de 3" loading="lazy" decoding="async"><img src="img/b-sesenta-1440-2de3.jpg" width="1440" height="4000" alt="Dirección B, Caso de concepto: Sesenta, página completa a 1440, tramo 2 de 3" loading="lazy" decoding="async"><img src="img/b-sesenta-1440-3de3.jpg" width="1440" height="2226" alt="Dirección B, Caso de concepto: Sesenta, página completa a 1440, tramo 3 de 3" loading="lazy" decoding="async"></div></div>
+        <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="Dirección B, Caso de concepto: Sesenta, página completa a 390: se desplaza dentro del marco"><img src="img/b-sesenta-390-1de3.jpg" width="780" height="4000" alt="Dirección B, Caso de concepto: Sesenta, página completa a 390, tramo 1 de 3" loading="lazy" decoding="async"><img src="img/b-sesenta-390-2de3.jpg" width="780" height="4000" alt="Dirección B, Caso de concepto: Sesenta, página completa a 390, tramo 2 de 3" loading="lazy" decoding="async"><img src="img/b-sesenta-390-3de3.jpg" width="780" height="3454" alt="Dirección B, Caso de concepto: Sesenta, página completa a 390, tramo 3 de 3" loading="lazy" decoding="async"></div></div>
+      </div></details><details class="vista plegable" id="b-desarrollo-web"><summary><h3>Vista 5 · Desarrollo web, el juego de color</h3><span class="mas" aria-hidden="true"></span></summary>
+      <p class="pie-vista">Los planes van en una hoja blanca con la forma de un campo de Koto (marco de radio 6 a 16 px del borde), 17,1 % del alto de la página: el único campo que pone la interfaz y no el trabajo. Es un desvío de Koto, rotulado.</p>
+      <div class="par">
+        <figure class="fig pantalla"><img src="img/b-desarrollo-web-1440-primera.jpg" width="1440" height="900" alt="Dirección B, Desarrollo web, el juego de color, a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+        <figure class="fig pantalla pantalla--tel"><img src="img/b-desarrollo-web-390-primera.jpg" width="780" height="1688" alt="Dirección B, Desarrollo web, el juego de color, a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+      </div>
+      <div class="par par--visor">
+        <div class="visor-caja"><p class="rotulo">Página completa a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="Dirección B, Desarrollo web, el juego de color, página completa a 1440: se desplaza dentro del marco"><img src="img/b-desarrollo-web-1440-1de2.jpg" width="1440" height="4000" alt="Dirección B, Desarrollo web, el juego de color, página completa a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/b-desarrollo-web-1440-2de2.jpg" width="1440" height="1192" alt="Dirección B, Desarrollo web, el juego de color, página completa a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+        <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="Dirección B, Desarrollo web, el juego de color, página completa a 390: se desplaza dentro del marco"><img src="img/b-desarrollo-web-390-1de5.jpg" width="780" height="4000" alt="Dirección B, Desarrollo web, el juego de color, página completa a 390, tramo 1 de 5" loading="lazy" decoding="async"><img src="img/b-desarrollo-web-390-2de5.jpg" width="780" height="4000" alt="Dirección B, Desarrollo web, el juego de color, página completa a 390, tramo 2 de 5" loading="lazy" decoding="async"><img src="img/b-desarrollo-web-390-3de5.jpg" width="780" height="4000" alt="Dirección B, Desarrollo web, el juego de color, página completa a 390, tramo 3 de 5" loading="lazy" decoding="async"><img src="img/b-desarrollo-web-390-4de5.jpg" width="780" height="4000" alt="Dirección B, Desarrollo web, el juego de color, página completa a 390, tramo 4 de 5" loading="lazy" decoding="async"><img src="img/b-desarrollo-web-390-5de5.jpg" width="780" height="270" alt="Dirección B, Desarrollo web, el juego de color, página completa a 390, tramo 5 de 5" loading="lazy" decoding="async"></div></div>
+      </div></details>
+    <details class="plegable"><summary><h3>Dos estados que una captura de página no muestra</h3><span class="mas" aria-hidden="true"></span></summary>
+      <div class="galeria galeria--2 estados"><figure class="fig "><img src="img/b-trabajo-1440-visor.jpg" width="1440" height="900" alt="Dirección B: el mouse sobre la fila de Tonela, la fila activa, el círculo blanco y el visor con el recorrido del concepto" loading="lazy" decoding="async"><figcaption>El mouse sobre la fila de Tonela: la fila pasa a la placa activa, aparece el círculo y el visor corre el recorrido del concepto.</figcaption></figure><figure class="fig "><img src="img/b-home-1440-chequeo.jpg" width="1440" height="900" alt="Dirección B: el panel del chequeo corrido sobre example.com con 30 de 100 y la regla de 21 tramos llena" loading="lazy" decoding="async"><figcaption>El chequeo corrido de verdad sobre example.com, el dominio de ejemplo de la IANA: 30/100, y la regla de las 21 señales llena.</figcaption></figure></div>
+    </details>
+  </div>
+</section>
+    
+<section id="logo" class="seccion" aria-labelledby="t-logo">
+  <div class="seccion__lado"><p class="rotulo">3</p><h2 id="t-logo">Los caminos de logo</h2></div>
+  <div class="seccion__cuerpo">
+    <p class="intro"><span class="t1">Tres caminos, cada uno con una sola idea.</span> <span class="t2">Monocromos, sin el oro ni Gabarito, hechos con letras libres (OFL) dibujadas como trazados. Lo que eliges es el camino; el dibujo final se hace con la dirección elegida.</span></p>
+    <ol class="caminos">
+      <li class="camino">
+        <h3>1 · La palabra</h3>
+        <p class="t1">El nombre en la letra del sitio, sin dibujo.</p>
+        <figure class="fig "><img src="img/t-logo-camino-1-la-palabra.jpg" width="1920" height="1080" alt="Lámina del camino 1 · La palabra del logo de SpindleLab: el wordmark en A y en B, el menú a 1440 y 390 sobre negro y sobre blanco, y el favicon a 16 y 32 px" loading="lazy" decoding="async"></figure>
+        <dl class="valores valores--chico">
+          <div><dt>Lo distinto</dt><dd>Nada dibujado</dd></div>
+          <div><dt>Lenguaje</dt><dd>Accept &amp; Proceed</dd></div>
+          <div><dt>Favicon</dt><dd>«S»</dd></div>
+          <div><dt>Riesgo</dt><dd>Que no diga nada</dd></div>
+        </dl>
+      </li>
+      <li class="camino">
+        <h3>2 · El huso <span class="sello sello--suave">Bruno lo recomienda</span></h3>
+        <p class="t1">La «i» de Spindle se vuelve un huso: un signo propio dentro del nombre. Va de muestra en la dirección A.</p>
+        <figure class="fig "><img src="img/t-logo-camino-2-el-huso.jpg" width="1920" height="1080" alt="Lámina del camino 2 · El huso del logo de SpindleLab: el wordmark en A y en B, el menú a 1440 y 390 sobre negro y sobre blanco, y el favicon a 16 y 32 px" loading="lazy" decoding="async"></figure>
+        <dl class="valores valores--chico">
+          <div><dt>Lo distinto</dt><dd>Un signo propio en la «i»</dd></div>
+          <div><dt>Lenguaje</dt><dd>Koto (la idea en las letras)</dd></div>
+          <div><dt>Favicon</dt><dd>El huso</dd></div>
+          <div><dt>Riesgo</dt><dd>Alfiler, cerradura o seta</dd></div>
+        </dl>
+      </li>
+      <li class="camino">
+        <h3>3 · Dos cortes</h3>
+        <p class="t1">«Spindle» en la sans de la dirección y «LAB» en la mono del sitio. Va de muestra en la dirección B.</p>
+        <figure class="fig "><img src="img/t-logo-camino-3-dos-cortes.jpg" width="1920" height="1080" alt="Lámina del camino 3 · Dos cortes del logo de SpindleLab: el wordmark en A y en B, el menú a 1440 y 390 sobre negro y sobre blanco, y el favicon a 16 y 32 px" loading="lazy" decoding="async"></figure>
+        <dl class="valores valores--chico">
+          <div><dt>Lo distinto</dt><dd>Dos letras en una palabra</dd></div>
+          <div><dt>Lenguaje</dt><dd>Koto (la letra en cortes)</dd></div>
+          <div><dt>Favicon</dt><dd>«S» + «L»</dd></div>
+          <div><dt>Riesgo</dt><dd>Sufijo de tecnología</dd></div>
+        </dl>
+      </li></ol>
+    <p class="nota">Cada lámina trae el wordmark en A y en B, el menú del sitio a tamaño real a 1440 y a 390 sobre negro y sobre blanco, y el favicon a 16 y 32 px. Detalle, construcción y licencias: <code>e12/logo/caminos.md</code>.</p>
+  </div>
+</section>
+    
+<section id="conceptos" class="seccion" aria-labelledby="t-conceptos">
+  <div class="seccion__lado"><p class="rotulo">4</p><h2 id="t-conceptos">Cuatro piezas de concepto</h2></div>
+  <div class="seccion__cuerpo">
+    <p class="intro"><span class="t1">Una por rubro que vendemos, opuestas entre sí.</span> <span class="t2">Marcas inventadas que suenan inventadas, sin cifras de resultado ni testimonios, con las restricciones reales de su rubro y el rótulo «Concepto» a la vista sin scroll. Son las mismas en A y en B: lo que cambia es cómo las presenta cada dirección.</span></p>
+    <ol class="conceptos">
+      <li class="concepto" id="c-tonela">
+        <div class="concepto__cab">
+          <p><span class="sello">Concepto</span> <span class="rotulo">Industrial B2B: izaje</span></p>
+          <h3>Tonela</h3>
+          <p class="t2">Proveedor de eslingas, estrobos, cadenas y grilletes, con taller de inspección de esos elementos, para faenas mineras, puertos y constructoras del norte (Antofagasta). Lienzo: Blanco frío, con los ocho colores de la norma. Recurso propio: La tabla de carga por color.</p>
+          <p class="nota">Nombre: <code>tonela.cl</code> libre en NIC Chile el 16-oct; búsqueda web: ninguna empresa con ese nombre, en izaje ni en industria. Es «tonelada» recortada: dice de qué se trata (la carga) y no es una palabra del diccionario ni un apellido.</p>
+        </div>
+        <figure class="fig "><img src="img/t-c-tonela-pliego.jpg" width="1920" height="1081" alt="Pliego de identidad de Tonela, concepto: logo, colores con su rol, letra y su recurso propio" loading="lazy" decoding="async"><figcaption>Pliego de identidad.</figcaption></figure>
+        <div class="par">
+          <figure class="fig pantalla"><img src="img/t-c-tonela-home-1440.jpg" width="1440" height="900" alt="Tonela, concepto: primera pantalla de su home a 1440" loading="lazy" decoding="async"><figcaption>Su home, primera pantalla a 1440 × 900.</figcaption></figure>
+          <figure class="fig pantalla pantalla--tel"><img src="img/t-c-tonela-home-390.jpg" width="780" height="1688" alt="Tonela, concepto: primera pantalla de su home a 390" loading="lazy" decoding="async"><figcaption>A 390 × 844.</figcaption></figure>
+        </div>
+        
+        <figure class="fig clip"><video controls preload="none" playsinline poster="img/t-c-tonela-recorrido.jpg" width="1440" height="810" aria-label="Recorrido de la home de Tonela, concepto"><source src="video/t-c-tonela.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/t-c-tonela.webm" type='video/webm'></video><figcaption>Recorrido de 10,0 s grabado del navegador desde su HTML (no generado).</figcaption></figure>
+        <div class="pregunta">
+          <p class="rotulo">¿Subirla de nivel con foto o video generado?</p>
+          <p>3 fotos y 1 clip de 5 s, unos 30 créditos. <span class="t1">Suma:</span> El mundo real de la carga: bodega, gancho, desierto. <span class="t1">Sin eso:</span> La llevan las placas, la tabla y la grabación.</p>
+        </div>
+      </li>
+      <li class="concepto" id="c-ocelo">
+        <div class="concepto__cab">
+          <p><span class="sello">Concepto</span> <span class="rotulo">Clínica: oftalmología</span></p>
+          <h3>Ocelo</h3>
+          <p class="t2">Centro de cirugía refractiva y de cataratas en Providencia, con dos oftalmólogos ficticios. Lienzo: La sala a oscuras, con la luz que se enciende. Recurso propio: La carta de optotipos y la C de Landolt.</p>
+          <p class="nota">Nombre: <code>ocelo.cl</code> libre en NIC Chile el 16-oct; búsqueda web: ninguna clínica, óptica ni marca de lentes. «Ocelo» es el ojo simple de algunos insectos: palabra rara, no un apellido. Tiene dos O y una C, que son letras de la carta de optotipos.</p>
+        </div>
+        <figure class="fig "><img src="img/t-c-ocelo-pliego.jpg" width="1920" height="1080" alt="Pliego de identidad de Ocelo, concepto: logo, colores con su rol, letra y su recurso propio" loading="lazy" decoding="async"><figcaption>Pliego de identidad.</figcaption></figure>
+        <div class="par">
+          <figure class="fig pantalla"><img src="img/t-c-ocelo-home-1440.jpg" width="1440" height="900" alt="Ocelo, concepto: primera pantalla de su home a 1440" loading="lazy" decoding="async"><figcaption>Su home, primera pantalla a 1440 × 900.</figcaption></figure>
+          <figure class="fig pantalla pantalla--tel"><img src="img/t-c-ocelo-home-390.jpg" width="780" height="1688" alt="Ocelo, concepto: primera pantalla de su home a 390" loading="lazy" decoding="async"><figcaption>A 390 × 844.</figcaption></figure>
+        </div>
+        <figure class="fig pantalla"><img src="img/t-c-ocelo-home-1440-luz.jpg" width="1440" height="900" alt="Ocelo, concepto: la primera pantalla de su home a 1440 con la luz encendida" loading="lazy" decoding="async"><figcaption>La misma primera pantalla con la luz encendida. Bruno pregunta cuál va por defecto (sección 7).</figcaption></figure>
+        <figure class="fig clip"><video controls preload="none" playsinline poster="img/t-c-ocelo-recorrido.jpg" width="1440" height="810" aria-label="Recorrido de la home de Ocelo, concepto"><source src="video/t-c-ocelo.mp4" type='video/mp4; codecs="avc1.640032"'><source src="video/t-c-ocelo.webm" type='video/webm'></video><figcaption>Recorrido de 10,0 s grabado del navegador desde su HTML (no generado).</figcaption></figure>
+        <div class="pregunta">
+          <p class="rotulo">¿Subirla de nivel con foto o video generado?</p>
+          <p>2 fotos y 1 clip de 5 s, unos 25 créditos. <span class="t1">Suma:</span> La caja de lentes de prueba y la sala con el foróptero. <span class="t1">Sin eso:</span> La llevan la carta y la C.</p>
+        </div>
+      </li>
+      <li class="concepto" id="c-sesenta">
+        <div class="concepto__cab">
+          <p><span class="sello">Concepto</span> <span class="rotulo">Estudio legal: laboral, del lado del trabajador</span></p>
+          <h3>Sesenta <span class="sello sello--suave">La vista 4 de A y de B</span></h3>
+          <p class="t2">Estudio que representa a trabajadores despedidos (despido injustificado, autodespido, nulidad por cotizaciones impagas, tutela), en Santiago centro. Lienzo: Azul de ropa de trabajo. Recurso propio: El plazo de 60 días hábiles y la suma del escrito.</p>
+          <p class="nota">Nombre: <code>sesenta.cl</code> libre en NIC Chile el 16-oct; búsqueda web: ningún estudio con ese nombre. Es el plazo, no un apellido. En Chile los estudios se llaman como sus socios, y un número como nombre se lee como invento.</p>
+        </div>
+        <figure class="fig "><img src="img/t-c-sesenta-pliego.jpg" width="1920" height="1080" alt="Pliego de identidad de Sesenta, concepto: logo, colores con su rol, letra y su recurso propio" loading="lazy" decoding="async"><figcaption>Pliego de identidad.</figcaption></figure>
+        <div class="par">
+          <figure class="fig pantalla"><img src="img/t-c-sesenta-home-1440.jpg" width="1440" height="900" alt="Sesenta, concepto: primera pantalla de su home a 1440" loading="lazy" decoding="async"><figcaption>Su home, primera pantalla a 1440 × 900.</figcaption></figure>
+          <figure class="fig pantalla pantalla--tel"><img src="img/t-c-sesenta-home-390.jpg" width="780" height="1688" alt="Sesenta, concepto: primera pantalla de su home a 390" loading="lazy" decoding="async"><figcaption>A 390 × 844.</figcaption></figure>
+        </div>
+        
+        <figure class="fig clip"><video controls preload="none" playsinline poster="img/t-c-sesenta-recorrido.jpg" width="1440" height="810" aria-label="Recorrido de la home de Sesenta, concepto"><source src="video/t-c-sesenta.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/t-c-sesenta.webm" type='video/webm'></video><figcaption>Recorrido de 10,0 s grabado del navegador desde su HTML (no generado).</figcaption></figure>
+        <div class="pregunta">
+          <p class="rotulo">¿Subirla de nivel con foto o video generado?</p>
+          <p>2 fotos, unos 10 créditos. <span class="t1">Suma:</span> La mesa con la carta y el finiquito; la chaqueta azul en una silla. <span class="t1">Sin eso:</span> Los documentos se dibujan.</p>
+        </div>
+      </li>
+      <li class="concepto" id="c-doceavo">
+        <div class="concepto__cab">
+          <p><span class="sello">Concepto</span> <span class="rotulo">Servicios profesionales: contable y tributario</span></p>
+          <h3>Doceavo</h3>
+          <p class="t2">Estudio contable para pymes e independientes (contabilidad mensual, F29, remuneraciones, Operación Renta), en Concepción. Lienzo: Verde pálido de libro contable. Recurso propio: El año en doce.</p>
+          <p class="nota">Nombre: <code>doceavo.cl</code> libre en NIC Chile el 16-oct; búsqueda web: ninguna empresa contable con ese nombre. Una fracción (cada mes es un doceavo del año) usada como nombre: nadie se llama así.</p>
+        </div>
+        <figure class="fig "><img src="img/t-c-doceavo-pliego.jpg" width="1920" height="1080" alt="Pliego de identidad de Doceavo, concepto: logo, colores con su rol, letra y su recurso propio" loading="lazy" decoding="async"><figcaption>Pliego de identidad.</figcaption></figure>
+        <div class="par">
+          <figure class="fig pantalla"><img src="img/t-c-doceavo-home-1440.jpg" width="1440" height="900" alt="Doceavo, concepto: primera pantalla de su home a 1440" loading="lazy" decoding="async"><figcaption>Su home, primera pantalla a 1440 × 900.</figcaption></figure>
+          <figure class="fig pantalla pantalla--tel"><img src="img/t-c-doceavo-home-390.jpg" width="780" height="1688" alt="Doceavo, concepto: primera pantalla de su home a 390" loading="lazy" decoding="async"><figcaption>A 390 × 844.</figcaption></figure>
+        </div>
+        
+        <figure class="fig clip"><video controls preload="none" playsinline poster="img/t-c-doceavo-recorrido.jpg" width="1440" height="810" aria-label="Recorrido de la home de Doceavo, concepto"><source src="video/t-c-doceavo.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/t-c-doceavo.webm" type='video/webm'></video><figcaption>Recorrido de 10,0 s grabado del navegador desde su HTML (no generado).</figcaption></figure>
+        <div class="pregunta">
+          <p class="rotulo">¿Subirla de nivel con foto o video generado?</p>
+          <p>2 fotos, unos 10 créditos. <span class="t1">Suma:</span> Los archivadores por mes; el almanaque en un escritorio. <span class="t1">Sin eso:</span> La lleva el año en doce.</p>
+        </div>
+      </li></ol>
+    <div class="bloque costo">
+      <h3>Lo que costaría la foto y el video generados</h3>
+      <p>Las cuatro están terminadas sin generar nada. Si las subimos de nivel, las cuatro tandas suman <strong>9 fotos y 2 clips, unos 75 créditos</strong> de Higgsfield, estimados por Bruno (el número exacto lo da el cálculo de costo de cada generación, que no se corrió). La cuenta tiene 0 créditos y no admite recargas sueltas, así que el costo real es un mes del plan PLUS: <strong>USD 49</strong>. La API de Gemini directa cuesta unos USD 0,04 por imagen, pero pide una clave que no tenemos y no hace video. Ninguna foto llevaría personas, y cada una se diría generada en su caso.</p>
+      <p class="nota">Bruno recomienda decidirlo mirando cada pieza aquí. Detalle: <code>marketing/portafolio/plan-e12.md</code> §11. Cero créditos gastados hasta ahora.</p>
+    </div>
+  </div>
+</section>
+    
+<section id="texto" class="seccion" aria-labelledby="t-texto">
+  <div class="seccion__lado"><p class="rotulo">5</p><h2 id="t-texto">El texto: el hero en sus tres opciones</h2></div>
+  <div class="seccion__cuerpo">
+    <p class="intro"><span class="t1">Las tres van con el mismo chequeo debajo.</span> <span class="t2">Las leyeron tres lectores fríos que no sabían quién escribió cada una: el gerente comercial de una industrial B2B, la dueña de una clínica dental de regiones y el socio de un estudio de abogados, en dos vueltas.</span></p>
+    <p class="nota">Las dos direcciones están construidas con la opción 3. Las muestras de abajo son la frase en la letra y la escala de cada dirección, reducidas al ancho de esta columna para que el corte de línea sea el de la home a 1440. Es una lectura simulada, no un test con personas: sirve para ver dónde se pierde alguien que no sabe de SEO, no para contar cuántos (<code>e12/texto/lectura-fria.md</code>).</p>
+    <ol class="opciones">
+      <li class="opcion" id="hero-1">
+        <h3>Opción 1 · la frase de Ramón, textual</h3>
+        <div class="especimenes">
+          <div class="especimen"><p class="rotulo">En A, a escala de la home a 1440</p><p class="esp esp-a" lang="es-CL"><span class="t1">Diseñamos experiencias.</span> <span class="t2">Programamos inteligencia.</span></p></div>
+          <div class="especimen"><p class="rotulo">En B, a escala de la home a 1440</p><p class="esp esp-b" lang="es-CL"><span class="t1">Diseñamos experiencias.</span> <span class="t2">Programamos inteligencia.</span></p></div>
+        </div>
+        <p class="entradilla">Un estudio de diseño y tecnología construyendo infraestructura digital a medida para líderes con visión.</p>
+        <dl class="valores valores--chico">
+          <div><dt>Primera lectura</dt><dd>Los tres: «suena bien y no dice nada». No entendieron que hagan sitios, SEO ni IA. «Infraestructura digital» → servidores o un ERP (gerente); «para gente importante» (clínica); «marketing de lujo», «evasiva» (abogado)</dd></div>
+          <div><dt>Segunda lectura</dt><dd>Igual en los tres: «folleto puro», «no es para mí», «palabras de agencia»</dd></div>
+        </dl>
+      </li>
+      <li class="opcion" id="hero-2">
+        <h3>Opción 2 · Clara: quiénes somos y qué hacemos, como abre Koto</h3>
+        <div class="especimenes">
+          <div class="especimen"><p class="rotulo">En A, a escala de la home a 1440</p><p class="esp esp-a" lang="es-CL"><span class="t1">SpindleLab es un estudio de diseño y tecnología.</span> <span class="t2">Hacemos sitios y herramientas a medida para empresas, clínicas y estudios profesionales.</span></p></div>
+          <div class="especimen"><p class="rotulo">En B, a escala de la home a 1440</p><p class="esp esp-b" lang="es-CL"><span class="t1">SpindleLab es un estudio de diseño y tecnología.</span> <span class="t2">Hacemos sitios y herramientas a medida para empresas, clínicas y estudios profesionales.</span></p></div>
+        </div>
+        <p class="entradilla">También hacemos SEO técnico y visibilidad en IA: que Google pueda leer tu sitio, y que ChatGPT y otros asistentes puedan nombrar a tu empresa cuando alguien les pregunta por tu rubro.</p>
+        <dl class="valores valores--chico">
+          <div><dt>Primera lectura</dt><dd>Clara para los tres; el abogado la prefirió por prudente</dd></div>
+          <div><dt>Segunda lectura</dt><dd>El abogado leyó «estudios» como ellos mismos (corregido a «estudios profesionales»)</dd></div>
+        </dl>
+      </li>
+      <li class="opcion" id="hero-3">
+        <h3>Opción 3 · Clara: lo que hacemos y lo que eso te deja <span class="sello sello--suave">Recomendada</span></h3>
+        <div class="especimenes">
+          <div class="especimen"><p class="rotulo">En A, a escala de la home a 1440</p><p class="esp esp-a" lang="es-CL"><span class="t1">Diseñamos y programamos sitios a medida.</span> <span class="t2">Y los dejamos listos para que Google y ChatGPT puedan leerlos.</span></p></div>
+          <div class="especimen"><p class="rotulo">En B, a escala de la home a 1440</p><p class="esp esp-b" lang="es-CL"><span class="t1">Diseñamos y programamos sitios a medida.</span> <span class="t2">Y los dejamos listos para que Google y ChatGPT puedan leerlos.</span></p></div>
+        </div>
+        <p class="entradilla">Para empresas, clínicas y estudios profesionales. Si tu sitio ya existe y no lo vas a rehacer, también hacemos SEO técnico y visibilidad en IA: revisamos qué le impide a Google y a ChatGPT leerlo, y lo arreglamos.</p>
+        <dl class="valores valores--chico">
+          <div><dt>Primera lectura</dt><dd>La más clara para el gerente y la clínica; el abogado leyó «entiendan tu negocio» como garantía; el coach de entrenamiento confundió a dos</dd></div>
+          <div><dt>Segunda lectura</dt><dd><strong>La eligieron los tres</strong>: «dice qué hacen, para quién y qué hago si ya tengo sitio»; «dice clínicas, me sentí incluida»; «puedan leerlos no promete resultado, solo capacidad técnica»</dd></div>
+        </dl>
+      </li></ol>
+    <details class="plegable"><summary><h3>Lo que los lectores pidieron y no se arregla escribiendo</h3><span class="mas" aria-hidden="true"></span></summary>
+      <ol class="lista-larga"><li><strong>Las condiciones del contrato</strong> , que los tres pidieron antes de escribir: porcentaje del anticipo, costo mensual (hosting, dominio, mantención), de quién es el código y el diseño, qué pasa si Ramón no está, cuántas rondas de revisión trae cada plan, si «Home y hasta 5 páginas» son cinco o seis, si hay agenda en línea fuera de Plataforma a Medida, si hay WhatsApp y si trabaja con regiones. Están en <code>texto-paso2.json</code> → <code>pendientes</code>.</li><li><strong>Praxi fuera de línea.</strong> A los tres les bajó la confianza que el único caso con IA sea un producto apagado y sin usuarios. Si Ramón no lo reactiva, conviene que Praxi no encabece lo propio en el índice ni sea el caso de la vista 3.</li><li><strong>Las personas generadas con IA</strong> del material de Praxi le bajaron la confianza a la dueña de la clínica. Decirlo es regla; la salida es mostrar menos fotos y más pantallas de la app, que hoy faltan (inventario-praxi §10.1).</li><li><strong>Un solo cliente y cuatro conceptos de diez.</strong> El gerente y el abogado lo notaron en las dos vueltas. El texto ya no lo esconde; el número lo cambia el trabajo, no la redacción.</li><li><strong>Las mediciones hechas con nuestro propio instrumento.</strong> El abogado las leyó como autoevaluación. El chequeo es público y el texto dice cómo comprobar el dato de Verifica, pero ningún dato es de un tercero.</li><li><strong>Que el abogado se incomode con un estudio de abogados inventado (Sesenta).</strong> Es la decisión de Ramón de la compuerta 1 (punto 5), con el rótulo «Concepto» a la vista.</li><li><strong>Los nombres de herramientas en el índice.</strong> El lock los pide en la línea mono; el texto los acompaña con lo que hacen, pero los tres los siguen viendo como jerga. Si Lucía decide sacarlos del índice, la línea queda en tipo y año.</li></ol>
+    </details>
+  </div>
+</section>
+    
+<section id="praxi" class="seccion" aria-labelledby="t-praxi">
+  <div class="seccion__lado"><p class="rotulo">6</p><h2 id="t-praxi">Praxi: lo que hay y lo que te pedimos</h2></div>
+  <div class="seccion__cuerpo">
+    <p class="intro"><span class="t1">Es el único trabajo con IA programada y la única app con cuentas y cobro.</span> <span class="t2">El caso se puede contar con fecha e instrumento por su oficio, no por su uso: «Sin métrica».</span></p>
+    <dl class="valores">
+      <div><dt>Hoy, 17-oct, 02:33</dt><dd>praxi.coach responde <strong>402</strong> con <code>DEPLOYMENT_DISABLED</code>, en la portada y en <code>/planes</code> (<code>datos/estado-praxi.txt</code>). Por eso ninguna vista enlaza a praxi.coach.</dd></div>
+      <div><dt>Vista 3</dt><dd>Las dos direcciones usan Praxi como caso real. Diego recomendaba Combeau porque a Praxi le faltan las pantallas de la app, y a los tres lectores fríos les bajó la confianza un caso apagado y sin usuarios.</dd></div>
+    </dl>
+    <div class="dos-listas">
+      <div><h3>Lo que se puede decir, con su fuente</h3><ul class="hay"><li><span>Sitio y app hechos por Ramón entre el 21-jul y el 25-ago-2026</span><span class="fuente">GitHub: primer y último commit de <code>main</code></span></li><li><span>349 commits y 131 pull requests</span><span class="fuente">GitHub, leído el 16-oct</span></li><li><span>384 tests en verde sobre el último commit, el 16-oct</span><span class="fuente">Medido: <code>crudo/verificacion-copia.txt</code></span></li><li><span>Cuándo subir el peso, cuándo descargar y qué serie cuenta se calculan en código con tests, no los decide el modelo</span><span class="fuente">Repo: <code>lib/domain/</code>, <code>lib/coach/signals.ts</code>; Medido: 42 tests</span></li><li><span>Un modelo convierte la frase en series guardadas, obligado a un esquema; ante la duda no guarda</span><span class="fuente">Repo: <code>lib/coach/extract.ts</code></span></li><li><span>Guardrails de salud y de edad en código, para todos, pague o no</span><span class="fuente">Repo: <code>healthGuardrail.ts</code>, <code>guardrailMenores.ts</code>; Medido: 16 tests</span></li><li><span>Cobro con tarjeta dentro de la app; la tarjeta no pasa por su servidor</span><span class="fuente">Repo: <code>mp-card-form.tsx</code>, <code>CLAUDE.md:144-151</code></span></li><li><span>Un color fuera del contrato de marca no llega a producción: el build se cae</span><span class="fuente">Repo: <code>prebuild</code>; Medido: gate 8/8</span></li><li><span>La landing tiene <code>Organization</code>, <code>WebSite</code>, <code>SoftwareApplication</code> y <code>FAQPage</code>, y un test exige que lo declarado esté visible</span><span class="fuente">Repo: <code>lib/seo/estructurados.ts</code>; Medido: HTML local</span></li><li><span>La landing la aprobó Ramón el 4-ago después de siete rondas de corrección</span><span class="fuente">Dicho: <code>bitacora-diseno.md:207-250</code></span></li><li><span>Las personas del material son generadas, con un personaje reutilizable</span><span class="fuente">Repo: <code>PERSONAJE.md</code>, <code>landing.tsx:128-143</code></span></li><li><span>Hoy el sitio no está en línea</span><span class="fuente">Medido: <code>crudo/estado-praxi.coach-headers.txt</code></span></li></ul></div>
+      <div><h3>Lo que hay que pedirte</h3><ol class="lista-larga"><li><strong>Capturas de la app</strong> (lo que falta para la sección «Aplicación»): Inicio con «Lo último que registraste», el Coach con una conversación en la que se guarde un registro, Registro → entrenamiento (la tarjeta del día con cargas), Progreso (los gráficos) y Perfil, <strong>a 390 de ancho, desde una cuenta de prueba suya, nunca la de un usuario</strong>. Como <code>praxi.coach</code> está apagado, tendría que ser corriendo Praxi en su Mac con su <code>.env.local</code>. O decir que el caso va sin ellas.</li><li><strong>¿Se cuenta que Praxi está en pausa?</strong> Hoy responde <code>402 DEPLOYMENT_DISABLED</code>. Si lo reactiva, se mide de nuevo y recién ahí se enlaza.</li><li><strong>De dónde salen <code>landing-1.jpg</code>, <code>landing-2.jpg</code> y <code>landing-3.jpg</code></strong> (generadas, banco o compradas, y con qué licencia). Mientras no se sepa, no entran al caso.</li><li><strong>¿Se nombran los modelos</strong> (Sonnet 5 y Haiku 4.5) en el caso, o basta con «la API de Anthropic»?</li><li><strong>Los datos de uso del 24-ago no se publican</strong> salvo que él lo decida; la recomendación es «Sin métrica».</li><li><strong>Permiso:</strong> no hace falta de un tercero (es suyo). Lo único que se le pregunta es si quiere que el caso diga que lo construyó con agentes de IA (los commits lo dicen). ---</li></ol></div>
+    </div>
+    <p class="nota">Del inventario de Diego del 16-oct, <code>e12/inventario-praxi.md</code> §8.1 y §10. El repo de Praxi solo se leyó: sigue en su último commit y sin cambios.</p>
+  </div>
+</section>
+    
+<section id="decides" class="seccion" aria-labelledby="t-decides">
+  <div class="seccion__lado"><p class="rotulo">7</p><h2 id="t-decides">Lo que decides en esta compuerta</h2></div>
+  <div class="seccion__cuerpo">
+    <p class="intro"><span class="t1">Cinco respuestas.</span> <span class="t2">Basta con una línea por cada una; lo que no contestes queda como dice la lista de abajo.</span></p>
+    <ol class="decide">
+      <li><h3>¿A · Archivo o B · Banco?</h3><p>Se pueden pedir ajustes a la que elijas, pero no se mezclan: la mezcla es el promedio, y el promedio de dos direcciones fuertes es una dirección débil. Si no es ninguna, se vuelve al lock y a la medición de Koto, no a este tablero.</p>
+        <div class="tabla-envuelta"><table class="tabla"><caption class="rotulo">A y B, lado a lado, medido a 1440</caption><thead><tr><th scope="col">Eje</th><th scope="col">A · Archivo</th><th scope="col">B · Banco</th></tr></thead><tbody><tr><th scope="row">Letra</th><td data-rotulo="A · Archivo">Google Sans Flex (titular liviano, ancho 76 %)</td><td data-rotulo="B · Banco">Mona Sans (titular liviano, ancho 89 %)</td></tr><tr><th scope="row">Titular de la home a 1440</th><td data-rotulo="A · Archivo">48 px, a la escala de Koto</td><td data-rotulo="B · Banco">88 px, a escala de cartel</td></tr><tr><th scope="row">Primera pantalla de la home</th><td data-rotulo="A · Archivo">El trabajo (la cinta) con la frase y el chequeo</td><td data-rotulo="B · Banco">La frase y el chequeo, sin imagen</td></tr><tr><th scope="row">Imagen en /trabajo/</th><td data-rotulo="A · Archivo">53,0 %: el muro</td><td data-rotulo="B · Banco">2,9 %: la tabla y su visor</td></tr><tr><th scope="row">Imagen en el caso Sesenta</th><td data-rotulo="A · Archivo">59,2 %</td><td data-rotulo="B · Banco">57,4 %</td></tr><tr><th scope="row">Juego de color en Desarrollo web</th><td data-rotulo="A · Archivo">Dentro de los marcos del trabajo; el lienzo no cambia</td><td data-rotulo="B · Banco">Una hoja blanca para los planes (desvío de Koto, rotulado)</td></tr><tr><th scope="row">Logo de muestra</th><td data-rotulo="A · Archivo">Camino 2, «El huso»</td><td data-rotulo="B · Banco">Camino 3, «Dos cortes»</td></tr></tbody></table></div></li>
+      <li><h3>¿Qué camino de logo?</h3><p>1 · La palabra, 2 · El huso o 3 · Dos cortes. Bruno recomienda el 2; su riesgo es que el huso se lea como alfiler o cerradura. El dibujo final sale con la dirección que elijas.</p></li>
+      <li><h3>¿Qué hero?</h3><p>La 3 es la que los tres lectores entendieron en la segunda vuelta. Si quieres la tuya (la 1), conviene que la acompañe la bajada de la 3, que es la que dice qué vendemos.</p></li>
+      <li><h3>¿Pagamos fotos o video para los conceptos?</h3><p>Nada, o un mes del plan PLUS de Higgsfield (USD 49) para las 9 fotos y 2 clips de las cuatro, o solo para las piezas que elijas mirando la sección 4. Sin tu sí no se genera nada.</p></li>
+      <li><h3>¿Qué pasa con Praxi?</h3><p>Las capturas de la app desde una cuenta de prueba tuya (o ir sin ellas); si cuentas que está en pausa o lo reactivas; de dónde salen las tres fotos de la landing sin procedencia; si se nombran los modelos; y si el caso dice que lo construiste con agentes de IA. Y con eso, si el caso real de la vista 3 sigue siendo Praxi o pasa a Combeau.</p></li>
+    </ol>
+    <h3>Lo demás que está abierto, con lo que queda si no dices nada</h3>
+    <ul class="abiertas">
+      <li><strong>Los puntajes propios</strong> (Verifica y Cumple 54 → 94 y spindlelab.cl 36 → 73): <span class="t2">no se muestran. Hoy A trae el 54 → 94 puesto y B no; si dices que no, sale de A y el texto queda igual en las dos.</span></li>
+      <li><strong>El color del círculo del cursor:</strong> <span class="t2">blanco, como Koto, que no tiene color de interfaz. El cobalto del brief, aclarado a <code>#316BFF</code> para que se lea sobre negro, queda a una línea.</span></li>
+      <li><strong>Una interior con el lienzo claro:</strong> <span class="t2">no. Koto no cambia el lienzo en ninguna de sus 640 paradas medidas; su juego está dentro de los marcos (sección 1). Si lo quieres igual, se construye como desvío rotulado.</span></li>
+      <li><strong>Color en el logo:</strong> <span class="t2">no; es monocromo, y si lo quieres como el único color del sitio (el gesto de Koto), se decide con la dirección.</span></li>
+      <li><strong>Los cuatro nombres de los conceptos,</strong> Ocelo a oscuras por defecto con la luz que se enciende, Sesenta como la pieza que va más lejos, y Raigal, Aplomo y Deslinde como archivo fuera del índice: <span class="t2">quedan así (Bruno, <code>plan-e12.md</code> §14).</span></li>
+    </ul>
+  </div>
+</section>
+  </main>
+  <footer class="pie">
+    <p>Armado por <code>tableros/e12-direcciones/herramientas/armar-tablero.py</code> desde las dos direcciones (<code>direccion-a.md</code>, <code>direccion-b.md</code> y sus mediciones), el brief, el lock, los caminos de Bruno, su plan de las piezas, el texto de Clara y su lectura fría, y el inventario de Praxi. Verificado con <code>herramientas/verificar.mjs</code> a 360, 390, 768 y 1440.</p>
+    <p>Las vistas en vivo, con el chequeo de verdad, se abren con los servidores de cada dirección (<code>direccion-a.md</code> §1 y <code>direccion-b.md</code> §0). La captura de Koto es para estudio interno. Las capturas de A y B que pasaban de 450 kB se recomprimieron para el tablero (<code>datos/recompresion.json</code>).</p>
+  </footer>
+</div>
+<script>
+(function () {
+  // La hora de Santiago con su huso, calculada en tu navegador (telemetría verdadera)
+  function hora() {
+    var ahora = new Date();
+    var h = new Intl.DateTimeFormat('es-CL', { timeZone: 'America/Santiago', hour: '2-digit', minute: '2-digit', hour12: false }).format(ahora);
+    var huso = '';
+    try {
+      new Intl.DateTimeFormat('en-US', { timeZone: 'America/Santiago', timeZoneName: 'shortOffset' }).formatToParts(ahora)
+        .forEach(function (x) { if (x.type === 'timeZoneName') huso = x.value.replace('GMT', 'UTC'); });
+    } catch (err) { huso = ''; }
+    document.querySelectorAll('.reloj').forEach(function (n) { n.textContent = h; });
+    if (huso) document.querySelectorAll('.huso').forEach(function (n) { n.textContent = huso; });
+  }
+  hora();
+  setInterval(hora, 15000);
+  // Un video a la vez: al dar play a uno, los demás se pausan
+  var videos = [].slice.call(document.querySelectorAll('video'));
+  videos.forEach(function (v) {
+    v.addEventListener('play', function () { videos.forEach(function (o) { if (o !== v && !o.paused) o.pause(); }); });
+  });
+})();
+</script>

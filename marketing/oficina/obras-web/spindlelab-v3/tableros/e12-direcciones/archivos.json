@@ -1,0 +1,902 @@
+{
+ "pagina": "tablero.html",
+ "armadoPor": "herramientas/armar-tablero.py",
+ "rutas": [
+  "img/a-caso-praxi-1440-01.jpg",
+  "img/a-caso-praxi-1440-02.jpg",
+  "img/a-caso-praxi-1440-03.jpg",
+  "img/a-caso-praxi-1440-primera.jpg",
+  "img/a-caso-praxi-390-01.jpg",
+  "img/a-caso-praxi-390-02.jpg",
+  "img/a-caso-praxi-390-03.jpg",
+  "img/a-caso-praxi-390-04.jpg",
+  "img/a-caso-praxi-390-primera.jpg",
+  "img/a-caso-sesenta-1440-01.jpg",
+  "img/a-caso-sesenta-1440-02.jpg",
+  "img/a-caso-sesenta-1440-03.jpg",
+  "img/a-caso-sesenta-1440-primera.jpg",
+  "img/a-caso-sesenta-390-01.jpg",
+  "img/a-caso-sesenta-390-02.jpg",
+  "img/a-caso-sesenta-390-03.jpg",
+  "img/a-caso-sesenta-390-04.jpg",
+  "img/a-caso-sesenta-390-primera.jpg",
+  "img/a-desarrollo-web-1440-01.jpg",
+  "img/a-desarrollo-web-1440-02.jpg",
+  "img/a-desarrollo-web-1440-primera.jpg",
+  "img/a-desarrollo-web-390-01.jpg",
+  "img/a-desarrollo-web-390-02.jpg",
+  "img/a-desarrollo-web-390-03.jpg",
+  "img/a-desarrollo-web-390-04.jpg",
+  "img/a-desarrollo-web-390-05.jpg",
+  "img/a-desarrollo-web-390-primera.jpg",
+  "img/a-home-1440-01.jpg",
+  "img/a-home-1440-02.jpg",
+  "img/a-home-1440-primera.jpg",
+  "img/a-home-390-01.jpg",
+  "img/a-home-390-02.jpg",
+  "img/a-home-390-03.jpg",
+  "img/a-home-390-04.jpg",
+  "img/a-home-390-05.jpg",
+  "img/a-home-390-primera.jpg",
+  "img/a-trabajo-1440-01.jpg",
+  "img/a-trabajo-1440-primera.jpg",
+  "img/a-trabajo-390-01.jpg",
+  "img/a-trabajo-390-02.jpg",
+  "img/a-trabajo-390-03.jpg",
+  "img/a-trabajo-390-primera.jpg",
+  "img/b-desarrollo-web-1440-1de2.jpg",
+  "img/b-desarrollo-web-1440-2de2.jpg",
+  "img/b-desarrollo-web-1440-primera.jpg",
+  "img/b-desarrollo-web-390-1de5.jpg",
+  "img/b-desarrollo-web-390-2de5.jpg",
+  "img/b-desarrollo-web-390-3de5.jpg",
+  "img/b-desarrollo-web-390-4de5.jpg",
+  "img/b-desarrollo-web-390-5de5.jpg",
+  "img/b-desarrollo-web-390-primera.jpg",
+  "img/b-home-1440-1de2.jpg",
+  "img/b-home-1440-2de2.jpg",
+  "img/b-home-1440-chequeo.jpg",
+  "img/b-home-1440-primera.jpg",
+  "img/b-home-390-1de4.jpg",
+  "img/b-home-390-2de4.jpg",
+  "img/b-home-390-3de4.jpg",
+  "img/b-home-390-4de4.jpg",
+  "img/b-home-390-primera.jpg",
+  "img/b-praxi-1440-1de3.jpg",
+  "img/b-praxi-1440-2de3.jpg",
+  "img/b-praxi-1440-3de3.jpg",
+  "img/b-praxi-1440-primera.jpg",
+  "img/b-praxi-390-1de4.jpg",
+  "img/b-praxi-390-2de4.jpg",
+  "img/b-praxi-390-3de4.jpg",
+  "img/b-praxi-390-4de4.jpg",
+  "img/b-praxi-390-primera.jpg",
+  "img/b-sesenta-1440-1de3.jpg",
+  "img/b-sesenta-1440-2de3.jpg",
+  "img/b-sesenta-1440-3de3.jpg",
+  "img/b-sesenta-1440-primera.jpg",
+  "img/b-sesenta-390-1de3.jpg",
+  "img/b-sesenta-390-2de3.jpg",
+  "img/b-sesenta-390-3de3.jpg",
+  "img/b-sesenta-390-primera.jpg",
+  "img/b-trabajo-1440-1de1.jpg",
+  "img/b-trabajo-1440-primera.jpg",
+  "img/b-trabajo-1440-visor.jpg",
+  "img/b-trabajo-390-1de3.jpg",
+  "img/b-trabajo-390-2de3.jpg",
+  "img/b-trabajo-390-3de3.jpg",
+  "img/b-trabajo-390-primera.jpg",
+  "img/t-a-chequeo-1440.jpg",
+  "img/t-a-cursor-1440.jpg",
+  "img/t-a-home-1440-recorrido.jpg",
+  "img/t-a-trabajo-1440-recorrido.jpg",
+  "img/t-b-home-1440-recorrido.jpg",
+  "img/t-b-trabajo-1440-recorrido.jpg",
+  "img/t-c-doceavo-home-1440.jpg",
+  "img/t-c-doceavo-home-390.jpg",
+  "img/t-c-doceavo-pliego.jpg",
+  "img/t-c-doceavo-recorrido.jpg",
+  "img/t-c-ocelo-home-1440-luz.jpg",
+  "img/t-c-ocelo-home-1440.jpg",
+  "img/t-c-ocelo-home-390.jpg",
+  "img/t-c-ocelo-pliego.jpg",
+  "img/t-c-ocelo-recorrido.jpg",
+  "img/t-c-sesenta-home-1440.jpg",
+  "img/t-c-sesenta-home-390.jpg",
+  "img/t-c-sesenta-pliego.jpg",
+  "img/t-c-sesenta-recorrido.jpg",
+  "img/t-c-tonela-home-1440.jpg",
+  "img/t-c-tonela-home-390.jpg",
+  "img/t-c-tonela-pliego.jpg",
+  "img/t-c-tonela-recorrido.jpg",
+  "img/t-koto-lyft-1440.jpg",
+  "img/t-logo-camino-1-la-palabra.jpg",
+  "img/t-logo-camino-2-el-huso.jpg",
+  "img/t-logo-camino-3-dos-cortes.jpg",
+  "video/a-home-1440.webm",
+  "video/a-trabajo-1440.webm",
+  "video/b-home-1440.webm",
+  "video/b-trabajo-1440.webm",
+  "video/t-a-home-1440.mp4",
+  "video/t-a-trabajo-1440.mp4",
+  "video/t-b-home-1440.mp4",
+  "video/t-b-trabajo-1440.mp4",
+  "video/t-c-doceavo.mp4",
+  "video/t-c-doceavo.webm",
+  "video/t-c-ocelo.mp4",
+  "video/t-c-ocelo.webm",
+  "video/t-c-sesenta.mp4",
+  "video/t-c-sesenta.webm",
+  "video/t-c-tonela.mp4",
+  "video/t-c-tonela.webm"
+ ],
+ "detalle": [
+  {
+   "ruta": "img/a-caso-praxi-1440-01.jpg",
+   "bytes": 434953,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, recomprimida por el tablero de 508150 a 434953 bytes (JPEG 76)"
+  },
+  {
+   "ruta": "img/a-caso-praxi-1440-02.jpg",
+   "bytes": 355209,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-praxi-1440-03.jpg",
+   "bytes": 128070,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-praxi-1440-primera.jpg",
+   "bytes": 130507,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-praxi-390-01.jpg",
+   "bytes": 383021,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-praxi-390-02.jpg",
+   "bytes": 393883,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-praxi-390-03.jpg",
+   "bytes": 297684,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-praxi-390-04.jpg",
+   "bytes": 107742,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-praxi-390-primera.jpg",
+   "bytes": 120055,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-sesenta-1440-01.jpg",
+   "bytes": 443679,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-sesenta-1440-02.jpg",
+   "bytes": 431991,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, recomprimida por el tablero de 549905 a 431991 bytes (JPEG 68)"
+  },
+  {
+   "ruta": "img/a-caso-sesenta-1440-03.jpg",
+   "bytes": 286149,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-sesenta-1440-primera.jpg",
+   "bytes": 147203,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-sesenta-390-01.jpg",
+   "bytes": 375405,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-sesenta-390-02.jpg",
+   "bytes": 394421,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-sesenta-390-03.jpg",
+   "bytes": 386395,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-sesenta-390-04.jpg",
+   "bytes": 2050,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-caso-sesenta-390-primera.jpg",
+   "bytes": 102469,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-desarrollo-web-1440-01.jpg",
+   "bytes": 445151,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, recomprimida por el tablero de 531457 a 445151 bytes (JPEG 76)"
+  },
+  {
+   "ruta": "img/a-desarrollo-web-1440-02.jpg",
+   "bytes": 193774,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-desarrollo-web-1440-primera.jpg",
+   "bytes": 135934,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-desarrollo-web-390-01.jpg",
+   "bytes": 341816,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-desarrollo-web-390-02.jpg",
+   "bytes": 253840,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-desarrollo-web-390-03.jpg",
+   "bytes": 318163,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-desarrollo-web-390-04.jpg",
+   "bytes": 367926,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-desarrollo-web-390-05.jpg",
+   "bytes": 23495,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-desarrollo-web-390-primera.jpg",
+   "bytes": 141247,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-home-1440-01.jpg",
+   "bytes": 433469,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, recomprimida por el tablero de 506713 a 433469 bytes (JPEG 76)"
+  },
+  {
+   "ruta": "img/a-home-1440-02.jpg",
+   "bytes": 413353,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-home-1440-primera.jpg",
+   "bytes": 131015,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-home-390-01.jpg",
+   "bytes": 293618,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-home-390-02.jpg",
+   "bytes": 346067,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-home-390-03.jpg",
+   "bytes": 381634,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-home-390-04.jpg",
+   "bytes": 338650,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-home-390-05.jpg",
+   "bytes": 11303,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-home-390-primera.jpg",
+   "bytes": 163487,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-trabajo-1440-01.jpg",
+   "bytes": 446707,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, recomprimida por el tablero de 482938 a 446707 bytes (JPEG 80)"
+  },
+  {
+   "ruta": "img/a-trabajo-1440-primera.jpg",
+   "bytes": 128996,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-trabajo-390-01.jpg",
+   "bytes": 317649,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-trabajo-390-02.jpg",
+   "bytes": 295246,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-trabajo-390-03.jpg",
+   "bytes": 235574,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/a-trabajo-390-primera.jpg",
+   "bytes": 134806,
+   "origen": "la dirección (proto/a)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-desarrollo-web-1440-1de2.jpg",
+   "bytes": 445383,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, recomprimida por el tablero de 505229 a 445383 bytes (JPEG 80)"
+  },
+  {
+   "ruta": "img/b-desarrollo-web-1440-2de2.jpg",
+   "bytes": 118319,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-desarrollo-web-1440-primera.jpg",
+   "bytes": 121821,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-desarrollo-web-390-1de5.jpg",
+   "bytes": 340007,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-desarrollo-web-390-2de5.jpg",
+   "bytes": 333968,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-desarrollo-web-390-3de5.jpg",
+   "bytes": 305747,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-desarrollo-web-390-4de5.jpg",
+   "bytes": 342220,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-desarrollo-web-390-5de5.jpg",
+   "bytes": 5686,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-desarrollo-web-390-primera.jpg",
+   "bytes": 133406,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-home-1440-1de2.jpg",
+   "bytes": 411948,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, recomprimida por el tablero de 458297 a 411948 bytes (JPEG 80)"
+  },
+  {
+   "ruta": "img/b-home-1440-2de2.jpg",
+   "bytes": 181778,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-home-1440-chequeo.jpg",
+   "bytes": 118376,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-home-1440-primera.jpg",
+   "bytes": 110137,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-home-390-1de4.jpg",
+   "bytes": 310977,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-home-390-2de4.jpg",
+   "bytes": 322010,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-home-390-3de4.jpg",
+   "bytes": 324554,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-home-390-4de4.jpg",
+   "bytes": 303198,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-home-390-primera.jpg",
+   "bytes": 142882,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-praxi-1440-1de3.jpg",
+   "bytes": 434964,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-praxi-1440-2de3.jpg",
+   "bytes": 348776,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-praxi-1440-3de3.jpg",
+   "bytes": 301635,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-praxi-1440-primera.jpg",
+   "bytes": 131400,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-praxi-390-1de4.jpg",
+   "bytes": 314673,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-praxi-390-2de4.jpg",
+   "bytes": 409258,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-praxi-390-3de4.jpg",
+   "bytes": 309582,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-praxi-390-4de4.jpg",
+   "bytes": 142623,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-praxi-390-primera.jpg",
+   "bytes": 110796,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-sesenta-1440-1de3.jpg",
+   "bytes": 436299,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-sesenta-1440-2de3.jpg",
+   "bytes": 433766,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, recomprimida por el tablero de 530106 a 433766 bytes (JPEG 72)"
+  },
+  {
+   "ruta": "img/b-sesenta-1440-3de3.jpg",
+   "bytes": 293696,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-sesenta-1440-primera.jpg",
+   "bytes": 146970,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-sesenta-390-1de3.jpg",
+   "bytes": 362247,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-sesenta-390-2de3.jpg",
+   "bytes": 395423,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-sesenta-390-3de3.jpg",
+   "bytes": 309872,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-sesenta-390-primera.jpg",
+   "bytes": 98879,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-trabajo-1440-1de1.jpg",
+   "bytes": 261980,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-trabajo-1440-primera.jpg",
+   "bytes": 121045,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-trabajo-1440-visor.jpg",
+   "bytes": 122951,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-trabajo-390-1de3.jpg",
+   "bytes": 319881,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-trabajo-390-2de3.jpg",
+   "bytes": 305872,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-trabajo-390-3de3.jpg",
+   "bytes": 311192,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/b-trabajo-390-primera.jpg",
+   "bytes": 125523,
+   "origen": "la dirección (proto/b)",
+   "nota": "captura de la dirección, tal cual"
+  },
+  {
+   "ruta": "img/t-a-chequeo-1440.jpg",
+   "bytes": 61455,
+   "origen": "proto/a/medicion/a-chequeo-resultado-1440.png",
+   "nota": "derivada por el tablero: 346 × 1013, JPEG 82"
+  },
+  {
+   "ruta": "img/t-a-cursor-1440.jpg",
+   "bytes": 58470,
+   "origen": "proto/a/medicion/a-cursor-1440.png",
+   "nota": "derivada por el tablero: 1000 × 700, JPEG 82"
+  },
+  {
+   "ruta": "img/t-a-home-1440-recorrido.jpg",
+   "bytes": 125621,
+   "origen": "video/a-home-1440.webm (cuadro del segundo 1,0)",
+   "nota": "derivada por el tablero: 1440 × 900, JPEG 82"
+  },
+  {
+   "ruta": "img/t-a-trabajo-1440-recorrido.jpg",
+   "bytes": 123109,
+   "origen": "video/a-trabajo-1440.webm (cuadro del segundo 1,0)",
+   "nota": "derivada por el tablero: 1440 × 900, JPEG 82"
+  },
+  {
+   "ruta": "img/t-b-home-1440-recorrido.jpg",
+   "bytes": 100894,
+   "origen": "video/b-home-1440.webm (cuadro del segundo 1,0)",
+   "nota": "derivada por el tablero: 1440 × 900, JPEG 82"
+  },
+  {
+   "ruta": "img/t-b-trabajo-1440-recorrido.jpg",
+   "bytes": 109820,
+   "origen": "video/b-trabajo-1440.webm (cuadro del segundo 1,0)",
+   "nota": "derivada por el tablero: 1440 × 900, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-doceavo-home-1440.jpg",
+   "bytes": 161539,
+   "origen": "../../../../../portafolio/07-doceavo/capturas/home-1440-primera.png",
+   "nota": "derivada por el tablero: 1440 × 900, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-doceavo-home-390.jpg",
+   "bytes": 133450,
+   "origen": "../../../../../portafolio/07-doceavo/capturas/home-390-primera.png",
+   "nota": "derivada por el tablero: 780 × 1688, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-doceavo-pliego.jpg",
+   "bytes": 223127,
+   "origen": "../../../../../portafolio/07-doceavo/identidad/pliego.png",
+   "nota": "derivada por el tablero: 1920 × 1080, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-doceavo-recorrido.jpg",
+   "bytes": 147164,
+   "origen": "../../../../../portafolio/07-doceavo/movimiento/poster.jpg",
+   "nota": "derivada por el tablero: 1440 × 810, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-ocelo-home-1440-luz.jpg",
+   "bytes": 90739,
+   "origen": "../../../../../portafolio/05-ocelo/capturas/home-1440-luz-primera.png",
+   "nota": "derivada por el tablero: 1440 × 900, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-ocelo-home-1440.jpg",
+   "bytes": 91393,
+   "origen": "../../../../../portafolio/05-ocelo/capturas/home-1440-primera.png",
+   "nota": "derivada por el tablero: 1440 × 900, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-ocelo-home-390.jpg",
+   "bytes": 108930,
+   "origen": "../../../../../portafolio/05-ocelo/capturas/home-390-primera.png",
+   "nota": "derivada por el tablero: 780 × 1688, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-ocelo-pliego.jpg",
+   "bytes": 146763,
+   "origen": "../../../../../portafolio/05-ocelo/identidad/pliego.png",
+   "nota": "derivada por el tablero: 1920 × 1080, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-ocelo-recorrido.jpg",
+   "bytes": 87130,
+   "origen": "../../../../../portafolio/05-ocelo/movimiento/poster.jpg",
+   "nota": "derivada por el tablero: 1440 × 810, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-sesenta-home-1440.jpg",
+   "bytes": 159593,
+   "origen": "../../../../../portafolio/06-sesenta/capturas/home-1440-primera.png",
+   "nota": "derivada por el tablero: 1440 × 900, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-sesenta-home-390.jpg",
+   "bytes": 173152,
+   "origen": "../../../../../portafolio/06-sesenta/capturas/home-390-primera.png",
+   "nota": "derivada por el tablero: 780 × 1688, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-sesenta-pliego.jpg",
+   "bytes": 277067,
+   "origen": "../../../../../portafolio/06-sesenta/identidad/pliego.png",
+   "nota": "derivada por el tablero: 1920 × 1080, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-sesenta-recorrido.jpg",
+   "bytes": 123372,
+   "origen": "../../../../../portafolio/06-sesenta/movimiento/poster.jpg",
+   "nota": "derivada por el tablero: 1440 × 810, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-tonela-home-1440.jpg",
+   "bytes": 129899,
+   "origen": "../../../../../portafolio/04-tonela/capturas/home-1440-primera.png",
+   "nota": "derivada por el tablero: 1440 × 900, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-tonela-home-390.jpg",
+   "bytes": 167210,
+   "origen": "../../../../../portafolio/04-tonela/capturas/home-390-primera.png",
+   "nota": "derivada por el tablero: 780 × 1688, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-tonela-pliego.jpg",
+   "bytes": 268271,
+   "origen": "../../../../../portafolio/04-tonela/identidad/pliego.png",
+   "nota": "derivada por el tablero: 1920 × 1081, JPEG 82"
+  },
+  {
+   "ruta": "img/t-c-tonela-recorrido.jpg",
+   "bytes": 119307,
+   "origen": "../../../../../portafolio/04-tonela/movimiento/poster.jpg",
+   "nota": "derivada por el tablero: 1440 × 810, JPEG 82"
+  },
+  {
+   "ruta": "img/t-koto-lyft-1440.jpg",
+   "bytes": 31348,
+   "origen": "../../e12/medicion/koto/paso2/capturas/color-lyft-1440.jpg",
+   "nota": "derivada por el tablero: 720 × 450, JPEG 82"
+  },
+  {
+   "ruta": "img/t-logo-camino-1-la-palabra.jpg",
+   "bytes": 179836,
+   "origen": "../../e12/logo/laminas/camino-1-la-palabra.png",
+   "nota": "derivada por el tablero: 1920 × 1080, JPEG 82"
+  },
+  {
+   "ruta": "img/t-logo-camino-2-el-huso.jpg",
+   "bytes": 175705,
+   "origen": "../../e12/logo/laminas/camino-2-el-huso.png",
+   "nota": "derivada por el tablero: 1920 × 1080, JPEG 82"
+  },
+  {
+   "ruta": "img/t-logo-camino-3-dos-cortes.jpg",
+   "bytes": 184664,
+   "origen": "../../e12/logo/laminas/camino-3-dos-cortes.png",
+   "nota": "derivada por el tablero: 1920 × 1080, JPEG 82"
+  },
+  {
+   "ruta": "video/a-home-1440.webm",
+   "bytes": 2184606,
+   "origen": "la dirección",
+   "nota": "recorrido grabado del navegador, VP8"
+  },
+  {
+   "ruta": "video/a-trabajo-1440.webm",
+   "bytes": 1890737,
+   "origen": "la dirección",
+   "nota": "recorrido grabado del navegador, VP8"
+  },
+  {
+   "ruta": "video/b-home-1440.webm",
+   "bytes": 1743345,
+   "origen": "la dirección",
+   "nota": "recorrido grabado del navegador, VP9"
+  },
+  {
+   "ruta": "video/b-trabajo-1440.webm",
+   "bytes": 1321021,
+   "origen": "la dirección",
+   "nota": "recorrido grabado del navegador, VP9"
+  },
+  {
+   "ruta": "video/t-a-home-1440.mp4",
+   "bytes": 2574964,
+   "origen": "video/a-home-1440.webm",
+   "nota": "H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf 24)"
+  },
+  {
+   "ruta": "video/t-a-trabajo-1440.mp4",
+   "bytes": 1981620,
+   "origen": "video/a-trabajo-1440.webm",
+   "nota": "H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf 24)"
+  },
+  {
+   "ruta": "video/t-b-home-1440.mp4",
+   "bytes": 1573114,
+   "origen": "video/b-home-1440.webm",
+   "nota": "H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf 24)"
+  },
+  {
+   "ruta": "video/t-b-trabajo-1440.mp4",
+   "bytes": 909380,
+   "origen": "video/b-trabajo-1440.webm",
+   "nota": "H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf 24)"
+  },
+  {
+   "ruta": "video/t-c-doceavo.mp4",
+   "bytes": 754472,
+   "origen": "../../../../../portafolio/07-doceavo/movimiento/recorrido.mp4",
+   "nota": "copia exacta"
+  },
+  {
+   "ruta": "video/t-c-doceavo.webm",
+   "bytes": 580756,
+   "origen": "../../../../../portafolio/07-doceavo/movimiento/recorrido.webm",
+   "nota": "copia exacta"
+  },
+  {
+   "ruta": "video/t-c-ocelo.mp4",
+   "bytes": 1626960,
+   "origen": "../../../../../portafolio/05-ocelo/movimiento/recorrido.mp4",
+   "nota": "copia exacta"
+  },
+  {
+   "ruta": "video/t-c-ocelo.webm",
+   "bytes": 1100619,
+   "origen": "../../../../../portafolio/05-ocelo/movimiento/recorrido.webm",
+   "nota": "copia exacta"
+  },
+  {
+   "ruta": "video/t-c-sesenta.mp4",
+   "bytes": 2122353,
+   "origen": "../../../../../portafolio/06-sesenta/movimiento/recorrido.mp4",
+   "nota": "copia exacta"
+  },
+  {
+   "ruta": "video/t-c-sesenta.webm",
+   "bytes": 968909,
+   "origen": "../../../../../portafolio/06-sesenta/movimiento/recorrido.webm",
+   "nota": "copia exacta"
+  },
+  {
+   "ruta": "video/t-c-tonela.mp4",
+   "bytes": 1287447,
+   "origen": "../../../../../portafolio/04-tonela/movimiento/recorrido.mp4",
+   "nota": "copia exacta"
+  },
+  {
+   "ruta": "video/t-c-tonela.webm",
+   "bytes": 1171199,
+   "origen": "../../../../../portafolio/04-tonela/movimiento/recorrido.webm",
+   "nota": "copia exacta"
+  }
+ ],
+ "imagenes": 111,
+ "videos": 16,
+ "bytesPagina": 85261,
+ "bytesTotal": 49771317,
+ "unidad": "bytes; kB = 1.000 y MB = 1.000.000"
+}
