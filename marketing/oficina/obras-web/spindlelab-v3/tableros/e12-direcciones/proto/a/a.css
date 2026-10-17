@@ -421,6 +421,17 @@ html[data-senal="cobalto"] { --circulo: #316bff; --circulo-anillo: none; }
   .caso-sec h2 { max-width: 16em; }
 }
 .caso-sec h2 { font-size: var(--t-titulo); line-height: 1.2; }
+/* Marca de registro (lock §10): una cruz de 9 × 9 en --linea-seccion donde el borde de sección cruza el límite de la
+   barra lateral (x = 336), que no se dibuja. Dos por página, en los dos primeros bordes; ninguna bajo 1194 px.
+   Reversible: si en la compuerta se lee como adorno, sale esta regla y nada más. */
+@media (min-width: 1194px) {
+  .caso-sec { position: relative; }
+  .caso-bloque:nth-of-type(-n + 2) > .caso-sec::before {
+    content: ''; position: absolute; left: calc(-1 * var(--m) / 2 - 4.5px - var(--m) / 2); top: -5px; width: 9px; height: 9px;
+    background: linear-gradient(var(--linea-seccion), var(--linea-seccion)) center / 1px 100% no-repeat,
+                linear-gradient(var(--linea-seccion), var(--linea-seccion)) center / 100% 1px no-repeat;
+  }
+}
 .filas { display: flex; flex-direction: column; gap: var(--g); margin-top: var(--g); }
 .fila { display: grid; gap: var(--g); }
 .fila--par { grid-template-columns: 1fr 1fr; }
