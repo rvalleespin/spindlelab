@@ -210,16 +210,17 @@ h1 .vence { color: var(--rojo); white-space: nowrap; }
 }
 .taco-hoja.arrancada {
   position: absolute; inset: 0 0 auto 0; z-index: 3;
-  transform-origin: 6% 0;
+  transform-origin: 0 0;
   pointer-events: none;
-  box-shadow: 0 1px 0 var(--linea);
-  animation: arranca .95s cubic-bezier(.5, .02, .72, .22) forwards;
+  /* la hoja se despega desde la esquina derecha, gira sobre la izquierda y cae */
+  filter: drop-shadow(0 8px 10px rgba(20, 20, 20, .16));
+  animation: arranca 1s cubic-bezier(.45, 0, .7, .3) forwards;
 }
 @keyframes arranca {
   0% { transform: none; }
-  16% { transform: rotate(-1.2deg) translateY(2px); }
-  72% { opacity: 1; }
-  100% { transform: translate(-7%, 150%) rotate(-12deg); opacity: 0; }
+  30% { transform: rotate(5deg); }
+  70% { opacity: 1; }
+  100% { transform: translate(-3%, 150%) rotate(16deg); opacity: 0; }
 }
 
 /* -- el año en doce */
@@ -371,8 +372,9 @@ thead th:first-child { padding-left: 0; }
 
 /* lo que no hacemos: sobre tinta */
 .no-hacemos {
-  margin: 112px calc(-1 * var(--pad)) 0 calc(-1 * (var(--pad) + var(--margen)));
-  padding: 92px var(--pad) 100px calc(var(--pad) + var(--margen));
+  /* la banda de tinta llega hasta la doble raya: el margen sigue siendo papel */
+  margin: 112px calc(-1 * var(--pad)) 0;
+  padding: 92px var(--pad) 100px;
   background: var(--tinta); color: var(--lienzo);
 }
 .no-hacemos .etiqueta, .no-hacemos .seccion-baj { color: var(--verde-noche); }
@@ -481,8 +483,9 @@ thead th:first-child { padding-left: 0; }
   padding: 26px 30px 26px;
 }
 .hoja-g.arrancada {
-  position: absolute; inset: 0 0 auto 0; z-index: 3; transform-origin: 5% 0; pointer-events: none;
-  animation: arranca 1s cubic-bezier(.5, .02, .72, .22) forwards;
+  position: absolute; inset: 0 0 auto 0; z-index: 3; transform-origin: 0 0; pointer-events: none;
+  filter: drop-shadow(0 10px 12px rgba(20, 20, 20, .16));
+  animation: arranca 1.05s cubic-bezier(.45, 0, .7, .3) forwards;
 }
 .hoja-cab { display: flex; justify-content: space-between; align-items: baseline; margin: 6px 0 16px; }
 .hoja-mes { font-size: 76px; line-height: .95; letter-spacing: -.045em; font-weight: 720; margin: 0; grid-column: auto; }
@@ -556,7 +559,7 @@ thead th:first-child { padding-left: 0; }
     position: absolute; top: 112px; left: calc(-1 * (var(--pad) + var(--margen)) + 16px);
     width: calc(var(--margen) - 38px); margin: 0;
   }
-  .no-hacemos > .etiqueta { top: 100px; left: 16px; }
+  .no-hacemos > .etiqueta { top: 100px; left: calc(16px - var(--margen)); color: var(--verde); background: var(--lienzo); }
 }
 
 @media (max-width: 1023px) {
