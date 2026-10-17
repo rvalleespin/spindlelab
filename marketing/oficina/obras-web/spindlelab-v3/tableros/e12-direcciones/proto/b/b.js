@@ -239,6 +239,9 @@
       });
     });
     if (filas.length) activar(filas[0]);
+    // Las portadas del visor se piden en reposo, para que el cambio al pasar el mouse no espere a la red.
+    var pedir = function () { filas.forEach(function (tr) { var i = new Image(); i.decoding = 'async'; i.src = tr.getAttribute('data-visor'); }); };
+    if ('requestIdleCallback' in window) requestIdleCallback(pedir, { timeout: 2500 }); else setTimeout(pedir, 1200);
   });
 
   /* ---------- Caso: índice de secciones con su punto, y la barra de 390 ---------- */
@@ -264,6 +267,10 @@
     }, { rootMargin: '-35% 0px -60% 0px' });
     secciones.forEach(function (s) { io.observe(s); });
     marcar(secciones[0].id);
+    // Arriba del todo (sobre el medio principal) manda la primera sección.
+    window.addEventListener('scroll', function () {
+      if (secciones[0].getBoundingClientRect().top > window.innerHeight * 0.4) marcar(secciones[0].id);
+    }, { passive: true });
   }
   var masBarra = $('.barra-caso button');
   var menuBarra = $('.barra-caso__menu');
@@ -331,7 +338,7 @@
       d.bloques.forEach(function (b) {
         var items = d.items.filter(function (i) { return i.bloque === b.id; });
         if (!items.length) return;
-        h += '<div class="lectura__bloque"><h3>' + esc(b.titulo) + '</h3><p class="sub">' + esc(b.sub) + '</p><ul class="lectura__lista">';
+        h += '<div class="lectura__bloque"><h3>' + esc(b.titulo) + '</h3><p class="lectura__sub">' + esc(b.sub) + '</p><ul class="lectura__lista">';
         items.forEach(function (i) {
           var estado = i.estado || (i.ok ? 'ok' : 'pendiente');
           var duda = estado === 'sin-confirmar';

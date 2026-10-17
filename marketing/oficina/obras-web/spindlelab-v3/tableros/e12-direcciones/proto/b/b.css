@@ -65,7 +65,7 @@ body {
   font-kerning: normal;
   overflow-x: clip;
 }
-img, video { display: block; max-width: 100%; }
+img, video { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
 p { margin: 0; }
 h1, h2, h3, h4 { margin: 0; font-weight: inherit; font-size: inherit; line-height: inherit; }
@@ -293,7 +293,7 @@ th { font-weight: inherit; text-align: left; }
 .lectura__acciones { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
 .lectura__bloque { margin-top: 22px; }
 .lectura__bloque h3 { color: var(--blanco); font-size: 15px; }
-.lectura__bloque .sub { font-size: 13px; color: var(--gris); margin-top: 2px; }
+.lectura__sub { font-size: 13px; color: var(--gris); margin-top: 2px; }
 .lectura__lista { margin-top: 8px; }
 .lectura__lista li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; padding: 9px 0; border-top: 1px solid var(--linea); font-size: 14px; }
 .lectura__marca { font-family: var(--sans); color: var(--gris); }
@@ -317,11 +317,11 @@ th { font-weight: inherit; text-align: left; }
 .visor { position: sticky; top: 72px; }
 .visor .medio { aspect-ratio: 4 / 3; }
 .visor .medio img, .visor .medio video { position: absolute; inset: 0; }
-.visor video { opacity: 0; }
+.visor video { opacity: 0; object-fit: contain; background: var(--lienzo); }
 .visor video.corre { opacity: 1; }
 .visor__nombre { margin-top: 10px; color: var(--blanco); font-size: 16px; }
 .visor__linea { margin-top: 6px; color: var(--gris); }
-@media (max-width: 833px) { .visor-celda { display: none; } }
+@media (max-width: 833px) { .visor-celda { display: none; } [data-indice] > * { grid-row: auto !important; margin-top: 0 !important; } [data-indice] > .cuerpo + .cuerpo { margin-top: 20px !important; } }
 
 .indice { margin-top: 20px; }
 .indice thead th { padding: 0 0 10px; vertical-align: bottom; }
@@ -337,7 +337,10 @@ th { font-weight: inherit; text-align: left; }
 .indice__dato { color: var(--gris); }
 .indice__tipo-concepto { color: var(--blanco); }
 .indice__resultado { color: var(--gris); max-width: 300px; }
-.indice__mini { display: none; }
+.indice__mini { display: none; width: 100%; height: auto; object-fit: cover; }
+/* Con teclado no hay círculo: el texto que decía el círculo aparece quieto dentro de la fila enfocada (lock §8). */
+.indice__foco { display: none; margin-top: 10px; color: var(--blanco); }
+.indice tr:has(.indice__nombre:focus-visible) .indice__foco { display: block; }
 .indice tr[hidden] { display: none; }
 .col-nombre { width: 34%; }
 .col-tipo { width: 9%; }
@@ -437,8 +440,9 @@ th { font-weight: inherit; text-align: left; }
 .fila-par > .medio, .fila-par > figure > .medio { aspect-ratio: 4 / 5; }
 .fila-mixta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .fila-mixta > .medio { aspect-ratio: 4 / 5; }
-.fila-mixta > .fila-pila { display: grid; grid-template-rows: 1fr 1fr; gap: 8px; }
-.fila-mixta > .fila-pila .medio { height: auto; aspect-ratio: auto; }
+.fila-mixta > .fila-pila { display: grid; grid-template-rows: 1fr 1fr; gap: 8px; min-height: 0; }
+.fila-mixta > .fila-pila .medio { height: auto; aspect-ratio: auto; min-height: 0; }
+.fila-mixta > .fila-pila .medio img { position: absolute; inset: 0; width: 100%; height: 100%; }
 .figura { margin: 0; }
 /* La placa de datos: el resultado de un caso dicho con su crudo, como fila 16:9 (lo propio de B). */
 .placa-datos {
@@ -467,6 +471,7 @@ th { font-weight: inherit; text-align: left; }
 .siguiente__nombre a { text-decoration: none; color: var(--blanco); }
 .siguiente__nombre .gris { display: block; }
 .barra-caso { display: none; }
+.solo-movil { display: none; }
 .caso-cabeza-movil { display: none; }
 @media (max-width: 1193px) {
   .caso__lateral { grid-column: 1 / span 3; }
@@ -483,6 +488,8 @@ th { font-weight: inherit; text-align: left; }
   .caso-cabeza-movil .ficha { max-width: none; }
   .caso__columna > .medio-principal { margin: 0; }
   .caso__columna > .medio-principal .medio { border-radius: 0; aspect-ratio: 4 / 5; }
+  .medio-principal .medio:has(.solo-movil) video, .medio-principal .medio:has(.solo-movil) .pausa { display: none; }
+  .medio-principal .solo-movil { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .caso__columna > .medio-principal .pie { padding-inline: var(--m); }
   .caso__seccion, .siguiente, .filas, .caso__columna > .figura { margin-inline: var(--m); }
   .caso__texto { padding-inline: 0; }

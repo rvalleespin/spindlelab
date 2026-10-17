@@ -94,6 +94,7 @@ guardar(f'{PRAXI}/capturas/landing-390-sec03.jpg', 'c-praxi-390-conversacion.web
 guardar(f'{PRAXI}/capturas/landing-390-primera.jpg', 'c-praxi-390-portada.webp', C45_ARRIBA, 780)
 guardar(f'{PRAXI}/capturas/landing-1440-sec08.jpg', 'c-praxi-progreso.webp', C169_ARRIBA, 1440)
 guardar(f'{PRAXI}/capturas/planes-1440-completa.jpg', 'c-praxi-planes.webp', C169_ARRIBA, 1440)
+guardar(f'{PRAXI}/capturas/empezar-1440-primera.jpg', 'c-praxi-empezar.webp', (1.62, 0.5, 0.5), 1200)
 guardar(f'{PRAXI}/material/praxi-reel-a-memoria-poster.jpg', 'c-praxi-reel-poster.webp', None, 720)
 video(f'{PRAXI}/material/praxi-reel-a-memoria-720.mp4', 'c-praxi-reel.webm', 540)
 guardar(f'{PRAXI}/material/praxi-avatar-amarillo.png', 'c-praxi-avatar-amarillo.webp', None, 800)

@@ -1,0 +1,60 @@
+{
+ "home@1440": {
+  "alto": 900,
+  "h1": {
+   "arriba": 125,
+   "abajo": 383
+  },
+  "campo": {
+   "arriba": 585,
+   "abajo": 629
+  },
+  "boton": {
+   "arriba": 585,
+   "abajo": 629
+  },
+  "h1px": "87.84px"
+ },
+ "home@390": {
+  "alto": 844,
+  "h1": {
+   "arriba": 105,
+   "abajo": 340
+  },
+  "campo": {
+   "arriba": 648,
+   "abajo": 692
+  },
+  "boton": {
+   "arriba": 700,
+   "abajo": 744
+  },
+  "h1px": "40px"
+ },
+ "trabajo/praxi/@1440-mitad": {
+  "scrollY": 5348,
+  "lateralArriba": 56,
+  "lateralAbajo": 900,
+  "activa": "La pieza",
+  "secciones": [
+   "Problema",
+   "Hipótesis",
+   "Solución",
+   "La pieza",
+   "Sin métrica"
+  ]
+ },
+ "trabajo/sesenta/@1440-mitad": {
+  "scrollY": 5118,
+  "lateralArriba": 56,
+  "lateralAbajo": 900,
+  "activa": "La pieza",
+  "secciones": [
+   "Problema",
+   "Hipótesis",
+   "Solución",
+   "La pieza",
+   "Sin métrica"
+  ]
+ }
+}

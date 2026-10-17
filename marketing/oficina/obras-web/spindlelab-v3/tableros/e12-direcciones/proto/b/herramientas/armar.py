@@ -190,7 +190,7 @@ def tabla_indice(ids, pre, completa, nivel_nombre='h3'):
         <img class="indice__mini medio r43" src="{pre}{img}" alt="{esc(alt)}" width="1080" height="810" loading="lazy">
         <{nivel_nombre} class="t-titulo"><a class="indice__nombre" href="{esc(href)}">{esc(e['nombre'])}</a></{nivel_nombre}>
         <p class="indice__bajada t-chico">{esc(e['bajada'])}</p>
-        <p class="indice__foco rotulo solo-lector">{esc(cursor_de(e))}</p></td>''',
+        <p class="indice__foco rotulo">{esc(cursor_de(e))}</p></td>''',
                   f'<td class="c-tipo dato{concepto}" data-columna="{esc(cols[1])}">{esc(e["tipo"])}</td>',
                   f'<td class="c-anio dato indice__dato" data-columna="{esc(cols[2])}">{esc(e["anio"])}</td>']
         if completa:
@@ -549,14 +549,15 @@ def caso_praxi():
                   medio(f'{pre}medios/p-praxi-reglas.webp', 'Captura de Praxi: «Debajo del chat hay reglas, no una corazonada», con las tres reglas que calcula el código.', fondo=D, contener=True, w=1440, h=526))}
     {seccion_caso('pieza', EL['praxi.pieza.rotulo']['texto'], EL['praxi.pieza.h2']['texto'],
                   P('praxi.pieza.p1') + P('praxi.pieza.p2') + f'<p class="t-chico" style="margin-top:14px">{txt("praxi.pieza.hueco")}</p>',
-                  con_pie(medio(f'{pre}medios/c-praxi-progreso.webp', 'Captura de Praxi: «Tu progreso, en números», con los gráficos de esfuerzo y de carga.'), pie_ej) +
+                  medio(f'{pre}medios/c-praxi-avatar-amarillo.webp', 'El avatar de Praxi: una P y un punto en negro sobre el amarillo de la marca.', 'r169', 800, 800, fondo='#E2F349', contener=True) +
                   con_pie('<div class="fila-mixta"><div class="medio r45" style="background:#0F1117" data-video-autonomo>'
                           f'<video muted loop playsinline preload="none" poster="{pre}medios/c-praxi-reel-poster.webp" aria-label="El reel de la campaña de Praxi: un hombre entrena y encima aparece la conversación con el coach." style="object-fit:contain"><source src="{pre}medios/c-praxi-reel.webm" type="video/webm"></video>{boton_pausa()}</div>'
-                          '<div class="fila-pila">' + medio(f'{pre}medios/c-praxi-avatar-amarillo.webp', 'El avatar de Praxi: una P y un punto en negro sobre el amarillo de la marca.', 'r162', 800, 800, fondo='#E2F349', contener=True) +
-                          medio(f'{pre}medios/c-praxi-avatar-oscuro.webp', 'El avatar de Praxi en su versión oscura, con el punto amarillo.', 'r162', 800, 800, fondo='#0F1117', contener=True) + '</div></div>', pie_gen) +
-                  medio(f'{pre}medios/c-praxi-planes.webp', 'Captura de la página de planes de Praxi: «Nada de lo que entrenas se pierde».') +
+                          '<div class="fila-pila">' + medio(f'{pre}medios/c-praxi-avatar-oscuro.webp', 'El avatar de Praxi en su versión oscura, con el punto amarillo.', 'r162', 800, 800, fondo='#0F1117', contener=True) +
+                          medio(f'{pre}medios/c-praxi-empezar.webp', 'Captura de la página «Lo que te llevas gratis» de Praxi.', 'r162', 1440, 900) + '</div></div>', pie_gen) +
+                  con_pie(medio(f'{pre}medios/c-praxi-progreso.webp', 'Captura de Praxi: «Tu progreso, en números», con los gráficos de esfuerzo y de carga.'), pie_ej) +
                   con_pie('<div class="fila-par">' + medio(f'{pre}medios/c-praxi-carrusel-1.webp', 'Lámina del carrusel de Praxi: «La mitad de tus series quizá no cuentan.»', 'r45', 860, 1075) +
-                          medio(f'{pre}medios/c-praxi-carrusel-4.webp', 'Lámina del carrusel de Praxi: «Y la próxima semana se acuerda.», con una familia en la mesa.', 'r45', 860, 1075) + '</div>', pie_gen))}
+                          medio(f'{pre}medios/c-praxi-carrusel-4.webp', 'Lámina del carrusel de Praxi: «Y la próxima semana se acuerda.», con una familia en la mesa.', 'r45', 860, 1075) + '</div>', pie_gen) +
+                  medio(f'{pre}medios/c-praxi-planes.webp', 'Captura de la página de planes de Praxi: «Nada de lo que entrenas se pierde».'))}
     {seccion_caso('resultado', EL['praxi.resultado.rotulo']['texto'], EL['praxi.resultado.h2']['texto'],
                   P('praxi.resultado.p1') + P('praxi.resultado.p2'), placa_praxi())}
     <section class="siguiente" aria-labelledby="t-siguiente" data-entra>
@@ -690,6 +691,7 @@ def caso_sesenta():
           <video muted loop playsinline preload="metadata" poster="{S}s-poster.webp" aria-label="Recorrido de diez segundos por el sitio de Sesenta: el 60 que baja hasta los días que quedan y el lector de la carta en el 161.">
             <source src="{pre}{PORT}06-sesenta/movimiento/recorrido.webm" type="video/webm"></video>
           {boton_pausa()}
+          <img class="solo-movil" src="{S}s-portada-4x5.webp" alt="Portada de Sesenta, concepto: un 60 blanco cortado por el marco sobre el azul de trabajo, con la suma del escrito en papel." width="860" height="1075" loading="eager">
         </div>
       </figure>
     </div>
