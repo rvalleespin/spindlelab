@@ -22,7 +22,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from PIL import Image
+from PIL import Image, ImageChops
 
 AQUI = Path(__file__).resolve().parent
 A = AQUI.parent
@@ -69,13 +69,24 @@ def escala(im, ancho):
     return im.resize((ancho, round(im.height * ancho / im.width)), Image.LANCZOS)
 
 
-def campo(pieza, prop, ancho, color, margen=0.06):
+def ajustar(pieza, color, aire=40):
+    """Quita el fondo de la captura que sobra alrededor del contenido (el mismo color de la marca), con aire."""
+    fondo = Image.new("RGB", pieza.size, pieza.getpixel((2, 2)))
+    caja = ImageChops.difference(pieza, fondo).convert("L").point(lambda v: 255 if v > 18 else 0).getbbox()
+    if not caja:
+        return pieza
+    x0, y0, x1, y1 = caja
+    return pieza.crop((max(0, x0 - aire), max(0, y0 - aire), min(pieza.width, x1 + aire), min(pieza.height, y1 + aire)))
+
+
+def campo(pieza, prop, ancho, color, margen=0.06, ajuste=False, max_aumento=1.4):
     """La pieza plana dentro de un campo del color de su marca (lock §20.2, regla 2 y 3)."""
     alto = round(ancho / prop)
     lienzo = Image.new("RGB", (ancho, alto), color)
     m = round(ancho * margen)
-    p = pieza.copy()
-    p.thumbnail((ancho - 2 * m, alto - 2 * m), Image.LANCZOS)
+    p = ajustar(pieza, color) if ajuste else pieza.copy()
+    f = min((ancho - 2 * m) / p.width, (alto - 2 * m) / p.height, max_aumento)
+    p = p.resize((round(p.width * f), round(p.height * f)), Image.LANCZOS)
     lienzo.paste(p, ((ancho - p.width) // 2, (alto - p.height) // 2))
     return lienzo
 
@@ -93,8 +104,11 @@ PORTADAS = {
 }
 SUFIJOS = {"sesenta": ("4x5", "4x3", "5x3"), "ocelo": ("45", "43", "53"), "doceavo": ("45", "43", "53"),
            "tonela": ("4x5", "4x3", "5x3")}
+USADAS = {"sesenta": ("45", "53"), "ocelo": ("43",), "doceavo": ("53",), "tonela": ("45",)}  # las que pide el muro de A
 for marca, patron in PORTADAS.items():
     for suf, prop in zip(SUFIJOS[marca], ("45", "43", "53")):
+        if prop not in USADAS[marca]:
+            continue
         src = Path(str(patron).format(suf))
         guardar(escala(abrir(src), 1050), f"{marca}-{prop}.webp", rel(src), "portada de Bruno, tal cual")
 
@@ -113,37 +127,46 @@ if FUENTE:
             fuente_viva("bernardocombeau.cl a 390"))
     guardar(escala(recorte(abrir(f("combeau-modelo-390-primera.png")), 4 / 5), 780), "combeau-modelo-45.webp",
             fuente_viva("bernardocombeau.cl/modelo/ a 390"))
+    guardar(escala(recorte(abrir(f("verifica-y-cumple-390-primera.png")), 4 / 5), 780), "verifica-y-cumple-45.webp",
+            fuente_viva("verifica.spindlelab.cl a 390"))
     guardar(escala(recorte(abrir(f("verifica-y-cumple-1440-primera.png")), 5 / 3, (0.5, 0)), 1050),
             "verifica-y-cumple-53.webp", fuente_viva("verifica.spindlelab.cl a 1440"))
     guardar(escala(recorte(abrir(f("chequeo-1440-primera.png")), 4 / 3, (0.0, 0)), 1050), "chequeo-43.webp",
             fuente_viva("spindlelab.cl/diagnostico/ a 1440"))
     guardar(escala(recorte(abrir(f("spindlelab-1440-primera.png")), 5 / 3, (0.5, 0)), 1050), "spindlelab-53.webp",
             fuente_viva("spindlelab.cl a 1440, con el aviso de cookies rechazado"))
+    # Para «la pieza y su prueba»: la galería de retratos de Combeau (lo que pesa 805 kB y llega en 95) y la lista de
+    # «Las 12 cosas» de Verifica y Cumple, para no repetir las portadas del índice corto
+    Image.MAX_IMAGE_PIXELS = None
+    comp = abrir(f("combeau-fotografia-1440-completa.png"))
+    guardar(escala(comp.crop((0, 1300, 2880, 2920)), 1600), "combeau-galeria-169.webp",
+            fuente_viva("bernardocombeau.cl a 1440, la galería de retratos"))
+    comp = abrir(f("verifica-y-cumple-1440-completa.png"))
+    guardar(escala(comp.crop((0, 5980, 2880, 7600)), 1600), "verifica-y-cumple-12-169.webp",
+            fuente_viva("verifica.spindlelab.cl a 1440, «Las 12 cosas que tu sitio tiene que dejar publicadas»"))
     # 16:9 para la home y el caso
-    for n in ("combeau-fotografia", "combeau-modelo", "verifica-y-cumple"):
+    for n in ("combeau-fotografia",):
         guardar(escala(recorte(abrir(f(f"{n}-1440-primera.png")), 16 / 9), 1600), f"{n}-169.webp",
                 fuente_viva(f"{n} a 1440"))
 
 # ---------------------------------------------------------------- Praxi (capturas de la copia local, sin las vetadas)
 cap = PRAXI / "capturas"
-guardar(escala(recorte(abrir(cap / "landing-1440-primera.jpg"), 16 / 9), 1440), "praxi-portada-169.webp",
-        rel(cap / "landing-1440-primera.jpg"), "el hombre del hero es generado: lleva pie")
-guardar(campo(abrir(cap / "landing-1440-sec09.jpg"), 16 / 9, 1600, PRAXI_FONDO, margen=0.0), "praxi-reglas-169.webp",
+guardar(campo(abrir(cap / "landing-1440-sec09.jpg").crop((150, 0, 1290, 526)), 16 / 9, 1600, PRAXI_FONDO, margen=0.03), "praxi-reglas-169.webp",
         rel(cap / "landing-1440-sec09.jpg"), "sin personas, sin datos de ejemplo")
-guardar(campo(abrir(cap / "landing-1440-sec03.jpg"), 16 / 9, 1600, PRAXI_FONDO, margen=0.0), "praxi-frase-169.webp",
-        rel(cap / "landing-1440-sec03.jpg"), "datos de ejemplo de la landing: lleva pie")
-guardar(campo(abrir(cap / "landing-1440-sec08.jpg"), 16 / 9, 1600, PRAXI_FONDO, margen=0.03), "praxi-numeros-169.webp",
+guardar(campo(abrir(cap / "landing-1440-sec08.jpg"), 16 / 9, 1600, PRAXI_FONDO, margen=0.04, ajuste=True), "praxi-numeros-169.webp",
         rel(cap / "landing-1440-sec08.jpg"), "datos de ejemplo de la landing: lleva pie")
 guardar(recorte(abrir(cap / "landing-390-sec03.jpg"), 4 / 5, (0.5, 0.18)), "praxi-frase-45.webp",
         rel(cap / "landing-390-sec03.jpg"), "datos de ejemplo: lleva pie")
 guardar(recorte(abrir(cap / "landing-390-sec08.jpg"), 4 / 5, (0.5, 0.07)), "praxi-numeros-45.webp",
         rel(cap / "landing-390-sec08.jpg"), "datos de ejemplo: lleva pie")
+guardar(recorte(abrir(cap / "landing-390-primera.jpg"), 4 / 5), "praxi-portada-390-45.webp",
+        rel(cap / "landing-390-primera.jpg"), "el hombre del hero es generado: lleva pie")
+guardar(recorte(abrir(cap / "login-390-primera.jpg"), 4 / 5, (0.5, 1.0)), "praxi-login-390-45.webp",
+        rel(cap / "login-390-primera.jpg"), "la entrada con el lema viejo, «Entrena sabiendo por qué»; la mujer del fondo es generada")
 guardar(escala(recorte(abrir(cap / "empezar-1440-primera.jpg"), 16 / 9, (0.5, 0.5)), 1440), "praxi-empezar-169.webp",
         rel(cap / "empezar-1440-primera.jpg"))
-guardar(escala(recorte(abrir(cap / "login-1440-primera.jpg"), 16 / 9, (0.5, 0.5)), 1440), "praxi-login-169.webp",
-        rel(cap / "login-1440-primera.jpg"), "la mujer del fondo es generada: lleva pie")
 mat = PRAXI / "material"
-guardar(campo(abrir(mat / "praxi-portada-facebook.jpg"), 16 / 9, 1600, PRAXI_FONDO, margen=0.0),
+guardar(campo(abrir(mat / "praxi-portada-facebook.jpg"), 16 / 9, 1600, PRAXI_FONDO, margen=0.04),
         "praxi-facebook-169.webp", rel(mat / "praxi-portada-facebook.jpg"), "fondo tratado como generado: lleva pie")
 guardar(escala(recorte(abrir(mat / "praxi-carrusel-v2-s1.jpg"), 4 / 5), 1050), "praxi-carrusel-1-45.webp",
         rel(mat / "praxi-carrusel-v2-s1.jpg"), "foto generada: lleva pie")
@@ -186,10 +209,6 @@ guardar(abrir(ses / "movimiento/poster.jpg"), "sesenta-recorrido-poster.webp", r
 # Desarrollo web: la franja de imagen del trabajo (lock §20.2, regla 4: en una interior, el color va en una franja)
 doc = PORT / "07-doceavo/medios/home-1440.png"
 guardar(escala(abrir(doc), 1600), "doceavo-home-169.webp", rel(doc), "captura de Bruno; el sello «Concepto» va dentro")
-ton = PORT / "04-tonela/capturas/home-1440-primera.png"
-guardar(escala(recorte(abrir(ton), 16 / 9, (0.5, 0)), 1600), "tonela-home-169.webp", rel(ton))
-oce = PORT / "05-ocelo/medios/home-1440-luz.png"
-guardar(escala(recorte(abrir(oce), 16 / 9, (0.5, 0)), 1600), "ocelo-home-169.webp", rel(oce))
 
 # Ramón, el retrato de /nosotros/ (896 × 1200, 3:4)
 ret = REPO / "spindlelab-astro/public/assets/img/ramon-vallejos.jpg"
@@ -211,7 +230,7 @@ hero = mat / "praxi-hero-secuencia.mp4"
 ffmpeg("-i", str(hero), "-c:v", "libvpx-vp9", "-b:v", "0", "-crf", "30", "-row-mt", "1", "-an", str(SALIDA / "praxi-hero.webm"))
 video_registro("praxi-hero.webm", rel(hero), "los cinco clips del hero, generados con IA (Seedance 2.0): lleva pie")
 reel = mat / "praxi-reel-a-memoria-720.mp4"
-ffmpeg("-i", str(reel), "-vf", "crop=720:900:0:190,scale=720:900", "-c:v", "libvpx-vp9", "-b:v", "0", "-crf", "32",
+ffmpeg("-i", str(reel), "-vf", "crop=720:900:0:100,scale=720:900", "-c:v", "libvpx-vp9", "-b:v", "0", "-crf", "32",
        "-row-mt", "1", "-an", str(SALIDA / "praxi-reel-45.webm"))
 video_registro("praxi-reel-45.webm", rel(reel), "reel de campaña recortado a 4:5; el atleta es generado: lleva pie")
 for marca, carpeta in (("sesenta", "06-sesenta"),):
