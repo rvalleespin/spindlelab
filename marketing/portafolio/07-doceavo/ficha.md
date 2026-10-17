@@ -125,4 +125,20 @@ antes del F29 general; el día hábil siguiente al F29 de facturadores) y el cas
 
 ## 6 · Ingredientes reales para la fila del inventario (encargo §5)
 
-Se completa al cerrar la pieza (ver `caso.md`).
+- **Tipo:** concepto (identidad + sitio + movimiento), 2026. **Rubro:** servicios profesionales, contable y tributario.
+- **Lo construido (16 y 17-oct):** pliego de identidad (`identidad/pliego.png`, 1920 × 1080); once placas en 16:9, 4:5
+  y 1,62, cada una sobre lienzo y sobre tinta, con «CONCEPTO» en la esquina (`identidad/placas/`); portadas 4:5, 4:3 y
+  5:3 (`identidad/portadas/`); logo en SVG con la palabra en contornos y un símbolo por mes (`identidad/logo/`); home e
+  interior «Calendario» en HTML y CSS a mano, con el año en doce, el taco que se arranca y la tabla del año
+  (`sitio/`), capturadas a 1440 y 390 (`capturas/`); medios del caso en las formas de Koto (`medios/`); recorrido de
+  10 s en H.264 y VP9 con su póster (`movimiento/`). El caso, en `caso.md`.
+- **Capa técnica:** JSON-LD `AccountingService` + `Person` + `FAQPage` en la home y `WebPage` + `BreadcrumbList` en la
+  interior; la ficción dentro (`disambiguatingDescription` en el estudio y en la contadora); sin `Review` ni
+  `AggregateRating`; `noindex, nofollow`; preguntas en texto con encabezados, sin acordeón; el HTML trae las fechas
+  sin depender de JavaScript.
+- **Fuentes:** locales (`woff2` en `sitio/fuentes/`), cero peticiones a terceros.
+- **Sin métrica:** es un concepto, Doceavo no existe y no llevó la contabilidad de nadie.
+- **Generación:** 0 llamadas, 0 créditos.
+- **Comprobado el 17-oct:** desborde 0 a 360, 390, 768 y 1440; un `h1` por página; cero nodos de texto bajo AA a 1440
+  y 390; nota al margen visible sin scroll; foco visible; nada se mueve con movimiento reducido; cero terceros; consola
+  limpia (`capturas/comprobacion.json`, `_herramientas/comprobar.mjs`).
