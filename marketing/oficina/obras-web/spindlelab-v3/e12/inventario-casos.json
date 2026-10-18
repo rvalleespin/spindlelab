@@ -12,14 +12,17 @@
    "Cero prueba social inventada; ningún prospecto nombrado; ninguna cifra sin fuente y fecha.",
    "Lo que no se midió dice «sin métrica».",
    "Una etiqueta de ingrediente sin evidencia en este archivo no existe.",
-   "spindlelab-astro/ no se tocó; nada se publicó."
+   "spindlelab-astro/ no se tocó; nada se publicó.",
+   "Una pieza de concepto no lleva métrica ni testimonio: su resultado es «sin métrica»."
   ],
   "convenciones": {
-   "publicable": "sí · solo en Trabajo (E9) · decide Ramón · pide OK escrito de Bernardo · no",
+   "publicable": "sí · solo en Trabajo (E9) · decide Ramón · con fecha, por el permiso de la compuerta 1 (Combeau; hasta el 18-oct: «pide OK escrito de Bernardo») · no",
    "tipoEvidencia": "servido (HTML o cabecera de hoy) · medido (instrumento corrido hoy) · repo (archivo o commit) · dicho (una persona lo afirmó, sin respaldo guardado)",
    "unidad": "kB = 1.000 bytes y MB = 1.000.000 bytes en todo el inventario; redondeo al entero salvo donde va un decimal. Los bytes exactos están en cada crudo. Hasta el 16-oct a las 18:45 el inventario mezclaba KiB (bytes ÷ 1.024) escritos «KB» o «kB» con kB: ver «correcciones»."
   },
-  "corregido": "2026-10-16, 18:45 (Chile): defecto 13 del acta del paso 1 (e12/acta-paso-1.md §2). Ver «correcciones»."
+  "corregido": "2026-10-16, 18:45 (Chile): defecto 13 del acta del paso 1 (e12/acta-paso-1.md §2). Ver «correcciones».",
+  "actualizado": "2026-10-18, mediciones entre 21:22 y 21:34 UTC sobre 01ea00f: encargo del paso 2 §5 (defecto 3 de e12/acta-paso-2.md). Diez entradas en el índice (seis reales con Praxi y cuatro conceptos), Raigal fuera, el permiso de Combeau de la compuerta 1, sus grabaciones y la capa de señales. Ver «correcciones».",
+  "mandaDesde18oct": "e12/brief-de-obra.md, «Compuerta 1» (puntos 2, 3 y 5), y e12/encargo-paso-2.md §5"
  },
  "proyectos": [
   {
@@ -34,23 +37,49 @@
    ],
    "paraQuien": "Bernardo Combeau, fotógrafo de retrato, Santiago. Se puede nombrar (ver permiso).",
    "permiso": {
-    "estado": "verbal",
-    "detalle": "Ramón confirmó el 30-sep-2026, en sesión, que Bernardo dio el permiso de caso público. No hay correo ni mensaje archivado.",
+    "estado": "Ramón, 16-oct: no se necesita más permiso",
+    "detalle": "Dicho por Ramón en la compuerta 1, punto 2 («no se necesita más permiso. ya lo pedí hace un rato»). Queda registrado como lo dice él: no hay respaldo escrito de Bernardo en el repo. Antes había un permiso verbal del 30-sep, solo del caso.",
     "dondeConsta": [
-     "ventas/proyectos-en-curso.md:16 (commit 75bfffc, 10-oct)",
-     "marketing/portafolio/README.md:10"
+     "e12/brief-de-obra.md, «Compuerta 1», fila 2",
+     "e12/encargo-paso-2.md §5",
+     "ventas/proyectos-en-curso.md:16 (el verbal del 30-sep)"
     ],
     "contradicciones": [
-     "marketing/oficina/clientes/bernardo-combeau.md:15 dice «Caso público NO autorizado todavía» (desactualizado; la ficha es documento compartido, la corrige la troncal).",
-     "ventas/pipeline.md:26 dice «Permiso de caso público: aún no pedido» (desactualizado; mismo caso)."
+     "marketing/oficina/clientes/bernardo-combeau.md:15 sigue diciendo «Caso público NO autorizado todavía» (releído el 18-oct; documento compartido, lo corrige la troncal).",
+     "ventas/pipeline.md:26 sigue diciendo «Permiso de caso público: aún no pedido» (releído el 18-oct; mismo caso)."
     ],
     "permisoEscritoEnElRepo": false,
-    "loQueElPermisoNoCubre": [
-     "Publicar una medición fechada de su sitio (el 76 de hoy, el peso de sus páginas).",
-     "Grabar su sitio o su panel en video.",
-     "Usar su foto en un antes y después de optimización."
+    "cubre": [
+     "Grabar su sitio y su panel.",
+     "Publicar una medición fechada de su sitio (el 76, el peso de sus páginas, la foto de 805 kB que llega en 95 kB).",
+     "Usar en el antes y después la foto que él ya publicó (beto3.jpg), no una nueva."
     ],
-    "pedir": "Un WhatsApp de Bernardo que diga que sí a las tres cosas de arriba (brief de obra E12 §8.5)."
+    "fueraIgual": [
+     "Sus datos de contacto (teléfono, correo, WhatsApp, dirección), aunque su JSON-LD los traiga.",
+     "Sus medidas y su ficha de contratación de /modelo/ (#details, #booking).",
+     "Lo que pagó.",
+     "Cualquier resultado de su negocio: no hay ninguno medido.",
+     "Su sitio como vitrina de SEO: 7 de 11 rutas sin h1."
+    ],
+    "hasta18oct": {
+     "estado": "verbal",
+     "detalle": "Ramón confirmó el 30-sep-2026, en sesión, que Bernardo dio el permiso de caso público. No hay correo ni mensaje archivado.",
+     "dondeConsta": [
+      "ventas/proyectos-en-curso.md:16 (commit 75bfffc, 10-oct)",
+      "marketing/portafolio/README.md:10"
+     ],
+     "contradicciones": [
+      "marketing/oficina/clientes/bernardo-combeau.md:15 dice «Caso público NO autorizado todavía» (desactualizado; la ficha es documento compartido, la corrige la troncal).",
+      "ventas/pipeline.md:26 dice «Permiso de caso público: aún no pedido» (desactualizado; mismo caso)."
+     ],
+     "permisoEscritoEnElRepo": false,
+     "loQueElPermisoNoCubre": [
+      "Publicar una medición fechada de su sitio (el 76 de hoy, el peso de sus páginas).",
+      "Grabar su sitio o su panel en video.",
+      "Usar su foto en un antes y después de optimización."
+     ],
+     "pedir": "Un WhatsApp de Bernardo que diga que sí a las tres cosas de arriba (brief de obra E12 §8.5)."
+    }
    },
    "url": "https://bernardocombeau.cl/",
    "estado": "En producción. Lanzado el 24-jul-2026; hosting en Netlify desde el 8-sep (antes Vercel). Pagado al 100 %.",
@@ -187,7 +216,7 @@
      "fecha": "2026-10-16T17:51:03Z",
      "metodo": "curl -s \"https://spindlelab.cl/api/chequeo?dominio=bernardocombeau.cl\"; lee solo la portada",
      "crudo": "e12/inventario/crudo/chequeo-bernardocombeau.cl.json",
-     "publicable": "pide OK escrito de Bernardo",
+     "publicable": "con fecha, por el permiso de la compuerta 1; no como logro nuestro: mide su portada, con defectos abiertos y sin un antes medido (hasta el 18-oct: «pide OK escrito de Bernardo»)",
      "antes": "sin métrica: no hay corrida del chequeo sobre este sitio antes de hoy en el repo. Lo único anterior es cualitativo (cero JSON-LD el 3-sep)."
     },
     {
@@ -242,7 +271,44 @@
    "noSePuedeDecir": [
     "Ningún resultado de negocio (más clientes, más reservas, +X %): no existe medición.",
     "Que su sitio está impecable en SEO: 7 de 11 rutas sin h1.",
-    "Su puntaje o el peso de sus páginas en público, sin su OK escrito."
+    "Su puntaje como logro nuestro: es una foto de su portada del 16-oct, con defectos abiertos y sin un antes medido.",
+    "Sus datos de contacto, aunque su JSON-LD los traiga."
+   ],
+   "grabaciones": [
+    {
+     "url": "https://bernardocombeau.cl/",
+     "viewport": "1440 × 810",
+     "dpr": 1,
+     "estado": 200,
+     "inicioUTC": "2026-10-18T21:24:05.426Z",
+     "seDetieneAntesDe": "el final de la página",
+     "archivo": "marketing/oficina/obras-web/spindlelab-v3/e12/inventario/grabaciones/combeau-fotografia-1440.mp4",
+     "bytes": 695413,
+     "sha256": "c0a3d4689a2b808be2a50e1f55f23afec045ac25838657ab8f01930c15403b23",
+     "segundos": 10,
+     "cuadro": "1440 × 810",
+     "codec": "h264",
+     "cuadrosPorSegundo": 30,
+     "poster": "marketing/oficina/obras-web/spindlelab-v3/e12/inventario/grabaciones/combeau-fotografia-1440-poster.jpg",
+     "posterSha256": "3caa8531bcd809802ae7f4e2a6646b0b40660da537d6231a80a6cabb22cffd96"
+    },
+    {
+     "url": "https://bernardocombeau.cl/",
+     "viewport": "390 × 844",
+     "dpr": 2,
+     "estado": 200,
+     "inicioUTC": "2026-10-18T21:25:41.669Z",
+     "seDetieneAntesDe": "el final de la página",
+     "archivo": "marketing/oficina/obras-web/spindlelab-v3/e12/inventario/grabaciones/combeau-fotografia-390.mp4",
+     "bytes": 477393,
+     "sha256": "8eccbc87619e4c4ded142d1710dc8bef24feb95038e363eb6aee6689393bc32c",
+     "segundos": 10,
+     "cuadro": "780 × 1688",
+     "codec": "h264",
+     "cuadrosPorSegundo": 30,
+     "poster": "marketing/oficina/obras-web/spindlelab-v3/e12/inventario/grabaciones/combeau-fotografia-390-poster.jpg",
+     "posterSha256": "45fb887b51d3d684c874d39b5e5f700e95f2fbfa1016ce7ba9235148c444cb39"
+    }
    ]
   },
   {
@@ -257,12 +323,14 @@
    ],
    "paraQuien": "El mismo cliente.",
    "permiso": {
-    "estado": "verbal",
-    "detalle": "El mismo permiso del 30-sep cubre los dos sitios.",
+    "estado": "Ramón, 16-oct: no se necesita más permiso",
+    "detalle": "El mismo permiso cubre los dos sitios (compuerta 1, punto 2).",
     "dondeConsta": [
+     "e12/brief-de-obra.md, «Compuerta 1», fila 2",
      "ventas/proyectos-en-curso.md:16"
     ],
-    "permisoEscritoEnElRepo": false
+    "permisoEscritoEnElRepo": false,
+    "hasta18oct": "verbal, el mismo del 30-sep"
    },
    "url": "https://bernardocombeau.cl/modelo/",
    "estado": "En producción.",
@@ -376,7 +444,52 @@
    ],
    "noSePuedeDecir": [
     "«Bilingüe» o «internacionalizado»: lang=\"es\" sobre texto en inglés.",
-    "Que el video se produjo en el estudio: el repo no lo dice."
+    "Que el video se produjo en el estudio: el repo no lo dice.",
+    "Sus medidas (#details) y su ficha de contratación con correo y WhatsApp (#booking): datos personales que el caso no necesita."
+   ],
+   "defectoVisto18oct": {
+    "que": "La sección «Reel» no tiene estilos propios: el título queda en x = 0, en la letra del sistema, y el video en el tamaño por defecto de un iframe (300 × 150), a 1440 y a 390. 0 reglas .reel en sus dos hojas de estilo.",
+    "medido": "2026-10-18T21:33:40.049Z",
+    "crudo": "e12/inventario/crudo/reel-modelo-bernardocombeau.cl.json",
+    "herramienta": "e12/inventario/herramientas/medir-reel-modelo.mjs",
+    "efectoEnElCaso": "Entra al cuadro cerca del segundo 7,5 de las dos grabaciones de /modelo/: usar el tramo anterior o esperar el arreglo.",
+    "para": "Sesión del sitio de Bernardo"
+   },
+   "grabaciones": [
+    {
+     "url": "https://bernardocombeau.cl/modelo/",
+     "viewport": "1440 × 810",
+     "dpr": 1,
+     "estado": 200,
+     "inicioUTC": "2026-10-18T21:27:27.535Z",
+     "seDetieneAntesDe": "#details (y = 5631)",
+     "archivo": "marketing/oficina/obras-web/spindlelab-v3/e12/inventario/grabaciones/combeau-modelo-1440.mp4",
+     "bytes": 1487962,
+     "sha256": "bdc981777f3c6a11b7dc9ccf8cb20f1ba756f6d40878a83a88f289898e67cb6f",
+     "segundos": 12,
+     "cuadro": "1440 × 810",
+     "codec": "h264",
+     "cuadrosPorSegundo": 30,
+     "poster": "marketing/oficina/obras-web/spindlelab-v3/e12/inventario/grabaciones/combeau-modelo-1440-poster.jpg",
+     "posterSha256": "2b85f75c08eae6b2f8ae408da0e9a5ebfb846d37746f2eea18342bb1186f7740"
+    },
+    {
+     "url": "https://bernardocombeau.cl/modelo/",
+     "viewport": "390 × 844",
+     "dpr": 2,
+     "estado": 200,
+     "inicioUTC": "2026-10-18T21:29:40.276Z",
+     "seDetieneAntesDe": "#details (y = 4393)",
+     "archivo": "marketing/oficina/obras-web/spindlelab-v3/e12/inventario/grabaciones/combeau-modelo-390.mp4",
+     "bytes": 850247,
+     "sha256": "59c3b502d4c0e95d9a47972c57756ac6b218f0c55203a49321a03743d2d88987",
+     "segundos": 12,
+     "cuadro": "780 × 1688",
+     "codec": "h264",
+     "cuadrosPorSegundo": 30,
+     "poster": "marketing/oficina/obras-web/spindlelab-v3/e12/inventario/grabaciones/combeau-modelo-390-poster.jpg",
+     "posterSha256": "8430c9dfeaab553c9b44b49e9ae7450a4d4ebe989321f384a63ab7e3e10b41c8"
+    }
    ]
   },
   {
@@ -669,62 +782,6 @@
    ]
   },
   {
-   "id": "raigal",
-   "nombre": "Raigal",
-   "tipo": "concepto",
-   "anio": 2026,
-   "queSeHizo": "Portada de una clínica de implantología que no existe: costo y plazos, etapas, la especialista (ficticia), lo que no se promete y preguntas frecuentes. Ejercicio rotulado.",
-   "fuenteQueSeHizo": [
-    "marketing/portafolio/01-raigal/ficha.md",
-    "spindlelab-astro/src/data/obra-v3.json:64"
-   ],
-   "paraQuien": "Nadie: «Raigal no existe».",
-   "permiso": {
-    "estado": "propio, rotulado",
-    "detalle": "Ramón lo revisa antes de mostrárselo a un prospecto (R9).",
-    "dondeConsta": [
-     "e11/material.md §5",
-     "marketing/portafolio/01-raigal/ficha.md:90 («[ ] Revisión humana antes de usar esto con un prospecto»)"
-    ],
-    "permisoEscritoEnElRepo": true
-   },
-   "url": null,
-   "estado": "Construida la portada; no está publicada en ninguna URL. En el v3 aparece solo como maqueta (mock-raigal-ancho.jpg).",
-   "ingredientes": [
-    {
-     "etiqueta": "HTML y CSS a mano, en un archivo",
-     "efecto": null,
-     "evidencia": [
-      {
-       "tipo": "repo",
-       "detalle": "marketing/portafolio/01-raigal/sitio/index.html, 40 kB (40.093 bytes), sin scripts salvo el JSON-LD",
-       "fuente": "repo"
-      }
-     ]
-    },
-    {
-     "etiqueta": "Datos estructurados (Dentist, Person, MedicalProcedure, FAQPage)",
-     "efecto": null,
-     "evidencia": [
-      {
-       "tipo": "repo",
-       "detalle": "JSON-LD con esos cuatro tipos",
-       "fuente": "marketing/portafolio/01-raigal/sitio/index.html"
-      }
-     ]
-    }
-   ],
-   "nota": "Sus etiquetas solo pueden decir «en la maqueta», porque no hay nada servido que comprobar.",
-   "metricas": [],
-   "sinMetrica": [
-    "Todo: sin URL no hay chequeo, carga ni peso servido. Y por regla de la serie, una pieza de concepto no lleva cifras de resultado (marketing/portafolio/README.md, regla 3)."
-   ],
-   "noSePuedeDecir": [
-    "Que es un cliente, un caso o que tuvo pacientes.",
-    "Ninguna cifra de resultado."
-   ]
-  },
-  {
    "id": "spindlelab-cl",
    "nombre": "spindlelab.cl (este sitio)",
    "tipo": "propio",
@@ -971,6 +1028,664 @@
     "Que el v3 está publicado.",
     "Tiempos de laboratorio como velocidad para los visitantes."
    ]
+  },
+  {
+   "id": "praxi",
+   "nombre": "Praxi",
+   "tipo": "propio",
+   "anio": 2026,
+   "queSeHizo": "Coach de hipertrofia por chat, con sitio y app: la persona cuenta cómo entrenó en una frase, la app guarda las series y decide con su historial cuándo subir el peso.",
+   "fuenteQueSeHizo": [
+    "e12/inventario-praxi.md §2 y §3"
+   ],
+   "paraQuien": "Producto de Ramón, con su propia marca (marketing/oficina/clientes/praxi.md).",
+   "permiso": {
+    "estado": "propio",
+    "detalle": "Entra al índice por la compuerta 1, punto 3 («podría entrar praxi como caso ya que creó un sitio y una app»).",
+    "dondeConsta": [
+     "e12/brief-de-obra.md, «Compuerta 1», fila 3"
+    ],
+    "permisoEscritoEnElRepo": true
+   },
+   "url": null,
+   "urlQueNoSeEnlaza": "https://praxi.coach/: 402 DEPLOYMENT_DISABLED el 16-oct (inventario-praxi.md §0.3) y el 17-oct (tableros/e12-direcciones/datos/estado-praxi.txt)",
+   "estado": "Fuera de línea; último cambio de código el 25-ago. Clon de solo lectura en /home/user/praxis-coach (a360d7a).",
+   "inventarioPropio": "e12/inventario-praxi.md y e12/inventario-praxi.json (15 ingredientes, §4; IA, §5; señales, §11)",
+   "ingredientes": [
+    {
+     "etiqueta": "API de Anthropic",
+     "efecto": "Le escribes como a una persona y el registro queda guardado sin formularios.",
+     "indice": true,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "lib/anthropic.ts:14,17; import \"server-only\"",
+       "fuente": "e12/inventario-praxi.md §4"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Lógica de entrenamiento en código",
+     "efecto": "El peso sube solo con dos sesiones confirmadas; la descarga llega por fatiga corroborada, no por calendario.",
+     "indice": true,
+     "evidencia": [
+      {
+       "tipo": "repo y medido",
+       "detalle": "lib/domain/ (rir, effectiveSet, deload, mesociclo); 42 tests en verde el 16-oct",
+       "fuente": "e12/inventario-praxi.md §4"
+      }
+     ]
+    }
+   ],
+   "metricas": [],
+   "metricasEn": "e12/inventario-praxi.md §8.1 (lo verificable del producto; ninguna de uso)",
+   "sinMetrica": [
+    "Usuarios, retención, conversión, ventas o ingresos: no hay medición publicable (inventario-praxi.md §8.2)."
+   ],
+   "noSePuedeDecir": [
+    "Ninguna cifra de usuarios, retención o ventas.",
+    "Que está en producción o disponible, ni un enlace a praxi.coach (402).",
+    "«IA propietaria», «modelos RAG» o «despliegue de modelos»: usa la API de Anthropic con dos modelos comerciales."
+   ]
+  },
+  {
+   "id": "tonela",
+   "nombre": "Tonela",
+   "tipo": "concepto",
+   "anio": 2026,
+   "rubro": "industrial B2B · izaje",
+   "queSeHizo": "Identidad, sitio (home e interior «Inspección») y movimiento de una marca inventada: proveedor de eslingas, estrobos, cadenas y grilletes con taller de inspección.",
+   "fuenteQueSeHizo": [
+    "marketing/portafolio/04-tonela/ficha.md",
+    "marketing/portafolio/04-tonela/caso.md"
+   ],
+   "paraQuien": "Nadie: «Tonela no existe». Antofagasta, ficticio.",
+   "permiso": {
+    "estado": "propio, rotulado",
+    "detalle": "Reglas de la serie (marketing/portafolio/README.md).",
+    "dondeConsta": [
+     "e12/brief-de-obra.md, «Compuerta 1», fila 5"
+    ],
+    "permisoEscritoEnElRepo": true
+   },
+   "url": null,
+   "carpeta": "marketing/portafolio/04-tonela/sitio/",
+   "estado": "Home e interior, identidad y recorrido en el repo, con noindex, nofollow; no servida en ninguna URL.",
+   "paginas": [
+    {
+     "ruta": "marketing/portafolio/04-tonela/sitio/index.html",
+     "bytes": 35848,
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldTipos": [
+      "AdministrativeArea",
+      "Answer",
+      "FAQPage",
+      "Organization",
+      "Question",
+      "Service",
+      "WebPage"
+     ],
+     "urlsHttpQuePide": [],
+     "vecesQueDiceConcepto": 13
+    },
+    {
+     "ruta": "marketing/portafolio/04-tonela/sitio/inspeccion/index.html",
+     "bytes": 24208,
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldTipos": [
+      "BreadcrumbList",
+      "ListItem",
+      "Organization",
+      "Service",
+      "WebPage"
+     ],
+     "urlsHttpQuePide": [],
+     "vecesQueDiceConcepto": 10
+    }
+   ],
+   "recorrido": {
+    "ruta": "marketing/portafolio/04-tonela/movimiento/recorrido.mp4",
+    "bytes": 1259951,
+    "segundos": 10.0,
+    "ancho": 1440,
+    "alto": 810,
+    "codec": "h264",
+    "cuadrosPorSegundo": 30.0
+   },
+   "comun": "HTML, CSS y JS a mano, sin dependencias; 0 URL pedidas a terceros al abrir sus páginas y hojas; letras woff2 locales con licencia OFL; JSON-LD con la ficción en disambiguatingDescription y sin review, aggregateRating, telephone, sameAs, taxID ni vatID; noindex, nofollow; un h1 por página; recorrido de 10 s grabado del navegador (1440 × 810, H.264 y VP9, póster); 0 llamadas a generación pagada.",
+   "ingredientes": [
+    {
+     "etiqueta": "Código de color de la norma de eslingas",
+     "efecto": "El color dice solo la capacidad de carga, como la etiqueta cosida de la eslinga; ningún botón, fondo ni ícono lleva color.",
+     "indice": true,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "sitio/tonela.js (COLOR, ocho capacidades); ficha, «Hechos de norma» (verificados por Simón el 17-oct) y «Restricciones del rubro»",
+       "fuente": "marketing/portafolio/04-tonela/"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Tabla de carga por modo de amarre",
+     "efecto": "Eliges cómo amarras y la tabla y el dibujo del ángulo cambian la capacidad con el factor de la norma; dice que es referencial y que manda la etiqueta.",
+     "indice": true,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "sitio/tonela.js §2 y §3 (FACTOR); ficha, hecho 4",
+       "fuente": "marketing/portafolio/04-tonela/"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Big Shoulders, Big Shoulders Stencil y Barlow Semi Condensed, locales",
+     "efecto": null,
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "7 woff2, de 22 a 60 kB; tres licencias OFL en sitio/fuentes/",
+       "fuente": "e12/inventario/crudo/conceptos-repo.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "JSON-LD: Organization, Service, FAQPage, WebPage; BreadcrumbList en la interior",
+     "efecto": "Una máquina lee qué haría la empresa y que no existe.",
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "jsonldTipos y disambiguatingDescription",
+       "fuente": "e12/inventario/crudo/conceptos-repo.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Formulario que no envía nada",
+     "efecto": "Valida los campos y dice que es un concepto.",
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "sitio/tonela.js §4",
+       "fuente": "marketing/portafolio/04-tonela/"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Recorrido",
+     "efecto": null,
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "movimiento/recorrido.mp4 (10 s, 30 cps) y .webm (VP9, 25 cps)",
+       "fuente": "e12/inventario/crudo/conceptos-repo.json"
+      }
+     ]
+    }
+   ],
+   "metricas": [],
+   "sinMetrica": [
+    "Todo: es un concepto, no tuvo usuarios (regla de la serie, marketing/portafolio/README.md)."
+   ],
+   "noSePuedeDecir": [
+    "Que existe, que es un cliente o que tuvo clientes.",
+    "Ninguna cifra de resultado ni testimonio.",
+    "Ninguna minera, faena, puerto, cliente ni organismo certificador nombrado; la tabla es referencial."
+   ]
+  },
+  {
+   "id": "ocelo",
+   "nombre": "Ocelo",
+   "tipo": "concepto",
+   "anio": 2026,
+   "rubro": "clínica · oftalmología",
+   "queSeHizo": "Identidad, sitio (home e interior «La evaluación») y movimiento de una marca inventada: centro de cirugía refractiva y de cataratas con dos oftalmólogos ficticios.",
+   "fuenteQueSeHizo": [
+    "marketing/portafolio/05-ocelo/ficha.md",
+    "marketing/portafolio/05-ocelo/caso.md"
+   ],
+   "paraQuien": "Nadie: «Ocelo no existe». Providencia, ficticio.",
+   "permiso": {
+    "estado": "propio, rotulado",
+    "detalle": "Reglas de la serie (marketing/portafolio/README.md).",
+    "dondeConsta": [
+     "e12/brief-de-obra.md, «Compuerta 1», fila 5"
+    ],
+    "permisoEscritoEnElRepo": true
+   },
+   "url": null,
+   "carpeta": "marketing/portafolio/05-ocelo/sitio/",
+   "estado": "Home e interior, identidad y recorrido en el repo, con noindex, nofollow; no servida en ninguna URL.",
+   "paginas": [
+    {
+     "ruta": "marketing/portafolio/05-ocelo/sitio/index.html",
+     "bytes": 25859,
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldTipos": [
+      "Answer",
+      "FAQPage",
+      "IndividualPhysician",
+      "MedicalClinic",
+      "MedicalProcedure",
+      "PostalAddress",
+      "Question"
+     ],
+     "urlsHttpQuePide": [],
+     "vecesQueDiceConcepto": 14
+    },
+    {
+     "ruta": "marketing/portafolio/05-ocelo/sitio/la-evaluacion/index.html",
+     "bytes": 16718,
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldTipos": [
+      "BreadcrumbList",
+      "ListItem",
+      "MedicalClinic",
+      "MedicalCondition",
+      "MedicalTest",
+      "MedicalWebPage"
+     ],
+     "urlsHttpQuePide": [],
+     "vecesQueDiceConcepto": 9
+    }
+   ],
+   "recorrido": {
+    "ruta": "marketing/portafolio/05-ocelo/movimiento/recorrido.mp4",
+    "bytes": 1626960,
+    "segundos": 10.0,
+    "ancho": 1440,
+    "alto": 810,
+    "codec": "h264",
+    "cuadrosPorSegundo": 30.0
+   },
+   "comun": "HTML, CSS y JS a mano, sin dependencias; 0 URL pedidas a terceros al abrir sus páginas y hojas; letras woff2 locales con licencia OFL; JSON-LD con la ficción en disambiguatingDescription y sin review, aggregateRating, telephone, sameAs, taxID ni vatID; noindex, nofollow; un h1 por página; recorrido de 10 s grabado del navegador (1440 × 810, H.264 y VP9, póster); 0 llamadas a generación pagada.",
+   "ingredientes": [
+    {
+     "etiqueta": "Interruptor de luz",
+     "efecto": "La página abre a oscuras, como la sala de examen, y se enciende con un botón que dice su estado y recuerda la elección; con movimiento reducido cambia sin transición.",
+     "indice": true,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "sitio/ocelo.js («El interruptor de luz»: aria-pressed, localStorage)",
+       "fuente": "marketing/portafolio/05-ocelo/"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Atkinson Hyperlegible Next y Mono, locales",
+     "efecto": "La letra del Braille Institute hecha para lectores con baja visión, en el sitio de una clínica de ojos.",
+     "indice": true,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "2 woff2 (34 y 18 kB) y sus licencias OFL; ficha §4.1 (comunicado del Braille Institute, 10-feb-2025); LICENCIAS.md",
+       "fuente": "marketing/portafolio/05-ocelo/"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Comparador por pestañas",
+     "efecto": "LASIK o PRK, lente monofocal o multifocal: qué pesa en cada caso, sin prometer resultado.",
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "sitio/ocelo.js («El comparador»); caso.md, «Aplicación»",
+       "fuente": "marketing/portafolio/05-ocelo/"
+      }
+     ]
+    },
+    {
+     "etiqueta": "JSON-LD médico: MedicalClinic, dos IndividualPhysician, MedicalProcedure, FAQPage; MedicalWebPage, MedicalCondition, MedicalTest y BreadcrumbList en la interior",
+     "efecto": "Una máquina lee qué haría la clínica, que no existe y que sus dos médicos son ficticios.",
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "jsonldTipos y disambiguatingDescription; lleva un PostalAddress sin calle (e12/senales-trabajo.md, punto 2)",
+       "fuente": "e12/inventario/crudo/conceptos-repo.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Recorrido",
+     "efecto": null,
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "movimiento/recorrido.mp4 (10 s, 30 cps) y .webm",
+       "fuente": "e12/inventario/crudo/conceptos-repo.json"
+      }
+     ]
+    }
+   ],
+   "metricas": [],
+   "sinMetrica": [
+    "Todo: es un concepto, no tuvo usuarios (regla de la serie, marketing/portafolio/README.md)."
+   ],
+   "noSePuedeDecir": [
+    "Que existe, que es un cliente o que tuvo clientes.",
+    "Ninguna cifra de resultado ni testimonio.",
+    "Ninguna promesa de resultado clínico; los dos oftalmólogos son ficticios y no son prestadores registrados."
+   ]
+  },
+  {
+   "id": "sesenta",
+   "nombre": "Sesenta",
+   "tipo": "concepto",
+   "anio": 2026,
+   "rubro": "estudio legal · laboral, del lado del trabajador",
+   "queSeHizo": "Identidad, sitio (home e interior «Qué dice tu carta») y movimiento de una marca inventada: estudio que representaría a trabajadores despedidos, con dos abogados ficticios; es la pieza de la vista 4 del tablero.",
+   "fuenteQueSeHizo": [
+    "marketing/portafolio/06-sesenta/ficha.md",
+    "marketing/portafolio/06-sesenta/caso.md"
+   ],
+   "paraQuien": "Nadie: «Sesenta no existe». Santiago, ficticio.",
+   "permiso": {
+    "estado": "propio, rotulado",
+    "detalle": "Reglas de la serie (marketing/portafolio/README.md).",
+    "dondeConsta": [
+     "e12/brief-de-obra.md, «Compuerta 1», fila 5"
+    ],
+    "permisoEscritoEnElRepo": true
+   },
+   "url": null,
+   "carpeta": "marketing/portafolio/06-sesenta/sitio/",
+   "estado": "Home e interior, identidad y recorrido en el repo, con noindex, nofollow; no servida en ninguna URL.",
+   "paginas": [
+    {
+     "ruta": "marketing/portafolio/06-sesenta/sitio/index.html",
+     "bytes": 32201,
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldTipos": [
+      "Answer",
+      "City",
+      "FAQPage",
+      "LegalService",
+      "Person",
+      "PostalAddress",
+      "Question",
+      "WebPage"
+     ],
+     "urlsHttpQuePide": [],
+     "vecesQueDiceConcepto": 15
+    },
+    {
+     "ruta": "marketing/portafolio/06-sesenta/sitio/que-dice-tu-carta/index.html",
+     "bytes": 15320,
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldTipos": [
+      "Answer",
+      "BreadcrumbList",
+      "FAQPage",
+      "LegalService",
+      "ListItem",
+      "Question",
+      "WebPage"
+     ],
+     "urlsHttpQuePide": [],
+     "vecesQueDiceConcepto": 9
+    }
+   ],
+   "recorrido": {
+    "ruta": "marketing/portafolio/06-sesenta/movimiento/recorrido.mp4",
+    "bytes": 2122353,
+    "segundos": 10.0,
+    "ancho": 1440,
+    "alto": 810,
+    "codec": "h264",
+    "cuadrosPorSegundo": 30.0
+   },
+   "comun": "HTML, CSS y JS a mano, sin dependencias; 0 URL pedidas a terceros al abrir sus páginas y hojas; letras woff2 locales con licencia OFL; JSON-LD con la ficción en disambiguatingDescription y sin review, aggregateRating, telephone, sameAs, taxID ni vatID; noindex, nofollow; un h1 por página; recorrido de 10 s grabado del navegador (1440 × 810, H.264 y VP9, póster); 0 llamadas a generación pagada.",
+   "ingredientes": [
+    {
+     "etiqueta": "Contador de días hábiles",
+     "efecto": "Con la fecha del despido, cuenta los días hábiles que quedan para demandar (lunes a sábado, salvo feriados) y dice que es referencial.",
+     "indice": true,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "sitio/sesenta.js («Calendario» y «El 60 que baja»): separaciones de 2026 y 2027, 32 feriados nacionales en el código hasta mayo de 2028; ficha §4.1",
+       "fuente": "marketing/portafolio/06-sesenta/"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Lector de la carta",
+     "efecto": "Una pestaña por caso (art. 159, 160, 161 o «no dice ninguno»): marca en la carta el artículo que cita y explica qué significa.",
+     "indice": true,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "sitio/sesenta.js («El lector de la carta»); ficha §4.2",
+       "fuente": "marketing/portafolio/06-sesenta/"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Hoja imprimible",
+     "efecto": "Imprime, sola, la lista de papeles que hay que traer a la primera reunión.",
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "sitio/sesenta.js («Hoja imprimible»); sitio/estilo.css @media print",
+       "fuente": "marketing/portafolio/06-sesenta/"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Schibsted Grotesk y Courier Prime, locales",
+     "efecto": null,
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "4 woff2; dos licencias OFL; LICENCIAS.md",
+       "fuente": "e12/inventario/crudo/conceptos-repo.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "JSON-LD: LegalService, dos Person, FAQPage, WebPage; BreadcrumbList y FAQPage en la interior",
+     "efecto": "Una máquina lee qué haría el estudio, que no existe, que no es asesoría legal y que sus dos abogados son ficticios.",
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "jsonldTipos y disambiguatingDescription; PostalAddress sin calle",
+       "fuente": "e12/inventario/crudo/conceptos-repo.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Recorrido",
+     "efecto": null,
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "movimiento/recorrido.mp4 (10 s, 30 cps) y .webm; «hoy» fijado con ?hoy=",
+       "fuente": "e12/inventario/crudo/conceptos-repo.json"
+      }
+     ]
+    }
+   ],
+   "metricas": [],
+   "sinMetrica": [
+    "Todo: es un concepto, no tuvo usuarios (regla de la serie, marketing/portafolio/README.md)."
+   ],
+   "noSePuedeDecir": [
+    "Que existe, que es un cliente o que tuvo clientes.",
+    "Ninguna cifra de resultado ni testimonio.",
+    "Ninguna promesa de resultado de un caso; ningún porcentaje, monto ni tasa de éxito; los dos abogados son ficticios."
+   ]
+  },
+  {
+   "id": "doceavo",
+   "nombre": "Doceavo",
+   "tipo": "concepto",
+   "anio": 2026,
+   "rubro": "servicios profesionales · contable y tributario",
+   "queSeHizo": "Identidad, sitio (home e interior «Calendario») y movimiento de una marca inventada: estudio contable para pymes e independientes con una contadora ficticia; las fechas sí son reales (SII 2026).",
+   "fuenteQueSeHizo": [
+    "marketing/portafolio/07-doceavo/ficha.md",
+    "marketing/portafolio/07-doceavo/caso.md"
+   ],
+   "paraQuien": "Nadie: «Doceavo no existe». Concepción, ficticio.",
+   "permiso": {
+    "estado": "propio, rotulado",
+    "detalle": "Reglas de la serie (marketing/portafolio/README.md).",
+    "dondeConsta": [
+     "e12/brief-de-obra.md, «Compuerta 1», fila 5"
+    ],
+    "permisoEscritoEnElRepo": true
+   },
+   "url": null,
+   "carpeta": "marketing/portafolio/07-doceavo/sitio/",
+   "estado": "Home e interior, identidad y recorrido en el repo, con noindex, nofollow; no servida en ninguna URL.",
+   "paginas": [
+    {
+     "ruta": "marketing/portafolio/07-doceavo/sitio/calendario/index.html",
+     "bytes": 18634,
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldTipos": [
+      "AccountingService",
+      "BreadcrumbList",
+      "ListItem",
+      "WebPage",
+      "WebSite"
+     ],
+     "urlsHttpQuePide": [],
+     "vecesQueDiceConcepto": 5
+    },
+    {
+     "ruta": "marketing/portafolio/07-doceavo/sitio/index.html",
+     "bytes": 38841,
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldTipos": [
+      "AccountingService",
+      "Answer",
+      "City",
+      "FAQPage",
+      "Offer",
+      "OfferCatalog",
+      "Person",
+      "PostalAddress",
+      "Question",
+      "Service"
+     ],
+     "urlsHttpQuePide": [],
+     "vecesQueDiceConcepto": 8
+    }
+   ],
+   "recorrido": {
+    "ruta": "marketing/portafolio/07-doceavo/movimiento/recorrido.mp4",
+    "bytes": 754472,
+    "segundos": 10.0,
+    "ancho": 1440,
+    "alto": 810,
+    "codec": "h264",
+    "cuadrosPorSegundo": 30.0
+   },
+   "comun": "HTML, CSS y JS a mano, sin dependencias; 0 URL pedidas a terceros al abrir sus páginas y hojas; letras woff2 locales con licencia OFL; JSON-LD con la ficción en disambiguatingDescription y sin review, aggregateRating, telephone, sameAs, taxID ni vatID; noindex, nofollow; un h1 por página; recorrido de 10 s grabado del navegador (1440 × 810, H.264 y VP9, póster); 0 llamadas a generación pagada.",
+   "ingredientes": [
+    {
+     "etiqueta": "El sitio sabe en qué mes estás",
+     "efecto": "El logo, el titular, el año en doce y la tabla del mes se dibujan con la fecha del día: el logo cambia solo cada mes, y el ícono de la pestaña también.",
+     "indice": true,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "sitio/doceavo.js (pintarFecha); caso.md, «El almanaque al revés»",
+       "fuente": "marketing/portafolio/07-doceavo/"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Calendario tributario 2026 en los datos",
+     "efecto": "El F29 de cada mes, la Operación Renta y las declaraciones juradas, con las fechas del SII.",
+     "indice": true,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "sitio/datos.js (una implementación para el navegador y para _herramientas/construir.mjs); _herramientas/sii-calendario-2026.json; ficha §4",
+       "fuente": "marketing/portafolio/07-doceavo/"
+      }
+     ]
+    },
+    {
+     "etiqueta": "HTML con las fechas ya escritas",
+     "efecto": "Las fechas se leen sin JavaScript; el script repinta la fecha solo si hoy no es el día con que se construyó el HTML.",
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "_herramientas/construir.mjs; sitio/datos.js (HOY_FIJO)",
+       "fuente": "marketing/portafolio/07-doceavo/"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Recursive, local",
+     "efecto": null,
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "1 woff2 variable (305 kB) y su licencia OFL",
+       "fuente": "e12/inventario/crudo/conceptos-repo.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "JSON-LD: AccountingService, Person, FAQPage, OfferCatalog sin precios; WebPage, WebSite y BreadcrumbList en la interior",
+     "efecto": "Una máquina lee qué haría el estudio, que no existe y que su contadora es ficticia.",
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "jsonldTipos y disambiguatingDescription; su ficción dice «no tiene clientes ni dirección» y el nodo declara un PostalAddress (e12/senales-trabajo.md, punto 2)",
+       "fuente": "e12/inventario/crudo/conceptos-repo.json"
+      }
+     ]
+    },
+    {
+     "etiqueta": "Recorrido",
+     "efecto": null,
+     "indice": false,
+     "evidencia": [
+      {
+       "tipo": "repo",
+       "detalle": "movimiento/recorrido.mp4 (10 s, 30 cps) y .webm",
+       "fuente": "e12/inventario/crudo/conceptos-repo.json"
+      }
+     ]
+    }
+   ],
+   "metricas": [],
+   "sinMetrica": [
+    "Todo: es un concepto, no tuvo usuarios (regla de la serie, marketing/portafolio/README.md)."
+   ],
+   "noSePuedeDecir": [
+    "Que existe, que es un cliente o que tuvo clientes.",
+    "Ninguna cifra de resultado ni testimonio.",
+    "La contadora es ficticia; ningún cliente, RUT, teléfono ni dirección con número."
+   ]
   }
  ],
  "fuera": [
@@ -981,22 +1696,73 @@
    "fuente": "ventas/proyectos-en-curso.md:15; origin/claude/obra-modulo369"
   },
   {
-   "nombre": "Praxi",
-   "tipo": "propio",
-   "por": "Otra marca y otro repo (Next.js 14 + Supabase, coach de IA). Dormido: praxi.coach daba 402 el 23-sep y Ramón pidió no tocarlo. Es el único proyecto con IA programada, y no entra sin decisión de Ramón (brief E12 §5).",
-   "fuente": "marketing/oficina/clientes/praxi.md; cierre-oauth-bernardo-y-vercel-desinstalado-23sep.md §3"
-  },
-  {
    "nombre": "SimpleTrust",
    "tipo": "cliente (servicio SEO)",
    "por": "Sin permiso; la solicitud de testimonio nunca se envió.",
    "fuente": "ventas/pipeline.md:32"
   },
   {
-   "nombre": "Aplomo y Deslinde",
-   "tipo": "concepto",
-   "por": "Fuera del sitio por decisión de Ramón (una sola pieza de concepto); sin revisión fina.",
-   "fuente": "marketing/portafolio/README.md, tabla «Piezas»"
+   "nombre": "Raigal, Aplomo y Deslinde",
+   "tipo": "concepto (primera serie, 27 a 29-sep)",
+   "por": "Sus nombres ya son de alguien (NIC Chile y el sitio de cada dominio, 16-oct): raigal.cl es una empresa de arquitectura y construcción, deslinde.cl una de gestión inmobiliaria y aplomo.cl está registrado desde 2008. Las reemplazan las cuatro piezas nuevas (compuerta 1, punto 5). Raigal estaba en el índice hasta el 18-oct y sigue en la vista previa del v3 (spindlelab-astro/, noindex), que en el paso 2 no se toca: no puede llegar a producción con ese nombre.",
+   "fuente": "marketing/portafolio/plan-e12.md §1; marketing/portafolio/README.md, «Primera serie»",
+   "salioDelIndice": "2026-10-18",
+   "registroHasta18oct": {
+    "id": "raigal",
+    "nombre": "Raigal",
+    "tipo": "concepto",
+    "anio": 2026,
+    "queSeHizo": "Portada de una clínica de implantología que no existe: costo y plazos, etapas, la especialista (ficticia), lo que no se promete y preguntas frecuentes. Ejercicio rotulado.",
+    "fuenteQueSeHizo": [
+     "marketing/portafolio/01-raigal/ficha.md",
+     "spindlelab-astro/src/data/obra-v3.json:64"
+    ],
+    "paraQuien": "Nadie: «Raigal no existe».",
+    "permiso": {
+     "estado": "propio, rotulado",
+     "detalle": "Ramón lo revisa antes de mostrárselo a un prospecto (R9).",
+     "dondeConsta": [
+      "e11/material.md §5",
+      "marketing/portafolio/01-raigal/ficha.md:90 («[ ] Revisión humana antes de usar esto con un prospecto»)"
+     ],
+     "permisoEscritoEnElRepo": true
+    },
+    "url": null,
+    "estado": "Construida la portada; no está publicada en ninguna URL. En el v3 aparece solo como maqueta (mock-raigal-ancho.jpg).",
+    "ingredientes": [
+     {
+      "etiqueta": "HTML y CSS a mano, en un archivo",
+      "efecto": null,
+      "evidencia": [
+       {
+        "tipo": "repo",
+        "detalle": "marketing/portafolio/01-raigal/sitio/index.html, 40 kB (40.093 bytes), sin scripts salvo el JSON-LD",
+        "fuente": "repo"
+       }
+      ]
+     },
+     {
+      "etiqueta": "Datos estructurados (Dentist, Person, MedicalProcedure, FAQPage)",
+      "efecto": null,
+      "evidencia": [
+       {
+        "tipo": "repo",
+        "detalle": "JSON-LD con esos cuatro tipos",
+        "fuente": "marketing/portafolio/01-raigal/sitio/index.html"
+       }
+      ]
+     }
+    ],
+    "nota": "Sus etiquetas solo pueden decir «en la maqueta», porque no hay nada servido que comprobar.",
+    "metricas": [],
+    "sinMetrica": [
+     "Todo: sin URL no hay chequeo, carga ni peso servido. Y por regla de la serie, una pieza de concepto no lleva cifras de resultado (marketing/portafolio/README.md, regla 3)."
+    ],
+    "noSePuedeDecir": [
+     "Que es un cliente, un caso o que tuvo pacientes.",
+     "Ninguna cifra de resultado."
+    ]
+   }
   },
   {
    "nombre": "Índice de Citabilidad",
@@ -1158,7 +1924,7 @@
     "nombre": "La foto que sube Bernardo y la que ve su visitante",
     "estado": "por construir",
     "que": "La misma foto: 805 kB como la sube, 95 kB como la sirve el sitio.",
-    "condicion": "OK escrito de Bernardo."
+    "condicion": "Cubierto por el permiso de la compuerta 1, punto 2 (Ramón, 16-oct). Hasta el 18-oct: «OK escrito de Bernardo»."
    }
   ],
   "noVerdaderos": [
@@ -1187,8 +1953,8 @@
    "fuente": "ventas/proyectos-en-curso.md; e11/material.md §5-6"
   },
   {
-   "que": "«IA propietaria», «modelos RAG», «despliegue de modelos», «WebGL», «React», «Estrategia C-Level» como ingredientes",
-   "por": "Ninguna pieza los usa. La única con IA programada es Praxi, que está fuera.",
+   "que": "«IA propietaria», «modelos RAG», «despliegue de modelos», «WebGL» o «Estrategia C-Level» como ingredientes; «React» o «IA» en una pieza que no sea Praxi",
+   "por": "Ninguna pieza usa los primeros. Praxi es la única con IA programada y con React (Next.js 14, React 18), y lo que hace está en e12/inventario-praxi.md §4 y §5.",
    "fuente": "ingredientes de este inventario"
   },
   {
@@ -1197,9 +1963,9 @@
    "fuente": "e12/insumos-ramon-16oct.md §5"
   },
   {
-   "que": "El 76 de bernardocombeau.cl, el peso de sus páginas o su foto en un antes y después",
-   "por": "Pide su OK escrito; el permiso verbal es del caso, no de sus mediciones.",
-   "fuente": "brief de obra E12 §8.5"
+   "que": "Los datos de contacto de Bernardo, sus medidas y su ficha de contratación de /modelo/, lo que pagó, o el 76 de su sitio como logro nuestro",
+   "por": "El permiso de la compuerta 1 cubre grabar su sitio y publicar una medición fechada (hasta el 18-oct esta fila decía que no); no cubre sus datos, que el caso no necesita; y el 76 es una foto de su portada del 16-oct, con defectos abiertos y sin un antes medido, no un resultado nuestro.",
+   "fuente": "e12/brief-de-obra.md, «Compuerta 1», fila 2"
   },
   {
    "que": "El 85 de spindlelab.cl y el 54 → 94 de Verifica",
@@ -1245,27 +2011,35 @@
  "paraOtros": [
   {
    "para": "Ramón",
-   "que": "Pedirle a Bernardo por escrito: el caso, una medición fechada de su sitio, grabar su sitio y su panel, y usar una foto en el antes y después."
+   "que": "El permiso de Combeau quedó resuelto por él en la compuerta 1, punto 2 (hasta el 18-oct este punto le pedía el sí por escrito de Bernardo). Si el caso necesita el panel por dentro, abrirlo con una cuenta de GitHub con acceso al repo de Combeau para grabarlo. Lo de Praxi, en inventario-praxi.md §10."
   },
   {
    "para": "Ramón",
-   "que": "Decidir si se muestran los puntajes propios (85 de spindlelab.cl; 54 → 94 de Verifica)."
+   "que": "Decidir si se muestran los puntajes propios (85 de spindlelab.cl; 54 → 94 de Verifica): pregunta 3 de la compuerta 2 (encargo-paso-2.md §10)."
   },
   {
    "para": "Troncal",
-   "que": "La ficha de Bernardo (:15) y el pipeline (:26) siguen diciendo que no hay permiso; proyectos-en-curso dice que sí, verbal. Alinear (documentos compartidos: no los toco)."
+   "que": "La ficha de Bernardo (:15, «NO autorizado») y el pipeline (:26, «aún no pedido») siguen contradiciendo a proyectos-en-curso (verbal, 30-sep) y a la compuerta 1, punto 2 (16-oct). Releídos el 18-oct. Documentos compartidos: no los toco."
   },
   {
    "para": "Sesión del sitio de Bernardo",
-   "que": "El encargo de h1 del 10-oct sigue sin aplicar (7 de 11), y /modelo/ declara lang=\"es\" con el texto en inglés."
+   "que": "El encargo de h1 del 10-oct sigue sin aplicar (7 de 11), /modelo/ declara lang=\"es\" con el texto en inglés, y desde el 18-oct: la sección «Reel» de /modelo/ no tiene estilos."
   },
   {
    "para": "Construcción E12",
-   "que": "CLS de 0,106 en la home v3 a 1440 (laboratorio, 2 de 3 corridas)."
+   "que": "CLS de 0,106 en la home v3 a 1440 (laboratorio, 2 de 3 corridas). La capa de señales de /trabajo/ y de cada caso es la de e12/senales-trabajo.md: no copiar el @id #organizacion de los prototipos de B ni su /trabajo/ sin ItemList. Raigal sale de spindlelab-astro/."
   },
   {
    "para": "Lucía",
    "que": "Los kB cambiaron (ver «correcciones»): el tablero de E12 los lee de este JSON (kbTransferidos y el valor del h1 de Combeau), así que se corrige al rearmarlo; lock-koto.md:529 y :556 dicen «786 KB → 92 KB», que en la unidad del inventario son 805 kB → 95 kB."
+  },
+  {
+   "para": "Bruno",
+   "que": "En Doceavo, la ficción del JSON-LD dice «no tiene clientes ni dirección» y el mismo nodo declara un PostalAddress; una de las dos sobra (e12/senales-trabajo.md, punto 2)."
+  },
+  {
+   "para": "Tablero de la compuerta 1",
+   "que": "tableros/e12-laboratorio/herramientas/armar-tablero.py lee este JSON (proyectos, telemetria, sandboxes, noSePuedeDecir). Se armó sobre 7e9f380 y se rehace idéntico sobre ese commit (comprobado el 18-oct); sobre uno posterior ya no da el mismo archivo, aun antes de este cambio. Con el JSON del 18-oct corre sin error y su sección 5 muestra las diez entradas en vez de las seis de entonces."
   }
  ],
  "stackPorSitio": {
@@ -1469,6 +2243,30 @@
    "archivo": "e12/inventario/crudo/vyc-chequeo-verifica.spindlelab.cl.json",
    "bytes": 3125,
    "sha256": "7db4b19f1a9f610512cde855a885b1145630648d8787fe38419bf2910a2ff1de"
+  },
+  {
+   "archivo": "e12/inventario/crudo/conceptos-repo.json",
+   "bytes": 12778,
+   "sha256": "d4f80f12d928889416449e9324103c5276844dd424945ea5bf0e4571bd7ca0ed",
+   "fecha": "2026-10-18"
+  },
+  {
+   "archivo": "e12/inventario/crudo/grabaciones-combeau.json",
+   "bytes": 4476,
+   "sha256": "f6f14f318da8760c75392391149886c07c92c0157f1f5856b16b053577a031fa",
+   "fecha": "2026-10-18"
+  },
+  {
+   "archivo": "e12/inventario/crudo/jsonld-ids-bernardocombeau.cl.json",
+   "bytes": 3078,
+   "sha256": "0da38975a68248536f65cbbc79df27e6dcfc562e6faf6b9ee69b412f5dd1a70a",
+   "fecha": "2026-10-18"
+  },
+  {
+   "archivo": "e12/inventario/crudo/reel-modelo-bernardocombeau.cl.json",
+   "bytes": 1031,
+   "sha256": "534759418e45cc86bb41e8124e96a35aec0ea3cfcc0168dfe021627a3f31350d",
+   "fecha": "2026-10-18"
   }
  ],
  "correcciones": [
@@ -1509,6 +2307,138 @@
    "origen": "al pasar a kB las imágenes de spindlelab.cl (inventario-casos.md §4.2)",
    "que": "«774 son imágenes (los posters de cuatro videos, de 167 a 191 KB cada uno)» no tenía crudo por pedido y contaba cuatro posters: son cinco. Medido (medir-imagenes.mjs → imagenes-spindlelab.cl.json, 21:44Z): 793 kB de imágenes, todas posters de video; cuatro de 171 a 196 kB y el del hero, 41 kB.",
    "como": "Corregido en inventario-casos.md §4.2. El JSON no traía esa frase."
+  },
+  {
+   "fecha": "2026-10-18T21:40Z",
+   "origen": "e12/acta-paso-2.md, defecto 3 (Javiera, vuelta 1): el inventario no se había actualizado con el encargo del paso 2 §5",
+   "que": "Seis entradas con Raigal y sin Praxi; permiso de Combeau «verbal» que no cubría mediciones ni grabaciones mientras A y B las muestran; sin filas de los cuatro conceptos; sin grabaciones de Combeau; sin la nota de señales.",
+   "como": "Diez entradas en proyectos (Praxi y los cuatro conceptos dentro, Raigal a fuera con su registro anterior); permiso «Ramón, 16-oct: no se necesita más permiso» con lo que cubre y lo que queda fuera igual; ingredientes de los conceptos con su evidencia (conceptos-repo.json, 01ea00f); grabacionesCombeau; senales (e12/senales-trabajo.md); indice; cuatro crudos nuevos. Las mediciones del 16-oct no cambiaron."
   }
- ]
+ ],
+ "indice": {
+  "fecha": "2026-10-18",
+  "entradas": 10,
+  "porTipo": {
+   "cliente": 2,
+   "propio": 4,
+   "concepto": 4
+  },
+  "ids": [
+   "combeau-fotografia",
+   "combeau-modelo",
+   "verifica-y-cumple",
+   "chequeo-visibilidad-ia",
+   "spindlelab-cl",
+   "praxi",
+   "tonela",
+   "ocelo",
+   "sesenta",
+   "doceavo"
+  ],
+  "nota": "Las diez entradas de proyectos son las del índice de /trabajo/: el conteo visible es 10 y cada filtro cuenta sus filas. La herramienta chequeo-visibilidad-ia cuenta como «propio». Raigal salió el 18-oct (ver fuera)."
+ },
+ "conceptosComun": {
+  "fecha": "2026-10-18",
+  "commit": "01ea00fb2a60ee2e46c7ff6b45e9447dbb4f8e68",
+  "crudo": "e12/inventario/crudo/conceptos-repo.json",
+  "que": "HTML, CSS y JS a mano, sin dependencias; 0 URL pedidas a terceros al abrir sus páginas y hojas; letras woff2 locales con licencia OFL; JSON-LD con la ficción en disambiguatingDescription y sin review, aggregateRating, telephone, sameAs, taxID ni vatID; noindex, nofollow; un h1 por página; recorrido de 10 s grabado del navegador (1440 × 810, H.264 y VP9, póster); 0 llamadas a generación pagada.",
+  "indice": "Los dos ingredientes con indice: true de cada concepto son los candidatos a la línea mono del índice (lock §7: hasta dos). Hoy las vistas 2 de A y B no ponen ninguno."
+ },
+ "grabacionesCombeau": {
+  "fecha": "2026-10-18",
+  "herramienta": "e12/inventario/herramientas/grabar-combeau.mjs",
+  "registro": "e12/inventario/crudo/grabaciones-combeau.json",
+  "chromium": "141.0.7390.37",
+  "metodo": "Solo GET y scroll (ningún clic, campo ni formulario); carga lo diferido, vuelve arriba y graba cuadro a cuadro a 30 por segundo (1 s quieto arriba, bajada con curva cúbica, 1 s quieto abajo); ffmpeg arma H.264 y un póster. Se detiene antes de cualquier enlace de contacto: en /modelo/, antes de #details.",
+  "permiso": "Ramón, 16-oct: no se necesita más permiso",
+  "archivos": [
+   "marketing/oficina/obras-web/spindlelab-v3/e12/inventario/grabaciones/combeau-fotografia-1440.mp4",
+   "marketing/oficina/obras-web/spindlelab-v3/e12/inventario/grabaciones/combeau-fotografia-390.mp4",
+   "marketing/oficina/obras-web/spindlelab-v3/e12/inventario/grabaciones/combeau-modelo-1440.mp4",
+   "marketing/oficina/obras-web/spindlelab-v3/e12/inventario/grabaciones/combeau-modelo-390.mp4"
+  ],
+  "panel": {
+   "url": "https://bernardocombeau.cl/admin/",
+   "estado": 200,
+   "cuandoUTC": "2026-10-18T21:32:09.517Z",
+   "botones": [
+    "Iniciar sesión con GitHub",
+    "Regresar al sitio"
+   ],
+   "archivo": "marketing/oficina/obras-web/spindlelab-v3/e12/inventario/grabaciones/combeau-panel-entrada-1440.png",
+   "sha256": "6a7356e56537ed2092d078334f79ab805599ee864b6bcecb4c4fda449d19eadb",
+   "nota": "Pantalla de entrada del panel (Decap CMS). No se hizo clic en el botón de entrada: grabar el panel por dentro pide la sesión de GitHub de Bernardo, que esta sesión no tiene y no se pide por el chat.",
+   "hueco": "El panel por dentro: /admin/ pide entrar con una cuenta de GitHub con acceso al repo de Combeau; esta sesión no tiene ninguna y no se pide por el chat. Queda la pantalla de entrada, sin clic."
+  },
+  "corridaInterrumpida": "Dos corridas anteriores del 18-oct (hacia las 21:08 y a las 21:15 UTC) se cayeron en /modelo/ a 390 y con un reinicio del contenedor; dejaron tres grabaciones sin registro. Esta corrida las reemplazó con los mismos bytes y sumó la cuarta y el panel."
+ },
+ "senales": {
+  "nota": "e12/senales-trabajo.md (Simón, 18-oct)",
+  "regla": "El JSON-LD dice lo que la página dice en texto y lo que tiene fila aquí; ningún número como calificación; ningún concepto como empresa, cliente o servicio que exista.",
+  "comun": {
+   "entidades": {
+    "org": "https://spindlelab.cl/#org (ProfessionalService)",
+    "autor": "https://spindlelab.cl/#autor-ramon (Person)",
+    "evidencia": "33 apariciones de #org en 14 archivos de spindlelab-astro/src (01ea00f); servido así en spindlelab.cl y verifica.spindlelab.cl (crudos del 16-oct)"
+   },
+   "lleva": "BreadcrumbList Inicio › Trabajo › caso; inLanguage es-CL; dateModified del build; image con alt (y «Concepto» cuando lo es); noindex bajo /v3/ y canonical a la ruta final al publicar.",
+   "noVaEnNinguna": [
+    "Review",
+    "AggregateRating",
+    "review con testimonio",
+    "award",
+    "FAQPage sin sus preguntas visibles"
+   ]
+  },
+  "porRuta": [
+   {
+    "ruta": "/trabajo/",
+    "tipo": "índice",
+    "lleva": "CollectionPage + ItemList (numberOfItems = conteo visible, 10) + BreadcrumbList; el name de cada concepto lleva «(concepto)»",
+    "noPuedeDeclarar": "Un conteo de clientes; Organization por entrada"
+   },
+   {
+    "ruta": "/trabajo/combeau-fotografia/ y /trabajo/combeau-modelo/",
+    "tipo": "cliente",
+    "lleva": "WebPage con mainEntity CreativeWork (creator #org, datePublished 2026-07-24) y about un WebSite con publisher {\"@id\": \"https://bernardocombeau.cl/#persona\"}, el Person que su sitio ya publica",
+    "evidencia": "e12/inventario/crudo/jsonld-ids-bernardocombeau.cl.json (18-oct 21:24Z; mismo sha256 que el HTML del 16-oct)",
+    "noPuedeDeclarar": "Su teléfono, correo o dirección; lo que pagó; resultados de su negocio; su sitio como ejemplo de SEO; «bilingüe»"
+   },
+   {
+    "ruta": "/trabajo/verifica-y-cumple/",
+    "tipo": "propio",
+    "lleva": "CreativeWork (creator #org) con about {\"@id\": \"https://verifica.spindlelab.cl/#app\"}",
+    "noPuedeDeclarar": "Que certifica cumplimiento; Offer de kits; el 54 → 94 sin la decisión de Ramón, y nunca como calificación"
+   },
+   {
+    "ruta": "/trabajo/chequeo/",
+    "tipo": "propio, herramienta",
+    "lleva": "CreativeWork con about un WebApplication (url https://spindlelab.cl/diagnostico/, isAccessibleForFree, creator #org)",
+    "noPuedeDeclarar": "Cuántos chequeos se han corrido"
+   },
+   {
+    "ruta": "/trabajo/spindlelab-cl/",
+    "tipo": "propio",
+    "lleva": "CreativeWork con about {\"@id\": \"https://spindlelab.cl/#website\"}",
+    "noPuedeDeclarar": "El 85 como calificación; el 36 → 73 → 100 fuera de lo que dice noSePuedeDecir"
+   },
+   {
+    "ruta": "/trabajo/praxi/",
+    "tipo": "propio",
+    "lleva": "e12/inventario-praxi.md §11: CreativeWork (#autor-ramon, dateCreated 2026-07-21) con about un SoftwareApplication",
+    "noPuedeDeclarar": "offers, precios, url o sameAs a praxi.coach, términos de salud con promesa"
+   },
+   {
+    "ruta": "/trabajo/tonela/, /ocelo/, /sesenta/, /doceavo/",
+    "tipo": "concepto",
+    "lleva": "CreativeWork con genre «Concepto», creator #org, dateCreated 2026-10-16 (primer commit de cada pieza, hora de Chile), disambiguatingDescription y about un Thing con el oficio",
+    "noPuedeDeclarar": "La marca como Organization, LocalBusiness, MedicalClinic, LegalService o AccountingService; sus profesionales como Person; url o sameAs a sus dominios .cl; client, sponsor o funder; Offer o precio; cifras de resultado"
+   }
+  ],
+  "hallazgos": [
+   "Los cinco prototipos de B usan #organizacion (Organization) y no #org (ProfessionalService); su /trabajo/ no trae ItemList. A no trae JSON-LD.",
+   "Doceavo: su ficción dice «no tiene clientes ni dirección» y el mismo nodo declara un PostalAddress (sin calle). Ocelo y Sesenta traen el mismo PostalAddress sin calle.",
+   "Las cuatro piezas piden 0 URL a terceros; Tonela enlaza seis fuentes de norma (cuatro por página), que no se descargan sin clic."
+  ]
+ }
 }

@@ -7,8 +7,8 @@ Cumple desde `241c1ab`) · manda `e12/insumos-ramon-16oct.md` · gemelo legible 
 ver «Correcciones», al final) · **actualizado el 18-oct con el encargo del paso 2 §5** (defecto 3 de
 `e12/acta-paso-2.md`): el índice pasa a diez entradas, las seis reales con Praxi y las cuatro piezas de concepto
 (§2.5 y §2.7); Raigal sale (§8); el permiso de Combeau es el de la compuerta 1, punto 2 (§2); sus grabaciones, en §2.8;
-la capa de señales de las rutas nuevas, en `e12/senales-trabajo.md` (Simón). Mediciones del 18-oct entre las 21:04 y
-las 21:40 UTC, sobre `01ea00f`.
+la capa de señales de las rutas nuevas, en `e12/senales-trabajo.md` (Simón). Mediciones del 18-oct entre las 21:22 y
+las 21:34 UTC, sobre `01ea00f`.
 
 **Qué es.** La fuente única de lo que el índice de Trabajo, los casos, las «etiquetas de ingredientes», la telemetría
 y los sandboxes pueden decir. **Regla:** una etiqueta o un número que no tenga fila aquí no existe. **Qué no es:**
@@ -38,7 +38,9 @@ están en `e12/inventario/crudo/` (lista con sha256 en el JSON).
 3. **Los ingredientes del brief de obra §5 quedan confirmados por lo servido:** Astro, Decap CMS, login con GitHub y
    Netlify en Combeau; Cloudflare Pages y Functions en Verifica y en spindlelab.cl. Se suman dos que el brief no
    tenía: **Netlify Image CDN** en Combeau y **Cloudflare Browser Rendering** en Verifica. Tailwind solo está en
-   spindlelab.cl, y Lenis solo en el v3. **Nadie usa React, WebGL, IA programada ni «modelos RAG».**
+   spindlelab.cl, y Lenis solo en el v3. **Nadie usa React, WebGL, IA programada ni «modelos RAG».** *Desde el 18-oct,
+   con Praxi en el índice: Praxi es la única con IA programada (la API de Anthropic) y con React (Next.js 14); WebGL y
+   «modelos RAG», ninguna (`inventario-praxi.md` §4 y §5).*
 4. **Combeau tiene una cifra de oficio real, y dos defectos abiertos.** La foto que él sube pesa 805 kB y el sitio la
    entrega en 95 kB (WebP, 828 px). Pero 7 de sus 11 rutas no tienen `<h1>`, el de la portada junta dos palabras
    para quien lo lee como texto («Se construyedirigiendo»; el encargo del 10-oct sigue sin aplicar) y el book en
@@ -64,8 +66,8 @@ están en `e12/inventario/crudo/` (lista con sha256 en el JSON).
 | Carga y peso | `inventario/herramientas/medir-carga.mjs`: Chromium 141.0.7390.37 headless con Playwright 1.63.0, 390 × 844 (móvil, 3x) y 1440 × 900, 3 corridas por ancho, caché frío, sin scroll, sin aceptar cookies, 4 s tras `load`, bytes de CDP | 17:54 a 17:57 | `carga-playwright.json` |
 | Imágenes de la portada de spindlelab.cl, una por una | `inventario/herramientas/medir-imagenes.mjs`: las mismas condiciones, una corrida por ancho, cada pedido de tipo imagen con sus bytes | 21:44 | `imagenes-spindlelab.cl.json` |
 | Traza de Cloudflare | `GET https://spindlelab.cl/cdn-cgi/trace`, guardada sin las líneas `ip=` y `uag=` | 18:04 | `cdn-cgi-trace-spindlelab.cl.txt` |
-| **18-oct ·** Grabaciones de los dos sitios de Combeau | `inventario/herramientas/grabar-combeau.mjs`: Chromium 141 headless, solo `GET` y scroll (ningún clic, ningún campo, ningún formulario); carga las imágenes diferidas, vuelve arriba y graba cuadro a cuadro (30 por segundo; 1 s quieto arriba, bajada con curva cúbica, 1 s quieto abajo) a 1440 × 810 y a 390 × 844 (dpr 2); ffmpeg arma H.264 y un póster. Se detiene antes de cualquier enlace de contacto: en `/modelo/`, antes de sus medidas (`#details`) y del pie con correo y WhatsApp | 18-oct, §2.8 | `grabaciones-combeau.json` y `inventario/grabaciones/` |
-| **18-oct ·** La pantalla de entrada del panel de Combeau | El mismo script: `GET /admin/` y una captura, **sin hacer clic** en el botón de entrada | 18-oct, §2.8 | `grabaciones-combeau.json` (`panel`) |
+| **18-oct ·** Grabaciones de los dos sitios de Combeau | `inventario/herramientas/grabar-combeau.mjs`: Chromium 141 headless, solo `GET` y scroll (ningún clic, ningún campo, ningún formulario); carga las imágenes diferidas, vuelve arriba y graba cuadro a cuadro (30 por segundo; 1 s quieto arriba, bajada con curva cúbica, 1 s quieto abajo) a 1440 × 810 y a 390 × 844 (dpr 2); ffmpeg arma H.264 y un póster. Se detiene antes de cualquier enlace de contacto: en `/modelo/`, antes de sus medidas (`#details`) y del pie con correo y WhatsApp | 21:24 a 21:32 | `grabaciones-combeau.json` y `inventario/grabaciones/` (§2.8) |
+| **18-oct ·** La pantalla de entrada del panel de Combeau | El mismo script: `GET /admin/` y una captura, **sin hacer clic** en el botón de entrada | 21:32 | `grabaciones-combeau.json` (`panel`) |
 | **18-oct ·** Los `@id` que publica Combeau | `curl` con user-agent de Chrome 141 y `inventario/herramientas/ids-jsonld-combeau.py`, que guarda de cada nodo del JSON-LD su `@id`, su `@type` y el nombre de sus claves, **nunca sus valores** (traen su teléfono, correo y dirección). El HTML dio el mismo sha256 que el 16-oct: el sitio no cambió | 21:24 | `jsonld-ids-bernardocombeau.cl.json` |
 | **18-oct ·** La sección «Reel» de `/modelo/` | `inventario/herramientas/medir-reel-modelo.mjs`: las mismas condiciones de la grabación; posición de `#reel`, estilo computado de su título y tamaño de su `iframe`, y las reglas `.reel` de las hojas que enlaza la página | 21:33 | `reel-modelo-bernardocombeau.cl.json` |
 | **18-oct ·** Lo que usan de verdad las cuatro piezas de concepto | `inventario/herramientas/medir-conceptos.py` sobre el árbol **comprometido** (`git show 01ea00f:…`), no la copia de trabajo: tipos de JSON-LD, `robots`, `h1`, scripts, las URL que cada página o hoja **pide** al abrirse aparte de las que solo **enlaza**, letras `woff2` con su licencia, y el recorrido grabado (ffprobe) | 21:22 | `conceptos-repo.json` |
@@ -267,8 +269,8 @@ vistas 2 de A y B no ponen ninguna en los conceptos («Concepto · 2026»); si l
 | **Recorrido** | (sin efecto que contar) | `movimiento/recorrido.mp4` (10 s, 30 cps, 754 kB) y `.webm` |
 
 **No tienen, ninguna:** métrica, usuarios, clientes, testimonios, precios con cifra, una URL servida (sus dominios
-`.cl` estaban libres al 16-oct, según sus fichas, y nadie los sirve) ni React, WebGL o IA. Y no tienen fila de resultado: en la sección «Resultado»
-del caso va «Sin métrica».
+`.cl` estaban libres al 16-oct, según sus fichas, y nadie los sirve) ni React, WebGL o IA. Y no tienen fila de
+resultado: en la sección «Resultado» del caso va «Sin métrica».
 
 ### 2.8 · Las grabaciones de Combeau (18-oct)
 
@@ -291,9 +293,9 @@ grabaciones que ya existían salieron con los mismos bytes.
 **Un defecto de su sitio que sale en las grabaciones de `/modelo/`:** la sección «Reel» no tiene estilos propios
 (0 reglas `.reel` en sus dos hojas de estilo): el título queda pegado al borde izquierdo (x = 0), en la letra del
 sistema, y el video en el tamaño por defecto de un `iframe`, 300 × 150, a 1440 y a 390
-(`medir-reel-modelo.mjs` → `crudo/reel-modelo-bernardocombeau.cl.json`, 21:33 UTC). Entra al
-cuadro cerca del segundo 7,5 de las dos grabaciones de `/modelo/`. Para el caso: usar el tramo anterior o esperar el
-arreglo (§9, punto 3).
+(`medir-reel-modelo.mjs` → `crudo/reel-modelo-bernardocombeau.cl.json`, 21:33 UTC). Entra al cuadro cerca del
+segundo 7,5 de las dos grabaciones de `/modelo/`. Para el caso: usar el tramo anterior o esperar el arreglo (§9,
+punto 3).
 
 **Qué no se grabó, a propósito:** ningún enlace de contacto entra a un cuadro (la herramienta lo comprueba y se
 detiene si alguno quedaría dentro); en `/modelo/`, ni sus medidas ni el pie de contratación con su correo y su
@@ -452,7 +454,7 @@ pregunta, fecha y contenido suficiente en la portada.
 | Qué | Por qué | Fuente |
 |---|---|---|
 | Ningún resultado de negocio de un cliente (+X %, leads, retención, ventas) | No existe ninguna medición de resultado de cliente | `ventas/proyectos-en-curso.md`; `e11/material.md` §5-6 |
-| «IA propietaria», «modelos RAG», «despliegue de modelos», «WebGL», «React», «Estrategia C-Level» como ingredientes | Ninguna pieza los usa. La única con IA programada es Praxi, y lo que hace está en `inventario-praxi.md` §5 | §2 y §8 |
+| «IA propietaria», «modelos RAG», «despliegue de modelos», «WebGL» o «Estrategia C-Level» como ingredientes; «React» o «IA» en una pieza que no sea Praxi | Ninguna pieza usa los primeros. Praxi es la única con IA programada y con React (Next.js 14, React 18), y lo que hace está en `inventario-praxi.md` §4 y §5 | §2 y §2.5 |
 | El 40 % y el +150 % del segundo texto de Ramón | Son ejemplos, no datos | `insumos-ramon-16oct.md` §5 |
 | Los datos de contacto de Bernardo, sus medidas y su ficha de contratación de `/modelo/`, lo que pagó, o el 76 de su sitio como logro nuestro | El permiso de la compuerta 1 cubre grabar su sitio y publicar una medición fechada (*hasta el 18-oct esta fila decía que no*); no cubre sus datos, que el caso no necesita; y el 76 es una foto de su portada del 16-oct, con defectos abiertos y sin un antes medido, no un resultado nuestro | §2; brief, «Compuerta 1», fila 2 |
 | El 85 de spindlelab.cl y el 54 → 94 de Verifica, sin el OK de Ramón | Los puntajes del chequeo propio esperan su decisión | `e11/material.md` §6 |
@@ -472,7 +474,7 @@ pregunta, fecha y contenido suficiente en la portada.
 |---|---|
 | Módulo 369 (cliente) | Sin permiso de caso; en construcción (Fase 1 desde el 6-oct). No se midió (`proyectos-en-curso.md:15`) |
 | SimpleTrust (cliente de SEO) | Sin permiso; la solicitud nunca se envió (`ventas/pipeline.md:32`) |
-| **Raigal, Aplomo y Deslinde** (primera serie de concepto, 27 a 29-sep; 18-oct) | **Sus nombres ya son de alguien** (NIC Chile y el sitio de cada dominio, 16-oct): `raigal.cl` es una empresa de arquitectura y construcción, `deslinde.cl` una de gestión inmobiliaria y `aplomo.cl` está registrado desde 2008 (`portafolio/plan-e12.md` §1; `README.md`, «Primera serie»). Las reemplazan las cuatro piezas de §2.7 (compuerta 1, punto 5). Quedan como archivo en sus carpetas. **Raigal estaba en el índice** (§2.5 hasta el 18-oct) y sigue en la vista previa del v3 (`spindlelab-astro/`: la tira de la home, `/v3/trabajo/` y `/v3/servicios/desarrollo-web/`, noindex), que en el paso 2 no se toca: **no puede llegar a producción con ese nombre**, y sale al construir `/trabajo/` |
+| **Raigal, Aplomo y Deslinde** (primera serie de concepto, 27 a 29-sep; 18-oct) | **Sus nombres ya son de alguien** (NIC Chile y el sitio de cada dominio, 16-oct): `raigal.cl` es una empresa de arquitectura y construcción, `deslinde.cl` una de gestión inmobiliaria y `aplomo.cl` está registrado desde 2008 (`portafolio/plan-e12.md` §1; `README.md`, «Primera serie»). Las reemplazan las cuatro piezas de §2.7 (compuerta 1, punto 5). Quedan como archivo en sus carpetas. **Raigal estaba en el índice** (§2.5 hasta el 18-oct) y sigue en la vista previa del v3 (`spindlelab-astro/`: la tira de la home, `/v3/trabajo/` y `/v3/servicios/desarrollo-web/`, noindex), que en el paso 2 no se toca: **no puede llegar a producción con ese nombre**, y sale al construir `/trabajo/`. Su fila de antes (un archivo de HTML y CSS de 40 kB, JSON-LD `Dentist`, `Person`, `MedicalProcedure` y `FAQPage`, sin URL) sigue en el JSON: `fuera`, `registroHasta18oct` |
 | Índice de Citabilidad | Retirado: `/indice/` redirige con 301 a `/diagnostico/` (`_redirects:1-2`) |
 | Mini-diagnósticos entregados | Son de prospectos con nombre. Sirven como hallazgos generalizados (`e11/material.md` §1-2), nunca como caso |
 
@@ -500,9 +502,10 @@ pregunta, fecha y contenido suficiente en la portada.
    cosas de los prototipos que no se copian: el `@id` `#organizacion` de B (el grafo real usa `#org`) y su `/trabajo/`
    sin `ItemList`. Y Raigal sale de `spindlelab-astro/` (§8).
 8. **El tablero de la compuerta 1** (`tableros/e12-laboratorio/`, 18-oct): su script lee este JSON (`proyectos`,
-   `telemetria`, `sandboxes`, `noSePuedeDecir`). Se armó y se rehace sobre su commit; armado sobre uno posterior al
-   18-oct, su sección 5 muestra las diez entradas de hoy en vez de las seis de entonces, que es lo que corresponde a un
-   inventario que cambió después de la compuerta.
+   `telemetria`, `sandboxes`, `noSePuedeDecir`). Se armó sobre `7e9f380` y se rehace idéntico sobre ese commit
+   (comprobado hoy); sobre uno posterior ya no da el mismo archivo, aun antes de este cambio, porque sus fuentes
+   cambiaron después de la compuerta. Con el JSON de hoy corre sin error y su sección 5 muestra las diez entradas en
+   vez de las seis de entonces.
 
 ## Crudos
 
