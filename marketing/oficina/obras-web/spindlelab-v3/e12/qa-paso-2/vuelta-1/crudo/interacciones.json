@@ -1,0 +1,3345 @@
+{
+ "fecha": "2026-10-17T06:08:24.814Z",
+ "vistas": {
+  "a-home": {
+   "teclado1440": {
+    "paradas": 87,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 20
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Escríbenos",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     }
+    ]
+   },
+   "teclado390": {
+    "paradas": 25,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 14
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Escríbenos",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     }
+    ]
+   },
+   "reducido1440": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0.03,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0.03,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "reducido390": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "pausa": [
+    {
+     "i": 0,
+     "src": "cinta.webm",
+     "corre": true,
+     "loop": true,
+     "dur": 16,
+     "enVista": true,
+     "boton": true,
+     "nombre": "Pausar el video",
+     "foco": true,
+     "tab": 0,
+     "pausadoConEnter": true
+    }
+   ],
+   "tactil": {
+    "fino": false,
+    "grueso": true,
+    "clases": "js sin-circulo",
+    "circulo": "no existe"
+   },
+   "medios1440": {
+    "rects": [
+     [
+      16,
+      72,
+      1054,
+      540
+     ],
+     [
+      370,
+      959,
+      1054,
+      593
+     ],
+     [
+      370,
+      1666,
+      523,
+      654
+     ],
+     [
+      901,
+      1666,
+      523,
+      654
+     ],
+     [
+      370,
+      2457,
+      1054,
+      593
+     ],
+     [
+      370,
+      3562,
+      700,
+      394
+     ],
+     [
+      370,
+      4021,
+      700,
+      394
+     ],
+     [
+      370,
+      4480,
+      700,
+      394
+     ],
+     [
+      16,
+      6297,
+      435,
+      579
+     ]
+    ],
+    "W": 1440,
+    "H": 7573
+   }
+  },
+  "a-trabajo": {
+   "teclado1440": {
+    "paradas": 87,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 20
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Escríbenos",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     }
+    ]
+   },
+   "teclado390": {
+    "paradas": 22,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 14
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Escríbenos",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     }
+    ]
+   },
+   "reducido1440": {
+    "inicio": {
+     "vids": [],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "despues": {
+     "vids": [],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "reducido390": {
+    "inicio": {
+     "vids": [],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "despues": {
+     "vids": [],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "pausa": [],
+   "tactil": {
+    "fino": false,
+    "grueso": true,
+    "clases": "js sin-circulo",
+    "circulo": "no existe"
+   },
+   "medios1440": {
+    "rects": [
+     [
+      352,
+      72,
+      532,
+      665
+     ],
+     [
+      352,
+      864,
+      532,
+      319
+     ],
+     [
+      352,
+      1309,
+      532,
+      399
+     ],
+     [
+      352,
+      1835,
+      532,
+      319
+     ],
+     [
+      352,
+      2281,
+      532,
+      665
+     ],
+     [
+      892,
+      72,
+      532,
+      399
+     ],
+     [
+      892,
+      576,
+      532,
+      665
+     ],
+     [
+      892,
+      1367,
+      532,
+      665
+     ],
+     [
+      892,
+      2159,
+      532,
+      399
+     ],
+     [
+      892,
+      2706,
+      532,
+      319
+     ]
+    ],
+    "W": 1440,
+    "H": 3355
+   }
+  },
+  "a-praxi": {
+   "teclado1440": {
+    "paradas": 86,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 20
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Escríbenos",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     }
+    ]
+   },
+   "teclado390": {
+    "paradas": 12,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 14
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Escríbenos",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     }
+    ]
+   },
+   "reducido1440": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      },
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      },
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "reducido390": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      },
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      },
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "pausa": [
+    {
+     "i": 0,
+     "src": "praxi-hero.webm",
+     "corre": true,
+     "loop": true,
+     "dur": 11.084,
+     "enVista": true,
+     "boton": true,
+     "nombre": "Pausar el video",
+     "foco": true,
+     "tab": 0,
+     "pausadoConEnter": true
+    },
+    {
+     "i": 1,
+     "src": "praxi-reel-45.webm",
+     "corre": true,
+     "loop": true,
+     "dur": 15.375,
+     "enVista": true,
+     "boton": true,
+     "nombre": "Pausar el video",
+     "foco": true,
+     "tab": 0,
+     "pausadoConEnter": true
+    }
+   ],
+   "tactil": {
+    "fino": false,
+    "grueso": true,
+    "clases": "js sin-circulo",
+    "circulo": "block/visible/390x6114/op1"
+   },
+   "caso": {
+    "390": {
+     "lado": {
+      "tag": "aside",
+      "cls": "lateral",
+      "top": -2301,
+      "bottom": -2099,
+      "alto": 844,
+      "pos": "static"
+     },
+     "rotulos": [
+      "Hipótesis",
+      "Solución",
+      "La pieza",
+      "Sin métrica"
+     ],
+     "activa": [
+      "Solución",
+      "Solución"
+     ],
+     "ladoArriba": -219
+    },
+    "1440": {
+     "lado": {
+      "tag": "aside",
+      "cls": "lateral",
+      "top": 80,
+      "bottom": 884,
+      "alto": 900,
+      "pos": "sticky"
+     },
+     "rotulos": [
+      "Hipótesis",
+      "Solución",
+      "La pieza",
+      "Sin métrica"
+     ],
+     "activa": [
+      "Solución",
+      "Solución"
+     ],
+     "ladoArriba": 3649
+    }
+   },
+   "medios1440": {
+    "rects": [
+     [
+      352,
+      72,
+      1072,
+      603
+     ],
+     [
+      352,
+      1107,
+      532,
+      665
+     ],
+     [
+      892,
+      1107,
+      532,
+      665
+     ],
+     [
+      352,
+      3087,
+      1072,
+      603
+     ],
+     [
+      352,
+      3698,
+      532,
+      665
+     ],
+     [
+      892,
+      3698,
+      532,
+      665
+     ],
+     [
+      352,
+      4417,
+      1072,
+      603
+     ],
+     [
+      352,
+      5390,
+      1072,
+      603
+     ],
+     [
+      352,
+      6001,
+      1072,
+      603
+     ],
+     [
+      352,
+      6658,
+      532,
+      665
+     ],
+     [
+      892,
+      6658,
+      532,
+      329
+     ],
+     [
+      892,
+      6994,
+      532,
+      329
+     ],
+     [
+      352,
+      7376,
+      532,
+      665
+     ],
+     [
+      892,
+      7376,
+      532,
+      665
+     ],
+     [
+      352,
+      8321,
+      1072,
+      603
+     ],
+     [
+      908,
+      9102,
+      416,
+      250
+     ]
+    ],
+    "W": 1440,
+    "H": 9490
+   }
+  },
+  "a-sesenta": {
+   "teclado1440": {
+    "paradas": 86,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 20
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Escríbenos",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     }
+    ]
+   },
+   "teclado390": {
+    "paradas": 10,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 14
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Escríbenos",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     }
+    ]
+   },
+   "reducido1440": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "reducido390": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "pausa": [
+    {
+     "i": 0,
+     "src": "sesenta-recorrido.webm",
+     "corre": true,
+     "loop": true,
+     "dur": 10,
+     "enVista": true,
+     "boton": true,
+     "nombre": "Pausar el video",
+     "foco": true,
+     "tab": 0,
+     "pausadoConEnter": true
+    }
+   ],
+   "tactil": {
+    "fino": false,
+    "grueso": true,
+    "clases": "js sin-circulo",
+    "circulo": "no existe"
+   },
+   "caso": {
+    "390": {
+     "lado": {
+      "tag": "aside",
+      "cls": "lateral",
+      "top": -2033,
+      "bottom": -1873,
+      "alto": 844,
+      "pos": "static"
+     },
+     "rotulos": [
+      "Hipótesis",
+      "Solución",
+      "La pieza",
+      "Sin métrica",
+      "Sin métrica: es un concepto. Sesenta no existe y no llevó ninguna causa."
+     ],
+     "activa": [
+      "La pieza",
+      "La pieza"
+     ],
+     "ladoArriba": -176
+    },
+    "1440": {
+     "lado": {
+      "tag": "aside",
+      "cls": "lateral",
+      "top": 80,
+      "bottom": 884,
+      "alto": 900,
+      "pos": "sticky"
+     },
+     "rotulos": [
+      "Hipótesis",
+      "Solución",
+      "La pieza",
+      "Sin métrica",
+      "Sin métrica: es un concepto. Sesenta no existe y no llevó ninguna causa."
+     ],
+     "activa": [
+      "La pieza",
+      "La pieza"
+     ],
+     "ladoArriba": 4065
+    }
+   },
+   "medios1440": {
+    "rects": [
+     [
+      352,
+      72,
+      1072,
+      603
+     ],
+     [
+      352,
+      1107,
+      1072,
+      603
+     ],
+     [
+      352,
+      1995,
+      1072,
+      603
+     ],
+     [
+      352,
+      2606,
+      532,
+      665
+     ],
+     [
+      892,
+      2606,
+      532,
+      665
+     ],
+     [
+      352,
+      3279,
+      1072,
+      603
+     ],
+     [
+      352,
+      3890,
+      532,
+      665
+     ],
+     [
+      892,
+      3890,
+      532,
+      329
+     ],
+     [
+      892,
+      4227,
+      532,
+      329
+     ],
+     [
+      352,
+      4948,
+      1072,
+      603
+     ],
+     [
+      352,
+      5559,
+      532,
+      665
+     ],
+     [
+      892,
+      5559,
+      532,
+      665
+     ],
+     [
+      352,
+      6232,
+      1072,
+      603
+     ],
+     [
+      352,
+      6843,
+      532,
+      329
+     ],
+     [
+      352,
+      7180,
+      532,
+      329
+     ],
+     [
+      892,
+      6843,
+      532,
+      665
+     ],
+     [
+      352,
+      7516,
+      1072,
+      603
+     ],
+     [
+      352,
+      8127,
+      1072,
+      603
+     ],
+     [
+      352,
+      8950,
+      1072,
+      603
+     ],
+     [
+      908,
+      9732,
+      416,
+      250
+     ]
+    ],
+    "W": 1440,
+    "H": 10267
+   }
+  },
+  "a-desarrollo-web": {
+   "teclado1440": {
+    "paradas": 87,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 20
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     },
+     {
+      "tag": "a",
+      "nombre": "Escríbenos",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 10
+     }
+    ]
+   },
+   "teclado390": {
+    "paradas": 21,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 14
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     },
+     {
+      "tag": "a",
+      "nombre": "Escríbenos",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 34
+     }
+    ]
+   },
+   "reducido1440": {
+    "inicio": {
+     "vids": [],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "despues": {
+     "vids": [],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "reducido390": {
+    "inicio": {
+     "vids": [],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "despues": {
+     "vids": [],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "block/visible",
+     "clases": "js sin-circulo"
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "pausa": [],
+   "tactil": {
+    "fino": false,
+    "grueso": true,
+    "clases": "js sin-circulo",
+    "circulo": "no existe"
+   },
+   "medios1440": {
+    "rects": [
+     [
+      16,
+      460,
+      1408,
+      589
+     ],
+     [
+      370,
+      1851,
+      346,
+      433
+     ],
+     [
+      724,
+      1851,
+      346,
+      433
+     ],
+     [
+      1078,
+      1851,
+      346,
+      433
+     ]
+    ],
+    "W": 1440,
+    "H": 5925
+   }
+  },
+  "b-home": {
+   "teclado1440": {
+    "paradas": 23,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "Ir al contenido",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 8
+     },
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     }
+    ]
+   },
+   "teclado390": {
+    "paradas": 19,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "Ir al contenido",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 8
+     },
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "button",
+      "nombre": "Menú",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "input",
+      "nombre": "tuempresa.cl",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 18.42
+      },
+      "y": 648
+     },
+     {
+      "tag": "button",
+      "nombre": "Revisar mi sitio",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 18.42
+      },
+      "y": 700
+     },
+     {
+      "tag": "a",
+      "nombre": "Combeau, fotografía",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 1444
+     }
+    ]
+   },
+   "reducido1440": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "reducido390": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "pausa": [],
+   "tactil": {
+    "fino": false,
+    "grueso": true,
+    "clases": "",
+    "circulo": "no existe"
+   },
+   "medios1440": {
+    "rects": [
+     [
+      16,
+      1000,
+      346,
+      260
+     ],
+     [
+      16,
+      1000,
+      346,
+      260
+     ],
+     [
+      370,
+      2035,
+      612,
+      344
+     ],
+     [
+      370,
+      2436,
+      612,
+      344
+     ]
+    ],
+    "W": 1440,
+    "H": 5774
+   }
+  },
+  "b-trabajo": {
+   "teclado1440": {
+    "paradas": 21,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "Ir al contenido",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 8
+     },
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     }
+    ]
+   },
+   "teclado390": {
+    "paradas": 17,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "Ir al contenido",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 8
+     },
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "button",
+      "nombre": "Menú",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "button",
+      "nombre": "Todo (10)",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 587
+     },
+     {
+      "tag": "button",
+      "nombre": "Cliente (2)",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 587
+     },
+     {
+      "tag": "button",
+      "nombre": "Propio (4)",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 587
+     }
+    ]
+   },
+   "reducido1440": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "reducido390": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "pausa": [],
+   "tactil": {
+    "fino": false,
+    "grueso": true,
+    "clases": "",
+    "circulo": "no existe"
+   },
+   "medios1440": {
+    "rects": [
+     [
+      16,
+      580,
+      346,
+      260
+     ],
+     [
+      16,
+      580,
+      346,
+      260
+     ]
+    ],
+    "W": 1440,
+    "H": 2151
+   }
+  },
+  "b-praxi": {
+   "teclado1440": {
+    "paradas": 17,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "Ir al contenido",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 8
+     },
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     }
+    ]
+   },
+   "teclado390": {
+    "paradas": 9,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "Ir al contenido",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 8
+     },
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "button",
+      "nombre": "Menú",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "button",
+      "nombre": "Pausar el video",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": null
+      },
+      "y": 492
+     },
+     {
+      "tag": "button",
+      "nombre": "Pausar el video",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": null
+      },
+      "y": 4899
+     },
+     {
+      "tag": "a",
+      "nombre": "Escribir a SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6597
+     }
+    ]
+   },
+   "reducido1440": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      },
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      },
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "reducido390": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      },
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      },
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "pausa": [
+    {
+     "i": 0,
+     "src": "c-praxi-hero.webm",
+     "corre": true,
+     "loop": true,
+     "dur": 11.084,
+     "enVista": true,
+     "boton": true,
+     "nombre": "Pausar el video",
+     "foco": true,
+     "tab": 0,
+     "pausadoConEnter": true
+    },
+    {
+     "i": 1,
+     "src": "c-praxi-reel.webm",
+     "corre": true,
+     "loop": true,
+     "dur": 15.375,
+     "enVista": true,
+     "boton": true,
+     "nombre": "Pausar el video",
+     "foco": true,
+     "tab": 0,
+     "pausadoConEnter": true
+    }
+   ],
+   "tactil": {
+    "fino": false,
+    "grueso": true,
+    "clases": "",
+    "circulo": "no existe"
+   },
+   "caso": {
+    "390": {
+     "lado": {
+      "tag": "aside",
+      "cls": "caso__lateral",
+      "top": 0,
+      "bottom": 0,
+      "alto": 844,
+      "pos": "sticky"
+     },
+     "rotulos": [
+      "Problema",
+      "Hipótesis",
+      "Solución",
+      "La pieza",
+      "Sin métrica"
+     ],
+     "activa": [
+      "Solución"
+     ],
+     "ladoArriba": 2265
+    },
+    "1440": {
+     "lado": {
+      "tag": "aside",
+      "cls": "caso__lateral",
+      "top": 56,
+      "bottom": 900,
+      "alto": 900,
+      "pos": "sticky"
+     },
+     "rotulos": [
+      "Problema",
+      "Hipótesis",
+      "Solución",
+      "La pieza",
+      "Sin métrica"
+     ],
+     "activa": [
+      "Solución"
+     ],
+     "ladoArriba": 4263
+    }
+   },
+   "medios1440": {
+    "rects": [
+     [
+      370,
+      64,
+      1054,
+      593
+     ],
+     [
+      370,
+      966,
+      1054,
+      593
+     ],
+     [
+      370,
+      1805,
+      1054,
+      593
+     ],
+     [
+      370,
+      3744,
+      1054,
+      593
+     ],
+     [
+      370,
+      4389,
+      523,
+      654
+     ],
+     [
+      901,
+      4389,
+      523,
+      654
+     ],
+     [
+      370,
+      5051,
+      1054,
+      593
+     ],
+     [
+      370,
+      5979,
+      1054,
+      593
+     ],
+     [
+      370,
+      6580,
+      523,
+      654
+     ],
+     [
+      901,
+      6580,
+      523,
+      323
+     ],
+     [
+      901,
+      6911,
+      523,
+      323
+     ],
+     [
+      370,
+      7268,
+      1054,
+      593
+     ],
+     [
+      370,
+      7913,
+      523,
+      654
+     ],
+     [
+      901,
+      7913,
+      523,
+      654
+     ],
+     [
+      370,
+      8601,
+      1054,
+      593
+     ],
+     [
+      370,
+      10402,
+      435,
+      244
+     ]
+    ],
+    "W": 1440,
+    "H": 10686
+   }
+  },
+  "b-sesenta": {
+   "teclado1440": {
+    "paradas": 16,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "Ir al contenido",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 8
+     },
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     }
+    ]
+   },
+   "teclado390": {
+    "paradas": 7,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "Ir al contenido",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 8
+     },
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "button",
+      "nombre": "Menú",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "a",
+      "nombre": "Escribir a SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 5214
+     },
+     {
+      "tag": "a",
+      "nombre": "Verifica y Cumple",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 5531
+     },
+     {
+      "tag": "a",
+      "nombre": "[ Todo el trabajo ] (10)",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 5590
+     }
+    ]
+   },
+   "reducido1440": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "reducido390": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "pausa": [
+    {
+     "i": 0,
+     "src": "recorrido.webm",
+     "corre": true,
+     "loop": true,
+     "dur": 10,
+     "enVista": true,
+     "boton": true,
+     "nombre": "Pausar el video",
+     "foco": true,
+     "tab": 0,
+     "pausadoConEnter": true
+    }
+   ],
+   "tactil": {
+    "fino": false,
+    "grueso": true,
+    "clases": "",
+    "circulo": "no existe"
+   },
+   "caso": {
+    "390": {
+     "lado": {
+      "tag": "aside",
+      "cls": "caso__lateral",
+      "top": 0,
+      "bottom": 0,
+      "alto": 844,
+      "pos": "sticky"
+     },
+     "rotulos": [
+      "Problema",
+      "Hipótesis",
+      "Solución",
+      "La pieza",
+      "Sin métrica",
+      "Sin métrica: es un concepto. Sesenta no existe y no llevó ninguna causa."
+     ],
+     "activa": [
+      "Solución"
+     ],
+     "ladoArriba": 1637
+    },
+    "1440": {
+     "lado": {
+      "tag": "aside",
+      "cls": "caso__lateral",
+      "top": 56,
+      "bottom": 900,
+      "alto": 900,
+      "pos": "sticky"
+     },
+     "rotulos": [
+      "Problema",
+      "Hipótesis",
+      "Solución",
+      "La pieza",
+      "Sin métrica",
+      "Sin métrica: es un concepto. Sesenta no existe y no llevó ninguna causa."
+     ],
+     "activa": [
+      "La pieza"
+     ],
+     "ladoArriba": 4059
+    }
+   },
+   "medios1440": {
+    "rects": [
+     [
+      370,
+      64,
+      1054,
+      593
+     ],
+     [
+      370,
+      1216,
+      1054,
+      593
+     ],
+     [
+      370,
+      2198,
+      1054,
+      593
+     ],
+     [
+      370,
+      2799,
+      523,
+      654
+     ],
+     [
+      901,
+      2799,
+      523,
+      654
+     ],
+     [
+      370,
+      3461,
+      1054,
+      593
+     ],
+     [
+      370,
+      4062,
+      523,
+      654
+     ],
+     [
+      901,
+      4062,
+      523,
+      323
+     ],
+     [
+      901,
+      4392,
+      523,
+      323
+     ],
+     [
+      370,
+      5192,
+      1054,
+      593
+     ],
+     [
+      370,
+      5793,
+      523,
+      654
+     ],
+     [
+      901,
+      5793,
+      523,
+      654
+     ],
+     [
+      370,
+      6454,
+      1054,
+      593
+     ],
+     [
+      370,
+      7055,
+      523,
+      323
+     ],
+     [
+      370,
+      7386,
+      523,
+      323
+     ],
+     [
+      901,
+      7055,
+      523,
+      654
+     ],
+     [
+      370,
+      7717,
+      1054,
+      593
+     ],
+     [
+      370,
+      8318,
+      1054,
+      593
+     ],
+     [
+      370,
+      9208,
+      1054,
+      593
+     ],
+     [
+      370,
+      9942,
+      435,
+      244
+     ]
+    ],
+    "W": 1440,
+    "H": 10226
+   }
+  },
+  "b-desarrollo-web": {
+   "teclado1440": {
+    "paradas": 20,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "Ir al contenido",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 8
+     },
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "a",
+      "nombre": "Trabajo",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Método",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     },
+     {
+      "tag": "a",
+      "nombre": "Nosotros",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 7
+     }
+    ]
+   },
+   "teclado390": {
+    "paradas": 16,
+    "sinAnillo": [],
+    "invisibles": [],
+    "muestra": [
+     {
+      "tag": "a",
+      "nombre": "Ir al contenido",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 8
+     },
+     {
+      "tag": "a",
+      "nombre": "SpindleLab",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "button",
+      "nombre": "Menú",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 6
+     },
+     {
+      "tag": "a",
+      "nombre": "Inicio",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 100
+     },
+     {
+      "tag": "a",
+      "nombre": "Servicios",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 100
+     },
+     {
+      "tag": "a",
+      "nombre": "Visibilidad en IA",
+      "visible": true,
+      "fv": true,
+      "anillo": {
+       "tipo": "outline",
+       "ancho": 2,
+       "color": "rgb(255, 255, 255)",
+       "cr": 20.26
+      },
+      "y": 381
+     }
+    ]
+   },
+   "reducido1440": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "pantallaIgual": false,
+    "bytesDistintos": true
+   },
+   "reducido390": {
+    "inicio": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "despues": {
+     "vids": [
+      {
+       "paused": true,
+       "t": 0,
+       "autoplay": false
+      }
+     ],
+     "anims": [],
+     "escondidos": 0,
+     "circulo": "no existe",
+     "clases": ""
+    },
+    "pantallaIgual": true,
+    "bytesDistintos": false
+   },
+   "pausa": [],
+   "tactil": {
+    "fino": false,
+    "grueso": true,
+    "clases": "",
+    "circulo": "no existe"
+   },
+   "medios1440": {
+    "rects": [
+     [
+      16,
+      1337,
+      346,
+      260
+     ],
+     [
+      16,
+      1337,
+      346,
+      260
+     ]
+    ],
+    "W": 1440,
+    "H": 5192
+   }
+  }
+ },
+ "chequeo": {
+  "a": "CHEQUEO GRATIS\n\nEscribe la dirección de tu sitio y en segundos ves si ChatGPT y otros asistentes de IA pueden leerlo y entender a qué te dedicas.\n\nLA DIRECCIÓN DE TU SITIO\nREVISAR MI SITIO\n\nMira 21 cosas de tu sitio, gratis y sin pedirte el correo. No guardamos la dirección que escribes. Si construimos tu sitio, le pasamos este chequeo antes de entregártelo.\n\n30/100\nexample.com\n17 oct, 03:15 a. m.\n\nHoy la IA tiene poco con qué trabajar cuando alguien pregunta por tu rubro.\n\n¿TE PUEDEN LEER?\n\nCumple:\nLos índices de búsqueda de IA pueden entrar\nCumple:\nLos asistentes de IA pueden visitarte en vi",
+  "b": "CHEQUEO GRATIS\n\n30\n/100\n\nEscribe la dirección de tu sitio y en segundos ves si ChatGPT y otros asistentes de IA pueden leerlo y entender a qué te dedicas.\n\nLA DIRECCIÓN DE TU SITIO\nREVISAR MI SITIO\n\nMira 21 cosas de tu sitio, gratis y sin pedirte el correo. No guardamos la dirección que escribes. Si construimos tu sitio, le pasamos este chequeo antes de entregártelo.\n\n¿Te pueden leer?\n30\n\n¿Te entienden?\n40\n\n¿Te pueden citar?\n30\n\nexample.com\n\nHoy la IA tiene poco con qué trabajar cuando alguien pregunta por tu rubro.\n\nPEDIR EL DIAGNÓSTICO\n¿Te pueden leer?\n\nSi los bots de IA no entran, nada más "
+ }
+}

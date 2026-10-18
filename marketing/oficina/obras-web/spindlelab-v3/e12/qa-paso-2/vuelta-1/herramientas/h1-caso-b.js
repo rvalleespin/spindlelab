@@ -1,0 +1,3 @@
+const out=[]; for (const h of document.querySelectorAll('h1')) { const s=getComputedStyle(h); let anc=[]; for(let e=h;e;e=e.parentElement){const c=getComputedStyle(e); if(c.display==='none'||c.visibility==='hidden'||c.contentVisibility==='hidden') anc.push(e.tagName+'.'+e.className+':'+c.display+'/'+c.visibility);} out.push({html:h.outerHTML.slice(0,300), disp:s.display, rects:h.getClientRects().length, anc}); }
+const dup=[...document.querySelectorAll('main *')].filter(e=>/Se acuerda de cada serie|El plazo antes que el juicio/.test(e.textContent) && e.children.length<3 && e.getClientRects().length).map(e=>e.tagName+'.'+e.className+' aria-hidden='+e.getAttribute('aria-hidden')+' role='+e.getAttribute('role'));
+return {out,dup};
