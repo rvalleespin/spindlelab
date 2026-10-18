@@ -150,4 +150,12 @@ de la marca: la etiqueta y el rótulo se componen encima en HTML, y cada foto se
   `recorrido.mp4` es el mismo guion grabado cuadro a cuadro desde el screencast de Chrome (JPEG al 92 %, unos 40
   cuadros por segundo) y armado a 30 cps en H.264, porque a 1 Mbit/s el texto de la tabla queda blando. El cursor de
   la grabación es dibujado: el navegador sin pantalla no pinta el del sistema.
+- **Piso de 11 px (18-oct-2026, defecto 17 del acta del paso 2):** la «t» de tonelada de las bandas bajaba a 6,45 px en
+  el teléfono y a 9,2 px en el escritorio. Ahora tiene un piso de 11 px (`max(11px, .5em)`). Para que en las bandas
+  chicas la «t» no quede del mismo tamaño que el número, el número del teléfono parte en 17,5 px (antes 12,9); de
+  721 a 1100 px baja un punto, porque ahí la banda de 10 t cortaba el «10 t» (le faltaban 5,9 px a 721). La lista de
+  bandas va con `aria-hidden`: la figura ya dice las ocho capacidades completas en su `aria-label`, así que el lector
+  no las oye dos veces. Medido a 360, 390, 768, 1024 y 1440: 0 textos bajo 11 px en las dos páginas, cada número cabe
+  en su banda, 0 fallas de contraste (`capturas/comprobacion.json`, que ahora registra el piso). Rehechas las capturas
+  de la home y los dos encuadres del medio principal (las de la interior no cambiaron) y el recorrido.
 - **No firmé el veredicto:** lo firma Javiera, en contexto limpio, antes de la compuerta 2.

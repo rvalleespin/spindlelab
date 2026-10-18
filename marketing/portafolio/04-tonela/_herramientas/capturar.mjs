@@ -3,8 +3,9 @@
 // Captura home e interior a 1440 (dpr 1) y 390 (dpr 2): primera pantalla y página completa, con movimiento reducido
 // para fotografiar el estado final. Y los dos encuadres del medio principal del caso: 16:9 a 1440 × 810 y 4:5 a
 // 390 × 488. Mide: desborde horizontal a 360, 390, 768 y 1440; número de h1; peticiones a terceros; errores de
-// consola; fuentes con error; el rótulo «Concepto» (visible sin scroll, tamaño y contraste); y el contraste real de
-// cada nodo de texto contra su fondo compuesto (AA: 4,5:1, o 3:1 desde 24 px o 18,66 px en negrita).
+// consola; fuentes con error; el rótulo «Concepto» (visible sin scroll, tamaño y contraste); el contraste real de
+// cada nodo de texto contra su fondo compuesto (AA: 4,5:1, o 3:1 desde 24 px o 18,66 px en negrita); y el texto
+// visible bajo el piso de 11 px de la casa (lock §15), a 360, 390, 768 y 1440 (acta del paso 2, defecto 17).
 import { pathToFileURL } from 'node:url';
 import path from 'node:path';
 import fs from 'node:fs';
@@ -52,7 +53,7 @@ const medir = () => {
     return base;
   }
   function opacidad(el) { let o = 1; for (let n = el; n && n.nodeType === 1; n = n.parentElement) o *= Number(getComputedStyle(n).opacity); return o; }
-  const fallas = [];
+  const fallas = [], bajo11 = [];
   let revisados = 0;
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   const vistos = new Set();
@@ -73,6 +74,7 @@ const medir = () => {
     const grande = px >= 24 || (px >= 18.66 && peso >= 700);
     const min = grande ? 3 : 4.5;
     revisados++;
+    if (px < 11) bajo11.push({ texto: t.textContent.trim().slice(0, 30), px });
     if (k < min) fallas.push({ texto: t.textContent.trim().slice(0, 50), px, peso, ratio: Math.round(k * 100) / 100, min });
   }
   const doc = document.documentElement;
@@ -97,7 +99,7 @@ const medir = () => {
     robots: document.querySelector('meta[name="robots"]')?.content,
     fuentesConError: [...document.fonts].filter((f) => f.status === 'error').map((f) => f.family),
     imagenesSinAlt: [...document.images].filter((i) => !i.hasAttribute('alt')).length,
-    nodosRevisados: revisados, fallasContraste: fallas, rotulo,
+    nodosRevisados: revisados, fallasContraste: fallas, textoBajo11px: bajo11, rotulo,
   };
 };
 
@@ -111,13 +113,24 @@ for (const p of paginas) {
     await page.screenshot({ path: path.join(salida, `${p.nombre}-${w}-completa.png`), fullPage: true });
     informe.paginas[p.nombre][w] = { ...m, errores, terceros };
     await ctx.close();
-    console.log(p.nombre, w, 'desborde', m.desborde, 'h1', m.h1, 'contraste: fallas', m.fallasContraste.length, 'de', m.nodosRevisados, 'rótulo', JSON.stringify(m.rotulo));
+    console.log(p.nombre, w, 'desborde', m.desborde, 'h1', m.h1, 'contraste: fallas', m.fallasContraste.length, 'de', m.nodosRevisados, 'bajo 11 px', m.textoBajo11px.length, 'rótulo', JSON.stringify(m.rotulo));
   }
   for (const w of [360, 768]) {
     const { ctx, page } = await abrir(p.ruta, w, 800, 1);
-    const d = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
-    informe.paginas[p.nombre][w] = { desborde: d };
-    console.log(p.nombre, w, 'desborde', d);
+    const { d, bajo11 } = await page.evaluate(() => {
+      const bajo11 = [];
+      const tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      while (tw.nextNode()) {
+        const el = tw.currentNode.parentElement;
+        if (!tw.currentNode.textContent.trim() || !el || el.closest('svg, script, style, .oculto')) continue;
+        const r = el.getBoundingClientRect(), cs = getComputedStyle(el);
+        if (r.width < 2 || r.height < 2 || cs.visibility === 'hidden' || cs.display === 'none') continue;
+        if (parseFloat(cs.fontSize) < 11) bajo11.push({ texto: tw.currentNode.textContent.trim().slice(0, 30), px: parseFloat(cs.fontSize) });
+      }
+      return { d: document.documentElement.scrollWidth - document.documentElement.clientWidth, bajo11 };
+    });
+    informe.paginas[p.nombre][w] = { desborde: d, textoBajo11px: bajo11 };
+    console.log(p.nombre, w, 'desborde', d, 'bajo 11 px', bajo11.length);
     await ctx.close();
   }
 }

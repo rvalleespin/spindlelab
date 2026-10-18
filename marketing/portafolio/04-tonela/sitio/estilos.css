@@ -158,7 +158,7 @@ p { margin: 0 0 .8em; }
   position: absolute; left: 0; right: 0; bottom: 70px; text-align: center;
   font: 800 calc(15px + var(--t) * 3.4px)/.9 var(--stencil); letter-spacing: .01em;
 }
-.banda-t small { font-size: .5em; margin-left: .06em; font-weight: 700; }
+.banda-t small { font-size: max(11px, .5em); margin-left: .06em; font-weight: 700; } /* piso de 11 px (lock §15): en las bandas chicas la «t» bajaba a 6,45 px */
 .banda[data-t="1"] { --c: var(--c1); --s: var(--sobre-1); }
 .banda[data-t="2"] { --c: var(--c2); --s: var(--sobre-2); }
 .banda[data-t="3"] { --c: var(--c3); --s: var(--sobre-3); }
@@ -393,6 +393,9 @@ main.con-orden { display: flex; flex-direction: column; }
   :root { --margen: 28px; }
   .nav { display: none; }
   .estante { grid-column: 7 / span 6; }
+  /* de 721 a 1100 las bandas son angostas: el número baja un punto para que «10 t» no quede cortado por la banda */
+  .bandas { gap: 5px; }
+  .banda-t { font-size: calc(14px + var(--t) * 2.4px); }
   .seccion-cabeza { grid-column: 1 / -1; margin-bottom: 40px; }
   .seccion-cuerpo, .contacto-form { grid-column: 1 / -1; }
   .tabla-cabeza-fija { position: static; }
@@ -425,7 +428,7 @@ main.con-orden { display: flex; flex-direction: column; }
   .estante { grid-column: 1 / -1; order: -1; min-height: 150px; margin: 0 0 20px; }
   .estante-barra { top: 10px; height: 12px; }
   .bandas { inset: 16px 0 0 0; }
-  .banda-t { font-size: calc(11px + var(--t) * 1.9px); bottom: 36px; }
+  .banda-t { font-size: calc(16px + var(--t) * 1.5px); bottom: 36px; } /* el 1 parte en 17,5 px para que la «t» de 11 px siga leyéndose como unidad */
   .banda::after { height: 28px; }
   .bandas { gap: 4px; }
   .seccion { padding: 72px 0; }
