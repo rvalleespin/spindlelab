@@ -1,0 +1,1 @@
+return [...document.querySelectorAll('body *')].filter((e) => /^monospace/.test(getComputedStyle(e).fontFamily) && [...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())).map((e) => [e.tagName, e.className, e.textContent.trim().slice(0, 60), getComputedStyle(e).fontFamily, getComputedStyle(e).fontSize, e.getClientRects().length]);

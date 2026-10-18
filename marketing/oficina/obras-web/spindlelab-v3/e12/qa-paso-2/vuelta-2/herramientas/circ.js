@@ -1,0 +1,2 @@
+const els=[...document.querySelectorAll('body [class*="circulo"], body .cursor, body [class*="cursor"]')];
+return {html: document.documentElement.className, fine: matchMedia('(pointer: fine)').matches, red: matchMedia('(prefers-reduced-motion: reduce)').matches, els: els.map(e=>{const s=getComputedStyle(e); const r=e.getBoundingClientRect(); return [e.tagName, e.className.baseVal??e.className, s.display, s.visibility, s.opacity, s.transform.slice(0,40), Math.round(r.width)+'x'+Math.round(r.height)];})};

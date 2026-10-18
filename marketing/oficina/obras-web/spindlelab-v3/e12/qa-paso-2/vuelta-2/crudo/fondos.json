@@ -1,0 +1,259 @@
+{
+ "fecha": "2026-10-18T22:41:44.846Z",
+ "vistas": {
+  "a-home": {
+   "html": "rgb(6, 6, 6)",
+   "body": "rgb(6, 6, 6)",
+   "mayorControl": {
+    "el": "button.boton.boton--claro",
+    "color": [
+     255,
+     255,
+     255
+    ],
+    "L": 1,
+    "w": 346,
+    "h": 44,
+    "area": 15224,
+    "control": true,
+    "marco": false,
+    "y": 711
+   },
+   "bloquesNoControl": [],
+   "nBloquesNoControl": 0,
+   "enMarco": 0
+  },
+  "a-trabajo": {
+   "html": "rgb(6, 6, 6)",
+   "body": "rgb(6, 6, 6)",
+   "mayorControl": null,
+   "bloquesNoControl": [],
+   "nBloquesNoControl": 0,
+   "enMarco": 0
+  },
+  "a-praxi": {
+   "html": "rgb(6, 6, 6)",
+   "body": "rgb(6, 6, 6)",
+   "mayorControl": {
+    "el": "a.boton.boton--claro",
+    "color": [
+     255,
+     255,
+     255
+    ],
+    "L": 1,
+    "w": 200,
+    "h": 44,
+    "area": 8779,
+    "control": true,
+    "marco": false,
+    "y": 9227
+   },
+   "bloquesNoControl": [],
+   "nBloquesNoControl": 0,
+   "enMarco": 0
+  },
+  "a-sesenta": {
+   "html": "rgb(6, 6, 6)",
+   "body": "rgb(6, 6, 6)",
+   "mayorControl": {
+    "el": "a.boton.boton--claro",
+    "color": [
+     255,
+     255,
+     255
+    ],
+    "L": 1,
+    "w": 200,
+    "h": 44,
+    "area": 8779,
+    "control": true,
+    "marco": false,
+    "y": 9778
+   },
+   "bloquesNoControl": [],
+   "nBloquesNoControl": 0,
+   "enMarco": 0
+  },
+  "a-desarrollo-web": {
+   "html": "rgb(6, 6, 6)",
+   "body": "rgb(6, 6, 6)",
+   "mayorControl": {
+    "el": "a.boton.boton--claro",
+    "color": [
+     255,
+     255,
+     255
+    ],
+    "L": 1,
+    "w": 200,
+    "h": 44,
+    "area": 8779,
+    "control": true,
+    "marco": false,
+    "y": 5536
+   },
+   "bloquesNoControl": [],
+   "nBloquesNoControl": 0,
+   "enMarco": 0
+  },
+  "b-home": {
+   "html": "rgb(6, 6, 6)",
+   "body": "rgb(6, 6, 6)",
+   "mayorControl": {
+    "el": "a.boton.boton--lleno",
+    "color": [
+     255,
+     255,
+     255
+    ],
+    "L": 1,
+    "w": 195,
+    "h": 44,
+    "area": 8570,
+    "control": true,
+    "marco": false,
+    "y": 5537
+   },
+   "bloquesNoControl": [],
+   "nBloquesNoControl": 0,
+   "enMarco": 0
+  },
+  "b-trabajo": {
+   "html": "rgb(6, 6, 6)",
+   "body": "rgb(6, 6, 6)",
+   "mayorControl": {
+    "el": "a.saltar",
+    "color": [
+     255,
+     255,
+     255
+    ],
+    "L": 1,
+    "w": 145,
+    "h": 44,
+    "area": 6398,
+    "control": true,
+    "marco": false,
+    "y": -60
+   },
+   "bloquesNoControl": [],
+   "nBloquesNoControl": 0,
+   "enMarco": 0
+  },
+  "b-praxi": {
+   "html": "rgb(6, 6, 6)",
+   "body": "rgb(6, 6, 6)",
+   "mayorControl": {
+    "el": "a.boton.boton--lleno",
+    "color": [
+     255,
+     255,
+     255
+    ],
+    "L": 1,
+    "w": 195,
+    "h": 44,
+    "area": 8570,
+    "control": true,
+    "marco": false,
+    "y": 10338
+   },
+   "bloquesNoControl": [
+    {
+     "el": "span.secciones__punto",
+     "color": [
+      255,
+      255,
+      255
+     ],
+     "L": 1,
+     "w": 3,
+     "h": 3,
+     "area": 9,
+     "control": false,
+     "marco": false,
+     "y": 376
+    }
+   ],
+   "nBloquesNoControl": 1,
+   "enMarco": 1
+  },
+  "b-sesenta": {
+   "html": "rgb(6, 6, 6)",
+   "body": "rgb(6, 6, 6)",
+   "mayorControl": {
+    "el": "a.boton.boton--lleno",
+    "color": [
+     255,
+     255,
+     255
+    ],
+    "L": 1,
+    "w": 195,
+    "h": 44,
+    "area": 8570,
+    "control": true,
+    "marco": false,
+    "y": 9832
+   },
+   "bloquesNoControl": [
+    {
+     "el": "span.secciones__punto",
+     "color": [
+      255,
+      255,
+      255
+     ],
+     "L": 1,
+     "w": 3,
+     "h": 3,
+     "area": 9,
+     "control": false,
+     "marco": false,
+     "y": 356
+    }
+   ],
+   "nBloquesNoControl": 1,
+   "enMarco": 0
+  },
+  "b-desarrollo-web": {
+   "html": "rgb(6, 6, 6)",
+   "body": "rgb(6, 6, 6)",
+   "mayorControl": {
+    "el": "a.boton.boton--lleno",
+    "color": [
+     255,
+     255,
+     255
+    ],
+    "L": 1,
+    "w": 195,
+    "h": 44,
+    "area": 8570,
+    "control": true,
+    "marco": false,
+    "y": 4882
+   },
+   "bloquesNoControl": [
+    {
+     "el": "div.hoja",
+     "color": [
+      255,
+      255,
+      255
+     ],
+     "L": 1,
+     "w": 1408,
+     "h": 906,
+     "area": 1275736,
+     "control": false,
+     "marco": false,
+     "y": 2000
+    }
+   ],
+   "nBloquesNoControl": 1,
+   "enMarco": 0
+  }
+ }
+}
