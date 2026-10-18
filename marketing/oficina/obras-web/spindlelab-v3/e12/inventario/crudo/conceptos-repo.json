@@ -1,0 +1,436 @@
+{
+ "commit": "01ea00fb2a60ee2e46c7ff6b45e9447dbb4f8e68",
+ "herramienta": "e12/inventario/herramientas/medir-conceptos.py",
+ "piezas": {
+  "04-tonela": {
+   "paginas": [
+    {
+     "ruta": "marketing/portafolio/04-tonela/sitio/index.html",
+     "bytes": 35848,
+     "lang": "es-CL",
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldBloques": 1,
+     "jsonldTipos": [
+      "AdministrativeArea",
+      "Answer",
+      "FAQPage",
+      "Organization",
+      "Question",
+      "Service",
+      "WebPage"
+     ],
+     "disambiguatingDescription": [
+      "Concepto de SpindleLab (2026). Tonela no existe: es una empresa inventada para mostrar trabajo de identidad y desarrollo web. No tiene clientes, faenas, dirección, RUT ni datos de contacto, y nada de lo que describe este sitio ocurrió.",
+      "Servicio de una empresa ficticia (concepto de SpindleLab). No se presta."
+     ],
+     "jsonldClavesQueNoDebeTener": [],
+     "scriptsExternos": [
+      "tonela.js"
+     ],
+     "scriptsEnLinea": 1,
+     "urlsHttpQuePide": [],
+     "urlsHttpQueEnlaza": [
+      "https://cdn.hoffmann-group.com/dsh/en-GB/dsh_en-gb_3365.pdf",
+      "https://copsule.leeaint.com/copsule/en-GB/latest/id-f128c31d-b332-436d-b3f0-f571855cfdbb.html",
+      "https://www.certex.dk/en/knowhow/articles-about-textile-slings/color-coding-of-polyester-slings",
+      "https://www.mennens.nl/en/lifting-knowhow/safe-lifting/colour-coding-of-polyester-slings"
+     ],
+     "vecesQueDiceConcepto": 13
+    },
+    {
+     "ruta": "marketing/portafolio/04-tonela/sitio/inspeccion/index.html",
+     "bytes": 24208,
+     "lang": "es-CL",
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldBloques": 1,
+     "jsonldTipos": [
+      "BreadcrumbList",
+      "ListItem",
+      "Organization",
+      "Service",
+      "WebPage"
+     ],
+     "disambiguatingDescription": [
+      "Concepto de SpindleLab (2026). Tonela no existe: es una empresa inventada para mostrar trabajo de identidad y desarrollo web. No tiene clientes, faenas, dirección, RUT ni datos de contacto.",
+      "Servicio de una empresa ficticia (concepto de SpindleLab). No se presta."
+     ],
+     "jsonldClavesQueNoDebeTener": [],
+     "scriptsExternos": [],
+     "scriptsEnLinea": 1,
+     "urlsHttpQuePide": [],
+     "urlsHttpQueEnlaza": [
+      "https://cdn.hoffmann-group.com/dsh/en-GB/dsh_en-gb_3365.pdf",
+      "https://knowledge.bsigroup.com/products/textile-slings-safety-flat-woven-webbing-slings-made-of-man-made-fibres-for-general-purpose-use",
+      "https://www.certex.dk/en/knowhow/articles-about-textile-slings/color-coding-of-polyester-slings",
+      "https://www.certex.dk/en/knowhow/articles-about-textile-slings/rejection-criteria-roundslings-and-webbing-slings"
+     ],
+     "vecesQueDiceConcepto": 10
+    }
+   ],
+   "cssJs": {
+    "sitio/estilos.css": 31776,
+    "sitio/tonela.js": 6713
+   },
+   "urlsHttpQuePideElCss": [],
+   "fuentesWoff2": {
+    "sitio/fuentes/barlow-semi-condensed-400-italic.woff2": 24580,
+    "sitio/fuentes/barlow-semi-condensed-400.woff2": 22300,
+    "sitio/fuentes/barlow-semi-condensed-500.woff2": 22428,
+    "sitio/fuentes/barlow-semi-condensed-600.woff2": 22984,
+    "sitio/fuentes/barlow-semi-condensed-700.woff2": 23244,
+    "sitio/fuentes/big-shoulders-stencil-var.woff2": 60092,
+    "sitio/fuentes/big-shoulders-var.woff2": 58436
+   },
+   "licenciasDeFuentesEnSitio": [
+    "sitio/fuentes/OFL-barlowsemicondensed.txt",
+    "sitio/fuentes/OFL-bigshoulders.txt",
+    "sitio/fuentes/OFL-bigshouldersstencil.txt"
+   ],
+   "recorrido": [
+    {
+     "ruta": "marketing/portafolio/04-tonela/movimiento/recorrido.mp4",
+     "bytes": 1259951,
+     "segundos": 10.0,
+     "ancho": 1440,
+     "alto": 810,
+     "codec": "h264",
+     "cuadrosPorSegundo": 30.0
+    },
+    {
+     "ruta": "marketing/portafolio/04-tonela/movimiento/recorrido.webm",
+     "bytes": 1435153,
+     "segundos": 10.0,
+     "ancho": 1440,
+     "alto": 810,
+     "codec": "vp9",
+     "cuadrosPorSegundo": 25.0
+    }
+   ],
+   "portadas": [
+    "identidad/portadas/portada-4x3.png",
+    "identidad/portadas/portada-4x5.png",
+    "identidad/portadas/portada-5x3.png"
+   ],
+   "placas": 20,
+   "capturas": 11
+  },
+  "05-ocelo": {
+   "paginas": [
+    {
+     "ruta": "marketing/portafolio/05-ocelo/sitio/index.html",
+     "bytes": 25859,
+     "lang": "es-CL",
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldBloques": 1,
+     "jsonldTipos": [
+      "Answer",
+      "FAQPage",
+      "IndividualPhysician",
+      "MedicalClinic",
+      "MedicalProcedure",
+      "PostalAddress",
+      "Question"
+     ],
+     "disambiguatingDescription": [
+      "Concepto de SpindleLab: esta clínica no existe y no atiende pacientes. Es una pieza de portafolio.",
+      "Persona ficticia, parte de un concepto de SpindleLab. No es una prestadora registrada.",
+      "Persona ficticia, parte de un concepto de SpindleLab. No es un prestador registrado."
+     ],
+     "jsonldClavesQueNoDebeTener": [
+      "address"
+     ],
+     "scriptsExternos": [
+      "ocelo.js"
+     ],
+     "scriptsEnLinea": 1,
+     "urlsHttpQuePide": [],
+     "urlsHttpQueEnlaza": [],
+     "vecesQueDiceConcepto": 14
+    },
+    {
+     "ruta": "marketing/portafolio/05-ocelo/sitio/la-evaluacion/index.html",
+     "bytes": 16718,
+     "lang": "es-CL",
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldBloques": 1,
+     "jsonldTipos": [
+      "BreadcrumbList",
+      "ListItem",
+      "MedicalClinic",
+      "MedicalCondition",
+      "MedicalTest",
+      "MedicalWebPage"
+     ],
+     "disambiguatingDescription": [
+      "Concepto de SpindleLab: esta clínica no existe y no atiende pacientes. Es una pieza de portafolio.",
+      "Página de un concepto de SpindleLab. No es una indicación médica."
+     ],
+     "jsonldClavesQueNoDebeTener": [],
+     "scriptsExternos": [
+      "../ocelo.js"
+     ],
+     "scriptsEnLinea": 1,
+     "urlsHttpQuePide": [],
+     "urlsHttpQueEnlaza": [],
+     "vecesQueDiceConcepto": 9
+    }
+   ],
+   "cssJs": {
+    "sitio/estilo.css": 28095,
+    "sitio/ocelo.js": 3931
+   },
+   "urlsHttpQuePideElCss": [],
+   "fuentesWoff2": {
+    "sitio/fuentes/atkinson-hyperlegible-mono.woff2": 17752,
+    "sitio/fuentes/atkinson-hyperlegible-next.woff2": 33996
+   },
+   "licenciasDeFuentesEnSitio": [
+    "sitio/fuentes/OFL-atkinson-hyperlegible-mono.txt",
+    "sitio/fuentes/OFL-atkinson-hyperlegible-next.txt"
+   ],
+   "recorrido": [
+    {
+     "ruta": "marketing/portafolio/05-ocelo/movimiento/recorrido.mp4",
+     "bytes": 1626960,
+     "segundos": 10.0,
+     "ancho": 1440,
+     "alto": 810,
+     "codec": "h264",
+     "cuadrosPorSegundo": 30.0
+    },
+    {
+     "ruta": "marketing/portafolio/05-ocelo/movimiento/recorrido.webm",
+     "bytes": 1100619,
+     "segundos": 10.0,
+     "ancho": 1440,
+     "alto": 810,
+     "codec": "vp9",
+     "cuadrosPorSegundo": 30.0
+    }
+   ],
+   "portadas": [
+    "identidad/portadas/ocelo-43.png",
+    "identidad/portadas/ocelo-45.png",
+    "identidad/portadas/ocelo-53.png"
+   ],
+   "placas": 20,
+   "capturas": 16
+  },
+  "06-sesenta": {
+   "paginas": [
+    {
+     "ruta": "marketing/portafolio/06-sesenta/sitio/index.html",
+     "bytes": 32201,
+     "lang": "es-CL",
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldBloques": 1,
+     "jsonldTipos": [
+      "Answer",
+      "City",
+      "FAQPage",
+      "LegalService",
+      "Person",
+      "PostalAddress",
+      "Question",
+      "WebPage"
+     ],
+     "disambiguatingDescription": [
+      "Concepto de SpindleLab: este estudio no existe, no atiende a nadie y no llevó ninguna causa. Es una pieza de portafolio.",
+      "Persona ficticia, parte de un concepto de SpindleLab. No ejerce y su nombre no corresponde a ningún abogado habilitado.",
+      "Persona ficticia, parte de un concepto de SpindleLab. No ejerce y su nombre no corresponde a ningún abogado habilitado.",
+      "Concepto de SpindleLab. Nada de esta página es asesoría legal."
+     ],
+     "jsonldClavesQueNoDebeTener": [
+      "address"
+     ],
+     "scriptsExternos": [
+      "sesenta.js"
+     ],
+     "scriptsEnLinea": 0,
+     "urlsHttpQuePide": [],
+     "urlsHttpQueEnlaza": [],
+     "vecesQueDiceConcepto": 15
+    },
+    {
+     "ruta": "marketing/portafolio/06-sesenta/sitio/que-dice-tu-carta/index.html",
+     "bytes": 15320,
+     "lang": "es-CL",
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldBloques": 1,
+     "jsonldTipos": [
+      "Answer",
+      "BreadcrumbList",
+      "FAQPage",
+      "LegalService",
+      "ListItem",
+      "Question",
+      "WebPage"
+     ],
+     "disambiguatingDescription": [
+      "Concepto de SpindleLab: el estudio Sesenta no existe. Nada de esta página es asesoría legal.",
+      "Concepto de SpindleLab: este estudio no existe."
+     ],
+     "jsonldClavesQueNoDebeTener": [],
+     "scriptsExternos": [
+      "../sesenta.js"
+     ],
+     "scriptsEnLinea": 0,
+     "urlsHttpQuePide": [],
+     "urlsHttpQueEnlaza": [],
+     "vecesQueDiceConcepto": 9
+    }
+   ],
+   "cssJs": {
+    "sitio/estilo.css": 34888,
+    "sitio/sesenta.js": 15191
+   },
+   "urlsHttpQuePideElCss": [],
+   "fuentesWoff2": {
+    "sitio/fuentes/courier-prime-400-italica.woff2": 21556,
+    "sitio/fuentes/courier-prime-400.woff2": 18640,
+    "sitio/fuentes/courier-prime-700.woff2": 19348,
+    "sitio/fuentes/schibsted-grotesk.woff2": 46752
+   },
+   "licenciasDeFuentesEnSitio": [
+    "sitio/fuentes/OFL-courier-prime.txt",
+    "sitio/fuentes/OFL-schibsted-grotesk.txt"
+   ],
+   "recorrido": [
+    {
+     "ruta": "marketing/portafolio/06-sesenta/movimiento/recorrido.mp4",
+     "bytes": 2122353,
+     "segundos": 10.0,
+     "ancho": 1440,
+     "alto": 810,
+     "codec": "h264",
+     "cuadrosPorSegundo": 30.0
+    },
+    {
+     "ruta": "marketing/portafolio/06-sesenta/movimiento/recorrido.webm",
+     "bytes": 968909,
+     "segundos": 10.0,
+     "ancho": 1440,
+     "alto": 810,
+     "codec": "vp9",
+     "cuadrosPorSegundo": 30.0
+    }
+   ],
+   "portadas": [
+    "identidad/portadas/sesenta-4x3.png",
+    "identidad/portadas/sesenta-4x5.png",
+    "identidad/portadas/sesenta-5x3.png"
+   ],
+   "placas": 24,
+   "capturas": 8
+  },
+  "07-doceavo": {
+   "paginas": [
+    {
+     "ruta": "marketing/portafolio/07-doceavo/sitio/calendario/index.html",
+     "bytes": 18634,
+     "lang": "es-CL",
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldBloques": 1,
+     "jsonldTipos": [
+      "AccountingService",
+      "BreadcrumbList",
+      "ListItem",
+      "WebPage",
+      "WebSite"
+     ],
+     "disambiguatingDescription": [
+      "Concepto ficticio de SpindleLab para su portafolio. Doceavo no existe; las fechas son las del calendario del SII de 2026."
+     ],
+     "jsonldClavesQueNoDebeTener": [],
+     "scriptsExternos": [
+      "../doceavo.js"
+     ],
+     "scriptsEnLinea": 1,
+     "urlsHttpQuePide": [],
+     "urlsHttpQueEnlaza": [],
+     "vecesQueDiceConcepto": 5
+    },
+    {
+     "ruta": "marketing/portafolio/07-doceavo/sitio/index.html",
+     "bytes": 38841,
+     "lang": "es-CL",
+     "robots": "noindex, nofollow",
+     "h1": 1,
+     "jsonldBloques": 1,
+     "jsonldTipos": [
+      "AccountingService",
+      "Answer",
+      "City",
+      "FAQPage",
+      "Offer",
+      "OfferCatalog",
+      "Person",
+      "PostalAddress",
+      "Question",
+      "Service"
+     ],
+     "disambiguatingDescription": [
+      "Concepto ficticio de SpindleLab para su portafolio. Doceavo no existe, no tiene clientes ni dirección, y nada de lo que dice esta página ocurrió. Las fechas son las del calendario del SII de 2026.",
+      "Persona ficticia, inventada para un concepto de SpindleLab. No es una contadora real."
+     ],
+     "jsonldClavesQueNoDebeTener": [
+      "address"
+     ],
+     "scriptsExternos": [
+      "doceavo.js"
+     ],
+     "scriptsEnLinea": 1,
+     "urlsHttpQuePide": [],
+     "urlsHttpQueEnlaza": [],
+     "vecesQueDiceConcepto": 8
+    }
+   ],
+   "cssJs": {
+    "sitio/datos.js": 17683,
+    "sitio/doceavo.js": 4543,
+    "sitio/estilo.css": 37741
+   },
+   "urlsHttpQuePideElCss": [],
+   "fuentesWoff2": {
+    "sitio/fuentes/recursive.woff2": 304988
+   },
+   "licenciasDeFuentesEnSitio": [
+    "sitio/fuentes/OFL-recursive.txt"
+   ],
+   "recorrido": [
+    {
+     "ruta": "marketing/portafolio/07-doceavo/movimiento/recorrido.mp4",
+     "bytes": 754472,
+     "segundos": 10.0,
+     "ancho": 1440,
+     "alto": 810,
+     "codec": "h264",
+     "cuadrosPorSegundo": 30.0
+    },
+    {
+     "ruta": "marketing/portafolio/07-doceavo/movimiento/recorrido.webm",
+     "bytes": 580756,
+     "segundos": 10.0,
+     "ancho": 1440,
+     "alto": 810,
+     "codec": "vp9",
+     "cuadrosPorSegundo": 30.0
+    }
+   ],
+   "portadas": [
+    "identidad/portadas/portada-43.png",
+    "identidad/portadas/portada-45.png",
+    "identidad/portadas/portada-53.png"
+   ],
+   "placas": 22,
+   "capturas": 8
+  }
+ }
+}

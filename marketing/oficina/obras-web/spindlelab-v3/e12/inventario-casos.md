@@ -4,7 +4,11 @@
 `claude/magical-franklin-ckfki2`, base `347e07f` · `origin/main` leído en `28dbb85` (trae el código de Verifica y
 Cumple desde `241c1ab`) · manda `e12/insumos-ramon-16oct.md` · gemelo legible por máquina: `inventario-casos.json` ·
 **corregido el 16-oct a las 18:45** (defecto 13 del acta del paso 1: método del `h1` de Combeau y una sola unidad;
-ver «Correcciones», al final).
+ver «Correcciones», al final) · **actualizado el 18-oct con el encargo del paso 2 §5** (defecto 3 de
+`e12/acta-paso-2.md`): el índice pasa a diez entradas, las seis reales con Praxi y las cuatro piezas de concepto
+(§2.5 y §2.7); Raigal sale (§8); el permiso de Combeau es el de la compuerta 1, punto 2 (§2); sus grabaciones, en §2.8;
+la capa de señales de las rutas nuevas, en `e12/senales-trabajo.md` (Simón). Mediciones del 18-oct entre las 21:04 y
+las 21:40 UTC, sobre `01ea00f`.
 
 **Qué es.** La fuente única de lo que el índice de Trabajo, los casos, las «etiquetas de ingredientes», la telemetría
 y los sandboxes pueden decir. **Regla:** una etiqueta o un número que no tenga fila aquí no existe. **Qué no es:**
@@ -19,9 +23,14 @@ están en `e12/inventario/crudo/` (lista con sha256 en el JSON).
 
 ## 0 · Lo que este inventario le cambia a la obra
 
-1. **Hay seis cosas reales que mostrar, y una sola de cliente.** Combeau (dos sitios, un cliente), Verifica y Cumple,
-   el chequeo de 21 señales, Raigal (concepto) y el propio spindlelab.cl. Tres son propias, una es concepto. El
-   permiso de Combeau es verbal y no cubre publicar mediciones de su sitio.
+1. **El índice tiene diez entradas: seis reales, dos de ellas de un mismo cliente, y cuatro piezas de concepto**
+   (18-oct; §2). Reales: Combeau fotografía y Combeau modelo (un cliente, dos sitios), Verifica y Cumple, el chequeo
+   de 21 señales, spindlelab.cl y Praxi, que entra por la compuerta 1, punto 3, con su propio inventario
+   (`inventario-praxi.md`). Concepto: Tonela, Ocelo, Sesenta y Doceavo (§2.7), sin métrica por regla. **Raigal sale
+   del índice** (§8): su nombre ya es de una empresa real. El permiso de Combeau es el que dio Ramón en la compuerta 1,
+   punto 2: «no se necesita más permiso», y cubre grabar su sitio y publicar una medición fechada (§2).
+   *Hasta el 18-oct decía: seis cosas reales con Raigal como concepto, sin Praxi, y un permiso verbal que no cubría
+   las mediciones.*
 2. **El único antes y después medido dos veces con el mismo instrumento, con los dos crudos guardados, es nuestro:**
    Verifica y Cumple sacaba **54** en el chequeo de visibilidad el 14-oct y saca **94** hoy, después de que el 15-oct
    se le publicaron robots, llms.txt, sitemap y su schema completo. Es la parte Logic contada con nuestro propio
@@ -33,7 +42,8 @@ están en `e12/inventario/crudo/` (lista con sha256 en el JSON).
 4. **Combeau tiene una cifra de oficio real, y dos defectos abiertos.** La foto que él sube pesa 805 kB y el sitio la
    entrega en 95 kB (WebP, 828 px). Pero 7 de sus 11 rutas no tienen `<h1>`, el de la portada junta dos palabras
    para quien lo lee como texto («Se construyedirigiendo»; el encargo del 10-oct sigue sin aplicar) y el book en
-   inglés declara `lang="es"`. Sirve como caso de diseño y de panel; no como vitrina de SEO.
+   inglés declara `lang="es"`. Sirve como caso de diseño y de panel; no como vitrina de SEO. Desde la compuerta 1 la
+   cifra se puede publicar con su fecha (§2); los dos defectos siguen abiertos (§4.3).
 5. **Telemetría verdadera hay de sobra**, y casi toda se recalcula por visita: el resultado del chequeo del visitante,
    el datacenter de Cloudflare que le respondió (`/cdn-cgi/trace`, sin la IP), lo que pesó y tardó su visita, el
    commit del build. Las etiquetas del brief («LAB_STATUS: ACTIVE», «SYS. ACTIVO», «VOL. 04») no tienen nada detrás.
@@ -47,13 +57,18 @@ están en `e12/inventario/crudo/` (lista con sha256 en el JSON).
 | Qué | Cómo | Cuándo (UTC) | Crudo |
 |---|---|---|---|
 | Chequeo de visibilidad en IA | `curl -s "https://spindlelab.cl/api/chequeo?dominio=<dominio>"` para spindlelab.cl, bernardocombeau.cl y verifica.spindlelab.cl. Lee solo la portada de cada dominio | 17:51 | `chequeo-<dominio>.json` y `.headers.txt` |
-| Chequeo de la Ley 21.719 | `GET https://verifica.spindlelab.cl/api/chequeo?dominio=<dominio>` sobre los dos dominios propios. No se corrió sobre Combeau (mostrarlo pediría su OK) ni el chequeo profundo (gasta la cuota mensual de navegador remoto) | 17:52 | `vyc-chequeo-<dominio>.json` |
+| Chequeo de la Ley 21.719 | `GET https://verifica.spindlelab.cl/api/chequeo?dominio=<dominio>` sobre los dos dominios propios. No se corrió sobre Combeau (el 16-oct, mostrarlo pedía su OK; desde la compuerta 1 ya no, y sigue sin correrse) ni el chequeo profundo (gasta la cuota mensual de navegador remoto) | 17:52 | `vyc-chequeo-<dominio>.json` |
 | HTML servido y cabeceras | `curl` con user-agent de Chrome 141. De Combeau se guarda un extracto (generador, scripts, hojas, JSON-LD, colecciones del panel) con el sha256 del HTML completo, porque el HTML trae sus datos de contacto | 17:51 y 18:03 | `servido-*`, `cabeceras-varias.txt` |
 | `h1` por ruta en Combeau | `curl -L` de las 11 rutas, contando `<h1` | 17:59 | `h1-bernardocombeau.cl.tsv` |
 | La frase del `h1` de la portada de Combeau | `inventario/herramientas/medir-h1-portada.mjs`: Chromium 141 headless saca el `<h1>` del cuerpo de la respuesta (HTML servido, sin JS) y, tras `load`, lee su `textContent` y su `innerText`. Guarda el sha256 del HTML, no el HTML | 21:43 | `h1-portada-bernardocombeau.cl.json` |
 | Carga y peso | `inventario/herramientas/medir-carga.mjs`: Chromium 141.0.7390.37 headless con Playwright 1.63.0, 390 × 844 (móvil, 3x) y 1440 × 900, 3 corridas por ancho, caché frío, sin scroll, sin aceptar cookies, 4 s tras `load`, bytes de CDP | 17:54 a 17:57 | `carga-playwright.json` |
 | Imágenes de la portada de spindlelab.cl, una por una | `inventario/herramientas/medir-imagenes.mjs`: las mismas condiciones, una corrida por ancho, cada pedido de tipo imagen con sus bytes | 21:44 | `imagenes-spindlelab.cl.json` |
 | Traza de Cloudflare | `GET https://spindlelab.cl/cdn-cgi/trace`, guardada sin las líneas `ip=` y `uag=` | 18:04 | `cdn-cgi-trace-spindlelab.cl.txt` |
+| **18-oct ·** Grabaciones de los dos sitios de Combeau | `inventario/herramientas/grabar-combeau.mjs`: Chromium 141 headless, solo `GET` y scroll (ningún clic, ningún campo, ningún formulario); carga las imágenes diferidas, vuelve arriba y graba cuadro a cuadro (30 por segundo; 1 s quieto arriba, bajada con curva cúbica, 1 s quieto abajo) a 1440 × 810 y a 390 × 844 (dpr 2); ffmpeg arma H.264 y un póster. Se detiene antes de cualquier enlace de contacto: en `/modelo/`, antes de sus medidas (`#details`) y del pie con correo y WhatsApp | 18-oct, §2.8 | `grabaciones-combeau.json` y `inventario/grabaciones/` |
+| **18-oct ·** La pantalla de entrada del panel de Combeau | El mismo script: `GET /admin/` y una captura, **sin hacer clic** en el botón de entrada | 18-oct, §2.8 | `grabaciones-combeau.json` (`panel`) |
+| **18-oct ·** Los `@id` que publica Combeau | `curl` con user-agent de Chrome 141 y `inventario/herramientas/ids-jsonld-combeau.py`, que guarda de cada nodo del JSON-LD su `@id`, su `@type` y el nombre de sus claves, **nunca sus valores** (traen su teléfono, correo y dirección). El HTML dio el mismo sha256 que el 16-oct: el sitio no cambió | 21:24 | `jsonld-ids-bernardocombeau.cl.json` |
+| **18-oct ·** La sección «Reel» de `/modelo/` | `inventario/herramientas/medir-reel-modelo.mjs`: las mismas condiciones de la grabación; posición de `#reel`, estilo computado de su título y tamaño de su `iframe`, y las reglas `.reel` de las hojas que enlaza la página | 21:33 | `reel-modelo-bernardocombeau.cl.json` |
+| **18-oct ·** Lo que usan de verdad las cuatro piezas de concepto | `inventario/herramientas/medir-conceptos.py` sobre el árbol **comprometido** (`git show 01ea00f:…`), no la copia de trabajo: tipos de JSON-LD, `robots`, `h1`, scripts, las URL que cada página o hoja **pide** al abrirse aparte de las que solo **enlaza**, letras `woff2` con su licencia, y el recorrido grabado (ffprobe) | 21:22 | `conceptos-repo.json` |
 
 **Los tiempos son de laboratorio, no de usuarios reales.** El contenedor sale a internet por la costa este de EE.UU.
 (las respuestas de Cloudflare traen `cf-ray …-EWR` e `…-IAD`), sin limitar red ni CPU, y Chromium negoció HTTP/1.1
@@ -65,7 +80,9 @@ decimal; los bytes exactos están en cada crudo. Hasta las 18:45 de hoy este arc
 escritos «KB» con kB: ver «Correcciones».
 
 **Lo que no se pudo leer:** el repo de Combeau (`rvalleespin/bernardo-combeau`) no está habilitado en esta sesión, y no
-se agregó porque nadie lo pidió. Su stack sale de lo que sirve el sitio, que en esto alcanza.
+se agregó porque nadie lo pidió. Su stack sale de lo que sirve el sitio, que en esto alcanza. **El panel de Combeau
+por dentro** (18-oct): pide iniciar sesión con una cuenta de GitHub con acceso a su repo; esta sesión no tiene ninguna y
+no se pide por el chat, así que queda como hueco nombrado (§2.8).
 
 ---
 
@@ -73,15 +90,28 @@ se agregó porque nadie lo pidió. Su stack sale de lo que sirve el sitio, que e
 
 | Entrada | Tipo | Año | Para quién | Permiso y dónde consta | URL | Estado al 16-oct |
 |---|---|---|---|---|---|---|
-| Combeau, fotografía | Cliente | 2026 | Bernardo Combeau, fotógrafo de retrato | **Verbal**, 30-sep, confirmado por Ramón en sesión: `ventas/proyectos-en-curso.md:16` y `marketing/portafolio/README.md:10`. **Sin respaldo escrito.** Lo contradicen, desactualizados, `oficina/clientes/bernardo-combeau.md:15` («NO autorizado») y `ventas/pipeline.md:26` («aún no pedido») | bernardocombeau.cl | En producción desde el 24-jul; Netlify desde el 8-sep; pagado al 100 % |
+| Combeau, fotografía | Cliente | 2026 | Bernardo Combeau, fotógrafo de retrato | **«Ramón, 16-oct: no se necesita más permiso»**, dicho por él en la compuerta 1, punto 2 («no se necesita más permiso. ya lo pedí hace un rato»; `e12/brief-de-obra.md`, «Compuerta 1»). Queda registrado como lo dice Ramón: **no hay respaldo escrito de Bernardo en el repo.** Antes: verbal del 30-sep, solo del caso (`ventas/proyectos-en-curso.md:16`). Siguen diciendo otra cosa `oficina/clientes/bernardo-combeau.md:15` y `ventas/pipeline.md:26`, de la troncal (§9) | bernardocombeau.cl | En producción desde el 24-jul; Netlify desde el 8-sep; pagado al 100 % |
 | Combeau, modelo | Cliente | 2026 | El mismo | El mismo permiso | bernardocombeau.cl/modelo/ | En producción |
 | Verifica y Cumple | Producto propio | 2026 | Propio; servicio de SpindleLab desde el 21-sep (`ventas/casos-de-exito/verifica-y-cumple.md`, en main) | Propio | verifica.spindlelab.cl | En producción desde el 23-sep; el dominio viejo `verificaycumple.pages.dev` redirige con 301 |
 | Chequeo de 21 señales | Herramienta propia | 2026 | Cualquiera, sobre su dominio | Propio | spindlelab.cl/diagnostico/ · `/api/chequeo` | En producción desde el 27-ago (`4bdfb62`); último cambio del código en main el 23-sep (`a453333`), igual en la rama v3 |
-| Raigal | Concepto | 2026 | Nadie: «Raigal no existe» | Propio, rotulado; Ramón lo revisa antes de mostrarlo a un prospecto (R9; `portafolio/01-raigal/ficha.md:90`) | Ninguna | Solo la portada, en el repo; en el v3, solo como maqueta |
 | spindlelab.cl | Propio | 2026 | Propio | Propio | spindlelab.cl · v3 en vista previa noindex | Producción v2. El v3 no está publicado (`spindlelab.cl/v3/` da 404); la vista previa sirve el build de `f0d911c` (14-oct): su `/v3/trabajo/` es idéntica byte a byte a `dist/` |
+| **Praxi** (18-oct) | Propio | 2026 | Producto de Ramón: coach de hipertrofia por chat, con su propia marca (`oficina/clientes/praxi.md`) | Propio; entra por la compuerta 1, punto 3 («podría entrar praxi como caso ya que creó un sitio y una app») | praxi.coach, **que no se enlaza**: `402 DEPLOYMENT_DISABLED` el 16-oct (`inventario-praxi.md` §0.3) y el 17-oct (`tableros/e12-direcciones/datos/estado-praxi.txt`) | Fuera de línea; último cambio de código el 25-ago. Todo lo suyo, en `inventario-praxi.md` (§2.5) |
+| **Tonela** (18-oct) | Concepto | 2026 | Nadie: «Tonela no existe». Proveedor de izaje inventado, Antofagasta | Propio, rotulado; reglas de `marketing/portafolio/README.md` | Ninguna: `marketing/portafolio/04-tonela/sitio/`, `noindex, nofollow` | Home e interior, identidad y recorrido en el repo (§2.7) |
+| **Ocelo** (18-oct) | Concepto | 2026 | Nadie: «Ocelo no existe». Clínica de ojos inventada, Providencia | El mismo | Ninguna: `05-ocelo/sitio/` | El mismo |
+| **Sesenta** (18-oct) | Concepto | 2026 | Nadie: «Sesenta no existe». Estudio laboral inventado, del lado del trabajador, Santiago | El mismo | Ninguna: `06-sesenta/sitio/` | El mismo. Es la pieza de la vista 4 del tablero |
+| **Doceavo** (18-oct) | Concepto | 2026 | Nadie: «Doceavo no existe». Estudio contable inventado, Concepción | El mismo | Ninguna: `07-doceavo/sitio/` | El mismo |
 
-**Lo que el permiso de Combeau no cubre** (brief de obra §8.5): publicar una medición fechada de su sitio, grabar su
-sitio o su panel, y usar una foto suya en un antes y después. Para eso hace falta su sí por escrito; un WhatsApp basta.
+**El índice son estas diez filas** (18-oct): seis reales (dos de cliente, cuatro propias) y cuatro de concepto. El
+conteo visible de `/trabajo/` es 10 y cada filtro cuenta sus filas: Cliente 2, Propio 4, Concepto 4. Raigal, que
+estaba aquí como concepto, salió (§8).
+
+**Lo que cubre el permiso de Combeau, y lo que queda fuera igual.** Desde la compuerta 1, punto 2, el caso puede
+llevar grabaciones de su sitio y de su panel y una medición fechada de su sitio (brief, «Compuerta 1», fila 2): lo
+que hasta el 16-oct pedía su sí por escrito (brief de obra §8.5). **No lo cambia el permiso, y sigue fuera:** sus
+datos de contacto (teléfono, correo, WhatsApp, dirección: su JSON-LD los trae y el caso no los repite), sus medidas y
+su ficha de contratación de `/modelo/` (`#details`, `#booking`), lo que pagó, cualquier resultado de su negocio (no hay
+ninguno medido, §4.4), y presentar su sitio como vitrina de SEO (§0.4). La foto del antes y después es la que él ya
+publicó (`beto3.jpg`, §2.1), no una nueva.
 
 ### 2.1 · Combeau, fotografía
 
@@ -145,11 +175,21 @@ Lee la portada de un dominio y reporta 21 señales: ¿te pueden leer? (30), ¿te
 | **Cloudflare Pages Functions** | El chequeo corre en el servidor; tu navegador solo pregunta | Repo: `functions/api/chequeo.js:1246`. Medido: 3 corridas, 200 en 0,6 a 1,4 s, `cache-control: no-store` |
 | **Prueba con el nombre de tres robots de IA** | Te dice si tu servidor echa a los robots de ChatGPT o Perplexity aunque tu robots.txt los deje entrar | Medido: detalle de la señal «El servidor no expulsa a los robots de IA» (OAI-SearchBot, ChatGPT-User, PerplexityBot) |
 
-### 2.5 · Raigal
+### 2.5 · Praxi (18-oct; hasta entonces aquí iba Raigal, que pasó a §8)
 
-Portada de una clínica de implantología que no existe (`portafolio/01-raigal/ficha.md`). HTML y CSS a mano en un
-archivo de 40 kB (40.093 bytes); JSON-LD Dentist, Person, MedicalProcedure y FAQPage. **No está servida en ninguna URL**, así que sus
-etiquetas solo pueden decir «en la maqueta», y por regla de la serie no lleva cifras (`portafolio/README.md`, regla 3).
+Producto propio de Ramón: un coach de hipertrofia por chat, sitio y app (Next.js 14, Supabase, API de Anthropic), en
+un clon de solo lectura (`/home/user/praxis-coach`, `a360d7a`). **Su inventario completo es `inventario-praxi.md`**,
+con la misma regla: qué es, el stack verificado en el código (§4, 15 ingredientes), cómo trabaja la IA (§5), las
+capturas (§6), lo que se puede y no se puede decir (§8) y sus señales (§11). Aquí van solo las dos filas que usa la
+línea del índice, para que el índice tenga fila en este archivo:
+
+| Ingrediente (línea del índice) | Lo que le hace al usuario | Evidencia |
+|---|---|---|
+| **API de Anthropic**, solo en el servidor | Le escribes como a una persona y el registro queda guardado sin formularios | `inventario-praxi.md` §4 (`lib/anthropic.ts:14,17`, `import "server-only"`) |
+| **Lógica de entrenamiento en código** | El peso sube solo con dos sesiones confirmadas; la descarga llega por fatiga corroborada, no por calendario | `inventario-praxi.md` §4 (`lib/domain/`; 42 tests en verde, medido el 16-oct) |
+
+**No tiene:** `praxi.coach` en línea (402 de Vercel), usuarios medidos, retención ni ventas: ninguna cifra de uso
+(`inventario-praxi.md` §8.2). Las pantallas de la app con sesión iniciada son un hueco nombrado (§10 de ese archivo).
 
 ### 2.6 · spindlelab.cl
 
@@ -162,6 +202,104 @@ etiquetas solo pueden decir «en la maqueta», y por regla de la serie no lleva 
 | **Lenis, solo en el v3** | Repo: `Layout.astro:213-246`, apagado con movimiento reducido. Servido: está en el JS de la vista previa (`hoisted.Bkkmjuy0.js`), no en el de producción |
 
 **No tiene todavía:** Motion (lo pide el brief para la construcción). Next.js y React, no.
+
+### 2.7 · Las cuatro piezas de concepto (18-oct)
+
+Cuatro marcas inventadas, una por rubro que vendemos (compuerta 1, punto 5), hechas por Bruno el 16 y el 17-oct con el
+texto de Clara, en `marketing/portafolio/04-tonela` a `07-doceavo`. **La regla de la serie, que este inventario aplica:**
+ninguna lleva métrica ni testimonio; su resultado es «Sin métrica: es un concepto, no tuvo usuarios»
+(`portafolio/README.md`). Lo que sí tiene fila es **lo que cada pieza usa de verdad**, comprobado en el árbol
+comprometido (`conceptos-repo.json`, sobre `01ea00f`) y en su ficha y su caso. «Lo que hace en la pieza» es lo que le
+haría a quien la visita si la marca existiera: **no es un efecto medido.**
+
+**Común a las cuatro** (crudo, pieza por pieza): HTML, CSS y JS escritos a mano, sin dependencias; **0 URL pedidas a
+terceros** al abrir sus ocho páginas y sus hojas de estilo; letras en `woff2` locales con su licencia OFL al lado; JSON-LD
+con la ficción dentro (`disambiguatingDescription` en la marca y en cada persona inventada), sin `review`,
+`aggregateRating`, `telephone`, `sameAs`, `taxID` ni `vatID`; `noindex, nofollow`; un `h1` por página; un recorrido de
+10 s grabado del navegador desde su propio HTML (1440 × 810, H.264 y VP9, con póster en `movimiento/`); 0 llamadas a
+generación pagada (fichas). La palabra «concepto» aparece de 5 a 15 veces en el HTML de cada página.
+
+**★ = las dos filas que más hacen en la pieza**, candidatas a la línea mono del índice (lock §7: hasta dos). Hoy las
+vistas 2 de A y B no ponen ninguna en los conceptos («Concepto · 2026»); si las ponen, salen de aquí.
+
+**Tonela** · industrial B2B, izaje (Antofagasta, ficticio) · home e interior «Inspección»
+
+| Ingrediente | Lo que hace en la pieza | Evidencia |
+|---|---|---|
+| ★ **Código de color de la norma de eslingas** | El color dice solo la capacidad de carga, como la etiqueta cosida de la eslinga; ningún botón, fondo ni ícono lleva color | `sitio/tonela.js` (`COLOR`, ocho capacidades); ficha, «Hechos de norma» (verificados por Simón el 17-oct) y «Restricciones del rubro» |
+| ★ **Tabla de carga por modo de amarre** | Eliges cómo amarras (directo, ahorcado, en paralelo, en ángulo) y la tabla y el dibujo del ángulo cambian la capacidad con el factor de la norma; dice que es referencial y que manda la etiqueta | `tonela.js` §2 y §3 (`FACTOR`); ficha, hecho 4 |
+| **Big Shoulders, Big Shoulders Stencil y Barlow Semi Condensed**, locales | (sin efecto que contar) | 7 `woff2`, de 22 a 60 kB; tres licencias OFL en `sitio/fuentes/` |
+| **JSON-LD**: `Organization`, `Service`, `FAQPage`, `WebPage`; `BreadcrumbList` en la interior | Una máquina lee qué haría la empresa y que no existe | Crudo: `jsonldTipos`, `disambiguatingDescription` |
+| **Formulario que no envía nada** | Valida los campos y dice que es un concepto | `tonela.js` §4 |
+| **Recorrido** | (sin efecto que contar) | `movimiento/recorrido.mp4` (10 s, 30 cps, 1.260 kB) y `.webm` (VP9, 25 cps) |
+
+**Ocelo** · clínica, oftalmología (Providencia, ficticia) · home e interior «La evaluación»
+
+| Ingrediente | Lo que hace en la pieza | Evidencia |
+|---|---|---|
+| ★ **Interruptor de luz** | La página abre a oscuras, como la sala de examen, y se enciende con un botón que dice su estado y recuerda la elección; con movimiento reducido cambia sin transición | `sitio/ocelo.js` («El interruptor de luz»: `aria-pressed`, `localStorage`) |
+| ★ **Atkinson Hyperlegible Next y Mono**, locales | La letra del Braille Institute hecha para lectores con baja visión, en el sitio de una clínica de ojos | 2 `woff2` (34 y 18 kB) y sus licencias OFL; ficha §4.1 (fuente: comunicado del Braille Institute del 10-feb-2025); `LICENCIAS.md` |
+| **Comparador por pestañas** | LASIK o PRK, lente monofocal o multifocal: qué pesa en cada caso, sin prometer resultado | `ocelo.js` («El comparador»); `caso.md`, «Aplicación» |
+| **JSON-LD médico**: `MedicalClinic`, dos `IndividualPhysician`, `MedicalProcedure`, `FAQPage`; `MedicalWebPage`, `MedicalCondition`, `MedicalTest` y `BreadcrumbList` en la interior | Una máquina lee qué haría la clínica, que no existe y que sus dos médicos son ficticios | Crudo. Lleva un `PostalAddress` sin calle (comuna, región, país): ver `senales-trabajo.md`, punto 2 |
+| **Recorrido** | (sin efecto que contar) | `movimiento/recorrido.mp4` (10 s, 30 cps, 1.627 kB) y `.webm` |
+
+**Sesenta** · estudio legal, laboral del lado del trabajador (Santiago, ficticio) · home e interior «Qué dice tu carta»
+· es la pieza de la vista 4 del tablero
+
+| Ingrediente | Lo que hace en la pieza | Evidencia |
+|---|---|---|
+| ★ **Contador de días hábiles** | Con la fecha del despido, cuenta los días hábiles que quedan para demandar (lunes a sábado, salvo feriados) y dice que es referencial | `sitio/sesenta.js` («Calendario» y «El 60 que baja»): separaciones de 2026 y 2027 (`DESDE`, `HASTA`), 32 feriados nacionales escritos en el código hasta mayo de 2028; ficha §4.1 |
+| ★ **Lector de la carta** | Una pestaña por caso (art. 159, 160, 161 o «no dice ninguno»): marca en la carta el artículo que cita y explica qué significa | `sesenta.js` («El lector de la carta»); ficha §4.2 |
+| **Hoja imprimible** | Imprime, sola, la lista de papeles que hay que traer a la primera reunión | `sesenta.js` («Hoja imprimible»), `estilo.css` `@media print` |
+| **Schibsted Grotesk y Courier Prime**, locales | (sin efecto que contar) | 4 `woff2`; dos licencias OFL; `LICENCIAS.md` |
+| **JSON-LD**: `LegalService`, dos `Person`, `FAQPage`, `WebPage`; `BreadcrumbList` y `FAQPage` en la interior | Una máquina lee qué haría el estudio, que no existe, que no es asesoría legal y que sus dos abogados son ficticios | Crudo. `PostalAddress` sin calle, como Ocelo |
+| **Recorrido** | (sin efecto que contar) | `movimiento/recorrido.mp4` (10 s, 30 cps, 2.122 kB) y `.webm`; «hoy» fijado con `?hoy=` para que cuente siempre igual |
+
+**Doceavo** · servicios profesionales, contable y tributario (Concepción, ficticio) · home e interior «Calendario»
+
+| Ingrediente | Lo que hace en la pieza | Evidencia |
+|---|---|---|
+| ★ **El sitio sabe en qué mes estás** | El logo, el titular, el año en doce y la tabla del mes se dibujan con la fecha del día: el logo cambia solo cada mes, y el ícono de la pestaña también | `sitio/doceavo.js` (`pintarFecha`); `caso.md`, «El almanaque al revés» |
+| ★ **Calendario tributario 2026 en los datos** | El F29 de cada mes, la Operación Renta y las declaraciones juradas, con las fechas del SII | `sitio/datos.js` (una sola implementación para el navegador y para `_herramientas/construir.mjs`); `_herramientas/sii-calendario-2026.json`; ficha §4 |
+| **HTML con las fechas ya escritas** | Las fechas se leen sin JavaScript; el script repinta la fecha solo si hoy no es el día con que se construyó el HTML | `construir.mjs`; `datos.js` (`HOY_FIJO`) |
+| **Recursive**, local | (sin efecto que contar) | 1 `woff2` variable (305 kB) y su licencia OFL |
+| **JSON-LD**: `AccountingService`, `Person`, `FAQPage`, `OfferCatalog` sin precios; `WebPage`, `WebSite` y `BreadcrumbList` en la interior | Una máquina lee qué haría el estudio, que no existe y que su contadora es ficticia | Crudo. Su ficción dice «no tiene clientes ni dirección» y el nodo declara un `PostalAddress`: `senales-trabajo.md`, punto 2 (lo decide Bruno) |
+| **Recorrido** | (sin efecto que contar) | `movimiento/recorrido.mp4` (10 s, 30 cps, 754 kB) y `.webm` |
+
+**No tienen, ninguna:** métrica, usuarios, clientes, testimonios, precios con cifra, una URL servida (sus dominios
+`.cl` estaban libres al 16-oct, según sus fichas, y nadie los sirve) ni React, WebGL o IA. Y no tienen fila de resultado: en la sección «Resultado»
+del caso va «Sin métrica».
+
+### 2.8 · Las grabaciones de Combeau (18-oct)
+
+Material grande para el caso de cliente (vista 3; encargo §5), con el permiso de §2. `grabar-combeau.mjs`, método en
+§1; registro con estado HTTP, alto del documento, hasta dónde baja, sha256 y ffprobe de cada archivo en
+`crudo/grabaciones-combeau.json`. Los archivos, en `e12/inventario/grabaciones/`.
+
+| Grabación | Ancho | Dura | Hasta dónde baja | Archivo (H.264, 30 cps) y póster |
+|---|---|---|---|---|
+| bernardocombeau.cl | 1440 × 810 | 10 s | El final de la página | `combeau-fotografia-1440.mp4` · `-poster.jpg` |
+| bernardocombeau.cl | 390 × 844 (dpr 2) | 10 s | El final de la página | `combeau-fotografia-390.mp4` · `-poster.jpg` |
+| bernardocombeau.cl/modelo/ | 1440 × 810 | 12 s | Antes de sus medidas (`#details`) | `combeau-modelo-1440.mp4` · `-poster.jpg` |
+| bernardocombeau.cl/modelo/ | 390 × 844 (dpr 2) | 12 s | Antes de sus medidas (`#details`) | `combeau-modelo-390.mp4` · `-poster.jpg` |
+
+Las cuatro respondieron 200; 0 elementos animados al scroll en las dos páginas, así que el cuadro a cuadro muestra lo
+que ve una persona. En `/modelo/` a 1440 la red no llegó a quedar quieta en 10 s (su video y su reel se cargan al
+entrar en pantalla) y se grabó igual; el registro lo anota (`redQuietaAntesDeGrabar`). Rehecha la corrida, las tres
+grabaciones que ya existían salieron con los mismos bytes.
+
+**Un defecto de su sitio que sale en las grabaciones de `/modelo/`:** la sección «Reel» no tiene estilos propios
+(0 reglas `.reel` en sus dos hojas de estilo): el título queda pegado al borde izquierdo (x = 0), en la letra del
+sistema, y el video en el tamaño por defecto de un `iframe`, 300 × 150, a 1440 y a 390
+(`medir-reel-modelo.mjs` → `crudo/reel-modelo-bernardocombeau.cl.json`, 21:33 UTC). Entra al
+cuadro cerca del segundo 7,5 de las dos grabaciones de `/modelo/`. Para el caso: usar el tramo anterior o esperar el
+arreglo (§9, punto 3).
+
+**Qué no se grabó, a propósito:** ningún enlace de contacto entra a un cuadro (la herramienta lo comprueba y se
+detiene si alguno quedaría dentro); en `/modelo/`, ni sus medidas ni el pie de contratación con su correo y su
+WhatsApp. **Hueco nombrado:** el panel por dentro. `/admin/` pide entrar con una cuenta de GitHub con acceso a su repo;
+sin esa sesión no se graba, y la clave no se pide por el chat. Queda la captura de la pantalla de entrada, sin hacer clic
+(`combeau-panel-entrada-1440.png`). Para grabarlo hace falta que lo abra Bernardo, o Ramón con su cuenta (§9).
 
 ---
 
@@ -189,7 +327,7 @@ etiquetas solo pueden decir «en la maqueta», y por regla de la serie no lleva 
 |---|---|---|---|---|---|
 | verifica.spindlelab.cl | Chequeo de visibilidad (el mismo dos veces) | **54 → 94** | 14-oct 22:29Z → 16-oct 17:51Z | `e9/piezas/crudo/2026-10-14/verifica.spindlelab.cl/chequeo-ia.json` · `chequeo-verifica.spindlelab.cl.json` | Decide Ramón |
 | spindlelab.cl | Chequeo de visibilidad | **85** (igual que el 14-oct) | 16-oct 17:51Z | `chequeo-spindlelab.cl.json` | Decide Ramón |
-| bernardocombeau.cl | Chequeo de visibilidad | **76** | 16-oct 17:51Z | `chequeo-bernardocombeau.cl.json` | Pide OK escrito de Bernardo |
+| bernardocombeau.cl | Chequeo de visibilidad | **76** | 16-oct 17:51Z | `chequeo-bernardocombeau.cl.json` | Con fecha, por el permiso de la compuerta 1 (§2); **no como logro nuestro**: mide su portada, que tiene defectos abiertos (§0.4 y §4.3), y no hay un antes con el que compararlo (§7) |
 | spindlelab.cl | Verifica y Cumple | **36 → 73 → 100** | 9-sep y 21-sep: *dicho* (caso de éxito, `9ebf384`; post del 21-sep), sin crudo · 100: 14-oct y 16-oct, con crudo | `vyc-chequeo-spindlelab.cl.json` | Solo en Trabajo (E9), diciendo que el 23-sep cambió la regla y que el 100 es sobre 14 de 20 puntos de peso |
 | verifica.spindlelab.cl | Verifica y Cumple | **100** sobre 18 de 24 puntos de peso | 16-oct 17:52Z | `vyc-chequeo-verifica.spindlelab.cl.json` | Decide Ramón; con el «18 de 24» al lado |
 
@@ -231,7 +369,7 @@ pregunta, fecha y contenido suficiente en la portada.
 
 | Qué | Antes → después | Fecha y fuente | Publicable |
 |---|---|---|---|
-| Datos estructurados en Combeau | cero en todo el sitio → Person + LocalBusiness | 3-sep (`memoria/diego-web.md:66`) → servido hoy. Cualitativo: no hay puntaje del antes | Con OK de Bernardo |
+| Datos estructurados en Combeau | cero en todo el sitio → Person + LocalBusiness | 3-sep (`memoria/diego-web.md:66`) → servido hoy. Cualitativo: no hay puntaje del antes | Sí, cualitativo (permiso de la compuerta 1, §2) |
 | `h1` en Combeau | 7 de 11 rutas sin `h1` → igual | 10-oct (`encargo-h1-sitio-bernardo-10oct.md` §2) → hoy (`h1-bernardocombeau.cl.tsv`) | No: es un defecto abierto |
 | La frase del `h1` de la portada de Combeau | Servida como `Se construye<br>dirigiendo`; su `textContent` dice «Se construyedirigiendo» y su `innerText` (lo que se ve) las separa con un salto de línea → igual | 10-oct (`encargo-h1-sitio-bernardo-10oct.md` §3, que encontró la causa: el `split` de `fraseHero` en `index.astro:50`) → hoy 21:43 (`h1-portada-bernardocombeau.cl.json`) | No: es un defecto abierto |
 | Foco de teclado en el v3 | 111 paradas tapadas hacia adelante y 14 hacia atrás → 0 | QA del 6-oct (`acta-qa-final.md:29`) | Decide Ramón; es proceso interno |
@@ -296,7 +434,7 @@ pregunta, fecha y contenido suficiente en la portada.
 | **Esta página, como la lee un robot** | Por construir | Muestra el HTML que llega sin estilos ni scripts, los encabezados, los datos estructurados y lo que el servidor le respondió a cada robot | `fetch(location.href)` para el texto servido; el DOM para JSON-LD y encabezados; `/api/chequeo?dominio=spindlelab.cl` para la respuesta por robot. Pedir con el nombre de un robot solo se puede desde el servidor: el navegador no deja cambiar el user-agent |
 | **Modo esqueleto** | Por construir | Contornea los elementos reales y dibuja las columnas de la retícula leídas de su CSS | Una clase en `<html>` con `outline` y una capa que lee `getComputedStyle(...).gridTemplateColumns`. Reversible, quieto con movimiento reducido, sin ocultar nada al lector de pantalla. **Si es un dibujo aparte, es decoración** |
 | **Tu visita, medida** | Por construir | Cuánto pesó y tardó esta página en tu navegador, y qué datacenter respondió | Resource Timing, Navigation Timing, LCP, `/cdn-cgi/trace` sin la IP |
-| **La foto que sube Bernardo y la que ve su visitante** | Por construir | La misma foto: 805 kB como la sube, 95 kB como la entrega el sitio | Las dos URLs reales. **Pide su OK escrito** |
+| **La foto que sube Bernardo y la que ve su visitante** | Por construir | La misma foto: 805 kB como la sube, 95 kB como la entrega el sitio | Las dos URLs reales. Cubierto por el permiso de la compuerta 1, punto 2 (§2) |
 
 ### 6.2 · No verdaderos
 
@@ -314,9 +452,9 @@ pregunta, fecha y contenido suficiente en la portada.
 | Qué | Por qué | Fuente |
 |---|---|---|
 | Ningún resultado de negocio de un cliente (+X %, leads, retención, ventas) | No existe ninguna medición de resultado de cliente | `ventas/proyectos-en-curso.md`; `e11/material.md` §5-6 |
-| «IA propietaria», «modelos RAG», «despliegue de modelos», «WebGL», «React», «Estrategia C-Level» como ingredientes | Ninguna pieza los usa. La única con IA programada es Praxi, y está fuera | §2 y §8 |
+| «IA propietaria», «modelos RAG», «despliegue de modelos», «WebGL», «React», «Estrategia C-Level» como ingredientes | Ninguna pieza los usa. La única con IA programada es Praxi, y lo que hace está en `inventario-praxi.md` §5 | §2 y §8 |
 | El 40 % y el +150 % del segundo texto de Ramón | Son ejemplos, no datos | `insumos-ramon-16oct.md` §5 |
-| El 76 de Combeau, el peso de sus páginas o su foto en un antes y después | El permiso verbal es del caso, no de sus mediciones | Brief de obra §8.5 |
+| Los datos de contacto de Bernardo, sus medidas y su ficha de contratación de `/modelo/`, lo que pagó, o el 76 de su sitio como logro nuestro | El permiso de la compuerta 1 cubre grabar su sitio y publicar una medición fechada (*hasta el 18-oct esta fila decía que no*); no cubre sus datos, que el caso no necesita; y el 76 es una foto de su portada del 16-oct, con defectos abiertos y sin un antes medido, no un resultado nuestro | §2; brief, «Compuerta 1», fila 2 |
 | El 85 de spindlelab.cl y el 54 → 94 de Verifica, sin el OK de Ramón | Los puntajes del chequeo propio esperan su decisión | `e11/material.md` §6 |
 | El 36 → 73 → 100 fuera de Trabajo, o sin decir que cambió la regla y que el 100 es sobre 14 de 20 | E9 lo deja solo en Trabajo; el caso de éxito trae el aviso del 16-oct | `e9/brief-e9.md` §3; caso de éxito (main) |
 | Los tiempos de este inventario como velocidad para tus visitantes o como Core Web Vitals | Laboratorio, desde EE.UU., sin limitar la red | §1 |
@@ -333,9 +471,8 @@ pregunta, fecha y contenido suficiente en la portada.
 | Qué | Por qué queda fuera |
 |---|---|
 | Módulo 369 (cliente) | Sin permiso de caso; en construcción (Fase 1 desde el 6-oct). No se midió (`proyectos-en-curso.md:15`) |
-| Praxi (propio) | Otra marca y otro repo (Next.js 14 + Supabase, coach de IA). Dormido: daba 402 el 23-sep y Ramón pidió no tocarlo. No entra sin su decisión (brief §5) |
 | SimpleTrust (cliente de SEO) | Sin permiso; la solicitud nunca se envió (`ventas/pipeline.md:32`) |
-| Aplomo y Deslinde (concepto) | Ramón eligió una sola pieza de concepto; sin revisión fina (`portafolio/README.md`) |
+| **Raigal, Aplomo y Deslinde** (primera serie de concepto, 27 a 29-sep; 18-oct) | **Sus nombres ya son de alguien** (NIC Chile y el sitio de cada dominio, 16-oct): `raigal.cl` es una empresa de arquitectura y construcción, `deslinde.cl` una de gestión inmobiliaria y `aplomo.cl` está registrado desde 2008 (`portafolio/plan-e12.md` §1; `README.md`, «Primera serie»). Las reemplazan las cuatro piezas de §2.7 (compuerta 1, punto 5). Quedan como archivo en sus carpetas. **Raigal estaba en el índice** (§2.5 hasta el 18-oct) y sigue en la vista previa del v3 (`spindlelab-astro/`: la tira de la home, `/v3/trabajo/` y `/v3/servicios/desarrollo-web/`, noindex), que en el paso 2 no se toca: **no puede llegar a producción con ese nombre**, y sale al construir `/trabajo/` |
 | Índice de Citabilidad | Retirado: `/indice/` redirige con 301 a `/diagnostico/` (`_redirects:1-2`) |
 | Mini-diagnósticos entregados | Son de prospectos con nombre. Sirven como hallazgos generalizados (`e11/material.md` §1-2), nunca como caso |
 
@@ -343,16 +480,29 @@ pregunta, fecha y contenido suficiente en la portada.
 
 ## 9 · Lo que queda para otros
 
-1. **Ramón:** pedirle a Bernardo por escrito el caso, una medición fechada de su sitio, grabar su sitio y su panel, y
-   una foto para el antes y después. Y decidir si se muestran los puntajes propios (85; 54 → 94).
-2. **Troncal:** la ficha de Bernardo (`:15`) y el pipeline (`:26`) siguen diciendo que no hay permiso, y
-   `proyectos-en-curso` dice que sí, verbal. Son documentos compartidos: no los toqué.
+1. **Ramón:** el permiso de Combeau quedó resuelto por él en la compuerta 1, punto 2 (§2; *hasta el 18-oct este punto
+   le pedía el sí por escrito de Bernardo*). Queda decidir si se muestran los puntajes propios (85; 54 → 94), que es
+   la pregunta 3 de la compuerta 2 (`encargo-paso-2.md` §10). Si el caso necesita el panel por dentro, abrirlo con una
+   cuenta de GitHub con acceso al repo de Combeau (la suya, dueña de `rvalleespin/bernardo-combeau`, o la de Bernardo)
+   para grabarlo (§2.8). Lo de Praxi, en `inventario-praxi.md` §10.
+2. **Troncal:** la ficha de Bernardo (`oficina/clientes/bernardo-combeau.md:15`, «NO autorizado») y el pipeline
+   (`ventas/pipeline.md:26`, «aún no pedido») siguen contradiciendo a `proyectos-en-curso` (verbal, 30-sep) y a la
+   compuerta 1, punto 2 (16-oct). Releídos hoy: igual. Son documentos compartidos: no los toqué.
 3. **Sesión del sitio de Bernardo:** el encargo de `h1` del 10-oct sigue sin aplicar, y /modelo/ declara `lang="es"`
-   con el texto en inglés.
+   con el texto en inglés. Desde el 18-oct, además: la sección «Reel» de /modelo/ no tiene estilos (§2.8).
 4. **Construcción E12:** el CLS de 0,106 de la home v3 a 1440 (laboratorio, 2 de 3 corridas).
 5. **Lucía:** los kB cambiaron (ver «Correcciones»). El tablero de E12 los lee del JSON (`kbTransferidos` y el valor
    del `h1` de Combeau), así que se corrige al rearmarlo. `lock-koto.md:529` y `:556` dicen «786 KB → 92 KB», que en
    la unidad de este inventario son **805 kB → 95 kB**.
+6. **Bruno** (18-oct): en Doceavo, la ficción del JSON-LD dice «no tiene clientes ni dirección» y el mismo nodo
+   declara un `PostalAddress`; una de las dos sobra (`senales-trabajo.md`, punto 2).
+7. **Construcción E12** (18-oct): la capa de señales de `/trabajo/` y de cada caso es la de `senales-trabajo.md`. Dos
+   cosas de los prototipos que no se copian: el `@id` `#organizacion` de B (el grafo real usa `#org`) y su `/trabajo/`
+   sin `ItemList`. Y Raigal sale de `spindlelab-astro/` (§8).
+8. **El tablero de la compuerta 1** (`tableros/e12-laboratorio/`, 18-oct): su script lee este JSON (`proyectos`,
+   `telemetria`, `sandboxes`, `noSePuedeDecir`). Se armó y se rehace sobre su commit; armado sobre uno posterior al
+   18-oct, su sección 5 muestra las diez entradas de hoy en vez de las seis de entonces, que es lo que corresponde a un
+   inventario que cambió después de la compuerta.
 
 ## Crudos
 
@@ -360,8 +510,12 @@ En `e12/inventario/crudo/`, con sha256 en `inventario-casos.json`: las tres resp
 las dos de Verifica y Cumple, el HTML servido de spindlelab.cl y de Verifica, el extracto de Combeau, las cabeceras de
 cada sitio, `cabeceras-varias.txt` (CDN de imágenes, original subido, login, video del hero, vista previa, dominio
 viejo de Verifica, `/v3/` en producción), `h1-bernardocombeau.cl.tsv`, `h1-portada-bernardocombeau.cl.json`,
-`carga-playwright.json`, `imagenes-spindlelab.cl.json` y la traza de Cloudflare sin IP. Las herramientas quedan en
-`e12/inventario/herramientas/`: `medir-carga.mjs`, `medir-h1-portada.mjs` y `medir-imagenes.mjs`.
+`carga-playwright.json`, `imagenes-spindlelab.cl.json` y la traza de Cloudflare sin IP. **Del 18-oct:**
+`conceptos-repo.json` (las cuatro piezas, sobre `01ea00f`), `grabaciones-combeau.json` (registro de las cuatro
+grabaciones y de la pantalla de entrada del panel), `jsonld-ids-bernardocombeau.cl.json` (solo `@id`, `@type` y
+nombres de claves) y `reel-modelo-bernardocombeau.cl.json`. Las grabaciones y sus pósteres, en `e12/inventario/grabaciones/`. Las herramientas quedan en
+`e12/inventario/herramientas/`: `medir-carga.mjs`, `medir-h1-portada.mjs` y `medir-imagenes.mjs`; y del 18-oct,
+`medir-conceptos.py`, `grabar-combeau.mjs`, `ids-jsonld-combeau.py` y `medir-reel-modelo.mjs`.
 
 ## Correcciones
 
@@ -396,3 +550,25 @@ viejo de Verifica, `/v3/` en producción), `h1-bernardocombeau.cl.tsv`, `h1-port
 3. **Al pasar a kB las imágenes de spindlelab.cl apareció un error de contenido.** «Los posters de cuatro videos, de
    167 a 191 KB cada uno» no tenía crudo por pedido y contaba cuatro: son **cinco**, cuatro de 171 a 196 kB y el del
    hero, 41 kB (`medir-imagenes.mjs` → `imagenes-spindlelab.cl.json`, 21:44 UTC). Corregido en §4.2.
+
+**18-oct · defecto 3 del acta del paso 2** (`e12/acta-paso-2.md`, Javiera, vuelta 1: el inventario no se había
+actualizado con el encargo del paso 2 §5).
+
+| Qué | Antes | Ahora |
+|---|---|---|
+| Entradas del índice | Seis, con Raigal como concepto y sin Praxi (§0.1, §2) | Diez: seis reales con Praxi (§2.5) y las cuatro piezas de concepto (§2.7). Raigal, con Aplomo y Deslinde, a §8: sus nombres ya son de empresas reales |
+| Permiso de Combeau | «Verbal… sin respaldo escrito», y «Lo que el permiso de Combeau no cubre»: publicar una medición fechada, grabar su sitio o su panel, la foto del antes y después | «Ramón, 16-oct: no se necesita más permiso» (compuerta 1, punto 2), dicho por él y sin respaldo escrito de Bernardo en el repo; cubre lo que antes no, y deja fuera sus datos de contacto, sus medidas, lo que pagó y su sitio como vitrina de SEO (§2). Cambian con él §0.4, §4.1 (el 76), §4.3, §6.1, §7 y §9 |
+| Filas de los conceptos | Ninguna (las fichas las dejaban «para la fila del inventario que lleva Diego») | §2.7: lo común a las cuatro y de 5 a 6 ingredientes por pieza, cada uno con su evidencia en el repo y en `conceptos-repo.json`; dos marcados como candidatos a la línea del índice; sin métrica por regla |
+| Grabaciones de Combeau | No había (`direccion-b.md` §10 lo dice) | §2.8: cuatro grabaciones y la pantalla de entrada del panel; el panel por dentro, hueco nombrado |
+| Capa de señales de `/trabajo/` | No había | `e12/senales-trabajo.md` (Simón), con la clave `senales` en el JSON |
+| Praxi en §8 («No entra sin su decisión») | Fuera del índice | En el índice desde la compuerta 1, punto 3 (§2.5) |
+
+**Lo que no cambió:** las mediciones del 16-oct (§1 a §6) y sus crudos. El HTML de Combeau bajado el 18-oct dio el mismo
+sha256 que el del 16-oct.
+
+**Una corrida interrumpida, dicha.** `grabar-combeau.mjs` se corrió dos veces antes de esta: la primera (18-oct,
+hacia las 21:08 UTC) se cayó en `/modelo/` a 390, porque esa versión esperaba la red quieta sin tope; la segunda
+(21:15) se cortó con un reinicio del contenedor. Entre las dos dejaron tres grabaciones sin registro y ninguna del
+panel. Se puso tope a la espera y se volvió a correr completa (§2.8): sus archivos reemplazaron a los anteriores y son
+los que tienen fila en `grabaciones-combeau.json`. La medición de los conceptos se había hecho sobre `51a0735`; se rehizo sobre `01ea00f`
+porque entremedio cambiaron dos hojas de estilo (Ocelo y Sesenta, `9122486`).

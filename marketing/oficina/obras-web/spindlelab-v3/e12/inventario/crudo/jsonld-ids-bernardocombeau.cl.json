@@ -1,0 +1,160 @@
+{
+ "medidoEn": "2026-10-18T21:24Z",
+ "metodo": "curl -sS con user-agent de Chrome 141; extracto con ids-jsonld-combeau.py. Solo @id, @type y nombres de claves: ningún valor del grafo (trae datos de contacto del cliente).",
+ "paginas": [
+  {
+   "url": "https://bernardocombeau.cl/",
+   "bytes": 8544,
+   "sha256": "8e785562ae5999e3f7d701daf30a18c4dfc6461cb3758fffd7b915809a4a5403",
+   "nodos": [
+    {
+     "@id": "https://bernardocombeau.cl/#persona",
+     "@type": "Person",
+     "claves": [
+      "address",
+      "alumniOf",
+      "email",
+      "image",
+      "jobTitle",
+      "knowsAbout",
+      "name",
+      "sameAs",
+      "telephone",
+      "url",
+      "worksFor"
+     ]
+    },
+    {
+     "@id": null,
+     "@type": "PostalAddress",
+     "claves": [
+      "addressCountry",
+      "addressLocality",
+      "addressRegion",
+      "streetAddress"
+     ]
+    },
+    {
+     "@id": "https://bernardocombeau.cl/#negocio",
+     "@type": null,
+     "claves": []
+    },
+    {
+     "@id": null,
+     "@type": "CollegeOrUniversity",
+     "claves": [
+      "name"
+     ]
+    },
+    {
+     "@id": "https://bernardocombeau.cl/#negocio",
+     "@type": "LocalBusiness",
+     "claves": [
+      "address",
+      "areaServed",
+      "email",
+      "founder",
+      "image",
+      "name",
+      "priceRange",
+      "sameAs",
+      "telephone",
+      "url"
+     ]
+    },
+    {
+     "@id": null,
+     "@type": "PostalAddress",
+     "claves": [
+      "addressCountry",
+      "addressLocality",
+      "addressRegion",
+      "streetAddress"
+     ]
+    },
+    {
+     "@id": "https://bernardocombeau.cl/#persona",
+     "@type": null,
+     "claves": []
+    }
+   ]
+  },
+  {
+   "url": "https://bernardocombeau.cl/modelo/",
+   "bytes": 29288,
+   "sha256": "8b26150c559a90776d51fd830b4967365fba7e4ad8406efb571035fb8b6c6df5",
+   "nodos": [
+    {
+     "@id": "https://bernardocombeau.cl/#persona",
+     "@type": "Person",
+     "claves": [
+      "address",
+      "alumniOf",
+      "email",
+      "image",
+      "jobTitle",
+      "knowsAbout",
+      "name",
+      "sameAs",
+      "telephone",
+      "url",
+      "worksFor"
+     ]
+    },
+    {
+     "@id": null,
+     "@type": "PostalAddress",
+     "claves": [
+      "addressCountry",
+      "addressLocality",
+      "addressRegion",
+      "streetAddress"
+     ]
+    },
+    {
+     "@id": "https://bernardocombeau.cl/#negocio",
+     "@type": null,
+     "claves": []
+    },
+    {
+     "@id": null,
+     "@type": "CollegeOrUniversity",
+     "claves": [
+      "name"
+     ]
+    },
+    {
+     "@id": "https://bernardocombeau.cl/#negocio",
+     "@type": "LocalBusiness",
+     "claves": [
+      "address",
+      "areaServed",
+      "email",
+      "founder",
+      "image",
+      "name",
+      "priceRange",
+      "sameAs",
+      "telephone",
+      "url"
+     ]
+    },
+    {
+     "@id": null,
+     "@type": "PostalAddress",
+     "claves": [
+      "addressCountry",
+      "addressLocality",
+      "addressRegion",
+      "streetAddress"
+     ]
+    },
+    {
+     "@id": "https://bernardocombeau.cl/#persona",
+     "@type": null,
+     "claves": []
+    }
+   ]
+  }
+ ]
+}
