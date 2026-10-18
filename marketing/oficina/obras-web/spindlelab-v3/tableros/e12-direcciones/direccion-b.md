@@ -26,7 +26,7 @@ sin tocarlo y sale a la red por el proxy de la sesión). Sin él, las páginas a
 | 4 · Caso de concepto: Sesenta | `proto/b/trabajo/sesenta/index.html` | `b-sesenta-1440-primera.jpg` · `b-sesenta-390-primera.jpg` | `b-sesenta-1440-1de3…3de3` · `b-sesenta-390-1de3…3de3` |
 | 5 · Interior con el juego de color: Desarrollo web | `proto/b/servicios/desarrollo-web/index.html` | `b-desarrollo-web-1440-primera.jpg` · `…-390-primera.jpg` | `b-desarrollo-web-1440-1de2…2de2` · `…-390-1de5…5de5` |
 | Estados | | `b-trabajo-1440-visor.jpg` (mouse sobre Tonela: círculo, fila activa, visor con el video del concepto) · `b-home-1440-chequeo.jpg` (el chequeo corrido) | |
-| Recorridos | `video/b-home-1440.webm` (17,1 s) · `video/b-trabajo-1440.webm` (15,7 s) | | |
+| Recorridos | `video/b-home-1440.webm` (16,8 s) · `video/b-trabajo-1440.webm` (14,9 s), regrabados el 18-oct con las capturas planas | | |
 
 Capturas con Chromium 141 (`/opt/pw-browsers/chromium-1194`): 1440 × 900 a dpr 1 y 390 × 844 a dpr 2, página completa
 en tramos de 4.000 px de imagen como máximo, JPEG calidad 82, después de recorrer la página para que cada bloque
@@ -58,7 +58,7 @@ chequeo.
 
 | Decisión en B | Del lock | Valor |
 |---|---|---|
-| Lienzo `#060606` en todas las páginas, siempre | §20.2, regla 1 | Medido: 89,9 % de los píxeles fuera de medios son negros (luminancia ≤ 0,01) en la home y 87,6 % en `/trabajo/` (criterio 4: ≥ 80 %) |
+| Lienzo `#060606` en todas las páginas, siempre | §20.2, regla 1 | Medido: 89,9 % de los píxeles fuera de medios son negros (luminancia ≤ 0,01) en la home y 87,8 % en `/trabajo/` (criterio 4: ≥ 80 %) |
 | Placa `#141414` solo con rol: encabezado plegado, menú, panel del chequeo, marco de carga de cada medio, la placa de datos del resultado | §20.2 y §14 | Ninguna tarjeta de contenido |
 | Placa activa `#202020` solo en la fila de la tabla bajo el mouse o el foco y en la sección activa de la barra de 390 | §20.2 | Gris sobre ella 5,65:1 |
 | Señal: opción (a), la de Koto. Lo activo en blanco con un punto de 3 px; cero color de interfaz | §20.4 | El cobalto no aparece |
@@ -103,7 +103,8 @@ la ficha como tabla con filetes (Tipo, Año, Qué es, Hecho, Estado: «Fuera de 
 H.264) con su pie, y las cinco secciones: 12 filas con el medio principal y 17 medios del material que juntó Diego,
 en las cuatro formas de Koto y sin dos partidas seguidas. Los pies de Clara van debajo de lo que corresponde: «Los números de esta
 captura son de ejemplo…» bajo la conversación y bajo «Tu progreso, en números»; «Las personas… están generadas con
-IA» bajo la portada, el reel y el carrusel. **Lo propio de B está en «Sin métrica»:** la fila del resultado es una
+IA» bajo la portada, el reel y el carrusel. En la fila del teléfono (la conversación y la portada a 390, en Solución)
+cada captura lleva el suyo debajo: uno solo para las dos diría «esta captura» de una (defecto 2 del acta del paso 2). **Lo propio de B está en «Sin métrica»:** la fila del resultado es una
 placa de datos con el crudo de la verificación tal cual (`e12/praxi/crudo/verificacion-copia.txt`): 384 / 384 en 35
 archivos, 8 / 8 de la revisión de marca, `tsc` en exit 0, la lista de los 35 archivos con sus conteos y la fecha UTC.
 Cierra con el contacto de Clara y «Siguiente: Sesenta», con «Concepto · 2026» a la vista. Ningún enlace a `praxi.coach`.
@@ -115,6 +116,13 @@ cada placa y en el rótulo fijo del sitio que sale en el video. A 390 el medio p
 caso, no el video recortado. Cierra con «Siguiente: Verifica y Cumple».
 
 **5 · Desarrollo web** (el juego de color). Ver §4.
+
+**El título del caso es el único `h1`, en todos los anchos** (defecto 1 del acta del paso 2). A 1440 y a 1024 está
+arriba de la barra lateral. Bajo 834 px la barra no se apaga entera: su título baja al lugar que tiene en Koto a 390
+(después del medio principal a sangre y antes de la ficha, lock §21.3) y el resto de la barra se va, porque la ficha la
+repite la cabeza móvil y el índice lo lleva la barra flotante. Antes, bajo 834, el `h1` quedaba en `display: none` y lo
+que se veía era un `<p aria-hidden>`: un lector de pantalla no oía el nombre del caso. La primera pantalla a 390 quedó
+igual píxel por píxel.
 
 **Un solo juego de rótulos en los dos casos** (el pendiente 1 de Clara, que me toca): Problema · Hipótesis · Solución ·
 La pieza · Sin métrica, el de §21.5. En Sesenta quedan en el rótulo y en el índice; los títulos de Bruno («El rubro le
@@ -155,7 +163,7 @@ claro o de color, cubre al menos el 30 %):
 | Página a 1440 | Medios | Campos claros o de color | Techo del lock |
 |---|---|---|---|
 | Sesenta | 57,4 % | **29,3 %** | 10 a 35 % ✓ |
-| Praxi | 50,5 % | **8,8 %** | 10 a 35 %: **bajo el piso, con razón** |
+| Praxi | 50,3 % | **8,8 %** | 10 a 35 %: **bajo el piso, con razón** |
 
 Praxi es una marca oscura con **un solo acento**, el amarillo `#E2F349` del punto del logo, que su propio contrato
 (`brand.json`, inventario-praxi §7) deja como acento único. Llevarla al 10 % obligaba a pintar de amarillo más medios de
@@ -237,13 +245,14 @@ Todo con Chromium 141 y Playwright desde `spindlelab-astro/node_modules`, contra
 | Contraste de los estados | Gris sobre la fila activa `#202020` 5,65:1; blanco 16,29:1; texto del círculo 20,26:1 | `contraste-tokens.json` |
 | **Un `h1` por página** | 1 en las 10 vistas (5 × 2 anchos) | `mediciones.json` → `vistas` |
 | **Imágenes** | 0 rotas, 0 sin `alt`, en las 10 vistas (las imágenes de la lista móvil no se piden a 1440, donde están ocultas) | ídem |
-| Letras | Titular y cuerpo computan **Mona Sans**, rótulos y datos **DM Mono**; cargadas solo esas dos, de `proto/b/fuentes/` (Mona Sans recortada a wdth 85–100 y wght 300–420, 71 kB; DM Mono 500, 16 kB) | ídem |
+| Letras | Titular y cuerpo computan **Mona Sans**, rótulos, datos y `code` **DM Mono**; cargadas solo esas dos, de `proto/b/fuentes/` (Mona Sans recortada a wdth 85–100 y wght 300–420, 72 kB; DM Mono 500, 16 kB). La recortada se llama por dentro **«Riel Sans»** y en `b.css` «Riel Sans B»: la OFL de Mona Sans reserva el nombre «Mona» para las versiones modificadas (`herramientas/renombrar-fuente.py`; solo cambia la tabla `name`, el copyright queda igual). Por eso las mediciones dicen «Riel Sans B» donde antes decían «Mona Sans B»: es la misma letra | ídem |
 | Texto más chico | 11 px | ídem |
 | Errores de consola | 0 (sin contar los 404 de las rutas que no son parte del prototipo, abajo) | ídem |
 | **Primera pantalla de la home** (criterio 10) | 1440 × 900: `h1` de 125 a 383 px, campo y botón de 585 a 629 ✓. 390 × 844: campo de 648 a 692, botón de 700 a 744 ✓, los dos dentro | `primera-y-ficha.json` |
 | Ficha lateral pegajosa a media página (criterio 6) | Praxi y Sesenta a 1440, con la página a la mitad: la ficha ocupa de 56 a 900 px y la sección activa es «La pieza» | ídem |
-| Medios en los casos (criterio 6, ≥ ⅓) | Praxi 50,5 % · Sesenta 57,4 % | `campos.json` |
-| Negro fuera de medios (criterio 4, ≥ 80 %) | Home 89,9 % · `/trabajo/` 87,6 % | ídem |
+| Medios en los casos (criterio 6, ≥ ⅓) | Praxi 50,3 % · Sesenta 57,4 % | `campos.json` |
+| Negro fuera de medios (criterio 4, ≥ 80 %) | Home 89,9 % · `/trabajo/` 87,8 % | ídem |
+| **El acta del paso 2, con las herramientas de Javiera sin tocarlas** (18-oct) | `h1-caso-b.js`: un `h1` visible en Praxi y Sesenta a 360, 390, 768, 1024 y 1440, ningún título con `aria-hidden`. `pies-praxi.js`: ningún medio con cifras de demostración o personas generadas sin su pie (inventario-praxi §6). `mono.js`: 0 nodos en la mono genérica en las cinco vistas a 390 y 1440. `area-toque-390.js`: 0 objetivos bajo 44 × 44 en las cinco vistas; con `elementFromPoint` en los cuatro bordes, 0 tapados por otro objetivo | `cierre-acta-paso-2.json` (`herramientas/cierre-acta.mjs`) |
 | El chequeo | `example.com` → 30/100, 21 señales, 946 ms | `mediciones.json` → `interaccion` |
 | Índice | Círculo blanco con «Ver el concepto» sobre Sesenta, la fila en `#202020`, el visor con su portada y su video corriendo; el filtro «Concepto» deja Sesenta, Ocelo, Doceavo y Tonela | ídem y `trabajo-hover-1440.jpg` |
 | Movimiento reducido (emulado) | En las 5 vistas: sin círculo, 0 bloques escondidos, 0 videos corriendo | `mediciones.json` → `reducido` |
@@ -269,8 +278,15 @@ no se inventó ninguna página para taparlas.
   en `proto/b/`. Los videos de los conceptos se enlazan desde `marketing/portafolio/` (no se copiaron).
 - Las imágenes del índice de spindlelab.cl y del chequeo salen del **build local** de `spindlelab-astro/dist/`
   (servido aparte, solo lectura, con el aviso de cookies rechazado en esa pestaña): `herramientas/capturas-obra.mjs`.
-- Combeau modelo y Verifica y Cumple van con los mockups que ya existían (`spindlelab-astro/public/assets/img/obra/`),
-  no con grabaciones nuevas: las de Combeau del encargo §5 no están en el repo.
+- Combeau fotografía, Combeau modelo y Verifica y Cumple van con **su captura plana del sitio vivo** en el visor y en
+  «Cada pieza, con su prueba» (`herramientas/capturas-vivas.mjs`, 18-oct, 1440 × 1080 para el 4:3 y 1440 × 810 para el
+  16:9; solo GET y scroll; registro en `datos/capturas-vivas.json`). Hasta el 18-oct iban las maquetas de dispositivo
+  de `spindlelab-astro/public/assets/img/obra/`, y el lock pide la pieza plana en su marco (§13, punto 5, y §21.2;
+  defecto 8 del acta del paso 2). Grabaciones de Combeau siguen sin haber: las del encargo §5 no están en el repo.
+- **Para Clara y Diego:** la portada de Verifica y Cumple muestra a la sheriff de rosa a caballo, y el encargo de su
+  campaña dice «No regeneres el personaje» (`marketing/encargos-otras-sesiones/verifica-campana-linea-propia.md`), o
+  sea que es una imagen generada. No tiene fila en el inventario de casos ni pie; el `alt` la describe sin decir de dónde
+  sale. Si va un pie como el de Praxi, lo escribe Clara y lo respalda la fila.
 - Las pantallas de la app de Praxi: siguen como hueco nombrado (nota de Clara en «La pieza»).
 - El tablero de la compuerta 2 (A y B juntos, armado por script) no es parte de este encargo.
 
@@ -281,7 +297,9 @@ B=marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b
 node $B/herramientas/servir.mjs 8791 &                                   # sitio + /api/chequeo
 python3 -m http.server 8792 --bind 127.0.0.1 --directory spindlelab-astro/dist &
 node $B/herramientas/capturas-obra.mjs http://127.0.0.1:8792 /tmp/crudo  # dos portadas del índice
-python3 -I $B/herramientas/medios.py /tmp/crudo                          # derivados WebP y VP9
+node $B/herramientas/capturas-vivas.mjs /tmp/vivas                       # los tres sitios vivos, planos
+python3 -I $B/herramientas/medios.py /tmp/crudo /tmp/vivas               # derivados WebP y VP9 (con una lista al final, solo esos)
+python3 -I $B/herramientas/renombrar-fuente.py                           # el nombre interno de la letra recortada
 python3 -I $B/herramientas/armar.py                                      # las cinco vistas, con el texto tal cual
 U=http://127.0.0.1:8791/$B/
 node $B/herramientas/capturar.mjs $U                                     # img/b-*.jpg
@@ -290,6 +308,7 @@ node $B/herramientas/medir.mjs $U                                        # datos
 node $B/herramientas/primera.mjs $U                                      # datos/primera-y-ficha.json
 node $B/herramientas/medir-campos.mjs $U /tmp/campos && python3 -I $B/herramientas/campos.py /tmp/campos/campos.json $B/datos/campos.json
 (cd spindlelab-astro && node scripts/verificar.mjs --base ${U%/} --rutas /,/trabajo/,/trabajo/praxi/,/trabajo/sesenta/,/servicios/desarrollo-web/ --ancho 390)
+node $B/herramientas/cierre-acta.mjs $U                                  # datos/cierre-acta-paso-2.json
 ```
 
 ## 12 · Detector anti-slop, pasada propia (la de Javiera va aparte, en limpio)
@@ -314,3 +333,4 @@ composición depende del instrumento.
 |---|---|---|
 | 17-oct, 02:00 | Primera versión | Lucía, encargo del paso 2 |
 | 17-oct | El tablero de la compuerta 2 recomprimió en su lugar, con el mismo ancho, las capturas que pasaban de 450 kB: `b-home-1440-1de2.jpg` (458 → 411 kB, JPEG 80), `b-sesenta-1440-2de3.jpg` (530 → 433 kB, JPEG 72), `b-desarrollo-web-1440-1de2.jpg` (505 → 445 kB, JPEG 80) (`datos/recompresion.json`) | Lucía, tablero de la compuerta 2 |
+| 18-oct | Defectos 1, 2, 8, 9, 10 y 12 del acta del paso 2, cerrados: el título del caso es el `h1` en todos los anchos; la fila del teléfono de Praxi lleva un pie bajo cada captura; capturas planas de los tres sitios vivos en vez de las maquetas; `code` en DM Mono; la letra recortada se llama «Riel Sans» por dentro; 44 px de área a 390 y con puntero grueso (filas del índice, migas, «Menú», el salto al contenido y el siguiente caso), con relleno y margen negativo para que nada se mueva. Rehechas las capturas que cambian (las que solo cambiaban la hora de la franja quedaron como estaban), los dos recorridos, `mediciones.json`, `primera-y-ficha.json`, `campos.json` y `verificar.txt` (sin cambios: 0 hallazgos) | Lucía (B), acta de Javiera |
