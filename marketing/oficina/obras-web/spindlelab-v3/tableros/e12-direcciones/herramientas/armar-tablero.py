@@ -498,7 +498,7 @@ def pie_telefono(k, d):
 
 PIES_DEMO = {"teclado": pie_teclado, "reducido": pie_reducido, "telefono": pie_telefono}
 # el póster de cada demo es el cuadro de una medición que muestra lo que la demo dice
-POSTER_DEMO = {"teclado": "Tab 4", "reducido": "mouse sobre", "telefono": "la pieza a la vista"}
+POSTER_DEMO = {"teclado": "Tab 4", "reducido": "mouse sobre", "telefono": "tocó"}
 ETIQUETA_DEMO = {"teclado": "teclado en /trabajo/", "reducido": "movimiento reducido en la home", "telefono": "teléfono en /trabajo/"}
 
 

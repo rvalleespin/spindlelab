@@ -1,12 +1,12 @@
 {
- "fecha": "2026-10-18T22:00:49.291Z",
+ "fecha": "2026-10-18T22:32:11.905Z",
  "medidoPor": "Lucía (dirección de arte), herramientas/verificar.mjs",
  "anchos": {
   "360": {
    "cerrado": {
     "scrollWidth": 360,
     "ancho": 360,
-    "alto": 38801
+    "alto": 43042
    },
    "details": {
     "total": 10,
@@ -16,8 +16,8 @@
     "contenidoVisible": 10
    },
    "videos": {
-    "total": 8,
-    "ok": 8,
+    "total": 14,
+    "ok": 14,
     "fuentes": [
      "webm"
     ],
@@ -60,6 +60,48 @@
       "controles": true,
       "poster": true,
       "estado": "ok",
+      "src": "video/d-a-teclado.webm",
+      "dur": 9.766,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-a-reducido.webm",
+      "dur": 9.033,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-a-telefono.webm",
+      "dur": 7.6,
+      "w": 780,
+      "h": 1688,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
       "src": "video/b-home-1440.webm",
       "dur": 16.766,
       "w": 1440,
@@ -78,6 +120,48 @@
       "dur": 14.866,
       "w": 1440,
       "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-b-teclado.webm",
+      "dur": 9.733,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-b-reducido.webm",
+      "dur": 9.066,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-b-telefono.webm",
+      "dur": 10,
+      "w": 780,
+      "h": 1688,
       "posterCarga": true,
       "mp4Soportado": ""
      },
@@ -168,17 +252,17 @@
     }
    },
    "contraste": {
-    "nodos": 500,
+    "nodos": 529,
     "peor": 6.39,
     "bajos": []
    },
-   "alto": 57890,
+   "alto": 62155,
    "saltos": [],
    "letraMasChica": {
     "px": 11,
     "donde": "p «SpindleLab v3 · E12 · compuert»"
    },
-   "reloj": "19:00",
+   "reloj": "19:32",
    "errores": [],
    "terceros": [
     "fonts.googleapis.com",
@@ -189,7 +273,7 @@
    "cerrado": {
     "scrollWidth": 390,
     "ancho": 390,
-    "alto": 37904
+    "alto": 42116
    },
    "details": {
     "total": 10,
@@ -199,8 +283,8 @@
     "contenidoVisible": 10
    },
    "videos": {
-    "total": 8,
-    "ok": 8,
+    "total": 14,
+    "ok": 14,
     "fuentes": [
      "webm"
     ],
@@ -243,6 +327,48 @@
       "controles": true,
       "poster": true,
       "estado": "ok",
+      "src": "video/d-a-teclado.webm",
+      "dur": 9.766,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-a-reducido.webm",
+      "dur": 9.033,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-a-telefono.webm",
+      "dur": 7.6,
+      "w": 780,
+      "h": 1688,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
       "src": "video/b-home-1440.webm",
       "dur": 16.766,
       "w": 1440,
@@ -261,6 +387,48 @@
       "dur": 14.866,
       "w": 1440,
       "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-b-teclado.webm",
+      "dur": 9.733,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-b-reducido.webm",
+      "dur": 9.066,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-b-telefono.webm",
+      "dur": 10,
+      "w": 780,
+      "h": 1688,
       "posterCarga": true,
       "mp4Soportado": ""
      },
@@ -351,17 +519,17 @@
     }
    },
    "contraste": {
-    "nodos": 500,
+    "nodos": 529,
     "peor": 6.39,
     "bajos": []
    },
-   "alto": 56881,
+   "alto": 61116,
    "saltos": [],
    "letraMasChica": {
     "px": 11,
     "donde": "p «SpindleLab v3 · E12 · compuert»"
    },
-   "reloj": "19:01",
+   "reloj": "19:32",
    "errores": [],
    "terceros": [
     "fonts.googleapis.com",
@@ -372,7 +540,7 @@
    "cerrado": {
     "scrollWidth": 768,
     "ancho": 768,
-    "alto": 38482
+    "alto": 42941
    },
    "details": {
     "total": 10,
@@ -382,8 +550,8 @@
     "contenidoVisible": 10
    },
    "videos": {
-    "total": 8,
-    "ok": 8,
+    "total": 14,
+    "ok": 14,
     "fuentes": [
      "webm"
     ],
@@ -426,6 +594,48 @@
       "controles": true,
       "poster": true,
       "estado": "ok",
+      "src": "video/d-a-teclado.webm",
+      "dur": 9.766,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-a-reducido.webm",
+      "dur": 9.033,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-a-telefono.webm",
+      "dur": 7.6,
+      "w": 780,
+      "h": 1688,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
       "src": "video/b-home-1440.webm",
       "dur": 16.766,
       "w": 1440,
@@ -444,6 +654,48 @@
       "dur": 14.866,
       "w": 1440,
       "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-b-teclado.webm",
+      "dur": 9.733,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-b-reducido.webm",
+      "dur": 9.066,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-b-telefono.webm",
+      "dur": 10,
+      "w": 780,
+      "h": 1688,
       "posterCarga": true,
       "mp4Soportado": ""
      },
@@ -534,17 +786,17 @@
     }
    },
    "contraste": {
-    "nodos": 500,
+    "nodos": 529,
     "peor": 6.39,
     "bajos": []
    },
-   "alto": 58955,
+   "alto": 63414,
    "saltos": [],
    "letraMasChica": {
     "px": 11,
     "donde": "p «SpindleLab v3 · E12 · compuert»"
    },
-   "reloj": "19:01",
+   "reloj": "19:32",
    "errores": [],
    "terceros": [
     "fonts.googleapis.com",
@@ -555,7 +807,7 @@
    "cerrado": {
     "scrollWidth": 1440,
     "ancho": 1440,
-    "alto": 29074
+    "alto": 31857
    },
    "details": {
     "total": 10,
@@ -565,8 +817,8 @@
     "contenidoVisible": 10
    },
    "videos": {
-    "total": 8,
-    "ok": 8,
+    "total": 14,
+    "ok": 14,
     "fuentes": [
      "webm"
     ],
@@ -609,6 +861,48 @@
       "controles": true,
       "poster": true,
       "estado": "ok",
+      "src": "video/d-a-teclado.webm",
+      "dur": 9.766,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-a-reducido.webm",
+      "dur": 9.033,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-a-telefono.webm",
+      "dur": 7.6,
+      "w": 780,
+      "h": 1688,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
       "src": "video/b-home-1440.webm",
       "dur": 16.766,
       "w": 1440,
@@ -627,6 +921,48 @@
       "dur": 14.866,
       "w": 1440,
       "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-b-teclado.webm",
+      "dur": 9.733,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-b-reducido.webm",
+      "dur": 9.066,
+      "w": 1440,
+      "h": 900,
+      "posterCarga": true,
+      "mp4Soportado": ""
+     },
+     {
+      "pausado": true,
+      "autoplay": false,
+      "preload": "none",
+      "controles": true,
+      "poster": true,
+      "estado": "ok",
+      "src": "video/d-b-telefono.webm",
+      "dur": 10,
+      "w": 780,
+      "h": 1688,
       "posterCarga": true,
       "mp4Soportado": ""
      },
@@ -717,17 +1053,17 @@
     }
    },
    "contraste": {
-    "nodos": 500,
+    "nodos": 529,
     "peor": 6.39,
     "bajos": []
    },
-   "alto": 39926,
+   "alto": 42709,
    "saltos": [],
    "letraMasChica": {
     "px": 11,
     "donde": "p «SpindleLab v3 · E12 · compuert»"
    },
-   "reloj": "19:01",
+   "reloj": "19:32",
    "errores": [],
    "terceros": [
     "fonts.googleapis.com",
@@ -749,19 +1085,22 @@
   "tokensEnRoot": true,
   "fondoBody": true,
   "gutter": true,
-  "referencias": 127,
+  "temaOscuro": true,
+  "temaDataDark": true,
+  "temaDataLight": true,
+  "referencias": 145,
   "faltanEnArchivosJson": [],
   "sobranEnArchivosJson": [],
   "imagenesSobre450kB": [],
   "videosSobre8MB": [],
   "noExisten": [],
   "enImgSobre450kB": [],
-  "bytesTotal": 49836242,
-  "bytesPagina": 89739
+  "bytesTotal": 57406573,
+  "bytesPagina": 98341
  },
  "fallas": [],
  "navegador": "141.0.7390.37",
- "puerto": 37045,
+ "puerto": 36193,
  "reducido": {
   "videosCorriendo": 0,
   "autoplay": 0,
@@ -771,5 +1110,61 @@
   "el": "A 1 · Lo que decidiste",
   "contorno": "solid 2px rgb(255, 255, 255)"
  },
+ "tema": [
+  {
+   "visor": "light",
+   "dataTheme": null,
+   "fondo": "rgb(6, 6, 6)",
+   "texto": "rgb(255, 255, 255)",
+   "gris": "rgb(152, 152, 152)",
+   "esquema": "dark",
+   "tokens": "#060606 #141414 #FFFFFF #989898 #2D2D2D"
+  },
+  {
+   "visor": "light",
+   "dataTheme": "light",
+   "fondo": "rgb(6, 6, 6)",
+   "texto": "rgb(255, 255, 255)",
+   "gris": "rgb(152, 152, 152)",
+   "esquema": "dark",
+   "tokens": "#060606 #141414 #FFFFFF #989898 #2D2D2D"
+  },
+  {
+   "visor": "light",
+   "dataTheme": "dark",
+   "fondo": "rgb(6, 6, 6)",
+   "texto": "rgb(255, 255, 255)",
+   "gris": "rgb(152, 152, 152)",
+   "esquema": "dark",
+   "tokens": "#060606 #141414 #FFFFFF #989898 #2D2D2D"
+  },
+  {
+   "visor": "dark",
+   "dataTheme": null,
+   "fondo": "rgb(6, 6, 6)",
+   "texto": "rgb(255, 255, 255)",
+   "gris": "rgb(152, 152, 152)",
+   "esquema": "dark",
+   "tokens": "#060606 #141414 #FFFFFF #989898 #2D2D2D"
+  },
+  {
+   "visor": "dark",
+   "dataTheme": "light",
+   "fondo": "rgb(6, 6, 6)",
+   "texto": "rgb(255, 255, 255)",
+   "gris": "rgb(152, 152, 152)",
+   "esquema": "dark",
+   "tokens": "#060606 #141414 #FFFFFF #989898 #2D2D2D"
+  },
+  {
+   "visor": "dark",
+   "dataTheme": "dark",
+   "fondo": "rgb(6, 6, 6)",
+   "texto": "rgb(255, 255, 255)",
+   "gris": "rgb(152, 152, 152)",
+   "esquema": "dark",
+   "tokens": "#060606 #141414 #FFFFFF #989898 #2D2D2D"
+  }
+ ],
  "ok": true
 }

@@ -12,7 +12,9 @@
 //     ninguno corre solo (las fuentes H.264 se comprueban con ffprobe en armar-tablero.py: este Chromium no las lee);
 //   - las tres letras cargadas (DM Mono, Google Sans Flex y Mona Sans) y nada más de terceros que Google Fonts;
 //   - el contraste de cada nodo de texto contra su primer fondo opaco (piso 4,5:1, o 3:1 desde 24 px);
-//   - errores de consola, de página y de red.
+//   - errores de consola, de página y de red;
+//   - el tema (acta del paso 2, defecto 18): los selectores de tema del publicador están declarados, y con el visor en
+//     claro o en oscuro, y con data-theme="light" o "dark" en la raíz, el fondo, el texto y los tokens son los mismos.
 // Además, fuera del navegador: que `archivos.json` liste exactamente lo que el HTML referencia, que cada imagen pese
 // 450 kB o menos, cada video 8 MB o menos y el total 60 MB o menos, y que el HTML cumpla el contrato del publicador.
 // Escribe `verificacion/resultado.json` y unas capturas chicas en `verificacion/`; las de página completa van a una
@@ -54,6 +56,9 @@ const archivos = JSON.parse(fs.readFileSync(path.join(BASE, 'archivos.json'), 'u
   c.tokensEnRoot = /:root\s*\{[^}]*--lienzo/.test(crudo);
   c.fondoBody = /body\s*\{[^}]*background:/.test(crudo);
   c.gutter = /padding-left: max\(16px, env\(safe-area-inset-left/.test(crudo) && /padding-right: max\(16px, env\(safe-area-inset-right/.test(crudo);
+  c.temaOscuro = /@media \(prefers-color-scheme: dark\)\s*\{\s*:root:not\(\[data-theme="light"\]\)\s*\{[^}]*--lienzo/.test(crudo);
+  c.temaDataDark = /:root\[data-theme="dark"\][^{]*\{[^}]*--lienzo/.test(crudo);
+  c.temaDataLight = /:root\[data-theme="light"\][^{]*\{[^}]*--lienzo/.test(crudo);
   const refs = [...new Set([...crudo.matchAll(/(?:src|poster)="((?:img|video)\/[^"]+)"/g)].map((m) => m[1]))].sort();
   c.referencias = refs.length;
   c.faltanEnArchivosJson = refs.filter((r) => !archivos.rutas.includes(r));
@@ -82,6 +87,7 @@ const archivos = JSON.parse(fs.readFileSync(path.join(BASE, 'archivos.json'), 'u
   if (c.hojasExternas.some((h) => !h.startsWith('https://fonts.googleapis.com/'))) falla('hoja externa fuera de Google Fonts');
   if (c.scriptsExternos.some((s) => !/^https:\/\/cdn\.jsdelivr\.net\/npm\/[^/]+@\d+\.\d+\.\d+\//.test(s))) falla('script externo sin versión exacta de jsDelivr');
   if (!c.tokensEnRoot || !c.fondoBody || !c.gutter) falla('tokens en :root, fondo de body o gutter');
+  if (!c.temaOscuro || !c.temaDataDark || !c.temaDataLight) falla('faltan los selectores de tema (prefers-color-scheme y data-theme)');
   if (c.faltanEnArchivosJson.length || c.sobranEnArchivosJson.length) falla(`archivos.json no calza: faltan ${c.faltanEnArchivosJson} · sobran ${c.sobranEnArchivosJson}`);
   if (c.noExisten.length) falla(`no existen: ${c.noExisten}`);
   if (c.imagenesSobre450kB.length || c.enImgSobre450kB.length) falla(`imágenes sobre 450 kB: ${c.imagenesSobre450kB} ${c.enImgSobre450kB}`);
@@ -311,6 +317,31 @@ for (const ancho of [360, 390, 768, 1440]) {
   resultado.foco = await pg.evaluate(() => { const a = document.activeElement; const cs = getComputedStyle(a); return { el: a.tagName + ' ' + a.textContent.trim().slice(0, 30), contorno: `${cs.outlineStyle} ${cs.outlineWidth} ${cs.outlineColor}` }; });
   if (!/solid 2px/.test(resultado.foco.contorno)) falla('foco sin contorno visible ' + JSON.stringify(resultado.foco));
   await ctx.close();
+}
+
+// ---------------------------------------------------------------- 3 · el tema: el mismo negro con cualquier visor
+{
+  resultado.tema = [];
+  const leer = () => {
+    const r = getComputedStyle(document.documentElement), b = getComputedStyle(document.body);
+    const t2 = document.querySelector('.t2');
+    return { fondo: b.backgroundColor, texto: b.color, gris: t2 ? getComputedStyle(t2).color : null, esquema: r.colorScheme,
+      tokens: ['--lienzo', '--placa', '--blanco', '--gris', '--linea-seccion'].map((v) => r.getPropertyValue(v).trim()).join(' ') };
+  };
+  let base = null;
+  for (const esquema of ['light', 'dark']) {
+    const { ctx, pg } = await abrir({ viewport: { width: 390, height: 800 }, colorScheme: esquema });
+    for (const tema of [null, 'light', 'dark']) {
+      await pg.evaluate((x) => { if (x) document.documentElement.setAttribute('data-theme', x); else document.documentElement.removeAttribute('data-theme'); }, tema);
+      const m = { visor: esquema, dataTheme: tema, ...(await pg.evaluate(leer)) };
+      resultado.tema.push(m);
+      if (!base) base = m;
+      if (m.fondo !== 'rgb(6, 6, 6)' || m.texto !== 'rgb(255, 255, 255)' || m.gris !== 'rgb(152, 152, 152)' || m.tokens !== base.tokens || m.esquema !== 'dark')
+        falla('tema: cambia con el visor ' + JSON.stringify(m));
+    }
+    await ctx.close();
+  }
+  console.log('tema', resultado.tema.length, 'combinaciones, fondo', base.fondo, 'texto', base.texto, 'gris', base.gris);
 }
 
 await nav.close();
