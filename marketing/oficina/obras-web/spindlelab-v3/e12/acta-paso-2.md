@@ -1,4 +1,7 @@
-# Acta de QA · SpindleLab v3 · E12, paso 2 (compuerta 2) · vuelta 1
+# Acta de QA · SpindleLab v3 · E12, paso 2 (compuerta 2) · vueltas 1 y 2
+
+La vuelta 2 (18-oct, veredicto **Aprobado**, cuatro menores nuevos) está al final, antes del historial. Lo que sigue hasta
+allí es la vuelta 1, sin cambios.
 
 **Javiera (QA crítico), en subagente limpio.** No vi la conversación de construcción: leí el encargo, el brief (sección
 «Compuerta 1» primero), el lock, los inventarios, `direccion-a.md`, `direccion-b.md`, `caminos.md`, `plan-e12.md`, las
@@ -193,8 +196,178 @@ recorridos los muestran); Safari (los videos de los casos van solo en VP9, decla
 contraste del cobalto opcional de A (`?senal=cobalto`), que no va por defecto; si Gemini u OpenAI se usaron fuera del
 repo.
 
+# Vuelta 2 · 18-oct-2026
+
+**Javiera (QA crítico), en subagente limpio, de nuevo.** No vi la conversación de construcción ni la de los arreglos:
+leí el encargo (con la fila del 18-oct en su historial), el lock, los inventarios, la nota de Simón, `direccion-a.md`,
+`direccion-b.md`, el README del portafolio, `texto-paso2.json` y el tablero, y medí. Corrida entre las 22:10 y las 22:55
+UTC (19:10 a 19:55 de Chile).
+
+- **Auditado:** `53afa81` (último commit de construcción: el tablero rearmado). Mi commit de avance `8b98eef` solo trae
+  `e12/qa-paso-2/vuelta-2/`.
+- **Herramientas, crudos y capturas:** `e12/qa-paso-2/vuelta-2/`. Las de la vuelta 1, copiadas sin cambiar el método (solo
+  el puerto), más cuatro nuevas: `fondos.mjs` (criterio 4: el fondo de `html` y `body` y todo bloque claro o de color
+  fuera de los medios), `campos.py` (los campos de §20.1 a 1440, implementación mía, no la de Lucía), `honestidad.mjs`
+  (cifras, testimonios, promesas e IA prohibida en 18 páginas) y `h1-accesible.js`. Chromium 141.0.7390.37 de
+  `/opt/pw-browsers/chromium-1194` con el Playwright de `spindlelab-astro/node_modules`; servidor
+  `proto/b/herramientas/servir.mjs` en el puerto 8841 (raíz del repo y `/api/chequeo` de verdad), apagado al terminar.
+
+## Veredicto, vuelta 2: **Aprobado**
+
+Los 19 defectos de la vuelta 1 están cerrados, los cuatro mayores incluidos, y los 20 criterios del encargo se cumplen
+medidos (el 4, con el texto reescrito el 18-oct). El tablero se puede mostrar a Ramón. Quedan **cuatro menores nuevos**,
+ninguno de render: dos de honestidad en lo que muestra cada dirección (el 54 → 94 de Verifica en la home de A, que espera
+el sí de Ramón, y la edad y la estatura de Bernardo en una captura de B) y dos de documentos de A. **Plazos:** el 20 se
+cierra con la respuesta de Ramón a la pregunta 3 del encargo §10 o antes de que una captura de la home de A salga de la
+compuerta; el 21, antes de que una captura del índice de B salga de la compuerta y, en todo caso, antes de construir B;
+el 22 y el 23, en la spec si Ramón elige A.
+
+Lo que la compuerta tiene que contestar y no es un defecto: la pregunta 5 del encargo §10 (la hoja blanca de B, un desvío
+rotulado), pendiente de Ramón; y la 3 (los puntajes propios).
+
+## Los 19 defectos de la vuelta 1
+
+| # | Dueño | Estado | Evidencia |
+|---|---|---|---|
+| 1 | Lucía B | **Cerrado** | B Praxi y B Sesenta, a 360, 390, 768, 1024 y 1440: un `h1` («Praxi. Se acuerda de cada serie», «Sesenta El plazo antes que el juicio»), con caja y sin ningún ancestro con `display: none`, `visibility: hidden`, `aria-hidden` ni `inert`; el `<p aria-hidden>` salió. Un `h1` visible en las 50 combinaciones de las diez vistas | `crudo/h1-casos.txt` (`herramientas/h1-accesible.js`); `crudo/medicion-vistas.json` |
+| 2 | Lucía B | **Cerrado** | La fila del teléfono lleva un pie bajo cada captura: «Los números de esta captura son de ejemplo…» bajo la conversación y «Las personas de las fotos y del video están generadas con IA…» bajo la portada. En A y en B, cero medios con cifras de ejemplo o personas sin su pie (los que no lo llevan, revisados mirando la imagen: «Lo que te llevas gratis», las reglas, los planes y «Llevas tres meses en 60 kg», texto de su portada, no un dato) | `herramientas/pies-praxi.js`; `capturas/evidencia/primeras-390-a-b.jpg` |
+| 3 | Diego | **Cerrado** | `inventario-casos.md` y `.json` (`76c7e72`): las cuatro piezas con sus ingredientes (§2.7); el permiso «Ramón, 16-oct: no se necesita más permiso», dicho por él y sin respaldo escrito de Bernardo, que ahora cubre grabar su sitio y una medición fechada (§2); las cuatro grabaciones de Combeau y la pantalla de entrada del panel (§2.8, `e12/inventario/grabaciones/`, nueve archivos); el panel por dentro como hueco nombrado; Raigal en §8, fuera del índice; la nota de Simón, `e12/senales-trabajo.md`, con la clave `senales` en el JSON | Lectura de los dos archivos; `ls e12/inventario/grabaciones/` |
+| 4 | Mauro | **Cerrado en el encargo** | `01ea00f`: el criterio 4 y la vista 5 dicen lo que Koto hace (el lienzo no cambia; el color, dentro de los marcos; la hoja de B, un desvío rotulado) y la pregunta 5 de §10 es nueva. Medido con el texto nuevo: cumple (criterio 4, abajo). La respuesta de Ramón a la pregunta 5 es de la compuerta, no del encargo | `encargo-paso-2.md` §2, §7.4, §10 e historial |
+| 5 | Lucía tablero | **Cerrado** | Seis demos grabadas del navegador, teclado, movimiento reducido y teléfono en A y en B (de 7,6 a 10,0 s con `ffprobe`), con pies medidos mientras se grababan; el tablero dice por qué las vistas no van vivas (el chequeo pide su servidor, B toma recorridos de fuera de su carpeta, y pasarían de 57,4 a 69,4 MB). Miré seis cuadros de cada demo: lo que dicen los pies se ve | `ffprobe` de `video/d-*.webm`; hojas de contacto en el scratchpad |
+| 6 | Lucía A | **Cerrado** | Lock §6.4 con dos sistemas (A Google Sans Flex, B Mona Sans) y la interlínea del cuerpo calculada con fontTools (A 1,35, B 1,4; `tableros/e12-laboratorio/datos/interlinea.json`); §16 con la primera pantalla de A y la letra como eje; §17 reescrito (sale «tinta `#111111` y cobalto»); cinco filas nuevas en §19. Medido en el render: cuerpo de A 21,6 / 16 px = 1,35; de B 22,4 / 16 = 1,4 | `crudo/medicion-vistas.json` (`famP`) |
+| 7 | Bruno | **Cerrado** | README con la historia, la segunda serie (04 a 07) en el índice, la primera (01 a 03) como archivo con lo que encontró NIC Chile, y «una sola pieza de concepto» marcada como superada | `marketing/portafolio/README.md` |
+| 8 | Lucía B | **Cerrado** (pero ver el 21) | Las cuatro imágenes (`v-combeau-fotografia`, `v-combeau-modelo`, `v-verifica-y-cumple`, `p-combeau`) son capturas planas de la primera pantalla de cada sitio vivo, sin portátil ni teléfono. La de `/modelo/` trae una línea que el inventario deja fuera: defecto 21 | Las cuatro `.webp`, miradas |
+| 9 | Lucía B | **Cerrado** | Los dos `code` de Sesenta en «DM Mono B» 500 a 12 px; cero elementos con texto en la monoespaciada genérica en las diez vistas | `herramientas/mono.js`, `code.js` |
+| 10 | Lucía B | **Cerrado** | La tabla `name` dice «Riel Sans» en los IDs 1, 3, 4, 6, 16, 17 y 25; «Mona» queda solo en el ID 0 (el copyright con su «Reserved Font Name», que la OFL obliga a conservar) y en el 10 (la descripción de dónde sale). La familia en CSS es «Riel Sans B»; los contornos y los ejes son los de Mona Sans 2.000 (wdth 85-100, wght 300-420) | fontTools sobre `proto/b/fuentes/mona-sans-var-b.woff2` |
+| 11 | Lucía A | **Cerrado** | Cero controles bajo 44 × 44 px a 390 en las cinco vistas de A (los enlaces dentro de una frase quedan fuera, como en la vuelta 1) | `crudo/area-toque-390.txt` |
+| 12 | Lucía B | **Cerrado** | Cero en las cinco vistas de B | ídem |
+| 13 | Lucía A | **Cerrado** | A Praxi y A Sesenta muestran los cinco rótulos: Problema, Hipótesis, Solución, La pieza, Sin métrica; el lock §21.5 lo dice como desvío de Koto, con fila en §19 | `crudo/interacciones.json` (`caso.rotulos`) |
+| 14 | Lucía A | **Cerrado** | Bajo las tres portadas de «Lo que construimos»: «Cliente · 2026», «Propio · 2026», «Concepto · 2026» | Texto de `proto/a/servicios/desarrollo-web/index.html` |
+| 15 | Clara | **Cerrado** (pero ver el 20) | El 36 → 73 lleva la condición del 54 → 94 y una alternativa medida; B muestra la alternativa («Sin métrica de negocio. Si no aceptas las cookies, la portada no carga nada de Google ni de Meta (16-oct-2026)»); «36 de 100» aparece 0 veces en los diez HTML | `crudo/texto.json`; `grep` |
+| 16 | Clara | **Cerrado como pedía el cierre** | Escrito para la construcción en `texto-paso2.json` («para_la_construccion»: en A las herramientas salen del índice; en B quedan después de lo que hacen, con la nota nueva); la nota actual va marcada con su condición. Los prototipos siguen con la nota hasta que Ramón elija, y eso es lo que el cierre pedía | `texto-paso2.json`, página `/trabajo/` |
+| 17 | Bruno | **Cerrado** | Tonela: el texto más chico mide 11 px a 360, 390, 768 y 1440 (12 en Inspección); la «t» con `max(11px, .5em)`; la lista de bandas con `aria-hidden` y las ocho capacidades en el `aria-label` de la figura; sobre medio, 0 nodos bajo la mediana de contraste estimada (229 a 390, 301 a 1440) | `crudo/medicion-conceptos.json`; `crudo/sobre-medio-tonela-*.json` |
+| 18 | Lucía tablero | **Cerrado** | `:root`, `@media (prefers-color-scheme: dark)` con `:root:not([data-theme="light"])`, `@media (prefers-color-scheme: light)` con `:root:not([data-theme="dark"])` y `:root[data-theme]`, los cuatro con el mismo negro; el comentario dice por qué es de un solo tema | `tablero.html`, líneas 9 a 76 |
+| 19 | Lucía A | **Cerrado** | `direccion-a.md` §1: «12,7 s; 12,72 con `ffprobe`»; `ffprobe` da 12,720000 | `ffprobe video/a-trabajo-1440.webm` |
+
+## Los 20 criterios del encargo, medidos de nuevo
+
+| # | Resultado | Evidencia |
+|---|---|---|
+| 1 | **Cumple.** A y B, cinco vistas cada una; las 20 primeras pantallas y las 20 páginas completas en `img/` del tablero | `archivos.json`; `capturas/primera/` (50 mías: 10 vistas × 5 anchos) |
+| 2 | **Cumple.** A: `h1` en Google Sans Flex 300 al 76 %, cuerpo 370; rótulos DM Mono 500; `document.fonts` carga solo esas dos. B: `h1` en «Riel Sans B» (Mona Sans 2.000 renombrada, defecto 10) 340 al 89 %, cuerpo 390; datos en DM Mono B 500; solo esas dos. Cero texto en la monoespaciada del navegador | `crudo/medicion-vistas.json` (`fuentes`, `famH1`, `famP`, `fams`) |
+| 3 | **Cumple**, sin cambios: titular de 48 contra 87,84 px; muro contra tabla con visor; medios en `/trabajo/` 53,0 % contra 2,9 %; primera pantalla con la cinta contra la frase a cartel sin imagen | `capturas/primera/*-1440-primera.jpg`; `crudo/cobertura.json` |
+| 4 | **Cumple, con el texto del 18-oct.** `html` y `body` computan `rgb(6, 6, 6)` en las diez vistas. Negro fuera de medios a 1440: A del 95,3 al 97,2 %; B home 93,6, `/trabajo/` 91,0, Praxi 96,6, Sesenta 97,5; claro del 0,2 al 0,9 %. B Desarrollo web, 77,3 % de negro y 17,0 % de claro: la hoja, el desvío rotulado en `direccion-b.md` §4 y dos veces en el tablero, con su texto medido (0 bajo AA). Campos en los casos (mi cuenta): Sesenta A 25,9 % y B 25,1 % (techo de 10 a 35); Praxi A 6,8 % y B 4,7 %, bajo el piso y con la razón escrita en `direccion-a.md` §9.3 y `direccion-b.md` §4 (con su herramienta dan 6,0 y 8,8: cambia el umbral, no la conclusión); seguidos, 3 como máximo (techo 4). Bloques claros o de color fuera de los medios: en A, ninguno que no sea un control (el mayor, un botón de 15.224 px²); en B, solo la hoja (1408 × 906) y el punto activo de 3 × 3. El tablero cita koto.com/projects/lyft, `#F1F0EB` y `#FF00C4`. Ver el defecto 22 (la vista 5 de A contra el lock) | `crudo/fondos.json`, `crudo/cobertura.json`, `crudo/campos.json` |
+| 5 | **Cumple.** 7.815 nodos de texto en las diez vistas × cinco anchos, compuestos sobre su fondo: 0 bajo el mínimo, 0 sobre un medio. Sin color de señal | `crudo/medicion-vistas.json` (`contraste`) |
+| 6 | **Cumple.** A 1440, a media página: el `aside` pegajoso de 80 a 884 px; B, de 56 a 900. A 390: una columna, la ficha antes de las secciones; B 390: la cabeza con el `h1` y la ficha arriba. Los cinco rótulos en orden en las cuatro páginas. Medios a 1440: A Praxi 49,8 %, A Sesenta 59,1 %, B Praxi 46,3 %, B Sesenta 57,5 % | `crudo/interacciones.json` (`caso`); `capturas/interaccion/caso-*-mitad.jpg` |
+| 7 | **Cumple.** Los mismos números que en la vuelta 1, todos con fila en `inventario-praxi.md`; la placa de B (384 de 384 en 35 archivos, 8 de 8, la cuenta por archivo, `a360d7a`) es la copia de `e12/praxi/crudo/verificacion-copia.txt`. Ningún resultado de negocio | `herramientas/num.js` |
+| 8 | **Cumple.** «Concepto» en la primera pantalla a 1440 y 390 en las ocho páginas de concepto (Tonela: pegajoso arriba a 1440 y barra fija abajo a 390; Ocelo y Sesenta, arriba; Doceavo, nota al margen fija a 1440 y arriba a 390) y en la ficha del caso Sesenta (A a 170 y 646 px; B a 180 y 645). En los sitios, con la frase entera y de 12 px o más; en la ficha del caso, 11 px en A y 12 en B. Cero porcentajes, multiplicadores, conteos o testimonios; las tres «promesas» de Ocelo son negaciones («ninguna cirugía garantiza»). Las ocho declaran la ficción en el JSON-LD, ninguna trae `Review` ni `AggregateRating`, ninguna pide nada a terceros | `crudo/medicion-conceptos.json`, `crudo/honestidad.json`; `herramientas/rotulo-concepto.js` |
+| 9 | **Cumple.** «(10)» y 10 entradas en A y en B; «Concepto (4)» deja Sesenta, Tonela, Ocelo y Doceavo y marca `aria-pressed`; cada entrada dice su tipo; las reales llevan dos ingredientes con fila, los conceptos ninguno | `herramientas/filtro.mjs`, `linea-indice.js` |
+| 10 | **Cumple.** A 1440 × 900: `h1` de 664 a 760, campo de 659 a 703, botón de 711 a 755. B 1440 × 900: `h1` de 125 a 383, campo y botón de 585 a 629. A 390 × 844: campo y botón de 776 a 820, **a 24 px del borde**. B 390 × 844: campo de 648 a 692 y botón de 700 a 744, a 100 px. Fuera del criterio: A a 360 × 800 deja el campo de 816 a 860, bajo el borde (en la vuelta 1, 804; el encabezado creció 12 px con el área de toque del logo; A lo dice en §9.9). Servicios: Desarrollo web primero; Paid Media y Gestión de redes en una línea | `crudo/medicion-vistas.json` (`primera`) |
+| 11 | **Cumple.** Cero cifras con «$» fuera de los dos JSON; los cuatro planes con nombre, precio, línea y todos sus puntos, en A y en B | `crudo/precios.json` |
+| 12 | **Cumple.** Los 9 ingredientes del caso con fila; praxi.coach dio `402 DEPLOYMENT_DISABLED` el 18-oct a las 22:21 UTC (`datos/estado-praxi.txt`) y a mí también, el mismo día; ninguna vista lo enlaza ni lo nombra. `git -C /home/user/praxis-coach log -1`: `a360d7a`; `status`: limpio (medido al cerrar) | `crudo/honestidad.json` (`praxiCoach`: 0) |
+| 13 | **Cumple.** «IA propietaria», «modelo(s) RAG», «despliegue de modelos», «40 %», «+150 %»: 0 en los diez HTML, las ocho páginas de concepto y el tablero | `crudo/honestidad.json` |
+| 14 | **Cumple, con un reparo nuevo (defecto 20).** Los textos de Clara están en las dos direcciones salvo los condicionados y las notas para el armador; el único faltante nuevo es el 36 → 73 en B, que va con su alternativa (defecto 15). Las diferencias A/B son las que lista el tablero (43 palabras solo en A, 156 solo en B). 0 voseo, 0 «usted» (los «su sitio» son de Verifica, en tercera persona), 0 verbos de folleto, 0 rayas de golpe (las cuatro de B en `/trabajo/` son celdas vacías). El único nombre propio de persona real sigue siendo el del cliente | `crudo/texto.json` |
+| 15 | **Cumple**, sin cambios desde la vuelta 1 (`e12/logo/` no cambió) | `capturas/logos-dpr1.png` |
+| 16 | **Cumple.** Motion 13.5.0 local en las dos (sha256 `0d94331c…`, el mismo). Con `reduce`, en las diez vistas a 1440 y 390: 0 animaciones, 0 videos corriendo, sin `autoplay`, la pantalla igual a los 2 s. Táctil: `(pointer: fine)` falso; el círculo en `display: none` (A) o inexistente (B). Tab: 0 paradas sin contorno. Los siete videos que corren solos más de 5 s tienen «Pausar el video», enfocable, y Enter los pausa | `crudo/interacciones.json`; `herramientas/tactil.mjs` |
+| 17 | **Cumple.** Desborde: 0 en las 50 combinaciones, tal cual y sin `overflow` en `html` y `body`. Un `h1` visible y que el lector oye en las 50. Texto más chico: 11 px. Consola: 0 errores (los «fallidos» son `ERR_ABORTED` de pedidos de rango de video, no respuestas de error) | `crudo/medicion-vistas.json` |
+| 18 | **Cumple.** `git diff 62ffcad~1 HEAD` sobre `spindlelab-astro/`, el manual, `CLAUDE.md`, `ventas/` y el plan: vacío. Higgsfield, leído hoy: 0 créditos, plan gratuito, último gasto el 21-sep-2026. Gemini y OpenAI: sin clave ni rastro en el repo; no se puede comprobar desde afuera | `mcp__higgsfield__balance`, `transactions` |
+| 19 | **Cumple.** Saqué `marketing/oficina/obras-web/spindlelab-v3` y `marketing/portafolio` de `53afa81` con `git archive`, borré `tablero.html`, `archivos.json`, `img/t-*` y `video/t-*` (53 archivos) y corrí `armar-tablero.py`: los 53 salen **idénticos byte a byte** (md5), en 43 s. Página de 98.341 bytes, sin doctype ni `html`, `head` o `body`, `title` de tres palabras, `viewport-fit-sides`, la única hoja de estilo es de Google Fonts, un solo script y en línea | `crudo/reproduccion-tablero/` |
+| 20 | **Hecho**, abajo | |
+
+## Los siete puntos de la corrida
+
+1. **Criterios:** la tabla de arriba.
+2. **Distintas de verdad y fieles a Koto:** lo mismo que en la vuelta 1, y lo que cambió no las acercó: A carga el trabajo a
+   sangre (53 % de medios en `/trabajo/`), titular a 48 px, muro; B carga el instrumento, frase a 88 px, tabla con visor
+   (2,9 % de medios). Las dos con el lienzo `#060606` en todas las páginas y el color dentro de los marcos; el único color
+   que pone la interfaz es la hoja de B, rotulada.
+3. **Render a 360, 390, 768, 1024 y 1440:** 0 desborde con y sin recorte; un `h1` en las 50; AA en los 7.815 nodos,
+   también en la hoja blanca; foco visible con Tab; movimiento reducido quieto; imágenes: 0 rotas (la portada 4:5 de
+   Sesenta en A sigue oculta y diferida a 1024 y 1440, como en la vuelta 1); videos: los de A y los de los casos de B en
+   `readyState` 4; el visor de B no tiene `src` hasta que se pasa o se enfoca una fila (diseño).
+4. **Honestidad:** los conceptos, rotulados en cada primera pantalla, sin cifras ni testimonios, nombres que suenan
+   inventados y comprobados; Praxi, con pie en cada medio que trae cifras de ejemplo o personas generadas; ningún prospecto
+   nombrado; ninguna generación pagada. **Dos fallas menores:** el 54 → 94 que A muestra sin el sí de Ramón (defecto 20) y
+   la línea de edad y estatura de Bernardo en la captura nueva de B (defecto 21).
+5. **Texto:** el JSON de Clara, tal cual, comparado por script (`herramientas/texto.mjs`); términos técnicos explicados
+   en la home y en Desarrollo web; los del índice, escritos para la construcción (defecto 16); sin raya de muletilla;
+   precios idénticos.
+6. **Logo:** los tres caminos se leen a 24 y 16 px, en blanco sobre `#060606` y en negro sobre blanco, a dpr 1; los favicon
+   «S» y «SL» se leen a 16, el huso del camino 2 se lee como signo (riesgo ya escrito por Bruno).
+7. **El tablero:** contrato y reproducción (criterio 19). Render a 360, 390, 768 y 1440: 0 desborde con y sin recorte, un
+   `h1`, 0 saltos de encabezado, de 610 a 616 nodos de texto con 0 bajo AA y 0 bajo 11 px, 103 imágenes que cargan todas al
+   forzar las diferidas, 14 videos con metadata y ninguno corriendo solo, 0 errores, terceros solo `fonts.googleapis.com` y
+   `fonts.gstatic.com`. Foco: en los videos el estilo computado no trae contorno, pero el anillo se ve
+   (`capturas/evidencia/tablero-1440-foco-en-video.png`). **Peso:** 57.406.573 bytes en 146 archivos (la página y 145
+   rutas); la imagen mayor, 447.203 bytes; el video mayor, 2.574.964. Cabe en una publicación (≤ 255 archivos y ≤ 64 MB).
+   `archivos.json`: las 145 rutas existen y son exactamente las 145 que el HTML referencia (`src`, `poster`, `href`,
+   `url()`). `crudo/tablero.json`, `capturas/tablero/`.
+
+**Revisado y no es defecto:** Doceavo a 360 y 390 tiene 365 nodos de texto del color de su casilla (contraste 1). Son los
+días del año dentro de `figure.anio`, con `aria-hidden`: a ese ancho la figura pasa a puntos de color, y el número no
+está para leerse. Estaba igual en la vuelta 1. Y el rótulo de Doceavo a 390 va pegajoso dentro de su `aside` y se va al
+bajar; cumple el criterio 8 (primera pantalla), pero el README dice «fijo»: si se quiere a la letra, es una línea de CSS.
+
+## Defectos de la vuelta 2
+
+| # | Severidad | Dueño | Dónde | Qué está mal | Contra qué | Cómo se cierra |
+|---|---|---|---|---|---|---|
+| 20 | Menor | Lucía A | `proto/a/index.html`, «Cada pieza, con su prueba» | Muestra por defecto el 54 → 94 de Verifica y Cumple («Su sitio sacaba 54 de 100… Dos días después sacó 94»). Es un puntaje de nuestro propio chequeo que `texto-paso2.json` condiciona («Decide Ramón (encargo §10.3)») e `inventario-casos.md` pone entre lo que no se dice sin su OK; B muestra la alternativa. El tablero lo declara. Estaba igual en la vuelta 1 y no lo marqué: es la clase del defecto 15 | Encargo §10.3; condición de Clara; inventario, «Lo que no se puede decir» | A muestra la alternativa de Clara hasta que Ramón conteste; si dice que sí, las dos lo muestran |
+| 21 | Menor | Lucía B | `proto/b/medios/v-combeau-modelo.webp` (visor y miniatura del índice de B) | La captura plana nueva (defecto 8) trae, bajo el retrato, «Santiago, Chile · 46 · 185 cm · Grey Hair · Blue Eyes», y el `alt` dice «y sus medidas debajo». El inventario deja fuera del caso, aun con el permiso de la compuerta 1, «sus medidas y su ficha de contratación de `/modelo/`». La de A corta sobre esa línea | `inventario-casos.md` §2 y «Lo que no se puede decir» | Recortar sobre la línea, como A, y el `alt` sin «sus medidas»; o, si Ramón dice que la línea de su portada está cubierta, Diego lo escribe en el inventario. Captura: `capturas/evidencia/b-v-combeau-modelo-linea-de-medidas.jpg` |
+| 22 | Menor | Lucía A | `proto/a/servicios/desarrollo-web/` (vista 5) y lock §20.3 | Medida como §20.1, la vista 5 de A tiene 13,3 % de campos a 1440: 11,5 % claro (la franja de Doceavo, 1408 × 589, con `#DBE5D3` en el 70 % del marco) y 1,8 % de color. El lock §20.3 pone para las interiores de la casa «0 campos» (Koto: de 0 a 0,9 % de claro y 0 de color); el encargo, criterio 4, admite el color «con el trabajo (franja, portadas o fotos)». `direccion-a.md` §7 mide ese 13,3 % contra el techo de los casos, no contra el de las interiores. Lock y encargo no dicen lo mismo, y A no lo declara | Lock §20.1 y §20.3; encargo criterio 4 | O el lock dice qué franja admite una interior y con qué techo, o A declara el desvío en §9 con la cifra. Se mide con `herramientas/campos.py` |
+| 23 | Menor | Lucía A | `direccion-a.md` §9.2 | Dice «Mauro tenía que ajustar ese criterio y en el repo sigue igual»; el encargo se reescribió en `01ea00f`, antes del último commit de A (`6a340fc`) | Exactitud del documento | Corregir la línea |
+
+## Detector anti-slop, vuelta 2
+
+Corrí los dos completos de nuevo. Lo que cambió desde la vuelta 1:
+
+```
+estudio-web/antislop-web.md §E
+COPY         sin cambios: los 9 ítems en [x]
+             [ ] borrar 30 % no mejora la página: sigue abierto en B /trabajo/ y Praxi (la tabla y la placa de datos
+                 suman texto); es el sacrificio que B declara (lock §16, direccion-b §9)
+ESTRUCTURA   sin cambios: los 6 en [x]
+CÓDIGO       [x] landmarks + un h1: cerrado (defecto 1)
+             [ ] JSON-LD + canonical + OG: abierto. B trae JSON-LD parseado en las cinco vistas (el concepto declarado
+                 como ficción, sin Review); A, ninguno (direccion-a §9.6); ninguna trae canonical ni OG. Son prototipos
+                 noindex y la nota de Simón ya existe (senales-trabajo.md), que además pide #org ProfessionalService donde
+                 B pone #organizacion Organization: para la construcción
+             los otros 6, en [x]
+VISUAL       [x] detector de refero-design corrido (abajo)
+PRUEBAS      [x] logo tapado  [x] rubro cambiado  [x] leído en voz alta (abajo)
+
+refero-design/references/anti-ai-slop.md
+[x] los 16 de la vuelta 1, sin cambios
+[ ] rol del medio preservado: abierto en B, más chico. Los mockups ya no están (defecto 8): las cuatro piezas van como
+    capturas planas en su marco. Lo que queda es el sacrificio declarado: la primera pantalla de la home sin imagen y
+    2,9 % de medios en /trabajo/, reemplazados por un instrumento verdadero
+```
+
+**Pruebas de fuego**, de nuevo sobre las capturas de esta vuelta: **logo tapado**, A sigue siendo de este estudio por lo
+que muestra (la cinta del trabajo y el chequeo al lado) y B por el instrumento (la regla de 21 señales); **rubro cambiado**,
+con el texto de una inmobiliaria la regla de B pierde sentido y la cinta de A calzaría en otro estudio, no en otro rubro;
+**leído en voz alta**, «Diseñamos y programamos sitios a medida. Y los dejamos listos para que Google y ChatGPT puedan
+leerlos.» suena a alguien que explica lo que hace. Pasan las tres en las dos.
+
+## Lo que está bien y no hay que perder (vuelta 2)
+
+- **Los arreglos no rompieron nada:** los mismos ceros de la vuelta 1 en desborde, contraste, consola y movimiento
+  reducido, ahora con un `h1` que se oye en las 50 combinaciones y 44 px de área en todos los controles a 390.
+- **El criterio 4 nuevo se puede medir y se cumple:** el lienzo no cambia en ninguna vista, el color está dentro de los
+  marcos, y el único color que pone la interfaz está rotulado y preguntado.
+- **El tablero se rehace desde cero idéntico**, ahora con las tres demos y el tema declarado.
+- **El inventario quedó como la regla que dice ser:** cada concepto, cada grabación y el permiso tienen su fila.
+
+## Lo que no medí (vuelta 2)
+
+El cursor y el velo del índice con un mouse real; Safari; si Gemini u OpenAI se usaron fuera del repo; no repetí el cruce
+con los 747 nombres de `ventas/`: el texto visible solo cambió en lo que listan los defectos 13 a 15 y en los `alt` de B, y
+ninguno trae un nombre nuevo.
+
+
 ## Historial
 
 | Fecha | Qué | Origen |
 |---|---|---|
 | 18-oct-2026 | Vuelta 1: veredicto con reparos, 19 defectos (4 mayores, 15 menores) | Javiera, en subagente limpio, desde su avance `153d272` |
+| 18-oct-2026 | Vuelta 2, sobre `53afa81`: los 19 defectos cerrados, los 20 criterios cumplidos; veredicto **Aprobado**, con 4 menores nuevos (20 a 23) | Javiera, en subagente limpio, desde su avance `8b98eef` |
