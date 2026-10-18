@@ -53,7 +53,7 @@ Cada vista, en página completa y en su primer viewport (1440 × 900 y 390 × 84
 | 2 | **`/trabajo/`, el índice** | Los casos reales del inventario y **las cuatro piezas de concepto**. Cada entrada: nombre, bajada, y una línea mono con su tipo (Cliente, Propio o Concepto) · año · hasta dos ingredientes (lock §7 y §14). El conteo visible es el número de entradas. El filtro por tipo, si va, filtra de verdad | Inventario actualizado (§5 de este encargo) y las portadas de los conceptos (§3) |
 | 3 | **Una página de caso real, al estilo de Koto** | La estructura medida (compuerta 1, punto 4; lock §13): ficha lateral pegajosa con nombre, bajada, ficha mono verdadera e índice de secciones con la activa marcada; secciones Problema · Hipótesis · Solución · Resultado medido o «Sin métrica» · La pieza; imágenes y grabaciones grandes; el siguiente caso al final. **El mismo caso en A y en B** | Supuesto (§9): **Combeau**. Praxi, si su material alcanza |
 | 4 | **Una página de caso de concepto** | La misma estructura, con «Concepto» visible sin scroll, el problema real del rubro, lo que se diseñó y programó, y en vez de resultado: «Sin métrica: es un concepto, no tuvo usuarios» (o lo que escriba Clara con ese sentido). Identidad, sitio y movimiento de la pieza a la vista. **La misma pieza en A y en B** | La pieza que Bruno lleve más lejos (§3) |
-| 5 | **Una página interior que muestre el juego de color** | El lienzo cambia de negro a blanco o a otro color, en la página entera o por secciones, como lo hace Koto medido (§6.1). Si lleva precios, idénticos a los JSON | Supuesto (§9): `/servicios/desarrollo-web/`, la puerta del estudio |
+| 5 | **Una página interior con el juego de color, como lo hace Koto** | El lienzo sigue en `#060606`, como en las 640 paradas medidas de Koto (lock §20.1 y §20.6): no cambia por página, sección, scroll ni estado. El color entra con el trabajo y dentro de sus marcos: una franja de imagen, portadas o fotos (lock §20.2, regla 4); y, si hay, la tinta de lo activo atada al scroll (en `/services` de Koto, el gris pasa a blanco en 167 ms). Donde el juego es más fuerte es en los casos, las vistas 3 y 4, con sus campos (lock §20.3). **Un lienzo o una hoja clara que ponga la interfaz es un desvío de Koto:** se muestra solo rotulado como desvío, y queda en la construcción solo si Ramón lo acepta en la compuerta 2 (§10, pregunta 5). Si lleva precios, idénticos a los JSON | Supuesto (§9): `/servicios/desarrollo-web/`, la puerta del estudio |
 
 **Movimiento en el tablero:** las vistas corren con Motion de verdad (no capturas de un estado), con las demos del
 paso 1 (mouse, teclado, movimiento reducido y teléfono sin círculo), y los clips de los conceptos con su botón de pausa.
@@ -96,7 +96,8 @@ de Ramón.
 Dos o tres caminos de wordmark para SpindleLab (compuerta 1, punto 9). **Cada camino difiere de los otros en algo
 nombrable** (forma de la letra, construcción, un signo propio), no son tres variaciones de uno. Cada uno trae:
 
-- el wordmark en el nav de A y en el de B, a 1440 y a 390, sobre negro y sobre el lienzo del juego de color;
+- el wordmark en el nav de A y en el de B, a 1440 y a 390, sobre negro y sobre blanco (el campo claro del juego de
+  color, o la hoja si Ramón acepta el desvío del criterio 4);
 - a 32 y a 16 px (favicon), legible;
 - una línea con lo que toma de la referencia sin copiar el logo de Koto (ni su forma ni su amarillo `#FFE800`);
 - la letra de partida con su licencia, si parte de una.
@@ -156,10 +157,26 @@ mirando o midiendo el entregable.
    Mono 500 en las dos (`getComputedStyle` y `document.fonts`). Ninguna dirección carga una letra que no usa.
 3. **A y B difieren** en lo que carga la pantalla, la escala del titular, la forma del índice y la letra (§1), cada
    eje visible en las capturas.
-4. **Base negra, y juego de color que no es driftime:** en la home y en `/trabajo/` de las dos, el lienzo es negro
-   (luminancia relativa ≤ 0,01; `#060606` da 0,0018) y cubre al menos el 80 % de los píxeles fuera de imágenes y
-   video a 1440. La vista 5 cambia de lienzo (blanco u otro color) y el tablero cita la medición de Koto que lo
-   respalda (URL, ancho, color medido). Ningún servicio tiene un color propio fijo, ni en la home ni en el menú.
+4. **Base negra en todo, y el juego de color de Koto, que no es driftime** (lock §20.1 a §20.5):
+   - **El lienzo no cambia.** En las cinco vistas de A y de B, `html` y `body` computan `#060606`; y a 1440, de los
+     píxeles fuera de imágenes y video, al menos el 80 % tiene luminancia relativa ≤ 0,01 (`#060606` da 0,0018) y a
+     lo más el 2 % es claro, con luminancia ≥ 0,5 (son las letras; en Koto, del 0,15 al 0,81 %).
+   - **El color, dentro de los marcos del trabajo.** En las páginas de caso (vistas 3 y 4), los campos claros y de
+     color, contados como el lock §20.1, ocupan del 10 al 35 % de la página a 1440 (§20.3), o el `direccion-*.md` dice
+     por qué un caso queda bajo el piso (hoy Praxi: A 6,0 %, B 8,8 %; una marca oscura de un solo acento, que el lock
+     no deja recolorear, §20.2, regla 3). En la vista 5, el color entra solo con el trabajo (franja, portadas o
+     fotos), y el tablero cita la medición de Koto que respalda el juego (URL, ancho, color medido).
+   - **Ningún color de la interfaz.** Ningún servicio, ruta ni estado tiene un color propio fijo, ni en la home ni en
+     el menú. Fuera de imágenes, video y sus marcos, ningún bloque pinta un fondo claro o de color más grande que un
+     control (un botón, una pausa, el enlace para saltar al contenido).
+   - **El desvío, si va.** Un lienzo o una hoja clara que pone la interfaz (hoy, la hoja de los planes de B en
+     Desarrollo web) cumple en el tablero solo si va rotulado como desvío de Koto en su `direccion-*.md` y en el
+     tablero, con el contraste de su texto medido como pide el criterio 5. En la construcción queda solo si Ramón lo
+     aceptó en la compuerta 2 (§10, pregunta 5); si dijo que no o no lo contestó, sale y lo que llevaba vuelve al
+     negro.
+
+   Se mide con `e12/criterio-4/medir.mjs` (el fondo computado y los bloques con fondo propio) y `cobertura.py` (los
+   píxeles), que hacen la misma cuenta que `qa-paso-2/vuelta-1/herramientas/cobertura.py`.
 5. **Contraste medido en el render:** cero nodos de texto bajo 4,5:1 (3:1 si mide 24 px o más, o 18,66 px en
    negrita) en las 20 vistas, sobre cada lienzo, con la composición de capas de `npm run verificar` o una herramienta
    que haga lo mismo. Un color de señal, si hay, da al menos 3:1 como forma contra cada lienzo donde aparece.
@@ -187,8 +204,8 @@ mirando o midiendo el entregable.
 14. **Texto:** el mismo en A y en B (diff del texto visible de cada par de vistas: cero, o cada diferencia listada en el
     tablero con su motivo); tuteo; ninguna raya usada como golpe; cada término técnico visible va con lo que le hace al
     cliente (brief §2); ningún prospecto nombrado.
-15. **Logo:** dos o tres caminos, cada uno en el nav de A y de B a 1440 y 390, sobre negro y sobre el lienzo del juego
-    de color, y a 32 y 16 px. Ninguno copia el logo ni el amarillo de Koto; si alguno usa el oro `#C9A227` o Gabarito,
+15. **Logo:** dos o tres caminos, cada uno en el nav de A y de B a 1440 y 390, sobre negro y sobre blanco (el campo
+    claro del juego de color), y a 32 y 16 px. Ninguno copia el logo ni el amarillo de Koto; si alguno usa el oro `#C9A227` o Gabarito,
     dice por qué, porque ya no son obligación.
 16. **Movimiento y accesibilidad:** Motion con versión fija; con `prefers-reduced-motion: reduce` emulado, ni
     resortes, ni cursor que sigue, ni clips que corran solos; cursor propio solo con `(pointer: fine)`; foco visible en
@@ -219,8 +236,10 @@ mirando o midiendo el entregable.
 - **El caso real de la vista 3 es Combeau:** es el único caso de cliente, sus dos sitios están vivos, son de fotografía
   (imagen grande de sobra) y se graban sin costo. Si al inventariar Praxi su material cubre un tercio de la página sin
   relleno, puede ser Praxi; en las dos direcciones, el mismo.
-- **La vista 5 es `/servicios/desarrollo-web/`:** es la puerta del estudio (brief §3). Si la medición de Koto muestra el
-  juego de color en otro tipo de página, Lucía elige la equivalente y lo dice.
+- **La vista 5 es `/servicios/desarrollo-web/`:** es la puerta del estudio (brief §3). La medición de Koto mostró que
+  su juego de color vive en los casos y no en las interiores (lock §20.1 y §20.6). Como las vistas 3 y 4 ya son casos,
+  los campos se miden ahí (criterio 4), y la vista 5 sigue siendo la interior: muestra cómo juega una interior de Koto,
+  con el lienzo negro y el color que trae el trabajo.
 - **Raigal, Aplomo y Deslinde son el punto de partida** de clínica, industrial B2B y estudio legal; «servicios» es
   nueva, y Bruno elige el oficio (servicios profesionales B2B) y dice por qué.
 - **Las preguntas 1 a 4 del brief van con la opción recomendada.** Si «no te contesté los 4 puntos» quiere decir que
@@ -234,6 +253,10 @@ mirando o midiendo el entregable.
 3. **¿Se muestran los puntajes propios** (Verifica y Cumple 54 → 94; spindlelab.cl 85)? Está abierto desde el inventario
    §9.1.
 4. Las preguntas 1 a 4 del brief, **solo si siguen abiertas.**
+5. **¿Una interior con el lienzo claro?** (lock §20.6; el tablero lo pregunta en «Lo demás que está abierto»). Si no
+   contesta, queda en **no**, como dice el tablero: Koto no lo hace, y la hoja de los planes de B sale al construir. Si
+   dice que sí, se construye como desvío rotulado, va a la spec con su contraste medido y el criterio 4 lo acepta.
+   **Respuesta de Ramón:** pendiente al 18-oct, 18:15 (Chile). Cuando llegue se anota aquí, en una línea y con fecha.
 
 Si la respuesta es «ninguna de las dos», se vuelve al lock y a la medición de Koto, no al tablero.
 
@@ -256,3 +279,4 @@ Los cuatro trabajos del paso 1 corren en paralelo. Cada rol hace commit de sus a
 | Fecha | Corrección | Origen |
 |---|---|---|
 | 16-oct, 19:50 | Primera versión, con la compuerta 1 aprobada | Mauro |
+| 18-oct, 18:15 | **§2 vista 5, criterio 4, §9 y §10 (pregunta 5, nueva), por el lock §20.6; §4 y criterio 15 dicen «sobre blanco» donde decían «sobre el lienzo del juego de color», que ya no existe (Javiera midió el logo sobre blanco: no cambia su resultado).** Pedían que el lienzo de una interior pasara de negro a blanco u otro color, y Koto no lo hace en ninguna de sus 640 paradas medidas: su juego está dentro de los marcos del trabajo (lock §20.1). Ahora el lienzo es `#060606` en las cinco vistas (al menos 80 % de negro y a lo más 2 % de claro fuera de los medios, a 1440); los campos se miden en los casos con el techo del lock §20.3; la vista 5 muestra el color que trae el trabajo; y un lienzo o una hoja clara de la interfaz es un desvío que va rotulado y que queda solo si Ramón lo acepta. **Aplicado al tablero de hoy** (`e12/criterio-4/`, con la raíz del repo servida en local): A cumple (negro del 95,3 al 97,2 %, claro del 0,2 al 0,9 %, el bloque claro más grande de la interfaz es un botón de 15.224 px²); B cumple con un desvío rotulado, la hoja de los planes (en Desarrollo web, 77,3 % de negro, 17,0 % de claro y una hoja de 1.275.736 px²; en las otras cuatro vistas, del 91,0 al 97,4 % y del 0,3 al 0,9 %). **Lo que falta para cerrar del todo el defecto:** la respuesta de Ramón a la pregunta 5, que no está en el repo. Como las dos respuestas ya tienen su verificación escrita, cuando llegue se anota en una línea en §10 y el criterio no se vuelve a escribir | Acta del paso 2, defecto 4 (Javiera); lock §20.6 |
