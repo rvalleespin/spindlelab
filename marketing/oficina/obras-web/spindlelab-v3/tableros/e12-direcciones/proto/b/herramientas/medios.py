@@ -3,13 +3,16 @@
 
 Saca derivados livianos (WebP) de material que YA existe en el repo: las piezas de concepto de
 Bruno (marketing/portafolio/0N-*), el material y las capturas de Praxi que juntó Diego
-(e12/praxi/), las imágenes de obra del v3 (spindlelab-astro/public/assets/img/obra/, solo se
-leen) y dos capturas del build local (herramientas/capturas-obra.mjs). No genera nada: recorta,
-achica y convierte. Los videos de Praxi pasan de H.264 a VP9 porque el Chromium de Playwright no
+(e12/praxi/), dos capturas del build local (herramientas/capturas-obra.mjs) y, desde el 18-oct,
+las capturas planas de los tres sitios vivos (herramientas/capturas-vivas.mjs), que reemplazan a
+las maquetas de dispositivo de spindlelab-astro/public/assets/img/obra/ (defecto 8 del acta del
+paso 2: el lock pide la pieza plana en su marco). No genera nada: recorta, achica y convierte. Los videos de Praxi pasan de H.264 a VP9 porque el Chromium de Playwright no
 reproduce H.264 (inventario-praxi §1).
 
-Uso:  python3 -I medios.py <carpeta con obra-spindlelab-cl.png y obra-chequeo.png>
-Escribe en ../medios/ y deja ../datos/medios.json con origen, recorte y peso de cada archivo.
+Uso:  python3 -I medios.py <carpeta de capturas-obra.mjs> <carpeta de capturas-vivas.mjs> [archivo,archivo]
+Escribe en ../medios/ y deja ../datos/medios.json con origen, recorte y peso de cada archivo. Con la
+lista del final rehace solo esos archivos y conserva en medios.json las filas de los demás (así una
+corrección no vuelve a codificar los videos, que no salen idénticos byte a byte).
 """
 import json
 import os
@@ -23,14 +26,17 @@ B = os.path.dirname(AQUI)
 RAIZ = os.path.abspath(os.path.join(B, *(['..'] * 8)))
 SALIDA = os.path.join(B, 'medios')
 CRUDO = sys.argv[1] if len(sys.argv) > 1 else ''
+VIVAS = sys.argv[2] if len(sys.argv) > 2 else ''
+SOLO = set(sys.argv[3].split(',')) if len(sys.argv) > 3 else None
 PORT = os.path.join(RAIZ, 'marketing/portafolio')
 PRAXI = os.path.join(RAIZ, 'marketing/oficina/obras-web/spindlelab-v3/e12/praxi')
-OBRA = os.path.join(RAIZ, 'spindlelab-astro/public/assets/img/obra')
 
 registro = []
 
 
-def guardar(origen, nombre, recorte=None, ancho=None, calidad=82):
+def guardar(origen, nombre, recorte=None, ancho=None, calidad=82, de=None):
+    if SOLO is not None and nombre not in SOLO:
+        return
     im = Image.open(origen).convert('RGB')
     w, h = im.size
     if recorte:
@@ -48,12 +54,14 @@ def guardar(origen, nombre, recorte=None, ancho=None, calidad=82):
     destino = os.path.join(SALIDA, nombre)
     im.save(destino, 'WEBP', quality=calidad, method=6)
     registro.append({
-        'archivo': nombre, 'origen': os.path.relpath(origen, RAIZ), 'recorte': recorte,
+        'archivo': nombre, 'origen': de or os.path.relpath(origen, RAIZ), 'recorte': recorte,
         'ancho': im.size[0], 'alto': im.size[1], 'bytes': os.path.getsize(destino),
     })
 
 
 def video(origen, nombre, ancho):
+    if SOLO is not None and nombre not in SOLO:
+        return
     destino = os.path.join(SALIDA, nombre)
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', origen, '-an', '-vf', f'scale={ancho}:-2',
                     '-c:v', 'libvpx-vp9', '-b:v', '0', '-crf', '34', '-row-mt', '1', '-pix_fmt', 'yuv420p',
@@ -68,12 +76,20 @@ C169_ARRIBA = (16 / 9, 0.5, 0.0)
 C45_ARRIBA = (4 / 5, 0.5, 0.0)
 
 # Visor del índice (4:3, el tercer formato del muro de Koto): una por entrada.
-guardar(f'{OBRA}/mock-combeau-fotografia-ancho.jpg', 'v-combeau-fotografia.webp', C43, 1080)
+# Los tres sitios vivos van con su captura plana a 1440 × 1080 (antes, la maqueta de dispositivo).
+VIVA = lambda i, url, vp: f'captura plana de {url} a {vp}, sitio vivo, 18-oct-2026 (herramientas/capturas-vivas.mjs)'
+if VIVAS:
+    guardar(f'{VIVAS}/combeau-fotografia-1440x1080.png', 'v-combeau-fotografia.webp', C43, 1080,
+            de=VIVA('combeau-fotografia', 'https://bernardocombeau.cl/', '1440 × 1080'))
 guardar(f'{PRAXI}/capturas/landing-1440-primera.jpg', 'v-praxi.webp', (4 / 3, 0.5, 0.0), 1080)
 guardar(f'{PORT}/06-sesenta/identidad/portadas/sesenta-4x3.png', 'v-sesenta.webp', C43, 1050)
-guardar(f'{OBRA}/mock-verifica-y-cumple-ancho.jpg', 'v-verifica-y-cumple.webp', C43, 1080)
+if VIVAS:
+    guardar(f'{VIVAS}/verifica-y-cumple-1440x1080.png', 'v-verifica-y-cumple.webp', C43, 1080,
+            de=VIVA('verifica-y-cumple', 'https://verifica.spindlelab.cl/', '1440 × 1080'))
 guardar(f'{PORT}/05-ocelo/identidad/portadas/ocelo-43.png', 'v-ocelo.webp', C43, 1050)
-guardar(f'{OBRA}/mock-combeau-modelo-ancho.jpg', 'v-combeau-modelo.webp', C43, 1080)
+if VIVAS:
+    guardar(f'{VIVAS}/combeau-modelo-1440x1080.png', 'v-combeau-modelo.webp', C43, 1080,
+            de=VIVA('combeau-modelo', 'https://bernardocombeau.cl/modelo/', '1440 × 1080'))
 guardar(f'{PORT}/07-doceavo/identidad/portadas/portada-43.png', 'v-doceavo.webp', C43, 1050)
 guardar(f'{PORT}/04-tonela/identidad/portadas/portada-4x3.png', 'v-tonela.webp', C43, 1050)
 if CRUDO:
@@ -81,7 +97,9 @@ if CRUDO:
     guardar(f'{CRUDO}/obra-spindlelab-cl.png', 'v-spindlelab.webp', C43, 1080)
 
 # Home, «cada pieza con su prueba».
-guardar(f'{OBRA}/mock-combeau-fotografia-ancho.jpg', 'p-combeau.webp', (16 / 9, 0.5, 0.5), 1440)
+if VIVAS:
+    guardar(f'{VIVAS}/combeau-fotografia-1440x810.png', 'p-combeau.webp', (16 / 9, 0.5, 0.0), 1440,
+            de=VIVA('combeau-fotografia', 'https://bernardocombeau.cl/', '1440 × 810'))
 guardar(f'{PRAXI}/capturas/landing-1440-sec09.jpg', 'p-praxi-reglas.webp', None, 1440)
 
 # Caso Praxi.
@@ -130,7 +148,13 @@ for origen, nombre, ancho in [
     guardar(f'{S}/{origen}', nombre, None, ancho, 84)
 
 os.makedirs(os.path.join(B, 'datos'), exist_ok=True)
-with open(os.path.join(B, 'datos', 'medios.json'), 'w', encoding='utf-8') as f:
+REGISTRO = os.path.join(B, 'datos', 'medios.json')
+if SOLO is not None:
+    # Rehechos solo algunos: las filas de los demás quedan como estaban, en su orden.
+    nuevos = {r['archivo']: r for r in registro}
+    viejos = json.load(open(REGISTRO, encoding='utf-8'))
+    registro = [nuevos.pop(r['archivo'], r) for r in viejos] + list(nuevos.values())
+with open(REGISTRO, 'w', encoding='utf-8') as f:
     json.dump(registro, f, ensure_ascii=False, indent=1)
 total = sum(r['bytes'] for r in registro)
 print(f'{len(registro)} archivos, {total / 1000:.0f} kB')

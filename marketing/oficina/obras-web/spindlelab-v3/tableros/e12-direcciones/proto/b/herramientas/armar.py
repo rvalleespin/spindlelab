@@ -151,12 +151,12 @@ ORG = {'@type': 'Organization', '@id': 'https://spindlelab.cl/#organizacion', 'n
 # ------------------------------------------------------------------ medios de cada entrada del índice
 PORT = '../../../../../../../portafolio/'   # desde proto/b/ hasta marketing/portafolio/ (siete niveles)
 VISOR = {
-    'combeau-fotografia': ('medios/v-combeau-fotografia.webp', None, 'El sitio de Bernardo Combeau en un computador y un teléfono: su retrato con luz verde y la frase de portada.'),
+    'combeau-fotografia': ('medios/v-combeau-fotografia.webp', None, 'La primera pantalla del sitio de Bernardo Combeau a 1440: su retrato con luz verde, la frase de portada y el comienzo de la galería de retratos.'),
     'praxi': ('medios/v-praxi.webp', None, 'La portada de Praxi: «Se acuerda de cada serie que hiciste» junto a dos hombres en un press de banca (personas generadas con IA).'),
     'sesenta': ('medios/v-sesenta.webp', '06-sesenta', 'Portada de Sesenta, concepto: un 60 blanco enorme sobre azul de ropa de trabajo y la suma del escrito en papel.'),
-    'verifica-y-cumple': ('medios/v-verifica-y-cumple.webp', None, 'El sitio de Verifica y Cumple en un computador y un teléfono: «¿Estás seguro?» sobre azul.'),
+    'verifica-y-cumple': ('medios/v-verifica-y-cumple.webp', None, 'La primera pantalla de Verifica y Cumple a 1440: «¿Estás seguro?» en blanco y verde limón sobre azul, con una mujer vestida de rosa a caballo.'),
     'ocelo': ('medios/v-ocelo.webp', '05-ocelo', 'Portada de Ocelo, concepto: una carta de optotipos con la C de Landolt y una franja roja y verde.'),
-    'combeau-modelo': ('medios/v-combeau-modelo.webp', None, 'El book de modelo de Bernardo Combeau en un computador y un teléfono, con su retrato de traje.'),
+    'combeau-modelo': ('medios/v-combeau-modelo.webp', None, 'La primera pantalla del book de modelo de Bernardo Combeau a 1440: su retrato de traje azul junto a una ventana y sus medidas debajo.'),
     'doceavo': ('medios/v-doceavo.webp', '07-doceavo', 'Portada de Doceavo, concepto: el año en doce meses sobre papel de libro contable y un 1/12 grande.'),
     'chequeo': ('medios/v-chequeo.webp', None, 'La página del chequeo gratis del v3: «¿Te puede leer la IA?» con el campo para escribir el dominio.'),
     'tonela': ('medios/v-tonela.webp', '04-tonela', 'Portada de Tonela, concepto: ocho bandas de eslinga con los colores de la norma y su tonelaje.'),
@@ -321,7 +321,7 @@ def home():
     <p class="t-cuerpo" style="margin-top:18px">{txt('home.prueba.aviso')}</p>
     <div style="margin-top:28px" data-entra>
       <article class="prueba-fila sub">
-        <figure class="prueba-fila__medio medio r169"><img src="medios/p-combeau.webp" alt="La portada del sitio de Bernardo Combeau: su retrato con una luz verde y la frase «Un buen retrato no se toma. Se construye dirigiendo a la persona hasta su mejor versión.»" width="1440" height="810" loading="lazy"></figure>
+        <figure class="prueba-fila__medio medio r169"><img src="medios/p-combeau.webp" alt="La primera pantalla del sitio de Bernardo Combeau a 1440: su retrato con una luz verde, la frase «Un buen retrato no se toma. Se construye dirigiendo a la persona hasta su mejor versión.» y el comienzo de la galería de retratos." width="1440" height="810" loading="lazy"></figure>
         <div class="prueba-fila__dato">
           <h3 class="t-titulo">{txt('home.prueba.combeau.pieza')}</h3>
           <p class="t-cifra" aria-hidden="true">805 kB → 95 kB</p>
@@ -460,9 +460,11 @@ def lateral(titulo_html, ficha_html, nombre_corto, creditos_html, pre):
   </aside>'''
 
 
-def cabeza_movil(titulo_html, ficha_html):
+def cabeza_movil(ficha_html):
+    # Bajo 834 px: la ficha va aquí, debajo del título. El título no se repite: es el h1 de la barra lateral, que b.css
+    # baja entre el medio principal y esta ficha (defecto 1 del acta del paso 2: antes iba un <p aria-hidden> y el h1
+    # quedaba en display: none, y la página no tenía título para un lector de pantalla).
     return f'''<div class="caso-cabeza-movil">
-      <p class="caso__titulo t-titulo" aria-hidden="true">{titulo_html}</p>
       {ficha_html}
     </div>'''
 
@@ -523,6 +525,8 @@ def caso_praxi():
     ingredientes = ''.join(
         (lambda m: f'<li>{esc(m.group(1))}<span class="con">{esc(m.group(2))}</span></li>' if m else f'<li>{esc(t)}</li>')(re.match(r'^(.*?)\s\(([^()]*)\)$', t))
         for t in EL['praxi.solucion.ingredientes']['items'])
+    # Fila del teléfono en Solución (defecto 2 del acta del paso 2): la conversación trae cifras de ejemplo y la portada,
+    # personas generadas; cada captura lleva su pie de Clara debajo (uno solo para las dos diría «esta captura» de una).
     D = '#0F1117'   # el fondo de la marca de Praxi (inventario-praxi §7): el campo es de la pieza, no de la interfaz
     columna = f'''<div class="medio-principal" data-video-autonomo>
       <figure class="figura">
@@ -534,7 +538,7 @@ def caso_praxi():
         <figcaption class="pie">{txt('praxi.medio.pie')}</figcaption>
       </figure>
     </div>
-    {cabeza_movil(titulo, ficha)}
+    {cabeza_movil(ficha)}
     {seccion_caso('problema', EL['praxi.problema.rotulo']['texto'], EL['praxi.problema.h2']['texto'],
                   P('praxi.problema.p1') + P('praxi.problema.p2'),
                   medio(f'{pre}medios/c-praxi-problema.webp', 'Captura de la portada de Praxi: «Llevas tres meses en 60 kg».', fondo=D, contener=True, w=1440, h=311))}
@@ -545,8 +549,8 @@ def caso_praxi():
                   P('praxi.solucion.p1') + P('praxi.solucion.p2') + P('praxi.solucion.p3') + P('praxi.solucion.p4') +
                   f'<p class="rotulo" style="margin-top:28px">{txt("praxi.solucion.ingredientes.rotulo")}</p><p class="t-chico" style="margin-top:8px">{txt("praxi.solucion.ingredientes.intro")}</p><ul class="ingredientes">{ingredientes}</ul>',
                   con_pie(medio(f'{pre}medios/c-praxi-conversacion.webp', 'Captura de Praxi: un mensaje «Hoy hice press banca 3×10 con 60 kg, RIR 2» y la respuesta del coach, que lo guarda como dato.', fondo=D, contener=True, w=1440, h=500), pie_ej) +
-                  '<div class="fila-par">' + medio(f'{pre}medios/c-praxi-390-conversacion.webp', 'La misma conversación de ejemplo en un teléfono.', 'r45', 780, 975) +
-                  medio(f'{pre}medios/c-praxi-390-portada.webp', 'La primera pantalla de Praxi en un teléfono.', 'r45', 780, 975) + '</div>' +
+                  '<div class="fila-par">' + con_pie(medio(f'{pre}medios/c-praxi-390-conversacion.webp', 'La misma conversación de ejemplo en un teléfono.', 'r45', 780, 975), pie_ej) +
+                  con_pie(medio(f'{pre}medios/c-praxi-390-portada.webp', 'La primera pantalla de Praxi en un teléfono: dos hombres en un press de banca, uno levanta y el otro lo asiste.', 'r45', 780, 975), pie_gen) + '</div>' +
                   medio(f'{pre}medios/p-praxi-reglas.webp', 'Captura de Praxi: «Debajo del chat hay reglas, no una corazonada», con las tres reglas que calcula el código.', fondo=D, contener=True, w=1440, h=526))}
     {seccion_caso('pieza', EL['praxi.pieza.rotulo']['texto'], EL['praxi.pieza.h2']['texto'],
                   P('praxi.pieza.p1') + P('praxi.pieza.p2') + f'<p class="t-chico" style="margin-top:14px">{txt("praxi.pieza.hueco")}</p>',
@@ -696,7 +700,7 @@ def caso_sesenta():
         </div>
       </figure>
     </div>
-    {cabeza_movil(titulo, ficha)}
+    {cabeza_movil(ficha)}
     {secciones}
     <section class="siguiente" aria-labelledby="t-siguiente" data-entra>
       <div class="siguiente__contacto"><div>

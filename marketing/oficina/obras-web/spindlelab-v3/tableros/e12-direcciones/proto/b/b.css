@@ -7,8 +7,10 @@
    Secundaria acotada: A&P, dos cosas y nada más: las columnas vacías (el riel de 4 columnas
    queda vacío salvo donde tiene un trabajo) y la tabla con filetes de 1 px. */
 
+/* «Riel Sans B» es Mona Sans 2.000 recortada a wdth 85-100 y wght 300-420 y renombrada: la OFL reserva el nombre
+   «Mona» para las versiones modificadas (defecto 10 del acta del paso 2; herramientas/renombrar-fuente.py). */
 @font-face {
-  font-family: "Mona Sans B";
+  font-family: "Riel Sans B";
   src: url("fuentes/mona-sans-var-b.woff2") format("woff2");
   font-weight: 300 420;
   font-stretch: 85% 100%;
@@ -43,8 +45,8 @@
   --m: 16px;                  /* margen, Koto */
   --g: 8px;                   /* separación, Koto */
   --cols: 16;
-  --sans: "Mona Sans B", Arial, sans-serif;
-  --mono: "DM Mono B", "Mona Sans B", ui-monospace, monospace;
+  --sans: "Riel Sans B", Arial, sans-serif;
+  --mono: "DM Mono B", "Riel Sans B", ui-monospace, monospace;
   --lineal: 167ms linear;     /* el color no lleva resorte: 167 ms lineales (Koto) */
   color-scheme: dark;
 }
@@ -78,7 +80,7 @@ th { font-weight: inherit; text-align: left; }
 :focus-visible { outline: 2px solid var(--blanco); outline-offset: 3px; border-radius: 2px; }
 .hoja :focus-visible { outline-color: var(--hoja-tinta); }
 .solo-lector { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.saltar { position: absolute; left: var(--m); top: -60px; z-index: 50; background: var(--blanco); color: var(--lienzo); padding: 12px 16px; font: 500 12px/1 var(--mono); text-transform: uppercase; letter-spacing: .03em; text-decoration: none; border-radius: 2px; }
+.saltar { position: absolute; left: var(--m); top: -60px; z-index: 50; background: var(--blanco); color: var(--lienzo); padding: 16px; font: 500 12px/1 var(--mono); text-transform: uppercase; letter-spacing: .03em; text-decoration: none; border-radius: 2px; }
 .saltar:focus { top: 8px; }
 
 /* ---------- Letra (lock §6.4, dirección B: Mona Sans en dos cortes + DM Mono 500) ---------- */
@@ -107,6 +109,9 @@ th { font-weight: inherit; text-align: left; }
 .t-pie { font-size: 13px; line-height: 1.4; text-wrap: pretty; }
 .rotulo { font: 500 11px/1 var(--mono); letter-spacing: .03em; text-transform: uppercase; color: var(--gris); }
 .dato { font: 500 12px/1.2 var(--mono); letter-spacing: .03em; }
+/* Un valor citado en el texto (los hex del sello de Sesenta) es un dato: DM Mono, no la mono genérica del navegador
+   (defecto 9 del acta del paso 2: tres letras en la página). */
+code { font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: .03em; }
 .tinta { color: var(--blanco); }
 .gris { color: var(--gris); }
 @media (max-width: 833px) {
@@ -168,7 +173,8 @@ th { font-weight: inherit; text-align: left; }
 @media (max-width: 833px) {
   .nav, .telemetria { display: none; }
   .boton-menu {
-    display: inline-flex; grid-column: 5 / -1; justify-self: end; align-items: center; min-height: 44px; padding: 0 4px;
+    display: inline-flex; grid-column: 5 / -1; justify-self: end; align-items: center; justify-content: center;
+    min-height: 44px; min-width: 44px; padding: 0 8px; margin-right: -4px;
     font: 500 11px/1 var(--mono); letter-spacing: .03em; text-transform: uppercase; color: var(--blanco);
   }
   .menu[data-abierto="true"] {
@@ -481,10 +487,16 @@ th { font-weight: inherit; text-align: left; }
   .caso__escrito { grid-column: 1 / -1; }
 }
 @media (max-width: 833px) {
-  .caso { display: block; padding-inline: 0; }
-  .caso__lateral { display: none; }
-  .caso__columna { padding-top: 0; padding-bottom: 96px; }
-  .caso-cabeza-movil { display: block; padding: 20px var(--m) 8px; }
+  /* Un solo h1 en todos los anchos (defecto 1 del acta del paso 2): bajo 834 px la barra lateral no se apaga entera;
+     su título, que es el h1, baja al lugar que tiene en Koto a 390 (después del medio principal, antes de la ficha),
+     y el resto de la barra (ficha, índice, créditos) se va: la ficha la repite la cabeza móvil y el índice, la barra
+     flotante. Las dos cajas se vuelven «contents» para que el título y las secciones compartan una sola columna. */
+  .caso { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 0; padding-inline: 0; padding-bottom: 96px; }
+  .caso__lateral, .caso__columna { display: contents; }
+  .caso__lateral > :not(.caso__titulo) { display: none; }
+  .caso__columna > .medio-principal { order: -2; }
+  .caso__lateral > .caso__titulo { order: -1; padding: 20px var(--m) 0; }
+  .caso-cabeza-movil { display: block; padding: 0 var(--m) 8px; }
   .caso-cabeza-movil .ficha { max-width: none; }
   .caso__columna > .medio-principal { margin: 0; }
   .caso__columna > .medio-principal .medio { border-radius: 0; aspect-ratio: 4 / 5; }
@@ -569,6 +581,19 @@ th { font-weight: inherit; text-align: left; }
 .miga a:hover { color: var(--blanco); }
 .miga [aria-current] { color: var(--blanco); }
 .acciones { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 26px; }
+
+/* ---------- Áreas de toque: 44 px a 390 y con cualquier puntero grueso (lock §15; defecto 12 del acta del paso 2) ----------
+   Donde el texto es más bajo que 44 px, el área crece con relleno y un margen negativo del mismo tamaño: la letra queda
+   donde estaba y la página mide lo mismo. `position: relative` deja el área encima del texto vecino que alcanza a pisar
+   (la bajada de la fila), para que el borde del área también sea del enlace. */
+@media (max-width: 833px), (pointer: coarse) {
+  .indice__nombre { position: relative; padding-block: 10px; margin-block: -10px; }
+  .indice__nombre:focus-visible { outline-offset: 0; }
+  .miga a { position: relative; padding: 17px 4px; margin: -17px -4px; }
+  .siguiente__nombre a { position: relative; display: block; width: fit-content; padding-block: 10px; margin-block: -10px; }
+  .nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0; }
+  .secciones a { min-height: 44px; }
+}
 
 /* ---------- Cursor: círculo blanco con el texto en negro, solo sobre el trabajo (lock §8 y §20.4) ---------- */
 .cursor {
