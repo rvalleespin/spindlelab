@@ -1,0 +1,50 @@
+{
+ "fecha": "2026-10-18T21:39:57+00:00",
+ "medidoPor": "Lucía, herramientas/interlinea.py",
+ "fontTools": "4.66.1",
+ "koto": {
+  "letra": "GT Kotoheim VF",
+  "instancia": {
+   "wdth": 100,
+   "wght": 350
+  },
+  "xSobreCap": 0.654,
+  "interlinea": 1.25,
+  "fuente": "datos/letras.json, referencias.cuerpo"
+ },
+ "regla": "1,25 × (x/H) / 0,654, al 0,05 más cercano",
+ "direcciones": [
+  {
+   "direccion": "A",
+   "letra": "Google Sans Flex",
+   "archivo": "../e12-direcciones/proto/a/fuentes/google-sans-flex-latin.woff2",
+   "instancia": {
+    "wdth": 100,
+    "wght": 370
+   },
+   "unidadesPorEm": 2000,
+   "altoX": 1018.3,
+   "altoH": 1432,
+   "xSobreCap": 0.7111,
+   "calculada": 1.3592,
+   "redondeada": 1.35,
+   "enElPrototipo": 1.35
+  },
+  {
+   "direccion": "B",
+   "letra": "Mona Sans",
+   "archivo": "../e12-direcciones/proto/b/fuentes/mona-sans-var-b.woff2",
+   "instancia": {
+    "wdth": 100,
+    "wght": 390
+   },
+   "unidadesPorEm": 1000,
+   "altoX": 524.8,
+   "altoH": 729,
+   "xSobreCap": 0.7198,
+   "calculada": 1.3758,
+   "redondeada": 1.4,
+   "enElPrototipo": 1.4
+  }
+ ]
+}

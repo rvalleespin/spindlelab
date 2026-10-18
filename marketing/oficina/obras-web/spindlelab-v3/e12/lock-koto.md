@@ -30,6 +30,7 @@ este lock agrega se midió hoy con herramientas que quedan en `../tableros/e12-l
 | `resortes.mjs` | Los resortes propuestos, con el `spring()` de Motion 13.5.0, contra las curvas medidas en Koto y A&P | `datos/resortes.json` |
 | `evidencia-next.sh` | Qué letra trae por defecto la plantilla de Next.js | `datos/create-next-app-layout.txt` |
 | `atmosfera.mjs` | Degradados (cuántos, con qué color y tono), dibujos grandes en `canvas` o `svg` y vidrio en la home y el índice de Koto y de A&P a 1440 (segunda vuelta, 16-oct) | `datos/atmosfera.json` |
+| `interlinea.py` | La x sobre la H del cuerpo de cada dirección, con fontTools, en el archivo de letra de cada prototipo, y la interlínea que da contra Koto (18-oct, §6.4) | `datos/interlinea.json` |
 
 (`datos/` e `img/` cuelgan de `../tableros/e12-laboratorio/`.)
 
@@ -354,6 +355,11 @@ condensado liviano y el cuerpo regular):
 - **Google Sans Flex** (© 2015 Google LLC; SIL OFL 1.1. Licencia: `https://github.com/google/fonts/blob/main/ofl/googlesansflex/OFL.txt`). Display a **wdth 76, wght 300**; cuerpo a **wdth 100, wght 370**. **La que más
   se parece**, en display y en cuerpo (en cuerpo, por 0,10).
 
+> **Compuerta 1 (16-oct, punto 8): una letra por dirección.** A va en **Google Sans Flex** (la más cercana a Koto) y B
+> en **Mona Sans**; los dos sistemas están en §6.4. El párrafo que sigue es el razonamiento del paso 1: su riesgo (la
+> letra de Google en un estudio que vende aparecer en Google) sigue a la vista en `../tableros/e12-direcciones/direccion-a.md`
+> §0, para que Ramón lo pese en la compuerta 2 mirando las dos.
+
 **Se usa Mona Sans, y por qué.** Google Sans Flex es la letra de los productos de Google: el dueño de una pyme la ve
 todos los días en Gmail y en su teléfono. Un estudio que vende aparecer en Google y en los motores de IA, escrito con
 la letra de Google, invita a leer «es de Google» o «partner de Google», y no lo es. Mona Sans no tiene esa lectura
@@ -394,23 +400,63 @@ Koto. Se usa en MAYÚSCULAS a 11 px (rótulos) y en caja normal a 12 px (datos).
 IA sobre Next.js, justo lo que el brief quiere evitar. **JetBrains Mono** mide 13.ª de 14: más angosta (0,91), con la x
 más alta (0,753) y dibujada para un editor de código; se lee «terminal», el disfraz del laboratorio.
 
-### 6.4 · El sistema de letra
+### 6.4 · Los dos sistemas de letra, uno por dirección
+
+Compuerta 1, punto 8: **una letra por dirección**, con la misma mono. Las dos siguen el sistema de Koto: una familia
+variable en dos cortes (el condensado liviano para titulares, el regular para el cuerpo), DM Mono 500 para rótulos y
+datos, **cero negrita** (la jerarquía la hacen el corte y la tinta) y nada en mayúsculas salvo la mono. Lo que cambia de
+una a otra es la letra, su interlínea y la escala (el eje de §16). Los valores son los de la hoja de cada prototipo
+(`../tableros/e12-direcciones/proto/a/a.css` y `proto/b/b.css`); el titular de la home, además, medido en el render
+(A: 48 px a 1440 y 36 a 390, `proto/a/medicion/mediciones.json`; B: 87,84 px, `direccion-b.md` §1).
+
+**A · Google Sans Flex** (`proto/a/a.css`)
 
 | Rol | Letra y corte | 1440 | 390 |
 |---|---|---|---|
-| Portada (dirección A) | Mona Sans wdth 89 · 340 | 48 / 1,0 / −0,01em | 36 / 1,0 |
-| Declaración y titular de sección | Mona Sans wdth 89 · 340 | 38 / 1,1 / −0,01em | 26 / 1,2 |
-| Titular de página y de caso | Mona Sans wdth 89 · 340 | 24 / 1,2 | 23 / 1,2 |
+| Portada | Google Sans Flex wdth 76 · 300 | 48 / 1,0 / −0,01em | 36 / 1,0 |
+| Declaración y titular de sección | wdth 76 · 300 | 38 / 1,1 / −0,01em | 26 / 1,1 |
+| Siguiente (cierre del caso) | wdth 76 · 300 | 32 / 1,15 | 23 / 1,15 |
+| Titular de página y de caso | wdth 76 · 300 | 24 / 1,2 | 23 / 1,2 |
+| Cuerpo | Google Sans Flex wdth 100 · 370 | 16 / **1,35** · caja de 493 px | 15 / 1,35 |
+| Cuerpo chico y pies | wdth 100 · 370 | 14 / 1,35 | 13 / 1,35 |
+| Rótulo | DM Mono 500, MAYÚSCULAS, +0,03em | 11 / 1,25 | 11 / 1,25 |
+| Dato | DM Mono 500, caja normal, +0,03em | 12 / 1,35 | 12 / 1,35 |
+
+**B · Mona Sans** (`proto/b/b.css`)
+
+| Rol | Letra y corte | 1440 | 390 |
+|---|---|---|---|
+| Declaración del hero (el eje de B) | Mona Sans wdth 89 · 340 | 88 / 0,98 / −0,02em (87,84 medido) | 40 / 0,98 |
+| Titular de página interior y cierre | wdth 89 · 340 | 64 / 1,02 / −0,015em | 32 / 1,02 |
+| Cifra (el dato a escala), números tabulares | wdth 89 · 340 | 64 / 1,0 / −0,02em | 44 / 1,0 |
+| Titular de sección | wdth 89 · 340 | 38 / 1,1 / −0,01em | 26 / 1,1 |
+| Siguiente (cierre del caso) | wdth 89 · 340 | 32 / 1,15 | 23 / 1,15 |
+| Titular chico | wdth 89 · 340 | 24 / 1,2 | 23 / 1,2 |
 | Cuerpo | Mona Sans wdth 100 · 390 | 16 / **1,4** · caja de 493 px | 15 / 1,4 |
-| Cuerpo chico | Mona Sans wdth 100 · 390 | 14 / 1,4 | 13 / 1,4 |
+| Cuerpo chico · pie | wdth 100 · 390 | 14 / 1,4 · 13 / 1,4 | 13 / 1,4 |
 | Rótulo | DM Mono 500, MAYÚSCULAS, +0,03em | 11 / 1,0 | 11 / 1,0 |
 | Dato | DM Mono 500, caja normal, +0,03em | 12 / 1,2 | 12 / 1,2 |
 
-**Desvío escrito: interlínea 1,4 y no 1,25.** La x de Mona Sans es 10 % más alta que la de Koto (0,719 contra 0,654
-en el corte de cuerpo); a igual interlínea las líneas se ven más apretadas, y el castellano lleva tildes en
-mayúscula. 1,25 × 1,10 ≈ 1,4. **Sin 9 px:** piso de 11 px para todo texto. **Dos familias, un archivo variable cada
-una** (Mona Sans y DM Mono 500): ninguna letra cargada sin uso (antislop C7). El wordmark sigue abierto hasta después
-de la compuerta 2 (decisión del 16-oct).
+**La interlínea del cuerpo, medida para cada letra (desvío escrito del 1,25 de Koto).** Una letra con la x más alta, a
+igual interlínea, se ve más apretada, y el castellano lleva tildes en mayúscula. La regla, la misma para las dos: la
+interlínea de Koto por la proporción entre las x, **1,25 × (x/H de la letra) / 0,654**, al 0,05 más cercano. La x y la
+H se midieron con fontTools en el archivo que carga cada prototipo, en la instancia del cuerpo
+(`../tableros/e12-laboratorio/herramientas/interlinea.py` → `datos/interlinea.json`, 18-oct); el 0,654 es GT
+Kotoheim en el cuerpo de Koto (`datos/letras.json`, medido el 16-oct):
+
+| Dirección | Letra · instancia | x / H | 1,25 × x/H / 0,654 | Interlínea |
+|---|---|---|---|---|
+| A | Google Sans Flex · wdth 100 · wght 370 | 0,7111 | 1,359 | **1,35** |
+| B | Mona Sans · wdth 100 · wght 390 | 0,7198 | 1,376 | **1,4** |
+
+B queda a 0,0008 del corte entre 1,35 y 1,4: con la regla escrita es 1,4, y la diferencia entre las dos es 0,8
+px por línea a 16 px. Lo que **no** se corrige por la x: los titulares (de 0,98 a 1,2) y los rótulos. Los rótulos de B
+van a 1,0, como Koto; los de A, a 1,25: en su índice, la línea mono de cuatro piezas pasa a dos líneas a 390 (medido
+el 18-oct). La interlínea del rótulo la fija la spec de la elegida.
+
+**Sin 9 px:** piso de 11 px para todo texto. **Dos familias por dirección:** la de la dirección, en un archivo
+variable, y DM Mono 500, en uno estático; ninguna letra cargada sin uso (antislop C7). El wordmark lo proponen los
+caminos de Bruno para la compuerta 2 (`e12/logo/caminos.md`).
 
 ---
 
@@ -638,35 +684,50 @@ El juego funciona en Koto porque cada recurso tiene un trabajo y aparece poco. C
 - **Lo que se mueve solo** (el reloj cambia el minuto; nada más) no necesita pausa. Si una dirección agrega algo que
   se mueva solo más de 5 segundos, lleva botón de pausa (WCAG 2.2.2), con el estado apretado en cobalto.
 - **Teclado:** cada pieza del índice es un enlace con nombre; el filtro y los sandboxes, controles nativos; 44 px de
-  área a 390.
+  área a 390 (y con cualquier puntero grueso), en alto y en ancho, también el logo y los correos sueltos. Se mide con
+  `e12/qa-paso-2/vuelta-1/herramientas/area-toque-390.js` y, donde el área crece con margen negativo, mirando que
+  ningún otro objetivo la tape (`elementFromPoint` en sus bordes).
 - **Un `h1` por página**, landmarks reales, `alt` que describe la pieza mirándola (antislop C1 y C5).
 - **Piso de 11 px** para todo texto.
 
 ## 16 · Lo que deciden las dos direcciones de la compuerta 2
 
-Las dos comparten este lock: paleta y roles, letra, cursor, resortes, reglas y techos. **Tienen que diferir en tres
-ejes nombrables**, no en el tono de gris:
+Las dos comparten este lock: paleta y roles (§20.2), la mono (DM Mono 500), cursor, resortes, reglas y techos. **Tienen
+que diferir en cuatro ejes nombrables** (la letra suma uno desde la compuerta 1, punto 8), no en el tono de gris:
 
 | Eje | **A · Archivo** | **B · Banco** |
 |---|---|---|
 | Dominante | Koto, su índice y su caso | Koto, su capa de instrumentos (reloj, ficha, conteos, widgets), con la asimetría de A&P (columnas vacías) como secundaria |
-| Lo que carga la pantalla | **El trabajo:** capturas y grabaciones planas, a sangre en su marco, del 33 al 72 % de la página como en Koto | **El dato vivo:** el chequeo y sus lecturas, la ficha de cada pieza, «esta página como la lee un robot» |
-| Escala de la letra | La de Koto: 48 / 38 / 24 a 1440 | **La declaración grande** del brief en el corte condensado liviano, con la regla de palabra larga de E10 §13 medida en la spec |
+| Lo que carga la pantalla | **El trabajo:** capturas y grabaciones planas, a sangre en su marco, del 33 al 72 % de la página como en Koto (en el prototipo, medido a 1440: home 32,9 %, índice 53,0 %, casos 49,8 y 59,2 %; Desarrollo web, una interior, 15,0 %) | **El dato vivo:** el chequeo y sus lecturas, la ficha de cada pieza, «esta página como la lee un robot» |
+| **Letra** (compuerta 1, punto 8; §6.4) | **Google Sans Flex**: titulares wdth 76 · 300, cuerpo wdth 100 · 370 a interlínea 1,35 | **Mona Sans**: titulares wdth 89 · 340, cuerpo wdth 100 · 390 a interlínea 1,4 |
+| Escala de la letra | La de Koto: 48 / 38 / 24 a 1440 | **La declaración grande** del brief en el corte condensado liviano, a 88 px (64 la segunda escala), con la regla de palabra larga de E10 §13 medida en la spec |
 | Índice | El muro de dos columnas con tres proporciones | La lista en tabla con filetes (A&P) y la pieza al pasar o enfocar |
-| Primera pantalla de la home | La declaración a la escala de Koto en una esquina sobre la pieza grande; el chequeo justo debajo | La declaración grande y el chequeo como su prueba, en la misma pantalla (pregunta 2 del brief de obra) |
-| Qué sacrifica | El hero monumental del brief, y depende de grabaciones que hay que producir (las de Combeau, con su OK) | El muro de imágenes de Koto; más texto y más dato por pantalla, con riesgo de leerse como panel; sin el OK de Ramón para mostrar los puntajes propios, sus lecturas son solo las del visitante |
+| Primera pantalla de la home | **La cinta del trabajo** a 12 columnas (la pieza grande, como Koto) con la declaración a 48 px debajo, y en las 4 columnas de al lado la ficha de la pieza que pasa y **el chequeo, con campo y botón dentro del primer viewport**, como B (compuerta 1, punto 1). Medido: a 1440 × 900 el campo va de 659 a 703 y el botón de 711 a 755; a 390 × 844, campo y botón en una fila, de 776 a 820 (`direccion-a.md` §7) | La declaración grande y el chequeo como su prueba, en la misma pantalla (pregunta 2 del brief de obra) |
+| Qué sacrifica | El hero monumental del brief, y depende de grabaciones que hay que producir (las de Combeau, con su OK); y lleva la letra de los productos de Google (§6.2) | El muro de imágenes de Koto; más texto y más dato por pantalla, con riesgo de leerse como panel; sin el OK de Ramón para mostrar los puntajes propios, sus lecturas son solo las del visitante |
 
 **Lo que no puede pasar:** que A y B queden iguales salvo la escala (eso es una dirección con ruido); que alguna
-repita los tokens de E10 (ciruela, resaltador, Instrument Sans, Plex) o los de driftime (negro con campos de color),
-criterio 2 del brief de obra; o que una tercera dirección tibia aparezca «para que elija».
+repita los tokens de E10 (ciruela, resaltador, Instrument Sans, Plex) o el juego de driftime (un color de campo fijo por
+servicio sobre negro, §20.5), criterio 2 del brief de obra; o que una tercera dirección tibia aparezca «para que elija».
 
-## 17 · Lo que esto reabre del manual
+## 17 · El manual anterior no rige este sitio (compuerta 1, punto 7)
 
-Con el logo en pausa desde el 16-oct, el manual v3.0 ya no obliga en el wordmark, el oro ni el punto. Lo que este
-lock cambia de lo aprobado, para decidir en la compuerta 2 y no antes: Manrope (y Gabarito e Inter del contrato de
-marca anterior) por Mona Sans y DM Mono; el radio único de 6 px pasa a 6 en medios, 4 en placas y 2 en rótulos
-(Koto: medios 6, placas 4, etiquetas 2); el lienzo negro del manual §04 ya había pasado a claro en E10, y aquí la
-tinta es `#111111` y la señal, cobalto. Los documentos compartidos los toca la troncal (brief de obra §6.10).
+Ramón, 16-oct: «en diseño regirse por la referencia. el manual antiguo se olvida. ahora tenemos que cambiar». El manual
+de marca anterior (`marketing/brand/manual-de-marca.md`: el oro `#C9A227` y su regla de un uso por pieza, Gabarito e
+Inter, el wordmark con su punto, el radio único de 6 px, y el color, la forma y la imagen del v3.0, Manrope incluida)
+**no obliga en el diseño de esta obra** (brief de obra, «Compuerta 1», punto 7). La identidad sale de E12:
+
+| Qué | De dónde sale ahora |
+|---|---|
+| Color | §20.2: lienzo `#060606`, placa `#141414`, placa activa `#202020`, blanco para lo nombrado y lo activo, gris `#989898` para el cuerpo. El color es del trabajo, dentro de sus marcos, nunca de la interfaz. Sin señal de color (§20.4, opción a); el cobalto aclarado `#316BFF` queda medido como opción (b) |
+| Letra | §6.4: una por dirección (A Google Sans Flex, B Mona Sans) y DM Mono 500 |
+| Radios | Los de Koto: 6 en medios, 4 en placas, 2 en rótulos |
+| Wordmark | Los caminos de Bruno para la compuerta 2 (`e12/logo/caminos.md`), monocromos, sin oro ni Gabarito |
+
+**Lo que sigue, porque es contenido y no diseño:** la voz (manual §08), cero prueba social inventada, ningún prospecto
+nombrado y ninguna raya usada como golpe. **Lo que este lock no toca:** el manual mismo, `CLAUDE.md` y lo que fuera de
+este sitio usa la marca anterior; son documentos compartidos y los actualiza la troncal cuando se cierre la compuerta 2
+(brief de obra §6.10). La frase del paso 1 que cerraba esta sección («la tinta es `#111111` y la señal, cobalto») era
+del lienzo claro, que pasó a historia en §20.7.
 
 ## 18 · Evidencia
 
@@ -679,8 +740,8 @@ tinta es `#111111` y la señal, cobalto. Los documentos compartidos los toca la 
   casos), `capturas/` (tiras, momentos de color, Lyft completo a 1440 y 390, cierre, menú, pie) y
   `herramientas/correr.sh`.
 - Este lock: `../tableros/e12-laboratorio/datos/letras.json`, `contraste.json`, `resortes.json`, `atmosfera.json`,
-  `create-next-app-layout.txt`; `img/letras-comparadas.jpg`; `herramientas/letras.py`, `contraste.py`,
-  `resortes.mjs`, `atmosfera.mjs`, `evidencia-next.sh`. Licencias de las tres letras, copiadas por Javiera:
+  `create-next-app-layout.txt`, `interlinea.json`; `img/letras-comparadas.jpg`; `herramientas/letras.py`, `contraste.py`,
+  `resortes.mjs`, `atmosfera.mjs`, `evidencia-next.sh`, `interlinea.py`. Licencias de las tres letras, copiadas por Javiera:
   `e12/qa-paso-1/vuelta-1/crudo/licencia_*`. El tablero de la compuerta 1: `../tableros/e12-laboratorio/tablero.html`,
   armado por `herramientas/armar-tablero.py` (22 imágenes en `img/`, 1,63 MB en total, la mayor de 168 kB, con
   kB = 1.000 bytes como el inventario; lista en `img/manifiesto.json`), verificado por `herramientas/verificar.mjs`: a
@@ -706,6 +767,11 @@ tinta es `#111111` y la señal, cobalto. Los documentos compartidos los toca la 
 | 16-oct, 2.ª vuelta | §12, §13 y §18: una sola unidad, kB = 1.000 bytes (la del inventario corregido): la foto de Combeau es 805 kB → 95 kB, no «786 KB → 92 KB» (eran KiB); el tablero suma 1,63 MB, no «1,5 MB». Space Grotesk mide 1,325 veces el ancho de Koto: 1,33 en el lock y en el tablero, con el mismo redondeo | Preferencia (corrige unidades y redondeo) | Acta, defectos 13 y 14; inventario, «Correcciones» |
 | 16-oct, 2.ª vuelta | El tablero, sin cambiar el lock: las fichas claras con un solo atributo `style` (el contorno existía en el código y no en la página), los casos en `h3` (había un salto de `h2` a `h4`), el código dentro de los rótulos a 1em y sin mayúsculas (estaba en 8,8 px), la tabla de resortes con la fuente entera y un rótulo por celda bajo 834 px, el reloj sin hora fija de respaldo («--:--»), la muestra de la mono con el build verdadero de la vista previa (`f0d911c`, 14-oct) en vez de una fecha escrita a mano, y la nota de las mediciones de carga una sola vez | Preferencia (defectos del tablero) | Acta, defectos 3 y 5 a 10 |
 | 16-oct, compuerta 1 | **Base negra, medida de nuevo.** Ramón eligió el negro de Koto «con juegos de blanco u otros colores» y que los casos se hagan como Koto. Medí 9 páginas de la casa y 13 casos a 1440 (5 también a 390; `medicion/koto/paso2/`): el lienzo es `#060606` en las 640 paradas y nunca cambia; el blanco y los colores entran **dentro de los marcos del trabajo**, como campos de la marca de cada cliente (del 2,9 al 35,4 % de la página de un caso, mediana 23), y en las interiores de la casa casi no aparecen. Nuevo **§20** (la regla, los tokens sobre negro con su contraste, la señal, los techos y la diferencia con driftime) y nuevo **§21** (la plantilla del caso: barra lateral, cuatro formas de fila, largos de texto, cierre, 390). Pasan a historia la paleta clara de §5 y lo que dependía de ella (lista en §20.7); en §13 el resultado va al final, como el «Outcome» de Koto. Desvío del encargo del paso 2 avisado (§20.6): Koto no cambia el lienzo de una página interior | **Regla** (va a la spec) | Compuerta 1, puntos 4 y 6; `e12/encargo-paso-2.md` §6 |
+| 18-oct, paso 2 | §6.4: **dos sistemas de letra**, uno por dirección (compuerta 1, punto 8): A en Google Sans Flex (titulares wdth 76 · 300, cuerpo wdth 100 · 370) y B en Mona Sans (89 · 340 y 100 · 390), las dos con DM Mono 500, cada una con su escala tal como está en su prototipo. **La interlínea del cuerpo, medida** con fontTools en el archivo de cada prototipo y una sola regla (1,25 × x/H / 0,654, al 0,05): **A 1,35, B 1,4** (`herramientas/interlinea.py` → `datos/interlinea.json`). §6.2 suma la nota de la compuerta antes del razonamiento del paso 1 | **Regla** (va a la spec de la elegida) | Acta del paso 2, defecto 6; encargo §6, punto 4 |
+| 18-oct, paso 2 | §16: la primera pantalla de A con el chequeo dentro del primer viewport, como se construyó y se midió (1440 × 900 y 390 × 844); **la letra pasa a ser un eje** (cuatro, no tres) y deja de estar entre lo compartido; la escala de B dice 88 px y lo que carga A, sus medios medidos en el prototipo; el sacrificio de A suma la letra de Google; driftime se nombra por su juego (un color fijo por servicio) | **Regla** | Acta del paso 2, defecto 6; encargo §6, punto 5 |
+| 18-oct, paso 2 | §17 reescrito: el manual anterior no rige el diseño de este sitio (compuerta 1, punto 7); dice de dónde salen ahora color, letra, radios y wordmark, qué sigue porque es contenido y qué no toca este lock. Sale «la tinta es `#111111` y la señal, cobalto» | **Regla** | Acta del paso 2, defecto 6; encargo §6, punto 6 |
+| 18-oct, paso 2 | §21.5: **Problema lleva su rótulo mono**, como las otras cuatro. Desvío de Koto (su introducción no lo lleva), para que la página diga lo mismo que el índice del caso y la barra de 390, que nombran «Problema», y que el criterio 6 del encargo («cinco secciones con su rótulo»). B ya lo tenía; A lo lleva desde hoy | **Regla** (va a la spec) | Acta del paso 2, defecto 13 |
+| 18-oct, paso 2 | §15: el área de 44 px vale en alto y en ancho, también para el logo y los correos sueltos, y con cualquier puntero grueso; cómo se mide | Preferencia (precisa cómo se mide) | Acta del paso 2, defecto 11 |
 
 ---
 
@@ -956,7 +1022,7 @@ La misma anatomía, con el método de §13 puesto en el orden de Koto y los dato
 |---|---|---|---|
 | Barra lateral | 320 px pegajosa | Encabezado + barra flotante abajo | Nombre y bajada en dos tintas; ficha mono verdadera (TIPO · AÑO, y «CONCEPTO» en las piezas de concepto, visible sin scroll); índice con punto blanco de 3 px; abajo, créditos de quién hizo qué (sin inventar nombres) |
 | Medio principal | 16:9 a 1057 × 595, radio 6 | 4:5 a sangre, sin radio | La pieza entera, plana en su marco: pide **los dos encuadres** (16:9 y 4:5) |
-| **Problema** (la introducción de Koto) | Titular 24 a la izquierda, 1 a 3 párrafos a la derecha | En el encabezado | Lo que le pasaba al cliente o al sitio |
+| **Problema** (la introducción de Koto) | Rótulo mono + titular 24 a la izquierda, 1 a 3 párrafos a la derecha. Koto no pone rótulo en su introducción: aquí va, como en las otras cuatro (desvío escrito en §19, 18-oct) | En el encabezado, con su rótulo | Lo que le pasaba al cliente o al sitio |
 | **Hipótesis** (Strategy) | Rótulo mono + 1 o 2 párrafos + 0 o 1 fila (Lyft: 1) | Igual, a 358 px | Qué creíamos y cómo íbamos a saber si funcionó |
 | **Solución** (Identity) | Rótulo + párrafos + **el grueso de las filas** (Lyft: 7) | Igual | Lo que se hizo, con los ingredientes verificados (§7) |
 | **La pieza** (Application) | Rótulo + 1 párrafo + **el otro grueso** (Lyft: 6) | Igual | La pieza aplicada: pantallas, piezas, sistema; aquí entran los campos claros y de color (§20) |
