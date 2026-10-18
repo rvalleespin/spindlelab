@@ -1,6 +1,6 @@
 {
- "cuando": "2026-10-17T05:16:53.305Z",
- "base": "http://127.0.0.1:8761/",
+ "cuando": "2026-10-18T21:31:17.978Z",
+ "base": "http://127.0.0.1:39895/",
  "chromium": "141.0.7390.37",
  "desborde": [
   {
@@ -1080,7 +1080,7 @@
   {
    "id": "caso-praxi",
    "w": 1440,
-   "nodos": 77,
+   "nodos": 78,
    "sobreMedio": 0,
    "bajo": [],
    "minimo": 7.02
@@ -1088,7 +1088,7 @@
   {
    "id": "caso-praxi",
    "w": 390,
-   "nodos": 79,
+   "nodos": 80,
    "sobreMedio": 0,
    "bajo": [],
    "minimo": 6.39
@@ -1096,7 +1096,7 @@
   {
    "id": "caso-sesenta",
    "w": 1440,
-   "nodos": 39,
+   "nodos": 40,
    "sobreMedio": 0,
    "bajo": [],
    "minimo": 7.02
@@ -1104,7 +1104,7 @@
   {
    "id": "caso-sesenta",
    "w": 390,
-   "nodos": 41,
+   "nodos": 42,
    "sobreMedio": 0,
    "bajo": [],
    "minimo": 6.39
@@ -1194,7 +1194,7 @@
    "sinAlt": 0,
    "textoMin": 11,
    "negrita": 0,
-   "alto": 8180,
+   "alto": 8192,
    "errores": []
   },
   {
@@ -1250,7 +1250,7 @@
    "sinAlt": 0,
    "textoMin": 11,
    "negrita": 0,
-   "alto": 5510,
+   "alto": 5522,
    "errores": []
   },
   {
@@ -1306,7 +1306,7 @@
    "sinAlt": 0,
    "textoMin": 11,
    "negrita": 0,
-   "alto": 6735,
+   "alto": 6773,
    "errores": []
   },
   {
@@ -1362,7 +1362,7 @@
    "sinAlt": 0,
    "textoMin": 11,
    "negrita": 0,
-   "alto": 6114,
+   "alto": 6151,
    "errores": []
   },
   {
@@ -1390,7 +1390,7 @@
    "sinAlt": 0,
    "textoMin": 11,
    "negrita": 0,
-   "alto": 5925,
+   "alto": 5911,
    "errores": []
   },
   {
@@ -1418,7 +1418,7 @@
    "sinAlt": 0,
    "textoMin": 11,
    "negrita": 0,
-   "alto": 8381,
+   "alto": 8380,
    "errores": []
   }
  ],
@@ -1446,16 +1446,16 @@
    "w": 390,
    "h": 844,
    "h1": {
-    "top": 353,
-    "bottom": 533
+    "top": 365,
+    "bottom": 545
    },
    "campo": {
-    "top": 764,
-    "bottom": 808
+    "top": 776,
+    "bottom": 820
    },
    "boton": {
-    "top": 764,
-    "bottom": 808
+    "top": 776,
+    "bottom": 820
    },
    "alto": 844,
    "campoDentro": true,
@@ -1465,7 +1465,7 @@
  "negro": [
   {
    "id": "home",
-   "png": "/tmp/claude-0/-home-user/756adde7-3da1-5186-9935-cf74aeaa7043/scratchpad/med/a-home-1440-completa.png",
+   "png": "/tmp/claude-0/-home-user/756adde7-3da1-5186-9935-cf74aeaa7043/scratchpad/lucia-a/medir-png/a-home-1440-completa.png",
    "alto": 7573,
    "ancho": 1440,
    "medios": 9,
@@ -1473,7 +1473,7 @@
   },
   {
    "id": "trabajo",
-   "png": "/tmp/claude-0/-home-user/756adde7-3da1-5186-9935-cf74aeaa7043/scratchpad/med/a-trabajo-1440-completa.png",
+   "png": "/tmp/claude-0/-home-user/756adde7-3da1-5186-9935-cf74aeaa7043/scratchpad/lucia-a/medir-png/a-trabajo-1440-completa.png",
    "alto": 3355,
    "ancho": 1440,
    "medios": 10,
@@ -1481,7 +1481,7 @@
   },
   {
    "id": "caso-praxi",
-   "png": "/tmp/claude-0/-home-user/756adde7-3da1-5186-9935-cf74aeaa7043/scratchpad/med/a-caso-praxi-1440-completa.png",
+   "png": "/tmp/claude-0/-home-user/756adde7-3da1-5186-9935-cf74aeaa7043/scratchpad/lucia-a/medir-png/a-caso-praxi-1440-completa.png",
    "alto": 9490,
    "ancho": 1440,
    "medios": 16,
@@ -1489,7 +1489,7 @@
   },
   {
    "id": "caso-sesenta",
-   "png": "/tmp/claude-0/-home-user/756adde7-3da1-5186-9935-cf74aeaa7043/scratchpad/med/a-caso-sesenta-1440-completa.png",
+   "png": "/tmp/claude-0/-home-user/756adde7-3da1-5186-9935-cf74aeaa7043/scratchpad/lucia-a/medir-png/a-caso-sesenta-1440-completa.png",
    "alto": 10267,
    "ancho": 1440,
    "medios": 20,
@@ -1497,8 +1497,8 @@
   },
   {
    "id": "desarrollo-web",
-   "png": "/tmp/claude-0/-home-user/756adde7-3da1-5186-9935-cf74aeaa7043/scratchpad/med/a-desarrollo-web-1440-completa.png",
-   "alto": 5925,
+   "png": "/tmp/claude-0/-home-user/756adde7-3da1-5186-9935-cf74aeaa7043/scratchpad/lucia-a/medir-png/a-desarrollo-web-1440-completa.png",
+   "alto": 5911,
    "ancho": 1440,
    "medios": 4,
    "lienzo": "rgb(6, 6, 6)"

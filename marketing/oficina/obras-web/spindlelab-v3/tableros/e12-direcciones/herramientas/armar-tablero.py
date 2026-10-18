@@ -637,9 +637,8 @@ DIFERENCIAS = [
     ("sesenta", {"21", "24", "719", "asesoría", "certifica", "cumples", "diagnóstico", "dirección", "gratis", "horas", "ley", "mandamos", "mini", "personales", "revisa", "señales", "técnicas"}, set(),
      "El cierre: A pone el contacto de la home y la bajada de Verifica y Cumple, que es el caso siguiente; B, solo el botón y el nombre del siguiente.",
      "El caso de Bruno no trae texto de cierre. Clara lo escribe para las dos (es su pendiente)."),
-    ("desarrollo-web", {"decap", "netlify", "image", "cdn", "api", "anthropic"}, set(),
-     "Bajo las portadas de «Lo que construimos», A pone la línea con las herramientas (Decap CMS, Netlify Image CDN, API de Anthropic).",
-     "Es un defecto de A: después de la lectura fría, Clara dejó para la home y esta página la línea corta, solo tipo y año (<code>linea_corta</code> en <code>texto-paso2.json</code>). Se corrige al construir la elegida."),
+    # (18-oct) Ya no hay diferencia de A en «Lo que construimos»: lleva la línea corta de Clara, como B (acta del paso 2,
+    # defecto 14).
     ("desarrollo-web", {"doceavo"}, set(),
      "El nombre de la franja ancha de A: «Doceavo · Concepto · 2026».",
      "Es el juego de color de A en esta página; B no lleva esa franja."),

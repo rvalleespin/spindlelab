@@ -422,9 +422,11 @@ def fila(forma, medios, raiz, pie=None):
     return cuerpo
 
 
-def seccion_caso(sid, nombre, h2, parrafos, filas, extra="", intro=False):
+def seccion_caso(sid, nombre, h2, parrafos, filas, extra=""):
+    """Las cinco secciones llevan su rótulo mono a la vista, también Problema (la introducción de Koto, que allí no lo
+    lleva): criterio 6 del encargo y lock §21.5, corregido el 18-oct por el defecto 13 del acta del paso 2."""
     pars = "".join(f'<p class="cuerpo">{e(x)}</p>' for x in parrafos)
-    izq = (f'<h2>{e(h2)}</h2>' if intro else f'<p class="rotulo">{e(nombre)}</p><h2>{e(h2)}</h2>')
+    izq = f'<p class="rotulo">{e(nombre)}</p><h2>{e(h2)}</h2>'
     filas_html = f'<div class="filas">{"".join(filas)}</div>' if filas else ""
     return f'''<section class="caso-bloque" id="{sid}" data-nombre="{e(nombre)}" aria-label="{e(nombre)}">
   <div class="caso-sec">
@@ -485,7 +487,7 @@ def praxi():
 </figure>'''
     secciones = [
         seccion_caso("problema", nombres[0], tx("praxi.problema.h2"),
-                     [tx("praxi.problema.p1"), tx("praxi.problema.p2")], [], intro=True),
+                     [tx("praxi.problema.p1"), tx("praxi.problema.p2")], []),
         # El segundo párrafo de Hipótesis sale: su señal («persona activada») no tiene fila en inventario-praxi
         # (condición escrita por Clara en el elemento praxi.hipotesis.p2)
         seccion_caso("hipotesis", nombres[1], tx("praxi.hipotesis.h2"), [tx("praxi.hipotesis.p1")],
@@ -595,7 +597,7 @@ def sesenta():
     secciones = []
     for n, (sid, nombre) in enumerate(indice):
         h2, pars = secs[koto[n]]
-        secciones.append(seccion_caso(sid, nombre, sin_md(h2), [sin_md(x) for x in pars], filas[sid], intro=(n == 0)))
+        secciones.append(seccion_caso(sid, nombre, sin_md(h2), [sin_md(x) for x in pars], filas[sid]))
     principal = f'''<figure class="medio-principal">
   <div class="solo-ancho">{video('sesenta-recorrido.webm', 'sesenta-recorrido-poster.webp', 'Recorrido de diez segundos por el sitio de Sesenta: la portada con el 60, el contador que baja hasta 35 y el lector de la carta en el artículo 161', raiz, '169')}</div>
   <div class="solo-angosto">{M('sesenta-45.webp', PORTADA['sesenta'][2], '45')}</div>
@@ -679,7 +681,7 @@ def desarrollo_web():
   </a>
   <div class="pieza__txt">
     <h3 class="pieza__nombre" id="o-{i}" style="font-stretch:100%;font-weight:370"><span class="tinta">{e(en['nombre'])}</span> <span class="gris">{e(en['bajada'])}</span></h3>
-    <p class="rotulo">{e(en['linea'])}</p>
+    <p class="rotulo">{e(en['linea_corta'])}</p>
   </div>
 </article>'''
     obra = f'''<section class="seccion reticula" aria-labelledby="h-obra">

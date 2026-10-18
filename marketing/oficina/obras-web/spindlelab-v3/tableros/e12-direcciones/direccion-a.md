@@ -45,7 +45,7 @@ para que la pese mirándola.
 | Letras | `proto/a/fuentes/`: Google Sans Flex (subconjunto latino de Google Fonts, ejes `wdth` 25–151 y `wght` 100–1000, 119 kB) y DM Mono 500 (15 kB), con sus dos OFL al lado |
 | Medios | `proto/a/medios/` (58 archivos, 6,55 MB; `medios.json` dice de dónde sale cada uno y `cinta.json` cada tramo de la cinta) |
 | Capturas | `img/a-<vista>-<1440|390>-primera.jpg` y `-01.jpg`, `-02.jpg`… (página completa en tramos de hasta 4000 px, JPEG 82; 1440 a dpr 1 y 390 a dpr 2): **42 archivos, 12 MB** |
-| Recorridos | `video/a-home-1440.webm` (14,2 s) y `video/a-trabajo-1440.webm` (12,4 s), 1440 × 900, grabados del navegador con mouse real |
+| Recorridos | `video/a-home-1440.webm` (14,2 s) y `video/a-trabajo-1440.webm` (12,7 s; 12,72 con `ffprobe`), 1440 × 900, grabados del navegador con mouse real |
 | Mediciones | `proto/a/medicion/mediciones.json`, `campos.json`, `render.json` y cuatro capturas de estados (cursor blanco, cursor cobalto, teclado, chequeo corrido) |
 
 ```
@@ -91,7 +91,7 @@ texto de producción.
 | Entrada: una por sección, sube 50 px una vez, nunca texto de lectura; lo que ya se ve no se esconde | §9, §14 | Con `inView` de Motion. Medido con movimiento reducido: 0 bloques escondidos |
 | El encabezado se pliega en la placa al bajar (desde 834) | §9 | La placa entra con el resorte «entrada» |
 | La carga como diseño: cada medio espera en la placa con su radio y aparece en 167 ms | §20.7 (lo que queda de A&P) | Sin brillo que corre ni esqueleto animado |
-| Caso: barra lateral pegajosa de 320 px (nombre y bajada en dos tintas a 24, ficha mono, índice de secciones con el punto blanco, créditos abajo); medio principal a 1057 × 595; la introducción con el titular a la izquierda y el cuerpo de 493 px a la derecha; rótulo mono por sección; **solo las cuatro formas de fila**; «Siguiente» con el contacto, el próximo caso y «[ Todo el trabajo ] (10)»; sin pie | §21.1 a §21.5 | Medido a 1440, a la mitad de cada caso: la barra sigue en el viewport (de 80 a 884 px) y el índice marca «La pieza». Praxi: 9 filas más el medio principal; Sesenta: 12 filas más el medio principal, 19 medios |
+| Caso: barra lateral pegajosa de 320 px (nombre y bajada en dos tintas a 24, ficha mono, índice de secciones con el punto blanco, créditos abajo); medio principal a 1057 × 595; la introducción con el titular a la izquierda y el cuerpo de 493 px a la derecha; rótulo mono en las cinco secciones, también Problema (lock §21.5, desvío de Koto escrito el 18-oct); **solo las cuatro formas de fila**; «Siguiente» con el contacto, el próximo caso y «[ Todo el trabajo ] (10)»; sin pie | §21.1 a §21.5 | Medido a 1440, a la mitad de cada caso: la barra sigue en el viewport (de 80 a 884 px) y el índice marca «La pieza». Praxi: 9 filas más el medio principal; Sesenta: 12 filas más el medio principal, 19 medios |
 | A 390: el medio principal a sangre en 4:5 arriba, el nombre y la ficha debajo, y el índice en una barra flotante abajo (nombre en mono gris, la sección activa en mono blanco sobre la placa activa, «+» que abre la lista) | §21.3 | Ver las capturas `a-caso-*-390-primera.jpg` |
 | Telemetría verdadera y nada más: la hora de Santiago con su huso (gris), el resultado de tu chequeo con su hora (blanco), los conteos del índice | §11 | Ningún «LAB_STATUS», coordenadas ni contadores decorativos |
 | Corchetes: uno por página, alrededor de un enlace mono a un índice | §14 | Home y casos: «[ Todo el trabajo ] (10)». /trabajo/ y Desarrollo web: ninguno |
@@ -124,7 +124,7 @@ mono de cada concepto dice «CONCEPTO · 2026».
 
 **3 · Caso Praxi** (`trabajo/praxi/`). El caso real de la vista 3, como pide el encargo de esta corrida. Medio principal:
 el video del inicio de Praxi (los cinco clips del hero, con su pie de generado). Problema sin filas, como la
-introducción de Koto; Hipótesis con el par «portada de ahora / lema de antes» a 390; Solución con las reglas de la
+introducción de Koto, pero con su rótulo, como las otras cuatro; Hipótesis con el par «portada de ahora / lema de antes» a 390; Solución con las reglas de la
 landing, la conversación y los números (con el pie de «datos de ejemplo») y la lista «Con qué está hecho» (lo que le
 hace al usuario en cuerpo, la herramienta en mono); La pieza con la marca en su amarillo a 16:9 (el gesto de Koto con
 Lyft), la portada de Facebook, el reel con los dos avatares y el carrusel; Sin métrica con «Lo que te llevas gratis». La
@@ -138,7 +138,7 @@ Verifica y Cumple, la entrada que le sigue en el índice.
 **5 · Desarrollo web** (`servicios/desarrollo-web/`), la interior que muestra el juego. **El lienzo no cambia**: el
 juego es el de Koto medido en el lock §20.1 y §20.6, el color entra con el trabajo. Una **franja ancha** con la portada
 de Doceavo (papel verde pálido, un campo claro, con su nombre y «Concepto · 2026» al pie), **las tres portadas** de «Lo
-que construimos» (el verde de Combeau, el amarillo de Praxi, el azul de Sesenta) y, en «Cinco fases», el único cambio de
+que construimos» (el verde de Combeau, el amarillo de Praxi, el azul de Sesenta; bajo cada una, la línea corta de Clara: tipo y año) y, en «Cinco fases», el único cambio de
 color atado al scroll que Koto tiene, el de `/services`: la fase a la vista pasa del gris al blanco en 167 ms y la
 anterior vuelve al gris. Los cuatro planes, tal cual `oferta-v3.json`, con el glosario de Clara antes de las tarjetas.
 
@@ -203,27 +203,28 @@ fuentes y hacía falta para que una pantalla funcione**, para que Clara lo confi
 
 ---
 
-## 7 · Mediciones (17-oct-2026, Chromium 141.0.7390.37 con Playwright, servidor local)
+## 7 · Mediciones (17-oct-2026, Chromium 141.0.7390.37 con Playwright, servidor local; repetidas el 18-oct después de los defectos 11, 13 y 14 del acta)
 
 | Qué | Resultado | Criterio |
 |---|---|---|
 | **Desborde horizontal** de 360 a 1920 (360, 375, 390, 414, 600, 768, 834, 1024, 1194, 1280, 1440, 1680, 1920), tal cual y con `overflow-x: clip` inyectado en `html` y `body`, buscando además cualquier elemento que se pase del borde | **0 de 65** vista × ancho, en los dos modos. A no usa `overflow: clip` en ninguna parte | Encargo 17 |
-| **Contraste WCAG** de cada nodo de texto, componiendo los fondos y la opacidad heredada (`medir.mjs`), en las diez capturas más dos estados (el resultado del chequeo y el filtro en «Concepto») | **926 nodos, 0 bajo el mínimo.** El más justo: gris sobre la placa de la barra de 390, **6,39:1**; el resto, 7,02:1 o más. 0 nodos de interfaz sobre un medio | Encargo 5 |
+| **Contraste WCAG** de cada nodo de texto, componiendo los fondos y la opacidad heredada (`medir.mjs`), en las diez capturas más dos estados (el resultado del chequeo y el filtro en «Concepto») | **930 nodos, 0 bajo el mínimo** (926 el 17-oct; los 4 nuevos son el rótulo «Problema» de los dos casos a 1440 y 390). El más justo: gris sobre la placa de la barra de 390, **6,39:1**; el resto, 7,02:1 o más. 0 nodos de interfaz sobre un medio | Encargo 5 |
 | `npm run verificar` de `spindlelab-astro` con `--base` al servidor local, a 390, 768 y 1440 | 0 de contraste, 0 desborde, un `h1`, 0 imágenes sin `alt` en las tres pasadas. **Dos hallazgos esperados:** las cinco páginas «sin JSON-LD» (la capa de señales es de Simón y entra en la construcción; los prototipos van con `noindex, nofollow`) y 18 enlaces a rutas `/v3/` que este prototipo no construye (servicios, método, nosotros, contacto, diagnóstico y los otros ocho casos) | Encargo 17 |
 | Un `h1` por página · `lang="es-CL"` · un `main` | 10 de 10 | Encargo 17 |
 | Texto más chico | 11 px (los rótulos mono) | Lock §15 |
 | Negrita | 0 nodos | Lock §14 |
 | Letras cargadas | Google Sans Flex (100–1000) y DM Mono 500; ninguna otra | Encargo 2 |
 | Imágenes rotas · errores de consola | 0 · 0 en las diez capturas | Encargo 17 |
-| **Primera pantalla de la home** | 1440 × 900: h1 de 664 a 760 px, campo de 659 a 703, botón de 711 a 755: **dentro**. 390 × 844: campo y botón en la misma fila, de 764 a 808: **dentro, a 36 px del borde** | Encargo 10 |
-| **Base negra:** píxeles fuera de los medios con luminancia ≤ 0,01, a 1440 | Home 95,2 % · /trabajo/ 96,0 % · Praxi 96,8 % · Sesenta 97,1 % · Desarrollo web 95,2 % | Encargo 4 (≥ 80 %) |
+| **Primera pantalla de la home** | 1440 × 900: h1 de 664 a 760 px, campo de 659 a 703, botón de 711 a 755: **dentro**. 390 × 844: campo y botón en la misma fila, de 776 a 820: **dentro, a 24 px del borde** (eran 764 a 808 antes de que el logo midiera 44 de alto; ver la fila de área de toque) | Encargo 10 |
+| **Base negra:** píxeles fuera de los medios con luminancia ≤ 0,01, a 1440 | Home 95,2 % · /trabajo/ 96,0 % · Praxi 97,0 % · Sesenta 97,3 % · Desarrollo web 95,2 % | Encargo 4 (≥ 80 %) |
 | **Área de medios** a 1440 | Home 32,9 % · /trabajo/ 53,0 % · **Praxi 49,8 % · Sesenta 59,2 %** · Desarrollo web 15,0 % | Encargo 6 (casos ≥ 1/3) |
-| **Campos claros y de color** (lock §20.1: el color dominante cubre el 30 % del medio) | **Sesenta 22,3 %** (6 campos) · Home 16,6 % · /trabajo/ 27,0 % · Desarrollo web 13,2 % · **Praxi 6,0 %** (2 campos). Seguidos, como mucho 3 (techo: 4) | Lock §20.3 (caso: del 10 al 35 %) |
+| **Campos claros y de color** (lock §20.1: el color dominante cubre el 30 % del medio) | **Sesenta 22,3 %** (6 campos) · Home 16,6 % · /trabajo/ 27,0 % · Desarrollo web 13,3 % · **Praxi 6,0 %** (2 campos). Seguidos, como mucho 3 (techo: 4) | Lock §20.3 (caso: del 10 al 35 %) |
 | Chequeo | Corrido contra `/api/chequeo`: `verifica.spindlelab.cl` 94/100, 21 ítems | |
 | Cursor sobre una pieza | `con-circulo`, «Ver el caso», 88 px, fondo blanco, texto `#060606`, la pieza recortada 24 px y el velo de la vecina en 1 | Lock §8 |
 | Teclado | Tab: círculo a escala 0, contorno blanco de 2 px; en la pieza, «Ver el caso» quieto a la vista | Lock §8, §15 |
 | Movimiento reducido (emulado, home y Praxi) | Sin círculo, videos detenidos y sin `autoplay`, la pausa en «apretado», 0 bloques escondidos, 0 transiciones | Encargo 16 |
 | Teléfono (390, táctil) | Sin círculo; la bajada de cada pieza a la vista | Lock §8 |
+| **Área de toque** (18-oct), con `e12/qa-paso-2/vuelta-1/herramientas/area-toque-390.js` de Javiera y, en cada objetivo agrandado, qué elemento recibe el toque en sus cuatro bordes y su centro (`elementFromPoint`) | **0 objetivos bajo 44 × 44** en las cinco vistas a 360, 390 y 768 (teléfono y tableta táctiles); 0 tapados. El logo pasa de 108 × 20 a 108 × 44 en el encabezado y el pie; `hola@spindlelab.cl` del pie, de 125 × 14 a 125 × 44; «O directo a hola@spindlelab.cl», de 176 × 17 a 176 × 44; «Método» y la miga «Inicio», de 42 a 44 de ancho. En el pie y el contacto el área crece con margen negativo y la letra no se mueve (medido contra la versión anterior: la distancia entre el logo, el correo y la hora del pie es la misma al décimo de píxel); en el encabezado el logo tiene el menú justo debajo, así que la fila del menú y todo lo que sigue bajan 12 px bajo 834. A 1440 con mouse no cambia nada: la regla vale bajo 834 px y con puntero grueso | Lock §15 |
 | Peso de cada vista (HTML, hoja, JS, Motion, letras y los medios que referencia) | Home 1,78 MB (la cinta, 975 kB) · /trabajo/ 0,65 · Praxi 2,41 · Sesenta 2,32 · Desarrollo web 0,54 | |
 
 ---
@@ -276,6 +277,10 @@ fuentes y hacía falta para que una pantalla funcione**, para que Clara lo confi
 7. **Safari:** la cinta lleva VP9 y H.264; los videos de los casos, solo VP9 (los recorridos de Bruno y los de Praxi
    pasados a VP9). En la construcción, cada uno lleva su H.264.
 8. **El riesgo de la letra** (§0): está dicho; lo pesa Ramón mirando.
+9. **La primera pantalla a 360 × 800** (fuera del criterio 10, que se mide a 390 × 844): Javiera anotó el campo del
+   chequeo 4 px bajo el borde; con el encabezado 12 px más alto (área de toque del logo) queda de 816 a 860. A 390 × 844
+   sigue dentro, a 24 px. Si se quiere dentro también a 360, la spec lo resuelve en la primera pantalla de la elegida (la
+   cinta a 16:9 a sangre es lo que más alto ocupa), no con un logo de 20 px de toque.
 
 ## 10 · Historial
 
@@ -284,3 +289,8 @@ fuentes y hacía falta para que una pantalla funcione**, para que Clara lo confi
 | 17-oct-2026 | Primera versión: las cinco vistas, capturas, recorridos y mediciones | Lucía, encargo del paso 2 |
 | 17-oct-2026 | El círculo pasa de cobalto a blanco con anillo (lock §20.4 a), con el cobalto a mano con `?senal=cobalto`; se suma la cruz de registro (§10) en los casos | Lucía, al contrastar el encargo de la corrida con el lock y con B |
 | 17-oct-2026 | El tablero de la compuerta 2 recomprimió en su lugar, con el mismo ancho, las capturas que pasaban de 450 kB: `a-home-1440-01.jpg` (506 → 433 kB, JPEG 76), `a-trabajo-1440-01.jpg` (482 → 446 kB, JPEG 80), `a-caso-praxi-1440-01.jpg` (508 → 434 kB, JPEG 76), `a-caso-sesenta-1440-02.jpg` (549 → 431 kB, JPEG 68), `a-desarrollo-web-1440-01.jpg` (531 → 445 kB, JPEG 76) (`datos/recompresion.json`). Y su comparación de texto contra B (`datos/diferencias-texto.json`) encontró un defecto de A: bajo las portadas de «Lo que construimos», en Desarrollo web, va la línea completa con las herramientas, y Clara dejó para la home y esta página la línea corta, solo tipo y año (`linea_corta` en `texto-paso2.json`, lectura fría, vuelta 1, punto 9). Queda abierto y se corrige al construir la dirección elegida | Lucía, tablero de la compuerta 2 |
+| 18-oct-2026 | **Acta del paso 2, defecto 11 (área de toque a 390).** Bajo 834 px y con puntero grueso, todo enlace suelto mide 44 × 44: el logo del encabezado y del pie (108 × 20 → 108 × 44), `hola@spindlelab.cl` del pie (125 × 14 → 125 × 44), «O directo a hola@spindlelab.cl» del contacto (176 × 17 → 176 × 44), «Método» y la miga «Inicio» (42 → 44 de ancho). En el pie y el contacto con margen negativo, sin mover la letra; en el encabezado la fila del menú baja 12 px para no quedar tapada por el área del logo. Medido con la herramienta de Javiera y con `elementFromPoint` en los bordes de cada objetivo (§7). A 1440 con mouse, nada cambia | Lucía, acta del paso 2 |
+| 18-oct-2026 | **Defecto 13.** Problema lleva su rótulo mono a la vista en Praxi y en Sesenta, como las otras cuatro secciones y como B (`armar.py`, `seccion_caso`); el lock §21.5 se corrige en el mismo sentido | Lucía, acta del paso 2 |
+| 18-oct-2026 | **Defecto 14.** Bajo las portadas de «Lo que construimos», en Desarrollo web, va la línea corta de Clara (tipo y año), como en la home; la diferencia de texto contra B que lo anotaba sale del tablero (`armar-tablero.py`, `DIFERENCIAS`; `datos/diferencias-texto.json` medido de nuevo: en Desarrollo web solo dejan de estar en A «decap», «netlify», «image», «cdn», «api» y «anthropic») | Lucía, acta del paso 2 |
+| 18-oct-2026 | **Defecto 19.** El recorrido de `/trabajo/` dura 12,7 s (12,72 con `ffprobe`), no 12,4; el de la home, 14,2 | Lucía, acta del paso 2 |
+| 18-oct-2026 | Rehecho lo que cambió: `armar.py` → las cinco vistas; capturas de las cinco a 390 y de Praxi, Sesenta y Desarrollo web a 1440 (`render.mjs`; a 1440 la home y `/trabajo/` no cambian, así que quedan sus capturas y sus dos recorridos del 17-oct); `medir.mjs` y `campos.py` (§7); el tablero con su script, que recomprimió en su lugar `a-caso-praxi-1440-01.jpg` (510 → 436 kB), `a-caso-sesenta-1440-02.jpg` (550 → 432 kB) y `a-desarrollo-web-1440-01.jpg` (528 → 443 kB), y su `verificar.mjs` a 360, 390, 768 y 1440 sin fallas | Lucía, acta del paso 2 |

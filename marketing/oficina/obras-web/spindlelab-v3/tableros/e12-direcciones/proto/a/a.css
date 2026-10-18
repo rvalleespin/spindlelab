@@ -155,7 +155,8 @@ h1, h2, h3, .t-display {
   .cab__fila { transition: padding var(--resorte-color); }
 }
 @media (max-width: 833.98px) {
-  .cab__fila { flex-wrap: wrap; gap: 0 16px; min-height: 0; padding-top: 14px; }
+  /* padding-top 14 → 2: el logo mide 44 de alto (área de toque, abajo) y su dibujo queda donde estaba, a 14 px */
+  .cab__fila { flex-wrap: wrap; gap: 0 16px; min-height: 0; padding-top: 2px; }
   .cab__logo svg { height: 20px; }
   .cab__nav { order: 3; width: 100%; }
   .cab__nav ul { justify-content: space-between; gap: 8px; }
@@ -329,6 +330,20 @@ html[data-senal="cobalto"] { --circulo: #316bff; --circulo-anillo: none; }
 .pie-sitio { margin-top: 160px; padding: 16px var(--m) 24px; display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: center; border-top: 1px solid var(--linea-seccion); }
 .pie-sitio .cab__logo svg { height: 20px; }
 .pie-sitio .cab__hora { margin-left: auto; }
+
+/* ---------- Área de toque: 44 px a 390 (lock §15), y con cualquier puntero grueso (acta del paso 2, defecto 11) ----------
+   Todo enlace suelto mide 44 de alto y de ancho. Donde no hay otro objetivo al lado (el pie y el correo del contacto)
+   el área crece con margen negativo y lo que se ve no se mueve; en el encabezado el logo tiene el menú justo debajo,
+   así que ahí la fila del menú baja 12 px (padding-top de .cab__fila, arriba) en vez de taparle la parte de arriba. */
+@media (max-width: 833.98px), (pointer: coarse) {
+  .cab__logo { min-height: 44px; align-items: center; }
+  .cab__nav a, .miga a { min-width: 44px; justify-content: center; }
+  .pie-sitio .cab__logo { margin-block: -12px; }                         /* dibujo de 20 px en 44 */
+  /* 14 en 44: crece 18 arriba y 12 abajo (con 6 de relleno arriba para que la letra no se mueva), así no alcanza la
+     hora cuando el pie pasa a dos filas (360 px) */
+  .pie-sitio > a[href^="mailto:"] { display: inline-flex; align-items: center; min-height: 44px; padding-top: 6px; margin-block: -18px -12px; }
+  .contacto__txt a[href^="mailto:"] { display: inline-flex; align-items: center; min-height: 44px; margin-block: -13.5px; } /* 17 en 44 */
+}
 
 /* ================= ÍNDICE /trabajo/ ================= */
 .indice { display: grid; grid-template-columns: 1fr; gap: 32px var(--m); padding: 8px var(--m) 0; }
