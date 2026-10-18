@@ -184,8 +184,9 @@ están en una línea al principio del armador:
 - **`PUNTAJES_PROPIOS = False`** (encargo §10.3). Mientras Ramón no diga sí, Verifica y Cumple va con la alternativa de
   Clara: en la home «El chequeo gratis de esta página.» con su dato, y en el índice «Sin métrica de uso: no guarda los
   dominios que revisa.». Con `True`, la fila de la home lleva «54 → 94» a escala de cifra y la ficha «Medido 14 y
-  16-oct-2026». **Ojo:** el resultado de spindlelab.cl en el índice (36 → 73, de la ley de datos personales) Clara lo
-  dejó sin condición; también es un puntaje propio y debería entrar en la misma pregunta.
+  16-oct-2026». El resultado de spindlelab.cl en el índice (36 → 73, de la ley de datos personales) entra en la misma
+  pregunta desde el 18-oct (Clara, defecto 15 del acta del paso 2): con `False` va «Sin métrica de negocio. Si no aceptas
+  las cookies, la portada no carga nada de Google ni de Meta (16-oct-2026).»; con `True`, el 36 → 73.
 - **Hipótesis de Praxi, segundo párrafo: sale.** Su condición pide una fila en `inventario-praxi.md` que no existe
   («persona activada»). A hizo lo mismo.
 - **Se muestran tal como los escribió Clara, a la espera de Ramón:** «Fuera de línea» (ficha de Praxi y su párrafo),

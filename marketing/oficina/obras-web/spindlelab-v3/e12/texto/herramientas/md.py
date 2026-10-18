@@ -91,6 +91,24 @@ def seccion_md(sec, out):
     lista("Lo que se borró del texto anterior, y por qué", sec.get("borrado"), out)
 
 
+def construccion_md(p, out):
+    """Lo que queda escrito para la construcción de la dirección elegida (no se ve en los prototipos)."""
+    c = p["para_la_construccion"]
+    nombres = {e["id"]: e["nombre"] for e in p.get("entradas", [])}
+    out += ["", f"### Para la construcción: {c['titulo'][0].lower()}{c['titulo'][1:]}", "", c["problema"], "",
+            f"*{c['mientras_tanto']}*"]
+    for s in c["salidas"]:
+        out += ["", f"#### Dirección {s['direccion']}", "", f"**{s['salida']}** {s['por_que']}", ""]
+        out.extend(f"- {x}" for x in s["cambios"])
+        if s.get("nota_nueva"):
+            out += ["", f"- `nota` (nueva) {s['nota_nueva']}"]
+    out += ["", "#### «Con qué está hecho», lo que hace cada herramienta (salida de B)", "",
+            "| Entrada | Lo que hace (letra del cuerpo) | Herramienta (mono) | Fuente |", "|---|---|---|---|"]
+    out.extend(f"| {nombres.get(x['entrada'], x['entrada'])} | {x['hace']} | {x['herramienta']} | {x['fuente']} |"
+               for x in c["con_que_esta_hecho"])
+    out += ["", f"<sub>{c['sin_lectura_fria']}</sub>"]
+
+
 def md(d):
     out = [
         "# E12 · Paso 2 · El texto de las páginas de la compuerta 2",
@@ -137,6 +155,8 @@ def md(d):
                 if e.get("nota"):
                     out.append(f"\n<sub>{e['nombre']}: {e['nota']}</sub>")
             lista("Lo que se borró del texto anterior, y por qué", p.get("borrado"), out)
+        if p.get("para_la_construccion"):
+            construccion_md(p, out)
 
     out += ["", "## Afirmaciones por verificar antes de publicar", ""]
     out.extend(f"- **{a['texto']}.** {a['estado']}" for a in d["afirmaciones_por_verificar"])

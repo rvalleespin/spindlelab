@@ -625,7 +625,8 @@
             {
               "id": "trabajo.nota-herramientas",
               "rol": "nota",
-              "texto": "Bajo cada pieza van las herramientas con que está hecha. Qué hace cada una por el cliente está en su caso."
+              "texto": "Bajo cada pieza van las herramientas con que está hecha. Qué hace cada una por el cliente está en su caso.",
+              "condicion": "No queda así en la construcción: de las seis entradas reales, solo Praxi tiene caso (acta del paso 2, defecto 16). En A sale; en B pasa a «nota_nueva». Ver «Para la construcción: las herramientas del índice», al final de esta página."
             },
             {
               "id": "trabajo.conteo",
@@ -822,7 +823,11 @@
           ],
           "linea": "Propio · 2026 · Cloudflare Pages Functions · Analítica tras el aviso de cookies",
           "resultado": "En el chequeo de la ley de datos personales sacó 36 de 100 el 9-sep-2026; lo arreglamos y el 21-sep sacó 73. Después cambiamos cómo puntúa ese chequeo, así que el puntaje de hoy no se compara con esos dos.",
-          "fuente": "inventario-casos §2.6 y §4.1 (36 y 73 son dichos, sin crudo). El 100 del 14-oct no va: con la regla cambiada, el abogado lo leyó como «cambiaron la escala y ahora sacan el máximo» (lectura fría, vuelta 2)",
+          "condicion": "El 36 → 73 lo decide Ramón, igual que el 54 → 94 de Verifica y Cumple: los dos son puntajes de nuestro propio chequeo (encargo §10.3; el tablero de la compuerta 2 ya los pregunta juntos). Hasta que diga que sí, va la alternativa.",
+          "alternativa": {
+            "resultado": "Sin métrica de negocio. Si no aceptas las cookies, la portada no carga nada de Google ni de Meta (16-oct-2026)."
+          },
+          "fuente": "inventario-casos §2.6 y §4.1 (36 y 73 son dichos, sin crudo). El 100 del 14-oct no va: con la regla cambiada, el abogado lo leyó como «cambiaron la escala y ahora sacan el máximo» (lectura fría, vuelta 2). La alternativa: inventario-casos.json «GA4 y Meta Pixel tras el aviso de cookies», medido en e12/inventario/crudo/carga-playwright.json (16-oct-2026 17:54Z, portada de producción, 3 corridas a 1440 y a 390, sin aceptar cookies: el único tercero es static.cloudflareinsights.com, unos 10,6 kB)",
           "linea_corta": "Propio · 2026",
           "filas_inventario": {
             "Cloudflare Pages Functions": "inventario-casos.json «Cloudflare Pages Functions»",
@@ -831,6 +836,104 @@
         }
       ],
       "orden": "Las entradas van en el orden de «entradas»: una de cliente primero, y los conceptos intercalados para que no queden todos al final ni parezcan relleno. Es una propuesta: el orden lo fija Lucía en el tablero.",
+      "para_la_construccion": {
+        "titulo": "Las herramientas del índice (acta del paso 2, defecto 16)",
+        "problema": "La línea mono de /trabajo/ lleva Decap CMS, Netlify Image CDN, Cloudflare Pages Functions y API de Anthropic sin lo que le hacen al cliente, y la nota dice que eso «está en su caso», pero de las seis entradas reales solo Praxi tiene caso. Los tres lectores de la lectura fría las leyeron como jerga en las dos vueltas. La regla del brief §2: cada término técnico visible va con lo que le hace al cliente, en palabras del dueño, o no va.",
+        "mientras_tanto": "Los prototipos de la compuerta 2 quedan como están: la salida depende de la dirección que elija Ramón. Lo que sigue se aplica al construir la elegida.",
+        "salidas": [
+          {
+            "direccion": "A · el muro",
+            "salida": "Las herramientas salen del índice.",
+            "por_que": "Koto pone tipo y año en la línea mono y nada más (lock §7). El lock permite «hasta dos» herramientas y el encargo pide «≤ 2» (criterio 9): cero cumple las dos cosas. La home y Desarrollo web ya van con la línea corta desde la lectura fría.",
+            "cambios": [
+              "La línea mono de cada entrada en /trabajo/ pasa a «linea_corta» (tipo · año).",
+              "«trabajo.nota-herramientas» sale.",
+              "Las herramientas van en el caso, en Solución, después de lo que hacen, como ya van en Praxi («Le escribes como a una persona y queda registrado, sin formularios. (API de Anthropic, solo en el servidor)»). Una entrada sin caso no las muestra: siguen en el inventario hasta que se escriba su caso."
+            ]
+          },
+          {
+            "direccion": "B · la tabla",
+            "salida": "Las herramientas se quedan, cada una después de lo que hace, y la nota cambia.",
+            "por_que": "«Con qué está hecho» es una columna del instrumento de B: sin herramientas queda vacía en las diez entradas. Con lo que hace primero, el nombre deja de ser jerga y queda como lo que el dueño le reenvía a su técnico (brief §2).",
+            "cambios": [
+              "Cada celda de «Con qué está hecho» lleva los pares de «con_que_esta_hecho»: lo que hace, en la letra del cuerpo, y la herramienta, en mono. Los conceptos siguen con la celda vacía, como hoy.",
+              "La nota pasa a «nota_nueva».",
+              "La línea del visor (la que aparece al pasar por una fila) pasa a «linea_corta»: la celda ya dice las herramientas.",
+              "Si los pares no caben en la columna medidos a 1440 y a 390, B toma la salida de A y la columna sale."
+            ],
+            "nota_nueva": "El nombre de cada herramienta va al lado de lo que hace, por si se lo quieres mostrar a tu técnico."
+          }
+        ],
+        "con_que_esta_hecho": [
+          {
+            "entrada": "combeau-fotografia",
+            "hace": "Panel para subir sus fotos",
+            "herramienta": "Decap CMS",
+            "fuente": "inventario-casos.json «Decap CMS»: «Él carga sus series solo, desde un panel, sin pedirnos nada.»"
+          },
+          {
+            "entrada": "combeau-fotografia",
+            "hace": "Cada foto, al tamaño de la pantalla",
+            "herramienta": "Netlify Image CDN",
+            "fuente": "inventario-casos.json «Netlify Image CDN»: «Él sube la foto tal cual y el sitio la sirve recortada y en WebP.»"
+          },
+          {
+            "entrada": "praxi",
+            "hace": "Le escribes como a una persona",
+            "herramienta": "API de Anthropic",
+            "fuente": "inventario-praxi.json «API de Anthropic solo en servidor: …»: «Escribes como a una persona y el registro queda guardado sin formularios.»"
+          },
+          {
+            "entrada": "praxi",
+            "hace": "Reglas fijas para subir el peso",
+            "herramienta": "Lógica de entrenamiento en código",
+            "fuente": "inventario-praxi.json «Lógica de entrenamiento en código con tests»: «El peso sube con dos sesiones confirmadas.»"
+          },
+          {
+            "entrada": "verifica-y-cumple",
+            "hace": "Revisión en segundos, en nuestro servidor",
+            "herramienta": "Cloudflare Pages Functions",
+            "fuente": "inventario-casos.json «Cloudflare Pages Functions» (Verifica): «El chequeo corre en el servidor, en segundos, sobre el dominio que escribas.» Medido: 0,52 s."
+          },
+          {
+            "entrada": "combeau-modelo",
+            "hace": "Panel para editar su book",
+            "herramienta": "Decap CMS",
+            "fuente": "inventario-casos.json «Decap CMS» (modelo): «Él mantiene también este book desde el panel.»"
+          },
+          {
+            "entrada": "combeau-modelo",
+            "hace": "Videos que se descargan al abrirlos",
+            "herramienta": "Video con carga diferida",
+            "fuente": "inventario-casos.json «Video con carga diferida»: «La página no baja el video ni el reel hasta que hacen falta.»"
+          },
+          {
+            "entrada": "chequeo",
+            "hace": "Revisión en segundos, en nuestro servidor",
+            "herramienta": "Cloudflare Pages Functions",
+            "fuente": "inventario-casos.json «Cloudflare Pages Functions» (chequeo): «El chequeo corre en el servidor.» Medido: de 0,6 a 1,4 s."
+          },
+          {
+            "entrada": "chequeo",
+            "hace": "Aviso si tu servidor echa a ChatGPT o Perplexity",
+            "herramienta": "Prueba con robots de IA",
+            "fuente": "inventario-casos.json «Prueba con el user-agent de tres robots de IA»: «Te dice si tu servidor echa a los robots de ChatGPT o Perplexity aunque tu robots.txt los deje entrar.»"
+          },
+          {
+            "entrada": "spindlelab",
+            "hace": "El chequeo, dentro del mismo sitio",
+            "herramienta": "Cloudflare Pages Functions",
+            "fuente": "inventario-casos.json «Cloudflare Pages + Pages Functions»: «El chequeo vive en el mismo sitio.»"
+          },
+          {
+            "entrada": "spindlelab",
+            "hace": "Google y Meta, solo si aceptas",
+            "herramienta": "Analítica tras el aviso de cookies",
+            "fuente": "inventario-casos.json «GA4 y Meta Pixel tras el aviso de cookies»: «No miden a nadie que no haya dicho que sí.» No dice «nada se mide»: sin aceptar, igual carga la analítica de Cloudflare (carga-playwright.json, 16-oct)."
+          }
+        ],
+        "sin_lectura_fria": "Los pares y la nota nueva son del 18-oct y no pasaron por la lectura fría: entran en la de la construcción si B es la elegida."
+      },
       "borrado": [
         "«en producción» (E11, fila 26): dice «publicado» o nada.",
         "«Está dicho cuál es cuál en cada una»: contestaba una sospecha que el lector todavía no tenía. La entradilla dice qué es cada tipo.",
@@ -1589,8 +1692,8 @@
   },
   "afirmaciones_por_verificar": [
     {
-      "texto": "54 → 94 de Verifica y Cumple (home y /trabajo/)",
-      "estado": "Decide Ramón (encargo §10.3). Si no, va la alternativa de cada elemento."
+      "texto": "Los puntajes de nuestro chequeo: 54 → 94 de Verifica y Cumple (home y /trabajo/) y 36 → 73 de spindlelab.cl (/trabajo/, columna «Resultado» de B)",
+      "estado": "Decide Ramón (encargo §10.3). Si no, va la alternativa de cada elemento. El 36 → 73 no llevaba la condición hasta el 18-oct y B lo mostraba por defecto (acta del paso 2, defecto 15)."
     },
     {
       "texto": "«Fuera de línea» en la ficha de Praxi y su párrafo final",
@@ -1664,6 +1767,11 @@
       "fecha": "17-oct-2026",
       "que": "Correcciones de la lectura fría, vuelta 2",
       "origen": "Los mismos tres lectores, contexto nuevo"
+    },
+    {
+      "fecha": "18-oct-2026",
+      "que": "Defectos 15 y 16 del acta del paso 2: el 36 → 73 de spindlelab.cl lleva la misma condición que el 54 → 94 y una alternativa medida, y B la muestra por defecto; las herramientas del índice quedan escritas para la construcción, una salida por dirección («Para la construcción», en /trabajo/)",
+      "origen": "Javiera, acta-paso-2.md"
     }
   ]
 }

@@ -24,7 +24,7 @@ RAIZ = os.path.abspath(os.path.join(B, *(['..'] * 8)))
 E12 = os.path.join(RAIZ, 'marketing/oficina/obras-web/spindlelab-v3/e12')
 
 # Decisiones abiertas de Ramón (encargo §10). Se cambian aquí, en una línea, y se vuelve a armar.
-PUNTAJES_PROPIOS = False   # §10.3: ¿se muestran los puntajes propios (Verifica y Cumple 54 → 94)? Hasta que diga sí, va la alternativa de Clara.
+PUNTAJES_PROPIOS = False   # §10.3: ¿se muestran los puntajes propios (Verifica y Cumple 54 → 94, spindlelab.cl 36 → 73)? Hasta que diga sí, va la alternativa de Clara.
 
 TEXTO = json.load(open(os.path.join(E12, 'texto/texto-paso2.json'), encoding='utf-8'))
 OFERTA = json.load(open(os.path.join(RAIZ, 'spindlelab-astro/src/data/oferta-v3.json'), encoding='utf-8'))
@@ -166,7 +166,8 @@ PAGINA_CASO = {'praxi': '/v3/trabajo/praxi/', 'sesenta': '/v3/trabajo/sesenta/'}
 
 
 def resultado(e):
-    if e['id'] == 'verifica-y-cumple' and not PUNTAJES_PROPIOS:
+    # Las dos entradas con puntaje propio llevan «condicion» y «alternativa» en texto-paso2.json (Clara, defecto 15 del acta del paso 2).
+    if e['id'] in ('verifica-y-cumple', 'spindlelab') and not PUNTAJES_PROPIOS:
         return e['alternativa']['resultado']
     return e['resultado']
 

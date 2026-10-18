@@ -233,7 +233,8 @@
 
 - `h1` Trabajo. *Lo que diseñamos y programamos, y cómo lo resolveríamos en tu rubro.*
 - `entradilla` Cada entrada dice de quién es. Cliente es un encargo pagado: hoy hay uno con caso publicado, con sus dos sitios. Propio lo hicimos para nosotros, sin encargo. Concepto es una marca inventada para mostrar cómo trabajaríamos un rubro: no existe, no tuvo clientes y no lleva cifras.
-- `nota` Bajo cada pieza van las herramientas con que está hecha. Qué hace cada una por el cliente está en su caso.
+- `nota` Bajo cada pieza van las herramientas con que está hecha. Qué hace cada una por el cliente está en su caso.  
+  ⚠ **Condición:** No queda así en la construcción: de las seis entradas reales, solo Praxi tiene caso (acta del paso 2, defecto 16). En A sale; en B pasa a «nota_nueva». Ver «Para la construcción: las herramientas del índice», al final de esta página.
 - `rotulo` (10)  
   <sub>Nota: Conteo verdadero de entradas; sale del dato, no se escribe a mano.</sub>
 - `rotulo · filtro` Todo (10) · Cliente (2) · Propio (4) · Concepto (4)  
@@ -255,9 +256,9 @@
 | 7 | **Doceavo** | Un estudio contable que no existe, en Concepción. Su portada te dice cuándo vence tu próxima declaración mensual, y su logo cambia cada mes. | Concepto · 2026<br><sub>home y servicio: Concepto · 2026</sub> | Sin métrica: es un concepto. |
 | 8 | **El chequeo de 21 señales** | Escribes un dominio y en segundos ves si ChatGPT, Claude y Perplexity pueden entrar y entender a qué se dedica. También avisa si el servidor los echa aunque tu configuración los deje pasar. | Propio · 2026 · Cloudflare Pages Functions · Prueba con robots de IA<br><sub>home y servicio: Propio · 2026</sub> | 21 revisiones, 100 puntos. No guarda los dominios, así que no sabemos cuántas veces se ha usado. |
 | 9 | **Tonela** | Un proveedor de izaje que no existe, en Antofagasta: eslingas, cadenas y grilletes. Ordena su sitio con el color que la norma le da a cada capacidad de carga. | Concepto · 2026<br><sub>home y servicio: Concepto · 2026</sub> | Sin métrica: es un concepto. |
-| 10 | **spindlelab.cl** | Este sitio. El chequeo de la portada corre en nuestro servidor, y Google Analytics y el píxel de Meta no cargan hasta que aceptas las cookies. | Propio · 2026 · Cloudflare Pages Functions · Analítica tras el aviso de cookies<br><sub>home y servicio: Propio · 2026</sub> | En el chequeo de la ley de datos personales sacó 36 de 100 el 9-sep-2026; lo arreglamos y el 21-sep sacó 73. Después cambiamos cómo puntúa ese chequeo, así que el puntaje de hoy no se compara con esos dos. |
+| 10 | **spindlelab.cl** | Este sitio. El chequeo de la portada corre en nuestro servidor, y Google Analytics y el píxel de Meta no cargan hasta que aceptas las cookies. | Propio · 2026 · Cloudflare Pages Functions · Analítica tras el aviso de cookies<br><sub>home y servicio: Propio · 2026</sub> | En el chequeo de la ley de datos personales sacó 36 de 100 el 9-sep-2026; lo arreglamos y el 21-sep sacó 73. Después cambiamos cómo puntúa ese chequeo, así que el puntaje de hoy no se compara con esos dos. ⚠ El 36 → 73 lo decide Ramón, igual que el 54 → 94 de Verifica y Cumple: los dos son puntajes de nuestro propio chequeo (encargo §10.3; el tablero de la compuerta 2 ya los pregunta juntos). Hasta que diga que sí, va la alternativa. Si no: «Sin métrica de negocio. Si no aceptas las cookies, la portada no carga nada de Google ni de Meta (16-oct-2026).» |
 
-<sub>Fuentes por entrada: Combeau, fotografía: inventario-casos §2.1 (las dos etiquetas y su efecto: «él carga sus series solo», «805 kB → 95 kB») · Praxi: inventario-praxi §4 y §8.1 · Sesenta: marketing/portafolio/06-sesenta/ficha.md §4.1 y §6 · Verifica y Cumple: inventario-casos §2.3 y §4.1 y §7 («describe señales; no certifica») · Ocelo: marketing/portafolio/05-ocelo/caso.md (Desafío, Estrategia) y ficha.md §6 · Combeau, modelo: inventario-casos §2.2 («0 kB de video en la carga inicial») · Doceavo: marketing/portafolio/07-doceavo/caso.md (Estrategia, Identidad) · El chequeo de 21 señales: inventario-casos §2.4 y §4.4 · Tonela: marketing/portafolio/04-tonela/caso.md (Desafío, Estrategia) · spindlelab.cl: inventario-casos §2.6 y §4.1 (36 y 73 son dichos, sin crudo). El 100 del 14-oct no va: con la regla cambiada, el abogado lo leyó como «cambiaron la escala y ahora sacan el máximo» (lectura fría, vuelta 2)</sub>
+<sub>Fuentes por entrada: Combeau, fotografía: inventario-casos §2.1 (las dos etiquetas y su efecto: «él carga sus series solo», «805 kB → 95 kB») · Praxi: inventario-praxi §4 y §8.1 · Sesenta: marketing/portafolio/06-sesenta/ficha.md §4.1 y §6 · Verifica y Cumple: inventario-casos §2.3 y §4.1 y §7 («describe señales; no certifica») · Ocelo: marketing/portafolio/05-ocelo/caso.md (Desafío, Estrategia) y ficha.md §6 · Combeau, modelo: inventario-casos §2.2 («0 kB de video en la carga inicial») · Doceavo: marketing/portafolio/07-doceavo/caso.md (Estrategia, Identidad) · El chequeo de 21 señales: inventario-casos §2.4 y §4.4 · Tonela: marketing/portafolio/04-tonela/caso.md (Desafío, Estrategia) · spindlelab.cl: inventario-casos §2.6 y §4.1 (36 y 73 son dichos, sin crudo). El 100 del 14-oct no va: con la regla cambiada, el abogado lo leyó como «cambiaron la escala y ahora sacan el máximo» (lectura fría, vuelta 2). La alternativa: inventario-casos.json «GA4 y Meta Pixel tras el aviso de cookies», medido en e12/inventario/crudo/carga-playwright.json (16-oct-2026 17:54Z, portada de producción, 3 corridas a 1440 y a 390, sin aceptar cookies: el único tercero es static.cloudflareinsights.com, unos 10,6 kB)</sub>
 
 <sub>Cada herramienta de la línea mono y su fila en el inventario: «Decap CMS» → inventario-casos.json «Decap CMS» · «Netlify Image CDN» → inventario-casos.json «Netlify Image CDN» · «API de Anthropic» → inventario-praxi.json «API de Anthropic solo en servidor: …» (sin los nombres de modelo, inventario-praxi §10.4) · «Lógica de entrenamiento en código» → inventario-praxi.json «Lógica de entrenamiento en código con tests» · «Cloudflare Pages Functions» → inventario-casos.json «Cloudflare Pages Functions» · «Video con carga diferida» → inventario-casos.json «Video con carga diferida» · «Prueba con robots de IA» → inventario-casos.json «Prueba con el user-agent de tres robots de IA» (acortado: «user-agent» no se explica en una línea mono) · «Analítica tras el aviso de cookies» → inventario-casos.json «GA4 y Meta Pixel tras el aviso de cookies» (acortado a lo que le hace al visitante)</sub>
 
@@ -272,6 +273,49 @@
 - El resultado de spindlelab.cl: el abogado leyó «cambió la forma de puntuar» como «cambiaron la vara para subir el puntaje». Ahora dice qué cambió y que el 100 no se compara.
 - Verifica y Cumple: «¿es asesoría legal o un chequeo técnico?» (abogado). La bajada lo contesta.
 - Vuelta 2: el 100 de spindlelab.cl sale del índice. Sumarlo con la escala nueva al lado de 36 y 73 se leyó como un truco.
+
+### Para la construcción: las herramientas del índice (acta del paso 2, defecto 16)
+
+La línea mono de /trabajo/ lleva Decap CMS, Netlify Image CDN, Cloudflare Pages Functions y API de Anthropic sin lo que le hacen al cliente, y la nota dice que eso «está en su caso», pero de las seis entradas reales solo Praxi tiene caso. Los tres lectores de la lectura fría las leyeron como jerga en las dos vueltas. La regla del brief §2: cada término técnico visible va con lo que le hace al cliente, en palabras del dueño, o no va.
+
+*Los prototipos de la compuerta 2 quedan como están: la salida depende de la dirección que elija Ramón. Lo que sigue se aplica al construir la elegida.*
+
+#### Dirección A · el muro
+
+**Las herramientas salen del índice.** Koto pone tipo y año en la línea mono y nada más (lock §7). El lock permite «hasta dos» herramientas y el encargo pide «≤ 2» (criterio 9): cero cumple las dos cosas. La home y Desarrollo web ya van con la línea corta desde la lectura fría.
+
+- La línea mono de cada entrada en /trabajo/ pasa a «linea_corta» (tipo · año).
+- «trabajo.nota-herramientas» sale.
+- Las herramientas van en el caso, en Solución, después de lo que hacen, como ya van en Praxi («Le escribes como a una persona y queda registrado, sin formularios. (API de Anthropic, solo en el servidor)»). Una entrada sin caso no las muestra: siguen en el inventario hasta que se escriba su caso.
+
+#### Dirección B · la tabla
+
+**Las herramientas se quedan, cada una después de lo que hace, y la nota cambia.** «Con qué está hecho» es una columna del instrumento de B: sin herramientas queda vacía en las diez entradas. Con lo que hace primero, el nombre deja de ser jerga y queda como lo que el dueño le reenvía a su técnico (brief §2).
+
+- Cada celda de «Con qué está hecho» lleva los pares de «con_que_esta_hecho»: lo que hace, en la letra del cuerpo, y la herramienta, en mono. Los conceptos siguen con la celda vacía, como hoy.
+- La nota pasa a «nota_nueva».
+- La línea del visor (la que aparece al pasar por una fila) pasa a «linea_corta»: la celda ya dice las herramientas.
+- Si los pares no caben en la columna medidos a 1440 y a 390, B toma la salida de A y la columna sale.
+
+- `nota` (nueva) El nombre de cada herramienta va al lado de lo que hace, por si se lo quieres mostrar a tu técnico.
+
+#### «Con qué está hecho», lo que hace cada herramienta (salida de B)
+
+| Entrada | Lo que hace (letra del cuerpo) | Herramienta (mono) | Fuente |
+|---|---|---|---|
+| Combeau, fotografía | Panel para subir sus fotos | Decap CMS | inventario-casos.json «Decap CMS»: «Él carga sus series solo, desde un panel, sin pedirnos nada.» |
+| Combeau, fotografía | Cada foto, al tamaño de la pantalla | Netlify Image CDN | inventario-casos.json «Netlify Image CDN»: «Él sube la foto tal cual y el sitio la sirve recortada y en WebP.» |
+| Praxi | Le escribes como a una persona | API de Anthropic | inventario-praxi.json «API de Anthropic solo en servidor: …»: «Escribes como a una persona y el registro queda guardado sin formularios.» |
+| Praxi | Reglas fijas para subir el peso | Lógica de entrenamiento en código | inventario-praxi.json «Lógica de entrenamiento en código con tests»: «El peso sube con dos sesiones confirmadas.» |
+| Verifica y Cumple | Revisión en segundos, en nuestro servidor | Cloudflare Pages Functions | inventario-casos.json «Cloudflare Pages Functions» (Verifica): «El chequeo corre en el servidor, en segundos, sobre el dominio que escribas.» Medido: 0,52 s. |
+| Combeau, modelo | Panel para editar su book | Decap CMS | inventario-casos.json «Decap CMS» (modelo): «Él mantiene también este book desde el panel.» |
+| Combeau, modelo | Videos que se descargan al abrirlos | Video con carga diferida | inventario-casos.json «Video con carga diferida»: «La página no baja el video ni el reel hasta que hacen falta.» |
+| El chequeo de 21 señales | Revisión en segundos, en nuestro servidor | Cloudflare Pages Functions | inventario-casos.json «Cloudflare Pages Functions» (chequeo): «El chequeo corre en el servidor.» Medido: de 0,6 a 1,4 s. |
+| El chequeo de 21 señales | Aviso si tu servidor echa a ChatGPT o Perplexity | Prueba con robots de IA | inventario-casos.json «Prueba con el user-agent de tres robots de IA»: «Te dice si tu servidor echa a los robots de ChatGPT o Perplexity aunque tu robots.txt los deje entrar.» |
+| spindlelab.cl | El chequeo, dentro del mismo sitio | Cloudflare Pages Functions | inventario-casos.json «Cloudflare Pages + Pages Functions»: «El chequeo vive en el mismo sitio.» |
+| spindlelab.cl | Google y Meta, solo si aceptas | Analítica tras el aviso de cookies | inventario-casos.json «GA4 y Meta Pixel tras el aviso de cookies»: «No miden a nadie que no haya dicho que sí.» No dice «nada se mide»: sin aceptar, igual carga la analítica de Cloudflare (carga-playwright.json, 16-oct). |
+
+<sub>Los pares y la nota nueva son del 18-oct y no pasaron por la lectura fría: entran en la de la construcción si B es la elegida.</sub>
 
 ## /v3/trabajo/praxi/ · caso-praxi
 
@@ -566,7 +610,7 @@
 
 ## Afirmaciones por verificar antes de publicar
 
-- **54 → 94 de Verifica y Cumple (home y /trabajo/).** Decide Ramón (encargo §10.3). Si no, va la alternativa de cada elemento.
+- **Los puntajes de nuestro chequeo: 54 → 94 de Verifica y Cumple (home y /trabajo/) y 36 → 73 de spindlelab.cl (/trabajo/, columna «Resultado» de B).** Decide Ramón (encargo §10.3). Si no, va la alternativa de cada elemento. El 36 → 73 no llevaba la condición hasta el 18-oct y B lo mostraba por defecto (acta del paso 2, defecto 15).
 - **«Fuera de línea» en la ficha de Praxi y su párrafo final.** Decide Ramón (inventario-praxi §10.2). Medido el 16-oct: 402 DEPLOYMENT_DISABLED.
 - **«con agentes de IA» en los créditos de Praxi.** Decide Ramón (inventario-praxi §10.6).
 - **La definición de «persona activada» de Praxi.** Está en el repo de Praxi (instrumentacion-medicion.md:97) pero no en inventario-praxi.md: Diego le pone fila o el párrafo sale.
@@ -605,3 +649,4 @@ Dos vueltas en contexto aparte, con los mismos tres lectores (gerente comercial 
 | 17-oct-2026 | Primera versión: home con tres heros, /trabajo/ con diez entradas, caso Praxi, Desarrollo web | Clara, con Renata |
 | 17-oct-2026 | Correcciones de la lectura fría, vuelta 1 (lectura-fria.md) | Tres lectores en contexto aparte |
 | 17-oct-2026 | Correcciones de la lectura fría, vuelta 2 | Los mismos tres lectores, contexto nuevo |
+| 18-oct-2026 | Defectos 15 y 16 del acta del paso 2: el 36 → 73 de spindlelab.cl lleva la misma condición que el 54 → 94 y una alternativa medida, y B la muestra por defecto; las herramientas del índice quedan escritas para la construcción, una salida por dirección («Para la construcción», en /trabajo/) | Javiera, acta-paso-2.md |
