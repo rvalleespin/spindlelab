@@ -13,14 +13,18 @@ Lee, sin escribir en ninguna:
 - `e12/inventario-praxi.md` (§8.1 y §10) y `datos/estado-praxi.txt` (lo que respondió praxi.coach el día del tablero,
   medido con `herramientas/estado-praxi.sh`);
 - `datos/diferencias-texto.json` (el texto visible de A contra el de B, medido con `herramientas/diferencias-texto.mjs`):
-  cada palabra que está en un solo lado tiene que quedar explicada en la lista DIFERENCIAS, o el script falla.
+  cada palabra que está en un solo lado tiene que quedar explicada en la lista DIFERENCIAS, o el script falla;
+- `datos/demos.json` y `video/d-*.webm` (las demos de teclado, movimiento reducido y teléfono de cada dirección,
+  grabadas y medidas con `herramientas/grabar-demos.mjs`): los pies salen de lo medido, y si una medición no dice lo
+  que el pie afirma, el script falla;
+- el peso de `proto/` (para decir con el número por qué las vistas van grabadas y no vivas).
 
 Escribe:
 - `tablero.html` (sin doctype, html, head ni body: lo envuelve el publicador);
 - `img/t-*.jpg` (lo que el tablero deriva: láminas, pliegos, primeras pantallas, pósters y dos estados de A), cada uno de
   450 kB o menos (kB = 1.000 bytes);
-- `video/t-*.mp4` y `video/t-c-*.webm` (el H.264 de cada recorrido de A y B, para Safari, y una copia exacta de cada
-  recorrido de las piezas de concepto), cada uno de 8 MB o menos;
+- `video/t-*.mp4` y `video/t-c-*.webm` (el H.264 de cada recorrido y cada demo de A y B, para Safari, y una copia
+  exacta de cada recorrido de las piezas de concepto), cada uno de 8 MB o menos;
 - `archivos.json` (toda ruta que el tablero referencia, con sus bytes: lo que hay que publicar con él).
 
 Las capturas de A y B que pasan de 450 kB se recomprimen en su lugar (mismo nombre y ancho, menos calidad) y se anota
@@ -59,6 +63,7 @@ for d in (IMG, VIDEO, DATOS):
 FUENTES = ("https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,200..900"
            "&family=Google+Sans+Flex:wdth,wght@25..151,100..1000&family=DM+Mono:wght@500&display=swap")
 GITHUB = "https://github.com/rvalleespin/spindlelab/blob/claude/magical-franklin-ckfki2/"
+FECHA_TABLERO = "18 de octubre de 2026"  # la del último armado con cambios de contenido (no la del reloj: el tablero se rehace igual)
 MAX_IMG = 450_000
 MAX_VIDEO = 8_000_000
 MAX_TOTAL = 60_000_000
@@ -187,12 +192,12 @@ def tipo_mp4(info):
     return f'video/mp4; codecs="avc1.{perfil}{info["nivel"]:02X}"'
 
 
-def a_mp4(webm, nombre):
+def a_mp4(webm, nombre, crf=24):
     destino = os.path.join(VIDEO, f"t-{nombre}.mp4")
     if not os.path.exists(destino) or os.path.getmtime(destino) < os.path.getmtime(webm):
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", webm, "-an", "-c:v", "libx264", "-preset", "slow", "-crf",
-                        "24", "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-map_metadata", "-1", destino], check=True)
-    detalle[f"video/t-{nombre}.mp4"] = {"origen": os.path.relpath(webm, BASE), "nota": "H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf 24)"}
+                        str(crf), "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-map_metadata", "-1", destino], check=True)
+    detalle[f"video/t-{nombre}.mp4"] = {"origen": os.path.relpath(webm, BASE), "nota": f"H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf {crf})"}
     return f"video/t-{nombre}.mp4"
 
 
@@ -336,7 +341,7 @@ PIES = {
         "trabajo": f"Una tabla de diez filas con filetes (Nombre · Tipo · Año · Con qué está hecho · Resultado) y un visor pegajoso que muestra la pieza al pasar o enfocar una fila. A 390, una lista con su imagen. Imagen: {pct(bc['trabajo']['medios_pct'])} % de la página.",
         "praxi": f"La barra de 346 px con la ficha como tabla; en «Sin métrica», la placa con el crudo de la verificación (384 de 384 tests, el 16-oct). Imagen: {pct(bc['praxi']['medios_pct'])} % de la página.",
         "sesenta": f"El texto de Bruno sin cambiar una palabra; «Concepto» en la ficha, en el sello de cada placa y en el video. Imagen: {pct(bc['sesenta']['medios_pct'])} %; campos de color: {pct(bc['sesenta']['campos_pct'])} %.",
-        "desarrollo-web": f"Los planes van en una hoja blanca con la forma de un campo de Koto (marco de radio 6 a 16 px del borde), {pct(bc['desarrollo-web']['hoja_pct'])} % del alto de la página: el único campo que pone la interfaz y no el trabajo. Es un desvío de Koto, rotulado.",
+        "desarrollo-web": f"Los planes van en una hoja blanca con la forma de un campo de Koto (marco de radio 6 a 16 px del borde), {pct(bc['desarrollo-web']['hoja_pct'])} % del alto de la página: el único campo que pone la interfaz y no el trabajo. Es un desvío de Koto, rotulado, y queda solo si dices que sí (sección 7).",
     },
 }
 assert "384 / 384" in dir_b
@@ -425,6 +430,119 @@ def bloque_vista(k, clave, titulo, vid, abierta):
             f'<span class="mas" aria-hidden="true"></span></summary>{cuerpo}</details>')
 
 
+# ---------------------------------------------------------------- 2b · las demos del paso 1, grabadas (acta del paso 2, defecto 5)
+DEMOS = leer_json(os.path.join(DATOS, "demos.json"))["demos"]
+assert sorted(DEMOS) == sorted(f"d-{k}-{d}" for k in "ab" for d in ("teclado", "reducido", "telefono")), sorted(DEMOS)
+assert not any(d["errores"] for d in DEMOS.values()), "una demo grabó errores de página"
+
+
+def medida(d, prefijo):
+    return next(m for m in d["medidas"] if m["momento"].startswith(prefijo))
+
+
+def pie_teclado(k, d):
+    antes, despues = medida(d, "mouse sobre"), medida(d, "el mouse se mueve")
+    tabs = [m for m in d["medidas"] if m["momento"].startswith("Tab ")]
+    assert antes["circulo"]["visible"] and despues["circulo"]["visible"], "el círculo con el mouse"
+    assert all(not m["circulo"]["visible"] for m in tabs), "el círculo sigue con Tab"
+    assert all(m["foco"] and m["foco"]["focoVisible"] and m["foco"]["contorno"] == "solid 2px" for m in tabs), "foco sin contorno"
+    filtros = sum(1 for m in tabs if m["foco"]["el"].startswith("button"))
+    piezas = len(tabs) - filtros
+    que = "piezas" if k == "a" else "filas"
+    pie = (f"Teclado en <code>/trabajo/</code> a 1440 × 900, {num(d['duracion'])} s. Con el mouse sobre la primera pieza, "
+           f"el círculo dice «{e(antes['circulo']['texto'])}»; con el primer Tab se va y el foco se ve: {len(tabs)} paradas, "
+           f"todas con contorno de 2 px ({filtros} filtros y {piezas} {que}). ")
+    descalce = [m for m in tabs if "indice__nombre" in m["foco"]["el"] and m["filaActiva"] and m["foco"]["texto"] != m["filaActiva"]]
+    if k == "a":
+        pie += "En cada pieza, el rótulo del círculo queda quieto dentro de ella. "
+    elif not descalce:
+        pie += "El visor muestra la fila que tiene el foco. "
+    pie += f"Al mover el mouse, el círculo vuelve (segundo {num(despues['t'])})."
+    if descalce:
+        m = descalce[0]
+        pie += (f" El visor sigue a la fila con foco, salvo en lo que <strong>encontró esta grabación</strong>: en el segundo "
+                f"{num(m['t'])} el foco está en {e(m['foco']['texto'])} y el visor muestra {e(m['filaActiva'])}, porque al bajar "
+                "la página la fila que queda bajo el mouse quieto le gana al foco. Si eliges B, se corrige al construir: mientras "
+                "navegas con el teclado, el visor sigue al foco.")
+    return pie
+
+
+def pie_reducido(k, d):
+    ms = d["medidas"]
+    assert all(m["reducido"] and not m["animaciones"] and not m["videosCorriendo"] and not m["circulo"]["visible"] for m in ms), "reducido"
+    sobre = [m for m in ms if m["momento"].startswith("mouse sobre")]
+    assert all(m["recortadas"] == 0 for m in ms), "reducido: una pieza se acortó"
+    if k == "a":
+        assert "Seguir el video" in medida(d, "al llegar")["pausas"], medida(d, "al llegar")["pausas"]
+        cuerpo = (f"La cinta no arranca y queda su botón para reproducir, nada entra animado al bajar y el mouse pasa por "
+                  f"{len(sobre)} piezas del índice corto sin círculo ni recorte.")
+    else:
+        cuerpo = (f"Nada entra animado al bajar, el mouse pasa por {len(sobre)} filas del índice y el visor cambia de portada sin "
+                  "video ni círculo, y los videos de «Cada pieza, con su prueba» esperan quietos.")
+    return (f"La home con movimiento reducido (<code>prefers-reduced-motion: reduce</code>), a 1440 × 900, {num(d['duracion'])} s. "
+            f"{cuerpo} En las {len(ms)} mediciones: 0 animaciones y 0 videos corriendo.")
+
+
+def pie_telefono(k, d):
+    ms = d["medidas"]
+    assert all(not m["punteroFino"] and not m["hover"] and not m["circulo"]["visible"] for m in ms), "teléfono"
+    caso = medida(d, "se abrió el caso")
+    assert caso["url"].endswith("/trabajo/sesenta/"), caso["url"]
+    pie = (f"<code>/trabajo/</code> a 390 × 844 (dpr 2), con el dedo, {num(d['duracion'])} s. <code>(pointer: fine)</code> da falso "
+           f"en las {len(ms)} mediciones y no hay círculo. Un toque en «Concepto (4)» filtra; otro en Sesenta abre su caso, "
+           "y se baja por él con el dedo.")
+    if caso["videosCorriendo"]:
+        pie += " En el caso, el video de la portada corre solo, con su botón de pausa a mano."
+    return pie
+
+
+PIES_DEMO = {"teclado": pie_teclado, "reducido": pie_reducido, "telefono": pie_telefono}
+# el póster de cada demo es el cuadro de una medición que muestra lo que la demo dice
+POSTER_DEMO = {"teclado": "Tab 4", "reducido": "mouse sobre", "telefono": "la pieza a la vista"}
+ETIQUETA_DEMO = {"teclado": "teclado en /trabajo/", "reducido": "movimiento reducido en la home", "telefono": "teléfono en /trabajo/"}
+
+
+def clip_demo(k, demo):
+    nombre = f"d-{k}-{demo}"
+    d = DEMOS[nombre]
+    webm = os.path.join(BASE, d["archivo"])
+    info = sonda(webm)
+    assert info["codec"] == "vp9" and abs(info["dur"] - d["duracion"]) < 0.1 and (info["w"], info["h"]) == (d["ancho"], d["alto"]), (nombre, info)
+    mp4 = a_mp4(webm, nombre, crf=26)
+    imp4 = sonda(os.path.join(BASE, mp4))
+    assert imp4["codec"] == "h264" and abs(imp4["dur"] - info["dur"]) < 0.2, (mp4, imp4, info)
+    detalle[d["archivo"]] = {"origen": "herramientas/grabar-demos.mjs", "nota": f"demo grabada del navegador sobre proto/{k}, VP9; lo medido, en datos/demos.json"}
+    t = max(0.2, min(medida(d, POSTER_DEMO[demo])["t"] + 0.3, info["dur"] - 0.2))
+    poster = cuadro(webm, f"{nombre}-poster", t)
+    pie = PIES_DEMO[demo](k, d)
+    clase = "clip--tel" if demo == "telefono" else ""
+    fig = clip([(mp4, tipo_mp4(imp4)), (d["archivo"], "video/webm")], poster,
+               f"Dirección {k.upper()}: demo de {ETIQUETA_DEMO[demo]}", pie, info["w"], info["h"])
+    return fig.replace('<figure class="fig clip">', f'<figure class="fig clip {clase}">') if clase else fig
+
+
+# Por qué las vistas van grabadas y no vivas: el peso de proto/ con el tablero, y lo que B toma de fuera de su carpeta
+PROTO_BYTES = sum(os.path.getsize(os.path.join(r, f)) for r, _, fs in os.walk(os.path.join(BASE, "proto")) for f in fs)
+B_AFUERA = sorted(os.path.relpath(os.path.join(r, f), PB) for r, _, fs in os.walk(PB) for f in fs
+                  if f.endswith(".html") and "portafolio/" in leer(os.path.join(r, f)))
+assert B_AFUERA, "B ya no toma nada de marketing/portafolio/: cambia la nota de las vistas vivas"
+for _f in B_AFUERA:
+    for _r in re.findall(r'"([^"]*portafolio/[^"]*)"', leer(os.path.join(PB, _f))):
+        assert _r.endswith("/movimiento/recorrido.webm"), (_f, _r)
+NOTA_MARCAS = ("En las tres demos, la flecha o la mano del mouse, la placa «Tab» y el anillo gris de cada toque los dibuja la "
+               "grabación para que se vean; no son del sitio. Lo que dice cada pie se midió en la página mientras se grababa "
+               "(<code>datos/demos.json</code>, <code>herramientas/grabar-demos.mjs</code>).")
+# El peso del tablero con proto/ se escribe al final, cuando se conoce el del tablero (se reemplazan las dos marcas)
+PESO_T, PESO_X = "\u2060PESO_TABLERO\u2060", "\u2060PESO_CON_PROTO\u2060"
+NOTA_VIVAS = {
+    "a": ("<p class=\"nota\"><strong>Por qué van grabadas y no vivas:</strong> el chequeo necesita su servidor "
+          "(<code>/api/chequeo</code>), que una página publicada no tiene; B toma los recorridos de los conceptos de "
+          f"<code>marketing/portafolio/</code>, fuera de su carpeta, en {len(B_AFUERA)} de sus páginas; y los dos prototipos pesan "
+          f"{num(PROTO_BYTES / 1e6)} MB, con lo que el tablero pasaría de {PESO_T} a {PESO_X} MB, sobre su tope de 60. En vivo se "
+          "abren con el servidor de cada dirección (<code>direccion-a.md</code> §1 y <code>direccion-b.md</code> §0).</p>"),
+    "b": "",
+}
+
 DUR = {}
 
 
@@ -452,6 +570,7 @@ def seccion_direccion(k):
     for origen, nombre, ancho, alt, pie in d["estados"]:
         f = derivada(origen, nombre, ancho) if nombre else captura(os.path.basename(origen))
         estados.append(figura(f, alt, pie))
+    demos = {x: clip_demo(k, x) for x in ("teclado", "reducido", "telefono")}
     vistas = "".join(bloque_vista(k, *v[:2], v[2] if k == "a" else v[3], v[4]) for v in VISTAS)
     lema = f'<span class="t1">{e(d["lema"][0])}</span> <span class="t2">{e(d["lema"][1])}</span>'
     return f"""
@@ -461,7 +580,12 @@ def seccion_direccion(k):
     <p class="intro">{lema}</p>
     <div class="bloque"><p class="rotulo">Qué la hace distinta</p><ol class="tres">{distinta}</ol></div>
     <dl class="valores">{valores}</dl>
-    <div class="bloque"><h3>Recorridos</h3><div class="galeria galeria--2">{''.join(clips)}</div></div>
+    <div class="bloque"><h3>El movimiento, grabado del navegador</h3>
+      <p class="nota">Las demos del paso 1, sobre las páginas de esta dirección: el mouse (los dos recorridos), el teclado, el movimiento reducido y el teléfono. {NOTA_MARCAS}</p>
+      <div class="galeria galeria--2">{''.join(clips)}{demos['teclado']}{demos['reducido']}</div>
+      {demos['telefono']}
+      {NOTA_VIVAS[k]}
+    </div>
     <div class="bloque"><h3>Las cinco vistas</h3><p class="nota">La home y el índice van abiertos; las otras tres se abren con un toque. Cada vista trae su primera pantalla a 1440 y a 390 y, debajo, la página completa en un marco que se baja por dentro.</p></div>
     {vistas}
     <details class="plegable"><summary><h3>Dos estados que una captura de página no muestra</h3><span class="mas" aria-hidden="true"></span></summary>
@@ -740,9 +864,12 @@ errores_v = re.findall(r"^x-vercel-error: (\S+)", estado, flags=re.M | re.I)
 assert codigos and all(c != "200" for c in codigos), codigos
 CODIGO = codigos[0]
 ERROR_V = errores_v[0] if errores_v else ""
-_h = (int(m_fecha[2]) - 3) % 24  # Santiago en octubre: UTC-3
+# Santiago en octubre: UTC-3 (la fecha de Chile puede ser la del día anterior a la UTC)
+_dia = int(m_fecha[1][8:10]) - (1 if int(m_fecha[2]) < 3 else 0)
+_h = (int(m_fecha[2]) - 3) % 24
 HORA_CL = f"{_h:02d}:{m_fecha[3]}"
-assert m_fecha[1] == "2026-10-17", m_fecha[1]
+assert m_fecha[1][:8] == "2026-10-" and _dia >= 17, m_fecha[1]
+FECHA_PRAXI = f"{_dia}-oct"
 hay_html = "".join(f"<li><span>{md(a)}</span><span class=\"fuente\">{md(b)}</span></li>" for a, b in s81)
 PEDIR = [
     ("Capturas de la app", "<strong>Capturas de la app:</strong> Inicio, el Coach guardando un registro, Registro con la tarjeta del día, Progreso y Perfil, a 390 de ancho, desde una cuenta de prueba tuya y nunca la de un usuario. Como praxi.coach está apagado, sería corriendo Praxi en tu Mac. O dime que el caso va sin ellas."),
@@ -760,7 +887,7 @@ seccion_praxi = f"""
   <div class="seccion__cuerpo">
     <p class="intro"><span class="t1">Es el único trabajo con IA programada y la única app con cuentas y cobro.</span> <span class="t2">El caso se puede contar con fecha e instrumento por su oficio, no por su uso: «Sin métrica».</span></p>
     <dl class="valores">
-      <div><dt>Hoy, 17-oct, {HORA_CL}</dt><dd>praxi.coach responde <strong>{CODIGO}</strong> con <code>{e(ERROR_V)}</code>, en la portada y en <code>/planes</code> (<code>datos/estado-praxi.txt</code>). Por eso ninguna vista enlaza a praxi.coach.</dd></div>
+      <div><dt>El {FECHA_PRAXI}, {HORA_CL}</dt><dd>praxi.coach responde <strong>{CODIGO}</strong> con <code>{e(ERROR_V)}</code>, en la portada y en <code>/planes</code> (<code>datos/estado-praxi.txt</code>). Por eso ninguna vista enlaza a praxi.coach.</dd></div>
       <div><dt>Vista 3</dt><dd>Las dos direcciones usan Praxi como caso real. Diego recomendaba Combeau porque a Praxi le faltan las pantallas de la app, y a los tres lectores fríos les bajó la confianza un caso apagado y sin usuarios.</dd></div>
     </dl>
     <div class="dos-listas">
@@ -778,7 +905,7 @@ comparar = [
     ("Primera pantalla de la home", "El trabajo (la cinta) con la frase y el chequeo", "La frase y el chequeo, sin imagen"),
     ("Imagen en /trabajo/", f"{pct(ac['trabajo']['area_medios'])} %: el muro", f"{pct(bc['trabajo']['medios_pct'])} %: la tabla y su visor"),
     ("Imagen en el caso Sesenta", f"{pct(ac['caso-sesenta']['area_medios'])} %", f"{pct(bc['sesenta']['medios_pct'])} %"),
-    ("Juego de color en Desarrollo web", "Dentro de los marcos del trabajo; el lienzo no cambia", "Una hoja blanca para los planes (desvío de Koto, rotulado)"),
+    ("Juego de color en Desarrollo web", "Dentro de los marcos del trabajo; el lienzo no cambia", "Una hoja blanca para los planes (desvío de Koto, rotulado: queda solo con tu sí)"),
     ("Logo de muestra", "Camino 2, «El huso»", "Camino 3, «Dos cortes»"),
 ]
 comparar_html = "".join(f'<tr><th scope="row">{e(a)}</th><td data-rotulo="A · Archivo">{e(b)}</td><td data-rotulo="B · Banco">{e(c)}</td></tr>' for a, b, c in comparar)
@@ -799,7 +926,7 @@ seccion_decides = f"""
     <ul class="abiertas">
       <li><strong>Los puntajes propios</strong> (Verifica y Cumple 54 → 94 y spindlelab.cl 36 → 73): <span class="t2">no se muestran. Hoy A trae el 54 → 94 puesto y B no; si dices que no, sale de A y el texto queda igual en las dos.</span></li>
       <li><strong>El color del círculo del cursor:</strong> <span class="t2">blanco, como Koto, que no tiene color de interfaz. El cobalto del brief, aclarado a <code>#316BFF</code> para que se lea sobre negro, queda a una línea.</span></li>
-      <li><strong>Una interior con el lienzo claro:</strong> <span class="t2">no. Koto no cambia el lienzo en ninguna de sus {K_PARADAS} paradas medidas; su juego está dentro de los marcos (sección 1). Si lo quieres igual, se construye como desvío rotulado.</span></li>
+      <li><strong>Una interior con el lienzo claro:</strong> <span class="t2">no. Koto no cambia el lienzo en ninguna de sus {K_PARADAS} paradas medidas; su juego está dentro de los marcos (sección 1). La hoja blanca de los planes de B es ese desvío: si eliges B y no dices que sí, sale al construir y los planes vuelven al negro. Si la quieres, se construye rotulada como desvío, con su contraste medido.</span></li>
       <li><strong>Color en el logo:</strong> <span class="t2">no; es monocromo, y si lo quieres como el único color del sitio (el gesto de Koto), se decide con la dirección.</span></li>
       <li><strong>Los cuatro nombres de los conceptos,</strong> Ocelo a oscuras por defecto con la luz que se enciende, Sesenta como la pieza que va más lejos, y Raigal, Aplomo y Deslinde como archivo fuera del índice: <span class="t2">quedan así (Bruno, <code>plan-e12.md</code> §14).</span></li>
     </ul>
@@ -828,13 +955,9 @@ seccion_decidiste = f"""
   </div>
 </section>"""
 
-CSS = """
-  /* Tablero de trabajo en negro, a propósito: las dos direcciones van sobre el lienzo #060606 de Koto y se comparan
-     sobre él. Un solo tema; contraste AA medido (blanco 20,26:1 y gris #989898 7,02:1 sobre el lienzo, 6,39:1 sobre la
-     placa). La letra del tablero es la del sistema y no la de ninguna dirección, para no inclinar la elección: Google
-     Sans Flex y Mona Sans aparecen solo donde se muestran (el nombre de cada dirección y las muestras del hero). Desde
-     1194 px cada sección lleva su título en una barra de 320 px, como el caso de Koto. */
-  :root {
+# Los tokens del tablero. Un solo tema, en negro: se declaran en :root y se repiten tal cual bajo los selectores de tema
+# del publicador (prefers-color-scheme y data-theme), para que ningún visor los cambie (acta del paso 2, defecto 18).
+TOKENS = """
     color-scheme: dark;
     --lienzo: #060606;
     --placa: #141414;
@@ -847,8 +970,25 @@ CSS = """
     --f-mono: 'DM Mono', ui-monospace, Menlo, monospace;
     --f-a: 'Google Sans Flex', system-ui, sans-serif;
     --f-b: 'Mona Sans', system-ui, sans-serif;
+  """
+CSS = """
+  /* Tablero de trabajo en negro, a propósito: las dos direcciones van sobre el lienzo #060606 de Koto y se comparan
+     sobre él. Un solo tema: los selectores de tema del publicador repiten el mismo negro, para que con el visor en claro
+     o en oscuro el tablero sea el mismo (un tablero claro alrededor cambiaría cómo se leen las capturas). Contraste AA
+     medido (blanco 20,26:1 y gris #989898 7,02:1 sobre el lienzo, 6,39:1 sobre la placa). La letra del tablero es la del
+     sistema y no la de ninguna dirección, para no inclinar la elección: Google Sans Flex y Mona Sans aparecen solo donde
+     se muestran (el nombre de cada dirección y las muestras del hero). Desde 1194 px cada sección lleva su título en una
+     barra de 320 px, como el caso de Koto. */
+  :root {""" + TOKENS + """}
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {""" + TOKENS + """}
   }
-  * { box-sizing: border-box; }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {""" + TOKENS + """}
+  }
+  :root[data-theme="dark"], :root[data-theme="light"] {""" + TOKENS + """}
+"""
+CSS += """  * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body { margin: 0; background: var(--lienzo); color: var(--blanco); font: 400 16px/1.45 var(--f-texto); -webkit-font-smoothing: antialiased; }
   .marco { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 16px 64px; }
@@ -955,6 +1095,11 @@ CSS = """
   .pregunta { display: grid; gap: 6px; padding: 14px 16px; border-radius: 4px; background: var(--placa); color: var(--gris); }
   .costo p { max-width: 72ch; color: var(--gris); }
   .estados .fig img { width: auto; max-width: 100%; }
+  /* la demo del teléfono: el video a su ancho de teléfono y el pie al lado desde 834 px */
+  .clip--tel { max-width: 300px; }
+  @media (min-width: 834px) {
+    .clip--tel { max-width: none; grid-template-columns: 300px minmax(0, 1fr); gap: 8px 20px; align-items: start; }
+  }
   .especimenes { display: grid; gap: 16px; }
   @media (min-width: 834px) { .especimenes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .especimen { container-type: inline-size; display: grid; gap: 8px; align-content: start; padding: 16px; border-radius: 4px; background: var(--placa); min-width: 0; }
@@ -1037,7 +1182,7 @@ pagina = f"""<meta charset="utf-8">
 <div class="marco">
   <header class="cab">
     <div class="cab__fila">
-      <p class="rotulo">SpindleLab v3 · E12 · compuerta 2 · 17 de octubre de 2026</p>
+      <p class="rotulo">SpindleLab v3 · E12 · compuerta 2 · {FECHA_TABLERO}</p>
       <p class="rotulo">Santiago <span class="reloj">--:--</span> <span class="huso">UTC-3</span></p>
     </div>
     <h1>Dos direcciones sobre negro: Archivo y Banco</h1>
@@ -1060,11 +1205,18 @@ pagina = f"""<meta charset="utf-8">
   </main>
   <footer class="pie">
     <p>Armado por <code>tableros/e12-direcciones/herramientas/armar-tablero.py</code> desde las dos direcciones (<code>direccion-a.md</code>, <code>direccion-b.md</code> y sus mediciones), el brief, el lock, los caminos de Bruno, su plan de las piezas, el texto de Clara y su lectura fría, y el inventario de Praxi. Verificado con <code>herramientas/verificar.mjs</code> a 360, 390, 768 y 1440.</p>
-    <p>Las vistas en vivo, con el chequeo de verdad, se abren con los servidores de cada dirección (<code>direccion-a.md</code> §1 y <code>direccion-b.md</code> §0). La captura de Koto es para estudio interno. Las capturas de A y B que pasaban de 450 kB se recomprimieron para el tablero (<code>datos/recompresion.json</code>).</p>
+    <p>Las vistas en vivo, con el chequeo de verdad, se abren con los servidores de cada dirección (<code>direccion-a.md</code> §1 y <code>direccion-b.md</code> §0); aquí van grabadas, y la dirección A dice por qué. La captura de Koto es para estudio interno. Las capturas de A y B que pasaban de 450 kB se recomprimieron para el tablero (<code>datos/recompresion.json</code>).</p>
+    <p>Un solo tema, a propósito: el tablero va en negro también si tu visor está en claro. Las dos direcciones se juzgan sobre el lienzo <code>#060606</code> de Koto, y un tablero claro alrededor cambiaría cómo se leen sus capturas.</p>
   </footer>
 </div>
 <script>{JS}</script>
 """
+
+# ---------------------------------------------------------------- el peso con proto/, en la nota de las vistas vivas
+_rutas0 = sorted(set(re.findall(r'(?:src|poster)="((?:img|video)/[^"]+)"', pagina)))
+_total0 = len(pagina.encode("utf-8")) + sum(os.path.getsize(os.path.join(BASE, r)) for r in _rutas0)
+pagina = pagina.replace(PESO_T, num(_total0 / 1e6)).replace(PESO_X, num((_total0 + PROTO_BYTES) / 1e6))
+assert _total0 + PROTO_BYTES > MAX_TOTAL, "con proto/ el tablero ya cabe en 60 MB: cambia la nota de las vistas vivas"
 
 # ---------------------------------------------------------------- comprobaciones del contrato antes de escribir
 visible = re.sub(r"<style>.*?</style>|<script.*?</script>", "", pagina, flags=re.S)

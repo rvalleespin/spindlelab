@@ -1,0 +1,1103 @@
+{
+ "fecha": "2026-10-18T22:29:17.926Z",
+ "medidoPor": "Lucía (dirección de arte), herramientas/grabar-demos.mjs",
+ "navegador": "141.0.7390.37",
+ "nota": "Mouse, teclado y toques por CDP. La flecha o la mano del mouse, la placa de la tecla y el anillo del toque los dibuja la grabación (pointer-events: none); el resto es la página.",
+ "demos": {
+  "d-a-teclado": {
+   "archivo": "video/d-a-teclado.webm",
+   "url": "/trabajo/",
+   "ventana": "1440 × 900",
+   "dpr": 1,
+   "cuadros": 175,
+   "segundosGuion": 9.7,
+   "duracion": 9.77,
+   "ancho": 1440,
+   "alto": 900,
+   "codec": "vp9",
+   "bytes": 492241,
+   "errores": [],
+   "medidas": [
+    {
+     "momento": "mouse sobre la primera pieza",
+     "url": "/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 1,
+      "visible": true,
+      "texto": "Ver el caso"
+     },
+     "foco": {
+      "el": "button",
+      "texto": "Todo (10)",
+      "contorno": "none 0px",
+      "focoVisible": false
+     },
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 1,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 2.3
+    },
+    {
+     "momento": "Tab 1",
+     "url": "/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 0,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "button",
+      "texto": "Cliente (2)",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": null,
+     "teclado": true,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 1,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 2.9
+    },
+    {
+     "momento": "Tab 2",
+     "url": "/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 0,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "button",
+      "texto": "Propio (4)",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": null,
+     "teclado": true,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 1,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 3.4
+    },
+    {
+     "momento": "Tab 3",
+     "url": "/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 0,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "button",
+      "texto": "Concepto (4)",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": null,
+     "teclado": true,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 1,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 3.9
+    },
+    {
+     "momento": "Tab 4",
+     "url": "/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 0,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "a.medio-enlace",
+      "texto": "Ver el caso",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": null,
+     "teclado": true,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 1,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 4.7
+    },
+    {
+     "momento": "Tab 5",
+     "url": "/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 0,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "a.medio-enlace",
+      "texto": "Ver el caso",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": null,
+     "teclado": true,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 1,
+     "pausas": [],
+     "scrollY": 283,
+     "t": 5.6
+    },
+    {
+     "momento": "Tab 6",
+     "url": "/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 0,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "a.medio-enlace",
+      "texto": "Ver el concepto",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": null,
+     "teclado": true,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 1,
+     "pausas": [],
+     "scrollY": 1059,
+     "t": 6.4
+    },
+    {
+     "momento": "Tab 7",
+     "url": "/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 0,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "a.medio-enlace",
+      "texto": "Ver el concepto",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": null,
+     "teclado": true,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 1,
+     "pausas": [],
+     "scrollY": 1254,
+     "t": 7.2
+    },
+    {
+     "momento": "el mouse se mueve otra vez",
+     "url": "/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 1,
+      "visible": true,
+      "texto": "Ver el concepto"
+     },
+     "foco": {
+      "el": "a.medio-enlace",
+      "texto": "Ver el concepto",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 1,
+     "pausas": [],
+     "scrollY": 1254,
+     "t": 8.4
+    }
+   ]
+  },
+  "d-b-teclado": {
+   "archivo": "video/d-b-teclado.webm",
+   "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/",
+   "ventana": "1440 × 900",
+   "dpr": 1,
+   "cuadros": 201,
+   "segundosGuion": 9.7,
+   "duracion": 9.73,
+   "ancho": 1440,
+   "alto": 900,
+   "codec": "vp9",
+   "bytes": 481647,
+   "errores": [],
+   "medidas": [
+    {
+     "momento": "mouse sobre la primera pieza",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 1,
+      "visible": true,
+      "texto": "Ver el caso"
+     },
+     "foco": {
+      "el": "button",
+      "texto": "Todo (10)",
+      "contorno": "none 0px",
+      "focoVisible": false
+     },
+     "filaActiva": "Combeau, fotografía",
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 2.3
+    },
+    {
+     "momento": "Tab 1",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 0,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "button",
+      "texto": "Cliente (2)",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": "Combeau, fotografía",
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 2.8
+    },
+    {
+     "momento": "Tab 2",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 0,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "button",
+      "texto": "Propio (4)",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": "Combeau, fotografía",
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 3.4
+    },
+    {
+     "momento": "Tab 3",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 0,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "button",
+      "texto": "Concepto (4)",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": "Combeau, fotografía",
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 3.9
+    },
+    {
+     "momento": "Tab 4",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 0,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "a.indice__nombre",
+      "texto": "Combeau, fotografía",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": "Combeau, fotografía",
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 4.7
+    },
+    {
+     "momento": "Tab 5",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 0,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "a.indice__nombre",
+      "texto": "Praxi",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": "Praxi",
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 5.5
+    },
+    {
+     "momento": "Tab 6",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 0,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "a.indice__nombre",
+      "texto": "Sesenta",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": "Verifica y Cumple",
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 465,
+     "t": 6.4
+    },
+    {
+     "momento": "Tab 7",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 0,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "a.indice__nombre",
+      "texto": "Verifica y Cumple",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": "Verifica y Cumple",
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 465,
+     "t": 7.2
+    },
+    {
+     "momento": "el mouse se mueve otra vez",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "grid",
+      "escala": 1,
+      "visible": true,
+      "texto": "Ver el caso"
+     },
+     "foco": {
+      "el": "a.indice__nombre",
+      "texto": "Verifica y Cumple",
+      "contorno": "solid 2px",
+      "focoVisible": true
+     },
+     "filaActiva": "Verifica y Cumple",
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 465,
+     "t": 8.4
+    }
+   ]
+  },
+  "d-a-reducido": {
+   "archivo": "video/d-a-reducido.webm",
+   "url": "/",
+   "ventana": "1440 × 900",
+   "dpr": 1,
+   "cuadros": 112,
+   "segundosGuion": 9,
+   "duracion": 9.03,
+   "ancho": 1440,
+   "alto": 900,
+   "codec": "vp9",
+   "bytes": 683502,
+   "errores": [],
+   "medidas": [
+    {
+     "momento": "al llegar",
+     "url": "/",
+     "circulo": {
+      "existe": true,
+      "display": "none",
+      "escala": 1,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": null,
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": true,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [
+      "Seguir el video"
+     ],
+     "scrollY": 0,
+     "t": 1.9
+    },
+    {
+     "momento": "en el índice corto, recién llegado",
+     "url": "/",
+     "circulo": {
+      "existe": true,
+      "display": "none",
+      "escala": 1,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": null,
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": true,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 849,
+     "t": 3.3
+    },
+    {
+     "momento": "mouse sobre la pieza 1",
+     "url": "/",
+     "circulo": {
+      "existe": true,
+      "display": "none",
+      "escala": 1,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": null,
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": true,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 849,
+     "t": 4.3
+    },
+    {
+     "momento": "mouse sobre la pieza 2",
+     "url": "/",
+     "circulo": {
+      "existe": true,
+      "display": "none",
+      "escala": 1,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": null,
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": true,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 849,
+     "t": 5.3
+    },
+    {
+     "momento": "mouse sobre la pieza 3",
+     "url": "/",
+     "circulo": {
+      "existe": true,
+      "display": "none",
+      "escala": 1,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": null,
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": true,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 849,
+     "t": 6.3
+    },
+    {
+     "momento": "más abajo",
+     "url": "/",
+     "circulo": {
+      "existe": true,
+      "display": "none",
+      "escala": 1,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": null,
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": true,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 3046,
+     "t": 8.5
+    }
+   ]
+  },
+  "d-b-reducido": {
+   "archivo": "video/d-b-reducido.webm",
+   "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/",
+   "ventana": "1440 × 900",
+   "dpr": 1,
+   "cuadros": 111,
+   "segundosGuion": 9.1,
+   "duracion": 9.07,
+   "ancho": 1440,
+   "alto": 900,
+   "codec": "vp9",
+   "bytes": 622677,
+   "errores": [],
+   "medidas": [
+    {
+     "momento": "al llegar",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/",
+     "circulo": {
+      "existe": false,
+      "visible": false
+     },
+     "foco": null,
+     "filaActiva": "Combeau, fotografía",
+     "teclado": false,
+     "reducido": true,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 1.8
+    },
+    {
+     "momento": "en el índice corto, recién llegado",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/",
+     "circulo": {
+      "existe": false,
+      "visible": false
+     },
+     "foco": null,
+     "filaActiva": "Praxi",
+     "teclado": false,
+     "reducido": true,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 779,
+     "t": 3.3
+    },
+    {
+     "momento": "mouse sobre la pieza 1",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/",
+     "circulo": {
+      "existe": false,
+      "visible": false
+     },
+     "foco": null,
+     "filaActiva": "Combeau, fotografía",
+     "teclado": false,
+     "reducido": true,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 779,
+     "t": 4.3
+    },
+    {
+     "momento": "mouse sobre la pieza 2",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/",
+     "circulo": {
+      "existe": false,
+      "visible": false
+     },
+     "foco": null,
+     "filaActiva": "Praxi",
+     "teclado": false,
+     "reducido": true,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 779,
+     "t": 5.3
+    },
+    {
+     "momento": "mouse sobre la pieza 3",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/",
+     "circulo": {
+      "existe": false,
+      "visible": false
+     },
+     "foco": null,
+     "filaActiva": "Verifica y Cumple",
+     "teclado": false,
+     "reducido": true,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 779,
+     "t": 6.3
+    },
+    {
+     "momento": "más abajo",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/",
+     "circulo": {
+      "existe": false,
+      "visible": false
+     },
+     "foco": null,
+     "filaActiva": "Sesenta",
+     "teclado": false,
+     "reducido": true,
+     "punteroFino": true,
+     "hover": true,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 1700,
+     "t": 8.5
+    }
+   ]
+  },
+  "d-a-telefono": {
+   "archivo": "video/d-a-telefono.webm",
+   "url": "/trabajo/",
+   "ventana": "390 × 844",
+   "dpr": 2,
+   "cuadros": 68,
+   "segundosGuion": 7.6,
+   "duracion": 7.6,
+   "ancho": 780,
+   "alto": 1688,
+   "codec": "vp9",
+   "bytes": 432748,
+   "errores": [],
+   "medidas": [
+    {
+     "momento": "al llegar",
+     "url": "/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "none",
+      "escala": 1,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": null,
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": false,
+     "hover": false,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 0.9
+    },
+    {
+     "momento": "tocó «Concepto»",
+     "url": "/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "none",
+      "escala": 1,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "button",
+      "texto": "Concepto (4)",
+      "contorno": "none 0px",
+      "focoVisible": false
+     },
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": false,
+     "hover": false,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 1.9
+    },
+    {
+     "momento": "la pieza a la vista",
+     "url": "/trabajo/",
+     "circulo": {
+      "existe": true,
+      "display": "none",
+      "escala": 1,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": {
+      "el": "button",
+      "texto": "Concepto (4)",
+      "contorno": "none 0px",
+      "focoVisible": false
+     },
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": false,
+     "hover": false,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 2.4
+    },
+    {
+     "momento": "se abrió el caso",
+     "url": "/trabajo/sesenta/",
+     "circulo": {
+      "existe": true,
+      "display": "none",
+      "escala": 1,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": null,
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": false,
+     "hover": false,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 4.3
+    },
+    {
+     "momento": "baja por el caso",
+     "url": "/trabajo/sesenta/",
+     "circulo": {
+      "existe": true,
+      "display": "none",
+      "escala": 1,
+      "visible": false,
+      "texto": ""
+     },
+     "foco": null,
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": false,
+     "hover": false,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 490,
+     "t": 7
+    }
+   ]
+  },
+  "d-b-telefono": {
+   "archivo": "video/d-b-telefono.webm",
+   "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/",
+   "ventana": "390 × 844",
+   "dpr": 2,
+   "cuadros": 135,
+   "segundosGuion": 10,
+   "duracion": 10,
+   "ancho": 780,
+   "alto": 1688,
+   "codec": "vp9",
+   "bytes": 653302,
+   "errores": [],
+   "medidas": [
+    {
+     "momento": "al llegar",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/",
+     "circulo": {
+      "existe": false,
+      "visible": false
+     },
+     "foco": null,
+     "filaActiva": "Combeau, fotografía",
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": false,
+     "hover": false,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 0.9
+    },
+    {
+     "momento": "tocó «Concepto»",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/",
+     "circulo": {
+      "existe": false,
+      "visible": false
+     },
+     "foco": {
+      "el": "button",
+      "texto": "Concepto (4)",
+      "contorno": "none 0px",
+      "focoVisible": false
+     },
+     "filaActiva": "Sesenta",
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": false,
+     "hover": false,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 1.9
+    },
+    {
+     "momento": "la pieza a la vista",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/",
+     "circulo": {
+      "existe": false,
+      "visible": false
+     },
+     "foco": {
+      "el": "button",
+      "texto": "Concepto (4)",
+      "contorno": "none 0px",
+      "focoVisible": false
+     },
+     "filaActiva": "Ocelo",
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": false,
+     "hover": false,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 611,
+     "t": 4.8
+    },
+    {
+     "momento": "se abrió el caso",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/sesenta/",
+     "circulo": {
+      "existe": false,
+      "visible": false
+     },
+     "foco": null,
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": false,
+     "hover": false,
+     "animaciones": 0,
+     "videosCorriendo": 1,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 0,
+     "t": 6.7
+    },
+    {
+     "momento": "baja por el caso",
+     "url": "/marketing/oficina/obras-web/spindlelab-v3/tableros/e12-direcciones/proto/b/trabajo/sesenta/",
+     "circulo": {
+      "existe": false,
+      "visible": false
+     },
+     "foco": null,
+     "filaActiva": null,
+     "teclado": false,
+     "reducido": false,
+     "punteroFino": false,
+     "hover": false,
+     "animaciones": 0,
+     "videosCorriendo": 0,
+     "recortadas": 0,
+     "pausas": [],
+     "scrollY": 490,
+     "t": 9.5
+    }
+   ]
+  }
+ }
+}

@@ -109,6 +109,12 @@
   "img/t-c-tonela-home-390.jpg",
   "img/t-c-tonela-pliego.jpg",
   "img/t-c-tonela-recorrido.jpg",
+  "img/t-d-a-reducido-poster.jpg",
+  "img/t-d-a-teclado-poster.jpg",
+  "img/t-d-a-telefono-poster.jpg",
+  "img/t-d-b-reducido-poster.jpg",
+  "img/t-d-b-teclado-poster.jpg",
+  "img/t-d-b-telefono-poster.jpg",
   "img/t-koto-lyft-1440.jpg",
   "img/t-logo-camino-1-la-palabra.jpg",
   "img/t-logo-camino-2-el-huso.jpg",
@@ -117,6 +123,12 @@
   "video/a-trabajo-1440.webm",
   "video/b-home-1440.webm",
   "video/b-trabajo-1440.webm",
+  "video/d-a-reducido.webm",
+  "video/d-a-teclado.webm",
+  "video/d-a-telefono.webm",
+  "video/d-b-reducido.webm",
+  "video/d-b-teclado.webm",
+  "video/d-b-telefono.webm",
   "video/t-a-home-1440.mp4",
   "video/t-a-trabajo-1440.mp4",
   "video/t-b-home-1440.mp4",
@@ -128,7 +140,13 @@
   "video/t-c-sesenta.mp4",
   "video/t-c-sesenta.webm",
   "video/t-c-tonela.mp4",
-  "video/t-c-tonela.webm"
+  "video/t-c-tonela.webm",
+  "video/t-d-a-reducido.mp4",
+  "video/t-d-a-teclado.mp4",
+  "video/t-d-a-telefono.mp4",
+  "video/t-d-b-reducido.mp4",
+  "video/t-d-b-teclado.mp4",
+  "video/t-d-b-telefono.mp4"
  ],
  "detalle": [
   {
@@ -774,6 +792,42 @@
    "nota": "derivada por el tablero: 1440 × 810, JPEG 82"
   },
   {
+   "ruta": "img/t-d-a-reducido-poster.jpg",
+   "bytes": 89379,
+   "origen": "video/d-a-reducido.webm (cuadro del segundo 4,6)",
+   "nota": "derivada por el tablero: 1440 × 900, JPEG 82"
+  },
+  {
+   "ruta": "img/t-d-a-teclado-poster.jpg",
+   "bytes": 123925,
+   "origen": "video/d-a-teclado.webm (cuadro del segundo 5,0)",
+   "nota": "derivada por el tablero: 1440 × 900, JPEG 82"
+  },
+  {
+   "ruta": "img/t-d-a-telefono-poster.jpg",
+   "bytes": 82860,
+   "origen": "video/d-a-telefono.webm (cuadro del segundo 2,7)",
+   "nota": "derivada por el tablero: 780 × 1688, JPEG 82"
+  },
+  {
+   "ruta": "img/t-d-b-reducido-poster.jpg",
+   "bytes": 95751,
+   "origen": "video/d-b-reducido.webm (cuadro del segundo 4,6)",
+   "nota": "derivada por el tablero: 1440 × 900, JPEG 82"
+  },
+  {
+   "ruta": "img/t-d-b-teclado-poster.jpg",
+   "bytes": 117885,
+   "origen": "video/d-b-teclado.webm (cuadro del segundo 5,0)",
+   "nota": "derivada por el tablero: 1440 × 900, JPEG 82"
+  },
+  {
+   "ruta": "img/t-d-b-telefono-poster.jpg",
+   "bytes": 80569,
+   "origen": "video/d-b-telefono.webm (cuadro del segundo 5,1)",
+   "nota": "derivada por el tablero: 780 × 1688, JPEG 82"
+  },
+  {
    "ruta": "img/t-koto-lyft-1440.jpg",
    "bytes": 31348,
    "origen": "../../e12/medicion/koto/paso2/capturas/color-lyft-1440.jpg",
@@ -820,6 +874,42 @@
    "bytes": 1236357,
    "origen": "la dirección",
    "nota": "recorrido grabado del navegador, VP9"
+  },
+  {
+   "ruta": "video/d-a-reducido.webm",
+   "bytes": 683502,
+   "origen": "herramientas/grabar-demos.mjs",
+   "nota": "demo grabada del navegador sobre proto/a, VP9; lo medido, en datos/demos.json"
+  },
+  {
+   "ruta": "video/d-a-teclado.webm",
+   "bytes": 492241,
+   "origen": "herramientas/grabar-demos.mjs",
+   "nota": "demo grabada del navegador sobre proto/a, VP9; lo medido, en datos/demos.json"
+  },
+  {
+   "ruta": "video/d-a-telefono.webm",
+   "bytes": 432748,
+   "origen": "herramientas/grabar-demos.mjs",
+   "nota": "demo grabada del navegador sobre proto/a, VP9; lo medido, en datos/demos.json"
+  },
+  {
+   "ruta": "video/d-b-reducido.webm",
+   "bytes": 622677,
+   "origen": "herramientas/grabar-demos.mjs",
+   "nota": "demo grabada del navegador sobre proto/b, VP9; lo medido, en datos/demos.json"
+  },
+  {
+   "ruta": "video/d-b-teclado.webm",
+   "bytes": 481647,
+   "origen": "herramientas/grabar-demos.mjs",
+   "nota": "demo grabada del navegador sobre proto/b, VP9; lo medido, en datos/demos.json"
+  },
+  {
+   "ruta": "video/d-b-telefono.webm",
+   "bytes": 653302,
+   "origen": "herramientas/grabar-demos.mjs",
+   "nota": "demo grabada del navegador sobre proto/b, VP9; lo medido, en datos/demos.json"
   },
   {
    "ruta": "video/t-a-home-1440.mp4",
@@ -892,11 +982,47 @@
    "bytes": 1435153,
    "origen": "../../../../../portafolio/04-tonela/movimiento/recorrido.webm",
    "nota": "copia exacta"
+  },
+  {
+   "ruta": "video/t-d-a-reducido.mp4",
+   "bytes": 1008240,
+   "origen": "video/d-a-reducido.webm",
+   "nota": "H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf 26)"
+  },
+  {
+   "ruta": "video/t-d-a-teclado.mp4",
+   "bytes": 469778,
+   "origen": "video/d-a-teclado.webm",
+   "nota": "H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf 26)"
+  },
+  {
+   "ruta": "video/t-d-a-telefono.mp4",
+   "bytes": 511782,
+   "origen": "video/d-a-telefono.webm",
+   "nota": "H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf 26)"
+  },
+  {
+   "ruta": "video/t-d-b-reducido.mp4",
+   "bytes": 609087,
+   "origen": "video/d-b-reducido.webm",
+   "nota": "H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf 26)"
+  },
+  {
+   "ruta": "video/t-d-b-teclado.mp4",
+   "bytes": 284416,
+   "origen": "video/d-b-teclado.webm",
+   "nota": "H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf 26)"
+  },
+  {
+   "ruta": "video/t-d-b-telefono.mp4",
+   "bytes": 673200,
+   "origen": "video/d-b-telefono.webm",
+   "nota": "H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf 26)"
   }
  ],
- "imagenes": 111,
- "videos": 16,
- "bytesPagina": 89739,
- "bytesTotal": 49836242,
+ "imagenes": 117,
+ "videos": 28,
+ "bytesPagina": 98341,
+ "bytesTotal": 57357833,
  "unidad": "bytes; kB = 1.000 y MB = 1.000.000"
 }

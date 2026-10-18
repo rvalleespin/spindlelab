@@ -8,11 +8,59 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,200..900&family=Google+Sans+Flex:wdth,wght@25..151,100..1000&family=DM+Mono:wght@500&display=swap">
 <style>
   /* Tablero de trabajo en negro, a propósito: las dos direcciones van sobre el lienzo #060606 de Koto y se comparan
-     sobre él. Un solo tema; contraste AA medido (blanco 20,26:1 y gris #989898 7,02:1 sobre el lienzo, 6,39:1 sobre la
-     placa). La letra del tablero es la del sistema y no la de ninguna dirección, para no inclinar la elección: Google
-     Sans Flex y Mona Sans aparecen solo donde se muestran (el nombre de cada dirección y las muestras del hero). Desde
-     1194 px cada sección lleva su título en una barra de 320 px, como el caso de Koto. */
+     sobre él. Un solo tema: los selectores de tema del publicador repiten el mismo negro, para que con el visor en claro
+     o en oscuro el tablero sea el mismo (un tablero claro alrededor cambiaría cómo se leen las capturas). Contraste AA
+     medido (blanco 20,26:1 y gris #989898 7,02:1 sobre el lienzo, 6,39:1 sobre la placa). La letra del tablero es la del
+     sistema y no la de ninguna dirección, para no inclinar la elección: Google Sans Flex y Mona Sans aparecen solo donde
+     se muestran (el nombre de cada dirección y las muestras del hero). Desde 1194 px cada sección lleva su título en una
+     barra de 320 px, como el caso de Koto. */
   :root {
+    color-scheme: dark;
+    --lienzo: #060606;
+    --placa: #141414;
+    --placa-activa: #202020;
+    --blanco: #FFFFFF;
+    --gris: #989898;
+    --linea: rgba(255,255,255,.10);
+    --linea-seccion: #2D2D2D;
+    --f-texto: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --f-mono: 'DM Mono', ui-monospace, Menlo, monospace;
+    --f-a: 'Google Sans Flex', system-ui, sans-serif;
+    --f-b: 'Mona Sans', system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --lienzo: #060606;
+    --placa: #141414;
+    --placa-activa: #202020;
+    --blanco: #FFFFFF;
+    --gris: #989898;
+    --linea: rgba(255,255,255,.10);
+    --linea-seccion: #2D2D2D;
+    --f-texto: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --f-mono: 'DM Mono', ui-monospace, Menlo, monospace;
+    --f-a: 'Google Sans Flex', system-ui, sans-serif;
+    --f-b: 'Mona Sans', system-ui, sans-serif;
+  }
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+    color-scheme: dark;
+    --lienzo: #060606;
+    --placa: #141414;
+    --placa-activa: #202020;
+    --blanco: #FFFFFF;
+    --gris: #989898;
+    --linea: rgba(255,255,255,.10);
+    --linea-seccion: #2D2D2D;
+    --f-texto: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --f-mono: 'DM Mono', ui-monospace, Menlo, monospace;
+    --f-a: 'Google Sans Flex', system-ui, sans-serif;
+    --f-b: 'Mona Sans', system-ui, sans-serif;
+  }
+  }
+  :root[data-theme="dark"], :root[data-theme="light"] {
     color-scheme: dark;
     --lienzo: #060606;
     --placa: #141414;
@@ -133,6 +181,11 @@
   .pregunta { display: grid; gap: 6px; padding: 14px 16px; border-radius: 4px; background: var(--placa); color: var(--gris); }
   .costo p { max-width: 72ch; color: var(--gris); }
   .estados .fig img { width: auto; max-width: 100%; }
+  /* la demo del teléfono: el video a su ancho de teléfono y el pie al lado desde 834 px */
+  .clip--tel { max-width: 300px; }
+  @media (min-width: 834px) {
+    .clip--tel { max-width: none; grid-template-columns: 300px minmax(0, 1fr); gap: 8px 20px; align-items: start; }
+  }
   .especimenes { display: grid; gap: 16px; }
   @media (min-width: 834px) { .especimenes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .especimen { container-type: inline-size; display: grid; gap: 8px; align-content: start; padding: 16px; border-radius: 4px; background: var(--placa); min-width: 0; }
@@ -181,7 +234,7 @@
 <div class="marco">
   <header class="cab">
     <div class="cab__fila">
-      <p class="rotulo">SpindleLab v3 · E12 · compuerta 2 · 17 de octubre de 2026</p>
+      <p class="rotulo">SpindleLab v3 · E12 · compuerta 2 · 18 de octubre de 2026</p>
       <p class="rotulo">Santiago <span class="reloj">--:--</span> <span class="huso">UTC-3</span></p>
     </div>
     <h1>Dos direcciones sobre negro: Archivo y Banco</h1>
@@ -219,7 +272,12 @@
     <p class="intro"><span class="t1">El trabajo es lo grande.</span> <span class="t2">Un lienzo negro donde la interfaz se retira, en gris, chica y sin negrita, y lo que ocupa la pantalla son las capturas y grabaciones del trabajo en su marco.</span></p>
     <div class="bloque"><p class="rotulo">Qué la hace distinta</p><ol class="tres"><li><span>Carga la pantalla el trabajo: la cinta en la primera pantalla, el índice como muro de imágenes (53,0 % de <code>/trabajo/</code>) y casos con 49,8 a 59,2 % de imagen.</span></li><li><span>El titular a la escala de Koto: 48 px en la home a 1440, en Google Sans Flex liviana (peso 300, ancho 76 %).</span></li><li><span>El color lo pone cada pieza dentro de su marco y la interfaz no tiene ninguno: ni en Desarrollo web cambia el lienzo.</span></li></ol></div>
     <dl class="valores"><div><dt>Qué sacrifica</dt><dd>El hero monumental: la frase va a 48 px, no a escala de cartel. Y depende del material grabado: sin capturas buenas, A se cae.</dd></div><div><dt>Riesgo de la letra</dt><dd>Google Sans Flex es la letra de los productos de Google: un estudio que vende aparecer en Google, escrito con ella, puede leerse como «de Google». La elegiste sabiéndolo; aquí la puedes pesar mirándola.</dd></div><div><dt>Logo provisorio</dt><dd>Camino 2, «El huso» (sección 3). Va de muestra: el camino lo eliges tú.</dd></div><div><dt>Medido a 1440</dt><dd>Negro fuera de los medios: home 95,2 %, <code>/trabajo/</code> 96,0 % (piso 80 %). El chequeo, dentro de la primera pantalla a 1440 × 900 y a 390 × 844.</dd></div></dl>
-    <div class="bloque"><h3>Recorridos</h3><div class="galeria galeria--2"><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-a-home-1440-recorrido.jpg" width="1440" height="900" aria-label="Recorrido de la home de la dirección A, a 1440"><source src="video/t-a-home-1440.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/a-home-1440.webm" type='video/webm'></video><figcaption>Recorrido de la home a 1440 × 900, 14,2 s, grabado del navegador con el mouse de verdad: el movimiento corre con Motion, no es una animación aparte.</figcaption></figure><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-a-trabajo-1440-recorrido.jpg" width="1440" height="900" aria-label="Recorrido de /trabajo/ de la dirección A, a 1440"><source src="video/t-a-trabajo-1440.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/a-trabajo-1440.webm" type='video/webm'></video><figcaption>Recorrido de /trabajo/ a 1440 × 900, 12,7 s, grabado del navegador con el mouse de verdad: el movimiento corre con Motion, no es una animación aparte.</figcaption></figure></div></div>
+    <div class="bloque"><h3>El movimiento, grabado del navegador</h3>
+      <p class="nota">Las demos del paso 1, sobre las páginas de esta dirección: el mouse (los dos recorridos), el teclado, el movimiento reducido y el teléfono. En las tres demos, la flecha o la mano del mouse, la placa «Tab» y el anillo gris de cada toque los dibuja la grabación para que se vean; no son del sitio. Lo que dice cada pie se midió en la página mientras se grababa (<code>datos/demos.json</code>, <code>herramientas/grabar-demos.mjs</code>).</p>
+      <div class="galeria galeria--2"><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-a-home-1440-recorrido.jpg" width="1440" height="900" aria-label="Recorrido de la home de la dirección A, a 1440"><source src="video/t-a-home-1440.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/a-home-1440.webm" type='video/webm'></video><figcaption>Recorrido de la home a 1440 × 900, 14,2 s, grabado del navegador con el mouse de verdad: el movimiento corre con Motion, no es una animación aparte.</figcaption></figure><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-a-trabajo-1440-recorrido.jpg" width="1440" height="900" aria-label="Recorrido de /trabajo/ de la dirección A, a 1440"><source src="video/t-a-trabajo-1440.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/a-trabajo-1440.webm" type='video/webm'></video><figcaption>Recorrido de /trabajo/ a 1440 × 900, 12,7 s, grabado del navegador con el mouse de verdad: el movimiento corre con Motion, no es una animación aparte.</figcaption></figure><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-d-a-teclado-poster.jpg" width="1440" height="900" aria-label="Dirección A: demo de teclado en /trabajo/"><source src="video/t-d-a-teclado.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/d-a-teclado.webm" type='video/webm'></video><figcaption>Teclado en <code>/trabajo/</code> a 1440 × 900, 9,8 s. Con el mouse sobre la primera pieza, el círculo dice «Ver el caso»; con el primer Tab se va y el foco se ve: 7 paradas, todas con contorno de 2 px (3 filtros y 4 piezas). En cada pieza, el rótulo del círculo queda quieto dentro de ella. Al mover el mouse, el círculo vuelve (segundo 8,4).</figcaption></figure><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-d-a-reducido-poster.jpg" width="1440" height="900" aria-label="Dirección A: demo de movimiento reducido en la home"><source src="video/t-d-a-reducido.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/d-a-reducido.webm" type='video/webm'></video><figcaption>La home con movimiento reducido (<code>prefers-reduced-motion: reduce</code>), a 1440 × 900, 9,0 s. La cinta no arranca y queda su botón para reproducir, nada entra animado al bajar y el mouse pasa por 3 piezas del índice corto sin círculo ni recorte. En las 6 mediciones: 0 animaciones y 0 videos corriendo.</figcaption></figure></div>
+      <figure class="fig clip clip--tel"><video controls preload="none" playsinline poster="img/t-d-a-telefono-poster.jpg" width="780" height="1688" aria-label="Dirección A: demo de teléfono en /trabajo/"><source src="video/t-d-a-telefono.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/d-a-telefono.webm" type='video/webm'></video><figcaption><code>/trabajo/</code> a 390 × 844 (dpr 2), con el dedo, 7,6 s. <code>(pointer: fine)</code> da falso en las 5 mediciones y no hay círculo. Un toque en «Concepto (4)» filtra; otro en Sesenta abre su caso, y se baja por él con el dedo.</figcaption></figure>
+      <p class="nota"><strong>Por qué van grabadas y no vivas:</strong> el chequeo necesita su servidor (<code>/api/chequeo</code>), que una página publicada no tiene; B toma los recorridos de los conceptos de <code>marketing/portafolio/</code>, fuera de su carpeta, en 4 de sus páginas; y los dos prototipos pesan 12,0 MB, con lo que el tablero pasaría de 57,4 a 69,4 MB, sobre su tope de 60. En vivo se abren con el servidor de cada dirección (<code>direccion-a.md</code> §1 y <code>direccion-b.md</code> §0).</p>
+    </div>
     <div class="bloque"><h3>Las cinco vistas</h3><p class="nota">La home y el índice van abiertos; las otras tres se abren con un toque. Cada vista trae su primera pantalla a 1440 y a 390 y, debajo, la página completa en un marco que se baja por dentro.</p></div>
     <div class="vista" id="a-home"><h3>Vista 1 · La home</h3>
       <p class="pie-vista">La cinta de ocho piezas llena la primera pantalla y la ficha de la pieza que pasa cambia con ella. La declaración va a 48 px con el chequeo al lado: campo y botón dentro de los 900 px (el botón termina en el px 755).</p>
@@ -279,7 +337,12 @@
     <p class="intro"><span class="t1">El dato vivo es lo grande.</span> <span class="t2">La declaración a escala de cartel, el chequeo de verdad como su prueba y el índice como una tabla con filetes donde cada fila abre su pieza.</span></p>
     <div class="bloque"><p class="rotulo">Qué la hace distinta</p><ol class="tres"><li><span>Carga la pantalla el dato vivo: el chequeo con la regla de sus 21 señales en la primera pantalla, la cifra que prueba cada pieza y la hora y el peso de tu visita.</span></li><li><span>La declaración a 88 px en Mona Sans liviana (peso 340, ancho 89 %), sin una sola imagen en la primera pantalla de la home.</span></li><li><span>El índice es una tabla con un visor que muestra la pieza al pasar o enfocar (2,9 % de imagen en <code>/trabajo/</code>), y los planes van en una hoja blanca.</span></li></ol></div>
     <dl class="valores"><div><dt>Qué sacrifica</dt><dd>El muro de imágenes de Koto: en el índice el trabajo se ve de a una pieza, en un visor de 346 px. Y más texto por pantalla, con el riesgo de leerse como panel.</dd></div><div><dt>Logo provisorio</dt><dd>Camino 3, «Dos cortes» (sección 3): la mono, que en B es la voz del dato, entra en el nombre. Va de muestra: el camino lo eliges tú.</dd></div><div><dt>Medido a 1440</dt><dd>Negro fuera de los medios: home 89,9 %, <code>/trabajo/</code> 87,8 % (piso 80 %). El chequeo, dentro de la primera pantalla a 1440 × 900 y a 390 × 844.</dd></div></dl>
-    <div class="bloque"><h3>Recorridos</h3><div class="galeria galeria--2"><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-b-home-1440-recorrido.jpg" width="1440" height="900" aria-label="Recorrido de la home de la dirección B, a 1440"><source src="video/t-b-home-1440.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/b-home-1440.webm" type='video/webm'></video><figcaption>Recorrido de la home a 1440 × 900, 16,8 s, grabado del navegador con el mouse de verdad: el movimiento corre con Motion, no es una animación aparte.</figcaption></figure><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-b-trabajo-1440-recorrido.jpg" width="1440" height="900" aria-label="Recorrido de /trabajo/ de la dirección B, a 1440"><source src="video/t-b-trabajo-1440.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/b-trabajo-1440.webm" type='video/webm'></video><figcaption>Recorrido de /trabajo/ a 1440 × 900, 14,9 s, grabado del navegador con el mouse de verdad: el movimiento corre con Motion, no es una animación aparte.</figcaption></figure></div></div>
+    <div class="bloque"><h3>El movimiento, grabado del navegador</h3>
+      <p class="nota">Las demos del paso 1, sobre las páginas de esta dirección: el mouse (los dos recorridos), el teclado, el movimiento reducido y el teléfono. En las tres demos, la flecha o la mano del mouse, la placa «Tab» y el anillo gris de cada toque los dibuja la grabación para que se vean; no son del sitio. Lo que dice cada pie se midió en la página mientras se grababa (<code>datos/demos.json</code>, <code>herramientas/grabar-demos.mjs</code>).</p>
+      <div class="galeria galeria--2"><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-b-home-1440-recorrido.jpg" width="1440" height="900" aria-label="Recorrido de la home de la dirección B, a 1440"><source src="video/t-b-home-1440.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/b-home-1440.webm" type='video/webm'></video><figcaption>Recorrido de la home a 1440 × 900, 16,8 s, grabado del navegador con el mouse de verdad: el movimiento corre con Motion, no es una animación aparte.</figcaption></figure><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-b-trabajo-1440-recorrido.jpg" width="1440" height="900" aria-label="Recorrido de /trabajo/ de la dirección B, a 1440"><source src="video/t-b-trabajo-1440.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/b-trabajo-1440.webm" type='video/webm'></video><figcaption>Recorrido de /trabajo/ a 1440 × 900, 14,9 s, grabado del navegador con el mouse de verdad: el movimiento corre con Motion, no es una animación aparte.</figcaption></figure><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-d-b-teclado-poster.jpg" width="1440" height="900" aria-label="Dirección B: demo de teclado en /trabajo/"><source src="video/t-d-b-teclado.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/d-b-teclado.webm" type='video/webm'></video><figcaption>Teclado en <code>/trabajo/</code> a 1440 × 900, 9,7 s. Con el mouse sobre la primera pieza, el círculo dice «Ver el caso»; con el primer Tab se va y el foco se ve: 7 paradas, todas con contorno de 2 px (3 filtros y 4 filas). Al mover el mouse, el círculo vuelve (segundo 8,4). El visor sigue a la fila con foco, salvo en lo que <strong>encontró esta grabación</strong>: en el segundo 6,4 el foco está en Sesenta y el visor muestra Verifica y Cumple, porque al bajar la página la fila que queda bajo el mouse quieto le gana al foco. Si eliges B, se corrige al construir: mientras navegas con el teclado, el visor sigue al foco.</figcaption></figure><figure class="fig clip"><video controls preload="none" playsinline poster="img/t-d-b-reducido-poster.jpg" width="1440" height="900" aria-label="Dirección B: demo de movimiento reducido en la home"><source src="video/t-d-b-reducido.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/d-b-reducido.webm" type='video/webm'></video><figcaption>La home con movimiento reducido (<code>prefers-reduced-motion: reduce</code>), a 1440 × 900, 9,1 s. Nada entra animado al bajar, el mouse pasa por 3 filas del índice y el visor cambia de portada sin video ni círculo, y los videos de «Cada pieza, con su prueba» esperan quietos. En las 6 mediciones: 0 animaciones y 0 videos corriendo.</figcaption></figure></div>
+      <figure class="fig clip clip--tel"><video controls preload="none" playsinline poster="img/t-d-b-telefono-poster.jpg" width="780" height="1688" aria-label="Dirección B: demo de teléfono en /trabajo/"><source src="video/t-d-b-telefono.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/d-b-telefono.webm" type='video/webm'></video><figcaption><code>/trabajo/</code> a 390 × 844 (dpr 2), con el dedo, 10,0 s. <code>(pointer: fine)</code> da falso en las 5 mediciones y no hay círculo. Un toque en «Concepto (4)» filtra; otro en Sesenta abre su caso, y se baja por él con el dedo. En el caso, el video de la portada corre solo, con su botón de pausa a mano.</figcaption></figure>
+      
+    </div>
     <div class="bloque"><h3>Las cinco vistas</h3><p class="nota">La home y el índice van abiertos; las otras tres se abren con un toque. Cada vista trae su primera pantalla a 1440 y a 390 y, debajo, la página completa en un marco que se baja por dentro.</p></div>
     <div class="vista" id="b-home"><h3>Vista 1 · La home</h3>
       <p class="pie-vista">La declaración a 88 px y el panel del chequeo con la regla de las 21 señales, sin una sola imagen en la primera pantalla: campo y botón terminan en el px 629 de 900.</p>
@@ -318,7 +381,7 @@
         <div class="visor-caja"><p class="rotulo">Página completa a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="Dirección B, Caso de concepto: Sesenta, página completa a 1440: se desplaza dentro del marco"><img src="img/b-sesenta-1440-1de3.jpg" width="1440" height="4000" alt="Dirección B, Caso de concepto: Sesenta, página completa a 1440, tramo 1 de 3" loading="lazy" decoding="async"><img src="img/b-sesenta-1440-2de3.jpg" width="1440" height="4000" alt="Dirección B, Caso de concepto: Sesenta, página completa a 1440, tramo 2 de 3" loading="lazy" decoding="async"><img src="img/b-sesenta-1440-3de3.jpg" width="1440" height="2224" alt="Dirección B, Caso de concepto: Sesenta, página completa a 1440, tramo 3 de 3" loading="lazy" decoding="async"></div></div>
         <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="Dirección B, Caso de concepto: Sesenta, página completa a 390: se desplaza dentro del marco"><img src="img/b-sesenta-390-1de3.jpg" width="780" height="4000" alt="Dirección B, Caso de concepto: Sesenta, página completa a 390, tramo 1 de 3" loading="lazy" decoding="async"><img src="img/b-sesenta-390-2de3.jpg" width="780" height="4000" alt="Dirección B, Caso de concepto: Sesenta, página completa a 390, tramo 2 de 3" loading="lazy" decoding="async"><img src="img/b-sesenta-390-3de3.jpg" width="780" height="3450" alt="Dirección B, Caso de concepto: Sesenta, página completa a 390, tramo 3 de 3" loading="lazy" decoding="async"></div></div>
       </div></details><details class="vista plegable" id="b-desarrollo-web"><summary><h3>Vista 5 · Desarrollo web, el juego de color</h3><span class="mas" aria-hidden="true"></span></summary>
-      <p class="pie-vista">Los planes van en una hoja blanca con la forma de un campo de Koto (marco de radio 6 a 16 px del borde), 17,1 % del alto de la página: el único campo que pone la interfaz y no el trabajo. Es un desvío de Koto, rotulado.</p>
+      <p class="pie-vista">Los planes van en una hoja blanca con la forma de un campo de Koto (marco de radio 6 a 16 px del borde), 17,1 % del alto de la página: el único campo que pone la interfaz y no el trabajo. Es un desvío de Koto, rotulado, y queda solo si dices que sí (sección 7).</p>
       <div class="par">
         <figure class="fig pantalla"><img src="img/b-desarrollo-web-1440-primera.jpg" width="1440" height="900" alt="Dirección B, Desarrollo web, el juego de color, a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
         <figure class="fig pantalla pantalla--tel"><img src="img/b-desarrollo-web-390-primera.jpg" width="780" height="1688" alt="Dirección B, Desarrollo web, el juego de color, a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
@@ -522,7 +585,7 @@
   <div class="seccion__cuerpo">
     <p class="intro"><span class="t1">Es el único trabajo con IA programada y la única app con cuentas y cobro.</span> <span class="t2">El caso se puede contar con fecha e instrumento por su oficio, no por su uso: «Sin métrica».</span></p>
     <dl class="valores">
-      <div><dt>Hoy, 17-oct, 02:33</dt><dd>praxi.coach responde <strong>402</strong> con <code>DEPLOYMENT_DISABLED</code>, en la portada y en <code>/planes</code> (<code>datos/estado-praxi.txt</code>). Por eso ninguna vista enlaza a praxi.coach.</dd></div>
+      <div><dt>El 18-oct, 19:21</dt><dd>praxi.coach responde <strong>402</strong> con <code>DEPLOYMENT_DISABLED</code>, en la portada y en <code>/planes</code> (<code>datos/estado-praxi.txt</code>). Por eso ninguna vista enlaza a praxi.coach.</dd></div>
       <div><dt>Vista 3</dt><dd>Las dos direcciones usan Praxi como caso real. Diego recomendaba Combeau porque a Praxi le faltan las pantallas de la app, y a los tres lectores fríos les bajó la confianza un caso apagado y sin usuarios.</dd></div>
     </dl>
     <div class="dos-listas">
@@ -539,7 +602,7 @@
     <p class="intro"><span class="t1">Cinco respuestas.</span> <span class="t2">Basta con una línea por cada una; lo que no contestes queda como dice la lista de abajo.</span></p>
     <ol class="decide">
       <li><h3>¿A · Archivo o B · Banco?</h3><p>Se pueden pedir ajustes a la que elijas, pero no se mezclan: la mezcla es el promedio, y el promedio de dos direcciones fuertes es una dirección débil. Si no es ninguna, se vuelve al lock y a la medición de Koto, no a este tablero.</p>
-        <div class="tabla-envuelta"><table class="tabla"><caption class="rotulo">A y B, lado a lado, medido a 1440</caption><thead><tr><th scope="col">Eje</th><th scope="col">A · Archivo</th><th scope="col">B · Banco</th></tr></thead><tbody><tr><th scope="row">Letra</th><td data-rotulo="A · Archivo">Google Sans Flex (titular liviano, ancho 76 %)</td><td data-rotulo="B · Banco">Mona Sans (titular liviano, ancho 89 %)</td></tr><tr><th scope="row">Titular de la home a 1440</th><td data-rotulo="A · Archivo">48 px, a la escala de Koto</td><td data-rotulo="B · Banco">88 px, a escala de cartel</td></tr><tr><th scope="row">Primera pantalla de la home</th><td data-rotulo="A · Archivo">El trabajo (la cinta) con la frase y el chequeo</td><td data-rotulo="B · Banco">La frase y el chequeo, sin imagen</td></tr><tr><th scope="row">Imagen en /trabajo/</th><td data-rotulo="A · Archivo">53,0 %: el muro</td><td data-rotulo="B · Banco">2,9 %: la tabla y su visor</td></tr><tr><th scope="row">Imagen en el caso Sesenta</th><td data-rotulo="A · Archivo">59,2 %</td><td data-rotulo="B · Banco">57,4 %</td></tr><tr><th scope="row">Juego de color en Desarrollo web</th><td data-rotulo="A · Archivo">Dentro de los marcos del trabajo; el lienzo no cambia</td><td data-rotulo="B · Banco">Una hoja blanca para los planes (desvío de Koto, rotulado)</td></tr><tr><th scope="row">Logo de muestra</th><td data-rotulo="A · Archivo">Camino 2, «El huso»</td><td data-rotulo="B · Banco">Camino 3, «Dos cortes»</td></tr></tbody></table></div></li>
+        <div class="tabla-envuelta"><table class="tabla"><caption class="rotulo">A y B, lado a lado, medido a 1440</caption><thead><tr><th scope="col">Eje</th><th scope="col">A · Archivo</th><th scope="col">B · Banco</th></tr></thead><tbody><tr><th scope="row">Letra</th><td data-rotulo="A · Archivo">Google Sans Flex (titular liviano, ancho 76 %)</td><td data-rotulo="B · Banco">Mona Sans (titular liviano, ancho 89 %)</td></tr><tr><th scope="row">Titular de la home a 1440</th><td data-rotulo="A · Archivo">48 px, a la escala de Koto</td><td data-rotulo="B · Banco">88 px, a escala de cartel</td></tr><tr><th scope="row">Primera pantalla de la home</th><td data-rotulo="A · Archivo">El trabajo (la cinta) con la frase y el chequeo</td><td data-rotulo="B · Banco">La frase y el chequeo, sin imagen</td></tr><tr><th scope="row">Imagen en /trabajo/</th><td data-rotulo="A · Archivo">53,0 %: el muro</td><td data-rotulo="B · Banco">2,9 %: la tabla y su visor</td></tr><tr><th scope="row">Imagen en el caso Sesenta</th><td data-rotulo="A · Archivo">59,2 %</td><td data-rotulo="B · Banco">57,4 %</td></tr><tr><th scope="row">Juego de color en Desarrollo web</th><td data-rotulo="A · Archivo">Dentro de los marcos del trabajo; el lienzo no cambia</td><td data-rotulo="B · Banco">Una hoja blanca para los planes (desvío de Koto, rotulado: queda solo con tu sí)</td></tr><tr><th scope="row">Logo de muestra</th><td data-rotulo="A · Archivo">Camino 2, «El huso»</td><td data-rotulo="B · Banco">Camino 3, «Dos cortes»</td></tr></tbody></table></div></li>
       <li><h3>¿Qué camino de logo?</h3><p>1 · La palabra, 2 · El huso o 3 · Dos cortes. Bruno recomienda el 2; su riesgo es que el huso se lea como alfiler o cerradura. El dibujo final sale con la dirección que elijas.</p></li>
       <li><h3>¿Qué hero?</h3><p>La 3 es la que los tres lectores entendieron en la segunda vuelta. Si quieres la tuya (la 1), conviene que la acompañe la bajada de la 3, que es la que dice qué vendemos.</p></li>
       <li><h3>¿Pagamos fotos o video para los conceptos?</h3><p>Nada, o un mes del plan PLUS de Higgsfield (USD 49) para las 9 fotos y 2 clips de las cuatro, o solo para las piezas que elijas mirando la sección 4. Sin tu sí no se genera nada.</p></li>
@@ -549,7 +612,7 @@
     <ul class="abiertas">
       <li><strong>Los puntajes propios</strong> (Verifica y Cumple 54 → 94 y spindlelab.cl 36 → 73): <span class="t2">no se muestran. Hoy A trae el 54 → 94 puesto y B no; si dices que no, sale de A y el texto queda igual en las dos.</span></li>
       <li><strong>El color del círculo del cursor:</strong> <span class="t2">blanco, como Koto, que no tiene color de interfaz. El cobalto del brief, aclarado a <code>#316BFF</code> para que se lea sobre negro, queda a una línea.</span></li>
-      <li><strong>Una interior con el lienzo claro:</strong> <span class="t2">no. Koto no cambia el lienzo en ninguna de sus 640 paradas medidas; su juego está dentro de los marcos (sección 1). Si lo quieres igual, se construye como desvío rotulado.</span></li>
+      <li><strong>Una interior con el lienzo claro:</strong> <span class="t2">no. Koto no cambia el lienzo en ninguna de sus 640 paradas medidas; su juego está dentro de los marcos (sección 1). La hoja blanca de los planes de B es ese desvío: si eliges B y no dices que sí, sale al construir y los planes vuelven al negro. Si la quieres, se construye rotulada como desvío, con su contraste medido.</span></li>
       <li><strong>Color en el logo:</strong> <span class="t2">no; es monocromo, y si lo quieres como el único color del sitio (el gesto de Koto), se decide con la dirección.</span></li>
       <li><strong>Los cuatro nombres de los conceptos,</strong> Ocelo a oscuras por defecto con la luz que se enciende, Sesenta como la pieza que va más lejos, y Raigal, Aplomo y Deslinde como archivo fuera del índice: <span class="t2">quedan así (Bruno, <code>plan-e12.md</code> §14).</span></li>
     </ul>
@@ -558,7 +621,8 @@
   </main>
   <footer class="pie">
     <p>Armado por <code>tableros/e12-direcciones/herramientas/armar-tablero.py</code> desde las dos direcciones (<code>direccion-a.md</code>, <code>direccion-b.md</code> y sus mediciones), el brief, el lock, los caminos de Bruno, su plan de las piezas, el texto de Clara y su lectura fría, y el inventario de Praxi. Verificado con <code>herramientas/verificar.mjs</code> a 360, 390, 768 y 1440.</p>
-    <p>Las vistas en vivo, con el chequeo de verdad, se abren con los servidores de cada dirección (<code>direccion-a.md</code> §1 y <code>direccion-b.md</code> §0). La captura de Koto es para estudio interno. Las capturas de A y B que pasaban de 450 kB se recomprimieron para el tablero (<code>datos/recompresion.json</code>).</p>
+    <p>Las vistas en vivo, con el chequeo de verdad, se abren con los servidores de cada dirección (<code>direccion-a.md</code> §1 y <code>direccion-b.md</code> §0); aquí van grabadas, y la dirección A dice por qué. La captura de Koto es para estudio interno. Las capturas de A y B que pasaban de 450 kB se recomprimieron para el tablero (<code>datos/recompresion.json</code>).</p>
+    <p>Un solo tema, a propósito: el tablero va en negro también si tu visor está en claro. Las dos direcciones se juzgan sobre el lienzo <code>#060606</code> de Koto, y un tablero claro alrededor cambiaría cómo se leen sus capturas.</p>
   </footer>
 </div>
 <script>
