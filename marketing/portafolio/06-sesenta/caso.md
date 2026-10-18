@@ -165,3 +165,17 @@ El recorrido se graba cuadro a cuadro y no con `recordVideo` de Playwright (que 
 graba VP8 a unos 0,9 Mbit/s y queda blando para un medio de 1057 px (plan §5.5). Cuadro a cuadro, con el reloj de la
 página detenido en cada cuadro, sale nítido e idéntico cada vez. Tiene scroll, un hover (la suma, en «Primer otrosí»),
 la fecha escrita en el campo, el 60 que baja hasta 35 y el clic en el 161.
+
+## Entre el teléfono y el escritorio (18-oct-2026)
+
+Cerrando el defecto 17 del acta del paso 2 (el piso de 11 px, en Tonela) barrí las cuatro piezas en doce tamaños, de
+360 × 740 a 1920 × 1080. Sesenta tenía dos desbordes que las comprobaciones a 360, 390, 768 y 1440 no veían, los dos
+de 861 a 1180 px, donde rige la hoja de tableta:
+
+- **«Qué dice tu carta»** se salía hasta 257 px a 900: el número del artículo, a 220 px y al lado del título, dejaba al
+  `h2` sin ancho. Ahora el número va sobre el título, a 160 px (96 los de palabra), y el índice pasa de 320 a 260 px.
+- **El finiquito anotado** dejaba columnas de 102 px a cada lado del papel a 900, y una nota se salía 3 px. Ahora el
+  papel va a la izquierda y las cinco notas a la derecha, cada una en la fila de su cláusula.
+
+Barrido de nuevo: 0 desborde y 0 textos bajo 11 px en los doce tamaños. A 360, 390, 768 y 1440 las dos páginas salen
+idénticas, píxel por píxel, a las de antes, así que las capturas, los medios y el recorrido no cambian.

@@ -510,7 +510,19 @@ input[type="date"].campo { flex: 1; min-width: 0; color-scheme: light; }
   .suma { left: auto; right: 24px; top: 470px; width: 380px; }
   .nav ul { display: none; }
   .cifra { font-size: 300px; }
-  .finiquito { grid-template-columns: minmax(0, 1fr) minmax(0, 560px) minmax(0, 1fr); column-gap: 28px; }
+  /* De 861 a 1180 el finiquito con notas a los dos lados dejaba columnas de 102 px a 900 y las notas se salían de la
+     página: el papel a la izquierda y todas las notas a la derecha, en su misma fila. */
+  .finiquito { grid-template-columns: minmax(0, 560px) minmax(220px, 1fr); column-gap: 48px; }
+  .finiquito::before { grid-column: 1; }
+  .fq-bloque { grid-column: 1; }
+  .fq-nota.izq, .fq-nota.der { grid-column: 2; justify-self: start; text-align: left; }
+  .fq-nota.izq b { flex-direction: row; }
+  .fq-nota.izq::after { right: auto; left: -48px; }
+  /* «Qué dice tu carta»: el número sobre el título; al lado, el 159 de 220 px dejaba al h2 sin ancho y fuera de la página */
+  .int-cuerpo { grid-template-columns: 260px minmax(0, 1fr); column-gap: 48px; }
+  .art-cabeza { grid-template-columns: minmax(0, 1fr); row-gap: 18px; }
+  .art-numero { font-size: 160px; }
+  .art-numero.palabra { font-size: 96px; }
 }
 
 @media (max-width: 860px) {

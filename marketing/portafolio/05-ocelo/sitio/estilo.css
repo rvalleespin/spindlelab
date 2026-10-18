@@ -137,7 +137,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   --izq: 340px;
   --lm: 48px;
   --lado: 236px;
-  --C: min(calc((100vw - 2 * var(--pad) - var(--izq) - 56px - var(--lm) - var(--lado)) / 9), calc((100svh - var(--cabeza) - 72px) / 7.3), 104px);
+  /* piso de 46 px: con menos, la fila 0,2 (el rótulo) baja de 11 px; en una pantalla muy baja la carta pasa del pliegue */
+  --C: max(46px, min(calc((100vw - 2 * var(--pad) - var(--izq) - 56px - var(--lm) - var(--lado)) / 9), calc((100svh - var(--cabeza) - 72px) / 7.3), 104px));
   display: grid;
   grid-template-columns: var(--izq) 1fr;
   gap: 56px;
@@ -435,6 +436,19 @@ fieldset legend { margin-bottom: 8px; padding: 0; }
   .mediciones li p { grid-column: 2; }
   .duocromo h3 { font-size: var(--f6); }
   .promesas s { font-size: var(--f3); }
+  /* las iniciales arriba del nombre: al lado, el nombre largo empujaba la página 144 px de ancho a 821 */
+  .persona { grid-template-columns: 1fr; gap: 18px; }
+}
+
+/* ---------- 821 a 1179 px: la carta arriba y a todo el ancho ----------
+   Al lado del texto, la carta quedaba tan angosta que sus filas de abajo bajaban de 11 px (3,6 px a 821). Arriba y a
+   todo el ancho, como en el teléfono, la fila 0,2 queda sobre 11 px y el texto de al lado sigue a la vista. */
+@media (min-width: 821px) and (max-width: 1179px) {
+  .primera {
+    --C: max(46px, min(calc((100vw - 2 * var(--pad) - var(--lm) - var(--lado)) / 9), calc((100svh - var(--cabeza) - 72px) / 7.3), 104px));
+    grid-template-columns: 1fr; gap: 48px; min-height: 0;
+  }
+  .carta { order: -1; }
 }
 
 /* ---------- 820 px y menos: una columna ---------- */

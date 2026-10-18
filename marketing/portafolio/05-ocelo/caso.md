@@ -147,6 +147,15 @@ puerta dibujados en HTML, CSS y SVG. Lo que sumaría una foto es **el mundo fís
   viewport a 12,71 px y 16,30:1 (17,55:1 con luz); foco visible en los primeros 14 elementos del tabulador; con
   `prefers-reduced-motion: reduce`, cero animaciones corriendo; consola sin errores; solo las dos Atkinson en uso. El
   detalle está en `capturas/comprobacion.json`.
+- **Entre el teléfono y el escritorio (18-oct-2026).** Cerrando el defecto 17 del acta del paso 2 (el piso de 11 px,
+  en Tonela) barrí las cuatro piezas en doce tamaños, de 360 × 740 a 1920 × 1080, y Ocelo tenía dos fallas que las
+  comprobaciones a 360, 390, 768 y 1440 no veían. De 821 a 1179 px la carta iba al lado del texto, tan angosta que sus
+  filas de abajo bajaban de 11 px (3,6 px a 821, y la fila 0,2 es el rótulo); ahora en ese tramo va arriba y a todo
+  el ancho, como en el teléfono, y su tamaño tiene un piso que deja la fila 0,2 sobre 11 px. Y de 821 a unos 960 px
+  los nombres de «Quiénes operarían» empujaban la página 144 px de ancho; ahora las iniciales van sobre el nombre
+  desde 1100 px hacia abajo. Barrido de nuevo: 0 desborde y 0 textos bajo 11 px en los doce tamaños. A 360, 390, 768 y
+  1440 la página sale idéntica, píxel por píxel, a la de antes, así que las capturas, los medios y el recorrido no
+  cambian.
 - **Identidad:** `identidad/pliego.html` y `identidad/placas.html` (cada placa se elige con `?p=` y `&f=tinta|lienzo`),
   rasterizadas con `_herramientas/identidad.mjs`. Logotipo y símbolo también como SVG sueltos en `identidad/logo/`.
 - **Movimiento:** `movimiento/recorrido.mjs` graba el recorrido cuadro a cuadro (30 por segundo) con un reloj virtual:
