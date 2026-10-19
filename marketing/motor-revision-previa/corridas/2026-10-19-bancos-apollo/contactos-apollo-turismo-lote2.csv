@@ -1,0 +1,23 @@
+email,dominio,empresa,rubro,gancho,ciudad,estado
+fgajardo@plazasanfrancisco.cl,plazasanfrancisco.cl,Hotel Plaza San Francisco,hotel,sitio en orden (meta+schema),Santiago,verificado | gancho por curl 9-sep OK
+ruperto.edwards@terrado.cl,terrado.cl,Terrado Hoteles,hotel,sitio en orden (meta+schema),Iquique,"verificado | gancho por curl 9-sep OK. Cadena regional (Iquique/Antofagasta/Santiago/Rancagua), no boutique"
+drojas@hcdl.cl,hcdl.cl,Hotel Cabaña del Lago,hotel,sitio en orden (meta+schema),Puerto Varas,verificado | gancho por curl 9-sep OK
+carolina.saavedra@marbella.cl,marbella.cl,Hotel Marbella Resort,hotel,sitio en orden (meta+schema),Maitencillo (Valparaíso),verificado | gancho por curl 9-sep OK
+ppereira@awasi.com,awasi.com,Awasi,hotel,sitio en orden (meta+schema),"Las Condes (sede); lodges en San Pedro de Atacama y Patagonia",verificado | gancho por curl 9-sep OK
+jprieto@lasmajadas.cl,lasmajadas.cl,Hotel Las Majadas,hotel,sitio en orden (meta+schema),Pirque (RM),verificado | gancho por curl 9-sep OK
+cavaria@leonerahotel.cl,leonerahotel.cl,Leonera Hotel & Convention Center,hotel,sin meta description ni datos estructurados,Codegua (O'Higgins),verificado | gancho por curl 9-sep OK
+gerencia@tantakuy.cl,tantakuy.cl,Tantakuy Eco Experience,hotel,el título parte con Inicio,Iquique (Tarapacá),verificado | gancho por curl 9-sep OK
+gvelasco@casahigueras.cl,casahigueras.cl,Hotel Casa Higueras,hotel,sin datos estructurados,Valparaíso,verificado | gancho por curl 9-sep OK
+cristobal@lunadepirque.cl,lunadepirque.cl,Hotel & Spa Luna de Pirque,hotel,sin meta description ni datos estructurados,Pirque (RM),verificado | gancho por curl 9-sep OK
+aaballay@blackcathostal.com,blackcathostal.com,Black Cat Hostal Boutique,hotel,sitio en orden (meta+schema),Santiago (Barrio Brasil),verificado | gancho por curl 9-sep OK
+ahughes@hotelkennedy.cl,hotelkennedy.cl,Hotel Kennedy (ahora Wyndham Garden Kennedy),hotel,sitio en orden (meta+schema),Vitacura (Santiago),"verificado | gancho por curl 9-sep OK. FRANQUICIA Wyndham, deprioriza vs. independientes"
+rsolis@laturbina.cl,laturbina.cl,Hotel La Turbina,hotel,sin meta description ni datos estructurados,Negrete (Biobío),verificado | gancho por curl 9-sep OK
+csepulveda@lagogrey.com,lagogrey.com,Hotel Lago Grey,hotel,sin meta description ni datos estructurados,Torres del Paine / Punta Arenas (Magallanes),verificado | gancho por curl 9-sep OK
+mjcabrera@explora.com,explora.com,Explora,hotel,sitio en orden (meta+schema),"Las Condes (sede); lodges en Atacama, Patagonia y Rapa Nui",verificado | gancho por curl 9-sep OK
+claudio@puertadelsur.cl,puertadelsur.cl,Puerta del Sur,hotel,sin meta description ni datos estructurados,Valdivia (Los Ríos),verificado | gancho por curl 9-sep OK
+nicolas@terrantai.com,terrantai.com,Terrantai Lodge | Hotel,hotel,sitio en orden (meta+schema),San Pedro de Atacama,catch-all -> 2a ola
+andresph@hoteloceanic.cl,hoteloceanic.cl,Hotel Oceanic Chile,hotel,sitio en orden (meta+schema),Viña del Mar (Valparaíso),catch-all -> 2a ola
+yerko@cascada.travel,cascada.travel,Cascada Expediciones & EcoCamp Patagonia,hotel,sitio en orden (meta+schema),"Las Condes (sede); EcoCamp (domos geodésicos) en Torres del Paine, Magallanes",catch-all -> 2a ola
+gerencia@hotelcristobalcolon.cl,hotelcristobalcolon.cl,Hotel Cristobal Colon,hotel,no verificable (sitio bloqueó el curl),La Serena,verificado el email pero el sitio devuelve 403 Forbidden -> no se pudo auditar gancho, descartado del lote usable
+rafael.zamora@rosen.cl,rosen.cl,Rosen (Temuco),hotel,no aplica,Temuco (Araucanía),"email verificado pero el dominio rosen.cl pertenece a una tienda de colchones/muebles (coincidencia de nombre con la cadena hotelera Rosen), no es la empresa objetivo -> descartado"
+german@hotelcarmenere.com,hotelcarmenere.com,EcoHotel Carménère,hotel,no verificable (sitio caído),Providencia (Santiago),email verificado pero el sitio devuelve 404 en la home (Wix) -> descartado del lote usable
