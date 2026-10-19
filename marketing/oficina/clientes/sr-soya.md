@@ -1,6 +1,9 @@
 # SR.SOYA
 
-> **Estado del documento (10-sep-2026):** ficha abierta con lo dictado por Ramón y
+> **Estado del documento (19-oct-2026):** al día con el segundo reencuadre de Carlos (academia
+> vocal) y su validación técnica. Lo de septiembre queda como historial, más abajo.
+>
+> **Estado original (10-sep-2026):** ficha abierta con lo dictado por Ramón y
 > **completada con lo verificado en srsoya.com el 10-sep**. Lo que sigue sin fuente va
 > marcado como pendiente, no se rellena a ojo.
 
@@ -147,6 +150,60 @@ Unidos, donde paga costo de adquisición gringo con ticket chileno. De ahí sale
 recomendaciones aprobadas el 24-sep: **dos listas de precio** y **partir en Chile**, con
 Estados Unidos entrando el mes 2. Análisis en `ventas/sr-soya-analisis-precios-y-plan.md`.
 
+## Lo que pasó el 19-oct: segundo reencuadre, la academia vocal
+
+Carlos archiva Terapias 5D y propone una **academia vocal online**: clases particulares de canto por
+Google Meet, **US$45 la clase**, meta de **10 alumnos recurrentes** (~US$1.800 brutos al mes),
+**apuntando a Estados Unidos desde el principio**. El argumento es bueno y es nuevo: **ya le
+escriben solos** desde sus reels cantando en inglés, sin haber gastado un peso. Mantiene el
+presupuesto: $200.000 de honorario + hasta $100.000 de pauta.
+
+**Estado del arranque: no hay pago y no hay partida.** El 12-oct pasó en blanco. El propio correo
+de Ramon del 19-oct 15:20 habla de coordinar «el primer pago para dar partida al mes 1».
+
+### Qué se le va a responder, y qué se comprometió
+
+Ramon decidió **no perder al cliente y comprometer dos entregables con nombre**: la
+**administración de las campañas en Meta** y la **construcción del embudo de compra completo**.
+El precio no cambia; lo que cambia es que el entregable deja de llamarse «gestión de redes».
+
+**Validado con datos de la plataforma el 19-oct**, en `ventas/sr-soya-validacion-funnel-meta.md`:
+
+| Hallazgo | De dónde sale |
+|---|---|
+| **Meta recomienda optimizar hacia un evento más frecuente cuando el presupuesto no alcanza los ~50 eventos semanales** | Centro de ayuda de Meta, [about learning limited](https://www.facebook.com/business/help/269269737396981). **Es lo que hace posible todo el plan** |
+| La cuenta publicitaria disponible (`27048475`, CLP, activa, con medio de pago) **no tiene ningún píxel creado** | `ads_get_datasets`, 19-oct. La medición se construye desde cero |
+| Mínimo diario por conjunto de anuncios: **987** (unidad menor de CLP) | `ads_get_ad_accounts`. Con $3.333 diarios da para unos tres conjuntos al piso |
+| Hay **profesores de canto individuales pautando hoy en EEUU y cobrando en dólares**, además de academias | Biblioteca de Anuncios de Meta, 19-oct |
+| El mercado vende **el primer mes**, no la clase suelta (Foxboro School of Music: «Your First Month of Music Lessons for Just $99!») | Biblioteca de Anuncios de Meta, 19-oct |
+
+**El embudo comprometido, en seis pasos:** anuncio → página de la academia → formulario →
+diagnóstico vocal de 15 min → compra del plan → retención medida en clases por alumno. **Los
+anuncios optimizan hacia el paso 3**, la consulta, y la venta la cierra Carlos en el diagnóstico.
+
+### La cuenta que ordena este enfoque
+
+**Lo que decide la rentabilidad es cuánto dura un alumno**, no el precio por clase. Y **dos alumnos
+recurrentes cubren los $300.000 completos**. Detalle en `ventas/sr-soya-academia-vocal-analisis.md`.
+
+### Condiciones que quedaron escritas
+
+1. **La cuenta publicitaria y el píxel a nombre de Carlos**, con su tarjeta y acceso de socio para
+   SpindleLab. ✅ **Esto resuelve el punto operativo abierto desde septiembre.**
+2. **La página de la academia no va en srsoya.com** (WordPress.com, y es un sitio de prensa del
+   proyecto musical). Se construye aparte, con el código bajo nuestro control.
+3. Vender un plan y no clases sueltas. Decisión de Carlos.
+4. ⚠️ **Cobro en dólares desde Chile: el cuello de botella más probable.** Se verifica, no se afirma.
+5. Franjas horarias definidas antes de publicar disponibilidad.
+
+## Próximo paso (al 19-oct-2026)
+
+**Borrador listo en el buzón** (`r-8020764956492988034`), **sin enviar**. Falta que Ramón:
+
+- [ ] Resuelva las cuatro decisiones de `ventas/sr-soya-academia-vocal-analisis.md` §1, más la
+      quinta de la validación (cuenta publicitaria a nombre de Carlos: el borrador ya la propone así).
+- [ ] Adjunte `ventas/anexos/SPL-NT-2026-002-srsoya-academia-vocal.pdf` y envíe.
+
 ## Próximo paso (al 24-sep-2026)
 
 **Borrador de respuesta listo en el buzón**, pendiente de que Ramón lo envíe. Le pide dos
@@ -168,6 +225,10 @@ y el mes 1 depende de tener la oferta empaquetada antes de arrancar.
 
 | Qué | Dónde |
 |---|---|
+| **Validación del giro y el embudo (oct)** | `ventas/sr-soya-validacion-funnel-meta.md` |
+| **Análisis de la academia vocal y decisiones** | `ventas/sr-soya-academia-vocal-analisis.md` |
+| **Anexo al cliente, plan v2** | `ventas/anexos/SPL-NT-2026-002-srsoya-academia-vocal.html` / `.pdf` |
+| **Registro del correo de respuesta** | `ventas/sr-soya-correo-respuesta-academia.md` |
 | Alcance y precio del servicio | `marketing/paid-media/2026-09-spotify-landing-alcance-y-precio.md` |
 | Cotización vigente | `ventas/cotizaciones/SPL-COT-2026-015-srsoya-gestion-redes.html` |
 | Modelo de cobro y frases de venta | `ventas/sr-soya-modelo-de-cobro.md` |
