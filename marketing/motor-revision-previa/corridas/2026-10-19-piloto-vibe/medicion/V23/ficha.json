@@ -1,0 +1,310 @@
+{
+  "id": "V23",
+  "dominio": "silvacorreaconsultora.cl",
+  "motor": "v0",
+  "cuando": "2026-10-19T13:55:47.324Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "no-concluyente",
+  "url": "http://silvacorreaconsultora.cl/",
+  "hallazgo": null,
+  "ruta_interna": [],
+  "ofertas_adicionales": [],
+  "capa1": {
+    "consecuencia": [],
+    "higiene": []
+  },
+  "notas": [
+    "El navegador no pudo cargar la portada en ninguna de las corridas (error de red o página en blanco). Puede ser el firewall del sitio contra una IP de datacenter. No se afirma nada: reintentar desde otra red o abrir el sitio a mano."
+  ],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 0,
+      "mailto": [],
+      "whatsapp": []
+    },
+    "analitica": {
+      "gtm": [],
+      "ga4": [],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "nginx",
+      "cloudflare": false,
+      "x_powered_by": null
+    },
+    "robots": {
+      "ausente": true
+    },
+    "llms_txt": false,
+    "sitemap": false,
+    "jsonld": {
+      "tipos": [],
+      "org": []
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 980,
+      "ancho_contenido": 980,
+      "desborde_px": 0,
+      "meta_viewport": false,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": null,
+      "textos_chicos_pct": null,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 980,
+      "ancho_contenido": 980,
+      "desborde_px": 0,
+      "meta_viewport": false,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": null,
+      "textos_chicos_pct": null,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 13,
+      "al_abrir_bytes": 13,
+      "n_peticiones": 1,
+      "mas_pesados": [
+        {
+          "url": "https://silvacorreaconsultora.cl/",
+          "bytes": 13
+        }
+      ]
+    },
+    {
+      "total_bytes": 13,
+      "al_abrir_bytes": 13,
+      "n_peticiones": 1,
+      "mas_pesados": [
+        {
+          "url": "https://silvacorreaconsultora.cl/",
+          "bytes": 13
+        }
+      ]
+    },
+    {
+      "total_bytes": 13,
+      "al_abrir_bytes": 13,
+      "n_peticiones": 1,
+      "mas_pesados": [
+        {
+          "url": "https://silvacorreaconsultora.cl/",
+          "bytes": 13
+        }
+      ]
+    }
+  ],
+  "soporte": {},
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 643
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 643,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 643,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 643,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 403,
+            "bytes": 146,
+            "bloqueado": true,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 643,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 643,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 643,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 643
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 643,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 643,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 643,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 403,
+            "bytes": 146,
+            "bloqueado": true,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 643,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 643,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 643,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [
+      "ClaudeBot"
+    ],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "silvacorreaconsultora.cl",
+            "dominio": "silvacorreaconsultora.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      },
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "silvacorreaconsultora.cl",
+            "dominio": "silvacorreaconsultora.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "title",
+        "valor": "SilvaCorrea Consultora"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": null
+  },
+  "enlaces": {
+    "revisados": 0,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

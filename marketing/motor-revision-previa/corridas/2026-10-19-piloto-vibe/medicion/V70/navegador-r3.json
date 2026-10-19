@@ -1,0 +1,4729 @@
+{
+  "url": "https://dermacross.cl/",
+  "cuando": "2026-10-19T14:40:29.721Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "dermacross.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "dermacross.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "dermacross.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "dermacross.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_adnabu_uid",
+        "dominio": "dermacross.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_fbp",
+        "dominio": "dermacross.cl",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "_ga_M3E7FK5GNH",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_JL21LKEPXB",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_PGRDKQV1B9",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_gcl_au",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "_ga_WL2YNY5SRR",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_CSCQTHVEFX",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_gid",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 1
+      },
+      {
+        "nombre": "_gat_UA-56997229-1",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 0
+      },
+      {
+        "nombre": "_fbp",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 90
+      }
+    ],
+    "dom": {
+      "url": "https://dermacross.cl/",
+      "titulo": "Dermacross | Clínica Dermatológica | Medicina Estética",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/localization",
+          "accion_abs": "https://dermacross.cl/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://dermacross.cl/search",
+          "metodo": "get",
+          "campos": 2,
+          "requeridos": 0,
+          "visible": true,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://dermacross.cl/search",
+          "metodo": "get",
+          "campos": 2,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://dermacross.cl/cart/add",
+          "metodo": "post",
+          "campos": 3,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/localization",
+          "accion_abs": "https://dermacross.cl/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#content",
+          "t": "Ir al contenido"
+        },
+        {
+          "h": "#",
+          "t": "Left\n  \n\n        Continuar la compra"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "https://www.facebook.com/dermacross",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/dermacross/",
+          "t": "Instagram"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "Cerrar"
+        },
+        {
+          "h": "/search",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "Cerrar"
+        },
+        {
+          "h": "/account",
+          "t": ""
+        },
+        {
+          "h": "/cart",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "CLÍNICA"
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Quiénes Somos"
+        },
+        {
+          "h": "/pages/equipo-1",
+          "t": "Staff Médico"
+        },
+        {
+          "h": "/pages/instalaciones",
+          "t": "Instalaciones"
+        },
+        {
+          "h": "#",
+          "t": "Servicio a la Comunidad"
+        },
+        {
+          "h": "https://lapsoriasis.cl/",
+          "t": "Campaña Tratando La Psoriasis"
+        },
+        {
+          "h": "https://www.tratandoladermatitisatopica.cl",
+          "t": "Campaña Tratando La Dermatitis Atópica"
+        },
+        {
+          "h": "/pages/tecnologias-dermatologicas",
+          "t": "TECNOLOGÍAS"
+        },
+        {
+          "h": "/pages/https-dermacross-cl-products-morpheus-8-pro-_pos-1-_sid-b34ee9da3-_ss-r",
+          "t": "BODYTITE MORPHEUS 8 PRO"
+        },
+        {
+          "h": "/pages/dermapen-4",
+          "t": "DERMAPEN 4"
+        },
+        {
+          "h": "/pages/tecnologias-dermatologicas",
+          "t": "TECNOLOGÍAS DERMATOLÓGICAS"
+        },
+        {
+          "h": "/pages/lasermedico",
+          "t": "LÁSER MÉDICO"
+        },
+        {
+          "h": "/collections/tratamientos/Tratamientos",
+          "t": "TRATAMIENTOS"
+        },
+        {
+          "h": "/collections/tratamientos",
+          "t": "Todos los Tratamientos"
+        },
+        {
+          "h": "/collections/tratamientos-faciales",
+          "t": "Tratamientos Faciales"
+        },
+        {
+          "h": "/collections/tratamientos-corporales",
+          "t": "Tratamientos Corporales"
+        },
+        {
+          "h": "/collections/celulitis-y-retencion-de-liquidos",
+          "t": "Tratamientos Celulitis y Retención de Líquidos"
+        },
+        {
+          "h": "/collections/depilacion-laser",
+          "t": "Depilación Láser Diodo"
+        },
+        {
+          "h": "/collections/tratamientos-novias",
+          "t": "Tratamientos para Novias"
+        },
+        {
+          "h": "/collections/cyber-depilacion-laser",
+          "t": "DEPILACIÓN LÁSER"
+        },
+        {
+          "h": "/collections/todo-tipo-de-piel",
+          "t": "SKINCARE"
+        },
+        {
+          "h": "/collections/acne",
+          "t": "Antiacné"
+        },
+        {
+          "h": "/collections/antiedad",
+          "t": "Antiedad"
+        },
+        {
+          "h": "/collections/antioxidantes/antioxidantes",
+          "t": "Antioxidante"
+        },
+        {
+          "h": "/collections/contorno-de-ojos",
+          "t": "Contorno de Ojos"
+        },
+        {
+          "h": "/collections/cuello-y-escote",
+          "t": "Cuello y Escote"
+        },
+        {
+          "h": "/collections/despigmentante",
+          "t": "Despigmentante"
+        },
+        {
+          "h": "/collections/exfoliantes",
+          "t": "Exfoliante"
+        },
+        {
+          "h": "/collections/hidratacion",
+          "t": "Hidratación"
+        },
+        {
+          "h": "/collections/limpieza",
+          "t": "Limpieza"
+        },
+        {
+          "h": "/collections/protector-solar",
+          "t": "Protector Solar"
+        },
+        {
+          "h": "/collections/packs",
+          "t": "Packs"
+        },
+        {
+          "h": "/collections/productos-poros-dilatados",
+          "t": "Poros Dilatados"
+        },
+        {
+          "h": "/collections/csa/CSA",
+          "t": "Rutinas Express CSA"
+        },
+        {
+          "h": "/collections/rutinas-especial-papa",
+          "t": "Rutinas Hombres"
+        },
+        {
+          "h": "/collections/complementos",
+          "t": "Complementos"
+        },
+        {
+          "h": "/collections/all",
+          "t": "MARCAS"
+        },
+        {
+          "h": "/collections/isclinical",
+          "t": "ISCLINICAL"
+        },
+        {
+          "h": "/collections/murad/MURAD",
+          "t": "MURAD"
+        },
+        {
+          "h": "/collections/neostrata/NEOSTRATA",
+          "t": "NEOSTRATA"
+        },
+        {
+          "h": "/collections/obagi/OBAGI",
+          "t": "OBAGI"
+        },
+        {
+          "h": "/collections/sensilis",
+          "t": "SENSILIS"
+        },
+        {
+          "h": "/collections/skinceuticals/SKINCEUTICALS",
+          "t": "SKINCEUTICALS"
+        },
+        {
+          "h": "/collections/hydrinity",
+          "t": "HYDRINITY"
+        },
+        {
+          "h": "/collections/isispharma",
+          "t": "ISISPHARMA"
+        },
+        {
+          "h": "/pages/productos-por-categorias",
+          "t": "ESTUDIOS CLÍNICOS"
+        },
+        {
+          "h": "https://web.philaxmed.cl/ReservaOnline.html?mc=dermacross#_",
+          "t": "AGENDA TU HORA"
+        },
+        {
+          "h": "/collections/tratamientos-novias",
+          "t": "PLAN NOVIAS"
+        },
+        {
+          "h": "/collections/tratamientos-novias",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/products/pack-novia-natural-evaluacion-limpieza-facial-hidratacion",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_17_5fc1fab6-f031-410a-a"
+        },
+        {
+          "h": "/products/pack-novia-natural-evaluacion-limpieza-facial-hidratacion",
+          "t": "Pack Novia Esencial| Evaluación + Limpieza Facial + Hidratación"
+        },
+        {
+          "h": "/products/pack-novia-radiante-consulta-limpieza-hidratacion-laser-harmony",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_18_1024x1024.png?v=1784"
+        },
+        {
+          "h": "/products/pack-novia-radiante-consulta-limpieza-hidratacion-laser-harmony",
+          "t": "Pack Novia Plus | Consulta + Limpieza + Hidratación + Láser Harmony"
+        },
+        {
+          "h": "/products/pack-novia-sonada-consulta-laser-harmony-laser-genesis-6-sesiones",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_20_2a2c4b25-5bfb-4188-a"
+        },
+        {
+          "h": "/products/pack-novia-sonada-consulta-laser-harmony-laser-genesis-6-sesiones",
+          "t": "Pack Novia Pro | Consulta + Limpieza + Hidratación + Láser Harmony + Láser Genes"
+        },
+        {
+          "h": "/products/pack-novia-dermacross-consulta-harmony-laser-genesis-co2-fraccionado",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_21_1024x1024.png?v=1784"
+        },
+        {
+          "h": "/products/pack-novia-dermacross-consulta-harmony-laser-genesis-co2-fraccionado",
+          "t": "Pack Novia Signature | Consulta + Hidratación + Harmony + Láser Genesis + CO2 Hy"
+        },
+        {
+          "h": "/collections/packs-depilacion-laser",
+          "t": "PACKS DEPILACIÓN LÁSER"
+        },
+        {
+          "h": "/collections/packs-depilacion-laser",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/products/depilacion-laser-rebaje-total-axilas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_1_1024x1024.png?v=17817"
+        },
+        {
+          "h": "/products/depilacion-laser-rebaje-total-axilas",
+          "t": "Depilación Láser Rebaje Total + Áxilas"
+        },
+        {
+          "h": "/products/piernas-completas-rebaje-completo-axilas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/fotosdepilaser_7_1024x1024.svg?v=174858"
+        },
+        {
+          "h": "/products/piernas-completas-rebaje-completo-axilas",
+          "t": "Depilación Láser Piernas Completas + Pies + Rebaje Completo (Full Brazilian) + A"
+        },
+        {
+          "h": "/products/depilacion-laser-rebaje-total-supralabial-axilas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_6_6ef476c3-6652-4b7a-86"
+        },
+        {
+          "h": "/products/depilacion-laser-rebaje-total-supralabial-axilas",
+          "t": "Depilación Láser Rebaje total + supralabial + axilas"
+        },
+        {
+          "h": "/products/depilacion-laser-rebaje-parcial-axilas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_1_4b87d2de-83af-4bde-9e"
+        },
+        {
+          "h": "/products/depilacion-laser-rebaje-parcial-axilas",
+          "t": "Depilación Láser Rebaje parcial + Áxilas"
+        },
+        {
+          "h": "/products/depilacion-laser-piernas-completas-axilas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_4_bc8c4bb0-b2e3-4504-a7"
+        },
+        {
+          "h": "/products/depilacion-laser-piernas-completas-axilas",
+          "t": "Depilación Láser Piernas completas + axilas"
+        },
+        {
+          "h": "/products/depilacion-laser-media-pierna-rebaje-completo-axilas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_2_a17b6af8-7bd7-40d6-85"
+        },
+        {
+          "h": "/products/depilacion-laser-media-pierna-rebaje-completo-axilas",
+          "t": "Depilación Láser Media Pierna + rebaje completo + axilas"
+        },
+        {
+          "h": "/products/depilacion-laser-media-pierna-rebaje-completo",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_7_1024x1024.png?v=17817"
+        },
+        {
+          "h": "/products/depilacion-laser-media-pierna-rebaje-completo",
+          "t": "Depilación Láser Media pierna + rebaje completo"
+        },
+        {
+          "h": "/products/depilacion-laser-media-pierna-axilas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_5_1024x1024.png?v=17817"
+        },
+        {
+          "h": "/products/depilacion-laser-media-pierna-axilas",
+          "t": "Depilación Láser Media pierna + axilas"
+        },
+        {
+          "h": "/products/depilacion-laser-piernas-completas-rebaje-completo",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_3_1024x1024.png?v=17817"
+        },
+        {
+          "h": "/products/depilacion-laser-piernas-completas-rebaje-completo",
+          "t": "Depilación Láser Piernas completas + rebaje completo"
+        },
+        {
+          "h": "/pages/tecnologias-dermatologicas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/unidad_laser_dematologico_pc_corregida_"
+        },
+        {
+          "h": "//dermacross.cl/cdn/shop/files/GiftcardDermacross_2_3a29dca4-1b1d-497a-830f-b32ef8ab1f53.jpg?v=1769133721",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/GiftcardDermacross_2_3a29dca4-1b1d-497a"
+        },
+        {
+          "h": "/collections/vendors?q=Dermacross",
+          "t": "Dermacross"
+        },
+        {
+          "h": "/collections/types?q=Gift%20Card",
+          "t": "Gift Card"
+        },
+        {
+          "h": "/products/gift-card-dermacross",
+          "t": "Todos los detalles"
+        },
+        {
+          "h": "/collections/tratamientos",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/tratamientos_esteticos_corporales_pc_23"
+        },
+        {
+          "h": "/products/mapeo-de-lunares-1",
+          "t": "Comprar Aquí"
+        },
+        {
+          "h": "https://dermacross.cl/pages/unidad-de-laser-dermatologico",
+          "t": "Consulta aqui"
+        },
+        {
+          "h": "https://docs.google.com/forms/d/e/1FAIpQLSeirLflaOzm_dEGqpc9xNOJhGnxXKrnkEW5mdp52PfJk8RfuQ/viewform",
+          "t": "<div class=\"rimage-wrapper\" style=\"padding-top:100.0%\">\n                    <img"
+        },
+        {
+          "h": "https://docs.google.com/forms/d/e/1FAIpQLSccEWNFdPt1PInwYzA6es4kRnNlDRM6lXi4qlYlPCT1tldVQw/viewform?vc=0&c=0&w=1&flr=0",
+          "t": "<div class=\"rimage-wrapper\" style=\"padding-top:100.0%\">\n                    <img"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7161783331485954048",
+          "t": "<div class=\"rimage-wrapper\" style=\"padding-top:100.0%\">\n                    <img"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7135742667954507776",
+          "t": "<div class=\"rimage-wrapper\" style=\"padding-top:100.0%\">\n                    <img"
+        },
+        {
+          "h": "https://dermacross.cl/collections/neostrata/NEOSTRATA",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/neo-05092022-1_1024x1024.png?v=17693741"
+        },
+        {
+          "h": "/collections/skinceuticals",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/4_1024x1024.png?v=1769374096\" alt=\"\" cl"
+        },
+        {
+          "h": "/collections/murad",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/3_1024x1024.png?v=1769374095\" alt=\"\" cl"
+        },
+        {
+          "h": "https://dermacross.cl/collections/isclinical",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/isclinical_900_1024x1024.webp?v=1769374"
+        },
+        {
+          "h": "/collections/obagi",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/6_1024x1024.png?v=1769374098\" alt=\"\" cl"
+        },
+        {
+          "h": "/collections/eucerin",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Captura_de_Pantalla_2026-06-24_a_la_s_1"
+        },
+        {
+          "h": "/collections/isdin",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Captura_de_Pantalla_2026-06-24_a_la_s_1"
+        },
+        {
+          "h": "#page-wrap-content",
+          "t": "Subir al menú"
+        },
+        {
+          "h": "https://www.facebook.com/dermacross",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/dermacross/",
+          "t": "Instagram"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "https://www.google.com/maps/place/Av.+Manquehue+Nte.+2051,+Vitacura,+Regi%C3%B3n+Metropolitana/@-33.3863852,-70.5789963,17z/data=!3m1!4b1!4m5!3m4!1s0x9662c8d5cb8a0395:0x811b591be4335ce7!8m2!3d-33.3863852!4d-70.5768076",
+          "t": "Av. Manquehue Norte 2051C, Vitacura"
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Quiénes Somos"
+        },
+        {
+          "h": "/pages/equipo-1",
+          "t": "Equipo Médico"
+        },
+        {
+          "h": "/pages/instalaciones-1",
+          "t": "Instalaciones"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contáctanos"
+        },
+        {
+          "h": "/pages/terminos-y-condiciones",
+          "t": "Términos y Condiciones"
+        },
+        {
+          "h": "/pages/cambios-y-devoluciones",
+          "t": "Cambios y Devoluciones"
+        },
+        {
+          "h": "/pages/politica-de-despacho",
+          "t": "Política de Despacho"
+        },
+        {
+          "h": "/pages/politicas-de-privacidad",
+          "t": "Política de Privacidad"
+        },
+        {
+          "h": "https://lapsoriasis.cl/",
+          "t": "Campaña Tratando La Psoriasis"
+        },
+        {
+          "h": "https://www.tratandoladermatitisatopica.cl",
+          "t": "Campaña Tratando La Dermatitis Atópica"
+        },
+        {
+          "h": "/",
+          "t": "Dermacross"
+        },
+        {
+          "h": "https:franrdev.com",
+          "t": "Franrdev"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "CLÍNICA"
+        },
+        {
+          "h": "#",
+          "t": "TECNOLOGÍAS"
+        },
+        {
+          "h": "#",
+          "t": "TRATAMIENTOS"
+        },
+        {
+          "h": "/collections/cyber-depilacion-laser",
+          "t": "DEPILACIÓN LÁSER"
+        },
+        {
+          "h": "#",
+          "t": "SKINCARE"
+        },
+        {
+          "h": "#",
+          "t": "MARCAS"
+        },
+        {
+          "h": "/pages/productos-por-categorias",
+          "t": "ESTUDIOS CLÍNICOS"
+        },
+        {
+          "h": "https://web.philaxmed.cl/ReservaOnline.html?mc=dermacross#_",
+          "t": "AGENDA TU HORA"
+        },
+        {
+          "h": "/account",
+          "t": "Cuenta"
+        },
+        {
+          "h": "https://www.facebook.com/dermacross",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/dermacross/",
+          "t": "Instagram"
+        },
+        {
+          "h": "#",
+          "t": "Left\n  \n Retroceder"
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Quiénes Somos"
+        },
+        {
+          "h": "/pages/equipo-1",
+          "t": "Staff Médico"
+        },
+        {
+          "h": "/pages/instalaciones",
+          "t": "Instalaciones"
+        },
+        {
+          "h": "#",
+          "t": "Servicio a la Comunidad"
+        },
+        {
+          "h": "#",
+          "t": "Left\n  \n Retroceder"
+        },
+        {
+          "h": "https://lapsoriasis.cl/",
+          "t": "Campaña Tratando La Psoriasis"
+        },
+        {
+          "h": "https://www.tratandoladermatitisatopica.cl",
+          "t": "Campaña Tratando La Dermatitis Atópica"
+        },
+        {
+          "h": "#",
+          "t": "Left\n  \n Retroceder"
+        },
+        {
+          "h": "/pages/https-dermacross-cl-products-morpheus-8-pro-_pos-1-_sid-b34ee9da3-_ss-r",
+          "t": "BODYTITE MORPHEUS 8 PRO"
+        },
+        {
+          "h": "/pages/dermapen-4",
+          "t": "DERMAPEN 4"
+        },
+        {
+          "h": "/pages/tecnologias-dermatologicas",
+          "t": "TECNOLOGÍAS DERMATOLÓGICAS"
+        },
+        {
+          "h": "/pages/lasermedico",
+          "t": "LÁSER MÉDICO"
+        },
+        {
+          "h": "#",
+          "t": "Left\n  \n Retroceder"
+        },
+        {
+          "h": "/collections/tratamientos",
+          "t": "Todos los Tratamientos"
+        },
+        {
+          "h": "/collections/tratamientos-faciales",
+          "t": "Tratamientos Faciales"
+        },
+        {
+          "h": "/collections/tratamientos-corporales",
+          "t": "Tratamientos Corporales"
+        },
+        {
+          "h": "/collections/celulitis-y-retencion-de-liquidos",
+          "t": "Tratamientos Celulitis y Retención de Líquidos"
+        },
+        {
+          "h": "/collections/depilacion-laser",
+          "t": "Depilación Láser Diodo"
+        },
+        {
+          "h": "/collections/tratamientos-novias",
+          "t": "Tratamientos para Novias"
+        },
+        {
+          "h": "#",
+          "t": "Left\n  \n Retroceder"
+        },
+        {
+          "h": "/collections/acne",
+          "t": "Antiacné"
+        },
+        {
+          "h": "/collections/antiedad",
+          "t": "Antiedad"
+        },
+        {
+          "h": "/collections/antioxidantes/antioxidantes",
+          "t": "Antioxidante"
+        },
+        {
+          "h": "/collections/contorno-de-ojos",
+          "t": "Contorno de Ojos"
+        },
+        {
+          "h": "/collections/cuello-y-escote",
+          "t": "Cuello y Escote"
+        },
+        {
+          "h": "/collections/despigmentante",
+          "t": "Despigmentante"
+        },
+        {
+          "h": "/collections/exfoliantes",
+          "t": "Exfoliante"
+        },
+        {
+          "h": "/collections/hidratacion",
+          "t": "Hidratación"
+        },
+        {
+          "h": "/collections/limpieza",
+          "t": "Limpieza"
+        },
+        {
+          "h": "/collections/protector-solar",
+          "t": "Protector Solar"
+        },
+        {
+          "h": "/collections/packs",
+          "t": "Packs"
+        },
+        {
+          "h": "/collections/productos-poros-dilatados",
+          "t": "Poros Dilatados"
+        },
+        {
+          "h": "/collections/csa/CSA",
+          "t": "Rutinas Express CSA"
+        },
+        {
+          "h": "/collections/rutinas-especial-papa",
+          "t": "Rutinas Hombres"
+        },
+        {
+          "h": "/collections/complementos",
+          "t": "Complementos"
+        },
+        {
+          "h": "#",
+          "t": "Left\n  \n Retroceder"
+        },
+        {
+          "h": "/collections/isclinical",
+          "t": "ISCLINICAL"
+        },
+        {
+          "h": "/collections/murad/MURAD",
+          "t": "MURAD"
+        },
+        {
+          "h": "/collections/neostrata/NEOSTRATA",
+          "t": "NEOSTRATA"
+        },
+        {
+          "h": "/collections/obagi/OBAGI",
+          "t": "OBAGI"
+        },
+        {
+          "h": "/collections/sensilis",
+          "t": "SENSILIS"
+        },
+        {
+          "h": "/collections/skinceuticals/SKINCEUTICALS",
+          "t": "SKINCEUTICALS"
+        },
+        {
+          "h": "/collections/hydrinity",
+          "t": "HYDRINITY"
+        },
+        {
+          "h": "/collections/isispharma",
+          "t": "ISISPHARMA"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://dermacross.cl/pages/politica-de-despacho",
+          "t": "Política de Despacho"
+        },
+        {
+          "h": "https://dermacross.cl/pages/politicas-de-privacidad",
+          "t": "Política de Privacidad"
+        }
+      ],
+      "largo_texto": 3568,
+      "muestra": "Ir al contenido\n \nDespachos gratis por compras sobre $140.000 en RM. Despachos cobertura a Regiones. Retiros en tienda de Lunes a Viernes desde 10:00 a 18:00 hrs. // WHATSAPP +56977504083 Por alta demanda en Cyber, los envíos a domicilio se despacharán en un plazo de 4 a 6 días hábiles.\nTodas\nAnti-edad\nAntiacné\nAntiedad\nAntimanchas\nAntioxidante\nContorno de ojos\nCrema/Gel\nExfoliante\nFotoprotección\nGift Card\nHIDRATANTE\nHidratación\nHidratante\nLimpiador\nLimpieza\nMaquillaje\nMascarillas\nPack\nPacks\nPro",
+      "cta_en_pantalla": [
+        {
+          "t": "agenda tu hora",
+          "h": "https://web.philaxmed.cl/ReservaOnline.html?mc=dermacross#_"
+        },
+        {
+          "t": "",
+          "h": ""
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 7,
+        "palabras": 523
+      }
+    },
+    "captura": "r3-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "dermacross.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "dermacross.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "dermacross.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "dermacross.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_adnabu_uid",
+        "dominio": "dermacross.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_fbp",
+        "dominio": "dermacross.cl",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "_ga_M3E7FK5GNH",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_JL21LKEPXB",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_PGRDKQV1B9",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_gcl_au",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "_ga_WL2YNY5SRR",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_CSCQTHVEFX",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_gid",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 1
+      },
+      {
+        "nombre": "_gat_UA-56997229-1",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 0
+      },
+      {
+        "nombre": "_fbp",
+        "dominio": ".dermacross.cl",
+        "expira_dias": 90
+      }
+    ],
+    "dom": {
+      "url": "https://dermacross.cl/",
+      "titulo": "Dermacross | Clínica Dermatológica | Medicina Estética",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/localization",
+          "accion_abs": "https://dermacross.cl/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://dermacross.cl/search",
+          "metodo": "get",
+          "campos": 2,
+          "requeridos": 0,
+          "visible": true,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://dermacross.cl/search",
+          "metodo": "get",
+          "campos": 2,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://dermacross.cl/cart/add",
+          "metodo": "post",
+          "campos": 3,
+          "requeridos": 0,
+          "visible": true,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/localization",
+          "accion_abs": "https://dermacross.cl/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#content",
+          "t": "Ir al contenido"
+        },
+        {
+          "h": "#",
+          "t": "Left\n  \n\n        Continuar la compra"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "https://www.facebook.com/dermacross",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/dermacross/",
+          "t": "Instagram"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "Cerrar"
+        },
+        {
+          "h": "/search",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "Cerrar"
+        },
+        {
+          "h": "/account",
+          "t": ""
+        },
+        {
+          "h": "/cart",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "CLÍNICA"
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Quiénes Somos"
+        },
+        {
+          "h": "/pages/equipo-1",
+          "t": "Staff Médico"
+        },
+        {
+          "h": "/pages/instalaciones",
+          "t": "Instalaciones"
+        },
+        {
+          "h": "#",
+          "t": "Servicio a la Comunidad"
+        },
+        {
+          "h": "https://lapsoriasis.cl/",
+          "t": "Campaña Tratando La Psoriasis"
+        },
+        {
+          "h": "https://www.tratandoladermatitisatopica.cl",
+          "t": "Campaña Tratando La Dermatitis Atópica"
+        },
+        {
+          "h": "/pages/tecnologias-dermatologicas",
+          "t": "TECNOLOGÍAS"
+        },
+        {
+          "h": "/pages/https-dermacross-cl-products-morpheus-8-pro-_pos-1-_sid-b34ee9da3-_ss-r",
+          "t": "BODYTITE MORPHEUS 8 PRO"
+        },
+        {
+          "h": "/pages/dermapen-4",
+          "t": "DERMAPEN 4"
+        },
+        {
+          "h": "/pages/tecnologias-dermatologicas",
+          "t": "TECNOLOGÍAS DERMATOLÓGICAS"
+        },
+        {
+          "h": "/pages/lasermedico",
+          "t": "LÁSER MÉDICO"
+        },
+        {
+          "h": "/collections/tratamientos/Tratamientos",
+          "t": "TRATAMIENTOS"
+        },
+        {
+          "h": "/collections/tratamientos",
+          "t": "Todos los Tratamientos"
+        },
+        {
+          "h": "/collections/tratamientos-faciales",
+          "t": "Tratamientos Faciales"
+        },
+        {
+          "h": "/collections/tratamientos-corporales",
+          "t": "Tratamientos Corporales"
+        },
+        {
+          "h": "/collections/celulitis-y-retencion-de-liquidos",
+          "t": "Tratamientos Celulitis y Retención de Líquidos"
+        },
+        {
+          "h": "/collections/depilacion-laser",
+          "t": "Depilación Láser Diodo"
+        },
+        {
+          "h": "/collections/tratamientos-novias",
+          "t": "Tratamientos para Novias"
+        },
+        {
+          "h": "/collections/cyber-depilacion-laser",
+          "t": "DEPILACIÓN LÁSER"
+        },
+        {
+          "h": "/collections/todo-tipo-de-piel",
+          "t": "SKINCARE"
+        },
+        {
+          "h": "/collections/acne",
+          "t": "Antiacné"
+        },
+        {
+          "h": "/collections/antiedad",
+          "t": "Antiedad"
+        },
+        {
+          "h": "/collections/antioxidantes/antioxidantes",
+          "t": "Antioxidante"
+        },
+        {
+          "h": "/collections/contorno-de-ojos",
+          "t": "Contorno de Ojos"
+        },
+        {
+          "h": "/collections/cuello-y-escote",
+          "t": "Cuello y Escote"
+        },
+        {
+          "h": "/collections/despigmentante",
+          "t": "Despigmentante"
+        },
+        {
+          "h": "/collections/exfoliantes",
+          "t": "Exfoliante"
+        },
+        {
+          "h": "/collections/hidratacion",
+          "t": "Hidratación"
+        },
+        {
+          "h": "/collections/limpieza",
+          "t": "Limpieza"
+        },
+        {
+          "h": "/collections/protector-solar",
+          "t": "Protector Solar"
+        },
+        {
+          "h": "/collections/packs",
+          "t": "Packs"
+        },
+        {
+          "h": "/collections/productos-poros-dilatados",
+          "t": "Poros Dilatados"
+        },
+        {
+          "h": "/collections/csa/CSA",
+          "t": "Rutinas Express CSA"
+        },
+        {
+          "h": "/collections/rutinas-especial-papa",
+          "t": "Rutinas Hombres"
+        },
+        {
+          "h": "/collections/complementos",
+          "t": "Complementos"
+        },
+        {
+          "h": "/collections/all",
+          "t": "MARCAS"
+        },
+        {
+          "h": "/collections/isclinical",
+          "t": "ISCLINICAL"
+        },
+        {
+          "h": "/collections/murad/MURAD",
+          "t": "MURAD"
+        },
+        {
+          "h": "/collections/neostrata/NEOSTRATA",
+          "t": "NEOSTRATA"
+        },
+        {
+          "h": "/collections/obagi/OBAGI",
+          "t": "OBAGI"
+        },
+        {
+          "h": "/collections/sensilis",
+          "t": "SENSILIS"
+        },
+        {
+          "h": "/collections/skinceuticals/SKINCEUTICALS",
+          "t": "SKINCEUTICALS"
+        },
+        {
+          "h": "/collections/hydrinity",
+          "t": "HYDRINITY"
+        },
+        {
+          "h": "/collections/isispharma",
+          "t": "ISISPHARMA"
+        },
+        {
+          "h": "/pages/productos-por-categorias",
+          "t": "ESTUDIOS CLÍNICOS"
+        },
+        {
+          "h": "https://web.philaxmed.cl/ReservaOnline.html?mc=dermacross#_",
+          "t": "AGENDA TU HORA"
+        },
+        {
+          "h": "/collections/tratamientos-novias",
+          "t": "PLAN NOVIAS"
+        },
+        {
+          "h": "/collections/tratamientos-novias",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/products/pack-novia-natural-evaluacion-limpieza-facial-hidratacion",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_17_5fc1fab6-f031-410a-a"
+        },
+        {
+          "h": "/products/pack-novia-natural-evaluacion-limpieza-facial-hidratacion",
+          "t": "Pack Novia Esencial| Evaluación + Limpieza Facial + Hidratación"
+        },
+        {
+          "h": "/products/pack-novia-radiante-consulta-limpieza-hidratacion-laser-harmony",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_18_1024x1024.png?v=1784"
+        },
+        {
+          "h": "/products/pack-novia-radiante-consulta-limpieza-hidratacion-laser-harmony",
+          "t": "Pack Novia Plus | Consulta + Limpieza + Hidratación + Láser Harmony"
+        },
+        {
+          "h": "/products/pack-novia-sonada-consulta-laser-harmony-laser-genesis-6-sesiones",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_20_2a2c4b25-5bfb-4188-a"
+        },
+        {
+          "h": "/products/pack-novia-sonada-consulta-laser-harmony-laser-genesis-6-sesiones",
+          "t": "Pack Novia Pro | Consulta + Limpieza + Hidratación + Láser Harmony + Láser Genes"
+        },
+        {
+          "h": "/products/pack-novia-dermacross-consulta-harmony-laser-genesis-co2-fraccionado",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_21_1024x1024.png?v=1784"
+        },
+        {
+          "h": "/products/pack-novia-dermacross-consulta-harmony-laser-genesis-co2-fraccionado",
+          "t": "Pack Novia Signature | Consulta + Hidratación + Harmony + Láser Genesis + CO2 Hy"
+        },
+        {
+          "h": "/collections/packs-depilacion-laser",
+          "t": "PACKS DEPILACIÓN LÁSER"
+        },
+        {
+          "h": "/collections/packs-depilacion-laser",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/products/depilacion-laser-rebaje-total-axilas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_1_1024x1024.png?v=17817"
+        },
+        {
+          "h": "/products/depilacion-laser-rebaje-total-axilas",
+          "t": "Depilación Láser Rebaje Total + Áxilas"
+        },
+        {
+          "h": "/products/piernas-completas-rebaje-completo-axilas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/fotosdepilaser_7_1024x1024.svg?v=174858"
+        },
+        {
+          "h": "/products/piernas-completas-rebaje-completo-axilas",
+          "t": "Depilación Láser Piernas Completas + Pies + Rebaje Completo (Full Brazilian) + A"
+        },
+        {
+          "h": "/products/depilacion-laser-rebaje-total-supralabial-axilas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_6_6ef476c3-6652-4b7a-86"
+        },
+        {
+          "h": "/products/depilacion-laser-rebaje-total-supralabial-axilas",
+          "t": "Depilación Láser Rebaje total + supralabial + axilas"
+        },
+        {
+          "h": "/products/depilacion-laser-rebaje-parcial-axilas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_1_4b87d2de-83af-4bde-9e"
+        },
+        {
+          "h": "/products/depilacion-laser-rebaje-parcial-axilas",
+          "t": "Depilación Láser Rebaje parcial + Áxilas"
+        },
+        {
+          "h": "/products/depilacion-laser-piernas-completas-axilas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_4_bc8c4bb0-b2e3-4504-a7"
+        },
+        {
+          "h": "/products/depilacion-laser-piernas-completas-axilas",
+          "t": "Depilación Láser Piernas completas + axilas"
+        },
+        {
+          "h": "/products/depilacion-laser-media-pierna-rebaje-completo-axilas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_2_a17b6af8-7bd7-40d6-85"
+        },
+        {
+          "h": "/products/depilacion-laser-media-pierna-rebaje-completo-axilas",
+          "t": "Depilación Láser Media Pierna + rebaje completo + axilas"
+        },
+        {
+          "h": "/products/depilacion-laser-media-pierna-rebaje-completo",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_7_1024x1024.png?v=17817"
+        },
+        {
+          "h": "/products/depilacion-laser-media-pierna-rebaje-completo",
+          "t": "Depilación Láser Media pierna + rebaje completo"
+        },
+        {
+          "h": "/products/depilacion-laser-media-pierna-axilas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_5_1024x1024.png?v=17817"
+        },
+        {
+          "h": "/products/depilacion-laser-media-pierna-axilas",
+          "t": "Depilación Láser Media pierna + axilas"
+        },
+        {
+          "h": "/products/depilacion-laser-piernas-completas-rebaje-completo",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Disenosintitulo_3_1024x1024.png?v=17817"
+        },
+        {
+          "h": "/products/depilacion-laser-piernas-completas-rebaje-completo",
+          "t": "Depilación Láser Piernas completas + rebaje completo"
+        },
+        {
+          "h": "/pages/tecnologias-dermatologicas",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/unidad_laser_dematologico_pc_corregida_"
+        },
+        {
+          "h": "//dermacross.cl/cdn/shop/files/GiftcardDermacross_2_3a29dca4-1b1d-497a-830f-b32ef8ab1f53.jpg?v=1769133721",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/GiftcardDermacross_2_3a29dca4-1b1d-497a"
+        },
+        {
+          "h": "/collections/vendors?q=Dermacross",
+          "t": "Dermacross"
+        },
+        {
+          "h": "/collections/types?q=Gift%20Card",
+          "t": "Gift Card"
+        },
+        {
+          "h": "/products/gift-card-dermacross",
+          "t": "Todos los detalles"
+        },
+        {
+          "h": "/collections/tratamientos",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/tratamientos_esteticos_corporales_pc_23"
+        },
+        {
+          "h": "/products/mapeo-de-lunares-1",
+          "t": "Comprar Aquí"
+        },
+        {
+          "h": "https://dermacross.cl/pages/unidad-de-laser-dermatologico",
+          "t": "Consulta aqui"
+        },
+        {
+          "h": "https://docs.google.com/forms/d/e/1FAIpQLSeirLflaOzm_dEGqpc9xNOJhGnxXKrnkEW5mdp52PfJk8RfuQ/viewform",
+          "t": "<div class=\"rimage-wrapper\" style=\"padding-top:100.0%\">\n                    <img"
+        },
+        {
+          "h": "https://docs.google.com/forms/d/e/1FAIpQLSccEWNFdPt1PInwYzA6es4kRnNlDRM6lXi4qlYlPCT1tldVQw/viewform?vc=0&c=0&w=1&flr=0",
+          "t": "<div class=\"rimage-wrapper\" style=\"padding-top:100.0%\">\n                    <img"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7161783331485954048",
+          "t": "<div class=\"rimage-wrapper\" style=\"padding-top:100.0%\">\n                    <img"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7135742667954507776",
+          "t": "<div class=\"rimage-wrapper\" style=\"padding-top:100.0%\">\n                    <img"
+        },
+        {
+          "h": "https://dermacross.cl/collections/neostrata/NEOSTRATA",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/neo-05092022-1_1024x1024.png?v=17693741"
+        },
+        {
+          "h": "/collections/skinceuticals",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/4_1024x1024.png?v=1769374096\" alt=\"\" cl"
+        },
+        {
+          "h": "/collections/murad",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/3_1024x1024.png?v=1769374095\" alt=\"\" cl"
+        },
+        {
+          "h": "https://dermacross.cl/collections/isclinical",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/isclinical_900_1024x1024.webp?v=1769374"
+        },
+        {
+          "h": "/collections/obagi",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/6_1024x1024.png?v=1769374098\" alt=\"\" cl"
+        },
+        {
+          "h": "/collections/eucerin",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Captura_de_Pantalla_2026-06-24_a_la_s_1"
+        },
+        {
+          "h": "/collections/isdin",
+          "t": "<img src=\"//dermacross.cl/cdn/shop/files/Captura_de_Pantalla_2026-06-24_a_la_s_1"
+        },
+        {
+          "h": "#page-wrap-content",
+          "t": "Subir al menú"
+        },
+        {
+          "h": "https://www.facebook.com/dermacross",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/dermacross/",
+          "t": "Instagram"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "https://www.google.com/maps/place/Av.+Manquehue+Nte.+2051,+Vitacura,+Regi%C3%B3n+Metropolitana/@-33.3863852,-70.5789963,17z/data=!3m1!4b1!4m5!3m4!1s0x9662c8d5cb8a0395:0x811b591be4335ce7!8m2!3d-33.3863852!4d-70.5768076",
+          "t": "Av. Manquehue Norte 2051C, Vitacura"
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Quiénes Somos"
+        },
+        {
+          "h": "/pages/equipo-1",
+          "t": "Equipo Médico"
+        },
+        {
+          "h": "/pages/instalaciones-1",
+          "t": "Instalaciones"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contáctanos"
+        },
+        {
+          "h": "/pages/terminos-y-condiciones",
+          "t": "Términos y Condiciones"
+        },
+        {
+          "h": "/pages/cambios-y-devoluciones",
+          "t": "Cambios y Devoluciones"
+        },
+        {
+          "h": "/pages/politica-de-despacho",
+          "t": "Política de Despacho"
+        },
+        {
+          "h": "/pages/politicas-de-privacidad",
+          "t": "Política de Privacidad"
+        },
+        {
+          "h": "https://lapsoriasis.cl/",
+          "t": "Campaña Tratando La Psoriasis"
+        },
+        {
+          "h": "https://www.tratandoladermatitisatopica.cl",
+          "t": "Campaña Tratando La Dermatitis Atópica"
+        },
+        {
+          "h": "/",
+          "t": "Dermacross"
+        },
+        {
+          "h": "https:franrdev.com",
+          "t": "Franrdev"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "CLÍNICA"
+        },
+        {
+          "h": "#",
+          "t": "TECNOLOGÍAS"
+        },
+        {
+          "h": "#",
+          "t": "TRATAMIENTOS"
+        },
+        {
+          "h": "/collections/cyber-depilacion-laser",
+          "t": "DEPILACIÓN LÁSER"
+        },
+        {
+          "h": "#",
+          "t": "SKINCARE"
+        },
+        {
+          "h": "#",
+          "t": "MARCAS"
+        },
+        {
+          "h": "/pages/productos-por-categorias",
+          "t": "ESTUDIOS CLÍNICOS"
+        },
+        {
+          "h": "https://web.philaxmed.cl/ReservaOnline.html?mc=dermacross#_",
+          "t": "AGENDA TU HORA"
+        },
+        {
+          "h": "/account",
+          "t": "Cuenta"
+        },
+        {
+          "h": "https://www.facebook.com/dermacross",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/dermacross/",
+          "t": "Instagram"
+        },
+        {
+          "h": "#",
+          "t": "Left\n  \n Retroceder"
+        },
+        {
+          "h": "/pages/quienes-somos",
+          "t": "Quiénes Somos"
+        },
+        {
+          "h": "/pages/equipo-1",
+          "t": "Staff Médico"
+        },
+        {
+          "h": "/pages/instalaciones",
+          "t": "Instalaciones"
+        },
+        {
+          "h": "#",
+          "t": "Servicio a la Comunidad"
+        },
+        {
+          "h": "#",
+          "t": "Left\n  \n Retroceder"
+        },
+        {
+          "h": "https://lapsoriasis.cl/",
+          "t": "Campaña Tratando La Psoriasis"
+        },
+        {
+          "h": "https://www.tratandoladermatitisatopica.cl",
+          "t": "Campaña Tratando La Dermatitis Atópica"
+        },
+        {
+          "h": "#",
+          "t": "Left\n  \n Retroceder"
+        },
+        {
+          "h": "/pages/https-dermacross-cl-products-morpheus-8-pro-_pos-1-_sid-b34ee9da3-_ss-r",
+          "t": "BODYTITE MORPHEUS 8 PRO"
+        },
+        {
+          "h": "/pages/dermapen-4",
+          "t": "DERMAPEN 4"
+        },
+        {
+          "h": "/pages/tecnologias-dermatologicas",
+          "t": "TECNOLOGÍAS DERMATOLÓGICAS"
+        },
+        {
+          "h": "/pages/lasermedico",
+          "t": "LÁSER MÉDICO"
+        },
+        {
+          "h": "#",
+          "t": "Left\n  \n Retroceder"
+        },
+        {
+          "h": "/collections/tratamientos",
+          "t": "Todos los Tratamientos"
+        },
+        {
+          "h": "/collections/tratamientos-faciales",
+          "t": "Tratamientos Faciales"
+        },
+        {
+          "h": "/collections/tratamientos-corporales",
+          "t": "Tratamientos Corporales"
+        },
+        {
+          "h": "/collections/celulitis-y-retencion-de-liquidos",
+          "t": "Tratamientos Celulitis y Retención de Líquidos"
+        },
+        {
+          "h": "/collections/depilacion-laser",
+          "t": "Depilación Láser Diodo"
+        },
+        {
+          "h": "/collections/tratamientos-novias",
+          "t": "Tratamientos para Novias"
+        },
+        {
+          "h": "#",
+          "t": "Left\n  \n Retroceder"
+        },
+        {
+          "h": "/collections/acne",
+          "t": "Antiacné"
+        },
+        {
+          "h": "/collections/antiedad",
+          "t": "Antiedad"
+        },
+        {
+          "h": "/collections/antioxidantes/antioxidantes",
+          "t": "Antioxidante"
+        },
+        {
+          "h": "/collections/contorno-de-ojos",
+          "t": "Contorno de Ojos"
+        },
+        {
+          "h": "/collections/cuello-y-escote",
+          "t": "Cuello y Escote"
+        },
+        {
+          "h": "/collections/despigmentante",
+          "t": "Despigmentante"
+        },
+        {
+          "h": "/collections/exfoliantes",
+          "t": "Exfoliante"
+        },
+        {
+          "h": "/collections/hidratacion",
+          "t": "Hidratación"
+        },
+        {
+          "h": "/collections/limpieza",
+          "t": "Limpieza"
+        },
+        {
+          "h": "/collections/protector-solar",
+          "t": "Protector Solar"
+        },
+        {
+          "h": "/collections/packs",
+          "t": "Packs"
+        },
+        {
+          "h": "/collections/productos-poros-dilatados",
+          "t": "Poros Dilatados"
+        },
+        {
+          "h": "/collections/csa/CSA",
+          "t": "Rutinas Express CSA"
+        },
+        {
+          "h": "/collections/rutinas-especial-papa",
+          "t": "Rutinas Hombres"
+        },
+        {
+          "h": "/collections/complementos",
+          "t": "Complementos"
+        },
+        {
+          "h": "#",
+          "t": "Left\n  \n Retroceder"
+        },
+        {
+          "h": "/collections/isclinical",
+          "t": "ISCLINICAL"
+        },
+        {
+          "h": "/collections/murad/MURAD",
+          "t": "MURAD"
+        },
+        {
+          "h": "/collections/neostrata/NEOSTRATA",
+          "t": "NEOSTRATA"
+        },
+        {
+          "h": "/collections/obagi/OBAGI",
+          "t": "OBAGI"
+        },
+        {
+          "h": "/collections/sensilis",
+          "t": "SENSILIS"
+        },
+        {
+          "h": "/collections/skinceuticals/SKINCEUTICALS",
+          "t": "SKINCEUTICALS"
+        },
+        {
+          "h": "/collections/hydrinity",
+          "t": "HYDRINITY"
+        },
+        {
+          "h": "/collections/isispharma",
+          "t": "ISISPHARMA"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://dermacross.cl/pages/politica-de-despacho",
+          "t": "Política de Despacho"
+        },
+        {
+          "h": "https://dermacross.cl/pages/politicas-de-privacidad",
+          "t": "Política de Privacidad"
+        }
+      ],
+      "largo_texto": 3576,
+      "muestra": "Ir al contenido\n \nDespachos gratis por compras sobre $140.000 en RM. Despachos cobertura a Regiones. Retiros en tienda de Lunes a Viernes desde 10:00 a 18:00 hrs. // WHATSAPP +56977504083 Por alta demanda en Cyber, los envíos a domicilio se despacharán en un plazo de 4 a 6 días hábiles.\nTodas\nAnti-edad\nAntiacné\nAntiedad\nAntimanchas\nAntioxidante\nContorno de ojos\nCrema/Gel\nExfoliante\nFotoprotección\nGift Card\nHIDRATANTE\nHidratación\nHidratante\nLimpiador\nLimpieza\nMaquillaje\nMascarillas\nPack\nPacks\nPro",
+      "cta_en_pantalla": [
+        {
+          "t": "agenda tu hora",
+          "h": "https://web.philaxmed.cl/ReservaOnline.html?mc=dermacross#_"
+        },
+        {
+          "t": "",
+          "h": ""
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 7,
+        "palabras": 524
+      }
+    },
+    "captura": "r3-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/t/10/assets/styles.css?v=159723296905716447961791294414",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/t/10/assets/sca-pp.css?v=178374312540912810101725980912",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13f8c-ff54-7571-9d34-b6a0cdd82651/call-for-price-2-274/assets/cfp-main.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=AW-10869078386",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "AW-10869078386"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/fonts/poppins/poppins_n3.05f58335c3209cce17da4f1f1ab324ebe2982441.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/fonts/poppins/poppins_n4.0ba78fa5af9b0e1a374041b3ceaadf0a43b41362.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/fonts/poppins/poppins_i3.8536b4423050219f608e17f134fe9ea3b01ed890.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/fonts/poppins/poppins_i4.846ad1e22474f856bd6b81ba4585a60799a9f5d2.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/fonts/tenor_sans/tenorsans_n4.966071a72c28462a9256039d3e3dc5b0cf314f65.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/t/10/assets/vendor.min.js?v=109634595573403464951725980912",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/t/10/assets/theme.js?v=175565768997792648231790276842",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/checkouts/internal/preloads.js?locale=es-CL",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.init-shop-cart-sync.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/storefront/assets/storefront/load_feature-1bd60354.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/storefront/assets/storefront/origin_trials-318ab40a.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.506.io/eg/script.js?shop=dermacross.myshopify.com&v=12",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-M2K47N4F",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GTM-M2K47N4F"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-WPK9Z89D",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GTM-WPK9Z89D"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-NF88MR4",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GTM-NF88MR4"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://gtm.taginstall.com/sites/8f598aefd6b22db4062140fe6c658882d4d0b59e7c3182c40de663f0b3003d54/gtm-data-layer-108-210715340.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/storefront/assets/storefront/event_observer_reporter-ed358274.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13f8c-ff54-7571-9d34-b6a0cdd82651/call-for-price-2-274/assets/cfp-seo-price.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13f8c-ff54-7571-9d34-b6a0cdd82651/call-for-price-2-274/assets/cfp-main.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a1539a-3d41-798f-b14a-e26ca76b36ca/countdown-timer-30-101/assets/countdown_timer_essential_apps.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a15357-bb4c-771e-8301-0103aee019eb/nighttheme-80/assets/darkmode.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a14b42-aed9-7436-bc53-eba649804a5a/whatsapp-chat-button-21/assets/superlemon-loader.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a130e2-cf00-76e7-b46b-9645e914767e/pop-convert-88/assets/main.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.11.0.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/dermacross_2_260x.png?v=1647726828",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Logos_jpg_260x.jpg?v=1785447500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/dermacross_2_500x.png?v=1647726828",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://loox.io/widget/4yWliKn2Zn/loox.1647561343992.js?shop=dermacross.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.enormapps.com/faq-v2/frontend/js/embed.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/storefront/standard-actions.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/ba_tracking.js?v=1637601969",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.init-shop-cart-sync_Ck8hl9Mr.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.document_DMcRsBXN.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.init_D3bsF6Gw.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.register_cLcgCW8c.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.tslib-es6_CHHZATl5.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.networkErrorMessages_DIkDbO6W.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.shop-cart-sync_BemtiYIw.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.defineInitFunction_CIjOjzsO.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.window_CAbVMZox.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.casing_U_9x-Om3.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.utils_DX-ZLLMT.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.v4_D2VNBPfk.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useUserRecognitionSignal_Cxwlw7Gj.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.storage_DQF5v-OM.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.hooks_DHyyKTJY.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.authorize_DINGMyE5.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useEventListener_ByQ0j2aH.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.validators_09U1U9sZ.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/wpm/b15d8a06cwc810fa1ep98f3abc4mb7823ff3m.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/s/trekkie.storefront.32ff6085714fe9c4d5859e332c5de5f8759a859e.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/storefront/assets/shop_events_listener-4e26a9ce.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Disenosintitulo_17_5fc1fab6-f031-410a-aa2a-cdace9cc2d30_220x.png?v=1784309914",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Disenosintitulo_18_220x.png?v=1784309976",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Disenosintitulo_20_2a2c4b25-5bfb-4188-a39c-05b721491d1a_220x.png?v=1784310111",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Disenosintitulo_21_220x.png?v=1784310174",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Disenosintitulo_1_180x.png?v=1781716013",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/fotosdepilaser_7_180x.svg?v=1748581471",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Disenosintitulo_6_6ef476c3-6652-4b7a-8649-e67333cfebc9_180x.png?v=1781720153",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Disenosintitulo_1_4b87d2de-83af-4bde-9e3b-0b98cb97669d_180x.png?v=1781716199",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Disenosintitulo_4_bc8c4bb0-b2e3-4504-a762-ef457e8abb6f_180x.png?v=1781720201",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Disenosintitulo_2_a17b6af8-7bd7-40d6-8529-03db68f455fc_180x.png?v=1781717735",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Disenosintitulo_7_180x.png?v=1781719478",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Disenosintitulo_5_180x.png?v=1781718458",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Disenosintitulo_3_180x.png?v=1781717357",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/unidad_laser_dematologico_pc_corregida_1296x.png?v=1770240085",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/unidad_laser_dematologico_movil_1_1296x.webp?v=1769383321",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/GiftcardDermacross_2_3a29dca4-1b1d-497a-830f-b32ef8ab1f53_720x.jpg?v=1769133721",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/tratamientos_esteticos_corporales_pc_23c3d43c-0a8f-40bf-811f-b24d66f251bc_1296x.webp?v=1770238901",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/tratamientos_esteticos_corporales_movil_2_1296x.webp?v=1769383415",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/laser_y_tecnologia_1_1296x.webp?v=1769704017",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/laser_y_tecnologia_convertido_1296x.webp?v=1769704836",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/neo-05092022-1_180x.png?v=1769374160",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/4_220x.png?v=1769374096",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/3_180x.png?v=1769374095",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/isclinical_900_180x.webp?v=1769374160",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/6_180x.png?v=1769374098",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Captura_de_Pantalla_2026-06-24_a_la_s_14.04.43_180x.png?v=1782324376",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Captura_de_Pantalla_2026-06-24_a_la_s_14.07.12_180x.png?v=1782324466",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/IMG_8890_1296x.png?v=1791517635",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://shop.app/pay/hop?analytics_trace_id=4f16fb04-08e7-45ab-ab6a-d97a136a19c9&target_origin=https%3A%2F%2Fdermacross.cl&client_handle=dermacross.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/web-pixels@15d8a06cwc810fa1ep98f3abc4mb7823ff3/web-pixel-shopify-app-pixel@0530/sandbox/worker.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/web-pixels@15d8a06cwc810fa1ep98f3abc4mb7823ff3/app/web-pixel-500695291@a3321ca85cf5aaf6b57585fcd8d67b3a~2/pixel.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/web-pixels@15d8a06cwc810fa1ep98f3abc4mb7823ff3/app/web-pixel-237043963@bd2f978c17a94bbb8a74d43de2165dc5~2/pixel.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/web-pixels@15d8a06cwc810fa1ep98f3abc4mb7823ff3/app/web-pixel-1589838075@ab7cf47253fe71415419e4e82a292e56/sandbox/modern/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/web-pixels@15d8a06cwc810fa1ep98f3abc4mb7823ff3/custom/web-pixel-78971131@1/sandbox/modern/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/web-pixels@15d8a06cwc810fa1ep98f3abc4mb7823ff3/custom/web-pixel-shopify-custom-pixel@0530/sandbox/modern/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://sdk.pop-convert.com/sdk.js?shop=dermacross.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-M3E7FK5GNH",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-M3E7FK5GNH"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-WL2YNY5SRR",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-WL2YNY5SRR"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=GT-PLVXQ4PP",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GT-PLVXQ4PP"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-JL21LKEPXB",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-JL21LKEPXB"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/en_US/fbevents.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/web-pixels/strict/app/web-pixel-shopify-app-pixel@0530.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-JL21LKEPXB",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-JL21LKEPXB"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/ba_widget_init.js?v=1647188406",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/en_US/fbevents.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/",
+      "metodo": "HEAD",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cart.js",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a13f8c-ff54-7571-9d34-b6a0cdd82651/call-for-price-2-274/assets/sb-rfq-compact-v2.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/pack-novia-natural-evaluacion-limpieza-facial-hidratacion.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/pack-novia-radiante-consulta-limpieza-hidratacion-laser-harmony.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/pack-novia-sonada-consulta-laser-harmony-laser-genesis-6-sesiones.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/pack-novia-dermacross-consulta-harmony-laser-genesis-co2-fraccionado.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/depilacion-laser-rebaje-total-axilas.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/piernas-completas-rebaje-completo-axilas.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/depilacion-laser-rebaje-total-supralabial-axilas.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/depilacion-laser-rebaje-parcial-axilas.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/depilacion-laser-piernas-completas-axilas.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/depilacion-laser-media-pierna-rebaje-completo-axilas.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/depilacion-laser-media-pierna-rebaje-completo.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/depilacion-laser-media-pierna-axilas.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/depilacion-laser-piernas-completas-rebaje-completo.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/gift-card-dermacross.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/products/mapeo-de-lunares-1.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/api/event/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/10869078386/?random=1792420806346&cv=11&fst=1792420806346&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6ae1v9214970391za208zd9214970391xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938468~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fdermacross.cl%",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/rmkt/collect/10869078386/?random=1792420806346&cv=11&fst=1792420806346&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6ae1v9214970391za208zd9214970391xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938468~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fdermacross.cl%2F&rcb=17&frm=0&tiba=De",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-M3E7FK5GNH&cx=c&gtm=4e6ae1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-M3E7FK5GNH"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-WL2YNY5SRR&cx=c&gtm=4e6ae1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-WL2YNY5SRR"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=GT-PLVXQ4PP&cx=c&gtm=4e6ae1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GT-PLVXQ4PP"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-JL21LKEPXB&cx=c&gtm=4e6ae1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-JL21LKEPXB"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=17&frm=0&apvc=1&auid=1050798959.1792420806&dt=Dermacross%20%7C%20Cl%C3%ADnica%20Dermatol%C3%B3gica%20%7C%20Medicina%20Est%C3%A9tica&tid=AW-10869078386&en=page_view&dl=https%3A%2F%2Fdermacross.cl%2F&scrsrc=www.googletagmanager.com&rnd=46736550.1792420806&navt=n&npa=0&did=dN2ZkMj%2CdNTU0Yz&gdid=dN2ZkMj.dNTU0Yz&gtm=45be6ae1v9214970391za208zd9214970391xecxf1&gcd=",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ad.doubleclick.net/ccm/s/collect?auid=1050798959.1792420806&gtm=45be6ae1v9214970391za208zd9214970391xecxf1&fmt=8",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=18&frm=0&apvc=0&ae=g&auid=1050798959.1792420806&dt=Dermacross%20%7C%20Cl%C3%ADnica%20Dermatol%C3%B3gica%20%7C%20Medicina%20Est%C3%A9tica&en=page_view&dl=https%3A%2F%2Fdermacross.cl%2F&scrsrc=www.googletagmanager.com&rnd=46736550.1792420806&navt=n&npa=0&ep.ads_data_redaction=0&gdid=dN2ZkMj.dNTU0Yz&gtm=45He6ae1v9196928939za200zd9196928939xeaxf1&gcs=G111&gcd=13t",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-CSCQTHVEFX&cx=c&gtm=4e6af0h2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-CSCQTHVEFX"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=0&frm=0&apvc=0&ae=g&auid=1050798959.1792420806&dt=Dermacross%20%7C%20Cl%C3%ADnica%20Dermatol%C3%B3gica%20%7C%20Medicina%20Est%C3%A9tica&en=page_view&dl=https%3A%2F%2Fdermacross.cl%2F&scrsrc=www.googletagmanager.com&rnd=46736550.1792420806&navt=n&npa=0&ep.ads_data_redaction=0&gdid=dN2ZkMj.dNTU0Yz&gtm=45He6af0h2v9186088076za200zd9186088076xeaxf1&gcs=G111&gcd=13",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/signals/config/857599636956480?v=2.9.419&r=stable&domain=dermacross.cl&hme=7459fa3e38c2784dbaf309537bed5fa7e8560fab51fb61e53e5ffafeb46a02a9&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/measurement/conversion?random=1792420806642&cv=11&tid=G-M3E7FK5GNH&fst=1792420806642&fmt=8&en=page_view&gtm=45je6ae1v9165131914za208zb9214970391zd9214970391xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fdermacross.cl%2F&gacid=2892047",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/measurement/conversion?random=1792420806642&cv=11&tid=G-M3E7FK5GNH&fst=1792420806642&fmt=8&en=first_visit&gtm=45je6ae1v9165131914za208zb9214970391zd9214970391xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fdermacross.cl%2F&gacid=28920",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-M3E7FK5GNH&gtm=45je6ae1v9165131914za208zb9214970391zd9214970391xf1&_p=1792420805452&_gaz=1&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz&_eu=EAAAAGAC&_prs=ok&are=1&cid=289204759.1792420807&frm=0&ir=1&pscdl=&rcb=0&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-M3E7FK5GNH"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-M3E7FK5GNH&cid=289204759.1792420807&gtm=45je6ae1v9165131914za208zb9214970391zd9214970391xf1&rcb=0&aip=1&dma=0&gcs=G111&gcd=13t3t3t3t5l1&npa=0&frm=0&tag_exp=115938466~115938468~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/measurement/conversion?random=1792420806695&cv=11&tid=G-M3E7FK5GNH&fst=1792420806695&fmt=8&en=page_view&gtm=45je6ae1v9165131914za200zb9214970391zd9214970391xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fdermacross.cl%2F&gacid=2892047",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-M3E7FK5GNH&gtm=45je6ae1v9165131914za200zb9214970391zd9214970391xf1&_p=1792420805452&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&_eu=EAAAAGQC&_prs=ok&are=1&cid=289204759.1792420807&excid=shp.13b71791-8b70-422d-869e-c7b34c6f9305&frm=0&ir=1&pscdl=&rcb=0&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-M3E7FK5GNH"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-JL21LKEPXB&gtm=45je6ae1v9125840745za200zd9125840745xf1&_p=1792420806096&_gaz=1&gcs=G111&gcd=13n3n3n3n5l1&npa=0&dma=0&gdid=dMDg0Yz.dMmQyMD&_eu=EAAAAGA&are=1&cid=2083173829.1792420807&frm=2&ir=1&pscdl=&rcb=1&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=1&tag_ex",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-JL21LKEPXB"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-JL21LKEPXB&cid=2083173829.1792420807&gtm=45je6ae1v9125840745za200zd9125840745xf1&rcb=1&aip=1&dma=0&gcs=G111&gcd=13n3n3n3n5l1&npa=0&frm=2&tag_exp=115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google-analytics.com/analytics.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=3&frm=0&apvc=0&ae=g&auid=1050798959.1792420806&dt=Dermacross%20%7C%20Cl%C3%ADnica%20Dermatol%C3%B3gica%20%7C%20Medicina%20Est%C3%A9tica&en=page_view&dl=https%3A%2F%2Fdermacross.cl%2F&scrsrc=www.googletagmanager.com&rnd=46736550.1792420806&navt=n&npa=0&ep.ads_data_redaction=0&gdid=dN2ZkMj.dNTU0Yz&gtm=45He6ae1h1v842715240za200zd842715240xeaxf1&gcs=G111&gcd=13t3",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.micro.pop-convert.com/pcjs_get_version?client_version=24",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cart.js?caller=pcjs",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://micro.pop-convert.com/micro/api/micro_actions/create?unique_id=dermacross.myshopify.com&action=session",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.micro.pop-convert.com/geo_stub",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/signals/config/380491303271322?v=2.9.419&r=stable&domain=dermacross.cl&hme=7459fa3e38c2784dbaf309537bed5fa7e8560fab51fb61e53e5ffafeb46a02a9&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.merchant-center-analytics.goog/mc/collect?v=2&tid=MC-PGRDKQV1B9&gtm=45Pe6ae1v9181876595za200zb9214970391zd9214970391xf1&_p=1792420805452&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&are=1&cid=2083173829.1792420807&excid=shp.13b71791-8b70-422d-869e-c7b34c6f9305&frm=0&pscdl=&rcb=8&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&u",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=UA-56997229-3&cx=c&gtm=4e6ae1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "UA-56997229-3"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-WL2YNY5SRR&gtm=45je6ae1v878996754za208zb9214970391zd9214970391xf1&_p=1792420805452&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz&are=1&cid=2083173829.1792420807&frm=0&ngs=1&pscdl=&rcb=8&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=1&tag_exp=1159384",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-WL2YNY5SRR"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/833353507/?random=1792420807287&cv=11&fst=1792420807287&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je6ae1v878996754za208zb9214970391zd9214970391xecxf1&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938469~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fderma",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/rmkt/collect/833353507/?random=1792420807287&cv=11&fst=1792420807287&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je6ae1v878996754za208zb9214970391zd9214970391xecxf1&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938469~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fdermacross.cl%2F&rcb=8&frm=0",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googleadservices.com/pagead/conversion/833353507/?random=1792420807309&cv=11&fst=1792420807309&fmt=7&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je6ae1v878996754za200zb9214970391zd9214970391xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938469~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fdermac",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=8&frm=0&apvc=0&auid=1050798959.1792420806&dt=Dermacross%20%7C%20Cl%C3%ADnica%20Dermatol%C3%B3gica%20%7C%20Medicina%20Est%C3%A9tica&tid=AW-833353507&en=page_view&dl=https%3A%2F%2Fdermacross.cl%2F&scrsrc=www.googletagmanager.com&rnd=46736550.1792420806&navt=n&npa=0&did=dN2ZkMj%2CdNTU0Yz&gdid=dN2ZkMj.dNTU0Yz&gtm=45je6ae1v878996754za208zb9214970391zd9214970391xec",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googleadservices.com/ccm/conversion/833353507/?random=1792420807309&cv=11&fst=1792420807309&fmt=3&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je6ae1v878996754za200zb9214970391zd9214970391xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938469~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fdermacros",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-user-list/10869078386/?random=1792420806346&cv=11&fst=1792418400000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6ae1v9214970391za208zd9214970391xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938468~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fdermacross.cl%2F&rcb=17&frm=0&tiba=D",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-CSCQTHVEFX&gtm=45je6af0h2v9189615418za20ozb9186088076zd9186088076xf1&_p=1792420805452&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&are=1&cid=2083173829.1792420807&frm=0&ngs=1&pscdl=&rcb=3&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=1&tag_exp=115938466~115938469~11889",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-CSCQTHVEFX"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/signals/config/5174577169251753?v=2.9.419&r=stable&domain=dermacross.cl&hme=7459fa3e38c2784dbaf309537bed5fa7e8560fab51fb61e53e5ffafeb46a02a9&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C5",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google-analytics.com/plugins/ua/ecommerce.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google-analytics.com/j/collect?v=1&_v=j102&a=1916141892&t=pageview&_s=1&dl=https%3A%2F%2Fdermacross.cl%2F&ul=en-us&dt=Dermacross%20%7C%20Cl%C3%ADnica%20Dermatol%C3%B3gica%20%7C%20Medicina%20Est%C3%A9tica&sr=800x600&vp=1265x900&_u=YADAAEATAAAAACAAI~&jid=1338721784&gjid=515030086&cid=2083173829.1792420807&tid=UA-56997229-1&_gid=1673248986.1792420808&_r=1&_slc=1&gtm=45He6ae1h1n81NF88MR4v8",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": null,
+        "evento": null,
+        "tid": "UA-56997229-1"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-user-list/833353507/?random=1792420807287&cv=11&fst=1792418400000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je6ae1v878996754za208zb9214970391zd9214970391xecxf1&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938469~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fdermacross.cl%2F&rcb=8&frm=",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dashboard.mailerlite.com/shopify/25813/2104479?shop=dermacross.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/10869078386/?random=1792420807718&cv=11&fst=1792420807718&bg=ffffff&guid=ON&async=1&gtm=45be6ae1v9214970391z8842715240za200zd9214970391xeaxf1&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fdermacross.cl%2F&r",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/rmkt/collect/10869078386/?random=1792420807718&cv=11&fst=1792420807718&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45be6ae1v9214970391z8842715240za200zd9214970391xeaxf1&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fdermacross.cl%2F&rcb=17&frm=0&tiba=Dermac",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=17&frm=0&apvc=0&ae=g&auid=1050798959.1792420806&dt=Dermacross%20%7C%20Cl%C3%ADnica%20Dermatol%C3%B3gica%20%7C%20Medicina%20Est%C3%A9tica&tid=AW-10869078386&dl=https%3A%2F%2Fdermacross.cl%2F&scrsrc=www.googletagmanager.com&rnd=46736550.1792420806&navt=n&npa=0&ep.ecomm_pagetype=Home%20Page&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&_tu=CAI&gtm",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shop/files/Captura_de_pantalla_2022-04-29_a_la_s_13.13.35.png?v=1769374133",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/polyfills.DsjDEvpF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/api/event/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/api/event/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/833353507/?random=2077650865&cv=11&fst=1792420807309&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je6ae1v878996754za200zb9214970391zd9214970391xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938469~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/api/event/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-user-list/10869078386/?random=1792420807718&cv=11&fst=1792418400000&bg=ffffff&guid=ON&async=1&gtm=45be6ae1v9214970391z8842715240za200zd9214970391xeaxf1&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938468~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fdermacross.cl%2F&rcb=17&frm=0&tiba=Derma",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/app.B1UEJM_E.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/2c1ab0fe.Dbn2KvkT.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.Cosa-1QR.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-conversion/833353507/?random=2077650865&cv=11&fst=1792420807309&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45je6ae1v878996754za200zb9214970391zd9214970391xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938466~115938469~118131808~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fdermacross.cl%2F",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/4b4bc88f.BVG-8vs-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/bfe75f31.CdzI9Lv4.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.mailerlite.com/js/universal.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/2bac2c53.FvZqk_Sq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/9dba8418.CUU9Kc02.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/cb38e5c2.DSyDHcIP.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/3d539943.Dqh8vmzW.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/2255f8fa.gpqqj3Wm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.mailerlite.com/css/universal.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/d25d1b95.D4XjhwOr.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/b8733b27.DVp9kpeJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/e39bc11c.BWdA5WrW.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/08a3b809.CVBmyqCk.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a14b42-aed9-7436-bc53-eba649804a5a/whatsapp-chat-button-21/assets/superlemon.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.DNQiYH3O.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/69fae6d4.C95_LMnM.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/f67abd2c.BJ4Oar_u.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a14b42-aed9-7436-bc53-eba649804a5a/whatsapp-chat-button-21/assets/superlemon.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/e12db40c.BATxw89L.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/60a453ce.BtOFzRfk.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/c639b2b4.B8DVgBhd.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/f8706cb6.D3lUO3TO.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/dffdfb34.COkxEXi3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0683/1371/0892/files/countryCodes-may-29.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/3ca8ef7e.DR1P3e7G.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/1f5e7811.DfKsQAhu.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/1a6c2867.D8mTtJ_Z.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/2fdb3dd3.WMnLqSlT.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/22345fd4.lDfLT5hl.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://api.country.is/",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/0e67bd3b.CiYaWEVC.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/74835653.CaIcnzTt.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/a9fa9fda.Ds30UU7w.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/ca3e798e.BBho0lps.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/47b970b2.CPY2nGoJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0683/1371/0892/files/intlTelInput.min.css?v=1686720517",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0683/1371/0892/files/intlTelInput.min.js?v=1686558047",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://api.superlemon.xyz/api/v1/account/user/widget/settings?id=dermacross.myshopify.com",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/064f6ac1.BIC1aQqg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/efa0389a.vKhl98uv.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/4b1c22b7.FNlftD5S.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/17425706.BtEVPbip.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/cb5cf153.Dg2S1aZz.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/e3e348f2.BNwkws-Q.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/71ae3d5c.Di_tSGZ3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/78ab3dd0.Bvzt-Paf.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/89e2d30a.BRmUDQhA.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/ed9f2238.BewoXymt.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/6fb6f9d8.DifgCYrl.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/1444e6bd.CLS56A6L.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/0b8657b8.rYcNFStj.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/55098bf1.CZYij7Ob.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0265/2572/8803/files/wa-icon.svg?v=1586940530",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/a422df8c.DqCsy-7Y.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/f49d4216.BLZFCuNT.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/79974aab.CWrQ0hfU.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/7b0c98ea.C1m82HSq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/d22d2b80.CSfHczWD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/f58f39d8.Cq7rzFUq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/e03065ab.BBx-NAvX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/0e9ee714.CR-H9GrF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/39921a74.Mratw4ys.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-JL21LKEPXB&gtm=45je6ae1v9125840745za200zb9214970391zd9214970391xf1&_p=1792420805452&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&_eu=EAAAAGQ&are=1&cid=2083173829.1792420807&excid=shp.13b71791-8b70-422d-869e-c7b34c6f9305&frm=0&ir=1&pscdl=&rcb=17&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-JL21LKEPXB"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/7a8217fd.D03wpfl8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/c6b02d73.BjpLmuyg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/ec391382.DHzoQU0V.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-WL2YNY5SRR&gtm=45je6ae1v878996754za200zb9214970391zd9214970391xf1&_p=1792420805452&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&_eu=AAAAAAQ&are=1&cid=2083173829.1792420807&excid=shp.13b71791-8b70-422d-869e-c7b34c6f9305&frm=0&ngs=1&pscdl=&rcb=8&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-WL2YNY5SRR"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/24773686.BjRbJMB7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/2210eadb.DF0gIp_2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/71b60e0a.DfPLdYsH.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/6bfea526.BiTkHB9o.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/ac5a19ff.BsT-L1QA.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/598fef4e.jpLk7ufh.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/e77f7fe0.BJqC7Qgs.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/cc6ff67d.CZ3j9Gxk.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/bf513f9c.DxE_1kx0.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/dfca5da5.BAnMa568.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/dae24aab.CVNnVl1k.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/ddf59287.VO_keXSX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/01973ac7.CVAr8Pej.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/58314944.B0jsjr69.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/945a08d6.xdF1UB1X.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/7bc8057b.B28gX89h.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/a25deb9a.CUZtBW-N.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/2b89a178.DPaX0GBX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/b684bff6.B2KGfG3c.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/910cd6e2.dH9fdI52.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/347b440c.BduI4yZr.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/9ce08e25.BiKFZwVD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/181d38d3.CLNFOKb-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/792bb671.B3OvVnSg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/9ca7d819.CdW8eEzr.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/f51e663e.BlZEXqdR.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/21cc90a2.DHzOO82q.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/64de7b49.DqdJl5li.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/ca0c3e72.D8mpF0ox.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/8e79be58.BnieBDnL.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/90e26f5f.CQTVbXU8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/31cc568e.95lmLO5k.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/65f3d4da.Bb3QiqCm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/ca5e9c49.BN_FThgm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/f3e117aa.B-s5M24_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.C1TUxG1O.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/b3389d5c.2aWeZ1D5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/73a9b0a0.BhpXZgXg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/25604ae0.56pfEpxV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/dada7e07.DMPc6rKm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.PUUWyC7P.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/f692f62f.DGKSLXXr.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/9babe369.SH-YgBx8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/434e3b0a.oup8Ur0H.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/e0989459.3MVNiKY8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/cdfd59e6.COPLdum1.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/fc21c11a.UcRxeNXj.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/e129c76e.DTjriAee.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/d4ea2faa.ChfKjLez.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/fe885b80.wv-bqZBc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/f78726c8.B_yQ6cC4.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/e477f96c.lPemMKlK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/d7065744.DH5rilol.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/7ee73f43.B_cT54pw.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/0c0ad074.DA-3zBKv.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/8fe56fc9.BwLCrTzJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/87bfafec.CxwEzGHg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/051149c8.lHD9iIAq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/d2e6a587.Q26QXgrg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/c10167e6.B__oI2w3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/b9c0319a.DcGEivT2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/17e57de1.C4OivbHV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/app.CcGlIMpn.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/wallet-prefilled-guest-return.BZwmSkmD.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/products/pack-novia-sonada-consulta-laser-harmony-laser-genesis-6-sesiones",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.DUY3Jbo2.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/OnePage.C_uC3EPz.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/api/event/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/VatNumberValidationField.CAYYnuvZ.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShopPayLogo.87JMHPUK.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShopPayVerificationTrigger.BnDF3H7t.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/BillingAddressForm.BdwN7V1K.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/products/depilacion-laser-rebaje-parcial-axilas",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PhoneField.uZEuHncj.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Popover.Bi1nHaU-.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Choice.CrYuHUmO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/EmptyState.BEvzDDvy.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/TransitionHeight.CuRoM9zv.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/.well-known/shopify/fec/produce",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/StickyPayButton.D-gNjNDa.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/variants/47138292662523/?section_id=store-availability",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/pages/tecnologias-dermatologicas",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Switch.BS8yVgoP.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayProgressIntercepts.CIy8uDiZ.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Tipping.BcTJoNaV.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentIcon.gzvCNwz_.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentLine.DT05kVlY.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Section.CU18S7Ap.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/.well-known/shopify/fec/produce",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shop/files/FOTOS_HOME_300_x_300_px_720x.webp?v=1769617076",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/constants.xO_7ctnq.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Middot.D7Ujmshx.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/EstimatedDeliveryContent.B_THySFF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethods.DU0m5rdF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethodSelector.B0hio2RO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/SubscriptionPriceBreakdown.vTcdVGq4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/BelowTheFoldContent.BKRoWsh4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/RememberMeSection.JBO5WNhc.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentMethodProgressionHost.C0BOgdmL.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/RedirectionNotice.DgiInWJ-.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PayButtonSection.CZuxzxFG.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/hooks.BDst-6PZ.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/.well-known/shopify/fec/produce",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shop/files/FOTOS_HOME_300_x_300_px_1_720x.webp?v=1769617006",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayButtonClassName.D-F4uQ9M.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/MobileOrderSummary.BlloiNDx.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentOptionSelector.s-Kd_X2E.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/s/files/1/0633/2645/4011/files/dermacross_2_x320.png?v=1647726828",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://dermacross.cl/api/event/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "localization",
+      "desde": "dermacross.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_essential",
+      "desde": "dermacross.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_analytics",
+      "desde": "dermacross.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_marketing",
+      "desde": "dermacross.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "cdn.506.io"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shop_app_essential",
+      "desde": "shop.app"
+    },
+    {
+      "fase": "A",
+      "nombre": "localization",
+      "desde": "dermacross.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "test_cookie",
+      "desde": "googleads.g.doubleclick.net"
+    },
+    {
+      "fase": "A",
+      "nombre": "test_cookie",
+      "desde": "googleads.g.doubleclick.net"
+    },
+    {
+      "fase": "A",
+      "nombre": "test_cookie",
+      "desde": "googleads.g.doubleclick.net"
+    },
+    {
+      "fase": "B",
+      "nombre": "localization",
+      "desde": "dermacross.cl"
+    },
+    {
+      "fase": "B",
+      "nombre": "localization",
+      "desde": "dermacross.cl"
+    },
+    {
+      "fase": "B",
+      "nombre": "localization",
+      "desde": "dermacross.cl"
+    }
+  ],
+  "peso": {
+    "total_bytes": 6716128,
+    "al_abrir_bytes": 6309527,
+    "n_peticiones": 382,
+    "mas_pesados": [
+      {
+        "url": "https://dermacross.cl/cdn/shop/files/fotosdepilaser_7_180x.svg?v=1748581471",
+        "bytes": 746022
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-M3E7FK5GNH",
+        "bytes": 198888
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-M3E7FK5GNH&cx=c&gtm=4e6ae1",
+        "bytes": 198878
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-WL2YNY5SRR",
+        "bytes": 195800
+      }
+    ]
+  },
+  "html_len": 393396
+}

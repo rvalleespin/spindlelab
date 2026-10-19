@@ -1,0 +1,939 @@
+{
+  "url": "https://medisis.cl/",
+  "cuando": "2026-10-19T14:47:33.662Z",
+  "A": {
+    "cookies": [],
+    "dom": {
+      "url": "https://medisis.cl/",
+      "titulo": "Medisis | Centro Médico y Dental",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "",
+          "accion_abs": "https://medisis.cl/",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "tel:+56222044187",
+          "t": "MESA CENTRAL\n+56 2 2204 4187\nLunes a Sábado 08:00 a 19:00"
+        },
+        {
+          "h": "tel:+56222043439",
+          "t": "URGENCIA DENTAL\n+56 2 2204 3439"
+        },
+        {
+          "h": "tel:+56969090603",
+          "t": ""
+        },
+        {
+          "h": "/agendar/",
+          "t": "Agendar hora"
+        },
+        {
+          "h": "https://wa.me/56969090603",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": "INICIO"
+        },
+        {
+          "h": "/nosotros/",
+          "t": "NOSOTROS"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Medicina General"
+        },
+        {
+          "h": "/gastro/endoscopia/",
+          "t": "Endoscopía"
+        },
+        {
+          "h": "/gastro/colonoscopia/",
+          "t": "Colonoscopía"
+        },
+        {
+          "h": "/gastro/polipectomia/",
+          "t": "Polipectomía"
+        },
+        {
+          "h": "/gastro/consultas-gastroenterologicas/",
+          "t": "Consultas Gastroenterológicas"
+        },
+        {
+          "h": "/nutriologia/",
+          "t": "Nutriología"
+        },
+        {
+          "h": "/gastro/test-aire-espirado/",
+          "t": "Test de aire espirado"
+        },
+        {
+          "h": "/nutriologia/",
+          "t": "Nutriología"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Dermatología"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Ginecología"
+        },
+        {
+          "h": "https://centro.medisis.cl/ondas-de-choque/",
+          "t": "Kinesiología"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Cardiología"
+        },
+        {
+          "h": "/dental/odontologia-general/",
+          "t": "Odontología General"
+        },
+        {
+          "h": "/dental/implantologia-oral/",
+          "t": "Implantología Oral"
+        },
+        {
+          "h": "/dental/endodoncia/",
+          "t": "Endodoncia"
+        },
+        {
+          "h": "/dental/periodoncia/",
+          "t": "Periodoncia"
+        },
+        {
+          "h": "/dental/rehabilitacion-oral/",
+          "t": "Rehabilitación Oral"
+        },
+        {
+          "h": "/dental/ortodoncia/",
+          "t": "Ortodoncia"
+        },
+        {
+          "h": "/dental/radiologia-dental/",
+          "t": "Radiología Dental"
+        },
+        {
+          "h": "/dental/urgencia-dental/",
+          "t": "Urgencia Dental"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "EXÁMENES"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Laboratorio Clínico"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Densitometría"
+        },
+        {
+          "h": "/gastro/colonoscopia/",
+          "t": "Colonoscopía"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Ecotomografía"
+        },
+        {
+          "h": "/gastro/endoscopia/",
+          "t": "Endoscopía"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Electrocardiograma"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Holter"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Mamografía"
+        },
+        {
+          "h": "/agendar/",
+          "t": "RESERVAR HORA"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Medicina\nGeneral"
+        },
+        {
+          "h": "/gastro/",
+          "t": "Gastronterología"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Traumatología"
+        },
+        {
+          "h": "/nutriologia/",
+          "t": "Nutriología"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Dermatología"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Ginecología"
+        },
+        {
+          "h": "https://centro.medisis.cl/ondas-de-choque/",
+          "t": "Kinesiología"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Cardiología"
+        },
+        {
+          "h": "/especialistas/",
+          "t": "Ver todos nuestros especialistas"
+        },
+        {
+          "h": "#",
+          "t": "Reservar Hora Online"
+        },
+        {
+          "h": "https://www.facebook.com/Medisis.cl",
+          "t": "SÍGUENOS EN FACEBOOK"
+        },
+        {
+          "h": "https://www.instagram.com/medisis.cl/",
+          "t": "@MEDISIS.CL"
+        },
+        {
+          "h": "https://youtube.com/@medisis-g9p?si=xreVzKxP48yOfVne",
+          "t": "SUSCRÍBETE"
+        },
+        {
+          "h": "tel:+56222044187",
+          "t": "+56 2 2204 4187"
+        },
+        {
+          "h": "tel:+56222043439",
+          "t": "+56 2 2204 3439"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "https://www.facebook.com/Medisis.cl",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/medisis.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://www.youtube.com/results?search_query=Medisis+Gastro",
+          "t": ""
+        },
+        {
+          "h": "/agendar/",
+          "t": "Medicina General"
+        },
+        {
+          "h": "/dental/odontologia-general/",
+          "t": "Odontología"
+        },
+        {
+          "h": "/gastro/",
+          "t": "Gastroenterología"
+        },
+        {
+          "h": "/nutriologia/",
+          "t": "Nutriología"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Laboratorio Clínico"
+        },
+        {
+          "h": "/gastro/endoscopia/",
+          "t": "Endoscopia"
+        },
+        {
+          "h": "/gastro/colonoscopia/",
+          "t": "Colonoscopia"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Ver todos los exámenes"
+        },
+        {
+          "h": "tel:+56222044157",
+          "t": "+56 2 2204 4157"
+        },
+        {
+          "h": "https://maps.app.goo.gl/E7omZEEVxCjJjrkM7",
+          "t": "Av. Irarrázaval 3054 Of. 201, Ñuñoa, Santiago"
+        },
+        {
+          "h": "mailto:contacto@medisis.cl",
+          "t": "contacto@medisis.cl"
+        },
+        {
+          "h": "https://wa.me/56969090603?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20servicios%20de%20Medisis",
+          "t": ""
+        }
+      ],
+      "politica": [],
+      "largo_texto": 2196,
+      "muestra": "Buscar en Medisis\nCtrl K\nBuscar en el sitio\nBuscar\nMESA CENTRAL\n+56 2 2204 4187\nLunes a Sábado 08:00 a 19:00\nURGENCIA DENTAL\n+56 2 2204 3439\nINICIO\nNOSOTROS\nESPECIALIDADES MÉDICAS\nESPECIALIDAD DENTAL\nEXÁMENES\nRESERVAR HORA\nATENCIÓN INTEGRAL PARA TI Y TU FAMILIA\nEspecialidades Médicas\nMedicina\nGeneral\nGastronterología\nTraumatología\nNutriología\nDermatología\nGinecología\nKinesiología\nCardiología\nVer todos nuestros especialistas\nRESERVA FÁCIL Y RÁPIDO\nReserva tu hora en 3 pasos\n1\n\nIngresa\ntu RUT\n\n2\n\n",
+      "cta_en_pantalla": [
+        {
+          "t": "mesa central\n+56 2 2204 4187\nlunes a sab",
+          "h": "tel:+56222044187"
+        },
+        {
+          "t": "urgencia dental\n+56 2 2204 3439",
+          "h": "tel:+56222043439"
+        },
+        {
+          "t": "reservar hora",
+          "h": "/agendar/"
+        },
+        {
+          "t": "",
+          "h": "https://wa.me/56969090603?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20servicios%20de%20Medisis"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 6,
+        "palabras": 326
+      }
+    },
+    "captura": "r2-A.jpg"
+  },
+  "B": {
+    "cookies": [],
+    "dom": {
+      "url": "https://medisis.cl/",
+      "titulo": "Medisis | Centro Médico y Dental",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "",
+          "accion_abs": "https://medisis.cl/",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "tel:+56222044187",
+          "t": "MESA CENTRAL\n+56 2 2204 4187\nLunes a Sábado 08:00 a 19:00"
+        },
+        {
+          "h": "tel:+56222043439",
+          "t": "URGENCIA DENTAL\n+56 2 2204 3439"
+        },
+        {
+          "h": "tel:+56969090603",
+          "t": ""
+        },
+        {
+          "h": "/agendar/",
+          "t": "Agendar hora"
+        },
+        {
+          "h": "https://wa.me/56969090603",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": "INICIO"
+        },
+        {
+          "h": "/nosotros/",
+          "t": "NOSOTROS"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Medicina General"
+        },
+        {
+          "h": "/gastro/endoscopia/",
+          "t": "Endoscopía"
+        },
+        {
+          "h": "/gastro/colonoscopia/",
+          "t": "Colonoscopía"
+        },
+        {
+          "h": "/gastro/polipectomia/",
+          "t": "Polipectomía"
+        },
+        {
+          "h": "/gastro/consultas-gastroenterologicas/",
+          "t": "Consultas Gastroenterológicas"
+        },
+        {
+          "h": "/nutriologia/",
+          "t": "Nutriología"
+        },
+        {
+          "h": "/gastro/test-aire-espirado/",
+          "t": "Test de aire espirado"
+        },
+        {
+          "h": "/nutriologia/",
+          "t": "Nutriología"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Dermatología"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Ginecología"
+        },
+        {
+          "h": "https://centro.medisis.cl/ondas-de-choque/",
+          "t": "Kinesiología"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Cardiología"
+        },
+        {
+          "h": "/dental/odontologia-general/",
+          "t": "Odontología General"
+        },
+        {
+          "h": "/dental/implantologia-oral/",
+          "t": "Implantología Oral"
+        },
+        {
+          "h": "/dental/endodoncia/",
+          "t": "Endodoncia"
+        },
+        {
+          "h": "/dental/periodoncia/",
+          "t": "Periodoncia"
+        },
+        {
+          "h": "/dental/rehabilitacion-oral/",
+          "t": "Rehabilitación Oral"
+        },
+        {
+          "h": "/dental/ortodoncia/",
+          "t": "Ortodoncia"
+        },
+        {
+          "h": "/dental/radiologia-dental/",
+          "t": "Radiología Dental"
+        },
+        {
+          "h": "/dental/urgencia-dental/",
+          "t": "Urgencia Dental"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "EXÁMENES"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Laboratorio Clínico"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Densitometría"
+        },
+        {
+          "h": "/gastro/colonoscopia/",
+          "t": "Colonoscopía"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Ecotomografía"
+        },
+        {
+          "h": "/gastro/endoscopia/",
+          "t": "Endoscopía"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Electrocardiograma"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Holter"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Mamografía"
+        },
+        {
+          "h": "/agendar/",
+          "t": "RESERVAR HORA"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Medicina\nGeneral"
+        },
+        {
+          "h": "/gastro/",
+          "t": "Gastronterología"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Traumatología"
+        },
+        {
+          "h": "/nutriologia/",
+          "t": "Nutriología"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Dermatología"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Ginecología"
+        },
+        {
+          "h": "https://centro.medisis.cl/ondas-de-choque/",
+          "t": "Kinesiología"
+        },
+        {
+          "h": "/agendar/",
+          "t": "Cardiología"
+        },
+        {
+          "h": "/especialistas/",
+          "t": "Ver todos nuestros especialistas"
+        },
+        {
+          "h": "#",
+          "t": "Reservar Hora Online"
+        },
+        {
+          "h": "https://www.facebook.com/Medisis.cl",
+          "t": "SÍGUENOS EN FACEBOOK"
+        },
+        {
+          "h": "https://www.instagram.com/medisis.cl/",
+          "t": "@MEDISIS.CL"
+        },
+        {
+          "h": "https://youtube.com/@medisis-g9p?si=xreVzKxP48yOfVne",
+          "t": "SUSCRÍBETE"
+        },
+        {
+          "h": "tel:+56222044187",
+          "t": "+56 2 2204 4187"
+        },
+        {
+          "h": "tel:+56222043439",
+          "t": "+56 2 2204 3439"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "https://www.facebook.com/Medisis.cl",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/medisis.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://www.youtube.com/results?search_query=Medisis+Gastro",
+          "t": ""
+        },
+        {
+          "h": "/agendar/",
+          "t": "Medicina General"
+        },
+        {
+          "h": "/dental/odontologia-general/",
+          "t": "Odontología"
+        },
+        {
+          "h": "/gastro/",
+          "t": "Gastroenterología"
+        },
+        {
+          "h": "/nutriologia/",
+          "t": "Nutriología"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Laboratorio Clínico"
+        },
+        {
+          "h": "/gastro/endoscopia/",
+          "t": "Endoscopia"
+        },
+        {
+          "h": "/gastro/colonoscopia/",
+          "t": "Colonoscopia"
+        },
+        {
+          "h": "/laboratorio/",
+          "t": "Ver todos los exámenes"
+        },
+        {
+          "h": "tel:+56222044157",
+          "t": "+56 2 2204 4157"
+        },
+        {
+          "h": "https://maps.app.goo.gl/E7omZEEVxCjJjrkM7",
+          "t": "Av. Irarrázaval 3054 Of. 201, Ñuñoa, Santiago"
+        },
+        {
+          "h": "mailto:contacto@medisis.cl",
+          "t": "contacto@medisis.cl"
+        },
+        {
+          "h": "https://wa.me/56969090603?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20servicios%20de%20Medisis",
+          "t": ""
+        }
+      ],
+      "politica": [],
+      "largo_texto": 2196,
+      "muestra": "Buscar en Medisis\nCtrl K\nBuscar en el sitio\nBuscar\nMESA CENTRAL\n+56 2 2204 4187\nLunes a Sábado 08:00 a 19:00\nURGENCIA DENTAL\n+56 2 2204 3439\nINICIO\nNOSOTROS\nESPECIALIDADES MÉDICAS\nESPECIALIDAD DENTAL\nEXÁMENES\nRESERVAR HORA\nATENCIÓN INTEGRAL PARA TI Y TU FAMILIA\nEspecialidades Médicas\nMedicina\nGeneral\nGastronterología\nTraumatología\nNutriología\nDermatología\nGinecología\nKinesiología\nCardiología\nVer todos nuestros especialistas\nRESERVA FÁCIL Y RÁPIDO\nReserva tu hora en 3 pasos\n1\n\nIngresa\ntu RUT\n\n2\n\n",
+      "cta_en_pantalla": [
+        {
+          "t": "mesa central\n+56 2 2204 4187\nlunes a sab",
+          "h": "tel:+56222044187"
+        },
+        {
+          "t": "urgencia dental\n+56 2 2204 3439",
+          "h": "tel:+56222043439"
+        },
+        {
+          "t": "reservar hora",
+          "h": "/agendar/"
+        },
+        {
+          "t": "+56 2 2204 4187",
+          "h": "tel:+56222044187"
+        },
+        {
+          "t": "+56 2 2204 3439",
+          "h": "tel:+56222043439"
+        },
+        {
+          "t": "+56 2 2204 4157",
+          "h": "tel:+56222044157"
+        },
+        {
+          "t": "contacto@medisis.cl",
+          "h": "mailto:contacto@medisis.cl"
+        },
+        {
+          "t": "",
+          "h": "https://wa.me/56969090603?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20servicios%20de%20Medisis"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 6,
+        "palabras": 326
+      }
+    },
+    "captura": "r2-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/static/medisis_site/css/style.8af0b5f36b03.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/static/medisis_site/css/components.ae6f925c4880.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/static/medisis_site/css/brand-refresh.8448d6383360.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/static/medisis_site/css/style.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/static/medisis_site/assets/logo.4c8984619ad0.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/media/images/banner_index_1.original.format-webp.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-KQ2L5HDF",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GTM-KQ2L5HDF"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/static/medisis_site/assets/logo-white.529a500c7cd1.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/static/medisis_site/js/site-search.fc4a5d589e54.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/static/medisis_site/js/script.fd3d40c16b71.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 489.6 489.6'%3E%3Cpath d='M1.429,489.6h56c2.3-12.4,4.7-25.3,7-37.7c4.3-21.8,10.5-46.6,35.7-52.1c29.4-6.2,56.7,21.8,73.8,33.4c42.7,30.3,97.5,39.6,150,35c103.4-6.4,137.2-87.4,152.3-134.4c5.4-16.7,34.1-132.3-23.3-220.7c-25.1-44.3-75.3-55.8-122-28c-13.2,10.1-22.9,26.4-42.4,24.9c-30.1,0-36.1-52.5-33.8-70.7V0h-58.3v75.8c-2.7,56.5,",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-regular-400.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDD4Z1xlFQ.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-brands-400.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/media/images/logo.original.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/media/images/social-phone.original.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/media/images/banner_index_3.original.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://marty.siliconriver.cl/assets/agenda/assets/bundle.css?v=1792421230341",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://marty.siliconriver.cl/assets/agenda/assets/bundle.js?v=1792421230341",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/media/images/banner_index_2.original.format-webp.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://marty.siliconriver.cl/agenda/api/v1/previsiones",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://marty.siliconriver.cl/agenda/api/v1/previsiones",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://marty.siliconriver.cl/assets/agenda/images/es-cl.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/static/medisis_site/assets/favicon.a5db045b9d04.png",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://medisis.cl/static/medisis_site/favicon.0e41c404245b.ico",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://medisis.cl/media/images/fonasa_UIDuHlj.original.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    }
+  ],
+  "setCookies": [],
+  "peso": {
+    "total_bytes": 3526303,
+    "al_abrir_bytes": 3463197,
+    "n_peticiones": 34,
+    "mas_pesados": [
+      {
+        "url": "https://medisis.cl/media/images/banner_index_3.original.png",
+        "bytes": 1738045
+      },
+      {
+        "url": "https://marty.siliconriver.cl/assets/agenda/assets/bundle.js?v=1792421230341",
+        "bytes": 178914
+      },
+      {
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2",
+        "bytes": 156948
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtm.js?id=GTM-KQ2L5HDF",
+        "bytes": 156778
+      }
+    ]
+  },
+  "html_len": 79455
+}

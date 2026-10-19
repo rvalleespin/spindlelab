@@ -1,0 +1,557 @@
+{
+  "id": "V79",
+  "dominio": "medisis.cl",
+  "motor": "v0",
+  "cuando": "2026-10-19T14:46:41.322Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "oferta-capa-1",
+  "url": "https://medisis.cl/",
+  "hallazgo": {
+    "id": "F13",
+    "nombre": "La información de la portada está mal estructurada",
+    "linea": "Auditoría SEO Técnica",
+    "capa": 1,
+    "estado": "estable",
+    "quien_comprueba": "el dueño, con el código de la página",
+    "donde_mirar": "Ver el código fuente (clic derecho > ver código) y buscar \"<h1\"; o contar las palabras de la portada.",
+    "condiciones": {
+      "1": {
+        "v": "si",
+        "razon": "La estructura del código no se ve."
+      },
+      "2": {
+        "v": "medias",
+        "razon": "Google y la IA usan esa estructura para entender de qué trata la página."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se ve en el código fuente."
+      },
+      "4": {
+        "v": "no",
+        "razon": "Cualquier auditor SEO gratuito lo ve: es capa 1."
+      }
+    },
+    "afirmable": "La portada no tiene un título principal (H1).",
+    "no_afirmable": [
+      "que el resto del sitio tenga el mismo problema",
+      "que tenga poco texto en total: solo se cuentan las palabras visibles al cargar la portada, no el texto oculto"
+    ],
+    "advertencias": [],
+    "datos": {
+      "tipos": [
+        "sin-h1"
+      ],
+      "h1": 0,
+      "palabras": 326
+    },
+    "propuesta": {
+      "en_castellano": "Tu portada no tiene un título principal.",
+      "problema_tecnico": "La portada no tiene un título principal (H1).",
+      "donde_mirar": "Ver el código fuente (clic derecho > ver código) y buscar \"<h1\"; o contar las palabras de la portada.",
+      "se_vende": {
+        "linea": "Auditoría SEO Técnica",
+        "producto": "Auditoría SEO Técnica, Completa",
+        "alcance": "Ordenar la información de la portada: un título principal claro y el contenido que explica la oferta.",
+        "vehiculo_publicado": "Desde $490.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+        "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría SEO Técnica, Completa, desde $490.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+        "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "débil",
+      "frase_de_arreglo": "Eso lo arreglo yo: dejo la información ordenada, con un título que diga qué haces y para quién.",
+      "apertura_a_reunion": "Vi otra cosa que no te anoto acá. Si quieres, lo vemos en una llamada de 20 minutos.",
+      "cierre_sugerido": null,
+      "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+      "por_definir": [
+        "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+      ],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [
+    {
+      "id": "F8",
+      "nombre": "El negocio no está declarado como entidad en datos estructurados",
+      "linea": "Visibilidad en IA",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, con una herramienta gratuita",
+      "donde_mirar": "Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar \"application/ld+json\" en el código de la página.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Los datos estructurados no se ven."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Sin entidad declarada, la IA y Google adivinan quién eres."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se comprueba con una herramienta gratuita."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Los chequeos gratis lo muestran: es capa 1."
+        }
+      },
+      "afirmable": "El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.",
+      "no_afirmable": [
+        "que \"Google no te entiende\""
+      ],
+      "advertencias": [],
+      "datos": {},
+      "propuesta": {
+        "en_castellano": "Tu sitio no le dice a Google ni a la IA qué negocio eres en el formato que ellos leen (datos estructurados).",
+        "problema_tecnico": "El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.",
+        "donde_mirar": "Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar \"application/ld+json\" en el código de la página.",
+        "se_vende": {
+          "linea": "Visibilidad en IA",
+          "producto": "Auditoría de Visibilidad en IA",
+          "alcance": "Declarar el negocio como entidad en datos estructurados.",
+          "vehiculo_publicado": "Desde $400.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría de Visibilidad en IA, desde $400.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso lo arreglo yo: dejo declarado qué negocio eres, con tu dirección y tu contacto, en el formato que leen Google y la IA.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [
+    "F8"
+  ],
+  "capa1": {
+    "consecuencia": [],
+    "higiene": [
+      "sin_llms_txt",
+      "sin_sitemap",
+      "sin_entidad_en_jsonld"
+    ]
+  },
+  "notas": [],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 6,
+      "mailto": [
+        "contacto@medisis.cl"
+      ],
+      "whatsapp": [
+        "https://wa.me/56969090603",
+        "https://wa.me/56969090603?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20servicios%20de%20Medisis"
+      ]
+    },
+    "analitica": {
+      "gtm": [
+        "GTM-KQ2L5HDF"
+      ],
+      "ga4": [],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "nginx/1.28.3 (Ubuntu)",
+      "cloudflare": false,
+      "x_powered_by": null
+    },
+    "robots": {
+      "ausente": true
+    },
+    "llms_txt": false,
+    "sitemap": false,
+    "jsonld": {
+      "tipos": [],
+      "org": []
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 3,
+      "fuente_minima_px": 12,
+      "textos_chicos_pct": 0,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 3,
+      "fuente_minima_px": 12,
+      "textos_chicos_pct": 0,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 3526701,
+      "al_abrir_bytes": 3463595,
+      "n_peticiones": 34,
+      "mas_pesados": [
+        {
+          "url": "https://medisis.cl/media/images/banner_index_3.original.png",
+          "bytes": 1738045
+        },
+        {
+          "url": "https://marty.siliconriver.cl/assets/agenda/assets/bundle.js?v=1792421204702",
+          "bytes": 178914
+        },
+        {
+          "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2",
+          "bytes": 156946
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtm.js?id=GTM-KQ2L5HDF",
+          "bytes": 156778
+        }
+      ]
+    },
+    {
+      "total_bytes": 3526303,
+      "al_abrir_bytes": 3463197,
+      "n_peticiones": 34,
+      "mas_pesados": [
+        {
+          "url": "https://medisis.cl/media/images/banner_index_3.original.png",
+          "bytes": 1738045
+        },
+        {
+          "url": "https://marty.siliconriver.cl/assets/agenda/assets/bundle.js?v=1792421230341",
+          "bytes": 178914
+        },
+        {
+          "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2",
+          "bytes": 156948
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtm.js?id=GTM-KQ2L5HDF",
+          "bytes": 156778
+        }
+      ]
+    },
+    {
+      "total_bytes": 3526290,
+      "al_abrir_bytes": 3463184,
+      "n_peticiones": 34,
+      "mas_pesados": [
+        {
+          "url": "https://medisis.cl/media/images/banner_index_3.original.png",
+          "bytes": 1738045
+        },
+        {
+          "url": "https://marty.siliconriver.cl/assets/agenda/assets/bundle.js?v=1792421255974",
+          "bytes": 178914
+        },
+        {
+          "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2",
+          "bytes": 156955
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtm.js?id=GTM-KQ2L5HDF",
+          "bytes": 156722
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [
+        "Google Tag"
+      ],
+      "envio_en_ambas": [],
+      "google_gcs": [
+        [],
+        [],
+        []
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": {
+      "gtm": [
+        "GTM-KQ2L5HDF"
+      ],
+      "contenedores": [
+        {
+          "id": "GTM-KQ2L5HDF",
+          "leido": true,
+          "funciones": [
+            "__u",
+            "__e",
+            "__aev",
+            "__f",
+            "__v",
+            "__googtag",
+            "__awct"
+          ],
+          "tags_de_evento": [
+            "__awct"
+          ],
+          "html_personalizado": 0
+        }
+      ],
+      "eventos_inline": [],
+      "eventos_observados_en_sesion": [],
+      "ads_instalado": false
+    },
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 40010
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 40010,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 40010,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 40010,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 40010,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 40010,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 40010,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 40010,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 40010
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 40010,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 40010,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 40010,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 40010,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 40010,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 40010,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 40010,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "medisis.cl",
+            "dominio": "medisis.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      },
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "medisis.cl",
+            "dominio": "medisis.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "Centro Médico y Dental Medisis"
+      },
+      {
+        "fuente": "title",
+        "valor": "Medisis"
+      },
+      {
+        "fuente": "title",
+        "valor": "Centro Médico y Dental"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 19,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

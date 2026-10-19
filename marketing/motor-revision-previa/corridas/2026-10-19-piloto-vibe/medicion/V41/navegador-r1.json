@@ -1,0 +1,79 @@
+{
+  "url": "https://grupocasal.cl/",
+  "cuando": "2026-10-19T14:13:00.803Z",
+  "A": {
+    "cookies": [],
+    "dom": {
+      "url": "https://grupocasal.cl/",
+      "titulo": "",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 13,
+      "muestra": "403 Forbidden",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 0,
+        "palabras": 2
+      }
+    },
+    "captura": "r1-A.jpg"
+  },
+  "B": {
+    "cookies": [],
+    "dom": {
+      "url": "https://grupocasal.cl/",
+      "titulo": "",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 13,
+      "muestra": "403 Forbidden",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 0,
+        "palabras": 2
+      }
+    },
+    "captura": "r1-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://grupocasal.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://grupocasal.cl/favicon.ico",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    }
+  ],
+  "setCookies": [],
+  "peso": {
+    "total_bytes": 3955,
+    "al_abrir_bytes": 3955,
+    "n_peticiones": 2,
+    "mas_pesados": [
+      {
+        "url": "https://grupocasal.cl/favicon.ico",
+        "bytes": 3215
+      },
+      {
+        "url": "https://grupocasal.cl/",
+        "bytes": 740
+      }
+    ]
+  },
+  "html_len": 164
+}

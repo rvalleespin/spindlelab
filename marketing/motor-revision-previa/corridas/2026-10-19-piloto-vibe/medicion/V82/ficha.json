@@ -1,0 +1,682 @@
+{
+  "id": "V82",
+  "dominio": "hipoterapia.cl",
+  "motor": "v0",
+  "cuando": "2026-10-19T14:49:02.107Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "oferta-capa-1",
+  "url": "https://www.hipoterapia.cl/",
+  "hallazgo": {
+    "id": "F10",
+    "nombre": "En la primera pantalla no hay cómo contactar, cotizar o comprar",
+    "linea": "Desarrollo Web",
+    "capa": 1,
+    "estado": "estable",
+    "quien_comprueba": "el dueño, mirando la primera pantalla",
+    "donde_mirar": "Abrir el sitio y, sin bajar, buscar un botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+    "condiciones": {
+      "1": {
+        "v": "medias",
+        "razon": "El dueño ve su sitio todos los días y no ve lo que falta."
+      },
+      "2": {
+        "v": "si",
+        "razon": "Quien llega y no ve cómo seguir, se va."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se ve a simple vista."
+      },
+      "4": {
+        "v": "no",
+        "razon": "Es capa 1."
+      }
+    },
+    "afirmable": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+    "no_afirmable": [
+      "que no exista contacto más abajo en la página"
+    ],
+    "advertencias": [
+      "Mirar la captura del tramo A (escritorio) antes de usarlo: la heurística busca palabras de acción, y un botón con otro texto no cuenta."
+    ],
+    "datos": {},
+    "propuesta": {
+      "en_castellano": "En la primera pantalla de tu sitio no hay ningún botón para contactarte, cotizar o escribir por WhatsApp.",
+      "problema_tecnico": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+      "donde_mirar": "Abrir el sitio y, sin bajar, buscar un botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+      "se_vende": {
+        "linea": "Desarrollo Web",
+        "producto": "Desarrollo Web a medida",
+        "alcance": "Poner una acción de contacto visible en la primera pantalla, en escritorio y en celular.",
+        "vehiculo_publicado": "Página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl, leído el 15-oct-2026)",
+        "precio_en_el_correo": "Solo como referencia, no como cotización: Desarrollo Web a medida, página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+        "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "fuerte",
+      "frase_de_arreglo": "Eso se arregla: dejo a la vista, desde la primera pantalla, la forma de escribirte y lo pruebo en el celular.",
+      "apertura_a_reunion": "Vi otra cosa que no te anoto acá. Si quieres, lo vemos en una llamada de 20 minutos.",
+      "cierre_sugerido": null,
+      "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+      "por_definir": [
+        "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+      ],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [
+    {
+      "id": "F4",
+      "nombre": "No hay ninguna herramienta de medición instalada",
+      "linea": "Acompañamiento",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, con acceso a su panel",
+      "donde_mirar": "Preguntar a quien administra el sitio si hay Google Analytics u otra herramienta; o abrir el sitio con Tag Assistant.",
+      "condiciones": {
+        "1": {
+          "v": "no",
+          "razon": "No se ve, pero lo confirma cualquier extensión gratuita."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Sin medición no se sabe qué trae clientes."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se comprueba con Tag Assistant."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Es capa 1."
+        }
+      },
+      "afirmable": "No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.",
+      "no_afirmable": [
+        "que \"no mides nada\" (puede haber medición del lado del servidor o la propia de la plataforma)"
+      ],
+      "advertencias": [
+        "El sitio usa Wix, que trae analítica propia: lo único afirmable es que no hay Google Analytics ni Tag Manager."
+      ],
+      "datos": {
+        "plataforma": "Wix"
+      },
+      "propuesta": {
+        "en_castellano": "No veo Google Analytics ni Tag Manager en tu sitio.",
+        "problema_tecnico": "No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.",
+        "donde_mirar": "Preguntar a quien administra el sitio si hay Google Analytics u otra herramienta; o abrir el sitio con Tag Assistant.",
+        "se_vende": {
+          "linea": "Acompañamiento",
+          "producto": "Acompañamiento Mensual, plan Esencial (foco en una capa)",
+          "alcance": "Instalar analítica y medir consultas, llamadas y WhatsApp.",
+          "vehiculo_publicado": "Desde $590.000 + IVA al mes (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Acompañamiento Mensual, plan Esencial (foco en una capa), desde $590.000 + IVA al mes (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso se arregla: dejo medido lo que importa, que te escriban, te llamen o te hablen por WhatsApp, para que veas qué trae clientes.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "C4",
+      "nombre": "El nombre del negocio no es el mismo dentro del sitio",
+      "linea": "Visibilidad en IA",
+      "estado": "sospecha",
+      "tope": "El cruce con la ficha de Google y LinkedIn es manual: nunca pasa de sospecha.",
+      "quien_comprueba": "el dueño, buscando su propio nombre",
+      "donde_mirar": "Buscar el nombre del negocio y comparar con: JSON-LD name: Fundación Chilena de Hipoterapia / og:site_name: Fundaci N Chilena De. Después, la ficha de Google y LinkedIn (a mano).",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Cada pieza se ve bien por separado."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "El costo (que ningún modelo consolide quién es) es blando."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se compara a simple vista."
+        },
+        "4": {
+          "v": "medias",
+          "razon": "Comparar texto es automático; interpretarlo y cruzarlo con otras fuentes es oficio."
+        }
+      },
+      "afirmable": "Dentro del sitio el nombre aparece como: JSON-LD name: Fundación Chilena de Hipoterapia y og:site_name: Fundaci N Chilena De.",
+      "no_afirmable": [
+        "que ocurre lo mismo en Google o LinkedIn (no revisado)"
+      ],
+      "advertencias": [],
+      "propuesta": {
+        "en_castellano": "SIN REDACTAR: todavía es una sospecha, no se usa en un correo.",
+        "problema_tecnico": "Dentro del sitio el nombre aparece como: JSON-LD name: Fundación Chilena de Hipoterapia y og:site_name: Fundaci N Chilena De.",
+        "donde_mirar": "Buscar el nombre del negocio y comparar con: JSON-LD name: Fundación Chilena de Hipoterapia / og:site_name: Fundaci N Chilena De. Después, la ficha de Google y LinkedIn (a mano).",
+        "se_vende": {
+          "linea": "Visibilidad en IA",
+          "producto": "Auditoría de Visibilidad en IA",
+          "alcance": "Un solo nombre del negocio, igual en el sitio y en los datos estructurados.",
+          "vehiculo_publicado": "Desde $400.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría de Visibilidad en IA, desde $400.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso lo arreglo yo: dejo el nombre igual en el sitio y en los datos que leen Google y la IA.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [
+    "F4"
+  ],
+  "capa1": {
+    "consecuencia": [
+      "sin_analitica"
+    ],
+    "higiene": [
+      "sin_meta_description"
+    ]
+  },
+  "notas": [],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 0,
+      "mailto": [
+        "beatriz.vargas@hipoterapia.cl"
+      ],
+      "whatsapp": []
+    },
+    "analitica": {
+      "gtm": [],
+      "ga4": [],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "Pepyaka",
+      "cloudflare": false,
+      "x_powered_by": null
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": true
+    },
+    "llms_txt": true,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [
+        "LocalBusiness",
+        "WebSite",
+        "VideoObject"
+      ],
+      "org": [
+        {
+          "name": "Fundación Chilena de Hipoterapia"
+        }
+      ]
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 320,
+      "ancho_contenido": 320,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": 20,
+      "textos_chicos_pct": 0,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 320,
+      "ancho_contenido": 320,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": 20,
+      "textos_chicos_pct": 0,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 2451146,
+      "al_abrir_bytes": 1664880,
+      "n_peticiones": 202,
+      "mas_pesados": [
+        {
+          "url": "https://static.parastorage.com/services/instagram-business/1.926.0/app.bundle.min.js",
+          "bytes": 302180
+        },
+        {
+          "url": "https://static.parastorage.com/services/wix-vod-widget/1.4657.0/WixVideoViewerWidgetNoCss.bundle.min.js",
+          "bytes": 273012
+        },
+        {
+          "url": "https://www.hipoterapia.cl/",
+          "bytes": 169013
+        },
+        {
+          "url": "https://static.parastorage.com/services/wix-vod-widget/1.4657.0/WixVideoController.bundle.min.js",
+          "bytes": 93226
+        }
+      ]
+    },
+    {
+      "total_bytes": 2448144,
+      "al_abrir_bytes": 1661988,
+      "n_peticiones": 201,
+      "mas_pesados": [
+        {
+          "url": "https://static.parastorage.com/services/instagram-business/1.926.0/app.bundle.min.js",
+          "bytes": 301952
+        },
+        {
+          "url": "https://static.parastorage.com/services/wix-vod-widget/1.4657.0/WixVideoViewerWidgetNoCss.bundle.min.js",
+          "bytes": 272884
+        },
+        {
+          "url": "https://www.hipoterapia.cl/",
+          "bytes": 169023
+        },
+        {
+          "url": "https://static.parastorage.com/services/wix-vod-widget/1.4657.0/WixVideoController.bundle.min.js",
+          "bytes": 93698
+        }
+      ]
+    },
+    {
+      "total_bytes": 2449437,
+      "al_abrir_bytes": 1663799,
+      "n_peticiones": 201,
+      "mas_pesados": [
+        {
+          "url": "https://static.parastorage.com/services/instagram-business/1.926.0/app.bundle.min.js",
+          "bytes": 302335
+        },
+        {
+          "url": "https://static.parastorage.com/services/wix-vod-widget/1.4657.0/WixVideoViewerWidgetNoCss.bundle.min.js",
+          "bytes": 273032
+        },
+        {
+          "url": "https://www.hipoterapia.cl/",
+          "bytes": 169005
+        },
+        {
+          "url": "https://static.parastorage.com/services/wix-vod-widget/1.4657.0/WixVideoController.bundle.min.js",
+          "bytes": 93685
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [],
+      "envio_en_ambas": [],
+      "google_gcs": [
+        [],
+        [],
+        []
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": null,
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 600000
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 435035,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 435035,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 435035,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 435035,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 435035,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 435035,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 435035,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 600000
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 435035,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 435035,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 435035,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 435035,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 435035,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 435035,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 435035,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "hipoterapia.cl",
+            "dominio": "hipoterapia.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "sentry-next.wixpress.com",
+            "dominio": "sentry-next.wixpress.com",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "sentry.io",
+            "dominio": "sentry.io",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "sentry-next.wixpress.com",
+            "dominio": "sentry-next.wixpress.com",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "sentry-next.wixpress.com",
+            "dominio": "sentry-next.wixpress.com",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      },
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "hipoterapia.cl",
+            "dominio": "hipoterapia.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "sentry-next.wixpress.com",
+            "dominio": "sentry-next.wixpress.com",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "sentry.io",
+            "dominio": "sentry.io",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "sentry-next.wixpress.com",
+            "dominio": "sentry-next.wixpress.com",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "sentry-next.wixpress.com",
+            "dominio": "sentry-next.wixpress.com",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "Fundaci N Chilena De"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Fundación Chilena de Hipoterapia"
+      },
+      {
+        "fuente": "title",
+        "valor": "Fundación Chilena de Hipoterapia"
+      }
+    ],
+    "nombres_en_conflicto": [
+      [
+        "JSON-LD name: Fundación Chilena de Hipoterapia",
+        "og:site_name: Fundaci N Chilena De"
+      ]
+    ],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 30,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

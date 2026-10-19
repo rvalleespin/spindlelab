@@ -1,0 +1,757 @@
+{
+  "url": "https://remax-truehome.cl/",
+  "cuando": "2026-10-19T14:32:04.939Z",
+  "A": {
+    "cookies": [],
+    "dom": {
+      "url": "https://remax-truehome.cl/",
+      "titulo": "RE/MAX True Home — Propiedades, venta y carrera inmobiliaria",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "comprar.php",
+          "accion_abs": "https://remax-truehome.cl/comprar.php",
+          "metodo": "get",
+          "campos": 3,
+          "requeridos": 0,
+          "visible": true,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "",
+          "accion_abs": "https://remax-truehome.cl/",
+          "metodo": "post",
+          "campos": 4,
+          "requeridos": 4,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "index.php",
+          "t": ""
+        },
+        {
+          "h": "comprar.php",
+          "t": "COMPRAR"
+        },
+        {
+          "h": "vender.php",
+          "t": "VENDER"
+        },
+        {
+          "h": "agentes-sumate.php",
+          "t": "SÚMATE COMO AGENTE"
+        },
+        {
+          "h": "nosotros.php",
+          "t": "NOSOTROS"
+        },
+        {
+          "h": "contacto.php",
+          "t": "CONTACTO"
+        },
+        {
+          "h": "agentes-sumate.php",
+          "t": "SÚMATE COMO AGENTE"
+        },
+        {
+          "h": "comprar.php",
+          "t": "Comprar"
+        },
+        {
+          "h": "vender.php",
+          "t": "Vender"
+        },
+        {
+          "h": "agentes-sumate.php",
+          "t": "Súmate como agente"
+        },
+        {
+          "h": "nosotros.php",
+          "t": "Nosotros"
+        },
+        {
+          "h": "contacto.php",
+          "t": "Contacto"
+        },
+        {
+          "h": "comprar.php",
+          "t": "Ver propiedades"
+        },
+        {
+          "h": "vender.php",
+          "t": "Tasación online"
+        },
+        {
+          "h": "agentes-sumate.php",
+          "t": "Conocer la propuesta"
+        },
+        {
+          "h": "comprar.php",
+          "t": "Ver nuestra cartera →"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/departamento/venta/vitacura/1028108083-259",
+          "t": "1028108083-259\nCLF 10.900\nVenta Departamento vista privilegiada Bicentenario\n\nVi"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/casa/venta/nunoa/1028108080-227",
+          "t": "1028108080-227\nCLF 9.500\nVenta Casa Ñuñoa\n\nÑuñoa\n\n245 m²\n5 dorm.\n3 baños\nVer pro"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/departamento/venta/nunoa/278-santa-julia/1028108004-393",
+          "t": "1028108004-393\nCLF 6.900\nVenta Duplex Ñuñoa\n\nÑuñoa\n\n78 m²\n2 dorm.\n2 baños\nVer pr"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/departamento/venta/santiago/1028108025-242",
+          "t": "1028108025-242\nCLF 1.600\nVENTA DEPARTAMENTO METRO PARQUE ALMAGRO SANTIAGO\n\nSanti"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/departamento/venta/lo-barnechea/12977-robles/1028108076-106",
+          "t": "1028108076-106\nCLF 12.850\nDepartamento Dúplex Lo Barnechea\n\nLo Barnechea\n\n140 m²"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/casa/venta/san-miguel/1028108076-102",
+          "t": "1028108076-102\nCLF 10.400\nVenta Casa 3D 2B San Miguel\n\nSan Miguel\n\n108 m²\n3 dorm"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/departamento/venta/la-reina/1028108026-30",
+          "t": "1028108026-30\nCLF 6.790\nVENTA DEPARTAMENTO COUNTRY CLUB LA REINA\n\nLa Reina\n\n91 m"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/departamento/arriendo/santiago/145-marin/1028108031-109",
+          "t": "1028108031-109\nCLF 12\nDepartamento arriendo 1D/2B Santiago\n\nSantiago\n\n52 m²\n1 do"
+        },
+        {
+          "h": "nosotros.php",
+          "t": "Conocer True Home"
+        },
+        {
+          "h": "comprar.php?comuna=las-condes",
+          "t": "Las Condes"
+        },
+        {
+          "h": "comprar.php?comuna=vitacura",
+          "t": "Vitacura"
+        },
+        {
+          "h": "comprar.php?comuna=providencia",
+          "t": "Providencia"
+        },
+        {
+          "h": "comprar.php?comuna=la-reina",
+          "t": "La Reina"
+        },
+        {
+          "h": "comprar.php?comuna=lo-barnechea",
+          "t": "Lo Barnechea"
+        },
+        {
+          "h": "comprar.php?comuna=nunoa",
+          "t": "Ñuñoa"
+        },
+        {
+          "h": "comprar.php?comuna=penalolen",
+          "t": "Peñalolén"
+        },
+        {
+          "h": "comprar.php?comuna=macul",
+          "t": "Macul"
+        },
+        {
+          "h": "comprar.php?comuna=la-florida",
+          "t": "La Florida"
+        },
+        {
+          "h": "comprar.php?comuna=santiago",
+          "t": "Santiago"
+        },
+        {
+          "h": "comprar.php",
+          "t": "Ver propiedades"
+        },
+        {
+          "h": "legal-terminos.php",
+          "t": "términos y condiciones"
+        },
+        {
+          "h": "index.php",
+          "t": ""
+        },
+        {
+          "h": "comprar.php",
+          "t": "Propiedades\n→"
+        },
+        {
+          "h": "vender.php",
+          "t": "Vender mi propiedad\n→"
+        },
+        {
+          "h": "agentes-sumate.php",
+          "t": "Súmate como agente\n→"
+        },
+        {
+          "h": "nosotros.php",
+          "t": "Nosotros\n→"
+        },
+        {
+          "h": "mailto:contacto@remax-truehome.cl",
+          "t": "CORREO contacto@remax-truehome.cl"
+        },
+        {
+          "h": "tel:+56942642176",
+          "t": "TELÉFONO +56 9 4264 2176"
+        },
+        {
+          "h": "https://www.linkedin.com/company/remax-truehome/",
+          "t": "in LinkedIn"
+        },
+        {
+          "h": "https://www.instagram.com/remaxtruehomechile/",
+          "t": "◎ Instagram"
+        },
+        {
+          "h": "https://www.youtube.com/@remaxtruehome",
+          "t": "▶ YouTube"
+        },
+        {
+          "h": "legal-privacidad.php",
+          "t": "Privacidad"
+        },
+        {
+          "h": "legal-terminos.php",
+          "t": "Términos y condiciones"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://remax-truehome.cl/legal-privacidad.php",
+          "t": "Privacidad"
+        }
+      ],
+      "largo_texto": 2823,
+      "muestra": "COMPRAR\nVENDER\nSÚMATE COMO AGENTE\nNOSOTROS\nCONTACTO\nSÚMATE COMO AGENTE\n\nVENDER\n\nConozca el valor de su propiedad\nantes de tomar una decisión.\n\nUna tasación pensada para entender la propiedad y su contexto de mercado.\n\nTasación online\nQuiero vender mi propiedad\n‹\n›\nEncuentra tu propiedad\nBusca dentro de nuestra cartera\nCOMUNA\nTodo el sector oriente\nLas Condes\nVitacura\nProvidencia\nLa Reina\nLo Barnechea\nÑuñoa\nPeñalolén\nMacul\nLa Florida\nSantiago\nTIPO\nCualquier tipo\nDepartamento\nCasa\nTerreno\nComercia",
+      "cta_en_pantalla": [
+        {
+          "t": "comprar",
+          "h": "comprar.php"
+        },
+        {
+          "t": "contacto",
+          "h": "contacto.php"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 3,
+        "h2": 5,
+        "palabras": 424
+      }
+    },
+    "captura": "r1-A.jpg"
+  },
+  "B": {
+    "cookies": [],
+    "dom": {
+      "url": "https://remax-truehome.cl/",
+      "titulo": "RE/MAX True Home — Propiedades, venta y carrera inmobiliaria",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "comprar.php",
+          "accion_abs": "https://remax-truehome.cl/comprar.php",
+          "metodo": "get",
+          "campos": 3,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "",
+          "accion_abs": "https://remax-truehome.cl/",
+          "metodo": "post",
+          "campos": 4,
+          "requeridos": 4,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "index.php",
+          "t": ""
+        },
+        {
+          "h": "comprar.php",
+          "t": "COMPRAR"
+        },
+        {
+          "h": "vender.php",
+          "t": "VENDER"
+        },
+        {
+          "h": "agentes-sumate.php",
+          "t": "SÚMATE COMO AGENTE"
+        },
+        {
+          "h": "nosotros.php",
+          "t": "NOSOTROS"
+        },
+        {
+          "h": "contacto.php",
+          "t": "CONTACTO"
+        },
+        {
+          "h": "agentes-sumate.php",
+          "t": "SÚMATE COMO AGENTE"
+        },
+        {
+          "h": "comprar.php",
+          "t": "Comprar"
+        },
+        {
+          "h": "vender.php",
+          "t": "Vender"
+        },
+        {
+          "h": "agentes-sumate.php",
+          "t": "Súmate como agente"
+        },
+        {
+          "h": "nosotros.php",
+          "t": "Nosotros"
+        },
+        {
+          "h": "contacto.php",
+          "t": "Contacto"
+        },
+        {
+          "h": "comprar.php",
+          "t": "Ver propiedades"
+        },
+        {
+          "h": "vender.php",
+          "t": "Tasación online"
+        },
+        {
+          "h": "agentes-sumate.php",
+          "t": "Conocer la propuesta"
+        },
+        {
+          "h": "comprar.php",
+          "t": "Ver nuestra cartera →"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/departamento/venta/vitacura/1028108083-259",
+          "t": "1028108083-259\nCLF 10.900\nVenta Departamento vista privilegiada Bicentenario\n\nVi"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/casa/venta/nunoa/1028108080-227",
+          "t": "1028108080-227\nCLF 9.500\nVenta Casa Ñuñoa\n\nÑuñoa\n\n245 m²\n5 dorm.\n3 baños\nVer pro"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/departamento/venta/nunoa/278-santa-julia/1028108004-393",
+          "t": "1028108004-393\nCLF 6.900\nVenta Duplex Ñuñoa\n\nÑuñoa\n\n78 m²\n2 dorm.\n2 baños\nVer pr"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/departamento/venta/santiago/1028108025-242",
+          "t": "1028108025-242\nCLF 1.600\nVENTA DEPARTAMENTO METRO PARQUE ALMAGRO SANTIAGO\n\nSanti"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/departamento/venta/lo-barnechea/12977-robles/1028108076-106",
+          "t": "1028108076-106\nCLF 12.850\nDepartamento Dúplex Lo Barnechea\n\nLo Barnechea\n\n140 m²"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/casa/venta/san-miguel/1028108076-102",
+          "t": "1028108076-102\nCLF 10.400\nVenta Casa 3D 2B San Miguel\n\nSan Miguel\n\n108 m²\n3 dorm"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/departamento/venta/la-reina/1028108026-30",
+          "t": "1028108026-30\nCLF 6.790\nVENTA DEPARTAMENTO COUNTRY CLUB LA REINA\n\nLa Reina\n\n91 m"
+        },
+        {
+          "h": "https://www.remax.cl/es-cl/propiedades/departamento/arriendo/santiago/145-marin/1028108031-109",
+          "t": "1028108031-109\nCLF 12\nDepartamento arriendo 1D/2B Santiago\n\nSantiago\n\n52 m²\n1 do"
+        },
+        {
+          "h": "nosotros.php",
+          "t": "Conocer True Home"
+        },
+        {
+          "h": "comprar.php?comuna=las-condes",
+          "t": "Las Condes"
+        },
+        {
+          "h": "comprar.php?comuna=vitacura",
+          "t": "Vitacura"
+        },
+        {
+          "h": "comprar.php?comuna=providencia",
+          "t": "Providencia"
+        },
+        {
+          "h": "comprar.php?comuna=la-reina",
+          "t": "La Reina"
+        },
+        {
+          "h": "comprar.php?comuna=lo-barnechea",
+          "t": "Lo Barnechea"
+        },
+        {
+          "h": "comprar.php?comuna=nunoa",
+          "t": "Ñuñoa"
+        },
+        {
+          "h": "comprar.php?comuna=penalolen",
+          "t": "Peñalolén"
+        },
+        {
+          "h": "comprar.php?comuna=macul",
+          "t": "Macul"
+        },
+        {
+          "h": "comprar.php?comuna=la-florida",
+          "t": "La Florida"
+        },
+        {
+          "h": "comprar.php?comuna=santiago",
+          "t": "Santiago"
+        },
+        {
+          "h": "comprar.php",
+          "t": "Ver propiedades"
+        },
+        {
+          "h": "legal-terminos.php",
+          "t": "términos y condiciones"
+        },
+        {
+          "h": "index.php",
+          "t": ""
+        },
+        {
+          "h": "comprar.php",
+          "t": "Propiedades\n→"
+        },
+        {
+          "h": "vender.php",
+          "t": "Vender mi propiedad\n→"
+        },
+        {
+          "h": "agentes-sumate.php",
+          "t": "Súmate como agente\n→"
+        },
+        {
+          "h": "nosotros.php",
+          "t": "Nosotros\n→"
+        },
+        {
+          "h": "mailto:contacto@remax-truehome.cl",
+          "t": "CORREO contacto@remax-truehome.cl"
+        },
+        {
+          "h": "tel:+56942642176",
+          "t": "TELÉFONO +56 9 4264 2176"
+        },
+        {
+          "h": "https://www.linkedin.com/company/remax-truehome/",
+          "t": "in LinkedIn"
+        },
+        {
+          "h": "https://www.instagram.com/remaxtruehomechile/",
+          "t": "◎ Instagram"
+        },
+        {
+          "h": "https://www.youtube.com/@remaxtruehome",
+          "t": "▶ YouTube"
+        },
+        {
+          "h": "legal-privacidad.php",
+          "t": "Privacidad"
+        },
+        {
+          "h": "legal-terminos.php",
+          "t": "Términos y condiciones"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://remax-truehome.cl/legal-privacidad.php",
+          "t": "Privacidad"
+        }
+      ],
+      "largo_texto": 2805,
+      "muestra": "COMPRAR\nVENDER\nSÚMATE COMO AGENTE\nNOSOTROS\nCONTACTO\nSÚMATE COMO AGENTE\n\nSÚMATE COMO AGENTE\n\nUna carrera inmobiliaria\nse construye con preparación.\n\nFormación continua, acompañamiento y una estructura pensada para crecer.\n\nConocer la propuesta\n‹\n›\nEncuentra tu propiedad\nBusca dentro de nuestra cartera\nCOMUNA\nTodo el sector oriente\nLas Condes\nVitacura\nProvidencia\nLa Reina\nLo Barnechea\nÑuñoa\nPeñalolén\nMacul\nLa Florida\nSantiago\nTIPO\nCualquier tipo\nDepartamento\nCasa\nTerreno\nComercial\nOPERACIÓN\nVenta\n",
+      "cta_en_pantalla": [
+        {
+          "t": "comprar",
+          "h": "comprar.php"
+        },
+        {
+          "t": "contacto",
+          "h": "contacto.php"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 3,
+        "h2": 5,
+        "palabras": 416
+      }
+    },
+    "captura": "r1-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/css/style.css?v=20261002-02",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/logo.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/js/main.js?v=20261002-02",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/inc/img/lux1.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/inc/img/vender.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/inc/img/agent.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.gryphtech.com/userimages/1028/LargeWM/L_05c51a2d-c2dd-484d-8d03-c56a781c7240.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.gryphtech.com/userimages/1028/LargeWM/L_c96e6d11-1a49-4b05-b327-361f316bd234.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.gryphtech.com/userimages/1028/LargeWM/L_8fd4964c-c00c-4f74-9fa6-8e6b292022d9.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.gryphtech.com/userimages/1028/LargeWM/L_6c58e6c5-c9fd-41d8-aeb9-ff1564b7b0df.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.gryphtech.com/userimages/1028/LargeWM/L_fd7e3d33-4de3-4a0d-82fe-6a839a014db6.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.gryphtech.com/userimages/1028/LargeWM/L_f1e07b0e-4328-4e0b-b1c4-47aa4ef0fe15.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.gryphtech.com/userimages/1028/LargeWM/L_68808668-cd2d-4f09-98d0-a3ca14661332.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.gryphtech.com/userimages/1028/LargeWM/L_5e542b92-9663-4656-aea4-7a85e4246ba4.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/inc/img/opera.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/inc/img/lascondes.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/inc/img/vitacura.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/inc/img/pocuro.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/inc/img/lareina.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/inc/img/lobarnechea.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/inc/img/nunoa.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/inc/img/penalolen.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/inc/img/macul.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/inc/img/laflorida.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/inc/img/santiago.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2200&q=85",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/logo.png",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://remax-truehome.cl/logo.png",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    }
+  ],
+  "setCookies": [],
+  "peso": {
+    "total_bytes": 11325155,
+    "al_abrir_bytes": 11325155,
+    "n_peticiones": 32,
+    "mas_pesados": [
+      {
+        "url": "https://remax-truehome.cl/inc/img/lux1.png",
+        "bytes": 2535013
+      },
+      {
+        "url": "https://remax-truehome.cl/inc/img/vender.png",
+        "bytes": 1830726
+      },
+      {
+        "url": "https://remax-truehome.cl/inc/img/opera.png",
+        "bytes": 1538730
+      },
+      {
+        "url": "https://remax-truehome.cl/inc/img/santiago.jpeg",
+        "bytes": 894754
+      }
+    ]
+  },
+  "html_len": 60642
+}

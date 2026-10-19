@@ -1,0 +1,349 @@
+{
+  "url": "https://ldhs.cl/",
+  "cuando": "2026-10-19T13:39:45.573Z",
+  "A": {
+    "cookies": [],
+    "dom": {
+      "url": "https://ldhs.cl/",
+      "titulo": "LDHS · Auditoría interna, control interno y cumplimiento para empresas chilenas",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/api/ldhs/contacto.php",
+          "accion_abs": "https://ldhs.cl/api/ldhs/contacto.php",
+          "metodo": "post",
+          "campos": 7,
+          "requeridos": 2,
+          "visible": true,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#top",
+          "t": ""
+        },
+        {
+          "h": "#servicios",
+          "t": "Servicios"
+        },
+        {
+          "h": "#metodologia",
+          "t": "Metodología"
+        },
+        {
+          "h": "#sectores",
+          "t": "Sectores"
+        },
+        {
+          "h": "#nosotros",
+          "t": "La firma"
+        },
+        {
+          "h": "#contacto",
+          "t": "Contacto"
+        },
+        {
+          "h": "/intranet/",
+          "t": "Intranet"
+        },
+        {
+          "h": "#servicios",
+          "t": "Conocer los servicios\n→"
+        },
+        {
+          "h": "#contacto",
+          "t": "Conversemos"
+        },
+        {
+          "h": "mailto:contacto@ldhs.cl",
+          "t": "contacto@ldhs.cl"
+        },
+        {
+          "h": "/intranet/",
+          "t": "acceso restringido al equipo"
+        },
+        {
+          "h": "#servicios",
+          "t": "Auditoría interna y control interno"
+        },
+        {
+          "h": "#servicios",
+          "t": "Auditoría de modelos exigidos por ley"
+        },
+        {
+          "h": "#servicios",
+          "t": "Modelos de cumplimiento"
+        },
+        {
+          "h": "#servicios",
+          "t": "Capacitación normativa"
+        },
+        {
+          "h": "#servicios",
+          "t": "Preparación para la auditoría externa"
+        },
+        {
+          "h": "#nosotros",
+          "t": "Quiénes somos"
+        },
+        {
+          "h": "#metodologia",
+          "t": "Metodología"
+        },
+        {
+          "h": "#sectores",
+          "t": "Sectores"
+        },
+        {
+          "h": "#contacto",
+          "t": "Contacto"
+        },
+        {
+          "h": "/intranet/",
+          "t": "Intranet corporativa"
+        },
+        {
+          "h": "mailto:contacto@ldhs.cl",
+          "t": "contacto@ldhs.cl"
+        },
+        {
+          "h": "/intranet/",
+          "t": "ACCESO INTERNO"
+        }
+      ],
+      "politica": [],
+      "largo_texto": 7784,
+      "muestra": "Servicios\nMetodología\nSectores\nLa firma\nContacto\nIntranet\nFIRMA CHILENA DE AUDITORÍA INTERNA Y CUMPLIMIENTO\nEl control de su empresa,\nvisto completo.\n\nAsesoramos a las empresas que quieren crear, desarrollar o mejorar sus sistemas de control interno y sus modelos de cumplimiento — y las acompañamos hasta su auditoría externa anual. Criterio técnico, lenguaje claro y un solo interlocutor: el socio que firma.\n\nConocer los servicios\n→\nConversemos\n02\nramas de servicio\nintegradas\nIIA · COSO\nNormas Gl",
+      "cta_en_pantalla": [
+        {
+          "t": "contacto",
+          "h": "#contacto"
+        },
+        {
+          "t": "conversemos",
+          "h": "#contacto"
+        }
+      ],
+      "formulario_en_pantalla": true,
+      "estructura": {
+        "h1": 1,
+        "h2": 5,
+        "palabras": 1140
+      }
+    },
+    "captura": "r3-A.jpg"
+  },
+  "B": {
+    "cookies": [],
+    "dom": {
+      "url": "https://ldhs.cl/",
+      "titulo": "LDHS · Auditoría interna, control interno y cumplimiento para empresas chilenas",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/api/ldhs/contacto.php",
+          "accion_abs": "https://ldhs.cl/api/ldhs/contacto.php",
+          "metodo": "post",
+          "campos": 7,
+          "requeridos": 2,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#top",
+          "t": ""
+        },
+        {
+          "h": "#servicios",
+          "t": "Servicios"
+        },
+        {
+          "h": "#metodologia",
+          "t": "Metodología"
+        },
+        {
+          "h": "#sectores",
+          "t": "Sectores"
+        },
+        {
+          "h": "#nosotros",
+          "t": "La firma"
+        },
+        {
+          "h": "#contacto",
+          "t": "Contacto"
+        },
+        {
+          "h": "/intranet/",
+          "t": "Intranet"
+        },
+        {
+          "h": "#servicios",
+          "t": "Conocer los servicios\n→"
+        },
+        {
+          "h": "#contacto",
+          "t": "Conversemos"
+        },
+        {
+          "h": "mailto:contacto@ldhs.cl",
+          "t": "contacto@ldhs.cl"
+        },
+        {
+          "h": "/intranet/",
+          "t": "acceso restringido al equipo"
+        },
+        {
+          "h": "#servicios",
+          "t": "Auditoría interna y control interno"
+        },
+        {
+          "h": "#servicios",
+          "t": "Auditoría de modelos exigidos por ley"
+        },
+        {
+          "h": "#servicios",
+          "t": "Modelos de cumplimiento"
+        },
+        {
+          "h": "#servicios",
+          "t": "Capacitación normativa"
+        },
+        {
+          "h": "#servicios",
+          "t": "Preparación para la auditoría externa"
+        },
+        {
+          "h": "#nosotros",
+          "t": "Quiénes somos"
+        },
+        {
+          "h": "#metodologia",
+          "t": "Metodología"
+        },
+        {
+          "h": "#sectores",
+          "t": "Sectores"
+        },
+        {
+          "h": "#contacto",
+          "t": "Contacto"
+        },
+        {
+          "h": "/intranet/",
+          "t": "Intranet corporativa"
+        },
+        {
+          "h": "mailto:contacto@ldhs.cl",
+          "t": "contacto@ldhs.cl"
+        },
+        {
+          "h": "/intranet/",
+          "t": "ACCESO INTERNO"
+        }
+      ],
+      "politica": [],
+      "largo_texto": 7784,
+      "muestra": "Servicios\nMetodología\nSectores\nLa firma\nContacto\nIntranet\nFIRMA CHILENA DE AUDITORÍA INTERNA Y CUMPLIMIENTO\nEl control de su empresa,\nvisto completo.\n\nAsesoramos a las empresas que quieren crear, desarrollar o mejorar sus sistemas de control interno y sus modelos de cumplimiento — y las acompañamos hasta su auditoría externa anual. Criterio técnico, lenguaje claro y un solo interlocutor: el socio que firma.\n\nConocer los servicios\n→\nConversemos\n02\nramas de servicio\nintegradas\nIIA · COSO\nNormas Gl",
+      "cta_en_pantalla": [
+        {
+          "t": "contacto",
+          "h": "#contacto"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 5,
+        "palabras": 1140
+      }
+    },
+    "captura": "r3-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://ldhs.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ldhs.cl/assets/logo-ldhs.png?v=2",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/orbitron/v35/yMJRMIlzdpvBhQQL_Qq7dy0.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwg.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/chakrapetch/v13/cIflMapbsEk7TDLdtEz1BwkeQI51R5_F.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ldhs.cl/favicon.png?v=2",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    }
+  ],
+  "setCookies": [],
+  "peso": {
+    "total_bytes": 140123,
+    "al_abrir_bytes": 140123,
+    "n_peticiones": 8,
+    "mas_pesados": [
+      {
+        "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+        "bytes": 48790
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwg.woff2",
+        "bytes": 31576
+      },
+      {
+        "url": "https://ldhs.cl/",
+        "bytes": 14432
+      },
+      {
+        "url": "https://ldhs.cl/favicon.png?v=2",
+        "bytes": 12996
+      }
+    ]
+  },
+  "html_len": 42634
+}

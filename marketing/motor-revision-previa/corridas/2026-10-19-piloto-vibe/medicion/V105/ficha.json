@@ -1,0 +1,14 @@
+{
+  "id": "V105",
+  "dominio": "uycia.cl",
+  "motor": "v0",
+  "cuando": "2026-10-19T16:18:29.259Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "descartado:ya-contactado",
+  "detalle": {
+    "en": [
+      "ventas/enviados/REGISTRO-enviados.csv"
+    ],
+    "nota": "Hay un envio registrado. Confirmar en Gmail (in:sent to:dominio)."
+  }
+}

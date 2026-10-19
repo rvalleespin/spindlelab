@@ -1,0 +1,3223 @@
+{
+  "url": "https://labbe.legal/",
+  "cuando": "2026-10-19T16:16:36.981Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "labbe.legal",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "labbe.legal",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "labbe.legal",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "labbe.legal",
+        "expira_dias": 365
+      }
+    ],
+    "dom": {
+      "url": "https://labbe.legal/",
+      "titulo": "Labbé Abogados – Labbe Legal",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/search",
+          "accion_abs": "https://labbe.legal/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://labbe.legal/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart",
+          "accion_abs": "https://labbe.legal/cart",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/localization",
+          "accion_abs": "https://labbe.legal/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#MainContent",
+          "t": "Ir directamente al contenido"
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/pages/nosotros",
+          "t": "Nosotros"
+        },
+        {
+          "h": "/pages/areas-de-practica",
+          "t": "Áreas de Práctica"
+        },
+        {
+          "h": "/pages/derecho-comercial",
+          "t": "Derecho Comercial"
+        },
+        {
+          "h": "/pages/proteccion-patrimonial",
+          "t": "Protección Patrimonial"
+        },
+        {
+          "h": "/pages/derecho-laboral-y-migratorio",
+          "t": "Derecho Laboral y Migratorio"
+        },
+        {
+          "h": "/pages/derecho-judicial",
+          "t": "Judicial"
+        },
+        {
+          "h": "/pages/derecho-inmobiliario",
+          "t": "Derecho Inmobiliario"
+        },
+        {
+          "h": "/pages/derecho-administrativo",
+          "t": "Derecho Administrativo"
+        },
+        {
+          "h": "/pages/derecho-de-construccion",
+          "t": "Construcción"
+        },
+        {
+          "h": "/pages/derecho-energia",
+          "t": "Energía"
+        },
+        {
+          "h": "/pages/compliance",
+          "t": "Compliance"
+        },
+        {
+          "h": "/pages/equipo",
+          "t": "Equipo"
+        },
+        {
+          "h": "/pages/publicaciones",
+          "t": "Publicaciones"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://labbe.legal/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/pages/nosotros",
+          "t": "Nosotros"
+        },
+        {
+          "h": "/pages/areas-de-practica",
+          "t": "Áreas de Práctica"
+        },
+        {
+          "h": "/pages/derecho-comercial",
+          "t": "Derecho Comercial"
+        },
+        {
+          "h": "/pages/proteccion-patrimonial",
+          "t": "Protección Patrimonial"
+        },
+        {
+          "h": "/pages/derecho-laboral-y-migratorio",
+          "t": "Derecho Laboral y Migratorio"
+        },
+        {
+          "h": "/pages/derecho-judicial",
+          "t": "Judicial"
+        },
+        {
+          "h": "/pages/derecho-inmobiliario",
+          "t": "Derecho Inmobiliario"
+        },
+        {
+          "h": "/pages/derecho-administrativo",
+          "t": "Derecho Administrativo"
+        },
+        {
+          "h": "/pages/derecho-de-construccion",
+          "t": "Construcción"
+        },
+        {
+          "h": "/pages/derecho-energia",
+          "t": "Energía"
+        },
+        {
+          "h": "/pages/compliance",
+          "t": "Compliance"
+        },
+        {
+          "h": "/pages/equipo",
+          "t": "Equipo"
+        },
+        {
+          "h": "/pages/publicaciones",
+          "t": "Publicaciones"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://labbe.legal/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "https://www.linkedin.com/company/labbeabogados",
+          "t": ""
+        },
+        {
+          "h": "/cart",
+          "t": "Carrito"
+        },
+        {
+          "h": "/cart",
+          "t": ""
+        },
+        {
+          "h": "https://www.legal500.com/firms/236546-labbe-abogados-labbe-ovalle-guglielmetti/235835-santiago-chile/",
+          "t": ""
+        },
+        {
+          "h": "/products/alberto-labbe-v",
+          "t": "Alberto Labbé V."
+        },
+        {
+          "h": "/products/alberto-labbe-v",
+          "t": "Alberto Labbé V."
+        },
+        {
+          "h": "/products/juan-paulo-ovalle-i",
+          "t": "Juan Paulo Ovalle I."
+        },
+        {
+          "h": "/products/juan-paulo-ovalle-i",
+          "t": "Juan Paulo Ovalle I."
+        },
+        {
+          "h": "/products/mauricio-guglielmetti-v",
+          "t": "Mauricio Guglielmetti V."
+        },
+        {
+          "h": "/products/mauricio-guglielmetti-v",
+          "t": "Mauricio Guglielmetti V."
+        },
+        {
+          "h": "/products/jose-tomas-labbe-f",
+          "t": "José Tomás Labbé F."
+        },
+        {
+          "h": "/products/jose-tomas-labbe-f",
+          "t": "José Tomás Labbé F."
+        },
+        {
+          "h": "/products/rene-nunez-a",
+          "t": "René Núñez A."
+        },
+        {
+          "h": "/products/rene-nunez-a",
+          "t": "René Núñez A."
+        },
+        {
+          "h": "/products/jose-tomas-chadwick-q",
+          "t": "José Tomás Chadwick Q."
+        },
+        {
+          "h": "/products/jose-tomas-chadwick-q",
+          "t": "José Tomás Chadwick Q."
+        },
+        {
+          "h": "/products/claudia-bulnes-o",
+          "t": "Claudia Bulnes O."
+        },
+        {
+          "h": "/products/claudia-bulnes-o",
+          "t": "Claudia Bulnes O."
+        },
+        {
+          "h": "/products/cristobal-allende-l",
+          "t": "Cristóbal Allende L."
+        },
+        {
+          "h": "/products/cristobal-allende-l",
+          "t": "Cristóbal Allende L."
+        },
+        {
+          "h": "/products/maria-jose-santibanez-p",
+          "t": "María José Santibañez P."
+        },
+        {
+          "h": "/products/maria-jose-santibanez-p",
+          "t": "María José Santibañez P."
+        },
+        {
+          "h": "/products/ana-irribarra-o",
+          "t": "Ana Irribarra O."
+        },
+        {
+          "h": "/products/ana-irribarra-o",
+          "t": "Ana Irribarra O."
+        },
+        {
+          "h": "/products/m-virginia-diaz-m",
+          "t": "M. Virginia Díaz M."
+        },
+        {
+          "h": "/products/m-virginia-diaz-m",
+          "t": "M. Virginia Díaz M."
+        },
+        {
+          "h": "/products/rodrigo-martinez",
+          "t": "Rodrigo Martínez"
+        },
+        {
+          "h": "/products/rodrigo-martinez",
+          "t": "Rodrigo Martínez"
+        },
+        {
+          "h": "/pages/derecho-comercial",
+          "t": "Derecho Comercial"
+        },
+        {
+          "h": "https://labbe.legal/pages/proteccion-patrimonial",
+          "t": "Protección Patrimonial"
+        },
+        {
+          "h": "/pages/derecho-laboral-y-migratorio",
+          "t": "Derecho Laboral y Migratorio"
+        },
+        {
+          "h": "/pages/derecho-judicial",
+          "t": "Derecho Judicial"
+        },
+        {
+          "h": "/pages/derecho-inmobiliario",
+          "t": "Derecho Inmobiliario"
+        },
+        {
+          "h": "/pages/derecho-administrativo",
+          "t": "Derecho Administrativo"
+        },
+        {
+          "h": "/pages/derecho-de-construccion",
+          "t": "Construcción"
+        },
+        {
+          "h": "/pages/derecho-energia",
+          "t": "Energía"
+        },
+        {
+          "h": "/pages/compliance",
+          "t": "Compliance"
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/pymes-ley-del-iva-servicios-pasar%25C3%25A1n-ser-gravados-con-impuestos-/?trackingId=1hZW9FsoRiOB8iZ12La1og%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7004153489496920064",
+          "t": ""
+        },
+        {
+          "h": "https://open.spotify.com/episode/6wlXp8ToBFwebAm0A0qIkw?si=ad75056773b14186",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/construcci%25C3%25B3n-y-la-teor%25C3%25ADa-de-imprevisi%25C3%25B3n-labbeabogados/?trackingId=gtdybXl5SNqNkQ%2BfxRo9cg%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "https://thelegalindustry.com/chile/",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7036310882166951936",
+          "t": ""
+        },
+        {
+          "h": "https://open.spotify.com/episode/7c9V81ehWgGlkPwwGY1yFp?si=6816146a202644f2",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7020842373429501952",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/qu%25C3%25A9-pasar%25C3%25ADa-si-el-viejo-pascuero-trabajara-en-chile-labbeabogados/?trackingId=7xxD54l0hdbhfLvjXk%2FSZA%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "https://open.spotify.com/episode/4bp0tQyaYCkyvuwWzFo6x7?si=TP5izO7ITYeWKV8JMvvdpg&context=spotify%3Ashow%3A5Vkdz4VZasApQA4tVt95Rm",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7008140051570163712",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/pymes-ley-del-iva-servicios-pasar%25C3%25A1n-ser-gravados-con-impuestos-/?trackingId=1hZW9FsoRiOB8iZ12La1og%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7004153489496920064",
+          "t": ""
+        },
+        {
+          "h": "https://open.spotify.com/episode/6wlXp8ToBFwebAm0A0qIkw?si=ad75056773b14186",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/construcci%25C3%25B3n-y-la-teor%25C3%25ADa-de-imprevisi%25C3%25B3n-labbeabogados/?trackingId=gtdybXl5SNqNkQ%2BfxRo9cg%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "https://thelegalindustry.com/chile/",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7036310882166951936",
+          "t": ""
+        },
+        {
+          "h": "https://open.spotify.com/episode/7c9V81ehWgGlkPwwGY1yFp?si=6816146a202644f2",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7020842373429501952",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/qu%25C3%25A9-pasar%25C3%25ADa-si-el-viejo-pascuero-trabajara-en-chile-labbeabogados/?trackingId=7xxD54l0hdbhfLvjXk%2FSZA%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "https://open.spotify.com/episode/4bp0tQyaYCkyvuwWzFo6x7?si=TP5izO7ITYeWKV8JMvvdpg&context=spotify%3Ashow%3A5Vkdz4VZasApQA4tVt95Rm",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7008140051570163712",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/pymes-ley-del-iva-servicios-pasar%25C3%25A1n-ser-gravados-con-impuestos-/?trackingId=1hZW9FsoRiOB8iZ12La1og%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7004153489496920064",
+          "t": ""
+        },
+        {
+          "h": "https://open.spotify.com/episode/6wlXp8ToBFwebAm0A0qIkw?si=ad75056773b14186",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/construcci%25C3%25B3n-y-la-teor%25C3%25ADa-de-imprevisi%25C3%25B3n-labbeabogados/?trackingId=gtdybXl5SNqNkQ%2BfxRo9cg%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "/pages/publicaciones",
+          "t": "Ver más"
+        },
+        {
+          "h": "/search",
+          "t": "Buscar"
+        },
+        {
+          "h": "/pages/politica-de-privacidad",
+          "t": "Política de Privacidad"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "mailto:contacto@labbe.legal",
+          "t": "contacto@labbe.legal"
+        },
+        {
+          "h": "#",
+          "t": "Español"
+        },
+        {
+          "h": "#",
+          "t": "English"
+        },
+        {
+          "h": "#",
+          "t": "简体中文"
+        },
+        {
+          "h": "/",
+          "t": "Labbe Legal"
+        },
+        {
+          "h": "http://ecomandmore.com",
+          "t": "Ecom and More"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://labbe.legal/pages/politica-de-privacidad",
+          "t": "Política de Privacidad"
+        }
+      ],
+      "largo_texto": 1424,
+      "muestra": "Ir directamente al contenido\nInicio\nNosotros\nÁreas de Práctica\nEquipo\nPublicaciones\nContacto\nIniciar sesión\nExpertos\nResolvemos Conflictos | Protegemos | Acompañamos | Relacionamos.\nPropósito\nDesarrollamos estrategias creativas y eficientes para resguardar los intereses de nuestros clientes.\nPatrimonios\nPioneros en estructuración patrimonial y en resolución de conflictos societarios.\nNegocios\nIdentificamos oportunidades, conectamos personas y apoyamos la materialización de nuevos negocios.\nAlber",
+      "cta_en_pantalla": [
+        {
+          "t": "contacto",
+          "h": "/pages/contact"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 9,
+        "palabras": 185
+      }
+    },
+    "captura": "r1-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "labbe.legal",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "labbe.legal",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "labbe.legal",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "labbe.legal",
+        "expira_dias": 365
+      }
+    ],
+    "dom": {
+      "url": "https://labbe.legal/",
+      "titulo": "Labbé Abogados – Labbe Legal",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/search",
+          "accion_abs": "https://labbe.legal/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://labbe.legal/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart",
+          "accion_abs": "https://labbe.legal/cart",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/localization",
+          "accion_abs": "https://labbe.legal/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#MainContent",
+          "t": "Ir directamente al contenido"
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/pages/nosotros",
+          "t": "Nosotros"
+        },
+        {
+          "h": "/pages/areas-de-practica",
+          "t": "Áreas de Práctica"
+        },
+        {
+          "h": "/pages/derecho-comercial",
+          "t": "Derecho Comercial"
+        },
+        {
+          "h": "/pages/proteccion-patrimonial",
+          "t": "Protección Patrimonial"
+        },
+        {
+          "h": "/pages/derecho-laboral-y-migratorio",
+          "t": "Derecho Laboral y Migratorio"
+        },
+        {
+          "h": "/pages/derecho-judicial",
+          "t": "Judicial"
+        },
+        {
+          "h": "/pages/derecho-inmobiliario",
+          "t": "Derecho Inmobiliario"
+        },
+        {
+          "h": "/pages/derecho-administrativo",
+          "t": "Derecho Administrativo"
+        },
+        {
+          "h": "/pages/derecho-de-construccion",
+          "t": "Construcción"
+        },
+        {
+          "h": "/pages/derecho-energia",
+          "t": "Energía"
+        },
+        {
+          "h": "/pages/compliance",
+          "t": "Compliance"
+        },
+        {
+          "h": "/pages/equipo",
+          "t": "Equipo"
+        },
+        {
+          "h": "/pages/publicaciones",
+          "t": "Publicaciones"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://labbe.legal/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/pages/nosotros",
+          "t": "Nosotros"
+        },
+        {
+          "h": "/pages/areas-de-practica",
+          "t": "Áreas de Práctica"
+        },
+        {
+          "h": "/pages/derecho-comercial",
+          "t": "Derecho Comercial"
+        },
+        {
+          "h": "/pages/proteccion-patrimonial",
+          "t": "Protección Patrimonial"
+        },
+        {
+          "h": "/pages/derecho-laboral-y-migratorio",
+          "t": "Derecho Laboral y Migratorio"
+        },
+        {
+          "h": "/pages/derecho-judicial",
+          "t": "Judicial"
+        },
+        {
+          "h": "/pages/derecho-inmobiliario",
+          "t": "Derecho Inmobiliario"
+        },
+        {
+          "h": "/pages/derecho-administrativo",
+          "t": "Derecho Administrativo"
+        },
+        {
+          "h": "/pages/derecho-de-construccion",
+          "t": "Construcción"
+        },
+        {
+          "h": "/pages/derecho-energia",
+          "t": "Energía"
+        },
+        {
+          "h": "/pages/compliance",
+          "t": "Compliance"
+        },
+        {
+          "h": "/pages/equipo",
+          "t": "Equipo"
+        },
+        {
+          "h": "/pages/publicaciones",
+          "t": "Publicaciones"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://labbe.legal/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "https://www.linkedin.com/company/labbeabogados",
+          "t": ""
+        },
+        {
+          "h": "/cart",
+          "t": "Carrito"
+        },
+        {
+          "h": "/cart",
+          "t": ""
+        },
+        {
+          "h": "https://www.legal500.com/firms/236546-labbe-abogados-labbe-ovalle-guglielmetti/235835-santiago-chile/",
+          "t": ""
+        },
+        {
+          "h": "/products/alberto-labbe-v",
+          "t": "Alberto Labbé V."
+        },
+        {
+          "h": "/products/alberto-labbe-v",
+          "t": "Alberto Labbé V."
+        },
+        {
+          "h": "/products/juan-paulo-ovalle-i",
+          "t": "Juan Paulo Ovalle I."
+        },
+        {
+          "h": "/products/juan-paulo-ovalle-i",
+          "t": "Juan Paulo Ovalle I."
+        },
+        {
+          "h": "/products/mauricio-guglielmetti-v",
+          "t": "Mauricio Guglielmetti V."
+        },
+        {
+          "h": "/products/mauricio-guglielmetti-v",
+          "t": "Mauricio Guglielmetti V."
+        },
+        {
+          "h": "/products/jose-tomas-labbe-f",
+          "t": "José Tomás Labbé F."
+        },
+        {
+          "h": "/products/jose-tomas-labbe-f",
+          "t": "José Tomás Labbé F."
+        },
+        {
+          "h": "/products/rene-nunez-a",
+          "t": "René Núñez A."
+        },
+        {
+          "h": "/products/rene-nunez-a",
+          "t": "René Núñez A."
+        },
+        {
+          "h": "/products/jose-tomas-chadwick-q",
+          "t": "José Tomás Chadwick Q."
+        },
+        {
+          "h": "/products/jose-tomas-chadwick-q",
+          "t": "José Tomás Chadwick Q."
+        },
+        {
+          "h": "/products/claudia-bulnes-o",
+          "t": "Claudia Bulnes O."
+        },
+        {
+          "h": "/products/claudia-bulnes-o",
+          "t": "Claudia Bulnes O."
+        },
+        {
+          "h": "/products/cristobal-allende-l",
+          "t": "Cristóbal Allende L."
+        },
+        {
+          "h": "/products/cristobal-allende-l",
+          "t": "Cristóbal Allende L."
+        },
+        {
+          "h": "/products/maria-jose-santibanez-p",
+          "t": "María José Santibañez P."
+        },
+        {
+          "h": "/products/maria-jose-santibanez-p",
+          "t": "María José Santibañez P."
+        },
+        {
+          "h": "/products/ana-irribarra-o",
+          "t": "Ana Irribarra O."
+        },
+        {
+          "h": "/products/ana-irribarra-o",
+          "t": "Ana Irribarra O."
+        },
+        {
+          "h": "/products/m-virginia-diaz-m",
+          "t": "M. Virginia Díaz M."
+        },
+        {
+          "h": "/products/m-virginia-diaz-m",
+          "t": "M. Virginia Díaz M."
+        },
+        {
+          "h": "/products/rodrigo-martinez",
+          "t": "Rodrigo Martínez"
+        },
+        {
+          "h": "/products/rodrigo-martinez",
+          "t": "Rodrigo Martínez"
+        },
+        {
+          "h": "/pages/derecho-comercial",
+          "t": "Derecho Comercial"
+        },
+        {
+          "h": "https://labbe.legal/pages/proteccion-patrimonial",
+          "t": "Protección Patrimonial"
+        },
+        {
+          "h": "/pages/derecho-laboral-y-migratorio",
+          "t": "Derecho Laboral y Migratorio"
+        },
+        {
+          "h": "/pages/derecho-judicial",
+          "t": "Derecho Judicial"
+        },
+        {
+          "h": "/pages/derecho-inmobiliario",
+          "t": "Derecho Inmobiliario"
+        },
+        {
+          "h": "/pages/derecho-administrativo",
+          "t": "Derecho Administrativo"
+        },
+        {
+          "h": "/pages/derecho-de-construccion",
+          "t": "Construcción"
+        },
+        {
+          "h": "/pages/derecho-energia",
+          "t": "Energía"
+        },
+        {
+          "h": "/pages/compliance",
+          "t": "Compliance"
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/pymes-ley-del-iva-servicios-pasar%25C3%25A1n-ser-gravados-con-impuestos-/?trackingId=1hZW9FsoRiOB8iZ12La1og%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7004153489496920064",
+          "t": ""
+        },
+        {
+          "h": "https://open.spotify.com/episode/6wlXp8ToBFwebAm0A0qIkw?si=ad75056773b14186",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/construcci%25C3%25B3n-y-la-teor%25C3%25ADa-de-imprevisi%25C3%25B3n-labbeabogados/?trackingId=gtdybXl5SNqNkQ%2BfxRo9cg%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "https://thelegalindustry.com/chile/",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7036310882166951936",
+          "t": ""
+        },
+        {
+          "h": "https://open.spotify.com/episode/7c9V81ehWgGlkPwwGY1yFp?si=6816146a202644f2",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7020842373429501952",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/qu%25C3%25A9-pasar%25C3%25ADa-si-el-viejo-pascuero-trabajara-en-chile-labbeabogados/?trackingId=7xxD54l0hdbhfLvjXk%2FSZA%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "https://open.spotify.com/episode/4bp0tQyaYCkyvuwWzFo6x7?si=TP5izO7ITYeWKV8JMvvdpg&context=spotify%3Ashow%3A5Vkdz4VZasApQA4tVt95Rm",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7008140051570163712",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/pymes-ley-del-iva-servicios-pasar%25C3%25A1n-ser-gravados-con-impuestos-/?trackingId=1hZW9FsoRiOB8iZ12La1og%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7004153489496920064",
+          "t": ""
+        },
+        {
+          "h": "https://open.spotify.com/episode/6wlXp8ToBFwebAm0A0qIkw?si=ad75056773b14186",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/construcci%25C3%25B3n-y-la-teor%25C3%25ADa-de-imprevisi%25C3%25B3n-labbeabogados/?trackingId=gtdybXl5SNqNkQ%2BfxRo9cg%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "https://thelegalindustry.com/chile/",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7036310882166951936",
+          "t": ""
+        },
+        {
+          "h": "https://open.spotify.com/episode/7c9V81ehWgGlkPwwGY1yFp?si=6816146a202644f2",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7020842373429501952",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/qu%25C3%25A9-pasar%25C3%25ADa-si-el-viejo-pascuero-trabajara-en-chile-labbeabogados/?trackingId=7xxD54l0hdbhfLvjXk%2FSZA%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "https://open.spotify.com/episode/4bp0tQyaYCkyvuwWzFo6x7?si=TP5izO7ITYeWKV8JMvvdpg&context=spotify%3Ashow%3A5Vkdz4VZasApQA4tVt95Rm",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7008140051570163712",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/pymes-ley-del-iva-servicios-pasar%25C3%25A1n-ser-gravados-con-impuestos-/?trackingId=1hZW9FsoRiOB8iZ12La1og%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/update/urn:li:activity:7004153489496920064",
+          "t": ""
+        },
+        {
+          "h": "https://open.spotify.com/episode/6wlXp8ToBFwebAm0A0qIkw?si=ad75056773b14186",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/pulse/construcci%25C3%25B3n-y-la-teor%25C3%25ADa-de-imprevisi%25C3%25B3n-labbeabogados/?trackingId=gtdybXl5SNqNkQ%2BfxRo9cg%3D%3D",
+          "t": ""
+        },
+        {
+          "h": "/pages/publicaciones",
+          "t": "Ver más"
+        },
+        {
+          "h": "/search",
+          "t": "Buscar"
+        },
+        {
+          "h": "/pages/politica-de-privacidad",
+          "t": "Política de Privacidad"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "mailto:contacto@labbe.legal",
+          "t": "contacto@labbe.legal"
+        },
+        {
+          "h": "#",
+          "t": "Español"
+        },
+        {
+          "h": "#",
+          "t": "English"
+        },
+        {
+          "h": "#",
+          "t": "简体中文"
+        },
+        {
+          "h": "/",
+          "t": "Labbe Legal"
+        },
+        {
+          "h": "http://ecomandmore.com",
+          "t": "Ecom and More"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://labbe.legal/pages/politica-de-privacidad",
+          "t": "Política de Privacidad"
+        }
+      ],
+      "largo_texto": 1424,
+      "muestra": "Ir directamente al contenido\nInicio\nNosotros\nÁreas de Práctica\nEquipo\nPublicaciones\nContacto\nIniciar sesión\nExpertos\nResolvemos Conflictos | Protegemos | Acompañamos | Relacionamos.\nPropósito\nDesarrollamos estrategias creativas y eficientes para resguardar los intereses de nuestros clientes.\nPatrimonios\nPioneros en estructuración patrimonial y en resolución de conflictos societarios.\nNegocios\nIdentificamos oportunidades, conectamos personas y apoyamos la materialización de nuevos negocios.\nAlber",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 9,
+        "palabras": 185
+      }
+    },
+    "captura": "r1-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/ecom-style.css?v=21450410277989215651659627149",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/base.css?v=33648442733440060821654045687",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.weglot.com/weglot.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/global.js?v=74335208695507145661656350934",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/checkouts/internal/preloads.js?locale=es-CL",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.init-shop-cart-sync.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/storefront/assets/storefront/load_feature-1bd60354.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/storefront/assets/storefront/origin_trials-318ab40a.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/compiled_assets/scripts.js?v=15923234778276702851656103163",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/fonts/open_sans/opensans_n4.c32e4d4eca5273f6d4ee95ddf54b5bbb75fc9b61.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/fonts/roboto_slab/robotoslab_n7.5242eb50a2e2688ccb1b3a90257e09ca8f40a7fe.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-predictive-search.css?v=165644661289088488651654045666",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.11.0.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/details-disclosure.js?v=153497636716254413831654045683",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/details-modal.js?v=4511761896672669691654045682",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/cart-notification.js?v=146771965050272264641654045660",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/section-image-banner.css?v=176487564440668880141654045664",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-slider.css?v=120997663984027196991654045665",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-slideshow.css?v=87432719022228681551654045683",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/section-multicolumn.css?v=136906452462146557591657141664",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-card.css?v=17392639389377715731659616942",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://unpkg.com/swiper@6/swiper-bundle.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-rating.css?v=24573085263941240431654045680",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://unpkg.com/swiper@6/swiper-bundle.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/accessible-slick-theme.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://code.jquery.com/jquery-3.5.1.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/section-footer.css?v=83777583229853969691654045689",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/predictive-search.js?v=31278710863581584031654045673",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/storefront/standard-actions.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.init-shop-cart-sync_BYUfIraS.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.document_DMcRsBXN.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.init__oFNXQ9Z.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.register_cLcgCW8c.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.tslib-es6_CHHZATl5.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.networkErrorMessages_DIkDbO6W.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.shop-cart-sync_CwDVtlMd.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.defineInitFunction_CIjOjzsO.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.window_CAbVMZox.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.casing_U_9x-Om3.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.utils_DX-ZLLMT.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.v4_D2VNBPfk.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useUserRecognitionSignal_Cxwlw7Gj.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.storage_DQF5v-OM.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.hooks_DHyyKTJY.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.authorize_DINGMyE5.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useEventListener_ByQ0j2aH.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.validators_09U1U9sZ.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.weglot.com/projects-settings/4b8198067faf130e6e04f6816ab276b86.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/wpm/b05c62d7ewbe538af9pdeb4fec1me339d55am.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/s/trekkie.storefront.27d1ed78e37fdd7f8767f655600479b6802fa878.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/storefront/assets/shop_events_listener-4e26a9ce.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-list-menu.css?v=151968516119678728991654045674",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-search.css?v=96455689198851321781654045657",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-menu-drawer.css?v=182311192829367774911654045662",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-cart-notification.css?v=119852831333870967341654045655",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-cart-items.css?v=23917223812499722491654045688",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-price.css?v=112673864592427438181654045661",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-loading-overlay.css?v=167310470843593579841654045691",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/template-collection.css?v=145944865380958730931654045684",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/social-sharing.png?v=1784139394&width=150",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/Expertos_3000x3000_dce88505-7fe4-4dfd-a30e-7218fb047112.png?v=1657292402&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/2_1.jpg?v=1656021952&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/Logos_Web_BN-01.png?v=1655999661",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/Logos_Web_BN-02.png?v=1655999640",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/Logos_Web_BN-03.png?v=1655999652",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/web-pixels@05c62d7ewbe538af9pdeb4fec1me339d55a/web-pixel-shopify-app-pixel@0530/sandbox/worker.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/web-pixels@05c62d7ewbe538af9pdeb4fec1me339d55a/custom/web-pixel-shopify-custom-pixel@0530/sandbox/modern/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/products/01.AlbertoLabbeValverde.jpg?v=1654123217&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/products/02.JuanPauloOvalleI.jpg?v=1654124292&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/products/03.MauricioGuglielmettiV.jpg?v=1654124420&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/products/04.JoseTomasLabbeF.jpg?v=1654124542&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/Foto_biblioteca-01_15b1e454-d65d-4217-8b31-0f3a2ff95330.png?v=1659619785",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/Foto_biblioteca-02_7870e118-da9d-47ab-b0ba-def22f6e487d.png?v=1659619823",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/Foto_biblioteca-03_dada6b9e-65cf-49ca-841f-77fc915b159a.png?v=1659619833",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-newsletter.css?v=103472482056003053551654045684",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-list-payment.css?v=69253961410771838501654045668",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-list-social.css?v=52211663153726659061654045657",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/component-rte.css?v=69919436638515329781654045685",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/t/2/assets/disclosure.css?v=646595190999601341654045668",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://netdna.bootstrapcdn.com/font-awesome/4.0.3/fonts/fontawesome-webfont.woff?v=4.0.3",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/fonts/open_sans/opensans_n7.a9393be1574ea8606c68f4441806b2711d0d13e4.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/products/01.ReneLuisNunezA.jpg?v=1654124644&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/products/03.JoseTomasChadwickQ.jpg?v=1654560771&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/products/05.ClaudiaBulnesO.jpg?v=1654124936&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/products/07.CristobalAllendeL.jpg?v=1654125104&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/products/Disenosintitulo.jpg?v=1661211761&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/products/Ana_Iribarra_O.jpg?v=1657219594&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/products/01.M.VirginiaDiazM_GerentedeAdministracionyFinanzas.jpg?v=1656087650&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/RML.png?v=1741090472&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/Foto_biblioteca-04_1960fdb5-911d-4fd5-bb2d-5fa34886c6ca.png?v=1659619867",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/Foto_biblioteca-05_c27e297f-e2b6-4302-88e0-396d210fefc7.png?v=1659619885",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/Foto_biblioteca-06_1b246577-5665-4644-afcb-8c13c9fbf603.png?v=1659619905",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/ajax-loader.gif",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/fonts/slick.woff",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://shop.app/pay/hop?analytics_trace_id=9412c235-44c9-4179-8c82-1311bb03972e&target_origin=https%3A%2F%2Flabbe.legal&client_handle=labbe-ovalle-guglielmetti-abogados-limitada.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/web-pixels/strict/app/web-pixel-shopify-app-pixel@0530.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABNEAAABkBAMAAABayruYAAAAJFBMVEUAAADa2tr/////9/e6urpTU1O5ubn39/f///9ZWVlfX1/z8/O/OctmAAAACXRSTlMA//////////ZO3iNwAAALPElEQVR4AezdwY6bShMF4GP6krX9Bqgk9kiI/SzyAAir9lnlFfL6N26OWhXckDae9mClj/L7L1czMMbfbYDMOCgpKSkpwelyRmIEd6mEhTQpDabvu1C7vsf2ALM6cLlctquVtq2YDwC1jrfHEVDV8fagvln7p7XOlUKVi9SKWrncY5GQnN0DhLuZ1HZJa7WZPemU0GCc6hUMBtVue4BZHeD3v1caTn9KIyiPSimIvjw8Sq",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACY4AAADCCAMAAADT9DSoAAAANlBMVEUAAADa2tr/////9/e5ubn39/dTU1P29vbv7+/+/v74+Pjw8PD///9ZWVlfX1/z8/P5+fn///9RgilMAAAAEnRSTlMA///////////////2////9gn80juWAAAR/UlEQVR4AezdAW+jOBPG8QcgVPv9P+xqHQPvu9nrTWWd1enNuY7D/ydpS+gwdqRq44yN0WUBAAAAAAAA06u/sVPPbZZ0/Ie5LNvIEWbRu11msCsK7duYZM4OcaWzf1+rVk13fbTpj1SctXMWZJHluSLYTmxlUBlVxJlkZz/py2a/txeV/o1qls9B3q55/TALAAAAHa16Ke",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.weglot.com/weglot_script_tag.js?shop=labbe-ovalle-guglielmetti-abogados-limitada.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/favicon.png?crop=center&height=32&v=1654119583&width=32",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/polyfills.DsjDEvpF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/app.B1UEJM_E.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/2c1ab0fe.Dbn2KvkT.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.Cosa-1QR.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/4b4bc88f.BVG-8vs-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/bfe75f31.CdzI9Lv4.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/2bac2c53.FvZqk_Sq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/9dba8418.CUU9Kc02.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/cb38e5c2.DSyDHcIP.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/3d539943.Dqh8vmzW.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/2255f8fa.gpqqj3Wm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/d25d1b95.D4XjhwOr.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/b8733b27.DVp9kpeJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/e39bc11c.BWdA5WrW.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/08a3b809.CVBmyqCk.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.DNQiYH3O.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/69fae6d4.C95_LMnM.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/f67abd2c.BJ4Oar_u.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/e12db40c.BATxw89L.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/60a453ce.BtOFzRfk.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/c639b2b4.B8DVgBhd.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/f8706cb6.D3lUO3TO.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/dffdfb34.COkxEXi3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/3ca8ef7e.DR1P3e7G.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/1f5e7811.DfKsQAhu.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/3.jpg?v=1656021966&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/1a6c2867.D8mTtJ_Z.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/2fdb3dd3.WMnLqSlT.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/22345fd4.lDfLT5hl.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/0e67bd3b.CiYaWEVC.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/74835653.CaIcnzTt.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/a9fa9fda.Ds30UU7w.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/ca3e798e.BBho0lps.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/47b970b2.CPY2nGoJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/064f6ac1.BIC1aQqg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/efa0389a.vKhl98uv.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/4b1c22b7.FNlftD5S.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/17425706.BtEVPbip.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/cb5cf153.Dg2S1aZz.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/e3e348f2.BNwkws-Q.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/71ae3d5c.Di_tSGZ3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/78ab3dd0.Bvzt-Paf.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/89e2d30a.BRmUDQhA.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/ed9f2238.BewoXymt.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/6fb6f9d8.DifgCYrl.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/1444e6bd.CLS56A6L.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/0b8657b8.rYcNFStj.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/55098bf1.CZYij7Ob.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/a422df8c.DqCsy-7Y.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/f49d4216.BLZFCuNT.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/79974aab.CWrQ0hfU.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/7b0c98ea.C1m82HSq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/d22d2b80.CSfHczWD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/f58f39d8.Cq7rzFUq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/e03065ab.BBx-NAvX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/0e9ee714.CR-H9GrF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/39921a74.Mratw4ys.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/7a8217fd.D03wpfl8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/c6b02d73.BjpLmuyg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/ec391382.DHzoQU0V.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/24773686.BjRbJMB7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/2210eadb.DF0gIp_2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/71b60e0a.DfPLdYsH.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/6bfea526.BiTkHB9o.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shop/files/Negocios.png?v=1657238292&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/ac5a19ff.BsT-L1QA.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/598fef4e.jpLk7ufh.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/e77f7fe0.BJqC7Qgs.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/cc6ff67d.CZ3j9Gxk.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/bf513f9c.DxE_1kx0.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/dfca5da5.BAnMa568.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/dae24aab.CVNnVl1k.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/ddf59287.VO_keXSX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/01973ac7.CVAr8Pej.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/58314944.B0jsjr69.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/945a08d6.xdF1UB1X.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/7bc8057b.B28gX89h.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/a25deb9a.CUZtBW-N.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/2b89a178.DPaX0GBX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/b684bff6.B2KGfG3c.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/910cd6e2.dH9fdI52.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/347b440c.BduI4yZr.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/9ce08e25.BiKFZwVD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/181d38d3.CLNFOKb-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/792bb671.B3OvVnSg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/9ca7d819.CdW8eEzr.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/f51e663e.BlZEXqdR.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/21cc90a2.DHzOO82q.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/64de7b49.DqdJl5li.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/ca0c3e72.D8mpF0ox.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/8e79be58.BnieBDnL.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/90e26f5f.CQTVbXU8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/31cc568e.95lmLO5k.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/65f3d4da.Bb3QiqCm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/ca5e9c49.BN_FThgm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/f3e117aa.B-s5M24_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.C1TUxG1O.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/b3389d5c.2aWeZ1D5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/73a9b0a0.BhpXZgXg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/25604ae0.56pfEpxV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/dada7e07.DMPc6rKm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.PUUWyC7P.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/f692f62f.DGKSLXXr.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/9babe369.SH-YgBx8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/434e3b0a.oup8Ur0H.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/e0989459.3MVNiKY8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/cdfd59e6.COPLdum1.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/fc21c11a.UcRxeNXj.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/e129c76e.DTjriAee.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/d4ea2faa.ChfKjLez.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/fe885b80.wv-bqZBc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/f78726c8.B_yQ6cC4.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/e477f96c.lPemMKlK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/d7065744.DH5rilol.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/7ee73f43.B_cT54pw.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/0c0ad074.DA-3zBKv.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/8fe56fc9.BwLCrTzJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/87bfafec.CxwEzGHg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/051149c8.lHD9iIAq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/d2e6a587.Q26QXgrg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/c10167e6.B__oI2w3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/b9c0319a.DcGEivT2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/17e57de1.C4OivbHV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/app.CcGlIMpn.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/wallet-prefilled-guest-return.BZwmSkmD.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.DUY3Jbo2.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/OnePage.C_uC3EPz.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/VatNumberValidationField.CAYYnuvZ.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/ShopPayLogo.87JMHPUK.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/ShopPayVerificationTrigger.BnDF3H7t.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/BillingAddressForm.BdwN7V1K.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/Foto_biblioteca-07_d0997cd0-d195-4715-85b4-d419bfb9703a.png?v=1659619931",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/Foto_biblioteca-08_030c8435-d7df-49c2-b22b-5b144a2ff60c.png?v=1659619953",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/Foto_biblioteca-09_be7a08cf-aa92-4cd0-a88a-58189d97cee4.png?v=1659619981",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/PhoneField.uZEuHncj.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/Popover.Bi1nHaU-.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/Choice.CrYuHUmO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/EmptyState.BEvzDDvy.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/TransitionHeight.CuRoM9zv.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/StickyPayButton.D-gNjNDa.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/Switch.BS8yVgoP.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/.well-known/shopify/fec/produce",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/.well-known/shopify/fec/produce",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayProgressIntercepts.CIy8uDiZ.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/Tipping.BcTJoNaV.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentIcon.gzvCNwz_.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentLine.DT05kVlY.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/Section.CU18S7Ap.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/constants.xO_7ctnq.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/Middot.D7Ujmshx.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/NEWSLETTER_1.png?v=1678301513&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/PORTADAS_WEB_LABBE_1_eb08e960-19d9-4059-a369-1fab690052a4.png?v=1678301130&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/PODCAST_LABORAL_VACACIONES_-_ANA_IRIBARRA_2.png?v=1678300684&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/PORTADAS_WEB_LABBE_2_54233630-a59c-4f68-9383-6b1b42f0cddf.png?v=1678302164&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/NEWSLETTER_ee5e7c0c-47ab-4c04-baf7-8ca4e4aa6341.png?v=1678299988&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/PORTADAS_WEB_LABBE_44630872-24e7-4eca-b646-8085b77a812f.png?v=1673360710&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/CARATULA_JTLABBE_-_IVA.png?v=1671632436&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/PORTADAS_WEB_LABBE_2.png?v=1671116099&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/PORTADAS_WEB_LABBE_ec4909b5-3d93-4a9b-bdc1-b5e8acf2b49e.png?v=1671115950&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/PORTADAS_WEB_LABBE_1.png?v=1671115784&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/EstimatedDeliveryContent.B_THySFF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethods.DU0m5rdF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethodSelector.B0hio2RO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/SubscriptionPriceBreakdown.vTcdVGq4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/BelowTheFoldContent.BKRoWsh4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/RememberMeSection.JBO5WNhc.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/social-sharing.png?v=1784139394&width=170",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentMethodProgressionHost.C0BOgdmL.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/RedirectionNotice.DgiInWJ-.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/PayButtonSection.CZuxzxFG.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/hooks.BDst-6PZ.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayButtonClassName.D-F4uQ9M.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/MobileOrderSummary.BlloiNDx.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentOptionSelector.s-Kd_X2E.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/caratulas_1.png?v=1669387548&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://labbe.legal/cdn/shop/files/NEWSLETTER.png?v=1669387672&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "localization",
+      "desde": "labbe.legal"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_essential",
+      "desde": "labbe.legal"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_analytics",
+      "desde": "labbe.legal"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_marketing",
+      "desde": "labbe.legal"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shop_app_essential",
+      "desde": "shop.app"
+    }
+  ],
+  "peso": {
+    "total_bytes": 2868024,
+    "al_abrir_bytes": 2366080,
+    "n_peticiones": 303,
+    "mas_pesados": [
+      {
+        "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.DNQiYH3O.js",
+        "bytes": 189473
+      },
+      {
+        "url": "https://labbe.legal/cdn/shop/files/Negocios.png?v=1657238292&width=1500",
+        "bytes": 126860
+      },
+      {
+        "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.Cosa-1QR.js",
+        "bytes": 92088
+      },
+      {
+        "url": "https://labbe.legal/cdn/shopifycloud/checkout-web/assets/c1/4b4bc88f.BVG-8vs-.js",
+        "bytes": 86473
+      }
+    ]
+  },
+  "html_len": 250465
+}
