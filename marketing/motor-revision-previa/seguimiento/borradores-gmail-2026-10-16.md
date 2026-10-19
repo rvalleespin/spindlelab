@@ -77,3 +77,10 @@ Borradores del toque 2, como respuesta en el mismo hilo (`replyToMessageId` = me
 
 Cierre (toque 3, día 7, ~viernes 23-oct): texto en `borradores/borradores-toque3.json`, aún no creado.
 El Copiloto Verifica y Cumple corrió el 19-oct ~11:15 UTC y dejó 15 borradores de seguimiento propios (otra cohorte); ninguno es para estas 5 direcciones.
+
+## Envío del 19-oct-2026 (~12:45 UTC): segunda ola y reactivación, 21 correos
+Ramón envió desde Gmail los 6 de la segunda ola y los 15 de reactivación (confirmado con `in:sent`, un hilo por correo). Ids de hilo y mensaje en `envios-motor-2026-10.csv`.
+- **Segunda ola: abierta y enviada completa** (pfeffer, gazmuri-cia, pfvabogados, palavicino, cisternasycia, bacs). Precio sin "desde".
+- **Reactivación:** 14 de los 15 salieron con "Arreglarlo cuesta **desde** $149.000 + IVA" (el de tuoficinacontable no lleva cifra). Ramón decidió ese día quitar el "desde" en todo lo nuevo, pero los correos ya estaban enviados: no se puede corregir. `generar_reactivacion.py` ya no lo lleva, así que `borradores-reactivacion.json` muestra la versión sin "desde", distinta de lo enviado. Lo enviado vive en Gmail.
+- Toque 2 de estos 21: jueves 22-oct (recordatorio programado). Toque 3 de la primera ola: viernes 23-oct (recordatorio programado). Los 5 borradores del toque 2 de la primera ola siguen sin enviar al momento de este registro.
+- El Copiloto envió además seguimientos propios en el mismo rato (vanguardiapropiedades, bollek, medic-home, biofotonica, ultravision); no son del motor.

@@ -1,13 +1,14 @@
 # Borradores de REACTIVACION (17-oct-2026): contactos que recibieron correos de SEO/ChatGPT hace mas de 4 semanas y no respondieron.
 # Gancho nuevo = un hallazgo de cumplimiento o de contacto, VERIFICADO por dos revisores independientes (verificacion-independiente/2026-10-17-reactivacion-completo.json).
 # Misma voz y mismas reglas que generar.py; la primera frase de la reactivacion reconoce el correo anterior y dice que hoy es otro tema.
+# DECISION DE RAMON (19-oct-2026): el precio va SIN 'desde' en todo lo nuevo. Los 14 correos de reactivacion con precio ya salieron con 'desde $149.000 + IVA' el 19-oct.
 # NO se envia nada.
 import json
 BAJA_APOLLO="Si no quieres que te escriba, dime y no insisto. Saqué tu correo de Apollo, una base comercial de contactos B2B; en verifica.spindlelab.cl/privacidad digo qué datos trato y cómo pedir que deje de hacerlo."
 BAJA_SITIO="Si no quieres que te escriba, dime y no insisto. Saqué tu correo del sitio de ustedes; en verifica.spindlelab.cl/privacidad digo qué datos trato y cómo pedir que deje de hacerlo."
-PRECIO_F1="Arreglarlo cuesta desde $149.000 + IVA y queda en dos o tres días: un aviso junto al formulario y una plantilla de política para que la revise tu abogado."
-PRECIO_C1="Dejar un aviso de cookies que pregunte antes cuesta desde $149.000 + IVA y queda en dos o tres días."
-PRECIO_F9="Arreglarlo cuesta desde $149.000 + IVA y queda en dos o tres días: una plantilla de política de privacidad para que la revise tu abogado, y los dos enlaces del pie funcionando."
+PRECIO_F1="Arreglarlo cuesta $149.000 + IVA y queda en dos o tres días: un aviso junto al formulario y una plantilla de política para que la revise tu abogado."
+PRECIO_C1="Dejar un aviso de cookies que pregunte antes cuesta $149.000 + IVA y queda en dos o tres días."
+PRECIO_F9="Arreglarlo cuesta $149.000 + IVA y queda en dos o tres días: una plantilla de política de privacidad para que la revise tu abogado, y los dos enlaces del pie funcionando."
 LLAMADA="Si quieres, lo vemos en una llamada de 20 minutos."
 LLAMADA_MUESTRO="Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría."
 LINEA_PRECIO="Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada."
@@ -80,7 +81,7 @@ c1('R50','rento.cl','contacto@rento.cl','Hola:','B','agosto',
  "varias cookies de Google (analítica y publicidad) y de Meta (Facebook e Instagram)",
  "Verificado por 2 revisores (misma lista con dos navegadores distintos). OJO: el HTML trae un plugin de aviso de cookies (Hu-manity, 'blocking': false) que no se pintó en la medición desde IP de nube; un revisor lo vio y el otro no. Por eso el correo NO dice 'no vi ningún aviso': solo que las cookies estaban antes de aceptar o rechazar. No decir 'no tienen aviso'. Salieron además cookies de otra herramienta de medición (_ym_*) que no se nombra.",
  sin_aviso=", antes de que yo aceptara o rechazara algo.",
- precio="Que el sitio pregunte antes de guardar esas cookies cuesta desde $149.000 + IVA y queda en dos o tres días.",
+ precio="Que el sitio pregunte antes de guardar esas cookies cuesta $149.000 + IVA y queda en dos o tres días.",
  puente_txt="Entre fines de agosto y comienzos de septiembre te escribí")
 c1('R68','urbac.cl','propiedades@urbac.cl','Hola:','B','sep',
  "cookies de Google (analítica y publicidad)",
