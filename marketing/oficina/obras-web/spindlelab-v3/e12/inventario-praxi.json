@@ -24,7 +24,19 @@
       "commit": "a360d7a",
       "clonSuperficial": true,
       "cabezaDeMainEnGithub": "a360d7a",
-      "soloLectura": true
+      "soloLectura": true,
+      "historialCompleto": {
+        "como": "git clone --bare --filter=blob:none en el scratchpad, no en /home/user/praxis-coach",
+        "medidoUtc": "2026-10-19T12:59Z",
+        "crudo": "e12/praxi/crudo/historial-git-praxi.txt"
+      }
+    },
+    "actualizado": {
+      "fecha": "2026-10-19",
+      "horaChile": "09:55 a 10:40",
+      "por": "Diego, con el criterio de Simón",
+      "motivo": "Compuerta 2: respuestas 5a a 5f de Ramón (19-oct, ~09:50 Chile), leídas como las dejó el orquestador con Ramón",
+      "marca": "[C2.5x] en inventario-praxi.md"
     }
   },
   "proyecto": {
@@ -48,7 +60,7 @@
         "mensaje": "Merge pull request #131"
       }
     },
-    "commitsEnMain": 349,
+    "commitsEnMain": 350,
     "pullRequests": {
       "total": 131,
       "primero": {
@@ -60,7 +72,7 @@
         "fechaUtc": "2026-08-25T18:15:49Z"
       }
     },
-    "fuenteHistorial": "API de GitHub (list_commits, 4 páginas de 100; list_pull_requests), leída el 16-oct",
+    "fuenteHistorial": "git log sobre un clon completo, 19-oct (antes: API de GitHub, 16-oct, que dio 349)",
     "queEs": "Coach de hipertrofia por chat, en español de Chile. La persona cuenta cómo entrenó en una frase; la app guarda las series y decide con su historial cuándo subir el peso.",
     "paraQuien": "Gente que entrena con pesas y quiere progresar con método, en Chile. La landing dice para quién no es: rehabilitar una lesión, tratamiento médico o nutricional.",
     "claim": {
@@ -77,7 +89,7 @@
       "diasDePrueba": 7,
       "fuente": "lib/flow/planes.ts, lib/acceso.ts"
     },
-    "quienLoHizo": "Ramón, con sesiones de Claude Code (los commits llevan Co-Authored-By: Claude); dos sesiones en paralelo, app y marca+sitio",
+    "quienLoHizo": "Ramón Vallejos, con agentes de IA (sesiones de Claude Code): 218 de 219 commits sin merge con Co-Authored-By: Claude (git log, 19-oct). El caso lo dice [C2.5e]. No está medido que él revisó cada cambio: 50 commits fueron directo a main",
     "permiso": {
       "estado": "no aplica",
       "detalle": "Producto propio de Ramón; él lo propuso como caso el 16-oct (compuerta 1, punto 3)."
@@ -98,7 +110,44 @@
       "crudo": [
         "e12/praxi/crudo/estado-praxi.coach-headers.txt",
         "e12/praxi/crudo/estado-praxi.coach-cuerpo.txt"
-      ]
+      ],
+      "notaC2": "[C2.5b] No va a la ficha ni al texto. Sigue: ningún enlace a praxi.coach y sin offers ni url en el JSON-LD"
+    },
+    "commitsEnMainDetalle": {
+      "sinMerge": 219,
+      "merges": 131,
+      "sinMergeConCoAuthoredByClaude": 218,
+      "sinLaLinea": [
+        "be10288 (28-jul, bandera PAGOS_ACTIVOS)"
+      ],
+      "porPullRequest": 169,
+      "directoAMain": 50,
+      "directoAMainFechas": "21 a 28-jul (38) y 5-6-ago (12)",
+      "conClaudeSession": [
+        "f8d5970 (22-jul)",
+        "1011f60 (1-ago)"
+      ],
+      "valoresCoAuthoredBy": {
+        "Claude Opus 5": 101,
+        "Claude Opus 5 (1M context)": 56,
+        "Claude Opus 4.8 (1M context)": 31,
+        "Claude Opus 4.8": 30
+      },
+      "notaModelos": "Es el modelo con que trabajó cada sesión de Claude Code, no el que usa la app",
+      "fuente": "git log, 19-oct (crudo/historial-git-praxi.txt)",
+      "antes": "349 por la API de GitHub el 16-oct"
+    },
+    "estadoAl19oct": {
+      "rutas": [
+        "/",
+        "https://www.praxi.coach/",
+        "/planes"
+      ],
+      "status": 402,
+      "cabecera": "x-vercel-error: DEPLOYMENT_DISABLED",
+      "medidoUtc": "2026-10-19T12:59:25Z",
+      "crudo": "e12/praxi/crudo/estado-praxi.coach-19oct-headers.txt",
+      "publico": false
     }
   },
   "verificacionDeHoy": {
@@ -216,7 +265,8 @@
     {
       "ingrediente": "API de Anthropic solo en servidor: claude-sonnet-5 (conversa), claude-haiku-4-5 (extrae)",
       "efecto": "Escribes como a una persona y el registro queda guardado sin formularios",
-      "evidencia": "lib/anthropic.ts:14,17; import \"server-only\""
+      "evidencia": "lib/anthropic.ts:14,17; import \"server-only\"",
+      "notaC2": "[C2.5d] Los modelos se nombran; papeles en la clave «modelos»"
     },
     {
       "ingrediente": "Lógica de entrenamiento en código con tests",
@@ -290,7 +340,8 @@
       "Filtra en código antes de llamar al modelo (lib/coach/pareceRegistro.ts; 805 ms de mediana, dicho en CLAUDE.md:589-590).",
       "Decide en código: RIR objetivo por semana, subir carga, serie efectiva, descarga (lib/domain/*), y se lo entrega al modelo como texto (lib/coach/signals.ts).",
       "Conversa con Sonnet y un prompt en dos capas: método estático cacheado + contexto por persona después del corte (caché: 20-25 % de ahorro en 48 llamadas, dicho en CLAUDE.md:69-76).",
-      "Guardrails de salud y edad detectados en código e inyectados en cada turno que corresponde."
+      "Guardrails de salud y edad detectados en código e inyectados en cada turno que corresponde.",
+      "Al cerrar el día, claude-haiku-4-5 escribe una observación corta con criterio que queda en training_day_logs.conclusion (lib/coach/conclusion.ts:42-60) [C2.5d]"
     ],
     "noDecide": [
       "el peso de la próxima sesión",
@@ -566,7 +617,15 @@
         "llevaLanding3SinProcedencia": false
       }
     ],
-    "rotuloSiVaAlSitio": "Datos de ejemplo de la landing de Praxi"
+    "rotuloSiVaAlSitio": "Datos de ejemplo de la landing de Praxi",
+    "conLaApp": {
+      "hay": false,
+      "marca": "[C2.5a]",
+      "buscado": "git ls-files de los dos repos con extensión de imagen o video y nombres con «captur», «screen» o «pantalla», 19-oct",
+      "seUsa": "las 19 capturas de páginas públicas (capturas.archivos) y los recortes de tableros/e12-direcciones/proto/a/medios/praxi-*.webp",
+      "hueco": "Inicio, Coach, Registro, Progreso y Perfil con sesión iniciada; se nombra en la página",
+      "siLlegan": "de su iCloud («PRAXI siembra»), desde una cuenta de prueba suya, con fila aquí, y la nota del hueco sale"
+    }
   },
   "material": [
     {
@@ -722,8 +781,8 @@
       "fuente": "GitHub"
     },
     {
-      "frase": "349 commits y 131 pull requests",
-      "fuente": "GitHub, 16-oct"
+      "frase": "350 commits y 131 pull requests",
+      "fuente": "git log, 19-oct (antes 349 por la API, 16-oct)"
     },
     {
       "frase": "384 tests en verde sobre el último commit, el 16-oct",
@@ -762,8 +821,25 @@
       "fuente": "repo"
     },
     {
-      "frase": "Hoy el sitio no está en línea",
-      "fuente": "medido"
+      "frase": "Se construyó con agentes de IA: Ramón, con sesiones de Claude Code; 218 de 219 commits de código llevan su firma",
+      "fuente": "git log, 19-oct",
+      "marca": "[C2.5e]",
+      "limite": "no está medido que él revisó cada cambio (50 commits directo a main)"
+    },
+    {
+      "frase": "claude-sonnet-5 conversa; claude-haiku-4-5 convierte cada mensaje en un registro guardado y escribe la conclusión del día",
+      "fuente": "lib/anthropic.ts:14,17 y usos",
+      "marca": "[C2.5d]"
+    },
+    {
+      "frase": "La señal para saber si funcionaba: que la persona vuelva a anotar, con su peso, un ejercicio que ya había anotado («activado»); programada y emitida desde el servidor, con tests",
+      "fuente": "docs/encargos/2026-08-05-instrumentacion-medicion.md:95-97; lib/growth/activacion.ts, activacion-server.ts; 11 tests",
+      "limite": "cuántas personas la cumplieron no se publica; «quedó programada», no «quedó medida» como resultado"
+    },
+    {
+      "frase": "En reseñas de apps de entrenamiento hay quejas textuales de que la app se olvida de lo que hiciste",
+      "fuente": "dicho: docs/2026-08-03-inteligencia-mercado-praxi.md §1.2 y §2.1 (5 citas [D])",
+      "limite": "no es un conteo; «la que más se repite» es juicio de esa investigación y va atribuido"
     }
   ],
   "noSePuedeDecir": [
@@ -781,7 +857,7 @@
     },
     {
       "que": "«En producción», «disponible», enlaces a praxi.coach",
-      "porque": "402 DEPLOYMENT_DISABLED hoy"
+      "porque": "402 DEPLOYMENT_DISABLED el 16 y el 19-oct"
     },
     {
       "que": "«Basado en evidencia» como sello",
@@ -794,12 +870,25 @@
     {
       "que": "Que el material es fotografía",
       "porque": "Es generado"
+    },
+    {
+      "que": "Que Praxi está «en pausa», «fuera de línea», «apagada» o «sin usuarios»",
+      "porque": "[C2.5b] Ramón: «no se cuenta». Salen la ficha «Estado: Fuera de línea» y el párrafo final de «Sin métrica» del texto del paso 2"
+    },
+    {
+      "que": "Las fotos landing-1/2/3.jpg sueltas, recortadas o de fondo",
+      "porque": "[C2.5c] Stock sin licencia escrita; dentro de una captura de la landing, sí"
+    },
+    {
+      "que": "Que la app usa el modelo que la programó (Claude Opus)",
+      "porque": "Opus programó en Claude Code; la app usa Sonnet 5 y Haiku 4.5"
     }
   ],
   "historiaKoto": [
     {
       "seccion": "Ficha",
-      "hay": "Propio · 2026 · Sitio y app · Next.js, Supabase, API de Anthropic, Mercado Pago · 21-jul a 25-ago · fuera de línea"
+      "hay": "Propio · 2026 · Sitio y app · Next.js, Supabase, API de Anthropic, Mercado Pago · 21-jul a 25-ago · Ramón Vallejos, con agentes de IA",
+      "notaC2": "[C2.5b] sin línea de estado; [C2.5e] con agentes de IA"
     },
     {
       "seccion": "Desafío",
@@ -837,7 +926,7 @@
         "material/praxi-reel-a-memoria-720.mp4",
         "material/praxi-carrusel-v2-*.jpg"
       ],
-      "falta": "Pantallas de la app (pedir a Ramón)"
+      "falta": "Pantallas de la app con sesión: hueco nombrado en la página [C2.5a]"
     },
     {
       "seccion": "Cómo piensa",
@@ -848,17 +937,14 @@
     },
     {
       "seccion": "Resultado",
-      "hay": "Sin métrica. De oficio: 384 tests, gate 8/8, build limpio, 16-oct"
+      "hay": "Sin métrica. De oficio: 384 tests, gate 8/8, build limpio, 16-oct",
+      "notaC2": "[C2.5b] no se dice que el sitio no está en línea"
     }
   ],
-  "recomendacionVista3": "Sigue Combeau. Praxi cubre un tercio de página sin relleno, pero «La pieza» quedaría sin la app. Praxi entra al índice como «Propio» y su página se arma con las capturas de la app o con la decisión de ir sin ellas.",
+  "recomendacionVista3": "[C2.5f] Superado: Praxi y Combeau son los dos casos reales con página propia en /trabajo/<caso>/. La de Praxi se arma con lo que hay y nombra el hueco de la app.",
   "pedirARamon": [
-    "Capturas de la app a 390 desde una cuenta de prueba suya (Inicio, Coach con un registro guardado, Registro/entrenamiento, Progreso, Perfil), corriendo Praxi en su Mac con su .env.local; o decidir ir sin ellas.",
-    "¿Se cuenta que Praxi está en pausa (402 DEPLOYMENT_DISABLED)? Si lo reactiva, se mide de nuevo antes de enlazar.",
-    "Procedencia y licencia de landing-1.jpg, landing-2.jpg y landing-3.jpg.",
-    "¿Se nombran los modelos (Sonnet 5, Haiku 4.5) o basta «la API de Anthropic»?",
-    "Los datos de uso del 24-ago no se publican salvo decisión suya; recomendación: «Sin métrica».",
-    "¿El caso dice que lo construyó con agentes de IA (los commits lo dicen)?"
+    "Capturas de la app con sesión iniciada, si las sube (iCloud «PRAXI siembra»); hasta entonces, hueco nombrado",
+    "Si praxi.coach vuelve a responder 200, se mide de nuevo antes de enlazar"
   ],
   "senales": {
     "ruta": "/trabajo/praxi/",
@@ -914,6 +1000,20 @@
       "bytes": 7383,
       "sha256": "66464296a4efcb15d1ed7e34c6c7dea52a5cfd66657ffccef868c9cdcbd86439",
       "dimensiones": null
+    },
+    {
+      "ruta": "e12/praxi/crudo/historial-git-praxi.txt",
+      "bytes": 2322,
+      "sha256": "1cd914c393c6d8ee0f71909216c2a5ae1f05e0e548bf9e7be613dce8840c2146",
+      "dimensiones": null,
+      "fecha": "2026-10-19"
+    },
+    {
+      "ruta": "e12/praxi/crudo/estado-praxi.coach-19oct-headers.txt",
+      "bytes": 849,
+      "sha256": "af8d3f9ab2e03b85ab23c46a2d84ad339d4051fd127da98c65ce0c0cc8f7513e",
+      "dimensiones": null,
+      "fecha": "2026-10-19"
     }
   ],
   "noSePudo": [
@@ -936,6 +1036,116 @@
       "fecha": "2026-10-16 20:12 (Chile)",
       "correccion": "Primera versión",
       "origen": "Diego, con Simón"
+    },
+    {
+      "fecha": "2026-10-19 10:40 (Chile)",
+      "correccion": "Compuerta 2, respuestas 5a a 5f; claves nuevas modelos, fotosLanding, respuestasRamon, capturas.conLaApp, proyecto.estadoAl19oct y commitsEnMainDetalle; sePuedeDecir y noSePuedeDecir al día",
+      "origen": "Ramón, compuerta 2; Diego, con Simón"
+    },
+    {
+      "fecha": "2026-10-19",
+      "correccion": "349 → 350 commits (git log sobre clon completo; el 349 era de la API de GitHub)",
+      "origen": "Diego"
     }
-  ]
+  ],
+  "modelos": {
+    "seNombran": true,
+    "marca": "[C2.5d]",
+    "claude-sonnet-5": {
+      "constante": "COACH_MODEL",
+      "definicion": "lib/anthropic.ts:14",
+      "nombreParaElLector": "Claude Sonnet 5",
+      "papel": "hace de coach: la conversación, en streaming",
+      "usos": [
+        "app/api/chat/route.ts:228-229 (messages.stream)"
+      ]
+    },
+    "claude-haiku-4-5": {
+      "constante": "EXTRACTION_MODEL",
+      "definicion": "lib/anthropic.ts:17",
+      "nombreParaElLector": "Claude Haiku 4.5",
+      "papel": "extrae los registros y escribe la conclusión del día",
+      "usos": [
+        {
+          "que": "convierte el mensaje en series guardadas (herramienta extraer_registro forzada)",
+          "donde": "lib/coach/extract.ts:129",
+          "loLlama": "app/api/chat"
+        },
+        {
+          "que": "saca el peso corporal de una frase (extraer_peso forzada)",
+          "donde": "lib/coach/extractWeight.ts:63",
+          "loLlama": "app/api/chat"
+        },
+        {
+          "que": "pasa a Registro el plan que propuso el coach (guardar_plan forzada)",
+          "donde": "lib/coach/planExtract.ts:180",
+          "loLlama": "app/api/plan/save"
+        },
+        {
+          "que": "escribe la conclusión corta al cerrar el día (2-3 frases, máx. 220 tokens)",
+          "donde": "lib/coach/conclusion.ts:42",
+          "loLlama": "app/api/training/log"
+        },
+        {
+          "que": "resume lo útil de un documento subido (examen, InBody, foto)",
+          "donde": "lib/coach/documentExtract.ts:50",
+          "loLlama": "app/api/documents/upload"
+        },
+        {
+          "que": "latido diario que comprueba la llave de la API (interno, un token)",
+          "donde": "app/api/cron/salud/route.ts:43",
+          "loLlama": "cron de Vercel"
+        }
+      ]
+    },
+    "noConfundir": "Claude Opus 5 y 4.8 aparecen en los commits: programaron Praxi en Claude Code; la app no los usa"
+  },
+  "fotosLanding": {
+    "archivos": [
+      "public/landing-1.jpg",
+      "public/landing-2.jpg",
+      "public/landing-3.jpg"
+    ],
+    "marca": "[C2.5c]",
+    "trato": "stock sin licencia escrita",
+    "fuente": "bitacora-diseno.md:125, :145, :327 («foto de stock»); Ramón: «las fotos están en la nube»",
+    "uso": "nunca sueltas; solo dentro de capturas de la landing",
+    "enCapturas": {
+      "landing-3": [
+        "capturas/landing-1440-sec06.jpg",
+        "capturas/landing-1440-completa.jpg",
+        "capturas/landing-390-completa.jpg"
+      ],
+      "landing-1": [],
+      "landing-2": []
+    }
+  },
+  "recomendacionVistaHasta19oct": "Sigue Combeau. Praxi cubre un tercio de página sin relleno, pero «La pieza» quedaría sin la app. Praxi entra al índice como «Propio» y su página se arma con las capturas de la app o con la decisión de ir sin ellas.",
+  "pedirARamonHasta19oct": [
+    "Capturas de la app a 390 desde una cuenta de prueba suya (Inicio, Coach con un registro guardado, Registro/entrenamiento, Progreso, Perfil), corriendo Praxi en su Mac con su .env.local; o decidir ir sin ellas.",
+    "¿Se cuenta que Praxi está en pausa (402 DEPLOYMENT_DISABLED)? Si lo reactiva, se mide de nuevo antes de enlazar.",
+    "Procedencia y licencia de landing-1.jpg, landing-2.jpg y landing-3.jpg.",
+    "¿Se nombran los modelos (Sonnet 5, Haiku 4.5) o basta «la API de Anthropic»?",
+    "Los datos de uso del 24-ago no se publican salvo decisión suya; recomendación: «Sin métrica».",
+    "¿El caso dice que lo construyó con agentes de IA (los commits lo dicen)?"
+  ],
+  "respuestasRamon": {
+    "fecha": "2026-10-19 ~09:50 (Chile)",
+    "cita": "5a tienes capturas en los archivos. 5b no se cuenta 5c las fotos están en la nube. 5d nombra. 5e. si fue con agentes de IA. 5f ambos son casos reales",
+    "5a": "No hay capturas de la app con sesión en los repos; se usan las de páginas públicas y el hueco se nombra",
+    "5b": "El caso no dice que está en pausa; sigue sin enlace, sin offers ni url",
+    "5c": "Stock sin licencia escrita; solo dentro de capturas de la landing",
+    "5d": "Se nombran: claude-sonnet-5 coach, claude-haiku-4-5 extrae y escribe la conclusión del día",
+    "5e": "El caso dice que se construyó con agentes de IA (git log)",
+    "5f": "Praxi y Combeau, casos reales con página propia"
+  },
+  "cierre19oct": {
+    "praxisCoachLog": "a360d7a",
+    "praxisCoachStatus": "limpio",
+    "historialDesde": "clon aparte en el scratchpad",
+    "llamadasAPraxiCoach": "3 GET (12:59 UTC)",
+    "serviciosDePraxiLlamados": [],
+    "spindlelabAstroTocado": false,
+    "generacionPagada": false
+  }
 }

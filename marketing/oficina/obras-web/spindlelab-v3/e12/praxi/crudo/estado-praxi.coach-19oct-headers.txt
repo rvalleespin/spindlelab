@@ -1,0 +1,25 @@
+# GET a praxi.coach, 19-oct-2026, user-agent de Chrome 141 (curl -sS -D -). La línea 'HTTP/1.1 200 Connection Established' es del proxy de la sesión.
+
+== https://praxi.coach/ (2026-10-19T12:59:25Z)
+HTTP/1.1 200 Connection Established
+HTTP/2 402 
+content-type: text/plain; charset=utf-8
+date: Mon, 19 Oct 2026 12:59:26 GMT
+server: Vercel
+x-vercel-error: DEPLOYMENT_DISABLED
+
+== https://www.praxi.coach/ (2026-10-19T12:59:26Z)
+HTTP/1.1 200 Connection Established
+HTTP/2 402 
+content-type: text/plain; charset=utf-8
+date: Mon, 19 Oct 2026 12:59:26 GMT
+server: Vercel
+x-vercel-error: DEPLOYMENT_DISABLED
+
+== https://praxi.coach/planes (2026-10-19T12:59:26Z)
+HTTP/1.1 200 Connection Established
+HTTP/2 402 
+content-type: text/plain; charset=utf-8
+date: Mon, 19 Oct 2026 12:59:26 GMT
+server: Vercel
+x-vercel-error: DEPLOYMENT_DISABLED

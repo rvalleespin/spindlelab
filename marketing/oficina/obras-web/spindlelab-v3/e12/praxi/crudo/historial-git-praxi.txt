@@ -1,0 +1,57 @@
+# Historial de rvalleespin/praxis-coach, medido con git log el 19-oct-2026 (12:59 UTC)
+# Clon desnudo y sin blobs (git clone --bare --filter=blob:none) en el scratchpad de la sesión, NO en /home/user/praxis-coach
+# (ese clon es superficial, un solo commit, y no se le hizo fetch). Cabeza de main: a360d7a
+
+## Conteos sobre main
+commits en main: 350
+  sin merge: 219
+  merges (pull requests): 131
+sin merge con la línea 'Co-Authored-By: Claude …': 218
+días con commits: 28
+primer commit: c501964 2026-07-21 16:56:18 -0400 MVP inicial: coach de hipertrofia (Respinfitness)
+último commit: a360d7a 2026-08-25 14:18:11 -0400 Merge pull request #131 from rvalleespin/fix/rangos-de-reps
+
+## El único commit sin merge que no lleva la línea
+be10288 2026-07-28 19:45:34 -0400 Bandera PAGOS_ACTIVOS: free full, pago apagado hasta la cuenta SpA
+
+## Valores de Co-Authored-By (todas las apariciones en main; el modelo con que trabajó cada sesión de Claude Code, no el que usa la app)
+    101 Claude Opus 5 <noreply@anthropic.com>
+     56 Claude Opus 5 (1M context) <noreply@anthropic.com>
+     31 Claude Opus 4.8 (1M context) <noreply@anthropic.com>
+     30 Claude Opus 4.8 <noreply@anthropic.com>
+
+## Commits con la línea Claude-Session (URL a claude.ai/code; el id de sesión se omite)
+1011f60 2026-08-01 https://claude.ai/code/session_(omitido)
+f8d5970 2026-07-22 https://claude.ai/code/session_(omitido)
+
+## Autor de los commits
+    340 rvalleespin
+     10 Ramon Vallejos
+
+## Commits por mes
+     89 2026-07
+    261 2026-08
+
+## Comandos
+git rev-list --count main | --no-merges main | --merges main
+git log main --no-merges -i --grep='Co-Authored-By: Claude' --format=%h | wc -l
+git log main --format='%(trailers:key=Co-Authored-By,valueonly)' | sort | uniq -c
+
+## Cómo entraron a main los 219 commits sin merge
+directo a main (primer padre, sin merge): 50
+por pull request: 169
+fechas de los directos:
+      3 2026-07-21
+     10 2026-07-22
+     18 2026-07-23
+      3 2026-07-24
+      2 2026-07-25
+      2 2026-07-28
+      6 2026-08-05
+      6 2026-08-06
+quién fusionó los 131 merges (committer): 
+    129 GitHub
+      2 rvalleespin
+autor de los 131 merges:
+    131 rvalleespin
+(committer «GitHub» = fusionado en github.com o por su API, desde la cuenta del autor; no distingue si lo hizo una persona o una sesión)

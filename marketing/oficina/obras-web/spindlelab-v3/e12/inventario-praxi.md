@@ -5,6 +5,14 @@ rama `claude/magical-franklin-ckfki2` · manda la sección «Compuerta 1» de `e
 praxi como caso ya que creó un sitio y una app») y `e12/encargo-paso-2.md` §5 · gemelo legible por máquina:
 `inventario-praxi.json` · material y capturas en `e12/praxi/`.
 
+**Actualizado el 19-oct-2026, entre las 09:55 y las 10:40 (Chile) · Diego, con el criterio de Simón · con las respuestas
+de Ramón en la compuerta 2** (19-oct, hacia las 09:50: «5a tienes capturas en los archivos. 5b no se cuenta 5c las
+fotos están en la nube. 5d nombra. 5e. si fue con agentes de IA. 5f ambos son casos reales»), leídas como las dejó el
+orquestador con Ramón. Lo que cambió va en §10 (ahora «Lo que respondió Ramón») y en cada línea afectada, marcado
+**[C2.5x]**; el texto viejo que queda superado se tacha o se dice «hasta el 19-oct», no se borra. Mediciones nuevas de
+hoy: el historial con `git log` (§1, crudo `praxi/crudo/historial-git-praxi.txt`) y el estado de `praxi.coach`
+(`praxi/crudo/estado-praxi.coach-19oct-headers.txt`).
+
 **Qué es.** La fila que le faltaba a `inventario-casos.md`: lo que el índice de Trabajo y una página de caso pueden decir
 de Praxi, con la misma regla: **una etiqueta o un número que no tenga fila aquí no existe.** **Qué no es:** texto del
 sitio (Clara) ni dirección visual (Lucía).
@@ -27,12 +35,16 @@ se construyó vive en una copia sin `.git` en el scratchpad de la sesión, y el 
 1. **Praxi es la única pieza del portafolio con IA programada, y la única app con cuentas, datos de cada persona y
    cobro.** Es un coach de hipertrofia por chat, de Ramón, cobrado por SpindleLab SpA. Se construyó entre el **21-jul y
    el 25-ago-2026**:
-   **349 commits en `main` y 131 pull requests** (GitHub, leído hoy). Hoy, sobre una copia del último commit, pasan
+   **350 commits en `main`, 131 de ellos merges de pull request** (`git log`, 19-oct; el 16-oct la API de GitHub había
+   dado 349, ver «Correcciones»). Hoy, sobre una copia del último commit, pasan
    **384 de 384 tests**, el gate de marca da **8/8**, el typecheck sale limpio y el build de producción termina sin error.
-   Eso es lo que el caso puede decir con fecha y con instrumento.
-2. **La IA de Praxi hace dos cosas, y las decisiones no las toma el modelo.** Un modelo pequeño (Haiku 4.5) convierte
-   «hoy hice press banca 3x10 RIR 2» en series guardadas, obligado a responder con un esquema fijo. Un modelo grande
-   (Sonnet 5) conversa. **Cuándo subir el peso, cuándo descargar y qué serie cuenta se calculan en código con tests**
+   Eso es lo que el caso puede decir con fecha y con instrumento. **[C2.5e] Se construyó con agentes de IA, y el caso
+   lo dice:** 218 de los 219 commits que no son merge llevan la línea `Co-Authored-By: Claude …` que escriben las
+   sesiones de Claude Code (§2, «Quién lo hizo»).
+2. **La IA de Praxi entiende y conversa, y las decisiones no las toma el modelo.** Un modelo pequeño (`claude-haiku-4-5`)
+   convierte «hoy hice press banca 3x10 RIR 2» en series guardadas, obligado a responder con un esquema fijo, y escribe
+   la conclusión corta al cerrar el día. Un modelo grande (`claude-sonnet-5`) conversa. **[C2.5d] Los modelos se nombran
+   en el caso**, cada uno con su papel exacto (§4 y §5). **Cuándo subir el peso, cuándo descargar y qué serie cuenta se calculan en código con tests**
    (42 tests en esas cinco piezas) y se le entregan al modelo ya resueltos. Los guardrails de salud y de edad también
    van en código. No hay RAG, ni embeddings, ni modelo propio, ni ajuste fino: búsqueda en el código, cero apariciones.
    Esto le da al brief su única afirmación de IA verificable (§5).
@@ -40,6 +52,10 @@ se construyó vive en una copia sin `.git` en el scratchpad de la sesión, y el 
    `/robots.txt` (medido hoy, 22:56 UTC). No es el muro de pago de la app (que también devuelve 402, pero con un JSON `{ error, motivo: "plan" }`, `lib/acceso-server.ts:72-80`): es
    Vercel diciendo que el despliegue está deshabilitado. **Ningún enlace a `praxi.coach`** en el sitio mientras sea así
    (encargo §7.12). El caso se cuenta con capturas de una copia local y con el material del repo.
+   **[C2.5b] Re-medido el 19-oct a las 12:59 UTC (09:59 en Chile): sigue `402 DEPLOYMENT_DISABLED`** en `/`, `www` y
+   `/planes`. **El caso no lo cuenta:** ni «en pausa», ni «fuera de línea», ni «apagado», en la ficha ni en el texto.
+   **La regla interna sigue igual y no se ve:** sin enlace a `praxi.coach`, sin `offers` ni `url` en su JSON-LD (§11).
+   Callar el estado no autoriza lo contrario: tampoco se dice «disponible», «en producción» ni «pruébalo» (§8.2).
 4. **Resultado: «Sin métrica».** No hay un número de uso, retención o ventas que se pueda publicar. Lo que existe es un
    conteo interno del 24-ago, escrito en un documento del repo de Praxi, que no se puede volver a medir sin entrar a su
    base (y no se entra): dice que el producto **casi no se usó** (§8.2). No se publica, y no hace falta: el caso de
@@ -47,15 +63,24 @@ se construyó vive en una copia sin `.git` en el scratchpad de la sesión, y el 
 5. **Toda persona que aparece en el material de Praxi es generada con IA** (Higgsfield: Seedance 2.0 para el video del hero,
    sus modelos de imagen para las fotos, con dos personajes reutilizables). Las tipografías, la composición y los overlays son
    HTML renderizado. El caso lo tiene que decir junto a la imagen, no en una nota al pie. Tres fotos de la landing
-   (`landing-1/2/3.jpg`) no tienen procedencia escrita en ningún lado: no se usan hasta que Ramón la diga.
+   (`landing-1/2/3.jpg`) no tienen procedencia escrita en ningún lado: ~~no se usan hasta que Ramón la diga~~.
+   **[C2.5c] Son stock sin licencia escrita** (la bitácora de Praxi habla de «foto de stock», `bitacora-diseno.md:125` y
+   `:327`; Ramón: «las fotos están en la nube»). **No se usan sueltas: solo se ven dentro de las capturas de la landing,
+   como parte del sitio construido** (§6 y §7). De las tres, solo `landing-3` sale en una captura.
 6. **Las pantallas internas de la app no se pueden capturar** sin una cuenta y sin la base (todas redirigen a `/login`,
-   307 medido). No se inventaron con datos falsos: quedan como **hueco nombrado** en «Pedir a Ramón» (§10). Lo que sí
+   307 medido). No se inventaron con datos falsos: quedan como **hueco nombrado** (§10). Lo que sí
    se ve sin cuenta (la landing completa, `/login`, `/planes`, `/empezar`) está capturado a 1440 y 390.
+   **[C2.5a] Ramón: «tienes capturas en los archivos».** Buscado el 19-oct en los dos repos: **no hay ninguna captura
+   de la app con sesión iniciada** (§10, punto 1, con lo que se buscó). Se trabaja con las 19 capturas de las páginas
+   públicas y los recortes de `proto/a/medios/praxi-*.webp`, y el hueco queda nombrado en la página. Si Ramón sube
+   otras (su iCloud, carpeta «PRAXI siembra»), entran después, con su fila aquí.
 7. **¿Alcanza para la vista 3 del tablero?** El material cubre de sobra un tercio de página sin relleno (13 secciones
    de landing, video del hero, un reel, el carrusel, la identidad), pero **la sección «La pieza» quedaría sin la app**,
-   que es justo lo que distingue a Praxi. Recomendación: **la vista 3 sigue siendo Combeau** (supuesto del encargo §9);
-   Praxi entra al índice como «Propio» y su página se arma cuando Ramón entregue las capturas de la app o decida ir sin
-   ellas.
+   que es justo lo que distingue a Praxi. ~~Recomendación: **la vista 3 sigue siendo Combeau** (supuesto del encargo
+   §9); Praxi entra al índice como «Propio» y su página se arma cuando Ramón entregue las capturas de la app o decida
+   ir sin ellas.~~ **[C2.5f] Superado: Praxi y Combeau son los dos casos reales con página propia en
+   `/trabajo/<caso>/`.** La de Praxi se arma con lo que hay y nombra el hueco de la app; la de Combeau, con
+   `inventario-casos.md` §2.9.
 
 ---
 
@@ -71,6 +96,10 @@ se construyó vive en una copia sin `.git` en el scratchpad de la sesión, y el 
 | Capturas | `next start -H 127.0.0.1 -p 3917` y `praxi/herramientas/capturar-praxi.mjs`: Chromium 141.0.7390.37 headless con Playwright, 1440 × 900 (1x) y 390 × 844 (2x, móvil), primera pantalla, página completa y cada sección de la landing; recorre la página antes de capturar para que lleguen los observadores | 23:01 a 23:03 | `praxi/crudo/capturas-praxi.json` (estado, `h1`, JSON-LD, videos, consola, pedidos fallidos y externos de cada vista) |
 | Material | `ffmpeg` y ImageMagick sobre archivos de `public/` y `brand/` del repo de Praxi, sin generar nada | 23:05 a 23:06 | `praxi/material/` (§7) |
 | Archivo web | `web.archive.org/cdx` para ver si hay capturas públicas del sitio en agosto | 23:08 | **No se pudo**: el proxy de la sesión cortó la conexión. Queda sin dato |
+| **19-oct ·** Historial completo, para «construida con agentes de IA» [C2.5e] | `git clone --bare --filter=blob:none` de `rvalleespin/praxis-coach` **en el scratchpad** (sin blobs: solo commits y árboles), y `git log` sobre `main`: conteos con y sin merge, la línea `Co-Authored-By` de cada commit y sus valores, la línea `Claude-Session`, autores y fechas. `/home/user/praxis-coach` no se tocó: es superficial y no se le hizo `fetch` | 12:55 a 12:59 | `praxi/crudo/historial-git-praxi.txt` (con los comandos al final; los id de sesión, omitidos) |
+| **19-oct ·** Estado de `praxi.coach` [C2.5b] | `curl -sS -D -` con user-agent de Chrome 141 sobre `/`, `www.` y `/planes`, solo `GET` | 12:59 | `praxi/crudo/estado-praxi.coach-19oct-headers.txt`: los tres, `402` y `x-vercel-error: DEPLOYMENT_DISABLED` |
+| **19-oct ·** Papel de cada modelo [C2.5d] | Lectura de `lib/anthropic.ts` y búsqueda de `COACH_MODEL` y `EXTRACTION_MODEL` en `app/` y `lib/` (sin tests), hasta la ruta que llama a cada función | — | §4 y §5 (archivo y línea de cada uso) |
+| **19-oct ·** Capturas de la app con sesión [C2.5a] | Búsqueda de imágenes y videos en los archivos versionados de los dos repos (`git ls-files` con extensión de imagen o video, y nombres con «captur», «screen» o «pantalla») | — | §10, punto 1 |
 
 **Lo que las capturas no muestran bien:** el Chromium de Playwright **no reproduce H.264** (`canPlayType` vacío; los
 `<video>` terminan con error 4). Por eso el hero y el login se ven con su **póster**, que es exactamente el repliegue que
@@ -90,8 +119,8 @@ El movimiento del hero está en `praxi/material/praxi-hero-secuencia.mp4`.
 | Para quién | Gente que entrena con pesas y quiere progresar con método, en Chile. La landing dice también para quién **no** es (rehabilitar una lesión, tratamiento médico o nutricional) | Repo: `brand/brand.json` `audience`; Servido (local): sección «¿Es para ti?» |
 | Claim | «Entrena sabiendo por qué». Desde el 3-ago **dejó de ser el argumento de venta**: lo que se vende es la memoria («se acuerda de cada serie que hiciste») | Repo: `CLAUDE.md:523-532` |
 | Precio | Gratis (10 mensajes por semana y el registro completo, sin fecha de término), Mensual CLP 7.990, Anual CLP 59.900, 7 días de prueba. **Son los precios de Praxi, no de SpindleLab**; si el caso los muestra, como precios de ese producto | Repo: `lib/flow/planes.ts`, `lib/acceso.ts`; Servido (local): `/planes` |
-| Quién lo hizo | Ramón, con sesiones de Claude Code: los commits llevan la línea `Co-Authored-By: Claude`. Dos sesiones en paralelo (app, y marca y sitio) con un reparto de archivos escrito | GitHub; Repo: `docs/encargos/bitacora-diseno.md:12-24` |
-| Estado al 16-oct | **Fuera de línea**: `402 DEPLOYMENT_DISABLED` de Vercel. Último cambio de código: 25-ago | Medido; GitHub |
+| Quién lo hizo | Ramón, con sesiones de Claude Code: los commits llevan la línea `Co-Authored-By: Claude`. Dos sesiones en paralelo (app, y marca y sitio) con un reparto de archivos escrito. **[C2.5e] Medido con `git log` el 19-oct:** de los 350 commits de `main`, 219 no son merge y **218 llevan `Co-Authored-By: Claude …`** (el que falta: `be10288`, 28-jul, la bandera `PAGOS_ACTIVOS`); los otros 131 son los merges de los pull requests. Dos commits llevan además `Claude-Session` con una URL de `claude.ai/code` (`f8d5970`, 22-jul; `1011f60`, 1-ago). Autor de los 350: Ramón (`rvalleespin`, 340; «Ramon Vallejos», 10). De los 219, 169 entraron por pull request y 50 directo a `main`. **Lo que el caso dice:** «Ramón Vallejos, con agentes de IA». La línea nombra el modelo con que trabajó cada sesión (Claude Opus 5 en 157 commits, Claude Opus 4.8 en 61): **es la herramienta con que se programó, no la IA que usa la app** (§4); si el caso la nombra, lo dice así, y no hace falta | Medido: `crudo/historial-git-praxi.txt`; Repo: `docs/encargos/bitacora-diseno.md:12-24` |
+| Estado al 16-oct | **Fuera de línea**: `402 DEPLOYMENT_DISABLED` de Vercel. Último cambio de código: 25-ago. **[C2.5b] Igual el 19-oct** (12:59 UTC). **Dato interno, no va a la ficha pública** ni al texto: el caso no dice que está en pausa ni fuera de línea | Medido (16 y 19-oct); GitHub |
 
 ---
 
@@ -119,6 +148,8 @@ con nonce (`CLAUDE.md:295-302`), salvo la 404 y los tres archivos generados.
 | **Tailwind + shadcn/ui** | (sin efecto que contar) | Repo: `tailwind.config.ts`, `components/ui/` (2 componentes) |
 | **Supabase** (login con correo, Postgres, RLS, almacenamiento privado) | Cada persona ve y borra solo lo suyo; sus exámenes viven en un bucket privado | Repo: 25 migraciones, `0002_rls.sql`, `0015_user_documents.sql`, `0019_profiles_column_grants.sql` |
 | **API de Anthropic, solo en el servidor**: `claude-sonnet-5` para conversar, `claude-haiku-4-5` para extraer | Le escribes como a una persona y el registro queda guardado sin formularios | Repo: `lib/anthropic.ts:14,17`, `import "server-only"` |
+| ↳ **`claude-sonnet-5`** (`COACH_MODEL`, `lib/anthropic.ts:14`). **[C2.5d] Se nombra.** Un solo uso: **la conversación del coach**, con la respuesta en streaming (`app/api/chat/route.ts:228-229`, `messages.stream`) | Te contesta como un coach que conoce tu historial: recibe tu perfil, tus últimas sesiones y las cuentas ya hechas (§5.3 y §5.4) | Repo: búsqueda de `COACH_MODEL` en `app/` y `lib/`, un resultado fuera de su definición |
+| ↳ **`claude-haiku-4-5`** (`EXTRACTION_MODEL`, `lib/anthropic.ts:17`). **[C2.5d] Se nombra.** Cinco usos de cara a la persona, todos con salida acotada: **(1)** convierte el mensaje en series guardadas (`lib/coach/extract.ts:129`, herramienta `extraer_registro` forzada; lo llama `app/api/chat`); **(2)** saca el peso corporal de una frase (`extractWeight.ts:63`, `extraer_peso` forzada; desde `app/api/chat`); **(3)** pasa a Registro la rutina o dieta que propuso el coach (`planExtract.ts:180`, `guardar_plan` forzada; desde `app/api/plan/save`); **(4)** **escribe la conclusión corta al cerrar el día** (`conclusion.ts:42`, 2 a 3 frases, máx. 220 tokens; desde `app/api/training/log`); **(5)** resume lo útil de un documento subido, examen, InBody o foto (`documentExtract.ts:50`; desde `app/api/documents/upload`). Uno más, interno: el latido diario que comprueba que la llave de la API sirve (`app/api/cron/salud/route.ts:43`, un token) | (1) Le escribes como a una persona y queda registrado. (2) Dices cuánto pesas y queda anotado. (3) Lo que el coach te propone queda en Registro con un toque. (4) Al cerrar el día recibes una observación con criterio, no un «¡bien hecho!». (5) Subes un examen y el coach lo tiene en cuenta | Repo: búsqueda de `EXTRACTION_MODEL` en `app/` y `lib/` (sin tests): seis usos, y de cada función, la ruta que la llama |
 | **Lógica de entrenamiento en código, con tests** | El peso sube solo con dos sesiones confirmadas; la descarga llega por fatiga corroborada, no por calendario | Repo: `lib/domain/rir.ts`, `effectiveSet.ts`, `deload.ts`, `mesociclo.ts`, `lib/coach/signals.ts`; Medido: 42 tests en verde |
 | **Guardrails en código** (salud y edad) | Si mencionas dolor, mareo o señales de trastorno alimentario, el coach no diagnostica y te deriva; a un menor no le recomienda suplementos | Repo: `lib/coach/healthGuardrail.ts`, `guardrailMenores.ts`; Medido: 16 tests en verde |
 | **Mercado Pago, formulario embebido** | Pagas con tarjeta sin salir de Praxi y sin cuenta en Mercado Pago; el número de tarjeta nunca toca su servidor | Repo: `components/mp-card-form.tsx`, `lib/mp/`; `CLAUDE.md:144-164` |
@@ -141,7 +172,12 @@ cero apariciones). Tampoco Astro, Motion ni WebGL: el stack del sitio de Spindle
 Esta sección es la fuente de **toda** afirmación de IA que aparezca en el sitio (encargo §7.13: «toda afirmación de IA
 visible remite a Praxi y dice lo que Praxi hace»).
 
-1. **Extrae con un modelo obligado a un esquema.** `lib/coach/extract.ts` llama a Haiku con una sola herramienta,
+**[C2.5d] Los modelos se nombran:** `claude-sonnet-5` conversa (punto 4) y `claude-haiku-4-5` extrae los registros
+(punto 1) y escribe la conclusión del día (punto 6). Los usos, con archivo y línea, en §4. Al nombrarlos, el caso dice
+el nombre que usa el código y su papel, y nada que los modelos no hagan aquí (ni «entrenado con», ni «ajustado»: no
+hay ajuste fino, §4).
+
+1. **Extrae con un modelo obligado a un esquema.** `lib/coach/extract.ts` llama a `claude-haiku-4-5` con una sola herramienta,
    `extraer_registro`, y `tool_choice` forzado: el modelo no puede contestar texto libre, solo series con ejercicio,
    series, repeticiones (o un rango), carga y RIR. Si el mensaje no es un registro, devuelve `es_registro=false`. Desde
    el 19-ago la descripción pide **solo lo que la persona dice haber hecho**: ante la duda, no se guarda nada. El mismo
@@ -153,12 +189,19 @@ visible remite a Praxi y dice lo que Praxi hace»).
    la carga (dos sesiones confirmadas con RIR real por sobre el objetivo, nunca una sesión suelta), qué serie cuenta
    (RIR ≤ 4; sin RIR no cuenta) y si toca descargar (dos señales a la vez: el RIR cae con la misma carga **y** tres
    sesiones seguidas con sensación baja). `lib/coach/signals.ts` lo resume y lo entrega al modelo como texto.
-4. **Conversa con un prompt en dos capas.** La capa 1 (método, estática, sin datos de nadie) va cacheada; la capa 2
+4. **Conversa con un prompt en dos capas** (`claude-sonnet-5`). La capa 1 (método, estática, sin datos de nadie) va cacheada; la capa 2
    (perfil, mesociclo, últimas sesiones, señales calculadas) se arma por persona y va después del corte de caché.
    Medido por Ramón sobre 48 llamadas reales de julio y agosto, la caché ahorró 20 a 25 % (dicho, `CLAUDE.md:69-76`).
 5. **Los guardrails no dependen de que el modelo se acuerde.** Salud y edad se detectan en código y se inyectan como un
    bloque aparte en cada turno que corresponde. El de edad existe porque el 22-ago, con una cuenta de prueba de 16 años,
    el coach recomendó creatina pese a que el prompt lo prohibía (`lib/coach/guardrailMenores.ts:6-21`).
+6. **[C2.5d] Al cerrar el día, una observación corta.** Cuando la persona loggea un día, `claude-haiku-4-5` recibe el
+   comentario, los ejercicios con su carga y su RIR, la racha y el objetivo, y devuelve dos o tres frases con criterio
+   («nada de motivación vacía ni felicitaciones huecas; nada de diagnósticos médicos»), que quedan en
+   `training_day_logs.conclusion` y alimentan «Lo que has notado» en Progreso (`lib/coach/conclusion.ts:42-60`, desde
+   `app/api/training/log`). Si falla, el día queda loggeado igual y sin conclusión (`conclusion.ts:76-78`). Su prompt
+   prohíbe el voseo y, desde el 22-ago, cuando devolvió «estai cerca del límite» y dos rayas pegadas entre palabras,
+   también la raya pegada (`conclusion.ts:51-60`).
 
 **Lo que el modelo NO decide:** el peso de la próxima sesión, la descarga, qué serie cuenta, el acceso a lo que es de
 pago (402 en el servidor antes de llamar al modelo), el precio. **Frase verificable, para Clara:** «El modelo entiende
@@ -181,7 +224,7 @@ Praxi»), y ninguna de esas cifras se cita como resultado.
 | `landing-1440-sec00.jpg` | Hero sin la barra | 1440×632 | No |
 | `landing-1440-sec02.jpg` | «Llevas tres meses en 60 kg»: el problema, en tres frases | 1440×311 | No |
 | `landing-1440-sec03.jpg` · `landing-390-sec03.jpg` | «Tú le cuentas en una frase. Él lo vuelve método.»: una conversación de ejemplo y lo que queda guardado | 1440×500 · 780×1806 | **Sí** (la propia landing la rotula «Ejemplo de conversación con el coach» para lectores de pantalla) |
-| `landing-1440-sec06.jpg` | «Un coach que acumula lo que haces.» Tres rasgos: se acuerda, calcula, te avisa | 1440×783 | No. ⚠️ Lleva la foto `landing-3.jpg` (el disco amarillo), **sin procedencia escrita** (§7): esta captura y las dos completas no salen al sitio hasta que Ramón la aclare |
+| `landing-1440-sec06.jpg` | «Un coach que acumula lo que haces.» Tres rasgos: se acuerda, calcula, te avisa | 1440×783 | No. ⚠️ Lleva la foto `landing-3.jpg` (el disco amarillo), **sin procedencia escrita** (§7): ~~esta captura y las dos completas no salen al sitio hasta que Ramón la aclare~~. **[C2.5c] Sí salen**, porque la foto va dentro de la captura como parte del sitio construido; la foto sola, recortada o ampliada hasta que la captura deje de leerse como página, no |
 | `landing-1440-sec08.jpg` · `landing-390-sec08.jpg` | «Tu progreso, en números.»: cuatro tarjetas con gráficos (RIR, carga, series, mesociclo) | 1440×1065 · 780×3626 | **Sí**, todas las cifras |
 | `landing-1440-sec09.jpg` | «Debajo del chat hay reglas, no una corazonada.»: las tres reglas del código, en palabras | 1440×526 | No |
 | `landing-1440-sec10.jpg` | Precios: Gratis, Mensual, Anual | 1440×974 | No (precios reales de Praxi al 25-ago) |
@@ -194,6 +237,14 @@ desborde horizontal a 390 (ancho del documento = ancho de la ventana); un `h1` e
 en `/login`**; ningún pedido a un origen externo (las fuentes van autoalojadas) y ninguno a la URL de Supabase de
 mentira desde el navegador. Los pedidos fallidos son prefetch de Next cortados al cerrar la página y los videos que este
 Chromium no reproduce.
+
+**[C2.5a] Las capturas que hay, todas de páginas públicas y de una copia local, y el hueco que queda.** Son las 19 de
+esta tabla (8 vistas: la landing en primera pantalla, completa y por secciones; `/login`; `/planes`; `/empezar`) más los
+recortes que hizo la dirección A en `tableros/e12-direcciones/proto/a/medios/` (`praxi-reglas-169`, `-numeros-169`,
+`-numeros-45`, `-frase-45`, `-portada-390-45`, `-login-390-45`, `-empezar-169`, cada uno con su origen en `medios.json`).
+**El hueco:** ninguna pantalla con sesión iniciada (Inicio, Coach, Registro, Progreso, Perfil). La única vista de la
+app por dentro que existe es la que la propia landing dibuja con datos de ejemplo: la conversación (`sec03`) y las
+tarjetas de progreso (`sec08`), y se rotulan así. La página del caso dice que faltan, sin taparlo con otra cosa (§10).
 
 **Dos detalles de Praxi que el caso no debe copiar:** la sección de progreso escribe «2.1» y «3.8» con punto al lado
 de «+7,5» con coma, contra su propia regla de números (`lib/formato.ts`, coma decimal); y `/login` no tiene `h1`.
@@ -214,7 +265,7 @@ avatar, los gráficos y toda la tipografía (HTML renderizado, `brand/lanzamient
 | `brand/lanzamiento/pieza-04-portada/pieza-04.png` | Portada de Facebook | El fondo (`accion.png`) no está en su carpeta ni tiene procedencia escrita; la dirección de arte manda los fondos de fierro a Higgsfield (`DIRECCION-DE-ARTE.md:33`): **se trata como generado** | **`praxi-portada-facebook.jpg`** (1640×624, 51 kB) |
 | `brand/avatar/a-oscuro.png`, `b-amarillo.png` (1080×1080) | El avatar: «P.» en Gabarito con el punto amarillo | **No generado**: renderizado desde el wordmark del código («Por qué no se generó con IA», `brand/avatar/NOTA.md`) | **`praxi-avatar-oscuro.png`**, **`praxi-avatar-amarillo.png`** |
 | `public/icon-*.png`, `apple-*.png` | Íconos de la app | No generados. ⚠️ El de 512 conserva un fondo violeta muy oscuro (`#18152C`, tono ≈ 248°, dentro de la banda que su propio contrato veta para el primario) del sistema anterior; el avatar usa `#0F1117` | No |
-| `public/landing-1/2/3.jpg` (675 a 900 px) | Tres fotos con virado amarillo; `landing-3` sigue en la landing (sección 06) y `landing-2` es el `og:image` | **Sin procedencia escrita** en el repo (entraron el 28-jul, `26b9687`, sin decir de dónde) | **No**, hasta que Ramón diga de dónde salen (§10) |
+| `public/landing-1/2/3.jpg` (675 a 900 px) | Tres fotos con virado amarillo; `landing-3` sigue en la landing (sección 06, `components/landing.tsx:383`) y `landing-2` es el `og:image` (`app/layout.tsx:48` y `:60`); `landing-1` era el hero antes del video y hoy no la usa ninguna página | **Sin procedencia escrita** en el repo (entraron el 28-jul, `26b9687`, sin decir de dónde). **[C2.5c] Stock sin licencia escrita:** la bitácora llama «foto de stock» a la de la sección «Criterio, no humo», que era `landing-2` (`bitacora-diseno.md:125` y `:145`), y a la que pedía la sección 7 (`:327`); de `landing-1` y `landing-3` no dice nada, y se tratan igual. Ramón: «las fotos están en la nube» (no dice licencia) | **No, ninguna suelta.** Solo se ven dentro de las capturas de la landing, como parte del sitio: `landing-3` en `landing-1440-sec06.jpg` y en las dos completas. `landing-1` y `landing-2` no salen en ninguna captura |
 | `brand/lanzamiento/siembra/*.mp4`, `pieza-06-reel/`, `hero-chileno/`, `pieza-01/02/05` | Siembra orgánica, reel #1 y su material crudo, el banco de fotos, piezas descartadas | Generados; las 01, 02 y 05 están marcadas «No publicar» (`LEEME.md`) | No |
 
 **La identidad, para la lámina del caso** (de `brand/brand.json`, el contrato que el gate hace cumplir):
@@ -242,7 +293,11 @@ color de cada caso lo pone el trabajo.
 | Afirmación | Fuente |
 |---|---|
 | Sitio y app hechos por Ramón entre el 21-jul y el 25-ago-2026 | GitHub: primer y último commit de `main` |
-| 349 commits y 131 pull requests | GitHub, leído el 16-oct |
+| ~~349 commits~~ **350 commits** y 131 pull requests | `git log`, 19-oct (`crudo/historial-git-praxi.txt`); el 349 era de la API, 16-oct |
+| **[C2.5e]** Se construyó con agentes de IA: Ramón, con sesiones de Claude Code. 218 de los 219 commits de código llevan la firma de esas sesiones | Medido: 218 de 219 commits sin merge con `Co-Authored-By: Claude …` (`crudo/historial-git-praxi.txt`). **Lo que no está medido:** que Ramón revisó y aprobó cada cambio. 169 de esos commits entraron por uno de los 131 pull requests, fusionados desde su cuenta (129 en GitHub, 2 en local), pero **50 fueron directo a `main`** (la primera semana, 21 a 28-jul, y 12 el 5 y 6-ago), y una fusión en GitHub no dice si la hizo él o una sesión. Si el texto dice «él revisa», lo dice como método del estudio, no como un hecho medido de Praxi |
+| **[C2.5d]** `claude-sonnet-5` conversa; `claude-haiku-4-5` convierte cada mensaje en un registro guardado y escribe la conclusión del día (y además saca el peso, pasa un plan a Registro y resume un documento subido) | Repo: `lib/anthropic.ts:14,17` y sus usos (§4) |
+| **(19-oct, para Clara: Hipótesis)** La señal que se fijó para saber si funcionaba: **que la persona vuelva a anotar, con su peso, un ejercicio que ya había anotado antes** («activado»). Está programada y se emite desde el servidor en los dos caminos que guardan sesiones, con tests | Repo: definición en `docs/encargos/2026-08-05-instrumentacion-medicion.md:95-97` (§A.3); código en `lib/growth/activacion.ts` y `activacion-server.ts`, llamados desde `app/api/training/log` y `lib/coach/extract.ts`; 11 tests en `activacion.test.ts`. **Cuántas personas la cumplieron no se publica** (§8.2): «quedó programada» o «se registra en el servidor» es exacto; «quedó medida», si se lee como que hay un resultado, no |
+| **(19-oct, para Clara: Problema)** En reseñas de apps de entrenamiento hay quejas textuales de que la app se olvida de lo que hiciste (RP Hypertrophy, JuggernautAI, Dr. Muscle), y la investigación de Praxi la llama «la queja #1 documentada contra toda la competencia» | Dicho: `docs/2026-08-03-inteligencia-mercado-praxi.md` §1.2 y §2.1 (cinco citas marcadas [D], con la app de cada una). **No es un conteo**: nadie contó cuántas reseñas dicen qué. «La queja que más se repite» es el juicio de esa investigación; si el texto lo usa, va como suyo («según una revisión de reseñas que hicimos para Praxi»), o se dice lo que sí está: «en las reseñas se repite la misma queja» |
 | 384 tests en verde sobre el último commit, el 16-oct | Medido: `crudo/verificacion-copia.txt` |
 | Cuándo subir el peso, cuándo descargar y qué serie cuenta se calculan en código con tests, no los decide el modelo | Repo: `lib/domain/`, `lib/coach/signals.ts`; Medido: 42 tests |
 | Un modelo convierte la frase en series guardadas, obligado a un esquema; ante la duda no guarda | Repo: `lib/coach/extract.ts` |
@@ -252,7 +307,7 @@ color de cada caso lo pone el trabajo.
 | La landing tiene `Organization`, `WebSite`, `SoftwareApplication` y `FAQPage`, y un test exige que lo declarado esté visible | Repo: `lib/seo/estructurados.ts`; Medido: HTML local |
 | La landing la aprobó Ramón el 4-ago después de siete rondas de corrección | Dicho: `bitacora-diseno.md:207-250` |
 | Las personas del material son generadas, con un personaje reutilizable | Repo: `PERSONAJE.md`, `landing.tsx:128-143` |
-| Hoy el sitio no está en línea | Medido: `crudo/estado-praxi.coach-headers.txt` |
+| ~~Hoy el sitio no está en línea~~ **[C2.5b] Pasa a §8.2:** es cierto (medido el 16 y el 19-oct), pero el caso no lo cuenta | Medido: `crudo/estado-praxi.coach-headers.txt`, `crudo/estado-praxi.coach-19oct-headers.txt` |
 
 ### 8.2 · No se puede decir
 
@@ -261,7 +316,10 @@ color de cada caso lo pone el trabajo.
 | Cualquier número de **usuarios, retención, conversión, ventas o ingresos** | No hay medición publicable. Existe un conteo interno del 24-ago (`docs/encargos/2026-08-24-traspaso-sesion-app-para-pm.md:184-200`): **14 perfiles, 3 de pago (uno de cortesía y dos cancelados), un solo pago aprobado (6-ago), ningún suscriptor recurrente y el último mensaje de chat el 17-ago**; y la campaña de Meta trajo **548 personas con 0 registros** antes del arreglo del embudo (`2026-08-19-cierre-fix-registro-para-pm.md:43-45`). Es *dicho*, de hace siete semanas, no se puede volver a medir sin entrar a su base, y dice lo contrario de un éxito. Se anota para que nadie escriba «usado por» ni «clientes»: el caso dice **«Sin métrica»** |
 | Cualquier **resultado físico** («ganas músculo», «+7,5 kg», «progresas más rápido») | Rubro salud y entrenamiento. Además, las cifras de la landing son de ejemplo (§6). Ni el caso ni su texto prometen un resultado en el cuerpo de nadie |
 | Que Praxi es **«IA propietaria»**, usa **«modelos RAG»**, **«despliega modelos»** o cualquier porcentaje de mejora | No lo hace (§4, «No tiene»). Usa la API de Anthropic con dos modelos comerciales |
-| Que «está en producción», «disponible» o cualquier enlace a `praxi.coach` | `402 DEPLOYMENT_DISABLED` hoy |
+| Que «está en producción», «disponible» o cualquier enlace a `praxi.coach` | `402 DEPLOYMENT_DISABLED` el 16 y el 19-oct |
+| **[C2.5b]** Que Praxi está «en pausa», «fuera de línea», «apagada» o «sin usuarios», en la ficha o en el texto | Ramón: «no se cuenta». Es cierto y se sabe adentro (§2, «Estado»), pero no va a la página. Las dos frases del texto del paso 2 que lo decían (la ficha «Estado: Fuera de línea» y el párrafo final de «Sin métrica») salen |
+| **[C2.5c]** Las fotos `landing-1/2/3.jpg` sueltas, recortadas o como fondo | Stock sin licencia escrita (§7). Dentro de una captura de la landing, sí |
+| Que el modelo que construyó Praxi (Claude Opus, en las líneas de los commits) es el que usa la app | Son cosas distintas: Opus programó en las sesiones de Claude Code; la app usa Sonnet 5 y Haiku 4.5 (§2 y §4) |
 | «Basado en evidencia» como sello sin explicar | Es el posicionamiento de Praxi (cita a Schoenfeld y RP/Israetel en el prompt), no una validación externa. Si va, va como «el coach cita sus fuentes» |
 | El ahorro de costo del caché, el costo por persona (0,68 USD) o «0,81 USD en toda la vida del proyecto» | Dicho, medido por Ramón en agosto, sin crudo guardado aquí; y es dato interno de operación. Solo si Ramón lo quiere mostrar |
 | Que el material es fotografía | Es generado (§7) |
@@ -276,33 +334,65 @@ Clara.
 
 | Sección | Lo que hay | Material que la sostiene | Fuente |
 |---|---|---|---|
-| **Ficha** (mono, verdadera) | Propio · 2026 · Sitio y app · Next.js, Supabase, API de Anthropic, Mercado Pago · 21-jul a 25-ago · Estado: fuera de línea | (texto) | §2, §4 |
+| **Ficha** (mono, verdadera) | Propio · 2026 · Sitio y app · Next.js, Supabase, API de Anthropic, Mercado Pago · 21-jul a 25-ago · ~~Estado: fuera de línea~~ **[C2.5b] sin línea de estado** · **[C2.5e]** Quién lo hizo: Ramón Vallejos, con agentes de IA | (texto) | §2, §4 |
 | **Desafío** | Las apps de entrenamiento se olvidan de lo que hiciste (la queja más repetida contra todas, según la investigación del 3-ago), y ChatGPT ya explica el porqué gratis. El diferenciador que Praxi anunciaba al principio («te explico el porqué») no era defendible | `landing-1440-sec02.jpg` («Llevas tres meses en 60 kg») | `docs/2026-08-03-inteligencia-mercado-praxi.md` §1; `CLAUDE.md:523-532` |
 | **Estrategia** | Vender la memoria, no la explicación: «se acuerda de lo que hiciste y por eso sabe si subir el peso». La jerga (RIR, deload) fuera de la portada porque en Chile no tiene búsquedas; el precio anclado contra el gimnasio, no contra Netflix; un plan gratis que no se vence | `landing-1440-primera.jpg`, `landing-1440-sec10.jpg` | `CLAUDE.md:523-541`; `inteligencia-mercado` §2 |
 | **Identidad** | Un contrato de marca en archivos (`brand.json`, `voice.json`) y un gate que tumba el build si el diseño se sale. El acento pasó del morado de demo de IA al amarillo del punto del logo | `praxi-avatar-*.png`, lámina de tokens (§7) | `brand/README.md`; commit `56fdae2` |
-| **Aplicación** | El sitio (landing aprobada en siete rondas, video en el hero), la app (un chat que guarda; Inicio que abre con lo último registrado; Progreso con una cifra que manda) y la campaña (carrusel, reels con el chat encima) | `praxi-hero-secuencia.mp4`, `landing-*-sec03/08`, `praxi-reel-a-memoria-720.mp4`, `praxi-carrusel-v2-*.jpg`. **Faltan las pantallas de la app** (§10) | `bitacora-diseno.md`; `CLAUDE.md:676-690` |
-| **Cómo piensa** (la sección que solo tiene Praxi) | El modelo entiende y conversa; el código decide. Las tres reglas de la landing (`sec09`) dicen eso mismo en palabras | `landing-1440-sec09.jpg` | §5 |
-| **Resultado** | **«Sin métrica»**. Lo medible es de oficio: 384 tests en verde, gate 8/8, build limpio, el 16-oct. Que el sitio hoy no está en línea se dice en la ficha | (texto) | §8 |
+| **Aplicación** | El sitio (landing aprobada en siete rondas, video en el hero), la app (un chat que guarda; Inicio que abre con lo último registrado; Progreso con una cifra que manda) y la campaña (carrusel, reels con el chat encima) | `praxi-hero-secuencia.mp4`, `landing-*-sec03/08`, `praxi-reel-a-memoria-720.mp4`, `praxi-carrusel-v2-*.jpg`. **Faltan las pantallas de la app** (§10). **[C2.5c]** `landing-1440-sec06.jpg` ya puede ir (la foto de stock, dentro de la captura) | `bitacora-diseno.md`; `CLAUDE.md:676-690` |
+| **Cómo piensa** (la sección que solo tiene Praxi) | El modelo entiende y conversa; el código decide. Las tres reglas de la landing (`sec09`) dicen eso mismo en palabras. **[C2.5d]** Con los nombres: `claude-sonnet-5` conversa, `claude-haiku-4-5` registra y escribe la conclusión del día | `landing-1440-sec09.jpg` | §5 |
+| **Resultado** | **«Sin métrica»**. Lo medible es de oficio: 384 tests en verde, gate 8/8, build limpio, el 16-oct. ~~Que el sitio hoy no está en línea se dice en la ficha~~ **[C2.5b] No se dice** | (texto) | §8 |
 
 ---
 
-## 10 · Pedir a Ramón
+## 10 · Lo que se le pidió a Ramón, y lo que respondió (compuerta 2, 19-oct)
 
-Una sola pasada, todo junto:
+Se le preguntó el 18-oct en el tablero de la compuerta 2 (preguntas 5a a 5f) y contestó el 19-oct, hacia las 09:50
+(Chile): «5a tienes capturas en los archivos. 5b no se cuenta 5c las fotos están en la nube. 5d nombra. 5e. si fue con
+agentes de IA. 5f ambos son casos reales». La lectura de cada respuesta es la del orquestador con Ramón, que aprobó ese
+plan. **La numeración de abajo es la de antes** (el texto del paso 2 la cita: §10.1, §10.2, §10.4, §10.6), y cada punto
+lleva la pregunta como estaba, tachada, y lo que queda.
 
-1. **Capturas de la app** (lo que falta para la sección «Aplicación»): Inicio con «Lo último que registraste», el Coach
-   con una conversación en la que se guarde un registro, Registro → entrenamiento (la tarjeta del día con cargas),
-   Progreso (los gráficos) y Perfil, **a 390 de ancho, desde una cuenta de prueba suya, nunca la de un usuario**. Como
-   `praxi.coach` está apagado, tendría que ser corriendo Praxi en su Mac con su `.env.local`. O decir que el caso va sin
-   ellas.
-2. **¿Se cuenta que Praxi está en pausa?** Hoy responde `402 DEPLOYMENT_DISABLED`. Si lo reactiva, se mide de nuevo y
-   recién ahí se enlaza.
-3. **De dónde salen `landing-1.jpg`, `landing-2.jpg` y `landing-3.jpg`** (generadas, banco o compradas, y con qué
-   licencia). Mientras no se sepa, no entran al caso.
-4. **¿Se nombran los modelos** (Sonnet 5 y Haiku 4.5) en el caso, o basta con «la API de Anthropic»?
-5. **Los datos de uso del 24-ago no se publican** salvo que él lo decida; la recomendación es «Sin métrica».
-6. **Permiso:** no hace falta de un tercero (es suyo). Lo único que se le pregunta es si quiere que el caso diga que lo
-   construyó con agentes de IA (los commits lo dicen).
+1. ~~**Capturas de la app** (lo que falta para la sección «Aplicación»): Inicio con «Lo último que registraste», el
+   Coach con una conversación en la que se guarde un registro, Registro → entrenamiento (la tarjeta del día con cargas),
+   Progreso (los gráficos) y Perfil, a 390 de ancho, desde una cuenta de prueba suya, nunca la de un usuario. O decir
+   que el caso va sin ellas.~~
+   **[C2.5a] «tienes capturas en los archivos».** Buscado el 19-oct, en los archivos versionados de los dos repos
+   (`git ls-files` con extensión de imagen o video, y nombres con «captur», «screen» o «pantalla»): **ninguna captura
+   de la app con sesión iniciada.** En `/home/user/praxis-coach` las imágenes son material de marca y campaña
+   (`brand/avatar/`, `brand/lanzamiento/`: campaña de Meta, carrusel, piezas 01 a 05, banco `hero-chileno/`, siembra),
+   íconos y `landing-1/2/3.jpg`; en este repo, las de `e12/praxi/` y sus derivados (`proto/a/medios`, `proto/b/medios`,
+   `tableros/e12-direcciones/img`, capturas de QA). **Se trabaja con lo que hay:** las 19 capturas de las páginas
+   públicas (§6) y los recortes de A. **El hueco queda nombrado en la página** (la nota de «La pieza» del texto del paso
+   2 se queda). Si Ramón sube otras (su iCloud, carpeta «PRAXI siembra»), entran después: cada una con su fila en §6,
+   desde una cuenta de prueba suya y nunca la de un usuario, y la nota sale.
+2. ~~**¿Se cuenta que Praxi está en pausa?** Hoy responde `402 DEPLOYMENT_DISABLED`. Si lo reactiva, se mide de nuevo y
+   recién ahí se enlaza.~~
+   **[C2.5b] «no se cuenta».** La ficha no lleva estado y el texto no dice «en pausa» ni «fuera de línea» (§8.2). Lo que
+   sigue, porque no se ve y protege: **ningún enlace a `praxi.coach`** y su JSON-LD **sin `offers` ni `url`** (§11).
+   Re-medido el 19-oct: `402` en `/`, `www` y `/planes`. Si lo reactiva, se mide de nuevo y recién ahí se enlaza.
+3. ~~**De dónde salen `landing-1.jpg`, `landing-2.jpg` y `landing-3.jpg`** (generadas, banco o compradas, y con qué
+   licencia). Mientras no se sepa, no entran al caso.~~
+   **[C2.5c] «las fotos están en la nube».** Se tratan como **stock sin licencia escrita** (la bitácora de Praxi dice
+   «foto de stock», `:125` y `:327`). **No se usan sueltas:** solo dentro de las capturas de la landing, como parte del
+   sitio construido (§6, §7). En la práctica: `landing-1440-sec06.jpg` y las dos capturas completas pueden ir; ninguna
+   de las tres fotos va recortada, como fondo ni como imagen propia del caso.
+4. ~~**¿Se nombran los modelos** (Sonnet 5 y Haiku 4.5) en el caso, o basta con «la API de Anthropic»?~~
+   **[C2.5d] «nombra».** `claude-sonnet-5` hace de coach (`COACH_MODEL`, `lib/anthropic.ts:14`) y `claude-haiku-4-5`
+   extrae los registros y escribe la conclusión del día (`EXTRACTION_MODEL`, `:17`); sus otros usos, en §4. Lo que
+   Clara había sacado del texto («queda "un modelo de IA de Anthropic"») puede volver. Cómo se escriben para el lector:
+   el nombre comercial («Claude Sonnet 5», «Claude Haiku 4.5») con su papel al lado, y el identificador del código
+   solo en la línea para el técnico. Ningún nombre de modelo sin lo que hace (brief §2).
+5. **Los datos de uso del 24-ago no se publican.** No se le volvió a preguntar: queda **«Sin métrica»** (§8.2).
+6. ~~**Permiso:** no hace falta de un tercero (es suyo). Lo único que se le pregunta es si quiere que el caso diga que
+   lo construyó con agentes de IA (los commits lo dicen).~~
+   **[C2.5e] «si fue con agentes de IA».** El caso lo dice: **«Ramón Vallejos, con agentes de IA»**, con la evidencia
+   de §2 (218 de 219 commits de código con `Co-Authored-By: Claude`, medido con `git log`). Lo que no dice: que cada
+   cambio pasó por su revisión (50 commits fueron directo a `main`, §8.1), ni que la app usa el modelo que la programó.
+7. **(nuevo) [C2.5f] «ambos son casos reales».** Praxi y Bernardo Combeau son los dos casos reales con página propia en
+   `/trabajo/<caso>/`. Lo de Combeau, en `inventario-casos.md` §2.9.
+
+**Lo que sigue abierto, para quien lo quiera cerrar:** las capturas de la app por dentro (punto 1), y si algún día
+`praxi.coach` vuelve a responder 200 (punto 2).
 
 ---
 
@@ -316,6 +406,11 @@ Una sola pasada, todo junto:
 - **La página no se declara de cliente:** Praxi es «Propio».
 - **Para que una IA lo cite bien:** una frase de entidad arriba, en texto (no en imagen), que diga qué es y qué decide el
   código; las capturas con `alt` que diga «captura de la landing de Praxi, datos de ejemplo» cuando corresponda.
+- **19-oct, con la compuerta 2:** la regla de `offers` y `url` **sigue igual aunque la página ya no diga por qué**
+  ([C2.5b]); ningún nodo lleva un estado («en pausa», `discontinued`, fechas de baja). Los modelos y «con agentes de IA»
+  van **en el texto** de la página, que es lo que una IA lee y cita; en el JSON-LD, a lo más como `description` igual al
+  texto visible, nunca como propiedades inventadas. Las capturas con `landing-3` dentro se describen como captura de la
+  página, no como foto. La capa completa de la ruta, en `e12/senales-obra.md`.
 
 ---
 
@@ -330,8 +425,19 @@ Una sola pasada, todo junto:
 | `spindlelab-astro/` | Sin tocar |
 | Generación pagada de imagen o video | Ninguna |
 
+**19-oct:**
+
+| Control | Resultado |
+|---|---|
+| `git -C /home/user/praxis-coach log -1` y `status` | `a360d7a`, limpio: no se escribió nada ahí. El historial se leyó de un clon aparte en el scratchpad |
+| Llamadas a `praxi.coach` | Tres `GET` (12:59 UTC); ninguna a Supabase, Anthropic, Mercado Pago, PostHog ni Meta |
+| `spindlelab-astro/` | Sin tocar |
+| Generación pagada | Ninguna |
+
 ## Correcciones
 
 | Fecha | Corrección | Origen |
 |---|---|---|
 | 16-oct, 20:12 | Primera versión | Diego, con Simón |
+| 19-oct, 10:40 | **Compuerta 2, respuestas 5a a 5f.** §10 pasa a «Lo que respondió Ramón», con la numeración de antes; marcas **[C2.5x]** en el encabezado, §0 (puntos 1, 2, 3, 5, 6 y 7), §1 (cuatro filas nuevas), §2 («Quién lo hizo» y «Estado»), §4 (una fila por modelo), §5 (los nombres y el punto 6, la conclusión del día), §6 (la `sec06` sale; las capturas que hay y el hueco), §7 (las tres fotos), §8 (cuatro filas en 8.1 y tres en 8.2), §9 (Ficha, Cómo piensa, Resultado, Aplicación) y §11. Dos filas nuevas en §8.1 que pedía el texto del paso 2: la señal «activado» y la queja de las reseñas, con lo que cada una permite decir | Ramón, compuerta 2; Diego, con Simón |
+| 19-oct | **349 → 350 commits.** El 16-oct se contaron con la API de GitHub (4 páginas de 100); el 19-oct, con `git log` sobre un clon completo: 350 (219 sin merge, 131 merges). Vale el de `git log`, que tiene crudo | Diego |
