@@ -1,5 +1,5 @@
 {
- "cuando": "2026-10-19T14:03:52.189Z",
+ "cuando": "2026-10-19T14:19:21.083Z",
  "video": "../medios/hilo/hilo-1920.webm",
  "metodo": "La mitad de los píxeles: lee lo que guardó portada.mjs (el velo pintado por el navegador sobre un blanco puro, y la caja\nde cada línea de texto) y lo cruza con TODOS los cuadros del bucle que sirve la portada (hilo-1920.webm de Bruno, 121\ncuadros, el primero es el póster). Para cada ancho:",
  "vistas": [
@@ -1279,7 +1279,7 @@
    "vista": "768x1024",
    "portada": {
     "y": 90,
-    "alto": 860.28125
+    "alto": 839.53125
    },
    "medio": {
     "x": 0,
@@ -1346,21 +1346,6 @@
      "contraste": 7.02,
      "contrasteSinVelo": null,
      "minimo": 3.0,
-     "aprueba": true,
-     "contrasteP99": 7.02
-    },
-    {
-     "texto": "Para empresas, clínicas y estudios profe",
-     "sel": "p.cuerpo.entradilla",
-     "tam": 15.368,
-     "color": "rgb(152, 152, 152)",
-     "sobreVideo": false,
-     "alfaMin": 1.0,
-     "peorCuadro": 0,
-     "luzMax": 0.0018,
-     "contraste": 7.02,
-     "contrasteSinVelo": null,
-     "minimo": 4.5,
      "aprueba": true,
      "contrasteP99": 7.02
     },
@@ -1501,7 +1486,7 @@
     }
    ],
    "resumen": {
-    "lineas": 14,
+    "lineas": 13,
     "sobreVideo": 0,
     "bajoMinimo": 0,
     "peor": {
@@ -1527,9 +1512,9 @@
      "minimo": 3.0,
      "aprueba": true
     },
-    "campoArriba": 862.2,
-    "botonAbajo": 906.2,
-    "margenBajoBoton": 117.8,
+    "campoArriba": 841.4,
+    "botonAbajo": 885.4,
+    "margenBajoBoton": 138.6,
     "videoSinVelo": 432
    }
   },
@@ -1650,7 +1635,7 @@
      "contrasteSinVelo": 2.19,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.83
+     "contrasteP99": 5.85
     },
     {
      "texto": "Para empresas, clínicas y estudios profe",
@@ -1690,12 +1675,12 @@
      "sobreVideo": true,
      "alfaMin": 0.888,
      "peorCuadro": 97,
-     "luzMax": 0.0133,
-     "contraste": 5.75,
-     "contrasteSinVelo": 2.18,
+     "luzMax": 0.0132,
+     "contraste": 5.76,
+     "contrasteSinVelo": 2.14,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.91
+     "contrasteP99": 5.92
     },
     {
      "texto": "Chequeo gratis",
@@ -1887,13 +1872,13 @@
      "color": "rgb(152, 152, 152)",
      "sobreVideo": true,
      "alfaMin": 0.876,
-     "peorCuadro": 92,
-     "luzMax": 0.0171,
-     "contraste": 5.43,
-     "contrasteSinVelo": 2.58,
+     "peorCuadro": 95,
+     "luzMax": 0.0163,
+     "contraste": 5.49,
+     "contrasteSinVelo": 2.4,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.48
+     "contrasteP99": 5.55
     },
     {
      "texto": "Diseñamos y programamos sitios a medida.",
@@ -1903,12 +1888,12 @@
      "sobreVideo": true,
      "alfaMin": 0.876,
      "peorCuadro": 0,
-     "luzMax": 0.018,
-     "contraste": 15.43,
-     "contrasteSinVelo": 1.04,
+     "luzMax": 0.0179,
+     "contraste": 15.46,
+     "contrasteSinVelo": 1.05,
      "minimo": 3.0,
      "aprueba": true,
-     "contrasteP99": 15.56
+     "contrasteP99": 15.66
     },
     {
      "texto": "Diseñamos y programamos sitios a medida.",
@@ -1917,13 +1902,13 @@
      "color": "rgb(255, 255, 255)",
      "sobreVideo": true,
      "alfaMin": 0.876,
-     "peorCuadro": 90,
-     "luzMax": 0.0135,
-     "contraste": 16.54,
-     "contrasteSinVelo": 1.59,
+     "peorCuadro": 1,
+     "luzMax": 0.0142,
+     "contraste": 16.37,
+     "contrasteSinVelo": 1.48,
      "minimo": 3.0,
      "aprueba": true,
-     "contrasteP99": 16.74
+     "contrasteP99": 16.91
     },
     {
      "texto": "Y los dejamos listos para que Google y C",
@@ -1932,33 +1917,18 @@
      "color": "rgb(152, 152, 152)",
      "sobreVideo": true,
      "alfaMin": 0.876,
-     "peorCuadro": 0,
-     "luzMax": 0.0174,
-     "contraste": 5.4,
-     "contrasteSinVelo": 2.64,
+     "peorCuadro": 117,
+     "luzMax": 0.0172,
+     "contraste": 5.42,
+     "contrasteSinVelo": 2.6,
      "minimo": 3.0,
      "aprueba": true,
-     "contrasteP99": 5.47
+     "contrasteP99": 5.52
     },
     {
      "texto": "Y los dejamos listos para que Google y C",
      "sel": "span.gris",
      "tam": 39.2838,
-     "color": "rgb(152, 152, 152)",
-     "sobreVideo": true,
-     "alfaMin": 0.876,
-     "peorCuadro": 116,
-     "luzMax": 0.017,
-     "contraste": 5.43,
-     "contrasteSinVelo": 2.54,
-     "minimo": 3.0,
-     "aprueba": true,
-     "contrasteP99": 5.57
-    },
-    {
-     "texto": "Para empresas, clínicas y estudios profe",
-     "sel": "p.cuerpo.entradilla",
-     "tam": 15.624,
      "color": "rgb(152, 152, 152)",
      "sobreVideo": true,
      "alfaMin": 0.876,
@@ -1966,9 +1936,9 @@
      "luzMax": 0.0168,
      "contraste": 5.45,
      "contrasteSinVelo": 2.5,
-     "minimo": 4.5,
+     "minimo": 3.0,
      "aprueba": true,
-     "contrasteP99": 5.64
+     "contrasteP99": 5.65
     },
     {
      "texto": "Para empresas, clínicas y estudios profe",
@@ -1983,7 +1953,7 @@
      "contrasteSinVelo": 2.42,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.8
+     "contrasteP99": 5.81
     },
     {
      "texto": "Para empresas, clínicas y estudios profe",
@@ -1998,7 +1968,7 @@
      "contrasteSinVelo": 2.7,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.72
+     "contrasteP99": 5.73
     },
     {
      "texto": "Para empresas, clínicas y estudios profe",
@@ -2007,13 +1977,13 @@
      "color": "rgb(152, 152, 152)",
      "sobreVideo": true,
      "alfaMin": 0.888,
-     "peorCuadro": 77,
-     "luzMax": 0.0129,
-     "contraste": 5.78,
+     "peorCuadro": 80,
+     "luzMax": 0.0153,
+     "contraste": 5.57,
      "contrasteSinVelo": 2.74,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.89
+     "contrasteP99": 6.04
     },
     {
      "texto": "Chequeo gratis",
@@ -2122,8 +2092,8 @@
     }
    ],
    "resumen": {
-    "lineas": 16,
-    "sobreVideo": 16,
+    "lineas": 15,
+    "sobreVideo": 15,
     "bajoMinimo": 0,
     "peor": {
      "texto": "Para empresas, clínicas y estudios profe",
@@ -2138,10 +2108,10 @@
      "contrasteSinVelo": 2.7,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.72
+     "contrasteP99": 5.73
     },
     "alfaMinBajoTexto": 0.876,
-    "peorSinVelo": 1.04,
+    "peorSinVelo": 1.05,
     "bordeCampo": {
      "color": "rgb(112, 112, 112)",
      "contraContorno": 3.25,
@@ -2151,7 +2121,7 @@
     "campoArriba": 636.8,
     "botonAbajo": 680.8,
     "margenBajoBoton": 87.2,
-    "videoSinVelo": 212.0
+    "videoSinVelo": 233.1
    }
   },
   {
@@ -2175,13 +2145,13 @@
      "color": "rgb(152, 152, 152)",
      "sobreVideo": true,
      "alfaMin": 0.876,
-     "peorCuadro": 95,
-     "luzMax": 0.0169,
-     "contraste": 5.44,
-     "contrasteSinVelo": 2.54,
+     "peorCuadro": 89,
+     "luzMax": 0.0159,
+     "contraste": 5.52,
+     "contrasteSinVelo": 2.32,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.48
+     "contrasteP99": 5.59
     },
     {
      "texto": "Diseñamos y programamos sitios a medida.",
@@ -2191,12 +2161,12 @@
      "sobreVideo": true,
      "alfaMin": 0.876,
      "peorCuadro": 0,
-     "luzMax": 0.0182,
-     "contraste": 15.4,
-     "contrasteSinVelo": 1.03,
+     "luzMax": 0.0179,
+     "contraste": 15.45,
+     "contrasteSinVelo": 1.05,
      "minimo": 3.0,
      "aprueba": true,
-     "contrasteP99": 15.56
+     "contrasteP99": 15.69
     },
     {
      "texto": "Diseñamos y programamos sitios a medida.",
@@ -2205,13 +2175,13 @@
      "color": "rgb(255, 255, 255)",
      "sobreVideo": true,
      "alfaMin": 0.876,
-     "peorCuadro": 92,
-     "luzMax": 0.0128,
-     "contraste": 16.73,
-     "contrasteSinVelo": 1.73,
+     "peorCuadro": 52,
+     "luzMax": 0.0123,
+     "contraste": 16.86,
+     "contrasteSinVelo": 1.85,
      "minimo": 3.0,
      "aprueba": true,
-     "contrasteP99": 16.92
+     "contrasteP99": 17.09
     },
     {
      "texto": "Y los dejamos listos para que Google y C",
@@ -2226,7 +2196,7 @@
      "contrasteSinVelo": 2.63,
      "minimo": 3.0,
      "aprueba": true,
-     "contrasteP99": 5.49
+     "contrasteP99": 5.51
     },
     {
      "texto": "Y los dejamos listos para que Google y C",
@@ -2235,28 +2205,13 @@
      "color": "rgb(152, 152, 152)",
      "sobreVideo": true,
      "alfaMin": 0.876,
-     "peorCuadro": 116,
+     "peorCuadro": 96,
      "luzMax": 0.017,
-     "contraste": 5.44,
-     "contrasteSinVelo": 2.54,
+     "contraste": 5.43,
+     "contrasteSinVelo": 2.55,
      "minimo": 3.0,
      "aprueba": true,
-     "contrasteP99": 5.62
-    },
-    {
-     "texto": "Para empresas, clínicas y estudios profe",
-     "sel": "p.cuerpo.entradilla",
-     "tam": 15.794,
-     "color": "rgb(152, 152, 152)",
-     "sobreVideo": true,
-     "alfaMin": 0.876,
-     "peorCuadro": 74,
-     "luzMax": 0.0159,
-     "contraste": 5.53,
-     "contrasteSinVelo": 2.34,
-     "minimo": 4.5,
-     "aprueba": true,
-     "contrasteP99": 5.68
+     "contrasteP99": 5.64
     },
     {
      "texto": "Para empresas, clínicas y estudios profe",
@@ -2271,7 +2226,7 @@
      "contrasteSinVelo": 2.51,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.69
+     "contrasteP99": 5.72
     },
     {
      "texto": "Para empresas, clínicas y estudios profe",
@@ -2286,7 +2241,7 @@
      "contrasteSinVelo": 2.74,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.62
+     "contrasteP99": 5.63
     },
     {
      "texto": "Para empresas, clínicas y estudios profe",
@@ -2295,13 +2250,13 @@
      "color": "rgb(152, 152, 152)",
      "sobreVideo": true,
      "alfaMin": 0.884,
-     "peorCuadro": 77,
-     "luzMax": 0.0139,
-     "contraste": 5.69,
-     "contrasteSinVelo": 2.51,
+     "peorCuadro": 81,
+     "luzMax": 0.0154,
+     "contraste": 5.56,
+     "contrasteSinVelo": 2.75,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.93
+     "contrasteP99": 5.99
     },
     {
      "texto": "Chequeo gratis",
@@ -2440,8 +2395,8 @@
     }
    ],
    "resumen": {
-    "lineas": 18,
-    "sobreVideo": 18,
+    "lineas": 17,
+    "sobreVideo": 17,
     "bajoMinimo": 0,
     "peor": {
      "texto": "Chequeo gratis",
@@ -2459,7 +2414,7 @@
      "contrasteP99": 5.35
     },
     "alfaMinBajoTexto": 0.876,
-    "peorSinVelo": 1.03,
+    "peorSinVelo": 1.05,
     "bordeCampo": {
      "color": "rgb(112, 112, 112)",
      "contraContorno": 3.24,
@@ -2589,7 +2544,7 @@
      "contrasteSinVelo": 2.43,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.79
+     "contrasteP99": 5.8
     },
     {
      "texto": "Para empresas, clínicas y estudios profe",
@@ -2604,7 +2559,7 @@
      "contrasteSinVelo": 2.68,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.65
+     "contrasteP99": 5.64
     },
     {
      "texto": "Para empresas, clínicas y estudios profe",
@@ -2616,10 +2571,10 @@
      "peorCuadro": 68,
      "luzMax": 0.0122,
      "contraste": 5.85,
-     "contrasteSinVelo": 2.19,
+     "contrasteSinVelo": 1.91,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.93
+     "contrasteP99": 5.92
     },
     {
      "texto": "Chequeo gratis",
@@ -2877,7 +2832,7 @@
      "contrasteSinVelo": 2.31,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.65
+     "contrasteP99": 5.67
     },
     {
      "texto": "Para empresas, clínicas y estudios profe",
@@ -2892,7 +2847,7 @@
      "contrasteSinVelo": 2.51,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.61
+     "contrasteP99": 5.62
     },
     {
      "texto": "Para empresas, clínicas y estudios profe",
@@ -2919,10 +2874,10 @@
      "peorCuadro": 69,
      "luzMax": 0.0122,
      "contraste": 5.85,
-     "contrasteSinVelo": 2.08,
+     "contrasteSinVelo": 1.95,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.93
+     "contrasteP99": 5.91
     },
     {
      "texto": "Chequeo gratis",
@@ -3180,7 +3135,7 @@
      "contrasteSinVelo": 1.76,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.79
+     "contrasteP99": 5.8
     },
     {
      "texto": "Para empresas, clínicas y estudios profe",
@@ -3189,7 +3144,7 @@
      "color": "rgb(152, 152, 152)",
      "sobreVideo": true,
      "alfaMin": 0.876,
-     "peorCuadro": 75,
+     "peorCuadro": 77,
      "luzMax": 0.0133,
      "contraste": 5.75,
      "contrasteSinVelo": 1.78,
@@ -3205,12 +3160,12 @@
      "sobreVideo": true,
      "alfaMin": 0.876,
      "peorCuadro": 77,
-     "luzMax": 0.0146,
-     "contraste": 5.63,
-     "contrasteSinVelo": 2.13,
+     "luzMax": 0.0142,
+     "contraste": 5.67,
+     "contrasteSinVelo": 2.02,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.78
+     "contrasteP99": 5.79
     },
     {
      "texto": "Para empresas, clínicas y estudios profe",
@@ -3225,7 +3180,7 @@
      "contrasteSinVelo": 1.84,
      "minimo": 4.5,
      "aprueba": true,
-     "contrasteP99": 5.95
+     "contrasteP99": 5.94
     },
     {
      "texto": "Chequeo gratis",

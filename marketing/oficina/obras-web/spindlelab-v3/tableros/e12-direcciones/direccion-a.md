@@ -262,7 +262,10 @@ fuentes y hacía falta para que una pantalla funcione**, para que Clara lo confi
    color; el lock §20.6 midió que Koto no lo hace en ninguna de 640 paradas y que su juego está dentro de los marcos.
    A lo construye como Koto (franja, portadas, la tinta de las fases). Una interior con el lienzo claro sería un desvío
    de Koto: no está construido en A, y si Ramón lo quiere al ver esto, se rotula como desvío y se decide en la
-   compuerta. Mauro tenía que ajustar ese criterio y en el repo sigue igual.
+   compuerta. Mauro ajustó ese criterio el 18-oct a las 21:13 UTC (`01ea00f`, antes del último commit de A,
+   `6a340fc`): el criterio 4 y la vista 5 del encargo ya dicen lo que hace Koto (el lienzo no cambia; el color, dentro
+   de los marcos del trabajo). En la compuerta 2 la pregunta de la interior clara quedó en «ninguna», por defecto
+   (`e12/insumos-ramon-19oct.md`, pregunta 8). El techo de campos de la vista 5 lo cierra `spec-visual.md` §3.4.
 3. **Praxi tiene 6,0 % de campos**, bajo el piso de 10 % del lock §20.3. Praxi es una marca oscura con un solo acento, y
    el lock prohíbe recolorear el trabajo (§20.2, regla 3; inventario-praxi §7). Es el caso de Call of Duty en Koto
    (2,9 %). Ya entró la marca en su amarillo a 16:9; subirlo más pediría inventar campos.
@@ -294,3 +297,4 @@ fuentes y hacía falta para que una pantalla funcione**, para que Clara lo confi
 | 18-oct-2026 | **Defecto 14.** Bajo las portadas de «Lo que construimos», en Desarrollo web, va la línea corta de Clara (tipo y año), como en la home; la diferencia de texto contra B que lo anotaba sale del tablero (`armar-tablero.py`, `DIFERENCIAS`; `datos/diferencias-texto.json` medido de nuevo: en Desarrollo web solo dejan de estar en A «decap», «netlify», «image», «cdn», «api» y «anthropic») | Lucía, acta del paso 2 |
 | 18-oct-2026 | **Defecto 19.** El recorrido de `/trabajo/` dura 12,7 s (12,72 con `ffprobe`), no 12,4; el de la home, 14,2 | Lucía, acta del paso 2 |
 | 18-oct-2026 | Rehecho lo que cambió: `armar.py` → las cinco vistas; capturas de las cinco a 390 y de Praxi, Sesenta y Desarrollo web a 1440 (`render.mjs`; a 1440 la home y `/trabajo/` no cambian, así que quedan sus capturas y sus dos recorridos del 17-oct); `medir.mjs` y `campos.py` (§7); el tablero con su script, que recomprimió en su lugar `a-caso-praxi-1440-01.jpg` (510 → 436 kB), `a-caso-sesenta-1440-02.jpg` (550 → 432 kB) y `a-desarrollo-web-1440-01.jpg` (528 → 443 kB), y su `verificar.mjs` a 360, 390, 768 y 1440 sin fallas | Lucía, acta del paso 2 |
+| 19-oct-2026 | **Defecto 23 del acta del paso 2.** §9.2 decía «Mauro tenía que ajustar ese criterio y en el repo sigue igual»: el encargo se había reescrito en `01ea00f` (18-oct, 21:13 UTC), antes del último commit de A. La línea dice ahora cuándo se ajustó, qué dice el criterio y que la interior clara quedó en «ninguna» en la compuerta 2. Desde el 19-oct, A es la dirección elegida y su contrato es `spec-visual.md`: donde este documento y la spec difieran, manda la spec | Lucía, spec de E12 |

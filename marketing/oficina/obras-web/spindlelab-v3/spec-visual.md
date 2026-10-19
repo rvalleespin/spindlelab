@@ -1,136 +1,759 @@
-# Spec visual — SpindleLab · sitio entero en el lenguaje de driftime
+# Spec visual · SpindleLab v3 · obra E12 · dirección elegida: A · Archivo
 
-**Vigente desde el 5-oct-2026.** El contrato que construye Diego y audita Javiera. Una
-corrección que no termina escrita acá vuelve a aparecer en la pasada siguiente.
+**Vigente desde el 19-oct-2026 (Lucía, dirección de arte).** El contrato contra el que Diego construye en la corrida 2 y
+contra el que Javiera audita. **Lo que no está aquí no se inventa:** si un caso no está cubierto, se le pregunta a Lucía
+y la respuesta se escribe aquí, con su fila en §7. Una corrección que se queda en el chat vuelve como defecto.
 
-- **Referencia dominante:** driftime.com, **medida** (`referencia-driftime/lock-driftime.md`).
-- **Rasgo que se preserva:** un sistema de imágenes con una tipografía display escasa.
-- **Qué sacrifica:** densidad de imagen (hay ~13 honestas contra ~25 de driftime) y el muro
-  de logos (no existe: cero prueba social inventada).
-- **Implementación de referencia:** `tableros/driftime-home/` y `tableros/driftime-desarrollo/`.
-  Ante la duda, se mira el tablero, no se improvisa.
+- **Referencia dominante:** Koto (koto.com), **medida** (`e12/lock-koto.md`, §20 y §21 sobre todo; `e12/medicion/koto/`).
+  Accept & Proceed queda acotada a una cosa: la carga como diseño (cada medio espera en su placa con su radio).
+- **Rasgo que se preserva:** un lienzo `#060606` donde la interfaz se retira (gris, chica, una letra en dos cortes,
+  cero negrita) y lo que ocupa la pantalla es el trabajo, plano en su marco. El color lo pone cada pieza dentro de su
+  marco; la interfaz no tiene ninguno.
+- **Qué sacrifica:** el hero monumental del brief de Ramón (la frase va a 48 px, como la portada de Koto); depende del
+  material grabado (sin capturas buenas, A se cae); y lleva la letra de los productos de Google (riesgo dicho en
+  `tableros/e12-direcciones/direccion-a.md` §0, que Ramón eligió sabiéndolo).
+- **Implementación de referencia:** el prototipo `tableros/e12-direcciones/proto/a/` (cinco vistas, aprobado por Javiera
+  en la vuelta 2 del paso 2) y el estudio de la portada `e12/spec/portada/` (la portada con el hilo de oro, medida para
+  esta spec). **Donde el prototipo y esta spec difieren, manda la spec**; las diferencias están listadas en §0.4.
+- **La spec anterior** (el sitio en el lenguaje de driftime, 5 al 15-oct) es historia, entera y sin cambios, en
+  [`spec-visual-driftime.md`](spec-visual-driftime.md). Lo construido con ella en `spindlelab-astro/` lo reemplaza la
+  corrida 2.
+- **Herramientas y datos de esta spec:** `e12/spec/` (`herramientas/`, `datos/`, `img/`, `portada/`). Cada número de
+  abajo dice de qué archivo sale.
 
-## 0 · Decisiones de Ramón que este documento ejecuta (5-oct-2026)
-1. Se extiende a **todo el sitio**, no solo el hero.
-2. **Mayúsculas 800 solo en cinco lugares** (titular del hero y las cuatro palabras de campo).
-   El manual de marca quedó actualizado (§05).
-3. **Mockups compuestos con lo que hay, sin costo**: la obra real montada en dispositivos
-   sobre fotografía propia. Nada de generación pagada.
-4. Sigue vigente de antes: **dirección A** (el instrumento primero en la home), **criterio de
-   éxito = conversión**, **no se publica** (todo bajo `/v3/` con `noindex`).
+**Manda, en este orden:** el brief de obra, sección «Compuerta 2» (`e12/brief-de-obra.md`) y después «Compuerta 1»;
+`e12/insumos-ramon-19oct.md` (lo que contestó Ramón, textual); esta spec; `e12/lock-koto.md`; el prototipo. El texto es
+de Clara (`e12/texto/texto-paso2.json` y lo que escriba para las rutas nuevas); los datos, de los inventarios
+(`e12/inventario-casos.md`, `e12/inventario-praxi.md`): **una etiqueta o un número sin fila ahí no existe**. Las señales,
+de Simón (`e12/senales-obra.md`).
 
-## 1 · Tokens (`src/styles/driftime.css`)
+---
 
-| Token | Valor | Rol | Dónde NO |
+## 0 · Lo que esta spec ejecuta
+
+### 0.1 · La compuerta 2 (19-oct, ~09:50), punto por punto
+
+| # | Decidió Ramón | Cómo lo ejecuta esta spec | Dónde |
 |---|---|---|---|
-| `--noche` | `#000` | lienzo | — |
-| `--modulo` | `#161616` | módulo de nav, píldoras, notas, botón secundario | nunca como fondo de sección |
-| `--filete` | papel al 12 % | separadores de fila | nunca como borde de tarjeta |
-| `--papel` | `#F7F5F0` | texto principal, botón primario, el campo del chequeo | nunca blanco puro salvo en brasa |
-| `--gris` | `#9AA4B0` | texto secundario (6,9:1 sobre negro) | nunca para texto de acción |
-| `--oro` | `#C9A227` | **solo** el punto del wordmark del módulo | nada más, nunca |
-| `--brasa` / texto `#FFFFFF` | `#DA3400` | campo Desarrollo | — |
-| `--navy` / `#E4F1EC` | `#0E2A47` | campo Visibilidad | — |
-| `--petroleo` / `#FFF4E2` | `#0F766E` | campo Continuidad | — |
-| `--ciruela` / `#FFEFDD` | `#341F34` | campo Alcance | — |
-| `--r` | `6px` | **el único radio** | 4 px solo dentro de un control (botón dentro del campo, píldora activa) |
-| `--m` | 40 px / 20 px celular | margen lateral | — |
-| `--g` | 16 px / 10 px celular | gutter entre piezas | — |
+| 1 | **A · Archivo** («1 A») | Google Sans Flex + DM Mono 500 sobre `#060606`; el trabajo carga la pantalla. B no se construye ni se le toman rasgos | §1, §2 |
+| 2 | **Logo: El huso** («2 dos»), monocromo (pregunta 10, por defecto), Google Sans Flex wght 600 | En el encabezado, el pie y el favicon; blanco sobre negro, nada más | §5.4 |
+| 3 | **Hero 3** («3 tres»): «hero-sitio» de Clara | El rótulo, el `h1` en dos tintas y la entradilla, en la portada | §2.1 |
+| 4 | **Portada: el video del hilo de oro** del sitio actual, sin pagar generación («cuando tenga plata vamos con lo faltante») | En el lugar del showreel de Koto, con velo `#060606`, pausa, VP9 y H.264, póster y quieto con movimiento reducido. **Desvío autorizado**, registrado en §0.3. La cinta de trabajo baja a primera sección | §2.1, §3.1, §3.2 |
+| 5a | «tienes capturas en los archivos» | El caso Praxi va con las capturas de las páginas públicas y los recortes de A; el hueco de las pantallas internas queda nombrado, con su marco punteado | §2.3, §3.3 |
+| 5b | «no se cuenta» | Ni «en pausa» ni «fuera de línea» en ninguna parte; sin enlace a praxi.coach | §2.3, §6 |
+| 5c | «las fotos están en la nube» | `landing-1/2/3.jpg` solo dentro de las capturas de la landing, nunca sueltas | §3.3, §6 |
+| 5d | «nombra» | Los dos modelos, cada uno con lo que hace para quien usa Praxi | §2.3 |
+| 5e | «si fue con agentes de IA» | En los créditos de la barra del caso | §2.3 |
+| 5f | «ambos son casos reales» | Praxi y Combeau con página propia; Combeau es **una** página con dos partes | §2.3 |
+| 6 a 10 | Sin respuesta: van por defecto | 6: ni 54 → 94 ni 36 → 73 a la vista (cierra el defecto 20). 7: Combeau sin medidas personales (defecto 21 en A). 8: ninguna interior con el lienzo claro. 9: el círculo del cursor es blanco. 10: el logo es monocromo | §1.1, §2, §3.3, §6 |
 
-Los cuatro pares campo/texto tienen el contraste medido (AA de cuerpo) desde la v3. Brasa
-lleva blanco puro: driftime falla ahí (3,70:1) y no se copia.
+### 0.2 · Los defectos abiertos del acta del paso 2 (vuelta 2)
 
-## 2 · Tipografía
-Ver manual §05. Resumen operativo:
-- **`.display`** — Manrope 800 MAYÚSCULAS, `clamp(2.4rem,10vw,7.5rem)`, interlínea 0,9. **Cinco
-  usos en todo el sitio. Una página interna tiene cero.** Si una interna necesita gritar,
-  está mal diseñada.
-- **`.h-caso`** (h1 interno) 60 px 500 · **`.h-sec`** (h2) 30 px 500 · **`.h-sub`** (h3) 24 px 500.
-- **`.guia`** 24 px 400 · **`.cuerpo`** 18 px 400 gris · **`.btn`** 14 px 500.
-- Gabarito: **solo** el wordmark (módulo y pie gigante).
-
-## 3 · Componentes
-- **Nav** (módulo fijo arriba a la izquierda): wordmark con punto de oro · `Escríbenos` ·
-  menú. El menú abre el overlay con todas las páginas (lógica de `NavV3`).
-- **`.btn`** papel/negro, 36 px de alto, 14 px. **`.btn.alt`** módulo/papel. Nunca un botón
-  grande, salvo el del chequeo.
-- **`.pills`**: píldoras dentro de un módulo; la activa en papel al 14 %. En los campos con
-  dos servicios funcionan como pestañas.
-- **`.pieza`**: figura con radio 6 y etiquetas **arriba a la izquierda** (abajo las tapa el
-  aviso de cookies). La pieza de concepto lleva su rótulo en papel, visible sin scroll.
-- **`.fila`**: grilla de piezas en escritorio; **carrusel con la siguiente asomándose** en
-  celular (`scroll-snap`).
-- **`.campo`**: pantalla completa, `position: sticky`, se apilan. Título display · píldoras ·
-  descripción 24 px · línea de precio · botones · fila de imágenes al fondo.
-- **`.precio`**: `Desde | $X … | + IVA`, **exactamente** con las cifras de los JSON de datos.
-- **Sección pegajosa** (`.sec` + `.eti`): etiqueta h2 pegajosa a la izquierda (5/12), texto a
-  la derecha (7/12). En celular se apila y la etiqueta deja de pegarse.
-- **`.filas`**: lista editorial separada por filetes. **Nunca tarjetas iguales en grilla**
-  (tell B1 del detector).
-- **Banda del índice** (`.d-banda-sidx`, solo en `/servicios/`): la versión de índice del
-  `.campo`. Un momento por banda, en el color de su campo; a la izquierda (5/12) rótulo en caja
-  normal + h2 + nota, a la derecha (7/12) sus servicios como filas enlazadas (nombre, flecha,
-  línea, precio). **Alto variable**, no pantalla completa: mide de 370 a 590 px entre 768 y
-  1920 de ancho. **Filete en el color del texto al 32 %** (`color-mix` de `currentColor`), no
-  `--filete`: medido contra el fondo, el papel al 12 % da 1,14:1 sobre brasa y 1,24:1 sobre
-  petróleo (casi no se ve); el texto al 32 % da 1,57 y 1,77. Es separador, no texto, así que
-  no afecta el contraste de lectura. **Pegajosa solo con ancho ≥ 768 px y alto ≥ 680 px**; por debajo se
-  apilan sin pegarse, para que ninguna esconda su final bajo la siguiente. Todo el texto de la
-  banda al 100 % (brasa 4,70:1 y petróleo 5,06:1 no tienen margen para opacidad).
-  Línea de precio: cada alternativa con su plan no se parte, y hay espacios reales entre las piezas.
-  Descripción de la fila con tope `28.5em` (no px): medido con Range, máx. 62 caracteres a 1280,
-  1440 y 1920 (con 620 px llegaba a 75–79).
-- **Toda pila pegajosa** (`.d-campo` de la home, `.d-banda-sidx` del índice, y cualquiera que
-  venga): **el foco nunca queda tapado** (WCAG 2.2 SC 2.4.11). Hacia atrás (Shift+Tab), un enlace
-  de una banda anterior queda pegado en `top: 0` bajo la banda siguiente, y el navegador no hace
-  scroll porque el elemento está dentro de la ventana. Regla: al entrar el foco en la pila, un
-  cuadro después, si `elementFromPoint` en tres puntos del elemento enfocado no lo devuelve (ni a
-  un hijo suyo), la ventana va a la **posición natural de su banda** (comienzo de la pila + alto
-  de las bandas anteriores), con `behavior: 'instant'`. Solo donde la pila se pega (mismo media
-  query del CSS). Sin JS, la banda con el foco sube de `z-index` (`:focus-within`), y esa regla
-  se apaga cuando el script corre: con JS, una banda subida taparía a las siguientes al seguir
-  bajando con el foco adentro. Hoy lo cumple el índice de servicios (script de la página); la
-  home tiene la misma falla en sus campos (QA midió sus 14 enfocables tapados hacia atrás) y el
-  arreglo va al sistema: está propuesto como script compartido.
-- **Pie**: llamado + enlaces en dos columnas + **wordmark gigante** (`100cqi / 4.78`) con el
-  punto en papel.
-
-## 4 · Plantillas por tipo de página
-
-| Plantilla | Páginas | Estructura |
+| # | Cómo se cierra | Dónde |
 |---|---|---|
-| **Home** | `/` | instrumento → display → fila de 4 obras → presentación → 4 campos pegajosos → quién está detrás → El Taller → pie |
-| **Servicio** (el caso de driftime) | las 6 de `/servicios/*` | miga · h1 60 px · línea · 2 botones → imagen a sangre → nota + entrada → secciones pegajosas (incluye, planes, fases, preguntas) con una galería entre medio → siguiente servicio → pie |
-| **Índice** | `/servicios/`, `/trabajo/`, `/blog/` | h1 60 px + entrada → filas editoriales (servicios: con su campo de color y precio; trabajo: piezas grandes con rótulo; blog: fecha · título · flecha) |
-| **Editorial** | `/metodo/`, `/nosotros/` | h1 60 px → imagen → secciones pegajosas |
-| **Artículo** | los 7 posts | miga (`Inicio · Blog · <nombre corto>`) · h1 60 px · tema · fecha · lectura · autor (avatar 44 + nombre + rol) → imagen editorial → etiqueta pegajosa con el índice del artículo + cuerpo verbatim a la derecha (medida ≤ 68 caracteres) → **cierre**: `.d-sec--quieta` «Leer ayuda; medir, más.» + guía + `Correr el chequeo` (→ `/v3/diagnostico/`) y `Escríbenos` → siguiente artículo |
-| **Herramienta** | `/diagnostico/`, `/contacto/` | h1 60 px + una línea → el instrumento o el formulario como protagonista → secciones pegajosas de apoyo |
+| 20 | La home muestra la alternativa de Clara en «Cada pieza, con su prueba», no el 54 → 94 | §2.1 (sección 5) |
+| 21 | El caso Combeau en A usa solo los medios recortados de `e12/casos/combeau/medios/`; ningún `alt` menciona medidas; la cinta se rehace sin el tramo viejo | §2.3, §3.2, §3.3 |
+| 22 | **Techos de campo por tipo de página**, escritos y medibles; la franja de Desarrollo web deja de ser un campo (Doceavo sale de la franja y entra Combeau) | §3.4 |
+| 23 | La línea de `direccion-a.md` §9.2 corregida (19-oct) | `tableros/e12-direcciones/direccion-a.md` §9.2 y §10 |
 
-## 5 · Imagen
-**Se usa** (pool honesto): obra (Combeau ×2 con permiso, Verifica y Cumple propio, Raigal
-concepto rotulado), mockups compuestos de esa obra (`obra/mock-<caso>-ancho.jpg` 4:3 y
-`-alto.jpg` 10:11; cómo se hicieron en `mockups/README.md`), hilo de oro, dominó ×2, hilos, escritorio,
-ventana, retrato de Ramón.
-**No se usa nunca:** `hero-*.jpg`, `estrategia-mesa.jpg`, `equipo-creativo.jpg`,
-`servicios-oficina`, `evidencia-oficina`, `metodo`, `problema`, `foto-banner-original` — son de
-banco o muestran equipos que no existen. `servicios-capas` y `evidencia-medicion` llevan un
-punto dorado dibujado: serían un segundo oro en la vista, así que tampoco.
-`hilos.jpg` **es un recorte** (5-oct): la foto original traía una línea de oro de lado a lado,
-y junto al punto del módulo eran dos oros en la misma vista. Se recortó bajo la línea; no se
-vuelve a la versión completa.
-**Video:** solo `hero-hilo-de-oro.mp4`, y solo si no hay `prefers-reduced-motion`.
+### 0.3 · Desvíos registrados (de Koto, del lock o del brief)
 
-## 6 · Lo que esta spec prohíbe explícitamente
-- Mayúsculas 800 fuera de los cinco lugares. Rótulos en mayúsculas espaciadas tampoco.
-- Más de un oro por vista. El oro es el punto del módulo; nada más.
-- Tarjetas con borde parejo en grilla. Se usan filas con filete.
-- Cualquier imagen de la lista negra de §5.
-- Cifras, logos o testimonios sin respaldo. Precios distintos a los de los JSON de datos.
-- Tocar `Layout.astro`: ahí viven gtag, el consentimiento, el Pixel y el aviso de cookies.
-- Cambiar los nombres del formulario (`.contact-form`, `#f-utm-*`, `.form-status`,
-  `.form-success`) o los ids del chequeo (`chq-form`, `chq-dominio`, `chq-btn`, `chq-out`,
-  `chq-error`).
-- Cambiar una URL publicada.
+Cada uno con su porqué. Un desvío que no está en esta lista es un defecto.
+
+1. **La portada es un video de marca generado con IA** (Higgsfield, 1-ago), cuando el brief (§5, «Huecos»; §4, la fila
+   de los clichés) y el lock §20.2 piden solo trabajo real. **Autorizado por Ramón** en la compuerta 2, punto 4. Es la
+   única imagen generada de la obra y no abre la puerta a otra (brief §6.12). No va en un marco de trabajo: va a sangre,
+   sin radio y sin rótulo de pieza, para que nadie lo lea como un proyecto.
+2. **Bajo 834 px la portada es una franja 16:9 a sangre y el texto va debajo, sobre el lienzo**, no encima del video
+   como en Koto a 390 (su reel ocupa la pantalla entera). Por qué: el chequeo tiene que entrar en la primera pantalla a
+   360 × 800 (§4.4). Con el video a pantalla completa y el texto encima, a 360 × 800 el texto tapaba el video entero
+   (medido: la rampa del velo empezaba en el borde de arriba) y a 375 × 667 el botón quedaba 42 px bajo el borde.
+3. **Bajo 834 px el `h1` de la portada va a 26 px**, el paso de la declaración de Koto, no a 36, el de su portada.
+   Koto usa 36 a 390 para una frase de 3 palabras («We're Koto / The Creative Company») y 26 para una declaración larga
+   (lock §2.1); la nuestra tiene 18 palabras. A 36 ocupaba 6 líneas a 360 (216 px) y el chequeo no entraba.
+4. **Entre 834 y 1193 px el muro del índice va en dos columnas**; Koto, en una (medido el 19-oct,
+   `datos/koto-entre-cortes.json`). Con diez entradas, una columna de 788 a 1147 px deja cada pieza 4:5 de 985 a 1434 px
+   de alto, más de una pantalla por pieza. El prototipo lo construyó así y Javiera lo aprobó a 768 y 1024.
+5. **Problema lleva su rótulo mono** (Koto no lo pone en su introducción): lock §21.5, fila del 18-oct en su §19.
+6. **La cruz de registro** en el borde de sección de los casos: lock §10, desvío del brief de obra §4 ya registrado.
+   Reversible en una regla de CSS.
+7. **La home tiene campos en más de una pieza** (el lock §20.2, regla 4, decía «en la home, a lo más la pieza
+   destacada»): la home de A que Ramón eligió tiene un índice corto de cuatro piezas y la fila de pruebas. Lo acota el
+   techo de §3.4.
+8. **El borde del campo del chequeo es `#707070`**, no el `#4a4a4a` del prototipo: el del prototipo daba 2,29:1 contra el
+   lienzo, bajo el 3:1 de WCAG 1.4.11. Koto no tiene un campo de texto medido.
+
+### 0.4 · Lo que cambia respecto del prototipo de A (lo construye Diego así, no como el prototipo)
+
+1. **Portada nueva** (§2.1, §3.1): el video del hilo de oro llena la primera pantalla; la cinta pasa a ser la sección 2.
+2. **La cinta se rehace** sin el tramo viejo de Combeau modelo, que mostraba su línea de medidas (§3.2).
+3. **Las barras laterales (caso, índice, artículo) aparecen desde 1194, no desde 1024** (§1.4): así lo hace Koto
+   (medido), y entre 1024 y 1193 la caja del cuerpo del caso quedaba en 292 a 377 px (42 a 53 caracteres por línea).
+4. **La caja del cuerpo tiene tope de 493 px en todos los anchos** (§1.3): el prototipo lo aplicaba solo desde 1024, y
+   entre 768 y 1023 el cuerpo de los casos llegaba a 106 y 142 caracteres por línea (`datos/proto-a.json`).
+5. **El `h1` de la portada a 26 px bajo 834** (§0.3, punto 3).
+6. **Combeau es una página** (`/v3/trabajo/combeau/`, con `#fotografia` y `#modelo`); el índice y la home enlazan ahí,
+   no a `combeau-fotografia/` ni `combeau-modelo/` (inventario §2.9; `senales-obra.md` §0).
+7. **Verifica y Cumple, el chequeo y spindlelab.cl no tienen página de caso** (§2.2); ningún enlace a una ruta
+   `/trabajo/x/` que no exista.
+8. **Ni el 54 → 94 ni «Fuera de línea»** (§0.1, filas 5b y 6).
+9. **La franja de Desarrollo web es Combeau, no Doceavo** (§3.4).
+10. **El borde del campo, `#707070`** (§0.3, punto 8).
+11. **Todo video lleva H.264 además de VP9** (§3.5); el prototipo tenía solo VP9 en los casos.
+12. **El logo es el dibujo final de Bruno** (`e12/logo/final/`, §5.4), no el provisorio del prototipo.
+
+### 0.5 · Preguntas abiertas (no se resuelven a la fuerza)
+
+**Para Ramón (lo trae Mauro):** `Layout.astro` es el de producción y el brief §6.7 prohíbe tocarlo (gtag,
+consentimiento, Pixel). Desde él, cinco cosas de toda página v3 que A no puede cambiar desde afuera:
+
+| Qué | Hoy, en toda página `/v3/` | Lo que A necesita | Qué pasa si no se toca |
+|---|---|---|---|
+| **Lenis** | Se carga y se crea (20.034 bytes con el resto de los scripts del Layout, 5,9 kB comprimido, `dist/_astro/hoisted.*.js`) | Que no cargue: A va con scroll nativo, como Koto (lock §9) | Se deja sin efecto desde la página (§5.2), medido: la rueda vuelve a ser nativa. Sigue bajando y corriendo su bucle por cuadro |
+| **Letras precargadas** | Inter (48.432 B), Gabarito (20.080 B) y Manrope (24.576 B), con `rel=preload` | Solo Google Sans Flex y DM Mono (antislop C7: ninguna letra cargada sin uso) | Cada página de A baja 93.088 bytes de letras que no usa |
+| **`theme-color`** | `#0E141B` (la tinta vieja) | `#060606` | La barra del navegador del teléfono queda en otro negro |
+| **Favicon** | `favicon.svg?v=4` (el de antes) | El huso, con `?v=5` | El de antes en la pestaña, mientras viva en `/v3/` |
+| **`#org` y `jobTitle`** | El posicionamiento de antes (Simón, `senales-obra.md` §1.1) | El del estudio | Lo cubre Simón; va con lo mismo |
+
+**La propuesta, para que Ramón la apruebe o no:** una prop opcional del `Layout` por cada una, cuyo valor por defecto es
+el de hoy, de modo que las 20 páginas publicadas salgan **byte a byte iguales** (se comprueba con un `diff` del `dist/`
+de esas rutas antes y después); el v3 las pasa. No toca gtag, consentimiento ni Pixel, pero es un cambio en
+`Layout.astro` y va a `desvios.md`. **Hasta que conteste, rige lo que dice §5.2 y nada se cambia en el `Layout`.**
+
+**Para Clara:** el texto del círculo y del rótulo quieto sobre la entrada de Verifica y Cumple, que ahora enlaza al
+sitio del producto y no a un caso (§2.2); el texto del caso Combeau (inventario §2.9) y la confirmación de los textos
+de control que A puso (`direccion-a.md` §6).
+
+---
+
+## 1 · Tokens
+
+Viven en `src/styles/archivo.css` (§5.3), como propiedades en `body.a-body`, no en `:root`: así ninguna regla de A
+alcanza a una página de producción aunque la hoja se cargue por error. **Un valor que no esté en estas tablas no se
+usa.** Valores tomados del prototipo (`proto/a/a.css`) salvo donde se dice.
+
+### 1.1 · Color (cada token con su rol; contraste calculado desde el hex, `datos/tokens.json`)
+
+| Token | Valor | Rol, y solo ese | Dónde **no** |
+|---|---|---|---|
+| `--a-lienzo` | `#060606` | El fondo de todas las páginas, siempre: `html` y `body`. El texto sobre lo blanco (botón claro, círculo) | Nunca cambia por página, sección, scroll ni estado (lock §20.2, regla 1) |
+| `--a-placa` | `#141414` | Encabezado plegado, menú, barra del caso bajo 1194, rótulo sobre un medio (`marca-medio`), botón de pausa, fondo del campo, el marco donde espera cada medio mientras carga | Tarjeta de contenido, banda de sección, fondo de un bloque de texto |
+| `--a-placa-activa` | `#202020` | La sección activa en la barra del caso; el botón de placa al pasar el mouse | Cualquier cosa que no sea un estado |
+| `--a-placa-apretada` | `#2A2A2A` | El botón de placa apretado (`:active`) | Fuera de ese instante |
+| `--a-blanco` | `#FFFFFF` | Lo nombrado y lo activo: titulares, la primera tinta, enlaces, la sección activa y su punto de 3 px, el foco, el botón claro, el círculo del cursor, el estado apretado de la pausa | El cuerpo corrido |
+| `--a-blanco-70` | blanco al 70 % (`#B4B4B4` compuesto) | El menú del encabezado en reposo (Koto: 70 → 100 % en 167 ms) | Cualquier otro texto |
+| `--a-gris` | `#989898` | La continuación de la frase, el cuerpo, los rótulos y datos mono en reposo, el placeholder | Sobre un campo claro; un enlace que no se distinga de otra forma |
+| `--a-apretado` | `#D0D0D0` | El botón claro apretado (`:active`) | Fuera de ese instante |
+| `--a-linea-seccion` | `#2D2D2D` | El borde superior (1 px) de cada sección del caso, del índice, de una fila de plan, fase o pregunta; la cruz de registro | Alrededor de un bloque; borde de tarjeta |
+| `--a-linea` | blanco al 10 % | Separador entre filas de una lista y entre ingredientes | Borde de un bloque |
+| `--a-borde-campo` | `#707070` | El borde de 1 px del campo de texto (WCAG 1.4.11) | Cualquier otro borde |
+| `--a-hueco` | `#4A4A4A`, punteado | El borde punteado de un hueco nombrado (lo que falta, dicho: las pantallas internas de Praxi) | Cualquier cosa que exista |
+| `--a-velo` | `#060606` al 70 % | Las piezas del índice que no tienen el mouse (167 ms lineal, solo con puntero fino desde 834) | En táctil no existe; nada más |
+| `--a-velo-portada` | `#060606` de 0 a 0,88 y a 1 en el borde de abajo | Solo la portada desde 834 px (§3.1) | Cualquier otro medio: el texto nunca va sobre un medio del trabajo |
+| campos | los del trabajo | Dentro de un marco de medio, con los techos de §3.4 | La interfaz entera |
+
+**Ningún color más.** Ni el oro `#C9A227`, ni el cobalto (la opción b del lock §20.4 queda descartada por la pregunta
+9), ni un color por servicio, ruta o estado.
+
+| Par (WCAG 2.1) | Contraste | Mínimo |
+|---|---|---|
+| blanco sobre lienzo · placa · placa activa | 20,26 · 18,42 · 16,29 | 4,5 |
+| gris sobre lienzo · placa · placa activa | 7,02 · 6,39 · **5,65** (el más justo: sobre la placa activa nada más oscuro que el gris) | 4,5 |
+| blanco al 70 % (menú) sobre lienzo | 9,81 | 4,5 |
+| lienzo sobre blanco (botón claro, círculo) · sobre gris (botón claro al pasar) · sobre `#D0D0D0` (apretado) | 20,26 · 7,02 · 13,14 | 4,5 |
+| foco: contorno blanco de 2 px contra el lienzo · contra la placa | 20,26 · 18,42 | 3 |
+| borde del campo `#707070` contra el lienzo · contra el peor fondo del velo de la portada | 4,09 · 3,14 (medido en el render: 3,23 a 3,29) | 3 |
+| gris · blanco sobre el peor fondo del velo de la portada (0,88 sobre un blanco puro) | 5,39 · 15,55 (medido sobre el video: §3.1) | 4,5 |
+| anillo de 1 px del círculo (lienzo) contra un campo blanco | 20,26 | 3 |
+| punto activo (blanco) contra el gris de su fila | 2,88: **no basta**, por eso la activa la marca el punto y no el color | |
+| línea de sección · línea · placa contra el lienzo | 1,47 · 1,23 · 1,10 | decorativas: separan, no informan |
+
+### 1.2 · Letras
+
+Dos familias, en dos archivos locales, y ninguna otra (antislop C7). Se copian de `proto/a/fuentes/` a
+`spindlelab-astro/public/fonts/` con su licencia al lado:
+
+| Archivo | Qué es | Peso | Licencia |
+|---|---|---|---|
+| `google-sans-flex-latin.woff2` | Google Sans Flex variable, subconjunto latino de Google Fonts, ejes `wdth` 25–151 y `wght` 100–1000 | 119 kB | `OFL-google-sans-flex.txt` (SIL OFL 1.1, © 2015 Google LLC) |
+| `dm-mono-500-latin.woff2` | DM Mono 500, estático | 15 kB | `OFL-dm-mono.txt` (SIL OFL 1.1, The DM Mono Project Authors) |
+
+`@font-face` como en el prototipo (`font-weight: 100 1000; font-stretch: 25% 151%` en la variable; `font-display: swap`
+en las dos) y `rel=preload` de las dos por el slot `head`. **Ninguna de las dos trae flechas** en este subconjunto: la
+flecha es un SVG (§1.6, iconos).
+
+| Rol | Letra y corte | Se usa en |
+|---|---|---|
+| **Display** | Google Sans Flex, `font-stretch: 76%`, `font-weight: 300` | `h1`, `h2`, `h3` de sección, títulos de pieza en la ficha de la cinta, el puntaje del resultado del chequeo |
+| **Cuerpo** | Google Sans Flex, `font-stretch: 100%`, `font-weight: 370` | Párrafos, entradillas, nombres de pieza bajo el medio, el índice de secciones, el filtro, los campos |
+| **Rótulo** | DM Mono 500, 11 px, MAYÚSCULAS, `letter-spacing: .03em`, interlínea 1,25 | Rótulos de sección, ficha (TIPO · AÑO), menú, botones, la hora, el texto del círculo |
+| **Dato** | DM Mono 500, 12 px, caja normal, `.03em`, interlínea 1,35 | Valores con fila en el inventario (fechas, ingredientes, identificadores de modelo) |
+| **Logo** | Google Sans Flex wght 600, **dibujado en SVG** (no carga la letra a 600) | Encabezado, pie, favicon (§5.4) |
+
+**Cero negrita** (`strong`, `b`, `em` heredan peso y estilo; ningún nodo con peso ≥ 600, medido en el prototipo: 0).
+**Nada en mayúsculas salvo la mono.** La interlínea del rótulo queda en **1,25** (la decisión que el lock §6.4 dejó a la
+spec): la línea mono del índice pasa a dos líneas a 390 y a 1,0 se montan.
+
+### 1.3 · Escala (1440 → 390; entre los dos anchos, lineal con `clamp`)
+
+| Paso | 1440 | 390 | `clamp` | Se usa en |
+|---|---|---|---|---|
+| Portada | 48 / 1,0 / −0,01em | **26** / 1,0 | `clamp(26px, 2.0952vw + 17.829px, 48px)` | Solo el `h1` de la home (§0.3, punto 3) |
+| Declaración | 38 / 1,1 / −0,01em | 26 / 1,1 | `clamp(26px, 1.15vw + 21.5px, 38px)` | `h1` de las interiores, `h2` de sección de la home y de las interiores |
+| Siguiente | 32 / 1,15 | 23 / 1,15 | `clamp(23px, .86vw + 19.6px, 32px)` | El nombre del caso siguiente |
+| Título | 24 / 1,2 | 23 / 1,2 | `clamp(23px, .1vw + 22.6px, 24px)` | `h1` de caso y de artículo (en la barra), `h2` de sección del caso, `h3` de plan y de pregunta, servicios secundarios de la home |
+| Cuerpo | 16 / 1,35 | 15 / 1,35 | `clamp(15px, .1vw + 14.6px, 16px)` | Párrafos |
+| Chico | 14 / 1,35 | 13 / 1,35 | `clamp(13px, .1vw + 12.6px, 14px)` | Pies de medio, notas, la ayuda del chequeo, créditos |
+| Dato | 12 / 1,35 | igual | | §1.2 |
+| Rótulo | 11 / 1,25 | igual | | §1.2. **Piso de todo texto: 11 px** |
+
+Medido en el prototipo a 1440: `h1` 48 px en dos líneas (1054 px de ancho), declaración 38, título 24
+(`datos/proto-a.json`). **La caja del cuerpo tiene tope de 493 px en todos los anchos** (Koto: 493; A da de 68 a 71
+caracteres por línea a 1440 y Koto 72 en Lyft, `datos/koto-entre-cortes.json`). `text-wrap: balance` en titulares,
+`pretty` en cuerpo. **Dos tintas en una frase:** una por sección, la parte en blanco hasta 8 palabras y la gris de 6 a
+13 (lock §14); son las que Clara marcó con «tinta» y «gris».
+
+### 1.4 · Retícula y cortes
+
+- **Retícula de Koto:** margen lateral 16 px, separación 8 px, **sin ancho máximo**. **8 columnas bajo 834 px, 12 de
+  834 a 1193, 16 desde 1194** (los cortes medidos de Koto). A 1440 la columna mide 80,5 px.
+- **El corte de 1024 que A dejó abierto (`direccion-a.md` §9.4) se cierra en 1194.** Medido en Koto el 19-oct
+  (`herramientas/koto-entre-cortes.mjs` → `datos/koto-entre-cortes.json`, Lyft y `/work` a 834, 900, 1024, 1100, 1193,
+  1194 y 1440): la barra lateral del caso (320 px, `sticky`) y la del índice aparecen **recién desde 1194**; de 834 a 1193
+  el caso va apilado como a 390 (medio principal arriba, nombre, ficha, introducción, barra flotante abajo con la
+  sección activa) y el índice va con el título arriba y el filtro en una barra. Con la barra desde 1024, como en el
+  prototipo, la columna del caso quedaba en 656 px y la caja del cuerpo en 292 (42 a 44 caracteres por línea).
+- **Desde 1194:** barra lateral de 320 px a 16 del borde, columna del ancho de la ventana menos 368 (16 + 320 + 16 + 16), con 16 px entre las dos (a 1440: 1072).
+- **Qué se mide en cada ancho:** 360, 390, 768, 1024 y 1440 (los de la obra), más 834 y 1194 (los cortes) y 1920.
+
+### 1.5 · Espaciado, radios, profundidad
+
+- **Espaciado** (la escala, no «donde caiga»): 4 · 8 · 12 · 16 · 24 · 32 · 40 · 48 · 56 · 80 · 120 · 160 px. Entre
+  medios, 8 (Koto). Arriba de cada sección, **120 desde 834 y 80 bajo 834**. Antes del pie, 160.
+- **Radios** (Koto, lock §17): **6** en los medios; **4** en placas, botones, campo, pausa y barra; **2** en rótulos sobre
+  un medio y en el contorno del foco; **0** en todo medio a sangre (la portada, la cinta y el medio principal del caso
+  bajo 834) y en la línea de sección.
+- **Profundidad:** ninguna sombra. Lo único que sube es la placa (encabezado plegado, menú, barra, pausa, rótulo sobre
+  un medio), y comunica «esto es un control o un estado», nunca «esto es una tarjeta». El anillo de 1 px del círculo del
+  cursor es un borde, no una sombra. **Ningún bloque lleva borde alrededor**: las líneas son el borde superior de una
+  sección o de una fila.
+
+### 1.6 · Movimiento
+
+**Motion 13.5.0, fijo** (§5.1). Tres resortes, calibrados contra Koto y A&P (lock §9, `datos/resortes.json` del
+tablero del paso 1), todos con ζ ≥ 1 (cero rebote):
+
+| Resorte | stiffness · damping · mass | 90 % | Qué lo dispara |
+|---|---|---|---|
+| **cursor** | 2700 · 104 · 1 | 75 ms | La posición del círculo |
+| **estado** | 800 · 57 · 1 | 139 ms | La escala del círculo al entrar y salir de una pieza; la pieza del índice que se acorta 24 px; el punto activo del índice de secciones |
+| **entrada** | 230 · 31 · 1 | 264 ms | Un bloque que entra a la vista **una vez** (`inView`), subiendo 50 px con opacidad 0 → 1: el medio o el abridor de una sección, **uno por sección, nunca texto de lectura ni línea por línea**; el encabezado que se pliega en la placa (desde 834); «Siguiente» al final del caso |
+
+- **El color no lleva resorte:** cambia en **167 ms lineal** (el menú de 70 a 100 %, el velo del índice, la tinta de la
+  fase a la vista en Desarrollo web, los subrayados).
+- **Nada atado a la posición del scroll** (Koto lo hace; aquí no: lock §3). Scroll nativo (§5.2).
+- **Lo que se mueve solo:** la portada, la cinta y los videos de los casos (§3), cada uno con su pausa; la hora cambia
+  el minuto. Nada más.
+- **El cambio de página** es el de `global.css` (`@view-transition { navigation: auto }`, del sitio de producción): se
+  queda como está; A no agrega `view-transition-name` a nada.
+- **`prefers-reduced-motion: reduce`:** ningún resorte corre; el círculo no existe; los bloques están en su lugar desde
+  el principio; ningún video arranca solo (se ve su póster y la pausa queda en «Seguir el video»); los cambios de color
+  son instantáneos. Se mide emulando (criterio 8 del brief).
+- **Iconos:** tres SVG propios en línea, de trazo o relleno en `currentColor`: la **flecha** (12 × 12, trazo 1,5), la
+  **pausa** y **seguir** (14 × 14). Sin librería.
+
+---
+
+## 2 · Composición por ruta
+
+Rutas del brief §3, todas bajo `/v3/` con `noindex`. Las vistas que el prototipo construyó (home, `/trabajo/`, el caso,
+Desarrollo web) se construyen como el prototipo salvo lo que dice §0.4; las demás salen de cuatro plantillas: **portada**
+(solo la home), **índice**, **caso** y **interior**. Cada composición dice qué manda el ojo primero, dónde está la
+tensión y qué pasa en los cortes. Columnas: «c» es columna de la retícula de §1.4 (c1–c12 = de la 1 a la 12).
+
+### Lo común a todas las páginas
+
+1. **Encabezado** (prototipo `.cab`): el logo a 24 px de alto en el margen (20 bajo 834), el menú en mono 11 (Trabajo,
+   Servicios, Método, Nosotros, Escríbenos; la página actual en blanco con `aria-current`), y a la derecha «SANTIAGO»
+   con la hora y su huso en gris (§5.5). **Alto: 64 desde 834; 90 bajo 834**, donde el menú pasa a una segunda fila de
+   44 px y no hay botón «Menú». Desde 834 es `sticky`: al bajar se pliega en una placa de 48 px (radio 4, a 8 del borde)
+   con el resorte **entrada**.
+2. **Pie** (prototipo `.pie-sitio`): borde superior `--a-linea-seccion`, el logo a 20 px, `hola@spindlelab.cl` en mono y
+   la hora; 160 px arriba. **No hay pie en los casos** (cierran con «Siguiente», como Koto).
+3. **Enlace para saltar al contenido**, el primero del documento, visible al recibir el foco (botón claro).
+4. **Un `h1` por página, `main`, `nav` con nombre, `lang="es-CL"`.**
+5. **Miga** en las interiores, el caso y el artículo: mono 11, separada por «·», la actual en blanco; su
+   `BreadcrumbList` dice lo mismo (Simón).
+
+### 2.1 · Home (`/v3/`)
+
+| # | Sección | Desde 1194 (16 c) | 834 a 1193 (12 c) | Bajo 834 (8 c) |
+|---|---|---|---|---|
+| 1 | **Portada** | El video del hilo de oro llena la sección: alto mínimo `100svh − 64` (el encabezado va antes, sobre el lienzo), a sangre, sin radio. Abajo y sobre el velo: **c1–c12** el rótulo «Estudio de diseño y tecnología», el `h1` a 48 en dos tintas (dos líneas a 1440) y la entradilla (tope 493); **c13–c16** el chequeo: rótulo «Chequeo gratis», su frase, la etiqueta, el campo y el botón **uno sobre otro** a todo el ancho de las 4 c, y la ayuda. Los dos bloques apoyados en la misma línea de abajo, a 24 px del borde. La pausa, arriba a la derecha (§3.1) | Igual, con **c1–c7** para la frase y **c8–c12** para el chequeo; campo y botón **en una fila** | **Franja 16:9 a sangre** con el video (§0.3, punto 2) y debajo, sobre el lienzo, una columna: rótulo, `h1` a 26, entradilla, el chequeo con campo y botón en una fila, la ayuda |
+| 2 | **La cinta** | **c1–c12**: la cinta 16:9 exacta (a 1440, 1054 × 593), radio 6; **c13–c16**: la ficha de la pieza que está pasando (tipo · año en mono, el nombre a 24 enlazado a su caso, la bajada en chico; en el tramo de Praxi, la nota de personas generadas), apoyada abajo. Sin titular visible: la sección se nombra con `aria-label` (el de A, §2 del prototipo). La pausa, en la esquina de abajo a la derecha de la cinta | La cinta a las 12 c; la ficha va como rótulo sobre la cinta (`marca-medio`, arriba a la izquierda) | Igual que 834, a sangre y sin radio |
+| 3 | **Índice corto** (los destacados de Koto) | **c1–c4**, pegajoso a 88 px: el `h2` «Trabajo.» + su continuación gris. **c5–c16**: Combeau fotografía 16:9; un par 4:5 \| 4:5 (Praxi, Verifica y Cumple); Sesenta 16:9; bajo cada pieza, nombre en blanco y bajada en gris en una sola frase, y la línea mono **solo tipo · año** (Clara: sin herramientas en la home). Abajo, la nota de los conceptos y «[ Todo el trabajo ] (10)», el único corchete de la página | El `h2` arriba; las piezas a las 12 c | Una columna; el par se apila |
+| 4 | **Cada pieza, con su prueba** | `h2` en c1–c6. Tres filas sin caja, con borde superior `--a-linea`: el medio en **c5–c12** y lo que lo prueba, con su fecha, en **c13–c16**. **Verifica y Cumple muestra la alternativa de Clara** («Sin métrica de negocio…»), no el 54 → 94 (defecto 20) | Medio c1–c7, dato c8–c12 | Medio arriba, dato debajo |
+| 5 | **Servicios** | `h2` en c1–c6. **Desarrollo web primero y a otra escala** (el nombre en Declaración); Visibilidad en IA, Auditoría SEO técnica y Acompañamiento mensual a Título. Cada fila: la situación de quien lee (c1–c4), el cuerpo (c5–c11), el precio en blanco y el botón (c13–c16). **Paid Media y Gestión de redes, en una línea de cuerpo** con sus precios, en c5–c12. Precios, iguales a los JSON | Situación c1–c4, cuerpo c5–c9, precio c10–c12 | Apilado |
+| 6 | **Quién está detrás** | El retrato 3:4 de Ramón (el de `/v3/nosotros/`) en **c1–c5**, entero y grande; el `h2` en dos tintas, dos párrafos (tope 493) y «Conocer a Ramón» (botón de placa) en **c7–c14**, apoyados abajo | Retrato c1–c5, texto c6–c12 | Retrato a lo ancho, texto debajo |
+| 7 | **Contacto** | **c1–c9**: el `h2` en dos tintas, dos párrafos, «Escribir a SpindleLab» (botón claro) y el correo | c1–c9 | Una columna |
+
+- **Qué manda el ojo primero:** el video (la luz del hilo); después la frase, abajo a la izquierda; después el campo
+  blanco del botón. **La tensión:** la frase pesada a la izquierda contra el chequeo angosto a la derecha, con el video
+  respirando arriba. A 1440 × 900 quedan **288 px de video sin velo** más 160 de rampa (`datos/portada-contraste.json`).
+- **El chequeo** es el de producción: mismos ids (`chq-form`, `chq-dominio`, `chq-btn`, `chq-out`, `chq-error`) y
+  `v3-chequeo.js`; su resultado se pinta bajo el formulario, en la misma columna, con el sistema de A (prototipo
+  `.res__*`). Donde lo pinta: dentro de la portada desde 834 (la portada crece; el velo crece con ella, §3.1).
+
+### 2.2 · Índice de trabajo (`/v3/trabajo/`)
+
+- **Desde 1194:** barra lateral pegajosa de 320 px (a 80 px del borde de arriba): el `h1` a 24 en dos tintas, «(10)»
+  en mono, la entradilla de Clara (cliente, propio y concepto) y **el filtro** (Todo, Cliente, Propio, Concepto, cada uno
+  con su conteo en mono; el activo en blanco con el punto de 3 px; botones con `aria-pressed`, filtran de verdad).
+  A la derecha, **el muro**: dos columnas de igual ancho con 8 px entre ellas, piezas sin borde ni caja, en las tres
+  proporciones de Koto, **en el orden de Clara**: Combeau fotografía 4:5, Praxi 4:3, Sesenta 4:5, Verifica y Cumple
+  5:3, Ocelo 4:3, Combeau modelo 4:5, Doceavo 5:3, el chequeo 4:3, Tonela 4:5, spindlelab.cl 5:3 (prototipo). Bajo cada
+  pieza: nombre en blanco, bajada en gris, línea mono **tipo · año · hasta dos ingredientes** con fila en el inventario
+  (los conceptos: «Concepto · 2026», sin ingredientes). Las portadas de los conceptos llevan su «CONCEPTO» en la esquina.
+- **834 a 1193:** el título, el conteo, la entradilla y el filtro arriba (el filtro en una fila de botones de 44 px de
+  alto; Koto lo lleva en una barra flotante abajo: A lo deja en la página, como el prototipo aprobado); el muro a dos columnas (§0.3, punto 4). **Bajo 834:** una columna; nombre, bajada y línea mono siempre a la vista.
+- **Adónde lleva cada entrada:** Combeau fotografía → `/v3/trabajo/combeau/#fotografia`; Combeau modelo →
+  `/v3/trabajo/combeau/#modelo`; Praxi → `/v3/trabajo/praxi/`; los cuatro conceptos → `/v3/trabajo/<concepto>/`;
+  el chequeo → `/v3/diagnostico/`; **Verifica y Cumple → `https://verifica.spindlelab.cl/`** (el producto, que responde),
+  marcado como externo con la flecha ↗ en SVG junto al nombre (texto del círculo: Clara, §0.5); **spindlelab.cl, sin
+  enlace** (es este sitio): su pieza no es un enlace, no tiene círculo ni velo, y la entrada se lee igual.
+- **Hover** (solo puntero fino desde 834): la pieza con el mouse se acorta 24 px (`clip-path: inset(0 0 24px 0 round
+  6px)`, resorte **estado**) y las demás se cubren con `--a-velo` en 167 ms; el círculo dice adónde lleva (§4.2).
+
+### 2.3 · Caso (`/v3/trabajo/<caso>/`): Praxi, Combeau y los cuatro conceptos
+
+**La plantilla de Koto, lock §21.5, una sola para los seis.**
+
+- **Desde 1194:** barra lateral pegajosa de 320 px (`top: 80px; height: calc(100svh − 96px)`), de arriba abajo: miga;
+  el `h1` (nombre en blanco) y la bajada en gris, a 24, en dos tintas; la **ficha mono** (TIPO · AÑO; en los conceptos
+  «CONCEPTO · 2026», **a la vista sin scroll a 1440 y a 390**); el **índice de secciones** (cuerpo 16, filas de 36 px, la
+  activa en blanco con el punto de 3 px a su izquierda, que se mueve con el resorte **estado**); abajo, los **créditos**
+  (quién hizo qué, en chico). A la derecha, la columna: el **medio principal 16:9** a todo el ancho de la columna (a 1440,
+  1072 × 603), y después las cinco secciones.
+- **Cada sección:** borde superior `--a-linea-seccion`, 24 px arriba y 12 abajo; a la izquierda el rótulo mono y el `h2`
+  a Título (2 a 7 palabras); a la derecha, el cuerpo (tope 493), de uno a tres párrafos; después, **sus filas de medios**.
+  Las secciones, en este orden y con estos rótulos: **Problema · Hipótesis · Solución · La pieza · Sin métrica** (o
+  «Resultado medido», con instrumento y fecha, si hay fila). Desde 1194, el rótulo y el `h2` van a la izquierda y el cuerpo
+  a la derecha (dos mitades de la columna); bajo 1194, el rótulo y el `h2` arriba y el cuerpo debajo.
+- **Filas de medios, solo las cuatro formas de Koto** (lock §21.2): una 16:9 a todo el ancho de la columna; par 4:5 \|
+  4:5; 4:5 \| dos 1,62 apilados; dos 1,62 apilados \| 4:5. Radio 6, 8 px entre todos. La sección abre con una 16:9; una
+  fila partida va después de una 16:9, no de otra partida. **Ninguna a sangre desde 834.**
+- **«Siguiente»**, al final de la columna (no fijo detrás del caso, como Koto: aquí nada va atado al scroll): borde
+  superior, 120 px arriba; a la izquierda el contacto (frase a Título, botón claro); a la derecha «SIGUIENTE» en mono, el
+  nombre del próximo caso a 32 y su medio (16:9, 416 px de ancho), y «[ Todo el trabajo ] (10)». Entra una vez con el
+  resorte **entrada**. **El caso no tiene pie.**
+- **La cruz de registro:** 9 × 9 px en `--a-linea-seccion` donde el borde de las dos primeras secciones cruza el límite
+  de la barra (x = 336 a 1440); ninguna bajo 1194. Reversible.
+- **834 a 1193 y bajo 834:** el medio principal arriba (desde 834, 16:9 dentro de los márgenes, radio 6; bajo 834, **4:5 a
+  sangre sin radio**), después el nombre y la bajada, la ficha, la introducción (Problema) y las secciones en una
+  columna; el índice pasa a la **barra flotante** abajo (placa `#141414`, radio 4, a 16 del borde: el nombre del caso en
+  mono gris, la sección activa en mono blanco sobre `--a-placa-activa`, «+» que abre la lista; un `details` con su
+  `summary`). Las filas partidas mantienen su forma (a 390: pares de 175 px). La página deja 96 px abajo para que la
+  barra no tape el final.
+
+**Lo propio de cada caso:**
+
+| Caso | Medio principal | Lo que la spec fija |
+|---|---|---|
+| **Praxi** (real, propio) | El video del inicio de Praxi (`praxi/material/praxi-hero-secuencia.mp4`, los cinco clips del hero) con su pie de «generado» | Filas del prototipo (9 más el principal). En **Solución**, la lista «Con qué está hecho» (lo que le hace a quien usa Praxi en cuerpo, la herramienta en dato mono) con **los dos modelos nombrados, cada uno con su papel**: Claude Sonnet 5 (`claude-sonnet-5`) conversa como coach; Claude Haiku 4.5 (`claude-haiku-4-5`) saca el registro de lo que escribes y escribe la conclusión del día (inventario-praxi §10.4; el texto final es de Clara). En **La pieza**, la marca en su amarillo a 16:9 y el hueco de las pantallas internas en su marco punteado (`--a-hueco`), dicho. **Créditos:** «Ramón Vallejos, con agentes de IA». **Nada** de «en pausa», «fuera de línea» ni enlace a praxi.coach. Cada medio con personas, con el pie de Clara de personas generadas; cada uno con cifras, «datos de ejemplo». `landing-1/2/3.jpg` solo dentro de las capturas de la landing |
+| **Combeau** (real, cliente) | El recorrido de su sitio de fotografía (`casos/combeau/medios/combeau-fotografia-recorrido-1440.*`; a 390, el `-390`) | **Una página, dos partes:** la ficha y las cinco secciones cuentan el caso; dentro, dos anclas con `id="fotografia"` e `id="modelo"` (el índice enlaza ahí), cada una abriendo con su 16:9 (`combeau-fotografia-169`, `combeau-modelo-169`). Solo los medios de `casos/combeau/medios/` (inventario §2.9, «Lo que se puede usar»): el panel por dentro con su pie de fecha (3-sep) y método; la foto servida de 95 kB junto al original enlazado. **Ningún medio ni `alt` con sus medidas, su contacto ni su ficha de contratación.** Resultado: «Sin métrica» |
+| **Tonela, Ocelo, Sesenta, Doceavo** (conceptos) | El recorrido grabado de cada sitio (`marketing/portafolio/0N-*/movimiento/`), con el sello de la pieza | Las filas en el orden de su `caso.md` (Bruno), con los rótulos de la plantilla (Desafío → Problema, Estrategia → Hipótesis, Identidad → Solución, Aplicación → La pieza, Qué muestra → Sin métrica; el texto de cada sección no cambia). «CONCEPTO · 2026» en la ficha. **Sin métrica:** «es un concepto, no tuvo usuarios» (Clara). Cero cifras de resultado, cero testimonios, cada persona dicha como ficticia. Las secciones «Lo que subiría de nivel con fotografía» y «Cuenta de filas» de los `caso.md` **no van al sitio** |
+
+**El orden de «Siguiente»** sigue el muro de `/trabajo/`, saltando lo que no tiene página: Combeau → Praxi → Sesenta →
+Ocelo → Doceavo → Tonela → Combeau.
+
+### 2.4 · Interior (la plantilla de las páginas de la casa)
+
+La de Koto en `/services` y `/about` (lock §20.1: negras, con a lo más una franja de imagen y fotos), construida en el
+prototipo como Desarrollo web:
+
+1. **Cabecera** (`.dw-cab`): miga; `h1` a Declaración en dos tintas (c1–c10 desde 1194); la entradilla (tope 493); los
+   botones (claro y de placa) si la página los tiene. 48 px arriba.
+2. **Franja** (opcional, a lo más una): un medio del trabajo a todo el ancho de la retícula, **2,39:1 desde 834 y 16:9
+   bajo 834**, radio 6, 56 px arriba. **Nunca un campo** (§3.4) y nunca una imagen que no sea del trabajo.
+3. **Secciones**: el `h2` a Declaración en **c1–c4, pegajoso a 88 px** (desde 1194; bajo 1194, arriba); el contenido en
+   **c5–c12** (listas, fases, preguntas) o **c5–c16** (planes, piezas). Filas con borde superior: `--a-linea` entre
+   filas de una lista; `--a-linea-seccion` en planes, fases y preguntas.
+4. **Cierre**: c1–c9, el `h2` en dos tintas y los botones de contacto o del chequeo.
+5. **Bajo 1194**, el `h2` de cada sección va arriba de su contenido y deja de pegarse; **bajo 834**, todo en una columna
+   en el orden del documento: la franja en 16:9 dentro de los márgenes, con radio 6; los planes, las fases y las
+   preguntas, que desde 834 van en columnas (3:4:3, 2:5 y 2:3, como el prototipo), se apilan.
+
+| Ruta | Lo que lleva, en este orden | Franja |
+|---|---|---|
+| `/v3/servicios/` | Cabecera («Qué hacemos»); **una sección por momento** de `oferta-v3.json` (`momentos`): a la izquierda el rótulo y el `h2` del momento, a la derecha sus servicios como filas enlazadas (nombre a Título, la línea de qué hace, el precio «desde … + IVA» en blanco, la flecha); «Lo que pones tú»; «Empieza por el chequeo». **Sin campo de color por servicio** (lo que Ramón rechazó de driftime) | Ninguna |
+| `/v3/servicios/desarrollo-web/` | Como el prototipo (vista 5): cabecera; franja; «Lo que va en todos los planes» (lista); «Sitios que construimos» (tres portadas 4:5 en c5–c16: Combeau, Praxi, Sesenta, con la línea corta de Clara, tipo y año); el glosario y los cuatro planes; «Cinco fases» (la fase a la vista pasa del gris al blanco en 167 ms, el único cambio de tinta atado a la vista que tiene Koto, en `/services`; con movimiento reducido, todas en blanco); preguntas; cierre | **Combeau fotografía** (`casos/combeau/medios/combeau-fotografia-169.webp`), no Doceavo (§3.4) |
+| `/v3/servicios/visibilidad-en-ia/` | Cabecera; franja; las secciones de hoy (incluye, planes, fases, preguntas, cierre) con la misma forma que Desarrollo web | **El chequeo** (`proto/a/medios/chequeo-43.webp`, recortado a 2,39 al centro): es lo que mide este servicio |
+| `/v3/servicios/auditoria-seo-tecnica/` | Ídem | **Verifica y Cumple** (`proto/a/medios/verifica-y-cumple-53.webp`): el producto propio al que se le aplicó (inventario §0.2), sin su puntaje |
+| `/v3/servicios/acompanamiento-mensual/`, `/redes-sociales/`, `/paid-media/` | Ídem | Ninguna: ninguna pieza del inventario muestra ese servicio aplicado |
+| `/v3/metodo/` | Cabecera; «Del diagnóstico al monitoreo» como las fases de Desarrollo web; «Tres reglas que no negociamos» (lista); «Lo que necesitamos de ti»; cierre | Ninguna |
+| `/v3/nosotros/` | Cabecera; **el retrato 3:4** de Ramón en c1–c5 junto a la bio (c7–c14), como «Quién está detrás» de la home pero a la escala de la página; «Por qué un solo sistema», «Cómo trabajo» (secciones); preguntas; cierre. El texto de la bio, tal cual (R4) | Ninguna (el retrato es la imagen) |
+| `/v3/diagnostico/` | **El instrumento primero:** miga, `h1` y su línea en c1–c10, y debajo el chequeo grande en c1–c8 (etiqueta, campo y botón en una fila, la ayuda), el resultado en la misma columna; después «Los 21 chequeos» (lista de las 21 señales en tres grupos con sus pesos 30 + 40 + 30, en mono), «Lo que este chequeo no mide», «Dos caminos», «La Ley 21.719», preguntas y el cierre «¿Quién aparece en tu lugar?». Un sandbox a la vista: este | Ninguna |
+| `/v3/contacto/` | Cabecera corta (el formulario tiene que quedar entero sobre el pliegue a 1440 × 900, como hoy); **el formulario** en c1–c8 (campos de §4.1, mismos nombres, `.contact-form`, `#f-utm-*`, `.form-status`, `.form-success`, `v3-contacto.js`); «Qué pasa después» (tres pasos como filas); «Antes de escribir» (preguntas) | Ninguna |
+| `/v3/blog/` | Ver §2.5 | Ninguna |
+
+### 2.5 · Blog (`/v3/blog/`) y sus siete artículos
+
+- **Índice** (Koto `/latest`, sin sus imágenes: los artículos no tienen una imagen del trabajo): desde 1194, barra
+  lateral de 320 px con el `h1` en dos tintas, «(7)» y la línea de Clara; a la derecha, **los siete como filas**, del más
+  reciente al más antiguo, con borde superior `--a-linea`: la fecha y el tema en dato mono en la mitad izquierda de la
+  columna y el título a Título, enlazado, con la flecha, en la derecha (las dos mitades de las secciones del caso). Al final, el cierre del blog («Leer ayuda; medir, más.» y el chequeo).
+  Bajo 1194, todo en una columna.
+- **Artículo**: **la plantilla del caso** (§2.3) con otro contenido. En la barra: miga (`Inicio · Blog · <nombre
+  corto>`), el `h1` a Título, la ficha en dato mono (fecha · tiempo de lectura · tema), el autor (Ramón, su nombre y su
+  rol, con el retrato que ya existe, `public/assets/img/ramon-vallejos-avatar.jpg`, a 44 px y radio 6) y **el índice del artículo** (sus `h2`, con el punto en la
+  activa; si algún `h2` trae número propio, el índice no numera ninguna fila, regla del 13-oct del §7). En la columna, el
+  cuerpo verbatim con tope de 493 px; los `h2` a Título con su borde superior; tablas y citas con el sistema (líneas
+  `--a-linea`, cita a Título en blanco). **Sin imagen editorial**: el pool de driftime (`assets/img/d/`) no es trabajo y
+  no entra; si un artículo describe una pieza real (el chequeo, en «21 chequeos»), puede llevar esa captura como medio
+  de su sección. Cierra con el mismo paso de conversión del índice y «Siguiente artículo».
+
+---
+
+## 3 · Media
+
+### 3.1 · La portada: el hilo de oro (brief, «Compuerta 2», punto 4 y criterio 14)
+
+**Los archivos son de Bruno** (`e12/medios/hilo/`, README con todo lo medido), sacados del video del sitio actual sin
+generar ni gastar nada; el bucle ya no salta (fundido de 24 cuadros: el corte cambia 0,49 veces la mediana entre cuadros
+seguidos, contra 8,65 del original). Diego los copia a `spindlelab-astro/public/v3/portada/` en la corrida 2.
+
+| Slot | Archivo | Peso | Cuándo |
+|---|---|---|---|
+| Video, primer `<source>` | `hilo-1920.webm` (VP9, 1920 × 1080, 121 cuadros, 5,04 s, sin audio) | 1,03 MB | Desde 834 px, y bajo 834 mientras no exista el de 960 |
+| Video, segundo `<source>` | `hilo-1920.mp4` (H.264 High, `avc1.640028`, `faststart`, sin audio): **Safari** | 1,40 MB | Ídem |
+| Video bajo 834 | **`hilo-960.webm` y `.mp4`, 960 × 540, del mismo bucle: los pide esta spec** (Bruno, con `hacer-hilo.sh` cambiando la escala; techo 0,4 MB VP9 y 0,6 MB H.264, lo que pesa su vertical de 500 × 1080, que tiene casi los mismos píxeles por cuadro: 0,34 y 0,50 MB) | | La franja 16:9 del teléfono mide 360 a 833 px de ancho |
+| Imagen quieta y póster | `hilo-1920-poster.webp` (el primer cuadro del bucle, 1920 × 1080) | 34 kB | Siempre: es lo primero que se pinta, lo que se ve con movimiento reducido o sin JS, y el candidato a LCP |
+| Ninguno | `hilo-movil.webm` · `.mp4` · `-poster.webp` (500 × 1080 vertical) | | **No se usan:** la spec pone el teléfono en franja 16:9 (§0.3, punto 2). Quedan si un día la portada del teléfono va a pantalla completa con el chequeo bajo el pliegue |
+
+**El marcado** (lo que se construye; el estudio `e12/spec/portada/` es su referencia visual):
+
+1. La sección de la portada contiene, en este orden: la **imagen quieta** (`<img>` del póster, `alt=""`, porque es un
+   ambiente sin información; `fetchpriority="high"`, precargada por el slot `head`), el **`<video>`** encima
+   (`muted`, `loop`, `playsinline`, **sin** `controls` ni `autoplay` en el HTML, `aria-hidden="true"`, `preload="none"`),
+   el **velo** (desde 834) y el **texto**.
+2. **Lo arranca el script, solo si:** no hay `prefers-reduced-motion: reduce`, no hay `navigator.connection.saveData`, y
+   la sección está a la vista (`inView` de Motion o `IntersectionObserver` al 25 %). Le pone las fuentes (VP9 primero,
+   después H.264) según el ancho al cargar (`(min-width: 834px)` → 1920; si no, 960), llama a `play()` y, cuando el video
+   da su primer cuadro (`playing`), lo muestra sobre la imagen quieta en 167 ms. Fuera de la vista, se pausa solo; al
+   volver, sigue si la persona no lo pausó. **Sin JS, la imagen quieta y nada más** (sin JS no hay pausa, así que no hay
+   video: WCAG 2.2.2).
+3. **El botón de pausa** (prototipo `.pausa`): 44 × 44, placa, radio 4, el icono en blanco; arriba a la derecha de la
+   portada, a 16 px del borde (desde 834, dentro de la costura de arriba; bajo 834, sobre la franja). `aria-label`
+   «Pausar el video» / «Seguir el video» (de A, pendiente de Clara), `aria-pressed`; apretado, fondo blanco e icono en
+   lienzo. **Con movimiento reducido o `saveData`:** el video no arranca y el botón dice «Seguir el video»: si la persona
+   lo aprieta, el video corre (lo pidió). Es el primer control de la portada en el orden de tabulación, antes del campo
+   del chequeo.
+4. **El velo, desde 834** (estudio: `.portada-v__pie`): un degradé en `#060606` que nace con el bloque de texto, no con la
+   pantalla, así crece si el texto crece (el resultado del chequeo): **0 en el borde de arriba del bloque, 0,88 a los
+   160 px, 0,88 hasta 48 px antes del borde de abajo y `#060606` entero en el borde**, que empalma con el lienzo de la
+   sección siguiente. El texto empieza 16 px bajo el final de la rampa. **Arriba**, 48 px que funden el borde del video
+   con el lienzo del encabezado (no es para el contraste: es la costura). **Bajo 834, sin velo:** el texto va sobre el
+   lienzo.
+5. **Encuadre:** `object-fit: cover; object-position: 50% 50%`. A 1440 × 900 la caja mide 1440 × 836: el video se escala a 1486 × 836 y
+   recorta 23 px de cada lado.
+
+**El contraste, medido sobre el video** (`herramientas/portada.mjs` + `contraste-portada.py`, `datos/portada-contraste.json`):
+el velo pintado por el navegador, leído en píxeles sobre un blanco puro, compuesto con **los 121 cuadros** de
+`hilo-1920.webm` (el primero es el póster), y por cada línea de texto **el píxel más claro bajo su caja en su peor
+cuadro** (la cota estricta), en 11 tamaños de 360 × 800 a 1920 × 1080:
+
+| Tamaño | Líneas sobre el video | Bajo el mínimo | La peor | Sin velo, la misma | Video sin velo | Botón del chequeo |
+|---|---|---|---|---|---|---|
+| 360 × 800 · 390 × 844 · 414 × 896 · 768 × 1024 | 0 (franja; el texto va en el lienzo) | 0 | gris 7,02:1 | | la franja entera (203 a 432 px) | a 52, 100, 180 y 139 px del borde de abajo |
+| 834 × 1112 | 19 | 0 | 5,43:1 (rótulo, cuadro 120) | 1,21:1 | 534 px | a 105 px |
+| 1024 × 768 | 15 | 0 | 5,38:1 (entradilla, cuadro 80) | 1,05:1 | 233 px | a 87 px |
+| 1194 × 834 | 17 | 0 | **5,31:1** (rótulo «Chequeo gratis», gris, cuadro 72) | 1,05:1 | 224 px | a 107 px |
+| 1280 × 800 | 18 | 0 | 5,32:1 | 1,03:1 | 190 px | a 107 px |
+| **1440 × 900** | 17 | 0 | 5,34:1 (cuadro 65) | 1,11:1 | **288 px** | **a 108 px** (campo de 696 a 740, botón de 748 a 792) |
+| 1920 × 1080 | 15 | 0 | 5,50:1 | 1,12:1 | 506 px | a 89 px |
+
+El velo bajo el texto vale entre 0,876 y 1 (0,88 con el redondeo del navegador). **Sin velo**, la peor línea sobre el
+video da de 1,03 a 1,21:1 según el tamaño: el velo no es adorno. El borde del campo (`#707070`) da de 3,23 a 3,29:1 contra su contorno compuesto
+(1.4.11, mínimo 3). Capturas con los cuadros que dieron el peor caso: `e12/spec/img/portada-*.jpg`.
+**Si cambia el archivo, el velo o el texto, se mide de nuevo** con las dos herramientas (corren en un minuto) y la tabla
+se rehace aquí.
+
+### 3.2 · La cinta: la primera sección después de la portada
+
+- **Qué es:** el video de 16 s del prototipo, ocho tramos de 2 s con cortes secos (Combeau fotografía, Sesenta, Praxi,
+  Tonela, Verifica y Cumple, Ocelo, Combeau modelo, Doceavo), 1280 × 720, mudo, en bucle, con su pausa; la ficha cambia
+  con el tramo (`cinta.json`).
+- **Se rehace antes de construir** (Diego, con `proto/a/herramientas/medios.py`): **el tramo «Combeau, modelo» del
+  prototipo muestra su línea de medidas** entre los 12 y los 14 s (inventario §2.9). Los dos tramos de Combeau salen de
+  `casos/combeau/medios/combeau-fotografia-cinta.*` y `combeau-modelo-cinta.*`; los otros seis, como estaban. VP9 y
+  H.264, cada uno ≤ 1 MB. `proto/a/medios/cinta.*` **no se usa**.
+- **Proporción resuelta: 16:9 exacta.** En la primera pantalla el prototipo la achicaba a 1,95:1 para que entraran la
+  frase y el chequeo; como sección propia ya no hace falta: a 1440, 1054 × 593 (c1–c12). Bajo 834, a sangre y sin radio.
+- **Arranca** como la portada (a la vista, sin movimiento reducido ni `saveData`), con su póster
+  (`cinta-poster.webp`, rehecho con el primer cuadro nuevo), y se pausa fuera de la vista.
+
+### 3.3 · Plan de media por slot
+
+**Regla:** todo medio es una captura o una grabación real, o una pieza de concepto rotulada; la portada es la única
+excepción (§0.3, punto 1). Cada medio espera en su placa con su radio y aparece en 167 ms al cargar (la carga como
+diseño de A&P); ningún brillo que corre ni esqueleto animado. Imágenes en WebP, con `width` y `height`, `loading="lazy"`
+salvo las de la primera pantalla, `decoding="async"`. **Los `alt` los escribe quien mira la imagen** (los de partida, en
+`medios.json` de cada carpeta) y nunca nombran las medidas de Combeau.
+
+| Slot | Qué va | Origen | Ratio | Tratamiento |
+|---|---|---|---|---|
+| Portada | El hilo de oro | Bruno, `e12/medios/hilo/` (generado: desvío autorizado) | 16:9 a sangre | §3.1 |
+| Cinta | Ocho tramos | `proto/a/medios/` + `casos/combeau/medios/*-cinta.*` | 16:9 | §3.2 |
+| Índice corto de la home | Combeau fotografía, Praxi, Verifica y Cumple, Sesenta | `casos/combeau/medios/combeau-fotografia-169.webp`; `proto/a/medios/praxi-45`, `verifica-y-cumple-45`, `sesenta-home-169` | 16:9 · 4:5 · 4:5 · 16:9 | Plano en su marco |
+| Cada pieza, con su prueba | Combeau (su galería), Praxi (sus números, con «datos de ejemplo»), Verifica y Cumple (sus 12 cosas) | `proto/a/medios/` | como el prototipo | Plano |
+| Quién está detrás · `/nosotros/` | El retrato de Ramón | `proto/a/medios/ramon-vallejos-34.webp` (de `public/assets/img/ramon-vallejos.jpg`) | 3:4 | Entero, sin recorte de cara |
+| Muro de `/trabajo/` | Las diez portadas | `proto/a/medios/` (las de Combeau, de `casos/combeau/medios/`, con `combeau-modelo-45` cortado sobre la línea de medidas) | 4:5 · 4:3 · 5:3 | Los conceptos, con su «CONCEPTO» horneado en la esquina |
+| Caso Praxi | Hero, reel, capturas de las páginas públicas, marca, carrusel, portada de Facebook, avatares | `e12/praxi/capturas/`, `e12/praxi/material/`, recortes de `proto/a/medios/praxi-*` | las cuatro formas de §2.3 | Pie de personas generadas en cada medio con personas; «datos de ejemplo» en cada uno con cifras; el hueco de las pantallas internas, **placeholder dirigido**: marco punteado `--a-hueco` del tamaño de una fila 16:9, con el texto de Clara que dice qué falta (Inicio, Coach, Registro, Progreso a 390, desde una cuenta de prueba) |
+| Caso Combeau | Recorridos, portadas, panel, foto servida | `casos/combeau/medios/` (y nada de `inventario/grabaciones/`, que trae sus medidas) | ídem | Pie con fecha y método en las capturas del panel |
+| Casos de concepto | Recorrido, placas, portadas, identidad | `marketing/portafolio/0N-*/` (Bruno) | ídem | Tal cual; solo se escalan y se pasan a WebP |
+| Franjas de interiores | §2.4 | Combeau fotografía, el chequeo, Verifica y Cumple | 2,39:1 desde 834 · 16:9 bajo 834 | Recortadas al centro; nunca un campo (§3.4) |
+| Imágenes al compartir | Simón, `senales-obra.md` §1.6 | HTML renderizado en la letra y el negro de A | 1200 × 630 | Ninguna con el hilo de oro |
+
+**Faltan, y quedan nombrados sin rellenar:** las pantallas internas de Praxi (5a); las fotos y clips de la pauta de los
+conceptos (9 fotos y 2 clips, `plan-e12.md` §11: «cuando tenga plata vamos con lo faltante»); el panel de Combeau en
+producción por dentro.
+
+### 3.4 · Techos de campo por tipo de página (cierra el defecto 22)
+
+Un **campo** es un medio cuyo color dominante cubre el 30 % o más de su marco y es claro o de color (lock §20.1; la regla
+exacta está en `herramientas/campo-medios.py`, copiada de `proto/a/herramientas/campos.py`). Se cuenta en la página
+completa a 1440, como hace `campos.py`. **Ningún campo en la interfaz, en ninguna página.**
+
+| Tipo de página | Techo (área de campos sobre el área de la página, a 1440) | Dónde puede haber campos | De dónde sale |
+|---|---|---|---|
+| **Caso** (real o concepto) | **Del 10 al 35 %**; seguidos, a lo más 4 | En las filas de medios | Lock §20.3 (Koto: 2,9 a 35,4 %, mediana 23). **Bajo el piso solo si el material real no da más, dicho en la spec:** Praxi (6,0 % medido en A), marca oscura de un solo acento que no se recolorea (lock §20.2, regla 3). Combeau se mide al construir y, si queda bajo 10 %, se declara aquí con su cifra |
+| **Índice** (`/trabajo/`) | **≤ 35 %** | Solo las portadas | Koto `/work`: 20 % de color, todo en portadas. A medido: 27,0 % |
+| **Home** | **≤ 20 %**, contando la cinta en su tramo más claro; seguidos, a lo más 2 | Solo en la cinta, el índice corto y «Cada pieza, con su prueba»; **la portada, servicios, quién y contacto, sin campos** | Koto `/work` (20 %): la home no juega más que el índice. A medido con la cinta en la primera pantalla: 16,6 %; la portada (no es campo: dominante `#080808`) solo lo baja. Desvío del lock §20.2, regla 4 (§0.3, punto 7) |
+| **Interiores** (servicios y sus seis, método, nosotros, diagnóstico, contacto, blog y artículos) | **≤ 5 %**, y **la franja nunca es un campo** | Solo en las portadas de una sección de piezas (las tres de «Sitios que construimos») | Koto: interiores de 0 a 0,9 % de campo claro y 0 de color; su home, 4,8 %. **La vista 5 del prototipo daba 13,3 %** (la franja de Doceavo, campo claro `#D8E8D8` en el 52 % del marco, más dos portadas): Doceavo sale de la franja y entra **Combeau fotografía**, que no es campo (dominante `#080808`, 18 % del marco a 2,39:1, `datos/campo-medios.json`). Con las tres portadas (Praxi y Sesenta son campo), Desarrollo web queda en unos 3,5 % (estimado con las cajas del prototipo: 2 × 346 × 433 sobre 1440 × 5911; se mide al construir) |
+
+**Antes de poner un medio en una franja**, se corre `campo-medios.py` sobre él: en `datos/campo-medios.json` están los 59
+medios de A, de Combeau y el póster de la portada. Las franjas de §2.4 salen de ahí (el chequeo, Verifica y Cumple y Combeau fotografía: los tres
+sin campo a 2,39:1).
+
+### 3.5 · Video: formatos y reglas para todos
+
+1. **Cada `<video>` lleva dos fuentes**, el mismo contenido: VP9/WebM primero y **H.264/MP4 después, para Safari**
+   (High, `yuv420p`, `faststart`, sin pista de audio). El prototipo llevaba solo VP9 en los casos; **el H.264 ya existe
+   para todos, con `faststart` y sin audio** (comprobado el 19-oct con `ffprobe` y el orden de `moov` y `mdat`): los
+   recorridos de los conceptos (`marketing/portafolio/0N-*/movimiento/recorrido.mp4`, 1440 × 810), los de Praxi
+   (`e12/praxi/material/*.mp4`), los de Combeau (`e12/casos/combeau/medios/*.mp4`) y la portada (`e12/medios/hilo/`).
+   La cinta rehecha sale con los dos.
+2. **Mudo, en bucle, sin controles nativos, `playsinline`, `preload="none"`**, con póster WebP del primer cuadro. Arranca
+   solo a la vista y sin movimiento reducido ni `saveData`; se pausa fuera de la vista.
+3. **Todo video que se mueve solo más de 5 s lleva su botón de pausa** (WCAG 2.2.2), enfocable, que dice su estado.
+4. **Ningún video con audio. Ningún video del trabajo a sangre desde 834** (solo la portada).
+5. Techos de peso: la portada, 1,4 MB (el H.264 de Bruno, el más pesado que baja un visitante); la cinta, 1 MB por
+   formato; cada video de un caso, 1,5 MB en VP9 y 2,2 MB en H.264 (el más pesado que hay, el recorrido de Sesenta, pesa
+   0,97 y 2,12 MB).
+
+---
+
+## 4 · Estados, interacción y cortes
+
+### 4.1 · Estados
+
+| Elemento | Reposo | Al pasar el mouse | Foco | Apretado | Deshabilitado o esperando |
+|---|---|---|---|---|---|
+| **Botón claro** (mono 11 MAYÚSCULAS, 44 px de alto, radio 4) | blanco, texto lienzo | fondo gris (7,02:1) | contorno blanco 2 px a 3 px | `#D0D0D0` | «Revisando…» en el del chequeo: fondo `--a-placa-activa`, texto gris, `cursor: progress` |
+| **Botón de placa** | placa, texto blanco | placa activa | ídem | `#2A2A2A` | |
+| **Enlace del cuerpo** | blanco, subrayado de 1 px al 45 % a 3 px | subrayado al 100 % (167 ms) | ídem | | |
+| **Menú** | blanco al 70 % | 100 % (167 ms) | ídem | | La página actual, blanco con `aria-current` |
+| **Corchete** («[ Todo el trabajo ] (10)») | gris | blanco | ídem | | |
+| **Campo** (chequeo, contacto) | placa, borde `#707070`, texto 16 px (sin zoom en iOS), placeholder gris, 44 px de alto (también en contacto) | borde gris | borde gris + contorno blanco 2 px a 3 px | | |
+| **Error de un campo** | | | | | El mensaje en `role="alert"`, en blanco bajo el campo (`#chq-error`, `.form-status`); sin rojo |
+| **Filtro del índice** | gris | blanco | contorno | blanco con el punto de 3 px, `aria-pressed="true"` | |
+| **Pieza del índice** | entera | se acorta 24 px (resorte **estado**) y las demás bajo el velo; aparece el círculo | contorno a 3 px con radio 6 y, dentro, el texto del círculo quieto en un rótulo de placa | | |
+| **Pausa** | placa, icono blanco | placa activa | contorno | blanco, icono en lienzo | |
+| **Índice de secciones** | gris | blanco | contorno | la activa: blanco + punto de 3 px | |
+| **Barra del caso bajo 1194** | cerrada: nombre y sección activa | | contorno | abierta: la lista | |
+| **Encabezado** | sobre el lienzo | | | plegado en la placa al bajar (desde 834) | |
+
+### 4.2 · El cursor (lock §8, con el color de la pregunta 9)
+
+- **Solo con `(hover: hover) and (pointer: fine)` y sin movimiento reducido.** En táctil y con movimiento reducido no
+  existe, y lo que el hover revela está siempre a la vista.
+- **Dónde:** solo sobre las piezas enlazadas del índice, del índice corto de la home y de «Sitios que construimos», y
+  sobre el medio principal de un caso que enlaza. Nunca sobre enlaces de texto, botones, campos, la portada ni la cinta.
+- **Forma:** círculo de 88 px, **blanco**, texto en lienzo en mono 11 MAYÚSCULAS (hasta dos líneas), anillo de 1 px en
+  lienzo; `aria-hidden`, `pointer-events: none`. **Dice adónde lleva:** «Ver el caso», «Ver el concepto» (Clara); en
+  Verifica y Cumple, el texto que escriba Clara (§0.5).
+- **Sigue** con el resorte **cursor**; entra y sale con **estado**; **sin magnetismo**. El puntero del sistema se oculta
+  solo sobre la pieza.
+- **Teclado:** el círculo se esconde con el primer Tab y vuelve con el primer movimiento real del mouse (no con el aviso
+  que da el navegador al desplazarse bajo un mouse quieto: regla del lock §19, 16-oct).
+
+### 4.3 · Accesibilidad que la composición tiene que dejar posible
+
+- **Foco visible en todo**, contorno blanco de 2 px a 3 px; nunca tapado: en las barras pegajosas, el foco que queda bajo
+  el encabezado plegado o bajo la barra del caso se corrige con `scroll-margin-top: 88px` en los destinos y
+  `scroll-padding-bottom` del alto de la barra bajo 1194; se mide con Tab hacia adelante y hacia atrás (la regla de la
+  pila pegajosa del §7, 5-oct, sigue valiendo para cualquier cosa pegajosa).
+- **Área de toque de 44 × 44** bajo 834 y con cualquier puntero grueso, en alto y en ancho, también el logo y los
+  correos sueltos (prototipo, defecto 11; se mide con `e12/qa-paso-2/vuelta-1/herramientas/area-toque-390.js`).
+- **Nada que se entienda solo con hover;** contraste AA en todo texto (§1.1, §3.1); piso de 11 px; `alt` que describe la
+  pieza mirándola; los videos `aria-hidden` con su pausa nombrada.
+- **El aviso de cookies** (del `Layout`): A lo viste desde `archivo.css` como lo hizo driftime (`html body.a-body
+  #cookie-banner …`: placa, borde `--a-linea-seccion`, texto gris en Google Sans Flex 14, enlace blanco subrayado,
+  botones del sistema), **sin tocar su HTML ni sus ids** (`cookie-accept`, `cookie-reject`). Nada importante queda
+  tapado por él en la primera pantalla: se mide con el aviso abierto.
+
+### 4.4 · Breakpoints
+
+| Ancho | Columnas | Qué cambia | Por qué ahí |
+|---|---|---|---|
+| **360 a 833** | 8 | Encabezado de dos filas (90 px); portada en franja 16:9 y texto debajo; todo en una columna; caso con medio 4:5 a sangre y barra flotante; muro a una columna | Koto, corte de 834. **El chequeo entra en la pantalla a 360 × 800** (botón a 52 px del borde de abajo) y a 390 × 844 (a 100). A 375 × 667 no entra (89 px bajo el borde): fuera de los anchos de la obra, queda dicho |
+| **768** | 8 | Igual que 360, más ancho: la franja mide 768 × 432; el muro a una columna | Tableta vertical: botón a 139 px del borde |
+| **834 a 1193** | 12 | Encabezado de una fila (64), `sticky`, que se pliega; portada a pantalla con el texto sobre el velo (frase c1–c7, chequeo c8–c12); muro a dos columnas; caso todavía apilado con la barra flotante | Koto, corte de 834 |
+| **1024** | 12 | Nada nuevo: es un ancho de 834 a 1193. **Ya no es un corte** (cerrado en §1.4) | Medido en Koto: su barra aparece en 1194 |
+| **1194 en adelante** | 16 | Barras laterales de 320 (caso, índice, artículo, blog); portada con frase c1–c12 y chequeo c13–c16 (campo y botón uno sobre otro); cruz de registro; secciones de interior con el `h2` pegajoso a la izquierda | Koto, corte de 1194 |
+| **1440** | 16 | El de referencia de todas las medidas | |
+| **1920** | 16 | Sin ancho máximo: la retícula crece; la caja del cuerpo sigue en 493 | Koto no tiene ancho máximo |
+
+**Medido en cada ancho, en la corrida 2:** desborde horizontal 0 (también con `overflow-x: clip` quitado); un `h1`;
+contraste; foco; el chequeo dentro de la pantalla a 1440 × 900, 390 × 844 y 360 × 800.
+
+---
+
+## 5 · Construcción
+
+### 5.1 · Motion, fijo en 13.5.0
+
+`npm install --save-exact motion@13.5.0` en `spindlelab-astro/`: en `package.json`, `"motion": "13.5.0"` **sin `^` ni
+`~`**; en `package-lock.json`, `version: 13.5.0` con integridad
+`sha512-W/Vj6RDg9f9yJoaS+ohRYtl1j3Rb86fOCCjzn3M3M10Dg7ap3M7sMUeQs9wTsLQwHHmhioYsJLRRRTXxvhtHDA==` (leída del registro de
+npm el 19-oct). Se importa solo lo que se usa (`animate`, `spring`, `inView`) en los `<script>` de los componentes de
+A, y Vite lo empaqueta. Si el registro no responde en la corrida 2, el archivo de `proto/a/vendor/motion-13.5.0.js`
+(sha256 `0d94331cbb351e9ae46f98448ecade03b646bd9872eecfccb08396eff0ed3897`) a `public/v3/vendor/`, y se dice. **La 14 no
+se evalúa en esta obra.**
+
+### 5.2 · Lenis no corre en A, sin tocar `Layout.astro`
+
+**Que no *cargue* no se puede sin tocar el `Layout`** (es un módulo que Astro empaqueta en toda página que lo usa): es
+la pregunta abierta de §0.5. **Que no *actúe*, sí**, con la API del propio Lenis 1.3.26 (el de `node_modules`), medido
+(`herramientas/lenis-prevent.mjs` → `datos/lenis-prevent.json`, la configuración y el manejo de anclas copiados del
+`Layout`):
+
+| Caso | Una muesca de rueda (100 px) llega al 90 % | Ancla `href="#x"` | Ancla `href="/ruta/#x"` |
+|---|---|---|---|
+| Lenis como está en el `Layout` | 394 ms (suavizado) | Suavizada, **sin cambiar el `#` de la URL** | Salto inmediato, con `#x` |
+| **Lenis con `data-lenis-prevent` en el contenedor de la página** | **54 ms** (nativo) | Suavizada, sin `#` | **Salto inmediato, con `#x`** |
+| Sin Lenis (referencia) | 25 ms | | |
+
+**La regla para Diego:**
+
+1. El contenedor de toda la página de A (el elemento que envuelve encabezado, `main` y pie en el componente base de A)
+   lleva **`data-lenis-prevent`**: Lenis deja pasar la rueda (`lenis.mjs:609`) y el scroll es el nativo.
+2. **Todo enlace interno a un `id` se escribe con su ruta** (`/v3/trabajo/praxi/#solucion`, `/v3/contacto/#contacto-form`,
+   también el de saltar al contenido), **nunca `#x` suelto**: el `Layout` intercepta `a[href^="#"]`, lo lleva con Lenis y
+   no cambia el `#`, y así el foco del teclado no salta al destino.
+3. **No se agrega** ningún otro arreglo (ni detener eventos, ni tapar `matchMedia`). Lo que queda de Lenis: baja con el
+   resto de los scripts del `Layout` y corre su bucle por cuadro; la clase `lenis` en `html` deja `scroll-behavior:
+   auto`, que es lo que A quiere. Si Ramón aprueba la prop de §0.5, el `Layout` deja de crearlo en A y estas dos reglas
+   quedan como resguardo.
+4. Se mide en la corrida 2 sobre el build: una muesca de rueda en tres páginas de A llega al 90 % en menos de 100 ms, y
+   cero `a[href^="#"]` en el HTML de A.
+
+### 5.3 · Los tokens nuevos junto a `tailwind.config.mjs`, sin cambiar producción
+
+1. **Las reglas de A van en CSS propio, `src/styles/archivo.css`**, importado solo por los componentes y páginas de A
+   (como `driftime.css` hoy): tokens de §1 como propiedades en `body.a-body` (con prefijo `--a-`), `@font-face` de §1.2
+   y las clases del prototipo. Las páginas de A pasan `bodyClass="a-body"` al `Layout` (la prop ya existe).
+2. **`tailwind.config.mjs` no se toca** (diff 0): A no necesita utilidades de Tailwind (el prototipo no usa ninguna) y
+   así ninguna clase de producción cambia de valor. Tailwind sigue en el stack (su base ya está en `global.css`).
+3. **Lo que `global.css` le pone a toda página y A sobrescribe** desde `archivo.css`, con más especificidad y solo en
+   `body.a-body`: la familia y el color de `html, body` (Inter, `--fg`), el fondo de `body` (`--bg`). `html` lleva el
+   lienzo por `html:has(body.a-body)` para que el rebote del scroll no muestre otro negro.
+4. **Si algún día A usa utilidades de Tailwind**, se agregan **solo** bajo una clave nueva (`theme.extend.colors.archivo`,
+   que apunte a las propiedades `--a-*`), nunca cambiando una clave existente (`bg`, `fg`, `noche`, `gold`…), y se
+   comprueba que `/` y `/nosotros/` (producción, construidos con Astro) salen **iguales píxel a píxel** a 1440 y 390 antes
+   y después, y con el mismo HTML.
+5. Las páginas v3 de driftime que A reemplaza dejan de importar `driftime.css`; el archivo se queda hasta que nada lo
+   importe (registro de la spec anterior).
+
+### 5.4 · El logo: El huso
+
+- **Los archivos son el dibujo final de Bruno, en `e12/logo/final/`** (commit `688eac6`, en avance al escribir esto: falta
+  su README). Tres cortes por tamaño, y cuál va dónde lo dice `construccion-final.json` (`cortes.*.usar`): **grande**
+  desde 40 px de alto, **menú** de 18 a 39 px y **pequeño** de 12 a 17. Diego usa estos, no los provisorios del prototipo
+  (`camino-2-el-huso/`). Monocromo: **blanco sobre el negro y nada más**. El SVG va en línea, con su `fill` cambiado a
+  `currentColor`, `role="img"` y `aria-label="SpindleLab"`.
+- **Encabezado:** `logo-menu-blanco.svg`, a **24 px de alto desde 834 y 20 bajo 834**, en el margen de 16, con área de
+  toque de 44 de alto. **Pie:** el mismo corte menú, a 20 px. El sitio no usa los cortes grande ni pequeño (son para
+  documentos, avatar e imágenes al compartir).
+- **Favicon:** `favicon.svg` (el huso solo), con `favicon.ico` y los PNG de 16, 32 y 48; `apple-touch-icon.png`;
+  `icon-192.png` e `icon-512.png`, este último como `logo` de `#org` (Simón). Todos en blanco sobre `#060606`.
+- **El giro de la tortera no entra en el sitio.** Bruno lo dibujó para el corte grande (`final/movimiento/`); el sitio
+  usa el corte menú, a 24 px, donde la tortera mide unos 8 × 5 px y el giro no se ve, y sería un cuarto tipo de
+  movimiento fuera de las tres familias de §1.6. Si Ramón lo quiere en otra parte, se especifica aparte.
+- **El favicon y el `logo` de `#org` dependen del `Layout`** (§0.5): mientras no se resuelva, en `/v3/` se ve el favicon
+  de antes.
+
+### 5.5 · Telemetría y sandboxes (lock §11 y §12)
+
+Solo lo verdadero, en mono: la hora de Santiago con su huso, calculada en el navegador (`Intl.DateTimeFormat`,
+`America/Santiago`), en gris; el conteo del índice entre paréntesis; la ficha de cada caso; el resultado del chequeo del
+visitante con su hora, en blanco. **Un sandbox a la vista por página:** el chequeo (home y diagnóstico). Ningún
+«LAB_STATUS», coordenada, contador o fecha de despliegue escrita a mano.
+
+### 5.6 · Señales
+
+Las fija Simón en **`e12/senales-obra.md`** (title, description, canonical, Open Graph y JSON-LD de las 27 rutas, y cómo
+se comprueban): esta spec no las repite. Lo que toca a lo visual: el JSON-LD va por el slot `head` (el `Layout` no tiene
+prop `jsonLd`, regla del 5-oct del §7); la `BreadcrumbList` dice lo mismo que la miga; las imágenes al compartir se
+hacen en la letra y el negro de A, sin el hilo de oro (Simón §1.6); y los `id` `#fotografia` y `#modelo` existen en la
+página de Combeau.
+
+---
+
+## 6 · Lo que esta spec prohíbe
+
+**Los dos detectores corren completos en la QA** (`.claude/skills/estudio-web/antislop-web.md` y
+`refero-design/references/anti-ai-slop.md`), y además:
+
+1. **Otro color de interfaz.** Ni oro, ni cobalto, ni un color por servicio, ruta o estado; ningún bloque de interfaz
+   pinta un fondo claro o de color más grande que un control. El lienzo no cambia nunca.
+2. **Una interior con el lienzo claro**, o la hoja blanca de B (pregunta 8).
+3. **Tomar rasgos de B** (Mona Sans, la escala grande, la tabla con visor, el banco de datos): brief §6.11.
+4. **Negrita, mayúsculas fuera de la mono, una tercera letra, texto bajo 11 px.**
+5. **Tarjetas:** cajas con borde, sombra o fondo de placa que agrupan contenido. Las líneas son bordes superiores.
+6. **Texto de la interfaz sobre un medio del trabajo** (salvo los rótulos de placa en la esquina). Sobre la portada,
+   solo con el velo de §3.1 y medido.
+7. **Otra imagen o video generado**, cualquier generación pagada (Higgsfield, Gemini, OpenAI), imágenes de banco o del
+   pool de driftime (`assets/img/d/`, `hero-*.jpg`, `estrategia-mesa`, `equipo-creativo`).
+8. **El hilo de oro en un marco de trabajo, en el índice, en un caso o en una imagen al compartir.**
+9. **Cifras, logos, testimonios o puntajes sin fila**: ni 54 → 94, ni 36 → 73, ni 40 %, ni +150 %, ni conteos de
+   clientes. Precios distintos a `oferta-v3.json` y `servicios-v3.json`, comparados como texto.
+10. **Combeau:** su edad, estatura, pelo, ojos, contacto o ficha de contratación en cualquier medio o `alt`; los medios de
+    `e12/inventario/grabaciones/` o el `cinta.*` del prototipo.
+11. **Praxi:** enlace a praxi.coach; «en pausa» o «fuera de línea»; `offers` o `url` en su JSON-LD; las fotos de su
+    landing sueltas; un nombre de modelo sin lo que hace; una persona generada sin su pie.
+12. **Conceptos:** sin «CONCEPTO» a la vista sin scroll; una cifra de resultado; un testimonio; una persona no dicha como
+    ficticia.
+13. **«IA propietaria», «modelos RAG», «despliegue de modelos»**, telemetría decorativa, corchetes que no rodeen un enlace
+    a un índice, más de un corchete por página.
+14. **Movimiento fuera de §1.6:** rebote, animación por línea, nada atado a la posición del scroll, entradas en texto de
+    lectura, un video que arranque con movimiento reducido o sin pausa, Lenis actuando (§5.2), el giro del logo.
+15. **El cursor** en táctil, con movimiento reducido, sobre texto o controles, con magnetismo o de color.
+16. **Tocar** `Layout.astro`, `global.css`, `tailwind.config.mjs`, las URLs publicadas, `.contact-form`, `#f-utm-*`,
+    `.form-status`, `.form-success`, los `chq-*`, `v3-chequeo.js`, `functions/api/chequeo.js`, `/privacidad/` o
+    `spindlelab-site/`; sacar algo de `/v3/` o del `noindex`; publicar.
+17. **Escribir un enlace interno como `#x` suelto** (§5.2) o comentar una plantilla Astro con `<!-- -->` (regla del 13-oct).
+18. **Resolver en el chat un caso que esta spec no cubre:** se pregunta y se escribe en §7.
+
+**Y lo que el brief §6 no hace en esta obra, entero:** Next.js (se sigue en Astro + Tailwind + Motion); cifras
+inventadas; logos, marcas o nombres de clientes sin permiso, y **ningún prospecto nombrado**; tocar precios, planes o
+nombres de servicio; publicar, reencender Ads o sacar algo de `/v3/` y del `noindex`; «IA propietaria», «modelos RAG» o
+«despliegue de modelos» como hecho; cambiar URLs publicadas o tocar `Layout.astro`, `.contact-form`, `#f-utm-*`,
+`chq-*`, `/privacidad/` o `spindlelab-site/`; **retomar E10 o E11** (ni la ciruela, el resaltador, Instrument Sans o
+Plex de E10, ni los campos de color por servicio de driftime); **editar documentos compartidos** (estrategia, manual,
+fichas, pipeline, plan, outbound: los decide la troncal); construir B o tomarle rasgos; otra imagen o video generado y
+cualquier generación pagada; y en Praxi, enlazar a praxi.coach, contar que está en pausa o usar sueltas las fotos de
+su landing.
 
 ## 7 · Historial de correcciones
 | Fecha | Qué | Regla o preferencia | Quién |
@@ -305,3 +928,4 @@ vuelve a la versión completa.
 | 16-oct | **Cambio de dirección (E12): estudio de diseño y tecnología, «laboratorio digital», con Koto como referente y Accept & Proceed como segundo.** Ramón pegó un brief de sistema de diseño y un segundo texto, y respondió cuatro preguntas (textual en `e12/insumos-ramon-16oct.md`): **(1)** posicionamiento: estudio de diseño y tecnología que también hace SEO técnico y visibilidad en IA; esos servicios y el chequeo quedan como la parte «Logic» que se puede comprobar, y precios y oferta siguen iguales a `oferta-v3.json` y `servicios-v3.json`; **(2)** stack: Astro + Tailwind + Motion, no Next.js; se conserva lo construido (chequeo, formularios, `verificar`, deploy en Cloudflare); **(3)** casos: solo lo medido, y donde no hay métrica, no se pone; **(4)** Koto manda y el brief orienta: se miden koto.com y acceptandproceed.com, se mantiene la intención del brief y se reemplaza lo que huela a plantilla, diciendo por qué (las cifras de ejemplo de su texto, 40 % y +150 %, no existen y no se usan). **Consecuencias:** E10 (The Ready: Taller y Pizarra limpia) queda **en pausa como historia**, sin compuerta 2; su tablero no se borra, su lock queda como registro y su encargo de fotos con IA, en pausa. E11 (texto) queda **en pausa** antes de escribir direcciones; siguen sirviendo `e11/diagnostico-texto.md` y `e11/material.md`. Esta spec sigue describiendo el build de `spindlelab-astro/` hasta que la compuerta 2 de E12 la reemplace: en este paso no cambia nada construido. Brief: `e12/brief-de-obra.md` (compuerta 1 abierta, cinco preguntas). El giro de posicionamiento va a la troncal: `marketing/encargos-otras-sesiones/encargo-troncal-giro-laboratorio.md` | **decisión** (Ramón) | Ramón; registra Mauro |
 | 16-oct | **E12, compuerta 1 aprobada** (16-oct, entre las 19:20 y las 19:45), después de que Javiera aprobara el paso 1 en el cierre exprés de la vuelta 2 (`e12/acta-paso-1.md`, `f248882`). Ramón, con el tablero `tableros/e12-laboratorio/tablero.html` delante: **(1)** las preguntas 1 a 4 del brief van con la opción recomendada («de acuerdo con todo lo que propones»): el mismo comprador, la declaración arriba y el chequeo en la misma pantalla, `/trabajo/` como índice con una página por caso y sin `/laboratorio/`, y Redes y Paid en una línea de la home (su último mensaje fue «no te contesté los 4 puntos»: si siguen abiertas, el paso 2 usa la opción recomendada y lo dice en el tablero); **(2)** Combeau: «no se necesita más permiso. ya lo pedí hace un rato», registrado como lo dice él, sin respaldo escrito en el repo; **(3)** **Praxi entra como caso** («podría entrar praxi como caso ya que creó un sitio y una app»), desde un clon de solo lectura, sin commit, push ni tocar su producción; **(4)** los casos, con la estructura medida de Koto («hacer los casos como los hace la referencia»); **(5)** **cuatro piezas de concepto** (industrial B2B, clínica, estudio legal y servicios) con identidad, sitio y movimiento, rotuladas «Concepto» con las reglas de `marketing/portafolio/README.md` («no solo es poner cosas medidas si no que también mostrar el nivel de trabajo que puedo llegar a hacer»); **(6)** **base negra como Koto, con juegos de blanco u otros colores en páginas o secciones interiores** («tomar el negro, pero así como muestra el sitio, también hay juegos con sitios interno con blanco u otros colores»), que reemplaza el claro del paso 1; **(7)** **el manual de marca antiguo deja de regir el diseño del sitio** («en diseño regirse por la referencia. el manual antiguo se olvida. ahora tenemos que cambiar»): el oro `#C9A227` y su regla, Gabarito e Inter y el wordmark actual no obligan, y la identidad nueva sale de E12; **(8)** una letra por dirección, **A Google Sans Flex** y **B Mona Sans**, con **DM Mono** en las dos; **(9)** Bruno trae **dos o tres caminos de wordmark** a la compuerta 2. **Consecuencias para esta spec:** sigue describiendo el build de `spindlelab-astro/` (driftime) hasta que la compuerta 2 de E12 la reemplace, y en el paso 2 no cambia nada construido: los prototipos van en `tableros/e12-direcciones/`. Las filas de este §7 que aplican el oro, Gabarito o los campos de color siguen siendo historia del build de hoy, no regla para E12. Dos datos que el paso 2 tiene que resolver: el cobalto `#0029FF` sobre el negro de Koto (`#060606`) da 2,66:1, bajo el 3:1 de una forma, y el juego de color no puede ser un campo de color por servicio, que es lo que Ramón rechazó de driftime el 15-oct. Registro: `e12/brief-de-obra.md`, sección «Compuerta 1»; encargo del paso 2: `e12/encargo-paso-2.md`; aviso a la troncal: `marketing/encargos-otras-sesiones/encargo-troncal-giro-laboratorio.md` §5 | **decisión** (Ramón) | Ramón; registra Mauro |
 | 19-oct | **E12, compuerta 2: Ramón eligió A · Archivo** (19-oct, a eso de las 09:50, con el tablero `tableros/e12-direcciones/tablero.html` delante y el acta del paso 2 aprobada en la vuelta 2, `70d7c23`): Google Sans Flex con DM Mono 500 sobre el lienzo `#060606`, y el trabajo carga la pantalla; **logo: camino 2, «El huso»**, monocromo, en Google Sans Flex wght 600; **hero 3** («hero-sitio» de `e12/texto/texto-paso2.md`); **la portada de la home es el video del hilo de oro del sitio actual** (`spindlelab-astro/public/hero-hilo-de-oro.mp4`), en el lugar del showreel de Koto, como **desvío autorizado** de la regla de solo trabajo real, con versión VP9/WebM y un H.264 más liviano, botón de pausa, velo `#060606`, contraste de la frase medido sobre el video y quieto con movimiento reducido; ninguna generación pagada; Praxi y Combeau como casos reales. Por defecto (no contestó): los puntajes propios no se muestran, el círculo del cursor es blanco, ninguna interior con el lienzo claro y a Combeau se le recortan sus medidas personales. B · Banco queda como historia. **Consecuencia para esta spec:** Lucía la reescribe para E12 sobre A en esta misma corrida; desde ahí describe lo que se construye, y las filas anteriores de este §7 quedan como historia del build de driftime. Los defectos 22 y 23 del acta del paso 2 se cierran en ella. Registro: `e12/brief-de-obra.md`, sección «Compuerta 2»; textual: `e12/insumos-ramon-19oct.md` | **decisión** (Ramón) | Ramón; registra Mauro |
+| 19-oct | **E12: la spec se reescribe sobre A · Archivo** (§0 a §6; la de driftime pasa entera, sin cambios, a `spec-visual-driftime.md`). Lo que fija y el prototipo no tenía: la portada con el hilo de oro de Bruno, con un velo `#060606` que nace con el texto (0 → 0,88 en 160 px → `#060606` en el borde), medido contra los 121 cuadros del bucle en 11 tamaños: 0 líneas bajo el mínimo, la peor 5,31:1 (sin velo, 1,03:1); bajo 834, una franja 16:9 y el `h1` a 26, para que el chequeo entre a 360 × 800 (botón a 52 px del borde); la cinta como primera sección, 16:9 exacta y rehecha sin el tramo de Combeau con sus medidas; las barras laterales desde 1194 y no desde 1024 (Koto, medido entre cortes); el tope de 493 px del cuerpo en todos los anchos (el prototipo llegaba a 142 caracteres por línea a 1023); techos de campo por tipo de página (caso 10 a 35 %, índice ≤ 35, home ≤ 20, interiores ≤ 5 y la franja nunca es campo: cierra el defecto 22, y Desarrollo web cambia Doceavo por Combeau en la franja); el borde del campo `#707070` (1.4.11); H.264 en todo video; Motion 13.5.0 exacto; Lenis sin efecto con `data-lenis-prevent` y los enlaces internos con su ruta, sin tocar el `Layout` (medido: la rueda vuelve a 54 ms), y la pregunta a Ramón por una prop del `Layout`; el logo El huso, sin el giro de la tortera. Los defectos 20 y 21, aplicados; el 23, corregido en `direccion-a.md` §9.2. Herramientas y datos, en `e12/spec/` | **regla** (toda la spec) | Ramón, compuerta 2; escribe Lucía |
