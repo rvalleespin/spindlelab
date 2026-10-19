@@ -219,7 +219,7 @@ def huso(c, esc, dx, P):
     med = {"asta": round(s, 2), "tortera": [round(2 * rx, 2), round(2 * ry, 2)], "tortera_en_astas": [P["ancho"], P["alto"]],
            "borde_abajo_tortera": round(cy - ry, 2), "centro_tortera": round(cy, 2), "arriba_tortera": round(arriba, 2),
            "punta": round(punta, 2), "punto_original": [round(punto[1] * esc, 2), round(punto[3] * esc, 2)],
-           "altura_x": round(xh, 2), "avance_i": round(c.gs[c.nombre("i")].width * esc, 2)}
+           "altura_x": round(xh, 2), "avance_i": round(c.gs[c.nombre("i")].width * esc, 2), "cx": round(cx, 3), "vara_x": [round(sx0, 3), round(sx1, 3)]}
     return forma, med, (cx - rx, cx + rx)
 
 

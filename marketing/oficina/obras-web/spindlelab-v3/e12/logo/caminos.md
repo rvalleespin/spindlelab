@@ -4,9 +4,13 @@
 y criterio 15. **Manda** la compuerta 1 del 16-oct: punto 7 («en diseño regirse por la referencia. el manual antiguo
 se olvida») y punto 9 (dos o tres caminos de wordmark junto con las direcciones). Después, `lock-koto.md` §6 y §20.
 
-**Estado:** borrador para que Ramón elija en la compuerta 2. Nada está publicado y `spindlelab-astro/` no se tocó. Lo
-que se elige aquí es el **camino**. El dibujo final se hace con la dirección elegida, después de la compuerta (encargo
-§8.4).
+**Estado (19-oct-2026): cerrado.** Ramón eligió en la compuerta 2 **el camino 2, El huso** («2 dos»), con la dirección
+**A** (Google Sans Flex) y el logo **monocromo** (pregunta 10, por defecto). El dibujo final está en
+[`final/`](final/README.md) y lo que se cerró, en §11. Lo que sigue de este documento es el borrador del 17-oct, tal
+como lo vio Ramón; no se reescribe. Nada está publicado y `spindlelab-astro/` no se tocó.
+
+~~**Estado:** borrador para que Ramón elija en la compuerta 2.~~ Lo que se elegía aquí era el **camino**; el dibujo final
+se hizo con la dirección elegida, después de la compuerta (encargo §8.4).
 
 ## 0 · En una línea
 
@@ -191,12 +195,18 @@ letra en tres cortes, con la mono como voz de los datos.
 
 ## 7 · Lo que decide Ramón
 
+**Decidido el 19-oct** (`e12/insumos-ramon-19oct.md`): 1, **el camino 2**; 2, **la dirección A**, así que la letra es
+Google Sans Flex; 3, **sin color**, por defecto (no contestó la pregunta 10). Las tres preguntas, tal como se hicieron:
+
 1. **¿Qué camino?** (encargo §10.2). Si ninguno, se vuelve a la medición de §1, no a estas láminas.
 2. Con el camino, **la dirección** (A o B) fija la letra del dibujo final, salvo la mitad «LAB» del camino 3.
 3. **¿El logo lleva color?** Por defecto, no (§2). Si quiere el gesto de Koto, con el logo como único color del sitio,
    lo dice aquí y el color se decide con la dirección, no con el manual antiguo.
 
 ## 8 · Lo que no se hizo, y por qué
+
+**[19-oct: el dibujo final, los tamaños de 12 a 16 px, el `apple-touch-icon`, el avatar y la versión para documentos
+ya están, en `final/`; el movimiento quedó propuesto, con su demo. Ver §11.]**
 
 - **El dibujo final:** se hace después de elegir (encargo §8.4). Estos SVG son caminos, con la letra de partida y un
   ajuste de espaciado a mano. Faltan el ajuste óptico de curvas, las versiones para tamaños de 12 a 16 px fuera del
@@ -217,6 +227,9 @@ letra en tres cortes, con la mono como voz de los datos.
 | 17-oct | Favicon de los caminos 1 y 3: en el peso del wordmark (430 y 360), la «S» de 16 px quedaba gris. Las letras del favicon pasan a wght 600, y la línea de base y el asta de la «L» caen en píxeles enteros | Favicon ampliado ×8 |
 | 17-oct | Lámina: el bloque del favicon se montaba sobre el menú. Se reordenó y `render.mjs` comprueba ahora que los bloques no se pisen | Primera lámina |
 | 17-oct | Lámina 2: «un signo que no tiene ningún otro estudio» no se puede comprobar y salió. Lámina 1: A&P «en Messina Sans» pasó a «en la letra de su menú», porque su logo es un PNG y la letra solo se compara a la vista | Revisión del texto antes de entregar |
+| 19-oct | **Logo final del camino 2** (§11): la tortera pasa de la elipse gorda a un disco con canto y filete, que flota sobre la x; la punta sube a 117 y se afina; el espaciado alrededor de la «i» vuelve a 0 | Ramón eligió el camino 2 (compuerta 2); la prueba de la tortera con lectura fría (`final/prueba-tortera/`) |
+| 19-oct | Tres cortes por tamaño (grande, menú, pequeño) y el favicon de 16 dibujado a mano | A 24 px el filete mide 0,4 px; a 12 a 17 px los lectores leían «t» o cruz; a 16 px ningún vector escalado se leía |
+| 19-oct | El movimiento de §4 (escala horizontal de la tortera) se cambia por una muesca que corre por el canto, y queda propuesto, no construido en el logo | La escala muestra una moneda que se da vuelta, no un giro; la muesca no se ve a 24 px |
 
 ## 10 · Cómo rehacerlo
 
@@ -234,7 +247,38 @@ renderizar. `render.json` registra cada corrida: las 3 láminas con todas sus im
 cada menú, ningún desborde, ningún bloque pisado, ningún texto bajo 11 px y cero errores de consola. Los 24 menús van
 sin desborde y con DM Mono cargada.
 
-**Archivos:** `caminos.md` (este) · `construccion.json` · `camino-1-la-palabra/`, `camino-2-el-huso/`,
+**El logo final** se rehace con los pasos de `final/README.md` («Cómo rehacerlo»): `final.py`, `final-render.mjs`,
+`ico.py` y `lamina-final.mjs`, más `explorar.py`, `prueba-capturas.mjs` y `lector-frio.py` para la prueba.
+
+**Archivos:** `caminos.md` (este) · `final/` (el logo final, §11) · `construccion.json` · `camino-1-la-palabra/`, `camino-2-el-huso/`,
 `camino-3-dos-cortes/` (SVG, favicon SVG y PNG) · `laminas/` (3 láminas en HTML y PNG, `menu.html`, `menu/` con 24
 PNG, `caminos.json` y `render.json`) · `medicion/` (`marcas.json` y `capturas/`) · `herramientas/` (`medir-marcas.mjs`,
-`construir.py`, `armar-laminas.py` y `render.mjs`) · `fuentes/` (DM Mono 500 y las tres licencias).
+`construir.py`, `armar-laminas.py` y `render.mjs`; desde el 19-oct también `huso.py`, `explorar.py`, `prueba-capturas.mjs`,
+`lector-frio.py`, `lector-frio-chico.py`, `final.py`, `final-render.mjs`, `ico.py`, `lamina-final.mjs`, `giro.py` y
+`giro-fotogramas.mjs`) · `fuentes/` (DM Mono 500 y las tres licencias).
+
+## 11 · Cierre (19-oct): el logo final
+
+**Todo está en [`final/`](final/README.md), con un README que dice qué archivo va dónde.** En corto:
+
+- **La tortera cambió, y fue por la prueba que §4 dejaba pendiente.** Dibujé 17 variantes y llevé 4 a una lectura fría
+  (dos lectores limpios por variante, sin contexto ni herramientas, capturas a dpr 1 y 2: `final/prueba-tortera/`). La
+  del camino (v0) se leyó primero como **una torre de agua o de control** y, en segundo lugar, como alfiler y seta; la
+  cerradura no apareció nunca. La elegida, **un disco con canto** (la cara, el canto y un filete entre los dos) que
+  flota sobre la x, se leyó como **una torre de observación**, con seguridad alta en los dos lectores: aleja el alfiler
+  (5.º de 8, contra 3.º) y la cerradura (descartada por los dos), **pero no la seta** (2.ª o 3.ª en la lista, igual que
+  el camino). La única que sacó las tres fue la vara por delante de la tortera (v8), y la leyeron como **una daga**: la
+  dejé dibujada como alternativa, y recomiendo el disco.
+- **Tres cortes por tamaño:** grande (40 px o más, con el filete), menú (18 a 39 px, sin el filete, que a 24 px mide
+  0,4 px) y pequeño (12 a 17 px: la letra en opsz 12, la tortera pegada y **sin punta**, porque a ese tamaño la punta
+  hacía leer «Sp†ndleLab»; dos lectores lo prefirieron sobre las otras dos opciones).
+- **El favicon de 16, dibujado píxel a píxel;** el de 32 y 48, del SVG. Además: `apple-touch-icon` (180), iconos de 192
+  y 512, avatar cuadrado y redondo (1080), PNG de 12, 14 y 16 px para firmas, y versión para documentos en SVG y PNG.
+- **Lo que mide distinto del camino:** la punta sube a 117 (la mayúscula es 100), así que a 24 px de alto el logo mide
+  117 × 24 y su mayúscula 16,3 px, contra 130 × 24 y 18,1 del camino. Si la spec quiere la mayúscula de antes, el logo
+  va a 26,6 px.
+- **El giro de la tortera** no es la escala horizontal de §4 (eso es una moneda que se da vuelta): es una muesca que
+  corre por el canto. Está construido como demo y respeta el movimiento reducido (0 animaciones, medido), pero no lo
+  firmo para el logo: a 24 px no se ve y solo lo revisé en fotogramas detenidos. Queda propuesto (`final/movimiento/`).
+- **Contornos limpios** (un solo trazado por corte, sin los 56 tramos de largo cero que traía la letra instanciada),
+  monocromo, Google Sans Flex wght 600 con su OFL copiada en `final/`.
