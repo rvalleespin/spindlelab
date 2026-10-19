@@ -360,3 +360,204 @@ del cambio: la pausa y el seguir, las fuentes por ancho y el movimiento reducido
 - Área de toque a 390 (táctil): 0 controles bajo 44 × 44 en las dos páginas (`area-toque-390.js` del paso 2).
 - En el HTML de las dos páginas: cero «54 → 94», «36 → 73», `praxi.coach`, «en pausa», «fuera de línea», `Review`,
   `VideoObject` y `<!--`; los precios a la vista son los seis de los JSON; ningún `alt` con medidas de Combeau.
+
+---
+
+## Tanda 3 · La plantilla de caso y sus seis páginas (19-oct-2026, Diego)
+
+**Qué se construyó.** `/v3/trabajo/praxi/`, `/combeau/` (una página, con `#fotografia` y `#modelo`), `/sesenta/`,
+`/ocelo/`, `/doceavo/` y `/tonela/`, desde una sola ruta, `src/pages/v3/trabajo/[caso].astro`, y una sola plantilla
+(spec §2.3), `src/components/a/Caso.astro`, con dos piezas nuevas: `FilaCaso.astro` (una fila de medios en las cuatro
+formas de Koto, o el hueco) y `MedioCaso.astro` (una imagen o un video de la fila). Lo que la plantilla pinta lo arma
+`src/data/archivo/casos.mjs` (`modelo()`): el texto de Clara por su id (las copias `texto/caso-*.json`, sacadas con
+`extraer-texto.mjs`), cada medio por su nombre en `medios-casos.json` y en `texto-obra.json` (su alt y su pie), el orden
+de las filas, el siguiente caso y el JSON-LD. **El build se cae** si falta un texto, si Clara no le escribió alt a un
+medio, si un elemento de Clara no se sabe pintar, si el rótulo de una sección no es el del índice, si el destino de
+«Siguiente» no es el que manda el orden de la spec o si el corchete no dice el conteo de `/trabajo/` (10). El índice de
+secciones y la barra flotante los mueve `src/scripts/archivo/caso.mjs`.
+
+**Los medios** (`e12/construccion/herramientas/medios-casos.py`, sin generar nada): 120 archivos en
+`public/v3/trabajo/<caso>/` (21,0 MB en total; de 2,0 MB Doceavo a 4,9 MB Combeau), imágenes en WebP y cada video en VP9 y
+H.264 (`faststart`, sin audio). Praxi y Sesenta, las capturas y placas del prototipo tal cual; Combeau, solo
+`e12/casos/combeau/medios/`, tal cual; Ocelo, Doceavo y Tonela, sus placas, capturas y medios de `marketing/portafolio/`,
+escalados (16:9 a 1600, 4:5 y 1,62 a 1050) y en WebP calidad 80, como el prototipo. El único video recodificado es el
+H.264 del reel de Praxi (el prototipo solo tenía VP9): el mismo corte del prototipo (`crop=720:900:0:100`), 685 kB. Todos
+bajo los techos de §3.5.5 (el más pesado, el H.264 de Sesenta, 2,12 MB; el VP9 de Tonela, 1,44 MB).
+
+**Compartido con las tandas 1 y 2, tocado:** `archivo.css` (un bloque nuevo, CASO, antes del de movimiento reducido),
+`Video.astro` (una prop opcional, punto 1) y `video.mjs` (punto 1). Lo comprobé sobre la home y `/trabajo/` después del
+cambio (`comprobar-base.mjs` sobre `/v3/` y `comprobar-tanda-2.mjs`): las mismas fuentes por ancho, la pausa y el
+movimiento reducido que en la tanda 2, sin errores.
+
+### 1. El medio principal bajo 834: una imagen quieta en los conceptos, y `Video` lo sabe hacer
+
+**Qué dice la spec:** §2.3, bajo 834 el medio principal va «4:5 a sangre sin radio»; el de los conceptos es «el recorrido
+grabado de cada sitio», que es 16:9. Cada `caso.md` de Bruno dice qué va a 390: una imagen 4:5 (Sesenta, Ocelo y Doceavo,
+su portada 4:5; Tonela, `capturas/medio-4x5-390.png`). Combeau tiene su recorrido del teléfono (780 × 1688); Praxi, solo su
+video de 568 × 320.
+
+**Lo que hice:** `Video.astro` suma una prop opcional, `posterAngosto`: la imagen quieta va en un `<picture>` con la de
+bajo 834 (sin la prop, el marcado es el de siempre). En los conceptos las fuentes del video son solo «desde 834»
+(`data-fuentes`), y `video.mjs` ahora elige la fuente al cargar: si ninguna sirve para el ancho, no hay video ni pausa,
+queda la imagen quieta (antes el botón aparecía y el `play()` fallaba). Combeau: desde 834 el recorrido de 1440, bajo 834
+el del teléfono, cada uno con su póster. Praxi: el mismo video en todo ancho; bajo 834 el marco 4:5 lo recorta (como el
+prototipo). Bajo 834 el recorte se ancla arriba (`object-position: 50% 0`: la cabecera del sitio grabado), desde 834 al
+centro.
+
+### 2. Praxi: las filas, con las reglas de §2.3 sobre la lista de Clara
+
+**Qué dice la spec:** §2.3, Praxi va con las «filas del prototipo (9 más el principal)», y para todo caso: «la sección abre
+con una 16:9; una fila partida va después de una 16:9, no de otra partida». Clara (texto-obra.json, que dice que «las
+filas y su orden los fija la spec») lista el par de las portadas (`praxi-portada-390-45` y `praxi-login-390-45`) en
+Problema y `praxi-reglas-169` en Hipótesis. El prototipo los tenía en Hipótesis (el par solo) y en Solución.
+
+**Lo que hice:** las mismas nueve filas más el hueco, ordenadas para cumplir las dos reglas:
+
+| Sección | Filas |
+|---|---|
+| Problema | ninguna (lock §21.5: la introducción de Koto va en texto) |
+| Hipótesis | `reglas` 16:9 · par `portada` \| `login` |
+| Solución | `numeros` 16:9 · par `frase` \| `numeros` 4:5 |
+| La pieza | `amarillo` 16:9 · `reel` 4:5 \| `avatar` amarillo y oscuro 1,62 · `facebook` 16:9 · par `carrusel` 1 \| 3 · el hueco 16:9 |
+| Sin métrica | `empezar` 16:9 |
+
+Por qué el par de las portadas va en Hipótesis y no en Problema: Problema no tiene una 16:9 con que abrir, y el texto de
+Hipótesis es el que cuenta lo que esas dos capturas muestran («La portada pasó de “Entrena sabiendo por qué” a “Se
+acuerda de cada serie que hiciste”»). En La pieza, el prototipo ponía `facebook` antes del reel y dejaba dos partidas
+seguidas (reel y carrusel); van alternadas. Cada medio lleva el alt y el pie de Clara; cuando los dos medios de una fila
+llevan pies distintos, el pie de la fila dice los dos (el carrusel: personas generadas y números de ejemplo).
+
+### 3. Combeau: la foto servida y las dos capturas del teléfono, en las formas de Koto
+
+**Qué dice la spec:** §2.3, «solo las cuatro formas de Koto». Clara lista tres medios 4:5 sueltos: la foto servida
+(«4:5 o 1:1, a decidir por Lucía»; la spec no lo decidió), `combeau-fotografia-45` y `combeau-modelo-45`, los dos últimos en
+La pieza. Un 4:5 solo no es una forma de Koto, y con tres no se arman pares.
+
+**Lo que hice, lo mínimo para quedar en las cuatro formas:**
+
+- **Solución:** `panel-encuadre` 16:9 · **par `foto-servida` \| `fotografia-45`** · `panel-colecciones` 16:9. La foto
+  servida va en 4:5 (el marco la recorta a lo ancho: es 828 × 828) junto a la portada del sitio en un celular, que pasa de
+  La pieza a esta sección: es la pantalla para la que el sitio la entrega en 828 px, lo que dice el párrafo de al lado.
+  Su pie y el enlace a la original (↗, sale del sitio) son de Clara.
+- **La pieza:** `#fotografia`, su título y su párrafo, y `fotografia-169`; `#modelo`, su título y su párrafo,
+  `modelo-169` · **par `modelo-45` \| el recorrido del book a 390** · el recorrido del book a 1440. El recorrido a 390
+  (`combeau-modelo-recorrido-390`, de `e12/casos/combeau/medios/`, sin medidas en ningún cuadro, inventario §2.9) no está
+  en la lista de Clara como medio aparte: lleva su descripción del mismo recorrido («Recorrido por el book de modelo:
+  sus fotos, sus trabajos publicitarios y sus comerciales.»). **Para Lucía y Clara:** si prefieren la foto servida en
+  1:1 o el book sin el recorrido del teléfono, es una línea de `casos.mjs`.
+- Los dos títulos de las partes van a la izquierda y su párrafo a la derecha, como una sección, con la línea entre filas
+  (`--a-linea`) arriba; el id va en la parte entera, que abre con su título y sigue con su 16:9.
+
+### 4. Los conceptos: el orden de su `caso.md`, y lo que eso deja
+
+Las filas van en el orden de las tablas «Fila · Forma · Medios» de cada `caso.md` (spec §2.3), con el alt de Clara. Dos
+cosas quedan como las dejó Bruno y la spec no las corrige: **Doceavo** abre su Solución con un par y le sigue otra
+partida (la regla de §2.3 no rige sobre el orden del `caso.md`), y **Tonela** usa a 390 como medio principal la misma
+captura que va después en el par de La pieza (`medio-4x5-390`), así que en el teléfono se ve dos veces. **Tonela, Sin
+métrica:** sin fila, porque la placa «Lo que lee un motor» no está compuesta (Clara: «la sección va sin fila»). Las
+secciones «Lo que subiría de nivel con fotografía» y «Cuenta de filas» no van (spec §2.3).
+
+### 5. «Siguiente»
+
+**Qué dice la spec:** §2.3, «el nombre del próximo caso a 32 y su medio (16:9, 416 px de ancho)», en el orden Combeau →
+Praxi → Sesenta → Ocelo → Doceavo → Tonela → Combeau, que es el de Clara (el build lo compara).
+
+**Lo que hice:** el medio de cada caso en el «Siguiente» de otro es el póster de su medio principal, salvo dos: **Praxi**,
+`praxi-reglas-169` (su video del inicio tiene personas generadas, y un medio con personas lleva su pie: §6.11; la captura
+de las reglas es la que Simón eligió para su tarjeta por lo mismo) y **Combeau**, `combeau-fotografia-169` (la primera
+pantalla de su sitio). Debajo del nombre, la línea mono de la ficha del caso que sigue («Concepto · 2026», que Clara pide
+a la vista). Es un enlace con el círculo del cursor («Ver el caso» o «Ver el concepto», de Clara) y su nombre es el del
+`h2`; el orden de arriba abajo es el del prototipo (rótulo, medio, nombre, línea, corchete). Dos columnas desde 834
+(contacto | caso). Abajo de la página, 96 px bajo 1194 (la barra, §2.3) y 80 desde 1194 (la spec no lo dice: un paso de
+la escala).
+
+### 6. Valores que la spec no fijaba y cómo los resolví
+
+| Qué | Lo que hice | Por qué |
+|---|---|---|
+| La barra lateral desde 1194 | `<header>` (no `<aside>`, que haría del `h1` el título de una región complementaria); relleno arriba de 48 y de 8 a los lados con margen negativo, como la del índice (tanda 2); se desplaza adentro si no cabe | Medido: no desborda a 1194 × 834 ni a 1280 × 720 (la de Combeau, la más alta, deja los créditos 29 px bajo el índice) |
+| La ficha | La línea mono de Clara y, debajo, los campos que no están en la línea (Hecho, Qué es, En línea desde, Rubro, Lo hecho) en dato mono, en gris los dos | §1.1: los datos mono en reposo van en gris; el prototipo ponía el valor en blanco |
+| «Con qué está hecho» | Cada fila a cuerpo y la herramienta debajo en dato mono gris, con la línea entre filas | §2.3: «lo que le hace a quien usa Praxi en cuerpo, la herramienta en dato mono». El prototipo usaba chico y blanco. Clara la escribe como «texto (herramienta)»: el paréntesis final es la herramienta |
+| El punto del índice | Un `span` del alto de una fila, movido con el resorte «estado» (Motion) a la fila activa; con movimiento reducido salta. La activa lleva `aria-current="location"` | §2.3: «el punto de 3 px… que se mueve con el resorte estado». Un `::before` por fila (el prototipo) no se puede mover |
+| La sección activa | La última cuyo borde de arriba pasó el 40 % de la ventana (el prototipo) | §2.3 no fija el umbral |
+| La barra flotante | El `+` con `aria-hidden` y, oculto a la vista, «Ver las secciones» (Clara, `comun.secciones.barra`) dentro del `summary`: su nombre es «Praxi Problema Ver las secciones», que contiene lo que se ve (WCAG 2.5.3). Elegir una sección cierra la lista. El color al pasar el mouse, solo con un puntero que pasa: en táctil el toque que abría la lista dejaba pegada en blanco la fila que quedaba bajo el dedo (medido) | Clara: «esto es lo que lee el lector de pantalla del botón «+»»; con `aria-label` en el `summary` el nombre no contendría lo visible |
+| Nada tapado por la barra | `scroll-padding-bottom: 96px` bajo 1194 | §4.3 |
+| Las secciones | 24 px a los lados del texto desde 1194 y `h2` de 16em como máximo (el prototipo); entre bloques, 8 (Koto) y 16 más sobre cada sección | §2.3 da solo «24 px arriba y 12 abajo» |
+| El hueco de Praxi | Marco punteado `--a-hueco` de 1 px, radio 6, 16:9, el texto de Clara en chico gris arriba a la izquierda con relleno de 16 | §3.3 no dice dónde va el texto |
+| El video principal y su descripción | La imagen quieta lleva el alt del póster de Clara; la descripción del video (que va con `aria-hidden`) queda oculta a la vista dentro del pie de la figura. Praxi no tiene alt de póster: su imagen quieta lleva la descripción | Clara: «este texto va en el aria-label de su figura o como texto oculto junto al pie» |
+| El enlace del pie (la original de la foto) | Área de 44 de alto bajo 834 y con puntero grueso, sin mover lo que se ve | §4.3; medido antes: 142 × 17 |
+| Una entrada por sección (§1.6) | La primera fila de cada sección; en La pieza de Combeau, la primera fila de la primera parte | La sección no tiene filas propias: sus partes las tienen |
+
+### 7. Las señales (Simón, `senales-obra.md` §2.3 a §2.5)
+
+`title` y `description` de Clara, que son los de Simón (el build se cae fuera de los largos de §1.2). JSON-LD por el slot
+`head`, como lo escribió Simón: `WebPage`; Praxi, `CreativeWork` y `SoftwareApplication` **sin `offers`, `url` ni
+`sameAs`**; Combeau, `CreativeWork` con `hasPart` (`#fotografia`, `#modelo`) y su `WebSite` con el `publisher` que su sitio
+ya publica; cada concepto, `CreativeWork` con `genre: "Concepto"` y su `disambiguatingDescription`. Dos lecturas mías:
+
+- **La `BreadcrumbList` dice lo mismo que la miga** («Sesenta»), no «Sesenta (concepto)» como el ejemplo de §2.5: la spec
+  (§2, lo común, 5) y el propio §4 de Simón piden que sean iguales, y que es concepto ya lo dicen el `title`, la
+  `description`, `genre` y `disambiguatingDescription`.
+- **La `description` del caso** es la bajada visible del `h1` (la parte en gris), en los seis; en Praxi, Simón pedía «la
+  frase de entidad visible arriba de la página», y la que hay arriba es esa.
+
+**Las imágenes al compartir (§1.6)**, con `og-tanda-3.mjs` (HTML renderizado en el negro de A, el logo de El huso, nada
+generado y sin el hilo): `og-e12-praxi.jpg` (la captura de las reglas: sin personas ni cifras de ejemplo),
+`og-e12-combeau.jpg` (`combeau-fotografia-169`, de `casos/combeau/medios/`) y una por concepto con su portada 5:3 entera, con
+su «CONCEPTO» a la vista. 1200 × 630, de 27 a 67 kB. Son archivos nuevos fuera de `v3/`: no cambian ninguna página
+publicada.
+
+### 8. Los techos de campo (§3.4), medidos
+
+`campos-tanda-3.mjs` (página completa a 1440, con movimiento reducido) + `campos.py` del prototipo. Datos:
+`e12/construccion/medicion-campos/campos-tanda-3.json` y `a-<caso>-1440-completa.json`.
+
+| Caso | Campos (techo 10 a 35 %) | Seguidos (techo 4) | Medios (piso un tercio) | Negro fuera de los medios |
+|---|---|---|---|---|
+| Praxi | **6,1 %** | 2 | 45,1 % | 97,2 % |
+| Combeau | **24,2 %** | 2 | 49,8 % | 97,2 % |
+| Sesenta | 22,9 % | 2 | 59,0 % | 97,6 % |
+| Ocelo | 18,9 % | 2 | 57,4 % | 97,5 % |
+| Doceavo | 30,2 % | 4 | 56,3 % | 97,3 % |
+| Tonela | 26,9 % | 4 | 55,0 % | 97,2 % |
+
+**Combeau queda sobre el 10 %**, así que no hay nada que declarar. **Praxi queda bajo el piso, en 6,1 %**: es el caso que la
+spec ya admite (§3.4: «Praxi (6,0 % medido en A), marca oscura de un solo acento que no se recolorea»).
+
+### 9. Lo que queda para Lucía o para Ramón (no lo resolví a la fuerza)
+
+1. **A 390, en Praxi y en Combeau la ficha queda bajo la barra flotante en la primera pantalla** (Praxi: la línea
+   «Propio · 2026 · Sitio y app» en 784 a 798 y la barra desde 776; Combeau, en 776 a 790, por su `h1` de tres líneas). La barra flota
+   sobre el contenido, como la de Koto; la spec solo exige la ficha a la vista en los conceptos, y en los cuatro sí queda
+   libre (de 721 a 762 a 390 × 844 y de 684 a 725 a 360 × 800). Si Lucía la quiere libre también en los reales, la salida
+   es de la spec (que la barra aparezca al dejar atrás la ficha, por ejemplo).
+2. **El aviso de cookies** tapa abajo la primera vez, como en la tanda 2 (punto 12.1). En los conceptos, el «CONCEPTO» del
+   medio principal 4:5 de bajo 834 viene en la imagen, arriba, y se ve igual.
+3. **Tonela a 390 muestra dos veces la misma captura** (punto 4) y **la foto servida va en 4:5** (punto 3).
+4. **El video del inicio de Praxi mide 568 × 320**: a 390, recortado a 4:5, se agranda a 1,5 veces y se ve blando. No hay
+   otro.
+5. **Los casos no tienen pie, así que no tienen el botón para cambiar las cookies** (tanda 1, punto 8.2).
+
+### 10. Lo verificado en esta tanda
+
+- `npm run build` + `comparar-produccion.mjs`: las 22 páginas publicadas y lo que sirven, **iguales byte a byte**. Nuevos
+  fuera de `v3/`: las seis imágenes al compartir (y las de las tandas 1 y 2).
+- `npm run verificar -- --prefijo /v3/` a 390, 768 y 1440: **27 páginas, sin hallazgos** (los 7 enlaces rotos de la tanda 2,
+  a los casos, ya responden); con `--sin-pildoras` en `/v3/trabajo/` a 1440, sin hallazgos.
+- Render con Chromium a 360, 390, 768, 834, 1024, 1194, 1440 y 1920 de las seis páginas (`capturar.mjs`), mirado: desborde
+  0 también sin el `overflow-x: clip`, un `h1`, encabezado de 90 bajo 834 y de 64 desde 834, solo Google Sans Flex y DM
+  Mono, cero errores de consola. Capturas a 390 y 1440 en `e12/construccion/capturas/tanda-3/` (la primera pantalla en PNG
+  y la página entera en JPEG), con el índice a 1440 marcando «Solución» y la barra abierta a 390 (las dos de Combeau).
+- `comprobar-tanda-3.mjs` (**sin fallas**, `capturas/tanda-3/comprobar-tanda-3.json`): JSON-LD que parsea, sin `@id`
+  repetidos ni tipos vetados, la `BreadcrumbList` igual a la miga; Praxi sin `offers`, `url` ni `sameAs`, cero `praxi.coach`,
+  «en pausa» y «fuera de línea»; Combeau con `#fotografia` y `#modelo`, cero `mailto:`, `tel:`, `wa.me` y medidas; los
+  conceptos con «concepto» en el title, la description y el `disambiguatingDescription`; cero «54 → 94», «36 → 73»,
+  `<!--` y `href="#…"`; un corchete por página; la ficha de los conceptos a la vista y sin nada encima a 1440 × 900,
+  390 × 844 y 360 × 800; el índice marca la sección y el punto queda en su fila; la barra abre, lleva a «La pieza» y se
+  cierra; dos cruces a 1440 y ninguna a 1024; el medio principal 4:5 a sangre bajo 834, sin video ni pausa en los
+  conceptos; área de toque a 390: 0 controles bajo 44 en las seis; y los 3 enlaces de la home y los 7 del índice a los
+  casos responden 200, con sus fragmentos.
+- `comprobar-base.mjs` sobre las seis (`capturas/tanda-3/comprobar-base-<caso>.json`): la rueda llega al 90 % en 45 a
+  58 ms; cero `a[href^="#"]`; saltar al contenido con su ruta; encabezado plegado; el círculo sobre el medio de «Siguiente»
+  y escondido con Tab; los videos corren a la vista con la fuente de su ancho y la pausa los para y dice su estado; con
+  movimiento reducido ningún video corre, no hay círculo ni entradas.

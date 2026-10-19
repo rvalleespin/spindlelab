@@ -829,7 +829,10 @@ body.a-body.a-sin-js .filtro { display: none; }
 }
 .a-body .barra ul { padding: 4px 8px; }
 .a-body .barra ul a { display: flex; align-items: center; min-height: 44px; color: var(--a-gris); transition: color var(--a-color); }
-.a-body .barra ul a:hover, .a-body .barra ul a[aria-current] { color: var(--a-blanco); }
+.a-body .barra ul a[aria-current] { color: var(--a-blanco); }
+/* al pasar el mouse, solo con un puntero que pasa: en táctil el toque que abre la lista dejaba «hover» pegado en la fila
+   que quedaba bajo el dedo */
+@media (hover: hover) { .a-body .barra ul a:hover { color: var(--a-blanco); } }
 @media (min-width: 1194px) { .a-body .barra { display: none; } }
 /* La barra no tapa lo que recibe el foco (§4.3): el relleno de abajo del alto de la barra, bajo 1194 */
 @media (max-width: 1193.98px) {

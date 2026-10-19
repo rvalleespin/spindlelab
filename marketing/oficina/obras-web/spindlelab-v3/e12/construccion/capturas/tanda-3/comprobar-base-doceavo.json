@@ -1,0 +1,140 @@
+{
+ "ruta": "/v3/trabajo/doceavo/",
+ "cuando": "2026-10-19T18:26:01.148Z",
+ "html": {
+  "anclasSueltas": 0,
+  "bodyLenisPrevent": true,
+  "claseHtml": "lenis",
+  "sinJsQuitado": true
+ },
+ "rueda": {
+  "al90ms": 57,
+  "final": 100
+ },
+ "saltar": {
+  "clase": "saltar boton boton--claro",
+  "texto": "Saltar al contenido",
+  "href": "/v3/trabajo/doceavo/#contenido",
+  "visible": true
+ },
+ "encabezado": {
+  "plegada": true,
+  "opacidadPlaca": 1,
+  "top": 0,
+  "alto": 64,
+  "rellenoFila": "28px"
+ },
+ "cursor": {
+  "sobrePieza": {
+   "visible": true,
+   "texto": "Ver el concepto",
+   "ancho": 88,
+   "centro": [
+    1108,
+    539
+   ],
+   "teclado": false,
+   "cursorPieza": "none"
+  },
+  "puntero": [
+   1108,
+   539
+  ],
+  "conTab": {
+   "visible": false,
+   "texto": "Ver el concepto",
+   "ancho": 0,
+   "centro": [
+    1108,
+    539
+   ],
+   "teclado": true,
+   "cursorPieza": "pointer"
+  },
+  "desplazadoBajoMouseQuieto": {
+   "visible": false,
+   "texto": "Ver el concepto",
+   "ancho": 0,
+   "centro": [
+    1108,
+    539
+   ],
+   "teclado": true,
+   "cursorPieza": "pointer"
+  },
+  "conMovimientoReal": {
+   "visible": true,
+   "texto": "Ver el concepto",
+   "ancho": 88,
+   "centro": [
+    1138,
+    860
+   ],
+   "teclado": false,
+   "cursorPieza": "none"
+  }
+ },
+ "videos1440": [
+  {
+   "fuente": "doceavo-recorrido.webm",
+   "pausado": false,
+   "corriendo": true,
+   "pausaVisible": true,
+   "ariaPressed": "false",
+   "ariaLabel": "Pausar el video"
+  }
+ ],
+ "pausaApretada": {
+  "fuente": "doceavo-recorrido.webm",
+  "pausado": true,
+  "corriendo": true,
+  "pausaVisible": true,
+  "ariaPressed": "true",
+  "ariaLabel": "Seguir el video"
+ },
+ "pausaOtraVez": {
+  "fuente": "doceavo-recorrido.webm",
+  "pausado": false,
+  "corriendo": true,
+  "pausaVisible": true,
+  "ariaPressed": "false",
+  "ariaLabel": "Pausar el video"
+ },
+ "errores1440": [],
+ "videos390": [
+  {
+   "fuente": "",
+   "pausado": true,
+   "corriendo": false,
+   "pausaVisible": false,
+   "ariaPressed": "false",
+   "ariaLabel": "Pausar el video"
+  }
+ ],
+ "circulo390": false,
+ "errores390": [],
+ "reducido": {
+  "videos": [
+   {
+    "fuente": "",
+    "pausado": true,
+    "corriendo": false,
+    "pausaVisible": true,
+    "ariaPressed": "true",
+    "ariaLabel": "Seguir el video"
+   }
+  ],
+  "circulo": "none",
+  "entradasConEstilo": 0,
+  "transiciones": "0s",
+  "trasApretarSeguir": {
+   "fuente": "doceavo-recorrido.webm",
+   "pausado": false,
+   "corriendo": true,
+   "pausaVisible": true,
+   "ariaPressed": "false",
+   "ariaLabel": "Pausar el video"
+  }
+ },
+ "erroresReducido": []
+}

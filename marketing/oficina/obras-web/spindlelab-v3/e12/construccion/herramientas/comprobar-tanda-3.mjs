@@ -14,7 +14,8 @@
 //   · El medio principal: el video del ancho grande desde 834; bajo 834 en los conceptos, la imagen 4:5 y sin pausa.
 //   · Los enlaces de la home y del índice a los casos responden y sus fragmentos existen.
 //   · Área de toque a 390 con puntero grueso (la herramienta del paso 2).
-// Uso: node comprobar-tanda-3.mjs [--salida medidas.json]
+// Uso: node comprobar-tanda-3.mjs [--salida medidas.json]   (con --salida, además dos capturas de Combeau: el índice a
+// 1440 con «Solución» marcada y la barra abierta a 390)
 import { createServer } from 'node:http';
 import { readFileSync, existsSync, statSync, writeFileSync } from 'node:fs';
 import { join, extname, dirname } from 'node:path';
@@ -142,6 +143,7 @@ try {
         const m = new DOMMatrixReadOnly(getComputedStyle(punto).transform);
         return { activa: a && a.textContent, filaY: a && a.offsetTop, puntoY: Math.round(m.m42), barra: document.querySelector('[data-barra-activa]').textContent };
       });
+      if (SALIDA && caso === 'combeau') await p.screenshot({ path: SALIDA.replace(/\.json$/, `-${caso}-indice-1440.png`) });
       if (C.indice1440.activa !== 'Solución' || Math.abs(C.indice1440.filaY - C.indice1440.puntoY) > 1) falla(`${caso}: el índice a 1440 ${JSON.stringify(C.indice1440)}`);
       C.errores1440 = errores;
       if (errores.length) falla(`${caso}: errores a 1440 ${errores}`);
@@ -188,6 +190,7 @@ try {
         // la barra: abrir, elegir «La pieza», que se cierre y lleve ahí
         await p.click('.barra summary'); await p.waitForTimeout(200);
         const abierta = await p.evaluate(() => document.querySelector('.barra details').open);
+        if (SALIDA && caso === 'combeau') await p.screenshot({ path: SALIDA.replace(/\.json$/, `-${caso}-barra-390.png`) });
         await p.click('.barra ul a[href$="#la-pieza"]'); await p.waitForTimeout(800);
         C.barra390 = await p.evaluate((ab) => ({
           abierta: ab, cerradaDespues: !document.querySelector('.barra details').open, hash: location.hash,
