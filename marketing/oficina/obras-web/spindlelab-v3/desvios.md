@@ -723,3 +723,175 @@ Clara cambia de cada uno la miga, el `h1` en dos tintas y el alt (y el pie) de l
   pieza, se esconde con Tab, no vuelve con un desplazamiento bajo el mouse quieto y sí con un movimiento real; con
   movimiento reducido no hay círculo, ni entradas, y las transiciones son 0 s.
 - `comprobar-tanda-2.mjs` y `comprobar-tanda-3.mjs`, después de tocar `archivo.css` y `medios.json`: sin fallas.
+
+---
+
+## Tanda 5 · Método, diagnóstico, nosotros, contacto, el blog y sus siete artículos, y el barrido final (19-oct-2026, Diego)
+
+**Qué se construyó.** Las doce rutas que quedaban del mapa, reemplazando las de driftime en los mismos archivos (las URL
+no cambian): `src/pages/v3/metodo.astro`, `diagnostico.astro`, `nosotros.astro`, `contacto.astro`, `blog/index.astro` y
+`blog/[slug].astro` (los siete artículos). Nuevos: `src/data/archivo/interiores.mjs` (lo que arma las cuatro interiores),
+`src/data/archivo/blog.mjs` (el índice y la plantilla del artículo), `src/scripts/archivo/contacto.mjs`, las copias de Clara
+de las cinco páginas (`src/data/archivo/texto/{metodo,diagnostico,nosotros,contacto,blog}.json`; `extraer-texto.mjs
+--comprobar`: iguales) y doce imágenes al compartir en `public/assets/img/` (punto 6). **Compartido con las tandas
+anteriores, tocado:** `archivo.css` (un bloque nuevo, TANDA 5, antes del de movimiento reducido; ninguna de sus clases
+aparece en las páginas de las tandas 1 a 4), `Chequeo.astro` (una prop opcional, `tituloResultado`; sin ella, el marcado
+es el de siempre), `caso.mjs` (punto 4) y `guardia-tailwind.ts` (punto 1). Después de esos cambios, `comprobar-tanda-2.mjs`,
+`comprobar-tanda-3.mjs` y `comprobar-tanda-4.mjs` siguen sin fallas (en la tanda 2, lo único distinto del registro es el
+segundo exacto en que se muestrea la cinta y el CLS al cargar: de 0 a 0,0001, contra 0 a 0,027 registrados). `paginas-v3.json`, `oferta-v3.json`,
+`servicios-v3.json` y `data/blog-v3/` no se tocaron (diff 0). Herramientas, en `e12/construccion/herramientas/`:
+`comprobar-tanda-5.mjs`, `barrido-final.mjs`, `campos-tanda-5.mjs` y `og-tanda-5.mjs`.
+
+### 1. Al reemplazar las páginas de driftime, el CSS publicado perdía seis clases
+
+Lo mismo que la tanda 4, punto 1: con las páginas nuevas, `comparar-produccion.mjs` falló (el CSS de `/` y `/nosotros/`
+pasaba de `index.BudKb2Rm.css` a `index.DvwKXHlQ.css`). Faltaban `.border-collapse`, `.collapse`, `.italic`, `.static`
+(del `<style>` del artículo de driftime), `.outline` (del índice del blog) y `.text-wrap` (de método, nosotros y el blog).
+Van a `guardia-tailwind.ts`, cada una con la página de la que venía. Con ellas, producción vuelve a salir igual byte a byte.
+Ninguna regla nueva: el CSS es el de la línea base.
+
+### 2. Las cuatro interiores: «queda con ajustes», desde su dato
+
+Clara dejó las cuatro en «queda con ajustes»: cambia lo que ella lista; lo demás queda tal cual, «desde su dato». Su dato es
+el de hoy: `paginas-v3.json` y lo que las páginas de driftime escribían por su cuenta (la duración, lo que recibes y el
+precio de cada fase del método; los tres bloques de los 21 chequeos; la bio y la trayectoria de Ramón; los botones). Eso
+va copiado letra por letra en `interiores.mjs`, con la página de la que sale. **El build se cae** si el «antes» de un texto
+de Clara no es el dato de hoy (así nadie cambia uno sin el otro), si la miga no es la `BreadcrumbList`, si los pesos de los
+bloques no suman 100 o no son los de la línea «21 chequeos, 100 puntos…», o si un precio del método no está en los JSON.
+
+Los textos de Clara que esperan a Ramón van con su texto nuevo, como en las tandas anteriores (todo vive bajo `/v3/` con
+`noindex`): el cargo de la firma de `/nosotros/` y del autor de los artículos, los dos párrafos nuevos de «Por qué un solo
+sistema» y «Diseño y programo a medida». Si Ramón dice que no, vuelve el «antes» de cada uno, que está en la copia.
+
+### 3. Lo que la spec no fijaba, y cómo lo resolví
+
+| Página | Qué | Lo que hice | Por qué |
+|---|---|---|---|
+| Método | El orden de la cabecera | Entradilla, el lead, la línea de Desarrollo web (Clara) y los dos botones de hoy | Clara pone la línea nueva después de la entradilla y no ubica el lead; así «Cada proyecto sigue el método…» va antes de «si es de cero, el proceso es otro» |
+| Método | La nota «La fase 01 es gratis. Cada una de las demás dice cuánto cuesta.» | Bajo el `h2` de las fases, en chico, la primera frase en blanco | En driftime iba en una caja entre la imagen y las fases; A no tiene ni la imagen ni la caja (§6.5). Ahí explica los precios que vienen |
+| Método | «Del diagnóstico al monitoreo» «como las fases de Desarrollo web» | La misma forma (2:5, el número con `aria-hidden`, la línea de sección), **sin** el cambio de tinta de la fase a la vista | §1.6 lo ata a Desarrollo web («la tinta de la fase a la vista en Desarrollo web») y §2.4 lo llama «el único cambio de tinta atado a la vista que tiene Koto» |
+| Método | Los datos de cada fase | Rótulo mono y valor en chico, dos por fila desde 834; «Cuánto cuesta» a lo ancho, con su enlace y la flecha SVG | Los datos mono en reposo van en gris (§1.1) |
+| Método | Los botones | Los de hoy: «Correr el chequeo» (claro) y «Ver las cuatro fases» con su ruta (`/v3/metodo/#fases`); al cierre, «Pedir el diagnóstico» y «Correr el chequeo» | Clara no los cambia; queda tal cual (como los cinco servicios en la tanda 4) |
+| Diagnóstico | El chequeo | El componente de la home sin su rótulo ni su frase (el `h1` y la entradilla ya lo dicen), con la etiqueta, el ejemplo, el botón y la ayuda de Clara; en una fila, en c1–c8 | §2.4: «etiqueta, campo y botón en una fila, la ayuda» |
+| Diagnóstico | El salto de `h1` a los `h3` del resultado | Un `h2` oculto, «Resultado del chequeo», que existe solo cuando hay resultado (la prop `tituloResultado` de `Chequeo.astro`) | Lo tenía la página de driftime; sin él el resultado salta de nivel (antislop C1) |
+| Diagnóstico | «Los 21 chequeos»: «lista de las 21 señales en tres grupos con sus pesos 30 + 40 + 30, en mono» | Los tres bloques de hoy (el `h3`, el peso en dato mono y el texto que nombra sus señales), en la forma de las fases; lo que driftime marcaba con `<b>`, en blanco y sin negrita | Clara: «“Los 21 chequeos, publicados” con sus tres bloques y pesos» queda tal cual. Una lista nueva de 21 filas sería texto escrito aquí |
+| Diagnóstico | La entrada de driftime («21 chequeos, 100 puntos…», la guía y su botón) | La línea, bajo el `h2` de los 21 chequeos; la guía («El chequeo de esta página lee tu sitio; el mini-diagnóstico le pregunta a los motores…»), bajo el `h2` de «Dos caminos», cuyos botones ya traen «Pedir el diagnóstico» | §2.4 no tiene esa entrada entre el instrumento y los 21 chequeos; así cada texto queda donde explica algo y el botón no se repite |
+| Diagnóstico | La sección de la ley | Sin imagen | La spec no pone una (fila de `/diagnostico/`: «Ninguna»), y la de driftime era la portada de Verifica y Cumple en un notebook y un teléfono, un campo azul que en una interior solo cabe en las portadas de una sección de piezas (§3.4). Por lo mismo no va el pie de Clara («La persona a caballo…»), que ella condicionó a esa imagen |
+| Diagnóstico | El cierre «¿Quién aparece en tu lugar?» | Su `h2` y la línea y el botón que la página muestra hoy («Una página, gratis, en 24 horas.» · «Pedir el diagnóstico») | El párrafo viejo de esa sección decía «sin compromiso», que la QA del 5-oct sacó de lo visible; lo que se ve hoy es `siguiente` |
+| Nosotros | La trayectoria («Antes pasé más de cinco años en agencias» y sus cuatro líneas, R4) | Dentro de la bio, junto al retrato: el título a Título (`h2`) y las cuatro líneas en la lista con la línea entre filas | Clara la pone en «Cabecera y bio»; §2.4: «el retrato … junto a la bio» |
+| Nosotros | «preguntas», en la fila de la spec | No va: no hay ninguna en el dato ni en el texto de Clara | Lo que no está no se inventa |
+| Nosotros | La firma | El nombre en blanco y el resto de la línea de Clara en gris; «E-commerce» sin partir (ninguna de las dos letras trae el guion que no se parte) | El nombre es lo nombrado (§1.1) |
+| Contacto | El `h2` del formulario | A Título, no a Declaración | **Medido** a 1440 × 900 con el aviso de cookies abierto (empieza en 831): a Declaración el botón termina en 835, bajo el aviso; a Título, en 822, y el formulario queda entero sobre el pliegue (§2.4: «como hoy») |
+| Contacto | El espacio | 40 arriba del formulario y 12 entre campos | Lo mismo: con 48 y 16 el botón terminaba en 854 |
+| Contacto | Las etiquetas | En rótulo mono (Clara: `rotulo · label`), salvo la del consentimiento, que es una frase: en chico, con el enlace blanco | Lock §14: una frase nunca va en rótulo |
+| Contacto | La casilla del consentimiento (§4.1 no la nombra) | 16 px dentro de un área de 44 × 44 que no mueve lo que se ve: vacía, el borde del campo (`#707070`); marcada, blanca; el foco a 3 px del cuadro | §4.3: 44 × 44 bajo 834 y con puntero grueso. La nativa medía 13 px |
+| Contacto | El autocompletado de Chrome | Se le devuelve la placa al campo con un relleno interior (`box-shadow` inset), no una sombra | Chrome lo pinta de otro color y el texto quedaba ilegible |
+| Contacto | «Listo.» | Sin caja: la línea de sección arriba, el `h3` a Título y el texto | En driftime era una placa; §6.5 |
+| Contacto | Lo que la página de driftime hacía por su cuenta | En `contacto.mjs`: el `?sitio=` que manda el chequeo llena el campo; «Escríbenos» lleva a `/v3/contacto/#contacto-form` (no recarga ni borra lo escrito; con su ruta, §5.2.2); el botón recupera su texto y su flecha si el envío falla; «Listo.» toma el foco | v3-contacto.js no se toca y le pone «Enviar →» al botón cuando falla: esa flecha no está en ninguna de las dos letras |
+| Contacto | El enlace de la política y el correo suelto | Área de 44 de alto bajo 834 y con puntero grueso, sin mover la línea (relleno en un elemento en línea) | §4.3 |
+| Contacto | El `id` `f-sitio-ayuda` | Queda (lo tenía la v3 de driftime): la ayuda del campo del sitio, por `aria-describedby` | Los `name`, los `id` de producción, el `action`, los ocultos, las clases y el script, iguales a `public/contacto/` (comprobado) |
+| Blog | Las filas | Desde 1194, la fecha y el tema a la izquierda y el título a la derecha (las dos mitades del caso, 24 a los lados); bajo 1194, uno sobre otro. Toda la fila lleva al artículo; el título subrayado, como las filas de `/servicios/` | §2.5 |
+| Blog | La fecha | Corta («4 sept 2026»), la de hoy en el índice | La larga va en la ficha del artículo |
+| Blog | El cierre | Al final de la columna, con la línea de sección y el `h2` a Declaración | §2.5: «al final, el cierre del blog» |
+| Artículo | El cuerpo en la plantilla del caso | Partido en secciones, una por `h2`: el `h2` a la izquierda y lo demás a la derecha desde 1194, con la línea de sección y la cruz de registro; las tablas, a lo ancho de las dos mitades; la entrada (lo de antes del primer `h2`), en la mitad derecha. Bajo 1194, una columna. **Ni una letra cambia**: `blog.mjs` comprueba que el texto partido es el mismo | §2.5: «la plantilla del caso con otro contenido»; las secciones del caso son así (§2.3) |
+| Artículo | Los `id` y los enlaces | El `id` del `h2` pasa a su sección (el `#como-medir-si-esta-funcionando` que usan el método y Visibilidad en IA sigue existiendo); los `href="#x"` del cuerpo llevan su ruta | §5.2.2 |
+| Artículo | Lo que la escala no nombra | Los `h3` del cuerpo, a cuerpo en blanco; `strong` en blanco, sin negrita; `em` sin cursiva (§1.2: heredan); `code` en DM Mono 12 en blanco, sin fondo; listas con «·» y con el número en mono; la cita a Título en blanco con la línea encima; la nota, sin caja, con la línea; las preguntas, filas con la línea de sección y «+» / «–» en mono | §1.2, §1.5 y §6.5: sin negrita, sin cajas |
+| Artículo | Las tablas | Encabezado en rótulo, la primera columna en blanco; bajo 1024 cada columna de 152 y la primera pegada al desplazar (la regla de driftime); se desplazan en su caja | Medido: 0 de desborde a 390 |
+| Artículo | La ficha, el autor y el índice | La ficha en el orden de Clara (Tema, Fecha, Lectura); el autor con su miniatura de 132 × 132 a 44 px (alt vacío: el nombre va al lado); el índice con el rótulo «En este artículo» y ninguna fila numerada | La regla del 13-oct (§2.5) se cumple sin excepción: el índice del caso no numera |
+| Artículo | La barra flotante bajo 1194 | El rótulo «En este artículo» y la sección activa en chico, en una línea con puntos suspensivos | En el caso la activa es un rótulo («PROBLEMA»); aquí es una frase de hasta 70 caracteres, y en mono y mayúsculas sería una frase en rótulo (lock §14) |
+| Artículo | La sección activa | La última cuyo borde pasó los 120 px de arriba (`data-linea`, punto 4) | Con la línea del caso (40 % de la ventana), al elegir una sección corta del índice quedaba marcada la siguiente (medido en «¿Qué NO incluye?») |
+| Artículo | «Siguiente artículo» | En la sección «Siguiente» del caso: a la izquierda el cierre del blog (`h2` a Título, la guía, el cuerpo, los dos botones); a la derecha el rótulo de Clara y el título del siguiente a la escala de «Siguiente», sin medio | §2.5: «cierra con el mismo paso de conversión del índice y “Siguiente artículo”»; los artículos no tienen imagen |
+| Artículo | El pie | Los artículos llevan pie (la spec solo se lo quita a los casos), y bajo 1194 la página deja 96 abajo para que la barra no lo tape | §2, lo común, 2 |
+| Artículo | El medio de «21 chequeos» | No va | §2.5 dice que «puede llevar» la captura del chequeo; no hacía falta, y sin él el artículo queda en 0 % de campo |
+| Artículo | La flecha «→» del cuerpo de fintechs («URL vieja → URL nueva») | Queda: es texto verbatim; ninguna de las dos letras la trae y la pinta una letra del sistema | El cuerpo no se toca (brief §3) |
+
+### 4. `caso.mjs`: la línea de la sección activa, por página
+
+Los artículos usan el `caso.mjs` de la tanda 3. Su página pone `data-linea="120"`: la activa es la última sección que pasó
+120 px desde arriba (donde la deja un enlace del índice, con `scroll-margin-top: 88px`), y al final de la página, si la
+elegida ya no puede subir, la que dice la dirección (`#…`, también al cambiar). Sin `data-linea` (los casos) todo es como
+antes: `comprobar-tanda-3.mjs` sin fallas.
+
+### 5. Los precios y los nombres
+
+Cada monto a la vista o en las señales de método, diagnóstico, nosotros, contacto y el índice del blog está, como texto, en
+`oferta-v3.json` o `servicios-v3.json` (`$490.000`, `$400.000` y `$590.000/mes` en el método; el build se cae si no).
+**Los artículos quedan fuera de esa comparación:** su cuerpo va verbatim, y el de los costos cita rangos del mercado y
+precios de terceros que no son la oferta. Están listados en `comprobar-tanda-5.json`.
+
+### 6. Las señales (Simón, `senales-obra.md` §2.6, §2.8 a §2.11)
+
+- **`title` y `description`**, de Clara (que son los de Simón): de 46 a 60 y de 148 a 157 en las cinco páginas. Los siete
+  artículos quedan con los suyos (Simón §2.9): tres pasan de 60.
+- **JSON-LD:** método, `WebPage` + `HowTo` + `BreadcrumbList` de hoy (mismos `@id` y pasos); diagnóstico, la
+  `BreadcrumbList` y la `FAQPage` de hoy más el `WebPage` y el `WebApplication` `#chequeo` de Simón; nosotros, `AboutPage` +
+  `BreadcrumbList` de hoy (el `jobTitle` lo pone el `Layout`); contacto, la `BreadcrumbList` y la `FAQPage` de hoy más el
+  `ContactPage`; el índice, `CollectionPage` + `BreadcrumbList` + `ItemList`; cada artículo, su grafo de hoy sin los nodos que
+  emite el `Layout`, con la miga que se ve y el `Article.image` en su tarjeta nueva. Ninguna `FAQPage` marca una pregunta que
+  no se vea.
+- **Las imágenes al compartir** (§1.6, `og-tanda-5.mjs`, HTML renderizado en la letra y el negro de A, sin el hilo):
+  `og-e12-metodo`, `-diagnostico`, `-contacto` y `-blog` (el logo y el `h1` en sus dos tintas), una por artículo
+  (`og-e12-blog-<slug>`, con su titular) y `og-e12-nosotros` (el retrato real y el nombre, con el rol corto de Clara). 1200 ×
+  630, de 24 a 43 kB. Son archivos nuevos fuera de `v3/`: no cambian ninguna página publicada.
+
+### 7. Los techos de campo (§3.4), medidos
+
+`campos-tanda-5.mjs` (página completa a 1440, con movimiento reducido; cuenta también la miniatura del autor) + `campos.py`
+del prototipo. Datos: `e12/construccion/medicion-campos/campos-tanda-5.json`. **Las doce páginas, 0 % de campo** (techo de las
+interiores, 5 %); medios: 6,5 % en nosotros (el retrato), 0 a 0,1 % en las demás; negro fuera de los medios, de 94,4 a
+96,5 %.
+
+### 8. Lo que queda para Lucía, Clara o Ramón (no lo resolví a la fuerza)
+
+1. **Los botones del chequeo:** `/nosotros/` dice «Revisar mi sitio gratis» (Clara: «el mismo botón del chequeo en todo el
+   sitio»), pero el método, el blog y los artículos siguen con «Correr el chequeo», como hoy, porque Clara no los cambia ahí
+   (lo mismo que los cinco servicios en la tanda 4). Para Clara.
+2. **El error del chequeo vacío** sigue diciendo «Escribe tu dominio para empezar.» (`v3-chequeo.js`, que no se toca;
+   tanda 2, punto 12.3).
+3. **Lo que espera a Ramón** (punto 2): el cargo de la firma y del autor, y los textos en primera persona de `/nosotros/`.
+4. **`/nosotros/` sin preguntas**, aunque la fila de la spec las nombra: no hay dato (punto 3).
+5. **Lo que sobra de driftime:** ninguna página importa ya `driftime.css` (el barrido lo comprueba en el CSS que carga cada
+   página), pero el archivo, `components/v3/` y `consts-v3.ts` siguen en el repo: Tailwind lee los `.astro` de
+   `components/v3/`, y borrarlos cambiaría el CSS de las páginas publicadas (punto 1). Se van al publicar, con la línea base
+   rehecha.
+
+### 9. Lo verificado en esta tanda
+
+- `npm run build` + `comparar-produccion.mjs`: las 22 páginas publicadas y lo que sirven, **iguales byte a byte** (con la
+  guardia del punto 1). Nuevos fuera de `v3/`: las doce imágenes al compartir (y las de las tandas anteriores).
+- `npm run verificar -- --prefijo /v3/` a 390, 768, 1440 y 1920 (y con `--sin-pildoras` a 1440): **27 páginas, sin
+  hallazgos** (a 1440, los 8 nodos sobre el degradado del velo de la portada, medidos en la tanda 2).
+- Render con Chromium a 360, 390, 768, 834, 1024, 1194, 1440 y 1920 de las doce páginas (`capturar.mjs`), mirado: desborde 0
+  también sin el `overflow-x: clip`, un `h1`, encabezado de 90 bajo 834 y de 64 desde 834, solo Google Sans Flex y DM Mono,
+  cero errores de consola. Capturas a 390 y 1440 en `e12/construccion/capturas/tanda-5/` (la primera pantalla en PNG y la
+  página entera en JPEG), más los estados: el resultado del chequeo a 1440, el foco en un campo con el aviso abierto, la
+  casilla marcada con el foco a 390, la barra de un artículo abierta a 390 y el índice marcando una sección a 1440.
+- `comprobar-tanda-5.mjs` (**sin fallas**, `capturas/tanda-5/comprobar-tanda-5.json`): JSON-LD que parsea, sin `@id` repetidos
+  ni tipos vetados, la `BreadcrumbList` igual a la miga, la `FAQPage` igual a las preguntas a la vista; largos de §1.2;
+  `noindex`; cada imagen al compartir 1200 × 630, JPEG, ≤ 200 kB; cero «54 → 94», «36 → 73», `<!--`, `href="#…"`,
+  praxi.coach, «en pausa», «fuera de línea» y driftime; cero nodos en negrita; a 1440 los `h2` de sección en c1–c4 y
+  pegajosos a 88 y el contenido en c5–c12, y a 1024 arriba y sin pegarse; ninguna franja; el formulario de contacto igual al
+  de producción y entero sobre el pliegue a 1440 × 900 con el aviso abierto (de 421 a 822; el aviso empieza en 831); un envío
+  que sale bien muestra «Listo.» con el foco, uno que falla deja el botón con su texto y su flecha y el error en blanco;
+  `?sitio=` llena el campo; el chequeo en c1–c8 con sus cinco ids, y con una respuesta guardada de `/api/chequeo` el
+  resultado se pinta en la misma columna con el `h2` oculto; en los siete artículos el índice marca la sección y el punto
+  queda en su fila, y a 390 la barra abre, lleva a la sección, se cierra y la nombra; las tablas, dentro de su caja; los
+  enlaces internos responden 200 con sus fragmentos; área de toque a 390: 0 controles bajo 44.
+- `comprobar-base.mjs` sobre las cinco interiores y un artículo (`capturas/tanda-5/comprobar-base-*.json`): la rueda llega al
+  90 % en 44 a 59 ms; cero `a[href^="#"]`; saltar al contenido con su ruta; encabezado plegado; con movimiento reducido,
+  ninguna entrada y las transiciones en 0 s.
+
+### 10. El barrido final de toda la obra
+
+`barrido-final.mjs` (**sin fallas**, `capturas/tanda-5/barrido-final.json`), sobre el build:
+
+- **Las 27 rutas del mapa** tienen su página, y en `dist/v3/` no hay otra que las maquetas.
+- **Cero `a[href^="#"]`** y cero `<!--` en el HTML de las 27; un `h1`, `noindex` y un JSON-LD sin `@id` repetidos en cada una.
+- **Ningún enlace interno roto entre las rutas de A:** los 390 enlaces que empiezan con «/» llevan a un archivo del build, y
+  cada fragmento a un `id` que existe en su página.
+- **Ninguna página de A carga el CSS de driftime** (spec §5.3.5).
+- **Una muesca de rueda llega al 90 % en menos de 100 ms** en la home (53 ms), Praxi (54) y el artículo de los 21 chequeos
+  (43).
+- **Las maquetas `a`, `b`, `c` y `maqueta-inicial` siguen fuera y con `noindex`:** ninguna página de A las enlaza, no están
+  en el `sitemap.xml` (que no nombra ninguna ruta `/v3/`) y `verificar` las sigue dejando fuera.
+- Más lo de arriba: `verificar` a 390, 768, 1440 y 1920 sin hallazgos en las 27, y producción igual a la línea base.
