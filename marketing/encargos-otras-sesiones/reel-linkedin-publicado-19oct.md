@@ -59,6 +59,24 @@ Lo comparte él desde su perfil, **con comentario propio, nunca el botón pelado
 
 Respaldo de cada afirmación: las cinco cosas y "no pide registro ni guarda el dominio" salen de `verifica.spindlelab.cl`, sección "Lo que sí revisamos" y pie de página, leídas el 13 y el 19-oct. "Lo armé yo" es un hecho de Ramón (es el autor del servicio).
 
+## Compartir de Ramón: hecho (19-oct, 10:40) y medición a las 48 h
+
+- **Compartido** por Ramón desde su perfil, con el comentario propuesto (verificado en su perfil: texto idéntico y el video de la página embebido). Enlace: `linkedin.com/feed/update/urn:li:activity:7517942732221313024/`.
+- ⚠️ **Al ratito de compartir (10:53) su compartir tenía 0 comentarios**: el primer comentario con el enlace (`El chequeo: https://verifica.spindlelab.cl`) todavía no estaba, y el texto dice "El enlace está en el primer comentario".
+  Se le preguntó si lo pone esta sesión. Ver el estado en la próxima actualización de este archivo.
+- **Medición pedida por Ramón: a las 48 horas** (miércoles 21-oct, ~10:45). Recordatorio agendado en el calendario de `hola@spindlelab.cl` con `manuvalleespin@gmail.com` como invitado (aceptado el método el 15-oct).
+  Cómo medir: página `linkedin.com/company/135255820/admin/analytics/updates/`, tabla "Interacción con el contenido", fila del reel (impresiones, visualizaciones, clics, reacciones, comentarios, compartidos);
+  y en el perfil de Ramón (`/in/me/recent-activity/shares/`), las impresiones de su compartir. Además, si en el chequeo aparecieron revisiones de origen orgánico (Cloudflare), anotarlas.
+
+**Línea base, lunes 19-oct, ~10:58 hora de Chile (35 min después de publicar el reel y 18 después del compartir):**
+
+| Pieza | Impresiones | Visualizaciones | Reacciones | Comentarios | Compartidos |
+|---|---|---|---|---|---|
+| Reel en la página | 4 | 6 | 0 | 1 (el de la página, con el enlace) | 1 (el de Ramón) |
+| Compartir de Ramón en su perfil | 3 | n/d | 0 | 0 | n/d |
+
+Para comparar, los dos posts de texto anteriores de la página: 15-oct, 12 impresiones; 13-oct, 60. La página tiene 13 seguidores y 8 de 50 créditos de invitación.
+
 ## Lo que sigue pendiente (no es de esta sesión)
 
 - **El compartir de Ramón desde su perfil**, con comentario propio. La página tiene 13 seguidores; sin eso casi no llega a nadie. **Ramón aún no ha dicho si lo quiere** (el 25-sep rechazó un compartir). No se hizo.
