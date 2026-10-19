@@ -1,0 +1,12 @@
+---
+// EL PIE DE A (spec §2, «Lo común», 2; prototipo .pie-sitio): borde superior en la línea de sección, el logo a 20 px,
+// hola@spindlelab.cl en mono y la hora; 160 px arriba. Los casos no llevan pie: PaginaA lo omite con pie={false}.
+// consent-banner.js (del Layout) cuelga aquí, junto al último enlace, el botón para cambiar las cookies.
+import Logo from './Logo.astro';
+import Hora from './Hora.astro';
+---
+<footer class="pie-sitio">
+  <a class="cab__logo" href="/v3/"><Logo /></a>
+  <a class="pie-sitio__correo rotulo" href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a>
+  <Hora />
+</footer>

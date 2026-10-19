@@ -1,0 +1,467 @@
+/* A · ARCHIVO — la hoja de la dirección que eligió Ramón en la compuerta 2 de la obra E12 (19-oct-2026).
+
+   Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md (§1 tokens, §2 «Lo común», §3.5 video, §4
+   estados, §5.3 construcción). Implementación de referencia: tableros/e12-direcciones/proto/a/a.css; donde difieren,
+   manda la spec (§0.4). Lo que la spec no cubría está en spindlelab-v3/desvios.md.
+
+   Reglas de esta hoja:
+   · Solo la importan los componentes de src/components/a/ y las páginas de A. Toda regla va bajo body.a-body (o
+     html:has(body.a-body)): si la hoja se cargara por error en una página de producción, no alcanza a nada.
+   · Los tokens son propiedades de body.a-body con prefijo --a- (spec §1), no de :root.
+   · Un valor que no está en las tablas de la spec no se usa. Los espacios salen de la escala de §1.5
+     (4 · 8 · 12 · 16 · 24 · 32 · 40 · 48 · 56 · 80 · 120 · 160); los rellenos ópticos de los rótulos de placa son los
+     del prototipo.
+   · Esta hoja no la lee Tailwind (tailwind.config.mjs solo mira .astro, .html, .js, .ts…), así que lo que aquí se
+     escriba no cambia el CSS de las páginas publicadas. Los .astro de A sí los lee: ver desvios.md, tanda 1. */
+
+/* ------------------------------------------------------------------ letras (spec §1.2) */
+/* Dos archivos locales con su OFL al lado en /fonts/. Ninguna de las dos trae flechas en este subconjunto: la flecha
+   es un SVG. Se precargan por la prop `letras` del Layout (fila del 19-oct de §7). */
+@font-face {
+  font-family: 'Google Sans Flex';
+  src: url('/fonts/google-sans-flex-latin.woff2') format('woff2');
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Mono';
+  src: url('/fonts/dm-mono-500-latin.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------------------------------------------------------------------ tokens (spec §1.1, §1.3, §1.4) */
+/* El lienzo va también en <html>, para que el rebote del scroll no muestre otro negro (§5.3.3). <html> no puede leer
+   las propiedades del <body>: el valor es el de --a-lienzo. */
+html:has(body.a-body) { background: #060606; color-scheme: dark; -webkit-text-size-adjust: 100%; }
+
+body.a-body {
+  /* color: cada token con su rol (§1.1) */
+  --a-lienzo: #060606;
+  --a-placa: #141414;
+  --a-placa-activa: #202020;
+  --a-placa-apretada: #2a2a2a;
+  --a-blanco: #ffffff;
+  --a-blanco-70: rgba(255, 255, 255, 0.7);
+  --a-gris: #989898;
+  --a-apretado: #d0d0d0;
+  --a-linea-seccion: #2d2d2d;
+  --a-linea: rgba(255, 255, 255, 0.1);
+  --a-borde-campo: #707070;
+  --a-hueco: #4a4a4a;
+  --a-velo: rgba(6, 6, 6, 0.7);
+
+  /* retícula de Koto (§1.4): margen 16, separación 8, sin ancho máximo */
+  --a-m: 16px;
+  --a-g: 8px;
+  --a-lateral: 320px;
+
+  --a-f-letra: 'Google Sans Flex', system-ui, sans-serif;
+  --a-f-mono: 'DM Mono', ui-monospace, monospace;
+
+  /* escala, 1440 → 390, lineal con clamp (§1.3) */
+  --a-t-portada: clamp(26px, 2.0952vw + 17.829px, 48px);
+  --a-t-declaracion: clamp(26px, 1.15vw + 21.5px, 38px);
+  --a-t-siguiente: clamp(23px, 0.86vw + 19.6px, 32px);
+  --a-t-titulo: clamp(23px, 0.1vw + 22.6px, 24px);
+  --a-t-cuerpo: clamp(15px, 0.1vw + 14.6px, 16px);
+  --a-t-chico: clamp(13px, 0.1vw + 12.6px, 14px);
+  --a-i-cuerpo: 1.35;
+  --a-caja: 493px;
+
+  /* el color no lleva resorte: 167 ms lineal (§1.6) */
+  --a-color: 167ms linear;
+
+  margin: 0;
+  background: var(--a-lienzo);
+  color: var(--a-gris);
+  font-family: var(--a-f-letra);
+  font-weight: 370;
+  font-stretch: 100%;
+  font-size: var(--a-t-cuerpo);
+  line-height: var(--a-i-cuerpo);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ------------------------------------------------------------------ base */
+.a-body *, .a-body *::before, .a-body *::after { box-sizing: border-box; }
+.a-body img, .a-body video, .a-body svg { display: block; max-width: 100%; }
+.a-body h1, .a-body h2, .a-body h3, .a-body p, .a-body ul, .a-body ol, .a-body dl, .a-body dd, .a-body figure,
+.a-body blockquote { margin: 0; }
+.a-body ul, .a-body ol { padding: 0; list-style: none; }
+.a-body strong, .a-body b, .a-body em, .a-body i { font-weight: inherit; font-style: normal; } /* §1.2: cero negrita */
+.a-body a { color: inherit; text-decoration: none; }
+.a-body button, .a-body input, .a-body select, .a-body textarea { font: inherit; color: inherit; }
+/* Los destinos de un enlace interno quedan bajo el encabezado plegado, no debajo (§4.3) */
+.a-body [id] { scroll-margin-top: 88px; }
+
+/* ------------------------------------------------------------------ letra: el corte hace la jerarquía (§1.2, §1.3) */
+.a-body h1, .a-body h2, .a-body h3, .a-body .t-display {
+  font-family: var(--a-f-letra); font-stretch: 76%; font-weight: 300; color: var(--a-blanco);
+  text-wrap: balance;
+}
+.a-body .t-portada { font-size: var(--a-t-portada); line-height: 1; letter-spacing: -0.01em; }
+.a-body .t-declaracion { font-size: var(--a-t-declaracion); line-height: 1.1; letter-spacing: -0.01em; }
+.a-body .t-siguiente { font-size: var(--a-t-siguiente); line-height: 1.15; }
+.a-body .t-titulo { font-size: var(--a-t-titulo); line-height: 1.2; }
+.a-body .tinta { color: var(--a-blanco); }
+.a-body .gris { color: var(--a-gris); }
+.a-body .cuerpo { font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); color: var(--a-gris); text-wrap: pretty; }
+.a-body .cuerpo + .cuerpo { margin-top: 1em; }
+.a-body .chico { font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); text-wrap: pretty; }
+/* La caja del cuerpo: tope de 493 px en todos los anchos (§1.3, §0.4.4) */
+.a-body .caja { max-width: var(--a-caja); }
+.a-body .rotulo {
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25;
+  letter-spacing: 0.03em; text-transform: uppercase; color: var(--a-gris);
+}
+.a-body .dato {
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 12px; line-height: 1.35;
+  letter-spacing: 0.03em; color: var(--a-gris);
+}
+/* Enlace del cuerpo (§4.1): blanco, subrayado de 1 px al 45 % a 3 px; al pasar, al 100 % en 167 ms */
+.a-body .cuerpo a, .a-body .chico a, .a-body a.subrayado {
+  color: var(--a-blanco); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.45); transition: text-decoration-color var(--a-color);
+}
+.a-body .cuerpo a:hover, .a-body .chico a:hover, .a-body a.subrayado:hover { text-decoration-color: var(--a-blanco); }
+
+/* ------------------------------------------------------------------ foco (§4.3): contorno blanco de 2 px a 3 px */
+.a-body :focus-visible { outline: 2px solid var(--a-blanco); outline-offset: 3px; }
+/* el contorno con radio 2 (§1.5) en lo que no tiene radio propio; lo que lo tiene (botón, campo, medio) lo conserva */
+.a-body a:not(.boton):not(.medio-enlace):focus-visible, .a-body summary:focus-visible { border-radius: 2px; }
+.a-body .medio-enlace:focus-visible { border-radius: 6px; }
+
+.a-body .solo-lector, .a-body .sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Enlace para saltar al contenido: el primero del documento, botón claro al recibir el foco (§2, lo común, 3) */
+.a-body .saltar { position: absolute; left: var(--a-m); top: -80px; z-index: 50; }
+.a-body .saltar:focus { top: var(--a-m); }
+
+/* ------------------------------------------------------------------ retícula (§1.4): 8 · 12 · 16 columnas */
+.a-body .reticula {
+  display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); column-gap: var(--a-g); padding-inline: var(--a-m);
+}
+@media (min-width: 834px) { .a-body .reticula { grid-template-columns: repeat(12, minmax(0, 1fr)); } }
+@media (min-width: 1194px) { .a-body .reticula { grid-template-columns: repeat(16, minmax(0, 1fr)); } }
+
+/* Arriba de cada sección, 120 desde 834 y 80 bajo 834 (§1.5) */
+.a-body .seccion { padding-top: 120px; }
+@media (max-width: 833.98px) { .a-body .seccion { padding-top: 80px; } }
+/* Las líneas son el borde superior de una sección o de una fila, nunca alrededor de un bloque (§1.5) */
+.a-body .borde { border-top: 1px solid var(--a-linea-seccion); }
+.a-body .borde-fila { border-top: 1px solid var(--a-linea); }
+
+/* ------------------------------------------------------------------ botones (§4.1) */
+/* Mono 11 en mayúsculas, 44 de alto, radio 4. Claro: blanco con texto lienzo. Placa: placa con texto blanco. */
+.a-body .boton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 0 16px; border: 0; border-radius: 4px; cursor: pointer;
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: background-color var(--a-color), color var(--a-color);
+}
+.a-body .boton--claro { background: var(--a-blanco); color: var(--a-lienzo); }
+.a-body .boton--claro:hover { background: var(--a-gris); }
+.a-body .boton--claro:active { background: var(--a-apretado); }
+.a-body .boton--placa { background: var(--a-placa); color: var(--a-blanco); }
+.a-body .boton--placa:hover { background: var(--a-placa-activa); }
+.a-body .boton--placa:active { background: var(--a-placa-apretada); }
+.a-body .boton[disabled] { cursor: progress; background: var(--a-placa-activa); color: var(--a-gris); }
+/* Corchete («[ Todo el trabajo ] (10)»): gris, blanco al pasar; el único de la página (§4.1, §6.13) */
+.a-body .corchete {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em;
+  text-transform: uppercase; color: var(--a-gris); transition: color var(--a-color);
+}
+.a-body .corchete:hover { color: var(--a-blanco); }
+
+/* ------------------------------------------------------------------ iconos (§1.6): tres SVG en currentColor */
+.a-body .icono-flecha { display: inline-block; vertical-align: baseline; width: 12px; height: 12px; flex: none; stroke: currentColor; stroke-width: 1.5; fill: none; }
+/* la misma flecha, girada, marca un enlace que sale del sitio (§2.2: «la flecha ↗ en SVG») */
+.a-body .icono-flecha--fuera { transform: rotate(-45deg); }
+.a-body .icono-pausa, .a-body .icono-seguir { width: 14px; height: 14px; fill: currentColor; }
+
+/* ------------------------------------------------------------------ encabezado (§2, lo común, 1) */
+/* Logo a 24 px en el margen (20 bajo 834), el menú en mono, a la derecha «SANTIAGO» con la hora. 64 de alto desde 834,
+   pegajoso, y al bajar se pliega en una placa de 48 (radio 4, a 8 del borde) con el resorte «entrada». Bajo 834, 90 de
+   alto: el menú pasa a una segunda fila de 44 y no hay botón «Menú». */
+.a-body .cab { position: relative; z-index: 20; }
+.a-body .cab__fila {
+  position: relative; display: flex; align-items: center; gap: 56px; min-height: 64px; padding: 0 var(--a-m);
+}
+.a-body .cab__logo { display: inline-flex; align-items: center; color: var(--a-blanco); flex: none; }
+.a-body .cab__logo svg { height: 24px; width: auto; }
+.a-body .cab__nav ul { display: flex; gap: 40px; }
+.a-body .cab__nav a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em;
+  text-transform: uppercase; color: var(--a-blanco-70); transition: color var(--a-color);
+}
+.a-body .cab__nav a:hover, .a-body .cab__nav a[aria-current] { color: var(--a-blanco); }
+.a-body .cab__hora { margin-left: auto; white-space: nowrap; }
+.a-body .cab__placa { display: none; }
+/* De 834 a 1193 los espacios del encabezado bajan un paso de la escala: con los de 1440, plegado a 834 la hora se salía
+   de la placa 15 px (medido: logo 117 + menú 437 + hora 139 + 2 × 56 = 805 en 778 de caja) */
+@media (min-width: 834px) and (max-width: 1193.98px) {
+  .a-body .cab__fila { gap: 40px; }
+  .a-body .cab__nav ul { gap: 32px; }
+}
+@media (min-width: 834px) {
+  .a-body .cab { position: sticky; top: 0; }
+  .a-body .cab__placa {
+    display: block; position: absolute; inset: 8px var(--a-m) auto; height: 48px; border-radius: 4px;
+    background: var(--a-placa); opacity: 0; pointer-events: none;
+  }
+  .a-body .cab--plegada .cab__placa { opacity: 1; }
+  .a-body .cab--plegada .cab__fila { padding-inline: calc(var(--a-m) + 12px); }
+}
+@media (max-width: 833.98px) {
+  /* padding-top 2: el logo mide 44 de alto (área de toque) y su dibujo queda a 14 px del borde; 2 + 44 + 44 = 90 */
+  .a-body .cab__fila { flex-wrap: wrap; gap: 0 16px; min-height: 0; padding-top: 2px; }
+  .a-body .cab__logo svg { height: 20px; }
+  .a-body .cab__nav { order: 3; width: 100%; }
+  .a-body .cab__nav ul { justify-content: space-between; gap: 8px; }
+}
+
+/* ------------------------------------------------------------------ miga (§2, lo común, 5) */
+.a-body .miga ol { display: flex; flex-wrap: wrap; gap: 0 8px; }
+.a-body .miga li { display: inline-flex; align-items: center; }
+.a-body .miga__sep { margin-right: 8px; color: var(--a-gris); }
+.a-body .miga a { display: inline-flex; min-height: 44px; align-items: center; transition: color var(--a-color); }
+.a-body .miga a:hover { color: var(--a-blanco); }
+.a-body .miga [aria-current] { color: var(--a-blanco); display: inline-flex; min-height: 44px; align-items: center; }
+
+/* ------------------------------------------------------------------ pie (§2, lo común, 2) */
+/* Borde superior, el logo a 20 px, el correo en mono y la hora; 160 px arriba. Los casos no llevan pie. */
+.a-body .pie-sitio {
+  margin-top: 160px; padding: 16px var(--a-m) 24px; display: flex; flex-wrap: wrap; gap: 12px 40px;
+  align-items: center; border-top: 1px solid var(--a-linea-seccion);
+}
+.a-body .pie-sitio .cab__logo svg { height: 20px; }
+.a-body .pie-sitio .cab__hora { margin-left: auto; }
+.a-body .pie-sitio__correo { text-transform: none; color: var(--a-gris); transition: color var(--a-color); }
+.a-body .pie-sitio__correo:hover { color: var(--a-blanco); }
+
+/* ------------------------------------------------------------------ área de toque (§4.3): 44 × 44 */
+/* Bajo 834 y con cualquier puntero grueso, en alto y en ancho, también el logo y los correos sueltos. Donde no hay
+   otro objetivo al lado (el pie) el área crece con margen negativo y lo que se ve no se mueve (prototipo, defecto 11). */
+@media (max-width: 833.98px), (pointer: coarse) {
+  .a-body .cab__logo { min-height: 44px; }
+  .a-body .cab__nav a, .a-body .miga a { min-width: 44px; justify-content: center; }
+  .a-body .pie-sitio .cab__logo { margin-block: -12px; }
+  .a-body .pie-sitio__correo { display: inline-flex; align-items: center; min-height: 44px; padding-top: 6px; margin-block: -18px -12px; }
+}
+
+/* ------------------------------------------------------------------ medios (§3.3) */
+/* Plano en su marco, radio 6; cada medio espera en su placa y aparece en 167 ms al cargar (la carga como diseño). Sin
+   JS (body.a-sin-js, que el primer script quita) se ve de entrada. */
+.a-body .medio { position: relative; overflow: hidden; border-radius: 6px; background: var(--a-placa); isolation: isolate; }
+.a-body .medio > img, .a-body .medio > video, .a-body .medio > picture, .a-body .medio > picture > img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.a-body .medio > img, .a-body .medio > video { opacity: 0; transition: opacity var(--a-color); }
+.a-body .medio > img.cargado, .a-body .medio > video.cargado,
+body.a-body.a-sin-js .medio > img { opacity: 1; }
+.a-body .medio--sangre { border-radius: 0; }
+.a-body .p-169 { aspect-ratio: 16 / 9; }
+.a-body .p-45 { aspect-ratio: 4 / 5; }
+.a-body .p-43 { aspect-ratio: 4 / 3; }
+.a-body .p-53 { aspect-ratio: 5 / 3; }
+.a-body .p-162 { aspect-ratio: 1.62; }
+.a-body .p-34 { aspect-ratio: 3 / 4; }
+.a-body .p-239 { aspect-ratio: 2.39; }
+.a-body .pie { margin-top: 8px; max-width: var(--a-caja); font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); text-wrap: pretty; }
+/* Rótulo de esquina en una placa, sobre un medio (radio 2, §1.5): el único texto de interfaz sobre el trabajo (§6.6) */
+.a-body .marca-medio {
+  position: absolute; z-index: 2; left: 12px; top: 12px; padding: 7px 8px 6px; border-radius: 2px;
+  background: var(--a-placa); color: var(--a-blanco);
+}
+.a-body .marca-medio .gris { color: var(--a-gris); }
+
+/* ------------------------------------------------------------------ video (§3.5) y su pausa (§3.1.3, §4.1) */
+/* La imagen quieta abajo, el video encima: aparece en 167 ms cuando da su primer cuadro. Sin JS, solo la imagen. */
+.a-body .video > .video__quieta, .a-body .video > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.a-body .video > video { opacity: 0; transition: opacity var(--a-color); }
+.a-body .video > video.corriendo { opacity: 1; }
+.a-body .pausa {
+  position: absolute; z-index: 3; right: 12px; bottom: 12px; width: 44px; height: 44px; border: 0; border-radius: 4px;
+  display: grid; place-items: center; background: var(--a-placa); color: var(--a-blanco); cursor: pointer;
+  transition: background-color var(--a-color), color var(--a-color);
+}
+.a-body .pausa[hidden] { display: none; }
+.a-body .pausa:hover { background: var(--a-placa-activa); }
+.a-body .pausa .icono-seguir { display: none; }
+.a-body .pausa[aria-pressed='true'] { background: var(--a-blanco); color: var(--a-lienzo); }
+.a-body .pausa[aria-pressed='true'] .icono-pausa { display: none; }
+.a-body .pausa[aria-pressed='true'] .icono-seguir { display: block; }
+.a-body .pausa--arriba { top: 16px; right: var(--a-m); bottom: auto; }
+
+/* ------------------------------------------------------------------ cursor (§4.2) */
+/* Círculo de 88 px, blanco, texto en lienzo en mono 11; el anillo de 1 px en lienzo es un borde, no una sombra (§1.5).
+   Solo con (hover: hover) and (pointer: fine) y sin movimiento reducido: lo enciende el script con .con-circulo. */
+.a-body .circulo {
+  position: fixed; left: 0; top: 0; z-index: 40; width: 88px; height: 88px; margin: -44px 0 0 -44px;
+  display: none; place-items: center; text-align: center; padding: 8px; pointer-events: none;
+  border: 1px solid var(--a-lienzo); border-radius: 50%; background: var(--a-blanco); color: var(--a-lienzo);
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em;
+  text-transform: uppercase; transform: scale(0); will-change: transform;
+}
+.a-body.con-circulo .circulo { display: grid; }
+.a-body.con-circulo .medio-enlace[data-ir] { cursor: none; }
+.a-body.con-circulo.teclado .medio-enlace[data-ir] { cursor: pointer; }
+/* Con teclado, el texto del círculo queda quieto dentro de la pieza enfocada, en un rótulo de placa (§4.1) */
+.a-body .medio-enlace { position: relative; display: block; }
+.a-body .medio-enlace .quieto { display: none; }
+.a-body .medio-enlace:focus-visible .quieto {
+  display: block; position: absolute; z-index: 3; left: 12px; bottom: 12px; padding: 7px 8px 6px; border-radius: 2px;
+  background: var(--a-placa); color: var(--a-blanco);
+}
+
+/* ------------------------------------------------------------------ el chequeo (§2.1, §4.1) */
+/* Los ids y el script son los de producción (chq-form, chq-dominio, chq-btn, chq-out, chq-error; v3-chequeo.js sin
+   tocar). Esta hoja solo lo viste, también el resultado que pinta v3-chequeo.js (con el sistema de A: prototipo .res__*). */
+.a-body .chequeo { display: flex; flex-direction: column; gap: 12px; }
+.a-body .chequeo__form { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.a-body .chequeo__campo { display: flex; gap: 8px; }
+.a-body .chequeo__campo input {
+  flex: 1 1 auto; min-width: 0; height: 44px; padding: 0 12px; border-radius: 4px; border: 1px solid var(--a-borde-campo);
+  background: var(--a-placa); color: var(--a-blanco); font-size: 16px; font-weight: 370;
+  transition: border-color var(--a-color);
+}
+.a-body .chequeo__campo input::placeholder { color: var(--a-gris); opacity: 1; }
+.a-body .chequeo__campo input:hover { border-color: var(--a-gris); }
+.a-body .chequeo__campo input:focus-visible { border-color: var(--a-gris); }
+.a-body .chequeo__campo .boton { flex: none; }
+/* desde 1194, en la columna angosta de la portada: campo y botón uno sobre otro, a todo el ancho */
+@media (min-width: 1194px) {
+  .a-body .chequeo--apilado .chequeo__campo { flex-direction: column; }
+  .a-body .chequeo--apilado .chequeo__campo input { flex: none; }
+  .a-body .chequeo--apilado .chequeo__campo .boton { width: 100%; }
+}
+.a-body #chq-error { margin-top: 4px; font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-blanco); }
+.a-body #chq-error .chq-error-codigo { margin-top: 4px; font-family: var(--a-f-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.03em; color: var(--a-gris); }
+.a-body #chq-error a { color: var(--a-blanco); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.a-body #chq-out { margin-top: 8px; }
+.a-body .chq-score {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--a-linea-seccion);
+}
+.a-body .chq-num { font-stretch: 76%; font-weight: 300; font-size: var(--a-t-titulo); line-height: 1.2; color: var(--a-blanco); }
+.a-body .chq-veredicto { flex-basis: 100%; font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); }
+.a-body .chq-veredicto b { font-family: var(--a-f-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.03em; color: var(--a-blanco); }
+.a-body .chq-aviso { display: block; margin-top: 8px; }
+.a-body .chq-ramas { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-top: 12px; }
+.a-body .chq-r1 {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 4px;
+  background: var(--a-placa); color: var(--a-blanco); transition: background-color var(--a-color);
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em; text-transform: uppercase;
+}
+.a-body .chq-r1:hover { background: var(--a-placa-activa); }
+.a-body .chq-r1:active { background: var(--a-placa-apretada); }
+.a-body .chq-r2 {
+  display: inline-flex; align-items: center; min-height: 44px; font-size: var(--a-t-chico); color: var(--a-blanco);
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.45); transition: text-decoration-color var(--a-color);
+}
+.a-body .chq-r2:hover { text-decoration-color: var(--a-blanco); }
+.a-body .chq-bloque { margin-top: 24px; }
+.a-body .chq-bloque h3 {
+  font-family: var(--a-f-mono); font-stretch: 100%; font-weight: 500; font-size: 11px; line-height: 1.25;
+  letter-spacing: 0.03em; text-transform: uppercase; color: var(--a-gris);
+}
+.a-body .chq-bloque .sub { margin-top: 4px; font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); }
+.a-body .chq-list { margin-top: 8px; }
+.a-body .chq-list li {
+  display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 8px; padding: 8px 0;
+  border-bottom: 1px solid var(--a-linea); font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo);
+}
+/* La marca: el signo que escribe v3-chequeo.js (✓ ✕ ?) no está en ninguna de las dos letras; se oculta y se dibuja
+   un punto de 9 px: lleno y blanco si cumple, solo el borde gris si no o si no se pudo confirmar (prototipo .res__marca).
+   Lo que lee el lector de pantalla es el texto oculto del script («Cumple:», «No cumple:», «No lo pudimos confirmar:»). */
+.a-body .chq-mark {
+  width: 9px; height: 9px; margin-top: 5px; border-radius: 50%; border: 1px solid var(--a-gris);
+  font-size: 0; line-height: 0; color: transparent; overflow: hidden;
+}
+.a-body .chq-mark.chq-si { background: var(--a-blanco); border-color: var(--a-blanco); }
+.a-body .chq-t { color: var(--a-gris); }
+.a-body .chq-list li.ok .chq-t { color: var(--a-blanco); }
+.a-body .chq-d { margin-top: 4px; color: var(--a-gris); }
+.a-body .chq-fix { margin-top: 4px; color: var(--a-blanco); }
+.a-body .chq-remate { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--a-linea-seccion); }
+.a-body .chq-remate h3 { font-size: var(--a-t-titulo); line-height: 1.2; }
+.a-body .chq-remate p { margin-top: 8px; max-width: var(--a-caja); font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); color: var(--a-gris); }
+
+/* ------------------------------------------------------------------ el aviso de cookies (§4.3) */
+/* Vive en Layout.astro con su <style> aislado por Astro (`#cookie-banner[data-astro-cid-…] …`, 1-2-1): aquí se viste
+   con más especificidad (`html body.a-body #cookie-banner …`), sin tocar su HTML ni sus ids. Placa, borde superior en
+   la línea de sección, texto gris en Google Sans Flex 14, enlace blanco subrayado, botones del sistema (Aceptar claro,
+   Rechazar de placa). */
+html body.a-body #cookie-banner { background: var(--a-placa); border-top: 1px solid var(--a-linea-seccion); padding: 12px var(--a-m); }
+html body.a-body #cookie-banner .cb-inner.cb-inner { max-width: none; gap: 8px 24px; }
+html body.a-body #cookie-banner .cb-inner p {
+  max-width: 640px; font-family: var(--a-f-letra); font-weight: 370; font-size: 14px; line-height: 1.35; color: var(--a-gris);
+}
+html body.a-body #cookie-banner .cb-inner a {
+  color: var(--a-blanco); font: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+}
+html body.a-body #cookie-banner .cb-actions.cb-actions { gap: 8px; }
+html body.a-body #cookie-banner .cb-actions button {
+  min-height: 44px; padding: 0 16px; border: 0; border-radius: 4px;
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em; text-transform: uppercase;
+  transition: background-color var(--a-color);
+}
+html body.a-body #cookie-banner #cookie-accept { background: var(--a-blanco); color: var(--a-lienzo); }
+html body.a-body #cookie-banner #cookie-accept:hover { background: var(--a-gris); }
+html body.a-body #cookie-banner #cookie-accept:active { background: var(--a-apretado); }
+html body.a-body #cookie-banner #cookie-reject { background: var(--a-placa); color: var(--a-blanco); }
+html body.a-body #cookie-banner #cookie-reject:hover { background: var(--a-placa-activa); }
+html body.a-body #cookie-banner #cookie-reject:active { background: var(--a-placa-apretada); }
+html body.a-body #cookie-banner button:focus-visible { outline: 2px solid var(--a-blanco); outline-offset: 3px; }
+/* El aviso que confirma la elección (#cookie-aviso) lo crea consent-banner.js con estilo en línea (Inter, radio 16,
+   sombra): por eso aquí va con !important. Placa, radio 4, sin sombra ni borde (§1.5). */
+html body.a-body #cookie-aviso {
+  background: var(--a-placa) !important; border: 0 !important; border-radius: 4px !important; box-shadow: none !important;
+  color: var(--a-blanco) !important; font-family: var(--a-f-letra) !important; font-weight: 370 !important;
+  font-size: 14px !important; line-height: 1.35 !important;
+}
+html body.a-body #cookie-aviso button {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px !important; border: 0 !important;
+  border-radius: 4px !important; font-family: var(--a-f-mono) !important; font-weight: 500 !important; font-size: 11px !important;
+  letter-spacing: 0.03em; text-transform: uppercase;
+}
+html body.a-body #cookie-aviso button:first-child { background: var(--a-blanco) !important; color: var(--a-lienzo) !important; }
+html body.a-body #cookie-aviso button:last-child { background: var(--a-placa-activa) !important; color: var(--a-blanco) !important; }
+/* Pantallas bajas: el aviso no puede tapar el chequeo de la primera pantalla (§4.3; la regla de driftime del 13-oct) */
+@media (orientation: landscape) and (max-height: 500px) {
+  html body.a-body #cookie-banner { padding: 8px var(--a-m); }
+  html body.a-body #cookie-banner .cb-inner.cb-inner { flex-direction: row; flex-wrap: nowrap; align-items: center; }
+  html body.a-body #cookie-banner .cb-inner p { flex: 1 1 auto; min-width: 0; max-width: none; font-size: 13px; }
+}
+
+/* ------------------------------------------------------------------ nada tapado por lo fijo (§4.3) */
+/* Arriba, el encabezado pegajoso (64 desde 834): solo mientras hay foco de teclado, para no correr las anclas que ya
+   tienen su scroll-margin. Abajo, el aviso de cookies mientras está abierto. */
+@media (min-width: 834px) {
+  html:has(body.a-body):has(:focus-visible) { scroll-padding-top: 80px; }
+}
+html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 96px; }
+@media (max-width: 899.98px) {
+  html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 160px; }
+}
+
+/* ------------------------------------------------------------------ movimiento reducido (§1.6) */
+/* Ningún resorte corre, el círculo no existe, todo está en su lugar y los cambios de color son instantáneos. */
+@media (prefers-reduced-motion: reduce) {
+  .a-body *, .a-body *::before, .a-body *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+  .a-body .medio > img { opacity: 1; }
+  .a-body .circulo { display: none !important; }
+}

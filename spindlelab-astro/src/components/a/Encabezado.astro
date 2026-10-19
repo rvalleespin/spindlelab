@@ -1,0 +1,29 @@
+---
+// EL ENCABEZADO DE A (spec §2, «Lo común», 1; prototipo .cab). El logo El huso en el margen, el menú en mono 11 y la
+// hora a la derecha. Desde 834 es pegajoso y se pliega en la placa al bajar (base.mjs); bajo 834 el menú va en una
+// segunda fila de 44 px y no hay botón «Menú». Textos de Clara: comun.nav (el nombre del nav, «Principal»).
+// La página actual va en blanco con aria-current: «page» si es esa página, «true» si es una de su sección (un caso
+// está dentro de Trabajo).
+import Logo from './Logo.astro';
+import Hora from './Hora.astro';
+
+const menu = [
+  { href: '/v3/trabajo/', texto: 'Trabajo' },
+  { href: '/v3/servicios/', texto: 'Servicios' },
+  { href: '/v3/metodo/', texto: 'Método' },
+  { href: '/v3/nosotros/', texto: 'Nosotros' },
+  { href: '/v3/contacto/', texto: 'Escríbenos' },
+];
+const ruta = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/';
+const actual = (href: string) => (ruta === href ? 'page' : ruta.startsWith(href) ? 'true' : undefined);
+---
+<header class="cab">
+  <div class="cab__placa" aria-hidden="true"></div>
+  <div class="cab__fila">
+    <a class="cab__logo" href="/v3/"><Logo /></a>
+    <nav class="cab__nav" aria-label="Principal">
+      <ul>{menu.map((m) => <li><a href={m.href} aria-current={actual(m.href)}>{m.texto}</a></li>)}</ul>
+    </nav>
+    <Hora />
+  </div>
+</header>

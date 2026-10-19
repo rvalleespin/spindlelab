@@ -1,0 +1,42 @@
+---
+// EL ENVOLTORIO DE TODA PÁGINA DE A (spec §5.2 y §2 «Lo común»): el contenedor que envuelve el enlace para saltar, el
+// encabezado, el <main> y el pie, con data-lenis-prevent (§5.2, resguardo: Lenis deja pasar la rueda). Todo enlace
+// interno a un id va con su ruta, nunca «#x» suelto (§5.2.2): también el de saltar al contenido.
+//
+// POR QUÉ NO ENVUELVE AL LAYOUT. Cada página de A usa el Layout de producción directamente, con las props de
+// layout-a.ts, y pone este componente adentro:
+//   <Layout title="…" description="…" {...LAYOUT_A}>
+//     <meta slot="head" name="robots" content="noindex, nofollow" />
+//     <script slot="head" type="application/ld+json" is:inline set:html={…} />
+//     <PaginaA> … </PaginaA>
+//   </Layout>
+// Astro 4 nombra el CSS que comparten las páginas (el de global.css, que cargan / y /nosotros/) con el nombre de la
+// primera página que encuentra al subir desde el Layout por quienes lo importan, en orden alfabético de ruta. Un
+// componente en src/components/ que importe el Layout va antes que src/pages/index.astro, y el CSS publicado pasaba a
+// llamarse como una página de A: mismo contenido, otro nombre de archivo, y el <link> de las dos páginas publicadas
+// cambiaba (medido: index.BudKb2Rm.css → prueba-base-a.BudKb2Rm.css). desvios.md, tanda 1.
+import Encabezado from './Encabezado.astro';
+import Pie from './Pie.astro';
+import '../../styles/archivo.css';
+
+interface Props {
+  /** Los casos no tienen pie: cierran con «Siguiente» (§2, lo común, 2). */
+  pie?: boolean;
+}
+const { pie = true } = Astro.props;
+const ruta = Astro.url.pathname;
+---
+<div class="a-pagina" data-lenis-prevent>
+  <script is:inline>document.body.classList.remove('a-sin-js');</script>
+  <a class="saltar boton boton--claro" href={`${ruta}#contenido`}>Saltar al contenido</a>
+  <Encabezado />
+  <main id="contenido">
+    <slot />
+  </main>
+  {pie && <Pie />}
+  <div class="circulo" aria-hidden="true"></div>
+</div>
+
+<script>
+  import '../../scripts/archivo/base.mjs';
+</script>
