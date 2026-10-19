@@ -188,6 +188,11 @@ def visible(el):
         return None
     if el.get('uso') == 'alt':
         return f"[IMAGEN O VIDEO: {el['texto']}]"
+    if el.get('uso') == 'planes':
+        oferta = json.loads((Path(__file__).resolve().parents[7] / 'spindlelab-astro' / 'src' / 'data'
+                             / 'oferta-v3.json').read_text(encoding='utf-8'))
+        return '[PLANES]\n' + '\n'.join(f"   {pl['n']} · {pl['p']} · {pl['d']} · " + ' / '.join(pl['puntos'])
+                                        for pl in oferta['momentos'][0]['planes'])
     if el.get('tramos'):
         return '[VIDEO CON PIEZAS QUE PASAN; BAJO EL VIDEO, LA FICHA DE CADA UNA]\n' + '\n'.join(
             f"   {t['nombre']} ({t['linea']}): {t['bajada']}" + (f" {t['nota']}" if t.get('nota') else '')

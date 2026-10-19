@@ -351,9 +351,9 @@
 *Trabajo del bloque:* Nombrar el caso, decir qué tipo de trabajo es y llevar a cada sección.
 
 - `rotulo · miga` · **nuevo** Inicio · Trabajo · Praxi
-- `h1` · **cambia** Praxi *Se acuerda de cada serie que hiciste*  
+- `h1` · **cambia** Praxi. *Se acuerda de cada serie que hiciste.*  
   <sub>Antes: «Praxi. Se acuerda de cada serie»</sub>  
-  <sub>Por qué: La continuación en gris tenía 5 palabras y el lock §14 pide de 6 a 13; ahora es la frase de la portada de Praxi, tal cual.</sub>
+  <sub>Por qué: La continuación en gris tenía 5 palabras y el lock §14 pide de 6 a 13; ahora es la frase de la portada de Praxi, tal cual. Con punto en las dos partes, como los demás titulares del sitio («Trabajo.», «Servicios.»): sin él, el h1 se lee «Praxi Se acuerda…» en un lector de pantalla.</sub>
 - `ficha` · **cambia**
   - **Tipo:** Propio
   - **Año:** 2026
@@ -476,12 +476,14 @@
 - `parrafo` · **nuevo** El sitio y la app los programó Ramón con agentes de IA: sesiones de Claude Code que escriben código a partir de sus instrucciones. Entre el 21 de julio y el 25 de agosto quedaron 219 cambios de código, y 218 llevan la firma de esas sesiones. Son herramientas para programar: no son los modelos que conversan dentro de Praxi.  
   <sub>Por qué: Compuerta 2, 5e: el caso dice que se construyó con agentes de IA, con verdad y sin jerga. No dice que Ramón revisó cada cambio: 50 commits fueron directo a main (inventario-praxi §8.1).</sub>  
   <sub>Fuente: inventario-praxi §2 («Quién lo hizo», medido con git log el 19-oct) y §8.2 (no decir que la app usa el modelo que la programó)</sub>
-- `nota · pie` · **cambia** Los números son de ejemplo: los escribimos para la portada de Praxi y no son de un usuario.  
+- `nota · referencia` · **cambia** Los números son de ejemplo: los escribimos para la portada de Praxi y no son de un usuario.  
   <sub>Dónde: Bajo las capturas de la conversación y de «Tu progreso, en números» (inventario-praxi §6)</sub>  
   <sub>Antes: «Los números de esta captura son de ejemplo: los escribimos para la portada de Praxi y no son de un usuario.»</sub>  
-  <sub>Por qué: Un solo texto de pie para toda captura con cifras.</sub>
-- `nota · pie` Las personas de las fotos y del video están generadas con IA. El texto encima es de la pieza.  
-  <sub>Dónde: Bajo el reel, el carrusel y la portada de Facebook</sub>
+  <sub>Por qué: Un solo texto de pie para toda captura con cifras.</sub>  
+  <sub>Nota: Cada medio lleva su propio pie en «medios»; este texto queda como regla para cualquier captura nueva.</sub>
+- `nota · referencia` Las personas de las fotos y del video están generadas con IA. El texto encima es de la pieza.  
+  <sub>Dónde: Bajo el reel, el carrusel y la portada de Facebook</sub>  
+  <sub>Nota: Cada medio lleva su propio pie en «medios»; este texto queda como regla para cualquier captura nueva.</sub>
 - `nota · hueco` · **cambia** Aquí van las pantallas de la app por dentro: Inicio, Coach, Registro y Progreso, en un celular. Para capturarlas hace falta una cuenta de prueba con su historial, y no las vamos a armar con datos inventados.  
   <sub>Antes: «Faltan las pantallas de la app por dentro. Para verlas hace falta una cuenta y su base de datos, y no las vamos a armar con datos inventados.»</sub>  
   <sub>Por qué: Compuerta 2, 5a: en los repos no hay capturas con sesión iniciada; el hueco queda a la vista, como un marco punteado del tamaño de una fila 16:9 (spec §3.3). Si Ramón sube otras, esta nota sale.</sub>
@@ -491,9 +493,9 @@
 | `tableros/e12-direcciones/proto/a/medios/praxi-amarillo-169.webp` | 16:9 | La marca de Praxi: la P negra con su punto, grande, sobre el amarillo del acento. |  |
 | `tableros/e12-direcciones/proto/a/medios/praxi-avatar-amarillo-162.webp` | 1,62 | El avatar de Praxi: la P negra con su punto sobre el amarillo de la marca. |  |
 | `tableros/e12-direcciones/proto/a/medios/praxi-avatar-oscuro-162.webp` | 1,62 | El avatar de Praxi en su versión oscura: la P blanca con el punto amarillo. |  |
-| `tableros/e12-direcciones/proto/a/medios/praxi-facebook-169.webp` | 16:9 | La portada de Facebook de Praxi: un hombre levanta una barra en penumbra y, a la derecha, «Praxi.» y «Entrena sabiendo por qué». | Las personas están generadas con IA. |
-| `tableros/e12-direcciones/proto/a/medios/praxi-reel-45.webm` | 4:5 | (video) El reel de campaña de Praxi: un atleta entrena y encima aparece la conversación con el coach. | Las personas están generadas con IA. |
-| `tableros/e12-direcciones/proto/a/medios/praxi-carrusel-1-45.webp` | 4:5 | Primera lámina del carrusel de Praxi: «La mitad de tus series quizá no cuentan.», sobre la foto de un hombre que entrena. | Las personas están generadas con IA. |
+| `tableros/e12-direcciones/proto/a/medios/praxi-facebook-169.webp` | 16:9 | La portada de Facebook de Praxi: un hombre levanta una barra en penumbra y, a la derecha, «Praxi.» y «Entrena sabiendo por qué». | Las personas están generadas con IA. El texto encima es de la pieza. |
+| `tableros/e12-direcciones/proto/a/medios/praxi-reel-45.webm` | 4:5 | (video) El reel de campaña de Praxi: un atleta entrena y encima aparece la conversación con el coach. | Las personas están generadas con IA. El texto encima es de la pieza. |
+| `tableros/e12-direcciones/proto/a/medios/praxi-carrusel-1-45.webp` | 4:5 | Primera lámina del carrusel de Praxi: «La mitad de tus series quizá no cuentan.», sobre la foto de un hombre que entrena. | Las personas están generadas con IA. El texto encima es de la pieza. |
 | `tableros/e12-direcciones/proto/a/medios/praxi-carrusel-3-45.webp` | 4:5 | Tercera lámina del carrusel: «No las cuentas tú.», con un ejemplo de series que cuentan. | Los números son de ejemplo: los escribimos para la portada de Praxi y no son de un usuario. |
 | `(marco punteado, sin archivo)` | 16:9 | El hueco: va el texto de «praxi.pieza.hueco». |  |
 
@@ -531,8 +533,10 @@
 - `boton` Escribir a SpindleLab  
   → `/v3/contacto/`
 - `rotulo` Siguiente
-- `h2` Sesenta *El plazo antes que el juicio*  
+- `h2` · **cambia** Sesenta. *El plazo antes que el juicio.*  
   → `/v3/trabajo/sesenta/`  
+  <sub>Antes: «Sesenta El plazo antes que el juicio»</sub>  
+  <sub>Por qué: Con punto en las dos partes, como los demás titulares del sitio («Trabajo.», «Servicios.»): sin él, el título se lee «Sesenta El plazo…» en un lector de pantalla.</sub>  
   <sub>Nota: Lleva el rótulo «Concepto» a la vista. La bajada es la de su caso (06-sesenta/caso.md).</sub>
 - `boton` [ Todo el trabajo ] (10)  
   → `/v3/trabajo/`
@@ -551,7 +555,7 @@
 *Trabajo del bloque:* Nombrar el caso: quién es el cliente, qué se hizo y cuándo salió.
 
 - `rotulo · miga` · **nuevo** Inicio · Trabajo · Bernardo Combeau
-- `h1` · **nuevo** Bernardo Combeau *Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.*  
+- `h1` · **nuevo** Bernardo Combeau. *Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.*  
   <sub>Fuente: inventario-casos §2.1, §2.2 y §2.9 (él carga sus series desde el panel; el book es el otro oficio)</sub>
 - `ficha` · **nuevo**
   - **Tipo:** Cliente
@@ -671,7 +675,7 @@
 - `boton` · **nuevo** Escribir a SpindleLab  
   → `/v3/contacto/`
 - `rotulo` · **nuevo** Siguiente
-- `h2` · **nuevo** Praxi *Se acuerda de cada serie que hiciste*  
+- `h2` · **nuevo** Praxi. *Se acuerda de cada serie que hiciste.*  
   → `/v3/trabajo/praxi/`
 - `boton` [ Todo el trabajo ] (10)  
   → `/v3/trabajo/`
@@ -688,7 +692,7 @@
 *Trabajo del bloque:* Nombrar la pieza y decir sin scroll que es un concepto.
 
 - `rotulo · miga` · **nuevo** Inicio · Trabajo · Sesenta
-- `h1` · **nuevo** Sesenta *El plazo antes que el juicio*  
+- `h1` · **nuevo** Sesenta. *El plazo antes que el juicio.*  
   <sub>Fuente: marketing/portafolio/06-sesenta/caso.md (hechos de ficha.md §4); alt de Lucía (prototipo de A, trabajo/sesenta/), «Ficha lateral»</sub>
 - `ficha` · **nuevo**
   - **Tipo:** Concepto
@@ -808,7 +812,7 @@
 - `boton` · **nuevo** Escribir a SpindleLab  
   → `/v3/contacto/`
 - `rotulo` · **nuevo** Siguiente
-- `h2` · **nuevo** Ocelo *La carta antes que la promesa*  
+- `h2` · **nuevo** Ocelo. *La carta antes que la promesa.*  
   → `/v3/trabajo/ocelo/`  
   <sub>Nota: Lleva su rótulo «Concepto» a la vista.</sub>
 - `boton` [ Todo el trabajo ] (10)  
@@ -834,7 +838,7 @@
 *Trabajo del bloque:* Nombrar la pieza y decir sin scroll que es un concepto.
 
 - `rotulo · miga` · **nuevo** Inicio · Trabajo · Ocelo
-- `h1` · **nuevo** Ocelo *La carta antes que la promesa*  
+- `h1` · **nuevo** Ocelo. *La carta antes que la promesa.*  
   <sub>Fuente: marketing/portafolio/05-ocelo/caso.md (hechos de ficha.md §4), «Ficha lateral»</sub>
 - `ficha` · **nuevo**
   - **Tipo:** Concepto
@@ -950,7 +954,7 @@
 - `boton` · **nuevo** Escribir a SpindleLab  
   → `/v3/contacto/`
 - `rotulo` · **nuevo** Siguiente
-- `h2` · **nuevo** Doceavo *El año en doce, con lo que vence cada mes*  
+- `h2` · **nuevo** Doceavo. *El año en doce, con lo que vence cada mes.*  
   → `/v3/trabajo/doceavo/`  
   <sub>Nota: Lleva su rótulo «Concepto» a la vista.</sub>
 - `boton` [ Todo el trabajo ] (10)  
@@ -976,7 +980,7 @@
 *Trabajo del bloque:* Nombrar la pieza y decir sin scroll que es un concepto.
 
 - `rotulo · miga` · **nuevo** Inicio · Trabajo · Doceavo
-- `h1` · **nuevo** Doceavo *El año en doce, con lo que vence cada mes*  
+- `h1` · **nuevo** Doceavo. *El año en doce, con lo que vence cada mes.*  
   <sub>Fuente: marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII), «Ficha lateral»</sub>
 - `ficha` · **nuevo**
   - **Tipo:** Concepto
@@ -1087,7 +1091,7 @@
 - `boton` · **nuevo** Escribir a SpindleLab  
   → `/v3/contacto/`
 - `rotulo` · **nuevo** Siguiente
-- `h2` · **nuevo** Tonela *El color de la eslinga es su capacidad*  
+- `h2` · **nuevo** Tonela. *El color de la eslinga es su capacidad.*  
   → `/v3/trabajo/tonela/`  
   <sub>Nota: Lleva su rótulo «Concepto» a la vista.</sub>
 - `boton` [ Todo el trabajo ] (10)  
@@ -1113,7 +1117,7 @@
 *Trabajo del bloque:* Nombrar la pieza y decir sin scroll que es un concepto.
 
 - `rotulo · miga` · **nuevo** Inicio · Trabajo · Tonela
-- `h1` · **nuevo** Tonela *El color de la eslinga es su capacidad*  
+- `h1` · **nuevo** Tonela. *El color de la eslinga es su capacidad.*  
   <sub>Fuente: marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón), «Ficha lateral»</sub>
 - `ficha` · **nuevo**
   - **Tipo:** Concepto
@@ -1234,7 +1238,7 @@
 - `boton` · **nuevo** Escribir a SpindleLab  
   → `/v3/contacto/`
 - `rotulo` · **nuevo** Siguiente
-- `h2` · **nuevo** Bernardo Combeau *Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.*  
+- `h2` · **nuevo** Bernardo Combeau. *Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.*  
   → `/v3/trabajo/combeau/`
 - `boton` [ Todo el trabajo ] (10)  
   → `/v3/trabajo/`
@@ -1277,18 +1281,30 @@
 - `h2` · **cambia** Tu sitio te frena, o no existe.  
   <sub>Antes: «Tu sitio te frena, o no existe»</sub>  
   <sub>Por qué: Con punto, como en la home.</sub>
+- `h3` Desarrollo web  
+  → `/v3/servicios/desarrollo-web/`
+- `nota · precio` Desde $390.000 · $690.000 · $1.190.000 + IVA
 - `parrafo` · **cambia** Lo diseñamos y lo programamos a medida, sin plantilla. Queda listo para que Google y la IA puedan leerlo, y antes de entregarlo le pasamos el chequeo gratis.  
   <sub>Antes: «El sitio nace legible para las máquinas que hoy recomiendan tu negocio. Lo compruebas con el chequeo gratis, sobre tu dominio, antes y después.»</sub>  
   <sub>Por qué: La línea de la home (texto-paso2 «home.servicios.dw.texto», aprobada en la compuerta 2): dice primero que lo diseñamos y lo programamos. La de E8 hablaba solo de máquinas.</sub>
 - `h2` Tu sitio existe y no lo vas a rehacer.
 - `parrafo` No hace falta reconstruir para que una IA pueda citarte.
+- `h3` Visibilidad en IA  
+  → `/v3/servicios/visibilidad-en-ia/`
+- `nota · precio` Desde $400.000 + IVA
 - `parrafo` Para que ChatGPT, Gemini y Perplexity puedan citarte cuando preguntan por tu rubro.
+- `h3` Auditoría SEO técnica  
+  → `/v3/servicios/auditoria-seo-tecnica/`
+- `nota · precio` Desde $490.000 · $690.000 con Visibilidad en IA + IVA
 - `parrafo` · **cambia** Revisa tu sitio completo y te dice qué le impide a Google encontrar tus páginas, leerlas y mostrarlas, y qué arreglar primero.  
   <sub>Antes: «Rastreo, indexación, Core Web Vitals y datos estructurados. Qué te frena y qué arreglar primero.»</sub>  
   <sub>Por qué: Cuatro términos sin explicar (brief §2); la home ya lo dice así desde la lectura fría.</sub>
 - `h2` · **cambia** Tu sitio ya funciona y quieres que siga mejorando.  
   <sub>Antes: «Ya giras y quieres sostenerlo»</sub>  
   <sub>Por qué: Lectura fría, vuelta 2: el gerente lo leyó como traducción y la dueña de la clínica no lo entendió.</sub>
+- `h3` Acompañamiento mensual  
+  → `/v3/servicios/acompanamiento-mensual/`
+- `nota · precio` Desde $590.000/mes · $790.000/mes Pro + IVA
 - `parrafo` · **cambia** Una auditoría te dice qué hacer; este servicio lo hace, mes a mes, en SEO técnico, en visibilidad en IA o en las dos. Mínimo tres meses.  
   <sub>Antes: «Implementación continua e informes quincenales de SEO técnico o de visibilidad en IA.»</sub>  
   <sub>Por qué: La línea de la home; la cadencia de informes es R2, abierta, y no se promete aquí.</sub>
@@ -1331,7 +1347,7 @@
 *Trabajo del bloque:* Decir qué es, para quién es y para quién no, con el precio de partida.
 
 - `rotulo · miga` Inicio · Servicios · Desarrollo web
-- `h1` · **cambia** Desarrollo web. *Diseñamos y programamos tu sitio, y Google y la IA pueden leerlo.*  
+- `h1` · **cambia** Desarrollo web. *Diseñamos y programamos sitios listos para que Google y la IA los lean.*  
   <sub>Antes: «Desarrollo web. Diseñamos y programamos tu sitio, y lo dejamos listo para que Google y la IA puedan leerlo.»</sub>  
   <sub>Por qué: Lock §14: la continuación gris va de 6 a 13 palabras y la tinta hasta 8 (lo midió herramientas/comprobar-obra.py).</sub>
 - `entradilla` Es para cuando no tienes sitio, o el que tienes hay que hacerlo de nuevo. Cuatro planes, desde $390.000 + IVA. Si tu sitio funciona y no lo vas a rehacer, te sirve más Visibilidad en IA.  
@@ -1676,7 +1692,7 @@
 
 - `h2` Por qué un solo sistema
 - `parrafo` En las empresas que reviso pasa casi siempre lo mismo. Uno hizo el sitio, otro lleva las redes, otro la pauta, y ninguno mira si la IA te nombra.
-- `parrafo` · **cambia** Por eso parto por el sitio, que es adonde llevan las redes, la pauta y Google: lo diseño y lo programo, o reviso el que ya tienes, y lo dejo listo para que Google y la IA lo lean. Las redes y la pauta se suman cuando el sitio ya responde, y todo se mide junto.  
+- `parrafo` · **cambia** Por eso parto por el sitio, que es adonde llega todo lo demás: lo diseño y lo programo, o reviso el que ya tienes, y lo dejo listo para que Google y la IA lo lean. Las redes y la pauta se suman cuando el sitio ya responde, y todo se mide junto.  
   <sub>Antes: «Te lo cuento porque con esa experiencia puedo hacerme cargo del eje de tu operación y poner el motor a funcionar entero, no por partes. Conectamos las piezas en un solo sistema y las medimos juntas, con el orgánico como eje, porque es lo que no se apaga cuando cortas el presupuesto.»</sub>  
   <sub>Por qué: Brief §1 y §2: el estudio no es una agencia de marketing y el sitio va al centro; redes y pauta siguen en la oferta, no al frente. «El eje de tu operación», «el motor» y «el orgánico» son jerga de agencia.</sub>  
   ⚠ **Condición:** Es la voz de Ramón, en primera persona y fuera de la bio: lo confirma él. Si no, queda el de hoy.
@@ -1692,7 +1708,7 @@
 - `h2` Cómo trabajo
 - `h3` · **nuevo** Diseño y programo a medida  
   ⚠ **Condición:** Primera persona de Ramón: lo confirma él.
-- `parrafo` · **nuevo** Cuando el sitio hay que hacerlo de nuevo, lo diseño y lo programo con agentes de IA, y reviso cada fase antes de avanzar. Sin plantilla y sin WordPress.  
+- `parrafo` · **nuevo** Cuando el sitio hay que hacerlo de nuevo, lo diseño y lo programo con agentes de IA, y reviso cada fase antes de avanzar, sin plantillas ni WordPress.  
   <sub>Por qué: Brief §3: Desarrollo web es la puerta del estudio, y esta lista no lo nombraba.</sub>  
   <sub>Fuente: desarrollo-web (texto-paso2 «dw.incluye.1», «dw.incluye.6» y «dw.faq.1.r»); nosotros.astro:85</sub>  
   ⚠ **Condición:** Igual que el título.

@@ -1248,12 +1248,12 @@
       {
        "id": "praxi.h1",
        "rol": "h1",
-       "texto": "Praxi Se acuerda de cada serie que hiciste",
-       "tinta": "Praxi",
-       "gris": "Se acuerda de cada serie que hiciste",
+       "texto": "Praxi. Se acuerda de cada serie que hiciste.",
+       "tinta": "Praxi.",
+       "gris": "Se acuerda de cada serie que hiciste.",
        "estado": "cambia",
        "antes": "Praxi. Se acuerda de cada serie",
-       "por_que": "La continuación en gris tenía 5 palabras y el lock §14 pide de 6 a 13; ahora es la frase de la portada de Praxi, tal cual.",
+       "por_que": "La continuación en gris tenía 5 palabras y el lock §14 pide de 6 a 13; ahora es la frase de la portada de Praxi, tal cual. Con punto en las dos partes, como los demás titulares del sitio («Trabajo.», «Servicios.»): sin él, el h1 se lee «Praxi Se acuerda…» en un lector de pantalla.",
        "origen": "texto-paso2.json «praxi.h1»"
       },
       {
@@ -1633,22 +1633,24 @@
       {
        "id": "praxi.pieza.pie-ejemplo",
        "rol": "nota",
-       "uso": "pie",
+       "uso": "referencia",
        "texto": "Los números son de ejemplo: los escribimos para la portada de Praxi y no son de un usuario.",
        "donde": "Bajo las capturas de la conversación y de «Tu progreso, en números» (inventario-praxi §6)",
        "estado": "cambia",
        "antes": "Los números de esta captura son de ejemplo: los escribimos para la portada de Praxi y no son de un usuario.",
        "por_que": "Un solo texto de pie para toda captura con cifras.",
-       "origen": "texto-paso2.json «praxi.pieza.pie-ejemplo»"
+       "origen": "texto-paso2.json «praxi.pieza.pie-ejemplo»",
+       "nota": "Cada medio lleva su propio pie en «medios»; este texto queda como regla para cualquier captura nueva."
       },
       {
        "id": "praxi.pieza.pie-generado",
        "rol": "nota",
-       "uso": "pie",
+       "uso": "referencia",
        "texto": "Las personas de las fotos y del video están generadas con IA. El texto encima es de la pieza.",
        "donde": "Bajo el reel, el carrusel y la portada de Facebook",
        "estado": "queda",
-       "origen": "texto-paso2.json «praxi.pieza.pie-generado»"
+       "origen": "texto-paso2.json «praxi.pieza.pie-generado»",
+       "nota": "Cada medio lleva su propio pie en «medios»; este texto queda como regla para cualquier captura nueva."
       },
       {
        "id": "praxi.pieza.hueco",
@@ -1681,19 +1683,19 @@
        "archivo": "tableros/e12-direcciones/proto/a/medios/praxi-facebook-169.webp",
        "forma": "16:9",
        "alt": "La portada de Facebook de Praxi: un hombre levanta una barra en penumbra y, a la derecha, «Praxi.» y «Entrena sabiendo por qué».",
-       "pie": "Las personas están generadas con IA."
+       "pie": "Las personas están generadas con IA. El texto encima es de la pieza."
       },
       {
        "archivo": "tableros/e12-direcciones/proto/a/medios/praxi-reel-45.webm",
        "forma": "4:5",
        "descripcion": "El reel de campaña de Praxi: un atleta entrena y encima aparece la conversación con el coach.",
-       "pie": "Las personas están generadas con IA."
+       "pie": "Las personas están generadas con IA. El texto encima es de la pieza."
       },
       {
        "archivo": "tableros/e12-direcciones/proto/a/medios/praxi-carrusel-1-45.webp",
        "forma": "4:5",
        "alt": "Primera lámina del carrusel de Praxi: «La mitad de tus series quizá no cuentan.», sobre la foto de un hombre que entrena.",
-       "pie": "Las personas están generadas con IA."
+       "pie": "Las personas están generadas con IA. El texto encima es de la pieza."
       },
       {
        "archivo": "tableros/e12-direcciones/proto/a/medios/praxi-carrusel-3-45.webp",
@@ -1794,13 +1796,15 @@
       {
        "id": "praxi.siguiente.caso",
        "rol": "h2",
-       "tinta": "Sesenta",
-       "gris": "El plazo antes que el juicio",
-       "texto": "Sesenta. El plazo antes que el juicio",
+       "tinta": "Sesenta.",
+       "gris": "El plazo antes que el juicio.",
+       "texto": "Sesenta. El plazo antes que el juicio.",
        "nota": "Lleva el rótulo «Concepto» a la vista. La bajada es la de su caso (06-sesenta/caso.md).",
        "destino": "/v3/trabajo/sesenta/",
-       "estado": "queda",
-       "origen": "texto-paso2.json «praxi.siguiente.caso»"
+       "estado": "cambia",
+       "origen": "texto-paso2.json «praxi.siguiente.caso»",
+       "antes": "Sesenta El plazo antes que el juicio",
+       "por_que": "Con punto en las dos partes, como los demás titulares del sitio («Trabajo.», «Servicios.»): sin él, el título se lee «Sesenta El plazo…» en un lector de pantalla."
       },
       {
        "id": "praxi.siguiente.todo",
@@ -1841,9 +1845,9 @@
       {
        "id": "combeau.h1",
        "rol": "h1",
-       "tinta": "Bernardo Combeau",
+       "tinta": "Bernardo Combeau.",
        "gris": "Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.",
-       "texto": "Bernardo Combeau Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.",
+       "texto": "Bernardo Combeau. Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.",
        "fuente": "inventario-casos §2.1, §2.2 y §2.9 (él carga sus series desde el panel; el book es el otro oficio)",
        "estado": "nuevo"
       },
@@ -2220,9 +2224,9 @@
       {
        "id": "combeau.siguiente.caso",
        "rol": "h2",
-       "tinta": "Praxi",
-       "gris": "Se acuerda de cada serie que hiciste",
-       "texto": "Praxi Se acuerda de cada serie que hiciste",
+       "tinta": "Praxi.",
+       "gris": "Se acuerda de cada serie que hiciste.",
+       "texto": "Praxi. Se acuerda de cada serie que hiciste.",
        "destino": "/v3/trabajo/praxi/",
        "estado": "nuevo"
       },
@@ -2261,9 +2265,9 @@
       {
        "id": "concepto.sesenta.h1",
        "rol": "h1",
-       "tinta": "Sesenta",
-       "gris": "El plazo antes que el juicio",
-       "texto": "Sesenta El plazo antes que el juicio",
+       "tinta": "Sesenta.",
+       "gris": "El plazo antes que el juicio.",
+       "texto": "Sesenta. El plazo antes que el juicio.",
        "fuente": "marketing/portafolio/06-sesenta/caso.md (hechos de ficha.md §4); alt de Lucía (prototipo de A, trabajo/sesenta/), «Ficha lateral»",
        "estado": "nuevo"
       },
@@ -2644,9 +2648,9 @@
       {
        "id": "concepto.sesenta.siguiente.caso",
        "rol": "h2",
-       "tinta": "Ocelo",
-       "gris": "La carta antes que la promesa",
-       "texto": "Ocelo La carta antes que la promesa",
+       "tinta": "Ocelo.",
+       "gris": "La carta antes que la promesa.",
+       "texto": "Ocelo. La carta antes que la promesa.",
        "destino": "/v3/trabajo/ocelo/",
        "nota": "Lleva su rótulo «Concepto» a la vista.",
        "estado": "nuevo"
@@ -2693,9 +2697,9 @@
       {
        "id": "concepto.ocelo.h1",
        "rol": "h1",
-       "tinta": "Ocelo",
-       "gris": "La carta antes que la promesa",
-       "texto": "Ocelo La carta antes que la promesa",
+       "tinta": "Ocelo.",
+       "gris": "La carta antes que la promesa.",
+       "texto": "Ocelo. La carta antes que la promesa.",
        "fuente": "marketing/portafolio/05-ocelo/caso.md (hechos de ficha.md §4), «Ficha lateral»",
        "estado": "nuevo"
       },
@@ -3059,9 +3063,9 @@
       {
        "id": "concepto.ocelo.siguiente.caso",
        "rol": "h2",
-       "tinta": "Doceavo",
-       "gris": "El año en doce, con lo que vence cada mes",
-       "texto": "Doceavo El año en doce, con lo que vence cada mes",
+       "tinta": "Doceavo.",
+       "gris": "El año en doce, con lo que vence cada mes.",
+       "texto": "Doceavo. El año en doce, con lo que vence cada mes.",
        "destino": "/v3/trabajo/doceavo/",
        "nota": "Lleva su rótulo «Concepto» a la vista.",
        "estado": "nuevo"
@@ -3108,9 +3112,9 @@
       {
        "id": "concepto.doceavo.h1",
        "rol": "h1",
-       "tinta": "Doceavo",
-       "gris": "El año en doce, con lo que vence cada mes",
-       "texto": "Doceavo El año en doce, con lo que vence cada mes",
+       "tinta": "Doceavo.",
+       "gris": "El año en doce, con lo que vence cada mes.",
+       "texto": "Doceavo. El año en doce, con lo que vence cada mes.",
        "fuente": "marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII), «Ficha lateral»",
        "estado": "nuevo"
       },
@@ -3460,9 +3464,9 @@
       {
        "id": "concepto.doceavo.siguiente.caso",
        "rol": "h2",
-       "tinta": "Tonela",
-       "gris": "El color de la eslinga es su capacidad",
-       "texto": "Tonela El color de la eslinga es su capacidad",
+       "tinta": "Tonela.",
+       "gris": "El color de la eslinga es su capacidad.",
+       "texto": "Tonela. El color de la eslinga es su capacidad.",
        "destino": "/v3/trabajo/tonela/",
        "nota": "Lleva su rótulo «Concepto» a la vista.",
        "estado": "nuevo"
@@ -3509,9 +3513,9 @@
       {
        "id": "concepto.tonela.h1",
        "rol": "h1",
-       "tinta": "Tonela",
-       "gris": "El color de la eslinga es su capacidad",
-       "texto": "Tonela El color de la eslinga es su capacidad",
+       "tinta": "Tonela.",
+       "gris": "El color de la eslinga es su capacidad.",
+       "texto": "Tonela. El color de la eslinga es su capacidad.",
        "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón), «Ficha lateral»",
        "estado": "nuevo"
       },
@@ -3899,9 +3903,9 @@
       {
        "id": "concepto.tonela.siguiente.caso",
        "rol": "h2",
-       "tinta": "Bernardo Combeau",
+       "tinta": "Bernardo Combeau.",
        "gris": "Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.",
-       "texto": "Bernardo Combeau Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.",
+       "texto": "Bernardo Combeau. Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.",
        "destino": "/v3/trabajo/combeau/",
        "estado": "nuevo"
       },
@@ -4001,6 +4005,23 @@
        "estado": "cambia"
       },
       {
+       "id": "servicios.m1.s1.nombre",
+       "rol": "h2",
+       "texto": "Desarrollo web",
+       "estado": "queda",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[0].items[0].n",
+       "nivel": 3,
+       "destino": "/v3/servicios/desarrollo-web/"
+      },
+      {
+       "id": "servicios.m1.s1.precio",
+       "rol": "nota",
+       "texto": "Desde $390.000 · $690.000 · $1.190.000 + IVA",
+       "estado": "queda",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[0].items[0].p (con «Desde … + IVA», como hoy)",
+       "uso": "precio"
+      },
+      {
        "id": "servicios.m1.dw",
        "rol": "parrafo",
        "texto": "Lo diseñamos y lo programamos a medida, sin plantilla. Queda listo para que Google y la IA puedan leerlo, y antes de entregarlo le pasamos el chequeo gratis.",
@@ -4024,11 +4045,45 @@
        "estado": "queda"
       },
       {
+       "id": "servicios.m2.s1.nombre",
+       "rol": "h2",
+       "texto": "Visibilidad en IA",
+       "estado": "queda",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[1].items[0].n",
+       "nivel": 3,
+       "destino": "/v3/servicios/visibilidad-en-ia/"
+      },
+      {
+       "id": "servicios.m2.s1.precio",
+       "rol": "nota",
+       "texto": "Desde $400.000 + IVA",
+       "estado": "queda",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[1].items[0].p (con «Desde … + IVA», como hoy)",
+       "uso": "precio"
+      },
+      {
        "id": "servicios.m2.via",
        "rol": "parrafo",
        "texto": "Para que ChatGPT, Gemini y Perplexity puedan citarte cuando preguntan por tu rubro.",
        "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[1].items[0].d",
        "estado": "queda"
+      },
+      {
+       "id": "servicios.m2.s2.nombre",
+       "rol": "h2",
+       "texto": "Auditoría SEO técnica",
+       "estado": "queda",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[1].items[1].n",
+       "nivel": 3,
+       "destino": "/v3/servicios/auditoria-seo-tecnica/"
+      },
+      {
+       "id": "servicios.m2.s2.precio",
+       "rol": "nota",
+       "texto": "Desde $490.000 · $690.000 con Visibilidad en IA + IVA",
+       "estado": "queda",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[1].items[1].p (con «Desde … + IVA», como hoy)",
+       "uso": "precio"
       },
       {
        "id": "servicios.m2.aud",
@@ -4047,6 +4102,23 @@
        "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[2].momento",
        "por_que": "Lectura fría, vuelta 2: el gerente lo leyó como traducción y la dueña de la clínica no lo entendió.",
        "estado": "cambia"
+      },
+      {
+       "id": "servicios.m3.s1.nombre",
+       "rol": "h2",
+       "texto": "Acompañamiento mensual",
+       "estado": "queda",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[2].items[0].n",
+       "nivel": 3,
+       "destino": "/v3/servicios/acompanamiento-mensual/"
+      },
+      {
+       "id": "servicios.m3.s1.precio",
+       "rol": "nota",
+       "texto": "Desde $590.000/mes · $790.000/mes Pro + IVA",
+       "estado": "queda",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[2].items[0].p (con «Desde … + IVA», como hoy)",
+       "uso": "precio"
       },
       {
        "id": "servicios.m3.aco",
@@ -4169,8 +4241,8 @@
        "id": "dw.h1",
        "rol": "h1",
        "tinta": "Desarrollo web.",
-       "gris": "Diseñamos y programamos tu sitio, y Google y la IA pueden leerlo.",
-       "texto": "Desarrollo web. Diseñamos y programamos tu sitio, y Google y la IA pueden leerlo.",
+       "gris": "Diseñamos y programamos sitios listos para que Google y la IA los lean.",
+       "texto": "Desarrollo web. Diseñamos y programamos sitios listos para que Google y la IA los lean.",
        "estado": "cambia",
        "origen": "texto-paso2.json «dw.h1»",
        "antes": "Desarrollo web. Diseñamos y programamos tu sitio, y lo dejamos listo para que Google y la IA puedan leerlo.",
@@ -5272,7 +5344,7 @@
       {
        "id": "nosotros.sistema.p2",
        "rol": "parrafo",
-       "texto": "Por eso parto por el sitio, que es adonde llevan las redes, la pauta y Google: lo diseño y lo programo, o reviso el que ya tienes, y lo dejo listo para que Google y la IA lo lean. Las redes y la pauta se suman cuando el sitio ya responde, y todo se mide junto.",
+       "texto": "Por eso parto por el sitio, que es adonde llega todo lo demás: lo diseño y lo programo, o reviso el que ya tienes, y lo dejo listo para que Google y la IA lo lean. Las redes y la pauta se suman cuando el sitio ya responde, y todo se mide junto.",
        "antes": "Te lo cuento porque con esa experiencia puedo hacerme cargo del eje de tu operación y poner el motor a funcionar entero, no por partes. Conectamos las piezas en un solo sistema y las medimos juntas, con el orgánico como eje, porque es lo que no se apaga cuando cortas el presupuesto.",
        "origen": "nosotros.astro",
        "por_que": "Brief §1 y §2: el estudio no es una agencia de marketing y el sitio va al centro; redes y pauta siguen en la oferta, no al frente. «El eje de tu operación», «el motor» y «el orgánico» son jerga de agencia.",
@@ -5314,7 +5386,7 @@
       {
        "id": "nosotros.como.0.d",
        "rol": "parrafo",
-       "texto": "Cuando el sitio hay que hacerlo de nuevo, lo diseño y lo programo con agentes de IA, y reviso cada fase antes de avanzar. Sin plantilla y sin WordPress.",
+       "texto": "Cuando el sitio hay que hacerlo de nuevo, lo diseño y lo programo con agentes de IA, y reviso cada fase antes de avanzar, sin plantillas ni WordPress.",
        "fuente": "desarrollo-web (texto-paso2 «dw.incluye.1», «dw.incluye.6» y «dw.faq.1.r»); nosotros.astro:85",
        "por_que": "Brief §3: Desarrollo web es la puerta del estudio, y esta lista no lo nombraba.",
        "condicion": "Igual que el título.",
