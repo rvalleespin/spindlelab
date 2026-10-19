@@ -256,7 +256,10 @@ mirando o midiendo el entregable.
 5. **¿Una interior con el lienzo claro?** (lock §20.6; el tablero lo pregunta en «Lo demás que está abierto»). Si no
    contesta, queda en **no**, como dice el tablero: Koto no lo hace, y la hoja de los planes de B sale al construir. Si
    dice que sí, se construye como desvío rotulado, va a la spec con su contraste medido y el criterio 4 lo acepta.
-   **Respuesta de Ramón:** pendiente al 18-oct, 18:15 (Chile). Cuando llegue se anota aquí, en una línea y con fecha.
+   **Respuesta de Ramón (19-oct-2026, a eso de las 09:50, Chile):** a esta no contestó y queda en **no**, por defecto (en
+   su mensaje era la 8): ninguna interior con el lienzo claro, y la hoja blanca de B se va con B. Al resto: 1,
+   **A · Archivo**; 2, **El huso**; 3, los puntajes propios **no se muestran** (por defecto: era la 6); 4, ya cerradas en
+   la compuerta 1. Textual en `e12/insumos-ramon-19oct.md`; qué cambia, en el brief, sección «Compuerta 2».
 
 Si la respuesta es «ninguna de las dos», se vuelve al lock y a la medición de Koto, no al tablero.
 
@@ -280,3 +283,4 @@ Los cuatro trabajos del paso 1 corren en paralelo. Cada rol hace commit de sus a
 |---|---|---|
 | 16-oct, 19:50 | Primera versión, con la compuerta 1 aprobada | Mauro |
 | 18-oct, 18:15 | **§2 vista 5, criterio 4, §9 y §10 (pregunta 5, nueva), por el lock §20.6; §4 y criterio 15 dicen «sobre blanco» donde decían «sobre el lienzo del juego de color», que ya no existe (Javiera midió el logo sobre blanco: no cambia su resultado).** Pedían que el lienzo de una interior pasara de negro a blanco u otro color, y Koto no lo hace en ninguna de sus 640 paradas medidas: su juego está dentro de los marcos del trabajo (lock §20.1). Ahora el lienzo es `#060606` en las cinco vistas (al menos 80 % de negro y a lo más 2 % de claro fuera de los medios, a 1440); los campos se miden en los casos con el techo del lock §20.3; la vista 5 muestra el color que trae el trabajo; y un lienzo o una hoja clara de la interfaz es un desvío que va rotulado y que queda solo si Ramón lo acepta. **Aplicado al tablero de hoy** (`e12/criterio-4/`, con la raíz del repo servida en local): A cumple (negro del 95,3 al 97,2 %, claro del 0,2 al 0,9 %, el bloque claro más grande de la interfaz es un botón de 15.224 px²); B cumple con un desvío rotulado, la hoja de los planes (en Desarrollo web, 77,3 % de negro, 17,0 % de claro y una hoja de 1.275.736 px²; en las otras cuatro vistas, del 91,0 al 97,4 % y del 0,3 al 0,9 %). **Lo que falta para cerrar del todo el defecto:** la respuesta de Ramón a la pregunta 5, que no está en el repo. Como las dos respuestas ya tienen su verificación escrita, cuando llegue se anota en una línea en §10 y el criterio no se vuelve a escribir | Acta del paso 2, defecto 4 (Javiera); lock §20.6 |
+| 19-oct, 09:55 | **§10: la respuesta de Ramón, en una línea y con fecha**, en vez de «pendiente al 18-oct». Eligió A, El huso y el hero 3; la pregunta 5 (una interior clara) y la 3 (los puntajes propios) quedaron en **no**, por defecto. Cierra lo que faltaba del defecto 4 del acta: el criterio 4 no se vuelve a escribir. Lo demás que decidió, en el brief, sección «Compuerta 2» | Ramón, compuerta 2; registra Mauro |
