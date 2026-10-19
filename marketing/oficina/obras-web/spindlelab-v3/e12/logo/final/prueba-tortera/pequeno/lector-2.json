@@ -1,0 +1,9 @@
+{
+ "pregunta": "Te muestro tres versiones (filas A, B y C) de un mismo logo chico, a 16, 14 y 12 píxeles de alto, sobre negro y sobre blanco. La imagen 1 es una pantalla común y la 2 una de alta densidad (celular). Para cada fila: ¿qué dice el logo, letra por letra, leyéndolo a tamaño real? ¿Hay alguna letra que te cueste o que leas como otra? Al final, ordena las tres filas de la que se lee mejor a la que se lee peor.",
+ "filas": {
+  "A": "s2 (punto suelto)",
+  "B": "s0 (corte estándar escalado)",
+  "C": "s1 (tortera pegada, sin punta)"
+ },
+ "respuesta": "Las tres filas dicen **SpindleLab**: S-p-i-n-d-l-e-L-a-b.\n\n**Fila A**\n- En pantalla común se lee bien a 16 y 14 px. A 12 px se aprieta un poco, pero se entiende.\n- La \"i\" tiene un punto con una especie de pincho arriba, que no es un punto redondo normal. A 12 px se ve más como una \"ı\" con una marquita.\n- La \"l\" minúscula y la \"L\" mayúscula se distinguen sobre todo por la altura. Si no supiera que es \"Spindle\", la \"l\" podría pasar por una \"I\".\n- En el celular se lee limpio en todos los tamaños.\n\n**Fila B**\n- Es la más angosta y apretada. En pantalla común, a 14 y sobre todo a 12 px, las letras se pegan (\"nd\", \"le\").\n- La \"i\" tiene el punto en forma de cruz, y a tamaño chico se lee como una \"t\" o una daga: \"Sp†ndleLab\". Esa es la letra que más me cuesta.\n- La \"l\" se confunde con \"I\" o con \"i\" por lo apretado.\n- En el celular mejora, pero a 12 px sigue siendo la más justa.\n\n**Fila C**\n- Es la más ancha y espaciada, con las letras más grandes. Se lee bien en los tres tamaños, en negro y en blanco.\n- La \"i\" tiene el mismo pincho que en A, pero se nota menos porque hay más aire alrededor.\n- No leo ninguna letra como otra. Lo único es la \"l\" vs \"I\", igual que en A.\n\n**Orden, de mejor a peor:** C, A, B.\n\nCon la imagen 1 tan chica no puedo asegurar detalles de píxel, pero el orden se mantiene en las dos imágenes."
+}

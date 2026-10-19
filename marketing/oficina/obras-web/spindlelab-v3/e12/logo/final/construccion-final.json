@@ -1,0 +1,371 @@
+{
+ "fecha": "2026-10-19",
+ "hechoPor": "Bruno (dirección creativa)",
+ "letra": {
+  "familia": "Google Sans Flex",
+  "archivo": "(archivo local: gsf.woff2)",
+  "licencia": "SIL OFL 1.1 · Copyright 2015 The Google Sans Flex Authors · fuentes/OFL-google-sans-flex.txt (https://github.com/google/fonts/blob/main/ofl/googlesansflex/OFL.txt)"
+ },
+ "unidad": "altura de mayúscula = 100 unidades del SVG",
+ "color": {
+  "blanco": "#FFFFFF",
+  "tinta": "#060606"
+ },
+ "cortes": {
+  "grande": {
+   "usar": "desde 40 px de alto",
+   "instancia": {
+    "GRAD": 0,
+    "ROND": 0,
+    "wdth": 100,
+    "opsz": 24,
+    "wght": 600
+   },
+   "tortera": {
+    "forma": "disco",
+    "ancho": 3.2,
+    "alto": 1.55,
+    "canto": 0.42,
+    "filete": 0.12,
+    "lleno": 1.08,
+    "sobre_x": 0.1,
+    "punta": 0.8,
+    "punta_forma": "afinada",
+    "ancho_punta": 0.55
+   },
+   "ajusteAMano": {
+    "tracking": -14,
+    "pares": {
+     "eL": -16
+    }
+   },
+   "medidas": {
+    "asta": 18.5,
+    "tortera": [
+     59.2,
+     28.67
+    ],
+    "tortera_en_astas": [
+     3.2,
+     1.55
+    ],
+    "borde_abajo_tortera": 73.54,
+    "centro_tortera": 87.88,
+    "arriba_tortera": 102.22,
+    "punta": 117.02,
+    "punto_original": [
+     83.88,
+     105.43
+    ],
+    "altura_x": 71.69,
+    "avance_i": 36.8
+   },
+   "asta": 18.5,
+   "ancho": 716.3,
+   "alto": 147.0,
+   "proporcion": 4.872,
+   "aAltoDe": {
+    "12": {
+     "ancho_px": 58.5,
+     "asta_px": 1.51,
+     "tortera_px": [
+      4.8,
+      2.3
+     ]
+    },
+    "16": {
+     "ancho_px": 78.0,
+     "asta_px": 2.01,
+     "tortera_px": [
+      6.4,
+      3.1
+     ]
+    },
+    "24": {
+     "ancho_px": 116.9,
+     "asta_px": 3.02,
+     "tortera_px": [
+      9.7,
+      4.7
+     ]
+    },
+    "40": {
+     "ancho_px": 194.9,
+     "asta_px": 5.03,
+     "tortera_px": [
+      16.1,
+      7.8
+     ]
+    },
+    "120": {
+     "ancho_px": 584.7,
+     "asta_px": 15.1,
+     "tortera_px": [
+      48.3,
+      23.4
+     ]
+    }
+   },
+   "aireTorteraContra": {
+    "p": 16.72,
+    "n": 5.87
+   },
+   "aireEnAstas": {
+    "p": 0.9,
+    "n": 0.32
+   },
+   "contornos": {
+    "tramosLetraInstanciada": 172,
+    "deLargoCero": 56,
+    "tramosLogo": 129,
+    "deLargoCeroEnElLogo": 0
+   },
+   "archivos": [
+    "logo-grande-blanco.svg",
+    "logo-grande-negro.svg"
+   ]
+  },
+  "menu": {
+   "usar": "de 18 a 39 px de alto",
+   "instancia": {
+    "GRAD": 0,
+    "ROND": 0,
+    "wdth": 100,
+    "opsz": 24,
+    "wght": 600
+   },
+   "tortera": {
+    "forma": "elipse",
+    "ancho": 3.2,
+    "alto": 1.55,
+    "canto": 0.42,
+    "filete": 0,
+    "lleno": 1.08,
+    "sobre_x": 0.1,
+    "punta": 0.8,
+    "punta_forma": "afinada",
+    "ancho_punta": 0.55
+   },
+   "ajusteAMano": {
+    "tracking": -14,
+    "pares": {
+     "eL": -16
+    }
+   },
+   "medidas": {
+    "asta": 18.5,
+    "tortera": [
+     59.2,
+     28.67
+    ],
+    "tortera_en_astas": [
+     3.2,
+     1.55
+    ],
+    "borde_abajo_tortera": 73.54,
+    "centro_tortera": 87.88,
+    "arriba_tortera": 102.22,
+    "punta": 117.02,
+    "punto_original": [
+     83.88,
+     105.43
+    ],
+    "altura_x": 71.69,
+    "avance_i": 36.8
+   },
+   "asta": 18.5,
+   "ancho": 716.3,
+   "alto": 147.0,
+   "proporcion": 4.872,
+   "aAltoDe": {
+    "12": {
+     "ancho_px": 58.5,
+     "asta_px": 1.51,
+     "tortera_px": [
+      4.8,
+      2.3
+     ]
+    },
+    "16": {
+     "ancho_px": 78.0,
+     "asta_px": 2.01,
+     "tortera_px": [
+      6.4,
+      3.1
+     ]
+    },
+    "24": {
+     "ancho_px": 116.9,
+     "asta_px": 3.02,
+     "tortera_px": [
+      9.7,
+      4.7
+     ]
+    },
+    "40": {
+     "ancho_px": 194.9,
+     "asta_px": 5.03,
+     "tortera_px": [
+      16.1,
+      7.8
+     ]
+    },
+    "120": {
+     "ancho_px": 584.7,
+     "asta_px": 15.1,
+     "tortera_px": [
+      48.3,
+      23.4
+     ]
+    }
+   },
+   "aireTorteraContra": {
+    "p": 18.24,
+    "n": 6.99
+   },
+   "aireEnAstas": {
+    "p": 0.99,
+    "n": 0.38
+   },
+   "contornos": {
+    "tramosLetraInstanciada": 172,
+    "deLargoCero": 56,
+    "tramosLogo": 120,
+    "deLargoCeroEnElLogo": 0
+   },
+   "archivos": [
+    "logo-menu-blanco.svg",
+    "logo-menu-negro.svg"
+   ]
+  },
+  "pequeno": {
+   "usar": "de 12 a 17 px de alto",
+   "instancia": {
+    "GRAD": 0,
+    "ROND": 0,
+    "wdth": 100,
+    "opsz": 12,
+    "wght": 620
+   },
+   "tortera": {
+    "forma": "elipse",
+    "ancho": 2.5,
+    "alto": 1.55,
+    "lleno": 1.04,
+    "sobre_x": 0.12,
+    "punta": 0
+   },
+   "ajusteAMano": {
+    "tracking": 8,
+    "pares": {
+     "eL": -10,
+     "pi": 4,
+     "in": 4
+    }
+   },
+   "medidas": {
+    "asta": 19.61,
+    "tortera": [
+     49.04,
+     30.4
+    ],
+    "tortera_en_astas": [
+     2.5,
+     1.55
+    ],
+    "borde_abajo_tortera": 76.09,
+    "centro_tortera": 91.29,
+    "arriba_tortera": 106.49,
+    "punta": 106.49,
+    "punto_original": [
+     86.4,
+     109.21
+    ],
+    "altura_x": 73.74,
+    "avance_i": 40.92
+   },
+   "asta": 19.61,
+   "ancho": 799.9,
+   "alto": 137.0,
+   "proporcion": 5.838,
+   "aAltoDe": {
+    "12": {
+     "ancho_px": 70.1,
+     "asta_px": 1.72,
+     "tortera_px": [
+      4.3,
+      2.7
+     ]
+    },
+    "16": {
+     "ancho_px": 93.4,
+     "asta_px": 2.29,
+     "tortera_px": [
+      5.7,
+      3.6
+     ]
+    },
+    "24": {
+     "ancho_px": 140.1,
+     "asta_px": 3.44,
+     "tortera_px": [
+      8.6,
+      5.3
+     ]
+    },
+    "40": {
+     "ancho_px": 233.5,
+     "asta_px": 5.73,
+     "tortera_px": [
+      14.3,
+      8.9
+     ]
+    },
+    "120": {
+     "ancho_px": 700.6,
+     "asta_px": 17.18,
+     "tortera_px": [
+      43.0,
+      26.6
+     ]
+    }
+   },
+   "aireTorteraContra": {
+    "p": 26.9,
+    "n": 14.4
+   },
+   "aireEnAstas": {
+    "p": 1.37,
+    "n": 0.73
+   },
+   "contornos": {
+    "tramosLetraInstanciada": 172,
+    "deLargoCero": 55,
+    "tramosLogo": 117,
+    "deLargoCeroEnElLogo": 0
+   },
+   "archivos": [
+    "logo-pequeno-blanco.svg",
+    "logo-pequeno-negro.svg"
+   ]
+  }
+ },
+ "signo": {
+  "archivos": [
+   "signo-blanco.svg",
+   "signo-negro.svg"
+  ],
+  "ancho": 59.2,
+  "alto": 117.0,
+  "dibujo": "el huso del corte grande, solo"
+ },
+ "favicon": {
+  "archivos": [
+   "favicon.svg",
+   "favicon-16.png"
+  ],
+  "reticula": 32,
+  "dibujo32": "cara de la tortera 20 × 8 (superelipse), filete de 2, canto que asoma 2, vara de 4 × 22, punta redonda que asoma 4 sobre la cara; fondo #060606",
+  "dibujo16": "a mano, píxel a píxel (FAVICON_16): cara de 10 × 4 px, filete de 1 px, canto de 8 × 1 px, vara de 2 px, punta de 2 × 2 px"
+ }
+}

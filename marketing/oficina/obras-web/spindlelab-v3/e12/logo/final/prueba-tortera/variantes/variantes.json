@@ -1,0 +1,654 @@
+{
+ "v0-camino": {
+  "parametros": {
+   "forma": "elipse",
+   "ancho": 2.9,
+   "alto": 1.7,
+   "sobre_x": -0.425,
+   "punta": 0.35,
+   "punta_forma": "recta",
+   "ancho_punta": 1.0
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    53.65,
+    31.45
+   ],
+   "tortera_en_astas": [
+    2.9,
+    1.7
+   ],
+   "borde_abajo_tortera": 63.83,
+   "centro_tortera": 79.56,
+   "arriba_tortera": 95.28,
+   "punta": 101.76,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 718.1,
+   "alto": 132.3
+  }
+ },
+ "v1-lente": {
+  "parametros": {
+   "forma": "lente",
+   "ancho": 3.4,
+   "alto": 1.15,
+   "sobre_x": 0.15,
+   "punta": 0.95,
+   "punta_forma": "afinada",
+   "ancho_punta": 0.5
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    62.9,
+    21.27
+   ],
+   "tortera_en_astas": [
+    3.4,
+    1.15
+   ],
+   "borde_abajo_tortera": 74.47,
+   "centro_tortera": 85.11,
+   "arriba_tortera": 95.74,
+   "punta": 113.32,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 143.3
+  }
+ },
+ "v2-disco": {
+  "parametros": {
+   "forma": "disco",
+   "ancho": 3.2,
+   "alto": 1.55,
+   "canto": 0.42,
+   "filete": 0.12,
+   "lleno": 1.08,
+   "sobre_x": 0.1,
+   "punta": 0.8,
+   "punta_forma": "afinada",
+   "ancho_punta": 0.55
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    59.2,
+    28.67
+   ],
+   "tortera_en_astas": [
+    3.2,
+    1.55
+   ],
+   "borde_abajo_tortera": 73.54,
+   "centro_tortera": 87.88,
+   "arriba_tortera": 102.22,
+   "punta": 117.02,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 147.0
+  }
+ },
+ "v3-lente-recta": {
+  "parametros": {
+   "forma": "lente",
+   "ancho": 3.2,
+   "alto": 1.25,
+   "sobre_x": 0.1,
+   "punta": 0.75,
+   "punta_forma": "recta",
+   "ancho_punta": 1.0
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    59.2,
+    23.12
+   ],
+   "tortera_en_astas": [
+    3.2,
+    1.25
+   ],
+   "borde_abajo_tortera": 73.54,
+   "centro_tortera": 85.11,
+   "arriba_tortera": 96.67,
+   "punta": 110.54,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 140.5
+  }
+ },
+ "v4-plana": {
+  "parametros": {
+   "forma": "elipse",
+   "ancho": 3.0,
+   "alto": 1.15,
+   "lleno": 1.12,
+   "sobre_x": 0.15,
+   "punta": 0.9,
+   "punta_forma": "afinada",
+   "ancho_punta": 0.55
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    55.5,
+    21.27
+   ],
+   "tortera_en_astas": [
+    3.0,
+    1.15
+   ],
+   "borde_abajo_tortera": 74.47,
+   "centro_tortera": 85.11,
+   "arriba_tortera": 95.74,
+   "punta": 112.39,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 142.4
+  }
+ },
+ "v5-cruce": {
+  "parametros": {
+   "forma": "elipse",
+   "ancho": 3.0,
+   "alto": 1.3,
+   "lleno": 1.06,
+   "sobre_x": 0.0,
+   "punta": 0.5,
+   "punta_forma": "afinada",
+   "ancho_punta": 0.8,
+   "cruce": "vara_delante",
+   "hueco": 0.13
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    55.5,
+    24.05
+   ],
+   "tortera_en_astas": [
+    3.0,
+    1.3
+   ],
+   "borde_abajo_tortera": 71.69,
+   "centro_tortera": 83.72,
+   "arriba_tortera": 95.74,
+   "punta": 104.99,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 135.0
+  }
+ },
+ "v6-canto": {
+  "parametros": {
+   "forma": "elipse",
+   "ancho": 3.0,
+   "alto": 1.3,
+   "lleno": 1.06,
+   "sobre_x": 0.0,
+   "punta": 0.5,
+   "punta_forma": "afinada",
+   "ancho_punta": 0.8,
+   "cruce": "tortera_delante",
+   "hueco": 0.13
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    55.5,
+    24.05
+   ],
+   "tortera_en_astas": [
+    3.0,
+    1.3
+   ],
+   "borde_abajo_tortera": 71.69,
+   "centro_tortera": 83.72,
+   "arriba_tortera": 95.74,
+   "punta": 104.99,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 135.0
+  }
+ },
+ "v7-refinado": {
+  "parametros": {
+   "forma": "elipse",
+   "ancho": 3.0,
+   "alto": 1.35,
+   "lleno": 1.06,
+   "sobre_x": -0.1,
+   "punta": 0.5,
+   "punta_forma": "afinada",
+   "ancho_punta": 0.8
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    55.5,
+    24.97
+   ],
+   "tortera_en_astas": [
+    3.0,
+    1.35
+   ],
+   "borde_abajo_tortera": 69.84,
+   "centro_tortera": 82.33,
+   "arriba_tortera": 94.82,
+   "punta": 104.07,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 134.1
+  }
+ },
+ "v5a-alto": {
+  "parametros": {
+   "forma": "elipse",
+   "ancho": 3.0,
+   "alto": 1.3,
+   "lleno": 1.06,
+   "sobre_x": 0.1,
+   "punta": 0.5,
+   "punta_forma": "afinada",
+   "ancho_punta": 0.8,
+   "cruce": "vara_delante",
+   "hueco": 0.13
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    55.5,
+    24.05
+   ],
+   "tortera_en_astas": [
+    3.0,
+    1.3
+   ],
+   "borde_abajo_tortera": 73.54,
+   "centro_tortera": 85.57,
+   "arriba_tortera": 97.59,
+   "punta": 106.84,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 136.8
+  }
+ },
+ "v5b-aguja": {
+  "parametros": {
+   "forma": "elipse",
+   "ancho": 3.0,
+   "alto": 1.3,
+   "lleno": 1.06,
+   "sobre_x": 0.1,
+   "punta": 0.6,
+   "punta_forma": "afinada",
+   "ancho_punta": 0.55,
+   "cruce": "vara_delante",
+   "hueco": 0.13
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    55.5,
+    24.05
+   ],
+   "tortera_en_astas": [
+    3.0,
+    1.3
+   ],
+   "borde_abajo_tortera": 73.54,
+   "centro_tortera": 85.57,
+   "arriba_tortera": 97.59,
+   "punta": 108.69,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 138.7
+  }
+ },
+ "v5c-lente": {
+  "parametros": {
+   "forma": "lente",
+   "ancho": 3.2,
+   "alto": 1.2,
+   "sobre_x": 0.1,
+   "punta": 0.5,
+   "punta_forma": "afinada",
+   "ancho_punta": 0.8,
+   "cruce": "vara_delante",
+   "hueco": 0.13
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    59.2,
+    22.2
+   ],
+   "tortera_en_astas": [
+    3.2,
+    1.2
+   ],
+   "borde_abajo_tortera": 73.54,
+   "centro_tortera": 84.64,
+   "arriba_tortera": 95.74,
+   "punta": 104.99,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 135.0
+  }
+ },
+ "v5d-plano": {
+  "parametros": {
+   "forma": "elipse",
+   "ancho": 3.1,
+   "alto": 1.1,
+   "lleno": 1.1,
+   "sobre_x": 0.15,
+   "punta": 0.5,
+   "punta_forma": "afinada",
+   "ancho_punta": 0.8,
+   "cruce": "vara_delante",
+   "hueco": 0.13
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    57.35,
+    20.35
+   ],
+   "tortera_en_astas": [
+    3.1,
+    1.1
+   ],
+   "borde_abajo_tortera": 74.47,
+   "centro_tortera": 84.64,
+   "arriba_tortera": 94.82,
+   "punta": 104.07,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 134.1
+  }
+ },
+ "v8-ojiva": {
+  "parametros": {
+   "forma": "elipse",
+   "ancho": 3.0,
+   "alto": 1.3,
+   "lleno": 1.06,
+   "sobre_x": 0.1,
+   "punta": 0.75,
+   "punta_forma": "ojiva",
+   "agudeza": 0.6,
+   "cruce": "vara_delante",
+   "hueco": 0.13
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    55.5,
+    24.05
+   ],
+   "tortera_en_astas": [
+    3.0,
+    1.3
+   ],
+   "borde_abajo_tortera": 73.54,
+   "centro_tortera": 85.57,
+   "arriba_tortera": 97.59,
+   "punta": 111.47,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 141.5
+  }
+ },
+ "v8b-ojiva-corta": {
+  "parametros": {
+   "forma": "elipse",
+   "ancho": 3.0,
+   "alto": 1.3,
+   "lleno": 1.06,
+   "sobre_x": 0.1,
+   "punta": 0.6,
+   "punta_forma": "ojiva",
+   "agudeza": 0.4,
+   "cruce": "vara_delante",
+   "hueco": 0.13
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    55.5,
+    24.05
+   ],
+   "tortera_en_astas": [
+    3.0,
+    1.3
+   ],
+   "borde_abajo_tortera": 73.54,
+   "centro_tortera": 85.57,
+   "arriba_tortera": 97.59,
+   "punta": 108.69,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 138.7
+  }
+ },
+ "v9-disco-aguja": {
+  "parametros": {
+   "forma": "disco",
+   "ancho": 3.2,
+   "alto": 1.5,
+   "canto": 0.42,
+   "filete": 0.13,
+   "lleno": 1.08,
+   "sobre_x": 0.1,
+   "punta": 0.85,
+   "punta_forma": "ojiva",
+   "agudeza": 0.7,
+   "ancho_punta": 0.5
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    59.2,
+    27.75
+   ],
+   "tortera_en_astas": [
+    3.2,
+    1.5
+   ],
+   "borde_abajo_tortera": 73.54,
+   "centro_tortera": 87.42,
+   "arriba_tortera": 101.29,
+   "punta": 117.02,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 147.0
+  }
+ },
+ "v9b-disco-aguja-corta": {
+  "parametros": {
+   "forma": "disco",
+   "ancho": 3.1,
+   "alto": 1.45,
+   "canto": 0.4,
+   "filete": 0.13,
+   "lleno": 1.08,
+   "sobre_x": 0.1,
+   "punta": 0.7,
+   "punta_forma": "ojiva",
+   "agudeza": 0.6,
+   "ancho_punta": 0.55
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    57.35,
+    26.82
+   ],
+   "tortera_en_astas": [
+    3.1,
+    1.45
+   ],
+   "borde_abajo_tortera": 73.54,
+   "centro_tortera": 86.96,
+   "arriba_tortera": 100.37,
+   "punta": 113.32,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 143.3
+  }
+ },
+ "v9c-disco-ancho": {
+  "parametros": {
+   "forma": "disco",
+   "ancho": 3.4,
+   "alto": 1.45,
+   "canto": 0.42,
+   "filete": 0.13,
+   "lleno": 1.1,
+   "sobre_x": 0.1,
+   "punta": 0.8,
+   "punta_forma": "ojiva",
+   "agudeza": 0.7,
+   "ancho_punta": 0.5
+  },
+  "medidas": {
+   "asta": 18.5,
+   "tortera": [
+    62.9,
+    26.82
+   ],
+   "tortera_en_astas": [
+    3.4,
+    1.45
+   ],
+   "borde_abajo_tortera": 73.54,
+   "centro_tortera": 86.96,
+   "arriba_tortera": 100.37,
+   "punta": 115.17,
+   "punto_original": [
+    83.88,
+    105.43
+   ],
+   "altura_x": 71.69,
+   "avance_i": 36.8
+  },
+  "palabra": {
+   "ancho": 716.3,
+   "alto": 145.2
+  }
+ }
+}
