@@ -8,7 +8,10 @@ ver «Correcciones», al final) · **actualizado el 18-oct con el encargo del pa
 `e12/acta-paso-2.md`): el índice pasa a diez entradas, las seis reales con Praxi y las cuatro piezas de concepto
 (§2.5 y §2.7); Raigal sale (§8); el permiso de Combeau es el de la compuerta 1, punto 2 (§2); sus grabaciones, en §2.8;
 la capa de señales de las rutas nuevas, en `e12/senales-trabajo.md` (Simón). Mediciones del 18-oct entre las 21:22 y
-las 21:34 UTC, sobre `01ea00f`.
+las 21:34 UTC, sobre `01ea00f`. **Actualizado el 19-oct con la compuerta 2** (Ramón, hacia las 09:50; `e12/insumos-ramon-19oct.md`):
+Combeau es caso real con página propia y se le recortan sus medidas en todo medio (§2.8, corrección, y §2.9, el
+material del caso, con los medios en `e12/casos/combeau/`); los puntajes propios no se muestran (§4.1); la capa de
+señales de todas las rutas, en `e12/senales-obra.md`. Marcas **[C2]**.
 
 **Qué es.** La fuente única de lo que el índice de Trabajo, los casos, las «etiquetas de ingredientes», la telemetría
 y los sandboxes pueden decir. **Regla:** una etiqueta o un número que no tenga fila aquí no existe. **Qué no es:**
@@ -97,7 +100,7 @@ no se pide por el chat, así que queda como hueco nombrado (§2.8).
 | Verifica y Cumple | Producto propio | 2026 | Propio; servicio de SpindleLab desde el 21-sep (`ventas/casos-de-exito/verifica-y-cumple.md`, en main) | Propio | verifica.spindlelab.cl | En producción desde el 23-sep; el dominio viejo `verificaycumple.pages.dev` redirige con 301 |
 | Chequeo de 21 señales | Herramienta propia | 2026 | Cualquiera, sobre su dominio | Propio | spindlelab.cl/diagnostico/ · `/api/chequeo` | En producción desde el 27-ago (`4bdfb62`); último cambio del código en main el 23-sep (`a453333`), igual en la rama v3 |
 | spindlelab.cl | Propio | 2026 | Propio | Propio | spindlelab.cl · v3 en vista previa noindex | Producción v2. El v3 no está publicado (`spindlelab.cl/v3/` da 404); la vista previa sirve el build de `f0d911c` (14-oct): su `/v3/trabajo/` es idéntica byte a byte a `dist/` |
-| **Praxi** (18-oct) | Propio | 2026 | Producto de Ramón: coach de hipertrofia por chat, con su propia marca (`oficina/clientes/praxi.md`) | Propio; entra por la compuerta 1, punto 3 («podría entrar praxi como caso ya que creó un sitio y una app») | praxi.coach, **que no se enlaza**: `402 DEPLOYMENT_DISABLED` el 16-oct (`inventario-praxi.md` §0.3) y el 17-oct (`tableros/e12-direcciones/datos/estado-praxi.txt`) | Fuera de línea; último cambio de código el 25-ago. Todo lo suyo, en `inventario-praxi.md` (§2.5) |
+| **Praxi** (18-oct) | Propio | 2026 | Producto de Ramón: coach de hipertrofia por chat, con su propia marca (`oficina/clientes/praxi.md`) | Propio; entra por la compuerta 1, punto 3 («podría entrar praxi como caso ya que creó un sitio y una app») | praxi.coach, **que no se enlaza**: `402 DEPLOYMENT_DISABLED` el 16-oct (`inventario-praxi.md` §0.3) y el 17-oct (`tableros/e12-direcciones/datos/estado-praxi.txt`) | Fuera de línea; último cambio de código el 25-ago (y el 19-oct, igual: 402). **[C2] Dato interno: el caso no lo cuenta** (pregunta 5b), y sigue sin enlace ni `offers` ni `url`. Todo lo suyo, en `inventario-praxi.md` (§2.5) |
 | **Tonela** (18-oct) | Concepto | 2026 | Nadie: «Tonela no existe». Proveedor de izaje inventado, Antofagasta | Propio, rotulado; reglas de `marketing/portafolio/README.md` | Ninguna: `marketing/portafolio/04-tonela/sitio/`, `noindex, nofollow` | Home e interior, identidad y recorrido en el repo (§2.7) |
 | **Ocelo** (18-oct) | Concepto | 2026 | Nadie: «Ocelo no existe». Clínica de ojos inventada, Providencia | El mismo | Ninguna: `05-ocelo/sitio/` | El mismo |
 | **Sesenta** (18-oct) | Concepto | 2026 | Nadie: «Sesenta no existe». Estudio laboral inventado, del lado del trabajador, Santiago | El mismo | Ninguna: `06-sesenta/sitio/` | El mismo. Es la pieza de la vista 4 del tablero |
@@ -113,7 +116,9 @@ que hasta el 16-oct pedía su sí por escrito (brief de obra §8.5). **No lo cam
 datos de contacto (teléfono, correo, WhatsApp, dirección: su JSON-LD los trae y el caso no los repite), sus medidas y
 su ficha de contratación de `/modelo/` (`#details`, `#booking`), lo que pagó, cualquier resultado de su negocio (no hay
 ninguno medido, §4.4), y presentar su sitio como vitrina de SEO (§0.4). La foto del antes y después es la que él ya
-publicó (`beto3.jpg`, §2.1), no una nueva.
+publicó (`beto3.jpg`, §2.1), no una nueva. **[C2] Desde el 19-oct:** Combeau es uno de los dos casos reales con página
+propia («5f ambos son casos reales»), y por defecto de la pregunta 7 se le recortan sus medidas personales (edad,
+estatura, pelo, ojos) en todo medio. Lo que se usa y lo que no, con los medios ya recortados: §2.9.
 
 ### 2.1 · Combeau, fotografía
 
@@ -303,6 +308,90 @@ WhatsApp. **Hueco nombrado:** el panel por dentro. `/admin/` pide entrar con una
 sin esa sesión no se graba, y la clave no se pide por el chat. Queda la captura de la pantalla de entrada, sin hacer clic
 (`combeau-panel-entrada-1440.png`). Para grabarlo hace falta que lo abra Bernardo, o Ramón con su cuenta (§9).
 
+**[C2] Corrección del 19-oct: las dos grabaciones de `/modelo/` sí muestran sus medidas.** «Hasta dónde baja: antes de
+sus medidas (`#details`)» es cierto de la ficha de medidas, pero bajo el retrato de portada hay una línea con su
+ciudad, su edad, su estatura, su pelo y sus ojos (cinco `span.meta-item`; su bloque va de y = 881 a 941 a 1440 × 810
+y de 604 a 673 a 390, medido hoy), y las dos grabaciones la atraviesan: a 1440 entre los 2,5 y los 4,5 s; a 390 desde el primer cuadro hasta los
+4,5 s (revisado cuadro a cuadro, 2 por segundo). **Quedan como registro del inventario y no van a ningún medio del
+sitio.** Para el caso, los medios limpios de §2.9.
+
+### 2.9 · Material para el caso Combeau en A (19-oct, compuerta 2)
+
+**Por qué.** Ramón, en la compuerta 2: «5f ambos son casos reales». Combeau tiene página propia en `/trabajo/<caso>/`,
+**un caso, dos sitios** (brief §3: «Hay material para Combeau (un caso, dos sitios)»), y por defecto de la pregunta 7
+**se le recortan sus medidas personales** (edad, estatura, pelo, ojos), que es también el defecto 21 del acta del paso
+2 aplicado a A. Todavía no tiene texto: lo escribe Clara con esta sección. Medido hoy entre las 13:09 y las 13:15 UTC
+(10:09 a 10:15 en Chile), solo con `GET` y scroll.
+**Los medios están listos en `e12/casos/combeau/medios/`**, con su registro en `e12/casos/combeau/medios.json` (origen,
+px, bytes, sha256, nota y un `alt` de partida para Clara que no menciona sus medidas) y las herramientas que los
+hicieron en `e12/casos/combeau/herramientas/`. Nada va a `spindlelab-astro/` en esta corrida.
+
+**La ruta, para la spec y las señales.** Una sola página, `/trabajo/combeau/`, con las dos partes (fotografía y modelo).
+El índice sigue con sus diez entradas (§2): las dos de Combeau abren la misma página, cada una en su parte
+(`/trabajo/combeau/#fotografia` y `#modelo`). Los prototipos de A enlazaban `/v3/trabajo/combeau-fotografia/` y
+`/v3/trabajo/combeau-modelo/`, y `senales-trabajo.md` les daba una fila a cada una: lo supera `senales-obra.md`. Si la
+spec decide dos páginas, se cambia aquí en una línea.
+
+#### Lo que se puede usar
+
+| Medio (`casos/combeau/medios/`) | Qué muestra | Para qué en A | De dónde sale |
+|---|---|---|---|
+| `combeau-fotografia-recorrido-1440.webm` · `.mp4` · `-poster.webp` | La portada de su sitio de fotografía de punta a punta: el hero, «Retratos» y «Proyectos». 10 s, 1440 × 810; 359 kB en VP9, 558 kB en H.264 | El medio principal de la parte «fotografía» | Grabación del inventario del 18-oct (§2.8), recodificada; 0 enlaces de contacto |
+| `combeau-fotografia-recorrido-390.*` | Lo mismo en un teléfono. 10 s, 780 × 1688 | El mismo, a 390 | Ídem |
+| `combeau-modelo-recorrido-1440.webm` · `.mp4` · `-poster.webp` | Su book de modelo **desde que el retrato de portada ya salió por arriba** hasta antes de «Reel»: el book, su texto de presentación, «Selected Work» y «Commercials». 8 s, 1440 × 810; 590 kB en VP9, 917 kB en H.264 | El medio principal de la parte «modelo» | **Grabado de nuevo hoy** del sitio vivo (`grabar-modelo-sin-medidas.mjs`): en los 240 cuadros de cada ancho, el DOM confirma que la línea de medidas, las polaroids, `#details`, `#compcard`, `#booking` y todo enlace de correo, teléfono o WhatsApp quedan fuera (`crudo/grabacion-modelo-sin-medidas.json`) |
+| `combeau-modelo-recorrido-390.*` | Lo mismo en un teléfono. 8 s, 780 × 1688 | El mismo, a 390 | Ídem |
+| `combeau-fotografia-169.webp` · `combeau-fotografia-45.webp` | La primera pantalla de su sitio de fotografía, a 1440 (16:9, 1600 × 900) y a 390 (4:5, 780 × 975) | Portadas del caso y de la entrada del índice | `capturar-portadas.mjs`, dpr 2, hoy |
+| `combeau-modelo-169.webp` | La primera pantalla del book, a 1440 (16:9): él de traje, apoyado en una columna. A ese ancho la línea de medidas cae bajo el pliegue | Portada de la parte «modelo» | Ídem; comprobado con el DOM (línea en y = 916, recorte hasta 900) |
+| `combeau-modelo-45.webp` | El book en un teléfono, 4:5, **cortado sobre la línea de medidas** (la captura termina 8 px antes y el 4:5 corta más arriba aún), como el de A en `proto/a/medios/combeau-modelo-45.webp` | Entrada del índice y caso a 390 | Ídem |
+| `combeau-panel-entrada-169.webp` | La puerta del panel: su nombre y «Iniciar sesión con GitHub» | Junto al ingrediente «login con GitHub» | Captura del inventario del 18-oct, sin hacer clic |
+| `combeau-panel-encuadre-169.webp` | **El panel por dentro:** editando una serie de retratos, a la izquierda el punto que marca qué parte de la foto no se corta, a la derecha la página como va a quedar | Junto a «él carga sus series solo» | Captura del **3-sep-2026** de la revisión del panel (`encargos-otras-sesiones/revision-panel-admin-bernardo-capturas/11-…`): una copia de su repo corriendo en local con el backend local de Decap y **sus datos de ese día**, no su sesión (método en ese documento, «Cómo se hizo esta revisión»). Recortada arriba para que no entre el campo con el nombre de pila de la persona retratada. **Es una versión anterior a la de hoy:** después ese encuadre pasó a un botón «Editar foto (encuadre y zoom)» y se unificó con el del book (Actualizaciones 7 y 17); todo eso está en producción (`:586-588`). El pie lo dice |
+| `combeau-panel-colecciones-169.webp` | El panel por dentro: la lista de lo que él edita (portada, sobre mí, estudio, servicios, contacto, retratos, proyectos) | Ídem | Captura del 3-sep (`08-…`), mismo método y la misma nota |
+| `combeau-foto-servida-828.webp` | La foto de la portada como la entrega su sitio: 828 × 828, WebP, **94.576 bytes, sin recodificar** (los mismos que el 16-oct) | El sandbox «la foto que sube y la que ve su visitante» (§6.1) | `GET` a su Netlify Image CDN, hoy 13:14 UTC. **El original no se copia, se enlaza:** `bernardocombeau.cl/uploads/beto3.jpg`, 804.697 bytes (`HEAD` de hoy, mismo `etag` que el 16-oct) |
+| `combeau-fotografia-cinta.*` · `combeau-modelo-cinta.*` | Dos tramos de 2 s, 1280 × 720, uno por parte | **Para rehacer la cinta de la home de A**, que ahora es la primera sección después de la portada | El de modelo, de la grabación limpia (cuadros 18 a 77); el de fotografía, de la del inventario (1,0 a 3,0 s) |
+
+**Fechas con fila** (para la ficha del caso; ninguna inventada):
+
+| Hecho | Fecha | Fuente |
+|---|---|---|
+| Aprobó el sitio en reunión y compró su dominio | 20-jul-2026 | Repo: `ventas/proyectos-en-curso.md:16` |
+| En producción en `bernardocombeau.cl` | 24-jul-2026 | §2 (estado); `senales-trabajo.md` (`datePublished` del lanzamiento) |
+| El panel, revisado y mejorado (encuadre de fotos, vistas previas, versión de teléfono) | 3-sep-2026 | Repo: `encargos-otras-sesiones/revision-panel-admin-bernardo.md` |
+| Datos estructurados: de cero a `Person` + `LocalBusiness` | antes del 3-sep → servido el 16-oct | §4.3 |
+| El sitio cambió de casa a Netlify | 8-sep-2026 | §2.1 (`cierre-oauth-…:20`) |
+| Login con GitHub en el dominio, verificado | 23-sep-2026 | §2.1 |
+| **Él usa el panel solo** | dicho después de la migración: «Bernardo ya volvió a usar el panel tras la migración: su campaña "Habitat" y fotos nuevas están en vivo, confirmado por HTTP directo» | Dicho: `revision-panel-admin-bernardo.md:589-590`; y «creó series de prueba él mismo» (`proyectos-en-curso.md:16`) |
+
+**Ingredientes con fila** (los de §2.1 y §2.2, sin cambios; lo que le hacen a él o a quien lo visita va primero):
+él carga sus series solo, desde un panel (**Decap CMS**); entra al panel con su cuenta de GitHub (**login con
+GitHub**); sube la foto tal cual y el sitio la entrega recortada y liviana, 805 kB → 95 kB en una foto de la portada
+(**Netlify Image CDN**); una máquina puede leer quién es y a qué se dedica (**datos estructurados**); el book no baja
+el video ni el reel hasta que hacen falta, 0 kB de video en la carga inicial (**video con carga diferida**); las
+páginas llegan armadas (**Astro**). **Uno nuevo, con fila desde hoy:** marca qué parte de cada foto no se corta en los
+recuadros de la portada y las grillas (**encuadre de fotos en el panel**, un widget hecho para su panel el 3-sep y
+unificado después con el del book; Repo: `revision-panel-admin-bernardo.md`, Actualizaciones 3, 7 y 17; en
+producción, `:586-588`; **no medido hoy**: el panel por dentro no se pudo abrir, y lo que se ve es la captura del
+3-sep). El resultado del caso: **«Sin métrica»** (§4.4): no hay un dato de su negocio.
+
+#### Lo que no se usa, y dónde estaba
+
+| Qué | Por qué | Dónde aparecía, y qué se hizo |
+|---|---|---|
+| **La línea de medidas bajo su retrato** (ciudad, edad, estatura, pelo y ojos) | Pregunta 7 de la compuerta 2, por defecto; defecto 21 del acta | **Recortada en todo medio del caso** (arriba). Aparecía en: las dos grabaciones de `/modelo/` del inventario (§2.8, se quedan como registro); **la cinta de la home de A** (`proto/a/medios/cinta.webm` y `.mp4`, tramo «Combeau, modelo», de los 12 a los 14 s: baja por la captura completa y la línea entra al final, comprobado hoy en el cuadro de los 13,9 s), que **no se reutiliza tal cual en la construcción**: se rehace con `combeau-modelo-cinta.*`; y la de B (`proto/b/medios/v-combeau-modelo.webp`), que queda como historia con B. El prototipo de A no se tocó: es lo que vio Ramón en la compuerta |
+| **Su ficha de contratación de `/modelo/`**: `#details` (sus medidas completas), `#compcard` y `#booking` (el pie con su correo y su WhatsApp) | Inventario §2 y §7 | Ningún medio llega ahí: la grabación limpia se detiene antes de «Reel», y cada cuadro lo comprueba |
+| **Las polaroids** | No son medidas, pero son fotos de casting del cuerpo, alguna sin camisa, que el caso no necesita | Los dos recorridos de `/modelo/` se detienen antes |
+| **La sección «Reel» de `/modelo/`** | No tiene estilos (§2.8): el título pegado al borde y el video a 300 × 150 | Ídem |
+| Su teléfono, correo, WhatsApp y dirección; lo que pagó; cualquier resultado de su negocio; su sitio como vitrina de SEO; el 76 de su portada como logro nuestro; «bilingüe» para el book | §2 y §7 | Ningún medio los muestra. En el menú de `/modelo/` se leen las palabras «Details», «Comp card» y «Booking»: son rótulos de enlace, no datos, y se quedan |
+| La biblioteca de medios de su panel (capturas `05` y `09` del 3-sep) | Muestra nombres de archivo de terceros y el defecto del damero ya corregido | No se copió |
+| El campo «Descripción para lectores de pantalla» de la captura `11` | Trae el nombre de pila de la persona retratada | Recortado |
+
+**Para el `alt` y el texto (Clara):** ningún `alt` menciona sus medidas, ni «sus medidas debajo» (el defecto 21 lo
+encontró en B). Los `alt` de partida, en `medios.json`. Las capturas del panel llevan pie con su fecha (3-sep) y su
+método. El texto de ayuda del panel que se lee en `combeau-panel-encuadre-169.webp` trae rayas («— lo de afuera se
+recorta»): es el panel que se le entregó, no texto del sitio, y no se retoca.
+
+**Huecos que quedan nombrados:** el panel en producción por dentro (pide la sesión de GitHub de Bernardo o de Ramón,
+§2.8); su texto (Clara); un resultado de su negocio («Sin métrica»).
+
 ---
 
 ## 3 · El stack de cada sitio en vivo, de un vistazo
@@ -327,11 +416,11 @@ sin esa sesión no se graba, y la clave no se pide por el chat. Queda la captura
 
 | Sitio | Instrumento | Valor | Fecha | Crudo | Publicable |
 |---|---|---|---|---|---|
-| verifica.spindlelab.cl | Chequeo de visibilidad (el mismo dos veces) | **54 → 94** | 14-oct 22:29Z → 16-oct 17:51Z | `e9/piezas/crudo/2026-10-14/verifica.spindlelab.cl/chequeo-ia.json` · `chequeo-verifica.spindlelab.cl.json` | Decide Ramón |
-| spindlelab.cl | Chequeo de visibilidad | **85** (igual que el 14-oct) | 16-oct 17:51Z | `chequeo-spindlelab.cl.json` | Decide Ramón |
+| verifica.spindlelab.cl | Chequeo de visibilidad (el mismo dos veces) | **54 → 94** | 14-oct 22:29Z → 16-oct 17:51Z | `e9/piezas/crudo/2026-10-14/verifica.spindlelab.cl/chequeo-ia.json` · `chequeo-verifica.spindlelab.cl.json` | ~~Decide Ramón~~ **[C2] No se muestra** (compuerta 2, pregunta 6, por defecto); sigue medido aquí |
+| spindlelab.cl | Chequeo de visibilidad | **85** (igual que el 14-oct) | 16-oct 17:51Z | `chequeo-spindlelab.cl.json` | ~~Decide Ramón~~ **[C2] No se muestra** (ídem) |
 | bernardocombeau.cl | Chequeo de visibilidad | **76** | 16-oct 17:51Z | `chequeo-bernardocombeau.cl.json` | Con fecha, por el permiso de la compuerta 1 (§2); **no como logro nuestro**: mide su portada, que tiene defectos abiertos (§0.4 y §4.3), y no hay un antes con el que compararlo (§7) |
-| spindlelab.cl | Verifica y Cumple | **36 → 73 → 100** | 9-sep y 21-sep: *dicho* (caso de éxito, `9ebf384`; post del 21-sep), sin crudo · 100: 14-oct y 16-oct, con crudo | `vyc-chequeo-spindlelab.cl.json` | Solo en Trabajo (E9), diciendo que el 23-sep cambió la regla y que el 100 es sobre 14 de 20 puntos de peso |
-| verifica.spindlelab.cl | Verifica y Cumple | **100** sobre 18 de 24 puntos de peso | 16-oct 17:52Z | `vyc-chequeo-verifica.spindlelab.cl.json` | Decide Ramón; con el «18 de 24» al lado |
+| spindlelab.cl | Verifica y Cumple | **36 → 73 → 100** | 9-sep y 21-sep: *dicho* (caso de éxito, `9ebf384`; post del 21-sep), sin crudo · 100: 14-oct y 16-oct, con crudo | `vyc-chequeo-spindlelab.cl.json` | Solo en Trabajo (E9), diciendo que el 23-sep cambió la regla y que el 100 es sobre 14 de 20 puntos de peso  **[C2] En E12, no se muestra** (compuerta 2, pregunta 6: «spindlelab.cl 36 → 73», por defecto) |
+| verifica.spindlelab.cl | Verifica y Cumple | **100** sobre 18 de 24 puntos de peso | 16-oct 17:52Z | `vyc-chequeo-verifica.spindlelab.cl.json` | ~~Decide Ramón; con el «18 de 24» al lado~~ **[C2] No se muestra** (es puntaje propio; pregunta 6, por defecto) |
 
 **Lo que dice el 54 → 94, señal por señal.** El 14-oct faltaban nueve: entidad, entidad con dirección, perfiles externos,
 persona detrás, descripción, llms.txt, preguntas frecuentes, sitemap y fecha. Hoy falta una: los tres perfiles externos.
@@ -483,8 +572,9 @@ pregunta, fecha y contenido suficiente en la portada.
 ## 9 · Lo que queda para otros
 
 1. **Ramón:** el permiso de Combeau quedó resuelto por él en la compuerta 1, punto 2 (§2; *hasta el 18-oct este punto
-   le pedía el sí por escrito de Bernardo*). Queda decidir si se muestran los puntajes propios (85; 54 → 94), que es
-   la pregunta 3 de la compuerta 2 (`encargo-paso-2.md` §10). Si el caso necesita el panel por dentro, abrirlo con una
+   le pedía el sí por escrito de Bernardo*). ~~Queda decidir si se muestran los puntajes propios (85; 54 → 94), que es
+   la pregunta 3 de la compuerta 2 (`encargo-paso-2.md` §10).~~ **[C2] Decidido por defecto el 19-oct: no se
+   muestran** (pregunta 6 de la compuerta 2, sin respuesta; §4.1). Si el caso necesita el panel por dentro, abrirlo con una
    cuenta de GitHub con acceso al repo de Combeau (la suya, dueña de `rvalleespin/bernardo-combeau`, o la de Bernardo)
    para grabarlo (§2.8). Lo de Praxi, en `inventario-praxi.md` §10.
 2. **Troncal:** la ficha de Bernardo (`oficina/clientes/bernardo-combeau.md:15`, «NO autorizado») y el pipeline
@@ -506,6 +596,11 @@ pregunta, fecha y contenido suficiente en la portada.
    (comprobado hoy); sobre uno posterior ya no da el mismo archivo, aun antes de este cambio, porque sus fuentes
    cambiaron después de la compuerta. Con el JSON de hoy corre sin error y su sección 5 muestra las diez entradas en
    vez de las seis de entonces.
+9. **Construcción E12** (19-oct): la cinta de la home de A (`proto/a/medios/cinta.*`) muestra la línea de medidas de
+   Combeau en su tramo «Combeau, modelo» (12 a 14 s): al rehacerla, ese tramo sale de `casos/combeau/medios/combeau-modelo-cinta.*`
+   (§2.9). Ningún medio de `inventario/grabaciones/combeau-modelo-*` va al sitio. La capa de señales de todas las rutas
+   de la obra, con `/trabajo/combeau/` como una sola página, está en `e12/senales-obra.md` y supera a
+   `senales-trabajo.md` donde choquen.
 
 ## Crudos
 
@@ -575,3 +670,14 @@ hacia las 21:08 UTC) se cayó en `/modelo/` a 390, porque esa versión esperaba 
 panel. Se puso tope a la espera y se volvió a correr completa (§2.8): sus archivos reemplazaron a los anteriores y son
 los que tienen fila en `grabaciones-combeau.json`. La medición de los conceptos se había hecho sobre `51a0735`; se rehizo sobre `01ea00f`
 porque entremedio cambiaron dos hojas de estilo (Ocelo y Sesenta, `9122486`).
+
+**19-oct · compuerta 2** (Ramón, hacia las 09:50; leída como la dejó el orquestador con Ramón).
+
+| Qué | Antes | Ahora |
+|---|---|---|
+| Caso Combeau | Una entrada del índice sin página definida ni texto; sus medios, en el inventario y en los prototipos | Caso real con página propia (pregunta 5f), una sola para los dos sitios: §2.9, con lo que se usa y lo que no, y los medios recortados en `e12/casos/combeau/` |
+| Grabaciones de `/modelo/` (§2.8) | «Se detiene antes de sus medidas (`#details`)» | Sí muestran la línea de medidas bajo el retrato (1440: 2,5 a 4,5 s; 390: 0 a 4,5 s): se quedan como registro y no van al sitio. Grabado de nuevo un tramo limpio, con la comprobación por cuadro |
+| La cinta de la home de A | (no se había revisado) | Muestra la línea en su tramo «Combeau, modelo» (12 a 14 s): se rehace en la construcción con `combeau-modelo-cinta.*` (§9, punto 9) |
+| Puntajes propios (§4.1, §9.1) | «Decide Ramón» | No se muestran (pregunta 6, por defecto); siguen medidos aquí |
+| Praxi (§2) | «Fuera de línea» en la columna de estado | Igual el 19-oct, pero dato interno: el caso no lo cuenta (pregunta 5b) |
+| Un ingrediente nuevo de Combeau | — | «Encuadre de fotos en el panel», con su fila en §2.9 (repo de otra sesión, 3-sep; en producción según ese documento; no medido hoy) |

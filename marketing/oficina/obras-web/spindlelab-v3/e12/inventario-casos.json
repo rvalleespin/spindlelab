@@ -662,7 +662,8 @@
      ],
      "publicable": "decide Ramón (e11/material.md §6: los puntajes del chequeo propio esperan su OK)",
      "nota": "Es el único antes y después del repo medido con el mismo instrumento y con los dos crudos guardados. El commit 7696d63 nombra un 62 intermedio y el puntaje de un competidor: sin crudo, no se usan.",
-     "desglose": "Señales que pasaron a ok: entidad 8, entidad con dirección 5, persona detrás 5, descripción 4, preguntas frecuentes 6, fecha 4 (schema, 7696d63) = 32; llms.txt 4 y sitemap 4 (9391a0b) = 8. Total 40: 54 + 40 = 94. Sigue pendiente sameAs (6)."
+     "desglose": "Señales que pasaron a ok: entidad 8, entidad con dirección 5, persona detrás 5, descripción 4, preguntas frecuentes 6, fecha 4 (schema, 7696d63) = 32; llms.txt 4 y sitemap 4 (9391a0b) = 8. Total 40: 54 + 40 = 94. Sigue pendiente sameAs (6).",
+     "publicableC2": "no se muestra (compuerta 2, pregunta 6, por defecto, 19-oct); sigue medido aquí"
     },
     {
      "nombre": "Chequeo de Verifica y Cumple sobre sí mismo",
@@ -671,7 +672,8 @@
      "fecha": "2026-10-16T17:52:43Z",
      "metodo": "GET https://verifica.spindlelab.cl/api/chequeo?dominio=verifica.spindlelab.cl",
      "crudo": "e12/inventario/crudo/vyc-chequeo-verifica.spindlelab.cl.json",
-     "publicable": "decide Ramón; si sale, con el «18 de 24» al lado"
+     "publicable": "decide Ramón; si sale, con el «18 de 24» al lado",
+     "publicableC2": "no se muestra (compuerta 2, pregunta 6, por defecto, 19-oct); sigue medido aquí"
     },
     {
      "nombre": "Carga y peso de la portada (laboratorio)",
@@ -900,7 +902,8 @@
       "e12/inventario/crudo/chequeo-spindlelab.cl.json",
       "e9/piezas/crudo/2026-10-14/spindlelab.cl/chequeo-ia.json"
      ],
-     "publicable": "decide Ramón (e11/material.md §6)"
+     "publicable": "decide Ramón (e11/material.md §6)",
+     "publicableC2": "no se muestra (compuerta 2, pregunta 6, por defecto, 19-oct); sigue medido aquí"
     },
     {
      "nombre": "Verifica y Cumple sobre spindlelab.cl",
@@ -2313,6 +2316,11 @@
    "origen": "e12/acta-paso-2.md, defecto 3 (Javiera, vuelta 1): el inventario no se había actualizado con el encargo del paso 2 §5",
    "que": "Seis entradas con Raigal y sin Praxi; permiso de Combeau «verbal» que no cubría mediciones ni grabaciones mientras A y B las muestran; sin filas de los cuatro conceptos; sin grabaciones de Combeau; sin la nota de señales.",
    "como": "Diez entradas en proyectos (Praxi y los cuatro conceptos dentro, Raigal a fuera con su registro anterior); permiso «Ramón, 16-oct: no se necesita más permiso» con lo que cubre y lo que queda fuera igual; ingredientes de los conceptos con su evidencia (conceptos-repo.json, 01ea00f); grabacionesCombeau; senales (e12/senales-trabajo.md); indice; cuatro crudos nuevos. Las mediciones del 16-oct no cambiaron."
+  },
+  {
+   "fecha": "2026-10-19",
+   "que": "Compuerta 2: caso Combeau en A (§2.9) con medios recortados; corrección de las grabaciones de /modelo/ (muestran la línea de medidas); la cinta de A la muestra en 12-14 s; puntajes propios no se muestran (publicableC2); Praxi «fuera de línea» pasa a dato interno",
+   "origen": "Ramón, compuerta 2; Diego, con Simón"
   }
  ],
  "indice": {
@@ -2370,7 +2378,16 @@
    "nota": "Pantalla de entrada del panel (Decap CMS). No se hizo clic en el botón de entrada: grabar el panel por dentro pide la sesión de GitHub de Bernardo, que esta sesión no tiene y no se pide por el chat.",
    "hueco": "El panel por dentro: /admin/ pide entrar con una cuenta de GitHub con acceso al repo de Combeau; esta sesión no tiene ninguna y no se pide por el chat. Queda la pantalla de entrada, sin clic."
   },
-  "corridaInterrumpida": "Dos corridas anteriores del 18-oct (hacia las 21:08 y a las 21:15 UTC) se cayeron en /modelo/ a 390 y con un reinicio del contenedor; dejaron tres grabaciones sin registro. Esta corrida las reemplazó con los mismos bytes y sumó la cuarta y el panel."
+  "corridaInterrumpida": "Dos corridas anteriores del 18-oct (hacia las 21:08 y a las 21:15 UTC) se cayeron en /modelo/ a 390 y con un reinicio del contenedor; dejaron tres grabaciones sin registro. Esta corrida las reemplazó con los mismos bytes y sumó la cuarta y el panel.",
+  "correccion19oct": {
+   "que": "Las dos grabaciones de /modelo/ muestran la línea de medidas bajo el retrato de portada (ciudad, edad, estatura, pelo y ojos; cinco span.meta-item)",
+   "donde": {
+    "1440": "entre los 2,5 y los 4,5 s",
+    "390": "desde el primer cuadro hasta los 4,5 s"
+   },
+   "metodo": "cuadros a 2 por segundo, revisados uno por uno (19-oct)",
+   "uso": "quedan como registro del inventario; no van a ningún medio del sitio. Para el caso: casoCombeauEnA"
+  }
  },
  "senales": {
   "nota": "e12/senales-trabajo.md (Simón, 18-oct)",
@@ -2439,6 +2456,240 @@
    "Los cinco prototipos de B usan #organizacion (Organization) y no #org (ProfessionalService); su /trabajo/ no trae ItemList. A no trae JSON-LD.",
    "Doceavo: su ficción dice «no tiene clientes ni dirección» y el mismo nodo declara un PostalAddress (sin calle). Ocelo y Sesenta traen el mismo PostalAddress sin calle.",
    "Las cuatro piezas piden 0 URL a terceros; Tonela enlaza seis fuentes de norma (cuatro por página), que no se descargan sin clic."
+  ]
+ },
+ "casoCombeauEnA": {
+  "fecha": "2026-10-19",
+  "porQue": "Compuerta 2: «5f ambos son casos reales»; pregunta 7 por defecto (se recortan sus medidas personales); defecto 21 del acta del paso 2 aplicado a A",
+  "ruta": "/trabajo/combeau/ (una página, dos partes: #fotografia y #modelo; las dos entradas del índice abren ahí)",
+  "medios": "e12/casos/combeau/medios/ (registro con sha256 y alt de partida: e12/casos/combeau/medios.json)",
+  "herramientas": [
+   "e12/casos/combeau/herramientas/grabar-modelo-sin-medidas.mjs",
+   "e12/casos/combeau/herramientas/capturar-portadas.mjs",
+   "e12/casos/combeau/herramientas/medios-combeau.py"
+  ],
+  "crudos": [
+   "e12/casos/combeau/crudo/grabacion-modelo-sin-medidas.json",
+   "e12/casos/combeau/crudo/capturas-portadas.json"
+  ],
+  "comprobacion": "en los 240 cuadros de cada ancho del recorrido de /modelo/, la línea de medidas, #reel, #polaroids, #details, #compcard, #booking y los enlaces de correo, teléfono o WhatsApp quedan fuera del viewport (DOM)",
+  "archivos": {
+   "combeau-modelo-recorrido-1440.webm": {
+    "bytes": 590308,
+    "sha256": "8117c224661409554c0dcf7a33f40c3e477b954c9ebf131b94df490fe429596f",
+    "px": [
+     1440,
+     810
+    ]
+   },
+   "combeau-modelo-recorrido-1440.mp4": {
+    "bytes": 916933,
+    "sha256": "71de49c8d19d83b4df8c0ebf04524c94185cb6083e61e710b8e45719aa5be46f",
+    "px": [
+     1440,
+     810
+    ]
+   },
+   "combeau-modelo-recorrido-1440-poster.webp": {
+    "bytes": 78274,
+    "sha256": "ef8361fcb8041df8f8a45326dada602191b1d64b62b1caba1d8389e51eea9de4",
+    "px": [
+     1440,
+     810
+    ]
+   },
+   "combeau-modelo-recorrido-390.webm": {
+    "bytes": 453796,
+    "sha256": "be14ebd3c771eb1c717a433085b70654994c3f9b9c7aa12874666f8355f7baa3",
+    "px": [
+     780,
+     1688
+    ]
+   },
+   "combeau-modelo-recorrido-390.mp4": {
+    "bytes": 609568,
+    "sha256": "c150d6ad5314b5e935cf8b6c57caf08e9ba004068c30d3b1e556fd1a749a5ced",
+    "px": [
+     780,
+     1688
+    ]
+   },
+   "combeau-modelo-recorrido-390-poster.webp": {
+    "bytes": 80574,
+    "sha256": "0d1ae66043cadf9a0ad5d2478c83b2811caf92af8ded74029ec752d9370cdad6",
+    "px": [
+     780,
+     1688
+    ]
+   },
+   "combeau-fotografia-recorrido-1440.webm": {
+    "bytes": 359270,
+    "sha256": "174fcf6d98e9111e13b8336023deb32f4103154b9979914841e75f7a61f7ae71",
+    "px": [
+     1440,
+     810
+    ]
+   },
+   "combeau-fotografia-recorrido-1440.mp4": {
+    "bytes": 558293,
+    "sha256": "7620ad94850ee159a7d7514e177b5b2f4ad4a52511dfde5b5f6b31d360a102e1",
+    "px": [
+     1440,
+     810
+    ]
+   },
+   "combeau-fotografia-recorrido-1440-poster.webp": {
+    "bytes": 40610,
+    "sha256": "e637ef0c08d4522dfd16fee87587ae5c8e47fc3bd3ce8a9922facf35a273a6bf",
+    "px": [
+     1440,
+     810
+    ]
+   },
+   "combeau-fotografia-recorrido-390.webm": {
+    "bytes": 350806,
+    "sha256": "ee10306c2b680c84ae0879d244386a63cbf66553fa61072a1736790721dc2b1b",
+    "px": [
+     780,
+     1688
+    ]
+   },
+   "combeau-fotografia-recorrido-390.mp4": {
+    "bytes": 429064,
+    "sha256": "5342f8295ba374900df452ac42ca021ac6db0e6d90cb8cb15702bf86085cf3a7",
+    "px": [
+     780,
+     1688
+    ]
+   },
+   "combeau-fotografia-recorrido-390-poster.webp": {
+    "bytes": 63788,
+    "sha256": "569a2e9965a4f7a1042ea5d63e1fc02e2ba85871d7635796ec2582ecea6ff300",
+    "px": [
+     780,
+     1688
+    ]
+   },
+   "combeau-fotografia-169.webp": {
+    "bytes": 45632,
+    "sha256": "6355eb4666edbc3ee1b5b8886ecdf6b0e35bb0267a376917e6733aed58033e7a",
+    "px": [
+     1600,
+     900
+    ]
+   },
+   "combeau-fotografia-45.webp": {
+    "bytes": 39108,
+    "sha256": "f0895c3e4245fd9cd8efc8038cb01cb77887b547186ffaeea2fed8e5ebc7b633",
+    "px": [
+     780,
+     975
+    ]
+   },
+   "combeau-modelo-169.webp": {
+    "bytes": 44726,
+    "sha256": "9d38f0baf26a8cd4c159b1edd139a30a96b6f27fd0435b48f818393c2b844790",
+    "px": [
+     1600,
+     900
+    ]
+   },
+   "combeau-modelo-45.webp": {
+    "bytes": 36610,
+    "sha256": "be026ac313c28f6f368d945b86792a3c81baff744af6616193b8fe2064f2ed84",
+    "px": [
+     780,
+     975
+    ]
+   },
+   "combeau-panel-entrada-169.webp": {
+    "bytes": 6872,
+    "sha256": "773533f465a309040e3a44c207fc5daf4082a54b56155d433ced2a9beca645e8",
+    "px": [
+     1440,
+     810
+    ]
+   },
+   "combeau-panel-encuadre-169.webp": {
+    "bytes": 71626,
+    "sha256": "3d790ba4d791ecebf3ead8d68508bfe067cdffbb71087b2e9646fd63888d2362",
+    "px": [
+     1600,
+     900
+    ]
+   },
+   "combeau-panel-colecciones-169.webp": {
+    "bytes": 13920,
+    "sha256": "066bc5400c7a138b006ad75b8125cb7001cf69a295022a7bcfbe35805562b81b",
+    "px": [
+     1600,
+     900
+    ]
+   },
+   "combeau-foto-servida-828.webp": {
+    "bytes": 94576,
+    "sha256": "036f8fd0750320215e5def51d99623efdae1e04f0f898de0c064972101a37e44",
+    "px": [
+     828,
+     828
+    ]
+   },
+   "combeau-modelo-cinta.webm": {
+    "bytes": 133464,
+    "sha256": "652c756def3dd112330889b455573cef15498dbb88d2f2d4eddab1e25f3b765c",
+    "px": [
+     1280,
+     720
+    ]
+   },
+   "combeau-modelo-cinta.mp4": {
+    "bytes": 140402,
+    "sha256": "71370f86bbfaa5704b0fff3243eb083d5c47bb0b854f14f35c1af42f1c2c8b0c",
+    "px": [
+     1280,
+     720
+    ]
+   },
+   "combeau-fotografia-cinta.webm": {
+    "bytes": 96916,
+    "sha256": "a5a0af42a11ed0549607aac13e0a8ff3205a276185281e1d38f7c8966c6a9ebd",
+    "px": [
+     1280,
+     720
+    ]
+   },
+   "combeau-fotografia-cinta.mp4": {
+    "bytes": 102200,
+    "sha256": "6cb20e992a29677607c5944cda4734caa39088abb3fd923f15d4e46239ef2234",
+    "px": [
+     1280,
+     720
+    ]
+   }
+  },
+  "nuevoIngrediente": {
+   "ingrediente": "Encuadre de fotos en el panel",
+   "efecto": "Marca qué parte de cada foto no se corta en los recuadros de la portada y las grillas",
+   "evidencia": "Repo (otra sesión): marketing/encargos-otras-sesiones/revision-panel-admin-bernardo.md, Actualizaciones 3, 7 y 17; en producción según :586-588; no medido el 19-oct (el panel por dentro pide su sesión)"
+  },
+  "noSeUsa": [
+   "la línea de medidas bajo el retrato",
+   "#details, #compcard y #booking (ficha de contratación con correo y WhatsApp)",
+   "las polaroids",
+   "la sección «Reel» sin estilos",
+   "sus datos de contacto, lo que pagó, resultados de su negocio, su sitio como vitrina de SEO, el 76 como logro, «bilingüe»",
+   "la biblioteca de medios del panel (capturas 05 y 09 del 3-sep)",
+   "el nombre de pila de la persona retratada en la captura 11"
+  ],
+  "apareciaEn": {
+   "proto/a/medios/cinta.webm y .mp4": "tramo «Combeau, modelo», 12 a 14 s: se rehace con combeau-modelo-cinta.* en la construcción; el prototipo no se toca",
+   "e12/inventario/grabaciones/combeau-modelo-*.mp4": "registro; no va al sitio",
+   "proto/b/medios/v-combeau-modelo.webp": "historia, con B"
+  },
+  "huecos": [
+   "el panel en producción por dentro (pide la sesión de GitHub de Bernardo o de Ramón)",
+   "su texto (Clara)",
+   "un resultado de su negocio: «Sin métrica»"
   ]
  }
 }
