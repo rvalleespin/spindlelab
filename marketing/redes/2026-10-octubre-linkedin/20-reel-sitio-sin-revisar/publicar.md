@@ -1,45 +1,41 @@
 # Publicar — Reel cara a cámara: "Tu sitio lleva años sin que nadie lo revise"
 
-**Canal:** perfil personal de Ramón · **Voz:** singular · video nativo, vertical 9:16
+**Canal:** Instagram `@spindlelab.cl` (ya salió) · **LinkedIn: página de empresa** · **Voz:** plural en los dos · video nativo, vertical 9:16
 **Estado:** ✅ **PUBLICADO en Instagram el 16-oct-2026** por Ramón, cuenta de empresa
 `@spindlelab.cl`. ✅ **Registrado en el inventario** con su enlace: https://www.instagram.com/reel/DekpyOSRqtD/
 ⬜ La versión de LinkedIn no se ha publicado.
 **Guion:** `practica-camara/GUION-APROBADO-ley-sitio-viejo.md` · **Overlays:**
 `2026-10-octubre-verifica/06-overlays-reel-ramon/`
 
-## Caption de LinkedIn — corregido el 19-oct (copiar y pegar)
+## Caption de LinkedIn — PÁGINA DE EMPRESA, plural (copiar y pegar)
 
-**Registro singular**, porque va en el perfil personal.
+**Corregido dos veces el 19-oct.** Primero por el acertijo de la apertura, después porque Ramón
+aclaró que va en la **cuenta de empresa** y no en su perfil: eso obliga al registro plural.
 
 Hay una ley nueva en Chile que protege los datos de las personas. Si tu sitio tiene un formulario de contacto, te incluye, aunque tu empresa sea chica.
 
 Y no, casi nunca hay que rehacer el sitio. Hay que mirarlo y saber qué le falta.
 
-Grabé cuarenta segundos contándolo. Una toma, en mi living.
+En el video, Ramón lo cuenta en cuarenta segundos. Una toma, sin edición.
 
 El chequeo gratis va en el primer comentario.
 
-### Qué se corrigió y por qué
-
-La versión anterior abría con *"Hay una pregunta que aparece siempre cuando sale el tema de la ley
-de datos personales, y no es sobre la ley"*. **Es el mismo acertijo que Ramón rechazó en el caption
-de Instagram**: esconde en vez de decir, y obliga a abrir el "ver más" para entender de qué se
-habla. Se reemplazó por la misma apertura que sí funcionó allá, pasada a singular.
-
-### Línea opcional de cierre
-
-> Es la primera vez que salgo a cámara.
-
-Decisión de Ramón. Es cierta y humaniza; en contra, pide indulgencia justo en la pieza que estrena
-su cara.
-
-## Primer comentario de LinkedIn (AL TIRO)
+## Primer comentario de LinkedIn (AL TIRO, como la página)
 
 El chequeo: https://verifica.spindlelab.cl
 
 Gratis, sin registro, y no guarda el dominio que revisas.
 
-Y si quieres que lo mire yo, escríbeme por acá y te mando una página con lo que encontré, gratis, en 24 horas.
+Y si prefieres que lo miremos nosotros, escríbenos por acá y te mandamos una página con lo que encontramos, gratis, en 24 horas.
+
+### Las dos correcciones, para no repetirlas
+
+1. **El acertijo.** La versión guardada abría con *"Hay una pregunta que aparece siempre…"*, que es
+   exactamente lo que Ramón rechazó en el caption de Instagram: esconde en vez de decir.
+2. **El registro.** Estaba en singular (*"grabé"*, *"mi living"*, *"escríbeme"*) porque esta sesión
+   asumió perfil personal. Va en la página, así que es plural para lo que hace el negocio y *tú*
+   para hablarle a quien lee. **La página habla de Ramón en tercera persona**, que es lo correcto y
+   lo honesto cuando el video lo muestra a él.
 
 ---
 

@@ -7,12 +7,18 @@ LinkedIn, que **no es igual**.
 
 ## 1. La cuenta
 
-**Perfil personal de Ramón, no la página de empresa.** Dos razones, las dos verificables:
+**Página de empresa de SpindleLab.** Decidido por Ramón el 19-oct. Esta sesión había supuesto el
+perfil personal y estaba equivocada.
 
-- **El video habla en singular** ("soy Ramón", "eso hago yo"). En la página, que escribe en plural,
-  quedaría descalzado. Es la regla del manual.
-- **Alcance:** el perfil tiene **380 contactos**, la página **12 seguidores**. En esta operación la
-  página es el archivo y el perfil es el canal.
+**Consecuencia directa: el caption va en PLURAL**, y la página habla de Ramón en tercera persona
+aunque el video lo muestre a él hablando en primera. Es lo que manda el manual y es coherente con
+Instagram, donde la pieza ya salió en la cuenta de empresa.
+
+⚠️ **Y una consecuencia de distribución que cambia lo que se les pide a los contactos.** La página
+tiene **12 seguidores**: publicar ahí sin que Ramón lo comparta desde su perfil es publicar para
+nadie. **El compartir de Ramón no es opcional acá, es la distribución entera.** Está documentado en
+`estrategia-linkedin-verifica-y-cumple.md` §4: *"el patrón que funciona es página + compartir de
+Ramón con comentario propio, no dos posts"*.
 
 ## 2. El video
 
@@ -49,13 +55,18 @@ comentario, donde sí funciona.
 - **Nada de hashtags.** Los posts de octubre del perfil personal no llevan ninguno.
 - **Nada de pedir "compartan".** Ver abajo.
 
-## 6. Qué pedirles a los contactos
+## 6. El compartir de Ramón, y qué pedirles a los contactos
 
-**Que comenten, no que compartan.** Con los números de esta cuenta: el compartir del post de la
-página hizo **20 impresiones**, lo más bajo registrado. Un comentario mantiene vivo el post donde
-ya está circulando; un compartir lo saca a una red más chica que no conoce a Ramón.
+**Ramón comparte el post de la página desde su perfil, con comentario propio.** Nunca el botón
+pelado. Eso no es apoyo extra: con 12 seguidores en la página, es de dónde sale todo el alcance.
 
-Si alguien igual quiere compartir, **que lo haga con comentario propio**, nunca el botón pelado.
+**A los contactos se les pide comentar, no compartir.** El compartir de un tercero sale a una red
+que no conoce a la marca; un comentario mantiene vivo el post donde ya está circulando. En el
+inventario, el compartir del post de la página hizo **20 impresiones**, lo más bajo registrado.
+
+⚠️ **Corrección a lo que esta sesión dijo el 16-oct.** Entonces se dijo "no pidas que compartan",
+sin distinguir. Para un post del **perfil**, vale. Para un post de la **página**, el compartir de
+Ramón es obligatorio, porque es el único camino al feed de alguien.
 
 ## 7. Después de publicar
 
