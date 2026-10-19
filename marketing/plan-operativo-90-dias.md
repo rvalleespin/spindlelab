@@ -4,6 +4,10 @@ Del 7 de julio al 5 de octubre de 2026. Meta comercial: **1–2 clientes cerrado
 Presupuesto de horas humanas: **6–10 h/semana de supervisión** (original) — la producción la ejecutan agentes de Claude Code (división de trabajo en §6.5 de la estrategia).
 **Nota 21 jul:** Ramón pasó a dedicarse a SpindleLab a tiempo completo — el presupuesto de horas reales disponibles sube respecto al supuesto original, no baja. Ajustar expectativas de ritmo en consecuencia: hay más margen para sumar iniciativas (como contenido en video) sin que compitan entre sí.
 
+> **Estado 19-oct-2026 (día 104; el plan venció el 5-oct sin retrospectiva).** Dos clientes en toda la historia, ambos de Desarrollo Web (Bernardo, por contacto directo; María Loreto, por referido de Bernardo, 26-sep). Del funnel SEO/AEO: 142 correos fríos, 0 clientes. El embudo se corta después de que alguien responde, no en la entrada. Evaluación completa, con la estrategia ganadora y su criterio de corte: `marketing/evaluacion-captacion-2026-10-19.md`.
+> **Decisiones de Ramón el 19-oct:** (1) **cerrar el frente EE.UU.** (76 días en día 0); (2) aplicar la estrategia de conversión y seguimiento; (3) registrar a Carlos Soya, Eduardo (focuscontable.cl) y legalprisma en `ventas/pipeline.md`. La cola diaria de calientes vive en `ventas/cola-calientes.md`.
+> **Corte vigente:** ≥3 llamadas de venta sostenidas al 19-nov y ≥1 cliente nuevo al 3-dic. Mientras haya calientes sin trabajar, no se abre ningún frente nuevo.
+
 Convención de los checklists: **[CC]** = lo produce Claude Code (tú revisas/apruebas) · **[TÚ]** = solo humano.
 Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa semana, que sea esa.
 
