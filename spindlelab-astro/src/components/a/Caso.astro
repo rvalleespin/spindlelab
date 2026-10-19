@@ -1,0 +1,180 @@
+---
+// LA PLANTILLA DE CASO DE A (spec §2.3; lock §21.5: la de Koto, una sola para los seis). Tanda 3, Diego, 19-oct-2026.
+//
+// Desde 1194: la barra lateral de 320 px, pegajosa (miga, h1 en dos tintas, ficha mono, índice de secciones con el punto
+// de 3 px, créditos abajo) y la columna: el medio principal 16:9, las cinco secciones con sus filas de medios y
+// «Siguiente». Bajo 1194: el medio principal arriba (desde 834, 16:9 con radio; bajo 834, 4:5 a sangre), el nombre, la
+// ficha y las secciones en una columna, y el índice en la barra flotante de abajo. El caso no tiene pie.
+//
+// Todo el texto es de Clara y todo medio sale de medios-casos.json: lo arma modelo() en casos.mjs, que hace fallar el
+// build si falta algo. Este archivo lo lee Tailwind: aquí no va lógica ni palabras sueltas (desvios.md, tanda 1).
+import PaginaA from './PaginaA.astro';
+import Miga from './Miga.astro';
+import Video from './Video.astro';
+import MedioCaso from './MedioCaso.astro';
+import Icono from './Icono.astro';
+import { modelo } from '../../data/archivo/casos.mjs';
+
+interface Props {
+  caso: string;
+}
+const m = modelo(Astro.props.caso);
+const ruta = `/v3/trabajo/${m.caso}/`;
+---
+<PaginaA pie={false}>
+  <div class="caso">
+    <header class="lateral">
+      <Miga items={[{ texto: m.miga[0], href: '/v3/' }, { texto: m.miga[1], href: '/v3/trabajo/' }, { texto: m.miga[2] }]} />
+      <h1 class="t-titulo"><span class="tinta">{m.h1.tinta}</span> <span class="gris">{m.h1.gris}</span></h1>
+      <div class="lateral__ficha">
+        <p class="rotulo">{m.ficha.linea}</p>
+        {m.ficha.datos.length > 0 && (
+          <dl class="lateral__datos">
+            {m.ficha.datos.map((d) => (<><dt class="dato">{d.rotulo}</dt><dd class="dato">{d.valor}</dd></>))}
+          </dl>
+        )}
+      </div>
+      <nav class="lateral__indice" aria-label={m.nombreSecciones} data-secciones>
+        <span class="lateral__punto" aria-hidden="true"></span>
+        <ul>
+          {m.secciones.map((s, i) => (
+            <li><a href={`${ruta}#${s.id}`} aria-current={i === 0 ? 'location' : undefined}>{s.nombre}</a></li>
+          ))}
+        </ul>
+      </nav>
+      <div class="lateral__creditos">
+        <p class="rotulo">{m.creditos.rotulo}</p>
+        <p class="chico">{m.creditos.texto}</p>
+      </div>
+    </header>
+
+    <div class="caso__columna">
+      <figure class="medio-principal">
+        <Video
+          poster={m.principal.poster.src}
+          ancho={m.principal.poster.ancho}
+          alto={m.principal.poster.alto}
+          posterAngosto={m.principal.posterAngosto ? { src: m.principal.posterAngosto.src, ancho: m.principal.posterAngosto.ancho, alto: m.principal.posterAngosto.alto } : undefined}
+          webm={m.principal.webm}
+          mp4={m.principal.mp4}
+          fuentes={m.principal.fuentes}
+          clase="p-169"
+          descripcion={m.principal.alt}
+          primeraPantalla
+        />
+        {(m.principal.pie || m.principal.descripcionOculta) && (
+          <figcaption class="pie">
+            {m.principal.descripcionOculta && <span class="solo-lector">{m.principal.descripcionOculta}</span>}
+            {m.principal.pie}
+          </figcaption>
+        )}
+      </figure>
+
+      {m.secciones.map((s) => (
+        <section class="caso-bloque" id={s.id} data-nombre={s.nombre} aria-labelledby={`h-${s.id}`}>
+          <div class="caso-sec">
+            <div class="caso-sec__izq">
+              <p class="rotulo">{s.nombre}</p>
+              <h2 id={`h-${s.id}`}>{s.h2}</h2>
+            </div>
+            {s.cuerpo.length > 0 && (
+              <div class="caso-sec__der">
+                {s.cuerpo.map((b) => (
+                  b.tipo === 'p' ? <p class="cuerpo">{b.texto}</p>
+                  : b.tipo === 'rotulo' ? <p class="rotulo caso-sec__rotulo">{b.texto}</p>
+                  : b.tipo === 'chico' ? <p class="chico">{b.texto}</p>
+                  : <ul class="ingredientes">{b.items.map((it) => <li>{it.texto}{it.dato && <span class="dato">{it.dato}</span>}</li>)}</ul>
+                ))}
+              </div>
+            )}
+          </div>
+          {s.filas.length > 0 && (
+            <div class="filas">
+              {s.filas.map((f, j) => (
+                f.forma === 'hueco' ? (
+                  <div class="fila fila--hueco" data-entrada={j === 0 ? '' : undefined}>
+                    <div class="hueco p-169"><p class="chico">{s.hueco}</p></div>
+                  </div>
+                ) : (
+                  <figure class:list={['fila', `fila--${f.forma}`]} data-entrada={j === 0 ? '' : undefined}>
+                    <div class="fila__medios">
+                      {f.forma === '169' && <MedioCaso medio={f.medios[0]} clase="p-169" />}
+                      {f.forma === 'par' && <><MedioCaso medio={f.medios[0]} clase="p-45" /><MedioCaso medio={f.medios[1]} clase="p-45" /></>}
+                      {f.forma === '45-162' && <><MedioCaso medio={f.medios[0]} clase="p-45" /><div class="pila"><MedioCaso medio={f.medios[1]} /><MedioCaso medio={f.medios[2]} /></div></>}
+                      {f.forma === '162-45' && <><div class="pila"><MedioCaso medio={f.medios[0]} /><MedioCaso medio={f.medios[1]} /></div><MedioCaso medio={f.medios[2]} clase="p-45" /></>}
+                    </div>
+                    {(f.pie || f.enlace) && (
+                      <figcaption class="pie">
+                        {f.pie}
+                        {f.enlace && <> <a class="subrayado" href={f.enlace.destino}>{f.enlace.texto}<Icono nombre="fuera" /></a></>}
+                      </figcaption>
+                    )}
+                  </figure>
+                )
+              ))}
+            </div>
+          )}
+          {s.partes.map((parte) => (
+            <div class="caso-parte" id={parte.ancla}>
+              <div class="caso-sec caso-sec--parte">
+                <div class="caso-sec__izq"><h3>{parte.h3}</h3></div>
+                <div class="caso-sec__der">{parte.cuerpo.map((b) => <p class="cuerpo">{b.texto}</p>)}</div>
+              </div>
+              <div class="filas">
+                {parte.filas.map((f, j) => (
+                  <figure class:list={['fila', `fila--${f.forma}`]} data-entrada={j === 0 ? '' : undefined}>
+                    <div class="fila__medios">
+                      {f.forma === '169' && <MedioCaso medio={f.medios[0]} clase="p-169" />}
+                      {f.forma === 'par' && <><MedioCaso medio={f.medios[0]} clase="p-45" /><MedioCaso medio={f.medios[1]} clase="p-45" /></>}
+                    </div>
+                    {f.pie && <figcaption class="pie">{f.pie}</figcaption>}
+                  </figure>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+      ))}
+
+      <section class="siguiente" aria-labelledby="h-siguiente" data-entrada>
+        <div class="siguiente__contacto">
+          <p class="t-titulo t-display"><span class="tinta">{m.siguiente.contacto.tinta}</span> <span class="gris">{m.siguiente.contacto.gris}</span></p>
+          {m.siguiente.puente && <p class="cuerpo caja">{m.siguiente.puente}</p>}
+          <a class="boton boton--claro" href={m.siguiente.boton.destino}>{m.siguiente.boton.texto}<Icono nombre="flecha" /></a>
+        </div>
+        <div class="siguiente__caso">
+          <p class="rotulo">{m.siguiente.rotulo}</p>
+          <a class="medio-enlace" href={m.siguiente.caso.destino} data-ir={m.siguiente.cursor} aria-labelledby="h-siguiente">
+            <div class="medio p-169">
+              <img src={m.siguiente.medio.src} alt={m.siguiente.medio.alt} width={m.siguiente.medio.ancho} height={m.siguiente.medio.alto} loading="lazy" decoding="async" />
+            </div>
+            <span class="quieto rotulo" aria-hidden="true">{m.siguiente.cursor}</span>
+          </a>
+          <h2 class="t-siguiente" id="h-siguiente"><span class="tinta">{m.siguiente.caso.tinta}</span> <span class="gris">{m.siguiente.caso.gris}</span></h2>
+          <p class="rotulo">{m.siguiente.linea}</p>
+          <a class="corchete" href={m.siguiente.todo.destino}>{m.siguiente.todo.texto}</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <nav class="barra" aria-label={m.nombreSecciones} data-secciones>
+    <details>
+      <summary>
+        <span class="rotulo">{m.nombreCorto}</span>
+        <span class="barra__activa rotulo" data-barra-activa>{m.secciones[0].nombre}</span>
+        <span class="barra__mas" aria-hidden="true">+</span>
+        <span class="solo-lector">{m.nombreBarra}</span>
+      </summary>
+      <ul>
+        {m.secciones.map((s, i) => (
+          <li><a href={`${ruta}#${s.id}`} aria-current={i === 0 ? 'location' : undefined}>{s.nombre}</a></li>
+        ))}
+      </ul>
+    </details>
+  </nav>
+</PaginaA>
+
+<script>
+  import '../../scripts/archivo/caso.mjs';
+</script>

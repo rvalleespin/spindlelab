@@ -13,18 +13,23 @@ document.querySelectorAll('[data-video]').forEach((caja) => {
   const v = caja.querySelector('video');
   const b = caja.querySelector('.pausa');
   if (!v || !b) return;
+  // Las fuentes por ancho (data-fuentes) se eligen al cargar. Si ninguna sirve para este ancho (el medio principal de un
+  // concepto bajo 834, tanda 3), no hay video: queda la imagen quieta y la pausa sigue escondida.
+  let elegida = null;
+  if (caja.hasAttribute('data-fuentes')) {
+    let lista = [];
+    try { lista = JSON.parse(caja.getAttribute('data-fuentes') || '[]'); } catch (e) { lista = []; }
+    elegida = lista.find((f) => !f.desde || window.matchMedia('(min-width: ' + f.desde + 'px)').matches) || null;
+    if (!elegida) return;
+  }
   b.hidden = false;
   let quierePausa = reducir || ahorro;
   let aLaVista = false;
-  let fuentesPuestas = !caja.hasAttribute('data-fuentes');
+  let fuentesPuestas = !elegida;
 
   function ponerFuentes() {
     if (fuentesPuestas) return;
     fuentesPuestas = true;
-    let lista = [];
-    try { lista = JSON.parse(caja.getAttribute('data-fuentes') || '[]'); } catch (e) { lista = []; }
-    const elegida = lista.find((f) => !f.desde || window.matchMedia('(min-width: ' + f.desde + 'px)').matches);
-    if (!elegida) return;
     [['webm', 'video/webm'], ['mp4', 'video/mp4']].forEach(([k, tipo]) => {
       if (!elegida[k]) return;
       const s = document.createElement('source');

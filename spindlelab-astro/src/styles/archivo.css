@@ -687,6 +687,150 @@ body.a-body.a-sin-js .filtro { display: none; }
   .a-body .muro:has(.medio-enlace:hover) .pieza:not(:has(.medio-enlace:hover)) .pieza__velo { opacity: 1; }
 }
 
+/* ================================================================== CASO (spec §2.3; lock §21.5) · tanda 3 */
+/* Desde 1194: la barra lateral de 320 px pegajosa y la columna (el ancho de la ventana menos 368), con 16 px entre las
+   dos. Bajo 1194, una columna: el medio principal arriba (order: -1), después el nombre, la ficha, los créditos y las
+   secciones; el índice pasa a la barra flotante de abajo. Entre todos los bloques, 8 px (Koto). */
+.a-body .caso { display: flex; flex-direction: column; gap: var(--a-g); padding: 8px var(--a-m) 96px; }
+.a-body .caso__columna { display: contents; }
+
+/* La barra lateral (§2.3): miga, h1 a Título en dos tintas, la ficha mono (TIPO · AÑO; en los conceptos «CONCEPTO ·
+   2026», a la vista sin scroll a 1440 y a 390), el índice de secciones y, abajo, los créditos en chico. */
+.a-body .lateral { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding-top: 16px; }
+.a-body .lateral h1 { font-size: var(--a-t-titulo); line-height: 1.2; }
+.a-body .lateral__ficha { display: flex; flex-direction: column; gap: 8px; }
+.a-body .lateral__datos { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; }
+.a-body .lateral__indice { display: none; }
+.a-body .lateral__creditos { display: flex; flex-direction: column; gap: 8px; }
+.a-body .lateral__creditos .chico { max-width: 300px; }
+@media (min-width: 1194px) {
+  .a-body .caso { display: grid; grid-template-columns: var(--a-lateral) minmax(0, 1fr); column-gap: var(--a-m); row-gap: 0; padding-bottom: 80px; }
+  .a-body .caso__columna { display: flex; flex-direction: column; gap: var(--a-g); min-width: 0; }
+  /* pegajosa a 80 px, del alto de la ventana menos 96 (§2.3); si su contenido es más alto, se desplaza adentro. El
+     relleno de 8 a los lados (y el margen negativo que lo devuelve) deja ver entero el contorno del foco (tanda 2). */
+  .a-body .lateral {
+    position: sticky; top: 80px; align-self: start; height: calc(100svh - 96px); overflow: auto;
+    padding: 48px 8px 8px; margin-inline: -8px;
+  }
+  .a-body .lateral__indice { display: block; position: relative; align-self: stretch; margin-top: 24px; }
+  .a-body .lateral__creditos { margin-top: auto; padding-top: 24px; }
+}
+/* El índice de secciones (§2.3, §4.1): cuerpo 16, filas de 36; la activa en blanco con el punto de 3 px a su izquierda,
+   que se mueve con el resorte «estado» (caso.mjs). Sin JS, el punto queda en la primera. */
+.a-body .lateral__indice a {
+  display: flex; align-items: center; min-height: 36px; padding-left: 12px; color: var(--a-gris);
+  font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); transition: color var(--a-color);
+}
+.a-body .lateral__indice a:hover, .a-body .lateral__indice a[aria-current] { color: var(--a-blanco); }
+.a-body .lateral__punto {
+  position: absolute; left: 0; top: 16.5px; width: 3px; height: 3px; background: var(--a-blanco); pointer-events: none;
+}
+@media (pointer: coarse) { .a-body .lateral__indice a { min-height: 44px; } .a-body .lateral__punto { top: 20.5px; } }
+
+/* El medio principal (§2.3): desde 834, 16:9 dentro de los márgenes y con radio 6 (a 1440, 1072 × 603); bajo 834,
+   4:5 a sangre y sin radio. */
+.a-body .medio-principal { order: -1; margin-inline: calc(-1 * var(--a-m)); }
+.a-body .medio-principal .medio { aspect-ratio: 4 / 5; border-radius: 0; }
+.a-body .medio-principal .medio > .video__quieta, .a-body .medio-principal .medio > video { object-position: 50% 0; }
+.a-body .medio-principal .pie { padding-inline: var(--a-m); }
+@media (min-width: 834px) {
+  .a-body .medio-principal { margin-inline: 0; }
+  .a-body .medio-principal .medio { aspect-ratio: 16 / 9; border-radius: 6px; }
+  .a-body .medio-principal .medio > .video__quieta, .a-body .medio-principal .medio > video { object-position: 50% 50%; }
+  .a-body .medio-principal .pie { padding-inline: 0; }
+}
+@media (min-width: 1194px) { .a-body .medio-principal { order: 0; } }
+/* La imagen quieta en un <picture> (la de bajo 834 es otra): llena el marco como el <img> de siempre */
+.a-body .video > picture.video__quieta > img { width: 100%; height: 100%; object-fit: cover; object-position: inherit; }
+
+/* Cada sección (§2.3): borde superior en la línea de sección, 24 px arriba y 12 abajo; el rótulo mono y el h2 a Título
+   a la izquierda, el cuerpo (tope 493) a la derecha desde 1194; bajo 1194, uno sobre otro. Después, sus filas. */
+.a-body .caso-bloque { margin-top: 16px; }
+.a-body .caso-sec {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 24px 0 12px;
+  border-top: 1px solid var(--a-linea-seccion);
+}
+.a-body .caso-sec__izq { display: flex; flex-direction: column; gap: 12px; }
+.a-body .caso-sec__der { display: flex; flex-direction: column; gap: 16px; max-width: var(--a-caja); }
+.a-body .caso-sec__der .cuerpo + .cuerpo { margin-top: 0; }
+.a-body .caso-sec h2, .a-body .caso-sec h3 { font-size: var(--a-t-titulo); line-height: 1.2; }
+.a-body .caso-sec__rotulo { margin-top: 8px; }
+@media (min-width: 1194px) {
+  .a-body .caso-sec { position: relative; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding: 24px 24px 12px; }
+  .a-body .caso-sec h2, .a-body .caso-sec h3 { max-width: 16em; }
+  /* La cruz de registro (§2.3, lock §10): 9 × 9 en la línea de sección donde el borde de las dos primeras secciones
+     cruza el límite de la barra (x = 336 a 1440: 16 px antes de la columna). Ninguna bajo 1194. Reversible: esta regla. */
+  .a-body .caso-bloque:nth-of-type(-n + 2) > .caso-sec::before {
+    content: ''; position: absolute; left: calc(-1 * var(--a-m) - 4.5px); top: -4px; width: 9px; height: 9px;
+    background: linear-gradient(var(--a-linea-seccion), var(--a-linea-seccion)) center / 1px 100% no-repeat,
+                linear-gradient(var(--a-linea-seccion), var(--a-linea-seccion)) center / 100% 1px no-repeat;
+  }
+}
+/* Las dos partes de Combeau (#fotografia, #modelo): su título y su párrafo, con la línea entre filas de una lista */
+.a-body .caso-parte { margin-top: 16px; }
+.a-body .caso-sec--parte { border-top-color: var(--a-linea); }
+
+/* «Con qué está hecho» (§2.3): lo que le hace a quien lo usa, en cuerpo; la herramienta, en dato mono. Filas con la
+   línea entre filas de una lista, sin caja. */
+.a-body .ingredientes { border-top: 1px solid var(--a-linea); }
+.a-body .ingredientes li {
+  padding: 12px 0; border-bottom: 1px solid var(--a-linea); font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo);
+  color: var(--a-gris); text-wrap: pretty;
+}
+.a-body .ingredientes .dato { display: block; margin-top: 4px; }
+
+/* Las filas de medios (§2.3; lock §21.2): solo las cuatro formas de Koto, radio 6 y 8 px entre todos. Las partidas
+   mantienen su forma en todos los anchos (a 390, pares de 175 px). Ninguna a sangre. */
+.a-body .filas { display: flex; flex-direction: column; gap: var(--a-g); margin-top: var(--a-g); }
+.a-body .fila__medios { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--a-g); }
+.a-body .fila--par .fila__medios, .a-body .fila--45-162 .fila__medios, .a-body .fila--162-45 .fila__medios {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+/* dos 1,62 apilados del alto del 4:5 de al lado (525 × 656 contra 525 × 324 + 8 + 324 a 1440) */
+.a-body .pila { display: grid; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: var(--a-g); }
+.a-body .pila > .medio { aspect-ratio: auto; }
+/* El hueco nombrado (§3.3): lo que falta, dicho, en un marco punteado del tamaño de una fila 16:9 */
+.a-body .hueco { border: 1px dashed var(--a-hueco); border-radius: 6px; padding: 16px; }
+.a-body .hueco .chico { max-width: var(--a-caja); }
+
+/* «Siguiente» (§2.3): al final de la columna, con borde superior y 120 px arriba (80 bajo 834); a la izquierda el
+   contacto, a la derecha el caso que sigue con su medio 16:9 de 416 px y el corchete. Entra una vez (resorte «entrada»). */
+.a-body .siguiente {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; margin-top: 80px; padding-top: 24px;
+  border-top: 1px solid var(--a-linea-seccion);
+}
+@media (min-width: 834px) { .a-body .siguiente { margin-top: 120px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } }
+@media (min-width: 1194px) { .a-body .siguiente { padding: 24px 24px 0; } }
+.a-body .siguiente__contacto { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.a-body .siguiente__contacto .t-titulo { max-width: 22em; }
+.a-body .siguiente__caso { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.a-body .siguiente__caso .medio-enlace { width: min(416px, 100%); }
+
+/* La barra flotante bajo 1194 (§2.3; lock §21.3): una placa a 16 px del borde con el nombre del caso en mono gris, la
+   sección activa en mono blanco sobre la placa activa y «+», que abre la lista (un details). */
+.a-body .barra {
+  position: fixed; z-index: 30; left: var(--a-m); right: var(--a-m); bottom: var(--a-m); padding: 4px;
+  border-radius: 4px; background: var(--a-placa);
+}
+.a-body .barra summary {
+  display: flex; align-items: center; gap: 8px; min-height: 44px; padding-left: 8px; cursor: pointer; list-style: none;
+}
+.a-body .barra summary::-webkit-details-marker { display: none; }
+.a-body .barra summary:focus-visible { outline-offset: -2px; border-radius: 2px; }
+.a-body .barra__activa { margin-left: auto; padding: 7px 8px 6px; border-radius: 2px; background: var(--a-placa-activa); color: var(--a-blanco); }
+.a-body .barra__mas {
+  display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px;
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 16px; color: var(--a-blanco);
+}
+.a-body .barra ul { padding: 4px 8px; }
+.a-body .barra ul a { display: flex; align-items: center; min-height: 44px; color: var(--a-gris); transition: color var(--a-color); }
+.a-body .barra ul a:hover, .a-body .barra ul a[aria-current] { color: var(--a-blanco); }
+@media (min-width: 1194px) { .a-body .barra { display: none; } }
+/* La barra no tapa lo que recibe el foco (§4.3): el relleno de abajo del alto de la barra, bajo 1194 */
+@media (max-width: 1193.98px) {
+  html:has(body.a-body .barra) { scroll-padding-bottom: 96px; }
+}
+
 /* ------------------------------------------------------------------ movimiento reducido (§1.6) */
 /* Ningún resorte corre, el círculo no existe, todo está en su lugar y los cambios de color son instantáneos. */
 @media (prefers-reduced-motion: reduce) {

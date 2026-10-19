@@ -1,0 +1,411 @@
+{
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e12/texto/texto-obra.json",
+ "sha256": "30d0accec4852592083a78579b637ee3d67b0a739707b65712fec33e3e0fba35",
+ "id": "caso-doceavo",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con construccion/herramientas/extraer-texto.mjs.",
+ "texto": {
+  "id": "caso-doceavo",
+  "ruta": "/v3/trabajo/doceavo/",
+  "title": "Concepto: Doceavo, estudio contable · SpindleLab",
+  "description": "Concepto: Doceavo no existe. Un estudio contable inventado en Concepción, para mostrar un sitio que te dice qué vence este mes según el calendario del SII.",
+  "senales": "Simón, e12/senales-obra.md §2.5 (copiado tal cual; manda Simón)",
+  "estructura": "La plantilla de caso (spec §2.3), con el texto del caso.md de Bruno pasado por registro: los hechos verificados no cambian; salen los códigos de color, los pesos de letra, los nombres de código y los esquemas, y lo técnico va con lo que hace. «Concepto · 2026» en la ficha, a la vista sin scroll a 1440 y a 390.",
+  "secciones": [
+   {
+    "id": "lateral",
+    "nombre": "Barra lateral",
+    "trabajo": "Nombrar la pieza y decir sin scroll que es un concepto.",
+    "elementos": [
+     {
+      "id": "concepto.doceavo.miga",
+      "rol": "rotulo",
+      "texto": "Inicio · Trabajo · Doceavo",
+      "uso": "miga",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.h1",
+      "rol": "h1",
+      "tinta": "Doceavo.",
+      "gris": "El año en doce, con lo que vence cada mes.",
+      "texto": "Doceavo. El año en doce, con lo que vence cada mes.",
+      "fuente": "marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII), «Ficha lateral»",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.ficha",
+      "rol": "ficha",
+      "campos": [
+       {
+        "rotulo": "Tipo",
+        "valor": "Concepto"
+       },
+       {
+        "rotulo": "Año",
+        "valor": "2026"
+       },
+       {
+        "rotulo": "Rubro",
+        "valor": "Estudio contable para pymes e independientes"
+       },
+       {
+        "rotulo": "Lo hecho",
+        "valor": "Identidad, sitio (portada y una página interior) y un recorrido en video"
+       }
+      ],
+      "linea": "Concepto · 2026",
+      "fuente": "marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII), «Ficha lateral»",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.indice",
+      "rol": "rotulo",
+      "uso": "índice de secciones",
+      "opciones": [
+       "Problema",
+       "Hipótesis",
+       "Solución",
+       "La pieza",
+       "Sin métrica"
+      ],
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.creditos.rotulo",
+      "rol": "rotulo",
+      "texto": "Quién lo hizo",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.creditos",
+      "rol": "nota",
+      "texto": "Identidad, sitio y recorrido: SpindleLab. La marca es inventada.",
+      "estado": "nuevo"
+     }
+    ]
+   },
+   {
+    "id": "medio",
+    "nombre": "Medio principal",
+    "trabajo": "Mostrar la pieza en movimiento.",
+    "elementos": [
+     {
+      "id": "concepto.doceavo.medio.descripcion",
+      "rol": "nota",
+      "texto": "Recorrido de diez segundos por el sitio de Doceavo, grabado en el navegador desde su portada.",
+      "uso": "alt",
+      "donde": "movimiento/recorrido (video con aria-hidden; este texto en la figura)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.medio.poster",
+      "rol": "nota",
+      "texto": "Portada de Doceavo: «El IVA de septiembre se declara hasta el martes 20 de octubre», junto al año 2026 en doce meses con cada vencimiento en rojo.",
+      "uso": "alt",
+      "donde": "póster del recorrido",
+      "estado": "nuevo"
+     }
+    ]
+   },
+   {
+    "id": "problema",
+    "nombre": "Problema",
+    "trabajo": "El problema real del rubro, en palabras de cualquiera.",
+    "elementos": [
+     {
+      "id": "concepto.doceavo.problema.rotulo",
+      "rol": "rotulo",
+      "texto": "Problema",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.problema.h2",
+      "rol": "h2",
+      "texto": "Enterarse tarde, por un aviso del SII.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.problema.p1",
+      "rol": "parrafo",
+      "texto": "Los sitios de los estudios contables dicen «asesoría integral» y terminan en un botón de WhatsApp. Ninguno dice lo único que el dueño de una pyme necesita saber al entrar: qué vence este mes y qué le toca a él. Se entera por un aviso del SII, cuando ya es tarde.",
+      "fuente": "marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.problema.p2",
+      "rol": "parrafo",
+      "texto": "Y en este rubro hay dos límites que no se cruzan: nadie puede prometer que vas a pagar menos impuestos, ni que nunca vas a tener una multa.",
+      "fuente": "marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII)",
+      "estado": "nuevo"
+     }
+    ]
+   },
+   {
+    "id": "hipotesis",
+    "nombre": "Hipótesis",
+    "trabajo": "La idea que ordena la pieza.",
+    "elementos": [
+     {
+      "id": "concepto.doceavo.hipotesis.rotulo",
+      "rol": "rotulo",
+      "texto": "Hipótesis",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.hipotesis.h2",
+      "rol": "h2",
+      "texto": "Publicar el calendario.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.hipotesis.p1",
+      "rol": "parrafo",
+      "texto": "Cada mes trae sus fechas: el F29, la declaración mensual del IVA, el 12 o el 20; las cotizaciones el 13; el F29 sin movimiento el 28; y una vez al año las declaraciones juradas y la Operación Renta. Son públicas, están en el calendario del SII, pero nadie las pone en su portada. Doceavo sí, y el sitio sabe en qué mes estás: el titular de la portada es la fecha del próximo F29 y cambia solo.",
+      "fuente": "marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII)",
+      "estado": "nuevo"
+     }
+    ],
+    "medios": [
+     {
+      "archivo": "marketing/portafolio/07-doceavo/identidad/placas/16x9-anio-tinta.png",
+      "forma": "16:9",
+      "alt": "Placa de Doceavo: 1/12 grande y el año 2026 en doce meses, con cada vencimiento en rojo y octubre lleno."
+     }
+    ]
+   },
+   {
+    "id": "solucion",
+    "nombre": "Solución",
+    "trabajo": "La identidad, con lo que hace cada decisión.",
+    "elementos": [
+     {
+      "id": "concepto.doceavo.solucion.rotulo",
+      "rol": "rotulo",
+      "texto": "Solución",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.solucion.h2",
+      "rol": "h2",
+      "texto": "El almanaque al revés.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.solucion.p1",
+      "rol": "parrafo",
+      "texto": "«doceavo» va en minúsculas, y su símbolo es una cuadrícula de 3 por 4 casillas: el año, de enero arriba a la izquierda a diciembre abajo a la derecha. La casilla del mes en curso va llena, así que el logo cambia solo cada mes: el sitio lo dibuja con la fecha del día, y el ícono de la pestaña también.",
+      "fuente": "marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.solucion.p2",
+      "rol": "parrafo",
+      "texto": "La letra es Recursive, que puede darle el mismo ancho a cada letra y a cada cifra sin dejar de ser la misma letra: el texto se lee normal y las cifras quedan en columna. El color es el de un libro contable, verde pálido con su renglón y su columna, y un solo rojo que marca únicamente lo que vence. En un almanaque el rojo es feriado; aquí es plazo.",
+      "fuente": "marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII)",
+      "estado": "nuevo",
+      "antes": "La letra es Recursive, que tiene un ajuste para volverse de ancho fijo sin cambiar de familia: el texto se lee normal y las cifras se ordenan en columnas, con las mismas letras. El color es el de un libro contable, verde pálido con su renglón y su columna, y un solo rojo que marca únicamente lo que vence. En un almanaque el rojo es feriado; aquí es plazo.",
+      "por_que": "Lectura fría, 19-oct: no entendió «ancho fijo» ni «sin cambiar de familia». El hecho de caso.md (el eje que la vuelve monoespaciada) no cambia."
+     }
+    ],
+    "medios": [
+     {
+      "archivo": "marketing/portafolio/07-doceavo/identidad/placas/4x5-logo-tinta.png",
+      "forma": "4:5",
+      "alt": "El logo de Doceavo en octubre: la cuadrícula de doce casillas con la de octubre llena, y la palabra «doceavo»."
+     },
+     {
+      "archivo": "marketing/portafolio/07-doceavo/identidad/placas/4x5-meses-tinta.png",
+      "forma": "4:5",
+      "alt": "Un logo por mes: las doce versiones, de enero a diciembre, con octubre destacado."
+     },
+     {
+      "archivo": "marketing/portafolio/07-doceavo/identidad/placas/4x5-letra-tinta.png",
+      "forma": "4:5",
+      "alt": "La letra de Doceavo, Recursive, con «¿Cuándo vence el F29?» y las fechas en sus dos anchos."
+     },
+     {
+      "archivo": "marketing/portafolio/07-doceavo/identidad/placas/1-62-eje-tinta.png",
+      "forma": "1,62",
+      "alt": "Tres veces «martes 20», de la letra normal a la de ancho fijo."
+     },
+     {
+      "archivo": "marketing/portafolio/07-doceavo/identidad/placas/1-62-cifras-tinta.png",
+      "forma": "1,62",
+      "alt": "Las fechas del F29 de 2026, mes por mes, encolumnadas, con las del 20 en rojo."
+     },
+     {
+      "archivo": "marketing/portafolio/07-doceavo/identidad/placas/16x9-papel-tinta.png",
+      "forma": "16:9",
+      "alt": "Octubre día por día en el papel de Doceavo: lo que vence, lo que hace el estudio, y el 16 como hoy."
+     }
+    ]
+   },
+   {
+    "id": "pieza",
+    "nombre": "La pieza",
+    "trabajo": "El sitio aplicado.",
+    "elementos": [
+     {
+      "id": "concepto.doceavo.pieza.rotulo",
+      "rol": "rotulo",
+      "texto": "La pieza",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.pieza.h2",
+      "rol": "h2",
+      "texto": "La fecha antes que la promesa.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.pieza.p1",
+      "rol": "parrafo",
+      "texto": "La portada abre con el titular que cambia cada mes («El IVA de septiembre se declara hasta el martes 20 de octubre»), el año en doce con el mes en curso lleno y, debajo, un almanaque de taco con lo que vence ese mes: al tocar otro mes, la hoja se arranca. Después viene octubre día por día: lo que vence, lo que hace el estudio y lo que te toca a ti.",
+      "fuente": "marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.pieza.p2",
+      "rol": "parrafo",
+      "texto": "Lo que el estudio no hace va como en un libro contable, donde la raya en la columna del monto quiere decir nada. Los servicios van en tabla y sin precios, las preguntas largas en texto con su fuente, y el formulario de tres preguntas no envía nada. La página «Calendario» es el año completo, con las fechas que el SII corrió al día hábil siguiente subrayadas.",
+      "fuente": "marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII)",
+      "estado": "nuevo"
+     }
+    ],
+    "medios": [
+     {
+      "archivo": "marketing/portafolio/07-doceavo/medios/home-1440.png",
+      "forma": "16:9",
+      "alt": "La portada de Doceavo a 1440: el titular con el 20 de octubre en rojo, el año en doce a la derecha y octubre día por día debajo."
+     },
+     {
+      "archivo": "marketing/portafolio/07-doceavo/medios/home-390.png",
+      "forma": "4:5",
+      "alt": "La portada de Doceavo en un celular, con la nota al margen que dice que es un concepto."
+     },
+     {
+      "archivo": "marketing/portafolio/07-doceavo/medios/calendario-390.png",
+      "forma": "4:5",
+      "alt": "La hoja de octubre del calendario de Doceavo en un celular, con el 20 y el 28 en rojo."
+     },
+     {
+      "archivo": "marketing/portafolio/07-doceavo/identidad/placas/1-62-lomo-lienzo.png",
+      "forma": "1,62",
+      "alt": "Doce archivadores, uno por mes, con el de octubre sacado."
+     },
+     {
+      "archivo": "marketing/portafolio/07-doceavo/identidad/placas/1-62-hoja-tinta.png",
+      "forma": "1,62",
+      "alt": "La hoja de octubre del taco, con lo que vence y el 16 como hoy."
+     },
+     {
+      "archivo": "marketing/portafolio/07-doceavo/identidad/placas/4x5-informe-tinta.png",
+      "forma": "4:5",
+      "alt": "El informe mensual de Doceavo, una plantilla sin datos."
+     },
+     {
+      "archivo": "marketing/portafolio/07-doceavo/medios/calendario-1440.png",
+      "forma": "16:9",
+      "alt": "La página «Calendario» de Doceavo a 1440: la hoja grande de octubre y el selector de meses."
+     }
+    ]
+   },
+   {
+    "id": "resultado",
+    "nombre": "Sin métrica",
+    "trabajo": "Decir que no existe y qué muestra igual, sin una cifra de resultado.",
+    "elementos": [
+     {
+      "id": "concepto.doceavo.resultado.rotulo",
+      "rol": "rotulo",
+      "texto": "Sin métrica",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.resultado.h2",
+      "rol": "h2",
+      "texto": "Doceavo no existe y no tiene clientes.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.resultado.p1",
+      "rol": "parrafo",
+      "texto": "En su sitio no hay una promesa que no se pueda comprobar: lo que ofrece es una fecha del calendario del SII, y la identidad está hecha de esas fechas, hasta el logo.",
+      "fuente": "marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII)",
+      "estado": "nuevo",
+      "antes": "Lo que muestra es un servicio profesional sin una sola promesa vaga: lo que ofrece es una fecha que se puede comprobar, y la identidad está hecha de esas fechas, hasta el logo.",
+      "por_que": "Detectores, 19-oct: el arranque «Lo que muestra es…» se repetía en tres de los cuatro conceptos. El hecho es el mismo de caso.md (una fecha verificable), dicho con su fuente."
+     },
+     {
+      "id": "concepto.doceavo.resultado.p2",
+      "rol": "parrafo",
+      "texto": "Por dentro, cada fecha sale del calendario del SII con su fuente y su día de consulta, la página se lee entera aunque el navegador no cargue sus programas, y un bloque de datos que el visitante no ve le dice a Google y a la IA que el estudio y su contadora son inventados.",
+      "fuente": "marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII)",
+      "estado": "nuevo"
+     }
+    ],
+    "medios": [
+     {
+      "archivo": "marketing/portafolio/07-doceavo/identidad/placas/16x9-f29-tinta.png",
+      "forma": "16:9",
+      "alt": "Placa de Doceavo: «¿Cuándo vence el F29?» y la respuesta del sitio con su fuente: el 12, o el 20 si facturas electrónico."
+     }
+    ]
+   },
+   {
+    "id": "siguiente",
+    "nombre": "Siguiente",
+    "trabajo": "Ofrecer escribir y llevar a la pieza que sigue.",
+    "elementos": [
+     {
+      "id": "concepto.doceavo.siguiente.contacto",
+      "rol": "parrafo",
+      "tinta": "Si quieres un sitio así para tu rubro,",
+      "gris": "escríbenos y te respondemos en 24 horas.",
+      "texto": "Si quieres un sitio así para tu rubro, escríbenos y te respondemos en 24 horas.",
+      "fuente": "paginas-v3.json contacto",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.siguiente.boton",
+      "rol": "boton",
+      "texto": "Escribir a SpindleLab",
+      "destino": "/v3/contacto/",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.siguiente.rotulo",
+      "rol": "rotulo",
+      "texto": "Siguiente",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.siguiente.caso",
+      "rol": "h2",
+      "tinta": "Tonela.",
+      "gris": "El color de la eslinga es su capacidad.",
+      "texto": "Tonela. El color de la eslinga es su capacidad.",
+      "destino": "/v3/trabajo/tonela/",
+      "nota": "Lleva su rótulo «Concepto» a la vista.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.doceavo.siguiente.todo",
+      "rol": "boton",
+      "texto": "[ Todo el trabajo ] (10)",
+      "destino": "/v3/trabajo/",
+      "estado": "queda",
+      "origen": "texto-paso2.json «praxi.siguiente.todo»"
+     }
+    ]
+   }
+  ],
+  "cambios_de_registro": [
+   "La bajada pasa de «El año en doce» (4 palabras) a «El año en doce, con lo que vence cada mes»: el lock §14 pide de 6 a 13 en la continuación gris.",
+   "Desafío → Problema; el titular, de 12 a 7 palabras («El dueño de una pyme no compra asesoría: compra no enterarse tarde.» pasa a «Enterarse tarde, por un aviso del SII.»). Sale «soluciones a tu medida» de la cita: queda «asesoría integral», que dice lo mismo, y la otra es una frase vetada del detector aunque vaya entre comillas.",
+   "Estrategia: «el F29» se explica la primera vez («la declaración mensual del IVA»).",
+   "Identidad: «eje que la vuelve monoespaciada» pasa a «un ajuste para volverse de ancho fijo»; salen los códigos de color y «lleno es en curso, rojo es vence».",
+   "Qué muestra: «el HTML se lee completo sin JavaScript» pasa a «la página se lee entera aunque el navegador no cargue sus programas»; sale la lista de preguntas de ejemplo; suma que su contadora es inventada."
+  ]
+ }
+}

@@ -6,6 +6,9 @@
 //   · La imagen quieta es el póster (el primer cuadro): es lo primero que se pinta y lo único que queda sin JS. Su alt
 //     es la descripción del video (Clara la escribe en «medios»); vacío si es un ambiente sin información (la portada).
 //   · `fuentes` (la portada, §3.1.2): las fuentes se eligen por el ancho al cargar, [{ desde: 834, webm, mp4 }, { webm, mp4 }].
+//     Si ninguna sirve para el ancho de quien mira, no hay video ni pausa: queda la imagen quieta (los conceptos bajo 834).
+//   · `posterAngosto` (el medio principal de un caso, tanda 3): la imagen quieta de bajo 834, que el marco muestra en 4:5
+//     (spec §2.3); va en un <picture> con la del ancho grande. Sin esta prop el marcado es el de siempre.
 // Los techos de peso (§3.5.5) y las reglas de qué video va dónde (§3.3) los cumple quien lo usa.
 import Pausa from './Pausa.astro';
 interface Fuente {
@@ -29,14 +32,23 @@ interface Props {
   pausaArriba?: boolean;
   /** En la primera pantalla: la imagen quieta se pide de entrada y con prioridad (candidata a LCP, §3.1). */
   primeraPantalla?: boolean;
+  /** La imagen quieta bajo 834 px, si es otra (el medio principal de un caso). */
+  posterAngosto?: { src: string; ancho: number; alto: number };
 }
 const {
   poster, ancho, alto, webm, mp4, fuentes, clase, sangre = false, descripcion = '', pausaArriba = false,
-  primeraPantalla = false,
+  primeraPantalla = false, posterAngosto,
 } = Astro.props;
 ---
 <div class:list={['medio', 'video', clase, { 'medio--sangre': sangre }]} data-video data-fuentes={fuentes ? JSON.stringify(fuentes) : undefined}>
-  <img class="video__quieta" src={poster} alt={descripcion} width={ancho} height={alto} loading={primeraPantalla ? 'eager' : 'lazy'} fetchpriority={primeraPantalla ? 'high' : undefined} decoding="async" />
+  {posterAngosto ? (
+    <picture class="video__quieta">
+      <source media="(max-width: 833.98px)" srcset={posterAngosto.src} width={posterAngosto.ancho} height={posterAngosto.alto} />
+      <img src={poster} alt={descripcion} width={ancho} height={alto} loading={primeraPantalla ? 'eager' : 'lazy'} fetchpriority={primeraPantalla ? 'high' : undefined} decoding="async" />
+    </picture>
+  ) : (
+    <img class="video__quieta" src={poster} alt={descripcion} width={ancho} height={alto} loading={primeraPantalla ? 'eager' : 'lazy'} fetchpriority={primeraPantalla ? 'high' : undefined} decoding="async" />
+  )}
   <video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1">
     {!fuentes && webm && <source src={webm} type="video/webm" />}
     {!fuentes && mp4 && <source src={mp4} type="video/mp4" />}

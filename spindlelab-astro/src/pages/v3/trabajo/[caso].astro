@@ -1,0 +1,27 @@
+---
+// LAS SEIS PÁGINAS DE CASO DE A · ARCHIVO (obra E12, corrida 2, tanda 3). Diego, 19-oct-2026.
+//   /v3/trabajo/praxi/, /combeau/ (con #fotografia y #modelo), /sesenta/, /ocelo/, /doceavo/ y /tonela/.
+// Una sola plantilla (spec §2.3, lock §21.5): Caso.astro. El texto es de Clara (texto-obra.json, «caso-*»), los medios
+// de medios-casos.json y las señales de Simón (senales-obra.md §2.3 a §2.5): title y description de Clara, que son los
+// de Simón (el build se cae si se salen de los largos de §1.2), la imagen al compartir de §1.6 y el JSON-LD por el slot
+// head (WebPage, el caso y la BreadcrumbList igual a la miga). noindex mientras viva en /v3/.
+// Como toda página de A, importa ella misma el Layout (desvios.md, tanda 1, punto 5).
+import Layout from '../../../layouts/Layout.astro';
+import Caso from '../../../components/a/Caso.astro';
+import { LAYOUT_A } from '../../../components/a/layout-a';
+import { ORDEN, modelo } from '../../../data/archivo/casos.mjs';
+
+export function getStaticPaths() {
+  return ORDEN.map((caso) => ({ params: { caso } }));
+}
+const { caso } = Astro.params;
+const m = modelo(caso);
+if (m.title.length > 60 || m.description.length < 120 || m.description.length > 160) {
+  throw new Error(`/trabajo/${caso}/: title (${m.title.length}) o description (${m.description.length}) fuera de los largos de senales-obra.md §1.2`);
+}
+---
+<Layout title={m.title} description={m.description} ogImage={m.og.imagen} ogImageAlt={m.og.alt} {...LAYOUT_A}>
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
+  <Caso caso={caso} />
+</Layout>

@@ -1,0 +1,446 @@
+{
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e12/texto/texto-obra.json",
+ "sha256": "30d0accec4852592083a78579b637ee3d67b0a739707b65712fec33e3e0fba35",
+ "id": "caso-tonela",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con construccion/herramientas/extraer-texto.mjs.",
+ "texto": {
+  "id": "caso-tonela",
+  "ruta": "/v3/trabajo/tonela/",
+  "title": "Concepto: Tonela, proveedor de izaje · SpindleLab",
+  "description": "Concepto: Tonela no existe. Una marca inventada de eslingas en Antofagasta, para mostrar cómo diseñaríamos y programaríamos un sitio industrial B2B. Sin cifras.",
+  "senales": "Simón, e12/senales-obra.md §2.5 (copiado tal cual; manda Simón)",
+  "estructura": "La plantilla de caso (spec §2.3), con el texto del caso.md de Bruno pasado por registro: los hechos verificados no cambian; salen los códigos de color, los pesos de letra, los nombres de código y los esquemas, y lo técnico va con lo que hace. «Concepto · 2026» en la ficha, a la vista sin scroll a 1440 y a 390.",
+  "secciones": [
+   {
+    "id": "lateral",
+    "nombre": "Barra lateral",
+    "trabajo": "Nombrar la pieza y decir sin scroll que es un concepto.",
+    "elementos": [
+     {
+      "id": "concepto.tonela.miga",
+      "rol": "rotulo",
+      "texto": "Inicio · Trabajo · Tonela",
+      "uso": "miga",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.h1",
+      "rol": "h1",
+      "tinta": "Tonela.",
+      "gris": "El color de la eslinga es su capacidad.",
+      "texto": "Tonela. El color de la eslinga es su capacidad.",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón), «Ficha lateral»",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.ficha",
+      "rol": "ficha",
+      "campos": [
+       {
+        "rotulo": "Tipo",
+        "valor": "Concepto"
+       },
+       {
+        "rotulo": "Año",
+        "valor": "2026"
+       },
+       {
+        "rotulo": "Rubro",
+        "valor": "Izaje: eslingas, cadenas y grilletes"
+       },
+       {
+        "rotulo": "Lo hecho",
+        "valor": "Identidad, sitio (portada y una página interior) y un recorrido en video"
+       }
+      ],
+      "linea": "Concepto · 2026",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón), «Ficha lateral»",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.indice",
+      "rol": "rotulo",
+      "uso": "índice de secciones",
+      "opciones": [
+       "Problema",
+       "Hipótesis",
+       "Solución",
+       "La pieza",
+       "Sin métrica"
+      ],
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.creditos.rotulo",
+      "rol": "rotulo",
+      "texto": "Quién lo hizo",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.creditos",
+      "rol": "nota",
+      "texto": "Identidad, sitio y recorrido: SpindleLab. La marca es inventada.",
+      "estado": "nuevo"
+     }
+    ]
+   },
+   {
+    "id": "medio",
+    "nombre": "Medio principal",
+    "trabajo": "Mostrar la pieza en movimiento.",
+    "elementos": [
+     {
+      "id": "concepto.tonela.medio.descripcion",
+      "rol": "nota",
+      "texto": "Recorrido de diez segundos por el sitio de Tonela, grabado en el navegador desde su portada.",
+      "uso": "alt",
+      "donde": "movimiento/recorrido (video con aria-hidden; este texto en la figura)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.medio.poster",
+      "rol": "nota",
+      "texto": "Portada de Tonela: «Cada color levanta un peso. El amarre decide cuánto.», con las ocho eslingas de colores colgadas de una barra, de 1 a 10 toneladas.",
+      "uso": "alt",
+      "donde": "póster del recorrido",
+      "estado": "nuevo"
+     }
+    ]
+   },
+   {
+    "id": "problema",
+    "nombre": "Problema",
+    "trabajo": "El problema real del rubro, en palabras de cualquiera.",
+    "elementos": [
+     {
+      "id": "concepto.tonela.problema.rotulo",
+      "rol": "rotulo",
+      "texto": "Problema",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.problema.h2",
+      "rol": "h2",
+      "texto": "El catálogo copiado del fabricante.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.problema.p1",
+      "rol": "parrafo",
+      "texto": "Foto de producto, «solicite cotización» y ninguna tabla de carga en castellano. El que compra (un jefe de mantención, un prevencionista, el encargado de bodega de una faena) cruza tres PDF en inglés para saber qué eslinga sirve para su maniobra, y el sitio no le dice qué revisar antes de usarla ni cuándo botar la que ya tiene.",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.problema.p2",
+      "rol": "parrafo",
+      "texto": "Es una compra de seguridad: si la eslinga no alcanza, se cae una carga.",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)",
+      "estado": "nuevo"
+     }
+    ]
+   },
+   {
+    "id": "hipotesis",
+    "nombre": "Hipótesis",
+    "trabajo": "La idea que ordena la pieza.",
+    "elementos": [
+     {
+      "id": "concepto.tonela.hipotesis.rotulo",
+      "rol": "rotulo",
+      "texto": "Hipótesis",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.hipotesis.h2",
+      "rol": "h2",
+      "texto": "Que la norma sea la marca.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.hipotesis.p1",
+      "rol": "parrafo",
+      "texto": "Las eslingas de poliéster ya vienen pintadas según lo que levantan: la norma europea EN 1492 las ordena en ocho colores, del violeta de 1 tonelada al naranja de 10. Tonela no inventa un color: toma ese código como paleta y como manera de recorrer el sitio, y cada color significa su tonelaje y nada más.",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.hipotesis.p2",
+      "rol": "parrafo",
+      "texto": "Y publica lo que un proveedor se guarda: la tabla de carga por modo de amarre y cuándo dar de baja una eslinga, con la fuente al lado.",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)",
+      "estado": "nuevo"
+     }
+    ],
+    "medios": [
+     {
+      "archivo": "marketing/portafolio/04-tonela/identidad/placas/16x9-codigo-tinta.png",
+      "forma": "16:9",
+      "alt": "Placa de Tonela: «El color es la capacidad», con las ocho eslingas de la norma colgadas por tonelaje, de violeta 1 t a naranja 10 t."
+     }
+    ]
+   },
+   {
+    "id": "solucion",
+    "nombre": "Solución",
+    "trabajo": "La identidad, con lo que hace cada decisión.",
+    "elementos": [
+     {
+      "id": "concepto.tonela.solucion.rotulo",
+      "rol": "rotulo",
+      "texto": "Solución",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.solucion.h2",
+      "rol": "h2",
+      "texto": "La etiqueta como documento.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.solucion.p1",
+      "rol": "parrafo",
+      "texto": "Cada eslinga lleva cosida una etiqueta que dice qué levanta, de qué es y bajo qué norma. La marca se cose igual: TONELA dentro de una etiqueta con su costura punteada y el zigzag con que se remata una cinta de izaje. En los tamaños chicos, como el ícono de la pestaña, queda la T sola.",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.solucion.p2",
+      "rol": "parrafo",
+      "texto": "La marca es tinta casi negra sobre blanco y no tiene color propio: los colores son de la carga. Cada color lleva su texto en el tono que se lee bien encima; el verde de la norma no alcanzaba y se oscureció hasta que se leyera.",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.solucion.p3",
+      "rol": "parrafo",
+      "texto": "Las letras son tres, cada una con un trabajo: Big Shoulders para la marca y los titulares; su versión de plantilla, Big Shoulders Stencil, para lo que en una bodega se pinta con plantilla (el tonelaje, el lote, el rótulo del estante); y Barlow Semi Condensed para el texto y las tablas, con cifras del mismo ancho para que una columna de capacidades se lea de un vistazo.",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)",
+      "estado": "nuevo"
+     }
+    ],
+    "medios": [
+     {
+      "archivo": "marketing/portafolio/04-tonela/identidad/placas/16x9-logo-tinta.png",
+      "forma": "16:9",
+      "alt": "La marca de Tonela: TONELA dentro de una etiqueta cosida con costura punteada, sobre negro."
+     },
+     {
+      "archivo": "marketing/portafolio/04-tonela/identidad/placas/4x5-eslinga-2-lienzo.png",
+      "forma": "4:5",
+      "alt": "Una eslinga verde de 2 toneladas con la marca cosida y su etiqueta colgante: capacidad por amarre, norma EN 1492-1 y lote «ficticio»."
+     },
+     {
+      "archivo": "marketing/portafolio/04-tonela/identidad/placas/4x5-eslinga-5-tinta.png",
+      "forma": "4:5",
+      "alt": "Una eslinga roja de 5 toneladas con la marca cosida y su etiqueta colgante, sobre negro."
+     },
+     {
+      "archivo": "marketing/portafolio/04-tonela/identidad/placas/4x5-letra-tinta.png",
+      "forma": "4:5",
+      "alt": "La letra de Tonela, Big Shoulders: «Aa» grande y «Cuánto levanta cada color, según cómo amarres»."
+     },
+     {
+      "archivo": "marketing/portafolio/04-tonela/identidad/placas/1-62-stencil-lienzo.png",
+      "forma": "1,62",
+      "alt": "Big Shoulders Stencil: los tonelajes de 1 a 10 con su color, y «Estante C · Lote ficticio»."
+     },
+     {
+      "archivo": "marketing/portafolio/04-tonela/identidad/placas/1-62-barlow-lienzo.png",
+      "forma": "1,62",
+      "alt": "Barlow Semi Condensed: un párrafo sobre el canasto y una columna de capacidades."
+     },
+     {
+      "archivo": "marketing/portafolio/04-tonela/identidad/placas/16x9-tabla-lienzo.png",
+      "forma": "16:9",
+      "alt": "La tabla de carga por color de Tonela, con el amarre en canasto de 7° a 45° elegido."
+     },
+     {
+      "archivo": "marketing/portafolio/04-tonela/identidad/pliego.png",
+      "forma": "16:9",
+      "alt": "El pliego de identidad de Tonela: la marca, el código de color, las tres letras y la tabla de carga."
+     }
+    ]
+   },
+   {
+    "id": "pieza",
+    "nombre": "La pieza",
+    "trabajo": "El sitio aplicado.",
+    "elementos": [
+     {
+      "id": "concepto.tonela.pieza.rotulo",
+      "rol": "rotulo",
+      "texto": "La pieza",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.pieza.h2",
+      "rol": "h2",
+      "texto": "Un sitio que contesta la pregunta técnica.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.pieza.p1",
+      "rol": "parrafo",
+      "texto": "La portada abre con las ocho eslingas colgadas de una barra, cada una más ancha según lo que levanta, y el titular «Cada color levanta un peso. El amarre decide cuánto.». Debajo, la tabla de carga funciona: eliges el amarre y cada fila muestra su capacidad, y un dibujo del canasto deja abrir los ramales para ver cómo baja la carga hasta que, pasados los 60°, dice «No se iza».",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.pieza.p2",
+      "rol": "parrafo",
+      "texto": "El catálogo va ordenado por lo que levanta y sin precios; estrobos, cadenas y grilletes van aparte y sin color, porque el código no es de ellos. Después vienen la inspección, cinco cosas que la empresa no hace (entre ellas, firmar tu plan de izaje), cinco preguntas largas en texto y un contacto de tres campos: qué levantas, cuánto pesa y en qué faena.",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.pieza.p3",
+      "rol": "parrafo",
+      "texto": "La página interior, «Inspección y certificación», cuenta las tres revisiones (antes de cada uso, durante el trabajo y la anual, que es la del taller), dibuja los seis lugares donde una eslinga avisa y los ocho criterios para darla de baja. El registro de inspección es el documento de la marca: apta o dada de baja, sin un tercer resultado.",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)",
+      "estado": "nuevo"
+     }
+    ],
+    "medios": [
+     {
+      "archivo": "marketing/portafolio/04-tonela/capturas/home-1440-primera.png",
+      "forma": "16:9",
+      "alt": "La portada de Tonela a 1440: el titular a la izquierda y las ocho eslingas colgadas a la derecha, con el rótulo de concepto arriba."
+     },
+     {
+      "archivo": "marketing/portafolio/04-tonela/capturas/medio-4x5-390.png",
+      "forma": "4:5",
+      "alt": "La portada de Tonela en un celular, con el rótulo «Concepto. De SpindleLab. Tonela no existe y nada de esto ocurrió.»"
+     },
+     {
+      "archivo": "marketing/portafolio/04-tonela/capturas/inspeccion-4x5-390.png",
+      "forma": "4:5",
+      "alt": "La página «Inspección y certificación» de Tonela en un celular: «Qué revisamos en una eslinga y cuándo se da de baja»."
+     },
+     {
+      "archivo": "marketing/portafolio/04-tonela/identidad/placas/1-62-registro-tinta.png",
+      "forma": "1,62",
+      "alt": "El registro de inspección de Tonela, una plantilla sin datos: apta o se da de baja."
+     },
+     {
+      "archivo": "marketing/portafolio/04-tonela/identidad/placas/1-62-rotulo-tinta.png",
+      "forma": "1,62",
+      "alt": "El rótulo de un estante pintado con plantilla: «Estante C · Eslingas rojas · 5 t»."
+     },
+     {
+      "archivo": "marketing/portafolio/04-tonela/identidad/placas/4x5-eslinga-2-tinta.png",
+      "forma": "4:5",
+      "alt": "Una eslinga verde de 2 toneladas con su etiqueta colgante, sobre negro."
+     },
+     {
+      "archivo": "marketing/portafolio/04-tonela/capturas/inspeccion-1440-primera.png",
+      "forma": "16:9",
+      "alt": "La página «Inspección y certificación» de Tonela a 1440."
+     }
+    ]
+   },
+   {
+    "id": "resultado",
+    "nombre": "Sin métrica",
+    "trabajo": "Decir que no existe y qué muestra igual, sin una cifra de resultado.",
+    "elementos": [
+     {
+      "id": "concepto.tonela.resultado.rotulo",
+      "rol": "rotulo",
+      "texto": "Sin métrica",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.resultado.h2",
+      "rol": "h2",
+      "texto": "Tonela no existe y no tuvo clientes.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.resultado.p1",
+      "rol": "parrafo",
+      "texto": "Nada de lo que muestra su sitio ocurrió. La identidad sale de la norma del rubro, y el sitio contesta en castellano la pregunta que el comprador le hace hoy a una IA, como «¿qué eslinga uso para levantar 3 toneladas en canasto?».",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)",
+      "estado": "nuevo",
+      "antes": "Nada de lo que muestra su sitio ocurrió. Lo que enseña es oficio: una identidad que sale de la norma del rubro en vez de decorarla, y un sitio que contesta en castellano la pregunta que el comprador le hace hoy a una IA, como «¿qué eslinga uso para levantar 3 toneladas en canasto?».",
+      "por_que": "Detectores, 19-oct: «Lo que enseña es oficio» y «en vez de decorarla» elogian la pieza en vez de decir qué tiene; quedan los dos hechos."
+     },
+     {
+      "id": "concepto.tonela.resultado.p1b",
+      "rol": "parrafo",
+      "texto": "La respuesta está escrita en la página, y un bloque de datos que el visitante no ve le dice a Google y a la IA que Tonela es un ejercicio.",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.resultado.p2",
+      "rol": "parrafo",
+      "texto": "Las únicas cifras de la pieza son de la norma, con su fuente: el código de color, los factores de cada amarre, el rango de temperatura del poliéster y el ángulo de 60°. Ni precios, ni plazos, ni clientes. La tabla dice que es referencial: manda la etiqueta de cada eslinga, y el plan de izaje lo firma una persona calificada.",
+      "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)",
+      "estado": "nuevo"
+     }
+    ],
+    "medios": [
+     {
+      "archivo": "(fila 11 del caso.md: «Lo que lee un motor», placa pendiente de Bruno)",
+      "forma": "16:9",
+      "nota": "Si la placa no se compone antes de construir, la sección va sin fila."
+     }
+    ]
+   },
+   {
+    "id": "siguiente",
+    "nombre": "Siguiente",
+    "trabajo": "Ofrecer escribir y llevar a la pieza que sigue.",
+    "elementos": [
+     {
+      "id": "concepto.tonela.siguiente.contacto",
+      "rol": "parrafo",
+      "tinta": "Si quieres un sitio así para tu rubro,",
+      "gris": "escríbenos y te respondemos en 24 horas.",
+      "texto": "Si quieres un sitio así para tu rubro, escríbenos y te respondemos en 24 horas.",
+      "fuente": "paginas-v3.json contacto",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.siguiente.boton",
+      "rol": "boton",
+      "texto": "Escribir a SpindleLab",
+      "destino": "/v3/contacto/",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.siguiente.rotulo",
+      "rol": "rotulo",
+      "texto": "Siguiente",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.siguiente.caso",
+      "rol": "h2",
+      "tinta": "Bernardo Combeau.",
+      "gris": "Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.",
+      "texto": "Bernardo Combeau. Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.",
+      "destino": "/v3/trabajo/combeau/",
+      "estado": "nuevo"
+     },
+     {
+      "id": "concepto.tonela.siguiente.todo",
+      "rol": "boton",
+      "texto": "[ Todo el trabajo ] (10)",
+      "destino": "/v3/trabajo/",
+      "estado": "queda",
+      "origen": "texto-paso2.json «praxi.siguiente.todo»"
+     }
+    ]
+   }
+  ],
+  "cambios_de_registro": [
+   "Desafío → Problema; el titular, de 10 a 5 palabras («En izaje, el sitio es un catálogo copiado del fabricante.»).",
+   "Estrategia: «la EN 1492» pasa a «la norma europea EN 1492», para que se entienda qué es; sale «(ni un botón, ni un fondo, ni un ícono)».",
+   "Identidad: salen los códigos de color, el 16,55:1 y el 5,38:1 y los pesos de letra; el verde que se oscureció queda dicho en palabras. «A 32 y 16 px» pasa a «en los tamaños chicos, como el ícono de la pestaña».",
+   "Aplicación: sale la descripción de la cinta que cruza la interior; el resto, igual.",
+   "Qué muestra: «FAQPage» y «disambiguatingDescription» pasan a «un bloque de datos que el visitante no ve»; sale «Las 40 capacidades de la tabla son su producto»."
+  ]
+ }
+}
