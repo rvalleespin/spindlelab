@@ -2188,9 +2188,11 @@
       {
        "id": "combeau.resultado.p2",
        "rol": "parrafo",
-       "texto": "Hay también una señal de que el panel le sirve, sin número: después de que el sitio cambió de servidor, en septiembre, Bernardo publicó solo una campaña y fotos nuevas.",
+       "texto": "Hay también una señal de que el panel le sirve, sin número: después de que el sitio cambió de servidor, en septiembre, Bernardo publicó por su cuenta una campaña y fotos nuevas.",
        "fuente": "inventario-casos §2.9, «Él usa el panel solo» (dicho: revision-panel-admin-bernardo.md:589-590, «confirmado por HTTP directo»)",
-       "estado": "nuevo"
+       "estado": "nuevo",
+       "por_que": "Detectores, 19-oct: «publicó solo una campaña» se leía como «publicó apenas una campaña»; lo que se quiere decir es que la publicó sin pedirnos nada.",
+       "antes": "Hay también una señal de que el panel le sirve, sin número: después de que el sitio cambió de servidor, en septiembre, Bernardo publicó solo una campaña y fotos nuevas."
       }
      ]
     },
@@ -3013,9 +3015,11 @@
       {
        "id": "concepto.ocelo.resultado.p1",
        "rol": "parrafo",
-       "texto": "Lo que muestra es que en salud la honestidad también es diseño: una identidad hecha con los instrumentos del examen, una página que parte a oscuras por una razón clínica, y una sección entera para lo que ninguna cirugía garantiza.",
+       "texto": "Lo que queda para mirar son tres decisiones: la identidad sale de los instrumentos del examen, la página parte a oscuras por una razón clínica y una sección entera dice lo que ninguna cirugía garantiza.",
        "fuente": "marketing/portafolio/05-ocelo/caso.md (hechos de ficha.md §4)",
-       "estado": "nuevo"
+       "estado": "nuevo",
+       "antes": "Lo que muestra es que en salud la honestidad también es diseño: una identidad hecha con los instrumentos del examen, una página que parte a oscuras por una razón clínica, y una sección entera para lo que ninguna cirugía garantiza.",
+       "por_que": "Detectores, 19-oct: «en salud la honestidad también es diseño» es un elogio de la pieza a sí misma, no un hecho; quedan las tres decisiones, que sí se ven en el sitio. Y el arranque «Lo que muestra es…» se repetía en tres de los cuatro conceptos."
       },
       {
        "id": "concepto.ocelo.resultado.p2",
@@ -3414,9 +3418,11 @@
       {
        "id": "concepto.doceavo.resultado.p1",
        "rol": "parrafo",
-       "texto": "Lo que muestra es un servicio profesional sin una sola promesa vaga: lo que ofrece es una fecha que se puede comprobar, y la identidad está hecha de esas fechas, hasta el logo.",
+       "texto": "En su sitio no hay una promesa que no se pueda comprobar: lo que ofrece es una fecha del calendario del SII, y la identidad está hecha de esas fechas, hasta el logo.",
        "fuente": "marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII)",
-       "estado": "nuevo"
+       "estado": "nuevo",
+       "antes": "Lo que muestra es un servicio profesional sin una sola promesa vaga: lo que ofrece es una fecha que se puede comprobar, y la identidad está hecha de esas fechas, hasta el logo.",
+       "por_que": "Detectores, 19-oct: el arranque «Lo que muestra es…» se repetía en tres de los cuatro conceptos. El hecho es el mismo de caso.md (una fecha verificable), dicho con su fuente."
       },
       {
        "id": "concepto.doceavo.resultado.p2",
@@ -3846,9 +3852,11 @@
       {
        "id": "concepto.tonela.resultado.p1",
        "rol": "parrafo",
-       "texto": "Nada de lo que muestra su sitio ocurrió. Lo que enseña es oficio: una identidad que sale de la norma del rubro en vez de decorarla, y un sitio que contesta en castellano la pregunta que el comprador le hace hoy a una IA, como «¿qué eslinga uso para levantar 3 toneladas en canasto?».",
+       "texto": "Nada de lo que muestra su sitio ocurrió. La identidad sale de la norma del rubro, y el sitio contesta en castellano la pregunta que el comprador le hace hoy a una IA, como «¿qué eslinga uso para levantar 3 toneladas en canasto?».",
        "fuente": "marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)",
-       "estado": "nuevo"
+       "estado": "nuevo",
+       "antes": "Nada de lo que muestra su sitio ocurrió. Lo que enseña es oficio: una identidad que sale de la norma del rubro en vez de decorarla, y un sitio que contesta en castellano la pregunta que el comprador le hace hoy a una IA, como «¿qué eslinga uso para levantar 3 toneladas en canasto?».",
+       "por_que": "Detectores, 19-oct: «Lo que enseña es oficio» y «en vez de decorarla» elogian la pieza en vez de decir qué tiene; quedan los dos hechos."
       },
       {
        "id": "concepto.tonela.resultado.p1b",
@@ -4133,23 +4141,59 @@
        "id": "servicios.m4.situacion",
        "rol": "h2",
        "texto": "Ya tienes demanda y quieres más.",
-       "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[3].momento",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json tambienPanel.momento",
        "estado": "queda"
+      },
+      {
+       "id": "servicios.m4.s1.nombre",
+       "rol": "h2",
+       "texto": "Gestión de redes sociales",
+       "estado": "nuevo",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json tambien[0].n",
+       "nivel": 3,
+       "destino": "/v3/servicios/redes-sociales/",
+       "por_que": "Detectores, 19-oct: los otros cuatro servicios llevan su nombre y su precio en esta página, y estos dos no; sin nombre, el párrafo no dice qué servicio es."
+      },
+      {
+       "id": "servicios.m4.s1.precio",
+       "rol": "nota",
+       "texto": "Desde $390.000/mes · $590.000/mes con pauta + IVA",
+       "estado": "nuevo",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json tambien[0].p (con «Desde … + IVA», como los demás)",
+       "uso": "precio"
       },
       {
        "id": "servicios.m4.redes",
        "rol": "parrafo",
        "texto": "Tus publicaciones y tu publicidad en LinkedIn, Instagram y Facebook.",
        "antes": "Orgánico y pauta social en LinkedIn y Meta.",
-       "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[3].items[0].d",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json tambien[0].d",
        "por_que": "«Orgánico» y «pauta social» son jerga; Meta es Instagram y Facebook (la home lo dice así).",
        "estado": "cambia"
+      },
+      {
+       "id": "servicios.m4.s2.nombre",
+       "rol": "h2",
+       "texto": "Paid Media (Google)",
+       "estado": "nuevo",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json tambien[1].n",
+       "nivel": 3,
+       "destino": "/v3/servicios/paid-media/",
+       "por_que": "Igual que Gestión de redes sociales."
+      },
+      {
+       "id": "servicios.m4.s2.precio",
+       "rol": "nota",
+       "texto": "Desde $350.000/mes · $550.000/mes Pro + IVA",
+       "estado": "nuevo",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json tambien[1].p (con «Desde … + IVA», como los demás)",
+       "uso": "precio"
       },
       {
        "id": "servicios.m4.paid",
        "rol": "parrafo",
        "texto": "Google Ads para llegar a quien ya está buscando lo que ofreces.",
-       "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[3].items[1].d",
+       "origen": "spindlelab-astro/src/data/oferta-v3.json tambien[1].d",
        "estado": "queda"
       }
      ]
@@ -4955,9 +4999,11 @@
       {
        "id": "metodo.linea",
        "rol": "entradilla",
-       "texto": "Cuatro pasos medibles: diagnóstico técnico, estrategia AEO/GEO, implementación y monitoreo.",
+       "texto": "Cuatro pasos medibles: revisamos qué le impide a Google y a la IA leer tu sitio, priorizamos, lo arreglamos y medimos el cambio.",
        "origen": "spindlelab-astro/src/data/paginas-v3.json metodo.linea",
-       "estado": "queda"
+       "estado": "cambia",
+       "antes": "Cuatro pasos medibles: diagnóstico técnico, estrategia AEO/GEO, implementación y monitoreo.",
+       "por_que": "Detector B8 y brief §2: «estrategia AEO/GEO» era la primera línea bajo el título y nadie la explicaba ahí. Son los mismos cuatro pasos, en las palabras de la description de Simón (senales-obra §2.8); los nombres de las fases siguen abajo, cada uno con su explicación."
       },
       {
        "id": "metodo.puerta",

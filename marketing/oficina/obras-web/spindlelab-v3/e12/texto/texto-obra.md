@@ -663,7 +663,9 @@
 - `h2` · **nuevo** Ningún dato de su negocio.
 - `parrafo` · **nuevo** No medimos visitas, consultas ni ventas del sitio de Bernardo, y no tenemos ningún dato de su negocio para mostrar. Lo que sí está medido, el 16 de octubre de 2026, es cómo quedó hecho: la foto de su portada llegaba en 95 kB en vez de 805, y el book abría sin descargar ningún video.  
   <sub>Fuente: inventario-casos §4.4 (sin métrica de negocio), §2.1 y §2.2</sub>
-- `parrafo` · **nuevo** Hay también una señal de que el panel le sirve, sin número: después de que el sitio cambió de servidor, en septiembre, Bernardo publicó solo una campaña y fotos nuevas.  
+- `parrafo` · **nuevo** Hay también una señal de que el panel le sirve, sin número: después de que el sitio cambió de servidor, en septiembre, Bernardo publicó por su cuenta una campaña y fotos nuevas.  
+  <sub>Antes: «Hay también una señal de que el panel le sirve, sin número: después de que el sitio cambió de servidor, en septiembre, Bernardo publicó solo una campaña y fotos nuevas.»</sub>  
+  <sub>Por qué: Detectores, 19-oct: «publicó solo una campaña» se leía como «publicó apenas una campaña»; lo que se quiere decir es que la publicó sin pedirnos nada.</sub>  
   <sub>Fuente: inventario-casos §2.9, «Él usa el panel solo» (dicho: revision-panel-admin-bernardo.md:589-590, «confirmado por HTTP directo»)</sub>
 
 ### Siguiente
@@ -936,7 +938,9 @@
 - `h2` · **cambia** Ocelo no existe ni atendió a nadie.  
   <sub>Antes: «Ocelo no existe y no atendió a nadie.»</sub>  
   <sub>Por qué: Lock §21.5: titulares de sección de 2 a 7 palabras (lo midió herramientas/comprobar-obra.py).</sub>
-- `parrafo` · **nuevo** Lo que muestra es que en salud la honestidad también es diseño: una identidad hecha con los instrumentos del examen, una página que parte a oscuras por una razón clínica, y una sección entera para lo que ninguna cirugía garantiza.  
+- `parrafo` · **nuevo** Lo que queda para mirar son tres decisiones: la identidad sale de los instrumentos del examen, la página parte a oscuras por una razón clínica y una sección entera dice lo que ninguna cirugía garantiza.  
+  <sub>Antes: «Lo que muestra es que en salud la honestidad también es diseño: una identidad hecha con los instrumentos del examen, una página que parte a oscuras por una razón clínica, y una sección entera para lo que ninguna cirugía garantiza.»</sub>  
+  <sub>Por qué: Detectores, 19-oct: «en salud la honestidad también es diseño» es un elogio de la pieza a sí misma, no un hecho; quedan las tres decisiones, que sí se ven en el sitio. Y el arranque «Lo que muestra es…» se repetía en tres de los cuatro conceptos.</sub>  
   <sub>Fuente: marketing/portafolio/05-ocelo/caso.md (hechos de ficha.md §4)</sub>
 - `parrafo` · **nuevo** Por dentro, un bloque de datos que el visitante no ve le dice a Google y a la IA que la clínica y sus dos médicos son inventados, y las preguntas largas van en texto, que es como una IA las puede citar.  
   <sub>Fuente: marketing/portafolio/05-ocelo/caso.md (hechos de ficha.md §4)</sub>
@@ -1073,7 +1077,9 @@
 
 - `rotulo` · **nuevo** Sin métrica
 - `h2` · **nuevo** Doceavo no existe y no tiene clientes.
-- `parrafo` · **nuevo** Lo que muestra es un servicio profesional sin una sola promesa vaga: lo que ofrece es una fecha que se puede comprobar, y la identidad está hecha de esas fechas, hasta el logo.  
+- `parrafo` · **nuevo** En su sitio no hay una promesa que no se pueda comprobar: lo que ofrece es una fecha del calendario del SII, y la identidad está hecha de esas fechas, hasta el logo.  
+  <sub>Antes: «Lo que muestra es un servicio profesional sin una sola promesa vaga: lo que ofrece es una fecha que se puede comprobar, y la identidad está hecha de esas fechas, hasta el logo.»</sub>  
+  <sub>Por qué: Detectores, 19-oct: el arranque «Lo que muestra es…» se repetía en tres de los cuatro conceptos. El hecho es el mismo de caso.md (una fecha verificable), dicho con su fuente.</sub>  
   <sub>Fuente: marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII)</sub>
 - `parrafo` · **nuevo** Por dentro, cada fecha sale del calendario del SII con su fuente y su día de consulta, la página se lee entera aunque el navegador no cargue sus programas, y un bloque de datos que el visitante no ve le dice a Google y a la IA que el estudio y su contadora son inventados.  
   <sub>Fuente: marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII)</sub>
@@ -1218,7 +1224,9 @@
 
 - `rotulo` · **nuevo** Sin métrica
 - `h2` · **nuevo** Tonela no existe y no tuvo clientes.
-- `parrafo` · **nuevo** Nada de lo que muestra su sitio ocurrió. Lo que enseña es oficio: una identidad que sale de la norma del rubro en vez de decorarla, y un sitio que contesta en castellano la pregunta que el comprador le hace hoy a una IA, como «¿qué eslinga uso para levantar 3 toneladas en canasto?».  
+- `parrafo` · **nuevo** Nada de lo que muestra su sitio ocurrió. La identidad sale de la norma del rubro, y el sitio contesta en castellano la pregunta que el comprador le hace hoy a una IA, como «¿qué eslinga uso para levantar 3 toneladas en canasto?».  
+  <sub>Antes: «Nada de lo que muestra su sitio ocurrió. Lo que enseña es oficio: una identidad que sale de la norma del rubro en vez de decorarla, y un sitio que contesta en castellano la pregunta que el comprador le hace hoy a una IA, como «¿qué eslinga uso para levantar 3 toneladas en canasto?».»</sub>  
+  <sub>Por qué: Detectores, 19-oct: «Lo que enseña es oficio» y «en vez de decorarla» elogian la pieza en vez de decir qué tiene; quedan los dos hechos.</sub>  
   <sub>Fuente: marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)</sub>
 - `parrafo` · **nuevo** La respuesta está escrita en la página, y un bloque de datos que el visitante no ve le dice a Google y a la IA que Tonela es un ejercicio.  
   <sub>Fuente: marketing/portafolio/04-tonela/caso.md (hechos de ficha.md, verificados por Simón)</sub>
@@ -1309,9 +1317,17 @@
   <sub>Antes: «Implementación continua e informes quincenales de SEO técnico o de visibilidad en IA.»</sub>  
   <sub>Por qué: La línea de la home; la cadencia de informes es R2, abierta, y no se promete aquí.</sub>
 - `h2` Ya tienes demanda y quieres más.
+- `h3` · **nuevo** Gestión de redes sociales  
+  → `/v3/servicios/redes-sociales/`  
+  <sub>Por qué: Detectores, 19-oct: los otros cuatro servicios llevan su nombre y su precio en esta página, y estos dos no; sin nombre, el párrafo no dice qué servicio es.</sub>
+- `nota · precio` · **nuevo** Desde $390.000/mes · $590.000/mes con pauta + IVA
 - `parrafo` · **cambia** Tus publicaciones y tu publicidad en LinkedIn, Instagram y Facebook.  
   <sub>Antes: «Orgánico y pauta social en LinkedIn y Meta.»</sub>  
   <sub>Por qué: «Orgánico» y «pauta social» son jerga; Meta es Instagram y Facebook (la home lo dice así).</sub>
+- `h3` · **nuevo** Paid Media (Google)  
+  → `/v3/servicios/paid-media/`  
+  <sub>Por qué: Igual que Gestión de redes sociales.</sub>
+- `nota · precio` · **nuevo** Desde $350.000/mes · $550.000/mes Pro + IVA
 - `parrafo` Google Ads para llegar a quien ya está buscando lo que ofreces.
 
 ### Lo que pones tú
@@ -1569,7 +1585,9 @@
 - `h1` · **cambia** Cómo trabajamos. *Para que Google y la IA lean el sitio que ya tienes.*  
   <sub>Antes: «Cómo trabajamos»</sub>  
   <sub>Por qué: Con el giro, el estudio también diseña y programa; este método es el de un sitio que ya existe. La continuación lo dice. Lock §14: la continuación gris va de 6 a 13 palabras y la tinta hasta 8 (lo midió herramientas/comprobar-obra.py).</sub>
-- `entradilla` Cuatro pasos medibles: diagnóstico técnico, estrategia AEO/GEO, implementación y monitoreo.
+- `entradilla` · **cambia** Cuatro pasos medibles: revisamos qué le impide a Google y a la IA leer tu sitio, priorizamos, lo arreglamos y medimos el cambio.  
+  <sub>Antes: «Cuatro pasos medibles: diagnóstico técnico, estrategia AEO/GEO, implementación y monitoreo.»</sub>  
+  <sub>Por qué: Detector B8 y brief §2: «estrategia AEO/GEO» era la primera línea bajo el título y nadie la explicaba ahí. Son los mismos cuatro pasos, en las palabras de la description de Simón (senales-obra §2.8); los nombres de las fases siguen abajo, cada uno con su explicación.</sub>
 - `parrafo` · **nuevo** Si vamos a diseñar y programar tu sitio desde cero, el proceso es otro: cinco fases que apruebas una por una, en Desarrollo web.  
   enlaces: «Desarrollo web» → `/v3/servicios/desarrollo-web/`  
   <sub>Por qué: Brief §3: Desarrollo web es la puerta del estudio. Sin esta línea, quien llega por el menú lee que el estudio solo audita.</sub>
