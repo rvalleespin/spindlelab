@@ -84,3 +84,7 @@ Ramón envió desde Gmail los 6 de la segunda ola y los 15 de reactivación (con
 - **Reactivación:** 14 de los 15 salieron con "Arreglarlo cuesta **desde** $149.000 + IVA" (el de tuoficinacontable no lleva cifra). Ramón decidió ese día quitar el "desde" en todo lo nuevo, pero los correos ya estaban enviados: no se puede corregir. `generar_reactivacion.py` ya no lo lleva, así que `borradores-reactivacion.json` muestra la versión sin "desde", distinta de lo enviado. Lo enviado vive en Gmail.
 - Toque 2 de estos 21: jueves 22-oct (recordatorio programado). Toque 3 de la primera ola: viernes 23-oct (recordatorio programado). Los 5 borradores del toque 2 de la primera ola siguen sin enviar al momento de este registro.
 - El Copiloto envió además seguimientos propios en el mismo rato (vanguardiapropiedades, bollek, medic-home, biofotonica, ultravision); no son del motor.
+
+
+## 19-oct-2026 ~12:50 UTC: toque 2 de la primera ola enviado
+Ramón envió los 5 toque 2 (día 3 de la primera ola) el mismo 19-oct; confirmado con `in:sent`, un segundo mensaje en cada hilo. Gmail quedó sin borradores. Ese día salieron en total 41 correos desde hola@: 21 del motor (primer toque), 5 del motor (toque 2) y 15 seguimientos del Copiloto.
