@@ -561,3 +561,165 @@ spec ya admite (§3.4: «Praxi (6,0 % medido en A), marca oscura de un solo acen
   58 ms; cero `a[href^="#"]`; saltar al contenido con su ruta; encabezado plegado; el círculo sobre el medio de «Siguiente»
   y escondido con Tab; los videos corren a la vista con la fuente de su ancho y la pausa los para y dice su estado; con
   movimiento reducido ningún video corre, no hay círculo ni entradas.
+
+---
+
+## Tanda 4 · Los servicios: `/v3/servicios/`, Desarrollo web y los cinco de `[slug]` (19-oct-2026, Diego)
+
+**Qué se construyó.** Las siete rutas sobre la plantilla interior de la spec §2.4, reemplazando las de driftime en los
+mismos tres archivos (las URL no cambian): `src/pages/v3/servicios/index.astro`, `desarrollo-web.astro` y `[slug].astro`
+(Visibilidad en IA, Auditoría SEO técnica, Acompañamiento mensual, Gestión de redes sociales y Paid Media). Nuevos:
+`src/data/archivo/servicios.mjs` (el orden de los seis, «Siguiente», los trozos de un texto de Clara con sus enlaces y la
+comparación de los precios), `src/scripts/archivo/fases.mjs`, `src/data/archivo/guardia-tailwind.ts` (punto 1), los textos
+de Clara de las siete rutas (`src/data/archivo/texto/`, `extraer-texto.mjs --comprobar`: iguales), dos medios en
+`public/v3/medios/` (punto 2) y siete imágenes al compartir en `public/assets/img/` (punto 7). **Compartido con las tandas
+anteriores, tocado:** `archivo.css` (un bloque nuevo, INTERIOR, antes del de movimiento reducido; ninguna de sus clases
+aparece en la home, `/trabajo/` ni los casos, comprobado en el `dist/`) y `medios.json` (dos entradas nuevas, ninguna
+cambiada). Después de esos cambios, `comprobar-tanda-2.mjs` y `comprobar-tanda-3.mjs` siguen sin fallas.
+`servicios-v3.json`, `oferta-v3.json` y `paginas-v3.json` no se tocaron (diff 0). Herramientas, en
+`e12/construccion/herramientas/`: `comprobar-tanda-4.mjs`, `campos-tanda-4.mjs`, `og-tanda-4.mjs` y `franjas-tanda-4.py`.
+
+### 1. Al reemplazar una página de driftime, el CSS publicado perdía una clase
+
+**Lo que pasó, medido:** con las siete páginas nuevas, `comparar-produccion.mjs` falló: el CSS que cargan `/` y
+`/nosotros/` pasaba de `index.BudKb2Rm.css` a `index.AFQ_8GCk.css`. La diferencia es una sola regla que **desaparecía**:
+`.flex-grow`. Tailwind la generaba porque el `desarrollo-web.astro` de driftime decía «flex-grow» en un comentario de su
+galería; al reemplazar la página, la palabra se fue con ella (el problema de la tanda 1, punto 6, al revés: allí una
+palabra nueva sumaba una clase; aquí una palabra que se va la resta).
+
+**La solución mínima:** `src/data/archivo/guardia-tailwind.ts`, que nadie importa y Tailwind lee, con la palabra perdida y
+la página de la que venía. Con ella, producción vuelve a salir igual byte a byte. **Para la tanda 5**, que reemplaza las
+demás páginas de driftime: si `comparar-produccion.mjs` muestra una regla que falta en el CSS, su palabra va a esa lista.
+
+### 2. Las franjas de Visibilidad en IA y de Auditoría, nítidas desde 834
+
+**Qué dice la spec:** §2.4, la franja de Visibilidad en IA es `proto/a/medios/chequeo-43.webp` y la de Auditoría
+`verifica-y-cumple-53.webp`, «recortados a 2,39 al centro».
+
+**Lo que pasó, medido:** esos archivos miden 1050 px de ancho; la franja mide 1408 a 1440 y 1888 a 1920: el navegador los
+agrandaba 1,34 y 1,8 veces, y en la captura a 1440 el texto de las dos páginas capturadas se veía borroso.
+
+**Lo que hice:** `franjas-tanda-4.py` saca, de la misma captura a 2× de la que salieron (17-oct, la de Lucía), el mismo
+encuadre (el recorte del prototipo y después su centro a 2,39) a 1920 de ancho: `chequeo-239.webp` (50,7 kB) y
+`verifica-y-cumple-239.webp` (49,3 kB), registrados en `medios.json` con su origen. La franja es un `<picture>`: desde 834
+la de 1920; bajo 834, el archivo de la spec en 16:9 al centro (ahí 1050 px alcanzan, y su encuadre a 16:9 no es el de un
+recorte del 2,39). Nada se genera: es la misma captura con más píxeles. La de Desarrollo web es el archivo de la spec tal
+cual (`combeau-fotografia-169`, 1600 px: 1,18 veces a 1920). `campos.py` sobre la página: ninguna de las tres es campo.
+
+### 3. El alt de la franja de Visibilidad en IA no describía el archivo
+
+**Qué dice Clara:** `visibilidad-en-ia.franja.alt`: «El chequeo gratis de SpindleLab con el resultado de un sitio en
+pantalla.» (su «dónde»: «el chequeo con un resultado (chequeo-43…)»). **El archivo de la spec no tiene resultado:** es la
+primera pantalla de `/diagnostico/` con el campo vacío (mirado). Spec §3.3: el alt lo escribe quien mira la imagen.
+
+**Lo que hice:** el alt que la tanda 2 escribió mirando ese mismo archivo (`medios.json`, `chequeo-43`): «La página del
+chequeo en spindlelab.cl: «¿Te puede leer la IA?», el campo para el dominio y el botón «Revisar mi sitio».». Un matiz: a
+2,39 el título «¿Te puede leer la IA?» queda fuera del recorte al centro (bajo 834, en 16:9, se ve). **Para Clara y
+Lucía:** o el alt pasa a describir lo que queda a 2,39, o la franja usa una captura del chequeo con un resultado (una
+captura nueva del chequeo vivo, nada generado), o el recorte se ancla más arriba. Es una línea de `[slug].astro`.
+
+### 4. Lo que la spec no fijaba de la plantilla interior, y cómo lo resolví
+
+| Qué | Lo que hice | Por qué |
+|---|---|---|
+| El pie de la franja | Debajo, el nombre de la pieza en blanco y su línea mono («Combeau, fotografía · Cliente · 2026»), de su entrada de `/trabajo/`; en Auditoría, además, el pie de Clara de la persona generada | El prototipo lo ponía así (vista 5); §2.4 no lo quita (§0.4 no lo lista). Sin él la franja no dice de quién es el sitio que se ve |
+| La franja y la carga | `loading="eager"` y `fetchpriority="high"` (está en la primera pantalla a 1440 y a 390); entra con el resorte «entrada» si no está a la vista al cargar | Antislop C7; §1.6 (el medio de la sección) |
+| Las filas de servicios de `/servicios/` | Desde 834, sobre las doce columnas que ocupa la lista: nombre en 3, línea en 5, una libre, precio en 3; borde de arriba en `--a-linea-seccion`, como los planes. Toda la fila lleva al servicio (el área del enlace del nombre se estira) y al pasar el mouse el subrayado del nombre va al 100 % | §2.4 dice qué lleva cada fila y no sus columnas. En 3:4:3, como los planes, la línea y el precio quedaban a 8 px (mirado a 1440); con la columna libre se leen como tres datos |
+| El número de cada momento | «01» a «04» en rótulo mono sobre el `h2` | Clara (`servicios.momentos.nota`) |
+| «Lo que pones tú» | Sus tres puntos de `oferta-v3.json` («fuera»), el rótulo en blanco y el detalle en gris, como hoy; el título y el pie, comparados con la nota de Clara que los cita | Clara: «queda tal cual»; ningún texto escrito a mano en la página |
+| La fase a la vista (Desarrollo web) | Una sola a la vez: la que está bajo la línea del 47,5 % de la ventana, el centro de la franja del prototipo (40 al 55 %) | Con la franja del prototipo, dos fases cortas quedaban en blanco a la vez (medido con `comprobar-tanda-4.mjs`); Koto pone una y «la anterior vuelve a gris» (lock §20.1). Sin JS, títulos en blanco y cuerpo en gris; con movimiento reducido, todas en blanco |
+| El número de cada fase | La lista es ordenada y el «01 · » va con `aria-hidden` | Como las fases del v3 anterior: el lector de pantalla no lee dos veces el número |
+| El glosario | Una lista en dos columnas desde 834, antes de los planes, con el término en blanco | Clara: «va antes de las tarjetas de los planes» |
+| «Ver los planes» | Con su ruta: `/v3/servicios/desarrollo-web/#planes` (Clara escribe «#planes») | §5.2.2 |
+| «Siguiente» | Rótulo mono y el nombre a Título, subrayado, con la flecha SVG; la flecha «→» del texto de Clara pasa a ser el SVG (ninguna de las dos letras la trae, §1.2). Bajo 834 y con puntero grueso su área es de 44 de alto sin mover lo que se ve | Prototipo; §4.3 (medido antes: 28 px) |
+
+### 5. Los cinco servicios: «queda tal cual, desde su dato», sobre A
+
+Clara cambia de cada uno la miga, el `h1` en dos tintas y el alt (y el pie) de la franja; lo demás queda «desde su dato»
+(`servicios-v3.json`). Cómo lo puse en la plantilla:
+
+- **La cabecera:** la «línea» con el precio es la entradilla; debajo, el lead y la nota de los precios (en chico); después
+  los dos botones. En driftime el lead y la nota iban después de la imagen.
+- **El armado de hoy, sin cambiar el dato:** cada punto de la lista partido en su «:» (el título en blanco, el cuerpo con
+  mayúscula), las comillas rectas en «», y los mismos cinco enlaces en el texto corrido, cada uno con su ruta
+  (`protocolo público` lleva a `/v3/blog/como-aparecer-en-chatgpt/#como-medir-si-esta-funcionando`, que existe hoy en
+  el blog de driftime: la tanda 5 tiene que conservar ese `id`). Los `h2` van como el dato, con o sin punto.
+- **Los bloques**, en la forma de las fases: «marca · título» (Sí · Aumentar…, A · Resumen ejecutivo, S1 · Priorizar…,
+  01 · Estrategia…). Si son pasos en orden (Acompañamiento, Redes, Paid Media) van en una lista ordenada y la marca no se
+  lee; si la marca trae su lectura (Sí → «Prometemos:», S1 → «Semana 1:»), se lee esa; las A a D se leen tal cual.
+- **Los planes**, en la forma de los de Desarrollo web; el compromiso de los tres meses y la nota de los planes, debajo
+  (driftime ponía la nota bajo el `h2`; Desarrollo web la pone después de los planes, y §2.4 pide «la misma forma»).
+- **El cierre:** su `h2` en una tinta (el dato no trae continuación gris), el párrafo y los botones de hoy; «Siguiente»,
+  el que sigue en el orden de `oferta-v3.json`, en ciclo (Paid Media → Desarrollo web).
+- **Los botones** son los de hoy: «Ver planes» y «Escríbenos» arriba; «Pedir el diagnóstico» y, salvo en Redes y Paid
+  Media, «Correr el chequeo» al cierre. «Escríbenos» y «Pedir el diagnóstico» son textos de Clara (el menú y
+  `/servicios/`); «Ver planes» y «Correr el chequeo» solo existían en la página anterior y van como constantes nombradas.
+  **Para Clara:** `/servicios/` y Desarrollo web dicen «Revisar mi sitio gratis» y «Ver los planes»; los cinco, como hoy.
+
+### 6. Las señales (Simón, `senales-obra.md` §2.7)
+
+- **`title` y `description`, de la copia de Clara** (que son los de Simón); el build se cae fuera de los largos de §1.2.
+  Simón pedía aplicarlos en `servicios-v3.json`: la página los lee de la copia de Clara, así el JSON de los precios queda
+  con diff 0 y no hay dos copias del mismo texto. La `description` del `Service` es la de la página.
+- **El grafo de hoy queda:** `/servicios/`, `BreadcrumbList` + `ItemList` en el orden de la página; los cinco,
+  `Service` (con su `OfferCatalog` de `servicios-v3.json`) + `BreadcrumbList` + `FAQPage`; Desarrollo web, su `Service` con
+  las cuatro ofertas de hoy (nombre y `minPrice` de `oferta-v3.json`, comparados; la descripción de cada oferta, la de
+  hoy), la `BreadcrumbList` como hoy y la `FAQPage` con las seis preguntas de Clara que se ven (la de hoy traía cuatro
+  preguntas viejas que ya no están en la página: §1.5).
+- **Las imágenes al compartir** (§1.6), con `og-tanda-4.mjs`: el logo arriba, el `h1` en sus dos tintas y el precio de
+  entrada tal cual de los JSON; 1200 × 630, de 39 a 47 kB. **`/servicios/` va sin precio:** es el índice de seis y
+  ninguno es «el» de entrada. Su `og:image:alt` es «SpindleLab: » + el `h1`.
+
+### 7. Los techos de campo (§3.4), medidos
+
+`campos-tanda-4.mjs` (página completa a 1440, con movimiento reducido) + `campos.py` del prototipo. Datos:
+`e12/construccion/medicion-campos/campos-tanda-4.json` y `a-servicios-*-1440-completa.json`.
+
+| Página | Campos (techo 5 %) | Medios | Negro fuera de los medios |
+|---|---|---|---|
+| `/servicios/` | 0 % | 0 % | 96,3 % |
+| Desarrollo web | **3,5 %** (las portadas de Praxi y Sesenta; la franja de Combeau no es campo) | 15,0 % | 95,3 % |
+| Visibilidad en IA | 0 % (la franja del chequeo no es campo) | 12,1 % | 95,6 % |
+| Auditoría SEO técnica | 0 % (la franja de Verifica y Cumple no es campo) | 13,2 % | 95,7 % |
+| Acompañamiento mensual · Redes · Paid Media | 0 % | 0 % | 95,8 a 95,9 % |
+
+### 8. Lo que queda para Lucía, Clara o Ramón (no lo resolví a la fuerza)
+
+1. **El alt y el recorte de la franja del chequeo** (punto 3).
+2. **La franja de Auditoría** sigue siendo la portada de Verifica y Cumple (spec §2.4), así que va el pie de la persona
+   generada. Clara propone «sus 12 cosas» (`verifica-y-cumple-12-169`), sin persona: es campo de color (`#2858F8` en el
+   82 % del marco a 2,39, `datos/campo-medios.json`) y la spec prohíbe un campo en la franja. Lo decide Lucía.
+3. **El centro a 2,39 corta arriba** las dos píldoras de la portada de Verifica y Cumple y deja abajo, en la de Combeau,
+   la franja oscura de «Retratos». Es el recorte que pide la spec; si Lucía lo quiere anclado de otra forma, es la
+   posición del medio en `archivo.css` (y en `franjas-tanda-4.py`).
+4. **Los botones de los cinco servicios** frente a los de `/servicios/` y Desarrollo web (punto 5), para Clara.
+5. **Del texto que queda «tal cual»**, lo que Clara ya dejó anotado y no es de esta tanda: la `description` de
+   Acompañamiento dice «con informes quincenales» (R2, abierta) y Paid Media dice cuatro veces que optimiza «con agentes
+   de IA» sin fila en el inventario (para Ramón).
+
+### 9. Lo verificado en esta tanda
+
+- `npm run build` + `comparar-produccion.mjs`: las 22 páginas publicadas y lo que sirven, **iguales byte a byte** (con la
+  guardia del punto 1). Nuevos fuera de `v3/`: las siete imágenes al compartir (y las de las tandas anteriores).
+- `npm run verificar -- --prefijo /v3/` a 390, 768 y 1440: **27 páginas, sin hallazgos**; con `--sin-pildoras` en
+  `/v3/servicios/` a 1440, sin hallazgos.
+- Render con Chromium a 360, 390, 768, 834, 1024, 1194, 1440 y 1920 de las siete páginas (`capturar.mjs`), mirado: desborde
+  0 también sin el `overflow-x: clip`, un `h1`, encabezado de 90 bajo 834 y de 64 desde 834, solo Google Sans Flex y DM
+  Mono, cero errores de consola. Capturas a 390 y 1440 en `e12/construccion/capturas/tanda-4/` (la primera pantalla en PNG
+  y la página entera en JPEG) y el círculo sobre una pieza de Desarrollo web a 1440.
+- `comprobar-tanda-4.mjs` (**sin fallas**, `capturas/tanda-4/comprobar-tanda-4.json`): JSON-LD que parsea, sin `@id`
+  repetidos ni `Review`, `AggregateRating` o `VideoObject`; la `BreadcrumbList` igual a la miga; la `FAQPage` con las
+  preguntas que se ven; la `description` del `Service` igual a la de la página; title de 47 a 58 y description de 124 a
+  157; `noindex`; cada imagen al compartir existe, 1200 × 630, JPEG, ≤ 200 kB; **cada monto a la vista, en el title, la
+  description o una oferta del grafo está, como texto, en los JSON** (además, el build se cae si un precio de Clara no
+  está en ellos); cero «54 → 94», «36 → 73», `<!--`, `href="#…"`, «IA propietaria», «modelos RAG», «despliegue de
+  modelos», praxi.coach, «en pausa» y «fuera de línea»; a 1440 los `h2` de sección en c1–c4 y pegajosos a 88, el
+  contenido desde c5 hasta c12 o c16; a 1024 el `h2` arriba y sin pegarse; la franja 2,39 desde 834 y 16:9 a 390, dentro
+  de los márgenes y con radio 6, la nítida desde 834; las fases (una en blanco, las otras en gris; con movimiento
+  reducido, todas en blanco); el círculo sobre las tres piezas («Ver el caso», «Ver el caso», «Ver el concepto»); los
+  enlaces internos responden 200 con sus fragmentos; área de toque a 390: 0 controles bajo 44.
+- `comprobar-base.mjs` sobre `/v3/servicios/` y Desarrollo web (`capturas/tanda-4/comprobar-base-*.json`): la rueda llega al
+  90 % en 45 y 58 ms; cero `a[href^="#"]`; saltar al contenido con su ruta; encabezado plegado; el círculo aparece sobre una
+  pieza, se esconde con Tab, no vuelve con un desplazamiento bajo el mouse quieto y sí con un movimiento real; con
+  movimiento reducido no hay círculo, ni entradas, y las transiciones son 0 s.
+- `comprobar-tanda-2.mjs` y `comprobar-tanda-3.mjs`, después de tocar `archivo.css` y `medios.json`: sin fallas.
